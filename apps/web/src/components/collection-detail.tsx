@@ -41,17 +41,22 @@ export function CollectionDetail({ collection }: { collection: any }) {
               <HoverCard>
                 <Link
                   href={`/${locale}/destination/${item.destination_id}`}
-                  className="flex items-start gap-4 rounded-xl border border-border bg-card p-5 transition-all hover:border-primary/50"
+                  className="flex items-start gap-4 rounded-xl border border-border bg-card overflow-hidden transition-all hover:border-primary/50"
                 >
-                  <motion.div
-                    initial={{ scale: 0 }}
-                    animate={{ scale: 1 }}
-                    transition={{ type: "spring", stiffness: 300, delay: 0.1 * idx }}
-                    className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary/10 text-lg font-bold text-primary"
-                  >
-                    {idx + 1}
-                  </motion.div>
-                  <div className="flex-1">
+                  {/* Image */}
+                  <div className="relative w-24 h-24 sm:w-32 sm:h-24 shrink-0 bg-muted/30">
+                    <img
+                      src={`/images/destinations/${item.destination_id}.jpg`}
+                      alt={dest?.name ?? ""}
+                      className="w-full h-full object-cover"
+                      loading="lazy"
+                      onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
+                    />
+                    <div className="absolute top-1 left-1 flex h-7 w-7 items-center justify-center rounded-full bg-primary text-xs font-bold text-primary-foreground">
+                      {idx + 1}
+                    </div>
+                  </div>
+                  <div className="flex-1 p-4 pl-0">
                     <h3 className="font-semibold text-lg">{dest?.name ?? item.destination_id}</h3>
                     {stateName && <p className="text-xs text-muted-foreground">{stateName}</p>}
                     <p className="mt-1 text-sm text-muted-foreground">{item.note}</p>
