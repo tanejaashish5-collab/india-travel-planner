@@ -103,9 +103,22 @@ export function DestinationDetail({ dest }: { dest: any }) {
           </div>
         </FadeIn>
 
+        {/* Hero Image */}
+        <FadeIn>
+          <div className="mb-6 relative h-48 sm:h-64 lg:h-80 rounded-2xl overflow-hidden bg-muted/30">
+            <img
+              src={`/images/destinations/${dest.id}.jpg`}
+              alt={dest.name}
+              className="w-full h-full object-cover"
+              onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
+          </div>
+        </FadeIn>
+
         {/* Hero */}
         <SlideIn delay={0.1}>
-          <div className="mb-6 rounded-2xl border border-border bg-gradient-to-br from-card to-muted/30 p-6 sm:p-8">
+          <div className="mb-6 rounded-2xl border border-border bg-gradient-to-br from-card to-muted/30 p-6 sm:p-8 -mt-20 relative z-10">
             <div className="flex items-start justify-between">
               <div>
                 <h1 className="text-3xl font-bold sm:text-4xl lg:text-5xl">{dest.name}</h1>

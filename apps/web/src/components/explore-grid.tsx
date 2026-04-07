@@ -177,11 +177,27 @@ function DestinationCard({
       : null;
   const score = monthData?.score ?? null;
 
+  const imageUrl = `/images/destinations/${dest.id}.jpg`;
+
   return (
     <Link
       href={`/${locale}/destination/${dest.id}`}
-      className="group block rounded-xl border border-border bg-card p-5 transition-all hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5"
+      className="group block rounded-xl border border-border bg-card overflow-hidden transition-all hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5"
     >
+      {/* Hero Image */}
+      <div className="relative h-36 bg-muted/30 overflow-hidden">
+        <img
+          src={imageUrl}
+          alt={dest.name}
+          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+          loading="lazy"
+          onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
+        />
+        {/* Gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-card/80 to-transparent" />
+      </div>
+
+      <div className="p-5 pt-3">
       {/* Score + Kids */}
       <div className="mb-3 flex items-center justify-between">
         {score !== null ? (
@@ -267,6 +283,7 @@ function DestinationCard({
           {monthData.note}
         </p>
       )}
+      </div>
     </Link>
   );
 }
