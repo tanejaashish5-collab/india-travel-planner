@@ -1,0 +1,5303 @@
+[
+  {
+    "id": "corbett-national-park",
+    "name": "Jim Corbett National Park",
+    "state_id": "uttarakhand",
+    "region": "Kumaon Terai",
+    "coords": {
+      "lat": 29.53,
+      "lng": 78.77
+    },
+    "elevation_m": 400,
+    "type": [
+      "national-park",
+      "wildlife",
+      "safari"
+    ],
+    "vibe": [
+      "wildlife",
+      "family",
+      "luxury",
+      "nature"
+    ],
+    "difficulty": "easy",
+    "nearest_airport": "Pantnagar \u2014 80km",
+    "nearest_railhead": "Ramnagar \u2014 12km",
+    "tagline": "India's oldest national park and arguably the best place in the country to see a wild tiger without the Rajasthan crowds.",
+    "why_special": "Corbett was India's first national park (1936), established to protect the Bengal tiger. Five zones \u2014 Bijrani, Jhirna, Dhikala, Durga Devi, and Sitabani \u2014 each with different terrain and access rules. Dhikala is the holy grail: a vast grassland inside the park where you stay overnight in forest rest houses and watch elephants, tigers, and deer at dawn from the watchtower. Unlike Ranthambore where every jeep chases the same tiger, Corbett feels genuinely wild.",
+    "budget_tier": "mid-to-luxury",
+    "ideal_duration_min": 2,
+    "ideal_duration_max": 3,
+    "tags": [
+      "tiger",
+      "safari",
+      "wildlife",
+      "national-park",
+      "birding",
+      "elephant",
+      "jungle-lodge",
+      "family"
+    ],
+    "best_months": [
+      11,
+      12,
+      1,
+      2,
+      3,
+      4
+    ],
+    "avoid_months": [
+      7,
+      8,
+      9
+    ],
+    "translations": {},
+    "monthly_suitability": [
+      {
+        "m": 1,
+        "score": 5,
+        "note": "Peak winter safari season. Cool mornings (5-8\u00b0C), excellent wildlife visibility as undergrowth dies down. Dhikala zone open."
+      },
+      {
+        "m": 2,
+        "score": 5,
+        "note": "Best month overall. Dry grasslands force animals to waterholes. Tiger sighting probability highest."
+      },
+      {
+        "m": 3,
+        "score": 5,
+        "note": "Warming up but still excellent. Sal forest starts flowering. Great birding month."
+      },
+      {
+        "m": 4,
+        "score": 4,
+        "note": "Hot afternoons (35\u00b0C+) but mornings still good. Vegetation thins further \u2014 good sightings. Some zones start closing."
+      },
+      {
+        "m": 5,
+        "score": 3,
+        "note": "Hot (38-42\u00b0C). Bijrani and Jhirna still open. Animals concentrate at water sources. Hardcore wildlife enthusiasts only."
+      },
+      {
+        "m": 6,
+        "score": 2,
+        "note": "Pre-monsoon heat. Most zones closed. Park officially shuts June 15. Not recommended."
+      },
+      {
+        "m": 7,
+        "score": 0,
+        "note": "Park closed for monsoon. Ramganga river floods Dhikala. Roads impassable."
+      },
+      {
+        "m": 8,
+        "score": 0,
+        "note": "Closed. Heavy rain, leeches, river in spate."
+      },
+      {
+        "m": 9,
+        "score": 0,
+        "note": "Park still closed. Re-opens mid-October in some zones."
+      },
+      {
+        "m": 10,
+        "score": 3,
+        "note": "Jhirna zone opens mid-October. Lush green but dense foliage makes sightings harder."
+      },
+      {
+        "m": 11,
+        "score": 5,
+        "note": "All zones open by mid-November including Dhikala. Cool weather, vegetation clearing. Season truly begins."
+      },
+      {
+        "m": 12,
+        "score": 5,
+        "note": "Excellent. Cold mornings, clear skies, active wildlife. Book Dhikala 3-4 months ahead."
+      }
+    ],
+    "kids_friendly": {
+      "suitable": true,
+      "rating": 5,
+      "min_recommended_age": 4,
+      "best_age_group": "6-14",
+      "stroller_accessible": false,
+      "reasons": [
+        "Real-life wildlife safari \u2014 seeing a wild elephant or tiger is life-changing for kids",
+        "Well-managed park with clear rules and safe jeep/canter safaris",
+        "Several luxury family-friendly resorts outside the park",
+        "Easy access from Delhi (5-6 hour drive)"
+      ],
+      "concerns": [
+        "Children under 5 may struggle with early morning 5am starts and bumpy jeep rides",
+        "Noise discipline is required \u2014 no screaming or running, which is tough for toddlers",
+        "Dhikala forest rest houses are basic \u2014 no AC, limited electricity, shared bathrooms",
+        "Mosquitoes and insects near river areas"
+      ],
+      "kid_highlights": [
+        "Morning jeep safari through the jungle \u2014 the actual adventure",
+        "Dhikala watchtower at dawn \u2014 elephants and deer come to the grassland below",
+        "Night sounds from forest rest houses \u2014 genuinely thrilling for older kids",
+        "Elephant sightings along the Ramganga river",
+        "Birding \u2014 even kids get into spotting kingfishers and hornbills"
+      ],
+      "not_suitable_reason": null
+    }
+  },
+  {
+    "id": "lansdowne",
+    "name": "Lansdowne",
+    "state_id": "uttarakhand",
+    "region": "Pauri Garhwal",
+    "coords": {
+      "lat": 29.84,
+      "lng": 78.68
+    },
+    "elevation_m": 1706,
+    "type": [
+      "cantonment",
+      "hill-station",
+      "offbeat"
+    ],
+    "vibe": [
+      "quiet",
+      "offbeat",
+      "colonial",
+      "weekend-escape"
+    ],
+    "difficulty": "easy",
+    "nearest_airport": "Dehradun (Jolly Grant) \u2014 150km",
+    "nearest_railhead": "Kotdwar \u2014 40km",
+    "tagline": "An army cantonment frozen in time \u2014 silent oak forests, no commercial circus, and the rare hill station that hasn't been ruined yet.",
+    "why_special": "Lansdowne is one of the quietest hill stations in Uttarakhand because half the town is a Garhwal Rifles cantonment \u2014 no hawkers, no honking, no Mall Road chaos. The British established it in 1887 and the army kept it pristine. Tip-n-Top viewpoint gives snow-capped Himalayan views on clear days. Bhulla Lake is a small army-maintained lake. The Garhwal Rifles Museum is genuinely interesting. Weekend escape from Delhi (250km, 6 hours) without the Mussoorie/Nainital madness.",
+    "budget_tier": "budget",
+    "ideal_duration_min": 1,
+    "ideal_duration_max": 2,
+    "tags": [
+      "cantonment",
+      "quiet",
+      "colonial",
+      "oak-forest",
+      "weekend-getaway",
+      "offbeat",
+      "nature-walk"
+    ],
+    "best_months": [
+      3,
+      4,
+      5,
+      10,
+      11
+    ],
+    "avoid_months": [
+      7,
+      8
+    ],
+    "translations": {},
+    "monthly_suitability": [
+      {
+        "m": 1,
+        "score": 3,
+        "note": "Cold (2-10\u00b0C), occasional frost. Very quiet. Misty mornings in the oak forest. Snowfall rare but possible."
+      },
+      {
+        "m": 2,
+        "score": 3,
+        "note": "Still cold. Rhododendrons start appearing late February. Few visitors."
+      },
+      {
+        "m": 3,
+        "score": 5,
+        "note": "Spring arrives. Wildflowers, clear views of snow peaks, 12-22\u00b0C. Perfect weekend escape."
+      },
+      {
+        "m": 4,
+        "score": 5,
+        "note": "Warm and pleasant. Oak and pine forests at their greenest. Best month."
+      },
+      {
+        "m": 5,
+        "score": 4,
+        "note": "Slightly warm (25-30\u00b0C) but far cooler than plains. Popular with Delhi weekenders escaping the heat."
+      },
+      {
+        "m": 6,
+        "score": 3,
+        "note": "Pre-monsoon humidity. Still pleasant but rains starting. Occasional thunderstorms."
+      },
+      {
+        "m": 7,
+        "score": 1,
+        "note": "Full monsoon. Heavy rain, leeches on trails, landslide risk on approach road from Kotdwar."
+      },
+      {
+        "m": 8,
+        "score": 1,
+        "note": "Monsoon continues. Foggy, wet, slippery. Not recommended."
+      },
+      {
+        "m": 9,
+        "score": 3,
+        "note": "Monsoon receding. Green and fresh. Some rain still possible."
+      },
+      {
+        "m": 10,
+        "score": 5,
+        "note": "Post-monsoon clarity. Cool, clear skies, Himalayan views return. Excellent."
+      },
+      {
+        "m": 11,
+        "score": 4,
+        "note": "Crisp autumn. Diwali weekend gets a brief crowd. Otherwise empty."
+      },
+      {
+        "m": 12,
+        "score": 3,
+        "note": "Cold and quiet. Short days. Christmas/NYE sees a small bump."
+      }
+    ],
+    "kids_friendly": {
+      "suitable": true,
+      "rating": 4,
+      "min_recommended_age": 3,
+      "best_age_group": "5-12",
+      "stroller_accessible": false,
+      "reasons": [
+        "Very safe \u2014 army cantonment means no traffic chaos, no touts, clean streets",
+        "Bhulla Lake has boating \u2014 simple but kids love it",
+        "Nature walks through pine and oak forest with zero difficulty",
+        "No overwhelming crowds at any point"
+      ],
+      "concerns": [
+        "Limited food options \u2014 mostly basic restaurants and dhabas",
+        "Not much to 'do' \u2014 this is a place for quiet, not activities",
+        "No medical facility beyond a military hospital (civilians may face access issues)"
+      ],
+      "kid_highlights": [
+        "Boating at Bhulla Lake",
+        "Garhwal Rifles Museum \u2014 real weapons, uniforms, and war history",
+        "Nature walks through silent oak forests",
+        "Tip-n-Top viewpoint for mountain panoramas"
+      ],
+      "not_suitable_reason": null
+    }
+  },
+  {
+    "id": "mukteshwar",
+    "name": "Mukteshwar",
+    "state_id": "uttarakhand",
+    "region": "Kumaon Hills",
+    "coords": {
+      "lat": 29.47,
+      "lng": 79.65
+    },
+    "elevation_m": 2286,
+    "type": [
+      "village",
+      "viewpoint",
+      "offbeat"
+    ],
+    "vibe": [
+      "quiet",
+      "offbeat",
+      "family",
+      "romantic"
+    ],
+    "difficulty": "easy",
+    "nearest_airport": "Pantnagar \u2014 90km",
+    "nearest_railhead": "Kathgodam \u2014 72km",
+    "tagline": "A Kumaon ridge village with 180-degree Himalayan views, an ancient Shiva temple, and the kind of silence that makes you question your life choices in the city.",
+    "why_special": "Mukteshwar sits on the edge of the Kumaon Hills with an unobstructed view of the Nanda Devi range that genuinely stops you in your tracks. The 350-year-old Mukteshwar Dham temple on the cliff edge is dramatic \u2014 Shiva temple perched on a rock with a vertical drop. The IVRI (Indian Veterinary Research Institute) campus has colonial-era buildings and orchards. No Mall Road, no ropeway, no tourist circus. Just orchards, views, and quiet homestays. 2-3 hour drive from Nainital but a completely different vibe.",
+    "budget_tier": "budget-to-mid",
+    "ideal_duration_min": 1,
+    "ideal_duration_max": 3,
+    "tags": [
+      "himalayan-views",
+      "offbeat",
+      "temple",
+      "orchards",
+      "quiet",
+      "weekend-getaway",
+      "romantic",
+      "stargazing"
+    ],
+    "best_months": [
+      3,
+      4,
+      10,
+      11
+    ],
+    "avoid_months": [
+      7,
+      8
+    ],
+    "translations": {},
+    "monthly_suitability": [
+      {
+        "m": 1,
+        "score": 3,
+        "note": "Cold (0-8\u00b0C), occasional snowfall. Clear days have stunning snow peak views. Very quiet."
+      },
+      {
+        "m": 2,
+        "score": 3,
+        "note": "Cold but warming. Orchards start to bud. Quiet season \u2014 great homestay deals."
+      },
+      {
+        "m": 3,
+        "score": 5,
+        "note": "Spring perfection. Wildflowers, fruit blossoms, 10-20\u00b0C, crystal clear Himalayan panorama."
+      },
+      {
+        "m": 4,
+        "score": 5,
+        "note": "Warm days, cool nights. Everything in bloom. Views still crisp before pre-monsoon haze."
+      },
+      {
+        "m": 5,
+        "score": 3,
+        "note": "Warm (25\u00b0C+). Haze sometimes obscures mountain views. Still pleasant evenings."
+      },
+      {
+        "m": 6,
+        "score": 2,
+        "note": "Pre-monsoon humidity and thunderstorms. Views unreliable."
+      },
+      {
+        "m": 7,
+        "score": 1,
+        "note": "Monsoon. Heavy rain, zero views, landslide risk on approach roads."
+      },
+      {
+        "m": 8,
+        "score": 1,
+        "note": "Monsoon continues. Lush green but impractical for visiting."
+      },
+      {
+        "m": 9,
+        "score": 3,
+        "note": "Monsoon retreating. Views returning. Green and fresh. Good shoulder month."
+      },
+      {
+        "m": 10,
+        "score": 5,
+        "note": "Post-monsoon clarity. The best mountain views of the year. Cool, crisp, uncrowded."
+      },
+      {
+        "m": 11,
+        "score": 5,
+        "note": "Clear skies, comfortable days, cold nights. Orchard harvest season (apples, plums)."
+      },
+      {
+        "m": 12,
+        "score": 3,
+        "note": "Cold (near freezing at night). Short days. Snowfall possible. Magical if you catch it."
+      }
+    ],
+    "kids_friendly": {
+      "suitable": true,
+      "rating": 3,
+      "min_recommended_age": 5,
+      "best_age_group": "8-14",
+      "stroller_accessible": false,
+      "reasons": [
+        "Safe, quiet village environment with no traffic or crowds",
+        "Chauli Ki Jali cliff viewpoint is exciting for older kids (with supervision)",
+        "Some places offer rappelling and zip-line activities"
+      ],
+      "concerns": [
+        "Very limited activities for young children \u2014 this is a 'sit and stare at mountains' place",
+        "Cliff-edge temple area has no railings in some sections",
+        "Limited restaurant options \u2014 mostly homestay meals",
+        "No hospital nearby \u2014 nearest is Haldwani (60km)"
+      ],
+      "kid_highlights": [
+        "Chauli Ki Jali cliff \u2014 the natural rock window with a view",
+        "Rappelling and rock climbing (seasonal, operator-dependent)",
+        "Walking through fruit orchards",
+        "Stargazing \u2014 minimal light pollution"
+      ],
+      "not_suitable_reason": null
+    }
+  },
+  {
+    "id": "binsar",
+    "name": "Binsar",
+    "state_id": "uttarakhand",
+    "region": "Kumaon Hills",
+    "coords": {
+      "lat": 29.69,
+      "lng": 79.72
+    },
+    "elevation_m": 2420,
+    "type": [
+      "wildlife-sanctuary",
+      "viewpoint",
+      "offbeat"
+    ],
+    "vibe": [
+      "quiet",
+      "nature",
+      "offbeat",
+      "birding"
+    ],
+    "difficulty": "easy",
+    "nearest_airport": "Pantnagar \u2014 152km",
+    "nearest_railhead": "Kathgodam \u2014 117km",
+    "tagline": "A KMVN rest house on a ridge inside an oak forest sanctuary \u2014 300km of Himalayan panorama from Kedarnath to Api, and nobody around to share it with.",
+    "why_special": "Binsar Wildlife Sanctuary is 47 sq km of dense oak, rhododendron, and pine forest in the Kumaon Hills. The payoff is Zero Point \u2014 a viewpoint at 2412m that shows a continuous wall of Himalayan peaks including Nanda Devi, Nanda Kot, Panchachuli, Kedarnath, and Trisul. The KMVN rest house is basic but the sunrise from its lawn is one of the best in Uttarakhand. Excellent birding \u2014 over 200 species. The ruins of the Katyuri dynasty capital (9th-11th century) are scattered through the forest. No shops, no restaurants, no noise \u2014 bring supplies or eat at your lodge.",
+    "budget_tier": "budget",
+    "ideal_duration_min": 1,
+    "ideal_duration_max": 2,
+    "tags": [
+      "himalayan-views",
+      "wildlife-sanctuary",
+      "birding",
+      "offbeat",
+      "nature",
+      "quiet",
+      "photography"
+    ],
+    "best_months": [
+      10,
+      11,
+      3,
+      4
+    ],
+    "avoid_months": [
+      7,
+      8
+    ],
+    "translations": {},
+    "monthly_suitability": [
+      {
+        "m": 1,
+        "score": 3,
+        "note": "Very cold (-2 to 8\u00b0C). Snow possible. Crystal clear views if weather holds. Bring serious warm gear."
+      },
+      {
+        "m": 2,
+        "score": 3,
+        "note": "Cold. Rhododendrons starting. Quiet. Some snow on approach road."
+      },
+      {
+        "m": 3,
+        "score": 5,
+        "note": "Rhododendron bloom turns the forest red. Clear mountain views. Best spring month."
+      },
+      {
+        "m": 4,
+        "score": 5,
+        "note": "Warm days, cool nights. Forest in full bloom. Birding peaks. Excellent."
+      },
+      {
+        "m": 5,
+        "score": 3,
+        "note": "Warmer. Pre-monsoon haze reduces mountain visibility. Forest still beautiful."
+      },
+      {
+        "m": 6,
+        "score": 2,
+        "note": "Pre-monsoon rain and cloud. Views unreliable. Leeches appear."
+      },
+      {
+        "m": 7,
+        "score": 1,
+        "note": "Monsoon. Dense fog, heavy rain, leeches everywhere, zero views."
+      },
+      {
+        "m": 8,
+        "score": 1,
+        "note": "Peak monsoon. Road conditions deteriorate. Not practical."
+      },
+      {
+        "m": 9,
+        "score": 3,
+        "note": "Monsoon ending. Forest is lush. Views clearing. Birding good."
+      },
+      {
+        "m": 10,
+        "score": 5,
+        "note": "Best month. Post-monsoon clarity \u2014 the 300km panorama at Zero Point is sharpest now."
+      },
+      {
+        "m": 11,
+        "score": 5,
+        "note": "Clear, cold, photogenic. Autumn colors in the oak forest. Few visitors."
+      },
+      {
+        "m": 12,
+        "score": 3,
+        "note": "Very cold. Short days. Snow possible. Magical if clear."
+      }
+    ],
+    "kids_friendly": {
+      "suitable": true,
+      "rating": 2,
+      "min_recommended_age": 8,
+      "best_age_group": "10-16",
+      "stroller_accessible": false,
+      "reasons": [
+        "Forest walks are gentle and safe",
+        "Birding can engage nature-curious older kids"
+      ],
+      "concerns": [
+        "Almost nothing to 'do' for children \u2014 no boating, no rides, no activities",
+        "Very isolated \u2014 no shops, restaurants, or medical facilities inside the sanctuary",
+        "KMVN rest house is basic \u2014 no room service, limited menu, cold at night",
+        "Kids will get bored within a few hours unless they're genuine nature enthusiasts"
+      ],
+      "kid_highlights": [
+        "Zero Point sunrise \u2014 the mountain wall is dramatic enough to impress any age",
+        "Forest walks with potential leopard and deer sightings",
+        "Ancient ruin exploration in the forest"
+      ],
+      "not_suitable_reason": null
+    }
+  },
+  {
+    "id": "dhanaulti",
+    "name": "Dhanaulti",
+    "state_id": "uttarakhand",
+    "region": "Garhwal Hills",
+    "coords": {
+      "lat": 30.43,
+      "lng": 78.26
+    },
+    "elevation_m": 2286,
+    "type": [
+      "hill-station",
+      "eco-park",
+      "offbeat"
+    ],
+    "vibe": [
+      "quiet",
+      "family",
+      "offbeat",
+      "weekend-escape"
+    ],
+    "difficulty": "easy",
+    "nearest_airport": "Dehradun (Jolly Grant) \u2014 60km",
+    "nearest_railhead": "Dehradun \u2014 60km",
+    "tagline": "The quiet alternative to Mussoorie \u2014 24km further up the road, with eco-parks, deodar forests, and 90% fewer tourists.",
+    "why_special": "Dhanaulti is what Mussoorie would be if nobody discovered it. Perched at 2286m on the Mussoorie-Chamba road, it's basically a deodar forest with a few eco-parks (Amber and Dhara), a couple of campsites, and Himalayan views toward Swargarohini. The Eco Parks are GMVN-managed and actually well-maintained \u2014 walking trails through deodar forest with viewpoints. Surkanda Devi temple (3030m) is a 1.5km trek from the road and gives a panoramic Himalayan view. No market, no Mall Road \u2014 this is strictly a 'sit in the forest and breathe' place.",
+    "budget_tier": "budget",
+    "ideal_duration_min": 1,
+    "ideal_duration_max": 2,
+    "tags": [
+      "eco-park",
+      "deodar-forest",
+      "quiet",
+      "weekend-getaway",
+      "camping",
+      "family",
+      "offbeat"
+    ],
+    "best_months": [
+      3,
+      4,
+      5,
+      10,
+      11
+    ],
+    "avoid_months": [
+      7,
+      8
+    ],
+    "translations": {},
+    "monthly_suitability": [
+      {
+        "m": 1,
+        "score": 4,
+        "note": "Snow season \u2014 Dhanaulti gets more snow than Mussoorie. Deodar forest in snow is stunning. Cold (0-6\u00b0C)."
+      },
+      {
+        "m": 2,
+        "score": 4,
+        "note": "Snow still possible. Quiet, atmospheric. Roads can be icy."
+      },
+      {
+        "m": 3,
+        "score": 5,
+        "note": "Snow melting, spring arriving. Wildflowers in eco-parks. Clear mountain views. 10-18\u00b0C."
+      },
+      {
+        "m": 4,
+        "score": 5,
+        "note": "Perfect weather. Forest is alive. Surkanda Devi trek is ideal."
+      },
+      {
+        "m": 5,
+        "score": 4,
+        "note": "Warm but pleasant. Good escape from Delhi heat. Weekend crowds appear."
+      },
+      {
+        "m": 6,
+        "score": 2,
+        "note": "Pre-monsoon rain starts. Cloud cover. Still manageable."
+      },
+      {
+        "m": 7,
+        "score": 1,
+        "note": "Monsoon. Heavy rain, fog, landslides on approach. Eco-parks still open but not enjoyable."
+      },
+      {
+        "m": 8,
+        "score": 1,
+        "note": "Monsoon continues. Wet and cold. Not recommended."
+      },
+      {
+        "m": 9,
+        "score": 3,
+        "note": "Monsoon ending. Forest is incredibly green. Some rain risk."
+      },
+      {
+        "m": 10,
+        "score": 5,
+        "note": "Post-monsoon perfection. Clear skies, crisp air, empty trails. Best autumn month."
+      },
+      {
+        "m": 11,
+        "score": 4,
+        "note": "Getting cold. Clear views. Quiet. Good for camping."
+      },
+      {
+        "m": 12,
+        "score": 4,
+        "note": "Cold but clear. Early snow possible. Christmas camping is popular."
+      }
+    ],
+    "kids_friendly": {
+      "suitable": true,
+      "rating": 4,
+      "min_recommended_age": 3,
+      "best_age_group": "4-12",
+      "stroller_accessible": false,
+      "reasons": [
+        "Eco-parks are designed for easy walking \u2014 flat trails through forest with benches",
+        "Safe environment \u2014 no traffic, no cliffs, no danger",
+        "Camping options with bonfire \u2014 kids love it",
+        "Close to Mussoorie if kids get bored (24km)"
+      ],
+      "concerns": [
+        "Very limited food options \u2014 carry snacks or rely on hotel meals",
+        "No medical facility \u2014 nearest is Mussoorie (24km)",
+        "Snow-season roads can be tricky with kids in the car"
+      ],
+      "kid_highlights": [
+        "Eco-parks \u2014 walking trails, swings, picnic spots in the forest",
+        "Playing in snow (January-February)",
+        "Camping with bonfire under the deodars",
+        "Surkanda Devi trek for older kids (easy 1.5km)"
+      ],
+      "not_suitable_reason": null
+    }
+  },
+  {
+    "id": "kanatal",
+    "name": "Kanatal",
+    "state_id": "uttarakhand",
+    "region": "Garhwal Hills",
+    "coords": {
+      "lat": 30.41,
+      "lng": 78.33
+    },
+    "elevation_m": 2590,
+    "type": [
+      "village",
+      "camping",
+      "offbeat"
+    ],
+    "vibe": [
+      "quiet",
+      "adventure",
+      "offbeat",
+      "camping"
+    ],
+    "difficulty": "easy",
+    "nearest_airport": "Dehradun (Jolly Grant) \u2014 78km",
+    "nearest_railhead": "Dehradun \u2014 78km",
+    "tagline": "A pinprick on the Mussoorie-Chamba road that's become North India's glamping capital \u2014 apple orchards, stargazing, and zero cell signal.",
+    "why_special": "Kanatal barely exists as a village \u2014 it's a cluster of orchards and campsites at 2590m between Dhanaulti and Chamba (UK). What makes it work is the altitude (higher than most nearby hill stations), the apple orchards, the dense forests, and the fact that several high-quality glamping and camping operators have set up here. Kodia Jungle trek starts from here. Surkanda Devi temple is 5km away. The real draw is doing absolutely nothing at altitude \u2014 hammock, bonfire, stars.",
+    "budget_tier": "mid",
+    "ideal_duration_min": 1,
+    "ideal_duration_max": 2,
+    "tags": [
+      "camping",
+      "glamping",
+      "offbeat",
+      "apple-orchards",
+      "stargazing",
+      "weekend-getaway",
+      "nature"
+    ],
+    "best_months": [
+      3,
+      4,
+      5,
+      10,
+      11
+    ],
+    "avoid_months": [
+      7,
+      8
+    ],
+    "translations": {},
+    "monthly_suitability": [
+      {
+        "m": 1,
+        "score": 4,
+        "note": "Snow. Camps offer snow camping packages. Very cold (-2 to 5\u00b0C) but magical."
+      },
+      {
+        "m": 2,
+        "score": 4,
+        "note": "Snow still likely. Quiet. Some camps closed \u2014 check before booking."
+      },
+      {
+        "m": 3,
+        "score": 5,
+        "note": "Spring. Apple blossoms, forest in bloom, comfortable 8-18\u00b0C. All camps open."
+      },
+      {
+        "m": 4,
+        "score": 5,
+        "note": "Best month. Perfect weather for camping and trekking. Clear skies."
+      },
+      {
+        "m": 5,
+        "score": 4,
+        "note": "Warm days but cool nights. Weekend demand high from Delhi."
+      },
+      {
+        "m": 6,
+        "score": 2,
+        "note": "Pre-monsoon rain. Camping less enjoyable. Some operators pause."
+      },
+      {
+        "m": 7,
+        "score": 1,
+        "note": "Monsoon. Most camps shut. Road conditions poor."
+      },
+      {
+        "m": 8,
+        "score": 1,
+        "note": "Monsoon. Not practical."
+      },
+      {
+        "m": 9,
+        "score": 3,
+        "note": "Camps reopening. Lush post-monsoon green. Some rain risk."
+      },
+      {
+        "m": 10,
+        "score": 5,
+        "note": "Clear skies, crisp air. Apple harvest season. Bonfire weather begins."
+      },
+      {
+        "m": 11,
+        "score": 5,
+        "note": "Cold nights, clear days. Stargazing at its best. Few visitors."
+      },
+      {
+        "m": 12,
+        "score": 4,
+        "note": "Very cold. Early snow possible. Christmas camping packages popular."
+      }
+    ],
+    "kids_friendly": {
+      "suitable": true,
+      "rating": 4,
+      "min_recommended_age": 4,
+      "best_age_group": "6-14",
+      "stroller_accessible": false,
+      "reasons": [
+        "Camping with bonfire, marshmallows, and stargazing \u2014 kids are in heaven",
+        "Safe forest environment with easy walking trails",
+        "Many camps offer adventure activities (rappelling, zip-line, rock climbing)"
+      ],
+      "concerns": [
+        "No cell signal at most camps \u2014 plan accordingly",
+        "No medical facility \u2014 nearest is Chamba UK (15km)",
+        "Night temperatures drop significantly \u2014 pack warm layers for kids",
+        "Tent accommodation may not suit very young children"
+      ],
+      "kid_highlights": [
+        "Camping under the stars with bonfire",
+        "Apple picking in orchards (September-November)",
+        "Zip-line and rappelling at adventure camps",
+        "Kodia Jungle nature walk"
+      ],
+      "not_suitable_reason": null
+    }
+  },
+  {
+    "id": "pithoragarh",
+    "name": "Pithoragarh",
+    "state_id": "uttarakhand",
+    "region": "Kumaon Far East",
+    "coords": {
+      "lat": 29.58,
+      "lng": 80.22
+    },
+    "elevation_m": 1514,
+    "type": [
+      "town",
+      "gateway",
+      "offbeat"
+    ],
+    "vibe": [
+      "offbeat",
+      "transit",
+      "quiet",
+      "cultural"
+    ],
+    "difficulty": "moderate",
+    "nearest_airport": "Pantnagar \u2014 240km",
+    "nearest_railhead": "Tanakpur \u2014 151km",
+    "tagline": "Gateway to the Panchachuli peaks and the Nepal border \u2014 where Kumaon stops being touristy and starts being real.",
+    "why_special": "Pithoragarh sits in a small valley that locals call 'Little Kashmir' (every place in India claims this, but the resemblance is genuine here \u2014 a valley floor surrounded by snow peaks). It's the gateway to Munsiyari, Milam Glacier, Panchachuli base camp, and the Kailash Mansarovar route via Lipulekh Pass. The town itself is a transit point, but the views of Panchachuli from the surrounding ridges are extraordinary. Chandak is 8km uphill and gives panoramic views. The Askot Wildlife Sanctuary nearby has musk deer.",
+    "budget_tier": "budget",
+    "ideal_duration_min": 1,
+    "ideal_duration_max": 2,
+    "tags": [
+      "gateway",
+      "offbeat",
+      "panchachuli",
+      "nepal-border",
+      "trekking-base",
+      "kumaon"
+    ],
+    "best_months": [
+      3,
+      4,
+      5,
+      10,
+      11
+    ],
+    "avoid_months": [
+      7,
+      8
+    ],
+    "translations": {},
+    "monthly_suitability": [
+      {
+        "m": 1,
+        "score": 3,
+        "note": "Cold (3-12\u00b0C). Clear mountain views. Quiet. Passes to Munsiyari open but cold."
+      },
+      {
+        "m": 2,
+        "score": 3,
+        "note": "Cold. Panchachuli views excellent on clear days. Few visitors."
+      },
+      {
+        "m": 3,
+        "score": 4,
+        "note": "Spring. Valley floor warming up. Wildflowers. Good for onward travel to Munsiyari."
+      },
+      {
+        "m": 4,
+        "score": 5,
+        "note": "Best month. Comfortable weather, clear views, everything accessible."
+      },
+      {
+        "m": 5,
+        "score": 5,
+        "note": "Warm but pleasant. Panchachuli base camp treks begin. Trekking season peaks."
+      },
+      {
+        "m": 6,
+        "score": 3,
+        "note": "Pre-monsoon. Kailash Mansarovar pilgrims pass through. Some rain."
+      },
+      {
+        "m": 7,
+        "score": 1,
+        "note": "Monsoon. Heavy rain, landslides on the narrow mountain roads. Dangerous."
+      },
+      {
+        "m": 8,
+        "score": 1,
+        "note": "Peak monsoon. Roads frequently blocked. Not recommended."
+      },
+      {
+        "m": 9,
+        "score": 3,
+        "note": "Monsoon ending. Roads reopening. Green and fresh."
+      },
+      {
+        "m": 10,
+        "score": 5,
+        "note": "Post-monsoon clarity. Panchachuli views stunning. Cool and crisp."
+      },
+      {
+        "m": 11,
+        "score": 4,
+        "note": "Getting cold. Clear skies. Munsiyari road still open. Last good month before winter sets in."
+      },
+      {
+        "m": 12,
+        "score": 3,
+        "note": "Cold. Shorter days. Roads to higher areas may close."
+      }
+    ],
+    "kids_friendly": {
+      "suitable": false,
+      "rating": 1,
+      "min_recommended_age": 12,
+      "best_age_group": "16+",
+      "stroller_accessible": false,
+      "reasons": [],
+      "concerns": [
+        "Very remote \u2014 8-10 hours from Pantnagar, narrow mountain roads",
+        "Limited medical facilities",
+        "Nothing for children to do \u2014 this is a transit town for trekkers",
+        "Long, tiring drives on bad roads"
+      ],
+      "kid_highlights": [],
+      "not_suitable_reason": "Too remote for family travel. The 8-10 hour drive on narrow mountain roads is exhausting. No child-oriented activities. Better to take kids to Nainital or Mukteshwar instead."
+    }
+  },
+  {
+    "id": "devprayag",
+    "name": "Devprayag",
+    "state_id": "uttarakhand",
+    "region": "Garhwal / Char Dham Route",
+    "coords": {
+      "lat": 30.14,
+      "lng": 78.6
+    },
+    "elevation_m": 830,
+    "type": [
+      "spiritual",
+      "confluence",
+      "heritage"
+    ],
+    "vibe": [
+      "spiritual",
+      "quiet",
+      "cultural",
+      "photogenic"
+    ],
+    "difficulty": "easy",
+    "nearest_airport": "Dehradun (Jolly Grant) \u2014 85km",
+    "nearest_railhead": "Rishikesh \u2014 70km",
+    "tagline": "Where the Alaknanda meets the Bhagirathi and the Ganges officially begins \u2014 a sacred confluence with a 10,000-year-old temple and water that actually changes color at the meeting point.",
+    "why_special": "Devprayag is THE spot where the two major Himalayan tributaries \u2014 Alaknanda (from Badrinath) and Bhagirathi (from Gangotri) \u2014 merge to form the Ganges. The confluence is dramatic and visible: one river is blue-green, the other grey-brown, and they merge in a swirl. Raghunath Temple here is claimed to be 10,000 years old (realistically 8th-10th century). The stone ghats cascading down to the confluence are photogenic and largely empty of tourists despite being on the main Char Dham highway. Most pilgrims pass through without stopping \u2014 their loss.",
+    "budget_tier": "budget",
+    "ideal_duration_min": 1,
+    "ideal_duration_max": 1,
+    "tags": [
+      "confluence",
+      "spiritual",
+      "ganges",
+      "photography",
+      "heritage",
+      "char-dham-route",
+      "offbeat"
+    ],
+    "best_months": [
+      10,
+      11,
+      3,
+      4
+    ],
+    "avoid_months": [
+      7,
+      8
+    ],
+    "translations": {},
+    "monthly_suitability": [
+      {
+        "m": 1,
+        "score": 3,
+        "note": "Cool (5-15\u00b0C). Confluence is clear. Few visitors. Good for photography."
+      },
+      {
+        "m": 2,
+        "score": 3,
+        "note": "Warming up. Rivers still clear. Quiet."
+      },
+      {
+        "m": 3,
+        "score": 5,
+        "note": "Perfect. Comfortable weather, clear rivers, good light for photography."
+      },
+      {
+        "m": 4,
+        "score": 5,
+        "note": "Warm, clear. Char Dham pilgrimage begins \u2014 town gets some life."
+      },
+      {
+        "m": 5,
+        "score": 4,
+        "note": "Warm. Pilgrim traffic increases. Rivers still visible."
+      },
+      {
+        "m": 6,
+        "score": 3,
+        "note": "Pre-monsoon. Rivers starting to swell. Still worth a stop."
+      },
+      {
+        "m": 7,
+        "score": 1,
+        "note": "Monsoon. Both rivers in spate \u2014 muddy brown, confluence invisible. Flooding risk at ghats."
+      },
+      {
+        "m": 8,
+        "score": 1,
+        "note": "Same. Dangerous water levels. Not the time."
+      },
+      {
+        "m": 9,
+        "score": 3,
+        "note": "Rivers calming. Color difference returning. Post-monsoon freshness."
+      },
+      {
+        "m": 10,
+        "score": 5,
+        "note": "Best month. Crystal clear rivers, dramatic color contrast at confluence. Perfect photography."
+      },
+      {
+        "m": 11,
+        "score": 5,
+        "note": "Clear, crisp, quiet. Rivers at their cleanest."
+      },
+      {
+        "m": 12,
+        "score": 3,
+        "note": "Cold. Rivers clear. Short visit sufficient."
+      }
+    ],
+    "kids_friendly": {
+      "suitable": true,
+      "rating": 2,
+      "min_recommended_age": 6,
+      "best_age_group": "8-14",
+      "stroller_accessible": false,
+      "reasons": [
+        "The visible color difference at the confluence is genuinely fascinating for any age",
+        "Easy stop on the Char Dham route \u2014 no detour needed"
+      ],
+      "concerns": [
+        "Steep stone ghats with no railings \u2014 dangerous for small children near the water",
+        "Not a destination in itself \u2014 1-2 hour stop at most",
+        "Very limited food and facility options"
+      ],
+      "kid_highlights": [
+        "Watching two different-colored rivers merge \u2014 natural science lesson",
+        "Stone ghats cascading to the water",
+        "Suspension bridge across the confluence"
+      ],
+      "not_suitable_reason": null
+    }
+  },
+  {
+    "id": "joshimath",
+    "name": "Joshimath",
+    "state_id": "uttarakhand",
+    "region": "Garhwal / Char Dham Route",
+    "coords": {
+      "lat": 30.55,
+      "lng": 79.56
+    },
+    "elevation_m": 1890,
+    "type": [
+      "town",
+      "gateway",
+      "spiritual"
+    ],
+    "vibe": [
+      "transit",
+      "spiritual",
+      "trekking-base"
+    ],
+    "difficulty": "moderate",
+    "nearest_airport": "Dehradun (Jolly Grant) \u2014 270km",
+    "nearest_railhead": "Rishikesh \u2014 250km",
+    "tagline": "Gateway to Auli, Badrinath, Valley of Flowers, and Hemkund Sahib \u2014 a town literally sinking into the mountain, fighting to stay relevant.",
+    "why_special": "Joshimath is the mandatory transit point for half of Uttarakhand's biggest attractions: Auli (gondola starts here), Badrinath (45km ahead), Valley of Flowers (via Govindghat, 25km), and Hemkund Sahib. Adi Shankaracharya established one of his four mathas here in the 8th century. The town made global headlines in 2023 when land subsidence cracked hundreds of buildings \u2014 it's literally sinking due to geological instability and over-construction. Many hotels were demolished. The town is rebuilding but the crisis underscored that Joshimath is on borrowed time geologically. Still functional as a transit hub and worth understanding separately from Auli.",
+    "budget_tier": "budget",
+    "ideal_duration_min": 1,
+    "ideal_duration_max": 2,
+    "tags": [
+      "gateway",
+      "spiritual",
+      "auli",
+      "badrinath",
+      "valley-of-flowers",
+      "shankaracharya",
+      "subsidence"
+    ],
+    "best_months": [
+      5,
+      6,
+      9,
+      10
+    ],
+    "avoid_months": [
+      7,
+      8,
+      1,
+      2
+    ],
+    "translations": {},
+    "monthly_suitability": [
+      {
+        "m": 1,
+        "score": 2,
+        "note": "Cold. Auli skiing accessible via gondola. Badrinath closed. Town quiet."
+      },
+      {
+        "m": 2,
+        "score": 2,
+        "note": "Cold. Same as January. Skiing in Auli is the only draw."
+      },
+      {
+        "m": 3,
+        "score": 3,
+        "note": "Warming. Roads opening. Pre-season quiet."
+      },
+      {
+        "m": 4,
+        "score": 3,
+        "note": "Badrinath portals opening (late April). Town waking up."
+      },
+      {
+        "m": 5,
+        "score": 5,
+        "note": "Full season. Badrinath open, Auli green, roads clear. Gateway functions at peak."
+      },
+      {
+        "m": 6,
+        "score": 5,
+        "note": "Valley of Flowers and Hemkund Sahib open. Pilgrim traffic heavy but everything accessible."
+      },
+      {
+        "m": 7,
+        "score": 2,
+        "note": "Monsoon. Landslide risk severe on approach roads. Valley of Flowers is lush but getting there is the gamble."
+      },
+      {
+        "m": 8,
+        "score": 2,
+        "note": "Peak monsoon risk. Roads to Badrinath frequently blocked."
+      },
+      {
+        "m": 9,
+        "score": 5,
+        "note": "Post-monsoon sweet spot. Everything open, crowds thinning, clear skies."
+      },
+      {
+        "m": 10,
+        "score": 5,
+        "note": "Badrinath closing month. Last chance. Auli gorgeous with autumn colors."
+      },
+      {
+        "m": 11,
+        "score": 2,
+        "note": "Badrinath closed. Getting cold. Auli skiing not yet started."
+      },
+      {
+        "m": 12,
+        "score": 2,
+        "note": "Cold. Auli skiing begins late December. Town mostly in transit mode."
+      }
+    ],
+    "kids_friendly": {
+      "suitable": true,
+      "rating": 2,
+      "min_recommended_age": 8,
+      "best_age_group": "10-16",
+      "stroller_accessible": false,
+      "reasons": [
+        "Auli gondola ride is exciting for all ages",
+        "Transit stop \u2014 not a destination where you spend significant time with kids"
+      ],
+      "concerns": [
+        "Long drive from Rishikesh (10-12 hours) is exhausting for children",
+        "Town infrastructure is damaged post-subsidence \u2014 not all areas are safe",
+        "Limited medical facilities",
+        "High altitude \u2014 mild AMS possible for sensitive children"
+      ],
+      "kid_highlights": [
+        "Asia's longest gondola ride to Auli",
+        "Snow views from the town",
+        "Narsingh Temple visit"
+      ],
+      "not_suitable_reason": null
+    }
+  },
+  {
+    "id": "kasauli",
+    "name": "Kasauli",
+    "state_id": "himachal-pradesh",
+    "region": "Solan / Lower Himachal",
+    "coords": {
+      "lat": 30.9,
+      "lng": 76.97
+    },
+    "elevation_m": 1795,
+    "type": [
+      "cantonment",
+      "hill-station",
+      "colonial"
+    ],
+    "vibe": [
+      "quiet",
+      "colonial",
+      "family",
+      "weekend-escape"
+    ],
+    "difficulty": "easy",
+    "nearest_airport": "Chandigarh \u2014 60km",
+    "nearest_railhead": "Kalka \u2014 40km",
+    "tagline": "A British cantonment hill station that refuses to grow \u2014 no malls, no markets, no chaos, just colonial bungalows and pine forests 4 hours from Delhi.",
+    "why_special": "Kasauli is the closest proper hill station to Chandigarh (60km) and one of the easiest escapes from Delhi-NCR. Half the town is an army cantonment (Indian Air Force station), which keeps commercial development at bay. Christ Church (1853) is a working colonial church. Monkey Point is the highest point \u2014 technically inside the air force base, so you need ID to enter. The walk along the Mall is actually pleasant because there's genuinely nothing commercial on it \u2014 just colonial buildings, pine trees, and views of the plains below. Kasauli Brewery (one of India's oldest, 1820s) is nearby but not open to public.",
+    "budget_tier": "mid",
+    "ideal_duration_min": 1,
+    "ideal_duration_max": 2,
+    "tags": [
+      "colonial",
+      "cantonment",
+      "quiet",
+      "weekend-getaway",
+      "pine-forest",
+      "family",
+      "church"
+    ],
+    "best_months": [
+      3,
+      4,
+      5,
+      10,
+      11
+    ],
+    "avoid_months": [
+      7,
+      8
+    ],
+    "translations": {},
+    "monthly_suitability": [
+      {
+        "m": 1,
+        "score": 3,
+        "note": "Cold (2-10\u00b0C). Occasional frost. Very quiet. Pine forest walks in mist."
+      },
+      {
+        "m": 2,
+        "score": 3,
+        "note": "Cold but improving. Quiet. Good hotel deals."
+      },
+      {
+        "m": 3,
+        "score": 5,
+        "note": "Spring perfection. 12-22\u00b0C, wildflowers, clear views of plains. Best month."
+      },
+      {
+        "m": 4,
+        "score": 5,
+        "note": "Warm, pleasant. Everything green. Great for walks."
+      },
+      {
+        "m": 5,
+        "score": 4,
+        "note": "Warm (28\u00b0C) but still cooler than plains. Popular Delhi weekend escape."
+      },
+      {
+        "m": 6,
+        "score": 3,
+        "note": "Pre-monsoon. Warm and humid. Occasional thunderstorms."
+      },
+      {
+        "m": 7,
+        "score": 1,
+        "note": "Monsoon. Heavy rain, landslides on approach (Parwanoo-Kasauli road prone to slides)."
+      },
+      {
+        "m": 8,
+        "score": 1,
+        "note": "Monsoon continues. Foggy, wet. Not recommended."
+      },
+      {
+        "m": 9,
+        "score": 3,
+        "note": "Post-monsoon. Green and fresh. Some rain still."
+      },
+      {
+        "m": 10,
+        "score": 5,
+        "note": "Clear skies, crisp air. Autumn colors. Comfortable 10-22\u00b0C."
+      },
+      {
+        "m": 11,
+        "score": 4,
+        "note": "Cool, clear, quiet. Diwali weekend gets a surge."
+      },
+      {
+        "m": 12,
+        "score": 3,
+        "note": "Cold. Short days. Christmas brings a small crowd."
+      }
+    ],
+    "kids_friendly": {
+      "suitable": true,
+      "rating": 3,
+      "min_recommended_age": 3,
+      "best_age_group": "5-12",
+      "stroller_accessible": false,
+      "reasons": [
+        "Very safe cantonment environment \u2014 no traffic, no touts",
+        "Easy walks on flat colonial roads through pine forests",
+        "Close to Chandigarh/Delhi \u2014 short drive, no altitude issues"
+      ],
+      "concerns": [
+        "Not much to 'do' \u2014 no rides, amusement, or adventure activities",
+        "Monkey Point access requires ID and has steep stairs",
+        "Limited restaurant options \u2014 hotel dining mostly"
+      ],
+      "kid_highlights": [
+        "Pine forest walks \u2014 collecting pinecones is the activity",
+        "Monkey Point viewpoint (if accessible)",
+        "Christ Church visit \u2014 old colonial architecture",
+        "Gilbert Trail walk through the forest"
+      ],
+      "not_suitable_reason": null
+    }
+  },
+  {
+    "id": "chail",
+    "name": "Chail",
+    "state_id": "himachal-pradesh",
+    "region": "Solan / Lower Himachal",
+    "coords": {
+      "lat": 30.96,
+      "lng": 77.19
+    },
+    "elevation_m": 2250,
+    "type": [
+      "hill-station",
+      "heritage",
+      "offbeat"
+    ],
+    "vibe": [
+      "quiet",
+      "heritage",
+      "offbeat",
+      "family"
+    ],
+    "difficulty": "easy",
+    "nearest_airport": "Chandigarh \u2014 90km",
+    "nearest_railhead": "Kalka \u2014 72km",
+    "tagline": "Home to the world's highest cricket ground, a maharaja's exile palace, and the kind of Himalayan quiet that Shimla sold out decades ago.",
+    "why_special": "Chail was built as a summer retreat by the Maharaja of Patiala after the British banned him from Shimla (he allegedly had an affair with the Viceroy's daughter). The Chail Cricket Ground at 2444m is the world's highest, surrounded by deodar forest. The Chail Palace (now a heritage hotel) sits on a hilltop. The wildlife sanctuary has barking deer, langurs, and occasionally leopards. Kali Ka Tibba temple at the highest point gives views of Shimla, Kasauli, and the Sutlej valley. No commercial madness \u2014 Chail is genuinely peaceful.",
+    "budget_tier": "budget-to-mid",
+    "ideal_duration_min": 1,
+    "ideal_duration_max": 2,
+    "tags": [
+      "cricket-ground",
+      "heritage",
+      "palace",
+      "quiet",
+      "wildlife",
+      "colonial",
+      "offbeat"
+    ],
+    "best_months": [
+      3,
+      4,
+      5,
+      10,
+      11
+    ],
+    "avoid_months": [
+      7,
+      8
+    ],
+    "translations": {},
+    "monthly_suitability": [
+      {
+        "m": 1,
+        "score": 3,
+        "note": "Cold (0-8\u00b0C). Snow possible. Deodar forest in frost is beautiful. Very quiet."
+      },
+      {
+        "m": 2,
+        "score": 3,
+        "note": "Cold. Snow still possible. Quiet season."
+      },
+      {
+        "m": 3,
+        "score": 5,
+        "note": "Spring. Wildflowers, comfortable 10-20\u00b0C, clear views. Cricket ground emerald green."
+      },
+      {
+        "m": 4,
+        "score": 5,
+        "note": "Perfect weather. Forest alive. Best month for visiting."
+      },
+      {
+        "m": 5,
+        "score": 4,
+        "note": "Warm but pleasant. Weekend traffic from Chandigarh/Delhi. Still far quieter than Shimla."
+      },
+      {
+        "m": 6,
+        "score": 3,
+        "note": "Pre-monsoon. Warm, occasional thunderstorms."
+      },
+      {
+        "m": 7,
+        "score": 1,
+        "note": "Monsoon. Heavy rain, leeches in the forest, landslide risk."
+      },
+      {
+        "m": 8,
+        "score": 1,
+        "note": "Monsoon continues. Not recommended."
+      },
+      {
+        "m": 9,
+        "score": 3,
+        "note": "Monsoon ending. Green and lush. Good for photography."
+      },
+      {
+        "m": 10,
+        "score": 5,
+        "note": "Post-monsoon clarity. Autumn colors in the deodar forest. Cool and crisp."
+      },
+      {
+        "m": 11,
+        "score": 4,
+        "note": "Cold, clear, quiet. Perfect for heritage hotel stays."
+      },
+      {
+        "m": 12,
+        "score": 3,
+        "note": "Cold. Snow possible late December. Christmas atmosphere at the palace hotel."
+      }
+    ],
+    "kids_friendly": {
+      "suitable": true,
+      "rating": 4,
+      "min_recommended_age": 3,
+      "best_age_group": "5-14",
+      "stroller_accessible": false,
+      "reasons": [
+        "The world's highest cricket ground \u2014 kids can actually play cricket there",
+        "Wildlife sanctuary has easy walking trails",
+        "Safe, quiet environment with no traffic or commercial chaos",
+        "Palace hotel is interesting for kids (royal heritage feel)"
+      ],
+      "concerns": [
+        "Limited restaurant options outside hotels",
+        "No medical facility \u2014 nearest hospital is in Solan (45km)",
+        "Not much to do beyond 1 day for kids"
+      ],
+      "kid_highlights": [
+        "Playing at the world's highest cricket ground",
+        "Palace hotel exploration",
+        "Wildlife sanctuary nature walk \u2014 spotting deer and monkeys",
+        "Kali Ka Tibba temple viewpoint"
+      ],
+      "not_suitable_reason": null
+    }
+  },
+  {
+    "id": "sarahan",
+    "name": "Sarahan",
+    "state_id": "himachal-pradesh",
+    "region": "Kinnaur / Bushahr",
+    "coords": {
+      "lat": 31.51,
+      "lng": 77.8
+    },
+    "elevation_m": 2165,
+    "type": [
+      "temple-town",
+      "heritage",
+      "offbeat"
+    ],
+    "vibe": [
+      "spiritual",
+      "quiet",
+      "offbeat",
+      "cultural"
+    ],
+    "difficulty": "moderate",
+    "nearest_airport": "Shimla \u2014 180km",
+    "nearest_railhead": "Shimla \u2014 180km",
+    "tagline": "The Bhimakali Temple \u2014 one of the 51 Shakti Peethas, wooden Pahari architecture, and a front-row view of the Srikhand Mahadev peak that nobody in your Instagram feed has posted.",
+    "why_special": "Sarahan is the seat of the Bhimakali Temple \u2014 a stunning wooden and stone tower temple (Pahari architecture) that was the royal temple of the Bushahr dynasty. It's one of the 51 Shakti Peethas and one of the most architecturally impressive temples in Himachal. The twin tower design, silver doors, and the inner sanctum are remarkable. The village sits at 2165m with Srikhand Mahadev (5227m) directly ahead \u2014 the snow peak looms over the temple. On the Shimla-Kinnaur highway but most people drive through without stopping. The pheasant breeding center is a bonus \u2014 Himalayan monal (HP's state bird), western tragopan.",
+    "budget_tier": "budget",
+    "ideal_duration_min": 1,
+    "ideal_duration_max": 1,
+    "tags": [
+      "temple",
+      "shakti-peetha",
+      "pahari-architecture",
+      "offbeat",
+      "kinnaur",
+      "pheasant",
+      "photography"
+    ],
+    "best_months": [
+      4,
+      5,
+      9,
+      10
+    ],
+    "avoid_months": [
+      7,
+      8
+    ],
+    "translations": {},
+    "monthly_suitability": [
+      {
+        "m": 1,
+        "score": 3,
+        "note": "Cold (0-8\u00b0C). Temple open. Snow possible. Srikhand peak gleams white."
+      },
+      {
+        "m": 2,
+        "score": 3,
+        "note": "Cold. Clear days have great mountain views. Quiet."
+      },
+      {
+        "m": 3,
+        "score": 4,
+        "note": "Warming up. Apple blossoms in surrounding orchards. Road conditions improving."
+      },
+      {
+        "m": 4,
+        "score": 5,
+        "note": "Best month. Comfortable weather, clear views, temple atmosphere is serene."
+      },
+      {
+        "m": 5,
+        "score": 5,
+        "note": "Warm days, cool nights. Kinnaur route in full swing. Cherry harvest."
+      },
+      {
+        "m": 6,
+        "score": 3,
+        "note": "Pre-monsoon. Some rain. Road to Kinnaur still good."
+      },
+      {
+        "m": 7,
+        "score": 1,
+        "note": "Monsoon. Landslide risk on NH-5. Road to Sarahan from Rampur can be blocked."
+      },
+      {
+        "m": 8,
+        "score": 1,
+        "note": "Peak monsoon. Road closures frequent. Not recommended."
+      },
+      {
+        "m": 9,
+        "score": 4,
+        "note": "Post-monsoon. Apple harvest. Clear skies returning. Road stabilizing."
+      },
+      {
+        "m": 10,
+        "score": 5,
+        "note": "Excellent. Apple orchards loaded, Srikhand peak crystal clear, cool weather."
+      },
+      {
+        "m": 11,
+        "score": 4,
+        "note": "Cold, clear. Orchards bare but mountain views stunning."
+      },
+      {
+        "m": 12,
+        "score": 3,
+        "note": "Cold. Snow on higher reaches. Temple remains accessible."
+      }
+    ],
+    "kids_friendly": {
+      "suitable": true,
+      "rating": 2,
+      "min_recommended_age": 8,
+      "best_age_group": "10-16",
+      "stroller_accessible": false,
+      "reasons": [
+        "Temple architecture is genuinely impressive and different from anything kids have seen",
+        "Pheasant breeding center shows rare Himalayan birds up close"
+      ],
+      "concerns": [
+        "Long drive from Shimla (7-8 hours) on winding mountain roads",
+        "Very limited food and lodging options",
+        "Temple requires removing leather items and shoes \u2014 cultural protocol to explain to kids",
+        "Not a destination for extended stays with children"
+      ],
+      "kid_highlights": [
+        "Bhimakali Temple \u2014 twin towers, silver doors, ancient wood carvings",
+        "Pheasant breeding center \u2014 Himalayan monal, western tragopan",
+        "Snow peak views of Srikhand Mahadev"
+      ],
+      "not_suitable_reason": null
+    }
+  },
+  {
+    "id": "nako",
+    "name": "Nako",
+    "state_id": "himachal-pradesh",
+    "region": "Kinnaur / Spiti Corridor",
+    "coords": {
+      "lat": 31.88,
+      "lng": 78.63
+    },
+    "elevation_m": 3662,
+    "type": [
+      "village",
+      "lake",
+      "monastery"
+    ],
+    "vibe": [
+      "remote",
+      "offbeat",
+      "spiritual",
+      "quiet"
+    ],
+    "difficulty": "moderate",
+    "nearest_airport": "Shimla \u2014 300km",
+    "nearest_railhead": "Shimla \u2014 300km",
+    "tagline": "A Buddhist village with a sacred lake reflecting Reo Purgyil (6816m) \u2014 the midpoint between Kinnaur and Spiti where the landscape shifts from green to lunar.",
+    "why_special": "Nako is the village where Himachal starts looking like Ladakh. At 3662m, it's an important acclimatization stop on the Kinnaur-Spiti circuit. Nako Lake is sacred, ringed by prayer wheels and willows, reflecting the Reo Purgyil peak (HP's highest at 6816m). The 11th-century Nako Monastery has frescoes attributed to Rinchen Zangpo (the same translator-monk who built Tabo). The village has traditional flat-roofed stone houses, apricot orchards, and a fossilized lake (Lake Tso, seasonal). It's where you feel the cultural transition from Hindu Kinnaur to Buddhist Spiti.",
+    "budget_tier": "budget",
+    "ideal_duration_min": 1,
+    "ideal_duration_max": 1,
+    "tags": [
+      "lake",
+      "monastery",
+      "kinnaur-spiti",
+      "acclimatization",
+      "offbeat",
+      "buddhist",
+      "high-altitude"
+    ],
+    "best_months": [
+      5,
+      6,
+      9,
+      10
+    ],
+    "avoid_months": [
+      12,
+      1,
+      2
+    ],
+    "translations": {},
+    "monthly_suitability": [
+      {
+        "m": 1,
+        "score": 1,
+        "note": "Deep winter. -15\u00b0C possible. Lake frozen. Road from Peo open but icy and dangerous."
+      },
+      {
+        "m": 2,
+        "score": 1,
+        "note": "Same as January. Hardcore only."
+      },
+      {
+        "m": 3,
+        "score": 2,
+        "note": "Thawing. Still very cold. Road conditions improving. Apricot blossoms starting."
+      },
+      {
+        "m": 4,
+        "score": 3,
+        "note": "Spring arriving. Apricot bloom. Lake thawing. Road open."
+      },
+      {
+        "m": 5,
+        "score": 5,
+        "note": "Excellent. Full circuit accessible. Lake reflects peaks. Comfortable days (10-20\u00b0C)."
+      },
+      {
+        "m": 6,
+        "score": 5,
+        "note": "Best month. Warm, clear, everything accessible. Apricot harvest."
+      },
+      {
+        "m": 7,
+        "score": 3,
+        "note": "Nako itself is rain-shadow but approach roads from Kinnaur side get landslides."
+      },
+      {
+        "m": 8,
+        "score": 3,
+        "note": "Same risk. Village is fine but getting there is the gamble."
+      },
+      {
+        "m": 9,
+        "score": 5,
+        "note": "Post-monsoon clarity. Stunning. Lake at its most photogenic."
+      },
+      {
+        "m": 10,
+        "score": 5,
+        "note": "Last month of comfortable access. Golden autumn colors. Crisp air."
+      },
+      {
+        "m": 11,
+        "score": 2,
+        "note": "Very cold. Lake starting to freeze. Most homestays closing."
+      },
+      {
+        "m": 12,
+        "score": 1,
+        "note": "Deep winter. Not for casual travel."
+      }
+    ],
+    "kids_friendly": {
+      "suitable": false,
+      "rating": 1,
+      "min_recommended_age": 12,
+      "best_age_group": "16+",
+      "stroller_accessible": false,
+      "reasons": [],
+      "concerns": [
+        "High altitude (3662m) \u2014 AMS risk for children",
+        "Extremely remote \u2014 2-day drive from Shimla",
+        "No medical facilities",
+        "Basic homestay accommodation only"
+      ],
+      "kid_highlights": [],
+      "not_suitable_reason": "High altitude, extreme remoteness, and zero medical infrastructure make this unsuitable for children. The 2-day drive on narrow mountain roads is exhausting."
+    }
+  },
+  {
+    "id": "keylong",
+    "name": "Keylong",
+    "state_id": "himachal-pradesh",
+    "region": "Lahaul Valley",
+    "coords": {
+      "lat": 32.57,
+      "lng": 77.03
+    },
+    "elevation_m": 3080,
+    "type": [
+      "town",
+      "gateway",
+      "buddhist"
+    ],
+    "vibe": [
+      "transit",
+      "quiet",
+      "offbeat",
+      "cultural"
+    ],
+    "difficulty": "moderate",
+    "nearest_airport": "Bhuntar (Kullu) \u2014 120km",
+    "nearest_railhead": "Joginder Nagar \u2014 180km",
+    "tagline": "The administrative capital of Lahaul, now 3 hours from Manali via Atal Tunnel \u2014 gateway to Udaipur (HP), Triloknath, and the old Leh highway.",
+    "why_special": "Keylong was historically a remote outpost accessible only 5 months a year. The Atal Tunnel (opened 2020) changed everything \u2014 it's now 3 hours from Manali year-round. The town is the headquarters of Lahaul-Spiti district and a gateway to the Pattan Valley (Udaipur HP, Triloknath Temple) and the Leh-Manali highway. Kardang Monastery across the Bhaga river is one of the oldest in Lahaul. The town itself is functional rather than pretty, but the surrounding valley with its snow peaks, barley fields, and Buddhist gompas is stunning. Useful overnight stop on the Leh highway.",
+    "budget_tier": "budget",
+    "ideal_duration_min": 1,
+    "ideal_duration_max": 2,
+    "tags": [
+      "gateway",
+      "lahaul",
+      "monastery",
+      "atal-tunnel",
+      "transit",
+      "offbeat",
+      "buddhist"
+    ],
+    "best_months": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "avoid_months": [
+      12,
+      1,
+      2
+    ],
+    "translations": {},
+    "monthly_suitability": [
+      {
+        "m": 1,
+        "score": 2,
+        "note": "Accessible via Atal Tunnel but very cold (-10 to 5\u00b0C). Most hotels closed. Hardcore only."
+      },
+      {
+        "m": 2,
+        "score": 2,
+        "note": "Same. Deep winter. Atal Tunnel keeps it reachable but there's little reason to visit."
+      },
+      {
+        "m": 3,
+        "score": 2,
+        "note": "Still very cold. Snow melting. Roads beyond Keylong (toward Leh) still closed."
+      },
+      {
+        "m": 4,
+        "score": 3,
+        "note": "Warming. Barley planting begins. Leh highway not yet open."
+      },
+      {
+        "m": 5,
+        "score": 4,
+        "note": "Spring arriving at altitude. Leh highway may open late May. Town coming alive."
+      },
+      {
+        "m": 6,
+        "score": 5,
+        "note": "Full summer. Everything accessible. Comfortable (10-25\u00b0C). Leh highway open."
+      },
+      {
+        "m": 7,
+        "score": 5,
+        "note": "Best month. Barley green, wildflowers, all roads open. Lahaul is rain-shadow \u2014 minimal monsoon."
+      },
+      {
+        "m": 8,
+        "score": 5,
+        "note": "Same. Warm, clear, festivals. Lahaul barely gets monsoon rain."
+      },
+      {
+        "m": 9,
+        "score": 5,
+        "note": "Harvest season. Golden barley. Clear skies. Leh highway still open."
+      },
+      {
+        "m": 10,
+        "score": 3,
+        "note": "Getting cold. Leh highway closes mid-to-late October. Last window."
+      },
+      {
+        "m": 11,
+        "score": 2,
+        "note": "Cold. Most services shutting. Atal Tunnel access only."
+      },
+      {
+        "m": 12,
+        "score": 2,
+        "note": "Deep winter. Reachable but not practical for tourism."
+      }
+    ],
+    "kids_friendly": {
+      "suitable": false,
+      "rating": 1,
+      "min_recommended_age": 10,
+      "best_age_group": "14+",
+      "stroller_accessible": false,
+      "reasons": [],
+      "concerns": [
+        "High altitude (3080m) \u2014 AMS risk for children",
+        "Basic town infrastructure \u2014 limited food and lodging options",
+        "No child-oriented activities",
+        "Long drive even via Atal Tunnel"
+      ],
+      "kid_highlights": [],
+      "not_suitable_reason": "High altitude, basic infrastructure, and nothing for children to do. Use as a transit stop if traveling with older kids to Leh."
+    }
+  },
+  {
+    "id": "mandi",
+    "name": "Mandi",
+    "state_id": "himachal-pradesh",
+    "region": "Central Himachal",
+    "coords": {
+      "lat": 31.72,
+      "lng": 76.93
+    },
+    "elevation_m": 760,
+    "type": [
+      "town",
+      "heritage",
+      "gateway"
+    ],
+    "vibe": [
+      "cultural",
+      "transit",
+      "heritage",
+      "spiritual"
+    ],
+    "difficulty": "easy",
+    "nearest_airport": "Bhuntar (Kullu) \u2014 60km",
+    "nearest_railhead": "Joginder Nagar \u2014 55km",
+    "tagline": "The 'Varanasi of the Hills' \u2014 81 ancient stone temples along the Beas river, the Shivratri fair that draws all of Himachal, and the junction where every mountain road converges.",
+    "why_special": "Mandi is where roads to Kullu/Manali, Dharamshala, Shimla, and the Rewalsar Lake all meet. Most travelers pass through without stopping, which is a mistake. The town has 81 ancient stone temples \u2014 more per square kilometer than almost anywhere in India. Bhootnath Temple, Triloknath Temple, and Panchvaktra Temple (five-faced Shiva) are architecturally significant. The International Maha Shivratri Fair (7 days in February/March) brings 200+ deities from surrounding villages in procession \u2014 it's one of Himachal's biggest cultural events. Rewalsar Lake (24km) is sacred to Hindus, Sikhs, and Buddhists simultaneously.",
+    "budget_tier": "budget",
+    "ideal_duration_min": 1,
+    "ideal_duration_max": 2,
+    "tags": [
+      "temple",
+      "heritage",
+      "shivratri",
+      "transit",
+      "rewalsar",
+      "cultural",
+      "gateway"
+    ],
+    "best_months": [
+      10,
+      11,
+      2,
+      3,
+      4
+    ],
+    "avoid_months": [
+      7,
+      8
+    ],
+    "translations": {},
+    "monthly_suitability": [
+      {
+        "m": 1,
+        "score": 3,
+        "note": "Cool (5-15\u00b0C). Temple visits pleasant. Town quiet."
+      },
+      {
+        "m": 2,
+        "score": 5,
+        "note": "Shivratri Fair month (Feb/March). THE reason to visit Mandi. Massive cultural event."
+      },
+      {
+        "m": 3,
+        "score": 5,
+        "note": "Shivratri may fall here. Spring arriving. Comfortable weather for temple walks."
+      },
+      {
+        "m": 4,
+        "score": 4,
+        "note": "Warm but pleasant. Good transit month for Kullu/Manali."
+      },
+      {
+        "m": 5,
+        "score": 3,
+        "note": "Getting hot (30-35\u00b0C). Transit stop viable but not a destination."
+      },
+      {
+        "m": 6,
+        "score": 2,
+        "note": "Hot and humid. Pre-monsoon."
+      },
+      {
+        "m": 7,
+        "score": 1,
+        "note": "Monsoon. Beas in spate. Heavy rain. Landslides on connecting roads."
+      },
+      {
+        "m": 8,
+        "score": 1,
+        "note": "Same. Not recommended."
+      },
+      {
+        "m": 9,
+        "score": 3,
+        "note": "Monsoon ending. Rivers still high. Town recovering."
+      },
+      {
+        "m": 10,
+        "score": 4,
+        "note": "Post-monsoon. Pleasant weather. Good transit conditions."
+      },
+      {
+        "m": 11,
+        "score": 4,
+        "note": "Cool, clear. Temple visits comfortable. Quiet."
+      },
+      {
+        "m": 12,
+        "score": 3,
+        "note": "Cold mornings, pleasant afternoons. Good for a stop."
+      }
+    ],
+    "kids_friendly": {
+      "suitable": true,
+      "rating": 2,
+      "min_recommended_age": 6,
+      "best_age_group": "8-14",
+      "stroller_accessible": false,
+      "reasons": [
+        "Rewalsar Lake has boating and multi-faith temples that are interesting",
+        "Shivratri Fair is a genuine cultural spectacle \u2014 gods carried in palanquins"
+      ],
+      "concerns": [
+        "Town is a busy transit hub \u2014 traffic, noise, not a leisure destination",
+        "Temples require patience that young kids may lack",
+        "Hot in summer months"
+      ],
+      "kid_highlights": [
+        "Rewalsar Lake \u2014 boating, giant Buddhist statue, floating island",
+        "Shivratri Fair if timing aligns \u2014 processions, stalls, festivities",
+        "Panchvaktra Temple \u2014 five-faced Shiva is dramatic"
+      ],
+      "not_suitable_reason": null
+    }
+  },
+  {
+    "id": "kufri",
+    "name": "Kufri",
+    "state_id": "himachal-pradesh",
+    "region": "Shimla Ridge",
+    "coords": {
+      "lat": 31.1,
+      "lng": 77.27
+    },
+    "elevation_m": 2622,
+    "type": [
+      "hill-station",
+      "adventure",
+      "family"
+    ],
+    "vibe": [
+      "touristy",
+      "family",
+      "adventure",
+      "snow"
+    ],
+    "difficulty": "easy",
+    "nearest_airport": "Shimla \u2014 20km",
+    "nearest_railhead": "Shimla \u2014 16km",
+    "tagline": "Shimla's snow playground \u2014 yak rides, skiing, and a Himalayan zoo, 16km from Mall Road. Touristy, sure, but kids don't care about authenticity.",
+    "why_special": "Kufri is Shimla's adventure suburb \u2014 16km east on the Hindustan-Tibet road. In winter (December-February), it gets reliable snow when Shimla itself doesn't. The main draws: Himalayan Nature Park (small zoo with snow leopard, musk deer, and Himalayan monal), yak and horse rides on the ridge, and skiing on Mahasu Peak. Green Meadows has adventure activities (zip-line, ATV). It's genuinely tourist-trappy with overpriced pony rides and muddy paths, but in snow season it transforms into something special. The Fagu-Kufri stretch of the NH is one of the prettiest mountain drives in Himachal.",
+    "budget_tier": "budget-to-mid",
+    "ideal_duration_min": 1,
+    "ideal_duration_max": 1,
+    "tags": [
+      "snow",
+      "yak-ride",
+      "skiing",
+      "family",
+      "zoo",
+      "shimla-extension",
+      "adventure"
+    ],
+    "best_months": [
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      7,
+      8
+    ],
+    "translations": {},
+    "monthly_suitability": [
+      {
+        "m": 1,
+        "score": 5,
+        "note": "Peak snow season. Skiing, snowball fights, yak rides in snow. -5 to 5\u00b0C. Magical for families."
+      },
+      {
+        "m": 2,
+        "score": 5,
+        "note": "Best snow month. Reliable snowfall. Mahasu Peak skiing. Cold but worth it."
+      },
+      {
+        "m": 3,
+        "score": 4,
+        "note": "Snow melting. Spring arriving. Still cold enough for a snow experience some days."
+      },
+      {
+        "m": 4,
+        "score": 3,
+        "note": "Green and pleasant. No snow. Zoo and nature walks. Manageable."
+      },
+      {
+        "m": 5,
+        "score": 3,
+        "note": "Summer crowds from plains. Green Meadows busy. Horse rides overpriced."
+      },
+      {
+        "m": 6,
+        "score": 2,
+        "note": "Pre-monsoon. Warm. Tourist trap vibes at maximum."
+      },
+      {
+        "m": 7,
+        "score": 1,
+        "note": "Monsoon. Muddy trails, landslide risk on approach. Everything looks sad."
+      },
+      {
+        "m": 8,
+        "score": 1,
+        "note": "Same. Worst time. Muddy, wet, depressing."
+      },
+      {
+        "m": 9,
+        "score": 2,
+        "note": "Monsoon ending. Mud drying up. Not much to do yet."
+      },
+      {
+        "m": 10,
+        "score": 3,
+        "note": "Autumn. Clear skies, mountain views. No snow yet. Pleasant walk weather."
+      },
+      {
+        "m": 11,
+        "score": 3,
+        "note": "Getting cold. Waiting for first snow. Quiet."
+      },
+      {
+        "m": 12,
+        "score": 5,
+        "note": "Snow arrives. Christmas/NYE rush. Book ahead. Yak rides in fresh snow."
+      }
+    ],
+    "kids_friendly": {
+      "suitable": true,
+      "rating": 5,
+      "min_recommended_age": 2,
+      "best_age_group": "3-12",
+      "stroller_accessible": false,
+      "reasons": [
+        "Snow play in winter \u2014 every Indian kid's dream",
+        "Yak and horse rides \u2014 touristy but kids are thrilled",
+        "Himalayan Nature Park zoo is small and manageable",
+        "Green Meadows has zip-line and ATV for older kids",
+        "Day trip from Shimla \u2014 no separate accommodation needed"
+      ],
+      "concerns": [
+        "Pony/yak operators can be aggressive \u2014 negotiate firmly",
+        "Paths are muddy and slippery, especially post-snow",
+        "Very crowded on weekends and holidays \u2014 claustrophobic for small children",
+        "Altitude can cause mild headaches in very young children"
+      ],
+      "kid_highlights": [
+        "Playing in snow (December-February)",
+        "Yak rides \u2014 the photo opportunity",
+        "Himalayan Nature Park \u2014 snow leopard, red panda, pheasants",
+        "Horse/pony ride to Mahasu Peak",
+        "Zip-line and ATV at Green Meadows"
+      ],
+      "not_suitable_reason": null
+    }
+  },
+  {
+    "id": "solan",
+    "name": "Solan",
+    "state_id": "himachal-pradesh",
+    "region": "Solan / Lower Himachal",
+    "coords": {
+      "lat": 30.91,
+      "lng": 77.1
+    },
+    "elevation_m": 1502,
+    "type": [
+      "town",
+      "gateway",
+      "mushroom-city"
+    ],
+    "vibe": [
+      "transit",
+      "quiet",
+      "offbeat"
+    ],
+    "difficulty": "easy",
+    "nearest_airport": "Chandigarh \u2014 60km",
+    "nearest_railhead": "Solan (Kalka-Shimla narrow gauge)",
+    "tagline": "India's mushroom capital, the Mohan Meakin brewery, and the quietest stop on the Kalka-Shimla route that nobody bothers to get off at.",
+    "why_special": "Solan is the first real town on the Kalka-Shimla highway and narrow gauge route. Known as the 'Mushroom City of India' (produces 50% of India's mushrooms) and home to the Mohan Meakin brewery (makers of Old Monk rum, established 1855). Shoolini Devi temple hosts the annual Shoolini Fair (June). Karol Tibba (2743m) above the town gives panoramic views. The toy train stop at Solan is charming. Most people pass through en route to Shimla \u2014 but if you're interested in colonial brewing history or want a quiet base to explore Kasauli, Chail, and Dagshai, Solan works.",
+    "budget_tier": "budget",
+    "ideal_duration_min": 1,
+    "ideal_duration_max": 1,
+    "tags": [
+      "mushroom-city",
+      "brewery",
+      "toy-train",
+      "transit",
+      "offbeat",
+      "quiet"
+    ],
+    "best_months": [
+      3,
+      4,
+      5,
+      10,
+      11
+    ],
+    "avoid_months": [
+      7,
+      8
+    ],
+    "translations": {},
+    "monthly_suitability": [
+      {
+        "m": 1,
+        "score": 3,
+        "note": "Cool (3-12\u00b0C). Pleasant for a stopover. Quiet."
+      },
+      {
+        "m": 2,
+        "score": 3,
+        "note": "Same. Getting warmer. Mushroom farms operational year-round."
+      },
+      {
+        "m": 3,
+        "score": 4,
+        "note": "Spring. Comfortable 10-22\u00b0C. Karol Tibba trek pleasant."
+      },
+      {
+        "m": 4,
+        "score": 4,
+        "note": "Warm, clear. Good transit weather."
+      },
+      {
+        "m": 5,
+        "score": 3,
+        "note": "Getting warm (30\u00b0C). Plains heat encroaching."
+      },
+      {
+        "m": 6,
+        "score": 3,
+        "note": "Shoolini Fair (June). Hot but culturally significant."
+      },
+      {
+        "m": 7,
+        "score": 1,
+        "note": "Monsoon. Heavy rain. Kalka-Shimla road landslides."
+      },
+      {
+        "m": 8,
+        "score": 1,
+        "note": "Monsoon continues. Not recommended."
+      },
+      {
+        "m": 9,
+        "score": 3,
+        "note": "Monsoon ending. Town recovering."
+      },
+      {
+        "m": 10,
+        "score": 4,
+        "note": "Post-monsoon. Clear, comfortable. Good month."
+      },
+      {
+        "m": 11,
+        "score": 4,
+        "note": "Cool, clear. Quiet. Good stopover."
+      },
+      {
+        "m": 12,
+        "score": 3,
+        "note": "Cold. Short days. Christmas quiet."
+      }
+    ],
+    "kids_friendly": {
+      "suitable": true,
+      "rating": 2,
+      "min_recommended_age": 6,
+      "best_age_group": "8-14",
+      "stroller_accessible": true,
+      "reasons": [
+        "Toy train stop \u2014 kids love the narrow gauge experience",
+        "Mushroom farms can be educational visits"
+      ],
+      "concerns": [
+        "Nothing specifically for kids to do \u2014 transit town",
+        "Not a destination, more of a stopover",
+        "Limited activities beyond a day"
+      ],
+      "kid_highlights": [
+        "Kalka-Shimla toy train ride (stop at Solan or ride through)",
+        "Mushroom farm visit \u2014 educational",
+        "Karol Tibba short hike for older kids"
+      ],
+      "not_suitable_reason": null
+    }
+  },
+  {
+    "id": "kishtwar",
+    "name": "Kishtwar",
+    "state_id": "jammu-kashmir",
+    "region": "Chenab Valley",
+    "coords": {
+      "lat": 33.31,
+      "lng": 75.77
+    },
+    "elevation_m": 1638,
+    "type": [
+      "town",
+      "national-park",
+      "offbeat"
+    ],
+    "vibe": [
+      "offbeat",
+      "adventure",
+      "remote",
+      "nature"
+    ],
+    "difficulty": "hard",
+    "nearest_airport": "Jammu \u2014 230km",
+    "nearest_railhead": "Jammu \u2014 230km",
+    "tagline": "The sapphire mines, the saffron fields, the Kishtwar National Park with its snow leopards \u2014 J&K's most underrated adventure zone, now connected by road to Srinagar.",
+    "why_special": "Kishtwar sits in the Chenab Valley between the Pir Panjal and Great Himalayan ranges. It was historically one of J&K's most isolated districts. Famous for Kishtwar sapphires (among the world's finest, mined since the 1880s), saffron cultivation, and the Kishtwar National Park (wildlife sanctuary with snow leopard, Himalayan brown bear, musk deer). The Sinthan Top road now connects it to South Kashmir, and the Kishtwar-Killar road connects to Lahaul (one of India's most dangerous roads). Warwan Valley nearby is considered one of the last truly untouched valleys in the Western Himalayas.",
+    "budget_tier": "budget",
+    "ideal_duration_min": 2,
+    "ideal_duration_max": 4,
+    "tags": [
+      "national-park",
+      "sapphire",
+      "saffron",
+      "offbeat",
+      "adventure",
+      "snow-leopard",
+      "remote"
+    ],
+    "best_months": [
+      5,
+      6,
+      9,
+      10
+    ],
+    "avoid_months": [
+      12,
+      1,
+      2,
+      7,
+      8
+    ],
+    "translations": {},
+    "monthly_suitability": [
+      {
+        "m": 1,
+        "score": 1,
+        "note": "Deep winter. Sinthan Top closed. Only accessible from Jammu side (10-12 hours). Very cold."
+      },
+      {
+        "m": 2,
+        "score": 1,
+        "note": "Same. Snow on all high passes. Not practical."
+      },
+      {
+        "m": 3,
+        "score": 2,
+        "note": "Thawing. Roads slowly opening. Still cold and limited access."
+      },
+      {
+        "m": 4,
+        "score": 3,
+        "note": "Warming up. Sinthan Top road may open late April. Saffron fields visible."
+      },
+      {
+        "m": 5,
+        "score": 5,
+        "note": "Everything accessible. National park open. Comfortable weather. Wildflowers."
+      },
+      {
+        "m": 6,
+        "score": 5,
+        "note": "Best month. Warwan Valley treks begin. All roads open."
+      },
+      {
+        "m": 7,
+        "score": 2,
+        "note": "Monsoon. Landslide risk on all approach roads. National park still open but access dicey."
+      },
+      {
+        "m": 8,
+        "score": 2,
+        "note": "Same. Road conditions unreliable."
+      },
+      {
+        "m": 9,
+        "score": 5,
+        "note": "Post-monsoon. Clear, golden. Saffron harvest begins. Everything open."
+      },
+      {
+        "m": 10,
+        "score": 5,
+        "note": "Saffron harvest at peak. Autumn colors. Last month before winter shuts passes."
+      },
+      {
+        "m": 11,
+        "score": 2,
+        "note": "Getting cold. Sinthan Top closing. Access from Jammu side only."
+      },
+      {
+        "m": 12,
+        "score": 1,
+        "note": "Winter. Isolated. Not for casual visitors."
+      }
+    ],
+    "kids_friendly": {
+      "suitable": false,
+      "rating": 1,
+      "min_recommended_age": 14,
+      "best_age_group": "18+",
+      "stroller_accessible": false,
+      "reasons": [],
+      "concerns": [
+        "Extremely remote \u2014 minimum 10 hours from nearest airport",
+        "Roads are among the most dangerous in India (narrow, unfenced, landslide-prone)",
+        "No reliable medical facilities",
+        "Basic accommodation only"
+      ],
+      "kid_highlights": [],
+      "not_suitable_reason": "Too remote and dangerous for family travel. Roads are genuinely life-threatening. No medical infrastructure. This is experienced-traveler territory only."
+    }
+  },
+  {
+    "id": "bhaderwah",
+    "name": "Bhaderwah",
+    "state_id": "jammu-kashmir",
+    "region": "Chenab Valley / Doda",
+    "coords": {
+      "lat": 32.98,
+      "lng": 75.72
+    },
+    "elevation_m": 1613,
+    "type": [
+      "valley",
+      "hill-station",
+      "offbeat"
+    ],
+    "vibe": [
+      "offbeat",
+      "nature",
+      "quiet",
+      "cultural"
+    ],
+    "difficulty": "moderate",
+    "nearest_airport": "Jammu \u2014 210km",
+    "nearest_railhead": "Jammu \u2014 210km",
+    "tagline": "The 'Mini Kashmir' of Jammu \u2014 a meadow valley with saffron, the Jai Valley, and zero tourist infrastructure, which is exactly the point.",
+    "why_special": "Bhaderwah Valley in Doda district is a genuine hidden gem. A bowl-shaped valley at 1613m surrounded by pine-covered mountains, it grows saffron (one of only three saffron-growing zones in India after Pampore and Kishtwar). The Jai Valley (Padri meadow) above Bhaderwah at 3000m is a vast alpine meadow used as a trekking base. Chinta Valley, Seoj Meadow, and Chattergala pass are stunning. The town has a mixed Hindu-Muslim culture with ancient temples and shrines. Recently opened Chattergala road connects directly to South Kashmir. Almost zero tourist infrastructure means you get an authentic experience.",
+    "budget_tier": "budget",
+    "ideal_duration_min": 2,
+    "ideal_duration_max": 3,
+    "tags": [
+      "valley",
+      "offbeat",
+      "saffron",
+      "meadow",
+      "trekking",
+      "mini-kashmir",
+      "quiet"
+    ],
+    "best_months": [
+      4,
+      5,
+      6,
+      9,
+      10
+    ],
+    "avoid_months": [
+      12,
+      1,
+      7,
+      8
+    ],
+    "translations": {},
+    "monthly_suitability": [
+      {
+        "m": 1,
+        "score": 1,
+        "note": "Deep winter. Snow covers the valley. Roads to Padri/Jai shut. Town accessible but freezing."
+      },
+      {
+        "m": 2,
+        "score": 2,
+        "note": "Cold. Snow melting slowly. Valley starting to thaw."
+      },
+      {
+        "m": 3,
+        "score": 3,
+        "note": "Spring arriving. Snow on higher meadows. Valley floor greening up."
+      },
+      {
+        "m": 4,
+        "score": 5,
+        "note": "Spring bloom. Meadows alive with wildflowers. Jai Valley opening. 12-22\u00b0C."
+      },
+      {
+        "m": 5,
+        "score": 5,
+        "note": "Best month. Everything accessible. Green valley, snow peaks above. Perfect."
+      },
+      {
+        "m": 6,
+        "score": 5,
+        "note": "Warm, clear. Padri meadow at its greenest. Trekking season."
+      },
+      {
+        "m": 7,
+        "score": 2,
+        "note": "Monsoon. Heavy rain in the Chenab valley. Landslide risk."
+      },
+      {
+        "m": 8,
+        "score": 2,
+        "note": "Same. Not recommended."
+      },
+      {
+        "m": 9,
+        "score": 5,
+        "note": "Post-monsoon. Valley golden. Saffron harvest. Clear skies."
+      },
+      {
+        "m": 10,
+        "score": 5,
+        "note": "Saffron harvest peak. Autumn colors. Cool, clear."
+      },
+      {
+        "m": 11,
+        "score": 3,
+        "note": "Getting cold. Meadows closing. Valley still accessible."
+      },
+      {
+        "m": 12,
+        "score": 1,
+        "note": "Winter. Snow setting in. Not for casual visitors."
+      }
+    ],
+    "kids_friendly": {
+      "suitable": false,
+      "rating": 1,
+      "min_recommended_age": 12,
+      "best_age_group": "16+",
+      "stroller_accessible": false,
+      "reasons": [],
+      "concerns": [
+        "Very remote \u2014 7-8 hours from Jammu on mountain roads",
+        "No tourist infrastructure \u2014 basic hotels and guest houses only",
+        "No medical facilities for emergencies",
+        "Nothing structured for children"
+      ],
+      "kid_highlights": [],
+      "not_suitable_reason": "Too remote for family travel. The drive from Jammu is long and tiring on mountain roads. No child-friendly infrastructure or activities."
+    }
+  },
+  {
+    "id": "ajmer",
+    "name": "Ajmer",
+    "state_id": "rajasthan",
+    "region": "Central Rajasthan",
+    "coords": {
+      "lat": 26.45,
+      "lng": 74.64
+    },
+    "elevation_m": 486,
+    "type": [
+      "city",
+      "spiritual",
+      "heritage"
+    ],
+    "vibe": [
+      "spiritual",
+      "cultural",
+      "busy",
+      "heritage"
+    ],
+    "difficulty": "easy",
+    "nearest_airport": "Jaipur \u2014 135km (Kishangarh airport 30km, limited flights)",
+    "nearest_railhead": "Ajmer Junction",
+    "tagline": "The Ajmer Sharif Dargah \u2014 one of the most important Muslim pilgrimage sites in the world, and Pushkar is just 15km over the hill.",
+    "why_special": "Ajmer is defined by the Dargah Sharif of Khwaja Moinuddin Chishti \u2014 the 12th-century Sufi saint's shrine that draws millions of pilgrims from all faiths. The dargah is one of India's most powerful religious experiences regardless of your belief. Adhai Din Ka Jhonpra (a 12th-century mosque with stunning calligraphy) is architecturally extraordinary. Ana Sagar Lake, Taragarh Fort, and the Nasean Temple (Jain) round out the heritage. Ajmer is also the gateway to Pushkar (15km over the Aravalli ridge via Nag Pahar) \u2014 most travelers should combine them.",
+    "budget_tier": "budget",
+    "ideal_duration_min": 1,
+    "ideal_duration_max": 2,
+    "tags": [
+      "dargah",
+      "sufi",
+      "spiritual",
+      "heritage",
+      "mosque",
+      "pilgrimage",
+      "pushkar-gateway"
+    ],
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      5,
+      6
+    ],
+    "translations": {},
+    "monthly_suitability": [
+      {
+        "m": 1,
+        "score": 5,
+        "note": "Cool and pleasant (8-22\u00b0C). Dargah visits comfortable. Urs festival sometimes falls in January."
+      },
+      {
+        "m": 2,
+        "score": 5,
+        "note": "Same. Pleasant weather for heritage walks."
+      },
+      {
+        "m": 3,
+        "score": 4,
+        "note": "Warming up (15-30\u00b0C). Still comfortable for morning/evening visits."
+      },
+      {
+        "m": 4,
+        "score": 3,
+        "note": "Getting hot (25-38\u00b0C). Afternoon visits uncomfortable."
+      },
+      {
+        "m": 5,
+        "score": 1,
+        "note": "Brutal heat \u2014 40-46\u00b0C. Avoid unless you're a pilgrim with divine cooling."
+      },
+      {
+        "m": 6,
+        "score": 1,
+        "note": "Furnace. 42-47\u00b0C. Not possible for leisure tourism."
+      },
+      {
+        "m": 7,
+        "score": 3,
+        "note": "Monsoon brings relief. Ana Sagar lake fills up. Temperature drops to 28-35\u00b0C."
+      },
+      {
+        "m": 8,
+        "score": 3,
+        "note": "Monsoon continues. Green Aravallis. Manageable."
+      },
+      {
+        "m": 9,
+        "score": 3,
+        "note": "Monsoon ending. Sticky but cooling. Shoulder month."
+      },
+      {
+        "m": 10,
+        "score": 5,
+        "note": "Post-monsoon perfection. 20-33\u00b0C. Crystal clear. Best month."
+      },
+      {
+        "m": 11,
+        "score": 5,
+        "note": "Cool, comfortable. Pushkar Camel Fair (if combining). Excellent."
+      },
+      {
+        "m": 12,
+        "score": 5,
+        "note": "Cool and crisp. Dargah visits most comfortable."
+      }
+    ],
+    "kids_friendly": {
+      "suitable": true,
+      "rating": 3,
+      "min_recommended_age": 6,
+      "best_age_group": "8-14",
+      "stroller_accessible": false,
+      "reasons": [
+        "The dargah experience is culturally rich \u2014 being offered rose petals, hearing qawwali",
+        "Ana Sagar Lake has boating and gardens",
+        "Easy to combine with kid-friendly Pushkar"
+      ],
+      "concerns": [
+        "Dargah area is extremely crowded \u2014 hold children's hands at all times",
+        "Aggressive touts and flower sellers around the dargah \u2014 can overwhelm kids",
+        "Narrow lanes in the old city are confusing and congested",
+        "Summer heat is dangerous for children"
+      ],
+      "kid_highlights": [
+        "Dargah Sharif \u2014 the atmosphere, qawwali music, rose petals",
+        "Ana Sagar Lake boating",
+        "Taragarh Fort (if older kids can handle the climb)",
+        "Combine with Pushkar \u2014 camels, ghats, temple"
+      ],
+      "not_suitable_reason": null
+    }
+  },
+  {
+    "id": "alwar",
+    "name": "Alwar",
+    "state_id": "rajasthan",
+    "region": "Mewat / Northern Rajasthan",
+    "coords": {
+      "lat": 27.55,
+      "lng": 76.63
+    },
+    "elevation_m": 271,
+    "type": [
+      "city",
+      "heritage",
+      "wildlife"
+    ],
+    "vibe": [
+      "offbeat",
+      "heritage",
+      "nature",
+      "weekend-escape"
+    ],
+    "difficulty": "easy",
+    "nearest_airport": "Jaipur \u2014 160km / Delhi \u2014 160km",
+    "nearest_railhead": "Alwar Junction",
+    "tagline": "Bala Quila fort rivals anything in Jaipur, Siliserh Lake is Rajasthan's best-kept water secret, and Sariska tigers are 35km away \u2014 all this 2 hours from Delhi.",
+    "why_special": "Alwar is the closest Rajasthan heritage city to Delhi (160km, 3 hours) and criminally overlooked. Bala Quila is one of the largest forts in Rajasthan, perching 300m above the city with 5km of walls. Siliserh Lake Palace (now an RTDC hotel) sits on a lake surrounded by Aravalli hills \u2014 genuinely romantic. The City Palace museum has one of the best miniature painting collections in Rajasthan. Sariska Tiger Reserve is 35km away. Neemrana Fort Palace (75km) is on the way from Delhi. The entire Alwar-Sariska corridor is a weekend trip that most Delhi residents don't know about.",
+    "budget_tier": "budget-to-mid",
+    "ideal_duration_min": 1,
+    "ideal_duration_max": 2,
+    "tags": [
+      "fort",
+      "heritage",
+      "lake",
+      "sariska-gateway",
+      "weekend-getaway",
+      "offbeat",
+      "palace"
+    ],
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      5,
+      6
+    ],
+    "translations": {},
+    "monthly_suitability": [
+      {
+        "m": 1,
+        "score": 5,
+        "note": "Cool (5-20\u00b0C). Fort and lake visits comfortable. Sariska wildlife active."
+      },
+      {
+        "m": 2,
+        "score": 5,
+        "note": "Same. Pleasant. Wildflowers in the Aravallis."
+      },
+      {
+        "m": 3,
+        "score": 4,
+        "note": "Warming (15-30\u00b0C). Morning visits recommended. Sariska still good."
+      },
+      {
+        "m": 4,
+        "score": 3,
+        "note": "Getting hot. Fort climb becomes tiring in afternoon heat."
+      },
+      {
+        "m": 5,
+        "score": 1,
+        "note": "Hot (40-45\u00b0C). Avoid. Even Sariska safaris are uncomfortable."
+      },
+      {
+        "m": 6,
+        "score": 1,
+        "note": "Furnace. 42-47\u00b0C. Not recommended."
+      },
+      {
+        "m": 7,
+        "score": 3,
+        "note": "Monsoon. Siliserh Lake fills up and is stunning. Aravallis green. Hot but bearable."
+      },
+      {
+        "m": 8,
+        "score": 3,
+        "note": "Same. Lake and hills at their greenest."
+      },
+      {
+        "m": 9,
+        "score": 3,
+        "note": "Monsoon ending. Still warm. Sariska reopens."
+      },
+      {
+        "m": 10,
+        "score": 5,
+        "note": "Post-monsoon. Perfect weather. Green Aravallis. Best month."
+      },
+      {
+        "m": 11,
+        "score": 5,
+        "note": "Cool and clear. Sariska tiger sightings improve as vegetation thins."
+      },
+      {
+        "m": 12,
+        "score": 5,
+        "note": "Cold mornings, pleasant days. Excellent for heritage and wildlife."
+      }
+    ],
+    "kids_friendly": {
+      "suitable": true,
+      "rating": 4,
+      "min_recommended_age": 5,
+      "best_age_group": "6-14",
+      "stroller_accessible": false,
+      "reasons": [
+        "Sariska tiger safari \u2014 same thrill as Ranthambore with fewer crowds",
+        "Siliserh Lake boating and palace grounds",
+        "Bala Quila fort feels like an adventure \u2014 less touristy than Amber",
+        "Easy weekend drive from Delhi"
+      ],
+      "concerns": [
+        "Summer heat makes it impossible for kids (May-June)",
+        "Bala Quila requires a steep climb \u2014 not suitable for very young children",
+        "Limited restaurant options \u2014 hotel dining mostly"
+      ],
+      "kid_highlights": [
+        "Sariska Tiger Reserve safari \u2014 real wild tigers",
+        "Siliserh Lake Palace \u2014 boating on a beautiful lake",
+        "Bala Quila fort exploration \u2014 ramparts, cannon platforms, towers",
+        "Neemrana Fort Palace zip-line (if combining en route)"
+      ],
+      "not_suitable_reason": null
+    }
+  },
+  {
+    "id": "neemrana",
+    "name": "Neemrana",
+    "state_id": "rajasthan",
+    "region": "Mewat / Northern Rajasthan",
+    "coords": {
+      "lat": 27.99,
+      "lng": 76.39
+    },
+    "elevation_m": 296,
+    "type": [
+      "fort-hotel",
+      "heritage",
+      "luxury"
+    ],
+    "vibe": [
+      "luxury",
+      "romantic",
+      "heritage",
+      "weekend-escape"
+    ],
+    "difficulty": "easy",
+    "nearest_airport": "Delhi (IGI) \u2014 120km",
+    "nearest_railhead": "Rewari \u2014 40km",
+    "tagline": "A 15th-century Rajput fort turned into India's most famous heritage hotel \u2014 zip-lining from the ramparts, 2 hours from Delhi.",
+    "why_special": "Neemrana Fort Palace is a 15th-century fort (built 1464) that was restored into a heritage hotel in 1991, pioneering India's heritage hotel movement. It's 10 levels of rooms cascading down a hillside, with hanging gardens, two pools, an amphitheater, and Rajasthan's only zip-line (6 lines across the fort). Even if you don't stay overnight, the day-visit brunch and zip-line experience is a Delhi staple. The Baori (stepwell) nearby, and the Kesroli Fort Hotel (another heritage property, 14th century, 30km away) make this a weekend circuit. Zero cultural depth but maximum Instagram potential.",
+    "budget_tier": "luxury",
+    "ideal_duration_min": 1,
+    "ideal_duration_max": 2,
+    "tags": [
+      "heritage-hotel",
+      "fort",
+      "luxury",
+      "zip-line",
+      "romantic",
+      "weekend-getaway",
+      "delhi-escape"
+    ],
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      5,
+      6
+    ],
+    "translations": {},
+    "monthly_suitability": [
+      {
+        "m": 1,
+        "score": 5,
+        "note": "Cool (8-22\u00b0C). Fort pool still usable. Clear skies. Perfect."
+      },
+      {
+        "m": 2,
+        "score": 5,
+        "note": "Same. Pleasant weather for fort exploration and zip-lining."
+      },
+      {
+        "m": 3,
+        "score": 4,
+        "note": "Warming up. Still pleasant for the pool and outdoor activities."
+      },
+      {
+        "m": 4,
+        "score": 3,
+        "note": "Getting hot. Pool becomes essential. Evening visits best."
+      },
+      {
+        "m": 5,
+        "score": 1,
+        "note": "Scorching (42-46\u00b0C). Even the pool can't save you."
+      },
+      {
+        "m": 6,
+        "score": 1,
+        "note": "Furnace. Zip-line in this heat is cruel and unusual."
+      },
+      {
+        "m": 7,
+        "score": 3,
+        "note": "Monsoon. Fort looks dramatic in rain. Green Aravallis. Cooler."
+      },
+      {
+        "m": 8,
+        "score": 3,
+        "note": "Same. Monsoon stays can be romantic."
+      },
+      {
+        "m": 9,
+        "score": 3,
+        "note": "Monsoon ending. Still warm. Shoulder pricing."
+      },
+      {
+        "m": 10,
+        "score": 5,
+        "note": "Post-monsoon. Perfect weather. Zip-line and pool weather. Best month."
+      },
+      {
+        "m": 11,
+        "score": 5,
+        "note": "Cool and clear. Diwali at the fort is special (lit up with diyas)."
+      },
+      {
+        "m": 12,
+        "score": 5,
+        "note": "Cold but the fort rooms are heated. Christmas/NYE packages are popular \u2014 book way ahead."
+      }
+    ],
+    "kids_friendly": {
+      "suitable": true,
+      "rating": 5,
+      "min_recommended_age": 3,
+      "best_age_group": "6-14",
+      "stroller_accessible": false,
+      "reasons": [
+        "Zip-lining across a 500-year-old fort \u2014 kids go absolutely wild",
+        "Pool time at a heritage fort \u2014 unusual and exciting",
+        "Fort exploration across 10 levels feels like an adventure",
+        "Day trip from Delhi \u2014 no long journey needed"
+      ],
+      "concerns": [
+        "Expensive \u2014 room rates are premium, even day visits cost \u20b92000+",
+        "Fort has steep steps and uneven surfaces \u2014 watch toddlers",
+        "Zip-line has age/weight minimums \u2014 check before promising kids",
+        "Pool area gets crowded on weekends"
+      ],
+      "kid_highlights": [
+        "Zip-lining across the fort ramparts (age 10+, check weight limits)",
+        "Swimming pool with fort backdrop",
+        "Fort exploration \u2014 hidden courtyards, terraces, levels",
+        "Day brunch at the fort restaurant",
+        "Camel ride outside the fort"
+      ],
+      "not_suitable_reason": null
+    }
+  },
+  {
+    "id": "chitrakoot",
+    "name": "Chitrakoot",
+    "state_id": "uttar-pradesh",
+    "region": "Bundelkhand",
+    "coords": {
+      "lat": 25.2,
+      "lng": 80.85
+    },
+    "elevation_m": 240,
+    "type": [
+      "spiritual",
+      "heritage",
+      "pilgrimage"
+    ],
+    "vibe": [
+      "spiritual",
+      "quiet",
+      "offbeat",
+      "cultural"
+    ],
+    "difficulty": "easy",
+    "nearest_airport": "Prayagraj \u2014 130km",
+    "nearest_railhead": "Chitrakoot Dham (Karwi) \u2014 8km",
+    "tagline": "Where Ram, Sita, and Lakshman spent 11 of their 14 years in exile \u2014 the most important Ramayana pilgrimage site that most people outside UP haven't heard of.",
+    "why_special": "Chitrakoot is THE Ramayana site. This is where Ram spent the longest portion of his exile (11 out of 14 years per tradition), where Bharat came to convince him to return, and where Sati Anusuya's ashram still sits by the Mandakini river. Kamadgiri hill is the centerpiece \u2014 a 5km parikrama (circumambulation) that pilgrims consider equivalent to visiting every other tirtha in India. Ram Ghat on the Mandakini has evening aarti. Gupt Godavari caves, Hanuman Dhara waterfall on a cliff, and Sphatik Shila (the rock where Ram sat) complete the circuit. Tulsidas is believed to have written parts of Ramcharitmanas here. With the Ram Mandir in Ayodhya driving renewed interest, Chitrakoot is poised for a surge.",
+    "budget_tier": "budget",
+    "ideal_duration_min": 1,
+    "ideal_duration_max": 2,
+    "tags": [
+      "ramayana",
+      "spiritual",
+      "pilgrimage",
+      "ram",
+      "river",
+      "heritage",
+      "offbeat"
+    ],
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      5,
+      6
+    ],
+    "translations": {},
+    "monthly_suitability": [
+      {
+        "m": 1,
+        "score": 5,
+        "note": "Cool and pleasant (8-22\u00b0C). Makar Sankranti celebrations. Perfect for parikrama."
+      },
+      {
+        "m": 2,
+        "score": 5,
+        "note": "Same. Maha Shivratri adds significance. Comfortable weather."
+      },
+      {
+        "m": 3,
+        "score": 4,
+        "note": "Ram Navami (March/April) is HUGE here \u2014 massive crowds but the real experience."
+      },
+      {
+        "m": 4,
+        "score": 3,
+        "note": "Getting hot. Ram Navami if it falls in April. Morning/evening visits only."
+      },
+      {
+        "m": 5,
+        "score": 1,
+        "note": "Brutal heat (42-46\u00b0C). Kamadgiri parikrama becomes dangerous."
+      },
+      {
+        "m": 6,
+        "score": 1,
+        "note": "Scorching. Not recommended for any tourism."
+      },
+      {
+        "m": 7,
+        "score": 3,
+        "note": "Monsoon. Mandakini river in flow. Waterfalls active. Hot but bearable (32-38\u00b0C)."
+      },
+      {
+        "m": 8,
+        "score": 3,
+        "note": "Same. Green Bundelkhand. Hanuman Dhara waterfall at best."
+      },
+      {
+        "m": 9,
+        "score": 3,
+        "note": "Monsoon ending. Still warm. Shoulder month."
+      },
+      {
+        "m": 10,
+        "score": 5,
+        "note": "Post-monsoon. Pleasant weather. Dussehra celebrations (Ram Lila)."
+      },
+      {
+        "m": 11,
+        "score": 5,
+        "note": "Cool, clear, comfortable. Perfect for the 5km parikrama."
+      },
+      {
+        "m": 12,
+        "score": 5,
+        "note": "Cold mornings, pleasant days. Quiet and spiritual."
+      }
+    ],
+    "kids_friendly": {
+      "suitable": true,
+      "rating": 3,
+      "min_recommended_age": 6,
+      "best_age_group": "8-14",
+      "stroller_accessible": false,
+      "reasons": [
+        "Ramayana stories come alive \u2014 every site has a story kids know from school",
+        "Gupt Godavari caves are genuinely exciting (wade through water in a cave)",
+        "River ghat and aarti are calming and atmospheric"
+      ],
+      "concerns": [
+        "5km Kamadgiri parikrama is long for young children",
+        "Summer heat is dangerous",
+        "Basic town infrastructure \u2014 limited hotel and food quality",
+        "Monkeys are aggressive at some temple sites"
+      ],
+      "kid_highlights": [
+        "Gupt Godavari caves \u2014 wading through water inside a cave",
+        "Hanuman Dhara \u2014 waterfall on a cliff with monkey temple",
+        "Ram Ghat evening aarti on the Mandakini",
+        "Kamadgiri parikrama \u2014 the Ramayana walk"
+      ],
+      "not_suitable_reason": null
+    }
+  },
+  {
+    "id": "dudhwa-national-park",
+    "name": "Dudhwa National Park",
+    "state_id": "uttar-pradesh",
+    "region": "Terai / Nepal Border",
+    "coords": {
+      "lat": 28.52,
+      "lng": 80.57
+    },
+    "elevation_m": 150,
+    "type": [
+      "national-park",
+      "wildlife",
+      "safari"
+    ],
+    "vibe": [
+      "wildlife",
+      "offbeat",
+      "nature",
+      "adventure"
+    ],
+    "difficulty": "easy",
+    "nearest_airport": "Lucknow \u2014 230km",
+    "nearest_railhead": "Palia Kalan \u2014 10km",
+    "tagline": "India's most underrated national park \u2014 tigers, rhinos reintroduced from Assam, swamp deer herds, and zero tourist crowds because everyone goes to Corbett instead.",
+    "why_special": "Dudhwa is UP's only national park and one of India's best-kept wildlife secrets. It has Bengal tigers, one-horned rhinos (reintroduced from Assam by Billy Arjan Singh in the 1980s), swamp deer (barasingha) in India's largest herds, leopards, sloth bears, and over 450 bird species. The park sits on the Indo-Nepal border in the Terai \u2014 dense sal forests and grasslands. The key advantage over Corbett and Ranthambore: almost nobody comes here. You might be the only jeep on safari. Kishanpur Wildlife Sanctuary and Katarniaghat Wildlife Sanctuary (gharial, gangetic dolphin) are extensions of the same ecosystem.",
+    "budget_tier": "budget",
+    "ideal_duration_min": 2,
+    "ideal_duration_max": 3,
+    "tags": [
+      "tiger",
+      "rhino",
+      "safari",
+      "wildlife",
+      "offbeat",
+      "birding",
+      "national-park",
+      "swamp-deer"
+    ],
+    "best_months": [
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "translations": {},
+    "monthly_suitability": [
+      {
+        "m": 1,
+        "score": 5,
+        "note": "Peak season. Cool (5-18\u00b0C). Grasslands dried \u2014 excellent visibility. Tiger and rhino sightings at best."
+      },
+      {
+        "m": 2,
+        "score": 5,
+        "note": "Best month. Dry, clear, animals at waterholes. Birding excellent."
+      },
+      {
+        "m": 3,
+        "score": 5,
+        "note": "Getting warmer. Vegetation thinning further. Still excellent for sightings."
+      },
+      {
+        "m": 4,
+        "score": 4,
+        "note": "Hot (35\u00b0C+). Morning safaris only. Animals active at water sources."
+      },
+      {
+        "m": 5,
+        "score": 2,
+        "note": "Very hot. Park still open but uncomfortable. Last-chance month."
+      },
+      {
+        "m": 6,
+        "score": 0,
+        "note": "Park closed for monsoon (June 15 - November 15 approximately)."
+      },
+      {
+        "m": 7,
+        "score": 0,
+        "note": "Closed. Heavy monsoon rain. Terai flooding."
+      },
+      {
+        "m": 8,
+        "score": 0,
+        "note": "Closed. Peak flooding season."
+      },
+      {
+        "m": 9,
+        "score": 0,
+        "note": "Closed. Water receding but park not yet open."
+      },
+      {
+        "m": 10,
+        "score": 2,
+        "note": "Park may open late October. Dense vegetation. Few sightings."
+      },
+      {
+        "m": 11,
+        "score": 5,
+        "note": "Season begins properly. Cool, fresh post-monsoon. Green turning golden. Migratory birds arriving."
+      },
+      {
+        "m": 12,
+        "score": 5,
+        "note": "Excellent. Cold mornings bring animals to open areas. Swamp deer herds visible."
+      }
+    ],
+    "kids_friendly": {
+      "suitable": true,
+      "rating": 4,
+      "min_recommended_age": 5,
+      "best_age_group": "6-14",
+      "stroller_accessible": false,
+      "reasons": [
+        "Genuine safari experience without the Ranthambore crowds \u2014 more intimate for kids",
+        "Rhinos are massive and visible \u2014 kids are fascinated",
+        "Elephant ride safaris available (more kid-friendly than jeeps)",
+        "Swamp deer in large herds \u2014 guaranteed sightings"
+      ],
+      "concerns": [
+        "Remote \u2014 6+ hours from Lucknow on mostly single-lane roads",
+        "Basic accommodation (forest rest houses, few lodges)",
+        "Mosquitoes and insects are significant \u2014 carry repellent",
+        "No nearby medical facilities"
+      ],
+      "kid_highlights": [
+        "Jeep safari through sal forest \u2014 watching for tigers",
+        "Rhino sighting \u2014 seeing a one-horned rhinoceros in UP",
+        "Swamp deer herds on the grasslands \u2014 hundreds together",
+        "Bird watching \u2014 hornbills, kingfishers, eagles",
+        "Elephant ride through tall grass (where available)"
+      ],
+      "not_suitable_reason": null
+    }
+  },
+  {
+    "id": "kushinagar",
+    "name": "Kushinagar",
+    "state_id": "uttar-pradesh",
+    "region": "Eastern UP / Buddhist Circuit",
+    "coords": {
+      "lat": 26.74,
+      "lng": 83.89
+    },
+    "elevation_m": 84,
+    "type": [
+      "spiritual",
+      "heritage",
+      "buddhist"
+    ],
+    "vibe": [
+      "spiritual",
+      "quiet",
+      "cultural",
+      "pilgrimage"
+    ],
+    "difficulty": "easy",
+    "nearest_airport": "Kushinagar Airport (recently opened, limited flights) / Gorakhpur \u2014 50km",
+    "nearest_railhead": "Gorakhpur \u2014 50km",
+    "tagline": "Where the Buddha attained Mahaparinirvana \u2014 one of the four holiest Buddhist sites on Earth, with a reclining Buddha statue that's been here since the 5th century.",
+    "why_special": "Kushinagar is where Gautama Buddha died (attained Mahaparinirvana) around 483 BCE, making it one of the four most sacred Buddhist pilgrimage sites along with Lumbini, Bodh Gaya, and Sarnath. The Mahaparinirvana Temple houses a 6th-century reclining Buddha statue (6.1m long) in red sandstone, covered in gold leaf \u2014 one of the most peaceful sculptures in India. The Ramabhar Stupa marks the cremation site. Multiple international temples (Thai, Myanmar, Sri Lankan, Japanese, Chinese) surround the site, each in their national architectural style. The recent Kushinagar International Airport has dramatically improved access. The Buddhist Circuit (Sarnath-Bodh Gaya-Kushinagar-Lumbini) is a growing tourism sector.",
+    "budget_tier": "budget",
+    "ideal_duration_min": 1,
+    "ideal_duration_max": 1,
+    "tags": [
+      "buddhist",
+      "spiritual",
+      "heritage",
+      "pilgrimage",
+      "mahaparinirvana",
+      "reclining-buddha",
+      "buddhist-circuit"
+    ],
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      5,
+      6
+    ],
+    "translations": {},
+    "monthly_suitability": [
+      {
+        "m": 1,
+        "score": 5,
+        "note": "Cool (5-18\u00b0C). Foggy mornings but pleasant days. Perfect for temple visits."
+      },
+      {
+        "m": 2,
+        "score": 5,
+        "note": "Same. Warming up. Buddha Jayanti may fall in spring."
+      },
+      {
+        "m": 3,
+        "score": 4,
+        "note": "Warming (18-32\u00b0C). Still manageable for visits."
+      },
+      {
+        "m": 4,
+        "score": 3,
+        "note": "Hot (30-40\u00b0C). Morning visits only."
+      },
+      {
+        "m": 5,
+        "score": 1,
+        "note": "Extreme heat (42-46\u00b0C). Avoid."
+      },
+      {
+        "m": 6,
+        "score": 1,
+        "note": "Furnace with pre-monsoon humidity. Not recommended."
+      },
+      {
+        "m": 7,
+        "score": 2,
+        "note": "Monsoon. Hot and humid but rain cools slightly. Temple sites accessible but unpleasant."
+      },
+      {
+        "m": 8,
+        "score": 2,
+        "note": "Same. Heavy rain. Waterlogging possible."
+      },
+      {
+        "m": 9,
+        "score": 3,
+        "note": "Monsoon ending. Still warm."
+      },
+      {
+        "m": 10,
+        "score": 5,
+        "note": "Post-monsoon. Pleasant weather returning. Best month to start."
+      },
+      {
+        "m": 11,
+        "score": 5,
+        "note": "Cool, clear. Buddhist pilgrims arrive. Peaceful atmosphere."
+      },
+      {
+        "m": 12,
+        "score": 5,
+        "note": "Cold mornings, pleasant days. Peak pilgrimage season."
+      }
+    ],
+    "kids_friendly": {
+      "suitable": true,
+      "rating": 2,
+      "min_recommended_age": 8,
+      "best_age_group": "10-16",
+      "stroller_accessible": true,
+      "reasons": [
+        "International temples in different architectural styles are visually interesting",
+        "Reclining Buddha statue is impressive and accessible",
+        "Historical significance \u2014 educational for older kids studying Indian history"
+      ],
+      "concerns": [
+        "Very limited activities \u2014 this is a pilgrimage site, not an activity destination",
+        "Hot and flat \u2014 unpleasant for kids in non-winter months",
+        "Limited entertainment or food options"
+      ],
+      "kid_highlights": [
+        "Reclining Buddha statue \u2014 gold-covered, 6m long, genuinely impressive",
+        "International temples \u2014 spot the different architectural styles (Thai, Japanese, Myanmar)",
+        "Ramabhar Stupa \u2014 ancient cremation site with gardens"
+      ],
+      "not_suitable_reason": null
+    }
+  },
+  {
+    "id": "sravasti",
+    "name": "Sravasti",
+    "state_id": "uttar-pradesh",
+    "region": "Eastern UP / Buddhist Circuit",
+    "coords": {
+      "lat": 27.51,
+      "lng": 82.03
+    },
+    "elevation_m": 120,
+    "type": [
+      "heritage",
+      "spiritual",
+      "buddhist"
+    ],
+    "vibe": [
+      "spiritual",
+      "quiet",
+      "offbeat",
+      "cultural"
+    ],
+    "difficulty": "easy",
+    "nearest_airport": "Lucknow \u2014 170km",
+    "nearest_railhead": "Balrampur \u2014 17km",
+    "tagline": "Where the Buddha spent 24 monsoon retreats \u2014 the ancient city of miracles, with ruins of Jetavana monastery where most of the suttas were taught.",
+    "why_special": "Sravasti (Saheth-Maheth) is where the Buddha spent the most time \u2014 24 rainy seasons at Jetavana monastery, gifted by the merchant Anathapindika. This is where the majority of Buddhist discourses (suttas) were delivered. The archaeological ruins include Jetavana Monastery (one of the most important Buddhist sites globally), the Ananda Bodhi Tree (said to be grown from a seed of the original Bodhi tree), and the ruins of the ancient city of Kosala kingdom. Stupas, viharas, and foundations date from the 3rd century BCE to 12th century CE. Less visited than Sarnath or Bodh Gaya, but arguably more historically significant.",
+    "budget_tier": "budget",
+    "ideal_duration_min": 1,
+    "ideal_duration_max": 1,
+    "tags": [
+      "buddhist",
+      "spiritual",
+      "heritage",
+      "archaeology",
+      "pilgrimage",
+      "jetavana",
+      "offbeat"
+    ],
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      5,
+      6
+    ],
+    "translations": {},
+    "monthly_suitability": [
+      {
+        "m": 1,
+        "score": 5,
+        "note": "Cool (5-18\u00b0C). Perfect for exploring ruins. Foggy mornings add atmosphere."
+      },
+      {
+        "m": 2,
+        "score": 5,
+        "note": "Pleasant. Warming up slightly. Good for outdoor archaeological walks."
+      },
+      {
+        "m": 3,
+        "score": 4,
+        "note": "Warm (20-32\u00b0C). Morning visits recommended."
+      },
+      {
+        "m": 4,
+        "score": 3,
+        "note": "Hot. Ruins exploration uncomfortable after 10am."
+      },
+      {
+        "m": 5,
+        "score": 1,
+        "note": "Extreme heat. Avoid."
+      },
+      {
+        "m": 6,
+        "score": 1,
+        "note": "Scorching and humid. Not recommended."
+      },
+      {
+        "m": 7,
+        "score": 2,
+        "note": "Monsoon. Ruins waterlogged in parts. Hot and humid."
+      },
+      {
+        "m": 8,
+        "score": 2,
+        "note": "Same. Not ideal."
+      },
+      {
+        "m": 9,
+        "score": 3,
+        "note": "Monsoon ending. Cooling slightly."
+      },
+      {
+        "m": 10,
+        "score": 5,
+        "note": "Post-monsoon. Green ruins. Pleasant weather. Best month."
+      },
+      {
+        "m": 11,
+        "score": 5,
+        "note": "Cool and clear. Perfect for all-day exploration."
+      },
+      {
+        "m": 12,
+        "score": 5,
+        "note": "Cold but pleasant days. Quiet and atmospheric."
+      }
+    ],
+    "kids_friendly": {
+      "suitable": true,
+      "rating": 2,
+      "min_recommended_age": 10,
+      "best_age_group": "12-16",
+      "stroller_accessible": false,
+      "reasons": [
+        "Archaeological ruins are like an open-air museum",
+        "Educational value for kids studying ancient Indian history"
+      ],
+      "concerns": [
+        "Nothing for young children \u2014 ruins require historical context to appreciate",
+        "Very basic town \u2014 limited food and lodging",
+        "Remote location \u2014 4+ hours from Lucknow"
+      ],
+      "kid_highlights": [
+        "Jetavana Monastery ruins \u2014 walking through 2500-year-old foundations",
+        "Ananda Bodhi Tree \u2014 said to be from the original Bodhi tree seed",
+        "International temples nearby \u2014 different Buddhist architectural styles"
+      ],
+      "not_suitable_reason": null
+    }
+  },
+  {
+    "id": "patiala",
+    "name": "Patiala",
+    "state_id": "punjab",
+    "region": "Malwa Punjab",
+    "coords": {
+      "lat": 30.34,
+      "lng": 76.39
+    },
+    "elevation_m": 250,
+    "type": [
+      "city",
+      "heritage",
+      "cultural"
+    ],
+    "vibe": [
+      "cultural",
+      "heritage",
+      "food",
+      "royal"
+    ],
+    "difficulty": "easy",
+    "nearest_airport": "Chandigarh \u2014 65km",
+    "nearest_railhead": "Patiala Junction",
+    "tagline": "The peg, the salwar, and the turban \u2014 Patiala's contributions to Indian culture are disproportionate to its size, and Qila Mubarak fort is Punjab's best-kept heritage secret.",
+    "why_special": "Patiala is Punjab's former princely state capital and still drips with Sikh royal heritage. Qila Mubarak (10-acre fort complex in the city center) has a stunning Darbar Hall with mirror work rivaling Amber Fort. Sheesh Mahal palace houses a museum. The Patiala peg (60ml \u2014 double the standard measure) was standardized by the Maharaja. The Patiala salwar (ultra-wide trousers) is a national fashion export. The food \u2014 Patiala non-veg cuisine (tandoori chicken, butter chicken, kulchas) is legendary in Punjab. The Royal Patiala dynasty necklace (sold at Christie's for $7.3M) was one of the world's greatest jewels.",
+    "budget_tier": "budget",
+    "ideal_duration_min": 1,
+    "ideal_duration_max": 1,
+    "tags": [
+      "heritage",
+      "food",
+      "royal",
+      "fort",
+      "cultural",
+      "peg",
+      "offbeat",
+      "sikh"
+    ],
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      5,
+      6
+    ],
+    "translations": {},
+    "monthly_suitability": [
+      {
+        "m": 1,
+        "score": 4,
+        "note": "Cold (3-15\u00b0C). Foggy mornings but clear afternoons. Fort visits comfortable. Lohri/Maghi celebrations."
+      },
+      {
+        "m": 2,
+        "score": 5,
+        "note": "Warming. Clear. Best month for heritage walks. Basant Panchami celebrations."
+      },
+      {
+        "m": 3,
+        "score": 4,
+        "note": "Pleasant (12-28\u00b0C). Holi. Good month."
+      },
+      {
+        "m": 4,
+        "score": 3,
+        "note": "Getting warm (25-35\u00b0C). Morning visits only."
+      },
+      {
+        "m": 5,
+        "score": 1,
+        "note": "Hot (40-45\u00b0C). Avoid."
+      },
+      {
+        "m": 6,
+        "score": 1,
+        "note": "Furnace. Pre-monsoon dust storms."
+      },
+      {
+        "m": 7,
+        "score": 2,
+        "note": "Monsoon. Hot and humid. Green surroundings."
+      },
+      {
+        "m": 8,
+        "score": 2,
+        "note": "Same. Humid."
+      },
+      {
+        "m": 9,
+        "score": 3,
+        "note": "Monsoon ending. Still warm."
+      },
+      {
+        "m": 10,
+        "score": 5,
+        "note": "Post-monsoon. Pleasant. Festival season (Dussehra, Diwali). Best month."
+      },
+      {
+        "m": 11,
+        "score": 5,
+        "note": "Cool, clear. Guru Nanak Jayanti celebrations. Excellent."
+      },
+      {
+        "m": 12,
+        "score": 4,
+        "note": "Cold, foggy. Fort visits in afternoon sun are lovely."
+      }
+    ],
+    "kids_friendly": {
+      "suitable": true,
+      "rating": 3,
+      "min_recommended_age": 6,
+      "best_age_group": "8-14",
+      "stroller_accessible": false,
+      "reasons": [
+        "Qila Mubarak fort is impressive and less crowded than Rajasthan forts",
+        "Sheesh Mahal museum has royal artifacts, weapons, and costumes",
+        "Food is genuinely exciting \u2014 Patiala non-veg is legendary"
+      ],
+      "concerns": [
+        "Not a tourist destination \u2014 limited signage, guides, or organized tours",
+        "Summer heat makes it impossible for outdoor activities with kids",
+        "Limited accommodation quality compared to tourist cities"
+      ],
+      "kid_highlights": [
+        "Qila Mubarak fort \u2014 royal rooms, mirror hall, cannon platforms",
+        "Sheesh Mahal museum \u2014 royal weapons, costumes, paintings",
+        "Patiala food tour \u2014 tandoori chicken, kulchas, sweets",
+        "Bahadurgarh Fort nearby \u2014 less visited, more explorable"
+      ],
+      "not_suitable_reason": null
+    }
+  },
+  {
+    "id": "tehri",
+    "name": "Tehri & Tehri Lake",
+    "state_id": "uttarakhand",
+    "region": "Garhwal Hills",
+    "coords": {
+      "lat": 30.39,
+      "lng": 78.48
+    },
+    "elevation_m": 770,
+    "type": [
+      "lake",
+      "adventure",
+      "dam"
+    ],
+    "vibe": [
+      "adventure",
+      "offbeat",
+      "nature",
+      "water-sports"
+    ],
+    "difficulty": "easy",
+    "nearest_airport": "Dehradun (Jolly Grant) \u2014 90km",
+    "nearest_railhead": "Rishikesh \u2014 80km",
+    "tagline": "India's largest reservoir turned adventure playground \u2014 jet-skiing, kayaking, and scuba diving in the Himalayas, above a drowned city.",
+    "why_special": "Tehri Dam (260.5m) is one of the tallest dams in the world. The reservoir (Tehri Lake) submerged the old town of Tehri and created a massive turquoise lake in a Himalayan valley. In the last few years, the Uttarakhand government has developed it as a water sports destination \u2014 jet skiing, kayaking, banana rides, parasailing, speed boating, and even freshwater scuba diving. The contrast of doing jet skiing with Himalayan peaks as backdrop is surreal. New Tehri town sits above the reservoir. The old town's temples occasionally surface when water levels drop in winter \u2014 haunting.",
+    "budget_tier": "budget-to-mid",
+    "ideal_duration_min": 1,
+    "ideal_duration_max": 2,
+    "tags": [
+      "lake",
+      "water-sports",
+      "jet-skiing",
+      "dam",
+      "adventure",
+      "offbeat",
+      "kayaking",
+      "scuba"
+    ],
+    "best_months": [
+      3,
+      4,
+      5,
+      10,
+      11
+    ],
+    "avoid_months": [
+      7,
+      8
+    ],
+    "translations": {},
+    "monthly_suitability": [
+      {
+        "m": 1,
+        "score": 3,
+        "note": "Cold (5-15\u00b0C). Lake levels low \u2014 old town ruins may be visible. Water sports limited. Haunting views."
+      },
+      {
+        "m": 2,
+        "score": 3,
+        "note": "Cold. Lake at lowest. Some water sports resume."
+      },
+      {
+        "m": 3,
+        "score": 5,
+        "note": "Warming up. Lake at good level. All water sports operational. 15-25\u00b0C."
+      },
+      {
+        "m": 4,
+        "score": 5,
+        "note": "Best month. Warm, clear, lake turquoise, all activities running."
+      },
+      {
+        "m": 5,
+        "score": 5,
+        "note": "Hot but lake activities perfect. Water at ideal temperature."
+      },
+      {
+        "m": 6,
+        "score": 3,
+        "note": "Pre-monsoon. Lake filling. Some activities continue."
+      },
+      {
+        "m": 7,
+        "score": 1,
+        "note": "Monsoon. Water sports suspended. Lake levels rising rapidly. Landslide risk."
+      },
+      {
+        "m": 8,
+        "score": 1,
+        "note": "Same. Dangerous conditions."
+      },
+      {
+        "m": 9,
+        "score": 3,
+        "note": "Post-monsoon. Water sports restarting. Lake at highest \u2014 impressive but approach roads may be damaged."
+      },
+      {
+        "m": 10,
+        "score": 5,
+        "note": "Full operations resumed. Clear skies, comfortable weather. Lake is full and stunning."
+      },
+      {
+        "m": 11,
+        "score": 4,
+        "note": "Getting cold. Water sports still running. Lake starting to recede."
+      },
+      {
+        "m": 12,
+        "score": 3,
+        "note": "Cold. Water sports limited to warm afternoons. Lake receding \u2014 old structures appearing."
+      }
+    ],
+    "kids_friendly": {
+      "suitable": true,
+      "rating": 5,
+      "min_recommended_age": 5,
+      "best_age_group": "8-14",
+      "stroller_accessible": false,
+      "reasons": [
+        "Water sports are THE kid magnet \u2014 jet skiing, banana rides, speed boats",
+        "Safe, government-managed adventure activities with life jackets provided",
+        "Unique Himalayan lake setting unlike any other water sports location in India",
+        "Easy access from Rishikesh/Dehradun"
+      ],
+      "concerns": [
+        "Swimming not allowed \u2014 lake is deep (260m+) and cold",
+        "Some activities have age/weight minimums",
+        "Limited food options near the lake \u2014 pack snacks",
+        "Sun can be harsh on water \u2014 sunscreen essential"
+      ],
+      "kid_highlights": [
+        "Jet skiing on a Himalayan lake \u2014 the photos alone are worth it",
+        "Banana boat ride \u2014 guaranteed screaming and laughter",
+        "Speed boat ride across the reservoir",
+        "Kayaking for older kids (guided)",
+        "Viewing the submerged town ruins when water recedes (winter)"
+      ],
+      "not_suitable_reason": null
+    }
+  },
+  {
+    "id": "champawat",
+    "name": "Champawat",
+    "state_id": "uttarakhand",
+    "region": "Kumaon Far East",
+    "coords": {
+      "lat": 29.33,
+      "lng": 80.09
+    },
+    "elevation_m": 1615,
+    "type": [
+      "heritage",
+      "temple",
+      "offbeat"
+    ],
+    "vibe": [
+      "offbeat",
+      "quiet",
+      "cultural",
+      "heritage"
+    ],
+    "difficulty": "moderate",
+    "nearest_airport": "Pantnagar \u2014 200km",
+    "nearest_railhead": "Tanakpur \u2014 75km",
+    "tagline": "The first capital of the Chand dynasty, a UNESCO-nominated Baleshwar Temple, and where Jim Corbett shot the man-eating tigress of Champawat \u2014 436 kills, India's deadliest.",
+    "why_special": "Champawat was the original capital of the Chand dynasty before they moved to Almora and then Nainital. The Baleshwar Temple group (12th century) is on India's tentative UNESCO list \u2014 exquisite stone carvings that rival Khajuraho in detail (minus the erotic ones). Ek Hathiya Ka Naula (one-handed stepwell) is a unique architectural curiosity. The town is famous in wildlife history: Jim Corbett tracked and shot the Champawat Tigress here in 1907 \u2014 a Bengal tiger that had killed 436 people (the highest number attributed to any single animal). The town has a small museum commemorating this. Pancheshwar (confluence of Kali and Saryu rivers, Hindu pilgrimage) is 54km away.",
+    "budget_tier": "budget",
+    "ideal_duration_min": 1,
+    "ideal_duration_max": 1,
+    "tags": [
+      "heritage",
+      "temple",
+      "jim-corbett",
+      "offbeat",
+      "kumaon",
+      "UNESCO-tentative",
+      "chand-dynasty"
+    ],
+    "best_months": [
+      3,
+      4,
+      10,
+      11
+    ],
+    "avoid_months": [
+      7,
+      8
+    ],
+    "translations": {},
+    "monthly_suitability": [
+      {
+        "m": 1,
+        "score": 3,
+        "note": "Cool (3-12\u00b0C). Temple visits comfortable. Quiet."
+      },
+      {
+        "m": 2,
+        "score": 3,
+        "note": "Cold but pleasant. Few visitors."
+      },
+      {
+        "m": 3,
+        "score": 5,
+        "note": "Spring. Wildflowers, comfortable weather. Temple carvings in good light."
+      },
+      {
+        "m": 4,
+        "score": 5,
+        "note": "Best month. Warm days, everything accessible."
+      },
+      {
+        "m": 5,
+        "score": 4,
+        "note": "Getting warm. Still manageable at 1615m."
+      },
+      {
+        "m": 6,
+        "score": 3,
+        "note": "Pre-monsoon. Some rain starting."
+      },
+      {
+        "m": 7,
+        "score": 1,
+        "note": "Monsoon. Heavy rain. Road from Tanakpur prone to landslides."
+      },
+      {
+        "m": 8,
+        "score": 1,
+        "note": "Peak monsoon. Not recommended."
+      },
+      {
+        "m": 9,
+        "score": 3,
+        "note": "Monsoon ending. Green and fresh."
+      },
+      {
+        "m": 10,
+        "score": 5,
+        "note": "Post-monsoon. Clear, comfortable. Best autumn month."
+      },
+      {
+        "m": 11,
+        "score": 4,
+        "note": "Cool, clear. Good for heritage exploration."
+      },
+      {
+        "m": 12,
+        "score": 3,
+        "note": "Cold. Short days."
+      }
+    ],
+    "kids_friendly": {
+      "suitable": true,
+      "rating": 2,
+      "min_recommended_age": 10,
+      "best_age_group": "12-16",
+      "stroller_accessible": false,
+      "reasons": [
+        "Jim Corbett history is interesting for older kids who've read the books",
+        "Temple carvings are educational"
+      ],
+      "concerns": [
+        "Very remote \u2014 long drive from any major city",
+        "Nothing specifically for children to do",
+        "Basic town infrastructure"
+      ],
+      "kid_highlights": [
+        "Jim Corbett Champawat Tigress story \u2014 real wildlife history",
+        "Baleshwar Temple stone carvings \u2014 ancient art lesson",
+        "Ek Hathiya Ka Naula \u2014 the one-handed stepwell mystery"
+      ],
+      "not_suitable_reason": null
+    }
+  },
+  {
+    "id": "rudraprayag",
+    "name": "Rudraprayag",
+    "state_id": "uttarakhand",
+    "region": "Garhwal / Char Dham Route",
+    "coords": {
+      "lat": 30.28,
+      "lng": 78.98
+    },
+    "elevation_m": 610,
+    "type": [
+      "confluence",
+      "spiritual",
+      "gateway"
+    ],
+    "vibe": [
+      "spiritual",
+      "transit",
+      "quiet",
+      "photogenic"
+    ],
+    "difficulty": "easy",
+    "nearest_airport": "Dehradun (Jolly Grant) \u2014 142km",
+    "nearest_railhead": "Rishikesh \u2014 139km",
+    "tagline": "Where the Alaknanda meets the Mandakini \u2014 the junction where the roads to Kedarnath and Badrinath split, and Jim Corbett's famous man-eating leopard terrorized an entire district.",
+    "why_special": "Rudraprayag is the second of the Panch Prayag (five sacred confluences that form the Ganges). The Alaknanda (from Badrinath) and Mandakini (from Kedarnath) rivers meet here. It's the natural junction on the Char Dham route \u2014 roads split here toward Kedarnath (via Guptkashi) and Badrinath (via Chamoli). The Rudranath Temple at the confluence is ancient. Jim Corbett made this town famous with his book 'The Man-Eating Leopard of Rudraprayag' \u2014 the leopard killed 125 people before Corbett shot it in 1926. The confluence itself is dramatic, with ghats and a suspension bridge.",
+    "budget_tier": "budget",
+    "ideal_duration_min": 1,
+    "ideal_duration_max": 1,
+    "tags": [
+      "confluence",
+      "spiritual",
+      "char-dham-junction",
+      "jim-corbett",
+      "photography",
+      "transit"
+    ],
+    "best_months": [
+      3,
+      4,
+      5,
+      10,
+      11
+    ],
+    "avoid_months": [
+      7,
+      8
+    ],
+    "translations": {},
+    "monthly_suitability": [
+      {
+        "m": 1,
+        "score": 3,
+        "note": "Cool (5-15\u00b0C). Confluence clear. Quiet off-season."
+      },
+      {
+        "m": 2,
+        "score": 3,
+        "note": "Same. Getting warmer. Rivers clear."
+      },
+      {
+        "m": 3,
+        "score": 4,
+        "note": "Spring. Comfortable. Rivers at good levels."
+      },
+      {
+        "m": 4,
+        "score": 5,
+        "note": "Char Dham season beginning. Town comes alive. Rivers clear. Best month."
+      },
+      {
+        "m": 5,
+        "score": 5,
+        "note": "Peak pilgrimage transit. Warm but manageable."
+      },
+      {
+        "m": 6,
+        "score": 4,
+        "note": "Char Dham pilgrimage heavy. Pre-monsoon rain starting."
+      },
+      {
+        "m": 7,
+        "score": 1,
+        "note": "Monsoon. Rivers in dangerous spate. 2013 disaster hit Rudraprayag severely. Avoid."
+      },
+      {
+        "m": 8,
+        "score": 1,
+        "note": "Peak monsoon. Flash flood risk. Not safe."
+      },
+      {
+        "m": 9,
+        "score": 3,
+        "note": "Rivers calming. Road repairs. Post-monsoon quiet."
+      },
+      {
+        "m": 10,
+        "score": 5,
+        "note": "Clear rivers, comfortable weather. Char Dham closing. Quiet confluence."
+      },
+      {
+        "m": 11,
+        "score": 4,
+        "note": "Cold, clear. Rivers at their clearest. Quiet."
+      },
+      {
+        "m": 12,
+        "score": 3,
+        "note": "Cold. Rivers crystal clear. Few visitors."
+      }
+    ],
+    "kids_friendly": {
+      "suitable": true,
+      "rating": 2,
+      "min_recommended_age": 6,
+      "best_age_group": "8-14",
+      "stroller_accessible": false,
+      "reasons": [
+        "Confluence is visually interesting \u2014 two rivers meeting",
+        "Brief stop on longer journeys \u2014 doesn't require planning"
+      ],
+      "concerns": [
+        "Not a destination \u2014 a transit stop",
+        "River ghats can be dangerous for children",
+        "Limited facilities"
+      ],
+      "kid_highlights": [
+        "Watching two rivers merge \u2014 geography lesson in real life",
+        "Suspension bridge crossing",
+        "Jim Corbett leopard story at the original location"
+      ],
+      "not_suitable_reason": null
+    }
+  },
+  {
+    "id": "pinjore-gardens",
+    "name": "Pinjore (Yadavindra Gardens)",
+    "state_id": "haryana",
+    "region": "Shivalik Foothills",
+    "coords": {
+      "lat": 30.8,
+      "lng": 76.92
+    },
+    "elevation_m": 477,
+    "type": [
+      "garden",
+      "heritage",
+      "mughal"
+    ],
+    "vibe": [
+      "family",
+      "heritage",
+      "picnic",
+      "easy"
+    ],
+    "difficulty": "easy",
+    "nearest_airport": "Chandigarh \u2014 22km",
+    "nearest_railhead": "Kalka \u2014 8km",
+    "tagline": "A 17th-century Mughal garden in the Shivalik foothills \u2014 seven terraces, fountains, and a mini zoo that makes it Chandigarh's favorite family day trip.",
+    "why_special": "Pinjore Gardens (Yadavindra Gardens) were designed by Fidai Khan, Aurangzeb's foster brother, in the 17th century and later restored by the Patiala maharajas. Seven terraced levels in classic Mughal charbagh style with fountains, water channels, pavilions (Rang Mahal, Sheesh Mahal, Jal Mahal), and mature tree avenues. A mini zoo and Japanese garden were added later. The Mango Festival (June-July) and Baisakhi Mela (April) are popular events. Located on the Chandigarh-Shimla highway, it's the default day trip for Chandigarh families and a pleasant break on the drive to Shimla. The gardens during the Heritage Festival (December) are illuminated.",
+    "budget_tier": "budget",
+    "ideal_duration_min": 1,
+    "ideal_duration_max": 1,
+    "tags": [
+      "mughal-garden",
+      "heritage",
+      "family",
+      "picnic",
+      "day-trip",
+      "chandigarh-extension"
+    ],
+    "best_months": [
+      10,
+      11,
+      2,
+      3
+    ],
+    "avoid_months": [
+      5,
+      6
+    ],
+    "translations": {},
+    "monthly_suitability": [
+      {
+        "m": 1,
+        "score": 3,
+        "note": "Cold (3-15\u00b0C). Gardens pleasant in afternoon sun. Quiet."
+      },
+      {
+        "m": 2,
+        "score": 4,
+        "note": "Warming. Gardens coming alive. Good for photos."
+      },
+      {
+        "m": 3,
+        "score": 5,
+        "note": "Spring bloom. 15-28\u00b0C. Best time for the gardens."
+      },
+      {
+        "m": 4,
+        "score": 4,
+        "note": "Warm. Baisakhi Mela celebrations. Fountains running."
+      },
+      {
+        "m": 5,
+        "score": 2,
+        "note": "Hot (35-42\u00b0C). Gardens dry. Afternoon visits miserable."
+      },
+      {
+        "m": 6,
+        "score": 2,
+        "note": "Mango Festival if timing aligns. Otherwise too hot."
+      },
+      {
+        "m": 7,
+        "score": 3,
+        "note": "Monsoon. Gardens green and lush. Cooler. Can get waterlogged."
+      },
+      {
+        "m": 8,
+        "score": 3,
+        "note": "Same. Green but humid."
+      },
+      {
+        "m": 9,
+        "score": 3,
+        "note": "Monsoon ending. Gardens still lush."
+      },
+      {
+        "m": 10,
+        "score": 5,
+        "note": "Post-monsoon. Gardens at their best. Pleasant weather."
+      },
+      {
+        "m": 11,
+        "score": 5,
+        "note": "Cool and clear. Autumn colors in the avenue trees."
+      },
+      {
+        "m": 12,
+        "score": 4,
+        "note": "Cold but sunny afternoons are pleasant. Heritage Festival illuminations."
+      }
+    ],
+    "kids_friendly": {
+      "suitable": true,
+      "rating": 5,
+      "min_recommended_age": 2,
+      "best_age_group": "3-10",
+      "stroller_accessible": true,
+      "reasons": [
+        "Flat garden paths \u2014 one of the few places where strollers actually work",
+        "Mini zoo keeps young children engaged",
+        "Open lawns for running around",
+        "Fountains and water channels are fascinating for kids",
+        "20 minutes from Chandigarh \u2014 easy half-day trip"
+      ],
+      "concerns": [
+        "Weekend crowds can be heavy \u2014 weekday visits are better",
+        "Summer heat makes it unbearable for outdoor time with kids",
+        "Mini zoo is basic \u2014 manage expectations"
+      ],
+      "kid_highlights": [
+        "Running through the seven terraced garden levels",
+        "Mini zoo with deer, peacocks, and rabbits",
+        "Toy train ride (weekends and holidays)",
+        "Fountains and water channels to play near",
+        "Picnic on the lawns"
+      ],
+      "not_suitable_reason": null
+    }
+  },
+  {
+    "id": "manikaran",
+    "name": "Manikaran",
+    "state_id": "himachal-pradesh",
+    "region": "Parvati Valley",
+    "coords": {
+      "lat": 32.03,
+      "lng": 77.35
+    },
+    "elevation_m": 1760,
+    "type": [
+      "spiritual",
+      "hot-spring",
+      "pilgrimage"
+    ],
+    "vibe": [
+      "spiritual",
+      "offbeat",
+      "nature",
+      "cultural"
+    ],
+    "difficulty": "easy",
+    "nearest_airport": "Bhuntar (Kullu) \u2014 35km",
+    "nearest_railhead": "Joginder Nagar \u2014 130km",
+    "tagline": "Where Shiva's earring fell into a hot spring, and the water is so hot it literally cooks rice in bags \u2014 a pilgrimage site for Hindus and Sikhs in the psychedelic Parvati Valley.",
+    "why_special": "Manikaran sits where the Parvati River narrows into a gorge, and natural hot springs boil at temperatures exceeding 90\u00b0C. The legend: Shiva's consort Parvati's earring (mani) fell into the spring, and Shesha Nag returned it with a blast of boiling water. The Gurudwara Sri Manikaran Sahib runs a langar that literally cooks rice and dal in bags submerged in the spring water \u2014 visitors eat food cooked by the earth. The Hindu Ram Temple and hot spring pools sit beside the gurdwara. The thermal springs are genuine \u2014 you can see steam rising from the river banks. Sacred to both Hindus and Sikhs, making it one of the few shared pilgrimage sites.",
+    "budget_tier": "budget",
+    "ideal_duration_min": 1,
+    "ideal_duration_max": 1,
+    "tags": [
+      "hot-spring",
+      "spiritual",
+      "gurudwara",
+      "pilgrimage",
+      "parvati-valley",
+      "langar",
+      "thermal"
+    ],
+    "best_months": [
+      3,
+      4,
+      5,
+      10,
+      11
+    ],
+    "avoid_months": [
+      7,
+      8
+    ],
+    "translations": {},
+    "monthly_suitability": [
+      {
+        "m": 1,
+        "score": 3,
+        "note": "Cold but hot springs are perfect in winter. The contrast of snow and steam is photogenic."
+      },
+      {
+        "m": 2,
+        "score": 3,
+        "note": "Same. Hot spring bathing at its most therapeutic."
+      },
+      {
+        "m": 3,
+        "score": 5,
+        "note": "Spring. Valley greening. Hot springs comfortable. Moderate crowds."
+      },
+      {
+        "m": 4,
+        "score": 5,
+        "note": "Perfect weather. Hot springs, langar, river views. Best month."
+      },
+      {
+        "m": 5,
+        "score": 4,
+        "note": "Warm. Hot springs less appealing in heat. Parvati Valley busy with tourists."
+      },
+      {
+        "m": 6,
+        "score": 3,
+        "note": "Pre-monsoon. Warm. Some rain."
+      },
+      {
+        "m": 7,
+        "score": 1,
+        "note": "Monsoon. Parvati River in dangerous flood. Flash flood risk severe (multiple disasters here). AVOID."
+      },
+      {
+        "m": 8,
+        "score": 1,
+        "note": "Peak danger. River in spate. Not safe."
+      },
+      {
+        "m": 9,
+        "score": 3,
+        "note": "River calming. Hot springs accessible. Some rain risk."
+      },
+      {
+        "m": 10,
+        "score": 5,
+        "note": "Post-monsoon. Clear, comfortable. Hot spring season begins. Best autumn month."
+      },
+      {
+        "m": 11,
+        "score": 5,
+        "note": "Cold enough to enjoy hot springs fully. Valley beautiful."
+      },
+      {
+        "m": 12,
+        "score": 4,
+        "note": "Cold. Hot springs at their best. Fewer crowds."
+      }
+    ],
+    "kids_friendly": {
+      "suitable": true,
+      "rating": 3,
+      "min_recommended_age": 5,
+      "best_age_group": "8-14",
+      "stroller_accessible": false,
+      "reasons": [
+        "Hot springs are genuinely fascinating \u2014 kids love seeing water that hot",
+        "Langar food cooked in spring water is an unforgettable experience",
+        "Free langar meal at the Gurudwara \u2014 teaches community values"
+      ],
+      "concerns": [
+        "HOT SPRINGS ARE DANGEROUSLY HOT (90\u00b0C+) \u2014 scalding risk. Never let children near unguarded springs",
+        "River is dangerous \u2014 the Parvati has claimed many lives",
+        "Narrow valley with steep drops \u2014 constant supervision needed",
+        "Crowded gurudwara with steep stairs"
+      ],
+      "kid_highlights": [
+        "Seeing rice cook in naturally boiling water \u2014 science in action",
+        "Hot spring bathing in designated cooler pools",
+        "Gurudwara langar \u2014 eating food cooked by the earth",
+        "Steam rising from the river banks \u2014 dramatic visual"
+      ],
+      "not_suitable_reason": null
+    }
+  },
+  {
+    "id": "jibhi",
+    "name": "Jibhi",
+    "state_id": "himachal-pradesh",
+    "region": "Banjar / Tirthan-Sainj",
+    "coords": {
+      "lat": 31.62,
+      "lng": 77.34
+    },
+    "elevation_m": 1600,
+    "type": [
+      "village",
+      "offbeat",
+      "nature"
+    ],
+    "vibe": [
+      "offbeat",
+      "quiet",
+      "backpacker",
+      "nature",
+      "instagram"
+    ],
+    "difficulty": "easy",
+    "nearest_airport": "Bhuntar (Kullu) \u2014 60km",
+    "nearest_railhead": "Joginder Nagar \u2014 100km",
+    "tagline": "The Kasol of 2018 turned the Manali of 2024 \u2014 wooden cottages, waterfalls, forest treks, and every Instagram influencer in North India.",
+    "why_special": "Jibhi was an unknown Banjar Valley village until it became an Instagram sensation around 2018-2019. Now it's one of Himachal's fastest-growing tourist destinations. The appeal: traditional wooden houses and cottages, the Jibhi Waterfall, Serolsar Lake (5km trek, pristine), Jalori Pass (3120m, easy drive), Raghupur Fort trek, and the Tirthan River nearby for trout fishing. The cottage stay culture here is strong \u2014 wooden balconies, mountain views, bonfire vibes. The honest truth: it's getting overcrowded fast, with concrete cottages replacing wood ones. Visit soon or skip to the next undiscovered village (Shoja, 10km up, is the current escape from Jibhi's escape).",
+    "budget_tier": "budget-to-mid",
+    "ideal_duration_min": 2,
+    "ideal_duration_max": 3,
+    "tags": [
+      "offbeat",
+      "instagram",
+      "cottage",
+      "waterfall",
+      "trekking",
+      "jalori-pass",
+      "backpacker",
+      "nature"
+    ],
+    "best_months": [
+      3,
+      4,
+      5,
+      10,
+      11
+    ],
+    "avoid_months": [
+      7,
+      8
+    ],
+    "translations": {},
+    "monthly_suitability": [
+      {
+        "m": 1,
+        "score": 4,
+        "note": "Snow season. Valley in white. Wooden cottages in snow = peak aesthetic. Cold (0-8\u00b0C)."
+      },
+      {
+        "m": 2,
+        "score": 4,
+        "note": "Snow. Jalori Pass closed but valley is beautiful. Fewer tourists. Good cottage deals."
+      },
+      {
+        "m": 3,
+        "score": 5,
+        "note": "Snow melting, spring arriving. Waterfalls at their best. 10-20\u00b0C."
+      },
+      {
+        "m": 4,
+        "score": 5,
+        "note": "Perfect. Jalori Pass opening. Serolsar Lake accessible. Everything green."
+      },
+      {
+        "m": 5,
+        "score": 4,
+        "note": "Warm, busy. Weekend crowds from Delhi and Chandigarh. Cottage prices up."
+      },
+      {
+        "m": 6,
+        "score": 3,
+        "note": "Pre-monsoon rain starts. Still manageable. Crowds thinner."
+      },
+      {
+        "m": 7,
+        "score": 1,
+        "note": "Monsoon. Landslide risk on Aut-Banjar road. Waterfalls dangerous. Leeches."
+      },
+      {
+        "m": 8,
+        "score": 1,
+        "note": "Peak monsoon. Not recommended."
+      },
+      {
+        "m": 9,
+        "score": 3,
+        "note": "Monsoon ending. Valley incredibly green. Some rain risk. Good shoulder month."
+      },
+      {
+        "m": 10,
+        "score": 5,
+        "note": "Post-monsoon. Clear skies. Autumn colors. Jalori Pass open. Best month."
+      },
+      {
+        "m": 11,
+        "score": 5,
+        "note": "Cold, clear, beautiful. Bonfire season. First snow on Jalori possible."
+      },
+      {
+        "m": 12,
+        "score": 4,
+        "note": "Cold. Snow likely. Christmas cottage bookings fill up months ahead."
+      }
+    ],
+    "kids_friendly": {
+      "suitable": true,
+      "rating": 4,
+      "min_recommended_age": 4,
+      "best_age_group": "6-14",
+      "stroller_accessible": false,
+      "reasons": [
+        "Cottage stays with bonfire and mountain views \u2014 kids love the outdoor living",
+        "Easy waterfall treks suitable for families",
+        "Safe village environment",
+        "River play in summer (supervised)"
+      ],
+      "concerns": [
+        "Waterfall areas can be slippery \u2014 supervision required",
+        "Serolsar Lake trek (5km) may be long for young children",
+        "Limited medical facilities \u2014 nearest hospital in Banjar (20km)",
+        "Cottage quality varies wildly \u2014 research before booking"
+      ],
+      "kid_highlights": [
+        "Jibhi Waterfall \u2014 short, easy trek with a dramatic payoff",
+        "Cottage living with bonfire and marshmallows",
+        "Playing in shallow river sections (summer only, supervised)",
+        "Jalori Pass snow play (winter/spring)",
+        "Serolsar Lake trek for older kids"
+      ],
+      "not_suitable_reason": null
+    }
+  },
+  {
+    "id": "barmer",
+    "name": "Barmer",
+    "state_id": "rajasthan",
+    "region": "Western Rajasthan / Thar Desert",
+    "coords": {
+      "lat": 25.75,
+      "lng": 71.38
+    },
+    "elevation_m": 227,
+    "type": [
+      "desert",
+      "cultural",
+      "offbeat"
+    ],
+    "vibe": [
+      "offbeat",
+      "cultural",
+      "desert",
+      "craft"
+    ],
+    "difficulty": "moderate",
+    "nearest_airport": "Jodhpur \u2014 200km",
+    "nearest_railhead": "Barmer Junction",
+    "tagline": "Where Rajasthan's desert craft tradition lives \u2014 block printing, wood carving, embroidered textiles \u2014 without a single tourist bus in sight.",
+    "why_special": "Barmer is deep Thar Desert \u2014 the Jaisalmer-adjacent district that most tourists skip. That's the point. This is where Rajasthan's living craft traditions are at their most authentic: Ajrakh block printing in Barmer and Balotra, hand-embroidered textiles, carved wooden furniture, and the Kiradu Temples (11th century, often called the 'Khajuraho of Rajasthan' \u2014 genuinely stunning Solanki-era carvings, largely unknown). The Thar Desert Festival (March, timed with Holi) in nearby villages features camel racing, folk music, and fire dancing. Barmer is India's largest wind farm zone \u2014 the modern windmills against desert dunes create surreal landscapes.",
+    "budget_tier": "budget",
+    "ideal_duration_min": 1,
+    "ideal_duration_max": 2,
+    "tags": [
+      "desert",
+      "craft",
+      "block-printing",
+      "offbeat",
+      "kiradu-temples",
+      "thar",
+      "cultural"
+    ],
+    "best_months": [
+      11,
+      12,
+      1,
+      2
+    ],
+    "avoid_months": [
+      5,
+      6,
+      7
+    ],
+    "translations": {},
+    "monthly_suitability": [
+      {
+        "m": 1,
+        "score": 5,
+        "note": "Cool (5-22\u00b0C). Desert pleasant. Best month for village visits and craft workshops."
+      },
+      {
+        "m": 2,
+        "score": 5,
+        "note": "Same. Warming slightly. Desert Festival period."
+      },
+      {
+        "m": 3,
+        "score": 4,
+        "note": "Getting warm (15-32\u00b0C). Desert Festival. Last comfortable month."
+      },
+      {
+        "m": 4,
+        "score": 2,
+        "note": "Hot (30-40\u00b0C). Desert heat building."
+      },
+      {
+        "m": 5,
+        "score": 1,
+        "note": "Extreme heat \u2014 45-50\u00b0C in the Thar. Not survivable for tourism."
+      },
+      {
+        "m": 6,
+        "score": 1,
+        "note": "Furnace. 47-50\u00b0C. Sand storms. Avoid."
+      },
+      {
+        "m": 7,
+        "score": 2,
+        "note": "Monsoon brings slight relief. 35-42\u00b0C. Some rain in desert is unusual but possible."
+      },
+      {
+        "m": 8,
+        "score": 2,
+        "note": "Same. Slightly cooler. Desert greens briefly."
+      },
+      {
+        "m": 9,
+        "score": 3,
+        "note": "Cooling. Desert still warm. Post-rain greenery if monsoon reached here."
+      },
+      {
+        "m": 10,
+        "score": 4,
+        "note": "Comfortable. 20-35\u00b0C. Desert travel viable again."
+      },
+      {
+        "m": 11,
+        "score": 5,
+        "note": "Cool and clear. Desert at its best. Craft workshops active."
+      },
+      {
+        "m": 12,
+        "score": 5,
+        "note": "Cold mornings, pleasant days. Perfect desert month."
+      }
+    ],
+    "kids_friendly": {
+      "suitable": false,
+      "rating": 1,
+      "min_recommended_age": 14,
+      "best_age_group": "18+",
+      "stroller_accessible": false,
+      "reasons": [],
+      "concerns": [
+        "Extreme heat for most of the year \u2014 dangerous for children",
+        "Very remote with basic infrastructure",
+        "Nothing child-oriented \u2014 this is a cultural/craft destination",
+        "Limited medical facilities"
+      ],
+      "kid_highlights": [],
+      "not_suitable_reason": "Extreme desert heat, remoteness, and zero child-friendly infrastructure. Take kids to Jaisalmer instead for a child-safe desert experience."
+    }
+  },
+  {
+    "id": "dungarpur",
+    "name": "Dungarpur",
+    "state_id": "rajasthan",
+    "region": "Vagad / Southern Rajasthan",
+    "coords": {
+      "lat": 23.84,
+      "lng": 73.71
+    },
+    "elevation_m": 224,
+    "type": [
+      "heritage",
+      "palace",
+      "tribal",
+      "offbeat"
+    ],
+    "vibe": [
+      "offbeat",
+      "heritage",
+      "quiet",
+      "cultural"
+    ],
+    "difficulty": "easy",
+    "nearest_airport": "Udaipur \u2014 110km",
+    "nearest_railhead": "Dungarpur",
+    "tagline": "A Bhil tribal heartland with a palace that rivals Udaipur's at 1% of the crowds \u2014 Udai Bilas Palace, Juna Mahal, and zero tourists.",
+    "why_special": "Dungarpur is the capital of the former Vagad princely state in south Rajasthan, close to the Gujarat border. The Udai Bilas Palace (now a heritage hotel) sits on an island in Gaibsagar Lake \u2014 it's genuinely one of the most beautiful palace hotels in Rajasthan and nobody knows about it. Juna Mahal (Old Palace, 13th century) is a seven-story fortified palace with original frescoes, miniature paintings, mirror work, and glass mosaics that haven't been restored or touched \u2014 raw, authentic, extraordinary. Deo Somnath Temple (12th century) nearby has fine sculpture. The region is Bhil tribal territory with distinct art traditions (Pithora paintings).",
+    "budget_tier": "budget-to-mid",
+    "ideal_duration_min": 1,
+    "ideal_duration_max": 2,
+    "tags": [
+      "heritage",
+      "palace",
+      "offbeat",
+      "tribal",
+      "bhil",
+      "frescoes",
+      "lake"
+    ],
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      5,
+      6
+    ],
+    "translations": {},
+    "monthly_suitability": [
+      {
+        "m": 1,
+        "score": 5,
+        "note": "Cool (8-25\u00b0C). Perfect for palace and heritage exploration."
+      },
+      {
+        "m": 2,
+        "score": 5,
+        "note": "Same. Warming slightly. Comfortable all day."
+      },
+      {
+        "m": 3,
+        "score": 4,
+        "note": "Warming (15-33\u00b0C). Morning visits recommended."
+      },
+      {
+        "m": 4,
+        "score": 3,
+        "note": "Getting hot. Heritage visits in morning/evening only."
+      },
+      {
+        "m": 5,
+        "score": 1,
+        "note": "Hot (38-44\u00b0C). Avoid."
+      },
+      {
+        "m": 6,
+        "score": 1,
+        "note": "Pre-monsoon heat and humidity. Not recommended."
+      },
+      {
+        "m": 7,
+        "score": 3,
+        "note": "Monsoon. Green surroundings. Lake fills up beautifully. Cooler."
+      },
+      {
+        "m": 8,
+        "score": 3,
+        "note": "Same. Lake at best levels. Palace hotel in monsoon is romantic."
+      },
+      {
+        "m": 9,
+        "score": 3,
+        "note": "Monsoon ending. Green, lush, humid."
+      },
+      {
+        "m": 10,
+        "score": 5,
+        "note": "Post-monsoon. Lake full, skies clear, comfortable. Best month."
+      },
+      {
+        "m": 11,
+        "score": 5,
+        "note": "Cool, clear, uncrowded. Heritage exploration at its best."
+      },
+      {
+        "m": 12,
+        "score": 5,
+        "note": "Cool and clear. Palace hotel at its most atmospheric."
+      }
+    ],
+    "kids_friendly": {
+      "suitable": true,
+      "rating": 3,
+      "min_recommended_age": 8,
+      "best_age_group": "10-16",
+      "stroller_accessible": false,
+      "reasons": [
+        "Juna Mahal feels like entering a time capsule \u2014 genuinely exciting for older kids",
+        "Palace hotel on a lake is unique and atmospheric",
+        "Bhil tribal art is colorful and different"
+      ],
+      "concerns": [
+        "Not a typical kid destination \u2014 no rides, activities, or parks",
+        "Summer heat is dangerous",
+        "Limited restaurant options outside the palace hotel"
+      ],
+      "kid_highlights": [
+        "Juna Mahal \u2014 seven stories of hidden rooms, original paintings, glass mosaics",
+        "Udai Bilas Palace lake setting",
+        "Bhil tribal art workshops if arranged"
+      ],
+      "not_suitable_reason": null
+    }
+  },
+  {
+    "id": "osian",
+    "name": "Osian",
+    "state_id": "rajasthan",
+    "region": "Marwar / Western Rajasthan",
+    "coords": {
+      "lat": 26.73,
+      "lng": 72.92
+    },
+    "elevation_m": 240,
+    "type": [
+      "temple-town",
+      "desert",
+      "heritage"
+    ],
+    "vibe": [
+      "offbeat",
+      "heritage",
+      "cultural",
+      "desert"
+    ],
+    "difficulty": "easy",
+    "nearest_airport": "Jodhpur \u2014 65km",
+    "nearest_railhead": "Osian",
+    "tagline": "The 'Khajuraho of Rajasthan' \u2014 8th-century Jain and Hindu temples in the Thar Desert, with camel safaris and sand dunes 65km from Jodhpur.",
+    "why_special": "Osian has a cluster of 15+ ancient temples dating from the 8th-12th century \u2014 Gurjar-Pratihara era Jain and Hindu temples with intricate carvings comparable to the best medieval Indian temple art. The Mahavira Jain Temple (8th century) and Sachiya Mata Temple are the standouts \u2014 detailed torana arches, carved pillars, and erotic panels. The town sits where the agricultural plain meets the Thar Desert, so sand dunes begin right here. Camel safaris from Osian run into the dunes (a less-touristy alternative to Jaisalmer's Sam dunes). Desert camps offer overnight stays. Jodhpur day trip works, but an overnight in the dunes is better.",
+    "budget_tier": "budget",
+    "ideal_duration_min": 1,
+    "ideal_duration_max": 1,
+    "tags": [
+      "temple",
+      "heritage",
+      "jain",
+      "desert",
+      "camel-safari",
+      "sand-dunes",
+      "jodhpur-extension"
+    ],
+    "best_months": [
+      10,
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "avoid_months": [
+      5,
+      6
+    ],
+    "translations": {},
+    "monthly_suitability": [
+      {
+        "m": 1,
+        "score": 5,
+        "note": "Cool (5-22\u00b0C). Desert pleasant. Temple visits comfortable."
+      },
+      {
+        "m": 2,
+        "score": 5,
+        "note": "Same. Perfect for morning temple and evening dune safari."
+      },
+      {
+        "m": 3,
+        "score": 4,
+        "note": "Warming. Still manageable for outdoor exploration."
+      },
+      {
+        "m": 4,
+        "score": 2,
+        "note": "Hot. Morning-only temple visits viable."
+      },
+      {
+        "m": 5,
+        "score": 1,
+        "note": "Extreme heat (43-48\u00b0C). Avoid."
+      },
+      {
+        "m": 6,
+        "score": 1,
+        "note": "Furnace. Not survivable for tourism."
+      },
+      {
+        "m": 7,
+        "score": 2,
+        "note": "Monsoon may bring brief rain to the desert. 35-40\u00b0C."
+      },
+      {
+        "m": 8,
+        "score": 2,
+        "note": "Same. Warm but slightly less than peak summer."
+      },
+      {
+        "m": 9,
+        "score": 3,
+        "note": "Cooling down. Desert turning comfortable."
+      },
+      {
+        "m": 10,
+        "score": 5,
+        "note": "Post-monsoon. Perfect weather. Sand dunes at their best."
+      },
+      {
+        "m": 11,
+        "score": 5,
+        "note": "Cool and clear. Desert evening light for photography."
+      },
+      {
+        "m": 12,
+        "score": 5,
+        "note": "Cold mornings, pleasant days. Camel safari weather."
+      }
+    ],
+    "kids_friendly": {
+      "suitable": true,
+      "rating": 4,
+      "min_recommended_age": 4,
+      "best_age_group": "6-14",
+      "stroller_accessible": false,
+      "reasons": [
+        "Camel ride in sand dunes \u2014 every kid's Rajasthan fantasy",
+        "Desert camp overnight with bonfire and folk music",
+        "Temples are manageable (small complex, not overwhelming)"
+      ],
+      "concerns": [
+        "Summer heat is dangerous for children",
+        "Sand in everything \u2014 prepare for gritty kids",
+        "Basic facilities at desert camps"
+      ],
+      "kid_highlights": [
+        "Camel safari into the Thar Desert dunes",
+        "Overnight desert camp \u2014 sleeping under stars in the Thar",
+        "Playing in sand dunes",
+        "Folk music and dance at camp bonfire"
+      ],
+      "not_suitable_reason": null
+    }
+  },
+  {
+    "id": "chaukori",
+    "name": "Chaukori",
+    "state_id": "uttarakhand",
+    "region": "Kumaon Hills",
+    "coords": {
+      "lat": 29.84,
+      "lng": 80.25
+    },
+    "elevation_m": 2010,
+    "type": [
+      "village",
+      "viewpoint",
+      "tea-garden"
+    ],
+    "vibe": [
+      "quiet",
+      "offbeat",
+      "nature",
+      "tea"
+    ],
+    "difficulty": "moderate",
+    "nearest_airport": "Pantnagar \u2014 220km",
+    "nearest_railhead": "Kathgodam \u2014 195km",
+    "tagline": "Tea gardens at 2000m with a 350-degree view of Panchachuli, Nanda Devi, and Api \u2014 the most underrated viewpoint in Kumaon.",
+    "why_special": "Chaukori is a ridge-top hamlet in the far eastern Kumaon with tea gardens that produce some of India's highest-grown tea. The KMVN rest house here has been a secret among travelers for decades \u2014 the lawn gives an unbroken 350-degree panorama of the Himalayan range including Panchachuli (five peaks resembling cooking hearths), Nanda Devi, Nanda Kot, and Api (in Nepal). The tea estate was established in the 1960s and produces boutique organic tea. Patal Bhuvaneshwar cave temple (38km) is a bonus \u2014 an underground limestone cave with formations that correspond to Hindu mythology.",
+    "budget_tier": "budget",
+    "ideal_duration_min": 1,
+    "ideal_duration_max": 2,
+    "tags": [
+      "tea-garden",
+      "himalayan-views",
+      "offbeat",
+      "quiet",
+      "panchachuli",
+      "photography",
+      "kumaon"
+    ],
+    "best_months": [
+      10,
+      11,
+      3,
+      4
+    ],
+    "avoid_months": [
+      7,
+      8
+    ],
+    "translations": {},
+    "monthly_suitability": [
+      {
+        "m": 1,
+        "score": 3,
+        "note": "Cold (0-8\u00b0C). Snow possible. Views spectacular on clear days. Very quiet."
+      },
+      {
+        "m": 2,
+        "score": 3,
+        "note": "Cold. Tea gardens dormant. Mountain views excellent."
+      },
+      {
+        "m": 3,
+        "score": 5,
+        "note": "Spring. Tea plucking begins. Wildflowers. Clear panoramic views."
+      },
+      {
+        "m": 4,
+        "score": 5,
+        "note": "Perfect. Tea gardens green. Panchachuli views crystal clear."
+      },
+      {
+        "m": 5,
+        "score": 3,
+        "note": "Warm. Haze reduces visibility. Tea season ongoing."
+      },
+      {
+        "m": 6,
+        "score": 2,
+        "note": "Pre-monsoon cloud cover. Views unreliable."
+      },
+      {
+        "m": 7,
+        "score": 1,
+        "note": "Monsoon. Zero views. Heavy rain. Roads dangerous."
+      },
+      {
+        "m": 8,
+        "score": 1,
+        "note": "Peak monsoon. Not recommended."
+      },
+      {
+        "m": 9,
+        "score": 3,
+        "note": "Monsoon ending. Views returning. Green and lush."
+      },
+      {
+        "m": 10,
+        "score": 5,
+        "note": "Best month. Post-monsoon clarity gives the best Panchachuli views of the year."
+      },
+      {
+        "m": 11,
+        "score": 5,
+        "note": "Clear, cold, stunning views. Tea gardens in autumn mode."
+      },
+      {
+        "m": 12,
+        "score": 3,
+        "note": "Very cold. Clear days are magical. Snow on approach possible."
+      }
+    ],
+    "kids_friendly": {
+      "suitable": false,
+      "rating": 1,
+      "min_recommended_age": 10,
+      "best_age_group": "14+",
+      "stroller_accessible": false,
+      "reasons": [],
+      "concerns": [
+        "Very remote \u2014 8-9 hours from Kathgodam on mountain roads",
+        "Nothing for children to do",
+        "Basic KMVN accommodation",
+        "No medical facilities nearby"
+      ],
+      "kid_highlights": [],
+      "not_suitable_reason": "Too remote for family travel. The 8+ hour drive on narrow mountain roads is brutal. Nothing for children beyond views."
+    }
+  },
+  {
+    "id": "gopeshwar",
+    "name": "Gopeshwar",
+    "state_id": "uttarakhand",
+    "region": "Garhwal / Chamoli",
+    "coords": {
+      "lat": 30.41,
+      "lng": 79.32
+    },
+    "elevation_m": 1308,
+    "type": [
+      "town",
+      "heritage",
+      "gateway"
+    ],
+    "vibe": [
+      "transit",
+      "quiet",
+      "spiritual",
+      "offbeat"
+    ],
+    "difficulty": "moderate",
+    "nearest_airport": "Dehradun (Jolly Grant) \u2014 224km",
+    "nearest_railhead": "Rishikesh \u2014 210km",
+    "tagline": "The Chamoli district HQ with a 1300-year-old Shiva trident that nobody can move \u2014 gateway to Chopta, Valley of Flowers, and the Chipko movement's birthplace.",
+    "why_special": "Gopeshwar is the headquarters of Chamoli district and a transit hub for Chopta-Tungnath, Valley of Flowers, and Auli. The Gopinath Temple houses a trident (trishul) embedded in the ground that legendarily cannot be moved \u2014 it's been there since the 8th century and every invader and strongman who tried has failed (or so the story goes). The town was the epicenter of the Chipko movement (1973) \u2014 where women hugged trees to prevent logging, creating India's most iconic environmental protest. Vaitarni Kund (natural hot spring) is nearby. Most people pass through en route to Chopta or Badrinath, but the temple and the environmental history deserve a stop.",
+    "budget_tier": "budget",
+    "ideal_duration_min": 1,
+    "ideal_duration_max": 1,
+    "tags": [
+      "heritage",
+      "temple",
+      "gateway",
+      "chipko-movement",
+      "transit",
+      "offbeat",
+      "trishul"
+    ],
+    "best_months": [
+      4,
+      5,
+      9,
+      10
+    ],
+    "avoid_months": [
+      7,
+      8
+    ],
+    "translations": {},
+    "monthly_suitability": [
+      {
+        "m": 1,
+        "score": 3,
+        "note": "Cold (2-12\u00b0C). Temple open. Quiet. Chopta and higher areas may be snow-bound."
+      },
+      {
+        "m": 2,
+        "score": 3,
+        "note": "Cold. Transition month. Some nearby areas opening."
+      },
+      {
+        "m": 3,
+        "score": 4,
+        "note": "Spring. Warming up. Roads to Chopta clearing."
+      },
+      {
+        "m": 4,
+        "score": 5,
+        "note": "Everything open. Comfortable weather. Valley of Flowers prep month."
+      },
+      {
+        "m": 5,
+        "score": 5,
+        "note": "Full season. All routes open. Good transit conditions."
+      },
+      {
+        "m": 6,
+        "score": 4,
+        "note": "Valley of Flowers opening (late June). Hot in town, pleasant at altitude."
+      },
+      {
+        "m": 7,
+        "score": 2,
+        "note": "Monsoon. Landslide risk on all mountain roads in Chamoli. Valley of Flowers at peak but access risky."
+      },
+      {
+        "m": 8,
+        "score": 2,
+        "note": "Same. Road conditions poor."
+      },
+      {
+        "m": 9,
+        "score": 5,
+        "note": "Post-monsoon. Clear, green. Chopta and Tungnath at their best."
+      },
+      {
+        "m": 10,
+        "score": 5,
+        "note": "Best month. Clear skies. Everything accessible. Autumn colors."
+      },
+      {
+        "m": 11,
+        "score": 3,
+        "note": "Getting cold. Higher areas closing. Town still accessible."
+      },
+      {
+        "m": 12,
+        "score": 2,
+        "note": "Cold. Limited value as a destination. Transit only if needed."
+      }
+    ],
+    "kids_friendly": {
+      "suitable": true,
+      "rating": 2,
+      "min_recommended_age": 8,
+      "best_age_group": "10-14",
+      "stroller_accessible": false,
+      "reasons": [
+        "The immovable trident story is genuinely fascinating for kids",
+        "Chipko movement history is in school textbooks \u2014 seeing the actual place is educational"
+      ],
+      "concerns": [
+        "Transit town \u2014 not a destination to spend significant time",
+        "Long drive from any major city",
+        "Limited facilities"
+      ],
+      "kid_highlights": [
+        "Gopinath Temple's immovable trident \u2014 try to shake it yourself",
+        "Chipko movement birthplace \u2014 environmental history lesson",
+        "Gateway to Chopta-Tungnath trek (for older, fit kids)"
+      ],
+      "not_suitable_reason": null
+    }
+  },
+  {
+    "id": "guptkashi",
+    "name": "Guptkashi",
+    "state_id": "uttarakhand",
+    "region": "Garhwal / Kedarnath Route",
+    "coords": {
+      "lat": 30.53,
+      "lng": 79.08
+    },
+    "elevation_m": 1319,
+    "type": [
+      "spiritual",
+      "gateway",
+      "heritage"
+    ],
+    "vibe": [
+      "spiritual",
+      "transit",
+      "quiet"
+    ],
+    "difficulty": "easy",
+    "nearest_airport": "Dehradun (Jolly Grant) \u2014 220km",
+    "nearest_railhead": "Rishikesh \u2014 198km",
+    "tagline": "The last proper town before Kedarnath \u2014 where Shiva hid from the Pandavas, with views of Chaukhamba that make the 8-hour drive worth it on their own.",
+    "why_special": "Guptkashi (Hidden Kashi) is the essential overnight stop on the Kedarnath pilgrimage. Legend says Shiva hid here from the Pandavas after the Mahabharata war \u2014 the Vishwanath Temple here has the same sanctity as Varanasi's, hence 'Gupt Kashi.' The town sits at the Mandakini-Son Ganga confluence with Chaukhamba (6995m) as its backdrop \u2014 this view alone justifies the stop. Manikarnika Kund hot spring is below the temple. Sonprayag (25km ahead) is where the Kedarnath trek or helicopter ride begins. Most Kedarnath pilgrims use Guptkashi as their base \u2014 it has better facilities than Sonprayag and the temple visit adds spiritual depth to the pilgrimage.",
+    "budget_tier": "budget",
+    "ideal_duration_min": 1,
+    "ideal_duration_max": 1,
+    "tags": [
+      "spiritual",
+      "kedarnath-gateway",
+      "temple",
+      "chaukhamba-view",
+      "pilgrimage",
+      "hot-spring"
+    ],
+    "best_months": [
+      5,
+      6,
+      9,
+      10
+    ],
+    "avoid_months": [
+      7,
+      8,
+      12,
+      1
+    ],
+    "translations": {},
+    "monthly_suitability": [
+      {
+        "m": 1,
+        "score": 2,
+        "note": "Cold (2-10\u00b0C). Kedarnath closed. Temple open. Quiet."
+      },
+      {
+        "m": 2,
+        "score": 2,
+        "note": "Same. Off-season. Hot spring bathing worthwhile."
+      },
+      {
+        "m": 3,
+        "score": 3,
+        "note": "Warming. Kedarnath still closed. Pre-season."
+      },
+      {
+        "m": 4,
+        "score": 4,
+        "note": "Kedarnath opening (late April). Town waking up. Chaukhamba views stunning."
+      },
+      {
+        "m": 5,
+        "score": 5,
+        "note": "Full Kedarnath season. Town buzzing. Helicopter bookings essential."
+      },
+      {
+        "m": 6,
+        "score": 5,
+        "note": "Peak pilgrimage. Very crowded but maximum energy."
+      },
+      {
+        "m": 7,
+        "score": 1,
+        "note": "Monsoon. 2013 floods devastated this area. Road closures, landslides. Dangerous."
+      },
+      {
+        "m": 8,
+        "score": 1,
+        "note": "Peak monsoon. Not safe."
+      },
+      {
+        "m": 9,
+        "score": 5,
+        "note": "Post-monsoon. Kedarnath still open. Clear, less crowded. Best month."
+      },
+      {
+        "m": 10,
+        "score": 5,
+        "note": "Kedarnath closing month (late October). Last window. Clear views."
+      },
+      {
+        "m": 11,
+        "score": 2,
+        "note": "Kedarnath closed. Cold. Limited reason to visit."
+      },
+      {
+        "m": 12,
+        "score": 2,
+        "note": "Deep winter. Off-season."
+      }
+    ],
+    "kids_friendly": {
+      "suitable": false,
+      "rating": 1,
+      "min_recommended_age": 12,
+      "best_age_group": "16+",
+      "stroller_accessible": false,
+      "reasons": [],
+      "concerns": [
+        "Long, exhausting drive from Rishikesh (8-10 hours) on mountain roads",
+        "Primarily a pilgrimage transit town \u2014 nothing for children",
+        "Basic facilities during peak season \u2014 overloaded infrastructure",
+        "Kedarnath trek from Sonprayag is 16km uphill \u2014 not suitable for young children"
+      ],
+      "kid_highlights": [],
+      "not_suitable_reason": "Transit town for Kedarnath pilgrimage. The drive is exhausting and the town offers nothing for children. The Kedarnath trek is too strenuous for kids under 12."
+    }
+  }
+]
