@@ -175,9 +175,25 @@ export function DestinationDetail({ dest }: { dest: any }) {
               ))}
             </div>
 
-            {/* Data freshness */}
+            {/* Infrastructure Concerns — honest warnings */}
+            {travelerFit.infraConcerns.length > 0 && (
+              <div className="mt-4 rounded-xl border border-yellow-500/20 bg-yellow-500/5 p-3">
+                <div className="text-xs font-medium text-yellow-400 mb-2">⚠ Infrastructure reality check</div>
+                <div className="space-y-1">
+                  {travelerFit.infraConcerns.map((concern, i) => (
+                    <div key={i} className="flex items-start gap-1.5 text-xs text-yellow-300/70">
+                      <span className="mt-0.5 shrink-0">•</span>
+                      <span>{concern}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Data freshness + methodology */}
             <div className="mt-3 text-[10px] text-muted-foreground/50">
-              Data verified: April 2026 · Scores based on weather, access, crowds, infrastructure
+              Data verified: April 2026 · Scores based on weather, road access, crowd levels, infrastructure, safety conditions ·
+              Kids ratings factor in: medical access, ATM availability, phone signal, altitude, road safety
             </div>
           </div>
         </SlideIn>
@@ -426,14 +442,24 @@ export function DestinationDetail({ dest }: { dest: any }) {
   );
 }
 
-/** Derive traveler fit from destination data */
+/** Derive traveler fit from destination data — INTELLIGENT assessment */
 function getTravelerFit(dest: any, kf: any) {
   const goodFor: string[] = [];
   const notFor: string[] = [];
 
-  // Kids
-  if (kf?.suitable && kf.rating >= 4) goodFor.push("Families");
-  else if (kf && !kf.suitable) notFor.push("Young children");
+  // Infrastructure-aware kids assessment
+  const infraConcerns = getInfrastructureConcerns(dest);
+  const hasSerousInfraConcerns = infraConcerns.length >= 3;
+
+  // Kids — cross-reference with infrastructure
+  if (kf?.suitable && kf.rating >= 4 && !hasSerousInfraConcerns) {
+    goodFor.push("Families with kids");
+  } else if (kf?.suitable && kf.rating >= 3 && hasSerousInfraConcerns) {
+    // Rating says OK but infrastructure says risky — flag it
+    goodFor.push("Adventurous families (limited infrastructure)");
+  } else if (kf && !kf.suitable) {
+    notFor.push("Young children");
+  }
 
   // Tags-based
   if (dest.tags?.includes("offbeat")) goodFor.push("Off-the-beaten-path seekers");
@@ -441,20 +467,63 @@ function getTravelerFit(dest: any, kf: any) {
   if (dest.tags?.includes("spiritual")) goodFor.push("Spiritual travelers");
   if (dest.tags?.includes("biker")) goodFor.push("Bikers");
   if (dest.tags?.includes("adventure")) goodFor.push("Adventure seekers");
-  if (dest.tags?.includes("family")) goodFor.push("Family trips");
   if (dest.tags?.includes("romantic") || dest.tags?.includes("honeymoon")) goodFor.push("Couples");
   if (dest.tags?.includes("food")) goodFor.push("Food lovers");
 
   // Difficulty-based
-  if (dest.difficulty === "easy") goodFor.push("First-time mountain travelers");
+  if (dest.difficulty === "easy") goodFor.push("First-time travelers");
   if (dest.difficulty === "hard" || dest.difficulty === "extreme") notFor.push("Casual tourists");
   if (dest.difficulty === "extreme") notFor.push("Senior travelers");
 
-  // Infrastructure-based
+  // Infrastructure-based warnings
   if (!dest.atm_available) notFor.push("Card-only travelers (no ATM)");
-  if (dest.medical_facility?.includes("basic") || dest.medical_facility?.includes("none")) {
-    notFor.push("Those needing medical access");
+  if (dest.elevation_m && dest.elevation_m > 3500) notFor.push("Those with altitude sensitivity");
+  if (infraConcerns.length >= 3) notFor.push("Those needing reliable infrastructure");
+
+  return {
+    goodFor: goodFor.slice(0, 5),
+    notFor: notFor.slice(0, 4),
+    infraConcerns,
+  };
+}
+
+/** Get infrastructure concerns that affect family/kids safety */
+function getInfrastructureConcerns(dest: any): string[] {
+  const concerns: string[] = [];
+
+  // Medical
+  if (!dest.medical_facility) {
+    concerns.push("No medical facility data available");
+  } else if (dest.medical_facility.toLowerCase().includes("none") ||
+             dest.medical_facility.toLowerCase().includes("no hospital")) {
+    concerns.push("No hospital — nearest may be hours away");
+  } else if (dest.medical_facility.toLowerCase().includes("basic") ||
+             dest.medical_facility.toLowerCase().includes("phc")) {
+    concerns.push("Only basic medical (PHC) — serious cases need evacuation");
   }
 
-  return { goodFor: goodFor.slice(0, 5), notFor: notFor.slice(0, 3) };
+  // ATM
+  if (dest.atm_available === false) {
+    concerns.push("No ATM — carry sufficient cash");
+  }
+
+  // Network
+  if (dest.cell_network) {
+    const net = dest.cell_network.toLowerCase();
+    if (net.includes("bsnl only") || net.includes("zero") || net.includes("no signal")) {
+      concerns.push("Limited or no phone signal — can't call for help easily");
+    }
+  }
+
+  // Altitude
+  if (dest.elevation_m) {
+    if (dest.elevation_m > 4000) concerns.push(`High altitude (${dest.elevation_m}m) — AMS risk for children and elderly`);
+    else if (dest.elevation_m > 3000) concerns.push(`Moderate altitude (${dest.elevation_m}m) — acclimatization needed`);
+  }
+
+  // Difficulty
+  if (dest.difficulty === "hard") concerns.push("Difficult access — rough roads, long drives");
+  if (dest.difficulty === "extreme") concerns.push("Extreme access — multi-day trek or extreme roads");
+
+  return concerns;
 }

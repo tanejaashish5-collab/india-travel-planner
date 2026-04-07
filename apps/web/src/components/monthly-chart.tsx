@@ -152,28 +152,37 @@ export function MonthlyChart({
               )}
             </div>
 
-            {/* Note */}
+            {/* Note — always show explanation */}
             <p className="mt-3 text-sm leading-relaxed">
               {selected.note}
             </p>
 
             {/* Why go / Why not */}
-            {(selected.why_go || selected.why_not) && (
-              <div className="mt-3 grid gap-2 sm:grid-cols-2">
-                {selected.why_go && (
-                  <div className="rounded-lg bg-emerald-500/10 p-2.5 text-xs">
-                    <span className="font-medium text-emerald-400">Why go: </span>
-                    <span className="text-emerald-300/80">{selected.why_go}</span>
-                  </div>
-                )}
-                {selected.why_not && (
-                  <div className="rounded-lg bg-red-500/10 p-2.5 text-xs">
-                    <span className="font-medium text-red-400">Why not: </span>
-                    <span className="text-red-300/80">{selected.why_not}</span>
-                  </div>
-                )}
-              </div>
-            )}
+            <div className="mt-3 grid gap-2 sm:grid-cols-2">
+              {selected.score >= 3 && (
+                <div className="rounded-lg bg-emerald-500/10 p-2.5 text-xs">
+                  <span className="font-medium text-emerald-400">Why go: </span>
+                  <span className="text-emerald-300/80">
+                    {selected.why_go || selected.note}
+                  </span>
+                </div>
+              )}
+              {selected.score <= 3 && (
+                <div className="rounded-lg bg-red-500/10 p-2.5 text-xs">
+                  <span className="font-medium text-red-400">Why not: </span>
+                  <span className="text-red-300/80">
+                    {selected.why_not || selected.note}
+                  </span>
+                </div>
+              )}
+            </div>
+
+            {/* Score methodology */}
+            <div className="mt-3 rounded-lg bg-muted/30 p-2.5 text-[10px] text-muted-foreground/70">
+              <span className="font-medium">How we score:</span> Based on weather, road access, crowd levels,
+              seasonal activities, and safety conditions. 5 = peak window, go now. 1 = avoid unless you have a specific reason.
+              0 = closed or inaccessible.
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
