@@ -1,7 +1,13 @@
+import type { Metadata } from "next";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { ExploreWithMap } from "@/components/explore-with-map";
 import { createClient } from "@supabase/supabase-js";
+
+export const metadata: Metadata = {
+  title: "Explore Destinations — Filter by Month, Difficulty, Kids & More",
+  description: "Browse 105+ North India destinations with monthly suitability scores. Filter by state, difficulty, kids-friendliness, and sort by elevation or score. Grid and map views.",
+};
 
 async function getData() {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;

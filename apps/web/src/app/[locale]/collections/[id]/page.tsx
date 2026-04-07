@@ -1,8 +1,23 @@
+import type { Metadata } from "next";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { CollectionDetail } from "@/components/collection-detail";
 import { createClient } from "@supabase/supabase-js";
 import { notFound } from "next/navigation";
+
+export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
+  const { id } = await params;
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+  if (!url || !key) return {};
+  const supabase = createClient(url, key);
+  const { data } = await supabase.from("collections").select("name, description").eq("id", id).single();
+  if (!data) return {};
+  return {
+    title: `${data.name} — Curated Collection`,
+    description: data.description,
+  };
+}
 
 async function getCollection(id: string) {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;

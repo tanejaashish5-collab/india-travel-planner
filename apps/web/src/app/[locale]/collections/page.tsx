@@ -1,7 +1,13 @@
+import type { Metadata } from "next";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { CollectionsGrid } from "@/components/collections-grid";
 import { createClient } from "@supabase/supabase-js";
+
+export const metadata: Metadata = {
+  title: "Collections — Curated Destination Lists",
+  description: "Themed collections: best family destinations, frozen wonders, most dangerous roads, zero-signal zones, ancient monasteries, and more. Hand-picked from 370+ places.",
+};
 
 async function getCollections() {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;

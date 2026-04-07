@@ -1,7 +1,13 @@
+import type { Metadata } from "next";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { RoutesGrid } from "@/components/routes-grid";
 import { createClient } from "@supabase/supabase-js";
+
+export const metadata: Metadata = {
+  title: "Road Trip Routes — 19 Curated Driving Itineraries",
+  description: "Multi-day driving routes across North India with day-by-day stops, distance, difficulty, kids suitability, and Google Maps links. From 3-day weekends to 14-day epics.",
+};
 
 async function getRoutes() {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;

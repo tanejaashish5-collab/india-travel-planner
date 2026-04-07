@@ -1,7 +1,46 @@
+import type { Metadata } from "next";
 import { Nav } from "@/components/nav";
 import { DestinationDetail } from "@/components/destination-detail";
 import { createClient } from "@supabase/supabase-js";
 import { notFound } from "next/navigation";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ id: string; locale: string }>;
+}): Promise<Metadata> {
+  const { id, locale } = await params;
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+  if (!url || !key) return {};
+
+  const supabase = createClient(url, key);
+  const { data } = await supabase
+    .from("destinations")
+    .select("name, tagline, difficulty, elevation_m, translations, state:states(name)")
+    .eq("id", id)
+    .single();
+
+  if (!data) return {};
+
+  const name = (locale !== "en" && (data.translations as any)?.[locale]?.name) || data.name;
+  const tagline = (locale !== "en" && (data.translations as any)?.[locale]?.tagline) || data.tagline;
+  const stateData = data.state as any;
+  const stateName = Array.isArray(stateData) ? stateData[0]?.name : stateData?.name;
+
+  const title = `${name} — ${stateName || "India"} Travel Guide`;
+  const description = `${tagline} | ${data.difficulty} difficulty${data.elevation_m ? ` · ${data.elevation_m}m` : ""}. Monthly scores, kids ratings, safety data & more.`;
+
+  return {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      images: [`/images/destinations/${id}.jpg`],
+    },
+  };
+}
 
 async function getDestination(id: string) {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;

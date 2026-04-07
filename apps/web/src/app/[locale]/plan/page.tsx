@@ -1,7 +1,13 @@
+import type { Metadata } from "next";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { PlanContent } from "@/components/plan-content";
 import { createClient } from "@supabase/supabase-js";
+
+export const metadata: Metadata = {
+  title: "Plan Your Trip — Smart Destination Matcher",
+  description: "Tell us when you're going, who's coming, and your budget. We'll match you to the best destinations from 105+ places with itinerary suggestions and honest warnings.",
+};
 
 async function getAllDestinations() {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;

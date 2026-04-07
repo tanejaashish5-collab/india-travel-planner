@@ -1,7 +1,13 @@
+import type { Metadata } from "next";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { TreksContent } from "@/components/treks-content";
 import { createClient } from "@supabase/supabase-js";
+
+export const metadata: Metadata = {
+  title: "Treks — 25 Curated Treks Across North India",
+  description: "From easy day hikes to extreme multi-day expeditions. Gear checklists, difficulty ratings, altitude data, best months, and fitness requirements for every trek.",
+};
 
 async function getTrekData() {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
