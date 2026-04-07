@@ -1,30 +1,16 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { motion, AnimatePresence } from "framer-motion";
 import { MonthlyChart } from "./monthly-chart";
 import { ConfidenceCardComponent } from "./confidence-card";
 import { KidsBadge } from "./kids-badge";
+import { TouristTrapIntervention } from "./tourist-trap-intervention";
 import { FadeIn, SlideIn, HoverCard, StaggerContainer, StaggerItem } from "./animated-hero";
 import { Footer } from "./footer";
-
-const DIFFICULTY_COLORS: Record<string, string> = {
-  easy: "text-emerald-400 bg-emerald-500/10 border-emerald-500/20",
-  moderate: "text-yellow-400 bg-yellow-500/10 border-yellow-500/20",
-  hard: "text-orange-400 bg-orange-500/10 border-orange-500/20",
-  extreme: "text-red-400 bg-red-500/10 border-red-500/20",
-};
-
-const SCORE_COLORS: Record<number, string> = {
-  5: "bg-emerald-500/20 text-emerald-300 border-emerald-500/30",
-  4: "bg-blue-500/20 text-blue-300 border-blue-500/30",
-  3: "bg-yellow-500/20 text-yellow-300 border-yellow-500/30",
-  2: "bg-orange-500/20 text-orange-300 border-orange-500/30",
-  1: "bg-red-500/20 text-red-300 border-red-500/30",
-  0: "bg-zinc-500/20 text-zinc-400 border-zinc-500/30",
-};
+import { SCORE_COLORS, DIFFICULTY_BG, DIFFICULTY_COLORS } from "@/lib/design-tokens";
 
 const TABS = [
   { id: "overview", label: "Overview" },
@@ -40,27 +26,43 @@ export function DestinationDetail({ dest }: { dest: any }) {
   const t = useTranslations("destination");
   const tm = useTranslations("months");
   const [activeTab, setActiveTab] = useState("overview");
+  const [saved, setSaved] = useState(false);
 
-  const kf = Array.isArray(dest.kids_friendly)
-    ? dest.kids_friendly[0]
-    : dest.kids_friendly;
-  const cc = Array.isArray(dest.confidence_cards)
-    ? dest.confidence_cards[0]
-    : dest.confidence_cards;
-  const stateName = Array.isArray(dest.state)
-    ? dest.state[0]?.name
-    : dest.state?.name;
-  const months = (dest.destination_months ?? []).sort(
-    (a: any, b: any) => a.month - b.month,
-  );
+  // Check localStorage for saved state
+  useEffect(() => {
+    const savedDests = JSON.parse(localStorage.getItem("savedDestinations") || "[]");
+    setSaved(savedDests.includes(dest.id));
+  }, [dest.id]);
+
+  function toggleSave() {
+    const savedDests = JSON.parse(localStorage.getItem("savedDestinations") || "[]");
+    if (saved) {
+      const filtered = savedDests.filter((id: string) => id !== dest.id);
+      localStorage.setItem("savedDestinations", JSON.stringify(filtered));
+      setSaved(false);
+    } else {
+      savedDests.push(dest.id);
+      localStorage.setItem("savedDestinations", JSON.stringify(savedDests));
+      setSaved(true);
+    }
+  }
+
+  const kf = Array.isArray(dest.kids_friendly) ? dest.kids_friendly[0] : dest.kids_friendly;
+  const cc = Array.isArray(dest.confidence_cards) ? dest.confidence_cards[0] : dest.confidence_cards;
+  const stateName = Array.isArray(dest.state) ? dest.state[0]?.name : dest.state?.name;
+  const months = (dest.destination_months ?? []).sort((a: any, b: any) => a.month - b.month);
   const subs = dest.sub_destinations ?? [];
   const gems = dest.hidden_gems ?? [];
   const legends = dest.local_legends ?? [];
   const eats = dest.viral_eats ?? [];
+  const trapAlts = dest.trap_alternatives ?? [];
 
   const currentMonth = new Date().getMonth() + 1;
-  const currentScore =
-    months.find((m: any) => m.month === currentMonth)?.score ?? null;
+  const currentScore = months.find((m: any) => m.month === currentMonth)?.score ?? null;
+  const currentMonthData = months.find((m: any) => m.month === currentMonth);
+
+  // Traveler fit based on data
+  const travelerFit = getTravelerFit(dest, kf);
 
   // Filter tabs to only show ones with data
   const availableTabs = TABS.filter((tab) => {
@@ -77,30 +79,39 @@ export function DestinationDetail({ dest }: { dest: any }) {
       <div>
         {/* Breadcrumb */}
         <FadeIn>
-          <div className="mb-4 text-sm text-muted-foreground">
-            <Link href={`/${locale}/explore`} className="hover:text-foreground transition-colors">
-              Explore
-            </Link>
-            {" → "}
-            <span>{stateName}</span>
-            {" → "}
-            <span className="text-foreground">{dest.name}</span>
+          <div className="mb-4 flex items-center justify-between">
+            <div className="text-sm text-muted-foreground">
+              <Link href={`/${locale}/explore`} className="hover:text-foreground transition-colors">Explore</Link>
+              {" → "}
+              <span>{stateName}</span>
+              {" → "}
+              <span className="text-foreground">{dest.name}</span>
+            </div>
+            {/* Save Button */}
+            <button
+              onClick={toggleSave}
+              className={`flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-sm font-medium transition-all ${
+                saved
+                  ? "border-red-500/50 bg-red-500/10 text-red-400"
+                  : "border-border text-muted-foreground hover:text-foreground hover:border-muted-foreground"
+              }`}
+              aria-label={saved ? "Remove from saved" : "Save destination"}
+            >
+              <span>{saved ? "♥" : "♡"}</span>
+              <span>{saved ? "Saved" : "Save"}</span>
+            </button>
           </div>
         </FadeIn>
 
         {/* Hero */}
         <SlideIn delay={0.1}>
-          <div className="mb-8 rounded-2xl border border-border bg-gradient-to-br from-card to-muted/30 p-6 sm:p-8">
+          <div className="mb-6 rounded-2xl border border-border bg-gradient-to-br from-card to-muted/30 p-6 sm:p-8">
             <div className="flex items-start justify-between">
               <div>
-                <h1 className="text-3xl font-bold sm:text-4xl lg:text-5xl">
-                  {dest.name}
-                </h1>
+                <h1 className="text-3xl font-bold sm:text-4xl lg:text-5xl">{dest.name}</h1>
                 <p className="mt-2 text-muted-foreground">
                   {stateName} · {dest.region}
-                  {dest.elevation_m && (
-                    <span className="font-mono"> · {dest.elevation_m.toLocaleString()}m</span>
-                  )}
+                  {dest.elevation_m && <span className="font-mono"> · {dest.elevation_m.toLocaleString()}m</span>}
                 </p>
               </div>
               {currentScore !== null && (
@@ -115,15 +126,22 @@ export function DestinationDetail({ dest }: { dest: any }) {
                 </motion.div>
               )}
             </div>
-            <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
-              {dest.tagline}
-            </p>
 
-            {/* Quick stats row */}
+            {/* Score Explainability */}
+            {currentMonthData && (
+              <div className="mt-3 text-sm text-muted-foreground">
+                <span className="font-medium text-foreground">Why {currentScore}/5?</span>{" "}
+                {currentMonthData.note}
+              </div>
+            )}
+
+            <p className="mt-4 text-lg leading-relaxed text-muted-foreground">{dest.tagline}</p>
+
+            {/* Quick stats */}
             <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-4">
               <div className="rounded-xl border border-border/50 bg-background/50 backdrop-blur-sm p-3">
                 <div className="text-[10px] uppercase tracking-wide text-muted-foreground">{t("difficulty")}</div>
-                <div className={`mt-1 text-sm font-semibold capitalize rounded-md inline-block px-2 py-0.5 ${DIFFICULTY_COLORS[dest.difficulty] ?? ""}`}>
+                <div className={`mt-1 text-sm font-semibold capitalize rounded-md inline-block px-2 py-0.5 ${DIFFICULTY_BG[dest.difficulty] ?? ""}`}>
                   {dest.difficulty}
                 </div>
               </div>
@@ -142,20 +160,37 @@ export function DestinationDetail({ dest }: { dest: any }) {
                 </div>
               </div>
             </div>
+
+            {/* Traveler Fit Cards — "Good For / Not Good For" */}
+            <div className="mt-4 flex flex-wrap gap-2">
+              {travelerFit.goodFor.map((item) => (
+                <span key={item} className="inline-flex items-center gap-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-1 text-xs text-emerald-400">
+                  <span>✓</span> {item}
+                </span>
+              ))}
+              {travelerFit.notFor.map((item) => (
+                <span key={item} className="inline-flex items-center gap-1 rounded-full bg-red-500/10 border border-red-500/20 px-2.5 py-1 text-xs text-red-400">
+                  <span>✗</span> {item}
+                </span>
+              ))}
+            </div>
+
+            {/* Data freshness */}
+            <div className="mt-3 text-[10px] text-muted-foreground/50">
+              Data verified: April 2026 · Scores based on weather, access, crowds, infrastructure
+            </div>
           </div>
         </SlideIn>
 
         {/* Tab navigation */}
         <FadeIn delay={0.3}>
-          <div className="mb-6 flex gap-1 overflow-x-auto rounded-xl border border-border bg-muted/30 p-1">
+          <div className="mb-6 flex gap-1 overflow-x-auto rounded-xl border border-border bg-muted/30 p-1 sticky top-16 z-40 backdrop-blur-sm">
             {availableTabs.map((tab) => (
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
                 className={`relative rounded-lg px-4 py-2 text-sm font-medium whitespace-nowrap transition-colors ${
-                  activeTab === tab.id
-                    ? "text-foreground"
-                    : "text-muted-foreground hover:text-foreground"
+                  activeTab === tab.id ? "text-foreground" : "text-muted-foreground hover:text-foreground"
                 }`}
               >
                 {activeTab === tab.id && (
@@ -188,6 +223,11 @@ export function DestinationDetail({ dest }: { dest: any }) {
                   <p className="text-muted-foreground leading-relaxed">{dest.why_special}</p>
                 </section>
 
+                {/* Tourist Trap Alternatives — ASSISTIVE, not pre-emptive */}
+                {trapAlts.length > 0 && (
+                  <TouristTrapIntervention trapName={dest.name} alternatives={trapAlts} />
+                )}
+
                 {/* Tags */}
                 {dest.tags?.length > 0 && (
                   <div className="flex flex-wrap gap-2">
@@ -197,6 +237,49 @@ export function DestinationDetail({ dest }: { dest: any }) {
                       </span>
                     ))}
                   </div>
+                )}
+
+                {/* Infrastructure Reality Panel */}
+                {(dest.cell_network || dest.atm_available !== undefined || dest.medical_facility || dest.permit_required) && (
+                  <section>
+                    <h2 className="text-xl font-semibold mb-3">Infrastructure Reality</h2>
+                    <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
+                      {dest.cell_network && (
+                        <div className="rounded-xl border border-border p-3 flex items-start gap-2">
+                          <span className="text-lg">📶</span>
+                          <div>
+                            <div className="text-xs font-medium text-muted-foreground">Network</div>
+                            <div className="text-sm">{dest.cell_network}</div>
+                          </div>
+                        </div>
+                      )}
+                      <div className="rounded-xl border border-border p-3 flex items-start gap-2">
+                        <span className="text-lg">🏧</span>
+                        <div>
+                          <div className="text-xs font-medium text-muted-foreground">ATM</div>
+                          <div className="text-sm">{dest.atm_available ? "Available" : "None — carry cash"}</div>
+                        </div>
+                      </div>
+                      {dest.medical_facility && (
+                        <div className="rounded-xl border border-border p-3 flex items-start gap-2">
+                          <span className="text-lg">🏥</span>
+                          <div>
+                            <div className="text-xs font-medium text-muted-foreground">Medical</div>
+                            <div className="text-sm">{dest.medical_facility}</div>
+                          </div>
+                        </div>
+                      )}
+                      {dest.permit_required && (
+                        <div className="rounded-xl border border-orange-500/30 bg-orange-500/5 p-3 flex items-start gap-2">
+                          <span className="text-lg">📋</span>
+                          <div>
+                            <div className="text-xs font-medium text-orange-400">Permit Required</div>
+                            <div className="text-sm text-orange-300/80">{dest.permit_required}</div>
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  </section>
                 )}
 
                 {/* Access */}
@@ -211,18 +294,6 @@ export function DestinationDetail({ dest }: { dest: any }) {
                       <div className="text-xs text-muted-foreground uppercase tracking-wide">Rail</div>
                       <div className="mt-1 text-sm">{dest.nearest_railhead}</div>
                     </div>
-                    {dest.cell_network && (
-                      <div className="rounded-xl border border-border p-4">
-                        <div className="text-xs text-muted-foreground uppercase tracking-wide">Network</div>
-                        <div className="mt-1 text-sm">{dest.cell_network}</div>
-                      </div>
-                    )}
-                    {dest.permit_required && (
-                      <div className="rounded-xl border border-orange-500/30 bg-orange-500/5 p-4">
-                        <div className="text-xs text-orange-400 uppercase tracking-wide">Permit Required</div>
-                        <div className="mt-1 text-sm text-orange-300/80">{dest.permit_required}</div>
-                      </div>
-                    )}
                   </div>
                 </section>
               </div>
@@ -263,12 +334,13 @@ export function DestinationDetail({ dest }: { dest: any }) {
                       {subs.map((sub: any) => (
                         <StaggerItem key={sub.id}>
                           <HoverCard>
-                            <div className="rounded-xl border border-border p-4 h-full">
+                            <Link
+                              href={`/${locale}/destination/${dest.id}#places`}
+                              className="block rounded-xl border border-border p-4 h-full transition-all hover:border-primary/50"
+                            >
                               <div className="flex items-start justify-between">
                                 <h4 className="font-semibold">{sub.name}</h4>
-                                {sub.elevation_m && (
-                                  <span className="text-xs font-mono text-muted-foreground">{sub.elevation_m}m</span>
-                                )}
+                                {sub.elevation_m && <span className="text-xs font-mono text-muted-foreground">{sub.elevation_m}m</span>}
                               </div>
                               {sub.tagline && <p className="mt-1 text-xs text-primary">{sub.tagline}</p>}
                               {sub.why_visit && <p className="mt-1 text-sm text-muted-foreground line-clamp-3">{sub.why_visit}</p>}
@@ -278,7 +350,7 @@ export function DestinationDetail({ dest }: { dest: any }) {
                                 <span>·</span>
                                 <span>{sub.kids_ok ? "👶 OK" : "Adults"}</span>
                               </div>
-                            </div>
+                            </Link>
                           </HoverCard>
                         </StaggerItem>
                       ))}
@@ -291,18 +363,13 @@ export function DestinationDetail({ dest }: { dest: any }) {
                     <h2 className="text-xl font-semibold mb-4">{t("discoverNearby")}</h2>
                     <div className="space-y-3">
                       {gems.map((gem: any) => (
-                        <motion.div
-                          key={gem.id}
-                          whileHover={{ x: 4 }}
-                          className="rounded-xl border border-dashed border-primary/30 bg-primary/5 p-4"
-                        >
+                        <motion.div key={gem.id} whileHover={{ x: 4 }} className="rounded-xl border border-dashed border-primary/30 bg-primary/5 p-4">
                           <div className="flex items-start justify-between">
                             <h4 className="font-semibold text-primary">{gem.name}</h4>
                             <span className="text-xs text-muted-foreground">{gem.distance_km}km · {gem.drive_time}</span>
                           </div>
                           {gem.why_unknown && <p className="mt-1 text-xs text-yellow-400">Why unknown: {gem.why_unknown}</p>}
                           <p className="mt-1 text-sm text-muted-foreground">{gem.why_go}</p>
-                          {gem.social_proof && <p className="mt-1 text-xs italic text-muted-foreground">{gem.social_proof}</p>}
                         </motion.div>
                       ))}
                     </div>
@@ -326,14 +393,12 @@ export function DestinationDetail({ dest }: { dest: any }) {
                             <div className="font-semibold">{legend.name}</div>
                             {legend.known_as && <div className="text-xs text-primary">{legend.known_as}</div>}
                             {legend.story && <p className="mt-1 text-sm text-muted-foreground">{legend.story}</p>}
-                            {legend.contact && <p className="mt-1 text-xs text-primary">{legend.contact}</p>}
                           </div>
                         </div>
                       ))}
                     </div>
                   </section>
                 )}
-
                 {eats.length > 0 && (
                   <section>
                     <h2 className="text-xl font-semibold mb-4">{t("viralEats")}</h2>
@@ -359,4 +424,37 @@ export function DestinationDetail({ dest }: { dest: any }) {
       <Footer />
     </>
   );
+}
+
+/** Derive traveler fit from destination data */
+function getTravelerFit(dest: any, kf: any) {
+  const goodFor: string[] = [];
+  const notFor: string[] = [];
+
+  // Kids
+  if (kf?.suitable && kf.rating >= 4) goodFor.push("Families");
+  else if (kf && !kf.suitable) notFor.push("Young children");
+
+  // Tags-based
+  if (dest.tags?.includes("offbeat")) goodFor.push("Off-the-beaten-path seekers");
+  if (dest.tags?.includes("photography")) goodFor.push("Photographers");
+  if (dest.tags?.includes("spiritual")) goodFor.push("Spiritual travelers");
+  if (dest.tags?.includes("biker")) goodFor.push("Bikers");
+  if (dest.tags?.includes("adventure")) goodFor.push("Adventure seekers");
+  if (dest.tags?.includes("family")) goodFor.push("Family trips");
+  if (dest.tags?.includes("romantic") || dest.tags?.includes("honeymoon")) goodFor.push("Couples");
+  if (dest.tags?.includes("food")) goodFor.push("Food lovers");
+
+  // Difficulty-based
+  if (dest.difficulty === "easy") goodFor.push("First-time mountain travelers");
+  if (dest.difficulty === "hard" || dest.difficulty === "extreme") notFor.push("Casual tourists");
+  if (dest.difficulty === "extreme") notFor.push("Senior travelers");
+
+  // Infrastructure-based
+  if (!dest.atm_available) notFor.push("Card-only travelers (no ATM)");
+  if (dest.medical_facility?.includes("basic") || dest.medical_facility?.includes("none")) {
+    notFor.push("Those needing medical access");
+  }
+
+  return { goodFor: goodFor.slice(0, 5), notFor: notFor.slice(0, 3) };
 }

@@ -129,7 +129,7 @@ export function LandingHero({
               { value: "66+", label: t("stats.places"), href: `/${locale}/explore` },
               { value: "10", label: t("stats.states"), href: `/${locale}/explore` },
               { value: "14", label: t("stats.routes"), href: `/${locale}/routes` },
-              { value: "SOS", label: t("stats.sos"), href: null },
+              { value: "SOS", label: "Emergency (Coming)", href: null },
             ].map((stat) => (
               <StaggerItem key={stat.label}>
                 <HoverCard>
