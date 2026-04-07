@@ -6,15 +6,15 @@ import { createClient } from "@supabase/supabase-js";
 async function getData() {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-  if (!url || !key) return { destinations: [], states: [] };
+  if (!url || !key) return { destinations: [], states: [], coords: [] };
 
   const supabase = createClient(url, key);
 
-  const [destResult, statesResult] = await Promise.all([
+  const [destResult, statesResult, coordsResult] = await Promise.all([
     supabase
       .from("destinations")
       .select(`
-        id, name, tagline, difficulty, elevation_m, tags, best_months, translations, state_id, coords,
+        id, name, tagline, difficulty, elevation_m, tags, best_months, translations, state_id,
         hero_image_url,
         state:states(name),
         kids_friendly(suitable, rating),
@@ -22,16 +22,28 @@ async function getData() {
       `)
       .order("name"),
     supabase.from("states").select("id, name").order("name"),
+    // Fetch coords from the view that extracts lat/lng
+    supabase.from("destinations_with_coords").select("id, lat, lng"),
   ]);
 
   return {
     destinations: destResult.data ?? [],
     states: statesResult.data ?? [],
+    coords: coordsResult.data ?? [],
   };
 }
 
 export default async function ExplorePage() {
-  const { destinations, states } = await getData();
+  const { destinations, states, coords } = await getData();
+
+  // Merge coords into destinations
+  const coordsMap = Object.fromEntries(
+    coords.map((c: any) => [c.id, { lat: c.lat, lng: c.lng }])
+  );
+  const destinationsWithCoords = destinations.map((d: any) => ({
+    ...d,
+    coords: coordsMap[d.id] ?? null,
+  }));
 
   return (
     <div className="min-h-screen">
@@ -43,7 +55,7 @@ export default async function ExplorePage() {
             {destinations.length} destinations · Filter or browse the map
           </p>
         </div>
-        <ExploreWithMap destinations={destinations} states={states} />
+        <ExploreWithMap destinations={destinationsWithCoords} states={states} />
       </main>
       <Footer />
     </div>
