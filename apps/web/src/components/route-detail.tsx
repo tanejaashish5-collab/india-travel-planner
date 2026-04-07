@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useLocale, useTranslations } from "next-intl";
+import { RouteMap } from "./route-map";
 
 const DIFFICULTY_COLORS: Record<string, string> = {
   easy: "text-emerald-400",
@@ -138,6 +139,14 @@ export function RouteDetail({ route }: { route: any }) {
               </div>
             ))}
           </div>
+        </div>
+      )}
+
+      {/* Route Map */}
+      {(route.stops ?? []).length >= 2 && (
+        <div className="mb-8">
+          <h2 className="text-xl font-semibold mb-3">Route Map</h2>
+          <RouteMap stops={route.stops} />
         </div>
       )}
 
