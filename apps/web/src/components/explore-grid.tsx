@@ -63,6 +63,7 @@ export function ExploreGrid({
     stateId: searchParams.get("state") ?? "",
     month: Number(searchParams.get("month")) || currentMonth,
     kidsOnly: searchParams.get("kids") === "true",
+    sort: searchParams.get("sort") ?? "",
     difficulty: searchParams.get("difficulty") ?? "",
     search: searchParams.get("q") ?? "",
   });
@@ -75,6 +76,7 @@ export function ExploreGrid({
     if (filters.kidsOnly) params.set("kids", "true");
     if (filters.difficulty) params.set("difficulty", filters.difficulty);
     if (filters.search) params.set("q", filters.search);
+    if (filters.sort) params.set("sort", filters.sort);
     const qs = params.toString();
     const newUrl = qs ? `${pathname}?${qs}` : pathname;
     router.replace(newUrl, { scroll: false });
@@ -121,18 +123,38 @@ export function ExploreGrid({
     });
   }, [destinations, filters]);
 
-  // Sort by month score if a month is selected
+  // Sort
   const sorted = useMemo(() => {
-    if (filters.month === 0) return filtered;
+    let result = [...filtered];
 
-    return [...filtered].sort((a, b) => {
-      const aScore =
-        a.destination_months?.find((m) => m.month === filters.month)?.score ?? -1;
-      const bScore =
-        b.destination_months?.find((m) => m.month === filters.month)?.score ?? -1;
-      return bScore - aScore; // highest score first
-    });
-  }, [filtered, filters.month]);
+    // Apply explicit sort
+    if (filters.sort) {
+      const getMonthScore = (d: DestinationData) =>
+        d.destination_months?.find((m) => m.month === (filters.month || currentMonth))?.score ?? -1;
+      const getKidsRating = (d: DestinationData) => {
+        const kf = Array.isArray(d.kids_friendly) ? d.kids_friendly[0] : d.kids_friendly;
+        return kf?.rating ?? -1;
+      };
+
+      switch (filters.sort) {
+        case "score-desc": result.sort((a, b) => getMonthScore(b) - getMonthScore(a)); break;
+        case "score-asc": result.sort((a, b) => getMonthScore(a) - getMonthScore(b)); break;
+        case "elevation-desc": result.sort((a, b) => (b.elevation_m ?? 0) - (a.elevation_m ?? 0)); break;
+        case "elevation-asc": result.sort((a, b) => (a.elevation_m ?? 0) - (b.elevation_m ?? 0)); break;
+        case "kids-desc": result.sort((a, b) => getKidsRating(b) - getKidsRating(a)); break;
+        case "name-asc": result.sort((a, b) => a.name.localeCompare(b.name)); break;
+      }
+    } else if (filters.month > 0) {
+      // Default: sort by month score when month is selected
+      result.sort((a, b) => {
+        const aScore = a.destination_months?.find((m) => m.month === filters.month)?.score ?? -1;
+        const bScore = b.destination_months?.find((m) => m.month === filters.month)?.score ?? -1;
+        return bScore - aScore;
+      });
+    }
+
+    return result;
+  }, [filtered, filters.month, filters.sort, currentMonth]);
 
   return (
     <>

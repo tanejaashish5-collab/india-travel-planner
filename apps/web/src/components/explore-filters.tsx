@@ -8,6 +8,7 @@ export interface FilterState {
   kidsOnly: boolean;
   difficulty: string;
   search: string;
+  sort: string;
 }
 
 interface ExploreFiltersProps {
@@ -35,7 +36,8 @@ export function ExploreFilters({
     filters.month !== 0 ||
     filters.kidsOnly ||
     filters.difficulty !== "" ||
-    filters.search !== "";
+    filters.search !== "" ||
+    filters.sort !== "";
 
   return (
     <div className="space-y-4">
@@ -103,6 +105,21 @@ export function ExploreFilters({
           👶 {tf("kidsOnly")}
         </button>
 
+        {/* Sort */}
+        <select
+          value={filters.sort}
+          onChange={(e) => update({ sort: e.target.value })}
+          className="rounded-lg border border-border bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/50"
+        >
+          <option value="">Sort by...</option>
+          <option value="score-desc">Score (highest)</option>
+          <option value="score-asc">Score (lowest)</option>
+          <option value="elevation-desc">Elevation (highest)</option>
+          <option value="elevation-asc">Elevation (lowest)</option>
+          <option value="kids-desc">Kids rating (best)</option>
+          <option value="name-asc">Name (A-Z)</option>
+        </select>
+
         {/* Clear */}
         {hasFilters && (
           <button
@@ -113,6 +130,7 @@ export function ExploreFilters({
                 kidsOnly: false,
                 difficulty: "",
                 search: "",
+                sort: "",
               })
             }
             className="rounded-lg border border-border px-3 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
