@@ -1,0 +1,699 @@
+[
+  {
+    "id": "pangot-birding-village",
+    "near_destination_id": "nainital-bhimtal",
+    "name": "Pangot Birding Village",
+    "coords": {
+      "lat": 29.403,
+      "lng": 79.465
+    },
+    "distance_km": 15,
+    "drive_time": "40min from Nainital",
+    "why_unknown": "Tucked behind Nainital's Snow View ridge on a narrow road that most tourists don't know exists. No signage from Nainital Mall Road \u2014 only birding guides know the turnoff past Kilbury.",
+    "why_go": "Over 250 bird species recorded in a 5km radius \u2014 lammergeier, koklass pheasant, rufous-bellied woodpecker. Silent oak-rhododendron forest with zero commercial activity. Homestays run by families who can identify every bird by call.",
+    "difficulty": "easy",
+    "social_proof": null,
+    "confidence_score": 3,
+    "tags": [
+      "village",
+      "birding",
+      "nature",
+      "offbeat"
+    ],
+    "translations": {}
+  },
+  {
+    "id": "jeolikote-butterfly-hamlet",
+    "near_destination_id": "nainital-bhimtal",
+    "name": "Jeolikote Butterfly Hamlet",
+    "coords": {
+      "lat": 29.318,
+      "lng": 79.541
+    },
+    "distance_km": 20,
+    "drive_time": "35min from Nainital (downhill)",
+    "why_unknown": "Every vehicle on the Kathgodam-Nainital road passes through Jeolikote without stopping. It's treated as a speed bump between the train station and the lake. No tourist infrastructure whatsoever.",
+    "why_go": "Known among naturalists as a butterfly hotspot \u2014 110+ species documented. The old British-era bungalows are crumbling but photogenic. Mild climate year-round means you can skip Nainital's winter freeze and summer crowds.",
+    "difficulty": "easy",
+    "social_proof": null,
+    "confidence_score": 3,
+    "tags": [
+      "village",
+      "nature",
+      "heritage",
+      "offbeat"
+    ],
+    "translations": {}
+  },
+  {
+    "id": "peora-orchard-village",
+    "near_destination_id": "nainital-bhimtal",
+    "name": "Peora Orchard Village",
+    "coords": {
+      "lat": 29.524,
+      "lng": 79.568
+    },
+    "distance_km": 32,
+    "drive_time": "1.5hr from Nainital via Mukteshwar road",
+    "why_unknown": "Not on any tourist map. The road from Mukteshwar to Peora is single-lane and unsigned. Locals use it for fruit transport, not tourism. Google Maps routes you the long way around.",
+    "why_go": "Fruit orchard village with 180-degree Himalayan panorama from every house. Peach, plum, apricot orchards you can walk through. Community-run homestays where you eat meals cooked on wood-fire chulhas with valley views. Zero commercialization.",
+    "difficulty": "easy",
+    "social_proof": null,
+    "confidence_score": 3,
+    "tags": [
+      "village",
+      "offbeat",
+      "photography",
+      "slow-travel"
+    ],
+    "translations": {}
+  },
+  {
+    "id": "binsar-zero-point-approach",
+    "near_destination_id": "almora-ranikhet",
+    "name": "Binsar Zero Point Approach",
+    "coords": {
+      "lat": 29.699,
+      "lng": 79.723
+    },
+    "distance_km": 33,
+    "drive_time": "1.5hr from Almora",
+    "why_unknown": "Binsar Wildlife Sanctuary exists on paper but gets maybe 10 visitors a week. The approach road through dense oak forest has no food stops for 15km. Zero Point viewpoint at the top requires a 2km walk through forest with no chai stall.",
+    "why_go": "Unbroken 300km panorama of the Himalayan range \u2014 Kedarnath to Api in Nepal, all visible on a clear day. The sanctuary's oak and rhododendron forest is home to leopards, barking deer, and 200+ bird species. Complete silence \u2014 the kind you forgot existed.",
+    "difficulty": "moderate",
+    "social_proof": null,
+    "confidence_score": 3,
+    "tags": [
+      "wildlife",
+      "trek",
+      "photography",
+      "offbeat"
+    ],
+    "translations": {}
+  },
+  {
+    "id": "chaukori-tea-garden-ridge",
+    "near_destination_id": "kausani",
+    "name": "Chaukori Tea Garden Ridge",
+    "coords": {
+      "lat": 29.862,
+      "lng": 80.218
+    },
+    "distance_km": 90,
+    "drive_time": "3.5hr from Kausani",
+    "why_unknown": "Requires a long detour from the Kausani-Munsiyari road. No direct bus service. The tea gardens are not signposted \u2014 you need to ask at the KMVN guesthouse for directions to the ridge trail.",
+    "why_go": "Working tea gardens at 2,010m with Nanda Devi and Panchachuli peaks as the backdrop. One of only two places in Uttarakhand that grows tea. The ridge walk through the gardens at sunrise \u2014 with five Himalayan peaks turning gold \u2014 rivals anything in Darjeeling.",
+    "difficulty": "easy",
+    "social_proof": null,
+    "confidence_score": 3,
+    "tags": [
+      "village",
+      "photography",
+      "nature",
+      "offbeat"
+    ],
+    "translations": {}
+  },
+  {
+    "id": "dayara-bugyal-barsu-approach",
+    "near_destination_id": "harsil-uttarkashi",
+    "name": "Dayara Bugyal via Barsu",
+    "coords": {
+      "lat": 31.034,
+      "lng": 78.638
+    },
+    "distance_km": 28,
+    "drive_time": "1hr drive + 4hr trek from Uttarkashi",
+    "why_unknown": "The trail from Barsu village has no markers after the first kilometer. Forest department requires a permit that takes effort to get in Uttarkashi. Most trekkers go to Kedarkantha instead because it's commercially packaged.",
+    "why_go": "One of the largest high-altitude meadows in India \u2014 a rolling alpine grassland at 3,600m that stretches for kilometers. In winter, it becomes a pristine snow field. Camping here feels like being on top of the world with Bandarpunch and Black Peak filling the horizon.",
+    "difficulty": "hard",
+    "social_proof": null,
+    "confidence_score": 3,
+    "tags": [
+      "trek",
+      "meadow",
+      "camping",
+      "offbeat",
+      "snow"
+    ],
+    "translations": {}
+  },
+  {
+    "id": "dodital-lake-trek",
+    "near_destination_id": "harsil-uttarkashi",
+    "name": "Dodital Lake Trek",
+    "coords": {
+      "lat": 31.17,
+      "lng": 78.53
+    },
+    "distance_km": 45,
+    "drive_time": "1.5hr drive to Sangamchatti + 6hr trek",
+    "why_unknown": "The trailhead at Sangamchatti has no signage and no commercial trek operator base camp. The trail follows a river through dense forest with only occasional shepherd huts. Permits required from forest office in Uttarkashi \u2014 most skip it.",
+    "why_go": "Sacred freshwater lake at 3,024m believed to be the birthplace of Lord Ganesha. Crystal-clear water surrounded by oak and deodar forest. The lake has wild trout you can see from the shore. Campsites on the bank are flat and pristine \u2014 genuinely feels undiscovered.",
+    "difficulty": "hard",
+    "social_proof": null,
+    "confidence_score": 3,
+    "tags": [
+      "trek",
+      "lake",
+      "camping",
+      "spiritual",
+      "offbeat"
+    ],
+    "translations": {}
+  },
+  {
+    "id": "har-ki-dun-osla-approach",
+    "near_destination_id": "harsil-uttarkashi",
+    "name": "Har Ki Dun via Osla Village",
+    "coords": {
+      "lat": 31.156,
+      "lng": 78.364
+    },
+    "distance_km": 70,
+    "drive_time": "3hr drive to Sankri + 2-day trek",
+    "why_unknown": "Requires a 2-day trek from Sankri with no lodges en route \u2014 only camping. Osla village on the way is an ancient Mahabharata-linked settlement that most trekkers rush through to reach the valley.",
+    "why_go": "Cradle-shaped glacial valley at 3,566m with the Swargarohini peak as its crown. Osla village has a wooden Duryodhana temple \u2014 the only one in India. The valley floor is a carpet of wildflowers in June-July. One of the last Himalayan valleys with zero commercialization.",
+    "difficulty": "hard",
+    "social_proof": null,
+    "confidence_score": 3,
+    "tags": [
+      "trek",
+      "valley",
+      "heritage",
+      "camping",
+      "offbeat"
+    ],
+    "translations": {}
+  },
+  {
+    "id": "mundali-meadow-chakrata",
+    "near_destination_id": "chakrata",
+    "name": "Mundali Meadow",
+    "coords": {
+      "lat": 30.756,
+      "lng": 77.812
+    },
+    "distance_km": 18,
+    "drive_time": "45min from Chakrata",
+    "why_unknown": "The road from Chakrata to Mundali is a rough forest track that's not on Google Maps. Army areas nearby mean some sections feel restricted. No food, no shelter, no phone signal for the last 5km.",
+    "why_go": "Open alpine meadow at 2,750m surrounded by deodar forest with views of Swargarohini and Bandarpunch. In winter, it gets waist-deep snow and becomes a DIY skiing spot. In summer, the meadow is a wildflower carpet. Possibly the most underrated viewpoint within 6hr of Delhi.",
+    "difficulty": "moderate",
+    "social_proof": null,
+    "confidence_score": 3,
+    "tags": [
+      "meadow",
+      "snow",
+      "offbeat",
+      "photography"
+    ],
+    "translations": {}
+  },
+  {
+    "id": "deoban-forest-viewpoint",
+    "near_destination_id": "chakrata",
+    "name": "Deoban Forest Viewpoint",
+    "coords": {
+      "lat": 30.79,
+      "lng": 77.785
+    },
+    "distance_km": 15,
+    "drive_time": "40min from Chakrata",
+    "why_unknown": "Forest department road with a gate that's sometimes locked \u2014 you need to check with the range office in Chakrata. Dense deodar canopy means the viewpoint only reveals itself at the very end. No mobile network.",
+    "why_go": "India's densest natural deodar forest leading to a cliff-edge viewpoint at 2,900m. On a clear day, you see a 200km Himalayan panorama from Gangotri to Yamunotri peaks. The silence inside the deodar cathedral is profound \u2014 even birds seem to whisper.",
+    "difficulty": "moderate",
+    "social_proof": null,
+    "confidence_score": 3,
+    "tags": [
+      "nature",
+      "photography",
+      "offbeat",
+      "forest"
+    ],
+    "translations": {}
+  },
+  {
+    "id": "ukhimath-quiet-kedarnath",
+    "near_destination_id": "kedarnath",
+    "name": "Ukhimath \u2014 Winter Seat of Kedarnath",
+    "coords": {
+      "lat": 30.511,
+      "lng": 79.226
+    },
+    "distance_km": 40,
+    "drive_time": "1.5hr from Guptkashi (Kedarnath base)",
+    "why_unknown": "Every pilgrim rushes to Kedarnath temple. Nobody knows that the actual deity (Omkareshwar idol) is moved to Ukhimath every winter. The town has the same ancient sanctity but zero crowds, zero queue, zero chaos.",
+    "why_go": "Visit the same Kedarnath deity without the 16km trek or the 6hr queue. Ancient Omkareshwar temple with intricate stone carvings. Panoramic views of Kedarnath, Chaukhamba, and Mandani peaks. Traditional Garhwali town life untouched by the pilgrim economy.",
+    "difficulty": "easy",
+    "social_proof": null,
+    "confidence_score": 3,
+    "tags": [
+      "spiritual",
+      "heritage",
+      "offbeat",
+      "village"
+    ],
+    "translations": {}
+  },
+  {
+    "id": "triyuginarayan-wedding-temple",
+    "near_destination_id": "kedarnath",
+    "name": "Triyuginarayan \u2014 Eternal Flame Temple",
+    "coords": {
+      "lat": 30.553,
+      "lng": 79.071
+    },
+    "distance_km": 25,
+    "drive_time": "1hr from Sonprayag (Kedarnath road)",
+    "why_unknown": "Just 5km off the main Kedarnath highway but the turnoff is completely unmarked. Pilgrims on the Kedarnath trek have tunnel vision \u2014 they don't stop anywhere. The village has no restaurants or shops targeting tourists.",
+    "why_go": "A sacred fire has been burning continuously here for thousands of years \u2014 believed to be the wedding fire of Shiva and Parvati. The temple courtyard has natural hot water kunds (pools) you can dip in. Feels like a living mythology you can touch.",
+    "difficulty": "easy",
+    "social_proof": null,
+    "confidence_score": 3,
+    "tags": [
+      "spiritual",
+      "heritage",
+      "offbeat"
+    ],
+    "translations": {}
+  },
+  {
+    "id": "mana-village-last-dhaba",
+    "near_destination_id": "badrinath-mana",
+    "name": "Mana Village \u2014 Last Indian Village Walk",
+    "coords": {
+      "lat": 30.764,
+      "lng": 79.509
+    },
+    "distance_km": 3,
+    "drive_time": "10min walk from Badrinath temple",
+    "why_unknown": "90% of Badrinath pilgrims visit the temple and leave. Mana village is a 10-minute walk past the temple but most pilgrims turn around at the temple gate. The Saraswati River cave and Vyas Gufa are just 500m further but invisible from the main road.",
+    "why_go": "Last inhabited village before the Tibet border. The Bhim Pul (natural rock bridge over Saraswati River), Vyas Gufa (cave where Mahabharata was written), and the vanishing Saraswati waterfall are all within a 1km loop walk. Free chai at the 'last dhaba in India.'",
+    "difficulty": "easy",
+    "social_proof": null,
+    "confidence_score": 3,
+    "tags": [
+      "heritage",
+      "spiritual",
+      "village",
+      "offbeat"
+    ],
+    "translations": {}
+  },
+  {
+    "id": "kunjapuri-ridge-walk",
+    "near_destination_id": "rishikesh",
+    "name": "Kunjapuri Ridge Walk",
+    "coords": {
+      "lat": 30.152,
+      "lng": 78.418
+    },
+    "distance_km": 25,
+    "drive_time": "45min from Rishikesh + 30min ridge walk",
+    "why_unknown": "The temple at the top gets some sunrise visitors but the ridge trail beyond it is completely unknown. After the temple, the path continues along a knife-edge ridge for 3km with no markers. Locals use it for grazing, not tourism.",
+    "why_go": "A ridge walk above the Doon Valley with unobstructed views of Gangotri, Bandarpunch, and Chaukhamba ranges on one side and the Ganga valley dropping 1,500m on the other. The trail passes through a sacred grove with 300-year-old trees. Zero infrastructure \u2014 just sky and mountains.",
+    "difficulty": "moderate",
+    "social_proof": null,
+    "confidence_score": 3,
+    "tags": [
+      "trek",
+      "photography",
+      "sunrise",
+      "offbeat"
+    ],
+    "translations": {}
+  },
+  {
+    "id": "neer-garh-hidden-upper-falls",
+    "near_destination_id": "rishikesh",
+    "name": "Neer Garh Hidden Upper Falls",
+    "coords": {
+      "lat": 30.13,
+      "lng": 78.355
+    },
+    "distance_km": 7,
+    "drive_time": "20min from Rishikesh Laxman Jhula",
+    "why_unknown": "The lower Neer Garh waterfall is ticketed and crowded. But the trail continues upstream for 2km to a series of upper falls that have no ticket counter, no signage, and no people. The path becomes a scramble over boulders \u2014 most visitors turn back.",
+    "why_go": "Three untouched waterfalls cascading into deep natural pools. The uppermost fall drops into a hidden grotto surrounded by moss-covered rocks. Swimmable pools with nobody around. A 20-minute scramble separates you from every other tourist in Rishikesh.",
+    "difficulty": "moderate",
+    "social_proof": null,
+    "confidence_score": 3,
+    "tags": [
+      "waterfall",
+      "adventure",
+      "offbeat",
+      "swimming"
+    ],
+    "translations": {}
+  },
+  {
+    "id": "rainawari-old-quarter-walk",
+    "near_destination_id": "srinagar",
+    "name": "Rainawari Old Quarter Walk",
+    "coords": {
+      "lat": 34.092,
+      "lng": 74.818
+    },
+    "distance_km": 2,
+    "drive_time": "15min walk from Dal Gate",
+    "why_unknown": "Tourists stick to Dal Lake shikaras and Mughal Gardens. Rainawari is a 10-minute walk from Dal Gate but feels like a different century. The narrow lanes are too tight for cars \u2014 you have to walk. No guide mentions it.",
+    "why_go": "Medieval Kashmiri architecture still intact \u2014 carved wooden balconies (pinjra-kari), 400-year-old mosques, traditional bakeries making tsot and lavasa in clay ovens. The canal-side walk through old paper-mache workshops is living Kashmiri heritage that zero tourists see.",
+    "difficulty": "easy",
+    "social_proof": null,
+    "confidence_score": 3,
+    "tags": [
+      "heritage",
+      "walk",
+      "photography",
+      "offbeat"
+    ],
+    "translations": {}
+  },
+  {
+    "id": "zabarwan-forest-trek",
+    "near_destination_id": "srinagar",
+    "name": "Zabarwan Forest Trek",
+    "coords": {
+      "lat": 34.068,
+      "lng": 74.865
+    },
+    "distance_km": 5,
+    "drive_time": "20min from Srinagar center to trailhead",
+    "why_unknown": "The Zabarwan hills rise directly behind Srinagar but no commercial trek operator runs routes here. The trailhead near Dachigam is unmarked. Most tourists don't even realize there are mountains walkable from the city.",
+    "why_go": "Trek through a chinar and pine forest to ridgeline views overlooking Dal Lake, the entire Kashmir Valley, and Pir Panjal range. Hangul deer (Kashmir stag \u2014 world's rarest deer subspecies) live in Dachigam at the forest edge. A 3-hour escape from Srinagar's chaos to complete wilderness.",
+    "difficulty": "moderate",
+    "social_proof": null,
+    "confidence_score": 3,
+    "tags": [
+      "trek",
+      "wildlife",
+      "nature",
+      "offbeat"
+    ],
+    "translations": {}
+  },
+  {
+    "id": "wular-lake-bandipora",
+    "near_destination_id": "srinagar",
+    "name": "Wular Lake \u2014 Bandipora Shore",
+    "coords": {
+      "lat": 34.36,
+      "lng": 74.57
+    },
+    "distance_km": 55,
+    "drive_time": "1.5hr from Srinagar",
+    "why_unknown": "Asia's largest freshwater lake but has zero tourist infrastructure. No boats for hire, no cafes, no view point. The Bandipora shore road is potholed and unsigned. Tourists go to Dal Lake \u2014 nobody even considers Wular.",
+    "why_go": "Vast freshwater lake rimmed by snow-capped mountains with migratory bird colonies from Central Asia. Fishing villages on the shore serve fresh fish cooked on willow-branch fires. Sunset over the lake with the Harmukh peak behind it is arguably Kashmir's most underrated view.",
+    "difficulty": "easy",
+    "social_proof": null,
+    "confidence_score": 3,
+    "tags": [
+      "lake",
+      "birding",
+      "photography",
+      "offbeat"
+    ],
+    "translations": {}
+  },
+  {
+    "id": "manasbal-lake-lotus-garden",
+    "near_destination_id": "srinagar",
+    "name": "Manasbal Lake \u2014 Lotus Garden",
+    "coords": {
+      "lat": 34.253,
+      "lng": 74.664
+    },
+    "distance_km": 30,
+    "drive_time": "50min from Srinagar",
+    "why_unknown": "Overshadowed by Dal Lake in every guidebook. The access road passes through villages with no tourism signage. A Mughal garden (Jaroka) on the shore is locked most days \u2014 you need to find the caretaker in the village.",
+    "why_go": "Deepest lake in Kashmir covered in wild lotus blooms July-August. The water is so clear you can see fish 3 meters down. The ruined Mughal garden on the eastern shore is hauntingly beautiful \u2014 crumbling terraces with chinar trees and zero visitors.",
+    "difficulty": "easy",
+    "social_proof": null,
+    "confidence_score": 3,
+    "tags": [
+      "lake",
+      "nature",
+      "heritage",
+      "photography",
+      "offbeat"
+    ],
+    "translations": {}
+  },
+  {
+    "id": "kokernag-trout-farm-spring",
+    "near_destination_id": "verinag-achabal-kokernag",
+    "name": "Kokernag Trout Farm & Springs",
+    "coords": {
+      "lat": 33.585,
+      "lng": 75.281
+    },
+    "distance_km": 5,
+    "drive_time": "10min from Kokernag town",
+    "why_unknown": "South Kashmir barely appears on tourist itineraries. Kokernag's freshwater springs are the largest in Kashmir but have no marketing, no website, no Instagram presence. The trout hatchery is a government facility that technically allows visitors but doesn't advertise it.",
+    "why_go": "Crystal-clear spring water bubbling from underground into a garden complex. The adjacent trout hatchery lets you see rainbow trout in various growth stages. The botanical garden surrounding the springs is empty on weekdays \u2014 a silent paradise of chinars and willows.",
+    "difficulty": "easy",
+    "social_proof": null,
+    "confidence_score": 3,
+    "tags": [
+      "nature",
+      "garden",
+      "offbeat",
+      "family"
+    ],
+    "translations": {}
+  },
+  {
+    "id": "aharbal-waterfall-south-kashmir",
+    "near_destination_id": "verinag-achabal-kokernag",
+    "name": "Aharbal Waterfall",
+    "coords": {
+      "lat": 33.649,
+      "lng": 74.764
+    },
+    "distance_km": 65,
+    "drive_time": "2hr from Anantnag/Kokernag",
+    "why_unknown": "Deep in South Kashmir on a road that doesn't connect to any other tourist circuit. No accommodation within 10km. The area had security concerns for decades \u2014 now safe but the reputation lingers in guidebooks.",
+    "why_go": "25-meter waterfall on the Vishav River crashing through a basalt gorge \u2014 locals call it 'Kashmir's Niagara'. The pine forest surrounding it is dense and untouched. A 3km trail along the river above the falls leads to pristine pools. You will likely be the only non-local there.",
+    "difficulty": "moderate",
+    "social_proof": null,
+    "confidence_score": 3,
+    "tags": [
+      "waterfall",
+      "nature",
+      "photography",
+      "offbeat"
+    ],
+    "translations": {}
+  },
+  {
+    "id": "daksum-valley-forest",
+    "near_destination_id": "verinag-achabal-kokernag",
+    "name": "Daksum Valley",
+    "coords": {
+      "lat": 33.529,
+      "lng": 75.395
+    },
+    "distance_km": 30,
+    "drive_time": "1hr from Kokernag",
+    "why_unknown": "Requires driving through rural South Kashmir on roads that don't appear in any travel guide. The valley was a trekking base in the 1980s but dropped off maps after militancy. Now peaceful but forgotten by the tourism industry entirely.",
+    "why_go": "Dense deodar and pine forest at 2,438m with a clear river running through it. Starting point for the Sinthan Pass crossing to Kishtwar \u2014 a drive that rivals any in the Alps. The forest rest house here is colonial-era and eerily beautiful. Truly zero tourists.",
+    "difficulty": "moderate",
+    "social_proof": null,
+    "confidence_score": 3,
+    "tags": [
+      "valley",
+      "forest",
+      "offbeat",
+      "camping"
+    ],
+    "translations": {}
+  },
+  {
+    "id": "chatpal-meadow-village",
+    "near_destination_id": "sinthan-top",
+    "name": "Chatpal \u2014 South Kashmir's Last Meadow",
+    "coords": {
+      "lat": 33.555,
+      "lng": 75.324
+    },
+    "distance_km": 20,
+    "drive_time": "45min from Daksum",
+    "why_unknown": "No road beyond Chatpal \u2014 it's literally the end of the line. The village appears on no tourist map. Access requires navigating through Anantnag district on rural roads with no English signage.",
+    "why_go": "A vast alpine meadow ringed by dense forest at 2,500m that South Kashmir locals call 'mini Gulmarg'. Wildflower carpet in June, golden grass in October. The village has a handful of wooden houses and a medieval mosque. The silence is the kind that makes your ears ring.",
+    "difficulty": "moderate",
+    "social_proof": null,
+    "confidence_score": 3,
+    "tags": [
+      "meadow",
+      "village",
+      "offbeat",
+      "photography"
+    ],
+    "translations": {}
+  },
+  {
+    "id": "kounsarnag-approach-camp",
+    "near_destination_id": "sinthan-top",
+    "name": "Kounsarnag Approach Camp",
+    "coords": {
+      "lat": 33.58,
+      "lng": 75.125
+    },
+    "distance_km": 35,
+    "drive_time": "1.5hr drive from Shopian + 5hr trek",
+    "why_unknown": "One of Kashmir's most sacred and remote alpine lakes but requires a full-day trek with no marked trail. Permits needed from DC Shopian. The approach through Kungwattan meadow has no infrastructure. Very few trekkers attempt it.",
+    "why_go": "Glacial lake at 3,962m in a amphitheater of 4,500m peaks. Legend says it was a resting place of Goddess Parvati. The approach through Kungwattan meadow (a vast flower-carpeted grassland) is itself worth the trek. One of the last truly wild places in Kashmir.",
+    "difficulty": "hard",
+    "social_proof": null,
+    "confidence_score": 3,
+    "tags": [
+      "trek",
+      "lake",
+      "offbeat",
+      "camping",
+      "adventure"
+    ],
+    "translations": {}
+  },
+  {
+    "id": "lidderwat-deep-camp",
+    "near_destination_id": "pahalgam",
+    "name": "Lidderwat Deep Camp",
+    "coords": {
+      "lat": 34.135,
+      "lng": 75.402
+    },
+    "distance_km": 18,
+    "drive_time": "30min drive to Aru + 4hr trek",
+    "why_unknown": "The trail from Aru to Lidderwat exists but has no markers after the first meadow. Most Pahalgam tourists go to Aru, take photos, and drive back. The camping ground at Lidderwat requires carrying your own gear \u2014 no rentals, no operators on site.",
+    "why_go": "A flat riverside meadow surrounded by towering pines and snow peaks where the Lidder River is barely a creek you can hop across. The night sky here \u2014 with zero light pollution \u2014 is Milky Way visible to the naked eye. Gateway to Tarsar-Marsar lakes for serious trekkers.",
+    "difficulty": "hard",
+    "social_proof": null,
+    "confidence_score": 3,
+    "tags": [
+      "camping",
+      "trek",
+      "meadow",
+      "offbeat"
+    ],
+    "translations": {}
+  },
+  {
+    "id": "kolahoi-glacier-approach-camp",
+    "near_destination_id": "pahalgam",
+    "name": "Kolahoi Glacier Approach Camp",
+    "coords": {
+      "lat": 34.175,
+      "lng": 75.36
+    },
+    "distance_km": 28,
+    "drive_time": "30min drive to Aru + 7hr trek",
+    "why_unknown": "Kashmir's only hanging glacier but requires a strenuous multi-day trek from Aru through Lidderwat. No commercial operator packages it. The approach camp at Satlanjan has no facilities \u2014 pure wilderness camping. Trail disappears in places.",
+    "why_go": "Get face-to-face with a massive glacier pouring off the 5,425m Kolahoi peak \u2014 the highest in the Kashmir Valley. The approach through alpine meadows and birch forests is pristine. Marmots, brown bears, and snow leopard tracks are common. An expedition-grade experience without the permit hassle.",
+    "difficulty": "hard",
+    "social_proof": null,
+    "confidence_score": 3,
+    "tags": [
+      "glacier",
+      "trek",
+      "adventure",
+      "offbeat",
+      "camping"
+    ],
+    "translations": {}
+  },
+  {
+    "id": "chandanwari-hidden-falls",
+    "near_destination_id": "pahalgam",
+    "name": "Chandanwari Hidden Falls",
+    "coords": {
+      "lat": 34.11,
+      "lng": 75.45
+    },
+    "distance_km": 16,
+    "drive_time": "30min from Pahalgam",
+    "why_unknown": "Chandanwari is the starting point of the Amarnath Yatra \u2014 pilgrims pass through focused on the cave shrine. A side trail 1km before Chandanwari drops down to a hidden waterfall in a gorge that the pilgrim road bypasses completely.",
+    "why_go": "A 30-meter waterfall dropping into a turquoise pool in a narrow gorge carved from grey rock. The trail to it passes through a birch forest with moss-covered boulders. In June, the snow bridge over the river is still intact \u2014 a natural ice formation you can walk under.",
+    "difficulty": "moderate",
+    "social_proof": null,
+    "confidence_score": 3,
+    "tags": [
+      "waterfall",
+      "offbeat",
+      "photography",
+      "adventure"
+    ],
+    "translations": {}
+  },
+  {
+    "id": "gurez-dawar-beyond",
+    "near_destination_id": "gurez-valley",
+    "name": "Gurez \u2014 Beyond Dawar Village",
+    "coords": {
+      "lat": 34.635,
+      "lng": 74.828
+    },
+    "distance_km": 10,
+    "drive_time": "20min past Dawar (Gurez)",
+    "why_unknown": "The few tourists who reach Gurez stop at Dawar (the main village) and turn back. The road continues along the Kishanganga River for another 20km through villages that see maybe 50 outsiders a year. Some sections require army permits.",
+    "why_go": "Traditional log-house villages where Dard-Shin people still live as they did centuries ago. The Kishanganga River turns emerald green here. Tulail Valley beyond is one of the most beautiful and least visited valleys in all of India \u2014 Habba Khatoon peak watches over everything.",
+    "difficulty": "moderate",
+    "social_proof": null,
+    "confidence_score": 3,
+    "tags": [
+      "village",
+      "valley",
+      "offbeat",
+      "photography",
+      "frontier"
+    ],
+    "translations": {}
+  },
+  {
+    "id": "tulail-valley-deep",
+    "near_destination_id": "gurez-valley",
+    "name": "Tulail Valley \u2014 Deep Gurez",
+    "coords": {
+      "lat": 34.68,
+      "lng": 74.94
+    },
+    "distance_km": 25,
+    "drive_time": "1hr past Dawar on rough road",
+    "why_unknown": "Requires crossing the entire Gurez Valley \u2014 itself a remote destination. The road beyond Dawar is unpaved and sometimes impassable after rain. No accommodation, no fuel, no phone network. Army checkpoints require registration.",
+    "why_go": "The deepest inhabited valley in the Gurez sector \u2014 surrounded by 4,000m peaks on all sides. Dard settlements with wooden houses decorated with carved motifs. Wildflower meadows in July rival Valley of Flowers but with zero trekkers. The border mountains of the LoC are visible \u2014 you feel the edge of India.",
+    "difficulty": "hard",
+    "social_proof": null,
+    "confidence_score": 3,
+    "tags": [
+      "valley",
+      "frontier",
+      "offbeat",
+      "adventure",
+      "photography"
+    ],
+    "translations": {}
+  },
+  {
+    "id": "keran-village-loc",
+    "near_destination_id": "gurez-valley",
+    "name": "Keran Village \u2014 LoC Viewpoint",
+    "coords": {
+      "lat": 34.61,
+      "lng": 74.01
+    },
+    "distance_km": 120,
+    "drive_time": "4hr from Kupwara (separate from Gurez)",
+    "why_unknown": "Located on the Line of Control in Kupwara district \u2014 was completely closed to civilians until recently. Requires special permit from DC Kupwara. No tourist infrastructure exists. The road is single-lane and army-maintained.",
+    "why_go": "Stand on the banks of the Neelum River and look directly across at Pakistan-administered Kashmir \u2014 the houses, mosques, and hills of Keran on the other side. Families divided by the LoC sometimes wave to each other across the river. One of the most emotionally powerful places in India.",
+    "difficulty": "hard",
+    "social_proof": null,
+    "confidence_score": 3,
+    "tags": [
+      "frontier",
+      "heritage",
+      "offbeat",
+      "photography"
+    ],
+    "translations": {}
+  }
+]
