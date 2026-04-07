@@ -17,6 +17,7 @@ export function Nav() {
     { href: `/${locale}/collections`, label: t("collections") },
     { href: `/${locale}/routes`, label: t("routes") },
     { href: `/${locale}/treks`, label: t("treks") },
+    { href: `/${locale}/superlatives`, label: "Records" },
     { href: `/${locale}/saved`, label: "♥ Saved" },
     { href: `/${locale}/region/himachal-pradesh`, label: "HP" },
     { href: `/${locale}/region/uttarakhand`, label: "UK" },
@@ -57,9 +58,10 @@ export function Nav() {
           ))}
           <Link
             href={`/${locale}/plan`}
-            className="ml-2 rounded-lg bg-primary px-3 py-1.5 text-sm font-medium text-primary-foreground hover:bg-primary/90"
+            className="ml-2 rounded-lg bg-primary px-3 py-1.5 text-sm font-medium text-primary-foreground hover:bg-primary/90 flex items-center gap-1.5"
           >
-            {t("planTrip")}
+            <span>AI Plan</span>
+            <span className="rounded bg-white/20 px-1 py-0.5 text-[9px] font-bold">NEW</span>
           </Link>
         </nav>
 
