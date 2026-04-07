@@ -1,5 +1,6 @@
 import { Nav } from "@/components/nav";
 import { DestinationDetail } from "@/components/destination-detail";
+import { TouristTrapIntervention } from "@/components/tourist-trap-intervention";
 import { createClient } from "@supabase/supabase-js";
 import { notFound } from "next/navigation";
 
@@ -27,12 +28,29 @@ async function getDestination(id: string) {
 
   if (error || !data) return null;
 
+  // Fetch hidden gems
   const { data: gems } = await supabase
     .from("hidden_gems")
     .select("*")
     .eq("near_destination_id", id);
 
-  return { ...data, hidden_gems: gems ?? [] };
+  // Fetch tourist trap alternatives (if this is a trap destination)
+  const { data: trapAlts } = await supabase
+    .from("tourist_trap_alternatives")
+    .select(`
+      *,
+      destination:destinations!tourist_trap_alternatives_alternative_destination_id_fkey(
+        name, tagline, difficulty, elevation_m
+      )
+    `)
+    .eq("trap_destination_id", id)
+    .order("rank");
+
+  return {
+    ...data,
+    hidden_gems: gems ?? [],
+    trap_alternatives: trapAlts ?? [],
+  };
 }
 
 export default async function DestinationPage({
@@ -47,7 +65,16 @@ export default async function DestinationPage({
   return (
     <div className="min-h-screen">
       <Nav />
-      <DestinationDetail dest={dest} />
+      <main className="mx-auto max-w-4xl px-4 py-8">
+        {/* Tourist Trap Intervention — shows BEFORE the destination detail */}
+        {dest.trap_alternatives && dest.trap_alternatives.length > 0 && (
+          <TouristTrapIntervention
+            trapName={dest.name}
+            alternatives={dest.trap_alternatives}
+          />
+        )}
+        <DestinationDetail dest={dest} />
+      </main>
     </div>
   );
 }

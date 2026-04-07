@@ -74,7 +74,7 @@ export function DestinationDetail({ dest }: { dest: any }) {
 
   return (
     <>
-      <main className="mx-auto max-w-4xl px-4 py-8">
+      <div>
         {/* Breadcrumb */}
         <FadeIn>
           <div className="mb-4 text-sm text-muted-foreground">
@@ -355,7 +355,7 @@ export function DestinationDetail({ dest }: { dest: any }) {
             )}
           </motion.div>
         </AnimatePresence>
-      </main>
+      </div>
       <Footer />
     </>
   );
