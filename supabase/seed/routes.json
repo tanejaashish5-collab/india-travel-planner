@@ -174,5 +174,263 @@
       {"day": 9, "from": "Rishikesh", "to": "Haridwar", "km": 25, "plan": "Yoga session morning. Drive to Haridwar. Har Ki Pauri, Mansa Devi cable car. Evening: Haridwar Ganga Aarti (massive, moving)."},
       {"day": 10, "from": "Haridwar", "to": "Delhi", "km": 230, "plan": "Shatabdi Express back to Delhi. Or drive. Trip ends."}
     ]
+  },
+  {
+    "id": "agra-weekend-3d",
+    "name": "Agra Weekend",
+    "days": 3,
+    "difficulty": "easy",
+    "best_months": [10, 11, 12, 1, 2, 3],
+    "stops": ["delhi", "agra"],
+    "description": "The classic Taj trip. Delhi to Agra and back with a Fatehpur Sikri stop. You've seen the photos a thousand times — it's better in person. Three days is plenty; don't overthink it.",
+    "kids_suitable": true,
+    "bike_route": false,
+    "budget_range": "₹2,500-8,000/day",
+    "highlights": ["Taj Mahal sunrise", "Agra Fort", "Fatehpur Sikri ghost city", "Mehtab Bagh sunset view"],
+    "logistics": "Gatimaan Express (Delhi-Agra, 1h40m) or drive (3-4hrs on Yamuna Expressway). Book Taj tickets online in advance — queues are brutal. Taj is closed on Fridays.",
+    "day_by_day": [
+      {"day": 1, "from": "Delhi", "to": "Agra", "km": 230, "plan": "Morning Gatimaan Express or drive. Check in. Afternoon: Taj Mahal (less crowded than sunrise slot). Evening: Mehtab Bagh for Taj sunset view across the river. Rooftop dinner with Taj view."},
+      {"day": 2, "from": "Agra", "to": "Fatehpur Sikri", "km": 40, "plan": "Early morning: Taj sunrise if you didn't do it yesterday (worth the 5AM wake-up). Then Agra Fort (allow 2hrs). After lunch drive to Fatehpur Sikri — Akbar's abandoned capital. Buland Darwaza is jaw-dropping. Return to Agra by evening."},
+      {"day": 3, "from": "Agra", "to": "Delhi", "km": 230, "plan": "Morning free: Itmad-ud-Daulah (Baby Taj) if you want more Mughal architecture, or sleep in. Train/drive back to Delhi by afternoon."}
+    ]
+  },
+  {
+    "id": "rishikesh-weekend-3d",
+    "name": "Rishikesh Weekend",
+    "days": 3,
+    "difficulty": "easy",
+    "best_months": [9, 10, 11, 3, 4, 5],
+    "stops": ["delhi", "rishikesh"],
+    "description": "Rafting, yoga, Beatles Ashram, and Ganga aarti packed into a weekend. Rishikesh is 6hrs from Delhi — close enough for a quick escape, far enough to feel like another world.",
+    "kids_suitable": false,
+    "bike_route": false,
+    "budget_range": "₹2,000-5,000/day",
+    "highlights": ["White-water rafting Shivpuri-Rishikesh", "Beatles Ashram graffiti", "Ganga aarti at Triveni Ghat", "Cafe culture in Tapovan"],
+    "logistics": "Drive from Delhi (6hrs) or take the overnight bus (arrive 5AM, fresh start). Rafting is best Sep-Nov and Mar-May. Monsoon (Jul-Aug) = no rafting, river too high. Kids under 10 not allowed on rafting trips.",
+    "day_by_day": [
+      {"day": 1, "from": "Delhi", "to": "Rishikesh", "km": 250, "plan": "Early morning drive or overnight bus arrival. Check into Tapovan/Laxman Jhula area. Afternoon: Beatles Ashram (Chaurasi Kutia — the graffiti-covered meditation centre). Evening: Ganga aarti at Triveni Ghat. Walk the hanging bridges."},
+      {"day": 2, "from": "Rishikesh", "to": "Rishikesh", "km": 30, "plan": "Morning: White-water rafting from Shivpuri (16km, 3-4hrs, Grade 3 rapids). Afternoon: recover at a riverside cafe. Optional cliff jumping at Shivpuri. Sunset yoga session at one of the ashrams — Parmarth Niketan is the big one."},
+      {"day": 3, "from": "Rishikesh", "to": "Delhi", "km": 250, "plan": "Morning yoga class if you're keen (most ashrams start at 6AM). Quick visit to Ram Jhula side. Drive back to Delhi after lunch. You'll hit Delhi by evening."}
+    ]
+  },
+  {
+    "id": "amritsar-weekend-3d",
+    "name": "Amritsar Weekend",
+    "days": 3,
+    "difficulty": "easy",
+    "best_months": [10, 11, 12, 1, 2, 3],
+    "stops": ["delhi", "amritsar"],
+    "description": "Golden Temple + Wagah Border ceremony. Two of the most powerful experiences in India, both in one city. The langar (free community kitchen) at Golden Temple feeds 50,000+ people daily — go see it, eat there, be humbled.",
+    "kids_suitable": true,
+    "bike_route": false,
+    "budget_range": "₹2,000-5,000/day",
+    "highlights": ["Golden Temple at night", "Wagah Border ceremony", "Jallianwala Bagh", "Amritsari kulcha + lassi"],
+    "logistics": "Fly Delhi-Amritsar (1hr, cheap flights) or Shatabdi Express (6hrs). From Chandigarh it's a 4hr drive. Wagah ceremony is at 4:30PM (winter) or 5:30PM (summer) — reach 2hrs early for a good seat.",
+    "day_by_day": [
+      {"day": 1, "from": "Delhi", "to": "Amritsar", "km": 450, "plan": "Morning flight or early train. Arrive by noon. Afternoon: Jallianwala Bagh (sobering, important). Walk to Golden Temple. First darshan. Evening: Golden Temple lit up at night — this is the moment. Eat langar (free, no questions asked, everyone sits equal)."},
+      {"day": 2, "from": "Amritsar", "to": "Wagah Border", "km": 30, "plan": "Early morning: Golden Temple sunrise (4AM palki sahib ceremony if you're dedicated). Partition Museum (excellent, allow 2hrs). Afternoon: drive to Wagah Border. The flag-lowering ceremony is part military parade, part cricket match energy. Loud, patriotic, unforgettable. Return to Amritsar. Street food: Kesar da Dhaba, Beera Chicken, Amritsari kulcha."},
+      {"day": 3, "from": "Amritsar", "to": "Delhi", "km": 450, "plan": "Morning: one more Golden Temple visit (it pulls you back). Gobindgarh Fort if time. Flight or train back to Delhi."}
+    ]
+  },
+  {
+    "id": "kashmir-weekend-4d",
+    "name": "Kashmir Long Weekend",
+    "days": 4,
+    "difficulty": "easy",
+    "best_months": [4, 5, 9, 10],
+    "stops": ["srinagar", "gulmarg"],
+    "description": "Fly in, houseboat, Gulmarg gondola, fly out. Four days is tight for Kashmir but enough to get the essentials — Dal Lake, one valley trip, and that first glimpse of the mountains that makes you understand why every Mughal emperor was obsessed with this place.",
+    "kids_suitable": true,
+    "bike_route": false,
+    "budget_range": "₹3,000-8,000/day",
+    "highlights": ["Shikara ride on Dal Lake", "Gulmarg Gondola Phase 1", "Mughal Gardens", "Houseboat stay"],
+    "logistics": "Direct flights from Delhi, Mumbai, Bangalore to Srinagar. Book houseboat on Dal Lake (₹3,000-8,000/night). Pre-book a local driver (₹2,500/day). Don't try to squeeze Pahalgam AND Gulmarg into 4 days — you'll spend the whole trip in a car.",
+    "day_by_day": [
+      {"day": 1, "from": "Airport", "to": "Srinagar", "km": 15, "plan": "Arrive Srinagar. Check into houseboat on Dal Lake. Afternoon shikara ride — let the boatman take you through the floating vegetable market if it's morning, or the lotus gardens. Evening: Mughal Gardens (Nishat Bagh is the best one). Dinner on the houseboat."},
+      {"day": 2, "from": "Srinagar", "to": "Gulmarg", "km": 50, "plan": "Full day Gulmarg. Leave by 8AM. Gondola Phase 1 (must do, views of Nanga Parbat on clear days). Phase 2 only if no small kids and weather is good — it's 4000m up and can be brutal. Khilanmarg meadow walk. Lunch at Gulmarg. Return to Srinagar by 5PM."},
+      {"day": 3, "from": "Srinagar", "to": "Srinagar", "km": 20, "plan": "Srinagar day. Shankaracharya Temple (hilltop, city views). Old City walk through the lanes. Hazratbal Mosque. Chashme Shahi garden + Pari Mahal. Afternoon: Dal Lake kayaking or second shikara ride. Lal Chowk for shopping — saffron, papier-mache, pashmina (bargain hard)."},
+      {"day": 4, "from": "Srinagar", "to": "Airport", "km": 15, "plan": "Early morning: flower market by shikara (5:30-6:30AM, worth the alarm). Pack up. Last chai on the houseboat. Depart."}
+    ]
+  },
+  {
+    "id": "manali-weekend-4d",
+    "name": "Manali Long Weekend",
+    "days": 4,
+    "difficulty": "easy",
+    "best_months": [3, 4, 5, 9, 10, 11],
+    "stops": ["delhi", "manali"],
+    "description": "Overnight Volvo from Delhi, two full days in Manali, Volvo back. The backbone of every North Indian's first mountain trip. Solang, Old Manali cafes, Atal Tunnel — all the greatest hits in a long weekend.",
+    "kids_suitable": true,
+    "bike_route": false,
+    "budget_range": "₹2,500-6,000/day",
+    "highlights": ["Solang Valley paragliding/snow", "Old Manali cafe culture", "Atal Tunnel to Sissu", "Hadimba Temple in the forest"],
+    "logistics": "HRTC Volvo from Delhi ISBT Kashmere Gate (leaves 5-6PM, arrives 8-9AM). Book on hrtchp.com or redbus. Or fly to Kullu-Bhuntar airport (1hr) and drive 1hr to Manali. Volvo is half the experience though — the Kullu valley sunrise from the bus window is free.",
+    "day_by_day": [
+      {"day": 1, "from": "Delhi", "to": "Manali", "km": 530, "plan": "Overnight Volvo (left Delhi previous evening). Arrive Manali 8-9AM. Check in at Old Manali or Naggar. Rest, shower, breakfast. Afternoon: Hadimba Temple (in a cedar forest, genuinely beautiful). Walk around Old Manali, find a riverside cafe. Early dinner — you'll be tired."},
+      {"day": 2, "from": "Manali", "to": "Sissu", "km": 70, "plan": "Solang Valley morning (paragliding in summer, snow activities in winter). Then drive through Atal Tunnel (9.02km, the engineering is wild) to Sissu on the other side. Sissu waterfall, Lahaul valley views. Lunch at Sissu. Return through tunnel. Evening: Vashisht hot springs."},
+      {"day": 3, "from": "Manali", "to": "Manali", "km": 30, "plan": "Naggar Castle + Roerich Art Gallery (underrated, beautiful setting). Drive up to Brighu Lake trailhead for a short walk if fit. Or just do Old Manali properly — Johnson's Cafe, Lazy Dog, the whole circuit. Afternoon: Mall Road for shopping. Pack for evening Volvo."},
+      {"day": 4, "from": "Manali", "to": "Delhi", "km": 530, "plan": "Overnight Volvo (left Manali previous evening). Arrive Delhi early morning. Trip ends. Alternatively, take the 5PM Volvo and arrive Delhi by 6AM next day — gives you a morning in Manali."}
+    ]
+  },
+  {
+    "id": "nainital-weekend-4d",
+    "name": "Nainital Family Weekend",
+    "days": 4,
+    "difficulty": "easy",
+    "best_months": [3, 4, 5, 9, 10, 11],
+    "stops": ["delhi", "nainital", "bhimtal", "mukteshwar"],
+    "description": "The perfect family hill station trip from Delhi. Nainital's lake, Bhimtal's quiet, Mukteshwar's views. All within 30km of each other, all on good roads, all with proper hotels. No altitude issues, no risky roads. Just clean mountain air and happy kids.",
+    "kids_suitable": true,
+    "bike_route": false,
+    "budget_range": "₹2,500-6,000/day",
+    "highlights": ["Naini Lake boating", "Snow View Point by cable car", "Bhimtal Lake", "Mukteshwar cliff views + IVRI campus"],
+    "logistics": "Drive from Delhi (6-7hrs via Haldwani). Or train to Kathgodam (overnight, arrives 5AM) + 1.5hr drive to Nainital. Roads are good but Nainital town gets PACKED on weekends — go on a weekday if possible. Parking in Nainital is a nightmare; use the ropeway parking lot.",
+    "day_by_day": [
+      {"day": 1, "from": "Delhi", "to": "Nainital", "km": 300, "plan": "Early drive or overnight train. Arrive by noon. Check in. Afternoon: Naini Lake boating (paddle boat with kids, proper boat for couples). Mall Road walk. Cable car to Snow View Point if clear weather. Evening: Naina Devi Temple by the lake."},
+      {"day": 2, "from": "Nainital", "to": "Mukteshwar", "km": 55, "plan": "Drive to Mukteshwar (1.5hrs). Mukteshwar Dham temple on the cliff edge. IVRI campus walk (views of the Himalayan range on a clear day — Nanda Devi, Trishul, the works). Chauli ki Jali cliff for the brave. Lunch at a Mukteshwar cafe. Return via Bhowali (fruit market — buy whatever's in season)."},
+      {"day": 3, "from": "Nainital", "to": "Bhimtal", "km": 25, "plan": "Drive to Bhimtal (30min). Bhimtal Lake — quieter, greener, less crowded than Nainital. Island in the middle. Then Naukuchiatal (9-cornered lake) or Sattal (7 lakes). Afternoon back in Nainital: Eco Cave Gardens for kids, Tiffin Top walk for a gentle hike."},
+      {"day": 4, "from": "Nainital", "to": "Delhi", "km": 300, "plan": "Morning free: last lake walk or shopping on Mall Road (wooden toys, candles — classic Nainital souvenirs). Drive back to Delhi after lunch. Reach by evening."}
+    ]
+  },
+  {
+    "id": "jaipur-pushkar-4d",
+    "name": "Jaipur-Pushkar Long Weekend",
+    "days": 4,
+    "difficulty": "easy",
+    "best_months": [10, 11, 12, 1, 2],
+    "stops": ["delhi", "jaipur", "pushkar"],
+    "description": "Forts and palaces in the Pink City, then the holy lake at Pushkar. Two completely different vibes 150km apart. Jaipur is grand and loud; Pushkar is quiet and sacred. Together they're the best 4-day sampler of Rajasthan you can do.",
+    "kids_suitable": true,
+    "bike_route": false,
+    "budget_range": "₹3,000-10,000/day",
+    "highlights": ["Amber Fort morning light", "Nahargarh sunset", "Pushkar Lake sunset aarti", "Hawa Mahal", "Pushkar Brahma Temple"],
+    "logistics": "Train Delhi-Jaipur (Shatabdi/Vande Bharat, 2.5-3hrs). Jaipur to Pushkar by car (2.5hrs via Ajmer). Return Pushkar-Delhi by car (6hrs) or Pushkar-Ajmer-Delhi by train. Oct-Feb only — summer is 45°C+. If your dates align with Pushkar Camel Fair (Nov), book months ahead.",
+    "day_by_day": [
+      {"day": 1, "from": "Delhi", "to": "Jaipur", "km": 270, "plan": "Morning train to Jaipur. Check in. Afternoon: Hawa Mahal (10 minutes is enough, it's a facade), City Palace (allow 1.5hrs), Jantar Mantar. Evening: drive up to Nahargarh Fort for sunset over the city. Dinner at 1135 AD or a Johari Bazaar thali joint."},
+      {"day": 2, "from": "Jaipur", "to": "Jaipur", "km": 25, "plan": "Early morning: Amber Fort (go by 8:30AM before the crowds and heat). Walk up or jeep up. Allow 2-3hrs. Jaigarh Fort if you want to see the world's largest cannon on wheels. Afternoon: Albert Hall Museum or Anokhi Museum of Hand Printing. Johari Bazaar for jewellery, Bapu Bazaar for textiles."},
+      {"day": 3, "from": "Jaipur", "to": "Pushkar", "km": 150, "plan": "Drive to Pushkar via Ajmer (stop at Ajmer Sharif dargah if interested — 30min). Arrive Pushkar by noon. Afternoon: walk the 52 ghats around Pushkar Lake. Brahma Temple (one of the only ones in the world). Sunset aarti at the lake — sit on the steps, buy some flowers, be present. Overnight at a lakeside haveli."},
+      {"day": 4, "from": "Pushkar", "to": "Delhi", "km": 400, "plan": "Morning: Savitri Temple hike (30min up, panoramic views of the lake and desert). Or camel ride in the dunes outside town. Drive back to Delhi (6hrs) or to Ajmer for a train. You'll be home by evening."}
+    ]
+  },
+  {
+    "id": "ladakh-express-7d",
+    "name": "Ladakh Express",
+    "days": 7,
+    "difficulty": "hard",
+    "best_months": [6, 7, 8, 9],
+    "stops": ["leh", "nubra-valley", "pangong-lake"],
+    "description": "The fly-in-fly-out Ladakh trip for people who can't take 2 weeks off. You get Leh, Nubra, and Pangong — the three essentials. Don't try to add Tso Moriri or Hanle. Don't try to fit Zanskar. Seven days, three destinations, two acclimatization days. That's the deal.",
+    "kids_suitable": false,
+    "bike_route": false,
+    "budget_range": "₹3,000-8,000/day",
+    "highlights": ["Pangong Lake", "Nubra sand dunes + double-hump camels", "Thiksey Monastery", "Khardung La pass", "Turtuk village"],
+    "logistics": "Fly into Leh (Delhi/Mumbai/Bangalore direct flights). ILP (Inner Line Permit) needed for Nubra and Pangong — apply online or get in Leh (takes 1-2hrs). Hire a driver with Innova/Bolero for the whole trip (₹3,000-4,000/day). 2 days acclimatization is NON-NEGOTIABLE. People who skip it end up in the hospital. Diamox helps but isn't a substitute.",
+    "day_by_day": [
+      {"day": 1, "from": "Airport", "to": "Leh", "km": 5, "plan": "Arrive Leh (3500m). DO NOTHING strenuous. Check in, rest, drink water (3+ litres). Gentle walk to Leh Market and Shanti Stupa if feeling okay. Light food. Sleep early. You WILL feel the altitude — headache, breathlessness. It's normal."},
+      {"day": 2, "from": "Leh", "to": "Leh", "km": 40, "plan": "Acclimatization day 2. Stay below 3600m. Thiksey Monastery (the mini Potala — morning puja at 6:30AM is special). Shey Palace. Hemis Monastery. All close to Leh, all at similar altitude. You should feel better today. If not, DO NOT go to Nubra tomorrow."},
+      {"day": 3, "from": "Leh", "to": "Nubra Valley", "km": 120, "plan": "Over Khardung La (5359m — world's highest motorable road, or close to it). The pass is cold and windy; don't linger more than 15min. Descend to Nubra Valley (3000m — you'll actually feel great after Leh). Diskit Monastery + giant Maitreya statue. Hunder sand dunes, double-hump Bactrian camels. Overnight Hunder."},
+      {"day": 4, "from": "Nubra Valley", "to": "Turtuk", "km": 90, "plan": "Drive to Turtuk — the last Indian village before the Pakistan border. Balti culture, apricot orchards, genuinely warm people. The drive alone through the gorge is worth it. Lunch in Turtuk. Return to Hunder by evening. Overnight Nubra."},
+      {"day": 5, "from": "Nubra Valley", "to": "Pangong Lake", "km": 160, "plan": "The big drive day. Nubra to Pangong via Shyok road (adventurous, saves time) or back through Leh (safer, longer). The Shyok route is rough in parts but cuts 3hrs. Arrive Pangong afternoon. That blue. No photo does it justice. Overnight Spangmik or Maan."},
+      {"day": 6, "from": "Pangong Lake", "to": "Leh", "km": 150, "plan": "Sunrise at Pangong (set your alarm — the light on the lake at 5:30AM is otherworldly). Return to Leh via Chang La (5360m). Arrive Leh by afternoon. Rest. Evening: Leh Old Town walk, Hall of Fame museum. Last dinner — try the Ladakhi thukpa and skyu."},
+      {"day": 7, "from": "Leh", "to": "Airport", "km": 5, "plan": "Early morning flights only from Leh (fog/wind grounds afternoon flights regularly). Pack the night before. Depart. If delayed, you have Leh to explore — not the worst place to be stuck."}
+    ]
+  },
+  {
+    "id": "rajasthan-highlights-7d",
+    "name": "Rajasthan Highlights",
+    "days": 7,
+    "difficulty": "easy",
+    "best_months": [10, 11, 12, 1, 2],
+    "stops": ["jaipur", "jodhpur", "jaisalmer", "udaipur"],
+    "description": "The essential Rajasthan loop in a week: Pink City, Blue City, Golden City, Lake City. Four cities, four forts, four completely different vibes. This is the condensed version of the 10-day route — you skip Pushkar and the Jodhpur-Jaisalmer return leg. Still excellent.",
+    "kids_suitable": true,
+    "bike_route": false,
+    "budget_range": "₹3,000-12,000/day",
+    "highlights": ["Amber Fort at sunrise", "Mehrangarh Fort", "Jaisalmer Fort (living fort)", "Sam Sand Dunes camping", "Lake Pichola boat ride"],
+    "logistics": "Fly into Jaipur. Fly out of Udaipur. Hire a driver for the full trip (₹2,500-3,500/day) — intercity buses exist but eat your time. Or use trains: Jaipur-Jodhpur (5hrs), Jodhpur-Jaisalmer (5hrs). Jaisalmer-Udaipur has no direct train — drive or fly via Jodhpur. Oct-Feb ONLY.",
+    "day_by_day": [
+      {"day": 1, "from": "Airport", "to": "Jaipur", "km": 15, "plan": "Arrive Jaipur. Amber Fort (go straight from airport, morning light is best). Afternoon: City Palace, Hawa Mahal, Jantar Mantar. Evening: Nahargarh Fort sunset. Johari Bazaar for dinner."},
+      {"day": 2, "from": "Jaipur", "to": "Jodhpur", "km": 335, "plan": "Morning drive to Jodhpur (5-6hrs). Arrive by lunch. Afternoon: Mehrangarh Fort — genuinely one of the best forts in India. Walk through the Blue City lanes below the fort. Toorji ka Jhalra stepwell. Overnight Jodhpur."},
+      {"day": 3, "from": "Jodhpur", "to": "Jaisalmer", "km": 285, "plan": "Drive to Jaisalmer (5hrs through the Thar). Arrive afternoon. Jaisalmer Fort — unlike other forts, people live inside this one. Walk the lanes, find the Jain temples (intricate carvings), Patwon ki Haveli. Sunset from the fort walls."},
+      {"day": 4, "from": "Jaisalmer", "to": "Jaisalmer", "km": 80, "plan": "Morning: Gadisar Lake. Afternoon: Sam Sand Dunes (42km from town). Camel safari into the dunes. Watch the sunset. Stay for desert camping under the stars — the Milky Way is absurd out here."},
+      {"day": 5, "from": "Jaisalmer", "to": "Udaipur", "km": 550, "plan": "The long haul. Jaisalmer to Udaipur is a full day drive (9-10hrs). Start early. Stop at Barmer or Pali for lunch. Arrive Udaipur by evening. This is the one hard day — but the alternative (backtracking to Jodhpur) isn't shorter. Check into a Lake Pichola-facing hotel. Rooftop dinner."},
+      {"day": 6, "from": "Udaipur", "to": "Udaipur", "km": 20, "plan": "City Palace (massive, allow 2-3hrs). Jag Mandir boat ride on Lake Pichola. Fateh Sagar Lake. Sajjangarh (Monsoon Palace) sunset — the drive up is scenic. Saheliyon ki Bari garden if you have kids. Evening: walk Gangaur Ghat."},
+      {"day": 7, "from": "Udaipur", "to": "Airport", "km": 25, "plan": "Morning free: revisit the lake, last shopping (Udaipur miniature paintings, silver jewellery). Depart from Udaipur airport."}
+    ]
+  },
+  {
+    "id": "uttarakhand-spiritual-7d",
+    "name": "Uttarakhand Spiritual + Adventure",
+    "days": 7,
+    "difficulty": "moderate",
+    "best_months": [9, 10, 4, 5],
+    "stops": ["rishikesh", "haridwar", "chopta", "auli"],
+    "description": "Ganga aarti and yoga in the foothills, then climb to Tungnath (the highest Shiva temple in the world) and Chandrashila peak. Finish at Auli with Himalayan panoramas. Half spiritual, half adventure — the full Uttarakhand experience.",
+    "kids_suitable": false,
+    "bike_route": false,
+    "budget_range": "₹2,000-5,000/day",
+    "highlights": ["Rishikesh rafting", "Haridwar Ganga aarti", "Tungnath-Chandrashila trek", "Auli panoramic views", "Deoria Tal sunrise"],
+    "logistics": "Fly/train to Dehradun, drive to Rishikesh (1hr). Chopta is 8hrs from Rishikesh via Devprayag-Rudraprayag-Ukhimath. Auli is 4hrs from Chopta via Gopeshwar-Chamoli. Return via Joshimath to Rishikesh (10hrs). Hire a driver or self-drive — public transport to Chopta is sparse. Not suitable for kids under 10 (the Tungnath trek is 3.5km uphill at 3600m+).",
+    "day_by_day": [
+      {"day": 1, "from": "Delhi/Dehradun", "to": "Rishikesh", "km": 250, "plan": "Arrive Rishikesh. Settle into Tapovan area. Afternoon: Laxman Jhula, Ram Jhula walk. Beatles Ashram if time. Evening: Triveni Ghat aarti. Find a cafe overlooking the Ganga."},
+      {"day": 2, "from": "Rishikesh", "to": "Haridwar", "km": 25, "plan": "Morning: white-water rafting Shivpuri-Rishikesh (3hrs, Grade 3). Afternoon: drive to Haridwar. Har Ki Pauri ghat walk. Mansa Devi cable car. Evening: Haridwar Ganga Aarti — bigger, louder, and more intense than Rishikesh. This is the main event."},
+      {"day": 3, "from": "Haridwar", "to": "Chopta", "km": 220, "plan": "Long drive via Devprayag (confluence of Alaknanda and Bhagirathi — stop and look) and Rudraprayag. Arrive Chopta by evening. Chopta is a tiny meadow at 2700m — basic guesthouses, zero frills. Sleep early, tomorrow is the trek."},
+      {"day": 4, "from": "Chopta", "to": "Chopta", "km": 0, "plan": "Trek day. Chopta to Tungnath (3.5km, 2-3hrs up). Tungnath is the highest Shiva temple in the world (3680m). If weather is clear and you have energy, continue to Chandrashila Peak (1.5km more, 4000m). 360-degree Himalayan panorama — Nanda Devi, Trishul, Chaukhamba, Kedarnath range. Return to Chopta by afternoon."},
+      {"day": 5, "from": "Chopta", "to": "Auli", "km": 90, "plan": "Optional early morning: Deoria Tal lake hike (2km from Sari village, 30min drive from Chopta — the reflection of Chaukhamba in the lake is famous for a reason). Then drive to Auli via Gopeshwar and Joshimath (3-4hrs). Auli cable car for panoramic views. Overnight Auli or Joshimath."},
+      {"day": 6, "from": "Auli", "to": "Rishikesh", "km": 260, "plan": "Morning: Auli meadow walk. Gorson Bugyal if you want another short trek. Then the long drive back to Rishikesh via Joshimath-Chamoli-Rudraprayag-Devprayag. 8-9hrs. Arrive evening. This is the driving day — start by 7AM."},
+      {"day": 7, "from": "Rishikesh", "to": "Delhi/Dehradun", "km": 250, "plan": "Morning yoga session. Final Ganga-side chai. Drive to Delhi (6hrs) or Dehradun airport (1hr). Trip ends."}
+    ]
+  },
+  {
+    "id": "kashmir-complete-10d",
+    "name": "Kashmir Complete",
+    "days": 10,
+    "difficulty": "moderate",
+    "best_months": [5, 6, 9],
+    "stops": ["srinagar", "gulmarg", "pahalgam", "sonamarg", "gurez"],
+    "description": "The deep Kashmir circuit. Everything from the classic route plus Gurez Valley — the wild, unspoiled, barely-touristed side of Kashmir that most people don't even know exists. Ten days gives you time to actually sit by the Lidder, sleep in at the houseboat, and stop treating Kashmir like a checklist.",
+    "kids_suitable": false,
+    "bike_route": false,
+    "budget_range": "₹3,000-8,000/day",
+    "highlights": ["Gurez Valley — Habba Khatoon peak", "Betaab Valley", "Gulmarg Gondola", "Sonamarg Thajiwas Glacier", "Dal Lake sunrise", "Aru Valley meadows"],
+    "logistics": "Fly into Srinagar. Hire a local driver for all 10 days (₹2,500-3,500/day). Gurez requires a special permit (Inner Line Permit — get it in Srinagar, takes a day). Gurez road is only open mid-May to mid-October. The Srinagar-Gurez road via Razdan Pass (3300m) is narrow and steep — not for nervous passengers. Kids can do everything EXCEPT Gurez (road is rough, accommodation is basic, and there's no hospital for 100km).",
+    "day_by_day": [
+      {"day": 1, "from": "Airport", "to": "Srinagar", "km": 15, "plan": "Arrive. Houseboat on Dal Lake. Shikara ride. Mughal Gardens (Nishat Bagh, Shalimar). Don't try to do everything today — you have time."},
+      {"day": 2, "from": "Srinagar", "to": "Gulmarg", "km": 50, "plan": "Full day Gulmarg. Gondola Phase 1 (and Phase 2 if weather cooperates). Khilanmarg meadow walk. Return Srinagar evening."},
+      {"day": 3, "from": "Srinagar", "to": "Pahalgam", "km": 95, "plan": "Drive to Pahalgam. Check in. Afternoon: Betaab Valley — the name comes from a Bollywood film but the beauty is real. Lidder River walk. Evening in the town."},
+      {"day": 4, "from": "Pahalgam", "to": "Pahalgam", "km": 40, "plan": "Full day exploring. Aru Valley (meadows, gentle walk, pony rides). Baisaran (mini Gulmarg). Chandanwari if you want to see the Amarnath Yatra starting point. Or just sit by the Lidder with a book. Pahalgam rewards slowness."},
+      {"day": 5, "from": "Pahalgam", "to": "Srinagar", "km": 95, "plan": "Return to Srinagar. Afternoon: Old City walk — wooden mosques, spice markets, Zaina Kadal bridge. Hazratbal Mosque. Shankaracharya Temple for sunset views. Apply for Gurez ILP if you haven't already."},
+      {"day": 6, "from": "Srinagar", "to": "Sonamarg", "km": 80, "plan": "Drive to Sonamarg ('Meadow of Gold'). Thajiwas Glacier walk (easy, 2km, kids can do it). Sindh river views. This is the gateway to Ladakh — on a clear day you can see the Zoji La pass road climbing up. Overnight Sonamarg."},
+      {"day": 7, "from": "Sonamarg", "to": "Srinagar", "km": 80, "plan": "Morning Sonamarg walk. Return to Srinagar. Rest day. Dal Lake in the afternoon — you'll appreciate it differently after seeing the valleys. Shopping: pashmina, saffron, walnut wood carvings, papier-mache."},
+      {"day": 8, "from": "Srinagar", "to": "Gurez", "km": 130, "plan": "The Gurez drive. Srinagar → Bandipora → Razdan Pass (3300m) → Gurez. 5-6hrs on a narrow mountain road. The valley opens up below Razdan Pass and it's unlike anything else in Kashmir — rocky, wild, the Kishanganga river cutting through. Habba Khatoon peak watching over everything. Overnight Dawar village."},
+      {"day": 9, "from": "Gurez", "to": "Srinagar", "km": 130, "plan": "Morning in Gurez. Walk to the river. Visit Tulail if time permits (further up the valley, closer to the LOC). The wooden houses, the quietness, the complete absence of tourists — this is the Kashmir that existed before Instagram. Return to Srinagar (5-6hrs)."},
+      {"day": 10, "from": "Srinagar", "to": "Airport", "km": 15, "plan": "Morning: Dal Lake flower market by shikara (4:30-6AM). Last houseboat chai. Depart."}
+    ]
+  },
+  {
+    "id": "hp-complete-10d",
+    "name": "Himachal Complete",
+    "days": 10,
+    "difficulty": "easy",
+    "best_months": [3, 4, 5, 9, 10],
+    "stops": ["shimla", "tirthan-valley", "manali", "dharamshala-mcleodganj", "bir-billing"],
+    "description": "The full Himachal experience. Colonial Shimla, hidden Tirthan Valley, backpacker Manali, Tibetan Dharamshala, and paragliding capital Bir. Five distinct flavors of the same state. Ten days, no rushing, all on proper roads.",
+    "kids_suitable": true,
+    "bike_route": false,
+    "budget_range": "₹2,500-7,000/day",
+    "highlights": ["Shimla toy train", "Tirthan Valley riverside", "Jalori Pass + Serolsar Lake", "Solang Valley", "McLeod Ganj Tibetan quarter", "Bir-Billing paragliding"],
+    "logistics": "Fly/train to Chandigarh. Drive circuit: Shimla → Tirthan → Manali → Dharamshala → Bir → Chandigarh. Total driving: ~900km across 10 days. Hire a driver (₹2,500-3,000/day) or self-drive. HRTC Volvos available between major towns if you prefer bus legs. All highways are paved. No altitude issues — max elevation is ~3000m at Jalori Pass.",
+    "day_by_day": [
+      {"day": 1, "from": "Chandigarh", "to": "Shimla", "km": 115, "plan": "Drive to Shimla. Or take the toy train from Kalka (5hrs, book Chair Car in advance — the journey IS the attraction). Afternoon: Mall Road walk, Christ Church, Scandal Point. Shimla is faded colonial charm — don't expect glamour, expect atmosphere."},
+      {"day": 2, "from": "Shimla", "to": "Tirthan Valley", "km": 150, "plan": "Drive to Tirthan Valley via Narkanda and Aut. 5-6hrs. Check into a riverside homestay in Gushaini or Jibhi. Evening by the Tirthan river — the sound of water, the cold air, no phone signal. This is the antidote."},
+      {"day": 3, "from": "Tirthan", "to": "Tirthan", "km": 30, "plan": "Jalori Pass drive (3100m, the highest point on this trip). Serolsar Lake walk (2km flat forest trail). Afternoon: Chehni Kothi ancient tower hike, or trout fishing in the river (get a license from the forest dept). Or just read a book by the water."},
+      {"day": 4, "from": "Tirthan", "to": "Manali", "km": 130, "plan": "Drive to Manali via Aut-Kullu (3-4hrs). Check into Old Manali. Afternoon: Hadimba Temple, walk the Old Manali lanes. Find a riverside cafe. Manali is loud and touristy on Mall Road, but Old Manali still has soul."},
+      {"day": 5, "from": "Manali", "to": "Manali", "km": 60, "plan": "Solang Valley morning (paragliding in summer, snow in winter). Then through Atal Tunnel to Sissu (Lahaul side) — the landscape changes dramatically. Lunch at Sissu, see the waterfall. Return through tunnel. Evening: Vashisht hot springs, Naggar Castle if time."},
+      {"day": 6, "from": "Manali", "to": "Dharamshala", "km": 240, "plan": "The long drive to McLeod Ganj. 7-8hrs via Mandi-Jogindernagar-Palampur. It's a full day on the road but the Kangra Valley scenery is gorgeous. Arrive evening. Settle in. Tsuglagkhang Complex (Dalai Lama's temple) if open."},
+      {"day": 7, "from": "Dharamshala", "to": "Dharamshala", "km": 10, "plan": "McLeod Ganj full day. Bhagsu Waterfall morning (go early, it gets crowded). Namgyal Monastery. Tibetan Museum. Walk to Dharamkot for the views and hippie cafe culture. Afternoon: Norbulingka Institute (30min drive down — Tibetan arts and crafts, beautiful gardens). Tibetan food trail: thukpa, momos, tingmo."},
+      {"day": 8, "from": "Dharamshala", "to": "Bir", "km": 70, "plan": "Drive to Bir (2hrs via Palampur). Bir is India's paragliding capital — the landing site is in Bir, the launch is at Billing (14km uphill). Afternoon: paragliding tandem flight (15-25min, ₹2,500-3,500 — one of the best things you'll ever do). If not into flying, Bir has monasteries, cafes, and a great Tibetan colony."},
+      {"day": 9, "from": "Bir", "to": "Bir", "km": 20, "plan": "Morning: Chokling Monastery, Bir tea gardens walk. Second paragliding flight if you got hooked. Or the Billing trek (14km uphill, 4-5hrs) for fit trekkers. Afternoon: Bir Tibetan colony, shopping. This is a rest day — Bir is meant for sitting in cafes and watching paragliders land."},
+      {"day": 10, "from": "Bir", "to": "Chandigarh", "km": 250, "plan": "Drive back to Chandigarh (5-6hrs via Bilaspur or Una). Or if flying from Dharamshala: 2hr drive to Gaggal airport. Trip ends."}
+    ]
   }
 ]
