@@ -1,6 +1,6 @@
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
-import { ExploreGrid } from "@/components/explore-grid";
+import { ExploreWithMap } from "@/components/explore-with-map";
 import { createClient } from "@supabase/supabase-js";
 
 async function getData() {
@@ -14,7 +14,8 @@ async function getData() {
     supabase
       .from("destinations")
       .select(`
-        id, name, tagline, difficulty, elevation_m, tags, best_months, translations, state_id,
+        id, name, tagline, difficulty, elevation_m, tags, best_months, translations, state_id, coords,
+        hero_image_url,
         state:states(name),
         kids_friendly(suitable, rating),
         destination_months(month, score, note)
@@ -39,11 +40,10 @@ export default async function ExplorePage() {
         <div className="mb-6">
           <h1 className="text-3xl font-bold">Explore</h1>
           <p className="mt-1 text-muted-foreground">
-            {destinations.length} destinations · Filter by state, month,
-            difficulty, or kids suitability
+            {destinations.length} destinations · Filter or browse the map
           </p>
         </div>
-        <ExploreGrid destinations={destinations} states={states} />
+        <ExploreWithMap destinations={destinations} states={states} />
       </main>
       <Footer />
     </div>
