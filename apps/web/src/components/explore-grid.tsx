@@ -186,6 +186,25 @@ function DestinationCard({
     >
       {/* Hero Image */}
       <div className="relative h-36 bg-muted/30 overflow-hidden">
+        {/* Save button overlay */}
+        <button
+          onClick={(e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            const saved = JSON.parse(localStorage.getItem("savedDestinations") || "[]");
+            if (saved.includes(dest.id)) {
+              localStorage.setItem("savedDestinations", JSON.stringify(saved.filter((s: string) => s !== dest.id)));
+            } else {
+              localStorage.setItem("savedDestinations", JSON.stringify([...saved, dest.id]));
+            }
+            // Force re-render — simple toggle
+            (e.target as HTMLElement).textContent = saved.includes(dest.id) ? "♡" : "♥";
+          }}
+          className="absolute top-2 right-2 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-black/50 text-white/80 hover:bg-black/70 hover:text-red-400 transition-all backdrop-blur-sm"
+          aria-label="Save destination"
+        >
+          ♡
+        </button>
         <img
           src={imageUrl}
           alt={dest.name}

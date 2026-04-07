@@ -306,21 +306,29 @@ export function LandingHero({
                   <HoverCard>
                     <Link
                       href={`/${locale}/collections/${c.id}`}
-                      className="block rounded-xl border border-border bg-card p-6 h-full transition-all hover:border-primary/50"
+                      className="group block rounded-xl border border-border overflow-hidden h-full transition-all hover:border-primary/50"
                     >
-                      <h3 className="font-semibold">{c.name}</h3>
-                      <p className="mt-2 text-sm text-muted-foreground line-clamp-2">
-                        {c.description}
-                      </p>
-                      <div className="mt-3 flex gap-1">
-                        {(c.tags ?? []).slice(0, 3).map((tag: string) => (
-                          <span
-                            key={tag}
-                            className="rounded-full border border-border px-2 py-0.5 text-[10px] text-muted-foreground"
-                          >
-                            {tag}
-                          </span>
-                        ))}
+                      {/* Collection cover image */}
+                      <div className="relative h-32 bg-muted/30 overflow-hidden">
+                        <img
+                          src={`/images/collections/COLLECTION_${c.id}.jpg`}
+                          alt={c.name}
+                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                          loading="lazy"
+                          onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-card via-card/40 to-transparent" />
+                      </div>
+                      <div className="p-4 pt-2">
+                        <h3 className="font-semibold">{c.name}</h3>
+                        <p className="mt-1 text-sm text-muted-foreground line-clamp-2">{c.description}</p>
+                        <div className="mt-2 flex gap-1">
+                          {(c.tags ?? []).slice(0, 3).map((tag: string) => (
+                            <span key={tag} className="rounded-full border border-border px-2 py-0.5 text-[10px] text-muted-foreground">
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
                       </div>
                     </Link>
                   </HoverCard>
