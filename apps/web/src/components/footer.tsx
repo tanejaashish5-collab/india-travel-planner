@@ -96,9 +96,9 @@ export function Footer() {
             <div className="space-y-2 text-sm text-muted-foreground">
               <p>Built with obsessive detail for travelers who want to go beyond the tourist trail.</p>
               <p className="pt-2">
-                <span className="font-mono text-xs">66</span> destinations ·{" "}
+                <span className="font-mono text-xs">105</span> destinations ·{" "}
                 <span className="font-mono text-xs">10</span> states ·{" "}
-                <span className="font-mono text-xs">14</span> routes
+                <span className="font-mono text-xs">19</span> routes
               </p>
             </div>
           </div>

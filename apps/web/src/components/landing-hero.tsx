@@ -24,10 +24,12 @@ export function LandingHero({
   featuredDestinations,
   collections,
   routes,
+  stats,
 }: {
   featuredDestinations: any[];
   collections: any[];
   routes: any[];
+  stats?: { places: number; destinations: number; states: number; routes: number };
 }) {
   const locale = useLocale();
   const t = useTranslations("home");
@@ -42,7 +44,7 @@ export function LandingHero({
         {/* Animated background */}
         <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-background to-background" />
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] rounded-full bg-primary/10 blur-[120px] opacity-50" />
-        <FloatingParticles />
+        {/* Removed FloatingParticles — decorative fluff that hurts performance */}
 
         {/* Top bar */}
         <div className="absolute top-0 left-0 right-0 flex items-center justify-between px-6 py-4 z-10">
@@ -145,9 +147,9 @@ export function LandingHero({
           {/* Stats */}
           <StaggerContainer className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-8" staggerDelay={0.15}>
             {[
-              { value: "66+", label: t("stats.places"), href: `/${locale}/explore` },
-              { value: "10", label: t("stats.states"), href: `/${locale}/explore` },
-              { value: "14", label: t("stats.routes"), href: `/${locale}/routes` },
+              { value: `${stats?.places ?? 370}+`, label: t("stats.places"), href: `/${locale}/explore` },
+              { value: `${stats?.destinations ?? 105}`, label: "Destinations", href: `/${locale}/explore` },
+              { value: `${stats?.routes ?? 19}`, label: t("stats.routes"), href: `/${locale}/routes` },
               { value: "SOS", label: "Emergency (Coming)", href: null },
             ].map((stat) => (
               <StaggerItem key={stat.label}>
@@ -259,7 +261,7 @@ export function LandingHero({
                 href={`/${locale}/explore`}
                 className="inline-flex items-center gap-2 text-sm text-primary hover:underline"
               >
-                View all 66 destinations →
+                View all {stats?.destinations ?? 105} destinations →
               </Link>
             </div>
           </div>
@@ -375,7 +377,7 @@ export function LandingHero({
                 href={`/${locale}/routes`}
                 className="inline-flex items-center gap-2 text-sm text-primary hover:underline"
               >
-                View all 14 routes →
+                View all {stats?.routes ?? 19} routes →
               </Link>
             </div>
           </div>

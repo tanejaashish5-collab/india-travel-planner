@@ -106,7 +106,7 @@ export function PlanContent({ destinations }: PlanContentProps) {
       <div>
         <h1 className="text-3xl font-bold">Plan Your Trip</h1>
         <p className="mt-1 text-muted-foreground">
-          Tell us what you want — we'll find the best matches from 66 destinations
+          Tell us what you want — we'll find the best matches from {destinations.length} destinations
         </p>
       </div>
 

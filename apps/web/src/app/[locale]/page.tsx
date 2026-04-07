@@ -1,6 +1,3 @@
-import Link from "next/link";
-import { useLocale, useTranslations } from "next-intl";
-import { LanguageToggle } from "@/components/language-toggle";
 import { Footer } from "@/components/footer";
 import { LandingHero } from "@/components/landing-hero";
 import { createClient } from "@supabase/supabase-js";
@@ -8,12 +5,12 @@ import { createClient } from "@supabase/supabase-js";
 async function getFeaturedData() {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-  if (!url || !key) return { destinations: [], collections: [], routes: [] };
+  if (!url || !key) return { destinations: [], collections: [], routes: [], stats: { places: 0, destinations: 0, states: 0, routes: 0 } };
 
   const supabase = createClient(url, key);
   const currentMonth = new Date().getMonth() + 1;
 
-  const [destResult, collResult, routeResult] = await Promise.all([
+  const [destResult, collResult, routeResult, destCount, subCount, gemCount, stateCount, routeCount] = await Promise.all([
     supabase
       .from("destination_months")
       .select("destination_id, score, destinations(id, name, tagline, difficulty, elevation_m, state:states(name))")
@@ -23,17 +20,31 @@ async function getFeaturedData() {
       .limit(6),
     supabase.from("collections").select("id, name, description, tags").limit(6),
     supabase.from("routes").select("id, name, days, difficulty, kids_suitable, highlights").order("days").limit(6),
+    // Real counts
+    supabase.from("destinations").select("*", { count: "exact", head: true }),
+    supabase.from("sub_destinations").select("*", { count: "exact", head: true }),
+    supabase.from("hidden_gems").select("*", { count: "exact", head: true }),
+    supabase.from("states").select("*", { count: "exact", head: true }),
+    supabase.from("routes").select("*", { count: "exact", head: true }),
   ]);
+
+  const totalPlaces = (destCount.count ?? 0) + (subCount.count ?? 0) + (gemCount.count ?? 0);
 
   return {
     destinations: destResult.data ?? [],
     collections: collResult.data ?? [],
     routes: routeResult.data ?? [],
+    stats: {
+      places: totalPlaces,
+      destinations: destCount.count ?? 0,
+      states: stateCount.count ?? 0,
+      routes: routeCount.count ?? 0,
+    },
   };
 }
 
 export default async function Home() {
-  const { destinations, collections, routes } = await getFeaturedData();
+  const { destinations, collections, routes, stats } = await getFeaturedData();
 
   return (
     <>
@@ -41,6 +52,7 @@ export default async function Home() {
         featuredDestinations={destinations}
         collections={collections}
         routes={routes}
+        stats={stats}
       />
       <Footer />
     </>
