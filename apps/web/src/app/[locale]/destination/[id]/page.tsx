@@ -43,10 +43,17 @@ async function getDestination(id: string) {
     .eq("trap_destination_id", id)
     .order("rank");
 
+  const { data: festivals } = await supabase
+    .from("festivals")
+    .select("*")
+    .eq("destination_id", id)
+    .order("month");
+
   return {
     ...data,
     hidden_gems: gems ?? [],
     trap_alternatives: trapAlts ?? [],
+    festivals: festivals ?? [],
   };
 }
 

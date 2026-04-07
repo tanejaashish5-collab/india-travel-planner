@@ -314,6 +314,33 @@ export function DestinationDetail({ dest }: { dest: any }) {
                   </div>
                 )}
 
+                {/* Festivals */}
+                {dest.festivals?.length > 0 && (
+                  <section>
+                    <h2 className="text-xl font-semibold mb-3">Festivals & Events</h2>
+                    <div className="grid gap-3 sm:grid-cols-2">
+                      {dest.festivals.map((f: any, i: number) => {
+                        const MONTH_SHORT = ["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+                        return (
+                          <div key={i} className="rounded-xl border border-border p-4 hover:border-primary/30 transition-colors">
+                            <div className="flex items-start justify-between gap-2 mb-1">
+                              <h3 className="font-semibold text-sm">{f.name}</h3>
+                              <span className="shrink-0 rounded-full bg-primary/10 px-2 py-0.5 text-[10px] font-medium text-primary">
+                                {MONTH_SHORT[f.month]}
+                              </span>
+                            </div>
+                            <p className="text-xs text-muted-foreground/80 mb-2">{f.approximate_date}</p>
+                            <p className="text-sm text-muted-foreground leading-relaxed">{f.description}</p>
+                            {f.significance && (
+                              <p className="mt-2 text-xs italic text-primary/70">{f.significance}</p>
+                            )}
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </section>
+                )}
+
                 {/* Infrastructure Reality Panel */}
                 {(dest.cell_network || dest.atm_available !== undefined || dest.medical_facility || dest.permit_required) && (
                   <section>
