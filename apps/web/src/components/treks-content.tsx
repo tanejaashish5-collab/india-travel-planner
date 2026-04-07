@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import { useLocale } from "next-intl";
 import { StaggerContainer, StaggerItem, HoverCard } from "./animated-hero";
@@ -7,7 +8,7 @@ import { DIFFICULTY_COLORS } from "@/lib/design-tokens";
 
 const DIFFICULTY_ORDER: Record<string, number> = { easy: 1, moderate: 2, hard: 3, extreme: 4 };
 
-export function TreksContent({ treks, trekDests }: { treks: any[]; trekDests: any[] }) {
+export function TreksContent({ treks, trekDests, gearChecklists }: { treks: any[]; trekDests: any[]; gearChecklists?: any[] }) {
   const locale = useLocale();
 
   // Group treks by difficulty
@@ -98,6 +99,11 @@ export function TreksContent({ treks, trekDests }: { treks: any[]; trekDests: an
         ) : null
       )}
 
+      {/* Gear Checklists */}
+      {gearChecklists && gearChecklists.length > 0 && (
+        <GearChecklists checklists={gearChecklists} />
+      )}
+
       {/* Trek destinations */}
       {trekDests.length > 0 && (
         <div className="mb-10">
@@ -123,5 +129,93 @@ export function TreksContent({ treks, trekDests }: { treks: any[]; trekDests: an
         </div>
       )}
     </>
+  );
+}
+
+function GearChecklists({ checklists }: { checklists: any[] }) {
+  const [openId, setOpenId] = useState<string | null>(null);
+
+  const CATEGORY_ICONS: Record<string, string> = {
+    clothing: "👕",
+    footwear: "🥾",
+    gear: "🎒",
+    health: "💊",
+    food: "🍫",
+    electronics: "🔋",
+    essentials: "💰",
+    documents: "📄",
+    vehicle: "🚗",
+    comfort: "🎮",
+    accessories: "🕶️",
+  };
+
+  return (
+    <div className="mb-10">
+      <h2 className="text-xl font-semibold mb-2">Gear Checklists</h2>
+      <p className="text-sm text-muted-foreground mb-4">What to pack for your trip type</p>
+      <div className="space-y-3">
+        {checklists.map((cl) => {
+          const isOpen = openId === cl.id;
+          const items = cl.items ?? [];
+          const essentialCount = items.filter((i: any) => i.essential).length;
+
+          return (
+            <div key={cl.id} className="rounded-xl border border-border overflow-hidden">
+              <button
+                onClick={() => setOpenId(isOpen ? null : cl.id)}
+                className="w-full flex items-center justify-between p-4 text-left hover:bg-muted/30 transition-colors"
+              >
+                <div>
+                  <h3 className="font-semibold text-sm">{cl.name}</h3>
+                  <p className="text-xs text-muted-foreground mt-0.5">
+                    {items.length} items · {essentialCount} essential
+                  </p>
+                </div>
+                <span className="text-muted-foreground text-lg">
+                  {isOpen ? "−" : "+"}
+                </span>
+              </button>
+
+              {isOpen && (
+                <div className="border-t border-border p-4">
+                  {/* Group by category */}
+                  {Object.entries(
+                    items.reduce((acc: Record<string, any[]>, item: any) => {
+                      const cat = item.category ?? "other";
+                      if (!acc[cat]) acc[cat] = [];
+                      acc[cat].push(item);
+                      return acc;
+                    }, {} as Record<string, any[]>)
+                  ).map(([category, catItems]) => (
+                    <div key={category} className="mb-4 last:mb-0">
+                      <h4 className="text-xs font-medium text-muted-foreground uppercase tracking-wider mb-2">
+                        {CATEGORY_ICONS[category] ?? "📦"} {category}
+                      </h4>
+                      <div className="space-y-1.5">
+                        {(catItems as any[]).map((item: any, i: number) => (
+                          <div key={i} className="flex items-start gap-2 text-sm">
+                            <span className={`mt-0.5 text-xs ${item.essential ? "text-primary" : "text-muted-foreground/50"}`}>
+                              {item.essential ? "●" : "○"}
+                            </span>
+                            <div className="flex-1">
+                              <span className={item.essential ? "font-medium" : "text-muted-foreground"}>
+                                {item.item}
+                              </span>
+                              {item.note && (
+                                <span className="text-xs text-muted-foreground/70 ml-1">— {item.note}</span>
+                              )}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          );
+        })}
+      </div>
+    </div>
   );
 }
