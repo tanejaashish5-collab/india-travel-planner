@@ -43,10 +43,16 @@ export function LandingHero({
     <>
       {/* Hero Section */}
       <section className="relative min-h-screen flex flex-col items-center justify-center px-4 overflow-hidden">
-        {/* Animated background */}
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-background to-background" />
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] rounded-full bg-primary/10 blur-[120px] opacity-50" />
-        {/* Removed FloatingParticles — decorative fluff that hurts performance */}
+        {/* Background image with overlay */}
+        <div className="absolute inset-0">
+          <img
+            src="/images/destinations/spiti-valley.jpg"
+            alt=""
+            className="w-full h-full object-cover opacity-15"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/90 to-background" />
+        </div>
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] rounded-full bg-primary/8 blur-[150px] opacity-40" />
 
         {/* Top bar */}
         <div className="absolute top-0 left-0 right-0 flex items-center justify-between px-6 py-4 z-10">
@@ -109,9 +115,9 @@ export function LandingHero({
           </FadeIn>
 
           <SlideIn delay={0.2}>
-            <h1 className="text-5xl font-bold tracking-tight sm:text-7xl lg:text-8xl">
+            <h1 className="text-5xl font-bold tracking-tight sm:text-7xl lg:text-8xl leading-[0.9]">
               {t("heroTitle")}
-              <span className="block text-muted-foreground mt-2">
+              <span className="block bg-gradient-to-r from-muted-foreground to-muted-foreground/50 bg-clip-text text-transparent mt-2">
                 {t("heroSubtitle")}
               </span>
             </h1>
