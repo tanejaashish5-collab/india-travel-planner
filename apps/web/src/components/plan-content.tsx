@@ -46,6 +46,7 @@ export function PlanContent({ destinations }: PlanContentProps) {
   const [days, setDays] = useState(7);
   const [traveler, setTraveler] = useState<TravelerType>("couple");
   const [budget, setBudget] = useState("mid-range");
+  const [origin, setOrigin] = useState("Delhi");
   const [showResults, setShowResults] = useState(false);
 
   // Filter and rank destinations based on inputs
@@ -76,6 +77,17 @@ export function PlanContent({ destinations }: PlanContentProps) {
         if (days <= 4 && dest.difficulty === "hard") fitScore -= 15;
         if (days >= 10 && dest.difficulty === "easy") fitScore -= 5;
 
+        // Origin proximity — states reachable in shorter time get a boost for short trips
+        const nearDelhi = ["himachal-pradesh", "uttarakhand", "rajasthan", "uttar-pradesh", "punjab", "haryana", "delhi"];
+        const nearMumbai = ["rajasthan"];
+        const nearChandigarh = ["himachal-pradesh", "uttarakhand", "punjab", "haryana"];
+        if (days <= 5) {
+          if (origin === "Delhi" && nearDelhi.includes(dest.state_id)) fitScore += 8;
+          if (origin === "Mumbai" && nearMumbai.includes(dest.state_id)) fitScore += 8;
+          if (origin === "Chandigarh" && nearChandigarh.includes(dest.state_id)) fitScore += 12;
+          if (origin === "Delhi" && ["jammu-kashmir", "ladakh"].includes(dest.state_id)) fitScore -= 5;
+        }
+
         // Why it matches
         const reasons: string[] = [];
         if (score >= 4) reasons.push(`Scores ${score}/5 in ${getMonthName(month)}`);
@@ -83,6 +95,15 @@ export function PlanContent({ destinations }: PlanContentProps) {
         if (traveler === "biker" && dest.tags?.includes("biker")) reasons.push("Biker-friendly route");
         if (traveler === "spiritual" && dest.tags?.includes("spiritual")) reasons.push("Spiritual destination");
         if (budget === dest.budget_tier) reasons.push(`Matches your ${budget} budget`);
+
+        // Honest warnings
+        const warnings: string[] = [];
+        if (score <= 2 && score > 0) warnings.push(`Low season score (${score}/5)`);
+        if (traveler === "family" && !kf?.suitable) warnings.push("Not ideal for kids");
+        if (dest.difficulty === "hard" && traveler === "family") warnings.push("Difficult terrain for families");
+        if (dest.difficulty === "extreme") warnings.push("Extreme conditions — experienced only");
+        if (dest.elevation_m && dest.elevation_m > 4000) warnings.push(`High altitude (${dest.elevation_m.toLocaleString()}m) — AMS risk`);
+        if (budget === "budget" && dest.budget_tier === "splurge") warnings.push("Above your budget tier");
 
         return {
           ...dest,
@@ -93,12 +114,54 @@ export function PlanContent({ destinations }: PlanContentProps) {
           kidsSuitable: kf?.suitable ?? null,
           stateName: stateName ?? "",
           reasons,
+          warnings,
         };
       })
       .filter((d) => d.fitScore > 30) // Only show reasonable matches
       .sort((a, b) => b.fitScore - a.fitScore)
       .slice(0, 12);
-  }, [destinations, month, days, traveler, budget]);
+  }, [destinations, month, days, traveler, budget, origin]);
+
+  // Build suggested itineraries — group top destinations by state/proximity
+  const itineraries = useMemo(() => {
+    if (recommendations.length < 3) return [];
+
+    const byState: Record<string, typeof recommendations> = {};
+    recommendations.forEach((d) => {
+      const key = d.state_id || "other";
+      if (!byState[key]) byState[key] = [];
+      byState[key].push(d);
+    });
+
+    const combos: Array<{ title: string; destinations: typeof recommendations; totalDays: string }> = [];
+
+    // For each state with 2+ destinations, suggest a combo
+    Object.entries(byState).forEach(([_, dests]) => {
+      if (dests.length >= 2) {
+        const top = dests.slice(0, Math.min(3, Math.floor(days / 2)));
+        if (top.length >= 2) {
+          const stateName = top[0].stateName;
+          const suggestedDays = top.length <= 2 ? `${top.length * 3}-${top.length * 4}` : `${top.length * 2}-${top.length * 3}`;
+          combos.push({
+            title: `${stateName} Circuit`,
+            destinations: top,
+            totalDays: suggestedDays,
+          });
+        }
+      }
+    });
+
+    // Cross-state combos for longer trips
+    if (days >= 10 && combos.length === 0 && recommendations.length >= 3) {
+      combos.push({
+        title: "Multi-State Explorer",
+        destinations: recommendations.slice(0, 4),
+        totalDays: `${Math.max(10, days - 2)}-${days}`,
+      });
+    }
+
+    return combos.slice(0, 3);
+  }, [recommendations, days]);
 
   return (
     <div className="space-y-8">
@@ -119,13 +182,17 @@ export function PlanContent({ destinations }: PlanContentProps) {
             {["Delhi", "Mumbai", "Bangalore", "Kolkata", "Chandigarh", "Other"].map((city) => (
               <button
                 key={city}
-                className="rounded-lg border border-border px-3 py-2 text-sm text-muted-foreground hover:text-foreground hover:border-muted-foreground transition-colors"
+                onClick={() => { setOrigin(city); setShowResults(true); }}
+                className={`rounded-lg border px-3 py-2 text-sm transition-all ${
+                  origin === city
+                    ? "border-primary bg-primary/10 text-foreground"
+                    : "border-border text-muted-foreground hover:text-foreground hover:border-muted-foreground"
+                }`}
               >
                 {city}
               </button>
             ))}
           </div>
-          <p className="text-[10px] text-muted-foreground mt-1">Origin doesn't filter results yet — coming soon with distance estimation</p>
         </div>
 
         {/* Month */}
@@ -225,9 +292,34 @@ export function PlanContent({ destinations }: PlanContentProps) {
                 {recommendations.length} destinations match
               </h2>
               <span className="text-sm text-muted-foreground">
-                {getMonthName(month)} · {days}d · {TRAVELER_TYPES.find((t) => t.id === traveler)?.label} · {budget}
+                From {origin} · {getMonthName(month)} · {days}d · {TRAVELER_TYPES.find((t) => t.id === traveler)?.label} · {budget}
               </span>
             </div>
+
+            {/* Suggested Itineraries */}
+            {itineraries.length > 0 && (
+              <div className="mb-6 space-y-3">
+                <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">Suggested Itineraries</h3>
+                <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                  {itineraries.map((itin, i) => (
+                    <div key={i} className="rounded-xl border border-primary/30 bg-primary/5 p-4">
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="text-sm font-semibold">{itin.title}</span>
+                        <span className="text-xs font-mono text-primary">{itin.totalDays}d</span>
+                      </div>
+                      <div className="flex flex-wrap gap-1">
+                        {itin.destinations.map((d, j) => (
+                          <span key={d.id} className="text-xs text-muted-foreground">
+                            {j > 0 && <span className="mx-1">→</span>}
+                            {d.name}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
 
             {recommendations.length === 0 ? (
               <div className="rounded-xl border border-border p-8 text-center">
@@ -247,53 +339,76 @@ export function PlanContent({ destinations }: PlanContentProps) {
                   >
                     <Link
                       href={`/${locale}/destination/${dest.id}`}
-                      className="group block rounded-xl border border-border bg-card p-5 h-full transition-all hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5"
+                      className="group block rounded-xl border border-border bg-card overflow-hidden h-full transition-all hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5"
                     >
-                      {/* Rank + Score */}
-                      <div className="flex items-center justify-between mb-3">
-                        <span className="text-xs font-mono font-bold text-primary">
+                      {/* Hero image */}
+                      <div className="relative h-28 bg-muted/30 overflow-hidden">
+                        <img
+                          src={`/images/destinations/${dest.id}.jpg`}
+                          alt={dest.name}
+                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                          loading="lazy"
+                          onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
+                        />
+                        {/* Rank badge */}
+                        <span className="absolute top-2 left-2 flex h-7 w-7 items-center justify-center rounded-full bg-black/60 text-xs font-mono font-bold text-primary backdrop-blur-sm">
                           #{idx + 1}
                         </span>
                         <span
-                          className={`inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-medium ${SCORE_COLORS[dest.monthScore] ?? SCORE_COLORS[0]}`}
+                          className={`absolute top-2 right-2 inline-flex items-center rounded-full border px-2 py-0.5 text-[10px] font-medium backdrop-blur-sm ${SCORE_COLORS[dest.monthScore] ?? SCORE_COLORS[0]}`}
                         >
-                          {dest.monthScore}/5 in {getMonthName(month).slice(0, 3)}
+                          {dest.monthScore}/5
                         </span>
+                        <div className="absolute inset-0 bg-gradient-to-t from-card/80 to-transparent" />
                       </div>
 
-                      {/* Name */}
-                      <h3 className="text-lg font-semibold group-hover:text-primary transition-colors">
-                        {dest.name}
-                      </h3>
-                      <p className="mt-1 text-sm text-muted-foreground line-clamp-2">
-                        {dest.tagline}
-                      </p>
+                      <div className="p-4">
+                        {/* Name */}
+                        <h3 className="text-base font-semibold group-hover:text-primary transition-colors">
+                          {dest.name}
+                        </h3>
+                        <p className="mt-0.5 text-xs text-muted-foreground line-clamp-2">
+                          {dest.tagline}
+                        </p>
 
-                      {/* Why it matches */}
-                      {dest.reasons.length > 0 && (
-                        <div className="mt-3 space-y-1">
-                          {dest.reasons.map((r, i) => (
-                            <div key={i} className="flex items-start gap-1.5 text-xs text-emerald-400">
-                              <span className="mt-0.5">✓</span>
-                              <span>{r}</span>
-                            </div>
-                          ))}
-                        </div>
-                      )}
-
-                      {/* Meta */}
-                      <div className="mt-3 flex items-center gap-2 text-xs text-muted-foreground">
-                        <span>{dest.stateName}</span>
-                        <span>·</span>
-                        <span className={DIFFICULTY_COLORS[dest.difficulty] ?? ""}>
-                          {dest.difficulty}
-                        </span>
-                        {dest.kidsSuitable !== null && (
-                          <>
-                            <span>·</span>
-                            <span>{dest.kidsSuitable ? `👶 ${dest.kidsRating}/5` : "Adults"}</span>
-                          </>
+                        {/* Why it matches */}
+                        {dest.reasons.length > 0 && (
+                          <div className="mt-2 space-y-0.5">
+                            {dest.reasons.map((r, i) => (
+                              <div key={i} className="flex items-start gap-1.5 text-xs text-emerald-400">
+                                <span className="mt-0.5">✓</span>
+                                <span>{r}</span>
+                              </div>
+                            ))}
+                          </div>
                         )}
+
+                        {/* Warnings */}
+                        {dest.warnings.length > 0 && (
+                          <div className="mt-2 space-y-0.5">
+                            {dest.warnings.slice(0, 2).map((w, i) => (
+                              <div key={i} className="flex items-start gap-1.5 text-xs text-amber-400/80">
+                                <span className="mt-0.5">⚠</span>
+                                <span>{w}</span>
+                              </div>
+                            ))}
+                          </div>
+                        )}
+
+                        {/* Meta */}
+                        <div className="mt-2 flex items-center gap-2 text-xs text-muted-foreground">
+                          <span>{dest.stateName}</span>
+                          <span>·</span>
+                          <span className={DIFFICULTY_COLORS[dest.difficulty] ?? ""}>
+                            {dest.difficulty}
+                          </span>
+                          {dest.elevation_m && (
+                            <>
+                              <span>·</span>
+                              <span className="font-mono">{dest.elevation_m.toLocaleString()}m</span>
+                            </>
+                          )}
+                        </div>
                       </div>
                     </Link>
                   </motion.div>

@@ -28,6 +28,10 @@ export function DestinationDetail({ dest }: { dest: any }) {
   const [activeTab, setActiveTab] = useState("overview");
   const [saved, setSaved] = useState(false);
 
+  // Translation-aware name and tagline
+  const displayName = (locale !== "en" && dest.translations?.[locale]?.name) || dest.name;
+  const displayTagline = (locale !== "en" && dest.translations?.[locale]?.tagline) || dest.tagline;
+
   // Check localStorage for saved state
   useEffect(() => {
     const savedDests = JSON.parse(localStorage.getItem("savedDestinations") || "[]");
@@ -85,7 +89,7 @@ export function DestinationDetail({ dest }: { dest: any }) {
               {" → "}
               <span>{stateName}</span>
               {" → "}
-              <span className="text-foreground">{dest.name}</span>
+              <span className="text-foreground">{displayName}</span>
             </div>
             {/* Save Button */}
             <button
@@ -121,7 +125,7 @@ export function DestinationDetail({ dest }: { dest: any }) {
           <div className="mb-6 rounded-2xl border border-border bg-gradient-to-br from-card to-muted/30 p-6 sm:p-8 -mt-20 relative z-10">
             <div className="flex items-start justify-between">
               <div>
-                <h1 className="text-3xl font-bold sm:text-4xl lg:text-5xl">{dest.name}</h1>
+                <h1 className="text-3xl font-bold sm:text-4xl lg:text-5xl">{displayName}</h1>
                 <p className="mt-2 text-muted-foreground">
                   {stateName} · {dest.region}
                   {dest.elevation_m && <span className="font-mono"> · {dest.elevation_m.toLocaleString()}m</span>}
@@ -148,7 +152,7 @@ export function DestinationDetail({ dest }: { dest: any }) {
               </div>
             )}
 
-            <p className="mt-4 text-lg leading-relaxed text-muted-foreground">{dest.tagline}</p>
+            <p className="mt-4 text-lg leading-relaxed text-muted-foreground">{displayTagline}</p>
 
             {/* Quick stats */}
             <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-4">

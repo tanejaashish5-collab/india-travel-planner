@@ -45,9 +45,13 @@ const DIFFICULTY_COLORS: Record<string, string> = {
 export function ExploreGrid({
   destinations,
   states,
+  sharedFilters,
+  onFiltersChange,
 }: {
   destinations: DestinationData[];
   states: Array<{ id: string; name: string }>;
+  sharedFilters?: FilterState;
+  onFiltersChange?: (filters: FilterState) => void;
 }) {
   const locale = useLocale();
   const ts = useTranslations("score");
@@ -58,8 +62,8 @@ export function ExploreGrid({
 
   const currentMonth = new Date().getMonth() + 1;
 
-  // Initialize from URL params
-  const [filters, setFilters] = useState<FilterState>({
+  // Use shared filters from parent if provided, otherwise manage own state
+  const [localFilters, setLocalFilters] = useState<FilterState>({
     stateId: searchParams.get("state") ?? "",
     month: Number(searchParams.get("month")) || currentMonth,
     kidsOnly: searchParams.get("kids") === "true",
@@ -67,6 +71,9 @@ export function ExploreGrid({
     difficulty: searchParams.get("difficulty") ?? "",
     search: searchParams.get("q") ?? "",
   });
+
+  const filters = sharedFilters ?? localFilters;
+  const setFilters = onFiltersChange ?? setLocalFilters;
 
   // Sync filters to URL
   useEffect(() => {
@@ -217,6 +224,10 @@ function DestinationCard({
       : null;
   const score = monthData?.score ?? null;
 
+  // Translation-aware display
+  const displayName = (locale !== "en" && dest.translations?.[locale]?.name) || dest.name;
+  const displayTagline = (locale !== "en" && dest.translations?.[locale]?.tagline) || dest.tagline;
+
   const imageUrl = `/images/destinations/${dest.id}.jpg`;
 
   return (
@@ -281,10 +292,10 @@ function DestinationCard({
 
       {/* Name & tagline */}
       <h3 className="text-lg font-semibold group-hover:text-primary transition-colors">
-        {dest.name}
+        {displayName}
       </h3>
       <p className="mt-1 text-sm text-muted-foreground line-clamp-2">
-        {dest.tagline}
+        {displayTagline}
       </p>
 
       {/* Meta */}
