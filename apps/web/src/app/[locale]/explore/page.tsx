@@ -1,5 +1,5 @@
-import { useTranslations } from "next-intl";
 import { Nav } from "@/components/nav";
+import { Footer } from "@/components/footer";
 import { ExploreGrid } from "@/components/explore-grid";
 import { createClient } from "@supabase/supabase-js";
 
@@ -36,21 +36,16 @@ export default async function ExplorePage() {
     <div className="min-h-screen">
       <Nav />
       <main className="mx-auto max-w-7xl px-4 py-8">
-        <ExploreHeader />
+        <div className="mb-6">
+          <h1 className="text-3xl font-bold">Explore</h1>
+          <p className="mt-1 text-muted-foreground">
+            {destinations.length} destinations · Filter by state, month,
+            difficulty, or kids suitability
+          </p>
+        </div>
         <ExploreGrid destinations={destinations} states={states} />
       </main>
-    </div>
-  );
-}
-
-function ExploreHeader() {
-  const tn = useTranslations("nav");
-  return (
-    <div className="mb-6">
-      <h1 className="text-3xl font-bold">{tn("explore")}</h1>
-      <p className="mt-1 text-muted-foreground">
-        Filter by state, month, difficulty, or kids suitability
-      </p>
+      <Footer />
     </div>
   );
 }
