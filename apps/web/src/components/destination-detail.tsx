@@ -107,22 +107,28 @@ export function DestinationDetail({ dest }: { dest: any }) {
           </div>
         </FadeIn>
 
-        {/* Hero Image */}
+        {/* Cinematic Hero */}
         <FadeIn>
-          <div className="mb-6 relative h-48 sm:h-64 lg:h-80 rounded-2xl overflow-hidden bg-muted/30">
+          <div className="mb-6 relative h-56 sm:h-72 lg:h-96 rounded-2xl overflow-hidden bg-muted/30">
             <img
               src={`/images/destinations/${dest.id}.jpg`}
               alt={dest.name}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
+            {/* Floating difficulty badge */}
+            <div className="absolute top-4 left-4">
+              <span className={`inline-block rounded-lg px-3 py-1.5 text-xs font-semibold capitalize backdrop-blur-md ${DIFFICULTY_BG[dest.difficulty] ?? "bg-muted/80"}`}>
+                {dest.difficulty}
+              </span>
+            </div>
           </div>
         </FadeIn>
 
-        {/* Hero */}
+        {/* Hero Card */}
         <SlideIn delay={0.1}>
-          <div className="mb-6 rounded-2xl border border-border bg-gradient-to-br from-card to-muted/30 p-6 sm:p-8 -mt-20 relative z-10">
+          <div className="mb-6 rounded-2xl border border-border/50 bg-card/80 backdrop-blur-xl p-6 sm:p-8 -mt-24 relative z-10 shadow-2xl shadow-black/20">
             <div className="flex items-start justify-between">
               <div>
                 <h1 className="text-3xl font-bold sm:text-4xl lg:text-5xl">{displayName}</h1>
@@ -133,13 +139,13 @@ export function DestinationDetail({ dest }: { dest: any }) {
               </div>
               {currentScore !== null && (
                 <motion.div
-                  initial={{ scale: 0 }}
-                  animate={{ scale: 1 }}
+                  initial={{ scale: 0, rotate: -10 }}
+                  animate={{ scale: 1, rotate: 0 }}
                   transition={{ type: "spring", stiffness: 300, delay: 0.3 }}
-                  className={`rounded-2xl border px-5 py-3 text-center ${SCORE_COLORS[currentScore] ?? SCORE_COLORS[0]}`}
+                  className={`rounded-2xl border-2 px-5 py-3 text-center backdrop-blur-sm shadow-lg ${SCORE_COLORS[currentScore] ?? SCORE_COLORS[0]}`}
                 >
-                  <div className="text-3xl font-bold">{currentScore}/5</div>
-                  <div className="text-xs mt-0.5">{tm(String(currentMonth))}</div>
+                  <div className="text-3xl font-bold font-mono">{currentScore}/5</div>
+                  <div className="text-[10px] font-medium uppercase tracking-wider mt-0.5">{tm(String(currentMonth))}</div>
                 </motion.div>
               )}
             </div>
@@ -156,9 +162,9 @@ export function DestinationDetail({ dest }: { dest: any }) {
 
             {/* Quick stats */}
             <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-4">
-              <div className="rounded-xl border border-border/50 bg-background/50 backdrop-blur-sm p-3">
-                <div className="text-[10px] uppercase tracking-wide text-muted-foreground">{t("difficulty")}</div>
-                <div className={`mt-1 text-sm font-semibold capitalize rounded-md inline-block px-2 py-0.5 ${DIFFICULTY_BG[dest.difficulty] ?? ""}`}>
+              <div className="rounded-xl border border-border/30 bg-muted/20 p-3">
+                <div className="text-[10px] uppercase tracking-wider text-muted-foreground/70">{t("difficulty")}</div>
+                <div className={`mt-1.5 text-sm font-semibold capitalize ${DIFFICULTY_COLORS[dest.difficulty] ?? ""}`}>
                   {dest.difficulty}
                 </div>
               </div>

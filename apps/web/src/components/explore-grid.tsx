@@ -233,10 +233,10 @@ function DestinationCard({
   return (
     <Link
       href={`/${locale}/destination/${dest.id}`}
-      className="group block rounded-xl border border-border bg-card overflow-hidden transition-all hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5"
+      className="group block rounded-2xl border border-border/50 bg-card overflow-hidden transition-all duration-300 hover:border-primary/40 hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-0.5"
     >
       {/* Hero Image */}
-      <div className="relative h-36 bg-muted/30 overflow-hidden">
+      <div className="relative h-40 bg-muted/30 overflow-hidden">
         {/* Save button overlay */}
         <button
           onClick={(e) => {
