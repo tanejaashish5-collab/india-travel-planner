@@ -10,7 +10,7 @@ async function getFeaturedData() {
   const supabase = createClient(url, key);
   const currentMonth = new Date().getMonth() + 1;
 
-  const [destResult, collResult, routeResult, destCount, subCount, gemCount, stateCount, routeCount] = await Promise.all([
+  const [destResult, collResult, routeResult, destCount, subCount, gemCount, stateCount, routeCount, festResult] = await Promise.all([
     supabase
       .from("destination_months")
       .select("destination_id, score, destinations(id, name, tagline, difficulty, elevation_m, state:states(name))")
@@ -26,6 +26,13 @@ async function getFeaturedData() {
     supabase.from("hidden_gems").select("*", { count: "exact", head: true }),
     supabase.from("states").select("*", { count: "exact", head: true }),
     supabase.from("routes").select("*", { count: "exact", head: true }),
+    // Upcoming festivals (current month + next 3 months)
+    supabase
+      .from("festivals")
+      .select("*, destinations(name)")
+      .or(`month.eq.${currentMonth},month.eq.${(currentMonth % 12) + 1},month.eq.${((currentMonth + 1) % 12) + 1}`)
+      .order("month")
+      .limit(8),
   ]);
 
   const totalPlaces = (destCount.count ?? 0) + (subCount.count ?? 0) + (gemCount.count ?? 0);
@@ -34,6 +41,7 @@ async function getFeaturedData() {
     destinations: destResult.data ?? [],
     collections: collResult.data ?? [],
     routes: routeResult.data ?? [],
+    festivals: festResult.data ?? [],
     stats: {
       places: totalPlaces,
       destinations: destCount.count ?? 0,
@@ -44,7 +52,7 @@ async function getFeaturedData() {
 }
 
 export default async function Home() {
-  const { destinations, collections, routes, stats } = await getFeaturedData();
+  const { destinations, collections, routes, stats, festivals } = await getFeaturedData();
 
   return (
     <>
@@ -53,6 +61,7 @@ export default async function Home() {
         collections={collections}
         routes={routes}
         stats={stats}
+        festivals={festivals}
       />
       <Footer />
     </>

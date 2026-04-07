@@ -25,11 +25,13 @@ export function LandingHero({
   collections,
   routes,
   stats,
+  festivals,
 }: {
   featuredDestinations: any[];
   collections: any[];
   routes: any[];
   stats?: { places: number; destinations: number; states: number; routes: number };
+  festivals?: any[];
 }) {
   const locale = useLocale();
   const t = useTranslations("home");
@@ -407,6 +409,46 @@ export function LandingHero({
       )}
 
       {/* CTA Section */}
+      {/* Upcoming Festivals */}
+      {festivals && festivals.length > 0 && (
+        <section className="px-4 py-20">
+          <div className="mx-auto max-w-6xl">
+            <FadeIn>
+              <h2 className="text-3xl font-bold sm:text-4xl mb-2">Upcoming Festivals</h2>
+              <p className="text-muted-foreground mb-8">Time your trip around these events</p>
+            </FadeIn>
+            <StaggerContainer className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4" staggerDelay={0.05}>
+              {festivals.slice(0, 8).map((f: any) => {
+                const MONTH_NAMES = ["","January","February","March","April","May","June","July","August","September","October","November","December"];
+                const destName = Array.isArray(f.destinations) ? f.destinations[0]?.name : f.destinations?.name;
+                return (
+                  <StaggerItem key={f.id}>
+                    <HoverCard>
+                      <Link
+                        href={`/${locale}/destination/${f.destination_id}`}
+                        className="block rounded-xl border border-border p-4 h-full transition-all hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5"
+                      >
+                        <div className="flex items-center justify-between mb-2">
+                          <span className="rounded-full bg-primary/10 px-2.5 py-0.5 text-[10px] font-medium text-primary">
+                            {MONTH_NAMES[f.month]}
+                          </span>
+                        </div>
+                        <h3 className="font-semibold text-sm mb-1">{f.name}</h3>
+                        <p className="text-[11px] text-muted-foreground/80 mb-2">{f.approximate_date}</p>
+                        <p className="text-xs text-muted-foreground line-clamp-2">{f.significance}</p>
+                        {destName && (
+                          <p className="mt-2 text-[10px] text-primary/70">📍 {destName}</p>
+                        )}
+                      </Link>
+                    </HoverCard>
+                  </StaggerItem>
+                );
+              })}
+            </StaggerContainer>
+          </div>
+        </section>
+      )}
+
       <section className="px-4 py-20 bg-muted/30">
         <div className="mx-auto max-w-3xl text-center">
           <FadeIn>
