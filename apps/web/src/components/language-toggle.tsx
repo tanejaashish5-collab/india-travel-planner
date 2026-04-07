@@ -2,7 +2,8 @@
 
 import { useLocale } from "next-intl";
 import { useRouter, usePathname } from "next/navigation";
-import type { Locale } from "@itp/shared";
+
+type Locale = "en" | "hi";
 
 const LOCALE_LABELS: Record<string, string> = {
   en: "EN",
