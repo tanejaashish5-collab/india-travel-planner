@@ -1,0 +1,137 @@
+[
+  {
+    "id": "highest-motorable-road",
+    "title": "Highest Motorable Road in the World",
+    "destination_id": "hanle",
+    "name": "Umlingla Pass",
+    "detail": "19,024 ft / 5,798m. Built by BRO (Border Roads Organisation), opened 2021. Connects Hanle to Chumur. You will feel the altitude — oxygen is 50% of sea level.",
+    "coords": {"lat": 32.70, "lng": 79.00},
+    "tags": ["biker", "record", "extreme", "ladakh"]
+  },
+  {
+    "id": "highest-shiva-temple",
+    "title": "Highest Shiva Temple in the World",
+    "destination_id": "chopta-tungnath",
+    "name": "Tungnath Temple",
+    "detail": "3,680m / 12,073 ft. One of the Panch Kedar temples, over 1000 years old. A 3.5km paved trek from Chopta. Chandrashila summit (4000m) is another 1.5km above.",
+    "coords": {"lat": 30.49, "lng": 79.22},
+    "tags": ["spiritual", "trek", "record"]
+  },
+  {
+    "id": "highest-post-office",
+    "title": "Highest Post Office in the World",
+    "destination_id": "spiti-valley",
+    "name": "Hikkim Post Office",
+    "detail": "4,400m / 14,400 ft. Send a postcard from the edge of the world. It actually works — your postcard will arrive in 2-3 weeks. Buy stamps inside.",
+    "coords": {"lat": 32.28, "lng": 78.06},
+    "tags": ["offbeat", "record", "spiti"]
+  },
+  {
+    "id": "highest-inhabited-village",
+    "title": "One of the Highest Inhabited Villages in the World",
+    "destination_id": "spiti-valley",
+    "name": "Komic",
+    "detail": "~4,587m / 15,050 ft. Claims 'highest village with a motorable road.' About 30 houses, a monastery, and a sign that says so. Contested by Kibber (4,270m) for various 'highest' titles.",
+    "coords": {"lat": 32.30, "lng": 78.04},
+    "tags": ["village", "record", "offbeat"]
+  },
+  {
+    "id": "oldest-monastery",
+    "title": "Oldest Continuously Functioning Buddhist Monastery in India",
+    "destination_id": "spiti-valley",
+    "name": "Tabo Monastery",
+    "detail": "Founded 996 CE — over 1000 years of continuous Buddhist practice. Called 'the Ajanta of the Himalayas' for its ancient murals. Adi Shankaracharya-era cave hermitages behind the complex.",
+    "coords": {"lat": 32.09, "lng": 78.38},
+    "tags": ["monastery", "heritage", "spiritual"]
+  },
+  {
+    "id": "largest-free-kitchen",
+    "title": "Largest Free Kitchen on Earth",
+    "destination_id": "amritsar",
+    "name": "Golden Temple Langar",
+    "detail": "Feeds 50,000-100,000 people daily, free, regardless of religion, caste, or nationality. Running since the 16th century. Fully volunteer-operated. The most inclusive institution on the planet.",
+    "coords": {"lat": 31.62, "lng": 74.88},
+    "tags": ["food", "spiritual", "record"]
+  },
+  {
+    "id": "second-coldest-inhabited",
+    "title": "Second Coldest Inhabited Place on Earth",
+    "destination_id": "kargil-drass",
+    "name": "Drass",
+    "detail": "Record low: -60°C (disputed, likely -45°C verified). Average winter: -20°C to -30°C. 'Gateway to Ladakh' from Srinagar side. Kargil War Memorial is here.",
+    "coords": {"lat": 34.43, "lng": 75.77},
+    "tags": ["extreme", "record", "winter"]
+  },
+  {
+    "id": "living-fort",
+    "title": "Only Living Fort in India",
+    "destination_id": "jaisalmer",
+    "name": "Jaisalmer Fort",
+    "detail": "Built 1156 CE. 3,000 people still live inside. Shops, temples, hotels, restaurants — all within 12th-century walls. Not a museum — an actual functioning city within a fort.",
+    "coords": {"lat": 26.91, "lng": 70.91},
+    "tags": ["heritage", "fort", "record"]
+  },
+  {
+    "id": "only-brahma-temple",
+    "title": "Only Brahma Temple in India",
+    "destination_id": "pushkar",
+    "name": "Brahma Temple, Pushkar",
+    "detail": "One of very few temples in the world dedicated to Brahma (the creator god). Legend says a curse by Savitri prevents Brahma worship elsewhere. 14th century structure.",
+    "coords": {"lat": 26.49, "lng": 74.55},
+    "tags": ["spiritual", "record", "heritage"]
+  },
+  {
+    "id": "asias-largest-meadow",
+    "title": "Asia's Largest Meadow",
+    "destination_id": "tosamaidan",
+    "name": "Tosamaidan",
+    "detail": "Demined in 2014 (was an Indian Army artillery range). Now open to visitors. Vast, flat, stunning alpine meadow in Budgam, Kashmir. Still very few tourists know about it.",
+    "coords": {"lat": 34.05, "lng": 74.40},
+    "tags": ["meadow", "kashmir", "offbeat"]
+  },
+  {
+    "id": "asias-longest-cable-car",
+    "title": "One of Asia's Longest Cable Car Rides",
+    "destination_id": "auli",
+    "name": "Joshimath-Auli Ropeway",
+    "detail": "4 km long. Connects Joshimath town (1875m) to Auli ski slopes (2800m). Year-round operation (weather permitting). Nanda Devi visible on clear days. Genuinely thrilling.",
+    "coords": {"lat": 30.53, "lng": 79.57},
+    "tags": ["adventure", "record", "family"]
+  },
+  {
+    "id": "frozen-river-trek",
+    "title": "Only Frozen River Trek in India",
+    "destination_id": "zanskar",
+    "name": "Chadar Trek",
+    "detail": "Walk on the frozen Zanskar River for 62km over 9 days. Temperature: -25°C to -35°C. The river freezes into a 'chadar' (blanket) of ice. Jan-Feb only. India's most extreme trek.",
+    "coords": {"lat": 33.50, "lng": 76.85},
+    "tags": ["trek", "extreme", "winter", "record"]
+  },
+  {
+    "id": "oldest-sun-temple",
+    "title": "One of India's Oldest Sun Temples",
+    "destination_id": "almora-ranikhet",
+    "name": "Katarmal Sun Temple",
+    "detail": "9th century AD. 800+ years older than Konark. Dedicated to Surya (Sun God). 45 smaller shrines around the main temple. Barely visited — locals call it 'Kumaon's best-kept secret.'",
+    "coords": {"lat": 29.64, "lng": 79.63},
+    "tags": ["heritage", "spiritual", "offbeat"]
+  },
+  {
+    "id": "highest-war-memorial",
+    "title": "World's Highest War Memorial",
+    "destination_id": "kargil-drass",
+    "name": "Kargil War Memorial, Drass",
+    "detail": "At 3300m, commemorating the 1999 Kargil War. Names of 527 soldiers inscribed. Tiger Hill visible from the memorial. Deeply moving. The museum inside has intercepted radio conversations.",
+    "coords": {"lat": 34.43, "lng": 75.75},
+    "tags": ["memorial", "record", "history"]
+  },
+  {
+    "id": "last-village-india-pak",
+    "title": "Last Indian Village Before Pakistan",
+    "destination_id": "nubra-valley",
+    "name": "Turtuk",
+    "detail": "Was part of Pakistan until 1971 (captured in the Indo-Pak war). Balti culture, Urdu/Balti spoken, apricot orchards, wooden mosques. India's most culturally unique border village. Tyakshi hamlet beyond is even more remote.",
+    "coords": {"lat": 34.85, "lng": 76.82},
+    "tags": ["border", "village", "offbeat", "history"]
+  }
+]

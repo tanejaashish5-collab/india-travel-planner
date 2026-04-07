@@ -1,0 +1,492 @@
+[
+  {
+    "destination_id": "spiti-valley",
+    "safety_rating": 3,
+    "safety_notes": "Peaceful and crime-free. The danger is environmental — altitude, cold, road conditions, remoteness. Not a security concern, a survival concern.",
+    "reach": {
+      "from_nearest_city": "Manali → Rohtang → Kunzum → Kaza (200km, 8-10hrs). OR Shimla → Kinnaur → Kaza (400km, 2 days).",
+      "road_condition": "Manali side: NH3 to Atal Tunnel good, then deteriorates badly. Kunzum approach is unpaved gravel. Kinnaur side: NH5 along Sutlej is paved but landslide-prone.",
+      "public_transport": "HRTC bus Manali-Kaza (seasonal, Jun-Oct). HRTC bus Shimla-Kaza via Reckong Peo (year-round but unreliable in winter).",
+      "self_drive": "4WD strongly recommended. High-clearance vehicle mandatory for Kunzum approach. Fuel up at Manali (Manali side) or Reckong Peo (Kinnaur side) — no fuel in between.",
+      "last_km_difficulty": "hard"
+    },
+    "sleep": {
+      "options_count": 25,
+      "types": ["homestay", "guest house", "hostel"],
+      "price_range_inr": "500-3000",
+      "booking_method": "Call ahead or walk-in. Zostel bookable online. Most homestays via WhatsApp or direct phone.",
+      "emergency_stay": "Monastery guest houses will take you in if you're stranded. Ask at Key or Tabo."
+    },
+    "fuel": {
+      "nearest_petrol_pump": "Kaza (Indian Oil, often has queues)",
+      "next_after_that": "Reckong Peo (210km toward Shimla) or Manali (200km back)",
+      "ev_charging": false,
+      "carry_extra": true,
+      "jerry_can_size_liters": 20
+    },
+    "weather_night": {
+      "summer_low_c": -2,
+      "winter_low_c": -25,
+      "note": "Freezing EVERY night of the year above 3800m. Even in July, temperatures drop to -2°C at night. Carry thermals, a down jacket, and a sleeping bag liner even in summer."
+    },
+    "emergency": {
+      "nearest_hospital": "Community Health Centre Kaza (basic). Nearest real hospital: Regional Hospital Kullu (6-10 hours).",
+      "police_station": "Kaza Police Station",
+      "rescue": "ITBP posts at multiple locations along the route. Nearest major: ITBP Koksar.",
+      "ambulance": "108 (works on BSNL only, signal in Kaza/Tabo only)",
+      "helpline": "Himachal Tourism: 0177-2625956. ITBP Helpline: 1800-11-2844"
+    },
+    "network": {
+      "jio": false,
+      "airtel": false,
+      "bsnl": true,
+      "vi": false,
+      "wifi_available": "Some hotels/hostels in Kaza only",
+      "note": "BSNL is the ONLY network. Works in Kaza and Tabo. Zero signal in Langza, Hikkim, Komic, Dhankar, Pin Valley, Chandratal. Download offline maps before entering Spiti."
+    },
+    "people_who_help": [
+      {"name": "Spiti Ecosphere", "role": "Community tourism organization", "contact": "spitiecosphere.com / +91-9418-XXXXXX", "note": "Best resource in Spiti. Can arrange homestays, guides, transport, and help in emergencies. Run by locals."},
+      {"name": "Zostel Spiti", "role": "Hostel with local network", "contact": "zostel.com", "note": "Staff know the area well and can help coordinate if you're stuck."}
+    ]
+  },
+  {
+    "destination_id": "manali",
+    "safety_rating": 4,
+    "safety_notes": "Standard tourist town safety. Petty theft in crowded areas. Avoid isolated spots at night. Main risk is road accidents and monsoon landslides, not crime.",
+    "reach": {
+      "from_nearest_city": "Delhi → Manali: 530km, 12-14hrs by road (Chandigarh-Mandi-Manali). Volvo overnight buses are the most popular option.",
+      "road_condition": "NH3 is a national highway — mostly good. Mandi-Manali stretch gets congested and landslide-prone in monsoon.",
+      "public_transport": "HRTC Volvo from Delhi (12hrs, overnight). HRTC ordinary from Chandigarh. Local buses to Solang, Old Manali, Naggar.",
+      "self_drive": "Any car will do. Parking is a nightmare on Mall Road — use hotel parking.",
+      "last_km_difficulty": "easy"
+    },
+    "sleep": {
+      "options_count": 500,
+      "types": ["hotel", "resort", "hostel", "homestay", "guest house"],
+      "price_range_inr": "400-15000",
+      "booking_method": "All platforms: MakeMyTrip, Booking.com, Zostel, OYO. Walk-in possible off-season.",
+      "emergency_stay": "Never an issue — hundreds of options at all price points."
+    },
+    "fuel": {
+      "nearest_petrol_pump": "Multiple pumps in Manali town and on NH3",
+      "next_after_that": "Tandi (40km toward Keylong via Atal Tunnel)",
+      "ev_charging": true,
+      "carry_extra": false
+    },
+    "weather_night": {
+      "summer_low_c": 10,
+      "winter_low_c": -5,
+      "note": "Pleasant year-round compared to higher destinations. Snows Dec-Feb. Summer evenings are cool and comfortable."
+    },
+    "emergency": {
+      "nearest_hospital": "Lady Willingdon Hospital Manali, Regional Hospital Kullu (40km). Multiple private clinics.",
+      "police_station": "Manali Police Station, Mall Road",
+      "rescue": "Manali has mountain rescue teams. SDRF Himachal Pradesh.",
+      "ambulance": "108 (reliable here)",
+      "helpline": "Police: 100. Himachal Tourism: 0177-2625956"
+    },
+    "network": {
+      "jio": true,
+      "airtel": true,
+      "bsnl": true,
+      "vi": true,
+      "wifi_available": "Most hotels, cafes in Old Manali",
+      "note": "Full 4G coverage in Manali town. Signal weakens beyond Solang and toward Atal Tunnel."
+    },
+    "people_who_help": [
+      {"name": "Manali Tourism Office", "role": "Government tourism info", "contact": "Near Mall Road", "note": "Can help with transport, guides, and emergency coordination."}
+    ]
+  },
+  {
+    "destination_id": "dharamshala-mcleodganj",
+    "safety_rating": 5,
+    "safety_notes": "One of the safest hill stations in India. Strong police presence (it's the HP winter capital). Large international community. Women solo travelers regularly feel safe here.",
+    "reach": {
+      "from_nearest_city": "Delhi → Dharamshala: 480km, 10-12hrs. Pathankot rail then 3hr drive. Gaggal airport (15km) has flights from Delhi.",
+      "road_condition": "NH154 from Pathankot is well-maintained. McLeod Ganj is 9km uphill from Dharamshala — steep but paved.",
+      "public_transport": "HRTC Volvo from Delhi (overnight). Local buses from Pathankot, Chandigarh. Shared taxis McLeod-Dharamshala frequent.",
+      "self_drive": "Any car. Parking in McLeod is limited — use Dharamshala base if driving.",
+      "last_km_difficulty": "easy"
+    },
+    "sleep": {
+      "options_count": 300,
+      "types": ["hotel", "guest house", "hostel", "monastery stay", "boutique"],
+      "price_range_inr": "300-10000",
+      "booking_method": "All platforms. Chonor House and Norling House (Tibetan-run) book via their websites. Tushita meditation centre books via email.",
+      "emergency_stay": "Walk-in always possible. Gurudwara accommodation available free."
+    },
+    "fuel": {
+      "nearest_petrol_pump": "Dharamshala town (lower). None in McLeod Ganj.",
+      "next_after_that": "Multiple along NH154 toward Kangra/Pathankot",
+      "ev_charging": false,
+      "carry_extra": false
+    },
+    "weather_night": {
+      "summer_low_c": 15,
+      "winter_low_c": 0,
+      "note": "McLeod gets occasional snow in winter. Summer is pleasant. Monsoon (Jul-Aug) is very wet — heaviest rainfall in HP."
+    },
+    "emergency": {
+      "nearest_hospital": "Zonal Hospital Dharamshala (modern, well-equipped). Delek Hospital McLeod Ganj (Tibetan, basic but good).",
+      "police_station": "McLeod Ganj Police Station. Dharamshala Kotwali.",
+      "rescue": "Mountain rescue available through local police.",
+      "ambulance": "108 (reliable)",
+      "helpline": "Police: 100. Women helpline: 1091"
+    },
+    "network": {
+      "jio": true,
+      "airtel": true,
+      "bsnl": true,
+      "vi": true,
+      "wifi_available": "Most cafes and hotels. Moonpeak Espresso has good wifi.",
+      "note": "Full coverage in McLeod and Dharamshala. Weakens on Triund trek above treeline."
+    },
+    "people_who_help": [
+      {"name": "Tibet Bureau", "role": "Tibetan government-in-exile help", "contact": "Near Tsuglagkhang", "note": "Can help with cultural questions and local connections."},
+      {"name": "Lha Charitable Trust", "role": "NGO with local network", "contact": "lhasocialwork.org", "note": "Runs volunteer programs, deeply connected to local community."}
+    ]
+  },
+  {
+    "destination_id": "tirthan-valley",
+    "safety_rating": 5,
+    "safety_notes": "One of the safest valleys in Himachal. No tourist scams, no crowds, no crime. The biggest risk is the river in monsoon — respect it.",
+    "reach": {
+      "from_nearest_city": "Chandigarh → Aut Tunnel turn-off → Gushaini: 280km, 6-7hrs. Turn right at Aut tunnel (off NH3 before Kullu).",
+      "road_condition": "NH3 to Aut is national highway (good). Aut to Gushaini is state road — narrow, steep in places, but paved. Fine for any car in dry weather.",
+      "public_transport": "HRTC bus to Aut/Banjar. From Banjar, shared taxis to Gushaini. Very infrequent — plan ahead or hire.",
+      "self_drive": "Any car is fine. The road from Aut narrows significantly — drive slowly around bends. Night driving NOT recommended.",
+      "last_km_difficulty": "moderate"
+    },
+    "sleep": {
+      "options_count": 30,
+      "types": ["homestay", "cottage", "guest house", "camp"],
+      "price_range_inr": "800-5000",
+      "booking_method": "Most homestays via direct phone/WhatsApp. Raju's Cottage books months ahead. Himalayan Trout House on Google.",
+      "emergency_stay": "Homestay owners will always find you a bed. Community is tight-knit and welcoming."
+    },
+    "fuel": {
+      "nearest_petrol_pump": "Banjar (10km from Gushaini)",
+      "next_after_that": "Aut/Bhuntar (30km on NH3)",
+      "ev_charging": false,
+      "carry_extra": false
+    },
+    "weather_night": {
+      "summer_low_c": 12,
+      "winter_low_c": -2,
+      "note": "Mild compared to higher Himachal. Comfortable even in summer evenings. Carry a light jacket always."
+    },
+    "emergency": {
+      "nearest_hospital": "PHC Banjar (basic). Regional Hospital Kullu (2 hours).",
+      "police_station": "Banjar Police Station",
+      "rescue": "Forest Department (GHNP) rangers can help in park area.",
+      "ambulance": "108 (may take 30-60 min)",
+      "helpline": "GHNP: 01902-265320. Himachal Tourism: 0177-2625956"
+    },
+    "network": {
+      "jio": true,
+      "airtel": true,
+      "bsnl": true,
+      "vi": false,
+      "wifi_available": "Some homestays have basic wifi",
+      "note": "Decent signal in Gushaini and Banjar. Patchy in Jibhi. Zero inside GHNP trek routes."
+    },
+    "people_who_help": [
+      {"name": "Raju Bharti (Raju's Cottage)", "role": "Pioneer homestay host", "contact": "+91-9816-XXXXXX", "note": "The original Tirthan homestay. Raju knows every trail, every local, every fishing spot. Call him for anything."},
+      {"name": "GHNP Rangers", "role": "Forest department", "contact": "GHNP office Sai Ropa", "note": "Mandatory for park treks. Can coordinate rescue inside the park."}
+    ]
+  },
+  {
+    "destination_id": "chitkul",
+    "safety_rating": 4,
+    "safety_notes": "Very safe. Army presence near the border. Locals are welcoming. The only risk is the road (narrow, cliff edges on Sangla approach) and altitude.",
+    "reach": {
+      "from_nearest_city": "Shimla → Narkanda → Rampur → Karcham → Sangla → Chitkul: 370km, 10-12hrs. Break journey at Kalpa or Sangla.",
+      "road_condition": "NH5 along Sutlej to Karcham is paved but landslide-prone in monsoon. Karcham-Chitkul is narrow, paved, cliff-edge sections. No barriers in many places.",
+      "public_transport": "HRTC bus Shimla to Sangla (seasonal). From Sangla, shared taxi to Chitkul. Very infrequent.",
+      "self_drive": "High-clearance vehicle preferred. Careful driving required on Karcham-Chitkul stretch. NOT recommended in monsoon for inexperienced drivers.",
+      "last_km_difficulty": "moderate"
+    },
+    "sleep": {
+      "options_count": 8,
+      "types": ["homestay", "camp", "guest house"],
+      "price_range_inr": "600-3000",
+      "booking_method": "Zostel Chitkul online. Others via phone/walk-in. Limited options — book ahead in May-Oct.",
+      "emergency_stay": "Village is small but locals will accommodate you. Army camp nearby can help in extreme emergency."
+    },
+    "fuel": {
+      "nearest_petrol_pump": "Sangla (25km). Actually, closest reliable pump is Karcham (40km).",
+      "next_after_that": "Reckong Peo (60km from Chitkul)",
+      "ev_charging": false,
+      "carry_extra": true,
+      "jerry_can_size_liters": 10
+    },
+    "weather_night": {
+      "summer_low_c": 5,
+      "winter_low_c": -15,
+      "note": "At 3450m, nights are cold year-round. Winter is brutal — most places shut Nov-Mar. Carry warm sleeping bag even in June."
+    },
+    "emergency": {
+      "nearest_hospital": "PHC Sangla (basic). District Hospital Reckong Peo (2 hours). Real hospital: Rampur (5-6 hours).",
+      "police_station": "Sangla Police Station. Army presence near Chitkul.",
+      "rescue": "ITBP/Army posts near border can assist.",
+      "ambulance": "108 (unreliable in this area — long response time)",
+      "helpline": "Kinnaur DC office: 01786-222256"
+    },
+    "network": {
+      "jio": false,
+      "airtel": false,
+      "bsnl": true,
+      "vi": false,
+      "wifi_available": "Zostel has basic wifi. Most places none.",
+      "note": "BSNL only. Patchy even in Chitkul village. Better in Sangla. Download offline maps before Karcham."
+    },
+    "people_who_help": [
+      {"name": "Zostel Chitkul staff", "role": "Hostel with local knowledge", "contact": "zostel.com", "note": "Well-connected to village locals. Can help arrange onward transport or emergency assistance."}
+    ]
+  },
+  {
+    "destination_id": "valley-of-flowers",
+    "safety_rating": 3,
+    "safety_notes": "No crime risk. Danger is environmental: monsoon conditions, slippery trails, leeches, altitude. The approach road (Joshimath area) has had subsidence issues since 2023.",
+    "reach": {
+      "from_nearest_city": "Rishikesh → Devprayag → Rudraprayag → Joshimath → Govindghat: 270km, 10-12hrs. Then 13km trek to Ghangaria (or helicopter).",
+      "road_condition": "NH58 to Joshimath is the Char Dham route — heavily trafficked, landslide-prone in monsoon. Govindghat to Ghangaria is foot only.",
+      "public_transport": "Bus Rishikesh-Joshimath-Govindghat. Pony/porter from Govindghat to Ghangaria. Helicopter (weather dependent).",
+      "self_drive": "Drive to Govindghat, park. From there it's a trek. The drive itself is long and tiring.",
+      "last_km_difficulty": "hard"
+    },
+    "sleep": {
+      "options_count": 10,
+      "types": ["guest house", "gurudwara"],
+      "price_range_inr": "300-2000",
+      "booking_method": "GMVN guest house bookable online (book early for Aug). Gurudwara accommodation free (basic, first-come). Private guest houses walk-in.",
+      "emergency_stay": "Gurudwara at Ghangaria always has space and free langar (meals)."
+    },
+    "fuel": {
+      "nearest_petrol_pump": "Joshimath (20km from Govindghat)",
+      "next_after_that": "Chamoli (further back toward Rudraprayag)",
+      "ev_charging": false,
+      "carry_extra": false
+    },
+    "weather_night": {
+      "summer_low_c": 5,
+      "winter_low_c": -20,
+      "note": "Open only Jul-Sep when it's monsoon. Expect rain every day. Nights at 3658m are cold even in August — carry warm layers and rain gear."
+    },
+    "emergency": {
+      "nearest_hospital": "PHC Govindghat (very basic). District Hospital Joshimath (20km from Govindghat). Nearest major: Srinagar Garhwal (6hrs).",
+      "police_station": "Govindghat police post.",
+      "rescue": "Forest Department at valley gate. SDRF Uttarakhand.",
+      "ambulance": "108 (to Govindghat only — no vehicles beyond that)",
+      "helpline": "Uttarakhand Tourism: 0135-2559898. Joshimath SDM: 01389-222203"
+    },
+    "network": {
+      "jio": false,
+      "airtel": false,
+      "bsnl": true,
+      "vi": false,
+      "wifi_available": "None at Ghangaria",
+      "note": "BSNL only at Govindghat, nothing at Ghangaria or in the valley. You are completely offline for 2-3 days."
+    },
+    "people_who_help": [
+      {"name": "GMVN Guest House staff", "role": "Government tourism accommodation", "contact": "gmvn.in", "note": "The de facto info centre at Ghangaria. Staff know trail conditions."},
+      {"name": "Gurudwara Hemkund Sahib committee", "role": "Religious trust", "contact": "At Ghangaria", "note": "Free meals and basic accommodation. Will help anyone regardless of religion."}
+    ]
+  },
+  {
+    "destination_id": "kedarnath",
+    "safety_rating": 3,
+    "safety_notes": "No crime. The danger is real and environmental: altitude sickness, extreme crowds, flash floods, landslides. The 2013 disaster killed thousands. Monsoon yatra is genuinely risky.",
+    "reach": {
+      "from_nearest_city": "Rishikesh → Rudraprayag → Guptkashi → Sonprayag → Gaurikund: 220km, 9-10hrs. Then 16km trek or helicopter from Phata/Sersi.",
+      "road_condition": "Char Dham highway — heavy traffic in season. Well-maintained but monsoon brings landslides. Sonprayag-Gaurikund is narrow and congested.",
+      "public_transport": "Bus Rishikesh-Guptkashi. Shared taxi/shuttle Guptkashi-Sonprayag-Gaurikund. Trek or pony or helicopter from Gaurikund.",
+      "self_drive": "Drive to Sonprayag (Gaurikund road is restricted to public vehicles). Park and take shuttle.",
+      "last_km_difficulty": "hard"
+    },
+    "sleep": {
+      "options_count": 15,
+      "types": ["guest house", "tent", "dharamshala"],
+      "price_range_inr": "500-3000",
+      "booking_method": "GMVN online. Most tents/dharamshalas are walk-in. For comfort, stay in Guptkashi and day-trip.",
+      "emergency_stay": "Temple premises always have space. Dharamshalas near temple are free/donation-based."
+    },
+    "fuel": {
+      "nearest_petrol_pump": "Guptkashi (30km from Gaurikund trailhead)",
+      "next_after_that": "Rudraprayag (80km back)",
+      "ev_charging": false,
+      "carry_extra": false
+    },
+    "weather_night": {
+      "summer_low_c": 3,
+      "winter_low_c": -20,
+      "note": "At 3583m, nights are always cold. Even in peak May-June season, temperatures drop to 3-5°C at night. Carry thermals and a warm jacket."
+    },
+    "emergency": {
+      "nearest_hospital": "Medical camp at Kedarnath (seasonal, basic first aid). District Hospital Rudraprayag (80km from Gaurikund). Air ambulance helicopter possible in clear weather.",
+      "police_station": "Kedarnath police outpost (seasonal). Guptkashi thana.",
+      "rescue": "SDRF Uttarakhand. NDRF deploys during yatra season.",
+      "ambulance": "108 (to Gaurikund area only)",
+      "helpline": "Char Dham Yatra helpline: 1364. Uttarakhand SDMA: 1070"
+    },
+    "network": {
+      "jio": false,
+      "airtel": false,
+      "bsnl": true,
+      "vi": false,
+      "wifi_available": "None at Kedarnath. Guptkashi has coverage.",
+      "note": "BSNL works intermittently at Kedarnath. All networks work in Guptkashi. No signal on the 16km trek."
+    },
+    "people_who_help": [
+      {"name": "Kedarnath Temple Committee", "role": "Temple management", "contact": "At temple", "note": "Coordinates with government on crowd management and emergency response."},
+      {"name": "SDRF Uttarakhand", "role": "State disaster response", "contact": "1070", "note": "Deployed during yatra season. Can coordinate helicopter evacuation in emergencies."}
+    ]
+  },
+  {
+    "destination_id": "auli",
+    "safety_rating": 4,
+    "safety_notes": "Safe tourist destination. ITBP and Army presence in the area. Main concern is Joshimath land subsidence — check advisories. Monsoon road risk on approach.",
+    "reach": {
+      "from_nearest_city": "Rishikesh → Devprayag → Rudraprayag → Joshimath: 250km, 10-12hrs. Then cable car or 14km drive to Auli.",
+      "road_condition": "Char Dham highway to Joshimath. Road is okay but long. Joshimath to Auli is a winding mountain road — cable car is easier.",
+      "public_transport": "Bus Rishikesh-Joshimath. Cable car Joshimath-Auli (year-round, weather permitting).",
+      "self_drive": "Drive to Joshimath, take cable car. Or drive up to Auli (14km, steep switchbacks).",
+      "last_km_difficulty": "easy"
+    },
+    "sleep": {
+      "options_count": 15,
+      "types": ["resort", "hotel", "GMVN guest house"],
+      "price_range_inr": "1500-8000",
+      "booking_method": "GMVN online. Cliff Top Club and private hotels on MakeMyTrip/Booking.com. Joshimath has cheaper options.",
+      "emergency_stay": "Hotels at Auli or Joshimath. GMVN always has rooms off-season."
+    },
+    "fuel": {
+      "nearest_petrol_pump": "Joshimath",
+      "next_after_that": "Chamoli (70km back toward Rudraprayag)",
+      "ev_charging": false,
+      "carry_extra": false
+    },
+    "weather_night": {
+      "summer_low_c": 8,
+      "winter_low_c": -10,
+      "note": "At 2800m, proper snow in winter (Dec-Feb). Summer is pleasant but cool at night. Ski season: Jan-Feb."
+    },
+    "emergency": {
+      "nearest_hospital": "Military Hospital Joshimath (may accept civilians in emergency). District Hospital Chamoli (70km).",
+      "police_station": "Joshimath Police Station.",
+      "rescue": "ITBP base Joshimath. SDRF Uttarakhand.",
+      "ambulance": "108 (to Joshimath)",
+      "helpline": "Joshimath SDM: 01389-222203. GMVN: 0135-2746817"
+    },
+    "network": {
+      "jio": true,
+      "airtel": true,
+      "bsnl": true,
+      "vi": false,
+      "wifi_available": "Most hotels at Auli and Joshimath",
+      "note": "Good coverage at Joshimath and Auli. Weakens on Gorson Bugyal trek."
+    },
+    "people_who_help": [
+      {"name": "GMVN Auli Resort", "role": "Government tourism", "contact": "gmvn.in", "note": "Runs ski courses and knows the mountain well. Good first point of contact."},
+      {"name": "ITBP Joshimath", "role": "Border police", "contact": "Local office", "note": "Run ski training courses. Can assist in mountain emergencies."}
+    ]
+  },
+  {
+    "destination_id": "chopta-tungnath",
+    "safety_rating": 4,
+    "safety_notes": "Safe area. Less trafficked than Char Dham route. Main risks: altitude at Chandrashila (4000m), cold weather, and the monsoon trail conditions.",
+    "reach": {
+      "from_nearest_city": "Rishikesh → Devprayag → Rudraprayag → Ukhimath → Chopta: 210km, 7-8hrs.",
+      "road_condition": "Good until Ukhimath. Ukhimath to Chopta is a mountain road — narrow but paved. Less affected by Char Dham traffic.",
+      "public_transport": "Bus Rishikesh to Ukhimath/Gopeshwar. From Ukhimath, shared taxi to Chopta. Infrequent — hire recommended.",
+      "self_drive": "Any car. Road is manageable. Parking at Chopta trailhead is limited.",
+      "last_km_difficulty": "easy"
+    },
+    "sleep": {
+      "options_count": 10,
+      "types": ["cabin", "tent", "homestay", "guest house"],
+      "price_range_inr": "500-3000",
+      "booking_method": "Forest Department guest house bookable. Most cabins/tents are walk-in or phone. More options at Sari village (for Deoria Tal).",
+      "emergency_stay": "Dhaba owners at Chopta can arrange emergency shelter. Sari village has more options."
+    },
+    "fuel": {
+      "nearest_petrol_pump": "Ukhimath (25km from Chopta)",
+      "next_after_that": "Rudraprayag (60km)",
+      "ev_charging": false,
+      "carry_extra": false
+    },
+    "weather_night": {
+      "summer_low_c": 5,
+      "winter_low_c": -10,
+      "note": "At 2680m (Chopta), manageable. At 4000m (Chandrashila), it's bitter cold with wind chill. Winter snow trek requires proper gear."
+    },
+    "emergency": {
+      "nearest_hospital": "PHC Ukhimath (basic). District Hospital Rudraprayag (60km).",
+      "police_station": "Ukhimath Police Station.",
+      "rescue": "Forest Department rangers on the Tungnath trail.",
+      "ambulance": "108 (to Ukhimath area)",
+      "helpline": "Rudraprayag DC: 01364-233222"
+    },
+    "network": {
+      "jio": true,
+      "airtel": false,
+      "bsnl": true,
+      "vi": false,
+      "wifi_available": "None at Chopta. Sari village has some.",
+      "note": "Jio works at Chopta meadow. No signal on the Tungnath/Chandrashila trek above treeline."
+    },
+    "people_who_help": [
+      {"name": "Forest Department Chopta", "role": "Park rangers", "contact": "At Chopta checkpoint", "note": "Can advise on trail conditions and assist in weather emergencies on the trek."}
+    ]
+  },
+  {
+    "destination_id": "munsiyari",
+    "safety_rating": 4,
+    "safety_notes": "Peaceful, remote Kumaon town. Zero crime concern. Main risk is the long approach road and remoteness — limited medical facilities.",
+    "reach": {
+      "from_nearest_city": "Kathgodam (railhead) → Almora → Chaukori → Thal → Munsiyari: 300km, 12-14hrs. Break journey at Almora or Chaukori.",
+      "road_condition": "Mix of state highways and mountain roads. Almora to Munsiyari via Thal is narrow with hairpin bends. Berinag route alternative. Both are long.",
+      "public_transport": "KMOU bus from Kathgodam (rare, very slow). Shared taxis from Almora. Best to hire a vehicle.",
+      "self_drive": "Possible in any car but the drive is exhausting. Break it into 2 days. Night driving is dangerous on these roads.",
+      "last_km_difficulty": "moderate"
+    },
+    "sleep": {
+      "options_count": 15,
+      "types": ["hotel", "guest house", "homestay", "KMVN"],
+      "price_range_inr": "500-3000",
+      "booking_method": "KMVN Tourist Rest House online (view-facing, reliable). Sarmoli homestays via Mountain Shepherds Initiative. Most others via phone.",
+      "emergency_stay": "KMVN always has rooms. Sarmoli community will arrange emergency accommodation."
+    },
+    "fuel": {
+      "nearest_petrol_pump": "Munsiyari town (one pump, sometimes runs dry)",
+      "next_after_that": "Thal (50km back) or Pithoragarh (90km)",
+      "ev_charging": false,
+      "carry_extra": true,
+      "jerry_can_size_liters": 10
+    },
+    "weather_night": {
+      "summer_low_c": 8,
+      "winter_low_c": -5,
+      "note": "At 2200m, climate is more moderate than Spiti/Ladakh. Snow possible Dec-Feb. Pleasant in summer. Always carry a warm layer for evenings."
+    },
+    "emergency": {
+      "nearest_hospital": "PHC Munsiyari (basic). District Hospital Pithoragarh (90km, 4hrs).",
+      "police_station": "Munsiyari Police Station",
+      "rescue": "SDRF Uttarakhand. Army base nearby (near border).",
+      "ambulance": "108 (long response time — 1-2 hours)",
+      "helpline": "Pithoragarh DC: 05964-225534"
+    },
+    "network": {
+      "jio": true,
+      "airtel": false,
+      "bsnl": true,
+      "vi": false,
+      "wifi_available": "KMVN and some hotels have basic wifi",
+      "note": "Jio and BSNL work in Munsiyari town. Zero signal on Khaliya Top trek and in surrounding villages like Sarmoli (BSNL patchy)."
+    },
+    "people_who_help": [
+      {"name": "Mountain Shepherds Initiative (Sarmoli)", "role": "Community tourism NGO", "contact": "mountainshepherds.com", "note": "Run homestays, guides, bird walks. Deeply embedded in local community. Best local resource."},
+      {"name": "KMVN Tourist Rest House", "role": "Government accommodation", "contact": "kmvn.in", "note": "Staff know the area. Can help arrange transport and local contacts."}
+    ]
+  }
+]

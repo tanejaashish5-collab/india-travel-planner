@@ -1,0 +1,1357 @@
+[
+  {
+    "id": "leh",
+    "name": "Leh",
+    "state_id": "ladakh",
+    "region": "Upper Ladakh",
+    "coords": {
+      "lat": 34.1526,
+      "lng": 77.5771
+    },
+    "elevation_m": 3524,
+    "type": [
+      "town",
+      "monastery-hub",
+      "acclimatization-base"
+    ],
+    "vibe": [
+      "adventure",
+      "spiritual",
+      "biker",
+      "photography"
+    ],
+    "difficulty": "moderate",
+    "nearest_airport": "Kushok Bakula Rimpochee (IXL), Leh \u2014 one of India's most dramatic landings",
+    "nearest_railhead": "None (nearest: Jammu Tawi, 700km by road)",
+    "tagline": "The only town in India where the first thing you're told to do is absolutely nothing for 48 hours.",
+    "why_special": "Leh is the staging point for everything in Ladakh, and the acclimatization at 3524m is non-negotiable \u2014 rush it and you'll be evacuated on an oxygen stretcher. The Old Town beneath Leh Palace is a crumbling maze of Tibetan alleys, Shanti Stupa glows gold at sunset, and every second shop sells Royal Enfield parts. It's dusty, sun-blasted, and completely addictive.",
+    "budget_tier": "mixed",
+    "ideal_duration_min": 2,
+    "ideal_duration_max": 3,
+    "cell_network": "Jio, Airtel, BSNL \u2014 Leh town has decent 4G. Postpaid SIMs work. Prepaid from other states often doesn't \u2014 get a local SIM or activate roaming before you arrive.",
+    "atm_available": true,
+    "medical_facility": "SNM Hospital (government, basic). Army hospital for emergencies. Private clinics on Main Bazaar. For serious AMS, evacuation by air to Delhi is the real plan.",
+    "permit_required": "Inner Line Permit (ILP) required for Nubra Valley, Pangong Lake, Tso Moriri, Hanle, and Turtuk. Apply online at lahdclehpermit.in or through any travel agent in Leh (takes 1-2 hours, costs ~\u20b9400-600). Carry passport-size photos and ID proof.",
+    "languages_spoken": [
+      "Ladakhi",
+      "Hindi",
+      "Urdu",
+      "English"
+    ],
+    "tags": [
+      "acclimatization",
+      "old-town",
+      "monasteries",
+      "biker-hub",
+      "shopping",
+      "gateway"
+    ],
+    "best_months": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "avoid_months": [
+      12,
+      1,
+      2
+    ],
+    "deep_dive": {
+      "detailed_description": "Leh sits in the Indus Valley at 3524m, flanked by the Ladakh Range to the north and the Stok Range to the south. It was the capital of the Kingdom of Ladakh for centuries, and the crumbling 17th-century Leh Palace still looms over the Old Town. Today it's a strange mix \u2014 Tibetan Buddhist heritage, Indian Army presence everywhere (Ladakh is a frontier region), Israeli backpackers, European trekkers, and thousands of Indian bikers chasing the Khardung La selfie. The town itself is walkable in a day, but you'll spend two days here doing nothing because acclimatization demands it.",
+      "things_to_do": [
+        "Acclimatize. Seriously. Day 1 and Day 2 are for rest, hydration, and slow walks only.",
+        "Leh Palace \u2014 17th-century Tibetan palace, crumbling but atmospheric, Potala Palace vibes",
+        "Shanti Stupa at sunset \u2014 the panoramic view of Leh and the Stok Range is the reward",
+        "Old Town walk \u2014 Ladakhi alleys, prayer wheels, small temples, vanishing heritage",
+        "Main Bazaar shopping \u2014 Tibetan jewelry, pashmina shawls, biker gear (half of it fake)",
+        "Thiksey Monastery (17km) \u2014 the 'mini Potala', morning prayer at 6am is unforgettable",
+        "Hemis Monastery (45km) \u2014 richest monastery in Ladakh, annual festival in June/July",
+        "Spituk Monastery \u2014 overlooks the airport runway, sunrise here is underrated",
+        "Hall of Fame museum \u2014 Indian Army's Ladakh history, sobering and well done",
+        "Magnetic Hill and Sangam (Indus-Zanskar confluence) \u2014 touristy but the confluence is genuinely striking"
+      ],
+      "access_notes": "Three routes: (1) Flight to Leh \u2014 1.5 hours from Delhi, operates year-round, one of the most spectacular landings in aviation. Book left-side window seat. (2) Manali-Leh Highway \u2014 475km, 2 days, open mid-June to mid-October, passes through Rohtang, Baralacha La, Lachalung La, Tanglang La. (3) Srinagar-Leh Highway \u2014 434km, 2 days, open mid-May to mid-November, passes through Zoji La, Drass, Kargil. Both road routes require acclimatization stops. If you fly in, you MUST rest for 48 hours minimum before going higher.",
+      "stays": "Main Bazaar area for convenience (Grand Dragon, Lha-Ri-Mo, The Zen Ladakh). Changspa for quieter guesthouses and cafes. Old Town for heritage homestays. Fort Road for mid-range hotels. Camping options at Stok and outskirts. Budget: \u20b9800-1500/night. Mid-range: \u20b93000-6000. Luxury: \u20b98000-15000 (Grand Dragon, Stok Palace Heritage).",
+      "food": "Thukpa (noodle soup \u2014 the default Ladakhi meal), momos, skyu (Ladakhi pasta stew, try it), butter tea (acquired taste, high-calorie, good for altitude), apricot jam on everything. Gesmo Restaurant and Lamayuru Restaurant for reliable Ladakhi food. Bon Appetit for continental when you're tired of momos. The German Bakery in Changspa for breakfast.",
+      "festivals": "Hemis Festival (June/July) \u2014 masked Cham dances, biggest in Ladakh. Ladakh Festival (September) \u2014 government-organized but genuine cultural showcase. Losar (Tibetan New Year, December/January) \u2014 if you're here in winter. Dosmoche (February) \u2014 Leh Palace forecourt festival.",
+      "photography": "Shanti Stupa at golden hour (both sunrise and sunset work). Leh Palace from below at blue hour. Thiksey Monastery morning prayers (low light, no flash). Sangam confluence \u2014 blue Zanskar meeting muddy Indus. Old Town alleys with prayer wheels. Airport runway with mountains \u2014 nowhere else looks like this.",
+      "hidden_gems": "Stok Palace Museum (royal Ladakhi artifacts, almost nobody goes). Sabu village walk (30 min from Leh, zero tourists). The SECMOL campus (a solar-powered alternative school \u2014 fascinating if you're interested in education). Tsemo Fort above Leh Palace (most people stop at the palace and miss this).",
+      "history": "Leh was the capital of the Namgyal dynasty's Kingdom of Ladakh from the 16th century, positioned on the ancient Silk Road between Punjab and Central Asia. The 9-story Leh Palace was built in the 1600s, modeled after the Potala in Lhasa. Ladakh was annexed by the Dogra forces in the 1840s, became part of J&K, and in 2019 became a Union Territory. The region remains strategically critical \u2014 the Indian Army presence is massive, with the Line of Actual Control with China just over the mountains.",
+      "warnings": "AMS (Acute Mountain Sickness) is the #1 risk. Symptoms: headache, nausea, breathlessness, insomnia. If symptoms worsen after rest, descend immediately. Diamox (125mg twice daily) helps but is not a substitute for acclimatization. Do NOT drink alcohol for the first 48 hours. Do NOT take sleeping pills (they suppress breathing). Dehydration accelerates AMS \u2014 drink 3-4 litres/day. UV exposure is extreme at this altitude \u2014 sunscreen SPF50+, sunglasses mandatory."
+    },
+    "translations": {},
+    "monthly_suitability": [
+      {
+        "m": 1,
+        "score": 1,
+        "note": "Deep winter. -15 to -25\u00b0C. Most hotels shut. Only flight access (weather permitting). Some winter tourism exists but it's hardcore \u2014 Chadar trek season."
+      },
+      {
+        "m": 2,
+        "score": 1,
+        "note": "Still brutal winter. Chadar trek (frozen Zanskar river walk) runs Jan-Feb. Not for casual visitors."
+      },
+      {
+        "m": 3,
+        "score": 2,
+        "note": "Winter easing. Srinagar-Leh road may open late March. Town slowly waking up."
+      },
+      {
+        "m": 4,
+        "score": 2,
+        "note": "Shoulder. Srinagar road opening. Manali road still shut. Limited services."
+      },
+      {
+        "m": 5,
+        "score": 3,
+        "note": "Srinagar-Leh open. Manali-Leh may open late May. Town services resuming. Good if you want fewer crowds."
+      },
+      {
+        "m": 6,
+        "score": 5,
+        "note": "Peak season begins. Both highways open. All passes accessible. Hemis Festival. Book everything in advance."
+      },
+      {
+        "m": 7,
+        "score": 5,
+        "note": "Prime time. Warm days (25-30\u00b0C), clear skies usually. Ladakh is rain-shadow so monsoon barely touches it, but approach roads from Manali can get hit."
+      },
+      {
+        "m": 8,
+        "score": 4,
+        "note": "Still excellent in Ladakh itself. Manali approach road landslide risk increases. Srinagar route more reliable."
+      },
+      {
+        "m": 9,
+        "score": 5,
+        "note": "Best month. Post-monsoon clarity, golden light, thinner crowds than Jul-Aug, both roads still open."
+      },
+      {
+        "m": 10,
+        "score": 3,
+        "note": "Getting cold. Roads start closing by late October. Manali-Leh shuts first. Rush to get out before snow."
+      },
+      {
+        "m": 11,
+        "score": 1,
+        "note": "Both highways closed or closing. Flight only. Most tourism infrastructure shut down."
+      },
+      {
+        "m": 12,
+        "score": 1,
+        "note": "Deep winter. Flight only (unreliable). Temperature -20\u00b0C+. Only for serious winter travellers."
+      }
+    ],
+    "kids_friendly": {
+      "suitable": false,
+      "rating": 2,
+      "min_recommended_age": 10,
+      "best_age_group": "12-18",
+      "stroller_accessible": false,
+      "reasons": [
+        "Leh town itself is manageable for older kids who have acclimatized properly",
+        "Monasteries are genuinely educational and visually stunning",
+        "The Hall of Fame museum engages school-age children"
+      ],
+      "concerns": [
+        "3524m altitude causes AMS in children faster than adults \u2014 their smaller lungs and higher metabolic rate make them more vulnerable",
+        "Children under 5 cannot reliably communicate AMS symptoms (headache, nausea) \u2014 you may not know until it's a medical emergency",
+        "Nearest serious pediatric care is Delhi (1.5-hour flight, if flights are operating)",
+        "Dehydration happens fast \u2014 kids resist drinking water",
+        "Sleep disruption at altitude is severe for young children",
+        "UV exposure at 3500m is intense \u2014 child sunburn happens in 15 minutes"
+      ],
+      "kid_highlights": [
+        "Shanti Stupa climb \u2014 manageable for 10+ with breaks",
+        "Camel rides in Nubra (if doing the circuit)",
+        "Hall of Fame museum",
+        "Magnetic Hill optical illusion \u2014 kids love it"
+      ],
+      "not_suitable_reason": "Altitude of 3524m is the core problem. AMS risk is elevated for all children, and medical evacuation infrastructure is limited. If you bring kids 10+, acclimatize for 3 full days in Leh before going anywhere higher. Kids under 8 should not be brought to Ladakh at all."
+    }
+  },
+  {
+    "id": "nubra-valley",
+    "name": "Nubra Valley",
+    "state_id": "ladakh",
+    "region": "Upper Ladakh / Shyok River Basin",
+    "coords": {
+      "lat": 34.6853,
+      "lng": 77.5689
+    },
+    "elevation_m": 3048,
+    "type": [
+      "valley",
+      "sand-dunes",
+      "monastery",
+      "frontier-village"
+    ],
+    "vibe": [
+      "surreal",
+      "adventure",
+      "cultural",
+      "biker",
+      "photography"
+    ],
+    "difficulty": "moderate",
+    "nearest_airport": "Kushok Bakula Rimpochee (IXL), Leh \u2014 then 120km over Khardung La",
+    "nearest_railhead": "None (nearest: Jammu Tawi, 820km)",
+    "tagline": "Sand dunes with double-humped camels under snow-capped peaks \u2014 Ladakh's most surreal postcard, earned by crossing the world's most overhyped pass.",
+    "why_special": "Nubra is where the Shyok and Nubra rivers meet in a wide valley that feels like it was assembled from spare parts \u2014 sand dunes at Hunder that look like they belong in Rajasthan, double-humped Bactrian camels left over from Silk Road caravans, and Turtuk, a Balti village that was Pakistani territory until 1971. You cross Khardung La (5359m, not 5602m as the signboard falsely claims) to get here.",
+    "budget_tier": "budget-to-mid",
+    "ideal_duration_min": 2,
+    "ideal_duration_max": 3,
+    "cell_network": "BSNL postpaid only in Diskit. No signal in Hunder, Turtuk, or Panamik. Carry an offline map.",
+    "atm_available": false,
+    "medical_facility": "Basic health centre in Diskit. Army medical post for emergencies. No pharmacy worth the name. Carry all medications from Leh.",
+    "permit_required": "Inner Line Permit (ILP) required. Apply in Leh \u2014 covers Nubra, Turtuk, Panamik. Separate environmental fee for Hunder sand dunes area.",
+    "languages_spoken": [
+      "Ladakhi",
+      "Balti (Turtuk)",
+      "Hindi",
+      "Urdu"
+    ],
+    "tags": [
+      "sand-dunes",
+      "bactrian-camels",
+      "khardung-la",
+      "turtuk",
+      "frontier",
+      "silk-road",
+      "biker-essential"
+    ],
+    "best_months": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "avoid_months": [
+      11,
+      12,
+      1,
+      2
+    ],
+    "deep_dive": {
+      "detailed_description": "Nubra Valley is north of Leh, accessed via Khardung La (5359m actual elevation \u2014 the famous '18380 ft highest motorable road' sign is a lie, but everyone takes the photo anyway). The valley floor at Hunder (3048m) is actually lower than Leh, which helps with altitude. The sand dunes at Hunder are the headline \u2014 white sand against the Karakoram backdrop with Bactrian camels is genuinely surreal. Diskit has the valley's main monastery and a giant Maitreya Buddha statue. But the real jewel is Turtuk, 90km beyond Diskit \u2014 a Balti Muslim village that was part of Pakistan until India captured it in the 1971 war. The people, food, architecture, and apricot orchards there are completely different from Buddhist Ladakh.",
+      "things_to_do": [
+        "Hunder sand dunes \u2014 Bactrian camel ride at sunset (touristy but the landscape is genuinely bizarre)",
+        "Diskit Monastery \u2014 14th century, perched above the valley with a 32m Maitreya Buddha statue",
+        "Turtuk village \u2014 Balti heritage, apricot orchards, the Yabgo dynasty house museum, feels like a different country",
+        "Tyakshi \u2014 the last Indian village before LoC with Pakistan (beyond Turtuk, if permitted)",
+        "Panamik hot springs \u2014 natural sulphur springs, basic but atmospheric",
+        "Sumur village and Samstanling Monastery \u2014 quieter alternative to Diskit",
+        "Khardung La pass photo stop (the sign, the prayer flags, the altitude headache)"
+      ],
+      "access_notes": "From Leh: 120km over Khardung La, 4-5 hours. Road is maintained by BRO (Border Roads Organisation) and is generally paved but narrow with army convoys. Start early (6-7am) to cross Khardung La before afternoon clouds roll in. The descent into Nubra from Khardung La is steep and loose in sections. Fuel: fill up in Leh \u2014 there's a pump in Diskit but it's not always operational. Leh to Turtuk is 205km, plan a full day.",
+      "stays": "Hunder has camps (tented accommodation, \u20b91500-4000/night) \u2014 atmospheric but basic. Diskit has guesthouses and the decent Hotel Olthang. Turtuk has homestays (the best experience in the valley \u2014 Balti families are incredibly welcoming). Sumur has a few quiet guesthouses. Book ahead in July-August.",
+      "food": "Nubra apricots (fresh in July-August, dried year-round) are legendary. Balti food in Turtuk \u2014 apricot-based dishes, buckwheat chapati, butter tea. Standard dal-rice-momos in Diskit and Hunder. Carry snacks for the Khardung La crossing \u2014 there's a tea stall at the top but don't count on it.",
+      "festivals": "Diskit Gustor Festival (October/November) \u2014 masked dances at the monastery. Dosmoche in February if you're here in winter (rare).",
+      "photography": "Hunder dunes at golden hour with camels and Karakoram peaks (the shot). Diskit Maitreya Buddha at sunrise. Turtuk's apricot orchards and wooden Balti houses. Khardung La pass \u2014 everyone stops here, but the road down into Nubra with switchbacks is more photogenic.",
+      "hidden_gems": "Turtuk is itself a hidden gem that's becoming less hidden. Tyakshi village beyond Turtuk (the actual last village). Panamik's hot springs are overlooked by most tourists rushing to Hunder. The old polo ground at Hunder. Ensa Monastery near Panamik (rarely visited, stunning setting).",
+      "history": "Nubra was a critical junction on the Silk Road \u2014 caravans from Kashgar came through the Karakoram Pass into Nubra before heading to Leh. The Bactrian camels are descendants of those caravan animals. Turtuk was part of Baltistan (Pakistan-controlled) until the 1971 war when India advanced the LoC. Older Turtuk residents remember being Pakistani citizens. The Yabgo (chief) family's house in Turtuk is now a museum.",
+      "warnings": "Khardung La crossing at 5359m is genuinely dangerous if you haven't acclimatized in Leh first \u2014 people die here every season from HAPE (high-altitude pulmonary edema). Do NOT cross Khardung La on your first or second day in Leh. Fuel: fill up completely in Leh, the Diskit pump is unreliable. Carry cash \u2014 no ATMs in the valley. The road has military convoys and you may wait 30-60 minutes for them to pass. Turtuk road has sections that wash out \u2014 check conditions."
+    },
+    "translations": {},
+    "monthly_suitability": [
+      {
+        "m": 1,
+        "score": 0,
+        "note": "Khardung La closed by snow. Valley inaccessible except by helicopter (military only)."
+      },
+      {
+        "m": 2,
+        "score": 0,
+        "note": "Same. Deep winter, road completely shut."
+      },
+      {
+        "m": 3,
+        "score": 0,
+        "note": "Still closed. Snow clearing hasn't begun."
+      },
+      {
+        "m": 4,
+        "score": 1,
+        "note": "BRO begins clearing Khardung La. Road may open by late April in good years."
+      },
+      {
+        "m": 5,
+        "score": 3,
+        "note": "Road usually open by mid-May. Services limited. Fewer tourists \u2014 good if you want solitude."
+      },
+      {
+        "m": 6,
+        "score": 5,
+        "note": "Peak season. All roads open, all camps operational, Turtuk accessible. Book ahead."
+      },
+      {
+        "m": 7,
+        "score": 5,
+        "note": "Best month. Warm, dry, apricots ripening in Turtuk. Fresh apricot season is reason alone to come."
+      },
+      {
+        "m": 8,
+        "score": 4,
+        "note": "Excellent but occasional rain-shadow leaks can cause flash floods in the valley. Rare but real."
+      },
+      {
+        "m": 9,
+        "score": 5,
+        "note": "Golden light, fewer crowds, all access intact. Arguably the best month."
+      },
+      {
+        "m": 10,
+        "score": 3,
+        "note": "Getting cold. Camps closing. Road open but Khardung La can get early snow."
+      },
+      {
+        "m": 11,
+        "score": 0,
+        "note": "Road closed or closing. Do not attempt."
+      },
+      {
+        "m": 12,
+        "score": 0,
+        "note": "Completely inaccessible by road."
+      }
+    ],
+    "kids_friendly": {
+      "suitable": false,
+      "rating": 2,
+      "min_recommended_age": 12,
+      "best_age_group": "14-18",
+      "stroller_accessible": false,
+      "reasons": [
+        "The camel rides and sand dunes genuinely delight kids who can handle the altitude",
+        "Turtuk village is culturally fascinating for older children",
+        "The valley floor at 3048m is actually lower than Leh \u2014 slightly easier breathing"
+      ],
+      "concerns": [
+        "Khardung La crossing hits 5359m \u2014 extreme altitude exposure even for a short period, dangerous for children",
+        "No medical facilities worth the name in the entire valley",
+        "5-hour rough road from Leh with a high-altitude pass \u2014 kids get severely carsick and altitude-sick simultaneously",
+        "No mobile network to call for help in most of the valley",
+        "Dehydration and UV exposure compounded by long travel day"
+      ],
+      "kid_highlights": [
+        "Bactrian camel rides at Hunder (the double humps fascinate kids)",
+        "Playing in sand dunes with mountain backdrop",
+        "Turtuk apricot orchards (in season)"
+      ],
+      "not_suitable_reason": "The Khardung La crossing at 5359m is the deal-breaker. Even healthy adults get AMS symptoms at this altitude. Children's smaller lung capacity and faster metabolism make them disproportionately vulnerable. No pediatric care exists in the valley. If a child develops HAPE at Hunder, you're 5 hours from the nearest hospital over a 5359m pass."
+    }
+  },
+  {
+    "id": "pangong-lake",
+    "name": "Pangong Tso (Pangong Lake)",
+    "state_id": "ladakh",
+    "region": "Eastern Ladakh / Chang Chenmo",
+    "coords": {
+      "lat": 33.7595,
+      "lng": 78.665
+    },
+    "elevation_m": 4350,
+    "type": [
+      "lake",
+      "high-altitude",
+      "border-area"
+    ],
+    "vibe": [
+      "dramatic",
+      "photography",
+      "bucket-list",
+      "remote"
+    ],
+    "difficulty": "hard",
+    "nearest_airport": "Kushok Bakula Rimpochee (IXL), Leh \u2014 then 160km, 5-6 hours",
+    "nearest_railhead": "None (nearest: Jammu Tawi, 860km)",
+    "tagline": "The most Instagrammed lake in India and the most dangerous for unprepared tourists \u2014 4350m of electric blue water that doesn't care about your selfie.",
+    "why_special": "Pangong is 134km long, extends from India into China, and changes colour from azure to deep blue to turquoise depending on the light. The 3 Idiots climax was filmed here, which made it famous and also ruined it with garbage and overcrowding. At 4350m, it's dangerously high altitude \u2014 people have died here from HAPE because they drove straight from Leh without acclimatizing. The lake is extraordinary. The tourist infrastructure around it is not.",
+    "budget_tier": "budget-to-mid",
+    "ideal_duration_min": 1,
+    "ideal_duration_max": 2,
+    "cell_network": "None. Zero. No BSNL, no Jio, no Airtel. Complete communication blackout from Tangste onwards.",
+    "atm_available": false,
+    "medical_facility": "None. The nearest anything resembling medical care is Leh, 5-6 hours away. Army camps exist but are not public medical facilities.",
+    "permit_required": "Inner Line Permit (ILP) required. Multiple checkpoints between Leh and Pangong \u2014 carry printed permits and ID at all times. Permits checked at Chang La and before Spangmik.",
+    "languages_spoken": [
+      "Ladakhi",
+      "Hindi"
+    ],
+    "tags": [
+      "iconic-lake",
+      "3-idiots",
+      "high-altitude",
+      "photography",
+      "border-area",
+      "bucket-list"
+    ],
+    "best_months": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "avoid_months": [
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "deep_dive": {
+      "detailed_description": "Pangong Tso is an endorheic lake (no outlet) at 4350m stretching 134km from India into Tibet/China. Only about 40% of the lake is in India. The water is brackish but not as salty as you'd expect \u2014 the colours come from minerals and the extreme clarity of high-altitude light. The famous camping spot at Spangmik/Lukung is where the 3 Idiots scene was filmed. The road from Leh goes over Chang La (5360m), which is brutally cold and high even by Ladakh standards. The lakeside camps are basic \u2014 expect cold nights, no heating, no toilets (some have rudimentary ones), and altitude-induced insomnia.",
+      "things_to_do": [
+        "Sunrise over Pangong Lake \u2014 the colour changes are genuinely magical, this is not overhyped",
+        "Walk along the lakeshore \u2014 the water clarity at the edges is startling",
+        "Drive along the lake to Merak and Man (extended permit area, less crowded)",
+        "Chang La pass \u2014 at 5360m, it's cold even in July, tea stall at the top",
+        "Tangste village \u2014 last settlement with any services before the lake",
+        "Star photography at night \u2014 zero light pollution, the Milky Way reflects in the lake"
+      ],
+      "access_notes": "From Leh: 160km via Chang La (5360m), 5-6 hours. Road is paved for most of the route but deteriorates near the lake. Fill fuel in Leh \u2014 NO fuel available between Leh and Pangong. If you're returning via Nubra (Shyok route via Durbuk-Shyok-Nubra road), check road conditions \u2014 this route avoids backtracking through Leh but is longer and less maintained. Start from Leh by 6am to arrive in daylight.",
+      "stays": "Lakeside camps at Spangmik/Lukung/Man \u2014 tented with cots, sleeping bags, and rudimentary toilets. \u20b92000-5000/night. No heating. It drops to -5\u00b0C at night even in July. Carry a warm sleeping bag even if the camp provides blankets. A few concrete guesthouses in Spangmik. Tangste has basic rooms for those who want to acclimatize before the lake.",
+      "food": "Dal-rice and Maggi at lakeside camps. That's basically it. Carry your own snacks, energy bars, and enough water for 2 days. Tea stall at Chang La. The camps cook basic meals but don't expect variety or quality.",
+      "festivals": "None at the lake. The area is too remote and high for permanent settlements or cultural events.",
+      "photography": "Sunrise is the money shot \u2014 the lake transitions through 5-6 shades of blue in 30 minutes. Night sky with Milky Way reflecting in still water. The approach road through Chang La with prayer flags. The 3 Idiots yellow scooter prop (it's still there, increasingly weathered). Marmots near Tangste \u2014 they're everywhere and photogenic.",
+      "hidden_gems": "Merak and Man villages on the far side of the lake (need extended permit) \u2014 Changpa nomad settlements with yak herds and zero tourists. The lake at Lukung point (less crowded than Spangmik). The Shyok route back to Nubra if your permit allows \u2014 you see the lake from above and the road follows the Shyok River through stunning gorges.",
+      "history": "Pangong has been contested territory between India and China since the 1962 war. The LAC (Line of Actual Control) runs through the lake. The 2020 Galwan Valley clash happened north of here and led to enhanced military presence. Chinese and Indian boats patrol different sections of the lake. You're literally camping at the edge of a geopolitical flashpoint \u2014 the army presence is heavy and visible.",
+      "warnings": "ALTITUDE IS THE KILLER HERE. At 4350m with Chang La at 5360m en route, this is the most dangerous tourist destination in Ladakh. Do NOT come here without spending minimum 2-3 days acclimatizing in Leh. Symptoms of HAPE (fluid in lungs): breathlessness at rest, gurgling breath, blue lips \u2014 this is a medical emergency requiring immediate descent. People have died at Pangong from HAPE because they ignored symptoms. No medical help exists at the lake. Carry Diamox, Dexamethasone (prescription, for emergencies only), and oxygen cans. Temperature drops to -5\u00b0C at night even in peak summer \u2014 bring real cold-weather gear. Take your garbage out \u2014 the lake is drowning in tourist trash."
+    },
+    "translations": {},
+    "monthly_suitability": [
+      {
+        "m": 1,
+        "score": 0,
+        "note": "Lake partially frozen. Road closed. Temperature -30\u00b0C. Completely inaccessible."
+      },
+      {
+        "m": 2,
+        "score": 0,
+        "note": "Same. Frozen and inaccessible."
+      },
+      {
+        "m": 3,
+        "score": 0,
+        "note": "Still frozen. Roads buried under snow."
+      },
+      {
+        "m": 4,
+        "score": 1,
+        "note": "Thawing begins. Road clearing may start late April. Not reliably accessible."
+      },
+      {
+        "m": 5,
+        "score": 3,
+        "note": "Road usually opens mid-May. Camps setting up. Lake still partially icy \u2014 actually beautiful."
+      },
+      {
+        "m": 6,
+        "score": 5,
+        "note": "Peak. Full colour spectrum. All camps open. Heavy tourist traffic \u2014 expect company."
+      },
+      {
+        "m": 7,
+        "score": 5,
+        "note": "Best colour. Warm-ish days (15-20\u00b0C). Clear skies. The iconic Pangong blue at its peak."
+      },
+      {
+        "m": 8,
+        "score": 4,
+        "note": "Still excellent. Occasional cloud cover from monsoon spillover can dull the colours for a day."
+      },
+      {
+        "m": 9,
+        "score": 5,
+        "note": "Crystal clarity post-monsoon. Fewer tourists than July. Best photography month."
+      },
+      {
+        "m": 10,
+        "score": 2,
+        "note": "Very cold at night (-10\u00b0C). Camps closing. Lake still beautiful but services vanishing."
+      },
+      {
+        "m": 11,
+        "score": 0,
+        "note": "Road closed or about to close. Lake beginning to freeze."
+      },
+      {
+        "m": 12,
+        "score": 0,
+        "note": "Frozen. Inaccessible. -25\u00b0C."
+      }
+    ],
+    "kids_friendly": {
+      "suitable": false,
+      "rating": 1,
+      "min_recommended_age": 14,
+      "best_age_group": "16-18",
+      "stroller_accessible": false,
+      "reasons": [
+        "The lake is genuinely awe-inspiring and older teens capable of handling altitude will remember it forever"
+      ],
+      "concerns": [
+        "4350m elevation is in the HAPE danger zone for children \u2014 this is not a mild altitude concern, it's a genuine life-threat",
+        "Chang La crossing at 5360m means even a day trip exposes children to extreme altitude",
+        "Zero medical facilities at the lake \u2014 nearest hospital is 5-6 hours away in Leh",
+        "No cell network \u2014 you cannot call for help",
+        "Night temperatures drop to -5\u00b0C even in July \u2014 hypothermia risk for small children",
+        "5-6 hour rough road journey each way is exhausting for children",
+        "No toilets, no running water, no electricity at most camps"
+      ],
+      "kid_highlights": [
+        "Marmots along the road (kids love spotting them)",
+        "The lake colours are genuinely mesmerizing for any age"
+      ],
+      "not_suitable_reason": "4350m with a 5360m pass crossing is medically dangerous for children. HAPE can kill a healthy child in hours and there are zero medical facilities within 5 hours. The Indian Academy of Pediatrics recommends against taking children under 12 above 3500m. This destination is at 4350m. Do not bring young children here."
+    }
+  },
+  {
+    "id": "tso-moriri",
+    "name": "Tso Moriri",
+    "state_id": "ladakh",
+    "region": "Changthang Plateau / Rupshu",
+    "coords": {
+      "lat": 32.94,
+      "lng": 78.315
+    },
+    "elevation_m": 4522,
+    "type": [
+      "lake",
+      "high-altitude",
+      "nomadic-culture",
+      "wildlife"
+    ],
+    "vibe": [
+      "remote",
+      "untouched",
+      "spiritual",
+      "photography",
+      "offbeat"
+    ],
+    "difficulty": "hard",
+    "nearest_airport": "Kushok Bakula Rimpochee (IXL), Leh \u2014 then 240km, 7-8 hours",
+    "nearest_railhead": "None (nearest: Jammu Tawi, 940km)",
+    "tagline": "Everything Pangong wishes it still was \u2014 wilder, emptier, higher, and free of selfie sticks.",
+    "why_special": "Tso Moriri is the lake that serious Ladakh travellers prefer over Pangong. At 4522m, it's even higher, but the payoff is an untouched Changthang plateau with Changpa nomads herding pashmina goats around Korzok village, migratory birds (including bar-headed geese and black-necked cranes), and a lake that's 28km long with zero camps on the shore. It's harder to reach, which keeps the selfie crowds at Pangong. The price you pay: even more remote, even less infrastructure, even more altitude.",
+    "budget_tier": "budget",
+    "ideal_duration_min": 2,
+    "ideal_duration_max": 3,
+    "cell_network": "None. Absolute zero. The last signal dies somewhere around Chumur. Satellite phone only.",
+    "atm_available": false,
+    "medical_facility": "Nothing. Korzok has a basic health post that may or may not be staffed. Nearest real medical care is Leh, 7-8 hours away. Carry everything.",
+    "permit_required": "Inner Line Permit (ILP) required \u2014 specifically for Changthang/Tso Moriri. Apply in Leh. Checkpoints at Upshi and before Korzok. Carry printed copies.",
+    "languages_spoken": [
+      "Ladakhi",
+      "Changpa dialect",
+      "Hindi"
+    ],
+    "tags": [
+      "offbeat",
+      "nomadic-culture",
+      "wildlife",
+      "high-altitude-lake",
+      "photography",
+      "birdwatching",
+      "pashmina"
+    ],
+    "best_months": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "avoid_months": [
+      11,
+      12,
+      1,
+      2,
+      3
+    ],
+    "deep_dive": {
+      "detailed_description": "Tso Moriri sits on the Changthang Plateau at 4522m \u2014 a high-altitude wetland that's been declared a Ramsar site for its ecological importance. The lake is 28km long and 8km wide, surrounded by 6000m+ peaks. Korzok, on the western shore, is one of the highest permanently inhabited settlements in India. The Changpa nomads here are the source of pashmina \u2014 their goats produce the ultra-fine wool that becomes the shawls worth lakhs in Delhi. Unlike Pangong, Tso Moriri has no Bollywood association and no tourist camps at the shore \u2014 the Ramsar status prevents commercial activity near the water. This keeps it clean and empty and magnificently lonely.",
+      "things_to_do": [
+        "Walk the Korzok village \u2014 Changpa nomad settlement, 400-year-old monastery, pashmina goats",
+        "Lakeshore walk (don't camp \u2014 Ramsar regulations) \u2014 the stillness at sunrise is meditative",
+        "Birdwatching \u2014 bar-headed geese, black-necked cranes (endangered, May-September), Brahminy ducks",
+        "Drive the Changthang plateau route \u2014 vast grasslands with wild kiang (Tibetan wild ass) and marmots",
+        "Puga hot springs (en route) \u2014 geothermal area with sulphur vents, feels like another planet",
+        "Tso Kar (White Lake) \u2014 smaller salt lake en route, with wild ass herds and encrusted white shores"
+      ],
+      "access_notes": "Two routes from Leh: (1) Via Chumur/Mahe (the 'standard' route, 240km, 7-8 hours, through Upshi and the Changthang). (2) Via Tso Kar (slightly longer but includes the White Lake). Both routes are on dirt/gravel for significant stretches. NO fuel between Leh and Korzok \u2014 fill up completely in Leh and carry a 10-litre jerry can as insurance. This is 240km of nothing. A breakdown here means waiting for the next vehicle, which could be hours or a day.",
+      "stays": "Korzok has 4-5 basic guesthouses and homestays (\u20b9800-2000/night). No lakeside camps (protected area). Sleeping bags essential \u2014 it drops to -10\u00b0C at night in summer. One or two parachute tent camps on the outskirts of Korzok. Zero luxury, zero pretension. The homestay experience with Changpa families is raw and genuine.",
+      "food": "Whatever the guesthouse or homestay cooks \u2014 expect dal, rice, chapati, and butter tea. Carry all snacks, energy food, and water from Leh. There is no restaurant, no shop worth the name. The Changpa diet is butter tea, tsampa (roasted barley flour), and dried meat \u2014 they may share if you're a guest.",
+      "festivals": "Korzok Gustor Festival (July/August) \u2014 Cham dances at the monastery, Changpa horse racing, archery. One of the most authentic and least tourist-overrun festivals in Ladakh. Dates follow the Tibetan calendar.",
+      "photography": "Sunrise over Tso Moriri with 6000m peaks reflected in still water \u2014 one of the finest landscape shots in India. Changpa nomads with pashmina goat herds. Black-necked cranes (telephoto, maintain distance, they're endangered). Korzok monastery against the lake. Puga hot springs steam vents. Tso Kar white-encrusted shores with wild ass herds.",
+      "hidden_gems": "Tso Kar lake en route is itself a hidden gem (most people skip it to reach Moriri). Puga Valley geothermal area \u2014 India's most significant geothermal site, being surveyed for energy. The Changpa nomad families in Korzok who weave pashmina \u2014 some will show you the goats and the raw wool if you're respectful and patient. Kiagar Tso \u2014 a tiny turquoise lake near Tso Kar that almost nobody visits.",
+      "history": "The Changpa nomads have inhabited the Changthang for centuries, following seasonal migration patterns with their pashmina goats and yaks. Korzok Monastery is approximately 400 years old, affiliated with the Drukpa Kagyu order. The region was historically a buffer zone between Ladakh and Tibet, and the nomads moved freely across what is now the India-China border until 1962. The pashmina trade that originates here eventually produces the \u20b950,000-\u20b92,00,000 shawls sold in Delhi and Srinagar \u2014 the Changpa see almost none of that money.",
+      "warnings": "4522m is extreme altitude. All the Pangong warnings apply here, doubled by the extra remoteness. You are 7-8 hours from Leh on bad roads. If someone develops HAPE here, evacuation is a multi-hour nightmare. Acclimatize thoroughly in Leh (3 days minimum, not 2) before coming here. Carry emergency oxygen. The road has no services, no fuel, no phone signal for 240km. Travel in a convoy of at least 2 vehicles if possible. Carry a satellite communicator (Garmin inReach or similar) if you can. Hypothermia at night is real even in July \u2014 bring proper gear."
+    },
+    "translations": {},
+    "monthly_suitability": [
+      {
+        "m": 1,
+        "score": 0,
+        "note": "Frozen solid. Road impassable. Changpa nomads in winter camps. -30\u00b0C."
+      },
+      {
+        "m": 2,
+        "score": 0,
+        "note": "Same. Complete winter lockdown."
+      },
+      {
+        "m": 3,
+        "score": 0,
+        "note": "Still frozen and inaccessible."
+      },
+      {
+        "m": 4,
+        "score": 1,
+        "note": "Roads begin clearing. Not reliably open. Ice on lake."
+      },
+      {
+        "m": 5,
+        "score": 2,
+        "note": "Road may be passable by late May. Lake thawing. Very cold. Limited to no services."
+      },
+      {
+        "m": 6,
+        "score": 4,
+        "note": "Open and accessible. Birds arriving. Korzok services operational. Still very cold at night."
+      },
+      {
+        "m": 7,
+        "score": 5,
+        "note": "Best month. Wildflowers, migratory birds, Korzok festival, warmest temperatures (still cold at night)."
+      },
+      {
+        "m": 8,
+        "score": 5,
+        "note": "Excellent. Peak birdwatching. Black-necked cranes present. Nomad life in full swing."
+      },
+      {
+        "m": 9,
+        "score": 4,
+        "note": "Post-monsoon clarity. Birds still present. Getting cold. Services starting to wind down."
+      },
+      {
+        "m": 10,
+        "score": 2,
+        "note": "Very cold. Services closing. Road still open but winter closing in fast."
+      },
+      {
+        "m": 11,
+        "score": 0,
+        "note": "Road closed. Lake freezing. Do not attempt."
+      },
+      {
+        "m": 12,
+        "score": 0,
+        "note": "Completely inaccessible."
+      }
+    ],
+    "kids_friendly": {
+      "suitable": false,
+      "rating": 1,
+      "min_recommended_age": 16,
+      "best_age_group": "16-18",
+      "stroller_accessible": false,
+      "reasons": [
+        "Mature teens interested in wildlife and nomadic culture will find this life-changing"
+      ],
+      "concerns": [
+        "4522m \u2014 higher than Pangong, deeper into the danger zone",
+        "7-8 hours on bad roads from Leh with zero services en route",
+        "Absolutely no medical facilities \u2014 a health emergency here is potentially fatal",
+        "No communication \u2014 no cell network, no landline, nothing",
+        "Night temperatures of -10\u00b0C in summer \u2014 hypothermia risk for children",
+        "Basic food only \u2014 no child-friendly options available"
+      ],
+      "kid_highlights": [
+        "Marmots and kiang (wild ass) sightings along the road",
+        "Changpa goats and yaks around Korzok"
+      ],
+      "not_suitable_reason": "4522m with zero medical infrastructure and 7-8 hours from the nearest hospital. This is one of the most remote inhabited places in India. A child developing altitude sickness here faces a genuine survival situation. Do not bring children under 16."
+    }
+  },
+  {
+    "id": "zanskar",
+    "name": "Zanskar Valley",
+    "state_id": "ladakh",
+    "region": "Zanskar / Southern Ladakh",
+    "coords": {
+      "lat": 33.4959,
+      "lng": 76.9281
+    },
+    "elevation_m": 3660,
+    "type": [
+      "valley",
+      "monastery",
+      "trekking",
+      "frozen-river"
+    ],
+    "vibe": [
+      "extreme-remote",
+      "adventure",
+      "spiritual",
+      "trekking",
+      "offbeat"
+    ],
+    "difficulty": "extreme",
+    "nearest_airport": "Kushok Bakula Rimpochee (IXL), Leh \u2014 then 460km, 2 days by road",
+    "nearest_railhead": "None (nearest: Jammu Tawi, 980km)",
+    "tagline": "India's most isolated valley \u2014 where monks live in cliff-face caves and the only winter road is a frozen river you walk on.",
+    "why_special": "Zanskar is what Ladakh was 30 years ago \u2014 untouched, barely accessible, and governed by the rhythm of seasons in a way that no other inhabited place in India is. The valley is cut off from the world for 8 months of the year when the only access is the Chadar Trek \u2014 walking on the frozen Zanskar River. In summer, the road from Kargil via Pensi La opens, revealing Padum (the capital), the jaw-dropping Phuktal Monastery (built into a cave), and some of India's most demanding treks. A road from Nimmu (near Leh) is being built and will change Zanskar forever \u2014 go before it's done.",
+    "budget_tier": "budget",
+    "ideal_duration_min": 4,
+    "ideal_duration_max": 7,
+    "cell_network": "BSNL postpaid in Padum town only, unreliable. Zero signal everywhere else in the valley.",
+    "atm_available": false,
+    "medical_facility": "Basic health centre in Padum, usually understaffed. The real medical infrastructure is in Kargil (8-10 hours away) or Leh (2 days away by current road).",
+    "permit_required": "No ILP required for Zanskar (unlike Nubra/Pangong). However, the Chadar Trek requires a registered operator and Leh DC permit. Carry ID for military checkpoints.",
+    "languages_spoken": [
+      "Zanskari",
+      "Ladakhi",
+      "Hindi"
+    ],
+    "tags": [
+      "extreme-adventure",
+      "chadar-trek",
+      "monastery",
+      "phuktal",
+      "trekking",
+      "frozen-river",
+      "isolation"
+    ],
+    "best_months": [
+      7,
+      8,
+      9
+    ],
+    "avoid_months": [
+      11,
+      3,
+      4,
+      5
+    ],
+    "deep_dive": {
+      "detailed_description": "Zanskar is a valley within a valley \u2014 surrounded by the Zanskar Range on all sides, accessible only through high passes or the frozen river in winter. Padum (3660m) is the administrative centre, a small town with a few guesthouses and a monastery. The valley stretches along the Zanskar and Stod rivers, with scattered Buddhist villages, ancient monasteries, and some of the most dramatic mountain landscapes in the Himalaya. Phuktal Monastery is the headline \u2014 a gompa literally built into a limestone cave on a cliff above the Tsarap River. Getting there requires a 2-day trek from Purne. The Chadar Trek (January-February) involves walking 62km on the frozen Zanskar River \u2014 one of the world's great adventure experiences, and one of its most dangerous.",
+      "things_to_do": [
+        "Phuktal Monastery trek \u2014 2 days from Purne, one of the most spectacular monastery settings on Earth",
+        "Chadar Trek (January-February) \u2014 walk on the frozen Zanskar River for 6-8 days (with registered operator only)",
+        "Padum Monastery and Karsha Monastery (the largest in Zanskar)",
+        "Sani Monastery \u2014 one of the oldest in Ladakh, possibly pre-Buddhist Bon origin",
+        "Zangla village and the ruins of the Zanskar king's palace",
+        "Trek from Padum to Lamayuru (Zanskar to Ladakh, 6-10 days, serious trekking)",
+        "Stongde Monastery \u2014 cliff-perched, dramatic, rarely visited"
+      ],
+      "access_notes": "Summer road: Kargil \u2192 Pensi La (4400m) \u2192 Padum, 240km, 8-10 hours. Open July to October only. Road from Nimmu (near Leh) is under construction and may open partially. Winter: the ONLY access is the Chadar Trek on the frozen river (Jan-Feb, with operator), or helicopter (military/emergency). Fuel: fill up in Kargil. There is reportedly a petrol pump in Padum but don't count on it having fuel. Carry a jerry can. This is the most logistically challenging destination in this file \u2014 plan 4-7 days minimum.",
+      "stays": "Padum has 5-6 basic guesthouses and one or two 'hotels' (\u20b9500-2000/night). Homestays in villages along the trekking routes. Camping is necessary for Phuktal trek and all multi-day treks. On the Chadar Trek, you sleep in caves along the frozen river. None of this is comfortable. All of it is unforgettable.",
+      "food": "Padum has a few restaurants serving dal, rice, momos, and thukpa. Village homestays provide whatever the family eats \u2014 simple, filling, repetitive. On treks, you eat what you or your guide carries. Carry energy bars, dry fruits, and snacks from Leh or Kargil. Butter tea is the constant companion.",
+      "festivals": "Karsha Gustor (July) \u2014 masked Cham dances at Karsha Monastery, the biggest festival in Zanskar. Sani Nasjal (August) \u2014 festival at Sani Monastery featuring the rare flowering of the Sani naropa flower. Both are authentic and virtually tourist-free.",
+      "photography": "Phuktal Monastery from across the gorge \u2014 one of the most extraordinary monastery images in the world. The frozen Zanskar River (Chadar) \u2014 ice formations, blue ice, walkers on the river. Karsha Monastery spread across the hillside above Padum. Stongde Monastery on its cliff. The Pensi La approach with glaciers. Village life in Zanskar is among the most photogenic and least photographed in India.",
+      "hidden_gems": "Stongde Monastery (very few tourists, dramatic cliff setting). Zangla village and the nunnery there. The Lungnak Valley south of Phuktal \u2014 completely empty, staggering scenery. Shade village \u2014 a tiny settlement with a beautiful monastery between Karsha and Padum. The half-built Nimmu-Padum road itself \u2014 being carved through impossible gorges by BRO, a feat of engineering.",
+      "history": "Zanskar was an independent Buddhist kingdom until the 10th century, then vassal to Ladakh, then to the Dogras. Its monasteries date back to the 8th century (Sani claims 2nd century origin connected to Padmasambhava). Phuktal was founded around 2500 years ago according to legend (more likely 12th century). Because of its extreme isolation, Zanskar preserved Tibetan Buddhist culture even more purely than Leh \u2014 it was simply too hard for anyone to get in and change things. The Chadar (frozen river) was historically the only winter trade route and supply line.",
+      "warnings": "Zanskar is not a casual destination. It requires physical fitness, mental preparation for isolation, and serious logistics. The road is open 3-4 months per year. Medical evacuation in an emergency would require helicopter (if weather permits) or a multi-day road journey. The Chadar Trek has killed people \u2014 hypothermia, drowning when ice breaks, falling into crevasses. ONLY do it with a registered, reputable operator (check Leh DC's approved list). Carry satellite communication. Tell someone your itinerary before going in. AMS applies \u2014 Padum is 3660m and the passes are 4400m+."
+    },
+    "translations": {},
+    "monthly_suitability": [
+      {
+        "m": 1,
+        "score": 3,
+        "note": "Chadar Trek season. Frozen Zanskar River is walkable. Extreme cold (-25\u00b0C). For serious trekkers with operators only."
+      },
+      {
+        "m": 2,
+        "score": 3,
+        "note": "Chadar Trek continues. Ice conditions vary \u2014 some years the river doesn't freeze properly and the trek is cancelled."
+      },
+      {
+        "m": 3,
+        "score": 0,
+        "note": "Chadar season ending. Road not open. Ice unreliable. Worst of both worlds \u2014 no access."
+      },
+      {
+        "m": 4,
+        "score": 0,
+        "note": "No road access. Snow on Pensi La. Valley completely cut off."
+      },
+      {
+        "m": 5,
+        "score": 0,
+        "note": "Pensi La still under snow. Valley inaccessible."
+      },
+      {
+        "m": 6,
+        "score": 2,
+        "note": "Pensi La may clear by late June. Road conditions uncertain. Early arrivals possible but services limited."
+      },
+      {
+        "m": 7,
+        "score": 5,
+        "note": "Road open. Valley at its best \u2014 green barley, flowers, warm days. Karsha festival. Phuktal trek season starts."
+      },
+      {
+        "m": 8,
+        "score": 5,
+        "note": "Peak season. All treks operational. Sani festival. Warmest month. Best time for Phuktal."
+      },
+      {
+        "m": 9,
+        "score": 4,
+        "note": "Still open. Getting cold. Harvest season in villages \u2014 golden barley. Thinner crowds. Beautiful light."
+      },
+      {
+        "m": 10,
+        "score": 2,
+        "note": "Pensi La may close any day after mid-October. Risky \u2014 you could get trapped. Services shutting down."
+      },
+      {
+        "m": 11,
+        "score": 0,
+        "note": "Road closed. Valley sealed until January Chadar or next July."
+      },
+      {
+        "m": 12,
+        "score": 1,
+        "note": "Pre-Chadar. River not yet frozen enough. Valley inaccessible. Some early Chadar attempts in late December."
+      }
+    ],
+    "kids_friendly": {
+      "suitable": false,
+      "rating": 1,
+      "min_recommended_age": 16,
+      "best_age_group": "18+",
+      "stroller_accessible": false,
+      "reasons": [
+        "Mature, physically fit teens who trek regularly could handle the Padum road trip (not treks)"
+      ],
+      "concerns": [
+        "Most remote valley in this database \u2014 medical evacuation is measured in days, not hours",
+        "No medical facility of any meaningful kind in the entire valley",
+        "8-10 hours on dangerous mountain roads over a 4400m pass",
+        "No communication infrastructure \u2014 satellite phone is the only option",
+        "Multi-day treks required to reach the main attractions (Phuktal)",
+        "Food is extremely limited \u2014 children with dietary restrictions will not eat"
+      ],
+      "kid_highlights": [],
+      "not_suitable_reason": "Zanskar is one of the most remote inhabited valleys in India. The road is open 3-4 months per year, there are no medical facilities, no communication, and the main attractions require multi-day treks at altitude. A child medical emergency here could be fatal simply due to evacuation logistics. This is an adults-only expedition destination."
+    }
+  },
+  {
+    "id": "lamayuru-alchi-likir",
+    "name": "Lamayuru\u2013Alchi\u2013Likir Monastery Circuit",
+    "state_id": "ladakh",
+    "region": "Central Ladakh / Srinagar-Leh Highway",
+    "coords": {
+      "lat": 34.2833,
+      "lng": 76.8167
+    },
+    "elevation_m": 3510,
+    "type": [
+      "monastery-circuit",
+      "heritage",
+      "cultural"
+    ],
+    "vibe": [
+      "spiritual",
+      "art-history",
+      "photography",
+      "roadtrip"
+    ],
+    "difficulty": "moderate",
+    "nearest_airport": "Kushok Bakula Rimpochee (IXL), Leh \u2014 Lamayuru is 125km west",
+    "nearest_railhead": "None (nearest: Jammu Tawi, 590km via Srinagar highway)",
+    "tagline": "A thousand years of Buddhist art in three stops \u2014 plus a moonscape that makes you question which planet you're on.",
+    "why_special": "This monastery circuit along the Srinagar-Leh highway packs more cultural density into a day trip than anywhere else in Ladakh. Lamayuru sits on a surreal lunar landscape (genuinely looks like the moon), Alchi houses 1000-year-old Buddhist murals that rival anything in Tibet (and photography is banned because they're that precious), and Likir has a giant gold Maitreya Buddha overlooking the Indus Valley. All three are between 3100-3510m \u2014 lower than Leh and far more manageable than the high-altitude lake runs.",
+    "budget_tier": "budget-to-mid",
+    "ideal_duration_min": 1,
+    "ideal_duration_max": 2,
+    "cell_network": "Patchy BSNL. Alchi and Likir have intermittent signal. Lamayuru has very limited coverage. Don't rely on data.",
+    "atm_available": false,
+    "medical_facility": "Nothing beyond basic dispensaries. Leh (1.5-3 hours depending on which monastery) is the nearest real medical facility.",
+    "permit_required": "No ILP required for any of these. They're on the main Srinagar-Leh highway corridor. Just carry standard ID.",
+    "languages_spoken": [
+      "Ladakhi",
+      "Hindi",
+      "English (at monasteries)"
+    ],
+    "tags": [
+      "monasteries",
+      "ancient-art",
+      "moonscape",
+      "heritage",
+      "day-trip",
+      "srinagar-leh-highway",
+      "photography"
+    ],
+    "best_months": [
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "avoid_months": [
+      12,
+      1,
+      2
+    ],
+    "deep_dive": {
+      "detailed_description": "The Srinagar-Leh highway runs along the Indus Valley, and three of Ladakh's most important monasteries sit just off it. Lamayuru (125km from Leh) is the oldest monastery in Ladakh, possibly dating to the 10th century, perched above a surreal moonland formation of eroded clay \u2014 the landscape alone is worth the drive. Alchi (70km from Leh) is a tiny village hiding the Chos-khor complex, a UNESCO tentative list site with 11th-century Kashmiri-style Buddhist murals that are among the finest surviving examples of early Himalayan art \u2014 photography inside is banned. Likir (52km from Leh) is a working monastery with a striking 25m gold Maitreya Buddha statue and an excellent museum. All three can be done as a (long) day trip from Leh or, better, as a 2-day loop with an overnight at Alchi or Lamayuru.",
+      "things_to_do": [
+        "Lamayuru Monastery \u2014 10th century, Naropa's meditation cave, the oldest monastery in Ladakh",
+        "Lamayuru Moonland \u2014 eroded clay formations that look genuinely extraterrestrial, best from the viewpoint above the road",
+        "Alchi Chos-khor \u2014 1000-year-old murals in the Sumtsek temple, Kashmiri-Buddhist art style found nowhere else",
+        "Likir Monastery \u2014 25m gold Maitreya Buddha, museum with thangkas and artifacts, functioning monk school",
+        "Basgo ruins \u2014 crumbling citadel and temple between Likir and Leh with Maitreya murals (often skipped, shouldn't be)",
+        "Indus Valley drive \u2014 the highway itself follows the Indus through dramatic gorges",
+        "Rizong Monastery \u2014 the strictest monastery in Ladakh (detour from the highway, nuns' settlement at Julichen nearby)"
+      ],
+      "access_notes": "All three monasteries are on or just off NH-1 (Srinagar-Leh highway). Well-paved road. Lamayuru is 125km/3 hours from Leh. Alchi is 70km/1.5 hours. Likir is 52km/1 hour. Can be done in a long day trip (12+ hours) or better as overnight. No fuel between Leh and Khalsi (near Alchi) \u2014 fill up in Leh. Coming from Srinagar, you pass through these in reverse order before reaching Leh. The road is a main highway, maintained by BRO, and is the most reliable road in Ladakh.",
+      "stays": "Alchi has 3-4 small guesthouses and the lovely Alchi Kitchen & Guesthouse (\u20b91500-3000). Lamayuru has basic guesthouses attached to the monastery and the Moonland Hotel. Likir has limited stays \u2014 most people base in Leh. Camping possible near Alchi along the Indus. For the best experience, overnight at Alchi \u2014 the village at sunset is peaceful when the day-trippers leave.",
+      "food": "Alchi Kitchen serves surprisingly good food (try the Ladakhi stew). Monastery canteens at Lamayuru and Likir serve basic meals. Khalsi (near Alchi junction) has roadside restaurants \u2014 standard highway dal-rice-momos. Carry water and snacks.",
+      "festivals": "Lamayuru Yuru Kabgyat (June/July) \u2014 one of the most famous Cham dance festivals in Ladakh, 2 days. Likir Dosmoche (February/March). Alchi has no major festival but the Alchi Sangam cultural event occasionally happens.",
+      "photography": "Lamayuru Moonland \u2014 the monastery perched above the lunar landscape is the shot (sunrise light from the east). Alchi murals \u2014 photography BANNED inside the temples, but the exterior courtyard and village are beautiful. Likir Maitreya Buddha against blue sky. Basgo citadel ruins \u2014 dramatic and photogenic. The Indus River gorge between Likir and Lamayuru.",
+      "hidden_gems": "Basgo ruins (most tourists drive past without stopping \u2014 the Maitreya murals inside are exquisite). Rizong Monastery (detour from Khalsi, the strictest and most austere monastery in Ladakh, with the Julichen nunnery in a poplar-lined valley below). Mangyu village (ancient temples, virtually unvisited, between Likir and Khalsi). The confluence of the Indus and Zanskar visible from the highway near Nimmu \u2014 stunning two-tone waters.",
+      "history": "Lamayuru is legendarily associated with Naropa (11th century) and claims founding in the 10th century. The moonland was supposedly a lake bed drained by Naropa's spiritual power (geological reality: ancient lake sediment, but the monastery has been here since the lake was a distant memory). Alchi was founded in the 11th century by the translator Rinchen Zangpo and represents a unique fusion of Kashmiri and Tibetan Buddhist art \u2014 the murals have more in common with Central Asian styles than typical Tibetan art. Likir was founded in the 14th century and is headed by the younger brother of the Dalai Lama.",
+      "warnings": "Lower altitude than most Ladakh destinations (3100-3510m) makes this the most acclimatization-friendly option. Main risk is the road \u2014 highway driving in Ladakh involves blind curves, army convoys, and occasional rockfall. Lamayuru in particular has a steep approach road. At Alchi, photography inside the temples is strictly banned and they take it seriously \u2014 your camera or phone will be noticed and you will be asked to leave. Respect it. The murals are 1000 years old and flash photography damages them."
+    },
+    "translations": {},
+    "monthly_suitability": [
+      {
+        "m": 1,
+        "score": 1,
+        "note": "Srinagar highway closed or unreliable. Monasteries open but getting there from Leh on icy roads is dicey."
+      },
+      {
+        "m": 2,
+        "score": 1,
+        "note": "Same. Possible from Leh in clear weather but cold and limited services."
+      },
+      {
+        "m": 3,
+        "score": 2,
+        "note": "Srinagar highway opening up. Still cold. Monasteries have fewer monks in winter."
+      },
+      {
+        "m": 4,
+        "score": 3,
+        "note": "Highway opening. Spring weather. Good for a quieter visit."
+      },
+      {
+        "m": 5,
+        "score": 4,
+        "note": "Road reliably open. Monasteries fully operational. Pleasant weather."
+      },
+      {
+        "m": 6,
+        "score": 5,
+        "note": "Peak. Lamayuru festival (if timing aligns). Clear skies, warm days. Best photography light."
+      },
+      {
+        "m": 7,
+        "score": 5,
+        "note": "Excellent. All services open. The monsoon that hits the rest of India barely touches this area."
+      },
+      {
+        "m": 8,
+        "score": 4,
+        "note": "Still great. Occasional rain possible but rare. All monasteries accessible."
+      },
+      {
+        "m": 9,
+        "score": 5,
+        "note": "Golden light, harvest colours, thinner crowds. Best overall month for photography."
+      },
+      {
+        "m": 10,
+        "score": 4,
+        "note": "Getting cold but roads open. Autumn light is beautiful. Crowds minimal."
+      },
+      {
+        "m": 11,
+        "score": 2,
+        "note": "Cold. Highway may close late November. Limited services."
+      },
+      {
+        "m": 12,
+        "score": 1,
+        "note": "Winter. Highway unreliable. Possible from Leh only."
+      }
+    ],
+    "kids_friendly": {
+      "suitable": true,
+      "rating": 2,
+      "min_recommended_age": 8,
+      "best_age_group": "10-16",
+      "stroller_accessible": false,
+      "reasons": [
+        "Lower altitude than most Ladakh destinations (3100-3510m) \u2014 relatively safer for acclimatized kids",
+        "Monasteries are visual and educational \u2014 monks, murals, statues engage children",
+        "On a main highway \u2014 better road conditions than anywhere else in Ladakh",
+        "Lamayuru moonscape genuinely excites kids (it looks like a different planet)",
+        "Can be done as a day trip from Leh \u2014 no overnight at remote locations needed"
+      ],
+      "concerns": [
+        "Still 3100-3510m altitude \u2014 AMS is possible for children who haven't acclimatized in Leh first",
+        "Long driving day (8-12 hours round trip for the full circuit) \u2014 kids get restless and carsick",
+        "No medical facilities en route \u2014 Leh is 1-3 hours away",
+        "Monastery stairs are steep and unguarded \u2014 supervision required for young children",
+        "Some children find monasteries boring after the first one \u2014 pace accordingly"
+      ],
+      "kid_highlights": [
+        "Lamayuru moonland \u2014 'we're on the moon!' is a real kid reaction",
+        "Likir's giant gold Buddha statue \u2014 visually impressive for any age",
+        "Watching monks chant at any of the three monasteries",
+        "The Indus River gorge drive \u2014 dramatic scenery from the car window"
+      ],
+      "not_suitable_reason": null
+    }
+  },
+  {
+    "id": "hanle",
+    "name": "Hanle & Umlingla Pass",
+    "state_id": "ladakh",
+    "region": "Eastern Ladakh / Changthang",
+    "coords": {
+      "lat": 32.7794,
+      "lng": 78.9756
+    },
+    "elevation_m": 4500,
+    "type": [
+      "dark-sky",
+      "observatory",
+      "highest-road",
+      "frontier"
+    ],
+    "vibe": [
+      "extreme",
+      "stargazing",
+      "biker",
+      "offbeat",
+      "frontier"
+    ],
+    "difficulty": "extreme",
+    "nearest_airport": "Kushok Bakula Rimpochee (IXL), Leh \u2014 then 260km, 7-8 hours",
+    "nearest_railhead": "None (nearest: Jammu Tawi, 960km)",
+    "tagline": "The darkest skies in India, the highest road on Earth, and the last outpost before the Chinese border \u2014 Hanle is where Ladakh stops pretending to be accessible.",
+    "why_special": "Hanle is home to the Indian Astronomical Observatory (IAO), one of the highest optical telescopes in the world at 4500m, placed here because the skies are among the darkest and driest on the planet. The Milky Way here isn't a faint smudge \u2014 it's a blazing river across the sky. Umlingla Pass (5798m), accessible from Hanle, is officially the world's highest motorable road (BRO-built, verified, unlike Khardung La's false claim). The area borders China, is riddled with army installations, and feels like the edge of the world because it literally is.",
+    "budget_tier": "budget",
+    "ideal_duration_min": 2,
+    "ideal_duration_max": 3,
+    "cell_network": "None. Zero. Army satellite communication exists but is not for tourists. Complete blackout.",
+    "atm_available": false,
+    "medical_facility": "Army medical post (emergency only, at their discretion). No civilian medical facility. Nearest hospital is Leh, 7-8 hours away.",
+    "permit_required": "Inner Line Permit (ILP) specifically for Hanle \u2014 must be mentioned by name on the permit. Standard Nubra/Pangong ILP does NOT cover Hanle. Apply specifically in Leh. Military checkpoints are serious here \u2014 they will read every line of your permit.",
+    "languages_spoken": [
+      "Ladakhi",
+      "Changpa dialect",
+      "Hindi"
+    ],
+    "tags": [
+      "dark-sky",
+      "stargazing",
+      "observatory",
+      "umlingla",
+      "highest-road",
+      "biker-ultimate",
+      "frontier",
+      "extreme-altitude"
+    ],
+    "best_months": [
+      7,
+      8,
+      9
+    ],
+    "avoid_months": [
+      11,
+      12,
+      1,
+      2,
+      3,
+      4
+    ],
+    "deep_dive": {
+      "detailed_description": "Hanle sits on the Changthang Plateau at 4500m, 260km from Leh through Loma and the Changthang wilderness. The Indian Astronomical Observatory (IAO), operated by the Indian Institute of Astrophysics (Bangalore), houses a 2m Chandra optical telescope and the MACE gamma-ray telescope \u2014 one of the highest such installations on Earth. The observatory is here because the combination of altitude, aridity, and zero light pollution creates some of the best astronomical seeing conditions in Asia. Umlingla Pass (5798m / 19,024 ft) was paved by BRO in 2021 and is the highest motorable road in the world \u2014 verified by survey, unlike the dubious Khardung La claim. The road to Umlingla branches off near Hanle and climbs through a landscape that looks like Mars. Hanle also has a 17th-century monastery perched on a hill above the village.",
+      "things_to_do": [
+        "Stargazing \u2014 Hanle has India's darkest certified skies (Bortle Class 1-2). The Milky Way is visible to the naked eye with staggering clarity",
+        "Indian Astronomical Observatory \u2014 visible from outside (public access restricted, but night sky talks sometimes arranged through homestays)",
+        "Umlingla Pass (5798m) \u2014 ride or drive to the world's highest motorable road. The signboard is the new Khardung La selfie, except this one is real",
+        "Hanle Monastery \u2014 17th century Drukpa Kagyu monastery on the hilltop, overlooking the entire plateau",
+        "Changthang wildlife \u2014 kiang (wild ass), Tibetan wolves, foxes, and raptors are commonly spotted around Hanle",
+        "Night sky photography \u2014 astro-photographers consider this a world-class location"
+      ],
+      "access_notes": "From Leh: 260km via Upshi, Chumur/Loma, 7-8 hours. The road is partially paved and partially gravel/dirt. From Tso Moriri: a rough but passable route connects Korzok to Hanle (4-5 hours, check conditions). Fuel: fill up in Leh. NO fuel available between Leh and Hanle \u2014 carry a 20-litre jerry can minimum. Umlingla Pass is 50km beyond Hanle on a BRO road. The road to Umlingla is paved but at 5798m, your engine will lose significant power and you may feel like you're suffocating. Go slow, literally.",
+      "stays": "Hanle has 3-4 homestays and a government guesthouse (\u20b9500-1500/night). The Hanle Dark Sky Reserve has a few designated camping spots. Everything is basic \u2014 outdoor toilets, bucket water, minimal electricity. But the night sky from your doorstep makes every discomfort irrelevant.",
+      "food": "Whatever the homestay cooks \u2014 dal, rice, chapati, butter tea. There is no restaurant. Carry all snacks and emergency food from Leh. Hydration is critical at this altitude \u2014 carry oral rehydration salts and water purification.",
+      "festivals": "Small local festivals at Hanle Monastery follow the Tibetan calendar \u2014 dates are unpredictable. The community is tiny (population ~300) so festivals are intimate affairs.",
+      "photography": "Milky Way arching over the observatory (the shot \u2014 bring a tripod, wide-angle lens, and know your astro-photography settings). Star trails over Hanle Monastery. Umlingla Pass signboard with your bike/vehicle. Kiang herds on the Changthang plateau at golden hour. The sheer emptiness of the landscape \u2014 Hanle is one of the most minimal, stripped-down places you can photograph in India.",
+      "hidden_gems": "The road from Hanle to Umlingla passes through terrain that looks like Mars \u2014 red, barren, completely empty. Merak village (if you detour via Pangong's far side). The hot springs at Chumur en route. On a clear night, you can see satellites crossing the sky every few minutes \u2014 the sky is that transparent.",
+      "history": "Hanle Monastery was founded in the 17th century by the Ladakhi king Sengge Namgyal, and was historically the most important Drukpa Kagyu monastery in the region. The area was a contested border zone during the 1962 Sino-Indian war and remains heavily militarized. The astronomical observatory was established in 2001, chosen after an exhaustive survey of Indian sites for the darkest, driest skies. India's Dark Sky Reserve pilot was launched here.",
+      "warnings": "This is extreme altitude territory. Hanle at 4500m is in the HAPE zone. Umlingla at 5798m is in the death zone for unacclimatized humans \u2014 you are at nearly the altitude of Everest Base Camp, in a car. Symptoms of severe AMS at Umlingla: confusion, ataxia (stumbling), coughing pink froth (HAPE), splitting headache. If ANY of these occur, descend immediately. People have died at Umlingla. Acclimatize in Leh for 3+ days, then ideally spend a night at an intermediate altitude (Tso Kar or the route) before Hanle. No medical help exists. Carry emergency oxygen, Diamox, and Dexamethasone. The road has no services for 260km. Travel with a full tank, spare fuel, food, water, and warm clothing. Hypothermia is possible even in July at Umlingla."
+    },
+    "translations": {},
+    "monthly_suitability": [
+      {
+        "m": 1,
+        "score": 0,
+        "note": "Road closed. -30\u00b0C. Completely inaccessible."
+      },
+      {
+        "m": 2,
+        "score": 0,
+        "note": "Same. Deep winter."
+      },
+      {
+        "m": 3,
+        "score": 0,
+        "note": "Still closed. Snow on passes."
+      },
+      {
+        "m": 4,
+        "score": 0,
+        "note": "Road clearing not yet begun in this sector."
+      },
+      {
+        "m": 5,
+        "score": 1,
+        "note": "Road may open late May. Conditions unreliable. Very cold at night."
+      },
+      {
+        "m": 6,
+        "score": 3,
+        "note": "Road open but conditions variable. Homestays opening. Cold nights. Clear skies starting."
+      },
+      {
+        "m": 7,
+        "score": 5,
+        "note": "Best month. Road open, skies clear, warmest temperatures (still cold at night). Milky Way core visible."
+      },
+      {
+        "m": 8,
+        "score": 5,
+        "note": "Excellent. Peak stargazing. New moon nights in August are legendary here."
+      },
+      {
+        "m": 9,
+        "score": 4,
+        "note": "Clear skies continue. Getting colder. Services starting to wind down."
+      },
+      {
+        "m": 10,
+        "score": 2,
+        "note": "Very cold. Road may close. Only attempt early October."
+      },
+      {
+        "m": 11,
+        "score": 0,
+        "note": "Road closed. Inaccessible."
+      },
+      {
+        "m": 12,
+        "score": 0,
+        "note": "Deep winter. Inaccessible."
+      }
+    ],
+    "kids_friendly": {
+      "suitable": false,
+      "rating": 1,
+      "min_recommended_age": 18,
+      "best_age_group": "18+",
+      "stroller_accessible": false,
+      "reasons": [
+        "The stargazing is educational and awe-inspiring for any human who can appreciate it"
+      ],
+      "concerns": [
+        "4500m base altitude with 5798m pass \u2014 this is extreme high altitude by any medical standard",
+        "Zero medical infrastructure \u2014 the nearest doctor is 7-8 hours away",
+        "Zero communication \u2014 no phone, no internet, no way to call for help",
+        "260km from Leh with no services \u2014 a breakdown is a survival situation",
+        "Umlingla at 5798m can cause fatal altitude sickness in healthy adults, let alone children",
+        "Nighttime temperatures of -10\u00b0C in summer at Hanle, much colder at Umlingla"
+      ],
+      "kid_highlights": [],
+      "not_suitable_reason": "Hanle at 4500m and Umlingla at 5798m represent the most extreme altitude exposure in this database. Umlingla is higher than Everest Base Camp. There are zero medical facilities, zero communication, and 260km of nothing between you and help. This is categorically not a destination for anyone under 18."
+    }
+  },
+  {
+    "id": "kargil-drass",
+    "name": "Kargil & Drass",
+    "state_id": "ladakh",
+    "region": "Western Ladakh / Suru Valley",
+    "coords": {
+      "lat": 34.5539,
+      "lng": 76.1349
+    },
+    "elevation_m": 2676,
+    "type": [
+      "town",
+      "war-memorial",
+      "gateway",
+      "cold-record"
+    ],
+    "vibe": [
+      "historic",
+      "patriotic",
+      "transitional",
+      "cultural",
+      "biker"
+    ],
+    "difficulty": "moderate",
+    "nearest_airport": "Sheikh ul-Alam (Srinagar) \u2014 205km / Kushok Bakula Rimpochee (Leh) \u2014 234km",
+    "nearest_railhead": "Jammu Tawi (600km via Srinagar highway)",
+    "tagline": "Where India fought its last televised war and where the thermometer hits -60\u00b0C \u2014 Kargil is the stop everyone drives through and nobody gives enough time to.",
+    "why_special": "Kargil is usually just a lunch stop on the Srinagar-Leh highway, and that's a mistake. The Kargil War Memorial at Drass is one of the most moving military memorials in India \u2014 Tiger Hill looms behind it, and the audio-visual room plays recordings of actual radio intercepts from the 1999 war. Drass is the second-coldest inhabited place on Earth (after Oymyakon, Russia), with a recorded low of -60\u00b0C. Kargil town itself is a Shia Muslim enclave \u2014 culturally more similar to Iran than to Buddhist Ladakh, with Balti influences, apricots everywhere, and the Suru Valley opening up toward Zanskar.",
+    "budget_tier": "budget",
+    "ideal_duration_min": 1,
+    "ideal_duration_max": 2,
+    "cell_network": "Jio and Airtel work in Kargil town. BSNL in Drass. Signal drops quickly outside these towns.",
+    "atm_available": true,
+    "medical_facility": "District Hospital Kargil (government, functional). Drass has a basic health centre. Army hospital available for serious emergencies. Better than most of Ladakh.",
+    "permit_required": "No ILP required for Kargil or Drass. They're on the main Srinagar-Leh highway. Standard ID sufficient.",
+    "languages_spoken": [
+      "Purgi",
+      "Balti",
+      "Shina",
+      "Urdu",
+      "Hindi",
+      "Ladakhi"
+    ],
+    "tags": [
+      "war-memorial",
+      "kargil-war",
+      "drass",
+      "coldest-place",
+      "muslim-ladakh",
+      "suru-valley",
+      "biker-route",
+      "mulbekh"
+    ],
+    "best_months": [
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "avoid_months": [
+      12,
+      1,
+      2
+    ],
+    "deep_dive": {
+      "detailed_description": "Kargil (2676m) sits at the halfway point of the Srinagar-Leh highway, where the Suru River meets the broader valley. It's the second-largest town in Ladakh after Leh and serves as the district headquarters. Unlike Buddhist Leh, Kargil is predominantly Shia Muslim with Balti and Purgi populations \u2014 the mosques, food, and culture feel like a different country from Leh. Drass (3280m) is 60km west on the highway, famous for two things: the 1999 Kargil War (fought on the peaks visible from the road) and being the second-coldest inhabited place on Earth. The Kargil War Memorial here, maintained by the Indian Army, is solemn, well-curated, and genuinely affecting. The Suru Valley south of Kargil opens the road to Zanskar (via Pensi La) and is spectacularly beautiful \u2014 Nun-Kun twin peaks (7135m) dominate the skyline.",
+      "things_to_do": [
+        "Kargil War Memorial at Drass \u2014 the memorial, the museum, the actual mountain peaks where the battles happened visible behind you. Allow 2 hours minimum.",
+        "Tiger Hill viewpoint \u2014 you can see the actual bunkers and positions from the 1999 war",
+        "Mulbekh Chamba (Maitreya Buddha) \u2014 a massive 9m rock-carved Buddha from the 7th-8th century, right on the highway between Kargil and Lamayuru",
+        "Kargil Old Town \u2014 walk the bazaar, Shia mosque architecture, Balti woodwork shops",
+        "Suru Valley drive \u2014 apricot orchards, Nun-Kun twin peaks backdrop, Kartse Khar rock inscriptions",
+        "Drass village \u2014 walk through the second-coldest inhabited settlement on Earth",
+        "Hunderman village \u2014 a 'ghost village' divided by the LoC, damaged in the 1999 war, partially preserved"
+      ],
+      "access_notes": "On the Srinagar-Leh highway (NH-1). From Srinagar: 205km, 6-8 hours via Zoji La (3528m) \u2014 the pass is a bottleneck with single-lane stretches and the Z-Morh tunnel (under construction) will eventually fix this. From Leh: 234km, 5-6 hours. Both are main highway drives, well-maintained by BRO standards. Fuel available in both Kargil and Drass. Kargil is the logical overnight stop on the Srinagar-Leh drive.",
+      "stays": "Kargil has 15-20 hotels ranging from basic (\u20b9500) to decent (\u20b92000-4000). Hotel D'Zojila and Hotel Siachen are reliable mid-range options. Drass has very few stays \u2014 most people base in Kargil. The Suru Valley has scattered guesthouses for those continuing to Zanskar.",
+      "food": "Kargil food is Balti-influenced and delicious \u2014 apricot-based dishes, mutton, naan from tandoor, chai. The bazaar restaurants serve proper meals, not just momos. Drass has a few highway dhabas. Apricots (fresh in summer, dried year-round) are everywhere \u2014 Ladakhi apricots are genuinely some of the best in the world. Try apricot oil, apricot jam, dried apricots as trail food.",
+      "festivals": "Muharram processions (Kargil is deeply Shia \u2014 the processions are intense and culturally significant). Independence Day celebrations at the War Memorial are moving. Apricot blossom season (April-May) isn't a festival but the Suru Valley in bloom is spectacular.",
+      "photography": "Kargil War Memorial with Tiger Hill behind \u2014 best in morning light. Mulbekh Chamba rock Buddha \u2014 one of Ladakh's most ancient monuments. Suru Valley with Nun-Kun peaks. Kargil bazaar street life \u2014 different from Buddhist Ladakh, more Central Asian. Drass in winter (if you dare) \u2014 the frozen landscape is extraordinary. Zoji La pass approach with its hairpins.",
+      "hidden_gems": "Hunderman village \u2014 partially destroyed in the 1999 war, some buildings preserved as they were hit, rarely visited. Kartse Khar rock carvings (Suru Valley) \u2014 ancient petroglyphs. Kargil's Shia Jama Masjid \u2014 beautiful Iranian-influenced architecture. Shakar Chiktan \u2014 a ruined castle town south of Kargil on the Suru Valley road, with impressive fort remains. The Suru Valley itself is one of the most underrated landscapes in all of Ladakh.",
+      "history": "Kargil was historically part of Baltistan and a trading post between Kashmir and Central Asia. The 1999 Kargil War, when Pakistani soldiers and militants occupied peaks overlooking the highway, was India's most recent major military conflict. The war was fought at altitudes of 4500-5500m in extreme conditions, and Indian soldiers recaptured the peaks in a campaign that lasted from May to July 1999. 527 Indian soldiers died. The war was televised live, making it a defining moment in Indian national consciousness. Drass has been continuously inhabited despite recording temperatures of -60\u00b0C \u2014 the community's resilience is remarkable.",
+      "warnings": "Kargil and Drass are at relatively moderate altitudes (2676m and 3280m) \u2014 AMS is less of a concern here than elsewhere in Ladakh, making this a good acclimatization stop. The main risk is the Zoji La pass on the Srinagar approach \u2014 it's a narrow, unpaved, single-lane road at 3528m that sees heavy military and civilian traffic. Expect 1-3 hour delays at Zoji La during peak season. The Z-Morh tunnel will fix this when completed. Security is tight \u2014 carry ID at all times. The LoC with Pakistan is close and the military presence is visible. Do not photograph military installations."
+    },
+    "translations": {},
+    "monthly_suitability": [
+      {
+        "m": 1,
+        "score": 1,
+        "note": "Srinagar side (Zoji La) closed. Leh side open but icy. Drass at -30 to -45\u00b0C. War Memorial accessible but freezing."
+      },
+      {
+        "m": 2,
+        "score": 1,
+        "note": "Same. Deep winter. Drass competes with Siberia for cold records. Only for extreme-weather enthusiasts."
+      },
+      {
+        "m": 3,
+        "score": 2,
+        "note": "Zoji La clearing begins. Still very cold. Srinagar road may open late March."
+      },
+      {
+        "m": 4,
+        "score": 3,
+        "note": "Zoji La opening. Apricot blossoms in Suru Valley. Still cold but beautiful shoulder season."
+      },
+      {
+        "m": 5,
+        "score": 4,
+        "note": "Both approaches open. Pleasant weather. Suru Valley green. Good time to visit."
+      },
+      {
+        "m": 6,
+        "score": 5,
+        "note": "Peak. Warm days, all roads open, War Memorial in full operation. Apricots ripening."
+      },
+      {
+        "m": 7,
+        "score": 4,
+        "note": "Good but Zoji La approach from Srinagar can be affected by monsoon landslides. Kargil itself stays dry."
+      },
+      {
+        "m": 8,
+        "score": 4,
+        "note": "Same as July. Srinagar approach road is the risk factor, not Kargil itself."
+      },
+      {
+        "m": 9,
+        "score": 5,
+        "note": "Excellent. Post-monsoon clarity. Roads open. Harvest season. Beautiful light."
+      },
+      {
+        "m": 10,
+        "score": 3,
+        "note": "Getting cold. Zoji La may close late October. War Memorial still accessible from Leh side."
+      },
+      {
+        "m": 11,
+        "score": 1,
+        "note": "Zoji La closed. Approach only from Leh side. Very cold. Limited services."
+      },
+      {
+        "m": 12,
+        "score": 1,
+        "note": "Deep winter. -30\u00b0C in Drass. Only accessible from Leh and barely."
+      }
+    ],
+    "kids_friendly": {
+      "suitable": true,
+      "rating": 2,
+      "min_recommended_age": 7,
+      "best_age_group": "10-16",
+      "stroller_accessible": false,
+      "reasons": [
+        "Lowest altitude in this database (2676m for Kargil) \u2014 significantly less AMS risk than anywhere else in Ladakh",
+        "The War Memorial is genuinely educational and moving for school-age children",
+        "Proper town infrastructure \u2014 hospital, ATMs, shops, restaurants",
+        "Mulbekh Buddha is visually impressive and historically interesting for kids",
+        "Good food variety \u2014 kids can eat naan and familiar dishes here"
+      ],
+      "concerns": [
+        "The War Memorial content (casualty details, war footage) may be intense for very young or sensitive children",
+        "Long driving day from Srinagar (6-8 hours) or Leh (5-6 hours) \u2014 car sickness likely for young kids",
+        "Zoji La pass crossing from Srinagar is genuinely stressful \u2014 cliff edges, no barriers, single lane",
+        "Limited entertainment for children beyond the memorial and Mulbekh Buddha",
+        "Military atmosphere (checkpoints, convoys, restricted areas) can be unsettling for young children"
+      ],
+      "kid_highlights": [
+        "Kargil War Memorial \u2014 the tanks, artillery pieces, and outdoor displays interest kids 8+",
+        "Mulbekh Chamba rock Buddha \u2014 'how did they carve that?' is a genuine kid question",
+        "Apricot tasting in season \u2014 fresh Ladakhi apricots are incredible",
+        "Spotting military convoys on the highway (many kids are fascinated)"
+      ],
+      "not_suitable_reason": null
+    }
+  }
+]

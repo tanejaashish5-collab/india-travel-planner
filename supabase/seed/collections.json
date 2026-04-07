@@ -1,0 +1,142 @@
+[
+  {
+    "id": "most-beautiful-villages",
+    "name": "Most Beautiful Villages in North India",
+    "description": "The villages that look like they belong in a travel documentary. Not hill stations, not towns — actual villages where people live traditional lives against impossible backdrops.",
+    "items": [
+      {"destination_id": "chitkul-sangla", "note": "Slate roofs, apple orchards, last village before Tibet. End of the road, literally.", "rank": 1},
+      {"destination_id": "spiti-valley", "note": "Langza with its giant Buddha against snow peaks. Komic's prayer flags. Demul's isolation.", "rank": 2},
+      {"destination_id": "tirthan-valley", "note": "Shoja's ancient tower houses. Gushaini's riverside serenity. What Manali was before tourism.", "rank": 3},
+      {"destination_id": "gurez-valley", "note": "Dawar village in the Gurez — wooden houses, Habba Khatoon peak, frontier beauty. Almost nobody goes.", "rank": 4},
+      {"destination_id": "munsiyari", "note": "Sarmoli village — community tourism, weaving, Panchachuli at sunrise. The Kumaon nobody visits.", "rank": 5}
+    ],
+    "cover_image": null,
+    "tags": ["village", "offbeat", "photography"]
+  },
+  {
+    "id": "last-villages-of-india",
+    "name": "Last Villages of India",
+    "description": "The edge of the map. Villages where the road ends and the border begins — Indo-Tibet, Indo-China, Indo-Pakistan. Each one is a different kind of end-of-world.",
+    "items": [
+      {"destination_id": "chitkul-sangla", "note": "Last village on the Indo-Tibet border via Kinnaur. Hindustan ka Aakhri Dhaba.", "rank": 1},
+      {"destination_id": "nubra-valley", "note": "Turtuk — last Indian village before Pakistan. Balti culture, apricot orchards, Tyakshi beyond.", "rank": 2},
+      {"destination_id": "badrinath-mana", "note": "Mana — last village on the Indo-China border via Uttarakhand. Vyas Gufa, Vasudhara Falls.", "rank": 3},
+      {"destination_id": "spiti-valley", "note": "Komic and Hikkim claim 'highest' and 'last' in various categories. Spiti is frontier country.", "rank": 4},
+      {"destination_id": "gurez-valley", "note": "Gurez sits on the LoC. Army checkpoints, Habba Khatoon peak, frontier isolation.", "rank": 5}
+    ],
+    "cover_image": null,
+    "tags": ["border", "offbeat", "adventure"]
+  },
+  {
+    "id": "highest-places-you-can-drive",
+    "name": "Highest Places You Can Drive To",
+    "description": "Roads that make your ears pop and your engine gasp. The highest motorable passes and roads in India — many claim world records.",
+    "items": [
+      {"destination_id": "hanle", "note": "Umlingla Pass — 5798m (19,024 ft). Highest motorable road in the world. BRO-built, opened 2021.", "rank": 1},
+      {"destination_id": "leh", "note": "Khardung La — 5359m. The gateway to Nubra. Every biker's bucket list photo.", "rank": 2},
+      {"destination_id": "pangong-lake", "note": "Chang La — 5360m. Route to Pangong from Leh. Altitude hits hard here.", "rank": 3},
+      {"destination_id": "spiti-valley", "note": "Kunzum La — 4590m. Gateway between Lahaul and Spiti. Open Jun-Oct only.", "rank": 4},
+      {"destination_id": "manali", "note": "Rohtang La — 3978m (or skip it via Atal Tunnel). The classic first high pass for tourists.", "rank": 5}
+    ],
+    "cover_image": null,
+    "tags": ["biker", "adventure", "record"]
+  },
+  {
+    "id": "most-dangerous-roads",
+    "name": "Most Dangerous Roads (That Are Worth It)",
+    "description": "Roads where the journey IS the destination — cliff edges, no barriers, single lanes, and scenery that makes your heart stop in two different ways.",
+    "items": [
+      {"destination_id": "zanskar", "note": "Killar-Kishtwar road — single lane, cliff edge, no barriers, waterfalls over the road. India's scariest drive.", "rank": 1},
+      {"destination_id": "spiti-valley", "note": "Kinnaur NH5 along the Sutlej — the old Hindustan-Tibet road. Cliff sections, landslide zones.", "rank": 2},
+      {"destination_id": "leh", "note": "Manali-Leh via Gata Loops — 21 hairpin bends at 4500m. No guardrails. Trucks in both directions.", "rank": 3},
+      {"destination_id": "sonamarg", "note": "Zoji La — narrow, muddy, no barriers, 3528m. The gateway between Kashmir and Ladakh.", "rank": 4},
+      {"destination_id": "chitkul-sangla", "note": "Karcham-Sangla road — narrow cliff road above the Baspa gorge. Beautiful and terrifying.", "rank": 5}
+    ],
+    "cover_image": null,
+    "tags": ["biker", "adventure", "dangerous"]
+  },
+  {
+    "id": "best-family-destinations",
+    "name": "Best Family Destinations (Kids Will Actually Enjoy)",
+    "description": "Not every hill station is fun for kids. These are the places where children have genuine things to do, medical help is nearby, and parents can actually relax.",
+    "items": [
+      {"destination_id": "tirthan-valley", "note": "River play, nature walks, trout spotting, fireflies at night. THE best family pick in Himachal.", "rank": 1},
+      {"destination_id": "srinagar", "note": "Shikara rides, houseboat stays, Mughal garden picnics. Kashmir is magical for families.", "rank": 2},
+      {"destination_id": "nainital-bhimtal", "note": "Boating, zoo, cable car, ice cream on Mall Road. The classic Indian family holiday, still works.", "rank": 3},
+      {"destination_id": "jaisalmer", "note": "Living fort exploration, camel safari, desert camping under stars. Kids go wild here.", "rank": 4},
+      {"destination_id": "ranthambore", "note": "Tiger safari. Every child's dream. Even if you don't spot one, the fort and the jungle are worth it.", "rank": 5}
+    ],
+    "cover_image": null,
+    "tags": ["family", "kids"]
+  },
+  {
+    "id": "zero-signal-zones",
+    "name": "Places With Zero Phone Signal (And Why That's The Point)",
+    "description": "Where BSNL gives up and even God checks voicemail. These destinations force you to look up from your screen — and what you see is worth the digital detox.",
+    "items": [
+      {"destination_id": "spiti-valley", "note": "Langza, Hikkim, Komic, Chandratal — zero signal. Just you and the cold desert and the stars.", "rank": 1},
+      {"destination_id": "zanskar", "note": "Padum and beyond. No tower, no WiFi, no choice. The Chadar trek is as offline as you can get.", "rank": 2},
+      {"destination_id": "valley-of-flowers", "note": "Ghangaria and the valley — completely offline for 2-3 days. Download everything before Govindghat.", "rank": 3},
+      {"destination_id": "hanle", "note": "Hanle observatory exists precisely because there's no light pollution or radio interference. You get stars instead.", "rank": 4},
+      {"destination_id": "bangus-lolab", "note": "Bangus Valley — no road, no tower, no crowd. Just meadow.", "rank": 5}
+    ],
+    "cover_image": null,
+    "tags": ["offbeat", "digital-detox"]
+  },
+  {
+    "id": "ancient-monasteries",
+    "name": "Monasteries Older Than 500 Years",
+    "description": "Buddhist monasteries that have survived earthquakes, invasions, and time itself. Each one holds living traditions that connect directly to Tibet and beyond.",
+    "items": [
+      {"destination_id": "spiti-valley", "note": "Tabo Monastery — founded 996 CE. 'The Ajanta of the Himalayas.' Over 1000 years of continuous practice.", "rank": 1},
+      {"destination_id": "lamayuru-alchi-likir", "note": "Alchi Monastery — 10th century murals that are considered the finest surviving examples of Kashmiri-Buddhist art.", "rank": 2},
+      {"destination_id": "leh", "note": "Hemis Monastery — 1630 CE. Largest, richest, most famous in Ladakh. Hemis Festival is unmissable.", "rank": 3},
+      {"destination_id": "spiti-valley", "note": "Key Monastery — 1000+ years. Dramatically perched above the valley. Sunrise here is iconic.", "rank": 4},
+      {"destination_id": "lamayuru-alchi-likir", "note": "Lamayuru — claims to be the oldest monastery in Ladakh. The moonland setting is surreal.", "rank": 5}
+    ],
+    "cover_image": null,
+    "tags": ["monastery", "spiritual", "heritage"]
+  },
+  {
+    "id": "best-dhabas-on-highways",
+    "name": "Best Dhabas on Every Highway",
+    "description": "The fuel stops for your soul. Highway dhabas where the rajma-chawal hits different because you've been driving for 6 hours and the mountains are right there.",
+    "items": [
+      {"destination_id": "chitkul-sangla", "note": "Hindustan ka Aakhri Dhaba, Chitkul — rajma-chawal at the last dhaba before Tibet. Touristy now but still legit.", "rank": 1},
+      {"destination_id": "manali", "note": "Johnson's Cafe, Old Manali — the OG trout restaurant. Also: Chopsticks for Tibetan, Lazy Dog for vibes.", "rank": 2},
+      {"destination_id": "dharamshala-mcleodganj", "note": "Tibet Kitchen — best momos in McLeod. Also: Moonpeak Espresso for coffee, Common Ground for ambience.", "rank": 3},
+      {"destination_id": "amritsar", "note": "Kesar Da Dhaba — since 1916. Also: Bharawan Da Dhaba for kulcha, Beera Chicken for tandoori.", "rank": 4},
+      {"destination_id": "varanasi", "note": "Blue Lassi Shop — the most famous lassi in India. Also: Kachori Gali for breakfast, Deena Chat for chaat.", "rank": 5}
+    ],
+    "cover_image": null,
+    "tags": ["food", "dhaba", "highway"]
+  },
+  {
+    "id": "best-stargazing-spots",
+    "name": "Best Stargazing Spots (Dark Sky Locations)",
+    "description": "India has some of the darkest skies in Asia — if you know where to go. These places have near-zero light pollution. The Milky Way is visible to the naked eye.",
+    "items": [
+      {"destination_id": "hanle", "note": "Hanle Observatory — built here specifically because it has the darkest, driest skies in the Indian subcontinent.", "rank": 1},
+      {"destination_id": "spiti-valley", "note": "Chandratal Lake — camp at 4300m, zero light pollution, zero signal, just you and the Milky Way.", "rank": 2},
+      {"destination_id": "chopta-tungnath", "note": "Deoria Tal — camp by the lake, Chaukhamba reflected in water by day, stars by night.", "rank": 3},
+      {"destination_id": "pangong-lake", "note": "Pangong at night — the stars reflect in the lake. Bring a tripod.", "rank": 4},
+      {"destination_id": "tirthan-valley", "note": "GHNP buffer zone — far from any town lights. Fireflies + stars in May-June is unreal.", "rank": 5}
+    ],
+    "cover_image": null,
+    "tags": ["photography", "stargazing", "camping"]
+  },
+  {
+    "id": "frozen-wonders",
+    "name": "Frozen Lakes & Rivers",
+    "description": "When the Himalayas freeze, they create landscapes that look like another planet. Frozen rivers you can walk on, lakes turned to ice, waterfalls suspended mid-fall.",
+    "items": [
+      {"destination_id": "zanskar", "note": "Chadar Trek — walk on the frozen Zanskar river. -25°C. 9 days. The most extreme trek in India.", "rank": 1},
+      {"destination_id": "pangong-lake", "note": "Pangong freezes Dec-Feb. Walk on the frozen lake (at your own risk). Surreal blue-white landscape.", "rank": 2},
+      {"destination_id": "spiti-valley", "note": "Chandratal and Dhankar Lake freeze solid. The Key Monastery road in winter is otherworldly.", "rank": 3},
+      {"destination_id": "gulmarg", "note": "Alpather Lake freezes. Ski slopes. India's most accessible winter wonderland.", "rank": 4},
+      {"destination_id": "auli", "note": "Artificial lake at Auli freezes. Ski slopes with Nanda Devi watching. Dec-Feb.", "rank": 5}
+    ],
+    "cover_image": null,
+    "tags": ["snow", "winter", "adventure"]
+  }
+]

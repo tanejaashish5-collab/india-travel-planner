@@ -1,0 +1,102 @@
+{
+  "common": {
+    "appName": "India Travel Planner",
+    "tagline": "Explore Every Village, Trail & Hidden Gem",
+    "comingSoon": "Coming Soon",
+    "places": "Places",
+    "states": "States",
+    "routes": "Routes",
+    "emergency": "Emergency",
+    "search": "Search destinations...",
+    "language": "Language",
+    "english": "English",
+    "hindi": "हिन्दी"
+  },
+  "nav": {
+    "explore": "Explore",
+    "collections": "Collections",
+    "routes": "Routes",
+    "treks": "Treks",
+    "planTrip": "Plan Trip",
+    "askAi": "Ask AI",
+    "sos": "SOS",
+    "profile": "Profile",
+    "signIn": "Sign In"
+  },
+  "home": {
+    "heroTitle": "Explore India",
+    "heroSubtitle": "Beyond the Tourist Trail",
+    "heroDescription": "400+ destinations. Monthly suitability scores. Kids ratings. Safety data for the remotest villages. AI-powered itineraries from 5 to 180 days.",
+    "stats": {
+      "places": "Places",
+      "states": "States",
+      "routes": "Routes",
+      "sos": "Emergency"
+    }
+  },
+  "destination": {
+    "bestMonths": "Best Months",
+    "avoidMonths": "Avoid",
+    "difficulty": "Difficulty",
+    "elevation": "Elevation",
+    "duration": "Duration",
+    "budget": "Budget",
+    "kidsRating": "Kids Rating",
+    "notSuitableForKids": "Not suitable for kids",
+    "suitableForKids": "Suitable for kids",
+    "minAge": "Min age",
+    "whyGo": "Why Go",
+    "whyNot": "Why Not",
+    "confidence": "Safety & Logistics",
+    "howToReach": "How to Reach",
+    "whereToSleep": "Where to Sleep",
+    "fuel": "Fuel",
+    "weatherAtNight": "Weather at Night",
+    "emergencyContacts": "Emergency Contacts",
+    "network": "Network Coverage",
+    "peopleWhoHelp": "People Who Can Help",
+    "discoverNearby": "Discover Nearby",
+    "localLegends": "Local Legends",
+    "viralEats": "Viral Eats",
+    "subDestinations": "Places Within",
+    "thingsToDo": "Things to Do",
+    "whereToEat": "Where to Eat",
+    "sampleItinerary": "Sample Itinerary",
+    "packingList": "What to Pack",
+    "commonMistakes": "Common Mistakes",
+    "permits": "Permits Required",
+    "festivals": "Festivals & Events"
+  },
+  "filters": {
+    "allStates": "All States",
+    "allMonths": "Any Month",
+    "kidsOnly": "Kids Friendly",
+    "difficulty": "Difficulty",
+    "budget": "Budget",
+    "persona": "Travel Style",
+    "tags": "Tags",
+    "clear": "Clear Filters"
+  },
+  "months": {
+    "1": "January",
+    "2": "February",
+    "3": "March",
+    "4": "April",
+    "5": "May",
+    "6": "June",
+    "7": "July",
+    "8": "August",
+    "9": "September",
+    "10": "October",
+    "11": "November",
+    "12": "December"
+  },
+  "score": {
+    "5": "Peak — go now",
+    "4": "Excellent",
+    "3": "Doable",
+    "2": "Marginal",
+    "1": "Avoid unless specific reason",
+    "0": "Closed / inaccessible"
+  }
+}

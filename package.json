@@ -1,0 +1,21 @@
+{
+  "name": "india-travel-planner",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "turbo dev",
+    "build": "turbo build",
+    "lint": "turbo lint",
+    "type-check": "turbo type-check",
+    "db:migrate": "supabase db push",
+    "db:seed": "tsx supabase/seed/seed.ts"
+  },
+  "devDependencies": {
+    "turbo": "^2.9.0",
+    "typescript": "^5.8.0"
+  },
+  "packageManager": "npm@11.9.0"
+}
