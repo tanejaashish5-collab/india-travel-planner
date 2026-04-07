@@ -1,0 +1,1639 @@
+[
+  {
+    "id": "rashol-village",
+    "near_destination_id": "kasol-parvati-valley",
+    "name": "Rashol Village",
+    "coords": {
+      "lat": 32.0102,
+      "lng": 77.3145
+    },
+    "distance_km": 5,
+    "drive_time": "3hr steep trek from Kasol (no road)",
+    "why_unknown": "No motorable road exists. The trail is unmarked past the first km and splits confusingly near a waterfall. Most Kasol tourists never leave the cafes.",
+    "why_go": "Tiny hilltop village at 3,100m with a sacred Renuka Devi temple that locals believe grants wishes. At night, zero light pollution \u2014 Milky Way is visible to the naked eye. Village has maybe 15 houses.",
+    "difficulty": "moderate",
+    "social_proof": null,
+    "confidence_score": 3,
+    "tags": [
+      "offbeat",
+      "village",
+      "dark-sky",
+      "spiritual",
+      "trek"
+    ],
+    "translations": {}
+  },
+  {
+    "id": "nakthan-hot-spring",
+    "near_destination_id": "kasol-parvati-valley",
+    "name": "Nakthan Hot Spring",
+    "coords": {
+      "lat": 31.992,
+      "lng": 77.438
+    },
+    "distance_km": 18,
+    "drive_time": "1hr drive from Kasol towards Manikaran + 30min walk",
+    "why_unknown": "Sits below the road in a gorge. No signboard. Locals bathe here early morning and it's deserted by 9am. The trail down is a goat path with no markings.",
+    "why_go": "Natural sulphur hot spring in a boulder-lined pool right beside the Parvati River. Water is 45\u00b0C year-round. Completely free, completely deserted, completely raw.",
+    "difficulty": "easy",
+    "social_proof": null,
+    "confidence_score": 3,
+    "tags": [
+      "offbeat",
+      "hot-spring",
+      "wellness"
+    ],
+    "translations": {}
+  },
+  {
+    "id": "bara-bhangal",
+    "near_destination_id": "bir-billing",
+    "name": "Bara Bhangal Village",
+    "coords": {
+      "lat": 32.206,
+      "lng": 77.085
+    },
+    "distance_km": 60,
+    "drive_time": "4-5 day trek from Bir (no road access at all)",
+    "why_unknown": "Completely roadless village. Only accessible by multi-day trek over Thamsar Pass (4,650m). Gets snowed in for 6 months. Population under 200. No cell signal.",
+    "why_go": "India's most remote permanently inhabited village. Ancient wooden architecture, self-sufficient farming community. The Uhl River runs through it. Feels like discovering a civilization.",
+    "difficulty": "hard",
+    "social_proof": null,
+    "confidence_score": 3,
+    "tags": [
+      "offbeat",
+      "village",
+      "trek",
+      "architecture",
+      "expedition"
+    ],
+    "translations": {}
+  },
+  {
+    "id": "billing-sunset-point",
+    "near_destination_id": "bir-billing",
+    "name": "Billing Sunset Cliff",
+    "coords": {
+      "lat": 32.1155,
+      "lng": 76.771
+    },
+    "distance_km": 3,
+    "drive_time": "15min walk past the paragliding launch site",
+    "why_unknown": "Everyone stops at the paragliding launch pad and turns back. Walk 800m further on an unmarked shepherd trail past the ridge and you reach a cliff edge nobody visits.",
+    "why_go": "Unobstructed 270-degree sunset view over the Dhauladhar range. The cliff drops 800m straight down to the Kangra Valley. Best dark sky spot in the Bir area.",
+    "difficulty": "easy",
+    "social_proof": null,
+    "confidence_score": 3,
+    "tags": [
+      "offbeat",
+      "viewpoint",
+      "dark-sky",
+      "photography"
+    ],
+    "translations": {}
+  },
+  {
+    "id": "tattapani-hot-springs",
+    "near_destination_id": "shimla",
+    "name": "Tattapani Riverside Hot Springs",
+    "coords": {
+      "lat": 31.234,
+      "lng": 77.083
+    },
+    "distance_km": 55,
+    "drive_time": "2hr from Shimla via NH5",
+    "why_unknown": "The main commercial hot spring complex is known, but 500m downstream on the Sutlej bank there are free natural seeps where hot water bubbles through river rocks. No signage.",
+    "why_go": "DIY hot spring experience \u2014 dig a small pool in the riverbed gravel and hot water fills it. Mix river water to control temperature. Free, wild, no infrastructure.",
+    "difficulty": "easy",
+    "social_proof": null,
+    "confidence_score": 3,
+    "tags": [
+      "offbeat",
+      "hot-spring",
+      "wellness"
+    ],
+    "translations": {}
+  },
+  {
+    "id": "hatu-peak-dark-sky",
+    "near_destination_id": "shimla",
+    "name": "Hatu Peak Dark Sky Point",
+    "coords": {
+      "lat": 31.1935,
+      "lng": 77.492
+    },
+    "distance_km": 70,
+    "drive_time": "2.5hr from Shimla via Narkanda",
+    "why_unknown": "Hatu Peak temple is somewhat known, but nobody stays after sunset. There's a flat camping area 200m below the summit on the east face with zero light pollution from any direction.",
+    "why_go": "At 3,400m, it's the highest driveable point near Shimla. The eastern face camping spot blocks all Narkanda town light. Milky Way core visible Apr-Sep. Snow-capped peaks glow at first light.",
+    "difficulty": "moderate",
+    "social_proof": null,
+    "confidence_score": 3,
+    "tags": [
+      "offbeat",
+      "dark-sky",
+      "camping",
+      "viewpoint"
+    ],
+    "translations": {}
+  },
+  {
+    "id": "chamba-chaurasi-temples",
+    "near_destination_id": "chamba-dalhousie",
+    "name": "Chaurasi Temple Complex",
+    "coords": {
+      "lat": 32.5535,
+      "lng": 76.126
+    },
+    "distance_km": 8,
+    "drive_time": "20min from Chamba town",
+    "why_unknown": "Sits in Bharmour, which tourists skip because Dalhousie is more 'Instagrammable'. The temple complex has 84 shrines dating to 7th century but gets fewer visitors in a week than Dalhousie gets in an hour.",
+    "why_go": "84 ancient stone temples in a compact courtyard \u2014 carved Shiva lingams, Nandi sculptures, and Manimahesh temple with bronze idols from 600 AD. The stone carving quality rivals Khajuraho.",
+    "difficulty": "easy",
+    "social_proof": null,
+    "confidence_score": 3,
+    "tags": [
+      "offbeat",
+      "heritage",
+      "spiritual",
+      "architecture"
+    ],
+    "translations": {}
+  },
+  {
+    "id": "sach-pass-nomad-camp",
+    "near_destination_id": "chamba-dalhousie",
+    "name": "Sach Pass Gaddi Shepherd Camp",
+    "coords": {
+      "lat": 32.735,
+      "lng": 76.272
+    },
+    "distance_km": 65,
+    "drive_time": "5hr from Chamba (seasonal road, Jun-Oct only)",
+    "why_unknown": "Sach Pass itself is known to bikers. But at 4,200m on the Chamba side, 3km before the pass, Gaddi shepherds set up seasonal camps Jun-Sep. No tourist has any reason to stop here.",
+    "why_go": "Sleep in a shepherd's tent, eat roti cooked on a wood fire at 4,200m, watch 1,000 sheep graze against glaciated peaks. The shepherds are happy for company and will share chai. Unscripted, raw, real.",
+    "difficulty": "hard",
+    "social_proof": null,
+    "confidence_score": 3,
+    "tags": [
+      "offbeat",
+      "camping",
+      "cultural",
+      "expedition"
+    ],
+    "translations": {}
+  },
+  {
+    "id": "sissu-waterfall-cave",
+    "near_destination_id": "sissu-lahaul",
+    "name": "Sissu Hidden Cave Behind Waterfall",
+    "coords": {
+      "lat": 32.471,
+      "lng": 77.1195
+    },
+    "distance_km": 1,
+    "drive_time": "10min walk from Sissu village",
+    "why_unknown": "Everyone photographs Sissu Waterfall from the road. Almost nobody walks behind it. There's a shallow cave accessible by scrambling over wet rocks on the left side.",
+    "why_go": "Stand behind a 40m waterfall looking out through a curtain of water at the Chandra River valley. The acoustics inside the cave are surreal. Best in June when snowmelt peaks.",
+    "difficulty": "moderate",
+    "social_proof": null,
+    "confidence_score": 3,
+    "tags": [
+      "offbeat",
+      "waterfall",
+      "adventure",
+      "photography"
+    ],
+    "translations": {}
+  },
+  {
+    "id": "gondhla-castle",
+    "near_destination_id": "sissu-lahaul",
+    "name": "Gondhla Castle (Thakur's Fort)",
+    "coords": {
+      "lat": 32.494,
+      "lng": 77.135
+    },
+    "distance_km": 5,
+    "drive_time": "10min drive from Sissu",
+    "why_unknown": "A 7-storey wooden tower house from the 17th century sitting right off the highway that every Leh-bound vehicle drives past without stopping. No tourism board signage.",
+    "why_go": "One of the last surviving medieval tower houses of Lahaul \u2014 7 storeys of wood and stone with a sword collection and ancient armor inside. The caretaker family will give you a tour for free if you ask nicely.",
+    "difficulty": "easy",
+    "social_proof": null,
+    "confidence_score": 3,
+    "tags": [
+      "offbeat",
+      "heritage",
+      "architecture",
+      "abandoned"
+    ],
+    "translations": {}
+  },
+  {
+    "id": "rajgundha-valley",
+    "near_destination_id": "barot-valley",
+    "name": "Rajgundha Valley",
+    "coords": {
+      "lat": 32.108,
+      "lng": 76.832
+    },
+    "distance_km": 12,
+    "drive_time": "5hr trek from Barot (no road)",
+    "why_unknown": "Completely roadless valley accessible only by trekking over a ridge. No cell signal. Maybe 30 houses. The trail is used by shepherds, not tourists.",
+    "why_go": "A hidden valley surrounded by 4,000m peaks on all sides with a flat meadow floor. Homestays serve fresh rajma-chawal with ghee from their own cows. The silence at night is total \u2014 no generators, no vehicles, no civilization sounds.",
+    "difficulty": "moderate",
+    "social_proof": null,
+    "confidence_score": 3,
+    "tags": [
+      "offbeat",
+      "village",
+      "trek",
+      "camping",
+      "food"
+    ],
+    "translations": {}
+  },
+  {
+    "id": "shoja-waterfall",
+    "near_destination_id": "tirthan-valley",
+    "name": "Shoja Hidden Waterfall",
+    "coords": {
+      "lat": 31.538,
+      "lng": 77.361
+    },
+    "distance_km": 20,
+    "drive_time": "45min from Tirthan + 40min unmarked trail",
+    "why_unknown": "The trail starts behind a private apple orchard in Shoja village. No signpost. You have to ask the orchard owner for permission to walk through. Not on Google Maps.",
+    "why_go": "40m waterfall in a moss-covered amphitheatre of rocks. The mist creates a permanent rainbow in morning light. A natural plunge pool at the base is swimmable in summer.",
+    "difficulty": "moderate",
+    "social_proof": null,
+    "confidence_score": 3,
+    "tags": [
+      "offbeat",
+      "waterfall",
+      "photography"
+    ],
+    "translations": {}
+  },
+  {
+    "id": "kalpa-suicide-point-dawn",
+    "near_destination_id": "kalpa-kinnaur",
+    "name": "Kalpa Chini Viewpoint (Forbidden Ridge)",
+    "coords": {
+      "lat": 31.531,
+      "lng": 78.2565
+    },
+    "distance_km": 3,
+    "drive_time": "20min walk from Kalpa bazaar past the orchards",
+    "why_unknown": "Walk past the famous Kinner Kailash viewpoint and keep going on a dirt path through apple orchards for 1km. The path ends at a ridge that locals call the 'forbidden edge' \u2014 no railing, no tourist infrastructure.",
+    "why_go": "The most dramatic Kinner Kailash view anywhere \u2014 the 6,050m peak fills your entire field of vision. At dawn, the granite face turns orange-pink for exactly 12 minutes. You will be alone.",
+    "difficulty": "moderate",
+    "social_proof": null,
+    "confidence_score": 3,
+    "tags": [
+      "offbeat",
+      "viewpoint",
+      "photography",
+      "dark-sky"
+    ],
+    "translations": {}
+  },
+  {
+    "id": "chitkul-ropa-valley-trail",
+    "near_destination_id": "chitkul-sangla",
+    "name": "Ropa Valley Shepherd Trail",
+    "coords": {
+      "lat": 31.368,
+      "lng": 78.472
+    },
+    "distance_km": 6,
+    "drive_time": "3hr trek from Chitkul (no road, no trail markers)",
+    "why_unknown": "Beyond Chitkul is technically restricted (Indo-Tibet border). But a shepherd trail going northeast into Ropa Valley is informally walkable for 6km before any checkpost. Locals use it daily.",
+    "why_go": "Walk towards the last point of India. Wildflower meadows in July that carpet the valley floor in purple, yellow, and white. Himalayan marmots everywhere. The Baspa River narrows to a crystal stream.",
+    "difficulty": "hard",
+    "social_proof": null,
+    "confidence_score": 3,
+    "tags": [
+      "offbeat",
+      "trek",
+      "wildlife",
+      "meadow"
+    ],
+    "translations": {}
+  },
+  {
+    "id": "langza-fossil-hunt",
+    "near_destination_id": "spiti-valley",
+    "name": "Langza Marine Fossil Fields",
+    "coords": {
+      "lat": 32.276,
+      "lng": 78.062
+    },
+    "distance_km": 30,
+    "drive_time": "1hr from Kaza",
+    "why_unknown": "Langza village is mildly known for the Buddha statue. But walk 2km northwest past the statue on a faint trail and the hillside is littered with 450-million-year-old marine fossils \u2014 ammonites, trilobites \u2014 just lying on the surface.",
+    "why_go": "Pick up a fossil that's older than dinosaurs with your bare hands at 4,400m altitude. The fossils prove the Himalayas were once an ocean floor. No collection allowed, but holding one is surreal.",
+    "difficulty": "moderate",
+    "social_proof": null,
+    "confidence_score": 3,
+    "tags": [
+      "offbeat",
+      "geology",
+      "trek",
+      "education"
+    ],
+    "translations": {}
+  },
+  {
+    "id": "komic-highest-post-office",
+    "near_destination_id": "spiti-valley",
+    "name": "Komic Village Night Sky",
+    "coords": {
+      "lat": 32.337,
+      "lng": 78.023
+    },
+    "distance_km": 35,
+    "drive_time": "1.5hr from Kaza",
+    "why_unknown": "Komic is mentioned as the 'highest motorable village' (disputed claim). What nobody tells you is that after dark, with the monastery silhouetted against the Milky Way and zero light pollution within 50km, it becomes one of the best dark sky sites in Asia.",
+    "why_go": "Astrophotography paradise \u2014 naked eye Milky Way, shooting stars hourly, satellite trails every few minutes. The monastery at 4,587m with star trails is an image nobody has properly shot yet.",
+    "difficulty": "moderate",
+    "social_proof": null,
+    "confidence_score": 3,
+    "tags": [
+      "offbeat",
+      "dark-sky",
+      "photography",
+      "spiritual"
+    ],
+    "translations": {}
+  },
+  {
+    "id": "valley-of-flowers-pushpawati-upper",
+    "near_destination_id": "valley-of-flowers",
+    "name": "Upper Pushpawati Basin",
+    "coords": {
+      "lat": 30.738,
+      "lng": 79.635
+    },
+    "distance_km": 6,
+    "drive_time": "3hr further trek inside Valley of Flowers past the main meadow",
+    "why_unknown": "99% of Valley of Flowers visitors walk 3km in, take photos, and walk back. The trail continues 6km deeper into an upper basin near the glacier where the rarest flowers grow \u2014 Brahma Kamal, Blue Poppy.",
+    "why_go": "Glacier-adjacent meadow with flowers that don't exist in the lower valley. Snow bridges, meltwater streams, and the Pushpawati glacier face visible. Maybe 5 people per season reach here.",
+    "difficulty": "hard",
+    "social_proof": null,
+    "confidence_score": 3,
+    "tags": [
+      "offbeat",
+      "trek",
+      "wildflower",
+      "glacier"
+    ],
+    "translations": {}
+  },
+  {
+    "id": "triyuginarayan-eternal-flame",
+    "near_destination_id": "kedarnath",
+    "name": "Triyuginarayan Eternal Flame Temple",
+    "coords": {
+      "lat": 30.6192,
+      "lng": 79.045
+    },
+    "distance_km": 25,
+    "drive_time": "1hr from Sonprayag (Kedarnath base)",
+    "why_unknown": "Every pilgrim goes straight to Kedarnath. This temple is a short detour that almost nobody takes. The fire in front of the temple has supposedly been burning continuously for thousands of years.",
+    "why_go": "The mythological wedding venue of Shiva and Parvati. An eternal flame has burned in the courtyard for centuries \u2014 verified old. Hot water spring feeds into a kund (pool) behind the temple. Profoundly quiet.",
+    "difficulty": "easy",
+    "social_proof": null,
+    "confidence_score": 3,
+    "tags": [
+      "offbeat",
+      "spiritual",
+      "heritage",
+      "hot-spring"
+    ],
+    "translations": {}
+  },
+  {
+    "id": "deoria-tal-night-camp",
+    "near_destination_id": "chopta-tungnath",
+    "name": "Deoria Tal Night Camping Ridge",
+    "coords": {
+      "lat": 30.401,
+      "lng": 79.268
+    },
+    "distance_km": 12,
+    "drive_time": "2hr trek from Sari village",
+    "why_unknown": "Deoria Tal is somewhat known. But 300m above the lake on the southeast ridge, there's a flat camping spot with a 360-degree view that includes both the lake reflection AND Chaukhamba peaks. No trail leads there.",
+    "why_go": "Wake up to see Chaukhamba reflected in Deoria Tal from above while sunrise lights the entire Garhwal range. The ridge blocks wind, so it's sheltered camping even in bad weather.",
+    "difficulty": "moderate",
+    "social_proof": null,
+    "confidence_score": 3,
+    "tags": [
+      "offbeat",
+      "camping",
+      "viewpoint",
+      "photography"
+    ],
+    "translations": {}
+  },
+  {
+    "id": "auli-gorson-bugyal",
+    "near_destination_id": "auli",
+    "name": "Gorson Bugyal Winter Meadow",
+    "coords": {
+      "lat": 30.518,
+      "lng": 79.576
+    },
+    "distance_km": 3,
+    "drive_time": "1hr trek from Auli ski resort",
+    "why_unknown": "Auli tourists stick to the ski slopes and cable car. Gorson Bugyal is a 30-minute walk past the last ski lift that leads to an alpine meadow so flat and wide it feels like Tibet. No infrastructure, no signage.",
+    "why_go": "In winter: untouched snow field with Nanda Devi (7,816m) filling the horizon. In summer: a carpet of wild iris flowers. The meadow is large enough that you lose sight of all human structures.",
+    "difficulty": "moderate",
+    "social_proof": null,
+    "confidence_score": 3,
+    "tags": [
+      "offbeat",
+      "meadow",
+      "snow",
+      "photography",
+      "trek"
+    ],
+    "translations": {}
+  },
+  {
+    "id": "munsiyari-nanda-devi-viewpoint",
+    "near_destination_id": "munsiyari",
+    "name": "Khaliya Top Sunrise Point",
+    "coords": {
+      "lat": 30.089,
+      "lng": 80.221
+    },
+    "distance_km": 10,
+    "drive_time": "3hr trek from Munsiyari",
+    "why_unknown": "Khaliya Top bugyal is starting to appear on trek lists, but the specific sunrise point on the eastern edge of the meadow \u2014 where Panchachuli's five peaks align perfectly \u2014 is an unmarked spot known only to local guides.",
+    "why_go": "The five Panchachuli peaks (all above 6,300m) line up like fingers of a hand at sunrise, turning gold simultaneously. It's possibly the most underrated mountain sunrise view in India.",
+    "difficulty": "moderate",
+    "social_proof": null,
+    "confidence_score": 3,
+    "tags": [
+      "offbeat",
+      "viewpoint",
+      "trek",
+      "photography"
+    ],
+    "translations": {}
+  },
+  {
+    "id": "birthi-waterfall-hidden-pool-v2",
+    "near_destination_id": "munsiyari",
+    "name": "Birthi Waterfall Hidden Upper Pool",
+    "coords": {
+      "lat": 30.125,
+      "lng": 80.174
+    },
+    "distance_km": 35,
+    "drive_time": "1.5hr from Munsiyari",
+    "why_unknown": "Birthi waterfall is roadside and known. But climb 200m up the left side through dense forest on an unmarked trail and you reach the upper cascade \u2014 a deep, crystal plunge pool surrounded by moss-covered boulders.",
+    "why_go": "Swim in a natural infinity pool at 2,400m with a waterfall pouring into it. The water is cold but the pool is sheltered from wind. Zero human presence. Best in May-June.",
+    "difficulty": "moderate",
+    "social_proof": null,
+    "confidence_score": 3,
+    "tags": [
+      "offbeat",
+      "waterfall",
+      "swimming"
+    ],
+    "translations": {}
+  },
+  {
+    "id": "neer-garh-waterfall-upper",
+    "near_destination_id": "rishikesh",
+    "name": "Neer Garh Upper Falls",
+    "coords": {
+      "lat": 30.151,
+      "lng": 78.364
+    },
+    "distance_km": 7,
+    "drive_time": "20min drive + 30min scramble from Rishikesh",
+    "why_unknown": "The lower Neer Garh waterfall is commercial and ticketed. But scramble 400m upstream on wet rocks past the ticket boundary and there are two more untouched cascades with natural jacuzzi pools. No path.",
+    "why_go": "Natural rock jacuzzi pools carved by centuries of water flow, surrounded by jungle. Langur monkeys in the canopy. The third cascade is 15m tall and pours into a swimming-depth basin.",
+    "difficulty": "moderate",
+    "social_proof": null,
+    "confidence_score": 3,
+    "tags": [
+      "offbeat",
+      "waterfall",
+      "swimming",
+      "adventure"
+    ],
+    "translations": {}
+  },
+  {
+    "id": "kunjapuri-dawn-temple",
+    "near_destination_id": "rishikesh",
+    "name": "Kunjapuri Temple Pre-Dawn Trek",
+    "coords": {
+      "lat": 30.205,
+      "lng": 78.392
+    },
+    "distance_km": 25,
+    "drive_time": "50min drive from Rishikesh + 20min walk",
+    "why_unknown": "The temple is known to locals. The secret is arriving at 4:30am before the road gate opens \u2014 trek the last 2km on foot in darkness. You get the summit alone for the sunrise over the Himalayan range from Bandarpunch to Swargarohini.",
+    "why_go": "One of the few places where you see the Gangetic plains and the high Himalayas simultaneously at sunrise. The 180-degree panorama includes 6 peaks above 6,000m. Empty at dawn, crowded by 9am.",
+    "difficulty": "easy",
+    "social_proof": null,
+    "confidence_score": 3,
+    "tags": [
+      "offbeat",
+      "viewpoint",
+      "spiritual",
+      "photography"
+    ],
+    "translations": {}
+  },
+  {
+    "id": "land-ends-edge-nainital",
+    "near_destination_id": "nainital-bhimtal",
+    "name": "Land's End Cliff Edge",
+    "coords": {
+      "lat": 29.378,
+      "lng": 79.433
+    },
+    "distance_km": 4,
+    "drive_time": "30min walk from Nainital Mall Road through forest",
+    "why_unknown": "Land's End is marked on maps but the trail is overgrown and poorly maintained. Most tourists take the cable car to Snow View instead. The forest walk passes through oak and rhododendron with zero other walkers.",
+    "why_go": "A cliff edge dropping into the Khurpatal valley with the entire Kumaon foothills stretching to the plains. On clear winter mornings, you can see the shimmer of the Ganges 100km away.",
+    "difficulty": "easy",
+    "social_proof": null,
+    "confidence_score": 3,
+    "tags": [
+      "offbeat",
+      "viewpoint",
+      "forest"
+    ],
+    "translations": {}
+  },
+  {
+    "id": "sattal-butterfly-reserve",
+    "near_destination_id": "nainital-bhimtal",
+    "name": "Sattal Butterfly Migration Corridor",
+    "coords": {
+      "lat": 29.341,
+      "lng": 79.516
+    },
+    "distance_km": 22,
+    "drive_time": "45min from Nainital",
+    "why_unknown": "Sattal has 7 interconnected lakes but the butterfly corridor is a 2km forest trail on the western bank of Garud Tal that nobody walks because there's no signage and the trailhead is behind a locked gate (ask at Sattal ashram for key).",
+    "why_go": "Over 500 butterfly species documented here \u2014 more than most national parks. In September-October, the migration is so dense that the air shimmers. Indian Ornithological Society calls it one of India's most underrated biodiversity spots.",
+    "difficulty": "easy",
+    "social_proof": null,
+    "confidence_score": 3,
+    "tags": [
+      "offbeat",
+      "wildlife",
+      "photography",
+      "forest"
+    ],
+    "translations": {}
+  },
+  {
+    "id": "mussoorie-george-everest-house",
+    "near_destination_id": "mussoorie-landour",
+    "name": "George Everest House Ruins at Sunset",
+    "coords": {
+      "lat": 30.464,
+      "lng": 78.023
+    },
+    "distance_km": 6,
+    "drive_time": "20min drive + 15min walk from Mussoorie",
+    "why_unknown": "The ruins themselves are GPS-marked, but the specific spot is 100m past the ruins on a ridge where the caretaker's family dries herbs. From there, you see both the Doon Valley sunset AND the Himalayan snowline simultaneously.",
+    "why_go": "Ruined stone laboratory of Sir George Everest (the man Everest is named after) perched on a ridge. At sunset, golden light hits the ruins while the snow peaks glow pink. One of the most photogenic abandoned structures in North India.",
+    "difficulty": "easy",
+    "social_proof": null,
+    "confidence_score": 3,
+    "tags": [
+      "offbeat",
+      "abandoned",
+      "viewpoint",
+      "heritage",
+      "photography"
+    ],
+    "translations": {}
+  },
+  {
+    "id": "landour-char-dukan",
+    "near_destination_id": "mussoorie-landour",
+    "name": "Landour's Char Dukan After Dark",
+    "coords": {
+      "lat": 30.469,
+      "lng": 78.074
+    },
+    "distance_km": 4,
+    "drive_time": "15min walk from Mussoorie",
+    "why_unknown": "Char Dukan is known as Ruskin Bond's hangout. What's unknown is that after 7pm when the shops close, the empty cantonment road becomes the darkest, quietest walk in any hill station \u2014 British-era lampposts, pine forest, complete silence.",
+    "why_go": "A nightwalk through colonial-era Landour with zero traffic, zero tourists, and only the sound of pine wind. The old cemetery at St. Paul's Church in moonlight is genuinely atmospheric. Carry a flask of chai.",
+    "difficulty": "easy",
+    "social_proof": null,
+    "confidence_score": 3,
+    "tags": [
+      "offbeat",
+      "heritage",
+      "night-walk",
+      "cultural"
+    ],
+    "translations": {}
+  },
+  {
+    "id": "kausani-anasakti-ashram-sunrise",
+    "near_destination_id": "kausani",
+    "name": "Anasakti Ashram Roof at Dawn",
+    "coords": {
+      "lat": 29.842,
+      "lng": 79.601
+    },
+    "distance_km": 1,
+    "drive_time": "5min walk from Kausani bus stand",
+    "why_unknown": "The ashram where Gandhi stayed is a museum by day. But if you arrive at 5am before it officially opens, the caretaker lets you sit on the roof. The 300km Himalayan panorama from Trisul to Panchachuli is arguably the widest mountain view accessible without trekking in all of India.",
+    "why_go": "Gandhi called it 'the Switzerland of India' from this exact spot. At dawn, with nobody else present and the snow peaks turning gold, you understand why. The silence is monastic.",
+    "difficulty": "easy",
+    "social_proof": null,
+    "confidence_score": 3,
+    "tags": [
+      "offbeat",
+      "viewpoint",
+      "spiritual",
+      "heritage",
+      "photography"
+    ],
+    "translations": {}
+  },
+  {
+    "id": "almora-kasar-devi-energy-zone",
+    "near_destination_id": "almora-ranikhet",
+    "name": "Kasar Devi Magnetic Anomaly Ridge",
+    "coords": {
+      "lat": 29.653,
+      "lng": 79.659
+    },
+    "distance_km": 8,
+    "drive_time": "20min from Almora",
+    "why_unknown": "Kasar Devi temple is known to hippie circles. The anomaly itself \u2014 where NASA detected unusual geomagnetic readings similar to Machu Picchu and Stonehenge \u2014 is centered on a flat rock 200m past the temple that nobody visits.",
+    "why_go": "The Van Allen Belt dips closest to Earth at only two points \u2014 Kasar Devi and Machu Picchu. Compasses behave erratically. Bob Dylan, D.H. Lawrence, Timothy Leary, and Swami Vivekananda all meditated here. The cosmic connection is scientifically documented.",
+    "difficulty": "easy",
+    "social_proof": null,
+    "confidence_score": 3,
+    "tags": [
+      "offbeat",
+      "spiritual",
+      "geology",
+      "dark-sky"
+    ],
+    "translations": {}
+  },
+  {
+    "id": "srinagar-zabarwan-park",
+    "near_destination_id": "srinagar",
+    "name": "Zabarwan Dachi Forest Trail",
+    "coords": {
+      "lat": 34.085,
+      "lng": 74.912
+    },
+    "distance_km": 8,
+    "drive_time": "20min drive + 1hr walk from Srinagar",
+    "why_unknown": "The Zabarwan range forms Srinagar's backdrop but nobody treks into it. A forest trail starts behind the Mughal Gardens and climbs through pine forest to a meadow with a birds-eye view of Dal Lake and the entire city.",
+    "why_go": "See the entire Kashmir Valley from above \u2014 Dal Lake, houseboats, minarets, and the Pir Panjal range behind. The forest is home to hangul (Kashmir stag) and musk deer. Zero tourist infrastructure.",
+    "difficulty": "moderate",
+    "social_proof": null,
+    "confidence_score": 3,
+    "tags": [
+      "offbeat",
+      "trek",
+      "viewpoint",
+      "wildlife",
+      "forest"
+    ],
+    "translations": {}
+  },
+  {
+    "id": "srinagar-rainawari-old-city",
+    "near_destination_id": "srinagar",
+    "name": "Rainawari Old City Walking Quarter",
+    "coords": {
+      "lat": 34.097,
+      "lng": 74.805
+    },
+    "distance_km": 2,
+    "drive_time": "10min from Dal Gate",
+    "why_unknown": "Every tourist goes to Dal Lake houseboats and Mughal Gardens. The old city core of Rainawari with its medieval merchant houses, 600-year-old khanqahs (Sufi shrines), and paper-mache workshops is completely ignored.",
+    "why_go": "Wooden merchant houses with carved walnut-wood balconies, 14th-century Sufi shrines with Kashmiri tile work, paper-mache artisans working techniques unchanged for 500 years. Authentic Kashmir without a single tourist shop.",
+    "difficulty": "easy",
+    "social_proof": null,
+    "confidence_score": 3,
+    "tags": [
+      "offbeat",
+      "heritage",
+      "architecture",
+      "cultural",
+      "food"
+    ],
+    "translations": {}
+  },
+  {
+    "id": "gulmarg-frozen-lake-trek",
+    "near_destination_id": "gulmarg",
+    "name": "Alpather Frozen Lake",
+    "coords": {
+      "lat": 34.018,
+      "lng": 74.341
+    },
+    "distance_km": 13,
+    "drive_time": "4-5hr trek from Gulmarg Phase 2 gondola station",
+    "why_unknown": "The gondola takes 20,000 tourists/day to Phase 2. Maybe 10 per year continue on foot to Alpather Lake. The trail beyond the gondola is unmarked, crosses snowfields, and requires route-finding over moraine.",
+    "why_go": "A glacial lake at 4,390m that stays frozen until June, surrounded by Affarwat peak walls. In July-August, the ice cracks and electric-blue water appears between ice sheets. The most dramatic lake in all of Kashmir.",
+    "difficulty": "hard",
+    "social_proof": null,
+    "confidence_score": 3,
+    "tags": [
+      "offbeat",
+      "trek",
+      "lake",
+      "glacier",
+      "photography"
+    ],
+    "translations": {}
+  },
+  {
+    "id": "pahalgam-aru-lidderwat-trail",
+    "near_destination_id": "pahalgam",
+    "name": "Lidderwat Meadow",
+    "coords": {
+      "lat": 34.129,
+      "lng": 75.318
+    },
+    "distance_km": 12,
+    "drive_time": "4hr trek from Aru Village",
+    "why_unknown": "Aru Valley is known. But the trail continues to Lidderwat, a massive camping meadow at 3,000m where the Lidder River emerges from multiple glacier streams. Most Pahalgam tourists never leave the pony-ride circuit.",
+    "why_go": "A football-field-sized meadow flanked by birch forests turning gold in September. The river is clear enough to see trout. Old Gujjar shepherd huts offer rustic overnight stays. The silence after the shepherds sleep is complete.",
+    "difficulty": "moderate",
+    "social_proof": null,
+    "confidence_score": 3,
+    "tags": [
+      "offbeat",
+      "meadow",
+      "camping",
+      "trek",
+      "photography"
+    ],
+    "translations": {}
+  },
+  {
+    "id": "sonamarg-thajiwas-upper-glacier",
+    "near_destination_id": "sonamarg",
+    "name": "Thajiwas Upper Glacier Face",
+    "coords": {
+      "lat": 34.268,
+      "lng": 75.345
+    },
+    "distance_km": 5,
+    "drive_time": "2hr trek past the tourist zone",
+    "why_unknown": "Tourists ride ponies to the lower Thajiwas glacier viewpoint and turn back. Continue 3km further on a boulder trail and you reach the actual glacier face \u2014 crevasses, ice walls, meltwater rivers.",
+    "why_go": "Touch a glacier. Seriously. The ice wall is accessible on foot and dripping with blue meltwater. The crevasses groan and crack. In early summer, the ice cave at the snout is accessible. No ropes needed, just nerve.",
+    "difficulty": "hard",
+    "social_proof": null,
+    "confidence_score": 3,
+    "tags": [
+      "offbeat",
+      "glacier",
+      "adventure",
+      "trek"
+    ],
+    "translations": {}
+  },
+  {
+    "id": "yusmarg-sang-e-safed-meadow",
+    "near_destination_id": "yusmarg",
+    "name": "Sang-e-Safed Meadow",
+    "coords": {
+      "lat": 33.792,
+      "lng": 74.638
+    },
+    "distance_km": 7,
+    "drive_time": "3hr trek from Yusmarg",
+    "why_unknown": "Yusmarg itself gets maybe 50 tourists on a busy day. Sang-e-Safed is a further 3hr trek into the Pir Panjal that gets perhaps 5 visitors a month. There's no trail \u2014 shepherds navigate by memory.",
+    "why_go": "A high-altitude meadow named after a massive white boulder in its center. Surrounded by Sunset Peak and Tatakoti on three sides. The grass is ankle-deep, wildflowers bloom July-August, and you will almost certainly be the only human for kilometers.",
+    "difficulty": "hard",
+    "social_proof": null,
+    "confidence_score": 3,
+    "tags": [
+      "offbeat",
+      "meadow",
+      "trek",
+      "wildflower",
+      "camping"
+    ],
+    "translations": {}
+  },
+  {
+    "id": "gurez-habba-khatoon-peak",
+    "near_destination_id": "gurez-valley",
+    "name": "Habba Khatoon Peak Sunset",
+    "coords": {
+      "lat": 34.635,
+      "lng": 74.832
+    },
+    "distance_km": 2,
+    "drive_time": "45min walk from Dawar village",
+    "why_unknown": "Gurez Valley itself is restricted and barely visited. The peak named after a legendary Kashmiri poet-queen is a short walk from the main village but the trail is unmarked and locals don't promote it.",
+    "why_go": "Named after Kashmir's most famous poet. The pyramid-shaped peak turns crimson at sunset. From its base, you see the Kishanganga River snaking through the valley with the LOC visible in the distance. Profoundly remote, profoundly beautiful.",
+    "difficulty": "moderate",
+    "social_proof": null,
+    "confidence_score": 3,
+    "tags": [
+      "offbeat",
+      "viewpoint",
+      "cultural",
+      "photography"
+    ],
+    "translations": {}
+  },
+  {
+    "id": "doodhpathri-palmaidan-clearing",
+    "near_destination_id": "doodhpathri",
+    "name": "Palmaidan Sacred Clearing",
+    "coords": {
+      "lat": 33.874,
+      "lng": 74.561
+    },
+    "distance_km": 5,
+    "drive_time": "2hr walk from Doodhpathri main area",
+    "why_unknown": "Doodhpathri is already obscure. Palmaidan is a clearing 5km deeper into the forest that Gujjar herders consider sacred. No trail, no sign, no map marker. You need a local to find it.",
+    "why_go": "A perfectly circular clearing in dense pine forest where the grass is inexplicably greener than surrounding areas. A natural spring emerges from the center. Gujjars say the water has healing properties. The circle is 200m across and feels intentional.",
+    "difficulty": "moderate",
+    "social_proof": null,
+    "confidence_score": 3,
+    "tags": [
+      "offbeat",
+      "meadow",
+      "spiritual",
+      "forest"
+    ],
+    "translations": {}
+  },
+  {
+    "id": "patnitop-sanasar-lake-camp",
+    "near_destination_id": "patnitop",
+    "name": "Sanasar Lake Midnight Camp",
+    "coords": {
+      "lat": 33.049,
+      "lng": 75.228
+    },
+    "distance_km": 18,
+    "drive_time": "30min from Patnitop",
+    "why_unknown": "Sanasar is on maps but the camping ground at the lake's north shore, where the tree line breaks to reveal open sky, is unvisited after sunset. No commercial camping operators set up here \u2014 it's too quiet for their business model.",
+    "why_go": "Cup-shaped meadow with a small lake reflecting the stars. At 2,050m it's warm enough for comfortable camping but high enough for clean dark skies. The Shivalik foothills frame the horizon. Complete silence after 8pm.",
+    "difficulty": "easy",
+    "social_proof": null,
+    "confidence_score": 3,
+    "tags": [
+      "offbeat",
+      "camping",
+      "dark-sky",
+      "lake"
+    ],
+    "translations": {}
+  },
+  {
+    "id": "leh-stok-kangri-base-meadow",
+    "near_destination_id": "leh",
+    "name": "Stok Kangri Base Meadow",
+    "coords": {
+      "lat": 33.966,
+      "lng": 77.468
+    },
+    "distance_km": 15,
+    "drive_time": "30min drive + 3hr trek from Leh",
+    "why_unknown": "Stok Kangri summit is a famous climb. But the base camp meadow at 4,400m is accessible as a day trek and unknown to non-climbers. Leh tourists go to monasteries and Pangong \u2014 nobody thinks to day-trek to a base camp.",
+    "why_go": "A vast meadow at 4,400m with the Stok Kangri glacier directly above. Marmots, blue sheep, and possibly snow leopard tracks. The clearest air you'll breathe in your life. Return same day to Leh for dinner.",
+    "difficulty": "moderate",
+    "social_proof": null,
+    "confidence_score": 3,
+    "tags": [
+      "offbeat",
+      "meadow",
+      "trek",
+      "wildlife"
+    ],
+    "translations": {}
+  },
+  {
+    "id": "nubra-valley-tyakshi-monastery",
+    "near_destination_id": "nubra-valley",
+    "name": "Tyakshi Ruined Monastery",
+    "coords": {
+      "lat": 34.738,
+      "lng": 77.549
+    },
+    "distance_km": 80,
+    "drive_time": "3hr from Diskit",
+    "why_unknown": "All Nubra tourists go to Diskit Monastery and Hunder sand dunes. Tyakshi is in the restricted zone near the Siachen base camp road. Very few permits issued. The monastery is a crumbling 15th-century structure nobody has restored.",
+    "why_go": "An abandoned Tibetan Buddhist monastery at the edge of the Siachen conflict zone. Faded murals of wrathful deities still visible on crumbling walls. The location \u2014 between sand dunes and 7,000m peaks \u2014 is cinematically surreal.",
+    "difficulty": "hard",
+    "social_proof": null,
+    "confidence_score": 3,
+    "tags": [
+      "offbeat",
+      "abandoned",
+      "spiritual",
+      "heritage",
+      "architecture"
+    ],
+    "translations": {}
+  },
+  {
+    "id": "pangong-man-merak-villages",
+    "near_destination_id": "pangong-lake",
+    "name": "Man and Merak Changpa Villages",
+    "coords": {
+      "lat": 33.695,
+      "lng": 78.822
+    },
+    "distance_km": 50,
+    "drive_time": "2hr from Pangong Lake viewpoint (rough track)",
+    "why_unknown": "Everyone stops at the Pangong Lake '3 Idiots' point and turns back. Drive 50km further on a deteriorating track along the southern shore to reach the last inhabited Changpa nomad villages before the Chinese border.",
+    "why_go": "Semi-nomadic Changpa herders who make pashmina wool from their changthangi goats. Stay in a real nomad tent, help herd goats at dawn, drink salt butter tea. The lake at this point is deeper blue than the tourist zone and completely empty.",
+    "difficulty": "hard",
+    "social_proof": null,
+    "confidence_score": 3,
+    "tags": [
+      "offbeat",
+      "village",
+      "cultural",
+      "lake",
+      "camping"
+    ],
+    "translations": {}
+  },
+  {
+    "id": "zanskar-phugtal-monastery",
+    "near_destination_id": "zanskar",
+    "name": "Phugtal Monastery Cave",
+    "coords": {
+      "lat": 33.351,
+      "lng": 76.973
+    },
+    "distance_km": 50,
+    "drive_time": "2-day trek from Padum (no road)",
+    "why_unknown": "Zanskar is already India's most remote inhabited region. Phugtal requires a multi-day trek. It's a monastery literally built into a cliff cave above a river gorge. Maybe 200 tourists per year see it.",
+    "why_go": "A 2,500-year-old cave monastery clinging to a sheer cliff face like a bird's nest. Monks still live here. The cave contains a spring that flows year-round. The architectural ambition \u2014 building a monastery INTO a cliff \u2014 defies belief.",
+    "difficulty": "hard",
+    "social_proof": null,
+    "confidence_score": 3,
+    "tags": [
+      "offbeat",
+      "spiritual",
+      "architecture",
+      "trek",
+      "expedition"
+    ],
+    "translations": {}
+  },
+  {
+    "id": "lamayuru-moonland-night-sky",
+    "near_destination_id": "lamayuru-alchi-likir",
+    "name": "Lamayuru Moonland Dark Sky Site",
+    "coords": {
+      "lat": 34.2835,
+      "lng": 76.814
+    },
+    "distance_km": 2,
+    "drive_time": "10min walk from Lamayuru Monastery",
+    "why_unknown": "Lamayuru's 'moonscape' is photographed by day. At night, the same location becomes one of the best astrophotography sites in Ladakh \u2014 the eroded clay formations silhouetted against the Milky Way create otherworldly compositions.",
+    "why_go": "The lunar landscape by starlight is science fiction made real. The clay pinnacles glow faintly under starlight. At 3,500m with zero light pollution, the Milky Way casts visible shadows. Set up a tripod and shoot what nobody else has.",
+    "difficulty": "easy",
+    "social_proof": null,
+    "confidence_score": 3,
+    "tags": [
+      "offbeat",
+      "dark-sky",
+      "photography",
+      "geology"
+    ],
+    "translations": {}
+  },
+  {
+    "id": "hanle-dark-sky-reserve-v2",
+    "near_destination_id": "hanle",
+    "name": "Hanle Observatory Dark Sky Camp",
+    "coords": {
+      "lat": 32.7795,
+      "lng": 78.965
+    },
+    "distance_km": 2,
+    "drive_time": "5min from Hanle Monastery",
+    "why_unknown": "Hanle Observatory is technically known to astronomy nerds. But the designated dark sky camping area 2km south \u2014 India's first official dark sky reserve \u2014 opened quietly with no marketing. Most Ladakh travelers don't even know Hanle exists.",
+    "why_go": "The darkest measured sky in India. Bortle scale 1 (the absolute best). You can see the zodiacal light, gegenschein, and the Andromeda Galaxy as a visible fuzzy patch with naked eyes. The Indian Astronomical Observatory at 4,500m is the world's third highest.",
+    "difficulty": "hard",
+    "social_proof": null,
+    "confidence_score": 3,
+    "tags": [
+      "offbeat",
+      "dark-sky",
+      "camping",
+      "science"
+    ],
+    "translations": {}
+  },
+  {
+    "id": "kargil-hunderman-brok",
+    "near_destination_id": "kargil-drass",
+    "name": "Hunderman Brok Abandoned Village",
+    "coords": {
+      "lat": 34.538,
+      "lng": 76.052
+    },
+    "distance_km": 10,
+    "drive_time": "20min from Kargil",
+    "why_unknown": "Abandoned during the 1971 war when the LOC was redrawn and villagers were displaced overnight. The village sat in no-man's land for 46 years until the road reopened in 2018. Still barely visited \u2014 it's not on any tourist circuit.",
+    "why_go": "Walk through a frozen-in-time village with intact stone houses, a mosque, and personal belongings left behind during the 1971 evacuation. Trees have grown through houses. A powerful, haunting, living history lesson.",
+    "difficulty": "easy",
+    "social_proof": null,
+    "confidence_score": 3,
+    "tags": [
+      "offbeat",
+      "abandoned",
+      "heritage",
+      "cultural"
+    ],
+    "translations": {}
+  },
+  {
+    "id": "tso-moriri-korzok-village",
+    "near_destination_id": "tso-moriri",
+    "name": "Korzok Nomad Winter Ground",
+    "coords": {
+      "lat": 32.955,
+      "lng": 78.237
+    },
+    "distance_km": 3,
+    "drive_time": "15min walk from Korzok village",
+    "why_unknown": "The few tourists who reach Tso Moriri photograph the lake and leave. Walking 2km south of Korzok village along the lakeshore, you reach the winter grazing ground where Changpa nomads park their yak-hair tents Sept-March.",
+    "why_go": "Interact with Changpa nomads at 4,500m who herd pashmina goats and yaks. Their black yak-hair tents (rebo) are warm inside despite -30\u00b0C outside. The lake reflects the 6,000m peaks. One of the most authentic cultural encounters left in India.",
+    "difficulty": "moderate",
+    "social_proof": null,
+    "confidence_score": 3,
+    "tags": [
+      "offbeat",
+      "cultural",
+      "village",
+      "lake",
+      "camping"
+    ],
+    "translations": {}
+  },
+  {
+    "id": "jaipur-nahargarh-stepwell",
+    "near_destination_id": "jaipur",
+    "name": "Nahargarh Fort Hidden Stepwell",
+    "coords": {
+      "lat": 26.942,
+      "lng": 75.814
+    },
+    "distance_km": 5,
+    "drive_time": "15min from Jaipur city center",
+    "why_unknown": "Inside Nahargarh Fort, 200m past the main tourist route through an unmarked doorway, there's a deep stepwell (baoli) that most visitors walk right past. No signage, no ticket, no guard.",
+    "why_go": "A 6-level geometric stepwell with symmetrical staircases descending into cool darkness. The acoustics are extraordinary \u2014 a whisper at the bottom is audible at the top. Best light hits at 2pm when a shaft of sun reaches the water.",
+    "difficulty": "easy",
+    "social_proof": null,
+    "confidence_score": 3,
+    "tags": [
+      "offbeat",
+      "architecture",
+      "heritage",
+      "photography"
+    ],
+    "translations": {}
+  },
+  {
+    "id": "udaipur-ahar-cenotaphs",
+    "near_destination_id": "udaipur",
+    "name": "Ahar Cenotaphs at Dawn",
+    "coords": {
+      "lat": 24.572,
+      "lng": 73.732
+    },
+    "distance_km": 3,
+    "drive_time": "10min from Udaipur City Palace",
+    "why_unknown": "250+ royal cenotaphs of Mewar rulers spanning 350 years sit 3km from City Palace. Every tourist goes to the palace and the lakes. The cenotaphs are technically open but have no ticket counter, no guide, no cafe \u2014 so nobody goes.",
+    "why_go": "Domed cenotaphs in carved white marble with more intricate work than most famous temples. At dawn, the light filters through the domes creating geometric shadow patterns on the floor. You will be alone among 350 years of kings.",
+    "difficulty": "easy",
+    "social_proof": null,
+    "confidence_score": 3,
+    "tags": [
+      "offbeat",
+      "heritage",
+      "architecture",
+      "photography"
+    ],
+    "translations": {}
+  },
+  {
+    "id": "jaisalmer-kuldhara-after-dark",
+    "near_destination_id": "jaisalmer",
+    "name": "Kuldhara Ghost Village Night Visit",
+    "coords": {
+      "lat": 26.837,
+      "lng": 70.767
+    },
+    "distance_km": 18,
+    "drive_time": "30min from Jaisalmer",
+    "why_unknown": "Kuldhara is known but it closes at sunset and everyone visits by day. The actual experience \u2014 the entire Paliwal Brahmin village abandoned overnight in 1825 with 83 villages emptied simultaneously \u2014 is only felt in darkness. Some local jeep drivers will take you after hours.",
+    "why_go": "83 villages abandoned in a single night. The reason is still debated \u2014 oppressive taxes, a curse, or a minister's threat to kidnap a girl. The stone houses are intact. In moonlight, with the desert wind, it's the most atmospheric abandoned place in India.",
+    "difficulty": "moderate",
+    "social_proof": null,
+    "confidence_score": 3,
+    "tags": [
+      "offbeat",
+      "abandoned",
+      "heritage",
+      "dark-sky"
+    ],
+    "translations": {}
+  },
+  {
+    "id": "jodhpur-rao-jodha-desert-rock-park",
+    "near_destination_id": "jodhpur",
+    "name": "Rao Jodha Desert Rock Park Hidden Trail",
+    "coords": {
+      "lat": 26.299,
+      "lng": 73.021
+    },
+    "distance_km": 1,
+    "drive_time": "5min walk from Mehrangarh Fort",
+    "why_unknown": "Right below Mehrangarh Fort, a restored desert ecology park has a 2km trail through volcanic rock and native desert plants. Tourists at the fort never look down. The park gets maybe 20 visitors/day despite being 100m from Mehrangarh.",
+    "why_go": "Walk through 500-million-year-old rhyolite volcanic rock formations with Mehrangarh Fort towering above. 200+ native desert species restored. The 'hard trail' descends into a ravine with ancient rock-cut cisterns. Sunset here with the blue city glowing is unmatched.",
+    "difficulty": "easy",
+    "social_proof": null,
+    "confidence_score": 3,
+    "tags": [
+      "offbeat",
+      "geology",
+      "photography",
+      "viewpoint"
+    ],
+    "translations": {}
+  },
+  {
+    "id": "pushkar-savitri-temple-ropeway-dawn",
+    "near_destination_id": "pushkar",
+    "name": "Savitri Temple Summit Before Ropeway",
+    "coords": {
+      "lat": 26.476,
+      "lng": 74.547
+    },
+    "distance_km": 2,
+    "drive_time": "1.5hr climb (steep trail, 400+ steps)",
+    "why_unknown": "The ropeway starts at 8am. If you climb the old stone stairway starting at 5am, you reach the summit alone for sunrise over Pushkar Lake with the entire Aravalli range visible. By 8:30am the ropeway crowds arrive and the magic is gone.",
+    "why_go": "360-degree view of Pushkar Lake, the desert, and the Aravallis at sunrise. The temple is dedicated to Savitri (Brahma's wife), making it the only place where the 'other side' of the Brahma story is told. Sunrise light turns the lake gold.",
+    "difficulty": "moderate",
+    "social_proof": null,
+    "confidence_score": 3,
+    "tags": [
+      "offbeat",
+      "viewpoint",
+      "spiritual",
+      "photography"
+    ],
+    "translations": {}
+  },
+  {
+    "id": "ranthambore-lakarda-dullapur-ruins",
+    "near_destination_id": "ranthambore",
+    "name": "Lakarda & Dullapur Ruined Temples",
+    "coords": {
+      "lat": 26.045,
+      "lng": 76.451
+    },
+    "distance_km": 12,
+    "drive_time": "30min from Ranthambore gate (inside buffer zone)",
+    "why_unknown": "Every tourist does the tiger safari and visits Ranthambore Fort. In the buffer zone, accessible by guided walk, there are ruined 10th-century Jain temples being consumed by jungle. No tourist operator includes them.",
+    "why_go": "Ancient carved temples with roots growing through doorways and fig trees splitting walls \u2014 an Indian Angkor Wat situation. Peacocks nest in the ruins. Leopard tracks on the trail are common. Requires forest department permission.",
+    "difficulty": "moderate",
+    "social_proof": null,
+    "confidence_score": 3,
+    "tags": [
+      "offbeat",
+      "abandoned",
+      "heritage",
+      "wildlife"
+    ],
+    "translations": {}
+  },
+  {
+    "id": "mount-abu-toad-rock-sunset",
+    "near_destination_id": "mount-abu",
+    "name": "Toad Rock Hidden Ledge",
+    "coords": {
+      "lat": 24.595,
+      "lng": 72.71
+    },
+    "distance_km": 2,
+    "drive_time": "15min walk from Nakki Lake",
+    "why_unknown": "Toad Rock itself is touristy. But scramble 50m past it on the granite boulders to a flat ledge facing west, and you get the only unobstructed sunset view over the Abu plains with the Gujarat desert stretching to infinity. No railing, no path.",
+    "why_go": "Watch the sun set over two states simultaneously \u2014 Rajasthan and Gujarat. The granite radiates stored heat as the air cools, creating a natural warm seat. Hawks circle at eye level. On clear days, visibility exceeds 100km.",
+    "difficulty": "easy",
+    "social_proof": null,
+    "confidence_score": 3,
+    "tags": [
+      "offbeat",
+      "viewpoint",
+      "photography"
+    ],
+    "translations": {}
+  },
+  {
+    "id": "bundi-stepwell-circuit",
+    "near_destination_id": "bundi",
+    "name": "Bundi 50-Stepwell Heritage Walk",
+    "coords": {
+      "lat": 25.4385,
+      "lng": 75.637
+    },
+    "distance_km": 3,
+    "drive_time": "2hr walking circuit through old Bundi",
+    "why_unknown": "Bundi had 50+ stepwells. Most tourists see Raniji ki Baori (the famous one) and leave. A self-guided walk through the old town reveals at least 15 more stepwells hidden in residential lanes, behind houses, and under shops \u2014 each architecturally unique.",
+    "why_go": "The highest concentration of stepwells in any Indian city. Some are 8 storeys deep, carved from single rock faces. Several have been reclaimed by residents who built houses over them \u2014 you access them through someone's living room. Living archaeology.",
+    "difficulty": "easy",
+    "social_proof": null,
+    "confidence_score": 3,
+    "tags": [
+      "offbeat",
+      "architecture",
+      "heritage",
+      "photography"
+    ],
+    "translations": {}
+  },
+  {
+    "id": "kumbhalgarh-wall-dawn-walk",
+    "near_destination_id": "chittorgarh-kumbhalgarh",
+    "name": "Kumbhalgarh Wall Dawn Patrol",
+    "coords": {
+      "lat": 25.151,
+      "lng": 73.587
+    },
+    "distance_km": 1,
+    "drive_time": "Inside the fort",
+    "why_unknown": "Kumbhalgarh Fort is known. Walking the 36km-long wall (second longest wall in the world after China) at dawn is not. The fort opens at sunrise and for the first hour, the entire wall \u2014 wide enough for 8 horses \u2014 is deserted.",
+    "why_go": "Walk on the second longest continuous wall in the world with nobody else on it. The wall snakes across ridges and valleys through the Aravallis. At dawn, wild peacocks call from the ramparts and sloth bears are occasionally spotted below.",
+    "difficulty": "moderate",
+    "social_proof": null,
+    "confidence_score": 3,
+    "tags": [
+      "offbeat",
+      "heritage",
+      "viewpoint",
+      "wildlife"
+    ],
+    "translations": {}
+  },
+  {
+    "id": "bikaner-karni-mata-rat-temple-dawn",
+    "near_destination_id": "bikaner",
+    "name": "Deshnoke Karni Mata Night Ceremony",
+    "coords": {
+      "lat": 27.789,
+      "lng": 73.342
+    },
+    "distance_km": 30,
+    "drive_time": "40min from Bikaner",
+    "why_unknown": "The Rat Temple is famous as a tourist curiosity. What nobody sees is the midnight aarti ceremony (11pm-midnight) when the rats emerge en masse from their burrows and the temple priests perform rituals by oil lamp. Day tourists never stay this late.",
+    "why_go": "20,000+ rats illuminated by oil lamps while temple bells ring. The rats are considered reincarnated ancestors. Spotting a white rat is considered the luckiest omen possible. The night ceremony is intense, devotional, and completely uncommercialized.",
+    "difficulty": "easy",
+    "social_proof": null,
+    "confidence_score": 3,
+    "tags": [
+      "offbeat",
+      "spiritual",
+      "cultural"
+    ],
+    "translations": {}
+  },
+  {
+    "id": "shekhawati-abandoned-haveli-walk",
+    "near_destination_id": "shekhawati",
+    "name": "Mandawa Locked Haveli Circuit",
+    "coords": {
+      "lat": 28.056,
+      "lng": 75.142
+    },
+    "distance_km": 1,
+    "drive_time": "1hr walking circuit in Mandawa town",
+    "why_unknown": "The open havelis are on tourist maps. But 20+ havelis in Mandawa are locked and abandoned \u2014 the Marwari merchant families migrated to Mumbai/Kolkata generations ago. Local boys know which walls to peek over and which caretakers have keys.",
+    "why_go": "Frescoes from the 1880s-1920s depicting trains, cars, Queen Victoria, gramophones, and hot air balloons \u2014 painted by artists who had never seen them. Rooms with intact European furniture gathering dust. Living museums frozen when the merchants left.",
+    "difficulty": "easy",
+    "social_proof": null,
+    "confidence_score": 3,
+    "tags": [
+      "offbeat",
+      "architecture",
+      "abandoned",
+      "heritage",
+      "photography"
+    ],
+    "translations": {}
+  },
+  {
+    "id": "deeg-water-palace-monsoon",
+    "near_destination_id": "bharatpur-deeg",
+    "name": "Deeg Palace Monsoon Fountain Show",
+    "coords": {
+      "lat": 27.47,
+      "lng": 77.324
+    },
+    "distance_km": 35,
+    "drive_time": "45min from Bharatpur",
+    "why_unknown": "Deeg Palace runs its 18th-century fountain system once a year during Monsoon festival (Aug-Sep). The palace was engineered to simulate monsoon rains using 900+ fountains, including ones that create the sound of thunder. Barely anyone knows the festival dates.",
+    "why_go": "A palace designed to make artificial rain. 18th-century hydraulic engineering creates mist, rain curtains, and thunder sounds using pressurized water. When all 900 fountains run simultaneously, the palace disappears behind a wall of water. Engineering from 1760.",
+    "difficulty": "easy",
+    "social_proof": null,
+    "confidence_score": 3,
+    "tags": [
+      "offbeat",
+      "architecture",
+      "heritage",
+      "engineering"
+    ],
+    "translations": {}
+  },
+  {
+    "id": "varanasi-ramnagar-fort-museum",
+    "near_destination_id": "varanasi",
+    "name": "Ramnagar Fort Vintage Car & Arms Museum",
+    "coords": {
+      "lat": 25.286,
+      "lng": 83.031
+    },
+    "distance_km": 5,
+    "drive_time": "20min from Varanasi ghats (across the river)",
+    "why_unknown": "Every tourist stays on the ghat side. Ramnagar Fort on the opposite bank has a crumbling museum with vintage cars (1920s), astronomical clocks, ivory palanquins, and a sword collection \u2014 all gathering dust because the Maharaja's family can't afford restoration.",
+    "why_go": "A fading museum where nothing is behind glass. Ivory howdahs, Mughal miniatures, Belgian crystal, and a 1930s Rolls Royce sitting in an open courtyard. The caretaker will tell stories of each piece. It's what all Indian museums were before modernization.",
+    "difficulty": "easy",
+    "social_proof": null,
+    "confidence_score": 3,
+    "tags": [
+      "offbeat",
+      "heritage",
+      "cultural"
+    ],
+    "translations": {}
+  },
+  {
+    "id": "agra-mehtab-bagh-moonrise",
+    "near_destination_id": "agra",
+    "name": "Mehtab Bagh Moonrise Alignment",
+    "coords": {
+      "lat": 27.186,
+      "lng": 78.037
+    },
+    "distance_km": 3,
+    "drive_time": "10min from Taj Mahal",
+    "why_unknown": "Mehtab Bagh is a known sunset spot. What's unknown: on 5 full moon nights per year (Oct-Feb), the moon rises directly behind the Taj Mahal's dome when viewed from the garden's center axis. The alignment lasts about 15 minutes. No tourist agency promotes specific moonrise dates.",
+    "why_go": "The Taj Mahal was designed to be viewed under moonlight from this exact garden. Shah Jahan's original intent was a moonlit experience. When the full moon rises behind the dome, the white marble glows blue-silver. The most intentional architectural-astronomical alignment in India.",
+    "difficulty": "easy",
+    "social_proof": null,
+    "confidence_score": 3,
+    "tags": [
+      "offbeat",
+      "heritage",
+      "photography",
+      "dark-sky"
+    ],
+    "translations": {}
+  },
+  {
+    "id": "lucknow-residency-underground-tunnels",
+    "near_destination_id": "lucknow",
+    "name": "British Residency Underground Passages",
+    "coords": {
+      "lat": 26.86,
+      "lng": 80.942
+    },
+    "distance_km": 2,
+    "drive_time": "10min from Lucknow center",
+    "why_unknown": "The Residency ruins are a known monument. The underground escape tunnels used during the 1857 Siege of Lucknow are partially accessible but unmarked. Ask the ASI guard at the south gate \u2014 they'll show you the tunnel entry for a modest tip.",
+    "why_go": "Walk through the actual tunnels where British soldiers, women, and children sheltered during the 87-day siege of 1857. Bullet marks and cannon damage are preserved. The cemetery has graves of people who died during the siege \u2014 ages and causes inscribed.",
+    "difficulty": "easy",
+    "social_proof": null,
+    "confidence_score": 3,
+    "tags": [
+      "offbeat",
+      "heritage",
+      "abandoned"
+    ],
+    "translations": {}
+  },
+  {
+    "id": "vrindavan-nidhivan-night-mystery",
+    "near_destination_id": "vrindavan-mathura",
+    "name": "Nidhivan Closed Garden Mystery",
+    "coords": {
+      "lat": 27.584,
+      "lng": 77.698
+    },
+    "distance_km": 1,
+    "drive_time": "5min walk from Vrindavan center",
+    "why_unknown": "Nidhivan is a small garden that locks at sunset. Locals believe Krishna dances here every night. The trees are twisted in pairs (Krishna and gopis), and nobody \u2014 not even guards \u2014 is allowed inside after dark. Items left inside are found rearranged in the morning.",
+    "why_go": "India's most genuine unsolved mystery location. CCTV cameras installed to debunk the myth reportedly malfunctioned. Monkeys that are aggressive all day won't enter after sunset. The twisted tulsi trees form natural archways. Whether you believe or not, the atmosphere is electric.",
+    "difficulty": "easy",
+    "social_proof": null,
+    "confidence_score": 3,
+    "tags": [
+      "offbeat",
+      "spiritual",
+      "mystery",
+      "cultural"
+    ],
+    "translations": {}
+  },
+  {
+    "id": "amritsar-partition-museum",
+    "near_destination_id": "amritsar",
+    "name": "Partition Museum Personal Stories Gallery",
+    "coords": {
+      "lat": 31.62,
+      "lng": 74.875
+    },
+    "distance_km": 1,
+    "drive_time": "5min walk from Golden Temple",
+    "why_unknown": "The Partition Museum opened in 2017 in Town Hall. Every Amritsar tourist goes to the Golden Temple and Wagah Border. The museum sits between them and gets skipped. The personal stories gallery \u2014 handwritten letters, refugee belongings, audio testimonies \u2014 is the most powerful.",
+    "why_go": "The world's first Partition museum. The personal gallery has a suitcase a 12-year-old girl carried across the border in 1947, letters never delivered, and audio recordings of survivors. You will cry. The most emotionally devastating museum in India.",
+    "difficulty": "easy",
+    "social_proof": null,
+    "confidence_score": 3,
+    "tags": [
+      "offbeat",
+      "heritage",
+      "cultural"
+    ],
+    "translations": {}
+  },
+  {
+    "id": "anandpur-sahib-virasat-e-khalsa-sunset",
+    "near_destination_id": "anandpur-sahib",
+    "name": "Virasat-e-Khalsa Sunset Reflection Pool",
+    "coords": {
+      "lat": 31.234,
+      "lng": 76.502
+    },
+    "distance_km": 1,
+    "drive_time": "5min walk from Anandpur Sahib Gurdwara",
+    "why_unknown": "The Virasat-e-Khalsa museum designed by Moshe Safdie (same architect as Marina Bay Sands) is architecturally world-class but gets almost zero non-Sikh visitors. The exterior reflection pool at sunset, when the stainless steel petals glow, is the real show.",
+    "why_go": "A $200M museum designed by a Pritzker-adjacent architect that would be a national landmark in any other country. The flower-petal towers reflected in the pool at golden hour are architectural photography gold. Inside, the Sikh history gallery uses immersive light/sound.",
+    "difficulty": "easy",
+    "social_proof": null,
+    "confidence_score": 3,
+    "tags": [
+      "offbeat",
+      "architecture",
+      "heritage",
+      "photography"
+    ],
+    "translations": {}
+  },
+  {
+    "id": "delhi-agrasen-ki-baoli-echo",
+    "near_destination_id": "delhi",
+    "name": "Agrasen ki Baoli Echo Chamber",
+    "coords": {
+      "lat": 28.626,
+      "lng": 77.224
+    },
+    "distance_km": 3,
+    "drive_time": "15min from Connaught Place",
+    "why_unknown": "The stepwell itself went viral after PK movie. What's unknown: descend to the bottom level at 5am (it opens early). Stand at the deepest point and clap \u2014 the echo bounces 106 steps up through 14th-century stone for 8 full seconds. The acoustic engineering was intentional.",
+    "why_go": "A 60m-long, 15m-deep stepwell in central Delhi that was designed as both a water reservoir and an acoustic instrument. At dawn, before tourists arrive, the bottom level is cool, dark, and the echo is hypnotic. Bats roost in the upper arches.",
+    "difficulty": "easy",
+    "social_proof": null,
+    "confidence_score": 3,
+    "tags": [
+      "offbeat",
+      "architecture",
+      "heritage",
+      "engineering"
+    ],
+    "translations": {}
+  },
+  {
+    "id": "morni-hills-tikkar-taal-camp",
+    "near_destination_id": "morni-hills",
+    "name": "Tikkar Taal Abandoned Resort Overlook",
+    "coords": {
+      "lat": 30.693,
+      "lng": 77.079
+    },
+    "distance_km": 3,
+    "drive_time": "10min from Morni Hills town",
+    "why_unknown": "Tikkar Taal lake is minimally known. On the eastern ridge above the lake, there's an abandoned Haryana Tourism resort from the 1980s \u2014 overgrown, locked, but the terrace is accessible and provides the only elevated view of both Morni lakes simultaneously.",
+    "why_go": "Twin lakes separated by a narrow ridge, visible together only from this abandoned terrace. In winter, migratory birds cover the lakes. The abandoned resort adds a post-apocalyptic aesthetic. It's the only elevated viewpoint in Haryana's only hill station.",
+    "difficulty": "easy",
+    "social_proof": null,
+    "confidence_score": 3,
+    "tags": [
+      "offbeat",
+      "abandoned",
+      "viewpoint",
+      "lake"
+    ],
+    "translations": {}
+  },
+  {
+    "id": "kurukshetra-brahma-sarovar-eclipse",
+    "near_destination_id": "kurukshetra",
+    "name": "Brahma Sarovar Solar Eclipse Gathering",
+    "coords": {
+      "lat": 29.968,
+      "lng": 76.831
+    },
+    "distance_km": 1,
+    "drive_time": "5min from Kurukshetra center",
+    "why_unknown": "Brahma Sarovar is a large sacred tank that's empty most of the year. During solar eclipses, up to 1 million pilgrims gather for a ritual bath \u2014 making it one of the largest temporary human gatherings on Earth. No tourism board promotes eclipse dates.",
+    "why_go": "The mythological site where the Mahabharata war began. On non-eclipse days, the tank is serenely empty with Mughal-era ghats and a marble platform in the center accessible by bridge. Evening aarti with oil lamps floating on the water rivals Varanasi's but with zero tourists.",
+    "difficulty": "easy",
+    "social_proof": null,
+    "confidence_score": 3,
+    "tags": [
+      "offbeat",
+      "spiritual",
+      "heritage",
+      "cultural"
+    ],
+    "translations": {}
+  },
+  {
+    "id": "chandigarh-rock-garden-phase-2-tunnels",
+    "near_destination_id": "chandigarh",
+    "name": "Rock Garden Phase 2 Secret Tunnels",
+    "coords": {
+      "lat": 30.752,
+      "lng": 76.806
+    },
+    "distance_km": 3,
+    "drive_time": "10min from Chandigarh center",
+    "why_unknown": "Rock Garden Phase 1 is tourist-heavy. Phase 2 and 3, built by Nek Chand in his later years, have narrow tunnels, hidden chambers, and mosaic grottos that 90% of visitors miss because they follow the main path and exit after Phase 1.",
+    "why_go": "Crawl through tunnels lined with broken bangles into hidden rooms with waterfall walls made from recycled porcelain. Nek Chand built these as meditation chambers. The sound design \u2014 water echoing through ceramic-lined tunnels \u2014 was intentional and is genuinely therapeutic.",
+    "difficulty": "easy",
+    "social_proof": null,
+    "confidence_score": 3,
+    "tags": [
+      "offbeat",
+      "architecture",
+      "art"
+    ],
+    "translations": {}
+  },
+  {
+    "id": "prayagraj-allahabad-fort-underground",
+    "near_destination_id": "prayagraj",
+    "name": "Allahabad Fort Underground Akshaya Vat",
+    "coords": {
+      "lat": 25.428,
+      "lng": 81.886
+    },
+    "distance_km": 2,
+    "drive_time": "10min from Sangam",
+    "why_unknown": "The Allahabad Fort is an Army base \u2014 mostly closed to civilians. But the Akshaya Vat (Indestructible Banyan Tree) inside is open by request. It's an underground chamber with a tree that Xuanzang documented in 643 AD. Most Prayagraj pilgrims go to the Sangam and skip this.",
+    "why_go": "A banyan tree in an underground chamber inside a Mughal fort that has been continuously documented for 1,400+ years. The Chinese pilgrim Xuanzang wrote about it. The chamber is dark, cool, and ancient. The tree is undeniably very, very old.",
+    "difficulty": "easy",
+    "social_proof": null,
+    "confidence_score": 3,
+    "tags": [
+      "offbeat",
+      "spiritual",
+      "heritage"
+    ],
+    "translations": {}
+  },
+  {
+    "id": "ayodhya-guptar-ghat-sunset",
+    "near_destination_id": "ayodhya",
+    "name": "Guptar Ghat Cave Shrines",
+    "coords": {
+      "lat": 26.817,
+      "lng": 82.167
+    },
+    "distance_km": 3,
+    "drive_time": "15min from Ayodhya center",
+    "why_unknown": "All pilgrims and tourists focus on Ram Mandir. Guptar Ghat, where Lord Ram is believed to have taken jal samadhi (water burial), has cave-like shrines cut into the riverbank that are visited only by a handful of sadhus daily.",
+    "why_go": "Cave shrines on the Saryu River where the Ramayana narrative literally ends. Carved alcoves in the riverbank hold ancient idols. The evening aarti here has 5 priests and 10 devotees \u2014 versus Ram Mandir's thousands. The most intimate spiritual experience in Ayodhya.",
+    "difficulty": "easy",
+    "social_proof": null,
+    "confidence_score": 3,
+    "tags": [
+      "offbeat",
+      "spiritual",
+      "heritage",
+      "cultural"
+    ],
+    "translations": {}
+  }
+]
