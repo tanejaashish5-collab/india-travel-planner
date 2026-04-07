@@ -17,6 +17,9 @@ export function Nav() {
     { href: `/${locale}/collections`, label: t("collections") },
     { href: `/${locale}/routes`, label: t("routes") },
     { href: `/${locale}/treks`, label: t("treks") },
+    { href: `/${locale}/region/himachal-pradesh`, label: "HP" },
+    { href: `/${locale}/region/uttarakhand`, label: "UK" },
+    { href: `/${locale}/region/jammu-kashmir`, label: "J&K" },
   ];
 
   function isActive(href: string) {
