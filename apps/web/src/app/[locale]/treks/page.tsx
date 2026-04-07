@@ -3,22 +3,30 @@ import { Footer } from "@/components/footer";
 import { TreksContent } from "@/components/treks-content";
 import { createClient } from "@supabase/supabase-js";
 
-async function getTrekDestinations() {
+async function getTrekData() {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-  if (!url || !key) return [];
+  if (!url || !key) return { treks: [], trekDests: [] };
 
   const supabase = createClient(url, key);
-  const { data } = await supabase
-    .from("destinations")
-    .select("id, name, tagline, difficulty, elevation_m, tags, state:states(name)")
-    .contains("tags", ["trek"])
-    .order("name");
-  return data ?? [];
+
+  const [treksResult, destsResult] = await Promise.all([
+    supabase.from("treks").select("*").order("difficulty"),
+    supabase
+      .from("destinations")
+      .select("id, name, tagline, difficulty, elevation_m, tags, state:states(name)")
+      .contains("tags", ["trek"])
+      .order("name"),
+  ]);
+
+  return {
+    treks: treksResult.data ?? [],
+    trekDests: destsResult.data ?? [],
+  };
 }
 
 export default async function TreksPage() {
-  const trekDests = await getTrekDestinations();
+  const { treks, trekDests } = await getTrekData();
 
   return (
     <div className="min-h-screen">
@@ -27,10 +35,10 @@ export default async function TreksPage() {
         <div className="mb-8">
           <h1 className="text-3xl font-bold">Treks</h1>
           <p className="mt-1 text-muted-foreground">
-            Trekking destinations across North India
+            {treks.length} curated treks across North India — from easy day hikes to extreme multi-day expeditions
           </p>
         </div>
-        <TreksContent trekDests={trekDests} />
+        <TreksContent treks={treks} trekDests={trekDests} />
       </main>
       <Footer />
     </div>
