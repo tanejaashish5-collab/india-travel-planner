@@ -1,8 +1,9 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import Link from "next/link";
 import { useLocale, useTranslations } from "next-intl";
+import { useSearchParams, useRouter, usePathname } from "next/navigation";
 import { ExploreFilters, type FilterState } from "./explore-filters";
 
 interface DestinationData {
@@ -51,16 +52,33 @@ export function ExploreGrid({
   const locale = useLocale();
   const ts = useTranslations("score");
   const tm = useTranslations("months");
+  const searchParams = useSearchParams();
+  const router = useRouter();
+  const pathname = usePathname();
 
   const currentMonth = new Date().getMonth() + 1;
 
+  // Initialize from URL params
   const [filters, setFilters] = useState<FilterState>({
-    stateId: "",
-    month: currentMonth,
-    kidsOnly: false,
-    difficulty: "",
-    search: "",
+    stateId: searchParams.get("state") ?? "",
+    month: Number(searchParams.get("month")) || currentMonth,
+    kidsOnly: searchParams.get("kids") === "true",
+    difficulty: searchParams.get("difficulty") ?? "",
+    search: searchParams.get("q") ?? "",
   });
+
+  // Sync filters to URL
+  useEffect(() => {
+    const params = new URLSearchParams();
+    if (filters.stateId) params.set("state", filters.stateId);
+    if (filters.month !== currentMonth) params.set("month", String(filters.month));
+    if (filters.kidsOnly) params.set("kids", "true");
+    if (filters.difficulty) params.set("difficulty", filters.difficulty);
+    if (filters.search) params.set("q", filters.search);
+    const qs = params.toString();
+    const newUrl = qs ? `${pathname}?${qs}` : pathname;
+    router.replace(newUrl, { scroll: false });
+  }, [filters, pathname, router, currentMonth]);
 
   const filtered = useMemo(() => {
     return destinations.filter((d) => {
