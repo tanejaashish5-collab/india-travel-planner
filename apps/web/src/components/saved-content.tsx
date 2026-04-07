@@ -89,49 +89,69 @@ export function SavedContent({ destinations }: { destinations: any[] }) {
             const isComparing = compareIds.includes(dest.id);
 
             return (
-              <div key={dest.id} className={`relative rounded-xl border bg-card p-5 transition-all ${
+              <div key={dest.id} className={`relative rounded-xl border bg-card overflow-hidden transition-all ${
                 isComparing ? "border-primary ring-2 ring-primary/30" : "border-border"
               }`}>
-                {/* Compare checkbox */}
-                {compareMode && (
-                  <button
-                    onClick={() => toggleCompare(dest.id)}
-                    className={`absolute top-3 right-3 h-6 w-6 rounded-md border-2 flex items-center justify-center transition-colors ${
-                      isComparing ? "border-primary bg-primary text-primary-foreground" : "border-border"
-                    }`}
-                  >
-                    {isComparing && <span className="text-xs">✓</span>}
-                  </button>
-                )}
+                {/* Hero image */}
+                <div className="relative h-32 bg-muted/30 overflow-hidden">
+                  <img
+                    src={`/images/destinations/${dest.id}.jpg`}
+                    alt={dest.name}
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                    onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-card/80 to-transparent" />
 
-                {/* Score */}
-                <div className="flex items-center justify-between mb-2">
-                  {monthScore !== undefined && (
-                    <span className={`rounded-full border px-2.5 py-0.5 text-xs font-medium ${SCORE_COLORS[monthScore] ?? SCORE_COLORS[0]}`}>
-                      {monthScore}/5 {MONTH_NAMES[currentMonth]}
-                    </span>
+                  {/* Compare checkbox */}
+                  {compareMode && (
+                    <button
+                      onClick={() => toggleCompare(dest.id)}
+                      className={`absolute top-2 right-2 h-7 w-7 rounded-md border-2 flex items-center justify-center backdrop-blur-sm transition-colors ${
+                        isComparing ? "border-primary bg-primary text-primary-foreground" : "border-white/40 bg-black/40"
+                      }`}
+                    >
+                      {isComparing && <span className="text-xs">✓</span>}
+                    </button>
                   )}
-                  {kf && <span className="text-xs">{kf.suitable ? `👶 ${kf.rating}/5` : "Adults"}</span>}
                 </div>
 
-                <Link href={`/${locale}/destination/${dest.id}`}>
-                  <h3 className="font-semibold hover:text-primary transition-colors">{dest.name}</h3>
-                </Link>
-                <p className="mt-1 text-sm text-muted-foreground line-clamp-2">{dest.tagline}</p>
+                <div className="p-4">
+                  {/* Score */}
+                  <div className="flex items-center justify-between mb-2">
+                    {monthScore !== undefined && (
+                      <span className={`rounded-full border px-2.5 py-0.5 text-xs font-medium ${SCORE_COLORS[monthScore] ?? SCORE_COLORS[0]}`}>
+                        {monthScore}/5 {MONTH_NAMES[currentMonth]}
+                      </span>
+                    )}
+                    {kf && <span className="text-xs">{kf.suitable ? `👶 ${kf.rating}/5` : "Adults"}</span>}
+                  </div>
 
-                <div className="mt-2 flex items-center gap-2 text-xs text-muted-foreground">
-                  {stateName && <span>{stateName}</span>}
-                  <span>·</span>
-                  <span className={DIFFICULTY_COLORS[dest.difficulty] ?? ""}>{dest.difficulty}</span>
+                  <Link href={`/${locale}/destination/${dest.id}`}>
+                    <h3 className="font-semibold hover:text-primary transition-colors">{dest.name}</h3>
+                  </Link>
+                  <p className="mt-1 text-sm text-muted-foreground line-clamp-2">{dest.tagline}</p>
+
+                  <div className="mt-2 flex items-center gap-2 text-xs text-muted-foreground">
+                    {stateName && <span>{stateName}</span>}
+                    <span>·</span>
+                    <span className={DIFFICULTY_COLORS[dest.difficulty] ?? ""}>{dest.difficulty}</span>
+                    {dest.elevation_m && (
+                      <>
+                        <span>·</span>
+                        <span className="font-mono">{dest.elevation_m.toLocaleString()}m</span>
+                      </>
+                    )}
+                  </div>
+
+                  {/* Remove */}
+                  <button
+                    onClick={() => removeSaved(dest.id)}
+                    className="mt-3 text-xs text-red-400 hover:text-red-300 transition-colors"
+                  >
+                    Remove from saved
+                  </button>
                 </div>
-
-                {/* Remove */}
-                <button
-                  onClick={() => removeSaved(dest.id)}
-                  className="mt-3 text-xs text-red-400 hover:text-red-300 transition-colors"
-                >
-                  Remove from saved
-                </button>
               </div>
             );
           })}
