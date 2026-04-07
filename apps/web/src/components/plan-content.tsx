@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useLocale } from "next-intl";
 import { motion, AnimatePresence } from "framer-motion";
 import { SCORE_COLORS, DIFFICULTY_COLORS, SCORE_LABELS } from "@/lib/design-tokens";
+import { AIItinerary } from "./ai-itinerary";
 
 interface PlanContentProps {
   destinations: Array<{
@@ -418,6 +419,18 @@ export function PlanContent({ destinations }: PlanContentProps) {
           </motion.div>
         )}
       </AnimatePresence>
+
+      {/* AI Itinerary Generator */}
+      {showResults && recommendations.length > 0 && (
+        <AIItinerary
+          month={month}
+          days={days}
+          travelerType={traveler}
+          budget={budget}
+          origin={origin}
+          recommendedIds={recommendations.map((r) => r.id)}
+        />
+      )}
     </div>
   );
 }
