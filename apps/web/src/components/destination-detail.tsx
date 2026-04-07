@@ -198,9 +198,51 @@ export function DestinationDetail({ dest }: { dest: any }) {
           </div>
         </SlideIn>
 
+        {/* Infrastructure Reality — ALWAYS visible, not hidden in tabs */}
+        {(dest.cell_network || dest.medical_facility || dest.permit_required) && (
+          <FadeIn delay={0.25}>
+            <div className="mb-6 grid gap-2 grid-cols-2 sm:grid-cols-4">
+              {dest.cell_network && (
+                <div className="rounded-xl border border-border p-2.5 flex items-center gap-2">
+                  <span>📶</span>
+                  <div className="min-w-0">
+                    <div className="text-[10px] text-muted-foreground">Network</div>
+                    <div className="text-xs font-medium truncate">{dest.cell_network}</div>
+                  </div>
+                </div>
+              )}
+              <div className="rounded-xl border border-border p-2.5 flex items-center gap-2">
+                <span>🏧</span>
+                <div>
+                  <div className="text-[10px] text-muted-foreground">ATM</div>
+                  <div className="text-xs font-medium">{dest.atm_available ? "Available" : "None — cash only"}</div>
+                </div>
+              </div>
+              {dest.medical_facility && (
+                <div className="rounded-xl border border-border p-2.5 flex items-center gap-2">
+                  <span>🏥</span>
+                  <div className="min-w-0">
+                    <div className="text-[10px] text-muted-foreground">Medical</div>
+                    <div className="text-xs font-medium truncate">{dest.medical_facility}</div>
+                  </div>
+                </div>
+              )}
+              {dest.permit_required && (
+                <div className="rounded-xl border border-orange-500/30 bg-orange-500/5 p-2.5 flex items-center gap-2">
+                  <span>📋</span>
+                  <div className="min-w-0">
+                    <div className="text-[10px] text-orange-400">Permit</div>
+                    <div className="text-xs font-medium text-orange-300/80 truncate">{dest.permit_required}</div>
+                  </div>
+                </div>
+              )}
+            </div>
+          </FadeIn>
+        )}
+
         {/* Tab navigation */}
         <FadeIn delay={0.3}>
-          <div className="mb-6 flex gap-1 overflow-x-auto rounded-xl border border-border bg-muted/30 p-1 sticky top-16 z-40 backdrop-blur-sm">
+          <div className="mb-6 flex gap-1 overflow-x-auto rounded-xl border border-border bg-background/95 p-1 sticky top-[64px] z-40 backdrop-blur-md shadow-sm">
             {availableTabs.map((tab) => (
               <button
                 key={tab.id}

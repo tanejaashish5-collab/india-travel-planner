@@ -111,8 +111,11 @@ export function RegionDetail({ region }: RegionDetailProps) {
                   >
                     <h3 className="font-semibold">{sr.name}</h3>
                     <p className="mt-1 text-sm text-muted-foreground line-clamp-2">{sr.description}</p>
-                    <div className="mt-2 text-xs text-muted-foreground">
-                      <span className="font-mono font-bold text-primary">{count}</span> destinations
+                    <div className="mt-2 flex items-center justify-between text-xs text-muted-foreground">
+                      <span><span className="font-mono font-bold text-primary">{count}</span> destinations</span>
+                      <span className="text-primary">
+                        {selectedSubregion === sr.name ? "✕ Clear filter" : "Filter ↓"}
+                      </span>
                     </div>
                   </button>
                 </HoverCard>

@@ -73,6 +73,25 @@ export function LandingHero({
             >
               {tn("collections")}
             </Link>
+            <span className="text-border hidden sm:block">|</span>
+            <Link
+              href={`/${locale}/region/himachal-pradesh`}
+              className="text-xs text-muted-foreground hover:text-foreground transition-colors hidden lg:block"
+            >
+              HP
+            </Link>
+            <Link
+              href={`/${locale}/region/uttarakhand`}
+              className="text-xs text-muted-foreground hover:text-foreground transition-colors hidden lg:block"
+            >
+              UK
+            </Link>
+            <Link
+              href={`/${locale}/region/jammu-kashmir`}
+              className="text-xs text-muted-foreground hover:text-foreground transition-colors hidden lg:block"
+            >
+              J&K
+            </Link>
             <LanguageToggle />
           </div>
         </div>
