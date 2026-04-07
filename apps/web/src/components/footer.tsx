@@ -94,7 +94,9 @@ export function Footer() {
               About
             </h4>
             <div className="space-y-2 text-sm text-muted-foreground">
-              <p>Built with obsessive detail for travelers who want to go beyond the tourist trail.</p>
+              <Link href={`/${locale}/about`} className="block hover:text-foreground transition-colors">About Us</Link>
+              <Link href={`/${locale}/methodology`} className="block hover:text-foreground transition-colors">How We Score</Link>
+              <p className="pt-1">Built with obsessive detail for travelers who want to go beyond the tourist trail.</p>
               <p className="pt-2">
                 <span className="font-mono text-xs">105</span> destinations ·{" "}
                 <span className="font-mono text-xs">10</span> states ·{" "}
