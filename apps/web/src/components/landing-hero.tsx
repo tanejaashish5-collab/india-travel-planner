@@ -229,25 +229,39 @@ export function LandingHero({
                     <HoverCard>
                       <Link
                         href={`/${locale}/destination/${dest.id}`}
-                        className="block rounded-xl border border-border bg-card p-6 transition-all hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5"
+                        className="group block rounded-xl border border-border overflow-hidden transition-all hover:border-primary/50 hover:shadow-xl hover:shadow-primary/10"
                       >
-                        <div className="flex items-center justify-between mb-3">
-                          <span className="inline-flex items-center rounded-full bg-emerald-500/20 border border-emerald-500/30 px-2.5 py-0.5 text-xs font-medium text-emerald-400">
-                            {item.score}/5 this month
-                          </span>
-                          <span className={`text-xs capitalize ${DIFFICULTY_COLORS[dest.difficulty] ?? ""}`}>
-                            {dest.difficulty}
-                          </span>
-                        </div>
-                        <h3 className="text-lg font-semibold">{dest.name}</h3>
-                        <p className="mt-1 text-sm text-muted-foreground line-clamp-2">
-                          {dest.tagline}
-                        </p>
-                        <div className="mt-3 text-xs text-muted-foreground">
-                          {stateName}
-                          {dest.elevation_m && (
-                            <span className="font-mono"> · {dest.elevation_m}m</span>
-                          )}
+                        {/* Editorial image card — DIFFERENT from explore grid */}
+                        <div className="relative h-48 bg-muted/30 overflow-hidden">
+                          <img
+                            src={`/images/destinations/${dest.id}.jpg`}
+                            alt={dest.name}
+                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                            loading="lazy"
+                            onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+                          {/* Score badge floating on image */}
+                          <div className="absolute top-3 right-3">
+                            <span className="inline-flex items-center rounded-full bg-emerald-500/90 px-2.5 py-1 text-xs font-bold text-white shadow-lg">
+                              {item.score}/5
+                            </span>
+                          </div>
+                          {/* Content over image */}
+                          <div className="absolute bottom-0 left-0 right-0 p-5">
+                            <h3 className="text-xl font-bold text-white drop-shadow-lg">{dest.name}</h3>
+                            <p className="mt-1 text-sm text-white/80 line-clamp-1 drop-shadow">
+                              {dest.tagline}
+                            </p>
+                            <div className="mt-2 flex items-center gap-2 text-xs text-white/60">
+                              {stateName && <span>{stateName}</span>}
+                              <span>·</span>
+                              <span className="capitalize">{dest.difficulty}</span>
+                              {dest.elevation_m && (
+                                <><span>·</span><span className="font-mono">{dest.elevation_m}m</span></>
+                              )}
+                            </div>
+                          </div>
                         </div>
                       </Link>
                     </HoverCard>

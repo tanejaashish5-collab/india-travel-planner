@@ -112,6 +112,22 @@ export function PlanContent({ destinations }: PlanContentProps) {
 
       {/* Input Form */}
       <div className="rounded-2xl border border-border bg-card p-6 space-y-6">
+        {/* Origin City */}
+        <div>
+          <label className="text-sm font-medium mb-2 block">Where are you traveling from?</label>
+          <div className="grid grid-cols-3 sm:grid-cols-6 gap-2">
+            {["Delhi", "Mumbai", "Bangalore", "Kolkata", "Chandigarh", "Other"].map((city) => (
+              <button
+                key={city}
+                className="rounded-lg border border-border px-3 py-2 text-sm text-muted-foreground hover:text-foreground hover:border-muted-foreground transition-colors"
+              >
+                {city}
+              </button>
+            ))}
+          </div>
+          <p className="text-[10px] text-muted-foreground mt-1">Origin doesn't filter results yet — coming soon with distance estimation</p>
+        </div>
+
         {/* Month */}
         <div>
           <label className="text-sm font-medium mb-2 block">When are you traveling?</label>
