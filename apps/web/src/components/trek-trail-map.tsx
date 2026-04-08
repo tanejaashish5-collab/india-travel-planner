@@ -113,13 +113,16 @@ export function TrekTrailMap({ points, trekName }: { points: TrailPoint[]; trekN
           </div>
         `, { className: "dark-popup" });
 
-        // Day label for camps and key points
-        if (["camp", "start", "summit", "end", "pass"].includes(point.type)) {
+        // Labels for camps, start, summit, pass — skip "end" if same coords as start
+        const isEndAtStart = point.type === "end" && points.some((p) => p.type === "start" && Math.abs(p.lat - point.lat) < 0.001 && Math.abs(p.lng - point.lng) < 0.001);
+        if (["camp", "start", "summit", "pass"].includes(point.type) && !isEndAtStart) {
+          // Short clean label — just name
+          const shortName = point.name.replace(/\s*\(.*\)\s*$/, ""); // Remove parenthetical like "(Return)"
           const label = L.divIcon({
             className: "trek-label",
-            html: `<span style="background:${style.color}22;color:${style.color};padding:2px 6px;border-radius:6px;font-size:10px;font-weight:600;white-space:nowrap;border:1px solid ${style.color}44;">${style.emoji} ${point.name}</span>`,
+            html: `<span style="background:rgba(0,0,0,0.7);color:${style.color};padding:3px 8px;border-radius:8px;font-size:11px;font-weight:600;white-space:nowrap;backdrop-filter:blur(4px);">${shortName}</span>`,
             iconSize: [0, 0],
-            iconAnchor: [0, -style.radius - 8],
+            iconAnchor: [0, -style.radius - 10],
           });
           L.marker([point.lat, point.lng], { icon: label, interactive: false }).addTo(map);
         }
