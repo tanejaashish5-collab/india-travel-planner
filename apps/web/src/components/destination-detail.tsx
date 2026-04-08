@@ -28,9 +28,10 @@ export function DestinationDetail({ dest }: { dest: any }) {
   const [activeTab, setActiveTab] = useState("overview");
   const [saved, setSaved] = useState(false);
 
-  // Translation-aware name and tagline
+  // Translation-aware name, tagline, and why_special
   const displayName = (locale !== "en" && dest.translations?.[locale]?.name) || dest.name;
   const displayTagline = (locale !== "en" && dest.translations?.[locale]?.tagline) || dest.tagline;
+  const displayWhySpecial = (locale !== "en" && dest.translations?.[locale]?.why_special) || dest.why_special;
 
   // Check localStorage for saved state
   useEffect(() => {
@@ -301,7 +302,7 @@ export function DestinationDetail({ dest }: { dest: any }) {
                 {/* Why Special */}
                 <section>
                   <h2 className="text-xl font-semibold mb-3">Why Special</h2>
-                  <p className="text-muted-foreground leading-relaxed">{dest.why_special}</p>
+                  <p className="text-muted-foreground leading-relaxed">{displayWhySpecial}</p>
                 </section>
 
                 {/* Tourist Trap Alternatives — ASSISTIVE, not pre-emptive */}
