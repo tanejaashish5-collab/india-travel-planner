@@ -109,7 +109,7 @@ export function TreksContent({ treks, trekDests, gearChecklists }: { treks: any[
                       <p className="mt-1 text-sm text-muted-foreground line-clamp-2">{trek.description}</p>
 
                       {/* Stats */}
-                      <div className="mt-3 grid grid-cols-3 gap-2 text-[10px]">
+                      <div className="mt-3 grid grid-cols-3 gap-2 text-xs">
                         <div className="rounded-lg bg-muted/50 p-1.5 text-center">
                           <div className="font-mono font-bold text-foreground">{trek.distance_km ?? "?"}km</div>
                           <div className="text-muted-foreground">Distance</div>
@@ -128,7 +128,7 @@ export function TreksContent({ treks, trekDests, gearChecklists }: { treks: any[
                       {trek.best_months?.length > 0 && (
                         <div className="mt-2 flex flex-wrap gap-1">
                           {trek.best_months.map((m: number) => (
-                            <span key={m} className="rounded bg-muted px-1.5 py-0.5 text-[10px] text-muted-foreground">
+                            <span key={m} className="rounded bg-muted px-1.5 py-1 text-xs text-muted-foreground">
                               {MONTH_NAMES[m]}
                             </span>
                           ))}
@@ -137,7 +137,7 @@ export function TreksContent({ treks, trekDests, gearChecklists }: { treks: any[
 
                       {/* Warnings preview */}
                       {trek.warnings?.length > 0 && (
-                        <div className="mt-2 text-[10px] text-red-400/70">
+                        <div className="mt-2 text-xs text-red-400/70">
                           ⚠ {trek.warnings[0]}
                         </div>
                       )}

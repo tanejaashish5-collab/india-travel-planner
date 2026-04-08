@@ -63,15 +63,15 @@ export function PermitsContent({ permits }: { permits: any[] }) {
       <div className="grid grid-cols-3 gap-3">
         <div className="rounded-xl border border-border p-3 text-center">
           <div className="text-lg font-mono font-bold text-primary">{permits.filter((p) => p.cost_inr === 0).length}</div>
-          <div className="text-[10px] text-muted-foreground">Free permits</div>
+          <div className="text-xs text-muted-foreground">Free permits</div>
         </div>
         <div className="rounded-xl border border-border p-3 text-center">
           <div className="text-lg font-mono font-bold text-primary">{permits.filter((p) => p.processing_time?.includes("nstant") || p.processing_time?.includes("nline")).length}</div>
-          <div className="text-[10px] text-muted-foreground">Instant/Online</div>
+          <div className="text-xs text-muted-foreground">Instant/Online</div>
         </div>
         <div className="rounded-xl border border-border p-3 text-center">
           <div className="text-lg font-mono font-bold text-primary">{permits.filter((p) => p.foreigners?.includes("NOT")).length}</div>
-          <div className="text-[10px] text-muted-foreground">Restricted for foreigners</div>
+          <div className="text-xs text-muted-foreground">Restricted for foreigners</div>
         </div>
       </div>
 
@@ -90,11 +90,11 @@ export function PermitsContent({ permits }: { permits: any[] }) {
               >
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-2 flex-wrap mb-1">
-                    <span className={`rounded-full border px-2.5 py-0.5 text-[10px] font-medium ${colorClass}`}>
+                    <span className={`rounded-full border px-2.5 py-1 text-xs font-medium ${colorClass}`}>
                       {permit.type}
                     </span>
                     {permit.cost_inr === 0 && (
-                      <span className="rounded-full bg-emerald-500/10 text-emerald-400 px-2 py-0.5 text-[10px] font-medium">FREE</span>
+                      <span className="rounded-full bg-emerald-500/10 text-emerald-400 px-2 py-1 text-xs font-medium">FREE</span>
                     )}
                   </div>
                   <h3 className="font-semibold text-sm">
@@ -106,7 +106,7 @@ export function PermitsContent({ permits }: { permits: any[] }) {
                   <div className="text-sm font-mono font-bold">
                     {permit.cost_inr > 0 ? `₹${permit.cost_inr}` : "Free"}
                   </div>
-                  <div className="text-[10px] text-muted-foreground">{permit.processing_time}</div>
+                  <div className="text-xs text-muted-foreground">{permit.processing_time}</div>
                 </div>
                 <span className="text-muted-foreground shrink-0">{isOpen ? "−" : "+"}</span>
               </button>

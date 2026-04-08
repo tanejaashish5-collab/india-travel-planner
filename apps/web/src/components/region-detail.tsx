@@ -111,7 +111,7 @@ export function RegionDetail({ region }: RegionDetailProps) {
                   >
                     <div className="flex items-center justify-between">
                       <h3 className="font-semibold">{sr.name}</h3>
-                      <span className={`rounded-full px-2 py-0.5 text-xs font-mono font-bold ${
+                      <span className={`rounded-full px-2 py-1 text-xs font-mono font-bold ${
                         selectedSubregion === sr.name ? "bg-primary text-primary-foreground" : "bg-muted text-muted-foreground"
                       }`}>{count}</span>
                     </div>
@@ -208,22 +208,22 @@ export function RegionDetail({ region }: RegionDetailProps) {
                     <div className="flex items-center justify-between mb-2">
                       <div className="flex gap-1.5">
                         {monthScore !== undefined && (
-                          <span className={`rounded-full border px-2 py-0.5 text-[10px] font-medium ${SCORE_COLORS[monthScore] ?? SCORE_COLORS[0]}`}>
+                          <span className={`rounded-full border px-2 py-1 text-xs font-medium ${SCORE_COLORS[monthScore] ?? SCORE_COLORS[0]}`}>
                             {monthScore}/5
                           </span>
                         )}
                         {dest.place_type && dest.place_type !== "destination" && dest.place_type !== "anchor" && (
-                          <span className="rounded-full bg-muted px-2 py-0.5 text-[10px] text-muted-foreground capitalize">
+                          <span className="rounded-full bg-muted px-2 py-1 text-xs text-muted-foreground capitalize">
                             {dest.place_type.replace("_", " ")}
                           </span>
                         )}
                       </div>
                       <div className="flex gap-1.5">
                         {dest.hiddenness >= 4 && (
-                          <span className="text-[10px] bg-primary/20 text-primary rounded-full px-2 py-0.5">Hidden</span>
+                          <span className="text-xs bg-primary/20 text-primary rounded-full px-2 py-0.5">Hidden</span>
                         )}
                         {kf?.suitable && (
-                          <span className="text-[10px]">👶 {kf.rating}/5</span>
+                          <span className="text-xs">👶 {kf.rating}/5</span>
                         )}
                       </div>
                     </div>
@@ -242,7 +242,7 @@ export function RegionDetail({ region }: RegionDetailProps) {
 
                     {/* Crowd + Remoteness */}
                     {(dest.crowd_level || dest.remoteness) && (
-                      <div className="mt-2 flex gap-2 text-[10px]">
+                      <div className="mt-2 flex gap-2 text-xs">
                         {dest.crowd_level && (
                           <span className={`rounded-full px-2 py-0.5 ${
                             dest.crowd_level === "empty" ? "bg-emerald-500/10 text-emerald-400" :

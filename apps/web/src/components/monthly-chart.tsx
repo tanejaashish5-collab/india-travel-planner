@@ -103,7 +103,7 @@ export function MonthlyChart({
             />
             {/* Month label */}
             <span
-              className={`text-[10px] transition-colors ${
+              className={`text-xs transition-colors ${
                 ms.m === selectedMonth
                   ? "font-bold text-primary"
                   : ms.m === currentMonth
@@ -146,7 +146,7 @@ export function MonthlyChart({
                 </div>
               </div>
               {selectedMonth === currentMonth && (
-                <span className="text-[10px] uppercase tracking-wide text-primary font-medium bg-primary/10 px-2 py-0.5 rounded-full">
+                <span className="text-xs uppercase tracking-wide text-primary font-medium bg-primary/10 px-2 py-0.5 rounded-full">
                   This month
                 </span>
               )}
@@ -178,7 +178,7 @@ export function MonthlyChart({
             </div>
 
             {/* Score methodology */}
-            <div className="mt-3 rounded-lg bg-muted/30 p-2.5 text-[10px] text-muted-foreground/70">
+            <div className="mt-3 rounded-lg bg-muted/30 p-2.5 text-xs text-muted-foreground/70">
               <span className="font-medium">How we score:</span> Based on weather, road access, crowd levels,
               seasonal activities, and safety conditions. 5 = peak window, go now. 1 = avoid unless you have a specific reason.
               0 = closed or inaccessible.

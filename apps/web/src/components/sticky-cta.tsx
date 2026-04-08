@@ -33,7 +33,7 @@ export function StickyCTA() {
             className="flex items-center gap-2 rounded-full bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground shadow-2xl shadow-primary/20 hover:shadow-primary/40 hover:-translate-y-0.5 transition-all duration-200"
           >
             <span>Plan My Trip</span>
-            <span className="rounded bg-white/20 px-1.5 py-0.5 text-[10px] font-bold">AI</span>
+            <span className="rounded bg-white/20 px-1.5 py-1 text-xs font-bold">AI</span>
           </Link>
         </motion.div>
       )}

@@ -125,7 +125,7 @@ export function TouristTrapIntervention({
                         >
                           {/* Badge */}
                           <div className="flex items-center justify-between mb-3">
-                            <span className="inline-flex items-center gap-1.5 rounded-full bg-primary/20 border border-primary/30 px-2.5 py-0.5 text-xs font-medium text-primary">
+                            <span className="inline-flex items-center gap-1.5 rounded-full bg-primary/20 border border-primary/30 px-2.5 py-1 text-xs font-medium text-primary">
                               <motion.span
                                 animate={{ scale: [1, 1.3, 1] }}
                                 transition={{
@@ -190,7 +190,7 @@ export function TouristTrapIntervention({
               >
                 Still want {trapName}? No problem — scroll down ↓
               </button>
-              <p className="text-[10px] text-muted-foreground/50 mt-1">
+              <p className="text-xs text-muted-foreground/50 mt-1">
                 At least now you know what's out there.
               </p>
             </motion.div>

@@ -273,7 +273,7 @@ export function PlanContent({ destinations }: PlanContentProps) {
             onChange={(e) => { setDays(Number(e.target.value)); setShowResults(true); }}
             className="w-full accent-primary"
           />
-          <div className="flex justify-between text-[10px] text-muted-foreground mt-1">
+          <div className="flex justify-between text-xs text-muted-foreground mt-1">
             <span>3 days</span>
             <span>7 days</span>
             <span>14 days</span>
@@ -296,7 +296,7 @@ export function PlanContent({ destinations }: PlanContentProps) {
                 }`}
               >
                 <div className="text-xl">{t.icon}</div>
-                <div className="text-[10px] font-medium mt-1">{t.label}</div>
+                <div className="text-xs font-medium mt-1">{t.label}</div>
               </button>
             ))}
           </div>
@@ -317,7 +317,7 @@ export function PlanContent({ destinations }: PlanContentProps) {
                 }`}
               >
                 <div className="text-sm font-medium">{b.label}</div>
-                <div className="text-[10px] text-muted-foreground">{b.desc}</div>
+                <div className="text-xs text-muted-foreground">{b.desc}</div>
               </button>
             ))}
           </div>
@@ -477,7 +477,7 @@ export function PlanContent({ destinations }: PlanContentProps) {
                           #{idx + 1}
                         </span>
                         <span
-                          className={`absolute top-2 right-2 inline-flex items-center rounded-full border px-2 py-0.5 text-[10px] font-medium backdrop-blur-sm ${SCORE_COLORS[dest.monthScore] ?? SCORE_COLORS[0]}`}
+                          className={`absolute top-2 right-2 inline-flex items-center rounded-full border px-2 py-1 text-xs font-medium backdrop-blur-sm ${SCORE_COLORS[dest.monthScore] ?? SCORE_COLORS[0]}`}
                         >
                           {dest.monthScore}/5
                         </span>

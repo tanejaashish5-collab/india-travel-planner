@@ -91,7 +91,7 @@ export function StaysContent({ destinations }: { destinations: any[] }) {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-card/80 to-transparent" />
                 {dest.vehicle_fit && (
-                  <span className={`absolute top-2 right-2 rounded-full border px-2 py-0.5 text-[10px] font-medium backdrop-blur-sm ${
+                  <span className={`absolute top-2 right-2 rounded-full border px-2 py-1 text-xs font-medium backdrop-blur-sm ${
                     dest.vehicle_fit.includes("hatchback") ? "border-emerald-500/30 text-emerald-300 bg-black/40" :
                     dest.vehicle_fit.includes("SUV") ? "border-yellow-500/30 text-yellow-300 bg-black/40" :
                     "border-red-500/30 text-red-300 bg-black/40"
@@ -136,7 +136,7 @@ export function StaysContent({ destinations }: { destinations: any[] }) {
                     </span>
                   )}
                   {dest.workability?.remote_work_rating >= 3 && (
-                    <span className="rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/20 px-2 py-0.5 text-[10px] font-medium">
+                    <span className="rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/20 px-2 py-1 text-xs font-medium">
                       💻 WFH {dest.workability.remote_work_rating}/5
                     </span>
                   )}
@@ -146,7 +146,7 @@ export function StaysContent({ destinations }: { destinations: any[] }) {
                 {sz.stay_types?.length > 0 && (
                   <div className="mt-2 flex flex-wrap gap-1">
                     {sz.stay_types.map((type: string) => (
-                      <span key={type} className="rounded-full border border-border px-2 py-0.5 text-[10px] text-muted-foreground capitalize">
+                      <span key={type} className="rounded-full border border-border px-2 py-1 text-xs text-muted-foreground capitalize">
                         {type}
                       </span>
                     ))}

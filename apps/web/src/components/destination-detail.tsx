@@ -149,7 +149,7 @@ export function DestinationDetail({ dest }: { dest: any }) {
                   {stateName} · {dest.region}
                   {dest.elevation_m && <span className="font-mono"> · {dest.elevation_m.toLocaleString()}m</span>}
                   {dest.vehicle_fit && (
-                    <span className={`ml-2 inline-flex items-center gap-1 rounded-full border px-2 py-0.5 text-[11px] font-medium ${
+                    <span className={`ml-2 inline-flex items-center gap-1 rounded-full border px-2 py-0.5 text-sm font-medium ${
                       dest.vehicle_fit.includes("hatchback") ? "border-emerald-500/30 text-emerald-400" :
                       dest.vehicle_fit.includes("SUV") ? "border-yellow-500/30 text-yellow-400" :
                       dest.vehicle_fit.includes("4WD") ? "border-red-500/30 text-red-400" :
@@ -173,7 +173,7 @@ export function DestinationDetail({ dest }: { dest: any }) {
                   className={`rounded-2xl border-2 px-5 py-3 text-center backdrop-blur-sm shadow-lg ${SCORE_COLORS[currentScore] ?? SCORE_COLORS[0]}`}
                 >
                   <div className="text-3xl font-bold font-mono">{currentScore}/5</div>
-                  <div className="text-[10px] font-medium uppercase tracking-wider mt-0.5">{tm(String(currentMonth))}</div>
+                  <div className="text-xs font-medium uppercase tracking-wider mt-0.5">{tm(String(currentMonth))}</div>
                 </motion.div>
               )}
             </div>
@@ -191,21 +191,21 @@ export function DestinationDetail({ dest }: { dest: any }) {
             {/* Quick stats */}
             <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-4">
               <div className="rounded-xl border border-border/30 bg-muted/20 p-3">
-                <div className="text-[10px] uppercase tracking-wider text-muted-foreground/70">{t("difficulty")}</div>
+                <div className="text-xs uppercase tracking-wider text-muted-foreground/70">{t("difficulty")}</div>
                 <div className={`mt-1.5 text-sm font-semibold capitalize ${DIFFICULTY_COLORS[dest.difficulty] ?? ""}`}>
                   {dest.difficulty}
                 </div>
               </div>
               <div className="rounded-xl border border-border/50 bg-background/50 backdrop-blur-sm p-3">
-                <div className="text-[10px] uppercase tracking-wide text-muted-foreground">{t("duration")}</div>
+                <div className="text-xs uppercase tracking-wide text-muted-foreground">{t("duration")}</div>
                 <div className="mt-1 text-sm font-semibold">{dest.ideal_duration_min}-{dest.ideal_duration_max} days</div>
               </div>
               <div className="rounded-xl border border-border/50 bg-background/50 backdrop-blur-sm p-3">
-                <div className="text-[10px] uppercase tracking-wide text-muted-foreground">{t("budget")}</div>
+                <div className="text-xs uppercase tracking-wide text-muted-foreground">{t("budget")}</div>
                 <div className="mt-1 text-sm font-semibold capitalize">{dest.budget_tier ?? "mixed"}</div>
               </div>
               <div className="rounded-xl border border-border/50 bg-background/50 backdrop-blur-sm p-3">
-                <div className="text-[10px] uppercase tracking-wide text-muted-foreground">{t("kidsRating")}</div>
+                <div className="text-xs uppercase tracking-wide text-muted-foreground">{t("kidsRating")}</div>
                 <div className={`mt-1 text-sm font-semibold ${kf?.suitable ? "text-emerald-400" : kf ? "text-red-400" : ""}`}>
                   {kf ? (kf.suitable ? `${kf.rating}/5 ✓` : "Not suitable") : "N/A"}
                 </div>
@@ -247,7 +247,7 @@ export function DestinationDetail({ dest }: { dest: any }) {
             )}
 
             {/* Data freshness + methodology */}
-            <div className="mt-3 text-[10px] text-muted-foreground/50">
+            <div className="mt-3 text-xs text-muted-foreground/50">
               Data verified: April 2026 · Scores based on weather, road access, crowd levels, infrastructure, safety conditions ·
               Kids ratings factor in: medical access, ATM availability, phone signal, altitude, road safety
             </div>
@@ -402,7 +402,7 @@ export function DestinationDetail({ dest }: { dest: any }) {
                           <div key={i} className="rounded-xl border border-border p-4 hover:border-primary/30 transition-colors">
                             <div className="flex items-start justify-between gap-2 mb-1">
                               <h3 className="font-semibold text-sm">{f.name}</h3>
-                              <span className="shrink-0 rounded-full bg-primary/10 px-2 py-0.5 text-[10px] font-medium text-primary">
+                              <span className="shrink-0 rounded-full bg-primary/10 px-2 py-1 text-xs font-medium text-primary">
                                 {MONTH_SHORT[f.month]}
                               </span>
                             </div>
@@ -431,10 +431,10 @@ export function DestinationDetail({ dest }: { dest: any }) {
                             <h3 className="text-sm font-semibold">Network Coverage</h3>
                           </div>
                           <div className="flex flex-wrap gap-2 mb-2">
-                            {cc.network.jio && <span className="rounded-full bg-blue-500/10 text-blue-300 px-2.5 py-0.5 text-xs font-medium">Jio</span>}
-                            {cc.network.airtel && <span className="rounded-full bg-red-500/10 text-red-300 px-2.5 py-0.5 text-xs font-medium">Airtel</span>}
-                            {cc.network.bsnl && <span className="rounded-full bg-yellow-500/10 text-yellow-300 px-2.5 py-0.5 text-xs font-medium">BSNL</span>}
-                            {cc.network.vi && <span className="rounded-full bg-purple-500/10 text-purple-300 px-2.5 py-0.5 text-xs font-medium">Vi</span>}
+                            {cc.network.jio && <span className="rounded-full bg-blue-500/10 text-blue-300 px-2.5 py-1 text-xs font-medium">Jio</span>}
+                            {cc.network.airtel && <span className="rounded-full bg-red-500/10 text-red-300 px-2.5 py-1 text-xs font-medium">Airtel</span>}
+                            {cc.network.bsnl && <span className="rounded-full bg-yellow-500/10 text-yellow-300 px-2.5 py-1 text-xs font-medium">BSNL</span>}
+                            {cc.network.vi && <span className="rounded-full bg-purple-500/10 text-purple-300 px-2.5 py-1 text-xs font-medium">Vi</span>}
                             {!cc.network.jio && !cc.network.airtel && !cc.network.bsnl && <span className="text-sm text-red-400">No coverage</span>}
                           </div>
                           {cc.network.note && <p className="text-sm text-muted-foreground">{cc.network.note}</p>}
@@ -537,7 +537,7 @@ export function DestinationDetail({ dest }: { dest: any }) {
                     {dest.stay_zones.stay_types?.length > 0 && (
                       <div className="mt-3 flex flex-wrap gap-1.5">
                         {dest.stay_zones.stay_types.map((type: string) => (
-                          <span key={type} className="rounded-full border border-border px-2.5 py-0.5 text-xs font-medium text-muted-foreground capitalize">
+                          <span key={type} className="rounded-full border border-border px-2.5 py-1 text-xs font-medium text-muted-foreground capitalize">
                             {type}
                           </span>
                         ))}
@@ -571,7 +571,7 @@ export function DestinationDetail({ dest }: { dest: any }) {
                               <div className="flex justify-between"><span>Transport</span><span className="font-mono">₹{tier.transport?.toLocaleString()}</span></div>
                               <div className="flex justify-between"><span>Activities</span><span className="font-mono">₹{tier.activities?.toLocaleString()}</span></div>
                             </div>
-                            <div className="mt-2 pt-2 border-t border-border/30 text-[10px] text-muted-foreground/50">
+                            <div className="mt-2 pt-2 border-t border-border/30 text-xs text-muted-foreground/50">
                               per person per day
                             </div>
                           </div>
@@ -764,7 +764,7 @@ export function DestinationDetail({ dest }: { dest: any }) {
                           {eat.location && <p className="text-xs text-muted-foreground/60 mb-1">📍 {eat.location}</p>}
                           <p className="text-xs text-primary font-medium">{eat.famous_for}</p>
                           {eat.honest_review && <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{eat.honest_review}</p>}
-                          {eat.viral_on && <p className="mt-1 text-[10px] text-muted-foreground/50">Viral on {eat.viral_on}</p>}
+                          {eat.viral_on && <p className="mt-1 text-xs text-muted-foreground/50">Viral on {eat.viral_on}</p>}
                         </div>
                       ))}
                     </div>
@@ -794,13 +794,13 @@ export function DestinationDetail({ dest }: { dest: any }) {
                           {stay.location && <p className="text-xs text-muted-foreground/60 mb-1">📍 {stay.location}</p>}
                           {stay.why_special && <p className="text-sm text-muted-foreground leading-relaxed mt-1">{stay.why_special}</p>}
                           <div className="mt-2 flex items-center gap-2">
-                            {stay.best_for && <span className="rounded-full border border-border px-2 py-0.5 text-[10px] text-muted-foreground">Best for: {stay.best_for}</span>}
-                            {stay.verified && <span className="rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-2 py-0.5 text-[10px]">Verified</span>}
+                            {stay.best_for && <span className="rounded-full border border-border px-2 py-1 text-xs text-muted-foreground">Best for: {stay.best_for}</span>}
+                            {stay.verified && <span className="rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-2 py-1 text-xs">Verified</span>}
                           </div>
                           {stay.tags?.length > 0 && (
                             <div className="mt-2 flex flex-wrap gap-1">
                               {stay.tags.map((tag: string) => (
-                                <span key={tag} className="rounded-full border border-border px-2 py-0.5 text-[10px] text-muted-foreground">{tag}</span>
+                                <span key={tag} className="rounded-full border border-border px-2 py-1 text-xs text-muted-foreground">{tag}</span>
                               ))}
                             </div>
                           )}

@@ -120,7 +120,7 @@ export function SavedContent({ destinations }: { destinations: any[] }) {
                   {/* Score */}
                   <div className="flex items-center justify-between mb-2">
                     {monthScore !== undefined && (
-                      <span className={`rounded-full border px-2.5 py-0.5 text-xs font-medium ${SCORE_COLORS[monthScore] ?? SCORE_COLORS[0]}`}>
+                      <span className={`rounded-full border px-2.5 py-1 text-xs font-medium ${SCORE_COLORS[monthScore] ?? SCORE_COLORS[0]}`}>
                         {monthScore}/5 {MONTH_NAMES[currentMonth]}
                       </span>
                     )}

@@ -156,7 +156,7 @@ export function CompareButton({ destinationId, size = "sm" }: { destinationId: s
       }}
       disabled={!comparing && compareIds.length >= 3}
       className={`flex items-center gap-1 rounded-full border transition-all ${
-        size === "sm" ? "px-2 py-0.5 text-[10px]" : "px-3 py-1.5 text-xs"
+        size === "sm" ? "px-2 py-1 text-xs" : "px-3 py-1.5 text-xs"
       } ${
         comparing
           ? "border-primary bg-primary/10 text-primary"

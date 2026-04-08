@@ -75,7 +75,7 @@ export function DestinationCard({
       {scoreToShow !== null && (
         <div className="mb-3 flex items-center justify-between">
           <span
-            className={`inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-medium ${SCORE_COLORS[scoreToShow] ?? SCORE_COLORS[0]}`}
+            className={`inline-flex items-center rounded-full border px-2.5 py-1 text-xs font-medium ${SCORE_COLORS[scoreToShow] ?? SCORE_COLORS[0]}`}
           >
             {scoreToShow}/5 — {ts(String(scoreToShow))}
           </span>
@@ -115,7 +115,7 @@ export function DestinationCard({
         {best_months.slice(0, 4).map((m) => (
           <span
             key={m}
-            className="rounded bg-muted px-1.5 py-0.5 text-[10px] font-medium text-muted-foreground"
+            className="rounded bg-muted px-1.5 py-1 text-xs font-medium text-muted-foreground"
           >
             {t(String(m)).slice(0, 3)}
           </span>
@@ -127,7 +127,7 @@ export function DestinationCard({
         {tags.slice(0, 4).map((tag) => (
           <span
             key={tag}
-            className="rounded-full border border-border px-2 py-0.5 text-[10px] text-muted-foreground"
+            className="rounded-full border border-border px-2 py-1 text-xs text-muted-foreground"
           >
             {tag}
           </span>

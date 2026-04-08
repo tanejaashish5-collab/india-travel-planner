@@ -80,7 +80,7 @@ export function FestivalsContent({ festivals }: { festivals: any[] }) {
                   "text-muted-foreground hover:text-foreground"
                 }`}
               >
-                {MONTH_SHORT[m]} <span className="text-[10px] opacity-60">{count}</span>
+                {MONTH_SHORT[m]} <span className="text-xs opacity-60">{count}</span>
               </button>
             );
           })}
@@ -98,7 +98,7 @@ export function FestivalsContent({ festivals }: { festivals: any[] }) {
               {grouped[month].length} festival{grouped[month].length !== 1 ? "s" : ""}
             </span>
             {month === currentMonth && (
-              <span className="ml-2 rounded-full bg-primary/10 text-primary px-2 py-0.5 text-xs font-medium">This month</span>
+              <span className="ml-2 rounded-full bg-primary/10 text-primary px-2 py-1 text-xs font-medium">This month</span>
             )}
           </h2>
 
@@ -114,7 +114,7 @@ export function FestivalsContent({ festivals }: { festivals: any[] }) {
                 >
                   <div className="flex items-start justify-between mb-2">
                     <h3 className="font-semibold text-[15px] group-hover:text-primary transition-colors">{festival.name}</h3>
-                    <span className="shrink-0 rounded-full bg-primary/10 text-primary px-2.5 py-0.5 text-xs font-medium">
+                    <span className="shrink-0 rounded-full bg-primary/10 text-primary px-2.5 py-1 text-xs font-medium">
                       {MONTH_SHORT[festival.month]}
                     </span>
                   </div>

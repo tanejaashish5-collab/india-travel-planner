@@ -47,7 +47,7 @@ export function SuperlativesContent({ superlatives }: { superlatives: any[] }) {
                     {s.tags?.length > 0 && (
                       <div className="mt-2 flex gap-1">
                         {s.tags.slice(0, 4).map((tag: string) => (
-                          <span key={tag} className="rounded-full border border-border px-2 py-0.5 text-[10px] text-muted-foreground">
+                          <span key={tag} className="rounded-full border border-border px-2 py-1 text-xs text-muted-foreground">
                             {tag}
                           </span>
                         ))}

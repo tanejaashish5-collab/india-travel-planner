@@ -61,7 +61,7 @@ export function WeatherWidget({ destinationId }: { destinationId: string }) {
           </div>
         </div>
       </div>
-      <div className="mt-1 text-[10px] text-muted-foreground/50">Live weather</div>
+      <div className="mt-1 text-xs text-muted-foreground/50">Live weather</div>
     </div>
   );
 }

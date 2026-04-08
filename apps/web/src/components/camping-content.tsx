@@ -92,7 +92,7 @@ export function CampingContent({ spots }: { spots: any[] }) {
                   <div className="flex items-start justify-between mb-2">
                     <h3 className="font-semibold text-sm">{spot.name}</h3>
                     {spot.elevation_m && (
-                      <span className="shrink-0 rounded bg-muted px-2 py-0.5 text-[10px] font-mono">
+                      <span className="shrink-0 rounded bg-muted px-2 py-1 text-xs font-mono">
                         {spot.elevation_m.toLocaleString()}m
                       </span>
                     )}
@@ -103,16 +103,16 @@ export function CampingContent({ spots }: { spots: any[] }) {
                   {/* Badges */}
                   <div className="flex flex-wrap gap-1.5 mb-3">
                     {spot.water_source && (
-                      <span className="rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/20 px-2 py-0.5 text-[10px]">
+                      <span className="rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/20 px-2 py-1 text-xs">
                         💧 Water
                       </span>
                     )}
                     {spot.permit_required ? (
-                      <span className="rounded-full bg-orange-500/10 text-orange-400 border border-orange-500/20 px-2 py-0.5 text-[10px]">
+                      <span className="rounded-full bg-orange-500/10 text-orange-400 border border-orange-500/20 px-2 py-1 text-xs">
                         📋 Permit
                       </span>
                     ) : (
-                      <span className="rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-2 py-0.5 text-[10px]">
+                      <span className="rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-2 py-1 text-xs">
                         Free access
                       </span>
                     )}
@@ -120,14 +120,14 @@ export function CampingContent({ spots }: { spots: any[] }) {
 
                   {/* Facilities */}
                   {spot.facilities && (
-                    <p className="text-[11px] text-muted-foreground/70 mb-2">{spot.facilities}</p>
+                    <p className="text-sm text-muted-foreground/70 mb-2">{spot.facilities}</p>
                   )}
 
                   {/* Open months */}
                   {spot.open_months?.length > 0 && (
                     <div className="flex flex-wrap gap-1 mb-3">
                       {spot.open_months.map((m: number) => (
-                        <span key={m} className="rounded bg-muted px-1.5 py-0.5 text-[10px] text-muted-foreground">
+                        <span key={m} className="rounded bg-muted px-1.5 py-1 text-xs text-muted-foreground">
                           {MONTH_SHORT[m]}
                         </span>
                       ))}
@@ -138,7 +138,7 @@ export function CampingContent({ spots }: { spots: any[] }) {
                   {spot.tags?.length > 0 && (
                     <div className="flex flex-wrap gap-1 mb-3">
                       {spot.tags.slice(0, 3).map((tag: string) => (
-                        <span key={tag} className="rounded-full border border-border px-2 py-0.5 text-[10px] text-muted-foreground">
+                        <span key={tag} className="rounded-full border border-border px-2 py-1 text-xs text-muted-foreground">
                           {tag}
                         </span>
                       ))}

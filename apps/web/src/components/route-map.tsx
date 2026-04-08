@@ -43,7 +43,7 @@ export function RouteMap({ stops }: RouteMapProps) {
           {stops.map((stop, i) => (
             <div key={stop} className="flex items-center gap-1.5">
               <div className="flex items-center gap-1.5 rounded-lg border border-border bg-background px-2.5 py-1.5 text-sm">
-                <span className="flex h-5 w-5 items-center justify-center rounded-full bg-primary/10 text-[10px] font-bold text-primary">
+                <span className="flex h-5 w-5 items-center justify-center rounded-full bg-primary/10 text-xs font-bold text-primary">
                   {i + 1}
                 </span>
                 <span className="font-medium">

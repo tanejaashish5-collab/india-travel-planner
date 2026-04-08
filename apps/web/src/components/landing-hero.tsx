@@ -323,7 +323,7 @@ export function LandingHero({
                   <Link
                     key={link.href}
                     href={link.href}
-                    className="rounded-full border border-border/30 px-3 py-1 text-[11px] text-muted-foreground/60 hover:text-foreground hover:border-border transition-all"
+                    className="rounded-full border border-border/30 px-3 py-1 text-sm text-muted-foreground/60 hover:text-foreground hover:border-border transition-all"
                   >
                     {link.label}
                   </Link>
@@ -549,7 +549,7 @@ export function LandingHero({
                         <p className="mt-1 text-sm text-muted-foreground line-clamp-2">{c.description}</p>
                         <div className="mt-2 flex gap-1">
                           {(c.tags ?? []).slice(0, 3).map((tag: string) => (
-                            <span key={tag} className="rounded-full border border-border px-2 py-0.5 text-[10px] text-muted-foreground">
+                            <span key={tag} className="rounded-full border border-border px-2 py-1 text-xs text-muted-foreground">
                               {tag}
                             </span>
                           ))}
@@ -654,15 +654,15 @@ export function LandingHero({
                         className="block rounded-xl border border-border p-4 h-full transition-all hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5"
                       >
                         <div className="flex items-center justify-between mb-2">
-                          <span className="rounded-full bg-primary/10 px-2.5 py-0.5 text-[10px] font-medium text-primary">
+                          <span className="rounded-full bg-primary/10 px-2.5 py-1 text-xs font-medium text-primary">
                             {MONTH_NAMES[f.month]}
                           </span>
                         </div>
                         <h3 className="font-semibold text-sm mb-1">{f.name}</h3>
-                        <p className="text-[11px] text-muted-foreground/80 mb-2">{f.approximate_date}</p>
+                        <p className="text-sm text-muted-foreground/80 mb-2">{f.approximate_date}</p>
                         <p className="text-xs text-muted-foreground line-clamp-2">{f.significance}</p>
                         {destName && (
-                          <p className="mt-2 text-[10px] text-primary/70">📍 {destName}</p>
+                          <p className="mt-2 text-xs text-primary/70">📍 {destName}</p>
                         )}
                       </Link>
                     </HoverCard>

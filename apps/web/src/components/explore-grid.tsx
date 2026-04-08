@@ -337,7 +337,7 @@ function DestinationCard({
               );
             })}
           </div>
-          <div className="flex justify-between mt-1 text-[9px] text-muted-foreground/40">
+          <div className="flex justify-between mt-1 text-xs text-muted-foreground/40">
             <span>J</span><span>D</span>
           </div>
         </div>
@@ -349,7 +349,7 @@ function DestinationCard({
           {dest.tags.slice(0, 3).map((tag: string) => (
             <span
               key={tag}
-              className="rounded-full border border-border px-2.5 py-0.5 text-[11px] font-medium text-muted-foreground"
+              className="rounded-full border border-border px-2.5 py-0.5 text-sm font-medium text-muted-foreground"
             >
               {tag}
             </span>
@@ -361,7 +361,7 @@ function DestinationCard({
       {((dest as any).vehicle_fit || (dest as any).family_stress) && (
         <div className="mt-2 flex flex-wrap gap-1.5">
           {(dest as any).vehicle_fit && (
-            <span className={`rounded-full border px-2 py-0.5 text-[10px] font-medium ${
+            <span className={`rounded-full border px-2 py-1 text-xs font-medium ${
               (dest as any).vehicle_fit.includes("hatchback") ? "border-emerald-500/30 text-emerald-400" :
               (dest as any).vehicle_fit.includes("SUV") ? "border-yellow-500/30 text-yellow-400" :
               (dest as any).vehicle_fit.includes("4WD") ? "border-red-500/30 text-red-400" :
@@ -371,7 +371,7 @@ function DestinationCard({
             </span>
           )}
           {(dest as any).family_stress && (
-            <span className="rounded-full border border-border px-2 py-0.5 text-[10px] font-medium text-muted-foreground">
+            <span className="rounded-full border border-border px-2 py-1 text-xs font-medium text-muted-foreground">
               👨‍👩‍👧 {(dest as any).family_stress}
             </span>
           )}

@@ -75,7 +75,7 @@ export function RoutesGrid({ routes }: { routes: any[] }) {
                         {(route.best_months ?? []).length > 0 && (
                           <div className="mt-2 flex flex-wrap gap-1">
                             {route.best_months.slice(0, 5).map((m: number) => (
-                              <span key={m} className="rounded bg-muted px-1.5 py-0.5 text-[10px] text-muted-foreground">
+                              <span key={m} className="rounded bg-muted px-1.5 py-1 text-xs text-muted-foreground">
                                 {tm(String(m)).slice(0, 3)}
                               </span>
                             ))}

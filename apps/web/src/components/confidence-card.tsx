@@ -65,7 +65,7 @@ const SAFETY_COLORS: Record<number, string> = {
 function NetworkBadge({ name, active }: { name: string; active: boolean }) {
   return (
     <span
-      className={`inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-xs font-medium ${active ? "bg-emerald-500/20 text-emerald-400" : "bg-zinc-800 text-zinc-500 line-through"}`}
+      className={`inline-flex items-center gap-1 rounded-full px-2 py-1 text-xs font-medium ${active ? "bg-emerald-500/20 text-emerald-400" : "bg-zinc-800 text-zinc-500 line-through"}`}
     >
       {active && <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />}
       {name}
