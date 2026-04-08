@@ -121,20 +121,32 @@
   * {
     @apply border-border outline-ring/50;
   }
+  html, body {
+    @apply font-sans;
+    font-family: var(--font-geist-sans), ui-sans-serif, system-ui, -apple-system, sans-serif;
+  }
   body {
     @apply bg-background text-foreground;
     font-size: 16px;
     line-height: 1.6;
   }
   html {
-    @apply font-sans;
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
-  /* Bump minimum readable sizes */
-  p, li, td, span, div {
-    font-size: inherit;
+  /* Ensure ALL elements inherit Geist sans-serif */
+  h3, h4, h5, h6, p, span, li, td, div, a, button, input, select, textarea, label {
+    font-family: inherit;
+  }
+  /* Serif headings — only h1 and h2 */
+  h1, h2 {
+    font-family: var(--font-fraunces), Georgia, serif;
+    letter-spacing: -0.02em;
+  }
+  /* Form elements explicitly inherit */
+  input, select, textarea, button {
+    font-family: inherit;
   }
 }
 
@@ -148,11 +160,7 @@
   }
 }
 
-/* Editorial serif headings */
-h1, h2 {
-  font-family: var(--font-fraunces), Georgia, serif;
-  letter-spacing: -0.02em;
-}
+/* Editorial serif headings — now handled in @layer base above */
 
 /* Film grain overlay */
 .film-grain::after {
