@@ -16,33 +16,7 @@ export function Footer({ stats }: { stats?: { destinations: number; places: numb
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/95 to-background/80" />
       </div>
 
-      <div className="relative mx-auto max-w-7xl px-6 pt-20 pb-8">
-        {/* Top CTA section */}
-        <div className="mb-16 text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4 max-w-xl mx-auto leading-tight">
-            Stop planning. Start exploring.
-          </h2>
-          <p className="text-muted-foreground text-lg max-w-lg mx-auto mb-8">
-            105 destinations. Honest scores. Real infrastructure data. Zero sponsored content.
-          </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-            <Link
-              href={`/${locale}/explore`}
-              className="rounded-full bg-primary px-8 py-3.5 text-sm font-semibold text-primary-foreground hover:bg-primary/90 hover:-translate-y-0.5 transition-all duration-200 shadow-lg"
-            >
-              Explore All Destinations
-            </Link>
-            <Link
-              href={`/${locale}/plan`}
-              className="rounded-full border border-border px-8 py-3.5 text-sm font-semibold hover:bg-muted/50 hover:-translate-y-0.5 transition-all duration-200"
-            >
-              Build AI Itinerary
-            </Link>
-          </div>
-        </div>
-
-        {/* Divider */}
-        <div className="h-px bg-gradient-to-r from-transparent via-border/40 to-transparent mb-12" />
+      <div className="relative mx-auto max-w-7xl px-6 pt-12 pb-8">
 
         {/* Links grid — compact, 3 columns */}
         <div className="grid gap-x-12 gap-y-8 sm:grid-cols-3 mb-12">
