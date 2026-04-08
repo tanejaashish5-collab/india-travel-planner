@@ -1,10 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import { useState, lazy, Suspense } from "react";
 import Link from "next/link";
 import { useLocale } from "next-intl";
 import { motion } from "framer-motion";
 import { ShareButton } from "./share-button";
+
+const TrekTrailMap = lazy(() => import("./trek-trail-map").then((mod) => ({ default: mod.TrekTrailMap })));
 
 const MONTH_SHORT = ["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
 
@@ -149,6 +151,13 @@ export function TrekDetail({ trek }: { trek: any }) {
             <span>End</span>
           </div>
         </div>
+      )}
+
+      {/* Interactive trail map */}
+      {trek.trail_points && (trek.trail_points as any[]).length > 0 && (
+        <Suspense fallback={<div className="h-64 rounded-2xl bg-muted/30 flex items-center justify-center text-muted-foreground">Loading trail map...</div>}>
+          <TrekTrailMap points={trek.trail_points} trekName={trek.name} />
+        </Suspense>
       )}
 
       {/* Section nav */}
