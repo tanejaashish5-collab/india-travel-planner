@@ -12,19 +12,25 @@ export function Nav() {
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
 
-  const links = [
+  const primaryLinks = [
     { href: `/${locale}/explore`, label: t("explore") },
     { href: `/${locale}/collections`, label: t("collections") },
     { href: `/${locale}/routes`, label: t("routes") },
     { href: `/${locale}/treks`, label: t("treks") },
-    { href: `/${locale}/superlatives`, label: "Records" },
+    { href: `/${locale}/saved`, label: "♥" },
+  ];
+
+  const moreLinks = [
     { href: `/${locale}/camping`, label: "Camping" },
     { href: `/${locale}/permits`, label: "Permits" },
-    { href: `/${locale}/saved`, label: "♥ Saved" },
+    { href: `/${locale}/superlatives`, label: "Records" },
     { href: `/${locale}/region/himachal-pradesh`, label: "HP" },
     { href: `/${locale}/region/uttarakhand`, label: "UK" },
     { href: `/${locale}/region/jammu-kashmir`, label: "J&K" },
   ];
+
+  // All links for mobile menu
+  const links = [...primaryLinks, ...moreLinks];
 
   function isActive(href: string) {
     return pathname.startsWith(href);
@@ -45,7 +51,7 @@ export function Nav() {
 
         {/* Desktop nav */}
         <nav className="hidden items-center gap-1 md:flex">
-          {links.map((link) => (
+          {primaryLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
@@ -58,6 +64,29 @@ export function Nav() {
               {link.label}
             </Link>
           ))}
+
+          {/* More dropdown */}
+          <div className="relative group">
+            <button className="rounded-lg px-3 py-1.5 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted transition-colors">
+              More
+            </button>
+            <div className="absolute right-0 top-full mt-1 w-40 rounded-xl border border-border bg-card/95 backdrop-blur-md shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+              <div className="py-1">
+                {moreLinks.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className={`block px-4 py-2 text-sm transition-colors ${
+                      isActive(link.href) ? "text-primary bg-primary/5" : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
+
           <Link
             href={`/${locale}/plan`}
             className="ml-2 rounded-lg bg-primary px-3 py-1.5 text-sm font-medium text-primary-foreground hover:bg-primary/90 flex items-center gap-1.5"
