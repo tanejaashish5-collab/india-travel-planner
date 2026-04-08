@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { MonthlyChart } from "./monthly-chart";
 import { WeatherWidget } from "./weather-widget";
 import { ShareButton } from "./share-button";
+import { CompareButton } from "./compare-tray";
 import { ConfidenceCardComponent } from "./confidence-card";
 import { KidsBadge } from "./kids-badge";
 import { TouristTrapIntervention } from "./tourist-trap-intervention";
@@ -95,6 +96,8 @@ export function DestinationDetail({ dest }: { dest: any }) {
               <span className="text-foreground">{displayName}</span>
             </div>
             <div className="flex items-center gap-2">
+              {/* Compare */}
+              <CompareButton destinationId={dest.id} size="md" />
               {/* Share */}
               <ShareButton
                 title={`${displayName} — India Travel Planner`}

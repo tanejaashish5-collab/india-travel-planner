@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useLocale, useTranslations } from "next-intl";
 import { useSearchParams, useRouter, usePathname } from "next/navigation";
 import { ExploreFilters, type FilterState } from "./explore-filters";
+import { CompareButton } from "./compare-tray";
 
 interface DestinationData {
   id: string;
@@ -256,6 +257,9 @@ function DestinationCard({
         >
           ♡
         </button>
+        <div className="absolute top-2 left-2 z-10">
+          <CompareButton destinationId={dest.id} />
+        </div>
         <img
           src={imageUrl}
           alt={dest.name}
