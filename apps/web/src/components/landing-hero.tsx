@@ -291,7 +291,7 @@ export function LandingHero({
               <div className="relative">
                 <input
                   type="text"
-                  placeholder="Search destinations — Spiti, Manali, Rishikesh..."
+                  placeholder={locale === "hi" ? "जगह खोजें — स्पिति, मनाली, ऋषिकेश..." : "Search destinations — Spiti, Manali, Rishikesh..."}
                   className="w-full rounded-full border border-border/50 bg-card/60 backdrop-blur-md px-6 py-4 text-sm placeholder:text-muted-foreground/60 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/50 shadow-lg"
                   onKeyDown={(e) => {
                     if (e.key === "Enter") {
@@ -307,18 +307,18 @@ export function LandingHero({
                     if (input?.value) window.location.href = `/${locale}/explore?q=${encodeURIComponent(input.value)}`;
                   }}
                 >
-                  Search
+                  {locale === "hi" ? "खोजें" : "Search"}
                 </button>
               </div>
               {/* Quick region shortcuts */}
               <div className="flex items-center justify-center gap-2 mt-3">
-                <span className="text-xs text-muted-foreground/50">Quick:</span>
+                <span className="text-xs text-muted-foreground/50">{locale === "hi" ? "तुरंत:" : "Quick:"}</span>
                 {[
-                  { href: `/${locale}/region/himachal-pradesh`, label: "Himachal" },
-                  { href: `/${locale}/region/uttarakhand`, label: "Uttarakhand" },
-                  { href: `/${locale}/region/jammu-kashmir`, label: "Kashmir" },
-                  { href: `/${locale}/explore?difficulty=easy&kids=true`, label: "Family-friendly" },
-                  { href: `/${locale}/explore?difficulty=extreme`, label: "Extreme" },
+                  { href: `/${locale}/region/himachal-pradesh`, label: locale === "hi" ? "हिमाचल" : "Himachal" },
+                  { href: `/${locale}/region/uttarakhand`, label: locale === "hi" ? "उत्तराखंड" : "Uttarakhand" },
+                  { href: `/${locale}/region/jammu-kashmir`, label: locale === "hi" ? "कश्मीर" : "Kashmir" },
+                  { href: `/${locale}/explore?difficulty=easy&kids=true`, label: locale === "hi" ? "परिवार" : "Family-friendly" },
+                  { href: `/${locale}/explore?difficulty=extreme`, label: locale === "hi" ? "रोमांचक" : "Extreme" },
                 ].map((link) => (
                   <Link
                     key={link.href}

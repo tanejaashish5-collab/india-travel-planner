@@ -27,12 +27,8 @@ const FALLBACK: AppStats = {
   campingSpots: 37,
 };
 
-let cachedStats: AppStats | null = null;
-let cacheExpiry = 0;
-const CACHE_TTL = 5 * 60 * 1000; // 5 minutes
-
+// No caching — always fetch fresh on server to avoid stale counts
 export async function getAppStats(): Promise<AppStats> {
-  if (cachedStats && Date.now() < cacheExpiry) return cachedStats;
 
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
@@ -67,8 +63,6 @@ export async function getAppStats(): Promise<AppStats> {
       campingSpots: camping.count ?? FALLBACK.campingSpots,
     };
 
-    cachedStats = stats;
-    cacheExpiry = Date.now() + CACHE_TTL;
     return stats;
   } catch {
     return FALLBACK;
