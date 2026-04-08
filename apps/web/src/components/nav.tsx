@@ -17,6 +17,7 @@ export function Nav() {
     { href: `/${locale}/collections`, label: t("collections") },
     { href: `/${locale}/routes`, label: t("routes") },
     { href: `/${locale}/treks`, label: t("treks") },
+    { href: `/${locale}/trip`, label: "My Trip" },
     { href: `/${locale}/saved`, label: "♥" },
   ];
 
