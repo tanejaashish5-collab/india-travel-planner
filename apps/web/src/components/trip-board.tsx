@@ -379,13 +379,34 @@ export function TripBoard({ destinations }: { destinations: any[] }) {
 
           <div className="flex flex-col sm:flex-row gap-3">
             <button onClick={shareTrip} className="flex-1 rounded-full bg-primary px-4 py-3 text-sm font-semibold text-primary-foreground hover:bg-primary/90 transition-colors">
-              Share Trip on WhatsApp
+              Share on WhatsApp
+            </button>
+            <button
+              onClick={async () => {
+                const res = await fetch("/api/export-trip", {
+                  method: "POST",
+                  headers: { "Content-Type": "application/json" },
+                  body: JSON.stringify({ items: trip.items, month: trip.month, travelers: trip.travelers, budget: trip.budget, tripName: trip.name }),
+                });
+                if (res.ok) {
+                  const blob = await res.blob();
+                  const url = URL.createObjectURL(blob);
+                  const a = document.createElement("a");
+                  a.href = url;
+                  a.download = `${trip.name.replace(/\s+/g, "-").toLowerCase()}.txt`;
+                  a.click();
+                  URL.revokeObjectURL(url);
+                }
+              }}
+              className="flex-1 rounded-full border border-border px-4 py-3 text-sm font-semibold hover:bg-muted transition-colors"
+            >
+              Export Trip Pack
             </button>
             <Link
               href={`/${locale}/plan?month=${trip.month}&destinations=${trip.items.map((i) => i.destinationId).join(",")}`}
-              className="flex-1 rounded-full border border-border px-4 py-3 text-sm font-semibold text-center hover:bg-muted transition-colors"
+              className="flex-1 rounded-full border border-primary/30 bg-primary/5 px-4 py-3 text-sm font-semibold text-primary text-center hover:bg-primary/10 transition-colors"
             >
-              Generate AI Itinerary →
+              AI Itinerary →
             </Link>
           </div>
         </div>
