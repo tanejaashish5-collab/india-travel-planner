@@ -70,7 +70,7 @@ export function TreksContent({ treks, trekDests, gearChecklists }: { treks: any[
                 <StaggerItem key={trek.id}>
                   <HoverCard>
                     <Link
-                      href={trek.destination_id ? `/${locale}/destination/${trek.destination_id}` : `/${locale}/treks`}
+                      href={`/${locale}/treks/${trek.id}`}
                       className="group block rounded-2xl border border-border/50 bg-card overflow-hidden h-full transition-all hover:border-primary/50 hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-0.5"
                     >
                       {/* Hero image */}
