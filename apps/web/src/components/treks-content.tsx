@@ -10,20 +10,57 @@ const DIFFICULTY_ORDER: Record<string, number> = { easy: 1, moderate: 2, hard: 3
 
 export function TreksContent({ treks, trekDests, gearChecklists }: { treks: any[]; trekDests: any[]; gearChecklists?: any[] }) {
   const locale = useLocale();
+  const [search, setSearch] = useState("");
+  const [diffFilter, setDiffFilter] = useState("");
 
-  // Group treks by difficulty
+  const filteredTreks = treks.filter((t) => {
+    if (diffFilter && t.difficulty !== diffFilter) return false;
+    if (search) {
+      const q = search.toLowerCase();
+      if (!t.name.toLowerCase().includes(q) && !t.description?.toLowerCase().includes(q)) return false;
+    }
+    return true;
+  });
+
+  // Group filtered treks by difficulty
   const grouped = {
-    "Easy (Day treks & beginners)": treks.filter((t) => t.difficulty === "easy"),
-    "Moderate (2-5 days, some fitness needed)": treks.filter((t) => t.difficulty === "moderate"),
-    "Hard (5+ days, high altitude, serious)": treks.filter((t) => t.difficulty === "hard"),
-    "Extreme (Expert only)": treks.filter((t) => t.difficulty === "extreme"),
+    "Easy (Day treks & beginners)": filteredTreks.filter((t) => t.difficulty === "easy"),
+    "Moderate (2-5 days, some fitness needed)": filteredTreks.filter((t) => t.difficulty === "moderate"),
+    "Hard (5+ days, high altitude, serious)": filteredTreks.filter((t) => t.difficulty === "hard"),
+    "Extreme (Expert only)": filteredTreks.filter((t) => t.difficulty === "extreme"),
   };
 
   const MONTH_NAMES = ["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
 
   return (
     <>
-      {/* Real trek cards grouped by difficulty */}
+      {/* Search + difficulty filter */}
+      <div className="flex flex-col sm:flex-row gap-3 mb-8">
+        <input
+          type="text"
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+          placeholder="Search treks..."
+          className="flex-1 rounded-lg border border-border bg-background px-4 py-2.5 text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50"
+        />
+        <div className="flex gap-2">
+          {["", "easy", "moderate", "hard", "extreme"].map((d) => (
+            <button
+              key={d}
+              onClick={() => setDiffFilter(d)}
+              className={`rounded-lg border px-3 py-2 text-xs font-medium capitalize transition-all ${
+                diffFilter === d ? "border-primary bg-primary/10 text-primary" : "border-border text-muted-foreground hover:text-foreground"
+              }`}
+            >
+              {d || "All"}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <p className="text-sm text-muted-foreground mb-6">{filteredTreks.length} treks found</p>
+
+      {/* Trek cards grouped by difficulty */}
       {Object.entries(grouped).map(([label, groupTreks]) =>
         groupTreks.length > 0 ? (
           <div key={label} className="mb-10">
@@ -34,8 +71,22 @@ export function TreksContent({ treks, trekDests, gearChecklists }: { treks: any[
                   <HoverCard>
                     <Link
                       href={trek.destination_id ? `/${locale}/destination/${trek.destination_id}` : `/${locale}/treks`}
-                      className="block rounded-xl border border-border bg-card p-5 h-full transition-all hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5"
+                      className="group block rounded-2xl border border-border/50 bg-card overflow-hidden h-full transition-all hover:border-primary/50 hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-0.5"
                     >
+                      {/* Hero image */}
+                      {trek.destination_id && (
+                        <div className="relative h-32 bg-muted/30 overflow-hidden">
+                          <img
+                            src={`/images/destinations/${trek.destination_id}.jpg`}
+                            alt={trek.name}
+                            className="w-full h-full object-cover ken-burns"
+                            loading="lazy"
+                            onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-card/80 to-transparent" />
+                        </div>
+                      )}
+                      <div className="p-5">
                       {/* Header */}
                       <div className="flex items-center justify-between mb-2">
                         <span className={`text-xs font-medium capitalize rounded-md px-2 py-0.5 ${
@@ -90,6 +141,7 @@ export function TreksContent({ treks, trekDests, gearChecklists }: { treks: any[
                           ⚠ {trek.warnings[0]}
                         </div>
                       )}
+                      </div>
                     </Link>
                   </HoverCard>
                 </StaggerItem>

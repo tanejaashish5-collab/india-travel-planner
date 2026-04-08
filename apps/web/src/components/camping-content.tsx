@@ -71,7 +71,9 @@ export function CampingContent({ spots }: { spots: any[] }) {
           return (
             <StaggerItem key={spot.id}>
               <HoverCard>
-                <div className="rounded-xl border border-border bg-card overflow-hidden h-full">
+                <Link
+                  href={spot.destination_id ? `/${locale}/destination/${spot.destination_id}` : "#"}
+                  className="block rounded-xl border border-border bg-card overflow-hidden h-full hover:border-primary/40 hover:shadow-lg transition-all duration-200 group">
                   {/* Hero image from parent destination */}
                   {spot.destination_id && (
                     <div className="relative h-32 bg-muted/30 overflow-hidden">
@@ -143,17 +145,14 @@ export function CampingContent({ spots }: { spots: any[] }) {
                     </div>
                   )}
 
-                  {/* Destination link */}
+                  {/* Destination name */}
                   {destName && (
-                    <Link
-                      href={`/${locale}/destination/${spot.destination_id}`}
-                      className="text-xs text-primary hover:underline"
-                    >
-                      📍 {destName} →
-                    </Link>
+                    <p className="text-xs text-primary font-medium">
+                      📍 {destName}
+                    </p>
                   )}
                 </div>
-                </div>
+                </Link>
               </HoverCard>
             </StaggerItem>
           );

@@ -546,6 +546,44 @@ export function DestinationDetail({ dest }: { dest: any }) {
                   </section>
                 )}
 
+                {/* Trip Cost Estimator */}
+                {dest.daily_cost && (
+                  <section>
+                    <h2 className="text-xl font-semibold mb-3">Daily Budget Reality</h2>
+                    <div className="grid gap-3 sm:grid-cols-3">
+                      {[
+                        { key: "budget", label: "Budget", color: "emerald", icon: "🎒" },
+                        { key: "midrange", label: "Mid-range", color: "blue", icon: "🏨" },
+                        { key: "luxury", label: "Luxury", color: "purple", icon: "✨" },
+                      ].map(({ key, label, color, icon }) => {
+                        const tier = dest.daily_cost[key];
+                        if (!tier) return null;
+                        return (
+                          <div key={key} className={`rounded-xl border border-${color}-500/20 bg-${color}-500/5 p-4`}>
+                            <div className="flex items-center gap-2 mb-3">
+                              <span className="text-lg">{icon}</span>
+                              <h3 className="text-sm font-semibold">{label}</h3>
+                              <span className={`ml-auto text-lg font-mono font-bold text-${color}-400`}>₹{tier.total?.toLocaleString()}</span>
+                            </div>
+                            <div className="space-y-1.5 text-xs text-muted-foreground">
+                              <div className="flex justify-between"><span>Stay</span><span className="font-mono">₹{tier.stay?.toLocaleString()}</span></div>
+                              <div className="flex justify-between"><span>Food</span><span className="font-mono">₹{tier.food?.toLocaleString()}</span></div>
+                              <div className="flex justify-between"><span>Transport</span><span className="font-mono">₹{tier.transport?.toLocaleString()}</span></div>
+                              <div className="flex justify-between"><span>Activities</span><span className="font-mono">₹{tier.activities?.toLocaleString()}</span></div>
+                            </div>
+                            <div className="mt-2 pt-2 border-t border-border/30 text-[10px] text-muted-foreground/50">
+                              per person per day
+                            </div>
+                          </div>
+                        );
+                      })}
+                    </div>
+                    {dest.daily_cost.note && (
+                      <p className="mt-3 text-sm italic text-muted-foreground/70">💡 {dest.daily_cost.note}</p>
+                    )}
+                  </section>
+                )}
+
                 {/* Food & Dining */}
                 {dest.food_scene && Object.keys(dest.food_scene).length > 0 && (
                   <section>

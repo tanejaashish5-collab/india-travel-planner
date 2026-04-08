@@ -109,13 +109,15 @@ export function RegionDetail({ region }: RegionDetailProps) {
                         : "border-border hover:border-primary/50"
                     }`}
                   >
-                    <h3 className="font-semibold">{sr.name}</h3>
+                    <div className="flex items-center justify-between">
+                      <h3 className="font-semibold">{sr.name}</h3>
+                      <span className={`rounded-full px-2 py-0.5 text-xs font-mono font-bold ${
+                        selectedSubregion === sr.name ? "bg-primary text-primary-foreground" : "bg-muted text-muted-foreground"
+                      }`}>{count}</span>
+                    </div>
                     <p className="mt-1 text-sm text-muted-foreground line-clamp-2">{sr.description}</p>
-                    <div className="mt-2 flex items-center justify-between text-xs text-muted-foreground">
-                      <span><span className="font-mono font-bold text-primary">{count}</span> destinations</span>
-                      <span className="text-primary">
-                        {selectedSubregion === sr.name ? "✕ Clear filter" : "Filter ↓"}
-                      </span>
+                    <div className="mt-2 text-xs text-primary font-medium">
+                      {selectedSubregion === sr.name ? "✕ Clear filter" : "Show destinations ↓"}
                     </div>
                   </button>
                 </HoverCard>
