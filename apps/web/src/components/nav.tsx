@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useLocale, useTranslations } from "next-intl";
 import { usePathname } from "next/navigation";
 import { LanguageToggle } from "./language-toggle";
+import { UserButton } from "./user-button";
 import { useState } from "react";
 
 export function Nav() {
@@ -103,6 +104,7 @@ export function Nav() {
         {/* Right side */}
         <div className="flex items-center gap-2">
           <LanguageToggle />
+          <UserButton />
           {/* Mobile menu button */}
           <button
             className="rounded-lg p-2 text-muted-foreground hover:text-foreground md:hidden"
