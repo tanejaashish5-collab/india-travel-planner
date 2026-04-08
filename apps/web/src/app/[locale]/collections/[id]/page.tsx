@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { CollectionDetail } from "@/components/collection-detail";
+import { PrevNextNav } from "@/components/prev-next-nav";
 import { createClient } from "@supabase/supabase-js";
 import { notFound } from "next/navigation";
 
@@ -38,7 +39,8 @@ async function getCollection(id: string) {
     .select("id, name, tagline, difficulty, elevation_m, state:states(name)")
     .in("id", destIds);
 
-  return { ...data, destinations: dests ?? [] };
+  const { data: allColls } = await supabase.from("collections").select("id, name").order("name");
+  return { ...data, destinations: dests ?? [], allCollections: allColls ?? [] };
 }
 
 export default async function CollectionDetailPage({
@@ -55,6 +57,13 @@ export default async function CollectionDetailPage({
       <Nav />
       <main className="mx-auto max-w-4xl px-4 py-8">
         <CollectionDetail collection={collection} />
+        <PrevNextNav
+          items={collection.allCollections}
+          currentId={id}
+          basePath="collections"
+          backLabel="All Collections"
+          backHref="collections"
+        />
       </main>
       <Footer />
     </div>

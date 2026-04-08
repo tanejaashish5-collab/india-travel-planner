@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Nav } from "@/components/nav";
 import { RouteDetail } from "@/components/route-detail";
+import { PrevNextNav } from "@/components/prev-next-nav";
 import { createClient } from "@supabase/supabase-js";
 import { notFound } from "next/navigation";
 
@@ -24,12 +25,12 @@ async function getRoute(id: string) {
   if (!url || !key) return null;
 
   const supabase = createClient(url, key);
-  const { data } = await supabase
-    .from("routes")
-    .select("*")
-    .eq("id", id)
-    .single();
-  return data;
+  const [routeData, allRoutes] = await Promise.all([
+    supabase.from("routes").select("*").eq("id", id).single(),
+    supabase.from("routes").select("id, name").order("name"),
+  ]);
+  if (!routeData.data) return null;
+  return { ...routeData.data, allRoutes: allRoutes.data ?? [] };
 }
 
 export default async function RouteDetailPage({
@@ -46,6 +47,13 @@ export default async function RouteDetailPage({
       <Nav />
       <main className="mx-auto max-w-4xl px-4 py-8">
         <RouteDetail route={route} />
+        <PrevNextNav
+          items={route.allRoutes}
+          currentId={id}
+          basePath="routes"
+          backLabel="All Routes"
+          backHref="routes"
+        />
       </main>
     </div>
   );

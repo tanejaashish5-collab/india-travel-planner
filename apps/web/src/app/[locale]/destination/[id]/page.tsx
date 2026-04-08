@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Nav } from "@/components/nav";
 import { DestinationDetail } from "@/components/destination-detail";
+import { PrevNextNav } from "@/components/prev-next-nav";
 import { createClient } from "@supabase/supabase-js";
 import { notFound } from "next/navigation";
 
@@ -108,6 +109,12 @@ async function getDestination(id: string) {
     .eq("destination_id", id)
     .order("created_at", { ascending: false });
 
+  // All destinations for prev/next nav
+  const { data: allDests } = await supabase
+    .from("destinations")
+    .select("id, name")
+    .order("name");
+
   return {
     ...data,
     hidden_gems: gems ?? [],
@@ -116,6 +123,7 @@ async function getDestination(id: string) {
     local_stays: localStays ?? [],
     traveler_notes: travelerNotes ?? [],
     coords: coordData ? { lat: coordData.lat, lng: coordData.lng } : null,
+    allDestinations: allDests ?? [],
   };
 }
 
@@ -132,8 +140,14 @@ export default async function DestinationPage({
     <div className="min-h-screen">
       <Nav />
       <main className="mx-auto max-w-4xl px-4 py-8">
-        {/* Tourist Trap now rendered INSIDE DestinationDetail as assistive section */}
         <DestinationDetail dest={dest} />
+        <PrevNextNav
+          items={dest.allDestinations}
+          currentId={id}
+          basePath="destination"
+          backLabel="All Destinations"
+          backHref="explore"
+        />
       </main>
     </div>
   );

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { TrekDetail } from "@/components/trek-detail";
+import { PrevNextNav } from "@/components/prev-next-nav";
 import { createClient } from "@supabase/supabase-js";
 import { notFound } from "next/navigation";
 
@@ -32,7 +33,14 @@ async function getTrek(id: string) {
     .single();
 
   if (error || !data) return null;
-  return data;
+
+  // Get all trek IDs for prev/next nav
+  const { data: allTreks } = await supabase
+    .from("treks")
+    .select("id, name")
+    .order("name");
+
+  return { ...data, allTreks: allTreks ?? [] };
 }
 
 export default async function TrekDetailPage({ params }: { params: Promise<{ id: string }> }) {
@@ -45,6 +53,13 @@ export default async function TrekDetailPage({ params }: { params: Promise<{ id:
       <Nav />
       <main className="mx-auto max-w-5xl px-4 py-8">
         <TrekDetail trek={trek} />
+        <PrevNextNav
+          items={trek.allTreks}
+          currentId={id}
+          basePath="treks"
+          backLabel="All Treks"
+          backHref="treks"
+        />
       </main>
       <Footer />
     </div>
