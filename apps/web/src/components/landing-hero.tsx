@@ -211,7 +211,7 @@ export function LandingHero({
         <div className={`absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] rounded-full ${glowColor} blur-[150px] opacity-40`} />
 
         {/* Top bar */}
-        <div className="absolute top-0 left-0 right-0 flex items-center justify-between px-6 py-4 z-10">
+        <div className="absolute top-0 left-0 right-0 flex items-center justify-between px-6 py-4 z-30">
           <div className="flex items-center gap-2">
             <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary text-sm font-bold text-primary-foreground">
               IT
