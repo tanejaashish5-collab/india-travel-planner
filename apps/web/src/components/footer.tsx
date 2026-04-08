@@ -5,112 +5,151 @@ export function Footer() {
   const locale = useLocale();
 
   return (
-    <footer className="border-t border-border/20 bg-gradient-to-t from-muted/40 to-transparent mt-20">
-      <div className="mx-auto max-w-7xl px-4 py-16">
-        {/* Brand statement */}
-        <div className="mb-12 max-w-2xl">
-          <h2 className="text-2xl font-bold mb-3">
-            Where the road ends and the real India begins.
+    <footer className="relative mt-24 overflow-hidden">
+      {/* Background image with heavy overlay */}
+      <div className="absolute inset-0">
+        <img
+          src="/images/destinations/pangong-lake.jpg"
+          alt=""
+          className="w-full h-full object-cover opacity-[0.07]"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/95 to-background/80" />
+      </div>
+
+      <div className="relative mx-auto max-w-7xl px-6 pt-20 pb-8">
+        {/* Top CTA section */}
+        <div className="mb-16 text-center">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4 max-w-xl mx-auto leading-tight">
+            Stop planning. Start exploring.
           </h2>
-          <p className="text-muted-foreground leading-relaxed">
-            No sponsored content. No paid rankings. Every score is explainable, every rating is
-            infrastructure-aware, every recommendation comes with honest warnings. We built this
-            for the traveler who wants confidence, not brochures.
+          <p className="text-muted-foreground text-lg max-w-lg mx-auto mb-8">
+            105 destinations. Honest scores. Real infrastructure data. Zero sponsored content.
           </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+            <Link
+              href={`/${locale}/explore`}
+              className="rounded-full bg-primary px-8 py-3.5 text-sm font-semibold text-primary-foreground hover:bg-primary/90 hover:-translate-y-0.5 transition-all duration-200 shadow-lg"
+            >
+              Explore All Destinations
+            </Link>
+            <Link
+              href={`/${locale}/plan`}
+              className="rounded-full border border-border px-8 py-3.5 text-sm font-semibold hover:bg-muted/50 hover:-translate-y-0.5 transition-all duration-200"
+            >
+              Build AI Itinerary
+            </Link>
+          </div>
         </div>
 
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-          {/* Explore */}
+        {/* Divider */}
+        <div className="h-px bg-gradient-to-r from-transparent via-border/40 to-transparent mb-12" />
+
+        {/* Links grid — compact, 3 columns */}
+        <div className="grid gap-x-12 gap-y-8 sm:grid-cols-3 mb-12">
           <div>
-            <h4 className="font-semibold mb-4 text-sm uppercase tracking-wider text-muted-foreground/70">
+            <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground/50 mb-4">
               Discover
             </h4>
-            <div className="space-y-2.5">
-              <Link href={`/${locale}/explore`} className="block text-[15px] text-muted-foreground hover:text-foreground transition-colors">
-                All Destinations
-              </Link>
-              <Link href={`/${locale}/collections`} className="block text-[15px] text-muted-foreground hover:text-foreground transition-colors">
-                Curated Collections
-              </Link>
-              <Link href={`/${locale}/routes`} className="block text-[15px] text-muted-foreground hover:text-foreground transition-colors">
-                Road Trip Routes
-              </Link>
-              <Link href={`/${locale}/treks`} className="block text-[15px] text-muted-foreground hover:text-foreground transition-colors">
-                Treks & Gear
-              </Link>
-              <Link href={`/${locale}/superlatives`} className="block text-[15px] text-muted-foreground hover:text-foreground transition-colors">
-                Records & Firsts
-              </Link>
+            <div className="space-y-2">
+              {[
+                { href: `/${locale}/explore`, label: "Destinations" },
+                { href: `/${locale}/collections`, label: "Collections" },
+                { href: `/${locale}/routes`, label: "Road Trips" },
+                { href: `/${locale}/treks`, label: "Treks" },
+                { href: `/${locale}/superlatives`, label: "Records" },
+                { href: `/${locale}/camping`, label: "Camping" },
+              ].map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="block text-sm text-muted-foreground/70 hover:text-foreground hover:translate-x-1 transition-all duration-200"
+                >
+                  {link.label}
+                </Link>
+              ))}
             </div>
           </div>
 
-          {/* Plan */}
           <div>
-            <h4 className="font-semibold mb-4 text-sm uppercase tracking-wider text-muted-foreground/70">
-              Plan
+            <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground/50 mb-4">
+              Plan & Build
             </h4>
-            <div className="space-y-2.5">
-              <Link href={`/${locale}/plan`} className="block text-[15px] text-muted-foreground hover:text-foreground transition-colors">
-                AI Trip Planner
-              </Link>
-              <Link href={`/${locale}/camping`} className="block text-[15px] text-muted-foreground hover:text-foreground transition-colors">
-                Camping Spots
-              </Link>
-              <Link href={`/${locale}/permits`} className="block text-[15px] text-muted-foreground hover:text-foreground transition-colors">
-                Permits & Passes
-              </Link>
-              <Link href={`/${locale}/road-conditions`} className="block text-[15px] text-muted-foreground hover:text-foreground transition-colors">
-                Road Conditions
-              </Link>
-              <Link href={`/${locale}/saved`} className="block text-[15px] text-muted-foreground hover:text-foreground transition-colors">
-                Saved & Compare
-              </Link>
+            <div className="space-y-2">
+              {[
+                { href: `/${locale}/plan`, label: "AI Trip Planner" },
+                { href: `/${locale}/build-route`, label: "Route Builder" },
+                { href: `/${locale}/permits`, label: "Permits" },
+                { href: `/${locale}/road-conditions`, label: "Road Status" },
+                { href: `/${locale}/saved`, label: "Saved" },
+              ].map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="block text-sm text-muted-foreground/70 hover:text-foreground hover:translate-x-1 transition-all duration-200"
+                >
+                  {link.label}
+                </Link>
+              ))}
             </div>
           </div>
 
-          {/* Regions */}
           <div>
-            <h4 className="font-semibold mb-4 text-sm uppercase tracking-wider text-muted-foreground/70">
+            <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground/50 mb-4">
               Regions
             </h4>
-            <div className="space-y-2.5">
-              <Link href={`/${locale}/region/himachal-pradesh`} className="block text-[15px] text-muted-foreground hover:text-foreground transition-colors">
-                Himachal Pradesh
-              </Link>
-              <Link href={`/${locale}/region/uttarakhand`} className="block text-[15px] text-muted-foreground hover:text-foreground transition-colors">
-                Uttarakhand
-              </Link>
-              <Link href={`/${locale}/region/jammu-kashmir`} className="block text-[15px] text-muted-foreground hover:text-foreground transition-colors">
-                Jammu & Kashmir
-              </Link>
-            </div>
-          </div>
-
-          {/* Trust */}
-          <div>
-            <h4 className="font-semibold mb-4 text-sm uppercase tracking-wider text-muted-foreground/70">
-              Trust
-            </h4>
-            <div className="space-y-2.5">
-              <Link href={`/${locale}/about`} className="block text-[15px] text-muted-foreground hover:text-foreground transition-colors">
-                About Us
-              </Link>
-              <Link href={`/${locale}/methodology`} className="block text-[15px] text-muted-foreground hover:text-foreground transition-colors">
-                How We Score
-              </Link>
-            </div>
-            <div className="mt-6 flex gap-4 text-xs font-mono text-muted-foreground/50">
-              <span>105 destinations</span>
-              <span>370+ places</span>
-              <span>126 festivals</span>
+            <div className="space-y-2">
+              {[
+                { href: `/${locale}/region/himachal-pradesh`, label: "Himachal Pradesh" },
+                { href: `/${locale}/region/uttarakhand`, label: "Uttarakhand" },
+                { href: `/${locale}/region/jammu-kashmir`, label: "Jammu & Kashmir" },
+              ].map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="block text-sm text-muted-foreground/70 hover:text-foreground hover:translate-x-1 transition-all duration-200"
+                >
+                  {link.label}
+                </Link>
+              ))}
+              <div className="h-3" />
+              {[
+                { href: `/${locale}/about`, label: "About" },
+                { href: `/${locale}/methodology`, label: "How We Score" },
+              ].map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="block text-sm text-muted-foreground/70 hover:text-foreground hover:translate-x-1 transition-all duration-200"
+                >
+                  {link.label}
+                </Link>
+              ))}
             </div>
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-border/20 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-muted-foreground/60">
-          <p>&copy; 2026 India Travel Planner. Made with obsessive detail.</p>
-          <p className="italic">
-            "The best journeys answer questions that in the beginning you didn't even think to ask."
+        {/* Stats strip */}
+        <div className="flex flex-wrap justify-center gap-8 mb-12">
+          {[
+            { num: "105", label: "Destinations" },
+            { num: "370+", label: "Places" },
+            { num: "126", label: "Festivals" },
+            { num: "43", label: "Tourist Traps Exposed" },
+            { num: "20", label: "Collections" },
+          ].map((stat) => (
+            <div key={stat.label} className="text-center">
+              <div className="text-lg font-mono font-bold text-muted-foreground/30">{stat.num}</div>
+              <div className="text-[10px] uppercase tracking-wider text-muted-foreground/30">{stat.label}</div>
+            </div>
+          ))}
+        </div>
+
+        {/* Bottom bar */}
+        <div className="h-px bg-gradient-to-r from-transparent via-border/20 to-transparent mb-6" />
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-muted-foreground/40">
+          <p>&copy; 2026 India Travel Planner</p>
+          <p className="italic font-serif">
+            "The best journeys answer questions you didn't even think to ask."
           </p>
         </div>
       </div>
