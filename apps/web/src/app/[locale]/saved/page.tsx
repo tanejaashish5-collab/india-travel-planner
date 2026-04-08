@@ -15,7 +15,8 @@ async function getAllDestinations() {
       id, name, tagline, difficulty, elevation_m, budget_tier, tags, best_months, state_id,
       state:states(name),
       kids_friendly(suitable, rating),
-      destination_months(month, score, note)
+      destination_months(month, score, note),
+      confidence_cards(safety_rating, network)
     `)
     .order("name");
 

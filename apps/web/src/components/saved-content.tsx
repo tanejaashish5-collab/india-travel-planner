@@ -189,6 +189,8 @@ export function SavedContent({ destinations }: { destinations: any[] }) {
                     { label: "Elevation", key: "elevation" },
                     { label: "Budget", key: "budget" },
                     { label: "Kids Rating", key: "kids" },
+                    { label: "Safety", key: "safety" },
+                    { label: "Network", key: "network" },
                     { label: "Best Months", key: "best_months" },
                     { label: "State", key: "state" },
                   ].map((row) => (
@@ -222,6 +224,21 @@ export function SavedContent({ destinations }: { destinations: any[] }) {
                             value = kf ? (kf.suitable ? `${kf.rating}/5 ✓` : "Not suitable") : "N/A";
                             className = kf?.suitable ? "text-emerald-400" : kf ? "text-red-400" : "";
                             break;
+                          case "safety": {
+                            const cc = Array.isArray(d.confidence_cards) ? d.confidence_cards?.[0] : d.confidence_cards;
+                            value = cc?.safety_rating ? `${cc.safety_rating}/5` : "N/A";
+                            className = cc?.safety_rating >= 4 ? "text-emerald-400 font-bold" : cc?.safety_rating >= 3 ? "text-yellow-400" : cc?.safety_rating ? "text-red-400" : "";
+                            break;
+                          }
+                          case "network": {
+                            const cc2 = Array.isArray(d.confidence_cards) ? d.confidence_cards?.[0] : d.confidence_cards;
+                            if (cc2?.network) {
+                              const ops = [cc2.network.jio && "Jio", cc2.network.airtel && "Airtel", cc2.network.bsnl && "BSNL"].filter(Boolean);
+                              value = ops.length > 0 ? ops.join(", ") : "No signal";
+                              className = ops.length >= 2 ? "text-emerald-400" : ops.length === 1 ? "text-yellow-400" : "text-red-400";
+                            } else { value = "N/A"; }
+                            break;
+                          }
                           case "best_months":
                             value = d.best_months?.map((m: number) => MONTH_NAMES[m]).join(", ") ?? "N/A";
                             break;

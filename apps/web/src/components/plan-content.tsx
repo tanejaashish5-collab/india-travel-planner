@@ -1,8 +1,9 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import Link from "next/link";
 import { useLocale } from "next-intl";
+import { useSearchParams } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { SCORE_COLORS, DIFFICULTY_COLORS, SCORE_LABELS } from "@/lib/design-tokens";
 import { AIItinerary } from "./ai-itinerary";
@@ -43,12 +44,17 @@ const BUDGET_OPTIONS = [
 
 export function PlanContent({ destinations }: PlanContentProps) {
   const locale = useLocale();
-  const [month, setMonth] = useState(new Date().getMonth() + 1);
+  const searchParams = useSearchParams();
+  const urlMonth = Number(searchParams.get("month")) || new Date().getMonth() + 1;
+  const urlDests = searchParams.get("destinations")?.split(",").filter(Boolean) ?? [];
+
+  const [month, setMonth] = useState(urlMonth);
   const [days, setDays] = useState(7);
   const [traveler, setTraveler] = useState<TravelerType>("couple");
   const [budget, setBudget] = useState("mid-range");
   const [origin, setOrigin] = useState("Delhi");
-  const [showResults, setShowResults] = useState(false);
+  const [showResults, setShowResults] = useState(urlDests.length > 0);
+  const [preSelectedIds] = useState<string[]>(urlDests);
 
   // Filter and rank destinations based on inputs
   const recommendations = useMemo(() => {
@@ -439,14 +445,14 @@ export function PlanContent({ destinations }: PlanContentProps) {
       </AnimatePresence>
 
       {/* AI Itinerary Generator */}
-      {showResults && recommendations.length > 0 && (
+      {showResults && (recommendations.length > 0 || preSelectedIds.length > 0) && (
         <AIItinerary
           month={month}
           days={days}
           travelerType={traveler}
           budget={budget}
           origin={origin}
-          recommendedIds={recommendations.map((r) => r.id)}
+          recommendedIds={preSelectedIds.length > 0 ? preSelectedIds : recommendations.map((r) => r.id)}
         />
       )}
     </div>

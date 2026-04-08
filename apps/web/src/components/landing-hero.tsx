@@ -284,6 +284,53 @@ export function LandingHero({
             </p>
           </FadeIn>
 
+          {/* Search bar */}
+          <FadeIn delay={0.6}>
+            <div className="max-w-xl mx-auto pt-2">
+              <div className="relative">
+                <input
+                  type="text"
+                  placeholder="Search destinations — Spiti, Manali, Rishikesh..."
+                  className="w-full rounded-full border border-border/50 bg-card/60 backdrop-blur-md px-6 py-4 text-sm placeholder:text-muted-foreground/60 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/50 shadow-lg"
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter") {
+                      const q = (e.target as HTMLInputElement).value;
+                      if (q) window.location.href = `/${locale}/explore?q=${encodeURIComponent(q)}`;
+                    }
+                  }}
+                />
+                <button
+                  className="absolute right-2 top-1/2 -translate-y-1/2 rounded-full bg-primary px-4 py-2 text-xs font-semibold text-primary-foreground hover:bg-primary/90 transition-colors"
+                  onClick={(e) => {
+                    const input = (e.currentTarget.previousElementSibling as HTMLInputElement);
+                    if (input?.value) window.location.href = `/${locale}/explore?q=${encodeURIComponent(input.value)}`;
+                  }}
+                >
+                  Search
+                </button>
+              </div>
+              {/* Quick region shortcuts */}
+              <div className="flex items-center justify-center gap-2 mt-3">
+                <span className="text-xs text-muted-foreground/50">Quick:</span>
+                {[
+                  { href: `/${locale}/region/himachal-pradesh`, label: "Himachal" },
+                  { href: `/${locale}/region/uttarakhand`, label: "Uttarakhand" },
+                  { href: `/${locale}/region/jammu-kashmir`, label: "Kashmir" },
+                  { href: `/${locale}/explore?difficulty=easy&kids=true`, label: "Family-friendly" },
+                  { href: `/${locale}/explore?difficulty=extreme`, label: "Extreme" },
+                ].map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="rounded-full border border-border/30 px-3 py-1 text-[11px] text-muted-foreground/60 hover:text-foreground hover:border-border transition-all"
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </FadeIn>
+
           <FadeIn delay={0.7}>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
               <Link

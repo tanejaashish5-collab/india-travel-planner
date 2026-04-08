@@ -291,9 +291,9 @@ export function DestinationDetail({ dest }: { dest: any }) {
           </FadeIn>
         )}
 
-        {/* Tab navigation */}
-        <FadeIn delay={0.3}>
-          <div className="mb-6 flex gap-1 overflow-x-auto rounded-xl border border-border bg-background/95 p-1 sticky top-[64px] z-40 backdrop-blur-md shadow-sm">
+        {/* Tab navigation — no FadeIn wrapper (breaks sticky) */}
+        <div className="mb-6 sticky top-[64px] z-40">
+          <div className="flex gap-1 overflow-x-auto rounded-xl border border-border bg-background/95 p-1 backdrop-blur-md shadow-sm">
             {availableTabs.map((tab) => (
               <button
                 key={tab.id}
@@ -313,7 +313,7 @@ export function DestinationDetail({ dest }: { dest: any }) {
               </button>
             ))}
           </div>
-        </FadeIn>
+        </div>
 
         {/* Tab content */}
         <AnimatePresence mode="wait">
