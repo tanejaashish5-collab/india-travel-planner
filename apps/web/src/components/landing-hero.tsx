@@ -12,6 +12,7 @@ import {
   StaggerItem,
   HoverCard,
   FloatingParticles,
+  ScrollReveal,
 } from "./animated-hero";
 import { AnimatedCounter } from "./animated-counter";
 
@@ -636,8 +637,10 @@ export function LandingHero({
         <section className="px-4 py-20">
           <div className="mx-auto max-w-6xl">
             <FadeIn>
-              <h2 className="text-3xl font-bold sm:text-4xl mb-2">Upcoming Festivals</h2>
-              <p className="text-muted-foreground mb-8">Time your trip around these events</p>
+              <ScrollReveal>
+                <h2 className="text-3xl font-bold sm:text-4xl mb-2">Upcoming Festivals</h2>
+                <p className="text-muted-foreground mb-8">Time your trip around these events</p>
+              </ScrollReveal>
             </FadeIn>
             <StaggerContainer className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4" staggerDelay={0.05}>
               {festivals.slice(0, 8).map((f: any) => {

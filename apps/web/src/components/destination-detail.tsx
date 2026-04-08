@@ -335,6 +335,31 @@ export function DestinationDetail({ dest }: { dest: any }) {
                   <p className="text-[15px] text-muted-foreground leading-relaxed">{displayWhySpecial}</p>
                 </section>
 
+                {/* Who Should Skip — anti-brochure honesty */}
+                {travelerFit.notFor.length > 0 && (
+                  <section className="rounded-xl border border-orange-500/20 bg-orange-500/5 p-5">
+                    <h2 className="text-lg font-semibold text-orange-300 mb-3">Who Should Think Twice</h2>
+                    <div className="space-y-2">
+                      {travelerFit.notFor.map((reason, i) => (
+                        <div key={i} className="flex items-start gap-2 text-[15px] text-orange-200/80">
+                          <span className="mt-0.5 text-orange-400">⚠</span>
+                          <span>{reason}</span>
+                        </div>
+                      ))}
+                    </div>
+                    {travelerFit.infraConcerns.length > 0 && (
+                      <div className="mt-3 pt-3 border-t border-orange-500/10">
+                        <p className="text-xs font-medium text-orange-300/60 uppercase tracking-wider mb-2">Infrastructure concerns</p>
+                        <div className="space-y-1.5">
+                          {travelerFit.infraConcerns.map((c, i) => (
+                            <p key={i} className="text-sm text-orange-200/60">{c}</p>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                  </section>
+                )}
+
                 {/* Tourist Trap Alternatives — ASSISTIVE, not pre-emptive */}
                 {trapAlts.length > 0 && (
                   <TouristTrapIntervention trapName={dest.name} alternatives={trapAlts} />
