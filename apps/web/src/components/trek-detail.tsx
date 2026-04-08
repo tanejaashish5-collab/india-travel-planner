@@ -126,33 +126,6 @@ export function TrekDetail({ trek }: { trek: any }) {
         )}
       </div>
 
-      {/* Mini elevation profile */}
-      {elevationPoints.length > 1 && maxAlt > 0 && (
-        <div className="rounded-xl border border-border p-4">
-          <h3 className="text-sm font-semibold mb-3">Elevation Profile</h3>
-          <div className="flex items-end gap-1 h-24">
-            {elevationPoints.map((p: any, i: number) => {
-              const height = maxAlt > 0 ? ((p.altitude || 0) / maxAlt) * 100 : 0;
-              return (
-                <div key={i} className="flex-1 flex flex-col items-center gap-1">
-                  <div
-                    className="w-full rounded-t bg-primary/60 transition-all hover:bg-primary"
-                    style={{ height: `${Math.max(height, 5)}%` }}
-                    title={`Day ${p.day}: ${p.altitude?.toLocaleString()}m`}
-                  />
-                  <span className="text-[10px] text-muted-foreground">D{p.day}</span>
-                </div>
-              );
-            })}
-          </div>
-          <div className="flex justify-between mt-1 text-[10px] text-muted-foreground">
-            <span>Start</span>
-            <span>Summit: {maxAlt.toLocaleString()}m</span>
-            <span>End</span>
-          </div>
-        </div>
-      )}
-
       {/* Interactive trail map */}
       {trek.trail_points && (trek.trail_points as any[]).length > 0 && (
         <Suspense fallback={<div className="h-64 rounded-2xl bg-muted/30 flex items-center justify-center text-muted-foreground">Loading trail map...</div>}>
