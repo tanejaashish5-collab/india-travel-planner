@@ -94,12 +94,20 @@ async function getDestination(id: string) {
     .eq("destination_id", id)
     .order("type");
 
+  // Get coordinates for distance badge
+  const { data: coordData } = await supabase
+    .from("destinations_with_coords")
+    .select("lat, lng")
+    .eq("id", id)
+    .single();
+
   return {
     ...data,
     hidden_gems: gems ?? [],
     trap_alternatives: trapAlts ?? [],
     festivals: festivals ?? [],
     local_stays: localStays ?? [],
+    coords: coordData ? { lat: coordData.lat, lng: coordData.lng } : null,
   };
 }
 

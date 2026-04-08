@@ -3,19 +3,29 @@
 import { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
 import { useLocale } from "next-intl";
+import { useSearchParams } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { SCORE_COLORS, DIFFICULTY_COLORS } from "@/lib/design-tokens";
 
 export function SavedContent({ destinations }: { destinations: any[] }) {
   const locale = useLocale();
+  const searchParams = useSearchParams();
+  const urlCompare = searchParams.get("compare")?.split(",").filter(Boolean) ?? [];
+
   const [savedIds, setSavedIds] = useState<string[]>([]);
-  const [compareMode, setCompareMode] = useState(false);
-  const [compareIds, setCompareIds] = useState<string[]>([]);
+  const [compareMode, setCompareMode] = useState(urlCompare.length > 0);
+  const [compareIds, setCompareIds] = useState<string[]>(urlCompare);
   const currentMonth = new Date().getMonth() + 1;
 
   useEffect(() => {
     const saved = JSON.parse(localStorage.getItem("savedDestinations") || "[]");
     setSavedIds(saved);
+    // Auto-scroll to compare table if URL params present
+    if (urlCompare.length >= 2) {
+      setTimeout(() => {
+        document.getElementById("compare-table")?.scrollIntoView({ behavior: "smooth" });
+      }, 500);
+    }
   }, []);
 
   const savedDestinations = useMemo(() => {
@@ -167,7 +177,7 @@ export function SavedContent({ destinations }: { destinations: any[] }) {
             exit={{ opacity: 0, y: 20 }}
             className="mt-10"
           >
-            <h2 className="text-2xl font-bold mb-4">Side-by-Side Comparison</h2>
+            <h2 id="compare-table" className="text-2xl font-bold mb-4">Side-by-Side Comparison</h2>
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
                 <thead>

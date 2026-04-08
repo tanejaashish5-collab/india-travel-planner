@@ -8,6 +8,7 @@ import { MonthlyChart } from "./monthly-chart";
 import { WeatherWidget } from "./weather-widget";
 import { ShareButton } from "./share-button";
 import { CompareButton } from "./compare-tray";
+import { DistanceBadge } from "./distance-badge";
 import { ConfidenceCardComponent } from "./confidence-card";
 import { KidsBadge } from "./kids-badge";
 import { TouristTrapIntervention } from "./tourist-trap-intervention";
@@ -164,6 +165,10 @@ export function DestinationDetail({ dest }: { dest: any }) {
                     👨‍👩‍👧 Family: <span className="font-medium">{dest.family_stress}</span>
                   </p>
                 )}
+                {/* Distance from nearest major city */}
+                <div className="mt-1">
+                  <DistanceBadge destLat={dest.coords?.lat} destLng={dest.coords?.lng} elevation={dest.elevation_m} />
+                </div>
               </div>
               {currentScore !== null && (
                 <motion.div
@@ -581,6 +586,46 @@ export function DestinationDetail({ dest }: { dest: any }) {
                     {dest.daily_cost.note && (
                       <p className="mt-3 text-sm italic text-muted-foreground/70">💡 {dest.daily_cost.note}</p>
                     )}
+                  </section>
+                )}
+
+                {/* Crowd Calendar */}
+                {dest.crowd_calendar && (
+                  <section>
+                    <h2 className="text-xl font-semibold mb-3">Crowd Intelligence</h2>
+                    <div className="rounded-xl border border-border p-5">
+                      {/* Visual month strip */}
+                      <div className="flex gap-0.5 mb-3">
+                        {Array.from({ length: 12 }, (_, i) => {
+                          const m = i + 1;
+                          const isPeak = dest.crowd_calendar.peak_months?.includes(m);
+                          const isQuiet = dest.crowd_calendar.quiet_months?.includes(m);
+                          const MNAMES = ["","J","F","M","A","M","J","J","A","S","O","N","D"];
+                          return (
+                            <div key={m} className="flex-1 text-center">
+                              <div className={`h-2 rounded-full mb-1 ${
+                                isPeak ? "bg-red-400" : isQuiet ? "bg-emerald-400" : "bg-yellow-400"
+                              }`} />
+                              <span className="text-xs text-muted-foreground">{MNAMES[m]}</span>
+                            </div>
+                          );
+                        })}
+                      </div>
+                      <div className="flex gap-4 text-xs text-muted-foreground mb-3">
+                        <span className="flex items-center gap-1"><span className="h-2 w-2 rounded-full bg-emerald-400" /> Quiet</span>
+                        <span className="flex items-center gap-1"><span className="h-2 w-2 rounded-full bg-yellow-400" /> Moderate</span>
+                        <span className="flex items-center gap-1"><span className="h-2 w-2 rounded-full bg-red-400" /> Peak</span>
+                      </div>
+                      {dest.crowd_calendar.avoid_weekends && (
+                        <p className="text-sm text-orange-300/80 mb-2">⚠ Avoid weekends — crowded with day-trippers</p>
+                      )}
+                      {dest.crowd_calendar.best_day && (
+                        <p className="text-sm text-muted-foreground"><span className="font-medium text-foreground">Best days:</span> {dest.crowd_calendar.best_day}</p>
+                      )}
+                      {dest.crowd_calendar.note && (
+                        <p className="text-sm text-muted-foreground mt-1">{dest.crowd_calendar.note}</p>
+                      )}
+                    </div>
                   </section>
                 )}
 
