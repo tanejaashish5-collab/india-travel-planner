@@ -1,28 +1,34 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import { useLocale } from "next-intl";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { FadeIn, StaggerContainer, StaggerItem, HoverCard } from "./animated-hero";
 
 export function CollectionDetail({ collection }: { collection: any }) {
   const locale = useLocale();
   const items = collection.items ?? [];
+  const contentType = collection.content_type || "destinations";
   const destMap = Object.fromEntries(
     (collection.destinations ?? []).map((d: any) => [d.id, d]),
   );
-  // Group eats and stays by destination
+
+  // Group eats and stays by destination — only if relevant
   const eatsByDest: Record<string, any[]> = {};
-  (collection.viral_eats ?? []).forEach((e: any) => {
-    if (!eatsByDest[e.destination_id]) eatsByDest[e.destination_id] = [];
-    eatsByDest[e.destination_id].push(e);
-  });
+  if (["food", "mixed"].includes(contentType)) {
+    (collection.viral_eats ?? []).forEach((e: any) => {
+      if (!eatsByDest[e.destination_id]) eatsByDest[e.destination_id] = [];
+      eatsByDest[e.destination_id].push(e);
+    });
+  }
   const staysByDest: Record<string, any[]> = {};
-  (collection.local_stays ?? []).forEach((s: any) => {
-    if (!staysByDest[s.destination_id]) staysByDest[s.destination_id] = [];
-    staysByDest[s.destination_id].push(s);
-  });
-  const hasLocalData = Object.keys(eatsByDest).length > 0 || Object.keys(staysByDest).length > 0;
+  if (["stays", "mixed"].includes(contentType)) {
+    (collection.local_stays ?? []).forEach((s: any) => {
+      if (!staysByDest[s.destination_id]) staysByDest[s.destination_id] = [];
+      staysByDest[s.destination_id].push(s);
+    });
+  }
 
   return (
     <>
@@ -47,76 +53,133 @@ export function CollectionDetail({ collection }: { collection: any }) {
           const stateName = dest?.state
             ? Array.isArray(dest.state) ? dest.state[0]?.name : dest.state.name
             : "";
+          const destEats = eatsByDest[item.destination_id] ?? [];
+          const destStays = staysByDest[item.destination_id] ?? [];
+          const hasExtras = destEats.length > 0 || destStays.length > 0;
 
           return (
             <StaggerItem key={item.destination_id}>
-              <HoverCard>
-                <Link
-                  href={`/${locale}/destination/${item.destination_id}`}
-                  className="flex items-start gap-4 rounded-xl border border-border bg-card overflow-hidden transition-all hover:border-primary/50"
-                >
-                  {/* Image */}
-                  <div className="relative w-24 h-24 sm:w-32 sm:h-24 shrink-0 bg-muted/30">
-                    <img
-                      src={`/images/destinations/${item.destination_id}.jpg`}
-                      alt={dest?.name ?? ""}
-                      className="w-full h-full object-cover"
-                      loading="lazy"
-                      onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
-                    />
-                    <div className="absolute top-1 left-1 flex h-7 w-7 items-center justify-center rounded-full bg-primary text-xs font-bold text-primary-foreground">
-                      {idx + 1}
+              <div className="space-y-0">
+                {/* Destination card */}
+                <HoverCard>
+                  <Link
+                    href={`/${locale}/destination/${item.destination_id}`}
+                    className="flex items-start gap-4 rounded-xl border border-border bg-card overflow-hidden transition-all hover:border-primary/50"
+                  >
+                    <div className="relative w-24 h-24 sm:w-32 sm:h-24 shrink-0 bg-muted/30">
+                      <img
+                        src={`/images/destinations/${item.destination_id}.jpg`}
+                        alt={dest?.name ?? ""}
+                        className="w-full h-full object-cover"
+                        loading="lazy"
+                        onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
+                      />
+                      <div className="absolute top-1 left-1 flex h-7 w-7 items-center justify-center rounded-full bg-primary text-xs font-bold text-primary-foreground">
+                        {idx + 1}
+                      </div>
                     </div>
-                  </div>
-                  <div className="flex-1 p-4 pl-0 min-w-0">
-                    <div className="flex items-start justify-between gap-2">
-                      <h3 className="font-semibold text-lg">{dest?.name ?? item.destination_id}</h3>
-                      {dest?.elevation_m && (
-                        <span className="shrink-0 text-xs font-mono text-muted-foreground pr-3">{dest.elevation_m.toLocaleString()}m</span>
-                      )}
+                    <div className="flex-1 p-4 pl-0 min-w-0">
+                      <div className="flex items-start justify-between gap-2">
+                        <h3 className="font-semibold text-lg">{dest?.name ?? item.destination_id}</h3>
+                        {dest?.elevation_m && (
+                          <span className="shrink-0 text-xs font-mono text-muted-foreground pr-3">{dest.elevation_m.toLocaleString()}m</span>
+                        )}
+                      </div>
+                      {stateName && <p className="text-xs text-muted-foreground">{stateName}</p>}
+                      <p className="mt-1 text-sm text-muted-foreground">{item.note}</p>
                     </div>
-                    {stateName && <p className="text-xs text-muted-foreground">{stateName}</p>}
-                    <p className="mt-1 text-sm text-muted-foreground">{item.note}</p>
-                  </div>
-                </Link>
+                  </Link>
+                </HoverCard>
 
-                {/* Local details — food spots + stays for this destination */}
-                {(eatsByDest[item.destination_id]?.length > 0 || staysByDest[item.destination_id]?.length > 0) && (
-                  <div className="mt-2 ml-0 sm:ml-36 space-y-2">
-                    {eatsByDest[item.destination_id]?.map((eat: any) => (
-                      <div key={eat.id} className="rounded-lg border border-border/50 bg-muted/10 p-3 flex items-start gap-3">
-                        <span className="text-lg mt-0.5">🍽️</span>
-                        <div className="flex-1 min-w-0">
-                          <div className="flex items-center justify-between gap-2">
-                            <h4 className="font-semibold text-sm">{eat.name}</h4>
-                            {eat.price_range && <span className="text-xs font-mono text-muted-foreground shrink-0">{eat.price_range}</span>}
-                          </div>
-                          {eat.location && <p className="text-xs text-muted-foreground/60">📍 {eat.location}</p>}
-                          <p className="text-xs text-primary mt-0.5">{eat.famous_for}</p>
-                          {eat.honest_review && <p className="text-sm text-muted-foreground mt-1">{eat.honest_review}</p>}
-                        </div>
-                      </div>
-                    ))}
-                    {staysByDest[item.destination_id]?.map((stay: any) => (
-                      <div key={stay.id} className="rounded-lg border border-border/50 bg-muted/10 p-3 flex items-start gap-3">
-                        <span className="text-lg mt-0.5">{stay.type === "homestay" ? "🏠" : stay.type === "cafe" ? "☕" : "📌"}</span>
-                        <div className="flex-1 min-w-0">
-                          <div className="flex items-center justify-between gap-2">
-                            <h4 className="font-semibold text-sm">{stay.name}</h4>
-                            {stay.price_range && <span className="text-xs font-mono text-muted-foreground shrink-0">{stay.price_range}</span>}
-                          </div>
-                          <span className="text-xs text-primary capitalize">{stay.type}</span>
-                          {stay.why_special && <p className="text-sm text-muted-foreground mt-1">{stay.why_special}</p>}
-                        </div>
-                      </div>
-                    ))}
-                  </div>
+                {/* Expandable local details — only for relevant collection types */}
+                {hasExtras && (
+                  <CollapsibleDetails
+                    eats={destEats}
+                    stays={destStays}
+                    contentType={contentType}
+                    destName={dest?.name ?? ""}
+                  />
                 )}
-              </HoverCard>
+              </div>
             </StaggerItem>
           );
         })}
       </StaggerContainer>
     </>
+  );
+}
+
+function CollapsibleDetails({
+  eats,
+  stays,
+  contentType,
+  destName,
+}: {
+  eats: any[];
+  stays: any[];
+  contentType: string;
+  destName: string;
+}) {
+  const [expanded, setExpanded] = useState(false);
+
+  const label = contentType === "food"
+    ? `${eats.length} food spot${eats.length !== 1 ? "s" : ""}`
+    : contentType === "stays"
+    ? `${stays.length} stay${stays.length !== 1 ? "s" : ""}`
+    : `${eats.length + stays.length} local pick${eats.length + stays.length !== 1 ? "s" : ""}`;
+
+  return (
+    <div className="ml-0 sm:ml-36">
+      {/* Toggle button */}
+      <button
+        onClick={() => setExpanded(!expanded)}
+        className="w-full text-left px-4 py-2 text-xs font-medium text-primary hover:text-primary/80 transition-colors flex items-center gap-1"
+      >
+        <span>{expanded ? "▼" : "▶"}</span>
+        <span>{expanded ? "Hide" : "Show"} {label} in {destName}</span>
+      </button>
+
+      {/* Expandable content */}
+      <AnimatePresence>
+        {expanded && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            className="overflow-hidden"
+          >
+            <div className="space-y-2 px-4 pb-3">
+              {eats.map((eat: any) => (
+                <div key={eat.id} className="rounded-lg border border-border/50 bg-muted/10 p-3 flex items-start gap-3">
+                  <span className="text-lg mt-0.5">🍽️</span>
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center justify-between gap-2">
+                      <h4 className="font-semibold text-sm">{eat.name}</h4>
+                      {eat.price_range && <span className="text-xs font-mono text-muted-foreground shrink-0">{eat.price_range}</span>}
+                    </div>
+                    {eat.location && <p className="text-xs text-muted-foreground/60">📍 {eat.location}</p>}
+                    <p className="text-xs text-primary mt-0.5">{eat.famous_for}</p>
+                    {eat.honest_review && <p className="text-sm text-muted-foreground mt-1">{eat.honest_review}</p>}
+                  </div>
+                </div>
+              ))}
+              {stays.map((stay: any) => (
+                <div key={stay.id} className="rounded-lg border border-border/50 bg-muted/10 p-3 flex items-start gap-3">
+                  <span className="text-lg mt-0.5">{stay.type === "homestay" ? "🏠" : stay.type === "cafe" ? "☕" : "📌"}</span>
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center justify-between gap-2">
+                      <h4 className="font-semibold text-sm">{stay.name}</h4>
+                      {stay.price_range && <span className="text-xs font-mono text-muted-foreground shrink-0">{stay.price_range}</span>}
+                    </div>
+                    <span className="text-xs text-primary capitalize">{stay.type}</span>
+                    {stay.why_special && <p className="text-sm text-muted-foreground mt-1">{stay.why_special}</p>}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
   );
 }
