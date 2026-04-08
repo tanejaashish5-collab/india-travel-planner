@@ -23,6 +23,7 @@ export function Nav() {
   const moreLinks = [
     { href: `/${locale}/camping`, label: "Camping" },
     { href: `/${locale}/permits`, label: "Permits" },
+    { href: `/${locale}/road-conditions`, label: "Roads" },
     { href: `/${locale}/superlatives`, label: "Records" },
     { href: `/${locale}/region/himachal-pradesh`, label: "HP" },
     { href: `/${locale}/region/uttarakhand`, label: "UK" },
