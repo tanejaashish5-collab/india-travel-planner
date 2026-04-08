@@ -1,6 +1,6 @@
 "use client";
 
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 
 export interface FilterState {
   stateId: string;
@@ -24,6 +24,7 @@ export function ExploreFilters({
   onChange,
   resultCount,
 }: ExploreFiltersProps) {
+  const locale = useLocale();
   const tf = useTranslations("filters");
   const tm = useTranslations("months");
 
@@ -46,7 +47,7 @@ export function ExploreFilters({
         type="text"
         value={filters.search}
         onChange={(e) => update({ search: e.target.value })}
-        placeholder={tf("allStates") === "All States" ? "Search destinations..." : "जगह खोजें..."}
+        placeholder={locale === "hi" ? "जगह खोजें..." : "Search destinations..."}
         className="w-full rounded-lg border border-border bg-background px-4 py-2.5 text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50"
       />
 

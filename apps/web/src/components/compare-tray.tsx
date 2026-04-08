@@ -3,6 +3,7 @@
 import { useState, useEffect, createContext, useContext } from "react";
 import Link from "next/link";
 import { useLocale } from "next-intl";
+import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 
 // Global compare state
@@ -67,8 +68,13 @@ export function CompareProvider({ children }: { children: React.ReactNode }) {
 
 function CompareTray() {
   const locale = useLocale();
+  const pathname = usePathname();
   const { compareIds, removeFromCompare, clearCompare } = useCompare();
   const [names, setNames] = useState<Record<string, string>>({});
+
+  // Only show tray on relevant pages
+  const relevantPages = ["/explore", "/destination/", "/collections", "/saved", "/compare", "/region/"];
+  const isRelevantPage = relevantPages.some((p) => pathname.includes(p));
 
   // Fetch names for compare IDs
   useEffect(() => {
@@ -85,7 +91,7 @@ function CompareTray() {
     setNames((prev) => ({ ...prev, ...newNames }));
   }, [compareIds, names]);
 
-  if (compareIds.length === 0) return null;
+  if (compareIds.length === 0 || !isRelevantPage) return null;
 
   return (
     <AnimatePresence>
