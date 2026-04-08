@@ -160,13 +160,13 @@ export function TrekTrailMap({ points, trekName }: { points: TrailPoint[]; trekN
           background: none !important;
           border: none !important;
         }
-        @keyframes pulse-ring {
-          0% { transform: scale(1); opacity: 0.4; }
-          50% { transform: scale(1.4); opacity: 0.1; }
-          100% { transform: scale(1); opacity: 0.4; }
+        @keyframes pulse-glow {
+          0% { opacity: 0.15; }
+          50% { opacity: 0.45; }
+          100% { opacity: 0.15; }
         }
         .pulse-marker {
-          animation: pulse-ring 2s ease-in-out infinite;
+          animation: pulse-glow 2s ease-in-out infinite;
         }
       `}</style>
 
