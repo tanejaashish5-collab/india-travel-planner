@@ -21,6 +21,7 @@ export function Nav() {
   ];
 
   const moreLinks = [
+    { href: `/${locale}/build-route`, label: "Build Route" },
     { href: `/${locale}/camping`, label: "Camping" },
     { href: `/${locale}/permits`, label: "Permits" },
     { href: `/${locale}/road-conditions`, label: "Roads" },

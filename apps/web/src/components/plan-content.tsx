@@ -127,8 +127,12 @@ export function PlanContent({ destinations }: PlanContentProps) {
   const itineraries = useMemo(() => {
     if (recommendations.length < 3) return [];
 
+    // Only include destinations with good month scores in itineraries
+    const goodRecs = recommendations.filter((d) => d.monthScore >= 3);
+    if (goodRecs.length < 2) return [];
+
     const byState: Record<string, typeof recommendations> = {};
-    recommendations.forEach((d) => {
+    goodRecs.forEach((d) => {
       const key = d.state_id || "other";
       if (!byState[key]) byState[key] = [];
       byState[key].push(d);
@@ -152,13 +156,27 @@ export function PlanContent({ destinations }: PlanContentProps) {
       }
     });
 
-    // Cross-state combos for longer trips
-    if (days >= 10 && combos.length === 0 && recommendations.length >= 3) {
-      combos.push({
-        title: "Multi-State Explorer",
-        destinations: recommendations.slice(0, 4),
-        totalDays: `${Math.max(10, days - 2)}-${days}`,
-      });
+    // Cross-state combos for longer trips — only adjacent states
+    if (days >= 10 && combos.length === 0 && goodRecs.length >= 3) {
+      // Group adjacent states
+      const adjacentGroups: Record<string, string[]> = {
+        "Himachal + Uttarakhand": ["himachal-pradesh", "uttarakhand"],
+        "HP + J&K + Ladakh": ["himachal-pradesh", "jammu-kashmir", "ladakh"],
+        "Rajasthan Circuit": ["rajasthan"],
+        "UP Spiritual": ["uttar-pradesh"],
+        "Punjab + HP": ["punjab", "haryana", "himachal-pradesh"],
+      };
+      for (const [title, stateIds] of Object.entries(adjacentGroups)) {
+        const matching = goodRecs.filter((d) => stateIds.includes(d.state_id));
+        if (matching.length >= 3) {
+          combos.push({
+            title,
+            destinations: matching.slice(0, 4),
+            totalDays: `${Math.max(10, days - 2)}-${days}`,
+          });
+          break;
+        }
+      }
     }
 
     return combos.slice(0, 3);

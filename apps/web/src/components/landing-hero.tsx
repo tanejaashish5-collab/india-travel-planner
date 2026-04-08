@@ -179,20 +179,35 @@ export function LandingHero({
   const tm = useTranslations("months");
   const currentMonth = new Date().getMonth() + 1;
 
+  // Day/night gradient based on user's local time
+  const hour = new Date().getHours();
+  const isDawn = hour >= 5 && hour < 8;
+  const isDay = hour >= 8 && hour < 17;
+  const isDusk = hour >= 17 && hour < 20;
+  // else night
+  const timeGradient = isDawn
+    ? "from-orange-950/30 via-background/80 to-background"
+    : isDay
+    ? "from-blue-950/20 via-background/80 to-background"
+    : isDusk
+    ? "from-amber-950/30 via-background/80 to-background"
+    : "from-indigo-950/40 via-background/90 to-background";
+  const glowColor = isDawn ? "bg-orange-500/10" : isDay ? "bg-blue-500/8" : isDusk ? "bg-amber-500/10" : "bg-indigo-500/10";
+
   return (
     <>
-      {/* Hero Section */}
+      {/* Hero Section — day/night gradient */}
       <section className="relative min-h-screen flex flex-col items-center justify-center px-4 overflow-hidden">
-        {/* Background image with overlay */}
+        {/* Background image with time-aware overlay */}
         <div className="absolute inset-0">
           <img
             src="/images/destinations/spiti-valley.jpg"
             alt=""
             className="w-full h-full object-cover opacity-15"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/90 to-background" />
+          <div className={`absolute inset-0 bg-gradient-to-b ${timeGradient}`} />
         </div>
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] rounded-full bg-primary/8 blur-[150px] opacity-40" />
+        <div className={`absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] rounded-full ${glowColor} blur-[150px] opacity-40`} />
 
         {/* Top bar */}
         <div className="absolute top-0 left-0 right-0 flex items-center justify-between px-6 py-4 z-10">

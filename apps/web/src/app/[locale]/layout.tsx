@@ -7,6 +7,7 @@ import { routing } from "@/i18n/routing";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { StickyCTA } from "@/components/sticky-cta";
+import { PersonalisationQuiz } from "@/components/personalisation-quiz";
 import "../globals.css";
 
 const geistSans = Geist({
@@ -82,6 +83,7 @@ export default async function LocaleLayout({
         <NextIntlClientProvider messages={messages}>
           {children}
           <StickyCTA />
+          <PersonalisationQuiz />
         </NextIntlClientProvider>
         <Analytics />
         <SpeedInsights />

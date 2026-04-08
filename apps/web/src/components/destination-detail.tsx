@@ -5,6 +5,8 @@ import { useState, useEffect } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { motion, AnimatePresence } from "framer-motion";
 import { MonthlyChart } from "./monthly-chart";
+import { WeatherWidget } from "./weather-widget";
+import { ShareButton } from "./share-button";
 import { ConfidenceCardComponent } from "./confidence-card";
 import { KidsBadge } from "./kids-badge";
 import { TouristTrapIntervention } from "./tourist-trap-intervention";
@@ -92,25 +94,32 @@ export function DestinationDetail({ dest }: { dest: any }) {
               {" → "}
               <span className="text-foreground">{displayName}</span>
             </div>
-            {/* Save Button */}
-            <button
-              onClick={toggleSave}
-              className={`flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-sm font-medium transition-all ${
-                saved
-                  ? "border-red-500/50 bg-red-500/10 text-red-400"
-                  : "border-border text-muted-foreground hover:text-foreground hover:border-muted-foreground"
-              }`}
-              aria-label={saved ? "Remove from saved" : "Save destination"}
-            >
-              <span>{saved ? "♥" : "♡"}</span>
-              <span>{saved ? "Saved" : "Save"}</span>
-            </button>
+            <div className="flex items-center gap-2">
+              {/* Share */}
+              <ShareButton
+                title={`${displayName} — India Travel Planner`}
+                text={`${displayTagline} | ${dest.difficulty} · ${dest.elevation_m ? dest.elevation_m + 'm' : ''}`}
+              />
+              {/* Save Button */}
+              <button
+                onClick={toggleSave}
+                className={`flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-sm font-medium transition-all ${
+                  saved
+                    ? "border-red-500/50 bg-red-500/10 text-red-400"
+                    : "border-border text-muted-foreground hover:text-foreground hover:border-muted-foreground"
+                }`}
+                aria-label={saved ? "Remove from saved" : "Save destination"}
+              >
+                <span>{saved ? "♥" : "♡"}</span>
+                <span>{saved ? "Saved" : "Save"}</span>
+              </button>
+            </div>
           </div>
         </FadeIn>
 
         {/* Cinematic Hero */}
         <FadeIn>
-          <div className="mb-6 relative h-56 sm:h-72 lg:h-96 rounded-2xl overflow-hidden bg-muted/30">
+          <div className="mb-6 relative h-56 sm:h-72 lg:h-96 rounded-2xl overflow-hidden bg-muted/30 film-grain">
             <img
               src={`/images/destinations/${dest.id}.jpg`}
               alt={dest.name}
@@ -183,6 +192,11 @@ export function DestinationDetail({ dest }: { dest: any }) {
                   {kf ? (kf.suitable ? `${kf.rating}/5 ✓` : "Not suitable") : "N/A"}
                 </div>
               </div>
+            </div>
+
+            {/* Live Weather */}
+            <div className="mt-4">
+              <WeatherWidget destinationId={dest.id} />
             </div>
 
             {/* Traveler Fit Cards — "Good For / Not Good For" */}
