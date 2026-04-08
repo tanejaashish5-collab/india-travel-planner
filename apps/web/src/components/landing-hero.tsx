@@ -124,7 +124,7 @@ export function LandingHero({
           </SlideIn>
 
           <FadeIn delay={0.5}>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+            <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
               {t("heroDescription")}
             </p>
           </FadeIn>

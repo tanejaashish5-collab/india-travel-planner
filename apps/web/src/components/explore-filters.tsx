@@ -141,7 +141,7 @@ export function ExploreFilters({
       </div>
 
       {/* Result count */}
-      <div className="text-sm text-muted-foreground">
+      <div className="text-[15px] text-muted-foreground">
         {resultCount} destination{resultCount !== 1 ? "s" : ""} found
         {filters.month > 0 && (
           <span>

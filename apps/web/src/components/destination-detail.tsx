@@ -85,7 +85,7 @@ export function DestinationDetail({ dest }: { dest: any }) {
         {/* Breadcrumb */}
         <FadeIn>
           <div className="mb-4 flex items-center justify-between">
-            <div className="text-sm text-muted-foreground">
+            <div className="text-[15px] text-muted-foreground">
               <Link href={`/${locale}/explore`} className="hover:text-foreground transition-colors">Explore</Link>
               {" → "}
               <span>{stateName}</span>
@@ -153,13 +153,13 @@ export function DestinationDetail({ dest }: { dest: any }) {
 
             {/* Score Explainability */}
             {currentMonthData && (
-              <div className="mt-3 text-sm text-muted-foreground">
+              <div className="mt-3 text-[15px] text-muted-foreground">
                 <span className="font-medium text-foreground">Why {currentScore}/5?</span>{" "}
                 {currentMonthData.note}
               </div>
             )}
 
-            <p className="mt-4 text-lg leading-relaxed text-muted-foreground">{displayTagline}</p>
+            <p className="mt-4 text-lg leading-relaxed text-muted-foreground/90">{displayTagline}</p>
 
             {/* Quick stats */}
             <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-4">
@@ -222,41 +222,54 @@ export function DestinationDetail({ dest }: { dest: any }) {
           </div>
         </SlideIn>
 
-        {/* Infrastructure Reality — ALWAYS visible, not hidden in tabs */}
-        {(dest.cell_network || dest.medical_facility || dest.permit_required) && (
+        {/* Infrastructure Reality — from confidence_cards data */}
+        {cc && (
           <FadeIn delay={0.25}>
             <div className="mb-6 grid gap-2 grid-cols-2 sm:grid-cols-4">
-              {dest.cell_network && (
-                <div className="rounded-xl border border-border p-2.5 flex items-center gap-2">
-                  <span>📶</span>
+              {/* Network */}
+              {cc.network && (
+                <div className="rounded-xl border border-border p-3 flex items-center gap-2.5">
+                  <span className="text-lg">📶</span>
                   <div className="min-w-0">
-                    <div className="text-[10px] text-muted-foreground">Network</div>
-                    <div className="text-xs font-medium truncate">{dest.cell_network}</div>
+                    <div className="text-xs text-muted-foreground">Network</div>
+                    <div className="text-sm font-medium">
+                      {[cc.network.jio && "Jio", cc.network.airtel && "Airtel", cc.network.bsnl && "BSNL", cc.network.vi && "Vi"].filter(Boolean).join(", ") || "Limited"}
+                    </div>
+                    {cc.network.note && <div className="text-xs text-muted-foreground/70 mt-0.5 line-clamp-1">{cc.network.note}</div>}
                   </div>
                 </div>
               )}
-              <div className="rounded-xl border border-border p-2.5 flex items-center gap-2">
-                <span>🏧</span>
-                <div>
-                  <div className="text-[10px] text-muted-foreground">ATM</div>
-                  <div className="text-xs font-medium">{dest.atm_available ? "Available" : "None — cash only"}</div>
-                </div>
-              </div>
-              {dest.medical_facility && (
-                <div className="rounded-xl border border-border p-2.5 flex items-center gap-2">
-                  <span>🏥</span>
+              {/* Medical */}
+              {cc.emergency?.nearest_hospital && (
+                <div className="rounded-xl border border-border p-3 flex items-center gap-2.5">
+                  <span className="text-lg">🏥</span>
                   <div className="min-w-0">
-                    <div className="text-[10px] text-muted-foreground">Medical</div>
-                    <div className="text-xs font-medium truncate">{dest.medical_facility}</div>
+                    <div className="text-xs text-muted-foreground">Medical</div>
+                    <div className="text-sm font-medium line-clamp-2">{cc.emergency.nearest_hospital}</div>
                   </div>
                 </div>
               )}
-              {dest.permit_required && (
-                <div className="rounded-xl border border-orange-500/30 bg-orange-500/5 p-2.5 flex items-center gap-2">
-                  <span>📋</span>
+              {/* Transport */}
+              {cc.reach && (
+                <div className="rounded-xl border border-border p-3 flex items-center gap-2.5">
+                  <span className="text-lg">🚗</span>
                   <div className="min-w-0">
-                    <div className="text-[10px] text-orange-400">Permit</div>
-                    <div className="text-xs font-medium text-orange-300/80 truncate">{dest.permit_required}</div>
+                    <div className="text-xs text-muted-foreground">Road</div>
+                    <div className="text-sm font-medium capitalize">{cc.reach.road_condition || cc.reach.last_km_difficulty || "Check locally"}</div>
+                  </div>
+                </div>
+              )}
+              {/* Safety */}
+              {cc.safety_rating && (
+                <div className={`rounded-xl border p-3 flex items-center gap-2.5 ${
+                  cc.safety_rating >= 4 ? "border-emerald-500/30 bg-emerald-500/5" :
+                  cc.safety_rating >= 3 ? "border-yellow-500/30 bg-yellow-500/5" :
+                  "border-red-500/30 bg-red-500/5"
+                }`}>
+                  <span className="text-lg">🛡️</span>
+                  <div className="min-w-0">
+                    <div className="text-xs text-muted-foreground">Safety</div>
+                    <div className="text-sm font-medium">{cc.safety_rating}/5</div>
                   </div>
                 </div>
               )}
@@ -302,7 +315,7 @@ export function DestinationDetail({ dest }: { dest: any }) {
                 {/* Why Special */}
                 <section>
                   <h2 className="text-xl font-semibold mb-3">Why Special</h2>
-                  <p className="text-muted-foreground leading-relaxed">{displayWhySpecial}</p>
+                  <p className="text-[15px] text-muted-foreground leading-relaxed">{displayWhySpecial}</p>
                 </section>
 
                 {/* Tourist Trap Alternatives — ASSISTIVE, not pre-emptive */}
@@ -348,46 +361,77 @@ export function DestinationDetail({ dest }: { dest: any }) {
                   </section>
                 )}
 
-                {/* Infrastructure Reality Panel */}
-                {(dest.cell_network || dest.atm_available !== undefined || dest.medical_facility || dest.permit_required) && (
+                {/* Infrastructure Reality Panel — from confidence_cards */}
+                {cc && (
                   <section>
                     <h2 className="text-xl font-semibold mb-3">Infrastructure Reality</h2>
-                    <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
-                      {dest.cell_network && (
-                        <div className="rounded-xl border border-border p-3 flex items-start gap-2">
-                          <span className="text-lg">📶</span>
-                          <div>
-                            <div className="text-xs font-medium text-muted-foreground">Network</div>
-                            <div className="text-sm">{dest.cell_network}</div>
+                    <div className="grid gap-3 sm:grid-cols-2">
+                      {/* Network detail */}
+                      {cc.network && (
+                        <div className="rounded-xl border border-border p-4">
+                          <div className="flex items-center gap-2 mb-2">
+                            <span className="text-lg">📶</span>
+                            <h3 className="text-sm font-semibold">Network Coverage</h3>
                           </div>
+                          <div className="flex flex-wrap gap-2 mb-2">
+                            {cc.network.jio && <span className="rounded-full bg-blue-500/10 text-blue-300 px-2.5 py-0.5 text-xs font-medium">Jio</span>}
+                            {cc.network.airtel && <span className="rounded-full bg-red-500/10 text-red-300 px-2.5 py-0.5 text-xs font-medium">Airtel</span>}
+                            {cc.network.bsnl && <span className="rounded-full bg-yellow-500/10 text-yellow-300 px-2.5 py-0.5 text-xs font-medium">BSNL</span>}
+                            {cc.network.vi && <span className="rounded-full bg-purple-500/10 text-purple-300 px-2.5 py-0.5 text-xs font-medium">Vi</span>}
+                            {!cc.network.jio && !cc.network.airtel && !cc.network.bsnl && <span className="text-sm text-red-400">No coverage</span>}
+                          </div>
+                          {cc.network.note && <p className="text-sm text-muted-foreground">{cc.network.note}</p>}
+                          {cc.network.wifi_available && <p className="text-xs text-muted-foreground/70 mt-1">WiFi: {cc.network.wifi_available}</p>}
                         </div>
                       )}
-                      <div className="rounded-xl border border-border p-3 flex items-start gap-2">
-                        <span className="text-lg">🏧</span>
-                        <div>
-                          <div className="text-xs font-medium text-muted-foreground">ATM</div>
-                          <div className="text-sm">{dest.atm_available ? "Available" : "None — carry cash"}</div>
-                        </div>
-                      </div>
-                      {dest.medical_facility && (
-                        <div className="rounded-xl border border-border p-3 flex items-start gap-2">
-                          <span className="text-lg">🏥</span>
-                          <div>
-                            <div className="text-xs font-medium text-muted-foreground">Medical</div>
-                            <div className="text-sm">{dest.medical_facility}</div>
+
+                      {/* Medical */}
+                      {cc.emergency && (
+                        <div className="rounded-xl border border-border p-4">
+                          <div className="flex items-center gap-2 mb-2">
+                            <span className="text-lg">🏥</span>
+                            <h3 className="text-sm font-semibold">Medical & Emergency</h3>
                           </div>
+                          {cc.emergency.nearest_hospital && <p className="text-sm text-muted-foreground mb-1"><span className="font-medium text-foreground">Hospital:</span> {cc.emergency.nearest_hospital}</p>}
+                          {cc.emergency.ambulance && <p className="text-sm text-muted-foreground mb-1"><span className="font-medium text-foreground">Ambulance:</span> {cc.emergency.ambulance}</p>}
+                          {cc.emergency.police_station && <p className="text-sm text-muted-foreground"><span className="font-medium text-foreground">Police:</span> {cc.emergency.police_station}</p>}
                         </div>
                       )}
-                      {dest.permit_required && (
-                        <div className="rounded-xl border border-orange-500/30 bg-orange-500/5 p-3 flex items-start gap-2">
-                          <span className="text-lg">📋</span>
-                          <div>
-                            <div className="text-xs font-medium text-orange-400">Permit Required</div>
-                            <div className="text-sm text-orange-300/80">{dest.permit_required}</div>
+
+                      {/* How to reach */}
+                      {cc.reach && (
+                        <div className="rounded-xl border border-border p-4">
+                          <div className="flex items-center gap-2 mb-2">
+                            <span className="text-lg">🚗</span>
+                            <h3 className="text-sm font-semibold">Getting There</h3>
                           </div>
+                          {cc.reach.from_nearest_city && <p className="text-sm text-muted-foreground mb-1">{cc.reach.from_nearest_city}</p>}
+                          {cc.reach.road_condition && <p className="text-sm text-muted-foreground mb-1"><span className="font-medium text-foreground">Roads:</span> {cc.reach.road_condition}</p>}
+                          {cc.reach.public_transport && <p className="text-sm text-muted-foreground"><span className="font-medium text-foreground">Public transport:</span> {cc.reach.public_transport}</p>}
+                        </div>
+                      )}
+
+                      {/* Fuel & Stay */}
+                      {(cc.fuel || cc.sleep) && (
+                        <div className="rounded-xl border border-border p-4">
+                          <div className="flex items-center gap-2 mb-2">
+                            <span className="text-lg">⛽</span>
+                            <h3 className="text-sm font-semibold">Fuel & Stay</h3>
+                          </div>
+                          {cc.fuel?.nearest_pump && <p className="text-sm text-muted-foreground mb-1"><span className="font-medium text-foreground">Fuel:</span> {cc.fuel.nearest_pump}</p>}
+                          {cc.fuel?.note && <p className="text-sm text-muted-foreground mb-1">{cc.fuel.note}</p>}
+                          {cc.sleep?.budget && <p className="text-sm text-muted-foreground mb-1"><span className="font-medium text-foreground">Budget stay:</span> {cc.sleep.budget}</p>}
+                          {cc.sleep?.mid && <p className="text-sm text-muted-foreground"><span className="font-medium text-foreground">Mid-range:</span> {cc.sleep.mid}</p>}
                         </div>
                       )}
                     </div>
+
+                    {/* Helpline */}
+                    {cc.emergency?.helpline && (
+                      <div className="mt-3 rounded-xl border border-primary/20 bg-primary/5 p-3">
+                        <p className="text-sm"><span className="font-semibold">Helpline:</span> {cc.emergency.helpline}</p>
+                      </div>
+                    )}
                   </section>
                 )}
 
@@ -452,7 +496,7 @@ export function DestinationDetail({ dest }: { dest: any }) {
                                 {sub.elevation_m && <span className="text-xs font-mono text-muted-foreground">{sub.elevation_m}m</span>}
                               </div>
                               {sub.tagline && <p className="mt-1 text-xs text-primary">{sub.tagline}</p>}
-                              {sub.why_visit && <p className="mt-1 text-sm text-muted-foreground line-clamp-3">{sub.why_visit}</p>}
+                              {sub.why_visit && <p className="mt-1 text-[15px] text-muted-foreground line-clamp-3">{sub.why_visit}</p>}
                               <div className="mt-2 flex items-center gap-2 text-xs text-muted-foreground">
                                 {sub.distance_from_parent_km != null && <span>{sub.distance_from_parent_km}km</span>}
                                 {sub.time_needed && <><span>·</span><span>{sub.time_needed}</span></>}
@@ -540,8 +584,9 @@ function getTravelerFit(dest: any, kf: any) {
   const goodFor: string[] = [];
   const notFor: string[] = [];
 
-  // Infrastructure-aware kids assessment
-  const infraConcerns = getInfrastructureConcerns(dest);
+  // Get confidence card for infrastructure assessment
+  const cc = Array.isArray(dest.confidence_cards) ? dest.confidence_cards[0] : dest.confidence_cards;
+  const infraConcerns = getInfrastructureConcerns(dest, cc);
   const hasSerousInfraConcerns = infraConcerns.length >= 3;
 
   // Kids — cross-reference with infrastructure
@@ -568,8 +613,8 @@ function getTravelerFit(dest: any, kf: any) {
   if (dest.difficulty === "hard" || dest.difficulty === "extreme") notFor.push("Casual tourists");
   if (dest.difficulty === "extreme") notFor.push("Senior travelers");
 
-  // Infrastructure-based warnings
-  if (!dest.atm_available) notFor.push("Card-only travelers (no ATM)");
+  // Infrastructure-based warnings from confidence card
+  if (cc?.network && !cc.network.jio && !cc.network.airtel) notFor.push("Those needing reliable phone signal");
   if (dest.elevation_m && dest.elevation_m > 3500) notFor.push("Those with altitude sensitivity");
   if (infraConcerns.length >= 3) notFor.push("Those needing reliable infrastructure");
 
@@ -580,38 +625,45 @@ function getTravelerFit(dest: any, kf: any) {
   };
 }
 
-/** Get infrastructure concerns that affect family/kids safety */
-function getInfrastructureConcerns(dest: any): string[] {
+/** Get infrastructure concerns from confidence card data */
+function getInfrastructureConcerns(dest: any, cc?: any): string[] {
   const concerns: string[] = [];
 
-  // Medical
-  if (!dest.medical_facility) {
-    concerns.push("No medical facility data available");
-  } else if (dest.medical_facility.toLowerCase().includes("none") ||
-             dest.medical_facility.toLowerCase().includes("no hospital")) {
-    concerns.push("No hospital — nearest may be hours away");
-  } else if (dest.medical_facility.toLowerCase().includes("basic") ||
-             dest.medical_facility.toLowerCase().includes("phc")) {
-    concerns.push("Only basic medical (PHC) — serious cases need evacuation");
-  }
-
-  // ATM
-  if (dest.atm_available === false) {
-    concerns.push("No ATM — carry sufficient cash");
-  }
-
-  // Network
-  if (dest.cell_network) {
-    const net = dest.cell_network.toLowerCase();
-    if (net.includes("bsnl only") || net.includes("zero") || net.includes("no signal")) {
-      concerns.push("Limited or no phone signal — can't call for help easily");
+  // Medical — from confidence card
+  if (cc?.emergency?.nearest_hospital) {
+    const hospital = cc.emergency.nearest_hospital.toLowerCase();
+    if (hospital.includes("none") || hospital.includes("no hospital") || hospital.includes("no facility")) {
+      concerns.push("No hospital — nearest may be hours away");
+    } else if (hospital.includes("basic") || hospital.includes("phc") || hospital.includes("dispensary")) {
+      concerns.push("Only basic medical — serious cases need evacuation");
     }
+  } else if (!cc) {
+    concerns.push("No infrastructure data available");
+  }
+
+  // Network — from confidence card
+  if (cc?.network) {
+    if (!cc.network.jio && !cc.network.airtel && !cc.network.vi) {
+      if (cc.network.bsnl) {
+        concerns.push("BSNL only — limited signal, no 4G data");
+      } else {
+        concerns.push("No phone signal — can't call for help");
+      }
+    }
+    if (cc.network.note?.toLowerCase().includes("zero") || cc.network.note?.toLowerCase().includes("no signal")) {
+      concerns.push("Signal drops to zero in many areas");
+    }
+  }
+
+  // Road condition
+  if (cc?.reach?.last_km_difficulty === "hard" || cc?.reach?.last_km_difficulty === "extreme") {
+    concerns.push("Difficult last-mile access");
   }
 
   // Altitude
   if (dest.elevation_m) {
-    if (dest.elevation_m > 4000) concerns.push(`High altitude (${dest.elevation_m}m) — AMS risk for children and elderly`);
-    else if (dest.elevation_m > 3000) concerns.push(`Moderate altitude (${dest.elevation_m}m) — acclimatization needed`);
+    if (dest.elevation_m > 4000) concerns.push(`High altitude (${dest.elevation_m.toLocaleString()}m) — AMS risk for children and elderly`);
+    else if (dest.elevation_m > 3000) concerns.push(`Moderate altitude (${dest.elevation_m.toLocaleString()}m) — acclimatization needed`);
   }
 
   // Difficulty

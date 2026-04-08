@@ -1,0 +1,22 @@
+{
+  "name": "India Travel Planner",
+  "short_name": "IndiaTravel",
+  "description": "The confidence engine for exploring India. 370+ places with monthly scores, kids ratings, safety data, and AI itineraries.",
+  "start_url": "/en",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#e5e5e5",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

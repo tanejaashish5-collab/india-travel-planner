@@ -291,15 +291,15 @@ function DestinationCard({
       </div>
 
       {/* Name & tagline */}
-      <h3 className="text-lg font-bold group-hover:text-primary transition-colors leading-tight">
+      <h3 className="text-lg font-bold group-hover:text-primary transition-colors leading-snug">
         {displayName}
       </h3>
-      <p className="mt-1.5 text-sm text-muted-foreground line-clamp-2 leading-relaxed">
+      <p className="mt-1.5 text-[15px] text-muted-foreground line-clamp-2 leading-relaxed">
         {displayTagline}
       </p>
 
       {/* Meta */}
-      <div className="mt-3 flex flex-wrap items-center gap-2 text-xs font-medium text-muted-foreground">
+      <div className="mt-3 flex flex-wrap items-center gap-2 text-sm font-medium text-muted-foreground">
         {stateName && <span>{stateName}</span>}
         <span>·</span>
         <span className={DIFFICULTY_COLORS[dest.difficulty] ?? ""}>

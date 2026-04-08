@@ -4,6 +4,8 @@ import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "../globals.css";
 
 const geistSans = Geist({
@@ -21,6 +23,7 @@ export const metadata: Metadata = {
     default: "India Travel Planner — Explore Every Village, Trail & Hidden Gem",
     template: "%s | India Travel Planner",
   },
+  manifest: "/manifest.json",
   description:
     "400+ destinations with monthly suitability scores, kids ratings, safety data, and AI-powered itineraries. The confidence engine for exploring India.",
   keywords: [
@@ -37,9 +40,14 @@ export const metadata: Metadata = {
   openGraph: {
     title: "India Travel Planner — Explore Every Village, Trail & Hidden Gem",
     description:
-      "400+ destinations with monthly scores, kids ratings, safety data, and AI itineraries.",
+      "370+ destinations with monthly scores, kids ratings, safety data, and AI itineraries.",
     type: "website",
     locale: "en_IN",
+    images: [{ url: "/og-image.jpg", width: 800, height: 450, alt: "India Travel Planner" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["/og-image.jpg"],
   },
 };
 
@@ -63,10 +71,12 @@ export default async function LocaleLayout({
       lang={locale}
       className={`${geistSans.variable} ${geistMono.variable} dark h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-background text-foreground">
+      <body className="min-h-full flex flex-col bg-background text-foreground text-base">
         <NextIntlClientProvider messages={messages}>
           {children}
         </NextIntlClientProvider>
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );

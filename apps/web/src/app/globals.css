@@ -123,12 +123,18 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-size: 16px;
+    line-height: 1.6;
   }
   html {
     @apply font-sans;
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+  }
+  /* Bump minimum readable sizes */
+  p, li, td, span, div {
+    font-size: inherit;
   }
 }
 
