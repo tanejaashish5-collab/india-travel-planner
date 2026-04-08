@@ -55,6 +55,10 @@ export function PlanContent({ destinations }: PlanContentProps) {
   const [origin, setOrigin] = useState("Delhi");
   const [showResults, setShowResults] = useState(urlDests.length > 0);
   const [preSelectedIds] = useState<string[]>(urlDests);
+  const [showAdvanced, setShowAdvanced] = useState(false);
+  const [crowdTolerance, setCrowdTolerance] = useState<"any" | "quiet" | "very-quiet">("any");
+  const [infraNeed, setInfraNeed] = useState<"any" | "good" | "basic-ok">("any");
+  const [regionFocus, setRegionFocus] = useState("");
 
   // Filter and rank destinations based on inputs
   const recommendations = useMemo(() => {
@@ -95,6 +99,20 @@ export function PlanContent({ destinations }: PlanContentProps) {
           if (origin === "Delhi" && ["jammu-kashmir", "ladakh"].includes(dest.state_id)) fitScore -= 5;
         }
 
+        // Crowd tolerance
+        if (crowdTolerance === "quiet" && dest.tags?.includes("offbeat")) fitScore += 10;
+        if (crowdTolerance === "very-quiet" && dest.tags?.includes("offbeat")) fitScore += 15;
+        if (crowdTolerance === "very-quiet" && dest.tags?.includes("popular")) fitScore -= 15;
+        if (crowdTolerance === "quiet" && dest.tags?.includes("popular")) fitScore -= 5;
+
+        // Infrastructure need
+        if (infraNeed === "good" && dest.difficulty === "extreme") fitScore -= 20;
+        if (infraNeed === "good" && dest.difficulty === "hard") fitScore -= 10;
+        if (infraNeed === "basic-ok" && dest.difficulty === "extreme") fitScore += 5;
+
+        // Region focus
+        if (regionFocus && dest.state_id !== regionFocus) fitScore -= 30;
+
         // Why it matches
         const reasons: string[] = [];
         if (score >= 4) reasons.push(`Scores ${score}/5 in ${getMonthName(month)}`);
@@ -102,6 +120,8 @@ export function PlanContent({ destinations }: PlanContentProps) {
         if (traveler === "biker" && dest.tags?.includes("biker")) reasons.push("Biker-friendly route");
         if (traveler === "spiritual" && dest.tags?.includes("spiritual")) reasons.push("Spiritual destination");
         if (budget === dest.budget_tier) reasons.push(`Matches your ${budget} budget`);
+        if (crowdTolerance !== "any" && dest.tags?.includes("offbeat")) reasons.push("Off the beaten path");
+        if (regionFocus && dest.state_id === regionFocus) reasons.push(`In your chosen region`);
 
         // Honest warnings
         const warnings: string[] = [];
@@ -127,7 +147,7 @@ export function PlanContent({ destinations }: PlanContentProps) {
       .filter((d) => d.fitScore > 30) // Only show reasonable matches
       .sort((a, b) => b.fitScore - a.fitScore)
       .slice(0, 12);
-  }, [destinations, month, days, traveler, budget, origin]);
+  }, [destinations, month, days, traveler, budget, origin, crowdTolerance, infraNeed, regionFocus]);
 
   // Build suggested itineraries — group top destinations by state/proximity
   const itineraries = useMemo(() => {
@@ -301,6 +321,83 @@ export function PlanContent({ destinations }: PlanContentProps) {
               </button>
             ))}
           </div>
+        {/* Advanced preferences toggle */}
+        <div className="border-t border-border/50 pt-4">
+          <button
+            onClick={() => setShowAdvanced(!showAdvanced)}
+            className="text-sm text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1"
+          >
+            <span>{showAdvanced ? "−" : "+"}</span>
+            <span>Advanced preferences</span>
+          </button>
+
+          {showAdvanced && (
+            <div className="mt-4 grid gap-4 sm:grid-cols-3">
+              {/* Crowd tolerance */}
+              <div>
+                <label className="text-sm font-medium mb-2 block">Crowd tolerance</label>
+                <div className="flex gap-2">
+                  {[
+                    { id: "any" as const, label: "Don't mind" },
+                    { id: "quiet" as const, label: "Prefer quiet" },
+                    { id: "very-quiet" as const, label: "Off-grid" },
+                  ].map((opt) => (
+                    <button
+                      key={opt.id}
+                      onClick={() => { setCrowdTolerance(opt.id); setShowResults(true); }}
+                      className={`flex-1 rounded-lg border py-2 text-xs font-medium transition-all ${
+                        crowdTolerance === opt.id ? "border-primary bg-primary/10" : "border-border text-muted-foreground hover:text-foreground"
+                      }`}
+                    >
+                      {opt.label}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Infrastructure need */}
+              <div>
+                <label className="text-sm font-medium mb-2 block">Infrastructure need</label>
+                <div className="flex gap-2">
+                  {[
+                    { id: "any" as const, label: "Any" },
+                    { id: "good" as const, label: "Good infra" },
+                    { id: "basic-ok" as const, label: "Basic OK" },
+                  ].map((opt) => (
+                    <button
+                      key={opt.id}
+                      onClick={() => { setInfraNeed(opt.id); setShowResults(true); }}
+                      className={`flex-1 rounded-lg border py-2 text-xs font-medium transition-all ${
+                        infraNeed === opt.id ? "border-primary bg-primary/10" : "border-border text-muted-foreground hover:text-foreground"
+                      }`}
+                    >
+                      {opt.label}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Region focus */}
+              <div>
+                <label className="text-sm font-medium mb-2 block">Region focus</label>
+                <select
+                  value={regionFocus}
+                  onChange={(e) => { setRegionFocus(e.target.value); setShowResults(true); }}
+                  className="w-full rounded-lg border border-border bg-background px-3 py-2 text-sm"
+                >
+                  <option value="">All regions</option>
+                  <option value="himachal-pradesh">Himachal Pradesh</option>
+                  <option value="uttarakhand">Uttarakhand</option>
+                  <option value="jammu-kashmir">Jammu & Kashmir</option>
+                  <option value="ladakh">Ladakh</option>
+                  <option value="rajasthan">Rajasthan</option>
+                  <option value="uttar-pradesh">Uttar Pradesh</option>
+                  <option value="punjab">Punjab & Haryana</option>
+                </select>
+              </div>
+            </div>
+          )}
+        </div>
         </div>
       </div>
 
