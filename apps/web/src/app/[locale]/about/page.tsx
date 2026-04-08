@@ -75,15 +75,15 @@ export default function AboutPage() {
             <h2 className="text-2xl font-semibold mb-3">The Numbers</h2>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
               <div className="rounded-xl border border-border p-4 text-center">
-                <div className="text-2xl font-mono font-bold text-primary">370+</div>
+                <div className="text-2xl font-mono font-bold text-primary">389+</div>
                 <div className="text-xs text-muted-foreground mt-1">Places</div>
               </div>
               <div className="rounded-xl border border-border p-4 text-center">
-                <div className="text-2xl font-mono font-bold text-primary">105</div>
+                <div className="text-2xl font-mono font-bold text-primary">124</div>
                 <div className="text-xs text-muted-foreground mt-1">Destinations</div>
               </div>
               <div className="rounded-xl border border-border p-4 text-center">
-                <div className="text-2xl font-mono font-bold text-primary">25</div>
+                <div className="text-2xl font-mono font-bold text-primary">49</div>
                 <div className="text-xs text-muted-foreground mt-1">Treks</div>
               </div>
               <div className="rounded-xl border border-border p-4 text-center">

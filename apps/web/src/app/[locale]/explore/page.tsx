@@ -6,7 +6,7 @@ import { createClient } from "@supabase/supabase-js";
 
 export const metadata: Metadata = {
   title: "Explore Destinations — Filter by Month, Difficulty, Kids & More",
-  description: "Browse 105+ North India destinations with monthly suitability scores. Filter by state, difficulty, kids-friendliness, and sort by elevation or score. Grid and map views.",
+  description: "Browse 124+ North India destinations with monthly suitability scores. Filter by state, difficulty, kids-friendliness, and sort by elevation or score. Grid and map views.",
 };
 
 async function getData() {

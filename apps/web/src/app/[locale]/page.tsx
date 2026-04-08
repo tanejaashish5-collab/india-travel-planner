@@ -1,3 +1,4 @@
+import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { LandingHero } from "@/components/landing-hero";
 import { createClient } from "@supabase/supabase-js";
@@ -77,6 +78,7 @@ export default async function Home() {
 
   return (
     <>
+      <Nav />
       <LandingHero
         featuredDestinations={destinations}
         collections={collections}

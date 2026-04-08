@@ -6,7 +6,7 @@ import { createClient } from "@supabase/supabase-js";
 
 export const metadata: Metadata = {
   title: "Plan Your Trip — Smart Destination Matcher",
-  description: "Tell us when you're going, who's coming, and your budget. We'll match you to the best destinations from 105+ places with itinerary suggestions and honest warnings.",
+  description: "Tell us when you're going, who's coming, and your budget. We'll match you to the best destinations from 124+ destinations with itinerary suggestions and honest warnings.",
 };
 
 async function getAllDestinations() {

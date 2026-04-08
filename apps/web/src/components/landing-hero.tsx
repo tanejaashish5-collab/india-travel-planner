@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useLocale, useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { useEffect, useRef } from "react";
-import { LanguageToggle } from "./language-toggle";
+// LanguageToggle now in main Nav component
 import {
   FadeIn,
   SlideIn,
@@ -215,59 +215,7 @@ export function LandingHero({
         </div>
         <div className={`absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] rounded-full ${glowColor} blur-[150px] opacity-40`} />
 
-        {/* Top bar */}
-        <div className="absolute top-0 left-0 right-0 flex items-center justify-between px-6 py-4 z-30">
-          <div className="flex items-center gap-2">
-            <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary text-sm font-bold text-primary-foreground">
-              IT
-            </div>
-            <span className="hidden sm:inline font-bold text-lg">
-              India Travel Planner
-            </span>
-          </div>
-          <div className="flex items-center gap-1">
-            <Link
-              href={`/${locale}/explore`}
-              className="rounded-lg px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-white/5 transition-all hidden sm:block"
-            >
-              {tn("explore")}
-            </Link>
-            <Link
-              href={`/${locale}/routes`}
-              className="rounded-lg px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-white/5 transition-all hidden sm:block"
-            >
-              {tn("routes")}
-            </Link>
-            <Link
-              href={`/${locale}/collections`}
-              className="rounded-lg px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-white/5 transition-all hidden sm:block"
-            >
-              {tn("collections")}
-            </Link>
-            <span className="text-border/30 hidden sm:block mx-1">|</span>
-            <Link
-              href={`/${locale}/region/himachal-pradesh`}
-              className="rounded-lg px-2 py-2 text-xs font-medium text-muted-foreground hover:text-foreground hover:bg-white/5 transition-all hidden lg:block"
-            >
-              HP
-            </Link>
-            <Link
-              href={`/${locale}/region/uttarakhand`}
-              className="rounded-lg px-2 py-2 text-xs font-medium text-muted-foreground hover:text-foreground hover:bg-white/5 transition-all hidden lg:block"
-            >
-              UK
-            </Link>
-            <Link
-              href={`/${locale}/region/jammu-kashmir`}
-              className="rounded-lg px-2 py-2 text-xs font-medium text-muted-foreground hover:text-foreground hover:bg-white/5 transition-all hidden lg:block"
-            >
-              J&K
-            </Link>
-            <LanguageToggle />
-          </div>
-        </div>
-
-        {/* Hero content */}
+        {/* Hero content — Nav is now provided by the page layout */}
         <div className="relative z-10 max-w-4xl text-center space-y-8">
           <FadeIn delay={0.1}>
             <p className="text-sm font-medium text-primary uppercase tracking-widest">

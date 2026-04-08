@@ -401,6 +401,16 @@ export function PlanContent({ destinations }: PlanContentProps) {
         </div>
       </div>
 
+      {/* Submit button */}
+      {!showResults && (
+        <button
+          onClick={() => setShowResults(true)}
+          className="w-full rounded-2xl bg-primary py-4 text-sm font-semibold text-primary-foreground hover:bg-primary/90 hover:-translate-y-0.5 transition-all duration-200 shadow-lg"
+        >
+          Find My Perfect Destinations →
+        </button>
+      )}
+
       {/* Results */}
       <AnimatePresence>
         {showResults && (
