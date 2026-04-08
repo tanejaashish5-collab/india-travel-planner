@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useLocale } from "next-intl";
 import { motion, AnimatePresence } from "framer-motion";
 import { FadeIn, StaggerContainer, StaggerItem, HoverCard } from "./animated-hero";
+import { ShareButton } from "./share-button";
 
 export function CollectionDetail({ collection }: { collection: any }) {
   const locale = useLocale();
@@ -43,8 +44,19 @@ export function CollectionDetail({ collection }: { collection: any }) {
       </FadeIn>
 
       <FadeIn delay={0.1}>
-        <h1 className="text-3xl font-bold">{collection.name}</h1>
-        <p className="mt-2 text-muted-foreground leading-relaxed">{collection.description}</p>
+        <div className="flex items-start justify-between gap-4">
+          <div>
+            <h1 className="text-3xl font-bold">{collection.name}</h1>
+            <p className="mt-2 text-muted-foreground leading-relaxed">{collection.description}</p>
+          </div>
+          <div className="shrink-0 flex items-center gap-2 mt-1">
+            <ShareButton
+              title={collection.name}
+              text={`${collection.description} — ${items.length} curated destinations`}
+            />
+          </div>
+        </div>
+        <div className="mt-3 text-sm text-muted-foreground">{items.length} destinations in this collection</div>
       </FadeIn>
 
       <StaggerContainer className="mt-8 space-y-4" staggerDelay={0.1}>

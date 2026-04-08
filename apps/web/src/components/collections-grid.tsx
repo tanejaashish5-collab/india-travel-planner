@@ -18,7 +18,7 @@ export function CollectionsGrid({ collections }: { collections: any[] }) {
             <HoverCard>
               <Link
                 href={`/${locale}/collections/${c.id}`}
-                className="group block rounded-xl border border-border bg-card overflow-hidden h-full transition-all hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5"
+                className="group block rounded-2xl border border-border/50 bg-card overflow-hidden h-full transition-all duration-200 hover:border-primary/40 hover:shadow-xl hover:shadow-primary/10 cursor-pointer"
               >
                 {/* Cover image */}
                 <div className="relative h-40 bg-muted/30 overflow-hidden">

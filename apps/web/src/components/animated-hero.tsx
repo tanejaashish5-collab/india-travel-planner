@@ -132,10 +132,9 @@ export function HoverCard({
 }) {
   return (
     <motion.div
-      whileHover={{ y: -4, scale: 1.02 }}
-      whileTap={{ scale: 0.98 }}
+      whileHover={{ y: -4 }}
       transition={{ type: "spring", stiffness: 400, damping: 25 }}
-      className={className}
+      className={`${className} cursor-pointer`}
     >
       {children}
     </motion.div>

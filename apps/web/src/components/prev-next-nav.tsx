@@ -27,7 +27,7 @@ export function PrevNextNav({
   const next = currentIdx < items.length - 1 ? items[currentIdx + 1] : null;
 
   return (
-    <div className="mt-12 border-t border-border/30 pt-6">
+    <div className="mt-12 mb-16 border-t border-border/30 pt-6">
       <div className="flex items-center justify-between gap-4">
         {/* Previous */}
         {prev ? (
