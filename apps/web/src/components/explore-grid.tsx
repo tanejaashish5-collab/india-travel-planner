@@ -259,7 +259,7 @@ function DestinationCard({
         <img
           src={imageUrl}
           alt={dest.name}
-          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+          className="w-full h-full object-cover ken-burns"
           loading="lazy"
           onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
         />
@@ -315,28 +315,34 @@ function DestinationCard({
         )}
       </div>
 
-      {/* Best months */}
-      {dest.best_months?.length > 0 && (
-        <div className="mt-3 flex flex-wrap gap-1.5">
-          {dest.best_months.slice(0, 4).map((m: number) => (
-            <span
-              key={m}
-              className={`rounded-md px-2 py-0.5 text-[11px] font-medium ${
-                m === selectedMonth
-                  ? "bg-primary/20 text-primary"
-                  : "bg-muted text-muted-foreground"
-              }`}
-            >
-              {tm(String(m)).slice(0, 3)}
-            </span>
-          ))}
+      {/* 12-month score strip */}
+      {dest.destination_months && dest.destination_months.length > 0 && (
+        <div className="mt-3">
+          <div className="flex gap-0.5" title="Monthly scores: green=great, red=avoid">
+            {Array.from({ length: 12 }, (_, i) => {
+              const m = i + 1;
+              const md = dest.destination_months?.find((dm: any) => dm.month === m);
+              const s = md?.score ?? 0;
+              const dotColor = s >= 4 ? "bg-emerald-400" : s === 3 ? "bg-yellow-400" : s >= 1 ? "bg-red-400" : "bg-muted-foreground/20";
+              const isSelected = m === selectedMonth;
+              return (
+                <div
+                  key={m}
+                  className={`h-1.5 flex-1 rounded-full ${dotColor} ${isSelected ? "ring-1 ring-primary ring-offset-1 ring-offset-card" : ""}`}
+                />
+              );
+            })}
+          </div>
+          <div className="flex justify-between mt-1 text-[9px] text-muted-foreground/40">
+            <span>J</span><span>D</span>
+          </div>
         </div>
       )}
 
       {/* Tags */}
       {dest.tags?.length > 0 && (
         <div className="mt-2.5 flex flex-wrap gap-1.5">
-          {dest.tags.slice(0, 4).map((tag: string) => (
+          {dest.tags.slice(0, 3).map((tag: string) => (
             <span
               key={tag}
               className="rounded-full border border-border px-2.5 py-0.5 text-[11px] font-medium text-muted-foreground"

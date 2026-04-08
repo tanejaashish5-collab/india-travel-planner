@@ -10,7 +10,7 @@ async function getFeaturedData() {
   const supabase = createClient(url, key);
   const currentMonth = new Date().getMonth() + 1;
 
-  const [destResult, collResult, routeResult, destCount, subCount, gemCount, stateCount, routeCount, festResult] = await Promise.all([
+  const [destResult, collResult, routeResult, destCount, subCount, gemCount, stateCount, routeCount, festResult, coordsResult, allMonthScores, allDestsResult] = await Promise.all([
     supabase
       .from("destination_months")
       .select("destination_id, score, destinations(id, name, tagline, difficulty, elevation_m, state:states(name))")
@@ -33,15 +33,40 @@ async function getFeaturedData() {
       .or(`month.eq.${currentMonth},month.eq.${(currentMonth % 12) + 1},month.eq.${((currentMonth + 1) % 12) + 1}`)
       .order("month")
       .limit(8),
+    // Destination coordinates + month scores for homepage map
+    supabase.from("destinations_with_coords").select("id, lat, lng"),
+    supabase
+      .from("destination_months")
+      .select("destination_id, score")
+      .eq("month", currentMonth),
+    supabase.from("destinations").select("id, name").order("name"),
   ]);
 
   const totalPlaces = (destCount.count ?? 0) + (subCount.count ?? 0) + (gemCount.count ?? 0);
+
+  // Build map pins: merge coords + names + month scores
+  const coordsMap = Object.fromEntries(
+    (coordsResult.data ?? []).map((c: any) => [c.id, { lat: c.lat, lng: c.lng }])
+  );
+  const scoresMap = Object.fromEntries(
+    (allMonthScores.data ?? []).map((s: any) => [s.destination_id, s.score])
+  );
+  const mapPins = (allDestsResult.data ?? [])
+    .filter((d: any) => coordsMap[d.id])
+    .map((d: any) => ({
+      id: d.id,
+      name: d.name,
+      lat: coordsMap[d.id].lat,
+      lng: coordsMap[d.id].lng,
+      score: scoresMap[d.id] ?? null,
+    }));
 
   return {
     destinations: destResult.data ?? [],
     collections: collResult.data ?? [],
     routes: routeResult.data ?? [],
     festivals: festResult.data ?? [],
+    mapPins,
     stats: {
       places: totalPlaces,
       destinations: destCount.count ?? 0,
@@ -52,7 +77,7 @@ async function getFeaturedData() {
 }
 
 export default async function Home() {
-  const { destinations, collections, routes, stats, festivals } = await getFeaturedData();
+  const { destinations, collections, routes, stats, festivals, mapPins } = await getFeaturedData();
 
   return (
     <>
@@ -62,6 +87,7 @@ export default async function Home() {
         routes={routes}
         stats={stats}
         festivals={festivals}
+        mapPins={mapPins}
       />
       <Footer />
     </>
