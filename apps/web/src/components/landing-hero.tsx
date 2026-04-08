@@ -13,6 +13,7 @@ import {
   HoverCard,
   FloatingParticles,
 } from "./animated-hero";
+import { AnimatedCounter } from "./animated-counter";
 
 const DIFFICULTY_COLORS: Record<string, string> = {
   easy: "text-emerald-400",
@@ -291,42 +292,28 @@ export function LandingHero({
             </div>
           </FadeIn>
 
-          {/* Stats */}
-          <StaggerContainer className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-8" staggerDelay={0.15}>
+          {/* Stats — animated counters */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-8">
             {[
-              { value: `${stats?.places ?? 370}+`, label: t("stats.places"), href: `/${locale}/explore` },
-              { value: `${stats?.destinations ?? 105}`, label: "Destinations", href: `/${locale}/explore` },
-              { value: `${stats?.routes ?? 19}`, label: t("stats.routes"), href: `/${locale}/routes` },
-              { value: "SOS", label: "Emergency (Coming)", href: null },
+              { num: stats?.places ?? 370, suffix: "+", label: t("stats.places"), href: `/${locale}/explore` },
+              { num: stats?.destinations ?? 105, suffix: "", label: "Destinations", href: `/${locale}/explore` },
+              { num: 126, suffix: "", label: "Festivals", href: `/${locale}/explore` },
+              { num: stats?.routes ?? 19, suffix: "", label: t("stats.routes"), href: `/${locale}/routes` },
             ].map((stat) => (
-              <StaggerItem key={stat.label}>
-                <HoverCard>
-                  {stat.href ? (
-                    <Link
-                      href={stat.href}
-                      className="block rounded-2xl border border-border/30 bg-card/70 backdrop-blur-md shadow-lg p-5 hover:border-primary/30 hover:shadow-xl transition-all duration-200"
-                    >
-                      <div className="text-2xl font-mono font-bold bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
-                        {stat.value}
-                      </div>
-                      <div className="text-muted-foreground text-sm mt-1">
-                        {stat.label}
-                      </div>
-                    </Link>
-                  ) : (
-                    <div className="rounded-2xl border border-border/30 bg-card/70 backdrop-blur-md shadow-lg p-5">
-                      <div className="text-2xl font-mono font-bold bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
-                        {stat.value}
-                      </div>
-                      <div className="text-muted-foreground text-sm mt-1">
-                        {stat.label}
-                      </div>
-                    </div>
-                  )}
-                </HoverCard>
-              </StaggerItem>
+              <Link
+                key={stat.label}
+                href={stat.href}
+                className="block rounded-2xl border border-border/30 bg-card/70 backdrop-blur-md shadow-lg p-5 hover:border-primary/30 hover:shadow-xl transition-all duration-200 group"
+              >
+                <div className="text-3xl font-mono font-bold bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent group-hover:from-primary group-hover:to-primary transition-all">
+                  <AnimatedCounter end={stat.num} suffix={stat.suffix} />
+                </div>
+                <div className="text-muted-foreground text-sm mt-1">
+                  {stat.label}
+                </div>
+              </Link>
             ))}
-          </StaggerContainer>
+          </div>
         </div>
 
         {/* Scroll indicator */}
