@@ -378,40 +378,41 @@ export function LandingHero({
             </FadeIn>
 
             <StaggerContainer className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3" staggerDelay={0.1}>
-              {featuredDestinations.map((item: any) => {
+              {featuredDestinations.map((item: any, idx: number) => {
                 const dest = item.destinations;
                 if (!dest) return null;
                 const stateName = Array.isArray(dest.state)
                   ? dest.state[0]?.name
                   : dest.state?.name;
+                // First card is hero-sized
+                const isHero = idx === 0;
 
                 return (
-                  <StaggerItem key={dest.id}>
+                  <StaggerItem key={dest.id} className={isHero ? "sm:col-span-2 lg:col-span-2 lg:row-span-2" : ""}>
                     <HoverCard>
                       <Link
                         href={`/${locale}/destination/${dest.id}`}
-                        className="group block rounded-xl border border-border overflow-hidden transition-all hover:border-primary/50 hover:shadow-xl hover:shadow-primary/10"
+                        className="group block rounded-2xl border border-border/50 overflow-hidden transition-all hover:border-primary/50 hover:shadow-2xl hover:shadow-primary/10 h-full"
                       >
-                        {/* Editorial image card — DIFFERENT from explore grid */}
-                        <div className="relative h-48 bg-muted/30 overflow-hidden">
+                        <div className={`relative ${isHero ? "h-64 sm:h-80 lg:h-full min-h-[320px]" : "h-52"} bg-muted/30 overflow-hidden`}>
                           <img
                             src={`/images/destinations/${dest.id}.jpg`}
                             alt={dest.name}
-                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                            className="w-full h-full object-cover ken-burns"
                             loading="lazy"
                             onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
                           />
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
-                          {/* Score badge floating on image */}
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                          {/* Score badge */}
                           <div className="absolute top-3 right-3">
-                            <span className="inline-flex items-center rounded-full bg-emerald-500/90 px-2.5 py-1 text-xs font-bold text-white shadow-lg">
+                            <span className="inline-flex items-center rounded-full bg-emerald-500/90 px-3 py-1 text-xs font-bold text-white shadow-lg backdrop-blur-sm">
                               {item.score}/5
                             </span>
                           </div>
                           {/* Content over image */}
-                          <div className="absolute bottom-0 left-0 right-0 p-5">
-                            <h3 className="text-xl font-bold text-white drop-shadow-lg">{dest.name}</h3>
-                            <p className="mt-1 text-sm text-white/80 line-clamp-1 drop-shadow">
+                          <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-6">
+                            <h3 className={`${isHero ? "text-2xl sm:text-3xl" : "text-xl"} font-bold text-white drop-shadow-lg`}>{dest.name}</h3>
+                            <p className={`mt-1 ${isHero ? "text-base line-clamp-2" : "text-sm line-clamp-1"} text-white/80 drop-shadow`}>
                               {dest.tagline}
                             </p>
                             <div className="mt-2 flex items-center gap-2 text-xs text-white/60">
