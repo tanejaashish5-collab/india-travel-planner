@@ -629,14 +629,18 @@ function getTravelerFit(dest: any, kf: any) {
 function getInfrastructureConcerns(dest: any, cc?: any): string[] {
   const concerns: string[] = [];
 
-  // Medical — from confidence card
+  // Medical — from confidence card (smarter parsing)
   if (cc?.emergency?.nearest_hospital) {
     const hospital = cc.emergency.nearest_hospital.toLowerCase();
-    if (hospital.includes("none") || hospital.includes("no hospital") || hospital.includes("no facility")) {
+    const hasRealHospital = hospital.includes("hospital") || hospital.includes("aiims") || hospital.includes("fortis") || hospital.includes("max") || hospital.includes("medanta") || hospital.includes("narayana") || hospital.includes("world-class") || hospital.includes("excellent");
+    const isOnlyBasic = (hospital.includes("phc") || hospital.includes("basic") || hospital.includes("dispensary")) && !hospital.includes("district hospital") && !hospital.includes("regional hospital") && !hospital.includes("zonal hospital");
+
+    if (hospital.includes("none") || hospital.startsWith("no ")) {
       concerns.push("No hospital — nearest may be hours away");
-    } else if (hospital.includes("basic") || hospital.includes("phc") || hospital.includes("dispensary")) {
-      concerns.push("Only basic medical — serious cases need evacuation");
+    } else if (isOnlyBasic && !hasRealHospital) {
+      concerns.push("Only basic medical (PHC) — serious cases need referral");
     }
+    // Don't flag if there's a real hospital mentioned (even if PHC is also listed)
   } else if (!cc) {
     concerns.push("No infrastructure data available");
   }
