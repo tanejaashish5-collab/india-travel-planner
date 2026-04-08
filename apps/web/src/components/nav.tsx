@@ -32,6 +32,10 @@ export function Nav() {
     { href: `/${locale}/region/himachal-pradesh`, label: "HP" },
     { href: `/${locale}/region/uttarakhand`, label: "UK" },
     { href: `/${locale}/region/jammu-kashmir`, label: "J&K" },
+    { href: `/${locale}/region/ladakh`, label: "Ladakh" },
+    { href: `/${locale}/region/rajasthan`, label: "Rajasthan" },
+    { href: `/${locale}/region/northeast`, label: "Northeast" },
+    { href: `/${locale}/region/uttar-pradesh`, label: "UP" },
   ];
 
   // All links for mobile menu

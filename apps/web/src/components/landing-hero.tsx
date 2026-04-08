@@ -317,8 +317,10 @@ export function LandingHero({
                   { href: `/${locale}/region/himachal-pradesh`, label: locale === "hi" ? "हिमाचल" : "Himachal" },
                   { href: `/${locale}/region/uttarakhand`, label: locale === "hi" ? "उत्तराखंड" : "Uttarakhand" },
                   { href: `/${locale}/region/jammu-kashmir`, label: locale === "hi" ? "कश्मीर" : "Kashmir" },
-                  { href: `/${locale}/explore?difficulty=easy&kids=true`, label: locale === "hi" ? "परिवार" : "Family-friendly" },
-                  { href: `/${locale}/explore?difficulty=extreme`, label: locale === "hi" ? "रोमांचक" : "Extreme" },
+                  { href: `/${locale}/region/ladakh`, label: locale === "hi" ? "लद्दाख" : "Ladakh" },
+                  { href: `/${locale}/region/rajasthan`, label: locale === "hi" ? "राजस्थान" : "Rajasthan" },
+                  { href: `/${locale}/region/northeast`, label: locale === "hi" ? "पूर्वोत्तर" : "Northeast" },
+                  { href: `/${locale}/explore?difficulty=easy&kids=true`, label: locale === "hi" ? "परिवार" : "Family" },
                 ].map((link) => (
                   <Link
                     key={link.href}
