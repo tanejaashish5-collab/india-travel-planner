@@ -1,0 +1,76 @@
+import { createClient } from "@supabase/supabase-js";
+
+export interface AppStats {
+  destinations: number;
+  places: number;
+  routes: number;
+  festivals: number;
+  collections: number;
+  treks: number;
+  states: number;
+  traps: number;
+  permits: number;
+  campingSpots: number;
+}
+
+// Fallback values if DB is unavailable — keep these updated
+const FALLBACK: AppStats = {
+  destinations: 105,
+  places: 370,
+  routes: 19,
+  festivals: 126,
+  collections: 20,
+  treks: 25,
+  states: 8,
+  traps: 43,
+  permits: 15,
+  campingSpots: 37,
+};
+
+let cachedStats: AppStats | null = null;
+let cacheExpiry = 0;
+const CACHE_TTL = 5 * 60 * 1000; // 5 minutes
+
+export async function getAppStats(): Promise<AppStats> {
+  if (cachedStats && Date.now() < cacheExpiry) return cachedStats;
+
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+  if (!url || !key) return FALLBACK;
+
+  try {
+    const supabase = createClient(url, key);
+    const [dests, subs, gems, routes, festivals, collections, treks, states, traps, permits, camping] = await Promise.all([
+      supabase.from("destinations").select("*", { count: "exact", head: true }),
+      supabase.from("sub_destinations").select("*", { count: "exact", head: true }),
+      supabase.from("hidden_gems").select("*", { count: "exact", head: true }),
+      supabase.from("routes").select("*", { count: "exact", head: true }),
+      supabase.from("festivals").select("*", { count: "exact", head: true }),
+      supabase.from("collections").select("*", { count: "exact", head: true }),
+      supabase.from("treks").select("*", { count: "exact", head: true }),
+      supabase.from("states").select("*", { count: "exact", head: true }),
+      supabase.from("tourist_trap_alternatives").select("*", { count: "exact", head: true }),
+      supabase.from("permits").select("*", { count: "exact", head: true }),
+      supabase.from("camping_spots").select("*", { count: "exact", head: true }),
+    ]);
+
+    const stats: AppStats = {
+      destinations: dests.count ?? FALLBACK.destinations,
+      places: (dests.count ?? 0) + (subs.count ?? 0) + (gems.count ?? 0),
+      routes: routes.count ?? FALLBACK.routes,
+      festivals: festivals.count ?? FALLBACK.festivals,
+      collections: collections.count ?? FALLBACK.collections,
+      treks: treks.count ?? FALLBACK.treks,
+      states: states.count ?? FALLBACK.states,
+      traps: traps.count ?? FALLBACK.traps,
+      permits: permits.count ?? FALLBACK.permits,
+      campingSpots: camping.count ?? FALLBACK.campingSpots,
+    };
+
+    cachedStats = stats;
+    cacheExpiry = Date.now() + CACHE_TTL;
+    return stats;
+  } catch {
+    return FALLBACK;
+  }
+}

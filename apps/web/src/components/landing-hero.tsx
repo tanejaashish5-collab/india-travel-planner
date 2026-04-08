@@ -169,7 +169,7 @@ export function LandingHero({
   featuredDestinations: any[];
   collections: any[];
   routes: any[];
-  stats?: { places: number; destinations: number; states: number; routes: number };
+  stats?: { places: number; destinations: number; states: number; routes: number; festivals: number; collections: number; treks: number; traps: number; permits: number; campingSpots: number };
   festivals?: any[];
   mapPins?: MapPin[];
 }) {
@@ -359,7 +359,7 @@ export function LandingHero({
             {[
               { num: stats?.places ?? 370, suffix: "+", label: t("stats.places"), href: `/${locale}/explore` },
               { num: stats?.destinations ?? 105, suffix: "", label: "Destinations", href: `/${locale}/explore` },
-              { num: 126, suffix: "", label: "Festivals", href: `/${locale}/explore` },
+              { num: stats?.festivals ?? 126, suffix: "", label: "Festivals", href: `/${locale}/explore` },
               { num: stats?.routes ?? 19, suffix: "", label: t("stats.routes"), href: `/${locale}/routes` },
             ].map((stat) => (
               <Link

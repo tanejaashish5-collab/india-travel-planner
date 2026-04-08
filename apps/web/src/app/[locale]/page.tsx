@@ -1,11 +1,12 @@
 import { Footer } from "@/components/footer";
 import { LandingHero } from "@/components/landing-hero";
 import { createClient } from "@supabase/supabase-js";
+import { getAppStats } from "@/lib/stats";
 
 async function getFeaturedData() {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-  if (!url || !key) return { destinations: [], collections: [], routes: [], stats: { places: 0, destinations: 0, states: 0, routes: 0 } };
+  if (!url || !key) return { destinations: [], collections: [], routes: [], festivals: [], mapPins: [] as any[], stats: { places: 0, destinations: 0, states: 0, routes: 0, festivals: 0, collections: 0, treks: 0, traps: 0, permits: 0, campingSpots: 0 } };
 
   const supabase = createClient(url, key);
   const currentMonth = new Date().getMonth() + 1;
@@ -67,12 +68,7 @@ async function getFeaturedData() {
     routes: routeResult.data ?? [],
     festivals: festResult.data ?? [],
     mapPins,
-    stats: {
-      places: totalPlaces,
-      destinations: destCount.count ?? 0,
-      states: stateCount.count ?? 0,
-      routes: routeCount.count ?? 0,
-    },
+    stats: await getAppStats(),
   };
 }
 
@@ -89,7 +85,7 @@ export default async function Home() {
         festivals={festivals}
         mapPins={mapPins}
       />
-      <Footer />
+      <Footer stats={stats} />
     </>
   );
 }

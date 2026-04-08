@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { useLocale } from "next-intl";
 
-export function Footer() {
+export function Footer({ stats }: { stats?: { destinations: number; places: number; festivals: number; traps: number; collections: number } }) {
   const locale = useLocale();
 
   return (
@@ -131,11 +131,11 @@ export function Footer() {
         {/* Stats strip */}
         <div className="flex flex-wrap justify-center gap-8 mb-12">
           {[
-            { num: "105", label: "Destinations" },
-            { num: "370+", label: "Places" },
-            { num: "126", label: "Festivals" },
-            { num: "43", label: "Tourist Traps Exposed" },
-            { num: "20", label: "Collections" },
+            { num: String(stats?.destinations ?? 105), label: "Destinations" },
+            { num: `${stats?.places ?? 370}+`, label: "Places" },
+            { num: String(stats?.festivals ?? 126), label: "Festivals" },
+            { num: String(stats?.traps ?? 43), label: "Tourist Traps Exposed" },
+            { num: String(stats?.collections ?? 20), label: "Collections" },
           ].map((stat) => (
             <div key={stat.label} className="text-center">
               <div className="text-lg font-mono font-bold text-muted-foreground/30">{stat.num}</div>
