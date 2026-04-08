@@ -220,41 +220,41 @@ export function LandingHero({
               India Travel Planner
             </span>
           </div>
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-1">
             <Link
               href={`/${locale}/explore`}
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors hidden sm:block"
+              className="rounded-lg px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-white/5 transition-all hidden sm:block"
             >
               {tn("explore")}
             </Link>
             <Link
               href={`/${locale}/routes`}
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors hidden sm:block"
+              className="rounded-lg px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-white/5 transition-all hidden sm:block"
             >
               {tn("routes")}
             </Link>
             <Link
               href={`/${locale}/collections`}
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors hidden sm:block"
+              className="rounded-lg px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-white/5 transition-all hidden sm:block"
             >
               {tn("collections")}
             </Link>
-            <span className="text-border hidden sm:block">|</span>
+            <span className="text-border/30 hidden sm:block mx-1">|</span>
             <Link
               href={`/${locale}/region/himachal-pradesh`}
-              className="text-xs text-muted-foreground hover:text-foreground transition-colors hidden lg:block"
+              className="rounded-lg px-2 py-2 text-xs font-medium text-muted-foreground hover:text-foreground hover:bg-white/5 transition-all hidden lg:block"
             >
               HP
             </Link>
             <Link
               href={`/${locale}/region/uttarakhand`}
-              className="text-xs text-muted-foreground hover:text-foreground transition-colors hidden lg:block"
+              className="rounded-lg px-2 py-2 text-xs font-medium text-muted-foreground hover:text-foreground hover:bg-white/5 transition-all hidden lg:block"
             >
               UK
             </Link>
             <Link
               href={`/${locale}/region/jammu-kashmir`}
-              className="text-xs text-muted-foreground hover:text-foreground transition-colors hidden lg:block"
+              className="rounded-lg px-2 py-2 text-xs font-medium text-muted-foreground hover:text-foreground hover:bg-white/5 transition-all hidden lg:block"
             >
               J&K
             </Link>
