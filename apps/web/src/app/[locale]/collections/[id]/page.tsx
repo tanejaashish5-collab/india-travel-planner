@@ -34,13 +34,20 @@ async function getCollection(id: string) {
   if (!data) return null;
 
   const destIds = (data.items ?? []).map((i: any) => i.destination_id);
-  const { data: dests } = await supabase
-    .from("destinations")
-    .select("id, name, tagline, difficulty, elevation_m, state:states(name)")
-    .in("id", destIds);
+  const [destsResult, eatsResult, staysResult, allColls] = await Promise.all([
+    supabase.from("destinations").select("id, name, tagline, difficulty, elevation_m, state:states(name)").in("id", destIds),
+    supabase.from("viral_eats").select("*").in("destination_id", destIds).order("name"),
+    supabase.from("local_stays").select("*").in("destination_id", destIds).order("name"),
+    supabase.from("collections").select("id, name").order("name"),
+  ]);
 
-  const { data: allColls } = await supabase.from("collections").select("id, name").order("name");
-  return { ...data, destinations: dests ?? [], allCollections: allColls ?? [] };
+  return {
+    ...data,
+    destinations: destsResult.data ?? [],
+    viral_eats: eatsResult.data ?? [],
+    local_stays: staysResult.data ?? [],
+    allCollections: allColls.data ?? [],
+  };
 }
 
 export default async function CollectionDetailPage({
