@@ -15,6 +15,9 @@ import { ConfidenceCardComponent } from "./confidence-card";
 const DestinationMap = lazy(() => import("./destination-map").then((mod) => ({ default: mod.DestinationMap })));
 import { KidsBadge } from "./kids-badge";
 import { TouristTrapIntervention } from "./tourist-trap-intervention";
+import { TravelerNotes } from "./traveler-notes";
+import { BookingHandoff } from "./booking-handoff";
+import { DestinationAlerts } from "./destination-alerts";
 import { FadeIn, SlideIn, HoverCard, StaggerContainer, StaggerItem } from "./animated-hero";
 import { Footer } from "./footer";
 import { SCORE_COLORS, DIFFICULTY_BG, DIFFICULTY_COLORS } from "@/lib/design-tokens";
@@ -26,6 +29,7 @@ const TABS = [
   { id: "safety", label: "Safety" },
   { id: "places", label: "Places" },
   { id: "food", label: "Food & People" },
+  { id: "reviews", label: "Reviews" },
 ];
 
 export function DestinationDetail({ dest }: { dest: any }) {
@@ -83,6 +87,7 @@ export function DestinationDetail({ dest }: { dest: any }) {
     if (tab.id === "safety" && !cc) return false;
     if (tab.id === "places" && subs.length === 0 && gems.length === 0) return false;
     if (tab.id === "food" && legends.length === 0 && eats.length === 0) return false;
+    if (tab.id === "reviews" && (!dest.traveler_notes || dest.traveler_notes.length === 0)) return false;
     return true;
   });
 
@@ -123,6 +128,9 @@ export function DestinationDetail({ dest }: { dest: any }) {
             </div>
           </div>
         </FadeIn>
+
+        {/* Real-time alerts */}
+        <DestinationAlerts destinationId={dest.id} />
 
         {/* Cinematic Hero */}
         <FadeIn>
@@ -709,6 +717,9 @@ export function DestinationDetail({ dest }: { dest: any }) {
                     </div>
                   </div>
                 </section>
+
+                {/* Booking Handoff */}
+                <BookingHandoff destinationName={dest.name} stateName={stateName} />
               </div>
             )}
 
@@ -873,6 +884,18 @@ export function DestinationDetail({ dest }: { dest: any }) {
               </div>
             )}
           </motion.div>
+
+          {/* Reviews tab */}
+          {activeTab === "reviews" && dest.traveler_notes?.length > 0 && (
+            <motion.div
+              key="reviews"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+            >
+              <TravelerNotes notes={dest.traveler_notes} />
+            </motion.div>
+          )}
         </AnimatePresence>
       </div>
       <Footer />

@@ -101,12 +101,20 @@ async function getDestination(id: string) {
     .eq("id", id)
     .single();
 
+  // Get traveler notes
+  const { data: travelerNotes } = await supabase
+    .from("traveler_notes")
+    .select("*")
+    .eq("destination_id", id)
+    .order("created_at", { ascending: false });
+
   return {
     ...data,
     hidden_gems: gems ?? [],
     trap_alternatives: trapAlts ?? [],
     festivals: festivals ?? [],
     local_stays: localStays ?? [],
+    traveler_notes: travelerNotes ?? [],
     coords: coordData ? { lat: coordData.lat, lng: coordData.lng } : null,
   };
 }
