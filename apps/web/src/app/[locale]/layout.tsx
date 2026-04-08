@@ -9,6 +9,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { StickyCTA } from "@/components/sticky-cta";
 import { PersonalisationQuiz } from "@/components/personalisation-quiz";
 import { CompareProvider } from "@/components/compare-tray";
+import { ScrollToTop } from "@/components/scroll-to-top";
 import "../globals.css";
 
 const geistSans = Geist({
@@ -83,6 +84,7 @@ export default async function LocaleLayout({
       <body className="min-h-full flex flex-col bg-background text-foreground text-base">
         <NextIntlClientProvider messages={messages}>
           <CompareProvider>
+            <ScrollToTop />
             {children}
             <StickyCTA />
             <PersonalisationQuiz />
