@@ -133,7 +133,7 @@ export function LandingHero({
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
               <Link
                 href={`/${locale}/explore`}
-                className="group relative rounded-full bg-primary px-8 py-3.5 text-sm font-medium text-primary-foreground overflow-hidden transition-all hover:shadow-lg hover:shadow-primary/25"
+                className="group relative rounded-full bg-primary px-8 py-4 text-sm font-semibold text-primary-foreground overflow-hidden transition-all duration-200 hover:shadow-xl hover:shadow-primary/30 hover:-translate-y-0.5 active:translate-y-0"
               >
                 <span className="relative z-10">{tn("explore")} →</span>
                 <motion.div
@@ -145,7 +145,7 @@ export function LandingHero({
               </Link>
               <Link
                 href={`/${locale}/plan`}
-                className="rounded-full border border-border px-8 py-3.5 text-sm font-medium text-foreground hover:bg-muted hover:border-muted-foreground/30 transition-all"
+                className="rounded-full border border-border px-8 py-4 text-sm font-semibold text-foreground hover:bg-muted hover:border-muted-foreground/30 hover:-translate-y-0.5 transition-all duration-200"
               >
                 {tn("planTrip")}
               </Link>
@@ -165,7 +165,7 @@ export function LandingHero({
                   {stat.href ? (
                     <Link
                       href={stat.href}
-                      className="block rounded-xl border border-border/50 bg-card/50 backdrop-blur-sm p-4 hover:border-primary/30 transition-colors"
+                      className="block rounded-2xl border border-border/30 bg-card/70 backdrop-blur-md shadow-lg p-5 hover:border-primary/30 hover:shadow-xl transition-all duration-200"
                     >
                       <div className="text-2xl font-mono font-bold bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
                         {stat.value}
@@ -175,7 +175,7 @@ export function LandingHero({
                       </div>
                     </Link>
                   ) : (
-                    <div className="rounded-xl border border-border/50 bg-card/50 backdrop-blur-sm p-4">
+                    <div className="rounded-2xl border border-border/30 bg-card/70 backdrop-blur-md shadow-lg p-5">
                       <div className="text-2xl font-mono font-bold bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
                         {stat.value}
                       </div>

@@ -272,7 +272,7 @@ function DestinationCard({
       <div className="mb-3 flex items-center justify-between">
         {score !== null ? (
           <span
-            className={`inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-medium ${SCORE_COLORS[score] ?? SCORE_COLORS[0]}`}
+            className={`inline-flex items-center rounded-full border px-3 py-1 text-xs font-semibold ${SCORE_COLORS[score] ?? SCORE_COLORS[0]}`}
           >
             {score}/5 — {ts(String(score))}
           </span>
@@ -284,22 +284,22 @@ function DestinationCard({
           </span>
         )}
         {kf && (
-          <span className="text-xs text-muted-foreground">
+          <span className="text-xs font-medium text-muted-foreground">
             {kf.suitable ? `👶 ${kf.rating}/5` : "Adults only"}
           </span>
         )}
       </div>
 
       {/* Name & tagline */}
-      <h3 className="text-lg font-semibold group-hover:text-primary transition-colors">
+      <h3 className="text-lg font-bold group-hover:text-primary transition-colors leading-tight">
         {displayName}
       </h3>
-      <p className="mt-1 text-sm text-muted-foreground line-clamp-2">
+      <p className="mt-1.5 text-sm text-muted-foreground line-clamp-2 leading-relaxed">
         {displayTagline}
       </p>
 
       {/* Meta */}
-      <div className="mt-3 flex flex-wrap items-center gap-2 text-xs text-muted-foreground">
+      <div className="mt-3 flex flex-wrap items-center gap-2 text-xs font-medium text-muted-foreground">
         {stateName && <span>{stateName}</span>}
         <span>·</span>
         <span className={DIFFICULTY_COLORS[dest.difficulty] ?? ""}>
@@ -317,11 +317,11 @@ function DestinationCard({
 
       {/* Best months */}
       {dest.best_months?.length > 0 && (
-        <div className="mt-3 flex flex-wrap gap-1">
+        <div className="mt-3 flex flex-wrap gap-1.5">
           {dest.best_months.slice(0, 4).map((m: number) => (
             <span
               key={m}
-              className={`rounded px-1.5 py-0.5 text-[10px] font-medium ${
+              className={`rounded-md px-2 py-0.5 text-[11px] font-medium ${
                 m === selectedMonth
                   ? "bg-primary/20 text-primary"
                   : "bg-muted text-muted-foreground"
@@ -335,11 +335,11 @@ function DestinationCard({
 
       {/* Tags */}
       {dest.tags?.length > 0 && (
-        <div className="mt-2 flex flex-wrap gap-1">
+        <div className="mt-2.5 flex flex-wrap gap-1.5">
           {dest.tags.slice(0, 4).map((tag: string) => (
             <span
               key={tag}
-              className="rounded-full border border-border px-2 py-0.5 text-[10px] text-muted-foreground"
+              className="rounded-full border border-border px-2.5 py-0.5 text-[11px] font-medium text-muted-foreground"
             >
               {tag}
             </span>
@@ -349,7 +349,7 @@ function DestinationCard({
 
       {/* Month note */}
       {monthData?.note && (
-        <p className="mt-2 text-[11px] text-muted-foreground/70 line-clamp-1 italic">
+        <p className="mt-2 text-xs text-muted-foreground/70 line-clamp-1 italic">
           {monthData.note}
         </p>
       )}

@@ -5,7 +5,7 @@ export function Footer() {
   const locale = useLocale();
 
   return (
-    <footer className="border-t border-border bg-card/50 mt-20">
+    <footer className="border-t border-border/30 bg-gradient-to-t from-muted/30 to-card/50 mt-20">
       <div className="mx-auto max-w-7xl px-4 py-12">
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
