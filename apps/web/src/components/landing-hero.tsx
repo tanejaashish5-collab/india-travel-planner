@@ -199,13 +199,18 @@ export function LandingHero({
     <>
       {/* Hero Section — day/night gradient */}
       <section className="relative min-h-screen flex flex-col items-center justify-center px-4 overflow-hidden">
-        {/* Background image with time-aware overlay */}
+        {/* Background video with time-aware overlay */}
         <div className="absolute inset-0">
-          <img
-            src="/images/destinations/spiti-valley.jpg"
-            alt=""
-            className="w-full h-full object-cover opacity-15"
-          />
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="w-full h-full object-cover opacity-[0.18]"
+            poster="/images/destinations/spiti-valley.jpg"
+          >
+            <source src="/videos/hero.mp4" type="video/mp4" />
+          </video>
           <div className={`absolute inset-0 bg-gradient-to-b ${timeGradient}`} />
         </div>
         <div className={`absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] rounded-full ${glowColor} blur-[150px] opacity-40`} />
