@@ -56,14 +56,16 @@ export function CollectionDetail({ collection }: { collection: any }) {
                       {idx + 1}
                     </div>
                   </div>
-                  <div className="flex-1 p-4 pl-0">
-                    <h3 className="font-semibold text-lg">{dest?.name ?? item.destination_id}</h3>
+                  <div className="flex-1 p-4 pl-0 min-w-0">
+                    <div className="flex items-start justify-between gap-2">
+                      <h3 className="font-semibold text-lg">{dest?.name ?? item.destination_id}</h3>
+                      {dest?.elevation_m && (
+                        <span className="shrink-0 text-xs font-mono text-muted-foreground pr-3">{dest.elevation_m.toLocaleString()}m</span>
+                      )}
+                    </div>
                     {stateName && <p className="text-xs text-muted-foreground">{stateName}</p>}
                     <p className="mt-1 text-sm text-muted-foreground">{item.note}</p>
                   </div>
-                  {dest?.elevation_m && (
-                    <span className="text-xs font-mono text-muted-foreground">{dest.elevation_m}m</span>
-                  )}
                 </Link>
               </HoverCard>
             </StaggerItem>
