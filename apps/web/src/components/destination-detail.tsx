@@ -148,7 +148,22 @@ export function DestinationDetail({ dest }: { dest: any }) {
                 <p className="mt-2 text-muted-foreground">
                   {stateName} · {dest.region}
                   {dest.elevation_m && <span className="font-mono"> · {dest.elevation_m.toLocaleString()}m</span>}
+                  {dest.vehicle_fit && (
+                    <span className={`ml-2 inline-flex items-center gap-1 rounded-full border px-2 py-0.5 text-[11px] font-medium ${
+                      dest.vehicle_fit.includes("hatchback") ? "border-emerald-500/30 text-emerald-400" :
+                      dest.vehicle_fit.includes("SUV") ? "border-yellow-500/30 text-yellow-400" :
+                      dest.vehicle_fit.includes("4WD") ? "border-red-500/30 text-red-400" :
+                      "border-border text-muted-foreground"
+                    }`}>
+                      {dest.vehicle_fit.includes("bike") ? "🏍️" : "🚗"} {dest.vehicle_fit}
+                    </span>
+                  )}
                 </p>
+                {dest.family_stress && (
+                  <p className="mt-1 text-sm text-muted-foreground/70">
+                    👨‍👩‍👧 Family: <span className="font-medium">{dest.family_stress}</span>
+                  </p>
+                )}
               </div>
               {currentScore !== null && (
                 <motion.div
@@ -474,6 +489,110 @@ export function DestinationDetail({ dest }: { dest: any }) {
                         <p className="text-sm"><span className="font-semibold">Helpline:</span> {cc.emergency.helpline}</p>
                       </div>
                     )}
+                  </section>
+                )}
+
+                {/* Where to Stay — strategic data */}
+                {dest.stay_zones && Object.keys(dest.stay_zones).length > 0 && (
+                  <section>
+                    <h2 className="text-xl font-semibold mb-3">Where to Stay</h2>
+                    <div className="grid gap-3 sm:grid-cols-2">
+                      {dest.stay_zones.best_for_families && (
+                        <div className="rounded-xl border border-border p-4">
+                          <div className="text-xs text-emerald-400 font-medium uppercase tracking-wide mb-1">Best for Families</div>
+                          <div className="text-[15px]">{dest.stay_zones.best_for_families}</div>
+                        </div>
+                      )}
+                      {dest.stay_zones.best_for_backpackers && (
+                        <div className="rounded-xl border border-border p-4">
+                          <div className="text-xs text-blue-400 font-medium uppercase tracking-wide mb-1">Best for Backpackers</div>
+                          <div className="text-[15px]">{dest.stay_zones.best_for_backpackers}</div>
+                        </div>
+                      )}
+                      {dest.stay_zones.best_for_quiet && (
+                        <div className="rounded-xl border border-border p-4">
+                          <div className="text-xs text-purple-400 font-medium uppercase tracking-wide mb-1">Best for Peace & Quiet</div>
+                          <div className="text-[15px]">{dest.stay_zones.best_for_quiet}</div>
+                        </div>
+                      )}
+                      {dest.stay_zones.avoid && (
+                        <div className="rounded-xl border border-orange-500/20 bg-orange-500/5 p-4">
+                          <div className="text-xs text-orange-400 font-medium uppercase tracking-wide mb-1">Avoid</div>
+                          <div className="text-[15px] text-orange-200/80">{dest.stay_zones.avoid}</div>
+                        </div>
+                      )}
+                    </div>
+                    {/* Budget bands */}
+                    {dest.stay_zones.budget_range && (
+                      <div className="mt-3 flex gap-4 text-sm">
+                        {dest.stay_zones.budget_range.off_season && (
+                          <span className="text-muted-foreground">Off-season: <span className="font-mono font-medium text-foreground">{dest.stay_zones.budget_range.off_season}</span>/night</span>
+                        )}
+                        {dest.stay_zones.budget_range.peak && (
+                          <span className="text-muted-foreground">Peak: <span className="font-mono font-medium text-foreground">{dest.stay_zones.budget_range.peak}</span>/night</span>
+                        )}
+                      </div>
+                    )}
+                    {/* Stay types */}
+                    {dest.stay_zones.stay_types?.length > 0 && (
+                      <div className="mt-3 flex flex-wrap gap-1.5">
+                        {dest.stay_zones.stay_types.map((type: string) => (
+                          <span key={type} className="rounded-full border border-border px-2.5 py-0.5 text-xs font-medium text-muted-foreground capitalize">
+                            {type}
+                          </span>
+                        ))}
+                      </div>
+                    )}
+                  </section>
+                )}
+
+                {/* Food & Dining */}
+                {dest.food_scene && Object.keys(dest.food_scene).length > 0 && (
+                  <section>
+                    <h2 className="text-xl font-semibold mb-3">Food & Dining</h2>
+                    <div className="grid gap-3 sm:grid-cols-2">
+                      {dest.food_scene.vegetarian_ease && (
+                        <div className="rounded-xl border border-border p-4 flex items-start gap-3">
+                          <span className="text-lg">🥬</span>
+                          <div>
+                            <div className="text-xs text-muted-foreground uppercase tracking-wide">Vegetarian</div>
+                            <div className="text-sm font-medium capitalize mt-0.5">{dest.food_scene.vegetarian_ease}</div>
+                          </div>
+                        </div>
+                      )}
+                      {dest.food_scene.family_dining && (
+                        <div className="rounded-xl border border-border p-4 flex items-start gap-3">
+                          <span className="text-lg">👨‍👩‍👧</span>
+                          <div>
+                            <div className="text-xs text-muted-foreground uppercase tracking-wide">Family Dining</div>
+                            <div className="text-sm font-medium mt-0.5">{dest.food_scene.family_dining}</div>
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                    {dest.food_scene.cuisine && (
+                      <p className="mt-2 text-sm text-muted-foreground"><span className="font-medium text-foreground">Cuisine:</span> {dest.food_scene.cuisine}</p>
+                    )}
+                    {dest.food_scene.note && (
+                      <p className="mt-1 text-sm italic text-muted-foreground/70">{dest.food_scene.note}</p>
+                    )}
+                  </section>
+                )}
+
+                {/* Workability badge — only for remote-work-friendly places */}
+                {dest.workability?.remote_work_rating >= 3 && (
+                  <section className="rounded-xl border border-blue-500/20 bg-blue-500/5 p-4">
+                    <div className="flex items-center gap-3">
+                      <span className="text-2xl">💻</span>
+                      <div>
+                        <h3 className="text-sm font-semibold text-blue-300">Remote Work Friendly</h3>
+                        <p className="text-sm text-muted-foreground mt-0.5">
+                          WiFi: {dest.workability.wifi || "Available"} · Power: {dest.workability.power_cuts || "Stable"}
+                          {dest.workability.coworking && dest.workability.coworking !== "none" && ` · Coworking: ${dest.workability.coworking}`}
+                        </p>
+                      </div>
+                      <span className="ml-auto text-lg font-mono font-bold text-blue-400">{dest.workability.remote_work_rating}/5</span>
+                    </div>
                   </section>
                 )}
 
