@@ -122,7 +122,7 @@ function CompareTray() {
             <div className="flex items-center gap-2 shrink-0">
               {compareIds.length >= 2 && (
                 <Link
-                  href={`/${locale}/saved?compare=${compareIds.join(",")}`}
+                  href={`/${locale}/compare?compare=${compareIds.join(",")}`}
                   className="rounded-full bg-primary px-4 py-2 text-xs font-semibold text-primary-foreground hover:bg-primary/90 transition-colors"
                 >
                   Compare Now

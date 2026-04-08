@@ -9,7 +9,10 @@ import { WeatherWidget } from "./weather-widget";
 import { ShareButton } from "./share-button";
 import { CompareButton } from "./compare-tray";
 import { DistanceBadge } from "./distance-badge";
+import { lazy, Suspense } from "react";
 import { ConfidenceCardComponent } from "./confidence-card";
+
+const DestinationMap = lazy(() => import("./destination-map").then((mod) => ({ default: mod.DestinationMap })));
 import { KidsBadge } from "./kids-badge";
 import { TouristTrapIntervention } from "./tourist-trap-intervention";
 import { FadeIn, SlideIn, HoverCard, StaggerContainer, StaggerItem } from "./animated-hero";
@@ -310,6 +313,19 @@ export function DestinationDetail({ dest }: { dest: any }) {
                   </div>
                 </div>
               )}
+            </div>
+          </FadeIn>
+        )}
+
+        {/* Mini-map — "Where exactly is this?" */}
+        {dest.coords?.lat && dest.coords?.lng && (
+          <FadeIn delay={0.3}>
+            <div className="mb-6 rounded-2xl border border-border overflow-hidden">
+              <div className="h-48 sm:h-56">
+                <Suspense fallback={<div className="w-full h-full bg-muted/30 flex items-center justify-center text-muted-foreground text-sm">Loading map...</div>}>
+                  <DestinationMap lat={dest.coords.lat} lng={dest.coords.lng} name={displayName} elevation={dest.elevation_m} />
+                </Suspense>
+              </div>
             </div>
           </FadeIn>
         )}
