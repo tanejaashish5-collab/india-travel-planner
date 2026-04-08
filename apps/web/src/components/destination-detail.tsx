@@ -716,15 +716,56 @@ export function DestinationDetail({ dest }: { dest: any }) {
                 {eats.length > 0 && (
                   <section>
                     <h2 className="text-xl font-semibold mb-4">{t("viralEats")}</h2>
-                    <div className="space-y-3">
+                    <div className="grid gap-3 sm:grid-cols-2">
                       {eats.map((eat: any) => (
-                        <div key={eat.id} className="rounded-xl border border-border p-4">
-                          <div className="flex items-center justify-between">
-                            <h4 className="font-semibold">{eat.name}</h4>
-                            <span className="text-xs text-muted-foreground">{eat.price_range}</span>
+                        <div key={eat.id} className="rounded-xl border border-border p-4 hover:border-primary/30 transition-colors">
+                          <div className="flex items-center justify-between mb-1">
+                            <h4 className="font-semibold text-[15px]">{eat.name}</h4>
+                            {eat.price_range && <span className="text-xs font-mono text-muted-foreground">{eat.price_range}</span>}
                           </div>
-                          <p className="mt-1 text-xs text-primary">{eat.famous_for}</p>
-                          {eat.honest_review && <p className="mt-1 text-sm text-muted-foreground">{eat.honest_review}</p>}
+                          {eat.location && <p className="text-xs text-muted-foreground/60 mb-1">📍 {eat.location}</p>}
+                          <p className="text-xs text-primary font-medium">{eat.famous_for}</p>
+                          {eat.honest_review && <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{eat.honest_review}</p>}
+                          {eat.viral_on && <p className="mt-1 text-[10px] text-muted-foreground/50">Viral on {eat.viral_on}</p>}
+                        </div>
+                      ))}
+                    </div>
+                  </section>
+                )}
+
+                {/* Local Stays & Operators */}
+                {dest.local_stays?.length > 0 && (
+                  <section>
+                    <h2 className="text-xl font-semibold mb-2">Local Picks</h2>
+                    <p className="text-sm text-muted-foreground mb-4">Curated stays, operators, and local businesses — not a booking site, just honest recommendations.</p>
+                    <div className="grid gap-3 sm:grid-cols-2">
+                      {dest.local_stays.map((stay: any) => (
+                        <div key={stay.id} className="rounded-xl border border-border p-4 hover:border-primary/30 transition-colors">
+                          <div className="flex items-start justify-between mb-1">
+                            <div>
+                              <h4 className="font-semibold text-[15px]">{stay.name}</h4>
+                              <span className={`text-xs font-medium capitalize ${
+                                stay.type === "homestay" ? "text-emerald-400" :
+                                stay.type === "cafe" ? "text-amber-400" :
+                                stay.type === "operator" || stay.type === "guide" ? "text-blue-400" :
+                                "text-muted-foreground"
+                              }`}>{stay.type}</span>
+                            </div>
+                            {stay.price_range && <span className="text-xs font-mono text-muted-foreground">{stay.price_range}</span>}
+                          </div>
+                          {stay.location && <p className="text-xs text-muted-foreground/60 mb-1">📍 {stay.location}</p>}
+                          {stay.why_special && <p className="text-sm text-muted-foreground leading-relaxed mt-1">{stay.why_special}</p>}
+                          <div className="mt-2 flex items-center gap-2">
+                            {stay.best_for && <span className="rounded-full border border-border px-2 py-0.5 text-[10px] text-muted-foreground">Best for: {stay.best_for}</span>}
+                            {stay.verified && <span className="rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-2 py-0.5 text-[10px]">Verified</span>}
+                          </div>
+                          {stay.tags?.length > 0 && (
+                            <div className="mt-2 flex flex-wrap gap-1">
+                              {stay.tags.map((tag: string) => (
+                                <span key={tag} className="rounded-full border border-border px-2 py-0.5 text-[10px] text-muted-foreground">{tag}</span>
+                              ))}
+                            </div>
+                          )}
                         </div>
                       ))}
                     </div>

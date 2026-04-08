@@ -670,6 +670,15 @@ export function LandingHero({
                 );
               })}
             </StaggerContainer>
+
+            <div className="text-center mt-8">
+              <Link
+                href={`/${locale}/festivals`}
+                className="inline-flex items-center gap-2 text-sm text-primary hover:underline font-medium"
+              >
+                See all {stats?.festivals ?? 126} festivals →
+              </Link>
+            </div>
           </div>
         </section>
       )}

@@ -88,11 +88,18 @@ async function getDestination(id: string) {
     .eq("destination_id", id)
     .order("month");
 
+  const { data: localStays } = await supabase
+    .from("local_stays")
+    .select("*")
+    .eq("destination_id", id)
+    .order("type");
+
   return {
     ...data,
     hidden_gems: gems ?? [],
     trap_alternatives: trapAlts ?? [],
     festivals: festivals ?? [],
+    local_stays: localStays ?? [],
   };
 }
 
