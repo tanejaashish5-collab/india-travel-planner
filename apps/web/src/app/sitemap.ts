@@ -2,13 +2,13 @@ import type { MetadataRoute } from "next";
 import { createClient } from "@supabase/supabase-js";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = "https://web-blond-zeta.vercel.app";
+  const baseUrl = "https://nakshiq.com";
 
   // Static pages
   const staticPages = [
     "", "explore", "collections", "routes", "treks", "plan",
     "camping", "permits", "road-conditions", "superlatives",
-    "saved", "about", "methodology",
+    "saved", "about", "methodology", "blog",
     "region/himachal-pradesh", "region/uttarakhand", "region/jammu-kashmir",
   ];
 
@@ -28,14 +28,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   let destEntries: MetadataRoute.Sitemap = [];
   let collEntries: MetadataRoute.Sitemap = [];
   let routeEntries: MetadataRoute.Sitemap = [];
+  let articleEntries: MetadataRoute.Sitemap = [];
 
   if (url && key) {
     const supabase = createClient(url, key);
 
-    const [destResult, collResult, routeResult] = await Promise.all([
+    const [destResult, collResult, routeResult, articleResult] = await Promise.all([
       supabase.from("destinations").select("id").order("id"),
       supabase.from("collections").select("id").order("id"),
       supabase.from("routes").select("id").order("id"),
+      supabase.from("articles").select("slug").order("published_at", { ascending: false }),
     ]);
 
     destEntries = (destResult.data ?? []).flatMap((d: any) =>
@@ -64,7 +66,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         priority: 0.6,
       }))
     );
+
+    articleEntries = (articleResult.data ?? []).flatMap((a: any) =>
+      ["en", "hi"].map((locale) => ({
+        url: `${baseUrl}/${locale}/blog/${a.slug}`,
+        lastModified: new Date(),
+        changeFrequency: "weekly" as const,
+        priority: 0.8,
+      }))
+    );
   }
 
-  return [...staticEntries, ...destEntries, ...collEntries, ...routeEntries];
+  return [...staticEntries, ...destEntries, ...collEntries, ...routeEntries, ...articleEntries];
 }

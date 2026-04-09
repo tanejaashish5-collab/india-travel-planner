@@ -37,6 +37,7 @@ const DISCOVER_ITEMS = [
   { label: "Permits", sub: "", icon: "📋", route: "/permits", color: "#64748b" },
   { label: "Roads", sub: "", icon: "🚗", route: "/road-conditions", color: "#f97316" },
   { label: "Records", sub: "25", icon: "🏆", route: "/superlatives", color: "#eab308" },
+  { label: "Blog", sub: "", icon: "📝", route: "/blog", color: "#8b5cf6" },
 ];
 
 export default function HomeScreen() {

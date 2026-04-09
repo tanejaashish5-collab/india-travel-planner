@@ -23,6 +23,7 @@ export function Nav() {
   ];
 
   const moreLinks = [
+    { href: `/${locale}/blog`, label: "Blog" },
     { href: `/${locale}/guide`, label: "Guides" },
     { href: `/${locale}/stays`, label: "Where to Stay" },
     { href: `/${locale}/build-route`, label: "Build Route" },
