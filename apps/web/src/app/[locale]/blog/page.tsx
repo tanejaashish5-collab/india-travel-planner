@@ -17,7 +17,7 @@ async function getArticles() {
   const supabase = createClient(url, key);
   const { data } = await supabase
     .from("articles")
-    .select("id, slug, title, subtitle, category, excerpt, published_at, reading_time, cover_image_url, tags, featured")
+    .select("id, slug, title, subtitle, category, excerpt, published_at, reading_time, cover_image_url, tags, featured, depth")
     .order("published_at", { ascending: false });
   return data ?? [];
 }

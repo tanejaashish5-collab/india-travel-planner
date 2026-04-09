@@ -49,6 +49,21 @@ async function getArticle(slug: string) {
   return data;
 }
 
+async function getAdjacentArticles(currentPublishedAt: string) {
+  const supabase = getSupabase();
+  if (!supabase) return { prev: null, next: null };
+
+  const [prevRes, nextRes] = await Promise.all([
+    supabase.from("articles").select("slug, title").lt("published_at", currentPublishedAt).order("published_at", { ascending: false }).limit(1),
+    supabase.from("articles").select("slug, title").gt("published_at", currentPublishedAt).order("published_at", { ascending: true }).limit(1),
+  ]);
+
+  return {
+    prev: prevRes.data?.[0] ?? null,
+    next: nextRes.data?.[0] ?? null,
+  };
+}
+
 async function getRelatedArticles(category: string, currentSlug: string) {
   const supabase = getSupabase();
   if (!supabase) return [];
@@ -89,16 +104,17 @@ export default async function BlogArticlePage({ params }: { params: Promise<{ sl
 
   if (!article) notFound();
 
-  const [related, destinations] = await Promise.all([
+  const [related, destinations, adjacent] = await Promise.all([
     getRelatedArticles(article.category, slug),
     getDestinationData(article.destinations ?? []),
+    getAdjacentArticles(article.published_at),
   ]);
 
   return (
     <div className="min-h-screen">
       <Nav />
       <main className="mx-auto max-w-4xl px-4 py-8">
-        <BlogArticle article={article} destinations={destinations} relatedArticles={related} />
+        <BlogArticle article={article} destinations={destinations} relatedArticles={related} adjacentArticles={adjacent} />
       </main>
       <Footer />
     </div>

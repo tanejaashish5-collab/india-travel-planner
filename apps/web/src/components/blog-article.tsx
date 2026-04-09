@@ -31,25 +31,38 @@ export function BlogArticle({
   article,
   destinations,
   relatedArticles,
+  adjacentArticles,
 }: {
   article: any;
   destinations: Destination[];
   relatedArticles: any[];
+  adjacentArticles?: { prev: any; next: any };
 }) {
   const locale = useLocale();
   const currentMonth = new Date().getMonth() + 1;
 
   // Parse content sections — split by ## headers
   const sections = parseContent(article.content);
+  const isDeepDive = article.depth === "deep-dive";
 
   return (
     <article>
+      {/* Back to blog */}
+      <Link href={`/${locale}/blog`} className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors mb-6">
+        ← All articles
+      </Link>
+
       {/* Header */}
       <header className="mb-8">
         <div className="flex items-center gap-3 mb-4">
           <span className="rounded-full border border-primary/30 bg-primary/5 px-3 py-1 text-xs font-medium text-primary">
             {CATEGORY_LABELS[article.category] || article.category}
           </span>
+          {isDeepDive ? (
+            <span className="rounded-full bg-amber-400/10 border border-amber-400/20 px-2.5 py-0.5 text-xs font-medium text-amber-400">Deep Dive</span>
+          ) : (
+            <span className="rounded-full bg-muted border border-border px-2.5 py-0.5 text-xs font-medium text-muted-foreground">Brief</span>
+          )}
           <span className="text-sm text-muted-foreground">{article.reading_time} min read</span>
           <span className="text-sm text-muted-foreground">
             {new Date(article.published_at).toLocaleDateString("en-IN", { year: "numeric", month: "long", day: "numeric" })}
@@ -201,8 +214,33 @@ export function BlogArticle({
         </div>
       )}
 
+      {/* Prev/Next Navigation */}
+      {adjacentArticles && (adjacentArticles.prev || adjacentArticles.next) && (
+        <div className="mt-12 border-t border-border pt-6 grid grid-cols-2 gap-4">
+          {adjacentArticles.prev ? (
+            <Link href={`/${locale}/blog/${adjacentArticles.prev.slug}`} className="group text-left">
+              <span className="text-xs text-muted-foreground">← Previous</span>
+              <p className="text-sm font-semibold group-hover:text-primary transition-colors line-clamp-2 mt-1">{adjacentArticles.prev.title}</p>
+            </Link>
+          ) : <div />}
+          {adjacentArticles.next ? (
+            <Link href={`/${locale}/blog/${adjacentArticles.next.slug}`} className="group text-right">
+              <span className="text-xs text-muted-foreground">Next →</span>
+              <p className="text-sm font-semibold group-hover:text-primary transition-colors line-clamp-2 mt-1">{adjacentArticles.next.title}</p>
+            </Link>
+          ) : <div />}
+        </div>
+      )}
+
+      {/* Back to all articles */}
+      <div className="mt-6 text-center">
+        <Link href={`/${locale}/blog`} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+          ← Back to all articles
+        </Link>
+      </div>
+
       {/* Closing */}
-      <div className="mt-12 text-center">
+      <div className="mt-8 text-center">
         <p className="italic text-muted-foreground font-serif text-lg">Go with confidence.</p>
       </div>
     </article>

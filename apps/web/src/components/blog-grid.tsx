@@ -22,6 +22,7 @@ interface Article {
   cover_image_url?: string;
   tags?: string[];
   featured?: boolean;
+  depth?: string;
 }
 
 export function BlogGrid({ articles }: { articles: Article[] }) {
@@ -112,6 +113,9 @@ export function BlogGrid({ articles }: { articles: Article[] }) {
                   <span className={`rounded-full border px-2.5 py-0.5 text-[10px] font-medium ${CATEGORY_LABELS[article.category]?.color || ""}`}>
                     {CATEGORY_LABELS[article.category]?.label}
                   </span>
+                  {article.depth === "deep-dive" && (
+                    <span className="rounded-full bg-amber-400/10 border border-amber-400/20 px-2 py-0.5 text-[10px] font-medium text-amber-400">Deep Dive</span>
+                  )}
                   <span className="text-xs text-muted-foreground">{article.reading_time} min</span>
                 </div>
                 <h3 className="text-base font-semibold group-hover:text-primary transition-colors line-clamp-2">
