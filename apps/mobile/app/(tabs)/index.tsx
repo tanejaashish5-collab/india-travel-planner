@@ -13,6 +13,7 @@ import {
 } from "react-native";
 import { router } from "expo-router";
 import { colors, spacing, fontSize, borderRadius } from "../../lib/theme";
+import { usePreferences } from "../../hooks/usePreferences";
 import { supabase } from "../../lib/supabase";
 
 const { width } = Dimensions.get("window");
@@ -40,7 +41,17 @@ const DISCOVER_ITEMS = [
   { label: "Blog", sub: "", icon: "📝", route: "/blog", color: "#8b5cf6" },
 ];
 
+const TRAVELER_GREETINGS: Record<string, string> = {
+  solo: "Solo explorer",
+  couple: "Travel partner",
+  family: "Family traveler",
+  biker: "Road warrior",
+  backpacker: "Backpacker",
+  spiritual: "Seeker",
+};
+
 export default function HomeScreen() {
+  const { preferences } = usePreferences();
   const [featured, setFeatured] = useState<any[]>([]);
   const [festivals, setFestivals] = useState<any[]>([]);
   const [stats, setStats] = useState({ destinations: 0, places: 0, treks: 0, festivals: 0 });
@@ -94,11 +105,13 @@ export default function HomeScreen() {
     >
       {/* Hero */}
       <View style={styles.hero}>
-        <Text style={styles.heroTag}>TRAVEL WITH IQ</Text>
+        <Text style={styles.heroTag}>{preferences.travelerType ? `HEY, ${TRAVELER_GREETINGS[preferences.travelerType]?.toUpperCase() || "TRAVELER"}` : "TRAVEL WITH IQ"}</Text>
         <Text style={styles.heroTitle}>Naksh<Text style={{ color: colors.vermillion }}>.</Text>iq</Text>
         <Text style={styles.heroSubtitle}>Travel intelligence for India</Text>
         <Text style={styles.heroDesc}>
-          Every destination scored by month. Real infrastructure data. Honest opinions — not brochure talk.
+          {preferences.travelMonth > 0
+            ? `Showing top destinations for ${MONTH_FULL[preferences.travelMonth]}. ${stats.destinations} scored.`
+            : "Every destination scored by month. Real infrastructure data. Honest opinions."}
         </Text>
       </View>
 

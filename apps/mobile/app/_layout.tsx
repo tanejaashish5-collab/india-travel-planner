@@ -1,10 +1,11 @@
 import { DarkTheme, ThemeProvider } from "@react-navigation/native";
 import { useFonts } from "expo-font";
-import { Stack } from "expo-router";
+import { Stack, router } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
 import { useEffect } from "react";
 import "react-native-reanimated";
 import { colors } from "../lib/theme";
+import { usePreferences } from "../hooks/usePreferences";
 
 export { ErrorBoundary } from "expo-router";
 
@@ -32,20 +33,29 @@ export default function RootLayout() {
   const [loaded, error] = useFonts({
     SpaceMono: require("../assets/fonts/SpaceMono-Regular.ttf"),
   });
+  const { onboarded, loading: prefsLoading } = usePreferences();
 
   useEffect(() => {
     if (error) throw error;
   }, [error]);
 
   useEffect(() => {
-    if (loaded) SplashScreen.hideAsync();
-  }, [loaded]);
+    if (loaded && !prefsLoading) SplashScreen.hideAsync();
+  }, [loaded, prefsLoading]);
 
-  if (!loaded) return null;
+  // Redirect to onboarding if first-time user
+  useEffect(() => {
+    if (loaded && !prefsLoading && onboarded === false) {
+      router.replace("/onboarding");
+    }
+  }, [loaded, prefsLoading, onboarded]);
+
+  if (!loaded || prefsLoading) return null;
 
   return (
     <ThemeProvider value={AppDarkTheme}>
       <Stack>
+        <Stack.Screen name="onboarding" options={{ headerShown: false }} />
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
         <Stack.Screen
           name="destination/[id]"
