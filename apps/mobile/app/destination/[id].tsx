@@ -14,6 +14,7 @@ import { useLocalSearchParams, Stack, router } from "expo-router";
 import { colors, spacing, fontSize, borderRadius } from "../../lib/theme";
 import { useDestination } from "../../hooks/useDestinations";
 import { useSavedItems } from "../../hooks/useSavedItems";
+import { useArticlesForDestination } from "../../hooks/useArticles";
 
 const { width } = Dimensions.get("window");
 const MONTH_SHORT = ["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
@@ -28,6 +29,7 @@ export default function DestinationScreen() {
   const { id } = useLocalSearchParams<{ id: string }>();
   const { destination: dest, loading } = useDestination(id);
   const { isSaved, toggleSaved } = useSavedItems();
+  const { articles: guideArticles } = useArticlesForDestination(id);
   const [activeTab, setActiveTab] = useState("overview");
   const currentMonth = new Date().getMonth() + 1;
 
@@ -143,6 +145,22 @@ export default function DestinationScreen() {
             <Text style={[styles.actionBtnText, styles.actionBtnTextPrimary]}>{isSaved(id) ? "♥ Saved" : "♡ Save"}</Text>
           </TouchableOpacity>
         </View>
+
+        {/* Related Guide Articles */}
+        {guideArticles.length > 0 && (
+          <View style={styles.guideLinks}>
+            {guideArticles.map((article: any) => (
+              <TouchableOpacity key={article.slug} style={styles.guideLink} onPress={() => router.push(`/blog/${article.slug}`)}>
+                <Text style={styles.guideLinkIcon}>📖</Text>
+                <View style={{ flex: 1 }}>
+                  <Text style={styles.guideLinkTitle} numberOfLines={1}>{article.title}</Text>
+                  <Text style={styles.guideLinkMeta}>{article.depth === "deep-dive" ? "Deep Dive" : "Brief"} · {article.reading_time} min</Text>
+                </View>
+                <Text style={styles.guideLinkArrow}>→</Text>
+              </TouchableOpacity>
+            ))}
+          </View>
+        )}
       </View>
 
       {/* Tab navigation */}
@@ -358,6 +376,12 @@ const styles = StyleSheet.create({
   actionBtnText: { fontSize: fontSize.sm, fontWeight: "600", color: colors.mutedForeground },
   actionBtnPrimary: { backgroundColor: colors.primary, borderColor: colors.primary },
   actionBtnSaved: { backgroundColor: colors.score5, borderColor: colors.score5 },
+  guideLinks: { marginTop: spacing.md, gap: spacing.sm },
+  guideLink: { flexDirection: "row", alignItems: "center", gap: spacing.sm, backgroundColor: "rgba(245,241,232,0.05)", borderWidth: 1, borderColor: "rgba(245,241,232,0.15)", borderRadius: borderRadius.md, padding: spacing.sm },
+  guideLinkIcon: { fontSize: 18 },
+  guideLinkTitle: { fontSize: fontSize.sm, fontWeight: "600", color: colors.foreground },
+  guideLinkMeta: { fontSize: fontSize.xs, color: colors.mutedForeground, marginTop: 1 },
+  guideLinkArrow: { fontSize: fontSize.sm, color: colors.mutedForeground },
   actionBtnTextPrimary: { color: colors.primaryForeground },
   tabBar: { paddingHorizontal: spacing.md, paddingVertical: spacing.md },
   tab: { paddingHorizontal: spacing.md, paddingVertical: spacing.sm, marginRight: spacing.xs, borderRadius: borderRadius.md },

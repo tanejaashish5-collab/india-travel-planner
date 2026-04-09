@@ -35,6 +35,26 @@ export function useArticles() {
   return { articles, loading };
 }
 
+export function useArticlesForDestination(destinationId: string) {
+  const [articles, setArticles] = useState<Article[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    supabase
+      .from("articles")
+      .select("slug, title, depth, reading_time, category")
+      .contains("destinations", [destinationId])
+      .order("depth", { ascending: false })
+      .limit(5)
+      .then(({ data }) => {
+        setArticles((data as any[]) ?? []);
+        setLoading(false);
+      });
+  }, [destinationId]);
+
+  return { articles, loading };
+}
+
 export function useArticle(slug: string) {
   const [article, setArticle] = useState<Article | null>(null);
   const [loading, setLoading] = useState(true);

@@ -115,6 +115,14 @@ async function getDestination(id: string) {
     .select("id, name")
     .order("name");
 
+  // Related blog articles
+  const { data: relatedArticles } = await supabase
+    .from("articles")
+    .select("slug, title, depth, reading_time, category")
+    .contains("destinations", [id])
+    .order("depth", { ascending: false })
+    .limit(5);
+
   return {
     ...data,
     hidden_gems: gems ?? [],
@@ -124,6 +132,7 @@ async function getDestination(id: string) {
     traveler_notes: travelerNotes ?? [],
     coords: coordData ? { lat: coordData.lat, lng: coordData.lng } : null,
     allDestinations: allDests ?? [],
+    relatedArticles: relatedArticles ?? [],
   };
 }
 

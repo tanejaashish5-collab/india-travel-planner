@@ -247,6 +247,28 @@ export function DestinationDetail({ dest }: { dest: any }) {
               <WeatherWidget destinationId={dest.id} />
             </div>
 
+            {/* Related Blog Articles */}
+            {dest.relatedArticles?.length > 0 && (
+              <div className="mt-4 space-y-2">
+                {dest.relatedArticles.map((article: any) => (
+                  <Link
+                    key={article.slug}
+                    href={`/${locale}/blog/${article.slug}`}
+                    className="flex items-center gap-3 rounded-xl border border-primary/20 bg-primary/5 p-3 transition-all hover:border-primary/40 hover:bg-primary/10"
+                  >
+                    <span className="text-lg">📖</span>
+                    <div className="flex-1 min-w-0">
+                      <div className="text-sm font-semibold truncate">{article.title}</div>
+                      <div className="text-xs text-muted-foreground">
+                        {article.depth === "deep-dive" ? "Deep Dive" : "Brief"} · {article.reading_time} min read
+                      </div>
+                    </div>
+                    <span className="text-xs text-muted-foreground">→</span>
+                  </Link>
+                ))}
+              </div>
+            )}
+
             {/* Traveler Fit Cards — "Good For / Not Good For" */}
             <div className="mt-4 flex flex-wrap gap-2">
               {travelerFit.goodFor.map((item) => (
