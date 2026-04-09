@@ -35,8 +35,8 @@ export function BlogGrid({ articles }: { articles: Article[] }) {
     return articles.filter((a) => a.category === filter);
   }, [articles, filter]);
 
-  const featured = articles.filter((a) => a.featured);
-  const rest = filtered.filter((a) => !a.featured || filter !== "all");
+  const firstFeatured = filtered.find((a) => a.featured);
+  const rest = filtered.filter((a) => a !== firstFeatured);
 
   return (
     <div>
@@ -61,33 +61,31 @@ export function BlogGrid({ articles }: { articles: Article[] }) {
       </div>
 
       {/* Featured article (first one, full-width) */}
-      {filter === "all" && featured.length > 0 && (
+      {firstFeatured && (
         <Link
-          href={`/${locale}/blog/${featured[0].slug}`}
+          href={`/${locale}/blog/${firstFeatured.slug}`}
           className="group mb-8 block rounded-2xl border border-border bg-card overflow-hidden transition-all hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5"
         >
           <div className="p-6 sm:p-8">
             <div className="flex items-center gap-3 mb-3">
-              <span className={`rounded-full border px-3 py-1 text-xs font-medium ${CATEGORY_LABELS[featured[0].category]?.color || ""}`}>
-                {CATEGORY_LABELS[featured[0].category]?.label}
+              <span className={`rounded-full border px-3 py-1 text-xs font-medium ${CATEGORY_LABELS[firstFeatured.category]?.color || ""}`}>
+                {CATEGORY_LABELS[firstFeatured.category]?.label}
               </span>
-              <span className="text-xs text-muted-foreground">{featured[0].reading_time} min read</span>
-              {featured[0].featured && (
-                <span className="rounded-full bg-amber-400/10 border border-amber-400/20 px-2 py-0.5 text-xs text-amber-400 font-medium">Featured</span>
-              )}
+              <span className="text-xs text-muted-foreground">{firstFeatured.reading_time} min read</span>
+              <span className="rounded-full bg-amber-400/10 border border-amber-400/20 px-2 py-0.5 text-xs text-amber-400 font-medium">Featured</span>
             </div>
             <h2 className="text-2xl font-bold group-hover:text-primary transition-colors">
-              {featured[0].title}
+              {firstFeatured.title}
             </h2>
-            {featured[0].subtitle && (
-              <p className="mt-1 text-lg text-muted-foreground">{featured[0].subtitle}</p>
+            {firstFeatured.subtitle && (
+              <p className="mt-1 text-lg text-muted-foreground">{firstFeatured.subtitle}</p>
             )}
-            {featured[0].excerpt && (
-              <p className="mt-3 text-muted-foreground line-clamp-3">{featured[0].excerpt}</p>
+            {firstFeatured.excerpt && (
+              <p className="mt-3 text-muted-foreground line-clamp-3">{firstFeatured.excerpt}</p>
             )}
-            {featured[0].tags && featured[0].tags.length > 0 && (
+            {firstFeatured.tags && firstFeatured.tags.length > 0 && (
               <div className="mt-4 flex flex-wrap gap-1.5">
-                {featured[0].tags.slice(0, 5).map((tag) => (
+                {firstFeatured.tags.slice(0, 5).map((tag) => (
                   <span key={tag} className="rounded-md bg-muted px-2 py-0.5 text-xs text-muted-foreground">{tag}</span>
                 ))}
               </div>
