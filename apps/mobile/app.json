@@ -1,0 +1,48 @@
+{
+  "expo": {
+    "name": "India Travel Planner",
+    "slug": "india-travel-planner",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "scheme": "indiatravelplanner",
+    "userInterfaceStyle": "dark",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/images/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#0a0a0a"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.indiatravelplanner.app",
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "Show your distance from destinations and nearby places"
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "backgroundColor": "#0a0a0a"
+      },
+      "package": "com.indiatravelplanner.app",
+      "edgeToEdgeEnabled": true,
+      "permissions": ["ACCESS_FINE_LOCATION"]
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "static",
+      "favicon": "./assets/images/favicon.png"
+    },
+    "plugins": [
+      "expo-router"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "extra": {
+      "SUPABASE_URL": "https://dudzsdzfvikjjhurxrgc.supabase.co",
+      "SUPABASE_ANON_KEY": "placeholder"
+    }
+  }
+}

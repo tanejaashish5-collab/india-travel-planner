@@ -1,0 +1,226 @@
+import { useState, useEffect, useMemo } from "react";
+import {
+  View,
+  Text,
+  FlatList,
+  Image,
+  TouchableOpacity,
+  TextInput,
+  StyleSheet,
+  ActivityIndicator,
+  Dimensions,
+} from "react-native";
+import { router } from "expo-router";
+import { colors, spacing, fontSize, borderRadius } from "../../lib/theme";
+import { useDestinations, Destination } from "../../hooks/useDestinations";
+
+const { width } = Dimensions.get("window");
+const CARD_WIDTH = (width - spacing.lg * 2 - spacing.sm) / 2;
+
+const MONTH_SHORT = ["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+const SCORE_COLORS: Record<number, string> = {
+  5: colors.score5, 4: colors.score4, 3: colors.score3, 2: colors.score2, 1: colors.score1, 0: colors.muted,
+};
+const DIFF_COLORS: Record<string, string> = {
+  easy: colors.easy, moderate: colors.moderate, hard: colors.hard, extreme: colors.extreme,
+};
+
+export default function ExploreScreen() {
+  const { destinations, loading } = useDestinations();
+  const [search, setSearch] = useState("");
+  const [diffFilter, setDiffFilter] = useState("");
+  const currentMonth = new Date().getMonth() + 1;
+
+  const filtered = useMemo(() => {
+    return destinations.filter((d) => {
+      if (diffFilter && d.difficulty !== diffFilter) return false;
+      if (search) {
+        const q = search.toLowerCase();
+        const stateName = Array.isArray(d.state) ? (d.state as any)[0]?.name : (d.state as any)?.name;
+        if (
+          !d.name.toLowerCase().includes(q) &&
+          !d.tagline.toLowerCase().includes(q) &&
+          !(stateName?.toLowerCase().includes(q))
+        ) return false;
+      }
+      return true;
+    });
+  }, [destinations, search, diffFilter]);
+
+  // Sort by current month score
+  const sorted = useMemo(() => {
+    return [...filtered].sort((a, b) => {
+      const aScore = a.destination_months?.find((m) => m.month === currentMonth)?.score ?? -1;
+      const bScore = b.destination_months?.find((m) => m.month === currentMonth)?.score ?? -1;
+      return bScore - aScore;
+    });
+  }, [filtered, currentMonth]);
+
+  if (loading) {
+    return (
+      <View style={[styles.container, styles.center]}>
+        <ActivityIndicator size="large" color={colors.primary} />
+      </View>
+    );
+  }
+
+  return (
+    <View style={styles.container}>
+      {/* Search */}
+      <View style={styles.searchContainer}>
+        <TextInput
+          style={styles.searchInput}
+          placeholder="Search destinations..."
+          placeholderTextColor={colors.mutedForeground}
+          value={search}
+          onChangeText={setSearch}
+        />
+      </View>
+
+      {/* Difficulty filter */}
+      <View style={styles.filterRow}>
+        {["", "easy", "moderate", "hard", "extreme"].map((d) => (
+          <TouchableOpacity
+            key={d}
+            style={[styles.filterChip, diffFilter === d && styles.filterChipActive]}
+            onPress={() => setDiffFilter(d)}
+          >
+            <Text style={[styles.filterChipText, diffFilter === d && styles.filterChipTextActive]}>
+              {d || "All"}
+            </Text>
+          </TouchableOpacity>
+        ))}
+      </View>
+
+      <Text style={styles.resultCount}>{sorted.length} destinations</Text>
+
+      {/* Grid */}
+      <FlatList
+        data={sorted}
+        numColumns={2}
+        columnWrapperStyle={{ gap: spacing.sm, paddingHorizontal: spacing.lg }}
+        contentContainerStyle={{ paddingBottom: spacing.xxl }}
+        showsVerticalScrollIndicator={false}
+        keyExtractor={(item) => item.id}
+        renderItem={({ item }) => {
+          const stateName = Array.isArray(item.state) ? (item.state as any)[0]?.name : (item.state as any)?.name;
+          const monthScore = item.destination_months?.find((m) => m.month === currentMonth)?.score;
+          const kf = Array.isArray(item.kids_friendly) ? item.kids_friendly[0] : item.kids_friendly;
+
+          return (
+            <TouchableOpacity
+              style={styles.card}
+              onPress={() => router.push(`/destination/${item.id}` as any)}
+              activeOpacity={0.8}
+            >
+              <Image
+                source={{ uri: `https://web-blond-zeta.vercel.app/images/destinations/${item.id}.jpg` }}
+                style={styles.cardImage}
+              />
+              <View style={styles.cardImageOverlay} />
+
+              {/* Score badge */}
+              {monthScore !== undefined && (
+                <View style={[styles.cardScore, { backgroundColor: SCORE_COLORS[monthScore] || colors.muted }]}>
+                  <Text style={styles.cardScoreText}>{monthScore}/5</Text>
+                </View>
+              )}
+
+              <View style={styles.cardContent}>
+                <Text style={styles.cardName} numberOfLines={1}>{item.name}</Text>
+                <Text style={styles.cardTagline} numberOfLines={2}>{item.tagline}</Text>
+                <View style={styles.cardMeta}>
+                  {stateName && <Text style={styles.cardMetaText}>{stateName}</Text>}
+                  <Text style={[styles.cardMetaText, { color: DIFF_COLORS[item.difficulty] || colors.mutedForeground }]}>
+                    {item.difficulty}
+                  </Text>
+                  {item.elevation_m && (
+                    <Text style={styles.cardMetaText}>{item.elevation_m.toLocaleString()}m</Text>
+                  )}
+                </View>
+
+                {/* 12-month score strip */}
+                {item.destination_months && item.destination_months.length > 0 && (
+                  <View style={styles.monthStrip}>
+                    {Array.from({ length: 12 }, (_, i) => {
+                      const m = i + 1;
+                      const md = item.destination_months?.find((dm) => dm.month === m);
+                      const s = md?.score ?? 0;
+                      const dotColor = s >= 4 ? colors.score5 : s === 3 ? colors.score3 : s >= 1 ? colors.score1 : colors.muted;
+                      return (
+                        <View
+                          key={m}
+                          style={[
+                            styles.monthDot,
+                            { backgroundColor: dotColor },
+                            m === currentMonth && styles.monthDotCurrent,
+                          ]}
+                        />
+                      );
+                    })}
+                  </View>
+                )}
+              </View>
+            </TouchableOpacity>
+          );
+        }}
+      />
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: { flex: 1, backgroundColor: colors.background },
+  center: { justifyContent: "center", alignItems: "center" },
+  searchContainer: { paddingHorizontal: spacing.lg, paddingTop: spacing.sm, paddingBottom: spacing.sm },
+  searchInput: {
+    backgroundColor: colors.card,
+    borderRadius: borderRadius.md,
+    paddingHorizontal: spacing.md,
+    paddingVertical: spacing.md,
+    fontSize: fontSize.sm,
+    color: colors.foreground,
+    borderWidth: 0.5,
+    borderColor: colors.border,
+  },
+  filterRow: { flexDirection: "row", paddingHorizontal: spacing.lg, gap: spacing.xs, marginBottom: spacing.sm },
+  filterChip: {
+    paddingHorizontal: spacing.md,
+    paddingVertical: spacing.sm,
+    borderRadius: borderRadius.md,
+    borderWidth: 0.5,
+    borderColor: colors.border,
+  },
+  filterChipActive: { borderColor: colors.primary, backgroundColor: "rgba(229,229,229,0.1)" },
+  filterChipText: { fontSize: fontSize.xs, color: colors.mutedForeground, textTransform: "capitalize" },
+  filterChipTextActive: { color: colors.primary },
+  resultCount: { fontSize: fontSize.xs, color: colors.mutedForeground, paddingHorizontal: spacing.lg, marginBottom: spacing.sm },
+  card: {
+    width: CARD_WIDTH,
+    borderRadius: borderRadius.lg,
+    overflow: "hidden",
+    backgroundColor: colors.card,
+    marginBottom: spacing.sm,
+    borderWidth: 0.5,
+    borderColor: colors.border,
+  },
+  cardImage: { width: "100%", height: 120 },
+  cardImageOverlay: {
+    position: "absolute", top: 0, left: 0, right: 0, height: 120,
+    backgroundColor: "rgba(0,0,0,0.15)",
+  },
+  cardScore: {
+    position: "absolute", top: spacing.xs, right: spacing.xs,
+    borderRadius: borderRadius.full,
+    paddingHorizontal: 6, paddingVertical: 2,
+  },
+  cardScoreText: { color: "#fff", fontSize: 10, fontWeight: "700" },
+  cardContent: { padding: spacing.sm },
+  cardName: { fontSize: fontSize.sm, fontWeight: "700", color: colors.foreground },
+  cardTagline: { fontSize: fontSize.xs, color: colors.mutedForeground, marginTop: 2, lineHeight: 16 },
+  cardMeta: { flexDirection: "row", gap: 4, marginTop: spacing.xs, flexWrap: "wrap" },
+  cardMetaText: { fontSize: 10, color: colors.mutedForeground },
+  monthStrip: { flexDirection: "row", gap: 2, marginTop: spacing.xs },
+  monthDot: { flex: 1, height: 3, borderRadius: 2 },
+  monthDotCurrent: { borderWidth: 1, borderColor: colors.primary },
+});
