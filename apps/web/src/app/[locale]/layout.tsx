@@ -30,8 +30,8 @@ const fraunces = Fraunces({
 
 export const metadata: Metadata = {
   title: {
-    default: "India Travel Planner — Explore Every Village, Trail & Hidden Gem",
-    template: "%s | India Travel Planner",
+    default: "NakshIQ — Travel Intelligence for India",
+    template: "%s | NakshIQ",
   },
   manifest: "/manifest.json",
   description:
@@ -48,12 +48,12 @@ export const metadata: Metadata = {
     "India travel encyclopedia",
   ],
   openGraph: {
-    title: "India Travel Planner — Explore Every Village, Trail & Hidden Gem",
+    title: "NakshIQ — Travel Intelligence for India",
     description:
       "370+ destinations with monthly scores, kids ratings, safety data, and AI itineraries.",
     type: "website",
     locale: "en_IN",
-    images: [{ url: "/og-image.jpg", width: 800, height: 450, alt: "India Travel Planner" }],
+    images: [{ url: "/og-image.jpg", width: 800, height: 450, alt: "NakshIQ" }],
   },
   twitter: {
     card: "summary_large_image",

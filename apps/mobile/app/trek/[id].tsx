@@ -47,7 +47,7 @@ export default function TrekDetailScreen() {
 
   async function handleShare() {
     await Share.share({
-      message: `${trek.name} — ${trek.duration_days}-day ${trek.difficulty} trek, max ${trek.max_altitude_m}m\n\nCheck it out on India Travel Planner`,
+      message: `${trek.name} — ${trek.duration_days}-day ${trek.difficulty} trek, max ${trek.max_altitude_m}m\n\nCheck it out on NakshIQ`,
       title: trek.name,
     });
   }

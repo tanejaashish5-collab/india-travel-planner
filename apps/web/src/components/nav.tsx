@@ -51,11 +51,11 @@ export function Nav() {
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3">
         {/* Logo */}
         <Link href={`/${locale}`} className="flex items-center gap-2">
-          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-sm font-bold text-primary-foreground">
-            IT
+          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#161614] border border-[#F5F1E8]/20 text-sm font-bold text-[#F5F1E8]">
+            N<span className="text-[#E55642]">.</span>
           </div>
           <span className="hidden text-lg font-bold sm:inline">
-            India Travel Planner
+            NakshIQ
           </span>
         </Link>
 

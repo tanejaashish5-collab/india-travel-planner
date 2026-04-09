@@ -8,10 +8,10 @@ export default function RootNotFound() {
         <header className="border-b border-white/10 bg-[#0a0a0a]/90 backdrop-blur-xl">
           <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3">
             <Link href="/en" className="flex items-center gap-2">
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#e5e5e5] text-sm font-bold text-[#0a0a0a]">
-                IT
+              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#161614] border border-[#F5F1E8]/20 text-sm font-bold text-[#F5F1E8]">
+                N<span className="text-[#E55642]">.</span>
               </div>
-              <span className="text-lg font-bold">India Travel Planner</span>
+              <span className="text-lg font-bold">NakshIQ</span>
             </Link>
             <div className="flex items-center gap-1">
               <Link href="/en/explore" className="rounded-lg px-3 py-2 text-sm text-gray-400 hover:text-white hover:bg-white/5 transition-all">Explore</Link>

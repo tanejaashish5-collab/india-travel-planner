@@ -1,16 +1,24 @@
-// Dark theme matching web app
-export const colors = {
-  background: "#0a0a0a",
-  card: "#1a1a1a",
-  foreground: "#e5e5e5",
-  muted: "#262626",
-  mutedForeground: "#a3a3a3",
-  primary: "#e5e5e5",
-  primaryForeground: "#171717",
-  border: "rgba(255,255,255,0.1)",
-  destructive: "#ef4444",
+// NakshIQ Brand Theme — Cartographic Sovereign
+// Based on 02_Visual_Identity.md
 
-  // Score colors
+export const colors = {
+  // Core brand tones
+  background: "#161614",      // Ink Deep
+  card: "#1e1e1c",            // Slightly lifted from Ink Deep
+  foreground: "#F5F1E8",      // Bone
+  muted: "#2a2a28",           // Muted surface
+  mutedForeground: "#a09a8e", // Muted Bone
+  primary: "#F5F1E8",         // Bone (primary actions)
+  primaryForeground: "#0E0E0C", // Ink (text on primary)
+  border: "rgba(245,241,232,0.1)", // Bone at 10%
+
+  // Brand accents
+  vermillion: "#E55642",      // Vermillion Bright (for dark backgrounds)
+  topographic: "#2F4F3F",     // Topographic Green
+  saffron: "#C8932F",         // Saffron Gold
+  destructive: "#E55642",     // Vermillion for destructive actions
+
+  // Score colors (kept for data visualization)
   score5: "#10b981",
   score4: "#3b82f6",
   score3: "#eab308",

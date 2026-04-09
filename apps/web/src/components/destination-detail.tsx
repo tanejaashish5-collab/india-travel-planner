@@ -109,7 +109,7 @@ export function DestinationDetail({ dest }: { dest: any }) {
               <CompareButton destinationId={dest.id} size="md" />
               {/* Share */}
               <ShareButton
-                title={`${displayName} — India Travel Planner`}
+                title={`${displayName} — NakshIQ`}
                 text={`${displayTagline} | ${dest.difficulty} · ${dest.elevation_m ? dest.elevation_m + 'm' : ''}`}
               />
               {/* Save Button */}

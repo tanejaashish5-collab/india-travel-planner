@@ -13,6 +13,7 @@ import {
 import { useLocalSearchParams, Stack, router } from "expo-router";
 import { colors, spacing, fontSize, borderRadius } from "../../lib/theme";
 import { useDestination } from "../../hooks/useDestinations";
+import { useSavedItems } from "../../hooks/useSavedItems";
 
 const { width } = Dimensions.get("window");
 const MONTH_SHORT = ["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
@@ -26,6 +27,7 @@ const DIFF_COLORS: Record<string, string> = {
 export default function DestinationScreen() {
   const { id } = useLocalSearchParams<{ id: string }>();
   const { destination: dest, loading } = useDestination(id);
+  const { isSaved, toggleSaved } = useSavedItems();
   const [activeTab, setActiveTab] = useState("overview");
   const currentMonth = new Date().getMonth() + 1;
 
@@ -53,7 +55,7 @@ export default function DestinationScreen() {
 
   async function handleShare() {
     await Share.share({
-      message: `${dest.name} — ${dest.tagline}\n\nCheck it out on India Travel Planner`,
+      message: `${dest.name} — ${dest.tagline}\n\nCheck it out on NakshIQ`,
       title: dest.name,
     });
   }
@@ -137,8 +139,8 @@ export default function DestinationScreen() {
           <TouchableOpacity style={styles.actionBtn} onPress={handleShare}>
             <Text style={styles.actionBtnText}>Share</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={[styles.actionBtn, styles.actionBtnPrimary]}>
-            <Text style={[styles.actionBtnText, styles.actionBtnTextPrimary]}>♥ Save</Text>
+          <TouchableOpacity style={[styles.actionBtn, isSaved(id) ? styles.actionBtnSaved : styles.actionBtnPrimary]} onPress={() => toggleSaved(id)}>
+            <Text style={[styles.actionBtnText, styles.actionBtnTextPrimary]}>{isSaved(id) ? "♥ Saved" : "♡ Save"}</Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -355,6 +357,7 @@ const styles = StyleSheet.create({
   actionBtn: { flex: 1, borderRadius: borderRadius.full, borderWidth: 1, borderColor: colors.border, paddingVertical: spacing.md, alignItems: "center" },
   actionBtnText: { fontSize: fontSize.sm, fontWeight: "600", color: colors.mutedForeground },
   actionBtnPrimary: { backgroundColor: colors.primary, borderColor: colors.primary },
+  actionBtnSaved: { backgroundColor: colors.score5, borderColor: colors.score5 },
   actionBtnTextPrimary: { color: colors.primaryForeground },
   tabBar: { paddingHorizontal: spacing.md, paddingVertical: spacing.md },
   tab: { paddingHorizontal: spacing.md, paddingVertical: spacing.sm, marginRight: spacing.xs, borderRadius: borderRadius.md },

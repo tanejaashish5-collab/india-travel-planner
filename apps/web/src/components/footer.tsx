@@ -121,7 +121,7 @@ export function Footer({ stats }: { stats?: { destinations: number; places: numb
         {/* Bottom bar */}
         <div className="h-px bg-gradient-to-r from-transparent via-border/20 to-transparent mb-6" />
         <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-muted-foreground/60">
-          <p>&copy; 2026 India Travel Planner</p>
+          <p>&copy; 2026 NakshIQ</p>
           <p className="italic font-serif">
             "The best journeys answer questions you didn't even think to ask."
           </p>

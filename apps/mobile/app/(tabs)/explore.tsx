@@ -68,31 +68,43 @@ export default function ExploreScreen() {
     <View style={styles.container}>
       {/* Search */}
       <View style={styles.searchContainer}>
+        <Text style={styles.searchIcon}>🔍</Text>
         <TextInput
           style={styles.searchInput}
-          placeholder="Search destinations..."
+          placeholder="Search destinations, states..."
           placeholderTextColor={colors.mutedForeground}
           value={search}
           onChangeText={setSearch}
         />
+        {search ? (
+          <TouchableOpacity onPress={() => setSearch("")}>
+            <Text style={styles.clearBtn}>✕</Text>
+          </TouchableOpacity>
+        ) : null}
       </View>
 
       {/* Difficulty filter */}
       <View style={styles.filterRow}>
-        {["", "easy", "moderate", "hard", "extreme"].map((d) => (
+        {[
+          { key: "", label: "All", color: colors.foreground },
+          { key: "easy", label: "Easy", color: colors.easy },
+          { key: "moderate", label: "Moderate", color: colors.moderate },
+          { key: "hard", label: "Hard", color: colors.hard },
+          { key: "extreme", label: "Extreme", color: colors.extreme },
+        ].map((d) => (
           <TouchableOpacity
-            key={d}
-            style={[styles.filterChip, diffFilter === d && styles.filterChipActive]}
-            onPress={() => setDiffFilter(d)}
+            key={d.key}
+            style={[styles.filterChip, diffFilter === d.key && { borderColor: d.color, backgroundColor: d.color + "15" }]}
+            onPress={() => setDiffFilter(d.key)}
           >
-            <Text style={[styles.filterChipText, diffFilter === d && styles.filterChipTextActive]}>
-              {d || "All"}
+            <Text style={[styles.filterChipText, diffFilter === d.key && { color: d.color }]}>
+              {d.label}
             </Text>
           </TouchableOpacity>
         ))}
       </View>
 
-      <Text style={styles.resultCount}>{sorted.length} destinations</Text>
+      <Text style={styles.resultCount}>{sorted.length} destinations · sorted by {MONTH_SHORT[currentMonth]} score</Text>
 
       {/* Grid */}
       <FlatList
@@ -172,17 +184,15 @@ export default function ExploreScreen() {
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: colors.background },
   center: { justifyContent: "center", alignItems: "center" },
-  searchContainer: { paddingHorizontal: spacing.lg, paddingTop: spacing.sm, paddingBottom: spacing.sm },
+  searchContainer: { flexDirection: "row", alignItems: "center", marginHorizontal: spacing.lg, marginTop: spacing.sm, marginBottom: spacing.sm, backgroundColor: colors.card, borderRadius: borderRadius.md, borderWidth: 1, borderColor: colors.border, paddingHorizontal: spacing.md },
+  searchIcon: { fontSize: 16, marginRight: spacing.sm },
   searchInput: {
-    backgroundColor: colors.card,
-    borderRadius: borderRadius.md,
-    paddingHorizontal: spacing.md,
-    paddingVertical: spacing.md,
+    flex: 1,
+    paddingVertical: 12,
     fontSize: fontSize.sm,
     color: colors.foreground,
-    borderWidth: 0.5,
-    borderColor: colors.border,
   },
+  clearBtn: { fontSize: fontSize.sm, color: colors.mutedForeground, padding: spacing.xs },
   filterRow: { flexDirection: "row", paddingHorizontal: spacing.lg, gap: spacing.xs, marginBottom: spacing.sm },
   filterChip: {
     paddingHorizontal: spacing.md,

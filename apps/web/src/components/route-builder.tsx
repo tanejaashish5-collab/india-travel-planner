@@ -72,7 +72,7 @@ export function RouteBuilder({ destinations }: { destinations: any[] }) {
   // Generate share text
   function shareRoute() {
     const names = selectedDests.map((d: any) => d.name).join(" → ");
-    const text = `My ${MONTH_FULL[month]} road trip: ${names}\n\nPlanned on India Travel Planner`;
+    const text = `My ${MONTH_FULL[month]} road trip: ${names}\n\nPlanned on NakshIQ`;
     const waText = encodeURIComponent(text);
     window.open(`https://wa.me/?text=${waText}`, "_blank");
   }

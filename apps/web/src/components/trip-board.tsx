@@ -104,7 +104,7 @@ export function TripBoard({ destinations }: { destinations: any[] }) {
       const d = destinations.find((d) => d.id === i.destinationId);
       return d?.name || i.destinationId;
     });
-    const text = `${trip.name}\n${MONTH_SHORT[trip.month]} · ${stats.totalDays} days · ${trip.travelers} travelers\n\n${names.map((n, i) => `${i + 1}. ${n} (${trip.items[i].days}d)`).join("\n")}\n\nEst. budget: ₹${stats.totalBudget.toLocaleString()} total\n\nPlanned on India Travel Planner`;
+    const text = `${trip.name}\n${MONTH_SHORT[trip.month]} · ${stats.totalDays} days · ${trip.travelers} travelers\n\n${names.map((n, i) => `${i + 1}. ${n} (${trip.items[i].days}d)`).join("\n")}\n\nEst. budget: ₹${stats.totalBudget.toLocaleString()} total\n\nPlanned on NakshIQ`;
     const waText = encodeURIComponent(text);
     window.open(`https://wa.me/?text=${waText}`, "_blank");
   }

@@ -1,21 +1,21 @@
 {
   "expo": {
-    "name": "India Travel Planner",
-    "slug": "india-travel-planner",
+    "name": "NakshIQ",
+    "slug": "nakshiq",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "indiatravelplanner",
+    "scheme": "nakshiq",
     "userInterfaceStyle": "dark",
     "newArchEnabled": true,
     "splash": {
       "image": "./assets/images/splash-icon.png",
       "resizeMode": "contain",
-      "backgroundColor": "#0a0a0a"
+      "backgroundColor": "#161614"
     },
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.indiatravelplanner.app",
+      "bundleIdentifier": "com.nakshiq.app",
       "infoPlist": {
         "NSLocationWhenInUseUsageDescription": "Show your distance from destinations and nearby places"
       }
@@ -23,9 +23,9 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
-        "backgroundColor": "#0a0a0a"
+        "backgroundColor": "#161614"
       },
-      "package": "com.indiatravelplanner.app",
+      "package": "com.nakshiq.app",
       "edgeToEdgeEnabled": true,
       "permissions": ["ACCESS_FINE_LOCATION"]
     },

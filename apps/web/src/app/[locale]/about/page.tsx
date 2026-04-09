@@ -4,7 +4,7 @@ import { Footer } from "@/components/footer";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "About Us — Why We Built India Travel Planner",
+  title: "About Us — Why We Built NakshIQ",
   description: "We got tired of unreliable travel advice. So we built an encyclopedia with real data, honest scores, and no sponsored content. Here's our story.",
 };
 

@@ -33,7 +33,7 @@ export default function TabLayout() {
         name="index"
         options={{
           title: "Home",
-          headerTitle: "India Travel Planner",
+          headerTitle: "NakshIQ",
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="compass-outline" size={size} color={color} />
           ),

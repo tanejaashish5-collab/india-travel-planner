@@ -9,7 +9,7 @@ export function useTreks() {
     async function fetch() {
       const { data } = await supabase
         .from("treks")
-        .select("id, name, destination_id, difficulty, duration_days, max_altitude_m, distance_km, best_months, kids_suitable, fitness_level, description, highlights, warnings")
+        .select("id, name, destination_id, difficulty, duration_days, max_altitude_m, distance_km, best_months, kids_suitable, fitness_level, description, highlights, warnings, destinations(name, state:states(name))")
         .order("name");
       setTreks(data ?? []);
       setLoading(false);
