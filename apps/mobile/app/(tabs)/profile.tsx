@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import {
   View,
   Text,
@@ -10,11 +10,19 @@ import {
   ActivityIndicator,
   Linking,
 } from "react-native";
+import { router } from "expo-router";
 import { colors, spacing, fontSize, borderRadius } from "../../lib/theme";
 import { useAuth } from "../../hooks/useAuth";
+import { useVisited } from "../../hooks/useVisited";
+import { useDestinations } from "../../hooks/useDestinations";
+import { usePreferences } from "../../hooks/usePreferences";
 
 export default function ProfileScreen() {
   const { user, loading, signInWithEmail, signUpWithEmail, signOut } = useAuth();
+  const { visitedCount, calculateScore } = useVisited();
+  const { destinations } = useDestinations();
+  const { resetOnboarding } = usePreferences();
+  const explorerScore = useMemo(() => calculateScore(destinations), [destinations, calculateScore]);
   const [mode, setMode] = useState<"signin" | "signup">("signin");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -59,6 +67,22 @@ export default function ProfileScreen() {
           </View>
           <Text style={styles.profileName}>{displayName}</Text>
           <Text style={styles.profileEmail}>{user.email}</Text>
+
+          {/* Explorer Stats */}
+          <View style={styles.explorerStats}>
+            <View style={styles.explorerStat}>
+              <Text style={styles.explorerNum}>{visitedCount}</Text>
+              <Text style={styles.explorerLabel}>Visited</Text>
+            </View>
+            <View style={[styles.explorerStat, styles.explorerStatMain]}>
+              <Text style={styles.explorerScore}>{explorerScore}</Text>
+              <Text style={styles.explorerLabel}>Explorer Score</Text>
+            </View>
+            <View style={styles.explorerStat}>
+              <Text style={styles.explorerNum}>{destinations.length}</Text>
+              <Text style={styles.explorerLabel}>Total</Text>
+            </View>
+          </View>
         </View>
 
         {/* Settings */}
@@ -78,6 +102,11 @@ export default function ProfileScreen() {
           <TouchableOpacity style={styles.settingsRow}>
             <Text style={styles.settingsLabel}>Offline Maps</Text>
             <Text style={styles.settingsValue}>Coming soon</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity style={styles.settingsRow} onPress={() => { resetOnboarding(); router.push("/onboarding"); }}>
+            <Text style={styles.settingsLabel}>Redo Onboarding</Text>
+            <Text style={styles.settingsChevron}>→</Text>
           </TouchableOpacity>
         </View>
 
@@ -236,6 +265,12 @@ const styles = StyleSheet.create({
   avatarText: { fontSize: fontSize["3xl"], fontWeight: "700", color: colors.primaryForeground },
   profileName: { fontSize: fontSize.xl, fontWeight: "700", color: colors.foreground },
   profileEmail: { fontSize: fontSize.sm, color: colors.mutedForeground, marginTop: 4 },
+  explorerStats: { flexDirection: "row", marginTop: spacing.lg, gap: spacing.sm },
+  explorerStat: { flex: 1, alignItems: "center", backgroundColor: colors.card, borderRadius: borderRadius.md, paddingVertical: spacing.md, borderWidth: 1, borderColor: colors.border },
+  explorerStatMain: { borderColor: colors.vermillion + "40", backgroundColor: colors.vermillion + "08" },
+  explorerNum: { fontSize: fontSize.xl, fontWeight: "800", color: colors.foreground },
+  explorerScore: { fontSize: fontSize["2xl"], fontWeight: "800", color: colors.vermillion },
+  explorerLabel: { fontSize: 10, color: colors.mutedForeground, marginTop: 2, textTransform: "uppercase", letterSpacing: 0.5 },
   section: { marginTop: spacing.lg },
   sectionTitle: { fontSize: fontSize.xs, fontWeight: "700", color: colors.mutedForeground, textTransform: "uppercase", letterSpacing: 1, marginBottom: spacing.sm },
   settingsRow: {

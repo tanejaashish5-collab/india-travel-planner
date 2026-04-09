@@ -15,6 +15,7 @@ import { colors, spacing, fontSize, borderRadius } from "../../lib/theme";
 import { useDestination } from "../../hooks/useDestinations";
 import { useSavedItems } from "../../hooks/useSavedItems";
 import { useArticlesForDestination } from "../../hooks/useArticles";
+import { useVisited } from "../../hooks/useVisited";
 
 const { width } = Dimensions.get("window");
 const MONTH_SHORT = ["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
@@ -30,6 +31,7 @@ export default function DestinationScreen() {
   const { destination: dest, loading } = useDestination(id);
   const { isSaved, toggleSaved } = useSavedItems();
   const { articles: guideArticles } = useArticlesForDestination(id);
+  const { isVisited, toggleVisited } = useVisited();
   const [activeTab, setActiveTab] = useState("overview");
   const currentMonth = new Date().getMonth() + 1;
 
@@ -143,6 +145,9 @@ export default function DestinationScreen() {
           </TouchableOpacity>
           <TouchableOpacity style={[styles.actionBtn, isSaved(id) ? styles.actionBtnSaved : styles.actionBtnPrimary]} onPress={() => toggleSaved(id)}>
             <Text style={[styles.actionBtnText, styles.actionBtnTextPrimary]}>{isSaved(id) ? "♥ Saved" : "♡ Save"}</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={[styles.actionBtn, isVisited(id) && styles.actionBtnVisited]} onPress={() => toggleVisited(id)}>
+            <Text style={[styles.actionBtnText, isVisited(id) && styles.actionBtnTextPrimary]}>{isVisited(id) ? "✓ Visited" : "📍 Visited?"}</Text>
           </TouchableOpacity>
         </View>
 
@@ -376,6 +381,7 @@ const styles = StyleSheet.create({
   actionBtnText: { fontSize: fontSize.sm, fontWeight: "600", color: colors.mutedForeground },
   actionBtnPrimary: { backgroundColor: colors.primary, borderColor: colors.primary },
   actionBtnSaved: { backgroundColor: colors.score5, borderColor: colors.score5 },
+  actionBtnVisited: { backgroundColor: colors.saffron, borderColor: colors.saffron },
   guideLinks: { marginTop: spacing.md, gap: spacing.sm },
   guideLink: { flexDirection: "row", alignItems: "center", gap: spacing.sm, backgroundColor: "rgba(245,241,232,0.05)", borderWidth: 1, borderColor: "rgba(245,241,232,0.15)", borderRadius: borderRadius.md, padding: spacing.sm },
   guideLinkIcon: { fontSize: 18 },
