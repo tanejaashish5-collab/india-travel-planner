@@ -136,7 +136,7 @@ export function DestinationDetail({ dest }: { dest: any }) {
         <FadeIn>
           <div className="mb-6 relative h-56 sm:h-72 lg:h-96 rounded-2xl overflow-hidden bg-muted/30 film-grain">
             {/* Video hero for destinations with clips */}
-            {["chopta-tungnath","darjeeling","amritsar","jaisalmer","srinagar","kedarnath","leh","manali","pangong-lake","pushkar","jodhpur","rishikesh","spiti-valley","tawang","tirthan-valley","valley-of-flowers","varanasi"].includes(dest.id) ? (
+            {["chopta-tungnath","darjeeling","amritsar","jaisalmer","srinagar","kedarnath","leh","manali","pangong-lake","pushkar","jodhpur","rishikesh","spiti-valley","tawang","tirthan-valley","valley-of-flowers","varanasi","kasol-parvati-valley","nubra-valley"].includes(dest.id) ? (
               <video
                 autoPlay
                 muted
