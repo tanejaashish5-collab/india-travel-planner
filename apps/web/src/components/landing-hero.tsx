@@ -264,7 +264,7 @@ export function LandingHero({
                 </button>
               </div>
               {/* Quick region shortcuts */}
-              <div className="flex items-center justify-center gap-2 mt-3">
+              <div className="flex flex-wrap items-center justify-center gap-2 mt-3">
                 <span className="text-xs text-muted-foreground/50">{locale === "hi" ? "तुरंत:" : "Quick:"}</span>
                 {[
                   { href: `/${locale}/region/himachal-pradesh`, label: locale === "hi" ? "हिमाचल" : "Himachal" },

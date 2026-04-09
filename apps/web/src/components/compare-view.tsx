@@ -148,7 +148,7 @@ export function CompareView({ destinations }: { destinations: any[] }) {
       <p className="text-muted-foreground mb-8">{compared.length} destinations · {MONTH_SHORT[currentMonth]} scores</p>
 
       {/* Hero cards */}
-      <div className={`grid gap-4 mb-8 ${compared.length === 2 ? "grid-cols-2" : "grid-cols-3"}`}>
+      <div className={`grid gap-4 mb-8 ${compared.length === 2 ? "grid-cols-1 sm:grid-cols-2" : "grid-cols-1 sm:grid-cols-3"}`}>
         {compared.map((d: any) => (
           <Link key={d.id} href={`/${locale}/destination/${d.id}`} className="group block">
             <div className="relative h-40 rounded-2xl overflow-hidden bg-muted/30">
@@ -170,7 +170,7 @@ export function CompareView({ destinations }: { destinations: any[] }) {
       </div>
 
       {/* Comparison table — premium design */}
-      <div className="rounded-2xl border border-border overflow-hidden">
+      <div className="rounded-2xl border border-border overflow-hidden overflow-x-auto">
         {rows.map((row, idx) => {
           const values = compared.map((d: any) => row.getValue(d));
           // Find best value for highlighting

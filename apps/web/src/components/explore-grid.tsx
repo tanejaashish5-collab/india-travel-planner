@@ -337,7 +337,7 @@ function DestinationCard({
               );
             })}
           </div>
-          <div className="flex justify-between mt-1 text-xs text-muted-foreground/40">
+          <div className="flex justify-between mt-1 text-xs text-muted-foreground/60">
             <span>J</span><span>D</span>
           </div>
         </div>

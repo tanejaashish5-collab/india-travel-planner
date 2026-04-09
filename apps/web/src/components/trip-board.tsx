@@ -311,9 +311,9 @@ export function TripBoard({ destinations }: { destinations: any[] }) {
 
                         {/* Controls */}
                         <div className="flex items-center gap-1">
-                          <button onClick={() => moveItem(idx, -1)} className="text-xs text-muted-foreground hover:text-foreground px-1 disabled:opacity-20" disabled={idx === 0}>▲</button>
-                          <button onClick={() => moveItem(idx, 1)} className="text-xs text-muted-foreground hover:text-foreground px-1 disabled:opacity-20" disabled={idx === trip.items.length - 1}>▼</button>
-                          <button onClick={() => removeItem(item.destinationId)} className="text-xs text-muted-foreground hover:text-red-400 px-1 ml-1">✕</button>
+                          <button onClick={() => moveItem(idx, -1)} className="text-xs text-muted-foreground hover:text-foreground px-1 disabled:opacity-20" disabled={idx === 0} aria-label="Move up">▲</button>
+                          <button onClick={() => moveItem(idx, 1)} className="text-xs text-muted-foreground hover:text-foreground px-1 disabled:opacity-20" disabled={idx === trip.items.length - 1} aria-label="Move down">▼</button>
+                          <button onClick={() => removeItem(item.destinationId)} className="text-xs text-muted-foreground hover:text-red-400 px-1 ml-1" aria-label="Remove from trip">✕</button>
                         </div>
                       </div>
 
