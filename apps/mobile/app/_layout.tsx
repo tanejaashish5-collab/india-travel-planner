@@ -55,6 +55,14 @@ export default function RootLayout() {
             headerBackTitle: "Back",
           }}
         />
+        <Stack.Screen
+          name="trek/[id]"
+          options={{
+            headerStyle: { backgroundColor: colors.background },
+            headerTintColor: colors.foreground,
+            headerBackTitle: "Back",
+          }}
+        />
       </Stack>
     </ThemeProvider>
   );
