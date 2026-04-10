@@ -156,14 +156,22 @@ export default async function TouristTrapsPage({
                       {trap.comparison}
                     </p>
                   )}
-                  {trapName && (
+                  <div className="mt-1.5 flex gap-3">
+                    {trapName && (
+                      <Link
+                        href={`/${locale}/destination/${trap.trap_destination_id}`}
+                        className="text-xs font-medium text-muted-foreground underline-offset-2 hover:text-foreground hover:underline"
+                      >
+                        View {trapName} &rarr;
+                      </Link>
+                    )}
                     <Link
-                      href={`/${locale}/destination/${trap.trap_destination_id}`}
-                      className="mt-1.5 inline-block text-xs font-medium text-muted-foreground underline-offset-2 hover:text-foreground hover:underline"
+                      href={`/${locale}/skip-list/${trap.trap_destination_id}`}
+                      className="text-xs font-medium text-primary underline-offset-2 hover:underline"
                     >
-                      View {trapName} &rarr;
+                      Full analysis &rarr;
                     </Link>
-                  )}
+                  </div>
                 </div>
 
                 {/* Arrow divider */}

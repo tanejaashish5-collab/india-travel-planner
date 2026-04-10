@@ -267,6 +267,29 @@ export function DestinationDetail({ dest }: { dest: any }) {
               </div>
             </div>
 
+            {/* Quick links to related pages */}
+            <div className="mt-3 flex flex-wrap gap-2">
+              {(() => {
+                const monthSlug = ["","january","february","march","april","may","june","july","august","september","october","november","december"][currentMonth];
+                const monthName = ["","January","February","March","April","May","June","July","August","September","October","November","December"][currentMonth];
+                return (
+                  <Link href={`/${locale}/where-to-go/${monthSlug}`} className="rounded-full border border-border px-3 py-1.5 text-xs font-medium text-muted-foreground hover:text-foreground hover:border-primary/40 transition-all">
+                    All destinations in {monthName} →
+                  </Link>
+                );
+              })()}
+              {kf && (
+                <Link href={`/${locale}/with-kids/${dest.id}`} className="rounded-full border border-border px-3 py-1.5 text-xs font-medium text-muted-foreground hover:text-foreground hover:border-primary/40 transition-all">
+                  👶 Family Guide →
+                </Link>
+              )}
+              {dest.nearbyDestinations?.length > 0 && (
+                <Link href={`/${locale}/vs/${dest.id}-vs-${dest.nearbyDestinations[0].id}`} className="rounded-full border border-border px-3 py-1.5 text-xs font-medium text-muted-foreground hover:text-foreground hover:border-primary/40 transition-all">
+                  ⚔ Compare →
+                </Link>
+              )}
+            </div>
+
             {/* Live Weather */}
             <div className="mt-4">
               <WeatherWidget destinationId={dest.id} />
