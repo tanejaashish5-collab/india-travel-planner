@@ -52,18 +52,17 @@ export function WithKidsContent({
       `${dest.difficulty.charAt(0).toUpperCase() + dest.difficulty.slice(1)} terrain — not suitable for toddlers or children with limited hiking experience.`
     );
   }
-  if (cc?.emergency && cc.emergency.toLowerCase().includes("far")) {
-    warnings.push(`Medical access is limited: ${cc.emergency}`);
+  const ccEmergency = typeof cc?.emergency === "object" ? JSON.stringify(cc.emergency) : cc?.emergency ?? "";
+  const ccNetwork = typeof cc?.network === "object" ? JSON.stringify(cc.network) : cc?.network ?? "";
+  const ccReach = typeof cc?.reach === "object" ? (cc.reach.road_condition || cc.reach.from_nearest_city || JSON.stringify(cc.reach)) : cc?.reach ?? "";
+  if (ccEmergency && ccEmergency.toLowerCase().includes("far")) {
+    warnings.push(`Medical access is limited: ${ccEmergency}`);
   }
-  if (
-    cc?.network &&
-    (cc.network.toLowerCase().includes("no signal") ||
-      cc.network.toLowerCase().includes("patchy"))
-  ) {
-    warnings.push(`Connectivity is unreliable: ${cc.network}`);
+  if (ccNetwork && (ccNetwork.toLowerCase().includes("no signal") || ccNetwork.toLowerCase().includes("patchy"))) {
+    warnings.push(`Connectivity is unreliable: ${ccNetwork}`);
   }
-  if (cc?.reach && cc.reach.toLowerCase().includes("narrow")) {
-    warnings.push(`Road conditions may be stressful for car-sick children: ${cc.reach}`);
+  if (ccReach && ccReach.toLowerCase().includes("narrow")) {
+    warnings.push(`Road conditions may be stressful for car-sick children: ${ccReach}`);
   }
 
   // Family-friendly activities from reasons
@@ -360,7 +359,7 @@ export function WithKidsContent({
                     <h3 className="font-bold">Hospital & Emergency</h3>
                   </div>
                   <p className="text-sm text-muted-foreground">
-                    {cc.emergency}
+                    {typeof cc.emergency === "object" ? JSON.stringify(cc.emergency) : cc.emergency}
                   </p>
                   {cc.safety_rating && (
                     <p className="mt-2 text-xs text-muted-foreground">
@@ -378,7 +377,7 @@ export function WithKidsContent({
                     <span className="text-lg">{"\uD83D\uDCF6"}</span>
                     <h3 className="font-bold">Network & Connectivity</h3>
                   </div>
-                  <p className="text-sm text-muted-foreground">{cc.network}</p>
+                  <p className="text-sm text-muted-foreground">{typeof cc.network === "object" ? JSON.stringify(cc.network) : cc.network}</p>
                 </div>
               </StaggerItem>
             )}

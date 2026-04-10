@@ -173,7 +173,7 @@ export default async function WithKidsPage({
       acceptedAnswer: {
         "@type": "Answer" as const,
         text: cc?.emergency
-          ? `Emergency access at ${dest.name}: ${cc.emergency}`
+          ? `Emergency access at ${dest.name}: ${typeof cc.emergency === "object" ? JSON.stringify(cc.emergency) : cc.emergency}`
           : `Visit the full ${dest.name} guide on NakshIQ for emergency and hospital information.`,
       },
     },
