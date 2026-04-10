@@ -52,9 +52,15 @@ export function WithKidsContent({
       `${dest.difficulty.charAt(0).toUpperCase() + dest.difficulty.slice(1)} terrain — not suitable for toddlers or children with limited hiking experience.`
     );
   }
-  const ccEmergency = typeof cc?.emergency === "object" ? JSON.stringify(cc.emergency) : cc?.emergency ?? "";
-  const ccNetwork = typeof cc?.network === "object" ? JSON.stringify(cc.network) : cc?.network ?? "";
-  const ccReach = typeof cc?.reach === "object" ? (cc.reach.road_condition || cc.reach.from_nearest_city || JSON.stringify(cc.reach)) : cc?.reach ?? "";
+  const ccEmergency = typeof cc?.emergency === "object"
+    ? [cc.emergency.nearest_hospital, cc.emergency.ambulance, cc.emergency.rescue, cc.emergency.police_station, cc.emergency.helpline].filter(Boolean).join(". ")
+    : cc?.emergency ?? "";
+  const ccNetwork = typeof cc?.network === "object"
+    ? [cc.network.note, cc.network.jio && "Jio available", cc.network.bsnl && "BSNL available", cc.network.vi && "Vi available", cc.network.airtel && "Airtel available", cc.network.wifi_available && "WiFi available"].filter(Boolean).join(". ")
+    : cc?.network ?? "";
+  const ccReach = typeof cc?.reach === "object"
+    ? (cc.reach.road_condition || cc.reach.from_nearest_city || cc.reach.public_transport || "See destination guide")
+    : cc?.reach ?? "";
   if (ccEmergency && ccEmergency.toLowerCase().includes("far")) {
     warnings.push(`Medical access is limited: ${ccEmergency}`);
   }
@@ -359,7 +365,9 @@ export function WithKidsContent({
                     <h3 className="font-bold">Hospital & Emergency</h3>
                   </div>
                   <p className="text-sm text-muted-foreground">
-                    {typeof cc.emergency === "object" ? JSON.stringify(cc.emergency) : cc.emergency}
+                    {typeof cc.emergency === "object"
+                      ? [cc.emergency.nearest_hospital, cc.emergency.ambulance, cc.emergency.rescue, cc.emergency.police_station, cc.emergency.helpline].filter(Boolean).join(". ")
+                      : cc.emergency}
                   </p>
                   {cc.safety_rating && (
                     <p className="mt-2 text-xs text-muted-foreground">
@@ -377,7 +385,11 @@ export function WithKidsContent({
                     <span className="text-lg">{"\uD83D\uDCF6"}</span>
                     <h3 className="font-bold">Network & Connectivity</h3>
                   </div>
-                  <p className="text-sm text-muted-foreground">{typeof cc.network === "object" ? JSON.stringify(cc.network) : cc.network}</p>
+                  <p className="text-sm text-muted-foreground">
+                    {typeof cc.network === "object"
+                      ? [cc.network.note, cc.network.jio && "Jio available", cc.network.bsnl && "BSNL available", cc.network.vi && "Vi available", cc.network.airtel && "Airtel available"].filter(Boolean).join(". ")
+                      : cc.network}
+                  </p>
                 </div>
               </StaggerItem>
             )}
