@@ -9,6 +9,7 @@ import {
   StyleSheet,
   ActivityIndicator,
   Dimensions,
+  ScrollView,
 } from "react-native";
 import { router } from "expo-router";
 import { colors, spacing, fontSize, borderRadius } from "../../lib/theme";
@@ -29,15 +30,22 @@ export default function ExploreScreen() {
   const { destinations, loading } = useDestinations();
   const [search, setSearch] = useState("");
   const [diffFilter, setDiffFilter] = useState("");
+  const [tagFilter, setTagFilter] = useState("");
   const [failedImages, setFailedImages] = useState<Set<string>>(new Set());
   const onImageError = useCallback((id: string) => {
     setFailedImages((prev) => new Set(prev).add(id));
   }, []);
   const currentMonth = new Date().getMonth() + 1;
 
+  const allTags = useMemo(
+    () => [...new Set(destinations.flatMap((d) => d.tags || []))].sort(),
+    [destinations]
+  );
+
   const filtered = useMemo(() => {
     return destinations.filter((d) => {
       if (diffFilter && d.difficulty !== diffFilter) return false;
+      if (tagFilter && !(d.tags || []).includes(tagFilter)) return false;
       if (search) {
         const q = search.toLowerCase();
         const stateName = Array.isArray(d.state) ? (d.state as any)[0]?.name : (d.state as any)?.name;
@@ -49,7 +57,7 @@ export default function ExploreScreen() {
       }
       return true;
     });
-  }, [destinations, search, diffFilter]);
+  }, [destinations, search, diffFilter, tagFilter]);
 
   // Sort by current month score
   const sorted = useMemo(() => {
@@ -107,6 +115,39 @@ export default function ExploreScreen() {
           </TouchableOpacity>
         ))}
       </View>
+
+      {/* Tag filter */}
+      {allTags.length > 0 && (
+        <ScrollView
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          contentContainerStyle={styles.tagRow}
+        >
+          <TouchableOpacity
+            style={[
+              styles.tagChip,
+              !tagFilter && styles.tagChipActive,
+            ]}
+            onPress={() => setTagFilter("")}
+          >
+            <Text style={[styles.tagChipText, !tagFilter && styles.tagChipTextActive]}>All Tags</Text>
+          </TouchableOpacity>
+          {allTags.map((tag) => (
+            <TouchableOpacity
+              key={tag}
+              style={[
+                styles.tagChip,
+                tagFilter === tag && styles.tagChipActive,
+              ]}
+              onPress={() => setTagFilter(tagFilter === tag ? "" : tag)}
+            >
+              <Text style={[styles.tagChipText, tagFilter === tag && styles.tagChipTextActive]}>
+                {tag}
+              </Text>
+            </TouchableOpacity>
+          ))}
+        </ScrollView>
+      )}
 
       <Text style={styles.resultCount}>{sorted.length} destinations · sorted by {MONTH_SHORT[currentMonth]} score</Text>
 
@@ -213,6 +254,18 @@ const styles = StyleSheet.create({
   filterChipActive: { borderColor: colors.primary, backgroundColor: "rgba(229,229,229,0.1)" },
   filterChipText: { fontSize: fontSize.xs, color: colors.mutedForeground, textTransform: "capitalize" },
   filterChipTextActive: { color: colors.primary },
+  tagRow: { flexDirection: "row", paddingHorizontal: spacing.lg, gap: spacing.xs, marginBottom: spacing.sm },
+  tagChip: {
+    paddingHorizontal: spacing.md,
+    paddingVertical: spacing.sm,
+    borderRadius: borderRadius.full,
+    borderWidth: 0.5,
+    borderColor: colors.border,
+    backgroundColor: colors.card,
+  },
+  tagChipActive: { borderColor: colors.topographic, backgroundColor: colors.topographic + "20" },
+  tagChipText: { fontSize: fontSize.xs, color: colors.mutedForeground, textTransform: "capitalize" },
+  tagChipTextActive: { color: colors.topographic },
   resultCount: { fontSize: fontSize.xs, color: colors.mutedForeground, paddingHorizontal: spacing.lg, marginBottom: spacing.sm },
   card: {
     width: CARD_WIDTH,

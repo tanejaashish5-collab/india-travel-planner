@@ -142,6 +142,7 @@ export default function WhereToGoScreen() {
               if (!dest) return null;
 
               const scoreConf = SCORE_CONFIG[item.score] ?? SCORE_CONFIG[3];
+              const stateName = Array.isArray(dest.state) ? (dest.state as any)[0]?.name : (dest.state as any)?.name;
               const diffColor =
                 DIFFICULTY_COLOR[dest.difficulty?.toLowerCase()] ??
                 colors.mutedForeground;
@@ -182,6 +183,12 @@ export default function WhereToGoScreen() {
 
                     {/* Meta row */}
                     <View style={s.metaRow}>
+                      {stateName && (
+                        <Text style={s.stateText}>{stateName}</Text>
+                      )}
+                      {stateName && dest.difficulty && (
+                        <Text style={s.metaDot}>·</Text>
+                      )}
                       {dest.difficulty && (
                         <View style={[s.metaPill, { borderColor: diffColor + "40" }]}>
                           <Text style={[s.metaPillText, { color: diffColor }]}>
@@ -358,6 +365,15 @@ const s = StyleSheet.create({
     alignItems: "center",
     gap: spacing.sm,
     marginTop: spacing.xs,
+  },
+  stateText: {
+    fontSize: fontSize.xs,
+    color: colors.mutedForeground,
+    fontWeight: "500",
+  },
+  metaDot: {
+    fontSize: fontSize.xs,
+    color: colors.mutedForeground,
   },
   metaPill: {
     paddingHorizontal: 6,

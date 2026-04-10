@@ -12,6 +12,7 @@ export interface MonthDestination {
     tagline: string;
     difficulty: string;
     elevation_m: number | null;
+    state: { name: string } | { name: string }[] | null;
   } | null;
 }
 
@@ -24,7 +25,7 @@ export function useWhereToGo(month: number) {
     const { data } = await supabase
       .from("destination_months")
       .select(
-        "destination_id, month, score, note, destinations(id, name, tagline, difficulty, elevation_m)"
+        "destination_id, month, score, note, destinations(id, name, tagline, difficulty, elevation_m, state:states(name))"
       )
       .eq("month", month)
       .order("score", { ascending: false });

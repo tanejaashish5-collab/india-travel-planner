@@ -1,7 +1,8 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useCallback } from "react";
 import {
   View,
   Text,
+  FlatList,
   ScrollView,
   TouchableOpacity,
   StyleSheet,
@@ -47,14 +48,69 @@ export default function SavedScreen() {
     return <View style={styles.center}><ActivityIndicator size="large" color={colors.primary} /></View>;
   }
 
-  return (
-    <ScrollView style={styles.container} contentContainerStyle={styles.content}>
+  const renderSavedItem = useCallback(({ item: dest }: { item: typeof savedDestinations[0] }) => {
+    const kf = Array.isArray(dest.kids_friendly) ? dest.kids_friendly?.[0] : dest.kids_friendly;
+    const stateName = dest.state && !Array.isArray(dest.state) ? dest.state.name : "";
+    const monthScore = dest.destination_months?.find((m) => m.month === currentMonth)?.score;
+    const isComparing = compareIds.includes(dest.id);
+
+    return (
+      <TouchableOpacity
+        style={[styles.card, isComparing && styles.cardComparing]}
+        onPress={() => compareMode ? toggleCompare(dest.id) : router.push(`/destination/${dest.id}`)}
+      >
+        {compareMode && (
+          <View style={[styles.checkbox, isComparing && styles.checkboxActive]}>
+            {isComparing && <Text style={styles.checkmark}>✓</Text>}
+          </View>
+        )}
+
+        <View style={styles.cardContent}>
+          <View style={styles.cardTop}>
+            {monthScore !== undefined && (
+              <View style={[styles.scorePill, { borderColor: SCORE_COLOR[monthScore] || colors.border }]}>
+                <Text style={{ fontSize: fontSize.xs, fontWeight: "700", color: SCORE_COLOR[monthScore] || colors.mutedForeground }}>
+                  {monthScore}/5 {MONTH_SHORT[currentMonth]}
+                </Text>
+              </View>
+            )}
+            {kf && (
+              <Text style={styles.kidsTag}>{kf.suitable ? `👶 ${kf.rating}/5` : "Adults"}</Text>
+            )}
+          </View>
+
+          <Text style={styles.cardName}>{dest.name}</Text>
+          <Text style={styles.cardTagline} numberOfLines={2}>{dest.tagline}</Text>
+
+          <View style={styles.cardMeta}>
+            {stateName ? <Text style={styles.metaText}>{stateName}</Text> : null}
+            <Text style={styles.metaDot}>·</Text>
+            <Text style={[styles.metaText, { color: DIFF_COLOR[dest.difficulty] }]}>{dest.difficulty}</Text>
+            {dest.elevation_m && (
+              <>
+                <Text style={styles.metaDot}>·</Text>
+                <Text style={[styles.metaText, { fontFamily: "monospace" }]}>{dest.elevation_m.toLocaleString()}m</Text>
+              </>
+            )}
+          </View>
+
+          {!compareMode && (
+            <TouchableOpacity onPress={() => removeSaved(dest.id)} style={styles.removeBtn}>
+              <Text style={styles.removeText}>Remove</Text>
+            </TouchableOpacity>
+          )}
+        </View>
+      </TouchableOpacity>
+    );
+  }, [compareMode, compareIds, currentMonth]);
+
+  const listHeader = useMemo(() => (
+    <View>
       <Text style={styles.title}>Saved Destinations</Text>
       <Text style={styles.subtitle}>
         {savedDestinations.length} saved · {compareMode ? "Select up to 3 to compare" : "Your travel shortlist"}
       </Text>
 
-      {/* Compare toggle */}
       <View style={styles.actions}>
         <TouchableOpacity
           style={[styles.compareBtn, compareMode && styles.compareBtnActive]}
@@ -68,86 +124,19 @@ export default function SavedScreen() {
           <Text style={styles.compareHint}>{compareIds.length} selected ↓</Text>
         )}
       </View>
+    </View>
+  ), [savedDestinations.length, compareMode, compareIds.length]);
 
-      {/* Empty state */}
-      {savedDestinations.length === 0 ? (
-        <View style={styles.emptyCard}>
-          <Text style={{ fontSize: 48 }}>♡</Text>
-          <Text style={styles.emptyTitle}>No saved destinations yet</Text>
-          <Text style={styles.emptyDesc}>Browse destinations and tap Save to build your shortlist.</Text>
-          <TouchableOpacity style={styles.exploreBtn} onPress={() => router.push("/(tabs)/explore")}>
-            <Text style={styles.exploreBtnText}>Explore destinations →</Text>
-          </TouchableOpacity>
-        </View>
-      ) : (
-        /* Saved grid */
-        savedDestinations.map((dest) => {
-          const kf = Array.isArray(dest.kids_friendly) ? dest.kids_friendly?.[0] : dest.kids_friendly;
-          const stateName = dest.state && !Array.isArray(dest.state) ? dest.state.name : "";
-          const monthScore = dest.destination_months?.find((m) => m.month === currentMonth)?.score;
-          const isComparing = compareIds.includes(dest.id);
+  const listFooter = useMemo(() => {
+    if (!compareMode || comparedDestinations.length < 2) return <View style={{ height: 40 }} />;
 
-          return (
-            <TouchableOpacity
-              key={dest.id}
-              style={[styles.card, isComparing && styles.cardComparing]}
-              onPress={() => compareMode ? toggleCompare(dest.id) : router.push(`/destination/${dest.id}`)}
-            >
-              {/* Compare checkbox */}
-              {compareMode && (
-                <View style={[styles.checkbox, isComparing && styles.checkboxActive]}>
-                  {isComparing && <Text style={styles.checkmark}>✓</Text>}
-                </View>
-              )}
-
-              <View style={styles.cardContent}>
-                <View style={styles.cardTop}>
-                  {monthScore !== undefined && (
-                    <View style={[styles.scorePill, { borderColor: SCORE_COLOR[monthScore] || colors.border }]}>
-                      <Text style={{ fontSize: fontSize.xs, fontWeight: "700", color: SCORE_COLOR[monthScore] || colors.mutedForeground }}>
-                        {monthScore}/5 {MONTH_SHORT[currentMonth]}
-                      </Text>
-                    </View>
-                  )}
-                  {kf && (
-                    <Text style={styles.kidsTag}>{kf.suitable ? `👶 ${kf.rating}/5` : "Adults"}</Text>
-                  )}
-                </View>
-
-                <Text style={styles.cardName}>{dest.name}</Text>
-                <Text style={styles.cardTagline} numberOfLines={2}>{dest.tagline}</Text>
-
-                <View style={styles.cardMeta}>
-                  {stateName ? <Text style={styles.metaText}>{stateName}</Text> : null}
-                  <Text style={styles.metaDot}>·</Text>
-                  <Text style={[styles.metaText, { color: DIFF_COLOR[dest.difficulty] }]}>{dest.difficulty}</Text>
-                  {dest.elevation_m && (
-                    <>
-                      <Text style={styles.metaDot}>·</Text>
-                      <Text style={[styles.metaText, { fontFamily: "monospace" }]}>{dest.elevation_m.toLocaleString()}m</Text>
-                    </>
-                  )}
-                </View>
-
-                {!compareMode && (
-                  <TouchableOpacity onPress={() => removeSaved(dest.id)} style={styles.removeBtn}>
-                    <Text style={styles.removeText}>Remove</Text>
-                  </TouchableOpacity>
-                )}
-              </View>
-            </TouchableOpacity>
-          );
-        })
-      )}
-
-      {/* Compare Table */}
-      {compareMode && comparedDestinations.length >= 2 && (
+    return (
+      <View>
         <View style={styles.compareSection}>
           <Text style={styles.compareTitle}>Side-by-Side Comparison</Text>
 
           <ScrollView horizontal showsHorizontalScrollIndicator={false}>
             <View>
-              {/* Header row */}
               <View style={styles.compareRow}>
                 <View style={styles.compareLabelCell}><Text style={styles.compareLabelText}>Attribute</Text></View>
                 {comparedDestinations.map((d) => (
@@ -157,7 +146,6 @@ export default function SavedScreen() {
                 ))}
               </View>
 
-              {/* Data rows */}
               {[
                 { label: `Score (${MONTH_SHORT[currentMonth]})`, key: "score" },
                 { label: "Difficulty", key: "difficulty" },
@@ -212,10 +200,33 @@ export default function SavedScreen() {
             </View>
           </ScrollView>
         </View>
-      )}
+        <View style={{ height: 40 }} />
+      </View>
+    );
+  }, [compareMode, comparedDestinations, currentMonth]);
 
-      <View style={{ height: 40 }} />
-    </ScrollView>
+  return (
+    <View style={styles.container}>
+      <FlatList
+        data={savedDestinations}
+        keyExtractor={(item) => item.id}
+        renderItem={renderSavedItem}
+        contentContainerStyle={styles.content}
+        showsVerticalScrollIndicator={false}
+        ListHeaderComponent={listHeader}
+        ListFooterComponent={listFooter}
+        ListEmptyComponent={
+          <View style={styles.emptyCard}>
+            <Text style={{ fontSize: 48 }}>♡</Text>
+            <Text style={styles.emptyTitle}>No saved destinations yet</Text>
+            <Text style={styles.emptyDesc}>Browse destinations and tap Save to build your shortlist.</Text>
+            <TouchableOpacity style={styles.exploreBtn} onPress={() => router.push("/(tabs)/explore")}>
+              <Text style={styles.exploreBtnText}>Explore destinations →</Text>
+            </TouchableOpacity>
+          </View>
+        }
+      />
+    </View>
   );
 }
 
