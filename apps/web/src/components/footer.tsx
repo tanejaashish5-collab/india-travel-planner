@@ -105,8 +105,8 @@ export function Footer({ stats }: { stats?: { destinations: number; places: numb
         {/* Stats strip */}
         <div className="flex flex-wrap justify-center gap-8 mb-12">
           {[
-            { num: String(stats?.destinations ?? 143), label: "Destinations" },
-            { num: `${stats?.places ?? 408}+`, label: "Places" },
+            { num: String(stats?.destinations ?? 133), label: "Destinations" },
+            { num: `${stats?.places ?? 398}+`, label: "Places" },
             { num: String(stats?.festivals ?? 168), label: "Festivals" },
             { num: String(stats?.traps ?? 43), label: "Tourist Traps Exposed" },
             { num: String(stats?.collections ?? 20), label: "Collections" },

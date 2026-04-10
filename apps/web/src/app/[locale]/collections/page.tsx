@@ -6,7 +6,7 @@ import { createClient } from "@supabase/supabase-js";
 
 export const metadata: Metadata = {
   title: "Collections — Curated Destination Lists",
-  description: "Themed collections: best family destinations, frozen wonders, most dangerous roads, zero-signal zones, ancient monasteries, and more. Hand-picked from 408+ places.",
+  description: "Themed collections: best family destinations, frozen wonders, most dangerous roads, zero-signal zones, ancient monasteries, and more. Hand-picked from 398+ places.",
 };
 
 async function getCollections() {
