@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://nakshiq.com/sitemap.xml
+
+# Disallow admin/API routes
+Disallow: /api/
+Disallow: /_next/
+
+# Allow search engines to crawl all destination, blog, and collection pages
+Allow: /en/
+Allow: /hi/

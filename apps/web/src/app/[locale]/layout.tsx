@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono, Fraunces } from "next/font/google";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getMessages } from "next-intl/server";
@@ -28,6 +28,12 @@ const fraunces = Fraunces({
   weight: ["400", "500", "600", "700", "800", "900"],
 });
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+};
+
 export const metadata: Metadata = {
   title: {
     default: "NakshIQ — Travel Intelligence for India",
@@ -44,7 +50,7 @@ export const metadata: Metadata = {
     ],
   },
   description:
-    "400+ destinations with monthly suitability scores, kids ratings, safety data, and AI-powered itineraries. The confidence engine for exploring India.",
+    "143 destinations, 408+ places with monthly suitability scores, kids ratings, safety data, and AI-powered itineraries. The confidence engine for exploring India.",
   keywords: [
     "India travel planner",
     "North India travel guide",
@@ -59,14 +65,18 @@ export const metadata: Metadata = {
   openGraph: {
     title: "NakshIQ — Travel Intelligence for India",
     description:
-      "370+ destinations with monthly scores, kids ratings, safety data, and AI itineraries.",
+      "143 destinations, 408+ places with monthly scores, kids ratings, safety data, and AI itineraries.",
     type: "website",
     locale: "en_IN",
-    images: [{ url: "/og-image.jpg", width: 800, height: 450, alt: "NakshIQ" }],
+    siteName: "NakshIQ",
+    url: "https://nakshiq.com",
+    images: [{ url: "https://nakshiq.com/og-image.jpg", width: 800, height: 450, alt: "NakshIQ — Travel Intelligence for India" }],
   },
   twitter: {
     card: "summary_large_image",
-    images: ["/og-image.jpg"],
+    title: "NakshIQ — Travel Intelligence for India",
+    description: "143 destinations, 408+ places with monthly scores, kids ratings, safety data, and AI itineraries.",
+    images: ["https://nakshiq.com/og-image.jpg"],
   },
 };
 
@@ -91,6 +101,18 @@ export default async function LocaleLayout({
       className={`${geistSans.variable} ${geistMono.variable} ${fraunces.variable} dark h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-background text-foreground text-base">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            name: "NakshIQ",
+            url: "https://nakshiq.com",
+            logo: "https://nakshiq.com/icon-192.png",
+            description: "Travel intelligence for India. 143 destinations with monthly scores, kids ratings, safety data, and AI-powered itineraries.",
+            sameAs: [],
+          }) }}
+        />
         <NextIntlClientProvider messages={messages}>
           <CompareProvider>
             <ScrollToTop />

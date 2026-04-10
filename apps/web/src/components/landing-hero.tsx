@@ -213,7 +213,7 @@ export function LandingHero({
           </video>
           <div className={`absolute inset-0 bg-gradient-to-b ${timeGradient}`} />
         </div>
-        <div className={`absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] rounded-full ${glowColor} blur-[150px] opacity-40`} />
+        <div className={`absolute top-0 left-1/2 -translate-x-1/2 w-[400px] sm:w-[600px] lg:w-[800px] h-[300px] sm:h-[400px] lg:h-[600px] rounded-full ${glowColor} blur-[150px] opacity-40`} />
 
         {/* Hero content — Nav is now provided by the page layout */}
         <div className="relative z-10 max-w-4xl text-center space-y-8">
@@ -224,7 +224,7 @@ export function LandingHero({
           </FadeIn>
 
           <SlideIn delay={0.2}>
-            <h1 className="text-5xl font-bold tracking-tight sm:text-7xl lg:text-8xl leading-[0.9]">
+            <h1 className="text-3xl font-bold tracking-tight sm:text-5xl md:text-7xl lg:text-8xl leading-[0.9]">
               {t("heroTitle")}
               <span className="block bg-gradient-to-r from-muted-foreground to-muted-foreground/50 bg-clip-text text-transparent mt-2">
                 {t("heroSubtitle")}
@@ -313,9 +313,9 @@ export function LandingHero({
           {/* Stats — animated counters */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-8">
             {[
-              { num: stats?.places ?? 370, suffix: "+", label: t("stats.places"), href: `/${locale}/explore` },
-              { num: stats?.destinations ?? 105, suffix: "", label: "Destinations", href: `/${locale}/explore` },
-              { num: stats?.festivals ?? 126, suffix: "", label: "Festivals", href: `/${locale}/explore` },
+              { num: stats?.places ?? 408, suffix: "+", label: t("stats.places"), href: `/${locale}/explore` },
+              { num: stats?.destinations ?? 143, suffix: "", label: "Destinations", href: `/${locale}/explore` },
+              { num: stats?.festivals ?? 168, suffix: "", label: "Festivals", href: `/${locale}/explore` },
               { num: stats?.routes ?? 19, suffix: "", label: t("stats.routes"), href: `/${locale}/routes` },
             ].map((stat) => (
               <Link
@@ -455,7 +455,7 @@ export function LandingHero({
                 href={`/${locale}/explore`}
                 className="inline-flex items-center gap-2 text-sm text-primary hover:underline"
               >
-                View all {stats?.destinations ?? 105} destinations →
+                View all {stats?.destinations ?? 143} destinations →
               </Link>
             </div>
           </div>
@@ -631,7 +631,7 @@ export function LandingHero({
                 href={`/${locale}/festivals`}
                 className="inline-flex items-center gap-2 text-sm text-primary hover:underline font-medium"
               >
-                See all {stats?.festivals ?? 126} festivals →
+                See all {stats?.festivals ?? 168} festivals →
               </Link>
             </div>
           </div>

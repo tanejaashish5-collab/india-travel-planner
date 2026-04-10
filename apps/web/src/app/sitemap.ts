@@ -8,8 +8,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const staticPages = [
     "", "explore", "collections", "routes", "treks", "plan",
     "camping", "permits", "road-conditions", "superlatives",
+    "stays", "festivals", "tourist-traps",
     "saved", "about", "methodology", "blog",
     "region/himachal-pradesh", "region/uttarakhand", "region/jammu-kashmir",
+    "region/ladakh", "region/rajasthan", "region/punjab",
   ];
 
   const staticEntries: MetadataRoute.Sitemap = staticPages.flatMap((page) =>

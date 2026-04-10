@@ -19,7 +19,7 @@ export function Footer({ stats }: { stats?: { destinations: number; places: numb
       <div className="relative mx-auto max-w-7xl px-6 pt-12 pb-8">
 
         {/* Links grid — compact, 3 columns */}
-        <div className="grid gap-x-12 gap-y-8 sm:grid-cols-3 mb-12">
+        <div className="grid grid-cols-1 gap-x-4 sm:gap-x-12 gap-y-8 sm:grid-cols-3 mb-12">
           <div>
             <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground/50 mb-4">
               Discover
@@ -105,9 +105,9 @@ export function Footer({ stats }: { stats?: { destinations: number; places: numb
         {/* Stats strip */}
         <div className="flex flex-wrap justify-center gap-8 mb-12">
           {[
-            { num: String(stats?.destinations ?? 105), label: "Destinations" },
-            { num: `${stats?.places ?? 370}+`, label: "Places" },
-            { num: String(stats?.festivals ?? 126), label: "Festivals" },
+            { num: String(stats?.destinations ?? 143), label: "Destinations" },
+            { num: `${stats?.places ?? 408}+`, label: "Places" },
+            { num: String(stats?.festivals ?? 168), label: "Festivals" },
             { num: String(stats?.traps ?? 43), label: "Tourist Traps Exposed" },
             { num: String(stats?.collections ?? 20), label: "Collections" },
           ].map((stat) => (

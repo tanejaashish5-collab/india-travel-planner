@@ -26,11 +26,11 @@ export function StickyCTA() {
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: 100, opacity: 0 }}
           transition={{ type: "spring", stiffness: 300, damping: 30 }}
-          className="fixed bottom-6 right-6 z-50"
+          className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50"
         >
           <Link
             href={`/${locale}/plan`}
-            className="flex items-center gap-2 rounded-full bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground shadow-2xl shadow-primary/20 hover:shadow-primary/40 hover:-translate-y-0.5 transition-all duration-200"
+            className="flex items-center gap-2 rounded-full bg-primary px-4 py-3 sm:px-6 sm:py-3.5 text-sm font-semibold text-primary-foreground shadow-2xl shadow-primary/20 hover:shadow-primary/40 hover:-translate-y-0.5 transition-all duration-200"
           >
             <span>Plan My Trip</span>
             <span className="rounded bg-white/20 px-1.5 py-1 text-xs font-bold">AI</span>

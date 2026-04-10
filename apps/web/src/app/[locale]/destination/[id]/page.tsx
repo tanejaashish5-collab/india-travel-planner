@@ -29,16 +29,35 @@ export async function generateMetadata({
   const stateData = data.state as any;
   const stateName = Array.isArray(stateData) ? stateData[0]?.name : stateData?.name;
 
-  const title = `${name} — ${stateName || "India"} Travel Guide`;
-  const description = `${tagline} | ${data.difficulty} difficulty${data.elevation_m ? ` · ${data.elevation_m}m` : ""}. Monthly scores, kids ratings, safety data & more.`;
+  const title = `${name} — ${stateName || "India"} Travel Guide | NakshIQ`;
+  const description = `${tagline} | ${data.difficulty} difficulty${data.elevation_m ? ` · ${data.elevation_m}m` : ""}. Monthly scores, kids ratings, safety data & infrastructure reality for ${name}.`;
+  const canonicalUrl = `https://nakshiq.com/${locale}/destination/${id}`;
+  const imageUrl = `https://nakshiq.com/images/destinations/${id}.jpg`;
 
   return {
     title,
     description,
+    alternates: {
+      canonical: canonicalUrl,
+      languages: {
+        en: `https://nakshiq.com/en/destination/${id}`,
+        hi: `https://nakshiq.com/hi/destination/${id}`,
+      },
+    },
     openGraph: {
       title,
       description,
-      images: [`/images/destinations/${id}.jpg`],
+      type: "article",
+      url: canonicalUrl,
+      siteName: "NakshIQ",
+      locale: locale === "hi" ? "hi_IN" : "en_IN",
+      images: [{ url: imageUrl, width: 1200, height: 630, alt: `${name} — ${stateName || "India"}` }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [imageUrl],
     },
   };
 }
@@ -145,8 +164,33 @@ export default async function DestinationPage({
   const dest = await getDestination(id);
   if (!dest) notFound();
 
+  // Schema.org JSON-LD for TouristDestination
+  const stateInfo = dest.state as any;
+  const stateName = Array.isArray(stateInfo) ? stateInfo[0]?.name : stateInfo?.name;
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "TouristDestination",
+    name: dest.name,
+    description: dest.tagline || `Travel guide for ${dest.name}`,
+    url: `https://nakshiq.com/en/destination/${id}`,
+    image: `https://nakshiq.com/images/destinations/${id}.jpg`,
+    ...(dest.elevation_m && { elevation: { "@type": "QuantitativeValue", value: dest.elevation_m, unitCode: "MTR" } }),
+    ...(dest.coords && {
+      geo: { "@type": "GeoCoordinates", latitude: dest.coords.lat, longitude: dest.coords.lng },
+    }),
+    containedInPlace: {
+      "@type": "AdministrativeArea",
+      name: stateName || "India",
+    },
+    touristType: dest.difficulty === "easy" ? "Family" : dest.difficulty === "extreme" ? "Adventure" : "General",
+  };
+
   return (
     <div className="min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Nav />
       <main className="mx-auto max-w-4xl px-4 py-8">
         <DestinationDetail dest={dest} />
