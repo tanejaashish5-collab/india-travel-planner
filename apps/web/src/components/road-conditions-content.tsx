@@ -3,6 +3,7 @@
 import { useState, useMemo } from "react";
 import Link from "next/link";
 import { useLocale } from "next-intl";
+import { StaggerContainer, StaggerItem } from "./animated-hero";
 
 const STATUS_COLORS: Record<string, string> = {
   open: "bg-emerald-500/15 text-emerald-300 border-emerald-500/30",
@@ -86,7 +87,7 @@ export function RoadConditionsContent({ reports }: { reports: any[] }) {
       </div>
 
       {/* Reports list */}
-      <div className="space-y-3">
+      <StaggerContainer className="space-y-3" staggerDelay={0.05}>
         {filtered.map((report) => {
           const destName = Array.isArray(report.destinations) ? report.destinations[0]?.name : report.destinations?.name;
           const colorClass = STATUS_COLORS[report.status] || "bg-muted/50 text-muted-foreground border-border";
@@ -94,8 +95,10 @@ export function RoadConditionsContent({ reports }: { reports: any[] }) {
           const reportedDate = report.reported_at ? new Date(report.reported_at).toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" }) : null;
 
           return (
-            <div key={report.id} className="rounded-xl border border-border p-4 hover:border-border/80 transition-colors">
+            <StaggerItem key={report.id}>
+            <div className="rounded-xl border border-border p-4 hover:border-border/80 transition-colors">
               <div className="flex items-start justify-between gap-3 mb-2">
+                <img src={`/images/destinations/${report.destination_id}.jpg`} className="w-12 h-12 rounded-lg object-cover flex-shrink-0" loading="lazy" onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }} />
                 <div className="flex-1 min-w-0">
                   <h3 className="font-semibold text-sm flex items-center gap-2">
                     <span>{icon}</span>
@@ -122,9 +125,10 @@ export function RoadConditionsContent({ reports }: { reports: any[] }) {
                 {report.verified && <span className="text-emerald-400">Verified</span>}
               </div>
             </div>
+            </StaggerItem>
           );
         })}
-      </div>
+      </StaggerContainer>
 
       {filtered.length === 0 && (
         <div className="py-12 text-center text-muted-foreground">

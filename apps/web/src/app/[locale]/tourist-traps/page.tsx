@@ -112,6 +112,16 @@ export default async function TouristTrapsPage({
   return (
     <div className="min-h-screen bg-background">
       <Nav />
+      {/* Visual page hero */}
+      <section className="relative h-48 sm:h-64 overflow-hidden">
+        <img src="/images/destinations/shimla.jpg" alt="Tourist Traps Exposed" className="w-full h-full object-cover" loading="eager" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 max-w-7xl mx-auto">
+          <p className="text-sm font-medium text-primary uppercase tracking-widest mb-2">Honest Travel</p>
+          <h1 className="text-3xl font-bold sm:text-4xl text-white drop-shadow-lg">Tourist Traps Exposed</h1>
+          <p className="mt-2 text-white/80 max-w-xl">Honest alternatives to India&apos;s most overhyped destinations. No sponsored recommendations — just data-driven suggestions.</p>
+        </div>
+      </section>
 
       <script
         type="application/ld+json"
@@ -119,20 +129,6 @@ export default async function TouristTrapsPage({
       />
 
       <main className="mx-auto max-w-6xl px-4 py-10 sm:py-14">
-        {/* Header */}
-        <div className="mb-10 text-center">
-          <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-red-800 bg-red-950/40 px-4 py-1.5 text-sm font-medium text-red-400">
-            <span className="inline-block h-2 w-2 rounded-full bg-red-500" />
-            {traps.length} traps exposed
-          </div>
-          <h1 className="text-3xl font-extrabold tracking-tight text-foreground sm:text-5xl">
-            Tourist Traps Exposed
-          </h1>
-          <p className="mx-auto mt-3 max-w-2xl text-lg text-muted-foreground">
-            Honest alternatives to India&apos;s most overhyped destinations. No
-            sponsored recommendations — just data-driven suggestions.
-          </p>
-        </div>
 
         {/* Grid */}
         <div className="grid gap-6 sm:grid-cols-2">

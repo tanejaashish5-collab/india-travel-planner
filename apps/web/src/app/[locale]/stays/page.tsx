@@ -31,13 +31,17 @@ export default async function StaysPage() {
   return (
     <div className="min-h-screen">
       <Nav />
-      <main className="mx-auto max-w-6xl px-4 py-8">
-        <div className="mb-8">
-          <h1 className="text-3xl font-bold">Where to Stay</h1>
-          <p className="mt-2 text-muted-foreground text-lg max-w-2xl">
-            Decision-grade accommodation intelligence. Best zones, budget reality, and honest warnings — not hotel listings.
-          </p>
+      {/* Visual page hero */}
+      <section className="relative h-48 sm:h-64 overflow-hidden">
+        <img src="/images/destinations/tirthan-valley.jpg" alt="Local Stays" className="w-full h-full object-cover" loading="eager" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 max-w-7xl mx-auto">
+          <p className="text-sm font-medium text-primary uppercase tracking-widest mb-2">Where to Stay</p>
+          <h1 className="text-3xl font-bold sm:text-4xl text-white drop-shadow-lg">Local Stays</h1>
+          <p className="mt-2 text-white/80 max-w-xl">Decision-grade accommodation intelligence. Best zones, budget reality, and honest warnings — not hotel listings.</p>
         </div>
+      </section>
+      <main className="mx-auto max-w-6xl px-4 py-8">
         <StaysContent destinations={destinations} />
       </main>
       <Footer />

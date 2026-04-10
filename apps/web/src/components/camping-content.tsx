@@ -76,7 +76,7 @@ export function CampingContent({ spots }: { spots: any[] }) {
                   className="block rounded-xl border border-border bg-card overflow-hidden h-full hover:border-primary/40 hover:shadow-lg transition-all duration-200 group">
                   {/* Hero image from parent destination */}
                   {spot.destination_id && (
-                    <div className="relative h-32 bg-muted/30 overflow-hidden">
+                    <div className="relative h-40 bg-muted/30 overflow-hidden film-grain">
                       <img
                         src={`/images/destinations/${spot.destination_id}.jpg`}
                         alt={spot.name}

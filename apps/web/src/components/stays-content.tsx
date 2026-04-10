@@ -3,6 +3,7 @@
 import { useState, useMemo } from "react";
 import Link from "next/link";
 import { useLocale } from "next-intl";
+import { StaggerContainer, StaggerItem, HoverCard } from "./animated-hero";
 
 export function StaysContent({ destinations }: { destinations: any[] }) {
   const locale = useLocale();
@@ -69,14 +70,15 @@ export function StaysContent({ destinations }: { destinations: any[] }) {
       <p className="text-sm text-muted-foreground">{filtered.length} destinations with stay intelligence</p>
 
       {/* Grid */}
-      <div className="grid gap-4 sm:grid-cols-2">
+      <StaggerContainer className="grid gap-4 sm:grid-cols-2" staggerDelay={0.05}>
         {filtered.map((dest) => {
           const stateName = Array.isArray(dest.state) ? dest.state[0]?.name : dest.state?.name;
           const sz = dest.stay_zones || {};
 
           return (
+            <StaggerItem key={dest.id}>
+            <HoverCard>
             <Link
-              key={dest.id}
               href={`/${locale}/destination/${dest.id}`}
               className="group block rounded-2xl border border-border/50 bg-card overflow-hidden hover:border-primary/40 hover:shadow-xl transition-all duration-300"
             >
@@ -154,9 +156,11 @@ export function StaysContent({ destinations }: { destinations: any[] }) {
                 )}
               </div>
             </Link>
+            </HoverCard>
+            </StaggerItem>
           );
         })}
-      </div>
+      </StaggerContainer>
 
       {filtered.length === 0 && (
         <div className="py-12 text-center text-muted-foreground">

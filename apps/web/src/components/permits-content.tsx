@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { useLocale } from "next-intl";
 import { motion, AnimatePresence } from "framer-motion";
+import { StaggerContainer, StaggerItem } from "./animated-hero";
 
 const TYPE_COLORS: Record<string, string> = {
   "Inner Line Permit": "bg-blue-500/10 text-blue-400 border-blue-500/30",
@@ -76,18 +77,20 @@ export function PermitsContent({ permits }: { permits: any[] }) {
       </div>
 
       {/* Permits list */}
-      <div className="space-y-3">
+      <StaggerContainer className="space-y-3" staggerDelay={0.05}>
         {filtered.map((permit) => {
           const isOpen = openId === permit.id;
           const destName = Array.isArray(permit.destinations) ? permit.destinations[0]?.name : permit.destinations?.name;
           const colorClass = TYPE_COLORS[permit.type] || "bg-muted/50 text-muted-foreground border-border";
 
           return (
-            <div key={permit.id} className="rounded-xl border border-border overflow-hidden">
+            <StaggerItem key={permit.id}>
+            <div className="rounded-xl border border-border overflow-hidden">
               <button
                 onClick={() => setOpenId(isOpen ? null : permit.id)}
                 className="w-full flex items-center gap-4 p-4 text-left hover:bg-muted/20 transition-colors"
               >
+                <img src={`/images/destinations/${permit.destination_id}.jpg`} className="w-12 h-12 rounded-lg object-cover flex-shrink-0" loading="lazy" onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }} />
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-2 flex-wrap mb-1">
                     <span className={`rounded-full border px-2.5 py-1 text-xs font-medium ${colorClass}`}>
@@ -185,9 +188,10 @@ export function PermitsContent({ permits }: { permits: any[] }) {
                 )}
               </AnimatePresence>
             </div>
+            </StaggerItem>
           );
         })}
-      </div>
+      </StaggerContainer>
 
       {filtered.length === 0 && (
         <div className="py-12 text-center text-muted-foreground">

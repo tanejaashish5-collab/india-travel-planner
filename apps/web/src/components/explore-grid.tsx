@@ -6,6 +6,8 @@ import { useLocale, useTranslations } from "next-intl";
 import { useSearchParams, useRouter, usePathname } from "next/navigation";
 import { ExploreFilters, type FilterState } from "./explore-filters";
 import { CompareButton } from "./compare-tray";
+import { StaggerContainer, StaggerItem, HoverCard, ScrollReveal } from "./animated-hero";
+import { SCORE_COLORS, DIFFICULTY_COLORS } from "@/lib/design-tokens";
 
 interface DestinationData {
   id: string;
@@ -26,22 +28,6 @@ interface DestinationData {
     | Array<{ month: number; score: number; note: string }>
     | null;
 }
-
-const SCORE_COLORS: Record<number, string> = {
-  5: "bg-emerald-500/20 text-emerald-400 border-emerald-500/30",
-  4: "bg-blue-500/20 text-blue-400 border-blue-500/30",
-  3: "bg-yellow-500/20 text-yellow-400 border-yellow-500/30",
-  2: "bg-orange-500/20 text-orange-400 border-orange-500/30",
-  1: "bg-red-500/20 text-red-400 border-red-500/30",
-  0: "bg-zinc-500/20 text-zinc-400 border-zinc-500/30",
-};
-
-const DIFFICULTY_COLORS: Record<string, string> = {
-  easy: "text-emerald-400",
-  moderate: "text-yellow-400",
-  hard: "text-orange-400",
-  extreme: "text-red-400",
-};
 
 export function ExploreGrid({
   destinations,
@@ -164,27 +150,36 @@ export function ExploreGrid({
     return result;
   }, [filtered, filters.month, filters.sort, currentMonth]);
 
+  // Show featured hero only when no filters/search active
+  const isDefaultView = !filters.stateId && !filters.search && !filters.difficulty && !filters.kidsOnly && !filters.sort;
+
   return (
     <>
-      <ExploreFilters
-        states={states}
-        filters={filters}
-        onChange={setFilters}
-        resultCount={sorted.length}
-      />
+      <ScrollReveal>
+        <ExploreFilters
+          states={states}
+          filters={filters}
+          onChange={setFilters}
+          resultCount={sorted.length}
+        />
+      </ScrollReveal>
 
-      <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {sorted.map((dest) => (
-          <DestinationCard
-            key={dest.id}
-            dest={dest}
-            locale={locale}
-            selectedMonth={filters.month}
-            ts={ts}
-            tm={tm}
-          />
+      <StaggerContainer className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3" staggerDelay={0.04}>
+        {sorted.map((dest, index) => (
+          <StaggerItem key={dest.id} className={isDefaultView && index === 0 ? "sm:col-span-2" : ""}>
+            <HoverCard>
+              <DestinationCard
+                dest={dest}
+                locale={locale}
+                selectedMonth={filters.month}
+                ts={ts}
+                tm={tm}
+                featured={isDefaultView && index === 0}
+              />
+            </HoverCard>
+          </StaggerItem>
         ))}
-      </div>
+      </StaggerContainer>
 
       {sorted.length === 0 && (
         <div className="py-20 text-center text-muted-foreground">
@@ -208,12 +203,14 @@ function DestinationCard({
   selectedMonth,
   ts,
   tm,
+  featured = false,
 }: {
   dest: DestinationData;
   locale: string;
   selectedMonth: number;
   ts: (key: string) => string;
   tm: (key: string) => string;
+  featured?: boolean;
 }) {
   const kf = Array.isArray(dest.kids_friendly)
     ? dest.kids_friendly[0]
@@ -234,10 +231,16 @@ function DestinationCard({
   return (
     <Link
       href={`/${locale}/destination/${dest.id}`}
-      className="group block rounded-2xl border border-border/50 bg-card overflow-hidden transition-all duration-300 hover:border-primary/40 hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-0.5"
+      className="group block rounded-2xl border border-border/50 bg-card overflow-hidden transition-all duration-300 hover:border-primary/40 hover:shadow-xl hover:shadow-primary/10"
     >
       {/* Hero Image */}
-      <div className="relative h-40 bg-muted/30 overflow-hidden">
+      <div className={`relative ${featured ? "h-48" : "h-40"} bg-muted/30 overflow-hidden`}>
+        {/* Featured badge */}
+        {featured && (
+          <span className="absolute top-2 left-12 z-10 rounded-full bg-primary px-3 py-1 text-xs font-bold text-primary-foreground shadow-lg">
+            Featured
+          </span>
+        )}
         {/* Save button overlay */}
         <button
           onClick={(e) => {
@@ -257,9 +260,11 @@ function DestinationCard({
         >
           ♡
         </button>
-        <div className="absolute top-2 left-2 z-10">
-          <CompareButton destinationId={dest.id} />
-        </div>
+        {!featured && (
+          <div className="absolute top-2 left-2 z-10">
+            <CompareButton destinationId={dest.id} />
+          </div>
+        )}
         <img
           src={imageUrl}
           alt={dest.name}
@@ -268,7 +273,19 @@ function DestinationCard({
           onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
         />
         {/* Gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-card/80 to-transparent" />
+        <div className={`absolute inset-0 ${featured ? "bg-gradient-to-t from-card via-card/60 to-transparent" : "bg-gradient-to-t from-card/80 to-transparent"}`} />
+
+        {/* Featured: title overlaid on image */}
+        {featured && (
+          <div className="absolute bottom-3 left-4 right-4 z-10">
+            <h3 className="text-xl font-bold text-foreground drop-shadow-md group-hover:text-primary transition-colors leading-snug">
+              {displayName}
+            </h3>
+            <p className="mt-1 text-sm text-muted-foreground line-clamp-2 leading-relaxed">
+              {displayTagline}
+            </p>
+          </div>
+        )}
       </div>
 
       <div className="p-5 pt-3">
@@ -294,16 +311,20 @@ function DestinationCard({
         )}
       </div>
 
-      {/* Name & tagline */}
-      <h3 className="text-lg font-bold group-hover:text-primary transition-colors leading-snug">
-        {displayName}
-      </h3>
-      <p className="mt-1.5 text-[15px] text-muted-foreground line-clamp-2 leading-relaxed">
-        {displayTagline}
-      </p>
+      {/* Name & tagline (non-featured only — featured shows overlaid on image) */}
+      {!featured && (
+        <>
+          <h3 className="text-lg font-bold group-hover:text-primary transition-colors leading-snug">
+            {displayName}
+          </h3>
+          <p className="mt-1.5 text-[15px] text-muted-foreground line-clamp-2 leading-relaxed">
+            {displayTagline}
+          </p>
+        </>
+      )}
 
       {/* Meta */}
-      <div className="mt-3 flex flex-wrap items-center gap-2 text-sm font-medium text-muted-foreground">
+      <div className={`${featured ? "" : "mt-3"} flex flex-wrap items-center gap-2 text-sm font-medium text-muted-foreground`}>
         {stateName && <span>{stateName}</span>}
         <span>·</span>
         <span className={DIFFICULTY_COLORS[dest.difficulty] ?? ""}>
