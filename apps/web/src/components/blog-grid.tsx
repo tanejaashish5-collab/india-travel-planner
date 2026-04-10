@@ -38,8 +38,8 @@ interface Article {
 }
 
 function getImageUrl(article: Article): string | null {
-  // Skip non-destination images (og-image, logos, etc.)
-  if (article.cover_image_url && article.cover_image_url.startsWith("/images/destinations/")) {
+  // Only use destination/content images, skip brand assets like og-image.jpg
+  if (article.cover_image_url && article.cover_image_url.startsWith("/images/")) {
     return article.cover_image_url;
   }
   // Try to find a destination name in tags and use its image
