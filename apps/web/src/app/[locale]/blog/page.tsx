@@ -31,7 +31,7 @@ export default async function BlogPage() {
       <Nav />
       {/* Visual page hero */}
       <section className="relative h-48 sm:h-64 overflow-hidden">
-        <img src="/images/destinations/spiti-valley.jpg" alt="Travel Intelligence" className="w-full h-full object-cover" loading="eager" />
+        <img src="/images/destinations/valley-of-flowers.jpg" alt="Travel Intelligence" className="w-full h-full object-cover" loading="eager" />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
         <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 max-w-7xl mx-auto">
           <p className="text-sm font-medium text-primary uppercase tracking-widest mb-2">NakshIQ Intelligence</p>
