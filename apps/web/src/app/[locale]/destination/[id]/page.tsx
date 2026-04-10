@@ -29,7 +29,7 @@ export async function generateMetadata({
   const stateData = data.state as any;
   const stateName = Array.isArray(stateData) ? stateData[0]?.name : stateData?.name;
 
-  const title = `${name} — ${stateName || "India"} Travel Guide | NakshIQ`;
+  const title = `${name} — ${stateName || "India"} Travel Guide`;
   const description = `${tagline} | ${data.difficulty} difficulty${data.elevation_m ? ` · ${data.elevation_m}m` : ""}. Monthly scores, kids ratings, safety data & infrastructure reality for ${name}.`;
   const canonicalUrl = `https://nakshiq.com/${locale}/destination/${id}`;
   const imageUrl = `https://nakshiq.com/images/destinations/${id}.jpg`;
@@ -45,7 +45,7 @@ export async function generateMetadata({
       },
     },
     openGraph: {
-      title,
+      title: `${title} | NakshIQ`,
       description,
       type: "article",
       url: canonicalUrl,
@@ -55,7 +55,7 @@ export async function generateMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      title,
+      title: `${title} | NakshIQ`,
       description,
       images: [imageUrl],
     },

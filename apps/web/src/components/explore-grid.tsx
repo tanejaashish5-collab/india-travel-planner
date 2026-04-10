@@ -6,7 +6,7 @@ import { useLocale, useTranslations } from "next-intl";
 import { useSearchParams, useRouter, usePathname } from "next/navigation";
 import { ExploreFilters, type FilterState } from "./explore-filters";
 import { CompareButton } from "./compare-tray";
-import { StaggerContainer, StaggerItem, HoverCard, ScrollReveal } from "./animated-hero";
+import { StaggerContainer, StaggerItem, HoverCard } from "./animated-hero";
 import { SCORE_COLORS, DIFFICULTY_COLORS } from "@/lib/design-tokens";
 
 interface DestinationData {
@@ -155,14 +155,12 @@ export function ExploreGrid({
 
   return (
     <>
-      <ScrollReveal>
-        <ExploreFilters
-          states={states}
-          filters={filters}
-          onChange={setFilters}
-          resultCount={sorted.length}
-        />
-      </ScrollReveal>
+      <ExploreFilters
+        states={states}
+        filters={filters}
+        onChange={setFilters}
+        resultCount={sorted.length}
+      />
 
       <StaggerContainer className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3" staggerDelay={0.04}>
         {sorted.map((dest, index) => (

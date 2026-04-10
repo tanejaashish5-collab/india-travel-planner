@@ -4,6 +4,8 @@ import { Footer } from "@/components/footer";
 import { CollectionsGrid } from "@/components/collections-grid";
 import { createClient } from "@supabase/supabase-js";
 
+export const dynamic = "force-dynamic";
+
 export const metadata: Metadata = {
   title: "Collections — Curated Destination Lists",
   description: "Themed collections: best family destinations, frozen wonders, most dangerous roads, zero-signal zones, ancient monasteries, and more. Hand-picked from 407+ places.",

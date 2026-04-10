@@ -226,10 +226,12 @@ export function DestinationDetail({ dest }: { dest: any }) {
                   {dest.difficulty}
                 </div>
               </div>
+              {(dest.ideal_duration_min || dest.ideal_duration_max) && (
               <div className="rounded-xl border border-border/50 bg-background/50 backdrop-blur-sm p-3">
                 <div className="text-xs uppercase tracking-wide text-muted-foreground">{t("duration")}</div>
-                <div className="mt-1 text-sm font-semibold">{dest.ideal_duration_min}-{dest.ideal_duration_max} days</div>
+                <div className="mt-1 text-sm font-semibold">{dest.ideal_duration_min && dest.ideal_duration_max ? `${dest.ideal_duration_min}-${dest.ideal_duration_max} days` : dest.ideal_duration_min ? `${dest.ideal_duration_min}+ days` : `Up to ${dest.ideal_duration_max} days`}</div>
               </div>
+              )}
               <div className="rounded-xl border border-border/50 bg-background/50 backdrop-blur-sm p-3">
                 <div className="text-xs uppercase tracking-wide text-muted-foreground">{t("budget")}</div>
                 <div className="mt-1 text-sm font-semibold capitalize">{dest.budget_tier ?? "mixed"}</div>
