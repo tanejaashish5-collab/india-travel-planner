@@ -14,29 +14,29 @@ export function Nav() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const primaryLinks = [
-    { href: `/${locale}/explore`, label: "Destinations" },
+    { href: `/${locale}/explore`, label: t("destinations") },
     { href: `/${locale}/collections`, label: t("collections") },
     { href: `/${locale}/routes`, label: t("routes") },
     { href: `/${locale}/treks`, label: t("treks") },
-    { href: `/${locale}/trip`, label: "My Trip" },
+    { href: `/${locale}/trip`, label: t("myTrip") },
     { href: `/${locale}/saved`, label: "♥" },
   ];
 
   const currentMonthSlug = ["","january","february","march","april","may","june","july","august","september","october","november","december"][new Date().getMonth() + 1];
 
   const moreLinks = [
-    { href: `/${locale}/where-to-go/${currentMonthSlug}`, label: `Where to Go Now` },
-    { href: `/${locale}/blog`, label: "Blog" },
-    { href: `/${locale}/tourist-traps`, label: "Tourist Traps" },
-    { href: `/${locale}/guide`, label: "Guides" },
-    { href: `/${locale}/stays`, label: "Where to Stay" },
-    { href: `/${locale}/festivals`, label: "Festivals" },
-    { href: `/${locale}/camping`, label: "Camping" },
-    { href: `/${locale}/permits`, label: "Permits" },
-    { href: `/${locale}/road-conditions`, label: "Roads" },
-    { href: `/${locale}/superlatives`, label: "Records" },
-    { href: `/${locale}/build-route`, label: "Build Route" },
-    { href: `/${locale}/about`, label: "About" },
+    { href: `/${locale}/where-to-go/${currentMonthSlug}`, label: t("whereToGoNow") },
+    { href: `/${locale}/blog`, label: t("blog") },
+    { href: `/${locale}/tourist-traps`, label: t("touristTraps") },
+    { href: `/${locale}/guide`, label: t("guides") },
+    { href: `/${locale}/stays`, label: t("stays") },
+    { href: `/${locale}/festivals`, label: t("festivals") },
+    { href: `/${locale}/camping`, label: t("camping") },
+    { href: `/${locale}/permits`, label: t("permits") },
+    { href: `/${locale}/road-conditions`, label: t("roads") },
+    { href: `/${locale}/superlatives`, label: t("records") },
+    { href: `/${locale}/build-route`, label: t("buildRoute") },
+    { href: `/${locale}/about`, label: t("about") },
   ];
 
   // All links for mobile menu
@@ -78,7 +78,7 @@ export function Nav() {
           {/* More dropdown */}
           <div className="relative group">
             <button className="rounded-lg px-3 py-1.5 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted transition-colors">
-              More
+              {t("more")}
             </button>
             <div className="absolute right-0 top-full mt-1 w-40 rounded-xl border border-border bg-card/95 backdrop-blur-md shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
               <div className="py-1">
@@ -101,7 +101,7 @@ export function Nav() {
             href={`/${locale}/plan`}
             className="ml-2 rounded-lg bg-primary px-3 py-1.5 text-sm font-medium text-primary-foreground hover:bg-primary/90 flex items-center gap-1.5"
           >
-            <span>AI Plan</span>
+            <span>{t("aiPlan")}</span>
             <span className="rounded bg-white/20 px-1 py-1 text-xs font-bold">NEW</span>
           </Link>
         </nav>

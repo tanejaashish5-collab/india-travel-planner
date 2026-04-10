@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { FadeIn, ScrollReveal, StaggerContainer, StaggerItem } from "./animated-hero";
 import { SCORE_COLORS, DIFFICULTY_COLORS } from "@/lib/design-tokens";
@@ -150,20 +151,24 @@ export function VsComparison({ dest1, dest2, locale }: Props) {
       <section className="relative h-56 sm:h-72 md:h-80 overflow-hidden">
         <div className="absolute inset-0 flex">
           <div className="relative w-1/2 overflow-hidden">
-            <img
+            <Image
               src={`/images/destinations/${dest1.id}.jpg`}
               alt={dest1.name}
-              className="w-full h-full object-cover"
-              loading="eager"
+              fill
+              sizes="50vw"
+              priority
+              className="object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-transparent to-background/80" />
           </div>
           <div className="relative w-1/2 overflow-hidden">
-            <img
+            <Image
               src={`/images/destinations/${dest2.id}.jpg`}
               alt={dest2.name}
-              className="w-full h-full object-cover"
-              loading="eager"
+              fill
+              sizes="50vw"
+              priority
+              className="object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-l from-transparent to-background/80" />
           </div>

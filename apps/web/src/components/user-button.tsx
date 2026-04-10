@@ -1,10 +1,12 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { useTranslations } from "next-intl";
 import { getAuthClient, signOut } from "@/lib/auth";
 import { AuthModal } from "./auth-modal";
 
 export function UserButton() {
+  const t = useTranslations("ui");
   const [user, setUser] = useState<any>(null);
   const [showAuth, setShowAuth] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
@@ -32,7 +34,7 @@ export function UserButton() {
           onClick={() => setShowAuth(true)}
           className="rounded-lg border border-border px-3 py-1.5 text-sm font-medium text-muted-foreground hover:text-foreground hover:border-muted-foreground transition-colors"
         >
-          Sign in
+          {t("signIn")}
         </button>
         <AuthModal
           open={showAuth}

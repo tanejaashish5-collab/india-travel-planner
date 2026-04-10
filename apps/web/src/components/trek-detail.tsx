@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, lazy, Suspense } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { useLocale } from "next-intl";
 import { motion } from "framer-motion";
@@ -40,10 +41,12 @@ export function TrekDetail({ trek }: { trek: any }) {
       {/* Hero */}
       <div className="relative h-56 sm:h-72 rounded-2xl overflow-hidden bg-muted/30">
         {trek.destination_id && (
-          <img
+          <Image
             src={`/images/destinations/${trek.destination_id}.jpg`}
             alt={trek.name}
-            className="w-full h-full object-cover"
+            fill
+            sizes="100vw"
+            className="object-cover"
             onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
           />
         )}

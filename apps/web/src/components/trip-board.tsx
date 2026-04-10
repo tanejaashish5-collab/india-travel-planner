@@ -1,8 +1,9 @@
 "use client";
 
 import { useState, useEffect, useMemo } from "react";
+import Image from "next/image";
 import Link from "next/link";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { motion, AnimatePresence } from "framer-motion";
 
 const MONTH_SHORT = ["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
@@ -34,6 +35,8 @@ const DEFAULT_TRIP: TripState = {
 
 export function TripBoard({ destinations }: { destinations: any[] }) {
   const locale = useLocale();
+  const tt = useTranslations("trip");
+  const tu = useTranslations("ui");
   const [trip, setTrip] = useState<TripState>(DEFAULT_TRIP);
   const [search, setSearch] = useState("");
   const [editingName, setEditingName] = useState(false);
@@ -110,7 +113,7 @@ export function TripBoard({ destinations }: { destinations: any[] }) {
   }
 
   function clearTrip() {
-    if (confirm("Clear entire trip board?")) {
+    if (confirm(tt("clearTrip"))) {
       setTrip(DEFAULT_TRIP);
     }
   }
@@ -139,21 +142,21 @@ export function TripBoard({ destinations }: { destinations: any[] }) {
             />
           ) : (
             <h1 className="text-3xl font-bold cursor-pointer hover:text-primary transition-colors" onClick={() => setEditingName(true)}>
-              {trip.name} <span className="text-sm text-muted-foreground font-normal ml-2">click to rename</span>
+              {trip.name} <span className="text-sm text-muted-foreground font-normal ml-2">{tt("clickToRename")}</span>
             </h1>
           )}
           <p className="mt-1 text-muted-foreground">
-            Build your trip, share with friends, estimate costs
+            {tt("buildTrip")}
           </p>
         </div>
         <div className="flex gap-2">
           {trip.items.length > 0 && (
             <>
               <button onClick={shareTrip} className="rounded-full bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground hover:bg-primary/90 transition-colors">
-                Share on WhatsApp
+                {tu("shareOnWhatsApp")}
               </button>
               <button onClick={clearTrip} className="rounded-full border border-border px-4 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
-                Clear
+                {tu("clear")}
               </button>
             </>
           )}
@@ -163,7 +166,7 @@ export function TripBoard({ destinations }: { destinations: any[] }) {
       {/* Trip settings */}
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
         <div>
-          <label className="text-xs text-muted-foreground mb-1 block">Month</label>
+          <label className="text-xs text-muted-foreground mb-1 block">{tt("month")}</label>
           <select
             value={trip.month}
             onChange={(e) => setTrip({ ...trip, month: Number(e.target.value) })}
@@ -175,7 +178,7 @@ export function TripBoard({ destinations }: { destinations: any[] }) {
           </select>
         </div>
         <div>
-          <label className="text-xs text-muted-foreground mb-1 block">Travelers</label>
+          <label className="text-xs text-muted-foreground mb-1 block">{tt("travelers")}</label>
           <input
             type="number"
             min={1}
@@ -186,15 +189,15 @@ export function TripBoard({ destinations }: { destinations: any[] }) {
           />
         </div>
         <div>
-          <label className="text-xs text-muted-foreground mb-1 block">Budget tier</label>
+          <label className="text-xs text-muted-foreground mb-1 block">{tt("budgetTier")}</label>
           <select
             value={trip.budget}
             onChange={(e) => setTrip({ ...trip, budget: e.target.value })}
             className="w-full rounded-lg border border-border bg-background px-3 py-2 text-sm"
           >
-            <option value="budget">Budget</option>
-            <option value="midrange">Mid-range</option>
-            <option value="luxury">Luxury</option>
+            <option value="budget">{tt("budget")}</option>
+            <option value="midrange">{tt("midRange")}</option>
+            <option value="luxury">{tt("luxury")}</option>
           </select>
         </div>
         <div className="flex items-end">
@@ -278,12 +281,13 @@ export function TripBoard({ destinations }: { destinations: any[] }) {
                 >
                   <div className="flex items-stretch">
                     {/* Image */}
-                    <div className="w-24 sm:w-32 shrink-0 bg-muted/30">
-                      <img
+                    <div className="relative w-24 sm:w-32 shrink-0 bg-muted/30">
+                      <Image
                         src={`/images/destinations/${item.destinationId}.jpg`}
                         alt={dest.name}
-                        className="w-full h-full object-cover"
-                        loading="lazy"
+                        fill
+                        sizes="(max-width: 640px) 96px, 128px"
+                        className="object-cover"
                         onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
                       />
                     </div>
@@ -379,7 +383,7 @@ export function TripBoard({ destinations }: { destinations: any[] }) {
 
           <div className="flex flex-col sm:flex-row gap-3">
             <button onClick={shareTrip} className="flex-1 rounded-full bg-primary px-4 py-3 text-sm font-semibold text-primary-foreground hover:bg-primary/90 transition-colors">
-              Share on WhatsApp
+              {tu("shareOnWhatsApp")}
             </button>
             <button
               onClick={async () => {

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useLocale, useTranslations } from "next-intl";
 import { StaggerContainer, StaggerItem, HoverCard } from "./animated-hero";
@@ -54,11 +55,12 @@ export function RoutesGrid({ routes }: { routes: any[] }) {
                           {/* Hero image area */}
                           <div className="h-32 relative overflow-hidden bg-muted/30">
                             {imageSlug && (
-                              <img
+                              <Image
                                 src={`/images/destinations/${imageSlug}.jpg`}
                                 alt={firstStop ?? ""}
-                                className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                                loading="lazy"
+                                fill
+                                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                                className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                                 onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
                               />
                             )}

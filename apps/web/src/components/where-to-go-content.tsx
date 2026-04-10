@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { useLocale } from "next-intl";
+import Image from "next/image";
 import {
   FadeIn,
   ScrollReveal,
@@ -94,11 +95,12 @@ function DestinationCard({
         >
           {/* Image area */}
           <div className="relative h-32 overflow-hidden">
-            <img
+            <Image
               src={`/images/destinations/${d.id}.jpg`}
               alt={d.name}
-              className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
-              loading="lazy"
+              fill
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+              className="object-cover transition-transform duration-700 group-hover:scale-110"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-zinc-900 via-zinc-900/40 to-transparent" />
 

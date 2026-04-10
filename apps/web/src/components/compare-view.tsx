@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useMemo } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { useLocale } from "next-intl";
 import { useSearchParams } from "next/navigation";
@@ -152,11 +153,12 @@ export function CompareView({ destinations }: { destinations: any[] }) {
         {compared.map((d: any) => (
           <Link key={d.id} href={`/${locale}/destination/${d.id}`} className="group block">
             <div className="relative h-40 rounded-2xl overflow-hidden bg-muted/30">
-              <img
+              <Image
                 src={`/images/destinations/${d.id}.jpg`}
                 alt={d.name}
-                className="w-full h-full object-cover ken-burns"
-                loading="lazy"
+                fill
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                className="object-cover ken-burns"
                 onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />

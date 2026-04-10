@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 
 export default function Error({
   error,
@@ -9,6 +10,7 @@ export default function Error({
   error: Error & { digest?: string };
   reset: () => void;
 }) {
+  const t = useTranslations("ui");
   return (
     <div className="min-h-screen flex items-center justify-center px-4">
       <div className="max-w-lg text-center space-y-6">
@@ -34,13 +36,13 @@ export default function Error({
             onClick={reset}
             className="rounded-full bg-primary px-8 py-3 text-sm font-semibold text-primary-foreground hover:bg-primary/90 hover:-translate-y-0.5 transition-all duration-200 shadow-lg"
           >
-            Try again
+            {t("tryAgain")}
           </button>
           <Link
             href="/en"
             className="rounded-full border border-border px-8 py-3 text-sm font-semibold hover:bg-muted transition-all duration-200"
           >
-            Go home
+            {t("goHome")}
           </Link>
         </div>
       </div>

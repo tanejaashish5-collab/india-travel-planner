@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useMemo, useEffect } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { useLocale } from "next-intl";
 import { useSearchParams } from "next/navigation";
@@ -475,11 +476,12 @@ export function PlanContent({ destinations }: PlanContentProps) {
                     >
                       {/* Hero image */}
                       <div className="relative h-28 bg-muted/30 overflow-hidden">
-                        <img
+                        <Image
                           src={`/images/destinations/${dest.id}.jpg`}
                           alt={dest.name}
-                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                          loading="lazy"
+                          fill
+                          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                          className="object-cover transition-transform duration-500 group-hover:scale-105"
                           onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
                         />
                         {/* Rank badge */}

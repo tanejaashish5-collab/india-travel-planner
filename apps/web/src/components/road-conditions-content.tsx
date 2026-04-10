@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useMemo } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { useLocale } from "next-intl";
 import { StaggerContainer, StaggerItem } from "./animated-hero";
@@ -98,7 +99,7 @@ export function RoadConditionsContent({ reports }: { reports: any[] }) {
             <StaggerItem key={report.id}>
             <div className="rounded-xl border border-border p-4 hover:border-border/80 transition-colors">
               <div className="flex items-start justify-between gap-3 mb-2">
-                <img src={`/images/destinations/${report.destination_id}.jpg`} className="w-12 h-12 rounded-lg object-cover flex-shrink-0" loading="lazy" onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }} />
+                <Image src={`/images/destinations/${report.destination_id}.jpg`} width={48} height={48} className="rounded-lg object-cover flex-shrink-0" sizes="48px" alt="" onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }} />
                 <div className="flex-1 min-w-0">
                   <h3 className="font-semibold text-sm flex items-center gap-2">
                     <span>{icon}</span>

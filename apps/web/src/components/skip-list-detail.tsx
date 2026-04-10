@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { FadeIn, ScrollReveal, StaggerContainer, StaggerItem, HoverCard } from "./animated-hero";
 import { SCORE_COLORS, DIFFICULTY_COLORS } from "@/lib/design-tokens";
@@ -47,11 +48,13 @@ export function SkipListDetail({ trapDest, alternatives, whyTrapText, goodMonths
     <>
       {/* Hero */}
       <section className="relative h-56 sm:h-72 md:h-80 overflow-hidden">
-        <img
+        <Image
           src={`/images/destinations/${trapDest.id}.jpg`}
           alt={trapDest.name}
-          className="w-full h-full object-cover"
-          loading="eager"
+          fill
+          sizes="100vw"
+          priority
+          className="object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-transparent" />
         <FadeIn className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 max-w-5xl mx-auto">
@@ -173,11 +176,12 @@ export function SkipListDetail({ trapDest, alternatives, whyTrapText, goodMonths
                     <article className="h-full rounded-2xl border border-border bg-card overflow-hidden transition-shadow hover:shadow-lg">
                       {/* Alt image */}
                       <div className="relative h-40 overflow-hidden">
-                        <img
+                        <Image
                           src={`/images/destinations/${alt.id}.jpg`}
                           alt={alt.name}
-                          className="w-full h-full object-cover"
-                          loading="lazy"
+                          fill
+                          sizes="(max-width: 640px) 100vw, 50vw"
+                          className="object-cover"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent" />
                         <div className="absolute bottom-3 left-3 right-3">

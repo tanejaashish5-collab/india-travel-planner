@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useMemo } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { useLocale } from "next-intl";
 import { StaggerContainer, StaggerItem, HoverCard } from "./animated-hero";
@@ -77,11 +78,12 @@ export function CampingContent({ spots }: { spots: any[] }) {
                   {/* Hero image from parent destination */}
                   {spot.destination_id && (
                     <div className="relative h-40 bg-muted/30 overflow-hidden film-grain">
-                      <img
+                      <Image
                         src={`/images/destinations/${spot.destination_id}.jpg`}
                         alt={spot.name}
-                        className="w-full h-full object-cover ken-burns"
-                        loading="lazy"
+                        fill
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                        className="object-cover ken-burns"
                         onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-card/80 to-transparent" />

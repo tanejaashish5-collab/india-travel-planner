@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useLocale } from "next-intl";
 import { motion } from "framer-motion";
@@ -22,11 +23,12 @@ export function SuperlativesContent({ superlatives }: { superlatives: any[] }) {
                 {/* Hero image area */}
                 <div className="h-36 relative overflow-hidden bg-muted/30">
                   {s.destination_id && (
-                    <img
+                    <Image
                       src={`/images/destinations/${s.destination_id}.jpg`}
                       alt={s.name ?? ""}
-                      className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                      loading="lazy"
+                      fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                       onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
                     />
                   )}

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useMemo } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { useLocale } from "next-intl";
 import { StaggerContainer, StaggerItem, HoverCard, ScrollReveal, PulseGlow } from "./animated-hero";
@@ -140,11 +141,12 @@ export function FestivalsContent({ festivals }: { festivals: any[] }) {
                     >
                       {/* Destination hero image */}
                       <div className="relative h-28 bg-muted/30 overflow-hidden">
-                        <img
+                        <Image
                           src={`/images/destinations/${festival.destination_id}.jpg`}
                           alt={`${festival.name} festival at ${destName || festival.destination_id}`}
-                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                          loading="lazy"
+                          fill
+                          sizes="(max-width: 640px) 100vw, 50vw"
+                          className="object-cover transition-transform duration-500 group-hover:scale-105"
                           onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-card via-card/30 to-transparent" />

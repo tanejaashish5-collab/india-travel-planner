@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { createClient } from "@supabase/supabase-js";
@@ -39,11 +40,13 @@ export default async function GuidesPage() {
 
       {/* Hero Banner */}
       <section className="relative h-48 sm:h-64 overflow-hidden mb-8">
-        <img
+        <Image
           src="/images/destinations/spiti-valley.jpg"
           alt="Travel guides hero"
-          className="w-full h-full object-cover"
-          loading="eager"
+          fill
+          sizes="100vw"
+          priority
+          className="object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
         <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 max-w-5xl mx-auto">

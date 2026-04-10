@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export default function RootNotFound() {
@@ -25,7 +26,7 @@ export default function RootNotFound() {
         <div className="relative flex items-center justify-center px-4 py-24 min-h-[80vh]">
           {/* Background image */}
           <div className="absolute inset-0">
-            <img src="/images/destinations/spiti-valley.jpg" alt="" className="w-full h-full object-cover opacity-[0.08]" />
+            <Image src="/images/destinations/spiti-valley.jpg" alt="" fill sizes="100vw" className="object-cover opacity-[0.08]" />
             <div className="absolute inset-0 bg-gradient-to-t from-[#161614] via-[#161614]/80 to-transparent" />
           </div>
 

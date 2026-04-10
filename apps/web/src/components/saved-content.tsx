@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useMemo } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { useLocale } from "next-intl";
 import { useSearchParams } from "next/navigation";
@@ -104,11 +105,12 @@ export function SavedContent({ destinations }: { destinations: any[] }) {
               }`}>
                 {/* Hero image */}
                 <div className="relative h-32 bg-muted/30 overflow-hidden">
-                  <img
+                  <Image
                     src={`/images/destinations/${dest.id}.jpg`}
                     alt={dest.name}
-                    className="w-full h-full object-cover"
-                    loading="lazy"
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-cover"
                     onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-card/80 to-transparent" />

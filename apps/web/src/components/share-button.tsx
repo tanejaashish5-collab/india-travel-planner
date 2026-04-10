@@ -1,9 +1,11 @@
 "use client";
 
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 
 export function ShareButton({ title, text, url }: { title: string; text: string; url?: string }) {
   const [copied, setCopied] = useState(false);
+  const t = useTranslations("ui");
   const shareUrl = url || (typeof window !== "undefined" ? window.location.href : "");
 
   async function handleShare() {
@@ -39,13 +41,13 @@ export function ShareButton({ title, text, url }: { title: string; text: string;
           <polyline points="16,6 12,2 8,6" />
           <line x1="12" y1="2" x2="12" y2="15" />
         </svg>
-        Share
+        {t("share")}
       </button>
       <button
         onClick={handleCopy}
         className="flex items-center gap-1.5 rounded-full border border-border px-3 py-1.5 text-sm font-medium text-muted-foreground hover:text-foreground hover:border-muted-foreground transition-all"
       >
-        {copied ? "Copied!" : "Copy link"}
+        {copied ? t("copied") : t("copyLink")}
       </button>
     </div>
   );

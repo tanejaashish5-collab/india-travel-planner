@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import {
   StaggerContainer,
@@ -58,19 +59,23 @@ const MONTH_COLORS: Record<string, string> = {
 function DestinationImage({
   id,
   className,
+  size = 64,
 }: {
   id: string;
   className: string;
+  size?: number;
 }) {
   return (
-    <img
+    <Image
       src={`/images/destinations/${id}.jpg`}
       alt=""
+      width={size}
+      height={size}
+      sizes={`${size}px`}
       className={className}
       onError={(e) => {
         (e.target as HTMLImageElement).style.display = "none";
       }}
-      loading="lazy"
     />
   );
 }
@@ -205,10 +210,12 @@ export function GuideContent({
                     <DestinationImage
                       id={g.trapId}
                       className="w-8 h-8 rounded-lg object-cover"
+                      size={32}
                     />
                     <DestinationImage
                       id={g.altId}
                       className="w-8 h-8 rounded-lg object-cover"
+                      size={32}
                     />
                   </div>
                   <div className="min-w-0 flex-1">

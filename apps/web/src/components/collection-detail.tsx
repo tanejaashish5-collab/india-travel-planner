@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { useLocale } from "next-intl";
 import { motion, AnimatePresence } from "framer-motion";
@@ -79,11 +80,12 @@ export function CollectionDetail({ collection }: { collection: any }) {
                     className="flex items-start gap-4 rounded-xl border border-border bg-card overflow-hidden transition-all hover:border-primary/50"
                   >
                     <div className="relative w-24 h-24 sm:w-32 sm:h-24 shrink-0 bg-muted/30">
-                      <img
+                      <Image
                         src={`/images/destinations/${item.destination_id}.jpg`}
                         alt={dest?.name ?? ""}
-                        className="w-full h-full object-cover"
-                        loading="lazy"
+                        fill
+                        sizes="(max-width: 640px) 96px, 128px"
+                        className="object-cover"
                         onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
                       />
                       <div className="absolute top-1 left-1 flex h-7 w-7 items-center justify-center rounded-full bg-primary text-xs font-bold text-primary-foreground">

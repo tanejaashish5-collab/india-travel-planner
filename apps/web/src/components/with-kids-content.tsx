@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { FadeIn, SlideIn, ScrollReveal, StaggerContainer, StaggerItem } from "./animated-hero";
 import { SCORE_COLORS } from "@/lib/design-tokens";
@@ -105,10 +106,12 @@ export function WithKidsContent({
       {/* Hero image */}
       <FadeIn>
         <div className="relative h-48 sm:h-64 rounded-2xl overflow-hidden bg-muted/30">
-          <img
+          <Image
             src={`/images/destinations/${dest.id}.jpg`}
             alt={`Family travel guide for ${dest.name} — scenic view of the destination`}
-            className="w-full h-full object-cover"
+            fill
+            sizes="100vw"
+            className="object-cover"
             onError={(e) => {
               (e.target as HTMLImageElement).style.display = "none";
             }}

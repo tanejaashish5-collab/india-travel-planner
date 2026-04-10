@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { SuperlativesContent } from "@/components/superlatives-content";
@@ -31,7 +32,7 @@ export default async function SuperlativesPage() {
       <Nav />
       {/* Visual page hero */}
       <section className="relative h-48 sm:h-64 overflow-hidden">
-        <img src="/images/destinations/leh.jpg" alt="Superlatives & Records" className="w-full h-full object-cover" loading="eager" />
+        <Image src="/images/destinations/leh.jpg" alt="Superlatives & Records" fill sizes="100vw" priority className="object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
         <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 max-w-7xl mx-auto">
           <p className="text-sm font-medium text-primary uppercase tracking-widest mb-2">India's Records</p>

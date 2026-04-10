@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useMemo } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { useLocale } from "next-intl";
 import { StaggerContainer, StaggerItem, HoverCard } from "./animated-hero";
@@ -84,11 +85,12 @@ export function StaysContent({ destinations }: { destinations: any[] }) {
             >
               {/* Hero */}
               <div className="relative h-36 bg-muted/30 overflow-hidden">
-                <img
+                <Image
                   src={`/images/destinations/${dest.id}.jpg`}
                   alt={dest.name}
-                  className="w-full h-full object-cover ken-burns"
-                  loading="lazy"
+                  fill
+                  sizes="(max-width: 640px) 100vw, 50vw"
+                  className="object-cover ken-burns"
                   onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-card/80 to-transparent" />
