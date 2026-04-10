@@ -22,7 +22,10 @@ export function Nav() {
     { href: `/${locale}/saved`, label: "♥" },
   ];
 
+  const currentMonthSlug = ["","january","february","march","april","may","june","july","august","september","october","november","december"][new Date().getMonth() + 1];
+
   const moreLinks = [
+    { href: `/${locale}/where-to-go/${currentMonthSlug}`, label: `Where to Go Now` },
     { href: `/${locale}/blog`, label: "Blog" },
     { href: `/${locale}/tourist-traps`, label: "Tourist Traps" },
     { href: `/${locale}/guide`, label: "Guides" },
