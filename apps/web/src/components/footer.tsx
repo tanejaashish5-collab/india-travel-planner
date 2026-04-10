@@ -89,6 +89,7 @@ export function Footer({ stats }: { stats?: { destinations: number; places: numb
               {[
                 { href: `/${locale}/about`, label: "About" },
                 { href: `/${locale}/methodology`, label: "How We Score" },
+                { href: `/${locale}/editorial-policy`, label: "Editorial Policy" },
               ].map((link) => (
                 <Link
                   key={link.href}
@@ -121,10 +122,12 @@ export function Footer({ stats }: { stats?: { destinations: number; places: numb
         {/* Bottom bar */}
         <div className="h-px bg-gradient-to-r from-transparent via-border/20 to-transparent mb-6" />
         <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-muted-foreground/60">
-          <p>&copy; 2026 NakshIQ</p>
-          <p className="italic font-serif">
-            "The best journeys answer questions you didn't even think to ask."
-          </p>
+          <p>&copy; 2026 NakshIQ — Impresa de Artiste Pty Ltd</p>
+          <div className="flex gap-4">
+            <Link href={`/${locale}/terms`} className="hover:text-foreground transition-colors">Terms</Link>
+            <Link href={`/${locale}/privacy`} className="hover:text-foreground transition-colors">Privacy</Link>
+            <Link href={`/${locale}/cookies`} className="hover:text-foreground transition-colors">Cookies</Link>
+          </div>
         </div>
       </div>
     </footer>

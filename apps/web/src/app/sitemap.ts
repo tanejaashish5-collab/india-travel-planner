@@ -10,6 +10,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "camping", "permits", "road-conditions", "superlatives",
     "stays", "festivals", "tourist-traps",
     "saved", "about", "methodology", "blog",
+    "terms", "privacy", "cookies", "editorial-policy",
     "region/himachal-pradesh", "region/uttarakhand", "region/jammu-kashmir",
     "region/ladakh", "region/rajasthan", "region/punjab",
   ];
