@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import {
   View,
   Text,
@@ -29,17 +29,17 @@ const DIFF_COLORS: Record<string, string> = {
 };
 
 const DISCOVER_ITEMS = [
-  { label: "Treks", sub: "49", icon: "🥾", route: "/treks", color: "#10b981" },
-  { label: "Routes", sub: "19", icon: "🛣️", route: "/routes", color: "#3b82f6" },
-  { label: "Where to Go", sub: "", icon: "📅", route: "/where-to-go", color: "#14b8a6" },
-  { label: "Tourist Traps", sub: "", icon: "⚠️", route: "/tourist-traps", color: "#ef4444" },
+  { label: "Treks", sub: "49", icon: "🥾", route: "/treks", color: colors.score5 },
+  { label: "Routes", sub: "19", icon: "🛣️", route: "/routes", color: colors.score4 },
+  { label: "Where to Go", sub: "", icon: "📅", route: "/where-to-go", color: colors.topographic },
+  { label: "Tourist Traps", sub: "", icon: "⚠️", route: "/tourist-traps", color: colors.score1 },
   { label: "Collections", sub: "20", icon: "📚", route: "/collections", color: "#8b5cf6" },
-  { label: "Festivals", sub: "168", icon: "🎪", route: "/festivals", color: "#f59e0b" },
-  { label: "Camping", sub: "37", icon: "⛺", route: "/camping", color: "#06b6d4" },
-  { label: "Stays", sub: "180", icon: "🏡", route: "/stays", color: "#ec4899" },
-  { label: "Permits", sub: "", icon: "📋", route: "/permits", color: "#64748b" },
-  { label: "Roads", sub: "", icon: "🚗", route: "/road-conditions", color: "#f97316" },
-  { label: "Records", sub: "25", icon: "🏆", route: "/superlatives", color: "#eab308" },
+  { label: "Festivals", sub: "168", icon: "🎪", route: "/festivals", color: colors.saffron },
+  { label: "Camping", sub: "37", icon: "⛺", route: "/camping", color: colors.score4 },
+  { label: "Stays", sub: "180", icon: "🏡", route: "/stays", color: colors.vermillion },
+  { label: "Permits", sub: "", icon: "📋", route: "/permits", color: colors.mutedForeground },
+  { label: "Roads", sub: "", icon: "🚗", route: "/road-conditions", color: colors.saffron },
+  { label: "Records", sub: "25", icon: "🏆", route: "/superlatives", color: colors.score3 },
   { label: "Blog", sub: "", icon: "📝", route: "/blog", color: "#8b5cf6" },
 ];
 
@@ -59,6 +59,10 @@ export default function HomeScreen() {
   const [stats, setStats] = useState({ destinations: 0, places: 0, treks: 0, festivals: 0 });
   const [loading, setLoading] = useState(true);
   const [refreshing, setRefreshing] = useState(false);
+  const [failedImages, setFailedImages] = useState<Set<string>>(new Set());
+  const onImageError = useCallback((id: string) => {
+    setFailedImages((prev) => new Set(prev).add(id));
+  }, []);
 
   async function fetchData() {
     const currentMonth = new Date().getMonth() + 1;
@@ -157,7 +161,11 @@ export default function HomeScreen() {
             const stateName = Array.isArray(dest.state) ? dest.state[0]?.name : dest.state?.name;
             return (
               <TouchableOpacity key={dest.id} style={styles.featCard} onPress={() => router.push(`/destination/${dest.id}` as any)} activeOpacity={0.9}>
-                <Image source={{ uri: `${IMG_BASE}/${dest.id}.jpg` }} style={styles.featImage} />
+                {!failedImages.has(dest.id) ? (
+                  <Image source={{ uri: `${IMG_BASE}/${dest.id}.jpg` }} style={styles.featImage} onError={() => onImageError(dest.id)} />
+                ) : (
+                  <View style={[styles.featImage, { backgroundColor: colors.muted }]} />
+                )}
                 <View style={styles.featGradient} />
                 {/* Score */}
                 <View style={[styles.featScore, { backgroundColor: SCORE_COLORS[item.score] || colors.muted }]}>
@@ -267,7 +275,7 @@ const styles = StyleSheet.create({
   statLabel: { fontSize: 10, color: colors.mutedForeground, marginTop: 2, textTransform: "uppercase", letterSpacing: 0.5 },
 
   // SOS
-  sosCard: { flexDirection: "row", alignItems: "center", marginHorizontal: spacing.lg, marginTop: spacing.lg, backgroundColor: "#1e1614", borderRadius: borderRadius.md, padding: spacing.md, borderWidth: 1, borderColor: colors.vermillion + "30", gap: spacing.md },
+  sosCard: { flexDirection: "row", alignItems: "center", marginHorizontal: spacing.lg, marginTop: spacing.lg, backgroundColor: colors.card, borderRadius: borderRadius.md, padding: spacing.md, borderWidth: 1, borderColor: colors.vermillion + "30", gap: spacing.md },
   sosIcon: { fontSize: 28 },
   sosTitle: { fontSize: fontSize.sm, fontWeight: "700", color: colors.vermillion },
   sosSub: { fontSize: fontSize.xs, color: colors.mutedForeground, marginTop: 2 },

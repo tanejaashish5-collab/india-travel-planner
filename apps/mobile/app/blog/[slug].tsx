@@ -1,7 +1,7 @@
-import { View, Text, ScrollView, TouchableOpacity, StyleSheet, ActivityIndicator } from "react-native";
+import { View, Text, ScrollView, TouchableOpacity, StyleSheet, ActivityIndicator, Share, Linking } from "react-native";
 import { useLocalSearchParams, Stack, router } from "expo-router";
 import { colors, spacing, fontSize, borderRadius } from "../../lib/theme";
-import { useArticle } from "../../hooks/useArticles";
+import { useArticle, useArticles } from "../../hooks/useArticles";
 
 const CAT_LABELS: Record<string, string> = {
   "best-time": "Best Time to Visit",
@@ -10,15 +10,39 @@ const CAT_LABELS: Record<string, string> = {
   "data-story": "Data Story",
 };
 
+function formatDate(dateStr: string): string {
+  const d = new Date(dateStr);
+  return d.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
+}
+
 export default function BlogArticleScreen() {
   const { slug } = useLocalSearchParams<{ slug: string }>();
   const { article, loading } = useArticle(slug);
+  const { articles: allArticles, loading: allLoading } = useArticles();
 
   if (loading || !article) {
-    return <View style={s.center}><Stack.Screen options={{ title: "Loading..." }} /><ActivityIndicator size="large" color={colors.foreground} /></View>;
+    return <View style={s.center}><Stack.Screen options={{ title: "Loading..." }} /><ActivityIndicator size="large" color={colors.primary} /></View>;
   }
 
   const sections = parseContent(article.content);
+
+  // Related articles: same category or shared tags, excluding current
+  const related = allArticles
+    .filter((a) => a.slug !== article.slug)
+    .filter((a) => a.category === article.category || a.tags?.some((t) => article.tags?.includes(t)))
+    .slice(0, 3);
+
+  async function handleShare() {
+    await Share.share({
+      message: `${article!.title}\n\nRead on NakshIQ: https://nakshiq.com/en/blog/${article!.slug}`,
+      title: article!.title,
+    });
+  }
+
+  function handleWhatsAppShare() {
+    const msg = encodeURIComponent(`${article!.title}\n\nRead: https://nakshiq.com/en/blog/${article!.slug}`);
+    Linking.openURL(`https://wa.me/?text=${msg}`);
+  }
 
   return (
     <ScrollView style={s.container} contentContainerStyle={s.content}>
@@ -49,6 +73,29 @@ export default function BlogArticleScreen() {
 
       <Text style={s.title}>{article.title}</Text>
       {article.subtitle && <Text style={s.subtitle}>{article.subtitle}</Text>}
+
+      {/* Author & date metadata */}
+      <View style={s.authorRow}>
+        <Text style={s.authorText}>By {(article as any).author || "NakshIQ"}</Text>
+        <Text style={s.authorDot}>·</Text>
+        <Text style={s.authorText}>{formatDate(article.published_at)}</Text>
+        {article.reading_time > 0 && (
+          <>
+            <Text style={s.authorDot}>·</Text>
+            <Text style={s.authorText}>{article.reading_time} min read</Text>
+          </>
+        )}
+      </View>
+
+      {/* Share actions */}
+      <View style={s.shareRow}>
+        <TouchableOpacity style={s.shareBtn} onPress={handleShare}>
+          <Text style={s.shareBtnText}>Share</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={[s.shareBtn, s.whatsappBtn]} onPress={handleWhatsAppShare}>
+          <Text style={[s.shareBtnText, { color: "#fff" }]}>WhatsApp</Text>
+        </TouchableOpacity>
+      </View>
 
       {/* Linked destinations */}
       {article.destinations?.length > 0 && (
@@ -82,6 +129,26 @@ export default function BlogArticleScreen() {
 
       {/* Closing */}
       <Text style={s.closing}>Go with confidence.</Text>
+
+      {/* Related articles / Read Next */}
+      {related.length > 0 ? (
+        <View style={s.relatedSection}>
+          <Text style={s.relatedTitle}>Read Next</Text>
+          {related.map((r) => (
+            <TouchableOpacity key={r.slug} style={s.relatedCard} onPress={() => router.push(`/blog/${r.slug}`)}>
+              <Text style={s.relatedCat}>{CAT_LABELS[r.category] || r.category}</Text>
+              <Text style={s.relatedCardTitle} numberOfLines={2}>{r.title}</Text>
+              {r.reading_time > 0 && <Text style={s.relatedMeta}>{r.reading_time} min read</Text>}
+            </TouchableOpacity>
+          ))}
+        </View>
+      ) : (
+        <View style={s.relatedSection}>
+          <TouchableOpacity style={s.browseAllBtn} onPress={() => router.push("/blog")}>
+            <Text style={s.browseAllText}>Browse all articles →</Text>
+          </TouchableOpacity>
+        </View>
+      )}
 
       <View style={{ height: 40 }} />
     </ScrollView>
@@ -135,4 +202,19 @@ const s = StyleSheet.create({
   tag: { borderWidth: 1, borderColor: colors.border, borderRadius: borderRadius.full, paddingHorizontal: 10, paddingVertical: 4 },
   tagText: { fontSize: fontSize.xs, color: colors.mutedForeground },
   closing: { fontSize: fontSize.lg, fontStyle: "italic", color: colors.foreground, textAlign: "center", marginTop: spacing.xxl, opacity: 0.7 },
+  authorRow: { flexDirection: "row", alignItems: "center", gap: 6, marginTop: spacing.md, flexWrap: "wrap" },
+  authorText: { fontSize: fontSize.xs, color: colors.mutedForeground },
+  authorDot: { fontSize: fontSize.xs, color: colors.mutedForeground, opacity: 0.5 },
+  shareRow: { flexDirection: "row", gap: spacing.sm, marginTop: spacing.md },
+  shareBtn: { borderRadius: borderRadius.full, borderWidth: 1, borderColor: colors.border, paddingHorizontal: 16, paddingVertical: spacing.sm, alignItems: "center" },
+  shareBtnText: { fontSize: fontSize.sm, fontWeight: "600", color: colors.mutedForeground },
+  whatsappBtn: { backgroundColor: "#25D366", borderColor: "#25D366" },
+  relatedSection: { marginTop: spacing.xxl },
+  relatedTitle: { fontSize: fontSize.xl, fontWeight: "700", color: colors.foreground, marginBottom: spacing.md },
+  relatedCard: { backgroundColor: colors.card, borderWidth: 1, borderColor: colors.border, borderRadius: borderRadius.md, padding: spacing.md, marginBottom: spacing.sm },
+  relatedCat: { fontSize: 10, fontWeight: "700", color: colors.vermillion, marginBottom: 4 },
+  relatedCardTitle: { fontSize: fontSize.base, fontWeight: "600", color: colors.foreground, lineHeight: 22 },
+  relatedMeta: { fontSize: fontSize.xs, color: colors.mutedForeground, marginTop: 4 },
+  browseAllBtn: { borderRadius: borderRadius.full, borderWidth: 1, borderColor: colors.vermillion, paddingVertical: spacing.md, alignItems: "center" },
+  browseAllText: { fontSize: fontSize.sm, fontWeight: "600", color: colors.vermillion },
 });

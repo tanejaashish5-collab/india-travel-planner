@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from "react";
+import { useState, useMemo, useCallback } from "react";
 import {
   View,
   Text,
@@ -29,6 +29,10 @@ export default function ExploreScreen() {
   const { destinations, loading } = useDestinations();
   const [search, setSearch] = useState("");
   const [diffFilter, setDiffFilter] = useState("");
+  const [failedImages, setFailedImages] = useState<Set<string>>(new Set());
+  const onImageError = useCallback((id: string) => {
+    setFailedImages((prev) => new Set(prev).add(id));
+  }, []);
   const currentMonth = new Date().getMonth() + 1;
 
   const filtered = useMemo(() => {
@@ -125,10 +129,15 @@ export default function ExploreScreen() {
               onPress={() => router.push(`/destination/${item.id}` as any)}
               activeOpacity={0.8}
             >
-              <Image
-                source={{ uri: `https://nakshiq.com/images/destinations/${item.id}.jpg` }}
-                style={styles.cardImage}
-              />
+              {!failedImages.has(item.id) ? (
+                <Image
+                  source={{ uri: `https://nakshiq.com/images/destinations/${item.id}.jpg` }}
+                  style={styles.cardImage}
+                  onError={() => onImageError(item.id)}
+                />
+              ) : (
+                <View style={[styles.cardImage, { backgroundColor: colors.muted }]} />
+              )}
               <View style={styles.cardImageOverlay} />
 
               {/* Score badge */}

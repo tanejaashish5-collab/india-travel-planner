@@ -99,11 +99,6 @@ export default function ProfileScreen() {
             <Text style={styles.settingsValue}>English</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.settingsRow}>
-            <Text style={styles.settingsLabel}>Offline Maps</Text>
-            <Text style={styles.settingsValue}>Coming soon</Text>
-          </TouchableOpacity>
-
           <TouchableOpacity style={styles.settingsRow} onPress={() => { resetOnboarding(); router.push("/onboarding"); }}>
             <Text style={styles.settingsLabel}>Redo Onboarding</Text>
             <Text style={styles.settingsChevron}>→</Text>

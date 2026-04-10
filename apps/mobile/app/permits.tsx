@@ -17,7 +17,7 @@ export default function PermitsScreen() {
     return (
       <View style={s.center}>
         <Stack.Screen options={{ headerShown: false }} />
-        <ActivityIndicator size="large" color={colors.vermillion} />
+        <ActivityIndicator size="large" color={colors.primary} />
         <Text style={s.loadingText}>Loading permits...</Text>
       </View>
     );

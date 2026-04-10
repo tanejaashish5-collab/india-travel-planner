@@ -68,7 +68,7 @@ export default function WhereToGoScreen() {
     return (
       <View style={s.center}>
         <Stack.Screen options={{ title: "Where to Go" }} />
-        <ActivityIndicator size="large" color={colors.vermillion} />
+        <ActivityIndicator size="large" color={colors.primary} />
       </View>
     );
   }

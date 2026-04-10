@@ -59,7 +59,7 @@ export default function WithKidsScreen() {
     return (
       <View style={[styles.container, styles.center]}>
         <Stack.Screen options={{ title: "Family Guide" }} />
-        <ActivityIndicator size="large" color={colors.saffron} />
+        <ActivityIndicator size="large" color={colors.primary} />
       </View>
     );
   }

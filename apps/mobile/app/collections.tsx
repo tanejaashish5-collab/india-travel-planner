@@ -72,7 +72,7 @@ const s = StyleSheet.create({
   cardTop: { flexDirection: "row", justifyContent: "space-between", alignItems: "center", marginBottom: spacing.sm },
   typeIcon: { fontSize: 22 },
   typeBadge: { paddingHorizontal: 8, paddingVertical: 2, borderRadius: borderRadius.full },
-  typeText: { fontSize: 9, fontWeight: "700", textTransform: "uppercase", letterSpacing: 0.5 },
+  typeText: { fontSize: 11, fontWeight: "700", textTransform: "uppercase", letterSpacing: 0.5 },
   cardName: { fontSize: fontSize.sm, fontWeight: "700", color: colors.foreground, lineHeight: 20 },
   cardDesc: { fontSize: fontSize.xs, color: colors.mutedForeground, marginTop: spacing.xs, lineHeight: 16 },
   count: { fontSize: 10, color: colors.mutedForeground, marginTop: spacing.sm, fontFamily: "monospace" },

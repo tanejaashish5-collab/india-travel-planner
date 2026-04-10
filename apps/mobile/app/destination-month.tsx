@@ -100,7 +100,7 @@ export default function DestinationMonthScreen() {
     return (
       <View style={s.center}>
         <Stack.Screen options={{ title: "Month Guide" }} />
-        <ActivityIndicator size="large" color={colors.vermillion} />
+        <ActivityIndicator size="large" color={colors.primary} />
       </View>
     );
   }
@@ -263,7 +263,17 @@ export default function DestinationMonthScreen() {
           onPress={() => router.push(`/destination/${id}`)}
         >
           <Text style={s.fullGuideBtnText}>
-            Full {destination.name} Guide →
+            ← Full {destination.name} Guide
+          </Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          style={[s.fullGuideBtn, { marginTop: spacing.sm }]}
+          activeOpacity={0.85}
+          onPress={() => router.push(`/where-to-go?month=${monthNum}` as any)}
+        >
+          <Text style={s.fullGuideBtnText}>
+            See all destinations in {MONTH_FULL[monthNum]} →
           </Text>
         </TouchableOpacity>
       </ScrollView>

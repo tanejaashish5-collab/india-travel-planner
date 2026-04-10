@@ -25,7 +25,7 @@ export default function CampingScreen() {
     return spots;
   }, [spots, filter, currentMonth]);
 
-  if (loading) return <View style={s.center}><Stack.Screen options={{ title: "Camping" }} /><ActivityIndicator size="large" color={colors.topographic} /></View>;
+  if (loading) return <View style={s.center}><Stack.Screen options={{ title: "Camping" }} /><ActivityIndicator size="large" color={colors.primary} /></View>;
 
   const filters = [
     { id: "all", label: "All" },

@@ -40,7 +40,7 @@ export default function StaysScreen() {
     return (
       <View style={s.center}>
         <Stack.Screen options={{ headerShown: false }} />
-        <ActivityIndicator size="large" color={colors.saffron} />
+        <ActivityIndicator size="large" color={colors.primary} />
         <Text style={s.loadingText}>Loading stays...</Text>
       </View>
     );

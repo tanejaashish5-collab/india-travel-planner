@@ -66,7 +66,7 @@ export default function TouristTrapsScreen() {
     return (
       <View style={s.center}>
         <Stack.Screen options={{ title: "Tourist Traps" }} />
-        <ActivityIndicator size="large" color={colors.vermillion} />
+        <ActivityIndicator size="large" color={colors.primary} />
       </View>
     );
   }

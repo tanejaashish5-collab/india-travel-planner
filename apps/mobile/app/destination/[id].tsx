@@ -79,6 +79,7 @@ export default function DestinationScreen() {
         <Image
           source={{ uri: `https://nakshiq.com/images/destinations/${dest.id}.jpg` }}
           style={styles.heroImage}
+          onError={() => {}}
         />
         <View style={styles.heroOverlay} />
 
@@ -116,6 +117,11 @@ export default function DestinationScreen() {
           );
         })}
       </ScrollView>
+      <TouchableOpacity onPress={() => router.push(`/where-to-go?month=${currentMonth}` as any)}>
+        <Text style={{ color: colors.primary, fontSize: fontSize.sm, marginTop: spacing.sm, marginLeft: spacing.md }}>
+          See all destinations in {MONTH_SHORT[currentMonth]} →
+        </Text>
+      </TouchableOpacity>
 
       {/* Info card */}
       <View style={styles.infoCard}>
@@ -180,6 +186,11 @@ export default function DestinationScreen() {
             <Text style={[styles.actionBtnText, isVisited(id) && styles.actionBtnTextPrimary]}>{isVisited(id) ? "✓ Visited" : "📍 Visited?"}</Text>
           </TouchableOpacity>
         </View>
+        {kf?.suitable && (
+          <TouchableOpacity style={[styles.actionBtn, { backgroundColor: colors.saffron + "20", borderColor: colors.saffron + "40", marginTop: spacing.sm }]} onPress={() => router.push(`/with-kids?id=${id}` as any)}>
+            <Text style={[styles.actionBtnText, { color: colors.saffron }]}>Family Guide</Text>
+          </TouchableOpacity>
+        )}
 
         {/* Related Guide Articles */}
         {guideArticles.length > 0 && (
@@ -384,7 +395,7 @@ export default function DestinationScreen() {
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: colors.background },
   center: { justifyContent: "center", alignItems: "center" },
-  heroContainer: { height: 250, position: "relative" },
+  heroContainer: { height: 250, position: "relative", backgroundColor: colors.muted },
   heroImage: { width: "100%", height: "100%" },
   heroOverlay: { ...StyleSheet.absoluteFillObject, backgroundColor: "rgba(0,0,0,0.3)" },
   diffBadge: { position: "absolute", top: spacing.md, left: spacing.md, borderRadius: borderRadius.sm, paddingHorizontal: spacing.sm, paddingVertical: spacing.xs },

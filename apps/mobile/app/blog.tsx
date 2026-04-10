@@ -29,7 +29,7 @@ export default function BlogScreen() {
     return articles.filter((a) => a.category === filter);
   }, [articles, filter]);
 
-  if (loading) return <View style={s.center}><Stack.Screen options={{ title: "Blog" }} /><ActivityIndicator size="large" color={colors.foreground} /></View>;
+  if (loading) return <View style={s.center}><Stack.Screen options={{ title: "Blog" }} /><ActivityIndicator size="large" color={colors.primary} /></View>;
 
   return (
     <View style={s.container}>

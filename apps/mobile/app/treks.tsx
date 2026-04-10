@@ -13,6 +13,10 @@ export default function TreksScreen() {
   const [search, setSearch] = useState("");
   const [diffFilter, setDiffFilter] = useState("all");
   const [refreshing, setRefreshing] = useState(false);
+  const [failedImages, setFailedImages] = useState<Set<string>>(new Set());
+  const onImageError = useCallback((id: string) => {
+    setFailedImages((prev) => new Set(prev).add(id));
+  }, []);
   const onRefresh = useCallback(() => { setRefreshing(true); setTimeout(() => setRefreshing(false), 1000); }, []);
 
   const filtered = useMemo(() => {
@@ -66,7 +70,11 @@ export default function TreksScreen() {
           return (
             <TouchableOpacity style={s.card} onPress={() => router.push(`/trek/${t.id}`)} activeOpacity={0.85}>
               {/* Image */}
-              <Image source={{ uri: `${IMG_BASE}/${t.destination_id}.jpg` }} style={s.cardImage} />
+              {!failedImages.has(t.id) ? (
+                <Image source={{ uri: `${IMG_BASE}/${t.destination_id}.jpg` }} style={s.cardImage} onError={() => onImageError(t.id)} />
+              ) : (
+                <View style={[s.cardImage, { backgroundColor: colors.muted }]} />
+              )}
               <View style={s.cardOverlay} />
 
               {/* Difficulty badge */}

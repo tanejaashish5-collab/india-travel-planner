@@ -47,7 +47,7 @@ export default function FestivalsScreen() {
       .map(([month, data]) => ({ title: MONTH_FULL[Number(month)] || "Unknown", month: Number(month), data }));
   }, [festivals, monthFilter]);
 
-  if (loading) return <View style={s.center}><Stack.Screen options={{ title: "Festivals" }} /><ActivityIndicator size="large" color={colors.vermillion} /></View>;
+  if (loading) return <View style={s.center}><Stack.Screen options={{ title: "Festivals" }} /><ActivityIndicator size="large" color={colors.primary} /></View>;
 
   return (
     <View style={s.container}>
