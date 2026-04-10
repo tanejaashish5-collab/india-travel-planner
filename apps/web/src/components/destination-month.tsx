@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { FadeIn, ScrollReveal, StaggerContainer, StaggerItem, HoverCard } from "./animated-hero";
 import { SCORE_COLORS, DIFFICULTY_COLORS } from "@/lib/design-tokens";
+import { NewsletterSignup } from "./newsletter-signup";
 
 // ── Constants ──────────────────────────────────────────────────
 
@@ -532,6 +533,9 @@ export function DestinationMonth({
       <MonthTable />
       <PracticalDetails />
       <NearbySection />
+
+      {/* Newsletter */}
+      <NewsletterSignup />
 
       {/* Divider */}
       <div className="border-t border-zinc-800" />

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { BlogGrid } from "@/components/blog-grid";
+import { NewsletterSignup } from "@/components/newsletter-signup";
 import { createClient } from "@supabase/supabase-js";
 
 export const metadata: Metadata = {
@@ -40,6 +41,9 @@ export default async function BlogPage() {
       </section>
       <main className="mx-auto max-w-7xl px-4 py-8">
         <BlogGrid articles={articles} />
+        <div className="mt-12">
+          <NewsletterSignup />
+        </div>
       </main>
       <Footer />
     </div>

@@ -18,7 +18,7 @@ import { TouristTrapIntervention } from "./tourist-trap-intervention";
 import { TravelerNotes } from "./traveler-notes";
 import { BookingHandoff } from "./booking-handoff";
 import { DestinationAlerts } from "./destination-alerts";
-import { FadeIn, SlideIn, HoverCard, StaggerContainer, StaggerItem } from "./animated-hero";
+import { FadeIn, SlideIn, HoverCard, StaggerContainer, StaggerItem, ScrollReveal } from "./animated-hero";
 import { Footer } from "./footer";
 import { SCORE_COLORS, DIFFICULTY_BG, DIFFICULTY_COLORS } from "@/lib/design-tokens";
 
@@ -957,6 +957,85 @@ export function DestinationDetail({ dest }: { dest: any }) {
           )}
         </AnimatePresence>
       </div>
+      {/* === SEO Internal Linking Modules === */}
+
+      {/* Nearby in same state */}
+      {dest.nearbyDestinations?.length > 0 && (
+        <ScrollReveal>
+          <div className="mt-12 border-t border-border pt-8">
+            <h2 className="text-xl font-bold mb-4">Nearby in {stateName}</h2>
+            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+              {dest.nearbyDestinations.map((nd: any) => (
+                <Link
+                  key={nd.id}
+                  href={`/${locale}/destination/${nd.id}`}
+                  className="group rounded-xl border border-border bg-card overflow-hidden hover:border-primary/40 transition-all"
+                >
+                  <div className="relative h-24 bg-muted/30 overflow-hidden">
+                    <img
+                      src={`/images/destinations/${nd.id}.jpg`}
+                      alt={nd.name}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      loading="lazy"
+                      onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-card/80 to-transparent" />
+                  </div>
+                  <div className="p-3">
+                    <div className="font-semibold text-sm">{nd.name}</div>
+                    <div className="text-xs text-muted-foreground">
+                      {nd.difficulty}{nd.elevation_m ? ` · ${nd.elevation_m.toLocaleString()}m` : ""}
+                    </div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </ScrollReveal>
+      )}
+
+      {/* Featured in Collections */}
+      {dest.relatedCollections?.length > 0 && (
+        <ScrollReveal>
+          <div className="mt-8">
+            <h2 className="text-lg font-bold mb-3">Featured in Collections</h2>
+            <div className="flex gap-3 overflow-x-auto pb-2">
+              {dest.relatedCollections.map((c: any) => (
+                <Link
+                  key={c.id}
+                  href={`/${locale}/collections/${c.id}`}
+                  className="flex-shrink-0 rounded-xl border border-border bg-card p-4 w-60 hover:border-primary/40 transition-all"
+                >
+                  <div className="font-semibold text-sm">{c.name}</div>
+                  <div className="text-xs text-muted-foreground mt-1 line-clamp-2">{c.description}</div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </ScrollReveal>
+      )}
+
+      {/* Road Trips Through Here */}
+      {dest.relatedRoutes?.length > 0 && (
+        <ScrollReveal>
+          <div className="mt-8">
+            <h2 className="text-lg font-bold mb-3">Road Trips Through Here</h2>
+            <div className="flex gap-3 overflow-x-auto pb-2">
+              {dest.relatedRoutes.map((r: any) => (
+                <Link
+                  key={r.id}
+                  href={`/${locale}/routes/${r.id}`}
+                  className="flex-shrink-0 rounded-xl border border-border bg-card p-4 w-60 hover:border-primary/40 transition-all"
+                >
+                  <div className="font-semibold text-sm">{r.name}</div>
+                  <div className="text-xs text-muted-foreground mt-1">{r.days} days · {r.difficulty}</div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </ScrollReveal>
+      )}
+
       <Footer />
     </>
   );

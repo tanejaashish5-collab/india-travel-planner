@@ -142,6 +142,7 @@ export function FestivalsContent({ festivals }: { festivals: any[] }) {
                       <div className="relative h-28 bg-muted/30 overflow-hidden">
                         <img
                           src={`/images/destinations/${festival.destination_id}.jpg`}
+                          alt={`${festival.name} festival at ${destName || festival.destination_id}`}
                           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                           loading="lazy"
                           onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}

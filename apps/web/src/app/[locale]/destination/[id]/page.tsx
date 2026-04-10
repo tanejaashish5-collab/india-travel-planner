@@ -142,6 +142,28 @@ async function getDestination(id: string) {
     .order("depth", { ascending: false })
     .limit(5);
 
+  // Related collections containing this destination
+  const { data: relatedCollections } = await supabase
+    .from("collections")
+    .select("id, name, description")
+    .contains("items", [{ destination_id: id }])
+    .limit(5);
+
+  // Routes that include this destination as a stop
+  const { data: relatedRoutes } = await supabase
+    .from("routes")
+    .select("id, name, days, difficulty")
+    .contains("stops", [id])
+    .limit(5);
+
+  // Nearby destinations in same state (for internal linking)
+  const { data: nearbyDests } = await supabase
+    .from("destinations")
+    .select("id, name, difficulty, elevation_m")
+    .eq("state_id", data.state_id)
+    .neq("id", id)
+    .limit(8);
+
   return {
     ...data,
     hidden_gems: gems ?? [],
@@ -152,6 +174,9 @@ async function getDestination(id: string) {
     coords: coordData ? { lat: coordData.lat, lng: coordData.lng } : null,
     allDestinations: allDests ?? [],
     relatedArticles: relatedArticles ?? [],
+    relatedCollections: relatedCollections ?? [],
+    relatedRoutes: relatedRoutes ?? [],
+    nearbyDestinations: nearbyDests ?? [],
   };
 }
 
