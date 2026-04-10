@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState, useEffect } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { motion, AnimatePresence } from "framer-motion";
@@ -153,10 +154,13 @@ export function DestinationDetail({ dest }: { dest: any }) {
                 <source src={`/videos/${dest.id}.mp4`} type="video/mp4" />
               </video>
             ) : (
-              <img
+              <Image
                 src={`/images/destinations/${dest.id}.jpg`}
                 alt={dest.name}
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                fill
+                sizes="100vw"
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
+                priority
                 onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
               />
             )}
@@ -852,7 +856,7 @@ export function DestinationDetail({ dest }: { dest: any }) {
                               className="block rounded-xl border border-border p-4 h-full transition-all hover:border-primary/50"
                             >
                               <div className="flex items-start justify-between">
-                                <h4 className="font-semibold">{sub.name}</h4>
+                                <h3 className="font-semibold">{sub.name}</h3>
                                 {sub.elevation_m && <span className="text-xs font-mono text-muted-foreground">{sub.elevation_m}m</span>}
                               </div>
                               {sub.tagline && <p className="mt-1 text-xs text-primary">{sub.tagline}</p>}
@@ -878,7 +882,7 @@ export function DestinationDetail({ dest }: { dest: any }) {
                       {gems.map((gem: any) => (
                         <motion.div key={gem.id} whileHover={{ x: 4 }} className="rounded-xl border border-dashed border-primary/30 bg-primary/5 p-4">
                           <div className="flex items-start justify-between">
-                            <h4 className="font-semibold text-primary">{gem.name}</h4>
+                            <h3 className="font-semibold text-primary">{gem.name}</h3>
                             <span className="text-xs text-muted-foreground">{gem.distance_km}km · {gem.drive_time}</span>
                           </div>
                           {gem.why_unknown && <p className="mt-1 text-xs text-yellow-400">Why unknown: {gem.why_unknown}</p>}
@@ -919,7 +923,7 @@ export function DestinationDetail({ dest }: { dest: any }) {
                       {eats.map((eat: any) => (
                         <div key={eat.id} className="rounded-xl border border-border p-4 hover:border-primary/30 transition-colors">
                           <div className="flex items-center justify-between mb-1">
-                            <h4 className="font-semibold text-[15px]">{eat.name}</h4>
+                            <h3 className="font-semibold text-[15px]">{eat.name}</h3>
                             {eat.price_range && <span className="text-xs font-mono text-muted-foreground">{eat.price_range}</span>}
                           </div>
                           {eat.location && <p className="text-xs text-muted-foreground/60 mb-1">📍 {eat.location}</p>}
@@ -942,7 +946,7 @@ export function DestinationDetail({ dest }: { dest: any }) {
                         <div key={stay.id} className="rounded-xl border border-border p-4 hover:border-primary/30 transition-colors">
                           <div className="flex items-start justify-between mb-1">
                             <div>
-                              <h4 className="font-semibold text-[15px]">{stay.name}</h4>
+                              <h3 className="font-semibold text-[15px]">{stay.name}</h3>
                               <span className={`text-xs font-medium capitalize ${
                                 stay.type === "homestay" ? "text-emerald-400" :
                                 stay.type === "cafe" ? "text-amber-400" :
@@ -1002,11 +1006,12 @@ export function DestinationDetail({ dest }: { dest: any }) {
                   className="group rounded-xl border border-border bg-card overflow-hidden hover:border-primary/40 transition-all"
                 >
                   <div className="relative h-24 bg-muted/30 overflow-hidden">
-                    <img
+                    <Image
                       src={`/images/destinations/${nd.id}.jpg`}
                       alt={nd.name}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                      loading="lazy"
+                      fill
+                      sizes="(max-width: 640px) 50vw, 25vw"
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
                       onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-card/80 to-transparent" />

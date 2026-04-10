@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useLocale } from "next-intl";
 import { StaggerContainer, StaggerItem, HoverCard } from "./animated-hero";
 
@@ -22,11 +23,12 @@ export function CollectionsGrid({ collections }: { collections: any[] }) {
               >
                 {/* Cover image */}
                 <div className="relative h-40 bg-muted/30 overflow-hidden">
-                  <img
+                  <Image
                     src={coverUrl}
                     alt={c.name}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    loading="lazy"
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
                     onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-card via-card/30 to-transparent" />

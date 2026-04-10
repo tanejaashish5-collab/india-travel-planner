@@ -2,6 +2,7 @@
 
 import { useState, useMemo, useCallback } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { useLocale } from "next-intl";
 import {
   StaggerContainer,
@@ -80,11 +81,12 @@ function ImageWithFallback({
 
   return (
     <>
-      <img
+      <Image
         src={src}
         alt={alt}
-        className={`${className} w-full h-full object-cover`}
-        loading="lazy"
+        fill
+        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+        className={`${className} object-cover`}
         onError={handleError}
       />
       <div

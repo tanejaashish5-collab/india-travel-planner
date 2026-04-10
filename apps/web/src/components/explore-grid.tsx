@@ -2,6 +2,7 @@
 
 import { useState, useMemo, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { useLocale, useTranslations } from "next-intl";
 import { useSearchParams, useRouter, usePathname } from "next/navigation";
 import { ExploreFilters, type FilterState } from "./explore-filters";
@@ -267,11 +268,13 @@ function DestinationCard({
             <CompareButton destinationId={dest.id} />
           </div>
         )}
-        <img
+        <Image
           src={imageUrl}
           alt={dest.name}
-          className="w-full h-full object-cover ken-burns"
-          loading={cardIndex < 4 ? "eager" : "lazy"}
+          fill
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          className="object-cover ken-burns"
+          priority={cardIndex < 4}
           onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
         />
         {/* Gradient overlay */}

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useLocale } from "next-intl";
 import { useState } from "react";
 import { SCORE_COLORS, DIFFICULTY_COLORS } from "@/lib/design-tokens";
@@ -59,11 +60,13 @@ export function BlogArticle({
       {/* Cinematic Cover Image Hero */}
       {article.cover_image_url ? (
         <div className="relative -mx-4 sm:-mx-0 h-64 sm:h-80 lg:h-96 overflow-hidden rounded-2xl mb-0">
-          <img
+          <Image
             src={article.cover_image_url}
             alt={article.title}
-            className="w-full h-full object-cover"
-            loading="eager"
+            fill
+            sizes="100vw"
+            className="object-cover"
+            priority
           />
           <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
           {/* Category + Depth badges floating on hero */}
@@ -126,9 +129,9 @@ export function BlogArticle({
       {destinations.length > 0 && (
         <ScrollReveal delay={0.1}>
           <div className="mb-8 rounded-xl border border-border bg-card/60 backdrop-blur-sm p-5">
-            <h3 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-4">
+            <h2 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-4">
               Destinations in this article
-            </h3>
+            </h2>
             <div className="flex flex-wrap gap-2">
               {destinations.map((d) => {
                 const monthScore = d.destination_months?.find((m) => m.month === currentMonth)?.score;
@@ -272,10 +275,12 @@ export function BlogArticle({
                 >
                   {ra.cover_image_url ? (
                     <div className="relative h-28 overflow-hidden">
-                      <img
+                      <Image
                         src={ra.cover_image_url}
                         alt={ra.title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        fill
+                        sizes="(max-width: 640px) 100vw, 33vw"
+                        className="object-cover group-hover:scale-105 transition-transform duration-500"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent" />
                     </div>
@@ -340,10 +345,12 @@ function DestinationThumb({ id, name }: { id: string; name: string }) {
     );
   }
   return (
-    <img
+    <Image
       src={`/images/destinations/${id}.jpg`}
       alt={name}
-      className="w-10 h-10 rounded-lg object-cover shrink-0"
+      width={40}
+      height={40}
+      className="rounded-lg object-cover shrink-0"
       onError={() => setFailed(true)}
     />
   );
