@@ -167,6 +167,7 @@ export function ExploreGrid({
           <StaggerItem key={dest.id} className={isDefaultView && index === 0 ? "sm:col-span-2" : ""}>
             <HoverCard>
               <DestinationCard
+                cardIndex={index}
                 dest={dest}
                 locale={locale}
                 selectedMonth={filters.month}
@@ -202,6 +203,7 @@ function DestinationCard({
   ts,
   tm,
   featured = false,
+  cardIndex = 0,
 }: {
   dest: DestinationData;
   locale: string;
@@ -209,6 +211,7 @@ function DestinationCard({
   ts: (key: string) => string;
   tm: (key: string) => string;
   featured?: boolean;
+  cardIndex?: number;
 }) {
   const kf = Array.isArray(dest.kids_friendly)
     ? dest.kids_friendly[0]
@@ -229,6 +232,7 @@ function DestinationCard({
   return (
     <Link
       href={`/${locale}/destination/${dest.id}`}
+      prefetch={false}
       className="group block rounded-2xl border border-border/50 bg-card overflow-hidden transition-all duration-300 hover:border-primary/40 hover:shadow-xl hover:shadow-primary/10"
     >
       {/* Hero Image */}
@@ -267,7 +271,7 @@ function DestinationCard({
           src={imageUrl}
           alt={dest.name}
           className="w-full h-full object-cover ken-burns"
-          loading="lazy"
+          loading={cardIndex < 4 ? "eager" : "lazy"}
           onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
         />
         {/* Gradient overlay */}
