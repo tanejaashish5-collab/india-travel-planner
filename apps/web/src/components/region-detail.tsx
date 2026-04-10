@@ -80,7 +80,7 @@ export function RegionDetail({ region }: RegionDetailProps) {
               <span className="font-mono font-bold text-primary">{region.destinations.length}</span> destinations
             </div>
             <div className="rounded-lg border border-border bg-background/50 px-3 py-2 text-sm">
-              <span className="font-mono font-bold text-primary">{region.gems.length}</span> hidden gems
+              <span className="font-mono font-bold text-primary">{region.gems.length}</span> off-radar spots
             </div>
             <div className="rounded-lg border border-border bg-background/50 px-3 py-2 text-sm">
               <span className="font-mono font-bold text-primary">{region.routes.length}</span> routes
@@ -182,7 +182,7 @@ export function RegionDetail({ region }: RegionDetailProps) {
               : "border-border text-muted-foreground hover:text-foreground"
           }`}
         >
-          {showHidden ? "Showing hidden only ✕" : "Show hidden gems only"}
+          {showHidden ? "Showing hidden only ✕" : "Show off-radar spots only"}
         </button>
       </div>
 
@@ -220,7 +220,7 @@ export function RegionDetail({ region }: RegionDetailProps) {
                       </div>
                       <div className="flex gap-1.5">
                         {dest.hiddenness >= 4 && (
-                          <span className="text-xs bg-primary/20 text-primary rounded-full px-2 py-0.5">Hidden</span>
+                          <span className="text-xs bg-primary/20 text-primary rounded-full px-2 py-0.5">Off-Radar</span>
                         )}
                         {kf?.suitable && (
                           <span className="text-xs">👶 {kf.rating}/5</span>
@@ -295,12 +295,12 @@ export function RegionDetail({ region }: RegionDetailProps) {
         </FadeIn>
       )}
 
-      {/* Hidden Gems count */}
+      {/* Off-radar spots count */}
       {region.gems.length > 0 && (
         <FadeIn>
           <section className="mb-10 rounded-xl border border-dashed border-primary/30 bg-primary/5 p-6 text-center">
             <div className="font-mono text-3xl font-bold text-primary">{region.gems.length}</div>
-            <div className="font-semibold mt-1">Hidden Gems</div>
+            <div className="font-semibold mt-1">Off-Radar Spots</div>
             <p className="text-sm text-muted-foreground mt-2 max-w-md mx-auto">
               Places most tourists don't know about — secret viewpoints, unmarked waterfalls,
               villages with zero phone signal, and the kind of spots only locals can show you.

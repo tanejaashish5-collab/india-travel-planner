@@ -931,7 +931,7 @@ export function DestinationDetail({ dest }: { dest: any }) {
                 {dest.local_stays?.length > 0 && (
                   <section>
                     <h2 className="text-xl font-semibold mb-2">Local Picks</h2>
-                    <p className="text-sm text-muted-foreground mb-4">Curated stays, operators, and local businesses — not a booking site, just honest recommendations.</p>
+                    <p className="text-sm text-muted-foreground mb-4">Vetted stays, operators, and local businesses — not a booking site, just honest recommendations.</p>
                     <div className="grid gap-3 sm:grid-cols-2">
                       {dest.local_stays.map((stay: any) => (
                         <div key={stay.id} className="rounded-xl border border-border p-4 hover:border-primary/30 transition-colors">

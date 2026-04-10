@@ -7,7 +7,7 @@ import { createClient } from "@supabase/supabase-js";
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-  title: "Collections — Curated Destination Lists",
+  title: "Collections — Themed Destination Lists",
   description: "Themed collections: best family destinations, frozen wonders, most dangerous roads, zero-signal zones, ancient monasteries, and more. Hand-picked from 407+ places.",
 };
 
@@ -31,7 +31,7 @@ export default async function CollectionsPage() {
         <div className="mb-8">
           <h1 className="text-3xl font-bold">Collections</h1>
           <p className="mt-1 text-muted-foreground">
-            {collections.length} curated lists of India's most special places
+            {collections.length} themed lists of India's most special places
           </p>
         </div>
         <CollectionsGrid collections={collections} />

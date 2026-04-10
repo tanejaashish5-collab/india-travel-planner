@@ -52,7 +52,7 @@ export function CollectionDetail({ collection }: { collection: any }) {
           <div className="shrink-0 flex items-center gap-2 mt-1">
             <ShareButton
               title={collection.name}
-              text={`${collection.description} — ${items.length} curated destinations`}
+              text={`${collection.description} — ${items.length} scored destinations`}
             />
           </div>
         </div>

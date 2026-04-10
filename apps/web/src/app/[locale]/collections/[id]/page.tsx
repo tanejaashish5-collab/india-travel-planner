@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   const { data } = await supabase.from("collections").select("name, description").eq("id", id).single();
   if (!data) return {};
   return {
-    title: `${data.name} — Curated Collection`,
+    title: `${data.name} — Collection`,
     description: data.description,
   };
 }

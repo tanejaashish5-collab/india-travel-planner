@@ -6,7 +6,7 @@ import { createClient } from "@supabase/supabase-js";
 
 export const metadata: Metadata = {
   title: "Camping Spots — Best Campsites Across North India",
-  description: "Curated camping spots from riverside sites in Rishikesh to high-altitude camps near Pangong. Facilities, elevation, best months, and permit requirements.",
+  description: "Scored camping spots from riverside sites in Rishikesh to high-altitude camps near Pangong. Facilities, elevation, best months, and permit requirements.",
 };
 
 async function getCampingData() {
@@ -36,7 +36,7 @@ export default async function CampingPage() {
         <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 max-w-7xl mx-auto">
           <p className="text-sm font-medium text-primary uppercase tracking-widest mb-2">Wild & Free</p>
           <h1 className="text-3xl font-bold sm:text-4xl text-white drop-shadow-lg">Camping Spots</h1>
-          <p className="mt-2 text-white/80 max-w-xl">{spots.length} curated campsites — from riverside to high-altitude</p>
+          <p className="mt-2 text-white/80 max-w-xl">{spots.length} campsites scored and mapped — from riverside to high-altitude</p>
         </div>
       </section>
       <main className="mx-auto max-w-6xl px-4 py-8">

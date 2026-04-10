@@ -470,7 +470,7 @@ export function LandingHero({
             <FadeIn>
               <div className="text-center mb-12">
                 <p className="text-sm font-medium text-primary uppercase tracking-widest mb-2">
-                  Curated Lists
+                  Collections
                 </p>
                 <h2 className="text-3xl font-bold sm:text-4xl">
                   Collections
@@ -539,7 +539,7 @@ export function LandingHero({
                   Ready-Made Itineraries
                 </p>
                 <h2 className="text-3xl font-bold sm:text-4xl">
-                  Curated Routes
+                  Road Trip Routes
                 </h2>
                 <p className="mt-2 text-muted-foreground">
                   3-day weekends to 12-day road trips, with day-by-day plans
