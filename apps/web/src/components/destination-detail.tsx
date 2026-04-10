@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { MonthlyChart } from "./monthly-chart";
 import { WeatherWidget } from "./weather-widget";
 import { ShareButton } from "./share-button";
+import { WhatsAppShare } from "./whatsapp-share";
 import { CompareButton } from "./compare-tray";
 import { DistanceBadge } from "./distance-badge";
 import { lazy, Suspense } from "react";
@@ -111,6 +112,10 @@ export function DestinationDetail({ dest }: { dest: any }) {
               <ShareButton
                 title={`${displayName} — NakshIQ`}
                 text={`${displayTagline} | ${dest.difficulty} · ${dest.elevation_m ? dest.elevation_m + 'm' : ''}`}
+              />
+              {/* WhatsApp */}
+              <WhatsAppShare
+                message={`${displayName} — ${displayTagline}. Travel guide: https://nakshiq.com/en/destination/${dest.id}`}
               />
               {/* Save Button */}
               <button

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { FadeIn, ScrollReveal, StaggerContainer, StaggerItem, HoverCard } from "./animated-hero";
 import { SCORE_COLORS, DIFFICULTY_COLORS } from "@/lib/design-tokens";
 import { NewsletterSignup } from "./newsletter-signup";
+import { WhatsAppShare } from "./whatsapp-share";
 
 // ── Constants ──────────────────────────────────────────────────
 
@@ -569,6 +570,14 @@ export function DestinationMonth({
   return (
     <article className="space-y-10">
       <ScoreHero />
+
+      {/* WhatsApp Share */}
+      <div className="flex">
+        <WhatsAppShare
+          message={`${destination.name} in ${monthName}: ${score}/5. ${currentMonth?.note?.substring(0, 100) || ""}. Full guide: https://nakshiq.com/en/destination/${destination.id}/${monthSlug}`}
+        />
+      </div>
+
       <LeadParagraph />
       <WhyThisScore />
       <WhoShouldGo />

@@ -68,7 +68,7 @@ export async function generateMetadata({
   const ogTitle = `${name} in ${monthName} — ${score}/5 | NakshIQ`;
   const description = `${name} scored ${score}/5 for ${monthName}. ${note}. Monthly weather, road conditions, kids safety, and infrastructure data for ${name}, ${stateName || "India"}.`;
   const canonicalUrl = `https://nakshiq.com/${locale}/destination/${id}/${month}`;
-  const imageUrl = `https://nakshiq.com/images/destinations/${id}.jpg`;
+  const imageUrl = `https://nakshiq.com/api/og?dest=${encodeURIComponent(name)}&month=${monthName}&score=${score}&note=${encodeURIComponent(note?.substring(0, 80) || '')}`;
 
   return {
     title,
