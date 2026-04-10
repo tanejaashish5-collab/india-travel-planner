@@ -65,7 +65,7 @@ export default function AboutScreen() {
         All data is verified and updated regularly.
       </Text>
 
-      <TouchableOpacity style={s.linkBtn} onPress={() => Linking.openURL("https://india-travel-planner.vercel.app")}>
+      <TouchableOpacity style={s.linkBtn} onPress={() => Linking.openURL("https://nakshiq.com")}>
         <Text style={s.linkText}>Visit Website →</Text>
       </TouchableOpacity>
 

@@ -17,7 +17,7 @@ import { usePreferences } from "../../hooks/usePreferences";
 import { supabase } from "../../lib/supabase";
 
 const { width } = Dimensions.get("window");
-const IMG_BASE = "https://web-blond-zeta.vercel.app/images/destinations";
+const IMG_BASE = "https://nakshiq.com/images/destinations";
 
 const MONTH_SHORT = ["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
 const MONTH_FULL = ["","January","February","March","April","May","June","July","August","September","October","November","December"];

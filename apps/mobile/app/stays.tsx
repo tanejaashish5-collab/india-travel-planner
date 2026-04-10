@@ -116,7 +116,7 @@ export default function StaysScreen() {
       <Text style={s.emptySubtitle}>
         {typeFilter !== "all"
           ? `No ${typeFilter} stays available. Try a different type.`
-          : "Check back soon for curated stays."}
+          : "Check back soon for vetted stays."}
       </Text>
       {typeFilter !== "all" && (
         <TouchableOpacity style={s.emptyButton} onPress={() => setTypeFilter("all")}>

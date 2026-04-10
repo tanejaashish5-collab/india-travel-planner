@@ -126,7 +126,7 @@ export default function ExploreScreen() {
               activeOpacity={0.8}
             >
               <Image
-                source={{ uri: `https://web-blond-zeta.vercel.app/images/destinations/${item.id}.jpg` }}
+                source={{ uri: `https://nakshiq.com/images/destinations/${item.id}.jpg` }}
                 style={styles.cardImage}
               />
               <View style={styles.cardImageOverlay} />

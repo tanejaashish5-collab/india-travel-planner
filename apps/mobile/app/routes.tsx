@@ -57,7 +57,7 @@ export default function RoutesScreen() {
             {/* Branded header */}
             <View style={s.header}>
               <Text style={s.headerTitle}>🚗 Road Trips</Text>
-              <Text style={s.headerSubtitle}>Curated driving routes through mountains</Text>
+              <Text style={s.headerSubtitle}>Driving routes through the mountains</Text>
               <Text style={s.headerCount}>{routes.length} routes</Text>
             </View>
 

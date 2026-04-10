@@ -4,7 +4,7 @@ import { router, Stack } from "expo-router";
 import { colors, spacing, fontSize, borderRadius } from "../lib/theme";
 import { useTreks } from "../hooks/useTreks";
 
-const IMG_BASE = "https://web-blond-zeta.vercel.app/images/destinations";
+const IMG_BASE = "https://nakshiq.com/images/destinations";
 const DIFF_COLOR: Record<string, string> = { easy: colors.easy, moderate: colors.moderate, hard: colors.hard, extreme: colors.extreme };
 const MONTH_SHORT = ["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
 

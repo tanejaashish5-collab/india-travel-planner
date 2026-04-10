@@ -114,13 +114,23 @@ export default function ProfileScreen() {
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>About</Text>
 
-          <TouchableOpacity style={styles.settingsRow} onPress={() => Linking.openURL("https://india-travel-planner.vercel.app")}>
+          <TouchableOpacity style={styles.settingsRow} onPress={() => Linking.openURL("https://nakshiq.com")}>
             <Text style={styles.settingsLabel}>Website</Text>
             <Text style={styles.settingsChevron}>→</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.settingsRow}>
+          <TouchableOpacity style={styles.settingsRow} onPress={() => Linking.openURL("https://nakshiq.com/en/privacy")}>
             <Text style={styles.settingsLabel}>Privacy Policy</Text>
+            <Text style={styles.settingsChevron}>→</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity style={styles.settingsRow} onPress={() => Linking.openURL("https://nakshiq.com/en/terms")}>
+            <Text style={styles.settingsLabel}>Terms of Service</Text>
+            <Text style={styles.settingsChevron}>→</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity style={styles.settingsRow} onPress={() => Linking.openURL("https://nakshiq.com/en/editorial-policy")}>
+            <Text style={styles.settingsLabel}>Editorial Policy</Text>
             <Text style={styles.settingsChevron}>→</Text>
           </TouchableOpacity>
 

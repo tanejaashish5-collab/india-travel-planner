@@ -8,6 +8,7 @@ import {
   StyleSheet,
   ActivityIndicator,
   Share,
+  Linking,
   Dimensions,
 } from "react-native";
 import { useLocalSearchParams, Stack, router } from "expo-router";
@@ -59,9 +60,14 @@ export default function DestinationScreen() {
 
   async function handleShare() {
     await Share.share({
-      message: `${dest.name} — ${dest.tagline}\n\nCheck it out on NakshIQ`,
+      message: `${dest.name} — ${dest.tagline}\n\nTravel guide: https://nakshiq.com/en/destination/${dest.id}`,
       title: dest.name,
     });
+  }
+
+  function handleWhatsAppShare() {
+    const msg = encodeURIComponent(`${dest.name} — ${dest.tagline}\n\nTravel guide: https://nakshiq.com/en/destination/${dest.id}`);
+    Linking.openURL(`https://wa.me/?text=${msg}`);
   }
 
   return (
@@ -71,7 +77,7 @@ export default function DestinationScreen() {
       {/* Hero image */}
       <View style={styles.heroContainer}>
         <Image
-          source={{ uri: `https://web-blond-zeta.vercel.app/images/destinations/${dest.id}.jpg` }}
+          source={{ uri: `https://nakshiq.com/images/destinations/${dest.id}.jpg` }}
           style={styles.heroImage}
         />
         <View style={styles.heroOverlay} />
@@ -163,6 +169,9 @@ export default function DestinationScreen() {
         <View style={styles.actions}>
           <TouchableOpacity style={styles.actionBtn} onPress={handleShare}>
             <Text style={styles.actionBtnText}>Share</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={[styles.actionBtn, { backgroundColor: "#25D366" }]} onPress={handleWhatsAppShare}>
+            <Text style={[styles.actionBtnText, { color: "#fff" }]}>WhatsApp</Text>
           </TouchableOpacity>
           <TouchableOpacity style={[styles.actionBtn, isSaved(id) ? styles.actionBtnSaved : styles.actionBtnPrimary]} onPress={() => toggleSaved(id)}>
             <Text style={[styles.actionBtnText, styles.actionBtnTextPrimary]}>{isSaved(id) ? "♥ Saved" : "♡ Save"}</Text>

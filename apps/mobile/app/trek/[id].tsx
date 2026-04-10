@@ -59,7 +59,7 @@ export default function TrekDetailScreen() {
       {/* Hero */}
       <View style={styles.heroContainer}>
         <Image
-          source={{ uri: `https://web-blond-zeta.vercel.app/images/destinations/${trek.destination_id}.jpg` }}
+          source={{ uri: `https://nakshiq.com/images/destinations/${trek.destination_id}.jpg` }}
           style={styles.heroImage}
         />
         <View style={styles.heroOverlay} />
