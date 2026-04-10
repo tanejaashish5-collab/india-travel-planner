@@ -313,8 +313,8 @@ export function LandingHero({
           {/* Stats — animated counters */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-8">
             {[
-              { num: stats?.places ?? 398, suffix: "+", label: t("stats.places"), href: `/${locale}/explore` },
-              { num: stats?.destinations ?? 133, suffix: "", label: "Destinations", href: `/${locale}/explore` },
+              { num: stats?.places ?? 407, suffix: "+", label: t("stats.places"), href: `/${locale}/explore` },
+              { num: stats?.destinations ?? 142, suffix: "", label: "Destinations", href: `/${locale}/explore` },
               { num: stats?.festivals ?? 168, suffix: "", label: "Festivals", href: `/${locale}/explore` },
               { num: stats?.routes ?? 19, suffix: "", label: t("stats.routes"), href: `/${locale}/routes` },
             ].map((stat) => (
@@ -455,7 +455,7 @@ export function LandingHero({
                 href={`/${locale}/explore`}
                 className="inline-flex items-center gap-2 text-sm text-primary hover:underline"
               >
-                View all {stats?.destinations ?? 133} destinations →
+                View all {stats?.destinations ?? 142} destinations →
               </Link>
             </div>
           </div>
