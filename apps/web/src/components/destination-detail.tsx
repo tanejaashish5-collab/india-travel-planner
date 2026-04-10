@@ -100,7 +100,7 @@ export function DestinationDetail({ dest }: { dest: any }) {
             <div className="text-[15px] text-muted-foreground">
               <Link href={`/${locale}/explore`} className="hover:text-foreground transition-colors">Explore</Link>
               {" → "}
-              <span>{stateName}</span>
+              <Link href={`/${locale}/region/${dest.state_id}`} className="hover:text-foreground transition-colors">{stateName}</Link>
               {" → "}
               <span className="text-foreground">{displayName}</span>
             </div>

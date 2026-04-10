@@ -142,11 +142,11 @@ async function getDestination(id: string) {
     .order("depth", { ascending: false })
     .limit(5);
 
-  // Related collections containing this destination
+  // Related collections containing this destination (JSONB array containment)
   const { data: relatedCollections } = await supabase
     .from("collections")
     .select("id, name, description")
-    .contains("items", [{ destination_id: id }])
+    .filter("items", "cs", JSON.stringify([{ destination_id: id }]))
     .limit(5);
 
   // Routes that include this destination as a stop
