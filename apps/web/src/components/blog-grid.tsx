@@ -38,7 +38,10 @@ interface Article {
 }
 
 function getImageUrl(article: Article): string | null {
-  if (article.cover_image_url) return article.cover_image_url;
+  // Skip non-destination images (og-image, logos, etc.)
+  if (article.cover_image_url && article.cover_image_url.startsWith("/images/destinations/")) {
+    return article.cover_image_url;
+  }
   // Try to find a destination name in tags and use its image
   if (article.tags && article.tags.length > 0) {
     for (const tag of article.tags) {
@@ -68,10 +71,9 @@ function ImageWithFallback({
 
   if (!src) {
     return (
-      <div className={`${className} bg-gradient-to-br from-primary/10 via-card to-amber-500/5 flex items-center justify-center`}>
-        <svg className="w-10 h-10 text-muted-foreground/30" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-          <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3.75 21h16.5A2.25 2.25 0 0022.5 18.75V5.25A2.25 2.25 0 0020.25 3H3.75A2.25 2.25 0 001.5 5.25v13.5A2.25 2.25 0 003.75 21z" />
-        </svg>
+      <div className={`${className} bg-gradient-to-br from-[#161614] via-[#1e1e1c] to-[#2F4F3F]/40 flex items-center justify-center relative overflow-hidden`}>
+        <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23F5F1E8' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")" }} />
+        <div className="text-4xl font-bold text-[#F5F1E8]/10">N<span className="text-[#E55642]/20">.</span></div>
       </div>
     );
   }
@@ -86,7 +88,7 @@ function ImageWithFallback({
         onError={handleError}
       />
       <div
-        className={`${className} bg-gradient-to-br from-primary/10 via-card to-amber-500/5 flex items-center justify-center absolute inset-0`}
+        className={`${className} bg-gradient-to-br from-[#161614] via-[#1e1e1c] to-[#2F4F3F]/40 flex items-center justify-center absolute inset-0`}
         style={{ display: "none" }}
       >
         <svg className="w-10 h-10 text-muted-foreground/30" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
