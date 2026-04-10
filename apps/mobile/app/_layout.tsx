@@ -89,6 +89,11 @@ export default function RootLayout() {
         <Stack.Screen name="sos" options={{ headerStyle: { backgroundColor: colors.background }, headerTintColor: colors.foreground, headerBackTitle: "Back" }} />
         <Stack.Screen name="blog" options={{ headerStyle: { backgroundColor: colors.background }, headerTintColor: colors.foreground, headerBackTitle: "Back" }} />
         <Stack.Screen name="blog/[slug]" options={{ headerStyle: { backgroundColor: colors.background }, headerTintColor: colors.foreground, headerBackTitle: "Back" }} />
+        <Stack.Screen name="where-to-go" options={{ headerStyle: { backgroundColor: colors.background }, headerTintColor: colors.foreground, headerBackTitle: "Back" }} />
+        <Stack.Screen name="tourist-traps" options={{ headerStyle: { backgroundColor: colors.background }, headerTintColor: colors.foreground, headerBackTitle: "Back" }} />
+        <Stack.Screen name="destination-month" options={{ headerStyle: { backgroundColor: colors.background }, headerTintColor: colors.foreground, headerBackTitle: "Back" }} />
+        <Stack.Screen name="vs" options={{ headerStyle: { backgroundColor: colors.background }, headerTintColor: colors.foreground, headerBackTitle: "Back" }} />
+        <Stack.Screen name="with-kids" options={{ headerStyle: { backgroundColor: colors.background }, headerTintColor: colors.foreground, headerBackTitle: "Back" }} />
       </Stack>
     </ThemeProvider>
   );

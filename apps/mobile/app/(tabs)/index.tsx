@@ -31,6 +31,8 @@ const DIFF_COLORS: Record<string, string> = {
 const DISCOVER_ITEMS = [
   { label: "Treks", sub: "49", icon: "🥾", route: "/treks", color: "#10b981" },
   { label: "Routes", sub: "19", icon: "🛣️", route: "/routes", color: "#3b82f6" },
+  { label: "Where to Go", sub: "", icon: "📅", route: "/where-to-go", color: "#14b8a6" },
+  { label: "Tourist Traps", sub: "", icon: "⚠️", route: "/tourist-traps", color: "#ef4444" },
   { label: "Collections", sub: "20", icon: "📚", route: "/collections", color: "#8b5cf6" },
   { label: "Festivals", sub: "168", icon: "🎪", route: "/festivals", color: "#f59e0b" },
   { label: "Camping", sub: "37", icon: "⛺", route: "/camping", color: "#06b6d4" },

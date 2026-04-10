@@ -90,6 +90,27 @@ export default function DestinationScreen() {
         )}
       </View>
 
+      {/* Month pills */}
+      <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.monthPillRow}>
+        {Array.from({ length: 12 }, (_, i) => {
+          const m = i + 1;
+          const md = dest.destination_months?.find((dm: any) => dm.month === m);
+          const s = md?.score ?? 0;
+          const monthSlug = MONTH_SHORT[m].toLowerCase();
+          return (
+            <TouchableOpacity
+              key={m}
+              style={[styles.monthPill, { backgroundColor: (SCORE_COLORS[s] || colors.muted) + "22", borderColor: (SCORE_COLORS[s] || colors.muted) + "55" }, m === currentMonth && styles.monthPillCurrent]}
+              onPress={() => router.push(`/destination-month?id=${id}&month=${monthSlug}` as any)}
+              activeOpacity={0.8}
+            >
+              <Text style={[styles.monthPillLabel, { color: SCORE_COLORS[s] || colors.mutedForeground }]}>{MONTH_SHORT[m]}</Text>
+              <Text style={[styles.monthPillScore, { color: SCORE_COLORS[s] || colors.mutedForeground }]}>{s}/5</Text>
+            </TouchableOpacity>
+          );
+        })}
+      </ScrollView>
+
       {/* Info card */}
       <View style={styles.infoCard}>
         <Text style={styles.destName}>{dest.name}</Text>
@@ -421,4 +442,11 @@ const styles = StyleSheet.create({
   kidsSuitable: { fontSize: fontSize.lg, fontWeight: "700" },
   kidReason: { fontSize: fontSize.sm, color: colors.mutedForeground, lineHeight: 22, marginTop: 4 },
   safetyRating: { fontSize: fontSize.lg, fontWeight: "700", marginBottom: spacing.sm },
+
+  // Month pills
+  monthPillRow: { paddingHorizontal: spacing.md, paddingVertical: spacing.sm, gap: spacing.xs },
+  monthPill: { borderRadius: borderRadius.full, paddingHorizontal: 12, paddingVertical: 8, alignItems: "center", borderWidth: 1, minWidth: 52 },
+  monthPillCurrent: { borderWidth: 2 },
+  monthPillLabel: { fontSize: 10, fontWeight: "700", letterSpacing: 0.5 },
+  monthPillScore: { fontSize: fontSize.xs, fontWeight: "800", marginTop: 2 },
 });
