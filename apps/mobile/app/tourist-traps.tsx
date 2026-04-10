@@ -14,15 +14,16 @@ import { supabase } from "../lib/supabase";
 
 interface TrapAlternative {
   id: string;
-  trap_name: string;
   trap_destination_id: string | null;
-  alternative_name: string;
   alternative_destination_id: string | null;
   why_better: string | null;
   comparison: string | null;
   rank: number | null;
-  trap_destination: { name: string } | null;
-  alternative_destination: { name: string } | null;
+  distance_km: number | null;
+  crowd_difference: string | null;
+  vibe_difference: string | null;
+  trap_destination: { name: string } | { name: string }[] | null;
+  alternative_destination: { name: string } | { name: string }[] | null;
 }
 
 function useTouristTraps() {
@@ -34,10 +35,10 @@ function useTouristTraps() {
     const { data } = await supabase
       .from("tourist_trap_alternatives")
       .select(
-        `id, trap_name, trap_destination_id, alternative_name, alternative_destination_id,
-         why_better, comparison, rank,
-         trap_destination:destinations!tourist_trap_alternatives_trap_destination_id_fkey(name),
-         alternative_destination:destinations!tourist_trap_alternatives_alternative_destination_id_fkey(name)`
+        `id, trap_destination_id, alternative_destination_id,
+         why_better, comparison, rank, distance_km, crowd_difference, vibe_difference,
+         trap_destination:destinations!trap_destination_id(name),
+         alternative_destination:destinations!alternative_destination_id(name)`
       )
       .order("rank");
 
@@ -107,18 +108,16 @@ export default function TouristTrapsScreen() {
         )}
         renderItem={({ item: trap }) => {
           const trapName =
-            trap.trap_name ||
             (Array.isArray(trap.trap_destination)
               ? (trap.trap_destination as any)[0]?.name
-              : trap.trap_destination?.name) ||
-            "Unknown";
+              : (trap.trap_destination as any)?.name) ||
+            trap.trap_destination_id || "Unknown";
 
           const altName =
-            trap.alternative_name ||
             (Array.isArray(trap.alternative_destination)
               ? (trap.alternative_destination as any)[0]?.name
-              : trap.alternative_destination?.name) ||
-            "Unknown";
+              : (trap.alternative_destination as any)?.name) ||
+            trap.alternative_destination_id || "Unknown";
 
           return (
             <View style={s.card}>
