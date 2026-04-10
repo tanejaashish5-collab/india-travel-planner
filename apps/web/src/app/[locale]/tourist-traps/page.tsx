@@ -46,13 +46,16 @@ export async function generateMetadata({
 
 interface TouristTrap {
   trap_destination_id: string;
-  trap_name: string;
-  why_trap: string;
   alternative_destination_id: string;
   why_better: string;
+  comparison: string;
   rank: number;
-  trap_destination: { name: string } | null;
-  alternative_destination: { name: string } | null;
+  distance_km: number | null;
+  drive_time: string | null;
+  crowd_difference: string | null;
+  vibe_difference: string | null;
+  trap_dest: { name: string }[] | { name: string } | null;
+  alt_dest: { name: string }[] | { name: string } | null;
 }
 
 async function getTouristTraps(): Promise<TouristTrap[]> {
@@ -61,14 +64,27 @@ async function getTouristTraps(): Promise<TouristTrap[]> {
   if (!url || !key) return [];
 
   const supabase = createClient(url, key);
-  const { data } = await supabase
+  const { data, error } = await supabase
     .from("tourist_trap_alternatives")
     .select(
-      "trap_destination_id, trap_name, why_trap, alternative_destination_id, why_better, rank, trap_destination:destinations!trap_destination_id(name), alternative_destination:destinations!alternative_destination_id(name)"
+      `trap_destination_id, alternative_destination_id, why_better, comparison, rank, distance_km, drive_time, crowd_difference, vibe_difference,
+       trap_dest:destinations!trap_destination_id(name),
+       alt_dest:destinations!alternative_destination_id(name)`
     )
     .order("rank", { ascending: true });
 
+  if (error) {
+    console.error("Tourist traps query error:", error);
+    return [];
+  }
+
   return (data as TouristTrap[] | null) ?? [];
+}
+
+function getName(dest: { name: string }[] | { name: string } | null): string | null {
+  if (!dest) return null;
+  if (Array.isArray(dest)) return dest[0]?.name ?? null;
+  return dest.name;
 }
 
 export default async function TouristTrapsPage({
@@ -83,14 +99,13 @@ export default async function TouristTrapsPage({
     "@context": "https://schema.org",
     "@type": "ItemList",
     name: "Tourist Traps Exposed — Overhyped Places in India",
-    description:
-      "Honest alternatives to India's most overhyped tourist destinations.",
+    description: "Honest alternatives to India's most overhyped tourist destinations.",
     numberOfItems: traps.length,
     itemListElement: traps.map((trap, i) => ({
       "@type": "ListItem",
       position: i + 1,
-      name: trap.trap_name,
-      description: trap.why_trap,
+      name: getName(trap.trap_dest) || trap.trap_destination_id,
+      description: trap.comparison,
     })),
   };
 
@@ -106,28 +121,24 @@ export default async function TouristTrapsPage({
       <main className="mx-auto max-w-6xl px-4 py-10 sm:py-14">
         {/* Header */}
         <div className="mb-10 text-center">
-          <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-red-300 bg-red-50 px-4 py-1.5 text-sm font-medium text-red-700 dark:border-red-800 dark:bg-red-950/40 dark:text-red-400">
+          <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-red-800 bg-red-950/40 px-4 py-1.5 text-sm font-medium text-red-400">
             <span className="inline-block h-2 w-2 rounded-full bg-red-500" />
             {traps.length} traps exposed
           </div>
-          <h1 className="text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl">
+          <h1 className="text-3xl font-extrabold tracking-tight text-foreground sm:text-5xl">
             Tourist Traps Exposed
           </h1>
           <p className="mx-auto mt-3 max-w-2xl text-lg text-muted-foreground">
             Honest alternatives to India&apos;s most overhyped destinations. No
-            sponsored recommendations.
+            sponsored recommendations — just data-driven suggestions.
           </p>
         </div>
 
         {/* Grid */}
         <div className="grid gap-6 sm:grid-cols-2">
           {traps.map((trap) => {
-            const trapDest = Array.isArray(trap.trap_destination)
-              ? trap.trap_destination[0]
-              : trap.trap_destination;
-            const altDest = Array.isArray(trap.alternative_destination)
-              ? trap.alternative_destination[0]
-              : trap.alternative_destination;
+            const trapName = getName(trap.trap_dest);
+            const altName = getName(trap.alt_dest);
 
             return (
               <article
@@ -137,22 +148,24 @@ export default async function TouristTrapsPage({
                 {/* Trap side */}
                 <div className="mb-4">
                   <div className="mb-1.5 flex items-center gap-2">
-                    <span className="rounded bg-red-100 px-2 py-0.5 text-xs font-bold uppercase tracking-wider text-red-700 dark:bg-red-950/60 dark:text-red-400">
+                    <span className="rounded bg-red-950/60 px-2 py-0.5 text-xs font-bold uppercase tracking-wider text-red-400">
                       Skip
                     </span>
                     <h2 className="text-lg font-bold text-foreground">
-                      {trap.trap_name}
+                      {trapName || trap.trap_destination_id}
                     </h2>
                   </div>
-                  <p className="text-sm leading-relaxed text-muted-foreground">
-                    {trap.why_trap}
-                  </p>
-                  {trapDest && (
+                  {trap.comparison && (
+                    <p className="text-sm leading-relaxed text-muted-foreground">
+                      {trap.comparison}
+                    </p>
+                  )}
+                  {trapName && (
                     <Link
                       href={`/${locale}/destination/${trap.trap_destination_id}`}
                       className="mt-1.5 inline-block text-xs font-medium text-muted-foreground underline-offset-2 hover:text-foreground hover:underline"
                     >
-                      View {trapDest.name} &rarr;
+                      View {trapName} &rarr;
                     </Link>
                   )}
                 </div>
@@ -167,24 +180,46 @@ export default async function TouristTrapsPage({
                 {/* Alternative side */}
                 <div>
                   <div className="mb-1.5 flex items-center gap-2">
-                    <span className="rounded bg-emerald-100 px-2 py-0.5 text-xs font-bold uppercase tracking-wider text-emerald-700 dark:bg-emerald-950/60 dark:text-emerald-400">
+                    <span className="rounded bg-emerald-950/60 px-2 py-0.5 text-xs font-bold uppercase tracking-wider text-emerald-400">
                       Go here instead
                     </span>
-                    {altDest && (
+                    {altName && (
                       <h3 className="text-lg font-bold text-foreground">
-                        {altDest.name}
+                        {altName}
                       </h3>
                     )}
                   </div>
-                  <p className="text-sm leading-relaxed text-muted-foreground">
-                    {trap.why_better}
-                  </p>
-                  {altDest && (
+                  {trap.why_better && (
+                    <p className="text-sm leading-relaxed text-muted-foreground">
+                      {trap.why_better}
+                    </p>
+                  )}
+
+                  {/* Extra details */}
+                  <div className="mt-2 flex flex-wrap gap-2">
+                    {trap.distance_km && (
+                      <span className="rounded-full bg-muted px-2.5 py-1 text-xs text-muted-foreground">
+                        {trap.distance_km} km away
+                      </span>
+                    )}
+                    {trap.drive_time && (
+                      <span className="rounded-full bg-muted px-2.5 py-1 text-xs text-muted-foreground">
+                        {trap.drive_time}
+                      </span>
+                    )}
+                    {trap.crowd_difference && (
+                      <span className="rounded-full bg-emerald-950/30 px-2.5 py-1 text-xs text-emerald-400">
+                        {trap.crowd_difference}
+                      </span>
+                    )}
+                  </div>
+
+                  {altName && (
                     <Link
                       href={`/${locale}/destination/${trap.alternative_destination_id}`}
-                      className="mt-1.5 inline-block text-xs font-medium text-primary underline-offset-2 hover:underline"
+                      className="mt-2 inline-block text-xs font-medium text-primary underline-offset-2 hover:underline"
                     >
-                      Explore {altDest.name} &rarr;
+                      Explore {altName} &rarr;
                     </Link>
                   )}
                 </div>
