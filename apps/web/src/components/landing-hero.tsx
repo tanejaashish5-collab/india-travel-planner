@@ -313,9 +313,9 @@ export function LandingHero({
           {/* Stats — animated counters */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-8">
             {[
-              { num: stats?.places ?? 407, suffix: "+", label: t("stats.places"), href: `/${locale}/explore` },
               { num: stats?.destinations ?? 142, suffix: "", label: "Destinations", href: `/${locale}/explore` },
-              { num: stats?.festivals ?? 168, suffix: "", label: "Festivals", href: `/${locale}/explore` },
+              { num: stats?.places ?? 407, suffix: "+", label: t("stats.places"), href: `/${locale}/explore` },
+              { num: stats?.festivals ?? 168, suffix: "", label: "Festivals", href: `/${locale}/festivals` },
               { num: stats?.routes ?? 19, suffix: "", label: t("stats.routes"), href: `/${locale}/routes` },
             ].map((stat) => (
               <Link
@@ -334,9 +334,9 @@ export function LandingHero({
           </div>
         </div>
 
-        {/* Scroll indicator */}
+        {/* Scroll indicator — positioned below stats with relative flow, not absolute */}
         <motion.div
-          className="absolute bottom-8 left-1/2 -translate-x-1/2"
+          className="flex justify-center pt-8 pb-4"
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
         >

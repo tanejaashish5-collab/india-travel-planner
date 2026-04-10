@@ -108,7 +108,7 @@ export function Footer({ stats }: { stats?: { destinations: number; places: numb
             { num: String(stats?.destinations ?? 142), label: "Destinations" },
             { num: `${stats?.places ?? 407}+`, label: "Places" },
             { num: String(stats?.festivals ?? 168), label: "Festivals" },
-            { num: String(stats?.traps ?? 43), label: "Tourist Traps Exposed" },
+            { num: String(stats?.traps ?? 53), label: "Tourist Traps Exposed" },
             { num: String(stats?.collections ?? 20), label: "Collections" },
           ].map((stat) => (
             <div key={stat.label} className="text-center">
