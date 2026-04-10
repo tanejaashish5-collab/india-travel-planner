@@ -14,7 +14,7 @@ export function Nav() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const primaryLinks = [
-    { href: `/${locale}/explore`, label: t("explore") },
+    { href: `/${locale}/explore`, label: "Destinations" },
     { href: `/${locale}/collections`, label: t("collections") },
     { href: `/${locale}/routes`, label: t("routes") },
     { href: `/${locale}/treks`, label: t("treks") },
@@ -30,18 +30,13 @@ export function Nav() {
     { href: `/${locale}/tourist-traps`, label: "Tourist Traps" },
     { href: `/${locale}/guide`, label: "Guides" },
     { href: `/${locale}/stays`, label: "Where to Stay" },
-    { href: `/${locale}/build-route`, label: "Build Route" },
+    { href: `/${locale}/festivals`, label: "Festivals" },
     { href: `/${locale}/camping`, label: "Camping" },
     { href: `/${locale}/permits`, label: "Permits" },
     { href: `/${locale}/road-conditions`, label: "Roads" },
     { href: `/${locale}/superlatives`, label: "Records" },
-    { href: `/${locale}/region/himachal-pradesh`, label: "HP" },
-    { href: `/${locale}/region/uttarakhand`, label: "UK" },
-    { href: `/${locale}/region/jammu-kashmir`, label: "J&K" },
-    { href: `/${locale}/region/ladakh`, label: "Ladakh" },
-    { href: `/${locale}/region/rajasthan`, label: "Rajasthan" },
-    { href: `/${locale}/region/northeast`, label: "Northeast" },
-    { href: `/${locale}/region/uttar-pradesh`, label: "UP" },
+    { href: `/${locale}/build-route`, label: "Build Route" },
+    { href: `/${locale}/about`, label: "About" },
   ];
 
   // All links for mobile menu
