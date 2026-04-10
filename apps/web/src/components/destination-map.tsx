@@ -33,7 +33,8 @@ export function DestinationMap({
         dragging: true,
       });
 
-      L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png", {
+      // dark_nolabels avoids Chinese/local-script labels near borders
+      L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png", {
         attribution: '&copy; OSM &copy; CARTO',
         maxZoom: 16,
       }).addTo(map);

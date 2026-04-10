@@ -56,8 +56,9 @@ function HomeMiniMap({ pins, locale }: { pins: MapPin[]; locale: string }) {
         attributionControl: false,
       });
 
+      // dark_nolabels avoids Chinese/local-script labels near borders
       L.tileLayer(
-        "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",
+        "https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png",
         { maxZoom: 19 }
       ).addTo(map);
 
