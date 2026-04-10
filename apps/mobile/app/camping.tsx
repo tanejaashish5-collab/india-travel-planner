@@ -176,8 +176,8 @@ const s = StyleSheet.create({
   countText: { fontSize: fontSize.sm, fontWeight: "700", color: colors.topographic },
 
   // Chips
-  chipScroll: { paddingHorizontal: spacing.md, paddingVertical: spacing.sm, gap: 6 },
-  chip: { paddingHorizontal: 14, paddingVertical: 7, borderRadius: borderRadius.full, backgroundColor: colors.muted, borderWidth: 1, borderColor: "transparent" },
+  chipScroll: { flexDirection: "row", paddingHorizontal: spacing.md, paddingVertical: spacing.md },
+  chip: { paddingHorizontal: 14, paddingVertical: 8, borderRadius: borderRadius.full, backgroundColor: colors.muted, borderWidth: 1, borderColor: "transparent", marginRight: 6 },
   chipActive: { backgroundColor: colors.topographic + "20", borderColor: colors.topographic },
   chipText: { fontSize: fontSize.xs, fontWeight: "600", color: colors.mutedForeground },
   chipTextActive: { color: colors.topographic },

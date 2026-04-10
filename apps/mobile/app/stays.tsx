@@ -293,17 +293,17 @@ const s = StyleSheet.create({
     backgroundColor: colors.background,
   },
   chipScroll: {
+    flexDirection: "row",
     paddingHorizontal: spacing.md,
-    paddingVertical: spacing.sm,
-    gap: 8,
+    paddingVertical: spacing.md,
   },
   chip: {
     paddingHorizontal: 14,
-    paddingVertical: 7,
+    paddingVertical: 8,
     borderRadius: borderRadius.full,
     borderWidth: 1,
     borderColor: colors.border,
-    marginRight: 2,
+    marginRight: 6,
   },
   chipText: {
     fontSize: fontSize.xs,

@@ -212,15 +212,16 @@ const s = StyleSheet.create({
 
   // Chips
   chipScroll: {
-    paddingVertical: spacing.sm,
-    gap: 6,
+    flexDirection: "row",
+    paddingVertical: spacing.md,
   },
   chip: {
     paddingHorizontal: 14,
-    paddingVertical: 7,
+    paddingVertical: 8,
     borderRadius: borderRadius.full,
     borderWidth: 1,
     borderColor: colors.border,
+    marginRight: 6,
   },
   chipActive: {
     borderColor: colors.primary,
