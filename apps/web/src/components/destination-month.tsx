@@ -176,9 +176,9 @@ export function DestinationMonth({
             </p>
             {prosePayoff && (
               <div className="mt-6 rounded-xl border border-zinc-800 bg-zinc-900/50 p-6">
-                <h3 className="text-sm font-semibold uppercase tracking-wider text-zinc-500 mb-3">
+                <h2 className="text-sm font-semibold uppercase tracking-wider text-zinc-500 mb-3">
                   The {monthName} story
-                </h3>
+                </h2>
                 <p className="text-base leading-relaxed text-zinc-300">
                   {prosePayoff}
                 </p>
