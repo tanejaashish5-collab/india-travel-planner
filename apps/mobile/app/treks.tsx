@@ -1,5 +1,5 @@
-import { useState, useMemo } from "react";
-import { View, Text, FlatList, TouchableOpacity, StyleSheet, ActivityIndicator, TextInput, Image } from "react-native";
+import { useState, useMemo, useCallback } from "react";
+import { View, Text, FlatList, TouchableOpacity, StyleSheet, ActivityIndicator, TextInput, Image, RefreshControl } from "react-native";
 import { router, Stack } from "expo-router";
 import { colors, spacing, fontSize, borderRadius } from "../lib/theme";
 import { useTreks } from "../hooks/useTreks";
@@ -12,6 +12,8 @@ export default function TreksScreen() {
   const { treks, loading } = useTreks();
   const [search, setSearch] = useState("");
   const [diffFilter, setDiffFilter] = useState("all");
+  const [refreshing, setRefreshing] = useState(false);
+  const onRefresh = useCallback(() => { setRefreshing(true); setTimeout(() => setRefreshing(false), 1000); }, []);
 
   const filtered = useMemo(() => {
     return treks.filter((t: any) => {
@@ -26,6 +28,18 @@ export default function TreksScreen() {
   return (
     <View style={s.container}>
       <Stack.Screen options={{ title: `${treks.length} Treks` }} />
+
+      {/* Branded Header */}
+      <View style={s.header}>
+        <View style={s.headerAccent} />
+        <View style={s.headerRow}>
+          <View>
+            <Text style={s.headerTitle}>Treks & Hikes</Text>
+            <Text style={s.headerSub}>Himalayan trails rated by difficulty</Text>
+          </View>
+          <View style={s.headerCount}><Text style={s.headerCountText}>{treks.length}</Text></View>
+        </View>
+      </View>
 
       {/* Search */}
       <View style={s.searchWrap}>
@@ -46,6 +60,7 @@ export default function TreksScreen() {
         data={filtered}
         keyExtractor={(item: any) => item.id}
         contentContainerStyle={{ padding: spacing.md, paddingTop: 0 }}
+        refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh} tintColor={colors.vermillion} />}
         renderItem={({ item: t }: any) => {
           const destName = Array.isArray(t.destinations) ? t.destinations[0]?.name : t.destinations?.name;
           return (
@@ -92,6 +107,13 @@ export default function TreksScreen() {
 const s = StyleSheet.create({
   container: { flex: 1, backgroundColor: colors.background },
   center: { flex: 1, backgroundColor: colors.background, justifyContent: "center", alignItems: "center" },
+  header: { paddingHorizontal: spacing.md, paddingTop: spacing.md, paddingBottom: spacing.sm },
+  headerAccent: { width: 32, height: 3, backgroundColor: colors.vermillion, borderRadius: 2, marginBottom: spacing.sm },
+  headerRow: { flexDirection: "row", justifyContent: "space-between", alignItems: "center" },
+  headerTitle: { fontSize: fontSize["2xl"], fontWeight: "800", color: colors.foreground },
+  headerSub: { fontSize: fontSize.sm, color: colors.mutedForeground, marginTop: 2 },
+  headerCount: { backgroundColor: colors.vermillion + "15", paddingHorizontal: 12, paddingVertical: 6, borderRadius: borderRadius.full },
+  headerCountText: { fontSize: fontSize.sm, fontWeight: "800", color: colors.vermillion },
   searchWrap: { flexDirection: "row", alignItems: "center", marginHorizontal: spacing.md, marginTop: spacing.sm, marginBottom: spacing.sm, backgroundColor: colors.card, borderRadius: borderRadius.md, borderWidth: 1, borderColor: colors.border, paddingHorizontal: spacing.md },
   searchIcon: { fontSize: 14, marginRight: spacing.sm },
   searchInput: { flex: 1, paddingVertical: 10, fontSize: fontSize.sm, color: colors.foreground },

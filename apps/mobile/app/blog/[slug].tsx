@@ -24,15 +24,27 @@ export default function BlogArticleScreen() {
     <ScrollView style={s.container} contentContainerStyle={s.content}>
       <Stack.Screen options={{ title: "" }} />
 
+      {/* Back to blog */}
+      <TouchableOpacity style={s.backRow} onPress={() => router.push("/blog")}>
+        <Text style={s.backArrow}>←</Text>
+        <Text style={s.backText}>All Articles</Text>
+      </TouchableOpacity>
+
       {/* Header */}
       <View style={s.metaRow}>
         <Text style={s.catLabel}>{CAT_LABELS[article.category] || article.category}</Text>
         <Text style={s.dot}>·</Text>
         <Text style={s.readTime}>{article.reading_time} min read</Text>
-        <Text style={s.dot}>·</Text>
-        <Text style={s.readTime}>
-          {new Date(article.published_at).toLocaleDateString("en-IN", { month: "short", day: "numeric", year: "numeric" })}
-        </Text>
+        {article.depth && (
+          <>
+            <Text style={s.dot}>·</Text>
+            <View style={[s.depthBadge, article.depth === "deep-dive" ? s.depthDeep : s.depthBrief]}>
+              <Text style={[s.depthText, article.depth === "deep-dive" ? s.depthDeepText : s.depthBriefText]}>
+                {article.depth === "deep-dive" ? "Deep Dive" : "Brief"}
+              </Text>
+            </View>
+          </>
+        )}
       </View>
 
       <Text style={s.title}>{article.title}</Text>
@@ -99,7 +111,16 @@ const s = StyleSheet.create({
   container: { flex: 1, backgroundColor: colors.background },
   content: { padding: spacing.lg },
   center: { flex: 1, backgroundColor: colors.background, justifyContent: "center", alignItems: "center" },
-  metaRow: { flexDirection: "row", alignItems: "center", gap: 6, marginBottom: spacing.md },
+  backRow: { flexDirection: "row", alignItems: "center", gap: 6, marginBottom: spacing.lg },
+  backArrow: { fontSize: fontSize.lg, color: colors.vermillion },
+  backText: { fontSize: fontSize.sm, color: colors.vermillion, fontWeight: "600" },
+  depthBadge: { paddingHorizontal: 8, paddingVertical: 2, borderRadius: borderRadius.sm },
+  depthDeep: { backgroundColor: colors.vermillion + "15" },
+  depthBrief: { backgroundColor: colors.score4 + "15" },
+  depthText: { fontSize: 10, fontWeight: "700" },
+  depthDeepText: { color: colors.vermillion },
+  depthBriefText: { color: colors.score4 },
+  metaRow: { flexDirection: "row", alignItems: "center", gap: 6, marginBottom: spacing.md, flexWrap: "wrap" },
   catLabel: { fontSize: fontSize.xs, fontWeight: "700", color: colors.vermillion },
   dot: { color: colors.mutedForeground },
   readTime: { fontSize: fontSize.xs, color: colors.mutedForeground },
