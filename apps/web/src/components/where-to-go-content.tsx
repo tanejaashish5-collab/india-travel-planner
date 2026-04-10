@@ -61,6 +61,8 @@ interface WhereToGoContentProps {
   monthSlug: string;
   monthNum: number;
   monthName: string;
+  regionSlug?: string;
+  regionName?: string;
   data: DestMonthRow[];
   scoreCounts: Record<number, number>;
 }
@@ -175,12 +177,15 @@ export function WhereToGoContent({
   monthSlug,
   monthNum,
   monthName,
+  regionSlug,
+  regionName,
   data,
   scoreCounts,
 }: WhereToGoContentProps) {
   const locale = useLocale();
   const [fairExpanded, setFairExpanded] = useState(false);
 
+  const isRegional = !!regionSlug;
   const score5 = data.filter((d) => d.score === 5);
   const score4 = data.filter((d) => d.score === 4);
   const score3 = data.filter((d) => d.score === 3);
@@ -191,21 +196,34 @@ export function WhereToGoContent({
   const prevName = MONTH_NAMES[prevMonth(monthNum)];
   const nextName = MONTH_NAMES[nextMonth(monthNum)];
 
+  // Build month navigation slugs — keep region prefix when on a regional page
+  const buildMonthHref = (slug: string) =>
+    isRegional ? `/${locale}/where-to-go/${regionSlug}-in-${slug}` : `/${locale}/where-to-go/${slug}`;
+
   return (
     <div className="space-y-12">
       {/* ───── Hero ───── */}
       <FadeIn>
         <div className="text-center">
           <p className="mb-2 text-sm font-medium uppercase tracking-widest text-primary/70">
-            Where to go in India
+            Where to go in {regionName ?? "India"}
           </p>
           <h1 className="font-fraunces text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl">
-            {monthName}
+            {regionName ? `${regionName} in ${monthName}` : monthName}
           </h1>
           <p className="mx-auto mt-4 max-w-xl text-base text-zinc-400">
-            Every destination scored 1-5 for {monthName} — based on weather, road
-            conditions, crowds, and local festivals. Not opinions. Data.
+            {regionName
+              ? `Every destination in ${regionName} scored 1-5 for ${monthName} — based on weather, road conditions, crowds, and local festivals.`
+              : `Every destination scored 1-5 for ${monthName} — based on weather, road conditions, crowds, and local festivals. Not opinions. Data.`}
           </p>
+          {regionName && (
+            <Link
+              href={`/${locale}/where-to-go/${monthSlug}`}
+              className="mt-3 inline-block text-sm text-primary/70 hover:text-primary transition-colors"
+            >
+              ← View all India destinations in {monthName}
+            </Link>
+          )}
         </div>
       </FadeIn>
 
@@ -214,7 +232,7 @@ export function WhereToGoContent({
         <div className="relative">
           {/* Prev arrow */}
           <Link
-            href={`/${locale}/where-to-go/${prevSlug}`}
+            href={buildMonthHref(prevSlug)}
             className="absolute left-0 top-1/2 z-10 -translate-y-1/2 rounded-full bg-zinc-800/80 p-1.5 text-zinc-400 transition-colors hover:bg-zinc-700 hover:text-white"
             aria-label={`Go to ${prevName}`}
           >
@@ -231,7 +249,7 @@ export function WhereToGoContent({
               return (
                 <Link
                   key={slug}
-                  href={`/${locale}/where-to-go/${slug}`}
+                  href={buildMonthHref(slug)}
                   className={`shrink-0 rounded-full px-3 py-1.5 text-xs font-medium transition-all ${
                     isCurrent
                       ? "bg-primary text-black shadow-lg shadow-primary/25"
@@ -246,7 +264,7 @@ export function WhereToGoContent({
 
           {/* Next arrow */}
           <Link
-            href={`/${locale}/where-to-go/${nextSlug}`}
+            href={buildMonthHref(nextSlug)}
             className="absolute right-0 top-1/2 z-10 -translate-y-1/2 rounded-full bg-zinc-800/80 p-1.5 text-zinc-400 transition-colors hover:bg-zinc-700 hover:text-white"
             aria-label={`Go to ${nextName}`}
           >
@@ -381,7 +399,7 @@ export function WhereToGoContent({
             />
           </ScrollReveal>
           <p className="mt-2 text-sm text-zinc-500">
-            These destinations score poorly in {MONTH_NAMES[monthNum]} — bad
+            These destinations{regionName ? ` in ${regionName}` : ""} score poorly in {MONTH_NAMES[monthNum]} — bad
             weather, closed roads, or dangerous conditions. Save them for a
             better month.
           </p>
@@ -397,7 +415,7 @@ export function WhereToGoContent({
       <ScrollReveal>
         <div className="rounded-xl border border-white/[0.06] bg-zinc-900/40 p-6">
           <h2 className="mb-4 text-center font-fraunces text-xl font-semibold text-white">
-            See another month
+            {regionName ? `${regionName} — another month` : "See another month"}
           </h2>
           <div className="grid grid-cols-3 gap-2 sm:grid-cols-4 md:grid-cols-6">
             {MONTH_SLUGS.slice(1).map((slug, i) => {
@@ -406,7 +424,7 @@ export function WhereToGoContent({
               return (
                 <Link
                   key={slug}
-                  href={`/${locale}/where-to-go/${slug}`}
+                  href={buildMonthHref(slug)}
                   className={`rounded-lg px-3 py-2 text-center text-sm font-medium transition-all ${
                     isCurrent
                       ? "bg-primary/20 text-primary ring-1 ring-primary/30"

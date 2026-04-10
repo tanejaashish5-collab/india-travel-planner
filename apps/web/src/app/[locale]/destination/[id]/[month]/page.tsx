@@ -64,8 +64,9 @@ export async function generateMetadata({
   const stateData = dest.state as any;
   const stateName = Array.isArray(stateData) ? stateData[0]?.name : stateData?.name;
 
-  const title = `${name} in ${monthName} — ${score}/5 | NakshIQ`;
-  const description = `${name} scored ${score}/5 for ${monthName}. ${note}. Monthly weather, road conditions, kids safety, and infrastructure data.`;
+  const title = `${name} in ${monthName} — ${score}/5 · When to Visit`;
+  const ogTitle = `${name} in ${monthName} — ${score}/5 | NakshIQ`;
+  const description = `${name} scored ${score}/5 for ${monthName}. ${note}. Monthly weather, road conditions, kids safety, and infrastructure data for ${name}, ${stateName || "India"}.`;
   const canonicalUrl = `https://nakshiq.com/${locale}/destination/${id}/${month}`;
   const imageUrl = `https://nakshiq.com/images/destinations/${id}.jpg`;
 
@@ -80,7 +81,7 @@ export async function generateMetadata({
       },
     },
     openGraph: {
-      title,
+      title: ogTitle,
       description,
       type: "article",
       url: canonicalUrl,
@@ -90,7 +91,7 @@ export async function generateMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      title,
+      title: ogTitle,
       description,
       images: [imageUrl],
     },
@@ -232,6 +233,30 @@ export default async function DestinationMonthPage({
     ],
   };
 
+  // Schema.org JSON-LD — FAQPage
+  const kf = Array.isArray(destination.kids_friendly) ? destination.kids_friendly[0] : destination.kids_friendly;
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: `Is ${monthName} a good time to visit ${destination.name}?`,
+        acceptedAnswer: { "@type": "Answer", text: `${destination.name} scores ${score}/5 in ${monthName}. ${currentMonth?.note || ""}. ${currentMonth?.why_go || ""}` },
+      },
+      {
+        "@type": "Question",
+        name: `What is the weather like in ${destination.name} in ${monthName}?`,
+        acceptedAnswer: { "@type": "Answer", text: currentMonth?.note || `Check the ${destination.name} page on NakshIQ for detailed monthly weather data.` },
+      },
+      ...(kf ? [{
+        "@type": "Question",
+        name: `Is ${destination.name} safe for kids in ${monthName}?`,
+        acceptedAnswer: { "@type": "Answer", text: kf.suitable ? `Yes, ${destination.name} is rated ${kf.rating}/5 for families.` : `${destination.name} is not recommended for families with young children.` },
+      }] : []),
+    ],
+  };
+
   return (
     <div className="min-h-screen">
       <script
@@ -241,6 +266,10 @@ export default async function DestinationMonthPage({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
       <Nav />
       <main className="mx-auto max-w-4xl px-4 py-8">

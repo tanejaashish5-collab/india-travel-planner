@@ -35,15 +35,21 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   let collEntries: MetadataRoute.Sitemap = [];
   let routeEntries: MetadataRoute.Sitemap = [];
   let articleEntries: MetadataRoute.Sitemap = [];
+  let vsEntries: MetadataRoute.Sitemap = [];
+  let skipListEntries: MetadataRoute.Sitemap = [];
+  let withKidsEntries: MetadataRoute.Sitemap = [];
+  let regionMonthEntries: MetadataRoute.Sitemap = [];
 
   if (url && key) {
     const supabase = createClient(url, key);
 
-    const [destResult, collResult, routeResult, articleResult] = await Promise.all([
+    const [destResult, collResult, routeResult, articleResult, trapResult, regionResult] = await Promise.all([
       supabase.from("destinations").select("id").order("id"),
       supabase.from("collections").select("id").order("id"),
       supabase.from("routes").select("id").order("id"),
       supabase.from("articles").select("slug").order("published_at", { ascending: false }),
+      supabase.from("tourist_trap_alternatives").select("trap_destination_id, alternative_destination_id").order("rank"),
+      supabase.from("regions").select("id").order("id"),
     ]);
 
     destEntries = (destResult.data ?? []).flatMap((d: any) =>
@@ -103,7 +109,56 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         priority: 0.8,
       }))
     );
+
+    // VS comparison pages (trap-vs-alternative pairs)
+    const seenPairs = new Set<string>();
+    vsEntries = (trapResult.data ?? []).flatMap((t: any) => {
+      const pair = `${t.trap_destination_id}-vs-${t.alternative_destination_id}`;
+      if (seenPairs.has(pair)) return [];
+      seenPairs.add(pair);
+      return ["en", "hi"].map((locale) => ({
+        url: `${baseUrl}/${locale}/vs/${pair}`,
+        lastModified: new Date(),
+        changeFrequency: "monthly" as const,
+        priority: 0.7,
+      }));
+    });
+
+    // Skip-list pages (unique trap destinations)
+    const seenTraps = new Set<string>();
+    skipListEntries = (trapResult.data ?? []).flatMap((t: any) => {
+      if (seenTraps.has(t.trap_destination_id)) return [];
+      seenTraps.add(t.trap_destination_id);
+      return ["en", "hi"].map((locale) => ({
+        url: `${baseUrl}/${locale}/skip-list/${t.trap_destination_id}`,
+        lastModified: new Date(),
+        changeFrequency: "monthly" as const,
+        priority: 0.7,
+      }));
+    });
+
+    // With-kids pages (all destinations)
+    withKidsEntries = (destResult.data ?? []).flatMap((d: any) =>
+      ["en", "hi"].map((locale) => ({
+        url: `${baseUrl}/${locale}/with-kids/${d.id}`,
+        lastModified: new Date(),
+        changeFrequency: "monthly" as const,
+        priority: 0.6,
+      }))
+    );
+
+    // Regional monthly pages (regions x 12 months)
+    regionMonthEntries = (regionResult.data ?? []).flatMap((r: any) =>
+      MONTH_SLUGS.flatMap((month) =>
+        ["en", "hi"].map((locale) => ({
+          url: `${baseUrl}/${locale}/region/${r.id}/${month}`,
+          lastModified: new Date(),
+          changeFrequency: "monthly" as const,
+          priority: 0.7,
+        }))
+      )
+    );
   }
 
-  return [...staticEntries, ...destEntries, ...destMonthEntries, ...whereToGoEntries, ...collEntries, ...routeEntries, ...articleEntries];
+  return [...staticEntries, ...destEntries, ...destMonthEntries, ...whereToGoEntries, ...collEntries, ...routeEntries, ...articleEntries, ...vsEntries, ...skipListEntries, ...withKidsEntries, ...regionMonthEntries];
 }

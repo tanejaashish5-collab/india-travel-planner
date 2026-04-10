@@ -395,12 +395,12 @@ export function DestinationMonth({
                         }`}
                       >
                         {mName}
-                        {isActive && (
-                          <span className="ml-2 inline-block rounded bg-white/10 px-1.5 py-0.5 text-xs text-zinc-400">
-                            viewing
-                          </span>
-                        )}
                       </Link>
+                      {isActive && (
+                        <span className="ml-2 inline-block rounded bg-white/10 px-1.5 py-0.5 text-[10px] text-zinc-400">
+                          viewing
+                        </span>
+                      )}
                     </td>
                     <td className="px-4 py-3 text-center">
                       <span className={`font-bold ${scoreColor}`}>
@@ -426,10 +426,23 @@ export function DestinationMonth({
     const details: { label: string; value: string }[] = [];
 
     if (confidence?.reach) {
-      const reachVal = typeof confidence.reach === "object"
-        ? Object.entries(confidence.reach).map(([k, v]) => `${k.replace(/_/g, " ")}: ${v}`).join(". ")
-        : String(confidence.reach);
-      details.push({ label: "How to reach", value: reachVal });
+      const r = confidence.reach;
+      if (typeof r === "object") {
+        // Build rich reach description from structured data
+        const parts: string[] = [];
+        if (r.from_nearest_city) parts.push(r.from_nearest_city);
+        else {
+          if (r.nearest_airport) parts.push(`Nearest airport: ${r.nearest_airport}`);
+          if (r.nearest_railhead) parts.push(`Nearest railhead: ${r.nearest_railhead}`);
+        }
+        if (r.road_condition) parts.push(`Roads: ${r.road_condition}`);
+        if (r.self_drive) parts.push(`Self-drive: ${r.self_drive}`);
+        if (r.public_transport) parts.push(`Public transport: ${r.public_transport}`);
+        if (r.last_km_difficulty) parts.push(`Last stretch: ${r.last_km_difficulty}`);
+        details.push({ label: "How to reach", value: parts.join(". ") || "Contact local transport" });
+      } else {
+        details.push({ label: "How to reach", value: String(r) });
+      }
     }
     if (destination.elevation_m)
       details.push({ label: "Elevation", value: `${destination.elevation_m.toLocaleString()}m` });
