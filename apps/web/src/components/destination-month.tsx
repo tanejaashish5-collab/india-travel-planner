@@ -155,20 +155,42 @@ export function DestinationMonth({
     </FadeIn>
   );
 
-  // ── 2. Lead Paragraph ──────────────────────────────────────
+  // ── 2. Lead Paragraph + Prose Payoff ────────────────────────
 
   const LeadParagraph = () => {
+    // Prefer hand-written prose when available
+    const proseLead = currentMonth?.prose_lead;
+    const prosePayoff = currentMonth?.prose_payoff;
     const note = currentMonth?.note;
     const whyGo = currentMonth?.why_go;
-    if (!note && !whyGo) return null;
+
+    if (!proseLead && !note && !whyGo) return null;
 
     return (
       <FadeIn delay={0.15}>
-        <p className="text-lg leading-relaxed text-zinc-300 md:text-xl">
-          {note}
-          {note && whyGo && ". "}
-          {whyGo}
-        </p>
+        {proseLead ? (
+          <div className="space-y-4">
+            <p className="text-lg leading-relaxed text-zinc-200 md:text-xl font-medium">
+              {proseLead}
+            </p>
+            {prosePayoff && (
+              <div className="mt-6 rounded-xl border border-zinc-800 bg-zinc-900/50 p-6">
+                <h3 className="text-sm font-semibold uppercase tracking-wider text-zinc-500 mb-3">
+                  The {monthName} story
+                </h3>
+                <p className="text-base leading-relaxed text-zinc-300">
+                  {prosePayoff}
+                </p>
+              </div>
+            )}
+          </div>
+        ) : (
+          <p className="text-lg leading-relaxed text-zinc-300 md:text-xl">
+            {note}
+            {note && whyGo && ". "}
+            {whyGo}
+          </p>
+        )}
       </FadeIn>
     );
   };
@@ -254,36 +276,27 @@ export function DestinationMonth({
       thinkTwice.push("Anyone with health conditions");
     }
 
-    // Kids
-    if (kids?.suitable) {
-      goList.push("Families with children");
+    // Use hand-written lists from DB if available
+    if (currentMonth?.who_should_go?.length > 0) {
+      goList.push(...currentMonth.who_should_go);
     } else {
-      thinkTwice.push("Families with young children");
+      // Auto-generate from data
+      if (kids?.suitable) goList.push("Families with children");
+      else thinkTwice.push("Families with young children");
+      if (confidence?.network && !confidence.network.toLowerCase().includes("no signal")) {
+        goList.push("Remote workers (network available)");
+      }
+      if (score >= 4) goList.push("Anyone looking for the best time to visit");
     }
 
-    // Elevation
-    if (destination.elevation_m && destination.elevation_m > 3500) {
-      thinkTwice.push("Those prone to altitude sickness");
-    }
-
-    // Network
-    if (confidence?.network && confidence.network.toLowerCase().includes("no signal")) {
-      thinkTwice.push("Anyone needing constant connectivity");
-    } else if (confidence?.network) {
-      goList.push("Remote workers (network available)");
-    }
-
-    // Score-based
-    if (score >= 4) {
-      goList.push("Anyone looking for the best time to visit");
-    }
-    if (score <= 2) {
-      thinkTwice.push("Those with flexible dates — better months exist");
-    }
-
-    // Why not
-    if (currentMonth?.why_not) {
-      thinkTwice.push(currentMonth.why_not);
+    if (currentMonth?.who_should_avoid?.length > 0) {
+      thinkTwice.push(...currentMonth.who_should_avoid);
+    } else {
+      // Auto-generate from data
+      if (destination.elevation_m && destination.elevation_m > 3500) thinkTwice.push("Those prone to altitude sickness");
+      if (confidence?.network && confidence.network.toLowerCase().includes("no signal")) thinkTwice.push("Anyone needing constant connectivity");
+      if (score <= 2) thinkTwice.push("Those with flexible dates — better months exist");
+      if (currentMonth?.why_not) thinkTwice.push(currentMonth.why_not);
     }
 
     if (goList.length === 0 && thinkTwice.length === 0) return null;
