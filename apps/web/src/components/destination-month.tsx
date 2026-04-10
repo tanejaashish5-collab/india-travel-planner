@@ -204,22 +204,31 @@ export function DestinationMonth({
       items.push({ icon: "🌤", label: "Weather", value: currentMonth.note });
     }
     if (confidence?.reach) {
-      items.push({ icon: "🛣", label: "Roads & Access", value: confidence.reach });
+      const reachStr = typeof confidence.reach === "object"
+        ? Object.entries(confidence.reach).map(([k, v]) => `${k.replace(/_/g, " ")}: ${v}`).join(". ")
+        : String(confidence.reach);
+      items.push({ icon: "🛣", label: "Roads & Access", value: reachStr });
     }
     if (confidence?.emergency) {
+      const emergStr = typeof confidence.emergency === "object"
+        ? Object.entries(confidence.emergency).map(([k, v]) => `${k.replace(/_/g, " ")}: ${v}`).join(". ")
+        : String(confidence.emergency);
       items.push({
         icon: "🏥",
         label: "Safety & Emergency",
-        value: `${confidence.safety_rating ? `Safety: ${confidence.safety_rating}/5. ` : ""}${confidence.emergency}`,
+        value: `${confidence.safety_rating ? `Safety: ${confidence.safety_rating}/5. ` : ""}${emergStr}`,
       });
     }
     if (confidence?.network) {
-      items.push({ icon: "📶", label: "Network", value: confidence.network });
+      const netStr = typeof confidence.network === "object"
+        ? Object.entries(confidence.network).filter(([k]) => !["wifi_available"].includes(k)).map(([k, v]) => `${k.toUpperCase()}: ${v ? "Yes" : "No"}`).join(", ") + (confidence.network.note ? `. ${confidence.network.note}` : "")
+        : String(confidence.network);
+      items.push({ icon: "📶", label: "Network", value: netStr });
     }
     if (kids) {
       const kidsVal = kids.suitable
-        ? `Kid-friendly (${kids.rating}/5)${kids.reasons ? ` — ${kids.reasons}` : ""}`
-        : `Not ideal for kids${kids.reasons ? ` — ${kids.reasons}` : ""}`;
+        ? `Kid-friendly (${kids.rating}/5)${kids.reasons ? ` — ${Array.isArray(kids.reasons) ? kids.reasons.join(", ") : kids.reasons}` : ""}`
+        : `Not ideal for kids${kids.reasons ? ` — ${Array.isArray(kids.reasons) ? kids.reasons.join(", ") : kids.reasons}` : ""}`;
       items.push({ icon: "👶", label: "Kids", value: kidsVal });
     }
     if (destination.elevation_m) {
@@ -283,7 +292,8 @@ export function DestinationMonth({
       // Auto-generate from data
       if (kids?.suitable) goList.push("Families with children");
       else thinkTwice.push("Families with young children");
-      if (confidence?.network && !confidence.network.toLowerCase().includes("no signal")) {
+      const netCheck = typeof confidence?.network === "object" ? JSON.stringify(confidence.network) : String(confidence?.network || "");
+      if (confidence?.network && !netCheck.toLowerCase().includes("no signal") && !netCheck.toLowerCase().includes("false")) {
         goList.push("Remote workers (network available)");
       }
       if (score >= 4) goList.push("Anyone looking for the best time to visit");
@@ -293,8 +303,9 @@ export function DestinationMonth({
       thinkTwice.push(...currentMonth.who_should_avoid);
     } else {
       // Auto-generate from data
+      const netCheck2 = typeof confidence?.network === "object" ? JSON.stringify(confidence.network) : String(confidence?.network || "");
       if (destination.elevation_m && destination.elevation_m > 3500) thinkTwice.push("Those prone to altitude sickness");
-      if (confidence?.network && confidence.network.toLowerCase().includes("no signal")) thinkTwice.push("Anyone needing constant connectivity");
+      if (confidence?.network && (netCheck2.toLowerCase().includes("no signal") || netCheck2.includes('"jio":false'))) thinkTwice.push("Anyone needing constant connectivity");
       if (score <= 2) thinkTwice.push("Those with flexible dates — better months exist");
       if (currentMonth?.why_not) thinkTwice.push(currentMonth.why_not);
     }
@@ -414,7 +425,12 @@ export function DestinationMonth({
   const PracticalDetails = () => {
     const details: { label: string; value: string }[] = [];
 
-    if (confidence?.reach) details.push({ label: "How to reach", value: confidence.reach });
+    if (confidence?.reach) {
+      const reachVal = typeof confidence.reach === "object"
+        ? Object.entries(confidence.reach).map(([k, v]) => `${k.replace(/_/g, " ")}: ${v}`).join(". ")
+        : String(confidence.reach);
+      details.push({ label: "How to reach", value: reachVal });
+    }
     if (destination.elevation_m)
       details.push({ label: "Elevation", value: `${destination.elevation_m.toLocaleString()}m` });
     if (destination.difficulty)
