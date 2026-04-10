@@ -185,11 +185,63 @@ export default async function DestinationPage({
     touristType: dest.difficulty === "easy" ? "Family" : dest.difficulty === "extreme" ? "Adventure" : "General",
   };
 
+  // BreadcrumbList schema
+  const breadcrumbLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://nakshiq.com/en" },
+      { "@type": "ListItem", position: 2, name: "Destinations", item: "https://nakshiq.com/en/explore" },
+      { "@type": "ListItem", position: 3, name: stateName || "India", item: `https://nakshiq.com/en/region/${dest.state_id || "india"}` },
+      { "@type": "ListItem", position: 4, name: dest.name, item: `https://nakshiq.com/en/destination/${id}` },
+    ],
+  };
+
+  // FAQPage schema — generated from destination data
+  const kf = Array.isArray(dest.kids_friendly) ? dest.kids_friendly[0] : dest.kids_friendly;
+  const cc = Array.isArray(dest.confidence_cards) ? dest.confidence_cards[0] : dest.confidence_cards;
+  const bestMonthNames = (dest.best_months || []).map((m: number) => ["","January","February","March","April","May","June","July","August","September","October","November","December"][m]).filter(Boolean).join(", ");
+
+  const faqLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: `What is the best time to visit ${dest.name}?`,
+        acceptedAnswer: { "@type": "Answer", text: bestMonthNames ? `The best months to visit ${dest.name} are ${bestMonthNames}. See our full month-by-month scoring at nakshiq.com.` : `Visit nakshiq.com for month-by-month scoring of ${dest.name}.` },
+      },
+      ...(kf ? [{
+        "@type": "Question",
+        name: `Is ${dest.name} safe for families with kids?`,
+        acceptedAnswer: { "@type": "Answer", text: kf.suitable ? `Yes, ${dest.name} is rated ${kf.rating}/5 for families. ${(kf.reasons || []).slice(0, 2).join(". ")}.` : `${dest.name} is not recommended for families with young children. ${(kf.reasons || []).slice(0, 2).join(". ")}.` },
+      }] : []),
+      ...(cc?.reach ? [{
+        "@type": "Question",
+        name: `How do I reach ${dest.name}?`,
+        acceptedAnswer: { "@type": "Answer", text: typeof cc.reach === "object" ? (cc.reach.from_nearest_city || cc.reach.public_transport || `See the ${dest.name} travel guide on NakshIQ for detailed route information.`) : String(cc.reach) },
+      }] : []),
+      ...(dest.elevation_m ? [{
+        "@type": "Question",
+        name: `What altitude is ${dest.name}?`,
+        acceptedAnswer: { "@type": "Answer", text: `${dest.name} sits at ${dest.elevation_m.toLocaleString()}m above sea level. ${dest.difficulty === "extreme" ? "Altitude sickness is a real risk — acclimatize properly." : dest.elevation_m > 3000 ? "Some altitude awareness needed." : "Altitude is not a concern for most visitors."}` },
+      }] : []),
+    ].filter(Boolean),
+  };
+
   return (
     <div className="min-h-screen">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
       />
       <Nav />
       <main className="mx-auto max-w-4xl px-4 py-8">

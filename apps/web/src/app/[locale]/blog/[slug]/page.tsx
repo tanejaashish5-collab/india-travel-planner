@@ -152,11 +152,26 @@ export default async function BlogArticlePage({ params }: { params: Promise<{ sl
     ...(article.reading_time && { timeRequired: `PT${article.reading_time}M` }),
   };
 
+  // BreadcrumbList schema
+  const breadcrumbLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://nakshiq.com/en" },
+      { "@type": "ListItem", position: 2, name: "Blog", item: "https://nakshiq.com/en/blog" },
+      { "@type": "ListItem", position: 3, name: article.title, item: `https://nakshiq.com/en/blog/${slug}` },
+    ],
+  };
+
   return (
     <div className="min-h-screen">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
       />
       <Nav />
       <main className="mx-auto max-w-4xl px-4 py-8">

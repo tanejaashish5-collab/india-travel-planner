@@ -27,7 +27,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 
+  const MONTH_SLUGS = ["january","february","march","april","may","june","july","august","september","october","november","december"];
+
   let destEntries: MetadataRoute.Sitemap = [];
+  let destMonthEntries: MetadataRoute.Sitemap = [];
+  let whereToGoEntries: MetadataRoute.Sitemap = [];
   let collEntries: MetadataRoute.Sitemap = [];
   let routeEntries: MetadataRoute.Sitemap = [];
   let articleEntries: MetadataRoute.Sitemap = [];
@@ -48,6 +52,28 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         lastModified: new Date(),
         changeFrequency: "weekly" as const,
         priority: 0.8,
+      }))
+    );
+
+    // Destination-month pages (142 × 12 × 2 locales = 3,408 URLs)
+    destMonthEntries = (destResult.data ?? []).flatMap((d: any) =>
+      MONTH_SLUGS.flatMap((month) =>
+        ["en", "hi"].map((locale) => ({
+          url: `${baseUrl}/${locale}/destination/${d.id}/${month}`,
+          lastModified: new Date(),
+          changeFrequency: "monthly" as const,
+          priority: 0.7,
+        }))
+      )
+    );
+
+    // Where-to-go seasonal hub pages (12 × 2 locales = 24 URLs)
+    whereToGoEntries = MONTH_SLUGS.flatMap((month) =>
+      ["en", "hi"].map((locale) => ({
+        url: `${baseUrl}/${locale}/where-to-go/${month}`,
+        lastModified: new Date(),
+        changeFrequency: "weekly" as const,
+        priority: 0.85,
       }))
     );
 
@@ -79,5 +105,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     );
   }
 
-  return [...staticEntries, ...destEntries, ...collEntries, ...routeEntries, ...articleEntries];
+  return [...staticEntries, ...destEntries, ...destMonthEntries, ...whereToGoEntries, ...collEntries, ...routeEntries, ...articleEntries];
 }

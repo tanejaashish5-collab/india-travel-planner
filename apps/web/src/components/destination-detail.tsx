@@ -242,6 +242,29 @@ export function DestinationDetail({ dest }: { dest: any }) {
               </div>
             </div>
 
+            {/* Month-by-Month Navigation */}
+            <div className="mt-4">
+              <div className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">See by month</div>
+              <div className="flex flex-wrap gap-1">
+                {["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"].map((m, i) => {
+                  const monthData = months.find((md: any) => md.month === i + 1);
+                  const score = monthData?.score ?? 0;
+                  const slug = ["january","february","march","april","may","june","july","august","september","october","november","december"][i];
+                  const scoreColor = score >= 4 ? "bg-emerald-500/20 text-emerald-400 border-emerald-500/30" : score >= 3 ? "bg-yellow-500/20 text-yellow-400 border-yellow-500/30" : score >= 2 ? "bg-orange-500/20 text-orange-400 border-orange-500/30" : score >= 1 ? "bg-red-500/20 text-red-400 border-red-500/30" : "bg-zinc-500/20 text-zinc-400 border-zinc-500/30";
+                  const isCurrent = i + 1 === currentMonth;
+                  return (
+                    <Link
+                      key={m}
+                      href={`/${locale}/destination/${dest.id}/${slug}`}
+                      className={`rounded-full border px-2.5 py-1 text-[10px] font-bold transition-all hover:scale-105 ${scoreColor} ${isCurrent ? "ring-1 ring-primary" : ""}`}
+                    >
+                      {m} {score}/5
+                    </Link>
+                  );
+                })}
+              </div>
+            </div>
+
             {/* Live Weather */}
             <div className="mt-4">
               <WeatherWidget destinationId={dest.id} />
