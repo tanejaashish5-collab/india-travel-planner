@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { StaggerContainer, StaggerItem, HoverCard } from "./animated-hero";
 import { DIFFICULTY_COLORS } from "@/lib/design-tokens";
 
@@ -11,6 +11,8 @@ const DIFFICULTY_ORDER: Record<string, number> = { easy: 1, moderate: 2, hard: 3
 
 export function TreksContent({ treks, trekDests, gearChecklists }: { treks: any[]; trekDests: any[]; gearChecklists?: any[] }) {
   const locale = useLocale();
+  const tt = useTranslations("trek");
+  const tm = useTranslations("months");
   const [search, setSearch] = useState("");
   const [diffFilter, setDiffFilter] = useState("");
 
@@ -31,7 +33,8 @@ export function TreksContent({ treks, trekDests, gearChecklists }: { treks: any[
     "Extreme (Expert only)": filteredTreks.filter((t) => t.difficulty === "extreme"),
   };
 
-  const MONTH_NAMES = ["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+  // Use translated month names — short form (first 3 chars)
+  const MONTH_NAMES = ["", ...Array.from({ length: 12 }, (_, i) => tm(String(i + 1)).slice(0, 3))];
 
   return (
     <>
@@ -41,7 +44,7 @@ export function TreksContent({ treks, trekDests, gearChecklists }: { treks: any[
           type="text"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          placeholder="Search treks..."
+          placeholder={tt("searchTreks")}
           className="flex-1 rounded-lg border border-border bg-background px-4 py-2.5 text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50"
         />
         <div className="flex gap-2">
@@ -59,7 +62,7 @@ export function TreksContent({ treks, trekDests, gearChecklists }: { treks: any[
         </div>
       </div>
 
-      <p className="text-sm text-muted-foreground mb-6">{filteredTreks.length} treks found</p>
+      <p className="text-sm text-muted-foreground mb-6">{filteredTreks.length} {tt("treksFound")}</p>
 
       {/* Trek cards grouped by difficulty */}
       {Object.entries(grouped).map(([label, groupTreks]) =>
@@ -123,15 +126,15 @@ export function TreksContent({ treks, trekDests, gearChecklists }: { treks: any[
                       <div className="mt-3 grid grid-cols-3 gap-2 text-xs">
                         <div className="rounded-lg bg-muted/50 p-1.5 text-center">
                           <div className="font-mono font-bold text-foreground">{trek.distance_km ?? "?"}km</div>
-                          <div className="text-muted-foreground">Distance</div>
+                          <div className="text-muted-foreground">{tt("distance")}</div>
                         </div>
                         <div className="rounded-lg bg-muted/50 p-1.5 text-center">
                           <div className="font-mono font-bold text-foreground">{trek.fitness_level}</div>
-                          <div className="text-muted-foreground">Fitness</div>
+                          <div className="text-muted-foreground">{tt("fitness")}</div>
                         </div>
                         <div className="rounded-lg bg-muted/50 p-1.5 text-center">
                           <div className="font-mono font-bold text-foreground">{trek.kids_suitable ? "👶 Yes" : "Adults"}</div>
-                          <div className="text-muted-foreground">Kids</div>
+                          <div className="text-muted-foreground">{tt("age")}</div>
                         </div>
                       </div>
 

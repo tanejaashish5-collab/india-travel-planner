@@ -3,13 +3,13 @@
 import { useState, lazy, Suspense } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { ShareButton } from "./share-button";
 
 const TrekTrailMap = lazy(() => import("./trek-trail-map").then((mod) => ({ default: mod.TrekTrailMap })));
 
-const MONTH_SHORT = ["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+// MONTH_SHORT is now derived from translations inside the component
 
 const DIFFICULTY_COLORS: Record<string, string> = {
   easy: "bg-emerald-500/10 text-emerald-400 border-emerald-500/30",
@@ -20,16 +20,19 @@ const DIFFICULTY_COLORS: Record<string, string> = {
 
 export function TrekDetail({ trek }: { trek: any }) {
   const locale = useLocale();
+  const tt = useTranslations("trek");
+  const tm = useTranslations("months");
+  const MONTH_SHORT = ["", ...Array.from({ length: 12 }, (_, i) => tm(String(i + 1)).slice(0, 3))];
   const [activeSection, setActiveSection] = useState("overview");
   const destName = Array.isArray(trek.destinations) ? trek.destinations[0]?.name : trek.destinations?.name;
   const stateName = Array.isArray(trek.destinations) ? (Array.isArray(trek.destinations[0]?.state) ? trek.destinations[0]?.state[0]?.name : trek.destinations[0]?.state?.name) : null;
   const days = trek.day_by_day ?? [];
 
   const sections = [
-    { id: "overview", label: "Overview" },
-    ...(days.length > 0 ? [{ id: "itinerary", label: "Day by Day" }] : []),
-    ...(trek.gear_essentials?.length > 0 ? [{ id: "gear", label: "Gear" }] : []),
-    { id: "practical", label: "Practical Info" },
+    { id: "overview", label: tt("overview") },
+    ...(days.length > 0 ? [{ id: "itinerary", label: tt("dayByDay") }] : []),
+    ...(trek.gear_essentials?.length > 0 ? [{ id: "gear", label: tt("gear") }] : []),
+    { id: "practical", label: tt("practicalInfo") },
   ];
 
   // Calculate elevation profile from day_by_day
@@ -40,7 +43,7 @@ export function TrekDetail({ trek }: { trek: any }) {
     <div className="space-y-8">
       {/* Breadcrumb nav */}
       <nav className="flex items-center gap-2 text-sm text-muted-foreground">
-        <Link href={`/${locale}/treks`} className="hover:text-primary transition-colors">All Treks</Link>
+        <Link href={`/${locale}/treks`} className="hover:text-primary transition-colors">{tt("allTreks")}</Link>
         <span>/</span>
         <span className="text-foreground">{trek.name}</span>
         {stateName && <span className="ml-auto text-xs">{stateName}</span>}
@@ -83,30 +86,30 @@ export function TrekDetail({ trek }: { trek: any }) {
         <div className="mt-6 grid grid-cols-2 sm:grid-cols-5 gap-3">
           <div className="rounded-xl border border-border/30 bg-muted/20 p-3 text-center">
             <div className="text-lg font-mono font-bold text-primary">{trek.duration_days}</div>
-            <div className="text-xs text-muted-foreground">Days</div>
+            <div className="text-xs text-muted-foreground">{tt("days")}</div>
           </div>
           <div className="rounded-xl border border-border/30 bg-muted/20 p-3 text-center">
             <div className="text-lg font-mono font-bold">{trek.distance_km}km</div>
-            <div className="text-xs text-muted-foreground">Distance</div>
+            <div className="text-xs text-muted-foreground">{tt("distance")}</div>
           </div>
           <div className="rounded-xl border border-border/30 bg-muted/20 p-3 text-center">
             <div className="text-lg font-mono font-bold">{trek.max_altitude_m?.toLocaleString()}m</div>
-            <div className="text-xs text-muted-foreground">Max Altitude</div>
+            <div className="text-xs text-muted-foreground">{tt("maxAltitude")}</div>
           </div>
           <div className="rounded-xl border border-border/30 bg-muted/20 p-3 text-center">
             <div className="text-lg font-mono font-bold capitalize">{trek.fitness_level}</div>
-            <div className="text-xs text-muted-foreground">Fitness</div>
+            <div className="text-xs text-muted-foreground">{tt("fitness")}</div>
           </div>
           <div className="rounded-xl border border-border/30 bg-muted/20 p-3 text-center">
             <div className="text-lg font-mono font-bold">{trek.kids_suitable ? `${trek.min_age}+` : "Adults"}</div>
-            <div className="text-xs text-muted-foreground">Age</div>
+            <div className="text-xs text-muted-foreground">{tt("age")}</div>
           </div>
         </div>
 
         {/* Best months */}
         {trek.best_months?.length > 0 && (
           <div className="mt-4 flex items-center gap-2">
-            <span className="text-sm text-muted-foreground">Best months:</span>
+            <span className="text-sm text-muted-foreground">{tt("bestMonths")}:</span>
             <div className="flex gap-1">
               {trek.best_months.map((m: number) => (
                 <span key={m} className="rounded-md bg-primary/10 text-primary px-2 py-1 text-xs font-medium">{MONTH_SHORT[m]}</span>
@@ -129,7 +132,7 @@ export function TrekDetail({ trek }: { trek: any }) {
         {/* Warnings */}
         {trek.warnings?.length > 0 && (
           <div className="mt-4 rounded-xl border border-orange-500/20 bg-orange-500/5 p-4">
-            <h3 className="text-sm font-semibold text-orange-300 mb-2">Warnings</h3>
+            <h3 className="text-sm font-semibold text-orange-300 mb-2">{tt("warnings")}</h3>
             {trek.warnings.map((w: string, i: number) => (
               <p key={i} className="text-sm text-orange-200/80 flex items-start gap-2"><span>⚠</span>{w}</p>
             ))}

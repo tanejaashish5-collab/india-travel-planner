@@ -3,13 +3,14 @@
 import { useState, useEffect, useMemo } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { useSearchParams } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { SCORE_COLORS, DIFFICULTY_COLORS } from "@/lib/design-tokens";
 
 export function SavedContent({ destinations }: { destinations: any[] }) {
   const locale = useLocale();
+  const td = useTranslations("destination");
   const searchParams = useSearchParams();
   const urlCompare = searchParams.get("compare")?.split(",").filter(Boolean) ?? [];
 
@@ -56,9 +57,9 @@ export function SavedContent({ destinations }: { destinations: any[] }) {
   return (
     <>
       <div className="mb-8">
-        <h1 className="text-3xl font-bold">Saved Destinations</h1>
+        <h1 className="text-3xl font-bold">{td("savedDestinations")}</h1>
         <p className="mt-1 text-muted-foreground">
-          {savedDestinations.length} saved · {compareMode ? "Select up to 3 to compare" : "Your travel shortlist"}
+          {savedDestinations.length} saved · {compareMode ? "Select up to 3 to compare" : td("yourTravelShortlist")}
         </p>
       </div>
 
@@ -70,7 +71,7 @@ export function SavedContent({ destinations }: { destinations: any[] }) {
             compareMode ? "border-primary bg-primary/10 text-primary" : "border-border text-muted-foreground hover:text-foreground"
           }`}
         >
-          {compareMode ? "Exit Compare" : "Compare Destinations"}
+          {compareMode ? "Exit Compare" : td("compareDestinations")}
         </button>
         {compareMode && compareIds.length >= 2 && (
           <span className="text-sm text-primary font-medium">

@@ -24,20 +24,20 @@ import { FadeIn, SlideIn, HoverCard, StaggerContainer, StaggerItem, ScrollReveal
 import { Footer } from "./footer";
 import { SCORE_COLORS, DIFFICULTY_BG, DIFFICULTY_COLORS } from "@/lib/design-tokens";
 
-const TABS = [
-  { id: "overview", label: "Overview" },
-  { id: "monthly", label: "Monthly" },
-  { id: "kids", label: "Kids" },
-  { id: "safety", label: "Safety" },
-  { id: "places", label: "Places" },
-  { id: "food", label: "Food & People" },
-  { id: "reviews", label: "Reviews" },
-];
-
 export function DestinationDetail({ dest }: { dest: any }) {
   const locale = useLocale();
   const t = useTranslations("destination");
   const tm = useTranslations("months");
+
+  const TABS = [
+    { id: "overview", label: t("overview") },
+    { id: "monthly", label: t("monthly") },
+    { id: "kids", label: t("kids") },
+    { id: "safety", label: t("safety") },
+    { id: "places", label: t("places") },
+    { id: "food", label: t("foodAndPeople") },
+    { id: "reviews", label: "Reviews" },
+  ];
   const [activeTab, setActiveTab] = useState("overview");
   const [saved, setSaved] = useState(false);
 

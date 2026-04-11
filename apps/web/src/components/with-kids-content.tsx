@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import { FadeIn, SlideIn, ScrollReveal, StaggerContainer, StaggerItem } from "./animated-hero";
 import { SCORE_COLORS } from "@/lib/design-tokens";
 
@@ -38,6 +39,7 @@ export function WithKidsContent({
   months,
   stateName,
 }: WithKidsContentProps) {
+  const tp = useTranslations("page");
   const kf = kidsData;
   const cc = confidenceData;
 
@@ -353,7 +355,7 @@ export function WithKidsContent({
       <ScrollReveal>
         <div className="space-y-4">
           <h2 className="text-2xl font-bold">
-            Infrastructure Reality for Families
+            {tp("infrastructureReality")}
           </h2>
           <p className="text-muted-foreground">
             What you actually need to know before taking kids to {dest.name}.
@@ -365,7 +367,7 @@ export function WithKidsContent({
                 <div className="rounded-xl border border-border bg-card p-5">
                   <div className="flex items-center gap-2 mb-2">
                     <span className="text-lg">{"\uD83C\uDFE5"}</span>
-                    <h3 className="font-bold">Hospital & Emergency</h3>
+                    <h3 className="font-bold">{tp("hospitalEmergency")}</h3>
                   </div>
                   <p className="text-sm text-muted-foreground">
                     {typeof cc.emergency === "object"
@@ -386,7 +388,7 @@ export function WithKidsContent({
                 <div className="rounded-xl border border-border bg-card p-5">
                   <div className="flex items-center gap-2 mb-2">
                     <span className="text-lg">{"\uD83D\uDCF6"}</span>
-                    <h3 className="font-bold">Network & Connectivity</h3>
+                    <h3 className="font-bold">{tp("networkConnectivity")}</h3>
                   </div>
                   <p className="text-sm text-muted-foreground">
                     {typeof cc.network === "object"
@@ -402,7 +404,7 @@ export function WithKidsContent({
                 <div className="rounded-xl border border-border bg-card p-5">
                   <div className="flex items-center gap-2 mb-2">
                     <span className="text-lg">{"\uD83D\uDEE3\uFE0F"}</span>
-                    <h3 className="font-bold">Road Conditions</h3>
+                    <h3 className="font-bold">{tp("roadConditions")}</h3>
                   </div>
                   <p className="text-sm text-muted-foreground">
                     {typeof cc.reach === "object"
@@ -420,7 +422,7 @@ export function WithKidsContent({
                 <div className="rounded-xl border border-border bg-card p-5">
                   <div className="flex items-center gap-2 mb-2">
                     <span className="text-lg">{"\u26F0\uFE0F"}</span>
-                    <h3 className="font-bold">Altitude</h3>
+                    <h3 className="font-bold">{tp("altitude")}</h3>
                   </div>
                   <p className="text-sm text-muted-foreground">
                     {dest.elevation_m.toLocaleString()}m above sea level.{" "}
@@ -442,7 +444,7 @@ export function WithKidsContent({
         <ScrollReveal>
           <div className="rounded-xl border border-orange-500/20 bg-orange-500/5 p-6">
             <h2 className="text-xl font-bold text-orange-400 mb-4">
-              What to Watch Out For
+              {tp("whatToWatchOut")}
             </h2>
             <ul className="space-y-3">
               {warnings.map((warning, idx) => (

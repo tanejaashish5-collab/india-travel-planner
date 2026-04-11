@@ -44,6 +44,8 @@ export function ExploreGrid({
   const locale = useLocale();
   const ts = useTranslations("score");
   const tm = useTranslations("months");
+  const te = useTranslations("explore");
+  const tu = useTranslations("ui");
   const searchParams = useSearchParams();
   const router = useRouter();
   const pathname = usePathname();
@@ -174,6 +176,8 @@ export function ExploreGrid({
                 selectedMonth={filters.month}
                 ts={ts}
                 tm={tm}
+                te={te}
+                tu={tu}
                 featured={isDefaultView && index === 0}
               />
             </HoverCard>
@@ -183,8 +187,8 @@ export function ExploreGrid({
 
       {sorted.length === 0 && (
         <div className="py-20 text-center text-muted-foreground">
-          <p className="text-lg">No destinations match your filters</p>
-          <p className="mt-1 text-sm">Try adjusting your search or filters</p>
+          <p className="text-lg">{te("noResults")}</p>
+          <p className="mt-1 text-sm">{te("tryAdjusting")}</p>
         </div>
       )}
     </>
@@ -203,6 +207,8 @@ function DestinationCard({
   selectedMonth,
   ts,
   tm,
+  te,
+  tu,
   featured = false,
   cardIndex = 0,
 }: {
@@ -211,6 +217,8 @@ function DestinationCard({
   selectedMonth: number;
   ts: (key: string) => string;
   tm: (key: string) => string;
+  te: (key: string) => string;
+  tu: (key: string) => string;
   featured?: boolean;
   cardIndex?: number;
 }) {
@@ -241,7 +249,7 @@ function DestinationCard({
         {/* Featured badge */}
         {featured && (
           <span className="absolute top-2 left-12 z-10 rounded-full bg-primary px-3 py-1 text-xs font-bold text-primary-foreground shadow-lg">
-            Featured
+            {tu("featured")}
           </span>
         )}
         {/* Save button overlay */}
@@ -305,13 +313,13 @@ function DestinationCard({
         ) : (
           <span className="text-xs text-muted-foreground">
             {selectedMonth > 0
-              ? `No ${tm(String(selectedMonth))} data`
-              : "Select month for scores"}
+              ? `${te("noData")} — ${tm(String(selectedMonth))}`
+              : te("selectMonth")}
           </span>
         )}
         {kf && (
           <span className="text-xs font-medium text-muted-foreground">
-            {kf.suitable ? `👶 ${kf.rating}/5` : "Adults only"}
+            {kf.suitable ? `👶 ${kf.rating}/5` : te("adultsOnly")}
           </span>
         )}
       </div>
