@@ -85,7 +85,11 @@ export default function TreksScreen() {
               {/* Content */}
               <View style={s.cardContent}>
                 <Text style={s.cardName} numberOfLines={1}>{t.name}</Text>
-                {destName && <Text style={s.cardDest}>{destName}</Text>}
+                {(() => {
+                  const dest = Array.isArray(t.destinations) ? t.destinations[0] : t.destinations;
+                  const stateName = dest?.state ? (Array.isArray(dest.state) ? dest.state[0]?.name : dest.state?.name) : null;
+                  return <Text style={s.cardDest}>{destName}{stateName ? ` · ${stateName}` : ""}</Text>;
+                })()}
 
                 <View style={s.statsRow}>
                   {t.duration_days && <View style={s.statPill}><Text style={s.statText}>{t.duration_days} days</Text></View>}

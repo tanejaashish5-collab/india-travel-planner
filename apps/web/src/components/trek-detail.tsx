@@ -38,6 +38,14 @@ export function TrekDetail({ trek }: { trek: any }) {
 
   return (
     <div className="space-y-8">
+      {/* Breadcrumb nav */}
+      <nav className="flex items-center gap-2 text-sm text-muted-foreground">
+        <Link href={`/${locale}/treks`} className="hover:text-primary transition-colors">All Treks</Link>
+        <span>/</span>
+        <span className="text-foreground">{trek.name}</span>
+        {stateName && <span className="ml-auto text-xs">{stateName}</span>}
+      </nav>
+
       {/* Hero */}
       <div className="relative h-56 sm:h-72 rounded-2xl overflow-hidden bg-muted/30">
         {trek.destination_id && (

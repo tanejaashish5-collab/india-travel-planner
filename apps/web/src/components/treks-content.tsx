@@ -106,8 +106,17 @@ export function TreksContent({ treks, trekDests, gearChecklists }: { treks: any[
                         </div>
                       </div>
 
-                      {/* Name */}
+                      {/* Name + Location */}
                       <h3 className="text-lg font-semibold">{trek.name}</h3>
+                      {(() => {
+                        const dest = Array.isArray(trek.destinations) ? trek.destinations[0] : trek.destinations;
+                        const state = dest?.state ? (Array.isArray(dest.state) ? dest.state[0]?.name : dest.state?.name) : null;
+                        return (dest?.name || state) ? (
+                          <p className="text-xs text-muted-foreground mt-0.5">
+                            {dest?.name}{state ? ` · ${state}` : ""}
+                          </p>
+                        ) : null;
+                      })()}
                       <p className="mt-1 text-sm text-muted-foreground line-clamp-2">{trek.description}</p>
 
                       {/* Stats */}
