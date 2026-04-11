@@ -173,6 +173,13 @@ async function getDestination(id: string) {
     .neq("id", id)
     .limit(8);
 
+  // Emergency SOS data
+  const { data: emergencySos } = await supabase
+    .from("emergency_sos")
+    .select("*")
+    .eq("destination_id", id)
+    .single();
+
   return {
     ...data,
     hidden_gems: gems ?? [],
@@ -187,6 +194,7 @@ async function getDestination(id: string) {
     relatedCollections: relatedCollections ?? [],
     relatedRoutes: relatedRoutes ?? [],
     nearbyDestinations: nearbyDests ?? [],
+    emergencySos: emergencySos ?? null,
   };
 }
 

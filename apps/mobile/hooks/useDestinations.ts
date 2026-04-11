@@ -66,13 +66,14 @@ export function useDestination(id: string) {
 
       if (data) {
         // Also fetch related data
-        const [gems, traps, festivals, stays, notes, coords] = await Promise.all([
+        const [gems, traps, festivals, stays, notes, coords, emergencySos] = await Promise.all([
           supabase.from("hidden_gems").select("*").eq("near_destination_id", id),
           supabase.from("tourist_trap_alternatives").select("*, destination:destinations!tourist_trap_alternatives_alternative_destination_id_fkey(name, tagline, difficulty, elevation_m)").eq("trap_destination_id", id).order("rank"),
           supabase.from("festivals").select("*").eq("destination_id", id).order("month"),
           supabase.from("local_stays").select("*").eq("destination_id", id).order("type"),
           supabase.from("traveler_notes").select("*").eq("destination_id", id).order("created_at", { ascending: false }),
           supabase.from("destinations_with_coords").select("lat, lng").eq("id", id).single(),
+          supabase.from("emergency_sos").select("*").eq("destination_id", id).single(),
         ]);
 
         setDestination({
@@ -83,6 +84,7 @@ export function useDestination(id: string) {
           local_stays: stays.data ?? [],
           traveler_notes: notes.data ?? [],
           coords: coords.data ? { lat: coords.data.lat, lng: coords.data.lng } : null,
+          emergencySos: emergencySos.data ?? null,
         });
       }
       setLoading(false);

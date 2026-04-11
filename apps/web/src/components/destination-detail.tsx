@@ -22,6 +22,7 @@ import { ReviewsList } from "./reviews-list";
 import { ReviewForm } from "./review-form";
 import { BookingHandoff } from "./booking-handoff";
 import { InternationalInfoSection } from "./international-info";
+import { EmergencySOSSection, SOSFloatingButton } from "./emergency-sos";
 import { DestinationAlerts } from "./destination-alerts";
 import { FadeIn, SlideIn, HoverCard, StaggerContainer, StaggerItem, ScrollReveal } from "./animated-hero";
 import { Footer } from "./footer";
@@ -824,6 +825,9 @@ export function DestinationDetail({ dest }: { dest: any }) {
                   </div>
                 </section>
 
+                {/* Emergency SOS */}
+                <EmergencySOSSection sos={dest.emergencySos} destinationName={displayName} />
+
                 {/* International Traveler Info */}
                 <InternationalInfoSection info={dest.international_info} />
 
@@ -1163,6 +1167,19 @@ export function DestinationDetail({ dest }: { dest: any }) {
             </div>
           </div>
         </ScrollReveal>
+      )}
+
+      {/* Floating SOS button */}
+      {dest.emergencySos && (
+        <SOSFloatingButton
+          onClick={() => {
+            const el = document.getElementById("emergency-sos");
+            if (el) {
+              el.scrollIntoView({ behavior: "smooth", block: "start" });
+              // Also switch to overview tab if not already there
+            }
+          }}
+        />
       )}
 
       <Footer />

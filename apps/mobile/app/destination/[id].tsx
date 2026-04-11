@@ -5,6 +5,7 @@ import {
   ScrollView,
   Image,
   TouchableOpacity,
+  Pressable,
   StyleSheet,
   ActivityIndicator,
   Share,
@@ -71,6 +72,7 @@ export default function DestinationScreen() {
   }
 
   return (
+    <View style={{ flex: 1 }}>
     <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
       <Stack.Screen options={{ title: dest.name, headerBackTitle: "Back" }} />
 
@@ -387,6 +389,11 @@ export default function DestinationScreen() {
         </View>
       )}
 
+      {/* Emergency SOS */}
+      {dest.emergencySos && (
+        <EmergencySOSMobileSection sos={dest.emergencySos} destinationName={dest.name} />
+      )}
+
       {/* International Info */}
       {dest.international_info && (
         <InternationalInfoSection info={dest.international_info} />
@@ -394,8 +401,474 @@ export default function DestinationScreen() {
 
       <View style={{ height: spacing.xxl * 2 }} />
     </ScrollView>
+
+    {/* Floating SOS Button */}
+    {dest.emergencySos && (
+      <Pressable
+        style={sosStyles.floatingBtn}
+        onPress={() => Linking.openURL("tel:112")}
+        accessibilityLabel="Emergency SOS - Call 112"
+      >
+        <Text style={sosStyles.floatingBtnText}>SOS</Text>
+      </Pressable>
+    )}
+    </View>
   );
 }
+
+/* ── Emergency SOS Section ── */
+function EmergencySOSMobileSection({ sos, destinationName }: { sos: any; destinationName: string }) {
+  const [expanded, setExpanded] = useState(true);
+
+  const hasWeatherProtocols = sos.extreme_heat_protocol || sos.extreme_cold_protocol || sos.flood_protocol || sos.snowstorm_protocol;
+  const hasVehicleHelp = sos.mechanic_contact || sos.tow_service || sos.fuel_station_name;
+  const hasShelter = sos.nearest_guesthouse_emergency || sos.rescue_contact || sos.mountain_rescue;
+
+  function callNumber(num: string) {
+    Linking.openURL(`tel:${num.replace(/\s/g, "")}`);
+  }
+
+  function PhoneButton({ number, label }: { number: string; label: string }) {
+    return (
+      <TouchableOpacity
+        style={sosStyles.phoneBtn}
+        onPress={() => callNumber(number)}
+        activeOpacity={0.7}
+      >
+        <Text style={sosStyles.phoneLabel}>{label}</Text>
+        <Text style={sosStyles.phoneNumber}>{number}</Text>
+      </TouchableOpacity>
+    );
+  }
+
+  function ResponseBadge({ minutes }: { minutes: number }) {
+    const bgColor = minutes <= 15 ? "rgba(34,197,94,0.1)" : minutes <= 30 ? "rgba(234,179,8,0.1)" : "rgba(239,68,68,0.1)";
+    const textColor = minutes <= 15 ? colors.score5 : minutes <= 30 ? "#eab308" : "#ef4444";
+    return (
+      <View style={[sosStyles.responseBadge, { backgroundColor: bgColor }]}>
+        <Text style={[sosStyles.responseBadgeText, { color: textColor }]}>~{minutes}min</Text>
+      </View>
+    );
+  }
+
+  return (
+    <View style={sosStyles.wrapper}>
+      <TouchableOpacity
+        style={sosStyles.header}
+        onPress={() => setExpanded(!expanded)}
+        activeOpacity={0.7}
+      >
+        <View style={sosStyles.headerDot} />
+        <View style={{ flex: 1 }}>
+          <Text style={sosStyles.headerTitle}>Emergency SOS</Text>
+          <Text style={sosStyles.headerSub}>{destinationName} emergency contacts</Text>
+        </View>
+        <Text style={sosStyles.chevron}>{expanded ? "▲" : "▼"}</Text>
+      </TouchableOpacity>
+
+      {expanded && (
+        <View style={sosStyles.body}>
+          {/* Emergency Numbers */}
+          <Text style={sosStyles.sectionLabel}>EMERGENCY NUMBERS</Text>
+          <View style={sosStyles.phoneGrid}>
+            {sos.police && <PhoneButton number={sos.police} label="Police" />}
+            {sos.ambulance && <PhoneButton number={sos.ambulance} label="Ambulance" />}
+            {sos.fire && <PhoneButton number={sos.fire} label="Fire" />}
+            {sos.women_helpline && <PhoneButton number={sos.women_helpline} label="Women" />}
+            {sos.tourist_helpline && <PhoneButton number={sos.tourist_helpline} label="Tourist" />}
+            {sos.road_accident && <PhoneButton number={sos.road_accident} label="Road Accident" />}
+          </View>
+
+          {/* Response times */}
+          {(sos.avg_police_response_min != null || sos.avg_ambulance_response_min != null) && (
+            <View style={{ flexDirection: "row", gap: spacing.sm, marginTop: spacing.sm }}>
+              {sos.avg_police_response_min != null && (
+                <View style={{ flexDirection: "row", alignItems: "center", gap: 4 }}>
+                  <Text style={{ fontSize: fontSize.xs, color: colors.mutedForeground }}>Police:</Text>
+                  <ResponseBadge minutes={sos.avg_police_response_min} />
+                </View>
+              )}
+              {sos.avg_ambulance_response_min != null && (
+                <View style={{ flexDirection: "row", alignItems: "center", gap: 4 }}>
+                  <Text style={{ fontSize: fontSize.xs, color: colors.mutedForeground }}>Ambulance:</Text>
+                  <ResponseBadge minutes={sos.avg_ambulance_response_min} />
+                </View>
+              )}
+            </View>
+          )}
+
+          {/* Hospital */}
+          {sos.nearest_hospital && (
+            <View style={sosStyles.infoCard}>
+              <Text style={sosStyles.sectionLabel}>HOSPITAL & MEDICAL</Text>
+              <View style={{ flexDirection: "row", gap: spacing.sm, alignItems: "flex-start" }}>
+                <Text style={{ fontSize: 18 }}>🏥</Text>
+                <View style={{ flex: 1 }}>
+                  <Text style={sosStyles.infoTitle}>{sos.nearest_hospital}</Text>
+                  <View style={{ flexDirection: "row", gap: spacing.sm, marginTop: 2 }}>
+                    {sos.nearest_hospital_km != null && (
+                      <Text style={{ fontSize: fontSize.xs, color: colors.mutedForeground }}>{sos.nearest_hospital_km}km away</Text>
+                    )}
+                    {sos.hospital_has_er && (
+                      <View style={{ backgroundColor: "rgba(34,197,94,0.1)", borderRadius: borderRadius.full, paddingHorizontal: 6, paddingVertical: 2 }}>
+                        <Text style={{ fontSize: 10, fontWeight: "700", color: colors.score5 }}>Has ER</Text>
+                      </View>
+                    )}
+                  </View>
+                </View>
+              </View>
+              {sos.nearest_pharmacy && (
+                <View style={{ flexDirection: "row", gap: spacing.sm, alignItems: "flex-start", marginTop: spacing.sm }}>
+                  <Text style={{ fontSize: 18 }}>💊</Text>
+                  <Text style={sosStyles.infoValue}>{sos.nearest_pharmacy}</Text>
+                </View>
+              )}
+            </View>
+          )}
+
+          {/* Local Police */}
+          {sos.local_police_station && (
+            <View style={{ flexDirection: "row", gap: spacing.sm, alignItems: "flex-start", marginTop: spacing.sm }}>
+              <Text style={{ fontSize: 18 }}>👮</Text>
+              <View>
+                <Text style={{ fontSize: fontSize.xs, color: colors.mutedForeground, fontWeight: "700" }}>LOCAL POLICE</Text>
+                <Text style={sosStyles.infoValue}>{sos.local_police_station}</Text>
+              </View>
+            </View>
+          )}
+
+          {/* Vehicle Help */}
+          {hasVehicleHelp && (
+            <View style={sosStyles.infoCard}>
+              <Text style={sosStyles.sectionLabel}>VEHICLE & ROAD HELP</Text>
+              {sos.mechanic_contact && (
+                <TouchableOpacity style={sosStyles.helpRow} onPress={() => callNumber(sos.mechanic_contact)}>
+                  <Text>🔧</Text>
+                  <Text style={sosStyles.infoValue}>Mechanic: </Text>
+                  <Text style={sosStyles.phoneInline}>{sos.mechanic_contact}</Text>
+                </TouchableOpacity>
+              )}
+              {sos.tow_service && (
+                <TouchableOpacity style={sosStyles.helpRow} onPress={() => callNumber(sos.tow_service)}>
+                  <Text>🚛</Text>
+                  <Text style={sosStyles.infoValue}>Tow: </Text>
+                  <Text style={sosStyles.phoneInline}>{sos.tow_service}</Text>
+                </TouchableOpacity>
+              )}
+              {sos.fuel_station_name && (
+                <View style={sosStyles.helpRow}>
+                  <Text>⛽</Text>
+                  <Text style={sosStyles.infoValue}>{sos.fuel_station_name}</Text>
+                  {sos.nearest_fuel_km != null && (
+                    <Text style={{ fontSize: fontSize.xs, color: colors.mutedForeground }}>({sos.nearest_fuel_km}km)</Text>
+                  )}
+                </View>
+              )}
+            </View>
+          )}
+
+          {/* Shelter & Rescue */}
+          {hasShelter && (
+            <View style={sosStyles.infoCard}>
+              <Text style={sosStyles.sectionLabel}>SHELTER & RESCUE</Text>
+              {sos.nearest_guesthouse_emergency && (
+                <View style={sosStyles.helpRow}>
+                  <Text>🏠</Text>
+                  <Text style={sosStyles.infoValue}>{sos.nearest_guesthouse_emergency}</Text>
+                </View>
+              )}
+              {sos.rescue_contact && (
+                <TouchableOpacity style={sosStyles.helpRow} onPress={() => callNumber(sos.rescue_contact)}>
+                  <Text>🆘</Text>
+                  <Text style={sosStyles.infoValue}>Rescue: </Text>
+                  <Text style={sosStyles.phoneInline}>{sos.rescue_contact}</Text>
+                </TouchableOpacity>
+              )}
+              {sos.mountain_rescue && (
+                <TouchableOpacity style={sosStyles.helpRow} onPress={() => callNumber(sos.mountain_rescue)}>
+                  <Text>🏔️</Text>
+                  <Text style={sosStyles.infoValue}>Mountain Rescue: </Text>
+                  <Text style={sosStyles.phoneInline}>{sos.mountain_rescue}</Text>
+                </TouchableOpacity>
+              )}
+            </View>
+          )}
+
+          {/* Weather Protocols */}
+          {hasWeatherProtocols && (
+            <View style={{ marginTop: spacing.sm }}>
+              <Text style={sosStyles.sectionLabel}>WEATHER PROTOCOLS</Text>
+              {sos.extreme_heat_protocol && (
+                <View style={[sosStyles.protocolCard, { borderColor: "rgba(249,115,22,0.2)", backgroundColor: "rgba(249,115,22,0.05)" }]}>
+                  <Text style={{ fontSize: 16 }}>🔥</Text>
+                  <View style={{ flex: 1 }}>
+                    <Text style={[sosStyles.protocolLabel, { color: "#f97316" }]}>Extreme Heat</Text>
+                    <Text style={sosStyles.protocolText}>{sos.extreme_heat_protocol}</Text>
+                  </View>
+                </View>
+              )}
+              {sos.extreme_cold_protocol && (
+                <View style={[sosStyles.protocolCard, { borderColor: "rgba(59,130,246,0.2)", backgroundColor: "rgba(59,130,246,0.05)" }]}>
+                  <Text style={{ fontSize: 16 }}>🥶</Text>
+                  <View style={{ flex: 1 }}>
+                    <Text style={[sosStyles.protocolLabel, { color: "#3b82f6" }]}>Extreme Cold</Text>
+                    <Text style={sosStyles.protocolText}>{sos.extreme_cold_protocol}</Text>
+                  </View>
+                </View>
+              )}
+              {sos.flood_protocol && (
+                <View style={[sosStyles.protocolCard, { borderColor: "rgba(6,182,212,0.2)", backgroundColor: "rgba(6,182,212,0.05)" }]}>
+                  <Text style={{ fontSize: 16 }}>🌊</Text>
+                  <View style={{ flex: 1 }}>
+                    <Text style={[sosStyles.protocolLabel, { color: "#06b6d4" }]}>Flood</Text>
+                    <Text style={sosStyles.protocolText}>{sos.flood_protocol}</Text>
+                  </View>
+                </View>
+              )}
+              {sos.snowstorm_protocol && (
+                <View style={[sosStyles.protocolCard, { borderColor: "rgba(148,163,184,0.2)", backgroundColor: "rgba(148,163,184,0.05)" }]}>
+                  <Text style={{ fontSize: 16 }}>❄️</Text>
+                  <View style={{ flex: 1 }}>
+                    <Text style={[sosStyles.protocolLabel, { color: "#94a3b8" }]}>Snowstorm</Text>
+                    <Text style={sosStyles.protocolText}>{sos.snowstorm_protocol}</Text>
+                  </View>
+                </View>
+              )}
+            </View>
+          )}
+
+          {/* Local Helpers */}
+          {sos.local_helpers?.length > 0 && (
+            <View style={{ marginTop: spacing.sm }}>
+              <Text style={sosStyles.sectionLabel}>LOCAL HELPERS</Text>
+              {sos.local_helpers.map((helper: any, i: number) => (
+                <View key={i} style={sosStyles.helperCard}>
+                  <View style={sosStyles.helperAvatar}>
+                    <Text style={sosStyles.helperAvatarText}>{helper.name.charAt(0)}</Text>
+                  </View>
+                  <View style={{ flex: 1 }}>
+                    <Text style={sosStyles.helperName}>{helper.name}</Text>
+                    <Text style={sosStyles.helperRole}>{helper.role}</Text>
+                    {helper.availability && (
+                      <Text style={{ fontSize: 10, color: colors.mutedForeground, opacity: 0.7 }}>{helper.availability}</Text>
+                    )}
+                  </View>
+                  <TouchableOpacity
+                    style={sosStyles.helperCallBtn}
+                    onPress={() => callNumber(helper.phone)}
+                    activeOpacity={0.7}
+                  >
+                    <Text style={sosStyles.helperCallIcon}>📞</Text>
+                  </TouchableOpacity>
+                </View>
+              ))}
+            </View>
+          )}
+        </View>
+      )}
+    </View>
+  );
+}
+
+const sosStyles = StyleSheet.create({
+  wrapper: {
+    marginHorizontal: spacing.md,
+    marginTop: spacing.md,
+    backgroundColor: "rgba(127,29,29,0.15)",
+    borderRadius: borderRadius.lg,
+    borderWidth: 2,
+    borderColor: "rgba(220,38,38,0.3)",
+    overflow: "hidden",
+  },
+  header: {
+    flexDirection: "row",
+    alignItems: "center",
+    padding: spacing.lg,
+    gap: spacing.sm,
+  },
+  headerDot: {
+    width: 28,
+    height: 28,
+    borderRadius: 14,
+    backgroundColor: "#dc2626",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  headerTitle: {
+    fontSize: fontSize.lg,
+    fontWeight: "800",
+    color: "#f87171",
+  },
+  headerSub: {
+    fontSize: fontSize.xs,
+    color: "rgba(248,113,113,0.5)",
+  },
+  chevron: {
+    fontSize: fontSize.sm,
+    color: "rgba(248,113,113,0.5)",
+  },
+  body: {
+    paddingHorizontal: spacing.lg,
+    paddingBottom: spacing.lg,
+  },
+  sectionLabel: {
+    fontSize: 10,
+    fontWeight: "800",
+    color: "rgba(248,113,113,0.6)",
+    letterSpacing: 1,
+    marginBottom: spacing.sm,
+    marginTop: spacing.sm,
+  },
+  phoneGrid: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    gap: spacing.sm,
+  },
+  phoneBtn: {
+    borderWidth: 1,
+    borderColor: "rgba(220,38,38,0.2)",
+    backgroundColor: "rgba(220,38,38,0.05)",
+    borderRadius: borderRadius.md,
+    paddingHorizontal: spacing.md,
+    paddingVertical: spacing.sm,
+    alignItems: "center",
+    minWidth: 90,
+  },
+  phoneLabel: {
+    fontSize: 10,
+    color: "rgba(248,113,113,0.6)",
+    fontWeight: "600",
+  },
+  phoneNumber: {
+    fontSize: fontSize.sm,
+    fontWeight: "800",
+    color: "#f87171",
+    fontVariant: ["tabular-nums"],
+    marginTop: 2,
+  },
+  phoneInline: {
+    fontSize: fontSize.sm,
+    fontWeight: "800",
+    color: "#f87171",
+    fontVariant: ["tabular-nums"],
+  },
+  responseBadge: {
+    borderRadius: borderRadius.full,
+    paddingHorizontal: 6,
+    paddingVertical: 2,
+  },
+  responseBadgeText: {
+    fontSize: 10,
+    fontWeight: "700",
+  },
+  infoCard: {
+    marginTop: spacing.sm,
+    padding: spacing.md,
+    borderRadius: borderRadius.md,
+    borderWidth: 1,
+    borderColor: "rgba(220,38,38,0.1)",
+    backgroundColor: "rgba(220,38,38,0.03)",
+  },
+  infoTitle: {
+    fontSize: fontSize.sm,
+    fontWeight: "700",
+    color: colors.foreground,
+  },
+  infoValue: {
+    fontSize: fontSize.sm,
+    color: colors.mutedForeground,
+  },
+  helpRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: spacing.sm,
+    marginTop: spacing.xs,
+  },
+  protocolCard: {
+    flexDirection: "row",
+    gap: spacing.sm,
+    alignItems: "flex-start",
+    borderWidth: 1,
+    borderRadius: borderRadius.md,
+    padding: spacing.md,
+    marginTop: spacing.xs,
+  },
+  protocolLabel: {
+    fontSize: fontSize.xs,
+    fontWeight: "700",
+  },
+  protocolText: {
+    fontSize: fontSize.sm,
+    color: colors.mutedForeground,
+    marginTop: 2,
+    lineHeight: 20,
+  },
+  helperCard: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: spacing.sm,
+    borderWidth: 1,
+    borderColor: colors.border,
+    borderRadius: borderRadius.md,
+    padding: spacing.sm,
+    marginTop: spacing.xs,
+  },
+  helperAvatar: {
+    width: 36,
+    height: 36,
+    borderRadius: 18,
+    backgroundColor: "rgba(220,38,38,0.1)",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  helperAvatarText: {
+    fontSize: fontSize.sm,
+    fontWeight: "800",
+    color: "#f87171",
+  },
+  helperName: {
+    fontSize: fontSize.sm,
+    fontWeight: "700",
+    color: colors.foreground,
+  },
+  helperRole: {
+    fontSize: 11,
+    color: colors.mutedForeground,
+  },
+  helperCallBtn: {
+    width: 36,
+    height: 36,
+    borderRadius: 18,
+    backgroundColor: "#dc2626",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  helperCallIcon: {
+    fontSize: 16,
+  },
+  floatingBtn: {
+    position: "absolute",
+    bottom: 80,
+    right: 16,
+    width: 56,
+    height: 56,
+    borderRadius: 28,
+    backgroundColor: "#dc2626",
+    alignItems: "center",
+    justifyContent: "center",
+    shadowColor: "#dc2626",
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.3,
+    shadowRadius: 8,
+    elevation: 8,
+  },
+  floatingBtnText: {
+    color: "#fff",
+    fontSize: 12,
+    fontWeight: "900",
+    letterSpacing: 1,
+  },
+});
 
 /* ── International Info collapsible ── */
 function InternationalInfoSection({ info }: { info: any }) {

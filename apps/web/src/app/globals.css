@@ -249,3 +249,10 @@ main {
     min-width: 44px;
   }
 }
+
+/* SOS pulse animation */
+@keyframes pulse-subtle {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.4); }
+  50% { box-shadow: 0 0 0 8px rgba(220, 38, 38, 0); }
+}
+.animate-pulse-subtle { animation: pulse-subtle 3s ease-in-out infinite; }
