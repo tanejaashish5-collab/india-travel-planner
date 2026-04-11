@@ -182,11 +182,15 @@ export function DestinationDetail({ dest }: { dest: any }) {
             <div className="flex items-start justify-between">
               <div>
                 <h1 className="text-3xl font-bold sm:text-4xl lg:text-5xl">{displayName}</h1>
-                <p className="mt-2 text-muted-foreground">
-                  {stateName} · {dest.region}
+                {/* Location line */}
+                <p className="mt-2 text-sm text-muted-foreground">
+                  {stateName}{dest.region ? ` · ${dest.region}` : ""}
                   {dest.elevation_m && <span className="font-mono"> · {dest.elevation_m.toLocaleString()}m</span>}
+                </p>
+                {/* Badges row */}
+                <div className="mt-2 flex flex-wrap items-center gap-2">
                   {dest.vehicle_fit && (
-                    <span className={`ml-2 inline-flex items-center gap-1 rounded-full border px-2 py-0.5 text-sm font-medium ${
+                    <span className={`inline-flex items-center gap-1 rounded-full border px-2.5 py-1 text-xs font-medium ${
                       dest.vehicle_fit.includes("hatchback") ? "border-emerald-500/30 text-emerald-400" :
                       dest.vehicle_fit.includes("SUV") ? "border-yellow-500/30 text-yellow-400" :
                       dest.vehicle_fit.includes("4WD") ? "border-red-500/30 text-red-400" :
@@ -195,14 +199,11 @@ export function DestinationDetail({ dest }: { dest: any }) {
                       {dest.vehicle_fit.includes("bike") ? "🏍️" : "🚗"} {dest.vehicle_fit}
                     </span>
                   )}
-                </p>
-                {dest.family_stress && (
-                  <p className="mt-1 text-sm text-muted-foreground/70">
-                    👨‍👩‍👧 Family: <span className="font-medium">{dest.family_stress}</span>
-                  </p>
-                )}
-                {/* Distance from nearest major city */}
-                <div className="mt-1">
+                  {dest.family_stress && (
+                    <span className="inline-flex items-center gap-1 rounded-full border border-border px-2.5 py-1 text-xs font-medium text-muted-foreground">
+                      👨‍👩‍👧 {dest.family_stress}
+                    </span>
+                  )}
                   <DistanceBadge destLat={dest.coords?.lat} destLng={dest.coords?.lng} elevation={dest.elevation_m} />
                 </div>
               </div>

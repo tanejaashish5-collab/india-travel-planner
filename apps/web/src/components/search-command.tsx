@@ -77,7 +77,7 @@ function getSubtitle(item: ResultItem): string {
 function getHref(item: ResultItem, locale: string): string {
   switch (item.type) {
     case "destination":
-      return `/${locale}/explore/${item.data.id}`;
+      return `/${locale}/destination/${item.data.id}`;
     case "trek":
       return `/${locale}/treks/${item.data.id}`;
     case "route":
