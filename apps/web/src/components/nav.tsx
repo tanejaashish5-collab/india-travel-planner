@@ -5,13 +5,27 @@ import { useLocale, useTranslations } from "next-intl";
 import { usePathname } from "next/navigation";
 import { LanguageToggle } from "./language-toggle";
 import { UserButton } from "./user-button";
-import { useState } from "react";
+import { SearchCommand } from "./search-command";
+import { useState, useEffect } from "react";
 
 export function Nav() {
   const locale = useLocale();
   const t = useTranslations("nav");
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
+
+  // Cmd+K / Ctrl+K keyboard shortcut
+  useEffect(() => {
+    function handleKeyDown(e: KeyboardEvent) {
+      if ((e.metaKey || e.ctrlKey) && e.key === "k") {
+        e.preventDefault();
+        setSearchOpen((prev) => !prev);
+      }
+    }
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, []);
 
   const primaryLinks = [
     { href: `/${locale}/explore`, label: t("destinations") },
@@ -108,6 +122,25 @@ export function Nav() {
 
         {/* Right side */}
         <div className="flex items-center gap-2">
+          <button
+            onClick={() => setSearchOpen(true)}
+            className="rounded-lg p-2 text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
+            aria-label="Search (Cmd+K)"
+          >
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <circle cx="11" cy="11" r="8" />
+              <path d="m21 21-4.3-4.3" />
+            </svg>
+          </button>
           <LanguageToggle />
           <UserButton />
           {/* Mobile menu button */}
@@ -162,6 +195,7 @@ export function Nav() {
           </div>
         </nav>
       )}
+      <SearchCommand open={searchOpen} onClose={() => setSearchOpen(false)} />
     </header>
   );
 }

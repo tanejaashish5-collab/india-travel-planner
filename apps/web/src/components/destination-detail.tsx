@@ -18,6 +18,8 @@ const DestinationMap = lazy(() => import("./destination-map").then((mod) => ({ d
 import { KidsBadge } from "./kids-badge";
 import { TouristTrapIntervention } from "./tourist-trap-intervention";
 import { TravelerNotes } from "./traveler-notes";
+import { ReviewsList } from "./reviews-list";
+import { ReviewForm } from "./review-form";
 import { BookingHandoff } from "./booking-handoff";
 import { DestinationAlerts } from "./destination-alerts";
 import { FadeIn, SlideIn, HoverCard, StaggerContainer, StaggerItem, ScrollReveal } from "./animated-hero";
@@ -89,7 +91,7 @@ export function DestinationDetail({ dest }: { dest: any }) {
     if (tab.id === "safety" && !cc) return false;
     if (tab.id === "places" && subs.length === 0 && gems.length === 0) return false;
     if (tab.id === "food" && legends.length === 0 && eats.length === 0) return false;
-    if (tab.id === "reviews" && (!dest.traveler_notes || dest.traveler_notes.length === 0)) return false;
+    if (tab.id === "reviews" && (!dest.traveler_notes || dest.traveler_notes.length === 0) && (!dest.reviews || dest.reviews.length === 0)) return false;
     return true;
   });
 
@@ -979,14 +981,19 @@ export function DestinationDetail({ dest }: { dest: any }) {
           </motion.div>
 
           {/* Reviews tab */}
-          {activeTab === "reviews" && dest.traveler_notes?.length > 0 && (
+          {activeTab === "reviews" && (
             <motion.div
               key="reviews"
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
+              className="space-y-8"
             >
-              <TravelerNotes notes={dest.traveler_notes} />
+              {dest.traveler_notes?.length > 0 && (
+                <TravelerNotes notes={dest.traveler_notes} />
+              )}
+              <ReviewsList reviews={dest.reviews ?? []} />
+              <ReviewForm destinationId={dest.id} />
             </motion.div>
           )}
         </AnimatePresence>

@@ -134,6 +134,15 @@ async function getDestination(id: string) {
     .select("id, name")
     .order("name");
 
+  // User reviews (approved only)
+  const { data: reviews } = await supabase
+    .from("reviews")
+    .select("id, rating, text, traveler_type, visit_month, visit_year, created_at")
+    .eq("destination_id", id)
+    .eq("status", "approved")
+    .order("created_at", { ascending: false })
+    .limit(20);
+
   // Related blog articles
   const { data: relatedArticles } = await supabase
     .from("articles")
@@ -171,6 +180,7 @@ async function getDestination(id: string) {
     festivals: festivals ?? [],
     local_stays: localStays ?? [],
     traveler_notes: travelerNotes ?? [],
+    reviews: reviews ?? [],
     coords: coordData ? { lat: coordData.lat, lng: coordData.lng } : null,
     allDestinations: allDests ?? [],
     relatedArticles: relatedArticles ?? [],
