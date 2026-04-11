@@ -15,7 +15,7 @@ export interface AppStats {
 
 // Fallback values if DB is unavailable — keep these updated (April 2026, duplicates removed)
 const FALLBACK: AppStats = {
-  destinations: 142,
+  destinations: 143,
   places: 407,
   routes: 19,
   festivals: 168,

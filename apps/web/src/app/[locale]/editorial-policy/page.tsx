@@ -38,7 +38,7 @@ export default function EditorialPolicyPage() {
           <section>
             <h2 className="text-2xl font-semibold mb-3">How Scores Work</h2>
             <p className="text-muted-foreground leading-relaxed">
-              142 destinations. Each one scored 1 to 5 for every month of the
+              143 destinations. Each one scored 1 to 5 for every month of the
               year. Scores are based on five factors: weather conditions, road
               access and connectivity, crowd levels, infrastructure quality, and
               safety considerations.
