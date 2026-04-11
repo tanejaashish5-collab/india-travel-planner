@@ -813,6 +813,44 @@ export function DestinationDetail({ dest }: { dest: any }) {
                   </div>
                 </section>
 
+                {/* Meet the Locals Preview */}
+                {legends.length > 0 && (
+                  <section>
+                    <div className="flex items-center justify-between mb-3">
+                      <h2 className="text-xl font-semibold">Meet the Locals</h2>
+                      <button
+                        onClick={() => setActiveTab("food")}
+                        className="text-xs text-primary hover:underline"
+                      >
+                        View all &rarr;
+                      </button>
+                    </div>
+                    <div className="grid gap-3 sm:grid-cols-2">
+                      {legends.slice(0, 2).map((legend: any) => (
+                        <button
+                          key={legend.id}
+                          onClick={() => setActiveTab("food")}
+                          className="flex items-center gap-3 rounded-xl border border-border p-3 hover:border-primary/30 transition-colors text-left"
+                        >
+                          <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-primary/10 text-sm font-bold text-primary">
+                            {legend.name.charAt(0)}
+                          </div>
+                          <div className="min-w-0">
+                            <div className="flex items-center gap-1.5">
+                              <span className="font-medium text-sm truncate">{legend.name}</span>
+                              {legend.verified && (
+                                <svg className="h-3.5 w-3.5 text-emerald-400 shrink-0" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M16.403 12.652a3 3 0 010-5.304 3 3 0 00-3.75-3.751 3 3 0 00-5.305 0 3 3 0 00-3.751 3.75 3 3 0 000 5.305 3 3 0 003.75 3.751 3 3 0 005.305 0 3 3 0 003.751-3.75zm-2.546-4.46a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clipRule="evenodd" /></svg>
+                              )}
+                            </div>
+                            {legend.role && <div className="text-[11px] text-muted-foreground truncate">{legend.role}</div>}
+                            {legend.known_as && <div className="text-[11px] text-primary truncate">{legend.known_as}</div>}
+                          </div>
+                        </button>
+                      ))}
+                    </div>
+                  </section>
+                )}
+
                 {/* Booking Handoff */}
                 <BookingHandoff destinationName={dest.name} stateName={stateName} />
               </div>
@@ -904,14 +942,49 @@ export function DestinationDetail({ dest }: { dest: any }) {
                     <h2 className="text-xl font-semibold mb-4">{t("localLegends")}</h2>
                     <div className="space-y-3">
                       {legends.map((legend: any) => (
-                        <div key={legend.id} className="flex gap-3 rounded-xl border border-border p-4">
+                        <div key={legend.id} className="flex gap-3 rounded-xl border border-border p-4 hover:border-primary/30 transition-colors">
                           <div className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary/10 text-sm font-bold text-primary">
                             {legend.name.charAt(0)}
                           </div>
-                          <div>
-                            <div className="font-semibold">{legend.name}</div>
-                            {legend.known_as && <div className="text-xs text-primary">{legend.known_as}</div>}
-                            {legend.story && <p className="mt-1 text-sm text-muted-foreground">{legend.story}</p>}
+                          <div className="flex-1 min-w-0">
+                            <div className="flex items-center gap-2 flex-wrap">
+                              <span className="font-semibold">{legend.name}</span>
+                              {legend.verified && (
+                                <span className="inline-flex items-center gap-0.5 rounded-full bg-emerald-500/10 px-2 py-0.5 text-[10px] font-medium text-emerald-400 border border-emerald-500/20">
+                                  <svg className="h-3 w-3" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M16.403 12.652a3 3 0 010-5.304 3 3 0 00-3.75-3.751 3 3 0 00-5.305 0 3 3 0 00-3.751 3.75 3 3 0 000 5.305 3 3 0 003.75 3.751 3 3 0 005.305 0 3 3 0 003.751-3.75zm-2.546-4.46a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clipRule="evenodd" /></svg>
+                                  Verified
+                                </span>
+                              )}
+                            </div>
+                            {legend.role && <div className="text-xs text-muted-foreground/70 mt-0.5">{legend.role}</div>}
+                            {legend.known_as && <div className="text-xs text-primary font-medium">{legend.known_as}</div>}
+                            {legend.story && <p className="mt-1 text-sm text-muted-foreground leading-relaxed">{legend.story}</p>}
+                            {(legend.instagram || legend.youtube) && (
+                              <div className="mt-2 flex items-center gap-3">
+                                {legend.instagram && (
+                                  <a
+                                    href={`https://instagram.com/${legend.instagram.replace('@', '')}`}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="inline-flex items-center gap-1 text-xs text-pink-400 hover:text-pink-300 transition-colors"
+                                  >
+                                    <svg className="h-3.5 w-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                                    {legend.instagram}
+                                  </a>
+                                )}
+                                {legend.youtube && (
+                                  <a
+                                    href={`https://youtube.com/@${legend.youtube}`}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="inline-flex items-center gap-1 text-xs text-red-400 hover:text-red-300 transition-colors"
+                                  >
+                                    <svg className="h-3.5 w-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                                    YouTube
+                                  </a>
+                                )}
+                              </div>
+                            )}
                           </div>
                         </div>
                       ))}
