@@ -242,7 +242,7 @@ function DestinationCard({
     <Link
       href={`/${locale}/destination/${dest.id}`}
       prefetch={false}
-      className="group block rounded-2xl border border-border/50 bg-card overflow-hidden transition-all duration-300 hover:border-primary/40 hover:shadow-xl hover:shadow-primary/10"
+      className="group flex flex-col rounded-2xl border border-border/50 bg-card overflow-hidden transition-all duration-300 hover:border-primary/40 hover:shadow-xl hover:shadow-primary/10 h-full"
     >
       {/* Hero Image */}
       <div className={`relative ${featured ? "h-48" : "h-40"} bg-muted/30 overflow-hidden`}>
@@ -301,7 +301,7 @@ function DestinationCard({
         )}
       </div>
 
-      <div className="p-5 pt-3">
+      <div className="p-5 pt-3 flex flex-col flex-1">
       {/* Score + Kids */}
       <div className="mb-3 flex items-center justify-between">
         {score !== null ? (
@@ -377,46 +377,24 @@ function DestinationCard({
         </div>
       )}
 
-      {/* Tags */}
-      {dest.tags?.length > 0 && (
-        <div className="mt-2.5 flex flex-wrap gap-1.5">
-          {dest.tags.slice(0, 3).map((tag: string) => (
-            <span
-              key={tag}
-              className="rounded-full border border-border px-2.5 py-0.5 text-sm font-medium text-muted-foreground"
-            >
-              {tag}
-            </span>
-          ))}
-        </div>
-      )}
+      {/* Spacer to push bottom content down */}
+      <div className="flex-1" />
 
-      {/* Strategic badges */}
-      {((dest as any).vehicle_fit || (dest as any).family_stress) && (
-        <div className="mt-2 flex flex-wrap gap-1.5">
-          {(dest as any).vehicle_fit && (
-            <span className={`rounded-full border px-2 py-1 text-xs font-medium ${
-              (dest as any).vehicle_fit.includes("hatchback") ? "border-emerald-500/30 text-emerald-400" :
-              (dest as any).vehicle_fit.includes("SUV") ? "border-yellow-500/30 text-yellow-400" :
-              (dest as any).vehicle_fit.includes("4WD") ? "border-red-500/30 text-red-400" :
-              "border-border text-muted-foreground"
-            }`}>
-              🚗 {(dest as any).vehicle_fit}
-            </span>
-          )}
-          {(dest as any).family_stress && (
-            <span className="rounded-full border border-border px-2 py-1 text-xs font-medium text-muted-foreground">
-              👨‍👩‍👧 {(dest as any).family_stress}
-            </span>
-          )}
-        </div>
-      )}
+      {/* Tags — always show area */}
+      <div className="mt-2.5 flex flex-wrap gap-1.5 min-h-[28px]">
+        {dest.tags?.slice(0, 3).map((tag: string) => (
+          <span
+            key={tag}
+            className="rounded-full border border-border px-2.5 py-0.5 text-xs font-medium text-muted-foreground"
+          >
+            {tag}
+          </span>
+        ))}
+      </div>
 
-      {/* Month note */}
-      {monthData?.note && (
-        <p className="mt-2 text-xs text-muted-foreground/70 line-clamp-1 italic">
-          {monthData.note}
-        </p>
+      {/* Month note — always reserve space */}
+      <p className="mt-2 text-xs text-muted-foreground/70 line-clamp-1 italic min-h-[18px]">
+        {monthData?.note || ""}
       )}
       </div>
     </Link>
