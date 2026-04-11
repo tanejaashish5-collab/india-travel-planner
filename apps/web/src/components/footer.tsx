@@ -33,6 +33,7 @@ export function Footer({ stats }: { stats?: { destinations: number; places: numb
                 { href: `/${locale}/routes`, label: tf("roadTrips") },
                 { href: `/${locale}/treks`, label: tf("treks") },
                 { href: `/${locale}/superlatives`, label: tn("records") },
+                { href: `/${locale}/india-travel`, label: tn("forVisitors") },
                 { href: `/${locale}/camping`, label: tn("camping") },
               ].map((link) => (
                 <Link

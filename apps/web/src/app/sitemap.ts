@@ -11,6 +11,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "stays", "festivals", "tourist-traps",
     "saved", "about", "methodology", "blog",
     "terms", "privacy", "cookies", "editorial-policy",
+    "india-travel",
     "region/himachal-pradesh", "region/uttarakhand", "region/jammu-kashmir",
     "region/ladakh", "region/rajasthan", "region/punjab",
   ];
@@ -20,7 +21,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       url: `${baseUrl}/${locale}${page ? `/${page}` : ""}`,
       lastModified: new Date(),
       changeFrequency: page === "" ? "daily" as const : "weekly" as const,
-      priority: page === "" ? 1.0 : page === "explore" ? 0.9 : 0.7,
+      priority: page === "" ? 1.0 : page === "explore" || page === "india-travel" ? 0.9 : 0.7,
     }))
   );
 
@@ -40,17 +41,19 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   let skipListEntries: MetadataRoute.Sitemap = [];
   let withKidsEntries: MetadataRoute.Sitemap = [];
   let regionMonthEntries: MetadataRoute.Sitemap = [];
+  let trekEntries: MetadataRoute.Sitemap = [];
 
   if (url && key) {
     const supabase = createClient(url, key);
 
-    const [destResult, collResult, routeResult, articleResult, trapResult, regionResult] = await Promise.all([
+    const [destResult, collResult, routeResult, articleResult, trapResult, regionResult, trekResult] = await Promise.all([
       supabase.from("destinations").select("id").order("id"),
       supabase.from("collections").select("id").order("id"),
       supabase.from("routes").select("id").order("id"),
       supabase.from("articles").select("slug").order("published_at", { ascending: false }),
       supabase.from("tourist_trap_alternatives").select("trap_destination_id, alternative_destination_id").order("rank"),
       supabase.from("regions").select("id").order("id"),
+      supabase.from("treks").select("id").order("id"),
     ]);
 
     destEntries = (destResult.data ?? []).flatMap((d: any) =>
@@ -159,7 +162,17 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         }))
       )
     );
+
+    // Individual trek pages
+    trekEntries = (trekResult.data ?? []).flatMap((t: any) =>
+      ["en", "hi"].map((locale) => ({
+        url: `${baseUrl}/${locale}/treks/${t.id}`,
+        lastModified: new Date(),
+        changeFrequency: "monthly" as const,
+        priority: 0.7,
+      }))
+    );
   }
 
-  return [...staticEntries, ...destEntries, ...destMonthEntries, ...whereToGoEntries, ...collEntries, ...routeEntries, ...articleEntries, ...vsEntries, ...skipListEntries, ...withKidsEntries, ...regionMonthEntries];
+  return [...staticEntries, ...destEntries, ...destMonthEntries, ...whereToGoEntries, ...collEntries, ...routeEntries, ...articleEntries, ...vsEntries, ...skipListEntries, ...withKidsEntries, ...regionMonthEntries, ...trekEntries];
 }

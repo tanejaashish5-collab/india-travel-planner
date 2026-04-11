@@ -39,6 +39,7 @@ export function Nav() {
 
   const moreLinks = [
     { href: `/${locale}/where-to-go/${currentMonthSlug}`, label: t("whereToGoNow") },
+    { href: `/${locale}/india-travel`, label: t("forVisitors") },
     { href: `/${locale}/blog`, label: t("blog") },
     { href: `/${locale}/tourist-traps`, label: t("touristTraps") },
     { href: `/${locale}/guide`, label: t("guides") },
