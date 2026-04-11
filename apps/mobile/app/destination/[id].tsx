@@ -491,6 +491,36 @@ function EmergencySOSMobileSection({ sos, destinationName }: { sos: any; destina
         <View style={sosStyles.body}>
           {/* Emergency Numbers */}
           <Text style={sosStyles.sectionLabel}>EMERGENCY NUMBERS</Text>
+
+          {/* Hero: 112 Universal Emergency */}
+          <TouchableOpacity
+            onPress={() => callNumber("112")}
+            activeOpacity={0.7}
+            style={{
+              flexDirection: "row",
+              alignItems: "center",
+              gap: spacing.sm,
+              backgroundColor: "#dc2626",
+              borderRadius: borderRadius.lg,
+              paddingHorizontal: spacing.md,
+              paddingVertical: spacing.sm + 2,
+              marginBottom: spacing.sm,
+            }}
+          >
+            <View style={{
+              width: 44, height: 44, borderRadius: 22,
+              backgroundColor: "rgba(255,255,255,0.2)",
+              alignItems: "center", justifyContent: "center",
+            }}>
+              <Text style={{ fontSize: 20, fontWeight: "900", color: "#fff", fontFamily: Platform.OS === "ios" ? "Menlo" : "monospace" }}>112</Text>
+            </View>
+            <View style={{ flex: 1 }}>
+              <Text style={{ fontSize: fontSize.md, fontWeight: "800", color: "#fff" }}>Universal Emergency (like 911)</Text>
+              <Text style={{ fontSize: fontSize.xs, color: "rgba(254,202,202,0.8)" }}>Works on all networks, even without SIM</Text>
+            </View>
+            <Text style={{ fontSize: 18, color: "rgba(255,255,255,0.7)" }}>📞</Text>
+          </TouchableOpacity>
+
           <View style={sosStyles.phoneGrid}>
             {sos.police && <PhoneButton number={sos.police} label="Police" />}
             {sos.ambulance && <PhoneButton number={sos.ambulance} label="Ambulance" />}
@@ -765,6 +795,27 @@ function EmergencySOSMobileSection({ sos, destinationName }: { sos: any; destina
               See incorrect info? Report it — we verify within 48 hours
             </Text>
           </TouchableOpacity>
+
+          {/* Safety Data Disclaimer */}
+          <View style={{
+            marginTop: spacing.md,
+            borderRadius: borderRadius.md,
+            borderWidth: 1,
+            borderColor: "rgba(234,179,8,0.15)",
+            backgroundColor: "rgba(234,179,8,0.05)",
+            paddingHorizontal: spacing.sm + 4,
+            paddingVertical: spacing.sm,
+          }}>
+            <Text style={{ fontSize: 11, fontWeight: "600", color: "rgba(234,179,8,0.8)", marginBottom: 2 }}>
+              {"\u26A0\uFE0F"} Safety Data Disclaimer
+            </Text>
+            <Text style={{ fontSize: 11, lineHeight: 16, color: colors.mutedForeground, opacity: 0.6 }}>
+              Emergency information is provided as guidance based on publicly available data. Phone numbers, addresses, and service availability may change without notice. Always verify critical emergency contacts locally upon arrival. For any life-threatening emergency anywhere in India, dial 112 — it works on all networks, even without a SIM card.
+            </Text>
+            <Text style={{ fontSize: 10, color: colors.mutedForeground, opacity: 0.4, marginTop: spacing.xs }}>
+              Last updated: April 2026 | Data source: State government websites, tourism departments, training knowledge | Status: Unverified — community verification in progress
+            </Text>
+          </View>
         </View>
       )}
 

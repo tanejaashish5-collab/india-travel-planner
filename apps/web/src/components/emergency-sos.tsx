@@ -191,6 +191,24 @@ export function EmergencySOSSection({ sos, destinationName }: { sos: EmergencySO
               {/* ── Universal Emergency Numbers ── */}
               <div>
                 <h3 className="text-xs font-bold text-red-300/70 uppercase tracking-wider mb-3">Emergency Numbers</h3>
+
+                {/* Hero: 112 Universal Emergency */}
+                <a
+                  href="tel:112"
+                  className="flex items-center gap-3 rounded-xl bg-red-600 px-4 py-3 mb-3 hover:bg-red-700 transition-all active:scale-[0.98] group"
+                >
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-white/20 text-2xl font-black text-white font-mono">
+                    112
+                  </div>
+                  <div>
+                    <p className="text-base font-bold text-white">Universal Emergency (like 911)</p>
+                    <p className="text-xs text-red-200/80">Works on all networks, even without SIM</p>
+                  </div>
+                  <svg className="ml-auto h-6 w-6 text-white/70 group-hover:text-white transition-colors shrink-0" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+                  </svg>
+                </a>
+
                 <div className="flex flex-wrap gap-2">
                   {sos.police && <PhoneLink number={sos.police} label="Police" />}
                   {sos.ambulance && <PhoneLink number={sos.ambulance} label="Ambulance" />}
@@ -514,6 +532,17 @@ export function EmergencySOSSection({ sos, destinationName }: { sos: EmergencySO
                 >
                   See incorrect info? Report it — we verify within 48 hours
                 </button>
+              </div>
+
+              {/* Safety Data Disclaimer */}
+              <div className="mt-4 rounded-lg border border-yellow-500/15 bg-yellow-500/5 px-4 py-3">
+                <p className="text-[11px] font-semibold text-yellow-400/80 mb-1">&#9888;&#65039; Safety Data Disclaimer</p>
+                <p className="text-[11px] leading-relaxed text-muted-foreground/60">
+                  Emergency information is provided as guidance based on publicly available data. Phone numbers, addresses, and service availability may change without notice. Always verify critical emergency contacts locally upon arrival. For any life-threatening emergency anywhere in India, dial 112 — it works on all networks, even without a SIM card.
+                </p>
+                <p className="text-[10px] text-muted-foreground/40 mt-2">
+                  Last updated: April 2026 | Data source: State government websites, tourism departments, training knowledge | Status: Unverified — community verification in progress
+                </p>
               </div>
             </div>
           </motion.div>
