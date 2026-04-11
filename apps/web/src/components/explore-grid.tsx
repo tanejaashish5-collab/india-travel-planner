@@ -395,7 +395,7 @@ function DestinationCard({
       {/* Month note — always reserve space */}
       <p className="mt-2 text-xs text-muted-foreground/70 line-clamp-1 italic min-h-[18px]">
         {monthData?.note || ""}
-      )}
+      </p>
       </div>
     </Link>
   );
