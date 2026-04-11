@@ -35,7 +35,8 @@ export default function ExploreScreen() {
   const onImageError = useCallback((id: string) => {
     setFailedImages((prev) => new Set(prev).add(id));
   }, []);
-  const currentMonth = new Date().getMonth() + 1;
+  const [selectedMonth, setSelectedMonth] = useState(new Date().getMonth() + 1);
+  const currentMonth = selectedMonth;
 
   const allTags = useMemo(
     () => [...new Set(destinations.flatMap((d) => d.tags || []))].sort(),
@@ -148,6 +149,22 @@ export default function ExploreScreen() {
           ))}
         </ScrollView>
       )}
+
+      {/* Month selector */}
+      <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.monthRow}>
+        {MONTH_SHORT.slice(1).map((m, i) => {
+          const month = i + 1;
+          return (
+            <TouchableOpacity
+              key={month}
+              style={[styles.monthChip, selectedMonth === month && styles.monthChipActive]}
+              onPress={() => setSelectedMonth(month)}
+            >
+              <Text style={[styles.monthChipText, selectedMonth === month && styles.monthChipTextActive]}>{m}</Text>
+            </TouchableOpacity>
+          );
+        })}
+      </ScrollView>
 
       <Text style={styles.resultCount}>{sorted.length} destinations · sorted by {MONTH_SHORT[currentMonth]} score</Text>
 
@@ -266,6 +283,18 @@ const styles = StyleSheet.create({
   tagChipActive: { borderColor: colors.topographic, backgroundColor: colors.topographic + "20" },
   tagChipText: { fontSize: fontSize.xs, color: colors.mutedForeground, textTransform: "capitalize" },
   tagChipTextActive: { color: colors.topographic },
+  monthRow: { flexDirection: "row", paddingHorizontal: spacing.lg, gap: spacing.xs, marginBottom: spacing.sm },
+  monthChip: {
+    paddingHorizontal: 10,
+    paddingVertical: 6,
+    borderRadius: borderRadius.full,
+    borderWidth: 0.5,
+    borderColor: colors.border,
+    backgroundColor: colors.card,
+  },
+  monthChipActive: { borderColor: colors.saffron, backgroundColor: colors.saffron + "20" },
+  monthChipText: { fontSize: 11, color: colors.mutedForeground, fontWeight: "600" },
+  monthChipTextActive: { color: colors.saffron },
   resultCount: { fontSize: fontSize.xs, color: colors.mutedForeground, paddingHorizontal: spacing.lg, marginBottom: spacing.sm },
   card: {
     width: CARD_WIDTH,
