@@ -17,6 +17,7 @@ const CATEGORY_LABELS: Record<string, { label: string; color: string }> = {
   comparison: { label: "Comparison", color: "text-blue-400 bg-blue-400/10 border-blue-400/20" },
   guide: { label: "Intelligence Guide", color: "text-purple-400 bg-purple-400/10 border-purple-400/20" },
   "data-story": { label: "Data Story", color: "text-amber-400 bg-amber-400/10 border-amber-400/20" },
+  viral: { label: "Viral", color: "text-red-400 bg-red-400/10 border-red-400/20" },
 };
 
 const DEPTH_BADGES: Record<string, { label: string; color: string }> = {
@@ -105,7 +106,7 @@ export function BlogGrid({ articles }: { articles: Article[] }) {
   const locale = useLocale();
   const [filter, setFilter] = useState("all");
 
-  const categories = ["all", "best-time", "comparison", "guide", "data-story"];
+  const categories = ["all", "viral", "best-time", "comparison", "guide", "data-story"];
 
   const filtered = useMemo(() => {
     if (filter === "all") return articles;
@@ -246,7 +247,11 @@ export function BlogGrid({ articles }: { articles: Article[] }) {
                 <HoverCard>
                   <Link
                     href={`/${locale}/blog/${article.slug}`}
-                    className="group block rounded-2xl border border-border/50 bg-card overflow-hidden transition-all hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5 h-full"
+                    className={`group block rounded-2xl border bg-card overflow-hidden transition-all hover:shadow-lg h-full ${
+                      article.category === "viral"
+                        ? "border-red-500/40 hover:border-red-500/60 hover:shadow-red-500/10"
+                        : "border-border/50 hover:border-primary/30 hover:shadow-primary/5"
+                    }`}
                   >
                     {/* Cover image area */}
                     <div className="relative h-40 bg-muted/30 overflow-hidden">
