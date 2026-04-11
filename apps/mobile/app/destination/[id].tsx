@@ -11,13 +11,28 @@ import {
   Share,
   Linking,
   Dimensions,
+  Modal,
+  TextInput,
+  KeyboardAvoidingView,
+  Platform,
 } from "react-native";
+import { createClient } from "@supabase/supabase-js";
 import { useLocalSearchParams, Stack, router } from "expo-router";
 import { colors, spacing, fontSize, borderRadius } from "../../lib/theme";
 import { useDestination } from "../../hooks/useDestinations";
 import { useSavedItems } from "../../hooks/useSavedItems";
 import { useArticlesForDestination } from "../../hooks/useArticles";
 import { useVisited } from "../../hooks/useVisited";
+
+const supabaseMobile = createClient(
+  process.env.EXPO_PUBLIC_SUPABASE_URL || "",
+  process.env.EXPO_PUBLIC_SUPABASE_ANON_KEY || ""
+);
+
+const REPORT_FIELD_OPTIONS = [
+  "Police phone", "Police address", "Hospital name", "Hospital distance",
+  "Pharmacy", "Fuel station", "Mechanic", "ATM", "Other",
+];
 
 const { width } = Dimensions.get("window");
 const MONTH_SHORT = ["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
@@ -419,6 +434,12 @@ export default function DestinationScreen() {
 /* ── Emergency SOS Section ── */
 function EmergencySOSMobileSection({ sos, destinationName }: { sos: any; destinationName: string }) {
   const [expanded, setExpanded] = useState(true);
+  const [reportOpen, setReportOpen] = useState(false);
+  const [reportFieldIdx, setReportFieldIdx] = useState(0);
+  const [reportValue, setReportValue] = useState("");
+  const [reportNote, setReportNote] = useState("");
+  const [reportSubmitted, setReportSubmitted] = useState(false);
+  const [reportSubmitting, setReportSubmitting] = useState(false);
 
   const hasWeatherProtocols = sos.extreme_heat_protocol || sos.extreme_cold_protocol || sos.flood_protocol || sos.snowstorm_protocol;
   const hasVehicleHelp = sos.mechanic_contact || sos.tow_service || sos.fuel_station_name;
@@ -664,8 +685,192 @@ function EmergencySOSMobileSection({ sos, destinationName }: { sos: any; destina
               ))}
             </View>
           )}
+
+          {/* Verification badge */}
+          <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center", marginTop: spacing.md }}>
+            {sos.verified === true ? (
+              <Text style={{ fontSize: 10, color: colors.score5 }}>
+                ✓ Verified{sos.verified_date ? ` ${new Date(sos.verified_date).toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" })}` : ""}
+              </Text>
+            ) : sos.verified === false ? (
+              <Text style={{ fontSize: 10, color: colors.mutedForeground, fontStyle: "italic", opacity: 0.5 }}>
+                Unverified — help us verify
+              </Text>
+            ) : <View />}
+            {sos.updated_at && (
+              <Text style={{ fontSize: 10, color: colors.mutedForeground, opacity: 0.4 }}>
+                Updated: {new Date(sos.updated_at).toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" })}
+              </Text>
+            )}
+          </View>
+
+          {/* Enriched fields: police address + english */}
+          {sos.police_address && (
+            <View style={{ marginTop: spacing.xs }}>
+              <Text style={{ fontSize: fontSize.xs, color: colors.mutedForeground }}>📍 {sos.police_address}</Text>
+            </View>
+          )}
+          {sos.police_english_available && (
+            <View style={{ marginTop: 2 }}>
+              <Text style={{ fontSize: fontSize.xs, color: colors.mutedForeground }}>
+                🗣️ English: {sos.police_english_available === "no" ? "No — carry a translation app" : sos.police_english_available.charAt(0).toUpperCase() + sos.police_english_available.slice(1)}
+              </Text>
+            </View>
+          )}
+
+          {/* Enriched: trauma level, pediatric, pharmacy 24hr, fuel hours, ATM banks, mechanic specialty */}
+          {sos.hospital_trauma_level && (
+            <View style={{ marginTop: spacing.xs, flexDirection: "row", gap: 6, flexWrap: "wrap" }}>
+              <View style={{
+                backgroundColor: sos.hospital_trauma_level === "basic" ? "rgba(234,179,8,0.1)" : sos.hospital_trauma_level === "intermediate" ? "rgba(59,130,246,0.1)" : "rgba(34,197,94,0.1)",
+                borderRadius: 999, paddingHorizontal: 8, paddingVertical: 2
+              }}>
+                <Text style={{
+                  fontSize: 10, fontWeight: "700",
+                  color: sos.hospital_trauma_level === "basic" ? "#eab308" : sos.hospital_trauma_level === "intermediate" ? "#3b82f6" : colors.score5,
+                  textTransform: "capitalize",
+                }}>{sos.hospital_trauma_level}</Text>
+              </View>
+              {sos.hospital_pediatric != null && (
+                <Text style={{ fontSize: 11, color: colors.mutedForeground }}>
+                  👶 Pediatric: {sos.hospital_pediatric ? "Yes" : "No"}
+                </Text>
+              )}
+            </View>
+          )}
+          {sos.pharmacy_24hr && (
+            <View style={{ marginTop: spacing.xs }}>
+              <View style={{ backgroundColor: "rgba(34,197,94,0.1)", borderRadius: 999, paddingHorizontal: 8, paddingVertical: 2, alignSelf: "flex-start" }}>
+                <Text style={{ fontSize: 10, fontWeight: "700", color: colors.score5 }}>🕐 Pharmacy 24hr</Text>
+              </View>
+            </View>
+          )}
+          {sos.fuel_hours && (
+            <Text style={{ fontSize: fontSize.xs, color: colors.mutedForeground, marginTop: 2 }}>🕐 Fuel hours: {sos.fuel_hours}</Text>
+          )}
+          {sos.atm_banks && (
+            <Text style={{ fontSize: fontSize.xs, color: colors.mutedForeground, marginTop: 2 }}>🏧 ATM: {sos.atm_banks}</Text>
+          )}
+          {sos.mechanic_specialty && (
+            <Text style={{ fontSize: fontSize.xs, color: colors.mutedForeground, fontStyle: "italic", marginTop: 2 }}>🔧 Specialty: {sos.mechanic_specialty}</Text>
+          )}
+
+          {/* Report incorrect info button */}
+          <TouchableOpacity
+            onPress={() => { setReportOpen(true); setReportSubmitted(false); }}
+            style={{ marginTop: spacing.md, borderTopWidth: 1, borderTopColor: "rgba(220,38,38,0.1)", paddingTop: spacing.sm }}
+            activeOpacity={0.7}
+          >
+            <Text style={{ fontSize: fontSize.xs, color: colors.mutedForeground, opacity: 0.6, textDecorationLine: "underline" }}>
+              See incorrect info? Report it — we verify within 48 hours
+            </Text>
+          </TouchableOpacity>
         </View>
       )}
+
+      {/* Report Modal */}
+      <Modal visible={reportOpen} transparent animationType="slide" onRequestClose={() => setReportOpen(false)}>
+        <KeyboardAvoidingView behavior={Platform.OS === "ios" ? "padding" : "height"} style={{ flex: 1 }}>
+          <Pressable style={{ flex: 1, backgroundColor: "rgba(0,0,0,0.6)", justifyContent: "flex-end" }} onPress={() => setReportOpen(false)}>
+            <Pressable style={{ backgroundColor: colors.card, borderTopLeftRadius: 20, borderTopRightRadius: 20, padding: spacing.lg }} onPress={() => {}}>
+              {reportSubmitted ? (
+                <View style={{ alignItems: "center", paddingVertical: spacing.xl }}>
+                  <Text style={{ fontSize: 32, marginBottom: spacing.sm }}>✅</Text>
+                  <Text style={{ fontSize: fontSize.lg, fontWeight: "800", color: colors.foreground }}>Thank you!</Text>
+                  <Text style={{ fontSize: fontSize.sm, color: colors.mutedForeground, marginTop: 4 }}>We'll verify this within 48 hours.</Text>
+                  <TouchableOpacity
+                    onPress={() => { setReportOpen(false); setReportValue(""); setReportNote(""); setReportFieldIdx(0); }}
+                    style={{ marginTop: spacing.lg, backgroundColor: "#dc2626", borderRadius: borderRadius.md, paddingHorizontal: spacing.xl, paddingVertical: spacing.sm }}
+                    activeOpacity={0.7}
+                  >
+                    <Text style={{ color: "#fff", fontWeight: "700", fontSize: fontSize.sm }}>Close</Text>
+                  </TouchableOpacity>
+                </View>
+              ) : (
+                <>
+                  <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center", marginBottom: spacing.md }}>
+                    <Text style={{ fontSize: fontSize.lg, fontWeight: "800", color: colors.foreground }}>Report Incorrect Info</Text>
+                    <TouchableOpacity onPress={() => setReportOpen(false)} activeOpacity={0.7}>
+                      <Text style={{ fontSize: 18, color: colors.mutedForeground }}>✕</Text>
+                    </TouchableOpacity>
+                  </View>
+
+                  <Text style={{ fontSize: 10, fontWeight: "800", color: colors.mutedForeground, letterSpacing: 1, marginBottom: 6 }}>WHICH INFO IS INCORRECT?</Text>
+                  <ScrollView horizontal showsHorizontalScrollIndicator={false} style={{ marginBottom: spacing.md }}>
+                    {REPORT_FIELD_OPTIONS.map((f, i) => (
+                      <TouchableOpacity
+                        key={f}
+                        onPress={() => setReportFieldIdx(i)}
+                        style={{
+                          paddingHorizontal: 12, paddingVertical: 6, borderRadius: 999, marginRight: 6,
+                          backgroundColor: reportFieldIdx === i ? "#dc2626" : "rgba(220,38,38,0.1)",
+                        }}
+                        activeOpacity={0.7}
+                      >
+                        <Text style={{ fontSize: fontSize.xs, fontWeight: "700", color: reportFieldIdx === i ? "#fff" : "#f87171" }}>{f}</Text>
+                      </TouchableOpacity>
+                    ))}
+                  </ScrollView>
+
+                  <Text style={{ fontSize: 10, fontWeight: "800", color: colors.mutedForeground, letterSpacing: 1, marginBottom: 6 }}>CORRECT INFORMATION</Text>
+                  <TextInput
+                    value={reportValue}
+                    onChangeText={setReportValue}
+                    placeholder="e.g. correct phone number or address"
+                    placeholderTextColor={colors.mutedForeground}
+                    style={{
+                      borderWidth: 1, borderColor: colors.border, borderRadius: borderRadius.md,
+                      padding: spacing.sm, fontSize: fontSize.sm, color: colors.foreground, marginBottom: spacing.sm,
+                    }}
+                  />
+
+                  <Text style={{ fontSize: 10, fontWeight: "800", color: colors.mutedForeground, letterSpacing: 1, marginBottom: 6 }}>ADDITIONAL NOTES (OPTIONAL)</Text>
+                  <TextInput
+                    value={reportNote}
+                    onChangeText={setReportNote}
+                    placeholder="e.g. I visited last week and..."
+                    placeholderTextColor={colors.mutedForeground}
+                    multiline
+                    numberOfLines={2}
+                    style={{
+                      borderWidth: 1, borderColor: colors.border, borderRadius: borderRadius.md,
+                      padding: spacing.sm, fontSize: fontSize.sm, color: colors.foreground, marginBottom: spacing.md,
+                      textAlignVertical: "top", minHeight: 60,
+                    }}
+                  />
+
+                  <TouchableOpacity
+                    disabled={!reportValue || reportSubmitting}
+                    onPress={async () => {
+                      setReportSubmitting(true);
+                      try {
+                        await supabaseMobile.from("safety_reports").insert({
+                          destination_id: sos.destination_id,
+                          field: REPORT_FIELD_OPTIONS[reportFieldIdx],
+                          correct_value: reportValue,
+                          note: reportNote || null,
+                          created_at: new Date().toISOString(),
+                        });
+                      } catch {}
+                      setReportSubmitted(true);
+                      setReportSubmitting(false);
+                    }}
+                    style={{
+                      backgroundColor: (!reportValue || reportSubmitting) ? "rgba(220,38,38,0.3)" : "#dc2626",
+                      borderRadius: borderRadius.md, paddingVertical: spacing.sm, alignItems: "center",
+                    }}
+                    activeOpacity={0.7}
+                  >
+                    <Text style={{ color: "#fff", fontWeight: "800", fontSize: fontSize.sm }}>
+                      {reportSubmitting ? "Submitting..." : "Submit Report"}
+                    </Text>
+                  </TouchableOpacity>
+                </>
+              )}
+            </Pressable>
+          </Pressable>
+        </KeyboardAvoidingView>
+      </Modal>
     </View>
   );
 }

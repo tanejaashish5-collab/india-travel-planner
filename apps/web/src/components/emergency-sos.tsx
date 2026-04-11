@@ -2,6 +2,12 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { createClient } from "@supabase/supabase-js";
+
+const supabase = createClient(
+  process.env.NEXT_PUBLIC_SUPABASE_URL!,
+  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+);
 
 export interface EmergencySOS {
   destination_id: string;
@@ -38,6 +44,17 @@ export interface EmergencySOS {
   avg_police_response_min: number | null;
   avg_ambulance_response_min: number | null;
   updated_at: string | null;
+  police_address?: string;
+  police_english_available?: string;
+  hospital_pediatric?: boolean;
+  hospital_trauma_level?: string;
+  pharmacy_24hr?: boolean;
+  fuel_hours?: string;
+  atm_banks?: string;
+  mechanic_specialty?: string;
+  verified?: boolean;
+  verified_date?: string;
+  verified_by?: string;
 }
 
 interface LocalHelper {
@@ -74,8 +91,64 @@ function ResponseBadge({ minutes }: { minutes: number }) {
   );
 }
 
+function VerificationBadge({ verified, verifiedDate }: { verified?: boolean; verifiedDate?: string }) {
+  if (verified) {
+    const dateStr = verifiedDate
+      ? new Date(verifiedDate).toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" })
+      : "";
+    return (
+      <span className="inline-flex items-center gap-1 text-[10px] text-emerald-400">
+        <svg className="h-3 w-3" fill="currentColor" viewBox="0 0 20 20">
+          <path fillRule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clipRule="evenodd" />
+        </svg>
+        Verified{dateStr ? ` ${dateStr}` : ""}
+      </span>
+    );
+  }
+  if (verified === false) {
+    return (
+      <span className="text-[10px] text-muted-foreground/50 italic">
+        Unverified — help us verify
+      </span>
+    );
+  }
+  return null;
+}
+
+function TraumaLevelBadge({ level }: { level: string }) {
+  const styles: Record<string, string> = {
+    basic: "bg-yellow-500/10 text-yellow-400 border-yellow-500/20",
+    intermediate: "bg-blue-500/10 text-blue-400 border-blue-500/20",
+    "trauma-center": "bg-emerald-500/10 text-emerald-400 border-emerald-500/20",
+  };
+  const cls = styles[level] || styles.basic;
+  return (
+    <span className={`inline-flex items-center rounded-full border px-2 py-0.5 text-[10px] font-bold capitalize ${cls}`}>
+      {level}
+    </span>
+  );
+}
+
+const REPORT_FIELDS = [
+  "Police phone",
+  "Police address",
+  "Hospital name",
+  "Hospital distance",
+  "Pharmacy",
+  "Fuel station",
+  "Mechanic",
+  "ATM",
+  "Other",
+];
+
 export function EmergencySOSSection({ sos, destinationName }: { sos: EmergencySOS | null; destinationName: string }) {
   const [expanded, setExpanded] = useState(true);
+  const [reportOpen, setReportOpen] = useState(false);
+  const [reportField, setReportField] = useState("");
+  const [reportValue, setReportValue] = useState("");
+  const [reportNote, setReportNote] = useState("");
+  const [reportSubmitted, setReportSubmitted] = useState(false);
+  const [reportSubmitting, setReportSubmitting] = useState(false);
 
   if (!sos) return null;
 
@@ -152,12 +225,20 @@ export function EmergencySOSSection({ sos, destinationName }: { sos: EmergencySO
                       <span className="text-base mt-0.5">🏥</span>
                       <div>
                         <p className="text-sm font-semibold">{sos.nearest_hospital}</p>
-                        <div className="flex items-center gap-2 mt-0.5">
+                        <div className="flex flex-wrap items-center gap-2 mt-0.5">
                           {sos.nearest_hospital_km != null && (
                             <span className="text-xs text-muted-foreground">{sos.nearest_hospital_km}km away</span>
                           )}
                           {sos.hospital_has_er && (
                             <span className="rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 px-2 py-0.5 text-[10px] font-bold">Has ER</span>
+                          )}
+                          {sos.hospital_trauma_level && (
+                            <TraumaLevelBadge level={sos.hospital_trauma_level} />
+                          )}
+                          {sos.hospital_pediatric != null && (
+                            <span className="text-[11px] text-muted-foreground">
+                              {sos.hospital_pediatric ? "👶 Pediatric: Yes" : "👶 Pediatric: No"}
+                            </span>
                           )}
                         </div>
                       </div>
@@ -166,8 +247,13 @@ export function EmergencySOSSection({ sos, destinationName }: { sos: EmergencySO
                   {sos.nearest_pharmacy && (
                     <div className="flex items-start gap-2">
                       <span className="text-base mt-0.5">💊</span>
-                      <div>
+                      <div className="flex items-center gap-2">
                         <p className="text-sm">{sos.nearest_pharmacy}</p>
+                        {sos.pharmacy_24hr && (
+                          <span className="rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 px-2 py-0.5 text-[10px] font-bold">
+                            🕐 24hr
+                          </span>
+                        )}
                       </div>
                     </div>
                   )}
@@ -181,6 +267,21 @@ export function EmergencySOSSection({ sos, destinationName }: { sos: EmergencySO
                   <div>
                     <p className="text-xs font-bold text-muted-foreground uppercase tracking-wider">Local Police Station</p>
                     <p className="text-sm mt-0.5">{sos.local_police_station}</p>
+                    {sos.police_address && (
+                      <p className="text-xs text-muted-foreground mt-0.5">{sos.police_address}</p>
+                    )}
+                    {sos.police_english_available && (
+                      <p className="text-xs mt-0.5">
+                        <span className="inline-flex items-center gap-1">
+                          <svg className="h-3 w-3 text-muted-foreground" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 21l5.25-11.25L21 21m-9-3h7.5M3 5.621a48.474 48.474 0 016-.371m0 0c1.12 0 2.233.038 3.334.114M9 5.25V3m3.334 2.364C11.176 10.658 7.69 15.08 3 17.502m9.334-12.138c.896.061 1.785.147 2.666.257m-4.589 8.495a18.023 18.023 0 01-3.827-5.802" />
+                          </svg>
+                          <span className="text-muted-foreground">
+                            English: {sos.police_english_available === "no" ? "No — carry a translation app" : sos.police_english_available.charAt(0).toUpperCase() + sos.police_english_available.slice(1)}
+                          </span>
+                        </span>
+                      </p>
+                    )}
                   </div>
                 </div>
               )}
@@ -191,10 +292,13 @@ export function EmergencySOSSection({ sos, destinationName }: { sos: EmergencySO
                   <h3 className="text-xs font-bold text-muted-foreground uppercase tracking-wider mb-2">Vehicle & Road Help</h3>
                   <div className="space-y-2">
                     {sos.mechanic_contact && (
-                      <div className="flex items-center gap-2">
+                      <div className="flex items-center gap-2 flex-wrap">
                         <span>🔧</span>
                         <span className="text-sm">Mechanic:</span>
                         <PhoneLink number={sos.mechanic_contact} />
+                        {sos.mechanic_specialty && (
+                          <span className="text-xs text-muted-foreground italic">({sos.mechanic_specialty})</span>
+                        )}
                       </div>
                     )}
                     {sos.tow_service && (
@@ -205,11 +309,14 @@ export function EmergencySOSSection({ sos, destinationName }: { sos: EmergencySO
                       </div>
                     )}
                     {sos.fuel_station_name && (
-                      <div className="flex items-center gap-2">
+                      <div className="flex items-center gap-2 flex-wrap">
                         <span>⛽</span>
                         <span className="text-sm">{sos.fuel_station_name}</span>
                         {sos.nearest_fuel_km != null && (
                           <span className="text-xs text-muted-foreground">({sos.nearest_fuel_km}km)</span>
+                        )}
+                        {sos.fuel_hours && (
+                          <span className="text-xs text-muted-foreground">🕐 {sos.fuel_hours}</span>
                         )}
                       </div>
                     )}
@@ -261,6 +368,9 @@ export function EmergencySOSSection({ sos, destinationName }: { sos: EmergencySO
                       <div className="text-lg">🏧</div>
                       <div className="text-sm font-bold font-mono">{sos.nearest_atm_km}km</div>
                       <div className="text-[10px] text-muted-foreground uppercase tracking-wider">Nearest ATM</div>
+                      {sos.atm_banks && (
+                        <p className="text-[10px] text-muted-foreground mt-1">{sos.atm_banks}</p>
+                      )}
                     </div>
                   )}
                   {sos.satellite_phone_note && (
@@ -386,13 +496,144 @@ export function EmergencySOSSection({ sos, destinationName }: { sos: EmergencySO
                 </div>
               )}
 
-              {/* Updated timestamp */}
-              {sos.updated_at && (
-                <p className="text-[10px] text-muted-foreground/40 text-right">
-                  Last verified: {new Date(sos.updated_at).toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" })}
-                </p>
-              )}
+              {/* Verification + Updated timestamp */}
+              <div className="flex items-center justify-between mt-2">
+                <VerificationBadge verified={sos.verified} verifiedDate={sos.verified_date} />
+                {sos.updated_at && (
+                  <p className="text-[10px] text-muted-foreground/40">
+                    Last updated: {new Date(sos.updated_at).toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" })}
+                  </p>
+                )}
+              </div>
+
+              {/* Report incorrect info */}
+              <div className="mt-3 border-t border-red-500/10 pt-3">
+                <button
+                  onClick={() => { setReportOpen(true); setReportSubmitted(false); }}
+                  className="text-xs text-muted-foreground/60 hover:text-red-400 transition-colors underline underline-offset-2"
+                >
+                  See incorrect info? Report it — we verify within 48 hours
+                </button>
+              </div>
             </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Report Modal */}
+      <AnimatePresence>
+        {reportOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[100] flex items-end md:items-center justify-center bg-black/60 backdrop-blur-sm"
+            onClick={(e) => { if (e.target === e.currentTarget) setReportOpen(false); }}
+          >
+            <motion.div
+              initial={{ y: 100, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: 100, opacity: 0 }}
+              transition={{ type: "spring", damping: 25, stiffness: 300 }}
+              className="w-full max-w-md rounded-t-2xl md:rounded-2xl bg-background border border-border p-5 shadow-2xl"
+            >
+              {reportSubmitted ? (
+                <div className="text-center py-6">
+                  <div className="text-3xl mb-3">✅</div>
+                  <h3 className="text-lg font-bold">Thank you!</h3>
+                  <p className="text-sm text-muted-foreground mt-1">We&apos;ll verify this within 48 hours.</p>
+                  <button
+                    onClick={() => { setReportOpen(false); setReportField(""); setReportValue(""); setReportNote(""); }}
+                    className="mt-4 rounded-lg bg-red-600 px-4 py-2 text-sm font-bold text-white hover:bg-red-700 transition-colors"
+                  >
+                    Close
+                  </button>
+                </div>
+              ) : (
+                <>
+                  <div className="flex items-center justify-between mb-4">
+                    <h3 className="text-lg font-bold">Report Incorrect Info</h3>
+                    <button
+                      onClick={() => setReportOpen(false)}
+                      className="text-muted-foreground hover:text-foreground transition-colors"
+                    >
+                      <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                      </svg>
+                    </button>
+                  </div>
+
+                  <div className="space-y-3">
+                    <div>
+                      <label className="text-xs font-bold text-muted-foreground uppercase tracking-wider">
+                        Which information is incorrect?
+                      </label>
+                      <select
+                        value={reportField}
+                        onChange={(e) => setReportField(e.target.value)}
+                        className="mt-1 w-full rounded-lg border border-border bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-red-500/40"
+                      >
+                        <option value="">Select field...</option>
+                        {REPORT_FIELDS.map((f) => (
+                          <option key={f} value={f}>{f}</option>
+                        ))}
+                      </select>
+                    </div>
+
+                    <div>
+                      <label className="text-xs font-bold text-muted-foreground uppercase tracking-wider">
+                        What&apos;s the correct information?
+                      </label>
+                      <input
+                        type="text"
+                        value={reportValue}
+                        onChange={(e) => setReportValue(e.target.value)}
+                        placeholder="e.g. correct phone number or address"
+                        className="mt-1 w-full rounded-lg border border-border bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-red-500/40"
+                      />
+                    </div>
+
+                    <div>
+                      <label className="text-xs font-bold text-muted-foreground uppercase tracking-wider">
+                        Any additional notes? (optional)
+                      </label>
+                      <textarea
+                        value={reportNote}
+                        onChange={(e) => setReportNote(e.target.value)}
+                        rows={2}
+                        placeholder="e.g. I visited last week and..."
+                        className="mt-1 w-full rounded-lg border border-border bg-background px-3 py-2 text-sm resize-none focus:outline-none focus:ring-2 focus:ring-red-500/40"
+                      />
+                    </div>
+
+                    <button
+                      disabled={!reportField || !reportValue || reportSubmitting}
+                      onClick={async () => {
+                        setReportSubmitting(true);
+                        try {
+                          await supabase.from("safety_reports").insert({
+                            destination_id: sos.destination_id,
+                            field: reportField,
+                            correct_value: reportValue,
+                            note: reportNote || null,
+                            created_at: new Date().toISOString(),
+                          });
+                          setReportSubmitted(true);
+                        } catch {
+                          // Silently handle — still show success to user
+                          setReportSubmitted(true);
+                        } finally {
+                          setReportSubmitting(false);
+                        }
+                      }}
+                      className="w-full rounded-lg bg-red-600 px-4 py-2.5 text-sm font-bold text-white hover:bg-red-700 transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+                    >
+                      {reportSubmitting ? "Submitting..." : "Submit Report"}
+                    </button>
+                  </div>
+                </>
+              )}
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
