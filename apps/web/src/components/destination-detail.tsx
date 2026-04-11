@@ -25,6 +25,7 @@ import { InternationalInfoSection } from "./international-info";
 import { DestinationAlerts } from "./destination-alerts";
 import { FadeIn, SlideIn, HoverCard, StaggerContainer, StaggerItem, ScrollReveal } from "./animated-hero";
 import { Footer } from "./footer";
+import { StickyDestinationHeader } from "./sticky-destination-header";
 import { SCORE_COLORS, DIFFICULTY_BG, DIFFICULTY_COLORS } from "@/lib/design-tokens";
 
 export function DestinationDetail({ dest }: { dest: any }) {
@@ -176,6 +177,14 @@ export function DestinationDetail({ dest }: { dest: any }) {
             </div>
           </div>
         </FadeIn>
+
+        {/* Sticky mobile header — appears after scrolling past hero */}
+        <StickyDestinationHeader
+          name={displayName}
+          score={currentScore}
+          monthLabel={tm(String(currentMonth))}
+          stateId={dest.state_id}
+        />
 
         {/* Hero Card */}
         <SlideIn delay={0.1}>

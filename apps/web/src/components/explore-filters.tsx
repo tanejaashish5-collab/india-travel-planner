@@ -51,13 +51,13 @@ export function ExploreFilters({
         className="w-full rounded-lg border border-border bg-background px-4 py-2.5 text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50"
       />
 
-      {/* Filter row */}
-      <div className="flex flex-wrap gap-2">
+      {/* Filter row — horizontal scroll on mobile, wrap on desktop */}
+      <div className="flex gap-2 overflow-x-auto pb-2 sm:flex-wrap sm:overflow-x-visible sm:pb-0 scrollbar-none">
         {/* State */}
         <select
           value={filters.stateId}
           onChange={(e) => update({ stateId: e.target.value })}
-          className="rounded-lg border border-border bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/50"
+          className="shrink-0 rounded-lg border border-border bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/50"
         >
           <option value="">{tf("allStates")}</option>
           {states.map((s) => (
@@ -71,7 +71,7 @@ export function ExploreFilters({
         <select
           value={filters.month}
           onChange={(e) => update({ month: Number(e.target.value) })}
-          className="rounded-lg border border-border bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/50"
+          className="shrink-0 rounded-lg border border-border bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/50"
         >
           <option value={0}>{tf("allMonths")}</option>
           {Array.from({ length: 12 }, (_, i) => (
@@ -85,7 +85,7 @@ export function ExploreFilters({
         <select
           value={filters.difficulty}
           onChange={(e) => update({ difficulty: e.target.value })}
-          className="rounded-lg border border-border bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/50"
+          className="shrink-0 rounded-lg border border-border bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/50"
         >
           <option value="">{tf("difficulty")}</option>
           <option value="easy">Easy</option>
@@ -97,7 +97,7 @@ export function ExploreFilters({
         {/* Kids toggle */}
         <button
           onClick={() => update({ kidsOnly: !filters.kidsOnly })}
-          className={`rounded-lg border px-3 py-2 text-sm font-medium transition-colors ${
+          className={`shrink-0 rounded-lg border px-3 py-2 text-sm font-medium transition-colors ${
             filters.kidsOnly
               ? "border-emerald-500/50 bg-emerald-500/20 text-emerald-400"
               : "border-border text-muted-foreground hover:text-foreground"
@@ -110,7 +110,7 @@ export function ExploreFilters({
         <select
           value={filters.sort}
           onChange={(e) => update({ sort: e.target.value })}
-          className="rounded-lg border border-border bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/50"
+          className="shrink-0 rounded-lg border border-border bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/50"
         >
           <option value="">Sort by...</option>
           <option value="score-desc">Score (highest)</option>
@@ -134,7 +134,7 @@ export function ExploreFilters({
                 sort: "",
               })
             }
-            className="rounded-lg border border-border px-3 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+            className="shrink-0 rounded-lg border border-border px-3 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
           >
             {tf("clear")} ✕
           </button>

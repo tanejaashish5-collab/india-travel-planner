@@ -245,7 +245,7 @@ function DestinationCard({
       className="group flex flex-col rounded-2xl border border-border/50 bg-card overflow-hidden transition-all duration-300 hover:border-primary/40 hover:shadow-xl hover:shadow-primary/10 h-full"
     >
       {/* Hero Image */}
-      <div className={`relative ${featured ? "h-48" : "h-40"} bg-muted/30 overflow-hidden`}>
+      <div className={`relative ${featured ? "h-48 sm:h-48" : "h-48 sm:h-40"} bg-muted/30 overflow-hidden`}>
         {/* Featured badge */}
         {featured && (
           <span className="absolute top-2 left-12 z-10 rounded-full bg-primary px-3 py-1 text-xs font-bold text-primary-foreground shadow-lg">

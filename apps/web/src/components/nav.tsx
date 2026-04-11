@@ -12,7 +12,6 @@ export function Nav() {
   const locale = useLocale();
   const t = useTranslations("nav");
   const pathname = usePathname();
-  const [mobileOpen, setMobileOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
 
   // Cmd+K / Ctrl+K keyboard shortcut
@@ -53,16 +52,13 @@ export function Nav() {
     { href: `/${locale}/about`, label: t("about") },
   ];
 
-  // All links for mobile menu
-  const links = [...primaryLinks, ...moreLinks];
-
   function isActive(href: string) {
     return pathname.startsWith(href);
   }
 
   return (
     <header className="sticky top-0 z-50 border-b border-border/50 bg-background/90 backdrop-blur-xl shadow-sm">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-2 md:py-3">
         {/* Logo */}
         <Link href={`/${locale}`} className="flex items-center gap-2">
           <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#161614] border border-[#F5F1E8]/20 text-sm font-bold text-[#F5F1E8]">
@@ -142,59 +138,11 @@ export function Nav() {
             </svg>
           </button>
           <LanguageToggle />
-          <UserButton />
-          {/* Mobile menu button */}
-          <button
-            className="rounded-lg p-2 text-muted-foreground hover:text-foreground md:hidden"
-            onClick={() => setMobileOpen(!mobileOpen)}
-            aria-label="Toggle menu"
-          >
-            <svg
-              width="20"
-              height="20"
-              viewBox="0 0 20 20"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.5"
-            >
-              {mobileOpen ? (
-                <path d="M5 5l10 10M15 5L5 15" />
-              ) : (
-                <path d="M3 5h14M3 10h14M3 15h14" />
-              )}
-            </svg>
-          </button>
+          <span className="hidden md:inline-flex"><UserButton /></span>
         </div>
       </div>
 
-      {/* Mobile nav */}
-      {mobileOpen && (
-        <nav className="border-t border-border px-4 py-3 md:hidden">
-          <div className="flex flex-col gap-1">
-            {links.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                onClick={() => setMobileOpen(false)}
-                className={`rounded-lg px-3 py-2 text-sm font-medium transition-colors ${
-                  isActive(link.href)
-                    ? "bg-primary/10 text-primary"
-                    : "text-muted-foreground hover:text-foreground"
-                }`}
-              >
-                {link.label}
-              </Link>
-            ))}
-            <Link
-              href={`/${locale}/plan`}
-              onClick={() => setMobileOpen(false)}
-              className="mt-1 rounded-lg bg-primary px-3 py-2 text-center text-sm font-medium text-primary-foreground"
-            >
-              {t("planTrip")}
-            </Link>
-          </div>
-        </nav>
-      )}
+      {/* Mobile nav removed — handled by bottom tab bar */}
       <SearchCommand open={searchOpen} onClose={() => setSearchOpen(false)} />
     </header>
   );

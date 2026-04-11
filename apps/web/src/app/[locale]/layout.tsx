@@ -11,6 +11,8 @@ import { StickyCTA } from "@/components/sticky-cta";
 import { PersonalisationQuiz } from "@/components/personalisation-quiz";
 import { CompareProvider } from "@/components/compare-tray";
 import { ScrollToTop } from "@/components/scroll-to-top";
+import { PageTransition } from "@/components/page-transition";
+import { MobileTabBar } from "@/components/mobile-tab-bar";
 import "../globals.css";
 
 const geistSans = Geist({
@@ -33,6 +35,7 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
+  viewportFit: "cover",
 };
 
 export const metadata: Metadata = {
@@ -101,7 +104,12 @@ export default async function LocaleLayout({
       lang={locale}
       className={`${geistSans.variable} ${geistMono.variable} ${fraunces.variable} dark h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-background text-foreground text-base">
+      <head>
+        <meta name="theme-color" content="#161614" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+      </head>
+      <body className="min-h-full flex flex-col bg-background text-foreground text-base pb-20 md:pb-0">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify({
@@ -117,9 +125,10 @@ export default async function LocaleLayout({
         <NextIntlClientProvider messages={messages}>
           <CompareProvider>
             <ScrollToTop />
-            {children}
+            <PageTransition>{children}</PageTransition>
             <StickyCTA />
             <PersonalisationQuiz />
+            <MobileTabBar />
           </CompareProvider>
         </NextIntlClientProvider>
         <Analytics />
