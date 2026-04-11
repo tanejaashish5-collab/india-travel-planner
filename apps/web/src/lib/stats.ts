@@ -13,18 +13,18 @@ export interface AppStats {
   campingSpots: number;
 }
 
-// Fallback values if DB is unavailable — keep these updated (April 2026, duplicates removed)
+// Fallback values if DB is unavailable — keep these updated (April 2026, NE+heritage expansion)
 const FALLBACK: AppStats = {
-  destinations: 161,
-  places: 450,
+  destinations: 215,
+  places: 560,
   routes: 19,
-  festivals: 168,
-  collections: 20,
-  treks: 49,
-  states: 20,
+  festivals: 183,
+  collections: 31,
+  treks: 60,
+  states: 23,
   traps: 53,
   permits: 15,
-  campingSpots: 37,
+  campingSpots: 47,
 };
 
 // No caching — always fetch fresh on server to avoid stale counts

@@ -218,6 +218,17 @@ export default function ExploreScreen() {
                   )}
                 </View>
 
+                {/* Tags */}
+                {item.tags?.length > 0 && (
+                  <View style={styles.cardTags}>
+                    {item.tags.slice(0, 3).map((tag: string) => (
+                      <View key={tag} style={styles.cardTag}>
+                        <Text style={styles.cardTagText}>{tag}</Text>
+                      </View>
+                    ))}
+                  </View>
+                )}
+
                 {/* 12-month score strip */}
                 {item.destination_months && item.destination_months.length > 0 && (
                   <View style={styles.monthStrip}>
@@ -321,6 +332,9 @@ const styles = StyleSheet.create({
   cardTagline: { fontSize: fontSize.xs, color: colors.mutedForeground, marginTop: 2, lineHeight: 16 },
   cardMeta: { flexDirection: "row", gap: 4, marginTop: spacing.xs, flexWrap: "wrap" },
   cardMetaText: { fontSize: 10, color: colors.mutedForeground },
+  cardTags: { flexDirection: "row", flexWrap: "wrap", gap: 4, marginTop: spacing.xs },
+  cardTag: { borderWidth: 1, borderColor: colors.border, borderRadius: 99, paddingHorizontal: 6, paddingVertical: 2 },
+  cardTagText: { fontSize: 9, color: colors.mutedForeground },
   monthStrip: { flexDirection: "row", gap: 2, marginTop: spacing.xs },
   monthDot: { flex: 1, height: 3, borderRadius: 2 },
   monthDotCurrent: { borderWidth: 1, borderColor: colors.primary },

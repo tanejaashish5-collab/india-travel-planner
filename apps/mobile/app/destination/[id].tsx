@@ -387,10 +387,124 @@ export default function DestinationScreen() {
         </View>
       )}
 
+      {/* International Info */}
+      {dest.international_info && (
+        <InternationalInfoSection info={dest.international_info} />
+      )}
+
       <View style={{ height: spacing.xxl * 2 }} />
     </ScrollView>
   );
 }
+
+/* ── International Info collapsible ── */
+function InternationalInfoSection({ info }: { info: any }) {
+  const [expanded, setExpanded] = useState(false);
+
+  const fields: { key: string; label: string; icon: string }[] = [
+    { key: "cultural_context", label: "Cultural Context", icon: "🕌" },
+    { key: "dress_code", label: "Dress Code", icon: "👔" },
+    { key: "food_safety", label: "Food Safety", icon: "🍽️" },
+    { key: "cards_accepted", label: "Cards & Payments", icon: "💳" },
+    { key: "english_level", label: "English Level", icon: "🗣️" },
+    { key: "nearest_embassy", label: "Nearest Embassy", icon: "🏛️" },
+    { key: "sim_info", label: "SIM & Connectivity", icon: "📱" },
+    { key: "visa_notes", label: "Visa Notes", icon: "📋" },
+  ];
+
+  return (
+    <View style={intlStyles.wrapper}>
+      <TouchableOpacity
+        style={intlStyles.header}
+        onPress={() => setExpanded(!expanded)}
+        activeOpacity={0.7}
+      >
+        <Text style={intlStyles.headerIcon}>🌐</Text>
+        <Text style={intlStyles.headerText}>For International Travelers</Text>
+        <Text style={intlStyles.chevron}>{expanded ? "▲" : "▼"}</Text>
+      </TouchableOpacity>
+
+      {expanded && (
+        <View style={intlStyles.body}>
+          {fields.map(({ key, label, icon }) => {
+            const value = info[key];
+            if (!value) return null;
+            return (
+              <View key={key} style={intlStyles.field}>
+                <Text style={intlStyles.fieldIcon}>{icon}</Text>
+                <View style={{ flex: 1 }}>
+                  <Text style={intlStyles.fieldLabel}>{label}</Text>
+                  <Text style={intlStyles.fieldValue}>{value}</Text>
+                </View>
+              </View>
+            );
+          })}
+
+          {/* Scams as bulleted list */}
+          {info.scams?.length > 0 && (
+            <View style={intlStyles.field}>
+              <Text style={intlStyles.fieldIcon}>⚠️</Text>
+              <View style={{ flex: 1 }}>
+                <Text style={intlStyles.fieldLabel}>Common Scams</Text>
+                {info.scams.map((scam: string, i: number) => (
+                  <Text key={i} style={intlStyles.scamItem}>• {scam}</Text>
+                ))}
+              </View>
+            </View>
+          )}
+        </View>
+      )}
+    </View>
+  );
+}
+
+const intlStyles = StyleSheet.create({
+  wrapper: {
+    marginHorizontal: spacing.md,
+    marginTop: spacing.md,
+    backgroundColor: "rgba(0,0,0,0.03)",
+    borderRadius: borderRadius.lg,
+    borderWidth: 1,
+    borderColor: colors.primary + "33",
+    overflow: "hidden",
+  },
+  header: {
+    flexDirection: "row",
+    alignItems: "center",
+    padding: spacing.lg,
+    gap: spacing.sm,
+  },
+  headerIcon: { fontSize: 20 },
+  headerText: {
+    flex: 1,
+    fontSize: fontSize.base,
+    fontWeight: "700",
+    color: colors.foreground,
+  },
+  chevron: { fontSize: fontSize.sm, color: colors.mutedForeground },
+  body: { paddingHorizontal: spacing.lg, paddingBottom: spacing.lg, gap: spacing.md },
+  field: { flexDirection: "row", gap: spacing.sm, alignItems: "flex-start" },
+  fieldIcon: { fontSize: 16, marginTop: 2 },
+  fieldLabel: {
+    fontSize: fontSize.xs,
+    fontWeight: "700",
+    color: colors.foreground,
+    textTransform: "uppercase",
+    letterSpacing: 0.5,
+  },
+  fieldValue: {
+    fontSize: fontSize.sm,
+    color: colors.mutedForeground,
+    lineHeight: 20,
+    marginTop: 2,
+  },
+  scamItem: {
+    fontSize: fontSize.sm,
+    color: colors.mutedForeground,
+    lineHeight: 20,
+    marginTop: 2,
+  },
+});
 
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: colors.background },

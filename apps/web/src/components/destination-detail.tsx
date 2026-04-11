@@ -21,6 +21,7 @@ import { TravelerNotes } from "./traveler-notes";
 import { ReviewsList } from "./reviews-list";
 import { ReviewForm } from "./review-form";
 import { BookingHandoff } from "./booking-handoff";
+import { InternationalInfoSection } from "./international-info";
 import { DestinationAlerts } from "./destination-alerts";
 import { FadeIn, SlideIn, HoverCard, StaggerContainer, StaggerItem, ScrollReveal } from "./animated-hero";
 import { Footer } from "./footer";
@@ -813,6 +814,9 @@ export function DestinationDetail({ dest }: { dest: any }) {
                     </div>
                   </div>
                 </section>
+
+                {/* International Traveler Info */}
+                <InternationalInfoSection info={dest.international_info} />
 
                 {/* Meet the Locals Preview */}
                 {legends.length > 0 && (
