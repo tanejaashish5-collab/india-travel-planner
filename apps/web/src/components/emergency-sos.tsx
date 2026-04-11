@@ -48,9 +48,10 @@ interface LocalHelper {
 }
 
 function PhoneLink({ number, label }: { number: string; label?: string }) {
+  if (!number) return null;
   return (
     <a
-      href={`tel:${number.replace(/\s/g, "")}`}
+      href={`tel:${(number || "").replace(/\s/g, "")}`}
       className="inline-flex items-center gap-2 rounded-lg border border-red-500/20 bg-red-500/5 px-3 py-2 text-sm font-mono font-bold text-red-400 hover:bg-red-500/10 hover:border-red-500/40 transition-all active:scale-95"
     >
       <svg className="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
@@ -371,7 +372,7 @@ export function EmergencySOSSection({ sos, destinationName }: { sos: EmergencySO
                           )}
                         </div>
                         <a
-                          href={`tel:${helper.phone.replace(/\s/g, "")}`}
+                          href={`tel:${(helper.phone || "").replace(/\s/g, "")}`}
                           className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-red-600 text-white hover:bg-red-700 transition-colors active:scale-95"
                           aria-label={`Call ${helper.name}`}
                         >

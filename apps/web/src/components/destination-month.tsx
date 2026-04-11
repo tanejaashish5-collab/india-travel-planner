@@ -206,13 +206,13 @@ export function DestinationMonth({
     }
     if (confidence?.reach) {
       const reachStr = typeof confidence.reach === "object"
-        ? Object.entries(confidence.reach).map(([k, v]) => `${k.replace(/_/g, " ")}: ${v}`).join(". ")
+        ? Object.entries(confidence.reach).filter(([, v]) => v != null && typeof v !== 'object').map(([k, v]) => `${String(k).replace(/_/g, " ")}: ${v}`).join(". ")
         : String(confidence.reach);
       items.push({ icon: "🛣", label: "Roads & Access", value: reachStr });
     }
     if (confidence?.emergency) {
       const emergStr = typeof confidence.emergency === "object"
-        ? Object.entries(confidence.emergency).map(([k, v]) => `${k.replace(/_/g, " ")}: ${v}`).join(". ")
+        ? Object.entries(confidence.emergency).filter(([, v]) => v != null && typeof v !== 'object').map(([k, v]) => `${String(k).replace(/_/g, " ")}: ${v}`).join(". ")
         : String(confidence.emergency);
       items.push({
         icon: "🏥",
