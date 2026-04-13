@@ -13,6 +13,7 @@ import { CompareProvider } from "@/components/compare-tray";
 import { ScrollToTop } from "@/components/scroll-to-top";
 import { PageTransition } from "@/components/page-transition";
 import { MobileTabBar } from "@/components/mobile-tab-bar";
+import { AskNakshIQ } from "@/components/ask-nakshiq";
 import "../globals.css";
 
 const geistSans = Geist({
@@ -127,6 +128,7 @@ export default async function LocaleLayout({
             <ScrollToTop />
             <PageTransition>{children}</PageTransition>
             <StickyCTA />
+            <AskNakshIQ />
             <PersonalisationQuiz />
             <MobileTabBar />
           </CompareProvider>
