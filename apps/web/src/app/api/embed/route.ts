@@ -26,22 +26,38 @@ export async function POST(req: Request) {
 
   const chunks: { content: string; source_type: string; source_id: string; metadata: Record<string, any> }[] = [];
 
-  // 1. Destinations
+  // 1. Destinations (simple query — joins fetched separately)
   const { data: dests } = await supabase
     .from("destinations")
-    .select("id, name, tagline, difficulty, elevation_m, tags, state_id, destination_months(month, score, note), kids_friendly(suitable, rating, min_age, max_age, notes)");
+    .select("id, name, tagline, difficulty, elevation_m, tags, state_id");
+
+  const { data: allMonths } = await supabase
+    .from("destination_months")
+    .select("destination_id, month, score, note");
+
+  const { data: allKids } = await supabase
+    .from("kids_friendly")
+    .select("destination_id, suitable, rating, min_age, max_age, notes");
+
+  // Build lookups
+  const monthsByDest: Record<string, any[]> = {};
+  for (const m of allMonths ?? []) {
+    if (!monthsByDest[m.destination_id]) monthsByDest[m.destination_id] = [];
+    monthsByDest[m.destination_id].push(m);
+  }
+  const kidsByDest: Record<string, any> = {};
+  for (const k of allKids ?? []) {
+    kidsByDest[k.destination_id] = k;
+  }
 
   for (const d of dests ?? []) {
-    const months = (d.destination_months ?? []) as any[];
+    const months = (monthsByDest[d.id] ?? []).sort((a: any, b: any) => a.month - b.month);
+    const monthNames = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
     const scoreText = months
-      .sort((a: any, b: any) => a.month - b.month)
-      .map((m: any) => {
-        const monthNames = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
-        return `${monthNames[m.month - 1]}: ${m.score}/5${m.note ? ` (${m.note})` : ""}`;
-      })
+      .map((m: any) => `${monthNames[m.month - 1]}: ${m.score}/5${m.note ? ` (${m.note})` : ""}`)
       .join(", ");
 
-    const kf = Array.isArray(d.kids_friendly) ? d.kids_friendly[0] : d.kids_friendly;
+    const kf = kidsByDest[d.id];
     const kidsText = kf
       ? `Kids: ${kf.suitable ? "suitable" : "not suitable"}${kf.rating ? `, rating ${kf.rating}/5` : ""}${kf.min_age ? `, ages ${kf.min_age}-${kf.max_age}` : ""}${kf.notes ? `. ${kf.notes}` : ""}`
       : "";
@@ -71,18 +87,17 @@ export async function POST(req: Request) {
   // 3. Articles
   const { data: articles } = await supabase
     .from("articles")
-    .select("id, title, summary, body, tags");
+    .select("slug, title, excerpt, content, tags, category");
 
   for (const a of articles ?? []) {
-    // Chunk long articles into ~1000 char pieces
-    const fullText = `${a.title}. ${a.summary || ""}. ${a.body || ""}`;
+    const fullText = `${a.title}. ${a.excerpt || ""}. ${a.content || ""}`;
     const articleChunks = chunkText(fullText, 1000);
     for (let i = 0; i < articleChunks.length; i++) {
       chunks.push({
         content: articleChunks[i],
         source_type: "article",
-        source_id: a.id,
-        metadata: { title: a.title, chunk: i },
+        source_id: a.slug,
+        metadata: { title: a.title, category: a.category, chunk: i },
       });
     }
   }
@@ -90,11 +105,11 @@ export async function POST(req: Request) {
   // 4. Stays
   const { data: stays } = await supabase
     .from("local_stays")
-    .select("id, name, type, destination_id, price_range, description, phone, tags, kids_suitable");
+    .select("id, name, type, destination_id, price_range, why_special, best_for, tags");
 
   for (const s of stays ?? []) {
     chunks.push({
-      content: `${s.name} (${s.type}) stay in ${s.destination_id}. ${s.description || ""}. Price: ${s.price_range || "N/A"}. Kids: ${s.kids_suitable ? "yes" : "no"}. Tags: ${(s.tags ?? []).join(", ")}`.trim(),
+      content: `${s.name} (${s.type}) stay in ${s.destination_id}. ${s.why_special || ""}. Price: ${s.price_range || "N/A"}. Best for: ${s.best_for || "N/A"}. Tags: ${(s.tags ?? []).join(", ")}`.trim(),
       source_type: "stay",
       source_id: s.id,
       metadata: { destination: s.destination_id, type: s.type, name: s.name },
