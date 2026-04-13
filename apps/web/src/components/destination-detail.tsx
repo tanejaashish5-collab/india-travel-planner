@@ -606,16 +606,16 @@ export function DestinationDetail({ dest }: { dest: any }) {
                       )}
 
                       {/* Fuel & Stay */}
-                      {(cc.fuel || cc.sleep) && (
+                      {(cc.fuel && Object.keys(cc.fuel).length > 0 || cc.sleep && Object.keys(cc.sleep).length > 0) && (
                         <div className="rounded-xl border border-border p-4">
                           <div className="flex items-center gap-2 mb-2">
                             <span className="text-lg">⛽</span>
                             <h3 className="text-sm font-semibold">Fuel & Stay</h3>
                           </div>
-                          {(cc.fuel?.nearest_pump || cc.fuel?.nearest_petrol_pump) && <p className="text-sm text-muted-foreground mb-1"><span className="font-medium text-foreground">Fuel:</span> {cc.fuel.nearest_pump || cc.fuel.nearest_petrol_pump}</p>}
+                          {cc.fuel?.nearest_petrol_pump ? <p className="text-sm text-muted-foreground mb-1"><span className="font-medium text-foreground">Fuel:</span> {cc.fuel.nearest_petrol_pump}</p> : cc.fuel?.note ? <p className="text-sm text-muted-foreground mb-1"><span className="font-medium text-foreground">Fuel:</span> {cc.fuel.note}</p> : null}
                           {cc.fuel?.carry_extra && <p className="text-sm text-yellow-400 mb-1">⚠ Carry extra fuel</p>}
                           {cc.fuel?.ev_charging && <p className="text-sm text-emerald-400 mb-1">EV charging available</p>}
-                          {cc.sleep?.price_range_inr && <p className="text-sm text-muted-foreground mb-1"><span className="font-medium text-foreground">Stay:</span> ₹{cc.sleep.price_range_inr}/night</p>}
+                          {cc.sleep?.price_range_inr ? <p className="text-sm text-muted-foreground mb-1"><span className="font-medium text-foreground">Stay:</span> ₹{cc.sleep.price_range_inr}/night</p> : cc.sleep?.note ? <p className="text-sm text-muted-foreground mb-1"><span className="font-medium text-foreground">Stay:</span> {cc.sleep.note}</p> : null}
                           {cc.sleep?.options_count && <p className="text-sm text-muted-foreground mb-1">{cc.sleep.options_count}+ options ({(cc.sleep.types || []).join(", ")})</p>}
                           {cc.sleep?.emergency_stay && <p className="text-sm text-muted-foreground"><span className="font-medium text-foreground">Emergency:</span> {cc.sleep.emergency_stay}</p>}
                         </div>

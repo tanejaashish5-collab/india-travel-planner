@@ -18,6 +18,7 @@ interface ConfidenceCardProps {
     price_range_inr?: string;
     booking_method?: string;
     emergency_stay?: string;
+    note?: string;
   };
   fuel: {
     nearest_petrol_pump?: string;
@@ -25,6 +26,7 @@ interface ConfidenceCardProps {
     ev_charging?: boolean;
     carry_extra?: boolean;
     jerry_can_size_liters?: number;
+    note?: string;
   };
   weather_night: {
     summer_low_c?: number;
@@ -146,11 +148,13 @@ export function ConfidenceCardComponent(props: ConfidenceCardProps) {
               options ({props.sleep.types?.join(", ")})
             </p>
           )}
-          {props.sleep.price_range_inr && (
+          {props.sleep.price_range_inr ? (
             <p className="text-muted-foreground">
               ₹{props.sleep.price_range_inr}/night
             </p>
-          )}
+          ) : props.sleep.note ? (
+            <p className="text-muted-foreground">{props.sleep.note}</p>
+          ) : null}
           {props.sleep.booking_method && (
             <p className="text-muted-foreground">
               {props.sleep.booking_method}
@@ -165,9 +169,11 @@ export function ConfidenceCardComponent(props: ConfidenceCardProps) {
 
         {/* Fuel */}
         <Section icon="⛽" title={t("fuel")}>
-          {props.fuel.nearest_petrol_pump && (
+          {props.fuel.nearest_petrol_pump ? (
             <p>Nearest: {props.fuel.nearest_petrol_pump}</p>
-          )}
+          ) : props.fuel.note ? (
+            <p className="text-muted-foreground">{props.fuel.note}</p>
+          ) : null}
           {props.fuel.next_after_that && (
             <p className="text-muted-foreground">
               Next: {props.fuel.next_after_that}
