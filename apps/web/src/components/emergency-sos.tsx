@@ -675,7 +675,7 @@ export function SOSFloatingButton({ onClick }: { onClick: () => void }) {
   return (
     <button
       onClick={onClick}
-      className="fixed bottom-24 right-4 md:bottom-8 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-red-600 text-white shadow-lg shadow-red-600/30 hover:bg-red-700 transition-all animate-pulse-subtle"
+      className="fixed bottom-36 right-4 md:bottom-8 z-30 md:z-50 flex h-14 w-14 items-center justify-center rounded-full bg-red-600 text-white shadow-lg shadow-red-600/30 hover:bg-red-700 transition-all animate-pulse-subtle"
       aria-label="Emergency SOS"
     >
       <span className="text-xs font-bold tracking-wider">SOS</span>

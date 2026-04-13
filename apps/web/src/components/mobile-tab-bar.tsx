@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { useLocale } from "next-intl";
 import { usePathname } from "next/navigation";
 
@@ -10,9 +9,20 @@ const tabs = [
     label: "Explore",
     href: "/explore",
     icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         <circle cx="12" cy="12" r="10" />
         <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76" />
+      </svg>
+    ),
+  },
+  {
+    id: "states",
+    label: "States",
+    href: "/states",
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+        <circle cx="12" cy="10" r="3" />
       </svg>
     ),
   },
@@ -21,7 +31,7 @@ const tabs = [
     label: "Collections",
     href: "/collections",
     icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         <rect x="3" y="3" width="7" height="7" rx="1" />
         <rect x="14" y="3" width="7" height="7" rx="1" />
         <rect x="3" y="14" width="7" height="7" rx="1" />
@@ -30,34 +40,21 @@ const tabs = [
     ),
   },
   {
-    id: "routes",
-    label: "Routes",
-    href: "/routes",
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M3 6l3-3 3 3" />
-        <path d="M6 3v12a3 3 0 0 0 3 3h1" />
-        <path d="M21 18l-3 3-3-3" />
-        <path d="M18 21V9a3 3 0 0 0-3-3h-1" />
-      </svg>
-    ),
-  },
-  {
     id: "saved",
     label: "Saved",
     href: "/saved",
     icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
       </svg>
     ),
   },
   {
     id: "menu",
-    label: "Menu",
+    label: "More",
     href: "/plan",
     icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         <line x1="3" y1="6" x2="21" y2="6" />
         <line x1="3" y1="12" x2="21" y2="12" />
         <line x1="3" y1="18" x2="21" y2="18" />
@@ -77,7 +74,7 @@ export function MobileTabBar() {
 
   return (
     <nav
-      className="fixed bottom-0 left-0 right-0 z-50 border-t border-border/50 bg-background/80 backdrop-blur-xl md:hidden pb-safe"
+      className="fixed bottom-0 left-0 right-0 z-40 border-t border-border/50 bg-background md:hidden pb-safe"
       role="navigation"
       aria-label="Main navigation"
     >
@@ -85,10 +82,10 @@ export function MobileTabBar() {
         {tabs.map((tab) => {
           const active = isActive(tab.href);
           return (
-            <Link
+            <a
               key={tab.id}
               href={`/${locale}${tab.href}`}
-              className={`flex flex-col items-center justify-center gap-0.5 rounded-lg px-3 py-1.5 text-[10px] font-medium transition-colors touch-target ${
+              className={`flex flex-col items-center justify-center gap-0.5 rounded-lg px-2.5 py-1.5 text-[10px] font-medium transition-colors min-w-[48px] min-h-[44px] ${
                 active
                   ? "text-[#E55642]"
                   : "text-muted-foreground"
@@ -98,7 +95,7 @@ export function MobileTabBar() {
                 {tab.icon}
               </span>
               <span>{tab.label}</span>
-            </Link>
+            </a>
           );
         })}
       </div>

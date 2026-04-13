@@ -26,7 +26,7 @@ export function StickyCTA() {
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: 100, opacity: 0 }}
           transition={{ type: "spring", stiffness: 300, damping: 30 }}
-          className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50"
+          className="fixed bottom-20 right-4 sm:bottom-6 sm:right-6 z-30 md:z-50"
         >
           <Link
             href={`/${locale}/plan`}

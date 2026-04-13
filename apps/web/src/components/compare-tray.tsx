@@ -99,7 +99,7 @@ function CompareTray() {
         initial={{ y: 100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         exit={{ y: 100, opacity: 0 }}
-        className="fixed bottom-0 left-0 right-0 z-50 border-t border-border bg-card/95 backdrop-blur-xl shadow-2xl shadow-black/30"
+        className="fixed bottom-16 md:bottom-0 left-0 right-0 z-40 border-t border-border bg-card shadow-2xl shadow-black/30"
       >
         <div className="mx-auto max-w-5xl px-4 py-3">
           <div className="flex items-center justify-between gap-4">
