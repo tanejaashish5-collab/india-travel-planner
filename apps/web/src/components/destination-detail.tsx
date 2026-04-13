@@ -579,16 +579,16 @@ export function DestinationDetail({ dest }: { dest: any }) {
                         </div>
                       )}
 
-                      {/* Medical */}
-                      {cc.emergency && (
+                      {/* Medical — from confidence_cards.emergency OR emergency_sos */}
+                      {(cc.emergency || dest.emergencySos) && (
                         <div className="rounded-xl border border-border p-4">
                           <div className="flex items-center gap-2 mb-2">
                             <span className="text-lg">🏥</span>
                             <h3 className="text-sm font-semibold">Medical & Emergency</h3>
                           </div>
-                          {cc.emergency.nearest_hospital && <p className="text-sm text-muted-foreground mb-1"><span className="font-medium text-foreground">Hospital:</span> {cc.emergency.nearest_hospital}</p>}
-                          {cc.emergency.ambulance && <p className="text-sm text-muted-foreground mb-1"><span className="font-medium text-foreground">Ambulance:</span> {cc.emergency.ambulance}</p>}
-                          {cc.emergency.police_station && <p className="text-sm text-muted-foreground"><span className="font-medium text-foreground">Police:</span> {cc.emergency.police_station}</p>}
+                          {(cc.emergency?.nearest_hospital || dest.emergencySos?.nearest_hospital) && <p className="text-sm text-muted-foreground mb-1"><span className="font-medium text-foreground">Hospital:</span> {cc.emergency?.nearest_hospital || dest.emergencySos?.nearest_hospital}{dest.emergencySos?.nearest_hospital_km ? ` (${dest.emergencySos.nearest_hospital_km} km)` : ""}</p>}
+                          {(cc.emergency?.ambulance || dest.emergencySos?.ambulance) && <p className="text-sm text-muted-foreground mb-1"><span className="font-medium text-foreground">Ambulance:</span> {cc.emergency?.ambulance || dest.emergencySos?.ambulance}</p>}
+                          {(cc.emergency?.police_station || dest.emergencySos?.police) && <p className="text-sm text-muted-foreground"><span className="font-medium text-foreground">Police:</span> {cc.emergency?.police_station || dest.emergencySos?.police}</p>}
                         </div>
                       )}
 
@@ -612,10 +612,12 @@ export function DestinationDetail({ dest }: { dest: any }) {
                             <span className="text-lg">⛽</span>
                             <h3 className="text-sm font-semibold">Fuel & Stay</h3>
                           </div>
-                          {cc.fuel?.nearest_pump && <p className="text-sm text-muted-foreground mb-1"><span className="font-medium text-foreground">Fuel:</span> {cc.fuel.nearest_pump}</p>}
-                          {cc.fuel?.note && <p className="text-sm text-muted-foreground mb-1">{cc.fuel.note}</p>}
-                          {cc.sleep?.budget && <p className="text-sm text-muted-foreground mb-1"><span className="font-medium text-foreground">Budget stay:</span> {cc.sleep.budget}</p>}
-                          {cc.sleep?.mid && <p className="text-sm text-muted-foreground"><span className="font-medium text-foreground">Mid-range:</span> {cc.sleep.mid}</p>}
+                          {(cc.fuel?.nearest_pump || cc.fuel?.nearest_petrol_pump) && <p className="text-sm text-muted-foreground mb-1"><span className="font-medium text-foreground">Fuel:</span> {cc.fuel.nearest_pump || cc.fuel.nearest_petrol_pump}</p>}
+                          {cc.fuel?.carry_extra && <p className="text-sm text-yellow-400 mb-1">⚠ Carry extra fuel</p>}
+                          {cc.fuel?.ev_charging && <p className="text-sm text-emerald-400 mb-1">EV charging available</p>}
+                          {cc.sleep?.price_range_inr && <p className="text-sm text-muted-foreground mb-1"><span className="font-medium text-foreground">Stay:</span> ₹{cc.sleep.price_range_inr}/night</p>}
+                          {cc.sleep?.options_count && <p className="text-sm text-muted-foreground mb-1">{cc.sleep.options_count}+ options ({(cc.sleep.types || []).join(", ")})</p>}
+                          {cc.sleep?.emergency_stay && <p className="text-sm text-muted-foreground"><span className="font-medium text-foreground">Emergency:</span> {cc.sleep.emergency_stay}</p>}
                         </div>
                       )}
                     </div>
