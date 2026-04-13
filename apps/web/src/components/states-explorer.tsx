@@ -27,6 +27,7 @@ interface StateData {
 const REGION_TABS = [
   { id: "all", label: "All India" },
   { id: "north", label: "North" },
+  { id: "west", label: "West" },
   { id: "northeast", label: "Northeast" },
   { id: "east", label: "East" },
   { id: "central", label: "Central" },

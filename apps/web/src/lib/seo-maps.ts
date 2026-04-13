@@ -13,6 +13,7 @@ export const STATE_MAP: Record<string, string> = {
   "haryana": "Haryana", "jharkhand": "Jharkhand",
   "manipur": "Manipur", "meghalaya": "Meghalaya",
   "mizoram": "Mizoram", "nagaland": "Nagaland", "tripura": "Tripura",
+  "gujarat": "Gujarat",
 };
 
 export const REGION_GROUPS: Record<string, { name: string; states: string[] }> = {
@@ -30,7 +31,7 @@ export const REGION_GROUPS: Record<string, { name: string; states: string[] }> =
   },
   "west": {
     name: "West India",
-    states: [], // Will be populated as we add West India states (Gujarat, Maharashtra, Goa)
+    states: ["gujarat"],
   },
   "central": {
     name: "Central India",

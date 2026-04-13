@@ -34,7 +34,7 @@ async function getData(stateSlug: string) {
   // Run all queries in parallel — use try/catch to prevent any single failure from crashing
   const [stateResult, regionResult, destResult, allStatesResult] = await Promise.all([
     supabase.from("states").select("id, name, region, description, capital, display_order").eq("id", stateSlug).single(),
-    supabase.from("regions").select("id, name, state_id, hero_tagline, description, subregions, tags, best_months, popular_anchors").eq("state_id", stateSlug).maybeSingle(),
+    supabase.from("regions").select("id, name, state_id, hero_tagline, description, subregions, tags, best_months, popular_anchors, famous_for, must_visit").eq("state_id", stateSlug).maybeSingle(),
     supabase
       .from("destinations")
       .select("id, name, tagline, difficulty, elevation_m, tags, translations, state_id, kids_friendly(suitable, rating), destination_months(month, score, note)")
@@ -155,6 +155,43 @@ export default async function StateHubPage({
               {region.description && (
                 <p className="text-[15px] text-muted-foreground leading-relaxed max-w-3xl">{region.description}</p>
               )}
+            </div>
+          )}
+
+          {/* Famous For — what this state is known for */}
+          {region?.famous_for && region.famous_for.length > 0 && (
+            <div className="mb-8 rounded-2xl border border-border/50 bg-card/50 p-5 sm:p-6">
+              <h2 className="text-sm font-bold uppercase tracking-[0.15em] text-muted-foreground/50 mb-4">What {stateName} is known for</h2>
+              <div className="grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
+                {region.famous_for.map((item: string, i: number) => (
+                  <div key={i} className="flex items-start gap-2.5">
+                    <span className="mt-1 h-1.5 w-1.5 rounded-full bg-primary shrink-0" />
+                    <span className="text-sm text-foreground/80 leading-relaxed">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Must Visit — top picks if you have limited time */}
+          {region?.must_visit && (region.must_visit as any[]).length > 0 && (
+            <div className="mb-8">
+              <h2 className="text-sm font-bold uppercase tracking-[0.15em] text-muted-foreground/50 mb-4">Must visit in {stateName}</h2>
+              <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                {(region.must_visit as any[]).map((mv: any) => (
+                  <a
+                    key={mv.id}
+                    href={`/${locale}/destination/${mv.id}`}
+                    className="group rounded-xl border border-border/50 bg-card p-4 hover:border-primary/40 hover:shadow-lg transition-all"
+                  >
+                    <div className="flex items-center gap-2 mb-1.5">
+                      <span className="text-primary text-lg">&#9733;</span>
+                      <h3 className="font-semibold text-foreground group-hover:text-primary transition-colors">{mv.name}</h3>
+                    </div>
+                    <p className="text-xs text-muted-foreground leading-relaxed">{mv.why}</p>
+                  </a>
+                ))}
+              </div>
             </div>
           )}
 

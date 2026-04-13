@@ -32,6 +32,7 @@ const ACTIVE_STATES = new Set([
   "haryana", "madhya-pradesh", "sikkim", "west-bengal",
   "arunachal-pradesh", "assam", "meghalaya", "nagaland",
   "manipur", "mizoram", "tripura", "bihar", "jharkhand", "chhattisgarh",
+  "gujarat",
 ]);
 
 // Score to color mapping
@@ -81,6 +82,7 @@ export function IndiaMap({ states, locale, activeRegion }: IndiaMapProps) {
     if (activeRegion === "all") return null;
     const REGION_MAP: Record<string, string[]> = {
       north: ["himachal-pradesh", "uttarakhand", "jammu-kashmir", "ladakh", "rajasthan", "punjab", "delhi", "uttar-pradesh", "chandigarh", "haryana"],
+      west: ["gujarat"],
       northeast: ["sikkim", "arunachal-pradesh", "assam", "meghalaya", "nagaland", "manipur", "mizoram", "tripura"],
       east: ["west-bengal", "bihar", "jharkhand"],
       central: ["madhya-pradesh", "chhattisgarh"],

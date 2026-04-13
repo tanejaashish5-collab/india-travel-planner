@@ -374,6 +374,12 @@ const BROWSE_REGIONS = [
     ],
   },
   {
+    label: "West India",
+    states: [
+      { id: "gujarat", name: "Gujarat", short: "GJ" },
+    ],
+  },
+  {
     label: "Central & East",
     states: [
       { id: "madhya-pradesh", name: "Madhya Pradesh", short: "MP" },
