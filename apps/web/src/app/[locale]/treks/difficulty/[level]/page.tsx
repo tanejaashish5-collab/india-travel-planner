@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: { params: Promise<{ level: st
   if (!name) return {};
   return {
     title: `${name} Treks in India — Scored Trails | NakshIQ`,
-    description: `All ${name.toLowerCase()} treks across North India with altitude, duration, best months, gear requirements, and fitness level needed.`,
+    description: `All ${name.toLowerCase()} treks across India with altitude, duration, best months, gear requirements, and fitness level needed.`,
   };
 }
 
@@ -46,7 +46,7 @@ export default async function TreksByDifficultyPage({ params }: { params: Promis
         <div className="mb-8">
           <p className="text-sm font-medium text-primary uppercase tracking-widest mb-2">Difficulty: {name}</p>
           <h1 className="text-3xl font-bold">{name} Treks</h1>
-          <p className="mt-2 text-muted-foreground">{(treks ?? []).length} {name.toLowerCase()} treks across North India</p>
+          <p className="mt-2 text-muted-foreground">{(treks ?? []).length} {name.toLowerCase()} treks across India</p>
         </div>
         <TreksContent treks={treks ?? []} trekDests={[]} gearChecklists={[]} />
       </main>

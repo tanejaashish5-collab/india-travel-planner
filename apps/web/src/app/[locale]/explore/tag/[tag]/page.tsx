@@ -17,7 +17,7 @@ function getSupabase() {
 const TAG_DISPLAY: Record<string, { title: string; desc: string }> = {
   "offbeat": { title: "Offbeat Destinations", desc: "Places most tourists haven't heard of — scored for the adventurous" },
   "trek": { title: "Trekking Destinations", desc: "Base camps, trail heads, and mountain towns for trekkers" },
-  "spiritual": { title: "Spiritual Destinations", desc: "Temples, ashrams, and sacred sites across North India" },
+  "spiritual": { title: "Spiritual Destinations", desc: "Temples, ashrams, and sacred sites across India" },
   "heritage": { title: "Heritage Destinations", desc: "Forts, palaces, monuments, and UNESCO sites" },
   "wildlife": { title: "Wildlife Destinations", desc: "National parks, tiger reserves, and birding hotspots" },
   "lake": { title: "Lake Destinations", desc: "Hill station lakes, sacred lakes, and high-altitude water bodies" },
@@ -26,7 +26,7 @@ const TAG_DISPLAY: Record<string, { title: string; desc: string }> = {
   "family": { title: "Family Destinations", desc: "Kid-tested, parent-approved — with actual kids ratings" },
   "winter": { title: "Winter Destinations", desc: "Snow, skiing, and destinations that shine in December-February" },
   "monsoon": { title: "Monsoon Destinations", desc: "Waterfalls, green valleys, and places that come alive in rain" },
-  "photography": { title: "Photography Destinations", desc: "The most photogenic destinations in North India" },
+  "photography": { title: "Photography Destinations", desc: "The most photogenic destinations in India" },
   "budget": { title: "Budget Destinations", desc: "Incredible experiences under ₹1,000 per day" },
   "pilgrimage": { title: "Pilgrimage Destinations", desc: "Sacred circuits and spiritual journeys across faiths" },
   "hill-station": { title: "Hill Stations", desc: "Classic and offbeat hill stations across the Himalayas" },

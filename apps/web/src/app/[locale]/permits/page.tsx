@@ -39,7 +39,7 @@ export default async function PermitsPage() {
         <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 max-w-7xl mx-auto">
           <p className="text-sm font-medium text-primary uppercase tracking-widest mb-2">Know Before You Go</p>
           <h1 className="text-3xl font-bold sm:text-4xl text-white drop-shadow-lg">Permits & Passes</h1>
-          <p className="mt-2 text-white/80 max-w-xl">{permits.length} permits across North India — know before you go</p>
+          <p className="mt-2 text-white/80 max-w-xl">{permits.length} permits across India — know before you go</p>
         </div>
       </section>
       <main className="mx-auto max-w-5xl px-4 py-8">

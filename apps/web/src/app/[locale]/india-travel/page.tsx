@@ -9,7 +9,7 @@ export const revalidate = 86400;
 export const metadata: Metadata = {
   title: "India Travel Guide for International Visitors — NakshIQ",
   description:
-    "Honest India travel tips 2026 from an Indian family. Safety, scams, food, transport, and what your guidebook won't tell you. 229 destinations scored.",
+    "Honest India travel tips 2026 from an Indian family. Safety, scams, food, transport, and what your guidebook won't tell you. 260+ destinations scored.",
   openGraph: {
     title: "India Travel Guide for International Visitors — NakshIQ",
     description:
@@ -94,7 +94,7 @@ export default async function IndiaTravel() {
       <div className="border-b border-border/50 bg-card/50">
         <div className="mx-auto max-w-4xl px-4 py-5 flex flex-wrap justify-center gap-8 sm:gap-12">
           {[
-            { num: "229", label: "Destinations Scored" },
+            { num: "260+", label: "Destinations Scored" },
             { num: "2,748", label: "Monthly Ratings" },
             { num: "0", label: "Paid Placements" },
           ].map((stat) => (
@@ -120,7 +120,7 @@ export default async function IndiaTravel() {
             href="/en/explore"
             className="inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-3 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
           >
-            Explore 229 destinations
+            Explore 260+ destinations
             <svg
               width="16"
               height="16"

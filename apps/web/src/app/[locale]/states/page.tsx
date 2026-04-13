@@ -8,7 +8,7 @@ export const revalidate = 3600;
 
 export const metadata: Metadata = {
   title: "Browse India by State — Every Destination Scored",
-  description: "Explore India state by state. 229+ destinations across 23 states, each scored for every month. Find the best places to visit in any Indian state.",
+  description: "Explore India state by state. 260+ destinations across 24 states, each scored for every month. Find the best places to visit in any Indian state.",
 };
 
 async function getData() {

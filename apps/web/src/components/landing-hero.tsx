@@ -327,8 +327,8 @@ export function LandingHero({
           {/* Stats — animated counters */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-8">
             {[
-              { num: stats?.destinations ?? 229, suffix: "", label: "Destinations", href: `/${locale}/explore` },
-              { num: stats?.places ?? 590, suffix: "+", label: t("stats.places"), href: `/${locale}/explore` },
+              { num: stats?.destinations ?? 260, suffix: "", label: "Destinations", href: `/${locale}/explore` },
+              { num: stats?.places ?? 700, suffix: "+", label: t("stats.places"), href: `/${locale}/explore` },
               { num: stats?.festivals ?? 183, suffix: "", label: "Festivals", href: `/${locale}/festivals` },
               { num: stats?.routes ?? 39, suffix: "", label: t("stats.routes"), href: `/${locale}/routes` },
             ].map((stat) => (
@@ -379,7 +379,7 @@ export function LandingHero({
                   Explore the Map
                 </p>
                 <h2 className="text-3xl font-bold sm:text-4xl">
-                  {mapPins.length} Destinations Across North India
+                  {mapPins.length} Destinations Across India
                 </h2>
                 <p className="mt-2 text-muted-foreground">
                   Click any pin to see this month's score and jump to details
@@ -469,7 +469,7 @@ export function LandingHero({
                 href={`/${locale}/explore`}
                 className="inline-flex items-center gap-2 text-sm text-primary hover:underline"
               >
-                View all {stats?.destinations ?? 229} destinations →
+                View all {stats?.destinations ?? 260} destinations →
               </Link>
             </div>
           </div>

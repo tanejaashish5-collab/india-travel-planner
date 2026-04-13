@@ -10,7 +10,7 @@ export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: "Collections — Themed Destination Lists",
-  description: "Themed collections: best family destinations, frozen wonders, most dangerous roads, zero-signal zones, ancient monasteries, and more. Hand-picked from 590+ places.",
+  description: "Themed collections: best family destinations, frozen wonders, most dangerous roads, zero-signal zones, ancient monasteries, and more. Hand-picked from 700+ places.",
 };
 
 async function getCollections() {

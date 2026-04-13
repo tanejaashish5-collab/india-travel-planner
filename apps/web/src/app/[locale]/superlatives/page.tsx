@@ -9,7 +9,7 @@ export const revalidate = 3600;
 
 export const metadata: Metadata = {
   title: "India's Records & Firsts — Superlatives",
-  description: "The highest, oldest, most dangerous, and most unique places in North India. 25 superlative records with destinations and details.",
+  description: "The highest, oldest, most dangerous, and most unique places in India. 25 superlative records with destinations and details.",
 };
 
 async function getSuperlatives() {
@@ -39,7 +39,7 @@ export default async function SuperlativesPage() {
         <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 max-w-7xl mx-auto">
           <p className="text-sm font-medium text-primary uppercase tracking-widest mb-2">India's Records</p>
           <h1 className="text-3xl font-bold sm:text-4xl text-white drop-shadow-lg">Superlatives & Records</h1>
-          <p className="mt-2 text-white/80 max-w-xl">{superlatives.length} superlatives — the highest, oldest, most dangerous, and most unique places in North India</p>
+          <p className="mt-2 text-white/80 max-w-xl">{superlatives.length} superlatives — the highest, oldest, most dangerous, and most unique places in India</p>
         </div>
       </section>
       <main className="mx-auto max-w-5xl px-4 py-8">

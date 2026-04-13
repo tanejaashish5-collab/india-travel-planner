@@ -9,7 +9,7 @@ export const revalidate = 86400;
 
 export const metadata: Metadata = {
   title: "Road Conditions — Live Highway Status",
-  description: "Current road conditions for major North India highway segments. Manali-Leh, Srinagar-Leh, Char Dham roads, Spiti circuit, and more. Updated regularly.",
+  description: "Current road conditions for major India highway segments. Manali-Leh, Srinagar-Leh, Char Dham roads, Spiti circuit, and more. Updated regularly.",
 };
 
 async function getRoadReports() {

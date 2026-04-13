@@ -8,8 +8,8 @@ import { createClient } from "@supabase/supabase-js";
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: "Road Trip Routes — Driving Itineraries Across North India",
-  description: "Multi-day driving routes across North India with day-by-day stops, distance, difficulty, kids suitability, and Google Maps links. From 3-day weekends to 14-day epics.",
+  title: "Road Trip Routes — Driving Itineraries Across India",
+  description: "Multi-day driving routes across India with day-by-day stops, distance, difficulty, kids suitability, and Google Maps links. From 3-day weekends to 14-day epics.",
 };
 
 async function getRoutes() {

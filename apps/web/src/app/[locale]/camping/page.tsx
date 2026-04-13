@@ -8,7 +8,7 @@ import { createClient } from "@supabase/supabase-js";
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: "Camping Spots — Best Campsites Across North India",
+  title: "Camping Spots — Best Campsites Across India",
   description: "Scored camping spots from riverside sites in Rishikesh to high-altitude camps near Pangong. Facilities, elevation, best months, and permit requirements.",
 };
 

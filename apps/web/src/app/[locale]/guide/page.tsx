@@ -9,7 +9,7 @@ export const revalidate = 86400;
 
 export const metadata: Metadata = {
   title: "Travel Guides — Data-Driven Destination Intelligence",
-  description: "In-depth travel guides for 124 North India destinations. Best time to visit, costs, family suitability, infrastructure reality, and honest opinions.",
+  description: "In-depth travel guides for 260+ India destinations. Best time to visit, costs, family suitability, infrastructure reality, and honest opinions.",
 };
 
 async function getGuideData() {
