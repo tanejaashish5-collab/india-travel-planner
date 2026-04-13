@@ -14,6 +14,7 @@ interface StateData {
   capital: string | null;
   display_order: number;
   destCount: number;
+  heroDestId: string;
   regionDetail: {
     hero_tagline: string | null;
     tags: string[] | null;
@@ -104,7 +105,7 @@ export function StatesExplorer({ states, locale }: { states: StateData[]; locale
                 {/* Hero image */}
                 <div className="relative h-36 bg-muted/30 overflow-hidden">
                   <Image
-                    src={`/images/destinations/${state.id}.jpg`}
+                    src={`/images/destinations/${state.heroDestId}.jpg`}
                     alt={state.name}
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"

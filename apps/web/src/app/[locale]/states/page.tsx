@@ -21,13 +21,15 @@ async function getData() {
   const [statesResult, regionsResult, destResult] = await Promise.all([
     supabase.from("states").select("id, name, region, description, capital, display_order").order("display_order"),
     supabase.from("regions").select("id, name, state_id, hero_tagline, tags, best_months, subregions").order("id"),
-    supabase.from("destinations").select("state_id"),
+    supabase.from("destinations").select("id, state_id").order("name"),
   ]);
 
-  // Build dest count map
+  // Build dest count map + first dest ID per state (for hero images)
   const countMap: Record<string, number> = {};
+  const firstDestMap: Record<string, string> = {};
   (destResult.data ?? []).forEach((d: any) => {
     countMap[d.state_id] = (countMap[d.state_id] || 0) + 1;
+    if (!firstDestMap[d.state_id]) firstDestMap[d.state_id] = d.id;
   });
 
   // Build region detail map
@@ -40,6 +42,7 @@ async function getData() {
   const states = (statesResult.data ?? []).map((s: any) => ({
     ...s,
     destCount: countMap[s.id] ?? 0,
+    heroDestId: firstDestMap[s.id] ?? s.id,
     regionDetail: regionMap[s.id] ?? null,
   }));
 

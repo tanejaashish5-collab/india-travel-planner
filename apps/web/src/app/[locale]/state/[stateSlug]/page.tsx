@@ -39,7 +39,7 @@ async function getData(stateSlug: string) {
 
   const [stateResult, regionResult, destResult, allStatesResult] = await Promise.all([
     supabase.from("states").select("*").eq("id", stateSlug).single(),
-    supabase.from("regions").select("*").eq("state_id", stateSlug).single(),
+    supabase.from("regions").select("*").eq("state_id", stateSlug).maybeSingle(),
     supabase
       .from("destinations")
       .select(`
@@ -78,6 +78,9 @@ export default async function StateHubPage({
   const { state, region, destinations, allStates } = data;
   const regionGroup = getRegionNameForState(stateSlug);
   const currentMonth = new Date().getMonth() + 1;
+
+  // Use first destination's image as state hero (state-level images don't exist)
+  const heroDestId = destinations[0]?.id ?? stateSlug;
 
   // Calculate state-level stats
   const totalDests = destinations.length;
@@ -120,9 +123,9 @@ export default async function StateHubPage({
       <Nav />
       <main id="main-content">
         {/* Hero */}
-        <div className="relative h-64 sm:h-80 lg:h-96 overflow-hidden">
+        <div className="relative h-64 sm:h-80 lg:h-96 overflow-hidden" style={{ background: "linear-gradient(135deg, oklch(0.25 0.02 260), oklch(0.18 0.01 280))" }}>
           <Image
-            src={`/images/destinations/${stateSlug}.jpg`}
+            src={`/images/destinations/${heroDestId}.jpg`}
             alt={stateName}
             fill
             sizes="100vw"
