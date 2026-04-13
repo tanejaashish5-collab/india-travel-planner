@@ -1,0 +1,89 @@
+{
+  "last_sync": "2026-04-13T06:49:52.705671+00:00",
+  "posted_today": {
+    "8iDfI": "2026-04-13",
+    "x4cT8": "2026-04-13"
+  },
+  "posted_destinations": [
+    {
+      "destination_id": "dhanaulti",
+      "date": "2026-04-12"
+    },
+    {
+      "destination_id": "bhimtal",
+      "date": "2026-04-12"
+    },
+    {
+      "destination_id": "srinagar",
+      "date": "2026-04-12"
+    },
+    {
+      "destination_id": "pahalgam",
+      "date": "2026-04-13"
+    },
+    {
+      "destination_id": "tirthan-valley",
+      "date": "2026-04-13"
+    }
+  ],
+  "posted_formats": {
+    "8iDfI": [
+      "score_card"
+    ],
+    "x4cT8": [
+      "score_card"
+    ]
+  },
+  "post_log": [
+    {
+      "timestamp": "2026-04-12T08:08:47Z",
+      "date": "2026-04-12",
+      "platform": "facebook",
+      "account_id": "8iDfI",
+      "post_id": "ey2lr",
+      "destination": "multi",
+      "format": "reality_check",
+      "has_media": false
+    },
+    {
+      "timestamp": "2026-04-12T08:25:57Z",
+      "date": "2026-04-12",
+      "platform": "facebook",
+      "account_id": "8iDfI",
+      "post_id": "Wvxrz",
+      "destination": "dhanaulti",
+      "format": "score_card",
+      "has_media": true
+    },
+    {
+      "timestamp": "2026-04-12T08:50:00Z",
+      "date": "2026-04-12",
+      "platform": "instagram",
+      "account_id": "x4cT8",
+      "post_id": "rj3z4",
+      "destination": "srinagar",
+      "format": "score_card",
+      "has_media": true
+    },
+    {
+      "timestamp": "2026-04-13T06:50:06.299945+00:00",
+      "date": "2026-04-13",
+      "platform": "facebook",
+      "account_id": "8iDfI",
+      "post_id": "zgJdP",
+      "destination": "pahalgam",
+      "format": "score_card",
+      "has_media": true
+    },
+    {
+      "timestamp": "2026-04-13T06:50:37.042081+00:00",
+      "date": "2026-04-13",
+      "platform": "instagram",
+      "account_id": "x4cT8",
+      "post_id": "9UpkQ",
+      "destination": "tirthan-valley",
+      "format": "score_card",
+      "has_media": true
+    }
+  ]
+}
