@@ -14,22 +14,33 @@ export const metadata: Metadata = {
 async function getData() {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-  if (!url || !key) return { states: [], regions: [] };
+  if (!url || !key) return { states: [] };
 
   const supabase = createClient(url, key);
 
   const [statesResult, regionsResult, destResult] = await Promise.all([
     supabase.from("states").select("id, name, region, description, capital, display_order").order("display_order"),
     supabase.from("regions").select("id, name, state_id, hero_tagline, tags, best_months, subregions").order("id"),
-    supabase.from("destinations").select("id, state_id").order("name"),
+    supabase.from("destinations").select("id, state_id, destination_months(month, score)"),
   ]);
 
-  // Build dest count map + first dest ID per state (for hero images)
+  const currentMonth = new Date().getMonth() + 1;
+
+  // Build per-state: dest count, first dest ID, avg score
   const countMap: Record<string, number> = {};
   const firstDestMap: Record<string, string> = {};
+  const scoreSum: Record<string, { total: number; count: number }> = {};
+
   (destResult.data ?? []).forEach((d: any) => {
     countMap[d.state_id] = (countMap[d.state_id] || 0) + 1;
     if (!firstDestMap[d.state_id]) firstDestMap[d.state_id] = d.id;
+
+    const monthData = d.destination_months?.find((m: any) => m.month === currentMonth);
+    if (monthData?.score) {
+      if (!scoreSum[d.state_id]) scoreSum[d.state_id] = { total: 0, count: 0 };
+      scoreSum[d.state_id].total += monthData.score;
+      scoreSum[d.state_id].count++;
+    }
   });
 
   // Build region detail map
@@ -38,11 +49,11 @@ async function getData() {
     regionMap[r.state_id] = r;
   });
 
-  // Merge into states
   const states = (statesResult.data ?? []).map((s: any) => ({
     ...s,
     destCount: countMap[s.id] ?? 0,
     heroDestId: firstDestMap[s.id] ?? s.id,
+    avgScore: scoreSum[s.id] ? Math.round((scoreSum[s.id].total / scoreSum[s.id].count) * 10) / 10 : null,
     regionDetail: regionMap[s.id] ?? null,
   }));
 
