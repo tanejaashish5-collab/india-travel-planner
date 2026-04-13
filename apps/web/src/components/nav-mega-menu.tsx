@@ -398,6 +398,7 @@ function BrowsePanel({ locale, onNavigate }: { locale: string; onNavigate: () =>
                 <motion.div key={state.id} variants={staggerItem}>
                   <Link
                     href={`/${locale}/state/${state.id}`}
+                    prefetch={false}
                     onClick={onNavigate}
                     className="flex items-center gap-3 rounded-lg px-3 py-2 text-sm transition-colors hover:bg-accent group"
                   >
@@ -416,6 +417,7 @@ function BrowsePanel({ locale, onNavigate }: { locale: string; onNavigate: () =>
       <div className="mt-4 pt-4 border-t border-border/30">
         <Link
           href={`/${locale}/states`}
+          prefetch={false}
           onClick={onNavigate}
           className="inline-flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-accent transition-all"
         >
