@@ -310,7 +310,7 @@ export function LandingHero({
               </Link>
             </div>
             <div className="flex justify-center pt-3">
-              <Link
+              <a
                 href={`/${locale}/india-travel`}
                 className="inline-flex items-center gap-1.5 text-xs text-muted-foreground hover:text-blue-400 transition-colors group"
               >
@@ -320,7 +320,7 @@ export function LandingHero({
                   <path d="M2 12h20" />
                 </svg>
                 First time in India? Start here
-              </Link>
+              </a>
             </div>
           </FadeIn>
 

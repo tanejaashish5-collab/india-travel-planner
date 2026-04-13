@@ -335,13 +335,12 @@ function LearnPanel({ locale, onNavigate }: { locale: string; onNavigate: () => 
             Safety, scams, what to wear, food survival, solo female travel — the honest guide written by an Indian family.
           </p>
         </div>
-        <Link
+        <a
           href={`/${locale}/india-travel`}
-          onClick={onNavigate}
           className="mt-4 inline-flex items-center justify-center rounded-lg bg-blue-500/20 border border-blue-500/30 px-4 py-2 text-sm font-medium text-blue-400 hover:bg-blue-500/30 transition-colors"
         >
           Start here
-        </Link>
+        </a>
       </div>
     </motion.div>
   );

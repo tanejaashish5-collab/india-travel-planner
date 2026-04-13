@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { useLocale } from "next-intl";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -77,12 +76,12 @@ export function InternationalBanner() {
               </p>
             </div>
             <div className="flex items-center gap-3 shrink-0">
-              <Link
+              <a
                 href={`/${locale}/india-travel`}
                 className="rounded-md bg-blue-500/20 border border-blue-500/30 px-3 py-1 text-xs font-medium text-blue-400 hover:bg-blue-500/30 transition-colors whitespace-nowrap"
               >
                 Start here
-              </Link>
+              </a>
               <button
                 onClick={dismiss}
                 className="rounded-md p-1 text-muted-foreground/50 hover:text-muted-foreground hover:bg-muted/50 transition-colors"
