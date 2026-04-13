@@ -379,7 +379,7 @@ export function LandingHero({
                   Explore the Map
                 </p>
                 <h2 className="text-3xl font-bold sm:text-4xl">
-                  {mapPins.length} Destinations Across India
+                  {stats?.destinations || 260} Destinations Across India
                 </h2>
                 <p className="mt-2 text-muted-foreground">
                   Click any pin to see this month's score and jump to details
