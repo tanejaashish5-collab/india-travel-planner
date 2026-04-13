@@ -1,8 +1,6 @@
 "use client";
 
 import { useState, useMemo } from "react";
-import Link from "next/link";
-import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { REGION_GROUPS } from "@/lib/seo-maps";
 
@@ -98,19 +96,20 @@ export function StatesExplorer({ states, locale }: { states: StateData[]; locale
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: Math.min(i * 0.04, 0.6), duration: 0.3 }}
             >
-              <Link
+              <a
                 href={`/${locale}/state/${state.id}`}
                 className="group flex flex-col rounded-2xl border border-border/50 bg-card overflow-hidden hover:border-primary/40 hover:shadow-xl hover:shadow-primary/10 transition-all h-full"
               >
-                {/* Hero image */}
-                <div className="relative h-36 bg-muted/30 overflow-hidden">
-                  <Image
-                    src={`/images/destinations/${state.heroDestId}.jpg`}
-                    alt={state.name}
-                    fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    className="object-cover group-hover:scale-105 transition-transform duration-700"
-                  />
+                {/* Hero image — CSS background to avoid next/image crash on missing files */}
+                <div
+                  className="relative h-36 overflow-hidden"
+                  style={{
+                    background: `linear-gradient(135deg, oklch(0.22 0.03 260), oklch(0.16 0.02 280))`,
+                    backgroundImage: `url(/images/destinations/${state.heroDestId}.jpg)`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                  }}
+                >
                   <div className="absolute inset-0 bg-gradient-to-t from-card via-card/30 to-transparent" />
                   {/* Destination count badge */}
                   <div className="absolute top-3 right-3 rounded-full bg-black/60 backdrop-blur-sm px-3 py-1 text-xs font-mono font-bold text-white">
@@ -157,7 +156,7 @@ export function StatesExplorer({ states, locale }: { states: StateData[]; locale
                     </div>
                   )}
                 </div>
-              </Link>
+              </a>
             </motion.div>
           ))}
         </motion.div>

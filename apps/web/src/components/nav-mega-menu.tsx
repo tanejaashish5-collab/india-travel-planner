@@ -387,6 +387,14 @@ const BROWSE_REGIONS = [
 ];
 
 function BrowsePanel({ locale, onNavigate }: { locale: string; onNavigate: () => void }) {
+  // Use <a> tags instead of Next.js <Link> to avoid RSC streaming conflicts
+  // when the mega menu unmounts during client-side navigation
+  function handleClick(e: React.MouseEvent<HTMLAnchorElement>) {
+    onNavigate();
+    // Let the browser handle the navigation as a full page load
+    // This avoids the RSC client-side fetch race condition
+  }
+
   return (
     <motion.div variants={staggerContainer} initial="initial" animate="animate">
       <div className="grid grid-cols-3 gap-6">
@@ -396,17 +404,16 @@ function BrowsePanel({ locale, onNavigate }: { locale: string; onNavigate: () =>
             <div className="space-y-1">
               {region.states.map((state) => (
                 <motion.div key={state.id} variants={staggerItem}>
-                  <Link
+                  <a
                     href={`/${locale}/state/${state.id}`}
-                    prefetch={false}
-                    onClick={onNavigate}
+                    onClick={handleClick}
                     className="flex items-center gap-3 rounded-lg px-3 py-2 text-sm transition-colors hover:bg-accent group"
                   >
                     <span className="flex h-8 w-8 items-center justify-center rounded-md bg-muted/50 text-[10px] font-mono font-bold text-muted-foreground group-hover:bg-primary/20 group-hover:text-primary transition-colors">
                       {state.short}
                     </span>
                     <span className="text-muted-foreground group-hover:text-foreground transition-colors">{state.name}</span>
-                  </Link>
+                  </a>
                 </motion.div>
               ))}
             </div>
@@ -415,16 +422,15 @@ function BrowsePanel({ locale, onNavigate }: { locale: string; onNavigate: () =>
       </div>
       {/* Full map CTA */}
       <div className="mt-4 pt-4 border-t border-border/30">
-        <Link
+        <a
           href={`/${locale}/states`}
-          prefetch={false}
-          onClick={onNavigate}
+          onClick={handleClick}
           className="inline-flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-accent transition-all"
         >
           <MapPinIcon />
           <span>Browse all states on map</span>
           <span className="text-muted-foreground/40">→</span>
-        </Link>
+        </a>
       </div>
     </motion.div>
   );
