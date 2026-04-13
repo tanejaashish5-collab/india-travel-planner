@@ -142,7 +142,7 @@ const REPORT_FIELDS = [
 ];
 
 export function EmergencySOSSection({ sos, destinationName }: { sos: EmergencySOS | null; destinationName: string }) {
-  const [expanded, setExpanded] = useState(true);
+  const [expanded, setExpanded] = useState(false);
   const [reportOpen, setReportOpen] = useState(false);
   const [reportField, setReportField] = useState("");
   const [reportValue, setReportValue] = useState("");
@@ -159,22 +159,31 @@ export function EmergencySOSSection({ sos, destinationName }: { sos: EmergencySO
   const hasLocalHelpers = sos.local_helpers && sos.local_helpers.length > 0;
 
   return (
-    <section id="emergency-sos" className="rounded-2xl border-2 border-red-600/40 bg-red-950/20 overflow-hidden scroll-mt-24">
-      {/* Header */}
+    <section id="emergency-sos" className={`rounded-2xl border-2 overflow-hidden scroll-mt-24 transition-colors ${expanded ? "border-red-600/40 bg-red-950/20" : "border-border bg-card/50"}`}>
+      {/* Header — collapsed shows key info inline */}
       <button
         onClick={() => setExpanded(!expanded)}
-        className="w-full flex items-center gap-3 px-5 py-4 hover:bg-red-900/10 transition-colors md:cursor-pointer"
+        className={`w-full flex items-center gap-3 px-5 py-4 transition-colors md:cursor-pointer ${expanded ? "hover:bg-red-900/10" : "hover:bg-muted/30"}`}
       >
-        <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-red-600 animate-pulse-subtle">
-          <svg className="h-4 w-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+        <div className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full ${expanded ? "bg-red-600 animate-pulse-subtle" : "bg-red-600/20"}`}>
+          <svg className={`h-4 w-4 ${expanded ? "text-white" : "text-red-400"}`} fill="currentColor" viewBox="0 0 20 20">
             <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a.75.75 0 000 1.5h.253a.25.25 0 01.244.304l-.459 2.066A1.75 1.75 0 0010.747 15H11a.75.75 0 000-1.5h-.253a.25.25 0 01-.244-.304l.459-2.066A1.75 1.75 0 009.253 9H9z" clipRule="evenodd" />
           </svg>
         </div>
         <div className="flex-1 text-left">
-          <h2 className="text-lg font-bold text-red-400">Emergency SOS</h2>
-          <p className="text-xs text-red-300/60">{destinationName} emergency contacts & protocols</p>
+          <h2 className={`text-lg font-bold ${expanded ? "text-red-400" : "text-foreground"}`}>Emergency SOS</h2>
+          {expanded ? (
+            <p className="text-xs text-red-300/60">{destinationName} emergency contacts & protocols</p>
+          ) : (
+            <div className="flex flex-wrap items-center gap-x-3 gap-y-1 mt-0.5">
+              {sos.nearest_hospital && <span className="text-xs text-muted-foreground">🏥 {sos.nearest_hospital_km ? `${sos.nearest_hospital_km}km` : "Available"}</span>}
+              <span className="text-xs text-muted-foreground">📞 112</span>
+              {sos.avg_ambulance_response_min && <span className="text-xs text-muted-foreground">🚑 ~{sos.avg_ambulance_response_min}min</span>}
+              <span className="text-xs text-muted-foreground/50">Tap to expand</span>
+            </div>
+          )}
         </div>
-        <span className="text-sm text-red-400/60">{expanded ? "▲" : "▼"}</span>
+        <span className={`text-sm ${expanded ? "text-red-400/60" : "text-muted-foreground/40"}`}>{expanded ? "▲" : "▼"}</span>
       </button>
 
       <AnimatePresence initial={false}>
@@ -487,7 +496,7 @@ export function EmergencySOSSection({ sos, destinationName }: { sos: EmergencySO
                 <div>
                   <h3 className="text-xs font-bold text-muted-foreground uppercase tracking-wider mb-2">Local Helpers</h3>
                   <div className="grid gap-2 sm:grid-cols-2">
-                    {sos.local_helpers!.map((helper, i) => (
+                    {sos.local_helpers?.map((helper, i) => (
                       <div key={i} className="flex items-center gap-3 rounded-xl border border-border/50 p-3">
                         <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-red-500/10 text-sm font-bold text-red-400">
                           {helper.name.charAt(0)}

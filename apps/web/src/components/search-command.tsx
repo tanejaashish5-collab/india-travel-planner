@@ -296,7 +296,7 @@ export function SearchCommand({ open, onClose }: SearchCommandProps) {
         <div ref={listRef} className="max-h-[60vh] overflow-y-auto p-2">
           {!hasQuery && (
             <p className="px-3 py-8 text-center text-sm text-muted-foreground">
-              Start typing to search {destinations?.length ?? 143} destinations, {treks?.length ?? 49} treks, and more...
+              Start typing to search {destinations?.length || 260} destinations, {treks?.length || 60} treks, and more...
             </p>
           )}
 
