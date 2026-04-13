@@ -5,6 +5,8 @@ import { Footer } from "@/components/footer";
 import { StaysContent } from "@/components/stays-content";
 import { createClient } from "@supabase/supabase-js";
 
+export const revalidate = 3600;
+
 export const metadata: Metadata = {
   title: "Stay Intelligence — Where to Stay, Not Where to Book",
   description: "Decision-grade accommodation guidance for every destination. Best zones by traveler type, budget bands, stay types, and honest avoid-this warnings. Not a booking site.",

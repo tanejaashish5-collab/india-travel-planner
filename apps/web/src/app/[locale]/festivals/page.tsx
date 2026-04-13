@@ -5,9 +5,11 @@ import { Footer } from "@/components/footer";
 import { FestivalsContent } from "@/components/festivals-content";
 import { createClient } from "@supabase/supabase-js";
 
+export const revalidate = 3600;
+
 export const metadata: Metadata = {
-  title: "Festivals & Events — 168 Festivals Across India",
-  description: "Time your trip around India's most spectacular festivals. Pushkar Camel Fair, Dev Deepawali, Hemis Festival, Tulip Festival, and 160+ more with dates and destinations.",
+  title: "Festivals & Events — 183 Festivals Across India",
+  description: "Time your trip around India's most spectacular festivals. Pushkar Camel Fair, Dev Deepawali, Hemis Festival, Tulip Festival, and 180+ more with dates and destinations.",
 };
 
 async function getFestivals() {

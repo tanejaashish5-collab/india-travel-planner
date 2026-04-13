@@ -4,6 +4,8 @@ import { Footer } from "@/components/footer";
 import { ExploreWithMap } from "@/components/explore-with-map";
 import { createClient } from "@supabase/supabase-js";
 
+export const revalidate = 3600;
+
 export const metadata: Metadata = {
   title: "Explore Destinations — Filter by Month, Difficulty, Kids & More",
   description: "Browse 143+ destinations across India with monthly suitability scores. Filter by state, difficulty, kids-friendliness, and sort by elevation or score. Grid and map views.",
@@ -54,9 +56,10 @@ export default async function ExplorePage() {
   return (
     <div className="min-h-screen">
       <Nav />
-      <main className="mx-auto max-w-7xl px-4 py-8">
+      <main id="main-content" className="mx-auto max-w-7xl px-4 py-8">
         <div className="mb-6">
           <h1 className="text-3xl font-bold">Explore</h1>
+          <h2 className="sr-only">Destinations</h2>
           <p className="mt-1 text-muted-foreground">
             {destinations.length} destinations · Filter or browse the map
           </p>

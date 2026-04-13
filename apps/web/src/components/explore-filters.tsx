@@ -88,10 +88,10 @@ export function ExploreFilters({
           className="shrink-0 rounded-lg border border-border bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/50"
         >
           <option value="">{tf("difficulty")}</option>
-          <option value="easy">Easy</option>
-          <option value="moderate">Moderate</option>
-          <option value="hard">Hard</option>
-          <option value="extreme">Extreme</option>
+          <option value="easy">{tf("easy")}</option>
+          <option value="moderate">{tf("moderate")}</option>
+          <option value="hard">{tf("hard")}</option>
+          <option value="extreme">{tf("extreme")}</option>
         </select>
 
         {/* Kids toggle */}
@@ -112,13 +112,13 @@ export function ExploreFilters({
           onChange={(e) => update({ sort: e.target.value })}
           className="shrink-0 rounded-lg border border-border bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/50"
         >
-          <option value="">Sort by...</option>
-          <option value="score-desc">Score (highest)</option>
-          <option value="score-asc">Score (lowest)</option>
-          <option value="elevation-desc">Elevation (highest)</option>
-          <option value="elevation-asc">Elevation (lowest)</option>
-          <option value="kids-desc">Kids rating (best)</option>
-          <option value="name-asc">Name (A-Z)</option>
+          <option value="">{tf("sortBy")}</option>
+          <option value="score-desc">{tf("scoreHighest")}</option>
+          <option value="score-asc">{tf("scoreLowest")}</option>
+          <option value="elevation-desc">{tf("elevationHighest")}</option>
+          <option value="elevation-asc">{tf("elevationLowest")}</option>
+          <option value="kids-desc">{tf("kidsRatingBest")}</option>
+          <option value="name-asc">{tf("nameAZ")}</option>
         </select>
 
         {/* Clear */}
@@ -143,11 +143,11 @@ export function ExploreFilters({
 
       {/* Result count */}
       <div className="text-[15px] text-muted-foreground">
-        {resultCount} destination{resultCount !== 1 ? "s" : ""} found
+        {resultCount} {tf("destinationsFound")}
         {filters.month > 0 && (
           <span>
             {" "}
-            · Showing {tm(String(filters.month))} scores
+            · {tf("showingScores")} {tm(String(filters.month))}
           </span>
         )}
       </div>

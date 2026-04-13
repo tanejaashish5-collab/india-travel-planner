@@ -47,6 +47,13 @@ export function ExploreMap({ destinations }: { destinations: MapDestination[] })
         maxZoom: 19,
       }).addTo(map);
 
+      // Style map attribution for dark theme readability
+      const attrib = mapRef.current!.querySelector(".leaflet-control-attribution");
+      if (attrib) {
+        (attrib as HTMLElement).style.cssText = "background:rgba(0,0,0,0.7)!important;color:#aaa!important;font-size:10px;padding:2px 6px;";
+        attrib.querySelectorAll("a").forEach((a) => { (a as HTMLElement).style.color = "#7ab8ff"; });
+      }
+
       mapInstanceRef.current = map;
     });
 
@@ -146,6 +153,14 @@ export function ExploreMap({ destinations }: { destinations: MapDestination[] })
         }
         .leaflet-popup-close-button {
           color: #888 !important;
+        }
+        .leaflet-control-attribution {
+          background: rgba(0,0,0,0.7) !important;
+          color: #aaa !important;
+          font-size: 10px !important;
+        }
+        .leaflet-control-attribution a {
+          color: #7ab8ff !important;
         }
       `}</style>
       <div

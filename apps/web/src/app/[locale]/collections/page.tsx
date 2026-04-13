@@ -4,11 +4,13 @@ import { Footer } from "@/components/footer";
 import { CollectionsGrid } from "@/components/collections-grid";
 import { createClient } from "@supabase/supabase-js";
 
+export const revalidate = 3600;
+
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: "Collections — Themed Destination Lists",
-  description: "Themed collections: best family destinations, frozen wonders, most dangerous roads, zero-signal zones, ancient monasteries, and more. Hand-picked from 407+ places.",
+  description: "Themed collections: best family destinations, frozen wonders, most dangerous roads, zero-signal zones, ancient monasteries, and more. Hand-picked from 590+ places.",
 };
 
 async function getCollections() {

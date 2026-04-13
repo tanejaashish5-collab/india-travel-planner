@@ -5,6 +5,8 @@ import { BlogGrid } from "@/components/blog-grid";
 import { NewsletterSignup } from "@/components/newsletter-signup";
 import { createClient } from "@supabase/supabase-js";
 
+export const revalidate = 3600;
+
 export const metadata: Metadata = {
   title: "Blog — Travel Intelligence Articles",
   description: "Data-driven travel guides, destination comparisons, and seasonal intelligence for India. Every article backed by real scores, infrastructure data, and honest analysis.",

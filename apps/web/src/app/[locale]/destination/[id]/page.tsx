@@ -5,6 +5,8 @@ import { PrevNextNav } from "@/components/prev-next-nav";
 import { createClient } from "@supabase/supabase-js";
 import { notFound } from "next/navigation";
 
+export const revalidate = 86400;
+
 export async function generateMetadata({
   params,
 }: {
@@ -287,7 +289,7 @@ export default async function DestinationPage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
       />
       <Nav />
-      <main className="mx-auto max-w-4xl px-4 py-8">
+      <main id="main-content" className="mx-auto max-w-4xl px-4 py-8">
         <DestinationDetail dest={dest} />
         <PrevNextNav
           items={dest.allDestinations}

@@ -5,6 +5,8 @@ import { Footer } from "@/components/footer";
 import { BlogArticle } from "@/components/blog-article";
 import { createClient } from "@supabase/supabase-js";
 
+export const revalidate = 86400;
+
 function getSupabase() {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;

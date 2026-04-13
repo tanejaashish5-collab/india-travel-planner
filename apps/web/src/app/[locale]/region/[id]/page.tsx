@@ -4,6 +4,8 @@ import { RegionDetail } from "@/components/region-detail";
 import { createClient } from "@supabase/supabase-js";
 import { notFound } from "next/navigation";
 
+export const revalidate = 86400;
+
 async function getRegion(id: string) {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;

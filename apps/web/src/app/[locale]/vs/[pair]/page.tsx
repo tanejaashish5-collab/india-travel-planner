@@ -5,6 +5,8 @@ import { VsComparison } from "@/components/vs-comparison";
 import { createClient } from "@supabase/supabase-js";
 import { notFound } from "next/navigation";
 
+export const revalidate = 86400;
+
 const SITE = "https://nakshiq.com";
 
 function resolveState(state: any): string | null {

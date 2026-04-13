@@ -4,6 +4,8 @@ import { LandingHero } from "@/components/landing-hero";
 import { createClient } from "@supabase/supabase-js";
 import { getAppStats } from "@/lib/stats";
 
+export const revalidate = 3600;
+
 async function getFeaturedData() {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;

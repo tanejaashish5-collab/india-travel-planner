@@ -28,12 +28,16 @@ export function LanguageToggle() {
   return (
     <button
       onClick={switchLocale}
-      className="flex items-center gap-1.5 rounded-full border border-border px-3 py-1.5 text-sm font-medium transition-colors hover:bg-accent"
+      className="flex items-center gap-0.5 rounded-full border border-border text-sm font-medium transition-colors hover:bg-accent overflow-hidden"
       aria-label={`Switch to ${otherLocale === "hi" ? "Hindi" : "English"}`}
+      aria-current={locale === "en" ? "true" : undefined}
     >
-      <span className="text-muted-foreground">{LOCALE_LABELS[locale]}</span>
-      <span className="text-muted-foreground">/</span>
-      <span>{LOCALE_LABELS[otherLocale]}</span>
+      <span className={`px-2.5 py-1.5 transition-colors ${locale === "en" ? "bg-foreground text-background font-semibold" : "text-muted-foreground"}`}>
+        {LOCALE_LABELS.en}
+      </span>
+      <span className={`px-2.5 py-1.5 transition-colors ${locale === "hi" ? "bg-foreground text-background font-semibold" : "text-muted-foreground"}`}>
+        {LOCALE_LABELS.hi}
+      </span>
     </button>
   );
 }

@@ -5,6 +5,8 @@ import { Footer } from "@/components/footer";
 import { createClient } from "@supabase/supabase-js";
 import { GuideContent } from "@/components/guide-content";
 
+export const revalidate = 86400;
+
 export const metadata: Metadata = {
   title: "Travel Guides — Data-Driven Destination Intelligence",
   description: "In-depth travel guides for 124 North India destinations. Best time to visit, costs, family suitability, infrastructure reality, and honest opinions.",

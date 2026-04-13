@@ -4,6 +4,8 @@ import { WhereToGoContent } from "@/components/where-to-go-content";
 import { createClient } from "@supabase/supabase-js";
 import { notFound } from "next/navigation";
 
+export const revalidate = 86400;
+
 const VALID_MONTHS = [
   "january","february","march","april","may","june",
   "july","august","september","october","november","december",
@@ -36,6 +38,17 @@ const REGION_SLUGS: Record<string, { stateId: string; displayName: string }> = {
   "madhya-pradesh": { stateId: "madhya-pradesh", displayName: "Madhya Pradesh" },
   "delhi": { stateId: "delhi", displayName: "Delhi" },
   "chandigarh": { stateId: "chandigarh", displayName: "Chandigarh" },
+  "arunachal-pradesh": { stateId: "arunachal-pradesh", displayName: "Arunachal Pradesh" },
+  "assam": { stateId: "assam", displayName: "Assam" },
+  "bihar": { stateId: "bihar", displayName: "Bihar" },
+  "chhattisgarh": { stateId: "chhattisgarh", displayName: "Chhattisgarh" },
+  "haryana": { stateId: "haryana", displayName: "Haryana" },
+  "jharkhand": { stateId: "jharkhand", displayName: "Jharkhand" },
+  "manipur": { stateId: "manipur", displayName: "Manipur" },
+  "meghalaya": { stateId: "meghalaya", displayName: "Meghalaya" },
+  "mizoram": { stateId: "mizoram", displayName: "Mizoram" },
+  "nagaland": { stateId: "nagaland", displayName: "Nagaland" },
+  "tripura": { stateId: "tripura", displayName: "Tripura" },
 };
 
 /** Parse slug into { regionSlug?, monthSlug } or null if invalid */

@@ -4,6 +4,8 @@ import { DestinationMonth } from "@/components/destination-month";
 import { createClient } from "@supabase/supabase-js";
 import { notFound } from "next/navigation";
 
+export const revalidate = 86400;
+
 const VALID_MONTHS = [
   "january","february","march","april","may","june",
   "july","august","september","october","november","december",

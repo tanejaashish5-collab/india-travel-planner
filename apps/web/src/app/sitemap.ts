@@ -1,178 +1,266 @@
 import type { MetadataRoute } from "next";
 import { createClient } from "@supabase/supabase-js";
+import { STATE_MAP } from "@/lib/seo-maps";
 
-export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = "https://nakshiq.com";
+/*
+ * Sitemap split into 5 chunks via generateSitemaps().
+ * Next.js auto-generates a sitemap index at /sitemap.xml
+ * pointing to /sitemap/0.xml through /sitemap/4.xml.
+ *
+ * 0 = static pages + where-to-go hubs
+ * 1 = destinations + destination-month pages
+ * 2 = collections + routes + articles + treks
+ * 3 = programmatic SEO (state×month, difficulty, tags, festivals, stays, camping, family)
+ * 4 = vs comparisons + skip-lists + with-kids + region-months
+ */
 
-  // Static pages
-  const staticPages = [
-    "", "explore", "collections", "routes", "treks", "plan",
-    "camping", "permits", "road-conditions", "superlatives",
-    "stays", "festivals", "tourist-traps",
-    "saved", "about", "methodology", "blog",
-    "terms", "privacy", "cookies", "editorial-policy",
-    "india-travel",
-    "region/himachal-pradesh", "region/uttarakhand", "region/jammu-kashmir",
-    "region/ladakh", "region/rajasthan", "region/punjab",
-  ];
+const LOCALES = ["en", "hi"] as const;
+const BASE = "https://nakshiq.com";
 
-  const staticEntries: MetadataRoute.Sitemap = staticPages.flatMap((page) =>
-    ["en", "hi"].map((locale) => ({
-      url: `${baseUrl}/${locale}${page ? `/${page}` : ""}`,
-      lastModified: new Date(),
-      changeFrequency: page === "" ? "daily" as const : "weekly" as const,
-      priority: page === "" ? 1.0 : page === "explore" || page === "india-travel" ? 0.9 : 0.7,
-    }))
-  );
+const MONTH_SLUGS = [
+  "january","february","march","april","may","june",
+  "july","august","september","october","november","december",
+];
 
-  // Dynamic destination pages
+const STATE_SLUGS = [
+  "himachal-pradesh","uttarakhand","jammu-kashmir","ladakh","rajasthan",
+  "punjab","uttar-pradesh","sikkim","west-bengal","madhya-pradesh",
+  "delhi","chandigarh","arunachal-pradesh","assam","bihar",
+  "chhattisgarh","haryana","jharkhand","manipur","meghalaya",
+  "mizoram","nagaland","tripura",
+];
+
+const TREK_STATES = [
+  "himachal-pradesh","uttarakhand","jammu-kashmir","ladakh","sikkim",
+  "arunachal-pradesh","meghalaya","nagaland","west-bengal","rajasthan",
+];
+
+const CAMP_STATES = [
+  "himachal-pradesh","uttarakhand","jammu-kashmir","ladakh","sikkim",
+  "rajasthan","meghalaya","arunachal-pradesh","madhya-pradesh","uttarpradesh",
+];
+
+const FAMILY_STATES = [
+  "himachal-pradesh","uttarakhand","jammu-kashmir","ladakh","rajasthan","punjab",
+  "sikkim","meghalaya","assam","uttar-pradesh","madhya-pradesh","west-bengal",
+  "arunachal-pradesh","nagaland",
+];
+
+const DIFFICULTIES = ["easy", "moderate", "hard", "extreme"];
+
+const TAGS = [
+  "offbeat","trek","spiritual","heritage","wildlife","lake","romantic",
+  "adventure","family","winter","monsoon","photography","budget","pilgrimage",
+  "hill-station","border","desert","valley","monastery","waterfall",
+];
+
+export async function generateSitemaps() {
+  return [{ id: "0" }, { id: "1" }, { id: "2" }, { id: "3" }, { id: "4" }];
+}
+
+function entry(path: string, freq: "daily" | "weekly" | "monthly", priority: number): MetadataRoute.Sitemap {
+  return LOCALES.map((locale) => ({
+    url: `${BASE}/${locale}${path ? `/${path}` : ""}`,
+    lastModified: new Date(),
+    changeFrequency: freq,
+    priority,
+  }));
+}
+
+function getSupabase() {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+  if (!url || !key) return null;
+  return createClient(url, key);
+}
 
-  const MONTH_SLUGS = ["january","february","march","april","may","june","july","august","september","october","november","december"];
+export default async function sitemap(props: {
+  id: Promise<string>;
+}): Promise<MetadataRoute.Sitemap> {
+  const id = await props.id;
 
-  let destEntries: MetadataRoute.Sitemap = [];
-  let destMonthEntries: MetadataRoute.Sitemap = [];
-  let whereToGoEntries: MetadataRoute.Sitemap = [];
-  let collEntries: MetadataRoute.Sitemap = [];
-  let routeEntries: MetadataRoute.Sitemap = [];
-  let articleEntries: MetadataRoute.Sitemap = [];
-  let vsEntries: MetadataRoute.Sitemap = [];
-  let skipListEntries: MetadataRoute.Sitemap = [];
-  let withKidsEntries: MetadataRoute.Sitemap = [];
-  let regionMonthEntries: MetadataRoute.Sitemap = [];
-  let trekEntries: MetadataRoute.Sitemap = [];
+  // ─── Chunk 0: Static pages + where-to-go hubs ───
+  if (id === "0") {
+    const staticPages = [
+      "", "explore", "states", "collections", "routes", "treks", "plan",
+      "camping", "permits", "road-conditions", "superlatives",
+      "stays", "festivals", "tourist-traps",
+      "saved", "about", "methodology", "blog",
+      "terms", "privacy", "cookies", "editorial-policy",
+      "india-travel", "data-deletion", "newsletter",
+      // State hub pages
+      ...Object.keys(STATE_MAP).map((s) => `state/${s}`),
+      // Region pages (legacy)
+      "region/himachal-pradesh", "region/uttarakhand", "region/jammu-kashmir",
+      "region/ladakh", "region/rajasthan", "region/punjab",
+      "region/arunachal-pradesh", "region/assam", "region/bihar",
+      "region/meghalaya", "region/nagaland", "region/sikkim",
+      "region/manipur", "region/west-bengal", "region/madhya-pradesh",
+    ];
 
-  if (url && key) {
-    const supabase = createClient(url, key);
+    const staticEntries = staticPages.flatMap((page) => entry(
+      page,
+      page === "" ? "daily" : "weekly",
+      page === "" ? 1.0 : page === "explore" || page === "india-travel" ? 0.9 : 0.7,
+    ));
 
-    const [destResult, collResult, routeResult, articleResult, trapResult, regionResult, trekResult] = await Promise.all([
-      supabase.from("destinations").select("id").order("id"),
+    // Where-to-go monthly hubs (12 × 2 = 24 URLs)
+    const whereToGoEntries = MONTH_SLUGS.flatMap((month) =>
+      entry(`where-to-go/${month}`, "weekly", 0.85)
+    );
+
+    return [...staticEntries, ...whereToGoEntries];
+  }
+
+  // ─── Chunk 1: Destinations + destination-month pages ───
+  if (id === "1") {
+    const supabase = getSupabase();
+    if (!supabase) return [];
+
+    const { data: dests } = await supabase.from("destinations").select("id").order("id");
+
+    const destEntries = (dests ?? []).flatMap((d: any) =>
+      entry(`destination/${d.id}`, "weekly", 0.8)
+    );
+
+    const destMonthEntries = (dests ?? []).flatMap((d: any) =>
+      MONTH_SLUGS.flatMap((month) => entry(`destination/${d.id}/${month}`, "monthly", 0.7))
+    );
+
+    return [...destEntries, ...destMonthEntries];
+  }
+
+  // ─── Chunk 2: Collections + routes + articles + treks ───
+  if (id === "2") {
+    const supabase = getSupabase();
+    if (!supabase) return [];
+
+    const [collResult, routeResult, articleResult, trekResult] = await Promise.all([
       supabase.from("collections").select("id").order("id"),
       supabase.from("routes").select("id").order("id"),
       supabase.from("articles").select("slug").order("published_at", { ascending: false }),
-      supabase.from("tourist_trap_alternatives").select("trap_destination_id, alternative_destination_id").order("rank"),
-      supabase.from("regions").select("id").order("id"),
       supabase.from("treks").select("id").order("id"),
     ]);
 
-    destEntries = (destResult.data ?? []).flatMap((d: any) =>
-      ["en", "hi"].map((locale) => ({
-        url: `${baseUrl}/${locale}/destination/${d.id}`,
-        lastModified: new Date(),
-        changeFrequency: "weekly" as const,
-        priority: 0.8,
-      }))
+    const collEntries = (collResult.data ?? []).flatMap((c: any) =>
+      entry(`collections/${c.id}`, "monthly", 0.6)
     );
 
-    // Destination-month pages (142 × 12 × 2 locales = 3,408 URLs)
-    destMonthEntries = (destResult.data ?? []).flatMap((d: any) =>
-      MONTH_SLUGS.flatMap((month) =>
-        ["en", "hi"].map((locale) => ({
-          url: `${baseUrl}/${locale}/destination/${d.id}/${month}`,
-          lastModified: new Date(),
-          changeFrequency: "monthly" as const,
-          priority: 0.7,
-        }))
-      )
+    const routeEntries = (routeResult.data ?? []).flatMap((r: any) =>
+      entry(`routes/${r.id}`, "monthly", 0.6)
     );
 
-    // Where-to-go seasonal hub pages (12 × 2 locales = 24 URLs)
-    whereToGoEntries = MONTH_SLUGS.flatMap((month) =>
-      ["en", "hi"].map((locale) => ({
-        url: `${baseUrl}/${locale}/where-to-go/${month}`,
-        lastModified: new Date(),
-        changeFrequency: "weekly" as const,
-        priority: 0.85,
-      }))
+    const articleEntries = (articleResult.data ?? []).flatMap((a: any) =>
+      entry(`blog/${a.slug}`, "weekly", 0.8)
     );
 
-    collEntries = (collResult.data ?? []).flatMap((c: any) =>
-      ["en", "hi"].map((locale) => ({
-        url: `${baseUrl}/${locale}/collections/${c.id}`,
-        lastModified: new Date(),
-        changeFrequency: "monthly" as const,
-        priority: 0.6,
-      }))
+    const trekEntries = (trekResult.data ?? []).flatMap((t: any) =>
+      entry(`treks/${t.id}`, "monthly", 0.7)
     );
 
-    routeEntries = (routeResult.data ?? []).flatMap((r: any) =>
-      ["en", "hi"].map((locale) => ({
-        url: `${baseUrl}/${locale}/routes/${r.id}`,
-        lastModified: new Date(),
-        changeFrequency: "monthly" as const,
-        priority: 0.6,
-      }))
+    return [...collEntries, ...routeEntries, ...articleEntries, ...trekEntries];
+  }
+
+  // ─── Chunk 3: Programmatic SEO pages ───
+  if (id === "3") {
+    // Explore by state (23 × 2 = 46)
+    const exploreState = STATE_SLUGS.flatMap((s) => entry(`explore/state/${s}`, "weekly", 0.8));
+
+    // Explore state × month (23 × 12 × 2 = 552)
+    const exploreStateMonth = STATE_SLUGS.flatMap((s) =>
+      MONTH_SLUGS.flatMap((m) => entry(`explore/state/${s}/${m}`, "monthly", 0.7))
     );
 
-    articleEntries = (articleResult.data ?? []).flatMap((a: any) =>
-      ["en", "hi"].map((locale) => ({
-        url: `${baseUrl}/${locale}/blog/${a.slug}`,
-        lastModified: new Date(),
-        changeFrequency: "weekly" as const,
-        priority: 0.8,
-      }))
+    // Explore by difficulty (4 × 2 = 8)
+    const exploreDiff = DIFFICULTIES.flatMap((d) => entry(`explore/difficulty/${d}`, "monthly", 0.7));
+
+    // Explore by tag (20 × 2 = 40)
+    const exploreTag = TAGS.flatMap((t) => entry(`explore/tag/${t}`, "monthly", 0.7));
+
+    // Treks by state (10 × 2 = 20)
+    const trekState = TREK_STATES.flatMap((s) => entry(`treks/state/${s}`, "monthly", 0.7));
+
+    // Treks state × month (10 × 12 × 2 = 240)
+    const trekStateMonth = TREK_STATES.flatMap((s) =>
+      MONTH_SLUGS.flatMap((m) => entry(`treks/state/${s}/${m}`, "monthly", 0.65))
     );
 
-    // VS comparison pages (trap-vs-alternative pairs)
+    // Treks by difficulty (4 × 2 = 8)
+    const trekDiff = DIFFICULTIES.flatMap((d) => entry(`treks/difficulty/${d}`, "monthly", 0.7));
+
+    // Camping by state (10 × 2 = 20)
+    const campState = CAMP_STATES.flatMap((s) => entry(`camping/state/${s}`, "monthly", 0.7));
+
+    // Festivals by month (12 × 2 = 24)
+    const festMonth = MONTH_SLUGS.flatMap((m) => entry(`festivals/month/${m}`, "monthly", 0.75));
+
+    // Festivals by state (23 × 2 = 46)
+    const festState = STATE_SLUGS.flatMap((s) => entry(`festivals/state/${s}`, "monthly", 0.7));
+
+    // Festivals state × month (23 × 12 × 2 = 552)
+    const festStateMonth = STATE_SLUGS.flatMap((s) =>
+      MONTH_SLUGS.flatMap((m) => entry(`festivals/state/${s}/${m}`, "monthly", 0.65))
+    );
+
+    // Stays by state (23 × 2 = 46)
+    const staysState = STATE_SLUGS.flatMap((s) => entry(`stays/state/${s}`, "monthly", 0.7));
+
+    // Family by state (14 × 2 = 28)
+    const familyState = FAMILY_STATES.flatMap((s) => entry(`family/${s}`, "monthly", 0.7));
+
+    // State × month where-to-go (23 × 12 × 2 = 552)
+    const stateMonth = STATE_SLUGS.flatMap((s) =>
+      MONTH_SLUGS.flatMap((m) => entry(`where-to-go/${s}-in-${m}`, "monthly", 0.75))
+    );
+
+    return [
+      ...exploreState, ...exploreStateMonth, ...exploreDiff, ...exploreTag,
+      ...trekState, ...trekStateMonth, ...trekDiff, ...campState,
+      ...festMonth, ...festState, ...festStateMonth,
+      ...staysState, ...familyState, ...stateMonth,
+    ];
+  }
+
+  // ─── Chunk 4: VS comparisons + skip-lists + with-kids + region-months ───
+  if (id === "4") {
+    const supabase = getSupabase();
+    if (!supabase) return [];
+
+    const [trapResult, destResult, regionResult] = await Promise.all([
+      supabase.from("tourist_trap_alternatives").select("trap_destination_id, alternative_destination_id").order("rank"),
+      supabase.from("destinations").select("id").order("id"),
+      supabase.from("regions").select("id").order("id"),
+    ]);
+
+    // VS comparison pages
     const seenPairs = new Set<string>();
-    vsEntries = (trapResult.data ?? []).flatMap((t: any) => {
+    const vsEntries = (trapResult.data ?? []).flatMap((t: any) => {
       const pair = `${t.trap_destination_id}-vs-${t.alternative_destination_id}`;
       if (seenPairs.has(pair)) return [];
       seenPairs.add(pair);
-      return ["en", "hi"].map((locale) => ({
-        url: `${baseUrl}/${locale}/vs/${pair}`,
-        lastModified: new Date(),
-        changeFrequency: "monthly" as const,
-        priority: 0.7,
-      }));
+      return entry(`vs/${pair}`, "monthly", 0.7);
     });
 
-    // Skip-list pages (unique trap destinations)
+    // Skip-list pages
     const seenTraps = new Set<string>();
-    skipListEntries = (trapResult.data ?? []).flatMap((t: any) => {
+    const skipEntries = (trapResult.data ?? []).flatMap((t: any) => {
       if (seenTraps.has(t.trap_destination_id)) return [];
       seenTraps.add(t.trap_destination_id);
-      return ["en", "hi"].map((locale) => ({
-        url: `${baseUrl}/${locale}/skip-list/${t.trap_destination_id}`,
-        lastModified: new Date(),
-        changeFrequency: "monthly" as const,
-        priority: 0.7,
-      }));
+      return entry(`skip-list/${t.trap_destination_id}`, "monthly", 0.7);
     });
 
-    // With-kids pages (all destinations)
-    withKidsEntries = (destResult.data ?? []).flatMap((d: any) =>
-      ["en", "hi"].map((locale) => ({
-        url: `${baseUrl}/${locale}/with-kids/${d.id}`,
-        lastModified: new Date(),
-        changeFrequency: "monthly" as const,
-        priority: 0.6,
-      }))
+    // With-kids pages
+    const kidsEntries = (destResult.data ?? []).flatMap((d: any) =>
+      entry(`with-kids/${d.id}`, "monthly", 0.6)
     );
 
-    // Regional monthly pages (regions x 12 months)
-    regionMonthEntries = (regionResult.data ?? []).flatMap((r: any) =>
-      MONTH_SLUGS.flatMap((month) =>
-        ["en", "hi"].map((locale) => ({
-          url: `${baseUrl}/${locale}/region/${r.id}/${month}`,
-          lastModified: new Date(),
-          changeFrequency: "monthly" as const,
-          priority: 0.7,
-        }))
-      )
+    // Region × month pages
+    const regionMonthEntries = (regionResult.data ?? []).flatMap((r: any) =>
+      MONTH_SLUGS.flatMap((month) => entry(`region/${r.id}/${month}`, "monthly", 0.7))
     );
 
-    // Individual trek pages
-    trekEntries = (trekResult.data ?? []).flatMap((t: any) =>
-      ["en", "hi"].map((locale) => ({
-        url: `${baseUrl}/${locale}/treks/${t.id}`,
-        lastModified: new Date(),
-        changeFrequency: "monthly" as const,
-        priority: 0.7,
-      }))
-    );
+    return [...vsEntries, ...skipEntries, ...kidsEntries, ...regionMonthEntries];
   }
 
-  return [...staticEntries, ...destEntries, ...destMonthEntries, ...whereToGoEntries, ...collEntries, ...routeEntries, ...articleEntries, ...vsEntries, ...skipListEntries, ...withKidsEntries, ...regionMonthEntries, ...trekEntries];
+  return [];
 }

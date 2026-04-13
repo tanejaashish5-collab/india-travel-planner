@@ -5,6 +5,8 @@ import { Footer } from "@/components/footer";
 import { TreksContent } from "@/components/treks-content";
 import { createClient } from "@supabase/supabase-js";
 
+export const revalidate = 3600;
+
 export const metadata: Metadata = {
   title: "Treks — Scored Trails Across North India",
   description: "From easy day hikes to extreme multi-day expeditions. Gear checklists, difficulty ratings, altitude data, best months, and fitness requirements for every trek.",

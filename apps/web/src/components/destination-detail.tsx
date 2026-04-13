@@ -145,7 +145,7 @@ export function DestinationDetail({ dest }: { dest: any }) {
 
         {/* Cinematic Hero — video where available */}
         <FadeIn>
-          <div className="mb-6 relative h-56 sm:h-72 lg:h-96 rounded-2xl overflow-hidden bg-muted/30 film-grain">
+          <div className="mb-6 relative h-56 sm:h-72 lg:h-96 rounded-2xl overflow-hidden film-grain" style={{ background: "linear-gradient(135deg, oklch(0.25 0.02 260), oklch(0.18 0.01 280))" }}>
             {/* Video hero for destinations with clips */}
             {["chopta-tungnath","darjeeling","amritsar","jaisalmer","srinagar","kedarnath","leh","manali","pangong-lake","pushkar","jodhpur","rishikesh","spiti-valley","tawang","tirthan-valley","valley-of-flowers","varanasi","kasol-parvati-valley","nubra-valley"].includes(dest.id) ? (
               <video
@@ -166,7 +166,6 @@ export function DestinationDetail({ dest }: { dest: any }) {
                 sizes="100vw"
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
                 priority
-                onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
               />
             )}
             <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
@@ -189,7 +188,7 @@ export function DestinationDetail({ dest }: { dest: any }) {
 
         {/* Hero Card */}
         <SlideIn delay={0.1}>
-          <div className="mb-6 rounded-2xl border border-border/50 bg-card/80 backdrop-blur-xl p-6 sm:p-8 -mt-24 relative z-10 shadow-2xl shadow-black/20">
+          <div className="mb-6 rounded-2xl border border-border/50 bg-card p-6 sm:p-8 -mt-24 relative z-10 shadow-2xl shadow-black/20">
             <div className="flex items-start justify-between">
               <div>
                 <h1 className="text-3xl font-bold sm:text-4xl lg:text-5xl">{displayName}</h1>
@@ -446,8 +445,8 @@ export function DestinationDetail({ dest }: { dest: any }) {
         )}
 
         {/* Tab navigation — no FadeIn wrapper (breaks sticky) */}
-        <div className="mb-6 sticky top-[64px] z-40">
-          <div className="flex gap-1 overflow-x-auto rounded-xl border border-border bg-background/95 p-1 backdrop-blur-md shadow-sm">
+        <div className="mb-6 sticky top-[64px] z-40" style={{ isolation: "isolate" }}>
+          <div className="flex gap-1 overflow-x-auto rounded-xl border border-border bg-background p-1 shadow-sm">
             {availableTabs.map((tab) => (
               <button
                 key={tab.id}

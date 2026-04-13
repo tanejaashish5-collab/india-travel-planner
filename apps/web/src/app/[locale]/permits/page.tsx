@@ -5,6 +5,8 @@ import { Footer } from "@/components/footer";
 import { PermitsContent } from "@/components/permits-content";
 import { createClient } from "@supabase/supabase-js";
 
+export const revalidate = 86400;
+
 export const metadata: Metadata = {
   title: "Permits & Passes — Do I Need a Permit?",
   description: "Complete guide to Inner Line Permits, Protected Area Permits, national park entries, and trek registrations for North India. Costs, processing times, and pro tips.",

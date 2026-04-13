@@ -5,6 +5,8 @@ import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { createClient } from "@supabase/supabase-js";
 
+export const revalidate = 3600;
+
 const SITE = "https://nakshiq.com";
 
 export async function generateMetadata({

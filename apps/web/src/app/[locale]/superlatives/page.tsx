@@ -5,6 +5,8 @@ import { Footer } from "@/components/footer";
 import { SuperlativesContent } from "@/components/superlatives-content";
 import { createClient } from "@supabase/supabase-js";
 
+export const revalidate = 3600;
+
 export const metadata: Metadata = {
   title: "India's Records & Firsts — Superlatives",
   description: "The highest, oldest, most dangerous, and most unique places in North India. 25 superlative records with destinations and details.",

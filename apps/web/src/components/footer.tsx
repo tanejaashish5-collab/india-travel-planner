@@ -12,7 +12,8 @@ export function Footer({ stats }: { stats?: { destinations: number; places: numb
       <div className="absolute inset-0">
         <img
           src="/images/destinations/pangong-lake.jpg"
-          alt=""
+          alt="Pangong Lake panoramic background"
+          role="presentation"
           className="w-full h-full object-cover opacity-[0.07]"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/95 to-background/80" />
@@ -90,7 +91,8 @@ export function Footer({ stats }: { stats?: { destinations: number; places: numb
               ))}
               <div className="h-3" />
               {[
-                { href: `/${locale}/about`, label: tn("about") },
+                { href: `/${locale}/newsletter`, label: "The Window" },
+              { href: `/${locale}/about`, label: tn("about") },
                 { href: `/${locale}/methodology`, label: tf("howWeScore") },
                 { href: `/${locale}/editorial-policy`, label: tf("editorialPolicy") },
               ].map((link) => (
@@ -109,11 +111,11 @@ export function Footer({ stats }: { stats?: { destinations: number; places: numb
         {/* Stats strip */}
         <div className="flex flex-wrap justify-center gap-8 mb-12">
           {[
-            { num: String(stats?.destinations ?? 161), label: "Destinations" },
-            { num: `${stats?.places ?? 407}+`, label: "Places" },
-            { num: String(stats?.festivals ?? 168), label: "Festivals" },
-            { num: String(stats?.traps ?? 53), label: "Tourist Traps Exposed" },
-            { num: String(stats?.collections ?? 20), label: "Collections" },
+            { num: String(stats?.destinations ?? 229), label: "Destinations" },
+            { num: `${stats?.places ?? 590}+`, label: "Places" },
+            { num: String(stats?.festivals ?? 183), label: "Festivals" },
+            { num: String(stats?.traps ?? 66), label: "Tourist Traps Exposed" },
+            { num: String(stats?.collections ?? 35), label: "Collections" },
           ].map((stat) => (
             <div key={stat.label} className="text-center">
               <div className="text-lg font-mono font-bold text-muted-foreground/30">{stat.num}</div>

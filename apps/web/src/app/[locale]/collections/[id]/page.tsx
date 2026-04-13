@@ -6,6 +6,8 @@ import { PrevNextNav } from "@/components/prev-next-nav";
 import { createClient } from "@supabase/supabase-js";
 import { notFound } from "next/navigation";
 
+export const revalidate = 86400;
+
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
   const { id } = await params;
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
