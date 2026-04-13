@@ -1,31 +1,20 @@
 "use client";
 
 import { useLocale } from "next-intl";
+import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const DISMISSED_KEY = "nakshiq-intl-banner-dismissed";
+const SESSION_KEY = "nakshiq-intl-banner-dismissed";
 
-/**
- * Smart banner for international visitors.
- * Shows only when:
- *  1. Browser language is NOT Hindi/Indian regional
- *  2. Timezone is NOT IST (UTC+5:30)
- *  3. User hasn't dismissed it before (localStorage)
- */
 function isLikelyInternational(): boolean {
   try {
-    // Check timezone — IST is UTC+5:30 = offset -330
     const offset = new Date().getTimezoneOffset();
     if (offset === -330) return false;
-
-    // Check browser language
     const lang = navigator.language?.toLowerCase() ?? "";
     const indianLangs = ["hi", "bn", "ta", "te", "mr", "gu", "kn", "ml", "pa", "or", "as", "ur"];
     if (indianLangs.some((l) => lang.startsWith(l))) return false;
-    // en-IN is Indian English
     if (lang === "en-in") return false;
-
     return true;
   } catch {
     return false;
@@ -34,22 +23,32 @@ function isLikelyInternational(): boolean {
 
 export function InternationalBanner() {
   const locale = useLocale();
+  const pathname = usePathname();
   const [visible, setVisible] = useState(false);
 
+  // Hide on the india-travel page itself
+  const isOnTargetPage = pathname.includes("/india-travel");
+
   useEffect(() => {
-    // Don't show if already dismissed
-    if (localStorage.getItem(DISMISSED_KEY)) return;
-    // Don't show if likely Indian
+    if (isOnTargetPage) return;
+    // Session-based: use sessionStorage so it resets on new tab/session
+    if (sessionStorage.getItem(SESSION_KEY)) return;
     if (!isLikelyInternational()) return;
-    // Small delay so it doesn't flash on load
     const timer = setTimeout(() => setVisible(true), 1500);
     return () => clearTimeout(timer);
-  }, []);
+  }, [isOnTargetPage]);
 
   function dismiss() {
     setVisible(false);
-    localStorage.setItem(DISMISSED_KEY, "1");
+    sessionStorage.setItem(SESSION_KEY, "1");
   }
+
+  function handleStartHere() {
+    // Dismiss for this session before navigating
+    sessionStorage.setItem(SESSION_KEY, "1");
+  }
+
+  if (isOnTargetPage) return null;
 
   return (
     <AnimatePresence>
@@ -78,6 +77,7 @@ export function InternationalBanner() {
             <div className="flex items-center gap-3 shrink-0">
               <a
                 href={`/${locale}/india-travel`}
+                onClick={handleStartHere}
                 className="rounded-md bg-blue-500/20 border border-blue-500/30 px-3 py-1 text-xs font-medium text-blue-400 hover:bg-blue-500/30 transition-colors whitespace-nowrap"
               >
                 Start here
