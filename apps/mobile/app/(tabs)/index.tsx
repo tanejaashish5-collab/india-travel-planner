@@ -29,17 +29,17 @@ const DIFF_COLORS: Record<string, string> = {
 };
 
 const DISCOVER_ITEMS = [
-  { label: "Treks", sub: "49", icon: "🥾", route: "/treks", color: colors.score5 },
-  { label: "Routes", sub: "19", icon: "🛣️", route: "/routes", color: colors.score4 },
+  { label: "Treks", sub: "60", icon: "🥾", route: "/treks", color: colors.score5 },
+  { label: "Routes", sub: "39", icon: "🛣️", route: "/routes", color: colors.score4 },
   { label: "Where to Go", sub: "", icon: "📅", route: "/where-to-go", color: colors.topographic },
   { label: "Tourist Traps", sub: "", icon: "⚠️", route: "/tourist-traps", color: colors.score1 },
-  { label: "Collections", sub: "20", icon: "📚", route: "/collections", color: "#8b5cf6" },
-  { label: "Festivals", sub: "168", icon: "🎪", route: "/festivals", color: colors.saffron },
-  { label: "Camping", sub: "37", icon: "⛺", route: "/camping", color: colors.score4 },
-  { label: "Stays", sub: "180", icon: "🏡", route: "/stays", color: colors.vermillion },
+  { label: "Collections", sub: "60", icon: "📚", route: "/collections", color: "#8b5cf6" },
+  { label: "Festivals", sub: "183", icon: "🎪", route: "/festivals", color: colors.saffron },
+  { label: "Camping", sub: "47", icon: "⛺", route: "/camping", color: colors.score4 },
+  { label: "Stays", sub: "423", icon: "🏡", route: "/stays", color: colors.vermillion },
   { label: "Permits", sub: "", icon: "📋", route: "/permits", color: colors.mutedForeground },
   { label: "Roads", sub: "", icon: "🚗", route: "/road-conditions", color: colors.saffron },
-  { label: "Records", sub: "25", icon: "🏆", route: "/superlatives", color: colors.score3 },
+  { label: "Records", sub: "", icon: "🏆", route: "/superlatives", color: colors.score3 },
   { label: "Blog", sub: "", icon: "📝", route: "/blog", color: "#8b5cf6" },
 ];
 
@@ -78,10 +78,10 @@ export default function HomeScreen() {
     setFeatured(featResult.data ?? []);
     setFestivals(festResult.data ?? []);
     setStats({
-      destinations: destCount.count ?? 124,
+      destinations: destCount.count ?? 229,
       places: (destCount.count ?? 0) + (subCount.count ?? 0) + (gemCount.count ?? 0),
-      treks: trekCount.count ?? 49,
-      festivals: festCount.count ?? 168,
+      treks: trekCount.count ?? 60,
+      festivals: festCount.count ?? 183,
     });
   }
 

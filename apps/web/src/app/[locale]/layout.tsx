@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     ],
   },
   description:
-    "142 destinations, 407+ places with monthly suitability scores, kids ratings, safety data, and AI-powered itineraries. The confidence engine for exploring India.",
+    "229+ destinations, 590+ places with monthly suitability scores, kids ratings, safety data, and AI-powered itineraries. The confidence engine for exploring India.",
   keywords: [
     "India travel planner",
     "North India travel guide",
@@ -69,7 +69,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "NakshIQ — Travel Intelligence for India",
     description:
-      "142 destinations, 407+ places with monthly scores, kids ratings, safety data, and AI itineraries.",
+      "229+ destinations, 590+ places with monthly scores, kids ratings, safety data, and AI itineraries.",
     type: "website",
     locale: "en_IN",
     siteName: "NakshIQ",
@@ -79,7 +79,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "NakshIQ — Travel Intelligence for India",
-    description: "142 destinations, 407+ places with monthly scores, kids ratings, safety data, and AI itineraries.",
+    description: "229+ destinations, 590+ places with monthly scores, kids ratings, safety data, and AI itineraries.",
     images: ["https://nakshiq.com/og-image.jpg"],
   },
 };
@@ -118,7 +118,7 @@ export default async function LocaleLayout({
             name: "NakshIQ",
             url: "https://nakshiq.com",
             logo: "https://nakshiq.com/icon-192.png",
-            description: "Travel intelligence for India. 142 destinations with monthly scores, kids ratings, safety data, and AI-powered itineraries.",
+            description: "Travel intelligence for India. 229+ destinations with monthly scores, kids ratings, safety data, and AI-powered itineraries.",
             sameAs: [],
           }) }}
         />

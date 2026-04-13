@@ -309,15 +309,28 @@ export function LandingHero({
                 {tn("planTrip")}
               </Link>
             </div>
+            <div className="flex justify-center pt-3">
+              <Link
+                href={`/${locale}/india-travel`}
+                className="inline-flex items-center gap-1.5 text-xs text-muted-foreground hover:text-blue-400 transition-colors group"
+              >
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-blue-400/60 group-hover:text-blue-400 transition-colors">
+                  <circle cx="12" cy="12" r="10" />
+                  <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
+                  <path d="M2 12h20" />
+                </svg>
+                First time in India? Start here
+              </Link>
+            </div>
           </FadeIn>
 
           {/* Stats — animated counters */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-8">
             {[
-              { num: stats?.destinations ?? 142, suffix: "", label: "Destinations", href: `/${locale}/explore` },
-              { num: stats?.places ?? 407, suffix: "+", label: t("stats.places"), href: `/${locale}/explore` },
-              { num: stats?.festivals ?? 168, suffix: "", label: "Festivals", href: `/${locale}/festivals` },
-              { num: stats?.routes ?? 19, suffix: "", label: t("stats.routes"), href: `/${locale}/routes` },
+              { num: stats?.destinations ?? 229, suffix: "", label: "Destinations", href: `/${locale}/explore` },
+              { num: stats?.places ?? 590, suffix: "+", label: t("stats.places"), href: `/${locale}/explore` },
+              { num: stats?.festivals ?? 183, suffix: "", label: "Festivals", href: `/${locale}/festivals` },
+              { num: stats?.routes ?? 39, suffix: "", label: t("stats.routes"), href: `/${locale}/routes` },
             ].map((stat) => (
               <Link
                 key={stat.label}
@@ -456,7 +469,7 @@ export function LandingHero({
                 href={`/${locale}/explore`}
                 className="inline-flex items-center gap-2 text-sm text-primary hover:underline"
               >
-                View all {stats?.destinations ?? 142} destinations →
+                View all {stats?.destinations ?? 229} destinations →
               </Link>
             </div>
           </div>
@@ -580,7 +593,7 @@ export function LandingHero({
                 href={`/${locale}/routes`}
                 className="inline-flex items-center gap-2 text-sm text-primary hover:underline"
               >
-                View all {stats?.routes ?? 19} routes →
+                View all {stats?.routes ?? 39} routes →
               </Link>
             </div>
           </div>
@@ -632,7 +645,7 @@ export function LandingHero({
                 href={`/${locale}/festivals`}
                 className="inline-flex items-center gap-2 text-sm text-primary hover:underline font-medium"
               >
-                See all {stats?.festivals ?? 168} festivals →
+                See all {stats?.festivals ?? 183} festivals →
               </Link>
             </div>
           </div>
