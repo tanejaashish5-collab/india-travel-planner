@@ -95,7 +95,7 @@ export function AskNakshIQ() {
       {/* Floating trigger button — bottom-left on desktop, above tab bar on mobile */}
       <button
         onClick={() => setOpen((v) => !v)}
-        className={`fixed z-30 md:z-50 flex items-center gap-2 rounded-full shadow-2xl transition-all duration-300 ${
+        className={`fixed z-[1000] flex items-center gap-2 rounded-full shadow-2xl transition-all duration-300 ${
           open
             ? "bottom-[480px] md:bottom-[520px] right-4 md:right-6 bg-muted/80 px-3 py-2 text-muted-foreground hover:bg-muted"
             : "bottom-20 md:bottom-6 right-4 md:right-6 bg-primary px-4 py-3 text-primary-foreground hover:shadow-primary/30 hover:-translate-y-0.5"
@@ -124,7 +124,7 @@ export function AskNakshIQ() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ duration: 0.2 }}
-            className="fixed bottom-20 md:bottom-6 right-4 md:right-6 z-30 md:z-50 w-[calc(100vw-2rem)] sm:w-[400px] h-[440px] md:h-[480px] rounded-2xl border border-border bg-card shadow-2xl flex flex-col overflow-hidden"
+            className="fixed bottom-20 md:bottom-6 right-4 md:right-6 z-[1000] w-[calc(100vw-2rem)] sm:w-[400px] h-[440px] md:h-[480px] rounded-2xl border border-border bg-card shadow-2xl flex flex-col overflow-hidden"
           >
             {/* Header */}
             <div className="flex items-center gap-3 border-b border-border px-4 py-3 bg-card">
