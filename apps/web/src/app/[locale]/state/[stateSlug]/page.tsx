@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import Image from "next/image";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { StateDestinationGrid } from "@/components/state-destination-grid";
 import { createClient } from "@supabase/supabase-js";
-import { STATE_MAP, getRegionNameForState, ALL_STATE_SLUGS } from "@/lib/seo-maps";
+import { STATE_MAP, getRegionNameForState } from "@/lib/seo-maps";
 
 export const revalidate = 86400;
 
@@ -15,18 +14,13 @@ export async function generateMetadata({
 }: {
   params: Promise<{ stateSlug: string; locale: string }>;
 }): Promise<Metadata> {
-  const { stateSlug, locale } = await params;
+  const { stateSlug } = await params;
   const name = STATE_MAP[stateSlug];
   if (!name) return {};
   const region = getRegionNameForState(stateSlug);
   return {
     title: `${name} — Destinations, Scores & Travel Guide`,
-    description: `Explore destinations in ${name}${region ? `, ${region}` : ""}. Monthly scores, kids ratings, safety data, and honest travel intelligence for every place worth visiting.`,
-    openGraph: {
-      title: `${name} — NakshIQ Travel Guide`,
-      description: `Every destination in ${name}, scored for every month.`,
-      images: [`/images/destinations/${stateSlug}.jpg`],
-    },
+    description: `Explore destinations in ${name}${region ? `, ${region}` : ""}. Monthly scores, kids ratings, safety data, and honest travel intelligence.`,
   };
 }
 
@@ -37,20 +31,16 @@ async function getData(stateSlug: string) {
 
   const supabase = createClient(url, key);
 
+  // Run all queries in parallel — use try/catch to prevent any single failure from crashing
   const [stateResult, regionResult, destResult, allStatesResult] = await Promise.all([
-    supabase.from("states").select("*").eq("id", stateSlug).single(),
-    supabase.from("regions").select("*").eq("state_id", stateSlug).maybeSingle(),
+    supabase.from("states").select("id, name, region, description, capital, display_order").eq("id", stateSlug).single(),
+    supabase.from("regions").select("id, name, state_id, hero_tagline, description, subregions, tags, best_months, popular_anchors").eq("state_id", stateSlug).maybeSingle(),
     supabase
       .from("destinations")
-      .select(`
-        id, name, tagline, difficulty, elevation_m, tags, best_months, translations, state_id,
-        state:states(name),
-        kids_friendly(suitable, rating),
-        destination_months(month, score, note)
-      `)
+      .select("id, name, tagline, difficulty, elevation_m, tags, translations, state_id, kids_friendly(suitable, rating), destination_months(month, score, note)")
       .eq("state_id", stateSlug)
       .order("name"),
-    supabase.from("states").select("id, name, display_order, region").order("display_order"),
+    supabase.from("states").select("id, name, display_order").order("display_order"),
   ]);
 
   if (!stateResult.data) return null;
@@ -79,16 +69,15 @@ export default async function StateHubPage({
   const regionGroup = getRegionNameForState(stateSlug);
   const currentMonth = new Date().getMonth() + 1;
 
-  // Use first destination's image as state hero (state-level images don't exist)
-  const heroDestId = destinations[0]?.id ?? stateSlug;
+  // Use first destination's image as hero
+  const heroDestId = destinations[0]?.id ?? "manali";
 
-  // Calculate state-level stats
   const totalDests = destinations.length;
-  const avgScore = destinations.length > 0
+  const avgScore = totalDests > 0
     ? (destinations.reduce((sum: number, d: any) => {
-        const monthData = d.destination_months?.find((m: any) => m.month === currentMonth);
-        return sum + (monthData?.score ?? 0);
-      }, 0) / destinations.length).toFixed(1)
+        const md = d.destination_months?.find((m: any) => m.month === currentMonth);
+        return sum + (md?.score ?? 0);
+      }, 0) / totalDests).toFixed(1)
     : "0";
 
   const kidsCount = destinations.filter((d: any) => {
@@ -96,54 +85,33 @@ export default async function StateHubPage({
     return kf?.suitable;
   }).length;
 
-  // Prev/Next state navigation
+  // Prev/Next
   const stateIdx = allStates.findIndex((s: any) => s.id === stateSlug);
   const prevState = stateIdx > 0 ? allStates[stateIdx - 1] : null;
   const nextState = stateIdx < allStates.length - 1 ? allStates[stateIdx + 1] : null;
 
-  // Subregions from regions table
-  const subregions = region?.subregions ?? [];
-
-  // JSON-LD
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "AdministrativeArea",
-    name: stateName,
-    description: state.description || region?.description,
-    containedInPlace: { "@type": "Country", name: "India" },
-    url: `https://nakshiq.com/${locale}/state/${stateSlug}`,
-  };
+  const subregions: any[] = region?.subregions ?? [];
 
   return (
     <div className="min-h-screen">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
       <Nav />
       <main id="main-content">
-        {/* Hero */}
-        <div className="relative h-64 sm:h-80 lg:h-96 overflow-hidden" style={{ background: "linear-gradient(135deg, oklch(0.25 0.02 260), oklch(0.18 0.01 280))" }}>
-          <Image
-            src={`/images/destinations/${heroDestId}.jpg`}
-            alt={stateName}
-            fill
-            sizes="100vw"
-            className="object-cover"
-            priority
-          />
+        {/* Hero — gradient background, no Image component to avoid crashes */}
+        <div
+          className="relative h-64 sm:h-80 lg:h-96 overflow-hidden"
+          style={{
+            background: `linear-gradient(135deg, oklch(0.22 0.03 260), oklch(0.16 0.02 280))`,
+            backgroundImage: `url(/images/destinations/${heroDestId}.jpg)`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        >
           <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
           <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 lg:p-12">
             <div className="mx-auto max-w-7xl">
-              {/* Breadcrumb */}
               <div className="text-sm text-muted-foreground/70 mb-2">
                 <Link href={`/${locale}/states`} className="hover:text-foreground transition-colors">India</Link>
-                {regionGroup && (
-                  <>
-                    {" → "}
-                    <span>{regionGroup}</span>
-                  </>
-                )}
+                {regionGroup && <> {" → "} <span>{regionGroup}</span></>}
                 {" → "}
                 <span className="text-foreground">{stateName}</span>
               </div>
@@ -151,7 +119,6 @@ export default async function StateHubPage({
               {state.capital && (
                 <p className="mt-1 text-sm text-muted-foreground">Capital: {state.capital}</p>
               )}
-              {/* Stats strip */}
               <div className="mt-4 flex flex-wrap gap-4 sm:gap-6">
                 <div>
                   <div className="text-2xl font-mono font-bold">{totalDests}</div>
@@ -177,7 +144,7 @@ export default async function StateHubPage({
         </div>
 
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8">
-          {/* Description + tagline */}
+          {/* Description */}
           {(region?.hero_tagline || region?.description) && (
             <div className="mb-8">
               {region.hero_tagline && (
@@ -186,9 +153,7 @@ export default async function StateHubPage({
                 </p>
               )}
               {region.description && (
-                <p className="text-[15px] text-muted-foreground leading-relaxed max-w-3xl">
-                  {region.description}
-                </p>
+                <p className="text-[15px] text-muted-foreground leading-relaxed max-w-3xl">{region.description}</p>
               )}
             </div>
           )}
@@ -205,9 +170,7 @@ export default async function StateHubPage({
                     </span>
                     {sr.description && (
                       <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover:block z-20 w-64">
-                        <div className="rounded-lg border border-border bg-card p-3 text-xs text-muted-foreground shadow-xl">
-                          {sr.description}
-                        </div>
+                        <div className="rounded-lg border border-border bg-card p-3 text-xs text-muted-foreground shadow-xl">{sr.description}</div>
                       </div>
                     )}
                   </div>
@@ -220,11 +183,7 @@ export default async function StateHubPage({
           {region?.tags && region.tags.length > 0 && (
             <div className="mb-8 flex flex-wrap gap-2">
               {region.tags.map((tag: string) => (
-                <Link
-                  key={tag}
-                  href={`/${locale}/explore/tag/${tag}`}
-                  className="rounded-full bg-muted/30 px-3 py-1 text-xs font-medium text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-all capitalize"
-                >
+                <Link key={tag} href={`/${locale}/explore/tag/${tag}`} className="rounded-full bg-muted/30 px-3 py-1 text-xs font-medium text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-all capitalize">
                   {tag}
                 </Link>
               ))}
@@ -238,10 +197,7 @@ export default async function StateHubPage({
               {["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"].map((m, i) => {
                 const isBest = region.best_months.includes(i + 1);
                 return (
-                  <span
-                    key={m}
-                    className={`inline-block rounded-full px-2 py-0.5 text-xs font-medium mr-1 ${isBest ? "bg-emerald-500/20 text-emerald-400 border border-emerald-500/30" : "text-muted-foreground/30"}`}
-                  >
+                  <span key={m} className={`inline-block rounded-full px-2 py-0.5 text-xs font-medium mr-1 ${isBest ? "bg-emerald-500/20 text-emerald-400 border border-emerald-500/30" : "text-muted-foreground/30"}`}>
                     {m}
                   </span>
                 );
@@ -251,13 +207,11 @@ export default async function StateHubPage({
 
           {/* Destination grid */}
           <div className="mb-12">
-            <h2 className="text-xl font-bold mb-6">
-              All {totalDests} Destinations in {stateName}
-            </h2>
+            <h2 className="text-xl font-bold mb-6">All {totalDests} Destinations in {stateName}</h2>
             <StateDestinationGrid destinations={destinations} locale={locale} />
           </div>
 
-          {/* Quick links to related pages */}
+          {/* Quick links */}
           <div className="mb-12 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             <Link href={`/${locale}/explore/state/${stateSlug}`} className="rounded-xl border border-border p-4 hover:border-primary/40 transition-all">
               <div className="text-sm font-semibold">Explore {stateName}</div>
@@ -277,19 +231,17 @@ export default async function StateHubPage({
             </Link>
           </div>
 
-          {/* Prev / Next State Navigation */}
+          {/* Prev / Next */}
           <div className="flex items-center justify-between border-t border-border/50 pt-6">
             {prevState ? (
-              <Link href={`/${locale}/state/${prevState.id}`} className="group flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
+              <Link href={`/${locale}/state/${prevState.id}`} prefetch={false} className="group flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
                 <span className="group-hover:-translate-x-1 transition-transform">&larr;</span>
                 <span>{prevState.name}</span>
               </Link>
             ) : <div />}
-            <Link href={`/${locale}/states`} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-              All States
-            </Link>
+            <Link href={`/${locale}/states`} className="text-sm text-muted-foreground hover:text-foreground transition-colors">All States</Link>
             {nextState ? (
-              <Link href={`/${locale}/state/${nextState.id}`} className="group flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
+              <Link href={`/${locale}/state/${nextState.id}`} prefetch={false} className="group flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
                 <span>{nextState.name}</span>
                 <span className="group-hover:translate-x-1 transition-transform">&rarr;</span>
               </Link>
