@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+// Using <a> tags instead of next/link to avoid RSC streaming crashes with Framer Motion
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import { useLocale, useTranslations } from "next-intl";
@@ -107,9 +107,9 @@ export function DestinationDetail({ dest }: { dest: any }) {
         <FadeIn>
           <div className="mb-4 flex items-center justify-between">
             <div className="text-[15px] text-muted-foreground">
-              <Link href={`/${locale}/explore`} className="hover:text-foreground transition-colors">Explore</Link>
+              <a href={`/${locale}/explore`} className="hover:text-foreground transition-colors">Explore</a>
               {" → "}
-              <Link href={`/${locale}/region/${dest.state_id}`} className="hover:text-foreground transition-colors">{stateName}</Link>
+              <a href={`/${locale}/state/${dest.state_id}`} className="hover:text-foreground transition-colors">{stateName}</a>
               {" → "}
               <span className="text-foreground">{displayName}</span>
             </div>
@@ -279,13 +279,13 @@ export function DestinationDetail({ dest }: { dest: any }) {
                   const scoreColor = score >= 4 ? "bg-emerald-500/20 text-emerald-400 border-emerald-500/30" : score >= 3 ? "bg-yellow-500/20 text-yellow-400 border-yellow-500/30" : score >= 2 ? "bg-orange-500/20 text-orange-400 border-orange-500/30" : score >= 1 ? "bg-red-500/20 text-red-400 border-red-500/30" : "bg-zinc-500/20 text-zinc-400 border-zinc-500/30";
                   const isCurrent = i + 1 === currentMonth;
                   return (
-                    <Link
+                    <a
                       key={m}
                       href={`/${locale}/destination/${dest.id}/${slug}`}
                       className={`rounded-full border px-2.5 py-1 text-[10px] font-bold transition-all hover:scale-105 ${scoreColor} ${isCurrent ? "ring-1 ring-primary" : ""}`}
                     >
                       {m} {score}/5
-                    </Link>
+                    </a>
                   );
                 })}
               </div>
@@ -297,20 +297,20 @@ export function DestinationDetail({ dest }: { dest: any }) {
                 const monthSlug = ["","january","february","march","april","may","june","july","august","september","october","november","december"][currentMonth];
                 const monthName = ["","January","February","March","April","May","June","July","August","September","October","November","December"][currentMonth];
                 return (
-                  <Link href={`/${locale}/where-to-go/${monthSlug}`} className="rounded-full border border-border px-3 py-1.5 text-xs font-medium text-muted-foreground hover:text-foreground hover:border-primary/40 transition-all">
+                  <a href={`/${locale}/where-to-go/${monthSlug}`} className="rounded-full border border-border px-3 py-1.5 text-xs font-medium text-muted-foreground hover:text-foreground hover:border-primary/40 transition-all">
                     All destinations in {monthName} →
-                  </Link>
+                  </a>
                 );
               })()}
               {kf && (
-                <Link href={`/${locale}/with-kids/${dest.id}`} className="rounded-full border border-border px-3 py-1.5 text-xs font-medium text-muted-foreground hover:text-foreground hover:border-primary/40 transition-all">
+                <a href={`/${locale}/with-kids/${dest.id}`} className="rounded-full border border-border px-3 py-1.5 text-xs font-medium text-muted-foreground hover:text-foreground hover:border-primary/40 transition-all">
                   👶 Family Guide →
-                </Link>
+                </a>
               )}
               {dest.nearbyDestinations?.length > 0 && (
-                <Link href={`/${locale}/vs/${dest.id}-vs-${dest.nearbyDestinations[0].id}`} className="rounded-full border border-border px-3 py-1.5 text-xs font-medium text-muted-foreground hover:text-foreground hover:border-primary/40 transition-all">
+                <a href={`/${locale}/vs/${dest.id}-vs-${dest.nearbyDestinations[0].id}`} className="rounded-full border border-border px-3 py-1.5 text-xs font-medium text-muted-foreground hover:text-foreground hover:border-primary/40 transition-all">
                   ⚔ Compare →
-                </Link>
+                </a>
               )}
             </div>
 
@@ -323,7 +323,7 @@ export function DestinationDetail({ dest }: { dest: any }) {
             {dest.relatedArticles?.length > 0 && (
               <div className="mt-4 space-y-2">
                 {dest.relatedArticles.map((article: any) => (
-                  <Link
+                  <a
                     key={article.slug}
                     href={`/${locale}/blog/${article.slug}`}
                     className="flex items-center gap-3 rounded-xl border border-primary/20 bg-primary/5 p-3 transition-all hover:border-primary/40 hover:bg-primary/10"
@@ -336,7 +336,7 @@ export function DestinationDetail({ dest }: { dest: any }) {
                       </div>
                     </div>
                     <span className="text-xs text-muted-foreground">→</span>
-                  </Link>
+                  </a>
                 ))}
               </div>
             )}
@@ -912,7 +912,7 @@ export function DestinationDetail({ dest }: { dest: any }) {
                       {subs.map((sub: any) => (
                         <StaggerItem key={sub.id}>
                           <HoverCard>
-                            <Link
+                            <a
                               href={`/${locale}/destination/${dest.id}#places`}
                               className="block rounded-xl border border-border p-4 h-full transition-all hover:border-primary/50"
                             >
@@ -928,7 +928,7 @@ export function DestinationDetail({ dest }: { dest: any }) {
                                 <span>·</span>
                                 <span>{sub.kids_ok ? "👶 OK" : "Adults"}</span>
                               </div>
-                            </Link>
+                            </a>
                           </HoverCard>
                         </StaggerItem>
                       ))}
@@ -1106,7 +1106,7 @@ export function DestinationDetail({ dest }: { dest: any }) {
             <h2 className="text-xl font-bold mb-4">Nearby in {stateName}</h2>
             <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
               {dest.nearbyDestinations.map((nd: any) => (
-                <Link
+                <a
                   key={nd.id}
                   href={`/${locale}/destination/${nd.id}`}
                   className="group rounded-xl border border-border bg-card overflow-hidden hover:border-primary/40 transition-all"
@@ -1128,7 +1128,7 @@ export function DestinationDetail({ dest }: { dest: any }) {
                       {nd.difficulty}{nd.elevation_m ? ` · ${nd.elevation_m.toLocaleString()}m` : ""}
                     </div>
                   </div>
-                </Link>
+                </a>
               ))}
             </div>
           </div>
@@ -1142,14 +1142,14 @@ export function DestinationDetail({ dest }: { dest: any }) {
             <h2 className="text-lg font-bold mb-3">Featured in Collections</h2>
             <div className="flex gap-3 overflow-x-auto pb-2">
               {dest.relatedCollections.map((c: any) => (
-                <Link
+                <a
                   key={c.id}
                   href={`/${locale}/collections/${c.id}`}
                   className="flex-shrink-0 rounded-xl border border-border bg-card p-4 w-60 hover:border-primary/40 transition-all"
                 >
                   <div className="font-semibold text-sm">{c.name}</div>
                   <div className="text-xs text-muted-foreground mt-1 line-clamp-2">{c.description}</div>
-                </Link>
+                </a>
               ))}
             </div>
           </div>
@@ -1163,14 +1163,14 @@ export function DestinationDetail({ dest }: { dest: any }) {
             <h2 className="text-lg font-bold mb-3">Road Trips Through Here</h2>
             <div className="flex gap-3 overflow-x-auto pb-2">
               {dest.relatedRoutes.map((r: any) => (
-                <Link
+                <a
                   key={r.id}
                   href={`/${locale}/routes/${r.id}`}
                   className="flex-shrink-0 rounded-xl border border-border bg-card p-4 w-60 hover:border-primary/40 transition-all"
                 >
                   <div className="font-semibold text-sm">{r.name}</div>
                   <div className="text-xs text-muted-foreground mt-1">{r.days} days · {r.difficulty}</div>
-                </Link>
+                </a>
               ))}
             </div>
           </div>
