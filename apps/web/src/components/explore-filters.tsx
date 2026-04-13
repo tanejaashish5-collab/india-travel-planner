@@ -53,18 +53,28 @@ export function ExploreFilters({
 
       {/* Filter row — horizontal scroll on mobile, wrap on desktop */}
       <div className="flex gap-2 overflow-x-auto pb-2 sm:flex-wrap sm:overflow-x-visible sm:pb-0 scrollbar-none">
-        {/* State */}
+        {/* State — grouped by region */}
         <select
           value={filters.stateId}
           onChange={(e) => update({ stateId: e.target.value })}
           className="shrink-0 rounded-lg border border-border bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/50"
         >
           <option value="">{tf("allStates")}</option>
-          {states.map((s) => (
-            <option key={s.id} value={s.id}>
-              {s.name}
-            </option>
-          ))}
+          {(() => {
+            const groups: Record<string, typeof states> = {};
+            states.forEach((s) => {
+              const region = (s as any).region ?? "Other";
+              if (!groups[region]) groups[region] = [];
+              groups[region].push(s);
+            });
+            return Object.entries(groups).map(([region, regionStates]) => (
+              <optgroup key={region} label={region}>
+                {regionStates.map((s) => (
+                  <option key={s.id} value={s.id}>{s.name}</option>
+                ))}
+              </optgroup>
+            ));
+          })()}
         </select>
 
         {/* Month */}

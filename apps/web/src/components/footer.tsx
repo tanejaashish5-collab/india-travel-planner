@@ -77,9 +77,12 @@ export function Footer({ stats }: { stats?: { destinations: number; places: numb
             </h4>
             <div className="space-y-2">
               {[
-                { href: `/${locale}/region/himachal-pradesh`, label: "Himachal Pradesh" },
-                { href: `/${locale}/region/uttarakhand`, label: "Uttarakhand" },
-                { href: `/${locale}/region/jammu-kashmir`, label: "Jammu & Kashmir" },
+                { href: `/${locale}/states`, label: "Browse All States" },
+                { href: `/${locale}/state/himachal-pradesh`, label: "Himachal Pradesh" },
+                { href: `/${locale}/state/uttarakhand`, label: "Uttarakhand" },
+                { href: `/${locale}/state/rajasthan`, label: "Rajasthan" },
+                { href: `/${locale}/state/jammu-kashmir`, label: "Jammu & Kashmir" },
+                { href: `/${locale}/state/ladakh`, label: "Ladakh" },
               ].map((link) => (
                 <Link
                   key={link.href}

@@ -27,6 +27,7 @@ import { DestinationAlerts } from "./destination-alerts";
 import { FadeIn, SlideIn, HoverCard, StaggerContainer, StaggerItem, ScrollReveal } from "./animated-hero";
 import { Footer } from "./footer";
 import { StickyDestinationHeader } from "./sticky-destination-header";
+import { POISection } from "./poi-section";
 import { SCORE_COLORS, DIFFICULTY_BG, DIFFICULTY_COLORS } from "@/lib/design-tokens";
 
 export function DestinationDetail({ dest }: { dest: any }) {
@@ -79,6 +80,7 @@ export function DestinationDetail({ dest }: { dest: any }) {
   const legends = dest.local_legends ?? [];
   const eats = dest.viral_eats ?? [];
   const trapAlts = dest.trap_alternatives ?? [];
+  const pois = dest.points_of_interest ?? [];
 
   const currentMonth = new Date().getMonth() + 1;
   const currentScore = months.find((m: any) => m.month === currentMonth)?.score ?? null;
@@ -92,7 +94,7 @@ export function DestinationDetail({ dest }: { dest: any }) {
     if (tab.id === "monthly" && months.length === 0) return false;
     if (tab.id === "kids" && !kf) return false;
     if (tab.id === "safety" && !cc) return false;
-    if (tab.id === "places" && subs.length === 0 && gems.length === 0) return false;
+    if (tab.id === "places" && subs.length === 0 && gems.length === 0 && pois.length === 0) return false;
     if (tab.id === "food" && legends.length === 0 && eats.length === 0) return false;
     if (tab.id === "reviews" && (!dest.traveler_notes || dest.traveler_notes.length === 0) && (!dest.reviews || dest.reviews.length === 0)) return false;
     return true;
@@ -948,6 +950,11 @@ export function DestinationDetail({ dest }: { dest: any }) {
                       ))}
                     </div>
                   </section>
+                )}
+
+                {/* Points of Interest */}
+                {pois.length > 0 && (
+                  <POISection pois={pois} destName={displayName} />
                 )}
               </div>
             )}

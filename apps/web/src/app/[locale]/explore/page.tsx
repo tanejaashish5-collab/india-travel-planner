@@ -29,7 +29,7 @@ async function getData() {
         destination_months(month, score, note)
       `)
       .order("name"),
-    supabase.from("states").select("id, name").order("name"),
+    supabase.from("states").select("id, name, region").order("display_order"),
     // Fetch coords from the view that extracts lat/lng
     supabase.from("destinations_with_coords").select("id, lat, lng"),
   ]);

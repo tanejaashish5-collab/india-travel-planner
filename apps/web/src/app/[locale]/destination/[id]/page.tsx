@@ -182,6 +182,13 @@ async function getDestination(id: string) {
     .eq("destination_id", id)
     .single();
 
+  // Points of interest
+  const { data: pois } = await supabase
+    .from("points_of_interest")
+    .select("id, name, type, description, time_needed, entry_fee, kids_suitable, tags")
+    .eq("destination_id", id)
+    .order("type");
+
   return {
     ...data,
     hidden_gems: gems ?? [],
@@ -197,6 +204,7 @@ async function getDestination(id: string) {
     relatedRoutes: relatedRoutes ?? [],
     nearbyDestinations: nearbyDests ?? [],
     emergencySos: emergencySos ?? null,
+    points_of_interest: pois ?? [],
   };
 }
 
