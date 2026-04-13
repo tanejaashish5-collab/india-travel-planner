@@ -1,16 +1,10 @@
 name: Nakshiq Autoposter
 
 on:
-  # ── 3x daily syncs (IST = UTC+5:30) ──────────────────────────────────────
-  # 09:00 IST = 03:30 UTC  →  POSTS (first run of day)
-  # 14:00 IST = 08:30 UTC  →  sync only
-  # 19:00 IST = 13:30 UTC  →  sync only
   schedule:
-    - cron: "30 3 * * *"   # 09:00 IST — publishes today's post
+    - cron: "30 3 * * *"   # 09:00 IST — publish today's post
     - cron: "30 8 * * *"   # 14:00 IST — content sync only
     - cron: "30 13 * * *"  # 19:00 IST — content sync only
-
-  # Manual trigger from GitHub Actions tab (for testing / force post)
   workflow_dispatch:
     inputs:
       mode:
@@ -24,11 +18,14 @@ on:
           - sync-only
           - dry-run
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
   post:
     runs-on: ubuntu-latest
     permissions:
-      contents: write  # needed to commit state.json back to repo
+      contents: write
 
     steps:
       - name: Checkout repo
@@ -41,15 +38,11 @@ jobs:
         with:
           python-version: "3.11"
           cache: "pip"
+          cache-dependency-path: nakshiq-autoposter/requirements.txt
 
       - name: Install dependencies
-        run: pip install -r requirements.txt
+        run: pip install -r nakshiq-autoposter/requirements.txt
 
-      # ── Determine run mode ────────────────────────────────────────────────
-      # Scheduled 03:30 UTC → normal (will post)
-      # Scheduled 08:30 UTC → sync-only (already posted today)
-      # Scheduled 13:30 UTC → sync-only
-      # Manual → use workflow_dispatch input
       - name: Set run mode
         id: mode
         run: |
@@ -64,14 +57,12 @@ jobs:
       - name: Run autoposter
         env:
           OUTSTAND_API_KEY: ${{ secrets.OUTSTAND_API_KEY }}
-        run: python autoposter.py ${{ steps.mode.outputs.args }}
+        run: python nakshiq-autoposter/autoposter.py ${{ steps.mode.outputs.args }}
 
-      # ── Commit state.json + log back to repo ──────────────────────────────
-      # This is how state persists between runs (what was posted, when)
       - name: Commit updated state
         run: |
           git config user.name  "Nakshiq Autoposter"
           git config user.email "autoposter@nakshiq.com"
-          git add state.json autoposter.log
-          git diff --staged --quiet || git commit -m "chore: autoposter state $(date -u +%Y-%m-%d\ %H:%M\ UTC)"
+          git add nakshiq-autoposter/state.json nakshiq-autoposter/autoposter.log
+          git diff --staged --quiet || git commit -m "chore: autoposter state $(date -u +'%Y-%m-%d %H:%M UTC')"
           git push
