@@ -114,10 +114,10 @@ export function Footer({ stats }: { stats?: { destinations: number; places: numb
         {/* Stats strip */}
         <div className="flex flex-wrap justify-center gap-8 mb-12">
           {[
-            { num: String(stats?.destinations ?? 260), label: "Destinations" },
-            { num: `${stats?.places ?? 700}+`, label: "Places" },
-            { num: String(stats?.festivals ?? 183), label: "Festivals" },
-            { num: String(stats?.traps ?? 66), label: "Tourist Traps Exposed" },
+            { num: String(stats?.destinations || 260), label: "Destinations" },
+            { num: `${stats?.places || 700}+`, label: "Places" },
+            { num: String(stats?.festivals || 183), label: "Festivals" },
+            { num: String(stats?.traps || 66), label: "Tourist Traps Exposed" },
             { num: String(stats?.collections ?? 35), label: "Collections" },
           ].map((stat) => (
             <div key={stat.label} className="text-center">

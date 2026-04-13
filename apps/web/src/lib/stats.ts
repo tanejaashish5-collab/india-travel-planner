@@ -51,16 +51,16 @@ export async function getAppStats(): Promise<AppStats> {
     ]);
 
     const stats: AppStats = {
-      destinations: dests.count ?? FALLBACK.destinations,
-      places: (dests.count ?? 0) + (subs.count ?? 0) + (gems.count ?? 0),
-      routes: routes.count ?? FALLBACK.routes,
-      festivals: festivals.count ?? FALLBACK.festivals,
-      collections: collections.count ?? FALLBACK.collections,
-      treks: treks.count ?? FALLBACK.treks,
-      states: states.count ?? FALLBACK.states,
-      traps: traps.count ?? FALLBACK.traps,
-      permits: permits.count ?? FALLBACK.permits,
-      campingSpots: camping.count ?? FALLBACK.campingSpots,
+      destinations: dests.count || FALLBACK.destinations,
+      places: ((dests.count ?? 0) + (subs.count ?? 0) + (gems.count ?? 0)) || FALLBACK.places,
+      routes: routes.count || FALLBACK.routes,
+      festivals: festivals.count || FALLBACK.festivals,
+      collections: collections.count || FALLBACK.collections,
+      treks: treks.count || FALLBACK.treks,
+      states: states.count || FALLBACK.states,
+      traps: traps.count || FALLBACK.traps,
+      permits: permits.count || FALLBACK.permits,
+      campingSpots: camping.count || FALLBACK.campingSpots,
     };
 
     return stats;

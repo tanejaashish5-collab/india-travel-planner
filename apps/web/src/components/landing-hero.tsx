@@ -327,10 +327,10 @@ export function LandingHero({
           {/* Stats — animated counters */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-8">
             {[
-              { num: stats?.destinations ?? 260, suffix: "", label: "Destinations", href: `/${locale}/explore` },
-              { num: stats?.places ?? 700, suffix: "+", label: t("stats.places"), href: `/${locale}/explore` },
-              { num: stats?.festivals ?? 183, suffix: "", label: "Festivals", href: `/${locale}/festivals` },
-              { num: stats?.routes ?? 39, suffix: "", label: t("stats.routes"), href: `/${locale}/routes` },
+              { num: stats?.destinations || 260, suffix: "", label: "Destinations", href: `/${locale}/explore` },
+              { num: stats?.places || 700, suffix: "+", label: t("stats.places"), href: `/${locale}/explore` },
+              { num: stats?.festivals || 183, suffix: "", label: "Festivals", href: `/${locale}/festivals` },
+              { num: stats?.routes || 39, suffix: "", label: t("stats.routes"), href: `/${locale}/routes` },
             ].map((stat) => (
               <Link
                 key={stat.label}
@@ -469,7 +469,7 @@ export function LandingHero({
                 href={`/${locale}/explore`}
                 className="inline-flex items-center gap-2 text-sm text-primary hover:underline"
               >
-                View all {stats?.destinations ?? 260} destinations →
+                View all {stats?.destinations || 260} destinations →
               </Link>
             </div>
           </div>
