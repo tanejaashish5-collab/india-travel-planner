@@ -5,7 +5,17 @@ import { PrevNextNav } from "@/components/prev-next-nav";
 import { createClient } from "@supabase/supabase-js";
 import { notFound } from "next/navigation";
 
-export const revalidate = 86400;
+export const revalidate = 3600; // Revalidate every hour
+
+export async function generateStaticParams() {
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+  if (!url || !key) return [];
+  const supabase = createClient(url, key);
+  const { data } = await supabase.from("destinations").select("id");
+  const locales = ["en", "hi"];
+  return (data ?? []).flatMap((d) => locales.map((locale) => ({ id: d.id, locale })));
+}
 
 export async function generateMetadata({
   params,
