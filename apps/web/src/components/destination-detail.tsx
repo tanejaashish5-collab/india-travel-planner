@@ -148,28 +148,17 @@ export function DestinationDetail({ dest }: { dest: any }) {
         {/* Cinematic Hero — video where available */}
         <FadeIn>
           <div className="mb-6 relative h-56 sm:h-72 lg:h-96 rounded-2xl overflow-hidden film-grain" style={{ background: "linear-gradient(135deg, oklch(0.25 0.02 260), oklch(0.18 0.01 280))" }}>
-            {/* Video hero for destinations with clips */}
-            {["chopta-tungnath","darjeeling","amritsar","jaisalmer","srinagar","kedarnath","leh","manali","pangong-lake","pushkar","jodhpur","rishikesh","spiti-valley","tawang","tirthan-valley","valley-of-flowers","varanasi","kasol-parvati-valley","nubra-valley"].includes(dest.id) ? (
-              <video
-                autoPlay
-                muted
-                loop
-                playsInline
-                className="w-full h-full object-cover"
-                poster={`/images/destinations/${dest.id}.jpg`}
-              >
-                <source src={`/videos/${dest.id}.mp4`} type="video/mp4" />
-              </video>
-            ) : (
-              <Image
-                src={`/images/destinations/${dest.id}.jpg`}
-                alt={dest.name}
-                fill
-                sizes="100vw"
-                className="object-cover transition-transform duration-700 group-hover:scale-105"
-                priority
-              />
-            )}
+            {/* Video hero — attempts video, falls back to poster image */}
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="w-full h-full object-cover"
+              poster={`/images/destinations/${dest.id}.jpg`}
+            >
+              <source src={`/videos/${dest.id}.mp4`} type="video/mp4" />
+            </video>
             <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
             {/* Floating difficulty badge */}
             <div className="absolute top-4 left-4">
