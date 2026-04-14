@@ -1,8 +1,12 @@
 User-agent: *
 Allow: /
 
-# Sitemap
-Sitemap: https://www.nakshiq.com/sitemap.xml
+# Sitemaps (5 chunks: static, destinations, content, programmatic SEO, comparisons)
+Sitemap: https://www.nakshiq.com/sitemap/0.xml
+Sitemap: https://www.nakshiq.com/sitemap/1.xml
+Sitemap: https://www.nakshiq.com/sitemap/2.xml
+Sitemap: https://www.nakshiq.com/sitemap/3.xml
+Sitemap: https://www.nakshiq.com/sitemap/4.xml
 
 # Disallow admin/API routes
 Disallow: /api/
