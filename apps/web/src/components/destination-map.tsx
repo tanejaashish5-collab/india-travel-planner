@@ -84,6 +84,16 @@ export function DestinationMap({
           background: #1a1a2e;
           border: 1px solid #333;
         }
+        .leaflet-control-attribution,
+        .leaflet-control-attribution.leaflet-control {
+          background: rgba(20,20,30,0.85) !important;
+          color: #ccc !important;
+          font-size: 10px !important;
+          padding: 2px 8px !important;
+        }
+        .leaflet-control-attribution a {
+          color: #7ab8ff !important;
+        }
       `}</style>
       <div
         ref={mapRef}

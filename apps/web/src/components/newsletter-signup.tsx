@@ -4,6 +4,17 @@ import { useState } from "react";
 import { createClient } from "@supabase/supabase-js";
 import { FadeIn } from "./animated-hero";
 
+// Singleton Supabase client to avoid multiple GoTrueClient instances
+let _supabase: ReturnType<typeof createClient> | null = null;
+function getSupabase() {
+  if (_supabase) return _supabase;
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+  if (!url || !key) return null;
+  _supabase = createClient(url, key);
+  return _supabase;
+}
+
 /**
  * Newsletter signup component.
  *
@@ -33,18 +44,15 @@ export function NewsletterSignup() {
     setErrorMsg("");
 
     try {
-      const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
-      const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-      if (!url || !key) {
+      const supabase = getSupabase();
+      if (!supabase) {
         setErrorMsg("Subscription service is temporarily unavailable.");
         setStatus("error");
         return;
       }
-
-      const supabase = createClient(url, key);
       const { error } = await supabase
         .from("newsletter_subscribers")
-        .insert({ email: email.trim().toLowerCase() });
+        .insert({ email: email.trim().toLowerCase() } as never);
 
       if (error) {
         if (error.code === "23505") {

@@ -159,7 +159,7 @@ export function DestinationDetail({ dest }: { dest: any }) {
             >
               <source src={`${process.env.NEXT_PUBLIC_SUPABASE_URL}/storage/v1/object/public/videos/${dest.id}.mp4`} type="video/mp4" />
             </video>
-            <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/30 to-transparent pointer-events-none" />
             {/* Floating difficulty badge */}
             <div className="absolute top-4 left-4">
               <span className={`inline-block rounded-lg px-3 py-1.5 text-xs font-semibold capitalize backdrop-blur-md ${DIFFICULTY_BG[dest.difficulty] ?? "bg-muted/80"}`}>

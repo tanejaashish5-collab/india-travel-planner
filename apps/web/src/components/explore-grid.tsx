@@ -283,10 +283,11 @@ function DestinationCard({
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
           className="object-cover ken-burns"
           priority={cardIndex < 4}
+          loading={cardIndex < 4 ? undefined : "lazy"}
           onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
         />
-        {/* Gradient overlay */}
-        <div className={`absolute inset-0 ${featured ? "bg-gradient-to-t from-card via-card/60 to-transparent" : "bg-gradient-to-t from-card/80 to-transparent"}`} />
+        {/* Gradient overlay — lighter to keep images visible */}
+        <div className={`absolute inset-0 ${featured ? "bg-gradient-to-t from-card/70 via-card/30 to-transparent" : "bg-gradient-to-t from-card/60 via-transparent to-transparent"}`} />
 
         {/* Featured: title overlaid on image */}
         {featured && (

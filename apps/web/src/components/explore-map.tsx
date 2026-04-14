@@ -154,12 +154,16 @@ export function ExploreMap({ destinations }: { destinations: MapDestination[] })
         .leaflet-popup-close-button {
           color: #888 !important;
         }
-        .leaflet-control-attribution {
-          background: rgba(0,0,0,0.7) !important;
-          color: #aaa !important;
+        .leaflet-control-attribution,
+        .leaflet-control-attribution.leaflet-control {
+          background: rgba(20,20,30,0.85) !important;
+          color: #ccc !important;
           font-size: 10px !important;
+          padding: 2px 8px !important;
+          backdrop-filter: blur(4px);
         }
-        .leaflet-control-attribution a {
+        .leaflet-control-attribution a,
+        .leaflet-control-attribution.leaflet-control a {
           color: #7ab8ff !important;
         }
       `}</style>
