@@ -157,7 +157,7 @@ export function DestinationDetail({ dest }: { dest: any }) {
               className="w-full h-full object-cover"
               poster={`/images/destinations/${dest.id}.jpg`}
             >
-              <source src={`/videos/${dest.id}.mp4`} type="video/mp4" />
+              <source src={`${process.env.NEXT_PUBLIC_SUPABASE_URL}/storage/v1/object/public/videos/${dest.id}.mp4`} type="video/mp4" />
             </video>
             <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
             {/* Floating difficulty badge */}
