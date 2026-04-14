@@ -265,6 +265,20 @@ main {
 a, button, [role="button"], [role="tab"], [role="link"],
 input[type="submit"], input[type="button"], input[type="reset"],
 select, label[for], summary,
-.cursor-pointer {
+.cursor-pointer,
+[onclick], [data-clickable] {
   cursor: pointer;
+}
+
+/* Any element with hover: Tailwind classes should show pointer */
+[class*="hover:bg-"], [class*="hover:text-"], [class*="hover:border-"],
+[class*="hover:shadow"], [class*="hover:scale"], [class*="hover:opacity"],
+[class*="hover:underline"] {
+  cursor: pointer;
+}
+
+/* Leaflet and SVG interactive elements */
+.leaflet-interactive, .leaflet-marker-icon,
+svg path[style*="cursor: pointer"], svg circle[style*="cursor: pointer"] {
+  cursor: pointer !important;
 }
