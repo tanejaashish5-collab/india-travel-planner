@@ -260,3 +260,11 @@ main {
   50% { box-shadow: 0 0 0 8px rgba(220, 38, 38, 0); }
 }
 .animate-pulse-subtle { animation: pulse-subtle 3s ease-in-out infinite; }
+
+/* Cursor pointer on all interactive elements */
+a, button, [role="button"], [role="tab"], [role="link"],
+input[type="submit"], input[type="button"], input[type="reset"],
+select, label[for], summary,
+.cursor-pointer {
+  cursor: pointer;
+}
