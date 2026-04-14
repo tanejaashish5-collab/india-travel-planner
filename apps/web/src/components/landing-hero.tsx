@@ -47,10 +47,10 @@ function HomeMiniMap({ pins, locale }: { pins: MapPin[]; locale: string }) {
   useEffect(() => {
     if (!mapRef.current || mapInstanceRef.current) return;
 
-    Promise.all([
-      import("leaflet"),
-      import("leaflet.markercluster"),
-    ]).then(([L]) => {
+    import("leaflet").then(async (L) => {
+      // Import markercluster as side-effect — it augments L globally
+      await import("leaflet.markercluster");
+
       const map = L.map(mapRef.current!, {
         center: [22.5, 80.0],
         zoom: 5,

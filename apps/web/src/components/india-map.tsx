@@ -25,14 +25,14 @@ const SLUG_TO_SVG: Record<string, string> = Object.fromEntries(
   Object.entries(SVG_TO_SLUG).map(([k, v]) => [v, k])
 );
 
-// States we have data for
+// States we have data for — keep in sync with seo-maps.ts STATE_MAP
 const ACTIVE_STATES = new Set([
   "himachal-pradesh", "uttarakhand", "jammu-kashmir", "ladakh",
   "rajasthan", "punjab", "delhi", "uttar-pradesh", "chandigarh",
   "haryana", "madhya-pradesh", "sikkim", "west-bengal",
   "arunachal-pradesh", "assam", "meghalaya", "nagaland",
   "manipur", "mizoram", "tripura", "bihar", "jharkhand", "chhattisgarh",
-  "gujarat",
+  "gujarat", "maharashtra",
 ]);
 
 // Score to color mapping
