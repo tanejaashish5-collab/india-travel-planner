@@ -15,6 +15,8 @@ import {
   ScrollReveal,
 } from "./animated-hero";
 import { AnimatedCounter } from "./animated-counter";
+import { IndiaHeroMap } from "./india-hero-map";
+import { REGION_GROUPS, STATE_MAP } from "@/lib/seo-maps";
 
 const DIFFICULTY_COLORS: Record<string, string> = {
   easy: "text-emerald-400",
@@ -408,7 +410,7 @@ export function LandingHero({
         </motion.div>
       </section>
 
-      {/* Interactive Map */}
+      {/* Animated India Map + Region Cards */}
       {mapPins && mapPins.length > 0 && (
         <section className="px-4 py-20">
           <div className="mx-auto max-w-5xl">
@@ -418,19 +420,66 @@ export function LandingHero({
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.6, ease: "easeOut" }}
             >
-              <div className="text-center mb-8">
+              <div className="text-center mb-10">
                 <p className="text-sm font-medium text-primary uppercase tracking-widest mb-2">
-                  Explore the Map
+                  Discover India
                 </p>
                 <h2 className="text-3xl font-bold sm:text-4xl">
-                  {stats?.destinations || 260} Destinations Across India
+                  {stats?.destinations || 285} Destinations Across {stats?.states || 25} States
                 </h2>
                 <p className="mt-2 text-muted-foreground">
-                  Click any pin to see this month's score and jump to details
+                  Watch India light up — hover a dot for this month&apos;s score, click to explore
                 </p>
               </div>
-              <HomeMiniMap pins={mapPins} locale={locale} />
+              <IndiaHeroMap pins={mapPins} locale={locale} />
             </motion.div>
+
+            {/* Region Cards */}
+            <div className="mt-16">
+              <FadeIn>
+                <h3 className="text-center text-sm font-bold uppercase tracking-[0.15em] text-muted-foreground/50 mb-6">Explore by region</h3>
+              </FadeIn>
+              <StaggerContainer className="grid gap-3 grid-cols-2 sm:grid-cols-3 lg:grid-cols-5" staggerDelay={0.08}>
+                {([
+                  { slug: "north", icon: "🏔️", desc: "Himalayas, deserts, holy cities", hero: "spiti-valley" },
+                  { slug: "west", icon: "🏖️", desc: "Beaches, caves, Bollywood", hero: "mumbai" },
+                  { slug: "northeast", icon: "🌿", desc: "Living root bridges, tea gardens", hero: "cherrapunji" },
+                  { slug: "east", icon: "🛕", desc: "Temples, tigers, Durga Puja", hero: "darjeeling" },
+                  { slug: "central", icon: "🐅", desc: "Tiger reserves, tribal art", hero: "kanha" },
+                ] as const).map((r) => {
+                  const region = REGION_GROUPS[r.slug];
+                  if (!region || region.states.length === 0) return null;
+                  const count = region.states.length;
+                  return (
+                    <StaggerItem key={r.slug}>
+                      <HoverCard>
+                        <Link
+                          href={`/${locale}/states?region=${r.slug}`}
+                          className="group block rounded-xl border border-border/40 bg-card/50 overflow-hidden transition-all hover:border-primary/40 hover:shadow-lg cursor-pointer"
+                        >
+                          <div className="relative h-20 overflow-hidden">
+                            <img
+                              src={`/images/destinations/${r.hero}.jpg`}
+                              alt={region.name}
+                              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                              loading="lazy"
+                              onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-card via-card/40 to-transparent" />
+                            <span className="absolute bottom-2 left-3 text-lg">{r.icon}</span>
+                          </div>
+                          <div className="p-3 pt-2">
+                            <h4 className="text-sm font-semibold group-hover:text-primary transition-colors">{region.name}</h4>
+                            <p className="text-[10px] text-muted-foreground/60 mt-0.5">{r.desc}</p>
+                            <p className="text-[10px] text-muted-foreground/40 mt-1 font-mono">{count} states →</p>
+                          </div>
+                        </Link>
+                      </HoverCard>
+                    </StaggerItem>
+                  );
+                })}
+              </StaggerContainer>
+            </div>
           </div>
         </section>
       )}
