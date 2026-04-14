@@ -1,8 +1,8 @@
 {
-  "last_sync": "2026-04-13T15:00:34.913334+00:00",
+  "last_sync": "2026-04-14T03:42:42.676487+00:00",
   "posted_today": {
-    "8iDfI": "2026-04-13",
-    "x4cT8": "2026-04-13"
+    "8iDfI": "2026-04-14",
+    "x4cT8": "2026-04-14"
   },
   "posted_destinations": [
     {
@@ -24,14 +24,24 @@
     {
       "destination_id": "tirthan-valley",
       "date": "2026-04-13"
+    },
+    {
+      "destination_id": "chaukori",
+      "date": "2026-04-14"
+    },
+    {
+      "destination_id": "jibhi",
+      "date": "2026-04-14"
     }
   ],
   "posted_formats": {
     "8iDfI": [
-      "score_card"
+      "score_card",
+      "reality_check"
     ],
     "x4cT8": [
-      "score_card"
+      "score_card",
+      "reality_check"
     ]
   },
   "post_log": [
@@ -83,6 +93,26 @@
       "post_id": "9UpkQ",
       "destination": "tirthan-valley",
       "format": "score_card",
+      "has_media": true
+    },
+    {
+      "timestamp": "2026-04-14T03:42:53.570017+00:00",
+      "date": "2026-04-14",
+      "platform": "facebook",
+      "account_id": "8iDfI",
+      "post_id": "I9AlX",
+      "destination": "chaukori",
+      "format": "reality_check",
+      "has_media": true
+    },
+    {
+      "timestamp": "2026-04-14T03:43:02.613875+00:00",
+      "date": "2026-04-14",
+      "platform": "instagram",
+      "account_id": "x4cT8",
+      "post_id": "vBFig",
+      "destination": "jibhi",
+      "format": "reality_check",
       "has_media": true
     }
   ]
