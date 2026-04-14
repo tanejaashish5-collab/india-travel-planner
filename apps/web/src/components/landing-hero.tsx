@@ -47,16 +47,18 @@ function HomeMiniMap({ pins, locale }: { pins: MapPin[]; locale: string }) {
   useEffect(() => {
     if (!mapRef.current || mapInstanceRef.current) return;
 
-    import("leaflet").then((L) => {
+    Promise.all([
+      import("leaflet"),
+      import("leaflet.markercluster"),
+    ]).then(([L]) => {
       const map = L.map(mapRef.current!, {
-        center: [28.5, 78.0],
-        zoom: 6,
+        center: [22.5, 80.0],
+        zoom: 5,
         zoomControl: true,
         scrollWheelZoom: false,
         attributionControl: false,
       });
 
-      // dark_nolabels avoids Chinese/local-script labels near borders
       L.tileLayer(
         "https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png",
         { maxZoom: 19 }
@@ -64,18 +66,35 @@ function HomeMiniMap({ pins, locale }: { pins: MapPin[]; locale: string }) {
 
       const validPins = pins.filter((p) => p.lat && p.lng);
 
+      // Marker cluster group with dark theme styling
+      const clusterGroup = (L as any).markerClusterGroup({
+        maxClusterRadius: 40,
+        spiderfyOnMaxZoom: true,
+        showCoverageOnHover: false,
+        zoomToBoundsOnClick: true,
+        iconCreateFunction: (cluster: any) => {
+          const count = cluster.getChildCount();
+          const size = count > 50 ? 44 : count > 20 ? 38 : 32;
+          return L.divIcon({
+            html: `<div style="background:rgba(59,130,246,0.85);color:#fff;border-radius:50%;width:${size}px;height:${size}px;display:flex;align-items:center;justify-content:center;font-size:${size > 38 ? 13 : 11}px;font-weight:700;font-family:ui-monospace,monospace;border:2px solid rgba(59,130,246,0.4);box-shadow:0 2px 8px rgba(0,0,0,0.4);">${count}</div>`,
+            className: "",
+            iconSize: L.point(size, size),
+          });
+        },
+      });
+
       validPins.forEach((pin) => {
         const color =
           SCORE_MARKER_COLORS[pin.score ?? 0] ?? SCORE_MARKER_COLORS[0];
 
         const marker = L.circleMarker([pin.lat, pin.lng], {
-          radius: 6,
+          radius: 7,
           fillColor: color,
           color: "#000",
           weight: 1,
           opacity: 0.8,
           fillOpacity: 0.9,
-        }).addTo(map);
+        });
 
         const scoreText =
           pin.score !== null ? `${pin.score}/5` : "No score";
@@ -90,7 +109,11 @@ function HomeMiniMap({ pins, locale }: { pins: MapPin[]; locale: string }) {
           </div>`,
           { className: "dark-popup" }
         );
+
+        clusterGroup.addLayer(marker);
       });
+
+      map.addLayer(clusterGroup);
 
       if (validPins.length > 0) {
         const bounds = L.latLngBounds(
@@ -116,6 +139,14 @@ function HomeMiniMap({ pins, locale }: { pins: MapPin[]; locale: string }) {
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"
       />
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.3/MarkerCluster.css"
+      />
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.3/MarkerCluster.Default.css"
+      />
       <style>{`
         .dark-popup .leaflet-popup-content-wrapper {
           background: #1a1a2e;
@@ -129,6 +160,15 @@ function HomeMiniMap({ pins, locale }: { pins: MapPin[]; locale: string }) {
         }
         .dark-popup .leaflet-popup-close-button {
           color: #888 !important;
+        }
+        .leaflet-cluster-anim .leaflet-marker-icon, .leaflet-cluster-anim .leaflet-marker-shadow {
+          transition: transform 0.3s ease-out, opacity 0.3s ease-in;
+        }
+        .marker-cluster-small, .marker-cluster-medium, .marker-cluster-large {
+          background: transparent !important;
+        }
+        .marker-cluster-small div, .marker-cluster-medium div, .marker-cluster-large div {
+          background: transparent !important;
         }
       `}</style>
       <div

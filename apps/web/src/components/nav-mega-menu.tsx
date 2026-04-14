@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 // All links use <a> tags to avoid RSC streaming conflicts when mega menu unmounts
 import { useLocale, useTranslations } from "next-intl";
 import { FALLBACK } from "@/lib/stats";
+import { REGION_GROUPS, STATE_MAP } from "@/lib/seo-maps";
 
 export type PanelType = "experiences" | "plan" | "learn" | "browse" | null;
 
@@ -348,94 +349,65 @@ function LearnPanel({ locale, onNavigate }: { locale: string; onNavigate: () => 
   );
 }
 
-/* ─── Browse Panel (States by Region) ─── */
+/* ─── Browse Panel (Region-First Design) ─── */
 
-const BROWSE_REGIONS = [
-  {
-    label: "North India",
-    states: [
-      { id: "himachal-pradesh", name: "Himachal Pradesh", short: "HP" },
-      { id: "uttarakhand", name: "Uttarakhand", short: "UK" },
-      { id: "jammu-kashmir", name: "J&K", short: "J&K" },
-      { id: "ladakh", name: "Ladakh", short: "LAD" },
-      { id: "rajasthan", name: "Rajasthan", short: "RAJ" },
-      { id: "punjab", name: "Punjab", short: "PB" },
-      { id: "delhi", name: "Delhi", short: "DL" },
-      { id: "uttar-pradesh", name: "Uttar Pradesh", short: "UP" },
-    ],
-  },
-  {
-    label: "Northeast",
-    states: [
-      { id: "sikkim", name: "Sikkim", short: "SK" },
-      { id: "arunachal-pradesh", name: "Arunachal", short: "AR" },
-      { id: "assam", name: "Assam", short: "AS" },
-      { id: "meghalaya", name: "Meghalaya", short: "ML" },
-      { id: "nagaland", name: "Nagaland", short: "NL" },
-      { id: "manipur", name: "Manipur", short: "MN" },
-    ],
-  },
-  {
-    label: "West India",
-    states: [
-      { id: "gujarat", name: "Gujarat", short: "GJ" },
-    ],
-  },
-  {
-    label: "Central & East",
-    states: [
-      { id: "madhya-pradesh", name: "Madhya Pradesh", short: "MP" },
-      { id: "west-bengal", name: "West Bengal", short: "WB" },
-      { id: "bihar", name: "Bihar", short: "BR" },
-      { id: "chhattisgarh", name: "Chhattisgarh", short: "CG" },
-      { id: "jharkhand", name: "Jharkhand", short: "JH" },
-    ],
-  },
+const REGION_CARDS: { slug: string; icon: string; description: string }[] = [
+  { slug: "north", icon: "🏔️", description: "Himalayas, deserts, holy cities" },
+  { slug: "west", icon: "🏖️", description: "Beaches, caves, Bollywood" },
+  { slug: "northeast", icon: "🌿", description: "Living root bridges, tea gardens" },
+  { slug: "east", icon: "🛕", description: "Temples, tigers, Durga Puja" },
+  { slug: "central", icon: "🐅", description: "Tiger reserves, tribal art" },
+  { slug: "south", icon: "🌴", description: "Backwaters, temples, spices" },
 ];
 
 function BrowsePanel({ locale, onNavigate }: { locale: string; onNavigate: () => void }) {
-  // Use <a> tags instead of Next.js <Link> to avoid RSC streaming conflicts
-  // when the mega menu unmounts during client-side navigation
-  function handleClick(e: React.MouseEvent<HTMLAnchorElement>) {
+  function handleClick() {
     onNavigate();
-    // Let the browser handle the navigation as a full page load
-    // This avoids the RSC client-side fetch race condition
   }
 
   return (
     <motion.div variants={staggerContainer} initial="initial" animate="animate">
-      <div className="grid grid-cols-3 gap-6">
-        {BROWSE_REGIONS.map((region) => (
-          <div key={region.label}>
-            <p className="px-1 mb-3 text-[10px] font-semibold uppercase tracking-wider text-muted-foreground/60">{region.label}</p>
-            <div className="space-y-1">
-              {region.states.map((state) => (
-                <motion.div key={state.id} variants={staggerItem}>
-                  <a
-                    href={`/${locale}/state/${state.id}`}
-                    onClick={handleClick}
-                    className="flex items-center gap-3 rounded-lg px-3 py-2 text-sm transition-colors hover:bg-accent group"
-                  >
-                    <span className="flex h-8 w-8 items-center justify-center rounded-md bg-muted/50 text-[10px] font-mono font-bold text-muted-foreground group-hover:bg-primary/20 group-hover:text-primary transition-colors">
-                      {state.short}
-                    </span>
-                    <span className="text-muted-foreground group-hover:text-foreground transition-colors">{state.name}</span>
-                  </a>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        ))}
+      <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+        {REGION_CARDS.map((rc) => {
+          const region = REGION_GROUPS[rc.slug];
+          if (!region || region.states.length === 0) return null;
+          const stateCount = region.states.length;
+          const topStates = region.states.slice(0, 3).map((s) => STATE_MAP[s] ?? s);
+
+          return (
+            <motion.div key={rc.slug} variants={staggerItem}>
+              <a
+                href={`/${locale}/states?region=${rc.slug}`}
+                onClick={handleClick}
+                className="group block rounded-xl border border-border/40 bg-card/50 p-4 transition-all hover:border-primary/40 hover:bg-accent/50 hover:shadow-lg"
+              >
+                <div className="flex items-center gap-2.5 mb-2">
+                  <span className="text-lg">{rc.icon}</span>
+                  <h3 className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors">{region.name}</h3>
+                </div>
+                <p className="text-xs text-muted-foreground/70 mb-2.5">{rc.description}</p>
+                <div className="flex flex-wrap gap-1">
+                  {topStates.map((name) => (
+                    <span key={name} className="rounded-full bg-muted/50 px-2 py-0.5 text-[10px] font-medium text-muted-foreground">{name}</span>
+                  ))}
+                  {stateCount > 3 && (
+                    <span className="rounded-full bg-muted/50 px-2 py-0.5 text-[10px] font-medium text-muted-foreground/50">+{stateCount - 3}</span>
+                  )}
+                </div>
+              </a>
+            </motion.div>
+          );
+        })}
       </div>
-      {/* Full map CTA */}
-      <div className="mt-4 pt-4 border-t border-border/30">
+      {/* Full states page CTA */}
+      <div className="mt-4 pt-4 border-t border-border/30 flex items-center justify-between">
         <a
           href={`/${locale}/states`}
           onClick={handleClick}
           className="inline-flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-accent transition-all"
         >
           <MapPinIcon />
-          <span>Browse all states on map</span>
+          <span>Browse all {Object.keys(STATE_MAP).length} states on map</span>
           <span className="text-muted-foreground/40">→</span>
         </a>
       </div>
