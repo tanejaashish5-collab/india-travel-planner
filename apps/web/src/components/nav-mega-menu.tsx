@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import Link from "next/link";
+// All links use <a> tags to avoid RSC streaming conflicts when mega menu unmounts
 import { useLocale, useTranslations } from "next-intl";
 import { FALLBACK } from "@/lib/stats";
 
@@ -191,9 +191,11 @@ function MenuItem({
   count?: string;
   onNavigate: () => void;
 }) {
+  // Use <a> tags instead of <Link> to avoid RSC streaming conflicts
+  // when the mega menu unmounts during client-side navigation
   return (
     <motion.div variants={staggerItem}>
-      <Link
+      <a
         href={href}
         onClick={onNavigate}
         className="group flex items-start gap-3 rounded-lg px-3 py-2.5 transition-colors hover:bg-muted/50"
@@ -212,7 +214,7 @@ function MenuItem({
           </div>
           <p className="text-xs text-muted-foreground mt-0.5 leading-relaxed">{desc}</p>
         </div>
-      </Link>
+      </a>
     </motion.div>
   );
 }
@@ -247,14 +249,14 @@ function ExperiencesPanel({ locale, onNavigate }: { locale: string; onNavigate: 
             See which destinations score 5/5 right now — weather, crowds, and accessibility all considered.
           </p>
         </div>
-        <Link
+        <a
           href={`/${locale}/where-to-go/${["", "january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december"][new Date().getMonth() + 1]}`}
           onClick={onNavigate}
           className="mt-4 inline-flex items-center text-xs font-medium text-primary hover:text-primary/80 transition-colors"
         >
           View this month's picks
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="ml-1"><path d="m9 18 6-6-6-6" /></svg>
-        </Link>
+        </a>
       </div>
     </motion.div>
   );
@@ -287,13 +289,13 @@ function PlanPanel({ locale, onNavigate }: { locale: string; onNavigate: () => v
             Tell us your dates, interests, and budget. Get a complete itinerary with honest scores for every stop.
           </p>
         </div>
-        <Link
+        <a
           href={`/${locale}/plan`}
           onClick={onNavigate}
           className="mt-4 inline-flex items-center justify-center rounded-lg bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
         >
           Start Planning
-        </Link>
+        </a>
       </div>
     </motion.div>
   );
