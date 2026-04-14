@@ -47,8 +47,10 @@ function HomeMiniMap({ pins, locale }: { pins: MapPin[]; locale: string }) {
   useEffect(() => {
     if (!mapRef.current || mapInstanceRef.current) return;
 
-    import("leaflet").then(async (L) => {
-      // Import markercluster as side-effect — it augments L globally
+    import("leaflet").then(async (leafletModule) => {
+      // Assign L to window so leaflet.markercluster plugin can find it
+      const L = leafletModule.default || leafletModule;
+      (window as any).L = L;
       await import("leaflet.markercluster");
 
       const map = L.map(mapRef.current!, {
@@ -170,6 +172,8 @@ function HomeMiniMap({ pins, locale }: { pins: MapPin[]; locale: string }) {
         .marker-cluster-small div, .marker-cluster-medium div, .marker-cluster-large div {
           background: transparent !important;
         }
+        .leaflet-interactive { cursor: pointer !important; }
+        .leaflet-marker-icon { cursor: pointer !important; }
       `}</style>
       <div
         ref={mapRef}

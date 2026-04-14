@@ -379,7 +379,7 @@ function BrowsePanel({ locale, onNavigate }: { locale: string; onNavigate: () =>
               <a
                 href={`/${locale}/states?region=${rc.slug}`}
                 onClick={handleClick}
-                className="group block rounded-xl border border-border/40 bg-card/50 p-4 transition-all hover:border-primary/40 hover:bg-accent/50 hover:shadow-lg"
+                className="group block rounded-xl border border-border/40 bg-card/50 p-4 transition-all hover:border-primary/40 hover:bg-accent/50 hover:shadow-lg cursor-pointer"
               >
                 <div className="flex items-center gap-2.5 mb-2">
                   <span className="text-lg">{rc.icon}</span>
