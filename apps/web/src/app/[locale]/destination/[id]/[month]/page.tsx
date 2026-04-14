@@ -5,17 +5,11 @@ import { createClient } from "@supabase/supabase-js";
 import { notFound } from "next/navigation";
 
 export const revalidate = 3600;
+export const dynamicParams = true;
 
-export async function generateStaticParams() {
-  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
-  const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-  if (!url || !key) return [];
-  const supabase = createClient(url, key);
-  const { data } = await supabase.from("destinations").select("id");
-  const months = ["january","february","march","april","may","june","july","august","september","october","november","december"];
-  const locales = ["en", "hi"];
-  return (data ?? []).flatMap((d) => locales.map((locale) => months.map((month) => ({ id: d.id, locale, month }))).flat());
-}
+// No generateStaticParams — 6,840 month pages render on-demand via ISR
+// instead of at build time. Cuts build from 20min to ~2min.
+// First visit: 1-2s server render, then cached for 1hr (revalidate=3600).
 
 const VALID_MONTHS = [
   "january","february","march","april","may","june",
