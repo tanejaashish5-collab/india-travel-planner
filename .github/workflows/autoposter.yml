@@ -2,26 +2,22 @@ name: Nakshiq Autoposter
 
 on:
   schedule:
-    # Run every 30 minutes from 03:00–05:00 UTC (covers 08:30–10:30 IST)
-    # This ensures posting happens even if GitHub delays the job by up to 90 mins
-    - cron: "0 3 * * *"
-    - cron: "30 3 * * *"
-    - cron: "0 4 * * *"
-    - cron: "30 4 * * *"
-    - cron: "0 5 * * *"
-    # Afternoon sync: 08:30 UTC = 14:00 IST
-    - cron: "30 8 * * *"
-    # Evening sync: 13:30 UTC = 19:00 IST
-    - cron: "30 13 * * *"
+    - cron: "0 3 * * *"    # 08:30 IST
+    - cron: "30 3 * * *"   # 09:00 IST  ← primary post window
+    - cron: "0 4 * * *"    # 09:30 IST
+    - cron: "30 4 * * *"   # 10:00 IST
+    - cron: "0 5 * * *"    # 10:30 IST  ← last fallback
+    - cron: "30 8 * * *"   # 14:00 IST  sync only
+    - cron: "30 13 * * *"  # 19:00 IST  sync only
   workflow_dispatch:
     inputs:
       mode:
-        description: "Run mode"
-        required: true
-        default: "normal"
+        description: "Run mode (leave blank for normal)"
+        required: false
+        default: ""
         type: choice
         options:
-          - normal
+          - ""
           - force
           - sync-only
           - dry-run
@@ -57,16 +53,22 @@ jobs:
           HOUR=$(date -u +%H)
           MINUTE=$(date -u +%M)
           TOTAL_MINS=$((10#$HOUR * 60 + 10#$MINUTE))
-          # Morning window: 03:00–05:30 UTC (08:30–11:00 IST) → POST
-          # Only post if not already posted today (script handles dedup via state.json)
+          INPUT="${{ github.event.inputs.mode }}"
+
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-            echo "args=--${{ github.event.inputs.mode }}" >> $GITHUB_OUTPUT
+            if [ -n "$INPUT" ]; then
+              echo "args=--${INPUT}" >> $GITHUB_OUTPUT
+              echo "Manual mode: --${INPUT}"
+            else
+              echo "args=" >> $GITHUB_OUTPUT
+              echo "Manual mode: normal (post)"
+            fi
           elif [ "$TOTAL_MINS" -ge 180 ] && [ "$TOTAL_MINS" -le 330 ]; then
             echo "args=" >> $GITHUB_OUTPUT
-            echo "Running in POST mode (UTC ${HOUR}:${MINUTE})"
+            echo "Scheduled POST mode (UTC ${HOUR}:${MINUTE})"
           else
             echo "args=--sync-only" >> $GITHUB_OUTPUT
-            echo "Running in SYNC-ONLY mode (UTC ${HOUR}:${MINUTE})"
+            echo "Scheduled SYNC mode (UTC ${HOUR}:${MINUTE})"
           fi
 
       - name: Run autoposter
