@@ -2,9 +2,17 @@ name: Nakshiq Autoposter
 
 on:
   schedule:
-    - cron: "30 3 * * *"   # 09:00 IST — publish today's post
-    - cron: "30 8 * * *"   # 14:00 IST — content sync only
-    - cron: "30 13 * * *"  # 19:00 IST — content sync only
+    # Run every 30 minutes from 03:00–05:00 UTC (covers 08:30–10:30 IST)
+    # This ensures posting happens even if GitHub delays the job by up to 90 mins
+    - cron: "0 3 * * *"
+    - cron: "30 3 * * *"
+    - cron: "0 4 * * *"
+    - cron: "30 4 * * *"
+    - cron: "0 5 * * *"
+    # Afternoon sync: 08:30 UTC = 14:00 IST
+    - cron: "30 8 * * *"
+    # Evening sync: 13:30 UTC = 19:00 IST
+    - cron: "30 13 * * *"
   workflow_dispatch:
     inputs:
       mode:
@@ -46,12 +54,19 @@ jobs:
       - name: Set run mode
         id: mode
         run: |
+          HOUR=$(date -u +%H)
+          MINUTE=$(date -u +%M)
+          TOTAL_MINS=$((10#$HOUR * 60 + 10#$MINUTE))
+          # Morning window: 03:00–05:30 UTC (08:30–11:00 IST) → POST
+          # Only post if not already posted today (script handles dedup via state.json)
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
             echo "args=--${{ github.event.inputs.mode }}" >> $GITHUB_OUTPUT
-          elif [ "$(date -u +%H)" = "03" ]; then
+          elif [ "$TOTAL_MINS" -ge 180 ] && [ "$TOTAL_MINS" -le 330 ]; then
             echo "args=" >> $GITHUB_OUTPUT
+            echo "Running in POST mode (UTC ${HOUR}:${MINUTE})"
           else
             echo "args=--sync-only" >> $GITHUB_OUTPUT
+            echo "Running in SYNC-ONLY mode (UTC ${HOUR}:${MINUTE})"
           fi
 
       - name: Run autoposter
