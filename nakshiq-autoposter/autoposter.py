@@ -45,7 +45,11 @@ FORMAT_SCHEDULE = {
 }
 
 # Story posted alongside feed post on these weekdays
-STORY_DAYS = {0, 3}  # Monday, Thursday
+STORY_DAYS = {0, 1, 2, 3, 4, 5, 6}  # Every day (skipped on Reel days — see run())
+
+# Total destinations Nakshiq scores — populated from /stats on each sync.
+# Fallback keeps copy sensible if the stats call fails for any reason.
+TOTAL_DESTINATIONS = 260
 
 CONTRARIAN_PAIRS = [
     ("Mussoorie",   "Dhanaulti"),
@@ -155,10 +159,16 @@ def sync_all_content() -> dict:
         "festivals":    nakshiq_fetch("festivals",    {"month": month}),
         "collections":  nakshiq_fetch("collections"),
     }
+    # Keep TOTAL_DESTINATIONS in sync with the real catalog size.
+    global TOTAL_DESTINATIONS
+    stats_total = (content.get("stats") or {}).get("data", {}).get("destinations")
+    if isinstance(stats_total, int) and stats_total > 0:
+        TOTAL_DESTINATIONS = stats_total
     log.info(
         f"Synced → {len(content['destinations'].get('data',[]))} destinations · "
         f"{len(content['traps'].get('data',[]))} traps · "
-        f"{len(content['articles'].get('data',[]))} articles"
+        f"{len(content['articles'].get('data',[]))} articles · "
+        f"total catalog={TOTAL_DESTINATIONS}"
     )
     return content
 
@@ -230,7 +240,7 @@ def copy_score_card(dest: dict, platform: str) -> str:
             f"{name.upper()} IN {mon}: {score}/5  {stars}\n\n"
             f"↑ {elev:,}m · {state}\n\n{tag}\n\n"
             + (f"{note}\n\n" if note else "")
-            + f"NakshIQ scores 229 destinations monthly. Not a blog post — live data.\n\n"
+            + f"NakshIQ scores {TOTAL_DESTINATIONS} destinations monthly. Not a blog post — live data.\n\n"
             f"Full {month_name()} scores → nakshiq.com\n\n{tags}"
         ).strip()
     else:
@@ -238,19 +248,22 @@ def copy_score_card(dest: dict, platform: str) -> str:
             f"{name.upper()} · {mon}\n"
             f"{stars} {score}/5 · ↑{elev:,}m · {state}\n\n{tag}\n\n"
             + (f"{note}\n\n" if note else "")
-            + f"NakshIQ scores 229 destinations monthly — actual data, not aspirational content.\n\n"
+            + f"NakshIQ scores {TOTAL_DESTINATIONS} destinations monthly — actual data, not aspirational content.\n\n"
             f"Save this. Full {month_name()} scores → nakshiq.com\n\n{tags}"
         ).strip()
 
-def copy_reality_check(destinations: list, platform: str) -> tuple[str, str]:
-    dest_map = {d["name"]: d for d in destinations}
-    pair = None
-    for famous, hidden in CONTRARIAN_PAIRS:
-        if famous in dest_map and hidden in dest_map:
-            pair = (dest_map[famous], dest_map[hidden])
-            break
+def copy_reality_check(destinations: list, platform: str,
+                       pair: tuple | None = None) -> tuple[str, str]:
+    # If the caller pre-picked a pair (so both platforms use the same contrast),
+    # use it. Otherwise pick one here from the destinations list.
     if not pair:
-        pair = (destinations[0], destinations[1]) if len(destinations) >= 2 else None
+        dest_map = {d["name"]: d for d in destinations}
+        for famous, hidden in CONTRARIAN_PAIRS:
+            if famous in dest_map and hidden in dest_map:
+                pair = (dest_map[famous], dest_map[hidden])
+                break
+        if not pair:
+            pair = (destinations[0], destinations[1]) if len(destinations) >= 2 else None
     if not pair:
         return copy_score_card(destinations[0], platform), destinations[0]["id"]
     a, b = pair
@@ -265,7 +278,7 @@ def copy_reality_check(destinations: list, platform: str) -> tuple[str, str]:
             f"❌ {a['name'].upper()} (↑{a['elevation_m']:,}m)\n{a['tagline']}\n\n"
             f"✅ {b['name'].upper()} (↑{b['elevation_m']:,}m)\n{b['tagline']}\n"
             + (f"{note}\n\n" if note else "\n")
-            + f"NakshIQ scores 229 destinations monthly — same score, context is everything.\n\n"
+            + f"NakshIQ scores {TOTAL_DESTINATIONS} destinations monthly — same score, context is everything.\n\n"
             f"Full {month_name()} data → nakshiq.com\n\n{tags}"
         ).strip()
     else:
@@ -274,7 +287,7 @@ def copy_reality_check(destinations: list, platform: str) -> tuple[str, str]:
             f"{a['name']} and {b['name']} both score {a['score']}/5 this {month_name()}.\n\n"
             f"{a['name']}: {a['tagline']}\n\n{b['name']}: {b['tagline']}\n"
             + (f"{note}\n\n" if note else "\n")
-            + f"NakshIQ scores 229 destinations monthly.\n\n"
+            + f"NakshIQ scores {TOTAL_DESTINATIONS} destinations monthly.\n\n"
             f"↓ Full {month_name()} data → nakshiq.com\n\n{tags}"
         ).strip()
     return body, b["id"]
@@ -291,7 +304,7 @@ def copy_data_carousel(destinations: list, platform: str) -> str:
     if platform == "facebook":
         return (
             f"{month_name().upper()}'S REAL 5/5 DESTINATIONS\n\n"
-            f"NakshIQ scored 229 destinations this {month_name()}. 20 hit 5/5. "
+            f"NakshIQ scored {TOTAL_DESTINATIONS} destinations this {month_name()}. 20 hit 5/5. "
             f"Most travelers are booking the same 4.\n\n"
             f"Here's what the data actually shows:\n\n{lines}\n\n"
             f"Every score is monthly — 5/5 in {month_name()} may be 2/5 in August.\n\n"
@@ -301,7 +314,7 @@ def copy_data_carousel(destinations: list, platform: str) -> str:
         return (
             f"{month_name().upper()}'S 5/5 PICKS\n(Save — the window closes fast)\n\n"
             f"{lines}\n\n"
-            f"NakshIQ scores 229 destinations monthly. These are {month_name()}'s facts.\n\n"
+            f"NakshIQ scores {TOTAL_DESTINATIONS} destinations monthly. These are {month_name()}'s facts.\n\n"
             f"↓ Full scores → nakshiq.com\n\n{tags}"
         ).strip()
 
@@ -313,7 +326,7 @@ def copy_tourist_trap(trap: dict, platform: str) -> str:
     return (
         f"{'TOURIST TRAP' if platform == 'facebook' else '🚩 TOURIST TRAP'} — {name.upper()}\n\n"
         f"{desc}\n\n"
-        f"NakshIQ scores 229 destinations monthly. Some score low for a reason.\n\n"
+        f"NakshIQ scores {TOTAL_DESTINATIONS} destinations monthly. Some score low for a reason.\n\n"
         f"Better alternatives → nakshiq.com\n\n{tags}"
     ).strip()
 
@@ -324,7 +337,7 @@ def copy_infrastructure_truth(dest: dict, platform: str) -> str:
     return (
         f"INFRASTRUCTURE REALITY — {dest['name'].upper()}\n\n"
         f"↑ {dest['elevation_m']:,}m · {dest['state']}\n\n{note}\n\n"
-        f"NakshIQ tracks road access, fuel, ATM, and signal for 229 destinations monthly.\n\n"
+        f"NakshIQ tracks road access, fuel, ATM, and signal for {TOTAL_DESTINATIONS} destinations monthly.\n\n"
         f"Know before you drive → nakshiq.com\n\n{tags}"
     ).strip()
 
@@ -338,7 +351,7 @@ def copy_monthly_forecast(destinations: list, platform: str) -> str:
                    "DataDrivenTravel", "NorthIndia", f"{month_name()}Travel", "5outof5")
     return (
         f"📊 {month_name().upper()} FORECAST — NakshIQ Monthly Update\n\n"
-        f"229 destinations re-scored. This month's top 5/5 picks:\n\n{lines}\n\n"
+        f"{TOTAL_DESTINATIONS} destinations re-scored. This month's top 5/5 picks:\n\n{lines}\n\n"
         f"Scores reset every month. What worked last month may not work now.\n\n"
         f"Full {month_name()} data → nakshiq.com\n\n{tags}"
     ).strip()
@@ -363,8 +376,10 @@ def generate_post(fmt: str, content: dict, platform: str,
         return copy_score_card(best, platform), best
 
     elif fmt == "reality_check":
-        caption, dest_id = copy_reality_check(pool, platform)
-        dest_obj = next((d for d in pool if d["id"] == dest_id), best)
+        # Use the run-scoped pair if pre-picked (ensures FB and IG use the same contrast).
+        pair = content.get("__run_pair__")
+        caption, dest_id = copy_reality_check(pool, platform, pair=pair)
+        dest_obj = (pair[1] if pair else None) or next((d for d in pool if d["id"] == dest_id), best)
         return caption, dest_obj
 
     elif fmt == "data_carousel":
@@ -478,9 +493,11 @@ def publish_story(account: dict, media: dict, dry_run: bool = False) -> dict | N
         log.info(f"    [DRY RUN] Story → {media['filename']}")
         return {"post": {"id": "DRY_RUN_STORY"}}
 
+    # Outstand requires non-empty content (min 1 char). Instagram Stories API
+    # does not render it anyway — use a single space as a placeholder.
     result = outstand_post_req("/v1/posts/", {
         "accounts":   [username],
-        "containers": [{"content": "", "media": [build_media_item(media)]}],
+        "containers": [{"content": " ", "media": [build_media_item(media)]}],
         "instagram":  {"publishAsStory": True},
     })
     if not result.get("success"):
@@ -528,11 +545,70 @@ def wait_for_publish(post_id: str, timeout: int = 40) -> dict | None:
 # MAIN RUN LOOP
 # ─────────────────────────────────────────────────────────────────────────────
 
+LOCK_FILE     = Path(__file__).parent / ".autoposter.lock"
+LOCK_MAX_AGE  = 15 * 60  # seconds — any lock older than 15min is considered stale
+
+def _acquire_lock(force: bool = False) -> bool:
+    """Prevent concurrent/re-entrant runs. Returns True if lock acquired."""
+    now_ts = time.time()
+    if LOCK_FILE.exists():
+        try:
+            payload = json.loads(LOCK_FILE.read_text())
+            age = now_ts - float(payload.get("ts", 0))
+            holder = payload.get("pid")
+        except Exception:
+            age, holder = LOCK_MAX_AGE + 1, None
+        if age < LOCK_MAX_AGE and not force:
+            log.warning(f"Another run in progress (pid={holder}, age={int(age)}s) — exiting.")
+            return False
+        log.info(f"Stale lock (age={int(age)}s) — overriding.")
+    LOCK_FILE.write_text(json.dumps({"pid": os.getpid(), "ts": now_ts}))
+    return True
+
+def _release_lock():
+    try:
+        LOCK_FILE.unlink()
+    except FileNotFoundError:
+        pass
+
+def _outstand_posts_today() -> list:
+    """Pull today's successful posts from Outstand (dedup guard). Never raises."""
+    today = date.today().isoformat()
+    out = []
+    try:
+        r  = outstand_get("/v1/posts?limit=50")
+        for p in (r.get("data") or []):
+            if not (p.get("createdAt") or "").startswith(today):
+                continue
+            for sa in (p.get("socialAccounts") or []):
+                if sa.get("status") == "published":
+                    out.append({
+                        "account_id": sa.get("id"),
+                        "platform":   sa.get("network"),
+                        "media":      ((p.get("containers") or [{}])[0].get("media") or [{}])[0].get("filename"),
+                    })
+    except Exception as e:
+        log.warning(f"Outstand dedup-check failed ({e}) — proceeding with local state only.")
+    return out
+
+
 def run(force: bool = False, sync_only: bool = False, dry_run: bool = False):
     if not OUTSTAND_API_KEY:
         log.error("OUTSTAND_API_KEY not set. Exiting.")
         sys.exit(1)
 
+    # ── 0. Acquire re-entry lock ─────────────────────────────────────────────
+    if not sync_only and not dry_run and not _acquire_lock(force=force):
+        sys.exit(0)
+
+    try:
+        _run_inner(force=force, sync_only=sync_only, dry_run=dry_run)
+    finally:
+        if not sync_only and not dry_run:
+            _release_lock()
+
+
+def _run_inner(force: bool, sync_only: bool, dry_run: bool):
     today   = date.today().isoformat()
     weekday = date.today().weekday()
     state   = load_state()
@@ -561,11 +637,47 @@ def run(force: bool = False, sync_only: bool = False, dry_run: bool = False):
     labels = [f"{a['network']}/{a['username']}" for a in active]
     log.info(f"Active accounts: {labels}")
 
-    # ── 3. Determine format ───────────────────────────────────────────────────
+    # ── 2b. Outstand-side dedup guard ─────────────────────────────────────────
+    # Merge today's posts from Outstand into posted_today + posted_destinations
+    # so anything published outside this script (tests, manual posts) still blocks
+    # a duplicate today.
+    remote_today = _outstand_posts_today() if not force else []
+    if remote_today:
+        for item in remote_today:
+            acc_id = item["account_id"]
+            if acc_id and not already_posted_today(state, acc_id):
+                state.setdefault("posted_today", {})[acc_id] = today
+            media_name = (item.get("media") or "")
+            if media_name.endswith(('.jpg','.jpeg','.png','.mp4')):
+                dest_from_media = media_name.rsplit('.',1)[0]
+                if not any(d.get("destination_id")==dest_from_media and d.get("date")==today
+                           for d in state.get("posted_destinations", [])):
+                    state.setdefault("posted_destinations", []).append(
+                        {"destination_id": dest_from_media, "date": today})
+        log.info(f"Outstand dedup guard: merged {len(remote_today)} remote posts into state.")
+
+    # ── 3. Determine format and pre-pick the Reality Check pair (once) ──────
     traps  = content["traps"].get("data", [])
     fmt    = pick_format(weekday, traps)
     used   = recently_used_destinations(state)
     log.info(f"Format: {fmt}  ·  Used destinations (14d): {len(used)}")
+
+    # Reality Check must use the SAME pair on both FB and IG. Pre-pick it here
+    # before the loop so the second platform doesn't re-roll against a depleted pool.
+    dests = content["destinations"].get("data", [])
+    run_pair = None
+    if fmt == "reality_check":
+        pool = [d for d in dests if d["id"] not in used] or dests
+        name_map = {d["name"]: d for d in pool}
+        for famous, hidden in CONTRARIAN_PAIRS:
+            if famous in name_map and hidden in name_map:
+                run_pair = (name_map[famous], name_map[hidden])
+                log.info(f"Reality Check pair locked: {famous} ↔ {hidden}")
+                break
+        if not run_pair and len(pool) >= 2:
+            run_pair = (pool[0], pool[1])
+            log.info(f"Reality Check pair (fallback): {run_pair[0]['name']} ↔ {run_pair[1]['name']}")
+    content["__run_pair__"] = run_pair
 
     # ── 4. Post to each account ───────────────────────────────────────────────
     for account in active:

@@ -43,33 +43,200 @@
 2026-04-14 03:43:02  WARNING   [instagram/nakshiq] ⚠️  Queued (ID=vBFig)
 2026-04-14 03:43:02  INFO      State saved. Run complete.
 2026-04-14 03:43:02  INFO      ════════════════════════════════════════════════════════════
-2026-04-14 05:37:02  INFO      ════════════════════════════════════════════════════════════
-2026-04-14 05:37:02  INFO      Nakshiq Autoposter  ·  2026-04-14  ·  weekday=1
-2026-04-14 05:37:02  INFO      ════════════════════════════════════════════════════════════
-2026-04-14 05:37:02  INFO      ── Syncing Nakshiq content ──────────────────────────────
-2026-04-14 05:37:07  INFO      Synced → 20 destinations · 0 traps · 20 articles
-2026-04-14 05:37:07  INFO      Sync-only mode. Done.
-2026-04-14 06:03:12  INFO      ════════════════════════════════════════════════════════════
-2026-04-14 06:03:12  INFO      Nakshiq Autoposter  ·  2026-04-14  ·  weekday=1
-2026-04-14 06:03:12  INFO      ════════════════════════════════════════════════════════════
-2026-04-14 06:03:12  INFO      ── Syncing Nakshiq content ──────────────────────────────
-2026-04-14 06:03:16  INFO      Synced → 20 destinations · 0 traps · 20 articles
-2026-04-14 06:03:16  INFO      Sync-only mode. Done.
-2026-04-14 06:16:45  INFO      ════════════════════════════════════════════════════════════
-2026-04-14 06:16:45  INFO      Nakshiq Autoposter  ·  2026-04-14  ·  weekday=1
-2026-04-14 06:16:45  INFO      ════════════════════════════════════════════════════════════
-2026-04-14 06:16:45  INFO      ── Syncing Nakshiq content ──────────────────────────────
-2026-04-14 06:16:51  INFO      Synced → 20 destinations · 0 traps · 20 articles
-2026-04-14 06:16:51  INFO      Sync-only mode. Done.
-2026-04-14 06:53:18  INFO      ════════════════════════════════════════════════════════════
-2026-04-14 06:53:18  INFO      Nakshiq Autoposter  ·  2026-04-14  ·  weekday=1
-2026-04-14 06:53:18  INFO      ════════════════════════════════════════════════════════════
-2026-04-14 06:53:18  INFO      ── Syncing Nakshiq content ──────────────────────────────
-2026-04-14 06:53:22  INFO      Synced → 20 destinations · 0 traps · 20 articles
-2026-04-14 06:53:22  INFO      Sync-only mode. Done.
-2026-04-14 09:53:49  INFO      ════════════════════════════════════════════════════════════
-2026-04-14 09:53:49  INFO      Nakshiq Autoposter  ·  2026-04-14  ·  weekday=1
-2026-04-14 09:53:49  INFO      ════════════════════════════════════════════════════════════
-2026-04-14 09:53:49  INFO      ── Syncing Nakshiq content ──────────────────────────────
-2026-04-14 09:53:54  INFO      Synced → 20 destinations · 0 traps · 20 articles
-2026-04-14 09:53:54  INFO      Sync-only mode. Done.
+2026-04-14 05:27:20  INFO      ════════════════════════════════════════════════════════════
+2026-04-14 05:27:20  INFO      Nakshiq Autoposter  ·  2026-04-14  ·  weekday=1
+2026-04-14 05:27:20  INFO      ════════════════════════════════════════════════════════════
+2026-04-14 05:27:20  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-04-14 05:27:28  INFO      Synced → 20 destinations · 0 traps · 20 articles
+2026-04-14 05:27:29  INFO      Active accounts: ['facebook/Nakshiq', 'instagram/nakshiq']
+2026-04-14 05:27:29  INFO      Format: reality_check  ·  Used destinations (14d): 7
+2026-04-14 05:27:29  INFO      [facebook/Nakshiq] Already posted today — skipping.
+2026-04-14 05:27:29  INFO      [instagram/nakshiq] Already posted today — skipping.
+2026-04-14 05:27:29  INFO      State saved. Run complete.
+2026-04-14 05:27:29  INFO      ════════════════════════════════════════════════════════════
+2026-04-14 05:27:44  INFO      ════════════════════════════════════════════════════════════
+2026-04-14 05:27:44  INFO      Nakshiq Autoposter  ·  2026-04-14  ·  weekday=1
+2026-04-14 05:27:44  INFO      ════════════════════════════════════════════════════════════
+2026-04-14 05:27:44  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-04-14 05:27:50  INFO      Synced → 20 destinations · 0 traps · 20 articles
+2026-04-14 05:27:51  INFO      Active accounts: ['facebook/Nakshiq', 'instagram/nakshiq']
+2026-04-14 05:27:51  INFO      Format: reality_check  ·  Used destinations (14d): 7
+2026-04-14 05:27:51  INFO      [facebook/Nakshiq] Generating reality_check post...
+2026-04-14 05:27:51  INFO      [facebook/Nakshiq] Caption ready (742 chars, dest=chamba)
+2026-04-14 05:27:51  INFO      [facebook/Nakshiq] Uploading image...
+2026-04-14 05:27:51  INFO          Downloading: https://nakshiq.com/images/destinations/chamba.jpg
+2026-04-14 05:28:00  INFO          Media ready: EfQJA (1,014,916 bytes)
+2026-04-14 05:28:00  INFO      [facebook/Nakshiq] Publishing feed post...
+2026-04-14 05:28:00  INFO          [DRY RUN] facebook/Nakshiq — 742 chars + chamba.jpg
+2026-04-14 05:28:00  INFO      [facebook/Nakshiq] ✅ Submitted (post_id=DRY_RUN)
+2026-04-14 05:28:00  INFO      [instagram/nakshiq] Generating reality_check post...
+2026-04-14 05:28:00  INFO      [instagram/nakshiq] Caption ready (676 chars, dest=chamba)
+2026-04-14 05:28:00  INFO      [instagram/nakshiq] Uploading image...
+2026-04-14 05:28:00  INFO          Downloading: https://nakshiq.com/images/destinations/chamba.jpg
+2026-04-14 05:28:07  INFO          Media ready: WO2Uz (1,014,916 bytes)
+2026-04-14 05:28:07  INFO      [instagram/nakshiq] Publishing feed post...
+2026-04-14 05:28:07  INFO          [DRY RUN] instagram/nakshiq — 676 chars + chamba.jpg
+2026-04-14 05:28:07  INFO      [instagram/nakshiq] ✅ Submitted (post_id=DRY_RUN)
+2026-04-14 05:28:07  INFO      State saved. Run complete.
+2026-04-14 05:28:07  INFO      ════════════════════════════════════════════════════════════
+2026-04-14 05:28:40  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-04-14 05:28:46  INFO      Synced → 20 destinations · 0 traps · 20 articles
+2026-04-14 05:29:02  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-04-14 05:29:08  INFO      Synced → 20 destinations · 0 traps · 20 articles
+2026-04-14 05:29:15  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-04-14 05:29:21  INFO      Synced → 20 destinations · 0 traps · 20 articles
+2026-04-14 05:29:29  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-04-14 05:29:34  INFO      Synced → 20 destinations · 0 traps · 20 articles
+2026-04-14 05:29:41  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-04-14 05:29:47  INFO      Synced → 20 destinations · 0 traps · 20 articles
+2026-04-14 05:29:56  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-04-14 05:30:01  INFO      Synced → 20 destinations · 0 traps · 20 articles
+2026-04-14 05:34:39  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-04-14 05:34:45  INFO      Synced → 20 destinations · 0 traps · 20 articles
+2026-04-14 05:34:56  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-04-14 05:35:02  INFO      Synced → 20 destinations · 0 traps · 20 articles
+2026-04-14 05:35:14  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-04-14 05:35:20  INFO      Synced → 20 destinations · 0 traps · 20 articles
+2026-04-14 05:35:21  INFO          Downloading: https://nakshiq.com/images/destinations/chamba.jpg
+2026-04-14 05:35:28  INFO          Media ready: JRu83 (1,014,916 bytes)
+2026-04-14 05:48:03  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-04-14 05:48:10  INFO      Synced → 20 destinations · 0 traps · 20 articles
+2026-04-14 05:48:29  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-04-14 05:48:34  INFO      Synced → 20 destinations · 0 traps · 20 articles
+2026-04-14 05:48:55  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-04-14 05:49:00  INFO      Synced → 20 destinations · 0 traps · 20 articles
+2026-04-14 05:49:02  INFO          Downloading: https://dudzsdzfvikjjhurxrgc.supabase.co/storage/v1/object/public/videos/chopta.mp4
+2026-04-14 05:49:11  INFO          Media ready: vi6Pg (4,144,210 bytes)
+2026-04-14 15:50:27  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-04-14 15:50:33  INFO      Synced → 20 destinations · 0 traps · 20 articles
+2026-04-14 15:50:33  INFO          Downloading: https://dudzsdzfvikjjhurxrgc.supabase.co/storage/v1/object/public/videos/chopta.mp4
+2026-04-14 15:50:41  INFO          Media ready: QUpiy (4,144,210 bytes)
+2026-04-14 15:51:05  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-04-14 15:51:10  INFO      Synced → 20 destinations · 0 traps · 20 articles
+2026-04-14 15:58:44  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-04-14 15:58:49  INFO      Synced → 20 destinations · 0 traps · 20 articles
+2026-04-14 15:58:51  INFO          Downloading: https://nakshiq.com/images/destinations/chopta.jpg
+2026-04-14 15:59:00  INFO          Media ready: eQcxr (992,670 bytes)
+2026-04-14 15:59:00  WARNING       Story failed: {'data': {'accounts': ['nakshiq'], 'containers': [{'content': '', 'media': [{'id': 'eQcxr', 'url': 'https://media.outstand.so/0XeFVbIRO5o8Z8lwNljn3LJiuLULfLa1/8e5cd762-30c1-4552-8f9d-a365d182452c/chopta.jpg', 'filename': 'chopta.jpg'}]}], 'instagram': {'publishAsStory': True}}, 'error': [{'code': 'too_small', 'minimum': 1, 'type': 'string', 'inclusive': True, 'exact': False, 'message': 'String must contain at least 1 character(s)', 'path': ['containers', 0, 'content']}], 'success': False}
+2026-04-14 16:04:02  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-04-14 16:04:07  INFO      Synced → 20 destinations · 0 traps · 20 articles
+2026-04-14 16:04:09  WARNING   Nakshiq [destinations-total] fetch failed: 400 Client Error: Bad Request for url: https://www.nakshiq.com/api/content?type=destinations-total
+2026-04-14 16:04:09  WARNING   Nakshiq [totals] fetch failed: 400 Client Error: Bad Request for url: https://www.nakshiq.com/api/content?type=totals
+2026-04-14 16:04:10  WARNING   Nakshiq [summary] fetch failed: 400 Client Error: Bad Request for url: https://www.nakshiq.com/api/content?type=summary
+2026-04-14 16:07:25  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-04-14 16:07:31  INFO      Synced → 20 destinations · 0 traps · 20 articles · total catalog=260
+2026-04-14 06:12:37  INFO      ════════════════════════════════════════════════════════════
+2026-04-14 06:12:37  INFO      Nakshiq Autoposter  ·  2026-04-14  ·  weekday=1
+2026-04-14 06:12:37  INFO      ════════════════════════════════════════════════════════════
+2026-04-14 06:12:37  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-04-14 06:12:43  INFO      Synced → 20 destinations · 0 traps · 20 articles · total catalog=260
+2026-04-14 06:12:44  INFO      Active accounts: ['instagram/nakshiq', 'facebook/Nakshiq']
+2026-04-14 06:12:44  INFO      Format: reality_check  ·  Used destinations (14d): 7
+2026-04-14 06:12:44  INFO      [instagram/nakshiq] Generating reality_check post...
+2026-04-14 06:12:44  INFO      [instagram/nakshiq] Caption ready (676 chars, dest=chamba)
+2026-04-14 06:12:44  INFO      [instagram/nakshiq] Uploading image...
+2026-04-14 06:12:44  INFO          Downloading: https://nakshiq.com/images/destinations/chamba.jpg
+2026-04-14 06:12:52  INFO          Media ready: viRIg (1,014,916 bytes)
+2026-04-14 06:12:52  INFO      [instagram/nakshiq] Publishing feed post...
+2026-04-14 06:13:15  INFO      [instagram/nakshiq] ✅ Published · Outstand=mrM1d · Platform=18092054788906407
+2026-04-14 06:13:15  INFO      [instagram/nakshiq] Posting Instagram Story...
+2026-04-14 06:13:31  INFO      [instagram/nakshiq] ✅ Story live · ID=17869046754503403
+2026-04-14 06:13:31  INFO      [facebook/Nakshiq] Generating reality_check post...
+2026-04-14 06:13:31  INFO      [facebook/Nakshiq] Caption ready (629 chars, dest=chopta)
+2026-04-14 06:13:31  INFO      [facebook/Nakshiq] Uploading image...
+2026-04-14 06:13:31  INFO          Downloading: https://nakshiq.com/images/destinations/chopta.jpg
+2026-04-14 06:13:38  INFO          Media ready: MznEC (992,670 bytes)
+2026-04-14 06:13:38  INFO      [facebook/Nakshiq] Publishing feed post...
+2026-04-14 16:13:44  INFO      ════════════════════════════════════════════════════════════
+2026-04-14 16:13:44  INFO      Nakshiq Autoposter  ·  2026-04-14  ·  weekday=1
+2026-04-14 16:13:44  INFO      ════════════════════════════════════════════════════════════
+2026-04-14 16:13:44  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-04-14 06:13:47  INFO      [facebook/Nakshiq] ✅ Published · Outstand=xlEu8 · Platform=1040562729145369_122096907440700092
+2026-04-14 06:13:47  INFO      State saved. Run complete.
+2026-04-14 06:13:47  INFO      ════════════════════════════════════════════════════════════
+2026-04-14 16:13:50  INFO      Synced → 20 destinations · 0 traps · 20 articles · total catalog=260
+2026-04-14 16:13:52  INFO      Active accounts: ['instagram/nakshiq', 'facebook/Nakshiq']
+2026-04-14 16:13:52  INFO      Format: reality_check  ·  Used destinations (14d): 7
+2026-04-14 16:13:52  INFO      [instagram/nakshiq] Generating reality_check post...
+2026-04-14 16:13:52  INFO      [instagram/nakshiq] Caption ready (676 chars, dest=chamba)
+2026-04-14 16:13:52  INFO      [instagram/nakshiq] Uploading image...
+2026-04-14 16:13:52  INFO          Downloading: https://nakshiq.com/images/destinations/chamba.jpg
+2026-04-14 16:14:00  INFO          Media ready: nJTjl (1,014,916 bytes)
+2026-04-14 16:14:00  INFO      [instagram/nakshiq] Publishing feed post...
+2026-04-14 16:14:18  INFO      [instagram/nakshiq] ✅ Published · Outstand=Pxbb0 · Platform=18221873248314286
+2026-04-14 16:14:18  INFO      [instagram/nakshiq] Posting Instagram Story...
+2026-04-14 16:14:43  INFO      [instagram/nakshiq] ✅ Story live · ID=17920764588125223
+2026-04-14 16:14:43  INFO      [facebook/Nakshiq] Generating reality_check post...
+2026-04-14 16:14:43  INFO      [facebook/Nakshiq] Caption ready (629 chars, dest=chopta)
+2026-04-14 16:14:43  INFO      [facebook/Nakshiq] Uploading image...
+2026-04-14 16:14:43  INFO          Downloading: https://nakshiq.com/images/destinations/chopta.jpg
+2026-04-14 16:14:50  INFO          Media ready: 9hphQ (992,670 bytes)
+2026-04-14 16:14:50  INFO      [facebook/Nakshiq] Publishing feed post...
+2026-04-14 16:14:55  INFO      ════════════════════════════════════════════════════════════
+2026-04-14 16:14:55  INFO      Nakshiq Autoposter  ·  2026-04-14  ·  weekday=1
+2026-04-14 16:14:55  INFO      ════════════════════════════════════════════════════════════
+2026-04-14 16:14:55  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-04-14 16:15:00  INFO      Synced → 20 destinations · 0 traps · 20 articles · total catalog=260
+2026-04-14 16:15:01  INFO      Active accounts: ['instagram/nakshiq', 'facebook/Nakshiq']
+2026-04-14 16:15:01  INFO      Format: reality_check  ·  Used destinations (14d): 9
+2026-04-14 16:15:01  INFO      [instagram/nakshiq] Already posted today — skipping.
+2026-04-14 16:15:01  INFO      [facebook/Nakshiq] Already posted today — skipping.
+2026-04-14 16:15:01  INFO      State saved. Run complete.
+2026-04-14 16:15:01  INFO      ════════════════════════════════════════════════════════════
+2026-04-14 16:15:01  INFO      [facebook/Nakshiq] ✅ Published · Outstand=EmcaA · Platform=1040562729145369_122096907968700092
+2026-04-14 16:15:01  INFO      State saved. Run complete.
+2026-04-14 16:15:01  INFO      ════════════════════════════════════════════════════════════
+2026-04-14 16:24:43  INFO      ════════════════════════════════════════════════════════════
+2026-04-14 16:24:43  INFO      Nakshiq Autoposter  ·  2026-04-14  ·  weekday=1
+2026-04-14 16:24:43  INFO      ════════════════════════════════════════════════════════════
+2026-04-14 16:24:43  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-04-14 16:24:49  INFO      Synced → 20 destinations · 0 traps · 20 articles · total catalog=260
+2026-04-14 16:24:51  INFO      Active accounts: ['instagram/nakshiq', 'facebook/Nakshiq']
+2026-04-14 16:24:52  INFO      Outstand dedup guard: merged 12 remote posts into state.
+2026-04-14 16:24:52  INFO      Format: reality_check  ·  Used destinations (14d): 9
+2026-04-14 16:24:52  INFO      Reality Check pair (fallback): Sarahan ↔ Nainital
+2026-04-14 16:24:52  INFO      [instagram/nakshiq] Already posted today — skipping.
+2026-04-14 16:24:52  INFO      [facebook/Nakshiq] Already posted today — skipping.
+2026-04-14 16:24:52  INFO      State saved. Run complete.
+2026-04-14 16:24:52  INFO      ════════════════════════════════════════════════════════════
+2026-04-14 16:25:09  WARNING   Another run in progress (pid=99999, age=0s) — exiting.
+2026-04-14 16:25:09  INFO      Stale lock (age=3600s) — overriding.
+2026-04-14 16:25:09  INFO      ════════════════════════════════════════════════════════════
+2026-04-14 16:25:09  INFO      Nakshiq Autoposter  ·  2026-04-14  ·  weekday=1
+2026-04-14 16:25:09  INFO      ════════════════════════════════════════════════════════════
+2026-04-14 16:25:09  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-04-14 16:25:14  INFO      Synced → 20 destinations · 0 traps · 20 articles · total catalog=260
+2026-04-14 16:25:16  INFO      Active accounts: ['instagram/nakshiq', 'facebook/Nakshiq']
+2026-04-14 16:25:17  INFO      Outstand dedup guard: merged 12 remote posts into state.
+2026-04-14 16:25:17  INFO      Format: reality_check  ·  Used destinations (14d): 9
+2026-04-14 16:25:17  INFO      Reality Check pair (fallback): Sarahan ↔ Nainital
+2026-04-14 16:25:17  INFO      [instagram/nakshiq] Already posted today — skipping.
+2026-04-14 16:25:17  INFO      [facebook/Nakshiq] Already posted today — skipping.
+2026-04-14 16:25:17  INFO      State saved. Run complete.
+2026-04-14 16:25:17  INFO      ════════════════════════════════════════════════════════════
+2026-04-14 16:25:30  INFO      ════════════════════════════════════════════════════════════
+2026-04-14 16:25:30  INFO      Nakshiq Autoposter  ·  2026-04-14  ·  weekday=1
+2026-04-14 16:25:30  INFO      ════════════════════════════════════════════════════════════
+2026-04-14 16:25:30  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-04-14 16:25:36  INFO      Synced → 20 destinations · 0 traps · 20 articles · total catalog=260
+2026-04-14 16:25:37  INFO      Active accounts: ['instagram/nakshiq', 'facebook/Nakshiq']
+2026-04-14 16:25:37  INFO      Format: reality_check  ·  Used destinations (14d): 9
+2026-04-14 16:25:37  INFO      Reality Check pair (fallback): Sarahan ↔ Nainital
+2026-04-14 16:25:37  INFO      [instagram/nakshiq] Generating reality_check post...
+2026-04-14 16:25:37  INFO      [instagram/nakshiq] Caption ready (540 chars, dest=nainital)
+2026-04-14 16:25:37  INFO      [instagram/nakshiq] Uploading image...
+2026-04-14 16:25:37  INFO          Downloading: https://nakshiq.com/images/destinations/nainital.jpg
+2026-04-14 16:25:45  INFO          Media ready: i2acB (933,699 bytes)
+2026-04-14 16:25:45  INFO      [instagram/nakshiq] Publishing feed post...
+2026-04-14 16:25:45  INFO          [DRY RUN] instagram/nakshiq — 540 chars + nainital.jpg
+2026-04-14 16:25:45  INFO      [instagram/nakshiq] ✅ Submitted (post_id=DRY_RUN)
+2026-04-14 16:25:45  INFO      [facebook/Nakshiq] Generating reality_check post...
+2026-04-14 16:25:45  INFO      [facebook/Nakshiq] Caption ready (610 chars, dest=nainital)
+2026-04-14 16:25:45  INFO      [facebook/Nakshiq] Uploading image...
+2026-04-14 16:25:45  INFO          Downloading: https://nakshiq.com/images/destinations/nainital.jpg
+2026-04-14 16:25:53  INFO          Media ready: bue8T (933,699 bytes)
+2026-04-14 16:25:53  INFO      [facebook/Nakshiq] Publishing feed post...
+2026-04-14 16:25:53  INFO          [DRY RUN] facebook/Nakshiq — 610 chars + nainital.jpg
+2026-04-14 16:25:53  INFO      [facebook/Nakshiq] ✅ Submitted (post_id=DRY_RUN)
+2026-04-14 16:25:53  INFO      State saved. Run complete.
+2026-04-14 16:25:53  INFO      ════════════════════════════════════════════════════════════

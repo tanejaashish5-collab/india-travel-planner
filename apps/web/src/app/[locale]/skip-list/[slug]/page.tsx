@@ -14,7 +14,6 @@ interface TrapAlternative {
   alternative_destination_id: string;
   why_better: string;
   comparison: string;
-  why_trap: string | null;
   rank: number;
   distance_km: number | null;
   drive_time: string | null;
@@ -69,7 +68,7 @@ async function getSkipListData(slug: string) {
   const { data: alternatives } = await supabase
     .from("tourist_trap_alternatives")
     .select(
-      `trap_destination_id, alternative_destination_id, why_better, comparison, why_trap, rank, distance_km, drive_time, crowd_difference, vibe_difference,
+      `trap_destination_id, alternative_destination_id, why_better, comparison, rank, distance_km, drive_time, crowd_difference, vibe_difference,
        alt_dest:destinations!alternative_destination_id(name, tagline, difficulty, elevation_m)`
     )
     .eq("trap_destination_id", slug)
@@ -156,8 +155,8 @@ export default async function SkipListSlugPage({
     .map((m) => MONTH_NAMES[m.month])
     .filter(Boolean);
 
-  // Get the why_trap/comparison text from first alternative
-  const whyTrapText = alternatives[0]?.why_trap || alternatives[0]?.comparison || null;
+  // Get the comparison text from first alternative
+  const whyTrapText = alternatives[0]?.comparison || null;
 
   // Build JSON-LD
   const jsonLd = {
