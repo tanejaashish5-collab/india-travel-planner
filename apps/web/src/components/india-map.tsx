@@ -3,6 +3,7 @@
 import { useState, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import indiaMapData from "@svg-maps/india";
+import { ALL_STATE_SLUGS, REGION_GROUPS } from "@/lib/seo-maps";
 
 const mapData = (indiaMapData as any).default || indiaMapData;
 
@@ -25,15 +26,8 @@ const SLUG_TO_SVG: Record<string, string> = Object.fromEntries(
   Object.entries(SVG_TO_SLUG).map(([k, v]) => [v, k])
 );
 
-// States we have data for — keep in sync with seo-maps.ts STATE_MAP
-const ACTIVE_STATES = new Set([
-  "himachal-pradesh", "uttarakhand", "jammu-kashmir", "ladakh",
-  "rajasthan", "punjab", "delhi", "uttar-pradesh", "chandigarh",
-  "haryana", "madhya-pradesh", "sikkim", "west-bengal",
-  "arunachal-pradesh", "assam", "meghalaya", "nagaland",
-  "manipur", "mizoram", "tripura", "bihar", "jharkhand", "chhattisgarh",
-  "gujarat", "maharashtra", "goa", "karnataka", "kerala",
-]);
+// States we have data for — derived from seo-maps.ts single source of truth
+const ACTIVE_STATES = new Set(ALL_STATE_SLUGS);
 
 // Score to color mapping
 function getScoreColor(avgScore: number | null): string {
@@ -80,15 +74,8 @@ export function IndiaMap({ states, locale, activeRegion }: IndiaMapProps) {
   // Region filter
   const regionStates = useMemo(() => {
     if (activeRegion === "all") return null;
-    const REGION_MAP: Record<string, string[]> = {
-      north: ["himachal-pradesh", "uttarakhand", "jammu-kashmir", "ladakh", "rajasthan", "punjab", "delhi", "uttar-pradesh", "chandigarh", "haryana"],
-      west: ["gujarat", "maharashtra", "goa"],
-      south: ["karnataka", "kerala"],
-      northeast: ["sikkim", "arunachal-pradesh", "assam", "meghalaya", "nagaland", "manipur", "mizoram", "tripura"],
-      east: ["west-bengal", "bihar", "jharkhand"],
-      central: ["madhya-pradesh", "chhattisgarh"],
-    };
-    return new Set(REGION_MAP[activeRegion] ?? []);
+    const regionGroup = REGION_GROUPS[activeRegion];
+    return new Set(regionGroup?.states ?? []);
   }, [activeRegion]);
 
   function handleMouseMove(e: React.MouseEvent<SVGElement>) {

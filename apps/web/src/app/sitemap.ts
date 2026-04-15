@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 import { createClient } from "@supabase/supabase-js";
-import { STATE_MAP } from "@/lib/seo-maps";
+import { STATE_MAP, ALL_STATE_SLUGS, ALL_MONTH_SLUGS } from "@/lib/seo-maps";
 
 /*
  * Sitemap split into 5 chunks via generateSitemaps().
@@ -17,18 +17,8 @@ import { STATE_MAP } from "@/lib/seo-maps";
 const LOCALES = ["en", "hi"] as const;
 const BASE = "https://nakshiq.com";
 
-const MONTH_SLUGS = [
-  "january","february","march","april","may","june",
-  "july","august","september","october","november","december",
-];
-
-const STATE_SLUGS = [
-  "himachal-pradesh","uttarakhand","jammu-kashmir","ladakh","rajasthan",
-  "punjab","uttar-pradesh","sikkim","west-bengal","madhya-pradesh",
-  "delhi","chandigarh","arunachal-pradesh","assam","bihar",
-  "chhattisgarh","haryana","jharkhand","manipur","meghalaya",
-  "mizoram","nagaland","tripura",
-];
+const MONTH_SLUGS = ALL_MONTH_SLUGS;
+const STATE_SLUGS = ALL_STATE_SLUGS;
 
 const TREK_STATES = [
   "himachal-pradesh","uttarakhand","jammu-kashmir","ladakh","sikkim",
@@ -37,7 +27,7 @@ const TREK_STATES = [
 
 const CAMP_STATES = [
   "himachal-pradesh","uttarakhand","jammu-kashmir","ladakh","sikkim",
-  "rajasthan","meghalaya","arunachal-pradesh","madhya-pradesh","uttarpradesh",
+  "rajasthan","meghalaya","arunachal-pradesh","madhya-pradesh","uttar-pradesh",
 ];
 
 const FAMILY_STATES = [

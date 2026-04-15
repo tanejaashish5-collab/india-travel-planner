@@ -1,26 +1,11 @@
 import type { Metadata } from "next";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
-import { createClient } from "@supabase/supabase-js";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import { STATE_MAP, getSupabase } from "@/lib/seo-maps";
 
 export const revalidate = 86400;
-
-const STATE_MAP: Record<string, string> = {
-  "himachal-pradesh": "Himachal Pradesh", "uttarakhand": "Uttarakhand",
-  "jammu-kashmir": "Jammu & Kashmir", "ladakh": "Ladakh",
-  "sikkim": "Sikkim", "rajasthan": "Rajasthan",
-  "meghalaya": "Meghalaya", "arunachal-pradesh": "Arunachal Pradesh",
-  "uttarpradesh": "Uttar Pradesh", "madhya-pradesh": "Madhya Pradesh",
-};
-
-function getSupabase() {
-  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
-  const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-  if (!url || !key) return null;
-  return createClient(url, key);
-}
 
 export async function generateMetadata({ params }: { params: Promise<{ stateSlug: string }> }): Promise<Metadata> {
   const { stateSlug } = await params;

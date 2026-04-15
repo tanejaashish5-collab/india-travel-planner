@@ -2,31 +2,10 @@ import type { Metadata } from "next";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { ExploreGrid } from "@/components/explore-grid";
-import { createClient } from "@supabase/supabase-js";
 import { notFound } from "next/navigation";
+import { STATE_MAP, getSupabase } from "@/lib/seo-maps";
 
 export const revalidate = 86400;
-
-const STATE_MAP: Record<string, string> = {
-  "himachal-pradesh": "Himachal Pradesh", "uttarakhand": "Uttarakhand",
-  "jammu-kashmir": "Jammu & Kashmir", "ladakh": "Ladakh",
-  "rajasthan": "Rajasthan", "punjab": "Punjab",
-  "uttar-pradesh": "Uttar Pradesh", "sikkim": "Sikkim",
-  "west-bengal": "West Bengal", "madhya-pradesh": "Madhya Pradesh",
-  "delhi": "Delhi", "chandigarh": "Chandigarh",
-  "arunachal-pradesh": "Arunachal Pradesh", "assam": "Assam",
-  "bihar": "Bihar", "chhattisgarh": "Chhattisgarh",
-  "haryana": "Haryana", "jharkhand": "Jharkhand",
-  "manipur": "Manipur", "meghalaya": "Meghalaya",
-  "mizoram": "Mizoram", "nagaland": "Nagaland", "tripura": "Tripura",
-};
-
-function getSupabase() {
-  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
-  const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-  if (!url || !key) return null;
-  return createClient(url, key);
-}
 
 export async function generateMetadata({ params }: { params: Promise<{ stateSlug: string }> }): Promise<Metadata> {
   const { stateSlug } = await params;

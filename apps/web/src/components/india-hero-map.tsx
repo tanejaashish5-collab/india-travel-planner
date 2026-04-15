@@ -4,6 +4,7 @@ import { useState, useMemo } from "react";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import indiaMapData from "@svg-maps/india";
+import { ALL_STATE_SLUGS } from "@/lib/seo-maps";
 
 const mapData = (indiaMapData as any).default || indiaMapData;
 
@@ -23,7 +24,8 @@ const REGION_ORDER: Record<string, number> = {
   ka: 5, kl: 5, tn: 5, tg: 5, ap: 5,
 };
 
-const ACTIVE_SLUGS: Record<string, string> = {
+// SVG ID → state slug mapping for @svg-maps/india. Active check uses ALL_STATE_SLUGS from seo-maps.ts.
+const SVG_TO_SLUG: Record<string, string> = {
   hp: "himachal-pradesh", ut: "uttarakhand", jk: "jammu-kashmir",
   rj: "rajasthan", pb: "punjab", dl: "delhi", up: "uttar-pradesh",
   ch: "chandigarh", hr: "haryana", mp: "madhya-pradesh",
@@ -32,7 +34,10 @@ const ACTIVE_SLUGS: Record<string, string> = {
   mz: "mizoram", tr: "tripura", br: "bihar", jh: "jharkhand",
   ct: "chhattisgarh", gj: "gujarat", mh: "maharashtra",
   ga: "goa", ka: "karnataka", kl: "kerala",
+  tn: "tamil-nadu", tg: "telangana", ap: "andhra-pradesh",
+  or: "odisha",
 };
+const ACTIVE_SET = new Set(ALL_STATE_SLUGS);
 
 // Score to color
 function scoreColor(score: number | null): string {
@@ -104,7 +109,8 @@ export function IndiaHeroMap({ pins, locale }: IndiaHeroMapProps) {
         {/* State paths — draw outline then fill */}
         {mapData.locations.map((loc: any, i: number) => {
           const regionIdx = REGION_ORDER[loc.id] ?? 5;
-          const isActive = !!ACTIVE_SLUGS[loc.id];
+          const slug = SVG_TO_SLUG[loc.id];
+          const isActive = slug ? ACTIVE_SET.has(slug) : false;
           const fillDelay = 2.5 + regionIdx * 0.3; // After outline draw (2.5s)
 
           return (
@@ -133,8 +139,7 @@ export function IndiaHeroMap({ pins, locale }: IndiaHeroMapProps) {
                 cursor: isActive ? "pointer" : "default",
               }}
               onClick={() => {
-                const slug = ACTIVE_SLUGS[loc.id];
-                if (slug) window.location.href = `/${locale}/state/${slug}`;
+                if (slug && isActive) window.location.href = `/${locale}/state/${slug}`;
               }}
             />
           );
