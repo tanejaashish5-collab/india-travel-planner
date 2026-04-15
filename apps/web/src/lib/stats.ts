@@ -13,18 +13,18 @@ export interface AppStats {
   campingSpots: number;
 }
 
-// Fallback values if DB is unavailable — keep these updated (April 2026, Karnataka + MH/Goa gap fill)
+// Fallback values if DB is unavailable — keep these updated (April 2026, experiences backfill KA/MH/Goa)
 export const FALLBACK: AppStats = {
   destinations: 343,
-  places: 710,
-  routes: 39,
-  festivals: 199,
+  places: 755,
+  routes: 49,
+  festivals: 216,
   collections: 60,
-  treks: 68,
+  treks: 81,
   states: 27,
-  traps: 66,
-  permits: 15,
-  campingSpots: 47,
+  traps: 82,
+  permits: 19,
+  campingSpots: 70,
 };
 
 // No caching — always fetch fresh on server to avoid stale counts
