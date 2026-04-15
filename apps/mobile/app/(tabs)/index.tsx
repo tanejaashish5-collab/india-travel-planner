@@ -78,7 +78,7 @@ export default function HomeScreen() {
     setFeatured(featResult.data ?? []);
     setFestivals(festResult.data ?? []);
     setStats({
-      destinations: destCount.count ?? 297,
+      destinations: destCount.count ?? 343,
       places: (destCount.count ?? 0) + (subCount.count ?? 0) + (gemCount.count ?? 0),
       treks: trekCount.count ?? 68,
       festivals: festCount.count ?? 199,

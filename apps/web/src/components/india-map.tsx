@@ -82,7 +82,8 @@ export function IndiaMap({ states, locale, activeRegion }: IndiaMapProps) {
     if (activeRegion === "all") return null;
     const REGION_MAP: Record<string, string[]> = {
       north: ["himachal-pradesh", "uttarakhand", "jammu-kashmir", "ladakh", "rajasthan", "punjab", "delhi", "uttar-pradesh", "chandigarh", "haryana"],
-      west: ["gujarat"],
+      west: ["gujarat", "maharashtra", "goa"],
+      south: ["karnataka"],
       northeast: ["sikkim", "arunachal-pradesh", "assam", "meghalaya", "nagaland", "manipur", "mizoram", "tripura"],
       east: ["west-bengal", "bihar", "jharkhand"],
       central: ["madhya-pradesh", "chhattisgarh"],

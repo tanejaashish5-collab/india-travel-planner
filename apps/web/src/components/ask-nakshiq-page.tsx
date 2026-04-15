@@ -84,7 +84,7 @@ export function AskNakshIQPage({ locale }: { locale: string }) {
                 </svg>
               </div>
               <p className="text-muted-foreground">
-                I know about 290+ destinations, 660+ places, monthly scores, kids ratings, and more.
+                I know about 340+ destinations, 710+ places, monthly scores, kids ratings, and more.
                 <br />Ask me anything about traveling in India.
               </p>
             </div>

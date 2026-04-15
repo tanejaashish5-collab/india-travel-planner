@@ -5,7 +5,7 @@ import { AskNakshIQPage } from "@/components/ask-nakshiq-page";
 
 export const metadata: Metadata = {
   title: "Ask NakshIQ — AI Travel Assistant for India",
-  description: "Ask anything about traveling in India. Get instant answers powered by 290+ destinations, 700+ POIs, monthly scores, kids ratings, and safety data.",
+  description: "Ask anything about traveling in India. Get instant answers powered by 340+ destinations, 710+ POIs, monthly scores, kids ratings, and safety data.",
 };
 
 export default async function AskPage({
