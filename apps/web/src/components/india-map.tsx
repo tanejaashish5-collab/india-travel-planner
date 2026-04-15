@@ -16,7 +16,7 @@ const SVG_TO_SLUG: Record<string, string> = {
   mz: "mizoram", tr: "tripura", br: "bihar", jh: "jharkhand",
   ct: "chhattisgarh",
   // States we don't have yet but show dimmed
-  ka: "karnataka", kl: "kerala", tn: "tamil-nadu", ga: "goa",
+  ka: "karnataka", kl: "kerala", tn: "tamil-nadu", ga: "goa", la: "lakshadweep",
   mh: "maharashtra", gj: "gujarat", or: "odisha", tg: "telangana",
   ap: "andhra-pradesh",
 };
@@ -32,7 +32,7 @@ const ACTIVE_STATES = new Set([
   "haryana", "madhya-pradesh", "sikkim", "west-bengal",
   "arunachal-pradesh", "assam", "meghalaya", "nagaland",
   "manipur", "mizoram", "tripura", "bihar", "jharkhand", "chhattisgarh",
-  "gujarat", "maharashtra", "goa", "karnataka",
+  "gujarat", "maharashtra", "goa", "karnataka", "kerala",
 ]);
 
 // Score to color mapping
@@ -83,7 +83,7 @@ export function IndiaMap({ states, locale, activeRegion }: IndiaMapProps) {
     const REGION_MAP: Record<string, string[]> = {
       north: ["himachal-pradesh", "uttarakhand", "jammu-kashmir", "ladakh", "rajasthan", "punjab", "delhi", "uttar-pradesh", "chandigarh", "haryana"],
       west: ["gujarat", "maharashtra", "goa"],
-      south: ["karnataka"],
+      south: ["karnataka", "kerala"],
       northeast: ["sikkim", "arunachal-pradesh", "assam", "meghalaya", "nagaland", "manipur", "mizoram", "tripura"],
       east: ["west-bengal", "bihar", "jharkhand"],
       central: ["madhya-pradesh", "chhattisgarh"],
