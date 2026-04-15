@@ -3,7 +3,7 @@ import { createClient } from "@supabase/supabase-js";
 import Anthropic from "@anthropic-ai/sdk";
 import OpenAI from "openai";
 
-const RATE_LIMIT_PER_DAY = 20;
+const RATE_LIMIT_PER_DAY = 10;
 
 const SYSTEM_PROMPT = `You are Ask NakshIQ — the AI travel assistant for NakshIQ, India's travel intelligence platform.
 
