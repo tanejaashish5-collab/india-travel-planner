@@ -20,9 +20,9 @@ export default function AboutScreen() {
       setStats({
         destinations: d.count ?? 343,
         places: (d.count ?? 0) + (sub.count ?? 0) + (gem.count ?? 0),
-        treks: t.count ?? 68,
-        festivals: f.count ?? 199,
-        routes: r.count ?? 39,
+        treks: t.count ?? 81,
+        festivals: f.count ?? 216,
+        routes: r.count ?? 49,
         states: st.count ?? 27,
       });
     });
