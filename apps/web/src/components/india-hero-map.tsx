@@ -31,6 +31,7 @@ const ACTIVE_SLUGS: Record<string, string> = {
   as: "assam", ml: "meghalaya", nl: "nagaland", mn: "manipur",
   mz: "mizoram", tr: "tripura", br: "bihar", jh: "jharkhand",
   ct: "chhattisgarh", gj: "gujarat", mh: "maharashtra",
+  ga: "goa", ka: "karnataka", kl: "kerala",
 };
 
 // Score to color
