@@ -259,23 +259,263 @@
 2026-04-14 22:47:43  INFO      [facebook/Nakshiq] Already posted today — skipping.
 2026-04-14 22:47:43  INFO      State saved. Run complete.
 2026-04-14 22:47:43  INFO      ════════════════════════════════════════════════════════════
-2026-04-15 05:22:57  INFO      ════════════════════════════════════════════════════════════
-2026-04-15 05:22:57  INFO      Nakshiq Autoposter  ·  2026-04-15  ·  weekday=2
-2026-04-15 05:22:57  INFO      ════════════════════════════════════════════════════════════
-2026-04-15 05:22:57  INFO      ── Syncing Nakshiq content ──────────────────────────────
-2026-04-15 05:23:02  INFO      Synced → 20 destinations · 0 traps · 18 articles · total catalog=343
-2026-04-15 05:23:03  INFO      Active accounts: ['instagram/nakshiq', 'facebook/Nakshiq']
-2026-04-15 05:23:04  INFO      Outstand dedup guard: merged 5 remote posts into state.
-2026-04-15 05:23:04  INFO      Formats — IG: data_carousel  ·  FB: data_carousel  ·  Story: collection_spotlight
-2026-04-15 05:23:04  INFO      Used destinations (14d): 12
-2026-04-15 05:23:04  INFO      Collection locked: Autumn Destinations — Where September to November Scores 5/5
-2026-04-15 05:23:04  INFO      [instagram/nakshiq] Already posted today — skipping.
-2026-04-15 05:23:04  INFO      [facebook/Nakshiq] Already posted today — skipping.
-2026-04-15 05:23:04  INFO      State saved. Run complete.
-2026-04-15 05:23:04  INFO      ════════════════════════════════════════════════════════════
-2026-04-15 05:37:07  INFO      ════════════════════════════════════════════════════════════
-2026-04-15 05:37:07  INFO      Nakshiq Autoposter  ·  2026-04-15  ·  weekday=2
-2026-04-15 05:37:07  INFO      ════════════════════════════════════════════════════════════
-2026-04-15 05:37:07  INFO      ── Syncing Nakshiq content ──────────────────────────────
-2026-04-15 05:37:12  INFO      Synced → 20 destinations · 0 traps · 18 articles · total catalog=343
-2026-04-15 05:37:12  INFO      Sync-only mode. Done.
+2026-04-15 03:32:32  INFO      ════════════════════════════════════════════════════════════
+2026-04-15 03:32:32  INFO      Nakshiq Autoposter  ·  2026-04-15  ·  weekday=2
+2026-04-15 03:32:32  INFO      ════════════════════════════════════════════════════════════
+2026-04-15 03:32:32  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-04-15 03:32:40  INFO      Synced → 20 destinations · 0 traps · 18 articles · total catalog=337
+2026-04-15 03:32:41  INFO      Active accounts: ['instagram/nakshiq', 'facebook/Nakshiq']
+2026-04-15 03:32:43  INFO      Formats — IG: data_carousel  ·  FB: data_carousel  ·  Story: collection_spotlight
+2026-04-15 03:32:43  INFO      Used destinations (14d): 9
+2026-04-15 03:32:43  INFO      Collection locked: Autumn Destinations — Where September to November Scores 5/5
+2026-04-15 03:32:43  INFO      [instagram/nakshiq] Generating data_carousel post...
+2026-04-15 03:32:43  INFO      [instagram/nakshiq] Caption ready (801 chars, dest=great-himalayan-np)
+2026-04-15 03:32:43  INFO      [instagram/nakshiq] Uploading image...
+2026-04-15 03:32:43  INFO          Downloading: https://nakshiq.com/images/destinations/great-himalayan-np.jpg
+2026-04-15 03:32:51  INFO          Media ready: xnZZ8 (1,269,686 bytes)
+2026-04-15 03:32:51  INFO      [instagram/nakshiq] Publishing feed post...
+2026-04-15 03:33:08  INFO      [instagram/nakshiq] ✅ Published · Outstand=eyevr · Platform=18099727960807915
+2026-04-15 03:33:08  INFO      [instagram/nakshiq] Uploading Story image (tirthan-valley.jpg)...
+2026-04-15 03:33:08  INFO          Downloading: https://nakshiq.com/images/destinations/tirthan-valley.jpg
+2026-04-15 03:33:16  INFO          Media ready: PgNa0 (1,027,681 bytes)
+2026-04-15 03:33:16  INFO      [instagram/nakshiq] Publishing Story · format=collection_spotlight · dest=tirthan-valley
+2026-04-15 03:33:39  INFO      [instagram/nakshiq] ✅ Story live · ID=18139411432505507
+2026-04-15 03:33:39  INFO      [facebook/Nakshiq] Generating data_carousel post...
+2026-04-15 03:33:39  INFO      [facebook/Nakshiq] Caption ready (892 chars, dest=pench-maharashtra)
+2026-04-15 03:33:39  INFO      [facebook/Nakshiq] Uploading image...
+2026-04-15 03:33:39  INFO          Downloading: https://nakshiq.com/images/destinations/pench-maharashtra.jpg
+2026-04-15 03:33:47  INFO          Media ready: AmoL7 (1,267,224 bytes)
+2026-04-15 03:33:47  INFO      [facebook/Nakshiq] Publishing feed post...
+2026-04-15 03:34:03  INFO      [facebook/Nakshiq] ✅ Published · Outstand=bEbLT · Platform=1040562729145369_122097680114700092
+2026-04-15 03:34:03  INFO      State saved. Run complete.
+2026-04-15 03:34:03  INFO      ════════════════════════════════════════════════════════════
+2026-04-15 14:06:17  INFO      ════════════════════════════════════════════════════════════
+2026-04-15 14:06:17  INFO      Nakshiq Autoposter  ·  2026-04-15  ·  weekday=2
+2026-04-15 14:06:17  INFO      ════════════════════════════════════════════════════════════
+2026-04-15 14:06:17  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-04-15 14:06:23  INFO      Synced → 20 destinations · 0 traps · 18 articles · total catalog=343
+2026-04-15 14:06:25  INFO      Active accounts: ['instagram/nakshiq', 'facebook/Nakshiq']
+2026-04-15 14:06:25  INFO      Formats — IG: data_carousel  ·  FB: data_carousel  ·  Story: collection_spotlight
+2026-04-15 14:06:25  INFO      Used destinations (14d): 11
+2026-04-15 14:06:25  INFO      Collection locked: Autumn Destinations — Where September to November Scores 5/5
+2026-04-15 14:06:25  INFO      [instagram/nakshiq] Generating data_carousel post...
+2026-04-15 14:06:25  INFO      [instagram/nakshiq] Caption ready (770 chars, dest=nagarhole)
+2026-04-15 14:06:25  INFO      [instagram/nakshiq] Uploading 5 carousel slide(s): nagarhole, sarahan, nainital, mussoorie, shimla
+2026-04-15 14:06:25  INFO          Downloading: https://nakshiq.com/images/destinations/nagarhole.jpg
+2026-04-15 14:06:25  WARNING       Media upload exception: 404 Client Error: Not Found for url: https://www.nakshiq.com/images/destinations/nagarhole.jpg
+2026-04-15 14:06:25  INFO          Downloading: https://nakshiq.com/images/destinations/sarahan.jpg
+2026-04-15 14:06:31  INFO          Media ready: oGy5c (1,195,880 bytes)
+2026-04-15 14:06:31  INFO          Downloading: https://nakshiq.com/images/destinations/nainital.jpg
+2026-04-15 14:06:37  INFO          Media ready: pWsGM (933,699 bytes)
+2026-04-15 14:06:37  INFO          Downloading: https://nakshiq.com/images/destinations/mussoorie.jpg
+2026-04-15 14:06:44  INFO          Media ready: JR8J3 (897,929 bytes)
+2026-04-15 14:06:44  INFO          Downloading: https://nakshiq.com/images/destinations/shimla.jpg
+2026-04-15 14:06:49  INFO          Media ready: 4jPBi (980,333 bytes)
+2026-04-15 14:06:49  INFO      [instagram/nakshiq] Publishing 4-slide carousel...
+2026-04-15 14:06:49  INFO          [DRY RUN] instagram/nakshiq — 770 chars + 4-slide carousel [sarahan.jpg, nainital.jpg, mussoorie.jpg, shimla.jpg]
+2026-04-15 14:06:49  INFO      [instagram/nakshiq] ✅ Submitted (post_id=DRY_RUN)
+2026-04-15 14:06:49  INFO      [facebook/Nakshiq] Generating data_carousel post...
+2026-04-15 14:06:49  INFO      [facebook/Nakshiq] Caption ready (881 chars, dest=nagarhole)
+2026-04-15 14:06:49  INFO      [facebook/Nakshiq] Uploading 5 carousel slide(s): nagarhole, sarahan, nainital, mussoorie, shimla
+2026-04-15 14:06:49  INFO          Downloading: https://nakshiq.com/images/destinations/nagarhole.jpg
+2026-04-15 14:06:49  WARNING       Media upload exception: 404 Client Error: Not Found for url: https://www.nakshiq.com/images/destinations/nagarhole.jpg
+2026-04-15 14:06:49  INFO          Downloading: https://nakshiq.com/images/destinations/sarahan.jpg
+2026-04-15 14:06:56  INFO          Media ready: 7dLPW (1,195,880 bytes)
+2026-04-15 14:06:56  INFO          Downloading: https://nakshiq.com/images/destinations/nainital.jpg
+2026-04-15 14:07:02  INFO          Media ready: IKA4X (933,699 bytes)
+2026-04-15 14:07:02  INFO          Downloading: https://nakshiq.com/images/destinations/mussoorie.jpg
+2026-04-15 14:07:06  INFO          Media ready: Zq5Wu (897,929 bytes)
+2026-04-15 14:07:06  INFO          Downloading: https://nakshiq.com/images/destinations/shimla.jpg
+2026-04-15 14:07:13  INFO          Media ready: NF3pa (980,333 bytes)
+2026-04-15 14:07:13  INFO      [facebook/Nakshiq] Publishing 4-slide carousel...
+2026-04-15 14:07:13  INFO          [DRY RUN] facebook/Nakshiq — 881 chars + 4-slide carousel [sarahan.jpg, nainital.jpg, mussoorie.jpg, shimla.jpg]
+2026-04-15 14:07:13  INFO      [facebook/Nakshiq] ✅ Submitted (post_id=DRY_RUN)
+2026-04-15 14:07:13  INFO      State saved. Run complete.
+2026-04-15 14:07:13  INFO      ════════════════════════════════════════════════════════════
+2026-04-15 14:11:48  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-04-15 14:11:54  INFO      Synced → 20 destinations · 0 traps · 18 articles · total catalog=343
+2026-04-15 14:15:07  INFO      ════════════════════════════════════════════════════════════
+2026-04-15 14:15:07  INFO      Nakshiq Autoposter  ·  2026-04-15  ·  weekday=2
+2026-04-15 14:15:07  INFO      ════════════════════════════════════════════════════════════
+2026-04-15 14:15:07  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-04-15 14:15:13  INFO      Synced → 20 destinations · 0 traps · 18 articles · total catalog=343
+2026-04-15 14:15:15  INFO      Active accounts: ['instagram/nakshiq', 'facebook/Nakshiq']
+2026-04-15 14:15:15  INFO      Formats — IG: data_carousel  ·  FB: data_carousel  ·  Story: collection_spotlight
+2026-04-15 14:15:15  INFO      Used destinations (14d): 11
+2026-04-15 14:15:15  INFO      Collection locked: Autumn Destinations — Where September to November Scores 5/5
+2026-04-15 14:15:15  INFO      [instagram/nakshiq] Generating data_carousel post...
+2026-04-15 14:15:15  INFO      [instagram/nakshiq] Caption ready (770 chars, dest=nagarhole)
+2026-04-15 14:15:15  INFO      [instagram/nakshiq] Rendering branded carousel (data_carousel, 5 dests)...
+2026-04-15 14:15:17  INFO      [instagram/nakshiq] Rendered 7 branded slides · uploading to Outstand...
+2026-04-15 14:15:23  INFO          Media ready: 8lEBI (41,864 bytes · data_carousel_01_title.jpg)
+2026-04-15 14:15:28  INFO          Media ready: Hb9a5 (50,974 bytes · data_carousel_02_nagarhole.jpg)
+2026-04-15 14:15:34  INFO          Media ready: IKAKX (359,262 bytes · data_carousel_03_sarahan.jpg)
+2026-04-15 14:15:39  INFO          Media ready: viFBg (258,664 bytes · data_carousel_04_nainital.jpg)
+2026-04-15 14:15:45  INFO          Media ready: cp2CL (254,916 bytes · data_carousel_05_mussoorie.jpg)
+2026-04-15 14:15:51  INFO          Media ready: QUOYy (276,943 bytes · data_carousel_06_shimla.jpg)
+2026-04-15 14:15:55  INFO          Media ready: l3fwK (31,903 bytes · data_carousel_07_cta.jpg)
+2026-04-15 14:15:55  INFO      [instagram/nakshiq] Publishing 7-slide carousel...
+2026-04-15 14:15:55  INFO          [DRY RUN] instagram/nakshiq — 770 chars + 7-slide carousel [data_carousel_01_title.jpg, data_carousel_02_nagarhole.jpg, data_carousel_03_sarahan.jpg, data_carousel_04_nainital.jpg, data_carousel_05_mussoorie.jpg, data_carousel_06_shimla.jpg, data_carousel_07_cta.jpg]
+2026-04-15 14:15:55  INFO      [instagram/nakshiq] ✅ Submitted (post_id=DRY_RUN)
+2026-04-15 14:15:55  INFO      [facebook/Nakshiq] Generating data_carousel post...
+2026-04-15 14:15:55  INFO      [facebook/Nakshiq] Caption ready (881 chars, dest=nagarhole)
+2026-04-15 14:15:55  INFO      [facebook/Nakshiq] Rendering branded carousel (data_carousel, 5 dests)...
+2026-04-15 14:15:57  INFO      [facebook/Nakshiq] Rendered 7 branded slides · uploading to Outstand...
+2026-04-15 14:16:01  INFO          Media ready: eQWJr (41,864 bytes · data_carousel_01_title.jpg)
+2026-04-15 14:16:05  INFO          Media ready: CPRdF (50,974 bytes · data_carousel_02_nagarhole.jpg)
+2026-04-15 14:16:10  INFO          Media ready: VCJWN (359,262 bytes · data_carousel_03_sarahan.jpg)
+2026-04-15 14:16:14  INFO          Media ready: ryzU4 (258,664 bytes · data_carousel_04_nainital.jpg)
+2026-04-15 14:16:19  INFO          Media ready: Kkm59 (254,916 bytes · data_carousel_05_mussoorie.jpg)
+2026-04-15 14:16:23  INFO          Media ready: drMjO (276,943 bytes · data_carousel_06_shimla.jpg)
+2026-04-15 14:16:28  INFO          Media ready: aZkfb (31,903 bytes · data_carousel_07_cta.jpg)
+2026-04-15 14:16:28  INFO      [facebook/Nakshiq] Publishing 7-slide carousel...
+2026-04-15 14:16:28  INFO          [DRY RUN] facebook/Nakshiq — 881 chars + 7-slide carousel [data_carousel_01_title.jpg, data_carousel_02_nagarhole.jpg, data_carousel_03_sarahan.jpg, data_carousel_04_nainital.jpg, data_carousel_05_mussoorie.jpg, data_carousel_06_shimla.jpg, data_carousel_07_cta.jpg]
+2026-04-15 14:16:28  INFO      [facebook/Nakshiq] ✅ Submitted (post_id=DRY_RUN)
+2026-04-15 14:16:28  INFO      State saved. Run complete.
+2026-04-15 14:16:28  INFO      ════════════════════════════════════════════════════════════
+2026-04-15 14:22:08  INFO      Stale lock (age=2975s) — overriding.
+2026-04-15 14:22:08  INFO      ════════════════════════════════════════════════════════════
+2026-04-15 14:22:08  INFO      Nakshiq Autoposter  ·  2026-04-15  ·  weekday=2
+2026-04-15 14:22:08  INFO      ════════════════════════════════════════════════════════════
+2026-04-15 14:22:08  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-04-15 14:22:15  INFO      Synced → 20 destinations · 0 traps · 18 articles · total catalog=343
+2026-04-15 14:22:16  INFO      Active accounts: ['instagram/nakshiq', 'facebook/Nakshiq']
+2026-04-15 14:22:16  INFO      Formats — IG: data_carousel  ·  FB: data_carousel  ·  Story: collection_spotlight
+2026-04-15 14:22:16  INFO      Used destinations (14d): 11
+2026-04-15 14:22:16  INFO      Collection locked: Autumn Destinations — Where September to November Scores 5/5
+2026-04-15 14:22:16  INFO      [instagram/nakshiq] Generating data_carousel post...
+2026-04-15 14:22:16  INFO      [instagram/nakshiq] Caption ready (770 chars, dest=nagarhole)
+2026-04-15 14:22:16  INFO      [instagram/nakshiq] Rendering branded carousel (data_carousel, 5 dests)...
+2026-04-15 14:22:19  INFO      [instagram/nakshiq] Rendered 7 branded slides · uploading to Outstand...
+2026-04-15 14:22:24  INFO          Media ready: Mz6IC (41,864 bytes · data_carousel_01_title.jpg)
+2026-04-15 14:22:28  INFO          Media ready: nJtcl (50,974 bytes · data_carousel_02_nagarhole.jpg)
+2026-04-15 14:22:34  INFO          Media ready: i20oB (359,262 bytes · data_carousel_03_sarahan.jpg)
+2026-04-15 14:22:40  INFO          Media ready: zvNyP (258,664 bytes · data_carousel_04_nainital.jpg)
+2026-04-15 14:22:45  INFO          Media ready: 9hdTQ (254,916 bytes · data_carousel_05_mussoorie.jpg)
+2026-04-15 14:22:51  INFO          Media ready: X97De (276,943 bytes · data_carousel_06_shimla.jpg)
+2026-04-15 14:22:55  INFO          Media ready: X97oe (31,903 bytes · data_carousel_07_cta.jpg)
+2026-04-15 14:22:55  INFO      [instagram/nakshiq] Publishing 7-slide carousel...
+2026-04-15 14:23:56  WARNING   [instagram/nakshiq] ⚠️  Queued (ID=Nubma)
+2026-04-15 14:23:56  INFO      [facebook/Nakshiq] Generating data_carousel post...
+2026-04-15 14:23:56  INFO      [facebook/Nakshiq] Caption ready (871 chars, dest=kasol)
+2026-04-15 14:23:56  INFO      [facebook/Nakshiq] Rendering branded carousel (data_carousel, 5 dests)...
+2026-04-15 14:24:00  INFO      [facebook/Nakshiq] Rendered 7 branded slides · uploading to Outstand...
+2026-04-15 14:24:05  INFO          Media ready: 2YxZS (41,864 bytes · data_carousel_01_title.jpg)
+2026-04-15 14:24:10  INFO          Media ready: 5TQOD (339,838 bytes · data_carousel_02_kasol.jpg)
+2026-04-15 14:24:15  INFO          Media ready: F0HQZ (300,155 bytes · data_carousel_03_dharamshala.jpg)
+2026-04-15 14:24:20  INFO          Media ready: gBZox (351,504 bytes · data_carousel_04_achabal.jpg)
+2026-04-15 14:24:25  INFO          Media ready: O4CDv (300,765 bytes · data_carousel_05_gopeshwar.jpg)
+2026-04-15 14:24:31  INFO          Media ready: ywvAj (291,026 bytes · data_carousel_06_champawat.jpg)
+2026-04-15 14:24:35  INFO          Media ready: gBZVx (31,903 bytes · data_carousel_07_cta.jpg)
+2026-04-15 14:24:35  INFO      [facebook/Nakshiq] Publishing 7-slide carousel...
+2026-04-15 14:25:00  INFO      [facebook/Nakshiq] ✅ Published · Outstand=89XsI · Platform=1040562729145369_122097705224700092
+2026-04-15 14:25:00  INFO      State saved. Run complete.
+2026-04-15 14:25:00  INFO      ════════════════════════════════════════════════════════════
+2026-04-15 14:31:26  INFO      ════════════════════════════════════════════════════════════
+2026-04-15 14:31:26  INFO      Nakshiq Autoposter  ·  2026-04-15  ·  weekday=2
+2026-04-15 14:31:26  INFO      ════════════════════════════════════════════════════════════
+2026-04-15 14:31:26  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-04-15 14:31:32  INFO      Synced → 20 destinations · 0 traps · 18 articles · total catalog=343
+2026-04-15 14:31:33  INFO      Active accounts: ['instagram/nakshiq', 'facebook/Nakshiq']
+2026-04-15 14:31:33  INFO      Formats — IG: data_carousel  ·  FB: data_carousel  ·  Story: collection_spotlight
+2026-04-15 14:31:33  INFO      Used destinations (14d): 21
+2026-04-15 14:31:33  INFO      Collection locked: Autumn Destinations — Where September to November Scores 5/5
+2026-04-15 14:31:34  INFO      Carousel locked (collection_spotlight): tirthan-valley, nainital, dharamshala
+2026-04-15 14:31:34  INFO      Carousel locked (data_carousel): almora
+2026-04-15 14:31:34  INFO      [instagram/nakshiq] Generating data_carousel post...
+2026-04-15 14:31:34  INFO      [instagram/nakshiq] Caption ready (345 chars, dest=almora)
+2026-04-15 14:31:34  INFO      [instagram/nakshiq] Rendering branded carousel (data_carousel, 1 dests)...
+2026-04-15 14:31:35  INFO      [instagram/nakshiq] Rendered 3 branded slides · uploading to Outstand...
+2026-04-15 14:31:41  INFO          Media ready: TEU91 (41,864 bytes · data_carousel_01_title.jpg)
+2026-04-15 14:31:46  INFO          Media ready: S68qJ (286,321 bytes · data_carousel_02_almora.jpg)
+2026-04-15 14:31:51  INFO          Media ready: BSqun (31,903 bytes · data_carousel_03_cta.jpg)
+2026-04-15 14:31:51  INFO      [instagram/nakshiq] Publishing 3-slide carousel...
+2026-04-15 14:31:51  INFO          [DRY RUN] instagram/nakshiq — 345 chars + 3-slide carousel [data_carousel_01_title.jpg, data_carousel_02_almora.jpg, data_carousel_03_cta.jpg]
+2026-04-15 14:31:51  INFO      [instagram/nakshiq] ✅ Submitted (post_id=DRY_RUN)
+2026-04-15 14:31:51  INFO      [facebook/Nakshiq] Generating data_carousel post...
+2026-04-15 14:31:51  INFO      [facebook/Nakshiq] Caption ready (456 chars, dest=almora)
+2026-04-15 14:31:51  INFO      [facebook/Nakshiq] Rendering branded carousel (data_carousel, 1 dests)...
+2026-04-15 14:31:51  INFO      [facebook/Nakshiq] Rendered 3 branded slides · uploading to Outstand...
+2026-04-15 14:31:57  INFO          Media ready: jsgq2 (41,864 bytes · data_carousel_01_title.jpg)
+2026-04-15 14:32:02  INFO          Media ready: 8lEpI (286,321 bytes · data_carousel_02_almora.jpg)
+2026-04-15 14:32:06  INFO          Media ready: eQWZr (31,903 bytes · data_carousel_03_cta.jpg)
+2026-04-15 14:32:06  INFO      [facebook/Nakshiq] Publishing 3-slide carousel...
+2026-04-15 14:32:06  INFO          [DRY RUN] facebook/Nakshiq — 456 chars + 3-slide carousel [data_carousel_01_title.jpg, data_carousel_02_almora.jpg, data_carousel_03_cta.jpg]
+2026-04-15 14:32:06  INFO      [facebook/Nakshiq] ✅ Submitted (post_id=DRY_RUN)
+2026-04-15 14:32:06  INFO      State saved. Run complete.
+2026-04-15 14:32:06  INFO      ════════════════════════════════════════════════════════════
+2026-04-15 14:32:54  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-04-15 14:33:00  INFO      Synced → 20 destinations · 0 traps · 18 articles · total catalog=343
+2026-04-15 14:33:05  INFO          Skipped (no image) → nagarhole
+2026-04-15 14:49:59  INFO      ════════════════════════════════════════════════════════════
+2026-04-15 14:49:59  INFO      Nakshiq Autoposter · EVENING · 2026-04-15 · weekday=2
+2026-04-15 14:49:59  INFO      ════════════════════════════════════════════════════════════
+2026-04-15 14:49:59  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-04-15 14:50:05  INFO      Synced → 20 destinations · 0 traps · 18 articles · total catalog=343
+2026-04-15 14:50:07  INFO      Active accounts: ['instagram/nakshiq', 'facebook/Nakshiq']
+2026-04-15 14:50:07  INFO      Formats — IG: collection_spotlight  ·  FB: collection_spotlight  ·  Story: blog_promo
+2026-04-15 14:50:07  INFO      Used destinations (14d): 21
+2026-04-15 14:50:07  INFO      Collection locked: Adrenaline Rush — Adventure Destinations (20/20 never featured)
+2026-04-15 14:50:07  INFO      Article locked: The State of Indian Travel: Q1 2026 (18/18 never featured)
+2026-04-15 14:50:07  INFO      Carousel locked (collection_spotlight): chopta
+2026-04-15 14:50:07  INFO      [instagram/nakshiq] Generating collection_spotlight post...
+2026-04-15 14:50:07  INFO      [instagram/nakshiq] Caption ready (353 chars, dest=chopta)
+2026-04-15 14:50:07  INFO      [instagram/nakshiq] Rendering branded carousel (collection_spotlight, 1 dests)...
+2026-04-15 14:50:08  INFO      [instagram/nakshiq] Rendered 3 branded slides · uploading to Outstand...
+2026-04-15 14:50:13  INFO          Media ready: mep1d (52,016 bytes · collection_spotlight_01_title.jpg)
+2026-04-15 14:50:18  INFO          Media ready: D1yQo (278,484 bytes · collection_spotlight_02_chopta.jpg)
+2026-04-15 14:50:23  INFO          Media ready: xnuu8 (40,578 bytes · collection_spotlight_03_cta.jpg)
+2026-04-15 14:50:23  INFO      [instagram/nakshiq] Publishing 3-slide carousel...
+2026-04-15 14:50:23  INFO          [DRY RUN] instagram/nakshiq — 353 chars + 3-slide carousel [collection_spotlight_01_title.jpg, collection_spotlight_02_chopta.jpg, collection_spotlight_03_cta.jpg]
+2026-04-15 14:50:23  INFO      [instagram/nakshiq] ✅ Submitted (post_id=DRY_RUN)
+2026-04-15 14:50:23  INFO      [instagram/nakshiq] Uploading Story image (chopta.jpg)...
+2026-04-15 14:50:23  INFO          Downloading: https://nakshiq.com/images/destinations/chopta.jpg
+2026-04-15 14:50:30  INFO          Media ready: Pgab0 (992,670 bytes · chopta.jpg)
+2026-04-15 14:50:30  INFO      [instagram/nakshiq] Publishing Story · format=blog_promo · dest=chopta
+2026-04-15 14:50:30  INFO          [DRY RUN] Story → chopta.jpg
+2026-04-15 14:50:30  INFO      [instagram/nakshiq] ✅ Story submitted (id=DRY_RUN_STORY)
+2026-04-15 14:50:30  INFO      [facebook/Nakshiq] Generating collection_spotlight post...
+2026-04-15 14:50:30  INFO      [facebook/Nakshiq] Caption ready (410 chars, dest=chopta)
+2026-04-15 14:50:30  INFO      [facebook/Nakshiq] Rendering branded carousel (collection_spotlight, 1 dests)...
+2026-04-15 14:50:30  INFO      [facebook/Nakshiq] Rendered 3 branded slides · uploading to Outstand...
+2026-04-15 14:50:36  INFO          Media ready: AmcV7 (52,016 bytes · collection_spotlight_01_title.jpg)
+2026-04-15 14:50:41  INFO          Media ready: xnu78 (278,484 bytes · collection_spotlight_02_chopta.jpg)
+2026-04-15 14:50:45  INFO          Media ready: RaKjH (40,578 bytes · collection_spotlight_03_cta.jpg)
+2026-04-15 14:50:45  INFO      [facebook/Nakshiq] Publishing 3-slide carousel...
+2026-04-15 14:50:45  INFO          [DRY RUN] facebook/Nakshiq — 410 chars + 3-slide carousel [collection_spotlight_01_title.jpg, collection_spotlight_02_chopta.jpg, collection_spotlight_03_cta.jpg]
+2026-04-15 14:50:45  INFO      [facebook/Nakshiq] ✅ Submitted (post_id=DRY_RUN)
+2026-04-15 14:50:45  INFO      State saved. Run complete.
+2026-04-15 14:50:45  INFO      ════════════════════════════════════════════════════════════
+2026-04-15 14:51:02  INFO      ════════════════════════════════════════════════════════════
+2026-04-15 14:51:02  INFO      Nakshiq Autoposter · MORNING · 2026-04-15 · weekday=2
+2026-04-15 14:51:02  INFO      ════════════════════════════════════════════════════════════
+2026-04-15 14:51:02  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-04-15 14:51:08  INFO      Synced → 20 destinations · 0 traps · 18 articles · total catalog=343
+2026-04-15 14:51:09  INFO      Active accounts: ['instagram/nakshiq', 'facebook/Nakshiq']
+2026-04-15 14:51:09  INFO      Formats — IG: data_carousel  ·  FB: data_carousel  ·  Story: collection_spotlight
+2026-04-15 14:51:09  INFO      Used destinations (14d): 21
+2026-04-15 14:51:09  INFO      Collection locked: Adrenaline Rush — Adventure Destinations (20/20 never featured)
+2026-04-15 14:51:09  INFO      Carousel locked (collection_spotlight): chopta
+2026-04-15 14:51:09  INFO      Carousel locked (data_carousel): almora
+2026-04-15 14:51:09  INFO      [instagram/nakshiq] Generating data_carousel post...
+2026-04-15 14:51:09  INFO      [instagram/nakshiq] Caption ready (345 chars, dest=almora)
+2026-04-15 14:51:10  INFO      [instagram/nakshiq] Rendering branded carousel (data_carousel, 1 dests)...
+2026-04-15 14:51:10  INFO      [instagram/nakshiq] Rendered 3 branded slides · uploading to Outstand...
+2026-04-15 14:51:15  INFO          Media ready: EfoaA (41,864 bytes · data_carousel_01_title.jpg)
+2026-04-15 14:51:19  INFO          Media ready: WOVGz (286,321 bytes · data_carousel_02_almora.jpg)
+2026-04-15 14:51:23  INFO          Media ready: G7sop (31,903 bytes · data_carousel_03_cta.jpg)
+2026-04-15 14:51:23  INFO      [instagram/nakshiq] Publishing 3-slide carousel...
+2026-04-15 14:51:23  INFO          [DRY RUN] instagram/nakshiq — 345 chars + 3-slide carousel [data_carousel_01_title.jpg, data_carousel_02_almora.jpg, data_carousel_03_cta.jpg]
+2026-04-15 14:51:23  INFO      [instagram/nakshiq] ✅ Submitted (post_id=DRY_RUN)
+2026-04-15 14:51:23  INFO      [facebook/Nakshiq] Generating data_carousel post...
+2026-04-15 14:51:23  INFO      [facebook/Nakshiq] Caption ready (456 chars, dest=almora)
+2026-04-15 14:51:23  INFO      [facebook/Nakshiq] Rendering branded carousel (data_carousel, 1 dests)...
+2026-04-15 14:51:24  INFO      [facebook/Nakshiq] Rendered 3 branded slides · uploading to Outstand...
+2026-04-15 14:51:28  INFO          Media ready: ryzO4 (41,864 bytes · data_carousel_01_title.jpg)
+2026-04-15 14:51:33  INFO          Media ready: utD1E (286,321 bytes · data_carousel_02_almora.jpg)
+2026-04-15 14:51:38  INFO          Media ready: 4jPxi (31,903 bytes · data_carousel_03_cta.jpg)
+2026-04-15 14:51:38  INFO      [facebook/Nakshiq] Publishing 3-slide carousel...
+2026-04-15 14:51:38  INFO          [DRY RUN] facebook/Nakshiq — 456 chars + 3-slide carousel [data_carousel_01_title.jpg, data_carousel_02_almora.jpg, data_carousel_03_cta.jpg]
+2026-04-15 14:51:38  INFO      [facebook/Nakshiq] ✅ Submitted (post_id=DRY_RUN)
+2026-04-15 14:51:38  INFO      State saved. Run complete.
+2026-04-15 14:51:38  INFO      ════════════════════════════════════════════════════════════

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useLocale, useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { useEffect, useRef } from "react";
@@ -458,11 +459,12 @@ export function LandingHero({
                           className="group block rounded-xl border border-border/40 bg-card/50 overflow-hidden transition-all hover:border-primary/40 hover:shadow-lg cursor-pointer"
                         >
                           <div className="relative h-20 overflow-hidden">
-                            <img
+                            <Image
                               src={`/images/destinations/${r.hero}.jpg`}
                               alt={region.name}
-                              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                              loading="lazy"
+                              fill
+                              sizes="(max-width: 768px) 50vw, 200px"
+                              className="object-cover transition-transform duration-500 group-hover:scale-110"
                               onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-card via-card/40 to-transparent" />
@@ -520,11 +522,12 @@ export function LandingHero({
                         className="group block rounded-2xl border border-border/50 overflow-hidden transition-all hover:border-primary/50 hover:shadow-2xl hover:shadow-primary/10 h-full"
                       >
                         <div className={`relative ${isHero ? "h-64 sm:h-80 lg:h-full min-h-[320px]" : "h-52"} bg-muted/30 overflow-hidden`}>
-                          <img
+                          <Image
                             src={`/images/destinations/${dest.id}.jpg`}
                             alt={dest.name}
-                            className="w-full h-full object-cover ken-burns"
-                            loading="lazy"
+                            fill
+                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                            className="object-cover ken-burns"
                             onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
                           />
                           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
@@ -597,11 +600,12 @@ export function LandingHero({
                     >
                       {/* Collection cover image */}
                       <div className="relative h-32 bg-muted/30 overflow-hidden">
-                        <img
+                        <Image
                           src={`/images/collections/COLLECTION_${c.id}.jpg`}
                           alt={c.name}
-                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                          loading="lazy"
+                          fill
+                          sizes="(max-width: 768px) 100vw, 300px"
+                          className="object-cover transition-transform duration-500 group-hover:scale-105"
                           onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-card via-card/40 to-transparent" />

@@ -1,10 +1,10 @@
 {
-  "last_sync": "2026-04-15T05:37:12.960393+00:00",
+  "last_sync": "2026-04-15T04:51:08.023119+00:00",
   "posted_today": {
     "8iDfI": "2026-04-14",
     "x4cT8": "2026-04-14",
     "m8EAd": "2026-04-15",
-    "m8EAd_story": "2026-04-14",
+    "m8EAd_story": "2026-04-15",
     "PdMu0": "2026-04-15"
   },
   "posted_destinations": [
@@ -45,7 +45,7 @@
       "date": "2026-04-14"
     },
     {
-      "destination_id": "data_carousel_01_title",
+      "destination_id": "great-himalayan-np",
       "date": "2026-04-15"
     },
     {
@@ -53,11 +53,51 @@
       "date": "2026-04-15"
     },
     {
-      "destination_id": "tirthan-valley",
+      "destination_id": "nagarhole",
       "date": "2026-04-15"
     },
     {
-      "destination_id": "great-himalayan-np",
+      "destination_id": "nagarhole",
+      "date": "2026-04-15"
+    },
+    {
+      "destination_id": "sarahan",
+      "date": "2026-04-15"
+    },
+    {
+      "destination_id": "nainital",
+      "date": "2026-04-15"
+    },
+    {
+      "destination_id": "mussoorie",
+      "date": "2026-04-15"
+    },
+    {
+      "destination_id": "shimla",
+      "date": "2026-04-15"
+    },
+    {
+      "destination_id": "kasol",
+      "date": "2026-04-15"
+    },
+    {
+      "destination_id": "kasol",
+      "date": "2026-04-15"
+    },
+    {
+      "destination_id": "dharamshala",
+      "date": "2026-04-15"
+    },
+    {
+      "destination_id": "achabal",
+      "date": "2026-04-15"
+    },
+    {
+      "destination_id": "gopeshwar",
+      "date": "2026-04-15"
+    },
+    {
+      "destination_id": "champawat",
       "date": "2026-04-15"
     }
   ],
@@ -71,10 +111,14 @@
       "reality_check"
     ],
     "m8EAd": [
-      "reality_check"
+      "reality_check",
+      "data_carousel",
+      "data_carousel"
     ],
     "PdMu0": [
-      "reality_check"
+      "reality_check",
+      "data_carousel",
+      "data_carousel"
     ]
   },
   "post_log": [
@@ -267,6 +311,61 @@
       "destination": "chopta",
       "format": "reality_check",
       "has_media": true
+    },
+    {
+      "timestamp": "2026-04-15T03:33:08.011034+00:00",
+      "date": "2026-04-15",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "eyevr",
+      "destination": "great-himalayan-np",
+      "format": "data_carousel",
+      "has_media": true
+    },
+    {
+      "timestamp": "2026-04-15T03:33:39.137025+00:00",
+      "date": "2026-04-15",
+      "platform": "instagram_story",
+      "account_id": "m8EAd",
+      "post_id": "iSiIB",
+      "destination": "tirthan-valley",
+      "format": "collection_spotlight",
+      "has_media": true
+    },
+    {
+      "timestamp": "2026-04-15T03:34:03.545845+00:00",
+      "date": "2026-04-15",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "bEbLT",
+      "destination": "pench-maharashtra",
+      "format": "data_carousel",
+      "has_media": true
+    },
+    {
+      "timestamp": "2026-04-15T04:23:56.203231+00:00",
+      "date": "2026-04-15",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "Nubma",
+      "destination": "nagarhole",
+      "format": "data_carousel",
+      "has_media": true
+    },
+    {
+      "timestamp": "2026-04-15T04:25:00.358613+00:00",
+      "date": "2026-04-15",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "89XsI",
+      "destination": "kasol",
+      "format": "data_carousel",
+      "has_media": true
     }
-  ]
+  ],
+  "theme_usage": {
+    "collections": {},
+    "articles": {},
+    "destinations": {}
+  }
 }

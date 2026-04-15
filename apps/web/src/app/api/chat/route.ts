@@ -101,7 +101,7 @@ export async function POST(req: Request) {
     const supabase = createClient(supabaseUrl, supabaseKey);
 
     // Rate limiting
-    const ip = req.headers.get("x-forwarded-for") ?? req.headers.get("x-real-ip") ?? "unknown";
+    const ip = req.headers.get("x-real-ip") ?? req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ?? "unknown";
     const ipHash = await hashString(ip);
     const today = new Date().toISOString().split("T")[0];
     const { count } = await supabase
@@ -317,8 +317,10 @@ async function generateResponse(
   const messages: Anthropic.MessageParam[] = [];
   if (Array.isArray(history)) {
     for (const h of history.slice(-8)) {
-      if (h.role === "user") messages.push({ role: "user", content: h.content });
-      if (h.role === "assistant") messages.push({ role: "assistant", content: h.content });
+      if ((h.role === "user" || h.role === "assistant") && typeof h.content === "string") {
+        const safeContent = h.content.slice(0, 2000);
+        messages.push({ role: h.role, content: safeContent });
+      }
     }
   }
 

@@ -13,9 +13,26 @@ export async function POST(req: NextRequest) {
   const body = await req.json();
   const { month, days, travelerType, budget, origin, destinationIds } = body;
 
+  const VALID_TYPES = ["solo", "couple", "family", "biker", "backpacker", "spiritual"];
+  const VALID_BUDGETS = ["budget", "mid-range", "luxury"];
+
   if (!month || !days || !travelerType) {
     return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
   }
+
+  if (!VALID_TYPES.includes(travelerType)) {
+    return NextResponse.json({ error: "Invalid traveler type" }, { status: 400 });
+  }
+
+  if (budget && !VALID_BUDGETS.includes(budget)) {
+    return NextResponse.json({ error: "Invalid budget" }, { status: 400 });
+  }
+
+  if (typeof days !== "number" || days < 1 || days > 30) {
+    return NextResponse.json({ error: "Days must be 1-30" }, { status: 400 });
+  }
+
+  const safeOrigin = typeof origin === "string" ? origin.slice(0, 100) : "Delhi";
 
   // Fetch destination data for context
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
@@ -117,7 +134,7 @@ VOICE RULES (mandatory):
 TRAVELER PROFILE:
 - Type: ${travelerType}
 - Budget: ${budget || "mid-range"}
-- Origin: ${origin || "Delhi"}
+- Origin: ${safeOrigin}
 - Duration: ${days} days
 - Month: ${MONTH_NAMES[month]}
 
@@ -208,7 +225,7 @@ Return ONLY valid JSON in this exact format (no markdown, no code fences):
         const itinerary = JSON.parse(jsonMatch[0]);
         return NextResponse.json({ itinerary });
       }
-      return NextResponse.json({ error: "Failed to parse AI response", raw: text }, { status: 500 });
+      return NextResponse.json({ error: "Failed to parse AI response" }, { status: 500 });
     }
   } catch (err: any) {
     console.error("Itinerary generation error:", err);
