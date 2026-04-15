@@ -18,11 +18,11 @@ export default function AboutScreen() {
       supabase.from("states").select("id", { count: "exact", head: true }),
     ]).then(([d, sub, gem, t, f, r, st]) => {
       setStats({
-        destinations: d.count ?? 373,
+        destinations: d.count ?? 403,
         places: (d.count ?? 0) + (sub.count ?? 0) + (gem.count ?? 0),
-        treks: t.count ?? 89,
-        festivals: f.count ?? 234,
-        routes: r.count ?? 53,
+        treks: t.count ?? 96,
+        festivals: f.count ?? 252,
+        routes: r.count ?? 57,
         states: st.count ?? 27,
       });
     });

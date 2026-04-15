@@ -29,14 +29,14 @@ const DIFF_COLORS: Record<string, string> = {
 };
 
 const DISCOVER_ITEMS = [
-  { label: "Treks", sub: "89", icon: "🥾", route: "/treks", color: colors.score5 },
-  { label: "Routes", sub: "53", icon: "🛣️", route: "/routes", color: colors.score4 },
+  { label: "Treks", sub: "96", icon: "🥾", route: "/treks", color: colors.score5 },
+  { label: "Routes", sub: "57", icon: "🛣️", route: "/routes", color: colors.score4 },
   { label: "Where to Go", sub: "", icon: "📅", route: "/where-to-go", color: colors.topographic },
   { label: "Tourist Traps", sub: "", icon: "⚠️", route: "/tourist-traps", color: colors.score1 },
   { label: "Collections", sub: "75", icon: "📚", route: "/collections", color: "#8b5cf6" },
-  { label: "Festivals", sub: "234", icon: "🎪", route: "/festivals", color: colors.saffron },
-  { label: "Camping", sub: "77", icon: "⛺", route: "/camping", color: colors.score4 },
-  { label: "Stays", sub: "495", icon: "🏡", route: "/stays", color: colors.vermillion },
+  { label: "Festivals", sub: "252", icon: "🎪", route: "/festivals", color: colors.saffron },
+  { label: "Camping", sub: "83", icon: "⛺", route: "/camping", color: colors.score4 },
+  { label: "Stays", sub: "515", icon: "🏡", route: "/stays", color: colors.vermillion },
   { label: "Permits", sub: "", icon: "📋", route: "/permits", color: colors.mutedForeground },
   { label: "Roads", sub: "", icon: "🚗", route: "/road-conditions", color: colors.saffron },
   { label: "Records", sub: "", icon: "🏆", route: "/superlatives", color: colors.score3 },
@@ -78,10 +78,10 @@ export default function HomeScreen() {
     setFeatured(featResult.data ?? []);
     setFestivals(festResult.data ?? []);
     setStats({
-      destinations: destCount.count ?? 373,
+      destinations: destCount.count ?? 403,
       places: (destCount.count ?? 0) + (subCount.count ?? 0) + (gemCount.count ?? 0),
-      treks: trekCount.count ?? 89,
-      festivals: festCount.count ?? 234,
+      treks: trekCount.count ?? 96,
+      festivals: festCount.count ?? 252,
     });
   }
 
