@@ -71,12 +71,17 @@ export function IndiaHeroMap({ pins, locale }: IndiaHeroMapProps) {
   const [hoveredPin, setHoveredPin] = useState<MapPin | null>(null);
   const [tooltipPos, setTooltipPos] = useState({ x: 0, y: 0 });
 
-  // Top 20 pins by score for the pulsing dots
-  const topPins = useMemo(() => {
-    return [...pins]
-      .filter((p) => p.lat && p.lng && p.score !== null)
-      .sort((a, b) => (b.score ?? 0) - (a.score ?? 0))
-      .slice(0, 20);
+  // All valid pins — show every destination, pulse only top scorers
+  const allPins = useMemo(() => {
+    return pins.filter((p) => p.lat && p.lng);
+  }, [pins]);
+
+  const topScoreIds = useMemo(() => {
+    return new Set(
+      [...pins]
+        .filter((p) => p.lat && p.lng && (p.score ?? 0) >= 4)
+        .map((p) => p.id)
+    );
   }, [pins]);
 
   function handlePinHover(pin: MapPin, e: React.MouseEvent<SVGCircleElement>) {
@@ -134,45 +139,49 @@ export function IndiaHeroMap({ pins, locale }: IndiaHeroMapProps) {
           );
         })}
 
-        {/* Pulsing destination dots — appear after states fill */}
-        {topPins.map((pin, i) => {
+        {/* ALL destination dots — appear after states fill */}
+        {allPins.map((pin, i) => {
           const { x, y } = geoToSvg(pin.lat, pin.lng);
           const color = scoreColor(pin.score);
-          const dotDelay = 4.0 + i * 0.1; // After all fills complete
+          const isTopScorer = topScoreIds.has(pin.id);
+          const dotDelay = 3.5 + (i * 0.02); // Stagger slightly
 
           return (
             <g key={pin.id}>
-              {/* Glow pulse ring */}
-              <motion.circle
-                cx={x} cy={y} r={12}
-                fill="none"
-                stroke={color}
-                strokeWidth={1}
-                initial={{ opacity: 0, scale: 0 }}
-                animate={isInView ? {
-                  opacity: [0, 0.4, 0],
-                  scale: [0.5, 1.5, 2],
-                } : {}}
-                transition={{
-                  delay: dotDelay,
-                  duration: 2,
-                  repeat: Infinity,
-                  repeatDelay: 1 + Math.random() * 2,
-                  ease: "easeOut",
-                }}
-                style={{ transformOrigin: `${x}px ${y}px` }}
-              />
+              {/* Glow pulse ring — only for top scorers (4-5/5) */}
+              {isTopScorer && (
+                <motion.circle
+                  cx={x} cy={y} r={10}
+                  fill="none"
+                  stroke={color}
+                  strokeWidth={0.8}
+                  initial={{ opacity: 0, scale: 0 }}
+                  animate={isInView ? {
+                    opacity: [0, 0.3, 0],
+                    scale: [0.5, 1.5, 2],
+                  } : {}}
+                  transition={{
+                    delay: dotDelay + 1,
+                    duration: 2.5,
+                    repeat: Infinity,
+                    repeatDelay: 2 + Math.random() * 3,
+                    ease: "easeOut",
+                  }}
+                  style={{ transformOrigin: `${x}px ${y}px` }}
+                />
+              )}
               {/* Main dot */}
               <motion.circle
-                cx={x} cy={y} r={5}
+                cx={x} cy={y} r={isTopScorer ? 4.5 : 3}
                 fill={color}
                 stroke="#000"
-                strokeWidth={0.8}
+                strokeWidth={0.5}
+                fillOpacity={isTopScorer ? 0.95 : 0.7}
                 initial={{ opacity: 0, scale: 0 }}
                 animate={isInView ? { opacity: 1, scale: 1 } : {}}
                 transition={{
                   delay: dotDelay,
-                  duration: 0.4,
+                  duration: 0.3,
                   type: "spring",
                   stiffness: 300,
                 }}
