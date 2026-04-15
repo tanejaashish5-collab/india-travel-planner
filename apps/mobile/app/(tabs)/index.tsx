@@ -33,7 +33,7 @@ const DISCOVER_ITEMS = [
   { label: "Routes", sub: "53", icon: "🛣️", route: "/routes", color: colors.score4 },
   { label: "Where to Go", sub: "", icon: "📅", route: "/where-to-go", color: colors.topographic },
   { label: "Tourist Traps", sub: "", icon: "⚠️", route: "/tourist-traps", color: colors.score1 },
-  { label: "Collections", sub: "60", icon: "📚", route: "/collections", color: "#8b5cf6" },
+  { label: "Collections", sub: "75", icon: "📚", route: "/collections", color: "#8b5cf6" },
   { label: "Festivals", sub: "234", icon: "🎪", route: "/festivals", color: colors.saffron },
   { label: "Camping", sub: "77", icon: "⛺", route: "/camping", color: colors.score4 },
   { label: "Stays", sub: "495", icon: "🏡", route: "/stays", color: colors.vermillion },
