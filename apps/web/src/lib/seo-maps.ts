@@ -15,6 +15,7 @@ export const STATE_MAP: Record<string, string> = {
   "mizoram": "Mizoram", "nagaland": "Nagaland", "tripura": "Tripura",
   "gujarat": "Gujarat",
   "maharashtra": "Maharashtra",
+  "goa": "Goa",
 };
 
 export const REGION_GROUPS: Record<string, { name: string; states: string[] }> = {
@@ -32,7 +33,7 @@ export const REGION_GROUPS: Record<string, { name: string; states: string[] }> =
   },
   "west": {
     name: "West India",
-    states: ["gujarat", "maharashtra"],
+    states: ["gujarat", "maharashtra", "goa"],
   },
   "central": {
     name: "Central India",

@@ -240,9 +240,22 @@
 2026-04-14 16:25:53  INFO      [facebook/Nakshiq] ✅ Submitted (post_id=DRY_RUN)
 2026-04-14 16:25:53  INFO      State saved. Run complete.
 2026-04-14 16:25:53  INFO      ════════════════════════════════════════════════════════════
-2026-04-14 14:59:25  INFO      ════════════════════════════════════════════════════════════
-2026-04-14 14:59:25  INFO      Nakshiq Autoposter  ·  2026-04-14  ·  weekday=1
-2026-04-14 14:59:25  INFO      ════════════════════════════════════════════════════════════
-2026-04-14 14:59:25  INFO      ── Syncing Nakshiq content ──────────────────────────────
-2026-04-14 14:59:31  INFO      Synced → 20 destinations · 0 traps · 20 articles · total catalog=285
-2026-04-14 14:59:31  INFO      Sync-only mode. Done.
+2026-04-14 22:39:24  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-04-14 22:39:31  INFO      Synced → 20 destinations · 0 traps · 20 articles · total catalog=285
+2026-04-14 22:47:02  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-04-14 22:47:08  INFO      Synced → 20 destinations · 0 traps · 20 articles · total catalog=285
+2026-04-14 22:47:35  INFO      ════════════════════════════════════════════════════════════
+2026-04-14 22:47:35  INFO      Nakshiq Autoposter  ·  2026-04-14  ·  weekday=1
+2026-04-14 22:47:35  INFO      ════════════════════════════════════════════════════════════
+2026-04-14 22:47:35  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-04-14 22:47:40  INFO      Synced → 20 destinations · 0 traps · 20 articles · total catalog=285
+2026-04-14 22:47:41  INFO      Active accounts: ['instagram/nakshiq', 'facebook/Nakshiq']
+2026-04-14 22:47:43  INFO      Outstand dedup guard: merged 12 remote posts into state.
+2026-04-14 22:47:43  INFO      Formats — IG: reality_check  ·  FB: reality_check  ·  Story: blog_promo
+2026-04-14 22:47:43  INFO      Used destinations (14d): 9
+2026-04-14 22:47:43  INFO      Reality Check pair (fallback): Great Himalayan National Park ↔ Pench National Park
+2026-04-14 22:47:43  INFO      Article locked: The State of Indian Travel: Q1 2026
+2026-04-14 22:47:43  INFO      [instagram/nakshiq] Already posted today — skipping.
+2026-04-14 22:47:43  INFO      [facebook/Nakshiq] Already posted today — skipping.
+2026-04-14 22:47:43  INFO      State saved. Run complete.
+2026-04-14 22:47:43  INFO      ════════════════════════════════════════════════════════════

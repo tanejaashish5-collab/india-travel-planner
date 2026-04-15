@@ -32,7 +32,7 @@ const ACTIVE_STATES = new Set([
   "haryana", "madhya-pradesh", "sikkim", "west-bengal",
   "arunachal-pradesh", "assam", "meghalaya", "nagaland",
   "manipur", "mizoram", "tripura", "bihar", "jharkhand", "chhattisgarh",
-  "gujarat", "maharashtra",
+  "gujarat", "maharashtra", "goa",
 ]);
 
 // Score to color mapping
