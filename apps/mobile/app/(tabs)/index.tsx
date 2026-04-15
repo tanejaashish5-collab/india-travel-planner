@@ -29,12 +29,12 @@ const DIFF_COLORS: Record<string, string> = {
 };
 
 const DISCOVER_ITEMS = [
-  { label: "Treks", sub: "60", icon: "🥾", route: "/treks", color: colors.score5 },
+  { label: "Treks", sub: "68", icon: "🥾", route: "/treks", color: colors.score5 },
   { label: "Routes", sub: "39", icon: "🛣️", route: "/routes", color: colors.score4 },
   { label: "Where to Go", sub: "", icon: "📅", route: "/where-to-go", color: colors.topographic },
   { label: "Tourist Traps", sub: "", icon: "⚠️", route: "/tourist-traps", color: colors.score1 },
   { label: "Collections", sub: "60", icon: "📚", route: "/collections", color: "#8b5cf6" },
-  { label: "Festivals", sub: "183", icon: "🎪", route: "/festivals", color: colors.saffron },
+  { label: "Festivals", sub: "199", icon: "🎪", route: "/festivals", color: colors.saffron },
   { label: "Camping", sub: "47", icon: "⛺", route: "/camping", color: colors.score4 },
   { label: "Stays", sub: "423", icon: "🏡", route: "/stays", color: colors.vermillion },
   { label: "Permits", sub: "", icon: "📋", route: "/permits", color: colors.mutedForeground },
@@ -78,10 +78,10 @@ export default function HomeScreen() {
     setFeatured(featResult.data ?? []);
     setFestivals(festResult.data ?? []);
     setStats({
-      destinations: destCount.count ?? 229,
+      destinations: destCount.count ?? 297,
       places: (destCount.count ?? 0) + (subCount.count ?? 0) + (gemCount.count ?? 0),
-      treks: trekCount.count ?? 60,
-      festivals: festCount.count ?? 183,
+      treks: trekCount.count ?? 68,
+      festivals: festCount.count ?? 199,
     });
   }
 
