@@ -139,7 +139,7 @@ export default function MethodologyPage() {
           </section>
 
           <div className="text-center pt-4">
-            <Link href="/en/explore" className="rounded-full bg-primary px-6 py-2.5 text-sm font-medium text-primary-foreground hover:bg-primary/90">
+            <Link href="/explore" className="rounded-full bg-primary px-6 py-2.5 text-sm font-medium text-primary-foreground hover:bg-primary/90">
               Start exploring with confidence →
             </Link>
           </div>
