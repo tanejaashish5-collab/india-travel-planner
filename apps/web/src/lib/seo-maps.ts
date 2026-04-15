@@ -16,6 +16,7 @@ export const STATE_MAP: Record<string, string> = {
   "gujarat": "Gujarat",
   "maharashtra": "Maharashtra",
   "goa": "Goa",
+  "karnataka": "Karnataka",
 };
 
 export const REGION_GROUPS: Record<string, { name: string; states: string[] }> = {
@@ -25,7 +26,7 @@ export const REGION_GROUPS: Record<string, { name: string; states: string[] }> =
   },
   "south": {
     name: "South India",
-    states: [], // Will be populated as we add South India states
+    states: ["karnataka"],
   },
   "east": {
     name: "East India",

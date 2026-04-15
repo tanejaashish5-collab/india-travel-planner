@@ -13,15 +13,15 @@ export interface AppStats {
   campingSpots: number;
 }
 
-// Fallback values if DB is unavailable — keep these updated (April 2026, Goa expansion)
+// Fallback values if DB is unavailable — keep these updated (April 2026, Karnataka Phase 1)
 export const FALLBACK: AppStats = {
-  destinations: 297,
-  places: 664,
+  destinations: 312,
+  places: 679,
   routes: 39,
   festivals: 199,
   collections: 60,
   treks: 68,
-  states: 26,
+  states: 27,
   traps: 66,
   permits: 15,
   campingSpots: 47,
