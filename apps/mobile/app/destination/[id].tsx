@@ -23,6 +23,7 @@ import { useDestination } from "../../hooks/useDestinations";
 import { useSavedItems } from "../../hooks/useSavedItems";
 import { useArticlesForDestination } from "../../hooks/useArticles";
 import { useVisited } from "../../hooks/useVisited";
+import { useReviews } from "../../hooks/useReviews";
 
 const supabaseMobile = createClient(
   process.env.EXPO_PUBLIC_SUPABASE_URL || "",
@@ -49,6 +50,7 @@ export default function DestinationScreen() {
   const { isSaved, toggleSaved } = useSavedItems();
   const { articles: guideArticles } = useArticlesForDestination(id);
   const { isVisited, toggleVisited } = useVisited();
+  const { reviews } = useReviews(id);
   const [activeTab, setActiveTab] = useState("overview");
   const currentMonth = new Date().getMonth() + 1;
 
@@ -72,6 +74,7 @@ export default function DestinationScreen() {
     { id: "monthly", label: "Monthly" },
     ...(kf ? [{ id: "kids", label: "Kids" }] : []),
     ...(cc ? [{ id: "safety", label: "Safety" }] : []),
+    ...(reviews.length > 0 ? [{ id: "reviews", label: `Reviews (${reviews.length})` }] : []),
   ];
 
   async function handleShare() {
@@ -321,6 +324,78 @@ export default function DestinationScreen() {
               ))}
             </View>
           )}
+
+          {/* Hidden Gems */}
+          {dest.hidden_gems?.length > 0 && (
+            <View style={styles.sectionCard}>
+              <Text style={styles.sectionTitle}>Hidden Gems Nearby</Text>
+              {dest.hidden_gems.map((gem: any) => (
+                <View key={gem.id} style={styles.festivalItem}>
+                  <Text style={styles.festivalName}>{gem.name}</Text>
+                  {gem.distance_km && <Text style={styles.festivalDate}>{gem.distance_km}km · {gem.drive_time}</Text>}
+                  <Text style={styles.festivalSig}>{gem.why_go}</Text>
+                </View>
+              ))}
+            </View>
+          )}
+
+          {/* Viral Eats */}
+          {dest.viral_eats?.length > 0 && (
+            <View style={styles.sectionCard}>
+              <Text style={styles.sectionTitle}>Must-Try Food</Text>
+              {dest.viral_eats.map((eat: any, i: number) => (
+                <View key={eat.id || i} style={styles.festivalItem}>
+                  <Text style={styles.festivalName}>{eat.name}</Text>
+                  <Text style={styles.festivalDate}>{eat.location} · {eat.price_range}</Text>
+                  {eat.honest_review && <Text style={styles.festivalSig}>{eat.honest_review}</Text>}
+                </View>
+              ))}
+            </View>
+          )}
+
+          {/* Local Legends */}
+          {dest.local_legends?.length > 0 && (
+            <View style={styles.sectionCard}>
+              <Text style={styles.sectionTitle}>Local People & Stories</Text>
+              {dest.local_legends.map((legend: any, i: number) => (
+                <View key={legend.id || i} style={styles.festivalItem}>
+                  <Text style={styles.festivalName}>{legend.name}</Text>
+                  <Text style={styles.festivalDate}>{legend.known_as} · {legend.role}</Text>
+                  {legend.story && <Text style={styles.festivalSig}>{legend.story}</Text>}
+                </View>
+              ))}
+            </View>
+          )}
+
+          {/* Sub-destinations */}
+          {dest.sub_destinations?.length > 0 && (
+            <View style={styles.sectionCard}>
+              <Text style={styles.sectionTitle}>Places to Visit</Text>
+              {dest.sub_destinations.map((sub: any) => (
+                <View key={sub.id} style={styles.festivalItem}>
+                  <Text style={styles.festivalName}>{sub.name}</Text>
+                  <Text style={styles.festivalDate}>{sub.type}</Text>
+                  {sub.highlights?.length > 0 && (
+                    <Text style={styles.festivalSig}>{sub.highlights.join(" · ")}</Text>
+                  )}
+                </View>
+              ))}
+            </View>
+          )}
+
+          {/* Local Stays */}
+          {dest.local_stays?.length > 0 && (
+            <View style={styles.sectionCard}>
+              <Text style={styles.sectionTitle}>Where to Stay</Text>
+              {dest.local_stays.slice(0, 4).map((stay: any, i: number) => (
+                <View key={stay.id || i} style={styles.festivalItem}>
+                  <Text style={styles.festivalName}>{stay.name}</Text>
+                  <Text style={styles.festivalDate}>{stay.type} · {stay.price_range}</Text>
+                  {stay.why_special && <Text style={styles.festivalSig}>{stay.why_special}</Text>}
+                </View>
+              ))}
+            </View>
+          )}
         </View>
       )}
 
@@ -400,6 +475,33 @@ export default function DestinationScreen() {
                 <Text style={styles.sectionBody}>{cc.emergency.helpline}</Text>
               </View>
             )}
+          </View>
+        </View>
+      )}
+
+      {/* Reviews tab */}
+      {activeTab === "reviews" && reviews.length > 0 && (
+        <View style={styles.tabContent}>
+          <View style={styles.sectionCard}>
+            <Text style={styles.sectionTitle}>Traveler Reviews</Text>
+            {reviews.map((review: any) => {
+              const stars = "★".repeat(review.rating) + "☆".repeat(5 - review.rating);
+              return (
+                <View key={review.id} style={[styles.festivalItem, { borderLeftWidth: 2, borderLeftColor: SCORE_COLORS[review.rating] || colors.muted, paddingLeft: spacing.sm }]}>
+                  <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center" }}>
+                    <Text style={{ color: SCORE_COLORS[review.rating] || colors.primary, fontSize: fontSize.sm, fontWeight: "700" }}>{stars}</Text>
+                    {review.traveler_type && (
+                      <Text style={{ fontSize: fontSize.xs, color: colors.mutedForeground, backgroundColor: colors.muted + "33", paddingHorizontal: 6, paddingVertical: 2, borderRadius: borderRadius.sm }}>{review.traveler_type}</Text>
+                    )}
+                  </View>
+                  <Text style={styles.sectionBody}>{review.text}</Text>
+                  <Text style={{ fontSize: fontSize.xs, color: colors.mutedForeground, marginTop: 2 }}>
+                    {review.visit_month ? `Visited ${MONTH_SHORT[review.visit_month]} ${review.visit_year || ""}` : ""}
+                    {review.visit_month ? " · " : ""}{new Date(review.created_at).toLocaleDateString()}
+                  </Text>
+                </View>
+              );
+            })}
           </View>
         </View>
       )}

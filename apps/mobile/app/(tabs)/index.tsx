@@ -29,14 +29,16 @@ const DIFF_COLORS: Record<string, string> = {
 };
 
 const DISCOVER_ITEMS = [
-  { label: "Treks", sub: "96", icon: "🥾", route: "/treks", color: colors.score5 },
-  { label: "Routes", sub: "57", icon: "🛣️", route: "/routes", color: colors.score4 },
+  { label: "Ask NakshIQ", sub: "AI", icon: "💬", route: "/ask", color: colors.saffron },
+  { label: "All States", sub: "36", icon: "🗺️", route: "/states", color: colors.topographic },
+  { label: "Treks", sub: "130", icon: "🥾", route: "/treks", color: colors.score5 },
+  { label: "Routes", sub: "74", icon: "🛣️", route: "/routes", color: colors.score4 },
   { label: "Where to Go", sub: "", icon: "📅", route: "/where-to-go", color: colors.topographic },
   { label: "Tourist Traps", sub: "", icon: "⚠️", route: "/tourist-traps", color: colors.score1 },
-  { label: "Collections", sub: "75", icon: "📚", route: "/collections", color: "#8b5cf6" },
-  { label: "Festivals", sub: "252", icon: "🎪", route: "/festivals", color: colors.saffron },
-  { label: "Camping", sub: "83", icon: "⛺", route: "/camping", color: colors.score4 },
-  { label: "Stays", sub: "515", icon: "🏡", route: "/stays", color: colors.vermillion },
+  { label: "Collections", sub: "91", icon: "📚", route: "/collections", color: "#8b5cf6" },
+  { label: "Festivals", sub: "325", icon: "🎪", route: "/festivals", color: colors.saffron },
+  { label: "Camping", sub: "110", icon: "⛺", route: "/camping", color: colors.score4 },
+  { label: "Stays", sub: "", icon: "🏡", route: "/stays", color: colors.vermillion },
   { label: "Permits", sub: "", icon: "📋", route: "/permits", color: colors.mutedForeground },
   { label: "Roads", sub: "", icon: "🚗", route: "/road-conditions", color: colors.saffron },
   { label: "Records", sub: "", icon: "🏆", route: "/superlatives", color: colors.score3 },
