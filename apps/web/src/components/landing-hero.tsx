@@ -440,12 +440,13 @@ export function LandingHero({
               <FadeIn>
                 <h3 className="text-center text-sm font-bold uppercase tracking-[0.15em] text-muted-foreground/50 mb-6">Explore by region</h3>
               </FadeIn>
-              <StaggerContainer className="grid gap-3 grid-cols-2 sm:grid-cols-3 lg:grid-cols-5" staggerDelay={0.08}>
+              <StaggerContainer className="grid gap-3 grid-cols-2 sm:grid-cols-3 lg:grid-cols-6" staggerDelay={0.08}>
                 {([
                   { slug: "north", icon: "🏔️", desc: "Himalayas, deserts, holy cities", hero: "spiti-valley" },
+                  { slug: "south", icon: "🛕", desc: "Temples, backwaters, biryani", hero: "hyderabad" },
                   { slug: "west", icon: "🏖️", desc: "Beaches, caves, Bollywood", hero: "mumbai" },
+                  { slug: "east", icon: "🎭", desc: "Temples, tigers, Durga Puja", hero: "darjeeling" },
                   { slug: "northeast", icon: "🌿", desc: "Living root bridges, tea gardens", hero: "cherrapunji" },
-                  { slug: "east", icon: "🛕", desc: "Temples, tigers, Durga Puja", hero: "darjeeling" },
                   { slug: "central", icon: "🐅", desc: "Tiger reserves, tribal art", hero: "kanha" },
                 ] as const).map((r) => {
                   const region = REGION_GROUPS[r.slug];

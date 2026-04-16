@@ -675,21 +675,18 @@
 2026-04-16 05:41:40  INFO      ── Syncing Nakshiq content ──────────────────────────────
 2026-04-16 05:41:46  INFO      Synced → 20 destinations · 0 traps · 16 articles · total catalog=438
 2026-04-16 05:41:46  INFO      Sync-only mode. Done.
-2026-04-16 06:04:25  INFO      ════════════════════════════════════════════════════════════
-2026-04-16 06:04:25  INFO      Nakshiq Autoposter · MORNING · 2026-04-16 · weekday=3
-2026-04-16 06:04:25  INFO      ════════════════════════════════════════════════════════════
-2026-04-16 06:04:25  INFO      ── Syncing Nakshiq content ──────────────────────────────
-2026-04-16 06:04:33  INFO      Synced → 20 destinations · 0 traps · 16 articles · total catalog=438
-2026-04-16 06:04:33  INFO      Sync-only mode. Done.
-2026-04-16 06:19:09  INFO      ════════════════════════════════════════════════════════════
-2026-04-16 06:19:09  INFO      Nakshiq Autoposter · MORNING · 2026-04-16 · weekday=3
-2026-04-16 06:19:09  INFO      ════════════════════════════════════════════════════════════
-2026-04-16 06:19:09  INFO      ── Syncing Nakshiq content ──────────────────────────────
-2026-04-16 06:19:17  INFO      Synced → 20 destinations · 0 traps · 16 articles · total catalog=438
-2026-04-16 06:19:17  INFO      Sync-only mode. Done.
-2026-04-16 06:57:01  INFO      ════════════════════════════════════════════════════════════
-2026-04-16 06:57:01  INFO      Nakshiq Autoposter · MORNING · 2026-04-16 · weekday=3
-2026-04-16 06:57:01  INFO      ════════════════════════════════════════════════════════════
-2026-04-16 06:57:01  INFO      ── Syncing Nakshiq content ──────────────────────────────
-2026-04-16 06:57:06  INFO      Synced → 20 destinations · 0 traps · 16 articles · total catalog=438
-2026-04-16 06:57:06  INFO      Sync-only mode. Done.
+2026-04-16 15:57:57  INFO      ════════════════════════════════════════════════════════════
+2026-04-16 15:57:57  INFO      Nakshiq Autoposter · TOURIST MAP · 2026-04-16 · weekday=3
+2026-04-16 15:57:57  INFO      ════════════════════════════════════════════════════════════
+2026-04-16 15:57:57  INFO      Tourist Map target: Himachal Pradesh (HP) · cartographic · dark (28/28 states never featured)
+2026-04-16 15:57:57  INFO      Map rendered: tourist_map_HP_dark_cartographic.jpg (95 KB)
+2026-04-16 15:58:05  INFO          Media ready: met0d (98,054 bytes · tourist_map_HP_dark_cartographic.jpg)
+2026-04-16 15:58:05  INFO      Map image uploaded: tourist_map_HP_dark_cartographic.jpg
+2026-04-16 15:58:07  INFO      Active accounts: ['instagram/nakshiq', 'facebook/Nakshiq']
+2026-04-16 15:58:07  INFO      [instagram/nakshiq] Publishing tourist map for Himachal Pradesh...
+2026-04-16 15:58:13  INFO      [instagram/nakshiq] Tourist map posted successfully!
+2026-04-16 15:58:13  INFO      [facebook/Nakshiq] Publishing tourist map for Himachal Pradesh...
+2026-04-16 15:58:18  INFO      [facebook/Nakshiq] Tourist map posted successfully!
+2026-04-16 15:58:18  INFO      Theme tracker updated: HP / HP_cartographic_dark
+2026-04-16 15:58:18  INFO      State saved. Tourist Map run complete.
+2026-04-16 15:58:18  INFO      ════════════════════════════════════════════════════════════

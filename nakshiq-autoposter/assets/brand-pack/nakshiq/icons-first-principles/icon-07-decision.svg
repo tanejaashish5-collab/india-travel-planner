@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+<defs>
+<clipPath id="iconClip">
+<rect x="0" y="0" width="1024" height="1024" rx="224" ry="224"/>
+</clipPath>
+</defs>
+<g clip-path="url(#iconClip)">
+<rect x="0" y="0" width="1024" height="1024" fill="#161614"/>
+<line x1="490.7867965644036" y1="490.7867965644036" x2="285.7258300203048" y2="285.7258300203048" stroke="#F5F1E8" stroke-width="4" opacity="0.3" stroke-linecap="round"/>
+<line x1="519.7645713530757" y1="483.02222521132796" x2="594.8220944328066" y2="202.90373558749815" stroke="#E55642" stroke-width="14" opacity="1.0" stroke-linecap="round"/>
+<line x1="540.1907786235772" y1="501.7393957002299" x2="812.7016386514907" y2="402.55355413578604" stroke="#F5F1E8" stroke-width="4" opacity="0.3" stroke-linecap="round"/>
+<line x1="533.2132034355964" y1="533.2132034355964" x2="738.2741699796952" y2="738.2741699796952" stroke="#F5F1E8" stroke-width="4" opacity="0.3" stroke-linecap="round"/>
+<line x1="497.0" y1="537.9807621135332" x2="352.00000000000006" y2="789.1281292110205" stroke="#F5F1E8" stroke-width="4" opacity="0.3" stroke-linecap="round"/>
+<circle cx="285.7258300203048" cy="285.7258300203048" r="10" fill="#F5F1E8" opacity="0.3"/>
+<circle cx="594.8220944328066" cy="202.90373558749815" r="32" fill="#E55642"/>
+<circle cx="812.7016386514907" cy="402.55355413578604" r="10" fill="#F5F1E8" opacity="0.3"/>
+<circle cx="738.2741699796952" cy="738.2741699796952" r="10" fill="#F5F1E8" opacity="0.3"/>
+<circle cx="352.00000000000006" cy="789.1281292110205" r="10" fill="#F5F1E8" opacity="0.3"/>
+<circle cx="512.0" cy="512.0" r="14" fill="#F5F1E8"/>
+</g>
+</svg>

@@ -8,7 +8,9 @@
     "PdMu0": "2026-04-16",
     "m8EAd_evening": "2026-04-15",
     "m8EAd_evening_story": "2026-04-15",
-    "PdMu0_evening": "2026-04-15"
+    "PdMu0_evening": "2026-04-15",
+    "m8EAd_tourist_map": "2026-04-16",
+    "PdMu0_tourist_map": "2026-04-16"
   },
   "posted_destinations": [
     {
@@ -444,6 +446,16 @@
         "2026-04-15"
       ]
     },
-    "moat_angles": {}
+    "moat_angles": {},
+    "tourist_map_states": {
+      "HP": [
+        "2026-04-16"
+      ]
+    },
+    "tourist_map_combos": {
+      "HP_cartographic_dark": [
+        "2026-04-16"
+      ]
+    }
   }
 }
