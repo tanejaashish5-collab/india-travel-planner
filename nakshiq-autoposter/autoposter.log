@@ -696,9 +696,17 @@
 2026-04-16 08:48:28  INFO      ── Syncing Nakshiq content ──────────────────────────────
 2026-04-16 08:48:34  INFO      Synced → 20 destinations · 0 traps · 16 articles · total catalog=460
 2026-04-16 08:48:34  INFO      Sync-only mode. Done.
-2026-04-16 09:53:39  INFO      ════════════════════════════════════════════════════════════
-2026-04-16 09:53:39  INFO      Nakshiq Autoposter · MORNING · 2026-04-16 · weekday=3
-2026-04-16 09:53:39  INFO      ════════════════════════════════════════════════════════════
-2026-04-16 09:53:39  INFO      ── Syncing Nakshiq content ──────────────────────────────
-2026-04-16 09:53:44  INFO      Synced → 20 destinations · 0 traps · 16 articles · total catalog=472
-2026-04-16 09:53:44  INFO      Sync-only mode. Done.
+2026-04-16 19:46:22  INFO      ════════════════════════════════════════════════════════════
+2026-04-16 19:46:22  INFO      Nakshiq Autoposter · CANVA VISUAL · 2026-04-16 · weekday=3
+2026-04-16 19:46:22  INFO      ════════════════════════════════════════════════════════════
+2026-04-16 19:46:22  INFO      Library: 9 images across 5 categories
+2026-04-16 19:46:22  INFO      Selected: [mood_shots] Munnar tea plantations sunrise → mood_shots/munnar_KL_01.jpg
+2026-04-16 19:46:29  INFO          Media ready: 7OziW (227,706 bytes · canva_mood_shots_munnar_KL_01.jpg)
+2026-04-16 19:46:29  INFO      Image uploaded: canva_mood_shots_munnar_KL_01.jpg (222 KB)
+2026-04-16 19:46:31  INFO      [instagram/nakshiq] Publishing canva visual: Munnar tea plantations sunrise...
+2026-04-16 19:46:37  INFO      [instagram/nakshiq] Canva visual posted successfully!
+2026-04-16 19:46:37  INFO      [facebook/Nakshiq] Publishing canva visual: Munnar tea plantations sunrise...
+2026-04-16 19:46:42  INFO      [facebook/Nakshiq] Canva visual posted successfully!
+2026-04-16 19:46:42  INFO      Theme tracker updated: cat=mood_shots / img=mood_shots/munnar_KL_01.jpg
+2026-04-16 19:46:42  INFO      State saved. Canva Visual run complete.
+2026-04-16 19:46:42  INFO      ════════════════════════════════════════════════════════════

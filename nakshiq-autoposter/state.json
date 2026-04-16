@@ -1,16 +1,18 @@
 {
-  "last_sync": "2026-04-16T09:53:44.051821+00:00",
+  "last_sync": "2026-04-16T10:10:22.521520+00:00",
   "posted_today": {
     "8iDfI": "2026-04-14",
     "x4cT8": "2026-04-14",
     "m8EAd": "2026-04-16",
     "m8EAd_story": "2026-04-15",
     "PdMu0": "2026-04-16",
-    "m8EAd_evening": "2026-04-15",
-    "m8EAd_evening_story": "2026-04-15",
-    "PdMu0_evening": "2026-04-15",
+    "m8EAd_evening": "2026-04-16",
+    "m8EAd_evening_story": "2026-04-16",
+    "PdMu0_evening": "2026-04-16",
     "m8EAd_tourist_map": "2026-04-16",
-    "PdMu0_tourist_map": "2026-04-16"
+    "PdMu0_tourist_map": "2026-04-16",
+    "m8EAd_canva": "2026-04-16",
+    "PdMu0_canva": "2026-04-16"
   },
   "posted_destinations": [
     {
@@ -128,6 +130,14 @@
     {
       "destination_id": "almora",
       "date": "2026-04-16"
+    },
+    {
+      "destination_id": "dhanaulti",
+      "date": "2026-04-16"
+    },
+    {
+      "destination_id": "dhanaulti",
+      "date": "2026-04-16"
     }
   ],
   "posted_formats": {
@@ -143,13 +153,15 @@
       "reality_check",
       "data_carousel",
       "data_carousel",
-      "collection_spotlight"
+      "collection_spotlight",
+      "festival_alert"
     ],
     "PdMu0": [
       "reality_check",
       "data_carousel",
       "data_carousel",
-      "collection_spotlight"
+      "collection_spotlight",
+      "festival_alert"
     ]
   },
   "post_log": [
@@ -423,12 +435,46 @@
       "destination": "chopta",
       "format": "collection_spotlight",
       "has_media": true
+    },
+    {
+      "timestamp": "2026-04-16T10:11:05.387287+00:00",
+      "date": "2026-04-16",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "EdX4A",
+      "destination": "dhanaulti",
+      "format": "festival_alert",
+      "has_media": true
+    },
+    {
+      "timestamp": "2026-04-16T10:11:28.243267+00:00",
+      "date": "2026-04-16",
+      "platform": "instagram_story",
+      "account_id": "m8EAd",
+      "post_id": "Wg4lz",
+      "destination": "dhanaulti",
+      "format": "collection_spotlight",
+      "has_media": true,
+      "mode": "evening"
+    },
+    {
+      "timestamp": "2026-04-16T10:11:48.723228+00:00",
+      "date": "2026-04-16",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "Gzd8p",
+      "destination": "dhanaulti",
+      "format": "festival_alert",
+      "has_media": true
     }
   ],
   "theme_usage": {
     "collections": {
       "adrenaline-rush": [
         "2026-04-15"
+      ],
+      "after-dark-experiences": [
+        "2026-04-16"
       ]
     },
     "articles": {
@@ -439,11 +485,17 @@
     "destinations": {
       "chopta": [
         "2026-04-15"
+      ],
+      "dhanaulti": [
+        "2026-04-16"
       ]
     },
     "reels": {
       "chopta": [
         "2026-04-15"
+      ],
+      "dhanaulti": [
+        "2026-04-16"
       ]
     },
     "moat_angles": {},
@@ -454,6 +506,21 @@
     },
     "tourist_map_combos": {
       "HP_cartographic_dark": [
+        "2026-04-16"
+      ]
+    },
+    "canva_categories": {
+      "mood_shots": [
+        "2026-04-16"
+      ]
+    },
+    "canva_images": {
+      "mood_shots/munnar_KL_01.jpg": [
+        "2026-04-16"
+      ]
+    },
+    "festivals": {
+      "e0a60b00-abba-4445-a670-ef40e3b8c068": [
         "2026-04-16"
       ]
     }

@@ -3,7 +3,8 @@ import { Nav } from "@/components/nav";
 import { DestinationDetail } from "@/components/destination-detail";
 import { PrevNextNav } from "@/components/prev-next-nav";
 import { createClient } from "@supabase/supabase-js";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
+import { STATE_MAP } from "@/lib/seo-maps";
 
 export const revalidate = 3600; // Revalidate every hour
 export const dynamicParams = true; // Allow pages not pre-generated at build time
@@ -224,9 +225,15 @@ export default async function DestinationPage({
 }: {
   params: Promise<{ id: string; locale: string }>;
 }) {
-  const { id } = await params;
+  const { id, locale } = await params;
   const dest = await getDestination(id);
-  if (!dest) notFound();
+  if (!dest) {
+    // If the ID matches a state, redirect to the state page instead of 404
+    if (STATE_MAP[id]) {
+      redirect(`/${locale}/state/${id}`);
+    }
+    notFound();
+  }
 
   // Schema.org JSON-LD for TouristDestination
   const stateInfo = dest.state as any;

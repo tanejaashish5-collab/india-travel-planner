@@ -5,7 +5,8 @@ const MONTH_SLUGS = [
   "july", "august", "september", "october", "november", "december",
 ];
 
-export default function WhereToGoIndex({ params }: { params: { locale: string } }) {
+export default async function WhereToGoIndex({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
   const currentMonth = MONTH_SLUGS[new Date().getMonth() + 1];
-  redirect(`/${params.locale}/where-to-go/${currentMonth}`);
+  redirect(`/${locale}/where-to-go/${currentMonth}`);
 }
