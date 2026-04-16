@@ -2180,6 +2180,219 @@ def _run_inner(force: bool, sync_only: bool, dry_run: bool,
     log.info("═" * 60)
 
 # ─────────────────────────────────────────────────────────────────────────────
+# TOURIST MAP MODE
+# ─────────────────────────────────────────────────────────────────────────────
+# Standalone schedule (Tue/Thu/Sat) that generates illustrated tourist maps
+# from map_data.json. Rotates through 28 states × 4 combos (2 variants ×
+# 2 themes) = 112 unique posts before any repeat. At 2-3 posts/week that's
+# ~9 months of content.
+
+TOURIST_MAP_VARIANTS = ["cartographic", "editorial"]
+TOURIST_MAP_THEMES   = ["dark", "light"]
+# Runs on Tue/Thu/Sat (weekdays 1, 3, 5)
+TOURIST_MAP_DAYS     = {1, 3, 5}
+
+TOURIST_MAP_LOCK_FILE = Path(__file__).parent / ".autoposter-tourist-map.lock"
+
+
+def _tourist_map_caption(state_name: str, tagline: str, landmarks: list,
+                         platform: str) -> str:
+    """Generate a caption for a tourist map post."""
+    # Pick up to 4 landmark names for the caption
+    spots = [lm.get("name", "") for lm in landmarks[:4] if lm.get("name")]
+    spots_str = ", ".join(spots) if spots else "and more"
+
+    caption = (
+        f"📍 {state_name} — Tourist Map\n\n"
+        f"{tagline}\n\n"
+        f"From {spots_str} — {state_name} has it all.\n\n"
+        f"Save this map for your next trip.\n\n"
+        f"—\n"
+        f"NakshIQ scores every Indian destination, every month.\n"
+        f"Data, not opinions.\n\n"
+    )
+
+    # Platform-specific hashtags
+    if platform in ("instagram", "facebook"):
+        caption += (
+            f"#NakshIQ #TravelWithIQ #{state_name.replace(' ', '')} "
+            f"#India #TouristMap #TravelIndia #IncredibleIndia "
+            f"#{state_name.replace(' ', '')}Tourism"
+        )
+    elif platform == "linkedin":
+        caption += "#NakshIQ #TravelTech #IndiaTravel"
+
+    return caption
+
+
+def _run_tourist_map(force: bool = False, dry_run: bool = False):
+    """
+    Tourist Map mode — generates and posts an illustrated state tourist map.
+    Rotates through states (oldest-unused first) and cycles variant+theme combos.
+    """
+    import json
+    import tempfile
+    import random
+    from pathlib import Path as _Path
+
+    today   = date.today().isoformat()
+    weekday = date.today().weekday()
+    state   = load_state()
+
+    log.info("═" * 60)
+    log.info(f"Nakshiq Autoposter · TOURIST MAP · {today} · weekday={weekday}")
+    log.info("═" * 60)
+
+    # Only runs on Tue/Thu/Sat
+    if weekday not in TOURIST_MAP_DAYS and not force:
+        log.info(f"Tourist Map mode runs Tue/Thu/Sat only (today weekday={weekday}) — exiting.")
+        return
+
+    # Load map data
+    map_data_path = _Path(__file__).parent / "map_data.json"
+    if not map_data_path.exists():
+        log.error("map_data.json not found — cannot generate tourist maps.")
+        return
+
+    with open(map_data_path) as f:
+        map_data = json.load(f)
+
+    states_list = map_data.get("states", [])
+    if not states_list:
+        log.error("No states in map_data.json.")
+        return
+
+    # Build state items for the anti-repetition tracker
+    state_items = [{"id": s["short_code"], "name": s["name"],
+                    "tagline": s.get("tagline", ""),
+                    "landmarks": s.get("landmarks", [])}
+                   for s in states_list]
+
+    # Pick oldest-unused state
+    ordered = pick_oldest_unused(state, "tourist_map_states", state_items, key="id")
+    chosen_state = ordered[0]
+    state_code = chosen_state["id"]
+    state_name = chosen_state["name"]
+
+    # Pick variant+theme combo. Use a secondary tracker so we cycle through
+    # all 4 combos for each state before repeating.
+    combos = [f"{v}_{t}" for v in TOURIST_MAP_VARIANTS for t in TOURIST_MAP_THEMES]
+    combo_items = [{"id": f"{state_code}_{c}"} for c in combos]
+    combo_ordered = pick_oldest_unused(state, "tourist_map_combos", combo_items, key="id")
+    chosen_combo_id = combo_ordered[0]["id"]  # e.g. "HP_cartographic_dark"
+    parts = chosen_combo_id.replace(f"{state_code}_", "", 1).rsplit("_", 1)
+    variant, theme = parts[0], parts[1]
+
+    status = dimension_cycle_status(state, "tourist_map_states", len(state_items))
+    log.info(f"Tourist Map target: {state_name} ({state_code}) · {variant} · {theme} "
+             f"({status['unused']}/{status['total']} states never featured)")
+
+    # Generate the map image
+    try:
+        from map_gen import build_tourist_map
+    except Exception as e:
+        log.error(f"Cannot import map_gen: {e}")
+        return
+
+    try:
+        with tempfile.TemporaryDirectory(prefix="nakshiq_tmap_") as td:
+            out_dir = _Path(td)
+            map_path = build_tourist_map(state_code, out_dir, theme=theme, variant=variant)
+            log.info(f"Map rendered: {map_path.name} ({map_path.stat().st_size // 1024} KB)")
+            map_bytes = map_path.read_bytes()
+    except Exception as e:
+        log.error(f"Map generation failed for {state_code}: {e}")
+        import traceback; traceback.print_exc()
+        return
+
+    # Upload image
+    media_filename = f"tourist_map_{state_code}_{theme}_{variant}.jpg"
+    media_obj = upload_media_bytes(map_bytes, media_filename, "image/jpeg")
+    if not media_obj:
+        log.error("Media upload failed.")
+        return
+
+    log.info(f"Map image uploaded: {media_filename}")
+
+    # Get accounts
+    accounts = get_connected_accounts()
+    active   = [a for a in accounts if a.get("isActive")]
+    if not active:
+        log.warning("No active connected accounts.")
+        return
+
+    labels = [f"{a['network']}/{a['username']}" for a in active]
+    log.info(f"Active accounts: {labels}")
+
+    mode_suffix = "_tourist_map"
+    posted_any = False
+
+    for account in active:
+        acc_id   = account["id"]
+        platform = account["network"]
+        username = account.get("username", acc_id)
+        label    = f"{platform}/{username}"
+
+        acc_scoped_key = acc_id + mode_suffix
+        if state.get("posted_today", {}).get(acc_scoped_key) == today and not force:
+            log.info(f"[{label}] Already posted tourist map today — skipping.")
+            continue
+
+        caption = _tourist_map_caption(
+            state_name, chosen_state["tagline"],
+            chosen_state["landmarks"], platform
+        )
+        caption = sanitize(caption)
+
+        log.info(f"[{label}] Publishing tourist map for {state_name}...")
+
+        if dry_run:
+            log.info(f"[{label}] DRY RUN — would publish:\n{caption[:200]}...")
+            posted_any = True
+            continue
+
+        result = publish_feed_post(caption, account, media_obj, dry_run=False)
+        if result:
+            log.info(f"[{label}] Tourist map posted successfully!")
+            state.setdefault("posted_today", {})[acc_scoped_key] = today
+            posted_any = True
+        else:
+            log.warning(f"[{label}] Tourist map post failed.")
+
+    # Mark state + combo as used in theme tracker
+    if posted_any:
+        mark_theme_used(state, "tourist_map_states", state_code)
+        mark_theme_used(state, "tourist_map_combos", chosen_combo_id)
+        log.info(f"Theme tracker updated: {state_code} / {chosen_combo_id}")
+
+    save_state(state)
+    log.info("State saved. Tourist Map run complete.")
+    log.info("═" * 60)
+
+
+def run_tourist_map(force: bool = False, dry_run: bool = False):
+    """Entry point for tourist map mode with its own lock file."""
+    if not OUTSTAND_API_KEY:
+        log.error("OUTSTAND_API_KEY not set. Exiting.")
+        sys.exit(1)
+
+    global LOCK_FILE
+    original_lock = LOCK_FILE
+    LOCK_FILE = TOURIST_MAP_LOCK_FILE
+
+    try:
+        if not dry_run and not _acquire_lock(force=force):
+            sys.exit(0)
+        try:
+            _run_tourist_map(force=force, dry_run=dry_run)
+        finally:
+            if not dry_run:
+                _release_lock()
+    finally:
+        LOCK_FILE = original_lock
+
+
+# ─────────────────────────────────────────────────────────────────────────────
 # ENTRY POINT
 # ─────────────────────────────────────────────────────────────────────────────
 
@@ -2199,8 +2412,16 @@ if __name__ == "__main__":
                         help="Run the moat/identity-pillar schedule "
                              "(methodology, skip list, Chinese wall, etc.). "
                              "Only runs on Mon/Wed/Fri; exits silently on other days.")
+    parser.add_argument("--tourist-map", action="store_true",
+                        help="Run the tourist map schedule (Tue/Thu/Sat). "
+                             "Generates illustrated state maps from map_data.json "
+                             "and posts to all platforms.")
     args = parser.parse_args()
-    if args.evening and args.moat:
-        parser.error("--evening and --moat are mutually exclusive.")
-    run(force=args.force, sync_only=args.sync_only,
-        dry_run=args.dry_run, evening=args.evening, moat=args.moat)
+    exclusive = sum([args.evening, args.moat, args.tourist_map])
+    if exclusive > 1:
+        parser.error("--evening, --moat, and --tourist-map are mutually exclusive.")
+    if args.tourist_map:
+        run_tourist_map(force=args.force, dry_run=args.dry_run)
+    else:
+        run(force=args.force, sync_only=args.sync_only,
+            dry_run=args.dry_run, evening=args.evening, moat=args.moat)

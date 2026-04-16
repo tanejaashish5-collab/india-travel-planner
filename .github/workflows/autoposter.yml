@@ -9,6 +9,7 @@ on:
     - cron: "0 5 * * *"    # 10:30 IST  ← last fallback
     - cron: "30 8 * * *"   # 14:00 IST  sync only
     - cron: "30 13 * * *"  # 19:00 IST  sync only
+    - cron: "0 7 * * 2,4,6"  # 12:30 IST Tue/Thu/Sat — tourist map
   workflow_dispatch:
     inputs:
       mode:
@@ -21,6 +22,8 @@ on:
           - force
           - sync-only
           - dry-run
+          - tourist-map
+          - tourist-map-force
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
@@ -53,16 +56,24 @@ jobs:
           HOUR=$(date -u +%H)
           MINUTE=$(date -u +%M)
           TOTAL_MINS=$((10#$HOUR * 60 + 10#$MINUTE))
+          DOW=$(date -u +%u)  # 1=Mon .. 7=Sun
           INPUT="${{ github.event.inputs.mode }}"
 
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-            if [ -n "$INPUT" ]; then
+            if [ "$INPUT" = "tourist-map-force" ]; then
+              echo "args=--tourist-map --force" >> $GITHUB_OUTPUT
+              echo "Manual mode: --tourist-map --force"
+            elif [ -n "$INPUT" ]; then
               echo "args=--${INPUT}" >> $GITHUB_OUTPUT
               echo "Manual mode: --${INPUT}"
             else
               echo "args=" >> $GITHUB_OUTPUT
               echo "Manual mode: normal (post)"
             fi
+          elif [ "$TOTAL_MINS" -ge 420 ] && [ "$TOTAL_MINS" -lt 430 ] && echo "2 4 6" | grep -qw "$DOW"; then
+            # UTC 07:00 on Tue/Thu/Sat → tourist map
+            echo "args=--tourist-map" >> $GITHUB_OUTPUT
+            echo "Scheduled TOURIST MAP mode (UTC ${HOUR}:${MINUTE}, DOW=${DOW})"
           elif [ "$TOTAL_MINS" -ge 180 ] && [ "$TOTAL_MINS" -le 330 ]; then
             echo "args=" >> $GITHUB_OUTPUT
             echo "Scheduled POST mode (UTC ${HOUR}:${MINUTE})"
