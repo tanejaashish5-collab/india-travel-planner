@@ -43,6 +43,7 @@ export function StaysContent({ destinations }: { destinations: any[] }) {
 
   return (
     <div className="space-y-6">
+      <RegionFilterBar active={activeRegion} onChange={setActiveRegion} />
       {/* Filters */}
       <div className="flex flex-col sm:flex-row gap-3">
         <input
