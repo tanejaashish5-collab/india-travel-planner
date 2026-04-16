@@ -40,6 +40,9 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
+  verification: {
+    google: "RJwYea5dbs3YYGdeyGe1HtHl_lbmjn8IkZsP4x333bU",
+  },
   title: {
     default: "NakshIQ — Travel Intelligence for India",
     template: "%s | NakshIQ",
