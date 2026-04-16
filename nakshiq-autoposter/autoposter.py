@@ -1220,7 +1220,10 @@ def generate_post(fmt: str, content: dict, platform: str,
     if not pool:
         return None, None
 
-    best = pick_best_destination(pool, used, content)
+    # Use the run-scoped shared best (pre-picked before the per-account loop)
+    # so that split-format days (e.g. Thu IG=score_card, FB=collection_spotlight)
+    # always anchor on the same destination across platforms.
+    best = content.get("__run_best__") or pick_best_destination(pool, used, content)
 
     if fmt == "score_card" and best:
         return copy_score_card(best, platform), best
@@ -1247,7 +1250,10 @@ def generate_post(fmt: str, content: dict, platform: str,
     elif fmt == "collection_spotlight" and collections:
         # Pre-picked at run start so FB + IG show the same collection
         coll = content.get("__run_collection__") or collections[0]
-        img  = _collection_image_dest(coll, dest_map) or best
+        # Prefer shared best (pair-consistency with score_card on split-format
+        # days like Thu). Fall back to collection's own image dest only if
+        # no shared best is available.
+        img  = best or _collection_image_dest(coll, dest_map)
         return copy_collection_spotlight(coll, dest_map, platform), img
 
     elif fmt == "festival_alert" and festivals:
@@ -1929,6 +1935,17 @@ def _run_inner(force: bool, sync_only: bool, dry_run: bool,
                         break
             content["__run_12month_scores__"] = monthly
             log.info(f"12-month scores for {target['name']}: {monthly}")
+
+    # 7d) Shared best destination — when IG and FB run DIFFERENT formats on the
+    #     same day (e.g. Thu: IG=score_card, FB=collection_spotlight), pre-pick
+    #     one "best" destination so both platforms anchor on the same place.
+    #     Without this, score_card picks via pick_best_destination() and
+    #     collection_spotlight picks via _collection_image_dest(), yielding
+    #     different destinations — breaking pair-consistency.
+    shared_best = pick_best_destination(_dest_pool(), used, content)
+    if shared_best:
+        content["__run_best__"] = shared_best
+        log.info(f"Shared best destination locked: {shared_best['name']}")
 
     # 8) Carousel destinations — lock a SINGLE list so IG and FB show the same
     #    5 destinations (same order). Applies image validation + theme tracker.
