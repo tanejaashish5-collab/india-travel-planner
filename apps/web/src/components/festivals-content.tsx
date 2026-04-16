@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useLocale } from "next-intl";
 import { StaggerContainer, StaggerItem, HoverCard, ScrollReveal, PulseGlow } from "./animated-hero";
+import { RegionFilterBar, RegionKey, getStateId, stateInRegion } from "./region-filter";
 
 const MONTH_NAMES = ["", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 const MONTH_SHORT = ["", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
@@ -30,6 +31,7 @@ export function FestivalsContent({ festivals }: { festivals: any[] }) {
   const currentMonth = new Date().getMonth() + 1;
   const [selectedMonth, setSelectedMonth] = useState(0); // 0 = all
   const [search, setSearch] = useState("");
+  const [activeRegion, setActiveRegion] = useState<RegionKey>(null);
 
   const filtered = useMemo(() => {
     return festivals.filter((f) => {
@@ -43,9 +45,13 @@ export function FestivalsContent({ festivals }: { festivals: any[] }) {
           !f.description?.toLowerCase().includes(q)
         ) return false;
       }
+      if (activeRegion) {
+        const stateId = getStateId(f);
+        if (!stateInRegion(stateId, activeRegion)) return false;
+      }
       return true;
     });
-  }, [festivals, selectedMonth, search]);
+  }, [festivals, selectedMonth, search, activeRegion]);
 
   // Group by month
   const grouped = useMemo(() => {
@@ -68,6 +74,8 @@ export function FestivalsContent({ festivals }: { festivals: any[] }) {
 
   return (
     <div className="space-y-6">
+      <RegionFilterBar active={activeRegion} onChange={setActiveRegion} />
+
       {/* Filters */}
       <div className="flex flex-col sm:flex-row gap-3">
         <input

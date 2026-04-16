@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useLocale, useTranslations } from "next-intl";
 import { StaggerContainer, StaggerItem, HoverCard } from "./animated-hero";
 import { DIFFICULTY_COLORS } from "@/lib/design-tokens";
+import { RegionFilterBar, RegionKey, getStateId, stateInRegion } from "./region-filter";
 
 const DIFFICULTY_ORDER: Record<string, number> = { easy: 1, moderate: 2, hard: 3, extreme: 4 };
 
@@ -15,8 +16,13 @@ export function TreksContent({ treks, trekDests, gearChecklists }: { treks: any[
   const tm = useTranslations("months");
   const [search, setSearch] = useState("");
   const [diffFilter, setDiffFilter] = useState("");
+  const [activeRegion, setActiveRegion] = useState<RegionKey>(null);
 
   const filteredTreks = treks.filter((t) => {
+    if (activeRegion) {
+      const stateId = getStateId(t);
+      if (!stateInRegion(stateId, activeRegion)) return false;
+    }
     if (diffFilter && t.difficulty !== diffFilter) return false;
     if (search) {
       const q = search.toLowerCase();
@@ -38,6 +44,8 @@ export function TreksContent({ treks, trekDests, gearChecklists }: { treks: any[
 
   return (
     <>
+      <RegionFilterBar active={activeRegion} onChange={setActiveRegion} className="mb-4" />
+
       {/* Search + difficulty filter */}
       <div className="flex flex-col sm:flex-row gap-3 mb-8">
         <input

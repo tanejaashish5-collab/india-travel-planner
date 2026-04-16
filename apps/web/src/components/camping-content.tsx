@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useLocale } from "next-intl";
 import { StaggerContainer, StaggerItem, HoverCard } from "./animated-hero";
+import { RegionFilterBar, RegionKey, getStateId, stateInRegion } from "./region-filter";
 
 const MONTH_SHORT = ["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
 
@@ -12,6 +13,7 @@ export function CampingContent({ spots }: { spots: any[] }) {
   const locale = useLocale();
   const [search, setSearch] = useState("");
   const [filter, setFilter] = useState<"all" | "permit-free" | "water" | "high-altitude">("all");
+  const [activeRegion, setActiveRegion] = useState<RegionKey>(null);
 
   const filtered = useMemo(() => {
     return spots.filter((s) => {
@@ -28,12 +30,17 @@ export function CampingContent({ spots }: { spots: any[] }) {
           !s.tags?.some((t: string) => t.toLowerCase().includes(q))
         ) return false;
       }
+      if (activeRegion) {
+        const stateId = getStateId(s);
+        if (!stateInRegion(stateId, activeRegion)) return false;
+      }
       return true;
     });
-  }, [spots, search, filter]);
+  }, [spots, search, filter, activeRegion]);
 
   return (
     <div className="space-y-6">
+      <RegionFilterBar active={activeRegion} onChange={setActiveRegion} />
       {/* Search + Filters */}
       <div className="flex flex-col sm:flex-row gap-3">
         <input

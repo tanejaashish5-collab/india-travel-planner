@@ -5,14 +5,20 @@ import Image from "next/image";
 import Link from "next/link";
 import { useLocale } from "next-intl";
 import { StaggerContainer, StaggerItem, HoverCard } from "./animated-hero";
+import { RegionFilterBar, RegionKey, getStateId, stateInRegion } from "./region-filter";
 
 export function StaysContent({ destinations }: { destinations: any[] }) {
   const locale = useLocale();
   const [search, setSearch] = useState("");
   const [filter, setFilter] = useState<"all" | "budget" | "workable" | "family">("all");
+  const [activeRegion, setActiveRegion] = useState<RegionKey>(null);
 
   const filtered = useMemo(() => {
     return destinations.filter((d) => {
+      if (activeRegion) {
+        const stateId = getStateId(d);
+        if (stateId && !stateInRegion(stateId, activeRegion)) return false;
+      }
       if (filter === "budget") {
         const budget = d.stay_zones?.budget_range?.off_season;
         if (!budget || !budget.includes("₹")) return false;
@@ -33,7 +39,7 @@ export function StaysContent({ destinations }: { destinations: any[] }) {
       }
       return true;
     });
-  }, [destinations, search, filter]);
+  }, [destinations, search, filter, activeRegion]);
 
   return (
     <div className="space-y-6">

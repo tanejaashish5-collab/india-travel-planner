@@ -1,9 +1,11 @@
 "use client";
 
+import { useState, useMemo } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useLocale, useTranslations } from "next-intl";
 import { StaggerContainer, StaggerItem, HoverCard } from "./animated-hero";
+import { RegionFilterBar, RegionKey } from "./region-filter";
 
 const DIFFICULTY_COLORS: Record<string, string> = {
   easy: "text-emerald-400 bg-emerald-500/10",
@@ -19,18 +21,56 @@ const DIFFICULTY_BADGE_BG: Record<string, string> = {
   extreme: "bg-red-600/90",
 };
 
+const REGION_KEYWORDS: Record<string, string[]> = {
+  north: ["himalayan","ladakh","kashmir","spiti","uttarakhand","himachal","rajasthan","delhi","punjab","varanasi","lucknow","haridwar","rishikesh","manali","shimla","leh","nubra","pangong"],
+  south: ["karnataka","kerala","tamil","coorg","nilgiri","deccan","kakatiya","hyderabad","vizag","visakhapatnam","godavari","konaseema","tirupati","ooty","munnar","hampi","goa","konkan","coastal-karnataka","bengaluru"],
+  east: ["kolkata","bengal","bihar","jharkhand","sundarbans","darjeeling"],
+  west: ["mumbai","maharashtra","gujarat","rajkot","kutch","pune","nashik","aurangabad"],
+  central: ["madhya","bhopal","khajuraho","mandu","pachmarhi"],
+  northeast: ["northeast","meghalaya","sikkim","assam","arunachal","nagaland","manipur","mizoram","tripura","tawang","kaziranga","cherrapunji"],
+};
+
 export function RoutesGrid({ routes }: { routes: any[] }) {
   const locale = useLocale();
   const tm = useTranslations("months");
+  const [search, setSearch] = useState("");
+  const [activeRegion, setActiveRegion] = useState<RegionKey>(null);
+
+  const filteredRoutes = useMemo(() => {
+    return routes.filter((r) => {
+      if (search) {
+        const q = search.toLowerCase();
+        if (!r.name.toLowerCase().includes(q) && !r.description?.toLowerCase().includes(q) &&
+            !(r.stops ?? []).some((s: string) => s.toLowerCase().includes(q))) return false;
+      }
+      if (activeRegion) {
+        const text = [r.name, r.id, r.description, ...(r.stops ?? [])].join(" ").toLowerCase();
+        const keywords = REGION_KEYWORDS[activeRegion] ?? [];
+        if (!keywords.some((kw) => text.includes(kw))) return false;
+      }
+      return true;
+    });
+  }, [routes, search, activeRegion]);
 
   const grouped = {
-    "Weekend Getaways (3-4 days)": routes.filter((r) => r.days <= 4),
-    "Week Trips (7 days)": routes.filter((r) => r.days >= 5 && r.days <= 7),
-    "Extended Adventures (8-12 days)": routes.filter((r) => r.days >= 8),
+    "Weekend Getaways (3-4 days)": filteredRoutes.filter((r) => r.days <= 4),
+    "Week Trips (7 days)": filteredRoutes.filter((r) => r.days >= 5 && r.days <= 7),
+    "Extended Adventures (8-12 days)": filteredRoutes.filter((r) => r.days >= 8),
   };
 
   return (
     <>
+      <RegionFilterBar active={activeRegion} onChange={setActiveRegion} className="mb-4" />
+      <div className="flex gap-3 mb-6">
+        <input
+          type="text"
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+          placeholder="Search routes..."
+          className="flex-1 rounded-lg border border-border bg-background px-4 py-2.5 text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50"
+        />
+      </div>
+      <p className="text-sm text-muted-foreground mb-6">{filteredRoutes.length} routes</p>
       {Object.entries(grouped).map(
         ([label, groupRoutes]) =>
           groupRoutes.length > 0 && (
