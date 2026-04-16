@@ -19,6 +19,7 @@ Uses ffmpeg for all video processing (available on GitHub Actions ubuntu).
 from __future__ import annotations
 
 import json
+import shutil
 import subprocess
 import tempfile
 from pathlib import Path
@@ -481,8 +482,12 @@ def render_reel(
         f"[out]"
     )
 
+    ffmpeg_bin = shutil.which("ffmpeg") or "ffmpeg"
+    print(f"ffmpeg binary: {ffmpeg_bin}")
+    print(f"Video path: {video_path} (exists={video_path.exists()}, size={video_path.stat().st_size if video_path.exists() else 0})")
+
     cmd = [
-        "ffmpeg", "-y",
+        ffmpeg_bin, "-y",
         "-i", str(video_path),
         "-filter_complex", filter_chain,
         "-map", "[out]",
