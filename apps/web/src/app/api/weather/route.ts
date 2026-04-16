@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
 
+export const dynamic = "force-dynamic";
+
 // Cache weather data for 30 minutes
 const cache = new Map<string, { data: any; expires: number }>();
 const CACHE_TTL = 30 * 60 * 1000; // 30 min

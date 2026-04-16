@@ -108,6 +108,91 @@ EVENING_STORY_SCHEDULE = {
     6: "kids_intel",            # Sun — kids intel tease
 }
 
+# ─────────────────────────────────────────────────────────────────────────────
+# MOAT SCHEDULE — runs Mon/Wed/Fri at 12pm IST via a 3rd cron
+# -----------------------------------------------------------------------------
+# Pillar: brand/identity/methodology. Documents Nakshiq's 3-layer moat
+# (data · editorial authority · trust brand) so future acquirers can audit
+# the content library as evidence. Rotates through 9 distinct "angles" that
+# map 1:1 to sections of the Master Playbook. Anti-repetition tracker on the
+# `moat_angles` dimension guarantees no angle repeats until all have been used.
+# ─────────────────────────────────────────────────────────────────────────────
+
+# The 9 moat angles — the picker chooses the oldest-never-used one each run.
+# When a new angle is added, it gets featured first automatically (never-used
+# sorts ahead of everything). When all 9 have cycled, rotation resets.
+MOAT_ANGLES = [
+    "methodology_roads",
+    "methodology_family",
+    "methodology_altitude",
+    "methodology_crowds",
+    "skip_list",
+    "chinese_wall",
+    "four_questions",
+    "data_provenance",
+    "same_place_12_months",
+]
+
+# Methodology content per dimension — hardcoded because it IS the moat.
+# These explanations map directly to the "Data Layer" of the Moat (Playbook 3.2).
+METHODOLOGY_CONTENT = {
+    "roads": {
+        "title":  "HOW WE SCORE ROADS",
+        "signals": [
+            "Road type (NH / SH / district / unpaved)",
+            "Landslide history (last 24 months)",
+            "Fuel availability (km to nearest pump)",
+            "Network coverage (Jio / Airtel / BSNL / Vi)",
+            "Medical access (km to nearest hospital > 50 beds)",
+            "Repair infrastructure (mechanic, tire shops)",
+            "Seasonal passability (monsoon, snow, closures)",
+        ],
+        "closing": "7 signals. No advertiser tips the scale. No tourism board subsidy.",
+    },
+    "family": {
+        "title":  "HOW WE SCORE FAMILY-FRIENDLINESS",
+        "signals": [
+            "Kid-suitable activities (age 4-12)",
+            "Altitude tolerance (risk above 2500m)",
+            "Medical access for emergencies",
+            "Food safety & availability of familiar options",
+            "Washroom infrastructure (for long drives + sites)",
+            "Elder-friendliness (stairs, walking distances)",
+            "Seasonal weather risk (heat, cold, rain intensity)",
+        ],
+        "closing": "Every rating is scored against a 5-year-old on a 3-day trip.",
+    },
+    "altitude": {
+        "title":  "HOW WE SCORE ALTITUDE TOLERANCE",
+        "signals": [
+            "Base elevation (m)",
+            "Acclimatization route (gradual or abrupt)",
+            "Max elevation on recommended day-plan",
+            "AMS history (reported cases by operators)",
+            "Oxygen availability (hotels, hospitals)",
+            "Evacuation time to nearest lowland city",
+            "Seasonal weather amplification (cold + altitude)",
+        ],
+        "closing": "High score means altitude is genuinely manageable. Low score means we don't care who told you it's beautiful.",
+    },
+    "crowds": {
+        "title":  "HOW WE SCORE CROWDS",
+        "signals": [
+            "Peak-season occupancy (hotel/homestay)",
+            "Landmark wait times (verified monthly)",
+            "Road congestion (drive times vs off-season)",
+            "Parking availability at key viewpoints",
+            "Traffic permit restrictions (if any)",
+            "Popular social media saturation (signal for tourist bloat)",
+            "Local-to-visitor ratio (infra carrying capacity)",
+        ],
+        "closing": "High crowd score = manageable. Low = do something else this month.",
+    },
+}
+
+# Moat lock file (separate from morning / evening locks)
+MOAT_LOCK_FILE = Path(__file__).parent / ".autoposter-moat.lock"
+
 # Total destinations Nakshiq scores — populated from /stats on each sync.
 # Fallback keeps copy sensible if the stats call fails for any reason.
 TOTAL_DESTINATIONS = 260
@@ -149,7 +234,7 @@ CONTRARIAN_KEYWORDS = [
 AUDIENCE_TAGS = (
     "backpackers", "families", "adventurers",
     "international", "spiritual", "weekenders",
-    "luxury",
+    "luxury", "solo_female",
 )
 
 AUDIENCE_KEYWORDS = {
@@ -170,6 +255,12 @@ AUDIENCE_KEYWORDS = {
                       "from kolkata", "driveable"],
     "luxury":        ["heritage hotel", "palace", "five-star", "5-star",
                       "spa", "wellness retreat", "exclusive"],
+    # Solo Female Travelers — the 5th audience segment from Playbook 1.4
+    # Heuristic: safe, well-populated, established tourist circuits with
+    # good network coverage and medical access. Excludes extreme remote.
+    "solo_female":   ["solo-friendly", "safe for women", "women travelers",
+                      "hostel culture", "cafe culture", "yoga",
+                      "well-trodden", "backpacker hub", "expat community"],
 }
 
 
@@ -201,6 +292,21 @@ def infer_audience_tags(dest: dict) -> set:
             continue  # already handled
         if any(kw in blob for kw in kws):
             tags.add(tag)
+
+    # Rule-based: solo_female — conservative heuristic, picks established
+    # backpacker circuits + well-populated destinations (not remote). The
+    # assumption: high score + low-to-moderate difficulty + known "backpacker"
+    # or "spiritual" circuit = safer for women traveling alone. This is
+    # imperfect — on-the-ground vetting should override in a future iteration.
+    score = dest.get("score", 0) or 0
+    well_known = any(kw in blob for kw in
+                     ["popular", "tourist circuit", "expat", "established",
+                      "backpacker", "hostel", "cafe", "well-trodden"])
+    if (diff in ("easy", "moderate")
+        and elev < 3500
+        and score >= 4
+        and ("backpackers" in tags or "spiritual" in tags or well_known)):
+        tags.add("solo_female")
 
     # Default fallback: if nothing matched and it's a scored 5/5 destination,
     # tag as "international" so it's always eligible for something.
@@ -392,6 +498,11 @@ def sync_all_content() -> dict:
     content = {
         "stats":        nakshiq_fetch("stats"),
         "destinations": nakshiq_fetch("destinations", {"month": month, "min_score": 4}),
+        # Skip List / Tourist-Trap posts need destinations scoring LOW this month.
+        # Fetch a wider slice (limit=100) so the low-scored tail is captured —
+        # default limit=20 tends to surface only 5/5 destinations in peak months.
+        "destinations_low": nakshiq_fetch("destinations",
+                                          {"month": month, "min_score": 0, "limit": 100}),
         "articles":     nakshiq_fetch("articles",     {"since": since}),
         "traps":        nakshiq_fetch("traps"),
         "festivals":    nakshiq_fetch("festivals",    {"month": month}),
@@ -758,6 +869,238 @@ def copy_kids_intel(dest: dict, platform: str) -> str:
     ).strip()
 
 
+# ─────────────────────────────────────────────────────────────────────────────
+# MOAT COPY FUNCTIONS
+# -----------------------------------------------------------------------------
+# These are the brand/identity/methodology posts that build the acquisition
+# narrative. Each function maps to one "angle" in MOAT_ANGLES and one section
+# of NakshIQ_Master_Playbook.md.
+# ─────────────────────────────────────────────────────────────────────────────
+
+def copy_methodology(dimension: str, platform: str) -> str:
+    """Methodology deep-dive — pulls content from METHODOLOGY_CONTENT constant.
+    Moat layer: DATA (10,000+ proprietary datapoints, public methodology)."""
+    c = METHODOLOGY_CONTENT.get(dimension)
+    if not c:
+        return ""  # will trigger fallback in dispatcher
+    signals = "\n".join(f"{i+1}. {s}" for i, s in enumerate(c["signals"]))
+    if platform == "facebook":
+        return (
+            f"{c['title']} — THE METHODOLOGY\n\n"
+            f"Every NakshIQ score for this dimension is derived from:\n\n"
+            f"{signals}\n\n"
+            f"{c['closing']}\n\n"
+            f"Full methodology: nakshiq.com/methodology\n\n"
+            f"{TOTAL_DESTINATIONS} destinations. Scored monthly. Zero paid placements.\n\n"
+            + hashtag("NakshIQ", "Methodology", "IndiaTravelData",
+                      "NoPaidPlacements", "DataDrivenTravel")
+        ).strip()
+    return (
+        f"{c['title']}\n\n"
+        f"{signals}\n\n"
+        f"{c['closing']}\n\n"
+        f"↓ Full methodology → nakshiq.com/methodology\n\n"
+        + hashtag("NakshIQ", "Methodology", "IndiaTravelData",
+                  "NoPaidPlacements", "DataDrivenTravel")
+    ).strip()
+
+
+def copy_skip_list(dest: dict, platform: str,
+                   forward_month: str | None = None,
+                   forward_score: int | None = None) -> str:
+    """Skip List — a destination with a low score (either this month or
+    a drop coming in `forward_month`). Moat layer: TRUST BRAND (willingness
+    to say 'don't go'). If `forward_month` is set, the post becomes
+    "upcoming skip list" for that month."""
+    name    = dest["name"]
+    state   = dest.get("state", "")
+    note    = (dest.get("note") or dest.get("tagline") or "").strip()
+    url     = dest_url(dest)
+    this_mo = month_name().upper()
+
+    if forward_month and forward_score is not None:
+        # Forward-looking Skip List: "5/5 now but dropping to 2/5 in July"
+        current_score = dest.get("score", 0)
+        header = (f"🚩 UPCOMING SKIP LIST — {forward_month.upper()}\n\n"
+                  f"{name.upper()} ({state}): {current_score}/5 this {this_mo.title()}.\n"
+                  f"{forward_score}/5 in {forward_month}.")
+    else:
+        # Standard Skip List: destination scoring low THIS month
+        score  = dest.get("score", 0)
+        header = (f"🚩 SKIP LIST — {this_mo} {date.today().year}\n\n"
+                  f"{name.upper()} ({state}): {score}/5 this month.")
+
+    if platform == "facebook":
+        return (
+            f"{header}\n\n"
+            f"{note}\n\n"
+            f"Why we're publishing this: if we won't tell you when NOT to go, nobody will.\n"
+            f"Other sites are paid to say every place is worth visiting.\n"
+            f"We're paid by nobody.\n\n"
+            f"Better alternatives → https://nakshiq.com/en/tourist-traps\n\n"
+            + hashtag("NakshIQ", "SkipList", "TravelHonesty",
+                      "NoPaidPlacements", f"{month_name()}Travel")
+        ).strip()
+    return (
+        f"{header}\n\n"
+        f"{note}\n\n"
+        f"If we won't tell you when not to go, nobody will.\n"
+        f"Zero paid placements. Ever.\n\n"
+        f"↓ Better picks → {url}\n\n"
+        + hashtag("NakshIQ", "SkipList", "TravelHonesty", "NoPaidPlacements")
+    ).strip()
+
+
+def copy_chinese_wall(platform: str) -> str:
+    """The Chinese Wall — identity post. No destination data; pure manifesto.
+    Moat layer: TRUST BRAND (editorial-revenue firewall)."""
+    if platform == "facebook":
+        return (
+            f"THE CHINESE WALL\n\n"
+            f"How NakshIQ makes money:\n"
+            f"• Small commission on bookings IF you book through our affiliate — at no extra cost to you\n"
+            f"• Upcoming: paid editorial newsletter\n\n"
+            f"How we do NOT make money:\n"
+            f"✗ NO money from tourism boards\n"
+            f"✗ NO money from hotels for positive reviews\n"
+            f"✗ NO money from destinations for higher scores\n"
+            f"✗ NO sponsored content. Ever.\n"
+            f"✗ NO display advertising\n\n"
+            f"Year to date: ₹0 in paid placements. {TOTAL_DESTINATIONS} destinations scored.\n\n"
+            f"Our editorial policy is published: nakshiq.com/editorial-policy\n\n"
+            f"This isn't marketing. It's the reason NakshIQ exists.\n\n"
+            + hashtag("NakshIQ", "EditorialIntegrity", "NoPaidPlacements",
+                      "TravelWithIQ", "DataDrivenTravel")
+        ).strip()
+    return (
+        f"THE CHINESE WALL\n\n"
+        f"How we make money: small commission on bookings you choose.\n\n"
+        f"How we don't:\n"
+        f"✗ Tourism board money\n"
+        f"✗ Hotel placement fees\n"
+        f"✗ Sponsored content\n"
+        f"✗ Display ads\n\n"
+        f"Year-to-date: ₹0 in paid placements.\n"
+        f"{TOTAL_DESTINATIONS} destinations scored.\n\n"
+        f"Editorial policy → nakshiq.com/editorial-policy\n\n"
+        + hashtag("NakshIQ", "EditorialIntegrity", "NoPaidPlacements",
+                  "TravelWithIQ")
+    ).strip()
+
+
+def copy_four_questions(platform: str) -> str:
+    """Four Questions — identity post. Positions NakshIQ vs competitors.
+    Moat layer: POSITIONING (owns decisions 1-4, cedes 5-6 to OTAs)."""
+    if platform == "facebook":
+        return (
+            f"THE 4 QUESTIONS NOBODY ELSE ANSWERS\n\n"
+            f"Planning an India trip, you need to know:\n\n"
+            f"1. Is this destination worth visiting?\n"
+            f"2. When specifically should I go — which month?\n"
+            f"3. Is it safe — roads, weather, medical?\n"
+            f"4. Can my family handle it?\n\n"
+            f"Every other India travel site optimizes for:\n"
+            f"5. Where do I stay?\n"
+            f"6. How do I book?\n\n"
+            f"We don't compete on 5 and 6. Book wherever you want.\n\n"
+            f"But 1-4 — that's what we exist for.\n"
+            f"{TOTAL_DESTINATIONS} destinations × 12 months × 6 dimensions = proprietary scores.\n"
+            f"No advertiser paid for any of them.\n\n"
+            f"nakshiq.com/en/explore\n\n"
+            + hashtag("NakshIQ", "TravelWithIQ", "DataDrivenTravel",
+                      "IndiaTravel", "NoPaidPlacements")
+        ).strip()
+    return (
+        f"THE 4 QUESTIONS\n"
+        f"NOBODY ELSE ANSWERS\n\n"
+        f"1. Worth visiting?\n"
+        f"2. When — which month?\n"
+        f"3. Is it safe?\n"
+        f"4. Family-friendly?\n\n"
+        f"Other sites answer where to stay + how to book.\n"
+        f"We don't compete there.\n\n"
+        f"But 1-4 — {TOTAL_DESTINATIONS} destinations deep.\n\n"
+        f"↓ nakshiq.com/en/explore\n\n"
+        + hashtag("NakshIQ", "TravelWithIQ", "DataDrivenTravel")
+    ).strip()
+
+
+def copy_data_provenance(dest: dict, platform: str) -> str:
+    """Data Provenance — shows the work behind ONE destination's score.
+    Moat layer: DATA (proprietary, measured, non-AI)."""
+    name  = dest["name"]
+    score = dest.get("score", 0)
+    state = dest.get("state", "")
+    elev  = dest.get("elevation_m", 0)
+    tag   = dest.get("tagline", "")
+    note  = (dest.get("note") or "").strip()
+    diff  = (dest.get("difficulty") or "moderate").title()
+    mon   = month_name()
+    url   = dest_url(dest)
+    if platform == "facebook":
+        return (
+            f"WHY {name.upper()} SCORES {score}/5 IN {mon.upper()}\n\n"
+            f"This isn't a vibe check. Here's what went into the score:\n\n"
+            f"• Elevation: ↑ {elev:,}m (altitude tolerance factor)\n"
+            f"• State: {state}\n"
+            f"• Difficulty: {diff}\n"
+            f"• {mon} note: {note or tag}\n\n"
+            f"Our methodology is public. Every input is measurable.\n"
+            f"No advertiser touches the score. No influencer gets a\n"
+            f"discount for a glowing review. No tourism board subsidy.\n\n"
+            f"{name} detail → {url}\n\n"
+            + hashtag("NakshIQ", "DataProvenance", "HowWeScore",
+                      "NoPaidPlacements", name, state)
+        ).strip()
+    return (
+        f"WHY {name.upper()}: {score}/5\n"
+        f"· {mon.upper()} ·\n\n"
+        f"↑ {elev:,}m · {state}\n"
+        f"Difficulty: {diff}\n\n"
+        f"{note or tag}\n\n"
+        f"Not a vibe. Measured.\n"
+        f"No advertiser. No subsidy. No influencer discount.\n\n"
+        f"↓ {url}\n\n"
+        + hashtag("NakshIQ", "DataProvenance", "HowWeScore")
+    ).strip()
+
+
+def copy_same_place_12_months(dest: dict, monthly_scores: dict, platform: str) -> str:
+    """Same Place, 12 Months — demonstrates monthly scoring.
+    `monthly_scores` = {1: score, 2: score, ..., 12: score}.
+    Moat layer: DATA (month-by-month granularity is unique to NakshIQ)."""
+    name = dest["name"]
+    url  = dest_url(dest)
+    months_abbr = ["JAN","FEB","MAR","APR","MAY","JUN",
+                   "JUL","AUG","SEP","OCT","NOV","DEC"]
+    lines = "\n".join(
+        f"  {months_abbr[i]}: {monthly_scores.get(i+1, '?')}/5"
+        for i in range(12)
+    )
+    if platform == "facebook":
+        return (
+            f"{name.upper()} — ALL 12 MONTHS\n\n"
+            f"One place. 12 different answers.\n"
+            f"This is why 'best time to visit X' isn't something you\n"
+            f"can Google in one query. Weather, crowds, infrastructure,\n"
+            f"and safety all change month by month.\n\n"
+            f"{lines}\n\n"
+            f"NakshIQ scores every destination monthly. No other site does.\n\n"
+            f"Full monthly data → {url}\n\n"
+            + hashtag("NakshIQ", "MonthlyScores", "IndiaTravelData",
+                      "DataDrivenTravel", name)
+        ).strip()
+    return (
+        f"{name.upper()}\n"
+        f"12 months. 12 answers.\n\n"
+        f"{lines}\n\n"
+        f"'Best time to visit' isn't one query.\n"
+        f"We score every destination monthly.\n\n"
+        f"↓ {url}\n\n"
+        + hashtag("NakshIQ", "MonthlyScores", "IndiaTravelData")
+    ).strip()
+
+
 def copy_route_spotlight(route: dict, dest_map: dict, platform: str) -> str:
     """
     Route / road-trip feature. Expected route fields (per the social-media-prompt
@@ -935,6 +1278,52 @@ def generate_post(fmt: str, content: dict, platform: str,
             if first_id in dest_map:
                 img = dest_map[first_id]
         return copy_route_spotlight(route, dest_map, platform), img
+
+    # ───────────────────────────────────────────────────────────────────────
+    # MOAT formats — identity / methodology / trust-brand posts
+    # ───────────────────────────────────────────────────────────────────────
+    elif fmt and fmt.startswith("methodology_"):
+        dimension = fmt.replace("methodology_", "")
+        caption   = copy_methodology(dimension, platform)
+        # Image: any scored destination as backdrop (best works fine)
+        return caption, best
+
+    elif fmt == "skip_list":
+        # Prefer the run-scoped pre-pick; otherwise dig through destinations_low
+        target = content.get("__run_skip_dest__")
+        if not target:
+            low_all = content.get("destinations_low", {}).get("data", []) or []
+            lows    = [d for d in low_all if 1 <= (d.get("score") or 0) <= 3]
+            target  = lows[0] if lows else best
+        # Forward-looking Skip List: if the pre-pick set a future month + score,
+        # pass them so the caption renders "5/5 now → 2/5 next month".
+        fwd = content.get("__run_skip_forward__")
+        if fwd:
+            fwd_month, fwd_score = fwd
+            return copy_skip_list(target, platform,
+                                  forward_month=fwd_month,
+                                  forward_score=fwd_score), target
+        return copy_skip_list(target, platform), target
+
+    elif fmt == "chinese_wall":
+        # Identity post — no destination data, but attach a scored-destination
+        # image as visual anchor so it doesn't look like pure text.
+        return copy_chinese_wall(platform), best
+
+    elif fmt == "four_questions":
+        return copy_four_questions(platform), best
+
+    elif fmt == "data_provenance":
+        # Feature the most-data-rich destination (has note + tagline + high score)
+        candidates = [d for d in destinations if d.get("note") and d.get("tagline")
+                      and d["id"] not in used] or [d for d in destinations if d.get("note")]
+        target = content.get("__run_provenance_dest__") or (candidates[0] if candidates else best)
+        return copy_data_provenance(target, platform), target
+
+    elif fmt == "same_place_12_months":
+        target = content.get("__run_12month_dest__") or best
+        monthly = content.get("__run_12month_scores__") or {}
+        return copy_same_place_12_months(target, monthly, platform), target
 
     else:
         return copy_score_card(best, platform), best
@@ -1250,24 +1639,27 @@ def _outstand_posts_today() -> list:
 
 
 def run(force: bool = False, sync_only: bool = False, dry_run: bool = False,
-        evening: bool = False):
+        evening: bool = False, moat: bool = False):
     if not OUTSTAND_API_KEY:
         log.error("OUTSTAND_API_KEY not set. Exiting.")
         sys.exit(1)
 
     # ── 0. Acquire re-entry lock ─────────────────────────────────────────────
-    # Evening and morning runs use DIFFERENT lock files so they can overlap
-    # briefly without blocking each other in edge cases.
+    # Morning, evening and moat runs use DIFFERENT lock files so they can
+    # overlap briefly without blocking each other in edge cases.
     global LOCK_FILE
     original_lock = LOCK_FILE
     if evening:
         LOCK_FILE = Path(__file__).parent / ".autoposter-evening.lock"
+    elif moat:
+        LOCK_FILE = Path(__file__).parent / ".autoposter-moat.lock"
 
     try:
         if not sync_only and not dry_run and not _acquire_lock(force=force):
             sys.exit(0)
         try:
-            _run_inner(force=force, sync_only=sync_only, dry_run=dry_run, evening=evening)
+            _run_inner(force=force, sync_only=sync_only, dry_run=dry_run,
+                       evening=evening, moat=moat)
         finally:
             if not sync_only and not dry_run:
                 _release_lock()
@@ -1275,14 +1667,15 @@ def run(force: bool = False, sync_only: bool = False, dry_run: bool = False,
         LOCK_FILE = original_lock
 
 
-def _run_inner(force: bool, sync_only: bool, dry_run: bool, evening: bool = False):
+def _run_inner(force: bool, sync_only: bool, dry_run: bool,
+               evening: bool = False, moat: bool = False):
     today   = date.today().isoformat()
     weekday = date.today().weekday()
     state   = load_state()
-    mode    = "EVENING" if evening else "MORNING"
-    # Use a mode-scoped suffix for posted_today keys so morning and evening runs
-    # don't collide on the "already posted today" check.
-    mode_suffix = "_evening" if evening else ""
+    mode    = "MOAT" if moat else ("EVENING" if evening else "MORNING")
+    # Use a mode-scoped suffix for posted_today keys so morning, evening and
+    # moat runs don't collide on the "already posted today" check.
+    mode_suffix = "_moat" if moat else ("_evening" if evening else "")
 
     log.info("═" * 60)
     log.info(f"Nakshiq Autoposter · {mode} · {today} · weekday={weekday}")
@@ -1333,8 +1726,24 @@ def _run_inner(force: bool, sync_only: bool, dry_run: bool, evening: bool = Fals
     used   = recently_used_destinations(state)
     dests  = content["destinations"].get("data", [])
 
-    # Per-platform format selection — branches on morning vs evening
-    if evening:
+    # Per-platform format selection — branches on morning / evening / moat
+    if moat:
+        # Moat mode: pick the oldest-never-used angle from MOAT_ANGLES.
+        # Both platforms use the same format. No Story (moat posts are feed-only).
+        # Only runs on Mon/Wed/Fri (weekday 0, 2, 4). Other days exit early.
+        if weekday not in (0, 2, 4):
+            log.info(f"Moat mode runs Mon/Wed/Fri only (today weekday={weekday}) — exiting.")
+            return
+        ordered = pick_oldest_unused(state, "moat_angles", MOAT_ANGLES, key=None)
+        chosen  = ordered[0] if ordered else "chinese_wall"
+        ig_fmt       = chosen
+        fb_fmt       = chosen
+        story_fmt    = None        # no Story in moat mode — the post IS the message
+        audience_tag = None
+        status = dimension_cycle_status(state, "moat_angles", len(MOAT_ANGLES))
+        log.info(f"Moat angle locked: {chosen} "
+                 f"({status['unused']}/{status['total']} never featured)")
+    elif evening:
         # Evening uses the entertainment-pillar rotation; both platforms run
         # the same format (simpler — Reels are platform-agnostic).
         base_fmt       = EVENING_FORMAT_SCHEDULE.get(weekday, "score_card")
@@ -1448,7 +1857,80 @@ def _run_inner(force: bool, sync_only: bool, dry_run: bool, evening: bool = Fals
         else:
             log.info("Route format requested but /routes API returned no data — will fall back to score_card.")
 
-    # 7) Carousel destinations — lock a SINGLE list so IG and FB show the same
+    # 7a) Skip List — pick the oldest-never-used LOW-scored destination.
+    # Strategy:
+    #   1. Look at CURRENT month's pool for destinations scoring 1-3/5. Feature
+    #      those directly ("Skip List — April 2026: Destination X is 2/5").
+    #   2. If the current month has no lows (peak-season months like April or
+    #      December), look FORWARD 1-2 months for destinations that are 5/5
+    #      now but will drop to ≤3/5 soon. Post as "Upcoming Skip List — July".
+    #      This makes the format valuable year-round.
+    if "skip_list" in (ig_fmt, fb_fmt):
+        current_low = [d for d in (content.get("destinations_low", {}).get("data") or [])
+                       if 1 <= (d.get("score") or 0) <= 3]
+        if current_low:
+            ordered = pick_oldest_unused(state, "destinations", current_low, key="id")
+            content["__run_skip_dest__"] = ordered[0]
+            log.info(f"Skip List target: {ordered[0]['name']} "
+                     f"({ordered[0].get('score','?')}/5 this month)")
+        else:
+            # Forward-looking fallback: look up to 3 months ahead
+            import calendar
+            current_month_num = date.today().month
+            current_hi_ids    = {d["id"] for d in dests if (d.get("score") or 0) >= 4}
+            forward = None
+            for offset in (1, 2, 3):
+                fwd_month_num = ((current_month_num - 1 + offset) % 12) + 1
+                fwd_month_name = calendar.month_name[fwd_month_num]
+                r = nakshiq_fetch("destinations",
+                                  {"month": fwd_month_num, "min_score": 0, "limit": 100})
+                dropping = [d for d in (r.get("data") or [])
+                            if d["id"] in current_hi_ids
+                            and 1 <= (d.get("score") or 0) <= 3]
+                if dropping:
+                    ordered = pick_oldest_unused(state, "destinations", dropping, key="id")
+                    target  = ordered[0]
+                    # Attach the current dest record (for its current score) so the
+                    # copy function can produce the "5/5 now, 2/5 next month" contrast.
+                    current_version = next((d for d in dests if d["id"] == target["id"]), target)
+                    content["__run_skip_dest__"]    = current_version
+                    content["__run_skip_forward__"] = (fwd_month_name, target.get("score"))
+                    forward = fwd_month_name
+                    log.info(f"Skip List (forward {fwd_month_name}): "
+                             f"{target['name']} drops from {current_version.get('score','?')}/5 "
+                             f"to {target.get('score','?')}/5 in {fwd_month_name}")
+                    break
+            if not forward:
+                log.info("Skip List: no low-score destinations found in next 3 months — moat picker will rotate.")
+
+    # 7b) Data Provenance — prefer the data-richest oldest-unused destination
+    if "data_provenance" in (ig_fmt, fb_fmt):
+        rich = [d for d in dests if d.get("note") and d.get("tagline")]
+        if rich:
+            ordered = pick_oldest_unused(state, "destinations", rich, key="id")
+            content["__run_provenance_dest__"] = ordered[0]
+            log.info(f"Data Provenance target: {ordered[0]['name']}")
+
+    # 7c) Same-Place-12-Months — pick one destination + fetch 12 monthly scores
+    if "same_place_12_months" in (ig_fmt, fb_fmt):
+        # Pick the oldest-unused high-score destination
+        tops = [d for d in dests if (d.get("score") or 0) >= 4]
+        if tops:
+            ordered = pick_oldest_unused(state, "destinations", tops, key="id")
+            target  = ordered[0]
+            content["__run_12month_dest__"] = target
+            log.info(f"12-month target: {target['name']} — fetching all 12 months...")
+            monthly = {}
+            for m in range(1, 13):
+                r = nakshiq_fetch("destinations", {"month": m, "min_score": 0})
+                for d in (r.get("data") or []):
+                    if d["id"] == target["id"]:
+                        monthly[m] = d.get("score", 0)
+                        break
+            content["__run_12month_scores__"] = monthly
+            log.info(f"12-month scores for {target['name']}: {monthly}")
+
+    # 8) Carousel destinations — lock a SINGLE list so IG and FB show the same
     #    5 destinations (same order). Applies image validation + theme tracker.
     if any(f in CAROUSEL_FORMATS for f in (ig_fmt, fb_fmt, story_fmt)):
         base_pool = [d for d in audience_pool if d["id"] not in used] or audience_pool
@@ -1600,6 +2082,9 @@ def _run_inner(force: bool, sync_only: bool, dry_run: bool, evening: bool = Fals
                 mark_theme_used(state, "routes", content["__run_route__"].get("id","?"))
             if audience_tag:
                 mark_theme_used(state, "audience_tags", audience_tag)
+            # Moat tracker: the angle itself, so it rotates through all of MOAT_ANGLES
+            if moat and fmt:
+                mark_theme_used(state, "moat_angles", fmt)
 
             # For carousels, stamp every featured destination so the 14-day
             # cooldown applies to the whole set — not just the anchor slide.
@@ -1612,8 +2097,11 @@ def _run_inner(force: bool, sync_only: bool, dry_run: bool, evening: bool = Fals
 
         # ── Instagram Story (separate format — every day except Reel days) ────
         # Mode-scoped key so morning & evening each get their own Story slot.
+        # Moat mode does NOT post a Story — the feed post IS the moat message.
         story_key = acc_id + mode_suffix + "_story"
-        if (platform == "instagram"
+        if (not moat
+                and story_fmt is not None
+                and platform == "instagram"
                 and weekday in STORY_DAYS
                 and state.get("posted_today", {}).get(story_key) != today
                 and not use_video):  # Stories use images only; Reel days skip Story
@@ -1690,6 +2178,12 @@ if __name__ == "__main__":
                         help="Run the evening entertainment-pillar schedule "
                              "(Reels-first, audience-filtered). Defaults to "
                              "morning data-pillar schedule when omitted.")
+    parser.add_argument("--moat",      action="store_true",
+                        help="Run the moat/identity-pillar schedule "
+                             "(methodology, skip list, Chinese wall, etc.). "
+                             "Only runs on Mon/Wed/Fri; exits silently on other days.")
     args = parser.parse_args()
+    if args.evening and args.moat:
+        parser.error("--evening and --moat are mutually exclusive.")
     run(force=args.force, sync_only=args.sync_only,
-        dry_run=args.dry_run, evening=args.evening)
+        dry_run=args.dry_run, evening=args.evening, moat=args.moat)

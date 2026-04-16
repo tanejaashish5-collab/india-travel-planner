@@ -19,6 +19,8 @@ export const STATE_MAP: Record<string, string> = {
   "karnataka": "Karnataka",
   "kerala": "Kerala",
   "tamil-nadu": "Tamil Nadu",
+  "andhra-pradesh": "Andhra Pradesh",
+  "telangana": "Telangana",
 };
 
 export const REGION_GROUPS: Record<string, { name: string; states: string[] }> = {
@@ -28,7 +30,7 @@ export const REGION_GROUPS: Record<string, { name: string; states: string[] }> =
   },
   "south": {
     name: "South India",
-    states: ["karnataka", "kerala", "tamil-nadu"],
+    states: ["karnataka", "kerala", "tamil-nadu", "andhra-pradesh", "telangana"],
   },
   "east": {
     name: "East India",

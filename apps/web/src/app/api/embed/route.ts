@@ -2,6 +2,8 @@ import { NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
 import OpenAI from "openai";
 
+export const dynamic = "force-dynamic";
+
 const BATCH_SIZE = 50;
 
 /** Trigger: POST /api/embed?key=YOUR_SECRET

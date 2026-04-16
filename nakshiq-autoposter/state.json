@@ -1,11 +1,14 @@
 {
-  "last_sync": "2026-04-15T14:52:08.707244+00:00",
+  "last_sync": "2026-04-15T10:10:14.820960+00:00",
   "posted_today": {
     "8iDfI": "2026-04-14",
     "x4cT8": "2026-04-14",
     "m8EAd": "2026-04-15",
     "m8EAd_story": "2026-04-15",
-    "PdMu0": "2026-04-15"
+    "PdMu0": "2026-04-15",
+    "m8EAd_evening": "2026-04-15",
+    "m8EAd_evening_story": "2026-04-15",
+    "PdMu0_evening": "2026-04-15"
   },
   "posted_destinations": [
     {
@@ -99,6 +102,22 @@
     {
       "destination_id": "champawat",
       "date": "2026-04-15"
+    },
+    {
+      "destination_id": "chopta",
+      "date": "2026-04-15"
+    },
+    {
+      "destination_id": "chopta",
+      "date": "2026-04-15"
+    },
+    {
+      "destination_id": "chopta",
+      "date": "2026-04-15"
+    },
+    {
+      "destination_id": "chopta",
+      "date": "2026-04-15"
     }
   ],
   "posted_formats": {
@@ -113,12 +132,14 @@
     "m8EAd": [
       "reality_check",
       "data_carousel",
-      "data_carousel"
+      "data_carousel",
+      "collection_spotlight"
     ],
     "PdMu0": [
       "reality_check",
       "data_carousel",
-      "data_carousel"
+      "data_carousel",
+      "collection_spotlight"
     ]
   },
   "post_log": [
@@ -361,11 +382,60 @@
       "destination": "kasol",
       "format": "data_carousel",
       "has_media": true
+    },
+    {
+      "timestamp": "2026-04-15T08:11:07.901173+00:00",
+      "date": "2026-04-15",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "GzF7p",
+      "destination": "chopta",
+      "format": "collection_spotlight",
+      "has_media": true
+    },
+    {
+      "timestamp": "2026-04-15T08:11:31.020767+00:00",
+      "date": "2026-04-15",
+      "platform": "instagram_story",
+      "account_id": "m8EAd",
+      "post_id": "r2nj4",
+      "destination": "chopta",
+      "format": "blog_promo",
+      "has_media": true,
+      "mode": "evening"
+    },
+    {
+      "timestamp": "2026-04-15T08:12:09.106989+00:00",
+      "date": "2026-04-15",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "umWmE",
+      "destination": "chopta",
+      "format": "collection_spotlight",
+      "has_media": true
     }
   ],
   "theme_usage": {
-    "collections": {},
-    "articles": {},
-    "destinations": {}
+    "collections": {
+      "adrenaline-rush": [
+        "2026-04-15"
+      ]
+    },
+    "articles": {
+      "state-of-indian-travel-q1-2026": [
+        "2026-04-15"
+      ]
+    },
+    "destinations": {
+      "chopta": [
+        "2026-04-15"
+      ]
+    },
+    "reels": {
+      "chopta": [
+        "2026-04-15"
+      ]
+    },
+    "moat_angles": {}
   }
 }
