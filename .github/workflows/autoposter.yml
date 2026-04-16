@@ -53,17 +53,11 @@ jobs:
           cache: "pip"
           cache-dependency-path: nakshiq-autoposter/requirements.txt
 
-      - name: Install ffmpeg (static binary — fast, no apt-get update)
-        run: |
-          if command -v ffmpeg &>/dev/null; then
-            echo "ffmpeg already installed"
-          else
-            echo "Installing ffmpeg static binary..."
-            curl -sL https://johnvansickle.com/ffmpeg/releases/ffmpeg-release-amd64-static.tar.xz \
-              | sudo tar xJ --strip-components=1 -C /usr/local/bin/ --wildcards '*/ffmpeg'
-          fi
-          ffmpeg -version | head -1
-          which ffmpeg
+      - name: Install ffmpeg (with drawtext/freetype support)
+        uses: FedericoCarboni/setup-ffmpeg@v3
+        with:
+          ffmpeg-version: release
+          github-token: ${{ github.token }}
 
       - name: Install Python dependencies
         run: pip install -r nakshiq-autoposter/requirements.txt
