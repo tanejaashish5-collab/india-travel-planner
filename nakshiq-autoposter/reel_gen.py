@@ -19,6 +19,7 @@ Uses ffmpeg for all video processing (available on GitHub Actions ubuntu).
 from __future__ import annotations
 
 import json
+import random
 import shutil
 import subprocess
 import tempfile
@@ -55,22 +56,39 @@ FONT_JETBRAINS = str(FONT_DIR / "JetBrainsMono-Bold.ttf") if FONT_DIR.exists() e
 
 def _find_video(dest_slug: str) -> Optional[Path]:
     """Find the best matching video for a destination slug."""
-    # Normalise: "rishikesh" → try VIDEO_rishikesh*.mp4
     slug = dest_slug.lower().replace(" ", "-").replace("_", "-")
+    slug_parts = set(slug.split("-"))  # e.g. {"gir", "national", "park"}
+
+    all_vids = []
     candidates = []
     for p in VIDEOS_DIR.glob("*.mp4"):
-        name = p.stem.lower().replace("video_", "").replace("video-", "")
-        # Skip duplicates with " 2" suffix
         if " 2" in p.stem:
             continue
-        if slug in name or name in slug:
-            candidates.append(p)
-    # Prefer exact match
-    for c in candidates:
-        name = c.stem.lower().replace("video_", "")
+        all_vids.append(p)
+        name = p.stem.lower().replace("video_", "").replace("video-", "")
+
+        # Exact match
         if name == slug:
-            return c
-    return candidates[0] if candidates else None
+            return p
+
+        # Full slug in name or name in slug
+        if slug in name or name in slug:
+            candidates.append((2, p))  # priority 2 = substring
+            continue
+
+        # Partial word overlap (at least 1 meaningful word matches)
+        name_parts = set(name.split("-"))
+        # Filter out generic words
+        stop = {"national", "park", "lake", "valley", "falls", "fort", "temple", "np"}
+        meaningful_overlap = (slug_parts - stop) & (name_parts - stop)
+        if meaningful_overlap:
+            candidates.append((1, p))  # priority 1 = word overlap
+
+    # Return best candidate by priority
+    if candidates:
+        candidates.sort(key=lambda x: -x[0])
+        return candidates[0][1]
+    return None
 
 
 def _hex_to_ffmpeg(hex_color: str) -> str:
@@ -427,12 +445,12 @@ def render_reel(
         video_path = _find_video(dest_slug)
 
     if video_path is None or not video_path.exists():
-        print(f"WARNING: No video found for {data}. Using first available.")
-        vids = sorted(VIDEOS_DIR.glob("VIDEO_*.mp4"))
+        vids = [v for v in VIDEOS_DIR.glob("VIDEO_*.mp4") if " 2" not in v.stem]
         if not vids:
             print("ERROR: No videos available at all.")
             return None
-        video_path = vids[0]
+        video_path = random.choice(vids)
+        print(f"WARNING: No video for '{dest_slug}'. Using random: {video_path.name}")
 
     # Build format-specific text filters
     if reel_format == "score_reveal":
@@ -483,7 +501,6 @@ def render_reel(
     )
 
     import os
-    # Try multiple locations — GitHub Actions ubuntu has ffmpeg at /usr/bin/ffmpeg
     ffmpeg_bin = shutil.which("ffmpeg")
     if not ffmpeg_bin:
         for candidate in ["/usr/bin/ffmpeg", "/usr/local/bin/ffmpeg"]:
@@ -491,9 +508,6 @@ def render_reel(
                 ffmpeg_bin = candidate
                 break
     ffmpeg_bin = ffmpeg_bin or "ffmpeg"
-    print(f"ffmpeg binary: {ffmpeg_bin} (exists={os.path.isfile(ffmpeg_bin)})")
-    print(f"PATH: {os.environ.get('PATH', 'NOT SET')[:300]}")
-    print(f"Video path: {video_path} (exists={video_path.exists()}, size={video_path.stat().st_size if video_path.exists() else 0})")
 
     cmd = [
         ffmpeg_bin, "-y",
@@ -520,21 +534,9 @@ def render_reel(
     except subprocess.TimeoutExpired:
         print("ffmpeg timed out (120s)")
         return None
-    except FileNotFoundError as e:
-        print(f"ffmpeg not found — {e}")
-        print(f"  cmd[0]={cmd[0]}")
-        # Last-ditch: try shell=True
-        try:
-            print("  Retrying with shell=True...")
-            result = subprocess.run(" ".join(cmd), shell=True, capture_output=True, text=True, timeout=120)
-            if result.returncode != 0:
-                print(f"  shell=True also failed:\n{result.stderr[-500:]}")
-                return None
-            print(f"Reel rendered (shell): {out_path.name} ({out_path.stat().st_size // 1024} KB)")
-            return out_path
-        except Exception as e2:
-            print(f"  shell=True exception: {e2}")
-            return None
+    except FileNotFoundError:
+        print(f"ffmpeg not found at '{ffmpeg_bin}' — install ffmpeg to generate Reels")
+        return None
 
 
 # ── Convenience: build a Reel from Nakshiq API data ──────────────────────
