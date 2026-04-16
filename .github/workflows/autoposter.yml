@@ -53,11 +53,15 @@ jobs:
           cache: "pip"
           cache-dependency-path: nakshiq-autoposter/requirements.txt
 
-      - name: Install ffmpeg (with drawtext/freetype support)
-        uses: FedericoCarboni/setup-ffmpeg@v3
-        with:
-          ffmpeg-version: release
-          github-token: ${{ github.token }}
+      - name: Install ffmpeg (system package with drawtext/freetype)
+        run: |
+          sudo apt-get install -y -qq ffmpeg 2>/dev/null || {
+            echo "Direct install failed, running apt-get update with 60s timeout..."
+            timeout 60 sudo apt-get update -qq || true
+            sudo apt-get install -y -qq ffmpeg
+          }
+          ffmpeg -filters 2>/dev/null | grep -c draw
+          which ffmpeg
 
       - name: Install Python dependencies
         run: pip install -r nakshiq-autoposter/requirements.txt
