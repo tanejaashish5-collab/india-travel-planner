@@ -12,7 +12,9 @@
     "m8EAd_tourist_map": "2026-04-16",
     "PdMu0_tourist_map": "2026-04-16",
     "m8EAd_canva": "2026-04-16",
-    "PdMu0_canva": "2026-04-16"
+    "PdMu0_canva": "2026-04-16",
+    "m8EAd_reel": "2026-04-16",
+    "PdMu0_reel": "2026-04-16"
   },
   "posted_destinations": [
     {
@@ -524,7 +526,15 @@
         "2026-04-16"
       ]
     },
-    "reel_formats": {},
-    "reel_score_dests": {}
+    "reel_formats": {
+      "score_reveal": [
+        "2026-04-16"
+      ]
+    },
+    "reel_score_dests": {
+      "gir-national-park": [
+        "2026-04-16"
+      ]
+    }
   }
 }
