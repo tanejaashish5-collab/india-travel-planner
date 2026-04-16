@@ -41,9 +41,6 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.nakshiq.com"),
-  alternates: {
-    canonical: "/",
-  },
   verification: {
     google: "RJwYea5dbs3YYGdeyGe1HtHl_lbmjn8IkZsP4x333bU",
   },

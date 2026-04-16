@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { LandingHero } from "@/components/landing-hero";
@@ -5,6 +6,23 @@ import { createClient } from "@supabase/supabase-js";
 import { getAppStats } from "@/lib/stats";
 
 export const revalidate = 3600;
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  return {
+    alternates: {
+      canonical: `https://www.nakshiq.com/${locale}`,
+      languages: {
+        en: "https://www.nakshiq.com/en",
+        hi: "https://www.nakshiq.com/hi",
+      },
+    },
+  };
+}
 
 async function getFeaturedData() {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
