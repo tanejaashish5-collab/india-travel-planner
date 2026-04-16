@@ -7,10 +7,11 @@ on:
     - cron: "0 4 * * *"    # 09:30 IST
     - cron: "30 4 * * *"   # 10:00 IST
     - cron: "0 5 * * *"    # 10:30 IST  ← last fallback
-    - cron: "30 8 * * *"   # 14:00 IST  sync only
-    - cron: "30 13 * * *"  # 19:00 IST  sync only
-    - cron: "0 7 * * 2,4,6"  # 12:30 IST Tue/Thu/Sat — tourist map
+    - cron: "0 7 * * 2,4,6"    # 12:30 IST Tue/Thu/Sat — tourist map
     - cron: "0 9 * * *"       # 14:30 IST daily — canva visual
+    - cron: "30 5 * * *"      # 11:00 IST daily — reel slot 1
+    - cron: "30 10 * * *"     # 16:00 IST daily — reel slot 2
+    - cron: "30 14 * * *"     # 20:00 IST daily — reel slot 3
   workflow_dispatch:
     inputs:
       mode:
@@ -27,6 +28,8 @@ on:
           - tourist-map-force
           - canva-visual
           - canva-visual-force
+          - reel
+          - reel-force
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
@@ -69,6 +72,9 @@ jobs:
             elif [ "$INPUT" = "canva-visual-force" ]; then
               echo "args=--canva-visual --force" >> $GITHUB_OUTPUT
               echo "Manual mode: --canva-visual --force"
+            elif [ "$INPUT" = "reel-force" ]; then
+              echo "args=--reel --force" >> $GITHUB_OUTPUT
+              echo "Manual mode: --reel --force"
             elif [ -n "$INPUT" ]; then
               echo "args=--${INPUT}" >> $GITHUB_OUTPUT
               echo "Manual mode: --${INPUT}"
@@ -84,6 +90,18 @@ jobs:
             # UTC 07:00 on Tue/Thu/Sat → tourist map
             echo "args=--tourist-map" >> $GITHUB_OUTPUT
             echo "Scheduled TOURIST MAP mode (UTC ${HOUR}:${MINUTE}, DOW=${DOW})"
+          elif [ "$TOTAL_MINS" -ge 330 ] && [ "$TOTAL_MINS" -lt 340 ]; then
+            # UTC 05:30 (11:00 IST) → reel slot 1
+            echo "args=--reel" >> $GITHUB_OUTPUT
+            echo "Scheduled REEL slot 1 (UTC ${HOUR}:${MINUTE})"
+          elif [ "$TOTAL_MINS" -ge 630 ] && [ "$TOTAL_MINS" -lt 640 ]; then
+            # UTC 10:30 (16:00 IST) → reel slot 2
+            echo "args=--reel" >> $GITHUB_OUTPUT
+            echo "Scheduled REEL slot 2 (UTC ${HOUR}:${MINUTE})"
+          elif [ "$TOTAL_MINS" -ge 870 ] && [ "$TOTAL_MINS" -lt 880 ]; then
+            # UTC 14:30 (20:00 IST) → reel slot 3
+            echo "args=--reel" >> $GITHUB_OUTPUT
+            echo "Scheduled REEL slot 3 (UTC ${HOUR}:${MINUTE})"
           elif [ "$TOTAL_MINS" -ge 180 ] && [ "$TOTAL_MINS" -le 330 ]; then
             echo "args=" >> $GITHUB_OUTPUT
             echo "Scheduled POST mode (UTC ${HOUR}:${MINUTE})"

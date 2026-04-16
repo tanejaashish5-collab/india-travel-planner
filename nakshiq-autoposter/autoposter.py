@@ -1346,9 +1346,13 @@ def outstand_get(path: str) -> dict:
     r.raise_for_status()
     return r.json()
 
-def outstand_post_req(path: str, payload: dict) -> dict:
-    r = requests.post(f"{OUTSTAND_BASE}{path}", headers=_headers(), json=payload, timeout=30)
-    return r.json()
+def outstand_post_req(path: str, payload: dict, timeout: int = 30) -> dict:
+    r = requests.post(f"{OUTSTAND_BASE}{path}", headers=_headers(), json=payload, timeout=timeout)
+    try:
+        return r.json()
+    except Exception:
+        log.warning(f"    outstand_post_req {path} returned non-JSON: status={r.status_code} body={r.text[:300]}")
+        return {"success": False, "error": f"HTTP {r.status_code}: {r.text[:200]}"}
 
 def get_connected_accounts() -> list:
     try:
@@ -1380,16 +1384,21 @@ def upload_media_bytes(data: bytes, filename: str, content_type: str = "image/jp
     """
     try:
         size = len(data)
+        upload_timeout = 300 if "video" in content_type else 120
+        log.info(f"    Requesting upload URL for {filename} ({size:,} bytes, {content_type})")
         r1 = outstand_post_req("/v1/media/upload",
                                {"filename": filename, "content_type": content_type})
         if not r1.get("success"):
             log.warning(f"    Upload URL failed: {r1}")
             return None
+        log.info(f"    Uploading to R2 (timeout={upload_timeout}s)...")
         put = requests.put(r1["data"]["upload_url"], data=data,
-                           headers={"Content-Type": content_type}, timeout=120)
+                           headers={"Content-Type": content_type},
+                           timeout=upload_timeout)
         if put.status_code != 200:
-            log.warning(f"    R2 PUT failed: {put.status_code}")
+            log.warning(f"    R2 PUT failed: {put.status_code} — {put.text[:200]}")
             return None
+        log.info(f"    R2 PUT OK. Confirming...")
         r3 = outstand_post_req(f"/v1/media/{r1['data']['id']}/confirm", {"size": size})
         if not r3.get("success"):
             log.warning(f"    Confirm failed: {r3}")
@@ -1399,6 +1408,8 @@ def upload_media_bytes(data: bytes, filename: str, content_type: str = "image/jp
         return m
     except Exception as e:
         log.warning(f"    Media upload exception: {e}")
+        import traceback
+        log.warning(f"    Traceback: {traceback.format_exc()}")
         return None
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -2689,6 +2700,346 @@ def run_canva_visual(force: bool = False, dry_run: bool = False):
 
 
 # ─────────────────────────────────────────────────────────────────────────────
+# REEL MODE — programmatic short-form vertical video
+# ─────────────────────────────────────────────────────────────────────────────
+
+REEL_LOCK_FILE = Path(__file__).parent / ".autoposter-reel.lock"
+
+REEL_FORMATS = ["score_reveal", "contrarian", "seasonal_shift", "trap_alert"]
+
+# Captions per reel format
+REEL_CAPTION_TEMPLATES = {
+    "score_reveal": (
+        "🎯 Do NOT go to {dest} in {month}.\n\n"
+        "NakshIQ Score: {score}/5\n"
+        "{reason}\n\n"
+        "303 destinations. Real-time travel scores.\n"
+        "→ nakshiq.com\n\n"
+        "—\n"
+        "Data, not opinions.\n\n"
+        "{hashtags}"
+    ),
+    "contrarian": (
+        "💡 Everyone goes to {famous}. Smart travelers go to {hidden}.\n\n"
+        "{famous}: {famous_score}/5\n"
+        "{hidden}: {hidden_score}/5\n\n"
+        "Same region. Less crowd. Better value.\n"
+        "→ nakshiq.com\n\n"
+        "—\n"
+        "Travel with IQ.\n\n"
+        "{hashtags}"
+    ),
+    "seasonal_shift": (
+        "⏰ {dest} is a {now_score}/5 right now.\n"
+        "In {future_month}? {future_score}/5.\n\n"
+        "Timing is everything.\n"
+        "303 destinations scored for every month.\n"
+        "→ nakshiq.com\n\n"
+        "—\n"
+        "Data, not opinions.\n\n"
+        "{hashtags}"
+    ),
+    "trap_alert": (
+        "⚠️ TOURIST TRAP: {trap}\n\n"
+        "{reason}\n"
+        "Do this instead: {alternative}\n\n"
+        "NakshIQ flags traps so you don't waste money.\n"
+        "→ nakshiq.com\n\n"
+        "—\n"
+        "Travel with IQ.\n\n"
+        "{hashtags}"
+    ),
+}
+
+
+def _reel_hashtags(dest_name: str, platform: str) -> str:
+    """Build reel-specific hashtags."""
+    base = ["NakshIQ", "TravelWithIQ", "IndiaTravel", "IncredibleIndia",
+            "TravelReels", "IndiaReels"]
+    if dest_name:
+        clean = dest_name.replace(" ", "").replace("-", "")
+        base.append(clean)
+    if platform == "linkedin":
+        return " ".join(f"#{h}" for h in base[:5])
+    return " ".join(f"#{h}" for h in base)
+
+
+def _reel_caption(reel_format: str, data: dict, platform: str) -> str:
+    """Generate caption for a reel post."""
+    template = REEL_CAPTION_TEMPLATES.get(reel_format, REEL_CAPTION_TEMPLATES["score_reveal"])
+    dest_name = data.get("dest_name") or data.get("famous") or data.get("trap_name") or "India"
+    hashtags = _reel_hashtags(dest_name, platform)
+
+    try:
+        return template.format(
+            dest=data.get("dest_name", ""),
+            month=data.get("month", ""),
+            score=data.get("score", ""),
+            reason=data.get("reason", ""),
+            famous=data.get("famous", ""),
+            hidden=data.get("hidden", ""),
+            famous_score=data.get("famous_score", ""),
+            hidden_score=data.get("hidden_score", ""),
+            now_score=data.get("now_score", ""),
+            future_month=data.get("future_month", ""),
+            future_score=data.get("future_score", ""),
+            trap=data.get("trap_name", ""),
+            alternative=data.get("alternative", ""),
+            hashtags=hashtags,
+        )
+    except KeyError:
+        return f"🎯 Travel smarter. {dest_name} on NakshIQ.\n\n→ nakshiq.com\n\n{hashtags}"
+
+
+def _pick_reel_data(state: dict, content: dict, reel_format: str) -> dict | None:
+    """Pick destination data for a reel format from synced content."""
+    import calendar
+    from datetime import datetime as _dt
+    month_now  = _dt.now().month
+    month_name = calendar.month_name[month_now]
+
+    destinations = content.get("destinations", {}).get("data", [])
+    destinations_low = content.get("destinations_low", {}).get("data", [])
+    traps = content.get("traps", {}).get("data", [])
+
+    if reel_format == "score_reveal":
+        # Pick a LOW-scored destination for dramatic effect
+        low_scored = [d for d in destinations_low
+                      if isinstance(d.get("score"), (int, float)) and d["score"] <= 3]
+        if not low_scored:
+            low_scored = [d for d in destinations_low
+                          if isinstance(d.get("score"), (int, float)) and d["score"] <= 4]
+        if not low_scored:
+            return None
+        ordered = pick_oldest_unused(state, "reel_score_dests",
+                                     [{"id": d.get("id", d.get("name", "")), **d}
+                                      for d in low_scored], key="id")
+        d = ordered[0]
+        return {
+            "dest_name": d.get("name", "Unknown"),
+            "dest_slug": d.get("id", d.get("name", "india")),
+            "month": month_name,
+            "score": int(d.get("score", 2)),
+            "reason": d.get("note") or d.get("tagline") or "Check nakshiq.com for the full breakdown",
+        }
+
+    elif reel_format == "contrarian":
+        # Pair a famous (popular but low-ish score) with a hidden gem (high score)
+        high = [d for d in destinations if isinstance(d.get("score"), (int, float)) and d["score"] >= 4]
+        low  = [d for d in destinations_low if isinstance(d.get("score"), (int, float)) and d["score"] <= 3]
+        if not high or not low:
+            return None
+        h_ordered = pick_oldest_unused(state, "reel_contrarian_hidden",
+                                       [{"id": d.get("id", d.get("name", "")), **d}
+                                        for d in high], key="id")
+        l_ordered = pick_oldest_unused(state, "reel_contrarian_famous",
+                                       [{"id": d.get("id", d.get("name", "")), **d}
+                                        for d in low], key="id")
+        return {
+            "famous": l_ordered[0].get("name", "Popular Place"),
+            "hidden": h_ordered[0].get("name", "Hidden Gem"),
+            "famous_score": int(l_ordered[0].get("score", 3)),
+            "hidden_score": int(h_ordered[0].get("score", 5)),
+            "dest_slug": h_ordered[0].get("id", "hidden"),
+        }
+
+    elif reel_format == "seasonal_shift":
+        # Show a destination great now but bad in ~3 months
+        future_month_num = ((month_now - 1 + 3) % 12) + 1
+        future_month_name = calendar.month_name[future_month_num]
+
+        # Use top-scored destinations and assume score drops in off-season
+        great_now = [d for d in destinations
+                     if isinstance(d.get("score"), (int, float)) and d["score"] >= 4]
+        if not great_now:
+            return None
+        ordered = pick_oldest_unused(state, "reel_seasonal_dests",
+                                     [{"id": d.get("id", d.get("name", "")), **d}
+                                      for d in great_now], key="id")
+        d = ordered[0]
+        # For the future score, check if the API provided month-specific scores
+        # Otherwise estimate a dramatic drop for visual impact
+        future_score = d.get(f"score_m{future_month_num}")
+        if not isinstance(future_score, (int, float)):
+            # Conservative estimate: 5→2, 4→2 for dramatic effect
+            future_score = max(1, int(d["score"]) - 3)
+        return {
+            "dest_name": d.get("name", "Unknown"),
+            "dest_slug": d.get("id", d.get("name", "india")),
+            "now_month": month_name,
+            "now_score": int(d.get("score", 5)),
+            "future_month": future_month_name,
+            "future_score": int(future_score),
+        }
+
+    elif reel_format == "trap_alert":
+        if not traps:
+            return None
+        ordered = pick_oldest_unused(state, "reel_trap_alerts",
+                                     [{"id": t.get("id", t.get("name", "")), **t}
+                                      for t in traps], key="id")
+        t = ordered[0]
+        return {
+            "trap_name": t.get("name") or t.get("title", "Common Tourist Trap"),
+            "alternative": t.get("alternative") or t.get("tip") or "Ask locals",
+            "reason": t.get("reason") or t.get("why") or "Overpriced and overcrowded",
+            "dest_slug": t.get("destination_id") or t.get("destination", "india"),
+        }
+
+    return None
+
+
+def _run_reel(force: bool = False, dry_run: bool = False):
+    """
+    Reel mode — generates and posts a short-form vertical video.
+    Rotates through 4 reel formats with anti-repetition.
+    """
+    import tempfile
+    from reel_gen import render_reel
+
+    today   = date.today().isoformat()
+    weekday = date.today().weekday()
+    st      = load_state()
+
+    log.info("═" * 60)
+    log.info(f"Nakshiq Autoposter · REEL · {today} · weekday={weekday}")
+    log.info("═" * 60)
+
+    # Sync content for reel data
+    content = sync_all_content()
+
+    # ── Pick reel format (oldest-unused rotation) ──────────────────────────
+    fmt_items = [{"id": f} for f in REEL_FORMATS]
+    fmt_ordered = pick_oldest_unused(st, "reel_formats", fmt_items, key="id")
+
+    reel_data = None
+    chosen_format = None
+
+    # Try each format in order until we find one with available data
+    for fmt_item in fmt_ordered:
+        fmt_id = fmt_item["id"]
+        data = _pick_reel_data(st, content, fmt_id)
+        if data:
+            reel_data = data
+            chosen_format = fmt_id
+            break
+
+    if not reel_data or not chosen_format:
+        log.warning("No suitable reel data available for any format.")
+        save_state(st)
+        return
+
+    log.info(f"Format: {chosen_format} | Data: {reel_data}")
+
+    # ── Render video ─────────────────────────────────────────────────────
+    with tempfile.TemporaryDirectory(prefix="nakshiq_reel_") as td:
+        out_dir = Path(td)
+        video_path = render_reel(chosen_format, reel_data, out_dir)
+
+        if not video_path or not video_path.exists():
+            log.error("Reel rendering failed.")
+            save_state(st)
+            return
+
+        video_bytes = video_path.read_bytes()
+        video_size_kb = len(video_bytes) // 1024
+        log.info(f"Reel rendered: {video_path.name} ({video_size_kb} KB)")
+
+        # ── Upload ────────────────────────────────────────────────────────
+        media_filename = f"reel_{chosen_format}_{video_path.stem}.mp4"
+        media_obj = upload_media_bytes(video_bytes, media_filename, "video/mp4")
+        if not media_obj:
+            log.error("Reel video upload failed.")
+            save_state(st)
+            return
+
+        log.info(f"Video uploaded: {media_filename}")
+
+    # ── Publish to all platforms ────────────────────────────────────────
+    accounts = get_connected_accounts()
+    active   = [a for a in accounts if a.get("isActive")]
+    if not active:
+        log.warning("No active connected accounts.")
+        save_state(st)
+        return
+
+    mode_suffix = "_reel"
+    posted_any = False
+
+    for account in active:
+        acc_id   = account["id"]
+        platform = account["network"]
+        username = account.get("username", acc_id)
+        label    = f"{platform}/{username}"
+
+        acc_scoped_key = acc_id + mode_suffix
+        if st.get("posted_today", {}).get(acc_scoped_key) == today and not force:
+            log.info(f"[{label}] Already posted reel today — skipping.")
+            continue
+
+        caption = _reel_caption(chosen_format, reel_data, platform)
+        caption = sanitize(caption)
+
+        log.info(f"[{label}] Publishing reel ({chosen_format})...")
+
+        if dry_run:
+            log.info(f"[{label}] DRY RUN — would publish:\n{caption[:200]}...")
+            posted_any = True
+            continue
+
+        result = publish_reel(caption, account, media_obj, dry_run=False)
+        if result:
+            log.info(f"[{label}] Reel posted successfully!")
+            st.setdefault("posted_today", {})[acc_scoped_key] = today
+            posted_any = True
+        else:
+            log.warning(f"[{label}] Reel post failed.")
+
+    # Mark format + data as used
+    if posted_any:
+        mark_theme_used(st, "reel_formats", chosen_format)
+        # Mark the specific destination/trap as used
+        dest_id = reel_data.get("dest_slug") or reel_data.get("dest_name", "")
+        if chosen_format == "score_reveal":
+            mark_theme_used(st, "reel_score_dests", dest_id)
+        elif chosen_format == "contrarian":
+            mark_theme_used(st, "reel_contrarian_hidden", reel_data.get("hidden", ""))
+            mark_theme_used(st, "reel_contrarian_famous", reel_data.get("famous", ""))
+        elif chosen_format == "seasonal_shift":
+            mark_theme_used(st, "reel_seasonal_dests", dest_id)
+        elif chosen_format == "trap_alert":
+            mark_theme_used(st, "reel_trap_alerts", reel_data.get("trap_name", ""))
+
+        log.info(f"Theme tracker updated: format={chosen_format}")
+
+    save_state(st)
+    log.info("State saved. Reel run complete.")
+    log.info("═" * 60)
+
+
+def run_reel(force: bool = False, dry_run: bool = False):
+    """Entry point for reel mode with its own lock file."""
+    if not OUTSTAND_API_KEY:
+        log.error("OUTSTAND_API_KEY not set. Exiting.")
+        sys.exit(1)
+
+    global LOCK_FILE
+    original_lock = LOCK_FILE
+    LOCK_FILE = REEL_LOCK_FILE
+
+    try:
+        if not dry_run and not _acquire_lock(force=force):
+            sys.exit(0)
+        try:
+            _run_reel(force=force, dry_run=dry_run)
+        finally:
+            if not dry_run:
+                _release_lock()
+    finally:
+        LOCK_FILE = original_lock
+
+
+# ─────────────────────────────────────────────────────────────────────────────
 # ENTRY POINT
 # ─────────────────────────────────────────────────────────────────────────────
 
@@ -2715,14 +3066,20 @@ if __name__ == "__main__":
     parser.add_argument("--canva-visual", action="store_true",
                         help="Post a pre-generated Canva visual from the library. "
                              "Rotates across 8 content categories with anti-repetition.")
+    parser.add_argument("--reel", action="store_true",
+                        help="Generate and post a short-form vertical Reel video. "
+                             "Rotates through score_reveal, contrarian, seasonal_shift, "
+                             "and trap_alert formats with anti-repetition.")
     args = parser.parse_args()
-    exclusive = sum([args.evening, args.moat, args.tourist_map, args.canva_visual])
+    exclusive = sum([args.evening, args.moat, args.tourist_map, args.canva_visual, args.reel])
     if exclusive > 1:
-        parser.error("--evening, --moat, --tourist-map, and --canva-visual are mutually exclusive.")
+        parser.error("--evening, --moat, --tourist-map, --canva-visual, and --reel are mutually exclusive.")
     if args.tourist_map:
         run_tourist_map(force=args.force, dry_run=args.dry_run)
     elif args.canva_visual:
         run_canva_visual(force=args.force, dry_run=args.dry_run)
+    elif args.reel:
+        run_reel(force=args.force, dry_run=args.dry_run)
     else:
         run(force=args.force, sync_only=args.sync_only,
             dry_run=args.dry_run, evening=args.evening, moat=args.moat)

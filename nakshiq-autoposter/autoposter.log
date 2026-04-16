@@ -710,3 +710,47 @@
 2026-04-16 19:46:42  INFO      Theme tracker updated: cat=mood_shots / img=mood_shots/munnar_KL_01.jpg
 2026-04-16 19:46:42  INFO      State saved. Canva Visual run complete.
 2026-04-16 19:46:42  INFO      ════════════════════════════════════════════════════════════
+2026-04-16 11:15:51  ERROR     OUTSTAND_API_KEY not set. Exiting.
+2026-04-16 21:16:08  INFO      ════════════════════════════════════════════════════════════
+2026-04-16 21:16:08  INFO      Nakshiq Autoposter · REEL · 2026-04-16 · weekday=3
+2026-04-16 21:16:08  INFO      ════════════════════════════════════════════════════════════
+2026-04-16 21:16:08  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-04-16 21:16:17  INFO      Synced → 20 destinations · 0 traps · 16 articles · total catalog=480
+2026-04-16 21:16:17  INFO      Format: score_reveal | Data: {'dest_name': 'Gir National Park', 'dest_slug': 'gir-national-park', 'month': 'April', 'score': 4, 'reason': 'Hot but lions come to water — excellent sightings'}
+2026-04-16 21:16:17  ERROR     Reel rendering failed.
+2026-04-16 21:17:32  INFO      ════════════════════════════════════════════════════════════
+2026-04-16 21:17:32  INFO      Nakshiq Autoposter · REEL · 2026-04-16 · weekday=3
+2026-04-16 21:17:32  INFO      ════════════════════════════════════════════════════════════
+2026-04-16 21:17:32  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-04-16 21:17:38  INFO      Synced → 20 destinations · 0 traps · 16 articles · total catalog=480
+2026-04-16 21:17:38  INFO      Format: score_reveal | Data: {'dest_name': 'Gir National Park', 'dest_slug': 'gir-national-park', 'month': 'April', 'score': 4, 'reason': 'Hot but lions come to water — excellent sightings'}
+2026-04-16 21:17:38  ERROR     Reel rendering failed.
+2026-04-16 21:22:19  INFO      ════════════════════════════════════════════════════════════
+2026-04-16 21:22:19  INFO      Nakshiq Autoposter · REEL · 2026-04-16 · weekday=3
+2026-04-16 21:22:19  INFO      ════════════════════════════════════════════════════════════
+2026-04-16 21:22:19  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-04-16 21:22:25  INFO      Synced → 20 destinations · 0 traps · 16 articles · total catalog=480
+2026-04-16 21:22:25  INFO      Format: score_reveal | Data: {'dest_name': 'Gir National Park', 'dest_slug': 'gir-national-park', 'month': 'April', 'score': 4, 'reason': 'Hot but lions come to water — excellent sightings'}
+2026-04-16 21:22:29  INFO      Reel rendered: reel_score_reveal_gir-national-park.mp4 (8072 KB)
+2026-04-16 21:22:57  INFO      Stale lock (age=38s) — overriding.
+2026-04-16 21:22:57  INFO      ════════════════════════════════════════════════════════════
+2026-04-16 21:22:57  INFO      Nakshiq Autoposter · REEL · 2026-04-16 · weekday=3
+2026-04-16 21:22:57  INFO      ════════════════════════════════════════════════════════════
+2026-04-16 21:22:57  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-04-16 21:22:59  WARNING       Media upload exception: HTTPSConnectionPool(host='api.outstand.so', port=443): Read timed out. (read timeout=30)
+2026-04-16 21:22:59  ERROR     Reel video upload failed.
+2026-04-16 21:23:03  INFO      Synced → 20 destinations · 0 traps · 16 articles · total catalog=480
+2026-04-16 21:23:03  INFO      Format: score_reveal | Data: {'dest_name': 'Gir National Park', 'dest_slug': 'gir-national-park', 'month': 'April', 'score': 4, 'reason': 'Hot but lions come to water — excellent sightings'}
+2026-04-16 21:23:07  INFO      Reel rendered: reel_score_reveal_gir-national-park.mp4 (8072 KB)
+2026-04-16 21:23:09  WARNING       Media upload exception: Expecting value: line 1 column 1 (char 0)
+2026-04-16 21:23:09  ERROR     Reel video upload failed.
+2026-04-16 21:23:53  INFO      ════════════════════════════════════════════════════════════
+2026-04-16 21:23:53  INFO      Nakshiq Autoposter · REEL · 2026-04-16 · weekday=3
+2026-04-16 21:23:53  INFO      ════════════════════════════════════════════════════════════
+2026-04-16 21:23:53  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-04-16 21:23:59  INFO      Synced → 20 destinations · 0 traps · 16 articles · total catalog=480
+2026-04-16 21:23:59  INFO      Format: score_reveal | Data: {'dest_name': 'Gir National Park', 'dest_slug': 'gir-national-park', 'month': 'April', 'score': 4, 'reason': 'Hot but lions come to water — excellent sightings'}
+2026-04-16 21:24:02  INFO      Reel rendered: reel_score_reveal_gir-national-park.mp4 (8072 KB)
+2026-04-16 21:24:02  INFO          Requesting upload URL for reel_score_reveal_reel_score_reveal_gir-national-park.mp4 (8,266,446 bytes, video/mp4)
+2026-04-16 21:24:07  WARNING       Upload URL failed: {'error': 'Invalid API key', 'details': 'Invalid API key.'}
+2026-04-16 21:24:07  ERROR     Reel video upload failed.
