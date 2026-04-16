@@ -10,6 +10,7 @@ on:
     - cron: "30 8 * * *"   # 14:00 IST  sync only
     - cron: "30 13 * * *"  # 19:00 IST  sync only
     - cron: "0 7 * * 2,4,6"  # 12:30 IST Tue/Thu/Sat — tourist map
+    - cron: "0 9 * * *"       # 14:30 IST daily — canva visual
   workflow_dispatch:
     inputs:
       mode:
@@ -24,6 +25,8 @@ on:
           - dry-run
           - tourist-map
           - tourist-map-force
+          - canva-visual
+          - canva-visual-force
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
@@ -63,6 +66,9 @@ jobs:
             if [ "$INPUT" = "tourist-map-force" ]; then
               echo "args=--tourist-map --force" >> $GITHUB_OUTPUT
               echo "Manual mode: --tourist-map --force"
+            elif [ "$INPUT" = "canva-visual-force" ]; then
+              echo "args=--canva-visual --force" >> $GITHUB_OUTPUT
+              echo "Manual mode: --canva-visual --force"
             elif [ -n "$INPUT" ]; then
               echo "args=--${INPUT}" >> $GITHUB_OUTPUT
               echo "Manual mode: --${INPUT}"
@@ -70,6 +76,10 @@ jobs:
               echo "args=" >> $GITHUB_OUTPUT
               echo "Manual mode: normal (post)"
             fi
+          elif [ "$TOTAL_MINS" -ge 540 ] && [ "$TOTAL_MINS" -lt 550 ]; then
+            # UTC 09:00 daily → canva visual
+            echo "args=--canva-visual" >> $GITHUB_OUTPUT
+            echo "Scheduled CANVA VISUAL mode (UTC ${HOUR}:${MINUTE})"
           elif [ "$TOTAL_MINS" -ge 420 ] && [ "$TOTAL_MINS" -lt 430 ] && echo "2 4 6" | grep -qw "$DOW"; then
             # UTC 07:00 on Tue/Thu/Sat → tourist map
             echo "args=--tourist-map" >> $GITHUB_OUTPUT

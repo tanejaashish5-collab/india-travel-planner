@@ -2393,6 +2393,302 @@ def run_tourist_map(force: bool = False, dry_run: bool = False):
 
 
 # ─────────────────────────────────────────────────────────────────────────────
+# CANVA VISUAL MODE
+# ─────────────────────────────────────────────────────────────────────────────
+# Posts pre-generated Canva visuals from canva_library/. Rotates across 8
+# content categories (mood_shots, color_palettes, this_or_that, collections,
+# activities, seasons, food, festivals) using anti-repetition tracking.
+# Library is grown over time via Canva MCP batch sessions.
+#
+# With 460+ destinations, 85 collections, 311 festivals, etc., the prompt
+# templates in manifest.json can generate thousands of unique visuals.
+
+CANVA_LIBRARY_DIR = Path(__file__).parent / "canva_library"
+CANVA_LOCK_FILE   = Path(__file__).parent / ".autoposter-canva.lock"
+
+# Category rotation — cycles through categories so the feed never shows
+# the same type of visual on consecutive days.
+CANVA_CATEGORY_ORDER = [
+    "mood_shots", "collections", "this_or_that", "activities",
+    "color_palettes", "food", "seasons", "festivals",
+]
+
+# Caption templates per category
+CANVA_CAPTION_TEMPLATES = {
+    "mood_destination": (
+        "📍 {subject}\n\n"
+        "Some places don't need words. They need data.\n"
+        "NakshIQ scores every Indian destination, every month — so you know "
+        "exactly when to go.\n\n"
+        "Save this. Plan smarter.\n\n"
+        "—\n"
+        "Data, not opinions.\n\n"
+        "{hashtags}"
+    ),
+    "color_palette": (
+        "🎨 {subject}\n\n"
+        "Every destination has a color story. This one speaks for itself.\n\n"
+        "NakshIQ doesn't just tell you where to go — we tell you when "
+        "the colors are at their best.\n\n"
+        "—\n"
+        "Travel with IQ.\n\n"
+        "{hashtags}"
+    ),
+    "this_or_that": (
+        "🤔 {comparison_a} or {comparison_b}?\n\n"
+        "Drop your pick in the comments. No wrong answers — "
+        "but NakshIQ data says one scores higher this month 👀\n\n"
+        "—\n"
+        "nakshiq.com — scores, not opinions.\n\n"
+        "{hashtags}"
+    ),
+    "collection": (
+        "📌 {subject}\n\n"
+        "Not a random list. Every spot in this collection is scored and "
+        "verified — real data, real traveler intel, updated monthly.\n\n"
+        "Explore the full collection on nakshiq.com\n\n"
+        "—\n"
+        "Travel with IQ.\n\n"
+        "{hashtags}"
+    ),
+    "activity": (
+        "⛰️ {subject}\n\n"
+        "India has 460+ destinations we score monthly. Some are best "
+        "experienced with your heart racing.\n\n"
+        "Check nakshiq.com for the best time + safety intel before you go.\n\n"
+        "—\n"
+        "Data, not opinions.\n\n"
+        "{hashtags}"
+    ),
+    "season": (
+        "🌦️ {subject}\n\n"
+        "Timing is everything. NakshIQ tracks seasonal scores for 460+ "
+        "destinations so you never visit at the wrong time.\n\n"
+        "Check your destination's score this month → nakshiq.com\n\n"
+        "—\n"
+        "Travel with IQ.\n\n"
+        "{hashtags}"
+    ),
+    "food_city": (
+        "🍽️ {subject}\n\n"
+        "Forget the tourist restaurants. NakshIQ's local intel covers "
+        "the real food trail — verified, mapped, no fake reviews.\n\n"
+        "Full food guide → nakshiq.com\n\n"
+        "—\n"
+        "Data, not opinions.\n\n"
+        "{hashtags}"
+    ),
+    "festival": (
+        "🪔 {subject}\n\n"
+        "India celebrates 311+ festivals across the year. NakshIQ tracks "
+        "them all — dates, locations, what to expect, safety intel.\n\n"
+        "Plan around a festival → nakshiq.com\n\n"
+        "—\n"
+        "Travel with IQ.\n\n"
+        "{hashtags}"
+    ),
+}
+
+
+def _canva_hashtags(entry: dict, platform: str) -> str:
+    """Build platform-appropriate hashtags from image metadata."""
+    tags = entry.get("tags", [])
+    state = entry.get("state")
+    dest = entry.get("destination")
+
+    base = ["NakshIQ", "TravelWithIQ", "IndiaTravel", "IncredibleIndia"]
+    if state:
+        base.append(state)
+    if dest:
+        base.append(dest.replace("_", "").title())
+    for t in tags[:3]:
+        base.append(t.replace("_", "").title())
+
+    if platform == "linkedin":
+        return " ".join(f"#{h}" for h in base[:5])
+    return " ".join(f"#{h}" for h in base)
+
+
+def _canva_caption(entry: dict, platform: str) -> str:
+    """Generate caption for a Canva visual post."""
+    template_key = entry.get("caption_template", "mood_destination")
+    # Map category to template key if not explicitly set
+    category_template_map = {
+        "mood_shots": "mood_destination",
+        "color_palettes": "color_palette",
+        "this_or_that": "this_or_that",
+        "collections": "collection",
+        "activities": "activity",
+        "seasons": "season",
+        "food": "food_city",
+        "festivals": "festival",
+    }
+    if template_key not in CANVA_CAPTION_TEMPLATES:
+        template_key = category_template_map.get(entry.get("category", ""), "mood_destination")
+
+    template = CANVA_CAPTION_TEMPLATES.get(template_key, CANVA_CAPTION_TEMPLATES["mood_destination"])
+    hashtags = _canva_hashtags(entry, platform)
+
+    return template.format(
+        subject=entry.get("subject", "India"),
+        comparison_a=entry.get("comparison", ["A", "B"])[0] if "comparison" in entry else "This",
+        comparison_b=entry.get("comparison", ["A", "B"])[1] if "comparison" in entry else "That",
+        hashtags=hashtags,
+    )
+
+
+def _run_canva_visual(force: bool = False, dry_run: bool = False):
+    """
+    Canva Visual mode — posts pre-generated visuals from canva_library/.
+    Rotates categories and images with full anti-repetition tracking.
+    """
+    import json as _json
+
+    today   = date.today().isoformat()
+    weekday = date.today().weekday()
+    st      = load_state()
+
+    log.info("═" * 60)
+    log.info(f"Nakshiq Autoposter · CANVA VISUAL · {today} · weekday={weekday}")
+    log.info("═" * 60)
+
+    # Load manifest
+    manifest_path = CANVA_LIBRARY_DIR / "manifest.json"
+    if not manifest_path.exists():
+        log.error("canva_library/manifest.json not found.")
+        return
+
+    with open(manifest_path) as f:
+        manifest = _json.load(f)
+
+    all_images = manifest.get("images", [])
+    if not all_images:
+        log.error("No images in canva_library/manifest.json.")
+        return
+
+    # Verify image files actually exist
+    available = []
+    for img in all_images:
+        img_path = CANVA_LIBRARY_DIR / img["file"]
+        if img_path.exists():
+            available.append(img)
+        else:
+            log.warning(f"Image not found, skipping: {img['file']}")
+
+    if not available:
+        log.error("No available images in library.")
+        return
+
+    log.info(f"Library: {len(available)} images across "
+             f"{len(set(i['category'] for i in available))} categories")
+
+    # ── Pick category (oldest-unused first, cycling through all 8) ────────
+    available_cats = list(set(i["category"] for i in available))
+    cat_items = [{"id": c} for c in CANVA_CATEGORY_ORDER if c in available_cats]
+    if not cat_items:
+        cat_items = [{"id": c} for c in available_cats]
+    cat_ordered = pick_oldest_unused(st, "canva_categories", cat_items, key="id")
+    chosen_cat = cat_ordered[0]["id"]
+
+    # ── Pick image within that category (oldest-unused first) ─────────────
+    cat_images = [i for i in available if i["category"] == chosen_cat]
+    if not cat_images:
+        # Fallback: pick from any category
+        cat_images = available
+        chosen_cat = cat_images[0]["category"]
+
+    img_items = [{"id": img["file"], **img} for img in cat_images]
+    img_ordered = pick_oldest_unused(st, "canva_images", img_items, key="id")
+    chosen_img = img_ordered[0]
+
+    log.info(f"Selected: [{chosen_cat}] {chosen_img['subject']} → {chosen_img['file']}")
+
+    # Read image bytes
+    img_path = CANVA_LIBRARY_DIR / chosen_img["file"]
+    img_bytes = img_path.read_bytes()
+
+    # Upload
+    media_filename = f"canva_{chosen_cat}_{Path(chosen_img['file']).stem}.jpg"
+    media_obj = upload_media_bytes(img_bytes, media_filename, "image/jpeg")
+    if not media_obj:
+        log.error("Media upload failed.")
+        return
+
+    log.info(f"Image uploaded: {media_filename} ({len(img_bytes) // 1024} KB)")
+
+    # Get accounts
+    accounts = get_connected_accounts()
+    active   = [a for a in accounts if a.get("isActive")]
+    if not active:
+        log.warning("No active connected accounts.")
+        return
+
+    mode_suffix = "_canva"
+    posted_any = False
+
+    for account in active:
+        acc_id   = account["id"]
+        platform = account["network"]
+        username = account.get("username", acc_id)
+        label    = f"{platform}/{username}"
+
+        acc_scoped_key = acc_id + mode_suffix
+        if st.get("posted_today", {}).get(acc_scoped_key) == today and not force:
+            log.info(f"[{label}] Already posted canva visual today — skipping.")
+            continue
+
+        caption = _canva_caption(chosen_img, platform)
+        caption = sanitize(caption)
+
+        log.info(f"[{label}] Publishing canva visual: {chosen_img['subject']}...")
+
+        if dry_run:
+            log.info(f"[{label}] DRY RUN — would publish:\n{caption[:200]}...")
+            posted_any = True
+            continue
+
+        result = publish_feed_post(caption, account, media_obj, dry_run=False)
+        if result:
+            log.info(f"[{label}] Canva visual posted successfully!")
+            st.setdefault("posted_today", {})[acc_scoped_key] = today
+            posted_any = True
+        else:
+            log.warning(f"[{label}] Canva visual post failed.")
+
+    # Mark category + image as used
+    if posted_any:
+        mark_theme_used(st, "canva_categories", chosen_cat)
+        mark_theme_used(st, "canva_images", chosen_img["file"])
+        log.info(f"Theme tracker updated: cat={chosen_cat} / img={chosen_img['file']}")
+
+    save_state(st)
+    log.info("State saved. Canva Visual run complete.")
+    log.info("═" * 60)
+
+
+def run_canva_visual(force: bool = False, dry_run: bool = False):
+    """Entry point for canva visual mode with its own lock file."""
+    if not OUTSTAND_API_KEY:
+        log.error("OUTSTAND_API_KEY not set. Exiting.")
+        sys.exit(1)
+
+    global LOCK_FILE
+    original_lock = LOCK_FILE
+    LOCK_FILE = CANVA_LOCK_FILE
+
+    try:
+        if not dry_run and not _acquire_lock(force=force):
+            sys.exit(0)
+        try:
+            _run_canva_visual(force=force, dry_run=dry_run)
+        finally:
+            if not dry_run:
+                _release_lock()
+    finally:
+        LOCK_FILE = original_lock
+
+
+# ─────────────────────────────────────────────────────────────────────────────
 # ENTRY POINT
 # ─────────────────────────────────────────────────────────────────────────────
 
@@ -2416,12 +2712,17 @@ if __name__ == "__main__":
                         help="Run the tourist map schedule (Tue/Thu/Sat). "
                              "Generates illustrated state maps from map_data.json "
                              "and posts to all platforms.")
+    parser.add_argument("--canva-visual", action="store_true",
+                        help="Post a pre-generated Canva visual from the library. "
+                             "Rotates across 8 content categories with anti-repetition.")
     args = parser.parse_args()
-    exclusive = sum([args.evening, args.moat, args.tourist_map])
+    exclusive = sum([args.evening, args.moat, args.tourist_map, args.canva_visual])
     if exclusive > 1:
-        parser.error("--evening, --moat, and --tourist-map are mutually exclusive.")
+        parser.error("--evening, --moat, --tourist-map, and --canva-visual are mutually exclusive.")
     if args.tourist_map:
         run_tourist_map(force=args.force, dry_run=args.dry_run)
+    elif args.canva_visual:
+        run_canva_visual(force=args.force, dry_run=args.dry_run)
     else:
         run(force=args.force, sync_only=args.sync_only,
             dry_run=args.dry_run, evening=args.evening, moat=args.moat)

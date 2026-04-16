@@ -1,0 +1,211 @@
+{
+  "meta": {
+    "description": "NakshIQ Canva visual library — maps images to content dimensions for anti-repetition rotation",
+    "categories": ["mood_shots", "color_palettes", "this_or_that", "collections", "activities", "seasons", "food", "festivals"],
+    "version": 1
+  },
+  "images": [
+    {
+      "file": "mood_shots/munnar_KL_01.jpg",
+      "category": "mood_shots",
+      "subject": "Munnar tea plantations sunrise",
+      "state": "KL",
+      "destination": "munnar",
+      "tags": ["nature", "hill_station", "sunrise", "tea"],
+      "caption_template": "mood_destination"
+    },
+    {
+      "file": "mood_shots/munnar_KL_02.jpg",
+      "category": "mood_shots",
+      "subject": "Misty morning Munnar",
+      "state": "KL",
+      "destination": "munnar",
+      "tags": ["nature", "hill_station", "mist", "tea"],
+      "caption_template": "mood_destination"
+    },
+    {
+      "file": "color_palettes/jaisalmer_RJ_01.jpg",
+      "category": "color_palettes",
+      "subject": "Colors of Jaisalmer",
+      "state": "RJ",
+      "destination": "jaisalmer",
+      "tags": ["desert", "fort", "golden", "sunset"],
+      "caption_template": "color_palette"
+    },
+    {
+      "file": "color_palettes/jaisalmer_RJ_02.jpg",
+      "category": "color_palettes",
+      "subject": "Jaisalmer fort sunset palette",
+      "state": "RJ",
+      "destination": "jaisalmer",
+      "tags": ["desert", "fort", "golden", "sunset"],
+      "caption_template": "color_palette"
+    },
+    {
+      "file": "this_or_that/mountains_vs_beaches_01.jpg",
+      "category": "this_or_that",
+      "subject": "Mountains vs Beaches",
+      "state": null,
+      "destination": null,
+      "tags": ["engagement", "comparison", "mountains", "beaches"],
+      "caption_template": "this_or_that",
+      "comparison": ["Mountains", "Beaches"]
+    },
+    {
+      "file": "this_or_that/mountains_vs_beaches_02.jpg",
+      "category": "this_or_that",
+      "subject": "Mountains vs Beaches",
+      "state": null,
+      "destination": null,
+      "tags": ["engagement", "comparison", "mountains", "beaches"],
+      "caption_template": "this_or_that",
+      "comparison": ["Mountains", "Beaches"]
+    },
+    {
+      "file": "collections/motorcycle_routes_01.jpg",
+      "category": "collections",
+      "subject": "Best Motorcycle Routes",
+      "state": null,
+      "destination": null,
+      "collection": "best-motorcycle-routes",
+      "tags": ["routes", "motorcycle", "adventure", "road_trip"],
+      "caption_template": "collection"
+    },
+    {
+      "file": "collections/food_cities_01.jpg",
+      "category": "collections",
+      "subject": "Best Food Cities of India",
+      "state": null,
+      "destination": null,
+      "collection": "best-food-cities",
+      "tags": ["food", "cities", "cuisine", "street_food"],
+      "caption_template": "collection"
+    },
+    {
+      "file": "activities/trek_india_01.jpg",
+      "category": "activities",
+      "subject": "Trek India — Himalayan sunrise",
+      "state": null,
+      "destination": null,
+      "tags": ["trekking", "adventure", "himalayas", "mountains", "solo"],
+      "caption_template": "activity"
+    }
+  ],
+  "prompt_templates": {
+    "mood_shots": {
+      "description": "Dreamy destination mood posters — single stunning image, minimal text",
+      "subjects": [
+        {"dest": "varanasi", "state": "UP", "prompt": "Varanasi ghats at dawn, golden sunrise reflecting off the Ganges, ancient temples silhouetted, smoke from morning rituals, rowing boat on still water. Spiritual, timeless, cinematic."},
+        {"dest": "goa_beaches", "state": "GA", "prompt": "Empty Goa beach at sunset, golden sand with gentle waves, palm tree silhouettes, pink-orange sky, a single beach shack with warm lights. Tropical paradise, relaxed vibes."},
+        {"dest": "leh_ladakh", "state": "LA", "prompt": "Pangong Lake at twilight, impossible blue water reflecting snow-capped mountains, clear starry sky beginning to appear, dramatic Ladakh landscape. Otherworldly, vast, serene."},
+        {"dest": "darjeeling", "state": "WB", "prompt": "Darjeeling tea gardens at sunrise with Kanchenjunga visible in background, layers of green tea bushes with golden morning light, mist in valleys below. Classic, serene."},
+        {"dest": "alleppey", "state": "KL", "prompt": "Kerala backwaters at golden hour, traditional houseboat gliding through calm palm-lined canals, mirror reflection in water, warm tropical light. Peaceful, idyllic."},
+        {"dest": "hampi", "state": "KA", "prompt": "Hampi boulder landscape at sunset, massive ancient granite boulders with Virupaksha temple in distance, golden-orange light, dramatic scale. Ancient, majestic."},
+        {"dest": "udaipur", "state": "RJ", "prompt": "Lake Pichola at blue hour, City Palace illuminated reflecting in still water, boats moored, Aravalli hills silhouetted. Romantic, regal, timeless."},
+        {"dest": "rishikesh", "state": "UK", "prompt": "Rishikesh at dawn, Ganges flowing turquoise through forested valley, Lakshman Jhula bridge in distance, morning fog, spiritual energy. Adventurous yet peaceful."},
+        {"dest": "coorg", "state": "KA", "prompt": "Coorg coffee plantation at misty morning, rows of coffee plants under shade trees, worker with basket walking through, golden light filtering through canopy. Rich, earthy."},
+        {"dest": "rann_of_kutch", "state": "GJ", "prompt": "White Rann of Kutch at full moon night, endless white salt desert stretching to horizon, moonlight creating ethereal glow, starry sky. Surreal, otherworldly, vast."},
+        {"dest": "spiti", "state": "HP", "prompt": "Spiti Valley monastery perched on cliff edge, barren dramatic mountain landscape, deep blue sky, prayer flags fluttering, ancient Buddhist architecture against stark terrain. Remote, spiritual."},
+        {"dest": "andaman", "state": "AN", "prompt": "Radhanagar Beach Andaman at sunset, pristine white sand meeting turquoise crystal water, tropical forest behind, dramatic clouds lit orange-pink. Paradise found."},
+        {"dest": "meghalaya", "state": "ML", "prompt": "Living root bridge in Meghalaya rainforest, ancient tree roots woven into natural bridge over crystal stream, lush green canopy, dappled light. Magical, organic, unique."},
+        {"dest": "jodhpur", "state": "RJ", "prompt": "Blue city Jodhpur from Mehrangarh Fort, endless blue-painted houses stretching below, warm golden fort walls in foreground, clear sky. Iconic, colorful, dramatic."},
+        {"dest": "mysore", "state": "KA", "prompt": "Mysore Palace illuminated at night, 100000 lightbulbs creating golden glow, ornate Indo-Saracenic architecture, dramatic night sky. Royal, magnificent, festive."}
+      ]
+    },
+    "color_palettes": {
+      "description": "Destination color palette cards — photo + extracted color swatches",
+      "subjects": [
+        {"dest": "jodhpur", "state": "RJ", "colors": "cerulean blues, indigo, white, sandstone gold, sky blue", "title": "THE COLORS OF JODHPUR"},
+        {"dest": "varanasi", "state": "UP", "colors": "saffron, deep red, marigold gold, river blue, smoke grey", "title": "THE COLORS OF VARANASI"},
+        {"dest": "kerala_monsoon", "state": "KL", "colors": "emerald green, moss, silver rain, coconut brown, laterite red", "title": "MONSOON KERALA"},
+        {"dest": "goa_sunset", "state": "GA", "colors": "coral pink, ocean teal, sand gold, palm green, sunset orange", "title": "GOA AT GOLDEN HOUR"},
+        {"dest": "ladakh", "state": "LA", "colors": "monastery red, desert brown, pangong blue, snow white, sky indigo", "title": "THE COLORS OF LADAKH"},
+        {"dest": "hampi", "state": "KA", "colors": "boulder grey, sunset orange, temple gold, banana green, dusty rose", "title": "THE COLORS OF HAMPI"},
+        {"dest": "darjeeling", "state": "WB", "colors": "tea green, Kanchenjunga white, colonial cream, morning gold, misty grey", "title": "THE COLORS OF DARJEELING"},
+        {"dest": "kutch", "state": "GJ", "colors": "salt white, desert gold, embroidery red, mirror silver, indigo blue", "title": "THE COLORS OF KUTCH"},
+        {"dest": "coorg", "state": "KA", "colors": "coffee brown, plantation green, pepper black, mist white, earth red", "title": "THE COLORS OF COORG"},
+        {"dest": "udaipur", "state": "RJ", "colors": "lake blue, palace white, Aravalli green, sunset pink, marble grey", "title": "THE COLORS OF UDAIPUR"}
+      ]
+    },
+    "this_or_that": {
+      "description": "Split comparison cards — engagement-driven, two options side by side",
+      "subjects": [
+        {"a": "Forts", "b": "Temples", "desc_a": "Rajasthani sandstone fort at sunset", "desc_b": "South Indian temple with ornate gopuram"},
+        {"a": "Solo Trip", "b": "Family Trip", "desc_a": "Solo backpacker on mountain trail", "desc_b": "Happy family at beach resort"},
+        {"a": "Street Food", "b": "Fine Dining", "desc_a": "Vibrant Indian street food stall at night", "desc_b": "Elegant plated dish at heritage restaurant"},
+        {"a": "Sunrise", "b": "Sunset", "desc_a": "Golden sunrise over Himalayan peaks", "desc_b": "Dramatic sunset over Arabian Sea"},
+        {"a": "Monsoon", "b": "Winter", "desc_a": "Lush green monsoon waterfall Western Ghats", "desc_b": "Snow-covered village in Kashmir"},
+        {"a": "Lakes", "b": "Rivers", "desc_a": "Mirror-still mountain lake reflecting peaks", "desc_b": "Rushing turquoise river through gorge"},
+        {"a": "Heritage Walk", "b": "Nature Trek", "desc_a": "Ancient fort/haveli corridor with warm light", "desc_b": "Trekking trail through alpine meadow"},
+        {"a": "Chai", "b": "Coffee", "desc_a": "Steaming chai in clay kulhad at roadside stall", "desc_b": "Fresh filter coffee in Coorg plantation"},
+        {"a": "Desert", "b": "Jungle", "desc_a": "Camel safari in Thar desert golden dunes sunset", "desc_b": "Tiger in dense Ranthambore forest"},
+        {"a": "Backpacking", "b": "Luxury", "desc_a": "Backpacker at cheap hostel rooftop with view", "desc_b": "Heritage palace hotel with pool overlooking lake"}
+      ]
+    },
+    "collections": {
+      "description": "Collection showcase grids — 4 photos representing a NakshIQ collection",
+      "subjects": [
+        {"collection": "unesco-north-india", "title": "UNESCO NORTH INDIA", "scenes": "Taj Mahal, Qutub Minar, Fatehpur Sikri, Jantar Mantar"},
+        {"collection": "best-beaches-india", "title": "INDIA'S BEST BEACHES", "scenes": "Goa beach, Andaman turquoise water, Varkala cliff beach, Gokarna"},
+        {"collection": "weekend-from-delhi", "title": "WEEKENDS FROM DELHI", "scenes": "Rishikesh rafting, Jaipur palace, Jim Corbett safari, Agra Taj"},
+        {"collection": "weekend-from-mumbai", "title": "WEEKENDS FROM MUMBAI", "scenes": "Lonavala waterfalls, Alibaug beach, Mahabaleshwar hills, Goa road"},
+        {"collection": "wildlife-safari", "title": "INDIA WILDLIFE SAFARI", "scenes": "Tiger Ranthambore, elephant Periyar, one-horned rhino Kaziranga, leopard"},
+        {"collection": "spiritual-circuit", "title": "SPIRITUAL INDIA", "scenes": "Varanasi aarti, Golden Temple Amritsar, Rishikesh yoga, Bodh Gaya"},
+        {"collection": "monsoon-magic", "title": "MONSOON MAGIC", "scenes": "Western Ghats waterfalls, Kerala backwaters rain, Meghalaya clouds, Coorg mist"},
+        {"collection": "luxury-heritage-stays", "title": "HERITAGE STAYS", "scenes": "Rajasthan palace hotel, Kerala houseboat, Himalayan resort, Goa villa"},
+        {"collection": "goa-beyond-beaches", "title": "GOA BEYOND BEACHES", "scenes": "Old Goa church, spice plantation, night market, mangrove kayak"},
+        {"collection": "northeast-first-timer", "title": "NORTHEAST INDIA", "scenes": "Tawang monastery, Kaziranga rhino, Cherrapunji falls, Ziro valley"}
+      ]
+    },
+    "activities": {
+      "description": "Activity mood posters — single dramatic action shot",
+      "subjects": [
+        {"activity": "camping", "prompt": "Tent pitched on mountain ridge at night, milky way visible, campfire glow, Himalayan silhouette. Adventurous, peaceful, epic."},
+        {"activity": "rafting", "prompt": "White water rafting on Ganges at Rishikesh, dramatic rapids, excited faces, lush green valley walls. Adrenaline, adventure, teamwork."},
+        {"activity": "paragliding", "prompt": "Paraglider soaring over Bir Billing valley, bird's eye view of patchwork fields and Himalayas, golden hour. Freedom, flight, scale."},
+        {"activity": "diving", "prompt": "Scuba diver exploring coral reef in Andaman Islands, crystal clear turquoise water, tropical fish, sunlight beams. Underwater paradise."},
+        {"activity": "cycling", "prompt": "Cyclist on mountain road in Ladakh, dramatic barren landscape, snow peaks, clear blue sky, long empty highway. Endurance, solitude, epic."},
+        {"activity": "kayaking", "prompt": "Kayaker on calm backwaters in Kerala, palm trees reflecting, golden morning light, single paddle stroke creating ripples. Serene adventure."},
+        {"activity": "rock_climbing", "prompt": "Rock climber on granite face at Hampi, ancient boulder landscape below, warm sunset light on rock. Strength meets history."},
+        {"activity": "skiing", "prompt": "Skier carving through fresh powder in Gulmarg, snow-covered pines, bright blue sky, Kashmir Himalayas in background. Winter thrill."},
+        {"activity": "wildlife_safari", "prompt": "Open jeep safari in Ranthambore, tiger walking across trail, dry deciduous forest, ancient fort visible on hill above. Wild India."},
+        {"activity": "surfing", "prompt": "Surfer riding wave at Kovalam beach, golden sunset behind, palm-lined shore, warm tropical water. India's surf culture emerging."}
+      ]
+    },
+    "seasons": {
+      "description": "Seasonal mood posters — best time to travel visuals",
+      "subjects": [
+        {"season": "monsoon", "prompt": "Torrential rain over Western Ghats, waterfalls cascading down misty green cliffs, winding road disappearing into clouds. Deep emeralds, silver rain, dramatic."},
+        {"season": "winter", "prompt": "Snow-covered Himalayan village at dawn, smoke rising from chimneys, frozen stream, warm golden light on snow. Cozy, remote, magical."},
+        {"season": "spring", "prompt": "Valley of Flowers Uttarakhand in full bloom, carpets of wildflowers in every color against snow peaks, blue sky, butterflies. Rebirth, color explosion."},
+        {"season": "summer", "prompt": "Hill station escape — Shimla/Manali colonial building surrounded by deodars, cool blue mountains in background, clear sky, families walking. Refreshing retreat."},
+        {"season": "autumn", "prompt": "Kashmir autumn, Chinar trees in blazing red-orange-gold, Dal Lake reflection, Mughal garden, warm low sunlight. India's most beautiful season."},
+        {"season": "diwali", "prompt": "Varanasi during Diwali, thousands of oil lamps (diyas) floating on Ganges, golden light reflections, Dev Deepawali spectacle. Magical, spiritual, breathtaking."}
+      ]
+    },
+    "food": {
+      "description": "Food city/region posters — mouthwatering food photography",
+      "subjects": [
+        {"city": "lucknow", "state": "UP", "title": "LUCKNOW FOOD TRAIL", "prompt": "Lucknowi kebabs and biryani spread, tunday kebab, nihari, ornate Nawabi plate setting, warm moody lighting. Rich, royal, aromatic."},
+        {"city": "amritsar", "state": "PB", "title": "AMRITSAR FOOD TRAIL", "prompt": "Amritsari kulcha, butter chicken, lassi, street food spread at Katra Ahluwalia, warm golden light. Generous, buttery, iconic."},
+        {"city": "kolkata", "state": "WB", "title": "KOLKATA FOOD TRAIL", "prompt": "Bengali food spread: mishti doi, fish curry, puchka, Kathi roll, rasgulla, on traditional plates. Sweet, savory, cultural."},
+        {"city": "chennai", "state": "TN", "title": "CHENNAI FOOD TRAIL", "prompt": "South Indian breakfast: crispy dosa on banana leaf, sambar, coconut chutney, filter coffee, idli. Steaming, fresh, traditional."},
+        {"city": "delhi", "state": "DL", "title": "DELHI STREET FOOD", "prompt": "Chandni Chowk street food panorama: paranthas, chole bhature, jalebi, chaat, bustling narrow lane with food stalls. Chaotic, delicious, iconic."},
+        {"city": "rajasthan", "state": "RJ", "title": "RAJASTHANI THALI", "prompt": "Full Rajasthani thali from above: dal baati churma, gatte ki sabzi, ker sangri, bajra roti, 15 small bowls on steel plate. Colorful, generous, royal."},
+        {"city": "goa", "state": "GA", "title": "GOA FOOD TRAIL", "prompt": "Goan seafood spread: fish curry rice, prawn balchao, bebinca, feni, on rustic wooden table near beach. Coastal, spicy, laid-back."},
+        {"city": "mumbai", "state": "MH", "title": "MUMBAI STREET FOOD", "prompt": "Mumbai street food: vada pav, pav bhaji, bhel puri, cutting chai, at beach-side stall at sunset. Fast, flavorful, iconic."}
+      ]
+    },
+    "festivals": {
+      "description": "Festival visual posters — cultural celebration imagery",
+      "subjects": [
+        {"festival": "holi", "prompt": "Holi celebration, explosion of colorful powder in air, joyful faces, Mathura/Vrindavan temple background. Vibrant, ecstatic, cultural."},
+        {"festival": "diwali", "prompt": "Diwali night, thousands of diyas, rangoli, fireworks over temple silhouette, warm golden-orange glow. Magical, festive, spiritual."},
+        {"festival": "pushkar_fair", "prompt": "Pushkar Camel Fair at sunset, thousands of camels, colorful Rajasthani turbans, desert horizon, golden light. Cultural spectacle."},
+        {"festival": "durga_puja", "prompt": "Kolkata Durga Puja pandal at night, ornate goddess idol, dramatic lighting, crowds, artistic installation. Grand, devotional, artistic."},
+        {"festival": "onam", "prompt": "Onam celebration in Kerala, boat race on backwaters, flower carpet (pookalam), sadya feast on banana leaf. Traditional, colorful, joyful."},
+        {"festival": "ganesh_chaturthi", "prompt": "Ganesh Chaturthi visarjan procession in Mumbai, massive decorated idol, dancing crowds, colored powder, monsoon sky. Energy, devotion, spectacle."}
+      ]
+    }
+  }
+}
