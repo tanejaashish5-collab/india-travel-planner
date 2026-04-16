@@ -4,12 +4,12 @@
 
 const REGIONS = [
   { key: "north", label: "North", states: ["himachal-pradesh","uttarakhand","jammu-kashmir","ladakh","rajasthan","punjab","delhi","uttar-pradesh","chandigarh","haryana"] },
-  { key: "south", label: "South", states: ["karnataka","kerala","tamil-nadu","andhra-pradesh","telangana","goa"] },
+  { key: "south", label: "South", states: ["karnataka","kerala","tamil-nadu","andhra-pradesh","telangana","goa","puducherry"] },
   { key: "east", label: "East", states: ["west-bengal","bihar","jharkhand","odisha"] },
-  { key: "west", label: "West", states: ["gujarat","maharashtra"] },
+  { key: "west", label: "West", states: ["gujarat","maharashtra","daman-diu"] },
   { key: "central", label: "Central", states: ["madhya-pradesh","chhattisgarh"] },
   { key: "northeast", label: "Northeast", states: ["sikkim","arunachal-pradesh","assam","meghalaya","nagaland","manipur","mizoram","tripura"] },
-  { key: "islands", label: "Islands", states: ["andaman-nicobar"] },
+  { key: "islands", label: "Islands", states: ["andaman-nicobar","lakshadweep"] },
 ] as const;
 
 export type RegionKey = typeof REGIONS[number]["key"] | null;

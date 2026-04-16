@@ -22,12 +22,12 @@ const THEME_FILTERS: Record<string, { label: string; match: string[] }> = {
 /* ── Region detection from tags ── */
 const REGION_FILTERS: Record<string, { label: string; match: string[] }> = {
   north: { label: "North", match: ["North-India", "himachal", "uttarakhand", "rajasthan", "punjab", "delhi", "lucknow", "jaipur", "chandigarh"] },
-  south: { label: "South", match: ["south-india", "kerala", "tamil-nadu", "andhra", "andhra-pradesh", "telangana", "hyderabad", "kochi", "bengaluru", "karnataka"] },
+  south: { label: "South", match: ["south-india", "kerala", "tamil-nadu", "andhra", "andhra-pradesh", "telangana", "hyderabad", "kochi", "bengaluru", "karnataka", "puducherry", "pondicherry", "french"] },
   east: { label: "East", match: ["west-bengal", "kolkata", "bihar"] },
-  west: { label: "West", match: ["maharashtra", "mumbai", "goa", "gujarat", "konkan"] },
+  west: { label: "West", match: ["maharashtra", "mumbai", "goa", "gujarat", "konkan", "daman", "daman-diu", "portuguese"] },
   central: { label: "Central", match: ["madhya-pradesh"] },
   northeast: { label: "Northeast", match: ["Northeast", "Meghalaya", "sikkim", "assam"] },
-  islands: { label: "Islands", match: ["andaman", "nicobar", "lakshadweep", "island", "island-hopping"] },
+  islands: { label: "Islands", match: ["andaman", "nicobar", "lakshadweep", "island", "island-hopping", "coral", "maldives-alternative"] },
 };
 
 function getCollectionRegions(tags: string[]): string[] {

@@ -51,6 +51,9 @@ const REGION_SLUGS: Record<string, { stateId: string; displayName: string }> = {
   "nagaland": { stateId: "nagaland", displayName: "Nagaland" },
   "tripura": { stateId: "tripura", displayName: "Tripura" },
   "andaman-nicobar": { stateId: "andaman-nicobar", displayName: "Andaman & Nicobar Islands" },
+  "lakshadweep": { stateId: "lakshadweep", displayName: "Lakshadweep" },
+  "puducherry": { stateId: "puducherry", displayName: "Puducherry" },
+  "daman-diu": { stateId: "daman-diu", displayName: "Daman & Diu" },
 };
 
 /** Parse slug into { regionSlug?, monthSlug } or null if invalid */

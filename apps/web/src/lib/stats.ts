@@ -15,15 +15,15 @@ export interface AppStats {
 
 // Fallback values if DB is unavailable — keep these updated (April 2026, comprehensive backfill)
 export const FALLBACK: AppStats = {
-  destinations: 472,
-  places: 1040,
-  routes: 72,
-  festivals: 319,
-  collections: 88,
+  destinations: 480,
+  places: 1057,
+  routes: 74,
+  festivals: 325,
+  collections: 91,
   treks: 130,
-  states: 33,
-  traps: 108,
-  permits: 31,
+  states: 36,
+  traps: 109,
+  permits: 32,
   campingSpots: 110,
 };
 

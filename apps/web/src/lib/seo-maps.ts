@@ -23,6 +23,9 @@ export const STATE_MAP: Record<string, string> = {
   "telangana": "Telangana",
   "odisha": "Odisha",
   "andaman-nicobar": "Andaman & Nicobar Islands",
+  "lakshadweep": "Lakshadweep",
+  "puducherry": "Puducherry",
+  "daman-diu": "Daman & Diu",
 };
 
 export const REGION_GROUPS: Record<string, { name: string; states: string[] }> = {
@@ -32,7 +35,7 @@ export const REGION_GROUPS: Record<string, { name: string; states: string[] }> =
   },
   "south": {
     name: "South India",
-    states: ["karnataka", "kerala", "tamil-nadu", "andhra-pradesh", "telangana"],
+    states: ["karnataka", "kerala", "tamil-nadu", "andhra-pradesh", "telangana", "puducherry"],
   },
   "east": {
     name: "East India",
@@ -40,7 +43,7 @@ export const REGION_GROUPS: Record<string, { name: string; states: string[] }> =
   },
   "west": {
     name: "West India",
-    states: ["gujarat", "maharashtra", "goa"],
+    states: ["gujarat", "maharashtra", "goa", "daman-diu"],
   },
   "central": {
     name: "Central India",
@@ -52,7 +55,7 @@ export const REGION_GROUPS: Record<string, { name: string; states: string[] }> =
   },
   "islands": {
     name: "Islands",
-    states: ["andaman-nicobar"],
+    states: ["andaman-nicobar", "lakshadweep"],
   },
 };
 
