@@ -53,7 +53,13 @@ jobs:
           cache: "pip"
           cache-dependency-path: nakshiq-autoposter/requirements.txt
 
-      - name: Install dependencies
+      - name: Install system dependencies (ffmpeg for Reel generation)
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg
+          ffmpeg -version | head -1
+
+      - name: Install Python dependencies
         run: pip install -r nakshiq-autoposter/requirements.txt
 
       - name: Set run mode
