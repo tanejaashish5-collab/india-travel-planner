@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     ],
   },
   description:
-    "460+ destinations, 988+ places with monthly suitability scores, kids ratings, safety data, and AI-powered itineraries. The confidence engine for exploring India.",
+    "460+ destinations, 1,015+ places with monthly suitability scores, kids ratings, safety data, and AI-powered itineraries. The confidence engine for exploring India.",
   keywords: [
     "India travel planner",
     "North India travel guide",
@@ -77,7 +77,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "NakshIQ — Travel Intelligence for India",
     description:
-      "460+ destinations, 988+ places with monthly scores, kids ratings, safety data, and AI itineraries.",
+      "460+ destinations, 1,015+ places with monthly scores, kids ratings, safety data, and AI itineraries.",
     type: "website",
     locale: "en_IN",
     siteName: "NakshIQ",
@@ -87,7 +87,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "NakshIQ — Travel Intelligence for India",
-    description: "460+ destinations, 988+ places with monthly scores, kids ratings, safety data, and AI itineraries.",
+    description: "460+ destinations, 1,015+ places with monthly scores, kids ratings, safety data, and AI itineraries.",
     images: ["https://www.nakshiq.com/og-image.jpg"],
   },
 };
