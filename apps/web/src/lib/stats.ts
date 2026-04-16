@@ -13,18 +13,18 @@ export interface AppStats {
   campingSpots: number;
 }
 
-// Fallback values if DB is unavailable — keep these updated (April 2026, Odisha expansion)
+// Fallback values if DB is unavailable — keep these updated (April 2026, Odisha + Gujarat backfill)
 export const FALLBACK: AppStats = {
   destinations: 460,
-  places: 972,
-  routes: 66,
-  festivals: 290,
+  places: 988,
+  routes: 69,
+  festivals: 311,
   collections: 85,
-  treks: 110,
+  treks: 116,
   states: 32,
-  traps: 104,
-  permits: 27,
-  campingSpots: 95,
+  traps: 105,
+  permits: 29,
+  campingSpots: 98,
 };
 
 // No caching — always fetch fresh on server to avoid stale counts
