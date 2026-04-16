@@ -754,3 +754,10 @@
 2026-04-16 21:24:02  INFO          Requesting upload URL for reel_score_reveal_reel_score_reveal_gir-national-park.mp4 (8,266,446 bytes, video/mp4)
 2026-04-16 21:24:07  WARNING       Upload URL failed: {'error': 'Invalid API key', 'details': 'Invalid API key.'}
 2026-04-16 21:24:07  ERROR     Reel video upload failed.
+2026-04-16 11:26:30  INFO      ════════════════════════════════════════════════════════════
+2026-04-16 11:26:30  INFO      Nakshiq Autoposter · REEL · 2026-04-16 · weekday=3
+2026-04-16 11:26:30  INFO      ════════════════════════════════════════════════════════════
+2026-04-16 11:26:30  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-04-16 11:26:34  INFO      Synced → 20 destinations · 0 traps · 16 articles · total catalog=480
+2026-04-16 11:26:34  INFO      Format: score_reveal | Data: {'dest_name': 'Gir National Park', 'dest_slug': 'gir-national-park', 'month': 'April', 'score': 4, 'reason': 'Hot but lions come to water — excellent sightings'}
+2026-04-16 11:26:34  ERROR     Reel rendering failed.
