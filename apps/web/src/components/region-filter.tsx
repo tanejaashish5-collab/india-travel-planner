@@ -5,7 +5,7 @@
 const REGIONS = [
   { key: "north", label: "North", states: ["himachal-pradesh","uttarakhand","jammu-kashmir","ladakh","rajasthan","punjab","delhi","uttar-pradesh","chandigarh","haryana"] },
   { key: "south", label: "South", states: ["karnataka","kerala","tamil-nadu","andhra-pradesh","telangana","goa"] },
-  { key: "east", label: "East", states: ["west-bengal","bihar","jharkhand"] },
+  { key: "east", label: "East", states: ["west-bengal","bihar","jharkhand","odisha"] },
   { key: "west", label: "West", states: ["gujarat","maharashtra"] },
   { key: "central", label: "Central", states: ["madhya-pradesh","chhattisgarh"] },
   { key: "northeast", label: "Northeast", states: ["sikkim","arunachal-pradesh","assam","meghalaya","nagaland","manipur","mizoram","tripura"] },

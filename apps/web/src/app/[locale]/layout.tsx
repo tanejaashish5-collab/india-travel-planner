@@ -40,6 +40,10 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.nakshiq.com"),
+  alternates: {
+    canonical: "/",
+  },
   verification: {
     google: "RJwYea5dbs3YYGdeyGe1HtHl_lbmjn8IkZsP4x333bU",
   },
@@ -77,14 +81,14 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_IN",
     siteName: "NakshIQ",
-    url: "https://nakshiq.com",
-    images: [{ url: "https://nakshiq.com/og-image.jpg", width: 800, height: 450, alt: "NakshIQ — Travel Intelligence for India" }],
+    url: "https://www.nakshiq.com",
+    images: [{ url: "https://www.nakshiq.com/og-image.jpg", width: 800, height: 450, alt: "NakshIQ — Travel Intelligence for India" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "NakshIQ — Travel Intelligence for India",
     description: "438+ destinations, 930+ places with monthly scores, kids ratings, safety data, and AI itineraries.",
-    images: ["https://nakshiq.com/og-image.jpg"],
+    images: ["https://www.nakshiq.com/og-image.jpg"],
   },
 };
 
@@ -127,8 +131,8 @@ export default async function LocaleLayout({
             "@context": "https://schema.org",
             "@type": "Organization",
             name: "NakshIQ",
-            url: "https://nakshiq.com",
-            logo: "https://nakshiq.com/icon-192.png",
+            url: "https://www.nakshiq.com",
+            logo: "https://www.nakshiq.com/icon-192.png",
             description: "Travel intelligence for India. 340+ destinations with monthly scores, kids ratings, safety data, and AI-powered itineraries.",
             sameAs: [],
           }) }}

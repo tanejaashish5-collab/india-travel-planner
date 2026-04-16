@@ -15,7 +15,7 @@ import { STATE_MAP, ALL_STATE_SLUGS, ALL_MONTH_SLUGS } from "@/lib/seo-maps";
  */
 
 const LOCALES = ["en", "hi"] as const;
-const BASE = "https://nakshiq.com";
+const BASE = "https://www.nakshiq.com";
 
 const MONTH_SLUGS = ALL_MONTH_SLUGS;
 const STATE_SLUGS = ALL_STATE_SLUGS;
