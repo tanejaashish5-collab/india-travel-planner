@@ -22,6 +22,7 @@ export const STATE_MAP: Record<string, string> = {
   "andhra-pradesh": "Andhra Pradesh",
   "telangana": "Telangana",
   "odisha": "Odisha",
+  "andaman-nicobar": "Andaman & Nicobar Islands",
 };
 
 export const REGION_GROUPS: Record<string, { name: string; states: string[] }> = {
@@ -48,6 +49,10 @@ export const REGION_GROUPS: Record<string, { name: string; states: string[] }> =
   "northeast": {
     name: "Northeast India",
     states: ["sikkim", "arunachal-pradesh", "assam", "meghalaya", "nagaland", "manipur", "mizoram", "tripura"],
+  },
+  "islands": {
+    name: "Islands",
+    states: ["andaman-nicobar"],
   },
 };
 

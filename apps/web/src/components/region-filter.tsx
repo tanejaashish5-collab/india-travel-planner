@@ -9,6 +9,7 @@ const REGIONS = [
   { key: "west", label: "West", states: ["gujarat","maharashtra"] },
   { key: "central", label: "Central", states: ["madhya-pradesh","chhattisgarh"] },
   { key: "northeast", label: "Northeast", states: ["sikkim","arunachal-pradesh","assam","meghalaya","nagaland","manipur","mizoram","tripura"] },
+  { key: "islands", label: "Islands", states: ["andaman-nicobar"] },
 ] as const;
 
 export type RegionKey = typeof REGIONS[number]["key"] | null;

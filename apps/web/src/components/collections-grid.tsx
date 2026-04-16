@@ -16,6 +16,7 @@ const THEME_FILTERS: Record<string, { label: string; match: string[] }> = {
   weekend: { label: "Weekends", match: ["weekend", "day-trip", "short-trip", "getaway"] },
   offbeat: { label: "Offbeat", match: ["offbeat", "hidden", "secret", "unexplored", "digital-detox", "tribal", "craft", "artisan", "ikat", "kalamkari"] },
   seasonal: { label: "Seasonal", match: ["winter", "summer", "monsoon", "spring", "autumn", "seasonal", "rain"] },
+  beach: { label: "Beach & Island", match: ["beach", "island", "coral", "diving", "snorkeling", "andaman", "lakshadweep", "coastal", "water-sports"] },
 };
 
 /* ── Region detection from tags ── */
@@ -26,6 +27,7 @@ const REGION_FILTERS: Record<string, { label: string; match: string[] }> = {
   west: { label: "West", match: ["maharashtra", "mumbai", "goa", "gujarat", "konkan"] },
   central: { label: "Central", match: ["madhya-pradesh"] },
   northeast: { label: "Northeast", match: ["Northeast", "Meghalaya", "sikkim", "assam"] },
+  islands: { label: "Islands", match: ["andaman", "nicobar", "lakshadweep", "island", "island-hopping"] },
 };
 
 function getCollectionRegions(tags: string[]): string[] {

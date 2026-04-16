@@ -448,6 +448,7 @@ export function LandingHero({
                   { slug: "east", icon: "🎭", desc: "Temples, tigers, Durga Puja", hero: "darjeeling" },
                   { slug: "northeast", icon: "🌿", desc: "Living root bridges, tea gardens", hero: "cherrapunji" },
                   { slug: "central", icon: "🐅", desc: "Tiger reserves, tribal art", hero: "kanha" },
+                  { slug: "islands", icon: "🏝️", desc: "Beaches, diving, coral reefs", hero: "havelock-island" },
                 ] as const).map((r) => {
                   const region = REGION_GROUPS[r.slug];
                   if (!region || region.states.length === 0) return null;

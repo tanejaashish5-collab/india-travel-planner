@@ -15,16 +15,16 @@ export interface AppStats {
 
 // Fallback values if DB is unavailable — keep these updated (April 2026, comprehensive backfill)
 export const FALLBACK: AppStats = {
-  destinations: 460,
-  places: 1015,
-  routes: 69,
-  festivals: 311,
-  collections: 85,
-  treks: 125,
-  states: 32,
-  traps: 105,
-  permits: 29,
-  campingSpots: 106,
+  destinations: 472,
+  places: 1040,
+  routes: 72,
+  festivals: 319,
+  collections: 88,
+  treks: 130,
+  states: 33,
+  traps: 108,
+  permits: 31,
+  campingSpots: 110,
 };
 
 // No caching — always fetch fresh on server to avoid stale counts

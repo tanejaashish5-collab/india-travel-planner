@@ -50,6 +50,7 @@ const REGION_SLUGS: Record<string, { stateId: string; displayName: string }> = {
   "mizoram": { stateId: "mizoram", displayName: "Mizoram" },
   "nagaland": { stateId: "nagaland", displayName: "Nagaland" },
   "tripura": { stateId: "tripura", displayName: "Tripura" },
+  "andaman-nicobar": { stateId: "andaman-nicobar", displayName: "Andaman & Nicobar Islands" },
 };
 
 /** Parse slug into { regionSlug?, monthSlug } or null if invalid */
