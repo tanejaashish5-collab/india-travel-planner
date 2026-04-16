@@ -19,7 +19,7 @@ export const FALLBACK: AppStats = {
   places: 928,
   routes: 62,
   festivals: 274,
-  collections: 75,
+  collections: 82,
   treks: 104,
   states: 31,
   traps: 100,
