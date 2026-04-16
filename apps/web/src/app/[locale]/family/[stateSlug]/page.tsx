@@ -7,6 +7,7 @@ import Image from "next/image";
 import { STATE_MAP, getSupabase } from "@/lib/seo-maps";
 
 export const revalidate = 86400;
+export const dynamicParams = true;
 
 export async function generateMetadata({ params }: { params: Promise<{ stateSlug: string }> }): Promise<Metadata> {
   const { stateSlug } = await params;

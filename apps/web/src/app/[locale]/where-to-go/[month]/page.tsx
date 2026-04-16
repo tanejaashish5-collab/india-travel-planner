@@ -5,6 +5,7 @@ import { createClient } from "@supabase/supabase-js";
 import { notFound } from "next/navigation";
 
 export const revalidate = 86400;
+export const dynamicParams = true;
 
 const VALID_MONTHS = [
   "january","february","march","april","may","june",
@@ -122,8 +123,8 @@ export async function generateMetadata({
   const description = regionInfo
     ? `${score5Count} destinations in ${regionInfo.displayName} score 5/5 in ${monthName}. Ranked by weather, crowds, and road conditions.`
     : `${score5Count} destinations score 5/5 in ${monthName}. Ranked by monthly suitability with weather, crowds, and road data. No guesswork.`;
-  const canonicalUrl = `https://nakshiq.com/${locale}/where-to-go/${slug}`;
-  const ogImage = `https://nakshiq.com/og-image.jpg`;
+  const canonicalUrl = `https://www.nakshiq.com/${locale}/where-to-go/${slug}`;
+  const ogImage = `https://www.nakshiq.com/og-image.jpg`;
 
   return {
     title,
@@ -131,8 +132,8 @@ export async function generateMetadata({
     alternates: {
       canonical: canonicalUrl,
       languages: {
-        en: `https://nakshiq.com/en/where-to-go/${slug}`,
-        hi: `https://nakshiq.com/hi/where-to-go/${slug}`,
+        en: `https://www.nakshiq.com/en/where-to-go/${slug}`,
+        hi: `https://www.nakshiq.com/hi/where-to-go/${slug}`,
       },
     },
     openGraph: {
@@ -235,13 +236,13 @@ export default async function WhereToGoPage({
       "@type": "ListItem",
       position: 1,
       name: "NakshIQ",
-      item: `https://nakshiq.com/${locale}`,
+      item: `https://www.nakshiq.com/${locale}`,
     },
     {
       "@type": "ListItem",
       position: 2,
       name: "Where to Go",
-      item: `https://nakshiq.com/${locale}/where-to-go`,
+      item: `https://www.nakshiq.com/${locale}/where-to-go`,
     },
   ];
 
@@ -250,20 +251,20 @@ export default async function WhereToGoPage({
       "@type": "ListItem",
       position: 3,
       name: regionInfo.displayName,
-      item: `https://nakshiq.com/${locale}/region/${regionInfo.stateId}`,
+      item: `https://www.nakshiq.com/${locale}/region/${regionInfo.stateId}`,
     });
     breadcrumbItems.push({
       "@type": "ListItem",
       position: 4,
       name: `${regionInfo.displayName} in ${monthName}`,
-      item: `https://nakshiq.com/${locale}/where-to-go/${slug}`,
+      item: `https://www.nakshiq.com/${locale}/where-to-go/${slug}`,
     });
   } else {
     breadcrumbItems.push({
       "@type": "ListItem",
       position: 3,
       name: monthName,
-      item: `https://nakshiq.com/${locale}/where-to-go/${slug}`,
+      item: `https://www.nakshiq.com/${locale}/where-to-go/${slug}`,
     });
   }
 

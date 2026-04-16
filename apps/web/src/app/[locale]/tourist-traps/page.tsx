@@ -7,7 +7,7 @@ import { createClient } from "@supabase/supabase-js";
 
 export const revalidate = 3600;
 
-const SITE = "https://nakshiq.com";
+const SITE = "https://www.nakshiq.com";
 
 export async function generateMetadata({
   params,

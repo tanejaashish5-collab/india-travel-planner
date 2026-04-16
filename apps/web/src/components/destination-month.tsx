@@ -574,7 +574,7 @@ export function DestinationMonth({
       {/* WhatsApp Share */}
       <div className="flex">
         <WhatsAppShare
-          message={`${destination.name} in ${monthName}: ${score}/5. ${currentMonth?.note?.substring(0, 100) || ""}. Full guide: https://nakshiq.com/en/destination/${destination.id}/${monthSlug}`}
+          message={`${destination.name} in ${monthName}: ${score}/5. ${currentMonth?.note?.substring(0, 100) || ""}. Full guide: https://www.nakshiq.com/en/destination/${destination.id}/${monthSlug}`}
         />
       </div>
 

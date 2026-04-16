@@ -6,6 +6,7 @@ import { createClient } from "@supabase/supabase-js";
 import { notFound } from "next/navigation";
 
 export const revalidate = 3600; // Revalidate every hour
+export const dynamicParams = true; // Allow pages not pre-generated at build time
 
 export async function generateStaticParams() {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
@@ -43,8 +44,8 @@ export async function generateMetadata({
 
   const title = `${name} — ${stateName || "India"} Travel Guide`;
   const description = `${tagline} | ${data.difficulty} difficulty${data.elevation_m ? ` · ${data.elevation_m}m` : ""}. Monthly scores, kids ratings, safety data & infrastructure reality for ${name}.`;
-  const canonicalUrl = `https://nakshiq.com/${locale}/destination/${id}`;
-  const imageUrl = `https://nakshiq.com/images/destinations/${id}.jpg`;
+  const canonicalUrl = `https://www.nakshiq.com/${locale}/destination/${id}`;
+  const imageUrl = `https://www.nakshiq.com/images/destinations/${id}.jpg`;
 
   return {
     title,
@@ -52,8 +53,8 @@ export async function generateMetadata({
     alternates: {
       canonical: canonicalUrl,
       languages: {
-        en: `https://nakshiq.com/en/destination/${id}`,
-        hi: `https://nakshiq.com/hi/destination/${id}`,
+        en: `https://www.nakshiq.com/en/destination/${id}`,
+        hi: `https://www.nakshiq.com/hi/destination/${id}`,
       },
     },
     openGraph: {
@@ -235,8 +236,8 @@ export default async function DestinationPage({
     "@type": "TouristDestination",
     name: dest.name,
     description: dest.tagline || `Travel guide for ${dest.name}`,
-    url: `https://nakshiq.com/en/destination/${id}`,
-    image: `https://nakshiq.com/images/destinations/${id}.jpg`,
+    url: `https://www.nakshiq.com/en/destination/${id}`,
+    image: `https://www.nakshiq.com/images/destinations/${id}.jpg`,
     ...(dest.elevation_m && { elevation: { "@type": "QuantitativeValue", value: dest.elevation_m, unitCode: "MTR" } }),
     ...(dest.coords && {
       geo: { "@type": "GeoCoordinates", latitude: dest.coords.lat, longitude: dest.coords.lng },
@@ -253,10 +254,10 @@ export default async function DestinationPage({
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: "https://nakshiq.com/en" },
-      { "@type": "ListItem", position: 2, name: "Destinations", item: "https://nakshiq.com/en/explore" },
-      { "@type": "ListItem", position: 3, name: stateName || "India", item: `https://nakshiq.com/en/region/${dest.state_id || "india"}` },
-      { "@type": "ListItem", position: 4, name: dest.name, item: `https://nakshiq.com/en/destination/${id}` },
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.nakshiq.com/en" },
+      { "@type": "ListItem", position: 2, name: "Destinations", item: "https://www.nakshiq.com/en/explore" },
+      { "@type": "ListItem", position: 3, name: stateName || "India", item: `https://www.nakshiq.com/en/region/${dest.state_id || "india"}` },
+      { "@type": "ListItem", position: 4, name: dest.name, item: `https://www.nakshiq.com/en/destination/${id}` },
     ],
   };
 

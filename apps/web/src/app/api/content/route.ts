@@ -31,7 +31,7 @@ export async function GET(req: NextRequest) {
   const month = Number(params.get("month") || new Date().getMonth() + 1);
   const minScore = Number(params.get("min_score") || 0);
 
-  const baseUrl = "https://nakshiq.com";
+  const baseUrl = "https://www.nakshiq.com";
 
   try {
     if (type === "stats") {

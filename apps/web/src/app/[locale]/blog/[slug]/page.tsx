@@ -6,6 +6,7 @@ import { BlogArticle } from "@/components/blog-article";
 import { createClient } from "@supabase/supabase-js";
 
 export const revalidate = 86400;
+export const dynamicParams = true;
 
 function getSupabase() {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
@@ -29,8 +30,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
   const title = data.seo_title || data.title;
   const description = data.seo_description || data.excerpt;
-  const canonicalUrl = `https://nakshiq.com/${locale || "en"}/blog/${slug}`;
-  const imageUrl = data.cover_image_url || "https://nakshiq.com/og-image.jpg";
+  const canonicalUrl = `https://www.nakshiq.com/${locale || "en"}/blog/${slug}`;
+  const imageUrl = data.cover_image_url || "https://www.nakshiq.com/og-image.jpg";
 
   return {
     title,
@@ -38,8 +39,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     alternates: {
       canonical: canonicalUrl,
       languages: {
-        en: `https://nakshiq.com/en/blog/${slug}`,
-        hi: `https://nakshiq.com/hi/blog/${slug}`,
+        en: `https://www.nakshiq.com/en/blog/${slug}`,
+        hi: `https://www.nakshiq.com/hi/blog/${slug}`,
       },
     },
     openGraph: {
@@ -140,17 +141,17 @@ export default async function BlogArticlePage({ params }: { params: Promise<{ sl
     "@type": "Article",
     headline: article.title,
     description: article.excerpt || article.subtitle,
-    url: `https://nakshiq.com/en/blog/${slug}`,
+    url: `https://www.nakshiq.com/en/blog/${slug}`,
     datePublished: article.published_at,
     ...(article.cover_image_url && { image: article.cover_image_url }),
-    author: { "@type": "Organization", name: "NakshIQ", url: "https://nakshiq.com" },
+    author: { "@type": "Organization", name: "NakshIQ", url: "https://www.nakshiq.com" },
     publisher: {
       "@type": "Organization",
       name: "NakshIQ",
-      url: "https://nakshiq.com",
-      logo: { "@type": "ImageObject", url: "https://nakshiq.com/icon-192.png" },
+      url: "https://www.nakshiq.com",
+      logo: { "@type": "ImageObject", url: "https://www.nakshiq.com/icon-192.png" },
     },
-    mainEntityOfPage: { "@type": "WebPage", "@id": `https://nakshiq.com/en/blog/${slug}` },
+    mainEntityOfPage: { "@type": "WebPage", "@id": `https://www.nakshiq.com/en/blog/${slug}` },
     ...(article.reading_time && { timeRequired: `PT${article.reading_time}M` }),
   };
 
@@ -159,9 +160,9 @@ export default async function BlogArticlePage({ params }: { params: Promise<{ sl
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: "https://nakshiq.com/en" },
-      { "@type": "ListItem", position: 2, name: "Blog", item: "https://nakshiq.com/en/blog" },
-      { "@type": "ListItem", position: 3, name: article.title, item: `https://nakshiq.com/en/blog/${slug}` },
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.nakshiq.com/en" },
+      { "@type": "ListItem", position: 2, name: "Blog", item: "https://www.nakshiq.com/en/blog" },
+      { "@type": "ListItem", position: 3, name: article.title, item: `https://www.nakshiq.com/en/blog/${slug}` },
     ],
   };
 

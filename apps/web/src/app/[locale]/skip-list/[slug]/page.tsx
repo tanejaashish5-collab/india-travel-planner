@@ -6,8 +6,9 @@ import { createClient } from "@supabase/supabase-js";
 import { notFound } from "next/navigation";
 
 export const revalidate = 86400;
+export const dynamicParams = true;
 
-const SITE = "https://nakshiq.com";
+const SITE = "https://www.nakshiq.com";
 
 interface TrapAlternative {
   trap_destination_id: string;

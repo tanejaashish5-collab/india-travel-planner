@@ -8,6 +8,7 @@ import { createClient } from "@supabase/supabase-js";
 import { STATE_MAP, getRegionNameForState } from "@/lib/seo-maps";
 
 export const revalidate = 86400;
+export const dynamicParams = true;
 
 export async function generateMetadata({
   params,

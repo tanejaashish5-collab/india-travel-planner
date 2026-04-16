@@ -45,13 +45,13 @@ export default async function IndiaTravel() {
         "@type": "ListItem",
         position: 1,
         name: "Home",
-        item: "https://nakshiq.com",
+        item: "https://www.nakshiq.com",
       },
       {
         "@type": "ListItem",
         position: 2,
         name: "India Travel Guide",
-        item: "https://nakshiq.com/en/india-travel",
+        item: "https://www.nakshiq.com/en/india-travel",
       },
     ],
   };

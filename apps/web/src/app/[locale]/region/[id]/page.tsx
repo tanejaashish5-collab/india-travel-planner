@@ -5,6 +5,7 @@ import { createClient } from "@supabase/supabase-js";
 import { notFound } from "next/navigation";
 
 export const revalidate = 86400;
+export const dynamicParams = true;
 
 async function getRegion(id: string) {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;

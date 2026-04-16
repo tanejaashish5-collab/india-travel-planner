@@ -74,8 +74,8 @@ export async function generateMetadata({
   const title = `${name} in ${monthName} — ${score}/5 · When to Visit`;
   const ogTitle = `${name} in ${monthName} — ${score}/5 | NakshIQ`;
   const description = `${name} scored ${score}/5 for ${monthName}. ${note}. Monthly weather, road conditions, kids safety, and infrastructure data for ${name}, ${stateName || "India"}.`;
-  const canonicalUrl = `https://nakshiq.com/${locale}/destination/${id}/${month}`;
-  const imageUrl = `https://nakshiq.com/api/og?dest=${encodeURIComponent(name)}&month=${monthName}&score=${score}&note=${encodeURIComponent(note?.substring(0, 80) || '')}`;
+  const canonicalUrl = `https://www.nakshiq.com/${locale}/destination/${id}/${month}`;
+  const imageUrl = `https://www.nakshiq.com/api/og?dest=${encodeURIComponent(name)}&month=${monthName}&score=${score}&note=${encodeURIComponent(note?.substring(0, 80) || '')}`;
 
   return {
     title,
@@ -83,8 +83,8 @@ export async function generateMetadata({
     alternates: {
       canonical: canonicalUrl,
       languages: {
-        en: `https://nakshiq.com/en/destination/${id}/${month}`,
-        hi: `https://nakshiq.com/hi/destination/${id}/${month}`,
+        en: `https://www.nakshiq.com/en/destination/${id}/${month}`,
+        hi: `https://www.nakshiq.com/hi/destination/${id}/${month}`,
       },
     },
     openGraph: {
@@ -197,15 +197,15 @@ export default async function DestinationMonthPage({
     author: {
       "@type": "Organization",
       name: "NakshIQ",
-      url: "https://nakshiq.com",
+      url: "https://www.nakshiq.com",
     },
     publisher: {
       "@type": "Organization",
       name: "NakshIQ",
-      url: "https://nakshiq.com",
+      url: "https://www.nakshiq.com",
     },
-    image: `https://nakshiq.com/images/destinations/${id}.jpg`,
-    url: `https://nakshiq.com/${locale}/destination/${id}/${month}`,
+    image: `https://www.nakshiq.com/images/destinations/${id}.jpg`,
+    url: `https://www.nakshiq.com/${locale}/destination/${id}/${month}`,
   };
 
   // Schema.org JSON-LD — BreadcrumbList
@@ -217,25 +217,25 @@ export default async function DestinationMonthPage({
         "@type": "ListItem",
         position: 1,
         name: "Home",
-        item: `https://nakshiq.com/${locale}`,
+        item: `https://www.nakshiq.com/${locale}`,
       },
       {
         "@type": "ListItem",
         position: 2,
         name: "Destinations",
-        item: `https://nakshiq.com/${locale}/explore`,
+        item: `https://www.nakshiq.com/${locale}/explore`,
       },
       {
         "@type": "ListItem",
         position: 3,
         name: destination.name,
-        item: `https://nakshiq.com/${locale}/destination/${id}`,
+        item: `https://www.nakshiq.com/${locale}/destination/${id}`,
       },
       {
         "@type": "ListItem",
         position: 4,
         name: monthName,
-        item: `https://nakshiq.com/${locale}/destination/${id}/${month}`,
+        item: `https://www.nakshiq.com/${locale}/destination/${id}/${month}`,
       },
     ],
   };

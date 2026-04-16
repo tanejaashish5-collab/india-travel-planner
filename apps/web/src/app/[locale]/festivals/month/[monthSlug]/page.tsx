@@ -6,6 +6,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 
 export const revalidate = 86400;
+export const dynamicParams = true;
 
 const MONTH_MAP: Record<string, { num: number; name: string }> = {
   january: { num: 1, name: "January" }, february: { num: 2, name: "February" },

@@ -7,6 +7,7 @@ import { notFound } from "next/navigation";
 import { DIFFICULTY_MAP } from "@/lib/seo-maps";
 
 export const revalidate = 86400;
+export const dynamicParams = true;
 
 function getSupabase() {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;

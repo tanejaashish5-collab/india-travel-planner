@@ -6,6 +6,7 @@ import { createClient } from "@supabase/supabase-js";
 import { notFound } from "next/navigation";
 
 export const revalidate = 86400;
+export const dynamicParams = true;
 
 const MONTH_NAMES = [
   "",
@@ -59,8 +60,8 @@ export async function generateMetadata({
 
   const title = `${name} with Kids — Family Travel Guide | NakshIQ`;
   const description = `Is ${name} safe for families? Kids rating: ${kf?.rating ?? "N/A"}/5. Month-by-month family suitability, hospital distance, road conditions & family-friendly activities for ${name}, ${stateName || "India"}.`;
-  const canonicalUrl = `https://nakshiq.com/${locale}/with-kids/${id}`;
-  const imageUrl = `https://nakshiq.com/images/destinations/${id}.jpg`;
+  const canonicalUrl = `https://www.nakshiq.com/${locale}/with-kids/${id}`;
+  const imageUrl = `https://www.nakshiq.com/images/destinations/${id}.jpg`;
 
   return {
     title,
@@ -68,8 +69,8 @@ export async function generateMetadata({
     alternates: {
       canonical: canonicalUrl,
       languages: {
-        en: `https://nakshiq.com/en/with-kids/${id}`,
-        hi: `https://nakshiq.com/hi/with-kids/${id}`,
+        en: `https://www.nakshiq.com/en/with-kids/${id}`,
+        hi: `https://www.nakshiq.com/hi/with-kids/${id}`,
       },
     },
     openGraph: {
@@ -209,25 +210,25 @@ export default async function WithKidsPage({
         "@type": "ListItem",
         position: 1,
         name: "Home",
-        item: `https://nakshiq.com/${locale}`,
+        item: `https://www.nakshiq.com/${locale}`,
       },
       {
         "@type": "ListItem",
         position: 2,
         name: "Destinations",
-        item: `https://nakshiq.com/${locale}/explore`,
+        item: `https://www.nakshiq.com/${locale}/explore`,
       },
       {
         "@type": "ListItem",
         position: 3,
         name: dest.name,
-        item: `https://nakshiq.com/${locale}/destination/${id}`,
+        item: `https://www.nakshiq.com/${locale}/destination/${id}`,
       },
       {
         "@type": "ListItem",
         position: 4,
         name: "With Kids",
-        item: `https://nakshiq.com/${locale}/with-kids/${id}`,
+        item: `https://www.nakshiq.com/${locale}/with-kids/${id}`,
       },
     ],
   };

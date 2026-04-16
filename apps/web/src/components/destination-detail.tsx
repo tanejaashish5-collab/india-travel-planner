@@ -123,7 +123,7 @@ export function DestinationDetail({ dest }: { dest: any }) {
               />
               {/* WhatsApp */}
               <WhatsAppShare
-                message={`${displayName} — ${displayTagline}. Travel guide: https://nakshiq.com/en/destination/${dest.id}`}
+                message={`${displayName} — ${displayTagline}. Travel guide: https://www.nakshiq.com/en/destination/${dest.id}`}
               />
               {/* Save Button */}
               <button
