@@ -482,8 +482,17 @@ def render_reel(
         f"[out]"
     )
 
-    ffmpeg_bin = shutil.which("ffmpeg") or "ffmpeg"
-    print(f"ffmpeg binary: {ffmpeg_bin}")
+    import os
+    # Try multiple locations — GitHub Actions ubuntu has ffmpeg at /usr/bin/ffmpeg
+    ffmpeg_bin = shutil.which("ffmpeg")
+    if not ffmpeg_bin:
+        for candidate in ["/usr/bin/ffmpeg", "/usr/local/bin/ffmpeg"]:
+            if os.path.isfile(candidate):
+                ffmpeg_bin = candidate
+                break
+    ffmpeg_bin = ffmpeg_bin or "ffmpeg"
+    print(f"ffmpeg binary: {ffmpeg_bin} (exists={os.path.isfile(ffmpeg_bin)})")
+    print(f"PATH: {os.environ.get('PATH', 'NOT SET')[:300]}")
     print(f"Video path: {video_path} (exists={video_path.exists()}, size={video_path.stat().st_size if video_path.exists() else 0})")
 
     cmd = [
@@ -511,9 +520,21 @@ def render_reel(
     except subprocess.TimeoutExpired:
         print("ffmpeg timed out (120s)")
         return None
-    except FileNotFoundError:
-        print("ffmpeg not found — install ffmpeg to generate Reels")
-        return None
+    except FileNotFoundError as e:
+        print(f"ffmpeg not found — {e}")
+        print(f"  cmd[0]={cmd[0]}")
+        # Last-ditch: try shell=True
+        try:
+            print("  Retrying with shell=True...")
+            result = subprocess.run(" ".join(cmd), shell=True, capture_output=True, text=True, timeout=120)
+            if result.returncode != 0:
+                print(f"  shell=True also failed:\n{result.stderr[-500:]}")
+                return None
+            print(f"Reel rendered (shell): {out_path.name} ({out_path.stat().st_size // 1024} KB)")
+            return out_path
+        except Exception as e2:
+            print(f"  shell=True exception: {e2}")
+            return None
 
 
 # ── Convenience: build a Reel from Nakshiq API data ──────────────────────
