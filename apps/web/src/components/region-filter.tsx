@@ -33,7 +33,7 @@ export function getStateId(row: any): string | null {
 export function stateInRegion(stateId: string | null, regionKey: string): boolean {
   if (!stateId) return false;
   const region = REGIONS.find((r) => r.key === regionKey);
-  return region?.states.includes(stateId as any) ?? false;
+  return region ? (region.states as readonly string[]).includes(stateId) : false;
 }
 
 export function RegionFilterBar({
