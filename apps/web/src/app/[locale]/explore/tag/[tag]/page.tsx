@@ -9,6 +9,14 @@ import { localeAlternates } from "@/lib/seo-utils";
 export const revalidate = 86400;
 export const dynamicParams = true;
 
+// Pre-render the 8 highest-traffic tag pages at build time (× 2 locales = 16).
+// Other tag combos fall back to on-demand ISR.
+export function generateStaticParams() {
+  const topTags = ["offbeat", "trek", "spiritual", "heritage", "wildlife", "family", "winter", "adventure"];
+  const locales = ["en", "hi"];
+  return locales.flatMap((locale) => topTags.map((tag) => ({ locale, tag })));
+}
+
 function getSupabase() {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;

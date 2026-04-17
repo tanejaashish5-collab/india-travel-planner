@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { createClient } from "@supabase/supabase-js";
+import { unstable_cache } from "next/cache";
 import { STATE_MAP, ALL_STATE_SLUGS, ALL_MONTH_SLUGS } from "@/lib/seo-maps";
 
 /*
@@ -64,6 +65,19 @@ function getSupabase() {
   return createClient(url, key);
 }
 
+// Cache destination IDs across sitemap chunks (chunk 1 + chunk 4 both need them).
+// 6hr TTL — destinations are added rarely.
+const getDestinationIds = unstable_cache(
+  async (): Promise<string[]> => {
+    const supabase = getSupabase();
+    if (!supabase) return [];
+    const { data } = await supabase.from("destinations").select("id").order("id");
+    return (data ?? []).map((d: any) => d.id);
+  },
+  ["sitemap-destination-ids-v1"],
+  { revalidate: 21600, tags: ["sitemap"] }
+);
+
 export default async function sitemap(props: {
   id: Promise<string>;
 }): Promise<MetadataRoute.Sitemap> {
@@ -105,17 +119,15 @@ export default async function sitemap(props: {
 
   // ─── Chunk 1: Destinations + destination-month pages ───
   if (id === "1") {
-    const supabase = getSupabase();
-    if (!supabase) return [];
+    const destIds = await getDestinationIds();
+    if (!destIds.length) return [];
 
-    const { data: dests } = await supabase.from("destinations").select("id").order("id");
-
-    const destEntries = (dests ?? []).flatMap((d: any) =>
-      entry(`destination/${d.id}`, "weekly", 0.8)
+    const destEntries = destIds.flatMap((dId) =>
+      entry(`destination/${dId}`, "weekly", 0.8)
     );
 
-    const destMonthEntries = (dests ?? []).flatMap((d: any) =>
-      MONTH_SLUGS.flatMap((month) => entry(`destination/${d.id}/${month}`, "monthly", 0.7))
+    const destMonthEntries = destIds.flatMap((dId) =>
+      MONTH_SLUGS.flatMap((month) => entry(`destination/${dId}/${month}`, "monthly", 0.7))
     );
 
     return [...destEntries, ...destMonthEntries];
@@ -217,9 +229,9 @@ export default async function sitemap(props: {
     const supabase = getSupabase();
     if (!supabase) return [];
 
-    const [trapResult, destResult, regionResult] = await Promise.all([
+    const [trapResult, destIds, regionResult] = await Promise.all([
       supabase.from("tourist_trap_alternatives").select("trap_destination_id, alternative_destination_id").order("rank"),
-      supabase.from("destinations").select("id").order("id"),
+      getDestinationIds(),
       supabase.from("regions").select("id").order("id"),
     ]);
 
@@ -249,8 +261,8 @@ export default async function sitemap(props: {
     });
 
     // With-kids pages
-    const kidsEntries = (destResult.data ?? []).flatMap((d: any) =>
-      entry(`with-kids/${d.id}`, "monthly", 0.6)
+    const kidsEntries = destIds.flatMap((dId) =>
+      entry(`with-kids/${dId}`, "monthly", 0.6)
     );
 
     // Region × month pages
