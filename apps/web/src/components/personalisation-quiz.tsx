@@ -124,11 +124,151 @@ export function PersonalisationQuiz() {
 
   return (
     <AnimatePresence>
+      {/* Scrim — sits below tab bar (z-30) so nav stays usable */}
       <motion.div
+        key="scrim"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm px-4"
+        className="fixed inset-0 z-30 bg-black/40 md:hidden"
+        onClick={dismiss}
+      />
+
+      {/* Bottom sheet — above scrim (z-35) but below tab bar (z-40) */}
+      <motion.div
+        key="sheet"
+        initial={{ y: "100%" }}
+        animate={{ y: 0 }}
+        exit={{ y: "100%" }}
+        transition={{ type: "spring", damping: 28, stiffness: 300 }}
+        drag="y"
+        dragConstraints={{ top: 0, bottom: 0 }}
+        dragElastic={0.2}
+        onDragEnd={(_, info) => {
+          if (info.offset.y > 100 || info.velocity.y > 500) dismiss();
+        }}
+        className="fixed bottom-0 left-0 right-0 z-[35] rounded-t-2xl border-t border-border bg-card shadow-2xl overflow-hidden md:hidden pb-safe"
+        style={{ maxHeight: "70vh" }}
+      >
+        {/* Drag handle */}
+        <div className="flex justify-center pt-3 pb-1">
+          <div className="h-1 w-10 rounded-full bg-muted-foreground/30" />
+        </div>
+
+        {/* Progress bar */}
+        <div className="h-0.5 bg-muted mx-4 rounded-full overflow-hidden">
+          <motion.div
+            className="h-full bg-primary rounded-full"
+            animate={{ width: `${((step + 1) / (STEPS.length + 1)) * 100}%` }}
+            transition={{ duration: 0.3 }}
+          />
+        </div>
+
+        <div className="px-5 pt-4 pb-20 overflow-y-auto" style={{ maxHeight: "calc(70vh - 3rem)" }}>
+          {/* Results screen */}
+          {results.length > 0 ? (
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="text-center space-y-5"
+            >
+              <div className="text-3xl">🎯</div>
+              <h2 className="text-xl font-bold">Your matches are ready</h2>
+              <p className="text-sm text-muted-foreground">
+                Filtered the best destinations for you.
+              </p>
+              <div className="flex flex-col gap-2.5">
+                <Link
+                  href={results[0]}
+                  onClick={dismiss}
+                  className="rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground hover:bg-primary/90 transition-colors shadow-lg"
+                >
+                  Show me my matches →
+                </Link>
+                <Link
+                  href={results[1]}
+                  onClick={dismiss}
+                  className="rounded-full border border-border px-5 py-2.5 text-sm font-semibold hover:bg-muted transition-colors"
+                >
+                  Or build an AI itinerary
+                </Link>
+              </div>
+            </motion.div>
+          ) : (
+            /* Question screens */
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={step}
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -20 }}
+                transition={{ duration: 0.2 }}
+              >
+                <div className="flex items-center justify-between mb-3">
+                  <p className="text-[10px] text-primary font-medium uppercase tracking-widest">
+                    Step {step + 1} of {STEPS.length}
+                  </p>
+                  <button
+                    onClick={dismiss}
+                    className="text-xs text-muted-foreground hover:text-foreground transition-colors px-2 py-1"
+                  >
+                    Skip
+                  </button>
+                </div>
+                <h2 className="text-xl font-bold mb-4">{STEPS[step].question}</h2>
+
+                <div className="grid grid-cols-2 gap-2.5">
+                  {STEPS[step].options.map((opt) => (
+                    <button
+                      key={opt.id}
+                      onClick={() => selectOption(STEPS[step].key, opt.id)}
+                      className={`text-left rounded-xl border border-border p-3 hover:border-primary/50 hover:bg-primary/5 transition-all duration-200 ${
+                        answers[STEPS[step].key as keyof QuizAnswers] === opt.id
+                          ? "border-primary bg-primary/10"
+                          : ""
+                      }`}
+                    >
+                      <div className="text-lg mb-0.5">{opt.icon}</div>
+                      <div className="font-semibold text-xs">{opt.label}</div>
+                      <div className="text-[10px] text-muted-foreground mt-0.5 leading-tight">{opt.desc}</div>
+                    </button>
+                  ))}
+                </div>
+
+                {/* Month selector on last step */}
+                {step === STEPS.length - 1 && (
+                  <div className="mt-4">
+                    <p className="text-xs font-medium mb-2">When?</p>
+                    <div className="grid grid-cols-6 gap-1">
+                      {Array.from({ length: 12 }, (_, i) => i + 1).map((m) => (
+                        <button
+                          key={m}
+                          onClick={() => setAnswers({ ...answers, month: m })}
+                          className={`rounded-lg py-1.5 text-[10px] font-medium transition-all ${
+                            answers.month === m
+                              ? "bg-primary text-primary-foreground"
+                              : "bg-muted/50 text-muted-foreground hover:bg-muted"
+                          }`}
+                        >
+                          {MONTH_NAMES[m]}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </motion.div>
+            </AnimatePresence>
+          )}
+        </div>
+      </motion.div>
+
+      {/* Desktop: keep centered modal */}
+      <motion.div
+        key="desktop-scrim"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        className="fixed inset-0 z-[100] hidden md:flex items-center justify-center bg-black/60 backdrop-blur-sm px-4"
         onClick={(e) => { if (e.target === e.currentTarget) dismiss(); }}
       >
         <motion.div
@@ -156,7 +296,6 @@ export function PersonalisationQuiz() {
           </div>
 
           <div className="p-6 sm:p-8">
-            {/* Results screen */}
             {results.length > 0 ? (
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
@@ -186,7 +325,6 @@ export function PersonalisationQuiz() {
                 </div>
               </motion.div>
             ) : (
-              /* Question screens */
               <AnimatePresence mode="wait">
                 <motion.div
                   key={step}
@@ -218,7 +356,6 @@ export function PersonalisationQuiz() {
                     ))}
                   </div>
 
-                  {/* Month selector on last step */}
                   {step === STEPS.length - 1 && (
                     <div className="mt-6">
                       <p className="text-sm font-medium mb-2">When?</p>
@@ -244,7 +381,6 @@ export function PersonalisationQuiz() {
             )}
           </div>
 
-          {/* Skip */}
           {results.length === 0 && (
             <div className="border-t border-border px-6 py-3 text-center">
               <button
