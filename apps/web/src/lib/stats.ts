@@ -1,4 +1,5 @@
 import { createClient } from "@supabase/supabase-js";
+import { unstable_cache } from "next/cache";
 
 export interface AppStats {
   destinations: number;
@@ -27,9 +28,7 @@ export const FALLBACK: AppStats = {
   campingSpots: 110,
 };
 
-// No caching — always fetch fresh on server to avoid stale counts
-export async function getAppStats(): Promise<AppStats> {
-
+async function fetchAppStats(): Promise<AppStats> {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
   if (!url || !key) return FALLBACK;
@@ -68,3 +67,9 @@ export async function getAppStats(): Promise<AppStats> {
     return FALLBACK;
   }
 }
+
+export const getAppStats = unstable_cache(
+  fetchAppStats,
+  ["app-stats-v1"],
+  { revalidate: 3600, tags: ["app-stats"] }
+);

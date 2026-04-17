@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { cache } from "react";
 import { notFound } from "next/navigation";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
@@ -15,17 +16,24 @@ function getSupabase() {
   return createClient(url, key);
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ slug: string; locale: string }> }): Promise<Metadata> {
-  const { slug, locale } = await params;
+// React cache() dedupes the query within a single request so generateMetadata
+// and the page body share one Supabase round-trip.
+const getArticle = cache(async (slug: string) => {
   const supabase = getSupabase();
-  if (!supabase) return {};
+  if (!supabase) return null;
 
   const { data } = await supabase
     .from("articles")
-    .select("title, seo_title, seo_description, excerpt, cover_image_url, reading_time, published_at")
+    .select("*")
     .eq("slug", slug)
     .single();
 
+  return data;
+});
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string; locale: string }> }): Promise<Metadata> {
+  const { slug, locale } = await params;
+  const data = await getArticle(slug);
   if (!data) return {};
 
   const title = data.seo_title || data.title;
@@ -59,19 +67,6 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       images: [imageUrl],
     },
   };
-}
-
-async function getArticle(slug: string) {
-  const supabase = getSupabase();
-  if (!supabase) return null;
-
-  const { data } = await supabase
-    .from("articles")
-    .select("*")
-    .eq("slug", slug)
-    .single();
-
-  return data;
 }
 
 async function getAdjacentArticles(currentPublishedAt: string) {

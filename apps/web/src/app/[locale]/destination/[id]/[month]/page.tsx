@@ -4,7 +4,7 @@ import { DestinationMonth } from "@/components/destination-month";
 import { createClient } from "@supabase/supabase-js";
 import { notFound } from "next/navigation";
 
-export const revalidate = 3600;
+export const revalidate = 21600;
 export const dynamicParams = true;
 
 // No generateStaticParams — 6,840 month pages render on-demand via ISR

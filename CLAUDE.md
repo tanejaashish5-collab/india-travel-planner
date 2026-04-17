@@ -8,6 +8,8 @@ NakshIQ — an India travel confidence engine. Monorepo with a Next.js 16 web ap
 
 ## Commands
 
+Package manager is pinned to `npm@11.9.0` — do not switch to pnpm/yarn.
+
 ```bash
 # Development (from repo root)
 npm run dev          # Starts both web + mobile via Turborepo
@@ -25,6 +27,18 @@ cd apps/mobile && npx expo start
 # Database
 npm run db:migrate   # Push Supabase migrations (supabase db push)
 npm run db:seed      # Seed data (tsx supabase/seed/seed.ts)
+
+# E2E tests (Playwright) — require BASE_URL env var
+BASE_URL=http://localhost:3000 npm test           # All projects
+BASE_URL=http://localhost:3000 npm run test:mobile    # Pixel 5 emulation
+BASE_URL=http://localhost:3000 npm run test:desktop   # 1440x900
+# Run one test file:
+BASE_URL=http://localhost:3000 npx playwright test tests/e2e/<file>.spec.ts
+# Single test by title:
+BASE_URL=http://localhost:3000 npx playwright test -g "<title substring>"
+
+# Lighthouse CI
+npm run lighthouse
 ```
 
 ## Architecture
@@ -43,7 +57,9 @@ npm run db:seed      # Seed data (tsx supabase/seed/seed.ts)
 
 **Key web dependencies**: `@supabase/supabase-js`, `@anthropic-ai/sdk` (AI itinerary), `next-intl`, `framer-motion`, `react-leaflet`, `openai`.
 
-**~80 components** in `apps/web/src/components/` — flat structure, one file per component.
+Components live flat in `apps/web/src/components/` — one file per component, no nested folders.
+
+**Per-app overrides**: `apps/web/CLAUDE.md` loads `apps/web/AGENTS.md`, which demands reading `node_modules/next/dist/docs/` before touching any Next.js API (see warning below). Check for nested `CLAUDE.md` / `AGENTS.md` when working in a subpath.
 
 ## Data Conventions
 

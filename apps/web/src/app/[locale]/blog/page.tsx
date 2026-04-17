@@ -6,7 +6,7 @@ import { NewsletterSignup } from "@/components/newsletter-signup";
 import { createClient } from "@supabase/supabase-js";
 import { localeAlternates } from "@/lib/seo-utils";
 
-export const revalidate = 3600;
+export const revalidate = 21600;
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;

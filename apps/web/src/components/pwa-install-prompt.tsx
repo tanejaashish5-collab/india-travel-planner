@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 
 export function PWAInstallPrompt() {
@@ -70,7 +71,7 @@ export function PWAInstallPrompt() {
         >
           <div className="bg-card border border-border rounded-2xl shadow-2xl p-4">
             <div className="flex items-start gap-3">
-              <img src="/icon-192.png" alt="NakshIQ" className="w-12 h-12 rounded-xl" />
+              <Image src="/icon-192.png" alt="NakshIQ" width={48} height={48} className="w-12 h-12 rounded-xl" />
               <div className="flex-1 min-w-0">
                 <p className="font-semibold text-sm">Access trips offline</p>
                 <p className="text-xs text-muted-foreground mt-0.5">

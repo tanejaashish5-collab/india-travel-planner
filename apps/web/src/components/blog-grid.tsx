@@ -58,10 +58,12 @@ function ImageWithFallback({
   src,
   alt,
   className,
+  priority,
 }: {
   src: string | null;
   alt: string;
   className?: string;
+  priority?: boolean;
 }) {
   const handleError = useCallback((e: React.SyntheticEvent<HTMLImageElement>) => {
     const img = e.target as HTMLImageElement;
@@ -88,6 +90,7 @@ function ImageWithFallback({
         fill
         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
         className={`${className} object-cover`}
+        priority={priority}
         onError={handleError}
       />
       <div
@@ -157,6 +160,7 @@ export function BlogGrid({ articles }: { articles: Article[] }) {
                     src={getImageUrl(firstFeatured)}
                     alt={firstFeatured.title}
                     className="transition-transform duration-700 group-hover:scale-105"
+                    priority
                   />
                 ) : (
                   <div className="w-full h-full bg-gradient-to-br from-primary/10 via-card to-amber-500/5" />

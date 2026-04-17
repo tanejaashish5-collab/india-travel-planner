@@ -5,7 +5,7 @@ import { WithKidsContent } from "@/components/with-kids-content";
 import { createClient } from "@supabase/supabase-js";
 import { notFound } from "next/navigation";
 
-export const revalidate = 86400;
+export const revalidate = 21600;
 export const dynamicParams = true;
 
 const MONTH_NAMES = [

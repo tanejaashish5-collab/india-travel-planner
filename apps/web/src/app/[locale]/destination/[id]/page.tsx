@@ -125,7 +125,7 @@ async function getDestination(id: string) {
     supabase.from("festivals").select("*").eq("destination_id", id).order("month"),
     supabase.from("local_stays").select("*").eq("destination_id", id).order("type"),
     supabase.from("destinations_with_coords").select("lat, lng").eq("id", id).single(),
-    supabase.from("traveler_notes").select("*").eq("destination_id", id).order("created_at", { ascending: false }),
+    supabase.from("traveler_notes").select("*").eq("destination_id", id).order("created_at", { ascending: false }).limit(20),
     supabase.from("destinations").select("id, name").order("name"),
     supabase
       .from("reviews")

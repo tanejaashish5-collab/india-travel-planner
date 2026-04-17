@@ -48,7 +48,7 @@ export function WeatherWidget({ destinationId }: { destinationId: string }) {
   return (
     <div className="rounded-xl border border-border/50 bg-card/50 backdrop-blur-sm p-3">
       <div className="flex items-center gap-3">
-        <img src={iconUrl} alt={weather.description} className="w-10 h-10 -ml-1" />
+        <img src={iconUrl} alt={weather.description} width={40} height={40} loading="lazy" decoding="async" className="w-10 h-10 -ml-1" />
         <div>
           <div className="flex items-baseline gap-1.5">
             <span className="text-2xl font-mono font-bold">{weather.temp}°</span>
