@@ -11,8 +11,8 @@ test.describe("Collections", () => {
 
   test("region filter works", async ({ page }) => {
     await page.goto("/en/collections");
-    // Click a region filter
-    const northBtn = page.getByRole("button", { name: "North" });
+    // Click a region filter — use first() since multiple filter bars exist
+    const northBtn = page.getByRole("button", { name: "North" }).first();
     if (await northBtn.isVisible()) {
       await northBtn.click();
       await page.waitForTimeout(300);

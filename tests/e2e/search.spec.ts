@@ -19,10 +19,16 @@ test.describe("Search", () => {
 
   test("search returns results for 'manali'", async ({ page }) => {
     await page.goto("/en/explore");
-    await page.locator("nav[aria-label='Main navigation'] button:nth-child(2)").click();
-    await page.getByPlaceholder(/search destinations/i).first().fill("manali");
+    // Open search
+    const searchBtn = page.locator("nav[aria-label='Main navigation'] button").nth(1);
+    await searchBtn.waitFor({ state: "visible" });
+    await searchBtn.click();
+    // Fill search
+    const input = page.getByPlaceholder(/search destinations/i).first();
+    await input.waitFor({ state: "visible" });
+    await input.fill("manali");
     // Wait for results
-    await page.waitForTimeout(500);
+    await page.waitForTimeout(800);
     await expect(page.getByText("Destinations").first()).toBeVisible();
   });
 });

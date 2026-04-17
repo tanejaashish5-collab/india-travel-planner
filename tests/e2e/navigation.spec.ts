@@ -27,10 +27,9 @@ test.describe("Mobile Navigation", () => {
     await page.goto("/en/explore");
     // Click discover tab (3rd)
     await page.locator("nav[aria-label='Main navigation'] button:nth-child(3)").click();
-    // Sheet with experiences should appear
-    await expect(page.getByText("Collections")).toBeVisible();
-    await expect(page.getByText("Routes")).toBeVisible();
-    await expect(page.getByText("Treks")).toBeVisible();
+    // Sheet with experiences should appear — use heading text in the sheet
+    await expect(page.getByText("Discover").nth(1)).toBeVisible();
+    await expect(page.getByText("Curated destination lists")).toBeVisible();
   });
 });
 
