@@ -4,7 +4,9 @@ import Link from "next/link";
 import Image from "next/image";
 import { useLocale, useTranslations } from "next-intl";
 import { motion } from "framer-motion";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState, useCallback } from "react";
+import { useRouter } from "next/navigation";
+import { createClient } from "@supabase/supabase-js";
 // LanguageToggle now in main Nav component
 import {
   FadeIn,
@@ -289,28 +291,7 @@ export function LandingHero({
           {/* Search bar */}
           <FadeIn delay={0.6}>
             <div className="max-w-xl mx-auto pt-2">
-              <div className="relative">
-                <input
-                  type="text"
-                  placeholder={locale === "hi" ? "जगह खोजें — स्पिति, मनाली, ऋषिकेश..." : "Search destinations — Spiti, Manali, Rishikesh..."}
-                  className="w-full rounded-full border border-border/50 bg-card/60 backdrop-blur-md px-6 py-4 text-sm placeholder:text-muted-foreground/60 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/50 shadow-lg"
-                  onKeyDown={(e) => {
-                    if (e.key === "Enter") {
-                      const q = (e.target as HTMLInputElement).value;
-                      if (q) window.location.href = `/${locale}/explore?q=${encodeURIComponent(q)}`;
-                    }
-                  }}
-                />
-                <button
-                  className="absolute right-2 top-1/2 -translate-y-1/2 rounded-full bg-primary px-4 py-2 text-xs font-semibold text-primary-foreground hover:bg-primary/90 transition-colors"
-                  onClick={(e) => {
-                    const input = (e.currentTarget.previousElementSibling as HTMLInputElement);
-                    if (input?.value) window.location.href = `/${locale}/explore?q=${encodeURIComponent(input.value)}`;
-                  }}
-                >
-                  {locale === "hi" ? "खोजें" : "Search"}
-                </button>
-              </div>
+              <HeroSearch locale={locale} />
               {/* Quick region shortcuts */}
               <div className="flex flex-wrap items-center justify-center gap-2 mt-3">
                 <span className="text-xs text-muted-foreground/50">{locale === "hi" ? "तुरंत:" : "Quick:"}</span>
@@ -781,5 +762,143 @@ export function LandingHero({
         </div>
       </section>
     </>
+  );
+}
+
+/* ─── Live search bar for hero section ────────────────────────────── */
+
+let _sb: ReturnType<typeof createClient> | null = null;
+function getSb() {
+  if (_sb) return _sb;
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+  if (!url || !key) return null;
+  _sb = createClient(url, key);
+  return _sb;
+}
+
+interface HeroResult {
+  id: string;
+  name: string;
+  state_name?: string;
+  type: "destination" | "collection" | "state";
+}
+
+function HeroSearch({ locale }: { locale: string }) {
+  const router = useRouter();
+  const [query, setQuery] = useState("");
+  const [results, setResults] = useState<HeroResult[]>([]);
+  const [active, setActive] = useState(-1);
+  const [focused, setFocused] = useState(false);
+  const timerRef = useRef<ReturnType<typeof setTimeout>>(undefined);
+  const wrapperRef = useRef<HTMLDivElement>(null);
+
+  const search = useCallback(async (q: string) => {
+    if (q.length < 2) { setResults([]); return; }
+    const sb = getSb();
+    if (!sb) return;
+
+    const pattern = `%${q}%`;
+    const [dests, colls, states] = await Promise.all([
+      sb.from("destinations").select("id, name, state:states(name)").ilike("name", pattern).limit(6),
+      sb.from("collections").select("id, name").ilike("name", pattern).limit(3),
+      sb.from("states").select("id, name").ilike("name", pattern).limit(3),
+    ]);
+
+    const items: HeroResult[] = [
+      ...((dests.data ?? []) as any[]).map((d: any) => ({
+        id: d.id, name: d.name,
+        state_name: Array.isArray(d.state) ? d.state[0]?.name : d.state?.name,
+        type: "destination" as const,
+      })),
+      ...((states.data ?? []) as any[]).map((s: any) => ({
+        id: s.id, name: s.name, type: "state" as const,
+      })),
+      ...((colls.data ?? []) as any[]).map((c: any) => ({
+        id: c.id, name: c.name, type: "collection" as const,
+      })),
+    ];
+    setResults(items);
+    setActive(-1);
+  }, []);
+
+  useEffect(() => {
+    clearTimeout(timerRef.current);
+    if (query.length < 2) { setResults([]); return; }
+    timerRef.current = setTimeout(() => search(query), 200);
+    return () => clearTimeout(timerRef.current);
+  }, [query, search]);
+
+  useEffect(() => {
+    function handler(e: MouseEvent) {
+      if (wrapperRef.current && !wrapperRef.current.contains(e.target as Node)) setFocused(false);
+    }
+    document.addEventListener("mousedown", handler);
+    return () => document.removeEventListener("mousedown", handler);
+  }, []);
+
+  function navigate(item: HeroResult) {
+    setFocused(false);
+    setQuery("");
+    setResults([]);
+    const path = item.type === "destination" ? `/${locale}/destination/${item.id}`
+      : item.type === "state" ? `/${locale}/state/${item.id}`
+      : `/${locale}/collections/${item.id}`;
+    router.push(path);
+  }
+
+  function handleKeyDown(e: React.KeyboardEvent) {
+    if (e.key === "ArrowDown") { e.preventDefault(); setActive((a) => Math.min(a + 1, results.length - 1)); }
+    else if (e.key === "ArrowUp") { e.preventDefault(); setActive((a) => Math.max(a - 1, 0)); }
+    else if (e.key === "Enter") {
+      if (active >= 0 && results[active]) navigate(results[active]);
+      else if (query) router.push(`/${locale}/explore?q=${encodeURIComponent(query)}`);
+    }
+    else if (e.key === "Escape") { setFocused(false); }
+  }
+
+  const showDropdown = focused && results.length > 0;
+  const typeLabel: Record<string, string> = { destination: "📍", state: "🗺️", collection: "📦" };
+
+  return (
+    <div ref={wrapperRef} className="relative">
+      <input
+        type="text"
+        value={query}
+        onChange={(e) => setQuery(e.target.value)}
+        onFocus={() => setFocused(true)}
+        onKeyDown={handleKeyDown}
+        placeholder={locale === "hi" ? "जगह खोजें — स्पिति, मनाली, ऋषिकेश..." : "Search destinations — Spiti, Manali, Rishikesh..."}
+        className="w-full rounded-full border border-border/50 bg-card/60 backdrop-blur-md px-6 py-4 text-sm placeholder:text-muted-foreground/60 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/50 shadow-lg"
+      />
+      <button
+        className="absolute right-2 top-1/2 -translate-y-1/2 rounded-full bg-primary px-4 py-2 text-xs font-semibold text-primary-foreground hover:bg-primary/90 transition-colors"
+        onClick={() => { if (query) router.push(`/${locale}/explore?q=${encodeURIComponent(query)}`); }}
+      >
+        {locale === "hi" ? "खोजें" : "Search"}
+      </button>
+
+      {showDropdown && (
+        <div className="absolute top-full left-0 right-0 mt-2 rounded-2xl border border-border bg-card/95 backdrop-blur-xl shadow-2xl overflow-hidden z-50 max-h-[320px] overflow-y-auto">
+          {results.map((item, i) => (
+            <button
+              key={`${item.type}-${item.id}`}
+              onClick={() => navigate(item)}
+              className={`w-full text-left px-5 py-3 flex items-center gap-3 transition-colors ${
+                i === active ? "bg-primary/10 text-foreground" : "hover:bg-muted/50 text-foreground"
+              } ${i > 0 ? "border-t border-border/30" : ""}`}
+            >
+              <span className="text-base shrink-0">{typeLabel[item.type]}</span>
+              <div className="min-w-0 flex-1">
+                <div className="text-sm font-medium truncate">{item.name}</div>
+                {item.state_name && <div className="text-[11px] text-muted-foreground">{item.state_name}</div>}
+                {item.type === "collection" && <div className="text-[11px] text-muted-foreground">Collection</div>}
+                {item.type === "state" && <div className="text-[11px] text-muted-foreground">State</div>}
+              </div>
+            </button>
+          ))}
+        </div>
+      )}
+    </div>
   );
 }
