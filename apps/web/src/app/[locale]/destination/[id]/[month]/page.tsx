@@ -3,6 +3,7 @@ import { Nav } from "@/components/nav";
 import { DestinationMonth } from "@/components/destination-month";
 import { createClient } from "@supabase/supabase-js";
 import { notFound } from "next/navigation";
+import { destinationImage } from "@/lib/image-url";
 
 export const revalidate = 21600;
 export const dynamicParams = true;
@@ -223,7 +224,7 @@ export default async function DestinationMonthPage({
       name: "NakshIQ",
       url: "https://www.nakshiq.com",
     },
-    image: `https://www.nakshiq.com/images/destinations/${id}.jpg`,
+    image: destinationImage(id),
     url: `https://www.nakshiq.com/${locale}/destination/${id}/${month}`,
   };
 

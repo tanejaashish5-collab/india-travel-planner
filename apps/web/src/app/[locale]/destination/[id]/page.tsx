@@ -9,6 +9,7 @@ import { notFound, redirect } from "next/navigation";
 import { STATE_MAP } from "@/lib/seo-maps";
 import { StickyDestinationTabs, BottomCTABar } from "@/components/mobile-destination-enhancements";
 import { NewsletterStickyTray } from "@/components/newsletter-sticky-tray";
+import { destinationImage } from "@/lib/image-url";
 
 export const revalidate = 3600; // Revalidate every hour
 export const dynamicParams = true; // Allow pages not pre-generated at build time
@@ -52,7 +53,7 @@ export async function generateMetadata({
     : `${name}: Best Time to Visit, Weather & Travel Guide`;
   const description = `Plan your trip to ${name}${stateName ? `, ${stateName}` : ""}. ${tagline} Monthly weather scores, kids safety ratings, road conditions, and real infrastructure data — not sponsored content.`.slice(0, 160);
   const canonicalUrl = `https://www.nakshiq.com/${locale}/destination/${id}`;
-  const imageUrl = `https://www.nakshiq.com/images/destinations/${id}.jpg`;
+  const imageUrl = destinationImage(id);
 
   return {
     title,
@@ -198,7 +199,7 @@ export default async function DestinationPage({
     name: dest.name,
     description: dest.tagline || `Travel guide for ${dest.name}`,
     url: `https://www.nakshiq.com/en/destination/${id}`,
-    image: `https://www.nakshiq.com/images/destinations/${id}.jpg`,
+    image: destinationImage(id),
     ...(dest.elevation_m && { elevation: { "@type": "QuantitativeValue", value: dest.elevation_m, unitCode: "MTR" } }),
     ...(dest.coords && {
       geo: { "@type": "GeoCoordinates", latitude: dest.coords.lat, longitude: dest.coords.lng },

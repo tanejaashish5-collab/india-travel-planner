@@ -4,6 +4,7 @@ import { Footer } from "@/components/footer";
 import { WithKidsContent } from "@/components/with-kids-content";
 import { createClient } from "@supabase/supabase-js";
 import { notFound } from "next/navigation";
+import { destinationImage } from "@/lib/image-url";
 
 export const revalidate = 21600;
 export const dynamicParams = true;
@@ -64,7 +65,7 @@ export async function generateMetadata({
     : `${name} with Kids: Family Travel Guide`;
   const description = `Planning ${name} with children? Kid safety rating${ratingText ? ` ${ratingText}` : ""}, hospital distance, altitude concerns, road conditions & family activities in ${stateName || "India"}.`.slice(0, 160);
   const canonicalUrl = `https://www.nakshiq.com/${locale}/with-kids/${id}`;
-  const imageUrl = `https://www.nakshiq.com/images/destinations/${id}.jpg`;
+  const imageUrl = destinationImage(id);
 
   return {
     title,

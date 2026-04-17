@@ -21,6 +21,7 @@ import { AnimatedCounter } from "./animated-counter";
 import { IndiaHeroMap } from "./india-hero-map";
 import { REGION_GROUPS, STATE_MAP } from "@/lib/seo-maps";
 import { resolveCover } from "@/lib/collection-covers";
+import { destinationImage } from "@/lib/image-url";
 
 const DIFFICULTY_COLORS: Record<string, string> = {
   easy: "text-emerald-400",
@@ -85,7 +86,7 @@ export function LandingHero({
             loop
             playsInline
             className="w-full h-full object-cover opacity-[0.18]"
-            poster="/images/destinations/spiti-valley.jpg"
+            poster={destinationImage("spiti-valley")}
           >
             <source src={`${process.env.NEXT_PUBLIC_VIDEO_BASE_URL}/hero.mp4`} type="video/mp4" />
           </video>

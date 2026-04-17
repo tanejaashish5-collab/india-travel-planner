@@ -13,6 +13,7 @@ import { CompareButton } from "./compare-tray";
 import { DistanceBadge } from "./distance-badge";
 import { lazy, Suspense } from "react";
 import { ConfidenceCardComponent } from "./confidence-card";
+import { destinationImage } from "@/lib/image-url";
 
 const DestinationMap = lazy(() => import("./destination-map").then((mod) => ({ default: mod.DestinationMap })));
 import { KidsBadge } from "./kids-badge";
@@ -155,7 +156,7 @@ export function DestinationDetail({ dest }: { dest: any }) {
               loop
               playsInline
               className="w-full h-full object-cover"
-              poster={`/images/destinations/${dest.id}.jpg`}
+              poster={destinationImage(dest.id)}
             >
               <source src={`${process.env.NEXT_PUBLIC_VIDEO_BASE_URL}/${dest.id}.mp4`} type="video/mp4" />
             </video>
