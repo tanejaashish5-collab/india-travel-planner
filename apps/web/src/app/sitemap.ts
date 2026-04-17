@@ -91,7 +91,7 @@ export default async function sitemap(props: {
       "stays", "festivals", "tourist-traps",
       "saved", "about", "methodology", "blog",
       "terms", "privacy", "cookies", "editorial-policy",
-      "india-travel", "data-deletion", "newsletter",
+      "india-travel", "data-deletion", "newsletter", "the-window",
       "vs", "compare",
       // State hub pages
       ...Object.keys(STATE_MAP).map((s) => `state/${s}`),
@@ -138,11 +138,12 @@ export default async function sitemap(props: {
     const supabase = getSupabase();
     if (!supabase) return [];
 
-    const [collResult, routeResult, articleResult, trekResult] = await Promise.all([
+    const [collResult, routeResult, articleResult, trekResult, issueResult] = await Promise.all([
       supabase.from("collections").select("id").order("id"),
       supabase.from("routes").select("id").order("id"),
       supabase.from("articles").select("slug").order("published_at", { ascending: false }),
       supabase.from("treks").select("id").order("id"),
+      supabase.from("newsletter_issues").select("slug").not("sent_at", "is", null).order("sent_at", { ascending: false }),
     ]);
 
     const collEntries = (collResult.data ?? []).flatMap((c: any) =>
@@ -161,7 +162,11 @@ export default async function sitemap(props: {
       entry(`treks/${t.id}`, "monthly", 0.7)
     );
 
-    return [...collEntries, ...routeEntries, ...articleEntries, ...trekEntries];
+    const issueEntries = (issueResult.data ?? []).flatMap((i: any) =>
+      entry(`the-window/${i.slug}`, "monthly", 0.7)
+    );
+
+    return [...collEntries, ...routeEntries, ...articleEntries, ...trekEntries, ...issueEntries];
   }
 
   // ─── Chunk 3: Programmatic SEO pages ───

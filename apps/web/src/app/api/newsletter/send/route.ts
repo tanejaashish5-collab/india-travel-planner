@@ -16,13 +16,20 @@ function getSupabase() {
 }
 
 function authorized(req: NextRequest): boolean {
-  const expected = process.env.NEWSLETTER_SEND_SECRET;
-  if (!expected) return false;
+  const newsletterSecret = process.env.NEWSLETTER_SEND_SECRET;
+  const cronSecret = process.env.CRON_SECRET;
   const header = req.headers.get("authorization");
-  if (header === `Bearer ${expected}`) return true;
-  // Vercel Cron sends this header:
-  const cronHeader = req.headers.get("x-vercel-cron-signature");
-  return req.nextUrl.searchParams.get("secret") === expected || !!cronHeader;
+
+  // Vercel Cron auto-injects Authorization: Bearer $CRON_SECRET when CRON_SECRET is set
+  if (cronSecret && header === `Bearer ${cronSecret}`) return true;
+
+  // Admin UI + manual calls use NEWSLETTER_SEND_SECRET (Bearer OR ?secret=)
+  if (newsletterSecret) {
+    if (header === `Bearer ${newsletterSecret}`) return true;
+    if (req.nextUrl.searchParams.get("secret") === newsletterSecret) return true;
+  }
+
+  return false;
 }
 
 export async function POST(req: NextRequest) {
