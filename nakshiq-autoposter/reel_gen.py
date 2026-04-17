@@ -42,6 +42,7 @@ except ImportError:
 # ── Paths ─────────────────────────────────────────────────────────────────
 VIDEOS_DIR = Path(__file__).parent.parent / "videos"
 ASSETS_DIR = Path(__file__).parent / "assets"
+MUSIC_DIR  = ASSETS_DIR / "music"
 
 # ── Output specs ──────────────────────────────────────────────────────────
 REEL_W, REEL_H = 1080, 1920
@@ -52,6 +53,34 @@ REEL_DURATION = 10  # seconds — sweet spot for Reels algorithm
 FONT_CRIMSON = str(FONT_DIR / "CrimsonPro-Italic.ttf") if FONT_DIR.exists() else ""
 FONT_INSTRUMENT = str(FONT_DIR / "InstrumentSans-Bold.ttf") if FONT_DIR.exists() else ""
 FONT_JETBRAINS = str(FONT_DIR / "JetBrainsMono-Bold.ttf") if FONT_DIR.exists() else ""
+
+# ── Music tracks for reel background audio ────────────────────────────────
+# Map reel formats to preferred music moods; falls back to random
+_MUSIC_PREFS: dict[str, list[str]] = {
+    "score_reveal":        ["cinematic_warm", "horizon_swell"],
+    "contrarian":          ["travel_pulse", "cinematic_warm"],
+    "seasonal_shift":      ["horizon_swell", "ambient_drift"],
+    "trap_alert":          ["travel_pulse", "cinematic_warm"],
+    "destination_reveal":  ["mystic_india", "horizon_swell", "ambient_drift"],
+}
+
+
+def _pick_music(reel_format: str) -> Optional[Path]:
+    """Pick a background music track for a reel format."""
+    if not MUSIC_DIR.exists():
+        return None
+    all_tracks = list(MUSIC_DIR.glob("*.wav"))
+    if not all_tracks:
+        return None
+
+    # Try preferred tracks first
+    prefs = _MUSIC_PREFS.get(reel_format, [])
+    for name in prefs:
+        p = MUSIC_DIR / f"{name}.wav"
+        if p.exists():
+            return p
+    # Fallback: random track
+    return random.choice(all_tracks)
 
 
 def _find_video(dest_slug: str) -> Optional[Path]:
@@ -424,6 +453,106 @@ def _build_trap_alert_filters(trap_name: str, alternative: str,
     return ",".join(lines)
 
 
+def _build_destination_reveal_filters(dest_name: str, state_name: str,
+                                      score: int, tagline: str) -> str:
+    """
+    Destination Reveal format — branded-image-based reel.
+    Uses a Ken Burns zoom/pan on a branded story image.
+
+      0-2s:   "DISCOVER" (fade-in, subtle)
+      2-5s:   Destination name BIG + state name
+      5-7s:   Score badge + tagline
+      7-10s:  "Swipe to plan →" CTA + NakshIQ branding
+    """
+    lines = []
+
+    # Slight dark overlay for text readability on top of branded image
+    lines.append("drawbox=x=0:y=0:w=iw:h=ih:color=black@0.25:t=fill")
+
+    # Phase 1: "DISCOVER" teaser (0–2s)
+    lines.append(_build_drawtext(
+        "DISCOVER", FONT_INSTRUMENT, 40,
+        SAFFRON, "(w-text_w)/2", "h*0.30",
+        enable="between(t,0.3,5)", border_w=2
+    ))
+
+    # Phase 2: Destination name BIG (appear at 1s, stay through)
+    lines.append(_build_drawtext(
+        dest_name.upper(), FONT_INSTRUMENT, 82,
+        BONE, "(w-text_w)/2", "h*0.37",
+        enable="gte(t,1)", border_w=4
+    ))
+
+    # State name below (appear at 1.5s)
+    if state_name:
+        lines.append(_build_drawtext(
+            state_name.upper(), FONT_CRIMSON, 36,
+            BONE, "(w-text_w)/2", "h*0.45",
+            enable="gte(t,1.5)"
+        ))
+
+    # Phase 3: Score reveal (5–7s)
+    score_color = VERMILLION_BRIGHT if score <= 2 else SAFFRON if score == 3 else "#4CAF50"
+    lines.append(_build_drawtext(
+        f"{score}/5", FONT_JETBRAINS, 120,
+        score_color, "(w-text_w)/2", "h*0.55",
+        enable="gte(t,5)", border_w=5
+    ))
+
+    # Tagline (appear at 5.5s)
+    if tagline:
+        # Truncate + wrap
+        tag = tagline[:70] + ("..." if len(tagline) > 70 else "")
+        words = tag.split()
+        mid = len(words) // 2
+        t1 = " ".join(words[:mid])
+        t2 = " ".join(words[mid:])
+        lines.append(_build_drawtext(
+            t1, FONT_CRIMSON, 34,
+            BONE, "(w-text_w)/2", "h*0.66",
+            enable="gte(t,5.5)"
+        ))
+        lines.append(_build_drawtext(
+            t2, FONT_CRIMSON, 34,
+            BONE, "(w-text_w)/2", "h*0.71",
+            enable="gte(t,5.5)"
+        ))
+
+    # Phase 4: CTA (7.5s+)
+    lines.append("drawbox=x=(w-480)/2:y=h*0.77:w=480:h=60:color=0xE55642:t=fill:enable='gte(t\\,7.5)'")
+    lines.append(_build_drawtext(
+        "Plan on nakshiq.com", FONT_INSTRUMENT, 30,
+        BONE, "(w-text_w)/2", "h*0.78",
+        enable="gte(t,7.5)", border_w=0
+    ))
+
+    # Bottom branding bar
+    lines.append("drawbox=x=0:y=h-160:w=iw:h=160:color=0x161614@0.85:t=fill")
+    lines.append(_build_drawtext(
+        "NAKSHIQ", FONT_INSTRUMENT, 32,
+        BONE, "40", "h-120", border_w=0
+    ))
+    lines.append(_build_drawtext(
+        "Travel with IQ", FONT_CRIMSON, 28,
+        SAFFRON, "40", "h-80", border_w=0
+    ))
+    lines.append(_build_drawtext(
+        "nakshiq.com", FONT_INSTRUMENT, 24,
+        BONE, "w-240", "h-100", border_w=0
+    ))
+
+    return ",".join(lines)
+
+
+def _find_branded_image(dest_name: str, fmt: str = "story") -> Optional[Path]:
+    """Find a branded image from social_image_library/ for a destination."""
+    try:
+        from social_image_picker import pick_social_image
+        return pick_social_image(dest_name, fmt=fmt)
+    except Exception:
+        return None
+
+
 def render_reel(
     reel_format: str,
     data: dict,
@@ -434,23 +563,42 @@ def render_reel(
     Render a Reel video. Returns path to the output MP4.
 
     Args:
-        reel_format: One of "score_reveal", "contrarian", "seasonal_shift", "trap_alert"
+        reel_format: One of "score_reveal", "contrarian", "seasonal_shift",
+                     "trap_alert", "destination_reveal"
         data: Format-specific data dict (see format builders)
         out_dir: Directory for output file
         video_path: Override background video (auto-detected if None)
     """
-    # Find background video
-    if video_path is None:
-        dest_slug = data.get("dest_slug") or data.get("dest_name", "india")
-        video_path = _find_video(dest_slug)
+    import os
 
-    if video_path is None or not video_path.exists():
-        vids = [v for v in VIDEOS_DIR.glob("VIDEO_*.mp4") if " 2" not in v.stem]
-        if not vids:
-            print("ERROR: No videos available at all.")
+    # ── destination_reveal uses a branded IMAGE, not video ────────────────
+    use_image_input = (reel_format == "destination_reveal")
+    image_path: Optional[Path] = None
+
+    if use_image_input:
+        dest_name = data.get("dest_name", "")
+        # Try story format first (already 1080×1920), fall back to feed
+        image_path = _find_branded_image(dest_name, fmt="story")
+        if image_path is None:
+            image_path = _find_branded_image(dest_name, fmt="feed")
+        if image_path is None or not image_path.exists():
+            print(f"No branded image for '{dest_name}' — cannot render destination_reveal")
             return None
-        video_path = random.choice(vids)
-        print(f"WARNING: No video for '{dest_slug}'. Using random: {video_path.name}")
+        print(f"Using branded image: {image_path}")
+
+    # ── For video-based formats, find a background video ──────────────────
+    if not use_image_input:
+        if video_path is None:
+            dest_slug = data.get("dest_slug") or data.get("dest_name", "india")
+            video_path = _find_video(dest_slug)
+
+        if video_path is None or not video_path.exists():
+            vids = [v for v in VIDEOS_DIR.glob("VIDEO_*.mp4") if " 2" not in v.stem]
+            if not vids:
+                print("ERROR: No videos available at all.")
+                return None
+            video_path = random.choice(vids)
+            print(f"WARNING: No video for '{dest_slug}'. Using random: {video_path.name}")
 
     # Build format-specific text filters
     if reel_format == "score_reveal":
@@ -473,6 +621,13 @@ def render_reel(
             data["trap_name"], data["alternative"],
             data.get("reason", "Overpriced and overcrowded")
         )
+    elif reel_format == "destination_reveal":
+        text_filters = _build_destination_reveal_filters(
+            data["dest_name"],
+            data.get("state_name", ""),
+            data.get("score", 4),
+            data.get("tagline", ""),
+        )
     else:
         print(f"Unknown reel format: {reel_format}")
         return None
@@ -482,25 +637,7 @@ def render_reel(
     slug = slug.replace(" ", "_")
     out_path = out_dir / f"reel_{reel_format}_{slug}.mp4"
 
-    # Build ffmpeg command:
-    # 1. Input video
-    # 2. Crop landscape to vertical (center crop)
-    # 3. Scale to 1080x1920
-    # 4. Apply text overlays
-    # 5. Trim to REEL_DURATION seconds
-    # 6. Loop if source < duration
-    filter_chain = (
-        # Center-crop 720x720 from 1280x720, then scale to 1080x1920
-        f"[0:v]loop=loop={REEL_FPS * REEL_DURATION}:size={REEL_FPS * 10}:start=0,"
-        f"trim=duration={REEL_DURATION},setpts=PTS-STARTPTS,"
-        f"crop=ih*9/16:ih:iw/2-ih*9/16/2:0,"
-        f"scale={REEL_W}:{REEL_H}:flags=lanczos,"
-        f"setsar=1,"
-        f"{text_filters}"
-        f"[out]"
-    )
-
-    import os
+    # ── Build ffmpeg command ──────────────────────────────────────────────
     ffmpeg_bin = shutil.which("ffmpeg")
     if not ffmpeg_bin:
         for candidate in ["/usr/bin/ffmpeg", "/usr/local/bin/ffmpeg"]:
@@ -509,20 +646,125 @@ def render_reel(
                 break
     ffmpeg_bin = ffmpeg_bin or "ffmpeg"
 
-    cmd = [
-        ffmpeg_bin, "-y",
-        "-i", str(video_path),
-        "-filter_complex", filter_chain,
-        "-map", "[out]",
-        "-c:v", "libx264",
-        "-preset", "medium",
-        "-crf", "23",
-        "-pix_fmt", "yuv420p",
-        "-r", str(REEL_FPS),
-        "-t", str(REEL_DURATION),
-        "-an",  # No audio for now (Reels get music added in-app)
-        str(out_path)
-    ]
+    # ── Pick background music ────────────────────────────────────────────
+    music_path = _pick_music(reel_format)
+    has_music = music_path is not None and music_path.exists()
+    if has_music:
+        print(f"Background music: {music_path.name}")
+
+    if use_image_input:
+        # ── IMAGE-BASED pipeline (destination_reveal) ────────────────────
+        # Music is the ONLY audio source → 40% volume, fade in/out
+        video_filter = (
+            f"[0:v]scale=1188:2112:flags=lanczos,"
+            f"zoompan=z='1.1-0.01*on/{REEL_FPS * REEL_DURATION}'"
+            f":x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)'"
+            f":d={REEL_FPS * REEL_DURATION}:s={REEL_W}x{REEL_H}:fps={REEL_FPS},"
+            f"setsar=1,"
+            f"{text_filters}"
+            f"[out]"
+        )
+        if has_music:
+            audio_filter = (
+                f"[1:a]atrim=0:{REEL_DURATION},"
+                f"afade=t=in:st=0:d=1,"
+                f"afade=t=out:st={REEL_DURATION - 2}:d=2,"
+                f"volume=0.40"
+                f"[aout]"
+            )
+            filter_chain = f"{video_filter};{audio_filter}"
+            cmd = [
+                ffmpeg_bin, "-y",
+                "-loop", "1",
+                "-i", str(image_path),
+                "-i", str(music_path),
+                "-filter_complex", filter_chain,
+                "-map", "[out]", "-map", "[aout]",
+                "-c:v", "libx264", "-preset", "medium", "-crf", "23",
+                "-pix_fmt", "yuv420p", "-r", str(REEL_FPS),
+                "-c:a", "aac", "-b:a", "128k",
+                "-t", str(REEL_DURATION),
+                str(out_path)
+            ]
+        else:
+            cmd = [
+                ffmpeg_bin, "-y",
+                "-loop", "1",
+                "-i", str(image_path),
+                "-filter_complex", video_filter,
+                "-map", "[out]",
+                "-c:v", "libx264", "-preset", "medium", "-crf", "23",
+                "-pix_fmt", "yuv420p", "-r", str(REEL_FPS),
+                "-t", str(REEL_DURATION), "-an",
+                str(out_path)
+            ]
+    else:
+        # ── VIDEO-BASED pipeline ─────────────────────────────────────────
+        # Original video audio is PRIMARY (destination ambient sounds).
+        # Music is mixed underneath at low volume (15%) as a subtle bed.
+        video_filter = (
+            f"[0:v]loop=loop={REEL_FPS * REEL_DURATION}:size={REEL_FPS * 10}:start=0,"
+            f"trim=duration={REEL_DURATION},setpts=PTS-STARTPTS,"
+            f"crop=ih*9/16:ih:iw/2-ih*9/16/2:0,"
+            f"scale={REEL_W}:{REEL_H}:flags=lanczos,"
+            f"setsar=1,"
+            f"{text_filters}"
+            f"[out]"
+        )
+        if has_music:
+            # Mix: original video audio (looped + trimmed) at 100%
+            #     + background music at 15%, both faded
+            audio_filter = (
+                # Original video audio — loop, trim, fade
+                f"[0:a]aloop=loop=-1:size=2e+09,"
+                f"atrim=0:{REEL_DURATION},asetpts=PTS-STARTPTS,"
+                f"afade=t=in:st=0:d=0.5,"
+                f"afade=t=out:st={REEL_DURATION - 1.5}:d=1.5,"
+                f"volume=1.0[orig];"
+                # Background music — trim, fade, low volume
+                f"[1:a]atrim=0:{REEL_DURATION},"
+                f"afade=t=in:st=0:d=1,"
+                f"afade=t=out:st={REEL_DURATION - 2}:d=2,"
+                f"volume=0.15[bed];"
+                # Mix them together
+                f"[orig][bed]amix=inputs=2:duration=first:dropout_transition=2[aout]"
+            )
+            filter_chain = f"{video_filter};{audio_filter}"
+            print(f"Audio: original destination audio + {music_path.name} at 15%")
+            cmd = [
+                ffmpeg_bin, "-y",
+                "-i", str(video_path),
+                "-i", str(music_path),
+                "-filter_complex", filter_chain,
+                "-map", "[out]", "-map", "[aout]",
+                "-c:v", "libx264", "-preset", "medium", "-crf", "23",
+                "-pix_fmt", "yuv420p", "-r", str(REEL_FPS),
+                "-c:a", "aac", "-b:a", "128k",
+                "-t", str(REEL_DURATION),
+                str(out_path)
+            ]
+        else:
+            # No music available — just use the original video audio
+            audio_filter = (
+                f"[0:a]aloop=loop=-1:size=2e+09,"
+                f"atrim=0:{REEL_DURATION},asetpts=PTS-STARTPTS,"
+                f"afade=t=in:st=0:d=0.5,"
+                f"afade=t=out:st={REEL_DURATION - 1.5}:d=1.5"
+                f"[aout]"
+            )
+            filter_chain = f"{video_filter};{audio_filter}"
+            print("Audio: original destination audio (no music overlay)")
+            cmd = [
+                ffmpeg_bin, "-y",
+                "-i", str(video_path),
+                "-filter_complex", filter_chain,
+                "-map", "[out]", "-map", "[aout]",
+                "-c:v", "libx264", "-preset", "medium", "-crf", "23",
+                "-pix_fmt", "yuv420p", "-r", str(REEL_FPS),
+                "-c:a", "aac", "-b:a", "128k",
+                "-t", str(REEL_DURATION),
+                str(out_path)
+            ]
 
     try:
         result = subprocess.run(cmd, capture_output=True, text=True, timeout=120)
@@ -567,6 +809,26 @@ def build_contrarian_reel(famous: dict, hidden: dict, out_dir: Path) -> Optional
         "famous_score": famous.get("score", 3),
         "hidden_score": hidden.get("score", 5),
         "dest_slug": hidden.get("id", "hidden"),
+    }, out_dir)
+
+
+def build_destination_reveal_reel(dest: dict, out_dir: Path) -> Optional[Path]:
+    """Build a destination reveal Reel from a destination data dict.
+    Uses branded image from social_image_library/ with Ken Burns effect."""
+    name = dest.get("name", "Unknown")
+    state = dest.get("state", "")
+    score = dest.get("score", 4)
+    tagline = dest.get("tagline") or dest.get("note") or ""
+
+    if len(tagline) > 80:
+        tagline = tagline[:77] + "..."
+
+    return render_reel("destination_reveal", {
+        "dest_name": name,
+        "dest_slug": dest.get("id", name),
+        "state_name": state,
+        "score": int(score) if isinstance(score, (int, float)) else 4,
+        "tagline": tagline,
     }, out_dir)
 
 

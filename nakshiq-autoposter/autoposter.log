@@ -874,3 +874,403 @@
 2026-04-16 22:22:15  INFO      [facebook/Nakshiq] ✅ Published · Outstand=4S6Mi · Platform=1040562729145369_122098747916700092
 2026-04-16 22:22:15  INFO      State saved. Run complete.
 2026-04-16 22:22:15  INFO      ════════════════════════════════════════════════════════════
+2026-04-17 01:40:49  INFO      ════════════════════════════════════════════════════════════
+2026-04-17 01:40:49  INFO      Nakshiq Autoposter · MORNING · 2026-04-17 · weekday=4
+2026-04-17 01:40:49  INFO      ════════════════════════════════════════════════════════════
+2026-04-17 01:40:49  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-04-17 01:40:55  INFO      Synced → 20 destinations · 0 traps · 13 articles · total catalog=480
+2026-04-17 01:40:56  INFO      Active accounts: ['instagram/nakshiq', 'facebook/Nakshiq']
+2026-04-17 01:40:58  INFO      Outstand dedup guard: merged 2 remote posts into state.
+2026-04-17 01:40:58  INFO      Formats — IG: reality_check  ·  FB: reality_check  ·  Story: infrastructure_truth
+2026-04-17 01:40:58  INFO      Used destinations (14d): 25
+2026-04-17 01:40:58  INFO      Reality Check pair locked: Mussoorie ↔ Dhanaulti
+2026-04-17 01:41:01  INFO      Shared best destination locked: Dhanaulti
+2026-04-17 01:41:01  INFO      [instagram/nakshiq] Already posted today (morning) — skipping.
+2026-04-17 01:41:01  INFO      [facebook/Nakshiq] Already posted today (morning) — skipping.
+2026-04-17 01:41:01  INFO      State saved. Run complete.
+2026-04-17 01:41:01  INFO      ════════════════════════════════════════════════════════════
+2026-04-17 01:41:07  INFO      ════════════════════════════════════════════════════════════
+2026-04-17 01:41:07  INFO      Nakshiq Autoposter · EVENING · 2026-04-17 · weekday=4
+2026-04-17 01:41:07  INFO      ════════════════════════════════════════════════════════════
+2026-04-17 01:41:07  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-04-17 01:41:13  INFO      Synced → 20 destinations · 0 traps · 13 articles · total catalog=480
+2026-04-17 01:41:14  INFO      Active accounts: ['instagram/nakshiq', 'facebook/Nakshiq']
+2026-04-17 01:41:14  INFO      Formats — IG: score_card  ·  FB: score_card  ·  Story: reality_check  ·  Audience: adventurers
+2026-04-17 01:41:14  INFO      Used destinations (14d): 25
+2026-04-17 01:41:14  INFO      Audience filter 'adventurers' → 5 destinations match.
+2026-04-17 01:41:15  INFO      Shared best destination locked: Tirthan Valley
+2026-04-17 01:41:15  INFO      [instagram/nakshiq] Generating score_card post...
+2026-04-17 01:41:15  INFO      [instagram/nakshiq] Caption ready (552 chars, dest=tirthan-valley)
+2026-04-17 01:41:15  INFO      [instagram/nakshiq] Uploading image...
+2026-04-17 01:41:15  INFO          Using branded image: tirthan-valley_feed_bold-cinematic_footer-bar.jpg (298,718 bytes)
+2026-04-17 01:41:15  INFO          Requesting upload URL for tirthan-valley.jpg (298,718 bytes, image/jpeg)
+2026-04-17 01:41:16  INFO          Uploading to R2 (timeout=120s)...
+2026-04-17 01:41:20  INFO          R2 PUT OK. Confirming...
+2026-04-17 01:41:22  INFO          Media ready: d4ipO (298,718 bytes · tirthan-valley.jpg)
+2026-04-17 01:41:22  INFO      [instagram/nakshiq] Publishing feed post...
+2026-04-17 01:41:22  INFO          [DRY RUN] instagram/nakshiq — 552 chars + single image (tirthan-valley.jpg)
+2026-04-17 01:41:22  INFO      [instagram/nakshiq] ✅ Submitted (post_id=DRY_RUN)
+2026-04-17 01:41:22  INFO      [instagram/nakshiq] Uploading Story image (dhanaulti.jpg)...
+2026-04-17 01:41:22  INFO          Using branded image: dhanaulti_feed_typographic-art_badge.jpg (421,775 bytes)
+2026-04-17 01:41:22  INFO          Requesting upload URL for dhanaulti.jpg (421,775 bytes, image/jpeg)
+2026-04-17 01:41:23  INFO          Uploading to R2 (timeout=120s)...
+2026-04-17 01:41:26  INFO          R2 PUT OK. Confirming...
+2026-04-17 01:41:28  INFO          Media ready: auEkb (421,775 bytes · dhanaulti.jpg)
+2026-04-17 01:41:28  INFO      [instagram/nakshiq] Publishing Story · format=reality_check · dest=dhanaulti
+2026-04-17 01:41:28  INFO          [DRY RUN] Story → dhanaulti.jpg
+2026-04-17 01:41:28  INFO      [instagram/nakshiq] ✅ Story submitted (id=DRY_RUN_STORY)
+2026-04-17 01:41:28  INFO      [facebook/Nakshiq] Generating score_card post...
+2026-04-17 01:41:28  INFO      [facebook/Nakshiq] Caption ready (535 chars, dest=tirthan-valley)
+2026-04-17 01:41:28  INFO      [facebook/Nakshiq] Uploading image...
+2026-04-17 01:41:28  INFO          Using branded image: tirthan-valley_feed_bold-cinematic_footer-bar.jpg (298,718 bytes)
+2026-04-17 01:41:28  INFO          Requesting upload URL for tirthan-valley.jpg (298,718 bytes, image/jpeg)
+2026-04-17 01:41:30  INFO          Uploading to R2 (timeout=120s)...
+2026-04-17 01:41:32  INFO          R2 PUT OK. Confirming...
+2026-04-17 01:41:34  INFO          Media ready: vBnZg (298,718 bytes · tirthan-valley.jpg)
+2026-04-17 01:41:34  INFO      [facebook/Nakshiq] Publishing feed post...
+2026-04-17 01:41:34  INFO          [DRY RUN] facebook/Nakshiq — 535 chars + single image (tirthan-valley.jpg)
+2026-04-17 01:41:34  INFO      [facebook/Nakshiq] ✅ Submitted (post_id=DRY_RUN)
+2026-04-17 01:41:34  INFO      State saved. Run complete.
+2026-04-17 01:41:34  INFO      ════════════════════════════════════════════════════════════
+2026-04-17 01:41:44  INFO      ════════════════════════════════════════════════════════════
+2026-04-17 01:41:44  INFO      Nakshiq Autoposter · MOAT · 2026-04-17 · weekday=4
+2026-04-17 01:41:44  INFO      ════════════════════════════════════════════════════════════
+2026-04-17 01:41:44  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-04-17 01:41:50  INFO      Synced → 20 destinations · 0 traps · 13 articles · total catalog=480
+2026-04-17 01:41:52  INFO      Active accounts: ['instagram/nakshiq', 'facebook/Nakshiq']
+2026-04-17 01:41:54  INFO      Outstand dedup guard: merged 2 remote posts into state.
+2026-04-17 01:41:54  INFO      Moat angle locked: methodology_roads (9/9 never featured)
+2026-04-17 01:41:54  INFO      Formats — IG: methodology_roads  ·  FB: methodology_roads  ·  Story: None
+2026-04-17 01:41:54  INFO      Used destinations (14d): 25
+2026-04-17 01:41:57  INFO      Shared best destination locked: Dhanaulti
+2026-04-17 01:41:57  INFO      [instagram/nakshiq] Generating methodology_roads post...
+2026-04-17 01:41:57  INFO      [instagram/nakshiq] Caption ready (531 chars, dest=dhanaulti)
+2026-04-17 01:41:57  INFO      [instagram/nakshiq] Uploading image...
+2026-04-17 01:41:57  INFO          Using branded image: dhanaulti_feed_typographic-art_badge.jpg (421,775 bytes)
+2026-04-17 01:41:57  INFO          Requesting upload URL for dhanaulti.jpg (421,775 bytes, image/jpeg)
+2026-04-17 01:41:59  INFO          Uploading to R2 (timeout=120s)...
+2026-04-17 01:42:01  INFO          R2 PUT OK. Confirming...
+2026-04-17 01:42:03  INFO          Media ready: MP0HC (421,775 bytes · dhanaulti.jpg)
+2026-04-17 01:42:03  INFO      [instagram/nakshiq] Publishing feed post...
+2026-04-17 01:42:03  INFO          [DRY RUN] instagram/nakshiq — 531 chars + single image (dhanaulti.jpg)
+2026-04-17 01:42:03  INFO      [instagram/nakshiq] ✅ Submitted (post_id=DRY_RUN)
+2026-04-17 01:42:03  INFO      [facebook/Nakshiq] Generating methodology_roads post...
+2026-04-17 01:42:03  INFO      [facebook/Nakshiq] Caption ready (660 chars, dest=dhanaulti)
+2026-04-17 01:42:03  INFO      [facebook/Nakshiq] Uploading image...
+2026-04-17 01:42:03  INFO          Using branded image: dhanaulti_feed_typographic-art_badge.jpg (421,775 bytes)
+2026-04-17 01:42:03  INFO          Requesting upload URL for dhanaulti.jpg (421,775 bytes, image/jpeg)
+2026-04-17 01:42:04  INFO          Uploading to R2 (timeout=120s)...
+2026-04-17 01:42:07  INFO          R2 PUT OK. Confirming...
+2026-04-17 01:42:08  INFO          Media ready: n3kdl (421,775 bytes · dhanaulti.jpg)
+2026-04-17 01:42:08  INFO      [facebook/Nakshiq] Publishing feed post...
+2026-04-17 01:42:08  INFO          [DRY RUN] facebook/Nakshiq — 660 chars + single image (dhanaulti.jpg)
+2026-04-17 01:42:08  INFO      [facebook/Nakshiq] ✅ Submitted (post_id=DRY_RUN)
+2026-04-17 01:42:08  INFO      State saved. Run complete.
+2026-04-17 01:42:08  INFO      ════════════════════════════════════════════════════════════
+2026-04-17 01:42:09  INFO      ════════════════════════════════════════════════════════════
+2026-04-17 01:42:09  INFO      Nakshiq Autoposter · CANVA VISUAL · 2026-04-17 · weekday=4
+2026-04-17 01:42:09  INFO      ════════════════════════════════════════════════════════════
+2026-04-17 01:42:09  INFO      Library: 9 images across 5 categories
+2026-04-17 01:42:09  INFO      Selected: [collections] Best Motorcycle Routes → collections/motorcycle_routes_01.jpg
+2026-04-17 01:42:09  INFO          Requesting upload URL for canva_collections_motorcycle_routes_01.jpg (322,880 bytes, image/jpeg)
+2026-04-17 01:42:10  INFO          Uploading to R2 (timeout=120s)...
+2026-04-17 01:42:12  INFO          R2 PUT OK. Confirming...
+2026-04-17 01:42:13  INFO          Media ready: iSJmB (322,880 bytes · canva_collections_motorcycle_routes_01.jpg)
+2026-04-17 01:42:13  INFO      Image uploaded: canva_collections_motorcycle_routes_01.jpg (315 KB)
+2026-04-17 01:42:14  INFO      [instagram/nakshiq] Publishing canva visual: Best Motorcycle Routes...
+2026-04-17 01:42:14  INFO      [instagram/nakshiq] DRY RUN — would publish:
+📌 Best Motorcycle Routes
+
+Not a random list. Every spot in this collection is scored and verified — real data, real traveler intel, updated monthly.
+
+Explore the full collection on nakshiq.com
+
+—
+Trav...
+2026-04-17 01:42:14  INFO      [facebook/Nakshiq] Publishing canva visual: Best Motorcycle Routes...
+2026-04-17 01:42:14  INFO      [facebook/Nakshiq] DRY RUN — would publish:
+📌 Best Motorcycle Routes
+
+Not a random list. Every spot in this collection is scored and verified — real data, real traveler intel, updated monthly.
+
+Explore the full collection on nakshiq.com
+
+—
+Trav...
+2026-04-17 01:42:14  INFO      Theme tracker updated: cat=collections / img=collections/motorcycle_routes_01.jpg
+2026-04-17 01:42:14  INFO      State saved. Canva Visual run complete.
+2026-04-17 01:42:14  INFO      ════════════════════════════════════════════════════════════
+2026-04-17 01:42:15  INFO      ════════════════════════════════════════════════════════════
+2026-04-17 01:42:15  INFO      Nakshiq Autoposter · REEL · 2026-04-17 · weekday=4
+2026-04-17 01:42:15  INFO      ════════════════════════════════════════════════════════════
+2026-04-17 01:42:15  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-04-17 01:42:21  INFO      Synced → 20 destinations · 0 traps · 13 articles · total catalog=480
+2026-04-17 01:42:21  INFO      Format: seasonal_shift | Data: {'dest_name': 'Bhimtal', 'dest_slug': 'bhimtal', 'now_month': 'April', 'now_score': 5, 'future_month': 'July', 'future_score': 2}
+2026-04-17 01:42:26  INFO      Reel rendered: reel_seasonal_shift_bhimtal.mp4 (1789 KB)
+2026-04-17 01:42:26  INFO          Requesting upload URL for reel_seasonal_shift_reel_seasonal_shift_bhimtal.mp4 (1,832,266 bytes, video/mp4)
+2026-04-17 01:42:27  INFO          Uploading to R2 (timeout=300s)...
+2026-04-17 01:42:29  INFO          R2 PUT OK. Confirming...
+2026-04-17 01:42:31  INFO          Media ready: zgxGP (1,832,266 bytes · reel_seasonal_shift_reel_seasonal_shift_bhimtal.mp4)
+2026-04-17 01:42:31  INFO      Video uploaded: reel_seasonal_shift_reel_seasonal_shift_bhimtal.mp4
+2026-04-17 01:42:33  INFO      [instagram/nakshiq] Publishing reel (seasonal_shift)...
+2026-04-17 01:42:33  INFO      [instagram/nakshiq] DRY RUN — would publish:
+⏰ Bhimtal is a 5/5 right now.
+In July? 2/5.
+
+Timing is everything.
+303 destinations scored for every month.
+→ nakshiq.com
+
+—
+Data, not opinions.
+
+#NakshIQ #TravelWithIQ #IndiaTravel #IncredibleIndia #...
+2026-04-17 01:42:33  INFO      [facebook/Nakshiq] Publishing reel (seasonal_shift)...
+2026-04-17 01:42:33  INFO      [facebook/Nakshiq] DRY RUN — would publish:
+⏰ Bhimtal is a 5/5 right now.
+In July? 2/5.
+
+Timing is everything.
+303 destinations scored for every month.
+→ nakshiq.com
+
+—
+Data, not opinions.
+
+#NakshIQ #TravelWithIQ #IndiaTravel #IncredibleIndia #...
+2026-04-17 01:42:33  INFO      Theme tracker updated: format=seasonal_shift
+2026-04-17 01:42:33  INFO      State saved. Reel run complete.
+2026-04-17 01:42:33  INFO      ════════════════════════════════════════════════════════════
+2026-04-17 01:42:34  INFO      ════════════════════════════════════════════════════════════
+2026-04-17 01:42:34  INFO      Nakshiq Autoposter · CANVA VISUAL · 2026-04-17 · weekday=4
+2026-04-17 01:42:34  INFO      ════════════════════════════════════════════════════════════
+2026-04-17 01:42:34  INFO      Library: 9 images across 5 categories
+2026-04-17 01:42:34  INFO      Selected: [this_or_that] Mountains vs Beaches → this_or_that/mountains_vs_beaches_01.jpg
+2026-04-17 01:42:34  INFO          Requesting upload URL for canva_this_or_that_mountains_vs_beaches_01.jpg (344,925 bytes, image/jpeg)
+2026-04-17 01:42:35  INFO          Uploading to R2 (timeout=120s)...
+2026-04-17 01:42:37  INFO          R2 PUT OK. Confirming...
+2026-04-17 01:42:39  INFO          Media ready: 9UwIQ (344,925 bytes · canva_this_or_that_mountains_vs_beaches_01.jpg)
+2026-04-17 01:42:39  INFO      Image uploaded: canva_this_or_that_mountains_vs_beaches_01.jpg (336 KB)
+2026-04-17 01:42:40  INFO      [instagram/nakshiq] Publishing canva visual: Mountains vs Beaches...
+2026-04-17 01:42:40  INFO      [instagram/nakshiq] DRY RUN — would publish:
+🤔 Mountains or Beaches?
+
+Drop your pick in the comments. No wrong answers — but NakshIQ data says one scores higher this month 👀
+
+—
+nakshiq.com — scores, not opinions.
+
+#NakshIQ #TravelWithIQ #IndiaTr...
+2026-04-17 01:42:40  INFO      [facebook/Nakshiq] Publishing canva visual: Mountains vs Beaches...
+2026-04-17 01:42:40  INFO      [facebook/Nakshiq] DRY RUN — would publish:
+🤔 Mountains or Beaches?
+
+Drop your pick in the comments. No wrong answers — but NakshIQ data says one scores higher this month 👀
+
+—
+nakshiq.com — scores, not opinions.
+
+#NakshIQ #TravelWithIQ #IndiaTr...
+2026-04-17 01:42:40  INFO      Theme tracker updated: cat=this_or_that / img=this_or_that/mountains_vs_beaches_01.jpg
+2026-04-17 01:42:40  INFO      State saved. Canva Visual run complete.
+2026-04-17 01:42:40  INFO      ════════════════════════════════════════════════════════════
+2026-04-17 01:42:45  INFO      ════════════════════════════════════════════════════════════
+2026-04-17 01:42:45  INFO      Nakshiq Autoposter · REEL · 2026-04-17 · weekday=4
+2026-04-17 01:42:45  INFO      ════════════════════════════════════════════════════════════
+2026-04-17 01:42:45  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-04-17 01:42:55  INFO      Synced → 20 destinations · 0 traps · 13 articles · total catalog=480
+2026-04-17 01:42:55  INFO      Format: score_reveal | Data: {'dest_name': 'Chandigarh', 'dest_slug': 'chandigarh', 'month': 'April', 'score': 4, 'reason': 'Warm 18-33°C. Still manageable mornings for Sukhna Lake walks. Afternoons hot. Sector 17 shopping pleasant in evenings. Spring fading.'}
+2026-04-17 01:43:01  INFO      Reel rendered: reel_score_reveal_chandigarh.mp4 (2332 KB)
+2026-04-17 01:43:01  INFO          Requesting upload URL for reel_score_reveal_reel_score_reveal_chandigarh.mp4 (2,388,113 bytes, video/mp4)
+2026-04-17 01:43:02  INFO          Uploading to R2 (timeout=300s)...
+2026-04-17 01:43:05  INFO          R2 PUT OK. Confirming...
+2026-04-17 01:43:07  INFO          Media ready: XQyme (2,388,113 bytes · reel_score_reveal_reel_score_reveal_chandigarh.mp4)
+2026-04-17 01:43:07  INFO      Video uploaded: reel_score_reveal_reel_score_reveal_chandigarh.mp4
+2026-04-17 01:43:08  INFO      [instagram/nakshiq] Publishing reel (score_reveal)...
+2026-04-17 01:43:08  INFO      [instagram/nakshiq] DRY RUN — would publish:
+🎯 Do NOT go to Chandigarh in April.
+
+NakshIQ Score: 4/5
+Warm 18-33°C. Still manageable mornings for Sukhna Lake walks. Afternoons hot. Sector 17 shopping pleasant in evenings. Spring fading.
+
+303 dest...
+2026-04-17 01:43:08  INFO      [facebook/Nakshiq] Publishing reel (score_reveal)...
+2026-04-17 01:43:08  INFO      [facebook/Nakshiq] DRY RUN — would publish:
+🎯 Do NOT go to Chandigarh in April.
+
+NakshIQ Score: 4/5
+Warm 18-33°C. Still manageable mornings for Sukhna Lake walks. Afternoons hot. Sector 17 shopping pleasant in evenings. Spring fading.
+
+303 dest...
+2026-04-17 01:43:08  INFO      Theme tracker updated: format=score_reveal
+2026-04-17 01:43:08  INFO      State saved. Reel run complete.
+2026-04-17 01:43:08  INFO      ════════════════════════════════════════════════════════════
+2026-04-17 01:43:13  INFO      ════════════════════════════════════════════════════════════
+2026-04-17 01:43:13  INFO      Nakshiq Autoposter · TOURIST MAP · 2026-04-17 · weekday=4
+2026-04-17 01:43:13  INFO      ════════════════════════════════════════════════════════════
+2026-04-17 01:43:13  INFO      Tourist Map mode runs Tue/Thu/Sat only (today weekday=4) — exiting.
+2026-04-17 02:01:03  INFO      ════════════════════════════════════════════════════════════
+2026-04-17 02:01:03  INFO      Nakshiq Autoposter · REEL · 2026-04-17 · weekday=4
+2026-04-17 02:01:03  INFO      ════════════════════════════════════════════════════════════
+2026-04-17 02:01:03  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-04-17 02:01:11  INFO      Synced → 20 destinations · 0 traps · 13 articles · total catalog=480
+2026-04-17 02:01:11  INFO      Format: destination_reveal | Data: {'dest_name': 'Bhimtal', 'dest_slug': 'bhimtal', 'state_name': 'Uttarakhand', 'score': 5, 'tagline': 'The quiet cousin who got the better genes — Bhimtal lake without the Nainital crowds, an island in the middle, and actual birdsong.'}
+2026-04-17 02:01:17  INFO      Reel rendered: reel_destination_reveal_bhimtal.mp4 (620 KB)
+2026-04-17 02:01:17  INFO          Requesting upload URL for reel_destination_reveal_reel_destination_reveal_bhimtal.mp4 (635,003 bytes, video/mp4)
+2026-04-17 02:01:19  INFO          Uploading to R2 (timeout=300s)...
+2026-04-17 02:01:21  INFO          R2 PUT OK. Confirming...
+2026-04-17 02:01:23  INFO          Media ready: OiBfv (635,003 bytes · reel_destination_reveal_reel_destination_reveal_bhimtal.mp4)
+2026-04-17 02:01:23  INFO      Video uploaded: reel_destination_reveal_reel_destination_reveal_bhimtal.mp4
+2026-04-17 02:01:25  INFO      [instagram/nakshiq] Publishing reel (destination_reveal)...
+2026-04-17 02:01:25  INFO      [instagram/nakshiq] DRY RUN — would publish:
+📍 Discover Bhimtal, Uttarakhand
+
+NakshIQ Score: 5/5
+The quiet cousin who got the better genes — Bhimtal lake without the Nainital crowds, an island in the middle, and actual birdsong.
+
+303 destination...
+2026-04-17 02:01:25  INFO      [facebook/Nakshiq] Publishing reel (destination_reveal)...
+2026-04-17 02:01:25  INFO      [facebook/Nakshiq] DRY RUN — would publish:
+📍 Discover Bhimtal, Uttarakhand
+
+NakshIQ Score: 5/5
+The quiet cousin who got the better genes — Bhimtal lake without the Nainital crowds, an island in the middle, and actual birdsong.
+
+303 destination...
+2026-04-17 02:01:25  INFO      Theme tracker updated: format=destination_reveal
+2026-04-17 02:01:25  INFO      State saved. Reel run complete.
+2026-04-17 02:01:25  INFO      ════════════════════════════════════════════════════════════
+2026-04-17 02:01:31  INFO      ════════════════════════════════════════════════════════════
+2026-04-17 02:01:31  INFO      Nakshiq Autoposter · REEL · 2026-04-17 · weekday=4
+2026-04-17 02:01:31  INFO      ════════════════════════════════════════════════════════════
+2026-04-17 02:01:31  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-04-17 02:01:38  INFO      Synced → 20 destinations · 0 traps · 13 articles · total catalog=480
+2026-04-17 02:01:38  INFO      Format: score_reveal | Data: {'dest_name': 'Pelling', 'dest_slug': 'pelling', 'month': 'April', 'score': 4, 'reason': 'Best spring 12-22°C. Warm clear days. Kanchenjunga panorama at dawn. All monasteries and falls accessible.'}
+2026-04-17 02:01:43  INFO      Reel rendered: reel_score_reveal_pelling.mp4 (2822 KB)
+2026-04-17 02:01:43  INFO          Requesting upload URL for reel_score_reveal_reel_score_reveal_pelling.mp4 (2,890,096 bytes, video/mp4)
+2026-04-17 02:01:44  INFO          Uploading to R2 (timeout=300s)...
+2026-04-17 02:01:48  INFO          R2 PUT OK. Confirming...
+2026-04-17 02:01:50  INFO          Media ready: ysY9j (2,890,096 bytes · reel_score_reveal_reel_score_reveal_pelling.mp4)
+2026-04-17 02:01:50  INFO      Video uploaded: reel_score_reveal_reel_score_reveal_pelling.mp4
+2026-04-17 02:01:51  INFO      [instagram/nakshiq] Publishing reel (score_reveal)...
+2026-04-17 02:01:51  INFO      [instagram/nakshiq] DRY RUN — would publish:
+🎯 Do NOT go to Pelling in April.
+
+NakshIQ Score: 4/5
+Best spring 12-22°C. Warm clear days. Kanchenjunga panorama at dawn. All monasteries and falls accessible.
+
+303 destinations. Real-time travel scor...
+2026-04-17 02:01:51  INFO      [facebook/Nakshiq] Publishing reel (score_reveal)...
+2026-04-17 02:01:51  INFO      [facebook/Nakshiq] DRY RUN — would publish:
+🎯 Do NOT go to Pelling in April.
+
+NakshIQ Score: 4/5
+Best spring 12-22°C. Warm clear days. Kanchenjunga panorama at dawn. All monasteries and falls accessible.
+
+303 destinations. Real-time travel scor...
+2026-04-17 02:01:51  INFO      Theme tracker updated: format=score_reveal
+2026-04-17 02:01:51  INFO      State saved. Reel run complete.
+2026-04-17 02:01:51  INFO      ════════════════════════════════════════════════════════════
+2026-04-17 02:16:14  INFO      ════════════════════════════════════════════════════════════
+2026-04-17 02:16:14  INFO      Nakshiq Autoposter · REEL · 2026-04-17 · weekday=4
+2026-04-17 02:16:14  INFO      ════════════════════════════════════════════════════════════
+2026-04-17 02:16:14  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-04-17 02:16:21  INFO      Synced → 20 destinations · 0 traps · 13 articles · total catalog=480
+2026-04-17 02:16:21  INFO      Format: score_reveal | Data: {'dest_name': 'Guwahati', 'dest_slug': 'guwahati', 'month': 'April', 'score': 4, 'reason': 'Hot 20-32°C. Rongali Bihu (mid-April) — Assamese New Year. Biggest festival.'}
+2026-04-17 02:16:27  INFO      Reel rendered: reel_score_reveal_guwahati.mp4 (5357 KB)
+2026-04-17 02:16:27  INFO          Requesting upload URL for reel_score_reveal_reel_score_reveal_guwahati.mp4 (5,486,020 bytes, video/mp4)
+2026-04-17 02:16:29  INFO          Uploading to R2 (timeout=300s)...
+2026-04-17 02:16:33  INFO          R2 PUT OK. Confirming...
+2026-04-17 02:16:34  INFO          Media ready: SR53J (5,486,020 bytes · reel_score_reveal_reel_score_reveal_guwahati.mp4)
+2026-04-17 02:16:34  INFO      Video uploaded: reel_score_reveal_reel_score_reveal_guwahati.mp4
+2026-04-17 02:16:36  INFO      [instagram/nakshiq] Publishing reel (score_reveal)...
+2026-04-17 02:16:39  INFO      [instagram/nakshiq] Reel posted successfully!
+2026-04-17 02:16:39  INFO      [facebook/Nakshiq] Publishing reel (score_reveal)...
+2026-04-17 02:16:43  INFO      [facebook/Nakshiq] Reel posted successfully!
+2026-04-17 02:16:43  INFO      Theme tracker updated: format=score_reveal
+2026-04-17 02:16:43  INFO      State saved. Reel run complete.
+2026-04-17 02:16:43  INFO      ════════════════════════════════════════════════════════════
+2026-04-17 02:17:04  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-04-17 02:17:13  INFO      Synced → 20 destinations · 0 traps · 13 articles · total catalog=480
+2026-04-17 02:17:18  INFO          Requesting upload URL for reel_destination_reveal_bhimtal.mp4 (635,003 bytes, video/mp4)
+2026-04-17 02:17:20  INFO          Uploading to R2 (timeout=300s)...
+2026-04-17 02:17:23  INFO          R2 PUT OK. Confirming...
+2026-04-17 02:17:25  INFO          Media ready: BJkKn (635,003 bytes · reel_destination_reveal_bhimtal.mp4)
+2026-04-17 02:30:37  INFO      ════════════════════════════════════════════════════════════
+2026-04-17 02:30:37  INFO      Nakshiq Autoposter · REEL · 2026-04-17 · weekday=4
+2026-04-17 02:30:37  INFO      ════════════════════════════════════════════════════════════
+2026-04-17 02:30:37  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-04-17 02:30:45  INFO      Synced → 20 destinations · 0 traps · 13 articles · total catalog=480
+2026-04-17 02:30:45  INFO      Format: score_reveal | Data: {'dest_name': 'Kullu', 'dest_slug': 'kullu', 'month': 'April', 'score': 4, 'reason': 'Spring bloom, 10-24°C. Valley lush green. Bijli Mahadev trek accessible. Raghunath Temple pleasant. River rafting season begins on Beas. Good all-round month.'}
+2026-04-17 02:30:51  INFO      Reel rendered: reel_score_reveal_kullu.mp4 (5122 KB)
+2026-04-17 02:30:51  INFO          Requesting upload URL for reel_score_reveal_reel_score_reveal_kullu.mp4 (5,245,322 bytes, video/mp4)
+2026-04-17 02:30:53  INFO          Uploading to R2 (timeout=300s)...
+2026-04-17 02:30:56  INFO          R2 PUT OK. Confirming...
+2026-04-17 02:30:58  INFO          Media ready: ey2lr (5,245,322 bytes · reel_score_reveal_reel_score_reveal_kullu.mp4)
+2026-04-17 02:30:58  INFO      Video uploaded: reel_score_reveal_reel_score_reveal_kullu.mp4
+2026-04-17 02:30:59  INFO      [instagram/nakshiq] Publishing reel (score_reveal)...
+2026-04-17 02:30:59  INFO      [instagram/nakshiq] DRY RUN — would publish:
+🎯 Do NOT go to Kullu in April.
+
+NakshIQ Score: 4/5
+Spring bloom, 10-24°C. Valley lush green. Bijli Mahadev trek accessible. Raghunath Temple pleasant. River rafting season begins on Beas. Good all-rou...
+2026-04-17 02:30:59  INFO      [facebook/Nakshiq] Publishing reel (score_reveal)...
+2026-04-17 02:30:59  INFO      [facebook/Nakshiq] DRY RUN — would publish:
+🎯 Do NOT go to Kullu in April.
+
+NakshIQ Score: 4/5
+Spring bloom, 10-24°C. Valley lush green. Bijli Mahadev trek accessible. Raghunath Temple pleasant. River rafting season begins on Beas. Good all-rou...
+2026-04-17 02:30:59  INFO      Theme tracker updated: format=score_reveal
+2026-04-17 02:30:59  INFO      State saved. Reel run complete.
+2026-04-17 02:30:59  INFO      ════════════════════════════════════════════════════════════
+2026-04-17 02:32:01  INFO          Requesting upload URL for reel_destination_reveal_manali.mp4 (913,716 bytes, video/mp4)
+2026-04-17 02:32:02  INFO          Uploading to R2 (timeout=300s)...
+2026-04-17 02:32:05  INFO          R2 PUT OK. Confirming...
+2026-04-17 02:32:07  INFO          Media ready: iS3yB (913,716 bytes · reel_destination_reveal_manali.mp4)
+2026-04-17 02:38:31  INFO      ════════════════════════════════════════════════════════════
+2026-04-17 02:38:31  INFO      Nakshiq Autoposter · REEL · 2026-04-17 · weekday=4
+2026-04-17 02:38:31  INFO      ════════════════════════════════════════════════════════════
+2026-04-17 02:38:31  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-04-17 02:38:39  INFO      Synced → 20 destinations · 0 traps · 13 articles · total catalog=480
+2026-04-17 02:38:39  INFO      Format: score_reveal | Data: {'dest_name': 'Manali', 'dest_slug': 'manali', 'month': 'April', 'score': 4, 'reason': 'Spring. Apple blossoms, mild weather, manageable crowds.'}
+2026-04-17 02:38:46  INFO      Reel rendered: reel_score_reveal_manali.mp4 (3787 KB)
+2026-04-17 02:38:46  INFO          Requesting upload URL for reel_score_reveal_reel_score_reveal_manali.mp4 (3,878,741 bytes, video/mp4)
+2026-04-17 02:38:47  INFO          Uploading to R2 (timeout=300s)...
+2026-04-17 02:38:51  INFO          R2 PUT OK. Confirming...
+2026-04-17 02:38:52  INFO          Media ready: bE7ZT (3,878,741 bytes · reel_score_reveal_reel_score_reveal_manali.mp4)
+2026-04-17 02:38:52  INFO      Video uploaded: reel_score_reveal_reel_score_reveal_manali.mp4
+2026-04-17 02:38:54  INFO      [instagram/nakshiq] Publishing reel (score_reveal)...
+2026-04-17 02:38:54  INFO      [instagram/nakshiq] DRY RUN — would publish:
+🎯 Do NOT go to Manali in April.
+
+NakshIQ Score: 4/5
+Spring. Apple blossoms, mild weather, manageable crowds.
+
+303 destinations. Real-time travel scores.
+→ nakshiq.com
+
+—
+Data, not opinions.
+
+#NakshIQ ...
+2026-04-17 02:38:54  INFO      [facebook/Nakshiq] Publishing reel (score_reveal)...
+2026-04-17 02:38:54  INFO      [facebook/Nakshiq] DRY RUN — would publish:
+🎯 Do NOT go to Manali in April.
+
+NakshIQ Score: 4/5
+Spring. Apple blossoms, mild weather, manageable crowds.
+
+303 destinations. Real-time travel scores.
+→ nakshiq.com
+
+—
+Data, not opinions.
+
+#NakshIQ ...
+2026-04-17 02:38:54  INFO      Theme tracker updated: format=score_reveal
+2026-04-17 02:38:54  INFO      State saved. Reel run complete.
+2026-04-17 02:38:54  INFO      ════════════════════════════════════════════════════════════
+2026-04-17 02:39:14  INFO          Requesting upload URL for reel_score_reveal_gangotri.mp4 (5,462,641 bytes, video/mp4)
+2026-04-17 02:39:15  INFO          Uploading to R2 (timeout=300s)...
+2026-04-17 02:39:19  INFO          R2 PUT OK. Confirming...
+2026-04-17 02:39:20  INFO          Media ready: mried (5,462,641 bytes · reel_score_reveal_gangotri.mp4)

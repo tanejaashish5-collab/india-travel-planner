@@ -1,17 +1,17 @@
 {
-  "last_sync": "2026-04-16T12:20:57.735943+00:00",
+  "last_sync": "2026-04-17T01:41:50.854304+00:00",
   "posted_today": {
     "8iDfI": "2026-04-14",
     "x4cT8": "2026-04-14",
-    "m8EAd": "2026-04-16",
+    "m8EAd": "2026-04-17",
     "m8EAd_story": "2026-04-15",
-    "PdMu0": "2026-04-16",
+    "PdMu0": "2026-04-17",
     "m8EAd_tourist_map": "2026-04-16",
     "PdMu0_tourist_map": "2026-04-16",
     "m8EAd_canva": "2026-04-16",
     "PdMu0_canva": "2026-04-16",
-    "m8EAd_reel": "2026-04-16",
-    "PdMu0_reel": "2026-04-16",
+    "m8EAd_reel": "2026-04-17",
+    "PdMu0_reel": "2026-04-17",
     "m8EAd_evening": "2026-04-16",
     "m8EAd_evening_story": "2026-04-16",
     "PdMu0_evening": "2026-04-16"
@@ -148,6 +148,14 @@
     {
       "destination_id": "srinagar",
       "date": "2026-04-16"
+    },
+    {
+      "destination_id": "pangong_tso_ig",
+      "date": "2026-04-17"
+    },
+    {
+      "destination_id": "pangong-tso_feed_minimal-elegant_badge",
+      "date": "2026-04-17"
     }
   ],
   "posted_formats": {
@@ -533,11 +541,23 @@
     "canva_categories": {
       "mood_shots": [
         "2026-04-16"
+      ],
+      "collections": [
+        "2026-04-17"
+      ],
+      "this_or_that": [
+        "2026-04-17"
       ]
     },
     "canva_images": {
       "mood_shots/munnar_KL_01.jpg": [
         "2026-04-16"
+      ],
+      "collections/motorcycle_routes_01.jpg": [
+        "2026-04-17"
+      ],
+      "this_or_that/mountains_vs_beaches_01.jpg": [
+        "2026-04-17"
       ]
     },
     "festivals": {
@@ -550,12 +570,44 @@
     },
     "reel_formats": {
       "score_reveal": [
-        "2026-04-16"
+        "2026-04-16",
+        "2026-04-17"
+      ],
+      "seasonal_shift": [
+        "2026-04-17"
+      ],
+      "destination_reveal": [
+        "2026-04-17"
       ]
     },
     "reel_score_dests": {
       "gir-national-park": [
         "2026-04-16"
+      ],
+      "chandigarh": [
+        "2026-04-17"
+      ],
+      "pelling": [
+        "2026-04-17"
+      ],
+      "guwahati": [
+        "2026-04-17"
+      ],
+      "kullu": [
+        "2026-04-17"
+      ],
+      "manali": [
+        "2026-04-17"
+      ]
+    },
+    "reel_seasonal_dests": {
+      "bhimtal": [
+        "2026-04-17"
+      ]
+    },
+    "reel_reveal_dests": {
+      "bhimtal": [
+        "2026-04-17"
       ]
     }
   }

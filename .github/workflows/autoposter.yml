@@ -66,6 +66,21 @@ jobs:
       - name: Install Python dependencies
         run: pip install -r nakshiq-autoposter/requirements.txt
 
+      - name: Cache social image library
+        uses: actions/cache@v4
+        with:
+          path: nakshiq-autoposter/social_image_library
+          key: social-image-library-v1
+
+      - name: Generate social image library (if not cached)
+        run: |
+          if [ ! -d "nakshiq-autoposter/social_image_library" ] || [ $(find nakshiq-autoposter/social_image_library -name "*.jpg" 2>/dev/null | wc -l) -lt 100 ]; then
+            echo "Generating social image library..."
+            python nakshiq-autoposter/dest_image_gen.py --limit 0
+          else
+            echo "Social image library cached ($(find nakshiq-autoposter/social_image_library -name '*.jpg' | wc -l) images)"
+          fi
+
       - name: Set run mode
         id: mode
         run: |

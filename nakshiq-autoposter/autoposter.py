@@ -1365,9 +1365,40 @@ def get_connected_accounts() -> list:
 # MEDIA UPLOAD
 # ─────────────────────────────────────────────────────────────────────────────
 
-def upload_media(url: str, filename: str, content_type: str = "image/jpeg") -> dict | None:
-    """Download from URL → upload to Outstand R2 → confirm → return media obj."""
+def _try_branded_image(url: str, filename: str) -> bytes | None:
+    """
+    Check if a branded social-library image exists for this destination URL.
+    Returns the file bytes if found, or None to fall back to the remote URL.
+    Wrapped in a blanket try/except so it can NEVER break the caller.
+    """
     try:
+        from social_image_picker import pick_social_image
+        # Extract destination slug from the URL: .../destinations/manali.jpg → manali
+        stem = Path(url).stem if url else ""
+        if not stem:
+            return None
+        # Try both the URL slug and a cleaned version
+        img_path = pick_social_image(stem.replace("-", " "), fmt="feed")
+        if img_path and img_path.exists():
+            data = img_path.read_bytes()
+            log.info(f"    Using branded image: {img_path.name} ({len(data):,} bytes)")
+            return data
+    except Exception:
+        pass  # Any failure → silent fallback to original URL
+    return None
+
+
+def upload_media(url: str, filename: str, content_type: str = "image/jpeg") -> dict | None:
+    """Download from URL → upload to Outstand R2 → confirm → return media obj.
+    Prefers a branded image from social_image_library/ when available."""
+    try:
+        # Try branded local image first (safe — falls back on any failure)
+        if "image/jpeg" in content_type:
+            branded = _try_branded_image(url, filename)
+            if branded:
+                return upload_media_bytes(branded, filename, content_type)
+
+        # Original behavior: download from remote URL
         log.info(f"    Downloading: {url}")
         resp = requests.get(url, timeout=30)
         resp.raise_for_status()
@@ -2705,7 +2736,7 @@ def run_canva_visual(force: bool = False, dry_run: bool = False):
 
 REEL_LOCK_FILE = Path(__file__).parent / ".autoposter-reel.lock"
 
-REEL_FORMATS = ["score_reveal", "contrarian", "seasonal_shift", "trap_alert"]
+REEL_FORMATS = ["score_reveal", "contrarian", "seasonal_shift", "trap_alert", "destination_reveal"]
 
 # Captions per reel format
 REEL_CAPTION_TEMPLATES = {
@@ -2749,6 +2780,16 @@ REEL_CAPTION_TEMPLATES = {
         "Travel with IQ.\n\n"
         "{hashtags}"
     ),
+    "destination_reveal": (
+        "📍 Discover {dest}, {state}\n\n"
+        "NakshIQ Score: {score}/5\n"
+        "{tagline}\n\n"
+        "303 destinations. Real scores. Zero fluff.\n"
+        "→ nakshiq.com\n\n"
+        "—\n"
+        "Travel with IQ.\n\n"
+        "{hashtags}"
+    ),
 }
 
 
@@ -2785,6 +2826,8 @@ def _reel_caption(reel_format: str, data: dict, platform: str) -> str:
             future_score=data.get("future_score", ""),
             trap=data.get("trap_name", ""),
             alternative=data.get("alternative", ""),
+            state=data.get("state_name", "India"),
+            tagline=data.get("tagline", ""),
             hashtags=hashtags,
         )
     except KeyError:
@@ -2803,12 +2846,10 @@ def _pick_reel_data(state: dict, content: dict, reel_format: str) -> dict | None
     traps = content.get("traps", {}).get("data", [])
 
     if reel_format == "score_reveal":
-        # Pick a LOW-scored destination for dramatic effect
+        # Pick a LOW-scored destination (≤3) — the "don't go" hook only works
+        # when the score genuinely warrants a warning. Skip if nothing qualifies.
         low_scored = [d for d in destinations_low
                       if isinstance(d.get("score"), (int, float)) and d["score"] <= 3]
-        if not low_scored:
-            low_scored = [d for d in destinations_low
-                          if isinstance(d.get("score"), (int, float)) and d["score"] <= 4]
         if not low_scored:
             return None
         ordered = pick_oldest_unused(state, "reel_score_dests",
@@ -2886,13 +2927,41 @@ def _pick_reel_data(state: dict, content: dict, reel_format: str) -> dict | None
             "dest_slug": t.get("destination_id") or t.get("destination", "india"),
         }
 
+    elif reel_format == "destination_reveal":
+        # Pick a HIGH-scored destination that has a branded image
+        try:
+            from social_image_picker import has_social_image
+        except ImportError:
+            return None
+        high_scored = [d for d in destinations
+                       if isinstance(d.get("score"), (int, float))
+                       and d["score"] >= 4
+                       and has_social_image(d.get("name", ""))]
+        if not high_scored:
+            # Fallback: any destination with a branded image
+            high_scored = [d for d in destinations
+                          if has_social_image(d.get("name", ""))]
+        if not high_scored:
+            return None
+        ordered = pick_oldest_unused(state, "reel_reveal_dests",
+                                     [{"id": d.get("id", d.get("name", "")), **d}
+                                      for d in high_scored], key="id")
+        d = ordered[0]
+        return {
+            "dest_name": d.get("name", "Unknown"),
+            "dest_slug": d.get("id", d.get("name", "india")),
+            "state_name": d.get("state", ""),
+            "score": int(d.get("score", 4)),
+            "tagline": d.get("tagline") or d.get("note") or "",
+        }
+
     return None
 
 
 def _run_reel(force: bool = False, dry_run: bool = False):
     """
     Reel mode — generates and posts a short-form vertical video.
-    Rotates through 4 reel formats with anti-repetition.
+    Rotates through 5 reel formats with anti-repetition.
     """
     import tempfile
     from reel_gen import render_reel
@@ -3009,6 +3078,8 @@ def _run_reel(force: bool = False, dry_run: bool = False):
             mark_theme_used(st, "reel_seasonal_dests", dest_id)
         elif chosen_format == "trap_alert":
             mark_theme_used(st, "reel_trap_alerts", reel_data.get("trap_name", ""))
+        elif chosen_format == "destination_reveal":
+            mark_theme_used(st, "reel_reveal_dests", dest_id)
 
         log.info(f"Theme tracker updated: format={chosen_format}")
 
