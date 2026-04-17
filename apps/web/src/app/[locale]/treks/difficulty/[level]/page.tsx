@@ -5,6 +5,7 @@ import { TreksContent } from "@/components/treks-content";
 import { createClient } from "@supabase/supabase-js";
 import { notFound } from "next/navigation";
 import { DIFFICULTY_MAP } from "@/lib/seo-maps";
+import { localeAlternates } from "@/lib/seo-utils";
 
 export const revalidate = 86400;
 export const dynamicParams = true;
@@ -19,7 +20,15 @@ function getSupabase() {
 export async function generateMetadata({ params }: { params: Promise<{ level: string }> }): Promise<Metadata> {
   const { level } = await params;
   const name = DIFFICULTY_MAP[level];
-  if (!name) return {};
+  if (!name) return {
+    alternates: {
+      canonical: `https://www.nakshiq.com/${locale}/treks/difficulty/${level}`,
+      languages: {
+        en: `https://www.nakshiq.com/en/treks/difficulty/${level}`,
+        hi: `https://www.nakshiq.com/hi/treks/difficulty/${level}`,
+      },
+    },
+  };
   return {
     title: `${name} Treks in India — Scored Trails | NakshIQ`,
     description: `All ${name.toLowerCase()} treks across India with altitude, duration, best months, gear requirements, and fitness level needed.`,

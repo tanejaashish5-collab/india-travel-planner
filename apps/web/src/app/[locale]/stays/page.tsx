@@ -4,15 +4,19 @@ import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { StaysContent } from "@/components/stays-content";
 import { createClient } from "@supabase/supabase-js";
+import { localeAlternates } from "@/lib/seo-utils";
 
 export const revalidate = 3600;
 
-export const metadata: Metadata = {
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  return {
   title: "Stay Intelligence — Where to Stay, Not Where to Book",
   description: "Decision-grade accommodation guidance for every destination. Best zones by traveler type, budget bands, stay types, and honest avoid-this warnings. Not a booking site.",
-};
 
-async function getStayData() {
+    ...localeAlternates(locale, "/stays"),
+  };
+}async function getStayData() {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
   if (!url || !key) return [];

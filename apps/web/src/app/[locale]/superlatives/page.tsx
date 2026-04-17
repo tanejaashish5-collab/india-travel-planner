@@ -4,15 +4,19 @@ import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { SuperlativesContent } from "@/components/superlatives-content";
 import { createClient } from "@supabase/supabase-js";
+import { localeAlternates } from "@/lib/seo-utils";
 
 export const revalidate = 3600;
 
-export const metadata: Metadata = {
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  return {
   title: "India's Records & Firsts — Superlatives",
   description: "The highest, oldest, most dangerous, and most unique places in India. 25 superlative records with destinations and details.",
-};
 
-async function getSuperlatives() {
+    ...localeAlternates(locale, "/superlatives"),
+  };
+}async function getSuperlatives() {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
   if (!url || !key) return [];

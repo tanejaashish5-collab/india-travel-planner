@@ -815,9 +815,62 @@
 2026-04-16 12:01:25  INFO      Theme tracker updated: format=score_reveal
 2026-04-16 12:01:25  INFO      State saved. Reel run complete.
 2026-04-16 12:01:25  INFO      ════════════════════════════════════════════════════════════
-2026-04-16 16:08:09  INFO      ════════════════════════════════════════════════════════════
-2026-04-16 16:08:09  INFO      Nakshiq Autoposter · MORNING · 2026-04-16 · weekday=3
-2026-04-16 16:08:09  INFO      ════════════════════════════════════════════════════════════
-2026-04-16 16:08:09  INFO      ── Syncing Nakshiq content ──────────────────────────────
-2026-04-16 16:08:14  INFO      Synced → 20 destinations · 0 traps · 16 articles · total catalog=480
-2026-04-16 16:08:14  INFO      Sync-only mode. Done.
+2026-04-16 22:17:18  INFO      Stale lock (age=7624s) — overriding.
+2026-04-16 22:17:18  INFO      ════════════════════════════════════════════════════════════
+2026-04-16 22:17:18  INFO      Nakshiq Autoposter · EVENING · 2026-04-16 · weekday=3
+2026-04-16 22:17:18  INFO      ════════════════════════════════════════════════════════════
+2026-04-16 22:17:18  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-04-16 22:17:26  INFO      Synced → 20 destinations · 0 traps · 16 articles · total catalog=480
+2026-04-16 22:17:28  INFO      Active accounts: ['instagram/nakshiq', 'facebook/Nakshiq']
+2026-04-16 22:17:28  INFO      Formats — IG: festival_alert  ·  FB: festival_alert  ·  Story: collection_spotlight
+2026-04-16 22:17:28  INFO      Used destinations (14d): 23
+2026-04-16 22:17:28  INFO      Collection locked: Andaman Diving & Snorkeling (18/20 never featured)
+2026-04-16 22:17:28  INFO      Festival locked: Tulip Festival (19/20 never featured)
+2026-04-16 22:17:39  INFO      Shared best destination locked: Dhanaulti
+2026-04-16 22:17:39  INFO      Carousel locked (collection_spotlight): no valid images found
+2026-04-16 22:17:39  INFO      [instagram/nakshiq] Already posted today (evening) — skipping.
+2026-04-16 22:17:39  INFO      [facebook/Nakshiq] Already posted today (evening) — skipping.
+2026-04-16 22:17:39  INFO      State saved. Run complete.
+2026-04-16 22:17:39  INFO      ════════════════════════════════════════════════════════════
+2026-04-16 22:20:51  INFO      ════════════════════════════════════════════════════════════
+2026-04-16 22:20:51  INFO      Nakshiq Autoposter · EVENING · 2026-04-16 · weekday=3
+2026-04-16 22:20:51  INFO      ════════════════════════════════════════════════════════════
+2026-04-16 22:20:51  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-04-16 22:20:57  INFO      Synced → 20 destinations · 0 traps · 16 articles · total catalog=480
+2026-04-16 22:20:58  INFO      Active accounts: ['instagram/nakshiq', 'facebook/Nakshiq']
+2026-04-16 22:20:58  INFO      Formats — IG: festival_alert  ·  FB: festival_alert  ·  Story: collection_spotlight
+2026-04-16 22:20:58  INFO      Used destinations (14d): 23
+2026-04-16 22:20:58  INFO      Collection locked: Andaman Diving & Snorkeling (18/20 never featured)
+2026-04-16 22:20:58  INFO      Festival locked: Tulip Festival (19/20 never featured)
+2026-04-16 22:21:00  INFO      Shared best destination locked: Dhanaulti
+2026-04-16 22:21:00  INFO      Carousel locked (collection_spotlight): no valid images found
+2026-04-16 22:21:00  INFO      [instagram/nakshiq] Generating festival_alert post...
+2026-04-16 22:21:00  INFO      [instagram/nakshiq] Caption ready (286 chars, dest=srinagar)
+2026-04-16 22:21:00  INFO      [instagram/nakshiq] Uploading image...
+2026-04-16 22:21:00  INFO          Downloading: https://www.nakshiq.com/images/destinations/srinagar.jpg
+2026-04-16 22:21:01  INFO          Requesting upload URL for srinagar.jpg (175,071 bytes, image/jpeg)
+2026-04-16 22:21:02  INFO          Uploading to R2 (timeout=120s)...
+2026-04-16 22:21:05  INFO          R2 PUT OK. Confirming...
+2026-04-16 22:21:07  INFO          Media ready: n3Qzl (175,071 bytes · srinagar.jpg)
+2026-04-16 22:21:07  INFO      [instagram/nakshiq] Publishing feed post...
+2026-04-16 22:21:32  INFO      [instagram/nakshiq] ✅ Published · Outstand=pPgQM · Platform=18010871858847392
+2026-04-16 22:21:32  INFO      [instagram/nakshiq] Uploading Story image (dhanaulti.jpg)...
+2026-04-16 22:21:32  INFO          Downloading: https://www.nakshiq.com/images/destinations/dhanaulti.jpg
+2026-04-16 22:21:33  INFO          Requesting upload URL for dhanaulti.jpg (371,958 bytes, image/jpeg)
+2026-04-16 22:21:34  INFO          Uploading to R2 (timeout=120s)...
+2026-04-16 22:21:37  INFO          R2 PUT OK. Confirming...
+2026-04-16 22:21:39  INFO          Media ready: iSKWB (371,958 bytes · dhanaulti.jpg)
+2026-04-16 22:21:39  INFO      [instagram/nakshiq] Publishing Story · format=collection_spotlight · dest=dhanaulti
+2026-04-16 22:21:57  INFO      [instagram/nakshiq] ✅ Story live · ID=17945782581156655
+2026-04-16 22:21:57  INFO      [facebook/Nakshiq] Generating festival_alert post...
+2026-04-16 22:21:57  INFO      [facebook/Nakshiq] Caption ready (286 chars, dest=srinagar)
+2026-04-16 22:21:57  INFO      [facebook/Nakshiq] Uploading image...
+2026-04-16 22:21:57  INFO          Downloading: https://www.nakshiq.com/images/destinations/srinagar.jpg
+2026-04-16 22:21:58  INFO          Requesting upload URL for srinagar.jpg (175,071 bytes, image/jpeg)
+2026-04-16 22:21:59  INFO          Uploading to R2 (timeout=120s)...
+2026-04-16 22:22:01  INFO          R2 PUT OK. Confirming...
+2026-04-16 22:22:03  INFO          Media ready: zgtLP (175,071 bytes · srinagar.jpg)
+2026-04-16 22:22:03  INFO      [facebook/Nakshiq] Publishing feed post...
+2026-04-16 22:22:15  INFO      [facebook/Nakshiq] ✅ Published · Outstand=4S6Mi · Platform=1040562729145369_122098747916700092
+2026-04-16 22:22:15  INFO      State saved. Run complete.
+2026-04-16 22:22:15  INFO      ════════════════════════════════════════════════════════════

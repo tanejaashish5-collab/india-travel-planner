@@ -3,13 +3,17 @@ import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { CompareView } from "@/components/compare-view";
 import { createClient } from "@supabase/supabase-js";
+import { localeAlternates } from "@/lib/seo-utils";
 
-export const metadata: Metadata = {
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  return {
   title: "Compare Destinations — Side by Side",
   description: "Compare up to 3 destinations on monthly score, kids rating, safety, network, medical access, budget, difficulty, and more.",
-};
 
-async function getDestinations() {
+    ...localeAlternates(locale, "/compare"),
+  };
+}async function getDestinations() {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
   if (!url || !key) return [];

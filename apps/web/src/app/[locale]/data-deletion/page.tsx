@@ -1,14 +1,18 @@
 import type { Metadata } from "next";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
+import { localeAlternates } from "@/lib/seo-utils";
 
-export const metadata: Metadata = {
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  return {
   title: "Data Deletion Request — NakshIQ",
   description:
     "Request deletion of your personal data from NakshIQ. We respect your privacy and will process all requests within 30 days.",
-};
 
-export default function DataDeletionPage() {
+    ...localeAlternates(locale, "/data-deletion"),
+  };
+}export default function DataDeletionPage() {
   return (
     <div className="min-h-screen">
       <Nav />

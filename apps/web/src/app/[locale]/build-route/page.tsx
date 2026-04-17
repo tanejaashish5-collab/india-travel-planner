@@ -3,13 +3,17 @@ import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { RouteBuilder } from "@/components/route-builder";
 import { createClient } from "@supabase/supabase-js";
+import { localeAlternates } from "@/lib/seo-utils";
 
-export const metadata: Metadata = {
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  return {
   title: "Build Your Route — Custom Trip Builder",
   description: "Pick destinations, we'll sequence them by drive time and season fit. Build your perfect North India road trip.",
-};
 
-async function getDestinations() {
+    ...localeAlternates(locale, "/build-route"),
+  };
+}async function getDestinations() {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
   if (!url || !key) return [];

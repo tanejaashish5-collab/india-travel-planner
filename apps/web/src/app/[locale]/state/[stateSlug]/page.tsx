@@ -6,6 +6,7 @@ import { Footer } from "@/components/footer";
 import { StateDestinationGrid } from "@/components/state-destination-grid";
 import { createClient } from "@supabase/supabase-js";
 import { STATE_MAP, getRegionNameForState } from "@/lib/seo-maps";
+import { localeAlternates } from "@/lib/seo-utils";
 
 export const revalidate = 86400;
 export const dynamicParams = true;
@@ -17,7 +18,15 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { stateSlug } = await params;
   const name = STATE_MAP[stateSlug];
-  if (!name) return {};
+  if (!name) return {
+    alternates: {
+      canonical: `https://www.nakshiq.com/${locale}/state/${stateSlug}`,
+      languages: {
+        en: `https://www.nakshiq.com/en/state/${stateSlug}`,
+        hi: `https://www.nakshiq.com/hi/state/${stateSlug}`,
+      },
+    },
+  };
   const region = getRegionNameForState(stateSlug);
   return {
     title: `${name} — Destinations, Scores & Travel Guide`,

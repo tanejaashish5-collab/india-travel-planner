@@ -3,15 +3,19 @@ import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { ExploreWithMap } from "@/components/explore-with-map";
 import { createClient } from "@supabase/supabase-js";
+import { localeAlternates } from "@/lib/seo-utils";
 
 export const revalidate = 3600;
 
-export const metadata: Metadata = {
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  return {
   title: "Explore Destinations — Filter by Month, Difficulty, Kids & More",
   description: "Browse 143+ destinations across India with monthly suitability scores. Filter by state, difficulty, kids-friendliness, and sort by elevation or score. Grid and map views.",
-};
 
-async function getData() {
+    ...localeAlternates(locale, "/explore"),
+  };
+}async function getData() {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
   if (!url || !key) return { destinations: [], states: [], coords: [] };

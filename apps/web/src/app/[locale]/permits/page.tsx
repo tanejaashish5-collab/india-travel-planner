@@ -4,15 +4,19 @@ import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { PermitsContent } from "@/components/permits-content";
 import { createClient } from "@supabase/supabase-js";
+import { localeAlternates } from "@/lib/seo-utils";
 
 export const revalidate = 86400;
 
-export const metadata: Metadata = {
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  return {
   title: "Permits & Passes — Do I Need a Permit?",
   description: "Complete guide to Inner Line Permits, Protected Area Permits, national park entries, and trek registrations for North India. Costs, processing times, and pro tips.",
-};
 
-async function getPermits() {
+    ...localeAlternates(locale, "/permits"),
+  };
+}async function getPermits() {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
   if (!url || !key) return [];

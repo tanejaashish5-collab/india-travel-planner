@@ -2,14 +2,18 @@ import type { Metadata } from "next";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { NewsletterForm } from "./newsletter-form";
+import { localeAlternates } from "@/lib/seo-utils";
 
-export const metadata: Metadata = {
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  return {
   title: "The Window — NakshIQ's Weekly Travel Intelligence",
   description:
     "Every Sunday: the best-scored destinations this week, one honest skip, one road you should know about, and what changed. No fluff. No sponsored picks. Just signal.",
-};
 
-export default function NewsletterPage() {
+    ...localeAlternates(locale, "/newsletter"),
+  };
+}export default function NewsletterPage() {
   return (
     <div className="min-h-screen">
       <Nav />

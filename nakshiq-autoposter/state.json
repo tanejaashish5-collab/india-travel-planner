@@ -1,20 +1,20 @@
 {
-  "last_sync": "2026-04-16T16:08:14.798904+00:00",
+  "last_sync": "2026-04-16T12:20:57.735943+00:00",
   "posted_today": {
     "8iDfI": "2026-04-14",
     "x4cT8": "2026-04-14",
     "m8EAd": "2026-04-16",
     "m8EAd_story": "2026-04-15",
     "PdMu0": "2026-04-16",
-    "m8EAd_evening": "2026-04-16",
-    "m8EAd_evening_story": "2026-04-16",
-    "PdMu0_evening": "2026-04-16",
     "m8EAd_tourist_map": "2026-04-16",
     "PdMu0_tourist_map": "2026-04-16",
     "m8EAd_canva": "2026-04-16",
     "PdMu0_canva": "2026-04-16",
     "m8EAd_reel": "2026-04-16",
-    "PdMu0_reel": "2026-04-16"
+    "PdMu0_reel": "2026-04-16",
+    "m8EAd_evening": "2026-04-16",
+    "m8EAd_evening_story": "2026-04-16",
+    "PdMu0_evening": "2026-04-16"
   },
   "posted_destinations": [
     {
@@ -140,6 +140,14 @@
     {
       "destination_id": "dhanaulti",
       "date": "2026-04-16"
+    },
+    {
+      "destination_id": "srinagar",
+      "date": "2026-04-16"
+    },
+    {
+      "destination_id": "srinagar",
+      "date": "2026-04-16"
     }
   ],
   "posted_formats": {
@@ -156,6 +164,7 @@
       "data_carousel",
       "data_carousel",
       "collection_spotlight",
+      "festival_alert",
       "festival_alert"
     ],
     "PdMu0": [
@@ -163,6 +172,7 @@
       "data_carousel",
       "data_carousel",
       "collection_spotlight",
+      "festival_alert",
       "festival_alert"
     ]
   },
@@ -439,33 +449,33 @@
       "has_media": true
     },
     {
-      "timestamp": "2026-04-16T10:11:05.387287+00:00",
+      "timestamp": "2026-04-16T12:21:32.888774+00:00",
       "date": "2026-04-16",
       "platform": "instagram",
       "account_id": "m8EAd",
-      "post_id": "EdX4A",
-      "destination": "dhanaulti",
+      "post_id": "pPgQM",
+      "destination": "srinagar",
       "format": "festival_alert",
       "has_media": true
     },
     {
-      "timestamp": "2026-04-16T10:11:28.243267+00:00",
+      "timestamp": "2026-04-16T12:21:57.708056+00:00",
       "date": "2026-04-16",
       "platform": "instagram_story",
       "account_id": "m8EAd",
-      "post_id": "Wg4lz",
+      "post_id": "J5T03",
       "destination": "dhanaulti",
       "format": "collection_spotlight",
       "has_media": true,
       "mode": "evening"
     },
     {
-      "timestamp": "2026-04-16T10:11:48.723228+00:00",
+      "timestamp": "2026-04-16T12:22:15.068249+00:00",
       "date": "2026-04-16",
       "platform": "facebook",
       "account_id": "PdMu0",
-      "post_id": "Gzd8p",
-      "destination": "dhanaulti",
+      "post_id": "4S6Mi",
+      "destination": "srinagar",
       "format": "festival_alert",
       "has_media": true
     }
@@ -476,6 +486,9 @@
         "2026-04-15"
       ],
       "after-dark-experiences": [
+        "2026-04-16"
+      ],
+      "andaman-diving-snorkeling": [
         "2026-04-16"
       ]
     },
@@ -490,6 +503,9 @@
       ],
       "dhanaulti": [
         "2026-04-16"
+      ],
+      "srinagar": [
+        "2026-04-16"
       ]
     },
     "reels": {
@@ -497,6 +513,9 @@
         "2026-04-15"
       ],
       "dhanaulti": [
+        "2026-04-16"
+      ],
+      "srinagar": [
         "2026-04-16"
       ]
     },
@@ -523,6 +542,9 @@
     },
     "festivals": {
       "e0a60b00-abba-4445-a670-ef40e3b8c068": [
+        "2026-04-16"
+      ],
+      "ef0324e9-c7ac-4c7d-a579-3b1e3f169890": [
         "2026-04-16"
       ]
     },

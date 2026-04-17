@@ -4,15 +4,19 @@ import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { CampingContent } from "@/components/camping-content";
 import { createClient } from "@supabase/supabase-js";
+import { localeAlternates } from "@/lib/seo-utils";
 
 export const revalidate = 3600;
 
-export const metadata: Metadata = {
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  return {
   title: "Camping Spots — Best Campsites Across India",
   description: "Scored camping spots from riverside sites in Rishikesh to high-altitude camps near Pangong. Facilities, elevation, best months, and permit requirements.",
-};
 
-async function getCampingData() {
+    ...localeAlternates(locale, "/camping"),
+  };
+}async function getCampingData() {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
   if (!url || !key) return [];

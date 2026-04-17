@@ -2,14 +2,18 @@ import type { Metadata } from "next";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import Link from "next/link";
+import { localeAlternates } from "@/lib/seo-utils";
 
-export const metadata: Metadata = {
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  return {
   title: "About NakshIQ — Built by an Indian Family, for Every Traveler",
   description:
     "No investors. No sponsored content. No tourism boards. NakshIQ is built by an NRI family for their daughters — and for every traveler who deserves honest answers before they go.",
-};
 
-export default function AboutPage() {
+    ...localeAlternates(locale, "/about"),
+  };
+}export default function AboutPage() {
   return (
     <div className="min-h-screen">
       <Nav />

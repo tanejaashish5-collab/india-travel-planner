@@ -4,6 +4,7 @@ import { Footer } from "@/components/footer";
 import { createClient } from "@supabase/supabase-js";
 import { notFound } from "next/navigation";
 import { STATE_MAP } from "@/lib/seo-maps";
+import { localeAlternates } from "@/lib/seo-utils";
 
 export const revalidate = 86400;
 export const dynamicParams = true;
@@ -20,7 +21,15 @@ const MONTH_NAMES = ["","January","February","March","April","May","June","July"
 export async function generateMetadata({ params }: { params: Promise<{ stateSlug: string }> }): Promise<Metadata> {
   const { stateSlug } = await params;
   const stateName = STATE_MAP[stateSlug];
-  if (!stateName) return {};
+  if (!stateName) return {
+    alternates: {
+      canonical: `https://www.nakshiq.com/${locale}/festivals/state/${stateSlug}`,
+      languages: {
+        en: `https://www.nakshiq.com/en/festivals/state/${stateSlug}`,
+        hi: `https://www.nakshiq.com/hi/festivals/state/${stateSlug}`,
+      },
+    },
+  };
   return {
     title: `Festivals in ${stateName} — Complete Calendar | NakshIQ`,
     description: `Every festival in ${stateName} by month — dates, locations, and what to expect. Time your trip around ${stateName}'s celebrations.`,

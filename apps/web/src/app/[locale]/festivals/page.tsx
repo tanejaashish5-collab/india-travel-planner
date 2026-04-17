@@ -4,15 +4,19 @@ import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { FestivalsContent } from "@/components/festivals-content";
 import { createClient } from "@supabase/supabase-js";
+import { localeAlternates } from "@/lib/seo-utils";
 
 export const revalidate = 3600;
 
-export const metadata: Metadata = {
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  return {
   title: "Festivals & Events — 183 Festivals Across India",
   description: "Time your trip around India's most spectacular festivals. Pushkar Camel Fair, Dev Deepawali, Hemis Festival, Tulip Festival, and 180+ more with dates and destinations.",
-};
 
-async function getFestivals() {
+    ...localeAlternates(locale, "/festivals"),
+  };
+}async function getFestivals() {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
   if (!url || !key) return [];

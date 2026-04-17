@@ -5,6 +5,7 @@ import { TrekDetail } from "@/components/trek-detail";
 import { PrevNextNav } from "@/components/prev-next-nav";
 import { createClient } from "@supabase/supabase-js";
 import { notFound } from "next/navigation";
+import { localeAlternates } from "@/lib/seo-utils";
 
 export const revalidate = 86400;
 export const dynamicParams = true;
@@ -13,7 +14,15 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   const { id } = await params;
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-  if (!url || !key) return {};
+  if (!url || !key) return {
+    alternates: {
+      canonical: `https://www.nakshiq.com/${locale}/treks/${id}`,
+      languages: {
+        en: `https://www.nakshiq.com/en/treks/${id}`,
+        hi: `https://www.nakshiq.com/hi/treks/${id}`,
+      },
+    },
+  };
   const supabase = createClient(url, key);
   const { data } = await supabase.from("treks").select("name, difficulty, duration_days, max_altitude_m, distance_km").eq("id", id).single();
   if (!data) return {};

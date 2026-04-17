@@ -1,14 +1,18 @@
 import type { Metadata } from "next";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
+import { localeAlternates } from "@/lib/seo-utils";
 
-export const metadata: Metadata = {
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  return {
   title: "Cookie Policy — NakshIQ",
   description:
     "NakshIQ uses minimal cookies. No advertising cookies, no third-party tracking. Only functional cookies for authentication and language preference.",
-};
 
-export default function CookiesPage() {
+    ...localeAlternates(locale, "/cookies"),
+  };
+}export default function CookiesPage() {
   return (
     <div className="min-h-screen">
       <Nav />

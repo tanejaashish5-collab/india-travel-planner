@@ -2,14 +2,18 @@ import type { Metadata } from "next";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import Link from "next/link";
+import { localeAlternates } from "@/lib/seo-utils";
 
-export const metadata: Metadata = {
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  return {
   title: "Privacy Policy — NakshIQ",
   description:
     "How NakshIQ handles your data. Minimal collection, no data sales, no marketing spam, privacy-focused analytics.",
-};
 
-export default function PrivacyPage() {
+    ...localeAlternates(locale, "/privacy"),
+  };
+}export default function PrivacyPage() {
   return (
     <div className="min-h-screen">
       <Nav />

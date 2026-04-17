@@ -3,13 +3,17 @@ import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { TripBoard } from "@/components/trip-board";
 import { createClient } from "@supabase/supabase-js";
+import { localeAlternates } from "@/lib/seo-utils";
 
-export const metadata: Metadata = {
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  return {
   title: "My Trip Board — Plan, Organize, Share",
   description: "Build your trip board with destinations, routes, and notes. Share with friends, export as PDF, and get AI recommendations.",
-};
 
-async function getAllDestinations() {
+    ...localeAlternates(locale, "/trip"),
+  };
+}async function getAllDestinations() {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
   if (!url || !key) return [];

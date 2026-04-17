@@ -3,10 +3,13 @@ import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { IndiaArticleGrid } from "./india-article-grid";
 import { createClient } from "@supabase/supabase-js";
+import { localeAlternates } from "@/lib/seo-utils";
 
 export const revalidate = 86400;
 
-export const metadata: Metadata = {
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  return {
   title: "India Travel Guide for International Visitors — NakshIQ",
   description:
     "Honest India travel tips 2026 from an Indian family. Safety, scams, food, transport, and what your guidebook won't tell you. 340+ destinations scored.",
@@ -16,9 +19,10 @@ export const metadata: Metadata = {
       "Honest India travel tips 2026 from an Indian family. Safety, scams, food, transport, and what your guidebook won't tell you.",
     type: "website",
   },
-};
 
-async function getInternationalArticles() {
+    ...localeAlternates(locale, "/india-travel"),
+  };
+}async function getInternationalArticles() {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
   if (!url || !key) return [];

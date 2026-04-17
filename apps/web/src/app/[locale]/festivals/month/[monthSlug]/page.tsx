@@ -4,6 +4,7 @@ import { Footer } from "@/components/footer";
 import { createClient } from "@supabase/supabase-js";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import { localeAlternates } from "@/lib/seo-utils";
 
 export const revalidate = 86400;
 export const dynamicParams = true;
@@ -27,7 +28,15 @@ function getSupabase() {
 export async function generateMetadata({ params }: { params: Promise<{ monthSlug: string }> }): Promise<Metadata> {
   const { monthSlug } = await params;
   const m = MONTH_MAP[monthSlug];
-  if (!m) return {};
+  if (!m) return {
+    alternates: {
+      canonical: `https://www.nakshiq.com/${locale}/festivals/month/${monthSlug}`,
+      languages: {
+        en: `https://www.nakshiq.com/en/festivals/month/${monthSlug}`,
+        hi: `https://www.nakshiq.com/hi/festivals/month/${monthSlug}`,
+      },
+    },
+  };
   return {
     title: `Festivals in India in ${m.name} — Complete Calendar | NakshIQ`,
     description: `Every festival happening across India in ${m.name} with dates, locations, and what to expect. Time your trip around India's celebrations.`,

@@ -2,13 +2,17 @@ import type { Metadata } from "next";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { AskNakshIQPage } from "@/components/ask-nakshiq-page";
+import { localeAlternates } from "@/lib/seo-utils";
 
-export const metadata: Metadata = {
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  return {
   title: "Ask NakshIQ — AI Travel Assistant for India",
   description: "Ask anything about traveling in India. Get instant answers powered by 340+ destinations, 710+ POIs, monthly scores, kids ratings, and safety data.",
-};
 
-export default async function AskPage({
+    ...localeAlternates(locale, "/ask"),
+  };
+}export default async function AskPage({
   params,
 }: {
   params: Promise<{ locale: string }>;

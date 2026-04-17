@@ -2,13 +2,17 @@ import type { Metadata } from "next";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import Link from "next/link";
+import { localeAlternates } from "@/lib/seo-utils";
 
-export const metadata: Metadata = {
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  return {
   title: "How We Score — Methodology",
   description: "Our scoring methodology explained: how we rate destinations 1-5 each month, calculate kids suitability, assess safety, and evaluate infrastructure. Every number is explainable.",
-};
 
-export default function MethodologyPage() {
+    ...localeAlternates(locale, "/methodology"),
+  };
+}export default function MethodologyPage() {
   return (
     <div className="min-h-screen">
       <Nav />

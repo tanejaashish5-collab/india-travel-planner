@@ -2,14 +2,18 @@ import type { Metadata } from "next";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import Link from "next/link";
+import { localeAlternates } from "@/lib/seo-utils";
 
-export const metadata: Metadata = {
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  return {
   title: "Editorial Policy — NakshIQ",
   description:
     "No paid placements. No sponsored content. No tourism board deals. How NakshIQ scores destinations, identifies tourist traps, and keeps editorial independent from revenue.",
-};
 
-export default function EditorialPolicyPage() {
+    ...localeAlternates(locale, "/editorial-policy"),
+  };
+}export default function EditorialPolicyPage() {
   return (
     <div className="min-h-screen">
       <Nav />

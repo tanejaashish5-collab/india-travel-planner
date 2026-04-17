@@ -4,15 +4,19 @@ import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { createClient } from "@supabase/supabase-js";
 import { GuideContent } from "@/components/guide-content";
+import { localeAlternates } from "@/lib/seo-utils";
 
 export const revalidate = 86400;
 
-export const metadata: Metadata = {
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  return {
   title: "Travel Guides — Data-Driven Destination Intelligence",
   description: "In-depth travel guides for 340+ India destinations. Best time to visit, costs, family suitability, infrastructure reality, and honest opinions.",
-};
 
-async function getGuideData() {
+    ...localeAlternates(locale, "/guide"),
+  };
+}async function getGuideData() {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
   if (!url || !key) return { destinations: [], comparisons: [] };

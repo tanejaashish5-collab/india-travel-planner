@@ -5,6 +5,7 @@ import { ExploreGrid } from "@/components/explore-grid";
 import { createClient } from "@supabase/supabase-js";
 import { notFound } from "next/navigation";
 import { DIFFICULTY_MAP } from "@/lib/seo-maps";
+import { localeAlternates } from "@/lib/seo-utils";
 
 export const revalidate = 86400;
 export const dynamicParams = true;
@@ -26,7 +27,15 @@ const DIFF_DESC: Record<string, string> = {
 export async function generateMetadata({ params }: { params: Promise<{ level: string }> }): Promise<Metadata> {
   const { level } = await params;
   const name = DIFFICULTY_MAP[level];
-  if (!name) return {};
+  if (!name) return {
+    alternates: {
+      canonical: `https://www.nakshiq.com/${locale}/explore/difficulty/${level}`,
+      languages: {
+        en: `https://www.nakshiq.com/en/explore/difficulty/${level}`,
+        hi: `https://www.nakshiq.com/hi/explore/difficulty/${level}`,
+      },
+    },
+  };
   return {
     title: `${name} Destinations in India — Scored & Ranked | NakshIQ`,
     description: `All ${name.toLowerCase()} destinations in India. ${DIFF_DESC[level]} Scored for every month with kids ratings and safety data.`,

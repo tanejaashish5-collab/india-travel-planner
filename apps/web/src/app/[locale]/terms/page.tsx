@@ -2,14 +2,18 @@ import type { Metadata } from "next";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import Link from "next/link";
+import { localeAlternates } from "@/lib/seo-utils";
 
-export const metadata: Metadata = {
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  return {
   title: "Terms of Service — NakshIQ",
   description:
     "Terms of Service for NakshIQ, operated by Impresa de Artiste Pty Ltd. Covers editorial content, AI itineraries, affiliate links, and user responsibilities.",
-};
 
-export default function TermsPage() {
+    ...localeAlternates(locale, "/terms"),
+  };
+}export default function TermsPage() {
   return (
     <div className="min-h-screen">
       <Nav />

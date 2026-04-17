@@ -3,15 +3,19 @@ import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { StatesExplorer } from "@/components/states-explorer";
 import { createClient } from "@supabase/supabase-js";
+import { localeAlternates } from "@/lib/seo-utils";
 
 export const revalidate = 3600;
 
-export const metadata: Metadata = {
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  return {
   title: "Browse India by State — Every Destination Scored",
   description: "Explore India state by state. 340+ destinations across 27 states, each scored for every month. Find the best places to visit in any Indian state.",
-};
 
-async function getData() {
+    ...localeAlternates(locale, "/states"),
+  };
+}async function getData() {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
   if (!url || !key) return { states: [] };

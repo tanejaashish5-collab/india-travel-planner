@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import { STATE_MAP, getSupabase } from "@/lib/seo-maps";
+import { localeAlternates } from "@/lib/seo-utils";
 
 export const revalidate = 86400;
 export const dynamicParams = true;
@@ -12,7 +13,15 @@ export const dynamicParams = true;
 export async function generateMetadata({ params }: { params: Promise<{ stateSlug: string }> }): Promise<Metadata> {
   const { stateSlug } = await params;
   const stateName = STATE_MAP[stateSlug];
-  if (!stateName) return {};
+  if (!stateName) return {
+    alternates: {
+      canonical: `https://www.nakshiq.com/${locale}/family/${stateSlug}`,
+      languages: {
+        en: `https://www.nakshiq.com/en/family/${stateSlug}`,
+        hi: `https://www.nakshiq.com/hi/family/${stateSlug}`,
+      },
+    },
+  };
   return {
     title: `Family-Friendly Destinations in ${stateName} — Kids Ratings | NakshIQ`,
     description: `Every family-friendly destination in ${stateName} with kids ratings, age suitability, medical access, altitude warnings, and honest assessments. Written by parents.`,

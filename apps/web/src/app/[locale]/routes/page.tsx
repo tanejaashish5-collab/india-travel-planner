@@ -4,15 +4,19 @@ import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { RoutesGrid } from "@/components/routes-grid";
 import { createClient } from "@supabase/supabase-js";
+import { localeAlternates } from "@/lib/seo-utils";
 
 export const revalidate = 3600;
 
-export const metadata: Metadata = {
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  return {
   title: "Road Trip Routes — Driving Itineraries Across India",
   description: "Multi-day driving routes across India with day-by-day stops, distance, difficulty, kids suitability, and Google Maps links. From 3-day weekends to 14-day epics.",
-};
 
-async function getRoutes() {
+    ...localeAlternates(locale, "/routes"),
+  };
+}async function getRoutes() {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
   if (!url || !key) return [];

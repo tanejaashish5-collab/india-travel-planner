@@ -4,6 +4,7 @@ import { Footer } from "@/components/footer";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { STATE_MAP, getSupabase } from "@/lib/seo-maps";
+import { localeAlternates } from "@/lib/seo-utils";
 
 export const revalidate = 86400;
 export const dynamicParams = true;
@@ -11,7 +12,15 @@ export const dynamicParams = true;
 export async function generateMetadata({ params }: { params: Promise<{ stateSlug: string }> }): Promise<Metadata> {
   const { stateSlug } = await params;
   const stateName = STATE_MAP[stateSlug];
-  if (!stateName) return {};
+  if (!stateName) return {
+    alternates: {
+      canonical: `https://www.nakshiq.com/${locale}/camping/state/${stateSlug}`,
+      languages: {
+        en: `https://www.nakshiq.com/en/camping/state/${stateSlug}`,
+        hi: `https://www.nakshiq.com/hi/camping/state/${stateSlug}`,
+      },
+    },
+  };
   return {
     title: `Camping in ${stateName} — Scored Spots & Sites | NakshIQ`,
     description: `Every camping spot in ${stateName} with honest reviews, facilities, water access, permit requirements, and best months. No sponsored content.`,

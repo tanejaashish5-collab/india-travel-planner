@@ -4,6 +4,7 @@ import { RouteDetail } from "@/components/route-detail";
 import { PrevNextNav } from "@/components/prev-next-nav";
 import { createClient } from "@supabase/supabase-js";
 import { notFound } from "next/navigation";
+import { localeAlternates } from "@/lib/seo-utils";
 
 export const revalidate = 86400;
 export const dynamicParams = true;
@@ -12,7 +13,15 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   const { id } = await params;
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-  if (!url || !key) return {};
+  if (!url || !key) return {
+    alternates: {
+      canonical: `https://www.nakshiq.com/${locale}/routes/${id}`,
+      languages: {
+        en: `https://www.nakshiq.com/en/routes/${id}`,
+        hi: `https://www.nakshiq.com/hi/routes/${id}`,
+      },
+    },
+  };
   const supabase = createClient(url, key);
   const { data } = await supabase.from("routes").select("name, days, difficulty, highlights").eq("id", id).single();
   if (!data) return {};

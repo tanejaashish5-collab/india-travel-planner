@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { RegionDetail } from "@/components/region-detail";
@@ -6,6 +7,27 @@ import { notFound } from "next/navigation";
 
 export const revalidate = 86400;
 export const dynamicParams = true;
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string; id: string }> }): Promise<Metadata> {
+  const { locale, id } = await params;
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+  if (!url || !key) return {};
+  const supabase = createClient(url, key);
+  const { data: region } = await supabase.from("regions").select("id, name").eq("id", id).single();
+  if (!region) return {};
+  return {
+    title: `${region.name} — Travel Guide & Destinations | NakshIQ`,
+    description: `Explore destinations in ${region.name}. Monthly scores, kids ratings, safety data, and infrastructure reality for every place.`,
+    alternates: {
+      canonical: `https://www.nakshiq.com/${locale}/region/${id}`,
+      languages: {
+        en: `https://www.nakshiq.com/en/region/${id}`,
+        hi: `https://www.nakshiq.com/hi/region/${id}`,
+      },
+    },
+  };
+}
 
 async function getRegion(id: string) {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;

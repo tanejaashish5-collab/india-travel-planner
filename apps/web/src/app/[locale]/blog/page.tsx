@@ -4,15 +4,19 @@ import { Footer } from "@/components/footer";
 import { BlogGrid } from "@/components/blog-grid";
 import { NewsletterSignup } from "@/components/newsletter-signup";
 import { createClient } from "@supabase/supabase-js";
+import { localeAlternates } from "@/lib/seo-utils";
 
 export const revalidate = 3600;
 
-export const metadata: Metadata = {
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  return {
   title: "Blog — Travel Intelligence Articles",
   description: "Data-driven travel guides, destination comparisons, and seasonal intelligence for India. Every article backed by real scores, infrastructure data, and honest analysis.",
-};
 
-async function getArticles() {
+    ...localeAlternates(locale, "/blog"),
+  };
+}async function getArticles() {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
   if (!url || !key) return [];

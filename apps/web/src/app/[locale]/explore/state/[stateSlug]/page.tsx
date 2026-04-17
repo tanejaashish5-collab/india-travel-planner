@@ -4,6 +4,7 @@ import { Footer } from "@/components/footer";
 import { ExploreGrid } from "@/components/explore-grid";
 import { notFound } from "next/navigation";
 import { STATE_MAP, getSupabase } from "@/lib/seo-maps";
+import { localeAlternates } from "@/lib/seo-utils";
 
 export const revalidate = 86400;
 export const dynamicParams = true;
@@ -11,7 +12,15 @@ export const dynamicParams = true;
 export async function generateMetadata({ params }: { params: Promise<{ stateSlug: string }> }): Promise<Metadata> {
   const { stateSlug } = await params;
   const stateName = STATE_MAP[stateSlug];
-  if (!stateName) return {};
+  if (!stateName) return {
+    alternates: {
+      canonical: `https://www.nakshiq.com/${locale}/explore/state/${stateSlug}`,
+      languages: {
+        en: `https://www.nakshiq.com/en/explore/state/${stateSlug}`,
+        hi: `https://www.nakshiq.com/hi/explore/state/${stateSlug}`,
+      },
+    },
+  };
   const currentMonth = new Date().toLocaleString("en", { month: "long" });
   return {
     title: `Places to Visit in ${stateName} — Every Destination Scored | NakshIQ`,

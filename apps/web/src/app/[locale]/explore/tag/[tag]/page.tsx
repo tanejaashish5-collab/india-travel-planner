@@ -4,6 +4,7 @@ import { Footer } from "@/components/footer";
 import { ExploreGrid } from "@/components/explore-grid";
 import { createClient } from "@supabase/supabase-js";
 import { notFound } from "next/navigation";
+import { localeAlternates } from "@/lib/seo-utils";
 
 export const revalidate = 86400;
 export const dynamicParams = true;
@@ -41,7 +42,15 @@ const TAG_DISPLAY: Record<string, { title: string; desc: string }> = {
 export async function generateMetadata({ params }: { params: Promise<{ tag: string }> }): Promise<Metadata> {
   const { tag } = await params;
   const info = TAG_DISPLAY[tag];
-  if (!info) return { title: `${tag} Destinations | NakshIQ` };
+  if (!info) return { title: `${tag} Destinations | NakshIQ` 
+    alternates: {
+      canonical: `https://www.nakshiq.com/${locale}/explore/tag/${tag}`,
+      languages: {
+        en: `https://www.nakshiq.com/en/explore/tag/${tag}`,
+        hi: `https://www.nakshiq.com/hi/explore/tag/${tag}`,
+      },
+    },
+  };
   return {
     title: `${info.title} in India — Scored & Ranked | NakshIQ`,
     description: info.desc + " Every destination scored monthly with kids ratings and safety data.",
