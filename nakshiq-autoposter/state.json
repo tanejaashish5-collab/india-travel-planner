@@ -1,5 +1,5 @@
 {
-  "last_sync": "2026-04-17T06:58:14.659690+00:00",
+  "last_sync": "2026-04-17T06:39:00.084552+00:00",
   "posted_today": {
     "8iDfI": "2026-04-14",
     "x4cT8": "2026-04-14",
@@ -16,7 +16,10 @@
     "m8EAd_evening_story": "2026-04-16",
     "PdMu0_evening": "2026-04-16",
     "zdeEP_reel": "2026-04-17",
-    "zdeEP": "2026-04-17"
+    "zdeEP": "2026-04-17",
+    "m8EAd_moat": "2026-04-17",
+    "PdMu0_moat": "2026-04-17",
+    "zdeEP_moat": "2026-04-17"
   },
   "posted_destinations": [
     {
@@ -178,6 +181,18 @@
     {
       "destination_id": "reel_score_reveal_reel_score_reveal_guwahati",
       "date": "2026-04-17"
+    },
+    {
+      "destination_id": "dhanaulti",
+      "date": "2026-04-17"
+    },
+    {
+      "destination_id": "dhanaulti",
+      "date": "2026-04-17"
+    },
+    {
+      "destination_id": "dhanaulti",
+      "date": "2026-04-17"
     }
   ],
   "posted_formats": {
@@ -195,7 +210,8 @@
       "data_carousel",
       "collection_spotlight",
       "festival_alert",
-      "festival_alert"
+      "festival_alert",
+      "methodology_roads"
     ],
     "PdMu0": [
       "reality_check",
@@ -203,7 +219,11 @@
       "data_carousel",
       "collection_spotlight",
       "festival_alert",
-      "festival_alert"
+      "festival_alert",
+      "methodology_roads"
+    ],
+    "zdeEP": [
+      "methodology_roads"
     ]
   },
   "post_log": [
@@ -508,6 +528,36 @@
       "destination": "srinagar",
       "format": "festival_alert",
       "has_media": true
+    },
+    {
+      "timestamp": "2026-04-17T06:39:51.375392+00:00",
+      "date": "2026-04-17",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "bAegT",
+      "destination": "dhanaulti",
+      "format": "methodology_roads",
+      "has_media": true
+    },
+    {
+      "timestamp": "2026-04-17T06:40:07.554254+00:00",
+      "date": "2026-04-17",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "m4skd",
+      "destination": "dhanaulti",
+      "format": "methodology_roads",
+      "has_media": true
+    },
+    {
+      "timestamp": "2026-04-17T06:40:23.282331+00:00",
+      "date": "2026-04-17",
+      "platform": "youtube",
+      "account_id": "zdeEP",
+      "post_id": "DpOfo",
+      "destination": "dhanaulti",
+      "format": "methodology_roads",
+      "has_media": true
     }
   ],
   "theme_usage": {
@@ -532,7 +582,8 @@
         "2026-04-15"
       ],
       "dhanaulti": [
-        "2026-04-16"
+        "2026-04-16",
+        "2026-04-17"
       ],
       "srinagar": [
         "2026-04-16"
@@ -549,7 +600,11 @@
         "2026-04-16"
       ]
     },
-    "moat_angles": {},
+    "moat_angles": {
+      "methodology_roads": [
+        "2026-04-17"
+      ]
+    },
     "tourist_map_states": {
       "HP": [
         "2026-04-16"

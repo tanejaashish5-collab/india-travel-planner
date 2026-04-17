@@ -2035,6 +2035,11 @@ def _run_inner(force: bool, sync_only: bool, dry_run: bool,
         username = account.get("username", acc_id)
         label    = f"{platform}/{username}"
 
+        # YouTube only supports video — skip image/carousel feed posts
+        if platform == "youtube":
+            log.info(f"[{label}] Skipping feed post (YouTube only accepts video/reels).")
+            continue
+
         # Per-platform format + mode-scoped posted_today key so morning vs
         # evening runs don't clash on the "already posted today" check.
         fmt              = fb_fmt if platform == "facebook" else ig_fmt
@@ -2399,6 +2404,11 @@ def _run_tourist_map(force: bool = False, dry_run: bool = False):
         username = account.get("username", acc_id)
         label    = f"{platform}/{username}"
 
+        # YouTube only supports video — skip image posts
+        if platform == "youtube":
+            log.info(f"[{label}] Skipping tourist map (YouTube only accepts video/reels).")
+            continue
+
         acc_scoped_key = acc_id + mode_suffix
         if state.get("posted_today", {}).get(acc_scoped_key) == today and not force:
             log.info(f"[{label}] Already posted tourist map today — skipping.")
@@ -2697,6 +2707,11 @@ def _run_canva_visual(force: bool = False, dry_run: bool = False):
         platform = account["network"]
         username = account.get("username", acc_id)
         label    = f"{platform}/{username}"
+
+        # YouTube only supports video — skip image posts
+        if platform == "youtube":
+            log.info(f"[{label}] Skipping canva visual (YouTube only accepts video/reels).")
+            continue
 
         acc_scoped_key = acc_id + mode_suffix
         if st.get("posted_today", {}).get(acc_scoped_key) == today and not force:

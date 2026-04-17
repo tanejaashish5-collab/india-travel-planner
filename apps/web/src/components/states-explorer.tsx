@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useMemo, lazy, Suspense } from "react";
+import { useSearchParams } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { REGION_GROUPS } from "@/lib/seo-maps";
 
@@ -30,8 +31,11 @@ const REGION_TABS = [
 ];
 
 export function StatesExplorer({ states, locale }: { states: StateData[]; locale: string }) {
-  const [activeRegion, setActiveRegion] = useState("all");
-  const [viewMode, setViewMode] = useState<"map" | "grid">("map");
+  const searchParams = useSearchParams();
+  const initialRegion = searchParams.get("region") ?? "all";
+  const [activeRegion, setActiveRegion] = useState(initialRegion);
+  // Show grid (not map) when a specific region is pre-selected via URL
+  const [viewMode, setViewMode] = useState<"map" | "grid">(initialRegion !== "all" ? "grid" : "map");
 
   const filtered = useMemo(() => {
     if (activeRegion === "all") return states;

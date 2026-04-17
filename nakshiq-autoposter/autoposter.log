@@ -1342,9 +1342,47 @@ Data, not opinions.
 2026-04-17 06:19:37  WARNING   Nakshiq [stats] fetch failed: HTTPSConnectionPool(host='www.nakshiq.com', port=443): Read timed out. (read timeout=15)
 2026-04-17 06:19:49  INFO      Synced → 20 destinations · 0 traps · 13 articles · total catalog=260
 2026-04-17 06:19:49  INFO      Sync-only mode. Done.
-2026-04-17 06:58:10  INFO      ════════════════════════════════════════════════════════════
-2026-04-17 06:58:10  INFO      Nakshiq Autoposter · MORNING · 2026-04-17 · weekday=4
-2026-04-17 06:58:10  INFO      ════════════════════════════════════════════════════════════
-2026-04-17 06:58:10  INFO      ── Syncing Nakshiq content ──────────────────────────────
-2026-04-17 06:58:14  INFO      Synced → 20 destinations · 0 traps · 13 articles · total catalog=480
-2026-04-17 06:58:14  INFO      Sync-only mode. Done.
+2026-04-17 06:38:50  INFO      ════════════════════════════════════════════════════════════
+2026-04-17 06:38:50  INFO      Nakshiq Autoposter · MOAT · 2026-04-17 · weekday=4
+2026-04-17 06:38:50  INFO      ════════════════════════════════════════════════════════════
+2026-04-17 06:38:50  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-04-17 06:39:00  INFO      Synced → 20 destinations · 0 traps · 13 articles · total catalog=480
+2026-04-17 06:39:01  INFO      Active accounts: ['instagram/nakshiq', 'facebook/Nakshiq', 'youtube/@naksh-iq']
+2026-04-17 06:39:03  INFO      Outstand dedup guard: merged 13 remote posts into state.
+2026-04-17 06:39:03  INFO      Moat angle locked: methodology_roads (9/9 never featured)
+2026-04-17 06:39:03  INFO      Formats — IG: methodology_roads  ·  FB: methodology_roads  ·  Story: None
+2026-04-17 06:39:03  INFO      Used destinations (14d): 30
+2026-04-17 06:39:14  INFO      Shared best destination locked: Dhanaulti
+2026-04-17 06:39:14  INFO      [instagram/nakshiq] Generating methodology_roads post...
+2026-04-17 06:39:14  INFO      [instagram/nakshiq] Caption ready (531 chars, dest=dhanaulti)
+2026-04-17 06:39:14  INFO      [instagram/nakshiq] Uploading image...
+2026-04-17 06:39:15  INFO          Using branded image: dhanaulti_feed_typographic-art_badge.jpg (421,775 bytes)
+2026-04-17 06:39:15  INFO          Requesting upload URL for dhanaulti.jpg (421,775 bytes, image/jpeg)
+2026-04-17 06:39:16  INFO          Uploading to R2 (timeout=120s)...
+2026-04-17 06:39:19  INFO          R2 PUT OK. Confirming...
+2026-04-17 06:39:21  INFO          Media ready: XQjde (421,775 bytes · dhanaulti.jpg)
+2026-04-17 06:39:21  INFO      [instagram/nakshiq] Publishing feed post...
+2026-04-17 06:39:51  INFO      [instagram/nakshiq] ✅ Published · Outstand=bAegT · Platform=17978343764842628
+2026-04-17 06:39:51  INFO      [facebook/Nakshiq] Generating methodology_roads post...
+2026-04-17 06:39:51  INFO      [facebook/Nakshiq] Caption ready (660 chars, dest=dhanaulti)
+2026-04-17 06:39:51  INFO      [facebook/Nakshiq] Uploading image...
+2026-04-17 06:39:51  INFO          Using branded image: dhanaulti_feed_typographic-art_badge.jpg (421,775 bytes)
+2026-04-17 06:39:51  INFO          Requesting upload URL for dhanaulti.jpg (421,775 bytes, image/jpeg)
+2026-04-17 06:39:52  INFO          Uploading to R2 (timeout=120s)...
+2026-04-17 06:39:55  INFO          R2 PUT OK. Confirming...
+2026-04-17 06:39:57  INFO          Media ready: 26HlS (421,775 bytes · dhanaulti.jpg)
+2026-04-17 06:39:57  INFO      [facebook/Nakshiq] Publishing feed post...
+2026-04-17 06:40:07  INFO      [facebook/Nakshiq] ✅ Published · Outstand=m4skd · Platform=1040562729145369_122099564648700092
+2026-04-17 06:40:07  INFO      [youtube/@naksh-iq] Generating methodology_roads post...
+2026-04-17 06:40:07  INFO      [youtube/@naksh-iq] Caption ready (531 chars, dest=dhanaulti)
+2026-04-17 06:40:07  INFO      [youtube/@naksh-iq] Uploading image...
+2026-04-17 06:40:07  INFO          Using branded image: dhanaulti_feed_typographic-art_badge.jpg (421,775 bytes)
+2026-04-17 06:40:07  INFO          Requesting upload URL for dhanaulti.jpg (421,775 bytes, image/jpeg)
+2026-04-17 06:40:08  INFO          Uploading to R2 (timeout=120s)...
+2026-04-17 06:40:11  INFO          R2 PUT OK. Confirming...
+2026-04-17 06:40:13  INFO          Media ready: 51psD (421,775 bytes · dhanaulti.jpg)
+2026-04-17 06:40:13  INFO      [youtube/@naksh-iq] Publishing feed post...
+2026-04-17 06:40:23  WARNING       Platform error: Error publishing post to YouTube: Failed to initiate YouTube resumable upload: 400 - "{\"error\":{\"code\":400,\"message\":\"The request metadata specifies an invalid video description.\",\"errors\":[{\"message\":\"The request metadata specifies an invalid video description.\",\"domain\":\"youtube.video\",\"reason\":\"invalidDescription\",\"location\":\"body.snippet.description\",\"locationType\":\"other\"}]}}"
+2026-04-17 06:40:23  WARNING   [youtube/@naksh-iq] ⚠️  Queued (ID=DpOfo)
+2026-04-17 06:40:23  INFO      State saved. Run complete.
+2026-04-17 06:40:23  INFO      ════════════════════════════════════════════════════════════
