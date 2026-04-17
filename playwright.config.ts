@@ -6,6 +6,14 @@ export default defineConfig({
   retries: 1,
   workers: 3,
   reporter: [["list"], ["html", { open: "never" }]],
+  expect: {
+    toHaveScreenshot: {
+      // Allow small anti-aliasing differences across OS/GPU
+      maxDiffPixelRatio: 0.03,
+      // Animations must settle before comparison
+      animations: "disabled",
+    },
+  },
   use: {
     baseURL: process.env.BASE_URL,
     screenshot: "only-on-failure",
