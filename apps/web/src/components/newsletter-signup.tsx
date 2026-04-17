@@ -1,33 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { createClient } from "@supabase/supabase-js";
 import { FadeIn } from "./animated-hero";
 
-// Singleton Supabase client to avoid multiple GoTrueClient instances
-let _supabase: ReturnType<typeof createClient> | null = null;
-function getSupabase() {
-  if (_supabase) return _supabase;
-  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
-  const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-  if (!url || !key) return null;
-  _supabase = createClient(url, key);
-  return _supabase;
-}
-
-/**
- * Newsletter signup component.
- *
- * Saves email to Supabase `newsletter_subscribers` table.
- * If the table doesn't exist, create it with this migration:
- *
- *   CREATE TABLE IF NOT EXISTS newsletter_subscribers (
- *     id uuid DEFAULT gen_random_uuid() PRIMARY KEY,
- *     email text UNIQUE NOT NULL,
- *     subscribed_at timestamptz DEFAULT now()
- *   );
- */
-export function NewsletterSignup() {
+export function NewsletterSignup({ source = "inline-widget" }: { source?: string } = {}) {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState("");
@@ -44,23 +20,15 @@ export function NewsletterSignup() {
     setErrorMsg("");
 
     try {
-      const supabase = getSupabase();
-      if (!supabase) {
-        setErrorMsg("Subscription service is temporarily unavailable.");
-        setStatus("error");
-        return;
-      }
-      const { error } = await supabase
-        .from("newsletter_subscribers")
-        .insert({ email: email.trim().toLowerCase() } as never);
+      const res = await fetch("/api/newsletter/subscribe", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: email.trim().toLowerCase(), source }),
+      });
 
-      if (error) {
-        if (error.code === "23505") {
-          // Unique constraint violation — already subscribed
-          setStatus("success");
-          return;
-        }
-        setErrorMsg("Something went wrong. Please try again.");
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        setErrorMsg(data?.error || "Something went wrong. Please try again.");
         setStatus("error");
         return;
       }
@@ -76,10 +44,10 @@ export function NewsletterSignup() {
     return (
       <FadeIn>
         <div className="rounded-2xl border border-emerald-500/30 bg-emerald-500/5 p-8 text-center">
-          <div className="text-3xl mb-3">{"\u2705"}</div>
-          <p className="text-lg font-bold text-emerald-400">You are in.</p>
+          <div className="text-3xl mb-3">{"\u2709\uFE0F"}</div>
+          <p className="text-lg font-bold text-emerald-400">Check your inbox.</p>
           <p className="mt-1 text-sm text-muted-foreground">
-            Best destinations for next month, delivered once. No spam.
+            Tap the confirmation link we just emailed to {email}. The Window arrives every Sunday.
           </p>
         </div>
       </FadeIn>
@@ -90,9 +58,9 @@ export function NewsletterSignup() {
     <FadeIn>
       <div className="rounded-2xl border border-primary/30 bg-gradient-to-br from-primary/5 via-card to-primary/5 p-8">
         <div className="text-center max-w-md mx-auto">
-          <h3 className="text-xl font-bold">Monthly Travel Intelligence</h3>
+          <h3 className="text-xl font-bold">The Window — every Sunday</h3>
           <p className="mt-2 text-sm text-muted-foreground">
-            Best destinations for next month. Delivered once. No spam.
+            Best score this week, the honest skip, road intel, and what changed. Free. No spam.
           </p>
 
           <form onSubmit={handleSubmit} className="mt-6 flex gap-2">
@@ -122,7 +90,7 @@ export function NewsletterSignup() {
           )}
 
           <p className="mt-4 text-xs text-muted-foreground/60">
-            One email per month. Unsubscribe anytime.
+            One email per Sunday. Unsubscribe anytime.
           </p>
         </div>
       </div>

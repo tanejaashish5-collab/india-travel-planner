@@ -1,9 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { createClient } from "@supabase/supabase-js";
 
-export function NewsletterForm() {
+export function NewsletterForm({ source = "website" }: { source?: string } = {}) {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState("");
@@ -16,37 +15,33 @@ export function NewsletterForm() {
     setErrorMsg("");
 
     try {
-      const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
-      const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-      if (!url || !key) throw new Error("Not configured");
+      const res = await fetch("/api/newsletter/subscribe", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: email.toLowerCase().trim(), source }),
+      });
 
-      const supabase = createClient(url, key);
-      const { error } = await supabase
-        .from("newsletter_subscribers")
-        .insert({ email: email.toLowerCase().trim(), source: "website" });
-
-      if (error) {
-        if (error.code === "23505") {
-          // Duplicate — already subscribed
-          setStatus("success");
-          return;
-        }
-        throw error;
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        setErrorMsg(data?.error || "Something went wrong. Try again.");
+        setStatus("error");
+        return;
       }
 
       setStatus("success");
-    } catch (err: any) {
+    } catch {
       setStatus("error");
-      setErrorMsg("Something went wrong. Try again or email us directly.");
+      setErrorMsg("Network error. Try again or email us directly.");
     }
   }
 
   if (status === "success") {
     return (
       <div className="py-4">
-        <p className="text-lg font-semibold text-primary">You're in.</p>
+        <p className="text-lg font-semibold text-primary">Check your inbox.</p>
         <p className="text-sm text-muted-foreground mt-1">
-          First edition arrives Sunday morning. Welcome to The Window.
+          We&apos;ve sent a confirmation link to {email}. Click it to complete your
+          subscription — first edition arrives Sunday.
         </p>
       </div>
     );
