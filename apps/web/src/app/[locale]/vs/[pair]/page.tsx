@@ -4,11 +4,19 @@ import { Footer } from "@/components/footer";
 import { VsComparison } from "@/components/vs-comparison";
 import { createClient } from "@supabase/supabase-js";
 import { notFound } from "next/navigation";
+import { VS_PAIRS } from "@/lib/vs-pairs";
 
 export const revalidate = 86400;
 export const dynamicParams = true;
 
 const SITE = "https://www.nakshiq.com";
+
+export async function generateStaticParams() {
+  const locales = ["en", "hi"];
+  return VS_PAIRS.flatMap((p) =>
+    locales.map((locale) => ({ locale, pair: `${p.id1}-vs-${p.id2}` }))
+  );
+}
 
 function resolveState(state: any): string | null {
   if (!state) return null;
@@ -67,8 +75,8 @@ export async function generateMetadata({
 
   const name1 = data.dest1.name;
   const name2 = data.dest2.name;
-  const title = `${name1} vs ${name2} — Which Is Better? Side-by-Side | NakshIQ`;
-  const description = `${name1} vs ${name2}: honest side-by-side comparison of monthly scores, difficulty, budget, kids-friendliness, safety & more. Data-driven, zero fluff.`;
+  const title = `${name1} vs ${name2}: Which Is Better? Weather, Cost & Kid-Friendliness Compared`;
+  const description = `${name1} vs ${name2} — side-by-side data on monthly weather scores, budget, difficulty, kids safety, and infrastructure. Make the right choice, no sponsored spin.`.slice(0, 160);
   const canonicalUrl = `${SITE}/${locale}/vs/${pair}`;
 
   return {

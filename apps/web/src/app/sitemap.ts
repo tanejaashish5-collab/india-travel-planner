@@ -78,6 +78,7 @@ export default async function sitemap(props: {
       "saved", "about", "methodology", "blog",
       "terms", "privacy", "cookies", "editorial-policy",
       "india-travel", "data-deletion", "newsletter",
+      "vs", "compare",
       // State hub pages
       ...Object.keys(STATE_MAP).map((s) => `state/${s}`),
       // Region pages (legacy)
@@ -222,14 +223,22 @@ export default async function sitemap(props: {
       supabase.from("regions").select("id").order("id"),
     ]);
 
-    // VS comparison pages
+    // VS comparison pages — curated pairs first, then trap alternatives
+    const { VS_PAIRS } = await import("@/lib/vs-pairs");
     const seenPairs = new Set<string>();
-    const vsEntries = (trapResult.data ?? []).flatMap((t: any) => {
+    const curatedVsEntries = VS_PAIRS.flatMap((p) => {
+      const pair = `${p.id1}-vs-${p.id2}`;
+      if (seenPairs.has(pair)) return [];
+      seenPairs.add(pair);
+      return entry(`vs/${pair}`, "monthly", 0.8);
+    });
+    const trapVsEntries = (trapResult.data ?? []).flatMap((t: any) => {
       const pair = `${t.trap_destination_id}-vs-${t.alternative_destination_id}`;
       if (seenPairs.has(pair)) return [];
       seenPairs.add(pair);
       return entry(`vs/${pair}`, "monthly", 0.7);
     });
+    const vsEntries = [...curatedVsEntries, ...trapVsEntries];
 
     // Skip-list pages
     const seenTraps = new Set<string>();

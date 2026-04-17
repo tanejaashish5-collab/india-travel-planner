@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Nav } from "@/components/nav";
 import { DestinationDetail } from "@/components/destination-detail";
 import { PrevNextNav } from "@/components/prev-next-nav";
+import Link from "next/link";
+import { VS_PAIRS } from "@/lib/vs-pairs";
 import { createClient } from "@supabase/supabase-js";
 import { notFound, redirect } from "next/navigation";
 import { STATE_MAP } from "@/lib/seo-maps";
@@ -172,6 +174,18 @@ export default async function DestinationPage({
     notFound();
   }
 
+  // Find comparison pairs involving this destination
+  const comparisons = VS_PAIRS
+    .filter((p) => p.id1 === id || p.id2 === id)
+    .map((p) => {
+      const other = p.id1 === id ? p.id2 : p.id1;
+      return { other, pair: `${p.id1}-vs-${p.id2}` };
+    })
+    .slice(0, 6);
+  const comparisonDests = comparisons.length > 0
+    ? (dest.allDestinations ?? []).filter((d: any) => comparisons.some((c) => c.other === d.id))
+    : [];
+
   // Schema.org JSON-LD for TouristDestination
   const stateInfo = dest.state as any;
   const stateName = Array.isArray(stateInfo) ? stateInfo[0]?.name : stateInfo?.name;
@@ -255,6 +269,35 @@ export default async function DestinationPage({
       <StickyDestinationTabs />
       <main id="main-content" className="mx-auto max-w-4xl px-4 py-8 pb-24 md:pb-8">
         <DestinationDetail dest={dest} />
+
+        {comparisons.length > 0 && (
+          <section className="mt-12 border-t border-border/50 pt-8">
+            <h2 className="text-xs font-bold uppercase tracking-[0.15em] text-muted-foreground mb-3">
+              Compare {dest.name} with
+            </h2>
+            <div className="grid gap-2 sm:grid-cols-2">
+              {comparisons.map((c) => {
+                const otherDest = comparisonDests.find((d: any) => d.id === c.other);
+                const otherName = otherDest?.name ?? c.other.replace(/-/g, " ");
+                return (
+                  <Link
+                    key={c.pair}
+                    href={`/${locale}/vs/${c.pair}`}
+                    className="group flex items-center justify-between rounded-lg border border-border bg-card px-4 py-2.5 hover:border-primary/40 transition-all"
+                  >
+                    <span className="text-sm">
+                      <span className="font-semibold">{dest.name}</span>
+                      <span className="text-muted-foreground mx-2">vs</span>
+                      <span className="font-semibold capitalize">{otherName}</span>
+                    </span>
+                    <span className="text-xs text-muted-foreground group-hover:text-primary transition-colors">→</span>
+                  </Link>
+                );
+              })}
+            </div>
+          </section>
+        )}
+
         <PrevNextNav
           items={dest.allDestinations}
           currentId={id}
