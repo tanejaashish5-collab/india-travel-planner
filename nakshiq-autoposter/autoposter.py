@@ -1602,7 +1602,7 @@ def publish_story(account: dict, media: dict, dry_run: bool = False) -> dict | N
 
 def publish_reel(caption: str, account: dict, video_media: dict,
                  dry_run: bool = False) -> dict | None:
-    """Post an Instagram/Facebook Reel (vertical video)."""
+    """Post an Instagram/Facebook Reel or YouTube Short (vertical video)."""
     username = account.get("username", account["id"])
     platform = account["network"]
 
@@ -1610,10 +1610,34 @@ def publish_reel(caption: str, account: dict, video_media: dict,
         log.info(f"    [DRY RUN] Reel → {video_media['filename']}")
         return {"post": {"id": "DRY_RUN_REEL"}}
 
-    result = outstand_post_req("/v1/posts/", {
+    payload = {
         "accounts":   [username],
         "containers": [{"content": caption, "media": [build_media_item(video_media)]}],
-    })
+    }
+
+    # YouTube Shorts: tell Outstand this is a Short with proper metadata
+    if platform == "youtube":
+        try:
+            # Extract a title from the caption (first line, max 100 chars)
+            yt_title = caption.split("\n")[0].strip()
+            # Remove emoji and leading symbols for a cleaner title
+            yt_title = yt_title.lstrip("📍🏔️🎯⚠️🌊 ").strip()
+            if len(yt_title) > 100:
+                yt_title = yt_title[:97] + "..."
+            payload["networkOverrideConfiguration"] = {
+                "youtubeConfiguration": {
+                    "isShort": True,
+                    "privacyStatus": "public",
+                    "madeForKids": False,
+                    "categoryId": "19",  # Travel & Events
+                    "title": yt_title,
+                    "tags": ["india", "travel", "nakshiq", "shorts"],
+                }
+            }
+        except Exception:
+            pass  # If metadata extraction fails, post without overrides
+
+    result = outstand_post_req("/v1/posts/", payload)
     if not result.get("success"):
         log.warning(f"    Reel publish failed: {result}")
         return None
