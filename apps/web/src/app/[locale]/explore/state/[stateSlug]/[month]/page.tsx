@@ -5,7 +5,6 @@ import { ExploreGrid } from "@/components/explore-grid";
 import { createClient } from "@supabase/supabase-js";
 import { notFound } from "next/navigation";
 import { STATE_MAP, MONTH_MAP } from "@/lib/seo-maps";
-import { localeAlternates } from "@/lib/seo-utils";
 
 export const revalidate = 86400;
 export const dynamicParams = true;
@@ -17,8 +16,8 @@ function getSupabase() {
   return createClient(url, key);
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ locale: string; stateSlug: string; month: string}> }): Promise<Metadata> {
-  const { locale, stateSlug, month } = await params;
+export async function generateMetadata({ params }: { params: Promise<{ stateSlug: string; month: string}> }): Promise<Metadata> {
+  const { stateSlug, month } = await params;
   const stateName = STATE_MAP[stateSlug];
   const m = MONTH_MAP[month];
   if (!stateName || !m) return {
@@ -29,8 +28,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   };
 }
 
-export default async function ExploreStateMonthPage({ params }: { params: Promise<{ locale: string; stateSlug: string; month: string }> }) {
-  const { locale, stateSlug, month } = await params;
+export default async function ExploreStateMonthPage({ params }: { params: Promise<{ stateSlug: string; month: string }> }) {
+  const { stateSlug, month } = await params;
   const stateName = STATE_MAP[stateSlug];
   const m = MONTH_MAP[month];
   if (!stateName || !m) notFound();

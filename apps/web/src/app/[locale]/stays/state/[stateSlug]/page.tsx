@@ -4,7 +4,6 @@ import { Footer } from "@/components/footer";
 import { createClient } from "@supabase/supabase-js";
 import { notFound } from "next/navigation";
 import { STATE_MAP } from "@/lib/seo-maps";
-import { localeAlternates } from "@/lib/seo-utils";
 
 export const revalidate = 86400;
 export const dynamicParams = true;

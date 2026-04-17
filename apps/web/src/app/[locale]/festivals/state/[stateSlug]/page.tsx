@@ -4,7 +4,6 @@ import { Footer } from "@/components/footer";
 import { createClient } from "@supabase/supabase-js";
 import { notFound } from "next/navigation";
 import { STATE_MAP } from "@/lib/seo-maps";
-import { localeAlternates } from "@/lib/seo-utils";
 
 export const revalidate = 86400;
 export const dynamicParams = true;
@@ -18,8 +17,8 @@ function getSupabase() {
 
 const MONTH_NAMES = ["","January","February","March","April","May","June","July","August","September","October","November","December"];
 
-export async function generateMetadata({ params }: { params: Promise<{ locale: string; stateSlug: string}> }): Promise<Metadata> {
-  const { locale, stateSlug } = await params;
+export async function generateMetadata({ params }: { params: Promise<{ stateSlug: string}> }): Promise<Metadata> {
+  const { stateSlug } = await params;
   const stateName = STATE_MAP[stateSlug];
   if (!stateName) return {
   };
@@ -29,8 +28,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   };
 }
 
-export default async function FestivalsByStatePage({ params }: { params: Promise<{ locale: string; stateSlug: string }> }) {
-  const { locale, stateSlug } = await params;
+export default async function FestivalsByStatePage({ params }: { params: Promise<{ stateSlug: string }> }) {
+  const { stateSlug } = await params;
   const stateName = STATE_MAP[stateSlug];
   if (!stateName) notFound();
 

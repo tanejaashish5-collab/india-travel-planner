@@ -6,7 +6,6 @@ import { Footer } from "@/components/footer";
 import { StateDestinationGrid } from "@/components/state-destination-grid";
 import { createClient } from "@supabase/supabase-js";
 import { STATE_MAP, getRegionNameForState } from "@/lib/seo-maps";
-import { localeAlternates } from "@/lib/seo-utils";
 
 export const revalidate = 86400;
 export const dynamicParams = true;
