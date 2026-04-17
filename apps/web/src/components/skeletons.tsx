@@ -2,8 +2,8 @@
 
 /* ── Reusable skeleton screens for mobile-first loading states ── */
 
-function Shimmer({ className }: { className?: string }) {
-  return <div className={`animate-pulse rounded-lg bg-muted/60 ${className ?? ""}`} />;
+function Shimmer({ className, style }: { className?: string; style?: React.CSSProperties }) {
+  return <div className={`animate-pulse rounded-lg bg-muted/60 ${className ?? ""}`} style={style} />;
 }
 
 export function DestinationCardSkeleton() {
