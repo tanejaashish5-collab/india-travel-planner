@@ -269,14 +269,13 @@ export function LandingHero({
                           href={`/${locale}/states?region=${r.slug}`}
                           className="group block rounded-xl border border-border/40 bg-card/50 overflow-hidden transition-all hover:border-primary/40 hover:shadow-lg cursor-pointer"
                         >
-                          <div className="relative h-20 overflow-hidden">
+                          <div className="relative h-20 overflow-hidden bg-gradient-to-br from-primary/20 via-card to-amber-500/10">
                             <Image
                               src={`/images/destinations/${r.hero}.jpg`}
                               alt={region.name}
                               fill
                               sizes="(max-width: 768px) 50vw, 200px"
                               className="object-cover transition-transform duration-500 group-hover:scale-110"
-                              onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-card via-card/40 to-transparent" />
                             <span className="absolute bottom-2 left-3 text-lg">{r.icon}</span>

@@ -1,23 +1,7 @@
-"use client";
-
-import { motion, AnimatePresence } from "framer-motion";
-import { usePathname } from "next/navigation";
+// Removed AnimatePresence page transition — it forced remount on every nav
+// (including browser back), defeated bfcache, and blocked for exit animation.
+// Instant nav via browser bfcache is much better UX.
 
 export function PageTransition({ children }: { children: React.ReactNode }) {
-  const pathname = usePathname();
-
-  return (
-    <AnimatePresence mode="popLayout" initial={false}>
-      <motion.div
-        id="main-content"
-        key={pathname}
-        initial={{ opacity: 0, y: 8 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: -8 }}
-        transition={{ duration: 0.2, ease: "easeInOut" }}
-      >
-        {children}
-      </motion.div>
-    </AnimatePresence>
-  );
+  return <div id="main-content">{children}</div>;
 }
