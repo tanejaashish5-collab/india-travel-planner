@@ -22,12 +22,12 @@ const THEME_FILTERS: Record<string, { label: string; match: string[] }> = {
 
 /* ── Region detection from tags ── */
 const REGION_FILTERS: Record<string, { label: string; match: string[] }> = {
-  north: { label: "North", match: ["North-India", "himachal", "uttarakhand", "rajasthan", "punjab", "delhi", "lucknow", "jaipur", "chandigarh"] },
+  north: { label: "North", match: ["North-India", "north-india", "himachal", "himachal-pradesh", "uttarakhand", "uttar-pradesh", "rajasthan", "punjab", "delhi", "lucknow", "jaipur", "chandigarh", "haryana", "ladakh", "jammu-kashmir", "kashmir"] },
   south: { label: "South", match: ["south-india", "kerala", "tamil-nadu", "andhra", "andhra-pradesh", "telangana", "hyderabad", "kochi", "bengaluru", "karnataka", "puducherry", "pondicherry", "french"] },
-  east: { label: "East", match: ["west-bengal", "kolkata", "bihar"] },
-  west: { label: "West", match: ["maharashtra", "mumbai", "goa", "gujarat", "konkan", "daman", "daman-diu", "portuguese"] },
-  central: { label: "Central", match: ["madhya-pradesh"] },
-  northeast: { label: "Northeast", match: ["Northeast", "Meghalaya", "sikkim", "assam"] },
+  east: { label: "East", match: ["east-india", "west-bengal", "kolkata", "bihar", "odisha", "jharkhand"] },
+  west: { label: "West", match: ["west-india", "maharashtra", "mumbai", "goa", "gujarat", "konkan", "daman", "daman-diu", "portuguese"] },
+  central: { label: "Central", match: ["central-india", "madhya-pradesh", "chhattisgarh"] },
+  northeast: { label: "Northeast", match: ["northeast", "Northeast", "meghalaya", "Meghalaya", "sikkim", "assam", "arunachal-pradesh", "nagaland", "manipur", "mizoram", "tripura"] },
   islands: { label: "Islands", match: ["andaman", "nicobar", "lakshadweep", "island", "island-hopping", "coral", "maldives-alternative"] },
 };
 
@@ -67,17 +67,17 @@ export function CollectionsGrid({ collections }: { collections: any[] }) {
         }
       }
 
-      // Region filter
+      // Region filter — strict: collection must explicitly match this region's tags.
+      // Pan-India collections (no region tags) only appear when no region is selected.
       if (activeRegion) {
         const regions = getCollectionRegions(tags);
-        // Collections with no region tags are "pan-India" — show them in all regions
-        if (regions.length > 0 && !regions.includes(activeRegion)) return false;
+        if (!regions.includes(activeRegion)) return false;
       }
 
-      // Theme filter
+      // Theme filter — strict.
       if (activeTheme) {
         const themes = getCollectionThemes(tags);
-        if (themes.length > 0 && !themes.includes(activeTheme)) return false;
+        if (!themes.includes(activeTheme)) return false;
       }
 
       return true;
@@ -89,7 +89,7 @@ export function CollectionsGrid({ collections }: { collections: any[] }) {
     for (const key of Object.keys(REGION_FILTERS)) {
       counts[key] = collections.filter((c) => {
         const regions = getCollectionRegions(c.tags ?? []);
-        return regions.length === 0 || regions.includes(key);
+        return regions.includes(key);
       }).length;
     }
     return counts;
