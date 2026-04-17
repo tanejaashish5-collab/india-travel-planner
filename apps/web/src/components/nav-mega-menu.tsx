@@ -358,6 +358,7 @@ const REGION_CARDS: { slug: string; icon: string; description: string }[] = [
   { slug: "east", icon: "🛕", description: "Temples, tigers, Durga Puja" },
   { slug: "central", icon: "🐅", description: "Tiger reserves, tribal art" },
   { slug: "south", icon: "🌴", description: "Backwaters, temples, spices" },
+  { slug: "islands", icon: "🏝️", description: "Beaches, diving, coral reefs" },
 ];
 
 function BrowsePanel({ locale, onNavigate }: { locale: string; onNavigate: () => void }) {

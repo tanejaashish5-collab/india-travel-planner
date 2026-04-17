@@ -302,6 +302,7 @@ export function LandingHero({
                   { href: `/${locale}/region/ladakh`, label: locale === "hi" ? "लद्दाख" : "Ladakh" },
                   { href: `/${locale}/region/rajasthan`, label: locale === "hi" ? "राजस्थान" : "Rajasthan" },
                   { href: `/${locale}/region/northeast`, label: locale === "hi" ? "पूर्वोत्तर" : "Northeast" },
+                  { href: `/${locale}/states?region=islands`, label: locale === "hi" ? "द्वीप" : "Islands" },
                   { href: `/${locale}/explore?difficulty=easy&kids=true`, label: locale === "hi" ? "परिवार" : "Family" },
                 ].map((link) => (
                   <Link

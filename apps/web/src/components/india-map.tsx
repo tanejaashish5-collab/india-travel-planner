@@ -16,8 +16,9 @@ const SVG_TO_SLUG: Record<string, string> = {
   as: "assam", ml: "meghalaya", nl: "nagaland", mn: "manipur",
   mz: "mizoram", tr: "tripura", br: "bihar", jh: "jharkhand",
   ct: "chhattisgarh",
-  // States we don't have yet but show dimmed
-  ka: "karnataka", kl: "kerala", tn: "tamil-nadu", ga: "goa", la: "lakshadweep",
+  an: "andaman-nicobar", ld: "lakshadweep",
+  py: "puducherry", dd: "daman-diu",
+  ka: "karnataka", kl: "kerala", tn: "tamil-nadu", ga: "goa",
   mh: "maharashtra", gj: "gujarat", or: "odisha", tg: "telangana",
   ap: "andhra-pradesh",
 };

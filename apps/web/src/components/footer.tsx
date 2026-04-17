@@ -130,7 +130,7 @@ export function Footer({ stats }: { stats?: { destinations: number; places: numb
         {/* Bottom bar */}
         <div className="h-px bg-gradient-to-r from-transparent via-border/20 to-transparent mb-6" />
         <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-muted-foreground/60">
-          <p>&copy; 2026 NakshIQ — Impresa de Artiste Pty Ltd</p>
+          <p>&copy; 2026 NakshIQ</p>
           <div className="flex gap-4">
             <Link href={`/${locale}/terms`} className="hover:text-foreground transition-colors">{tf("terms")}</Link>
             <Link href={`/${locale}/privacy`} className="hover:text-foreground transition-colors">{tf("privacy")}</Link>
