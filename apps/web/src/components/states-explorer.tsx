@@ -157,8 +157,7 @@ export function StatesExplorer({ states, locale }: { states: StateData[]; locale
                 <div
                   className="relative h-36 overflow-hidden"
                   style={{
-                    background: `linear-gradient(135deg, oklch(0.22 0.03 260), oklch(0.16 0.02 280))`,
-                    backgroundImage: `url(/images/destinations/${state.heroDestId}.jpg)`,
+                    backgroundImage: `url(/images/destinations/${state.heroDestId}.jpg), linear-gradient(135deg, oklch(0.22 0.03 260), oklch(0.16 0.02 280))`,
                     backgroundSize: "cover",
                     backgroundPosition: "center",
                   }}
