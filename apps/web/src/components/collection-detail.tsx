@@ -77,30 +77,30 @@ export function CollectionDetail({ collection }: { collection: any }) {
                 <HoverCard>
                   <Link
                     href={`/${locale}/destination/${item.destination_id}`}
-                    className="flex items-start gap-4 rounded-xl border border-border bg-card overflow-hidden transition-all hover:border-primary/50"
+                    className="flex items-start gap-3 sm:gap-4 rounded-xl border border-border bg-card overflow-hidden transition-all hover:border-primary/50"
                   >
-                    <div className="relative w-24 h-24 sm:w-32 sm:h-24 shrink-0 bg-muted/30">
+                    <div className="relative w-20 h-20 sm:w-32 sm:h-24 shrink-0 bg-muted/30">
                       <Image
                         src={`/images/destinations/${item.destination_id}.jpg`}
                         alt={dest?.name ?? ""}
                         fill
-                        sizes="(max-width: 640px) 96px, 128px"
+                        sizes="(max-width: 640px) 80px, 128px"
                         className="object-cover"
                         onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
                       />
-                      <div className="absolute top-1 left-1 flex h-7 w-7 items-center justify-center rounded-full bg-primary text-xs font-bold text-primary-foreground">
+                      <div className="absolute top-1 left-1 flex h-6 w-6 sm:h-7 sm:w-7 items-center justify-center rounded-full bg-primary text-[10px] sm:text-xs font-bold text-primary-foreground">
                         {idx + 1}
                       </div>
                     </div>
-                    <div className="flex-1 p-4 pl-0 min-w-0">
+                    <div className="flex-1 py-2.5 pr-3 sm:p-4 sm:pl-0 min-w-0">
                       <div className="flex items-start justify-between gap-2">
-                        <h3 className="font-semibold text-lg">{dest?.name ?? item.destination_id}</h3>
+                        <h3 className="font-semibold text-base sm:text-lg leading-tight break-words">{dest?.name ?? item.destination_id}</h3>
                         {dest?.elevation_m && (
-                          <span className="shrink-0 text-xs font-mono text-muted-foreground pr-3">{dest.elevation_m.toLocaleString()}m</span>
+                          <span className="shrink-0 text-[10px] sm:text-xs font-mono text-muted-foreground">{dest.elevation_m.toLocaleString()}m</span>
                         )}
                       </div>
-                      {stateName && <p className="text-xs text-muted-foreground">{stateName}</p>}
-                      <p className="mt-1 text-sm text-muted-foreground">{item.note}</p>
+                      {stateName && <p className="text-[11px] sm:text-xs text-muted-foreground">{stateName}</p>}
+                      <p className="mt-1 text-xs sm:text-sm text-muted-foreground line-clamp-2">{item.note}</p>
                     </div>
                   </Link>
                 </HoverCard>
@@ -143,7 +143,7 @@ function CollapsibleDetails({
     : `${eats.length + stays.length} local pick${eats.length + stays.length !== 1 ? "s" : ""}`;
 
   return (
-    <div className="ml-0 sm:ml-36">
+    <div className="ml-0 sm:ml-36 -mt-1">
       {/* Toggle button */}
       <button
         onClick={() => setExpanded(!expanded)}

@@ -71,14 +71,15 @@ export function MobileTabBar() {
       ),
     },
     {
-      id: "profile",
-      label: "Profile",
-      active: isActive(["/about", "/profile"]),
-      action: () => router.push(`/${locale}/about`),
+      id: "more",
+      label: "More",
+      active: isActive(["/about", "/profile", "/terms", "/privacy"]),
+      action: () => router.push(`/${locale}`),
       icon: (
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-          <circle cx="12" cy="7" r="4" />
+          <line x1="4" y1="6" x2="20" y2="6" />
+          <line x1="4" y1="12" x2="20" y2="12" />
+          <line x1="4" y1="18" x2="20" y2="18" />
         </svg>
       ),
     },

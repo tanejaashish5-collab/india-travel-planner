@@ -29,6 +29,18 @@ test.describe("Mobile Navigation", () => {
     }
   });
 
+  test("more tab navigates to homepage", async ({ page }) => {
+    await page.goto("/en/explore");
+    const moreBtn = page.locator("nav[aria-label='Main navigation'] button").nth(4);
+    if (await moreBtn.isVisible({ timeout: 5000 }).catch(() => false)) {
+      await moreBtn.click();
+      await page.waitForURL("**/en", { timeout: 5000 });
+      // Should NOT land on About page
+      const url = page.url();
+      expect(url).not.toContain("/about");
+    }
+  });
+
   test("discover tab opens experiences sheet", async ({ page }) => {
     await page.goto("/en/explore");
     // Click discover tab (3rd button) — may be old <a> or new <button>

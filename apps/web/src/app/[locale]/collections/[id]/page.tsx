@@ -70,7 +70,7 @@ export default async function CollectionDetailPage({
   return (
     <div className="min-h-screen">
       <Nav />
-      <main className="mx-auto max-w-4xl px-4 py-8">
+      <main className="mx-auto max-w-4xl px-4 py-8 pb-24 md:pb-8">
         <CollectionDetail collection={collection} />
         <PrevNextNav
           items={collection.allCollections}
