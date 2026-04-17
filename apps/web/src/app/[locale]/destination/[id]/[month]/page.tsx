@@ -71,7 +71,7 @@ export async function generateMetadata({
   const lowTemp = isSummer ? weather.summer_low_c : weather.winter_low_c;
   const tempStr = typeof lowTemp === "number" ? `${lowTemp}°C nights` : "";
 
-  // CTR-optimized title based on score (matches search intent like "X in May weather")
+  // Short verdict for CTR (titles must stay under ~60 chars for Google)
   const scoreVerdict = score >= 5 ? "Perfect Time to Visit"
     : score >= 4 ? "Great Time to Visit"
     : score >= 3 ? "Is It Worth Visiting?"
@@ -79,9 +79,10 @@ export async function generateMetadata({
     : score >= 1 ? "Why to Avoid"
     : "Travel Guide";
 
+  // Compact title — under 60 chars where possible
   const title = tempStr
-    ? `${name} in ${monthName}: ${scoreVerdict} — Weather, Temperature (${tempStr})`
-    : `${name} in ${monthName}: ${scoreVerdict} — Weather & Travel Guide`;
+    ? `${name} in ${monthName}: ${tempStr}, Weather Guide`
+    : `${name} in ${monthName}: Weather & Travel Guide`;
 
   const ogTitle = `${name} in ${monthName} — ${scoreVerdict} | NakshIQ`;
 

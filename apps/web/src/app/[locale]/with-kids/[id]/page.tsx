@@ -60,8 +60,8 @@ export async function generateMetadata({
 
   const ratingText = kf?.rating ? `${kf.rating}/5` : "";
   const title = ratingText
-    ? `Is ${name} Safe for Kids? Family Travel Guide (${ratingText} Kid-Friendly)`
-    : `${name} with Kids: Family Travel Guide & Safety Tips`;
+    ? `${name} with Kids: ${ratingText} Safety · Family Guide`
+    : `${name} with Kids: Family Travel Guide`;
   const description = `Planning ${name} with children? Kid safety rating${ratingText ? ` ${ratingText}` : ""}, hospital distance, altitude concerns, road conditions & family activities in ${stateName || "India"}.`.slice(0, 160);
   const canonicalUrl = `https://www.nakshiq.com/${locale}/with-kids/${id}`;
   const imageUrl = `https://www.nakshiq.com/images/destinations/${id}.jpg`;
