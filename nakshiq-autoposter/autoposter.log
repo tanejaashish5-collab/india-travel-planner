@@ -1335,3 +1335,10 @@ Data, not opinions.
 2026-04-17 06:06:30  INFO      ── Syncing Nakshiq content ──────────────────────────────
 2026-04-17 06:06:36  INFO      Synced → 20 destinations · 0 traps · 13 articles · total catalog=480
 2026-04-17 06:06:36  INFO      Sync-only mode. Done.
+2026-04-17 06:19:22  INFO      ════════════════════════════════════════════════════════════
+2026-04-17 06:19:22  INFO      Nakshiq Autoposter · MORNING · 2026-04-17 · weekday=4
+2026-04-17 06:19:22  INFO      ════════════════════════════════════════════════════════════
+2026-04-17 06:19:22  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-04-17 06:19:37  WARNING   Nakshiq [stats] fetch failed: HTTPSConnectionPool(host='www.nakshiq.com', port=443): Read timed out. (read timeout=15)
+2026-04-17 06:19:49  INFO      Synced → 20 destinations · 0 traps · 13 articles · total catalog=260
+2026-04-17 06:19:49  INFO      Sync-only mode. Done.
