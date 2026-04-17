@@ -3,19 +3,22 @@ import { Geist, Geist_Mono, Fraunces } from "next/font/google";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
+import dynamic from "next/dynamic";
 import { routing } from "@/i18n/routing";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import Script from "next/script";
-import { StickyCTA } from "@/components/sticky-cta";
-import { PersonalisationQuiz } from "@/components/personalisation-quiz";
 import { CompareProvider } from "@/components/compare-tray";
 import { ScrollToTop } from "@/components/scroll-to-top";
 import { PageTransition } from "@/components/page-transition";
 import { MobileTabBar } from "@/components/mobile-tab-bar";
-import { AskNakshIQ } from "@/components/ask-nakshiq";
-import { PWAInstallPrompt } from "@/components/pwa-install-prompt";
 import "../globals.css";
+
+// Deferred client chunks — never block first paint or TTI
+const StickyCTA = dynamic(() => import("@/components/sticky-cta").then((m) => ({ default: m.StickyCTA })));
+const PersonalisationQuiz = dynamic(() => import("@/components/personalisation-quiz").then((m) => ({ default: m.PersonalisationQuiz })));
+const AskNakshIQ = dynamic(() => import("@/components/ask-nakshiq").then((m) => ({ default: m.AskNakshIQ })));
+const PWAInstallPrompt = dynamic(() => import("@/components/pwa-install-prompt").then((m) => ({ default: m.PWAInstallPrompt })));
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

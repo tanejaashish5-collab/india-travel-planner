@@ -1,6 +1,6 @@
 /* ── NakshIQ Service Worker — Offline-First for SOS & Saved ── */
 
-const CACHE_VERSION = "nakshiq-v1";
+const CACHE_VERSION = "nakshiq-v2";
 const STATIC_CACHE = `${CACHE_VERSION}-static`;
 const IMAGE_CACHE = `${CACHE_VERSION}-images`;
 const DATA_CACHE = `${CACHE_VERSION}-data`;
@@ -10,6 +10,10 @@ const PRECACHE_URLS = [
   "/icon-192.png",
   "/icon-512.png",
   "/og-image.jpg",
+  "/apple-touch-icon.png",
+  "/favicon-32x32.png",
+  "/favicon-16x16.png",
+  "/manifest.json",
 ];
 
 // Install — pre-cache essentials
