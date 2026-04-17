@@ -471,7 +471,7 @@ export function DestinationDetail({ dest }: { dest: any }) {
             {activeTab === "overview" && (
               <div className="space-y-8">
                 {/* Why Special */}
-                <section>
+                <section id="section-overview">
                   <h2 className="text-xl font-semibold mb-3">Why Special</h2>
                   <p className="text-[15px] text-muted-foreground leading-relaxed">{displayWhySpecial}</p>
                 </section>
@@ -547,7 +547,7 @@ export function DestinationDetail({ dest }: { dest: any }) {
                 {/* Infrastructure Reality Panel — from confidence_cards */}
                 {cc && (
                   <section>
-                    <h2 className="text-xl font-semibold mb-3">Infrastructure Reality</h2>
+                    <h2 id="section-infrastructure" className="text-xl font-semibold mb-3">Infrastructure Reality</h2>
                     <div className="grid gap-3 sm:grid-cols-2">
                       {/* Network detail */}
                       {cc.network && (
@@ -623,7 +623,7 @@ export function DestinationDetail({ dest }: { dest: any }) {
                 {/* Where to Stay — strategic data */}
                 {dest.stay_zones && Object.keys(dest.stay_zones).length > 0 && (
                   <section>
-                    <h2 className="text-xl font-semibold mb-3">Where to Stay</h2>
+                    <h2 id="section-stays" className="text-xl font-semibold mb-3">Where to Stay</h2>
                     <div className="grid gap-3 sm:grid-cols-2">
                       {dest.stay_zones.best_for_families && (
                         <div className="rounded-xl border border-border p-4">
@@ -755,7 +755,7 @@ export function DestinationDetail({ dest }: { dest: any }) {
                 {/* Food & Dining */}
                 {dest.food_scene && Object.keys(dest.food_scene).length > 0 && (
                   <section>
-                    <h2 className="text-xl font-semibold mb-3">Food & Dining</h2>
+                    <h2 id="section-food" className="text-xl font-semibold mb-3">Food & Dining</h2>
                     <div className="grid gap-3 sm:grid-cols-2">
                       {dest.food_scene.vegetarian_ease && (
                         <div className="rounded-xl border border-border p-4 flex items-start gap-3">
@@ -868,7 +868,7 @@ export function DestinationDetail({ dest }: { dest: any }) {
 
             {activeTab === "monthly" && months.length > 0 && (
               <section>
-                <h2 className="text-xl font-semibold mb-4">{t("bestMonths")}</h2>
+                <h2 id="section-monthly" className="text-xl font-semibold mb-4">{t("bestMonths")}</h2>
                 <MonthlyChart
                   scores={months.map((m: any) => ({
                     m: m.month, score: m.score, note: m.note,
@@ -880,14 +880,14 @@ export function DestinationDetail({ dest }: { dest: any }) {
 
             {activeTab === "kids" && kf && (
               <section>
-                <h2 className="text-xl font-semibold mb-4">{t("kidsRating")}</h2>
+                <h2 id="section-kids" className="text-xl font-semibold mb-4">{t("kidsRating")}</h2>
                 <KidsBadge {...kf} />
               </section>
             )}
 
             {activeTab === "safety" && cc && (
               <section>
-                <h2 className="text-xl font-semibold mb-4">{t("confidence")}</h2>
+                <h2 id="section-safety" className="text-xl font-semibold mb-4">{t("confidence")}</h2>
                 <ConfidenceCardComponent {...cc} />
               </section>
             )}
@@ -896,7 +896,7 @@ export function DestinationDetail({ dest }: { dest: any }) {
               <div className="space-y-8">
                 {subs.length > 0 && (
                   <section>
-                    <h2 className="text-xl font-semibold mb-4">Places Within {dest.name}</h2>
+                    <h2 id="section-places" className="text-xl font-semibold mb-4">Places Within {dest.name}</h2>
                     <StaggerContainer className="grid gap-3 sm:grid-cols-2" staggerDelay={0.05}>
                       {subs.map((sub: any) => (
                         <StaggerItem key={sub.id}>

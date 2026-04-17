@@ -5,6 +5,7 @@ import { PrevNextNav } from "@/components/prev-next-nav";
 import { createClient } from "@supabase/supabase-js";
 import { notFound, redirect } from "next/navigation";
 import { STATE_MAP } from "@/lib/seo-maps";
+import { StickyDestinationTabs, BottomCTABar } from "@/components/mobile-destination-enhancements";
 
 export const revalidate = 3600; // Revalidate every hour
 export const dynamicParams = true; // Allow pages not pre-generated at build time
@@ -251,7 +252,8 @@ export default async function DestinationPage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
       />
       <Nav />
-      <main id="main-content" className="mx-auto max-w-4xl px-4 py-8">
+      <StickyDestinationTabs />
+      <main id="main-content" className="mx-auto max-w-4xl px-4 py-8 pb-24 md:pb-8">
         <DestinationDetail dest={dest} />
         <PrevNextNav
           items={dest.allDestinations}
@@ -261,6 +263,7 @@ export default async function DestinationPage({
           backHref="explore"
         />
       </main>
+      <BottomCTABar destId={id} destName={dest.name} />
     </div>
   );
 }

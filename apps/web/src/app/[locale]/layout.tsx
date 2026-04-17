@@ -14,6 +14,7 @@ import { ScrollToTop } from "@/components/scroll-to-top";
 import { PageTransition } from "@/components/page-transition";
 import { MobileTabBar } from "@/components/mobile-tab-bar";
 import { AskNakshIQ } from "@/components/ask-nakshiq";
+import { PWAInstallPrompt } from "@/components/pwa-install-prompt";
 import "../globals.css";
 
 const geistSans = Geist({
@@ -142,10 +143,14 @@ export default async function LocaleLayout({
             <AskNakshIQ />
             <PersonalisationQuiz />
             <MobileTabBar />
+            <PWAInstallPrompt />
           </CompareProvider>
         </NextIntlClientProvider>
         <Analytics />
         <SpeedInsights />
+        <Script id="sw-register" strategy="afterInteractive">
+          {`if('serviceWorker' in navigator){navigator.serviceWorker.register('/sw.js').catch(()=>{})}`}
+        </Script>
         {process.env.NEXT_PUBLIC_GA4_ID && (
           <>
             <Script
