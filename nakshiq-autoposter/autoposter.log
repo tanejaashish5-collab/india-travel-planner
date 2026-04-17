@@ -1274,3 +1274,24 @@ Data, not opinions.
 2026-04-17 02:39:15  INFO          Uploading to R2 (timeout=300s)...
 2026-04-17 02:39:19  INFO          R2 PUT OK. Confirming...
 2026-04-17 02:39:20  INFO          Media ready: mried (5,462,641 bytes · reel_score_reveal_gangotri.mp4)
+2026-04-17 04:18:39  INFO      ════════════════════════════════════════════════════════════
+2026-04-17 04:18:39  INFO      Nakshiq Autoposter · REEL · 2026-04-17 · weekday=4
+2026-04-17 04:18:39  INFO      ════════════════════════════════════════════════════════════
+2026-04-17 04:18:39  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-04-17 04:18:43  INFO      Synced → 20 destinations · 0 traps · 13 articles · total catalog=480
+2026-04-17 04:18:43  INFO      Format: seasonal_shift | Data: {'dest_name': 'Sarahan', 'dest_slug': 'sarahan', 'now_month': 'April', 'now_score': 5, 'future_month': 'July', 'future_score': 2}
+2026-04-17 04:18:58  INFO      Reel rendered: reel_seasonal_shift_sarahan.mp4 (7171 KB)
+2026-04-17 04:18:58  INFO          Requesting upload URL for reel_seasonal_shift_reel_seasonal_shift_sarahan.mp4 (7,343,939 bytes, video/mp4)
+2026-04-17 04:18:59  INFO          Uploading to R2 (timeout=300s)...
+2026-04-17 04:19:00  INFO          R2 PUT OK. Confirming...
+2026-04-17 04:19:01  INFO          Media ready: I9yTX (7,343,939 bytes · reel_seasonal_shift_reel_seasonal_shift_sarahan.mp4)
+2026-04-17 04:19:01  INFO      Video uploaded: reel_seasonal_shift_reel_seasonal_shift_sarahan.mp4
+2026-04-17 04:19:02  INFO      [instagram/nakshiq] Publishing reel (seasonal_shift)...
+2026-04-17 04:19:04  INFO      [instagram/nakshiq] Reel posted successfully!
+2026-04-17 04:19:04  INFO      [facebook/Nakshiq] Publishing reel (seasonal_shift)...
+2026-04-17 04:19:05  INFO      [facebook/Nakshiq] Reel posted successfully!
+2026-04-17 04:19:05  INFO      [youtube/@naksh-iq] Publishing reel (seasonal_shift)...
+2026-04-17 04:19:07  INFO      [youtube/@naksh-iq] Reel posted successfully!
+2026-04-17 04:19:07  INFO      Theme tracker updated: format=seasonal_shift
+2026-04-17 04:19:07  INFO      State saved. Reel run complete.
+2026-04-17 04:19:07  INFO      ════════════════════════════════════════════════════════════
