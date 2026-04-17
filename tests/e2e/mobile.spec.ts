@@ -3,6 +3,10 @@ import { test, expect } from "@playwright/test";
 test.describe("Mobile Experience", () => {
   test.use({ viewport: { width: 375, height: 812 } });
 
+  test.beforeEach(async ({}, testInfo) => {
+    test.skip(testInfo.project.name === "desktop", "Mobile-only test");
+  });
+
   test("destination detail shows bottom CTA bar on scroll", async ({ page }) => {
     await page.goto("/en/destination/varanasi");
     // Scroll down to trigger CTA
