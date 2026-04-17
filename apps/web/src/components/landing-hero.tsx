@@ -560,6 +560,40 @@ export function LandingHero({
         </section>
       )}
 
+      {/* Newsletter — The Window */}
+      <section className="px-4 py-20">
+        <div className="mx-auto max-w-3xl">
+          <ScrollReveal>
+            <div className="rounded-3xl border border-primary/20 bg-gradient-to-br from-primary/10 via-card to-amber-500/5 p-8 sm:p-12 text-center">
+              <p className="text-xs font-semibold tracking-[0.2em] uppercase text-primary mb-3">
+                The Window · Every Sunday
+              </p>
+              <h2 className="text-3xl font-bold sm:text-4xl">
+                One score. One skip. Four minutes.
+              </h2>
+              <p className="mt-3 text-muted-foreground leading-relaxed max-w-xl mx-auto">
+                The best-scored destination this week, one place you should avoid, a road update, and what
+                changed in our data. Delivered Sunday morning. Free, no spam, unsubscribe anytime.
+              </p>
+              <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-3">
+                <Link
+                  href={`/${locale}/newsletter`}
+                  className="rounded-full bg-primary px-8 py-3.5 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
+                >
+                  Subscribe to The Window →
+                </Link>
+                <Link
+                  href={`/${locale}/the-window`}
+                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  See past issues
+                </Link>
+              </div>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
       <section className="px-4 py-20 bg-muted/30">
         <div className="mx-auto max-w-3xl text-center">
           <FadeIn>

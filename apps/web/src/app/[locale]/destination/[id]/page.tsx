@@ -8,6 +8,7 @@ import { createClient } from "@supabase/supabase-js";
 import { notFound, redirect } from "next/navigation";
 import { STATE_MAP } from "@/lib/seo-maps";
 import { StickyDestinationTabs, BottomCTABar } from "@/components/mobile-destination-enhancements";
+import { NewsletterStickyTray } from "@/components/newsletter-sticky-tray";
 
 export const revalidate = 3600; // Revalidate every hour
 export const dynamicParams = true; // Allow pages not pre-generated at build time
@@ -309,6 +310,7 @@ export default async function DestinationPage({
         />
       </main>
       <BottomCTABar destId={id} destName={dest.name} />
+      <NewsletterStickyTray />
     </div>
   );
 }

@@ -292,6 +292,33 @@ export function BlogArticle({
         </ScrollReveal>
       )}
 
+      {/* Newsletter hook — high-intent moment after article body */}
+      <ScrollReveal delay={0.1}>
+        <div className="mt-10 rounded-2xl border border-primary/20 bg-gradient-to-br from-primary/10 via-card to-amber-500/5 p-6 sm:p-8 text-center">
+          <p className="text-xs font-semibold tracking-[0.2em] uppercase text-primary mb-2">
+            The Window · Every Sunday
+          </p>
+          <h3 className="text-xl sm:text-2xl font-bold">Liked this? Get one every Sunday.</h3>
+          <p className="mt-2 text-sm text-muted-foreground max-w-md mx-auto">
+            Best score of the week, one honest skip, road updates. Four minutes. No spam.
+          </p>
+          <div className="mt-5 flex flex-col sm:flex-row items-center justify-center gap-3">
+            <Link
+              href={`/${locale}/newsletter`}
+              className="rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
+            >
+              Subscribe free
+            </Link>
+            <Link
+              href={`/${locale}/the-window`}
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+            >
+              See past issues
+            </Link>
+          </div>
+        </div>
+      </ScrollReveal>
+
       {/* Related articles with cover images */}
       {relatedArticles.length > 0 && (
         <ScrollReveal delay={0.1}>
