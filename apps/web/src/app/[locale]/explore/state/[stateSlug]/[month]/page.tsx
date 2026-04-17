@@ -17,18 +17,11 @@ function getSupabase() {
   return createClient(url, key);
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ stateSlug: string; month: string }> }): Promise<Metadata> {
-  const { stateSlug, month } = await params;
+export async function generateMetadata({ params }: { params: Promise<{ locale: string; stateSlug: string; month: string}> }): Promise<Metadata> {
+  const { locale, stateSlug, month } = await params;
   const stateName = STATE_MAP[stateSlug];
   const m = MONTH_MAP[month];
   if (!stateName || !m) return {
-    alternates: {
-      canonical: `https://www.nakshiq.com/${locale}/explore/state/${stateSlug}/${month}`,
-      languages: {
-        en: `https://www.nakshiq.com/en/explore/state/${stateSlug}/${month}`,
-        hi: `https://www.nakshiq.com/hi/explore/state/${stateSlug}/${month}`,
-      },
-    },
   };
   return {
     title: `Places to Visit in ${stateName} in ${m.name} — Scored & Ranked | NakshIQ`,

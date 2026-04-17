@@ -18,17 +18,10 @@ function getSupabase() {
 
 const MONTH_NAMES = ["","January","February","March","April","May","June","July","August","September","October","November","December"];
 
-export async function generateMetadata({ params }: { params: Promise<{ stateSlug: string }> }): Promise<Metadata> {
-  const { stateSlug } = await params;
+export async function generateMetadata({ params }: { params: Promise<{ locale: string; stateSlug: string}> }): Promise<Metadata> {
+  const { locale, stateSlug } = await params;
   const stateName = STATE_MAP[stateSlug];
   if (!stateName) return {
-    alternates: {
-      canonical: `https://www.nakshiq.com/${locale}/festivals/state/${stateSlug}`,
-      languages: {
-        en: `https://www.nakshiq.com/en/festivals/state/${stateSlug}`,
-        hi: `https://www.nakshiq.com/hi/festivals/state/${stateSlug}`,
-      },
-    },
   };
   return {
     title: `Festivals in ${stateName} — Complete Calendar | NakshIQ`,

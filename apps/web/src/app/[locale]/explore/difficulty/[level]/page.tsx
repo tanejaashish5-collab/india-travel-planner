@@ -24,17 +24,10 @@ const DIFF_DESC: Record<string, string> = {
   extreme: "Remote, dangerous roads, extreme altitude. Only for experienced travelers.",
 };
 
-export async function generateMetadata({ params }: { params: Promise<{ level: string }> }): Promise<Metadata> {
-  const { level } = await params;
+export async function generateMetadata({ params }: { params: Promise<{ locale: string; level: string}> }): Promise<Metadata> {
+  const { locale, level } = await params;
   const name = DIFFICULTY_MAP[level];
   if (!name) return {
-    alternates: {
-      canonical: `https://www.nakshiq.com/${locale}/explore/difficulty/${level}`,
-      languages: {
-        en: `https://www.nakshiq.com/en/explore/difficulty/${level}`,
-        hi: `https://www.nakshiq.com/hi/explore/difficulty/${level}`,
-      },
-    },
   };
   return {
     title: `${name} Destinations in India — Scored & Ranked | NakshIQ`,

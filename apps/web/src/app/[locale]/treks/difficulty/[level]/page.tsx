@@ -17,17 +17,10 @@ function getSupabase() {
   return createClient(url, key);
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ level: string }> }): Promise<Metadata> {
-  const { level } = await params;
+export async function generateMetadata({ params }: { params: Promise<{ locale: string; level: string}> }): Promise<Metadata> {
+  const { locale, level } = await params;
   const name = DIFFICULTY_MAP[level];
   if (!name) return {
-    alternates: {
-      canonical: `https://www.nakshiq.com/${locale}/treks/difficulty/${level}`,
-      languages: {
-        en: `https://www.nakshiq.com/en/treks/difficulty/${level}`,
-        hi: `https://www.nakshiq.com/hi/treks/difficulty/${level}`,
-      },
-    },
   };
   return {
     title: `${name} Treks in India — Scored Trails | NakshIQ`,

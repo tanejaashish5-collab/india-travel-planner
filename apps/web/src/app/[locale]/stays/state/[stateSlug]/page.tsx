@@ -24,17 +24,10 @@ const TYPE_COLORS: Record<string, string> = {
   hostel: "bg-yellow-500/10 text-yellow-400",
 };
 
-export async function generateMetadata({ params }: { params: Promise<{ stateSlug: string }> }): Promise<Metadata> {
-  const { stateSlug } = await params;
+export async function generateMetadata({ params }: { params: Promise<{ locale: string; stateSlug: string}> }): Promise<Metadata> {
+  const { locale, stateSlug } = await params;
   const stateName = STATE_MAP[stateSlug];
   if (!stateName) return {
-    alternates: {
-      canonical: `https://www.nakshiq.com/${locale}/stays/state/${stateSlug}`,
-      languages: {
-        en: `https://www.nakshiq.com/en/stays/state/${stateSlug}`,
-        hi: `https://www.nakshiq.com/hi/stays/state/${stateSlug}`,
-      },
-    },
   };
   return {
     title: `Where to Stay in ${stateName} — Verified Accommodations | NakshIQ`,

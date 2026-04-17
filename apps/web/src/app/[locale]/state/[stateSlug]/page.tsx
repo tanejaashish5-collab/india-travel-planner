@@ -16,16 +16,9 @@ export async function generateMetadata({
 }: {
   params: Promise<{ stateSlug: string; locale: string }>;
 }): Promise<Metadata> {
-  const { stateSlug } = await params;
+  const { locale, stateSlug } = await params;
   const name = STATE_MAP[stateSlug];
   if (!name) return {
-    alternates: {
-      canonical: `https://www.nakshiq.com/${locale}/state/${stateSlug}`,
-      languages: {
-        en: `https://www.nakshiq.com/en/state/${stateSlug}`,
-        hi: `https://www.nakshiq.com/hi/state/${stateSlug}`,
-      },
-    },
   };
   const region = getRegionNameForState(stateSlug);
   return {

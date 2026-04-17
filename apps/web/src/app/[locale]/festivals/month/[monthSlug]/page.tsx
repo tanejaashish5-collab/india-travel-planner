@@ -25,17 +25,10 @@ function getSupabase() {
   return createClient(url, key);
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ monthSlug: string }> }): Promise<Metadata> {
-  const { monthSlug } = await params;
+export async function generateMetadata({ params }: { params: Promise<{ locale: string; monthSlug: string}> }): Promise<Metadata> {
+  const { locale, monthSlug } = await params;
   const m = MONTH_MAP[monthSlug];
   if (!m) return {
-    alternates: {
-      canonical: `https://www.nakshiq.com/${locale}/festivals/month/${monthSlug}`,
-      languages: {
-        en: `https://www.nakshiq.com/en/festivals/month/${monthSlug}`,
-        hi: `https://www.nakshiq.com/hi/festivals/month/${monthSlug}`,
-      },
-    },
   };
   return {
     title: `Festivals in India in ${m.name} — Complete Calendar | NakshIQ`,

@@ -10,18 +10,11 @@ import { localeAlternates } from "@/lib/seo-utils";
 export const revalidate = 86400;
 export const dynamicParams = true;
 
-export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
-  const { id } = await params;
+export async function generateMetadata({ params }: { params: Promise<{ locale: string; id: string}> }): Promise<Metadata> {
+  const { locale, id } = await params;
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
   if (!url || !key) return {
-    alternates: {
-      canonical: `https://www.nakshiq.com/${locale}/collections/${id}`,
-      languages: {
-        en: `https://www.nakshiq.com/en/collections/${id}`,
-        hi: `https://www.nakshiq.com/hi/collections/${id}`,
-      },
-    },
   };
   const supabase = createClient(url, key);
   const { data } = await supabase.from("collections").select("name, description").eq("id", id).single();
