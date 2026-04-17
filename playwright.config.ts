@@ -18,6 +18,17 @@ export default defineConfig({
     baseURL: process.env.BASE_URL,
     screenshot: "only-on-failure",
     trace: "on-first-retry",
+    // Dismiss onboarding quiz + PWA install prompt on all tests
+    storageState: {
+      cookies: [],
+      origins: [{
+        origin: process.env.BASE_URL!,
+        localStorage: [
+          { name: "quizSeen", value: "true" },
+          { name: "pwa-install-dismissed", value: "9999999999999" },
+        ],
+      }],
+    },
   },
   projects: [
     {

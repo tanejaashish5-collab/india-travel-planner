@@ -41,7 +41,7 @@ jobs:
       - run: npm ci
       - run: npx playwright install chromium
       - name: Run functional E2E tests
-        run: npx playwright test --project=mobile --project=desktop --ignore-pattern=visual.spec.ts
+        run: npx playwright test --project=mobile --project=desktop --grep-invert="Visual"
         env:
           BASE_URL: ${{ env.BASE_URL }}
       - uses: actions/upload-artifact@v4

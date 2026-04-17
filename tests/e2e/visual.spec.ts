@@ -17,10 +17,8 @@ import { test, expect } from "@playwright/test";
 test.describe("Visual — Mobile", () => {
   test.use({ viewport: { width: 375, height: 812 } });
 
-  test.beforeEach(async ({ page }, testInfo) => {
+  test.beforeEach(async ({}, testInfo) => {
     test.skip(testInfo.project.name === "desktop", "Mobile-only visual test");
-    // Dismiss onboarding quiz and PWA install prompt
-    await dismissOverlays(page);
   });
 
   test("homepage above the fold", async ({ page }) => {
@@ -128,9 +126,8 @@ test.describe("Visual — Mobile", () => {
 test.describe("Visual — Desktop", () => {
   test.use({ viewport: { width: 1440, height: 900 } });
 
-  test.beforeEach(async ({ page }, testInfo) => {
+  test.beforeEach(async ({}, testInfo) => {
     test.skip(testInfo.project.name === "mobile", "Desktop-only visual test");
-    await dismissOverlays(page);
   });
 
   test("homepage above the fold", async ({ page }) => {
@@ -174,14 +171,6 @@ test.describe("Visual — Desktop", () => {
 });
 
 // ─── Helpers ─────────────────────────────────────────────────────────
-
-/** Set localStorage flags to skip onboarding quiz and PWA install prompt */
-async function dismissOverlays(page: import("@playwright/test").Page) {
-  await page.addInitScript(() => {
-    localStorage.setItem("quizSeen", "true");
-    localStorage.setItem("pwa-install-dismissed", Date.now().toString());
-  });
-}
 
 /** Hide elements that change between runs (counters, timestamps, dynamic ads) */
 async function hideVolatileElements(page: import("@playwright/test").Page) {
