@@ -14,7 +14,9 @@ export default defineConfig({
   projects: [
     {
       name: "mobile",
-      use: { ...devices["iPhone 12"] },
+      use: {
+        ...devices["Pixel 5"],  // Chromium-based mobile emulation
+      },
     },
     {
       name: "desktop",
