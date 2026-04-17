@@ -50,30 +50,48 @@ export async function generateMetadata({
   const monthNum = MONTH_NUMBER[month];
   const monthName = MONTH_NAMES[month];
 
-  const { data: dest } = await supabase
-    .from("destinations")
-    .select("name, tagline, state:states(name)")
-    .eq("id", id)
-    .single();
+  const [{ data: dest }, { data: monthData }, { data: card }] = await Promise.all([
+    supabase.from("destinations").select("name, tagline, state:states(name)").eq("id", id).single(),
+    supabase.from("destination_months").select("score, note, why_go").eq("destination_id", id).eq("month", monthNum).single(),
+    supabase.from("confidence_cards").select("weather_night").eq("destination_id", id).single(),
+  ]);
 
   if (!dest) return {};
-
-  const { data: monthData } = await supabase
-    .from("destination_months")
-    .select("score, note")
-    .eq("destination_id", id)
-    .eq("month", monthNum)
-    .single();
 
   const name = dest.name;
   const score = monthData?.score ?? 0;
   const note = monthData?.note ?? "";
+  const whyGo = monthData?.why_go ?? "";
   const stateData = dest.state as any;
   const stateName = Array.isArray(stateData) ? stateData[0]?.name : stateData?.name;
 
-  const title = `${name} in ${monthName} — ${score}/5 · When to Visit`;
-  const ogTitle = `${name} in ${monthName} — ${score}/5 | NakshIQ`;
-  const description = `${name} scored ${score}/5 for ${monthName}. ${note}. Monthly weather, road conditions, kids safety, and infrastructure data for ${name}, ${stateName || "India"}.`;
+  // Temperature range — summer (Apr-Sep) vs winter (Oct-Mar)
+  const weather = (card?.weather_night ?? {}) as { summer_low_c?: number; winter_low_c?: number };
+  const isSummer = monthNum >= 4 && monthNum <= 9;
+  const lowTemp = isSummer ? weather.summer_low_c : weather.winter_low_c;
+  const tempStr = typeof lowTemp === "number" ? `${lowTemp}°C nights` : "";
+
+  // CTR-optimized title based on score (matches search intent like "X in May weather")
+  const scoreVerdict = score >= 5 ? "Perfect Time to Visit"
+    : score >= 4 ? "Great Time to Visit"
+    : score >= 3 ? "Is It Worth Visiting?"
+    : score >= 2 ? "Should You Go?"
+    : score >= 1 ? "Why to Avoid"
+    : "Travel Guide";
+
+  const title = tempStr
+    ? `${name} in ${monthName}: ${scoreVerdict} — Weather, Temperature (${tempStr})`
+    : `${name} in ${monthName}: ${scoreVerdict} — Weather & Travel Guide`;
+
+  const ogTitle = `${name} in ${monthName} — ${scoreVerdict} | NakshIQ`;
+
+  // Description: lead with the actual answer, include temp, region, and specific value prop
+  const descParts = [
+    tempStr ? `${monthName} in ${name}: ${tempStr}.` : `${name} in ${monthName}.`,
+    note || whyGo,
+    `Monthly score ${score}/5, kids safety, road conditions, and what to expect in ${stateName || "India"}.`,
+  ].filter(Boolean);
+  const description = descParts.join(" ").slice(0, 160);
   const canonicalUrl = `https://www.nakshiq.com/${locale}/destination/${id}/${month}`;
   const imageUrl = `https://www.nakshiq.com/api/og?dest=${encodeURIComponent(name)}&month=${monthName}&score=${score}&note=${encodeURIComponent(note?.substring(0, 80) || '')}`;
 

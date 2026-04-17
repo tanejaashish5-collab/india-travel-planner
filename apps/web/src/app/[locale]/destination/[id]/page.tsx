@@ -44,8 +44,8 @@ export async function generateMetadata({
   const stateData = data.state as any;
   const stateName = Array.isArray(stateData) ? stateData[0]?.name : stateData?.name;
 
-  const title = `${name} — ${stateName || "India"} Travel Guide`;
-  const description = `${tagline} | ${data.difficulty} difficulty${data.elevation_m ? ` · ${data.elevation_m}m` : ""}. Monthly scores, kids ratings, safety data & infrastructure reality for ${name}.`;
+  const title = `${name}: Best Time to Visit, Weather & Travel Guide${stateName ? ` (${stateName})` : ""}`;
+  const description = `Plan your trip to ${name}${stateName ? `, ${stateName}` : ""}. ${tagline} Monthly weather scores, kids safety ratings, road conditions, and real infrastructure data — not sponsored content.`.slice(0, 160);
   const canonicalUrl = `https://www.nakshiq.com/${locale}/destination/${id}`;
   const imageUrl = `https://www.nakshiq.com/images/destinations/${id}.jpg`;
 
