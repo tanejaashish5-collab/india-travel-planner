@@ -98,7 +98,7 @@ export async function GET(req: NextRequest) {
           note: dm.note,
           url: `${baseUrl}/en/destination/${d.id}`,
           image: `${baseUrl}/images/destinations/${d.id}.jpg`,
-          video: `${process.env.NEXT_PUBLIC_SUPABASE_URL}/storage/v1/object/public/videos/${d.id}.mp4`,
+          video: `${process.env.NEXT_PUBLIC_VIDEO_BASE_URL}/${d.id}.mp4`,
         };
       });
 

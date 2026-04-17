@@ -257,7 +257,7 @@ export function LandingHero({
             className="w-full h-full object-cover opacity-[0.18]"
             poster="/images/destinations/spiti-valley.jpg"
           >
-            <source src={`${process.env.NEXT_PUBLIC_SUPABASE_URL}/storage/v1/object/public/videos/hero.mp4`} type="video/mp4" />
+            <source src={`${process.env.NEXT_PUBLIC_VIDEO_BASE_URL}/hero.mp4`} type="video/mp4" />
           </video>
           <div className={`absolute inset-0 bg-gradient-to-b ${timeGradient}`} />
         </div>
