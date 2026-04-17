@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { useLocale, useTranslations } from "next-intl";
+import { FALLBACK } from "@/lib/stats";
 
 export function Footer({ stats }: { stats?: { destinations: number; places: number; festivals: number; traps: number; collections: number } }) {
   const locale = useLocale();
@@ -114,11 +115,11 @@ export function Footer({ stats }: { stats?: { destinations: number; places: numb
         {/* Stats strip */}
         <div className="flex flex-wrap justify-center gap-8 mb-12">
           {[
-            { num: String(stats?.destinations || 297), label: "Destinations" },
-            { num: `${stats?.places || 700}+`, label: "Places" },
-            { num: String(stats?.festivals || 183), label: "Festivals" },
-            { num: String(stats?.traps || 66), label: "Tourist Traps Exposed" },
-            { num: String(stats?.collections ?? 35), label: "Collections" },
+            { num: String(stats?.destinations ?? FALLBACK.destinations), label: "Destinations" },
+            { num: `${stats?.places ?? FALLBACK.places}+`, label: "Places" },
+            { num: String(stats?.festivals ?? FALLBACK.festivals), label: "Festivals" },
+            { num: String(stats?.traps ?? FALLBACK.traps), label: "Tourist Traps Exposed" },
+            { num: String(stats?.collections ?? FALLBACK.collections), label: "Collections" },
           ].map((stat) => (
             <div key={stat.label} className="text-center">
               <div className="text-lg font-mono font-bold text-muted-foreground/30">{stat.num}</div>
