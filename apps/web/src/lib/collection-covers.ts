@@ -12,8 +12,11 @@ export const COVER_FALLBACK: Record<string, string> = {
   "lakshadweep-coral-paradise": "/images/destinations/bangaram.jpg",
   "french-india-trail": "/images/destinations/puducherry.jpg",
   "portuguese-india-trail": "/images/destinations/old-goa.jpg",
-  // Odisha destination images don't exist yet — reuse the Odisha Tribal Circuit cover
-  "odisha-turtle-trail": "/images/collections/COLLECTION_odisha-tribal-circuit.jpg",
+  // All 3 Odisha collections: no Odisha images on disk yet (22 destination
+  // images pending generation). Using thematically-adjacent existing covers.
+  "odisha-golden-triangle": "/images/collections/COLLECTION_temple-trail-south.jpg",
+  "odisha-tribal-circuit": "/images/collections/COLLECTION_tribal-cultures-ethically.jpg",
+  "odisha-turtle-trail": "/images/collections/COLLECTION_india-wildlife-safari.jpg",
 };
 
 export function resolveCover(c: { id: string; cover_image_url?: string | null }): string {
