@@ -76,7 +76,7 @@ export async function buildWindowIssue(): Promise<IssueBuildResult> {
   const { data: traps } = await supabase
     .from("tourist_trap_alternatives")
     .select(`
-      reason, alternative_reason,
+      why_better, comparison, vibe_difference, crowd_difference,
       trap_destination:destinations!tourist_trap_alternatives_trap_destination_id_fkey(id, name),
       alt_destination:destinations!tourist_trap_alternatives_alternative_destination_id_fkey(id, name)
     `)
@@ -91,28 +91,35 @@ export async function buildWindowIssue(): Promise<IssueBuildResult> {
     if (trapDest?.name && altDest?.name) {
       skip = {
         trapName: trapDest.name,
-        trapReason: trapPick.reason ?? "",
+        trapReason: trapPick.comparison ?? trapPick.crowd_difference ?? trapPick.vibe_difference ?? "",
         alternativeId: altDest.id,
         alternativeName: altDest.name,
-        alternativeReason: trapPick.alternative_reason ?? "",
+        alternativeReason: trapPick.why_better ?? "",
       };
     }
   }
 
-  // 3. Road intel — one recent alert, optional
-  const { data: alerts } = await supabase
-    .from("destination_alerts")
-    .select("title, description, destination_id")
-    .order("updated_at", { ascending: false })
-    .limit(5);
+  // 3. Road intel — one verified, non-expired road_reports entry
+  const nowIso = new Date().toISOString();
+  const { data: reports } = await supabase
+    .from("road_reports")
+    .select("segment, status, report, destination_id, destinations(name)")
+    .eq("verified", true)
+    .or(`expires_at.is.null,expires_at.gt.${nowIso}`)
+    .order("reported_at", { ascending: false })
+    .limit(10);
 
   let road: WindowIssueProps["road"] = null;
-  if (alerts && alerts.length > 0) {
-    const pick = alerts[issueNumber % alerts.length] as any;
-    if (pick.title) {
+  if (reports && reports.length > 0) {
+    const pick = reports[issueNumber % reports.length] as any;
+    if (pick.segment || pick.report) {
+      const destName = Array.isArray(pick.destinations) ? pick.destinations[0]?.name : pick.destinations?.name;
+      const title = pick.segment
+        ? `${pick.segment}${pick.status ? ` \u2014 ${pick.status}` : ""}`
+        : `Road update near ${destName ?? "the route"}`;
       road = {
-        title: pick.title,
-        body: pick.description ?? "",
+        title,
+        body: pick.report ?? `${pick.status ?? "Status unknown"}.`,
         destinationId: pick.destination_id ?? undefined,
       };
     }
