@@ -20,6 +20,7 @@ import {
 import { AnimatedCounter } from "./animated-counter";
 import { IndiaHeroMap } from "./india-hero-map";
 import { REGION_GROUPS, STATE_MAP } from "@/lib/seo-maps";
+import { resolveCover } from "@/lib/collection-covers";
 
 const DIFFICULTY_COLORS: Record<string, string> = {
   easy: "text-emerald-400",
@@ -410,14 +411,13 @@ export function LandingHero({
                       className="group block rounded-xl border border-border overflow-hidden h-full transition-all hover:border-primary/50"
                     >
                       {/* Collection cover image */}
-                      <div className="relative h-32 bg-muted/30 overflow-hidden">
+                      <div className="relative h-32 bg-gradient-to-br from-primary/10 via-card to-amber-500/5 overflow-hidden">
                         <Image
-                          src={`/images/collections/COLLECTION_${c.id}.jpg`}
+                          src={resolveCover(c)}
                           alt={c.name}
                           fill
                           sizes="(max-width: 768px) 100vw, 300px"
                           className="object-cover transition-transform duration-500 group-hover:scale-105"
-                          onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-card via-card/40 to-transparent" />
                       </div>

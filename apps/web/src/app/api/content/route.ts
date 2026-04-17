@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
+import { resolveCover } from "@/lib/collection-covers";
 
 export const runtime = "edge";
 
@@ -171,7 +172,7 @@ export async function GET(req: NextRequest) {
         ...c,
         itemCount: (c.items ?? []).length,
         url: `${baseUrl}/en/collections/${c.id}`,
-        image: `${baseUrl}/images/collections/COLLECTION_${c.id}.jpg`,
+        image: `${baseUrl}${resolveCover(c)}`,
       }));
 
       return NextResponse.json({ type: "collections", count: items.length, data: items });
