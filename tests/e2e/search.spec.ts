@@ -19,14 +19,13 @@ test.describe("Search", () => {
 
   test("search returns results for 'manali'", async ({ page }) => {
     await page.goto("/en/explore");
-    // Open search via tab bar
-    const searchBtn = page.locator("nav[aria-label='Main navigation'] button").nth(1);
-    const tabVisible = await searchBtn.isVisible({ timeout: 5000 }).catch(() => false);
-    if (!tabVisible) {
+    // Check if new tab bar with buttons exists (old had <a> tags)
+    const btnCount = await page.locator("nav[aria-label='Main navigation'] button").count();
+    if (btnCount < 5) {
       test.skip(true, "New mobile tab bar not yet deployed");
       return;
     }
-    await searchBtn.click();
+    await page.locator("nav[aria-label='Main navigation'] button").nth(1).click();
     const input = page.getByPlaceholder(/search/i).first();
     await input.waitFor({ state: "visible", timeout: 5000 });
     await input.fill("manali");
