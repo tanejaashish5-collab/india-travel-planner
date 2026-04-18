@@ -575,18 +575,21 @@ YT_CAPTION_TEMPLATES = {
     "listicle": (
         "Top 5 places to visit in India in {month} — ranked by NakshIQ scores.\n\n"
         "Which one surprised you? Drop a comment!\n\n"
+        "→ https://nakshiq.com/en/explore?utm_source=youtube&utm_medium=short&utm_campaign=listicle\n\n"
         "#india #travel #shorts #top5 #nakshiq #travelindia #wanderlust "
         "#indiantravel #bestplaces #traveltips"
     ),
     "before_after": (
         "Same place, different month — the scores tell the story.\n\n"
         "Timing is everything when you travel India.\n\n"
+        "→ https://nakshiq.com/en/explore?utm_source=youtube&utm_medium=short&utm_campaign=before-after\n\n"
         "#india #travel #shorts #nakshiq #traveltiming #indiantravel "
         "#travelindia #travelhacks #besttimetovisit"
     ),
     "mini_guide": (
         "48 hours in {dest} — everything you need to know.\n\n"
         "NakshIQ Score: {score}/5\n\n"
+        "→ https://nakshiq.com/en/explore?utm_source=youtube&utm_medium=short&utm_campaign=mini-guide\n\n"
         "#india #travel #shorts #{dest_tag} #nakshiq #travelguide "
         "#indiantravel #travelindia #wanderlust #explore"
     ),
@@ -606,7 +609,7 @@ def _yt_caption(fmt: str, data: dict) -> str:
             dest_tag=dest_tag,
         )
     except KeyError:
-        return f"Travel smarter with NakshIQ.\n\n#india #travel #shorts #nakshiq"
+        return f"Travel smarter with NakshIQ.\n\n→ https://nakshiq.com?utm_source=youtube&utm_medium=short&utm_campaign=yt-short\n\n#india #travel #shorts #nakshiq"
 
 
 # ═══════════════════════════════════════════════════════════════════════
