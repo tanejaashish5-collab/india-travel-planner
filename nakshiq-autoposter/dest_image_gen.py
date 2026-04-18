@@ -366,19 +366,27 @@ def _style_typographic_art(img: Image.Image, dest: dict, size: tuple) -> Image.I
     draw = ImageDraw.Draw(result)
 
     # Giant typography — fill the width
-    target_width = w - 80
+    # Leave a safer horizontal margin (italic glyphs overshoot PIL's bbox on
+    # both ends, so the effective rendered width is ~6% wider than reported).
+    target_width = w - 160              # 80px margin each side (was 40)
+    italic_safety = 0.92                # keep rendered width ≤ 92% of target
     font_size = 200
     font = _crimson(font_size, bold=True)
 
     # Scale font to fill width
     lines = _wrap_text(name, font, target_width)
-    while len(lines) == 1 and _text_w(name, font) < target_width * 0.8 and font_size < 320:
+    while (len(lines) == 1
+           and _text_w(name, font) < target_width * 0.72   # was 0.8
+           and font_size < 320):
         font_size += 10
         font = _crimson(font_size, bold=True)
         lines = _wrap_text(name, font, target_width)
 
-    # If too wide, scale down
-    while _text_w(lines[0], font) > target_width and font_size > 80:
+    # If too wide (any line), scale down. Compare against the italic-safe cap
+    # so descenders/serifs don't clip the slide edges.
+    safe_w = int(target_width * italic_safety)
+    while (max((_text_w(l, font) for l in lines), default=0) > safe_w
+           and font_size > 80):
         font_size -= 5
         font = _crimson(font_size, bold=True)
         lines = _wrap_text(name, font, target_width)

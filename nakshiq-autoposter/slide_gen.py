@@ -132,9 +132,17 @@ def render_title_slide(title: str, subtitle: str = "", eyebrow: str = "NAKSHIQ")
     _draw_tracked(draw, (eye_x, eye_y), eyebrow, eye_font, BONE_DIM, 0.30)
 
     # TITLE — Crimson Pro Bold Italic, large
-    # Wrap long titles onto two lines by space if needed
-    title_font = _crimson_italic(148, bold=True)
-    title_lines = _wrap_title(title, title_font, SLIDE_SIZE - 160)
+    # Wrap long titles onto two lines by space if needed; auto-shrink font size
+    # so long single words (e.g. "DESTINATIONS") never overflow the slide width.
+    max_title_w = SLIDE_SIZE - 160
+    title_size  = 148
+    title_font  = _crimson_italic(title_size, bold=True)
+    title_lines = _wrap_title(title, title_font, max_title_w)
+    while (max((_text_width(l, title_font) for l in title_lines), default=0) > max_title_w
+           and title_size > 64):
+        title_size -= 8
+        title_font  = _crimson_italic(title_size, bold=True)
+        title_lines = _wrap_title(title, title_font, max_title_w)
     # Recompute height
     line_h = int(title_font.size * 1.05)
     block_h = line_h * len(title_lines)

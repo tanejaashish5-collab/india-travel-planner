@@ -1,10 +1,9 @@
 {
-  "last_sync": "2026-04-18T05:22:30.314966+00:00",
+  "last_sync": "2026-04-18T04:41:39.514622+00:00",
   "posted_today": {
     "8iDfI": "2026-04-14",
     "x4cT8": "2026-04-14",
     "m8EAd": "2026-04-18",
-    "m8EAd_story": "2026-04-15",
     "PdMu0": "2026-04-18",
     "m8EAd_tourist_map": "2026-04-16",
     "PdMu0_tourist_map": "2026-04-16",
@@ -19,7 +18,8 @@
     "zdeEP": "2026-04-17",
     "m8EAd_moat": "2026-04-17",
     "PdMu0_moat": "2026-04-17",
-    "zdeEP_moat": "2026-04-17"
+    "zdeEP_moat": "2026-04-17",
+    "m8EAd_story": "2026-04-18"
   },
   "posted_destinations": [
     {
@@ -195,11 +195,67 @@
       "date": "2026-04-17"
     },
     {
-      "destination_id": "chamba",
+      "destination_id": "dhanaulti",
       "date": "2026-04-18"
     },
     {
-      "destination_id": "collection_spotlight_01_title",
+      "destination_id": "tirthan-valley",
+      "date": "2026-04-18"
+    },
+    {
+      "destination_id": "nainital",
+      "date": "2026-04-18"
+    },
+    {
+      "destination_id": "dharamshala",
+      "date": "2026-04-18"
+    },
+    {
+      "destination_id": "dhanaulti",
+      "date": "2026-04-18"
+    },
+    {
+      "destination_id": "tirthan-valley",
+      "date": "2026-04-18"
+    },
+    {
+      "destination_id": "nainital",
+      "date": "2026-04-18"
+    },
+    {
+      "destination_id": "dharamshala",
+      "date": "2026-04-18"
+    },
+    {
+      "destination_id": "dhanaulti",
+      "date": "2026-04-18"
+    },
+    {
+      "destination_id": "tirthan-valley",
+      "date": "2026-04-18"
+    },
+    {
+      "destination_id": "nainital",
+      "date": "2026-04-18"
+    },
+    {
+      "destination_id": "dharamshala",
+      "date": "2026-04-18"
+    },
+    {
+      "destination_id": "dhanaulti",
+      "date": "2026-04-18"
+    },
+    {
+      "destination_id": "tirthan-valley",
+      "date": "2026-04-18"
+    },
+    {
+      "destination_id": "nainital",
+      "date": "2026-04-18"
+    },
+    {
+      "destination_id": "dharamshala",
       "date": "2026-04-18"
     }
   ],
@@ -219,7 +275,9 @@
       "collection_spotlight",
       "festival_alert",
       "festival_alert",
-      "methodology_roads"
+      "methodology_roads",
+      "collection_spotlight",
+      "collection_spotlight"
     ],
     "PdMu0": [
       "reality_check",
@@ -228,7 +286,9 @@
       "collection_spotlight",
       "festival_alert",
       "festival_alert",
-      "methodology_roads"
+      "methodology_roads",
+      "collection_spotlight",
+      "collection_spotlight"
     ],
     "zdeEP": [
       "methodology_roads"
@@ -566,6 +626,68 @@
       "destination": "dhanaulti",
       "format": "methodology_roads",
       "has_media": true
+    },
+    {
+      "timestamp": "2026-04-18T03:34:03.076120+00:00",
+      "date": "2026-04-18",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "CqDOF",
+      "destination": "dhanaulti",
+      "format": "collection_spotlight",
+      "has_media": true
+    },
+    {
+      "timestamp": "2026-04-18T03:34:25.491750+00:00",
+      "date": "2026-04-18",
+      "platform": "instagram_story",
+      "account_id": "m8EAd",
+      "post_id": "VZhzN",
+      "destination": "chamba",
+      "format": "kids_intel",
+      "has_media": true,
+      "mode": "morning"
+    },
+    {
+      "timestamp": "2026-04-18T03:35:11.712000+00:00",
+      "date": "2026-04-18",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "r2qw4",
+      "destination": "dhanaulti",
+      "format": "collection_spotlight",
+      "has_media": true
+    },
+    {
+      "timestamp": "2026-04-18T04:42:58.285582+00:00",
+      "date": "2026-04-18",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "yY87j",
+      "destination": "dhanaulti",
+      "format": "collection_spotlight",
+      "has_media": true
+    },
+    {
+      "timestamp": "2026-04-18T04:43:18.884656+00:00",
+      "date": "2026-04-18",
+      "platform": "instagram_story",
+      "account_id": "m8EAd",
+      "post_id": "glANx",
+      "destination": "chamba",
+      "format": "kids_intel",
+      "has_media": true,
+      "mode": "morning"
+    },
+    {
+      "timestamp": "2026-04-18T04:44:05.910474+00:00",
+      "date": "2026-04-18",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "T7YQ1",
+      "destination": "dhanaulti",
+      "format": "collection_spotlight",
+      "has_media": true
     }
   ],
   "theme_usage": {
@@ -578,6 +700,9 @@
       ],
       "andaman-diving-snorkeling": [
         "2026-04-16"
+      ],
+      "autumn-destinations": [
+        "2026-04-18"
       ]
     },
     "articles": {
@@ -591,10 +716,23 @@
       ],
       "dhanaulti": [
         "2026-04-16",
-        "2026-04-17"
+        "2026-04-17",
+        "2026-04-18"
       ],
       "srinagar": [
         "2026-04-16"
+      ],
+      "tirthan-valley": [
+        "2026-04-18"
+      ],
+      "nainital": [
+        "2026-04-18"
+      ],
+      "dharamshala": [
+        "2026-04-18"
+      ],
+      "chamba": [
+        "2026-04-18"
       ]
     },
     "reels": {
