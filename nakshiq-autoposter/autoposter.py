@@ -3352,9 +3352,9 @@ YT_SHORT_LOCK_FILE = Path(__file__).parent / ".autoposter-yt-short.lock"
 
 def _run_yt_short(force: bool = False, dry_run: bool = False):
     """
-    YT Short mode — generates and posts YouTube Shorts.
-    Rotates through 3 formats (listicle, before_after, mini_guide) with
-    anti-repetition. YouTube-ONLY posting (skips IG/FB). Max 2 per day.
+    YT Short mode — generates and posts YouTube Shorts + Instagram Reels.
+    Rotates through 6 formats with anti-repetition. Platform-specific captions
+    (YouTube gets YT-optimized, Instagram gets IG-optimized). Max 2 per day.
     """
     import tempfile
 
@@ -3386,7 +3386,8 @@ def _run_yt_short(force: bool = False, dry_run: bool = False):
 
     video_bytes = result["video_bytes"]
     video_fname = result["video_filename"]
-    caption     = result["caption"]
+    yt_caption  = result["caption"]
+    ig_caption  = result.get("ig_caption", result["caption"])
     fmt         = result["format"]
     duration    = result.get("duration", 0)
     music       = result.get("music", "unknown")
@@ -3435,15 +3436,19 @@ def _run_yt_short(force: bool = False, dry_run: bool = False):
                 log.info(f"[{label}] Already posted {count} YT Shorts today — skipping.")
                 continue
 
-        yt_caption = sanitize(caption)
+        # Platform-specific caption: YouTube vs Instagram
+        if platform == "instagram":
+            post_caption = sanitize(ig_caption)
+        else:
+            post_caption = sanitize(yt_caption)
         log.info(f"[{label}] Publishing YT Short ({fmt})...")
 
         if dry_run:
-            log.info(f"[{label}] DRY RUN — would publish:\n{yt_caption[:200]}...")
+            log.info(f"[{label}] DRY RUN — would publish:\n{post_caption[:200]}...")
             posted_any = True
             continue
 
-        pub_result = publish_reel(yt_caption, account, media_obj, dry_run=False)
+        pub_result = publish_reel(post_caption, account, media_obj, dry_run=False)
         if pub_result:
             log.info(f"[{label}] YT Short posted successfully!")
             posted_today = st.setdefault("posted_today", {})
@@ -3486,6 +3491,247 @@ def run_yt_short(force: bool = False, dry_run: bool = False):
 
 
 # ─────────────────────────────────────────────────────────────────────────────
+# ANALYTICS — Performance tracking & smart format weighting
+# ─────────────────────────────────────────────────────────────────────────────
+
+ANALYTICS_FILE = Path(__file__).parent / "analytics.json"
+
+
+def _load_analytics() -> dict:
+    """Load analytics data from analytics.json."""
+    try:
+        return json.loads(ANALYTICS_FILE.read_text())
+    except Exception:
+        return {"posts": [], "last_sync": None}
+
+
+def _save_analytics(data: dict):
+    """Save analytics data."""
+    ANALYTICS_FILE.write_text(json.dumps(data, indent=2, default=str))
+
+
+def _parse_post_metadata(post: dict) -> dict:
+    """Extract structured metadata from an Outstand post object."""
+    containers = post.get("containers") or [{}]
+    content = containers[0].get("content", "") if containers else ""
+    media = ((containers[0].get("media") or [{}])[0] if containers else {})
+    filename = media.get("filename", "")
+
+    # Detect format from filename pattern: yt_short_{fmt}_{date}.mp4
+    fmt = "unknown"
+    content_type = "unknown"
+    if "yt_short_" in filename:
+        content_type = "yt_short"
+        parts = filename.replace("yt_short_", "").split("_")
+        if parts:
+            fmt = parts[0]
+    elif "reel_" in filename:
+        content_type = "reel"
+        parts = filename.replace("reel_", "").split("_")
+        if parts:
+            fmt = parts[0]
+    elif "infographic" in filename.lower():
+        content_type = "infographic"
+    elif "tourist_map" in filename.lower():
+        content_type = "tourist_map"
+    elif "canva" in filename.lower():
+        content_type = "canva_visual"
+    else:
+        content_type = "feed_post"
+
+    # Extract campaign from UTM in content
+    campaign = ""
+    if "utm_campaign=" in content:
+        try:
+            campaign = content.split("utm_campaign=")[1].split("&")[0].split("\n")[0].split(" ")[0].split("#")[0]
+        except Exception:
+            pass
+
+    return {
+        "content_type": content_type,
+        "format": fmt,
+        "campaign": campaign,
+        "filename": filename,
+    }
+
+
+def run_analytics():
+    """
+    Analytics sync — pull recent posts from Outstand, track performance,
+    and generate a report. Stores data in analytics.json.
+    """
+    if not OUTSTAND_API_KEY:
+        log.error("OUTSTAND_API_KEY not set. Exiting.")
+        sys.exit(1)
+
+    log.info("═" * 60)
+    log.info(f"Nakshiq Autoposter · ANALYTICS SYNC · {date.today().isoformat()}")
+    log.info("═" * 60)
+
+    analytics = _load_analytics()
+    existing_ids = {p["post_id"] for p in analytics.get("posts", []) if "post_id" in p}
+
+    # Pull recent posts (up to 200)
+    new_posts = 0
+    try:
+        for page in range(1, 5):  # 4 pages × 50 = 200 posts
+            r = outstand_get(f"/v1/posts?limit=50&page={page}")
+            posts = r.get("data") or []
+            if not posts:
+                break
+
+            for post in posts:
+                post_id = post.get("id", "")
+                if post_id in existing_ids:
+                    continue
+
+                created = post.get("createdAt", "")
+                meta = _parse_post_metadata(post)
+
+                # Collect per-platform results
+                platforms = []
+                for sa in (post.get("socialAccounts") or []):
+                    platform_data = {
+                        "platform": sa.get("network", "unknown"),
+                        "username": sa.get("username", ""),
+                        "status": sa.get("status", "unknown"),
+                        "error": sa.get("error"),
+                        "posted_url": sa.get("postedUrl", ""),
+                    }
+                    platforms.append(platform_data)
+
+                record = {
+                    "post_id": post_id,
+                    "created_at": created,
+                    "content_type": meta["content_type"],
+                    "format": meta["format"],
+                    "campaign": meta["campaign"],
+                    "platforms": platforms,
+                }
+                analytics.setdefault("posts", []).append(record)
+                existing_ids.add(post_id)
+                new_posts += 1
+
+    except Exception as e:
+        log.error(f"Analytics sync failed: {e}")
+        import traceback
+        log.error(traceback.format_exc())
+
+    analytics["last_sync"] = datetime.now().isoformat()
+    _save_analytics(analytics)
+
+    log.info(f"Synced {new_posts} new posts (total: {len(analytics.get('posts', []))})")
+
+    # Generate summary report
+    _analytics_report(analytics)
+
+
+def _analytics_report(analytics: dict):
+    """Print a summary of post performance by content type and format."""
+    posts = analytics.get("posts", [])
+    if not posts:
+        log.info("No posts to analyze.")
+        return
+
+    # Count by content type
+    by_type = {}
+    by_format = {}
+    by_platform = {}
+    success_count = 0
+    fail_count = 0
+
+    for p in posts:
+        ct = p.get("content_type", "unknown")
+        fmt = p.get("format", "unknown")
+        by_type[ct] = by_type.get(ct, 0) + 1
+        by_format[f"{ct}:{fmt}"] = by_format.get(f"{ct}:{fmt}", 0) + 1
+
+        for plat in p.get("platforms", []):
+            pn = plat.get("platform", "unknown")
+            status = plat.get("status", "unknown")
+            by_platform[pn] = by_platform.get(pn, 0) + 1
+            if status == "published":
+                success_count += 1
+            elif status in ("failed", "error"):
+                fail_count += 1
+
+    log.info("── Analytics Summary ──")
+    log.info(f"Total posts tracked: {len(posts)}")
+    log.info(f"Successfully published: {success_count} | Failed: {fail_count}")
+    log.info("")
+    log.info("By content type:")
+    for ct, count in sorted(by_type.items(), key=lambda x: -x[1]):
+        log.info(f"  {ct}: {count}")
+    log.info("")
+    log.info("By format:")
+    for fmt, count in sorted(by_format.items(), key=lambda x: -x[1]):
+        log.info(f"  {fmt}: {count}")
+    log.info("")
+    log.info("By platform:")
+    for pn, count in sorted(by_platform.items(), key=lambda x: -x[1]):
+        log.info(f"  {pn}: {count}")
+
+    # YT Short format breakdown (for weighting)
+    yt_formats = {k: v for k, v in by_format.items() if k.startswith("yt_short:")}
+    if yt_formats:
+        log.info("")
+        log.info("YT Short format distribution:")
+        total_yt = sum(yt_formats.values())
+        for fmt, count in sorted(yt_formats.items(), key=lambda x: -x[1]):
+            pct = (count / total_yt * 100) if total_yt else 0
+            log.info(f"  {fmt.split(':')[1]}: {count} ({pct:.0f}%)")
+
+    # Date range
+    dates = [p.get("created_at", "")[:10] for p in posts if p.get("created_at")]
+    if dates:
+        log.info(f"\nDate range: {min(dates)} → {max(dates)}")
+
+    log.info("═" * 60)
+
+
+def smart_format_weights(content_type: str = "yt_short") -> dict:
+    """
+    Return format weights based on analytics. Formats that haven't been tried
+    get a boost. Formats with high success rates get higher weight.
+    Returns {format_name: weight} dict.
+    """
+    analytics = _load_analytics()
+    posts = analytics.get("posts", [])
+
+    # Filter to relevant content type
+    relevant = [p for p in posts if p.get("content_type") == content_type]
+
+    if not relevant:
+        # No data yet — equal weights
+        return {}
+
+    # Count successes per format
+    format_stats = {}
+    for p in relevant:
+        fmt = p.get("format", "unknown")
+        if fmt == "unknown":
+            continue
+        stats = format_stats.setdefault(fmt, {"total": 0, "success": 0})
+        stats["total"] += 1
+        for plat in p.get("platforms", []):
+            if plat.get("status") == "published":
+                stats["success"] += 1
+
+    # Calculate weights: success_rate * (1 + novelty_bonus)
+    # Novelty bonus = higher weight for less-used formats
+    total_posts = sum(s["total"] for s in format_stats.values())
+    weights = {}
+    for fmt, stats in format_stats.items():
+        success_rate = stats["success"] / max(stats["total"], 1)
+        # Novelty: inverse of usage proportion
+        usage_pct = stats["total"] / max(total_posts, 1)
+        novelty = max(0.5, 1.5 - usage_pct)
+        weights[fmt] = round(success_rate * novelty, 3)
+
+    return weights
+
+
+# ─────────────────────────────────────────────────────────────────────────────
 # ENTRY POINT
 # ─────────────────────────────────────────────────────────────────────────────
 
@@ -3522,12 +3768,15 @@ if __name__ == "__main__":
                              "and themes (magazine, topo, datacard, noir). Mon/Wed/Fri.")
     parser.add_argument("--yt-short", action="store_true",
                         help="Generate and post a YouTube Short video. "
-                             "Rotates through listicle, before_after, and mini_guide "
-                             "formats. YouTube-only, max 2 per day.")
+                             "Rotates through 6 formats with anti-repetition. "
+                             "Posts to YouTube + Instagram, max 2 per day.")
+    parser.add_argument("--analytics", action="store_true",
+                        help="Sync post history from Outstand and generate "
+                             "performance analytics report. No posting.")
     args = parser.parse_args()
-    exclusive = sum([args.evening, args.moat, args.tourist_map, args.canva_visual, args.reel, args.infographic, args.yt_short])
+    exclusive = sum([args.evening, args.moat, args.tourist_map, args.canva_visual, args.reel, args.infographic, args.yt_short, args.analytics])
     if exclusive > 1:
-        parser.error("--evening, --moat, --tourist-map, --canva-visual, --reel, --infographic, and --yt-short are mutually exclusive.")
+        parser.error("--evening, --moat, --tourist-map, --canva-visual, --reel, --infographic, --yt-short, and --analytics are mutually exclusive.")
     if args.tourist_map:
         run_tourist_map(force=args.force, dry_run=args.dry_run)
     elif args.canva_visual:
@@ -3538,6 +3787,8 @@ if __name__ == "__main__":
         run_infographic(force=args.force, dry_run=args.dry_run)
     elif args.yt_short:
         run_yt_short(force=args.force, dry_run=args.dry_run)
+    elif args.analytics:
+        run_analytics()
     else:
         run(force=args.force, sync_only=args.sync_only,
             dry_run=args.dry_run, evening=args.evening, moat=args.moat)

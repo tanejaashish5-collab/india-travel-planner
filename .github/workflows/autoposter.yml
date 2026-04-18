@@ -16,6 +16,7 @@ on:
     - cron: "0 11 * * *"        # 21:00 AEST (9 PM) — yt short slot 1
     - cron: "0 2 * * *"         # 12:00 AEST (12 PM) — yt short slot 2
     - cron: "0 17 * * *"        # 03:00 AEST (3 AM) — yt short slot 3
+    - cron: "0 18 * * *"        # 23:30 IST daily — analytics sync
   workflow_dispatch:
     inputs:
       mode:
@@ -38,6 +39,7 @@ on:
           - infographic-force
           - yt-short
           - yt-short-force
+          - analytics
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
@@ -157,6 +159,10 @@ jobs:
             # UTC 17:00 (03:00 AEST) → yt short slot 3
             echo "args=--yt-short" >> $GITHUB_OUTPUT
             echo "Scheduled YT SHORT slot 3 (UTC ${HOUR}:${MINUTE})"
+          elif [ "$TOTAL_MINS" -ge 1080 ] && [ "$TOTAL_MINS" -lt 1090 ]; then
+            # UTC 18:00 (23:30 IST) → analytics sync
+            echo "args=--analytics" >> $GITHUB_OUTPUT
+            echo "Scheduled ANALYTICS mode (UTC ${HOUR}:${MINUTE})"
           elif [ "$TOTAL_MINS" -ge 180 ] && [ "$TOTAL_MINS" -le 330 ]; then
             echo "args=" >> $GITHUB_OUTPUT
             echo "Scheduled POST mode (UTC ${HOUR}:${MINUTE})"
@@ -174,6 +180,6 @@ jobs:
         run: |
           git config user.name  "Nakshiq Autoposter"
           git config user.email "autoposter@nakshiq.com"
-          git add nakshiq-autoposter/state.json nakshiq-autoposter/autoposter.log
+          git add nakshiq-autoposter/state.json nakshiq-autoposter/autoposter.log nakshiq-autoposter/analytics.json
           git diff --staged --quiet || git commit -m "chore: autoposter state $(date -u +'%Y-%m-%d %H:%M UTC')"
           git push
