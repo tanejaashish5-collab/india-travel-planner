@@ -1842,9 +1842,56 @@ Data, not opinions.
 2026-04-18 06:47:15  INFO      ── Syncing Nakshiq content ──────────────────────────────
 2026-04-18 06:47:22  INFO      Synced → 20 destinations · 0 traps · 9 articles · total catalog=480
 2026-04-18 06:47:22  INFO      Sync-only mode. Done.
-2026-04-18 08:02:44  INFO      ════════════════════════════════════════════════════════════
-2026-04-18 08:02:44  INFO      Nakshiq Autoposter · MORNING · 2026-04-18 · weekday=5
-2026-04-18 08:02:44  INFO      ════════════════════════════════════════════════════════════
-2026-04-18 08:02:44  INFO      ── Syncing Nakshiq content ──────────────────────────────
-2026-04-18 08:02:50  INFO      Synced → 20 destinations · 0 traps · 9 articles · total catalog=480
-2026-04-18 08:02:50  INFO      Sync-only mode. Done.
+2026-04-18 17:37:37  ERROR     OUTSTAND_API_KEY not set. Exiting.
+2026-04-18 17:38:01  INFO      ════════════════════════════════════════════════════════════
+2026-04-18 17:38:01  INFO      Nakshiq Autoposter · YT SHORT · 2026-04-18
+2026-04-18 17:38:01  INFO      ════════════════════════════════════════════════════════════
+2026-04-18 17:38:44  INFO      ════════════════════════════════════════════════════════════
+2026-04-18 17:38:44  INFO      Nakshiq Autoposter · YT SHORT · 2026-04-18
+2026-04-18 17:38:44  INFO      ════════════════════════════════════════════════════════════
+2026-04-18 17:39:02  INFO      Short rendered: yt_short_listicle_2026-04-18.mp4 (20715 KB, 35.0s, fmt=listicle, music=00_discovery_beat)
+2026-04-18 17:39:02  INFO          Requesting upload URL for yt_short_listicle_yt_short_listicle_2026-04-18.mp4 (21,212,585 bytes, video/mp4)
+2026-04-18 17:39:04  INFO          Uploading to R2 (timeout=300s)...
+2026-04-18 17:39:14  INFO          R2 PUT OK. Confirming...
+2026-04-18 17:39:17  INFO          Media ready: EmJUA (21,212,585 bytes · yt_short_listicle_yt_short_listicle_2026-04-18.mp4)
+2026-04-18 17:39:17  INFO      Video uploaded: yt_short_listicle_yt_short_listicle_2026-04-18.mp4
+2026-04-18 17:39:19  INFO      [youtube/@naksh-iq] Publishing YT Short (listicle)...
+2026-04-18 17:39:24  INFO      [youtube/@naksh-iq] YT Short posted successfully!
+2026-04-18 17:39:24  INFO      [instagram/nakshiq] Skipping (YT Shorts are YouTube-only).
+2026-04-18 17:39:24  INFO      [facebook/Nakshiq] Skipping (YT Shorts are YouTube-only).
+2026-04-18 17:39:24  INFO      YT Short posted: format=listicle, music=00_discovery_beat
+2026-04-18 17:39:24  INFO      State saved. YT Short run complete.
+2026-04-18 17:39:24  INFO      ════════════════════════════════════════════════════════════
+2026-04-18 17:54:52  INFO      ════════════════════════════════════════════════════════════
+2026-04-18 17:54:52  INFO      Nakshiq Autoposter · YT SHORT · 2026-04-18
+2026-04-18 17:54:52  INFO      ════════════════════════════════════════════════════════════
+2026-04-18 17:55:14  INFO      Short rendered: yt_short_listicle_2026-04-18.mp4 (19906 KB, 35.0s, fmt=listicle, music=00_desi_groove)
+2026-04-18 17:55:14  INFO          Requesting upload URL for yt_short_listicle_yt_short_listicle_2026-04-18.mp4 (20,384,506 bytes, video/mp4)
+2026-04-18 17:55:15  INFO          Uploading to R2 (timeout=300s)...
+2026-04-18 17:55:26  INFO          R2 PUT OK. Confirming...
+2026-04-18 17:55:28  INFO          Media ready: Zt2au (20,384,506 bytes · yt_short_listicle_yt_short_listicle_2026-04-18.mp4)
+2026-04-18 17:55:28  INFO      Video uploaded: yt_short_listicle_yt_short_listicle_2026-04-18.mp4
+2026-04-18 17:55:29  INFO      [instagram/nakshiq] Skipping (YT Shorts are YouTube-only).
+2026-04-18 17:55:29  INFO      [facebook/Nakshiq] Skipping (YT Shorts are YouTube-only).
+2026-04-18 17:55:29  INFO      [youtube/@naksh-iq] Publishing YT Short (listicle)...
+2026-04-18 17:55:35  INFO      [youtube/@naksh-iq] YT Short posted successfully!
+2026-04-18 17:55:35  INFO      YT Short posted: format=listicle, music=00_desi_groove
+2026-04-18 17:55:35  INFO      State saved. YT Short run complete.
+2026-04-18 17:55:35  INFO      ════════════════════════════════════════════════════════════
+2026-04-18 17:58:00  INFO      ════════════════════════════════════════════════════════════
+2026-04-18 17:58:00  INFO      Nakshiq Autoposter · YT SHORT · 2026-04-18
+2026-04-18 17:58:00  INFO      ════════════════════════════════════════════════════════════
+2026-04-18 17:58:18  INFO      Short rendered: yt_short_listicle_2026-04-18.mp4 (22348 KB, 35.0s, fmt=listicle, music=15_bossa_sunset)
+2026-04-18 17:58:18  INFO          Requesting upload URL for yt_short_listicle_yt_short_listicle_2026-04-18.mp4 (22,884,507 bytes, video/mp4)
+2026-04-18 17:58:19  INFO          Uploading to R2 (timeout=300s)...
+2026-04-18 17:58:30  INFO          R2 PUT OK. Confirming...
+2026-04-18 17:58:33  INFO          Media ready: NZ4Ra (22,884,507 bytes · yt_short_listicle_yt_short_listicle_2026-04-18.mp4)
+2026-04-18 17:58:33  INFO      Video uploaded: yt_short_listicle_yt_short_listicle_2026-04-18.mp4
+2026-04-18 17:58:34  INFO      [instagram/nakshiq] Publishing YT Short (listicle)...
+2026-04-18 17:58:40  INFO      [instagram/nakshiq] YT Short posted successfully!
+2026-04-18 17:58:40  INFO      [facebook/Nakshiq] Skipping (YT Shorts post to YouTube + Instagram only).
+2026-04-18 17:58:40  INFO      [youtube/@naksh-iq] Publishing YT Short (listicle)...
+2026-04-18 17:58:45  INFO      [youtube/@naksh-iq] YT Short posted successfully!
+2026-04-18 17:58:45  INFO      YT Short posted: format=listicle, music=15_bossa_sunset
+2026-04-18 17:58:45  INFO      State saved. YT Short run complete.
+2026-04-18 17:58:45  INFO      ════════════════════════════════════════════════════════════

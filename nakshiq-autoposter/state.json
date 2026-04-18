@@ -21,7 +21,13 @@
     "zdeEP_moat": "2026-04-17",
     "m8EAd_story": "2026-04-18",
     "m8EAd_infographic": "2026-04-18",
-    "PdMu0_infographic": "2026-04-18"
+    "PdMu0_infographic": "2026-04-18",
+    "zdeEP_yt_short": "2026-04-18",
+    "zdeEP_yt_short_count": 1,
+    "4QL0i_yt_short": "2026-04-18",
+    "4QL0i_yt_short_count": 2,
+    "m8EAd_yt_short": "2026-04-18",
+    "m8EAd_yt_short_count": 1
   },
   "posted_destinations": [
     {
@@ -838,5 +844,13 @@
         "2026-04-17"
       ]
     }
-  }
+  },
+  "yt_short_formats_used": [
+    "mini_guide",
+    "before_after"
+  ],
+  "yt_short_music_used": [
+    "05_midnight_express",
+    "18_latin_fire"
+  ]
 }
