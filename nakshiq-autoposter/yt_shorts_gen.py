@@ -182,13 +182,20 @@ def _save_state(st: dict):
     STATE_FILE.write_text(json.dumps(st, indent=2, default=str))
 
 
-def _fetch_destinations(month: int = None) -> list[dict]:
-    """Fetch destinations from Nakshiq API."""
+def _fetch_destinations(month: int = None, max_score: int = None) -> list[dict]:
+    """Fetch destinations from Nakshiq API.
+
+    Args:
+        month: Calendar month (1-12). Defaults to current month.
+        max_score: If set, adds &max_score=N to fetch low-scoring destinations.
+    """
     import requests
     if month is None:
         month = datetime.now().month
     try:
         url = f"{NAKSHIQ_API}?type=destinations&month={month}&min_score=0&limit=300"
+        if max_score is not None:
+            url += f"&max_score={max_score}"
         resp = requests.get(url, timeout=15)
         data = resp.json().get("data", [])
         return [d for d in data if isinstance(d.get("score"), (int, float))]
@@ -313,7 +320,7 @@ def _build_listicle(destinations: list[dict], month_name: str,
     p = _render_segment(cta_vid, CTA_DUR, cta_texts, out_dir / "seg_06_cta.mp4")
     if p: segments.append(p)
 
-    return segments, total
+    return segments, total, {}
 
 
 # ═══════════════════════════════════════════════════════════════════════
@@ -367,7 +374,7 @@ def _build_before_after(destinations: list[dict], month_now: int,
                 break
 
     if len(contrasts) < 2:
-        return [], 0
+        return [], 0, {}
 
     # Prioritize biggest diffs, then shuffle within same diff
     contrasts.sort(key=lambda x: abs(x["now_score"] - x["future_score"]), reverse=True)
@@ -428,7 +435,7 @@ def _build_before_after(destinations: list[dict], month_now: int,
                          out_dir / "seg_04_cta.mp4")
     if p: segments.append(p)
 
-    return segments, total
+    return segments, total, {"dest": picks[0]}
 
 
 # ═══════════════════════════════════════════════════════════════════════
@@ -511,7 +518,7 @@ def _build_mini_guide(destinations: list[dict], out_dir: Path) -> tuple[list[Pat
     p = _render_segment(vid, CTA_DUR, cta_texts, out_dir / "seg_cta.mp4")
     if p: segments.append(p)
 
-    return segments, total
+    return segments, total, {"dest": dest}
 
 
 # ═══════════════════════════════════════════════════════════════════════
@@ -530,7 +537,7 @@ def _build_did_you_know(destinations: list[dict], out_dir: Path) -> tuple[list[P
         if len(text) > 30 and d.get("score", 0) >= 3:
             candidates.append({**d, "_fact": text})
     if not candidates:
-        return [], 0
+        return [], 0, {}
 
     random.shuffle(candidates)
     dest = candidates[0]
@@ -612,7 +619,7 @@ def _build_did_you_know(destinations: list[dict], out_dir: Path) -> tuple[list[P
     p = _render_segment(_find_similar_video(dest), CTA_DUR, cta_texts, out_dir / "seg_03_cta.mp4")
     if p: segments.append(p)
 
-    return segments, total
+    return segments, total, {"dest": dest}
 
 
 # ═══════════════════════════════════════════════════════════════════════
@@ -624,7 +631,7 @@ def _build_this_vs_that(destinations: list[dict], out_dir: Path) -> tuple[list[P
     # Find pairs with similar scores but different character
     scored = [d for d in destinations if d.get("score", 0) >= 3]
     if len(scored) < 2:
-        return [], 0
+        return [], 0, {}
 
     # Try to find an interesting matchup — same score, different difficulty/state
     random.shuffle(scored)
@@ -727,7 +734,7 @@ def _build_this_vs_that(destinations: list[dict], out_dir: Path) -> tuple[list[P
     p = _render_segment(_find_similar_video(dest_a), CTA_DUR, cta_texts, out_dir / "seg_04_cta.mp4")
     if p: segments.append(p)
 
-    return segments, total
+    return segments, total, {"dest_a": dest_a, "dest_b": dest_b}
 
 
 # ═══════════════════════════════════════════════════════════════════════
@@ -735,18 +742,20 @@ def _build_this_vs_that(destinations: list[dict], out_dir: Path) -> tuple[list[P
 # ═══════════════════════════════════════════════════════════════════════
 
 def _build_dont_go_here(destinations: list[dict], month_name: str,
-                        out_dir: Path) -> tuple[list[Path], float]:
+                        out_dir: Path) -> tuple[list[Path], float, dict]:
     """Build a 'Don't Go Here in [Month]' Short — warning about lower-scoring destinations."""
-    # Pick lowest-scoring destinations (score ≤3 first, then bottom of whatever is available)
-    bad = [d for d in destinations if d.get("score", 0) <= 2]
+    import calendar
+    month_num = list(calendar.month_name).index(month_name) if month_name in calendar.month_name else datetime.now().month
+
+    # First try: fetch genuinely low-scoring destinations via max_score API param
+    bad = _fetch_destinations(month=month_num, max_score=2)
     if len(bad) < 3:
-        # API may not return scores <3 — use score=3 as "not ideal this month"
-        bad = [d for d in destinations if d.get("score", 0) <= 3]
+        # Fallback: score ≤2 from the provided destinations
+        bad = [d for d in destinations if d.get("score", 0) <= 2]
     if len(bad) < 3:
-        # Still not enough — take the lowest-scoring destinations available
-        bad = sorted(destinations, key=lambda d: d.get("score", 5))[:6]
-    if len(bad) < 3:
-        return [], 0
+        # Skip this format — don't mislead viewers with 4/5 destinations
+        print("dont_go_here: not enough low-scoring destinations (need score ≤2). Skipping.")
+        return [], 0, {}
 
     # Prefer famous destinations that people might mistakenly visit
     bad.sort(key=lambda d: len(d.get("tagline") or ""), reverse=True)
@@ -821,7 +830,7 @@ def _build_dont_go_here(destinations: list[dict], month_name: str,
     p = _render_segment(_find_similar_video(alt), CTA_DUR, cta_texts, out_dir / f"seg_{num_warns+2:02d}_cta.mp4")
     if p: segments.append(p)
 
-    return segments, total
+    return segments, total, {}
 
 
 # ═══════════════════════════════════════════════════════════════════════
@@ -1096,16 +1105,14 @@ def build_yt_short(
         month_slug = month_name.lower()   # e.g. "april"
 
         if fmt == "listicle":
-            segments, total_dur = _build_listicle(destinations, month_name, out_dir)
+            segments, total_dur, _meta = _build_listicle(destinations, month_name, out_dir)
             caption_data = {
                 "month": month_name,
                 "link": f"https://nakshiq.com/en/where-to-go/{month_slug}?utm_source=youtube&utm_medium=short&utm_campaign=listicle",
             }
         elif fmt == "before_after":
-            segments, total_dur = _build_before_after(destinations, month_now, out_dir)
-            # Pick the top-contrast destination for the deep link
-            top_ba = sorted(destinations, key=lambda d: d.get("score", 0), reverse=True)
-            ba_dest = top_ba[0] if top_ba else {}
+            segments, total_dur, _meta = _build_before_after(destinations, month_now, out_dir)
+            ba_dest = _meta.get("dest", {})
             ba_id = ba_dest.get("id", "")
             caption_data = {
                 "month": month_name,
@@ -1116,9 +1123,8 @@ def build_yt_short(
                 ),
             }
         elif fmt == "mini_guide":
-            segments, total_dur = _build_mini_guide(destinations, out_dir)
-            top = [d for d in destinations if d.get("score", 0) >= 4]
-            dest = top[0] if top else destinations[0]
+            segments, total_dur, _meta = _build_mini_guide(destinations, out_dir)
+            dest = _meta.get("dest", destinations[0])
             dest_id = dest.get("id", "")
             caption_data = {
                 "dest_name": dest.get("name", "India"),
@@ -1130,10 +1136,8 @@ def build_yt_short(
                 ),
             }
         elif fmt == "did_you_know":
-            segments, total_dur = _build_did_you_know(destinations, out_dir)
-            # The builder picks a high-scoring dest with rich tagline
-            cands = [d for d in destinations if len(d.get("tagline") or "") > 30 and d.get("score", 0) >= 3]
-            dyk_dest = cands[0] if cands else destinations[0]
+            segments, total_dur, _meta = _build_did_you_know(destinations, out_dir)
+            dyk_dest = _meta.get("dest", destinations[0])
             dyk_id = dyk_dest.get("id", "")
             caption_data = {
                 "dest_name": dyk_dest.get("name", "India"),
@@ -1145,10 +1149,9 @@ def build_yt_short(
                 ),
             }
         elif fmt == "this_vs_that":
-            segments, total_dur = _build_this_vs_that(destinations, out_dir)
-            scored = [d for d in destinations if d.get("score", 0) >= 3]
-            tvt_a = scored[0] if scored else destinations[0]
-            tvt_b = scored[1] if len(scored) > 1 else destinations[1] if len(destinations) > 1 else tvt_a
+            segments, total_dur, _meta = _build_this_vs_that(destinations, out_dir)
+            tvt_a = _meta.get("dest_a", destinations[0])
+            tvt_b = _meta.get("dest_b", destinations[1] if len(destinations) > 1 else destinations[0])
             caption_data = {
                 "month": month_name,
                 "dest_a": tvt_a.get("name", "A"),
@@ -1156,7 +1159,7 @@ def build_yt_short(
                 "link": f"https://nakshiq.com/en/where-to-go/{month_slug}?utm_source=youtube&utm_medium=short&utm_campaign=this-vs-that",
             }
         elif fmt == "dont_go_here":
-            segments, total_dur = _build_dont_go_here(destinations, month_name, out_dir)
+            segments, total_dur, _meta = _build_dont_go_here(destinations, month_name, out_dir)
             caption_data = {
                 "month": month_name,
                 "link": f"https://nakshiq.com/en/where-to-go/{month_slug}?utm_source=youtube&utm_medium=short&utm_campaign=dont-go-here",
@@ -1170,7 +1173,7 @@ def build_yt_short(
             # Fallback to listicle
             if fmt != "listicle":
                 fmt = "listicle"
-                segments, total_dur = _build_listicle(destinations, month_name, out_dir)
+                segments, total_dur, _meta = _build_listicle(destinations, month_name, out_dir)
                 caption_data = {
                     "month": month_name,
                     "link": f"https://nakshiq.com/en/where-to-go/{month_slug}?utm_source=youtube&utm_medium=short&utm_campaign=listicle",
