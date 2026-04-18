@@ -16,6 +16,7 @@ export const runtime = "edge";
  *   ?limit=20           (default 20, max 100)
  *   ?month=4            (filter destinations by current-month score)
  *   ?min_score=4        (only destinations scoring >= this in given month)
+ *   ?max_score=2        (only destinations scoring <= this in given month)
  */
 export async function GET(req: NextRequest) {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
@@ -31,6 +32,7 @@ export async function GET(req: NextRequest) {
   const limit = Math.min(Number(params.get("limit") || 20), 100);
   const month = Number(params.get("month") || new Date().getMonth() + 1);
   const minScore = Number(params.get("min_score") || 0);
+  const maxScore = Number(params.get("max_score") || 0);
 
   const baseUrl = "https://www.nakshiq.com";
 
@@ -81,6 +83,9 @@ export async function GET(req: NextRequest) {
 
       if (minScore > 0) {
         query = query.gte("score", minScore);
+      }
+      if (maxScore > 0) {
+        query = query.lte("score", maxScore);
       }
 
       const { data } = await query;

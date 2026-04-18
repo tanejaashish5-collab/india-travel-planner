@@ -236,7 +236,7 @@ function auditUpgradeReasoning(text) {
 }
 
 // ===== Anthropic calls =====
-async function callAnthropic(payload) {
+async function callAnthropic(payload, attempt = 1) {
   const res = await fetch("https://api.anthropic.com/v1/messages", {
     method: "POST",
     headers: {
@@ -247,6 +247,13 @@ async function callAnthropic(payload) {
     },
     body: JSON.stringify(payload),
   });
+  // Retry on 429 (rate limit) and 529 (overloaded) up to 3 times with exponential backoff.
+  if ((res.status === 429 || res.status === 529) && attempt <= 3) {
+    const retryAfter = Number(res.headers.get("retry-after")) || 0;
+    const backoff = Math.max(retryAfter * 1000, attempt * 15_000);
+    await new Promise((r) => setTimeout(r, backoff));
+    return callAnthropic(payload, attempt + 1);
+  }
   if (!res.ok) {
     const t = await res.text();
     throw new Error(`Anthropic ${res.status}: ${t.slice(0, 300)}`);
