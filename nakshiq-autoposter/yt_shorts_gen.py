@@ -321,35 +321,60 @@ def _build_before_after(destinations: list[dict], month_now: int,
                         out_dir: Path) -> tuple[list[Path], float]:
     """Build a before/after seasonal contrast Short."""
     # Find destinations with big score swings across months
+    # Try multiple contrast months to find the most dramatic swings
     import requests
 
-    month_future = ((month_now + 2) % 12) + 1  # 3 months ahead
-    future_dests = _fetch_destinations(month_future)
+    # Candidate months: opposite season first, then shoulder months
+    candidates = []
+    for offset in [2, 4, 6, 3, 5, 1]:
+        candidates.append(((month_now - 1 + offset) % 12) + 1)
+    # Deduplicate while preserving order
+    seen = set()
+    contrast_months = []
+    for m in candidates:
+        if m != month_now and m not in seen:
+            seen.add(m)
+            contrast_months.append(m)
 
-    # Build score lookup for future month
-    future_scores = {d.get("id", d.get("name", "")): d.get("score", 3) for d in future_dests}
-
-    # Find dramatic contrasts
     contrasts = []
-    for d in destinations:
-        did = d.get("id", d.get("name", ""))
-        now_score = d.get("score", 3)
-        fut_score = future_scores.get(did, now_score)
-        diff = abs(now_score - fut_score)
-        if diff >= 2:
-            contrasts.append({**d, "now_score": now_score, "future_score": fut_score,
-                              "future_month": month_future})
+    best_month = None
+    for month_future in contrast_months:
+        future_dests = _fetch_destinations(month_future)
+        future_scores = {d.get("id", d.get("name", "")): d.get("score", 3) for d in future_dests}
 
-    if len(contrasts) < 3:
+        month_contrasts = []
+        for d in destinations:
+            did = d.get("id", d.get("name", ""))
+            now_score = d.get("score", 3)
+            fut_score = future_scores.get(did, now_score)
+            diff = abs(now_score - fut_score)
+            if diff >= 1:
+                month_contrasts.append({**d, "now_score": now_score, "future_score": fut_score,
+                                        "future_month": month_future})
+
+        # Sort by biggest diff first
+        month_contrasts.sort(key=lambda x: abs(x["now_score"] - x["future_score"]), reverse=True)
+
+        if len(month_contrasts) >= 2 and len(month_contrasts) > len(contrasts):
+            contrasts = month_contrasts
+            best_month = month_future
+            # If we found 3+ with diff>=2, that's great — stop searching
+            big_diffs = [c for c in contrasts if abs(c["now_score"] - c["future_score"]) >= 2]
+            if len(big_diffs) >= 3:
+                break
+
+    if len(contrasts) < 2:
         return [], 0
 
-    random.shuffle(contrasts)
-    picks = contrasts[:3]  # Show 3 contrasts
+    # Prioritize biggest diffs, then shuffle within same diff
+    contrasts.sort(key=lambda x: abs(x["now_score"] - x["future_score"]), reverse=True)
+    picks = contrasts[:3]  # Show up to 3 contrasts
+    num_picks = len(picks)
 
     HOOK_DUR = 4.0
     CONTRAST_DUR = 8.0
     CTA_DUR = 3.0
-    total = HOOK_DUR + 3 * CONTRAST_DUR + CTA_DUR
+    total = HOOK_DUR + num_picks * CONTRAST_DUR + CTA_DUR
 
     segments = []
     V = _hex(VERMILLION_BRIGHT); B = _hex(BONE); S = _hex(SAFFRON); G = "0x4CAF50"
