@@ -7,7 +7,15 @@ interface Props {
 }
 
 export function GapYearBudgetRollup({ plan }: Props) {
-  const tier: Budget = (plan.input.budget as Budget) ?? "mid-range";
+  // Prefer new experienceTier, fall back to legacy budget
+  const tierToBudget: Record<string, Budget> = {
+    thrifty: "budget",
+    comfortable: "mid-range",
+    splurge: "splurge",
+  };
+  const tier: Budget = plan.input.experienceTier
+    ? tierToBudget[plan.input.experienceTier] ?? "mid-range"
+    : (plan.input.budget as Budget) ?? "mid-range";
 
   const perMonth = plan.months.map((m) => {
     const dailyFromPicks = m.destinations
@@ -26,15 +34,15 @@ export function GapYearBudgetRollup({ plan }: Props) {
 
   return (
     <section className="rounded-xl border border-border bg-card p-6">
-      <h2 className="text-lg font-bold mb-4 text-foreground">Budget roll-up</h2>
+      <h2 className="text-lg font-bold mb-4 text-foreground">Budget roll-up — per person</h2>
       <p className="text-xs text-muted-foreground mb-4">
-        Estimated based on {tier} tier. Per-person, excluding flights in. Stays + food + local transport only.
+        Estimated based on <span className="font-medium capitalize">{plan.input.experienceTier ?? tier}</span> tier, <strong>per person</strong>, excluding flights in. Stays + food + local transport only. Multiply by party size for the household total.
       </p>
 
       <div className="grid grid-cols-3 gap-4 mb-6">
-        <Stat label="Avg daily" value={`₹${avgDailyOverall.toLocaleString("en-IN")}`} />
+        <Stat label="Avg daily / person" value={`₹${avgDailyOverall.toLocaleString("en-IN")}`} />
         <Stat label="Total days" value={String(totalDays)} />
-        <Stat label="Trip total" value={`₹${grandTotal.toLocaleString("en-IN")}`} />
+        <Stat label="Trip total / person" value={`₹${grandTotal.toLocaleString("en-IN")}`} />
       </div>
 
       <div className="border-t border-border pt-4">

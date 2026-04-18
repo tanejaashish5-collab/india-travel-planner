@@ -49,15 +49,27 @@ export async function saveToSupabase(plan: GapYearPlan): Promise<{ shareToken: s
 
   const userId = session.session.user.id;
 
+  // Persist v2 fields additively; keep v1 columns populated for back-compat
+  const effectiveParty = plan.input.party ?? plan.input.persona ?? "solo_couple";
+  const effectiveBudget = plan.input.experienceTier === "thrifty"
+    ? "budget"
+    : plan.input.experienceTier === "splurge"
+      ? "splurge"
+      : plan.input.budget ?? "mid-range";
+
   const row = {
     user_id: userId,
     title: plan.title,
     start_month: plan.input.startMonth,
     duration_months: plan.input.durationMonths,
-    persona: plan.input.persona,
-    budget: plan.input.budget ?? null,
-    origin: plan.input.origin ?? null,
-    interests: plan.input.interests,
+    persona: effectiveParty,
+    budget: effectiveBudget,
+    origin: plan.input.origin?.name ?? null,
+    origin_json: plan.input.origin ?? null,
+    interests: plan.input.themes ?? [],
+    familiarity: plan.input.familiarity ?? null,
+    experience_tier: plan.input.experienceTier ?? null,
+    themes: plan.input.themes ?? [],
     plan,
   };
 

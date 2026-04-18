@@ -1,6 +1,7 @@
-import type { Persona, Budget, Region } from "./types";
+import type { Persona, Budget, Region, Archetype, ExperienceTier, Theme } from "./types";
 import type { ShortlistItem } from "./shortlist";
 import { MONTH_NAMES, REGIONS } from "./types";
+import { archetypeRules } from "./archetype";
 
 const VOICE_RULES = `VOICE RULES (mandatory):
 - First-person plural ("We recommend", "We'd skip this")
@@ -11,29 +12,30 @@ const VOICE_RULES = `VOICE RULES (mandatory):
 
 export function buildSkeletonPrompt(input: {
   months: number[];
-  persona: Persona;
+  archetype: Archetype;
   origin?: string;
-  interests: string[];
+  themes: Theme[];
 }): string {
-  const { months, persona, origin, interests } = input;
+  const { months, archetype, origin, themes } = input;
   const monthLabels = months.map((m) => MONTH_NAMES[m]).join(", ");
+  const rules = archetypeRules(archetype);
 
-  return `You are NakshIQ's Gap Year chaining engine. Partition a multi-month trip across India into regions that make geographic sense — avoid Kashmir → Kerala → Ladakh zigzags.
+  return `You are NakshIQ's Gap Year regional-chain engine. Partition a multi-month trip across India into regions that make geographic sense — avoid Kashmir → Kerala → Ladakh zigzags.
 
 ${VOICE_RULES}
 
 TRIP:
 - Months: ${monthLabels} (${months.length} months in sequence)
-- Persona: ${persona === "family_kids" ? "family with children" : "solo or couple, no children"}
+- Archetype: ${archetype} — ${rules.description}
 - Origin: ${origin || "not specified"}
-- Interests: ${interests.length ? interests.join(", ") : "open"}
+- Themes: ${themes.length ? themes.join(", ") : "general"}
 
 Valid regions: ${REGIONS.join(", ")}
 
 RULES:
 1. Assign exactly ONE region to each month in the sequence.
 2. Chain consecutive months in the same region when possible — aim for 2–3 months per region, not 1-month hops.
-3. Respect season: Oct-Feb favors south/west/islands; Apr-Jun favors north/northeast; Jul-Sep monsoon favors northeast/islands/high north.
+3. Respect season: Oct–Feb favours south/west/islands; Apr–Jun favours north/northeast; Jul–Sep monsoon favours northeast/islands/high north.
 4. Limit to at most 4 region transitions across the whole trip.
 
 Return ONLY valid JSON (no markdown, no code fences):
@@ -46,19 +48,26 @@ Return ONLY valid JSON (no markdown, no code fences):
 The "chain" array MUST have exactly ${months.length} entries, one per month in the input order.`;
 }
 
-export function buildMonthPrompt(input: {
-  monthIndex: number; // month-of-year 1-12
-  persona: Persona;
-  budget?: Budget;
-  kids: boolean;
-  interests: string[];
+interface BuildMonthPromptInput {
+  monthIndex: number;
+  archetype: Archetype;
+  experienceTier: ExperienceTier;
+  themes: Theme[];
   regionConstraint: Region | "any";
   alreadyPicked: { id: string; monthName: string }[];
   shortlist: ShortlistItem[];
-}): string {
-  const { monthIndex, persona, budget, kids, interests, regionConstraint, alreadyPicked, shortlist } = input;
-  const monthName = MONTH_NAMES[monthIndex];
+  enforceSplit?: boolean; // true on day-cap violation replay
+}
 
+export function buildMonthPrompt(input: BuildMonthPromptInput): string {
+  const {
+    monthIndex, archetype, experienceTier, themes,
+    regionConstraint, alreadyPicked, shortlist, enforceSplit,
+  } = input;
+  const monthName = MONTH_NAMES[monthIndex];
+  const rules = archetypeRules(archetype);
+
+  // Compact shortlist for prompt — include cluster_id, iconic flag, alternative pair
   const compactShortlist = shortlist.map((s) => ({
     id: s.id,
     name: s.name,
@@ -73,11 +82,71 @@ export function buildMonthPrompt(input: {
     elevation: s.elevation,
     difficulty: s.difficulty,
     dailyMidRangeInr: s.dailyCostInr?.midRange ?? null,
+    iconic: s.isIconic,
+    cluster: s.clusterId,
+    alsoTry: s.alsoTry
+      ? { altId: s.alsoTry.altId, altName: s.alsoTry.altName, whyBetter: s.alsoTry.whyBetter }
+      : null,
   }));
+
+  // Cluster stats — used by day-cap enforcement
+  const clusterCounts: Record<string, number> = {};
+  for (const s of shortlist) {
+    if (s.clusterId) clusterCounts[s.clusterId] = (clusterCounts[s.clusterId] ?? 0) + 1;
+  }
+  const largestCluster = Math.max(0, ...Object.values(clusterCounts));
 
   const alreadyList = alreadyPicked.length
     ? alreadyPicked.map((p) => `${p.id} (${p.monthName})`).join(", ")
     : "none";
+
+  // Archetype-specific picking instructions
+  const archetypeBlock = (() => {
+    switch (archetype) {
+      case "marquee_family":
+        return `ARCHETYPE RULES (Marquee Family — first India trip, with kids):
+- Lead with RECOGNISABLE names (iconic=true in shortlist).
+- Prefer 2 anchors per month. Both should be iconic unless only one iconic exists.
+- When an iconic pick has alsoTry (a known offbeat alternative), KEEP the iconic as the anchor AND include the alsoTry destination as a 3-5 day "slower alternative" second pick where space permits. Never replace the iconic.
+- Kid suitability is paramount — avoid difficult/high-elevation picks.`;
+      case "confident_family":
+        return `ARCHETYPE RULES (Confident Family — returning, with kids):
+- Mix ONE iconic anchor with ONE or TWO offbeat picks.
+- When an iconic has alsoTry, you MAY surface both (anchor + alternative) so the family can compare.
+- Kid suitability still matters; avoid extremes.`;
+      case "first_timer_couple":
+        return `ARCHETYPE RULES (First-timer Couple):
+- Lead with iconic recognisable picks.
+- Reserve ONE slot per month for an offbeat gem (preferably an alsoTry of a month's iconic).
+- No kid constraints — you can include tougher / higher-elevation picks.`;
+      case "offbeat_seeker":
+        return `ARCHETYPE RULES (Offbeat Seeker — seasoned, no kids):
+- Prefer offbeat picks (iconic=false in shortlist).
+- When an iconic candidate appears with an alsoTry, SUBSTITUTE with the alsoTry (pick the alternative, not the trap). Do not mention the trap by name.
+- Willing to trade comfort for specificity.`;
+    }
+  })();
+
+  const experienceTierBlock = (() => {
+    switch (experienceTier) {
+      case "thrifty":
+        return `EXPERIENCE TIER: thrifty
+- Prefer destinations with budget or mixed budget_tier.
+- Never pick a destination whose only realistic stay option is splurge-only.`;
+      case "splurge":
+        return `EXPERIENCE TIER: splurge-when-warranted
+- When a destination is defined by a specific iconic property (Udaipur → Lake Palace, Agra → Oberoi Amarvilas), lean into it.
+- Do NOT recommend splurge every night — balance with comfortable picks in the same region.`;
+      default:
+        return `EXPERIENCE TIER: comfortable — default balance, no strong tier preference.`;
+    }
+  })();
+
+  const daySplitBlock = `DAY CAPS (hard):
+- No single destination gets more than 10 days.
+- Total days for the month: 22–30.
+${largestCluster >= 3 ? "- Your shortlist has a cluster of ≥3 nearby destinations — you MUST split across at least 3 stops rather than stuffing one destination." : ""}
+${enforceSplit ? "- REPLAY: your previous response violated day caps. Split across more stops; no single pick > 10 days." : ""}`;
 
   return `You are NakshIQ's Gap Year per-month picker. Choose 1–3 destinations for ${monthName} of a multi-month India trip.
 
@@ -85,30 +154,40 @@ ${VOICE_RULES}
 
 CONTEXT:
 - Month: ${monthName}
-- Persona: ${persona === "family_kids" ? "family with children (kids along)" : "solo or couple"}
-- Budget: ${budget || "mid-range"}
-- Kids matter: ${kids ? "YES — prioritise kidsRating ≥ 3, avoid extreme difficulty" : "no"}
-- Interests: ${interests.length ? interests.join(", ") : "general"}
 - Region constraint: ${regionConstraint}
 - Already picked elsewhere in this trip (DO NOT REPEAT): ${alreadyList}
 
-SHORTLIST (pre-scored ≥4 for ${monthName}, ordered by score):
+${archetypeBlock}
+
+${experienceTierBlock}
+
+${daySplitBlock}
+
+THEMES (optional flavour, not hard filter): ${themes.length ? themes.join(", ") : "none"}
+
+TRANSIT:
+- Assume 1 travel day between non-adjacent destinations (>200km apart). Account for it by subtracting from the 22–30 day budget.
+
+SHORTLIST (pre-scored ≥${rules.minScore} for ${monthName}, with iconic flag, cluster, and alsoTry pair where known):
 ${JSON.stringify(compactShortlist, null, 2)}
 
 PICKING RULES:
-1. Choose 1–3 destinations from the SHORTLIST ONLY. Never invent an id.
-2. Total days for the month must be 22–30 (the traveler spends most of the month here).
-3. Balance: one anchor city + one slower retreat works well. Don't pick 3 capital-tier cities.
-4. If region constraint is specific (not "any"), all picks must match that region.
-5. Write rationale that reads like NakshIQ editorial — specific, not generic.
-6. "narrative" is a 2-sentence story of the month as a whole.
+1. Choose destinations ONLY from the SHORTLIST ids. Never invent.
+2. Ideal stops: ${rules.defaultStopsPerMonth}.
+3. "rationale" is one specific NakshIQ-voice sentence — no generic prose.
+4. "narrative" is a 2-sentence story framing the month.
 
-Return ONLY valid JSON:
+Return ONLY valid JSON (no markdown, no code fences):
 {
   "destinations": [
-    { "id": "<id from shortlist>", "days": 12, "rationale": "One specific sentence." }
+    {
+      "id": "<id from shortlist>",
+      "days": 8,
+      "rationale": "One specific sentence in NakshIQ voice.",
+      "alsoTryId": "<alsoTry.altId if you're pairing the iconic with its alternative, else null>"
+    }
   ],
-  "narrative": "Two short sentences painting the month.",
+  "narrative": "Two sentences painting the month.",
   "estDailyCostInr": 3500
 }`;
 }

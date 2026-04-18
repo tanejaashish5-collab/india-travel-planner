@@ -1,20 +1,28 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
-import { buildShortlist } from "@/lib/gap-year/shortlist";
+import { buildShortlistForArchetype } from "@/lib/gap-year/shortlist";
 import { buildSkeletonPrompt, buildMonthPrompt } from "@/lib/gap-year/prompts";
+import { validateDaySplit } from "@/lib/gap-year/day-split";
+import { resolveArchetype } from "@/lib/gap-year/archetype";
 import {
   MONTH_NAMES,
-  type Persona,
-  type Budget,
+  THEMES,
+  type Party,
+  type Familiarity,
+  type ExperienceTier,
+  type Theme,
   type Region,
   type MonthPlan,
+  type OriginRef,
+  type AlternativePair,
 } from "@/lib/gap-year/types";
 
 export const dynamic = "force-dynamic";
 export const maxDuration = 60;
 
-const VALID_PERSONAS: Persona[] = ["family_kids", "solo_couple"];
-const VALID_BUDGETS: Budget[] = ["budget", "mid-range", "splurge"];
+const VALID_PARTIES: Party[] = ["family_kids", "solo_couple"];
+const VALID_FAMILIARITY: Familiarity[] = ["first_timer", "seasoned"];
+const VALID_TIERS: ExperienceTier[] = ["thrifty", "comfortable", "splurge"];
 
 const rateLimits = new Map<string, number[]>();
 const RATE_LIMIT_MAX = 10;
@@ -32,45 +40,57 @@ function checkRateLimit(ip: string): boolean {
 
 export async function POST(req: NextRequest) {
   const rawApiKey = process.env.ANTHROPIC_API_KEY;
-  if (!rawApiKey) {
-    return NextResponse.json({ error: "AI not configured" }, { status: 503 });
-  }
+  if (!rawApiKey) return NextResponse.json({ error: "AI not configured" }, { status: 503 });
   const apiKey: string = rawApiKey;
 
   const ip = req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "unknown";
   if (!checkRateLimit(ip)) {
-    return NextResponse.json(
-      { error: "Rate limit exceeded — 10 plans per hour per IP" },
-      { status: 429 }
-    );
+    return NextResponse.json({ error: "Rate limit exceeded — 10 plans per hour per IP" }, { status: 429 });
   }
 
   const body = await req.json();
-  const { durationMonths, startMonth, persona, budget, origin, interests } = body;
+  const {
+    durationMonths, startMonth, party, familiarity, experienceTier,
+    themes, origin, persona, budget,
+  } = body;
 
-  if (!Number.isInteger(durationMonths) || durationMonths < 3 || durationMonths > 12) {
+  // Accept v1 fields as fallbacks for any old callers
+  const effectiveParty: Party = party ?? persona;
+  const effectiveFamiliarity: Familiarity = familiarity ?? "first_timer";
+  const effectiveTier: ExperienceTier =
+    experienceTier ?? (budget === "splurge" ? "splurge" : budget === "budget" ? "thrifty" : "comfortable");
+
+  // Validation
+  if (!Number.isInteger(durationMonths) || durationMonths < 3 || durationMonths > 12)
     return NextResponse.json({ error: "durationMonths must be 3-12" }, { status: 400 });
-  }
-  if (!Number.isInteger(startMonth) || startMonth < 1 || startMonth > 12) {
+  if (!Number.isInteger(startMonth) || startMonth < 1 || startMonth > 12)
     return NextResponse.json({ error: "startMonth must be 1-12" }, { status: 400 });
-  }
-  if (!VALID_PERSONAS.includes(persona)) {
-    return NextResponse.json({ error: "Invalid persona" }, { status: 400 });
-  }
-  if (budget && !VALID_BUDGETS.includes(budget)) {
-    return NextResponse.json({ error: "Invalid budget" }, { status: 400 });
-  }
+  if (!VALID_PARTIES.includes(effectiveParty))
+    return NextResponse.json({ error: "Invalid party" }, { status: 400 });
+  if (!VALID_FAMILIARITY.includes(effectiveFamiliarity))
+    return NextResponse.json({ error: "Invalid familiarity" }, { status: 400 });
+  if (!VALID_TIERS.includes(effectiveTier))
+    return NextResponse.json({ error: "Invalid experienceTier" }, { status: 400 });
 
-  const cleanInterests = Array.isArray(interests)
-    ? interests.filter((i) => typeof i === "string").slice(0, 8)
+  const cleanThemes: Theme[] = Array.isArray(themes)
+    ? themes.filter((t: any) => typeof t === "string" && THEMES.includes(t as Theme)).slice(0, 3)
     : [];
-  const cleanOrigin = typeof origin === "string" ? origin.slice(0, 80) : undefined;
+  const cleanOrigin: OriginRef | null = origin && typeof origin === "object" && origin.id
+    ? {
+        id: String(origin.id),
+        name: String(origin.name ?? origin.id),
+        state: String(origin.state ?? ""),
+        lat: Number(origin.lat),
+        lng: Number(origin.lng),
+      }
+    : null;
+
+  const archetype = resolveArchetype({ familiarity: effectiveFamiliarity, party: effectiveParty });
 
   const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-  if (!supabaseUrl || !supabaseKey) {
+  if (!supabaseUrl || !supabaseKey)
     return NextResponse.json({ error: "DB not configured" }, { status: 500 });
-  }
   const supabase = createClient(supabaseUrl, supabaseKey);
 
   // Build the sequence of months (month-of-year) starting at startMonth
@@ -79,13 +99,18 @@ export async function POST(req: NextRequest) {
     months.push(((startMonth - 1 + i) % 12) + 1);
   }
 
-  // Optional: skeleton call partitions months into regions when duration >= 5
+  // Skeleton call: partitions months into regions when duration ≥ 5
   let monthRegions: (Region | "any")[] = months.map(() => "any");
   if (durationMonths >= 5) {
     try {
       const chain = await callClaude(
         apiKey,
-        buildSkeletonPrompt({ months, persona, origin: cleanOrigin, interests: cleanInterests })
+        buildSkeletonPrompt({
+          months,
+          archetype,
+          origin: cleanOrigin?.name,
+          themes: cleanThemes,
+        })
       );
       if (Array.isArray(chain?.chain)) {
         monthRegions = chain.chain.map((c: any) =>
@@ -93,15 +118,11 @@ export async function POST(req: NextRequest) {
         );
       }
     } catch (err) {
-      console.warn("Skeleton call failed, falling back to 'any' regions:", err);
+      console.warn("Skeleton call failed, falling back to 'any':", err);
     }
   }
 
-  // Per-month work: shortlist → Claude → MonthPlan
   const alreadyPicked: { id: string; monthName: string }[] = [];
-
-  // Can't run fully parallel because picks feed into later exclusions.
-  // Compromise: run 3 concurrent workers, seeding exclusions greedily.
   const monthPlans: MonthPlan[] = new Array(durationMonths);
   const CONCURRENCY = 4;
 
@@ -112,15 +133,18 @@ export async function POST(req: NextRequest) {
       if (idx >= durationMonths) return;
       const monthIndex = months[idx];
       const region = monthRegions[idx];
+      const isBookend = idx === 0 || idx === durationMonths - 1;
 
       try {
-        const shortlist = await buildShortlist(supabase, {
+        const shortlist = await buildShortlistForArchetype(supabase, {
           month: monthIndex,
-          persona,
-          budget,
+          archetype,
+          experienceTier: effectiveTier,
+          themes: cleanThemes,
           region: region !== "any" ? region : undefined,
+          origin: cleanOrigin ? { lat: cleanOrigin.lat, lng: cleanOrigin.lng } : null,
+          originProximityBoost: isBookend,
           excludeIds: alreadyPicked.map((p) => p.id),
-          minScore: 4,
           limit: 15,
         });
 
@@ -130,50 +154,52 @@ export async function POST(req: NextRequest) {
             monthName: MONTH_NAMES[monthIndex],
             region,
             destinations: [],
-            narrative: `No shortlist matched for ${MONTH_NAMES[monthIndex]}. Try relaxing the region or budget filter.`,
+            narrative: `No shortlist matched for ${MONTH_NAMES[monthIndex]}. Try relaxing filters.`,
             estDailyCostInr: 0,
             error: "empty_shortlist",
           };
           continue;
         }
 
-        const result = await callClaude(
+        // First pass
+        let result = await callClaude(
           apiKey,
           buildMonthPrompt({
             monthIndex,
-            persona,
-            budget,
-            kids: persona === "family_kids",
-            interests: cleanInterests,
+            archetype,
+            experienceTier: effectiveTier,
+            themes: cleanThemes,
             regionConstraint: region,
             alreadyPicked,
             shortlist,
           })
         );
 
-        const picks = (result?.destinations ?? []).filter((p: any) =>
-          shortlist.some((s) => s.id === p.id)
-        );
+        let hydrated = hydrate(result, shortlist);
+        let validator = validateDaySplit(hydrated, shortlist);
 
-        const hydrated = picks.map((p: any) => {
-          const src = shortlist.find((s) => s.id === p.id)!;
-          return {
-            id: src.id,
-            name: src.name,
-            state: src.state,
-            days: Number(p.days) || 7,
-            rationale: String(p.rationale || ""),
-            budgetTier: src.budgetTier,
-            dailyCostInr: src.dailyCostInr,
-            image: src.image,
-          };
-        });
-
-        // greedy exclusion — add to alreadyPicked for subsequent workers
-        const monthLabel = MONTH_NAMES[monthIndex] ?? String(monthIndex);
-        for (const h of hydrated) {
-          alreadyPicked.push({ id: h.id, monthName: monthLabel });
+        // Replay once on violation
+        if (!validator.ok) {
+          console.warn(`Day-cap violation month ${monthIndex}: ${validator.reason} — replaying`);
+          result = await callClaude(
+            apiKey,
+            buildMonthPrompt({
+              monthIndex,
+              archetype,
+              experienceTier: effectiveTier,
+              themes: cleanThemes,
+              regionConstraint: region,
+              alreadyPicked,
+              shortlist,
+              enforceSplit: true,
+            })
+          );
+          hydrated = hydrate(result, shortlist);
+          validator = validateDaySplit(hydrated, shortlist);
         }
+
+        const monthLabel = MONTH_NAMES[monthIndex] ?? String(monthIndex);
+        for (const h of hydrated) alreadyPicked.push({ id: h.id, monthName: monthLabel });
 
         monthPlans[idx] = {
           monthIndex,
@@ -202,29 +228,65 @@ export async function POST(req: NextRequest) {
 
   return NextResponse.json({
     plan: {
-      title: autoTitle({ durationMonths, startMonth, persona }),
-      input: { durationMonths, startMonth, persona, budget, origin: cleanOrigin, interests: cleanInterests },
+      version: "v2",
+      title: autoTitle({ durationMonths, startMonth, party: effectiveParty }),
+      input: {
+        durationMonths,
+        startMonth,
+        party: effectiveParty,
+        familiarity: effectiveFamiliarity,
+        experienceTier: effectiveTier,
+        themes: cleanThemes,
+        origin: cleanOrigin,
+        // v1 compat fields so existing public-view still renders
+        persona: effectiveParty,
+        budget: effectiveTier === "thrifty" ? "budget" : effectiveTier === "splurge" ? "splurge" : "mid-range",
+      },
       months: monthPlans,
     },
   });
 }
 
-function friendlyError(err: any): string {
-  const msg = String(err?.message || err || "");
-  if (/credit balance/i.test(msg)) return "AI temporarily unavailable — please try again later.";
-  if (/rate limit/i.test(msg)) return "Too many requests right now. Try again in a minute.";
-  if (/429/.test(msg)) return "Too many requests right now. Try again in a minute.";
-  if (/timeout|timed out/i.test(msg)) return "Generation timed out. Please retry.";
-  if (/non-JSON/i.test(msg)) return "AI returned an unexpected response. Please retry.";
-  return "Could not generate this month. Please retry.";
+function hydrate(result: any, shortlist: any[]) {
+  const picks = (result?.destinations ?? []).filter((p: any) =>
+    shortlist.some((s: any) => s.id === p.id)
+  );
+  return picks.map((p: any) => {
+    const src = shortlist.find((s: any) => s.id === p.id)!;
+    const alsoTry: AlternativePair | null = p.alsoTryId && src.alsoTry && src.alsoTry.altId === p.alsoTryId
+      ? src.alsoTry
+      : null;
+    return {
+      id: src.id,
+      name: src.name,
+      state: src.state,
+      days: Number(p.days) || 7,
+      rationale: String(p.rationale || ""),
+      budgetTier: src.budgetTier,
+      dailyCostInr: src.dailyCostInr,
+      image: src.image,
+      alsoTry,
+      isIconic: src.isIconic,
+      clusterId: src.clusterId,
+    };
+  });
 }
 
-function autoTitle(input: { durationMonths: number; startMonth: number; persona: Persona }): string {
+function autoTitle(input: { durationMonths: number; startMonth: number; party: Party }): string {
   const start = MONTH_NAMES[input.startMonth];
   const endMonth = ((input.startMonth - 1 + input.durationMonths - 1) % 12) + 1;
   const end = MONTH_NAMES[endMonth];
-  const who = input.persona === "family_kids" ? "with Kids" : "Gap Year";
+  const who = input.party === "family_kids" ? "with Kids" : "Gap Year";
   return `${input.durationMonths}-Month ${who}: ${start}–${end}`;
+}
+
+function friendlyError(err: any): string {
+  const msg = String(err?.message || err || "");
+  if (/credit balance/i.test(msg)) return "AI temporarily unavailable — please try again later.";
+  if (/rate limit|429/i.test(msg)) return "Too many requests right now. Try again in a minute.";
+  if (/timeout|timed out/i.test(msg)) return "Generation timed out. Please retry.";
+  if (/non-JSON/i.test(msg)) return "AI returned an unexpected response. Please retry.";
+  return "Could not generate this month. Please retry.";
 }
 
 async function callClaude(apiKey: string, prompt: string): Promise<any> {
@@ -241,15 +303,12 @@ async function callClaude(apiKey: string, prompt: string): Promise<any> {
       messages: [{ role: "user", content: prompt }],
     }),
   });
-
   if (!response.ok) {
     const err = await response.text();
     throw new Error(`Anthropic API: ${response.status} ${err.slice(0, 200)}`);
   }
-
   const result = await response.json();
   const text: string = result.content?.[0]?.text ?? "";
-
   try {
     return JSON.parse(text);
   } catch {

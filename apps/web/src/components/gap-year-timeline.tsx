@@ -1,10 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { destinationImage } from "@/lib/image-url";
-import type { GapYearPlan, MonthPlan, MonthPick } from "@/lib/gap-year/types";
+import { GapYearStayPicks } from "./gap-year-stay-picks";
+import type { GapYearPlan, MonthPlan, MonthPick, StayPick } from "@/lib/gap-year/types";
 
 interface Props {
   plan: GapYearPlan;
@@ -14,6 +15,29 @@ interface Props {
 
 export function GapYearTimeline({ plan, locale, onPlanChange }: Props) {
   const [regeneratingIdx, setRegeneratingIdx] = useState<number | null>(null);
+  const [staysByDest, setStaysByDest] = useState<Record<string, StayPick[]>>({});
+  const [staysLoading, setStaysLoading] = useState(true);
+
+  // Lazy-fetch stays for all picks after plan renders
+  useEffect(() => {
+    const allIds = Array.from(
+      new Set(plan.months.flatMap((m) => m.destinations.map((d) => d.id)))
+    );
+    if (allIds.length === 0) {
+      setStaysLoading(false);
+      return;
+    }
+    setStaysLoading(true);
+    fetch("/api/gap-year/stays", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ ids: allIds }),
+    })
+      .then((r) => r.json())
+      .then((data) => setStaysByDest(data?.stays ?? {}))
+      .catch(() => setStaysByDest({}))
+      .finally(() => setStaysLoading(false));
+  }, [plan]);
 
   const totalDays = plan.months.reduce(
     (sum, m) => sum + m.destinations.reduce((d, p) => d + p.days, 0),
@@ -37,16 +61,20 @@ export function GapYearTimeline({ plan, locale, onPlanChange }: Props) {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           monthIndex: target.monthIndex,
-          persona: plan.input.persona,
-          budget: plan.input.budget,
-          interests: plan.input.interests,
+          party: plan.input.party ?? plan.input.persona,
+          familiarity: plan.input.familiarity,
+          experienceTier: plan.input.experienceTier,
+          themes: plan.input.themes,
           region: target.region,
           alreadyPickedIds,
+          // v1 compat
+          persona: plan.input.party ?? plan.input.persona,
+          budget: plan.input.budget,
         }),
       });
       const data = await res.json().catch(() => ({}));
       if (!res.ok) {
-        const msg = typeof data?.error === "string" ? data.error : "Could not regenerate this month. Please try again.";
+        const msg = typeof data?.error === "string" ? data.error : "Could not regenerate this month.";
         throw new Error(msg);
       }
       const updated = [...plan.months];
@@ -89,7 +117,7 @@ export function GapYearTimeline({ plan, locale, onPlanChange }: Props) {
           <Stat label="Duration" value={`${plan.input.durationMonths} months`} />
           <Stat label="Destinations" value={String(totalDests)} />
           <Stat label="States" value={String(states.size)} />
-          <Stat label="Days on road" value={String(totalDays)} />
+          <Stat label="Days" value={String(totalDays)} />
         </div>
       </div>
 
@@ -105,6 +133,8 @@ export function GapYearTimeline({ plan, locale, onPlanChange }: Props) {
           onRegenerate={() => regenerateMonth(idx)}
           onMovePick={(pickId, dir) => movePick(idx, pickId, dir)}
           onRemovePick={(pickId) => removePick(idx, pickId)}
+          staysByDest={staysByDest}
+          staysLoading={staysLoading}
         />
       ))}
     </div>
@@ -130,18 +160,13 @@ interface MonthCardProps {
   onRegenerate: () => void;
   onMovePick: (pickId: string, direction: "up" | "down") => void;
   onRemovePick: (pickId: string) => void;
+  staysByDest: Record<string, StayPick[]>;
+  staysLoading: boolean;
 }
 
 function MonthCard({
-  month,
-  monthNumber,
-  locale,
-  isFirst,
-  isLast,
-  regenerating,
-  onRegenerate,
-  onMovePick,
-  onRemovePick,
+  month, monthNumber, locale, isFirst, isLast, regenerating,
+  onRegenerate, onMovePick, onRemovePick, staysByDest, staysLoading,
 }: MonthCardProps) {
   const totalDays = month.destinations.reduce((sum, d) => sum + d.days, 0);
 
@@ -192,6 +217,8 @@ function MonthCard({
             canMoveDown={!isLast}
             onMove={(dir) => onMovePick(pick.id, dir)}
             onRemove={() => onRemovePick(pick.id)}
+            stays={staysByDest[pick.id]}
+            staysLoading={staysLoading}
           />
         ))}
         {month.destinations.length === 0 && !month.error && (
@@ -203,13 +230,7 @@ function MonthCard({
 }
 
 function DestCard({
-  pick,
-  locale,
-  monthIndex,
-  canMoveUp,
-  canMoveDown,
-  onMove,
-  onRemove,
+  pick, locale, monthIndex, canMoveUp, canMoveDown, onMove, onRemove, stays, staysLoading,
 }: {
   pick: MonthPick;
   locale: string;
@@ -218,53 +239,76 @@ function DestCard({
   canMoveDown: boolean;
   onMove: (dir: "up" | "down") => void;
   onRemove: () => void;
+  stays: StayPick[] | undefined;
+  staysLoading: boolean;
 }) {
   const monthSlug = monthToSlug(monthIndex);
   const detailHref = `/${locale}/destination/${pick.id}/${monthSlug}`;
 
   return (
-    <div className="flex gap-4 rounded-lg border border-border bg-background p-3 hover:border-primary/50 transition">
-      <Link href={detailHref} className="shrink-0">
-        <Image
-          src={destinationImage(pick.id)}
-          alt={pick.name}
-          width={120}
-          height={80}
-          className="rounded-md object-cover w-[120px] h-[80px]"
-        />
-      </Link>
-      <div className="flex-1 min-w-0">
-        <div className="flex items-start justify-between gap-2">
-          <div className="min-w-0">
-            <Link href={detailHref} className="font-semibold hover:underline block truncate text-foreground">
-              {pick.name}
-            </Link>
-            <div className="text-xs text-muted-foreground truncate">{pick.state} · {pick.days} days</div>
+    <div className="rounded-lg border border-border bg-background p-3 hover:border-primary/50 transition">
+      <div className="flex gap-4">
+        <Link href={detailHref} className="shrink-0">
+          <Image
+            src={destinationImage(pick.id)}
+            alt={pick.name}
+            width={120}
+            height={80}
+            className="rounded-md object-cover w-[120px] h-[80px]"
+          />
+        </Link>
+        <div className="flex-1 min-w-0">
+          <div className="flex items-start justify-between gap-2">
+            <div className="min-w-0">
+              <Link href={detailHref} className="font-semibold hover:underline block truncate text-foreground">
+                {pick.name}
+                {pick.isIconic && (
+                  <span className="ml-2 text-[10px] uppercase tracking-wider text-primary">iconic</span>
+                )}
+              </Link>
+              <div className="text-xs text-muted-foreground truncate">{pick.state} · {pick.days} days</div>
+            </div>
+            <div className="flex items-center gap-1 shrink-0">
+              <button onClick={() => onMove("up")} disabled={!canMoveUp}
+                className="w-7 h-7 rounded-md border border-border text-xs text-foreground hover:bg-muted disabled:opacity-30"
+                title="Move to previous month">↑</button>
+              <button onClick={() => onMove("down")} disabled={!canMoveDown}
+                className="w-7 h-7 rounded-md border border-border text-xs text-foreground hover:bg-muted disabled:opacity-30"
+                title="Move to next month">↓</button>
+              <button onClick={onRemove}
+                className="w-7 h-7 rounded-md border border-border text-xs text-foreground hover:bg-destructive/10 hover:border-destructive/50 hover:text-destructive"
+                title="Remove">×</button>
+            </div>
           </div>
-          <div className="flex items-center gap-1 shrink-0">
-            <button
-              onClick={() => onMove("up")}
-              disabled={!canMoveUp}
-              className="w-7 h-7 rounded-md border border-border text-xs text-foreground hover:bg-muted disabled:opacity-30"
-              title="Move to previous month"
-            >↑</button>
-            <button
-              onClick={() => onMove("down")}
-              disabled={!canMoveDown}
-              className="w-7 h-7 rounded-md border border-border text-xs text-foreground hover:bg-muted disabled:opacity-30"
-              title="Move to next month"
-            >↓</button>
-            <button
-              onClick={onRemove}
-              className="w-7 h-7 rounded-md border border-border text-xs text-foreground hover:bg-destructive/10 hover:border-destructive/50 hover:text-destructive"
-              title="Remove"
-            >×</button>
-          </div>
+          {pick.rationale && (
+            <p className="text-sm text-foreground/80 mt-2 line-clamp-3">{pick.rationale}</p>
+          )}
         </div>
-        {pick.rationale && (
-          <p className="text-sm text-foreground/80 mt-2 line-clamp-2">{pick.rationale}</p>
-        )}
       </div>
+
+      {/* Alt-pair "also try" card */}
+      {pick.alsoTry && (
+        <div className="mt-3 rounded-md border border-dashed border-border/60 bg-muted/20 p-3">
+          <div className="text-[10px] uppercase tracking-wider text-muted-foreground mb-1">Also try</div>
+          <div className="flex items-start gap-3">
+            <Link
+              href={`/${locale}/destination/${pick.alsoTry.altId}`}
+              className="text-sm font-medium text-foreground hover:underline"
+            >
+              {pick.alsoTry.altName}
+              {pick.alsoTry.altState && (
+                <span className="text-xs text-muted-foreground font-normal ml-1.5">· {pick.alsoTry.altState}</span>
+              )}
+            </Link>
+            {pick.alsoTry.driveTime && (
+              <span className="text-[10px] text-muted-foreground">{pick.alsoTry.driveTime}</span>
+            )}
+          </div>
+          <p className="text-xs text-foreground/80 mt-1">{pick.alsoTry.whyBetter}</p>
+        </div>
+      )}
+
+      <GapYearStayPicks stays={stays} loading={staysLoading && !stays} />
     </div>
   );
 }
