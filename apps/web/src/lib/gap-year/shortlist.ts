@@ -61,9 +61,31 @@ export async function buildShortlistForArchetype(
   const { month, archetype, experienceTier, themes, region, origin, originProximityBoost, excludeIds = [], limit = 15 } = params;
   const rules = archetypeRules(archetype);
 
+  // Stage A-pre — if region constraint set, resolve to a destination-id allowlist
+  // at the DB level. Without this, the global score-DESC over-fetch would
+  // sample out regions (e.g. Central India's ~7 score≥4 rows get paginated out
+  // when the top 60 globally are all south/east/islands).
+  let regionDestIds: string[] | null = null;
+  if (region) {
+    const { data: statesData } = await supabase.from("states").select("name, region");
+    const stateNames = (statesData ?? [])
+      .filter((s: any) => normalizeRegion(s.region) === region)
+      .map((s: any) => s.name);
+    if (stateNames.length === 0) {
+      // No states in this region — return empty shortlist early.
+      return [];
+    }
+    const { data: destsInRegion } = await supabase
+      .from("destinations")
+      .select("id, state:states!inner(name)")
+      .in("state.name", stateNames);
+    regionDestIds = (destsInRegion ?? []).map((d: any) => d.id);
+    if (regionDestIds.length === 0) return [];
+  }
+
   // Stage A — base pool from destination_months joined with destinations.
-  // Over-fetch 3x so we can filter / boost client-side and still return `limit`.
-  const { data, error } = await supabase
+  // Over-fetch 4x so we can filter / boost client-side and still return `limit`.
+  let query = supabase
     .from("destination_months")
     .select(`
       score,
@@ -77,7 +99,9 @@ export async function buildShortlistForArchetype(
       )
     `)
     .eq("month", month)
-    .gte("score", rules.minScore)
+    .gte("score", rules.minScore);
+  if (regionDestIds) query = query.in("destination_id", regionDestIds);
+  const { data, error } = await query
     .order("score", { ascending: false })
     .limit(limit * 4);
 
