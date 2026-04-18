@@ -3371,22 +3371,18 @@ def _run_yt_short(force: bool = False, dry_run: bool = False):
         log.error("YT Short generation returned None.")
         return
 
-    video_path = Path(result["video_path"])
-    caption    = result["caption"]
-    fmt        = result["format"]
-    duration   = result.get("duration", 0)
-    music      = result.get("music", "unknown")
+    video_bytes = result["video_bytes"]
+    video_fname = result["video_filename"]
+    caption     = result["caption"]
+    fmt         = result["format"]
+    duration    = result.get("duration", 0)
+    music       = result.get("music", "unknown")
 
-    if not video_path.exists():
-        log.error(f"Video file not found: {video_path}")
-        return
-
-    video_bytes  = video_path.read_bytes()
     video_size_kb = len(video_bytes) // 1024
-    log.info(f"Short rendered: {video_path.name} ({video_size_kb} KB, {duration:.1f}s, fmt={fmt}, music={music})")
+    log.info(f"Short rendered: {video_fname} ({video_size_kb} KB, {duration:.1f}s, fmt={fmt}, music={music})")
 
     # ── Upload video ──────────────────────────────────────────────────────
-    media_filename = f"yt_short_{fmt}_{video_path.stem}.mp4"
+    media_filename = f"yt_short_{fmt}_{video_fname}"
     media_obj = upload_media_bytes(video_bytes, media_filename, "video/mp4")
     if not media_obj:
         log.error("YT Short video upload failed.")
