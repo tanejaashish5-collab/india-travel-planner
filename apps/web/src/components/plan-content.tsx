@@ -24,7 +24,24 @@ interface PlanContentProps {
     kids_friendly: { suitable: boolean; rating: number } | Array<{ suitable: boolean; rating: number }> | null;
     destination_months: Array<{ month: number; score: number; note: string }> | null;
   }>;
+  states?: Array<{ id: string; name: string; region: string | null }>;
 }
+
+// Normalise the inconsistent region values in the states table ("South" / "south" / "South India" → one label).
+function normalizeRegion(raw: string | null | undefined): string {
+  if (!raw) return "Other";
+  const s = raw.toLowerCase().trim();
+  if (s.includes("northeast")) return "Northeast India";
+  if (s.includes("island")) return "Islands";
+  if (s.includes("north")) return "North India";
+  if (s.includes("south")) return "South India";
+  if (s.includes("east")) return "East India";
+  if (s.includes("west")) return "West India";
+  if (s.includes("central")) return "Central India";
+  return "Other";
+}
+
+const REGION_ORDER = ["North India", "South India", "East India", "West India", "Northeast India", "Central India", "Islands", "Other"];
 
 type TravelerType = "solo" | "couple" | "family" | "biker" | "backpacker" | "spiritual";
 
@@ -43,7 +60,23 @@ const BUDGET_OPTIONS = [
   { id: "splurge", label: "Luxury", desc: "₹5000+/day" },
 ];
 
-export function PlanContent({ destinations }: PlanContentProps) {
+export function PlanContent({ destinations, states = [] }: PlanContentProps) {
+  // Group states by normalised region for the Region focus select.
+  const statesByRegion = useMemo(() => {
+    const byReg = new Map<string, Array<{ id: string; name: string }>>();
+    for (const s of states) {
+      const reg = normalizeRegion(s.region);
+      if (!byReg.has(reg)) byReg.set(reg, []);
+      byReg.get(reg)!.push({ id: s.id, name: s.name });
+    }
+    for (const arr of byReg.values()) arr.sort((a, b) => a.name.localeCompare(b.name));
+    return REGION_ORDER
+      .filter((r) => byReg.has(r))
+      .map((r) => ({ region: r, states: byReg.get(r)! }));
+  }, [states]);
+
+  const stateCount = states.length;
+  const destinationCount = destinations.length;
   const locale = useLocale();
   const searchParams = useSearchParams();
   const urlMonth = Number(searchParams.get("month")) || new Date().getMonth() + 1;
@@ -215,8 +248,15 @@ export function PlanContent({ destinations }: PlanContentProps) {
       <div>
         <h1 className="text-3xl font-bold">Plan Your Trip</h1>
         <p className="mt-1 text-muted-foreground">
-          Tell us what you want — we'll find the best matches from {destinations.length} destinations
+          Tell us what you want — we'll find the best matches.
         </p>
+        <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs font-mono text-muted-foreground">
+          <span><span className="font-semibold text-foreground">{destinationCount}</span> destinations</span>
+          <span className="text-muted-foreground/40">·</span>
+          <span><span className="font-semibold text-foreground">{stateCount || 36}</span> states &amp; UTs</span>
+          <span className="text-muted-foreground/40">·</span>
+          <span>scored every month</span>
+        </div>
       </div>
 
       {/* Input Form */}
@@ -378,7 +418,7 @@ export function PlanContent({ destinations }: PlanContentProps) {
                 </div>
               </div>
 
-              {/* Region focus */}
+              {/* Region focus — pulls from states table, grouped by region */}
               <div>
                 <label className="text-sm font-medium mb-2 block">Region focus</label>
                 <select
@@ -386,15 +426,20 @@ export function PlanContent({ destinations }: PlanContentProps) {
                   onChange={(e) => { setRegionFocus(e.target.value); setShowResults(true); }}
                   className="w-full rounded-lg border border-border bg-background px-3 py-2 text-sm"
                 >
-                  <option value="">All regions</option>
-                  <option value="himachal-pradesh">Himachal Pradesh</option>
-                  <option value="uttarakhand">Uttarakhand</option>
-                  <option value="jammu-kashmir">Jammu & Kashmir</option>
-                  <option value="ladakh">Ladakh</option>
-                  <option value="rajasthan">Rajasthan</option>
-                  <option value="uttar-pradesh">Uttar Pradesh</option>
-                  <option value="punjab">Punjab & Haryana</option>
+                  <option value="">All of India — no preference</option>
+                  {statesByRegion.map((group) => (
+                    <optgroup key={group.region} label={group.region}>
+                      {group.states.map((st) => (
+                        <option key={st.id} value={st.id}>{st.name}</option>
+                      ))}
+                    </optgroup>
+                  ))}
                 </select>
+                {stateCount > 0 && (
+                  <p className="text-[11px] text-muted-foreground mt-1.5">
+                    {destinationCount}+ destinations across {stateCount} states — pick one to focus, or leave blank to let us roam.
+                  </p>
+                )}
               </div>
             </div>
           )}
