@@ -130,8 +130,18 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ month: monthPlan });
   } catch (err: any) {
     console.error("regenerate-month failed:", err?.message || err);
-    return NextResponse.json({ error: err?.message || "generation_failed" }, { status: 502 });
+    return NextResponse.json({ error: friendlyError(err) }, { status: 502 });
   }
+}
+
+function friendlyError(err: any): string {
+  const msg = String(err?.message || err || "");
+  if (/credit balance/i.test(msg)) return "AI temporarily unavailable — please try again later.";
+  if (/rate limit/i.test(msg)) return "Too many requests right now. Try again in a minute.";
+  if (/429/.test(msg)) return "Too many requests right now. Try again in a minute.";
+  if (/timeout|timed out/i.test(msg)) return "Generation timed out. Please retry.";
+  if (/non-JSON/i.test(msg)) return "AI returned an unexpected response. Please retry.";
+  return "Could not regenerate this month. Please retry.";
 }
 
 async function callClaude(apiKey: string, prompt: string): Promise<any> {

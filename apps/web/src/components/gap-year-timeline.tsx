@@ -44,14 +44,17 @@ export function GapYearTimeline({ plan, locale, onPlanChange }: Props) {
           alreadyPickedIds,
         }),
       });
-      if (!res.ok) throw new Error(await res.text());
-      const data = await res.json();
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) {
+        const msg = typeof data?.error === "string" ? data.error : "Could not regenerate this month. Please try again.";
+        throw new Error(msg);
+      }
       const updated = [...plan.months];
       updated[idx] = data.month;
       onPlanChange({ ...plan, months: updated });
-    } catch (err) {
+    } catch (err: any) {
       console.error(err);
-      alert("Could not regenerate this month. Please try again.");
+      alert(err?.message || "Could not regenerate this month. Please try again.");
     } finally {
       setRegeneratingIdx(null);
     }

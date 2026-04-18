@@ -192,7 +192,7 @@ export async function POST(req: NextRequest) {
           destinations: [],
           narrative: "",
           estDailyCostInr: 0,
-          error: err?.message || "generation_failed",
+          error: friendlyError(err),
         };
       }
     }
@@ -207,6 +207,16 @@ export async function POST(req: NextRequest) {
       months: monthPlans,
     },
   });
+}
+
+function friendlyError(err: any): string {
+  const msg = String(err?.message || err || "");
+  if (/credit balance/i.test(msg)) return "AI temporarily unavailable — please try again later.";
+  if (/rate limit/i.test(msg)) return "Too many requests right now. Try again in a minute.";
+  if (/429/.test(msg)) return "Too many requests right now. Try again in a minute.";
+  if (/timeout|timed out/i.test(msg)) return "Generation timed out. Please retry.";
+  if (/non-JSON/i.test(msg)) return "AI returned an unexpected response. Please retry.";
+  return "Could not generate this month. Please retry.";
 }
 
 function autoTitle(input: { durationMonths: number; startMonth: number; persona: Persona }): string {

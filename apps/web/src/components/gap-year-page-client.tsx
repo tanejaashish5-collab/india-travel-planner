@@ -118,6 +118,33 @@ export function GapYearPageClient({ locale }: Props) {
 
       {plan && (
         <div className="space-y-6">
+          {(() => {
+            const failed = plan.months.filter((m) => m.error).length;
+            const total = plan.months.length;
+            if (failed === 0) return null;
+            if (failed === total) {
+              return (
+                <div className="rounded-lg border border-destructive/40 bg-destructive/10 p-4 text-sm text-destructive">
+                  <div className="font-semibold mb-1">Generation failed for every month.</div>
+                  <p className="text-foreground/80">
+                    The AI service is temporarily unavailable. Try "Start over" in a few minutes,
+                    or hit "Regenerate" on individual months once it recovers.
+                  </p>
+                </div>
+              );
+            }
+            return (
+              <div className="rounded-lg border border-amber-500/40 bg-amber-500/10 p-4 text-sm">
+                <div className="font-semibold mb-1 text-amber-500">
+                  {failed} of {total} months didn't generate.
+                </div>
+                <p className="text-foreground/80">
+                  Hit "Regenerate" on the empty months to fill them in.
+                </p>
+              </div>
+            );
+          })()}
+
           <div className="flex items-center justify-between gap-3 flex-wrap">
             <div>
               <h2 className="text-sm text-muted-foreground">Your gap year</h2>
