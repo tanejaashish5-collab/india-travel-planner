@@ -277,15 +277,41 @@ def _draw_footer(draw, theme: str, slide_num: int = 0, total_slides: int = 5):
     # Accent stripe at top of footer
     draw.rectangle([(0, y), (SLIDE_W, y + 3)], fill=colors["accent"])
 
-    # NAKSHIQ brand name — left
+    # NAKSHIQ brand name + vermillion dot at baseline — left
     brand_font = _instrument(18)
-    draw.text((32, y + 16), "NAKSHIQ", font=brand_font, fill=colors["footer_text"])
+    brand_text_y = y + 16
+    draw.text((32, brand_text_y), "NAKSHIQ", font=brand_font, fill=colors["footer_text"])
+    brand_w = _text_w("NAKSHIQ", brand_font)
+    dot_r_brand = 4
+    # Place dot at text baseline — bottom of dot flush with bottom of glyphs
+    bbox = brand_font.getbbox("NAKSHIQ")
+    glyph_bottom = bbox[3]  # pixel bottom of rendered glyphs relative to draw y
+    dot_cx = 32 + brand_w + 6 + dot_r_brand
+    dot_bottom = brand_text_y + glyph_bottom  # absolute bottom of text
+    draw.ellipse(
+        [(dot_cx - dot_r_brand, dot_bottom - dot_r_brand * 2),
+         (dot_cx + dot_r_brand, dot_bottom)],
+        fill=VERMILLION_BRIGHT,
+    )
 
     # Tagline — right
     tag_font = _crimson(16, bold=False)
     tagline = "Travel with IQ"
     tw = _text_w(tagline, tag_font)
-    draw.text((SLIDE_W - 32 - tw, y + 18), tagline, font=tag_font,
+    # Swipe indicator
+    swipe_text = "Swipe"
+    swipe_font = _instrument(14)
+    swipe_w = _text_w(swipe_text, swipe_font)
+    total_right_w = tw + 16 + swipe_w  # tagline + gap + swipe
+    tag_x = SLIDE_W - 32 - total_right_w
+    draw.text((tag_x, y + 18), tagline, font=tag_font,
+              fill=colors["footer_text"])
+    # Separator bar
+    bar_x = tag_x + tw + 6
+    draw.rectangle([(bar_x, y + 16), (bar_x + 1, y + 36)],
+                   fill=colors["footer_text"])
+    # Swipe text
+    draw.text((bar_x + 8, y + 19), swipe_text, font=swipe_font,
               fill=colors["footer_text"])
 
     # Dot indicators — center
@@ -582,19 +608,22 @@ def render_cta(theme: str, topic: str, slide_num: int,
                          seed=999)
 
     # ── Central text block ──
-    # "Travel with IQ" large
+    # "Travel with IQ" + vermillion dot (brand signature)
     title_font = _crimson(80)
-    title = "Travel with IQ."
+    title = "Travel with IQ"
     tw = _text_w(title, title_font)
-    draw.text(((SLIDE_W - tw) // 2, 320), title, font=title_font,
+    title_x = (SLIDE_W - tw - 30) // 2  # reserve space for dot
+    draw.text((title_x, 320), title, font=title_font,
               fill=colors["title"])
 
-    # Dot accent
+    # Vermillion brand dot after text
     dot_r = 10
+    dot_cx = title_x + tw + 16
+    dot_cy = 320 + int(title_font.size * 0.78)
     draw.ellipse(
-        [((SLIDE_W + tw) // 2 + 12, 380 - dot_r),
-         ((SLIDE_W + tw) // 2 + 12 + dot_r * 2, 380 + dot_r)],
-        fill=colors["accent"],
+        [(dot_cx - dot_r, dot_cy - dot_r),
+         (dot_cx + dot_r, dot_cy + dot_r)],
+        fill=VERMILLION_BRIGHT,
     )
 
     # Follow line
