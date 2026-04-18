@@ -2,6 +2,9 @@
 
 import { useEffect, useState } from "react";
 
+interface StaySource { url: string; title: string; source_type?: string }
+interface StayIntelligence { upgrade_reasoning?: string | null; destination_note?: string | null; as_of_date?: string | null }
+
 interface PickRow {
   destination_id: string;
   slot: "experience" | "value" | "location" | "xfactor";
@@ -9,11 +12,16 @@ interface PickRow {
   property_type: string | null;
   price_band: string | null;
   why_nakshiq: string;
+  signature_experience?: string | null;
+  sources?: StaySource[];
+  contact_only?: boolean;
+  contact_info?: string | null;
+  voice_flags?: string[];
   source: string;
   confidence: number;
   refreshed_at: string;
   published: boolean;
-  destination?: { name: string; state?: any };
+  destination?: { name: string; state?: any; stay_intelligence?: StayIntelligence };
 }
 
 export function AdminStayPicksClient() {
@@ -143,12 +151,27 @@ export function AdminStayPicksClient() {
           const stateName = Array.isArray(r.destination?.state)
             ? r.destination?.state[0]?.name
             : r.destination?.state?.name;
+          const intel = r.destination?.stay_intelligence;
+          const voiceFlags = r.voice_flags ?? [];
+          const sources = r.sources ?? [];
+          const voiceIssue = voiceFlags.length > 0;
+          const sourcesIssue = sources.length < 2;
+
           return (
             <div key={`${r.destination_id}-${r.slot}`} className="rounded-lg border border-border bg-card p-4">
               <div className="flex items-start justify-between gap-3 flex-wrap">
                 <div>
-                  <div className="text-xs uppercase text-muted-foreground">
-                    {r.destination_id} · {r.slot} · confidence {r.confidence.toFixed(2)}
+                  <div className="text-xs uppercase text-muted-foreground flex items-center gap-2 flex-wrap">
+                    <span>{r.destination_id} · {r.slot} · confidence {r.confidence.toFixed(2)}</span>
+                    {voiceIssue && (
+                      <span className="text-destructive normal-case font-medium">⚠ voice: {voiceFlags.join(", ")}</span>
+                    )}
+                    {sourcesIssue && (
+                      <span className="text-amber-400 normal-case font-medium">⚠ &lt;2 sources</span>
+                    )}
+                    {r.contact_only && (
+                      <span className="text-sky-400 normal-case font-medium">contact-only</span>
+                    )}
                   </div>
                   <div className="font-semibold text-foreground">
                     {r.destination?.name} {stateName ? `· ${stateName}` : ""}
@@ -179,6 +202,45 @@ export function AdminStayPicksClient() {
                 {r.price_band && <span className="text-muted-foreground"> · {r.price_band}</span>}
               </div>
               <p className="text-sm text-foreground/80 mt-1">{r.why_nakshiq}</p>
+
+              {r.signature_experience && (
+                <p className="mt-2 text-xs text-muted-foreground italic border-l-2 border-border pl-2">
+                  {r.signature_experience}
+                </p>
+              )}
+
+              {r.contact_only && r.contact_info && (
+                <p className="mt-2 text-xs text-sky-300">Contact: <span className="font-mono">{r.contact_info}</span></p>
+              )}
+
+              {sources.length > 0 && (
+                <div className="mt-3 flex flex-wrap gap-1.5">
+                  <span className="text-[10px] uppercase tracking-wider text-muted-foreground mr-1 self-center">Sources</span>
+                  {sources.map((s, i) => {
+                    let host = "";
+                    try { host = new URL(s.url).hostname.replace(/^www\./, ""); } catch { host = `src-${i + 1}`; }
+                    return (
+                      <a
+                        key={`${s.url}-${i}`}
+                        href={s.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="rounded-full border border-border px-2 py-0.5 text-[10px] text-muted-foreground hover:text-foreground"
+                        title={s.title}
+                      >
+                        {host}
+                      </a>
+                    );
+                  })}
+                </div>
+              )}
+
+              {intel?.upgrade_reasoning && (
+                <div className="mt-3 rounded border border-primary/30 bg-primary/5 p-2">
+                  <div className="text-[10px] uppercase tracking-wider text-primary mb-1">Upgrade Question</div>
+                  <p className="text-xs text-foreground">{intel.upgrade_reasoning}</p>
+                </div>
+              )}
             </div>
           );
         })}

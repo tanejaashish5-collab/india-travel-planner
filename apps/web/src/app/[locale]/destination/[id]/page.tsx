@@ -111,7 +111,7 @@ async function getDestination(id: string) {
   const [
     gems, trapAlts, festivals, localStays, coordData, travelerNotes,
     allDests, reviews, relatedArticles, relatedCollections, relatedRoutes,
-    nearbyDests, emergencySos, pois,
+    nearbyDests, emergencySos, pois, editorStayPicks,
   ] = await Promise.all([
     supabase.from("hidden_gems").select("*").eq("near_destination_id", id),
     supabase
@@ -142,6 +142,10 @@ async function getDestination(id: string) {
     supabase.from("destinations").select("id, name, difficulty, elevation_m").eq("state_id", data.state_id).neq("id", id).limit(8),
     supabase.from("emergency_sos").select("*").eq("destination_id", id).single(),
     supabase.from("points_of_interest").select("id, name, type, description, time_needed, entry_fee, kids_suitable, tags").eq("destination_id", id).order("type"),
+    supabase.from("destination_stay_picks")
+      .select("slot, name, property_type, price_band, why_nakshiq, signature_experience, sources, contact_only, contact_info, published, confidence")
+      .eq("destination_id", id)
+      .eq("published", true),
   ]);
 
   return {
@@ -160,6 +164,7 @@ async function getDestination(id: string) {
     nearbyDestinations: nearbyDests.data ?? [],
     emergencySos: emergencySos.data ?? null,
     points_of_interest: pois.data ?? [],
+    editor_stay_picks: editorStayPicks.data ?? [],
   };
 }
 

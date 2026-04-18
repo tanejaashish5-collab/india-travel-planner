@@ -22,6 +22,7 @@ import { TravelerNotes } from "./traveler-notes";
 import { ReviewsList } from "./reviews-list";
 import { ReviewForm } from "./review-form";
 import { BookingHandoff } from "./booking-handoff";
+import { EditorsPicks } from "./editors-picks";
 import { InternationalInfoSection } from "./international-info";
 import { EmergencySOSSection, SOSFloatingButton } from "./emergency-sos";
 import { DestinationAlerts } from "./destination-alerts";
@@ -621,10 +622,23 @@ export function DestinationDetail({ dest }: { dest: any }) {
                   </section>
                 )}
 
-                {/* Where to Stay — strategic data */}
+                {/* Editor's Picks — top layer: 4 curated stay slots with sources + upgrade_reasoning */}
+                {dest.editor_stay_picks?.length > 0 && (
+                  <section id="section-stays">
+                    <EditorsPicks
+                      destinationName={dest.name}
+                      stateName={Array.isArray(dest.state) ? dest.state[0]?.name : dest.state?.name}
+                      picks={dest.editor_stay_picks}
+                      intelligence={dest.stay_intelligence}
+                    />
+                  </section>
+                )}
+
+                {/* Neighborhood Guide — where to stay by vibe (existing stay_zones data) */}
                 {dest.stay_zones && Object.keys(dest.stay_zones).length > 0 && (
-                  <section>
-                    <h2 id="section-stays" className="text-xl font-semibold mb-3">Where to Stay</h2>
+                  <section {...(dest.editor_stay_picks?.length ? {} : { id: "section-stays" })}>
+                    <h2 className="text-xl font-semibold mb-3">Neighborhood guide</h2>
+                    <p className="text-sm text-muted-foreground mb-3">Where to base yourself, by vibe.</p>
                     <div className="grid gap-3 sm:grid-cols-2">
                       {dest.stay_zones.best_for_families && (
                         <div className="rounded-xl border border-border p-4">

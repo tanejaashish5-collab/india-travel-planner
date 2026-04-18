@@ -38,8 +38,9 @@ export async function GET(req: NextRequest) {
     .from("destination_stay_picks")
     .select(`
       destination_id, slot, name, property_type, price_band, why_nakshiq,
+      signature_experience, sources, contact_only, contact_info, voice_flags,
       source, confidence, refreshed_at, published,
-      destination:destinations(name, state:states(name))
+      destination:destinations(name, state:states(name), stay_intelligence)
     `)
     .order("confidence", { ascending: true })
     .order("refreshed_at", { ascending: false })
@@ -90,7 +91,10 @@ export async function POST(req: NextRequest) {
   }
 
   if (action === "edit" && patch) {
-    const allowed = ["name", "property_type", "price_band", "why_nakshiq", "confidence", "published"];
+    const allowed = [
+      "name", "property_type", "price_band", "why_nakshiq", "confidence", "published",
+      "signature_experience", "sources", "contact_only", "contact_info", "voice_flags",
+    ];
     const update: Record<string, unknown> = {};
     for (const k of allowed) if (k in patch) update[k] = (patch as any)[k];
     if (Object.keys(update).length === 0) {
