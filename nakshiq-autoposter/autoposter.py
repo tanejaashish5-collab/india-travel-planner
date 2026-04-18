@@ -3406,9 +3406,9 @@ def _run_yt_short(force: bool = False, dry_run: bool = False):
         username = account.get("username", acc_id)
         label    = f"{platform}/{username}"
 
-        # YouTube-ONLY — skip all non-YouTube platforms
-        if platform != "youtube":
-            log.info(f"[{label}] Skipping (YT Shorts are YouTube-only).")
+        # Post to YouTube and Instagram (skip Facebook)
+        if platform not in ("youtube", "instagram"):
+            log.info(f"[{label}] Skipping (YT Shorts post to YouTube + Instagram only).")
             continue
 
         # 2-per-day limit per account
