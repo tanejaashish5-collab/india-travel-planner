@@ -1404,3 +1404,22 @@ Data, not opinions.
 2026-04-17 15:39:10  INFO      ── Syncing Nakshiq content ──────────────────────────────
 2026-04-17 15:39:14  INFO      Synced → 20 destinations · 0 traps · 13 articles · total catalog=480
 2026-04-17 15:39:14  INFO      Sync-only mode. Done.
+2026-04-18 05:05:51  INFO      Stale lock (age=178428s) — overriding.
+2026-04-18 05:05:51  INFO      ════════════════════════════════════════════════════════════
+2026-04-18 05:05:51  INFO      Nakshiq Autoposter · MORNING · 2026-04-18 · weekday=5
+2026-04-18 05:05:51  INFO      ════════════════════════════════════════════════════════════
+2026-04-18 05:05:51  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-04-18 05:05:58  INFO      Synced → 20 destinations · 0 traps · 9 articles · total catalog=480
+2026-04-18 05:05:59  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-04-18 05:06:01  INFO      Outstand dedup guard: merged 7 remote posts into state.
+2026-04-18 05:06:01  INFO      Formats — IG: collection_spotlight  ·  FB: collection_spotlight  ·  Story: kids_intel
+2026-04-18 05:06:01  INFO      Used destinations (14d): 31
+2026-04-18 05:06:01  INFO      Collection locked: Autumn Destinations — Where September to November Scores 5/5 (17/20 never featured)
+2026-04-18 05:06:01  INFO      Kids destination locked: Chamba
+2026-04-18 05:06:04  INFO      Shared best destination locked: Dhanaulti
+2026-04-18 05:06:04  INFO      Carousel locked (collection_spotlight): tirthan-valley, nainital, dharamshala
+2026-04-18 05:06:04  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-04-18 05:06:04  INFO      [instagram/nakshiq] Already posted today (morning) — skipping.
+2026-04-18 05:06:04  INFO      [facebook/Nakshiq] Already posted today (morning) — skipping.
+2026-04-18 05:06:04  INFO      State saved. Run complete.
+2026-04-18 05:06:04  INFO      ════════════════════════════════════════════════════════════
