@@ -1365,11 +1365,17 @@ def get_connected_accounts() -> list:
 # MEDIA UPLOAD
 # ─────────────────────────────────────────────────────────────────────────────
 
-def _try_branded_image(url: str, filename: str) -> bytes | None:
+def _try_branded_image(url: str, filename: str, fmt: str = "feed") -> bytes | None:
     """
     Check if a branded social-library image exists for this destination URL.
     Returns the file bytes if found, or None to fall back to the remote URL.
     Wrapped in a blanket try/except so it can NEVER break the caller.
+
+    ``fmt`` selects the aspect ratio variant — "feed" (1080x1080) or
+    "story" (1080x1920). Story callers MUST pass fmt="story", otherwise IG
+    crops the 1:1 feed asset to 9:16 and chops text off the sides.
+    If the requested variant is missing, falls back to the feed variant so
+    we never crash a Story upload over a missing asset.
     """
     try:
         from social_image_picker import pick_social_image
@@ -1378,7 +1384,13 @@ def _try_branded_image(url: str, filename: str) -> bytes | None:
         if not stem:
             return None
         # Try both the URL slug and a cleaned version
-        img_path = pick_social_image(stem.replace("-", " "), fmt="feed")
+        img_path = pick_social_image(stem.replace("-", " "), fmt=fmt)
+        # Fallback: if the requested variant doesn't exist, try the feed variant
+        # so we never fail-open to the raw remote URL just because the story
+        # asset is missing. For Stories, IG will still crop, but at least the
+        # branded image is used.
+        if not (img_path and img_path.exists()) and fmt != "feed":
+            img_path = pick_social_image(stem.replace("-", " "), fmt="feed")
         if img_path and img_path.exists():
             data = img_path.read_bytes()
             log.info(f"    Using branded image: {img_path.name} ({len(data):,} bytes)")
@@ -1388,13 +1400,18 @@ def _try_branded_image(url: str, filename: str) -> bytes | None:
     return None
 
 
-def upload_media(url: str, filename: str, content_type: str = "image/jpeg") -> dict | None:
+def upload_media(url: str, filename: str, content_type: str = "image/jpeg",
+                 fmt: str = "feed") -> dict | None:
     """Download from URL → upload to Outstand R2 → confirm → return media obj.
-    Prefers a branded image from social_image_library/ when available."""
+    Prefers a branded image from social_image_library/ when available.
+
+    ``fmt`` is forwarded to the branded-image picker. Pass "story" for
+    IG Story uploads so the 1080x1920 variant is selected instead of the
+    1:1 feed asset (which IG crops and chops off side text)."""
     try:
         # Try branded local image first (safe — falls back on any failure)
         if "image/jpeg" in content_type:
-            branded = _try_branded_image(url, filename)
+            branded = _try_branded_image(url, filename, fmt=fmt)
             if branded:
                 return upload_media_bytes(branded, filename, content_type)
 
@@ -2205,7 +2222,9 @@ def _run_inner(force: bool, sync_only: bool, dry_run: bool,
             story_media     = None
             if story_image_url:
                 log.info(f"[{label}] Uploading Story image ({story_dest['id']}.jpg)...")
-                story_media = upload_media(story_image_url, f"{story_dest['id']}.jpg", "image/jpeg")
+                # fmt="story" → branded picker returns the 1080x1920 variant so
+                # IG's 9:16 Story viewport doesn't crop title text off the sides.
+                story_media = upload_media(story_image_url, f"{story_dest['id']}.jpg", "image/jpeg", fmt="story")
             if not story_media:
                 log.warning(f"[{label}] Story image upload failed — skipping Story.")
                 continue
@@ -3150,6 +3169,168 @@ def run_reel(force: bool = False, dry_run: bool = False):
 
 
 # ─────────────────────────────────────────────────────────────────────────────
+# INFOGRAPHIC MODE — branded carousel infographics (treks, festivals, etc.)
+# ─────────────────────────────────────────────────────────────────────────────
+
+INFOGRAPHIC_LOCK_FILE = Path(__file__).parent / ".autoposter-infographic.lock"
+
+
+def _run_infographic(force: bool = False, dry_run: bool = False):
+    """
+    Infographic mode — generates branded infographic carousels and posts
+    as carousel feed posts. Rotates topics (treks, festivals, hidden_gems,
+    camping) and themes (magazine, topo, datacard, noir).
+    Mon/Wed/Fri schedule.
+    """
+    today   = date.today().isoformat()
+    weekday = date.today().weekday()
+    st      = load_state()
+
+    log.info("═" * 60)
+    log.info(f"Nakshiq Autoposter · INFOGRAPHIC · {today} · weekday={weekday}")
+    log.info("═" * 60)
+
+    # Only run Mon/Wed/Fri (0, 2, 4) — silently exit on other days
+    if weekday not in (0, 2, 4) and not force:
+        log.info("Infographic mode only runs Mon/Wed/Fri. Exiting.")
+        return
+
+    # Generate infographic carousel
+    try:
+        from infographic_gen import build_infographic
+    except ImportError:
+        log.error("infographic_gen.py not found. Exiting.")
+        return
+
+    try:
+        result = build_infographic(dry_run=True)  # always generate to disk first
+    except Exception as e:
+        log.error(f"Infographic generation failed: {e}")
+        import traceback
+        log.error(traceback.format_exc())
+        return
+
+    if not result or "error" in result:
+        log.error(f"Infographic generation returned error: {result}")
+        return
+
+    slides = result["slides"]
+    caption = result["caption"]
+    topic = result["topic"]
+    theme = result["theme"]
+
+    log.info(f"Generated {len(slides)} slides: topic={topic}, theme={theme}")
+
+    # Upload all slides to Outstand
+    media_objs = []
+    for slide_path in slides:
+        try:
+            img_bytes = slide_path.read_bytes()
+            media_obj = upload_media_bytes(
+                img_bytes,
+                f"infographic_{slide_path.stem}.jpg",
+                "image/jpeg",
+            )
+            if media_obj:
+                media_objs.append(media_obj)
+                log.info(f"  Uploaded: {slide_path.name} ({len(img_bytes) // 1024} KB)")
+            else:
+                log.warning(f"  Upload failed: {slide_path.name}")
+        except Exception as e:
+            log.warning(f"  Upload exception for {slide_path.name}: {e}")
+
+    if len(media_objs) < 2:
+        log.error(f"Only {len(media_objs)} slides uploaded — need at least 2 for carousel.")
+        return
+
+    log.info(f"All slides uploaded: {len(media_objs)} media objects")
+
+    # Post to each connected account
+    accounts = get_connected_accounts()
+    active   = [a for a in accounts if a.get("isActive")]
+    if not active:
+        log.warning("No active connected accounts.")
+        return
+
+    mode_suffix = "_infographic"
+    posted_any = False
+
+    for account in active:
+        acc_id   = account["id"]
+        platform = account["network"]
+        username = account.get("username", acc_id)
+        label    = f"{platform}/{username}"
+
+        # YouTube only supports video — skip image carousel posts
+        if platform == "youtube":
+            log.info(f"[{label}] Skipping infographic (YouTube only accepts video/reels).")
+            continue
+
+        acc_scoped_key = acc_id + mode_suffix
+        if st.get("posted_today", {}).get(acc_scoped_key) == today and not force:
+            log.info(f"[{label}] Already posted infographic today — skipping.")
+            continue
+
+        post_caption = sanitize(caption)
+
+        log.info(f"[{label}] Publishing infographic carousel: {topic}/{theme}...")
+
+        if dry_run:
+            log.info(f"[{label}] DRY RUN — would publish {len(media_objs)}-slide carousel:\n{post_caption[:200]}...")
+            posted_any = True
+            continue
+
+        result = publish_feed_post(post_caption, account, media_objs, dry_run=False)
+        if result:
+            log.info(f"[{label}] Infographic carousel posted successfully!")
+            st.setdefault("posted_today", {})[acc_scoped_key] = today
+            posted_any = True
+        else:
+            log.warning(f"[{label}] Infographic post failed.")
+
+    # Update infographic state (topic/theme rotation) if posted
+    if posted_any and not dry_run:
+        try:
+            from infographic_gen import TOPICS, THEMES, _load_state, _save_state
+            ig_state = _load_state()
+            if "infographic" not in ig_state:
+                ig_state["infographic"] = {}
+            ig_state["infographic"]["last_topic_idx"] = TOPICS.index(topic)
+            ig_state["infographic"]["last_theme_idx"] = THEMES.index(theme)
+            ig_state["infographic"]["last_posted"] = today
+            _save_state(ig_state)
+            log.info(f"Infographic state updated: topic={topic}, theme={theme}")
+        except Exception as e:
+            log.warning(f"Failed to update infographic state: {e}")
+
+    save_state(st)
+    log.info("State saved. Infographic run complete.")
+    log.info("═" * 60)
+
+
+def run_infographic(force: bool = False, dry_run: bool = False):
+    """Entry point for infographic mode with its own lock file."""
+    if not OUTSTAND_API_KEY:
+        log.error("OUTSTAND_API_KEY not set. Exiting.")
+        sys.exit(1)
+
+    global LOCK_FILE
+    original_lock = LOCK_FILE
+    LOCK_FILE = INFOGRAPHIC_LOCK_FILE
+
+    try:
+        if not dry_run and not _acquire_lock(force=force):
+            sys.exit(0)
+        try:
+            _run_infographic(force=force, dry_run=dry_run)
+        finally:
+            if not dry_run:
+                _release_lock()
+    finally:
+        LOCK_FILE = original_lock
+
+
+# ─────────────────────────────────────────────────────────────────────────────
 # ENTRY POINT
 # ─────────────────────────────────────────────────────────────────────────────
 
@@ -3180,16 +3361,22 @@ if __name__ == "__main__":
                         help="Generate and post a short-form vertical Reel video. "
                              "Rotates through score_reveal, contrarian, seasonal_shift, "
                              "and trap_alert formats with anti-repetition.")
+    parser.add_argument("--infographic", action="store_true",
+                        help="Generate and post a branded infographic carousel. "
+                             "Rotates topics (treks, festivals, hidden_gems, camping) "
+                             "and themes (magazine, topo, datacard, noir). Mon/Wed/Fri.")
     args = parser.parse_args()
-    exclusive = sum([args.evening, args.moat, args.tourist_map, args.canva_visual, args.reel])
+    exclusive = sum([args.evening, args.moat, args.tourist_map, args.canva_visual, args.reel, args.infographic])
     if exclusive > 1:
-        parser.error("--evening, --moat, --tourist-map, --canva-visual, and --reel are mutually exclusive.")
+        parser.error("--evening, --moat, --tourist-map, --canva-visual, --reel, and --infographic are mutually exclusive.")
     if args.tourist_map:
         run_tourist_map(force=args.force, dry_run=args.dry_run)
     elif args.canva_visual:
         run_canva_visual(force=args.force, dry_run=args.dry_run)
     elif args.reel:
         run_reel(force=args.force, dry_run=args.dry_run)
+    elif args.infographic:
+        run_infographic(force=args.force, dry_run=args.dry_run)
     else:
         run(force=args.force, sync_only=args.sync_only,
             dry_run=args.dry_run, evening=args.evening, moat=args.moat)

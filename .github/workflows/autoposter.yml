@@ -12,6 +12,7 @@ on:
     - cron: "30 5 * * *"      # 11:00 IST daily — reel slot 1
     - cron: "30 10 * * *"     # 16:00 IST daily — reel slot 2
     - cron: "30 14 * * *"     # 20:00 IST daily — reel slot 3
+    - cron: "30 7 * * 1,3,5"   # 13:00 IST Mon/Wed/Fri — infographic
   workflow_dispatch:
     inputs:
       mode:
@@ -30,6 +31,8 @@ on:
           - canva-visual-force
           - reel
           - reel-force
+          - infographic
+          - infographic-force
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
@@ -100,6 +103,9 @@ jobs:
             elif [ "$INPUT" = "reel-force" ]; then
               echo "args=--reel --force" >> $GITHUB_OUTPUT
               echo "Manual mode: --reel --force"
+            elif [ "$INPUT" = "infographic-force" ]; then
+              echo "args=--infographic --force" >> $GITHUB_OUTPUT
+              echo "Manual mode: --infographic --force"
             elif [ -n "$INPUT" ]; then
               echo "args=--${INPUT}" >> $GITHUB_OUTPUT
               echo "Manual mode: --${INPUT}"
@@ -107,6 +113,10 @@ jobs:
               echo "args=" >> $GITHUB_OUTPUT
               echo "Manual mode: normal (post)"
             fi
+          elif [ "$TOTAL_MINS" -ge 450 ] && [ "$TOTAL_MINS" -lt 460 ] && echo "1 3 5" | grep -qw "$DOW"; then
+            # UTC 07:30 on Mon/Wed/Fri → infographic
+            echo "args=--infographic" >> $GITHUB_OUTPUT
+            echo "Scheduled INFOGRAPHIC mode (UTC ${HOUR}:${MINUTE}, DOW=${DOW})"
           elif [ "$TOTAL_MINS" -ge 540 ] && [ "$TOTAL_MINS" -lt 550 ]; then
             # UTC 09:00 daily → canva visual
             echo "args=--canva-visual" >> $GITHUB_OUTPUT
