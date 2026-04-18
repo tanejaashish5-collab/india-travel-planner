@@ -277,6 +277,7 @@ function PlanPanel({ locale, onNavigate }: { locale: string; onNavigate: () => v
         <div className="grid grid-cols-2 gap-x-4">
           <MenuItem href={`/${locale}/where-to-go/${currentMonthSlug}`} icon={CalendarIcon} label={t("whereToGoNow")} desc="Best destinations this month" onNavigate={onNavigate} />
           <MenuItem href={`/${locale}/build-route`} icon={MapPinIcon} label={t("buildRoute")} desc="Design your road trip" onNavigate={onNavigate} />
+          <MenuItem href={`/${locale}/gap-year`} icon={CalendarIcon} label="Gap Year Planner" desc="3–12 months, month by month" onNavigate={onNavigate} />
           <MenuItem href={`/${locale}/permits`} icon={ShieldIcon} label={t("permits")} desc="Required passes & permits" onNavigate={onNavigate} />
           <MenuItem href={`/${locale}/road-conditions`} icon={RoadIcon} label={t("roads")} desc="Latest road status" onNavigate={onNavigate} />
         </div>

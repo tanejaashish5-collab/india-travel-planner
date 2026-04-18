@@ -84,4 +84,34 @@ export async function syncLocalDataToProfile(userId: string) {
       trip_board: JSON.parse(tripBoard),
     }).eq("id", userId);
   }
+
+  // Sync Gap Year plan — if one exists in localStorage and no row yet, insert it
+  // so the user lands signed-in with their plan already in the DB and a shareable token.
+  const gapPlanRaw = localStorage.getItem("gapYearPlan");
+  const existingToken = localStorage.getItem("gapYearShareToken");
+  if (gapPlanRaw && !existingToken) {
+    try {
+      const plan = JSON.parse(gapPlanRaw);
+      const { data, error } = await supabase
+        .from("gap_year_plans")
+        .insert({
+          user_id: userId,
+          title: plan.title,
+          start_month: plan.input.startMonth,
+          duration_months: plan.input.durationMonths,
+          persona: plan.input.persona,
+          budget: plan.input.budget ?? null,
+          origin: plan.input.origin ?? null,
+          interests: plan.input.interests ?? [],
+          plan,
+        })
+        .select("share_token")
+        .single();
+      if (!error && data?.share_token) {
+        localStorage.setItem("gapYearShareToken", data.share_token);
+      }
+    } catch (err) {
+      console.warn("Gap Year plan sync failed:", err);
+    }
+  }
 }
