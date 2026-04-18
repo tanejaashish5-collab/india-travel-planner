@@ -1895,21 +1895,101 @@ Data, not opinions.
 2026-04-18 17:58:45  INFO      YT Short posted: format=listicle, music=15_bossa_sunset
 2026-04-18 17:58:45  INFO      State saved. YT Short run complete.
 2026-04-18 17:58:45  INFO      ════════════════════════════════════════════════════════════
-2026-04-18 09:50:48  INFO      ════════════════════════════════════════════════════════════
-2026-04-18 09:50:48  INFO      Nakshiq Autoposter · MORNING · 2026-04-18 · weekday=5
-2026-04-18 09:50:48  INFO      ════════════════════════════════════════════════════════════
-2026-04-18 09:50:48  INFO      ── Syncing Nakshiq content ──────────────────────────────
-2026-04-18 09:50:52  INFO      Synced → 20 destinations · 0 traps · 9 articles · total catalog=480
-2026-04-18 09:50:52  INFO      Sync-only mode. Done.
-2026-04-18 11:10:30  INFO      ════════════════════════════════════════════════════════════
-2026-04-18 11:10:30  INFO      Nakshiq Autoposter · MORNING · 2026-04-18 · weekday=5
-2026-04-18 11:10:30  INFO      ════════════════════════════════════════════════════════════
-2026-04-18 11:10:30  INFO      ── Syncing Nakshiq content ──────────────────────────────
-2026-04-18 11:10:38  INFO      Synced → 20 destinations · 0 traps · 9 articles · total catalog=480
-2026-04-18 11:10:38  INFO      Sync-only mode. Done.
-2026-04-18 11:26:36  INFO      ════════════════════════════════════════════════════════════
-2026-04-18 11:26:36  INFO      Nakshiq Autoposter · MORNING · 2026-04-18 · weekday=5
-2026-04-18 11:26:36  INFO      ════════════════════════════════════════════════════════════
-2026-04-18 11:26:36  INFO      ── Syncing Nakshiq content ──────────────────────────────
-2026-04-18 11:26:40  INFO      Synced → 20 destinations · 0 traps · 9 articles · total catalog=480
-2026-04-18 11:26:40  INFO      Sync-only mode. Done.
+2026-04-18 08:46:15  ERROR     OUTSTAND_API_KEY not set. Exiting.
+2026-04-18 08:46:24  INFO      ════════════════════════════════════════════════════════════
+2026-04-18 08:46:24  INFO      Nakshiq Autoposter · MORNING · 2026-04-18 · weekday=5
+2026-04-18 08:46:24  INFO      ════════════════════════════════════════════════════════════
+2026-04-18 08:46:24  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-04-18 08:46:29  INFO      Synced → 20 destinations · 0 traps · 9 articles · total catalog=480
+2026-04-18 08:46:30  INFO      Active accounts: ['instagram/nakshiq', 'facebook/Nakshiq', 'youtube/@naksh-iq']
+2026-04-18 08:46:33  INFO      Outstand dedup guard: merged 12 remote posts into state.
+2026-04-18 08:46:33  INFO      Formats — IG: collection_spotlight  ·  FB: collection_spotlight  ·  Story: kids_intel
+2026-04-18 08:46:33  INFO      Used destinations (14d): 33
+2026-04-18 08:46:33  INFO      Collection locked: Ayurveda & Wellness Trail — Kerala's Healing Heritage (16/20 never featured)
+2026-04-18 08:46:33  INFO      Kids destination locked: Chamba
+2026-04-18 08:46:45  INFO      Shared best destination locked: Dhanaulti
+2026-04-18 08:46:45  INFO      Carousel locked (collection_spotlight): no valid images found
+2026-04-18 08:46:45  INFO      [instagram/nakshiq] Already posted today (morning) — skipping.
+2026-04-18 08:46:45  INFO      [facebook/Nakshiq] Already posted today (morning) — skipping.
+2026-04-18 08:46:45  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-04-18 08:46:45  INFO      State saved. Run complete.
+2026-04-18 08:46:45  INFO      ════════════════════════════════════════════════════════════
+2026-04-18 09:16:07  INFO      ════════════════════════════════════════════════════════════
+2026-04-18 09:16:07  INFO      Nakshiq Autoposter · ANALYTICS SYNC · 2026-04-18
+2026-04-18 09:16:07  INFO      ════════════════════════════════════════════════════════════
+2026-04-18 09:16:17  INFO      Synced 50 new posts (total: 50)
+2026-04-18 09:16:17  INFO      ── Analytics Summary ──
+2026-04-18 09:16:17  INFO      Total posts tracked: 50
+2026-04-18 09:16:17  INFO      Successfully published: 47 | Failed: 1
+2026-04-18 09:16:17  INFO      
+2026-04-18 09:16:17  INFO      By content type:
+2026-04-18 09:16:17  INFO        feed_post: 27
+2026-04-18 09:16:17  INFO        reel: 13
+2026-04-18 09:16:17  INFO        yt_short: 4
+2026-04-18 09:16:17  INFO        infographic: 2
+2026-04-18 09:16:17  INFO        canva_visual: 2
+2026-04-18 09:16:17  INFO        tourist_map: 2
+2026-04-18 09:16:17  INFO      
+2026-04-18 09:16:17  INFO      By format:
+2026-04-18 09:16:17  INFO        feed_post:unknown: 27
+2026-04-18 09:16:17  INFO        reel:score: 6
+2026-04-18 09:16:17  INFO        yt_short:listicle: 4
+2026-04-18 09:16:17  INFO        reel:destination: 4
+2026-04-18 09:16:17  INFO        reel:seasonal: 3
+2026-04-18 09:16:17  INFO        infographic:unknown: 2
+2026-04-18 09:16:17  INFO        canva_visual:unknown: 2
+2026-04-18 09:16:17  INFO        tourist_map:unknown: 2
+2026-04-18 09:16:17  INFO      
+2026-04-18 09:16:17  INFO      By platform:
+2026-04-18 09:16:17  INFO        instagram: 28
+2026-04-18 09:16:17  INFO        facebook: 18
+2026-04-18 09:16:17  INFO        youtube: 2
+2026-04-18 09:16:17  INFO      
+2026-04-18 09:16:17  INFO      YT Short format distribution:
+2026-04-18 09:16:17  INFO        listicle: 4 (100%)
+2026-04-18 09:16:17  INFO      
+Date range: 2026-04-15 → 2026-04-18
+2026-04-18 09:16:17  INFO      ════════════════════════════════════════════════════════════
+2026-04-18 10:10:09  INFO      Stale lock (age=86394s) — overriding.
+2026-04-18 10:10:09  INFO      ════════════════════════════════════════════════════════════
+2026-04-18 10:10:09  INFO      Nakshiq Autoposter · EVENING · 2026-04-18 · weekday=5
+2026-04-18 10:10:09  INFO      ════════════════════════════════════════════════════════════
+2026-04-18 10:10:09  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-04-18 10:10:17  INFO      Synced → 20 destinations · 0 traps · 9 articles · total catalog=480
+2026-04-18 10:10:18  INFO      Active accounts: ['instagram/nakshiq', 'facebook/Nakshiq', 'youtube/@naksh-iq']
+2026-04-18 10:10:18  INFO      Formats — IG: score_card  ·  FB: score_card  ·  Story: route_spotlight  ·  Audience: families
+2026-04-18 10:10:18  INFO      Used destinations (14d): 33
+2026-04-18 10:10:18  INFO      Audience filter 'families' → 17 destinations match.
+2026-04-18 10:10:18  INFO      Route format requested but /routes API returned no data — will fall back to score_card.
+2026-04-18 10:10:27  INFO      Shared best destination locked: Dhanaulti
+2026-04-18 10:10:27  INFO      [instagram/nakshiq] Generating score_card post...
+2026-04-18 10:10:27  INFO      [instagram/nakshiq] Caption ready (583 chars, dest=dhanaulti)
+2026-04-18 10:10:27  INFO      [instagram/nakshiq] Uploading image...
+2026-04-18 10:10:27  INFO          Using branded image: dhanaulti_feed_typographic-art_badge.jpg (421,775 bytes)
+2026-04-18 10:10:27  INFO          Requesting upload URL for dhanaulti.jpg (421,775 bytes, image/jpeg)
+2026-04-18 10:10:29  INFO          Uploading to R2 (timeout=120s)...
+2026-04-18 10:10:33  INFO          R2 PUT OK. Confirming...
+2026-04-18 10:10:34  INFO          Media ready: QwAQy (421,775 bytes · dhanaulti.jpg)
+2026-04-18 10:10:34  INFO      [instagram/nakshiq] Publishing feed post...
+2026-04-18 10:10:58  INFO      [instagram/nakshiq] ✅ Published · Outstand=glPax · Platform=18088220039006462
+2026-04-18 10:10:58  INFO      [instagram/nakshiq] Uploading Story image (dhanaulti.jpg)...
+2026-04-18 10:10:58  INFO          Using branded image: dhanaulti_story_typographic-art_badge.jpg (517,135 bytes)
+2026-04-18 10:10:58  INFO          Requesting upload URL for dhanaulti.jpg (517,135 bytes, image/jpeg)
+2026-04-18 10:10:59  INFO          Uploading to R2 (timeout=120s)...
+2026-04-18 10:11:00  INFO          R2 PUT OK. Confirming...
+2026-04-18 10:11:02  INFO          Media ready: lku9K (517,135 bytes · dhanaulti.jpg)
+2026-04-18 10:11:02  INFO      [instagram/nakshiq] Publishing Story · format=route_spotlight · dest=dhanaulti
+2026-04-18 10:11:19  INFO      [instagram/nakshiq] ✅ Story live · ID=18024768659815708
+2026-04-18 10:11:19  INFO      [facebook/Nakshiq] Generating score_card post...
+2026-04-18 10:11:19  INFO      [facebook/Nakshiq] Caption ready (566 chars, dest=dhanaulti)
+2026-04-18 10:11:19  INFO      [facebook/Nakshiq] Uploading image...
+2026-04-18 10:11:19  INFO          Using branded image: dhanaulti_feed_typographic-art_badge.jpg (421,775 bytes)
+2026-04-18 10:11:19  INFO          Requesting upload URL for dhanaulti.jpg (421,775 bytes, image/jpeg)
+2026-04-18 10:11:20  INFO          Uploading to R2 (timeout=120s)...
+2026-04-18 10:11:23  INFO          R2 PUT OK. Confirming...
+2026-04-18 10:11:25  INFO          Media ready: C0SEF (421,775 bytes · dhanaulti.jpg)
+2026-04-18 10:11:25  INFO      [facebook/Nakshiq] Publishing feed post...
+2026-04-18 10:11:41  INFO      [facebook/Nakshiq] ✅ Published · Outstand=glP1x · Platform=1040562729145369_122100490244700092
+2026-04-18 10:11:41  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-04-18 10:11:41  INFO      State saved. Run complete.
+2026-04-18 10:11:41  INFO      ════════════════════════════════════════════════════════════

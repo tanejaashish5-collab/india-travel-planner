@@ -736,9 +736,15 @@ def _build_this_vs_that(destinations: list[dict], out_dir: Path) -> tuple[list[P
 
 def _build_dont_go_here(destinations: list[dict], month_name: str,
                         out_dir: Path) -> tuple[list[Path], float]:
-    """Build a 'Don't Go Here in [Month]' Short — warning about low-scoring destinations."""
-    # Pick destinations scoring 1-2
+    """Build a 'Don't Go Here in [Month]' Short — warning about lower-scoring destinations."""
+    # Pick lowest-scoring destinations (score ≤3 first, then bottom of whatever is available)
     bad = [d for d in destinations if d.get("score", 0) <= 2]
+    if len(bad) < 3:
+        # API may not return scores <3 — use score=3 as "not ideal this month"
+        bad = [d for d in destinations if d.get("score", 0) <= 3]
+    if len(bad) < 3:
+        # Still not enough — take the lowest-scoring destinations available
+        bad = sorted(destinations, key=lambda d: d.get("score", 5))[:6]
     if len(bad) < 3:
         return [], 0
 
@@ -761,10 +767,10 @@ def _build_dont_go_here(destinations: list[dict], month_name: str,
     # Hook — "DON'T GO HERE"
     vid = _find_similar_video(picks[0])
     hook_texts = [
-        _dt("DON'T GO", FONT_INSTRUMENT, 52, B, "(w-text_w)/2", "h*0.28"),
-        _dt("HERE", FONT_JETBRAINS, 120, RED, "(w-text_w)/2", "h*0.36", bw=5),
+        _dt("WAIT ON", FONT_INSTRUMENT, 52, B, "(w-text_w)/2", "h*0.28"),
+        _dt("THESE", FONT_JETBRAINS, 120, RED, "(w-text_w)/2", "h*0.36", bw=5),
         _dt(f"in {month_name}", FONT_INSTRUMENT, 48, S, "(w-text_w)/2", "h*0.50", "gte(t,0.5)"),
-        _dt("The scores don't lie.", FONT_CRIMSON, 32, B, "(w-text_w)/2", "h*0.58", "gte(t,1.2)"),
+        _dt("Better months exist.", FONT_CRIMSON, 32, B, "(w-text_w)/2", "h*0.58", "gte(t,1.2)"),
     ]
     p = _render_segment(vid, HOOK_DUR, hook_texts, out_dir / "seg_00_hook.mp4")
     if p: segments.append(p)
@@ -779,11 +785,13 @@ def _build_dont_go_here(destinations: list[dict], month_name: str,
         if len(reason) > 50:
             reason = reason[:47] + "..."
 
+        label = "SKIP" if score <= 2 else "NOT NOW"
+        sc = RED if score <= 2 else S
         texts = [
-            _dt("SKIP", FONT_JETBRAINS, 52, RED, "(w-text_w)/2", "h*0.18", bw=4),
+            _dt(label, FONT_JETBRAINS, 52, RED, "(w-text_w)/2", "h*0.18", bw=4),
             _dt(name.upper(), FONT_INSTRUMENT, 64, B, "(w-text_w)/2", "h*0.28", "gte(t,0.3)", 4),
             _dt(state, FONT_CRIMSON, 28, SG, "(w-text_w)/2", "h*0.38", "gte(t,0.6)"),
-            _dt(f"{score}/5", FONT_JETBRAINS, 100, RED, "(w-text_w)/2", "h*0.45", "gte(t,1.0)", 5),
+            _dt(f"{score}/5", FONT_JETBRAINS, 100, sc, "(w-text_w)/2", "h*0.45", "gte(t,1.0)", 5),
             _dt(reason, FONT_CRIMSON, 30, B, "(w-text_w)/2", "h*0.58", "gte(t,2.0)"),
         ]
         p = _render_segment(vid, WARN_DUR, texts, out_dir / f"seg_{i+1:02d}_warn.mp4")
