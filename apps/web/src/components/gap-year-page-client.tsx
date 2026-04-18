@@ -91,27 +91,27 @@ export function GapYearPageClient({ locale }: Props) {
       {!plan && (
         <>
           <header className="mb-8 text-center">
-            <h1 className="text-4xl font-bold">The Gap Year Planner</h1>
-            <p className="mt-3 text-gray-600 max-w-xl mx-auto">
+            <h1 className="text-4xl font-bold text-foreground">The Gap Year Planner</h1>
+            <p className="mt-3 text-muted-foreground max-w-xl mx-auto">
               3–12 months across India, planned month by month. Real scoring, real data —
               you pick the shape.
             </p>
           </header>
-          <div className="rounded-2xl border bg-white p-6 md:p-8 shadow-sm">
+          <div className="rounded-2xl border border-border bg-card p-6 md:p-8 shadow-sm">
             <GapYearForm onSubmit={generate} loading={loading} />
           </div>
         </>
       )}
 
       {loading && !plan && (
-        <div className="mt-8 text-center text-gray-600">
-          <div className="animate-pulse">Thinking about your {/* filled */} months…</div>
+        <div className="mt-8 text-center text-muted-foreground">
+          <div className="animate-pulse">Thinking about your months…</div>
           <p className="text-xs mt-2">This takes ~10–30 seconds.</p>
         </div>
       )}
 
       {error && (
-        <div className="mt-4 rounded-lg bg-red-50 border border-red-200 p-4 text-sm text-red-800">
+        <div className="mt-4 rounded-lg border border-destructive/30 bg-destructive/10 p-4 text-sm text-destructive">
           {error}
         </div>
       )}
@@ -120,19 +120,19 @@ export function GapYearPageClient({ locale }: Props) {
         <div className="space-y-6">
           <div className="flex items-center justify-between gap-3 flex-wrap">
             <div>
-              <h2 className="text-sm text-gray-600">Your gap year</h2>
+              <h2 className="text-sm text-muted-foreground">Your gap year</h2>
             </div>
             <div className="flex gap-2">
               <button
                 onClick={reset}
-                className="px-4 py-2 rounded-lg border hover:bg-gray-50 text-sm"
+                className="px-4 py-2 rounded-lg border border-border text-foreground hover:bg-muted text-sm transition"
               >
                 Start over
               </button>
               <button
                 onClick={save}
                 disabled={saving}
-                className="px-4 py-2 rounded-lg bg-emerald-600 text-white hover:bg-emerald-700 text-sm disabled:bg-gray-400"
+                className="px-4 py-2 rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 text-sm disabled:opacity-50 transition"
               >
                 {saving ? "Saving…" : "Save & share"}
               </button>
@@ -140,17 +140,17 @@ export function GapYearPageClient({ locale }: Props) {
           </div>
 
           {shareUrl && (
-            <div className="rounded-lg border border-emerald-300 bg-emerald-50 p-4 text-sm">
-              <div className="font-semibold mb-1">Shareable link</div>
+            <div className="rounded-lg border border-primary/30 bg-primary/10 p-4 text-sm">
+              <div className="font-semibold mb-1 text-foreground">Shareable link</div>
               <div className="flex gap-2">
                 <input
                   readOnly
                   value={shareUrl}
-                  className="flex-1 border rounded px-2 py-1 bg-white text-xs"
+                  className="flex-1 rounded border border-border bg-background px-2 py-1 text-xs text-foreground"
                 />
                 <button
                   onClick={() => navigator.clipboard.writeText(shareUrl)}
-                  className="px-3 py-1 rounded bg-emerald-600 text-white text-xs"
+                  className="px-3 py-1 rounded bg-primary text-primary-foreground text-xs hover:bg-primary/90"
                 >
                   Copy
                 </button>

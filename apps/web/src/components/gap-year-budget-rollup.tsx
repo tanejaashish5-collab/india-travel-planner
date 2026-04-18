@@ -25,9 +25,9 @@ export function GapYearBudgetRollup({ plan }: Props) {
   const avgDailyOverall = totalDays ? Math.round(grandTotal / totalDays) : 0;
 
   return (
-    <section className="rounded-xl border bg-white p-6">
-      <h2 className="text-lg font-bold mb-4">Budget roll-up</h2>
-      <p className="text-xs text-gray-600 mb-4">
+    <section className="rounded-xl border border-border bg-card p-6">
+      <h2 className="text-lg font-bold mb-4 text-foreground">Budget roll-up</h2>
+      <p className="text-xs text-muted-foreground mb-4">
         Estimated based on {tier} tier. Per-person, excluding flights in. Stays + food + local transport only.
       </p>
 
@@ -37,13 +37,13 @@ export function GapYearBudgetRollup({ plan }: Props) {
         <Stat label="Trip total" value={`₹${grandTotal.toLocaleString("en-IN")}`} />
       </div>
 
-      <div className="border-t pt-4">
-        <h3 className="text-sm font-semibold mb-3">Per month</h3>
+      <div className="border-t border-border pt-4">
+        <h3 className="text-sm font-semibold mb-3 text-foreground">Per month</h3>
         <div className="space-y-2">
           {perMonth.map((m, i) => (
             <div key={i} className="flex items-center justify-between text-sm py-1">
-              <span>{m.monthName}</span>
-              <span className="text-gray-600">
+              <span className="text-foreground">{m.monthName}</span>
+              <span className="text-muted-foreground">
                 {m.days > 0 ? `${m.days}d · ₹${m.avgDaily.toLocaleString("en-IN")}/d · ₹${m.total.toLocaleString("en-IN")}` : "–"}
               </span>
             </div>
@@ -51,7 +51,7 @@ export function GapYearBudgetRollup({ plan }: Props) {
         </div>
       </div>
 
-      <p className="text-xs text-gray-500 mt-4">
+      <p className="text-xs text-muted-foreground mt-4">
         These are ranges from destination-level budget data, not quotes. Peak-season stays run 30–50% higher in Oct–Jan for coastal + heritage circuits.
       </p>
     </section>
@@ -61,8 +61,8 @@ export function GapYearBudgetRollup({ plan }: Props) {
 function Stat({ label, value }: { label: string; value: string }) {
   return (
     <div>
-      <div className="text-xs uppercase tracking-wider text-gray-500">{label}</div>
-      <div className="font-bold text-lg mt-0.5">{value}</div>
+      <div className="text-xs uppercase tracking-wider text-muted-foreground">{label}</div>
+      <div className="font-bold text-lg mt-0.5 text-foreground">{value}</div>
     </div>
   );
 }
