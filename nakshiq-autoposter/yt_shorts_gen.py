@@ -575,21 +575,21 @@ YT_CAPTION_TEMPLATES = {
     "listicle": (
         "Top 5 places to visit in India in {month} — ranked by NakshIQ scores.\n\n"
         "Which one surprised you? Drop a comment!\n\n"
-        "→ https://nakshiq.com/en/explore?utm_source=youtube&utm_medium=short&utm_campaign=listicle\n\n"
+        "→ {link}\n\n"
         "#india #travel #shorts #top5 #nakshiq #travelindia #wanderlust "
         "#indiantravel #bestplaces #traveltips"
     ),
     "before_after": (
         "Same place, different month — the scores tell the story.\n\n"
         "Timing is everything when you travel India.\n\n"
-        "→ https://nakshiq.com/en/explore?utm_source=youtube&utm_medium=short&utm_campaign=before-after\n\n"
+        "→ {link}\n\n"
         "#india #travel #shorts #nakshiq #traveltiming #indiantravel "
         "#travelindia #travelhacks #besttimetovisit"
     ),
     "mini_guide": (
         "48 hours in {dest} — everything you need to know.\n\n"
         "NakshIQ Score: {score}/5\n\n"
-        "→ https://nakshiq.com/en/explore?utm_source=youtube&utm_medium=short&utm_campaign=mini-guide\n\n"
+        "→ {link}\n\n"
         "#india #travel #shorts #{dest_tag} #nakshiq #travelguide "
         "#indiantravel #travelindia #wanderlust #explore"
     ),
@@ -601,15 +601,17 @@ def _yt_caption(fmt: str, data: dict) -> str:
     template = YT_CAPTION_TEMPLATES.get(fmt, YT_CAPTION_TEMPLATES["listicle"])
     dest_name = data.get("dest_name", "India")
     dest_tag = dest_name.lower().replace(" ", "").replace("-", "")
+    fallback_link = "https://nakshiq.com?utm_source=youtube&utm_medium=short&utm_campaign=yt-short"
     try:
         return template.format(
             month=data.get("month", ""),
             dest=dest_name,
             score=data.get("score", ""),
             dest_tag=dest_tag,
+            link=data.get("link", fallback_link),
         )
     except KeyError:
-        return f"Travel smarter with NakshIQ.\n\n→ https://nakshiq.com?utm_source=youtube&utm_medium=short&utm_campaign=yt-short\n\n#india #travel #shorts #nakshiq"
+        return f"Travel smarter with NakshIQ.\n\n→ {fallback_link}\n\n#india #travel #shorts #nakshiq"
 
 
 # ═══════════════════════════════════════════════════════════════════════
@@ -661,19 +663,41 @@ def build_yt_short(
     with tempfile.TemporaryDirectory(prefix="nakshiq_ytshort_") as td:
         out_dir = Path(td)
 
+        month_slug = month_name.lower()   # e.g. "april"
+
         if fmt == "listicle":
             segments, total_dur = _build_listicle(destinations, month_name, out_dir)
-            caption_data = {"month": month_name}
+            caption_data = {
+                "month": month_name,
+                "link": f"https://nakshiq.com/en/where-to-go/{month_slug}?utm_source=youtube&utm_medium=short&utm_campaign=listicle",
+            }
         elif fmt == "before_after":
             segments, total_dur = _build_before_after(destinations, month_now, out_dir)
-            caption_data = {"month": month_name}
+            # Pick the top-contrast destination for the deep link
+            top_ba = sorted(destinations, key=lambda d: d.get("score", 0), reverse=True)
+            ba_dest = top_ba[0] if top_ba else {}
+            ba_id = ba_dest.get("id", "")
+            caption_data = {
+                "month": month_name,
+                "link": (
+                    f"https://nakshiq.com/en/destination/{ba_id}/{month_slug}?utm_source=youtube&utm_medium=short&utm_campaign=before-after"
+                    if ba_id else
+                    f"https://nakshiq.com/en/where-to-go/{month_slug}?utm_source=youtube&utm_medium=short&utm_campaign=before-after"
+                ),
+            }
         elif fmt == "mini_guide":
             segments, total_dur = _build_mini_guide(destinations, out_dir)
             top = [d for d in destinations if d.get("score", 0) >= 4]
             dest = top[0] if top else destinations[0]
+            dest_id = dest.get("id", "")
             caption_data = {
                 "dest_name": dest.get("name", "India"),
                 "score": dest.get("score", 4),
+                "link": (
+                    f"https://nakshiq.com/en/destination/{dest_id}/{month_slug}?utm_source=youtube&utm_medium=short&utm_campaign=mini-guide"
+                    if dest_id else
+                    f"https://nakshiq.com/en/where-to-go/{month_slug}?utm_source=youtube&utm_medium=short&utm_campaign=mini-guide"
+                ),
             }
         else:
             print(f"Unknown format: {fmt}")
@@ -685,7 +709,10 @@ def build_yt_short(
             if fmt != "listicle":
                 fmt = "listicle"
                 segments, total_dur = _build_listicle(destinations, month_name, out_dir)
-                caption_data = {"month": month_name}
+                caption_data = {
+                    "month": month_name,
+                    "link": f"https://nakshiq.com/en/where-to-go/{month_slug}?utm_source=youtube&utm_medium=short&utm_campaign=listicle",
+                }
             if not segments or len(segments) < 2:
                 return None
 
