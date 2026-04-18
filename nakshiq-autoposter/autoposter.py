@@ -3331,6 +3331,152 @@ def run_infographic(force: bool = False, dry_run: bool = False):
 
 
 # ─────────────────────────────────────────────────────────────────────────────
+# YT SHORT MODE — YouTube Shorts (listicle, before_after, mini_guide)
+# ─────────────────────────────────────────────────────────────────────────────
+
+YT_SHORT_LOCK_FILE = Path(__file__).parent / ".autoposter-yt-short.lock"
+
+
+def _run_yt_short(force: bool = False, dry_run: bool = False):
+    """
+    YT Short mode — generates and posts YouTube Shorts.
+    Rotates through 3 formats (listicle, before_after, mini_guide) with
+    anti-repetition. YouTube-ONLY posting (skips IG/FB). Max 2 per day.
+    """
+    import tempfile
+
+    try:
+        from yt_shorts_gen import build_yt_short
+    except ImportError:
+        log.error("yt_shorts_gen.py not found. Exiting.")
+        return
+
+    today = date.today().isoformat()
+    st    = load_state()
+
+    log.info("═" * 60)
+    log.info(f"Nakshiq Autoposter · YT SHORT · {today}")
+    log.info("═" * 60)
+
+    # ── Generate the Short ────────────────────────────────────────────────
+    try:
+        result = build_yt_short(dry_run=dry_run)
+    except Exception as e:
+        log.error(f"YT Short generation failed: {e}")
+        import traceback
+        log.error(traceback.format_exc())
+        return
+
+    if not result:
+        log.error("YT Short generation returned None.")
+        return
+
+    video_path = Path(result["video_path"])
+    caption    = result["caption"]
+    fmt        = result["format"]
+    duration   = result.get("duration", 0)
+    music      = result.get("music", "unknown")
+
+    if not video_path.exists():
+        log.error(f"Video file not found: {video_path}")
+        return
+
+    video_bytes  = video_path.read_bytes()
+    video_size_kb = len(video_bytes) // 1024
+    log.info(f"Short rendered: {video_path.name} ({video_size_kb} KB, {duration:.1f}s, fmt={fmt}, music={music})")
+
+    # ── Upload video ──────────────────────────────────────────────────────
+    media_filename = f"yt_short_{fmt}_{video_path.stem}.mp4"
+    media_obj = upload_media_bytes(video_bytes, media_filename, "video/mp4")
+    if not media_obj:
+        log.error("YT Short video upload failed.")
+        return
+
+    log.info(f"Video uploaded: {media_filename}")
+
+    # ── Publish to YouTube accounts ONLY ──────────────────────────────────
+    accounts = get_connected_accounts()
+    active   = [a for a in accounts if a.get("isActive")]
+    if not active:
+        log.warning("No active connected accounts.")
+        return
+
+    mode_suffix = "_yt_short"
+    posted_any  = False
+
+    for account in active:
+        acc_id   = account["id"]
+        platform = account["network"]
+        username = account.get("username", acc_id)
+        label    = f"{platform}/{username}"
+
+        # YouTube-ONLY — skip all non-YouTube platforms
+        if platform != "youtube":
+            log.info(f"[{label}] Skipping (YT Shorts are YouTube-only).")
+            continue
+
+        # 2-per-day limit per account
+        acc_scoped_key = acc_id + mode_suffix
+        daily_count_key = acc_id + mode_suffix + "_count"
+        posted_today = st.get("posted_today", {})
+
+        if posted_today.get(acc_scoped_key) == today:
+            count = posted_today.get(daily_count_key, 0)
+            if count >= 2 and not force:
+                log.info(f"[{label}] Already posted {count} YT Shorts today — skipping.")
+                continue
+
+        yt_caption = sanitize(caption)
+        log.info(f"[{label}] Publishing YT Short ({fmt})...")
+
+        if dry_run:
+            log.info(f"[{label}] DRY RUN — would publish:\n{yt_caption[:200]}...")
+            posted_any = True
+            continue
+
+        pub_result = publish_reel(yt_caption, account, media_obj, dry_run=False)
+        if pub_result:
+            log.info(f"[{label}] YT Short posted successfully!")
+            posted_today = st.setdefault("posted_today", {})
+            prev_date = posted_today.get(acc_scoped_key)
+            prev_count = posted_today.get(daily_count_key, 0) if prev_date == today else 0
+            posted_today[acc_scoped_key] = today
+            posted_today[daily_count_key] = prev_count + 1
+            posted_any = True
+        else:
+            log.warning(f"[{label}] YT Short post failed.")
+
+    if posted_any:
+        log.info(f"YT Short posted: format={fmt}, music={music}")
+
+    save_state(st)
+    log.info("State saved. YT Short run complete.")
+    log.info("═" * 60)
+
+
+def run_yt_short(force: bool = False, dry_run: bool = False):
+    """Entry point for YT Short mode with its own lock file."""
+    if not OUTSTAND_API_KEY:
+        log.error("OUTSTAND_API_KEY not set. Exiting.")
+        sys.exit(1)
+
+    global LOCK_FILE
+    original_lock = LOCK_FILE
+    LOCK_FILE = YT_SHORT_LOCK_FILE
+
+    try:
+        if not dry_run and not _acquire_lock(force=force):
+            sys.exit(0)
+        try:
+            _run_yt_short(force=force, dry_run=dry_run)
+        finally:
+            if not dry_run:
+                _release_lock()
+    finally:
+        LOCK_FILE = original_lock
+
+
+# ─────────────────────────────────────────────────────────────────────────────
 # ENTRY POINT
 # ─────────────────────────────────────────────────────────────────────────────
 
@@ -3365,10 +3511,14 @@ if __name__ == "__main__":
                         help="Generate and post a branded infographic carousel. "
                              "Rotates topics (treks, festivals, hidden_gems, camping) "
                              "and themes (magazine, topo, datacard, noir). Mon/Wed/Fri.")
+    parser.add_argument("--yt-short", action="store_true",
+                        help="Generate and post a YouTube Short video. "
+                             "Rotates through listicle, before_after, and mini_guide "
+                             "formats. YouTube-only, max 2 per day.")
     args = parser.parse_args()
-    exclusive = sum([args.evening, args.moat, args.tourist_map, args.canva_visual, args.reel, args.infographic])
+    exclusive = sum([args.evening, args.moat, args.tourist_map, args.canva_visual, args.reel, args.infographic, args.yt_short])
     if exclusive > 1:
-        parser.error("--evening, --moat, --tourist-map, --canva-visual, --reel, and --infographic are mutually exclusive.")
+        parser.error("--evening, --moat, --tourist-map, --canva-visual, --reel, --infographic, and --yt-short are mutually exclusive.")
     if args.tourist_map:
         run_tourist_map(force=args.force, dry_run=args.dry_run)
     elif args.canva_visual:
@@ -3377,6 +3527,8 @@ if __name__ == "__main__":
         run_reel(force=args.force, dry_run=args.dry_run)
     elif args.infographic:
         run_infographic(force=args.force, dry_run=args.dry_run)
+    elif args.yt_short:
+        run_yt_short(force=args.force, dry_run=args.dry_run)
     else:
         run(force=args.force, sync_only=args.sync_only,
             dry_run=args.dry_run, evening=args.evening, moat=args.moat)
