@@ -54,13 +54,14 @@ const supabase = createClient(SUPABASE_URL, SERVICE_KEY);
 let destinations = [];
 if (argv.ids.length) {
   const { data } = await supabase.from("destinations")
-    .select("id, name, state:states!inner(name, slug)")
+    .select("id, name, state:states!inner(id, name)")
     .in("id", argv.ids);
   destinations = data ?? [];
 } else {
+  // states.id is the slug (e.g. "rajasthan", "himachal-pradesh")
   const { data } = await supabase.from("destinations")
-    .select("id, name, state:states!inner(name, slug)")
-    .eq("state.slug", argv.state);
+    .select("id, name, state:states!inner(id, name)")
+    .eq("state_id", argv.state);
   destinations = data ?? [];
 }
 
@@ -281,7 +282,7 @@ async function runVoice({ mode, destinationName, stateName, dossier, existing, a
     : enrichVoicePrompt({ destinationName, stateName, dossier, existing, asOfDate });
   const resp = await callAnthropic({
     model: "claude-sonnet-4-6",
-    max_tokens: 3000,
+    max_tokens: 6000, // bumped from 3000 — full-mode output hits 4-5K when dossier has 6+ properties
     system: [{ type: "text", text: VOICE_SYSTEM_PROMPT, cache_control: { type: "ephemeral" } }],
     messages: [{ role: "user", content: userPrompt }],
   });
