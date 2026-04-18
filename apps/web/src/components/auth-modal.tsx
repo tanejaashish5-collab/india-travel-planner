@@ -15,7 +15,7 @@ export function AuthModal({
   onClose: () => void;
   onSuccess: () => void;
 }) {
-  const [mode, setMode] = useState<"signin" | "signup">("signin");
+  const [mode, setMode] = useState<"signin" | "signup" | "check-email">("signin");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
@@ -33,12 +33,20 @@ export function AuthModal({
       if (mode === "signin") {
         const { error } = await signInWithEmail(email, password);
         if (error) { setError(error.message); return; }
+        onSuccess();
+        onClose();
       } else {
-        const { error } = await signUpWithEmail(email, password, name);
+        const { error, needsConfirmation } = await signUpWithEmail(email, password, name);
         if (error) { setError(error.message); return; }
+        if (needsConfirmation) {
+          // Show the check-your-email state, don't close the modal.
+          setMode("check-email");
+          return;
+        }
+        // Auto-confirm was on — we're already signed in.
+        onSuccess();
+        onClose();
       }
-      onSuccess();
-      onClose();
     } catch (err: any) {
       setError(err.message || "Something went wrong");
     } finally {
@@ -84,6 +92,33 @@ export function AuthModal({
           </button>
 
           <div className="p-6 sm:p-8">
+            {mode === "check-email" ? (
+              <>
+                <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-full border border-primary/40 bg-primary/5 text-primary">
+                  {/* Envelope glyph */}
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><polyline points="3,7 12,13 21,7"/></svg>
+                </div>
+                <h2 className="text-2xl font-bold mb-2 text-center">Check your email</h2>
+                <p className="text-sm text-muted-foreground mb-1 text-center">
+                  We sent a confirmation link to
+                </p>
+                <p className="text-sm font-medium text-foreground mb-5 text-center font-mono">
+                  {email}
+                </p>
+                <div className="rounded-xl border border-border bg-muted/20 p-4 text-xs text-muted-foreground space-y-2 mb-5">
+                  <p><span className="text-foreground font-medium">1.</span> Open your inbox (and check spam/junk — confirmation emails often land there).</p>
+                  <p><span className="text-foreground font-medium">2.</span> Click the link to finish creating your account.</p>
+                  <p><span className="text-foreground font-medium">3.</span> Return here and sign in.</p>
+                </div>
+                <button
+                  onClick={() => { setMode("signin"); setPassword(""); }}
+                  className="w-full rounded-xl border border-border py-3 text-sm font-medium hover:bg-muted/30 transition-colors"
+                >
+                  Back to sign in
+                </button>
+              </>
+            ) : (
+              <>
             <h2 className="text-2xl font-bold mb-1">
               {mode === "signin" ? ta("welcomeBack") : ta("joinTheJourney")}
             </h2>
@@ -158,6 +193,8 @@ export function AuthModal({
                 <>{ta("haveAccount")} <button onClick={() => setMode("signin")} className="text-primary hover:underline">{tu("signIn")}</button></>
               )}
             </p>
+              </>
+            )}
           </div>
         </motion.div>
       </motion.div>

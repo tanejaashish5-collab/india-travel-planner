@@ -254,11 +254,82 @@ async function callAnthropic(payload) {
   return res.json();
 }
 
+// Robust JSON extractor with repair.
+// Claude occasionally produces malformed JSON in large outputs — truncated arrays,
+// unclosed strings, trailing commas. This tries progressive strategies:
+//   1. Strip fences, parse raw
+//   2. Greedy match outer {} and parse
+//   3. Walk brace-balance forward from first { and stop at the last balanced {..}
+//   4. If parse still fails, try to close unclosed brackets
 function extractJson(text) {
-  try { return JSON.parse(text); } catch {}
-  const m = text.match(/\{[\s\S]*\}/);
-  if (m) return JSON.parse(m[0]);
-  throw new Error("Non-JSON response from Claude");
+  const cleaned = text.replace(/```json\s*|```\s*$/g, "").trim();
+
+  // Strategy 1: direct parse
+  try { return JSON.parse(cleaned); } catch {}
+
+  // Strategy 2: outermost {} greedy
+  const greedy = cleaned.match(/\{[\s\S]*\}/);
+  if (greedy) {
+    try { return JSON.parse(greedy[0]); } catch {}
+  }
+
+  // Strategy 3: walk forward tracking brace balance, find the largest valid prefix
+  const start = cleaned.indexOf("{");
+  if (start >= 0) {
+    let depth = 0;
+    let inStr = false;
+    let esc = false;
+    let lastBalanced = -1;
+    for (let i = start; i < cleaned.length; i++) {
+      const ch = cleaned[i];
+      if (esc) { esc = false; continue; }
+      if (ch === "\\") { esc = true; continue; }
+      if (ch === '"') { inStr = !inStr; continue; }
+      if (inStr) continue;
+      if (ch === "{" || ch === "[") depth++;
+      else if (ch === "}" || ch === "]") {
+        depth--;
+        if (depth === 0 && cleaned[i] === "}") lastBalanced = i;
+      }
+    }
+    if (lastBalanced > start) {
+      try { return JSON.parse(cleaned.slice(start, lastBalanced + 1)); } catch {}
+    }
+
+    // Strategy 4: salvage — truncate at last safe boundary (after a complete element)
+    // Find the last `},` or `]` before depth goes bad, then close remaining brackets
+    const partial = cleaned.slice(start);
+    // Try progressively shorter prefixes anchored at ",\n" or "}\n"
+    const breakpoints = [];
+    for (let i = partial.length - 1; i > 100; i--) {
+      if (partial[i] === "}" && (partial[i + 1] === "," || partial[i + 1] === "\n" || partial[i + 1] === " " || i === partial.length - 1)) {
+        breakpoints.push(i);
+      }
+    }
+    for (const bp of breakpoints.slice(0, 50)) {
+      // Reconstruct: take up to bp, then close any unclosed structures by counting depth
+      const prefix = partial.slice(0, bp + 1);
+      let d = 0, iS = false, e = false;
+      const closers = [];
+      for (let j = 0; j < prefix.length; j++) {
+        const c = prefix[j];
+        if (e) { e = false; continue; }
+        if (c === "\\") { e = true; continue; }
+        if (c === '"') { iS = !iS; continue; }
+        if (iS) continue;
+        if (c === "{") { d++; closers.push("}"); }
+        else if (c === "[") { d++; closers.push("]"); }
+        else if (c === "}" || c === "]") { d--; closers.pop(); }
+      }
+      // Strip trailing comma if present
+      let tidy = prefix.replace(/,\s*$/, "");
+      // Append remaining closers in reverse
+      while (closers.length > 0) tidy += closers.pop();
+      try { return JSON.parse(tidy); } catch {}
+    }
+  }
+
+  throw new Error("Non-JSON response from Claude (repair failed)");
 }
 
 async function runResearch({ name, state, existingNames }) {

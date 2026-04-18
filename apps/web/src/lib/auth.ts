@@ -14,17 +14,24 @@ export async function signInWithEmail(email: string, password: string) {
   return supabase.auth.signInWithPassword({ email, password });
 }
 
-// Sign up with email
+// Sign up with email.
+// Returns { data, error, needsConfirmation } — when Supabase requires email
+// confirmation, data.user exists but data.session is null → the user must
+// click the confirmation link before they can sign in.
 export async function signUpWithEmail(email: string, password: string, name: string) {
   const supabase = getAuthClient();
   const { data, error } = await supabase.auth.signUp({
     email,
     password,
-    options: { data: { name } },
+    options: {
+      data: { name },
+      emailRedirectTo: typeof window !== "undefined" ? `${window.location.origin}/en/auth/callback` : undefined,
+    },
   });
 
-  // Create profile if sign up successful
-  if (data.user && !error) {
+  // Create profile row client-side when we have a session (confirmation not required).
+  // If confirmation IS required, the handle_new_user() trigger already seeded the row.
+  if (data.user && data.session && !error) {
     await supabase.from("profiles").upsert({
       id: data.user.id,
       name,
@@ -32,7 +39,9 @@ export async function signUpWithEmail(email: string, password: string, name: str
     });
   }
 
-  return { data, error };
+  const needsConfirmation = !!(data?.user && !data?.session && !error);
+
+  return { data, error, needsConfirmation };
 }
 
 // Sign in with Google
