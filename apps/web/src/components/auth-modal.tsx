@@ -82,7 +82,9 @@ export function AuthModal({
           initial={{ scale: 0.95, y: 20 }}
           animate={{ scale: 1, y: 0 }}
           exit={{ scale: 0.95, y: 20 }}
-          className="relative w-full max-w-sm rounded-2xl border border-border bg-card shadow-2xl overflow-hidden"
+          className={`relative w-full rounded-2xl border border-border bg-card shadow-2xl overflow-hidden ${
+            mode === "check-email" ? "max-w-md" : "max-w-sm"
+          }`}
         >
           <button
             onClick={onClose}
@@ -93,30 +95,42 @@ export function AuthModal({
 
           <div className="p-6 sm:p-8">
             {mode === "check-email" ? (
-              <>
-                <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-full border border-primary/40 bg-primary/5 text-primary">
+              <div className="py-2">
+                <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full border border-primary/40 bg-primary/5 text-primary">
                   {/* Envelope glyph */}
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><polyline points="3,7 12,13 21,7"/></svg>
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><polyline points="3,7 12,13 21,7"/></svg>
                 </div>
-                <h2 className="text-2xl font-bold mb-2 text-center">Check your email</h2>
-                <p className="text-sm text-muted-foreground mb-1 text-center">
+                <h2 className="text-2xl font-bold mb-3 text-center">Check your email</h2>
+                <p className="text-sm text-muted-foreground mb-2 text-center">
                   We sent a confirmation link to
                 </p>
-                <p className="text-sm font-medium text-foreground mb-5 text-center font-mono">
+                <p className="text-base font-medium text-foreground mb-6 text-center font-mono break-all px-2">
                   {email}
                 </p>
-                <div className="rounded-xl border border-border bg-muted/20 p-4 text-xs text-muted-foreground space-y-2 mb-5">
-                  <p><span className="text-foreground font-medium">1.</span> Open your inbox (and check spam/junk — confirmation emails often land there).</p>
-                  <p><span className="text-foreground font-medium">2.</span> Click the link to finish creating your account.</p>
-                  <p><span className="text-foreground font-medium">3.</span> Return here and sign in.</p>
+                <div className="rounded-xl border border-border bg-muted/20 p-5 text-sm text-muted-foreground space-y-3 mb-6">
+                  <p className="flex items-start gap-3">
+                    <span className="flex-shrink-0 flex h-5 w-5 items-center justify-center rounded-full bg-primary/10 text-primary text-xs font-semibold">1</span>
+                    <span>Open your inbox (and check <span className="text-foreground font-medium">spam/junk</span> — confirmation emails often land there)</span>
+                  </p>
+                  <p className="flex items-start gap-3">
+                    <span className="flex-shrink-0 flex h-5 w-5 items-center justify-center rounded-full bg-primary/10 text-primary text-xs font-semibold">2</span>
+                    <span>Click the link to finish creating your account</span>
+                  </p>
+                  <p className="flex items-start gap-3">
+                    <span className="flex-shrink-0 flex h-5 w-5 items-center justify-center rounded-full bg-primary/10 text-primary text-xs font-semibold">3</span>
+                    <span>Return here and sign in</span>
+                  </p>
                 </div>
+                <p className="text-xs text-muted-foreground mb-4 text-center">
+                  Didn&apos;t get it? Check spam or try again in 2 minutes.
+                </p>
                 <button
                   onClick={() => { setMode("signin"); setPassword(""); }}
                   className="w-full rounded-xl border border-border py-3 text-sm font-medium hover:bg-muted/30 transition-colors"
                 >
                   Back to sign in
                 </button>
-              </>
+              </div>
             ) : (
               <>
             <h2 className="text-2xl font-bold mb-1">
