@@ -473,8 +473,10 @@ def _build_before_after(destinations: list[dict], month_now: int,
 
         texts = [
             _dt(name.upper(), FONT_INSTRUMENT, 64, B, "(w-text_w)/2", "h*0.22", bw=4),
-            _dt(f"{month_name_now.upper()}", FONT_INSTRUMENT, 40, B, "(w-text_w)/2", "h*0.32", "gte(t,0.3)"),
-            _dt(f"{ns}/5", FONT_JETBRAINS, 100, nc, "(w-text_w)/2", "h*0.38", "gte(t,0.6)", 5),
+            # "Now" month + score: visible from 0.3–3.4s, then disappear
+            _dt(f"{month_name_now.upper()}", FONT_INSTRUMENT, 40, B, "(w-text_w)/2", "h*0.32", "between(t,0.3,3.4)"),
+            _dt(f"{ns}/5", FONT_JETBRAINS, 100, nc, "(w-text_w)/2", "h*0.38", "between(t,0.6,3.4)", 5),
+            # "Future" month + score: appear at 3.5s onward (no overlap)
             _dt(f"In {month_name_fut}?", FONT_INSTRUMENT, 44, B, "(w-text_w)/2", "h*0.32", "gte(t,3.5)"),
             _dt(f"{fs}/5", FONT_JETBRAINS, 120, fc, "(w-text_w)/2", "h*0.40", "gte(t,4)", 5),
             _dt(f"Score {direction} {fs}/5", FONT_CRIMSON, 34, B, "(w-text_w)/2", "h*0.58", "gte(t,5)"),
