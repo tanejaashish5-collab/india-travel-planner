@@ -5,7 +5,8 @@ import { TopFiveHero } from "@/components/top-five-hero";
 import { createClient } from "@supabase/supabase-js";
 import { notFound } from "next/navigation";
 import { weekOfMonth, currentYear } from "@/lib/weekly-picks/weight";
-import type { WeeklyPicksResponse } from "@itp/shared";
+import { computeWeeklyPicks } from "@/lib/weekly-picks/compute";
+import type { WeeklyPicksResponse } from "@/lib/weekly-picks/types";
 
 export const revalidate = 86400;
 export const dynamicParams = true;
@@ -378,24 +379,17 @@ export default async function WhereToGoPage({
 }
 
 /**
- * Fetch the current week's picks from our own /api/weekly-picks route.
- * Uses same-origin fetch so we hit Vercel's edge cache. Failures degrade
- * gracefully — the page renders without the hero, existing sections intact.
+ * Compute this week's picks directly — no self-fetch. The API route at
+ * /api/weekly-picks uses the same computeWeeklyPicks() helper, so external
+ * consumers (autoposter, etc.) see identical results to what the page
+ * renders. Calling the function directly avoids build-time deadlock where
+ * static generation would try to HTTP-fetch an API route that doesn't
+ * exist yet.
  */
 async function fetchWeeklyPicks(monthNum: number): Promise<WeeklyPicksResponse | null> {
   try {
     const today = new Date();
-    const week = weekOfMonth(today);
-    const year = currentYear(today);
-    const origin = process.env.VERCEL_URL
-      ? `https://${process.env.VERCEL_URL}`
-      : process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.nakshiq.com";
-    const res = await fetch(
-      `${origin}/api/weekly-picks?month=${monthNum}&week=${week}&year=${year}`,
-      { next: { revalidate: 3600 } },
-    );
-    if (!res.ok) return null;
-    return (await res.json()) as WeeklyPicksResponse;
+    return await computeWeeklyPicks(monthNum, weekOfMonth(today), currentYear(today));
   } catch {
     return null;
   }
