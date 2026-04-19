@@ -2082,3 +2082,20 @@ Date range: 2026-04-15 → 2026-04-18
 2026-04-19 06:14:34  INFO      [youtube/@naksh-iq] Already posted reel today — skipping.
 2026-04-19 06:14:34  INFO      State saved. Reel run complete.
 2026-04-19 06:14:34  INFO      ════════════════════════════════════════════════════════════
+2026-04-19 06:29:45  INFO      ════════════════════════════════════════════════════════════
+2026-04-19 06:29:45  INFO      Nakshiq Autoposter · REEL · 2026-04-19 · weekday=6
+2026-04-19 06:29:45  INFO      ════════════════════════════════════════════════════════════
+2026-04-19 06:29:45  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-04-19 06:29:54  INFO      Synced → 20 destinations · 0 traps · 3 articles · total catalog=480
+2026-04-19 06:29:54  INFO      Format: destination_reveal | Data: {'dest_name': 'Bhimtal', 'dest_slug': 'bhimtal', 'state_name': 'Uttarakhand', 'score': 5, 'tagline': 'The quiet cousin who got the better genes — Bhimtal lake without the Nainital crowds, an island in the middle, and actual birdsong.'}
+2026-04-19 06:30:03  INFO      Reel rendered: reel_destination_reveal_bhimtal.mp4 (789 KB)
+2026-04-19 06:30:03  INFO          Requesting upload URL for reel_destination_reveal_reel_destination_reveal_bhimtal.mp4 (808,223 bytes, video/mp4)
+2026-04-19 06:30:04  INFO          Uploading to R2 (timeout=300s)...
+2026-04-19 06:30:05  INFO          R2 PUT OK. Confirming...
+2026-04-19 06:30:06  INFO          Media ready: gnEcx (808,223 bytes · reel_destination_reveal_reel_destination_reveal_bhimtal.mp4)
+2026-04-19 06:30:06  INFO      Video uploaded: reel_destination_reveal_reel_destination_reveal_bhimtal.mp4
+2026-04-19 06:30:07  INFO      [instagram/nakshiq] Already posted reel today — skipping.
+2026-04-19 06:30:07  INFO      [facebook/Nakshiq] Already posted reel today — skipping.
+2026-04-19 06:30:07  INFO      [youtube/@naksh-iq] Already posted reel today — skipping.
+2026-04-19 06:30:07  INFO      State saved. Reel run complete.
+2026-04-19 06:30:07  INFO      ════════════════════════════════════════════════════════════
