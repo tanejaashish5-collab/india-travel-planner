@@ -12,7 +12,7 @@ Formats (rotating):
   - this_vs_that:  "[A] vs [B]" — head-to-head destination comparison
   - dont_go_here:  "Don't Go Here in [Month]" — low-scoring destinations warning
 
-Music library: 31 tracks in assets/yt_music/ — rotated with anti-repetition.
+Music library: 37 tracks in assets/yt_music/ — rotated with anti-repetition.
 Uses ffmpeg for all video processing (available on GitHub Actions ubuntu).
 """
 
