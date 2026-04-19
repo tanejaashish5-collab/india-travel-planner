@@ -24,6 +24,7 @@ import { useSavedItems } from "../../hooks/useSavedItems";
 import { useArticlesForDestination } from "../../hooks/useArticles";
 import { useVisited } from "../../hooks/useVisited";
 import { useReviews } from "../../hooks/useReviews";
+import EditorsPicks from "../../components/EditorsPicks";
 
 const supabaseMobile = createClient(
   process.env.EXPO_PUBLIC_SUPABASE_URL || "",
@@ -383,10 +384,19 @@ export default function DestinationScreen() {
             </View>
           )}
 
-          {/* Local Stays */}
+          {/* Editor's Picks — curated stay decisions (upgrade_reasoning + 4 slots + sources) */}
+          {dest.editor_stay_picks?.length > 0 && (
+            <EditorsPicks
+              destinationName={dest.name}
+              picks={dest.editor_stay_picks}
+              intelligence={dest.stay_intelligence ?? null}
+            />
+          )}
+
+          {/* Verified Stays Directory — community-verified local_stays (below Editor's Picks) */}
           {dest.local_stays?.length > 0 && (
             <View style={styles.sectionCard}>
-              <Text style={styles.sectionTitle}>Where to Stay</Text>
+              <Text style={styles.sectionTitle}>Verified Stays Directory</Text>
               {dest.local_stays.slice(0, 4).map((stay: any, i: number) => (
                 <View key={stay.id || i} style={styles.festivalItem}>
                   <Text style={styles.festivalName}>{stay.name}</Text>
