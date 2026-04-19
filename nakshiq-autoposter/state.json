@@ -22,9 +22,12 @@
     "PdMu0_reel": "2026-04-19",
     "4QL0i_reel": "2026-04-19",
     "m8EAd_canva": "2026-04-19",
-    "PdMu0_canva": "2026-04-19"
+    "PdMu0_canva": "2026-04-19",
+    "m8EAd_evening": "2026-04-19",
+    "m8EAd_evening_story": "2026-04-19",
+    "PdMu0_evening": "2026-04-19"
   },
-  "last_sync": "2026-04-19T07:31:08.631817+00:00",
+  "last_sync": "2026-04-19T10:10:30.485924+00:00",
   "posted_destinations": [
     {
       "destination_id": "pahalgam",
@@ -33,12 +36,118 @@
     {
       "destination_id": "dhanaulti",
       "date": "2026-04-19"
+    },
+    {
+      "destination_id": "ziro-valley",
+      "date": "2026-04-19"
+    },
+    {
+      "destination_id": "ziro-valley",
+      "date": "2026-04-19"
+    },
+    {
+      "destination_id": "yercaud",
+      "date": "2026-04-19"
+    },
+    {
+      "destination_id": "thrissur",
+      "date": "2026-04-19"
+    },
+    {
+      "destination_id": "mudumalai",
+      "date": "2026-04-19"
+    },
+    {
+      "destination_id": "kotagiri",
+      "date": "2026-04-19"
+    },
+    {
+      "destination_id": "kodaikanal",
+      "date": "2026-04-19"
+    },
+    {
+      "destination_id": "ziro-valley",
+      "date": "2026-04-19"
+    },
+    {
+      "destination_id": "yercaud",
+      "date": "2026-04-19"
+    },
+    {
+      "destination_id": "thrissur",
+      "date": "2026-04-19"
+    },
+    {
+      "destination_id": "mudumalai",
+      "date": "2026-04-19"
+    },
+    {
+      "destination_id": "kotagiri",
+      "date": "2026-04-19"
     }
   ],
-  "posted_formats": {},
-  "post_log": [],
+  "posted_formats": {
+    "m8EAd": [
+      "monthly_forecast"
+    ],
+    "PdMu0": [
+      "monthly_forecast"
+    ]
+  },
+  "post_log": [
+    {
+      "timestamp": "2026-04-19T10:12:14.002758+00:00",
+      "date": "2026-04-19",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "LZCzV",
+      "destination": "ziro-valley",
+      "format": "monthly_forecast",
+      "has_media": true
+    },
+    {
+      "timestamp": "2026-04-19T10:12:36.554864+00:00",
+      "date": "2026-04-19",
+      "platform": "instagram_story",
+      "account_id": "m8EAd",
+      "post_id": "3o5Tk",
+      "destination": "thrissur",
+      "format": "kids_intel",
+      "has_media": true,
+      "mode": "evening"
+    },
+    {
+      "timestamp": "2026-04-19T10:13:32.590766+00:00",
+      "date": "2026-04-19",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "kcDGh",
+      "destination": "kodaikanal",
+      "format": "monthly_forecast",
+      "has_media": true
+    }
+  ],
   "theme_usage": {
-    "destinations": {},
+    "destinations": {
+      "ziro-valley": [
+        "2026-04-19"
+      ],
+      "yercaud": [
+        "2026-04-19"
+      ],
+      "thrissur": [
+        "2026-04-19"
+      ],
+      "mudumalai": [
+        "2026-04-19"
+      ],
+      "kotagiri": [
+        "2026-04-19"
+      ],
+      "kodaikanal": [
+        "2026-04-19"
+      ]
+    },
     "reel_formats": {
       "seasonal_shift": [
         "2026-04-19"
@@ -57,6 +166,14 @@
     },
     "canva_images": {
       "mood_shots/munnar_KL_01.jpg": [
+        "2026-04-19"
+      ]
+    },
+    "reels": {
+      "ziro-valley": [
+        "2026-04-19"
+      ],
+      "kodaikanal": [
         "2026-04-19"
       ]
     }
