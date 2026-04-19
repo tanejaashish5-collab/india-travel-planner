@@ -2174,3 +2174,20 @@ Date range: 2026-04-15 → 2026-04-18
 2026-04-19 11:28:10  INFO      YT Short posted: format=listicle, music=09_tokyo_drift
 2026-04-19 11:28:10  INFO      State saved. YT Short run complete.
 2026-04-19 11:28:10  INFO      ════════════════════════════════════════════════════════════
+2026-04-19 15:09:58  INFO      ════════════════════════════════════════════════════════════
+2026-04-19 15:09:58  INFO      Nakshiq Autoposter · REEL · 2026-04-19 · weekday=6
+2026-04-19 15:09:58  INFO      ════════════════════════════════════════════════════════════
+2026-04-19 15:09:58  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-04-19 15:10:03  INFO      Synced → 20 destinations · 0 traps · 3 articles · total catalog=480
+2026-04-19 15:10:03  INFO      Format: destination_reveal | Data: {'dest_name': 'Ziro Valley', 'dest_slug': 'ziro-valley', 'state_name': 'Arunachal Pradesh', 'score': 5, 'tagline': 'Apatani tribal homeland with UNESCO-nominated rice paddies and the iconic Ziro Music Festival'}
+2026-04-19 15:10:12  INFO      Reel rendered: reel_destination_reveal_ziro-valley.mp4 (1011 KB)
+2026-04-19 15:10:12  INFO          Requesting upload URL for reel_destination_reveal_reel_destination_reveal_ziro-valley.mp4 (1,035,506 bytes, video/mp4)
+2026-04-19 15:10:13  INFO          Uploading to R2 (timeout=300s)...
+2026-04-19 15:10:13  INFO          R2 PUT OK. Confirming...
+2026-04-19 15:10:14  INFO          Media ready: I9dkX (1,035,506 bytes · reel_destination_reveal_reel_destination_reveal_ziro-valley.mp4)
+2026-04-19 15:10:14  INFO      Video uploaded: reel_destination_reveal_reel_destination_reveal_ziro-valley.mp4
+2026-04-19 15:10:15  INFO      [instagram/nakshiq] Already posted reel today — skipping.
+2026-04-19 15:10:15  INFO      [facebook/Nakshiq] Already posted reel today — skipping.
+2026-04-19 15:10:15  INFO      [youtube/@naksh-iq] Already posted reel today — skipping.
+2026-04-19 15:10:15  INFO      State saved. Reel run complete.
+2026-04-19 15:10:15  INFO      ════════════════════════════════════════════════════════════
