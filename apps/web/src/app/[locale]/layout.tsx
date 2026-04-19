@@ -12,6 +12,7 @@ import { CompareProvider } from "@/components/compare-tray";
 import { ScrollToTop } from "@/components/scroll-to-top";
 import { PageTransition } from "@/components/page-transition";
 import { MobileTabBar } from "@/components/mobile-tab-bar";
+import { MotionProvider } from "@/components/motion-provider";
 import "../globals.css";
 
 // Deferred client chunks — never block first paint or TTI
@@ -170,15 +171,17 @@ export default async function LocaleLayout({
           }) }}
         />
         <NextIntlClientProvider messages={messages}>
-          <CompareProvider>
-            <ScrollToTop />
-            <PageTransition>{children}</PageTransition>
-            <StickyCTA />
-            <AskNakshIQ />
-            <PersonalisationQuiz />
-            <MobileTabBar />
-            <PWAInstallPrompt />
-          </CompareProvider>
+          <MotionProvider>
+            <CompareProvider>
+              <ScrollToTop />
+              <PageTransition>{children}</PageTransition>
+              <StickyCTA />
+              <AskNakshIQ />
+              <PersonalisationQuiz />
+              <MobileTabBar />
+              <PWAInstallPrompt />
+            </CompareProvider>
+          </MotionProvider>
         </NextIntlClientProvider>
         <Analytics />
         <SpeedInsights />

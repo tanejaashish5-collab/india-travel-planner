@@ -2,7 +2,7 @@
 
 import { useState, useMemo, lazy, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
-import { motion, AnimatePresence } from "framer-motion";
+import { m as motion, AnimatePresence } from "framer-motion";
 import { REGION_GROUPS } from "@/lib/seo-maps";
 
 const IndiaMap = lazy(() => import("./india-map").then((mod) => ({ default: mod.IndiaMap })));

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { m as motion } from "framer-motion";
 import { getAuthClient, getSession } from "@/lib/auth";
 import { AuthModal } from "./auth-modal";
 

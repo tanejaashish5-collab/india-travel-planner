@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useState, useMemo } from "react";
 import { useLocale } from "next-intl";
-import { motion } from "framer-motion";
+import { m as motion } from "framer-motion";
 import { FadeIn, SlideIn, StaggerContainer, StaggerItem, HoverCard } from "./animated-hero";
 import { SCORE_COLORS, DIFFICULTY_COLORS } from "@/lib/design-tokens";
 

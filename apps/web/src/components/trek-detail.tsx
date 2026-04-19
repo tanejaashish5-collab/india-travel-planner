@@ -4,7 +4,7 @@ import { useState, lazy, Suspense } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useLocale, useTranslations } from "next-intl";
-import { motion } from "framer-motion";
+import { m as motion } from "framer-motion";
 import { ShareButton } from "./share-button";
 
 const TrekTrailMap = lazy(() => import("./trek-trail-map").then((mod) => ({ default: mod.TrekTrailMap })));

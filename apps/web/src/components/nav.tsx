@@ -8,7 +8,7 @@ import { UserButton } from "./user-button";
 import { SearchCommand } from "./search-command";
 import { NavMegaMenu, type PanelType } from "./nav-mega-menu";
 import { InternationalBanner } from "./international-banner";
-import { motion } from "framer-motion";
+import { m as motion } from "framer-motion";
 import { useState, useEffect, useRef, useCallback } from "react";
 
 export function Nav() {

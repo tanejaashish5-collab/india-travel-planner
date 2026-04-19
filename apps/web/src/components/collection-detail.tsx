@@ -4,7 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useLocale } from "next-intl";
-import { motion, AnimatePresence } from "framer-motion";
+import { m as motion, AnimatePresence } from "framer-motion";
 import { FadeIn, StaggerContainer, StaggerItem, HoverCard } from "./animated-hero";
 import { ShareButton } from "./share-button";
 

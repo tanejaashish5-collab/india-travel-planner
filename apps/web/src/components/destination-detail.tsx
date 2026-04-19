@@ -4,7 +4,7 @@
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import { useLocale, useTranslations } from "next-intl";
-import { motion, AnimatePresence } from "framer-motion";
+import { m as motion, AnimatePresence } from "framer-motion";
 import { MonthlyChart } from "./monthly-chart";
 import { WeatherWidget } from "./weather-widget";
 import { ShareButton } from "./share-button";

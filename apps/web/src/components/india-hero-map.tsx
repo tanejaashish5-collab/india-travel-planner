@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useMemo } from "react";
-import { motion, useInView } from "framer-motion";
+import { m as motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import indiaMapData from "@svg-maps/india";
 import { ALL_STATE_SLUGS } from "@/lib/seo-maps";

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useMemo } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { m as motion, AnimatePresence } from "framer-motion";
 import indiaMapData from "@svg-maps/india";
 import { ALL_STATE_SLUGS, REGION_GROUPS } from "@/lib/seo-maps";
 

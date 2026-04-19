@@ -3,7 +3,7 @@
 import { useLocale } from "next-intl";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { m as motion, AnimatePresence } from "framer-motion";
 
 const SESSION_KEY = "nakshiq-intl-banner-dismissed";
 

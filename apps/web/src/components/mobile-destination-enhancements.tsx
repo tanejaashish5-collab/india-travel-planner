@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import { useLocale } from "next-intl";
 import Link from "next/link";
-import { motion, AnimatePresence } from "framer-motion";
+import { m as motion, AnimatePresence } from "framer-motion";
 
 /* ── Sticky Section Tabs ──
    Floats above content on mobile, tracks scroll position to highlight active section.

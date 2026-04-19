@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, AnimatePresence } from "framer-motion";
+import { m as motion, AnimatePresence } from "framer-motion";
 // All links use <a> tags to avoid RSC streaming conflicts when mega menu unmounts
 import { useLocale, useTranslations } from "next-intl";
 import { FALLBACK } from "@/lib/stats";

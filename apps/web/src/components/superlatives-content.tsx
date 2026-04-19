@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useLocale } from "next-intl";
-import { motion } from "framer-motion";
+import { m as motion } from "framer-motion";
 import { StaggerContainer, StaggerItem, HoverCard } from "./animated-hero";
 
 export function SuperlativesContent({ superlatives }: { superlatives: any[] }) {
