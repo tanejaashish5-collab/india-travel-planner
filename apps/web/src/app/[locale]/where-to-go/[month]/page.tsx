@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
 import { Nav } from "@/components/nav";
 import { WhereToGoContent } from "@/components/where-to-go-content";
+import { TopFiveHero } from "@/components/top-five-hero";
 import { createClient } from "@supabase/supabase-js";
 import { notFound } from "next/navigation";
+import { weekOfMonth, currentYear } from "@/lib/weekly-picks/weight";
+import type { WeeklyPicksResponse } from "@itp/shared";
 
 export const revalidate = 86400;
 export const dynamicParams = true;
@@ -278,20 +281,79 @@ export default async function WhereToGoPage({
     itemListElement: breadcrumbItems,
   };
 
+  // Fetch this week's picks server-side for the month-only view. We skip the
+  // weekly hero on regional (state) pages — the pool is too small for
+  // diversity constraints to produce meaningful rotation there.
+  let weeklyPicks: WeeklyPicksResponse | null = null;
+  if (!regionInfo) {
+    weeklyPicks = await fetchWeeklyPicks(monthNum);
+  }
+  const pickedIds = new Set(weeklyPicks?.destinations.map((d) => d.id) ?? []);
+
+  // Collect sparkline data (12 scores per picked destination) for the hero.
+  const monthlyByPick = new Map<string, number[]>();
+  if (pickedIds.size > 0) {
+    monthlyByPick.clear();
+    for (const id of pickedIds) monthlyByPick.set(id, new Array(12).fill(0));
+    const supabase = getSupabase();
+    if (supabase) {
+      const { data: monthly } = await supabase
+        .from("destination_months")
+        .select("destination_id, month, score")
+        .in("destination_id", Array.from(pickedIds));
+      for (const m of monthly ?? []) {
+        const arr = monthlyByPick.get(m.destination_id);
+        if (arr && m.month >= 1 && m.month <= 12) arr[m.month - 1] = m.score ?? 0;
+      }
+    }
+  }
+
+  // ItemList schema for weekly picks — emitted alongside BreadcrumbList.
+  const itemListSchema = weeklyPicks?.seo ?? null;
+
   return (
     <div className="min-h-screen">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
+      {itemListSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }}
+        />
+      )}
       <Nav />
       <main className="mx-auto max-w-6xl px-4 py-8">
+        {weeklyPicks && weeklyPicks.destinations.length > 0 && (
+          <TopFiveHero
+            topFive={weeklyPicks.destinations.map((d) => ({
+              id: d.id,
+              name: d.name,
+              tagline: d.tagline,
+              state: d.state,
+              elevation_m: d.elevation_m,
+              score: d.score,
+              monthlyScores: monthlyByPick.get(d.id) ?? new Array(12).fill(0),
+              whyThisWeek: d.why_this_week,
+            }))}
+            monthNum={monthNum}
+            monthName={monthName}
+            monthSlug={monthSlug}
+            asOfDate={`${monthName} ${currentYear()}`}
+            weekNum={weeklyPicks.week}
+            dateRange={weeklyPicks.date_range}
+            fallbackFromFour={weeklyPicks.fallback_from_four}
+          />
+        )}
+
         <WhereToGoContent
           monthSlug={monthSlug}
           monthNum={monthNum}
           monthName={monthName}
           regionSlug={regionSlug ?? undefined}
           regionName={regionInfo?.displayName}
+          excludeIds={Array.from(pickedIds)}
           data={data.map((d) => {
             const dest = d.destination as any;
             const stateInfo = dest?.state;
@@ -313,4 +375,28 @@ export default async function WhereToGoPage({
       </main>
     </div>
   );
+}
+
+/**
+ * Fetch the current week's picks from our own /api/weekly-picks route.
+ * Uses same-origin fetch so we hit Vercel's edge cache. Failures degrade
+ * gracefully — the page renders without the hero, existing sections intact.
+ */
+async function fetchWeeklyPicks(monthNum: number): Promise<WeeklyPicksResponse | null> {
+  try {
+    const today = new Date();
+    const week = weekOfMonth(today);
+    const year = currentYear(today);
+    const origin = process.env.VERCEL_URL
+      ? `https://${process.env.VERCEL_URL}`
+      : process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.nakshiq.com";
+    const res = await fetch(
+      `${origin}/api/weekly-picks?month=${monthNum}&week=${week}&year=${year}`,
+      { next: { revalidate: 3600 } },
+    );
+    if (!res.ok) return null;
+    return (await res.json()) as WeeklyPicksResponse;
+  } catch {
+    return null;
+  }
 }

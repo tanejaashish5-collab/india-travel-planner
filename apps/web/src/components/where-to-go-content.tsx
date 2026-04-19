@@ -66,6 +66,10 @@ interface WhereToGoContentProps {
   regionName?: string;
   data: DestMonthRow[];
   scoreCounts: Record<number, number>;
+  /** IDs already rendered in the Weekly Picks hero above — filtered out of
+   *  "Go Now" so the same 5 destinations don't appear twice on the page.
+   *  Optional; defaults to empty for callers that don't use the hero. */
+  excludeIds?: string[];
 }
 
 // ─── Helpers ────────────────────────────────────────────────
@@ -183,15 +187,20 @@ export function WhereToGoContent({
   regionName,
   data,
   scoreCounts,
+  excludeIds,
 }: WhereToGoContentProps) {
   const locale = useLocale();
   const [fairExpanded, setFairExpanded] = useState(false);
 
   const isRegional = !!regionSlug;
-  const score5 = data.filter((d) => d.score === 5);
-  const score4 = data.filter((d) => d.score === 4);
-  const score3 = data.filter((d) => d.score === 3);
-  const scoreAvoid = data.filter((d) => d.score <= 2);
+  // Remove Weekly Picks hero destinations from the bucket lists so the same
+  // destination doesn't render twice on the page (hero above + Go Now below).
+  const excluded = new Set(excludeIds ?? []);
+  const filteredData = excluded.size > 0 ? data.filter((d) => !excluded.has(d.id)) : data;
+  const score5 = filteredData.filter((d) => d.score === 5);
+  const score4 = filteredData.filter((d) => d.score === 4);
+  const score3 = filteredData.filter((d) => d.score === 3);
+  const scoreAvoid = filteredData.filter((d) => d.score <= 2);
 
   const prevSlug = MONTH_SLUGS[prevMonth(monthNum)];
   const nextSlug = MONTH_SLUGS[nextMonth(monthNum)];
@@ -299,7 +308,7 @@ export function WhereToGoContent({
         <section>
           <ScrollReveal>
             <SectionHeader
-              title="Go Now"
+              title={excluded.size > 0 ? "The other scoring 5/5" : "Go Now"}
               subtitle="5/5"
               accent="emerald"
               count={score5.length}

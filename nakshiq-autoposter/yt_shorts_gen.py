@@ -61,6 +61,7 @@ YT_SHORT_FORMATS = ["listicle", "before_after", "mini_guide", "did_you_know", "t
 
 # ── Nakshiq API ───────────────────────────────────────────────────────
 NAKSHIQ_API = "https://nakshiq.com/api/content"
+NAKSHIQ_WEEKLY_PICKS_API = "https://nakshiq.com/api/weekly-picks"
 
 
 # ═══════════════════════════════════════════════════════════════════════
@@ -202,6 +203,62 @@ def _fetch_destinations(month: int = None, max_score: int = None) -> list[dict]:
     except Exception as e:
         print(f"API fetch failed: {e}")
         return []
+
+
+def _week_of_month(d: datetime = None) -> int:
+    """Day-of-month / 7 bucketing, matching apps/web/src/lib/weekly-picks/weight.ts.
+    Mirrors the landing page's week calculation so Shorts land on the correct week URL."""
+    if d is None:
+        d = datetime.now()
+    return min(5, max(1, (d.day - 1) // 7 + 1))
+
+
+def _fetch_weekly_picks(month: int = None, week: int = None) -> Optional[list[dict]]:
+    """Fetch the current week's 5 picks from /api/weekly-picks.
+
+    Returns None on any failure (network, non-200, malformed JSON) — caller
+    falls back to _fetch_destinations(). Zero-risk pattern per PRD §19: if
+    the new endpoint flaps, the autoposter keeps running on the old one.
+
+    Returns a list of destination dicts matching the _fetch_destinations
+    shape (id/name/state/score/tagline/note) so downstream builders stay
+    unchanged.
+    """
+    import requests
+    now = datetime.now()
+    if month is None:
+        month = now.month
+    if week is None:
+        week = _week_of_month(now)
+    year = now.year
+    try:
+        url = f"{NAKSHIQ_WEEKLY_PICKS_API}?month={month}&week={week}&year={year}"
+        resp = requests.get(url, timeout=15)
+        if resp.status_code != 200:
+            print(f"[weekly-picks] status={resp.status_code}, falling back")
+            return None
+        data = resp.json()
+        picks = data.get("destinations") or []
+        if len(picks) < 5:
+            print(f"[weekly-picks] got only {len(picks)} picks, falling back")
+            return None
+        # Map to the _fetch_destinations dict shape the builders expect.
+        return [
+            {
+                "id": p.get("id"),
+                "name": p.get("name"),
+                "state": p.get("state") or "",
+                "tagline": p.get("tagline") or p.get("why_this_week", ""),
+                "note": p.get("why_this_week") or "",
+                "score": p.get("score", 5),
+                "elevation_m": p.get("elevation_m"),
+                "difficulty": p.get("difficulty"),
+            }
+            for p in picks
+        ]
+    except Exception as e:
+        print(f"[weekly-picks] fetch failed ({e}), falling back to /api/content")
+        return None
 
 
 # ═══════════════════════════════════════════════════════════════════════
@@ -895,7 +952,7 @@ def _concat_with_music(segments: list[Path], total_dur: float,
 
 YT_CAPTION_TEMPLATES = {
     "listicle": (
-        "Top 5 places to visit in India in {month} — ranked by NakshIQ scores.\n\n"
+        "This week's picks for {month} — 5 destinations ranked by NakshIQ scores.\n\n"
         "Which one surprised you? Drop a comment!\n\n"
         "→ {link}\n\n"
         "#india #travel #shorts #top5 #nakshiq #travelindia #wanderlust "
@@ -1105,10 +1162,19 @@ def build_yt_short(
         month_slug = month_name.lower()   # e.g. "april"
 
         if fmt == "listicle":
-            segments, total_dur, _meta = _build_listicle(destinations, month_name, out_dir)
+            # Weekly Picks alignment contract (PRD §8.1): if the new endpoint
+            # is live, use its 5 picks for the Short so what the viewer sees
+            # in the video matches what they see on /where-to-go/{month} and
+            # in its JSON-LD ItemList. Silent fallback to the existing
+            # /api/content pool keeps the cron alive if the endpoint flaps.
+            wk_num = _week_of_month()
+            wp = _fetch_weekly_picks(month=month_now, week=wk_num)
+            listicle_dests = wp if wp else destinations
+            segments, total_dur, _meta = _build_listicle(listicle_dests, month_name, out_dir)
             caption_data = {
                 "month": month_name,
-                "link": f"https://nakshiq.com/en/where-to-go/{month_slug}?utm_source=youtube&utm_medium=short&utm_campaign=listicle",
+                "week": wk_num,
+                "link": f"https://nakshiq.com/en/where-to-go/{month_slug}?week={wk_num}&utm_source=youtube&utm_medium=short&utm_campaign=weekly-picks",
             }
         elif fmt == "before_after":
             segments, total_dur, _meta = _build_before_after(destinations, month_now, out_dir)

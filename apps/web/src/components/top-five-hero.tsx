@@ -28,6 +28,9 @@ export interface TopFiveRow {
   score: number;
   /** 12-value array from destination_months, one per month, score 0–5. */
   monthlyScores: number[];
+  /** Week-level editorial hook — shown below the tagline in vermillion.
+   *  Empty string = hide the line entirely. Populated by /api/weekly-picks. */
+  whyThisWeek?: string;
 }
 
 interface TopFiveHeroProps {
@@ -39,6 +42,17 @@ interface TopFiveHeroProps {
   regionName?: string;
   /** Shown in the caption strip above the rows — e.g. "April 2026". */
   asOfDate: string;
+  /** Current week within the month (1–5). When set, hero labels itself
+   *  "This Week's Picks · {Month} · Week N" instead of the static
+   *  "Top N · {Month} · India". */
+  weekNum?: number;
+  /** "April 15–21, 2026" style string. When set, rendered in the caption
+   *  strip alongside the "As of …" freshness stamp. */
+  dateRange?: string;
+  /** True when /api/weekly-picks fell back from 5/5 to 4/5 because the
+   *  peak pool was exhausted this week. Flips the hero label to
+   *  "Good Time To Visit · …" per PRD §18 fallback framing. */
+  fallbackFromFour?: boolean;
 }
 
 const VERMILLION = "#E55642";
@@ -109,12 +123,21 @@ export function TopFiveHero({
   monthSlug,
   regionName,
   asOfDate,
+  weekNum,
+  dateRange,
+  fallbackFromFour,
 }: TopFiveHeroProps) {
   const locale = useLocale();
   const regionLabel = regionName ?? "India";
 
-  // Only say "top 5" if we actually have 5. Graceful regional fallback.
-  const headingCount = topFive.length === 5 ? "Top 5" : `The ${topFive.length}`;
+  // Eyebrow label resolves in three modes:
+  //  1. weekNum set + score-5 pool viable → "This Week's Picks · {Month} · Week N"
+  //  2. weekNum set + fallback_from_four  → "Good Time to Visit · {Month} · Week N"
+  //  3. no weekNum (static legacy)         → "Top N · {Month} · {Region}"
+  const eyebrowLabel = weekNum
+    ? `${fallbackFromFour ? "Good Time to Visit" : "This Week's Picks"} · ${monthName} · Week ${weekNum}`
+    : `${topFive.length === 5 ? "Top 5" : `The ${topFive.length}`} · ${monthName} · ${regionLabel}`;
+
   const peakCount = topFive.filter((r) => r.score >= 5).length;
 
   return (
@@ -124,7 +147,7 @@ export function TopFiveHero({
         <div className="mb-3 flex items-center gap-3">
           <span className="h-px w-8 bg-[#E55642]" />
           <span className="font-mono text-[11px] font-bold uppercase tracking-[0.32em] text-white/60">
-            {headingCount} · {monthName} · {regionLabel}
+            {eyebrowLabel}
             {peakCount > 0 ? (
               <>
                 {" · "}
@@ -144,7 +167,7 @@ export function TopFiveHero({
 
       {/* ── Caption strip ───────────────────────────────────── */}
       <div className="mt-6 flex flex-wrap items-center justify-between gap-3 border-y border-white/10 py-3 font-mono text-[10px] uppercase tracking-[0.22em] text-white/45">
-        <span>As of {asOfDate}</span>
+        <span>{dateRange ?? `As of ${asOfDate}`}</span>
         <span className="hidden sm:inline">Verified by editors</span>
         <span>Scores out of 5</span>
       </div>
@@ -195,6 +218,14 @@ export function TopFiveHero({
                     {row.tagline && (
                       <p className="mt-1 line-clamp-1 text-[12px] md:text-[13px] text-white/55 max-w-[500px]">
                         {row.tagline}
+                      </p>
+                    )}
+                    {row.whyThisWeek && (
+                      // Week-level editorial hook — vermillion, italic serif
+                      // to echo the brand voice, line-clamped so overflow
+                      // stays the responsibility of the selection algorithm.
+                      <p className="mt-1 line-clamp-2 font-fraunces italic text-[13px] md:text-[14px] leading-snug text-[#E55642] max-w-[540px]">
+                        {row.whyThisWeek}
                       </p>
                     )}
                     {/* Mobile-only meta row */}
