@@ -17,7 +17,10 @@
     "4QL0i_yt_short": "2026-04-18",
     "4QL0i_yt_short_count": 4,
     "PdMu0": "2026-04-19",
-    "m8EAd": "2026-04-19"
+    "m8EAd": "2026-04-19",
+    "m8EAd_reel": "2026-04-19",
+    "PdMu0_reel": "2026-04-19",
+    "4QL0i_reel": "2026-04-19"
   },
   "last_sync": "2026-04-19T05:28:02.595572+00:00",
   "posted_destinations": [
@@ -33,6 +36,16 @@
   "posted_formats": {},
   "post_log": [],
   "theme_usage": {
-    "destinations": {}
+    "destinations": {},
+    "reel_formats": {
+      "seasonal_shift": [
+        "2026-04-19"
+      ]
+    },
+    "reel_seasonal_dests": {
+      "bhimtal": [
+        "2026-04-19"
+      ]
+    }
   }
 }
