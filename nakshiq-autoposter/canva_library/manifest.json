@@ -1,8 +1,18 @@
 {
   "meta": {
-    "description": "NakshIQ Canva visual library — maps images to content dimensions for anti-repetition rotation",
-    "categories": ["mood_shots", "color_palettes", "this_or_that", "collections", "activities", "seasons", "food", "festivals"],
-    "version": 1
+    "description": "NakshIQ Canva visual library \u2014 maps images to content dimensions for anti-repetition rotation",
+    "categories": [
+      "mood_shots",
+      "color_palettes",
+      "this_or_that",
+      "collections",
+      "activities",
+      "seasons",
+      "food",
+      "festivals"
+    ],
+    "version": 2,
+    "total_images": 84
   },
   "images": [
     {
@@ -11,7 +21,12 @@
       "subject": "Munnar tea plantations sunrise",
       "state": "KL",
       "destination": "munnar",
-      "tags": ["nature", "hill_station", "sunrise", "tea"],
+      "tags": [
+        "nature",
+        "hill_station",
+        "sunrise",
+        "tea"
+      ],
       "caption_template": "mood_destination"
     },
     {
@@ -20,7 +35,12 @@
       "subject": "Misty morning Munnar",
       "state": "KL",
       "destination": "munnar",
-      "tags": ["nature", "hill_station", "mist", "tea"],
+      "tags": [
+        "nature",
+        "hill_station",
+        "mist",
+        "tea"
+      ],
       "caption_template": "mood_destination"
     },
     {
@@ -29,7 +49,12 @@
       "subject": "Colors of Jaisalmer",
       "state": "RJ",
       "destination": "jaisalmer",
-      "tags": ["desert", "fort", "golden", "sunset"],
+      "tags": [
+        "desert",
+        "fort",
+        "golden",
+        "sunset"
+      ],
       "caption_template": "color_palette"
     },
     {
@@ -38,7 +63,12 @@
       "subject": "Jaisalmer fort sunset palette",
       "state": "RJ",
       "destination": "jaisalmer",
-      "tags": ["desert", "fort", "golden", "sunset"],
+      "tags": [
+        "desert",
+        "fort",
+        "golden",
+        "sunset"
+      ],
       "caption_template": "color_palette"
     },
     {
@@ -47,9 +77,17 @@
       "subject": "Mountains vs Beaches",
       "state": null,
       "destination": null,
-      "tags": ["engagement", "comparison", "mountains", "beaches"],
+      "tags": [
+        "engagement",
+        "comparison",
+        "mountains",
+        "beaches"
+      ],
       "caption_template": "this_or_that",
-      "comparison": ["Mountains", "Beaches"]
+      "comparison": [
+        "Mountains",
+        "Beaches"
+      ]
     },
     {
       "file": "this_or_that/mountains_vs_beaches_02.jpg",
@@ -57,9 +95,17 @@
       "subject": "Mountains vs Beaches",
       "state": null,
       "destination": null,
-      "tags": ["engagement", "comparison", "mountains", "beaches"],
+      "tags": [
+        "engagement",
+        "comparison",
+        "mountains",
+        "beaches"
+      ],
       "caption_template": "this_or_that",
-      "comparison": ["Mountains", "Beaches"]
+      "comparison": [
+        "Mountains",
+        "Beaches"
+      ]
     },
     {
       "file": "collections/motorcycle_routes_01.jpg",
@@ -68,7 +114,12 @@
       "state": null,
       "destination": null,
       "collection": "best-motorcycle-routes",
-      "tags": ["routes", "motorcycle", "adventure", "road_trip"],
+      "tags": [
+        "routes",
+        "motorcycle",
+        "adventure",
+        "road_trip"
+      ],
       "caption_template": "collection"
     },
     {
@@ -78,134 +129,1077 @@
       "state": null,
       "destination": null,
       "collection": "best-food-cities",
-      "tags": ["food", "cities", "cuisine", "street_food"],
+      "tags": [
+        "food",
+        "cities",
+        "cuisine",
+        "street_food"
+      ],
       "caption_template": "collection"
     },
     {
       "file": "activities/trek_india_01.jpg",
       "category": "activities",
-      "subject": "Trek India — Himalayan sunrise",
+      "subject": "Trek India \u2014 Himalayan sunrise",
       "state": null,
       "destination": null,
-      "tags": ["trekking", "adventure", "himalayas", "mountains", "solo"],
+      "tags": [
+        "trekking",
+        "adventure",
+        "himalayas",
+        "mountains",
+        "solo"
+      ],
       "caption_template": "activity"
+    },
+    {
+      "file": "mood_shots/varanasi_UP_01.jpg",
+      "category": "mood_shots",
+      "subject": "Varanasi \u2014 Uttar Pradesh",
+      "state": "UP",
+      "destination": "varanasi",
+      "tags": [
+        "nature",
+        "destination",
+        "mood"
+      ],
+      "caption_template": "mood_destination"
+    },
+    {
+      "file": "mood_shots/goa_GA_01.jpg",
+      "category": "mood_shots",
+      "subject": "Goa \u2014 Goa",
+      "state": "GA",
+      "destination": "goa",
+      "tags": [
+        "nature",
+        "destination",
+        "mood"
+      ],
+      "caption_template": "mood_destination"
+    },
+    {
+      "file": "mood_shots/leh-ladakh_LA_01.jpg",
+      "category": "mood_shots",
+      "subject": "Leh Ladakh \u2014 Ladakh",
+      "state": "LA",
+      "destination": "leh-ladakh",
+      "tags": [
+        "nature",
+        "destination",
+        "mood"
+      ],
+      "caption_template": "mood_destination"
+    },
+    {
+      "file": "mood_shots/darjeeling_WB_01.jpg",
+      "category": "mood_shots",
+      "subject": "Darjeeling \u2014 West Bengal",
+      "state": "WB",
+      "destination": "darjeeling",
+      "tags": [
+        "nature",
+        "destination",
+        "mood"
+      ],
+      "caption_template": "mood_destination"
+    },
+    {
+      "file": "mood_shots/alleppey_KL_01.jpg",
+      "category": "mood_shots",
+      "subject": "Alleppey \u2014 Kerala",
+      "state": "KL",
+      "destination": "alleppey",
+      "tags": [
+        "nature",
+        "destination",
+        "mood"
+      ],
+      "caption_template": "mood_destination"
+    },
+    {
+      "file": "mood_shots/hampi_KA_01.jpg",
+      "category": "mood_shots",
+      "subject": "Hampi \u2014 Karnataka",
+      "state": "KA",
+      "destination": "hampi",
+      "tags": [
+        "nature",
+        "destination",
+        "mood"
+      ],
+      "caption_template": "mood_destination"
+    },
+    {
+      "file": "mood_shots/udaipur_RJ_01.jpg",
+      "category": "mood_shots",
+      "subject": "Udaipur \u2014 Rajasthan",
+      "state": "RJ",
+      "destination": "udaipur",
+      "tags": [
+        "nature",
+        "destination",
+        "mood"
+      ],
+      "caption_template": "mood_destination"
+    },
+    {
+      "file": "mood_shots/rishikesh_UK_01.jpg",
+      "category": "mood_shots",
+      "subject": "Rishikesh \u2014 Uttarakhand",
+      "state": "UK",
+      "destination": "rishikesh",
+      "tags": [
+        "nature",
+        "destination",
+        "mood"
+      ],
+      "caption_template": "mood_destination"
+    },
+    {
+      "file": "mood_shots/coorg_KA_01.jpg",
+      "category": "mood_shots",
+      "subject": "Coorg \u2014 Karnataka",
+      "state": "KA",
+      "destination": "coorg",
+      "tags": [
+        "nature",
+        "destination",
+        "mood"
+      ],
+      "caption_template": "mood_destination"
+    },
+    {
+      "file": "mood_shots/kutch_GJ_01.jpg",
+      "category": "mood_shots",
+      "subject": "Kutch \u2014 Gujarat",
+      "state": "GJ",
+      "destination": "kutch",
+      "tags": [
+        "nature",
+        "destination",
+        "mood"
+      ],
+      "caption_template": "mood_destination"
+    },
+    {
+      "file": "mood_shots/spiti_HP_01.jpg",
+      "category": "mood_shots",
+      "subject": "Spiti \u2014 Himachal Pradesh",
+      "state": "HP",
+      "destination": "spiti",
+      "tags": [
+        "nature",
+        "destination",
+        "mood"
+      ],
+      "caption_template": "mood_destination"
+    },
+    {
+      "file": "mood_shots/havelock-island_AN_01.jpg",
+      "category": "mood_shots",
+      "subject": "Havelock Island \u2014 Andaman & Nicobar",
+      "state": "AN",
+      "destination": "havelock-island",
+      "tags": [
+        "nature",
+        "destination",
+        "mood"
+      ],
+      "caption_template": "mood_destination"
+    },
+    {
+      "file": "mood_shots/cherrapunji_ML_01.jpg",
+      "category": "mood_shots",
+      "subject": "Cherrapunji \u2014 Meghalaya",
+      "state": "ML",
+      "destination": "cherrapunji",
+      "tags": [
+        "nature",
+        "destination",
+        "mood"
+      ],
+      "caption_template": "mood_destination"
+    },
+    {
+      "file": "mood_shots/jodhpur_RJ_01.jpg",
+      "category": "mood_shots",
+      "subject": "Jodhpur \u2014 Rajasthan",
+      "state": "RJ",
+      "destination": "jodhpur",
+      "tags": [
+        "nature",
+        "destination",
+        "mood"
+      ],
+      "caption_template": "mood_destination"
+    },
+    {
+      "file": "mood_shots/mysore_KA_01.jpg",
+      "category": "mood_shots",
+      "subject": "Mysore \u2014 Karnataka",
+      "state": "KA",
+      "destination": "mysore",
+      "tags": [
+        "nature",
+        "destination",
+        "mood"
+      ],
+      "caption_template": "mood_destination"
+    },
+    {
+      "file": "color_palettes/jodhpur_RJ_01.jpg",
+      "category": "color_palettes",
+      "subject": "The Colors Of Jodhpur",
+      "state": "RJ",
+      "destination": "jodhpur",
+      "tags": [
+        "colors",
+        "palette",
+        "design"
+      ],
+      "caption_template": "color_palette"
+    },
+    {
+      "file": "color_palettes/varanasi_UP_01.jpg",
+      "category": "color_palettes",
+      "subject": "The Colors Of Varanasi",
+      "state": "UP",
+      "destination": "varanasi",
+      "tags": [
+        "colors",
+        "palette",
+        "design"
+      ],
+      "caption_template": "color_palette"
+    },
+    {
+      "file": "color_palettes/munnar_KL_01.jpg",
+      "category": "color_palettes",
+      "subject": "Monsoon Kerala",
+      "state": "KL",
+      "destination": "munnar",
+      "tags": [
+        "colors",
+        "palette",
+        "design"
+      ],
+      "caption_template": "color_palette"
+    },
+    {
+      "file": "color_palettes/goa_GA_01.jpg",
+      "category": "color_palettes",
+      "subject": "Goa At Golden Hour",
+      "state": "GA",
+      "destination": "goa",
+      "tags": [
+        "colors",
+        "palette",
+        "design"
+      ],
+      "caption_template": "color_palette"
+    },
+    {
+      "file": "color_palettes/leh-ladakh_LA_01.jpg",
+      "category": "color_palettes",
+      "subject": "The Colors Of Ladakh",
+      "state": "LA",
+      "destination": "leh-ladakh",
+      "tags": [
+        "colors",
+        "palette",
+        "design"
+      ],
+      "caption_template": "color_palette"
+    },
+    {
+      "file": "color_palettes/hampi_KA_01.jpg",
+      "category": "color_palettes",
+      "subject": "The Colors Of Hampi",
+      "state": "KA",
+      "destination": "hampi",
+      "tags": [
+        "colors",
+        "palette",
+        "design"
+      ],
+      "caption_template": "color_palette"
+    },
+    {
+      "file": "color_palettes/darjeeling_WB_01.jpg",
+      "category": "color_palettes",
+      "subject": "The Colors Of Darjeeling",
+      "state": "WB",
+      "destination": "darjeeling",
+      "tags": [
+        "colors",
+        "palette",
+        "design"
+      ],
+      "caption_template": "color_palette"
+    },
+    {
+      "file": "color_palettes/kutch_GJ_01.jpg",
+      "category": "color_palettes",
+      "subject": "The Colors Of Kutch",
+      "state": "GJ",
+      "destination": "kutch",
+      "tags": [
+        "colors",
+        "palette",
+        "design"
+      ],
+      "caption_template": "color_palette"
+    },
+    {
+      "file": "color_palettes/coorg_KA_01.jpg",
+      "category": "color_palettes",
+      "subject": "The Colors Of Coorg",
+      "state": "KA",
+      "destination": "coorg",
+      "tags": [
+        "colors",
+        "palette",
+        "design"
+      ],
+      "caption_template": "color_palette"
+    },
+    {
+      "file": "color_palettes/udaipur_RJ_01.jpg",
+      "category": "color_palettes",
+      "subject": "The Colors Of Udaipur",
+      "state": "RJ",
+      "destination": "udaipur",
+      "tags": [
+        "colors",
+        "palette",
+        "design"
+      ],
+      "caption_template": "color_palette"
+    },
+    {
+      "file": "this_or_that/forts_vs_temples_01.jpg",
+      "category": "this_or_that",
+      "subject": "Forts vs Temples",
+      "state": null,
+      "destination": null,
+      "tags": [
+        "engagement",
+        "comparison",
+        "forts",
+        "temples"
+      ],
+      "caption_template": "this_or_that",
+      "comparison": [
+        "Forts",
+        "Temples"
+      ]
+    },
+    {
+      "file": "this_or_that/solo_trip_vs_family_trip_01.jpg",
+      "category": "this_or_that",
+      "subject": "Solo Trip vs Family Trip",
+      "state": null,
+      "destination": null,
+      "tags": [
+        "engagement",
+        "comparison",
+        "solo trip",
+        "family trip"
+      ],
+      "caption_template": "this_or_that",
+      "comparison": [
+        "Solo Trip",
+        "Family Trip"
+      ]
+    },
+    {
+      "file": "this_or_that/street_food_vs_fine_dining_01.jpg",
+      "category": "this_or_that",
+      "subject": "Street Food vs Fine Dining",
+      "state": null,
+      "destination": null,
+      "tags": [
+        "engagement",
+        "comparison",
+        "street food",
+        "fine dining"
+      ],
+      "caption_template": "this_or_that",
+      "comparison": [
+        "Street Food",
+        "Fine Dining"
+      ]
+    },
+    {
+      "file": "this_or_that/sunrise_vs_sunset_01.jpg",
+      "category": "this_or_that",
+      "subject": "Sunrise vs Sunset",
+      "state": null,
+      "destination": null,
+      "tags": [
+        "engagement",
+        "comparison",
+        "sunrise",
+        "sunset"
+      ],
+      "caption_template": "this_or_that",
+      "comparison": [
+        "Sunrise",
+        "Sunset"
+      ]
+    },
+    {
+      "file": "this_or_that/monsoon_vs_winter_01.jpg",
+      "category": "this_or_that",
+      "subject": "Monsoon vs Winter",
+      "state": null,
+      "destination": null,
+      "tags": [
+        "engagement",
+        "comparison",
+        "monsoon",
+        "winter"
+      ],
+      "caption_template": "this_or_that",
+      "comparison": [
+        "Monsoon",
+        "Winter"
+      ]
+    },
+    {
+      "file": "this_or_that/lakes_vs_rivers_01.jpg",
+      "category": "this_or_that",
+      "subject": "Lakes vs Rivers",
+      "state": null,
+      "destination": null,
+      "tags": [
+        "engagement",
+        "comparison",
+        "lakes",
+        "rivers"
+      ],
+      "caption_template": "this_or_that",
+      "comparison": [
+        "Lakes",
+        "Rivers"
+      ]
+    },
+    {
+      "file": "this_or_that/heritage_walk_vs_nature_trek_01.jpg",
+      "category": "this_or_that",
+      "subject": "Heritage Walk vs Nature Trek",
+      "state": null,
+      "destination": null,
+      "tags": [
+        "engagement",
+        "comparison",
+        "heritage walk",
+        "nature trek"
+      ],
+      "caption_template": "this_or_that",
+      "comparison": [
+        "Heritage Walk",
+        "Nature Trek"
+      ]
+    },
+    {
+      "file": "this_or_that/chai_vs_coffee_01.jpg",
+      "category": "this_or_that",
+      "subject": "Chai vs Coffee",
+      "state": null,
+      "destination": null,
+      "tags": [
+        "engagement",
+        "comparison",
+        "chai",
+        "coffee"
+      ],
+      "caption_template": "this_or_that",
+      "comparison": [
+        "Chai",
+        "Coffee"
+      ]
+    },
+    {
+      "file": "this_or_that/desert_vs_jungle_01.jpg",
+      "category": "this_or_that",
+      "subject": "Desert vs Jungle",
+      "state": null,
+      "destination": null,
+      "tags": [
+        "engagement",
+        "comparison",
+        "desert",
+        "jungle"
+      ],
+      "caption_template": "this_or_that",
+      "comparison": [
+        "Desert",
+        "Jungle"
+      ]
+    },
+    {
+      "file": "this_or_that/backpacking_vs_luxury_01.jpg",
+      "category": "this_or_that",
+      "subject": "Backpacking vs Luxury",
+      "state": null,
+      "destination": null,
+      "tags": [
+        "engagement",
+        "comparison",
+        "backpacking",
+        "luxury"
+      ],
+      "caption_template": "this_or_that",
+      "comparison": [
+        "Backpacking",
+        "Luxury"
+      ]
+    },
+    {
+      "file": "collections/unesco_north_india_01.jpg",
+      "category": "collections",
+      "subject": "Unesco North India",
+      "state": null,
+      "destination": null,
+      "collection": "unesco-north-india",
+      "tags": [
+        "collection",
+        "curated",
+        "travel"
+      ],
+      "caption_template": "collection"
+    },
+    {
+      "file": "collections/best_beaches_india_01.jpg",
+      "category": "collections",
+      "subject": "India'S Best Beaches",
+      "state": null,
+      "destination": null,
+      "collection": "best-beaches-india",
+      "tags": [
+        "collection",
+        "curated",
+        "travel"
+      ],
+      "caption_template": "collection"
+    },
+    {
+      "file": "collections/weekend_from_delhi_01.jpg",
+      "category": "collections",
+      "subject": "Weekends From Delhi",
+      "state": null,
+      "destination": null,
+      "collection": "weekend-from-delhi",
+      "tags": [
+        "collection",
+        "curated",
+        "travel"
+      ],
+      "caption_template": "collection"
+    },
+    {
+      "file": "collections/weekend_from_mumbai_01.jpg",
+      "category": "collections",
+      "subject": "Weekends From Mumbai",
+      "state": null,
+      "destination": null,
+      "collection": "weekend-from-mumbai",
+      "tags": [
+        "collection",
+        "curated",
+        "travel"
+      ],
+      "caption_template": "collection"
+    },
+    {
+      "file": "collections/wildlife_safari_01.jpg",
+      "category": "collections",
+      "subject": "India Wildlife Safari",
+      "state": null,
+      "destination": null,
+      "collection": "wildlife-safari",
+      "tags": [
+        "collection",
+        "curated",
+        "travel"
+      ],
+      "caption_template": "collection"
+    },
+    {
+      "file": "collections/spiritual_circuit_01.jpg",
+      "category": "collections",
+      "subject": "Spiritual India",
+      "state": null,
+      "destination": null,
+      "collection": "spiritual-circuit",
+      "tags": [
+        "collection",
+        "curated",
+        "travel"
+      ],
+      "caption_template": "collection"
+    },
+    {
+      "file": "collections/monsoon_magic_01.jpg",
+      "category": "collections",
+      "subject": "Monsoon Magic",
+      "state": null,
+      "destination": null,
+      "collection": "monsoon-magic",
+      "tags": [
+        "collection",
+        "curated",
+        "travel"
+      ],
+      "caption_template": "collection"
+    },
+    {
+      "file": "collections/luxury_heritage_stays_01.jpg",
+      "category": "collections",
+      "subject": "Heritage Stays",
+      "state": null,
+      "destination": null,
+      "collection": "luxury-heritage-stays",
+      "tags": [
+        "collection",
+        "curated",
+        "travel"
+      ],
+      "caption_template": "collection"
+    },
+    {
+      "file": "collections/goa_beyond_beaches_01.jpg",
+      "category": "collections",
+      "subject": "Goa Beyond Beaches",
+      "state": null,
+      "destination": null,
+      "collection": "goa-beyond-beaches",
+      "tags": [
+        "collection",
+        "curated",
+        "travel"
+      ],
+      "caption_template": "collection"
+    },
+    {
+      "file": "collections/northeast_first_timer_01.jpg",
+      "category": "collections",
+      "subject": "Northeast India",
+      "state": null,
+      "destination": null,
+      "collection": "northeast-first-timer",
+      "tags": [
+        "collection",
+        "curated",
+        "travel"
+      ],
+      "caption_template": "collection"
+    },
+    {
+      "file": "activities/camping_01.jpg",
+      "category": "activities",
+      "subject": "Camping in India",
+      "state": null,
+      "destination": null,
+      "tags": [
+        "camping",
+        "adventure",
+        "india"
+      ],
+      "caption_template": "activity"
+    },
+    {
+      "file": "activities/rafting_01.jpg",
+      "category": "activities",
+      "subject": "Rafting in India",
+      "state": null,
+      "destination": null,
+      "tags": [
+        "rafting",
+        "adventure",
+        "india"
+      ],
+      "caption_template": "activity"
+    },
+    {
+      "file": "activities/paragliding_01.jpg",
+      "category": "activities",
+      "subject": "Paragliding in India",
+      "state": null,
+      "destination": null,
+      "tags": [
+        "paragliding",
+        "adventure",
+        "india"
+      ],
+      "caption_template": "activity"
+    },
+    {
+      "file": "activities/diving_01.jpg",
+      "category": "activities",
+      "subject": "Diving in India",
+      "state": null,
+      "destination": null,
+      "tags": [
+        "diving",
+        "adventure",
+        "india"
+      ],
+      "caption_template": "activity"
+    },
+    {
+      "file": "activities/cycling_01.jpg",
+      "category": "activities",
+      "subject": "Cycling in India",
+      "state": null,
+      "destination": null,
+      "tags": [
+        "cycling",
+        "adventure",
+        "india"
+      ],
+      "caption_template": "activity"
+    },
+    {
+      "file": "activities/kayaking_01.jpg",
+      "category": "activities",
+      "subject": "Kayaking in India",
+      "state": null,
+      "destination": null,
+      "tags": [
+        "kayaking",
+        "adventure",
+        "india"
+      ],
+      "caption_template": "activity"
+    },
+    {
+      "file": "activities/rock_climbing_01.jpg",
+      "category": "activities",
+      "subject": "Rock Climbing in India",
+      "state": null,
+      "destination": null,
+      "tags": [
+        "rock_climbing",
+        "adventure",
+        "india"
+      ],
+      "caption_template": "activity"
+    },
+    {
+      "file": "activities/skiing_01.jpg",
+      "category": "activities",
+      "subject": "Skiing in India",
+      "state": null,
+      "destination": null,
+      "tags": [
+        "skiing",
+        "adventure",
+        "india"
+      ],
+      "caption_template": "activity"
+    },
+    {
+      "file": "activities/wildlife_safari_01.jpg",
+      "category": "activities",
+      "subject": "Wildlife Safari in India",
+      "state": null,
+      "destination": null,
+      "tags": [
+        "wildlife_safari",
+        "adventure",
+        "india"
+      ],
+      "caption_template": "activity"
+    },
+    {
+      "file": "activities/surfing_01.jpg",
+      "category": "activities",
+      "subject": "Surfing in India",
+      "state": null,
+      "destination": null,
+      "tags": [
+        "surfing",
+        "adventure",
+        "india"
+      ],
+      "caption_template": "activity"
+    },
+    {
+      "file": "seasons/monsoon_01.jpg",
+      "category": "seasons",
+      "subject": "Monsoon in India",
+      "state": null,
+      "destination": null,
+      "tags": [
+        "monsoon",
+        "season",
+        "best_time"
+      ],
+      "caption_template": "season"
+    },
+    {
+      "file": "seasons/winter_01.jpg",
+      "category": "seasons",
+      "subject": "Winter in India",
+      "state": null,
+      "destination": null,
+      "tags": [
+        "winter",
+        "season",
+        "best_time"
+      ],
+      "caption_template": "season"
+    },
+    {
+      "file": "seasons/spring_01.jpg",
+      "category": "seasons",
+      "subject": "Spring in India",
+      "state": null,
+      "destination": null,
+      "tags": [
+        "spring",
+        "season",
+        "best_time"
+      ],
+      "caption_template": "season"
+    },
+    {
+      "file": "seasons/summer_01.jpg",
+      "category": "seasons",
+      "subject": "Summer in India",
+      "state": null,
+      "destination": null,
+      "tags": [
+        "summer",
+        "season",
+        "best_time"
+      ],
+      "caption_template": "season"
+    },
+    {
+      "file": "seasons/autumn_01.jpg",
+      "category": "seasons",
+      "subject": "Autumn in India",
+      "state": null,
+      "destination": null,
+      "tags": [
+        "autumn",
+        "season",
+        "best_time"
+      ],
+      "caption_template": "season"
+    },
+    {
+      "file": "seasons/diwali_01.jpg",
+      "category": "seasons",
+      "subject": "Diwali in India",
+      "state": null,
+      "destination": null,
+      "tags": [
+        "diwali",
+        "season",
+        "best_time"
+      ],
+      "caption_template": "season"
+    },
+    {
+      "file": "food/lucknow_UP_01.jpg",
+      "category": "food",
+      "subject": "Lucknow Food Trail",
+      "state": "UP",
+      "destination": "lucknow",
+      "tags": [
+        "food",
+        "lucknow",
+        "cuisine",
+        "street_food"
+      ],
+      "caption_template": "food_city"
+    },
+    {
+      "file": "food/amritsar_PB_01.jpg",
+      "category": "food",
+      "subject": "Amritsar Food Trail",
+      "state": "PB",
+      "destination": "amritsar",
+      "tags": [
+        "food",
+        "amritsar",
+        "cuisine",
+        "street_food"
+      ],
+      "caption_template": "food_city"
+    },
+    {
+      "file": "food/kolkata_WB_01.jpg",
+      "category": "food",
+      "subject": "Kolkata Food Trail",
+      "state": "WB",
+      "destination": "kolkata",
+      "tags": [
+        "food",
+        "kolkata",
+        "cuisine",
+        "street_food"
+      ],
+      "caption_template": "food_city"
+    },
+    {
+      "file": "food/chennai_TN_01.jpg",
+      "category": "food",
+      "subject": "Chennai Food Trail",
+      "state": "TN",
+      "destination": "chennai",
+      "tags": [
+        "food",
+        "chennai",
+        "cuisine",
+        "street_food"
+      ],
+      "caption_template": "food_city"
+    },
+    {
+      "file": "food/delhi_DL_01.jpg",
+      "category": "food",
+      "subject": "Delhi Street Food",
+      "state": "DL",
+      "destination": "delhi",
+      "tags": [
+        "food",
+        "delhi",
+        "cuisine",
+        "street_food"
+      ],
+      "caption_template": "food_city"
+    },
+    {
+      "file": "food/jaipur_RJ_01.jpg",
+      "category": "food",
+      "subject": "Rajasthani Thali",
+      "state": "RJ",
+      "destination": "jaipur",
+      "tags": [
+        "food",
+        "jaipur",
+        "cuisine",
+        "street_food"
+      ],
+      "caption_template": "food_city"
+    },
+    {
+      "file": "food/goa_GA_01.jpg",
+      "category": "food",
+      "subject": "Goa Food Trail",
+      "state": "GA",
+      "destination": "goa",
+      "tags": [
+        "food",
+        "goa",
+        "cuisine",
+        "street_food"
+      ],
+      "caption_template": "food_city"
+    },
+    {
+      "file": "food/mumbai_MH_01.jpg",
+      "category": "food",
+      "subject": "Mumbai Street Food",
+      "state": "MH",
+      "destination": "mumbai",
+      "tags": [
+        "food",
+        "mumbai",
+        "cuisine",
+        "street_food"
+      ],
+      "caption_template": "food_city"
+    },
+    {
+      "file": "festivals/holi_01.jpg",
+      "category": "festivals",
+      "subject": "Holi in India",
+      "state": null,
+      "destination": null,
+      "tags": [
+        "holi",
+        "festival",
+        "culture",
+        "india"
+      ],
+      "caption_template": "festival"
+    },
+    {
+      "file": "festivals/diwali_01.jpg",
+      "category": "festivals",
+      "subject": "Diwali in India",
+      "state": null,
+      "destination": null,
+      "tags": [
+        "diwali",
+        "festival",
+        "culture",
+        "india"
+      ],
+      "caption_template": "festival"
+    },
+    {
+      "file": "festivals/pushkar_fair_01.jpg",
+      "category": "festivals",
+      "subject": "Pushkar Fair in India",
+      "state": null,
+      "destination": null,
+      "tags": [
+        "pushkar_fair",
+        "festival",
+        "culture",
+        "india"
+      ],
+      "caption_template": "festival"
+    },
+    {
+      "file": "festivals/durga_puja_01.jpg",
+      "category": "festivals",
+      "subject": "Durga Puja in India",
+      "state": null,
+      "destination": null,
+      "tags": [
+        "durga_puja",
+        "festival",
+        "culture",
+        "india"
+      ],
+      "caption_template": "festival"
+    },
+    {
+      "file": "festivals/onam_01.jpg",
+      "category": "festivals",
+      "subject": "Onam in India",
+      "state": null,
+      "destination": null,
+      "tags": [
+        "onam",
+        "festival",
+        "culture",
+        "india"
+      ],
+      "caption_template": "festival"
+    },
+    {
+      "file": "festivals/ganesh_chaturthi_01.jpg",
+      "category": "festivals",
+      "subject": "Ganesh Chaturthi in India",
+      "state": null,
+      "destination": null,
+      "tags": [
+        "ganesh_chaturthi",
+        "festival",
+        "culture",
+        "india"
+      ],
+      "caption_template": "festival"
     }
-  ],
-  "prompt_templates": {
-    "mood_shots": {
-      "description": "Dreamy destination mood posters — single stunning image, minimal text",
-      "subjects": [
-        {"dest": "varanasi", "state": "UP", "prompt": "Varanasi ghats at dawn, golden sunrise reflecting off the Ganges, ancient temples silhouetted, smoke from morning rituals, rowing boat on still water. Spiritual, timeless, cinematic."},
-        {"dest": "goa_beaches", "state": "GA", "prompt": "Empty Goa beach at sunset, golden sand with gentle waves, palm tree silhouettes, pink-orange sky, a single beach shack with warm lights. Tropical paradise, relaxed vibes."},
-        {"dest": "leh_ladakh", "state": "LA", "prompt": "Pangong Lake at twilight, impossible blue water reflecting snow-capped mountains, clear starry sky beginning to appear, dramatic Ladakh landscape. Otherworldly, vast, serene."},
-        {"dest": "darjeeling", "state": "WB", "prompt": "Darjeeling tea gardens at sunrise with Kanchenjunga visible in background, layers of green tea bushes with golden morning light, mist in valleys below. Classic, serene."},
-        {"dest": "alleppey", "state": "KL", "prompt": "Kerala backwaters at golden hour, traditional houseboat gliding through calm palm-lined canals, mirror reflection in water, warm tropical light. Peaceful, idyllic."},
-        {"dest": "hampi", "state": "KA", "prompt": "Hampi boulder landscape at sunset, massive ancient granite boulders with Virupaksha temple in distance, golden-orange light, dramatic scale. Ancient, majestic."},
-        {"dest": "udaipur", "state": "RJ", "prompt": "Lake Pichola at blue hour, City Palace illuminated reflecting in still water, boats moored, Aravalli hills silhouetted. Romantic, regal, timeless."},
-        {"dest": "rishikesh", "state": "UK", "prompt": "Rishikesh at dawn, Ganges flowing turquoise through forested valley, Lakshman Jhula bridge in distance, morning fog, spiritual energy. Adventurous yet peaceful."},
-        {"dest": "coorg", "state": "KA", "prompt": "Coorg coffee plantation at misty morning, rows of coffee plants under shade trees, worker with basket walking through, golden light filtering through canopy. Rich, earthy."},
-        {"dest": "rann_of_kutch", "state": "GJ", "prompt": "White Rann of Kutch at full moon night, endless white salt desert stretching to horizon, moonlight creating ethereal glow, starry sky. Surreal, otherworldly, vast."},
-        {"dest": "spiti", "state": "HP", "prompt": "Spiti Valley monastery perched on cliff edge, barren dramatic mountain landscape, deep blue sky, prayer flags fluttering, ancient Buddhist architecture against stark terrain. Remote, spiritual."},
-        {"dest": "andaman", "state": "AN", "prompt": "Radhanagar Beach Andaman at sunset, pristine white sand meeting turquoise crystal water, tropical forest behind, dramatic clouds lit orange-pink. Paradise found."},
-        {"dest": "meghalaya", "state": "ML", "prompt": "Living root bridge in Meghalaya rainforest, ancient tree roots woven into natural bridge over crystal stream, lush green canopy, dappled light. Magical, organic, unique."},
-        {"dest": "jodhpur", "state": "RJ", "prompt": "Blue city Jodhpur from Mehrangarh Fort, endless blue-painted houses stretching below, warm golden fort walls in foreground, clear sky. Iconic, colorful, dramatic."},
-        {"dest": "mysore", "state": "KA", "prompt": "Mysore Palace illuminated at night, 100000 lightbulbs creating golden glow, ornate Indo-Saracenic architecture, dramatic night sky. Royal, magnificent, festive."}
-      ]
-    },
-    "color_palettes": {
-      "description": "Destination color palette cards — photo + extracted color swatches",
-      "subjects": [
-        {"dest": "jodhpur", "state": "RJ", "colors": "cerulean blues, indigo, white, sandstone gold, sky blue", "title": "THE COLORS OF JODHPUR"},
-        {"dest": "varanasi", "state": "UP", "colors": "saffron, deep red, marigold gold, river blue, smoke grey", "title": "THE COLORS OF VARANASI"},
-        {"dest": "kerala_monsoon", "state": "KL", "colors": "emerald green, moss, silver rain, coconut brown, laterite red", "title": "MONSOON KERALA"},
-        {"dest": "goa_sunset", "state": "GA", "colors": "coral pink, ocean teal, sand gold, palm green, sunset orange", "title": "GOA AT GOLDEN HOUR"},
-        {"dest": "ladakh", "state": "LA", "colors": "monastery red, desert brown, pangong blue, snow white, sky indigo", "title": "THE COLORS OF LADAKH"},
-        {"dest": "hampi", "state": "KA", "colors": "boulder grey, sunset orange, temple gold, banana green, dusty rose", "title": "THE COLORS OF HAMPI"},
-        {"dest": "darjeeling", "state": "WB", "colors": "tea green, Kanchenjunga white, colonial cream, morning gold, misty grey", "title": "THE COLORS OF DARJEELING"},
-        {"dest": "kutch", "state": "GJ", "colors": "salt white, desert gold, embroidery red, mirror silver, indigo blue", "title": "THE COLORS OF KUTCH"},
-        {"dest": "coorg", "state": "KA", "colors": "coffee brown, plantation green, pepper black, mist white, earth red", "title": "THE COLORS OF COORG"},
-        {"dest": "udaipur", "state": "RJ", "colors": "lake blue, palace white, Aravalli green, sunset pink, marble grey", "title": "THE COLORS OF UDAIPUR"}
-      ]
-    },
-    "this_or_that": {
-      "description": "Split comparison cards — engagement-driven, two options side by side",
-      "subjects": [
-        {"a": "Forts", "b": "Temples", "desc_a": "Rajasthani sandstone fort at sunset", "desc_b": "South Indian temple with ornate gopuram"},
-        {"a": "Solo Trip", "b": "Family Trip", "desc_a": "Solo backpacker on mountain trail", "desc_b": "Happy family at beach resort"},
-        {"a": "Street Food", "b": "Fine Dining", "desc_a": "Vibrant Indian street food stall at night", "desc_b": "Elegant plated dish at heritage restaurant"},
-        {"a": "Sunrise", "b": "Sunset", "desc_a": "Golden sunrise over Himalayan peaks", "desc_b": "Dramatic sunset over Arabian Sea"},
-        {"a": "Monsoon", "b": "Winter", "desc_a": "Lush green monsoon waterfall Western Ghats", "desc_b": "Snow-covered village in Kashmir"},
-        {"a": "Lakes", "b": "Rivers", "desc_a": "Mirror-still mountain lake reflecting peaks", "desc_b": "Rushing turquoise river through gorge"},
-        {"a": "Heritage Walk", "b": "Nature Trek", "desc_a": "Ancient fort/haveli corridor with warm light", "desc_b": "Trekking trail through alpine meadow"},
-        {"a": "Chai", "b": "Coffee", "desc_a": "Steaming chai in clay kulhad at roadside stall", "desc_b": "Fresh filter coffee in Coorg plantation"},
-        {"a": "Desert", "b": "Jungle", "desc_a": "Camel safari in Thar desert golden dunes sunset", "desc_b": "Tiger in dense Ranthambore forest"},
-        {"a": "Backpacking", "b": "Luxury", "desc_a": "Backpacker at cheap hostel rooftop with view", "desc_b": "Heritage palace hotel with pool overlooking lake"}
-      ]
-    },
-    "collections": {
-      "description": "Collection showcase grids — 4 photos representing a NakshIQ collection",
-      "subjects": [
-        {"collection": "unesco-north-india", "title": "UNESCO NORTH INDIA", "scenes": "Taj Mahal, Qutub Minar, Fatehpur Sikri, Jantar Mantar"},
-        {"collection": "best-beaches-india", "title": "INDIA'S BEST BEACHES", "scenes": "Goa beach, Andaman turquoise water, Varkala cliff beach, Gokarna"},
-        {"collection": "weekend-from-delhi", "title": "WEEKENDS FROM DELHI", "scenes": "Rishikesh rafting, Jaipur palace, Jim Corbett safari, Agra Taj"},
-        {"collection": "weekend-from-mumbai", "title": "WEEKENDS FROM MUMBAI", "scenes": "Lonavala waterfalls, Alibaug beach, Mahabaleshwar hills, Goa road"},
-        {"collection": "wildlife-safari", "title": "INDIA WILDLIFE SAFARI", "scenes": "Tiger Ranthambore, elephant Periyar, one-horned rhino Kaziranga, leopard"},
-        {"collection": "spiritual-circuit", "title": "SPIRITUAL INDIA", "scenes": "Varanasi aarti, Golden Temple Amritsar, Rishikesh yoga, Bodh Gaya"},
-        {"collection": "monsoon-magic", "title": "MONSOON MAGIC", "scenes": "Western Ghats waterfalls, Kerala backwaters rain, Meghalaya clouds, Coorg mist"},
-        {"collection": "luxury-heritage-stays", "title": "HERITAGE STAYS", "scenes": "Rajasthan palace hotel, Kerala houseboat, Himalayan resort, Goa villa"},
-        {"collection": "goa-beyond-beaches", "title": "GOA BEYOND BEACHES", "scenes": "Old Goa church, spice plantation, night market, mangrove kayak"},
-        {"collection": "northeast-first-timer", "title": "NORTHEAST INDIA", "scenes": "Tawang monastery, Kaziranga rhino, Cherrapunji falls, Ziro valley"}
-      ]
-    },
-    "activities": {
-      "description": "Activity mood posters — single dramatic action shot",
-      "subjects": [
-        {"activity": "camping", "prompt": "Tent pitched on mountain ridge at night, milky way visible, campfire glow, Himalayan silhouette. Adventurous, peaceful, epic."},
-        {"activity": "rafting", "prompt": "White water rafting on Ganges at Rishikesh, dramatic rapids, excited faces, lush green valley walls. Adrenaline, adventure, teamwork."},
-        {"activity": "paragliding", "prompt": "Paraglider soaring over Bir Billing valley, bird's eye view of patchwork fields and Himalayas, golden hour. Freedom, flight, scale."},
-        {"activity": "diving", "prompt": "Scuba diver exploring coral reef in Andaman Islands, crystal clear turquoise water, tropical fish, sunlight beams. Underwater paradise."},
-        {"activity": "cycling", "prompt": "Cyclist on mountain road in Ladakh, dramatic barren landscape, snow peaks, clear blue sky, long empty highway. Endurance, solitude, epic."},
-        {"activity": "kayaking", "prompt": "Kayaker on calm backwaters in Kerala, palm trees reflecting, golden morning light, single paddle stroke creating ripples. Serene adventure."},
-        {"activity": "rock_climbing", "prompt": "Rock climber on granite face at Hampi, ancient boulder landscape below, warm sunset light on rock. Strength meets history."},
-        {"activity": "skiing", "prompt": "Skier carving through fresh powder in Gulmarg, snow-covered pines, bright blue sky, Kashmir Himalayas in background. Winter thrill."},
-        {"activity": "wildlife_safari", "prompt": "Open jeep safari in Ranthambore, tiger walking across trail, dry deciduous forest, ancient fort visible on hill above. Wild India."},
-        {"activity": "surfing", "prompt": "Surfer riding wave at Kovalam beach, golden sunset behind, palm-lined shore, warm tropical water. India's surf culture emerging."}
-      ]
-    },
-    "seasons": {
-      "description": "Seasonal mood posters — best time to travel visuals",
-      "subjects": [
-        {"season": "monsoon", "prompt": "Torrential rain over Western Ghats, waterfalls cascading down misty green cliffs, winding road disappearing into clouds. Deep emeralds, silver rain, dramatic."},
-        {"season": "winter", "prompt": "Snow-covered Himalayan village at dawn, smoke rising from chimneys, frozen stream, warm golden light on snow. Cozy, remote, magical."},
-        {"season": "spring", "prompt": "Valley of Flowers Uttarakhand in full bloom, carpets of wildflowers in every color against snow peaks, blue sky, butterflies. Rebirth, color explosion."},
-        {"season": "summer", "prompt": "Hill station escape — Shimla/Manali colonial building surrounded by deodars, cool blue mountains in background, clear sky, families walking. Refreshing retreat."},
-        {"season": "autumn", "prompt": "Kashmir autumn, Chinar trees in blazing red-orange-gold, Dal Lake reflection, Mughal garden, warm low sunlight. India's most beautiful season."},
-        {"season": "diwali", "prompt": "Varanasi during Diwali, thousands of oil lamps (diyas) floating on Ganges, golden light reflections, Dev Deepawali spectacle. Magical, spiritual, breathtaking."}
-      ]
-    },
-    "food": {
-      "description": "Food city/region posters — mouthwatering food photography",
-      "subjects": [
-        {"city": "lucknow", "state": "UP", "title": "LUCKNOW FOOD TRAIL", "prompt": "Lucknowi kebabs and biryani spread, tunday kebab, nihari, ornate Nawabi plate setting, warm moody lighting. Rich, royal, aromatic."},
-        {"city": "amritsar", "state": "PB", "title": "AMRITSAR FOOD TRAIL", "prompt": "Amritsari kulcha, butter chicken, lassi, street food spread at Katra Ahluwalia, warm golden light. Generous, buttery, iconic."},
-        {"city": "kolkata", "state": "WB", "title": "KOLKATA FOOD TRAIL", "prompt": "Bengali food spread: mishti doi, fish curry, puchka, Kathi roll, rasgulla, on traditional plates. Sweet, savory, cultural."},
-        {"city": "chennai", "state": "TN", "title": "CHENNAI FOOD TRAIL", "prompt": "South Indian breakfast: crispy dosa on banana leaf, sambar, coconut chutney, filter coffee, idli. Steaming, fresh, traditional."},
-        {"city": "delhi", "state": "DL", "title": "DELHI STREET FOOD", "prompt": "Chandni Chowk street food panorama: paranthas, chole bhature, jalebi, chaat, bustling narrow lane with food stalls. Chaotic, delicious, iconic."},
-        {"city": "rajasthan", "state": "RJ", "title": "RAJASTHANI THALI", "prompt": "Full Rajasthani thali from above: dal baati churma, gatte ki sabzi, ker sangri, bajra roti, 15 small bowls on steel plate. Colorful, generous, royal."},
-        {"city": "goa", "state": "GA", "title": "GOA FOOD TRAIL", "prompt": "Goan seafood spread: fish curry rice, prawn balchao, bebinca, feni, on rustic wooden table near beach. Coastal, spicy, laid-back."},
-        {"city": "mumbai", "state": "MH", "title": "MUMBAI STREET FOOD", "prompt": "Mumbai street food: vada pav, pav bhaji, bhel puri, cutting chai, at beach-side stall at sunset. Fast, flavorful, iconic."}
-      ]
-    },
-    "festivals": {
-      "description": "Festival visual posters — cultural celebration imagery",
-      "subjects": [
-        {"festival": "holi", "prompt": "Holi celebration, explosion of colorful powder in air, joyful faces, Mathura/Vrindavan temple background. Vibrant, ecstatic, cultural."},
-        {"festival": "diwali", "prompt": "Diwali night, thousands of diyas, rangoli, fireworks over temple silhouette, warm golden-orange glow. Magical, festive, spiritual."},
-        {"festival": "pushkar_fair", "prompt": "Pushkar Camel Fair at sunset, thousands of camels, colorful Rajasthani turbans, desert horizon, golden light. Cultural spectacle."},
-        {"festival": "durga_puja", "prompt": "Kolkata Durga Puja pandal at night, ornate goddess idol, dramatic lighting, crowds, artistic installation. Grand, devotional, artistic."},
-        {"festival": "onam", "prompt": "Onam celebration in Kerala, boat race on backwaters, flower carpet (pookalam), sadya feast on banana leaf. Traditional, colorful, joyful."},
-        {"festival": "ganesh_chaturthi", "prompt": "Ganesh Chaturthi visarjan procession in Mumbai, massive decorated idol, dancing crowds, colored powder, monsoon sky. Energy, devotion, spectacle."}
-      ]
-    }
-  }
+  ]
 }
