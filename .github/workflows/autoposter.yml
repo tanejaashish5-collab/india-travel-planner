@@ -182,4 +182,14 @@ jobs:
           git config user.email "autoposter@nakshiq.com"
           git add nakshiq-autoposter/state.json nakshiq-autoposter/autoposter.log nakshiq-autoposter/analytics.json
           git diff --staged --quiet || git commit -m "chore: autoposter state $(date -u +'%Y-%m-%d %H:%M UTC')"
-          git push
+
+          # Retry push with rebase to handle concurrent pushes (e.g. manual commits)
+          for attempt in 1 2 3; do
+            if git push; then
+              echo "Push succeeded (attempt $attempt)"
+              break
+            fi
+            echo "Push failed (attempt $attempt), pulling with rebase and retrying..."
+            git pull --rebase origin main
+            sleep $((attempt * 2))
+          done
