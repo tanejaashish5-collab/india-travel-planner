@@ -782,7 +782,471 @@
           "posted_url": ""
         }
       ]
+    },
+    {
+      "post_id": "kcoph",
+      "created_at": "2026-04-19T11:28:08.320Z",
+      "content_type": "yt_short",
+      "format": "listicle",
+      "campaign": "weekly-picks",
+      "platforms": [
+        {
+          "platform": "youtube",
+          "username": "@naksh-iq",
+          "status": "failed",
+          "error": "Error publishing post to YouTube: Failed to initiate YouTube resumable upload: 401 - \"{\\\"error\\\":{\\\"code\\\":401,\\\"message\\\":\\\"Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.\\\",\\\"errors\\\":[{\\\"message\\\":\\\"Invalid Credentials\\\",\\\"domain\\\":\\\"global\\\",\\\"reason\\\":\\\"authError\\\",\\\"location\\\":\\\"Authorization\\\",\\\"locationType\\\":\\\"header\\\"}],\\\"status\\\":\\\"UNAUTHENTICATED\\\"}}\"",
+          "posted_url": ""
+        }
+      ]
+    },
+    {
+      "post_id": "3oD1k",
+      "created_at": "2026-04-19T11:28:05.903Z",
+      "content_type": "yt_short",
+      "format": "listicle",
+      "campaign": "",
+      "platforms": [
+        {
+          "platform": "instagram",
+          "username": "nakshiq",
+          "status": "published",
+          "error": null,
+          "posted_url": ""
+        }
+      ]
+    },
+    {
+      "post_id": "WxgIz",
+      "created_at": "2026-04-19T11:11:33.868Z",
+      "content_type": "yt_short",
+      "format": "before",
+      "campaign": "before-after",
+      "platforms": [
+        {
+          "platform": "youtube",
+          "username": "@naksh-iq",
+          "status": "failed",
+          "error": "Error publishing post to YouTube: Failed to initiate YouTube resumable upload: 401 - \"{\\\"error\\\":{\\\"code\\\":401,\\\"message\\\":\\\"Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.\\\",\\\"errors\\\":[{\\\"message\\\":\\\"Invalid Credentials\\\",\\\"domain\\\":\\\"global\\\",\\\"reason\\\":\\\"authError\\\",\\\"location\\\":\\\"Authorization\\\",\\\"locationType\\\":\\\"header\\\"}],\\\"status\\\":\\\"UNAUTHENTICATED\\\"}}\"",
+          "posted_url": ""
+        }
+      ]
+    },
+    {
+      "post_id": "EOdvA",
+      "created_at": "2026-04-19T11:11:31.474Z",
+      "content_type": "yt_short",
+      "format": "before",
+      "campaign": "",
+      "platforms": [
+        {
+          "platform": "instagram",
+          "username": "nakshiq",
+          "status": "published",
+          "error": null,
+          "posted_url": ""
+        }
+      ]
+    },
+    {
+      "post_id": "kcDGh",
+      "created_at": "2026-04-19T10:13:11.018Z",
+      "content_type": "feed_post",
+      "format": "unknown",
+      "campaign": "carousel",
+      "platforms": [
+        {
+          "platform": "facebook",
+          "username": "Nakshiq",
+          "status": "published",
+          "error": null,
+          "posted_url": ""
+        }
+      ]
+    },
+    {
+      "post_id": "3o5Tk",
+      "created_at": "2026-04-19T10:12:21.123Z",
+      "content_type": "feed_post",
+      "format": "unknown",
+      "campaign": "",
+      "platforms": [
+        {
+          "platform": "instagram",
+          "username": "nakshiq",
+          "status": "failed",
+          "error": "Error publishing Instagram post: Failed to publish Instagram container: 400 - {\"error\":{\"message\":\"Media ID is not available\",\"type\":\"OAuthException\",\"code\":9007,\"error_subcode\":2207027,\"is_transient\":false,\"error_user_title\":\"Impossible de publier\",\"error_user_msg\":\"Le contenu n\u2019est pas pr\u00eat \u00e0 \u00eatre publi\u00e9, patientez un peu\",\"fbtrace_id\":\"AbUr8ZNlKXHPjFmTp6025Fl\"}}",
+          "posted_url": ""
+        }
+      ]
+    },
+    {
+      "post_id": "LZCzV",
+      "created_at": "2026-04-19T10:11:18.105Z",
+      "content_type": "feed_post",
+      "format": "unknown",
+      "campaign": "carousel",
+      "platforms": [
+        {
+          "platform": "instagram",
+          "username": "nakshiq",
+          "status": "failed",
+          "error": "Error publishing Instagram post: Failed to publish Instagram container: 403 - {\"error\":{\"message\":\"Application request limit reached\",\"type\":\"OAuthException\",\"is_transient\":false,\"code\":4,\"error_subcode\":2207051,\"error_user_title\":\"l\u2019action est bloqu\u00e9e\",\"error_user_msg\":\"Nous restreignons certaines activit\u00e9s afin de prot\u00e9ger notre communaut\u00e9. Si vous pensez que nous avons fait erreur, faites-le-nous savoir.\",\"fbtrace_id\":\"Aq67l4z-yBdO2JFK0FvaGkH\"}}",
+          "posted_url": ""
+        }
+      ]
+    },
+    {
+      "post_id": "5pT3D",
+      "created_at": "2026-04-19T09:49:37.023Z",
+      "content_type": "canva_visual",
+      "format": "unknown",
+      "campaign": "",
+      "platforms": [
+        {
+          "platform": "facebook",
+          "username": "Nakshiq",
+          "status": "published",
+          "error": null,
+          "posted_url": ""
+        }
+      ]
+    },
+    {
+      "post_id": "2HYrS",
+      "created_at": "2026-04-19T09:49:34.540Z",
+      "content_type": "canva_visual",
+      "format": "unknown",
+      "campaign": "",
+      "platforms": [
+        {
+          "platform": "instagram",
+          "username": "nakshiq",
+          "status": "published",
+          "error": null,
+          "posted_url": ""
+        }
+      ]
+    },
+    {
+      "post_id": "7gtnW",
+      "created_at": "2026-04-19T07:28:19.268Z",
+      "content_type": "canva_visual",
+      "format": "unknown",
+      "campaign": "",
+      "platforms": [
+        {
+          "platform": "facebook",
+          "username": "Nakshiq",
+          "status": "published",
+          "error": null,
+          "posted_url": ""
+        }
+      ]
+    },
+    {
+      "post_id": "4J9Ri",
+      "created_at": "2026-04-19T07:28:16.186Z",
+      "content_type": "canva_visual",
+      "format": "unknown",
+      "campaign": "",
+      "platforms": [
+        {
+          "platform": "instagram",
+          "username": "nakshiq",
+          "status": "failed",
+          "error": "Error publishing Instagram post: Failed to publish Instagram container: 400 - {\"error\":{\"message\":\"Media ID is not available\",\"type\":\"OAuthException\",\"code\":9007,\"error_subcode\":2207027,\"is_transient\":false,\"error_user_title\":\"Impossible de publier\",\"error_user_msg\":\"Le contenu n\u2019est pas pr\u00eat \u00e0 \u00eatre publi\u00e9, patientez un peu\",\"fbtrace_id\":\"A4bbxSj00U7kiWN3UvDzP1q\"}}",
+          "posted_url": ""
+        }
+      ]
+    },
+    {
+      "post_id": "JDsT3",
+      "created_at": "2026-04-19T07:28:09.255Z",
+      "content_type": "tourist_map",
+      "format": "unknown",
+      "campaign": "",
+      "platforms": [
+        {
+          "platform": "facebook",
+          "username": "Nakshiq",
+          "status": "published",
+          "error": null,
+          "posted_url": ""
+        }
+      ]
+    },
+    {
+      "post_id": "p0EvM",
+      "created_at": "2026-04-19T07:28:07.438Z",
+      "content_type": "tourist_map",
+      "format": "unknown",
+      "campaign": "",
+      "platforms": [
+        {
+          "platform": "instagram",
+          "username": "nakshiq",
+          "status": "published",
+          "error": null,
+          "posted_url": ""
+        }
+      ]
+    },
+    {
+      "post_id": "MqEkC",
+      "created_at": "2026-04-19T05:41:31.364Z",
+      "content_type": "reel",
+      "format": "seasonal",
+      "campaign": "reel",
+      "platforms": [
+        {
+          "platform": "youtube",
+          "username": "@naksh-iq",
+          "status": "failed",
+          "error": "Error publishing post to YouTube: Failed to initiate YouTube resumable upload: 401 - \"{\\\"error\\\":{\\\"code\\\":401,\\\"message\\\":\\\"Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.\\\",\\\"errors\\\":[{\\\"message\\\":\\\"Invalid Credentials\\\",\\\"domain\\\":\\\"global\\\",\\\"reason\\\":\\\"authError\\\",\\\"location\\\":\\\"Authorization\\\",\\\"locationType\\\":\\\"header\\\"}],\\\"status\\\":\\\"UNAUTHENTICATED\\\"}}\"",
+          "posted_url": ""
+        }
+      ]
+    },
+    {
+      "post_id": "vlXbg",
+      "created_at": "2026-04-19T05:41:28.731Z",
+      "content_type": "reel",
+      "format": "seasonal",
+      "campaign": "reel",
+      "platforms": [
+        {
+          "platform": "facebook",
+          "username": "Nakshiq",
+          "status": "published",
+          "error": null,
+          "posted_url": ""
+        }
+      ]
+    },
+    {
+      "post_id": "aAp9b",
+      "created_at": "2026-04-19T05:41:25.976Z",
+      "content_type": "reel",
+      "format": "seasonal",
+      "campaign": "reel",
+      "platforms": [
+        {
+          "platform": "instagram",
+          "username": "nakshiq",
+          "status": "published",
+          "error": null,
+          "posted_url": ""
+        }
+      ]
+    },
+    {
+      "post_id": "lUjpK",
+      "created_at": "2026-04-19T04:41:16.754Z",
+      "content_type": "feed_post",
+      "format": "unknown",
+      "campaign": "score-card",
+      "platforms": [
+        {
+          "platform": "facebook",
+          "username": "Nakshiq",
+          "status": "published",
+          "error": null,
+          "posted_url": ""
+        }
+      ]
+    },
+    {
+      "post_id": "4JKJi",
+      "created_at": "2026-04-19T03:33:01.751Z",
+      "content_type": "feed_post",
+      "format": "unknown",
+      "campaign": "score-card",
+      "platforms": [
+        {
+          "platform": "instagram",
+          "username": "nakshiq",
+          "status": "published",
+          "error": null,
+          "posted_url": ""
+        }
+      ]
+    },
+    {
+      "post_id": "r2OX4",
+      "created_at": "2026-04-18T11:35:32.943Z",
+      "content_type": "yt_short",
+      "format": "dont",
+      "campaign": "dont-go-here",
+      "platforms": [
+        {
+          "platform": "youtube",
+          "username": "@naksh-iq",
+          "status": "published",
+          "error": null,
+          "posted_url": ""
+        }
+      ]
+    },
+    {
+      "post_id": "Gzcbp",
+      "created_at": "2026-04-18T11:35:27.469Z",
+      "content_type": "yt_short",
+      "format": "dont",
+      "campaign": "",
+      "platforms": [
+        {
+          "platform": "instagram",
+          "username": "nakshiq",
+          "status": "published",
+          "error": null,
+          "posted_url": ""
+        }
+      ]
+    },
+    {
+      "post_id": "WgMuz",
+      "created_at": "2026-04-18T11:34:35.383Z",
+      "content_type": "yt_short",
+      "format": "this",
+      "campaign": "this-vs-that",
+      "platforms": [
+        {
+          "platform": "youtube",
+          "username": "@naksh-iq",
+          "status": "published",
+          "error": null,
+          "posted_url": ""
+        }
+      ]
+    },
+    {
+      "post_id": "Ed1MA",
+      "created_at": "2026-04-18T11:34:30.081Z",
+      "content_type": "yt_short",
+      "format": "this",
+      "campaign": "",
+      "platforms": [
+        {
+          "platform": "instagram",
+          "username": "nakshiq",
+          "status": "published",
+          "error": null,
+          "posted_url": ""
+        }
+      ]
+    },
+    {
+      "post_id": "RT3hH",
+      "created_at": "2026-04-18T11:33:52.348Z",
+      "content_type": "yt_short",
+      "format": "did",
+      "campaign": "did-you-know",
+      "platforms": [
+        {
+          "platform": "youtube",
+          "username": "@naksh-iq",
+          "status": "published",
+          "error": null,
+          "posted_url": ""
+        }
+      ]
+    },
+    {
+      "post_id": "xKqt8",
+      "created_at": "2026-04-18T11:33:46.630Z",
+      "content_type": "yt_short",
+      "format": "did",
+      "campaign": "",
+      "platforms": [
+        {
+          "platform": "instagram",
+          "username": "nakshiq",
+          "status": "published",
+          "error": null,
+          "posted_url": ""
+        }
+      ]
+    },
+    {
+      "post_id": "AOGG7",
+      "created_at": "2026-04-18T11:33:14.406Z",
+      "content_type": "yt_short",
+      "format": "did",
+      "campaign": "did-you-know",
+      "platforms": [
+        {
+          "platform": "youtube",
+          "username": "@naksh-iq",
+          "status": "published",
+          "error": null,
+          "posted_url": ""
+        }
+      ]
+    },
+    {
+      "post_id": "P8FC0",
+      "created_at": "2026-04-18T11:33:10.744Z",
+      "content_type": "yt_short",
+      "format": "did",
+      "campaign": "",
+      "platforms": [
+        {
+          "platform": "instagram",
+          "username": "nakshiq",
+          "status": "published",
+          "error": null,
+          "posted_url": ""
+        }
+      ]
+    },
+    {
+      "post_id": "glP1x",
+      "created_at": "2026-04-18T10:11:26.271Z",
+      "content_type": "feed_post",
+      "format": "unknown",
+      "campaign": "score-card",
+      "platforms": [
+        {
+          "platform": "facebook",
+          "username": "Nakshiq",
+          "status": "published",
+          "error": null,
+          "posted_url": ""
+        }
+      ]
+    },
+    {
+      "post_id": "OBWNv",
+      "created_at": "2026-04-18T10:11:04.003Z",
+      "content_type": "feed_post",
+      "format": "unknown",
+      "campaign": "",
+      "platforms": [
+        {
+          "platform": "instagram",
+          "username": "nakshiq",
+          "status": "published",
+          "error": null,
+          "posted_url": ""
+        }
+      ]
+    },
+    {
+      "post_id": "glPax",
+      "created_at": "2026-04-18T10:10:36.195Z",
+      "content_type": "feed_post",
+      "format": "unknown",
+      "campaign": "score-card",
+      "platforms": [
+        {
+          "platform": "instagram",
+          "username": "nakshiq",
+          "status": "published",
+          "error": null,
+          "posted_url": ""
+        }
+      ]
     }
   ],
-  "last_sync": "2026-04-18T09:16:17.901490"
+  "last_sync": "2026-04-19T19:04:19.293722"
 }
