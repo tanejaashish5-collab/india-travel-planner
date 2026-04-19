@@ -2011,3 +2011,19 @@ Date range: 2026-04-15 → 2026-04-18
 2026-04-18 19:04:29  INFO      ── Syncing Nakshiq content ──────────────────────────────
 2026-04-18 19:04:36  INFO      Synced → 20 destinations · 0 traps · 9 articles · total catalog=480
 2026-04-18 19:04:36  INFO      Sync-only mode. Done.
+2026-04-19 05:27:57  INFO      Stale lock (age=89183s) — overriding.
+2026-04-19 05:27:57  INFO      ════════════════════════════════════════════════════════════
+2026-04-19 05:27:57  INFO      Nakshiq Autoposter · MORNING · 2026-04-19 · weekday=6
+2026-04-19 05:27:57  INFO      ════════════════════════════════════════════════════════════
+2026-04-19 05:27:57  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-04-19 05:28:02  INFO      Synced → 20 destinations · 0 traps · 3 articles · total catalog=480
+2026-04-19 05:28:03  INFO      Active accounts: ['instagram/nakshiq', 'facebook/Nakshiq', 'youtube/@naksh-iq']
+2026-04-19 05:28:05  INFO      Outstand dedup guard: merged 2 remote posts into state.
+2026-04-19 05:28:05  INFO      Formats — IG: infrastructure_truth  ·  FB: infrastructure_truth  ·  Story: score_card
+2026-04-19 05:28:05  INFO      Used destinations (14d): 2
+2026-04-19 05:28:08  INFO      Shared best destination locked: Tirthan Valley
+2026-04-19 05:28:08  INFO      [instagram/nakshiq] Already posted today (morning) — skipping.
+2026-04-19 05:28:08  INFO      [facebook/Nakshiq] Already posted today (morning) — skipping.
+2026-04-19 05:28:08  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-04-19 05:28:08  INFO      State saved. Run complete.
+2026-04-19 05:28:08  INFO      ════════════════════════════════════════════════════════════
