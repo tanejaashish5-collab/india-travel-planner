@@ -11,8 +11,8 @@
       "food",
       "festivals"
     ],
-    "version": 2,
-    "total_images": 84
+    "version": 3,
+    "total_images": 87
   },
   "images": [
     {
@@ -153,6 +153,45 @@
       "caption_template": "activity"
     },
     {
+      "file": "mood_shots/goa_GA_01.jpg",
+      "category": "mood_shots",
+      "subject": "Goa \u2014 Goa",
+      "state": "GA",
+      "destination": "goa",
+      "tags": [
+        "nature",
+        "destination",
+        "mood"
+      ],
+      "caption_template": "mood_destination"
+    },
+    {
+      "file": "mood_shots/cherrapunji_ML_01.jpg",
+      "category": "mood_shots",
+      "subject": "Cherrapunji \u2014 Meghalaya",
+      "state": "ML",
+      "destination": "cherrapunji",
+      "tags": [
+        "nature",
+        "destination",
+        "mood"
+      ],
+      "caption_template": "mood_destination"
+    },
+    {
+      "file": "color_palettes/goa_GA_01.jpg",
+      "category": "color_palettes",
+      "subject": "Goa At Golden Hour",
+      "state": "GA",
+      "destination": "goa",
+      "tags": [
+        "colors",
+        "palette",
+        "design"
+      ],
+      "caption_template": "color_palette"
+    },
+    {
       "file": "mood_shots/varanasi_UP_01.jpg",
       "category": "mood_shots",
       "subject": "Varanasi \u2014 Uttar Pradesh",
@@ -166,11 +205,11 @@
       "caption_template": "mood_destination"
     },
     {
-      "file": "mood_shots/goa_GA_01.jpg",
+      "file": "mood_shots/palolem_GA_01.jpg",
       "category": "mood_shots",
-      "subject": "Goa \u2014 Goa",
+      "subject": "Palolem \u2014 Goa",
       "state": "GA",
-      "destination": "goa",
+      "destination": "palolem",
       "tags": [
         "nature",
         "destination",
@@ -309,11 +348,11 @@
       "caption_template": "mood_destination"
     },
     {
-      "file": "mood_shots/cherrapunji_ML_01.jpg",
+      "file": "mood_shots/shillong_ML_01.jpg",
       "category": "mood_shots",
-      "subject": "Cherrapunji \u2014 Meghalaya",
+      "subject": "Shillong \u2014 Meghalaya",
       "state": "ML",
-      "destination": "cherrapunji",
+      "destination": "shillong",
       "tags": [
         "nature",
         "destination",
@@ -387,11 +426,11 @@
       "caption_template": "color_palette"
     },
     {
-      "file": "color_palettes/goa_GA_01.jpg",
+      "file": "color_palettes/palolem_GA_01.jpg",
       "category": "color_palettes",
       "subject": "Goa At Golden Hour",
       "state": "GA",
-      "destination": "goa",
+      "destination": "palolem",
       "tags": [
         "colors",
         "palette",
@@ -485,9 +524,7 @@
       "destination": null,
       "tags": [
         "engagement",
-        "comparison",
-        "forts",
-        "temples"
+        "comparison"
       ],
       "caption_template": "this_or_that",
       "comparison": [
@@ -503,9 +540,7 @@
       "destination": null,
       "tags": [
         "engagement",
-        "comparison",
-        "solo trip",
-        "family trip"
+        "comparison"
       ],
       "caption_template": "this_or_that",
       "comparison": [
@@ -521,9 +556,7 @@
       "destination": null,
       "tags": [
         "engagement",
-        "comparison",
-        "street food",
-        "fine dining"
+        "comparison"
       ],
       "caption_template": "this_or_that",
       "comparison": [
@@ -539,9 +572,7 @@
       "destination": null,
       "tags": [
         "engagement",
-        "comparison",
-        "sunrise",
-        "sunset"
+        "comparison"
       ],
       "caption_template": "this_or_that",
       "comparison": [
@@ -557,9 +588,7 @@
       "destination": null,
       "tags": [
         "engagement",
-        "comparison",
-        "monsoon",
-        "winter"
+        "comparison"
       ],
       "caption_template": "this_or_that",
       "comparison": [
@@ -575,9 +604,7 @@
       "destination": null,
       "tags": [
         "engagement",
-        "comparison",
-        "lakes",
-        "rivers"
+        "comparison"
       ],
       "caption_template": "this_or_that",
       "comparison": [
@@ -593,9 +620,7 @@
       "destination": null,
       "tags": [
         "engagement",
-        "comparison",
-        "heritage walk",
-        "nature trek"
+        "comparison"
       ],
       "caption_template": "this_or_that",
       "comparison": [
@@ -611,9 +636,7 @@
       "destination": null,
       "tags": [
         "engagement",
-        "comparison",
-        "chai",
-        "coffee"
+        "comparison"
       ],
       "caption_template": "this_or_that",
       "comparison": [
@@ -629,9 +652,7 @@
       "destination": null,
       "tags": [
         "engagement",
-        "comparison",
-        "desert",
-        "jungle"
+        "comparison"
       ],
       "caption_template": "this_or_that",
       "comparison": [
@@ -647,9 +668,7 @@
       "destination": null,
       "tags": [
         "engagement",
-        "comparison",
-        "backpacking",
-        "luxury"
+        "comparison"
       ],
       "caption_template": "this_or_that",
       "comparison": [
@@ -663,7 +682,6 @@
       "subject": "Unesco North India",
       "state": null,
       "destination": null,
-      "collection": "unesco-north-india",
       "tags": [
         "collection",
         "curated",
@@ -677,7 +695,6 @@
       "subject": "India'S Best Beaches",
       "state": null,
       "destination": null,
-      "collection": "best-beaches-india",
       "tags": [
         "collection",
         "curated",
@@ -691,7 +708,6 @@
       "subject": "Weekends From Delhi",
       "state": null,
       "destination": null,
-      "collection": "weekend-from-delhi",
       "tags": [
         "collection",
         "curated",
@@ -705,7 +721,6 @@
       "subject": "Weekends From Mumbai",
       "state": null,
       "destination": null,
-      "collection": "weekend-from-mumbai",
       "tags": [
         "collection",
         "curated",
@@ -719,7 +734,6 @@
       "subject": "India Wildlife Safari",
       "state": null,
       "destination": null,
-      "collection": "wildlife-safari",
       "tags": [
         "collection",
         "curated",
@@ -733,7 +747,6 @@
       "subject": "Spiritual India",
       "state": null,
       "destination": null,
-      "collection": "spiritual-circuit",
       "tags": [
         "collection",
         "curated",
@@ -747,7 +760,6 @@
       "subject": "Monsoon Magic",
       "state": null,
       "destination": null,
-      "collection": "monsoon-magic",
       "tags": [
         "collection",
         "curated",
@@ -761,7 +773,6 @@
       "subject": "Heritage Stays",
       "state": null,
       "destination": null,
-      "collection": "luxury-heritage-stays",
       "tags": [
         "collection",
         "curated",
@@ -775,7 +786,6 @@
       "subject": "Goa Beyond Beaches",
       "state": null,
       "destination": null,
-      "collection": "goa-beyond-beaches",
       "tags": [
         "collection",
         "curated",
@@ -789,7 +799,6 @@
       "subject": "Northeast India",
       "state": null,
       "destination": null,
-      "collection": "northeast-first-timer",
       "tags": [
         "collection",
         "curated",
@@ -1014,8 +1023,7 @@
       "tags": [
         "food",
         "lucknow",
-        "cuisine",
-        "street_food"
+        "cuisine"
       ],
       "caption_template": "food_city"
     },
@@ -1028,8 +1036,7 @@
       "tags": [
         "food",
         "amritsar",
-        "cuisine",
-        "street_food"
+        "cuisine"
       ],
       "caption_template": "food_city"
     },
@@ -1042,8 +1049,7 @@
       "tags": [
         "food",
         "kolkata",
-        "cuisine",
-        "street_food"
+        "cuisine"
       ],
       "caption_template": "food_city"
     },
@@ -1056,8 +1062,7 @@
       "tags": [
         "food",
         "chennai",
-        "cuisine",
-        "street_food"
+        "cuisine"
       ],
       "caption_template": "food_city"
     },
@@ -1070,8 +1075,7 @@
       "tags": [
         "food",
         "delhi",
-        "cuisine",
-        "street_food"
+        "cuisine"
       ],
       "caption_template": "food_city"
     },
@@ -1084,8 +1088,7 @@
       "tags": [
         "food",
         "jaipur",
-        "cuisine",
-        "street_food"
+        "cuisine"
       ],
       "caption_template": "food_city"
     },
@@ -1098,8 +1101,7 @@
       "tags": [
         "food",
         "goa",
-        "cuisine",
-        "street_food"
+        "cuisine"
       ],
       "caption_template": "food_city"
     },
@@ -1112,8 +1114,7 @@
       "tags": [
         "food",
         "mumbai",
-        "cuisine",
-        "street_food"
+        "cuisine"
       ],
       "caption_template": "food_city"
     },
@@ -1126,8 +1127,7 @@
       "tags": [
         "holi",
         "festival",
-        "culture",
-        "india"
+        "culture"
       ],
       "caption_template": "festival"
     },
@@ -1140,8 +1140,7 @@
       "tags": [
         "diwali",
         "festival",
-        "culture",
-        "india"
+        "culture"
       ],
       "caption_template": "festival"
     },
@@ -1154,8 +1153,7 @@
       "tags": [
         "pushkar_fair",
         "festival",
-        "culture",
-        "india"
+        "culture"
       ],
       "caption_template": "festival"
     },
@@ -1168,8 +1166,7 @@
       "tags": [
         "durga_puja",
         "festival",
-        "culture",
-        "india"
+        "culture"
       ],
       "caption_template": "festival"
     },
@@ -1182,8 +1179,7 @@
       "tags": [
         "onam",
         "festival",
-        "culture",
-        "india"
+        "culture"
       ],
       "caption_template": "festival"
     },
@@ -1196,8 +1192,7 @@
       "tags": [
         "ganesh_chaturthi",
         "festival",
-        "culture",
-        "india"
+        "culture"
       ],
       "caption_template": "festival"
     }
