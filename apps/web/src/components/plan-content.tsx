@@ -246,6 +246,12 @@ export function PlanContent({ destinations, states = [] }: PlanContentProps) {
     <div className="space-y-8">
       {/* Header */}
       <div>
+        <Link
+          href={`/${locale}`}
+          className="mb-3 inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors"
+        >
+          <span aria-hidden>←</span> Back to home
+        </Link>
         <h1 className="text-3xl font-bold">Plan Your Trip</h1>
         <p className="mt-1 text-muted-foreground">
           Tell us what you want — we'll find the best matches.
