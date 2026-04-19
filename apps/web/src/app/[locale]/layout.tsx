@@ -46,55 +46,82 @@ export const viewport: Viewport = {
   viewportFit: "cover",
 };
 
-export const metadata: Metadata = {
-  metadataBase: new URL("https://www.nakshiq.com"),
-  verification: {
-    google: "RJwYea5dbs3YYGdeyGe1HtHl_lbmjn8IkZsP4x333bU",
-  },
-  title: {
-    default: "NakshIQ — Travel Intelligence for India",
-    template: "%s | NakshIQ",
-  },
-  manifest: "/manifest.json",
-  icons: {
-    icon: [
-      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
-      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+// Locale-aware metadata — fixes BUG-109 (Hindi pages were shipping English
+// <title>/og:title/og:locale). Uses generateMetadata instead of a static
+// metadata export so we can read the [locale] param.
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const isHindi = locale === "hi";
+
+  const title = isHindi
+    ? "NakshIQ — भारत के लिए यात्रा इंटेलिजेंस"
+    : "NakshIQ — Travel Intelligence for India";
+  const description = isHindi
+    ? "460+ गंतव्य, 1,015+ स्थान — मासिक स्कोर, बच्चों की रेटिंग, सुरक्षा डेटा, और AI-संचालित यात्रा कार्यक्रम। भारत को समझदारी से देखने का साधन।"
+    : "460+ destinations, 1,015+ places with monthly suitability scores, kids ratings, safety data, and AI-powered itineraries. The confidence engine for exploring India.";
+  const ogShortDesc = isHindi
+    ? "460+ गंतव्य, 1,015+ स्थान — मासिक स्कोर, बच्चों की रेटिंग, सुरक्षा डेटा।"
+    : "460+ destinations, 1,015+ places with monthly scores, kids ratings, safety data, and AI itineraries.";
+
+  return {
+    metadataBase: new URL("https://www.nakshiq.com"),
+    verification: {
+      google: "RJwYea5dbs3YYGdeyGe1HtHl_lbmjn8IkZsP4x333bU",
+    },
+    title: {
+      default: title,
+      template: `%s | NakshIQ`,
+    },
+    manifest: "/manifest.json",
+    icons: {
+      icon: [
+        { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+        { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      ],
+      apple: [
+        { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+      ],
+    },
+    description,
+    keywords: [
+      "India travel planner",
+      "North India travel guide",
+      "Ladakh trip planner",
+      "Himachal Pradesh travel",
+      "Kashmir travel guide",
+      "India road trip",
+      "kids friendly India travel",
+      "offbeat India destinations",
+      "India travel encyclopedia",
     ],
-    apple: [
-      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
-    ],
-  },
-  description:
-    "460+ destinations, 1,015+ places with monthly suitability scores, kids ratings, safety data, and AI-powered itineraries. The confidence engine for exploring India.",
-  keywords: [
-    "India travel planner",
-    "North India travel guide",
-    "Ladakh trip planner",
-    "Himachal Pradesh travel",
-    "Kashmir travel guide",
-    "India road trip",
-    "kids friendly India travel",
-    "offbeat India destinations",
-    "India travel encyclopedia",
-  ],
-  openGraph: {
-    title: "NakshIQ — Travel Intelligence for India",
-    description:
-      "460+ destinations, 1,015+ places with monthly scores, kids ratings, safety data, and AI itineraries.",
-    type: "website",
-    locale: "en_IN",
-    siteName: "NakshIQ",
-    url: "https://www.nakshiq.com",
-    images: [{ url: "https://www.nakshiq.com/og-image.jpg", width: 800, height: 450, alt: "NakshIQ — Travel Intelligence for India" }],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "NakshIQ — Travel Intelligence for India",
-    description: "460+ destinations, 1,015+ places with monthly scores, kids ratings, safety data, and AI itineraries.",
-    images: ["https://www.nakshiq.com/og-image.jpg"],
-  },
-};
+    openGraph: {
+      title,
+      description: ogShortDesc,
+      type: "website",
+      locale: isHindi ? "hi_IN" : "en_IN",
+      siteName: "NakshIQ",
+      url: `https://www.nakshiq.com/${locale}`,
+      images: [
+        {
+          url: "https://www.nakshiq.com/og-image.jpg",
+          width: 800,
+          height: 450,
+          alt: title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description: ogShortDesc,
+      images: ["https://www.nakshiq.com/og-image.jpg"],
+    },
+  };
+}
 
 export default async function LocaleLayout({
   children,

@@ -99,14 +99,22 @@ export default async function Home() {
   return (
     <>
       <Nav />
-      <LandingHero
-        featuredDestinations={destinations}
-        collections={collections}
-        routes={routes}
-        stats={stats}
-        festivals={festivals}
-        mapPins={mapPins}
-      />
+      {/* <main> landmark added for accessibility — axe flagged 17 "region"
+          violations on the homepage because primary content sat outside any
+          landmark (BUG-107). Also acts as a belt-and-suspenders skip-link
+          target on /hi/ (BUG-108); the id mirrors the one in PageTransition
+          so the existing <a href="#main-content"> always has somewhere
+          valid to land on both locales. */}
+      <main id="main-content-home">
+        <LandingHero
+          featuredDestinations={destinations}
+          collections={collections}
+          routes={routes}
+          stats={stats}
+          festivals={festivals}
+          mapPins={mapPins}
+        />
+      </main>
       <Footer stats={stats} />
     </>
   );

@@ -218,8 +218,28 @@ export function ExploreGrid({
       </StaggerContainer>
 
       {visibleCount < sorted.length && (
-        <div ref={sentinelRef} className="py-10 text-center text-xs text-muted-foreground/60">
-          Loading more destinations…
+        // Always render a real, clickable Load-more button alongside the
+        // IntersectionObserver sentinel. Automated browsers and certain
+        // viewport/layout conditions don't always fire the observer, which
+        // left the grid stuck at 48 of 480 in QA (BUG-102). The button is
+        // a deterministic fallback and doubles as a visible affordance for
+        // users who want to jump ahead without scrolling.
+        <div ref={sentinelRef} className="mt-8 flex flex-col items-center gap-3 py-6">
+          <button
+            type="button"
+            onClick={() =>
+              setVisibleCount((c) => Math.min(c + 48, sorted.length))
+            }
+            className="rounded-full border border-primary/40 bg-primary/[0.08] px-6 py-3 text-sm font-semibold text-primary transition-colors hover:bg-primary/[0.16] hover:border-primary"
+          >
+            Load more destinations{" "}
+            <span className="ml-1 font-mono text-xs text-primary/70">
+              ({visibleCount} / {sorted.length})
+            </span>
+          </button>
+          <span className="text-xs text-muted-foreground/60">
+            or keep scrolling — more load automatically
+          </span>
         </div>
       )}
 
@@ -304,7 +324,7 @@ function DestinationCard({
             // Force re-render — simple toggle
             (e.target as HTMLElement).textContent = saved.includes(dest.id) ? "♡" : "♥";
           }}
-          className="absolute top-2 right-2 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-black/50 text-white/80 hover:bg-black/70 hover:text-red-400 transition-all backdrop-blur-sm"
+          className="absolute top-2 right-2 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-black/50 text-white/80 hover:bg-black/70 hover:text-red-400 transition-all backdrop-blur-sm"
           aria-label="Save destination"
         >
           ♡

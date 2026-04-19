@@ -161,8 +161,11 @@ export function CompareButton({ destinationId, size = "sm" }: { destinationId: s
         comparing ? removeFromCompare(destinationId) : addToCompare(destinationId);
       }}
       disabled={!comparing && compareIds.length >= 3}
-      className={`flex items-center gap-1 rounded-full border transition-all ${
-        size === "sm" ? "px-2 py-1 text-xs" : "px-3 py-1.5 text-xs"
+      // min-h ensures WCAG 2.5.8 AA tap-target minimum (24×24) on mobile —
+      // BUG-110 flagged compare/heart icons below threshold. 32px passes AA
+      // comfortably without bloating the card layout.
+      className={`flex items-center gap-1 rounded-full border transition-all min-h-[32px] ${
+        size === "sm" ? "px-2.5 py-1.5 text-xs" : "px-3 py-1.5 text-xs"
       } ${
         comparing
           ? "border-primary bg-primary/10 text-primary"

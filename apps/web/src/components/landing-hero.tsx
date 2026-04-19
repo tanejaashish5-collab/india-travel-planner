@@ -130,7 +130,11 @@ export function LandingHero({
                   { href: `/${locale}/region/jammu-kashmir`, label: locale === "hi" ? "कश्मीर" : "Kashmir" },
                   { href: `/${locale}/region/ladakh`, label: locale === "hi" ? "लद्दाख" : "Ladakh" },
                   { href: `/${locale}/region/rajasthan`, label: locale === "hi" ? "राजस्थान" : "Rajasthan" },
-                  { href: `/${locale}/region/northeast`, label: locale === "hi" ? "पूर्वोत्तर" : "Northeast" },
+                  // `/region/[id]` only resolves to a specific state_id; "northeast" is
+                  // an 8-state grouping (REGION_GROUPS in seo-maps.ts), so it 404s as a
+                  // single region (BUG-103). Redirect to /states pre-filtered to the NE
+                  // grouping instead — that view already exists and groups all 8 states.
+                  { href: `/${locale}/states?region=northeast`, label: locale === "hi" ? "पूर्वोत्तर" : "Northeast" },
                   { href: `/${locale}/states?region=islands`, label: locale === "hi" ? "द्वीप" : "Islands" },
                   { href: `/${locale}/explore?difficulty=easy&kids=true`, label: locale === "hi" ? "परिवार" : "Family" },
                 ].map((link) => (

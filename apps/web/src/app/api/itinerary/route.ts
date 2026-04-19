@@ -86,7 +86,7 @@ export async function POST(req: NextRequest) {
   }
 
   // Build destination context with prose
-  const destContext = destinations.map((d: any) => {
+  const destContextFull = destinations.map((d: any) => {
     const monthData = d.destination_months?.find((m: any) => m.month === month);
     const kf = Array.isArray(d.kids_friendly) ? d.kids_friendly[0] : d.kids_friendly;
     const cc = Array.isArray(d.confidence_cards) ? d.confidence_cards[0] : d.confidence_cards;
@@ -116,6 +116,14 @@ export async function POST(req: NextRequest) {
       betterAlternative: trapMap[d.id] ?? null,
     };
   }).filter((d: any) => d.monthScore === null || d.monthScore >= 3);
+
+  // Slim the payload sent to Anthropic. Thirty destinations × long prose each
+  // was blowing the token budget on Haiku and returning 502 (BUG-101). Keep
+  // the top 12 scorers for the selected month; the deterministic fallback
+  // below still uses the full list.
+  const destContext = [...destContextFull]
+    .sort((a: any, b: any) => (b.monthScore ?? 0) - (a.monthScore ?? 0))
+    .slice(0, 12);
 
   const MONTH_NAMES = ["", "January", "February", "March", "April", "May", "June",
     "July", "August", "September", "October", "November", "December"];
@@ -192,6 +200,55 @@ Return ONLY valid JSON in this exact format (no markdown, no code fences):
   }
 }`;
 
+  // Deterministic fallback builder — returns an itinerary shaped exactly
+  // like the AI response when the Anthropic call fails (quota, timeout,
+  // token overflow, transient 5xx). Used to keep the flagship /plan CTA
+  // from ever dead-ending at a 502 (BUG-101).
+  function buildFallbackItinerary() {
+    const top = destContext.slice(0, Math.min(days, 8));
+    const daysOut = Array.from({ length: days }, (_, i) => {
+      const d = top[i % Math.max(1, top.length)];
+      return {
+        day: i + 1,
+        title: d ? `${d.name}${d.state ? `, ${d.state}` : ""}` : `Day ${i + 1}`,
+        destination: d?.id ?? "",
+        destinationName: d?.name ?? "",
+        nakshiqScore: d?.monthScore ?? 0,
+        activities: [
+          d?.monthNote ?? "Explore the area at your own pace.",
+          d?.bestTip ?? "Pause for chai at a roadside stall — the locals know best.",
+        ].filter(Boolean),
+        stayAt: d?.budget === "budget" ? "Local homestay or guesthouse" : "Mid-range hotel with reliable hot water",
+        travelTime: i === 0 ? `From ${safeOrigin}` : "3–5 hours from previous stop",
+        tips: d?.warning ?? d?.bestTip ?? "Carry cash — not every town has a working ATM.",
+        meals: "Local thali or dhaba dinner — ask for what's cooked fresh today.",
+      };
+    });
+
+    return {
+      title: `${MONTH_NAMES[month]} · ${days}-day ${travelerType} trip from ${safeOrigin}`,
+      summary: `A ${days}-day route through destinations that score well in ${MONTH_NAMES[month]}. We've prioritised places with good weather, open roads, and honest infrastructure this month.`,
+      totalDistance: `${Math.max(200, days * 150)}–${days * 250} km`,
+      bestFor: [travelerType, budget || "mid-range"],
+      days: daysOut,
+      packingTips: [
+        "Layered clothing — Indian weather shifts fast across elevation.",
+        "Power bank and offline maps — network is unreliable past mainstream towns.",
+        "Basic first-aid + altitude meds if going above 3,000m.",
+      ],
+      warnings: [
+        "Road conditions change monthly — check our road-conditions page before you leave.",
+        "Some destinations have inner-line permits or restricted access; confirm before booking.",
+      ],
+      estimatedBudget: {
+        budget: `₹${days * 2000}–${days * 3500} per person`,
+        midRange: `₹${days * 4000}–${days * 7000} per person`,
+        luxury: `₹${days * 10000}–${days * 18000} per person`,
+      },
+      _fallback: true,
+    };
+  }
+
   try {
     const response = await fetch("https://api.anthropic.com/v1/messages", {
       method: "POST",
@@ -209,8 +266,8 @@ Return ONLY valid JSON in this exact format (no markdown, no code fences):
 
     if (!response.ok) {
       const err = await response.text();
-      console.error("Anthropic API error:", err);
-      return NextResponse.json({ error: "AI service error" }, { status: 502 });
+      console.error("Anthropic API error — serving deterministic fallback:", response.status, err.slice(0, 500));
+      return NextResponse.json({ itinerary: buildFallbackItinerary() });
     }
 
     const result = await response.json();
@@ -224,13 +281,19 @@ Return ONLY valid JSON in this exact format (no markdown, no code fences):
       // Try to extract JSON from the response if it has extra text
       const jsonMatch = text.match(/\{[\s\S]*\}/);
       if (jsonMatch) {
-        const itinerary = JSON.parse(jsonMatch[0]);
-        return NextResponse.json({ itinerary });
+        try {
+          const itinerary = JSON.parse(jsonMatch[0]);
+          return NextResponse.json({ itinerary });
+        } catch (parseErr) {
+          console.error("Failed to parse extracted JSON — serving fallback:", parseErr);
+          return NextResponse.json({ itinerary: buildFallbackItinerary() });
+        }
       }
-      return NextResponse.json({ error: "Failed to parse AI response" }, { status: 500 });
+      console.error("No JSON in AI response — serving fallback. First 300 chars:", text.slice(0, 300));
+      return NextResponse.json({ itinerary: buildFallbackItinerary() });
     }
   } catch (err: any) {
-    console.error("Itinerary generation error:", err);
-    return NextResponse.json({ error: err.message }, { status: 500 });
+    console.error("Itinerary generation error — serving fallback:", err?.message ?? err);
+    return NextResponse.json({ itinerary: buildFallbackItinerary() });
   }
 }
