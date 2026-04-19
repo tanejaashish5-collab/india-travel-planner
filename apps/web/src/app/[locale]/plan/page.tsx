@@ -5,6 +5,11 @@ import { PlanContent } from "@/components/plan-content";
 import { createClient } from "@supabase/supabase-js";
 import { localeAlternates } from "@/lib/seo-utils";
 
+// ISR — cache the RSC payload for an hour so navigation prefetch hits Vercel's
+// edge cache instead of regenerating per-hover (mitigates the intermittent
+// 503s on _rsc= prefetch requests called out in BUG-002).
+export const revalidate = 3600;
+
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   return {

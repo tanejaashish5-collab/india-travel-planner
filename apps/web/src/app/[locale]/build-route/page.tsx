@@ -5,6 +5,10 @@ import { RouteBuilder } from "@/components/route-builder";
 import { createClient } from "@supabase/supabase-js";
 import { localeAlternates } from "@/lib/seo-utils";
 
+// ISR — see note on /plan page.tsx. Caching the RSC response keeps hover
+// prefetches out of the serverless function path that was returning 503s.
+export const revalidate = 3600;
+
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   return {

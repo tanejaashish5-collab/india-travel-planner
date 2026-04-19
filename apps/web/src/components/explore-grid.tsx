@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo, useEffect } from "react";
+import { useState, useMemo, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useLocale, useTranslations } from "next-intl";
@@ -156,6 +156,38 @@ export function ExploreGrid({
   // Show featured hero only when no filters/search active
   const isDefaultView = !filters.stateId && !filters.search && !filters.difficulty && !filters.kidsOnly && !filters.sort;
 
+  // Progressive rendering — only paint the first PAGE_SIZE cards initially,
+  // then grow as the user scrolls. Before this, all 480 cards hit the DOM on
+  // first paint and pushed DCL to ~6.6s on /en/explore (BUG-016). Capped per
+  // grow-step to keep each render cheap on low-end mobile.
+  const PAGE_SIZE = 48;
+  const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
+  const sentinelRef = useRef<HTMLDivElement | null>(null);
+
+  // Reset the visible window when the filtered result set changes (new filter,
+  // new search, new sort) so the sentinel sits near the bottom of the new list.
+  useEffect(() => {
+    setVisibleCount(PAGE_SIZE);
+  }, [sorted.length, filters.stateId, filters.search, filters.difficulty, filters.kidsOnly, filters.sort, filters.month]);
+
+  useEffect(() => {
+    const node = sentinelRef.current;
+    if (!node) return;
+    if (visibleCount >= sorted.length) return;
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((e) => e.isIntersecting)) {
+          setVisibleCount((c) => Math.min(c + PAGE_SIZE, sorted.length));
+        }
+      },
+      { rootMargin: "600px 0px" },
+    );
+    io.observe(node);
+    return () => io.disconnect();
+  }, [visibleCount, sorted.length]);
+
+  const visible = sorted.slice(0, visibleCount);
+
   return (
     <>
       <ExploreFilters
@@ -166,7 +198,7 @@ export function ExploreGrid({
       />
 
       <StaggerContainer className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3" staggerDelay={0.04}>
-        {sorted.map((dest, index) => (
+        {visible.map((dest, index) => (
           <StaggerItem key={dest.id} className={isDefaultView && index === 0 ? "sm:col-span-2" : ""}>
             <HoverCard>
               <DestinationCard
@@ -184,6 +216,12 @@ export function ExploreGrid({
           </StaggerItem>
         ))}
       </StaggerContainer>
+
+      {visibleCount < sorted.length && (
+        <div ref={sentinelRef} className="py-10 text-center text-xs text-muted-foreground/60">
+          Loading more destinations…
+        </div>
+      )}
 
       {sorted.length === 0 && (
         <div className="py-20 text-center text-muted-foreground">

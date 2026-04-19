@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState, useCallback } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import { useLocale } from "next-intl";
-import { createClient } from "@supabase/supabase-js";
+import { getBrowserSupabase } from "@/lib/supabase-browser";
 
 interface SearchCommandProps {
   open: boolean;
@@ -89,15 +89,7 @@ function getHref(item: ResultItem, locale: string): string {
   }
 }
 
-let _supabase: ReturnType<typeof createClient> | null = null;
-function getSupabase() {
-  if (_supabase) return _supabase;
-  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
-  const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-  if (!url || !key) return null;
-  _supabase = createClient(url, key);
-  return _supabase;
-}
+const getSupabase = getBrowserSupabase;
 
 export function SearchCommand({ open, onClose }: SearchCommandProps) {
   const router = useRouter();
@@ -128,7 +120,7 @@ export function SearchCommand({ open, onClose }: SearchCommandProps) {
       sb.from("routes").select("id, name"),
       sb.from("collections").select("id, name"),
     ]).then(([dRes, tRes, rRes, cRes]) => {
-      setDestinations((dRes.data as Destination[]) ?? []);
+      setDestinations((dRes.data as unknown as Destination[]) ?? []);
       setTreks((tRes.data as Trek[]) ?? []);
       setRoutes((rRes.data as Route[]) ?? []);
       setCollections((cRes.data as Collection[]) ?? []);

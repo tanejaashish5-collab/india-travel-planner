@@ -1,11 +1,11 @@
-import { createClient } from "@supabase/supabase-js";
+import { getBrowserSupabase } from "./supabase-browser";
 
-// Browser client for auth operations
+// Browser client for auth operations — shared singleton so we don't spawn
+// multiple GoTrueClient instances per page.
 export function getAuthClient() {
-  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
-  const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-  if (!url || !key) throw new Error("Supabase not configured");
-  return createClient(url, key);
+  const client = getBrowserSupabase();
+  if (!client) throw new Error("Supabase not configured");
+  return client;
 }
 
 // Sign in with email

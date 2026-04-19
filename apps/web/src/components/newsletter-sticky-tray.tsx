@@ -58,7 +58,9 @@ export function NewsletterStickyTray() {
 
   return (
     <div
-      className="hidden md:block fixed bottom-6 right-6 max-w-sm z-40 rounded-2xl border border-primary/30 bg-card/95 backdrop-blur-xl shadow-2xl shadow-black/40 p-4 pr-10"
+      // Sits above the floating Ask NakshIQ chat bubble (which lives at
+      // bottom-6 right-6) so the two don't collide on desktop (BUG-020).
+      className="hidden md:block fixed bottom-24 right-6 max-w-sm z-40 rounded-2xl border border-primary/30 bg-card/95 backdrop-blur-xl shadow-2xl shadow-black/40 p-4 pr-10"
       role="complementary"
       aria-label="Newsletter signup"
     >

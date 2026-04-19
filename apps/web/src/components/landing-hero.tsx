@@ -6,7 +6,7 @@ import { useLocale, useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState, useCallback } from "react";
 import { useRouter } from "next/navigation";
-import { createClient } from "@supabase/supabase-js";
+import { getBrowserSupabase } from "@/lib/supabase-browser";
 // LanguageToggle now in main Nav component
 import {
   FadeIn,
@@ -630,15 +630,7 @@ export function LandingHero({
 
 /* ─── Live search bar for hero section ────────────────────────────── */
 
-let _sb: ReturnType<typeof createClient> | null = null;
-function getSb() {
-  if (_sb) return _sb;
-  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
-  const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-  if (!url || !key) return null;
-  _sb = createClient(url, key);
-  return _sb;
-}
+const getSb = getBrowserSupabase;
 
 interface HeroResult {
   id: string;

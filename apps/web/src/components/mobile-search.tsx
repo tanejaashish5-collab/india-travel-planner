@@ -4,7 +4,7 @@ import { useState, useRef, useEffect, useCallback } from "react";
 import { useLocale } from "next-intl";
 import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { createClient } from "@supabase/supabase-js";
+import { getBrowserSupabase } from "@/lib/supabase-browser";
 
 const CATEGORIES = [
   { label: "Hill Stations", tag: "hill-station", icon: "🏔️" },
@@ -19,12 +19,7 @@ const CATEGORIES = [
   { label: "Lakes", tag: "lake", icon: "💧" },
 ];
 
-function getSupabase() {
-  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
-  const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-  if (!url || !key) return null;
-  return createClient(url, key);
-}
+const getSupabase = getBrowserSupabase;
 
 export function MobileSearch({ open, onClose }: { open: boolean; onClose: () => void }) {
   const locale = useLocale();

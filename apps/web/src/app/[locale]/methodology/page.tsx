@@ -4,6 +4,10 @@ import { Footer } from "@/components/footer";
 import Link from "next/link";
 import { localeAlternates } from "@/lib/seo-utils";
 
+// Static content — cache aggressively so prefetches served from CDN, not
+// regenerated (fixes intermittent 503s on _rsc= reported in BUG-002).
+export const revalidate = 86400;
+
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   return {
