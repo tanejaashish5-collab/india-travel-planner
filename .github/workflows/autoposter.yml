@@ -123,44 +123,44 @@ jobs:
               echo "args=" >> $GITHUB_OUTPUT
               echo "Manual mode: normal (post)"
             fi
-          elif [ "$TOTAL_MINS" -ge 450 ] && [ "$TOTAL_MINS" -lt 460 ] && echo "1 3 5" | grep -qw "$DOW"; then
-            # UTC 07:30 on Mon/Wed/Fri → infographic
+          elif [ "$TOTAL_MINS" -ge 450 ] && [ "$TOTAL_MINS" -lt 540 ] && echo "1 3 5" | grep -qw "$DOW"; then
+            # UTC 07:30 on Mon/Wed/Fri → infographic (window: 450-539, 90 min for GH jitter)
             echo "args=--infographic" >> $GITHUB_OUTPUT
             echo "Scheduled INFOGRAPHIC mode (UTC ${HOUR}:${MINUTE}, DOW=${DOW})"
-          elif [ "$TOTAL_MINS" -ge 540 ] && [ "$TOTAL_MINS" -lt 550 ]; then
-            # UTC 09:00 daily → canva visual
+          elif [ "$TOTAL_MINS" -ge 540 ] && [ "$TOTAL_MINS" -lt 630 ]; then
+            # UTC 09:00 daily → canva visual (window: 540-629)
             echo "args=--canva-visual" >> $GITHUB_OUTPUT
             echo "Scheduled CANVA VISUAL mode (UTC ${HOUR}:${MINUTE})"
-          elif [ "$TOTAL_MINS" -ge 420 ] && [ "$TOTAL_MINS" -lt 430 ] && echo "2 4 6" | grep -qw "$DOW"; then
-            # UTC 07:00 on Tue/Thu/Sat → tourist map
+          elif [ "$TOTAL_MINS" -ge 420 ] && [ "$TOTAL_MINS" -lt 540 ] && echo "2 4 6" | grep -qw "$DOW"; then
+            # UTC 07:00 on Tue/Thu/Sat → tourist map (window: 420-539, 120 min for GH jitter)
             echo "args=--tourist-map" >> $GITHUB_OUTPUT
             echo "Scheduled TOURIST MAP mode (UTC ${HOUR}:${MINUTE}, DOW=${DOW})"
-          elif [ "$TOTAL_MINS" -ge 330 ] && [ "$TOTAL_MINS" -lt 340 ]; then
-            # UTC 05:30 (11:00 IST) → reel slot 1
+          elif [ "$TOTAL_MINS" -ge 330 ] && [ "$TOTAL_MINS" -lt 420 ]; then
+            # UTC 05:30 (11:00 IST) → reel slot 1 (window: 330-419)
             echo "args=--reel" >> $GITHUB_OUTPUT
             echo "Scheduled REEL slot 1 (UTC ${HOUR}:${MINUTE})"
-          elif [ "$TOTAL_MINS" -ge 630 ] && [ "$TOTAL_MINS" -lt 640 ]; then
-            # UTC 10:30 (16:00 IST) → reel slot 2
+          elif [ "$TOTAL_MINS" -ge 630 ] && [ "$TOTAL_MINS" -lt 660 ]; then
+            # UTC 10:30 (16:00 IST) → reel slot 2 (window: 630-659)
             echo "args=--reel" >> $GITHUB_OUTPUT
             echo "Scheduled REEL slot 2 (UTC ${HOUR}:${MINUTE})"
-          elif [ "$TOTAL_MINS" -ge 870 ] && [ "$TOTAL_MINS" -lt 880 ]; then
-            # UTC 14:30 (20:00 IST) → reel slot 3
+          elif [ "$TOTAL_MINS" -ge 870 ] && [ "$TOTAL_MINS" -lt 1020 ]; then
+            # UTC 14:30 (20:00 IST) → reel slot 3 (window: 870-1019, 150 min)
             echo "args=--reel" >> $GITHUB_OUTPUT
             echo "Scheduled REEL slot 3 (UTC ${HOUR}:${MINUTE})"
-          elif [ "$TOTAL_MINS" -ge 660 ] && [ "$TOTAL_MINS" -lt 670 ]; then
-            # UTC 11:00 (21:00 AEST) → yt short slot 1
+          elif [ "$TOTAL_MINS" -ge 660 ] && [ "$TOTAL_MINS" -lt 870 ]; then
+            # UTC 11:00 (21:00 AEST) → yt short slot 1 (window: 660-869, 210 min)
             echo "args=--yt-short" >> $GITHUB_OUTPUT
             echo "Scheduled YT SHORT slot 1 (UTC ${HOUR}:${MINUTE})"
-          elif [ "$TOTAL_MINS" -ge 120 ] && [ "$TOTAL_MINS" -lt 130 ]; then
-            # UTC 02:00 (12:00 AEST) → yt short slot 2
+          elif [ "$TOTAL_MINS" -ge 120 ] && [ "$TOTAL_MINS" -lt 180 ]; then
+            # UTC 02:00 (12:00 AEST) → yt short slot 2 (window: 120-179)
             echo "args=--yt-short" >> $GITHUB_OUTPUT
             echo "Scheduled YT SHORT slot 2 (UTC ${HOUR}:${MINUTE})"
-          elif [ "$TOTAL_MINS" -ge 1020 ] && [ "$TOTAL_MINS" -lt 1030 ]; then
-            # UTC 17:00 (03:00 AEST) → yt short slot 3
+          elif [ "$TOTAL_MINS" -ge 1020 ] && [ "$TOTAL_MINS" -lt 1080 ]; then
+            # UTC 17:00 (03:00 AEST) → yt short slot 3 (window: 1020-1079)
             echo "args=--yt-short" >> $GITHUB_OUTPUT
             echo "Scheduled YT SHORT slot 3 (UTC ${HOUR}:${MINUTE})"
-          elif [ "$TOTAL_MINS" -ge 1080 ] && [ "$TOTAL_MINS" -lt 1090 ]; then
-            # UTC 18:00 (23:30 IST) → analytics sync
+          elif [ "$TOTAL_MINS" -ge 1080 ] && [ "$TOTAL_MINS" -lt 1200 ]; then
+            # UTC 18:00 (23:30 IST) → analytics sync (window: 1080-1199, 120 min)
             echo "args=--analytics" >> $GITHUB_OUTPUT
             echo "Scheduled ANALYTICS mode (UTC ${HOUR}:${MINUTE})"
           elif [ "$TOTAL_MINS" -ge 180 ] && [ "$TOTAL_MINS" -le 330 ]; then
