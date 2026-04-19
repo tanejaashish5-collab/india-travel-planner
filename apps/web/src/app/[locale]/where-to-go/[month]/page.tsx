@@ -291,24 +291,6 @@ export default async function WhereToGoPage({
   }
   const pickedIds = new Set(weeklyPicks?.destinations.map((d) => d.id) ?? []);
 
-  // Collect sparkline data (12 scores per picked destination) for the hero.
-  const monthlyByPick = new Map<string, number[]>();
-  if (pickedIds.size > 0) {
-    monthlyByPick.clear();
-    for (const id of pickedIds) monthlyByPick.set(id, new Array(12).fill(0));
-    const supabase = getSupabase();
-    if (supabase) {
-      const { data: monthly } = await supabase
-        .from("destination_months")
-        .select("destination_id, month, score")
-        .in("destination_id", Array.from(pickedIds));
-      for (const m of monthly ?? []) {
-        const arr = monthlyByPick.get(m.destination_id);
-        if (arr && m.month >= 1 && m.month <= 12) arr[m.month - 1] = m.score ?? 0;
-      }
-    }
-  }
-
   // ItemList schema for weekly picks — emitted alongside BreadcrumbList.
   const itemListSchema = weeklyPicks?.seo ?? null;
 
@@ -335,10 +317,8 @@ export default async function WhereToGoPage({
               state: d.state,
               elevation_m: d.elevation_m,
               score: d.score,
-              monthlyScores: monthlyByPick.get(d.id) ?? new Array(12).fill(0),
               whyThisWeek: d.why_this_week,
             }))}
-            monthNum={monthNum}
             monthName={monthName}
             monthSlug={monthSlug}
             asOfDate={`${monthName} ${currentYear()}`}

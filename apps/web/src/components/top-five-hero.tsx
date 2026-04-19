@@ -1,17 +1,17 @@
 "use client";
 
 /**
- * Top 5 Hero — ranked-row module for /where-to-go/{month} pages.
+ * Top 5 Hero — image-first bento grid for /where-to-go/{month} pages.
  *
- * Preview only for now. Mounted at /en/preview/top-five-april so Ashish can
- * judge the aesthetic against the rest of the site before we wire it into the
- * real month landing pages. Delete both this file and the preview route if
- * rejected; no other files touched.
+ * Asymmetric layout signals rank without a stamp: #1 spans 8 cols × 2 rows,
+ * #2–3 stack in the right 4-col column, #4–5 split the bottom half. Images
+ * are grayscale on desktop at rest and bloom into full color plus a slight
+ * ken-burns zoom on hover — calm catalog, engaged color. Mobile keeps color
+ * always since there's no hover there.
  *
- * Composition borrowed from Claude Design proposals/master-dark.html —
- * rail header, rotated stamp, ranked rows with sparkline + tag chip — but
- * typography is mapped to the site's existing Fraunces italic + Geist Mono
- * + Geist Sans so we don't load a new font just for this module.
+ * Stays on brand: Fraunces italic for names, Geist mono for labels,
+ * vermillion reserved for the why_this_week editorial hook, emerald for
+ * 5/5 score pill, saffron for 4/5.
  */
 
 import Link from "next/link";
@@ -26,8 +26,6 @@ export interface TopFiveRow {
   state: string | null;
   elevation_m: number | null;
   score: number;
-  /** 12-value array from destination_months, one per month, score 0–5. */
-  monthlyScores: number[];
   /** Week-level editorial hook — shown below the tagline in vermillion.
    *  Empty string = hide the line entirely. Populated by /api/weekly-picks. */
   whyThisWeek?: string;
@@ -35,12 +33,10 @@ export interface TopFiveRow {
 
 interface TopFiveHeroProps {
   topFive: TopFiveRow[];
-  /** 1–12 — used to light the current-month bar in the sparkline. */
-  monthNum: number;
   monthName: string;
   monthSlug: string;
   regionName?: string;
-  /** Shown in the caption strip above the rows — e.g. "April 2026". */
+  /** Shown in the caption strip above the grid — e.g. "April 2026". */
   asOfDate: string;
   /** Current week within the month (1–5). When set, hero labels itself
    *  "This Week's Picks · {Month} · Week N" instead of the static
@@ -55,29 +51,9 @@ interface TopFiveHeroProps {
   fallbackFromFour?: boolean;
 }
 
-const VERMILLION = "#E55642";
-const SAFFRON = "#C8932F"; // Brand Saffron Gold — editorial support (4/5 tier)
-const EMERALD = "#34D399"; // Tailwind emerald-400 — "go, this is peak" (5/5 tier)
-
-/* Chip tints follow the brand-green "Score badge" convention: 5/5 is emerald
- * so the eye instantly reads "go." 4/5 drops to Saffron (still positive, but
- * clearly a step below peak), 3 and below fade into muted neutrals. Vermillion
- * is never used for score metadata — reserved for why_this_week + #1 stamp. */
-function chipClass(score: number): string {
-  if (score >= 5) return "border-[#34D399]/55 text-[#34D399]";
-  if (score >= 4) return "border-[#C8932F]/55 text-[#C8932F]";
-  if (score >= 3) return "border-white/20 text-white/50";
-  return "border-white/15 text-white/35";
-}
-
-/* Score number carries the same green/saffron/muted ladder as the chip,
- * so a row reads as a unit: chip + score + sparkline peak month all speak
- * the same color language for a 5/5. */
-function scoreClass(score: number): string {
-  if (score >= 5) return "text-[#34D399]";
-  if (score >= 4) return "text-[#C8932F]";
-  return "text-white";
-}
+const VERMILLION = "#E55642"; // editorial hook color (why_this_week only)
+const SAFFRON = "#C8932F"; // 4/5 "good" tier
+const EMERALD = "#34D399"; // 5/5 "peak / go" tier
 
 function chipLabel(score: number): string {
   if (score >= 5) return "PEAK";
@@ -86,66 +62,21 @@ function chipLabel(score: number): string {
   return "—";
 }
 
-/* Per-bar color encodes the score value, so the 12-bar chart reads as a
- * shape-of-the-year instead of a red blob. Active month gets a thin outline
- * ring so "this is now" still lands even when its underlying score is low. */
-function barColor(score: number): string {
-  if (score >= 5) return EMERALD; // peak months speak the same green as the score + chip
-  if (score === 4) return SAFFRON;
-  if (score === 3) return "rgba(255,255,255,0.40)";
-  return "rgba(255,255,255,0.15)";
+/* Glass-morphism score pill — dot color + glow shadow. Emerald for 5 (go),
+ * saffron for 4 (good), muted-white for 3 and below. */
+function scoreDotColor(score: number): string {
+  if (score >= 5) return EMERALD;
+  if (score >= 4) return SAFFRON;
+  return "rgba(255,255,255,0.55)";
 }
-
-function Sparkline({ scores, activeMonth }: { scores: number[]; activeMonth: number }) {
-  const bars = Array.from({ length: 12 }, (_, i) => scores[i] ?? 0);
-  return (
-    <div
-      className="grid h-[30px] items-end gap-[2px]"
-      style={{ gridTemplateColumns: "repeat(12, minmax(0, 1fr))" }}
-      aria-hidden
-    >
-      {bars.map((s, i) => {
-        const isActive = i + 1 === activeMonth;
-        const h = Math.max(2, Math.round((s / 5) * 30));
-        return (
-          <div
-            key={i}
-            style={{
-              height: `${h}px`,
-              backgroundColor: barColor(s),
-              outline: isActive ? "1px solid rgba(255,255,255,0.85)" : "none",
-              outlineOffset: "-1px",
-            }}
-          />
-        );
-      })}
-    </div>
-  );
-}
-
-/* Circular rotated stamp for the #1 row. Hidden on mobile (md-down). */
-function NumberOneStamp() {
-  return (
-    <div
-      className="pointer-events-none absolute -top-3 right-4 hidden md:flex h-[72px] w-[72px] items-center justify-center rounded-full border-2 border-[#E55642] bg-[#0A0B0A]/95 text-[#E55642]"
-      style={{ transform: "rotate(-7deg)" }}
-      aria-hidden
-    >
-      <div className="text-center">
-        <div className="font-mono text-[8px] font-bold uppercase tracking-[0.24em]">
-          #1
-        </div>
-        <div className="font-fraunces italic text-[13px] leading-none mt-1">
-          this month
-        </div>
-      </div>
-    </div>
-  );
+function scoreDotGlow(score: number): string {
+  if (score >= 5) return "0 0 8px rgba(52,211,153,0.55)";
+  if (score >= 4) return "0 0 8px rgba(200,147,47,0.5)";
+  return "none";
 }
 
 export function TopFiveHero({
   topFive,
-  monthNum,
   monthName,
   monthSlug,
   regionName,
@@ -208,144 +139,127 @@ export function TopFiveHero({
         <span>Scores out of 5</span>
       </div>
 
-      {/* ── Ranked rows ─────────────────────────────────────── */}
+      {/* ── Bento grid ──────────────────────────────────────
+       *
+       * Asymmetric 5-tile grid (desktop): #1 spans 8 cols × 2 rows —
+       * its size alone signals rank, no stamp needed. #2 and #3 stack
+       * in the right 4-col column. #4 and #5 split the bottom half 6+6.
+       * On mobile, the grid collapses to a single column with #1 tall
+       * and the rest at a compact tile height.
+       *
+       * Images are grayscale on desktop at rest and bloom into full
+       * color + slight ken-burns zoom on hover. Restraint-by-default,
+       * payoff on engagement — calm B&W catalog, engaged color.
+       * Mobile keeps color always since there is no hover. */}
       <StaggerContainer
-        className="relative border border-white/10 border-t-0 bg-[#111312]"
-        staggerDelay={0.06}
+        className="mt-6 grid grid-cols-1 gap-3 md:grid-cols-12 md:gap-4 md:auto-rows-[240px]"
+        staggerDelay={0.08}
       >
         {topFive.map((row, index) => {
           const rank = index + 1;
           const isFirst = rank === 1;
+          const spanClass = isFirst
+            ? "md:col-span-8 md:row-span-2"
+            : rank <= 3
+              ? "md:col-span-4 md:row-span-1"
+              : "md:col-span-6 md:row-span-1";
+          const mobileHeight = isFirst ? "h-[360px]" : "h-[240px]";
+
           return (
-            <StaggerItem key={row.id}>
+            <StaggerItem
+              key={row.id}
+              className={`${spanClass} ${mobileHeight} md:h-auto`}
+            >
               <Link
                 href={`/${locale}/destination/${row.id}/${monthSlug}`}
-                className={`group relative grid gap-4 border-t border-white/10 px-5 transition-colors hover:bg-[#171918] md:gap-5 md:px-6 ${
-                  isFirst
-                    ? "bg-white/[0.03] py-7 md:py-8"
-                    : "py-5 md:py-6"
-                }`}
-                style={{
-                  gridTemplateColumns:
-                    "56px minmax(0, 1fr) auto",
-                }}
+                className="group relative block h-full w-full overflow-hidden border border-white/10 bg-black"
               >
-                {isFirst && <NumberOneStamp />}
+                {/* Image — grayscale on desktop at rest, color + zoom on hover */}
+                <Image
+                  src={`/images/destinations/${row.id}.jpg`}
+                  alt={row.name}
+                  fill
+                  sizes={
+                    isFirst
+                      ? "(max-width: 768px) 100vw, 66vw"
+                      : rank <= 3
+                        ? "(max-width: 768px) 100vw, 33vw"
+                        : "(max-width: 768px) 100vw, 50vw"
+                  }
+                  priority={isFirst}
+                  className="object-cover transition-all duration-700 ease-out md:grayscale md:group-hover:grayscale-0 md:group-hover:scale-[1.04]"
+                />
 
-                {/* Rank */}
-                <div className="flex items-center">
-                  <span className="font-mono text-[13px] md:text-[15px] font-medium tracking-wider text-white/45 group-hover:text-white/70 transition-colors">
-                    #{rank}
-                  </span>
+                {/* Legibility scrim — darkest at bottom for text, fades up */}
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/85 via-black/45 to-black/10" />
+
+                {/* Rank marker — small top-left */}
+                <div className="absolute left-4 top-4 font-mono text-[11px] font-bold uppercase tracking-[0.28em] text-white/70">
+                  #{rank}
                 </div>
 
-                {/* Thumb + name + tagline (collapses to full width below md) */}
-                <div className="flex min-w-0 items-center gap-4 md:gap-5">
-                  <div
-                    className={`relative flex-shrink-0 overflow-hidden border border-white/10 bg-black/40 ${
-                      isFirst
-                        ? "h-20 w-20 md:h-24 md:w-24"
-                        : "h-14 w-14 md:h-16 md:w-16"
-                    }`}
-                  >
-                    <Image
-                      src={`/images/destinations/${row.id}.jpg`}
-                      alt={row.name}
-                      fill
-                      sizes={isFirst ? "96px" : "64px"}
-                      className="object-cover"
-                      style={{ filter: "grayscale(0.1) brightness(0.95)" }}
+                {/* Score pill — glass morphism, top-right */}
+                <div className="absolute right-3 top-3">
+                  <div className="flex items-center gap-2 rounded-full border border-white/15 bg-black/45 px-3 py-1.5 backdrop-blur-md">
+                    <span
+                      aria-hidden
+                      className="h-1.5 w-1.5 rounded-full"
+                      style={{
+                        backgroundColor: scoreDotColor(row.score),
+                        boxShadow: scoreDotGlow(row.score),
+                      }}
                     />
+                    <span className="font-mono text-[10px] font-bold uppercase tracking-[0.22em] text-white">
+                      {row.score}/5 · {chipLabel(row.score)}
+                    </span>
                   </div>
-                  <div className="min-w-0">
-                    <h3
-                      className={`font-fraunces italic leading-tight tracking-tight text-white truncate ${
-                        isFirst
-                          ? "text-[26px] md:text-[32px]"
-                          : "text-[22px] md:text-[26px]"
-                      }`}
-                    >
-                      {row.name}
-                    </h3>
-                    {row.tagline && (
-                      <p className="mt-1 line-clamp-1 text-[12px] md:text-[13px] text-white/55 max-w-[500px]">
-                        {row.tagline}
-                      </p>
-                    )}
-                    {row.whyThisWeek && (
-                      // Week-level editorial hook — vermillion, italic serif
-                      // to echo the brand voice, line-clamped so overflow
-                      // stays the responsibility of the selection algorithm.
-                      <p className="mt-1 line-clamp-2 font-fraunces italic text-[13px] md:text-[14px] leading-snug text-[#E55642] max-w-[540px]">
-                        {row.whyThisWeek}
-                      </p>
-                    )}
-                    {/* Mobile-only meta row */}
-                    <div className="mt-1.5 flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.18em] text-white/45 md:hidden">
-                      {row.state && <span>{row.state}</span>}
-                      {row.state && row.elevation_m && <span>·</span>}
+                </div>
+
+                {/* Bottom content */}
+                <div
+                  className={`absolute bottom-0 left-0 right-0 ${
+                    isFirst ? "p-6 md:p-10" : "p-4 md:p-5"
+                  }`}
+                >
+                  {row.state && (
+                    <div className="mb-2 flex items-center gap-2 font-mono text-[9px] md:text-[10px] uppercase tracking-[0.22em] text-white/65">
+                      <span>{row.state}</span>
                       {row.elevation_m && (
-                        <span>{row.elevation_m.toLocaleString()}m</span>
+                        <>
+                          <span className="h-0.5 w-0.5 rounded-full bg-white/35" />
+                          <span>{row.elevation_m.toLocaleString()}m</span>
+                        </>
                       )}
                     </div>
-                  </div>
-                </div>
-
-                {/* Desktop-only right rail: score · chip · sparkline · GO → */}
-                <div className="hidden md:grid items-center gap-5"
-                  style={{
-                    gridTemplateColumns: "80px 90px 170px 70px",
-                  }}
-                >
-                  {/* Score — green for 5/5 (go), saffron for 4/5 (good). The
-                   *  score number is the fastest read on the row, so it
-                   *  carries the same semantic color as the chip beside it. */}
-                  <div className="flex items-baseline gap-1">
-                    <span className={`font-mono text-[32px] font-bold leading-none tracking-tight ${scoreClass(row.score)}`}>
-                      {row.score}
-                    </span>
-                    <span className="font-mono text-[15px] leading-none text-white/35">
-                      /5
-                    </span>
-                  </div>
-
-                  {/* Chip */}
-                  <span
-                    className={`inline-flex w-fit items-center justify-center border px-2 py-1 font-sans text-[9px] font-bold uppercase tracking-[0.22em] rounded-none ${chipClass(row.score)}`}
+                  )}
+                  <h3
+                    className={`font-fraunces italic leading-[1.05] tracking-tight text-white ${
+                      isFirst
+                        ? "text-[32px] md:text-[52px]"
+                        : "text-[22px] md:text-[28px]"
+                    }`}
                   >
-                    {chipLabel(row.score)}
-                  </span>
-
-                  {/* Sparkline */}
-                  <div className="flex flex-col gap-1">
-                    <Sparkline scores={row.monthlyScores} activeMonth={monthNum} />
-                    <div className="flex justify-between font-mono text-[9px] uppercase tracking-[0.12em] text-white/30">
-                      <span>J</span>
-                      <span>D</span>
-                    </div>
-                  </div>
-
-                  {/* GO → bone-weighted, brightens on hover. */}
-                  <span className="justify-self-end font-mono text-[10px] font-bold uppercase tracking-[0.22em] text-white/70 underline decoration-transparent underline-offset-4 group-hover:text-white group-hover:decoration-white/70 transition-colors">
-                    GO<span aria-hidden> →</span>
-                  </span>
-                </div>
-
-                {/* Mobile-only right: score + GO */}
-                <div className="flex flex-col items-end gap-2 md:hidden">
-                  <div className="flex items-baseline gap-1">
-                    <span className={`font-mono text-[26px] font-bold leading-none tracking-tight ${scoreClass(row.score)}`}>
-                      {row.score}
-                    </span>
-                    <span className="font-mono text-[13px] leading-none text-white/35">
-                      /5
-                    </span>
-                  </div>
-                  <span
-                    className={`inline-flex items-center justify-center border px-1.5 py-0.5 font-sans text-[9px] font-bold uppercase tracking-[0.18em] rounded-none ${chipClass(row.score)}`}
-                  >
-                    {chipLabel(row.score)}
-                  </span>
+                    {row.name}
+                  </h3>
+                  {isFirst && row.tagline && (
+                    <p className="mt-3 max-w-xl text-[13px] md:text-[15px] leading-snug text-white/75">
+                      {row.tagline}
+                    </p>
+                  )}
+                  {row.whyThisWeek && (
+                    <p
+                      className={`${
+                        isFirst ? "mt-2 max-w-xl" : "mt-1.5"
+                      } line-clamp-2 font-fraunces italic leading-snug ${
+                        isFirst
+                          ? "text-[14px] md:text-[16px]"
+                          : "text-[12px] md:text-[13px]"
+                      }`}
+                      style={{ color: VERMILLION }}
+                    >
+                      {row.whyThisWeek}
+                    </p>
+                  )}
                 </div>
               </Link>
             </StaggerItem>
@@ -355,7 +269,7 @@ export function TopFiveHero({
 
       {/* ── Footnote ────────────────────────────────────────── */}
       <p className="mt-4 font-mono text-[10px] uppercase tracking-[0.18em] text-white/35">
-        Ranked by NakshIQ Score · Ties broken alphabetically · Data refreshed monthly
+        Ranked by NakshIQ Score · Ties broken by editorial richness · Hover for full color
       </p>
     </section>
   );
