@@ -1,6 +1,8 @@
 import { createClient } from "@supabase/supabase-js";
 import type { WindowIssueProps } from "@/emails/the-window";
 import { pickOpening, pickClosing } from "./voice-pool";
+import { computeWeeklyPicks } from "@/lib/weekly-picks/compute";
+import { weekOfMonth } from "@/lib/weekly-picks/weight";
 
 const MONTH_NAMES = [
   "", "January", "February", "March", "April", "May", "June",
@@ -42,34 +44,29 @@ export async function buildWindowIssue(): Promise<IssueBuildResult> {
   const issueNumber = isoWeekNumber(now);
   const monthName = MONTH_NAMES[currentMonth];
   const year = now.getFullYear();
-  const slug = `${year}-w${String(issueNumber).padStart(2, "0")}`;
+  // Alignment contract: newsletter slug matches the Weekly Picks week the
+  // landing page will show on the day the email lands. Sunday 07:00 IST
+  // sends are inside that week (Mon 00:00 IST → Sun 23:59 IST), so using
+  // weekOfMonth(now) keeps newsletter + hero + autoposter on one story.
+  const weeklyWeek = weekOfMonth(now);
+  const slug = `${year}-${String(currentMonth).padStart(2, "0")}-w${weeklyWeek}`;
 
-  // 1. Best score — highest-scoring destination this month, avoid recent features
-  const { data: topScores } = await supabase
-    .from("destination_months")
-    .select("score, note, why_go, destination_id, destinations(id, name, state:states(name))")
-    .eq("month", currentMonth)
-    .gte("score", 4)
-    .order("score", { ascending: false })
-    .limit(20);
-
-  if (!topScores || topScores.length === 0) {
-    return { error: "No top-scored destinations available for this month" };
+  // 1. Best score — the #1 Weekly Picks pick for this month + week. Same
+  //    selectPicks() call the landing page and autoposter make, so the
+  //    featured destination the reader sees in the email matches the hero
+  //    they'll see tomorrow on /where-to-go/{month}.
+  const weeklyPicks = await computeWeeklyPicks(currentMonth, weeklyWeek, year);
+  if (!weeklyPicks || weeklyPicks.destinations.length === 0) {
+    return { error: "Weekly Picks returned no destinations" };
   }
-
-  // Pick by week rotation to avoid repeating within a month
-  const picked = topScores[issueNumber % topScores.length] as any;
-  const destRow = picked.destinations;
-  if (!destRow) return { error: "Top destination row missing join" };
-
-  const stateRow = Array.isArray(destRow.state) ? destRow.state[0] : destRow.state;
+  const featured = weeklyPicks.destinations[0];
   const bestScore = {
-    destinationId: destRow.id,
-    name: destRow.name,
-    state: stateRow?.name ?? "India",
-    score: picked.score,
-    note: picked.note ?? "",
-    whyGo: picked.why_go ?? undefined,
+    destinationId: featured.id,
+    name: featured.name,
+    state: featured.state ?? "India",
+    score: featured.score,
+    note: featured.why_this_week ?? "",
+    whyGo: featured.tagline ?? undefined,
   };
 
   // 2. Honest skip — one tourist trap + alternative, rotate by week
