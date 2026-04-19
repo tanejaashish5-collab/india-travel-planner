@@ -56,13 +56,16 @@ interface TopFiveHeroProps {
 }
 
 const VERMILLION = "#E55642";
+const SAFFRON = "#C8932F"; // Brand Saffron Gold — editorial support, not primary accent
 
-/* Three tag tints, mirroring master-dark.html `.tag.peak|.good|.ok`. */
+/* Chip tints. Vermillion is reserved for why_this_week + #1 stamp, so PEAK
+ * uses Saffron (brand's editorial-support tone) and the lower tiers fade
+ * into muted neutrals rather than fighting for the eye. */
 function chipClass(score: number): string {
-  if (score >= 5) return "border-[#E55642]/70 text-[#E55642]";
-  if (score >= 4) return "border-emerald-400/60 text-emerald-400";
-  if (score >= 3) return "border-amber-300/60 text-amber-300";
-  return "border-white/20 text-white/40";
+  if (score >= 5) return "border-[#C8932F]/55 text-[#C8932F]";
+  if (score >= 4) return "border-white/25 text-white/65";
+  if (score >= 3) return "border-white/20 text-white/50";
+  return "border-white/15 text-white/35";
 }
 
 function chipLabel(score: number): string {
@@ -72,7 +75,16 @@ function chipLabel(score: number): string {
   return "—";
 }
 
-/* 12-bar monthly sparkline. Current month lit vermillion, others dim. */
+/* Per-bar color encodes the score value, so the 12-bar chart reads as a
+ * shape-of-the-year instead of a red blob. Active month gets a thin outline
+ * ring so "this is now" still lands even when its underlying score is low. */
+function barColor(score: number): string {
+  if (score >= 5) return VERMILLION;
+  if (score === 4) return SAFFRON;
+  if (score === 3) return "rgba(255,255,255,0.40)";
+  return "rgba(255,255,255,0.15)";
+}
+
 function Sparkline({ scores, activeMonth }: { scores: number[]; activeMonth: number }) {
   const bars = Array.from({ length: 12 }, (_, i) => scores[i] ?? 0);
   return (
@@ -87,8 +99,12 @@ function Sparkline({ scores, activeMonth }: { scores: number[]; activeMonth: num
         return (
           <div
             key={i}
-            className={isActive ? "bg-[#E55642]" : "bg-white/25"}
-            style={{ height: `${h}px` }}
+            style={{
+              height: `${h}px`,
+              backgroundColor: barColor(s),
+              outline: isActive ? "1px solid rgba(255,255,255,0.85)" : "none",
+              outlineOffset: "-1px",
+            }}
           />
         );
       })}
@@ -130,14 +146,18 @@ export function TopFiveHero({
   const locale = useLocale();
   const regionLabel = regionName ?? "India";
 
-  // Eyebrow label resolves in three modes:
-  //  1. weekNum set + score-5 pool viable → "This Week's Picks · {Month} · Week N"
-  //  2. weekNum set + fallback_from_four  → "Good Time to Visit · {Month} · Week N"
-  //  3. no weekNum (static legacy)         → "Top N · {Month} · {Region}"
-  const eyebrowLabel = weekNum
-    ? `${fallbackFromFour ? "Good Time to Visit" : "This Week's Picks"} · ${monthName} · Week ${weekNum}`
-    : `${topFive.length === 5 ? "Top 5" : `The ${topFive.length}`} · ${monthName} · ${regionLabel}`;
-
+  // Eyebrow is rendered as per-token spans (see below) so the two reading
+  // landmarks — the month name and "5/5" — can carry vermillion while the
+  // structural labels recede to muted white. This keeps vermillion as the
+  // spice rather than letting the label bar compete with the headline.
+  const modeLabel = weekNum
+    ? fallbackFromFour
+      ? "Good Time to Visit"
+      : "This Week's Picks"
+    : topFive.length === 5
+      ? "Top 5"
+      : `The ${topFive.length}`;
+  const contextLabel = weekNum ? `Week ${weekNum}` : regionLabel;
   const peakCount = topFive.filter((r) => r.score >= 5).length;
 
   return (
@@ -146,14 +166,19 @@ export function TopFiveHero({
       <FadeIn>
         <div className="mb-3 flex items-center gap-3">
           <span className="h-px w-8 bg-[#E55642]" />
-          <span className="font-mono text-[11px] font-bold uppercase tracking-[0.32em] text-white/60">
-            {eyebrowLabel}
-            {peakCount > 0 ? (
+          <span className="font-mono text-[11px] font-bold uppercase tracking-[0.32em]">
+            <span className="text-white/55">{modeLabel}</span>
+            <span className="text-white/25"> · </span>
+            <span style={{ color: VERMILLION }}>{monthName}</span>
+            <span className="text-white/25"> · </span>
+            <span className="text-white/55">{contextLabel}</span>
+            {peakCount > 0 && (
               <>
-                {" · "}
-                <span className="text-emerald-400">{peakCount} scoring 5/5</span>
+                <span className="text-white/25"> · </span>
+                <span className="text-white/55">{peakCount} scoring </span>
+                <span style={{ color: VERMILLION }}>5/5</span>
               </>
-            ) : null}
+            )}
           </span>
         </div>
         <h2 className="font-fraunces italic text-4xl sm:text-5xl md:text-[56px] font-medium leading-[0.98] tracking-tight text-white max-w-[800px] text-balance">
@@ -184,7 +209,11 @@ export function TopFiveHero({
             <StaggerItem key={row.id}>
               <Link
                 href={`/${locale}/destination/${row.id}/${monthSlug}`}
-                className="group relative grid gap-4 border-t border-white/10 px-5 py-5 transition-colors hover:bg-[#171918] md:gap-5 md:px-6 md:py-6"
+                className={`group relative grid gap-4 border-t border-white/10 px-5 transition-colors hover:bg-[#171918] md:gap-5 md:px-6 ${
+                  isFirst
+                    ? "bg-white/[0.03] py-7 md:py-8"
+                    : "py-5 md:py-6"
+                }`}
                 style={{
                   gridTemplateColumns:
                     "56px minmax(0, 1fr) auto",
@@ -201,18 +230,30 @@ export function TopFiveHero({
 
                 {/* Thumb + name + tagline (collapses to full width below md) */}
                 <div className="flex min-w-0 items-center gap-4 md:gap-5">
-                  <div className="relative h-14 w-14 md:h-16 md:w-16 flex-shrink-0 overflow-hidden border border-white/10 bg-black/40">
+                  <div
+                    className={`relative flex-shrink-0 overflow-hidden border border-white/10 bg-black/40 ${
+                      isFirst
+                        ? "h-20 w-20 md:h-24 md:w-24"
+                        : "h-14 w-14 md:h-16 md:w-16"
+                    }`}
+                  >
                     <Image
                       src={`/images/destinations/${row.id}.jpg`}
                       alt={row.name}
                       fill
-                      sizes="64px"
+                      sizes={isFirst ? "96px" : "64px"}
                       className="object-cover"
                       style={{ filter: "grayscale(0.1) brightness(0.95)" }}
                     />
                   </div>
                   <div className="min-w-0">
-                    <h3 className="font-fraunces italic text-[22px] md:text-[26px] leading-tight tracking-tight text-white truncate">
+                    <h3
+                      className={`font-fraunces italic leading-tight tracking-tight text-white truncate ${
+                        isFirst
+                          ? "text-[26px] md:text-[32px]"
+                          : "text-[22px] md:text-[26px]"
+                      }`}
+                    >
                       {row.name}
                     </h3>
                     {row.tagline && (
@@ -245,12 +286,10 @@ export function TopFiveHero({
                     gridTemplateColumns: "80px 90px 170px 70px",
                   }}
                 >
-                  {/* Score */}
+                  {/* Score — bone-white. Size alone carries the emphasis;
+                   *  no need for vermillion to reinforce a 32px numeral. */}
                   <div className="flex items-baseline gap-1">
-                    <span
-                      className="font-mono text-[32px] font-bold leading-none tracking-tight"
-                      style={{ color: VERMILLION }}
-                    >
+                    <span className="font-mono text-[32px] font-bold leading-none tracking-tight text-white">
                       {row.score}
                     </span>
                     <span className="font-mono text-[15px] leading-none text-white/35">
@@ -274,8 +313,8 @@ export function TopFiveHero({
                     </div>
                   </div>
 
-                  {/* GO → */}
-                  <span className="justify-self-end font-mono text-[10px] font-bold uppercase tracking-[0.22em] text-[#E55642] group-hover:text-white transition-colors">
+                  {/* GO → bone-weighted, brightens on hover. */}
+                  <span className="justify-self-end font-mono text-[10px] font-bold uppercase tracking-[0.22em] text-white/70 underline decoration-transparent underline-offset-4 group-hover:text-white group-hover:decoration-white/70 transition-colors">
                     GO<span aria-hidden> →</span>
                   </span>
                 </div>
@@ -283,10 +322,7 @@ export function TopFiveHero({
                 {/* Mobile-only right: score + GO */}
                 <div className="flex flex-col items-end gap-2 md:hidden">
                   <div className="flex items-baseline gap-1">
-                    <span
-                      className="font-mono text-[26px] font-bold leading-none tracking-tight"
-                      style={{ color: VERMILLION }}
-                    >
+                    <span className="font-mono text-[26px] font-bold leading-none tracking-tight text-white">
                       {row.score}
                     </span>
                     <span className="font-mono text-[13px] leading-none text-white/35">
