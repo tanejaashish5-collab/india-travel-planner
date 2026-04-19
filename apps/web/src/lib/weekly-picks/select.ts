@@ -55,8 +55,39 @@ export interface SelectionResult {
 const MAX_SAME_STATE = 2;
 const MIN_DISTINCT_STATES = 3;
 const MAX_HARD_DIFFICULTY = 1;
+const MAX_SAME_PRIMARY_TAG = 2;
 
 const PEAK_KEYWORDS = /\b(best month|peak|ideal|perfect|prime)\b/i;
+
+// Priority-ordered category tags. A destination's primaryTag is the first
+// tag in this list that it carries — so a place tagged both "heritage" and
+// "hill-station" is classified as hill-station (the more dominant visual
+// character). This is what the destination-type diversity cap rides on.
+const PRIMARY_TAG_PRIORITY = [
+  "hill-station",
+  "beach",
+  "backwater",
+  "desert",
+  "tiger-reserve",
+  "national-park",
+  "wildlife",
+  "fort",
+  "temple",
+  "pilgrimage",
+  "spiritual",
+  "heritage",
+  "monastery",
+  "trekking",
+  "adventure",
+];
+
+function primaryTag(tags: string[] | null): string {
+  if (!tags || tags.length === 0) return "_other";
+  for (const p of PRIMARY_TAG_PRIORITY) {
+    if (tags.includes(p)) return p;
+  }
+  return "_other";
+}
 
 /**
  * @param candidates All destination-month rows already matching score ≥ 5.
@@ -142,9 +173,9 @@ export function selectPicks(
 type WeightedCandidate = SelectionCandidate & { _weight: number; _noteLen: number };
 
 /** Greedy selector honoring diversity rules. `relaxation`:
- *  0 = strict (max 2 per state, ≥3 distinct states, ≤1 hard)
- *  1 = allow 3 per state, keep ≥2 distinct states, ≤1 hard
- *  2 = allow 3 per state, no distinct-states minimum, ≤2 hard
+ *  0 = strict (max 2/state, max 2/primary-tag, ≥3 distinct states, ≤1 hard)
+ *  1 = allow 3/state, allow 3/primary-tag, ≥2 distinct states, ≤1 hard
+ *  2 = allow 3/state, drop primary-tag cap, no distinct-states minimum, ≤2 hard
  */
 function pickWithDiversity(
   pool: WeightedCandidate[],
@@ -154,12 +185,16 @@ function pickWithDiversity(
   const maxSameState = relaxation >= 1 ? 3 : MAX_SAME_STATE;
   const minDistinctStates = relaxation >= 2 ? 1 : (relaxation === 1 ? 2 : MIN_DISTINCT_STATES);
   const maxHard = relaxation >= 2 ? 2 : MAX_HARD_DIFFICULTY;
+  const maxSameTag = relaxation >= 2 ? Infinity : (relaxation === 1 ? 3 : MAX_SAME_PRIMARY_TAG);
 
   const picks: WeightedCandidate[] = [...seeded];
   const stateCount: Record<string, number> = {};
+  const tagCount: Record<string, number> = {};
   let hardCount = 0;
   for (const s of seeded) {
     if (s.state_id) stateCount[s.state_id] = (stateCount[s.state_id] ?? 0) + 1;
+    const pt = primaryTag(s.tags);
+    tagCount[pt] = (tagCount[pt] ?? 0) + 1;
     if (s.difficulty === "hard" || s.difficulty === "extreme") hardCount++;
   }
 
@@ -169,6 +204,9 @@ function pickWithDiversity(
 
     const sid = c.state_id ?? "_unknown";
     if ((stateCount[sid] ?? 0) >= maxSameState) continue;
+
+    const pt = primaryTag(c.tags);
+    if ((tagCount[pt] ?? 0) >= maxSameTag) continue;
 
     const isHard = c.difficulty === "hard" || c.difficulty === "extreme";
     if (isHard && hardCount >= maxHard) continue;
@@ -186,6 +224,7 @@ function pickWithDiversity(
 
     picks.push(c);
     stateCount[sid] = (stateCount[sid] ?? 0) + 1;
+    tagCount[pt] = (tagCount[pt] ?? 0) + 1;
     if (isHard) hardCount++;
   }
 

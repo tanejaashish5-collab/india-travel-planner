@@ -5,6 +5,7 @@ import { FadeIn, ScrollReveal, StaggerContainer, StaggerItem, HoverCard } from "
 import { SCORE_COLORS, DIFFICULTY_COLORS } from "@/lib/design-tokens";
 import { NewsletterSignup } from "./newsletter-signup";
 import { WhatsAppShare } from "./whatsapp-share";
+import { destinationImage } from "@/lib/image-url";
 
 // ── Constants ──────────────────────────────────────────────────
 
@@ -88,6 +89,54 @@ export function DestinationMonth({
       </span>
     );
   }
+
+  // ── 0. Media Hero ──────────────────────────────────────────
+  // Cinematic video + poster-image banner, ported from the main
+  // destination page so that month-specific detail pages don't land as
+  // a text wall. Same video source + poster fallback pattern, so a
+  // destination without a video file still shows its image.
+
+  const MediaHero = () => (
+    <FadeIn>
+      <div
+        className="relative h-56 sm:h-72 lg:h-96 rounded-2xl overflow-hidden film-grain"
+        style={{
+          background:
+            "linear-gradient(135deg, oklch(0.25 0.02 260), oklch(0.18 0.01 280))",
+        }}
+      >
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="w-full h-full object-cover"
+          poster={destinationImage(destination.id)}
+        >
+          <source
+            src={`${process.env.NEXT_PUBLIC_VIDEO_BASE_URL}/${destination.id}.mp4`}
+            type="video/mp4"
+          />
+        </video>
+        <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/30 to-transparent pointer-events-none" />
+        <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between gap-4">
+          <div>
+            <div className="font-mono text-[11px] uppercase tracking-[0.24em] text-white/70">
+              {monthName} · {stateName ?? "India"}
+            </div>
+            <div className="mt-1 font-serif italic text-2xl sm:text-3xl text-white">
+              {destination.name}
+            </div>
+          </div>
+          <span
+            className={`rounded-full border border-white/20 bg-black/40 px-3 py-1.5 backdrop-blur-md font-mono text-[10px] uppercase tracking-[0.22em] ${scoreInfo.color}`}
+          >
+            {score}/5 · {scoreInfo.label}
+          </span>
+        </div>
+      </div>
+    </FadeIn>
+  );
 
   // ── 1. Score Hero ──────────────────────────────────────────
 
@@ -569,6 +618,7 @@ export function DestinationMonth({
 
   return (
     <article className="space-y-10">
+      <MediaHero />
       <ScoreHero />
 
       {/* WhatsApp Share */}
