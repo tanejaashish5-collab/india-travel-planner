@@ -56,16 +56,27 @@ interface TopFiveHeroProps {
 }
 
 const VERMILLION = "#E55642";
-const SAFFRON = "#C8932F"; // Brand Saffron Gold — editorial support, not primary accent
+const SAFFRON = "#C8932F"; // Brand Saffron Gold — editorial support (4/5 tier)
+const EMERALD = "#34D399"; // Tailwind emerald-400 — "go, this is peak" (5/5 tier)
 
-/* Chip tints. Vermillion is reserved for why_this_week + #1 stamp, so PEAK
- * uses Saffron (brand's editorial-support tone) and the lower tiers fade
- * into muted neutrals rather than fighting for the eye. */
+/* Chip tints follow the brand-green "Score badge" convention: 5/5 is emerald
+ * so the eye instantly reads "go." 4/5 drops to Saffron (still positive, but
+ * clearly a step below peak), 3 and below fade into muted neutrals. Vermillion
+ * is never used for score metadata — reserved for why_this_week + #1 stamp. */
 function chipClass(score: number): string {
-  if (score >= 5) return "border-[#C8932F]/55 text-[#C8932F]";
-  if (score >= 4) return "border-white/25 text-white/65";
+  if (score >= 5) return "border-[#34D399]/55 text-[#34D399]";
+  if (score >= 4) return "border-[#C8932F]/55 text-[#C8932F]";
   if (score >= 3) return "border-white/20 text-white/50";
   return "border-white/15 text-white/35";
+}
+
+/* Score number carries the same green/saffron/muted ladder as the chip,
+ * so a row reads as a unit: chip + score + sparkline peak month all speak
+ * the same color language for a 5/5. */
+function scoreClass(score: number): string {
+  if (score >= 5) return "text-[#34D399]";
+  if (score >= 4) return "text-[#C8932F]";
+  return "text-white";
 }
 
 function chipLabel(score: number): string {
@@ -79,7 +90,7 @@ function chipLabel(score: number): string {
  * shape-of-the-year instead of a red blob. Active month gets a thin outline
  * ring so "this is now" still lands even when its underlying score is low. */
 function barColor(score: number): string {
-  if (score >= 5) return VERMILLION;
+  if (score >= 5) return EMERALD; // peak months speak the same green as the score + chip
   if (score === 4) return SAFFRON;
   if (score === 3) return "rgba(255,255,255,0.40)";
   return "rgba(255,255,255,0.15)";
@@ -286,10 +297,11 @@ export function TopFiveHero({
                     gridTemplateColumns: "80px 90px 170px 70px",
                   }}
                 >
-                  {/* Score — bone-white. Size alone carries the emphasis;
-                   *  no need for vermillion to reinforce a 32px numeral. */}
+                  {/* Score — green for 5/5 (go), saffron for 4/5 (good). The
+                   *  score number is the fastest read on the row, so it
+                   *  carries the same semantic color as the chip beside it. */}
                   <div className="flex items-baseline gap-1">
-                    <span className="font-mono text-[32px] font-bold leading-none tracking-tight text-white">
+                    <span className={`font-mono text-[32px] font-bold leading-none tracking-tight ${scoreClass(row.score)}`}>
                       {row.score}
                     </span>
                     <span className="font-mono text-[15px] leading-none text-white/35">
@@ -322,7 +334,7 @@ export function TopFiveHero({
                 {/* Mobile-only right: score + GO */}
                 <div className="flex flex-col items-end gap-2 md:hidden">
                   <div className="flex items-baseline gap-1">
-                    <span className="font-mono text-[26px] font-bold leading-none tracking-tight text-white">
+                    <span className={`font-mono text-[26px] font-bold leading-none tracking-tight ${scoreClass(row.score)}`}>
                       {row.score}
                     </span>
                     <span className="font-mono text-[13px] leading-none text-white/35">
