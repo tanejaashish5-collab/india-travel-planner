@@ -344,10 +344,7 @@ log = logging.getLogger("nakshiq")
 # ─────────────────────────────────────────────────────────────────────────────
 
 def load_state() -> dict:
-    if STATE_FILE.exists():
-        with open(STATE_FILE, encoding="utf-8") as f:
-            return json.load(f)
-    return {
+    defaults = {
         "last_sync":           None,
         "posted_today":        {},
         "posted_destinations": [],
@@ -361,6 +358,14 @@ def load_state() -> dict:
         #   routes, traps, reels (destinations used specifically in Reels).
         "theme_usage":         {},
     }
+    if STATE_FILE.exists():
+        with open(STATE_FILE, encoding="utf-8") as f:
+            state = json.load(f)
+        # Backfill any missing keys so callers never hit KeyError
+        for k, v in defaults.items():
+            state.setdefault(k, v)
+        return state
+    return defaults
 
 def save_state(state: dict):
     with open(STATE_FILE, "w", encoding="utf-8") as f:
@@ -372,7 +377,10 @@ def already_posted_today(state: dict, key: str) -> bool:
 def mark_posted(state: dict, account_id: str, destination_id: str,
                 fmt: str, post_id: str, platform: str, has_media: bool):
     today = date.today().isoformat()
-    state["posted_today"][account_id] = today
+    state.setdefault("posted_today", {})[account_id] = today
+    state.setdefault("posted_destinations", [])
+    state.setdefault("posted_formats", {})
+    state.setdefault("post_log", [])
     cutoff = (date.today() - timedelta(days=14)).isoformat()
     state["posted_destinations"] = [
         d for d in state["posted_destinations"] if d["date"] >= cutoff
