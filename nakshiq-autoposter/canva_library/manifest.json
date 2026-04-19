@@ -677,136 +677,6 @@
       ]
     },
     {
-      "file": "collections/unesco_north_india_01.jpg",
-      "category": "collections",
-      "subject": "Unesco North India",
-      "state": null,
-      "destination": null,
-      "tags": [
-        "collection",
-        "curated",
-        "travel"
-      ],
-      "caption_template": "collection"
-    },
-    {
-      "file": "collections/best_beaches_india_01.jpg",
-      "category": "collections",
-      "subject": "India'S Best Beaches",
-      "state": null,
-      "destination": null,
-      "tags": [
-        "collection",
-        "curated",
-        "travel"
-      ],
-      "caption_template": "collection"
-    },
-    {
-      "file": "collections/weekend_from_delhi_01.jpg",
-      "category": "collections",
-      "subject": "Weekends From Delhi",
-      "state": null,
-      "destination": null,
-      "tags": [
-        "collection",
-        "curated",
-        "travel"
-      ],
-      "caption_template": "collection"
-    },
-    {
-      "file": "collections/weekend_from_mumbai_01.jpg",
-      "category": "collections",
-      "subject": "Weekends From Mumbai",
-      "state": null,
-      "destination": null,
-      "tags": [
-        "collection",
-        "curated",
-        "travel"
-      ],
-      "caption_template": "collection"
-    },
-    {
-      "file": "collections/wildlife_safari_01.jpg",
-      "category": "collections",
-      "subject": "India Wildlife Safari",
-      "state": null,
-      "destination": null,
-      "tags": [
-        "collection",
-        "curated",
-        "travel"
-      ],
-      "caption_template": "collection"
-    },
-    {
-      "file": "collections/spiritual_circuit_01.jpg",
-      "category": "collections",
-      "subject": "Spiritual India",
-      "state": null,
-      "destination": null,
-      "tags": [
-        "collection",
-        "curated",
-        "travel"
-      ],
-      "caption_template": "collection"
-    },
-    {
-      "file": "collections/monsoon_magic_01.jpg",
-      "category": "collections",
-      "subject": "Monsoon Magic",
-      "state": null,
-      "destination": null,
-      "tags": [
-        "collection",
-        "curated",
-        "travel"
-      ],
-      "caption_template": "collection"
-    },
-    {
-      "file": "collections/luxury_heritage_stays_01.jpg",
-      "category": "collections",
-      "subject": "Heritage Stays",
-      "state": null,
-      "destination": null,
-      "tags": [
-        "collection",
-        "curated",
-        "travel"
-      ],
-      "caption_template": "collection"
-    },
-    {
-      "file": "collections/goa_beyond_beaches_01.jpg",
-      "category": "collections",
-      "subject": "Goa Beyond Beaches",
-      "state": null,
-      "destination": null,
-      "tags": [
-        "collection",
-        "curated",
-        "travel"
-      ],
-      "caption_template": "collection"
-    },
-    {
-      "file": "collections/northeast_first_timer_01.jpg",
-      "category": "collections",
-      "subject": "Northeast India",
-      "state": null,
-      "destination": null,
-      "tags": [
-        "collection",
-        "curated",
-        "travel"
-      ],
-      "caption_template": "collection"
-    },
-    {
       "file": "activities/camping_01.jpg",
       "category": "activities",
       "subject": "Camping in India",
@@ -1015,6 +885,214 @@
       "caption_template": "season"
     },
     {
+      "file": "festivals/holi_01.jpg",
+      "category": "festivals",
+      "subject": "Holi in India",
+      "state": null,
+      "destination": null,
+      "tags": [
+        "holi",
+        "festival",
+        "culture"
+      ],
+      "caption_template": "festival"
+    },
+    {
+      "file": "festivals/diwali_01.jpg",
+      "category": "festivals",
+      "subject": "Diwali in India",
+      "state": null,
+      "destination": null,
+      "tags": [
+        "diwali",
+        "festival",
+        "culture"
+      ],
+      "caption_template": "festival"
+    },
+    {
+      "file": "festivals/pushkar_fair_01.jpg",
+      "category": "festivals",
+      "subject": "Pushkar Fair in India",
+      "state": null,
+      "destination": null,
+      "tags": [
+        "pushkar_fair",
+        "festival",
+        "culture"
+      ],
+      "caption_template": "festival"
+    },
+    {
+      "file": "festivals/durga_puja_01.jpg",
+      "category": "festivals",
+      "subject": "Durga Puja in India",
+      "state": null,
+      "destination": null,
+      "tags": [
+        "durga_puja",
+        "festival",
+        "culture"
+      ],
+      "caption_template": "festival"
+    },
+    {
+      "file": "festivals/onam_01.jpg",
+      "category": "festivals",
+      "subject": "Onam in India",
+      "state": null,
+      "destination": null,
+      "tags": [
+        "onam",
+        "festival",
+        "culture"
+      ],
+      "caption_template": "festival"
+    },
+    {
+      "file": "festivals/ganesh_chaturthi_01.jpg",
+      "category": "festivals",
+      "subject": "Ganesh Chaturthi in India",
+      "state": null,
+      "destination": null,
+      "tags": [
+        "ganesh_chaturthi",
+        "festival",
+        "culture"
+      ],
+      "caption_template": "festival"
+    },
+    {
+      "file": "collections/unesco_north_india_01.jpg",
+      "category": "collections",
+      "subject": "Unesco North India",
+      "state": null,
+      "destination": null,
+      "tags": [
+        "collection",
+        "curated",
+        "travel"
+      ],
+      "caption_template": "collection"
+    },
+    {
+      "file": "collections/best_beaches_india_01.jpg",
+      "category": "collections",
+      "subject": "India'S Best Beaches",
+      "state": null,
+      "destination": null,
+      "tags": [
+        "collection",
+        "curated",
+        "travel"
+      ],
+      "caption_template": "collection"
+    },
+    {
+      "file": "collections/weekend_from_delhi_01.jpg",
+      "category": "collections",
+      "subject": "Weekends From Delhi",
+      "state": null,
+      "destination": null,
+      "tags": [
+        "collection",
+        "curated",
+        "travel"
+      ],
+      "caption_template": "collection"
+    },
+    {
+      "file": "collections/weekend_from_mumbai_01.jpg",
+      "category": "collections",
+      "subject": "Weekends From Mumbai",
+      "state": null,
+      "destination": null,
+      "tags": [
+        "collection",
+        "curated",
+        "travel"
+      ],
+      "caption_template": "collection"
+    },
+    {
+      "file": "collections/wildlife_safari_01.jpg",
+      "category": "collections",
+      "subject": "India Wildlife Safari",
+      "state": null,
+      "destination": null,
+      "tags": [
+        "collection",
+        "curated",
+        "travel"
+      ],
+      "caption_template": "collection"
+    },
+    {
+      "file": "collections/spiritual_circuit_01.jpg",
+      "category": "collections",
+      "subject": "Spiritual India",
+      "state": null,
+      "destination": null,
+      "tags": [
+        "collection",
+        "curated",
+        "travel"
+      ],
+      "caption_template": "collection"
+    },
+    {
+      "file": "collections/monsoon_magic_01.jpg",
+      "category": "collections",
+      "subject": "Monsoon Magic",
+      "state": null,
+      "destination": null,
+      "tags": [
+        "collection",
+        "curated",
+        "travel"
+      ],
+      "caption_template": "collection"
+    },
+    {
+      "file": "collections/luxury_heritage_stays_01.jpg",
+      "category": "collections",
+      "subject": "Heritage Stays",
+      "state": null,
+      "destination": null,
+      "tags": [
+        "collection",
+        "curated",
+        "travel"
+      ],
+      "caption_template": "collection"
+    },
+    {
+      "file": "collections/goa_beyond_beaches_01.jpg",
+      "category": "collections",
+      "subject": "Goa Beyond Beaches",
+      "state": null,
+      "destination": null,
+      "tags": [
+        "collection",
+        "curated",
+        "travel"
+      ],
+      "caption_template": "collection"
+    },
+    {
+      "file": "collections/northeast_first_timer_01.jpg",
+      "category": "collections",
+      "subject": "Northeast India",
+      "state": null,
+      "destination": null,
+      "tags": [
+        "collection",
+        "curated",
+        "travel"
+      ],
+      "caption_template": "collection"
+    },
+    {
       "file": "food/lucknow_UP_01.jpg",
       "category": "food",
       "subject": "Lucknow Food Trail",
@@ -1117,84 +1195,6 @@
         "cuisine"
       ],
       "caption_template": "food_city"
-    },
-    {
-      "file": "festivals/holi_01.jpg",
-      "category": "festivals",
-      "subject": "Holi in India",
-      "state": null,
-      "destination": null,
-      "tags": [
-        "holi",
-        "festival",
-        "culture"
-      ],
-      "caption_template": "festival"
-    },
-    {
-      "file": "festivals/diwali_01.jpg",
-      "category": "festivals",
-      "subject": "Diwali in India",
-      "state": null,
-      "destination": null,
-      "tags": [
-        "diwali",
-        "festival",
-        "culture"
-      ],
-      "caption_template": "festival"
-    },
-    {
-      "file": "festivals/pushkar_fair_01.jpg",
-      "category": "festivals",
-      "subject": "Pushkar Fair in India",
-      "state": null,
-      "destination": null,
-      "tags": [
-        "pushkar_fair",
-        "festival",
-        "culture"
-      ],
-      "caption_template": "festival"
-    },
-    {
-      "file": "festivals/durga_puja_01.jpg",
-      "category": "festivals",
-      "subject": "Durga Puja in India",
-      "state": null,
-      "destination": null,
-      "tags": [
-        "durga_puja",
-        "festival",
-        "culture"
-      ],
-      "caption_template": "festival"
-    },
-    {
-      "file": "festivals/onam_01.jpg",
-      "category": "festivals",
-      "subject": "Onam in India",
-      "state": null,
-      "destination": null,
-      "tags": [
-        "onam",
-        "festival",
-        "culture"
-      ],
-      "caption_template": "festival"
-    },
-    {
-      "file": "festivals/ganesh_chaturthi_01.jpg",
-      "category": "festivals",
-      "subject": "Ganesh Chaturthi in India",
-      "state": null,
-      "destination": null,
-      "tags": [
-        "ganesh_chaturthi",
-        "festival",
-        "culture"
-      ],
-      "caption_template": "festival"
     }
   ]
 }
