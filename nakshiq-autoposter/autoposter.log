@@ -2122,3 +2122,21 @@ Date range: 2026-04-15 → 2026-04-18
 2026-04-19 07:31:02  INFO      ── Syncing Nakshiq content ──────────────────────────────
 2026-04-19 07:31:08  INFO      Synced → 20 destinations · 0 traps · 3 articles · total catalog=480
 2026-04-19 07:31:08  INFO      Sync-only mode. Done.
+2026-04-19 09:49:30  INFO      ════════════════════════════════════════════════════════════
+2026-04-19 09:49:30  INFO      Nakshiq Autoposter · CANVA VISUAL · 2026-04-19 · weekday=6
+2026-04-19 09:49:30  INFO      ════════════════════════════════════════════════════════════
+2026-04-19 09:49:30  INFO      Library: 88 images across 8 categories
+2026-04-19 09:49:30  INFO      Selected: [mood_shots] Munnar tea plantations sunrise → mood_shots/munnar_KL_01.jpg
+2026-04-19 09:49:30  INFO          Requesting upload URL for canva_mood_shots_munnar_KL_01.jpg (227,706 bytes, image/jpeg)
+2026-04-19 09:49:31  INFO          Uploading to R2 (timeout=120s)...
+2026-04-19 09:49:32  INFO          R2 PUT OK. Confirming...
+2026-04-19 09:49:32  INFO          Media ready: lkxHK (227,706 bytes · canva_mood_shots_munnar_KL_01.jpg)
+2026-04-19 09:49:32  INFO      Image uploaded: canva_mood_shots_munnar_KL_01.jpg (222 KB)
+2026-04-19 09:49:33  INFO      [instagram/nakshiq] Publishing canva visual: Munnar tea plantations sunrise...
+2026-04-19 09:49:36  INFO      [instagram/nakshiq] Canva visual posted successfully!
+2026-04-19 09:49:36  INFO      [facebook/Nakshiq] Publishing canva visual: Munnar tea plantations sunrise...
+2026-04-19 09:49:38  INFO      [facebook/Nakshiq] Canva visual posted successfully!
+2026-04-19 09:49:38  INFO      [youtube/@naksh-iq] Skipping canva visual (YouTube only accepts video/reels).
+2026-04-19 09:49:38  INFO      Theme tracker updated: cat=mood_shots / img=mood_shots/munnar_KL_01.jpg
+2026-04-19 09:49:38  INFO      State saved. Canva Visual run complete.
+2026-04-19 09:49:38  INFO      ════════════════════════════════════════════════════════════
