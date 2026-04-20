@@ -40,10 +40,6 @@ export async function generateMetadata({
   };
 }
 
-export function generateStaticParams() {
-  return Object.keys(REGION_GROUPS).map((regionSlug) => ({ regionSlug }));
-}
-
 async function getRegionData(regionSlug: string) {
   const region = REGION_GROUPS[regionSlug];
   if (!region) return null;
