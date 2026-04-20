@@ -69,6 +69,19 @@ export async function buildWindowIssue(): Promise<IssueBuildResult> {
     whyGo: featured.tagline ?? undefined,
   };
 
+  // Full ranked set for Format 5 template — numbered spine № 02-05
+  const picks = weeklyPicks.destinations.slice(0, 5).map((d) => ({
+    id: d.id,
+    name: d.name,
+    state: d.state,
+    score: d.score,
+    elevation_m: d.elevation_m,
+    difficulty: d.difficulty,
+    why_this_week: d.why_this_week,
+    image: d.image,
+    primary_tag: null,
+  }));
+
   // 2. Honest skip — one tourist trap + alternative, rotate by week
   const { data: traps } = await supabase
     .from("tourist_trap_alternatives")
@@ -153,6 +166,7 @@ export async function buildWindowIssue(): Promise<IssueBuildResult> {
       monthName,
       year,
       opening,
+      picks,
       bestScore,
       skip,
       road,

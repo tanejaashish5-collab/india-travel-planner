@@ -2,14 +2,24 @@ import {
   Body,
   Container,
   Head,
-  Heading,
-  Hr,
   Html,
   Link,
   Preview,
-  Section,
-  Text,
 } from "@react-email/components";
+
+// ── Data shapes ──
+
+export interface PickBlock {
+  id: string;
+  name: string;
+  state: string | null;
+  score: number;
+  elevation_m: number | null;
+  difficulty: string | null;
+  why_this_week: string;
+  image: string;
+  primary_tag?: string | null;
+}
 
 export interface BestScoreBlock {
   destinationId: string;
@@ -45,6 +55,7 @@ export interface WindowIssueProps {
   monthName: string;
   year: number;
   opening: string;
+  picks: PickBlock[];
   bestScore: BestScoreBlock;
   skip: SkipBlock | null;
   road: RoadBlock | null;
@@ -54,121 +65,313 @@ export interface WindowIssueProps {
   webViewUrl: string;
 }
 
+// ── Helpers ──
+
+const IMAGE_BASE = "https://pub-d8970c901de34c218926ebf4be1ed09a.r2.dev";
+
+function imageUrlFor(id: string): string {
+  return `${IMAGE_BASE}/destinations/${id}.jpg`;
+}
+
+function utm(slug: string, slot: string, year: number, month: string, week: number): string {
+  const campaign = `weekly-${year}-${String(new Date(Date.parse(`${month} 1, ${year}`)).getMonth() + 1).padStart(2, "0")}-w${week}`;
+  return `?utm_source=newsletter&utm_medium=email&utm_campaign=${campaign}&utm_content=${slot}`;
+}
+
+function difficultyLabel(d: string | null): string {
+  if (!d) return "—";
+  return d.charAt(0).toUpperCase() + d.slice(1);
+}
+
+function categoryTag(tag: string | null | undefined): string {
+  if (!tag) return "Destination";
+  const words = tag.split("-").map((w) => w.charAt(0).toUpperCase() + w.slice(1));
+  return words.join(" ");
+}
+
+// ── Render ──
+
 export default function TheWindow(props: WindowIssueProps) {
   const {
     issueNumber,
     monthName,
     year,
     opening,
+    picks,
     bestScore,
     skip,
     road,
     changes,
-    closing,
     unsubscribeUrl,
     webViewUrl,
   } = props;
 
+  // Slug components for UTMs
+  const monthNum = new Date(Date.parse(`${monthName} 1, ${year}`)).getMonth() + 1;
+  // issueNumber is ISO week of year; derive week-of-month from current date
+  const nowForWeek = new Date();
+  const weekOfMonth = Math.ceil((nowForWeek.getDate() + (new Date(nowForWeek.getFullYear(), nowForWeek.getMonth(), 1).getDay() || 7) - 1) / 7);
+  const campaign = `weekly-${year}-${String(monthNum).padStart(2, "0")}-w${weekOfMonth}`;
+  const utmFor = (slot: string) => `?utm_source=newsletter&utm_medium=email&utm_campaign=${campaign}&utm_content=${slot}`;
+
+  const monthSlug = monthName.toLowerCase();
+  const issueSlug = `${year}-${String(monthNum).padStart(2, "0")}-w${weekOfMonth}`;
+
+  const hero = picks[0];
+  const rest = picks.slice(1, 5);
+
+  const previewText = `${bestScore.name} scores ${bestScore.score}/5 this week. And one place to skip.`;
+
   return (
-    <Html>
-      <Head />
-      <Preview>
-        {`${bestScore.name} scores ${bestScore.score}/5 this week. And one place to skip.`}
-      </Preview>
+    <Html lang="en">
+      <Head>
+        <meta name="color-scheme" content="dark" />
+        <meta name="supported-color-schemes" content="dark" />
+      </Head>
+      <Preview>{previewText}</Preview>
       <Body style={body}>
-        <Container style={container}>
-          {/* Masthead */}
-          <Section style={masthead}>
-            <Text style={mastheadKicker}>THE WINDOW · ISSUE {String(issueNumber).padStart(3, "0")}</Text>
-            <Heading style={mastheadTitle}>NakshIQ</Heading>
-            <Text style={mastheadDate}>{monthName} {year} · Sunday</Text>
-          </Section>
+        {/* Outer bulletproof dark wrapper */}
+        <table role="presentation" cellPadding={0} cellSpacing={0} border={0} width="100%" bgcolor="#060606" style={{ width: "100%", background: "#060606", borderCollapse: "collapse" }}>
+          <tbody>
+            <tr>
+              <td align="center" style={{ padding: "40px 16px", background: "#060606" }}>
+                <Container style={container}>
 
-          <Hr style={hr} />
+                  {/* Open on web escape hatch */}
+                  <table role="presentation" cellPadding={0} cellSpacing={0} border={0} width="100%" style={innerTable}>
+                    <tbody><tr><td style={{ padding: "18px 28px 0", textAlign: "right" }}>
+                      <Link href={`${webViewUrl}${utmFor("open-on-web")}`} style={ghostLink}>↗ Open on web</Link>
+                    </td></tr></tbody>
+                  </table>
 
-          {/* Opening */}
-          <Text style={openingText}>{opening}</Text>
+                  {/* Masthead */}
+                  <table role="presentation" cellPadding={0} cellSpacing={0} border={0} width="100%" style={innerTable}>
+                    <tbody>
+                      <tr><td style={{ padding: "32px 28px 0", textAlign: "center" }}>
+                        <Link href={`https://www.nakshiq.com/en${utmFor("masthead")}`} style={mastheadWordmark}>NakshIQ</Link>
+                      </td></tr>
+                      <tr><td style={{ padding: "12px 28px 0" }}>
+                        <table role="presentation" cellPadding={0} cellSpacing={0} border={0} width="100%" style={innerTable}>
+                          <tbody><tr><td style={hairline}>&nbsp;</td></tr></tbody>
+                        </table>
+                      </td></tr>
+                      <tr><td style={{ ...mastheadMeta, padding: "10px 28px 0" }}>
+                        № {issueNumber} · {monthName} {year} · The Window
+                      </td></tr>
+                    </tbody>
+                  </table>
 
-          {/* Section 1: Best Score */}
-          <Section style={blockPrimary}>
-            <Text style={blockKicker}>THIS WEEK&apos;S BEST SCORE</Text>
-            <Heading style={blockHeading}>
-              {bestScore.name}, {bestScore.state}
-            </Heading>
-            <Text style={scorePill}>
-              <span style={scoreNum}>{bestScore.score}/5</span>
-            </Text>
-            <Text style={blockBody}>{bestScore.note}</Text>
-            {bestScore.whyGo && <Text style={blockBody}>{bestScore.whyGo}</Text>}
-            <Link href={`https://www.nakshiq.com/en/destination/${bestScore.destinationId}`} style={inlineLink}>
-              See full guide →
-            </Link>
-          </Section>
+                  {/* Hero — pick 01 */}
+                  {hero && (
+                    <table role="presentation" cellPadding={0} cellSpacing={0} border={0} width="100%" style={innerTable}>
+                      <tbody><tr><td style={{ padding: "32px 0 0" }}>
+                        <Link href={`https://www.nakshiq.com/en/destination/${hero.id}/${monthSlug}${utmFor("hero")}`} style={heroBlockLink}>
+                          <table role="presentation" cellPadding={0} cellSpacing={0} border={0} width="100%" style={{ ...innerTable, background: "#0B0B0C" }}>
+                            <tbody><tr><td style={{ padding: "0 24px", background: "#0B0B0C" }}>
+                              <div style={{ position: "relative", lineHeight: 0 }}>
+                                <img src={imageUrlFor(hero.id)} width="552" height="368" alt={`${hero.name} — ${hero.state ?? ""}`} style={heroImage} />
+                                <div style={heroScrim}>
+                                  <div style={heroKicker}>№ 01 · {hero.state ?? ""}</div>
+                                  <div style={heroName}>{hero.name}</div>
+                                  <div style={heroHook}>{hero.why_this_week}</div>
+                                </div>
+                                <div style={heroPillWrap}>
+                                  <div style={heroPill}>
+                                    <span style={pillDot} />{hero.score}/5 · Peak
+                                  </div>
+                                </div>
+                              </div>
+                            </td></tr></tbody>
+                          </table>
+                        </Link>
+                      </td></tr></tbody>
+                    </table>
+                  )}
 
-          {/* Section 2: The Honest Skip */}
-          {skip && (
-            <Section style={blockSkip}>
-              <Text style={blockKicker}>THE HONEST SKIP</Text>
-              <Heading style={blockHeading}>Skip {skip.trapName}.</Heading>
-              <Text style={blockBody}>{skip.trapReason}</Text>
-              <Text style={blockBody}>
-                <strong>Go here instead:</strong> {skip.alternativeName}. {skip.alternativeReason}
-              </Text>
-              <Link href={`https://www.nakshiq.com/en/destination/${skip.alternativeId}`} style={inlineLink}>
-                See why →
-              </Link>
-            </Section>
-          )}
+                  {/* Photo credit */}
+                  {hero && (
+                    <table role="presentation" cellPadding={0} cellSpacing={0} border={0} width="100%" style={innerTable}>
+                      <tbody><tr><td style={photoCredit}>
+                        Photograph · {hero.name}{hero.state ? `, ${hero.state}` : ""} · {monthName} {year}
+                      </td></tr></tbody>
+                    </table>
+                  )}
 
-          {/* Section 3: Road Intelligence */}
-          {road && (
-            <Section style={blockRoad}>
-              <Text style={blockKicker}>ROAD INTELLIGENCE</Text>
-              <Heading style={blockHeading}>{road.title}</Heading>
-              <Text style={blockBody}>{road.body}</Text>
-              {road.destinationId && (
-                <Link href={`https://www.nakshiq.com/en/destination/${road.destinationId}`} style={inlineLink}>
-                  Destination details →
-                </Link>
-              )}
-            </Section>
-          )}
+                  {/* Signed lede */}
+                  <table role="presentation" cellPadding={0} cellSpacing={0} border={0} width="100%" style={innerTable}>
+                    <tbody>
+                      <tr><td style={dateline}>Canberra, {monthName}</td></tr>
+                      <tr><td style={ledeText}>
+                        {opening}<br /><br />
+                        <span style={signOff}>— Ashish</span>
+                      </td></tr>
+                    </tbody>
+                  </table>
 
-          {/* Section 4: What Changed */}
-          <Section style={blockChanges}>
-            <Text style={blockKicker}>WHAT CHANGED</Text>
-            <Text style={blockBody}>
-              This week we updated <strong>{changes.scoresUpdated}</strong> monthly scores,
-              edited <strong>{changes.notesEdited}</strong> destination notes, and added{" "}
-              <strong>{changes.destinationsAdded}</strong> new destinations to the database.
-            </Text>
-            <Link href="https://www.nakshiq.com/en/explore" style={inlineLink}>
-              Browse the latest →
-            </Link>
-          </Section>
+                  {/* Pull quote from hero why_this_week */}
+                  {hero && (
+                    <table role="presentation" cellPadding={0} cellSpacing={0} border={0} width="100%" style={innerTable}>
+                      <tbody><tr><td style={{ padding: "32px 28px 0" }}>
+                        <table role="presentation" cellPadding={0} cellSpacing={0} border={0} width="100%" style={innerTable}>
+                          <tbody><tr>
+                            <td width={4} style={pullQuoteRule} />
+                            <td style={pullQuoteText}>{hero.why_this_week}</td>
+                          </tr></tbody>
+                        </table>
+                      </td></tr></tbody>
+                    </table>
+                  )}
 
-          <Hr style={hr} />
+                  {/* Divider → ranked spine */}
+                  <table role="presentation" cellPadding={0} cellSpacing={0} border={0} width="100%" style={innerTable}>
+                    <tbody>
+                      <tr><td style={{ padding: "56px 28px 0" }}>
+                        <table role="presentation" cellPadding={0} cellSpacing={0} border={0} width="100%" style={innerTable}>
+                          <tbody>
+                            <tr><td style={hairline}>&nbsp;</td></tr>
+                            <tr><td style={{ height: 4, lineHeight: "4px", fontSize: 0 }}>&nbsp;</td></tr>
+                            <tr><td style={hairline}>&nbsp;</td></tr>
+                          </tbody>
+                        </table>
+                      </td></tr>
+                      <tr><td style={sectionLabel}>The Rest of This Week's Five</td></tr>
+                    </tbody>
+                  </table>
 
-          {/* Closing */}
-          <Text style={closingText}>{closing}</Text>
+                  {/* Picks 02-05 */}
+                  {rest.map((p, i) => {
+                    const position = i + 2;
+                    const isFirst = i === 0;
+                    return (
+                      <table key={p.id} role="presentation" cellPadding={0} cellSpacing={0} border={0} width="100%" style={innerTable}>
+                        <tbody>
+                          <tr><td style={{ padding: isFirst ? "32px 28px 0" : "56px 28px 0" }}>
+                            {!isFirst && (
+                              <table role="presentation" cellPadding={0} cellSpacing={0} border={0} width="100%" style={innerTable}>
+                                <tbody><tr><td style={dashedRule}>&nbsp;</td></tr></tbody>
+                              </table>
+                            )}
+                          </td></tr>
+                          <tr><td style={{ padding: isFirst ? "0 28px 0" : "20px 28px 0" }}>
+                            <table role="presentation" cellPadding={0} cellSpacing={0} border={0} width="100%" style={innerTable}>
+                              <tbody><tr>
+                                <td valign="top"><div style={cardNumeral}>{String(position).padStart(2, "0")}</div></td>
+                                <td valign="bottom" style={cardKickerTag}>{categoryTag(p.primary_tag)}</td>
+                                <td align="right" valign="bottom" style={cardScoreTag}>● {p.score}/5 · Peak</td>
+                              </tr></tbody>
+                            </table>
+                          </td></tr>
+                          <tr><td style={{ padding: "12px 28px 0" }}>
+                            <Link href={`https://www.nakshiq.com/en/destination/${p.id}/${monthSlug}${utmFor(`pick-0${position}-image`)}`} style={{ display: "block", textDecoration: "none" }}>
+                              <img src={imageUrlFor(p.id)} width="544" height="306" alt={`${p.name} — ${p.state ?? ""}`} style={cardImage} />
+                            </Link>
+                          </td></tr>
+                          <tr><td style={{ padding: "14px 28px 0" }}>
+                            <Link href={`https://www.nakshiq.com/en/destination/${p.id}/${monthSlug}${utmFor(`pick-0${position}-name`)}`} style={cardName}>{p.name}</Link>
+                          </td></tr>
+                          <tr><td style={cardMeta}>
+                            {p.state ?? ""}{p.elevation_m ? ` · ${p.elevation_m.toLocaleString()}m` : ""}{p.difficulty ? ` · ${difficultyLabel(p.difficulty)}` : ""}
+                          </td></tr>
+                          <tr><td style={cardHook}>{p.why_this_week}</td></tr>
+                          <tr><td style={{ padding: "14px 28px 0" }}>
+                            <Link href={`https://www.nakshiq.com/en/destination/${p.id}/${monthSlug}${utmFor(`pick-0${position}-cta`)}`} style={cardCta}>
+                              Read the {p.name} {monthName} guide →
+                            </Link>
+                          </td></tr>
+                        </tbody>
+                      </table>
+                    );
+                  })}
 
-          {/* Footer */}
-          <Section style={footerSection}>
-            <Text style={footerText}>
-              You&apos;re getting this because you asked for it at{" "}
-              <Link href="https://www.nakshiq.com/en/newsletter" style={footerLink}>
-                nakshiq.com/newsletter
-              </Link>
-              . The Window is written by the family that builds NakshIQ. No affiliates.
-              No sponsored picks. Just the week&apos;s intelligence.
-            </Text>
-            <Text style={footerText}>
-              <Link href={webViewUrl} style={footerLink}>View in browser</Link>
-              {" · "}
-              <Link href={unsubscribeUrl} style={footerLink}>Unsubscribe</Link>
-            </Text>
-          </Section>
-        </Container>
+                  {/* From the Notebook */}
+                  <table role="presentation" cellPadding={0} cellSpacing={0} border={0} width="100%" style={innerTable}>
+                    <tbody>
+                      <tr><td style={{ padding: "72px 28px 0" }}>
+                        <table role="presentation" cellPadding={0} cellSpacing={0} border={0} width="100%" style={innerTable}>
+                          <tbody>
+                            <tr><td style={hairline}>&nbsp;</td></tr>
+                            <tr><td style={{ height: 4, lineHeight: "4px", fontSize: 0 }}>&nbsp;</td></tr>
+                            <tr><td style={hairline}>&nbsp;</td></tr>
+                          </tbody>
+                        </table>
+                      </td></tr>
+                      <tr><td style={notebookHeading}>From the Notebook</td></tr>
+                    </tbody>
+                  </table>
+
+                  {/* Honest Skip */}
+                  {skip && (
+                    <table role="presentation" cellPadding={0} cellSpacing={0} border={0} width="100%" style={innerTable}>
+                      <tbody>
+                        <tr><td style={notebookLabel}>The Honest Skip</td></tr>
+                        <tr><td style={{ padding: "10px 28px 0" }}>
+                          <span style={{ ...notebookTitle, textDecoration: "line-through", textDecorationColor: "#E55642", textDecorationThickness: 2 }}>{skip.trapName}</span>
+                          {"  "}<span style={{ color: "#6A6A65" }}>→</span>{"  "}
+                          <Link href={`https://www.nakshiq.com/en/destination/${skip.alternativeId}${utmFor("skip-alt")}`} style={{ ...notebookTitle, color: "#34D399", textDecoration: "none" }}>{skip.alternativeName}</Link>
+                        </td></tr>
+                        <tr><td style={notebookBody}>{skip.alternativeReason || skip.trapReason}</td></tr>
+                      </tbody>
+                    </table>
+                  )}
+
+                  {/* Road This Week */}
+                  {road && (
+                    <table role="presentation" cellPadding={0} cellSpacing={0} border={0} width="100%" style={innerTable}>
+                      <tbody>
+                        <tr><td style={notebookLabel}>Road This Week</td></tr>
+                        <tr><td style={{ padding: "10px 28px 0" }}>
+                          <div style={notebookTitle}>{road.title}</div>
+                          <div style={notebookBody}>{road.body}</div>
+                        </td></tr>
+                      </tbody>
+                    </table>
+                  )}
+
+                  {/* What Changed */}
+                  <table role="presentation" cellPadding={0} cellSpacing={0} border={0} width="100%" style={innerTable}>
+                    <tbody>
+                      <tr><td style={notebookLabel}>What Changed</td></tr>
+                      <tr><td style={{ ...notebookBody, fontStyle: "italic", fontSize: 17 }}>
+                        {changes.destinationsAdded} destinations added this week. {changes.scoresUpdated} monthly scores updated.
+                      </td></tr>
+                    </tbody>
+                  </table>
+
+                  {/* Big CTA */}
+                  <table role="presentation" cellPadding={0} cellSpacing={0} border={0} width="100%" style={innerTable}>
+                    <tbody><tr><td style={{ padding: "48px 28px 0", textAlign: "center" }}>
+                      <Link href={`https://www.nakshiq.com/en/where-to-go/${monthSlug}${utmFor("cta-hero")}`} style={primaryButton}>
+                        See the full {monthName} hero →
+                      </Link>
+                    </td></tr></tbody>
+                  </table>
+
+                  {/* Colophon */}
+                  <table role="presentation" cellPadding={0} cellSpacing={0} border={0} width="100%" style={innerTable}>
+                    <tbody><tr><td style={{ padding: "60px 28px 40px" }}>
+                      <table role="presentation" cellPadding={0} cellSpacing={0} border={0} width="100%" style={innerTable}>
+                        <tbody><tr><td style={hairline}>&nbsp;</td></tr></tbody>
+                      </table>
+                      <div style={colophon}>
+                        The Window is published weekly by NakshIQ.<br />
+                        Edited in Canberra. Written from the road.<br />
+                        № {issueNumber} · {monthName} {year}
+                        <div style={{ paddingTop: 12 }}>
+                          <Link href={`https://www.nakshiq.com/en/the-window/${issueSlug}`} style={colophonLink}>Archive</Link>
+                          {"  ·  "}
+                          <Link href="https://www.nakshiq.com/en" style={colophonLink}>Visit</Link>
+                          {"  ·  "}
+                          <Link href={unsubscribeUrl} style={colophonLink}>Unsubscribe</Link>
+                        </div>
+                      </div>
+                    </td></tr></tbody>
+                  </table>
+
+                </Container>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </Body>
     </Html>
   );
@@ -177,162 +380,345 @@ export default function TheWindow(props: WindowIssueProps) {
 // ── Styles ──
 
 const body: React.CSSProperties = {
-  backgroundColor: "#161614",
-  fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
   margin: 0,
-  padding: "24px 12px",
+  padding: 0,
+  background: "#060606",
+  color: "#E7E4DE",
+  fontFamily: "'Geist', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif",
 };
 
 const container: React.CSSProperties = {
-  maxWidth: "600px",
+  width: 600,
+  maxWidth: 600,
   margin: "0 auto",
-  padding: "32px 24px",
-  backgroundColor: "#1e1e1c",
-  borderRadius: "16px",
-  color: "#e5e5e5",
+  background: "#0B0B0C",
+  borderCollapse: "collapse",
 };
 
-const masthead: React.CSSProperties = {
-  textAlign: "center",
-  paddingBottom: "8px",
+const innerTable: React.CSSProperties = {
+  width: "100%",
+  borderCollapse: "collapse",
 };
 
-const mastheadKicker: React.CSSProperties = {
-  fontSize: "11px",
-  fontWeight: 600,
-  color: "#E55642",
-  letterSpacing: "1.5px",
-  textTransform: "uppercase",
-  margin: "0 0 4px",
-};
-
-const mastheadTitle: React.CSSProperties = {
-  fontSize: "32px",
-  fontWeight: 800,
-  color: "#ffffff",
-  margin: "0 0 4px",
-  letterSpacing: "-0.5px",
-};
-
-const mastheadDate: React.CSSProperties = {
-  fontSize: "13px",
-  color: "#888",
-  margin: "0 0 16px",
-};
-
-const hr: React.CSSProperties = {
-  borderColor: "#333",
-  margin: "24px 0",
-};
-
-const openingText: React.CSSProperties = {
-  fontSize: "16px",
-  lineHeight: 1.7,
-  color: "#d4d4d4",
-  margin: "0 0 32px",
-  fontStyle: "italic",
-};
-
-const blockPrimary: React.CSSProperties = {
-  padding: "20px",
-  backgroundColor: "#252523",
-  borderRadius: "12px",
-  borderLeft: "3px solid #E55642",
-  marginBottom: "20px",
-};
-
-const blockSkip: React.CSSProperties = {
-  padding: "20px",
-  backgroundColor: "#252523",
-  borderRadius: "12px",
-  borderLeft: "3px solid #eab308",
-  marginBottom: "20px",
-};
-
-const blockRoad: React.CSSProperties = {
-  padding: "20px",
-  backgroundColor: "#252523",
-  borderRadius: "12px",
-  borderLeft: "3px solid #3b82f6",
-  marginBottom: "20px",
-};
-
-const blockChanges: React.CSSProperties = {
-  padding: "20px",
-  backgroundColor: "#252523",
-  borderRadius: "12px",
-  borderLeft: "3px solid #10b981",
-  marginBottom: "20px",
-};
-
-const blockKicker: React.CSSProperties = {
-  fontSize: "10px",
-  fontWeight: 700,
-  color: "#888",
-  letterSpacing: "1.5px",
-  textTransform: "uppercase",
-  margin: "0 0 8px",
-};
-
-const blockHeading: React.CSSProperties = {
-  fontSize: "22px",
-  fontWeight: 700,
-  color: "#ffffff",
-  margin: "0 0 8px",
-  lineHeight: 1.3,
-};
-
-const blockBody: React.CSSProperties = {
-  fontSize: "15px",
-  lineHeight: 1.6,
-  color: "#d4d4d4",
-  margin: "0 0 12px",
-};
-
-const scorePill: React.CSSProperties = {
-  display: "inline-block",
-  padding: "4px 12px",
-  backgroundColor: "#E55642",
-  borderRadius: "999px",
-  margin: "0 0 12px",
-};
-
-const scoreNum: React.CSSProperties = {
-  color: "#ffffff",
-  fontWeight: 700,
-  fontSize: "14px",
-};
-
-const inlineLink: React.CSSProperties = {
-  color: "#E55642",
+const ghostLink: React.CSSProperties = {
+  color: "#9A9A95",
   textDecoration: "none",
-  fontWeight: 600,
-  fontSize: "14px",
+  fontFamily: "'Geist Mono', monospace",
+  fontSize: 10,
+  letterSpacing: "0.22em",
+  textTransform: "uppercase",
 };
 
-const closingText: React.CSSProperties = {
-  fontSize: "16px",
-  lineHeight: 1.7,
-  color: "#d4d4d4",
-  margin: "24px 0 32px",
+const mastheadWordmark: React.CSSProperties = {
+  fontFamily: "'Fraunces', 'Didot', 'Bodoni 72', 'Hoefler Text', Georgia, 'Times New Roman', serif",
   fontStyle: "italic",
+  fontWeight: 500,
+  fontSize: 30,
+  letterSpacing: "0.04em",
+  color: "#F5F1E8",
+  textDecoration: "none",
 };
 
-const footerSection: React.CSSProperties = {
-  borderTop: "1px solid #333",
-  paddingTop: "20px",
-  marginTop: "20px",
-};
-
-const footerText: React.CSSProperties = {
-  fontSize: "12px",
-  lineHeight: 1.6,
-  color: "#666",
-  margin: "0 0 8px",
+const mastheadMeta: React.CSSProperties = {
   textAlign: "center",
+  fontFamily: "'Geist Mono', monospace",
+  fontSize: 10,
+  letterSpacing: "0.30em",
+  textTransform: "uppercase",
+  color: "#9A9A95",
 };
 
-const footerLink: React.CSSProperties = {
-  color: "#888",
-  textDecoration: "underline",
+const hairline: React.CSSProperties = {
+  height: 1,
+  background: "#2A2A28",
+  lineHeight: "1px",
+  fontSize: 0,
+};
+
+const dashedRule: React.CSSProperties = {
+  borderTop: "1px dashed #3A3A3C",
+  height: 1,
+  lineHeight: "1px",
+  fontSize: 0,
+};
+
+const heroBlockLink: React.CSSProperties = {
+  display: "block",
+  textDecoration: "none",
+  color: "#E7E4DE",
+};
+
+const heroImage: React.CSSProperties = {
+  display: "block",
+  width: "100%",
+  maxWidth: 552,
+  height: "auto",
+  border: 0,
+  outline: "none",
+  textDecoration: "none",
+  filter: "brightness(0.82) saturate(0.88)",
+};
+
+const heroScrim: React.CSSProperties = {
+  position: "absolute",
+  left: 0,
+  right: 0,
+  bottom: 0,
+  padding: "120px 28px 24px 28px",
+  background: "linear-gradient(to top, rgba(11,11,12,0.92) 0%, rgba(11,11,12,0.40) 65%, rgba(11,11,12,0) 100%)",
+};
+
+const heroKicker: React.CSSProperties = {
+  fontFamily: "'Geist Mono', monospace",
+  fontSize: 10,
+  letterSpacing: "0.30em",
+  textTransform: "uppercase",
+  color: "#E55642",
+  marginBottom: 12,
+};
+
+const heroName: React.CSSProperties = {
+  fontFamily: "'Fraunces', 'Didot', 'Bodoni 72', 'Hoefler Text', Georgia, 'Times New Roman', serif",
+  fontStyle: "italic",
+  fontWeight: 500,
+  fontSize: 40,
+  lineHeight: 1.05,
+  letterSpacing: "-0.01em",
+  color: "#F5F1E8",
+  marginBottom: 8,
+};
+
+const heroHook: React.CSSProperties = {
+  fontFamily: "'Fraunces', 'Didot', 'Bodoni 72', 'Hoefler Text', Georgia, 'Times New Roman', serif",
+  fontStyle: "italic",
+  fontSize: 15,
+  lineHeight: 1.4,
+  color: "#E55642",
+  maxWidth: 420,
+};
+
+const heroPillWrap: React.CSSProperties = {
+  position: "absolute",
+  top: 20,
+  right: 20,
+};
+
+const heroPill: React.CSSProperties = {
+  fontFamily: "'Geist Mono', monospace",
+  fontSize: 10,
+  letterSpacing: "0.22em",
+  textTransform: "uppercase",
+  color: "#34D399",
+  background: "rgba(0,0,0,0.50)",
+  border: "1px solid rgba(255,255,255,0.12)",
+  padding: "8px 12px",
+};
+
+const pillDot: React.CSSProperties = {
+  display: "inline-block",
+  width: 6,
+  height: 6,
+  background: "#34D399",
+  marginRight: 6,
+  verticalAlign: "middle",
+};
+
+const photoCredit: React.CSSProperties = {
+  padding: "14px 28px 0",
+  fontFamily: "'Geist Mono', monospace",
+  fontSize: 9,
+  letterSpacing: "0.24em",
+  textTransform: "uppercase",
+  color: "#6A6A65",
+  textAlign: "left",
+};
+
+const dateline: React.CSSProperties = {
+  padding: "28px 28px 0",
+  fontFamily: "'Geist Mono', monospace",
+  fontSize: 10,
+  letterSpacing: "0.30em",
+  textTransform: "uppercase",
+  color: "#E55642",
+};
+
+const ledeText: React.CSSProperties = {
+  padding: "14px 28px 0",
+  fontFamily: "'Fraunces', 'Didot', 'Bodoni 72', 'Hoefler Text', Georgia, 'Times New Roman', serif",
+  fontStyle: "italic",
+  fontSize: 17,
+  lineHeight: 1.55,
+  color: "#E7E4DE",
+};
+
+const signOff: React.CSSProperties = {
+  color: "#9A9A95",
+  fontSize: 14,
+};
+
+const pullQuoteRule: React.CSSProperties = {
+  width: 4,
+  background: "#E55642",
+};
+
+const pullQuoteText: React.CSSProperties = {
+  padding: "6px 0 6px 20px",
+  fontFamily: "'Fraunces', 'Didot', 'Bodoni 72', 'Hoefler Text', Georgia, 'Times New Roman', serif",
+  fontStyle: "italic",
+  fontWeight: 500,
+  fontSize: 26,
+  lineHeight: 1.25,
+  color: "#F5F1E8",
+};
+
+const sectionLabel: React.CSSProperties = {
+  padding: "24px 28px 0",
+  fontFamily: "'Geist Mono', monospace",
+  fontSize: 10,
+  letterSpacing: "0.30em",
+  textTransform: "uppercase",
+  color: "#9A9A95",
+};
+
+const cardNumeral: React.CSSProperties = {
+  fontFamily: "'Fraunces', 'Didot', 'Bodoni 72', 'Hoefler Text', Georgia, 'Times New Roman', serif",
+  fontStyle: "italic",
+  fontWeight: 500,
+  fontSize: 72,
+  lineHeight: 0.9,
+  color: "#E8E2D6",
+  letterSpacing: "-0.02em",
+};
+
+const cardKickerTag: React.CSSProperties = {
+  paddingBottom: 8,
+  paddingLeft: 16,
+  fontFamily: "'Geist Mono', monospace",
+  fontSize: 10,
+  letterSpacing: "0.30em",
+  textTransform: "uppercase",
+  color: "#9A9A95",
+};
+
+const cardScoreTag: React.CSSProperties = {
+  paddingBottom: 8,
+  fontFamily: "'Geist Mono', monospace",
+  fontSize: 10,
+  letterSpacing: "0.22em",
+  textTransform: "uppercase",
+  color: "#34D399",
+};
+
+const cardImage: React.CSSProperties = {
+  display: "block",
+  width: "100%",
+  maxWidth: 544,
+  height: "auto",
+  border: 0,
+  outline: "none",
+  textDecoration: "none",
+  filter: "brightness(0.88) saturate(0.92)",
+};
+
+const cardName: React.CSSProperties = {
+  fontFamily: "'Fraunces', 'Didot', 'Bodoni 72', 'Hoefler Text', Georgia, 'Times New Roman', serif",
+  fontStyle: "italic",
+  fontWeight: 500,
+  fontSize: 32,
+  lineHeight: 1.1,
+  color: "#F5F1E8",
+  textDecoration: "none",
+};
+
+const cardMeta: React.CSSProperties = {
+  padding: "6px 28px 0",
+  fontFamily: "'Geist Mono', monospace",
+  fontSize: 10,
+  letterSpacing: "0.22em",
+  textTransform: "uppercase",
+  color: "#9A9A95",
+};
+
+const cardHook: React.CSSProperties = {
+  padding: "14px 28px 0",
+  fontFamily: "'Fraunces', 'Didot', 'Bodoni 72', 'Hoefler Text', Georgia, 'Times New Roman', serif",
+  fontStyle: "italic",
+  fontSize: 16,
+  lineHeight: 1.55,
+  color: "#E55642",
+};
+
+const cardCta: React.CSSProperties = {
+  fontFamily: "'Geist', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif",
+  fontSize: 11,
+  letterSpacing: "0.14em",
+  textTransform: "uppercase",
+  color: "#E7E4DE",
+  borderBottom: "1px solid #6A6A65",
+  paddingBottom: 2,
+  textDecoration: "none",
+};
+
+const notebookHeading: React.CSSProperties = {
+  padding: "24px 28px 0",
+  fontFamily: "'Fraunces', 'Didot', 'Bodoni 72', 'Hoefler Text', Georgia, 'Times New Roman', serif",
+  fontStyle: "italic",
+  fontWeight: 500,
+  fontSize: 26,
+  lineHeight: 1.2,
+  color: "#F5F1E8",
+};
+
+const notebookLabel: React.CSSProperties = {
+  padding: "32px 28px 0",
+  fontFamily: "'Geist Mono', monospace",
+  fontSize: 10,
+  letterSpacing: "0.30em",
+  textTransform: "uppercase",
+  color: "#9A9A95",
+};
+
+const notebookTitle: React.CSSProperties = {
+  fontFamily: "'Fraunces', 'Didot', 'Bodoni 72', 'Hoefler Text', Georgia, 'Times New Roman', serif",
+  fontStyle: "italic",
+  fontSize: 21,
+  lineHeight: 1.35,
+  color: "#F5F1E8",
+};
+
+const notebookBody: React.CSSProperties = {
+  padding: "10px 28px 0",
+  fontFamily: "'Geist', sans-serif",
+  fontSize: 14,
+  lineHeight: 1.55,
+  color: "#B8B5AD",
+};
+
+const primaryButton: React.CSSProperties = {
+  display: "inline-block",
+  fontFamily: "'Geist Mono', monospace",
+  fontSize: 12,
+  fontWeight: 500,
+  letterSpacing: "0.22em",
+  textTransform: "uppercase",
+  color: "#F5F1E8",
+  border: "1px solid #E7E4DE",
+  padding: "14px 22px",
+  textDecoration: "none",
+};
+
+const colophon: React.CSSProperties = {
+  paddingTop: 24,
+  textAlign: "center",
+  fontFamily: "'Geist Mono', monospace",
+  fontSize: 10,
+  letterSpacing: "0.22em",
+  textTransform: "uppercase",
+  color: "#6A6A65",
+  lineHeight: 1.8,
+};
+
+const colophonLink: React.CSSProperties = {
+  color: "#9A9A95",
+  textDecoration: "none",
 };
