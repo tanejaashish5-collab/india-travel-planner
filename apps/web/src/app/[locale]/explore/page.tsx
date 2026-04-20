@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { ExploreWithMap } from "@/components/explore-with-map";
@@ -9,10 +10,10 @@ export const revalidate = 3600;
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "explore" });
   return {
-  title: "Explore Destinations — Filter by Month, Difficulty, Kids & More",
-  description: "Browse 143+ destinations across India with monthly suitability scores. Filter by state, difficulty, kids-friendliness, and sort by elevation or score. Grid and map views.",
-
+    title: t("metaTitle"),
+    description: t("metaDescription"),
     ...localeAlternates(locale, "/explore"),
   };
 }async function getData() {
@@ -45,10 +46,11 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   };
 }
 
-export default async function ExplorePage() {
+export default async function ExplorePage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "explore" });
   const { destinations, states, coords } = await getData();
 
-  // Merge coords into destinations
   const coordsMap = Object.fromEntries(
     coords.map((c: any) => [c.id, { lat: c.lat, lng: c.lng }])
   );
@@ -62,10 +64,9 @@ export default async function ExplorePage() {
       <Nav />
       <main id="main-content" className="mx-auto max-w-7xl px-4 py-8">
         <div className="mb-6">
-          <h1 className="text-3xl font-bold">Explore</h1>
-          <h2 className="sr-only">Destinations</h2>
+          <h1 className="text-3xl font-bold">{t("pageTitle")}</h1>
           <p className="mt-1 text-muted-foreground">
-            {destinations.length} destinations · Filter or browse the map
+            {t("pageSubtitle", { count: destinations.length })}
           </p>
         </div>
         <ExploreWithMap destinations={destinationsWithCoords} states={states} />

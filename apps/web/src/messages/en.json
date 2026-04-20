@@ -226,7 +226,11 @@
     "moderate": "Moderate",
     "hard": "Hard",
     "extreme": "Extreme",
-    "adultsOnly": "Adults only"
+    "adultsOnly": "Adults only",
+    "pageTitle": "Explore",
+    "pageSubtitle": "{count} destinations · Filter or browse the map",
+    "metaTitle": "Explore Destinations — Filter by Month, Difficulty, Kids & More",
+    "metaDescription": "Browse 143+ destinations across India with monthly suitability scores. Filter by state, difficulty, kids-friendliness, and sort by elevation or score. Grid and map views."
   },
   "page": {
     "himalayaTrails": "Himalayan Trails",
@@ -306,7 +310,27 @@
     "vehicleHelp": "Vehicle & Mechanical Help",
     "shelterOptions": "Shelter & Rescue",
     "reportIssue": "Report an Issue",
-    "disclaimer": "Emergency data is verified periodically but may change. Always call 112 first in any emergency."
+    "disclaimer": "Emergency data is verified periodically but may change. Always call 112 first in any emergency.",
+    "metaTitle": "Emergency SOS — India-wide Helplines & Safety Info",
+    "metaDescription": "Official India emergency numbers for travelers. 112 unified helpline, tourist helpline, women and child helpline, road accident, disaster management. Destination-level SOS on each destination page.",
+    "landingHeading": "If this is an emergency, dial 112 now",
+    "landingIntro": "112 is India's unified emergency number — police, ambulance and fire dispatch combined. Works on all networks, even without a SIM, and from a locked phone.",
+    "nationalHelplines": "National Helplines (India-wide)",
+    "callNow": "Call now",
+    "perDestinationTitle": "Destination-level SOS",
+    "perDestinationBody": "Every destination page carries local hospitals, police station, network coverage, fuel points and weather protocols. Open the destination you are travelling to and scroll to the \"Medical & Emergency\" block.",
+    "goToExplore": "Find your destination",
+    "sourceDisclaimer": "Numbers sourced from the Ministry of Home Affairs, Ministry of Tourism and state disaster authorities. If the number does not answer, dial 112.",
+    "police100": "Police",
+    "fire101": "Fire services",
+    "ambulance102": "Ambulance / maternal & child",
+    "emergency108": "State emergency response (includes ambulance)",
+    "women1091": "Women in distress",
+    "child1098": "Childline — children in need",
+    "road1073": "Road accident emergency",
+    "tourist1363": "Tourist helpline (24x7, multi-lingual)",
+    "rail139": "Railway enquiry & emergency",
+    "disaster1077": "District disaster control"
   },
   "intl": {
     "forInternational": "For International Travelers",

@@ -41,11 +41,18 @@ export function ExploreMap({ destinations }: { destinations: MapDestination[] })
         zoomControl: true,
       });
 
-      // dark_nolabels avoids Chinese/local-script labels near borders
+      // dark_nolabels avoids Chinese/local-script labels near borders.
+      // tileload handler marks decorative tiles aria-hidden so screen readers
+      // skip them (BUG-113 — Leaflet tile <img>s polluted a11y tree).
       L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png", {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> &copy; <a href="https://carto.com/">CARTO</a>',
         maxZoom: 19,
-      }).addTo(map);
+      })
+        .on("tileload", (e: any) => {
+          e.tile.setAttribute("aria-hidden", "true");
+          e.tile.setAttribute("role", "presentation");
+        })
+        .addTo(map);
 
       // Style map attribution for dark theme readability
       const attrib = mapRef.current!.querySelector(".leaflet-control-attribution");

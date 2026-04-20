@@ -43,11 +43,16 @@ export function TrekTrailMap({ points, trekName }: { points: TrailPoint[]; trekN
         scrollWheelZoom: false,
       });
 
-      // dark_nolabels avoids Chinese/local-script labels near borders
+      // BUG-113: mark tile imgs aria-hidden so they don't pollute the a11y tree
       L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png", {
         attribution: '&copy; OSM &copy; CARTO',
         maxZoom: 16,
-      }).addTo(map);
+      })
+        .on("tileload", (e: any) => {
+          e.tile.setAttribute("aria-hidden", "true");
+          e.tile.setAttribute("role", "presentation");
+        })
+        .addTo(map);
 
       // Draw trail line
       const trailCoords = points
