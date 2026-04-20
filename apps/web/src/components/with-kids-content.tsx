@@ -190,6 +190,20 @@ export function WithKidsContent({
             </div>
           </div>
 
+          {/* Family verdict — column-gated editorial pick */}
+          {kf?.family_verdict && (
+            <div className={`mt-6 rounded-2xl border bg-gradient-to-br p-5 ${
+              kf.suitable
+                ? "border-emerald-500/40 from-emerald-950/40 to-emerald-900/10"
+                : "border-orange-500/40 from-orange-950/40 to-orange-900/10"
+            }`}>
+              <div className="text-[10px] font-bold uppercase tracking-[0.2em] opacity-70 mb-2">
+                Family verdict
+              </div>
+              <p className="text-base leading-relaxed text-foreground">{kf.family_verdict}</p>
+            </div>
+          )}
+
           {/* Reasons */}
           {activities.length > 0 && (
             <div className="mt-6">

@@ -68,6 +68,12 @@ export function DestinationMonth({
   const scoreInfo = SCORE_LABELS[score] ?? SCORE_LABELS[0];
   const stateData = destination.state as any;
   const stateName = Array.isArray(stateData) ? stateData[0]?.name : stateData?.name;
+  const stateId: string | undefined =
+    (Array.isArray(stateData) ? stateData[0]?.id : stateData?.id) ?? destination.state_id;
+  // Prefer the state-in-month hub (higher authority, starves without backlinks).
+  const whereToGoHref = stateId
+    ? `/${locale}/where-to-go/${stateId}-in-${monthSlug}`
+    : `/${locale}/where-to-go/${monthSlug}`;
   const kids = Array.isArray(destination.kids_friendly)
     ? destination.kids_friendly[0]
     : destination.kids_friendly;
@@ -245,6 +251,37 @@ export function DestinationMonth({
     );
   };
 
+  // ── 2b. Go / Skip Verdict ──────────────────────────────────
+  // Column-gated: only renders when editorial has populated it.
+  // Leading word ("Go", "Skip", "Mixed") drives the stamp colour,
+  // mirroring the Weekly-Picks stamp system.
+
+  const GoOrSkipVerdict = () => {
+    const verdict: string | undefined = currentMonth?.go_or_skip_verdict;
+    if (!verdict) return null;
+
+    const leader = verdict.trim().split(/[\s,:.]/, 1)[0]?.toLowerCase() ?? "";
+    const toneClass =
+      leader === "skip"
+        ? "border-red-500/40 from-red-950/40 to-red-900/10 text-red-200"
+        : leader === "mixed"
+          ? "border-amber-500/40 from-amber-950/40 to-amber-900/10 text-amber-200"
+          : "border-emerald-500/40 from-emerald-950/40 to-emerald-900/10 text-emerald-200";
+    const stamp =
+      leader === "skip" ? "SKIP" : leader === "mixed" ? "MIXED" : "GO";
+
+    return (
+      <FadeIn delay={0.2}>
+        <div className={`rounded-2xl border bg-gradient-to-br p-5 sm:p-6 ${toneClass}`}>
+          <div className="text-[10px] font-bold uppercase tracking-[0.2em] opacity-70 mb-2">
+            The verdict · {stamp}
+          </div>
+          <p className="text-base sm:text-lg leading-relaxed">{verdict}</p>
+        </div>
+      </FadeIn>
+    );
+  };
+
   // ── 3. Why This Score ──────────────────────────────────────
 
   const WhyThisScore = () => {
@@ -288,6 +325,14 @@ export function DestinationMonth({
         value: `${destination.elevation_m.toLocaleString()}m — ${destination.elevation_m > 3500 ? "High altitude, acclimatisation needed" : destination.elevation_m > 2000 ? "Moderate altitude" : "Low altitude, no issues"}`,
       });
     }
+    const festivals: string[] | undefined = currentMonth?.festivals_this_month;
+    if (Array.isArray(festivals) && festivals.length > 0) {
+      items.push({
+        icon: "🎉",
+        label: "Festivals this month",
+        value: festivals.join(" · "),
+      });
+    }
 
     if (items.length === 0) return null;
 
@@ -312,6 +357,37 @@ export function DestinationMonth({
             ))}
           </div>
         </div>
+      </ScrollReveal>
+    );
+  };
+
+  // ── 3b. Things To Do This Month ────────────────────────────
+  // Column-gated list of 3–5 month-specific activities. Lead verbs
+  // (ski, trek, swim, walk) — not adjectives. Distinct from the
+  // general destination "what to do" so Google sees month intent.
+
+  const ThingsToDo = () => {
+    const items: string[] | undefined = currentMonth?.things_to_do;
+    if (!Array.isArray(items) || items.length === 0) return null;
+
+    return (
+      <ScrollReveal>
+        <h2 className="mb-4 text-2xl font-bold text-white">
+          What to do in {destination.name} this {monthName}
+        </h2>
+        <ul className="grid gap-2 sm:grid-cols-2">
+          {items.map((thing, i) => (
+            <li
+              key={`${i}-${thing.slice(0, 20)}`}
+              className="flex items-start gap-3 rounded-xl border border-zinc-800 bg-zinc-900/50 p-4"
+            >
+              <span className="mt-0.5 inline-flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-primary/15 text-xs font-bold text-primary">
+                {i + 1}
+              </span>
+              <span className="text-sm leading-relaxed text-zinc-200">{thing}</span>
+            </li>
+          ))}
+        </ul>
       </ScrollReveal>
     );
   };
@@ -470,6 +546,34 @@ export function DestinationMonth({
     );
   };
 
+  // ── 5b. Pack List for This Month ───────────────────────────
+  // Column-gated. 5–7 items tuned to altitude + month weather.
+  // Rendered as its own section for scan-readability.
+
+  const PackList = () => {
+    const items: string[] | undefined = currentMonth?.pack_list;
+    if (!Array.isArray(items) || items.length === 0) return null;
+
+    return (
+      <ScrollReveal>
+        <h2 className="mb-4 text-2xl font-bold text-white">
+          What to pack for {monthName}
+        </h2>
+        <ul className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
+          {items.map((item, i) => (
+            <li
+              key={`pack-${i}`}
+              className="flex items-center gap-3 rounded-xl border border-zinc-800 bg-zinc-900/40 px-4 py-3"
+            >
+              <span className="text-primary">▸</span>
+              <span className="text-sm text-zinc-200">{item}</span>
+            </li>
+          ))}
+        </ul>
+      </ScrollReveal>
+    );
+  };
+
   // ── 6. Practical Details ───────────────────────────────────
 
   const PracticalDetails = () => {
@@ -604,10 +708,12 @@ export function DestinationMonth({
           Full {destination.name} guide
         </Link>
         <Link
-          href={`/${locale}/where-to-go/${monthSlug}`}
+          href={whereToGoHref}
           className="group flex items-center gap-2 text-zinc-400 transition-colors hover:text-white"
         >
-          All destinations in {monthName}
+          {stateId && stateName
+            ? `Where to go in ${stateName}, ${monthName}`
+            : `All destinations in ${monthName}`}
           <span className="transition-transform group-hover:translate-x-1">&rarr;</span>
         </Link>
       </div>
@@ -629,10 +735,13 @@ export function DestinationMonth({
       </div>
 
       <LeadParagraph />
+      <GoOrSkipVerdict />
       <WhyThisScore />
+      <ThingsToDo />
       <WhoShouldGo />
       <MonthTable />
       <PracticalDetails />
+      <PackList />
       <NearbySection />
 
       {/* Newsletter */}

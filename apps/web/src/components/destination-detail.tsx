@@ -287,9 +287,13 @@ export function DestinationDetail({ dest }: { dest: any }) {
               {(() => {
                 const monthSlug = ["","january","february","march","april","may","june","july","august","september","october","november","december"][currentMonth];
                 const monthName = ["","January","February","March","April","May","June","July","August","September","October","November","December"][currentMonth];
+                const hubSlug = dest.state_id ? `${dest.state_id}-in-${monthSlug}` : monthSlug;
+                const hubLabel = dest.state_id && stateName
+                  ? `Where to go in ${stateName}, ${monthName}`
+                  : `All destinations in ${monthName}`;
                 return (
-                  <a href={`/${locale}/where-to-go/${monthSlug}`} className="rounded-full border border-border px-3 py-1.5 text-xs font-medium text-muted-foreground hover:text-foreground hover:border-primary/40 transition-all">
-                    All destinations in {monthName} →
+                  <a href={`/${locale}/where-to-go/${hubSlug}`} className="rounded-full border border-border px-3 py-1.5 text-xs font-medium text-muted-foreground hover:text-foreground hover:border-primary/40 transition-all">
+                    {hubLabel} →
                   </a>
                 );
               })()}
