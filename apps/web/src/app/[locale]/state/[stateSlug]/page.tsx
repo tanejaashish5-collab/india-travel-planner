@@ -5,7 +5,7 @@ import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { StateDestinationGrid } from "@/components/state-destination-grid";
 import { createClient } from "@supabase/supabase-js";
-import { STATE_MAP, getRegionNameForState } from "@/lib/seo-maps";
+import { STATE_MAP, getRegionNameForState, getRegionForState } from "@/lib/seo-maps";
 
 export const revalidate = 86400;
 export const dynamicParams = true;
@@ -69,6 +69,7 @@ export default async function StateHubPage({
 
   const { state, region, destinations, allStates } = data;
   const regionGroup = getRegionNameForState(stateSlug);
+  const regionSlug = getRegionForState(stateSlug);
   const currentMonth = new Date().getMonth() + 1;
 
   // Use first destination's image as hero
@@ -119,10 +120,10 @@ export default async function StateHubPage({
             <div className="mx-auto max-w-7xl">
               <div className="text-sm text-muted-foreground/70 mb-2">
                 <Link href={`/${locale}/states`} className="hover:text-foreground transition-colors">India</Link>
-                {regionGroup && (
+                {regionGroup && regionSlug && (
                   <>
                     {" → "}
-                    <Link href={`/${locale}/states`} className="hover:text-foreground transition-colors">{regionGroup}</Link>
+                    <Link href={`/${locale}/india/${regionSlug}`} className="hover:text-foreground transition-colors">{regionGroup}</Link>
                   </>
                 )}
                 {" → "}
