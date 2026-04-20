@@ -98,16 +98,22 @@ export default async function StateHubPage({
     <div className="min-h-screen">
       <Nav />
       <main id="main-content">
-        {/* Hero — gradient background, no Image component to avoid crashes */}
+        {/* Hero — video with image poster fallback */}
         <div
           className="relative h-64 sm:h-80 lg:h-96 overflow-hidden"
-          style={{
-            background: `linear-gradient(135deg, oklch(0.22 0.03 260), oklch(0.16 0.02 280))`,
-            backgroundImage: `url(/images/destinations/${heroDestId}.jpg)`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
+          style={{ background: `linear-gradient(135deg, oklch(0.22 0.03 260), oklch(0.16 0.02 280))` }}
         >
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            poster={`/images/destinations/${heroDestId}.jpg`}
+            className="absolute inset-0 w-full h-full object-cover"
+          >
+            <source src={`${process.env.NEXT_PUBLIC_VIDEO_BASE_URL}/${heroDestId}.mp4`} type="video/mp4" />
+          </video>
           <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
           <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 lg:p-12">
             <div className="mx-auto max-w-7xl">
