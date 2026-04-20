@@ -48,7 +48,8 @@ npm run lighthouse
 - `apps/mobile` — Expo 54, React Native 0.81, expo-router
 - `packages/shared` (`@itp/shared`) — Shared types, Supabase clients, queries, i18n utilities
 - `packages/config` — Shared config (TS, etc.)
-- `supabase/` — Migrations (`001_initial_schema.sql`, `002_rls_policies.sql`) and seed scripts
+- `supabase/` — Migrations `001`–`006` (initial schema, RLS, gap year v1/v2, stay curation, signup trigger fix) and seed scripts
+- `scripts/` — Data-maintenance utilities (`upload-images.mjs`, `upload-videos.mjs` → R2, `curate-stays.mjs`, `fetch-east/west/pending.mjs`, `enrich-notes.mjs`, `probe-schema.mjs`). Run with `node scripts/<name>.mjs` or `tsx`.
 - `nakshiq-autoposter/` — Python script for automated social media posting
 
 **Routing**: All web routes are under `apps/web/src/app/[locale]/` using `next-intl` for i18n. Locales: `en` (default), `hi`. Middleware in `src/middleware.ts` handles locale routing. API routes live at `apps/web/src/app/api/`.

@@ -586,14 +586,40 @@ def contrarian_score(dest: dict) -> float:
     return sum(1.0 for kw in CONTRARIAN_KEYWORDS if kw in combined)
 
 def pick_best_destination(destinations: list, used: set,
-                          content: dict | None = None) -> dict | None:
+                          content: dict | None = None,
+                          state: dict | None = None) -> dict | None:
     """
     Pick the highest-scoring destination from the pool, preferring ones whose
     hero image actually resolves (Nakshiq's catalog has broken image URLs for
     some not-yet-photographed destinations). If nothing in the pool has a valid
     image, fall back to the original scoring pool without the image filter.
+
+    When `state` is provided, the function also consults reel theme trackers
+    (reel_seasonal_dests, reel_reveal_dests, reels) so that a destination
+    featured in a reel within the last 14 days is treated as "used" for feed
+    picking too. Prevents cross-format repeats (e.g. Bhimtal reel yesterday +
+    Bhimtal score_card today). Wrapped in try/except so any tracker corruption
+    fails open — the feed picker still works, just without the extra guard.
     """
-    fresh = [d for d in destinations if d["id"] not in used]
+    extra_used: set = set()
+    if state is not None:
+        try:
+            cutoff = (date.today() - timedelta(days=14)).isoformat()
+            for bucket_name in ("reel_seasonal_dests", "reel_reveal_dests", "reels"):
+                bucket = (state.get("theme_usage") or {}).get(bucket_name, {}) or {}
+                for dest_id, hist in bucket.items():
+                    if hist and hist[-1] >= cutoff:
+                        extra_used.add(dest_id)
+        except Exception as e:
+            log.warning(f"pick_best_destination: reel-tracker guard skipped ({e})")
+            extra_used = set()
+
+    combined_used = used | extra_used
+    fresh = [d for d in destinations if d["id"] not in combined_used]
+    # If the extra guard emptied the pool, fall back to the original 14-day
+    # `used` filter (never all destinations — that would re-pick today's post).
+    if not fresh:
+        fresh = [d for d in destinations if d["id"] not in used]
     pool  = fresh if fresh else destinations
     if not pool:
         return None
@@ -2046,7 +2072,7 @@ def _run_inner(force: bool, sync_only: bool, dry_run: bool,
     #     Without this, score_card picks via pick_best_destination() and
     #     collection_spotlight picks via _collection_image_dest(), yielding
     #     different destinations — breaking pair-consistency.
-    shared_best = pick_best_destination(_dest_pool(), used, content)
+    shared_best = pick_best_destination(_dest_pool(), used, content, state)
     if shared_best:
         content["__run_best__"] = shared_best
         log.info(f"Shared best destination locked: {shared_best['name']}")

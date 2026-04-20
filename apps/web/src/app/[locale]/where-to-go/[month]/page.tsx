@@ -58,6 +58,15 @@ const REGION_SLUGS: Record<string, { stateId: string; displayName: string }> = {
   "lakshadweep": { stateId: "lakshadweep", displayName: "Lakshadweep" },
   "puducherry": { stateId: "puducherry", displayName: "Puducherry" },
   "daman-diu": { stateId: "daman-diu", displayName: "Daman & Diu" },
+  "gujarat": { stateId: "gujarat", displayName: "Gujarat" },
+  "maharashtra": { stateId: "maharashtra", displayName: "Maharashtra" },
+  "goa": { stateId: "goa", displayName: "Goa" },
+  "karnataka": { stateId: "karnataka", displayName: "Karnataka" },
+  "kerala": { stateId: "kerala", displayName: "Kerala" },
+  "tamil-nadu": { stateId: "tamil-nadu", displayName: "Tamil Nadu" },
+  "andhra-pradesh": { stateId: "andhra-pradesh", displayName: "Andhra Pradesh" },
+  "telangana": { stateId: "telangana", displayName: "Telangana" },
+  "odisha": { stateId: "odisha", displayName: "Odisha" },
 };
 
 /** Parse slug into { regionSlug?, monthSlug } or null if invalid */

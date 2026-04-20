@@ -25,6 +25,7 @@ import { useArticlesForDestination } from "../../hooks/useArticles";
 import { useVisited } from "../../hooks/useVisited";
 import { useReviews } from "../../hooks/useReviews";
 import EditorsPicks from "../../components/EditorsPicks";
+import ReviewForm from "../../components/ReviewForm";
 
 const supabaseMobile = createClient(
   process.env.EXPO_PUBLIC_SUPABASE_URL || "",
@@ -51,7 +52,7 @@ export default function DestinationScreen() {
   const { isSaved, toggleSaved } = useSavedItems();
   const { articles: guideArticles } = useArticlesForDestination(id);
   const { isVisited, toggleVisited } = useVisited();
-  const { reviews } = useReviews(id);
+  const { reviews, refetch: refetchReviews } = useReviews(id);
   const [activeTab, setActiveTab] = useState("overview");
   const currentMonth = new Date().getMonth() + 1;
 
@@ -75,7 +76,7 @@ export default function DestinationScreen() {
     { id: "monthly", label: "Monthly" },
     ...(kf ? [{ id: "kids", label: "Kids" }] : []),
     ...(cc ? [{ id: "safety", label: "Safety" }] : []),
-    ...(reviews.length > 0 ? [{ id: "reviews", label: `Reviews (${reviews.length})` }] : []),
+    { id: "reviews", label: reviews.length > 0 ? `Reviews (${reviews.length})` : "Reviews" },
   ];
 
   async function handleShare() {
@@ -490,29 +491,33 @@ export default function DestinationScreen() {
       )}
 
       {/* Reviews tab */}
-      {activeTab === "reviews" && reviews.length > 0 && (
+      {activeTab === "reviews" && (
         <View style={styles.tabContent}>
-          <View style={styles.sectionCard}>
-            <Text style={styles.sectionTitle}>Traveler Reviews</Text>
-            {reviews.map((review: any) => {
-              const stars = "★".repeat(review.rating) + "☆".repeat(5 - review.rating);
-              return (
-                <View key={review.id} style={[styles.festivalItem, { borderLeftWidth: 2, borderLeftColor: SCORE_COLORS[review.rating] || colors.muted, paddingLeft: spacing.sm }]}>
-                  <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center" }}>
-                    <Text style={{ color: SCORE_COLORS[review.rating] || colors.primary, fontSize: fontSize.sm, fontWeight: "700" }}>{stars}</Text>
-                    {review.traveler_type && (
-                      <Text style={{ fontSize: fontSize.xs, color: colors.mutedForeground, backgroundColor: colors.muted + "33", paddingHorizontal: 6, paddingVertical: 2, borderRadius: borderRadius.sm }}>{review.traveler_type}</Text>
-                    )}
+          <ReviewForm destinationId={id} onSubmitted={refetchReviews} />
+
+          {reviews.length > 0 && (
+            <View style={styles.sectionCard}>
+              <Text style={styles.sectionTitle}>Traveler Reviews</Text>
+              {reviews.map((review: any) => {
+                const stars = "★".repeat(review.rating) + "☆".repeat(5 - review.rating);
+                return (
+                  <View key={review.id} style={[styles.festivalItem, { borderLeftWidth: 2, borderLeftColor: SCORE_COLORS[review.rating] || colors.muted, paddingLeft: spacing.sm }]}>
+                    <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center" }}>
+                      <Text style={{ color: SCORE_COLORS[review.rating] || colors.primary, fontSize: fontSize.sm, fontWeight: "700" }}>{stars}</Text>
+                      {review.traveler_type && (
+                        <Text style={{ fontSize: fontSize.xs, color: colors.mutedForeground, backgroundColor: colors.muted + "33", paddingHorizontal: 6, paddingVertical: 2, borderRadius: borderRadius.sm }}>{review.traveler_type}</Text>
+                      )}
+                    </View>
+                    <Text style={styles.sectionBody}>{review.text}</Text>
+                    <Text style={{ fontSize: fontSize.xs, color: colors.mutedForeground, marginTop: 2 }}>
+                      {review.visit_month ? `Visited ${MONTH_SHORT[review.visit_month]} ${review.visit_year || ""}` : ""}
+                      {review.visit_month ? " · " : ""}{new Date(review.created_at).toLocaleDateString()}
+                    </Text>
                   </View>
-                  <Text style={styles.sectionBody}>{review.text}</Text>
-                  <Text style={{ fontSize: fontSize.xs, color: colors.mutedForeground, marginTop: 2 }}>
-                    {review.visit_month ? `Visited ${MONTH_SHORT[review.visit_month]} ${review.visit_year || ""}` : ""}
-                    {review.visit_month ? " · " : ""}{new Date(review.created_at).toLocaleDateString()}
-                  </Text>
-                </View>
-              );
-            })}
-          </View>
+                );
+              })}
+            </View>
+          )}
         </View>
       )}
 

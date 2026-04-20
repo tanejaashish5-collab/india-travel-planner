@@ -15,6 +15,7 @@ import { router } from "expo-router";
 import { colors, spacing, fontSize, borderRadius } from "../../lib/theme";
 import { usePreferences } from "../../hooks/usePreferences";
 import { supabase } from "../../lib/supabase";
+import SearchOverlay from "../../components/SearchOverlay";
 
 const { width } = Dimensions.get("window");
 const IMG_BASE = "https://nakshiq.com/images/destinations";
@@ -61,6 +62,7 @@ export default function HomeScreen() {
   const [stats, setStats] = useState({ destinations: 0, places: 0, treks: 0, festivals: 0 });
   const [loading, setLoading] = useState(true);
   const [refreshing, setRefreshing] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
   const [failedImages, setFailedImages] = useState<Set<string>>(new Set());
   const onImageError = useCallback((id: string) => {
     setFailedImages((prev) => new Set(prev).add(id));
@@ -121,6 +123,14 @@ export default function HomeScreen() {
             ? `Showing top destinations for ${MONTH_FULL[preferences.travelMonth]}. ${stats.destinations} scored.`
             : "Every destination scored by month. Real infrastructure data. Honest opinions."}
         </Text>
+        <TouchableOpacity
+          style={styles.searchPill}
+          onPress={() => setSearchOpen(true)}
+          activeOpacity={0.8}
+        >
+          <Text style={styles.searchPillIcon}>🔍</Text>
+          <Text style={styles.searchPillText}>Search destinations, treks, articles…</Text>
+        </TouchableOpacity>
       </View>
 
       {/* Stats strip */}
@@ -255,6 +265,7 @@ export default function HomeScreen() {
       </View>
 
       <View style={{ height: spacing.xxl * 2 }} />
+      <SearchOverlay visible={searchOpen} onClose={() => setSearchOpen(false)} />
     </ScrollView>
   );
 }
@@ -269,6 +280,9 @@ const styles = StyleSheet.create({
   heroTitle: { fontSize: 42, fontWeight: "800", color: colors.foreground, letterSpacing: -1.5 },
   heroSubtitle: { fontSize: fontSize["2xl"], fontWeight: "600", color: colors.mutedForeground, marginTop: 2 },
   heroDesc: { fontSize: fontSize.sm, color: colors.mutedForeground, marginTop: spacing.md, lineHeight: 22, maxWidth: 320 },
+  searchPill: { flexDirection: "row", alignItems: "center", marginTop: spacing.lg, backgroundColor: colors.card, borderWidth: 1, borderColor: colors.border, borderRadius: borderRadius.full, paddingHorizontal: spacing.md, paddingVertical: 12, gap: spacing.sm },
+  searchPillIcon: { fontSize: 14 },
+  searchPillText: { fontSize: fontSize.sm, color: colors.mutedForeground, flex: 1 },
 
   // Stats
   statsRow: { flexDirection: "row", paddingHorizontal: spacing.lg, gap: spacing.sm },

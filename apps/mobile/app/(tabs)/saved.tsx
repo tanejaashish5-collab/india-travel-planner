@@ -12,6 +12,7 @@ import { router } from "expo-router";
 import { colors, spacing, fontSize, borderRadius } from "../../lib/theme";
 import { useDestinations } from "../../hooks/useDestinations";
 import { useSavedItems } from "../../hooks/useSavedItems";
+import SearchOverlay from "../../components/SearchOverlay";
 
 const SCORE_COLOR: Record<number, string> = {
   5: colors.score5, 4: colors.score4, 3: colors.score3, 2: colors.score2, 1: colors.score1,
@@ -26,6 +27,7 @@ export default function SavedScreen() {
   const { savedIds, loading: savedLoading, removeSaved } = useSavedItems();
   const [compareMode, setCompareMode] = useState(false);
   const [compareIds, setCompareIds] = useState<string[]>([]);
+  const [searchOpen, setSearchOpen] = useState(false);
   const currentMonth = new Date().getMonth() + 1;
 
   const savedDestinations = useMemo(() => {
@@ -106,10 +108,17 @@ export default function SavedScreen() {
 
   const listHeader = useMemo(() => (
     <View>
-      <Text style={styles.title}>Saved Destinations</Text>
-      <Text style={styles.subtitle}>
-        {savedDestinations.length} saved · {compareMode ? "Select up to 3 to compare" : "Your travel shortlist"}
-      </Text>
+      <View style={styles.headerRow}>
+        <View style={{ flex: 1 }}>
+          <Text style={styles.title}>Saved Destinations</Text>
+          <Text style={styles.subtitle}>
+            {savedDestinations.length} saved · {compareMode ? "Select up to 3 to compare" : "Your travel shortlist"}
+          </Text>
+        </View>
+        <TouchableOpacity onPress={() => setSearchOpen(true)} accessibilityLabel="Search" style={styles.headerSearchBtn}>
+          <Text style={styles.headerSearchIcon}>🔍</Text>
+        </TouchableOpacity>
+      </View>
 
       <View style={styles.actions}>
         <TouchableOpacity
@@ -226,6 +235,7 @@ export default function SavedScreen() {
           </View>
         }
       />
+      <SearchOverlay visible={searchOpen} onClose={() => setSearchOpen(false)} />
     </View>
   );
 }
@@ -234,6 +244,9 @@ const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: colors.background },
   content: { padding: spacing.lg },
   center: { flex: 1, backgroundColor: colors.background, justifyContent: "center", alignItems: "center" },
+  headerRow: { flexDirection: "row", alignItems: "flex-start", gap: spacing.md },
+  headerSearchBtn: { width: 40, height: 40, borderRadius: 20, backgroundColor: colors.card, borderWidth: 1, borderColor: colors.border, justifyContent: "center", alignItems: "center" },
+  headerSearchIcon: { fontSize: 16 },
   title: { fontSize: fontSize["2xl"], fontWeight: "700", color: colors.foreground },
   subtitle: { fontSize: fontSize.sm, color: colors.mutedForeground, marginTop: spacing.xs },
   actions: { flexDirection: "row", alignItems: "center", gap: spacing.sm, marginTop: spacing.md, marginBottom: spacing.lg },

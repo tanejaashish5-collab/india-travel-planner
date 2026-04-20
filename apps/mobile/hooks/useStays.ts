@@ -13,7 +13,7 @@ export interface LocalStay {
   best_for: string | null;
   verified: boolean;
   tags: string[];
-  destinations: { name: string } | null;
+  destinations: { name: string; state_id: string | null } | null;
 }
 
 export function useStays() {
@@ -23,7 +23,7 @@ export function useStays() {
   useEffect(() => {
     supabase
       .from("local_stays")
-      .select("*, destinations(name)")
+      .select("*, destinations(name, state_id)")
       .order("type")
       .order("name")
       .then(({ data }) => {

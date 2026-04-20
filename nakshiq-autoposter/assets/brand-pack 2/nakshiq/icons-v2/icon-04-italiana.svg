@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+<defs>
+<clipPath id="iconClip">
+<rect x="0" y="0" width="1024" height="1024" rx="224" ry="224"/>
+</clipPath>
+</defs>
+<g clip-path="url(#iconClip)">
+<rect x="0" y="0" width="1024" height="1024" fill="#161614"/>
+<path d="M455 0Q414 0 392.5 18.0Q371 36 370 54L369 71V385Q369 464 328 486Q307 496 276 496Q212 496 161.0 445.5Q110 395 110 355V0H40V500H110V386Q127 429 173.0 466.5Q219 504 274.0 504.0Q329 504 363.5 493.5Q398 483 414 464Q439 433 439 384V71Q439 42 450.5 26.5Q462 11 474 10L485 8H516V0Z" transform="translate(238.940, 655.500) scale(0.820000, -0.820000)" fill="#F5F1E8"/>
+<circle cx="744.06" cy="610.4" r="41.0" fill="#E55642"/>
+</g>
+</svg>

@@ -1,41 +1,9 @@
 "use client";
 
-/* ── Shared region filter bar for experience pages ── */
+import { REGIONS, type RegionKey, getStateId, stateInRegion } from "@itp/shared";
 
-const REGIONS = [
-  { key: "north", label: "North", states: ["himachal-pradesh","uttarakhand","jammu-kashmir","ladakh","rajasthan","punjab","delhi","uttar-pradesh","chandigarh","haryana"] },
-  { key: "south", label: "South", states: ["karnataka","kerala","tamil-nadu","andhra-pradesh","telangana","goa","puducherry"] },
-  { key: "east", label: "East", states: ["west-bengal","bihar","jharkhand","odisha"] },
-  { key: "west", label: "West", states: ["gujarat","maharashtra","daman-diu"] },
-  { key: "central", label: "Central", states: ["madhya-pradesh","chhattisgarh"] },
-  { key: "northeast", label: "Northeast", states: ["sikkim","arunachal-pradesh","assam","meghalaya","nagaland","manipur","mizoram","tripura"] },
-  { key: "islands", label: "Islands", states: ["andaman-nicobar","lakshadweep"] },
-] as const;
-
-export type RegionKey = typeof REGIONS[number]["key"] | null;
-
-/** Get state_id from a nested Supabase join row */
-export function getStateId(row: any): string | null {
-  // destinations join: row.destinations.state_id or row.destinations[0].state_id
-  const dest = Array.isArray(row.destinations) ? row.destinations[0] : row.destinations;
-  if (dest?.state_id) return dest.state_id;
-  // direct state_id on the row
-  if (row.state_id) return row.state_id;
-  // state join: row.state or row.destinations.state
-  const state = dest?.state;
-  if (state) {
-    const s = Array.isArray(state) ? state[0] : state;
-    return s?.id ?? null;
-  }
-  return null;
-}
-
-/** Check if a state_id belongs to a region */
-export function stateInRegion(stateId: string | null, regionKey: string): boolean {
-  if (!stateId) return false;
-  const region = REGIONS.find((r) => r.key === regionKey);
-  return region ? (region.states as readonly string[]).includes(stateId) : false;
-}
+export { REGIONS, getStateId, stateInRegion };
+export type { RegionKey };
 
 export function RegionFilterBar({
   active,

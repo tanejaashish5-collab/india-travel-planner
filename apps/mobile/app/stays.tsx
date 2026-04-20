@@ -1,8 +1,9 @@
 import { useState, useMemo, useCallback } from "react";
-import { View, Text, FlatList, TouchableOpacity, StyleSheet, ActivityIndicator, ScrollView, RefreshControl } from "react-native";
+import { View, Text, FlatList, TextInput, TouchableOpacity, StyleSheet, ActivityIndicator, ScrollView, RefreshControl } from "react-native";
 import { router, Stack } from "expo-router";
 import { colors, spacing, fontSize, borderRadius } from "../lib/theme";
 import { useStays } from "../hooks/useStays";
+import { REGIONS, stateInRegion, type RegionKey } from "@itp/shared";
 
 const TYPE_COLORS: Record<string, string> = {
   homestay: colors.topographic,
@@ -16,9 +17,32 @@ function getTypeColor(type: string): string {
   return TYPE_COLORS[type?.toLowerCase()] || colors.mutedForeground;
 }
 
+type Budget = "all" | "budget" | "mid" | "premium";
+
+function parsePriceLow(priceRange: string | null): number | null {
+  if (!priceRange) return null;
+  const match = priceRange.match(/(\d[\d,]*)/);
+  if (!match) return null;
+  return parseInt(match[1].replace(/,/g, ""), 10);
+}
+
+function matchesBudget(priceRange: string | null, budget: Budget): boolean {
+  if (budget === "all") return true;
+  const low = parsePriceLow(priceRange);
+  if (low === null) return false;
+  if (budget === "budget") return low < 2000;
+  if (budget === "mid") return low >= 2000 && low < 6000;
+  if (budget === "premium") return low >= 6000;
+  return true;
+}
+
 export default function StaysScreen() {
   const { stays, loading } = useStays();
   const [typeFilter, setTypeFilter] = useState("all");
+  const [regionFilter, setRegionFilter] = useState<RegionKey>(null);
+  const [budget, setBudget] = useState<Budget>("all");
+  const [verifiedOnly, setVerifiedOnly] = useState(false);
+  const [search, setSearch] = useState("");
   const [refreshing, setRefreshing] = useState(false);
 
   const types = useMemo(() => {
@@ -27,9 +51,26 @@ export default function StaysScreen() {
   }, [stays]);
 
   const filtered = useMemo(() => {
-    if (typeFilter === "all") return stays;
-    return stays.filter((s: any) => s.type === typeFilter);
-  }, [stays, typeFilter]);
+    return stays.filter((stay: any) => {
+      if (typeFilter !== "all" && stay.type !== typeFilter) return false;
+      if (verifiedOnly && !stay.verified) return false;
+      if (regionFilter) {
+        const stateId = stay.destinations?.state_id ?? null;
+        if (!stateInRegion(stateId, regionFilter)) return false;
+      }
+      if (!matchesBudget(stay.price_range, budget)) return false;
+      if (search) {
+        const q = search.toLowerCase();
+        const destName = stay.destinations?.name ?? "";
+        if (
+          !stay.name.toLowerCase().includes(q) &&
+          !destName.toLowerCase().includes(q) &&
+          !(stay.why_special ?? "").toLowerCase().includes(q)
+        ) return false;
+      }
+      return true;
+    });
+  }, [stays, typeFilter, regionFilter, budget, verifiedOnly, search]);
 
   const onRefresh = useCallback(() => {
     setRefreshing(true);
@@ -148,6 +189,66 @@ export default function StaysScreen() {
           </View>
         </View>
       </View>
+
+      {/* Search */}
+      <View style={s.searchBar}>
+        <Text style={s.searchIcon}>🔍</Text>
+        <TextInput
+          style={s.searchInput}
+          placeholder="Search stays, destinations..."
+          placeholderTextColor={colors.mutedForeground}
+          value={search}
+          onChangeText={setSearch}
+        />
+        {search ? (
+          <TouchableOpacity onPress={() => setSearch("")}>
+            <Text style={s.clearBtn}>✕</Text>
+          </TouchableOpacity>
+        ) : null}
+      </View>
+
+      {/* Region chips */}
+      <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={s.filterChipRow}>
+        <TouchableOpacity
+          style={[s.filterChip, !regionFilter && s.filterChipActive]}
+          onPress={() => setRegionFilter(null)}
+        >
+          <Text style={[s.filterChipText, !regionFilter && s.filterChipTextActive]}>All India</Text>
+        </TouchableOpacity>
+        {REGIONS.map((r) => (
+          <TouchableOpacity
+            key={r.key}
+            style={[s.filterChip, regionFilter === r.key && s.filterChipActive]}
+            onPress={() => setRegionFilter(regionFilter === r.key ? null : r.key)}
+          >
+            <Text style={[s.filterChipText, regionFilter === r.key && s.filterChipTextActive]}>{r.label}</Text>
+          </TouchableOpacity>
+        ))}
+      </ScrollView>
+
+      {/* Budget + verified row */}
+      <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={s.filterChipRow}>
+        {([
+          { key: "all", label: "Any budget" },
+          { key: "budget", label: "Budget (<₹2k)" },
+          { key: "mid", label: "Mid (₹2–6k)" },
+          { key: "premium", label: "Premium (₹6k+)" },
+        ] as const).map((b) => (
+          <TouchableOpacity
+            key={b.key}
+            style={[s.filterChip, budget === b.key && s.filterChipActive]}
+            onPress={() => setBudget(b.key)}
+          >
+            <Text style={[s.filterChipText, budget === b.key && s.filterChipTextActive]}>{b.label}</Text>
+          </TouchableOpacity>
+        ))}
+        <TouchableOpacity
+          style={[s.filterChip, verifiedOnly && s.filterChipActive]}
+          onPress={() => setVerifiedOnly(!verifiedOnly)}
+        >
+          <Text style={[s.filterChipText, verifiedOnly && s.filterChipTextActive]}>✓ Verified</Text>
+        </TouchableOpacity>
+      </ScrollView>
 
       {/* Type chips - horizontal scroll */}
       <ScrollView
@@ -284,6 +385,19 @@ const s = StyleSheet.create({
     color: colors.saffron,
     fontFamily: "monospace",
   },
+
+  /* Search bar */
+  searchBar: { flexDirection: "row", alignItems: "center", marginHorizontal: spacing.md, marginTop: spacing.sm, backgroundColor: colors.card, borderRadius: borderRadius.md, borderWidth: 1, borderColor: colors.border, paddingHorizontal: spacing.md },
+  searchIcon: { fontSize: 14, marginRight: spacing.sm },
+  searchInput: { flex: 1, paddingVertical: 10, fontSize: fontSize.sm, color: colors.foreground },
+  clearBtn: { fontSize: fontSize.sm, color: colors.mutedForeground, padding: spacing.xs },
+
+  /* Filter chip rows (region + budget) */
+  filterChipRow: { flexDirection: "row", paddingHorizontal: spacing.md, paddingVertical: spacing.sm, gap: 6 },
+  filterChip: { paddingHorizontal: 12, paddingVertical: 6, borderRadius: borderRadius.full, borderWidth: 1, borderColor: colors.border, backgroundColor: colors.card, marginRight: 6 },
+  filterChipActive: { borderColor: colors.saffron, backgroundColor: colors.saffron + "15" },
+  filterChipText: { fontSize: fontSize.xs, fontWeight: "600", color: colors.mutedForeground },
+  filterChipTextActive: { color: colors.saffron },
 
   /* Chips */
   chipContainer: {
