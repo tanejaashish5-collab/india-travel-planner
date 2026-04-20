@@ -356,7 +356,7 @@ export function BlogArticle({
                           {/* Giant numeral + metadata row */}
                           <div className="flex items-start gap-5 mb-5">
                             <span
-                              className="font-serif italic font-medium text-6xl sm:text-7xl lg:text-8xl leading-[0.85] tracking-[-0.02em] text-foreground flex-shrink-0"
+                              className="font-serif italic font-medium text-4xl sm:text-5xl lg:text-6xl leading-[0.85] tracking-[-0.02em] text-foreground/80 flex-shrink-0"
                               style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
                               aria-hidden="true"
                             >
@@ -369,7 +369,7 @@ export function BlogArticle({
                                 </div>
                               )}
                               <h3
-                                className="font-serif italic font-medium text-3xl sm:text-4xl lg:text-5xl leading-[1.05] tracking-[-0.01em] text-foreground"
+                                className="font-serif italic font-medium text-xl sm:text-2xl lg:text-3xl leading-[1.1] tracking-[-0.01em] text-foreground"
                                 style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
                               >
                                 {item.name}
