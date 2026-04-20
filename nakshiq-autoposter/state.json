@@ -14,8 +14,8 @@
   "posted_today": {
     "PdMu0": "2026-04-20",
     "m8EAd": "2026-04-20",
-    "m8EAd_reel": "2026-04-19",
-    "PdMu0_reel": "2026-04-19",
+    "m8EAd_reel": "2026-04-20",
+    "PdMu0_reel": "2026-04-20",
     "4QL0i_reel": "2026-04-19",
     "m8EAd_canva": "2026-04-19",
     "PdMu0_canva": "2026-04-19",
@@ -26,7 +26,8 @@
     "m8EAd_yt_short_count": 1,
     "jUmP2_yt_short": "2026-04-20",
     "jUmP2_yt_short_count": 1,
-    "jUmP2": "2026-04-20"
+    "jUmP2": "2026-04-20",
+    "jUmP2_reel": "2026-04-20"
   },
   "last_sync": "2026-04-20T04:47:46.904207+00:00",
   "posted_destinations": [
@@ -164,6 +165,9 @@
     "reel_formats": {
       "seasonal_shift": [
         "2026-04-19"
+      ],
+      "destination_reveal": [
+        "2026-04-20"
       ]
     },
     "reel_seasonal_dests": {
@@ -171,7 +175,11 @@
         "2026-04-19"
       ]
     },
-    "reel_reveal_dests": {},
+    "reel_reveal_dests": {
+      "ziro-valley": [
+        "2026-04-20"
+      ]
+    },
     "canva_categories": {
       "mood_shots": [
         "2026-04-19"
