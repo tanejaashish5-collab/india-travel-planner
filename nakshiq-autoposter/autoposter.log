@@ -2213,3 +2213,20 @@ Date range: 2026-04-15 → 2026-04-18
 2026-04-20 00:16:58  INFO      YT Short posted: format=before_after, music=09_tokyo_drift
 2026-04-20 00:16:58  INFO      State saved. YT Short run complete.
 2026-04-20 00:16:58  INFO      ════════════════════════════════════════════════════════════
+2026-04-20 04:47:38  INFO      Stale lock (age=173164s) — overriding.
+2026-04-20 04:47:38  INFO      ════════════════════════════════════════════════════════════
+2026-04-20 04:47:38  INFO      Nakshiq Autoposter · MORNING · 2026-04-20 · weekday=0
+2026-04-20 04:47:38  INFO      ════════════════════════════════════════════════════════════
+2026-04-20 04:47:38  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-04-20 04:47:46  INFO      Synced → 20 destinations · 0 traps · 0 articles · total catalog=480
+2026-04-20 04:47:48  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-04-20 04:47:51  INFO      Outstand dedup guard: merged 4 remote posts into state.
+2026-04-20 04:47:51  INFO      Formats — IG: score_card  ·  FB: score_card  ·  Story: festival_alert
+2026-04-20 04:47:51  INFO      Used destinations (14d): 11
+2026-04-20 04:47:51  INFO      Festival locked: Baisakhi (20/20 never featured)
+2026-04-20 04:47:54  INFO      Shared best destination locked: Almora
+2026-04-20 04:47:54  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-04-20 04:47:54  INFO      [instagram/nakshiq] Already posted today (morning) — skipping.
+2026-04-20 04:47:54  INFO      [facebook/Nakshiq] Already posted today (morning) — skipping.
+2026-04-20 04:47:54  INFO      State saved. Run complete.
+2026-04-20 04:47:54  INFO      ════════════════════════════════════════════════════════════

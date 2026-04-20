@@ -12,8 +12,8 @@
     "06_tribal_pulse"
   ],
   "posted_today": {
-    "PdMu0": "2026-04-19",
-    "m8EAd": "2026-04-19",
+    "PdMu0": "2026-04-20",
+    "m8EAd": "2026-04-20",
     "m8EAd_reel": "2026-04-19",
     "PdMu0_reel": "2026-04-19",
     "4QL0i_reel": "2026-04-19",
@@ -25,9 +25,10 @@
     "m8EAd_yt_short": "2026-04-20",
     "m8EAd_yt_short_count": 1,
     "jUmP2_yt_short": "2026-04-20",
-    "jUmP2_yt_short_count": 1
+    "jUmP2_yt_short_count": 1,
+    "jUmP2": "2026-04-20"
   },
-  "last_sync": "2026-04-19T10:10:30.485924+00:00",
+  "last_sync": "2026-04-20T04:47:46.904207+00:00",
   "posted_destinations": [
     {
       "destination_id": "pahalgam",
@@ -84,6 +85,18 @@
     {
       "destination_id": "kotagiri",
       "date": "2026-04-19"
+    },
+    {
+      "destination_id": "bhimtal",
+      "date": "2026-04-20"
+    },
+    {
+      "destination_id": "yt_short_before_after_yt_short_before_after_2026-04-20",
+      "date": "2026-04-20"
+    },
+    {
+      "destination_id": "yt_short_mini_guide_yt_short_mini_guide_2026-04-20",
+      "date": "2026-04-20"
     }
   ],
   "posted_formats": {
@@ -176,6 +189,7 @@
       "kodaikanal": [
         "2026-04-19"
       ]
-    }
+    },
+    "festivals": {}
   }
 }
