@@ -114,7 +114,7 @@ async function handle(req: NextRequest) {
       dry: true,
       issue: { slug: issue.slug, subject: issue.subject, previewText: issue.previewText, props: issue.props },
       recipientCount: recipients.length,
-      htmlPreview: sampleHtml.slice(0, 500) + "...",
+      htmlPreview: sampleHtml,
     });
   }
 
