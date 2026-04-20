@@ -9,6 +9,7 @@ on:
     - cron: "0 5 * * *"    # 10:30 IST  ← last fallback
     - cron: "0 7 * * 2,4,6"    # 12:30 IST Tue/Thu/Sat — tourist map
     - cron: "0 9 * * *"       # 14:30 IST daily — canva visual
+    - cron: "30 9 * * *"      # 15:00 IST daily — pomelli visual
     - cron: "30 5 * * *"      # 11:00 IST daily — reel slot 1
     - cron: "30 10 * * *"     # 16:00 IST daily — reel slot 2
     - cron: "30 14 * * *"     # 20:00 IST daily — reel slot 3
@@ -38,6 +39,8 @@ on:
           - reel-force
           - infographic
           - infographic-force
+          - pomelli-visual
+          - pomelli-visual-force
           - yt-short
           - yt-short-force
           - analytics
@@ -108,6 +111,9 @@ jobs:
             elif [ "$INPUT" = "canva-visual-force" ]; then
               echo "args=--canva-visual --force" >> $GITHUB_OUTPUT
               echo "Manual mode: --canva-visual --force"
+            elif [ "$INPUT" = "pomelli-visual-force" ]; then
+              echo "args=--pomelli-visual --force" >> $GITHUB_OUTPUT
+              echo "Manual mode: --pomelli-visual --force"
             elif [ "$INPUT" = "reel-force" ]; then
               echo "args=--reel --force" >> $GITHUB_OUTPUT
               echo "Manual mode: --reel --force"
@@ -128,8 +134,12 @@ jobs:
             # UTC 07:30 on Mon/Wed/Fri → infographic (window: 440-539, 100 min — 10 min early tolerance for GH jitter)
             echo "args=--infographic" >> $GITHUB_OUTPUT
             echo "Scheduled INFOGRAPHIC mode (UTC ${HOUR}:${MINUTE}, DOW=${DOW})"
-          elif [ "$TOTAL_MINS" -ge 540 ] && [ "$TOTAL_MINS" -lt 630 ]; then
-            # UTC 09:00 daily → canva visual (window: 540-629)
+          elif [ "$TOTAL_MINS" -ge 570 ] && [ "$TOTAL_MINS" -lt 630 ]; then
+            # UTC 09:30 daily → pomelli visual (window: 570-629)
+            echo "args=--pomelli-visual" >> $GITHUB_OUTPUT
+            echo "Scheduled POMELLI VISUAL mode (UTC ${HOUR}:${MINUTE})"
+          elif [ "$TOTAL_MINS" -ge 540 ] && [ "$TOTAL_MINS" -lt 570 ]; then
+            # UTC 09:00 daily → canva visual (window: 540-569)
             echo "args=--canva-visual" >> $GITHUB_OUTPUT
             echo "Scheduled CANVA VISUAL mode (UTC ${HOUR}:${MINUTE})"
           elif [ "$TOTAL_MINS" -ge 420 ] && [ "$TOTAL_MINS" -lt 540 ] && echo "2 4 6" | grep -qw "$DOW"; then

@@ -2836,6 +2836,344 @@ def run_canva_visual(force: bool = False, dry_run: bool = False):
 
 
 # ─────────────────────────────────────────────────────────────────────────────
+# POMELLI VISUAL MODE — AI-generated on-brand campaign creatives
+# ─────────────────────────────────────────────────────────────────────────────
+#
+# Posts from pomelli_library/ — 496 creatives across 20 feature campaigns
+# (monthly_scores, tourist_traps, kids_safety, etc.) and 20+ region campaigns.
+# Rotates campaign themes with anti-repetition so the feed showcases a
+# different NakshIQ MOAT feature every day.  Platform-specific captions:
+# IG = long-form + hashtags, FB = question-led + shorter.
+
+POMELLI_LIBRARY_DIR = Path(__file__).parent / "pomelli_library"
+POMELLI_LOCK_FILE   = Path(__file__).parent / ".autoposter-pomelli.lock"
+
+# Campaign theme rotation — feature campaigns first (high-value MOAT content),
+# then region campaigns.  Cycling ensures the feed never shows the same
+# campaign type on consecutive days.
+POMELLI_CAMPAIGN_ORDER = [
+    # ── Feature campaigns (20) — rotate these first ──────────────────────
+    "monthly_scores", "tourist_traps", "kids_safety", "budget_reality",
+    "before_you_decide", "crowd_intelligence", "road_status", "budget_1000day",
+    "dangerous_roads", "solo_female_safety", "74_road_trips", "manali_leh_reality",
+    "festivals_325", "unknown_festivals", "emergency_sos", "network_coverage",
+    "ai_trip_planner", "route_builder", "480_destinations", "scoring_methodology",
+    # ── General data themes (4) ──────────────────────────────────────────
+    "safety_data", "seasonal_intel", "infrastructure_reality", "data_authority",
+    # ── Region campaigns (21) — destination-specific creatives ───────────
+    "kerala", "himachal", "rajasthan", "tamilnadu", "goa", "meghalaya",
+    "uttarakhand", "punjab", "mp", "karnataka", "delhi", "odisha", "sikkim",
+    "jk", "assam", "as", "bihar", "chhattisgarh", "northeast",
+    "maharashtra", "mh", "wb", "up", "ap", "andhra", "jharkhand", "guj",
+    # ── Catchall ─────────────────────────────────────────────────────────
+    "brand_authority",
+]
+
+# ── Feature campaign caption metadata ────────────────────────────────────
+# Platform-specific templates: IG gets long-form + hashtags, FB gets
+# question-driven shorter copy.  Region campaigns get generic templates
+# with state-specific context injected.
+
+POMELLI_FEATURE_CAPTIONS = {
+    "monthly_scores": {
+        "ig": "📊 {subject}\n\nEvery destination. Every month. One honest score.\nWeather × Crowds × Roads × Infrastructure × Safety = one number.\n\nStop guessing. Start planning with data.\n→ nakshiq.com?utm_source=ig&utm_medium=post&utm_campaign=pomelli-visual\n\n—\nData, not opinions.\n\n{hashtags}",
+        "fb": "What if you could see exactly when to visit any Indian destination — scored 1 to 5 for every month?\n\nThat's what NakshIQ does. {subject}\n\n→ nakshiq.com?utm_source=fb&utm_medium=post&utm_campaign=pomelli-visual",
+    },
+    "tourist_traps": {
+        "ig": "🚫 {subject}\n\n109 tourist traps exposed. The overcrowded, overpriced, overhyped spots travel blogs won't warn you about.\n\nNakshIQ doesn't just recommend — we anti-recommend.\n→ nakshiq.com?utm_source=ig&utm_medium=post&utm_campaign=pomelli-visual\n\n—\nTravel with IQ.\n\n{hashtags}",
+        "fb": "Would you rather discover a tourist trap BEFORE or AFTER spending ₹15,000 to get there?\n\n{subject}\n\n109 honest anti-recommendations → nakshiq.com?utm_source=fb&utm_medium=post&utm_campaign=pomelli-visual",
+    },
+    "kids_safety": {
+        "ig": "👨‍👩‍👧 {subject}\n\nHospital distance. Ambulance time. Phone signal. Altitude risk. Road safety.\nAll factored into one kids score.\n\nFamily travel without data is gambling.\n→ nakshiq.com?utm_source=ig&utm_medium=post&utm_campaign=pomelli-visual\n\n—\nData, not opinions.\n\n{hashtags}",
+        "fb": "Before you book that 'family-friendly' hill station — do you know how far the nearest hospital is?\n\n{subject}\n\nNakshIQ scores every destination for family safety → nakshiq.com?utm_source=fb&utm_medium=post&utm_campaign=pomelli-visual",
+    },
+    "budget_reality": {
+        "ig": "💰 {subject}\n\n₹1,100/day to ₹10,000/day — every destination priced honestly.\nStay + food + transport + activities.\n\nNo influencer fantasy. Real numbers.\n→ nakshiq.com?utm_source=ig&utm_medium=post&utm_campaign=pomelli-visual\n\n—\nTravel with IQ.\n\n{hashtags}",
+        "fb": "Influencers say Goa costs ₹500/day. Reality? Depends on the month, the area, and what you actually want.\n\n{subject}\n\nReal budgets for every Indian destination → nakshiq.com?utm_source=fb&utm_medium=post&utm_campaign=pomelli-visual",
+    },
+    "before_you_decide": {
+        "ig": "🔄 {subject}\n\nSame region. Less crowd. Better value.\nNakshIQ shows you what the famous place used to be — before the crowds.\n\n→ nakshiq.com?utm_source=ig&utm_medium=post&utm_campaign=pomelli-visual\n\n—\nTravel with IQ.\n\n{hashtags}",
+        "fb": "What if the best version of your destination is 3 hours away — quieter, cheaper, and better?\n\n{subject}\n\nSmarter alternatives backed by data → nakshiq.com?utm_source=fb&utm_medium=post&utm_campaign=pomelli-visual",
+    },
+    "crowd_intelligence": {
+        "ig": "👥 {subject}\n\nMonthly crowd heatmaps. Best days. Worst weekends.\nKnow before you go.\n\nNakshIQ tracks crowd density so you never walk into chaos.\n→ nakshiq.com?utm_source=ig&utm_medium=post&utm_campaign=pomelli-visual\n\n—\nData, not opinions.\n\n{hashtags}",
+        "fb": "Would you visit the Taj Mahal on a Saturday in October? NakshIQ's crowd data says: don't.\n\n{subject}\n\nReal-time crowd intelligence → nakshiq.com?utm_source=fb&utm_medium=post&utm_campaign=pomelli-visual",
+    },
+    "road_status": {
+        "ig": "🛣️ {subject}\n\nLandslides. Closures. Permits. Surface quality. Queue times.\nNakshIQ knows if that road is actually open.\n\n→ nakshiq.com?utm_source=ig&utm_medium=post&utm_campaign=pomelli-visual\n\n—\nTravel with IQ.\n\n{hashtags}",
+        "fb": "Planning a road trip? That highway you're counting on might be closed right now.\n\n{subject}\n\nReal-time road intelligence → nakshiq.com?utm_source=fb&utm_medium=post&utm_campaign=pomelli-visual",
+    },
+    "budget_1000day": {
+        "ig": "🎒 {subject}\n\n18 incredible destinations on ₹1,000/day. Real budget. Zero compromise.\nStay + food + transport + activities — all verified.\n\n→ nakshiq.com?utm_source=ig&utm_medium=post&utm_campaign=pomelli-visual\n\n—\nData, not opinions.\n\n{hashtags}",
+        "fb": "₹1,000 per day. Can you actually travel India on that? Yes — to 18 specific destinations.\n\n{subject}\n\nVerified budget travel → nakshiq.com?utm_source=fb&utm_medium=post&utm_campaign=pomelli-visual",
+    },
+    "dangerous_roads": {
+        "ig": "⚡ {subject}\n\nCliff edges. No barriers. Scenery that stops your heart.\nIndia's most dangerous roads — and the data that keeps bikers alive.\n\n→ nakshiq.com?utm_source=ig&utm_medium=post&utm_campaign=pomelli-visual\n\n—\nTravel with IQ.\n\n{hashtags}",
+        "fb": "Some roads in India have zero guardrails and 1,000-foot drops. Bikers ride them anyway.\n\n{subject}\n\nDangerous road data → nakshiq.com?utm_source=fb&utm_medium=post&utm_campaign=pomelli-visual",
+    },
+    "solo_female_safety": {
+        "ig": "🛡️ {subject}\n\n25 destinations scored safest for solo female travelers.\nInfrastructure. Connectivity. Active tourism. Tested.\n\n→ nakshiq.com?utm_source=ig&utm_medium=post&utm_campaign=pomelli-visual\n\n—\nData, not opinions.\n\n{hashtags}",
+        "fb": "Solo female travel in India — which destinations actually score highest for safety?\n\n{subject}\n\nData-backed safety scores → nakshiq.com?utm_source=fb&utm_medium=post&utm_campaign=pomelli-visual",
+    },
+    "74_road_trips": {
+        "ig": "🏍️ {subject}\n\n74 road trips. Road quality. Fuel stops. Phone signal. Altitude risk.\nNot blog lists — biker data.\n\n→ nakshiq.com?utm_source=ig&utm_medium=post&utm_campaign=pomelli-visual\n\n—\nTravel with IQ.\n\n{hashtags}",
+        "fb": "74 road trips across India — each scored for road quality, fuel, phone signal, and safety.\n\n{subject}\n\nRoad trip intelligence → nakshiq.com?utm_source=fb&utm_medium=post&utm_campaign=pomelli-visual",
+    },
+    "manali_leh_reality": {
+        "ig": "🏔️ {subject}\n\n490km. 5 passes above 4000m. 365km without fuel. Zero signal zones.\nThe Manali-Leh reality nobody posts.\n\n→ nakshiq.com?utm_source=ig&utm_medium=post&utm_campaign=pomelli-visual\n\n—\nData, not opinions.\n\n{hashtags}",
+        "fb": "Manali to Leh: 490km through uninhabited desert. What nobody tells you before you go.\n\n{subject}\n\nReal route data → nakshiq.com?utm_source=fb&utm_medium=post&utm_campaign=pomelli-visual",
+    },
+    "festivals_325": {
+        "ig": "🪔 {subject}\n\n325 festivals mapped across India. Dates. Locations. Safety intel.\nTime your next trip around something extraordinary.\n\n→ nakshiq.com?utm_source=ig&utm_medium=post&utm_campaign=pomelli-visual\n\n—\nTravel with IQ.\n\n{hashtags}",
+        "fb": "India celebrates 325+ festivals a year. Most travelers accidentally miss all of them.\n\n{subject}\n\nFestival calendar → nakshiq.com?utm_source=fb&utm_medium=post&utm_campaign=pomelli-visual",
+    },
+    "unknown_festivals": {
+        "ig": "🎭 {subject}\n\n200+ village deities. Midnight ceremonies. Masked tribal dances.\nThe festivals travel guides don't cover.\n\n→ nakshiq.com?utm_source=ig&utm_medium=post&utm_campaign=pomelli-visual\n\n—\nData, not opinions.\n\n{hashtags}",
+        "fb": "Did you know Kullu Dussehra STARTS when everyone else's ends? 200+ village gods.\n\n{subject}\n\nHidden festivals → nakshiq.com?utm_source=fb&utm_medium=post&utm_campaign=pomelli-visual",
+    },
+    "emergency_sos": {
+        "ig": "🏥 {subject}\n\nHospital: 1km. Ambulance: 10 min. Police: on call.\nEmergency data for every destination.\n\n→ nakshiq.com?utm_source=ig&utm_medium=post&utm_campaign=pomelli-visual\n\n—\nTravel with IQ.\n\n{hashtags}",
+        "fb": "Your travel app shows sunset photos. Does it show how far the nearest hospital is?\n\n{subject}\n\nEmergency data → nakshiq.com?utm_source=fb&utm_medium=post&utm_campaign=pomelli-visual",
+    },
+    "network_coverage": {
+        "ig": "📱 {subject}\n\nJio? Airtel? BSNL? NakshIQ tested every destination.\nKnow which carrier works — before you lose signal.\n\n→ nakshiq.com?utm_source=ig&utm_medium=post&utm_campaign=pomelli-visual\n\n—\nData, not opinions.\n\n{hashtags}",
+        "fb": "15 destinations where ONLY BSNL works. Is that your carrier?\n\n{subject}\n\nNetwork coverage → nakshiq.com?utm_source=fb&utm_medium=post&utm_campaign=pomelli-visual",
+    },
+    "ai_trip_planner": {
+        "ig": "🤖 {subject}\n\nAI Trip Planner backed by real data. 480 destinations. 74 routes. 325 festivals.\nThe first AI planner that actually knows India.\n\n→ nakshiq.com?utm_source=ig&utm_medium=post&utm_campaign=pomelli-visual\n\n—\nTravel with IQ.\n\n{hashtags}",
+        "fb": "AI travel planners give generic answers. NakshIQ's AI is trained on 480 real destinations.\n\n{subject}\n\nTry the smarter AI planner → nakshiq.com?utm_source=fb&utm_medium=post&utm_campaign=pomelli-visual",
+    },
+    "route_builder": {
+        "ig": "🗺️ {subject}\n\nBuild your own route. We tell you what's open, where to fuel, where your phone dies.\nReal infrastructure data on every road.\n\n→ nakshiq.com?utm_source=ig&utm_medium=post&utm_campaign=pomelli-visual\n\n—\nData, not opinions.\n\n{hashtags}",
+        "fb": "Building a road trip route? NakshIQ overlays fuel, signal, road conditions, and safety.\n\n{subject}\n\nRoute Builder → nakshiq.com?utm_source=fb&utm_medium=post&utm_campaign=pomelli-visual",
+    },
+    "480_destinations": {
+        "ig": "🎯 {subject}\n\n480 destinations. Not blog posts — intelligence reports.\nMonthly scores. Safety. Budget. Infrastructure.\n\n→ nakshiq.com?utm_source=ig&utm_medium=post&utm_campaign=pomelli-visual\n\n—\nTravel with IQ.\n\n{hashtags}",
+        "fb": "480 Indian destinations. Each one treated like a mission briefing — not a blog post.\n\n{subject}\n\nAccess the intelligence → nakshiq.com?utm_source=fb&utm_medium=post&utm_campaign=pomelli-visual",
+    },
+    "scoring_methodology": {
+        "ig": "🔬 {subject}\n\nWeather + Road Access + Crowd Density + Infrastructure + Safety = one honest number.\nTransparency builds trust.\n\n→ nakshiq.com?utm_source=ig&utm_medium=post&utm_campaign=pomelli-visual\n\n—\nData, not opinions.\n\n{hashtags}",
+        "fb": "How do you reduce an entire destination to one number? Five data layers, zero opinions.\n\n{subject}\n\nSee the methodology → nakshiq.com?utm_source=fb&utm_medium=post&utm_campaign=pomelli-visual",
+    },
+}
+
+# Generic caption templates for region + general campaigns
+POMELLI_REGION_CAPTION = {
+    "ig": "📍 {subject}\n\n{state} — scored, mapped, and verified by NakshIQ.\nMonthly scores. Safety data. Budget reality. Infrastructure truth.\n\nTravel with data, not guesswork.\n→ nakshiq.com?utm_source=ig&utm_medium=post&utm_campaign=pomelli-visual\n\n—\nData, not opinions.\n\n{hashtags}",
+    "fb": "Planning a trip to {state}? NakshIQ has the safety data, budget reality, and infrastructure truth that blogs don't cover.\n\n{subject}\n\n→ nakshiq.com?utm_source=fb&utm_medium=post&utm_campaign=pomelli-visual",
+}
+
+POMELLI_GENERAL_CAPTION = {
+    "ig": "📊 {subject}\n\nIndia travel intelligence. Not opinions — verified data.\n480 destinations. Monthly scores. Real safety data.\n\n→ nakshiq.com?utm_source=ig&utm_medium=post&utm_campaign=pomelli-visual\n\n—\nTravel with IQ.\n\n{hashtags}",
+    "fb": "Travel blogs give you opinions. NakshIQ gives you data.\n\n{subject}\n\n480 destinations scored monthly → nakshiq.com?utm_source=fb&utm_medium=post&utm_campaign=pomelli-visual",
+}
+
+
+def _pomelli_hashtags(entry: dict, platform: str) -> str:
+    """Build platform-appropriate hashtags for a Pomelli post."""
+    tags = entry.get("tags", [])
+    state = entry.get("state")
+
+    base = ["NakshIQ", "TravelWithIQ", "IndiaTravel", "IncredibleIndia"]
+    if state:
+        base.append(state.replace(" ", ""))
+    for t in tags:
+        clean = t.replace(" ", "").replace("_", "")
+        if clean not in base:
+            base.append(clean)
+
+    if platform == "facebook":
+        # FB: fewer hashtags, max 5
+        return " ".join(f"#{h}" for h in base[:5])
+    # IG: full hashtag set
+    return " ".join(f"#{h}" for h in base)
+
+
+def _pomelli_caption(entry: dict, platform: str) -> str:
+    """Generate platform-specific caption for a Pomelli creative."""
+    campaign = entry.get("campaign", "")
+    campaign_type = entry.get("campaign_type", "general")
+
+    # Platform key: "ig" for Instagram, "fb" for Facebook
+    plat_key = "fb" if platform == "facebook" else "ig"
+
+    # Select template
+    if campaign in POMELLI_FEATURE_CAPTIONS:
+        template = POMELLI_FEATURE_CAPTIONS[campaign][plat_key]
+    elif campaign_type == "region":
+        template = POMELLI_REGION_CAPTION[plat_key]
+    else:
+        template = POMELLI_GENERAL_CAPTION[plat_key]
+
+    hashtags = _pomelli_hashtags(entry, platform)
+    state = entry.get("state", "India")
+    subject = entry.get("subject", "India")
+
+    return template.format(
+        subject=subject,
+        state=state,
+        hashtags=hashtags,
+    )
+
+
+def _run_pomelli_visual(force: bool = False, dry_run: bool = False):
+    """
+    Pomelli Visual mode — posts AI-generated on-brand creatives from pomelli_library/.
+    Rotates campaign themes (20 feature + 20 region) with anti-repetition tracking.
+    Platform-specific captions: IG = long-form + hashtags, FB = question-driven.
+    """
+    import json as _json
+
+    today   = date.today().isoformat()
+    weekday = date.today().weekday()
+    st      = load_state()
+
+    log.info("═" * 60)
+    log.info(f"Nakshiq Autoposter · POMELLI VISUAL · {today} · weekday={weekday}")
+    log.info("═" * 60)
+
+    # Load manifest
+    manifest_path = POMELLI_LIBRARY_DIR / "manifest.json"
+    if not manifest_path.exists():
+        log.error("pomelli_library/manifest.json not found.")
+        return
+
+    with open(manifest_path) as f:
+        manifest = _json.load(f)
+
+    all_images = manifest.get("images", [])
+    if not all_images:
+        log.error("No images in pomelli_library/manifest.json.")
+        return
+
+    # Verify image files actually exist
+    available = []
+    for img in all_images:
+        img_path = POMELLI_LIBRARY_DIR / img["file"]
+        if img_path.exists():
+            available.append(img)
+        else:
+            log.warning(f"Image not found, skipping: {img['file']}")
+
+    if not available:
+        log.error("No available images in pomelli library.")
+        return
+
+    log.info(f"Library: {len(available)} images across "
+             f"{len(set(i['campaign'] for i in available))} campaigns")
+
+    # ── Pick campaign theme (oldest-unused first, cycling through all) ───
+    available_camps = list(set(i["campaign"] for i in available))
+    camp_items = [{"id": c} for c in POMELLI_CAMPAIGN_ORDER if c in available_camps]
+    if not camp_items:
+        camp_items = [{"id": c} for c in available_camps]
+    camp_ordered = pick_oldest_unused(st, "pomelli_campaigns", camp_items, key="id")
+    chosen_camp = camp_ordered[0]["id"]
+
+    # ── Pick image within that campaign (oldest-unused first) ────────────
+    camp_images = [i for i in available if i["campaign"] == chosen_camp]
+    if not camp_images:
+        # Fallback: pick from any campaign
+        camp_images = available
+        chosen_camp = camp_images[0]["campaign"]
+
+    img_items = [{"id": img["file"], **img} for img in camp_images]
+    img_ordered = pick_oldest_unused(st, "pomelli_images", img_items, key="id")
+    chosen_img = img_ordered[0]
+
+    log.info(f"Selected: [{chosen_camp}] {chosen_img.get('subject', '')} → {chosen_img['file']}")
+
+    # Read image bytes
+    img_path = POMELLI_LIBRARY_DIR / chosen_img["file"]
+    img_bytes = img_path.read_bytes()
+
+    # Upload
+    media_filename = f"pomelli_{chosen_camp}_{Path(chosen_img['file']).stem}.png"
+    media_obj = upload_media_bytes(img_bytes, media_filename, "image/png")
+    if not media_obj:
+        log.error("Media upload failed.")
+        return
+
+    log.info(f"Image uploaded: {media_filename} ({len(img_bytes) // 1024} KB)")
+
+    # Get accounts
+    accounts = get_connected_accounts()
+    active   = [a for a in accounts if a.get("isActive")]
+    if not active:
+        log.warning("No active connected accounts.")
+        return
+
+    mode_suffix = "_pomelli"
+    posted_any = False
+
+    for account in active:
+        acc_id   = account["id"]
+        platform = account["network"]
+        username = account.get("username", acc_id)
+        label    = f"{platform}/{username}"
+
+        # YouTube only supports video — skip image posts
+        if platform == "youtube":
+            log.info(f"[{label}] Skipping pomelli visual (YouTube only accepts video).")
+            continue
+
+        acc_scoped_key = acc_id + mode_suffix
+        if st.get("posted_today", {}).get(acc_scoped_key) == today and not force:
+            log.info(f"[{label}] Already posted pomelli visual today — skipping.")
+            continue
+
+        caption = _pomelli_caption(chosen_img, platform)
+        caption = sanitize(caption)
+
+        log.info(f"[{label}] Publishing pomelli visual: {chosen_img.get('subject', '')}...")
+
+        if dry_run:
+            log.info(f"[{label}] DRY RUN — would publish:\n{caption[:300]}...")
+            posted_any = True
+            continue
+
+        result = publish_feed_post(caption, account, media_obj, dry_run=False)
+        if result:
+            log.info(f"[{label}] Pomelli visual posted successfully!")
+            st.setdefault("posted_today", {})[acc_scoped_key] = today
+            posted_any = True
+        else:
+            log.warning(f"[{label}] Pomelli visual post failed.")
+
+    # Mark campaign + image as used
+    if posted_any:
+        mark_theme_used(st, "pomelli_campaigns", chosen_camp)
+        mark_theme_used(st, "pomelli_images", chosen_img["file"])
+        log.info(f"Theme tracker updated: campaign={chosen_camp} / img={chosen_img['file']}")
+
+    save_state(st)
+    log.info("State saved. Pomelli Visual run complete.")
+    log.info("═" * 60)
+
+
+def run_pomelli_visual(force: bool = False, dry_run: bool = False):
+    """Entry point for pomelli visual mode with its own lock file."""
+    if not OUTSTAND_API_KEY:
+        log.error("OUTSTAND_API_KEY not set. Exiting.")
+        sys.exit(1)
+
+    global LOCK_FILE
+    original_lock = LOCK_FILE
+    LOCK_FILE = POMELLI_LOCK_FILE
+
+    try:
+        if not dry_run and not _acquire_lock(force=force):
+            sys.exit(0)
+        try:
+            _run_pomelli_visual(force=force, dry_run=dry_run)
+        finally:
+            if not dry_run:
+                _release_lock()
+    finally:
+        LOCK_FILE = original_lock
+
+
+# ─────────────────────────────────────────────────────────────────────────────
 # REEL MODE — programmatic short-form vertical video
 # ─────────────────────────────────────────────────────────────────────────────
 
@@ -3586,6 +3924,8 @@ def _parse_post_metadata(post: dict) -> dict:
         content_type = "infographic"
     elif "tourist_map" in filename.lower():
         content_type = "tourist_map"
+    elif "pomelli" in filename.lower():
+        content_type = "pomelli_visual"
     elif "canva" in filename.lower():
         content_type = "canva_visual"
     else:
@@ -3810,6 +4150,10 @@ if __name__ == "__main__":
     parser.add_argument("--canva-visual", action="store_true",
                         help="Post a pre-generated Canva visual from the library. "
                              "Rotates across 8 content categories with anti-repetition.")
+    parser.add_argument("--pomelli-visual", action="store_true",
+                        help="Post a Pomelli AI-generated campaign creative. "
+                             "Rotates 20 feature + 20 region campaigns with "
+                             "platform-specific captions (IG vs FB).")
     parser.add_argument("--reel", action="store_true",
                         help="Generate and post a short-form vertical Reel video. "
                              "Rotates through score_reveal, contrarian, seasonal_shift, "
@@ -3826,13 +4170,15 @@ if __name__ == "__main__":
                         help="Sync post history from Outstand and generate "
                              "performance analytics report. No posting.")
     args = parser.parse_args()
-    exclusive = sum([args.evening, args.moat, args.tourist_map, args.canva_visual, args.reel, args.infographic, args.yt_short, args.analytics])
+    exclusive = sum([args.evening, args.moat, args.tourist_map, args.canva_visual, args.pomelli_visual, args.reel, args.infographic, args.yt_short, args.analytics])
     if exclusive > 1:
-        parser.error("--evening, --moat, --tourist-map, --canva-visual, --reel, --infographic, --yt-short, and --analytics are mutually exclusive.")
+        parser.error("--evening, --moat, --tourist-map, --canva-visual, --pomelli-visual, --reel, --infographic, --yt-short, and --analytics are mutually exclusive.")
     if args.tourist_map:
         run_tourist_map(force=args.force, dry_run=args.dry_run)
     elif args.canva_visual:
         run_canva_visual(force=args.force, dry_run=args.dry_run)
+    elif args.pomelli_visual:
+        run_pomelli_visual(force=args.force, dry_run=args.dry_run)
     elif args.reel:
         run_reel(force=args.force, dry_run=args.dry_run)
     elif args.infographic:
