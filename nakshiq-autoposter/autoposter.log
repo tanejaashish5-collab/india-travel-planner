@@ -2346,3 +2346,41 @@ Date range: 2026-04-15 → 2026-04-18
 2026-04-20 12:01:23  INFO      [facebook/Nakshiq] Skipping (YT Shorts post to YouTube + Instagram only).
 2026-04-20 12:01:23  INFO      State saved. YT Short run complete.
 2026-04-20 12:01:23  INFO      ════════════════════════════════════════════════════════════
+2026-04-20 13:18:46  INFO      ════════════════════════════════════════════════════════════
+2026-04-20 13:18:46  INFO      Nakshiq Autoposter · INFOGRAPHIC · 2026-04-20 · weekday=0
+2026-04-20 13:18:46  INFO      ════════════════════════════════════════════════════════════
+2026-04-20 13:18:48  INFO      Generated 5 slides: topic=treks, theme=magazine
+2026-04-20 13:18:48  INFO          Requesting upload URL for infographic_infographic_treks_magazine_01_cover.jpg (106,757 bytes, image/jpeg)
+2026-04-20 13:18:49  INFO          Uploading to R2 (timeout=120s)...
+2026-04-20 13:18:49  INFO          R2 PUT OK. Confirming...
+2026-04-20 13:18:50  INFO          Media ready: iS4ZB (106,757 bytes · infographic_infographic_treks_magazine_01_cover.jpg)
+2026-04-20 13:18:50  INFO        Uploaded: infographic_treks_magazine_01_cover.jpg (104 KB)
+2026-04-20 13:18:50  INFO          Requesting upload URL for infographic_infographic_treks_magazine_02_anamalai.jpg (243,625 bytes, image/jpeg)
+2026-04-20 13:18:51  INFO          Uploading to R2 (timeout=120s)...
+2026-04-20 13:18:52  INFO          R2 PUT OK. Confirming...
+2026-04-20 13:18:53  INFO          Media ready: zgWHP (243,625 bytes · infographic_infographic_treks_magazine_02_anamalai.jpg)
+2026-04-20 13:18:53  INFO        Uploaded: infographic_treks_magazine_02_anamalai.jpg (237 KB)
+2026-04-20 13:18:53  INFO          Requesting upload URL for infographic_infographic_treks_magazine_03_bandipur.jpg (234,744 bytes, image/jpeg)
+2026-04-20 13:18:53  INFO          Uploading to R2 (timeout=120s)...
+2026-04-20 13:18:55  INFO          R2 PUT OK. Confirming...
+2026-04-20 13:18:56  INFO          Media ready: 9UKPQ (234,744 bytes · infographic_infographic_treks_magazine_03_bandipur.jpg)
+2026-04-20 13:18:56  INFO        Uploaded: infographic_treks_magazine_03_bandipur.jpg (229 KB)
+2026-04-20 13:18:56  INFO          Requesting upload URL for infographic_infographic_treks_magazine_04_barot-valley.jpg (230,876 bytes, image/jpeg)
+2026-04-20 13:18:56  INFO          Uploading to R2 (timeout=120s)...
+2026-04-20 13:18:57  INFO          R2 PUT OK. Confirming...
+2026-04-20 13:18:57  INFO          Media ready: XQIFe (230,876 bytes · infographic_infographic_treks_magazine_04_barot-valley.jpg)
+2026-04-20 13:18:57  INFO        Uploaded: infographic_treks_magazine_04_barot-valley.jpg (225 KB)
+2026-04-20 13:18:57  INFO          Requesting upload URL for infographic_infographic_treks_magazine_06_cta.jpg (51,358 bytes, image/jpeg)
+2026-04-20 13:18:58  INFO          Uploading to R2 (timeout=120s)...
+2026-04-20 13:18:58  INFO          R2 PUT OK. Confirming...
+2026-04-20 13:18:59  INFO          Media ready: XQIZe (51,358 bytes · infographic_infographic_treks_magazine_06_cta.jpg)
+2026-04-20 13:18:59  INFO        Uploaded: infographic_treks_magazine_06_cta.jpg (50 KB)
+2026-04-20 13:18:59  INFO      All slides uploaded: 5 media objects
+2026-04-20 13:19:00  INFO      [youtube/@naksh-iq] Skipping infographic (YouTube only accepts video/reels).
+2026-04-20 13:19:00  INFO      [instagram/nakshiq] Publishing infographic carousel: treks/magazine...
+2026-04-20 13:19:02  INFO      [instagram/nakshiq] Infographic carousel posted successfully!
+2026-04-20 13:19:02  INFO      [facebook/Nakshiq] Publishing infographic carousel: treks/magazine...
+2026-04-20 13:19:04  INFO      [facebook/Nakshiq] Infographic carousel posted successfully!
+2026-04-20 13:19:04  INFO      Infographic state updated: topic=treks, theme=magazine
+2026-04-20 13:19:04  INFO      State saved. Infographic run complete.
+2026-04-20 13:19:04  INFO      ════════════════════════════════════════════════════════════
