@@ -14,6 +14,8 @@ import {
 import { router } from "expo-router";
 import { colors, spacing, fontSize, borderRadius } from "../../lib/theme";
 import { useDestinations, Destination } from "../../hooks/useDestinations";
+import SearchOverlay from "../../components/SearchOverlay";
+import { REGIONS, stateInRegion, type RegionKey } from "@itp/shared";
 
 const { width } = Dimensions.get("window");
 const CARD_WIDTH = (width - spacing.lg * 2 - spacing.sm) / 2;
@@ -31,6 +33,8 @@ export default function ExploreScreen() {
   const [search, setSearch] = useState("");
   const [diffFilter, setDiffFilter] = useState("");
   const [tagFilter, setTagFilter] = useState("");
+  const [regionFilter, setRegionFilter] = useState<RegionKey>(null);
+  const [searchOpen, setSearchOpen] = useState(false);
   const [failedImages, setFailedImages] = useState<Set<string>>(new Set());
   const onImageError = useCallback((id: string) => {
     setFailedImages((prev) => new Set(prev).add(id));
@@ -47,6 +51,7 @@ export default function ExploreScreen() {
     return destinations.filter((d) => {
       if (diffFilter && d.difficulty !== diffFilter) return false;
       if (tagFilter && !(d.tags || []).includes(tagFilter)) return false;
+      if (regionFilter && !stateInRegion(d.state_id ?? null, regionFilter)) return false;
       if (search) {
         const q = search.toLowerCase();
         const stateName = Array.isArray(d.state) ? (d.state as any)[0]?.name : (d.state as any)?.name;
@@ -58,7 +63,7 @@ export default function ExploreScreen() {
       }
       return true;
     });
-  }, [destinations, search, diffFilter, tagFilter]);
+  }, [destinations, search, diffFilter, tagFilter, regionFilter]);
 
   // Sort by current month score
   const sorted = useMemo(() => {
@@ -84,7 +89,7 @@ export default function ExploreScreen() {
         <Text style={styles.searchIcon}>🔍</Text>
         <TextInput
           style={styles.searchInput}
-          placeholder="Search destinations, states..."
+          placeholder="Filter destinations, states..."
           placeholderTextColor={colors.mutedForeground}
           value={search}
           onChangeText={setSearch}
@@ -94,7 +99,29 @@ export default function ExploreScreen() {
             <Text style={styles.clearBtn}>✕</Text>
           </TouchableOpacity>
         ) : null}
+        <TouchableOpacity onPress={() => setSearchOpen(true)} accessibilityLabel="Search everything" style={styles.globalBtn}>
+          <Text style={styles.globalBtnText}>🌐</Text>
+        </TouchableOpacity>
       </View>
+
+      {/* Region chips */}
+      <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.regionRow}>
+        <TouchableOpacity
+          style={[styles.regionChip, !regionFilter && styles.regionChipActive]}
+          onPress={() => setRegionFilter(null)}
+        >
+          <Text numberOfLines={1} style={[styles.regionChipText, !regionFilter && styles.regionChipTextActive]}>All India</Text>
+        </TouchableOpacity>
+        {REGIONS.map((r) => (
+          <TouchableOpacity
+            key={r.key}
+            style={[styles.regionChip, regionFilter === r.key && styles.regionChipActive]}
+            onPress={() => setRegionFilter(regionFilter === r.key ? null : r.key)}
+          >
+            <Text numberOfLines={1} style={[styles.regionChipText, regionFilter === r.key && styles.regionChipTextActive]}>{r.label}</Text>
+          </TouchableOpacity>
+        ))}
+      </ScrollView>
 
       {/* Difficulty filter */}
       <View style={styles.filterRow}>
@@ -142,7 +169,7 @@ export default function ExploreScreen() {
               ]}
               onPress={() => setTagFilter(tagFilter === tag ? "" : tag)}
             >
-              <Text style={[styles.tagChipText, tagFilter === tag && styles.tagChipTextActive]}>
+              <Text numberOfLines={1} style={[styles.tagChipText, tagFilter === tag && styles.tagChipTextActive]}>
                 {tag}
               </Text>
             </TouchableOpacity>
@@ -160,7 +187,7 @@ export default function ExploreScreen() {
               style={[styles.monthChip, selectedMonth === month && styles.monthChipActive]}
               onPress={() => setSelectedMonth(month)}
             >
-              <Text style={[styles.monthChipText, selectedMonth === month && styles.monthChipTextActive]}>{m}</Text>
+              <Text numberOfLines={1} style={[styles.monthChipText, selectedMonth === month && styles.monthChipTextActive]}>{m}</Text>
             </TouchableOpacity>
           );
         })}
@@ -173,9 +200,15 @@ export default function ExploreScreen() {
         data={sorted}
         numColumns={2}
         columnWrapperStyle={{ gap: spacing.sm, paddingHorizontal: spacing.lg }}
-        contentContainerStyle={{ paddingBottom: spacing.xxl }}
+        contentContainerStyle={{ paddingBottom: spacing.xxl, flexGrow: 1 }}
         showsVerticalScrollIndicator={false}
         keyExtractor={(item) => item.id}
+        ListEmptyComponent={
+          <View style={{ flex: 1, alignItems: "center", justifyContent: "center", paddingVertical: spacing.xxl, paddingHorizontal: spacing.lg }}>
+            <Text style={{ fontSize: fontSize.base, color: colors.foreground, marginBottom: spacing.xs, textAlign: "center" }}>No destinations match these filters</Text>
+            <Text style={{ fontSize: fontSize.sm, color: colors.mutedForeground, textAlign: "center" }}>Try clearing a filter or switching month</Text>
+          </View>
+        }
         renderItem={({ item }) => {
           const stateName = Array.isArray(item.state) ? (item.state as any)[0]?.name : (item.state as any)?.name;
           const monthScore = item.destination_months?.find((m) => m.month === currentMonth)?.score;
@@ -255,6 +288,7 @@ export default function ExploreScreen() {
           );
         }}
       />
+      <SearchOverlay visible={searchOpen} onClose={() => setSearchOpen(false)} />
     </View>
   );
 }
@@ -271,6 +305,13 @@ const styles = StyleSheet.create({
     color: colors.foreground,
   },
   clearBtn: { fontSize: fontSize.sm, color: colors.mutedForeground, padding: spacing.xs },
+  globalBtn: { paddingHorizontal: spacing.xs, paddingVertical: spacing.xs },
+  globalBtnText: { fontSize: 16 },
+  regionRow: { flexDirection: "row", paddingHorizontal: spacing.lg, gap: spacing.xs, marginBottom: spacing.sm },
+  regionChip: { flexShrink: 0, paddingHorizontal: spacing.md, paddingVertical: spacing.sm, borderRadius: borderRadius.full, borderWidth: 0.5, borderColor: colors.border, backgroundColor: colors.card },
+  regionChipActive: { borderColor: colors.primary, backgroundColor: colors.primary + "15" },
+  regionChipText: { fontSize: fontSize.xs, color: colors.mutedForeground, fontWeight: "600" },
+  regionChipTextActive: { color: colors.primary },
   filterRow: { flexDirection: "row", paddingHorizontal: spacing.lg, gap: spacing.xs, marginBottom: spacing.sm },
   filterChip: {
     paddingHorizontal: spacing.md,
@@ -284,6 +325,7 @@ const styles = StyleSheet.create({
   filterChipTextActive: { color: colors.primary },
   tagRow: { flexDirection: "row", paddingHorizontal: spacing.lg, gap: spacing.xs, marginBottom: spacing.sm },
   tagChip: {
+    flexShrink: 0,
     paddingHorizontal: spacing.md,
     paddingVertical: spacing.sm,
     borderRadius: borderRadius.full,
@@ -296,6 +338,7 @@ const styles = StyleSheet.create({
   tagChipTextActive: { color: colors.topographic },
   monthRow: { flexDirection: "row", paddingHorizontal: spacing.lg, gap: spacing.xs, marginBottom: spacing.sm },
   monthChip: {
+    flexShrink: 0,
     paddingHorizontal: 10,
     paddingVertical: 6,
     borderRadius: borderRadius.full,
