@@ -119,7 +119,12 @@ export default async function StateHubPage({
             <div className="mx-auto max-w-7xl">
               <div className="text-sm text-muted-foreground/70 mb-2">
                 <Link href={`/${locale}/states`} className="hover:text-foreground transition-colors">India</Link>
-                {regionGroup && <> {" → "} <span>{regionGroup}</span></>}
+                {regionGroup && (
+                  <>
+                    {" → "}
+                    <Link href={`/${locale}/states`} className="hover:text-foreground transition-colors">{regionGroup}</Link>
+                  </>
+                )}
                 {" → "}
                 <span className="text-foreground">{stateName}</span>
               </div>
