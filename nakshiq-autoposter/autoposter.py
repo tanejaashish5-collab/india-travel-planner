@@ -3136,12 +3136,21 @@ def _run_reel(force: bool = False, dry_run: bool = False):
             continue
 
         result = publish_reel(caption, account, media_obj, dry_run=False)
-        if result:
-            log.info(f"[{label}] Reel posted successfully!")
+        if not result:
+            log.warning(f"[{label}] Reel post failed (API rejected).")
+            continue
+
+        post_id = result.get("post", {}).get("id", "unknown")
+        log.info(f"[{label}] Outstand accepted (post_id={post_id}), confirming...")
+
+        confirmed = wait_for_publish(post_id) if post_id != "unknown" else None
+        if confirmed:
+            platform_id = confirmed.get("platformPostId", "—")
+            log.info(f"[{label}] ✅ Reel published · Outstand={post_id} · Platform={platform_id}")
             st.setdefault("posted_today", {})[acc_scoped_key] = today
             posted_any = True
         else:
-            log.warning(f"[{label}] Reel post failed.")
+            log.warning(f"[{label}] ⚠️  Reel queued but NOT confirmed (post_id={post_id}).")
 
     # Mark format + data as used
     if posted_any:
@@ -3457,8 +3466,17 @@ def _run_yt_short(force: bool = False, dry_run: bool = False):
             continue
 
         pub_result = publish_reel(post_caption, account, media_obj, dry_run=False)
-        if pub_result:
-            log.info(f"[{label}] YT Short posted successfully!")
+        if not pub_result:
+            log.warning(f"[{label}] YT Short post failed (API rejected).")
+            continue
+
+        post_id = pub_result.get("post", {}).get("id", "unknown")
+        log.info(f"[{label}] Outstand accepted (post_id={post_id}), waiting for platform confirmation...")
+
+        confirmed = wait_for_publish(post_id) if post_id != "unknown" else None
+        if confirmed:
+            platform_id = confirmed.get("platformPostId", "—")
+            log.info(f"[{label}] ✅ YT Short published · Outstand={post_id} · Platform={platform_id}")
             posted_today = st.setdefault("posted_today", {})
             prev_date = posted_today.get(acc_scoped_key)
             prev_count = posted_today.get(daily_count_key, 0) if prev_date == today else 0
@@ -3466,7 +3484,7 @@ def _run_yt_short(force: bool = False, dry_run: bool = False):
             posted_today[daily_count_key] = prev_count + 1
             posted_any = True
         else:
-            log.warning(f"[{label}] YT Short post failed.")
+            log.warning(f"[{label}] ⚠️  YT Short queued but NOT confirmed (post_id={post_id}). May have silently failed.")
 
     if posted_any:
         log.info(f"YT Short posted: format={fmt}, music={music}")
