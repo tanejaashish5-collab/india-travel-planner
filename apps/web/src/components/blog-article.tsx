@@ -58,24 +58,50 @@ export function BlogArticle({
   const sections = parseContent(article.content);
   const isDeepDive = article.depth === "deep-dive";
   const isViral = article.category === "viral";
-  const heroHeight = isViral ? "h-80 sm:h-96 lg:h-[28rem]" : "h-64 sm:h-80 lg:h-96";
+  const isDataStory = article.category === "data-story";
+  // Number the body sections newsletter-style on ranked/data-story posts.
+  // Newsletter Format 5 uses a big italic № 02, 03, 04 numeral next to each
+  // section header; we mirror that here to invite the same eye-track.
+  const numberSections = isDataStory && sections.length >= 3;
+  const heroHeight = isViral ? "h-[32rem] sm:h-[36rem]" : isDataStory ? "h-[30rem] sm:h-[34rem] lg:h-[38rem]" : "h-80 sm:h-96 lg:h-[28rem]";
+  const stateHeroLabel = (() => {
+    const d = destinations[0];
+    if (!d) return null;
+    const s = Array.isArray(d.state) ? d.state[0] : d.state;
+    return s?.name ?? null;
+  })();
   const callouts: Array<{ type: "stat" | "pull_quote" | "verdict"; text: string; label?: string }> = article.callouts || [];
 
   return (
     <article>
-      {/* Cinematic Cover Image Hero */}
+      {/* Cinematic Cover Image Hero — title OVER image, newsletter Format 5 style.
+          Darkened filter + bottom scrim so Fraunces-italic headline reads cleanly
+          on any photograph. */}
       {article.cover_image_url ? (
-        <div className={`relative -mx-4 sm:-mx-0 ${heroHeight} overflow-hidden rounded-2xl mb-0`}>
+        <div className={`relative -mx-4 sm:-mx-0 ${heroHeight} overflow-hidden rounded-2xl mb-8`}>
           <Image
             src={article.cover_image_url}
             alt={article.title}
             fill
             sizes="100vw"
             className="object-cover"
+            style={{ filter: "brightness(0.78) saturate(0.92)" }}
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
-          {/* Category + Depth badges floating on hero */}
+          {/* Bottom scrim for text legibility */}
+          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/55 to-transparent" />
+
+          {/* Back to blog chip — top left */}
+          <div className="absolute top-4 left-4 z-10">
+            <Link
+              href={`/${locale}/blog`}
+              className="inline-flex items-center gap-1.5 rounded-full bg-black/40 backdrop-blur-md border border-white/15 px-3 py-1.5 text-xs font-medium text-white/85 hover:bg-black/60 hover:text-white transition-all"
+            >
+              ← All articles
+            </Link>
+          </div>
+
+          {/* Category + Depth badges — top right */}
           <div className="absolute top-4 right-4 flex items-center gap-2 z-10">
             <span className={`rounded-full border px-3 py-1 text-xs font-medium backdrop-blur-sm ${CATEGORY_COLORS[article.category] || "bg-primary/10 text-primary border-primary/30"}`}>
               {CATEGORY_LABELS[article.category] || article.category}
@@ -85,51 +111,80 @@ export function BlogArticle({
             ) : (
               <span className="rounded-full bg-muted/80 border border-border px-2.5 py-0.5 text-xs font-medium text-muted-foreground backdrop-blur-sm">Brief</span>
             )}
+          </div>
+
+          {/* Title overlay — bottom */}
+          <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-10 lg:p-14 z-10">
+            <div className="mx-auto max-w-4xl">
+              {/* Vermillion stamp: № 01 · State */}
+              {stateHeroLabel && (
+                <div className="font-mono text-[10px] sm:text-[11px] tracking-[0.3em] uppercase text-[#E55642] mb-4">
+                  {isDataStory ? "№ 01 · " : ""}{stateHeroLabel}
+                </div>
+              )}
+              <h1
+                className="font-serif italic font-medium text-white text-4xl sm:text-5xl lg:text-6xl leading-[1.05] tracking-[-0.01em] drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)]"
+                style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
+              >
+                {article.title}
+              </h1>
+              {article.subtitle && (
+                <p
+                  className="mt-4 font-serif italic text-lg sm:text-xl text-[#E55642]/90 leading-relaxed max-w-2xl"
+                  style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
+                >
+                  {article.subtitle}
+                </p>
+              )}
+              <div className="mt-5 flex flex-wrap items-center gap-3 font-mono text-[10px] tracking-[0.22em] uppercase text-white/70">
+                <span>{article.reading_time} min read</span>
+                <span className="w-1 h-1 rounded-full bg-white/40" />
+                <span>
+                  {new Date(article.published_at).toLocaleDateString("en-IN", { year: "numeric", month: "long", day: "numeric" })}
+                </span>
+              </div>
+            </div>
           </div>
         </div>
       ) : (
-        <div className={`relative -mx-4 sm:-mx-0 ${heroHeight} overflow-hidden rounded-2xl mb-0 bg-gradient-to-br from-primary/20 via-violet-500/10 to-amber-500/10`}>
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
-          {/* Decorative pattern for no-image hero */}
-          <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "radial-gradient(circle at 1px 1px, currentColor 1px, transparent 0)", backgroundSize: "40px 40px" }} />
-          {/* Category + Depth badges floating on hero */}
-          <div className="absolute top-4 right-4 flex items-center gap-2 z-10">
-            <span className={`rounded-full border px-3 py-1 text-xs font-medium backdrop-blur-sm ${CATEGORY_COLORS[article.category] || "bg-primary/10 text-primary border-primary/30"}`}>
-              {CATEGORY_LABELS[article.category] || article.category}
-            </span>
-            {isDeepDive ? (
-              <span className="rounded-full bg-amber-400/10 border border-amber-400/20 px-2.5 py-0.5 text-xs font-medium text-amber-400 backdrop-blur-sm">Deep Dive</span>
-            ) : (
-              <span className="rounded-full bg-muted/80 border border-border px-2.5 py-0.5 text-xs font-medium text-muted-foreground backdrop-blur-sm">Brief</span>
-            )}
-          </div>
-        </div>
-      )}
-
-      {/* Floating Header Card — pulls up into the hero */}
-      <FadeIn>
-        <div className="-mt-20 relative z-10 rounded-2xl border border-border/50 bg-card/80 backdrop-blur-xl p-6 sm:p-8 shadow-2xl shadow-black/20 mb-8">
-          {/* Back to blog */}
-          <Link href={`/${locale}/blog`} className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors mb-5">
-            ← All articles
-          </Link>
-
-          {/* Header */}
-          <header>
-            <div className="flex flex-wrap items-center gap-3 mb-4">
-              <span className="text-sm text-muted-foreground">{article.reading_time} min read</span>
-              <span className="w-1 h-1 rounded-full bg-muted-foreground/40" />
-              <span className="text-sm text-muted-foreground">
-                {new Date(article.published_at).toLocaleDateString("en-IN", { year: "numeric", month: "long", day: "numeric" })}
+        /* No-image fallback hero — keeps old floating-card pattern */
+        <>
+          <div className={`relative -mx-4 sm:-mx-0 ${heroHeight} overflow-hidden rounded-2xl mb-0 bg-gradient-to-br from-primary/20 via-violet-500/10 to-amber-500/10`}>
+            <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
+            <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "radial-gradient(circle at 1px 1px, currentColor 1px, transparent 0)", backgroundSize: "40px 40px" }} />
+            <div className="absolute top-4 right-4 flex items-center gap-2 z-10">
+              <span className={`rounded-full border px-3 py-1 text-xs font-medium backdrop-blur-sm ${CATEGORY_COLORS[article.category] || "bg-primary/10 text-primary border-primary/30"}`}>
+                {CATEGORY_LABELS[article.category] || article.category}
               </span>
+              {isDeepDive ? (
+                <span className="rounded-full bg-amber-400/10 border border-amber-400/20 px-2.5 py-0.5 text-xs font-medium text-amber-400 backdrop-blur-sm">Deep Dive</span>
+              ) : (
+                <span className="rounded-full bg-muted/80 border border-border px-2.5 py-0.5 text-xs font-medium text-muted-foreground backdrop-blur-sm">Brief</span>
+              )}
             </div>
-            <h1 className="text-3xl sm:text-4xl font-bold leading-tight">{article.title}</h1>
-            {article.subtitle && (
-              <p className="mt-3 text-lg sm:text-xl text-muted-foreground leading-relaxed">{article.subtitle}</p>
-            )}
-          </header>
-        </div>
-      </FadeIn>
+          </div>
+          <FadeIn>
+            <div className="-mt-20 relative z-10 rounded-2xl border border-border/50 bg-card/80 backdrop-blur-xl p-6 sm:p-8 shadow-2xl shadow-black/20 mb-8">
+              <Link href={`/${locale}/blog`} className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors mb-5">
+                ← All articles
+              </Link>
+              <header>
+                <div className="flex flex-wrap items-center gap-3 mb-4">
+                  <span className="text-sm text-muted-foreground">{article.reading_time} min read</span>
+                  <span className="w-1 h-1 rounded-full bg-muted-foreground/40" />
+                  <span className="text-sm text-muted-foreground">
+                    {new Date(article.published_at).toLocaleDateString("en-IN", { year: "numeric", month: "long", day: "numeric" })}
+                  </span>
+                </div>
+                <h1 className="text-3xl sm:text-4xl font-bold leading-tight">{article.title}</h1>
+                {article.subtitle && (
+                  <p className="mt-3 text-lg sm:text-xl text-muted-foreground leading-relaxed">{article.subtitle}</p>
+                )}
+              </header>
+            </div>
+          </FadeIn>
+        </>
+      )}
 
       {/* Destination score cards (if article has linked destinations) */}
       {destinations.length > 0 && (
@@ -171,26 +226,61 @@ export function BlogArticle({
 
       {/* Article content */}
       <div className="prose prose-invert prose-lg max-w-none">
-        {sections.map((section, i) => (
-          <ScrollReveal key={i} delay={i * 0.05}>
-            <div>
-              {section.heading && (
-                <h2 className="text-2xl font-bold mt-10 mb-4">{section.heading}</h2>
-              )}
-              {section.paragraphs.map((p, j) => (
-                <p key={j} className="text-muted-foreground leading-relaxed mb-4">{p}</p>
-              ))}
-              {/* Render callout after this section if one is mapped to it */}
-              {isViral && callouts[i] && (
-                <ArticleCallout
-                  type={callouts[i].type}
-                  text={callouts[i].text}
-                  label={callouts[i].label}
-                />
-              )}
-            </div>
-          </ScrollReveal>
-        ))}
+        {sections.map((section, i) => {
+          // Data-story posts render a newsletter-style giant-numeral prefix
+          // on each section heading, mirroring Format 5's № 02 / 03 spine.
+          const sectionNum = numberSections ? String(i + 1).padStart(2, "0") : null;
+          const isFirstProseBlock = i === 0 && section.paragraphs.length > 0;
+          return (
+            <ScrollReveal key={i} delay={i * 0.05}>
+              <div>
+                {section.heading && numberSections ? (
+                  <div className="flex items-start gap-5 mt-14 mb-5">
+                    <span
+                      className="font-serif italic font-medium text-5xl sm:text-6xl lg:text-7xl leading-[0.9] tracking-[-0.02em] text-foreground/90 flex-shrink-0"
+                      style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
+                      aria-hidden="true"
+                    >
+                      {sectionNum}
+                    </span>
+                    <h2
+                      className="font-serif italic font-medium text-2xl sm:text-3xl lg:text-4xl leading-[1.1] text-foreground mt-2"
+                      style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
+                    >
+                      {section.heading}
+                    </h2>
+                  </div>
+                ) : section.heading ? (
+                  <h2 className="text-2xl font-bold mt-10 mb-4">{section.heading}</h2>
+                ) : null}
+
+                {/* Pull-quote treatment for the very first paragraph of deep-dive
+                    posts — mirrors the newsletter's 4px vermillion-border italic lede. */}
+                {isFirstProseBlock && isDeepDive && section.paragraphs[0] && (
+                  <div className="flex gap-5 mb-6">
+                    <div className="w-1 bg-[#E55642] rounded-full flex-shrink-0" />
+                    <p
+                      className="font-serif italic font-medium text-xl sm:text-2xl leading-[1.35] text-foreground py-1"
+                      style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
+                    >
+                      {section.paragraphs[0]}
+                    </p>
+                  </div>
+                )}
+                {section.paragraphs.slice(isFirstProseBlock && isDeepDive ? 1 : 0).map((p, j) => (
+                  <p key={j} className="text-muted-foreground leading-relaxed mb-4">{p}</p>
+                ))}
+                {isViral && callouts[i] && (
+                  <ArticleCallout
+                    type={callouts[i].type}
+                    text={callouts[i].text}
+                    label={callouts[i].label}
+                  />
+                )}
+              </div>
+            </ScrollReveal>
+          );
+        })}
       </div>
 
       {/* WhatsApp share button for viral articles */}
