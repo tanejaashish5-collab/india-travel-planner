@@ -3,7 +3,6 @@ import {
   Container,
   Head,
   Html,
-  Link,
   Preview,
 } from "@react-email/components";
 
@@ -140,7 +139,7 @@ export default function TheWindow(props: WindowIssueProps) {
                   {/* Open on web escape hatch */}
                   <table role="presentation" cellPadding={0} cellSpacing={0} border={0} width="100%" style={innerTable}>
                     <tbody><tr><td style={{ padding: "18px 28px 0", textAlign: "right" }}>
-                      <Link href={`${webViewUrl}${utmFor("open-on-web")}`} style={ghostLink}>↗ Open on web</Link>
+                      <a href={`${webViewUrl}${utmFor("open-on-web")}`} style={ghostLink}>↗ Open on web</a>
                     </td></tr></tbody>
                   </table>
 
@@ -148,7 +147,7 @@ export default function TheWindow(props: WindowIssueProps) {
                   <table role="presentation" cellPadding={0} cellSpacing={0} border={0} width="100%" style={innerTable}>
                     <tbody>
                       <tr><td style={{ padding: "32px 28px 0", textAlign: "center" }}>
-                        <Link href={`https://www.nakshiq.com/en${utmFor("masthead")}`} style={mastheadWordmark}>NakshIQ</Link>
+                        <a href={`https://www.nakshiq.com/en${utmFor("masthead")}`} style={mastheadWordmark}>NakshIQ</a>
                       </td></tr>
                       <tr><td style={{ padding: "12px 28px 0" }}>
                         <table role="presentation" cellPadding={0} cellSpacing={0} border={0} width="100%" style={innerTable}>
@@ -165,7 +164,7 @@ export default function TheWindow(props: WindowIssueProps) {
                   {hero && (
                     <table role="presentation" cellPadding={0} cellSpacing={0} border={0} width="100%" style={innerTable}>
                       <tbody><tr><td style={{ padding: "32px 0 0" }}>
-                        <Link href={`https://www.nakshiq.com/en/destination/${hero.id}/${monthSlug}${utmFor("hero")}`} style={heroBlockLink}>
+                        <a href={`https://www.nakshiq.com/en/destination/${hero.id}/${monthSlug}${utmFor("hero")}`} style={heroBlockLink}>
                           <table role="presentation" cellPadding={0} cellSpacing={0} border={0} width="100%" style={{ ...innerTable, background: "#0B0B0C" }}>
                             <tbody><tr><td style={{ padding: "0 24px", background: "#0B0B0C" }}>
                               <div style={{ position: "relative", lineHeight: 0 }}>
@@ -183,7 +182,7 @@ export default function TheWindow(props: WindowIssueProps) {
                               </div>
                             </td></tr></tbody>
                           </table>
-                        </Link>
+                        </a>
                       </td></tr></tbody>
                     </table>
                   )}
@@ -262,21 +261,21 @@ export default function TheWindow(props: WindowIssueProps) {
                             </table>
                           </td></tr>
                           <tr><td style={{ padding: "12px 28px 0" }}>
-                            <Link href={`https://www.nakshiq.com/en/destination/${p.id}/${monthSlug}${utmFor(`pick-0${position}-image`)}`} style={{ display: "block", textDecoration: "none" }}>
+                            <a href={`https://www.nakshiq.com/en/destination/${p.id}/${monthSlug}${utmFor(`pick-0${position}-image`)}`} style={{ display: "block", textDecoration: "none" }}>
                               <img src={imageUrlFor(p.id)} width="544" height="306" alt={`${p.name} — ${p.state ?? ""}`} style={cardImage} />
-                            </Link>
+                            </a>
                           </td></tr>
                           <tr><td style={{ padding: "14px 28px 0" }}>
-                            <Link href={`https://www.nakshiq.com/en/destination/${p.id}/${monthSlug}${utmFor(`pick-0${position}-name`)}`} style={cardName}>{p.name}</Link>
+                            <a href={`https://www.nakshiq.com/en/destination/${p.id}/${monthSlug}${utmFor(`pick-0${position}-name`)}`} style={cardName}>{p.name}</a>
                           </td></tr>
                           <tr><td style={cardMeta}>
                             {p.state ?? ""}{p.elevation_m ? ` · ${p.elevation_m.toLocaleString()}m` : ""}{p.difficulty ? ` · ${difficultyLabel(p.difficulty)}` : ""}
                           </td></tr>
                           <tr><td style={cardHook}>{p.why_this_week}</td></tr>
                           <tr><td style={{ padding: "14px 28px 0" }}>
-                            <Link href={`https://www.nakshiq.com/en/destination/${p.id}/${monthSlug}${utmFor(`pick-0${position}-cta`)}`} style={cardCta}>
+                            <a href={`https://www.nakshiq.com/en/destination/${p.id}/${monthSlug}${utmFor(`pick-0${position}-cta`)}`} style={cardCta}>
                               Read the {p.name} {monthName} guide →
-                            </Link>
+                            </a>
                           </td></tr>
                         </tbody>
                       </table>
@@ -307,7 +306,7 @@ export default function TheWindow(props: WindowIssueProps) {
                         <tr><td style={{ padding: "10px 28px 0" }}>
                           <span style={{ ...notebookTitle, textDecoration: "line-through", textDecorationColor: "#E55642", textDecorationThickness: 2 }}>{skip.trapName}</span>
                           {"  "}<span style={{ color: "#6A6A65" }}>→</span>{"  "}
-                          <Link href={`https://www.nakshiq.com/en/destination/${skip.alternativeId}${utmFor("skip-alt")}`} style={{ ...notebookTitle, color: "#34D399", textDecoration: "none" }}>{skip.alternativeName}</Link>
+                          <a href={`https://www.nakshiq.com/en/destination/${skip.alternativeId}${utmFor("skip-alt")}`} style={{ ...notebookTitle, color: "#34D399", textDecoration: "none" }}>{skip.alternativeName}</a>
                         </td></tr>
                         <tr><td style={notebookBody}>{skip.alternativeReason || skip.trapReason}</td></tr>
                       </tbody>
@@ -340,9 +339,9 @@ export default function TheWindow(props: WindowIssueProps) {
                   {/* Big CTA */}
                   <table role="presentation" cellPadding={0} cellSpacing={0} border={0} width="100%" style={innerTable}>
                     <tbody><tr><td style={{ padding: "48px 28px 0", textAlign: "center" }}>
-                      <Link href={`https://www.nakshiq.com/en/where-to-go/${monthSlug}${utmFor("cta-hero")}`} style={primaryButton}>
+                      <a href={`https://www.nakshiq.com/en/where-to-go/${monthSlug}${utmFor("cta-hero")}`} style={primaryButton}>
                         See the full {monthName} hero →
-                      </Link>
+                      </a>
                     </td></tr></tbody>
                   </table>
 
@@ -357,11 +356,11 @@ export default function TheWindow(props: WindowIssueProps) {
                         Edited in Canberra. Written from the road.<br />
                         № {issueNumber} · {monthName} {year}
                         <div style={{ paddingTop: 12 }}>
-                          <Link href={`https://www.nakshiq.com/en/the-window/${issueSlug}`} style={colophonLink}>Archive</Link>
+                          <a href={`https://www.nakshiq.com/en/the-window/${issueSlug}`} style={colophonLink}>Archive</a>
                           {"  ·  "}
-                          <Link href="https://www.nakshiq.com/en" style={colophonLink}>Visit</Link>
+                          <a href="https://www.nakshiq.com/en" style={colophonLink}>Visit</a>
                           {"  ·  "}
-                          <Link href={unsubscribeUrl} style={colophonLink}>Unsubscribe</Link>
+                          <a href={unsubscribeUrl} style={colophonLink}>Unsubscribe</a>
                         </div>
                       </div>
                     </td></tr></tbody>
