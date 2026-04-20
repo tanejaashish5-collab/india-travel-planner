@@ -2194,3 +2194,22 @@ Date range: 2026-04-15 → 2026-04-18
 2026-04-20 00:08:39  INFO      YT Short posted: format=mini_guide, music=08_funk_machine
 2026-04-20 00:08:39  INFO      State saved. YT Short run complete.
 2026-04-20 00:08:39  INFO      ════════════════════════════════════════════════════════════
+2026-04-20 00:14:41  INFO      ════════════════════════════════════════════════════════════
+2026-04-20 00:14:41  INFO      Nakshiq Autoposter · YT SHORT · 2026-04-20
+2026-04-20 00:14:41  INFO      ════════════════════════════════════════════════════════════
+2026-04-20 00:15:52  INFO      Short rendered: yt_short_before_after_2026-04-20.mp4 (14634 KB, 31.0s, fmt=before_after, music=09_tokyo_drift)
+2026-04-20 00:15:52  INFO          Requesting upload URL for yt_short_before_after_yt_short_before_after_2026-04-20.mp4 (14,985,824 bytes, video/mp4)
+2026-04-20 00:15:53  INFO          Uploading to R2 (timeout=300s)...
+2026-04-20 00:15:55  INFO          R2 PUT OK. Confirming...
+2026-04-20 00:15:56  INFO          Media ready: 42IKi (14,985,824 bytes · yt_short_before_after_yt_short_before_after_2026-04-20.mp4)
+2026-04-20 00:15:56  INFO      Video uploaded: yt_short_before_after_yt_short_before_after_2026-04-20.mp4
+2026-04-20 00:15:56  INFO      [youtube/@naksh-iq] Publishing YT Short (before_after)...
+2026-04-20 00:15:59  INFO      [youtube/@naksh-iq] Outstand accepted (post_id=aAzUb), waiting for platform confirmation...
+2026-04-20 00:16:11  INFO      [youtube/@naksh-iq] ✅ YT Short published · Outstand=aAzUb · Platform=IusLSK8dlL8
+2026-04-20 00:16:11  INFO      [instagram/nakshiq] Publishing YT Short (before_after)...
+2026-04-20 00:16:13  INFO      [instagram/nakshiq] Outstand accepted (post_id=MqmDC), waiting for platform confirmation...
+2026-04-20 00:16:58  WARNING   [instagram/nakshiq] ⚠️  YT Short queued but NOT confirmed (post_id=MqmDC). May have silently failed.
+2026-04-20 00:16:58  INFO      [facebook/Nakshiq] Skipping (YT Shorts post to YouTube + Instagram only).
+2026-04-20 00:16:58  INFO      YT Short posted: format=before_after, music=09_tokyo_drift
+2026-04-20 00:16:58  INFO      State saved. YT Short run complete.
+2026-04-20 00:16:58  INFO      ════════════════════════════════════════════════════════════
