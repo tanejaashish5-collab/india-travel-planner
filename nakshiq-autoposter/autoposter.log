@@ -2230,125 +2230,82 @@ Date range: 2026-04-15 → 2026-04-18
 2026-04-20 04:47:54  INFO      [facebook/Nakshiq] Already posted today (morning) — skipping.
 2026-04-20 04:47:54  INFO      State saved. Run complete.
 2026-04-20 04:47:54  INFO      ════════════════════════════════════════════════════════════
-2026-04-20 05:40:00  INFO      ════════════════════════════════════════════════════════════
-2026-04-20 05:40:00  INFO      Nakshiq Autoposter · REEL · 2026-04-20 · weekday=0
-2026-04-20 05:40:00  INFO      ════════════════════════════════════════════════════════════
-2026-04-20 05:40:00  INFO      ── Syncing Nakshiq content ──────────────────────────────
-2026-04-20 05:40:08  INFO      Synced → 20 destinations · 0 traps · 0 articles · total catalog=480
-2026-04-20 05:40:08  INFO      Format: destination_reveal | Data: {'dest_name': 'Ziro Valley', 'dest_slug': 'ziro-valley', 'state_name': 'Arunachal Pradesh', 'score': 5, 'tagline': 'Apatani tribal homeland with UNESCO-nominated rice paddies and the iconic Ziro Music Festival'}
-2026-04-20 05:40:17  INFO      Reel rendered: reel_destination_reveal_ziro-valley.mp4 (1011 KB)
-2026-04-20 05:40:17  INFO          Requesting upload URL for reel_destination_reveal_reel_destination_reveal_ziro-valley.mp4 (1,035,506 bytes, video/mp4)
-2026-04-20 05:40:19  INFO          Uploading to R2 (timeout=300s)...
-2026-04-20 05:40:19  INFO          R2 PUT OK. Confirming...
-2026-04-20 05:40:20  INFO          Media ready: aucrb (1,035,506 bytes · reel_destination_reveal_reel_destination_reveal_ziro-valley.mp4)
-2026-04-20 05:40:20  INFO      Video uploaded: reel_destination_reveal_reel_destination_reveal_ziro-valley.mp4
-2026-04-20 05:40:21  INFO      [youtube/@naksh-iq] Publishing reel (destination_reveal)...
-2026-04-20 05:40:25  INFO      [youtube/@naksh-iq] Outstand accepted (post_id=EO8XA), confirming...
-2026-04-20 05:40:32  INFO      [youtube/@naksh-iq] ✅ Reel published · Outstand=EO8XA · Platform=FisAEsWL9ys
-2026-04-20 05:40:32  INFO      [instagram/nakshiq] Publishing reel (destination_reveal)...
-2026-04-20 05:40:35  INFO      [instagram/nakshiq] Outstand accepted (post_id=Wxeiz), confirming...
-2026-04-20 05:41:12  INFO      [instagram/nakshiq] ✅ Reel published · Outstand=Wxeiz · Platform=17881245321552117
-2026-04-20 05:41:12  INFO      [facebook/Nakshiq] Publishing reel (destination_reveal)...
-2026-04-20 05:41:15  INFO      [facebook/Nakshiq] Outstand accepted (post_id=GPfvp), confirming...
-2026-04-20 05:41:27  INFO      [facebook/Nakshiq] ✅ Reel published · Outstand=GPfvp · Platform=2728024317560465
-2026-04-20 05:41:27  INFO      Theme tracker updated: format=destination_reveal
-2026-04-20 05:41:27  INFO      State saved. Reel run complete.
-2026-04-20 05:41:27  INFO      ════════════════════════════════════════════════════════════
-2026-04-20 06:01:17  INFO      ════════════════════════════════════════════════════════════
-2026-04-20 06:01:17  INFO      Nakshiq Autoposter · REEL · 2026-04-20 · weekday=0
-2026-04-20 06:01:17  INFO      ════════════════════════════════════════════════════════════
-2026-04-20 06:01:17  INFO      ── Syncing Nakshiq content ──────────────────────────────
-2026-04-20 06:01:22  INFO      Synced → 20 destinations · 0 traps · 0 articles · total catalog=480
-2026-04-20 06:01:22  INFO      Format: seasonal_shift | Data: {'dest_name': 'Ziro Valley', 'dest_slug': 'ziro-valley', 'now_month': 'April', 'now_score': 5, 'future_month': 'July', 'future_score': 2}
-2026-04-20 06:01:34  INFO      Reel rendered: reel_seasonal_shift_ziro-valley.mp4 (4862 KB)
-2026-04-20 06:01:34  INFO          Requesting upload URL for reel_seasonal_shift_reel_seasonal_shift_ziro-valley.mp4 (4,979,224 bytes, video/mp4)
-2026-04-20 06:01:35  INFO          Uploading to R2 (timeout=300s)...
-2026-04-20 06:01:37  INFO          R2 PUT OK. Confirming...
-2026-04-20 06:01:37  INFO          Media ready: vBfDg (4,979,224 bytes · reel_seasonal_shift_reel_seasonal_shift_ziro-valley.mp4)
-2026-04-20 06:01:37  INFO      Video uploaded: reel_seasonal_shift_reel_seasonal_shift_ziro-valley.mp4
-2026-04-20 06:01:38  INFO      [youtube/@naksh-iq] Already posted reel today — skipping.
-2026-04-20 06:01:38  INFO      [instagram/nakshiq] Already posted reel today — skipping.
-2026-04-20 06:01:38  INFO      [facebook/Nakshiq] Already posted reel today — skipping.
-2026-04-20 06:01:38  INFO      State saved. Reel run complete.
-2026-04-20 06:01:38  INFO      ════════════════════════════════════════════════════════════
-2026-04-20 06:19:17  INFO      ════════════════════════════════════════════════════════════
-2026-04-20 06:19:17  INFO      Nakshiq Autoposter · REEL · 2026-04-20 · weekday=0
-2026-04-20 06:19:17  INFO      ════════════════════════════════════════════════════════════
-2026-04-20 06:19:17  INFO      ── Syncing Nakshiq content ──────────────────────────────
-2026-04-20 06:19:21  INFO      Synced → 20 destinations · 0 traps · 0 articles · total catalog=480
-2026-04-20 06:19:21  INFO      Format: seasonal_shift | Data: {'dest_name': 'Ziro Valley', 'dest_slug': 'ziro-valley', 'now_month': 'April', 'now_score': 5, 'future_month': 'July', 'future_score': 2}
-2026-04-20 06:19:33  INFO      Reel rendered: reel_seasonal_shift_ziro-valley.mp4 (3802 KB)
-2026-04-20 06:19:33  INFO          Requesting upload URL for reel_seasonal_shift_reel_seasonal_shift_ziro-valley.mp4 (3,893,848 bytes, video/mp4)
-2026-04-20 06:19:34  INFO          Uploading to R2 (timeout=300s)...
-2026-04-20 06:19:35  INFO          R2 PUT OK. Confirming...
-2026-04-20 06:19:36  INFO          Media ready: MPTQC (3,893,848 bytes · reel_seasonal_shift_reel_seasonal_shift_ziro-valley.mp4)
-2026-04-20 06:19:36  INFO      Video uploaded: reel_seasonal_shift_reel_seasonal_shift_ziro-valley.mp4
-2026-04-20 06:19:37  INFO      [youtube/@naksh-iq] Already posted reel today — skipping.
-2026-04-20 06:19:37  INFO      [instagram/nakshiq] Already posted reel today — skipping.
-2026-04-20 06:19:37  INFO      [facebook/Nakshiq] Already posted reel today — skipping.
-2026-04-20 06:19:37  INFO      State saved. Reel run complete.
-2026-04-20 06:19:37  INFO      ════════════════════════════════════════════════════════════
-2026-04-20 06:32:03  INFO      ════════════════════════════════════════════════════════════
-2026-04-20 06:32:03  INFO      Nakshiq Autoposter · REEL · 2026-04-20 · weekday=0
-2026-04-20 06:32:03  INFO      ════════════════════════════════════════════════════════════
-2026-04-20 06:32:03  INFO      ── Syncing Nakshiq content ──────────────────────────────
-2026-04-20 06:32:11  INFO      Synced → 20 destinations · 0 traps · 0 articles · total catalog=480
-2026-04-20 06:32:11  INFO      Format: seasonal_shift | Data: {'dest_name': 'Ziro Valley', 'dest_slug': 'ziro-valley', 'now_month': 'April', 'now_score': 5, 'future_month': 'July', 'future_score': 2}
-2026-04-20 06:32:28  INFO      Reel rendered: reel_seasonal_shift_ziro-valley.mp4 (7433 KB)
-2026-04-20 06:32:28  INFO          Requesting upload URL for reel_seasonal_shift_reel_seasonal_shift_ziro-valley.mp4 (7,611,727 bytes, video/mp4)
-2026-04-20 06:32:29  INFO          Uploading to R2 (timeout=300s)...
-2026-04-20 06:32:31  INFO          R2 PUT OK. Confirming...
-2026-04-20 06:32:32  INFO          Media ready: n3rCl (7,611,727 bytes · reel_seasonal_shift_reel_seasonal_shift_ziro-valley.mp4)
-2026-04-20 06:32:32  INFO      Video uploaded: reel_seasonal_shift_reel_seasonal_shift_ziro-valley.mp4
-2026-04-20 06:32:33  INFO      [youtube/@naksh-iq] Already posted reel today — skipping.
-2026-04-20 06:32:33  INFO      [instagram/nakshiq] Already posted reel today — skipping.
-2026-04-20 06:32:33  INFO      [facebook/Nakshiq] Already posted reel today — skipping.
-2026-04-20 06:32:33  INFO      State saved. Reel run complete.
-2026-04-20 06:32:33  INFO      ════════════════════════════════════════════════════════════
-2026-04-20 07:18:16  INFO      ════════════════════════════════════════════════════════════
-2026-04-20 07:18:16  INFO      Nakshiq Autoposter · MORNING · 2026-04-20 · weekday=0
-2026-04-20 07:18:16  INFO      ════════════════════════════════════════════════════════════
-2026-04-20 07:18:16  INFO      ── Syncing Nakshiq content ──────────────────────────────
-2026-04-20 07:18:23  INFO      Synced → 20 destinations · 0 traps · 0 articles · total catalog=480
-2026-04-20 07:18:23  INFO      Sync-only mode. Done.
-2026-04-20 07:28:51  INFO      ════════════════════════════════════════════════════════════
-2026-04-20 07:28:51  INFO      Nakshiq Autoposter · MORNING · 2026-04-20 · weekday=0
-2026-04-20 07:28:51  INFO      ════════════════════════════════════════════════════════════
-2026-04-20 07:28:51  INFO      ── Syncing Nakshiq content ──────────────────────────────
-2026-04-20 07:29:00  INFO      Synced → 20 destinations · 0 traps · 0 articles · total catalog=480
-2026-04-20 07:29:00  INFO      Sync-only mode. Done.
-2026-04-20 09:26:52  INFO      ════════════════════════════════════════════════════════════
-2026-04-20 09:26:52  INFO      Nakshiq Autoposter · CANVA VISUAL · 2026-04-20 · weekday=0
-2026-04-20 09:26:52  INFO      ════════════════════════════════════════════════════════════
-2026-04-20 09:26:52  INFO      Library: 88 images across 8 categories
-2026-04-20 09:26:52  INFO      Selected: [collections] Best Motorcycle Routes → collections/motorcycle_routes_01.jpg
-2026-04-20 09:26:52  INFO          Requesting upload URL for canva_collections_motorcycle_routes_01.jpg (322,880 bytes, image/jpeg)
-2026-04-20 09:26:53  INFO          Uploading to R2 (timeout=120s)...
-2026-04-20 09:26:54  INFO          R2 PUT OK. Confirming...
-2026-04-20 09:26:55  INFO          Media ready: Wv7qz (322,880 bytes · canva_collections_motorcycle_routes_01.jpg)
-2026-04-20 09:26:55  INFO      Image uploaded: canva_collections_motorcycle_routes_01.jpg (315 KB)
-2026-04-20 09:26:57  INFO      [youtube/@naksh-iq] Skipping canva visual (YouTube only accepts video/reels).
-2026-04-20 09:26:57  INFO      [instagram/nakshiq] Publishing canva visual: Best Motorcycle Routes...
-2026-04-20 09:27:00  INFO      [instagram/nakshiq] Canva visual posted successfully!
-2026-04-20 09:27:00  INFO      [facebook/Nakshiq] Publishing canva visual: Best Motorcycle Routes...
-2026-04-20 09:27:03  INFO      [facebook/Nakshiq] Canva visual posted successfully!
-2026-04-20 09:27:03  INFO      Theme tracker updated: cat=collections / img=collections/motorcycle_routes_01.jpg
-2026-04-20 09:27:03  INFO      State saved. Canva Visual run complete.
-2026-04-20 09:27:03  INFO      ════════════════════════════════════════════════════════════
-2026-04-20 10:49:46  INFO      ════════════════════════════════════════════════════════════
-2026-04-20 10:49:46  INFO      Nakshiq Autoposter · REEL · 2026-04-20 · weekday=0
-2026-04-20 10:49:46  INFO      ════════════════════════════════════════════════════════════
-2026-04-20 10:49:46  INFO      ── Syncing Nakshiq content ──────────────────────────────
-2026-04-20 10:49:53  INFO      Synced → 20 destinations · 0 traps · 0 articles · total catalog=480
-2026-04-20 10:49:53  INFO      Format: seasonal_shift | Data: {'dest_name': 'Ziro Valley', 'dest_slug': 'ziro-valley', 'now_month': 'April', 'now_score': 5, 'future_month': 'July', 'future_score': 2}
-2026-04-20 10:50:03  INFO      Reel rendered: reel_seasonal_shift_ziro-valley.mp4 (2570 KB)
-2026-04-20 10:50:03  INFO          Requesting upload URL for reel_seasonal_shift_reel_seasonal_shift_ziro-valley.mp4 (2,631,946 bytes, video/mp4)
-2026-04-20 10:50:04  INFO          Uploading to R2 (timeout=300s)...
-2026-04-20 10:50:06  INFO          R2 PUT OK. Confirming...
-2026-04-20 10:50:07  INFO          Media ready: pzGtM (2,631,946 bytes · reel_seasonal_shift_reel_seasonal_shift_ziro-valley.mp4)
-2026-04-20 10:50:07  INFO      Video uploaded: reel_seasonal_shift_reel_seasonal_shift_ziro-valley.mp4
-2026-04-20 10:50:08  INFO      [youtube/@naksh-iq] Already posted reel today — skipping.
-2026-04-20 10:50:08  INFO      [instagram/nakshiq] Already posted reel today — skipping.
-2026-04-20 10:50:08  INFO      [facebook/Nakshiq] Already posted reel today — skipping.
-2026-04-20 10:50:08  INFO      State saved. Reel run complete.
-2026-04-20 10:50:08  INFO      ════════════════════════════════════════════════════════════
+2026-04-20 06:42:47  INFO      Stale lock (age=259437s) — overriding.
+2026-04-20 06:42:47  INFO      ════════════════════════════════════════════════════════════
+2026-04-20 06:42:47  INFO      Nakshiq Autoposter · MOAT · 2026-04-20 · weekday=0
+2026-04-20 06:42:47  INFO      ════════════════════════════════════════════════════════════
+2026-04-20 06:42:47  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-04-20 06:42:56  INFO      Synced → 20 destinations · 0 traps · 0 articles · total catalog=480
+2026-04-20 06:42:58  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-04-20 06:43:01  INFO      Outstand dedup guard: merged 7 remote posts into state.
+2026-04-20 06:43:01  INFO      Moat angle locked: methodology_roads (9/9 never featured)
+2026-04-20 06:43:01  INFO      Formats — IG: methodology_roads  ·  FB: methodology_roads  ·  Story: None
+2026-04-20 06:43:01  INFO      Used destinations (14d): 12
+2026-04-20 06:43:07  INFO      Shared best destination locked: Almora
+2026-04-20 06:43:07  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-04-20 06:43:07  INFO      [instagram/nakshiq] Generating methodology_roads post...
+2026-04-20 06:43:07  INFO      [instagram/nakshiq] Caption ready (598 chars, dest=almora)
+2026-04-20 06:43:08  INFO      [instagram/nakshiq] Video available — uploading for Reel...
+2026-04-20 06:43:08  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/almora.mp4
+2026-04-20 06:43:09  INFO          Requesting upload URL for almora.mp4 (4,699,691 bytes, video/mp4)
+2026-04-20 06:43:11  INFO          Uploading to R2 (timeout=300s)...
+2026-04-20 06:43:15  INFO          R2 PUT OK. Confirming...
+2026-04-20 06:43:17  INFO          Media ready: iSXMB (4,699,691 bytes · almora.mp4)
+2026-04-20 06:43:17  INFO      [instagram/nakshiq] Publishing Reel...
+2026-04-20 06:44:07  INFO      [instagram/nakshiq] ✅ Published · Outstand=udx4E · Platform=18338363179173614
+2026-04-20 06:44:07  INFO      [facebook/Nakshiq] Generating methodology_roads post...
+2026-04-20 06:44:07  INFO      [facebook/Nakshiq] Caption ready (727 chars, dest=almora)
+2026-04-20 06:44:07  INFO      [facebook/Nakshiq] Video available — uploading for Reel...
+2026-04-20 06:44:07  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/almora.mp4
+2026-04-20 06:44:09  INFO          Requesting upload URL for almora.mp4 (4,699,691 bytes, video/mp4)
+2026-04-20 06:44:10  INFO          Uploading to R2 (timeout=300s)...
+2026-04-20 06:44:14  INFO          R2 PUT OK. Confirming...
+2026-04-20 06:44:16  INFO          Media ready: zgEYP (4,699,691 bytes · almora.mp4)
+2026-04-20 06:44:16  INFO      [facebook/Nakshiq] Publishing Reel...
+2026-04-20 06:44:32  INFO      [facebook/Nakshiq] ✅ Published · Outstand=4JU5i · Platform=948406567952813
+2026-04-20 06:44:32  INFO      State saved. Run complete.
+2026-04-20 06:44:32  INFO      ════════════════════════════════════════════════════════════
+2026-04-20 20:09:54  INFO      Stale lock (age=86375s) — overriding.
+2026-04-20 20:09:54  INFO      ════════════════════════════════════════════════════════════
+2026-04-20 20:09:54  INFO      Nakshiq Autoposter · EVENING · 2026-04-20 · weekday=0
+2026-04-20 20:09:54  INFO      ════════════════════════════════════════════════════════════
+2026-04-20 20:09:54  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-04-20 20:10:04  INFO      Synced → 20 destinations · 0 traps · 0 articles · total catalog=480
+2026-04-20 20:10:05  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-04-20 20:10:05  INFO      Formats — IG: score_card  ·  FB: score_card  ·  Story: festival_alert  ·  Audience: backpackers
+2026-04-20 20:10:05  INFO      Used destinations (14d): 13
+2026-04-20 20:10:05  INFO      Audience filter 'backpackers' → 1 destinations match.
+2026-04-20 20:10:05  INFO      Festival locked: Baisakhi (20/20 never featured)
+2026-04-20 20:10:06  INFO      Shared best destination locked: Yercaud
+2026-04-20 20:10:06  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-04-20 20:10:06  INFO      [instagram/nakshiq] Generating score_card post...
+2026-04-20 20:10:06  INFO      [instagram/nakshiq] Caption ready (600 chars, dest=yercaud)
+2026-04-20 20:10:06  INFO      [instagram/nakshiq] Uploading image...
+2026-04-20 20:10:06  INFO          Using branded image: yercaud_feed_bold-cinematic_watermark.jpg (291,414 bytes)
+2026-04-20 20:10:06  INFO          Requesting upload URL for yercaud.jpg (291,414 bytes, image/jpeg)
+2026-04-20 20:10:08  INFO          Uploading to R2 (timeout=120s)...
+2026-04-20 20:10:11  INFO          R2 PUT OK. Confirming...
+2026-04-20 20:10:13  INFO          Media ready: 35J5k (291,414 bytes · yercaud.jpg)
+2026-04-20 20:10:13  INFO      [instagram/nakshiq] Publishing feed post...
+2026-04-20 20:10:33  WARNING       Platform error: Error publishing Instagram post: Failed to publish Instagram container: 403 - {"error":{"message":"Application request limit reached","type":"OAuthException","is_transient":false,"code":4,"error_subcode":2207051,"error_user_title":"l’action est bloquée","error_user_msg":"Nous restreignons certaines activités afin de protéger notre communauté. Si vous pensez que nous avons fait erreur, faites-le-nous savoir.","fbtrace_id":"AVbw5kKhUnWbLMlmIh03JLK"}}
+2026-04-20 20:10:33  WARNING   [instagram/nakshiq] ⚠️  Queued (ID=8QkKI)
+2026-04-20 20:10:33  INFO      [instagram/nakshiq] Uploading Story image (yercaud.jpg)...
+2026-04-20 20:10:33  INFO          Using branded image: yercaud_story_bold-cinematic_watermark.jpg (355,771 bytes)
+2026-04-20 20:10:33  INFO          Requesting upload URL for yercaud.jpg (355,771 bytes, image/jpeg)
+2026-04-20 20:10:35  INFO          Uploading to R2 (timeout=120s)...
+2026-04-20 20:10:38  INFO          R2 PUT OK. Confirming...
+2026-04-20 20:10:39  INFO          Media ready: kD3oh (355,771 bytes · yercaud.jpg)
+2026-04-20 20:10:39  INFO      [instagram/nakshiq] Publishing Story · format=festival_alert · dest=yercaud
+2026-04-20 20:11:07  INFO      [instagram/nakshiq] ✅ Story live · ID=18101217346787343
+2026-04-20 20:11:07  INFO      [facebook/Nakshiq] Generating score_card post...
+2026-04-20 20:11:07  INFO      [facebook/Nakshiq] Caption ready (583 chars, dest=yercaud)
+2026-04-20 20:11:07  INFO      [facebook/Nakshiq] Uploading image...
+2026-04-20 20:11:07  INFO          Using branded image: yercaud_feed_bold-cinematic_watermark.jpg (291,414 bytes)
+2026-04-20 20:11:07  INFO          Requesting upload URL for yercaud.jpg (291,414 bytes, image/jpeg)
+2026-04-20 20:11:09  INFO          Uploading to R2 (timeout=120s)...
+2026-04-20 20:11:13  INFO          R2 PUT OK. Confirming...
+2026-04-20 20:11:15  INFO          Media ready: 17TzG (291,414 bytes · yercaud.jpg)
+2026-04-20 20:11:15  INFO      [facebook/Nakshiq] Publishing feed post...
+2026-04-20 20:11:42  INFO      [facebook/Nakshiq] ✅ Published · Outstand=i363B · Platform=1040562729145369_122102159456700092
+2026-04-20 20:11:42  INFO      State saved. Run complete.
+2026-04-20 20:11:42  INFO      ════════════════════════════════════════════════════════════
