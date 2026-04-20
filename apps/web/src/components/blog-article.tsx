@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useLocale } from "next-intl";
-import { useState } from "react";
+import React, { useState } from "react";
 import { SCORE_COLORS, DIFFICULTY_COLORS } from "@/lib/design-tokens";
 import { FadeIn, ScrollReveal } from "./animated-hero";
 import { ArticleCallout } from "./article-callout";
@@ -26,6 +26,69 @@ const CATEGORY_COLORS: Record<string, string> = {
 
 const MONTH_NAMES = ["", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 const MONTH_SHORT = ["", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+// Inline markdown renderer — supports **bold** only. Keep it tight; we
+// don't need a full markdown stack for our editorial content.
+function renderInline(text: string): React.ReactNode {
+  const parts = text.split(/(\*\*[^*]+\*\*)/g);
+  return parts.map((p, i) => {
+    if (p.startsWith("**") && p.endsWith("**")) {
+      return <strong key={i} className="text-foreground font-semibold">{p.slice(2, -2)}</strong>;
+    }
+    return <React.Fragment key={i}>{p}</React.Fragment>;
+  });
+}
+
+// Parse the body of the "The List" section (data-story / ranked posts)
+// into per-destination blocks. Each block begins `### N. Destination Name`
+// and ends at the next `### ` or end-of-body. Extracts metadata, prose,
+// bullets, and verdict so we can render each as a newsletter-style card
+// with its own destination image.
+function parseRankedItems(paragraphs: string[], destinations: Destination[]) {
+  const body = paragraphs.join("\n\n");
+  const regex = /###\s+\d+\.\s+([^\n]+)\n+([\s\S]*?)(?=\n###\s+\d+\.\s+|$)/g;
+  const items: Array<{
+    destination: Destination | null;
+    name: string;
+    elevation?: string;
+    difficulty?: string;
+    prose: string[];
+    bullets: string[];
+    verdict?: string;
+  }> = [];
+  let match: RegExpExecArray | null;
+  while ((match = regex.exec(body))) {
+    const name = match[1].trim();
+    const raw = match[2].trim();
+    const lines = raw.split("\n").map((l) => l.trim()).filter((l) => l && l !== "---");
+    const prose: string[] = [];
+    const bullets: string[] = [];
+    let elevation: string | undefined;
+    let difficulty: string | undefined;
+    let verdict: string | undefined;
+    for (const line of lines) {
+      if (line.startsWith("- ")) {
+        bullets.push(line.replace(/^-\s*/, ""));
+      } else if (/\*\*Elevation:\*\*/i.test(line)) {
+        const m = line.match(/\*\*Elevation:\*\*\s*([^·\n]+?)(?:\s*·\s*\*\*Difficulty:\*\*\s*(.+))?$/i);
+        if (m) {
+          elevation = m[1]?.trim();
+          difficulty = m[2]?.trim();
+        }
+      } else if (/\*\*Verdict:\*\*/i.test(line)) {
+        verdict = line.replace(/\*\*Verdict:\*\*\s*/i, "").trim();
+      } else {
+        prose.push(line);
+      }
+    }
+    const destination =
+      destinations.find((d) => d.name.toLowerCase() === name.toLowerCase()) ??
+      destinations.find((d) => name.toLowerCase().includes(d.name.toLowerCase())) ??
+      null;
+    items.push({ destination, name, elevation, difficulty, prose, bullets, verdict });
+  }
+  return items;
+}
 
 interface Destination {
   id: string;
@@ -227,10 +290,15 @@ export function BlogArticle({
       {/* Article content */}
       <div className="prose prose-invert prose-lg max-w-none">
         {sections.map((section, i) => {
-          // Data-story posts render a newsletter-style giant-numeral prefix
-          // on each section heading, mirroring Format 5's № 02 / 03 spine.
           const sectionNum = numberSections ? String(i + 1).padStart(2, "0") : null;
           const isFirstProseBlock = i === 0 && section.paragraphs.length > 0;
+          // Does this section's body contain a ranked list (### N. Name blocks)?
+          const isRankedBody =
+            numberSections &&
+            destinations.length >= 3 &&
+            section.paragraphs.some((p) => /^###\s+\d+\.\s+/.test(p));
+          const rankedItems = isRankedBody ? parseRankedItems(section.paragraphs, destinations) : [];
+
           return (
             <ScrollReveal key={i} delay={i * 0.05}>
               <div>
@@ -256,20 +324,157 @@ export function BlogArticle({
 
                 {/* Pull-quote treatment for the very first paragraph of deep-dive
                     posts — mirrors the newsletter's 4px vermillion-border italic lede. */}
-                {isFirstProseBlock && isDeepDive && section.paragraphs[0] && (
+                {isFirstProseBlock && isDeepDive && section.paragraphs[0] && !isRankedBody && (
                   <div className="flex gap-5 mb-6">
                     <div className="w-1 bg-[#E55642] rounded-full flex-shrink-0" />
                     <p
                       className="font-serif italic font-medium text-xl sm:text-2xl leading-[1.35] text-foreground py-1"
                       style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
                     >
-                      {section.paragraphs[0]}
+                      {renderInline(section.paragraphs[0])}
                     </p>
                   </div>
                 )}
-                {section.paragraphs.slice(isFirstProseBlock && isDeepDive ? 1 : 0).map((p, j) => (
-                  <p key={j} className="text-muted-foreground leading-relaxed mb-4">{p}</p>
-                ))}
+
+                {/* RANKED ITEMS — newsletter-style per-destination cards
+                    with image + metadata + prose + bullets + verdict + CTA */}
+                {isRankedBody ? (
+                  <div className="space-y-14 mt-8">
+                    {rankedItems.map((item, idx) => {
+                      const num = String(idx + 1).padStart(2, "0");
+                      const d = item.destination;
+                      const stateName = d ? (Array.isArray(d.state) ? d.state[0]?.name : d.state?.name) ?? null : null;
+                      return (
+                        <div key={idx} className="border-t border-border/40 pt-10">
+                          {/* Giant numeral + metadata row */}
+                          <div className="flex items-start gap-5 mb-5">
+                            <span
+                              className="font-serif italic font-medium text-6xl sm:text-7xl lg:text-8xl leading-[0.85] tracking-[-0.02em] text-foreground flex-shrink-0"
+                              style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
+                              aria-hidden="true"
+                            >
+                              {num}
+                            </span>
+                            <div className="flex-1 pt-2">
+                              {stateName && (
+                                <div className="font-mono text-[10px] sm:text-[11px] tracking-[0.3em] uppercase text-[#E55642] mb-2">
+                                  {stateName}
+                                </div>
+                              )}
+                              <h3
+                                className="font-serif italic font-medium text-3xl sm:text-4xl lg:text-5xl leading-[1.05] tracking-[-0.01em] text-foreground"
+                                style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
+                              >
+                                {item.name}
+                              </h3>
+                              {(item.elevation || item.difficulty) && (
+                                <div className="mt-3 font-mono text-[10px] sm:text-xs tracking-[0.22em] uppercase text-muted-foreground">
+                                  {[item.elevation, item.difficulty].filter(Boolean).join(" · ")}
+                                </div>
+                              )}
+                            </div>
+                          </div>
+
+                          {/* Full-width editorial image */}
+                          {d && (
+                            <Link
+                              href={`/${locale}/destination/${d.id}`}
+                              className="block relative aspect-[16/9] overflow-hidden rounded-xl mb-6 group"
+                            >
+                              <Image
+                                src={`/images/destinations/${d.id}.jpg`}
+                                alt={d.name}
+                                fill
+                                sizes="(min-width: 1024px) 800px, 100vw"
+                                className="object-cover transition-transform duration-700 group-hover:scale-105"
+                                style={{ filter: "brightness(0.88) saturate(0.92)" }}
+                              />
+                            </Link>
+                          )}
+
+                          {/* Prose */}
+                          {item.prose.map((p, k) => (
+                            <p key={k} className="text-muted-foreground leading-relaxed mb-4">
+                              {renderInline(p)}
+                            </p>
+                          ))}
+
+                          {/* Bullets — things to do */}
+                          {item.bullets.length > 0 && (
+                            <ul className="space-y-2 my-5 pl-0 list-none">
+                              {item.bullets.map((b, k) => (
+                                <li key={k} className="flex items-start gap-3 text-muted-foreground leading-relaxed">
+                                  <span className="text-[#E55642] flex-shrink-0 mt-1.5 text-[10px]">●</span>
+                                  <span>{renderInline(b)}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          )}
+
+                          {/* Vermillion verdict callout */}
+                          {item.verdict && (
+                            <div className="mt-5 flex gap-4 rounded-lg border border-[#E55642]/30 bg-[#E55642]/5 p-4">
+                              <div className="w-1 bg-[#E55642] rounded-full flex-shrink-0" />
+                              <div>
+                                <div className="font-mono text-[10px] tracking-[0.3em] uppercase text-[#E55642] mb-1.5">
+                                  Verdict
+                                </div>
+                                <p className="font-serif italic text-base sm:text-lg leading-snug text-foreground" style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}>
+                                  {renderInline(item.verdict)}
+                                </p>
+                              </div>
+                            </div>
+                          )}
+
+                          {/* CTA — read full guide */}
+                          {d && (
+                            <div className="mt-6">
+                              <Link
+                                href={`/${locale}/destination/${d.id}`}
+                                className="inline-block font-medium text-sm tracking-[0.14em] uppercase text-foreground border-b border-muted-foreground/50 pb-1 hover:text-[#E55642] hover:border-[#E55642]/60 transition-colors"
+                              >
+                                Read the {d.name} guide →
+                              </Link>
+                            </div>
+                          )}
+                        </div>
+                      );
+                    })}
+                  </div>
+                ) : (
+                  <>
+                    {section.paragraphs.slice(isFirstProseBlock && isDeepDive ? 1 : 0).map((p, j) => {
+                      // Basic markdown: ### h3, - bullet list, **bold**
+                      if (/^###\s+/.test(p)) {
+                        return (
+                          <h3 key={j} className="font-semibold text-xl sm:text-2xl text-foreground mt-8 mb-3">
+                            {renderInline(p.replace(/^###\s+/, ""))}
+                          </h3>
+                        );
+                      }
+                      if (/^-\s+/.test(p)) {
+                        const items = p.split(/\n+/).filter((l) => /^-\s+/.test(l)).map((l) => l.replace(/^-\s*/, ""));
+                        return (
+                          <ul key={j} className="space-y-2 my-4 pl-0 list-none">
+                            {items.map((li, k) => (
+                              <li key={k} className="flex items-start gap-3 text-muted-foreground leading-relaxed">
+                                <span className="text-[#E55642] flex-shrink-0 mt-1.5 text-[10px]">●</span>
+                                <span>{renderInline(li)}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        );
+                      }
+                      if (/^---+$/.test(p.trim())) return null;
+                      return (
+                        <p key={j} className="text-muted-foreground leading-relaxed mb-4">
+                          {renderInline(p)}
+                        </p>
+                      );
+                    })}
+                  </>
+                )}
+
                 {isViral && callouts[i] && (
                   <ArticleCallout
                     type={callouts[i].type}
