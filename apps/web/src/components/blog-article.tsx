@@ -298,6 +298,13 @@ export function BlogArticle({
             destinations.length >= 3 &&
             section.paragraphs.some((p) => /^###\s+\d+\.\s+/.test(p));
           const rankedItems = isRankedBody ? parseRankedItems(section.paragraphs, destinations) : [];
+          const rankedStates = rankedItems
+            .map((r) => {
+              const d = r.destination;
+              return d ? (Array.isArray(d.state) ? d.state[0]?.name : d.state?.name) ?? null : null;
+            })
+            .filter(Boolean);
+          const allSameState = rankedStates.length > 1 && rankedStates.every((s) => s === rankedStates[0]);
 
           return (
             <ScrollReveal key={i} delay={i * 0.05}>
@@ -356,7 +363,7 @@ export function BlogArticle({
                               {num}
                             </span>
                             <div className="flex-1 pt-2">
-                              {stateName && (
+                              {stateName && !allSameState && (
                                 <div className="font-mono text-[10px] sm:text-[11px] tracking-[0.3em] uppercase text-[#E55642] mb-2">
                                   {stateName}
                                 </div>
