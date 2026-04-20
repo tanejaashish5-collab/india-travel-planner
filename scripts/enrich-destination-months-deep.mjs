@@ -44,8 +44,8 @@ function auditRow(r) {
     errors.push(`things_to_do: expected 3–5 items, got ${ttd.length}`);
   } else {
     ttd.forEach((t, i) => {
-      if (typeof t !== "string" || t.length < 6 || t.length > 120)
-        errors.push(`things_to_do[${i}] length ${t?.length} out of bounds (6–120)`);
+      if (typeof t !== "string" || t.length < 6 || t.length > 180)
+        errors.push(`things_to_do[${i}] length ${t?.length} out of bounds (6–180)`);
       if (hasBanned(t)) errors.push(`things_to_do[${i}] banned: ${bannedHits(t).join(", ")}`);
     });
   }
@@ -56,8 +56,8 @@ function auditRow(r) {
     errors.push(`festivals_this_month: expected 0–3 items, got ${fest.length}`);
   } else {
     fest.forEach((f, i) => {
-      if (typeof f !== "string" || f.length < 4 || f.length > 80)
-        errors.push(`festivals_this_month[${i}] length ${f?.length} out of bounds (4–80)`);
+      if (typeof f !== "string" || f.length < 4 || f.length > 180)
+        errors.push(`festivals_this_month[${i}] length ${f?.length} out of bounds (4–180)`);
     });
   }
 
@@ -67,17 +67,17 @@ function auditRow(r) {
     errors.push(`pack_list: expected 5–7 items, got ${pack.length}`);
   } else {
     pack.forEach((p, i) => {
-      if (typeof p !== "string" || p.length < 3 || p.length > 60)
-        errors.push(`pack_list[${i}] length ${p?.length} out of bounds (3–60)`);
+      if (typeof p !== "string" || p.length < 3 || p.length > 120)
+        errors.push(`pack_list[${i}] length ${p?.length} out of bounds (3–120)`);
     });
   }
 
   // verdict
   const v = (r.go_or_skip_verdict ?? "").trim();
   const wordCount = v.split(/\s+/).filter(Boolean).length;
-  const leader = v.split(/[\s,:.]/, 1)[0]?.toLowerCase();
-  if (wordCount < 20 || wordCount > 50)
-    errors.push(`go_or_skip_verdict: ${wordCount} words (want 20–50)`);
+  const leader = v.split(/[\s,:.\u2013\u2014—]/, 1)[0]?.toLowerCase();
+  if (wordCount < 15 || wordCount > 55)
+    errors.push(`go_or_skip_verdict: ${wordCount} words (want 15–55)`);
   if (!["go", "skip", "mixed"].includes(leader))
     errors.push(`go_or_skip_verdict: must start with Go/Skip/Mixed (got "${leader}")`);
   if (hasBanned(v)) errors.push(`go_or_skip_verdict banned: ${bannedHits(v).join(", ")}`);

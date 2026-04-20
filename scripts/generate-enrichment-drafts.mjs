@@ -157,18 +157,19 @@ async function generateOne(row) {
   }
 }
 
-// ── Parallel batch loop ──────────────────────────────────────
+// ── Parallel batch loop with checkpoint writes ──────────────
+// Flush to disk after every chunk so a mid-run crash (e.g. API
+// quota hit) preserves everything generated so far. Resume via
+// --only-missing on the next run.
+mkdirSync(dirname(outFile), { recursive: true });
 const results = [];
 for (let i = 0; i < batch.length; i += concurrency) {
   const chunk = batch.slice(i, i + concurrency);
   process.stdout.write(`  [${i + 1}–${Math.min(i + concurrency, batch.length)}/${batch.length}]…`);
   const chunkResults = await Promise.all(chunk.map(generateOne));
   results.push(...chunkResults.filter(Boolean));
+  writeFileSync(outFile, JSON.stringify(results, null, 2));
   process.stdout.write(` ✓ ${results.length}\n`);
 }
-
-// ── Write staging ────────────────────────────────────────────
-mkdirSync(dirname(outFile), { recursive: true });
-writeFileSync(outFile, JSON.stringify(results, null, 2));
 console.log(`\n✓ Wrote ${results.length} drafts → ${outFile}`);
 console.log(`Next: node scripts/enrich-destination-months-deep.mjs ${outFile} --commit\n`);
