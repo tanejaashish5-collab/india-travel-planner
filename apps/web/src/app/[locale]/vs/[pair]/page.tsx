@@ -39,7 +39,7 @@ async function getVsData(id1: string, id2: string) {
         state:states(name),
         destination_months(month, score),
         kids_friendly(suitable, rating),
-        confidence_cards(safety_rating, network, medical_access)
+        confidence_cards(safety_rating, network)
       `)
       .eq("id", id1)
       .single(),
@@ -50,7 +50,7 @@ async function getVsData(id1: string, id2: string) {
         state:states(name),
         destination_months(month, score),
         kids_friendly(suitable, rating),
-        confidence_cards(safety_rating, network, medical_access)
+        confidence_cards(safety_rating, network)
       `)
       .eq("id", id2)
       .single(),

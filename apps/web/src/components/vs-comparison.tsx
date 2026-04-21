@@ -25,7 +25,7 @@ interface DestData {
   state: string | null;
   months: MonthScore[];
   kids: { suitable: boolean; rating: number } | null;
-  confidence: { safety_rating: string | null; network: string | null; medical_access: string | null } | null;
+  confidence: { safety_rating: string | null; network: string | null } | null;
 }
 
 interface Props {
