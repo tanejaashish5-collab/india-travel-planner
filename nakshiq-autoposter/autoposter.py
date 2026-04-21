@@ -3853,6 +3853,20 @@ def _run_yt_short(force: bool = False, dry_run: bool = False):
     if posted_any:
         log.info(f"YT Short posted: format={fmt}, music={music}")
 
+    # Merge yt_short rotation state from yt_shorts_gen into st.
+    # IMPORTANT: build_yt_short() independently loads/saves state.json with
+    # yt_short_formats_used and yt_short_music_used. If we don't re-read those
+    # fields, save_state(st) overwrites them with the stale values from when
+    # st was loaded (same class of bug as the infographic state-overwrite).
+    try:
+        from yt_shorts_gen import _load_state as _yt_load_state
+        fresh = _yt_load_state()
+        for key in ("yt_short_formats_used", "yt_short_music_used"):
+            if key in fresh:
+                st[key] = fresh[key]
+    except Exception as e:
+        log.warning(f"Failed to merge YT Short rotation state: {e}")
+
     save_state(st)
     log.info("State saved. YT Short run complete.")
     log.info("═" * 60)
