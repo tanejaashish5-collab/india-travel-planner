@@ -44,11 +44,12 @@ function flag(name, fallback = null) {
 const tier = Number(flag("tier"));
 const limit = flag("limit") ? Number(flag("limit")) : null;
 const onlyMissing = args.includes("--only-missing");
+const onlyStaleDays = flag("only-stale") ? Number(flag("only-stale")) : null;
 const concurrency = Number(flag("concurrency") ?? 10);
 const outFile = flag("out") ?? `data/enrichment/verdict-tier${tier}.json`;
 
 if (![1, 2, 3, 4, 5].includes(tier)) {
-  console.error("Usage: generate-verdict-drafts.mjs --tier {1|2|3|4|5} [--limit N] [--only-missing]");
+  console.error("Usage: generate-verdict-drafts.mjs --tier {1|2|3|4|5} [--limit N] [--only-missing] [--only-stale DAYS]");
   process.exit(1);
 }
 
@@ -76,7 +77,7 @@ for (let from = 0; ; from += pageSize) {
     .from("destination_months")
     .select(`
       destination_id, month, score, note, why_go, why_not, go_or_skip_verdict,
-      verdict, skip_reason,
+      verdict, skip_reason, content_reviewed_at,
       destination:destinations(name, tagline, state_id, elevation_m, tags, difficulty)
     `)
     .eq("score", tier)
@@ -88,7 +89,16 @@ for (let from = 0; ; from += pageSize) {
   if (data.length < pageSize) break;
 }
 
-const filtered = onlyMissing ? rows.filter((r) => !r.verdict) : rows;
+let filtered = onlyMissing ? rows.filter((r) => !r.verdict) : rows;
+if (onlyStaleDays != null) {
+  const cutoff = Date.now() - onlyStaleDays * 24 * 60 * 60 * 1000;
+  filtered = filtered.filter((r) => {
+    const t = r.content_reviewed_at;
+    if (!t) return true;              // null → always stale
+    return new Date(t).getTime() < cutoff;
+  });
+  console.log(`  → --only-stale ${onlyStaleDays} days filter applied`);
+}
 const batch = limit ? filtered.slice(0, limit) : filtered;
 
 console.log(`  → ${rows.length} rows at score=${tier}, ${batch.length} after filters.\n`);

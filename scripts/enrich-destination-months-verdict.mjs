@@ -89,10 +89,15 @@ const supabase = createClient(env.NEXT_PUBLIC_SUPABASE_URL, env.SUPABASE_SERVICE
 console.log(`\nCommitting ${accepted.length} rows…`);
 let ok = 0;
 let err = 0;
+const reviewedAt = new Date().toISOString();
 for (const row of accepted) {
   const { error } = await supabase
     .from("destination_months")
-    .update({ verdict: row.verdict, skip_reason: row.skip_reason })
+    .update({
+      verdict: row.verdict,
+      skip_reason: row.skip_reason,
+      content_reviewed_at: reviewedAt,
+    })
     .eq("destination_id", row.destination_id)
     .eq("month", row.month);
   if (error) { err++; console.error(`  ✗ ${row.destination_id} m=${row.month}: ${error.message}`); }
