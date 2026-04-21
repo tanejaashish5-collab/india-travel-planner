@@ -149,7 +149,7 @@ export function GuideContent({
               <HoverCard>
                 <Link
                   href={g.href}
-                  className="flex items-start gap-3 rounded-xl border border-border bg-card p-4 hover:border-emerald-500/40 hover:shadow-lg hover:shadow-emerald-500/5 transition-all group"
+                  className="flex items-start gap-3 rounded-xl border border-border bg-card p-4 hover:border-emerald-500/40 hover:shadow-lg hover:shadow-emerald-500/5 transition-all group h-full"
                 >
                   <div className="shrink-0">
                     <DestinationImage
@@ -204,7 +204,7 @@ export function GuideContent({
               <HoverCard>
                 <Link
                   href={g.href}
-                  className="flex items-start gap-3 rounded-xl border border-border bg-card p-4 hover:border-blue-500/40 hover:shadow-lg hover:shadow-blue-500/5 transition-all group"
+                  className="flex items-start gap-3 rounded-xl border border-border bg-card p-4 hover:border-blue-500/40 hover:shadow-lg hover:shadow-blue-500/5 transition-all group h-full"
                 >
                   <div className="shrink-0 flex gap-1">
                     <DestinationImage
@@ -258,7 +258,7 @@ export function GuideContent({
               <HoverCard>
                 <Link
                   href={p.href}
-                  className="flex items-start gap-3 rounded-xl border border-border bg-card p-4 hover:border-primary/40 hover:shadow-lg hover:shadow-primary/5 transition-all group"
+                  className="flex items-start gap-3 rounded-xl border border-border bg-card p-4 hover:border-primary/40 hover:shadow-lg hover:shadow-primary/5 transition-all group h-full"
                 >
                   <div className="min-w-0 flex-1">
                     <div className="flex items-center gap-2">
@@ -301,7 +301,7 @@ export function GuideContent({
               <HoverCard>
                 <Link
                   href={g.href}
-                  className="flex items-start gap-3 rounded-xl border border-border bg-card p-4 hover:border-amber-500/40 hover:shadow-lg hover:shadow-amber-500/5 transition-all group"
+                  className="flex items-start gap-3 rounded-xl border border-border bg-card p-4 hover:border-amber-500/40 hover:shadow-lg hover:shadow-amber-500/5 transition-all group h-full"
                 >
                   <div className="shrink-0">
                     <DestinationImage
