@@ -89,6 +89,14 @@ function nextMonth(num: number) {
 }
 
 // ─── Destination Card ───────────────────────────────────────
+const SOLO_FEMALE_COLOR: Record<number, string> = {
+  5: "border-emerald-400/50 bg-emerald-500/20 text-emerald-100",
+  4: "border-emerald-400/40 bg-emerald-500/15 text-emerald-200",
+  3: "border-amber-400/50 bg-amber-500/20 text-amber-100",
+  2: "border-orange-400/50 bg-orange-500/20 text-orange-100",
+  1: "border-red-400/50 bg-red-500/25 text-red-100",
+};
+
 function DestinationCard({
   d,
   monthSlug,
@@ -98,6 +106,7 @@ function DestinationCard({
   monthSlug: string;
   locale: string;
 }) {
+  const soloFemaleEff = d.solo_female_override ?? d.solo_female_score ?? null;
   return (
     <StaggerItem>
       <HoverCard>
@@ -122,6 +131,18 @@ function DestinationCard({
             >
               {d.score}/5
             </span>
+
+            {/* Solo-female safety badge */}
+            {soloFemaleEff != null && (
+              <span
+                className={`absolute top-2 left-2 inline-flex items-center gap-1 rounded-full border px-2 py-0.5 text-[11px] font-medium backdrop-blur-sm ${SOLO_FEMALE_COLOR[soloFemaleEff] ?? ""}`}
+                title={`Solo-female safety: ${soloFemaleEff}/5${d.solo_female_override != null ? " (month-specific)" : ""}`}
+                aria-label={`Solo-female score ${soloFemaleEff} of 5`}
+              >
+                <span className="font-serif italic" style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}>♀</span>
+                <span>{soloFemaleEff}/5</span>
+              </span>
+            )}
 
             {/* Name overlay */}
             <h3 className="absolute bottom-2 left-3 right-3 font-fraunces text-lg font-bold leading-tight text-white drop-shadow-lg">

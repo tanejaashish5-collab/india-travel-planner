@@ -12,7 +12,7 @@ async function getAllDestinations() {
   const { data } = await supabase
     .from("destinations")
     .select(`
-      id, name, tagline, difficulty, elevation_m, budget_tier, tags, best_months, state_id,
+      id, name, tagline, difficulty, elevation_m, budget_tier, tags, best_months, state_id, solo_female_score,
       state:states(name),
       kids_friendly(suitable, rating),
       destination_months(month, score, note),

@@ -38,7 +38,7 @@ export async function WeekendFromView({ locale, city }: { locale: string; city: 
 
   const { data: full } = await supabase
     .from("destinations")
-    .select("id, name, tagline, difficulty, elevation_m, tags, best_months, translations, state_id, budget_tier, state:states(name), kids_friendly(suitable, rating), destination_months(month, score)")
+    .select("id, name, tagline, difficulty, elevation_m, tags, best_months, translations, state_id, budget_tier, solo_female_score, state:states(name), kids_friendly(suitable, rating), destination_months(month, score)")
     .in("id", ids);
 
   const currentMonth = new Date().getMonth() + 1;
@@ -123,6 +123,7 @@ export async function WeekendFromView({ locale, city }: { locale: string; city: 
                         current_month_score={d.current_month_score}
                         budget_tier={d.budget_tier}
                         translations={d.translations}
+                        solo_female_score={d.solo_female_score ?? null}
                       />
                       <div className="absolute top-3 right-3 rounded-md bg-background/80 px-2 py-1 font-mono text-[10px] tracking-wider uppercase text-foreground backdrop-blur-sm">
                         {d.distance_km} km · ~{hours} h

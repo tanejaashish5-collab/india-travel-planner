@@ -82,6 +82,16 @@ export function CompareView({ destinations }: { destinations: any[] }) {
       },
     },
     {
+      label: "Solo-female",
+      icon: "♀",
+      getValue: (d) => {
+        const s = d.solo_female_score;
+        if (typeof s !== "number") return { text: "N/A" };
+        const color = s >= 4 ? "text-emerald-300" : s === 3 ? "text-amber-300" : s === 2 ? "text-orange-300" : "text-red-300";
+        return { text: `${s}/5`, color };
+      },
+    },
+    {
       label: "Network",
       icon: "📶",
       getValue: (d) => {

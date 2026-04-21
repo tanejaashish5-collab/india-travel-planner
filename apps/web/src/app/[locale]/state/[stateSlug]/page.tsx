@@ -39,7 +39,7 @@ async function getData(stateSlug: string) {
     supabase.from("regions").select("id, name, state_id, hero_tagline, description, subregions, tags, best_months, popular_anchors, famous_for, must_visit").eq("state_id", stateSlug).maybeSingle(),
     supabase
       .from("destinations")
-      .select("id, name, tagline, difficulty, elevation_m, tags, translations, state_id, kids_friendly(suitable, rating), destination_months(month, score, note)")
+      .select("id, name, tagline, difficulty, elevation_m, tags, translations, state_id, solo_female_score, kids_friendly(suitable, rating), destination_months(month, score, note)")
       .eq("state_id", stateSlug)
       .order("name"),
     supabase.from("states").select("id, name, display_order").order("display_order"),

@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const { data } = await supabase
     .from("destinations")
     .select(`
-      id, name, tagline, difficulty, elevation_m, budget_tier, best_months, vehicle_fit, family_stress, daily_cost,
+      id, name, tagline, difficulty, elevation_m, budget_tier, best_months, vehicle_fit, family_stress, daily_cost, solo_female_score,
       state:states(name),
       kids_friendly(suitable, rating),
       destination_months(month, score),

@@ -10,6 +10,15 @@ import { CompareButton } from "./compare-tray";
 import { StaggerContainer, StaggerItem, HoverCard } from "./animated-hero";
 import { SCORE_COLORS, DIFFICULTY_COLORS } from "@/lib/design-tokens";
 
+const SOLO_FEMALE_COLOR: Record<number, string> = {
+  5: "border-emerald-400/40 bg-emerald-500/15 text-emerald-200",
+  4: "border-emerald-400/30 bg-emerald-500/10 text-emerald-300",
+  3: "border-amber-400/40 bg-amber-500/15 text-amber-200",
+  2: "border-orange-400/40 bg-orange-500/15 text-orange-200",
+  1: "border-red-400/40 bg-red-500/15 text-red-200",
+  0: "border-zinc-500/30 bg-zinc-500/10 text-zinc-400",
+};
+
 interface DestinationData {
   id: string;
   name: string;
@@ -395,10 +404,10 @@ function DestinationCard({
           </span>
         )}
         <span className="flex items-center gap-2">
-          {typeof dest.solo_female_score === "number" && dest.solo_female_score >= 4 && (
+          {typeof dest.solo_female_score === "number" && (
             <span
-              className="inline-flex items-center gap-1 rounded-full border border-rose-400/30 bg-rose-500/10 px-2 py-0.5 text-xs text-rose-200"
-              title="Solo-female friendly — see Safety tab"
+              className={`inline-flex items-center gap-1 rounded-full border px-2 py-0.5 text-xs ${SOLO_FEMALE_COLOR[dest.solo_female_score] ?? SOLO_FEMALE_COLOR[0]}`}
+              title="Solo-female safety — see Safety tab"
               aria-label={`Solo-female score ${dest.solo_female_score} of 5`}
             >
               <span className="font-serif italic" style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}>♀</span>

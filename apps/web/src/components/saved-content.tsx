@@ -8,6 +8,14 @@ import { useSearchParams } from "next/navigation";
 import { m as motion, AnimatePresence } from "framer-motion";
 import { SCORE_COLORS, DIFFICULTY_COLORS } from "@/lib/design-tokens";
 
+const SOLO_FEMALE_COLOR: Record<number, string> = {
+  5: "border-emerald-400/50 bg-emerald-500/15 text-emerald-200",
+  4: "border-emerald-400/40 bg-emerald-500/10 text-emerald-300",
+  3: "border-amber-400/50 bg-amber-500/15 text-amber-200",
+  2: "border-orange-400/50 bg-orange-500/15 text-orange-200",
+  1: "border-red-400/50 bg-red-500/15 text-red-200",
+};
+
 export function SavedContent({ destinations }: { destinations: any[] }) {
   const locale = useLocale();
   const td = useTranslations("destination");
@@ -137,7 +145,18 @@ export function SavedContent({ destinations }: { destinations: any[] }) {
                         {monthScore}/5 {MONTH_NAMES[currentMonth]}
                       </span>
                     )}
-                    {kf && <span className="text-xs">{kf.suitable ? `👶 ${kf.rating}/5` : "Adults"}</span>}
+                    <span className="flex items-center gap-2">
+                      {typeof dest.solo_female_score === "number" && (
+                        <span
+                          className={`inline-flex items-center gap-0.5 rounded-full border px-1.5 py-0.5 text-[10px] ${SOLO_FEMALE_COLOR[dest.solo_female_score] ?? ""}`}
+                          title={`Solo-female safety: ${dest.solo_female_score}/5`}
+                        >
+                          <span className="font-serif italic" style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}>♀</span>
+                          {dest.solo_female_score}/5
+                        </span>
+                      )}
+                      {kf && <span className="text-xs">{kf.suitable ? `👶 ${kf.rating}/5` : "Adults"}</span>}
+                    </span>
                   </div>
 
                   <Link href={`/${locale}/destination/${dest.id}`}>
