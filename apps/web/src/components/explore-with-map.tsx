@@ -55,6 +55,7 @@ export function ExploreWithMap({
     stateId: searchParams.get("state") ?? "",
     month: Number(searchParams.get("month")) || currentMonth,
     kidsOnly: searchParams.get("kids") === "true",
+    soloFemaleOnly: searchParams.get("solof") === "true",
     sort: searchParams.get("sort") ?? "",
     difficulty: searchParams.get("difficulty") ?? "",
     search: searchParams.get("q") ?? "",
@@ -69,6 +70,14 @@ export function ExploreWithMap({
       if (filters.kidsOnly) {
         const kf = Array.isArray(d.kids_friendly) ? d.kids_friendly[0] : d.kids_friendly;
         if (!kf?.suitable) return false;
+      }
+
+      if (filters.soloFemaleOnly) {
+        const override = filters.month > 0
+          ? (d as any).destination_months?.find((m: any) => m.month === filters.month)?.solo_female_override ?? null
+          : null;
+        const effective = override != null ? override : ((d as any).solo_female_score ?? null);
+        if (effective == null || effective < 4) return false;
       }
 
       if (filters.search) {

@@ -6,6 +6,7 @@ export interface FilterState {
   stateId: string;
   month: number;
   kidsOnly: boolean;
+  soloFemaleOnly: boolean;
   difficulty: string;
   search: string;
   sort: string;
@@ -36,6 +37,7 @@ export function ExploreFilters({
     filters.stateId !== "" ||
     filters.month !== 0 ||
     filters.kidsOnly ||
+    filters.soloFemaleOnly ||
     filters.difficulty !== "" ||
     filters.search !== "" ||
     filters.sort !== "";
@@ -119,6 +121,21 @@ export function ExploreFilters({
           👶 {tf("kidsOnly")}
         </button>
 
+        {/* Solo-female toggle */}
+        <button
+          onClick={() => update({ soloFemaleOnly: !filters.soloFemaleOnly })}
+          aria-pressed={filters.soloFemaleOnly}
+          title="Show only destinations with solo-female score 4 or 5"
+          className={`shrink-0 rounded-lg border px-3 py-2 text-sm font-medium transition-colors ${
+            filters.soloFemaleOnly
+              ? "border-rose-400/50 bg-rose-500/15 text-rose-200"
+              : "border-border text-muted-foreground hover:text-foreground"
+          }`}
+        >
+          <span className="font-serif italic mr-1" style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}>♀</span>
+          Solo-female friendly
+        </button>
+
         {/* Sort */}
         <select
           aria-label="Sort destinations"
@@ -143,6 +160,7 @@ export function ExploreFilters({
                 stateId: "",
                 month: 0,
                 kidsOnly: false,
+                soloFemaleOnly: false,
                 difficulty: "",
                 search: "",
                 sort: "",

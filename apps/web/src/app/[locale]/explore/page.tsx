@@ -28,10 +28,10 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       .from("destinations")
       .select(`
         id, name, tagline, difficulty, elevation_m, tags, best_months, translations, state_id, budget_tier,
-        hero_image_url, vehicle_fit, family_stress,
+        hero_image_url, vehicle_fit, family_stress, solo_female_score,
         state:states(name),
         kids_friendly(suitable, rating),
-        destination_months(month, score, note)
+        destination_months(month, score, note, solo_female_override)
       `)
       .order("name"),
     supabase.from("states").select("id, name, region").order("display_order"),

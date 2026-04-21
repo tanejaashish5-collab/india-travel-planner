@@ -18,6 +18,7 @@ interface DestinationCardProps {
   budget_tier?: string | null;
   price_range?: string | null;
   translations?: Record<string, Record<string, string>>;
+  solo_female_score?: number | null;
 }
 
 const BUDGET_LABEL: Record<string, string> = {
@@ -57,6 +58,7 @@ export function DestinationCard({
   budget_tier,
   price_range,
   translations,
+  solo_female_score,
 }: DestinationCardProps) {
   const locale = useLocale();
   const t = useTranslations("months");
@@ -92,11 +94,23 @@ export function DestinationCard({
             <span className="font-mono text-[10px] tracking-[0.18em] uppercase opacity-80 mr-1.5">{monthShort}</span>
             {scoreToShow}/5 — {ts(String(scoreToShow))}
           </span>
-          {kids_suitable !== null && (
-            <span className="text-xs text-muted-foreground">
-              {kids_suitable ? `👶 ${kids_rating}/5` : "Adults only"}
-            </span>
-          )}
+          <span className="flex items-center gap-2">
+            {typeof solo_female_score === "number" && solo_female_score >= 4 && (
+              <span
+                className="inline-flex items-center gap-1 rounded-full border border-rose-400/30 bg-rose-500/10 px-2 py-0.5 text-xs text-rose-200"
+                title="Solo-female friendly — see Safety tab"
+                aria-label={`Solo-female score ${solo_female_score} of 5`}
+              >
+                <span className="font-serif italic" style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}>♀</span>
+                <span className="font-medium">{solo_female_score}/5</span>
+              </span>
+            )}
+            {kids_suitable !== null && (
+              <span className="text-xs text-muted-foreground">
+                {kids_suitable ? `👶 ${kids_rating}/5` : "Adults only"}
+              </span>
+            )}
+          </span>
         </div>
       )}
 

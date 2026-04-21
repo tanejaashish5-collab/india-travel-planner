@@ -58,6 +58,8 @@ interface DestMonthRow {
   why_not: string | null;
   verdict?: string | null;
   skip_reason?: string | null;
+  solo_female_score?: number | null;
+  solo_female_override?: number | null;
 }
 
 interface WhereToGoContentProps {
@@ -202,6 +204,7 @@ export function WhereToGoContent({
   const [activeVerdicts, setActiveVerdicts] = useState<Set<"go" | "wait" | "skip">>(
     new Set(["go", "wait", "skip"]),
   );
+  const [soloFemaleOnly, setSoloFemaleOnly] = useState(false);
 
   const toggleVerdict = (v: "go" | "wait" | "skip") => {
     setActiveVerdicts((prev) => {
@@ -220,7 +223,14 @@ export function WhereToGoContent({
   // Remove Weekly Picks hero destinations from the bucket lists so the same
   // destination doesn't render twice on the page (hero above + Go Now below).
   const excluded = new Set(excludeIds ?? []);
-  const filteredData = excluded.size > 0 ? data.filter((d) => !excluded.has(d.id)) : data;
+  const afterExclude = excluded.size > 0 ? data.filter((d) => !excluded.has(d.id)) : data;
+  // Solo-female filter uses coalesce(month override, annual). Threshold: >= 4.
+  const filteredData = soloFemaleOnly
+    ? afterExclude.filter((d) => {
+        const eff = d.solo_female_override ?? d.solo_female_score ?? null;
+        return typeof eff === "number" && eff >= 4;
+      })
+    : afterExclude;
   const score5All = filteredData.filter((d) => d.score === 5);
   const score4All = filteredData.filter((d) => d.score === 4);
   const score3All = filteredData.filter((d) => d.score === 3);
@@ -352,6 +362,23 @@ export function WhereToGoContent({
               </button>
             );
           })}
+          {/* Solo-female friendly toggle — filters to effective score >= 4 */}
+          <button
+            type="button"
+            onClick={() => setSoloFemaleOnly((v) => !v)}
+            aria-pressed={soloFemaleOnly}
+            title="Show only destinations with solo-female score 4 or 5 for this month"
+            className={`group inline-flex items-center gap-2 rounded-full border px-4 py-2 text-xs font-semibold tracking-[0.15em] transition-all ${
+              soloFemaleOnly
+                ? "border-rose-400/50 bg-rose-500/10 text-rose-200"
+                : "border-rose-500/20 bg-transparent text-rose-300/60 opacity-70 hover:opacity-100"
+            }`}
+          >
+            <span className="font-serif italic font-medium text-base tracking-tight" style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}>
+              ♀
+            </span>
+            Solo-female
+          </button>
         </div>
       </FadeIn>
 

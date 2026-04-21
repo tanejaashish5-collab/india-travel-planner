@@ -187,6 +187,8 @@ async function getMonthData(monthSlug: string, stateId?: string) {
       why_not,
       verdict,
       skip_reason,
+      solo_female_override,
+      solo_female_override_note,
       destination_id,
       destination:destinations!inner(
         id,
@@ -195,6 +197,7 @@ async function getMonthData(monthSlug: string, stateId?: string) {
         difficulty,
         elevation_m,
         state_id,
+        solo_female_score,
         state:states(name)
       )
     `;
@@ -229,6 +232,33 @@ async function getMonthData(monthSlug: string, stateId?: string) {
     const r2 = await fallback;
     data = (r2.data as unknown as any[] | null) ?? null;
     error = r2.error;
+  }
+
+  // Second fallback: pre-migration-012 — strip solo_female_* columns too.
+  if (error && /solo_female/.test(error.message)) {
+    const MIN_SELECT = `
+      score,
+      note,
+      why_not,
+      verdict,
+      skip_reason,
+      destination_id,
+      destination:destinations!inner(
+        id,
+        name,
+        tagline,
+        difficulty,
+        elevation_m,
+        state_id,
+        state:states(name)
+      )
+    `;
+    let fallback = supabase.from("destination_months").select(MIN_SELECT).eq("month", monthNum);
+    if (stateId) fallback = fallback.eq("destination.state_id", stateId);
+    fallback = fallback.order("score", { ascending: false }).order("destination_id", { ascending: true });
+    const r3 = await fallback;
+    data = (r3.data as unknown as any[] | null) ?? null;
+    error = r3.error;
   }
 
   if (error || !data) return null;
@@ -399,6 +429,8 @@ export default async function WhereToGoPage({
               why_not: d.why_not ?? null,
               verdict: (d as any).verdict ?? null,
               skip_reason: (d as any).skip_reason ?? null,
+              solo_female_score: dest?.solo_female_score ?? null,
+              solo_female_override: (d as any).solo_female_override ?? null,
             };
           })}
           scoreCounts={scoreCounts}

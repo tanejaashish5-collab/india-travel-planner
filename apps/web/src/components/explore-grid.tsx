@@ -27,8 +27,9 @@ interface DestinationData {
     | Array<{ suitable: boolean; rating: number }>
     | null;
   destination_months:
-    | Array<{ month: number; score: number; note: string }>
+    | Array<{ month: number; score: number; note: string; solo_female_override?: number | null }>
     | null;
+  solo_female_score?: number | null;
 }
 
 export function ExploreGrid({
@@ -58,6 +59,7 @@ export function ExploreGrid({
     stateId: searchParams.get("state") ?? "",
     month: Number(searchParams.get("month")) || currentMonth,
     kidsOnly: searchParams.get("kids") === "true",
+    soloFemaleOnly: searchParams.get("solof") === "true",
     sort: searchParams.get("sort") ?? "",
     difficulty: searchParams.get("difficulty") ?? "",
     search: searchParams.get("q") ?? "",
@@ -72,6 +74,7 @@ export function ExploreGrid({
     if (filters.stateId) params.set("state", filters.stateId);
     if (filters.month !== currentMonth) params.set("month", String(filters.month));
     if (filters.kidsOnly) params.set("kids", "true");
+    if (filters.soloFemaleOnly) params.set("solof", "true");
     if (filters.difficulty) params.set("difficulty", filters.difficulty);
     if (filters.search) params.set("q", filters.search);
     if (filters.sort) params.set("sort", filters.sort);
@@ -94,6 +97,15 @@ export function ExploreGrid({
           ? d.kids_friendly[0]
           : d.kids_friendly;
         if (!kf?.suitable) return false;
+      }
+
+      // Solo-female filter — coalesce month override with annual
+      if (filters.soloFemaleOnly) {
+        const override = filters.month > 0
+          ? d.destination_months?.find((m) => m.month === filters.month)?.solo_female_override ?? null
+          : null;
+        const effective = override != null ? override : (d.solo_female_score ?? null);
+        if (effective == null || effective < 4) return false;
       }
 
       // Month score filter (only show score 3+ for selected month)
@@ -382,11 +394,23 @@ function DestinationCard({
               : te("selectMonth")}
           </span>
         )}
-        {kf && (
-          <span className="text-xs font-medium text-muted-foreground">
-            {kf.suitable ? `👶 ${kf.rating}/5` : te("adultsOnly")}
-          </span>
-        )}
+        <span className="flex items-center gap-2">
+          {typeof dest.solo_female_score === "number" && dest.solo_female_score >= 4 && (
+            <span
+              className="inline-flex items-center gap-1 rounded-full border border-rose-400/30 bg-rose-500/10 px-2 py-0.5 text-xs text-rose-200"
+              title="Solo-female friendly — see Safety tab"
+              aria-label={`Solo-female score ${dest.solo_female_score} of 5`}
+            >
+              <span className="font-serif italic" style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}>♀</span>
+              <span className="font-medium">{dest.solo_female_score}/5</span>
+            </span>
+          )}
+          {kf && (
+            <span className="text-xs font-medium text-muted-foreground">
+              {kf.suitable ? `👶 ${kf.rating}/5` : te("adultsOnly")}
+            </span>
+          )}
+        </span>
       </div>
 
       {/* Name & tagline (non-featured only — featured shows overlaid on image) */}

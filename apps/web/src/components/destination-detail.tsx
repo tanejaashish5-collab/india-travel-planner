@@ -23,6 +23,7 @@ import { ReviewsList } from "./reviews-list";
 import { ReviewForm } from "./review-form";
 import { BookingHandoff } from "./booking-handoff";
 import VerdictCard from "./verdict-card";
+import SoloFemaleSafetySection from "./solo-female-safety-section";
 import { SuggestEditButton } from "./suggest-edit-button";
 import MethodologyStrip from "./methodology-strip";
 import KnowBeforeYouGo from "./know-before-you-go";
@@ -973,10 +974,20 @@ export function DestinationDetail({ dest }: { dest: any }) {
               </section>
             )}
 
-            {activeTab === "safety" && cc && (
-              <section>
+            {activeTab === "safety" && (
+              <section className="space-y-6">
                 <h2 id="section-safety" className="text-xl font-semibold mb-4">{t("confidence")}</h2>
-                <ConfidenceCardComponent {...cc} />
+                <SoloFemaleSafetySection
+                  score={dest.solo_female_score ?? null}
+                  note={dest.solo_female_note ?? null}
+                  monthRows={months.map((m: any) => ({
+                    month: m.month,
+                    solo_female_override: m.solo_female_override ?? null,
+                    solo_female_override_note: m.solo_female_override_note ?? null,
+                  }))}
+                  hubHref={`/${locale}/blog/solo-female-india-month-by-month`}
+                />
+                {cc && <ConfidenceCardComponent {...cc} />}
               </section>
             )}
 
