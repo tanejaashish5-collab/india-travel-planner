@@ -178,9 +178,10 @@ async function getMonthData(monthSlug: string, stateId?: string) {
 
   const monthNum = MONTH_NUMBER[monthSlug];
 
-  let query = supabase
-    .from("destination_months")
-    .select(`
+  // NOTE: content_reviewed_at is added to the select string. Before migration
+  // 010 is applied, the column doesn't exist and including it would 500 the
+  // query. We try-select it, fall back without (see below).
+  const BASE_SELECT = `
       score,
       note,
       why_not,
@@ -196,7 +197,11 @@ async function getMonthData(monthSlug: string, stateId?: string) {
         state_id,
         state:states(name)
       )
-    `)
+    `;
+
+  let query = supabase
+    .from("destination_months")
+    .select(`${BASE_SELECT}, content_reviewed_at`)
     .eq("month", monthNum);
 
   if (stateId) {
@@ -207,7 +212,24 @@ async function getMonthData(monthSlug: string, stateId?: string) {
     .order("score", { ascending: false })
     .order("destination_id", { ascending: true });
 
-  const { data, error } = await query;
+  let result = await query;
+  let data: any[] | null = (result.data as unknown as any[] | null) ?? null;
+  let error = result.error;
+
+  // Fallback: if content_reviewed_at column doesn't exist yet (pre-migration-010),
+  // re-run the query without that field. Keeps /where-to-go/* serving until
+  // the migration is applied.
+  if (error && /content_reviewed_at/.test(error.message)) {
+    let fallback = supabase
+      .from("destination_months")
+      .select(BASE_SELECT)
+      .eq("month", monthNum);
+    if (stateId) fallback = fallback.eq("destination.state_id", stateId);
+    fallback = fallback.order("score", { ascending: false }).order("destination_id", { ascending: true });
+    const r2 = await fallback;
+    data = (r2.data as unknown as any[] | null) ?? null;
+    error = r2.error;
+  }
 
   if (error || !data) return null;
 
@@ -252,6 +274,17 @@ export default async function WhereToGoPage({
     const s = d.score ?? 0;
     if (scoreCounts[s] !== undefined) scoreCounts[s]++;
   }
+
+  // Oldest review stamp across this month's destinations. If ANY is null,
+  // we pass null so the strip shows "Review pending on some destinations".
+  const anyNull = data.some((d) => (d as any).content_reviewed_at == null);
+  const monthReviewedAt = anyNull
+    ? null
+    : data.reduce<string | null>((oldest, d) => {
+        const ts = (d as any).content_reviewed_at as string | null;
+        if (!ts) return oldest;
+        return oldest && oldest < ts ? oldest : ts;
+      }, null);
 
   // BreadcrumbList schema
   const breadcrumbItems = [
@@ -370,6 +403,7 @@ export default async function WhereToGoPage({
           })}
           scoreCounts={scoreCounts}
           destinationCount={stats.destinations}
+          monthReviewedAt={monthReviewedAt}
         />
       </main>
     </div>

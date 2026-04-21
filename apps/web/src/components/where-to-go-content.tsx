@@ -74,6 +74,8 @@ interface WhereToGoContentProps {
   excludeIds?: string[];
   /** Live destination count for the methodology strip. Parent fetches via getAppStats(). */
   destinationCount?: number;
+  /** Oldest content_reviewed_at across the month's destinations. Parent aggregates from destination_months. */
+  monthReviewedAt?: string | null;
 }
 
 // ─── Helpers ────────────────────────────────────────────────
@@ -193,6 +195,7 @@ export function WhereToGoContent({
   scoreCounts,
   excludeIds,
   destinationCount,
+  monthReviewedAt,
 }: WhereToGoContentProps) {
   const locale = useLocale();
   const [fairExpanded, setFairExpanded] = useState(false);
@@ -245,7 +248,7 @@ export function WhereToGoContent({
       <FadeIn>
         <div className="rounded-xl border border-border/40 bg-card/40 backdrop-blur-sm px-4 py-3 sm:px-5 sm:py-3.5">
           <div className="font-mono text-[10px] sm:text-[11px] tracking-[0.2em] uppercase text-muted-foreground">
-            Method · {destinationCount ?? 480} destinations × 12 months × 6 dimensions = {((destinationCount ?? 480) * 12 * 6).toLocaleString()} data points · Reviewed {new Date().toISOString().slice(0, 10)}
+            Method · {destinationCount ?? 480} destinations × 12 months × 6 dimensions = {((destinationCount ?? 480) * 12 * 6).toLocaleString()} data points · {monthReviewedAt ? `Oldest review ${new Date(monthReviewedAt).toISOString().slice(0, 7)}` : "Review pending on some destinations"}
           </div>
         </div>
       </FadeIn>
