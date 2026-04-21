@@ -7,6 +7,7 @@ import React, { useState } from "react";
 import { SCORE_COLORS, DIFFICULTY_COLORS } from "@/lib/design-tokens";
 import { FadeIn, ScrollReveal } from "./animated-hero";
 import { ArticleCallout } from "./article-callout";
+import HowToDoIt from "./how-to-do-it";
 
 const CATEGORY_LABELS: Record<string, string> = {
   "best-time": "Best Time to Visit",
@@ -97,6 +98,7 @@ interface Destination {
   difficulty: string;
   elevation_m: number | null;
   budget_tier: string | null;
+  state_id?: string | null;
   state: { name: string } | Array<{ name: string }> | null;
   destination_months: Array<{ month: number; score: number; note: string; why_go?: string; why_not?: string }> | null;
   kids_friendly: { suitable: boolean; rating: number; reasons?: string[] } | Array<{ suitable: boolean; rating: number; reasons?: string[] }> | null;
@@ -677,6 +679,26 @@ export function BlogArticle({
             ) : <div />}
           </div>
         </ScrollReveal>
+      )}
+
+      {destinations.length > 0 && (
+        (() => {
+          const d = destinations[0];
+          const cc = Array.isArray(d.confidence_cards) ? d.confidence_cards[0] : d.confidence_cards;
+          return (
+            <HowToDoIt
+              locale={locale}
+              destinationId={d.id}
+              destinationName={d.name}
+              months={(d.destination_months ?? []).map((m) => ({ month: m.month, score: m.score }))}
+              reach={cc?.reach}
+              emergency={cc?.emergency}
+              sleep={cc?.sleep}
+              stateId={d.state_id ?? null}
+              currentMonth={currentMonth}
+            />
+          );
+        })()
       )}
 
       {/* Back to all articles */}

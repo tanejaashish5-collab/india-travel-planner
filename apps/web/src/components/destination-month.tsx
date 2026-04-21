@@ -7,6 +7,7 @@ import { NewsletterSignup } from "./newsletter-signup";
 import { WhatsAppShare } from "./whatsapp-share";
 import { destinationImage } from "@/lib/image-url";
 import VerdictCard from "./verdict-card";
+import HowToDoIt from "./how-to-do-it";
 
 // ── Constants ──────────────────────────────────────────────────
 
@@ -749,6 +750,18 @@ export function DestinationMonth({
       <PracticalDetails />
       <PackList />
       <NearbySection />
+
+      <HowToDoIt
+        locale={locale}
+        destinationId={destination.id}
+        destinationName={destination.name}
+        months={allMonths}
+        reach={confidence?.reach}
+        emergency={confidence?.emergency}
+        sleep={confidence?.sleep}
+        stateId={destination.state_id}
+        currentMonth={monthNum}
+      />
 
       {/* Newsletter */}
       <NewsletterSignup />

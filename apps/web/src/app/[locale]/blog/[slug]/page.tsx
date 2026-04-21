@@ -107,11 +107,11 @@ async function getDestinationData(destinationIds: string[]) {
   const { data } = await supabase
     .from("destinations")
     .select(`
-      id, name, tagline, difficulty, elevation_m, budget_tier,
+      id, name, tagline, difficulty, elevation_m, budget_tier, state_id,
       state:states(name),
       destination_months(month, score, note, why_go, why_not),
       kids_friendly(suitable, rating, reasons),
-      confidence_cards(safety_rating, network, emergency, reach)
+      confidence_cards(safety_rating, network, emergency, reach, sleep)
     `)
     .in("id", destinationIds);
 
