@@ -95,7 +95,7 @@ for (const file of files) {
   console.log(`  ${readingTime},`);
   console.log(`  ${sqlQuote(coverUrl)},`);
   console.log(`  ${sqlTextArray(tags)},`);
-  console.log(`  ${sqlJsonb(destinations)},`);
+  console.log(`  ${sqlTextArray(destinations)},`);
   console.log(`  ${sqlQuote(seoTitle)},`);
   console.log(`  ${sqlQuote(seoDescription)},`);
   console.log(`  ${sqlQuote(excerpt)},`);
