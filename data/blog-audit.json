@@ -1,0 +1,999 @@
+[
+  {
+    "slug": "3-idiots-ladakh-trail",
+    "destinations": [
+      "pangong-lake",
+      "leh"
+    ],
+    "candidate": "Spangmik Villa",
+    "sentence": "# Spangmik Village (Pangong)",
+    "classification": "FALSE_POSITIVE",
+    "reason": "known monument/categorical",
+    "dbName": null
+  },
+  {
+    "slug": "48-hours-jaisalmer",
+    "destinations": [
+      "jaisalmer"
+    ],
+    "candidate": "Desert Camp",
+    "sentence": "# Day 1, Evening (4:00 PM – Next Morning): Sam Sand Dunes and Desert Camp",
+    "classification": "CLOSE_DB_MATCH",
+    "reason": "substring of 'thar desert camp'",
+    "dbName": "thar desert camp"
+  },
+  {
+    "slug": "48-hours-jaisalmer",
+    "destinations": [
+      "jaisalmer"
+    ],
+    "candidate": "Desert Camp Dinner",
+    "sentence": "*7:00 PM — Desert Camp Dinner**",
+    "classification": "FALSE_POSITIVE",
+    "reason": "known monument/categorical",
+    "dbName": null
+  },
+  {
+    "slug": "best-time-to-visit-nagaland",
+    "destinations": [
+      "kohima",
+      "mon",
+      "dzukou-valley"
+    ],
+    "candidate": "Kisama Heritage Villa",
+    "sentence": "Dec 1-10 at Kisama Heritage Village (12km from Kohima).",
+    "classification": "FALSE_POSITIVE",
+    "reason": "known monument/categorical",
+    "dbName": null
+  },
+  {
+    "slug": "best-time-to-visit-rishikesh",
+    "destinations": [
+      "rishikesh"
+    ],
+    "candidate": "Beatles Ashram",
+    "sentence": "Rafting, yoga, bungee jumping, Beatles Ashram — the list is long.",
+    "classification": "FALSE_POSITIVE",
+    "reason": "known monument/categorical",
+    "dbName": null
+  },
+  {
+    "slug": "compare-leh-turtuk",
+    "destinations": [
+      "leh"
+    ],
+    "candidate": "India's Last Villa",
+    "sentence": "# Turtuk — India's Last Village",
+    "classification": "FALSE_POSITIVE",
+    "reason": "known monument/categorical",
+    "dbName": null
+  },
+  {
+    "slug": "complete-guide-chitkul",
+    "destinations": [
+      "chitkul"
+    ],
+    "candidate": "Hotel Chitkul",
+    "sentence": "The Wanderer's Nest and Hotel Chitkul get decent reviews.",
+    "classification": "MATCH",
+    "reason": "exact + correct destination",
+    "dbName": null
+  },
+  {
+    "slug": "complete-guide-hanle",
+    "destinations": [
+      "hanle"
+    ],
+    "candidate": "An Inn",
+    "sentence": "An Inner Line Permit (ILP) — standard for Ladakh, obtainable in Leh in 1-2 hours",
+    "classification": "FALSE_POSITIVE",
+    "reason": "known monument/categorical",
+    "dbName": null
+  },
+  {
+    "slug": "complete-guide-kargil",
+    "destinations": [
+      "kargil"
+    ],
+    "candidate": "Hotel D'Zojila",
+    "sentence": "*Mid-range (Rs 2,000-4,000):** Hotel D'Zojila, a vetted mid-tier Kargil hotel, and one of the named Kargil hotels are the better options in town.",
+    "classification": "MATCH",
+    "reason": "exact + correct destination",
+    "dbName": null
+  },
+  {
+    "slug": "complete-guide-kausani",
+    "destinations": [
+      "kausani"
+    ],
+    "candidate": "Gandhi's Anasakti Ashram",
+    "sentence": "The Himalayan panorama from this ridge town in Uttarakhand's Bageshwar district — a 300 km sweep from Chaukhamba to Panchachuli, including Trisul and Nanda Devi — so moved him that he called it \"the Switzerland of India\" and wrote his comme",
+    "classification": "FALSE_POSITIVE",
+    "reason": "known monument/categorical",
+    "dbName": null
+  },
+  {
+    "slug": "complete-guide-kishtwar",
+    "destinations": [
+      "kishtwar"
+    ],
+    "candidate": "Hotel Chenab View",
+    "sentence": "*Mid-range (₹1,200-2,500/night):** Hotel Chenab View, a few government-run tourist bungalows.",
+    "classification": "MATCH",
+    "reason": "exact + correct destination",
+    "dbName": null
+  },
+  {
+    "slug": "complete-guide-lahaul-valley",
+    "destinations": [
+      "lahaul-valley",
+      "keylong"
+    ],
+    "candidate": "HPTDC Hotel Chandrabhaga Keylong",
+    "sentence": "**Mid-range (Rs 2,000-4,000):** Hotel Dekyid, Hotel Tashi Delek, and HPTDC Hotel Chandrabhaga Keylong are the better options.",
+    "classification": "MATCH",
+    "reason": "exact + correct destination",
+    "dbName": null
+  },
+  {
+    "slug": "complete-guide-lahaul-valley",
+    "destinations": [
+      "lahaul-valley",
+      "keylong"
+    ],
+    "candidate": "Hotel Dekyid",
+    "sentence": "**Mid-range (Rs 2,000-4,000):** Hotel Dekyid, Hotel Tashi Delek, and HPTDC Hotel Chandrabhaga Keylong are the better options.",
+    "classification": "MATCH",
+    "reason": "exact + correct destination",
+    "dbName": null
+  },
+  {
+    "slug": "complete-guide-lahaul-valley",
+    "destinations": [
+      "lahaul-valley",
+      "keylong"
+    ],
+    "candidate": "Hotel Tashi Delek",
+    "sentence": "**Mid-range (Rs 2,000-4,000):** Hotel Dekyid, Hotel Tashi Delek, and HPTDC Hotel Chandrabhaga Keylong are the better options.",
+    "classification": "MATCH",
+    "reason": "exact + correct destination",
+    "dbName": null
+  },
+  {
+    "slug": "complete-guide-lamayuru",
+    "destinations": [
+      "lamayuru"
+    ],
+    "candidate": "Hotel Moonland",
+    "sentence": "*Best options:** Hotel Moonland and a mid-tier Lamayuru hotel (see [Lamayuru stays](/en/destination/lamayuru)) are the most established.",
+    "classification": "MATCH",
+    "reason": "exact + correct destination",
+    "dbName": null
+  },
+  {
+    "slug": "complete-guide-landour",
+    "destinations": [
+      "landour"
+    ],
+    "candidate": "Rokeby Manor",
+    "sentence": "Rokeby Manor and Landour Bakehouse (also a restaurant) are the best-known upscale options.",
+    "classification": "MATCH",
+    "reason": "exact + correct destination",
+    "dbName": null
+  },
+  {
+    "slug": "complete-guide-likir",
+    "destinations": [
+      "likir"
+    ],
+    "candidate": "Village Homestay",
+    "sentence": "*Village Homestays:** A few families in Likir village offer rooms.",
+    "classification": "FALSE_POSITIVE",
+    "reason": "known monument/categorical",
+    "dbName": null
+  },
+  {
+    "slug": "complete-guide-munsiyari",
+    "destinations": [
+      "munsiyari"
+    ],
+    "candidate": "Hotel Milam Inn",
+    "sentence": "Private guesthouses like Hotel Milam Inn and Panchachuli House offer cleaner rooms with better service.",
+    "classification": "MATCH",
+    "reason": "exact + correct destination",
+    "dbName": null
+  },
+  {
+    "slug": "complete-guide-osian",
+    "destinations": [
+      "osian"
+    ],
+    "candidate": "Reggie's Camel Camp",
+    "sentence": "The camel safari operators (Reggie's Camel Camps is the best known) run their own camps outside town with tents, mattresses, and meals included.",
+    "classification": "CLOSE_DB_MATCH",
+    "reason": "substring of 'reggie's camel camps'",
+    "dbName": "reggie's camel camps"
+  },
+  {
+    "slug": "complete-guide-sangla-valley",
+    "destinations": [
+      "sangla"
+    ],
+    "candidate": "Banjara Camp",
+    "sentence": "*Mid-range (₹2,000-4,500/night):** Banjara Camp and Retreat Sangla and Retreat Sangla offers riverside cottage tents — one of the better glamping experiences in Himachal. a Chitkul cottage (see [Chitkul stays](/en/destination/chitkul)) and ",
+    "classification": "CLOSE_DB_MATCH",
+    "reason": "substring of 'banjara camp and retreat sangla'",
+    "dbName": "banjara camp and retreat sangla"
+  },
+  {
+    "slug": "complete-guide-sangla-valley",
+    "destinations": [
+      "sangla"
+    ],
+    "candidate": "Retreat Sangla",
+    "sentence": "*Mid-range (₹2,000-4,500/night):** Banjara Camp and Retreat Sangla and Retreat Sangla offers riverside cottage tents — one of the better glamping experiences in Himachal. a Chitkul cottage (see [Chitkul stays](/en/destination/chitkul)) and ",
+    "classification": "CLOSE_DB_MATCH",
+    "reason": "substring of 'banjara camp and retreat sangla'",
+    "dbName": "banjara camp and retreat sangla"
+  },
+  {
+    "slug": "complete-guide-tawang",
+    "destinations": [
+      "tawang"
+    ],
+    "candidate": "Hotel Tawang Heights",
+    "sentence": "*Mid-range (₹1,500-3,000/night):** Hotel Tawang Heights, one of the mid-tier Tawang hotels — private bathrooms, room heaters, and decent food.",
+    "classification": "MATCH",
+    "reason": "exact + correct destination",
+    "dbName": null
+  },
+  {
+    "slug": "complete-guide-umlingla",
+    "destinations": [
+      "hanle"
+    ],
+    "candidate": "Everest Base Camp",
+    "sentence": "At 5,883 metres above sea level, it sits higher than Everest Base Camp (5,364m).",
+    "classification": "FALSE_POSITIVE",
+    "reason": "known monument/categorical",
+    "dbName": null
+  },
+  {
+    "slug": "complete-guide-umlingla",
+    "destinations": [
+      "hanle"
+    ],
+    "candidate": "Padma Homestay",
+    "sentence": "Padma Homestay (Sonam's Guest House) and similar local homestays: ₹1,000-1,500/night.",
+    "classification": "CLOSE_DB_MATCH",
+    "reason": "substring of 'padma homestay sonam's guest house'",
+    "dbName": "padma homestay sonam's guest house"
+  },
+  {
+    "slug": "complete-guide-umlingla",
+    "destinations": [
+      "hanle"
+    ],
+    "candidate": "Sonam's Guest House",
+    "sentence": "Padma Homestay (Sonam's Guest House) and similar local homestays: ₹1,000-1,500/night.",
+    "classification": "CLOSE_DB_MATCH",
+    "reason": "substring of 'padma homestay sonam's guest house'",
+    "dbName": "padma homestay sonam's guest house"
+  },
+  {
+    "slug": "data-story-hidden-gems",
+    "destinations": [
+      "chopta",
+      "bir-billing"
+    ],
+    "candidate": "Stay Hidden",
+    "sentence": "# Why These Stay Hidden",
+    "classification": "FALSE_POSITIVE",
+    "reason": "known monument/categorical",
+    "dbName": null
+  },
+  {
+    "slug": "first-48-hours-delhi-survival-guide",
+    "destinations": [
+      "delhi"
+    ],
+    "candidate": "Hauz Khas Villa",
+    "sentence": "After Qutub, head to **Hauz Khas Village** (15-minute drive).",
+    "classification": "FALSE_POSITIVE",
+    "reason": "known monument/categorical",
+    "dbName": null
+  },
+  {
+    "slug": "hampi-in-february-scored",
+    "destinations": [
+      "hampi"
+    ],
+    "candidate": "Goan Corner Guesthouse",
+    "sentence": "Mid-range on Hippie Island runs ₹2,000–3,500/night (Goan Corner Guesthouse is our pick — see the [Hampi stays section](/en/destination/hampi) for vetted options).",
+    "classification": "MATCH",
+    "reason": "exact + correct destination",
+    "dbName": null
+  },
+  {
+    "slug": "india-prices-what-things-actually-cost",
+    "destinations": [
+      "delhi",
+      "agra",
+      "jaipur",
+      "varanasi",
+      "rishikesh",
+      "manali",
+      "udaipur"
+    ],
+    "candidate": "Houseboat Kerala",
+    "sentence": "Houseboat Kerala (1 night) | ₹5,000-8,000 | ₹8,000-15,000 |",
+    "classification": "FALSE_POSITIVE",
+    "reason": "known monument/categorical",
+    "dbName": null
+  },
+  {
+    "slug": "india-safe-solo-female-travelers",
+    "destinations": [
+      "shillong",
+      "gangtok",
+      "dharamshala",
+      "mcleodganj",
+      "rishikesh",
+      "leh",
+      "udaipur",
+      "jaipur",
+      "pushkar",
+      "varanasi"
+    ],
+    "candidate": "Moustache Hostel",
+    "sentence": "**Hostels with women-only dorms:** Zostel, goSTOPS, and Moustache Hostel all offer female-only dorm rooms across India.",
+    "classification": "MATCH",
+    "reason": "exact + correct destination",
+    "dbName": null
+  },
+  {
+    "slug": "india-tourist-scams-how-to-avoid",
+    "destinations": [
+      "delhi",
+      "agra",
+      "varanasi",
+      "jaipur",
+      "srinagar",
+      "haridwar"
+    ],
+    "candidate": "Hotel Is Closed",
+    "sentence": "# 1. \"Your Hotel Is Closed / Burned Down\"",
+    "classification": "FALSE_POSITIVE",
+    "reason": "known monument/categorical",
+    "dbName": null
+  },
+  {
+    "slug": "is-goa-safe-for-solo-female-in-december",
+    "destinations": [
+      "calangute-baga",
+      "anjuna",
+      "vagator",
+      "palolem",
+      "agonda",
+      "mandrem",
+      "morjim",
+      "old-goa"
+    ],
+    "candidate": "Portuguese-quarter B&B",
+    "sentence": "Portuguese-quarter B&Bs are well-regulated and female-run.",
+    "classification": "FALSE_POSITIVE",
+    "reason": "known monument/categorical",
+    "dbName": null
+  },
+  {
+    "slug": "is-kashmir-in-january-worth-it",
+    "destinations": [
+      "gulmarg",
+      "srinagar",
+      "pahalgam"
+    ],
+    "candidate": "Hotel Heevan",
+    "sentence": "Accommodation fills 30 days ahead — Kolahoi Green Heights Gulmarg, Hotel Heevan, and The Khyber are the mid-to-top tier.",
+    "classification": "MATCH",
+    "reason": "exact + correct destination",
+    "dbName": null
+  },
+  {
+    "slug": "is-rishikesh-safe-for-solo-female",
+    "destinations": [
+      "rishikesh",
+      "haridwar",
+      "dehradun"
+    ],
+    "candidate": "Anand Prakash Yoga Ashram",
+    "sentence": "Zostel Rishikesh, Anand Prakash Yoga Ashram, and Parmarth Niketan are the anchors; we don't recommend walk-in ashrams.",
+    "classification": "MATCH",
+    "reason": "exact + correct destination",
+    "dbName": null
+  },
+  {
+    "slug": "is-rishikesh-safe-for-solo-female",
+    "destinations": [
+      "rishikesh",
+      "haridwar",
+      "dehradun"
+    ],
+    "candidate": "Beatles Ashram",
+    "sentence": "**Beatles Ashram (Chaurasi Kutia)** — on-foot from Laxman Jhula.",
+    "classification": "FALSE_POSITIVE",
+    "reason": "known monument/categorical",
+    "dbName": null
+  },
+  {
+    "slug": "kashmir-for-solo-female-what-matters",
+    "destinations": [
+      "srinagar",
+      "gulmarg",
+      "pahalgam",
+      "sonamarg",
+      "kokernag",
+      "verinag"
+    ],
+    "candidate": "Hotel Heevan",
+    "sentence": "**Stays: named operator only.** Book Sukoon Houseboat, Hotel Heevan, Pahalgam Hotel, The Khyber Himalayan Resort & Spa — or any stay listed on our destination pages.",
+    "classification": "MATCH",
+    "reason": "exact + correct destination",
+    "dbName": null
+  },
+  {
+    "slug": "kashmir-for-solo-female-what-matters",
+    "destinations": [
+      "srinagar",
+      "gulmarg",
+      "pahalgam",
+      "sonamarg",
+      "kokernag",
+      "verinag"
+    ],
+    "candidate": "Sukoon Houseboat",
+    "sentence": "The [Srinagar stays section](/en/destination/srinagar) lists the houseboats we've researched (Sukoon Houseboat is our pick).",
+    "classification": "MATCH",
+    "reason": "exact + correct destination",
+    "dbName": null
+  },
+  {
+    "slug": "kashmir-for-solo-female-what-matters",
+    "destinations": [
+      "srinagar",
+      "gulmarg",
+      "pahalgam",
+      "sonamarg",
+      "kokernag",
+      "verinag"
+    ],
+    "candidate": "Khyber Himalayan Resort",
+    "sentence": "*Gulmarg**: The [Khyber Himalayan Resort & Spa](/en/destination/gulmarg) is the only 5-star gated option we recommend without caveat.",
+    "classification": "CLOSE_DB_MATCH",
+    "reason": "substring of 'the khyber himalayan resort & spa'",
+    "dbName": "the khyber himalayan resort & spa"
+  },
+  {
+    "slug": "kashmir-with-kids-family-guide",
+    "destinations": [
+      "srinagar",
+      "gulmarg"
+    ],
+    "candidate": "Houseboat Reality",
+    "sentence": "# The Houseboat Reality",
+    "classification": "FALSE_POSITIVE",
+    "reason": "known monument/categorical",
+    "dbName": null
+  },
+  {
+    "slug": "lgbtq-travel-india-honest-assessment",
+    "destinations": [
+      "delhi",
+      "dharamshala",
+      "mcleodganj",
+      "rishikesh",
+      "manali",
+      "kolkata",
+      "udaipur",
+      "jaipur"
+    ],
+    "candidate": "Hauz Khas Villa",
+    "sentence": "Hauz Khas Village, Shahpur Jat, and Mehrauli have LGBTQ-friendly bars and cafes.",
+    "classification": "FALSE_POSITIVE",
+    "reason": "known monument/categorical",
+    "dbName": null
+  },
+  {
+    "slug": "monsoon-intelligence-report",
+    "destinations": [
+      "spiti-valley",
+      "leh",
+      "valley-of-flowers",
+      "rishikesh"
+    ],
+    "candidate": "Stay Away",
+    "sentence": "## Category 3: Monsoon Dangerous — Stay Away",
+    "classification": "FALSE_POSITIVE",
+    "reason": "known monument/categorical",
+    "dbName": null
+  },
+  {
+    "slug": "pushkar-in-october-scored",
+    "destinations": [
+      "pushkar"
+    ],
+    "candidate": "Inn Seventh Heaven",
+    "sentence": "The same ₹1,500/night Inn Seventh Heaven room triples.",
+    "classification": "MATCH",
+    "reason": "exact + correct destination",
+    "dbName": null
+  },
+  {
+    "slug": "rishikesh-vs-dharamshala",
+    "destinations": [
+      "rishikesh",
+      "dharamshala"
+    ],
+    "candidate": "Beatles Ashram",
+    "sentence": "Beatles Ashram graffiti.",
+    "classification": "FALSE_POSITIVE",
+    "reason": "known monument/categorical",
+    "dbName": null
+  },
+  {
+    "slug": "solo-female-india-month-by-month",
+    "destinations": [
+      "rishikesh",
+      "mcleodganj",
+      "amritsar",
+      "udaipur",
+      "kumarakom",
+      "gangtok",
+      "mandrem",
+      "agonda",
+      "marari",
+      "havelock-island",
+      "landour",
+      "auroville",
+      "har-ki-doon",
+      "anini",
+      "namdapha",
+      "moreh",
+      "tamenglong"
+    ],
+    "candidate": "Anand Prakash Yoga Ashram",
+    "sentence": "Zostel Rishikesh, Anand Prakash Yoga Ashram, Parmarth Niketan — all DB-verified.",
+    "classification": "MATCH",
+    "reason": "exact + correct destination",
+    "dbName": null
+  },
+  {
+    "slug": "solo-female-india-month-by-month",
+    "destinations": [
+      "rishikesh",
+      "mcleodganj",
+      "amritsar",
+      "udaipur",
+      "kumarakom",
+      "gangtok",
+      "mandrem",
+      "agonda",
+      "marari",
+      "havelock-island",
+      "landour",
+      "auroville",
+      "har-ki-doon",
+      "anini",
+      "namdapha",
+      "moreh",
+      "tamenglong"
+    ],
+    "candidate": "Marari Beach Resort",
+    "sentence": "Gated resort zone — Marari Beach Resort – CGH Earth is the anchor.",
+    "classification": "CLOSE_DB_MATCH",
+    "reason": "substring of 'marari beach resort cgh earth'",
+    "dbName": "marari beach resort cgh earth"
+  },
+  {
+    "slug": "solo-female-india-month-by-month",
+    "destinations": [
+      "rishikesh",
+      "mcleodganj",
+      "amritsar",
+      "udaipur",
+      "kumarakom",
+      "gangtok",
+      "mandrem",
+      "agonda",
+      "marari",
+      "havelock-island",
+      "landour",
+      "auroville",
+      "har-ki-doon",
+      "anini",
+      "namdapha",
+      "moreh",
+      "tamenglong"
+    ],
+    "candidate": "Kumarakom Lake Resort",
+    "sentence": "CGH Coconut Lagoon + Kumarakom Lake Resort.",
+    "classification": "MATCH",
+    "reason": "exact + correct destination",
+    "dbName": null
+  },
+  {
+    "slug": "solo-female-india-month-by-month",
+    "destinations": [
+      "rishikesh",
+      "mcleodganj",
+      "amritsar",
+      "udaipur",
+      "kumarakom",
+      "gangtok",
+      "mandrem",
+      "agonda",
+      "marari",
+      "havelock-island",
+      "landour",
+      "auroville",
+      "har-ki-doon",
+      "anini",
+      "namdapha",
+      "moreh",
+      "tamenglong"
+    ],
+    "candidate": "Rokeby Manor",
+    "sentence": "Rokeby Manor, Doma's Inn, the Char Dukan cluster.",
+    "classification": "MATCH",
+    "reason": "exact + correct destination",
+    "dbName": null
+  },
+  {
+    "slug": "solo-female-india-month-by-month",
+    "destinations": [
+      "rishikesh",
+      "mcleodganj",
+      "amritsar",
+      "udaipur",
+      "kumarakom",
+      "gangtok",
+      "mandrem",
+      "agonda",
+      "marari",
+      "havelock-island",
+      "landour",
+      "auroville",
+      "har-ki-doon",
+      "anini",
+      "namdapha",
+      "moreh",
+      "tamenglong"
+    ],
+    "candidate": "Doma's Inn",
+    "sentence": "Rokeby Manor, Doma's Inn, the Char Dukan cluster.",
+    "classification": "MATCH",
+    "reason": "exact + correct destination",
+    "dbName": null
+  },
+  {
+    "slug": "solo-female-manali-guide",
+    "destinations": [
+      "manali",
+      "mcleodganj",
+      "dharamshala",
+      "kasol",
+      "jibhi",
+      "kanatal"
+    ],
+    "candidate": "Snow Valley Resort",
+    "sentence": "**New Manali side**: Snow Valley Resorts is the reliable pick.",
+    "classification": "CLOSE_DB_MATCH",
+    "reason": "substring of 'snow valley resorts'",
+    "dbName": "snow valley resorts"
+  },
+  {
+    "slug": "solo-women-safe-destinations-india",
+    "destinations": [
+      "chandigarh",
+      "jaipur",
+      "shimla",
+      "mcleodganj",
+      "udaipur",
+      "haridwar",
+      "jodhpur",
+      "bikaner",
+      "bharatpur",
+      "sarnath",
+      "landour",
+      "corbett-national-park",
+      "kurukshetra",
+      "devprayag",
+      "anandpur-sahib"
+    ],
+    "candidate": "Zonal Hospital Dharamshala",
+    "sentence": "Zonal Hospital Dharamshala is modern.",
+    "classification": "FALSE_POSITIVE",
+    "reason": "known monument/categorical",
+    "dbName": null
+  },
+  {
+    "slug": "things-to-know-hampi-in-december",
+    "destinations": [
+      "hampi"
+    ],
+    "candidate": "Goan Corner Guesthouse",
+    "sentence": "Mid-range (₹3,000–6,000) is on the north bank — see the [Hampi stays section](/en/destination/hampi) for the vetted shortlist (Goan Corner Guesthouse is our pick).",
+    "classification": "MATCH",
+    "reason": "exact + correct destination",
+    "dbName": null
+  },
+  {
+    "slug": "things-to-know-rishikesh-in-april",
+    "destinations": [
+      "rishikesh"
+    ],
+    "candidate": "Swarg Ashram",
+    "sentence": "Swarg Ashram (across Ram Jhula) is the older pilgrim quarter.",
+    "classification": "FALSE_POSITIVE",
+    "reason": "known monument/categorical",
+    "dbName": null
+  },
+  {
+    "slug": "things-to-know-rishikesh-in-april",
+    "destinations": [
+      "rishikesh"
+    ],
+    "candidate": "Sivananda Ashram",
+    "sentence": "If you stay at Parmarth Niketan, Swargashram, or Sivananda Ashram, the rules include no meat, no alcohol, early-morning meditation attendance, and shared meals.",
+    "classification": "FALSE_POSITIVE",
+    "reason": "known monument/categorical",
+    "dbName": null
+  },
+  {
+    "slug": "things-to-know-rishikesh-in-april",
+    "destinations": [
+      "rishikesh"
+    ],
+    "candidate": "Beatles Ashram",
+    "sentence": "*8.** Beatles Ashram (Chaurasi Kutia) — now a forest-department managed site — is worth 90 minutes.",
+    "classification": "FALSE_POSITIVE",
+    "reason": "known monument/categorical",
+    "dbName": null
+  },
+  {
+    "slug": "tipping-in-india-guide",
+    "destinations": [
+      "delhi",
+      "agra",
+      "varanasi",
+      "jaipur",
+      "manali",
+      "srinagar",
+      "leh"
+    ],
+    "candidate": "Hotel Staff",
+    "sentence": "# Hotel Staff",
+    "classification": "FALSE_POSITIVE",
+    "reason": "known monument/categorical",
+    "dbName": null
+  },
+  {
+    "slug": "under-2000-rupees-stays-that-dont-compromise",
+    "destinations": [
+      "agra",
+      "amritsar",
+      "barmer",
+      "barot-valley",
+      "auli",
+      "alchi",
+      "almora",
+      "bharatpur",
+      "badrinath",
+      "bangus-valley",
+      "bhaderwah",
+      "anandpur-sahib"
+    ],
+    "candidate": "Desert Homestay Barmer",
+    "sentence": "## Desert Homestay Barmer, Barmer — Rs 800-1,500/night",
+    "classification": "MATCH",
+    "reason": "exact + correct destination",
+    "dbName": null
+  },
+  {
+    "slug": "under-2000-rupees-stays-that-dont-compromise",
+    "destinations": [
+      "agra",
+      "amritsar",
+      "barmer",
+      "barot-valley",
+      "auli",
+      "alchi",
+      "almora",
+      "bharatpur",
+      "badrinath",
+      "bangus-valley",
+      "bhaderwah",
+      "anandpur-sahib"
+    ],
+    "candidate": "Uhl Valley Homestay",
+    "sentence": "## Uhl Valley Homestay, Barot Valley — Rs 800-1,500/night",
+    "classification": "MATCH",
+    "reason": "exact + correct destination",
+    "dbName": null
+  },
+  {
+    "slug": "under-2000-rupees-stays-that-dont-compromise",
+    "destinations": [
+      "agra",
+      "amritsar",
+      "barmer",
+      "barot-valley",
+      "auli",
+      "alchi",
+      "almora",
+      "bharatpur",
+      "badrinath",
+      "bangus-valley",
+      "bhaderwah",
+      "anandpur-sahib"
+    ],
+    "candidate": "Red Pine Homestay",
+    "sentence": "## Red Pine Homestay, Barot Valley — Rs 800-1,500/night",
+    "classification": "MATCH",
+    "reason": "exact + correct destination",
+    "dbName": null
+  },
+  {
+    "slug": "under-2000-rupees-stays-that-dont-compromise",
+    "destinations": [
+      "agra",
+      "amritsar",
+      "barmer",
+      "barot-valley",
+      "auli",
+      "alchi",
+      "almora",
+      "bharatpur",
+      "badrinath",
+      "bangus-valley",
+      "bhaderwah",
+      "anandpur-sahib"
+    ],
+    "candidate": "River View Homestay",
+    "sentence": "## River View Homestay, Barot Valley — Rs 800-1,500/night",
+    "classification": "MATCH",
+    "reason": "exact + correct destination",
+    "dbName": null
+  },
+  {
+    "slug": "under-2000-rupees-stays-that-dont-compromise",
+    "destinations": [
+      "agra",
+      "amritsar",
+      "barmer",
+      "barot-valley",
+      "auli",
+      "alchi",
+      "almora",
+      "bharatpur",
+      "badrinath",
+      "bangus-valley",
+      "bhaderwah",
+      "anandpur-sahib"
+    ],
+    "candidate": "Maple Homestay",
+    "sentence": "## Maple Homestay, Auli — Rs 1,000-1,800/night",
+    "classification": "MATCH",
+    "reason": "exact + correct destination",
+    "dbName": null
+  },
+  {
+    "slug": "under-2000-rupees-stays-that-dont-compromise",
+    "destinations": [
+      "agra",
+      "amritsar",
+      "barmer",
+      "barot-valley",
+      "auli",
+      "alchi",
+      "almora",
+      "bharatpur",
+      "badrinath",
+      "bangus-valley",
+      "bhaderwah",
+      "anandpur-sahib"
+    ],
+    "candidate": "Bhandari's Guesthouse",
+    "sentence": "Bhandari's Guesthouse, Amritsar — Rs 1,200-2,000/night",
+    "classification": "CLOSE_DB_MATCH",
+    "reason": "substring of 'mrs bhandari's guesthouse'",
+    "dbName": "mrs bhandari's guesthouse"
+  },
+  {
+    "slug": "under-2000-rupees-stays-that-dont-compromise",
+    "destinations": [
+      "agra",
+      "amritsar",
+      "barmer",
+      "barot-valley",
+      "auli",
+      "alchi",
+      "almora",
+      "bharatpur",
+      "badrinath",
+      "bangus-valley",
+      "bhaderwah",
+      "anandpur-sahib"
+    ],
+    "candidate": "Birder's Inn",
+    "sentence": "## Birder's Inn, Bharatpur — Rs 1,200-2,000/night",
+    "classification": "MATCH",
+    "reason": "exact + correct destination",
+    "dbName": null
+  },
+  {
+    "slug": "under-2000-rupees-stays-that-dont-compromise",
+    "destinations": [
+      "agra",
+      "amritsar",
+      "barmer",
+      "barot-valley",
+      "auli",
+      "alchi",
+      "almora",
+      "bharatpur",
+      "badrinath",
+      "bangus-valley",
+      "bhaderwah",
+      "anandpur-sahib"
+    ],
+    "candidate": "Bangus Valley Camp",
+    "sentence": "## Bangus Valley Campinging — Rs 500-1,500/night",
+    "classification": "CLOSE_DB_MATCH",
+    "reason": "substring of 'bangus valley camping'",
+    "dbName": "bangus valley camping"
+  },
+  {
+    "slug": "under-2000-rupees-stays-that-dont-compromise",
+    "destinations": [
+      "agra",
+      "amritsar",
+      "barmer",
+      "barot-valley",
+      "auli",
+      "alchi",
+      "almora",
+      "bharatpur",
+      "badrinath",
+      "bangus-valley",
+      "bhaderwah",
+      "anandpur-sahib"
+    ],
+    "candidate": "Padri Meadow Camp",
+    "sentence": "## Padri Meadow Camp, Bhaderwah — Rs 1,200-2,000/night (meals included)",
+    "classification": "MATCH",
+    "reason": "exact + correct destination",
+    "dbName": null
+  },
+  {
+    "slug": "under-2000-rupees-stays-that-dont-compromise",
+    "destinations": [
+      "agra",
+      "amritsar",
+      "barmer",
+      "barot-valley",
+      "auli",
+      "alchi",
+      "almora",
+      "bharatpur",
+      "badrinath",
+      "bangus-valley",
+      "bhaderwah",
+      "anandpur-sahib"
+    ],
+    "candidate": "Reshwari Guest House",
+    "sentence": "## Reshwari Guest House, Bangus Valley — Rs 800-1,500/night",
+    "classification": "MATCH",
+    "reason": "exact + correct destination",
+    "dbName": null
+  }
+]

@@ -101,7 +101,7 @@ The houseboat experience is central to Srinagar tourism. Also the single thing m
 
 ## Where to actually stay
 
-**Srinagar**: See the [stays section on the Srinagar page](/en/destination/srinagar) — we list the vetted houseboats + hotels we've researched. Sukoon Houseboat and Hotel Heevan are the reliable anchors for first-time solo.
+**Srinagar**: See the [stays section on the Srinagar page](/en/destination/srinagar) — we list the vetted houseboats + hotels we've researched. Sukoon Houseboat and Taj Dal View are the reliable anchors for first-time solo.
 
 **Pahalgam**: See the [Pahalgam stays](/en/destination/pahalgam) list. Hotel Heevan + Pahalgam Hotel (heritage) are the female-safe stays we verify. Skip unvetted riverside lodges.
 
