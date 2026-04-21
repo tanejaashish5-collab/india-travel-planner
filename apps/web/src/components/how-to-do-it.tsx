@@ -116,7 +116,7 @@ export default function HowToDoIt({
           <div>
             <dt className="font-mono text-[10px] tracking-[0.22em] uppercase text-[#E55642]">Permit required</dt>
             <dd className="mt-0.5">
-              <Link href={`/${locale}/permits`} className="text-[#E55642] hover:underline">
+              <Link href={`/${locale}/guide/permits`} className="text-[#E55642] hover:underline">
                 See the process →
               </Link>
             </dd>

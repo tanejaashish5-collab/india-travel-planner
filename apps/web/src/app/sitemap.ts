@@ -92,7 +92,7 @@ export default async function sitemap(props: {
       "saved", "about", "methodology", "blog",
       "terms", "privacy", "cookies", "editorial-policy",
       "india-travel", "data-deletion", "newsletter", "the-window",
-      "vs", "compare",
+      "vs", "compare", "guide/permits", "guide/book-indian-trains",
       // State hub pages
       ...Object.keys(STATE_MAP).map((s) => `state/${s}`),
       // Region pages (legacy)
