@@ -7,6 +7,7 @@ import { notFound } from "next/navigation";
 import { weekOfMonth, currentYear } from "@/lib/weekly-picks/weight";
 import { computeWeeklyPicks } from "@/lib/weekly-picks/compute";
 import type { WeeklyPicksResponse } from "@/lib/weekly-picks/types";
+import { getAppStats } from "@/lib/stats";
 
 export const revalidate = 86400;
 export const dynamicParams = true;
@@ -238,7 +239,10 @@ export default async function WhereToGoPage({
   const { monthSlug, regionSlug, regionInfo } = parsed;
   const monthNum = MONTH_NUMBER[monthSlug];
   const monthName = MONTH_NAMES[monthSlug];
-  const data = await getMonthData(monthSlug, regionInfo?.stateId);
+  const [data, stats] = await Promise.all([
+    getMonthData(monthSlug, regionInfo?.stateId),
+    getAppStats(),
+  ]);
 
   if (!data) notFound();
 
@@ -365,6 +369,7 @@ export default async function WhereToGoPage({
             };
           })}
           scoreCounts={scoreCounts}
+          destinationCount={stats.destinations}
         />
       </main>
     </div>

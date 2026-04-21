@@ -57,16 +57,20 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const isHindi = locale === "hi";
+  const { getAppStats } = await import("@/lib/stats");
+  const stats = await getAppStats();
+  const d = stats.destinations;
+  const p = stats.places.toLocaleString();
 
   const title = isHindi
     ? "NakshIQ — भारत के लिए यात्रा इंटेलिजेंस"
     : "NakshIQ — Travel Intelligence for India";
   const description = isHindi
-    ? "460+ गंतव्य, 1,015+ स्थान — मासिक स्कोर, बच्चों की रेटिंग, सुरक्षा डेटा, और AI-संचालित यात्रा कार्यक्रम। भारत को समझदारी से देखने का साधन।"
-    : "460+ destinations, 1,015+ places with monthly suitability scores, kids ratings, safety data, and AI-powered itineraries. The confidence engine for exploring India.";
+    ? `${d}+ गंतव्य, ${p}+ स्थान — मासिक स्कोर, बच्चों की रेटिंग, सुरक्षा डेटा, और AI-संचालित यात्रा कार्यक्रम। भारत को समझदारी से देखने का साधन।`
+    : `${d}+ destinations, ${p}+ places with monthly suitability scores, kids ratings, safety data, and AI-powered itineraries. The confidence engine for exploring India.`;
   const ogShortDesc = isHindi
-    ? "460+ गंतव्य, 1,015+ स्थान — मासिक स्कोर, बच्चों की रेटिंग, सुरक्षा डेटा।"
-    : "460+ destinations, 1,015+ places with monthly scores, kids ratings, safety data, and AI itineraries.";
+    ? `${d}+ गंतव्य, ${p}+ स्थान — मासिक स्कोर, बच्चों की रेटिंग, सुरक्षा डेटा।`
+    : `${d}+ destinations, ${p}+ places with monthly scores, kids ratings, safety data, and AI itineraries.`;
 
   return {
     metadataBase: new URL("https://www.nakshiq.com"),

@@ -72,6 +72,8 @@ interface WhereToGoContentProps {
    *  "Go Now" so the same 5 destinations don't appear twice on the page.
    *  Optional; defaults to empty for callers that don't use the hero. */
   excludeIds?: string[];
+  /** Live destination count for the methodology strip. Parent fetches via getAppStats(). */
+  destinationCount?: number;
 }
 
 // ─── Helpers ────────────────────────────────────────────────
@@ -190,6 +192,7 @@ export function WhereToGoContent({
   data,
   scoreCounts,
   excludeIds,
+  destinationCount,
 }: WhereToGoContentProps) {
   const locale = useLocale();
   const [fairExpanded, setFairExpanded] = useState(false);
@@ -242,7 +245,7 @@ export function WhereToGoContent({
       <FadeIn>
         <div className="rounded-xl border border-border/40 bg-card/40 backdrop-blur-sm px-4 py-3 sm:px-5 sm:py-3.5">
           <div className="font-mono text-[10px] sm:text-[11px] tracking-[0.2em] uppercase text-muted-foreground">
-            Method · 460 destinations × 12 months × 6 dimensions = 33,120 data points · Reviewed {new Date().toISOString().slice(0, 10)}
+            Method · {destinationCount ?? 480} destinations × 12 months × 6 dimensions = {((destinationCount ?? 480) * 12 * 6).toLocaleString()} data points · Reviewed {new Date().toISOString().slice(0, 10)}
           </div>
         </div>
       </FadeIn>

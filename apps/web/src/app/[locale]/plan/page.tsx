@@ -4,6 +4,7 @@ import { Footer } from "@/components/footer";
 import { PlanContent } from "@/components/plan-content";
 import { createClient } from "@supabase/supabase-js";
 import { localeAlternates } from "@/lib/seo-utils";
+import { getAppStats } from "@/lib/stats";
 
 // ISR — cache the RSC payload for an hour so navigation prefetch hits Vercel's
 // edge cache instead of regenerating per-hover (mitigates the intermittent
@@ -12,10 +13,10 @@ export const revalidate = 3600;
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
+  const stats = await getAppStats();
   return {
-  title: "Plan Your Trip — Smart Destination Matcher",
-  description: "Tell us when you're going, who's coming, and your budget. We'll match you to the best destinations from 480+ destinations with itinerary suggestions and honest warnings.",
-
+    title: "Plan Your Trip — Smart Destination Matcher",
+    description: `Tell us when you're going, who's coming, and your budget. We'll match you to the best destinations from ${stats.destinations}+ destinations with itinerary suggestions and honest warnings.`,
     ...localeAlternates(locale, "/plan"),
   };
 }async function getAllDestinations() {

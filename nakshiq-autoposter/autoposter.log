@@ -2384,100 +2384,72 @@ Date range: 2026-04-15 → 2026-04-18
 2026-04-20 13:19:04  INFO      Infographic state updated: topic=treks, theme=magazine
 2026-04-20 13:19:04  INFO      State saved. Infographic run complete.
 2026-04-20 13:19:04  INFO      ════════════════════════════════════════════════════════════
-2026-04-20 15:55:27  INFO      ════════════════════════════════════════════════════════════
-2026-04-20 15:55:27  INFO      Nakshiq Autoposter · REEL · 2026-04-20 · weekday=0
-2026-04-20 15:55:27  INFO      ════════════════════════════════════════════════════════════
-2026-04-20 15:55:27  INFO      ── Syncing Nakshiq content ──────────────────────────────
-2026-04-20 15:55:32  INFO      Synced → 20 destinations · 0 traps · 3 articles · total catalog=480
-2026-04-20 15:55:32  INFO      Format: destination_reveal | Data: {'dest_name': 'Ziro Valley', 'dest_slug': 'ziro-valley', 'state_name': 'Arunachal Pradesh', 'score': 5, 'tagline': 'Apatani tribal homeland with UNESCO-nominated rice paddies and the iconic Ziro Music Festival'}
-2026-04-20 15:55:41  INFO      Reel rendered: reel_destination_reveal_ziro-valley.mp4 (1011 KB)
-2026-04-20 15:55:41  INFO          Requesting upload URL for reel_destination_reveal_reel_destination_reveal_ziro-valley.mp4 (1,035,506 bytes, video/mp4)
-2026-04-20 15:55:46  INFO          Uploading to R2 (timeout=300s)...
-2026-04-20 15:55:47  INFO          R2 PUT OK. Confirming...
-2026-04-20 15:55:48  INFO          Media ready: 4SnSi (1,035,506 bytes · reel_destination_reveal_reel_destination_reveal_ziro-valley.mp4)
-2026-04-20 15:55:48  INFO      Video uploaded: reel_destination_reveal_reel_destination_reveal_ziro-valley.mp4
-2026-04-20 15:55:48  INFO      [youtube/@naksh-iq] Already posted reel today — skipping.
-2026-04-20 15:55:48  INFO      [instagram/nakshiq] Already posted reel today — skipping.
-2026-04-20 15:55:48  INFO      [facebook/Nakshiq] Already posted reel today — skipping.
-2026-04-20 15:55:48  INFO      State saved. Reel run complete.
-2026-04-20 15:55:48  INFO      ════════════════════════════════════════════════════════════
-2026-04-20 17:47:25  INFO      ════════════════════════════════════════════════════════════
-2026-04-20 17:47:25  INFO      Nakshiq Autoposter · YT SHORT · 2026-04-20
-2026-04-20 17:47:25  INFO      ════════════════════════════════════════════════════════════
-2026-04-20 17:48:34  INFO      Short rendered: yt_short_mini_guide_2026-04-20.mp4 (15548 KB, 28.0s, fmt=mini_guide, music=02_sahara_drift)
-2026-04-20 17:48:34  INFO          Requesting upload URL for yt_short_mini_guide_yt_short_mini_guide_2026-04-20.mp4 (15,921,490 bytes, video/mp4)
-2026-04-20 17:48:35  INFO          Uploading to R2 (timeout=300s)...
-2026-04-20 17:48:37  INFO          R2 PUT OK. Confirming...
-2026-04-20 17:48:38  INFO          Media ready: B39In (15,921,490 bytes · yt_short_mini_guide_yt_short_mini_guide_2026-04-20.mp4)
-2026-04-20 17:48:38  INFO      Video uploaded: yt_short_mini_guide_yt_short_mini_guide_2026-04-20.mp4
-2026-04-20 17:48:39  INFO      [youtube/@naksh-iq] Publishing YT Short (mini_guide)...
-2026-04-20 17:48:42  INFO      [youtube/@naksh-iq] Outstand accepted (post_id=EOnKA), waiting for platform confirmation...
-2026-04-20 17:48:48  WARNING       Platform error: Error publishing post to YouTube: Failed to initiate YouTube resumable upload: 401 - "{\"error\":{\"code\":401,\"message\":\"Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.\",\"errors\":[{\"message\":\"Invalid Credentials\",\"domain\":\"global\",\"reason\":\"authError\",\"location\":\"Authorization\",\"locationType\":\"header\"}],\"status\":\"UNAUTHENTICATED\"}}"
-2026-04-20 17:48:48  WARNING   [youtube/@naksh-iq] ⚠️  YT Short queued but NOT confirmed (post_id=EOnKA). May have silently failed.
-2026-04-20 17:48:48  INFO      [instagram/nakshiq] Already posted 2 YT Shorts today — skipping.
-2026-04-20 17:48:48  INFO      [facebook/Nakshiq] Skipping (YT Shorts post to YouTube + Instagram only).
-2026-04-20 17:48:48  INFO      State saved. YT Short run complete.
-2026-04-20 17:48:48  INFO      ════════════════════════════════════════════════════════════
-2026-04-20 19:19:31  INFO      ════════════════════════════════════════════════════════════
-2026-04-20 19:19:31  INFO      Nakshiq Autoposter · ANALYTICS SYNC · 2026-04-20
-2026-04-20 19:19:31  INFO      ════════════════════════════════════════════════════════════
-2026-04-20 19:19:38  INFO      Synced 21 new posts (total: 100)
-2026-04-20 19:19:38  INFO      ── Analytics Summary ──
-2026-04-20 19:19:38  INFO      Total posts tracked: 100
-2026-04-20 19:19:38  INFO      Successfully published: 84 | Failed: 13
-2026-04-20 19:19:38  INFO      
-2026-04-20 19:19:38  INFO      By content type:
-2026-04-20 19:19:38  INFO        feed_post: 41
-2026-04-20 19:19:38  INFO        yt_short: 24
-2026-04-20 19:19:38  INFO        reel: 19
-2026-04-20 19:19:38  INFO        canva_visual: 8
-2026-04-20 19:19:38  INFO        infographic: 4
-2026-04-20 19:19:38  INFO        tourist_map: 4
-2026-04-20 19:19:38  INFO      
-2026-04-20 19:19:38  INFO      By format:
-2026-04-20 19:19:38  INFO        feed_post:unknown: 41
-2026-04-20 19:19:38  INFO        canva_visual:unknown: 8
-2026-04-20 19:19:38  INFO        yt_short:listicle: 7
-2026-04-20 19:19:38  INFO        reel:destination: 7
-2026-04-20 19:19:38  INFO        reel:seasonal: 6
-2026-04-20 19:19:38  INFO        reel:score: 6
-2026-04-20 19:19:38  INFO        yt_short:mini: 5
-2026-04-20 19:19:38  INFO        infographic:unknown: 4
-2026-04-20 19:19:38  INFO        tourist_map:unknown: 4
-2026-04-20 19:19:38  INFO        yt_short:before: 4
-2026-04-20 19:19:38  INFO        yt_short:did: 4
-2026-04-20 19:19:38  INFO        yt_short:dont: 2
-2026-04-20 19:19:38  INFO        yt_short:this: 2
-2026-04-20 19:19:38  INFO      
-2026-04-20 19:19:38  INFO      By platform:
-2026-04-20 19:19:38  INFO        instagram: 52
-2026-04-20 19:19:38  INFO        facebook: 31
-2026-04-20 19:19:38  INFO        youtube: 14
-2026-04-20 19:19:38  INFO      
-2026-04-20 19:19:38  INFO      YT Short format distribution:
-2026-04-20 19:19:38  INFO        listicle: 7 (29%)
-2026-04-20 19:19:38  INFO        mini: 5 (21%)
-2026-04-20 19:19:38  INFO        before: 4 (17%)
-2026-04-20 19:19:38  INFO        did: 4 (17%)
-2026-04-20 19:19:38  INFO        dont: 2 (8%)
-2026-04-20 19:19:38  INFO        this: 2 (8%)
-2026-04-20 19:19:38  INFO      
-Date range: 2026-04-15 → 2026-04-20
-2026-04-20 19:19:38  INFO      ════════════════════════════════════════════════════════════
-2026-04-21 04:38:13  INFO      ════════════════════════════════════════════════════════════
-2026-04-21 04:38:13  INFO      Nakshiq Autoposter · MORNING · 2026-04-21 · weekday=1
-2026-04-21 04:38:13  INFO      ════════════════════════════════════════════════════════════
-2026-04-21 04:38:13  INFO      ── Syncing Nakshiq content ──────────────────────────────
-2026-04-21 04:38:18  INFO      Synced → 20 destinations · 0 traps · 8 articles · total catalog=480
-2026-04-21 04:38:19  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
-2026-04-21 04:38:21  INFO      Outstand dedup guard: merged 2 remote posts into state.
-2026-04-21 04:38:21  INFO      Formats — IG: reality_check  ·  FB: reality_check  ·  Story: blog_promo
-2026-04-21 04:38:21  INFO      Used destinations (14d): 15
-2026-04-21 04:38:21  INFO      Reality Check pair (fallback): Yuksom ↔ Morni Hills
-2026-04-21 04:38:21  INFO      Article locked: Is Manali in June worth it? The honest answer (8/8 never featured)
-2026-04-21 04:38:25  INFO      Shared best destination locked: Coonoor
-2026-04-21 04:38:25  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
-2026-04-21 04:38:25  INFO      [instagram/nakshiq] Already posted today (morning) — skipping.
-2026-04-21 04:38:25  INFO      [facebook/Nakshiq] Already posted today (morning) — skipping.
-2026-04-21 04:38:25  INFO      State saved. Run complete.
-2026-04-21 04:38:25  INFO      ════════════════════════════════════════════════════════════
+2026-04-20 23:50:08  ERROR     OUTSTAND_API_KEY not set. Exiting.
+2026-04-21 03:31:54  INFO      ════════════════════════════════════════════════════════════
+2026-04-21 03:31:54  INFO      Nakshiq Autoposter · MORNING · 2026-04-21 · weekday=1
+2026-04-21 03:31:54  INFO      ════════════════════════════════════════════════════════════
+2026-04-21 03:31:54  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-04-21 03:32:03  INFO      Synced → 20 destinations · 0 traps · 8 articles · total catalog=480
+2026-04-21 03:32:04  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-04-21 03:32:06  INFO      Formats — IG: reality_check  ·  FB: reality_check  ·  Story: blog_promo
+2026-04-21 03:32:06  INFO      Used destinations (14d): 13
+2026-04-21 03:32:06  INFO      Reality Check pair (fallback): Yuksom ↔ Palampur
+2026-04-21 03:32:06  INFO      Article locked: Is Manali in June worth it? The honest answer (8/8 never featured)
+2026-04-21 03:32:17  INFO      Shared best destination locked: Coonoor
+2026-04-21 03:32:17  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-04-21 03:32:17  INFO      [instagram/nakshiq] Generating reality_check post...
+2026-04-21 03:32:17  INFO      [instagram/nakshiq] Caption ready (747 chars, dest=palampur)
+2026-04-21 03:32:17  INFO      [instagram/nakshiq] Video available — uploading for Reel...
+2026-04-21 03:32:17  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/palampur.mp4
+2026-04-21 03:32:20  INFO          Requesting upload URL for palampur.mp4 (11,908,115 bytes, video/mp4)
+2026-04-21 03:32:21  INFO          Uploading to R2 (timeout=300s)...
+2026-04-21 03:32:27  INFO          R2 PUT OK. Confirming...
+2026-04-21 03:32:29  INFO          Media ready: umdXE (11,908,115 bytes · palampur.mp4)
+2026-04-21 03:32:29  INFO      [instagram/nakshiq] Publishing Reel...
+2026-04-21 03:36:19  INFO      Stale lock (age=1207s) — overriding.
+2026-04-21 03:36:19  INFO      ════════════════════════════════════════════════════════════
+2026-04-21 03:36:19  INFO      Nakshiq Autoposter · MORNING · 2026-04-21 · weekday=1
+2026-04-21 03:36:19  INFO      ════════════════════════════════════════════════════════════
+2026-04-21 03:36:19  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-04-21 03:39:11  INFO      Stale lock (age=1203s) — overriding.
+2026-04-21 03:39:11  INFO      ════════════════════════════════════════════════════════════
+2026-04-21 03:39:11  INFO      Nakshiq Autoposter · MORNING · 2026-04-21 · weekday=1
+2026-04-21 03:39:11  INFO      ════════════════════════════════════════════════════════════
+2026-04-21 03:39:11  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-04-21 03:39:16  INFO      Synced → 20 destinations · 0 traps · 8 articles · total catalog=480
+2026-04-21 03:39:18  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-04-21 03:39:20  INFO      Outstand dedup guard: merged 1 remote posts into state.
+2026-04-21 03:39:20  INFO      Formats — IG: reality_check  ·  FB: reality_check  ·  Story: blog_promo
+2026-04-21 03:39:20  INFO      Used destinations (14d): 14
+2026-04-21 03:39:20  INFO      Reality Check pair (fallback): Yuksom ↔ Kausani
+2026-04-21 03:39:20  INFO      Article locked: Is Manali in June worth it? The honest answer (8/8 never featured)
+2026-04-21 03:39:23  INFO      Shared best destination locked: Coonoor
+2026-04-21 03:39:23  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-04-21 03:39:23  INFO      [instagram/nakshiq] Already posted today (morning) — skipping.
+2026-04-21 03:39:23  INFO      [facebook/Nakshiq] Generating reality_check post...
+2026-04-21 03:39:23  INFO      [facebook/Nakshiq] Caption ready (809 chars, dest=kausani)
+2026-04-21 03:39:23  INFO      [facebook/Nakshiq] Video available — uploading for Reel...
+2026-04-21 03:39:23  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/kausani.mp4
+2026-04-21 03:39:25  INFO          Requesting upload URL for kausani.mp4 (3,393,921 bytes, video/mp4)
+2026-04-21 03:39:26  INFO          Uploading to R2 (timeout=300s)...
+2026-04-21 03:39:30  INFO          R2 PUT OK. Confirming...
+2026-04-21 03:39:32  INFO          Media ready: 3Dopk (3,393,921 bytes · kausani.mp4)
+2026-04-21 03:39:32  INFO      [facebook/Nakshiq] Publishing Reel...
+2026-04-21 03:40:51  INFO      Stale lock (age=1203s) — overriding.
+2026-04-21 03:40:51  INFO      ════════════════════════════════════════════════════════════
+2026-04-21 03:40:51  INFO      Nakshiq Autoposter · MORNING · 2026-04-21 · weekday=1
+2026-04-21 03:40:51  INFO      ════════════════════════════════════════════════════════════
+2026-04-21 03:40:51  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-04-21 03:40:55  INFO      Synced → 20 destinations · 0 traps · 8 articles · total catalog=480
+2026-04-21 03:40:57  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-04-21 03:40:59  INFO      Outstand dedup guard: merged 2 remote posts into state.
+2026-04-21 03:40:59  INFO      Formats — IG: reality_check  ·  FB: reality_check  ·  Story: blog_promo
+2026-04-21 03:40:59  INFO      Used destinations (14d): 15
+2026-04-21 03:40:59  INFO      Reality Check pair (fallback): Yuksom ↔ Morni Hills
+2026-04-21 03:40:59  INFO      Article locked: Is Manali in June worth it? The honest answer (8/8 never featured)
+2026-04-21 03:41:01  INFO      Shared best destination locked: Coonoor
+2026-04-21 03:41:01  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-04-21 03:41:01  INFO      [instagram/nakshiq] Already posted today (morning) — skipping.
+2026-04-21 03:41:01  INFO      [facebook/Nakshiq] Already posted today (morning) — skipping.
+2026-04-21 03:41:01  INFO      State saved. Run complete.
+2026-04-21 03:41:01  INFO      ════════════════════════════════════════════════════════════
