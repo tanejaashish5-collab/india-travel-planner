@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { useLocale, useTranslations } from "next-intl";
 import { FALLBACK } from "@/lib/stats";
+import { SuggestEditButton } from "./suggest-edit-button";
 
 export function Footer({ stats }: { stats?: { destinations: number; places: number; festivals: number; traps: number; collections: number } }) {
   const locale = useLocale();
@@ -108,6 +109,7 @@ export function Footer({ stats }: { stats?: { destinations: number; places: numb
                   {link.label}
                 </Link>
               ))}
+              <SuggestEditButton targetTable="general" context="site feedback" />
             </div>
           </div>
         </div>
