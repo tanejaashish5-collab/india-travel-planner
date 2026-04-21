@@ -203,7 +203,7 @@ export function Nav() {
             className="ml-2 rounded-lg bg-primary px-3 py-1.5 text-sm font-medium text-primary-foreground hover:bg-primary/90 flex items-center gap-1.5"
           >
             <span>{t("aiPlan")}</span>
-            <span className="rounded bg-white/20 px-1 py-0.5 text-[10px] font-bold leading-none">NEW</span>
+            <span className="rounded bg-white/20 px-1 py-0.5 text-[10px] font-bold leading-none">{t("new")}</span>
           </Link>
         </nav>
 

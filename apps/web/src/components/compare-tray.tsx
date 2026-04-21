@@ -2,7 +2,7 @@
 
 import { useState, useEffect, createContext, useContext } from "react";
 import Link from "next/link";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { usePathname } from "next/navigation";
 import { m as motion, AnimatePresence } from "framer-motion";
 
@@ -151,6 +151,7 @@ function CompareTray() {
 // Compare button for cards
 export function CompareButton({ destinationId, size = "sm" }: { destinationId: string; size?: "sm" | "md" }) {
   const { addToCompare, removeFromCompare, isInCompare, compareIds } = useCompare();
+  const t = useTranslations("destination");
   const comparing = isInCompare(destinationId);
 
   return (
@@ -172,7 +173,7 @@ export function CompareButton({ destinationId, size = "sm" }: { destinationId: s
           : "border-border text-muted-foreground hover:text-foreground hover:border-muted-foreground disabled:opacity-30"
       }`}
     >
-      {comparing ? "✓ Comparing" : "⚖ Compare"}
+      {comparing ? `✓ ${t("comparing")}` : `⚖ ${t("compare")}`}
     </button>
   );
 }

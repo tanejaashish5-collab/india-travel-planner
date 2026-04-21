@@ -33,16 +33,18 @@ export function DestinationMap({
         dragging: true,
       });
 
-      // BUG-113: mark tile imgs aria-hidden so they don't pollute the a11y tree
+      // BUG-113: hide the whole tile pane from the a11y tree (decorative basemap).
+      // Pane-level flag is O(1) and covers tiles added on zoom/pan, unlike per-tile
+      // handlers that race with Leaflet's sync tileadd + async tileload.
+      const tilePane = map.getPane("tilePane");
+      if (tilePane) {
+        tilePane.setAttribute("aria-hidden", "true");
+        tilePane.setAttribute("role", "presentation");
+      }
       L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png", {
         attribution: '&copy; OSM &copy; CARTO',
         maxZoom: 16,
-      })
-        .on("tileload", (e: any) => {
-          e.tile.setAttribute("aria-hidden", "true");
-          e.tile.setAttribute("role", "presentation");
-        })
-        .addTo(map);
+      }).addTo(map);
 
       // Main destination marker
       const mainMarker = L.circleMarker([lat, lng], {

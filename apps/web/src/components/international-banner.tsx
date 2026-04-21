@@ -1,6 +1,6 @@
 "use client";
 
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 import { m as motion, AnimatePresence } from "framer-motion";
@@ -23,6 +23,7 @@ function isLikelyInternational(): boolean {
 
 export function InternationalBanner() {
   const locale = useLocale();
+  const t = useTranslations("nav");
   const pathname = usePathname();
   const [visible, setVisible] = useState(false);
 
@@ -80,7 +81,7 @@ export function InternationalBanner() {
                 onClick={handleStartHere}
                 className="rounded-md bg-blue-500/20 border border-blue-500/30 px-3 py-1 text-xs font-medium text-blue-400 hover:bg-blue-500/30 transition-colors whitespace-nowrap"
               >
-                Start here
+                {t("startHere")}
               </a>
               <button
                 onClick={dismiss}

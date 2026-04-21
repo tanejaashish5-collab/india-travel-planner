@@ -2,6 +2,7 @@
 
 import { useState, useMemo, lazy, Suspense } from "react";
 import { useSearchParams, useRouter, usePathname } from "next/navigation";
+import { useTranslations } from "next-intl";
 import { ExploreGrid } from "./explore-grid";
 import { ExploreFilters, type FilterState } from "./explore-filters";
 
@@ -47,6 +48,7 @@ export function ExploreWithMap({
   states: Array<{ id: string; name: string }>;
 }) {
   const [viewMode, setViewMode] = useState<ViewMode>("grid");
+  const t = useTranslations("nav");
   const searchParams = useSearchParams();
   const currentMonth = new Date().getMonth() + 1;
 
@@ -130,7 +132,7 @@ export function ExploreWithMap({
                 : "text-muted-foreground hover:text-foreground"
             }`}
           >
-            Grid
+            {t("viewGrid")}
           </button>
           <button
             onClick={() => setViewMode("map")}
@@ -140,7 +142,7 @@ export function ExploreWithMap({
                 : "text-muted-foreground hover:text-foreground"
             }`}
           >
-            Map
+            {t("viewMap")}
           </button>
         </div>
         {viewMode === "map" && (
