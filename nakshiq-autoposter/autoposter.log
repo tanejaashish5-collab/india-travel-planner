@@ -3089,3 +3089,20 @@ Date range: 2026-04-15 → 2026-04-18
 2026-04-21 11:54:15  INFO      YT Short posted: format=mini_guide, music=15_bossa_sunset
 2026-04-21 11:54:15  INFO      State saved. YT Short run complete.
 2026-04-21 11:54:15  INFO      ════════════════════════════════════════════════════════════
+2026-04-21 15:54:54  INFO      ════════════════════════════════════════════════════════════
+2026-04-21 15:54:54  INFO      Nakshiq Autoposter · REEL · 2026-04-21 · weekday=1
+2026-04-21 15:54:54  INFO      ════════════════════════════════════════════════════════════
+2026-04-21 15:54:54  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-04-21 15:55:03  INFO      Synced → 20 destinations · 0 traps · 20 articles · total catalog=488
+2026-04-21 15:55:03  INFO      Format: seasonal_shift | Data: {'dest_name': 'Yuksom', 'dest_slug': 'yuksom', 'now_month': 'April', 'now_score': 5, 'future_month': 'July', 'future_score': 2}
+2026-04-21 15:55:18  INFO      Reel rendered: reel_seasonal_shift_yuksom.mp4 (6485 KB)
+2026-04-21 15:55:18  INFO          Requesting upload URL for reel_seasonal_shift_reel_seasonal_shift_yuksom.mp4 (6,641,602 bytes, video/mp4)
+2026-04-21 15:55:19  INFO          Uploading to R2 (timeout=300s)...
+2026-04-21 15:55:21  INFO          R2 PUT OK. Confirming...
+2026-04-21 15:55:22  INFO          Media ready: ejYJr (6,641,602 bytes · reel_seasonal_shift_reel_seasonal_shift_yuksom.mp4)
+2026-04-21 15:55:22  INFO      Video uploaded: reel_seasonal_shift_reel_seasonal_shift_yuksom.mp4
+2026-04-21 15:55:23  INFO      [instagram/nakshiq] Already posted reel today — skipping.
+2026-04-21 15:55:23  INFO      [facebook/Nakshiq] Already posted reel today — skipping.
+2026-04-21 15:55:23  INFO      [youtube/@naksh-iq] Already posted reel today — skipping.
+2026-04-21 15:55:23  INFO      State saved. Reel run complete.
+2026-04-21 15:55:23  INFO      ════════════════════════════════════════════════════════════
