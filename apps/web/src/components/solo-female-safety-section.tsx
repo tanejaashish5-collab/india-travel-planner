@@ -19,14 +19,14 @@ type Props = {
 const MONTH_SHORT = ["", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
 const SCORE_TONE: Record<number, { cell: string; text: string; label: string }> = {
-  5: { cell: "bg-rose-500/25 border-rose-400/40", text: "text-rose-200", label: "Proactively female-friendly" },
-  4: { cell: "bg-rose-500/15 border-rose-400/30", text: "text-rose-200/90", label: "Safe with standard precautions" },
-  3: { cell: "bg-amber-500/15 border-amber-400/30", text: "text-amber-200", label: "Manageable, stay vigilant" },
-  2: { cell: "bg-[#E55642]/15 border-[#E55642]/30", text: "text-[#f8c8bf]", label: "Go with a companion" },
-  1: { cell: "bg-[#E55642]/25 border-[#E55642]/50", text: "text-[#f8c8bf]", label: "Skip for solo female" },
+  5: { cell: "bg-emerald-500/30 border-emerald-400/60", text: "text-emerald-100", label: "Proactively female-friendly" },
+  4: { cell: "bg-emerald-500/15 border-emerald-400/40", text: "text-emerald-200", label: "Safe with standard precautions" },
+  3: { cell: "bg-amber-500/20 border-amber-400/50", text: "text-amber-100", label: "Manageable, stay vigilant" },
+  2: { cell: "bg-orange-500/25 border-orange-400/50", text: "text-orange-100", label: "Go with a companion" },
+  1: { cell: "bg-red-500/30 border-red-400/60", text: "text-red-100", label: "Skip for solo female" },
 };
 
-const NULL_CELL = "bg-zinc-800/60 border-zinc-700/50 text-zinc-500";
+const NULL_CELL = "bg-zinc-800/40 border-zinc-700/40 text-zinc-500";
 
 export default function SoloFemaleSafetySection({ score, note, monthRows, hubHref, className }: Props) {
   // Invisible when there's no data — enrichment hasn't reached this destination yet.
@@ -110,31 +110,38 @@ export default function SoloFemaleSafetySection({ score, note, monthRows, hubHre
               <div
                 key={m}
                 className={cn(
-                  "relative rounded-md border px-1.5 py-2 text-center transition-colors",
+                  "relative rounded-md border-2 px-1.5 py-2.5 text-center transition-all",
                   tone ? tone.cell : NULL_CELL,
-                  isCurrent && "ring-2 ring-rose-400/60",
+                  isCurrent && "ring-2 ring-offset-2 ring-offset-zinc-950 ring-rose-400",
                 )}
                 title={tooltip}
               >
-                <div className="font-mono text-[9px] tracking-[0.12em] uppercase opacity-70">
+                <div className="font-mono text-[9px] tracking-[0.12em] uppercase opacity-80">
                   {MONTH_SHORT[m]}
                 </div>
-                <div className={cn("mt-0.5 font-semibold text-xs", tone?.text)}>
+                <div
+                  className={cn("mt-1 font-semibold text-base leading-none", tone?.text)}
+                  style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
+                >
                   {eff != null ? `${eff}` : "—"}
                 </div>
                 {hasOverride && (
-                  <span className="absolute top-1 right-1 h-1 w-1 rounded-full bg-rose-300/80" aria-hidden />
+                  <span className="absolute top-1 right-1 h-1.5 w-1.5 rounded-full bg-rose-300" aria-hidden title="Month-specific note" />
                 )}
                 {hasNullOverride && (
-                  <span className="absolute top-1 right-1 h-1 w-1 rounded-full bg-zinc-500" aria-hidden title="Closed/inaccessible this month" />
+                  <span className="absolute top-1 right-1 h-1.5 w-1.5 rounded-full bg-zinc-500" aria-hidden title="Closed/inaccessible this month" />
                 )}
               </div>
             );
           })}
         </div>
-        <div className="mt-2 flex flex-wrap gap-3 font-mono text-[9px] tracking-[0.15em] uppercase text-rose-300/50">
-          <span><span className="inline-block h-1 w-1 rounded-full bg-rose-300/80 mr-1 align-middle" /> month-specific note</span>
-          <span><span className="inline-block h-1 w-1 rounded-full bg-zinc-500 mr-1 align-middle" /> closed/inaccessible</span>
+        <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-2 font-mono text-[9px] tracking-[0.15em] uppercase text-zinc-400">
+          <span className="flex items-center gap-1.5"><span className="inline-block h-2.5 w-2.5 rounded-sm bg-emerald-500/50 border border-emerald-400/60" /> 4-5 safe</span>
+          <span className="flex items-center gap-1.5"><span className="inline-block h-2.5 w-2.5 rounded-sm bg-amber-500/40 border border-amber-400/50" /> 3 vigilant</span>
+          <span className="flex items-center gap-1.5"><span className="inline-block h-2.5 w-2.5 rounded-sm bg-orange-500/40 border border-orange-400/50" /> 2 with guide</span>
+          <span className="flex items-center gap-1.5"><span className="inline-block h-2.5 w-2.5 rounded-sm bg-red-500/50 border border-red-400/60" /> 1 skip</span>
+          <span className="flex items-center gap-1.5"><span className="inline-block h-1.5 w-1.5 rounded-full bg-rose-300" /> month-specific note</span>
+          <span className="flex items-center gap-1.5"><span className="inline-block h-1.5 w-1.5 rounded-full bg-zinc-500" /> closed</span>
         </div>
       </div>
     </div>
