@@ -6,6 +6,11 @@
  * After a successful run, invoke `scripts/enrich-destination-months-verdict.mjs --only-missing`
  * to populate verdict + skip_reason on the 96 new month rows.
  *
+ * Freshness invariant (added 2026-04-23):
+ *   Research-backed seeders MUST stamp content_reviewed_at at insert time.
+ *   A write IS a review for our workflow. See migration 011 for the one-time
+ *   bootstrap that brought existing rows into the invariant.
+ *
  * Usage:
  *   node scripts/seed-batch3-destinations.mjs           # dry run
  *   node scripts/seed-batch3-destinations.mjs --commit  # actually upsert
@@ -37,6 +42,7 @@ console.log('');
 
 let okCount = 0;
 let errCount = 0;
+const reviewedAt = new Date().toISOString();
 
 for (const d of destinations) {
   console.log(`▶ ${d.id} (${d.name}, ${d.state_id})`);
@@ -60,6 +66,7 @@ for (const d of destinations) {
     daily_cost: d.daily_cost,
     family_stress: d.family_stress,
     translations: {},
+    content_reviewed_at: reviewedAt,
   };
 
   if (DRY_RUN) {
@@ -104,6 +111,7 @@ for (const d of destinations) {
     month: m.m,
     score: m.score,
     note: m.note,
+    content_reviewed_at: reviewedAt,
   }));
   if (DRY_RUN) {
     console.log(`   would upsert ${monthRows.length} destination_months`);

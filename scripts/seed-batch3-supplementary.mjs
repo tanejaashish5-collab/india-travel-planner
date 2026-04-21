@@ -14,6 +14,12 @@
  *     we first delete existing rows for the 8 destinations, then insert.
  *     This makes the script idempotent for this subset.
  *
+ * Freshness invariant (2026-04-23):
+ *   These supplementary tables don't carry content_reviewed_at columns —
+ *   the parent destination's stamp is the source of truth. This seeder
+ *   also bumps the parent destinations' content_reviewed_at to now() to
+ *   reflect the research pass that produced these supplementary rows.
+ *
  * Usage:
  *   node scripts/seed-batch3-supplementary.mjs          # dry
  *   node scripts/seed-batch3-supplementary.mjs --commit # write
@@ -99,5 +105,16 @@ await insert("viral_eats", data.viral_eats);
 console.log("\n== local_stays (wipe + insert) ==");
 await wipeForBatch3("local_stays", "destination_id");
 await insert("local_stays", data.local_stays);
+
+// Bump parent destinations' content_reviewed_at — this research pass IS a review.
+if (COMMIT) {
+  console.log("\n== parent destinations content_reviewed_at ==");
+  const { error: stampErr, count } = await supabase
+    .from("destinations")
+    .update({ content_reviewed_at: new Date().toISOString() }, { count: "exact" })
+    .in("id", BATCH3_IDS);
+  if (stampErr) console.error(`  ✗ stamp: ${stampErr.message}`);
+  else console.log(`  ✓ stamped ${count ?? BATCH3_IDS.length} destinations as reviewed`);
+}
 
 console.log(`\nDone (${COMMIT ? "committed" : "dry only"}).`);
