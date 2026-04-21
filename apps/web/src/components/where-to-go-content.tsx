@@ -213,6 +213,15 @@ export function WhereToGoContent({
 
   return (
     <div className="space-y-12">
+      {/* ───── Methodology disclosure strip ───── */}
+      <FadeIn>
+        <div className="rounded-xl border border-border/40 bg-card/40 backdrop-blur-sm px-4 py-3 sm:px-5 sm:py-3.5">
+          <div className="font-mono text-[10px] sm:text-[11px] tracking-[0.2em] uppercase text-muted-foreground">
+            Method · 460 destinations × 12 months × 6 dimensions = 33,120 data points · Reviewed {new Date().toISOString().slice(0, 10)}
+          </div>
+        </div>
+      </FadeIn>
+
       {/* ───── Hero ───── */}
       <FadeIn>
         <div className="text-center">
@@ -220,12 +229,14 @@ export function WhereToGoContent({
             Where to go in {regionName ?? "India"}
           </p>
           <h1 className="font-fraunces text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl">
-            {regionName ? `${regionName} in ${monthName}` : monthName}
+            {regionName
+              ? `${regionName} in ${monthName} — where the data says go, wait, and skip`
+              : `${monthName} in India — where the data says go, wait, and skip`}
           </h1>
           <p className="mx-auto mt-4 max-w-xl text-base text-zinc-400">
             {regionName
-              ? `Every destination in ${regionName} scored 1-5 for ${monthName} — based on weather, road conditions, crowds, and local festivals.`
-              : `Every destination scored 1-5 for ${monthName} — based on weather, road conditions, crowds, and local festivals. Not opinions. Data.`}
+              ? `Every destination in ${regionName} scored 1-5 for ${monthName} — weather, roads, crowds, festivals. Go first, then Wait, then Skip. No opinions, just the data.`
+              : `Every destination scored 1-5 for ${monthName} — weather, roads, crowds, festivals. Go first, then Wait, then Skip. No opinions, just the data.`}
           </p>
           {regionName && (
             <Link

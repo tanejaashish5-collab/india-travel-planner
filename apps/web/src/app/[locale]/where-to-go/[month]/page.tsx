@@ -183,6 +183,8 @@ async function getMonthData(monthSlug: string, stateId?: string) {
       score,
       note,
       why_not,
+      verdict,
+      skip_reason,
       destination_id,
       destination:destinations!inner(
         id,
@@ -358,6 +360,8 @@ export default async function WhereToGoPage({
               score: d.score ?? 0,
               note: d.note ?? null,
               why_not: d.why_not ?? null,
+              verdict: (d as any).verdict ?? null,
+              skip_reason: (d as any).skip_reason ?? null,
             };
           })}
           scoreCounts={scoreCounts}

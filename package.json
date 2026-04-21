@@ -15,7 +15,8 @@
     "test": "npx playwright test",
     "test:mobile": "npx playwright test --project=mobile",
     "test:desktop": "npx playwright test --project=desktop",
-    "lighthouse": "npx lhci autorun"
+    "lighthouse": "npx lhci autorun",
+    "voice-lint": "node scripts/voice-lint.mjs"
   },
   "devDependencies": {
     "@aws-sdk/client-s3": "^3.1031.0",
