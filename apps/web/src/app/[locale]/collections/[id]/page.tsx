@@ -41,17 +41,27 @@ async function getCollection(id: string) {
   const contentType = data.content_type || "destinations";
   const showFood = ["food", "mixed"].includes(contentType);
   const showStays = ["stays", "mixed"].includes(contentType);
+  const isCircuit = contentType === "circuit";
 
-  const [destsResult, eatsResult, staysResult, allColls] = await Promise.all([
+  const [destsResult, eatsResult, staysResult, coordsResult, allColls] = await Promise.all([
     supabase.from("destinations").select("id, name, tagline, difficulty, elevation_m, state:states(name)").in("id", destIds),
     showFood ? supabase.from("viral_eats").select("*").in("destination_id", destIds).order("name") : Promise.resolve({ data: [] }),
     showStays ? supabase.from("local_stays").select("*").in("destination_id", destIds).order("name") : Promise.resolve({ data: [] }),
+    isCircuit ? supabase.from("destinations_with_coords").select("id, lat, lng").in("id", destIds) : Promise.resolve({ data: [] }),
     supabase.from("collections").select("id, name").order("name"),
   ]);
 
+  const coordsMap = new Map<string, { lat: number; lng: number }>(
+    (coordsResult.data ?? []).map((c: any) => [c.id, { lat: c.lat, lng: c.lng }])
+  );
+  const destinationsEnriched = (destsResult.data ?? []).map((d: any) => ({
+    ...d,
+    coords: coordsMap.get(d.id) ?? null,
+  }));
+
   return {
     ...data,
-    destinations: destsResult.data ?? [],
+    destinations: destinationsEnriched,
     viral_eats: eatsResult.data ?? [],
     local_stays: staysResult.data ?? [],
     allCollections: allColls.data ?? [],

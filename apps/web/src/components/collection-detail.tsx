@@ -8,6 +8,16 @@ import { m as motion, AnimatePresence } from "framer-motion";
 import { FadeIn, StaggerContainer, StaggerItem, HoverCard } from "./animated-hero";
 import { ShareButton } from "./share-button";
 
+function haversineKm(a: { lat: number; lng: number }, b: { lat: number; lng: number }): number {
+  const R = 6371;
+  const dLat = ((b.lat - a.lat) * Math.PI) / 180;
+  const dLng = ((b.lng - a.lng) * Math.PI) / 180;
+  const lat1 = (a.lat * Math.PI) / 180;
+  const lat2 = (b.lat * Math.PI) / 180;
+  const h = Math.sin(dLat / 2) ** 2 + Math.cos(lat1) * Math.cos(lat2) * Math.sin(dLng / 2) ** 2;
+  return 2 * R * Math.asin(Math.sqrt(h));
+}
+
 export function CollectionDetail({ collection }: { collection: any }) {
   const locale = useLocale();
   const items = collection.items ?? [];
@@ -15,6 +25,10 @@ export function CollectionDetail({ collection }: { collection: any }) {
   const destMap = Object.fromEntries(
     (collection.destinations ?? []).map((d: any) => [d.id, d]),
   );
+
+  if (contentType === "circuit") {
+    return <CircuitLayout collection={collection} items={items} destMap={destMap} locale={locale} />;
+  }
 
   // Group eats and stays by destination — only if relevant
   const eatsByDest: Record<string, any[]> = {};
@@ -195,5 +209,127 @@ function CollapsibleDetails({
         )}
       </AnimatePresence>
     </div>
+  );
+}
+
+function CircuitLayout({
+  collection,
+  items,
+  destMap,
+  locale,
+}: {
+  collection: any;
+  items: any[];
+  destMap: Record<string, any>;
+  locale: string;
+}) {
+  const legs: (number | null)[] = items.map((item, i) => {
+    if (i === items.length - 1) return null;
+    const a = destMap[item.destination_id]?.coords;
+    const b = destMap[items[i + 1].destination_id]?.coords;
+    if (!a || !b) return null;
+    return Math.round(haversineKm(a, b));
+  });
+  const totalKm = legs.filter((n): n is number => n !== null).reduce((s, n) => s + n, 0);
+  const totalDays = items.reduce((s, it) => s + (it.days ?? 2), 0);
+
+  return (
+    <>
+      <FadeIn>
+        <div className="mb-4 text-sm text-muted-foreground">
+          <Link href={`/${locale}/collections`} className="hover:text-foreground transition-colors">
+            Collections
+          </Link>
+          {" → "}
+          <span className="text-foreground">{collection.name}</span>
+        </div>
+      </FadeIn>
+
+      <FadeIn delay={0.1}>
+        <div className="flex items-start justify-between gap-4">
+          <div>
+            <h1 className="text-3xl font-bold">{collection.name}</h1>
+            <p className="mt-2 text-muted-foreground leading-relaxed">{collection.description}</p>
+          </div>
+          <div className="shrink-0 flex items-center gap-2 mt-1">
+            <ShareButton
+              title={collection.name}
+              text={`${collection.description} — ${items.length}-stop circuit`}
+            />
+          </div>
+        </div>
+        <div className="mt-4 rounded-xl border border-border/50 bg-card/40 backdrop-blur-sm px-4 py-3">
+          <div className="font-mono text-[10px] sm:text-[11px] tracking-[0.3em] uppercase text-muted-foreground">
+            Circuit · {items.length} stops{totalKm > 0 ? ` · ${totalKm.toLocaleString()} km` : ""} · {totalDays} days suggested
+          </div>
+        </div>
+      </FadeIn>
+
+      <StaggerContainer className="mt-8" staggerDelay={0.08}>
+        {items.map((item: any, idx: number) => {
+          const dest = destMap[item.destination_id];
+          const stateName = dest?.state
+            ? Array.isArray(dest.state) ? dest.state[0]?.name : dest.state.name
+            : "";
+          const days = item.days ?? 2;
+          const legKm = legs[idx];
+          const isLast = idx === items.length - 1;
+
+          return (
+            <StaggerItem key={item.destination_id}>
+              <div className="relative pl-8 sm:pl-10 pb-6">
+                {/* Vertical connector line */}
+                {!isLast && (
+                  <div className="absolute left-3 sm:left-4 top-8 bottom-0 w-px bg-border" aria-hidden />
+                )}
+                {/* Number badge on the line */}
+                <div className="absolute left-0 top-2 flex h-6 w-6 sm:h-8 sm:w-8 items-center justify-center rounded-full bg-primary text-[10px] sm:text-xs font-bold text-primary-foreground">
+                  {idx + 1}
+                </div>
+
+                <HoverCard>
+                  <Link
+                    href={`/${locale}/destination/${item.destination_id}`}
+                    className="flex items-start gap-3 sm:gap-4 rounded-xl border border-border bg-card overflow-hidden transition-all hover:border-primary/50"
+                  >
+                    <div className="relative w-20 h-20 sm:w-28 sm:h-24 shrink-0 bg-muted/30">
+                      <Image
+                        src={`/images/destinations/${item.destination_id}.jpg`}
+                        alt={dest?.name ?? ""}
+                        fill
+                        sizes="(max-width: 640px) 80px, 112px"
+                        className="object-cover"
+                        onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
+                      />
+                    </div>
+                    <div className="flex-1 py-2.5 pr-3 sm:p-4 sm:pl-0 min-w-0">
+                      <div className="flex items-start justify-between gap-2">
+                        <h3 className="font-semibold text-base sm:text-lg leading-tight break-words">
+                          {dest?.name ?? item.destination_id}
+                        </h3>
+                        <span className="shrink-0 font-mono text-[10px] sm:text-xs tracking-wider uppercase text-muted-foreground">
+                          {days} {days === 1 ? "day" : "days"}
+                        </span>
+                      </div>
+                      {stateName && <p className="text-[11px] sm:text-xs text-muted-foreground">{stateName}</p>}
+                      {item.note && (
+                        <p className="mt-1 text-xs sm:text-sm text-muted-foreground line-clamp-2">{item.note}</p>
+                      )}
+                    </div>
+                  </Link>
+                </HoverCard>
+
+                {/* Inter-stop distance line */}
+                {!isLast && legKm != null && (
+                  <div className="mt-2 ml-2 font-mono text-[10px] tracking-[0.2em] uppercase text-muted-foreground/70">
+                    ↓ {legKm} km to next
+                  </div>
+                )}
+              </div>
+            </StaggerItem>
+          );
+        })}
+      </StaggerContainer>
+    </>
   );
 }
