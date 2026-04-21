@@ -1,0 +1,932 @@
+[
+  {
+    "destination_id": "palolem",
+    "month": 12,
+    "solo_female_override": 3,
+    "solo_female_override_note": "Christmas-NY week packs the crescent with stag tourism; return after Jan 5 for the usual solo-safe rhythm."
+  },
+  {
+    "destination_id": "calangute-baga",
+    "month": 12,
+    "solo_female_override": 1,
+    "solo_female_override_note": "Peak charter-tourism week — stag harassment + beach-shack fights documented. Move to South Goa (Agonda/Palolem) entirely."
+  },
+  {
+    "destination_id": "calangute-baga",
+    "month": 1,
+    "solo_female_override": 2,
+    "solo_female_override_note": "First week of January still absorbs NYE overflow; shifts safer after Jan 8."
+  },
+  {
+    "destination_id": "anjuna",
+    "month": 12,
+    "solo_female_override": 2,
+    "solo_female_override_note": "Peak party-strip week; Anjuna flea + midnight raves = stag-group density. Stay in Vagator side only, skip Anjuna beach at night."
+  },
+  {
+    "destination_id": "vagator",
+    "month": 12,
+    "solo_female_override": 2,
+    "solo_female_override_note": "Peak Chronicle + Nine Bar crowd = aggressive stag flow. Stay in Vagator hotels with security; skip walking the cliff strip."
+  },
+  {
+    "destination_id": "agonda",
+    "month": 12,
+    "solo_female_override": 3,
+    "solo_female_override_note": "Even quiet Agonda fills with holiday-week bookings; beach-shack staff changes. Stick to named long-stay cottage operators."
+  },
+  {
+    "destination_id": "morjim",
+    "month": 12,
+    "solo_female_override": 3,
+    "solo_female_override_note": "Russian-New-Year crowd peaks; Russian-mafia-affiliated clubs in the area have documented harassment. Stay cottage-side, not club-strip."
+  },
+  {
+    "destination_id": "varkala",
+    "month": 12,
+    "solo_female_override": 3,
+    "solo_female_override_note": "Christmas sees a backpacker-density peak + Indian domestic stag flow; stay cliff-north, not the south-cliff extension."
+  },
+  {
+    "destination_id": "kovalam",
+    "month": 12,
+    "solo_female_override": 2,
+    "solo_female_override_note": "Peak domestic-tourist male-stag week; Lighthouse Beach harassment reports spike. Stay at resort (Taj, Leela) with private beach."
+  },
+  {
+    "destination_id": "gokarna",
+    "month": 12,
+    "solo_female_override": 3,
+    "solo_female_override_note": "Peak Western-backpacker week overlaps with Indian domestic crowd; Om + Kudle stay safe, Half Moon + far-north coves get sparse and risky."
+  },
+  {
+    "destination_id": "prayagraj",
+    "month": 1,
+    "solo_female_override": 2,
+    "solo_female_override_note": "Maha Kumbh + Magh Mela overlap years (2025 was Maha, 2028 Ardh) turn the city into 100M-pilgrim density; skip outside organised yatra format."
+  },
+  {
+    "destination_id": "prayagraj",
+    "month": 2,
+    "solo_female_override": 2,
+    "solo_female_override_note": "Mauni Amavasya + Magh Mela close means extreme density; railhead overcrowding is the documented solo-female hazard."
+  },
+  {
+    "destination_id": "haridwar",
+    "month": 7,
+    "solo_female_override": 3,
+    "solo_female_override_note": "Kanwar Yatra peak — male-pilgrim density + road-aggression reported. Haridwar ghats remain policed; outskirts + NH roads need care."
+  },
+  {
+    "destination_id": "nashik",
+    "month": 8,
+    "solo_female_override": 2,
+    "solo_female_override_note": "Simhastha Kumbh years (next 2027) turn pilgrim density + transport chaos; Panchavati during Shravan is already crowded. Skip overnight solo this month."
+  },
+  {
+    "destination_id": "nashik",
+    "month": 9,
+    "solo_female_override": 3,
+    "solo_female_override_note": "Trimbakeshwar Shravan close — thin-the-herd tail end, pilgrim density still above comfort. Day-trip from Pune."
+  },
+  {
+    "destination_id": "puri",
+    "month": 6,
+    "solo_female_override": 2,
+    "solo_female_override_note": "Rath Yatra period (late Jun–Jul) — 3M pilgrims in 3 days. Solo female infeasible unless part of an organised trust-booked group."
+  },
+  {
+    "destination_id": "puri",
+    "month": 7,
+    "solo_female_override": 2,
+    "solo_female_override_note": "Rath Yatra + Sayana Ekadashi overlap month — ongoing density. Return Aug onwards."
+  },
+  {
+    "destination_id": "pushkar",
+    "month": 11,
+    "solo_female_override": 2,
+    "solo_female_override_note": "Pushkar Camel Fair week (Kartik Purnima) — 2L visitors, stag-tour operators + photography-tourists. Skip or stay in a trust-booked haveli only."
+  },
+  {
+    "destination_id": "ujjain",
+    "month": 4,
+    "solo_female_override": 2,
+    "solo_female_override_note": "Simhastha-year-adjacent months (next Simhastha 2028) + April Narmada Panchakroshi Yatra = pilgrim-density spike. Off-Simhastha, score returns to 3."
+  },
+  {
+    "destination_id": "ambaji",
+    "month": 9,
+    "solo_female_override": 2,
+    "solo_female_override_note": "Bhadrapada Poornima mela = 5M pilgrims in a week. Temple trust manages accommodation only for registered yatra groups; solo infeasible."
+  },
+  {
+    "destination_id": "kedarnath",
+    "month": 11,
+    "solo_female_override": 2,
+    "solo_female_override_note": "Kapat-closing week — tail-end pilgrims, shrinking transport, early snow. Return in May when infrastructure restarts."
+  },
+  {
+    "destination_id": "kedarnath",
+    "month": 12,
+    "solo_female_override": null,
+    "solo_female_override_note": "Shrine closed winter; no solo visit possible."
+  },
+  {
+    "destination_id": "kedarnath",
+    "month": 1,
+    "solo_female_override": null,
+    "solo_female_override_note": "Shrine closed winter; no solo visit possible."
+  },
+  {
+    "destination_id": "kedarnath",
+    "month": 2,
+    "solo_female_override": null,
+    "solo_female_override_note": "Shrine closed winter; no solo visit possible."
+  },
+  {
+    "destination_id": "kedarnath",
+    "month": 3,
+    "solo_female_override": null,
+    "solo_female_override_note": "Shrine closed winter; no solo visit possible."
+  },
+  {
+    "destination_id": "badrinath",
+    "month": 12,
+    "solo_female_override": null,
+    "solo_female_override_note": "Shrine closed winter; town deserted."
+  },
+  {
+    "destination_id": "badrinath",
+    "month": 1,
+    "solo_female_override": null,
+    "solo_female_override_note": "Shrine closed winter; town deserted."
+  },
+  {
+    "destination_id": "badrinath",
+    "month": 2,
+    "solo_female_override": null,
+    "solo_female_override_note": "Shrine closed winter; town deserted."
+  },
+  {
+    "destination_id": "badrinath",
+    "month": 3,
+    "solo_female_override": null,
+    "solo_female_override_note": "Shrine closed winter; town deserted."
+  },
+  {
+    "destination_id": "gangotri",
+    "month": 12,
+    "solo_female_override": null,
+    "solo_female_override_note": "Shrine closed winter; access road shut."
+  },
+  {
+    "destination_id": "gangotri",
+    "month": 1,
+    "solo_female_override": null,
+    "solo_female_override_note": "Shrine closed winter; access road shut."
+  },
+  {
+    "destination_id": "gangotri",
+    "month": 2,
+    "solo_female_override": null,
+    "solo_female_override_note": "Shrine closed winter; access road shut."
+  },
+  {
+    "destination_id": "gangotri",
+    "month": 3,
+    "solo_female_override": null,
+    "solo_female_override_note": "Shrine closed winter; access road shut."
+  },
+  {
+    "destination_id": "yamunotri",
+    "month": 12,
+    "solo_female_override": null,
+    "solo_female_override_note": "Shrine closed winter; trek route inaccessible."
+  },
+  {
+    "destination_id": "yamunotri",
+    "month": 1,
+    "solo_female_override": null,
+    "solo_female_override_note": "Shrine closed winter; trek route inaccessible."
+  },
+  {
+    "destination_id": "yamunotri",
+    "month": 2,
+    "solo_female_override": null,
+    "solo_female_override_note": "Shrine closed winter; trek route inaccessible."
+  },
+  {
+    "destination_id": "yamunotri",
+    "month": 3,
+    "solo_female_override": null,
+    "solo_female_override_note": "Shrine closed winter; trek route inaccessible."
+  },
+  {
+    "destination_id": "hemkund-sahib",
+    "month": 7,
+    "solo_female_override": 4,
+    "solo_female_override_note": "Yatra season peak — SGPC-regulated langar + shared-taxi + community flow means solo-women-pilgrim format is active and safe."
+  },
+  {
+    "destination_id": "hemkund-sahib",
+    "month": 11,
+    "solo_female_override": null,
+    "solo_female_override_note": "Shrine closes Oct; no solo access Nov-May."
+  },
+  {
+    "destination_id": "hemkund-sahib",
+    "month": 12,
+    "solo_female_override": null,
+    "solo_female_override_note": "Closed."
+  },
+  {
+    "destination_id": "hemkund-sahib",
+    "month": 1,
+    "solo_female_override": null,
+    "solo_female_override_note": "Closed."
+  },
+  {
+    "destination_id": "hemkund-sahib",
+    "month": 2,
+    "solo_female_override": null,
+    "solo_female_override_note": "Closed."
+  },
+  {
+    "destination_id": "hemkund-sahib",
+    "month": 3,
+    "solo_female_override": null,
+    "solo_female_override_note": "Closed."
+  },
+  {
+    "destination_id": "hemkund-sahib",
+    "month": 4,
+    "solo_female_override": null,
+    "solo_female_override_note": "Closed."
+  },
+  {
+    "destination_id": "hemkund-sahib",
+    "month": 5,
+    "solo_female_override": null,
+    "solo_female_override_note": "Closed."
+  },
+  {
+    "destination_id": "sabarimala",
+    "month": 12,
+    "solo_female_override": 1,
+    "solo_female_override_note": "Mandalam-Makaravilakku peak pilgrim season (Nov 17 – Jan 14) — men-only cultural context strongest; women 10-50 face direct hostility. Skip absolutely."
+  },
+  {
+    "destination_id": "sabarimala",
+    "month": 1,
+    "solo_female_override": 1,
+    "solo_female_override_note": "Mandalam-Makaravilakku close — same context. Skip absolutely."
+  },
+  {
+    "destination_id": "manali",
+    "month": 6,
+    "solo_female_override": 2,
+    "solo_female_override_note": "Peak summer holiday week (Jun 10-30) = Delhi/Punjab stag-group density at Old Manali + Mall. Book ahead + stay in New Manali with hotel security."
+  },
+  {
+    "destination_id": "manali",
+    "month": 7,
+    "solo_female_override": 3,
+    "solo_female_override_note": "Monsoon thins the weekender stag flow — safer walk of Old Manali even solo."
+  },
+  {
+    "destination_id": "lonavala",
+    "month": 7,
+    "solo_female_override": 2,
+    "solo_female_override_note": "Weekend monsoon crowd is entirely Mumbai/Pune stag groups — bhushi-dam-area incidents documented. Stay at Shillim/retreat properties, not Mall Road."
+  },
+  {
+    "destination_id": "lonavala",
+    "month": 8,
+    "solo_female_override": 2,
+    "solo_female_override_note": "Continued monsoon stag-group density; same caveat as July."
+  },
+  {
+    "destination_id": "khandala",
+    "month": 7,
+    "solo_female_override": 2,
+    "solo_female_override_note": "Same Mumbai/Pune weekend-stag overlap as Lonavala. Stay Mahabaleshwar-side instead."
+  },
+  {
+    "destination_id": "mahabaleshwar",
+    "month": 5,
+    "solo_female_override": 3,
+    "solo_female_override_note": "May weekend holiday crowd = family-heavy but stag-group overflow from Panchgani. Stay Club Mahabaleshwar, not Mapro-area lodges."
+  },
+  {
+    "destination_id": "har-ki-doon",
+    "month": 12,
+    "solo_female_override": null,
+    "solo_female_override_note": "Snow-blocked trek route Nov-Mar."
+  },
+  {
+    "destination_id": "har-ki-doon",
+    "month": 1,
+    "solo_female_override": null,
+    "solo_female_override_note": "Snow-blocked."
+  },
+  {
+    "destination_id": "har-ki-doon",
+    "month": 2,
+    "solo_female_override": null,
+    "solo_female_override_note": "Snow-blocked."
+  },
+  {
+    "destination_id": "har-ki-doon",
+    "month": 3,
+    "solo_female_override": null,
+    "solo_female_override_note": "Snow-blocked; trek infrastructure closed."
+  },
+  {
+    "destination_id": "chandratal",
+    "month": 11,
+    "solo_female_override": null,
+    "solo_female_override_note": "Camp closed; lake inaccessible."
+  },
+  {
+    "destination_id": "chandratal",
+    "month": 12,
+    "solo_female_override": null,
+    "solo_female_override_note": "Snow-blocked."
+  },
+  {
+    "destination_id": "chandratal",
+    "month": 1,
+    "solo_female_override": null,
+    "solo_female_override_note": "Snow-blocked."
+  },
+  {
+    "destination_id": "chandratal",
+    "month": 2,
+    "solo_female_override": null,
+    "solo_female_override_note": "Snow-blocked."
+  },
+  {
+    "destination_id": "chandratal",
+    "month": 3,
+    "solo_female_override": null,
+    "solo_female_override_note": "Snow-blocked; access road shut."
+  },
+  {
+    "destination_id": "chandratal",
+    "month": 4,
+    "solo_female_override": null,
+    "solo_female_override_note": "Access road typically shut until mid-May."
+  },
+  {
+    "destination_id": "chandratal",
+    "month": 5,
+    "solo_female_override": null,
+    "solo_female_override_note": "Access opens mid-May; routine only from June."
+  },
+  {
+    "destination_id": "kaza",
+    "month": 12,
+    "solo_female_override": 2,
+    "solo_female_override_note": "Winter Spiti (Dec-Feb) is -20°C, road risk, organised-group-only. Solo absolutely not; operators run women's Spiti winter trips in January with heated convoy."
+  },
+  {
+    "destination_id": "kaza",
+    "month": 1,
+    "solo_female_override": 2,
+    "solo_female_override_note": "Same winter Spiti context as December."
+  },
+  {
+    "destination_id": "kaza",
+    "month": 2,
+    "solo_female_override": 2,
+    "solo_female_override_note": "Late-winter Spiti same context; roads opening late Feb."
+  },
+  {
+    "destination_id": "valley-of-flowers",
+    "month": 10,
+    "solo_female_override": null,
+    "solo_female_override_note": "Trek closes Oct 1 per Uttarakhand forest dept."
+  },
+  {
+    "destination_id": "valley-of-flowers",
+    "month": 11,
+    "solo_female_override": null,
+    "solo_female_override_note": "Closed."
+  },
+  {
+    "destination_id": "valley-of-flowers",
+    "month": 12,
+    "solo_female_override": null,
+    "solo_female_override_note": "Closed."
+  },
+  {
+    "destination_id": "valley-of-flowers",
+    "month": 1,
+    "solo_female_override": null,
+    "solo_female_override_note": "Closed."
+  },
+  {
+    "destination_id": "valley-of-flowers",
+    "month": 2,
+    "solo_female_override": null,
+    "solo_female_override_note": "Closed."
+  },
+  {
+    "destination_id": "valley-of-flowers",
+    "month": 3,
+    "solo_female_override": null,
+    "solo_female_override_note": "Closed."
+  },
+  {
+    "destination_id": "valley-of-flowers",
+    "month": 4,
+    "solo_female_override": null,
+    "solo_female_override_note": "Closed."
+  },
+  {
+    "destination_id": "valley-of-flowers",
+    "month": 5,
+    "solo_female_override": null,
+    "solo_female_override_note": "Trek opens Jun 1 per forest dept."
+  },
+  {
+    "destination_id": "roopkund",
+    "month": 11,
+    "solo_female_override": null,
+    "solo_female_override_note": "Snow closes access from Nov through May."
+  },
+  {
+    "destination_id": "roopkund",
+    "month": 12,
+    "solo_female_override": null,
+    "solo_female_override_note": "Snow-blocked."
+  },
+  {
+    "destination_id": "roopkund",
+    "month": 1,
+    "solo_female_override": null,
+    "solo_female_override_note": "Snow-blocked."
+  },
+  {
+    "destination_id": "roopkund",
+    "month": 2,
+    "solo_female_override": null,
+    "solo_female_override_note": "Snow-blocked."
+  },
+  {
+    "destination_id": "roopkund",
+    "month": 3,
+    "solo_female_override": null,
+    "solo_female_override_note": "Snow-blocked."
+  },
+  {
+    "destination_id": "roopkund",
+    "month": 4,
+    "solo_female_override": null,
+    "solo_female_override_note": "Snow-blocked until late May."
+  },
+  {
+    "destination_id": "leh",
+    "month": 12,
+    "solo_female_override": 3,
+    "solo_female_override_note": "Winter Leh — flight-only access, minus-teens, thin tourist flow. Homestays (Omasila, Nimmu House) provide heated safety; still a committed trip, not casual."
+  },
+  {
+    "destination_id": "leh",
+    "month": 1,
+    "solo_female_override": 3,
+    "solo_female_override_note": "Chadar-trek month brings international solo women; Leh town is otherwise quiet. Homestay-booked + flight-in only."
+  },
+  {
+    "destination_id": "leh",
+    "month": 2,
+    "solo_female_override": 3,
+    "solo_female_override_note": "Late-winter Leh context continues; Srinagar road still closed."
+  },
+  {
+    "destination_id": "nubra-valley",
+    "month": 12,
+    "solo_female_override": 2,
+    "solo_female_override_note": "Access via Khardung-La is weather-dependent Dec-Mar; organised winter operator only."
+  },
+  {
+    "destination_id": "nubra-valley",
+    "month": 1,
+    "solo_female_override": 2,
+    "solo_female_override_note": "Winter Nubra context; only organised-group routing."
+  },
+  {
+    "destination_id": "nubra-valley",
+    "month": 2,
+    "solo_female_override": 2,
+    "solo_female_override_note": "Same; roads often shut entirely."
+  },
+  {
+    "destination_id": "nubra-valley",
+    "month": 3,
+    "solo_female_override": 2,
+    "solo_female_override_note": "Thaw season; still organised-group-only."
+  },
+  {
+    "destination_id": "pangong-lake",
+    "month": 12,
+    "solo_female_override": 2,
+    "solo_female_override_note": "Lake frozen, minus-20 nights, organised winter operator only; camps closed to walk-in."
+  },
+  {
+    "destination_id": "pangong-lake",
+    "month": 1,
+    "solo_female_override": 2,
+    "solo_female_override_note": "Same winter context."
+  },
+  {
+    "destination_id": "pangong-lake",
+    "month": 2,
+    "solo_female_override": 2,
+    "solo_female_override_note": "Same winter context."
+  },
+  {
+    "destination_id": "pangong-lake",
+    "month": 3,
+    "solo_female_override": 2,
+    "solo_female_override_note": "Thaw season; limited access."
+  },
+  {
+    "destination_id": "zanskar",
+    "month": 11,
+    "solo_female_override": null,
+    "solo_female_override_note": "Kargil-Zanskar road closes Nov, no solo access until May."
+  },
+  {
+    "destination_id": "zanskar",
+    "month": 12,
+    "solo_female_override": null,
+    "solo_female_override_note": "Road closed; organised Chadar trek only, not solo."
+  },
+  {
+    "destination_id": "zanskar",
+    "month": 1,
+    "solo_female_override": null,
+    "solo_female_override_note": "Road closed; organised Chadar trek only."
+  },
+  {
+    "destination_id": "zanskar",
+    "month": 2,
+    "solo_female_override": null,
+    "solo_female_override_note": "Road closed."
+  },
+  {
+    "destination_id": "zanskar",
+    "month": 3,
+    "solo_female_override": null,
+    "solo_female_override_note": "Road closed."
+  },
+  {
+    "destination_id": "zanskar",
+    "month": 4,
+    "solo_female_override": null,
+    "solo_female_override_note": "Road closed."
+  },
+  {
+    "destination_id": "khardung-la",
+    "month": 12,
+    "solo_female_override": 2,
+    "solo_female_override_note": "Pass closed to civilian traffic in deep winter; organised winter operator convoy-only."
+  },
+  {
+    "destination_id": "khardung-la",
+    "month": 1,
+    "solo_female_override": 2,
+    "solo_female_override_note": "Pass typically shut; convoy-only."
+  },
+  {
+    "destination_id": "khardung-la",
+    "month": 2,
+    "solo_female_override": 2,
+    "solo_female_override_note": "Pass typically shut; convoy-only."
+  },
+  {
+    "destination_id": "srinagar",
+    "month": 7,
+    "solo_female_override": 3,
+    "solo_female_override_note": "Amarnath yatra base month — CRPF convoys + yatra-pilgrim density. Tourism outside yatra route is fine; plan around convoy days."
+  },
+  {
+    "destination_id": "srinagar",
+    "month": 1,
+    "solo_female_override": 3,
+    "solo_female_override_note": "Peak winter + snowfall — Dal freezes, thin tourist flow. Houseboat with heater (Sukoon) is safe; walk-outs limited."
+  },
+  {
+    "destination_id": "pahalgam",
+    "month": 7,
+    "solo_female_override": 3,
+    "solo_female_override_note": "Amarnath yatra base — Pahalgam is packed with yatris + security. Stay at Heevan/Pahalgam Hotel, avoid Chandanwari end."
+  },
+  {
+    "destination_id": "pahalgam",
+    "month": 8,
+    "solo_female_override": 4,
+    "solo_female_override_note": "Post-Amarnath quiet returns by mid-Aug; best window before school-holiday season."
+  },
+  {
+    "destination_id": "gulmarg",
+    "month": 12,
+    "solo_female_override": 4,
+    "solo_female_override_note": "Ski-season peak (Dec-Feb) — organised operators thick on the ground, international tourists present; safest winter Kashmir destination."
+  },
+  {
+    "destination_id": "gulmarg",
+    "month": 1,
+    "solo_female_override": 4,
+    "solo_female_override_note": "Ski peak; same context."
+  },
+  {
+    "destination_id": "gulmarg",
+    "month": 2,
+    "solo_female_override": 4,
+    "solo_female_override_note": "Ski peak; same context."
+  },
+  {
+    "destination_id": "sonamarg",
+    "month": 12,
+    "solo_female_override": null,
+    "solo_female_override_note": "Access road closed mid-Nov to Apr."
+  },
+  {
+    "destination_id": "sonamarg",
+    "month": 1,
+    "solo_female_override": null,
+    "solo_female_override_note": "Closed."
+  },
+  {
+    "destination_id": "sonamarg",
+    "month": 2,
+    "solo_female_override": null,
+    "solo_female_override_note": "Closed."
+  },
+  {
+    "destination_id": "sonamarg",
+    "month": 3,
+    "solo_female_override": null,
+    "solo_female_override_note": "Closed."
+  },
+  {
+    "destination_id": "sonamarg",
+    "month": 4,
+    "solo_female_override": null,
+    "solo_female_override_note": "Closed."
+  },
+  {
+    "destination_id": "corbett-national-park",
+    "month": 7,
+    "solo_female_override": 2,
+    "solo_female_override_note": "Core zone closed Jul-Oct (monsoon breeding); buffer zones + Jhirna run. Safari flow thins; plan post-Oct instead."
+  },
+  {
+    "destination_id": "corbett-national-park",
+    "month": 8,
+    "solo_female_override": 2,
+    "solo_female_override_note": "Core closed, same context."
+  },
+  {
+    "destination_id": "corbett-national-park",
+    "month": 9,
+    "solo_female_override": 2,
+    "solo_female_override_note": "Core closed, same context."
+  },
+  {
+    "destination_id": "kanha",
+    "month": 7,
+    "solo_female_override": 2,
+    "solo_female_override_note": "Core closed Jul 1 – Oct 15; organised safari not available. Skip this window."
+  },
+  {
+    "destination_id": "kanha",
+    "month": 8,
+    "solo_female_override": 2,
+    "solo_female_override_note": "Same closure."
+  },
+  {
+    "destination_id": "kanha",
+    "month": 9,
+    "solo_female_override": 2,
+    "solo_female_override_note": "Same closure; partial buffer reopens mid-Oct."
+  },
+  {
+    "destination_id": "ranthambore",
+    "month": 7,
+    "solo_female_override": 2,
+    "solo_female_override_note": "Core zone closed Jul-Sep monsoon; Zone 6-10 open but thin safari flow. Resume Oct 1."
+  },
+  {
+    "destination_id": "ranthambore",
+    "month": 8,
+    "solo_female_override": 2,
+    "solo_female_override_note": "Core closed."
+  },
+  {
+    "destination_id": "ranthambore",
+    "month": 9,
+    "solo_female_override": 2,
+    "solo_female_override_note": "Core closed."
+  },
+  {
+    "destination_id": "bandhavgarh",
+    "month": 7,
+    "solo_female_override": 2,
+    "solo_female_override_note": "Core closed Jul 1 – Oct 15; MPTDC safari absent. Skip."
+  },
+  {
+    "destination_id": "bandhavgarh",
+    "month": 8,
+    "solo_female_override": 2,
+    "solo_female_override_note": "Same closure."
+  },
+  {
+    "destination_id": "bandhavgarh",
+    "month": 9,
+    "solo_female_override": 2,
+    "solo_female_override_note": "Same closure."
+  },
+  {
+    "destination_id": "kaziranga",
+    "month": 5,
+    "solo_female_override": 2,
+    "solo_female_override_note": "Park closes mid-May for monsoon; jeep + elephant safari unavailable. Reopens Nov 1."
+  },
+  {
+    "destination_id": "kaziranga",
+    "month": 6,
+    "solo_female_override": null,
+    "solo_female_override_note": "Park fully closed."
+  },
+  {
+    "destination_id": "kaziranga",
+    "month": 7,
+    "solo_female_override": null,
+    "solo_female_override_note": "Park fully closed."
+  },
+  {
+    "destination_id": "kaziranga",
+    "month": 8,
+    "solo_female_override": null,
+    "solo_female_override_note": "Park fully closed."
+  },
+  {
+    "destination_id": "kaziranga",
+    "month": 9,
+    "solo_female_override": null,
+    "solo_female_override_note": "Park fully closed."
+  },
+  {
+    "destination_id": "kaziranga",
+    "month": 10,
+    "solo_female_override": 2,
+    "solo_female_override_note": "Park reopens mid-Oct; safari flow still thin, book ahead."
+  },
+  {
+    "destination_id": "jaisalmer",
+    "month": 5,
+    "solo_female_override": 3,
+    "solo_female_override_note": "45°C+ peak; daytime tourist flow collapses, only organised dune-overnight operates. Return Oct–Feb."
+  },
+  {
+    "destination_id": "jaisalmer",
+    "month": 6,
+    "solo_female_override": 3,
+    "solo_female_override_note": "Same extreme-heat context."
+  },
+  {
+    "destination_id": "bikaner",
+    "month": 5,
+    "solo_female_override": 3,
+    "solo_female_override_note": "46°C+ peak, thin solo-tourist flow; daytime-only movement. Return in winter."
+  },
+  {
+    "destination_id": "bikaner",
+    "month": 6,
+    "solo_female_override": 3,
+    "solo_female_override_note": "Same extreme-heat context."
+  },
+  {
+    "destination_id": "kutch",
+    "month": 5,
+    "solo_female_override": 3,
+    "solo_female_override_note": "Post-Rann Utsav dead season — Dhordo camps closed, 45°C+ in Bhuj. Come Nov-Feb instead."
+  },
+  {
+    "destination_id": "kutch",
+    "month": 6,
+    "solo_female_override": 2,
+    "solo_female_override_note": "Pre-monsoon extreme; no tourist infrastructure operating."
+  },
+  {
+    "destination_id": "rann-of-kutch",
+    "month": 5,
+    "solo_female_override": 2,
+    "solo_female_override_note": "Tent city dismantled; no tourist infrastructure until Nov re-setup."
+  },
+  {
+    "destination_id": "rann-of-kutch",
+    "month": 6,
+    "solo_female_override": 2,
+    "solo_female_override_note": "Same off-season context."
+  },
+  {
+    "destination_id": "rann-of-kutch",
+    "month": 7,
+    "solo_female_override": 2,
+    "solo_female_override_note": "Salt flats underwater; not visitable as the 'white Rann'."
+  },
+  {
+    "destination_id": "rann-of-kutch",
+    "month": 8,
+    "solo_female_override": 2,
+    "solo_female_override_note": "Same monsoon context."
+  },
+  {
+    "destination_id": "rann-of-kutch",
+    "month": 9,
+    "solo_female_override": 2,
+    "solo_female_override_note": "Pre-setup, still no tent city."
+  },
+  {
+    "destination_id": "agra",
+    "month": 5,
+    "solo_female_override": 2,
+    "solo_female_override_note": "47°C+ peak; tourist flow thins, heat-stroke risk, hydration-scam touts become aggressive. Return Oct-Mar."
+  },
+  {
+    "destination_id": "agra",
+    "month": 6,
+    "solo_female_override": 2,
+    "solo_female_override_note": "Same extreme-heat context."
+  },
+  {
+    "destination_id": "varanasi",
+    "month": 5,
+    "solo_female_override": 2,
+    "solo_female_override_note": "44°C peak + pre-monsoon muggy = walker-incident reports spike. Return Oct-Mar."
+  },
+  {
+    "destination_id": "jaipur",
+    "month": 5,
+    "solo_female_override": 3,
+    "solo_female_override_note": "45°C+ peak; daytime fort-climbing not advisable. Amer + Nahargarh tours operate pre-noon only."
+  },
+  {
+    "destination_id": "jaipur",
+    "month": 6,
+    "solo_female_override": 3,
+    "solo_female_override_note": "Same extreme-heat context."
+  },
+  {
+    "destination_id": "osian",
+    "month": 10,
+    "solo_female_override": 3,
+    "solo_female_override_note": "Desert-festival season + Camel Safari peak — organised operators thick. Day-trip from Jodhpur works in any month."
+  },
+  {
+    "destination_id": "kohima",
+    "month": 12,
+    "solo_female_override": 4,
+    "solo_female_override_note": "Hornbill Festival (Dec 1-10) — 2L visitors, organised Nagaland Tourism package + vetted homestays = safer than the annual baseline."
+  },
+  {
+    "destination_id": "ziro",
+    "month": 9,
+    "solo_female_override": 4,
+    "solo_female_override_note": "Ziro Music Festival (late Sep) — organised festival camp + long-stay female audience = safer than off-festival baseline."
+  },
+  {
+    "destination_id": "dambuk",
+    "month": 12,
+    "solo_female_override": 3,
+    "solo_female_override_note": "Orange Festival (mid-Dec) — operator-organised only, festival infrastructure elevates the solo-safe window from the annual 2/5."
+  },
+  {
+    "destination_id": "athirapally",
+    "month": 8,
+    "solo_female_override": 4,
+    "solo_female_override_note": "Monsoon peak — waterfall at maximum volume, tour-bus + family crowd density. Safer than the average month."
+  },
+  {
+    "destination_id": "jog-falls",
+    "month": 8,
+    "solo_female_override": 3,
+    "solo_female_override_note": "Monsoon peak — waterfall tourism density helps safety-in-numbers. Off-monsoon the falls thin and so does tourist flow."
+  },
+  {
+    "destination_id": "dudhsagar-falls",
+    "month": 8,
+    "solo_female_override": 3,
+    "solo_female_override_note": "Monsoon peak — jeep safari operates daily, tourism flow highest. Solo women routinely join mixed jeeps."
+  },
+  {
+    "destination_id": "bhandardara",
+    "month": 6,
+    "solo_female_override": 4,
+    "solo_female_override_note": "Firefly week (late May - mid Jun) — organised camps, mass tourism, documented safe format. Safer than the average month."
+  }
+]
