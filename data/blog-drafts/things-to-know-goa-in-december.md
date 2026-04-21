@@ -6,7 +6,7 @@ subtitle: "December is peak Goa — prices 3× off-season, traffic snarled, ever
 category: guide
 depth: deep-dive
 reading_time: 7
-cover_image_url: /images/destinations/goa.jpg
+cover_image_url: /images/destinations/old-goa.jpg
 tags: ["primer","goa","december","beaches","new-year","nightlife"]
 destinations: ["palolem","anjuna","calangute-baga"]
 seo_title: "14 Things to Know Before Goa in December (2026)"
