@@ -78,7 +78,7 @@ export function Nav() {
       );
     }
     if (panel === "plan") {
-      return ["/where-to-go", "/build-route", "/gap-year", "/permits", "/road-conditions", "/plan"].some(
+      return ["/where-to-go", "/build-route", "/gap-year", "/permits", "/road-conditions", "/plan", "/arrival", "/guide/book-indian-trains"].some(
         (p) => pathname.includes(p)
       );
     }

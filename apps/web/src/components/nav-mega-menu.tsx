@@ -175,6 +175,27 @@ function AiSparkleIcon() {
   );
 }
 
+function PlaneIcon() {
+  return (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z" />
+    </svg>
+  );
+}
+
+function TrainIcon() {
+  return (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M8 3v3" /><path d="M16 3v3" />
+      <rect x="4" y="6" width="16" height="12" rx="2" />
+      <path d="M4 12h16" />
+      <circle cx="8.5" cy="15.5" r="0.5" fill="currentColor" />
+      <circle cx="15.5" cy="15.5" r="0.5" fill="currentColor" />
+      <path d="m6 22 2-3" /><path d="m18 22-2-3" />
+    </svg>
+  );
+}
+
 /* ─── Menu item component ─── */
 
 function MenuItem({
@@ -278,7 +299,9 @@ function PlanPanel({ locale, onNavigate }: { locale: string; onNavigate: () => v
           <MenuItem href={`/${locale}/where-to-go/${currentMonthSlug}`} icon={CalendarIcon} label={t("whereToGoNow")} desc="Best destinations this month" onNavigate={onNavigate} />
           <MenuItem href={`/${locale}/build-route`} icon={MapPinIcon} label={t("buildRoute")} desc="Design your road trip" onNavigate={onNavigate} />
           <MenuItem href={`/${locale}/gap-year`} icon={CalendarIcon} label="Gap Year Planner" desc="3–12 months, month by month" onNavigate={onNavigate} />
+          <MenuItem href={`/${locale}/arrival`} icon={PlaneIcon} label="Arrival Playbook" desc="Airport-by-airport arrival guide" onNavigate={onNavigate} />
           <MenuItem href={`/${locale}/permits`} icon={ShieldIcon} label={t("permits")} desc="Required passes & permits" onNavigate={onNavigate} />
+          <MenuItem href={`/${locale}/guide/book-indian-trains`} icon={TrainIcon} label="Book Indian Trains" desc="IRCTC, Tatkal, foreigner tips" onNavigate={onNavigate} />
           <MenuItem href={`/${locale}/road-conditions`} icon={RoadIcon} label={t("roads")} desc="Latest road status" onNavigate={onNavigate} />
         </div>
       </div>
