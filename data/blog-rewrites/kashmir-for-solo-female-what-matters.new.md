@@ -1,20 +1,3 @@
----
-id: kashmir-for-solo-female-what-matters
-slug: kashmir-for-solo-female-what-matters
-title: "Is Kashmir safe for solo female travellers? What actually matters"
-subtitle: "Srinagar + Gulmarg score 3/5 most months, 4/5 in ski season. Pahalgam flips during Amarnath yatra. The honest answer on dress, curfew, and houseboats."
-category: guide
-depth: brief
-reading_time: 6
-cover_image_url: /images/destinations/srinagar.jpg
-tags: ["solo-female","safety","kashmir","srinagar","gulmarg","pahalgam"]
-destinations: ["srinagar","gulmarg","pahalgam","sonamarg","kokernag","verinag"]
-seo_title: "Kashmir for Solo Female Travellers — Honest Safety Guide"
-seo_description: "Kashmir solo-female safety honestly assessed. Srinagar 3/5, Gulmarg 4/5 winter, Pahalgam flips during yatra. Named stays, dress code, curfew protocol, houseboats."
-excerpt: "Kashmir is the destination where the generic 'is India safe for women' post fails hardest. The answer depends on which month, which valley, which houseboat operator, and whether you're willing to dress differently than you would in Goa. Here's the concrete version."
-review_status: published
----
-
 # Kashmir for solo female travellers — what actually matters
 
 Kashmir is the destination where generic "is India safe" advice fails hardest. The answer depends on:

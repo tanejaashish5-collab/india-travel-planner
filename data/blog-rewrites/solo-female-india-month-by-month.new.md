@@ -1,20 +1,3 @@
----
-id: solo-female-india-month-by-month
-slug: solo-female-india-month-by-month
-title: "Solo-female travel in India — every destination scored, month by month"
-subtitle: "488 destinations rated 1-5 for solo-female safety. 60 of them get a different score in specific months. The full ranked list, and the five you should actually skip."
-category: guide
-depth: deep-dive
-reading_time: 10
-cover_image_url: /images/destinations/rishikesh.jpg
-tags: ["solo-female","safety","methodology","india","women-travel"]
-destinations: ["rishikesh","mcleodganj","amritsar","udaipur","kumarakom","gangtok","mandrem","agonda","marari","havelock-island","landour","auroville","har-ki-doon","anini","namdapha","moreh","tamenglong"]
-seo_title: "Solo-Female Safety in India — 488 Destinations Ranked 1-5 Per Month"
-seo_description: "The only India travel site with a scored solo-female safety dimension. 488 destinations rated 1-5 for solo women, month-variance included. Methodology, top 15, bottom 5."
-excerpt: "Most India travel guides tell women 'use common sense' and call it done. We rated 488 destinations on a 1-5 scale for solo-female safety, with month-specific overrides where it matters. Here's the methodology, the top 15, and the five that don't clear the bar."
-review_status: published
----
-
 # Solo-female travel in India — every destination scored, month by month
 
 Most India travel guides say the same three things to solo female travellers: dress modest, avoid late nights, trust your gut. Which is true and also the equivalent of telling someone planning a ski trip to "stay warm." There is no destination-specific signal in that advice. No opinion on Goa in December vs November. No score for Manali in June vs July. Nothing that distinguishes Rishikesh from Varkala from Kaza.

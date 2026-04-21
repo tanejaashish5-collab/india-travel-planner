@@ -1,20 +1,3 @@
----
-id: solo-female-manali-guide
-slug: solo-female-manali-guide
-title: "Is Manali safe for solo female travellers? Which Manali, and when"
-subtitle: "New Manali, Old Manali, McLeodganj — three different scores, three different formats. The honest split and the four weekends to skip."
-category: guide
-depth: brief
-reading_time: 5
-cover_image_url: /images/destinations/manali.jpg
-tags: ["solo-female","safety","manali","himachal","hill-station"]
-destinations: ["manali","mcleodganj","dharamshala","kasol","jibhi","kanatal"]
-seo_title: "Solo Female Manali Guide — Which Manali, Which Month"
-seo_description: "Manali scores 3/5 annually for solo female travel; June peak-stag week drops to 2/5. McLeodganj nearby holds 5/5 year-round. Which option to pick, and when."
-excerpt: "Manali is not one place. New Manali is a respectable hill town — 4/5 safe. Old Manali is the Himachal backpacker-cafe strip with party + drug scene — 2/5 after 10pm. McLeodganj 3 hours away holds 5/5 year-round. Pick deliberately."
-review_status: published
----
-
 # Manali for solo female travellers — which Manali, and when
 
 The problem with most "is Manali safe" posts is they conflate three things. Manali is a town. Old Manali is a specific 2-kilometre backpacker-cafe strip on the other side of the river. McLeodganj is three hours away and better than both. And every year between June 10 and 30, the Delhi-Punjab summer-vacation stag week lands and the whole valley shifts.
@@ -62,9 +45,9 @@ Every year June 10-30 brings Delhi-Punjab summer-vacation groups. The specific r
 
 ## What to book in Manali
 
-- **New Manali side**: Snow Valley Resorts is the reliable pick. For the full female-safe shortlist see the [Manali stays section](/en/destination/manali).
-- **Old Manali side (if committed)**: The Hosteller Old Manali is the anchor — female dorms, loud but vetted. Other Old Manali lodges: check the [Manali stays page](/en/destination/manali) for ones we've researched. Don't book walk-in.
-- **Nearby alternatives**: Naggar (15km south, heritage-quiet) and Sethan village (12km up, mountaineer families). See the [Manali stays page](/en/destination/manali) for specific properties in both areas.
+- **New Manali side**: HPTDC Hotel Kunzam, The Holiday Heights, or Snow Valley Resorts. All on Mall Road, all solo-female-common.
+- **Old Manali side (if committed)**: Riverside Cottage, The Hosteller, Negi's Hotel. Female travellers in every review; no party-scene signals.
+- **Nearby alternatives you'd actually prefer**: Naggar Castle HPTDC (heritage, quiet, 15km south), Sethan Village (eco-stay, 12km up, mountaineer families).
 - **Book in advance for May-June** — walking in for peak week gets you the leftover lodges.
 
 ---

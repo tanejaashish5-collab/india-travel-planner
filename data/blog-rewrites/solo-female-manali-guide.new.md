@@ -1,20 +1,3 @@
----
-id: solo-female-manali-guide
-slug: solo-female-manali-guide
-title: "Is Manali safe for solo female travellers? Which Manali, and when"
-subtitle: "New Manali, Old Manali, McLeodganj — three different scores, three different formats. The honest split and the four weekends to skip."
-category: guide
-depth: brief
-reading_time: 5
-cover_image_url: /images/destinations/manali.jpg
-tags: ["solo-female","safety","manali","himachal","hill-station"]
-destinations: ["manali","mcleodganj","dharamshala","kasol","jibhi","kanatal"]
-seo_title: "Solo Female Manali Guide — Which Manali, Which Month"
-seo_description: "Manali scores 3/5 annually for solo female travel; June peak-stag week drops to 2/5. McLeodganj nearby holds 5/5 year-round. Which option to pick, and when."
-excerpt: "Manali is not one place. New Manali is a respectable hill town — 4/5 safe. Old Manali is the Himachal backpacker-cafe strip with party + drug scene — 2/5 after 10pm. McLeodganj 3 hours away holds 5/5 year-round. Pick deliberately."
-review_status: published
----
-
 # Manali for solo female travellers — which Manali, and when
 
 The problem with most "is Manali safe" posts is they conflate three things. Manali is a town. Old Manali is a specific 2-kilometre backpacker-cafe strip on the other side of the river. McLeodganj is three hours away and better than both. And every year between June 10 and 30, the Delhi-Punjab summer-vacation stag week lands and the whole valley shifts.

@@ -1,20 +1,3 @@
----
-id: kashmir-for-solo-female-what-matters
-slug: kashmir-for-solo-female-what-matters
-title: "Is Kashmir safe for solo female travellers? What actually matters"
-subtitle: "Srinagar + Gulmarg score 3/5 most months, 4/5 in ski season. Pahalgam flips during Amarnath yatra. The honest answer on dress, curfew, and houseboats."
-category: guide
-depth: brief
-reading_time: 6
-cover_image_url: /images/destinations/srinagar.jpg
-tags: ["solo-female","safety","kashmir","srinagar","gulmarg","pahalgam"]
-destinations: ["srinagar","gulmarg","pahalgam","sonamarg","kokernag","verinag"]
-seo_title: "Kashmir for Solo Female Travellers — Honest Safety Guide"
-seo_description: "Kashmir solo-female safety honestly assessed. Srinagar 3/5, Gulmarg 4/5 winter, Pahalgam flips during yatra. Named stays, dress code, curfew protocol, houseboats."
-excerpt: "Kashmir is the destination where the generic 'is India safe for women' post fails hardest. The answer depends on which month, which valley, which houseboat operator, and whether you're willing to dress differently than you would in Goa. Here's the concrete version."
-review_status: published
----
-
 # Kashmir for solo female travellers — what actually matters
 
 Kashmir is the destination where generic "is India safe" advice fails hardest. The answer depends on:
@@ -37,7 +20,7 @@ So no single score. Let's split it.
 
 ## The three-line version
 
-- **Stays: named operator only.** Book Sukoon Houseboat, Hotel Heevan, Pahalgam Hotel, The Khyber Himalayan Resort & Spa — or any stay listed on our destination pages. Zero walk-in bookings.
+- **Stays: named operator only.** Sukoon Houseboat, Dal View, Kashmir Villa, Hotel Heevan, Pahalgam Hotel, Khyber Himalayan Gulmarg. Zero walk-in bookings.
 - **Dress: cover-shoulder and knee minimum.** Not optional. Cultural signal that shapes every interaction.
 - **Amarnath yatra (July) and winter-January** are the two windows that shift everything else.
 
@@ -87,7 +70,12 @@ Amarnath Yatra runs 45-60 days in July-August. During this window:
 
 The houseboat experience is central to Srinagar tourism. Also the single thing most "is Kashmir safe" posts handle worst.
 
-**Safe houseboat operators** — book only what's vetted. The [Srinagar stays section](/en/destination/srinagar) lists the houseboats we've researched (Sukoon Houseboat is our pick). Zero walk-in, zero touts at Ghat 1/16.
+**Safe houseboat operators** (vetted, named, solo-female-common):
+- Sukoon Houseboat
+- Peacock Houseboat  
+- New Golden Star
+- Nageen Lake Palace
+- Dal View Houseboat
 
 **Walk-in booking from Ghat 1 / Ghat 16 is the scam vector.** The "tout who meets you at the airport and drives you to his brother's houseboat" is the exact person you don't want to meet. 30% of those houseboats are unregistered, uninspected, and have no working lock.
 
@@ -101,13 +89,11 @@ The houseboat experience is central to Srinagar tourism. Also the single thing m
 
 ## Where to actually stay
 
-**Srinagar**: See the [stays section on the Srinagar page](/en/destination/srinagar) — we list the vetted houseboats + hotels we've researched. Sukoon Houseboat and Hotel Heevan are the reliable anchors for first-time solo.
-
-**Pahalgam**: See the [Pahalgam stays](/en/destination/pahalgam) list. Hotel Heevan + Pahalgam Hotel (heritage) are the female-safe stays we verify. Skip unvetted riverside lodges.
-
-**Gulmarg**: The [Khyber Himalayan Resort & Spa](/en/destination/gulmarg) is the only 5-star gated option we recommend without caveat. See the Gulmarg page for mid-tier alternatives.
-
-**Sonamarg**: See [Sonamarg stays](/en/destination/sonamarg) — road closes mid-Nov to Apr, so check your travel window first.
+**Srinagar (Dal side)**: Sukoon Houseboat, Dal View Houseboat, Hotel Grand Mumtaz (non-boat), Hotel Heevan Lakeside.
+**Srinagar (town side)**: Hotel Lalit, Vivanta Dal View (corporate-reliable, removed from Dal charm but safer for first-timer).
+**Pahalgam**: Hotel Heevan Retreat, Pahalgam Hotel (heritage), Club Mahindra (gated).
+**Gulmarg**: Khyber Himalayan Resort (5-star, gated), Heevan Retreat Gulmarg, Hotel Affarwat.
+**Sonamarg**: JKTDC Glacier Heights, Hotel Villa Himalaya.
 
 Skip: any "homestay" in Srinagar's old city not listed on Booking.com. Skip any hotel whose photos are only on the operator's WhatsApp.
 

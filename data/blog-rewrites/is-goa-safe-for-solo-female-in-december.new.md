@@ -1,20 +1,3 @@
----
-id: is-goa-safe-for-solo-female-in-december
-slug: is-goa-safe-for-solo-female-in-december
-title: "Is Goa safe for solo female travellers in December? The honest answer"
-subtitle: "Goa scores 3/5 annually. December drops the beach strip to 1/5. Here's the split: the stretch to skip, and the quieter corners that still work."
-category: guide
-depth: brief
-reading_time: 5
-cover_image_url: /images/destinations/agonda.jpg
-tags: ["solo-female","safety","goa","december","beach"]
-destinations: ["calangute-baga","anjuna","vagator","palolem","agonda","mandrem","morjim","old-goa"]
-seo_title: "Is Goa Safe for Solo Female in December? Verdict: Skip North, Keep South"
-seo_description: "Goa in December — the beach-strip harassment score drops to 1-2/5. But Agonda, Mandrem, and Old Goa hold up. The real answer on where to go, and where not to."
-excerpt: "Goa's solo-female safety is not one number. Mandrem and Agonda hold a 5/5 year-round. Calangute-Baga drops to 1/5 in Christmas-NY peak week. The honest split, and what to book."
-review_status: published
----
-
 # Is Goa safe for solo female travellers in December? Verdict: depends on which Goa.
 
 Most "is Goa safe for solo women" posts give one answer. That's the error — Goa is not one destination. The difference in solo-female safety between Agonda and Calangute-Baga is bigger than the difference between Rishikesh and Varkala.

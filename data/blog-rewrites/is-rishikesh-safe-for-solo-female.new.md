@@ -1,20 +1,3 @@
----
-id: is-rishikesh-safe-for-solo-female
-slug: is-rishikesh-safe-for-solo-female
-title: "Is Rishikesh safe for solo female travellers? Score 5/5 — what actually makes it work"
-subtitle: "Rishikesh scores 5/5 for solo-female safety on our dataset. This is what the infrastructure actually looks like, which months are best, and what to book."
-category: guide
-depth: brief
-reading_time: 5
-cover_image_url: /images/destinations/rishikesh.jpg
-tags: ["solo-female","safety","rishikesh","uttarakhand","yoga"]
-destinations: ["rishikesh","haridwar","dehradun"]
-seo_title: "Is Rishikesh Safe for Solo Female Travellers? NakshIQ Verdict"
-seo_description: "Rishikesh scores 5/5 for solo-female safety. Yoga-town infrastructure, named female-owned stays, river police, and year-round international solo women presence."
-excerpt: "Rishikesh has been hosting foreign solo female travellers for fifty years. The infrastructure reflects it — female-owned hostels, ashrams with gender-separated dorms, visible police on the riverfront, and a local economy built around long-stay women. Verdict: go, and here's what to book."
-review_status: published
----
-
 # Is Rishikesh safe for solo female travellers? Verdict: 5/5 — go.
 
 Rishikesh is the highest-scored destination in India on our solo-female safety dimension. This is not a coincidence — the town has been hosting foreign solo female travellers since the Beatles ashram in 1968, and 57 years of that has built an infrastructure that almost no other Indian town has.

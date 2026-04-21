@@ -12,6 +12,7 @@ import { createClient } from '@supabase/supabase-js';
 import { config } from 'dotenv';
 import { readFileSync, readdirSync } from 'fs';
 import { resolve } from 'path';
+import { execSync } from 'child_process';
 
 config({ path: 'apps/web/.env.local' });
 
@@ -125,4 +126,20 @@ if (rejected.length) {
 }
 
 console.log(`\n${ok} ok, ${err} failed, ${rejected.length} rejected${COMMIT ? '' : ' (dry run)'}`);
+
+// ─── Post-seed stays audit gate ───
+// After the upsert lands the new/updated content in `articles`, run the stays
+// lint against the live DB. If any UNVERIFIED hits exist, the seed is considered
+// partially-bad and we exit non-zero so CI can catch it.
+if (COMMIT && ok > 0 && err === 0) {
+  console.log(`\nRunning post-seed stays audit…`);
+  try {
+    execSync('node scripts/audit-blog-stays.mjs --strict', { stdio: 'inherit' });
+    console.log(`\n✓ stays audit clean — no unverified stay names in seeded articles.`);
+  } catch {
+    console.error(`\n✗ Stays audit FAILED — seeded content has unverified stay names. Fix the draft, re-run.`);
+    process.exit(1);
+  }
+}
+
 process.exit(rejected.length > 0 ? 1 : 0);
