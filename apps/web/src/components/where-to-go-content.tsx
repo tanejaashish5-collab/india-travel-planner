@@ -56,6 +56,8 @@ interface DestMonthRow {
   score: number;
   note: string | null;
   why_not: string | null;
+  verdict?: string | null;
+  skip_reason?: string | null;
 }
 
 interface WhereToGoContentProps {
@@ -191,16 +193,39 @@ export function WhereToGoContent({
 }: WhereToGoContentProps) {
   const locale = useLocale();
   const [fairExpanded, setFairExpanded] = useState(false);
+  const [activeVerdicts, setActiveVerdicts] = useState<Set<"go" | "wait" | "skip">>(
+    new Set(["go", "wait", "skip"]),
+  );
+
+  const toggleVerdict = (v: "go" | "wait" | "skip") => {
+    setActiveVerdicts((prev) => {
+      const next = new Set(prev);
+      if (next.has(v)) {
+        if (next.size === 1) return prev;
+        next.delete(v);
+      } else {
+        next.add(v);
+      }
+      return next;
+    });
+  };
 
   const isRegional = !!regionSlug;
   // Remove Weekly Picks hero destinations from the bucket lists so the same
   // destination doesn't render twice on the page (hero above + Go Now below).
   const excluded = new Set(excludeIds ?? []);
   const filteredData = excluded.size > 0 ? data.filter((d) => !excluded.has(d.id)) : data;
-  const score5 = filteredData.filter((d) => d.score === 5);
-  const score4 = filteredData.filter((d) => d.score === 4);
-  const score3 = filteredData.filter((d) => d.score === 3);
-  const scoreAvoid = filteredData.filter((d) => d.score <= 2);
+  const score5All = filteredData.filter((d) => d.score === 5);
+  const score4All = filteredData.filter((d) => d.score === 4);
+  const score3All = filteredData.filter((d) => d.score === 3);
+  const scoreAvoidAll = filteredData.filter((d) => d.score <= 2);
+  const score5 = activeVerdicts.has("go") ? score5All : [];
+  const score4 = activeVerdicts.has("go") ? score4All : [];
+  const score3 = activeVerdicts.has("wait") ? score3All : [];
+  const scoreAvoid = activeVerdicts.has("skip") ? scoreAvoidAll : [];
+  const goCount = score5All.length + score4All.length;
+  const waitCount = score3All.length;
+  const skipCount = scoreAvoidAll.length;
 
   const prevSlug = MONTH_SLUGS[prevMonth(monthNum)];
   const nextSlug = MONTH_SLUGS[nextMonth(monthNum)];
@@ -294,6 +319,33 @@ export function WhereToGoContent({
               <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
             </svg>
           </Link>
+        </div>
+      </FadeIn>
+
+      {/* ───── Verdict filter chips ───── */}
+      <FadeIn delay={0.12}>
+        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3">
+          {([
+            { key: "go", label: "GO", count: goCount, on: "border-emerald-500/50 bg-emerald-500/10 text-emerald-200", off: "border-emerald-500/20 bg-transparent text-emerald-400/50" },
+            { key: "wait", label: "WAIT", count: waitCount, on: "border-amber-500/50 bg-amber-500/10 text-amber-200", off: "border-amber-500/20 bg-transparent text-amber-400/50" },
+            { key: "skip", label: "SKIP", count: skipCount, on: "border-[#E55642]/50 bg-[#E55642]/10 text-[#f8c8bf]", off: "border-[#E55642]/20 bg-transparent text-[#E55642]/50" },
+          ] as const).map((chip) => {
+            const active = activeVerdicts.has(chip.key);
+            return (
+              <button
+                key={chip.key}
+                type="button"
+                onClick={() => toggleVerdict(chip.key)}
+                className={`group inline-flex items-center gap-2 rounded-full border px-4 py-2 text-xs font-semibold tracking-[0.15em] transition-all ${active ? chip.on : chip.off} ${active ? "" : "opacity-70 hover:opacity-100"}`}
+                aria-pressed={active}
+              >
+                <span className="font-serif italic font-medium text-base tracking-tight" style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}>
+                  {chip.label}
+                </span>
+                <span className="font-mono text-[10px] tracking-[0.18em] opacity-80">({chip.count})</span>
+              </button>
+            );
+          })}
         </div>
       </FadeIn>
 
