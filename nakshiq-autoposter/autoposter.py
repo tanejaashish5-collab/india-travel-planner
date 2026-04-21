@@ -34,22 +34,45 @@ NAKSHIQ_BASE     = "https://nakshiq.com/api/content"
 STATE_FILE       = Path(__file__).parent / "state.json"
 LOG_FILE         = Path(__file__).parent / "autoposter.log"
 
-# IG feed format per weekday (0=Mon … 6=Sun)
-FORMAT_SCHEDULE = {
-    0: "score_card",            # Monday
-    1: "reality_check",         # Tuesday  (tourist_trap falls back to this if no traps)
-    2: "data_carousel",         # Wednesday
-    3: "score_card",            # Thursday
-    4: "reality_check",         # Friday
-    5: "collection_spotlight",  # Saturday
-    6: "infrastructure_truth",  # Sunday   (falls back to score_card if no best dest)
+# ─────────────────────────────────────────────────────────────────────────────
+# MORNING FEED — strict round-robin rotation (no format repeats until ALL
+# have been cycled through). Tracked via theme_usage["morning_formats"].
+# ─────────────────────────────────────────────────────────────────────────────
+MORNING_FORMATS = [
+    # ── Tier 1: existing formats ──
+    "score_card",
+    "reality_check",
+    "data_carousel",
+    "infrastructure_truth",
+    "collection_spotlight",
+    "festival_alert",
+    "kids_intel",
+    "monthly_forecast",
+    "tourist_trap",
+    "blog_promo",
+    # ── Tier 2: NEW data-driven formats ──
+    "seasonal_shift",       # "5/5 now → 2/5 next month — GO NOW"
+    "elevation_face_off",   # sea-level vs sky-level, both 5/5
+    "state_showdown",       # Himachal vs Uttarakhand — April's data
+    "difficulty_spectrum",   # easy vs hard, both high-scoring
+    "underdog_spotlight",   # easy, low-elevation, high-score hidden gem
+    "this_month_only",      # 5/5 now, bad before & after — narrow window
+    "adventure_pick",       # hard / high-altitude featured pick
+    "weekend_escape",       # easy + accessible + high-scoring
+]
+
+# Legacy weekday-based schedule (kept for fallback only — round-robin is primary)
+_LEGACY_FORMAT_SCHEDULE = {
+    0: "score_card", 1: "reality_check", 2: "data_carousel",
+    3: "score_card", 4: "reality_check", 5: "collection_spotlight",
+    6: "infrastructure_truth",
 }
 
-# Facebook format overrides — FB differs from IG on these days
+# Facebook format overrides — no longer needed with round-robin, but kept
+# for backward compatibility in case the legacy path is triggered.
 FB_FORMAT_OVERRIDES = {
-    3: "collection_spotlight",  # Thu: IG=score_card, FB=collection_spotlight
+    3: "collection_spotlight",
 }
-# 1st Saturday of the month → FB override = monthly_forecast (applied at runtime)
 FIRST_SAT_FB_FORMAT = "monthly_forecast"
 
 # Instagram Story rotation (separate from feed) — one per weekday
@@ -639,11 +662,93 @@ def pick_best_destination(destinations: list, used: set,
     ))
 
 def pick_format(weekday: int, traps: list) -> str:
+    """Legacy weekday picker — fallback only."""
     if date.today().day <= 7 and weekday == 0:
         return "monthly_forecast"
-    fmt = FORMAT_SCHEDULE.get(weekday, "score_card")
-    if fmt == "tourist_trap"         and not traps: fmt = "reality_check"
+    fmt = _LEGACY_FORMAT_SCHEDULE.get(weekday, "score_card")
+    if fmt == "tourist_trap" and not traps:
+        fmt = "reality_check"
     return fmt
+
+
+def pick_morning_format(state: dict, content: dict) -> str:
+    """
+    Pick the oldest-never-used morning format via strict round-robin.
+    No format repeats until ALL 18 have been cycled through.
+    """
+    try:
+        traps    = content.get("traps", {}).get("data", [])
+        fests    = content.get("festivals", {}).get("data", [])
+        articles = content.get("articles", {}).get("data", [])
+        colls    = content.get("collections", {}).get("data", [])
+        dests    = content.get("destinations", {}).get("data", [])
+
+        # Build eligible list — skip formats whose data preconditions fail
+        eligible = []
+        for fmt in MORNING_FORMATS:
+            if fmt == "tourist_trap" and not traps:
+                continue
+            if fmt == "festival_alert" and not fests:
+                continue
+            if fmt == "blog_promo" and not articles:
+                continue
+            if fmt == "collection_spotlight" and not colls:
+                continue
+            # Comparison formats need at least 2 qualifying destinations
+            if fmt == "elevation_face_off":
+                hi = [d for d in dests if (d.get("score") or 0) >= 4
+                      and (d.get("elevation_m") or 0) > 3000]
+                lo = [d for d in dests if (d.get("score") or 0) >= 4
+                      and (d.get("elevation_m") or 0) < 1500]
+                if not hi or not lo:
+                    continue
+            if fmt == "state_showdown":
+                states = set(d.get("state", "") for d in dests if (d.get("score") or 0) >= 4)
+                if len(states) < 2:
+                    continue
+            if fmt == "difficulty_spectrum":
+                easy = [d for d in dests if (d.get("difficulty") or "").lower() == "easy"
+                        and (d.get("score") or 0) >= 4]
+                hard = [d for d in dests if (d.get("difficulty") or "").lower() == "hard"
+                        and (d.get("score") or 0) >= 4]
+                if not easy or not hard:
+                    continue
+            if fmt == "underdog_spotlight":
+                underdogs = [d for d in dests
+                             if (d.get("score") or 0) >= 4
+                             and (d.get("elevation_m") or 0) < 2000
+                             and (d.get("difficulty") or "").lower() in ("easy", "moderate")]
+                if not underdogs:
+                    continue
+            if fmt == "adventure_pick":
+                adventures = [d for d in dests
+                              if (d.get("score") or 0) >= 4
+                              and ((d.get("difficulty") or "").lower() == "hard"
+                                   or (d.get("elevation_m") or 0) > 3000)]
+                if not adventures:
+                    continue
+            if fmt == "weekend_escape":
+                escapes = [d for d in dests
+                           if (d.get("score") or 0) >= 4
+                           and (d.get("elevation_m") or 0) < 2500
+                           and (d.get("difficulty") or "").lower() in ("easy", "moderate")]
+                if not escapes:
+                    continue
+            eligible.append(fmt)
+
+        if not eligible:
+            eligible = ["score_card"]
+
+        ordered = pick_oldest_unused(state, "morning_formats", eligible, key=None)
+        chosen = ordered[0]
+
+        status = dimension_cycle_status(state, "morning_formats", len(MORNING_FORMATS))
+        log.info(f"Morning format (round-robin): {chosen} "
+                 f"({status['unused']}/{status['total']} never featured)")
+        return chosen
+    except Exception as e:
+        log.warning(f"pick_morning_format error: {e} — fallback to score_card")
+        return "score_card"
 
 # ─────────────────────────────────────────────────────────────────────────────
 # COPY WRITERS
@@ -912,6 +1017,294 @@ def copy_kids_intel(dest: dict, platform: str) -> str:
         + (f"{note}\n\n" if note else "")
         + f"Family travel data for {TOTAL_DESTINATIONS} destinations → {url}\n\n{tags}"
     ).strip()
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# NEW DATA-DRIVEN FORMATS — surfacing untapped destination data
+# ─────────────────────────────────────────────────────────────────────────────
+
+def copy_seasonal_shift(dest: dict, next_month: str, next_score: int,
+                        platform: str) -> str:
+    """Urgency post: destination drops sharply next month."""
+    try:
+        name  = dest["name"]
+        score = dest.get("score", 5)
+        state = dest["state"]
+        stars_now  = "★" * score + "☆" * (5 - score)
+        stars_next = "★" * next_score + "☆" * (5 - next_score)
+        url = dest_url(dest, "social", "post", "seasonal-shift")
+        tags = hashtag("NakshIQ", name, state, "GoNow", "SeasonalTravel",
+                       "DataDrivenTravel", f"{month_name()}Travel")
+        if platform == "facebook":
+            return (
+                f"⏳ {name.upper()} — TIMING IS EVERYTHING\n\n"
+                f"Right now: {score}/5 {stars_now}\n"
+                f"In {next_month}: {next_score}/5 {stars_next}\n\n"
+                f"That's a {score - next_score}-point drop. Weather shifts, roads close, "
+                f"crowds change.\n\n"
+                f"Would you rather visit a 5/5 or a 2/5? The data says go now.\n\n"
+                f"Full {name} breakdown → {url}\n\n{tags}"
+            ).strip()
+        else:
+            return (
+                f"⏳ {name.upper()} · {month_name().upper()} → {next_month.upper()}\n"
+                f"{stars_now} {score}/5 now → {stars_next} {next_score}/5\n\n"
+                f"That's a {score - next_score}-point drop in 30 days.\n\n"
+                f"Roads, weather, crowds — something shifts. "
+                f"NakshIQ tracks it so you don't have to guess.\n\n"
+                f"Save this. {name} detail → {url}\n\n{tags}"
+            ).strip()
+    except Exception as e:
+        log.warning(f"copy_seasonal_shift error: {e}")
+        return copy_score_card(dest, platform)
+
+
+def copy_elevation_face_off(low_dest: dict, high_dest: dict,
+                            platform: str) -> str:
+    """Two destinations at opposite elevations, both scoring high."""
+    try:
+        lo_name, lo_elev, lo_score = low_dest["name"], low_dest["elevation_m"], low_dest["score"]
+        hi_name, hi_elev, hi_score = high_dest["name"], high_dest["elevation_m"], high_dest["score"]
+        lo_url = dest_url(low_dest, "social", "post", "elevation-face-off")
+        hi_url = dest_url(high_dest, "social", "post", "elevation-face-off")
+        tags = hashtag("NakshIQ", lo_name, hi_name, "ElevationData",
+                       "IndiaTravelData", f"{month_name()}Travel")
+        if platform == "facebook":
+            return (
+                f"SEA LEVEL vs SKY LEVEL — both score high this {month_name()}\n\n"
+                f"🏖️ {lo_name} · {lo_elev:,}m · {lo_score}/5\n"
+                f"🏔️ {hi_name} · {hi_elev:,}m · {hi_score}/5\n\n"
+                f"Same month, same score, completely different experience.\n"
+                f"One's a beach escape. One needs a down jacket.\n\n"
+                f"Which elevation suits you? Both are data-backed this month.\n\n"
+                f"{lo_name} → {lo_url}\n{hi_name} → {hi_url}\n\n{tags}"
+            ).strip()
+        else:
+            return (
+                f"🏖️ vs 🏔️ · {month_name().upper()}\n\n"
+                f"{lo_name} · {lo_elev:,}m · {lo_score}/5\n"
+                f"{hi_name} · {hi_elev:,}m · {hi_score}/5\n\n"
+                f"Same month. Same score. ↑{hi_elev - lo_elev:,}m apart.\n\n"
+                f"NakshIQ doesn't tell you where to go. "
+                f"It tells you what the data says — for {TOTAL_DESTINATIONS} destinations.\n\n"
+                f"Save both → {lo_url}\n\n{tags}"
+            ).strip()
+    except Exception as e:
+        log.warning(f"copy_elevation_face_off error: {e}")
+        return copy_score_card(high_dest or low_dest, platform)
+
+
+def copy_state_showdown(dest_a: dict, dest_b: dict, platform: str) -> str:
+    """Head-to-head comparison of top destinations from two states."""
+    try:
+        a_name, a_state, a_score = dest_a["name"], dest_a["state"], dest_a["score"]
+        b_name, b_state, b_score = dest_b["name"], dest_b["state"], dest_b["score"]
+        url_a = dest_url(dest_a, "social", "post", "state-showdown")
+        url_b = dest_url(dest_b, "social", "post", "state-showdown")
+        tags = hashtag("NakshIQ", a_state, b_state, "StateVsState",
+                       "IndiaTravelData", f"{month_name()}Travel")
+        if platform == "facebook":
+            return (
+                f"{a_state.upper()} vs {b_state.upper()} — {month_name()} data\n\n"
+                f"📍 {a_name} ({a_state}) · {a_score}/5\n"
+                f"📍 {b_name} ({b_state}) · {b_score}/5\n\n"
+                f"Same month, different states, different experience.\n"
+                f"Which state wins YOUR travel style this {month_name()}?\n\n"
+                f"{a_name} → {url_a}\n{b_name} → {url_b}\n\n{tags}"
+            ).strip()
+        else:
+            return (
+                f"{a_state.upper()} vs {b_state.upper()} · {month_name().upper()}\n\n"
+                f"📍 {a_name} · {a_score}/5\n"
+                f"📍 {b_name} · {b_score}/5\n\n"
+                f"Not opinions. Not listicles. Monthly scores from "
+                f"{TOTAL_DESTINATIONS} destinations.\n\n"
+                f"Compare → {url_a}\n\n{tags}"
+            ).strip()
+    except Exception as e:
+        log.warning(f"copy_state_showdown error: {e}")
+        return copy_score_card(dest_a, platform)
+
+
+def copy_difficulty_spectrum(easy_dest: dict, hard_dest: dict,
+                            platform: str) -> str:
+    """Easy vs Hard — both high-scoring, pick your speed."""
+    try:
+        e_name, e_score, e_diff = easy_dest["name"], easy_dest["score"], "Easy"
+        h_name, h_score, h_diff = hard_dest["name"], hard_dest["score"], "Hard"
+        url_e = dest_url(easy_dest, "social", "post", "difficulty-spectrum")
+        url_h = dest_url(hard_dest, "social", "post", "difficulty-spectrum")
+        tags = hashtag("NakshIQ", e_name, h_name, "EasyVsHard",
+                       "IndiaTravelData", f"{month_name()}Travel")
+        if platform == "facebook":
+            return (
+                f"EASY vs HARD — both score high this {month_name()}\n\n"
+                f"🟢 {e_name} · {e_diff} · {e_score}/5\n"
+                f"🔴 {h_name} · {h_diff} · {h_score}/5\n\n"
+                f"One's a relaxed getaway. One's a proper challenge.\n"
+                f"The data says both are excellent right now.\n\n"
+                f"Pick your speed → {url_e}\n\n{tags}"
+            ).strip()
+        else:
+            return (
+                f"🟢 EASY vs 🔴 HARD · {month_name().upper()}\n\n"
+                f"{e_name} · {e_diff} · {e_score}/5\n"
+                f"{h_name} · {h_diff} · {h_score}/5\n\n"
+                f"Same month. Same score. Totally different trip.\n\n"
+                f"NakshIQ scores difficulty alongside everything else — "
+                f"roads, weather, crowds, safety.\n\n"
+                f"Save this → {url_e}\n\n{tags}"
+            ).strip()
+    except Exception as e:
+        log.warning(f"copy_difficulty_spectrum error: {e}")
+        return copy_score_card(easy_dest, platform)
+
+
+def copy_underdog_spotlight(dest: dict, platform: str) -> str:
+    """Easy, low-elevation, high-scoring — the hidden gem heuristic."""
+    try:
+        name  = dest["name"]
+        score = dest["score"]
+        elev  = dest["elevation_m"]
+        state = dest["state"]
+        tag   = dest.get("tagline", "")
+        url   = dest_url(dest, "social", "post", "underdog")
+        stars = "★" * score + "☆" * (5 - score)
+        tags  = hashtag("NakshIQ", name, state, "HiddenGem",
+                        "UnderdogDestination", "IndiaTravelData", f"{month_name()}Travel")
+        if platform == "facebook":
+            return (
+                f"UNDERDOG ALERT: {name.upper()}\n\n"
+                f"{stars} {score}/5 · {elev:,}m · {state}\n\n"
+                f"{tag}\n\n"
+                f"No one's talking about {name}. The data says they should be.\n"
+                f"Easy access. Low elevation. High score. "
+                f"The kind of place that doesn't need a listicle to prove itself.\n\n"
+                f"Full data → {url}\n\n{tags}"
+            ).strip()
+        else:
+            return (
+                f"💎 UNDERDOG · {month_name().upper()}\n"
+                f"{name.upper()} · {stars} {score}/5\n"
+                f"↑{elev:,}m · {state}\n\n"
+                f"{tag}\n\n"
+                f"Easy access. No hype. The data speaks.\n"
+                f"{TOTAL_DESTINATIONS} destinations scored — this one quietly wins.\n\n"
+                f"Save → {url}\n\n{tags}"
+            ).strip()
+    except Exception as e:
+        log.warning(f"copy_underdog_spotlight error: {e}")
+        return copy_score_card(dest, platform)
+
+
+def copy_this_month_only(dest: dict, prev_score: int, next_score: int,
+                         platform: str) -> str:
+    """Narrow window — 5/5 now but bad before and after."""
+    try:
+        name  = dest["name"]
+        score = dest.get("score", 5)
+        state = dest["state"]
+        url   = dest_url(dest, "social", "post", "this-month-only")
+        tags  = hashtag("NakshIQ", name, state, "NarrowWindow",
+                        "GoNow", "IndiaTravelData", f"{month_name()}Travel")
+        if platform == "facebook":
+            return (
+                f"🎯 {name.upper()} — THIS MONTH ONLY\n\n"
+                f"Last month: {prev_score}/5\n"
+                f"Right now: {score}/5 ★★★★★\n"
+                f"Next month: {next_score}/5\n\n"
+                f"{name} has a narrow window. The conditions that make it "
+                f"{score}/5 won't last.\n\n"
+                f"This isn't FOMO. It's data. {TOTAL_DESTINATIONS} destinations, "
+                f"scored monthly.\n\n"
+                f"Plan fast → {url}\n\n{tags}"
+            ).strip()
+        else:
+            return (
+                f"🎯 NARROW WINDOW · {month_name().upper()}\n"
+                f"{name.upper()} · {state}\n\n"
+                f"Last month: {prev_score}/5\n"
+                f"NOW: {score}/5 ★★★★★\n"
+                f"Next month: {next_score}/5\n\n"
+                f"The data says go now or wait a year.\n\n"
+                f"Save → {url}\n\n{tags}"
+            ).strip()
+    except Exception as e:
+        log.warning(f"copy_this_month_only error: {e}")
+        return copy_score_card(dest, platform)
+
+
+def copy_adventure_pick(dest: dict, platform: str) -> str:
+    """Hard or high-altitude — for the adventurous."""
+    try:
+        name  = dest["name"]
+        score = dest["score"]
+        elev  = dest["elevation_m"]
+        state = dest["state"]
+        diff  = (dest.get("difficulty") or "challenging").capitalize()
+        tag   = dest.get("tagline", "")
+        url   = dest_url(dest, "social", "post", "adventure")
+        stars = "★" * score + "☆" * (5 - score)
+        tags  = hashtag("NakshIQ", name, state, "Adventure",
+                        "IndiaTravelData", f"{month_name()}Travel", "HighAltitude")
+        if platform == "facebook":
+            return (
+                f"🧗 ADVENTURE PICK: {name.upper()}\n\n"
+                f"{stars} {score}/5 · {elev:,}m · {diff} · {state}\n\n"
+                f"{tag}\n\n"
+                f"Not every destination is a weekend escape. {name} asks "
+                f"something of you — and the data says {month_name()} is the month to answer.\n\n"
+                f"Full adventure data → {url}\n\n{tags}"
+            ).strip()
+        else:
+            return (
+                f"🧗 ADVENTURE · {month_name().upper()}\n"
+                f"{name.upper()} · {stars} {score}/5\n"
+                f"↑{elev:,}m · {diff} · {state}\n\n"
+                f"{tag}\n\n"
+                f"For those who don't do easy.\n"
+                f"Data-backed. Not blog-backed.\n\n"
+                f"Save → {url}\n\n{tags}"
+            ).strip()
+    except Exception as e:
+        log.warning(f"copy_adventure_pick error: {e}")
+        return copy_score_card(dest, platform)
+
+
+def copy_weekend_escape(dest: dict, platform: str) -> str:
+    """Easy + accessible + high score — 48-hour trip."""
+    try:
+        name  = dest["name"]
+        score = dest["score"]
+        elev  = dest["elevation_m"]
+        state = dest["state"]
+        tag   = dest.get("tagline", "")
+        url   = dest_url(dest, "social", "post", "weekend-escape")
+        stars = "★" * score + "☆" * (5 - score)
+        tags  = hashtag("NakshIQ", name, state, "WeekendEscape",
+                        "IndiaTravelData", f"{month_name()}Travel", "EasyTrip")
+        if platform == "facebook":
+            return (
+                f"🌿 WEEKEND ESCAPE: {name.upper()}\n\n"
+                f"{stars} {score}/5 · {elev:,}m · Easy access · {state}\n\n"
+                f"{tag}\n\n"
+                f"48 hours. No drama. Just data.\n"
+                f"{name} scores {score}/5 this {month_name()} and you don't need "
+                f"a week off to get there.\n\n"
+                f"Plan it → {url}\n\n{tags}"
+            ).strip()
+        else:
+            return (
+                f"🌿 WEEKEND ESCAPE · {month_name().upper()}\n"
+                f"{name.upper()} · {stars} {score}/5\n"
+                f"↑{elev:,}m · Easy · {state}\n\n"
+                f"{tag}\n\n"
+                f"48 hours. No drama. Just data.\n\n"
+                f"Save → {url}\n\n{tags}"
+            ).strip()
+    except Exception as e:
+        log.warning(f"copy_weekend_escape error: {e}")
+        return copy_score_card(dest, platform)
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -1377,6 +1770,48 @@ def generate_post(fmt: str, content: dict, platform: str,
         target = content.get("__run_12month_dest__") or best
         monthly = content.get("__run_12month_scores__") or {}
         return copy_same_place_12_months(target, monthly, platform), target
+
+    # ───────────────────────────────────────────────────────────────────────
+    # NEW data-driven formats (Tier 2 morning round-robin)
+    # ───────────────────────────────────────────────────────────────────────
+    elif fmt == "seasonal_shift":
+        target      = content.get("__run_seasonal_dest__") or best
+        next_month  = content.get("__run_seasonal_month__", "next month")
+        next_score  = content.get("__run_seasonal_score__", 2)
+        return copy_seasonal_shift(target, next_month, next_score, platform), target
+
+    elif fmt == "elevation_face_off":
+        low_dest  = content.get("__run_elev_low__") or best
+        high_dest = content.get("__run_elev_high__") or best
+        return copy_elevation_face_off(low_dest, high_dest, platform), high_dest
+
+    elif fmt == "state_showdown":
+        dest_a = content.get("__run_showdown_a__") or best
+        dest_b = content.get("__run_showdown_b__") or best
+        return copy_state_showdown(dest_a, dest_b, platform), dest_a
+
+    elif fmt == "difficulty_spectrum":
+        easy_dest = content.get("__run_diff_easy__") or best
+        hard_dest = content.get("__run_diff_hard__") or best
+        return copy_difficulty_spectrum(easy_dest, hard_dest, platform), easy_dest
+
+    elif fmt == "underdog_spotlight":
+        target = content.get("__run_underdog__") or best
+        return copy_underdog_spotlight(target, platform), target
+
+    elif fmt == "this_month_only":
+        target     = content.get("__run_thismonth_dest__") or best
+        prev_score = content.get("__run_thismonth_prev__", 2)
+        next_score = content.get("__run_thismonth_next__", 2)
+        return copy_this_month_only(target, prev_score, next_score, platform), target
+
+    elif fmt == "adventure_pick":
+        target = content.get("__run_adventure__") or best
+        return copy_adventure_pick(target, platform), target
+
+    elif fmt == "weekend_escape":
+        target = content.get("__run_weekend__") or best
+        return copy_weekend_escape(target, platform), target
 
     else:
         return copy_score_card(best, platform), best
@@ -1891,10 +2326,8 @@ def _run_inner(force: bool, sync_only: bool, dry_run: bool,
         if ig_fmt == "tourist_trap" and not traps:
             ig_fmt = fb_fmt = "reality_check"
     else:
-        ig_fmt       = pick_format(weekday, traps)
-        fb_fmt       = FB_FORMAT_OVERRIDES.get(weekday, ig_fmt)
-        if weekday == 5 and date.today().day <= 7:
-            fb_fmt = FIRST_SAT_FB_FORMAT
+        ig_fmt       = pick_morning_format(state, content)
+        fb_fmt       = ig_fmt   # both platforms use the same round-robin format
         story_fmt    = STORY_FORMAT_SCHEDULE.get(weekday, "score_card")
         audience_tag = None
 
@@ -2065,6 +2498,128 @@ def _run_inner(force: bool, sync_only: bool, dry_run: bool,
                         break
             content["__run_12month_scores__"] = monthly
             log.info(f"12-month scores for {target['name']}: {monthly}")
+
+    # ── New Tier-2 format pre-picks ──────────────────────────────────────────
+
+    # 8a) Seasonal Shift — find a destination that's high now, drops sharply next month
+    if ig_fmt == "seasonal_shift" or fb_fmt == "seasonal_shift":
+        import calendar as _cal
+        cur_m = date.today().month
+        hi_now = [d for d in dests if (d.get("score") or 0) >= 4]
+        hi_ids = {d["id"] for d in hi_now}
+        for offset in (1, 2):
+            nxt_m = ((cur_m - 1 + offset) % 12) + 1
+            nxt_name = _cal.month_name[nxt_m]
+            r = nakshiq_fetch("destinations",
+                              {"month": nxt_m, "min_score": 0, "limit": 100})
+            dropping = [d for d in (r.get("data") or [])
+                        if d["id"] in hi_ids and (d.get("score") or 0) <= 3]
+            if dropping:
+                ordered = pick_oldest_unused(state, "destinations", dropping, key="id")
+                target  = ordered[0]
+                cur_ver = next((d for d in dests if d["id"] == target["id"]), target)
+                content["__run_seasonal_dest__"]  = cur_ver
+                content["__run_seasonal_month__"] = nxt_name
+                content["__run_seasonal_score__"] = target.get("score", 2)
+                log.info(f"Seasonal Shift: {cur_ver['name']} "
+                         f"{cur_ver.get('score','?')}/5 → {target.get('score','?')}/5 in {nxt_name}")
+                break
+
+    # 8b) Elevation Face-Off — pair a low-altitude with a high-altitude destination
+    if ig_fmt == "elevation_face_off" or fb_fmt == "elevation_face_off":
+        hi_elev = [d for d in dests if (d.get("score") or 0) >= 4
+                   and (d.get("elevation_m") or 0) > 3000]
+        lo_elev = [d for d in dests if (d.get("score") or 0) >= 4
+                   and (d.get("elevation_m") or 0) < 1500]
+        if hi_elev and lo_elev:
+            hi_pick = pick_oldest_unused(state, "destinations", hi_elev, key="id")[0]
+            lo_pick = pick_oldest_unused(state, "destinations", lo_elev, key="id")[0]
+            content["__run_elev_high__"] = hi_pick
+            content["__run_elev_low__"]  = lo_pick
+            log.info(f"Elevation Face-Off: {lo_pick['name']} ({lo_pick.get('elevation_m',0)}m) "
+                     f"vs {hi_pick['name']} ({hi_pick.get('elevation_m',0)}m)")
+
+    # 8c) State Showdown — pair two destinations from different states
+    if ig_fmt == "state_showdown" or fb_fmt == "state_showdown":
+        top_dests = [d for d in dests if (d.get("score") or 0) >= 4 and d.get("state")]
+        if len(top_dests) >= 2:
+            ordered = pick_oldest_unused(state, "destinations", top_dests, key="id")
+            pick_a = ordered[0]
+            pick_b = next((d for d in ordered[1:] if d.get("state") != pick_a.get("state")), None)
+            if pick_b:
+                content["__run_showdown_a__"] = pick_a
+                content["__run_showdown_b__"] = pick_b
+                log.info(f"State Showdown: {pick_a['name']} ({pick_a['state']}) "
+                         f"vs {pick_b['name']} ({pick_b['state']})")
+
+    # 8d) Difficulty Spectrum — pair an easy and a hard destination
+    if ig_fmt == "difficulty_spectrum" or fb_fmt == "difficulty_spectrum":
+        easy = [d for d in dests if (d.get("difficulty") or "").lower() == "easy"
+                and (d.get("score") or 0) >= 4]
+        hard = [d for d in dests if (d.get("difficulty") or "").lower() == "hard"
+                and (d.get("score") or 0) >= 4]
+        if easy and hard:
+            e_pick = pick_oldest_unused(state, "destinations", easy, key="id")[0]
+            h_pick = pick_oldest_unused(state, "destinations", hard, key="id")[0]
+            content["__run_diff_easy__"] = e_pick
+            content["__run_diff_hard__"] = h_pick
+            log.info(f"Difficulty Spectrum: {e_pick['name']} (easy) vs {h_pick['name']} (hard)")
+
+    # 8e) Underdog Spotlight — easy, low-elevation, high-scoring hidden gem
+    if ig_fmt == "underdog_spotlight" or fb_fmt == "underdog_spotlight":
+        underdogs = [d for d in dests
+                     if (d.get("score") or 0) >= 4
+                     and (d.get("elevation_m") or 0) < 2000
+                     and (d.get("difficulty") or "").lower() in ("easy", "moderate")]
+        if underdogs:
+            pick = pick_oldest_unused(state, "destinations", underdogs, key="id")[0]
+            content["__run_underdog__"] = pick
+            log.info(f"Underdog Spotlight: {pick['name']}")
+
+    # 8f) This Month Only — narrow 5/5 window (low prev month, low next month)
+    if ig_fmt == "this_month_only" or fb_fmt == "this_month_only":
+        import calendar as _cal
+        cur_m = date.today().month
+        hi_now = [d for d in dests if (d.get("score") or 0) >= 5]
+        hi_ids = {d["id"] for d in hi_now}
+        prev_m  = ((cur_m - 2) % 12) + 1
+        next_m  = (cur_m % 12) + 1
+        prev_r  = nakshiq_fetch("destinations", {"month": prev_m, "min_score": 0, "limit": 100})
+        next_r  = nakshiq_fetch("destinations", {"month": next_m, "min_score": 0, "limit": 100})
+        prev_map = {d["id"]: d.get("score", 0) for d in (prev_r.get("data") or [])}
+        next_map = {d["id"]: d.get("score", 0) for d in (next_r.get("data") or [])}
+        narrow = [d for d in hi_now
+                  if prev_map.get(d["id"], 0) <= 3
+                  and next_map.get(d["id"], 0) <= 3]
+        if narrow:
+            pick = pick_oldest_unused(state, "destinations", narrow, key="id")[0]
+            content["__run_thismonth_dest__"] = pick
+            content["__run_thismonth_prev__"] = prev_map.get(pick["id"], 2)
+            content["__run_thismonth_next__"] = next_map.get(pick["id"], 2)
+            log.info(f"This Month Only: {pick['name']} "
+                     f"(prev={prev_map.get(pick['id'],0)}, now=5, next={next_map.get(pick['id'],0)})")
+
+    # 8g) Adventure Pick — hard or high-altitude featured pick
+    if ig_fmt == "adventure_pick" or fb_fmt == "adventure_pick":
+        adventures = [d for d in dests
+                      if (d.get("score") or 0) >= 4
+                      and ((d.get("difficulty") or "").lower() == "hard"
+                           or (d.get("elevation_m") or 0) > 3000)]
+        if adventures:
+            pick = pick_oldest_unused(state, "destinations", adventures, key="id")[0]
+            content["__run_adventure__"] = pick
+            log.info(f"Adventure Pick: {pick['name']}")
+
+    # 8h) Weekend Escape — easy + accessible + high-scoring
+    if ig_fmt == "weekend_escape" or fb_fmt == "weekend_escape":
+        escapes = [d for d in dests
+                   if (d.get("score") or 0) >= 4
+                   and (d.get("elevation_m") or 0) < 2500
+                   and (d.get("difficulty") or "").lower() in ("easy", "moderate")]
+        if escapes:
+            pick = pick_oldest_unused(state, "destinations", escapes, key="id")[0]
+            content["__run_weekend__"] = pick
+            log.info(f"Weekend Escape: {pick['name']}")
 
     # 7d) Shared best destination — when IG and FB run DIFFERENT formats on the
     #     same day (e.g. Thu: IG=score_card, FB=collection_spotlight), pre-pick
@@ -2237,6 +2792,9 @@ def _run_inner(force: bool, sync_only: bool, dry_run: bool,
             # Moat tracker: the angle itself, so it rotates through all of MOAT_ANGLES
             if moat and fmt:
                 mark_theme_used(state, "moat_angles", fmt)
+            # Morning format tracker: strict round-robin across all MORNING_FORMATS
+            if not moat and not evening and fmt:
+                mark_theme_used(state, "morning_formats", fmt)
 
             # For carousels, stamp every featured destination so the 14-day
             # cooldown applies to the whole set — not just the anchor slide.
