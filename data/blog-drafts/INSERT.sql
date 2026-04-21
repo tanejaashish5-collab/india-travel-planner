@@ -3,67 +3,90 @@
 
 BEGIN;
 
--- is-manali-in-june-worth-it
+-- things-to-know-leh-in-june
 INSERT INTO articles (
   id, slug, title, subtitle, category, depth, reading_time,
   cover_image_url, tags, destinations, seo_title, seo_description,
   excerpt, content, published_at, updated_at, featured, callouts
 ) VALUES (
-  'manali-june-verdict',
-  'is-manali-in-june-worth-it',
-  'Is Manali in June worth it? The honest answer',
-  '3/5 score. Rohtang permit lottery. Hotel rates 3× off-season. Shift your dates by four weeks.',
+  'leh-june-primer',
+  'things-to-know-leh-in-june',
+  '22 things to know before Leh in June',
+  'June is the best-case Leh month — and still the month when the most travellers fall sick. Twenty-two specifics before you book.',
   'guide',
-  'brief',
-  4,
-  '/images/destinations/manali.jpg',
-  ARRAY['verdict', 'himachal', 'manali', 'june', 'road-safety'],
-  ARRAY['manali'],
-  'Is Manali in June Worth It? The NakshIQ Verdict (2026)',
-  'Manali is on every family''s June list. NakshIQ''s data-scored verdict: wait. Road, crowd, and budget math in one paragraph.',
-  'Manali is on every family''s June list. The NakshIQ score says wait — 3/5 for the month, and every one of the three reasons is fixable if you shift your dates by four weeks. Go in mid-May or the last week of September.',
-  '# Is Manali in June worth it? The honest answer
+  'standard',
+  9,
+  '/images/destinations/leh.jpg',
+  ARRAY['primer', 'ladakh', 'leh', 'june', 'high-altitude', 'international'],
+  ARRAY['leh'],
+  '22 Things to Know Before Leh in June (2026)',
+  'Leh in June — altitude risks, road conditions, permits, hotel math, and the 22 specifics every first-timer underestimates. Data-backed, no sponsored spin.',
+  'June is the month Leh opens up. It''s also the month the most people land with zero acclimatisation and lose the first two days to altitude. Here are the twenty-two things that matter.',
+  '# 22 things to know before Leh in June
 
-Manali is on every family''s June list. The NakshIQ score says wait — 3/5 for the month, and every one of the three reasons is fixable if you shift your dates by four weeks.
+June is the month Leh opens up to motorcyclists, road-trippers, and first-time international visitors. It''s also the month the most people land at 3,500m with zero acclimatisation and lose two days of a one-week trip to headaches, vomiting, or worse.
 
-**Verdict: Wait.** Go in mid-May or the last week of September. Both score higher and cost less.
-
----
-
-## The three-line summary
-
-- **June score: 3/5.** Weather is genuinely pleasant (18–28°C), but the dataset marks it Fair, not Good.
-- **Mall Road is packed** and hotels are billing 3× their off-season rate. Two nights that cost ₹1,800 in late April run ₹5,400 in mid-June.
-- **Rohtang Pass requires a permit** issued through a daily lottery. Most days you do not get one.
-
-## Why the score isn''t Skip
-
-Manali in June is not unsafe. The road from Chandigarh is open, the hotels are not cutting corners, and the 18–28°C window is exactly what the families chasing summer relief came for. That is why the score stays at 3 instead of dropping lower. The problem is the gap between what you are paying and what you are getting.
-
-## Where the June booking pile-up hits
-
-Three costs compound.
-
-- **Hotel rate.** The same 3-star double you can get for ₹1,800 in late April runs ₹5,400 for three nights in mid-June. Multiply by the number of nights, then add peak-season taxi surcharges.
-- **Mall Road.** The core strip from Mall Road to Manu Market is visibly crowded between 11 am and 9 pm across all 30 days of June. Photographs you have seen of empty Manali are from April or October.
-- **Rohtang Pass.** The pass itself is the reason many families come. The Himachal Pradesh government caps daily vehicle counts and runs a permit lottery at [himachalonline.gov.in](https://himachalonline.gov.in/). Most applicants don''t get one on their intended date. Atal Tunnel stays open without a permit — but that bypasses Rohtang, which means you don''t actually see the pass.
-
-## What scores higher in the same state
-
-NakshIQ scored 5/5 in June for seven Himachal destinations that are less crowded and less expensive than Manali. They include high-altitude options (Spiti''s passes have just opened), moderate hill stations (Tirthan Valley, Jibhi), and quiet villages (Bir, Barot). Every one of them has June data marking it Peak, not Fair.
-
-If Manali is the anchor, consider it as a launchpad — one night there to break the drive, then push on to Spiti or the Parvati Valley.
-
-## The cleanest fix: shift the dates
-
-- **Mid-May:** similar weather, 45% cheaper, no Rohtang lottery (pass just opened; try your luck), Mall Road still breathable.
-- **Late September:** weather is crisper (10–22°C), crowds are gone, and the autumn light on the Kullu Valley is the photography window Manali is actually remembered for.
-
-Either of those windows is a Go verdict on the same Manali row, not a Wait.
+This is the pre-flight reading. Twenty-two specifics, ranked by how much trouble each one saves.
 
 ---
 
-**The one-line answer.** If June is the only window you have, go — and spend two days in Manali, not five. If you can move your dates, don''t.',
+## Altitude and health — the non-negotiables
+
+**1.** Leh is at 3,524m. That is high enough for one in four first-time visitors to develop acute mountain sickness (AMS). Flying directly from Delhi (215m) is the biggest risk factor. Road approach from Manali or Srinagar with a night at 3,000m+ cuts the risk by more than half.
+
+**2.** Plan 48 hours of rest in Leh town before doing anything else. No day-one drive to Pangong. No first-night bar crawl. Walk slowly, drink 4 litres of water per day, avoid alcohol.
+
+**3.** Diamox (acetazolamide) is available at every Leh pharmacy without prescription. Start it the night before arrival if you know you''re prone to altitude. It is not a substitute for acclimatisation — it is an adjunct.
+
+**4.** The warning signs of AMS progressing to HACE or HAPE — persistent headache not relieved by rest and fluid, shortness of breath at rest, confusion, blue lips, coughing pink frothy sputum. Descend immediately. SNM Hospital Leh has a hyperbaric chamber.
+
+**5.** If your schedule includes Khardung La (5,359m) or Pangong (4,250m), add 24 hours more of acclimatisation. Short-stop photography on these passes is fine; sleeping at altitude without prep is where people get hurt.
+
+## Roads, passes, and permits
+
+**6.** The two land approaches — Srinagar–Leh (NH-1) and Manali–Leh (NH-3) — both reliably open by the first week of June. BRO finishes snow-clearing over Rohtang/Baralacha/Taglang La by late May most years.
+
+**7.** The Manali–Leh road is 473km and takes two full days with an overnight at Jispa or Sarchu. Sarchu at 4,290m is notorious for AMS; Jispa (3,200m) is a safer overnight stop.
+
+**8.** Srinagar–Leh is 434km, one long day (14+ hours) or two with Kargil overnight. Gentler altitude profile — most travellers tolerate it better.
+
+**9.** Inner Line Permit (ILP) for Pangong, Nubra, Tso Moriri, Hanle is processed online at the Leh Tourism site or in person at the DC office, Leh. Indian nationals get it the same day; foreign nationals need a Protected Area Permit (PAP) which takes 1–2 days and is processed through a registered travel agent.
+
+**10.** Fuel is uncomplicated in Leh (three petrol pumps on the NH-1 approach). Beyond Leh, carry a 10L jerry can. Diskit has a pump; Hanle sometimes has diesel only; Turtuk and Tso Moriri have none.
+
+## Money, network, documents
+
+**11.** SNM Hospital Leh accepts cash and major Indian debit cards. Foreign travel insurance reimbursement is through your insurer, not the hospital — get itemised receipts.
+
+**12.** BSNL postpaid is the only mobile signal that works reliably in Ladakh. Prepaid SIMs from outside J&K/Ladakh won''t activate. Airtel/Jio work in Leh town only. Buy a BSNL postpaid at Delhi airport (international counter) or in Srinagar.
+
+**13.** Carry a hardcopy of your passport, visa, hotel booking, and permit approvals. Checkpoints across Nubra and Changthang require paper copies — a photo on your phone doesn''t cut it when a constable has a stack of photocopies to verify.
+
+**14.** ATMs in Leh are plentiful (SBI, J&K Bank, HDFC). Outside Leh, they are sparse. Carry enough cash for the days you''ll be outside town.
+
+## Weather, clothing, timing
+
+**15.** June daytime in Leh is 15–25°C. Nights drop to 5–10°C. At Pangong or Nubra nights go below zero. A packable down jacket and thermals are essential even in June.
+
+**16.** UV at this altitude is brutal. SPF 50+ sunscreen, wide-brim hat, sunglasses. Leh''s UV index routinely hits 11+ in June. Sunburn on an acclimatisation day is the most common non-AMS medical complaint.
+
+**17.** June rain is minimal (monsoon hasn''t arrived) but evening thunderstorms do happen. The shoulder between pre-monsoon clarity and the July monsoon is a beautiful weather window — clear skies, warm sun, cold nights.
+
+**18.** Mid-June through end of June is peak motorcycle season. Hotel rates are 2–3× shoulder-season. Book 60 days ahead for Pangong and Nubra lake-facing rooms — they sell out.
+
+## Logistics and respect
+
+**19.** Do not attempt Leh by motorcycle without prior Himalayan riding experience. The altitude degrades decision-making, the roads are unforgiving, and SNM Hospital''s trauma ward fills up in June with riders who overestimated themselves.
+
+**20.** Leh is a majority-Buddhist town. Monasteries (Hemis, Thiksey, Alchi, Lamayuru) ask for quiet, modesty, and no photography during prayers. Support local operators — the tourism economy is one of the few industries that keeps young Ladakhis from migrating.
+
+**21.** Water scarcity is real in Ladakh. Showering daily is a privilege at 3,500m in an arid region. Reuse towels. Refill bottles — most Leh cafés offer filtered water for a small top-up fee, reducing plastic waste in a region that can''t process it.
+
+**22.** The single biggest mistake first-timers make is packing too much into a week. A week gives you 2 days of Leh acclimatisation, 2 days of Nubra, 2 days of Pangong, and one travel day. If you want Tso Moriri, Hanle, Turtuk — add three more days.
+
+---
+
+**Related reading:** [Arrival playbook for DEL](/en/arrival/del) · [India permits — ILP, PAP, RAP state by state](/en/guide/permits) · [How to book Indian trains as a foreigner](/en/guide/book-indian-trains).',
   NOW(), NOW(), FALSE, '[]'::jsonb
 ) ON CONFLICT (id) DO UPDATE SET
   title = EXCLUDED.title,
@@ -77,70 +100,66 @@ Either of those windows is a Go verdict on the same Manali row, not a Wait.
   seo_description = EXCLUDED.seo_description,
   updated_at = NOW();
 
--- is-goa-in-august-worth-it
+-- things-to-know-rishikesh-in-april
 INSERT INTO articles (
   id, slug, title, subtitle, category, depth, reading_time,
   cover_image_url, tags, destinations, seo_title, seo_description,
   excerpt, content, published_at, updated_at, featured, callouts
 ) VALUES (
-  'goa-august-verdict',
-  'is-goa-in-august-worth-it',
-  'Is Goa in August worth it? What actually works in monsoon',
-  'Every coastal Goa destination scores 0/5 in August. The interior — Dudhsagar, Mollem, Old Goa — is at its annual peak.',
+  'rishikesh-april-primer',
+  'things-to-know-rishikesh-in-april',
+  '15 things to know before Rishikesh in April',
+  'April is Rishikesh''s pre-summer window. Rafting runs best, the yoga-festival crowds are thinning, and the Ganga is at the right temperature. Fifteen specifics first.',
   'guide',
-  'brief',
-  4,
-  '/images/destinations/dudhsagar-falls.jpg',
-  ARRAY['verdict', 'goa', 'august', 'monsoon', 'interior'],
-  ARRAY['calangute-baga', 'dudhsagar-falls', 'old-goa', 'mollem', 'reis-magos'],
-  'Is Goa in August Worth It? Skip the Beach, Here''s What Works',
-  'Goa in August scores 0/5 for beach — shacks shut, sea is closed. But Dudhsagar, Mollem, and Old Goa are at their annual peak. The data call, inside.',
-  'Goa in August is sold as the contrarian traveller''s secret. NakshIQ scores every coastal destination 0/5 for August. But three interior destinations hit their annual peak in monsoon. Skip the beach; visit the interior.',
-  '# Is Goa in August worth it? What actually works in monsoon
+  'standard',
+  7,
+  '/images/destinations/rishikesh.jpg',
+  ARRAY['primer', 'uttarakhand', 'rishikesh', 'april', 'yoga', 'rafting'],
+  ARRAY['rishikesh'],
+  '15 Things to Know Before Rishikesh in April (2026)',
+  'Rishikesh in April — rafting season, yoga festival aftermath, ashram rules, and the fifteen specifics that make the difference between a good visit and a frustrating one.',
+  'April is the sweet spot between the International Yoga Festival crowds (March) and the pre-monsoon heat (May). Here''s what the guidebooks don''t tell you.',
+  '# 15 things to know before Rishikesh in April
 
-Goa in August is sold as the contrarian traveller''s secret. The NakshIQ score says no — 0/5 for every major beach on our ledger, because beach activity is the entire product and beach activity is shut.
+April is Rishikesh''s quiet month. The International Yoga Festival ended in March, the pre-monsoon heat hasn''t settled in, and the Ganga is at rafting temperature. It''s also when you can actually get a riverside cottage without booking three months ahead.
 
-**Verdict: Skip Goa''s beaches. Visit the interior.** There are three destinations in Goa''s interior that score higher in August than most of the coast scores in December.
-
----
-
-## The three-line summary
-
-- **Every coastal destination scores 0/5.** Calangute-Baga, Palolem, Anjuna, Arambol, Agonda — the dataset marks all of them "No Data" for August because the beach product is not operating.
-- **Shack ban is official.** The Goa government removes beach shacks each monsoon (late May through September). Water sports are shut by coast guard notice.
-- **Interior scores hold.** Dudhsagar Falls, Mollem sanctuary, Old Goa''s Portuguese churches are all at their photographic peak.
-
-## Why the beaches actually don''t work in August
-
-This is not a "rain is inconvenient" argument. This is structural.
-
-- **No shacks.** The beach-shack ecosystem — the food, the sunbeds, the beer, the beachside dhaba — is dismantled by order before June 1 and does not return until October. You can reach the beach. There is nothing on it.
-- **Sea closed.** Coast guard flags ban swimming, water sports, and boat hire. The undertow in monsoon Goa kills people every year. Lifeguards remove themselves because there is no job to do.
-- **Hotel math.** Rates drop 30–50%, not 70%. You are paying mid-season prices for a product that is 10% of its December self.
-
-If the point of Goa is the beach, the beach is closed.
-
-## What actually scores high
-
-Three interior destinations are at their annual peak in August. The NakshIQ dataset does not flag them down the way it does the coast.
-
-- **Dudhsagar Falls** — 310 metres. In August the waterfall is at full volume. It is one of the five tallest in India, and the only month of the year it looks like the photographs is monsoon. The trek from Castle Rock is open to trained groups; the Collem railway approach runs daily.
-- **Mollem (Bhagwan Mahavir Sanctuary)** — 240 km² of Western Ghats. The canopy is saturated green, Tambdi Surla temple is quiet, wildlife activity is up because heat has broken. Very few visitors in August because they assume the whole state is shut.
-- **Old Goa** — UNESCO Portuguese churches (Basilica of Bom Jesus, Se Cathedral). Indoor-weighted itinerary. Rain does not disrupt it.
-
-A three-day trip built around these three plus Panaji lunches (Ritz Classic, Vinayak in Assagao for Goan fish thali) gets you the Goa the tourism board doesn''t market. Keep it to three days. Don''t try to extend into the beaches.
-
-## Where to stay
-
-Skip Calangute-Baga and the north-coast beach strip. Stay in Panaji or Margao. Both are river-adjacent, both are walkable, both give you a 40-minute drive to Dudhsagar and a 20-minute drive to Old Goa. Hotels in both cities hold their standards through monsoon. Expect ₹2,500–5,000/night for a decent mid-range room.
-
-## The counterfactual
-
-If the only reason you want Goa is a beach chair and a Kingfisher, wait until late October. The coast is back by then, the post-monsoon light is better than December''s haze, and hotel rates are 20% under Christmas peak.
+Fifteen specifics before you pack.
 
 ---
 
-**The one-line answer.** August is the wrong month to visit beach Goa and the right month to visit the Goa nobody writes about. Do the interior, do it in three days, and come back to the coast in October.',
+**1.** Rishikesh is three towns stacked on top of each other. Rishikesh proper (the railway-station town) is where buses and trains drop you. Tapovan / Laxman Jhula is the yoga-and-backpacker end on the east bank. Swarg Ashram (across Ram Jhula) is the older pilgrim quarter. Know which one your booking is in — they are 3–6 km apart and the bridges are foot-only.
+
+**2.** April water temperature in the Ganga is about 10–14°C. That is cold but rafting-safe with a wetsuit. By May the water rises and the rapids get rougher; September/October is the calmer shoulder. April is the best window if you want the rapids technical but the water not yet snow-melt frigid.
+
+**3.** Rafting is regulated by the Uttarakhand Tourism Development Board. Licensed operators have a laminated board at the Shivpuri and Marine Drive launches. Rates are fixed (₹600–1,200/person for the classic 16km Shivpuri–Laxman Jhula run) — refuse anyone quoting off the book.
+
+**4.** The two pedestrian bridges — Ram Jhula and Laxman Jhula — are closed to two-wheelers. Laxman Jhula (older, more iconic) is currently closed for structural repair; use the replacement Bajrang Setu just south. Ram Jhula is fully open.
+
+**5.** Ashrams are working institutions, not hotels. If you stay at Parmarth Niketan, Swargashram, or Sivananda Ashram, the rules include no meat, no alcohol, early-morning meditation attendance, and shared meals. If that''s not the vibe, stay at a regular guesthouse in Tapovan and walk over for aarti.
+
+**6.** Ganga Aarti at Parmarth Niketan (6:30pm) is free and remarkable. Arrive 30 minutes early for a seat. It is not a tourist show — it''s a daily ritual that tourists are welcome to attend. Phone photography is allowed; flash is not.
+
+**7.** Rishikesh is alcohol-dry (Rishikesh Municipal Corporation area, including Laxman Jhula and Swarg Ashram). The nearest bars are in Haridwar (20km) and Dehradun (45km). Most hotel rooftops serve mocktails.
+
+**8.** Beatles Ashram (Chaurasi Kutia) — now a forest-department managed site — is worth 90 minutes. Entry ₹150 for Indians / ₹600 for foreigners. Open 10am–4pm. The graffiti-covered meditation cells are the point; the Ganga view is the bonus.
+
+**9.** Yoga classes range from ₹300 drop-in to ₹25,000 for a seven-day immersion. Registered teachers hold Yoga Alliance 200/500 certifications — check the card. The 10-minute "instant enlightenment" tout at the bridge is not.
+
+**10.** April daytime is 25–32°C; early mornings are cool (15°C). Light cottons, but pack a long-sleeve for aarti evenings when the breeze off the river is strong.
+
+**11.** The Neelkanth Mahadev Temple, 30km up in the hills, is the half-day pilgrimage side-trip — shared taxis leave from Swarg Ashram all morning. ₹200 round trip, 90 minutes each way.
+
+**12.** Kaudiyala, 35km upstream, is where multi-day rafting expeditions launch. Shivpuri has day trips. Brahmpuri is the beginner run. Do not book a "night rafting" offer — it does not exist legally in Rishikesh.
+
+**13.** Haridwar and Rishikesh are 25km apart but culturally distinct. Haridwar is the ritual city (Har Ki Pauri aarti is bigger, louder, more crowded). Rishikesh is the modern yoga-and-backpacker city. If your itinerary is tight, Haridwar is a half-day add-on from Rishikesh, not a separate base.
+
+**14.** The Dehradun–Rishikesh drive is 45km on a well-paved road — 90 minutes in normal traffic, 2+ hours on a Friday evening. From Delhi, the Dehradun Shatabdi Express is the best rail option (6 hours), or book a taxi for ₹4,500–6,000 door-to-door.
+
+**15.** Between May and October, Rishikesh gets busy with weekend traffic from Delhi. April is the last quiet weekend window before school summer holidays begin. For ashram stays, book 14 days out; for rafting-focused weekends, 7 days is enough.
+
+---
+
+**Related reading:** [Arrival playbook for DEL](/en/arrival/del) · [How to book Indian trains as a foreigner](/en/guide/book-indian-trains) · [Rishikesh vs Varanasi](/en/vs/varanasi-vs-rishikesh).',
   NOW(), NOW(), FALSE, '[]'::jsonb
 ) ON CONFLICT (id) DO UPDATE SET
   title = EXCLUDED.title,
@@ -154,159 +173,82 @@ If the only reason you want Goa is a beach chair and a Kingfisher, wait until la
   seo_description = EXCLUDED.seo_description,
   updated_at = NOW();
 
--- is-agra-day-trip-worth-it
+-- things-to-know-hampi-in-december
 INSERT INTO articles (
   id, slug, title, subtitle, category, depth, reading_time,
   cover_image_url, tags, destinations, seo_title, seo_description,
   excerpt, content, published_at, updated_at, featured, callouts
 ) VALUES (
-  'agra-day-trip-verdict',
-  'is-agra-day-trip-worth-it',
-  'Is an Agra day trip worth it? The cleanest failure mode',
-  'Agra scores 5/5 in October and November. The day-trip from Delhi removes exactly the three things that make the score.',
+  'hampi-december-primer',
+  'things-to-know-hampi-in-december',
+  '18 things to know before Hampi in December',
+  'December is Hampi at its kindest — daytime in the low twenties, nights sweater-cool, heritage-sites bearable to walk. Eighteen specifics first.',
   'guide',
-  'brief',
-  5,
-  '/images/destinations/agra.jpg',
-  ARRAY['verdict', 'agra', 'day-trip', 'taj-mahal', 'delhi'],
-  ARRAY['agra'],
-  'Is an Agra Day Trip Worth It? Don''t Do It — Here''s Why',
-  'Agra''s 5/5 score is predicated on sunrise, Mehtab Bagh at dusk, and Fatehpur Sikri. A Delhi day trip misses all three. One night flips the math entirely.',
-  'Agra in October and November scores 5/5. The day-trip version from Delhi scores near zero — not because Agra is wrong, but because the day-trip structure removes the three things that make Agra the monument everyone claims it is.',
-  '# Is an Agra day trip worth it? The cleanest failure mode
-
-Agra in October and November scores 5/5. The day-trip version from Delhi scores near zero — not because Agra is wrong, but because the day-trip structure removes the three things that make Agra the monument everyone claims it is.
-
-**Verdict: Skip the day trip. Stay one night.** The marginal cost is ₹2,000 and two hours. The marginal payoff is the entire reason you came.
-
----
-
-## The three-line summary
-
-- **Agra''s score is a month score, not a day-trip score.** 5/5 in October and November assumes you see the Taj at sunrise and again at sunset.
-- **A typical Delhi day trip lands you at the Taj between 11 am and 1 pm.** That is the exact two-hour window the marble reflects hardest and photographs flattest.
-- **Mehtab Bagh at sunset**, which locals will tell you is when the Taj stops being a monument and starts being something else, closes by 6 pm and is across the river. You cannot fit it into a day trip.
-
-## What the "Agra in a day" tour actually delivers
-
-The standard Delhi-Agra-Delhi package looks efficient on paper. Leave Delhi 6 am, back by 9 pm. 215 km each way on the Yamuna Expressway. You pay ₹4,500–7,000 and you get:
-
-- **The Taj Mahal between 11 am and 1 pm.** Direct overhead light, maximum glare, maximum heat off the marble. The white dome looks grey in your phone photos. Every Instagram you have seen of the Taj was not shot then.
-- **Agra Fort for 45 minutes** before the group herds you to a buffet lunch. The fort is UNESCO-level good. You don''t have time.
-- **Back on the bus by 2:30 pm.** The sun is still high.
-- **Arrival at the Delhi drop-off at 9 pm.** You were in a vehicle for 9 hours to spend 4 hours in Agra.
-
-## What you actually miss
-
-- **Sunrise at the Taj.** Gate opens 30 minutes before sunrise. In October the marble turns pink at 6:12 am. The tour bus is still on the expressway.
-- **Mehtab Bagh at dusk.** The "moonlight garden" across the Yamuna is the view that made Shah Jahan''s Taj Mahal the Taj Mahal in the commissioning drawings. Opens 6 am, closes 6 pm. ₹300 entry. Empty.
-- **Fatehpur Sikri.** 40 km west of Agra. Empty Mughal capital in red sandstone. Needs three hours and cannot be clipped onto the day trip.
-- **The 20 minutes between 5:45 and 6:05 pm** when the Taj''s east wall turns amber, the crowds have left, and the complex is nearly silent. A day trip will never buy you this.
-
-## The alternative
-
-One night in Agra. Any decent hotel under ₹3,500 works. Oberoi Amarvilas has the view; Trident Agra is the value pick; ITC Mughal is older but walkable. Book the cheapest room you are willing to sleep in.
-
-Day one — arrive by Gatimaan Express (1 hr 40 min, ₹750 chair car, ₹1,505 EC from Hazrat Nizamuddin) around noon. Check in. Walk to Agra Fort for the 3–5 pm window when the sun hits the Khas Mahal. Dinner at Peshawri or Esphahan. Sleep.
-
-Day two — sunrise at the Taj. East gate. Be in the queue by 5:30 am. You will be out by 8 am. Breakfast. Train back to Delhi by 11 am, or push on to Fatehpur Sikri and Delhi by evening.
-
-Total cost added over the day-trip version: ₹2,000–3,000 per person. Hours actually inside Agra''s monuments: 8, not 4. Sunrise: included. Mehtab Bagh: possible.
-
-## The Agra month score only works if you stay
-
-The 5/5 rating on NakshIQ''s October and November rows is predicated on the golden-light window. The skip-reason for a day trip is structural, not seasonal: the day-trip product does not include the golden-light window by design. That is the failure mode.
-
----
-
-**The one-line answer.** Agra is worth every word written about it. The day-trip version is not.',
-  NOW(), NOW(), FALSE, '[]'::jsonb
-) ON CONFLICT (id) DO UPDATE SET
-  title = EXCLUDED.title,
-  subtitle = EXCLUDED.subtitle,
-  content = EXCLUDED.content,
-  excerpt = EXCLUDED.excerpt,
-  cover_image_url = EXCLUDED.cover_image_url,
-  tags = EXCLUDED.tags,
-  destinations = EXCLUDED.destinations,
-  seo_title = EXCLUDED.seo_title,
-  seo_description = EXCLUDED.seo_description,
-  updated_at = NOW();
-
--- hampi-when-the-heat-is-kind
-INSERT INTO articles (
-  id, slug, title, subtitle, category, depth, reading_time,
-  cover_image_url, tags, destinations, seo_title, seo_description,
-  excerpt, content, published_at, updated_at, featured, callouts
-) VALUES (
-  'hampi-when-heat-is-kind',
-  'hampi-when-the-heat-is-kind',
-  'Hampi: when the heat is kind',
-  'January + February score 5/5. April onward the ruins turn oven. October is the underrated twin.',
-  'best-time',
-  'brief',
-  5,
+  'standard',
+  8,
   '/images/destinations/hampi.jpg',
-  ARRAY['best-time', 'hampi', 'karnataka', 'february', 'ruins', 'unesco'],
+  ARRAY['primer', 'karnataka', 'hampi', 'december', 'heritage', 'ruins'],
   ARRAY['hampi'],
-  'Best Month to Visit Hampi — When the Heat Actually Works',
-  'Hampi scores 5/5 in February and October — cool Matanga sunrise, dry boulders, empty ghats. April to June the data says skip. One data-led call.',
-  'Hampi is the classic case of a destination whose reputation outran its calendar. NakshIQ scores 5/5 in January and February, 4/5 in March, and falls off a cliff from April onward. There is exactly one four-month window where the ruins are not hostile.',
-  '# Hampi: when the heat is kind
+  '18 Things to Know Before Hampi in December (2026)',
+  'Hampi in December — weather, two-bank logistics, ruin-walking strategy, and the eighteen specifics the guidebooks skip. Updated 2026.',
+  'Hampi in December is when the heat finally lets you walk the ruins without wilting. Eighteen specifics that save you a day and a sunburn.',
+  '# 18 things to know before Hampi in December
 
-Hampi is the classic case of a destination whose reputation outran its calendar. The NakshIQ score says 5/5 in January and February, 4/5 in March, and falls off a cliff from April onward. There is exactly one four-month window where the ruins are not hostile. The rest of the year, the 4,100 hectares of exposed Vijayanagara stone turn oven.
+Hampi is a 4,100-hectare UNESCO site you walk through. You cannot see it from a car. In June it''s 42°C and you give up by lunch. In December it''s 22°C and you can actually do the thing you came for.
 
-**Verdict: Go — in February.** Or the last week of January through the first week of March. Outside that arc, the score drops and the math stops working.
+Eighteen specifics.
 
 ---
 
-## The three-line summary
+## The two banks
 
-- **January + February score 5/5.** 18–28°C, cool Matanga sunrise, dry boulders, the ghats at Virupaksha before 9 am are the photographs you have seen.
-- **April hits 38°C in the shade.** The ruins have no shade. May and June push past 42°C. The score drops to 2 and then 1.
-- **October and November recover.** 5/5 again. Post-monsoon Tungabhadra is high, Matanga Hill sunsets are hazy but clearing, and the crowds are lighter than February.
+**1.** Hampi has two sides. The **south bank** (Hampi Bazaar / Virupapura Gaddi side) is where the temples, ruins, and most day tours concentrate. The **north bank** (Hippie Island / Anegundi) is where the budget guesthouses, cafés, and riverside vibe live. The river in between is the Tungabhadra.
 
-## Why the score peaks when it does
+**2.** The only official way to cross the river is the **coracle boat ferry** at Virupapura — operates roughly 07:00–18:00, shuts completely after sunset. There is no bridge near Hampi Bazaar. Plan your sleep accordingly.
 
-The Vijayanagara ruins cover ~4,100 hectares of granite boulder field, exposed temple complexes, and raised causeways. There is no tree cover on the climb to Matanga Hill. The bouldering around Tungabhadra is directly on granite that stores heat for hours after sundown. Anything above 32°C is not sightseeing — it is endurance.
-
-February delivers 10–24°C. Mornings are cool enough for the Matanga Hill sunrise climb (3 km return, starts from Virupaksha). Afternoons on the Royal Enclosure side are warm but walkable. Evenings at the Tungabhadra bouldering area are soft.
-
-## Where the February score earns its 5
-
-- **Matanga Hill sunrise.** Gate opens at 5:30 am. The viewpoint tops out at 250m. In February the haze lifts by 6:45, which is when the first light hits Virupaksha''s gopuram. 20 minutes later, the Achyutaraya temple emerges.
-- **Bouldering on the south side.** Dry granite, 22–28°C midday, grip holds. The northern Badami style routes at Hemakuta are also dry.
-- **Pattabhirama to Vitthala walk.** 4.2 km flat. The iconic stone chariot is best between 8 and 10 am — soft light on sandstone red.
-- **Tungabhadra coracle ride.** ₹400–600 per person, 30 minutes. Water levels are mid-drop but the river is still wide enough for the boulders on the far bank to show.
-- **Night at Hampi Bazaar.** Cool enough to sit on the ghat steps after 7 pm. In April that is impossible.
-
-## Why April through June is Skip
-
-- **April.** Score 2. The ruins surface at 38°C midday — ground temperature on the granite paths hits 46°C. There is no shade between Hemakuta and Vitthala.
-- **May.** Score 1. Score drops because heat is structurally dangerous, not just uncomfortable. Dehydration cases are reported annually. Do not go.
-- **June.** Score 2. Monsoon brings some relief but the Tungabhadra rises and the far-side routes (Anegundi across the river) become inaccessible by coracle. The ruins themselves are walkable in shorter morning windows.
-
-The "Hampi is hot but manageable" framing is wrong. Below 5/5 in April–June is a data signal, not a caveat.
-
-## The October–November recovery
-
-Post-monsoon October scores 5/5 again. The Tungabhadra is at annual peak volume. Post-monsoon air is cleaner than February''s (dust from dry lakebeds starts by late January). November holds the score through the first week before the weekend tour buses come back.
-
-If February and March are booked out, October is the underrated twin. Fewer foreign backpackers, lower hut prices at Hampi Bazaar (₹400–800 vs ₹800–1,500 in February), and the same 5/5 on the NakshIQ ledger.
+**3.** If you sleep on Hippie Island and the ferry breaks down (it happens — coracle damage, river flow), the detour is 30km by road via the Anegundi–Kampli bridge. Keep your phone charged.
 
 ## Getting there
 
-- **Hospet railhead** is 13 km from Hampi. Hampi Express from Bangalore (KSR Bengaluru) arrives 7:10 am, ₹310 sleeper / ₹1,400 2A. Autos at Hospet charge ₹300–400 for the 25-minute drive.
-- **Hubballi airport (HBX)** is 160 km, 3 hours by cab. ₹2,500 one-way, ₹3,500 return.
-- **Stay on the south bank** (Hampi Bazaar) for ruins access, north bank (Anegundi / Sanapur) for the bouldering + rural stay experience.
+**4.** Hampi has no airport. Hubli (160km, 3.5h drive) is the nearest. Belagavi (200km) is an alternative. Bangalore (340km, overnight bus) is the most common rail/road approach.
 
-## What to carry
+**5.** The **Hampi Express** (Bangalore Yeshvantpur → Hospet) is the classic overnight train — departs Bangalore around 22:00, arrives Hospet 07:30. From Hospet it''s a 13km auto-rickshaw (₹250) to Hampi Bazaar. Book 30–60 days ahead in December.
 
-Cotton layers, a wide-brim hat, at least 2 litres of water per person for the mid-day stretches. Good trail shoes for Matanga Hill. Cash — most Hampi Bazaar huts are cash-preferred.
+**6.** State buses (KSRTC / Rajahamsa) Bangalore → Hospet run every hour. 8–10 hours overnight, ₹800–1,200 AC sleeper. Less reliable than the train but flexible.
+
+## When to walk what
+
+**7.** **Virupaksha Temple** opens 06:30 — be there at sunrise for the best light and no tour-group noise. It''s the only part of Hampi that is still a working Hindu temple.
+
+**8.** The **Royal Enclosure** / Zanana / Elephant Stables complex takes 3 hours. Cover it between 14:30 and 17:30 when the sun is soft. Noon will defeat you even in December.
+
+**9.** **Matanga Hill** sunrise is the single best view of the Hampi landscape. Walk up in the dark, 45 minutes from Virupaksha Temple. Torch required; the first 10 minutes of the path is uneven. Come back down before 09:00 — the hill is not safe to descend in mid-day heat for unfit walkers.
+
+**10.** **Anjaneya Hill** (Hanuman''s birthplace, north bank) has 570 steps. Do it at sunrise or just before sunset. Monkeys are plentiful; don''t carry food in the open.
+
+## Rules, tickets, logistics
+
+**11.** A single ₹40 (Indian) / ₹600 (foreigner) ticket covers the Zanana / Elephant Stables complex and is valid for multiple enclosures on the same day. Buy at the Zanana gate — don''t let touts sell you it twice.
+
+**12.** Virupaksha Temple camera fee: ₹50 for a still camera, ₹500 for video. Drone flying is **illegal** across the Hampi World Heritage Area — the ASI will confiscate.
+
+**13.** Hippie Island is officially an alcohol-permitted zone; south-bank Hampi Bazaar is officially dry. Most guesthouses on the north bank have a liquor licence. Restaurants in Hampi Bazaar do not — bring it with you or eat across the river.
+
+**14.** The **Vijay Vittala Temple** with the stone chariot is 3km from Virupaksha. You can walk it, but the road is hot and dusty. Rent a bicycle (₹150/day at Hampi Bazaar) or a moped (₹300/day). E-scooters available at a few places on the north bank.
+
+## Weather, stays, food
+
+**15.** December daytime: 22–28°C, nights 14–18°C. Mornings before 07:30 can be cool enough for a light sweater. No rain. UV still strong by mid-morning.
+
+**16.** Mosquitoes at dusk on the north bank. Dengue cases are low but present. Long sleeves after 18:00, repellent with DEET.
+
+**17.** Hotels in Hampi Bazaar are basic (most are small homestays under ₹2,000). Mid-range (₹3,000–6,000) is on the north bank: Padma Guest House, Goan Corner, Mowgli. The ₹10,000+ tier is at Evolve Back Hampi, 25km away toward Kamalapura — a different experience entirely.
+
+**18.** December is a shoulder-season month in Hampi — busy but not sold-out. The Hampi Utsav (state cultural festival) moves around but is usually early January. If you want to overlap, book a week after Christmas and stay through the festival.
 
 ---
 
-**The one-line answer.** February is the window the ruins were built to be seen in. October is the alternative. The rest of the year, the data tells you not to bother.',
+**Related reading:** [Is Hampi in April worth it? The heat verdict](/en/blog/hampi-when-the-heat-is-kind) · [Hampi vs Badami](/en/vs/hampi-vs-badami) · [Hampi vs Khajuraho](/en/vs/khajuraho-vs-hampi).',
   NOW(), NOW(), FALSE, '[]'::jsonb
 ) ON CONFLICT (id) DO UPDATE SET
   title = EXCLUDED.title,
@@ -320,81 +262,856 @@ Cotton layers, a wide-brim hat, at least 2 litres of water per person for the mi
   seo_description = EXCLUDED.seo_description,
   updated_at = NOW();
 
--- pushkar-in-october-scored
+-- things-to-know-jaisalmer-in-november
 INSERT INTO articles (
   id, slug, title, subtitle, category, depth, reading_time,
   cover_image_url, tags, destinations, seo_title, seo_description,
   excerpt, content, published_at, updated_at, featured, callouts
 ) VALUES (
-  'pushkar-october-scored',
-  'pushkar-in-october-scored',
-  'Despite the camel-fair reputation, Pushkar in October is better than November',
-  'Both months score 5/5. One shares the ghats with 50,000 people. The other shares them with nobody.',
-  'best-time',
+  'jaisalmer-november-primer',
+  'things-to-know-jaisalmer-in-november',
+  '12 things to know before Jaisalmer in November',
+  'November is when the desert turns habitable — 25°C days, cold nights, camel-safari season opens. Twelve specifics before you book a dune camp.',
+  'guide',
+  'standard',
+  6,
+  '/images/destinations/jaisalmer.jpg',
+  ARRAY['primer', 'rajasthan', 'jaisalmer', 'november', 'desert', 'fort'],
+  ARRAY['jaisalmer'],
+  '12 Things to Know Before Jaisalmer in November (2026)',
+  'Jaisalmer in November — camel safari season opens, fort logistics, desert-camp reality, and the twelve specifics that separate a great trip from a tourist-trap one.',
+  'November is Jaisalmer''s reopening month — the desert becomes walkable, the fort no longer cooks at noon. Twelve things first-timers underestimate.',
+  '# 12 things to know before Jaisalmer in November
+
+Jaisalmer is a working fort — 4,000 people still live inside the walls, paying inflated water bills and selling turbans to German backpackers. November is when it becomes a place you want to be, not a place you survive.
+
+Twelve specifics.
+
+---
+
+**1.** Jaisalmer Fort is one of the few "living forts" left in the world — which is the problem. Decades of residents-plus-tourists pressure has caused subsidence and wall failures. UNESCO and the ASI have asked hotels inside the fort to relocate. If you want to stay inside the fort, pick a guesthouse that has permits and visible conservation-compliance signage. If you want the fort to survive, consider staying just outside (Gandhi Chowk, Kisan Ghat).
+
+**2.** November daytime is 18–28°C. Nights drop to 10–15°C. In the desert 30km out, nights go to 5–8°C. A packable jacket is essential for the camel-safari overnight.
+
+**3.** Camel safaris are the thing, but 80% of "camel safari" offers are road-transfer scams — a jeep takes you to a resort camp, you do a 30-minute camel ride at sunset, you eat a buffet, you sleep in a Swiss tent with Wi-Fi. If you want that, fine — it''s comfortable and photogenic. If you want an actual desert night, specify **non-touristy / no-resort / real-dunes**. Operators to ask for: Sam Sand Dunes (avoid, commercial), Khuri (quieter), Lanela / Damodra / Mukam (actual desert).
+
+**4.** The real desert experience is 60–120km from Jaisalmer, not 30km. You sleep on dunes, not in a resort. You need a registered operator; the Thar Desert National Park requires permits for certain dune areas.
+
+**5.** Patwon Ki Haveli, Nathmal Ki Haveli, Salim Singh Ki Haveli — the three famous havelis in Jaisalmer city — are a 3-hour walking loop. Enter as many as you can; the sandstone interior detail is the reason you came. ₹50–100 entry per haveli.
+
+**6.** Gadisar Lake at sunrise is worth the 06:30 alarm — local women come to fill water pots, pelicans and migratory birds gather, and the fort reflects on the water. Don''t go at sunset — it''s crowded and the light is wrong.
+
+**7.** Food: Jaisalmer''s signature dish is *ker sangri* (desert beans cooked with spices). Not every restaurant does it well. Dhanraj Bhatia / Trio / The Trio Restaurant are consistently good. Skip the "rooftop restaurants with fort views" on the main tourist strip — the food is forgettable, the markup is 3×.
+
+**8.** Water conservation matters. Jaisalmer is the driest UNESCO-listed city in the world by per-capita water availability. Short showers. Don''t demand a bath tub. Reuse towels. Your hotel will thank you.
+
+**9.** Rajasthan tourism liquor permits are straightforward — most hotels and restaurants serve. The fort''s inside is technically dry during major festivals; otherwise unrestricted. Rajasthani wine (mahua, locally fermented) is novelty; the quality is variable.
+
+**10.** November is the start of wedding season in Rajasthan. If your trip overlaps with a November full moon, expect wedding processions, temporary road closures, and hotel price hikes. Book 30 days ahead minimum.
+
+**11.** The Thar Express (border freight rail to Pakistan) used to pass near Jaisalmer; cross-border services are suspended. Do not go looking for the Indo-Pak border on a casual day trip — it is a restricted military area. Tanot Mata temple (Indo-Pak border adjacent) is accessible on a permit; ask at Jaisalmer Tourist Information for the current process.
+
+**12.** Jaisalmer–Jodhpur is 285km by road (5–6 hours) and there are direct trains. Jaisalmer–Bikaner is 325km (6 hours). Don''t try to cover Jaisalmer plus Jodhpur plus Bikaner in under 4 days — you''ll just sit in a car.
+
+---
+
+**Related reading:** [Jaisalmer vs Jodhpur](/en/vs/jaisalmer-vs-jodhpur) · [Kutch vs Jaisalmer](/en/vs/kutch-vs-jaisalmer) · [Arrival playbook for DEL](/en/arrival/del).',
+  NOW(), NOW(), FALSE, '[]'::jsonb
+) ON CONFLICT (id) DO UPDATE SET
+  title = EXCLUDED.title,
+  subtitle = EXCLUDED.subtitle,
+  content = EXCLUDED.content,
+  excerpt = EXCLUDED.excerpt,
+  cover_image_url = EXCLUDED.cover_image_url,
+  tags = EXCLUDED.tags,
+  destinations = EXCLUDED.destinations,
+  seo_title = EXCLUDED.seo_title,
+  seo_description = EXCLUDED.seo_description,
+  updated_at = NOW();
+
+-- things-to-know-meghalaya-in-july
+INSERT INTO articles (
+  id, slug, title, subtitle, category, depth, reading_time,
+  cover_image_url, tags, destinations, seo_title, seo_description,
+  excerpt, content, published_at, updated_at, featured, callouts
+) VALUES (
+  'meghalaya-july-primer',
+  'things-to-know-meghalaya-in-july',
+  '20 things to know before Meghalaya in July (monsoon)',
+  'July is Meghalaya at full volume — the wettest month in one of the wettest places on Earth. Twenty specifics for travelling the monsoon, not fighting it.',
+  'guide',
+  'standard',
+  9,
+  '/images/destinations/shillong.jpg',
+  ARRAY['primer', 'meghalaya', 'july', 'monsoon', 'northeast', 'waterfalls'],
+  ARRAY['shillong', 'cherrapunji'],
+  '20 Things to Know Before Meghalaya in July Monsoon (2026)',
+  'Meghalaya in July — the wettest month, waterfalls at peak, living-root-bridge access, landslide risk, and twenty specifics for monsoon travel in the abode of clouds.',
+  'July in Meghalaya is 800mm of rain, closed-shut skies, and waterfalls at volumes you will not see anywhere else in India. Travel it right or don''t travel it.',
+  '# 20 things to know before Meghalaya in July (monsoon)
+
+Cherrapunji and Mawsynram, both in Meghalaya, trade annual rainfall records — often recording over 11,000mm a year, mostly between June and September. July alone can drop 1,500–2,500mm. If you''ve never seen waterfalls that sound like jet engines, this is when you''ll see them.
+
+But only if you respect the conditions.
+
+---
+
+## Before you decide
+
+**1.** July is the **wettest month**. Rainfall averages 600–800mm in Shillong, 1,500–2,500mm in Cherrapunji/Mawsynram. Expect 5–7 days of continuous rain at a stretch. Sunny windows are 2–3 hours at a time.
+
+**2.** If you want **Living Root Bridges** at full flow and the waterfalls at maximum, July is correct. If you want dry trails and clear sky photography, come October. July is not a compromise month — it is a commitment.
+
+**3.** Landslide risk on the Guwahati–Shillong NH-6 and Shillong–Cherrapunji road is real. BRO and MeECL clear them within 6–24 hours but travel delays of half a day are common. Don''t book a tight flight connection out of Guwahati on your last day.
+
+**4.** Families with small children: probably skip July. The double Living Root Bridge trek in Nongriat involves 3,500 slippery steps down a gorge. Monsoon slippery is another level of slippery. October or March are family months.
+
+## Getting there
+
+**5.** Guwahati (GAU) is the nearest airport — Meghalaya has a small airstrip at Shillong (SHL) but scheduled flights are infrequent and monsoon-cancellation-prone. Plan for GAU.
+
+**6.** Guwahati to Shillong is 100km, 3–4 hours via NH-6. Shared sumos depart Guwahati Paltan Bazaar all day. Pre-paid taxi ₹3,500–4,500. The last 30km climbs 1,500m — ear-popping, beautiful, occasionally socked-in by cloud.
+
+**7.** Meghalaya requires an **Inner Line Permit for foreign nationals** (as of 2019 rules — verify current status before travel). Indian nationals do not need ILP. Tourism office issues ILPs at Shillong.
+
+## Waterfalls (the point)
+
+**8.** **Nohkalikai Falls** (near Cherrapunji) — 340m drop, India''s tallest plunge waterfall. Viewpoint is paved, safe, open 07:00–17:00. In July the spray reaches the viewpoint even 200m above the falls.
+
+**9.** **Seven Sisters Falls** (Cherrapunji) — best viewed from the Mawsmai Cave complex. Early morning before cloud closes in.
+
+**10.** **Krang Suri Falls** (Jaintia Hills, 2.5h drive from Shillong) — a swimmable pool with a 25m cascade above it. July flow may make the pool unswimmable — check at the gate.
+
+**11.** **Wei Sawdong** and **Dainthlen** — two lesser-known falls near Cherrapunji. Local guide needed; some paths become impassable in July.
+
+## Living Root Bridges
+
+**12.** The classic **Double Decker Living Root Bridge** is in Nongriat, accessed by a 3,500-step down-and-back trek from Tyrna village. In July the steps are permanently wet and moss-slick. Trekking poles, grippy shoes, long pants. Budget 8–10 hours round-trip.
+
+**13.** The trek is physical — the descent destroys your knees, the ascent destroys your lungs. Stay overnight at a homestay in Nongriat (₹500–1,200/night) rather than attempting it as a day trip from Cherrapunji.
+
+**14.** Homestay operators in Nongriat are Khasi families. Book via the village panchayat''s phone number (visible at the Tyrna trailhead) rather than through online aggregators — the percentage reaching the family matters.
+
+## Living with the rain
+
+**15.** **Clothing:** full waterproof jacket, waterproof backpack cover, quick-dry hiking pants, merino base layers, waterproof shoes. Not a tourist poncho — a proper jacket. You will wear it 6–8 hours a day.
+
+**16.** **Electronics:** dry bags for camera and phone. The humidity at Cherrapunji is 98%+ for days at a stretch — your gear is getting damp whether you plan for it or not.
+
+**17.** **Leeches** are everywhere on forest trails in July. Salt sachets, avoid shorts, check socks every 10 minutes. Not dangerous, just annoying.
+
+## Food, stays, respect
+
+**18.** Shillong''s food scene is underrated: Trattoria (local Khasi), Cafe Shillong Heritage, ML 05 Cafe. Cherrapunji is more basic — Sai Mika Resort and Orange Roots are the reliable non-homestay options.
+
+**19.** Meghalaya is a **Christian-majority, matrilineal society**. Sunday mornings — most of Shillong and most villages — churches are full, shops are closed until noon. Plan your travel days for Sunday; shop/eat on Monday.
+
+**20.** Don''t chase "Instagram spots" that require climbing on wet rocks near waterfalls. Every year tourists die at Nohkalikai viewpoints going off the paved area. The drop is 340m. The rocks are algae. The local rescue team is 2 hours away.
+
+---
+
+**Related reading:** [Shillong vs Cherrapunji](/en/vs/shillong-vs-cherrapunji) · [Arrival playbook for DEL](/en/arrival/del) · [Meghalaya vs Assam](/en/vs/meghalaya-vs-assam).',
+  NOW(), NOW(), FALSE, '[]'::jsonb
+) ON CONFLICT (id) DO UPDATE SET
+  title = EXCLUDED.title,
+  subtitle = EXCLUDED.subtitle,
+  content = EXCLUDED.content,
+  excerpt = EXCLUDED.excerpt,
+  cover_image_url = EXCLUDED.cover_image_url,
+  tags = EXCLUDED.tags,
+  destinations = EXCLUDED.destinations,
+  seo_title = EXCLUDED.seo_title,
+  seo_description = EXCLUDED.seo_description,
+  updated_at = NOW();
+
+-- things-to-know-goa-in-december
+INSERT INTO articles (
+  id, slug, title, subtitle, category, depth, reading_time,
+  cover_image_url, tags, destinations, seo_title, seo_description,
+  excerpt, content, published_at, updated_at, featured, callouts
+) VALUES (
+  'goa-december-primer',
+  'things-to-know-goa-in-december',
+  '14 things to know before Goa in December',
+  'December is peak Goa — prices 3× off-season, traffic snarled, every shack fully booked. Fourteen specifics to travel it without the tourist-trap tax.',
+  'guide',
+  'standard',
+  7,
+  '/images/destinations/goa.jpg',
+  ARRAY['primer', 'goa', 'december', 'beaches', 'new-year', 'nightlife'],
+  ARRAY['palolem', 'anjuna', 'calangute-baga'],
+  '14 Things to Know Before Goa in December (2026)',
+  'Goa in December — weather, pricing, airport logistics, beach-by-beach guide, and the fourteen specifics that save you from paying 3× for everything.',
+  'December is when Goa fills up. Hotel prices triple, shacks run out of seating, New Year becomes its own logistical project. Fourteen things to know before you book.',
+  '# 14 things to know before Goa in December
+
+December is when Goa fills up. Domestic flights from Delhi and Mumbai double in frequency; Europeans arrive for their annual escape; Russians flood North Goa; every shack in Vagator runs out of fish by 9pm.
+
+The good version of December Goa is reachable. The bad version is paying 3× for a plastic-chair seat at a crowded beach bar. Fourteen specifics decide which one you get.
+
+---
+
+**1. Two airports, not one.** Dabolim (GOI) in South Goa is the old airport near Vasco. Mopa (MOA) in the far North (Pernem) opened 2023. International arrivals mostly use Mopa now. If you''re heading to South Goa (Palolem, Agonda, Patnem), book Dabolim — Mopa to South Goa is a 2.5h transfer.
+
+**2. North Goa and South Goa are different countries.** North (Baga, Calangute, Anjuna, Candolim, Vagator, Morjim) — party, packed, Russian and British crowds, loud shacks, €8 beers. South (Palolem, Agonda, Patnem, Colva) — quieter, yoga, European families, moderate prices. Choose one or the other, don''t try to do both in a week.
+
+**3. December weather is 23–30°C daytime, 18–22°C nights. Zero rain. Humidity 70% — you will sweat. This is the best Goa weather of the year; it''s also why everyone is there.
+
+**4. Hotel prices in December are 2.5×–4× off-season. A beach-view room at Palolem that costs ₹2,500 in July costs ₹8,000 in December, ₹14,000 on Christmas–New Year. Book by October. By December the only availability is at the top or bottom of the price range.
+
+**5. The Christmas–New Year week (Dec 22–Jan 2) is a different beast. Hotel prices go 2× higher again, minimum-stay requirements of 3–5 nights appear, rented scooters get impossible to find. Book for this window by August.
+
+**6. Taxi unions in Goa refuse app cabs historically. GoaMiles is the state-sanctioned app-taxi. Uber/Ola work but drivers are scarce. Most hotels arrange airport transfers (₹2,000–3,500) — accept this rather than fight the taxi mafia at 11pm.
+
+**7. Rented scooter is the local way. ₹400–600/day for an Activa, ₹800–1,500 for a 350cc. Bring your international driving permit (IDP) if foreign — Goa police do stop scooters and ask. Wear a helmet; fines are ₹1,000+ without one. Do not drink and ride.
+
+**8. Beach shacks are temporary. Every season (October to May) shack owners rebuild from scratch. This means a shack you loved last year may have a different owner, menu, and quality level this year. Read fresh Google reviews. Morjim and Ashvem have the most consistent food; Baga has the most variability.
+
+**9. Alcohol is cheap. Beer ₹120, IMFL ₹200, imported ₹500+. But scams include "service charge 12%" + "VAT 18%" + "convenience fee 10%" being layered on a bill. Always ask for the printed menu with prices and demand an itemised receipt.
+
+**10. Drugs are widely offered and illegal. Possession of any quantity invites jail time under the NDPS Act. Russian and European mafia-linked parties at Anjuna and Vagator are surveilled — being caught at one is not a "fine and move on" situation.
+
+**11. New Year parties worth doing: Sunburn Festival (when running — check dates) is the big commercial option; Café Mambo, Tito''s, LPK are mainstream; for the quieter version, Palolem silent discos and Arambol drum circles are the locals'' preference.
+
+**12. North Goa traffic on Christmas Eve and New Year''s Eve is immobile. Budget 90 minutes for what would normally be a 20-minute ride. If your New Year party is in Baga and your hotel is in Candolim, walk the 4km instead of taking a car.
+
+**13. Beach hawkers are aggressive in December. Massage, henna, trinkets, fish lunches. A firm "no, thank you" (not "maybe later") ends the conversation. Most hawkers are migrants from Karnataka and Kerala working the season — they''re polite to refusal, they just have to try.
+
+**14. Goa Carnival is February, not December. Don''t book a December trip thinking you''ll catch it. Shigmo (Hindu festival) is March. The big Christmas eve masses at the Basilica of Bom Jesus and Old Goa are free and worth attending even for non-religious visitors.
+
+---
+
+**Related reading:** [Pondicherry vs Palolem](/en/vs/pondicherry-vs-palolem) · [Gokarna vs Palolem](/en/vs/gokarna-vs-palolem) · [Arrival playbook for GOI](/en/arrival/goi).',
+  NOW(), NOW(), FALSE, '[]'::jsonb
+) ON CONFLICT (id) DO UPDATE SET
+  title = EXCLUDED.title,
+  subtitle = EXCLUDED.subtitle,
+  content = EXCLUDED.content,
+  excerpt = EXCLUDED.excerpt,
+  cover_image_url = EXCLUDED.cover_image_url,
+  tags = EXCLUDED.tags,
+  destinations = EXCLUDED.destinations,
+  seo_title = EXCLUDED.seo_title,
+  seo_description = EXCLUDED.seo_description,
+  updated_at = NOW();
+
+-- is-leh-in-november-worth-it
+INSERT INTO articles (
+  id, slug, title, subtitle, category, depth, reading_time,
+  cover_image_url, tags, destinations, seo_title, seo_description,
+  excerpt, content, published_at, updated_at, featured, callouts
+) VALUES (
+  'leh-november-verdict',
+  'is-leh-in-november-worth-it',
+  'Is Leh in November worth it? Don''t go',
+  '2/5. Passes closing, hotels shutting, medical infrastructure half-staffed. The one case where Leh is actually unkind.',
+  'guide',
+  'brief',
+  4,
+  '/images/destinations/leh.jpg',
+  ARRAY['verdict', 'ladakh', 'leh', 'november', 'winter', 'skip'],
+  ARRAY['leh'],
+  'Is Leh in November Worth It? The Verdict Is Skip',
+  'November in Leh is the worst shoulder — passes closing, hotels shut, flights weather-cancelled. Here''s why the data says skip, and what to do instead.',
+  'November is the month Leh shuts down. Khardung La closed, Pangong inaccessible by road, 70% of hotels closed for winter. Here''s the case for coming back in June.',
+  '# Is Leh in November worth it? Don''t go
+
+Leh in November scores 2/5 on our monthly grid. That is one of only three months that scores this low (the other two are December and January, which at least have a coherent winter-sports pitch).
+
+**Verdict: Skip.** Come back in June or September. Both score 5/5.
+
+---
+
+Here is the specific problem with November: the town is caught between seasons.
+
+Khardung La and the road to Pangong typically close to civilian traffic by the second or third week of October; by November neither is reliably open. Nubra Valley access via the pass is limited to military. The road to Tso Moriri closes by early November. So the three signature destinations that justify a Leh trip — Pangong, Nubra, Tso Moriri — are all effectively unreachable.
+
+Meanwhile, the Srinagar–Leh and Manali–Leh highways both close to tourist traffic by November. BRO stops maintaining Rohtang and Baralacha; flights from Delhi become the only way in and out.
+
+And the flights are a problem too. Leh (IXL) is weather-dependent in winter. November snowfall cancels flights several times a month. Travellers get stranded for 24–72 hours with no road option. Some hotels will extend your stay at the same rate; others will not.
+
+Seventy percent of Leh''s hotels close between late October and April. The ones that stay open run minimum heating (to save firewood), limited restaurant hours, and skeletal staffing. You will not have the experience the photos promised.
+
+SNM Hospital Leh stays open but with reduced specialist rotations. AMS and altitude-related emergencies in November mean evacuation to Chandigarh by air — weather permitting.
+
+The one case for November Leh: you have been before, in peak season, and you specifically want the empty-town winter experience — bare poplar trees on the Indus plain, frozen prayer wheels at Thiksey, Leh Palace in morning frost, no tourists. For this you need to accept that half the town is shuttered, most restaurants are closed, and you''ll be wearing a down jacket indoors.
+
+For everyone else: go in June or September. Both months score 5/5. Pangong is open, Nubra is open, passes are clear, weather is stable, flights run on schedule.
+
+---
+
+**Related reading:** [22 things to know before Leh in June](/en/blog/things-to-know-leh-in-june) · [Khardung La, the 5,359m pass](/en/destination/khardung-la) · [Turtuk](/en/destination/turtuk).',
+  NOW(), NOW(), FALSE, '[]'::jsonb
+) ON CONFLICT (id) DO UPDATE SET
+  title = EXCLUDED.title,
+  subtitle = EXCLUDED.subtitle,
+  content = EXCLUDED.content,
+  excerpt = EXCLUDED.excerpt,
+  cover_image_url = EXCLUDED.cover_image_url,
+  tags = EXCLUDED.tags,
+  destinations = EXCLUDED.destinations,
+  seo_title = EXCLUDED.seo_title,
+  seo_description = EXCLUDED.seo_description,
+  updated_at = NOW();
+
+-- is-kerala-backwaters-in-april-worth-it
+INSERT INTO articles (
+  id, slug, title, subtitle, category, depth, reading_time,
+  cover_image_url, tags, destinations, seo_title, seo_description,
+  excerpt, content, published_at, updated_at, featured, callouts
+) VALUES (
+  'kerala-april-verdict',
+  'is-kerala-backwaters-in-april-worth-it',
+  'Is Kerala backwaters in April worth it? Wait a month',
+  '2/5. Heat 36°C + humidity 85%, houseboat cabins turn into ovens by afternoon, pre-monsoon dust everywhere.',
+  'guide',
+  'brief',
+  4,
+  '/images/destinations/alleppey.jpg',
+  ARRAY['verdict', 'kerala', 'alleppey', 'april', 'heat', 'skip'],
+  ARRAY['alleppey'],
+  'Is Kerala Backwaters in April Worth It? The Verdict Is Wait',
+  'Kerala backwaters in April — pre-monsoon heat makes houseboats oppressive, water is at annual low, heat-exhaustion common. Here''s when to go instead.',
+  'April on the Kerala backwaters looks good on paper — clear skies, no rain. In practice it''s 36°C on a tin-roofed houseboat at 2pm. Here''s the month to shift to.',
+  '# Is Kerala backwaters in April worth it? Wait a month
+
+The Kerala backwaters in April score 2/5. It is the pre-monsoon heat window — the last four weeks before the Southwest Monsoon breaks over Kerala in early-to-mid June.
+
+**Verdict: Wait.** Go after the monsoon arrives (late June–September, 4/5), or in the post-monsoon clarity of October (5/5).
+
+---
+
+Here is the physical problem. April daytime in Alleppey is 33–36°C. April humidity in the backwaters is 80–85%. The houseboats — traditional *kettuvallams* — have tin roofs that absorb that sun all afternoon. Cabin air-conditioning, when available, is underspecified for the heat load. By 2pm every houseboat we have tracked reports cabin temperatures 2–3°C above outdoor, which means 38–39°C inside.
+
+Meanwhile the water level in Vembanad and the connecting canals is at the annual low. Some of the lesser-travelled canals become unnavigable because sand bars surface. The route most houseboats run in April is a truncated version of the classic Alleppey loop — shorter, fewer canal turns, more time on the big lake.
+
+Paddy fields surrounding the backwaters are fallow in April — harvested in March, not yet replanted for the *mundakan* cycle. The iconic green rice fields of the Instagram photos are not what you''ll see; what you''ll see is brown stubble and dust.
+
+Mosquito density rises sharply in the last two weeks of April as the first pre-monsoon showers create standing water but not enough flow to wash mosquito larvae through the system.
+
+For photography, the morning light window is narrow (05:30–07:30) before haze settles in. After 09:00 the white sky washes out your shots.
+
+The case for April backwaters: you need to travel these weeks specifically, you have small children who swim (backwater lake swim is pleasant in April despite the heat), and you choose a purpose-built AC houseboat operator rather than a traditional *kettuvallam*. This is doable but expensive (₹18,000–30,000 per night for 2 cabins).
+
+For everyone else: wait eight weeks. Late June through August is the monsoon-season backwater experience — green, cooled down by afternoon rain, houseboats half-price. October is clear, dry, post-monsoon fresh, and the paddy fields are at peak green. Both score higher than April and cost less.
+
+---
+
+**Related reading:** [Alleppey vs Munnar](/en/vs/alleppey-vs-munnar) · [Arrival playbook for COK](/en/arrival/cok) · [Gokarna vs Alleppey](/en/vs/gokarna-vs-alleppey).',
+  NOW(), NOW(), FALSE, '[]'::jsonb
+) ON CONFLICT (id) DO UPDATE SET
+  title = EXCLUDED.title,
+  subtitle = EXCLUDED.subtitle,
+  content = EXCLUDED.content,
+  excerpt = EXCLUDED.excerpt,
+  cover_image_url = EXCLUDED.cover_image_url,
+  tags = EXCLUDED.tags,
+  destinations = EXCLUDED.destinations,
+  seo_title = EXCLUDED.seo_title,
+  seo_description = EXCLUDED.seo_description,
+  updated_at = NOW();
+
+-- is-rishikesh-in-june-worth-it
+INSERT INTO articles (
+  id, slug, title, subtitle, category, depth, reading_time,
+  cover_image_url, tags, destinations, seo_title, seo_description,
+  excerpt, content, published_at, updated_at, featured, callouts
+) VALUES (
+  'rishikesh-june-verdict',
+  'is-rishikesh-in-june-worth-it',
+  'Is Rishikesh in June worth it? Wait for September',
+  '3/5. Pre-monsoon heat builds, rafting water turning muddy, ashram rates up 40%. Shoulder month that feels like low season.',
+  'guide',
+  'brief',
+  4,
+  '/images/destinations/rishikesh.jpg',
+  ARRAY['verdict', 'uttarakhand', 'rishikesh', 'june', 'yoga', 'wait'],
+  ARRAY['rishikesh'],
+  'Is Rishikesh in June Worth It? The Verdict Is Wait',
+  'Rishikesh in June — heat, haze, and pre-monsoon unpredictability. The data says wait until September. Here''s why, and what''s open in the interim.',
+  'June in Rishikesh is the shoulder that most travellers mistake for a window. The data says wait. Here''s the case.',
+  '# Is Rishikesh in June worth it? Wait for September
+
+Rishikesh in June scores 3/5. Not bad enough to refuse a booking, but not good enough to optimise around. And September scores 5/5 — a clean, high-value alternative.
+
+**Verdict: Wait.** Shift your dates to September or October. Both score 5/5 and cost less.
+
+---
+
+Here''s what''s going wrong in June.
+
+The heat is building. June daytime in Rishikesh is 30–38°C. Mornings before 08:00 are pleasant, afternoons are oppressive. The Ganga is at snow-melt peak so swimmable water temperature has dropped — this sounds good for rafting, but it also means the water is fast, opaque with silt, and harder to navigate than April''s clearer lower-volume flow.
+
+Rafting operators still run trips. Safety records stay solid. But the classic Shivpuri–Laxman Jhula 16km run is faster and splashier than in shoulder months, and the Kaudiyala multi-day expedition is off-season for a reason — tent camps along the Ganga beaches close when monsoon risk builds.
+
+Pre-monsoon haze arrives in the second week of June most years. Sky photography is compromised. The view of the hills from your riverside cottage balcony becomes a flat, grey wash by 10am. Sunset colours are muted.
+
+The yoga scene continues but at weird intensity. International Yoga Day falls on June 21 — expect crowded classes and inflated one-off "special workshop" prices. The drop-in rate at reputable studios (Anand Prakash, Parmarth) goes up 30–50% around the week of June 21.
+
+Ashram stays are available but rates are high. Parmarth Niketan''s minimum-donation tier doesn''t change seasonally, but the mid-tier cottages are booked 2–3 weeks out; in September they''re walk-in availability.
+
+If the monsoon arrives early (Uttarakhand sometimes gets pre-monsoon showers in the last week of June), road conditions on the NH-7 to Joshimath and Rishikesh''s Laxman Jhula hillside trails become slippery. Landslide risk is low pre-monsoon but non-zero.
+
+The case for June Rishikesh: you have kids on summer holiday, you''re doing a 7-day yoga intensive booked months ago, you live in Delhi and can''t stretch to September. All valid. Go, but lower your expectations — this is not the Rishikesh the photos promised.
+
+For everyone else: September. Post-monsoon clarity, crisp mornings, Ganga calming down, ashram rates back to normal, rafting season restarts. 5/5 with no caveats.
+
+---
+
+**Related reading:** [15 things to know before Rishikesh in April](/en/blog/things-to-know-rishikesh-in-april) · [Rishikesh vs Mcleodganj](/en/vs/rishikesh-vs-mcleodganj) · [Rishikesh vs Varanasi](/en/vs/varanasi-vs-rishikesh).',
+  NOW(), NOW(), FALSE, '[]'::jsonb
+) ON CONFLICT (id) DO UPDATE SET
+  title = EXCLUDED.title,
+  subtitle = EXCLUDED.subtitle,
+  content = EXCLUDED.content,
+  excerpt = EXCLUDED.excerpt,
+  cover_image_url = EXCLUDED.cover_image_url,
+  tags = EXCLUDED.tags,
+  destinations = EXCLUDED.destinations,
+  seo_title = EXCLUDED.seo_title,
+  seo_description = EXCLUDED.seo_description,
+  updated_at = NOW();
+
+-- is-kashmir-in-january-worth-it
+INSERT INTO articles (
+  id, slug, title, subtitle, category, depth, reading_time,
+  cover_image_url, tags, destinations, seo_title, seo_description,
+  excerpt, content, published_at, updated_at, featured, callouts
+) VALUES (
+  'kashmir-january-verdict',
+  'is-kashmir-in-january-worth-it',
+  'Is Kashmir in January worth it? Yes, if you ski. Wait, if you don''t',
+  'Split verdict. Gulmarg is at peak powder (5/5). Srinagar is under a snow-lockdown (2/5). Split based on what you''re there for.',
+  'guide',
   'brief',
   5,
-  '/images/destinations/pushkar.jpg',
-  ARRAY['best-time', 'pushkar', 'rajasthan', 'october', 'camel-fair', 'lake'],
-  ARRAY['pushkar'],
-  'Pushkar in October vs November — When to Actually Go (Data)',
-  'Pushkar is a November destination in everyone''s head. NakshIQ data says October is a cleaner 5/5 — same weather, full lake, zero fair crowds, 40% cheaper rooms.',
-  'Pushkar is sold as a November destination — the Camel Fair, 50,000 camels. The NakshIQ score says October earns an identical 5/5 and gives you the version of Pushkar that existed before the fair. Same weather, fuller lake, a fraction of the crowd.',
-  '# Despite the camel-fair reputation, Pushkar in October is better than November
+  '/images/destinations/gulmarg.jpg',
+  ARRAY['verdict', 'kashmir', 'gulmarg', 'srinagar', 'january', 'skiing', 'winter'],
+  ARRAY['gulmarg', 'srinagar'],
+  'Is Kashmir in January Worth It? The Split Verdict (Ski vs Not)',
+  'Kashmir in January splits two ways. Gulmarg is peak ski season, Srinagar is a snow lockdown. The data on when each works and when to shift.',
+  'Kashmir in January is not one decision — it''s two. Gulmarg''s ski season is peak; Srinagar''s tourist life is hibernating. Which are you going for?',
+  '# Is Kashmir in January worth it? Yes, if you ski. Wait, if you don''t
 
-Pushkar is sold as a November destination — the Camel Fair, 50,000 camels, the one week every year that ends up on every travel magazine''s homepage. The NakshIQ score says October earns an identical 5/5 and gives you the version of Pushkar that existed before the fair. Same weather, fuller lake, a fraction of the crowd, 40% cheaper rooms.
+Kashmir in January is actually two separate decisions — one about Gulmarg, one about Srinagar.
 
-**Verdict: Go in October — unless the fair is specifically what you came for.** Both months score 5/5. One has you sharing the ghats with 50,000 people. The other has you sharing them with nobody.
+**Gulmarg: 5/5. Go.** Peak ski season. Powder at world-class quality. Apharwat gondola running daily. Ski-rental ecosystem fully active.
 
----
+**Srinagar: 2/5. Wait.** Most houseboats are shuttered. Dal Lake is either freezing or frozen. Shops shut early. Flight cancellations common on heavy-snow days.
 
-## The three-line summary
-
-- **October score: 5/5.** 18–30°C, post-monsoon lake at full volume, all ghats accessible, clear skies.
-- **November score: 5/5.** Same temperature band. Plus the Camel Fair. Plus the crowd.
-- **Room rates.** Mid-October budget dorm: ₹400–600. Fair week November: ₹1,800–3,500 for the same bed.
-
-## Why the score ties
-
-Pushkar''s weather window is defined by two things: the Thar Desert heat curve breaking in late September, and the winter dry air beginning in December. Everything between those two points is Pushkar at its best. October sits at the leading edge of the window — the monsoon has just finished filling Pushkar Lake back up, the air is cleanest, and the evening aarti at Varah Ghat is atmospheric without being staged for tourists.
-
-November is climatically identical. The fair is what separates them. If the fair is your draw, go. If it isn''t, October is the same destination without the distortion.
-
-## What October buys you that November takes away
-
-- **The lake is full.** September and October rains top Pushkar Lake back up after summer evaporation. By late November the ghats are starting to show exposed stone at the waterline.
-- **Camera access at ghats.** In November the fair overflows off the dunes into the lake''s ghats. You cannot get unobstructed shots at Varah Ghat or Brahma Ghat between November 5 and November 20.
-- **Brahma Temple queue.** October afternoon: walk in. Fair week November: 40-minute queue.
-- **Cafes on the Main Bazaar strip** (Honey & Spice, Sunset Cafe, the rooftop at Seventh Heaven) are running at 60% capacity in October and 130% in November. Food is the same. Wait times are not.
-- **Room rates.** October budget double: ₹700–1,200. November fair week: ₹2,500–6,000. The same ₹1,500/night Inn Seventh Heaven room triples.
-
-## What November buys you that October cannot
-
-- **The Camel Fair itself.** 50,000+ camels, traditional dress, rajput musicians, cricket matches between Pushkar locals and international visitors, the balloon-release opening ceremony. If this is the photograph you want, October cannot give it to you.
-- **The ritual bath on Kartik Purnima.** Full moon day. Hindu pilgrims come in the tens of thousands. It is the most Pushkar thing Pushkar does.
-
-These are specific payoffs — real, in the data, unreplicable in October. If they are on your list, book November by July.
-
-## Where to stay in October
-
-- **Budget (₹500–1,000/night):** Moustache Hostel, Zostel Pushkar. Walking distance to Brahma Temple.
-- **Mid (₹2,000–4,000/night):** Inn Seventh Heaven, Pushkar Fort. Rooftops with lake views.
-- **Upper (₹6,000+):** Ananta Spa, Dera Masuda. Resort-style with pool, 1–2 km from the lake.
-
-Book 3–4 weeks ahead. October is quiet enough that walk-in is feasible but the good rooftops fill on weekends.
-
-## How to get to Pushkar
-
-- **Ajmer railhead** is 15 km from Pushkar. Jaipur to Ajmer 2 hours by Shatabdi (₹480 CC, ₹1,000 EC). Ajmer to Pushkar autos ₹250–400.
-- **Jaipur airport (JAI)** is 140 km, 2.5 hours by cab. ₹2,800 one-way.
-- **From Delhi** Double Decker train to Ajmer 5.5 hours, or drive 7 hours (410 km via NH48).
-
-## What October does not give you
-
-Pushkar is a small town. The main strip — Brahma Temple to Pap Mochini ghat — is 1.6 km end to end. You cover it in a day. October does not extend what is actually there; it only removes the November crowd. Plan two nights, three at most. Day three works best as an Ajmer day trip (Dargah Sharif, Ana Sagar) or a Rajasthan-series next stop (Jodhpur, 5 hours) rather than another Pushkar day.
+Your decision depends on which one is your trip.
 
 ---
 
-**The one-line answer.** November is the famous month. October is the better one — same score, different Pushkar. Unless the fair is the point, pick October.',
+Here''s what''s happening in each.
+
+## Gulmarg (ski-traveller''s verdict: go)
+
+Gulmarg at 2,650m gets reliable snow by mid-December and peaks through January and February. The Apharwat gondola (Asia''s highest and second-longest ski lift) runs you up to 3,980m — from there, the open bowls and tree-run glades put Gulmarg in the same conversation as Hakuba or Niseko, at a fraction of the price.
+
+Powder quality is good-to-exceptional. Lift-ticket prices are ₹1,200–1,700/day — less than one Japanese or Austrian lift hour. Ski-school rates are ₹2,500–4,500/day with a qualified instructor. Gear rental is ₹800–1,500/day for skis and boots.
+
+The catches are real. Avalanche risk is significant — stick to ski patrol-approved zones and avoid the backcountry without a local guide. The medical setup at Gulmarg is basic; anything serious means evacuation to SKIMS Srinagar (45km). Accommodation fills 30 days ahead — Hotel Kolahoi Green, Heevan Retreat, and The Khyber are the mid-to-top tier.
+
+Weather cancellations hit the gondola 3–5 days per month. Build buffer.
+
+## Srinagar (everyone else''s verdict: wait)
+
+Srinagar in January is 3–8°C daytime, -2 to 3°C nights. Dal Lake sometimes partially freezes (Chillai-Kalan, the 40-day harsh-winter period from Dec 21 to Jan 31, is the traditional name for this window).
+
+Sixty percent of Dal Lake houseboats close for winter. Shikara rides still operate (weather permitting) but the romantic summer-evening photos you''ve seen are not happening — it''s cold, often cloudy, and short days mean you''re off the water by 16:30. Shops in old Srinagar run half-day hours. Mughal gardens are closed for maintenance.
+
+Saffron fields in Pampore (the postcard Kashmir scene) were harvested in October — not a January experience.
+
+Flight cancellations at SXR are frequent in January. Srinagar–Leh road is closed. Srinagar–Jammu rail project is running but still limited to short sections. For non-ski travellers, January Kashmir is the year''s worst month.
+
+## The hybrid case
+
+If you ski, go to Gulmarg, stay in Gulmarg, and skip Srinagar for this trip — come back in April for tulips and May for the houseboat experience. If you don''t ski, wait until April. Dachigam cherry blossom, gardens reopening, daily-life rhythms back to normal, saffron-pickling season starts.
+
+---
+
+**Related reading:** [Srinagar vs Gulmarg](/en/vs/srinagar-vs-gulmarg) · [Gulmarg vs Pahalgam](/en/vs/gulmarg-vs-pahalgam) · [Arrival playbook for DEL](/en/arrival/del).',
+  NOW(), NOW(), FALSE, '[]'::jsonb
+) ON CONFLICT (id) DO UPDATE SET
+  title = EXCLUDED.title,
+  subtitle = EXCLUDED.subtitle,
+  content = EXCLUDED.content,
+  excerpt = EXCLUDED.excerpt,
+  cover_image_url = EXCLUDED.cover_image_url,
+  tags = EXCLUDED.tags,
+  destinations = EXCLUDED.destinations,
+  seo_title = EXCLUDED.seo_title,
+  seo_description = EXCLUDED.seo_description,
+  updated_at = NOW();
+
+-- is-jaisalmer-in-august-worth-it
+INSERT INTO articles (
+  id, slug, title, subtitle, category, depth, reading_time,
+  cover_image_url, tags, destinations, seo_title, seo_description,
+  excerpt, content, published_at, updated_at, featured, callouts
+) VALUES (
+  'jaisalmer-august-verdict',
+  'is-jaisalmer-in-august-worth-it',
+  'Is Jaisalmer in August worth it? Skip',
+  '1/5. 40°C+ daytime, desert safaris effectively closed, camel-cart operators working on other jobs. This is not a shoulder — this is off-season.',
+  'guide',
+  'brief',
+  4,
+  '/images/destinations/jaisalmer.jpg',
+  ARRAY['verdict', 'rajasthan', 'jaisalmer', 'august', 'monsoon', 'skip'],
+  ARRAY['jaisalmer'],
+  'Is Jaisalmer in August Worth It? The Verdict Is Skip',
+  'Jaisalmer in August is not a shoulder — it''s fully off-season. Heat, closed safari operations, and why even heavy discounts don''t make it worth it.',
+  'Some destinations have shoulders. Jaisalmer in August isn''t one of them. Here''s why even 60%-off hotel rates don''t save this one.',
+  '# Is Jaisalmer in August worth it? Skip
+
+Jaisalmer in August scores 1/5. It is the lowest-scoring month of the year. Heat, closed desert operations, and the near-total absence of the experience the city is famous for.
+
+**Verdict: Skip.** Come in November or December. Both score 5/5 for entirely different reasons (camel season, weather, light).
+
+---
+
+Here is what''s happening in August.
+
+Daytime temperatures in Jaisalmer in August average 32–38°C, with peaks to 42°C on clear days. The Thar Desert is not a dry heat at this time of year — the remnants of the Southwest Monsoon bring sporadic humidity. The combination is uncomfortable in a way that dry desert isn''t.
+
+The marquee experience — camel safari into the dunes — doesn''t really run in August. Most safari operators treat July and August as off-season and take other work. The camel herds are pastured further from the city than in winter. The sand is scorching underfoot — both camels and walkers cover ground reluctantly.
+
+Sand blowback on the desert-camp routes is heavy in August. What in December is a postcard-perfect dune camp is in August a half-buried Swiss tent with sand piled against the door.
+
+Jaisalmer Fort itself stays open. Patwon Ki Haveli, the Jain temples, Gadisar Lake — all accessible year-round. But the fort''s flagstones at 37°C are unwalkable for anyone with toddlers, heart conditions, or soft shoes.
+
+Hotel rates drop 50–70% from peak. A ₹15,000 haveli suite goes for ₹4,000–5,000. This is the main argument August-advocates make.
+
+It''s not enough. You''ve come to Jaisalmer for the desert night, the camel safari, and the fort ramparts at sunset. In August you get a cheap haveli room, 40°C day-walks, and a half-hearted hotel-arranged "camel ride" on a short dune 15 minutes from town.
+
+The only case for August: you''re in Rajasthan for a wedding, you have one day between Jodhpur and Jaipur, and you want to tick Jaisalmer off the list. Visit the fort for 3 hours at dawn, eat an early lunch, drive out. Do not sleep in Jaisalmer in August.
+
+For everyone else: November (5/5), December (5/5), February (5/5). Three clean months. Desert fully operational, camel herds back, daytime 18–28°C. Why choose August when there are three obviously better windows?
+
+---
+
+**Related reading:** [12 things to know before Jaisalmer in November](/en/blog/things-to-know-jaisalmer-in-november) · [Jaisalmer vs Jodhpur](/en/vs/jaisalmer-vs-jodhpur) · [Kutch vs Jaisalmer](/en/vs/kutch-vs-jaisalmer).',
+  NOW(), NOW(), FALSE, '[]'::jsonb
+) ON CONFLICT (id) DO UPDATE SET
+  title = EXCLUDED.title,
+  subtitle = EXCLUDED.subtitle,
+  content = EXCLUDED.content,
+  excerpt = EXCLUDED.excerpt,
+  cover_image_url = EXCLUDED.cover_image_url,
+  tags = EXCLUDED.tags,
+  destinations = EXCLUDED.destinations,
+  seo_title = EXCLUDED.seo_title,
+  seo_description = EXCLUDED.seo_description,
+  updated_at = NOW();
+
+-- is-darjeeling-in-june-worth-it
+INSERT INTO articles (
+  id, slug, title, subtitle, category, depth, reading_time,
+  cover_image_url, tags, destinations, seo_title, seo_description,
+  excerpt, content, published_at, updated_at, featured, callouts
+) VALUES (
+  'darjeeling-june-verdict',
+  'is-darjeeling-in-june-worth-it',
+  'Is Darjeeling in June worth it? Wait',
+  '3/5. Pre-monsoon fog eats the Kanchenjunga view, toy-train service disrupted by landslides, tea estates closed to public from mid-month.',
+  'guide',
+  'brief',
+  4,
+  '/images/destinations/darjeeling.jpg',
+  ARRAY['verdict', 'west-bengal', 'darjeeling', 'june', 'monsoon', 'wait'],
+  ARRAY['darjeeling'],
+  'Is Darjeeling in June Worth It? The Verdict Is Wait',
+  'Darjeeling in June — monsoon arriving, Kanchenjunga invisible behind cloud, toy-train disrupted. Here''s when to go and why.',
+  'Darjeeling in June looks like a summer escape on paper. In practice it''s fog, disrupted trains, and the view you came for hidden behind monsoon cloud.',
+  '# Is Darjeeling in June worth it? Wait
+
+Darjeeling in June scores 3/5 — the single lowest summer-month score in our Eastern Himalayan grid. The problem is simple: the Southwest Monsoon arrives in West Bengal in the first or second week of June, and Darjeeling is one of the wettest hill stations in India at monsoon peak.
+
+**Verdict: Wait.** Come in April (5/5) or October (5/5). Both are Kanchenjunga-visible windows with clear skies and dry trails.
+
+---
+
+Here''s what June brings.
+
+The marquee view — Tiger Hill sunrise with Kanchenjunga — is the reason 80% of visitors come to Darjeeling. In April, the probability of clear sunrise is 75–85%. In October, 85–95%. In June, it drops to 10–15%. You will wake at 04:00, drive to Tiger Hill, and stare at grey cloud.
+
+Toy-train service (the Darjeeling Himalayan Railway, a UNESCO World Heritage Site) is hit by landslide-induced suspensions in June. Heritage trains between Darjeeling and Ghum often run a curtailed 2-hour joy ride instead of the classic New Jalpaiguri–Darjeeling full service. Track-clearing teams work year-round but June–September see the most disruptions.
+
+Tea estates close to tourist visits by mid-June. First flush (April) and second flush (May–early June) are the prime harvests; from mid-June the estates shut their visitor programs because the monsoon work of pruning and drainage takes precedence. You can buy tea in Darjeeling town but you can''t do a tea-garden walk with the manager.
+
+The drive up from Siliguri via Kurseong is beautiful in April; in June it''s fog-shrouded with periodic landslide closures on NH-55. What is usually a 3-hour drive can become 6 hours with traffic held up by BRO clearing.
+
+Leeches on the Singalila ridge trek (the other big Darjeeling activity) are a constant from June through September. Experienced Himalayan trekkers deal with them, but they are genuinely unpleasant for first-timers.
+
+Hotel rates drop 30% from April peak in June. That''s the pitch. Glenburn Tea Estate, The Elgin, and Mayfair Darjeeling all discount heavily.
+
+The case for June Darjeeling: you''re a photographer who loves mist and clouded-over mountains; you have school holidays forcing the dates; you''re coming for the tea specifically and are fine with indoor tastings. Under those conditions it works.
+
+For everyone else: April or October. Both score 5/5. Kanchenjunga shows up for three mornings in five, toy train runs reliably, tea gardens welcome visitors, trails dry. Why settle?
+
+---
+
+**Related reading:** [Darjeeling vs Gangtok](/en/vs/darjeeling-vs-gangtok) · [Darjeeling vs Kalimpong](/en/vs/darjeeling-vs-kalimpong) · [Arrival playbook for CCU](/en/arrival/ccu).',
+  NOW(), NOW(), FALSE, '[]'::jsonb
+) ON CONFLICT (id) DO UPDATE SET
+  title = EXCLUDED.title,
+  subtitle = EXCLUDED.subtitle,
+  content = EXCLUDED.content,
+  excerpt = EXCLUDED.excerpt,
+  cover_image_url = EXCLUDED.cover_image_url,
+  tags = EXCLUDED.tags,
+  destinations = EXCLUDED.destinations,
+  seo_title = EXCLUDED.seo_title,
+  seo_description = EXCLUDED.seo_description,
+  updated_at = NOW();
+
+-- hampi-in-february-scored
+INSERT INTO articles (
+  id, slug, title, subtitle, category, depth, reading_time,
+  cover_image_url, tags, destinations, seo_title, seo_description,
+  excerpt, content, published_at, updated_at, featured, callouts
+) VALUES (
+  'hampi-february-verdict',
+  'hampi-in-february-scored',
+  'Hampi in February — the window before the heat',
+  '5/5. 25°C days, 16°C nights, ruins walkable all day. The prime window between peak-cool and pre-summer.',
+  'guide',
+  'brief',
+  4,
+  '/images/destinations/hampi.jpg',
+  ARRAY['verdict', 'karnataka', 'hampi', 'february', 'heritage', 'go'],
+  ARRAY['hampi'],
+  'Hampi in February — The NakshIQ Verdict Is Go',
+  'Hampi in February scores 5/5. Mid-twenties days, cool nights, walkable ruins, light crowd. Here''s the case for making February your Hampi month.',
+  'February is Hampi''s sweet spot — cool enough to walk all day, warm enough for the coracle, quiet enough that you have Matanga Hill sunset to yourself.',
+  '# Hampi in February — the window before the heat
+
+Hampi in February scores 5/5 on our grid — the highest-rated month of the year. The data is unambiguous: this is the best time to go.
+
+**Verdict: Go.** Book for late February if you want the lowest crowd and the cleanest weather.
+
+---
+
+Here is what February does for Hampi.
+
+The daytime temperature averages 23–28°C. Morning walks at Virupaksha temple start in a cool 18°C haze and ease into sunshine by 09:00. By 14:00 it''s 26°C and bright — hot enough to make you seek shade, not hot enough to defeat you. Compare to April (33–40°C and humid) or June (32°C with pre-monsoon haze), and the physical difference is obvious.
+
+Nights drop to 14–18°C. Cool enough for a light jacket at the Matanga Hill sunset you''re going to do. Not cold enough to shut your rooftop restaurant early.
+
+The Tungabhadra river is at medium flow. The coracle ferry between the south bank (Hampi Bazaar) and the north bank (Hippie Island / Virupapura Gaddi) runs reliably. The river sand banks are exposed — photogenic, walkable, empty.
+
+Tourist density is moderate. The Hampi Utsav (state cultural festival, typically early February) brings a surge for a 3-day window; either catch it deliberately or plan for a week after. Outside the festival, February is quieter than December–January (peak tourist season) and March (school-holiday rush).
+
+Vijay Vittala Temple and the Royal Enclosure are walkable from 08:00 to 18:00 without heat exhaustion. In April you''d abandon the afternoon; in February the whole day is usable.
+
+The Matanga Hill sunrise and sunset hikes (the two Hampi money-shot spots) work. Pre-dawn temperatures are 13–15°C — chilly but not freezing. The light is clean; pre-summer haze hasn''t settled in yet.
+
+Hotel rates are 25% below December peak. Mid-range on Hippie Island (Mowgli, Goan Corner, Padma Guest House) runs ₹2,000–3,500/night. Evolve Back Hampi (the only 5-star nearby, at Kamalapura) is 30% off peak.
+
+Food: the north-bank cafés are all fully operational — Laughing Buddha, Mango Tree, Mowgli. South-bank Hampi Bazaar eating is more basic (dry-zone + electricity-quality issues in some places) — choose a north-bank lunch and a south-bank breakfast.
+
+The trade-offs: mornings on Virupapura Gaddi can be hazy if the Hampi Utsav fireworks residue lingers. Some of the lesser-known temple complexes (Achyutaraya, Kondandarama) get cleared of brush in Feb–March for the season — you may encounter ground staff but not much of a crowd.
+
+Plan for three full days minimum. Day one for the bazaar, Virupaksha, and Matanga sunset. Day two for the Royal Enclosure + Vijay Vittala + north-bank sunset. Day three for Anegundi side (Hanuman hill, Pampa Sarovar), plus a slow morning somewhere on the north-bank cafés.
+
+---
+
+**Related reading:** [18 things to know before Hampi in December](/en/blog/things-to-know-hampi-in-december) · [Hampi vs Badami](/en/vs/hampi-vs-badami) · [Khajuraho vs Hampi](/en/vs/khajuraho-vs-hampi).',
+  NOW(), NOW(), FALSE, '[]'::jsonb
+) ON CONFLICT (id) DO UPDATE SET
+  title = EXCLUDED.title,
+  subtitle = EXCLUDED.subtitle,
+  content = EXCLUDED.content,
+  excerpt = EXCLUDED.excerpt,
+  cover_image_url = EXCLUDED.cover_image_url,
+  tags = EXCLUDED.tags,
+  destinations = EXCLUDED.destinations,
+  seo_title = EXCLUDED.seo_title,
+  seo_description = EXCLUDED.seo_description,
+  updated_at = NOW();
+
+-- munnar-in-october-scored
+INSERT INTO articles (
+  id, slug, title, subtitle, category, depth, reading_time,
+  cover_image_url, tags, destinations, seo_title, seo_description,
+  excerpt, content, published_at, updated_at, featured, callouts
+) VALUES (
+  'munnar-october-verdict',
+  'munnar-in-october-scored',
+  'Munnar in October — the window after the monsoon',
+  '5/5. Tea estates at peak green, cardamom hills washed clean, no monsoon landslide-risk anymore, hotel rates still shoulder.',
+  'guide',
+  'brief',
+  4,
+  '/images/destinations/munnar.jpg',
+  ARRAY['verdict', 'kerala', 'munnar', 'october', 'tea', 'go'],
+  ARRAY['munnar'],
+  'Munnar in October — The NakshIQ Verdict Is Go',
+  'Munnar in October scores 5/5. Post-monsoon green at peak, clear weather, walkable tea estates, shoulder-season rates. Here''s the case for October.',
+  'October is the month Munnar stops being a postcard and becomes a walk-through painting. The monsoon has scrubbed the air. The estates are at their greenest in a decade-cycle.',
+  '# Munnar in October — the window after the monsoon
+
+Munnar in October scores 5/5. It is the single best month of the year on our Western Ghats grid — the post-monsoon clarity window that makes every other Munnar month compare badly.
+
+**Verdict: Go.** Book October 10–25 if you want the cleanest weather and lowest crowds.
+
+---
+
+Here''s what October does for Munnar.
+
+The Southwest Monsoon in Kerala typically ends in the last week of September. By the first week of October, the ground is dry but the vegetation is at maximum saturation — tea leaves are thick, cardamom pods are swelling, the air is clean because four months of rain has washed the dust off every leaf in the cardamom hills.
+
+Temperatures are 15–25°C day, 10–15°C night. This is the only month of the year Munnar feels like a temperate European hill station rather than a south-Indian one. You''ll need a jacket for the Top Station sunrise drive (05:30 departure, 07:00 arrival, first light behind Kolukkumalai).
+
+Tea-estate trails are walkable again. The July–September monsoon closes most of the private estate walks because the leech load and landslide risk are too high. By October, leeches are gone with the wet season, trails have dried, and estates like Lockhart, Tata, and KDHP reopen their visitor programs.
+
+Eravikulam National Park (home to the Nilgiri Tahr) is closed Feb–April for calving; it reopens by October. The Rajamalai section is drivable, the Tahr are active in the cooler weather, and the Neelakurinji flower (blooms only once every 12 years) was last out in 2018 — note that there is NO bloom in 2026 and won''t be until 2030.
+
+Tea estate homestays are at 60–70% occupancy rather than the 90–100% of December. Dreamcatcher Plantation, Parakkat Nature Hotel, Blanket Hotel — all have availability at ₹6,000–10,000/night mid-range.
+
+Cardamom and black pepper harvests are underway. The pepper vines (wrapped around erythrina trees) are ripe black. Cardamom ground-pickers are out in the plantations. If your trip includes a plantation visit with a farmer (Tata''s estate tours are the most accessible), October is when the harvest is visible.
+
+Roads from Kochi airport (COK) to Munnar are reliable in October. The 130km drive takes 4 hours via Neriamangalam — the monsoon landslide-prone stretches have been cleared. NH-85 is paved and well-maintained to Adimali, then hill road for the final 25km.
+
+Weather caveat: the northeast monsoon can bring thunderstorms in the second half of October (through November). If you''re visiting in the last week, morning activities are safer bets than afternoons.
+
+Photography windows: sunrise 06:15, sunset 18:00. Tea-estate-at-dawn light lasts until 07:30. Evening sidelight on the rolling plantations is best 17:00–18:00.
+
+---
+
+**Related reading:** [Is Kerala backwaters in April worth it?](/en/blog/is-kerala-backwaters-in-april-worth-it) · [Alleppey vs Munnar](/en/vs/alleppey-vs-munnar) · [Arrival playbook for COK](/en/arrival/cok).',
+  NOW(), NOW(), FALSE, '[]'::jsonb
+) ON CONFLICT (id) DO UPDATE SET
+  title = EXCLUDED.title,
+  subtitle = EXCLUDED.subtitle,
+  content = EXCLUDED.content,
+  excerpt = EXCLUDED.excerpt,
+  cover_image_url = EXCLUDED.cover_image_url,
+  tags = EXCLUDED.tags,
+  destinations = EXCLUDED.destinations,
+  seo_title = EXCLUDED.seo_title,
+  seo_description = EXCLUDED.seo_description,
+  updated_at = NOW();
+
+-- udaipur-in-december-scored
+INSERT INTO articles (
+  id, slug, title, subtitle, category, depth, reading_time,
+  cover_image_url, tags, destinations, seo_title, seo_description,
+  excerpt, content, published_at, updated_at, featured, callouts
+) VALUES (
+  'udaipur-december-verdict',
+  'udaipur-in-december-scored',
+  'Udaipur in December — the window after tourist peak',
+  '5/5. 10–24°C, Lake Pichola at full, wedding season starting, palaces lit. Second half of December beats first half.',
+  'guide',
+  'brief',
+  4,
+  '/images/destinations/udaipur.jpg',
+  ARRAY['verdict', 'rajasthan', 'udaipur', 'december', 'heritage', 'go'],
+  ARRAY['udaipur'],
+  'Udaipur in December — The NakshIQ Verdict Is Go',
+  'Udaipur in December scores 5/5. Mild days, lake at full, palaces lit for winter, wedding season alive. Here''s the case for the second half of December.',
+  'Udaipur in December is the version you saw in the Bond film — cool, lit, lakes at full, palaces hosting winter weddings. The second half of December is the sweet spot.',
+  '# Udaipur in December — the window after tourist peak
+
+Udaipur in December scores 5/5 — tied with November for the highest of the year. The city is at peak usability: cool, clear, lake-full, palaces illuminated for winter, and the wedding-season energy the city was built for.
+
+**Verdict: Go.** Aim for the second half of December — better than early December on every metric.
+
+---
+
+Here''s the case.
+
+Daytime in Udaipur in December averages 18–24°C. Nights 10–14°C. A jacket is useful at the Jagmandir boat evenings but optional at the City Palace walks during the day. This is the only month Udaipur feels Mediterranean rather than desert-adjacent.
+
+Lake Pichola is at full. The 2023–24 monsoon was strong, the 2024–25 winter drawdown hasn''t hit yet. Boat rides operate from the City Palace jetty and Lal Ghat. The sunset boat to Jagmandir Palace (₹700 per Indian adult, ₹1,400 per foreigner) is the experience, but the quiet 08:00 morning row from Lal Ghat is the unsung one — mist on the water, the Lake Palace emerging from haze, three minutes of silence before the tourist boats launch.
+
+City Palace lighting is fully active in December (winter programming). Some parts of the palace complex — Jagdish Temple courtyard, the Crystal Gallery — stay open until 21:00, which doesn''t happen in summer.
+
+Wedding season is alive. You will see 2–3 wedding processions per evening in old Udaipur. The Taj Lake Palace and Oberoi Udaivilas are almost 100% wedding-bookings from Dec 15 onwards. This creates some hotel pressure for mid-tier stays, but the heritage hotels (RAAS Devigarh, The Leela Palace, Fateh Prakash) release rooms on a different cycle.
+
+The specific reason to pick **late December** over **early December:** the first 10 days of December still have lingering post-monsoon humidity. By Dec 15 the air is dry, the light is clean, the palace detail photographs sharply without the slight haze of mid-month.
+
+Shilpgram Crafts Fair (annual, usually Dec 21 – Jan 3) runs at the edge of Udaipur — traditional Rajasthani crafts, folk performances, food stalls. Free entry, worth half a day.
+
+Side trips from Udaipur work well in December. Kumbhalgarh (90km) is walkable all day. Ranakpur Jain temple (115km) is at its clean-stone beautiful. Eklingji temple (22km) evening arti is short and worth the 30-minute drive.
+
+Food: Udaipur''s rooftop restaurant scene is the point — Ambrai, Jagat Niwas Palace, Upre. Book Ambrai''s terrace 3–7 days ahead for a sunset table. Food quality at mid-range places (Savage Garden, Millets of Mewar) is consistently good in December because the restaurants are fully staffed for peak.
+
+Traffic: Udaipur is walkable. The old city (City Palace + Jagdish Temple + Lal Ghat + Bagore Ki Haveli) is a 20-minute radius on foot. Autos and e-rickshaws for longer hops.
+
+The Taj Lake Palace visit-only experience: you can enter for afternoon tea at ₹5,500–7,000/person even if you''re not staying. Book 48 hours ahead.
+
+---
+
+**Related reading:** [Jaipur vs Udaipur](/en/vs/jaipur-vs-udaipur) · [Udaipur vs Jodhpur](/en/vs/udaipur-vs-jodhpur) · [Arrival playbook for DEL](/en/arrival/del).',
+  NOW(), NOW(), FALSE, '[]'::jsonb
+) ON CONFLICT (id) DO UPDATE SET
+  title = EXCLUDED.title,
+  subtitle = EXCLUDED.subtitle,
+  content = EXCLUDED.content,
+  excerpt = EXCLUDED.excerpt,
+  cover_image_url = EXCLUDED.cover_image_url,
+  tags = EXCLUDED.tags,
+  destinations = EXCLUDED.destinations,
+  seo_title = EXCLUDED.seo_title,
+  seo_description = EXCLUDED.seo_description,
+  updated_at = NOW();
+
+-- spiti-in-september-scored
+INSERT INTO articles (
+  id, slug, title, subtitle, category, depth, reading_time,
+  cover_image_url, tags, destinations, seo_title, seo_description,
+  excerpt, content, published_at, updated_at, featured, callouts
+) VALUES (
+  'spiti-september-verdict',
+  'spiti-in-september-scored',
+  'Spiti in September — the shoulder window',
+  '5/5. Post-monsoon clarity, both highways reliably open, tourist peak tailing off. The clean month most people sleep on.',
+  'guide',
+  'brief',
+  4,
+  '/images/destinations/spiti-valley.jpg',
+  ARRAY['verdict', 'himachal', 'spiti', 'kaza', 'september', 'high-altitude', 'go'],
+  ARRAY['spiti-valley', 'kaza'],
+  'Spiti in September — The NakshIQ Verdict Is Go',
+  'Spiti in September scores 5/5. Post-monsoon clear skies, reliable passes, tourist peak past. Here''s the case for the month most travellers skip.',
+  'September is Spiti''s best-kept secret. The monsoon has left, the crowds have thinned, Kunzum is reliably open — and you won''t find another window this stable until next June.',
+  '# Spiti in September — the shoulder window
+
+Spiti in September scores 5/5 — tied for our highest Spiti month alongside June. But September beats June on two counts: less crowded, and the monsoon landslide risk on the Manali–Spiti highway is in the rear-view mirror.
+
+**Verdict: Go.** Mid-September (10–25 Sep) is the peak window.
+
+---
+
+Here''s what September does.
+
+By the first week of September, the Southwest Monsoon has retreated from Lahaul and Spiti. NH-505 between Manali–Gramphu–Batal–Kunzum La–Losar–Kaza is reliably open. Kunzum Pass (4,590m) is clear. The Shimla-side approach via Kinnaur is also dependable.
+
+June shares this openness but has two disadvantages: larger tourist volumes (summer break in Indian schools, international motorcycle season) and the edge of pre-monsoon landslides on the Manali side of the Rohtang section. September avoids both.
+
+Daytime in Kaza (3,800m) in September averages 12–18°C. Nights drop to -2°C to 5°C. Crisp, dry, low humidity. The sky photography hits peak clarity — the monsoon has cleared the haze that hung over summer, and the winter haze has not yet arrived.
+
+Key Monastery, Tabo Monastery, Langza (the fossil village), Komic (highest motorable village in India at 4,587m), Hikkim (highest post office in the world at 4,440m) — all accessible and open for visitor programs.
+
+Chandratal (the Moon Lake) at 4,300m is still reachable in September — the lake is unfrozen, the road from Batal is open, and camping grounds operate until late September. After mid-September, the campsites begin winterising and the last tents come down.
+
+Hotel availability improves. The handful of Kaza hotels that sell out in July–August are 60–70% occupied in September. Spiti Valley, Shambala Terrace, Zamba Zambu Homestay — all bookable within 7 days of arrival.
+
+The Spiti homestays program (run by EcoSphere Spiti) operates its village-rotation bookings across Langza, Komic, Demul, and Lhalung. Homestay nights are ₹1,200–1,800 per person including dinner — community-owned lodging where the host families rotate guests on a monthly schedule.
+
+The one caveat: by late September (25 onwards), early snow can hit the Kunzum Pass. Plan an overnight buffer at Manali on your way out in case BRO closes the pass for a 24-hour clearing operation.
+
+Acclimatisation still matters. Enter via the Shimla route (gentler altitude gain via Kinnaur) rather than flying into Bhuntar and driving Manali–Kunzum in one day. The former gives you three nights below 3,000m before you reach Kaza; the latter drops you at 3,800m with zero acclimatisation and is the #1 reason first-timers land at the Kaza CHC with AMS.
+
+Photography windows: morning 06:00–08:00 for crystal light across the Spiti river; evening 17:30–18:30 for side light on the 6,000m peaks. Astrophotography is peak in September — no monsoon cloud, no winter cold (below 0°C but manageable), no light pollution for hundreds of kilometres.
+
+---
+
+**Related reading:** [Kaza — the Spiti anchor](/en/destination/kaza) · [Chandratal](/en/destination/chandratal) · [Spiti-Valley vs Leh](/en/vs/spiti-valley-vs-leh).',
   NOW(), NOW(), FALSE, '[]'::jsonb
 ) ON CONFLICT (id) DO UPDATE SET
   title = EXCLUDED.title,
