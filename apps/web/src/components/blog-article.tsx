@@ -28,16 +28,69 @@ const CATEGORY_COLORS: Record<string, string> = {
 const MONTH_NAMES = ["", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 const MONTH_SHORT = ["", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
-// Inline markdown renderer — supports **bold** only. Keep it tight; we
-// don't need a full markdown stack for our editorial content.
+// Inline markdown renderer — supports **bold**, [text](url), and **[text](url)**.
+// Single-pass tokenizer; malformed syntax falls through as raw text.
+const INLINE_TOKEN_RE = /(\*\*\[[^\]]+\]\([^)]+\)\*\*)|(\*\*[^*]+\*\*)|(\[[^\]]+\]\([^)]+\))/g;
+const LINK_INNER_RE = /^\[([^\]]+)\]\(([^)]+)\)$/;
+const INLINE_LINK_CLASS =
+  "text-[#E55642] underline underline-offset-2 decoration-[#E55642]/40 hover:decoration-[#E55642] transition-colors";
+
+function renderInlineLink(label: string, url: string, key: number, bold: boolean): React.ReactNode {
+  const className = bold ? `font-semibold ${INLINE_LINK_CLASS}` : INLINE_LINK_CLASS;
+  const labelNode = bold ? <strong className="text-foreground font-semibold">{label}</strong> : label;
+  if (/^https?:\/\//.test(url)) {
+    return (
+      <a key={key} href={url} target="_blank" rel="noreferrer" className={className}>
+        {labelNode}
+      </a>
+    );
+  }
+  return (
+    <Link key={key} href={url} className={className}>
+      {labelNode}
+    </Link>
+  );
+}
+
 function renderInline(text: string): React.ReactNode {
-  const parts = text.split(/(\*\*[^*]+\*\*)/g);
-  return parts.map((p, i) => {
-    if (p.startsWith("**") && p.endsWith("**")) {
-      return <strong key={i} className="text-foreground font-semibold">{p.slice(2, -2)}</strong>;
+  const out: React.ReactNode[] = [];
+  let cursor = 0;
+  let keyCounter = 0;
+  INLINE_TOKEN_RE.lastIndex = 0;
+  let m: RegExpExecArray | null;
+  while ((m = INLINE_TOKEN_RE.exec(text))) {
+    if (m.index > cursor) {
+      out.push(<React.Fragment key={keyCounter++}>{text.slice(cursor, m.index)}</React.Fragment>);
     }
-    return <React.Fragment key={i}>{p}</React.Fragment>;
-  });
+    const token = m[0];
+    if (token.startsWith("**[")) {
+      const inner = token.slice(2, -2);
+      const linkMatch = inner.match(LINK_INNER_RE);
+      if (linkMatch) {
+        out.push(renderInlineLink(linkMatch[1], linkMatch[2], keyCounter++, true));
+      } else {
+        out.push(<React.Fragment key={keyCounter++}>{token}</React.Fragment>);
+      }
+    } else if (token.startsWith("**")) {
+      out.push(
+        <strong key={keyCounter++} className="text-foreground font-semibold">
+          {token.slice(2, -2)}
+        </strong>,
+      );
+    } else {
+      const linkMatch = token.match(LINK_INNER_RE);
+      if (linkMatch) {
+        out.push(renderInlineLink(linkMatch[1], linkMatch[2], keyCounter++, false));
+      } else {
+        out.push(<React.Fragment key={keyCounter++}>{token}</React.Fragment>);
+      }
+    }
+    cursor = m.index + token.length;
+  }
+  if (cursor < text.length) {
+    out.push(<React.Fragment key={keyCounter++}>{text.slice(cursor)}</React.Fragment>);
+  }
+  return out;
 }
 
 // Parse the body of the "The List" section (data-story / ranked posts)
