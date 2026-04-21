@@ -3683,16 +3683,16 @@ def _run_infographic(force: bool = False, dry_run: bool = False):
             log.warning(f"[{label}] Infographic post failed.")
 
     # Update infographic state (topic/theme rotation) if posted
+    # IMPORTANT: merge into `st` directly so the single save_state() call below
+    # doesn't overwrite the infographic rotation state (was a race-condition bug).
     if posted_any and not dry_run:
         try:
-            from infographic_gen import TOPICS, THEMES, _load_state, _save_state
-            ig_state = _load_state()
-            if "infographic" not in ig_state:
-                ig_state["infographic"] = {}
-            ig_state["infographic"]["last_topic_idx"] = TOPICS.index(topic)
-            ig_state["infographic"]["last_theme_idx"] = THEMES.index(theme)
-            ig_state["infographic"]["last_posted"] = today
-            _save_state(ig_state)
+            from infographic_gen import TOPICS, THEMES
+            if "infographic" not in st:
+                st["infographic"] = {}
+            st["infographic"]["last_topic_idx"] = TOPICS.index(topic)
+            st["infographic"]["last_theme_idx"] = THEMES.index(theme)
+            st["infographic"]["last_posted"] = today
             log.info(f"Infographic state updated: topic={topic}, theme={theme}")
         except Exception as e:
             log.warning(f"Failed to update infographic state: {e}")
