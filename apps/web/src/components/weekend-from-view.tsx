@@ -1,41 +1,9 @@
-import type { Metadata } from "next";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { DestinationCard } from "@/components/destination-card";
 import { createClient } from "@supabase/supabase-js";
 import { notFound } from "next/navigation";
-import { METRO_ANCHORS, METRO_SLUGS } from "@/lib/metro-anchors";
-import { localeAlternates } from "@/lib/seo-utils";
-
-export const revalidate = 86400;
-export const dynamicParams = true;
-
-export function generateStaticParams() {
-  const locales = ["en", "hi"];
-  return METRO_SLUGS.flatMap((city) => locales.map((locale) => ({ locale, city })));
-}
-
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ locale: string; city: string }>;
-}): Promise<Metadata> {
-  const { locale, city } = await params;
-  const anchor = METRO_ANCHORS[city];
-  if (!anchor) return {};
-  return {
-    title: `Weekend Trips from ${anchor.name} — Destinations Within 500 km, Scored | NakshIQ`,
-    description: `Places to visit on a weekend from ${anchor.name}. Sorted by drive time — within 3 hours, half-day, and long-weekend bands. Monthly scores + kids ratings.`,
-    ...localeAlternates(locale, `/weekend-from-${city}`),
-  };
-}
-
-function getSupabase() {
-  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
-  const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-  if (!url || !key) return null;
-  return createClient(url, key);
-}
+import { METRO_ANCHORS, METRO_SLUGS, type MetroAnchor } from "@/lib/metro-anchors";
 
 type Band = { label: string; sublabel: string; min: number; max: number };
 const BANDS: Band[] = [
@@ -44,13 +12,15 @@ const BANDS: Band[] = [
   { label: "Long weekend", sublabel: "300–500 km", min: 300, max: 500 },
 ];
 
-export default async function WeekendFromCityPage({
-  params,
-}: {
-  params: Promise<{ locale: string; city: string }>;
-}) {
-  const { locale, city } = await params;
-  const anchor = METRO_ANCHORS[city];
+function getSupabase() {
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+  if (!url || !key) return null;
+  return createClient(url, key);
+}
+
+export async function WeekendFromView({ locale, city }: { locale: string; city: string }) {
+  const anchor: MetroAnchor | undefined = METRO_ANCHORS[city];
   if (!anchor) notFound();
 
   const supabase = getSupabase();
@@ -174,4 +144,20 @@ export default async function WeekendFromCityPage({
       <Footer />
     </div>
   );
+}
+
+export function weekendFromMetadata({ locale, city }: { locale: string; city: string }) {
+  const anchor = METRO_ANCHORS[city];
+  if (!anchor) return {};
+  return {
+    title: `Weekend Trips from ${anchor.name} — Destinations Within 500 km, Scored | NakshIQ`,
+    description: `Places to visit on a weekend from ${anchor.name}. Sorted by drive time — within 3 hours, half-day, and long-weekend bands. Monthly scores + kids ratings.`,
+    alternates: {
+      canonical: `https://www.nakshiq.com/${locale}/weekend-from-${city}`,
+      languages: {
+        en: `https://www.nakshiq.com/en/weekend-from-${city}`,
+        hi: `https://www.nakshiq.com/hi/weekend-from-${city}`,
+      },
+    },
+  };
 }

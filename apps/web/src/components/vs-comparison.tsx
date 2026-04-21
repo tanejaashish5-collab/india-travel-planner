@@ -25,7 +25,7 @@ interface DestData {
   state: string | null;
   months: MonthScore[];
   kids: { suitable: boolean; rating: number } | null;
-  confidence: { safety_rating: string | null; network: string | null } | null;
+  confidence: { safety_rating: number | string | null; network: unknown } | null;
 }
 
 interface Props {
@@ -52,6 +52,26 @@ function winner(val1: number | null, val2: number | null): "left" | "right" | "t
   if (val1 > val2) return "left";
   if (val2 > val1) return "right";
   return "tie";
+}
+
+function formatSafety(v: number | string | null | undefined): string {
+  if (v == null) return "N/A";
+  if (typeof v === "number") return `${v}/5`;
+  return String(v);
+}
+
+function formatNetwork(net: unknown): string {
+  if (net == null) return "N/A";
+  if (typeof net === "string") return net;
+  if (typeof net === "object") {
+    const n = net as Record<string, unknown>;
+    const ops = ["airtel", "jio", "vi", "bsnl"].filter((k) => n[k] === true);
+    if (ops.length > 0) {
+      return ops.map((o) => o[0].toUpperCase() + o.slice(1)).join(" / ");
+    }
+    if (typeof n.note === "string") return n.note;
+  }
+  return "N/A";
 }
 
 export function VsComparison({ dest1, dest2, locale }: Props) {
@@ -103,16 +123,16 @@ export function VsComparison({ dest1, dest2, locale }: Props) {
     },
     {
       label: "Safety",
-      v1: dest1.confidence?.safety_rating || "N/A",
-      v2: dest2.confidence?.safety_rating || "N/A",
+      v1: formatSafety(dest1.confidence?.safety_rating),
+      v2: formatSafety(dest2.confidence?.safety_rating),
       c1: "",
       c2: "",
       win: "tie" as const,
     },
     {
       label: "Network",
-      v1: dest1.confidence?.network || "N/A",
-      v2: dest2.confidence?.network || "N/A",
+      v1: formatNetwork(dest1.confidence?.network),
+      v2: formatNetwork(dest2.confidence?.network),
       c1: "",
       c2: "",
       win: "tie" as const,
