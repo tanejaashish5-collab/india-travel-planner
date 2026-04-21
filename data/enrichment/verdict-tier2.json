@@ -1,0 +1,110 @@
+[
+  {
+    "destination_id": "aalo",
+    "month": 5,
+    "verdict": "skip",
+    "skip_reason": "Pre-monsoon rains make trails waterlogged and landslides frequent"
+  },
+  {
+    "destination_id": "aalo",
+    "month": 9,
+    "verdict": "skip",
+    "skip_reason": "Roads remain waterlogged from monsoon recovery efforts"
+  },
+  {
+    "destination_id": "chandratal",
+    "month": 5,
+    "verdict": "skip",
+    "skip_reason": "Road access remains unpredictable until late May, risking multi-day delays or turnarounds at 4300m"
+  },
+  {
+    "destination_id": "dambuk",
+    "month": 5,
+    "verdict": "skip",
+    "skip_reason": "Pre-monsoon heat and daily thunderstorms make hiking conditions treacherous in May"
+  },
+  {
+    "destination_id": "dambuk",
+    "month": 9,
+    "verdict": "skip",
+    "skip_reason": "Road construction delays will frustrate your journey through the valley"
+  },
+  {
+    "destination_id": "har-ki-doon",
+    "month": 2,
+    "verdict": "skip",
+    "skip_reason": "Deep snow makes upper camps inaccessible without mountaineering experience and gear"
+  },
+  {
+    "destination_id": "har-ki-doon",
+    "month": 7,
+    "verdict": "skip",
+    "skip_reason": "Monsoon rains trigger landslides on the access road and make trails treacherous with leeches"
+  },
+  {
+    "destination_id": "har-ki-doon",
+    "month": 8,
+    "verdict": "skip",
+    "skip_reason": "Monsoon rains obscure mountain views and make steep trails treacherous"
+  },
+  {
+    "destination_id": "har-ki-doon",
+    "month": 12,
+    "verdict": "skip",
+    "skip_reason": "Snow accumulation makes the 3,565m pass nearly impassable in December without mountaineering experience"
+  },
+  {
+    "destination_id": "hemkund-sahib",
+    "month": 5,
+    "verdict": "skip",
+    "skip_reason": "Gurdwara won't open until late May; snow blocks the trail before then"
+  },
+  {
+    "destination_id": "hemkund-sahib",
+    "month": 10,
+    "verdict": "skip",
+    "skip_reason": "Shrine closes by early October, and snow blocks the 4633m pass within weeks"
+  },
+  {
+    "destination_id": "kaza",
+    "month": 3,
+    "verdict": "skip",
+    "skip_reason": "High-altitude passes remain snowbound, limiting onward travel from this isolated valley"
+  },
+  {
+    "destination_id": "kaza",
+    "month": 4,
+    "verdict": "skip",
+    "skip_reason": "Manali highway typically closed; access severely limited before May"
+  },
+  {
+    "destination_id": "kaza",
+    "month": 11,
+    "verdict": "skip",
+    "skip_reason": "Both highway routes become treacherous in November, leaving you stranded at 3800m with minimal lodging open"
+  },
+  {
+    "destination_id": "khardung-la",
+    "month": 4,
+    "verdict": "skip",
+    "skip_reason": "Snow clearance typically begins mid-April, so early visits risk impassable conditions"
+  },
+  {
+    "destination_id": "khardung-la",
+    "month": 11,
+    "verdict": "skip",
+    "skip_reason": "Road closes from mid-November as snow accumulation makes passage impassable"
+  },
+  {
+    "destination_id": "turtuk",
+    "month": 4,
+    "verdict": "skip",
+    "skip_reason": "Khardung La road remains largely snowbound; most April visitors can't reach Turtuk reliably"
+  },
+  {
+    "destination_id": "turtuk",
+    "month": 11,
+    "verdict": "skip",
+    "skip_reason": "Road closures make November visits unreliable and potentially stranded"
+  }
+]

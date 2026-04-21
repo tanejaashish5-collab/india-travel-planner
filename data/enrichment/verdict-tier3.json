@@ -1,0 +1,86 @@
+[
+  {
+    "destination_id": "aalo",
+    "month": 4,
+    "verdict": "wait",
+    "skip_reason": "Pre-monsoon humidity peaks as temperatures climb into the high 80s"
+  },
+  {
+    "destination_id": "bengaluru",
+    "month": 8,
+    "verdict": "wait",
+    "skip_reason": "Monsoon rains cause frequent waterlogging, disrupting movement around the city"
+  },
+  {
+    "destination_id": "chandratal",
+    "month": 6,
+    "verdict": "wait",
+    "skip_reason": "Lake thaws gradually through June, so expect partial ice and limited camping accessibility"
+  },
+  {
+    "destination_id": "chandratal",
+    "month": 10,
+    "verdict": "wait",
+    "skip_reason": "Snow arrival cuts the trekking window to early October before conditions deteriorate"
+  },
+  {
+    "destination_id": "dambuk",
+    "month": 4,
+    "verdict": "wait",
+    "skip_reason": "Pre-monsoon heat and humidity peak before orchid season blooms in May"
+  },
+  {
+    "destination_id": "dambuk",
+    "month": 10,
+    "verdict": "wait",
+    "skip_reason": "Trails are muddy and unreliable after monsoon season"
+  },
+  {
+    "destination_id": "har-ki-doon",
+    "month": 3,
+    "verdict": "wait",
+    "skip_reason": "Snow patches still block the trail at 3565m, making the hard trek unpredictable in early March"
+  },
+  {
+    "destination_id": "har-ki-doon",
+    "month": 11,
+    "verdict": "wait",
+    "skip_reason": "Early snow makes trails treacherous and camps uninhabitable for most trekkers"
+  },
+  {
+    "destination_id": "kaza",
+    "month": 5,
+    "verdict": "wait",
+    "skip_reason": "Kunzum La pass remains unpredictably closed, stranding you without reliable road access"
+  },
+  {
+    "destination_id": "kaza",
+    "month": 8,
+    "verdict": "wait",
+    "skip_reason": "Monsoon landslides block the main Manali approach; only Shimla route remains passable"
+  },
+  {
+    "destination_id": "khardung-la",
+    "month": 5,
+    "verdict": "wait",
+    "skip_reason": "Unpredictable closures due to snow mean you could drive 5+ hours only to find the pass shut"
+  },
+  {
+    "destination_id": "khardung-la",
+    "month": 10,
+    "verdict": "wait",
+    "skip_reason": "Early snowfall unpredictably closes the pass mid-month, stranding vehicles for days"
+  },
+  {
+    "destination_id": "turtuk",
+    "month": 5,
+    "verdict": "wait",
+    "skip_reason": "Road opens mid-May, leaving just weeks before summer monsoon rains arrive"
+  },
+  {
+    "destination_id": "turtuk",
+    "month": 10,
+    "verdict": "wait",
+    "skip_reason": "Passes begin closing as snow arrives, shrinking your window to cross in and out"
+  }
+]

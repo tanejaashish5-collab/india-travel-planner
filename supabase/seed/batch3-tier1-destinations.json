@@ -1,0 +1,658 @@
+[
+  {
+    "id": "kaza",
+    "name": "Kaza",
+    "state_id": "himachal-pradesh",
+    "coords": [32.2254, 78.0723],
+    "elevation_m": 3800,
+    "difficulty": "hard",
+    "budget_tier": "budget",
+    "tagline": "The Spiti headquarters — every route in the valley runs through here.",
+    "why_special": "Kaza is the administrative centre and logistics anchor for the entire Spiti Valley. Most itineraries from Manali or Shimla converge here. At 3,800m it's where you acclimatise, refuel, access the only reliable network signal in the valley, and stage day trips to Key Monastery, Hikkim (highest post office in the world), Langza (fossil village), and Komic. The town itself is small — a few hundred houses clustered around a central market — but the views of the surrounding 6,000m peaks are extraordinary.",
+    "tags": ["high-altitude", "offbeat", "buddhist", "monasteries", "road-trip", "photography"],
+    "best_months": [6, 7, 9],
+    "avoid_months": [1, 2, 12],
+    "ideal_duration_min": 2,
+    "ideal_duration_max": 4,
+    "daily_cost": 1500,
+    "family_stress": "hard",
+    "monthly_suitability": [
+      { "m": 1, "score": 1, "note": "Heavy snow. Most routes closed. Temperatures drop to -25°C at night." },
+      { "m": 2, "score": 1, "note": "Still deep winter. Only the Shimla route is sometimes passable. Thin tourist services." },
+      { "m": 3, "score": 2, "note": "Beginning to thaw but Rohtang/Kunzum still closed. Shimla access only." },
+      { "m": 4, "score": 2, "note": "Still shoulder. Manali route typically closed until Rohtang opens in May." },
+      { "m": 5, "score": 3, "note": "Kunzum La opens sporadically. Nights still cold. Acclimatisation matters." },
+      { "m": 6, "score": 4, "note": "Both Manali and Shimla routes reliably open. Clear skies, pleasant days, cold nights." },
+      { "m": 7, "score": 4, "note": "Warmest month but Manali highway landslide risk builds. Plan buffer days." },
+      { "m": 8, "score": 3, "note": "Monsoon approach reaches Lahaul. Landslides on Manali side. Shimla approach still safer." },
+      { "m": 9, "score": 5, "note": "Prime month. Clear skies, stable roads, pre-winter clarity. The photographer's window." },
+      { "m": 10, "score": 4, "note": "Crisp, clear, beautiful. Nights turn frigid. Manali route begins closing late in the month." },
+      { "m": 11, "score": 2, "note": "Manali route closed. Shimla route getting icy. Most guesthouses shutting down." },
+      { "m": 12, "score": 1, "note": "Deep winter. Only committed winter travellers — and only from Shimla." }
+    ],
+    "confidence_cards": {
+      "reach": {
+        "from_nearest_city": "Manali 200km via Rohtang–Kunzum (12h, summer only) OR Shimla 410km via Hindustan–Tibet Highway (2 days, all-season except peak winter).",
+        "road_condition": "Paved but narrow with landslide-prone sections between Rampur–Kinnaur and beyond Losar. Expect single-lane stretches and blind curves.",
+        "public_transport": "HRTC buses: Shimla–Rekong Peo–Kaza daily (summer); Manali–Kaza via Rohtang runs Jun–Oct only.",
+        "self_drive": "2WD possible in dry season on both routes. 4WD recommended Jun–Aug on Manali side. Carry spare tyre, jerry can, hardcopy permits.",
+        "last_km_difficulty": "hard"
+      },
+      "sleep": {
+        "price_range_inr": "800–4,500",
+        "options_count": 40,
+        "types": ["homestays", "guesthouses", "mid-range hotels"],
+        "booking_method": "Direct call or walk-in in shoulder months. MakeMyTrip/Booking.com for peak Jun–Sep.",
+        "note": "Most places are family-run and cash-only. ATM in Kaza market."
+      },
+      "fuel": {
+        "nearest_petrol_pump": "Kaza (Indian Oil) — the only pump in Spiti.",
+        "next_after_that": "Rekong Peo 220km via Shimla side; Tandi 100km via Manali side.",
+        "carry_extra": true,
+        "jerry_can_size_liters": 10,
+        "ev_charging": false
+      },
+      "weather_night": {
+        "summer_low_c": 5,
+        "winter_low_c": -25,
+        "note": "Even in July nights drop to single digits. In January–February it routinely hits -25°C to -30°C."
+      },
+      "emergency": {
+        "nearest_hospital": "Community Health Centre, Kaza (basic). Serious cases evacuated to IGMC Shimla or LBS Mandi.",
+        "ambulance": "108",
+        "helpline": "1363 (India Tourist Helpline)",
+        "note": "AMS risk is real at 3,800m — acclimatise en route. Diamox is widely available at Kaza pharmacies."
+      },
+      "network": {
+        "jio": true,
+        "airtel": true,
+        "bsnl": true,
+        "vi": false,
+        "wifi_available": "Most guesthouses have patchy wifi",
+        "note": "BSNL most reliable across the valley. Jio/Airtel 4G in Kaza town only; no signal beyond Komic/Langza."
+      },
+      "safety_rating": 3,
+      "safety_notes": "Altitude illness is the biggest risk. Weather-related road closures are the secondary risk."
+    },
+    "kids_friendly": {
+      "suitable": false,
+      "rating": 2,
+      "recommended_age_min": 12,
+      "notes": "Altitude, cold, long drives, and limited medical access make Kaza unsuitable for young children. Teens in good health can manage it with pre-acclimatisation."
+    }
+  },
+  {
+    "id": "chandratal",
+    "name": "Chandratal",
+    "state_id": "himachal-pradesh",
+    "coords": [32.4767, 77.6117],
+    "elevation_m": 4300,
+    "difficulty": "hard",
+    "budget_tier": "mixed",
+    "tagline": "Crescent-shaped lake at 4,300m — reachable only in summer, camped beside on borrowed time.",
+    "why_special": "Chandratal (the Moon Lake) sits in a high-altitude bowl near the Kunzum Pass, accessible only when the road from Batal is clear — typically late June to mid-October. The lake changes colour through the day from turquoise to deep blue as the light shifts. Camping is permitted at a designated ground 3km from the lake. It's one of the highest lakes in India with road access, and often the centrepiece of a Manali-Spiti-Manali loop.",
+    "tags": ["high-altitude", "lake", "camping", "road-trip", "photography", "offbeat"],
+    "best_months": [7, 8, 9],
+    "avoid_months": [11, 12, 1, 2, 3, 4, 5],
+    "ideal_duration_min": 1,
+    "ideal_duration_max": 2,
+    "daily_cost": 2500,
+    "family_stress": "hard",
+    "monthly_suitability": [
+      { "m": 1, "score": 1, "note": "Fully closed. Under 3m of snow. Lake frozen." },
+      { "m": 2, "score": 1, "note": "Same as January." },
+      { "m": 3, "score": 1, "note": "No access." },
+      { "m": 4, "score": 1, "note": "Rohtang/Kunzum still shut. Road to Batal buried." },
+      { "m": 5, "score": 2, "note": "BRO begins snow-clearing. Road may open late in month but unreliable." },
+      { "m": 6, "score": 3, "note": "Opens mid-June most years. Early-season road is rough; lake still partially frozen." },
+      { "m": 7, "score": 5, "note": "Prime window. Clear days, lake fully open, camping grounds active. Nights still cold." },
+      { "m": 8, "score": 4, "note": "Peak season but afternoon clouds build. Monsoon edge risk." },
+      { "m": 9, "score": 5, "note": "Best month. Clear skies, cold nights, golden light, low crowd." },
+      { "m": 10, "score": 3, "note": "First snow likely by mid-month. Campsites wrap up. Day-visit only late in month." },
+      { "m": 11, "score": 1, "note": "Road closed. Season over." },
+      { "m": 12, "score": 1, "note": "Fully closed for winter." }
+    ],
+    "confidence_cards": {
+      "reach": {
+        "from_nearest_city": "Manali 110km via Rohtang–Gramphu–Batal (6–8h in season). From Kaza 100km via Kunzum La (4h).",
+        "road_condition": "Rough dirt from Gramphu to Batal. Last 14km from Batal to Chandratal is steep, rutted, and prone to washouts after rain.",
+        "public_transport": "None. No bus service reaches Chandratal.",
+        "self_drive": "4WD or high-clearance SUV strongly recommended. Carry spare tyre.",
+        "last_km_difficulty": "extreme"
+      },
+      "sleep": {
+        "price_range_inr": "1,500–5,000",
+        "options_count": 8,
+        "types": ["Swiss-tent camps"],
+        "booking_method": "Book via Manali-based operators (Himalayan Caravan, Parvati Rescue Team referrals). Walk-in risky in July–Aug.",
+        "emergency_stay": "Batal PWD rest house 14km below, or Kunzum Mata temple shelter (emergencies only).",
+        "note": "All camps are 3km from the lake itself. No electricity beyond solar. Shared toilet blocks."
+      },
+      "fuel": {
+        "nearest_petrol_pump": "Tandi (120km) via Manali side; Kaza (100km) via Spiti side.",
+        "carry_extra": true,
+        "jerry_can_size_liters": 20,
+        "ev_charging": false,
+        "note": "Tandi is the last pump before Kaza — fuel here even for short excursions."
+      },
+      "weather_night": {
+        "summer_low_c": 2,
+        "winter_low_c": -30,
+        "note": "Even July camping nights can drop to 0°C. Bring a -5°C sleeping bag minimum."
+      },
+      "emergency": {
+        "nearest_hospital": "Kaza CHC 100km (summer only via Kunzum). Outside season, evacuation via helicopter from Manali side.",
+        "ambulance": "108",
+        "helpline": "1363",
+        "rescue": "District disaster cell Lahaul–Spiti: 01900-202509.",
+        "note": "Altitude pulmonary/cerebral edema risk is real. Do not ascend Chandratal without sleeping at Kaza or Batal first."
+      },
+      "network": {
+        "jio": false,
+        "airtel": false,
+        "bsnl": false,
+        "vi": false,
+        "note": "Zero signal at the lake or campsites. Last signal at Gramphu or Losar depending on carrier."
+      },
+      "safety_rating": 2,
+      "safety_notes": "Altitude, cold, remoteness. AMS evacuation requires hours of driving on rough road."
+    },
+    "kids_friendly": {
+      "suitable": false,
+      "rating": 1,
+      "recommended_age_min": 16,
+      "notes": "4,300m with no medical access and no cell signal. Not a place to bring children."
+    }
+  },
+  {
+    "id": "har-ki-doon",
+    "name": "Har Ki Doon",
+    "state_id": "uttarakhand",
+    "coords": [31.0972, 78.4494],
+    "elevation_m": 3565,
+    "difficulty": "hard",
+    "budget_tier": "budget",
+    "tagline": "Cradle-shaped valley trek in the Govind sanctuary — the classic Garhwal walk.",
+    "why_special": "Har Ki Doon is a U-shaped glacial valley at 3,565m in the Govind Ballabh Pant Wildlife Sanctuary, Uttarkashi district. The trek starts from Sankri village, passes through Taluka and the pre-Mahabharata settlements of Osla and Seema, and climbs through oak and rhododendron forests before opening into the valley. It is one of the oldest named treks in Garhwal, the valley is associated with the Pandavas' final journey, and the 4-5 day out-and-back itinerary makes it one of the most accessible 3,500m+ treks in India.",
+    "tags": ["trek", "offbeat", "forest", "photography", "wildlife-sanctuary", "beginner-friendly-high-altitude"],
+    "best_months": [5, 6, 9, 10],
+    "avoid_months": [7, 8, 1, 2],
+    "ideal_duration_min": 5,
+    "ideal_duration_max": 7,
+    "daily_cost": 1800,
+    "family_stress": "hard",
+    "monthly_suitability": [
+      { "m": 1, "score": 1, "note": "Snow trek territory. Only experienced winter trekkers should attempt." },
+      { "m": 2, "score": 2, "note": "Deep snow across the upper camps. Beautiful but committing." },
+      { "m": 3, "score": 3, "note": "Late-winter window. Snow line recedes. Still cold." },
+      { "m": 4, "score": 4, "note": "Spring begins. Trail opens fully. Rhododendrons start blooming low down." },
+      { "m": 5, "score": 5, "note": "Rhododendron peak. Clear weather. Best-known window." },
+      { "m": 6, "score": 5, "note": "Lush green valley. Snow melted off the trail. Pre-monsoon stability." },
+      { "m": 7, "score": 2, "note": "Monsoon. Leeches, slippery trails, landslide risk on approach road." },
+      { "m": 8, "score": 2, "note": "Same as July. Skip unless you enjoy rain." },
+      { "m": 9, "score": 5, "note": "Post-monsoon clarity. Cool days, cold nights. Second prime window." },
+      { "m": 10, "score": 4, "note": "Autumn colour. Getting colder. Snow possible at Kalkattiyadhar by end of month." },
+      { "m": 11, "score": 3, "note": "Snow starts. Upper camps getting harsh. For experienced only." },
+      { "m": 12, "score": 2, "note": "Winter snow trek. Cold and demanding." }
+    ],
+    "confidence_cards": {
+      "reach": {
+        "from_nearest_city": "Dehradun 220km to Sankri (9–10h drive). From Sankri it is a 12km drive to Taluka, then 22km trek over 4 days.",
+        "road_condition": "Mostly paved to Sankri. Last stretch via Purola–Mori is narrow and hill-road with landslide sections in monsoon.",
+        "public_transport": "State buses Dehradun–Purola–Sankri (daily, uncomfortable). Shared sumos from Purola more flexible.",
+        "self_drive": "Sedan manageable in dry conditions. Park at Sankri or Taluka.",
+        "last_km_difficulty": "moderate"
+      },
+      "sleep": {
+        "price_range_inr": "800–2,500",
+        "options_count": 25,
+        "types": ["Sankri homestays", "trek camps at Seema/Osla/Kalkattiyadhar"],
+        "booking_method": "Book a trek operator (Indiahikes, Trek The Himalayas, Bikat) for the camping stretch. Direct booking for Sankri homestays.",
+        "note": "Forest Department permit and entry fee at Sankri checkpoint."
+      },
+      "fuel": {
+        "nearest_petrol_pump": "Purola (45km from Sankri).",
+        "next_after_that": "Barkot or Naugaon further south.",
+        "carry_extra": false,
+        "ev_charging": false
+      },
+      "weather_night": {
+        "summer_low_c": 5,
+        "winter_low_c": -10,
+        "note": "Even May nights at Kalkattiyadhar (3,500m) drop to around freezing. Sleeping bag rating matters."
+      },
+      "emergency": {
+        "nearest_hospital": "Community Health Centre Purola (45km from Sankri). Major cases go to Doon Hospital Dehradun.",
+        "ambulance": "108",
+        "helpline": "1363",
+        "rescue": "Uttarkashi district SDRF: 01374-222094.",
+        "note": "Carry personal first-aid; there is no medical facility on-trail."
+      },
+      "network": {
+        "jio": true,
+        "airtel": true,
+        "bsnl": true,
+        "vi": false,
+        "note": "Signal ends at Sankri. Nothing on trail beyond Taluka. BSNL sometimes catches at Seema."
+      },
+      "safety_rating": 3,
+      "safety_notes": "It is a trek. Weather, altitude, and river crossings (especially in monsoon) are the risks. Trek operators with satellite phones are advisable."
+    },
+    "kids_friendly": {
+      "suitable": false,
+      "rating": 2,
+      "recommended_age_min": 12,
+      "notes": "It is a multi-day trek at altitude. Fit teens can manage; younger kids should not."
+    }
+  },
+  {
+    "id": "hemkund-sahib",
+    "name": "Hemkund Sahib",
+    "state_id": "uttarakhand",
+    "coords": [30.7000, 79.6194],
+    "elevation_m": 4633,
+    "difficulty": "hard",
+    "budget_tier": "budget",
+    "tagline": "Sikh pilgrimage shrine at 4,633m — a 6km walk up from Ghangaria, beside a glacial lake.",
+    "why_special": "Hemkund Sahib is a Sikh gurdwara dedicated to Guru Gobind Singh at 4,633m — one of the highest pilgrimage sites in India. Built beside a glacial lake in the Chamoli district, it is reachable only between early June and early October, and then only by a 6km walk from Ghangaria. The same trailhead serves the Valley of Flowers — most travellers do both in a single 3-day window. The shrine opens for pilgrimage from early June each year; it is closed and buried in snow the rest of the year.",
+    "tags": ["pilgrimage", "sikh", "high-altitude", "trek", "glacial-lake", "uttarakhand"],
+    "best_months": [6, 7, 8, 9],
+    "avoid_months": [10, 11, 12, 1, 2, 3, 4, 5],
+    "ideal_duration_min": 2,
+    "ideal_duration_max": 3,
+    "daily_cost": 1500,
+    "family_stress": "hard",
+    "monthly_suitability": [
+      { "m": 1, "score": 1, "note": "Shrine closed. Heavy snow." },
+      { "m": 2, "score": 1, "note": "Same." },
+      { "m": 3, "score": 1, "note": "Same." },
+      { "m": 4, "score": 1, "note": "Same — approach roads not cleared until late May." },
+      { "m": 5, "score": 2, "note": "Gurdwara typically opens at the end of May / first week of June. Snow still on trail." },
+      { "m": 6, "score": 5, "note": "Opening month. Pilgrim season starts. Valley of Flowers blooms building." },
+      { "m": 7, "score": 5, "note": "Peak pilgrimage + VoF bloom. Busy but beautiful." },
+      { "m": 8, "score": 4, "note": "Still prime. Monsoon rain affects walk up, occasional road closures on Rishikesh–Govindghat approach." },
+      { "m": 9, "score": 4, "note": "Pilgrimage season winds down. Cool, clear. Shrine typically closes late Sep / first week Oct." },
+      { "m": 10, "score": 2, "note": "Shrine closes after Durga Puja window. Snow returns." },
+      { "m": 11, "score": 1, "note": "Closed for winter." },
+      { "m": 12, "score": 1, "note": "Closed." }
+    ],
+    "confidence_cards": {
+      "reach": {
+        "from_nearest_city": "Rishikesh to Govindghat 275km (10–11h). Govindghat to Ghangaria 14km trek or pony/helicopter. Ghangaria to Hemkund 6km steep trek.",
+        "road_condition": "NH-7 Rishikesh–Joshimath is well-paved but subject to landslide closures in monsoon. BRO maintains it actively.",
+        "public_transport": "GMVN and private buses Rishikesh–Joshimath–Govindghat daily.",
+        "self_drive": "Sedan fine in dry conditions. Paid parking at Govindghat.",
+        "last_km_difficulty": "hard"
+      },
+      "sleep": {
+        "price_range_inr": "500–2,500",
+        "options_count": 50,
+        "types": ["Ghangaria guesthouses", "gurdwara langar & sarai (free)", "camping (not permitted at shrine)"],
+        "booking_method": "Walk-in at Ghangaria. Weekend peak-season booking via GMVN recommended.",
+        "emergency_stay": "Gurdwara sarai at Ghangaria and Hemkund offers free stay to pilgrims.",
+        "note": "No overnight stay permitted at the shrine itself — descend to Ghangaria by afternoon."
+      },
+      "fuel": {
+        "nearest_petrol_pump": "Joshimath (25km from Govindghat).",
+        "next_after_that": "Chamoli or Karnaprayag further down.",
+        "carry_extra": false,
+        "ev_charging": false
+      },
+      "weather_night": {
+        "summer_low_c": 2,
+        "winter_low_c": -20,
+        "note": "Even July afternoons at the shrine feel cold. Nights at Ghangaria drop to single digits."
+      },
+      "emergency": {
+        "nearest_hospital": "Community Health Centre Joshimath. Major cases go to AIIMS Rishikesh.",
+        "ambulance": "108",
+        "helpline": "1363",
+        "rescue": "Chamoli district SDRF: 01372-251437.",
+        "note": "AMS evacuation from Hemkund is via pony back to Ghangaria — plan conservatively. Helicopter evacuation possible from Govindghat in clear weather."
+      },
+      "network": {
+        "jio": true,
+        "airtel": true,
+        "bsnl": true,
+        "vi": false,
+        "wifi_available": "Limited in Ghangaria guesthouses",
+        "note": "Signal patchy at Ghangaria, none on the 6km climb to Hemkund."
+      },
+      "safety_rating": 3,
+      "safety_notes": "It is a high-altitude climb. Cardiac events on the ascent are the leading medical emergency; take it slowly."
+    },
+    "kids_friendly": {
+      "suitable": false,
+      "rating": 2,
+      "recommended_age_min": 12,
+      "notes": "Steep 6km ascent from 3,048m to 4,633m in a single day. Not suitable for young children. Fit older kids can do it with care."
+    }
+  },
+  {
+    "id": "khardung-la",
+    "name": "Khardung La",
+    "state_id": "ladakh",
+    "coords": [34.2785, 77.6046],
+    "elevation_m": 5359,
+    "difficulty": "extreme",
+    "budget_tier": "mixed",
+    "tagline": "5,359m pass north of Leh — the gateway to Nubra Valley and a rite of passage for motorcyclists.",
+    "why_special": "Khardung La sits on the Leh–Nubra road at 5,359m (the official BRO signage claims 5,602m; surveys place it closer to 5,359m). Whichever measurement you accept, it is one of the highest motorable passes in the world and the logistical gateway to the Nubra and Shyok valleys. It is a checkpoint more than a destination — most travellers pause for ten minutes, take a photograph, and descend on the other side. The altitude is uncompromising: AMS strikes fit adults here with no warning.",
+    "tags": ["high-altitude", "motorable-pass", "road-trip", "ladakh", "border", "motorcycle"],
+    "best_months": [6, 7, 8, 9],
+    "avoid_months": [11, 12, 1, 2, 3],
+    "ideal_duration_min": 1,
+    "ideal_duration_max": 1,
+    "daily_cost": 800,
+    "family_stress": "hard",
+    "monthly_suitability": [
+      { "m": 1, "score": 1, "note": "Pass closed by snow." },
+      { "m": 2, "score": 1, "note": "Closed." },
+      { "m": 3, "score": 1, "note": "Closed." },
+      { "m": 4, "score": 2, "note": "BRO begins snow-clearing. Pass sometimes opens late in month." },
+      { "m": 5, "score": 3, "note": "Open most days by mid-May but closures still frequent." },
+      { "m": 6, "score": 5, "note": "Reliably open. Clear skies. Peak motorcycle season starts." },
+      { "m": 7, "score": 4, "note": "Open throughout. Occasional afternoon snow flurries even in summer." },
+      { "m": 8, "score": 4, "note": "Still reliably open. Nubra valley in full summer swing." },
+      { "m": 9, "score": 5, "note": "Crisp, clear, low crowds. The best window for photography." },
+      { "m": 10, "score": 3, "note": "First snowfall often mid-month. Pass still open most days." },
+      { "m": 11, "score": 2, "note": "Snow builds up. Closures becoming regular. BRO stops clearing by end of month." },
+      { "m": 12, "score": 1, "note": "Closed for winter." }
+    ],
+    "confidence_cards": {
+      "reach": {
+        "from_nearest_city": "39km from Leh (1.5–2h ascent with acclimatisation and photo stops).",
+        "road_condition": "Paved and maintained by BRO — one of the best high-altitude roads in India. Top section can get rutted mid-season.",
+        "public_transport": "No scheduled buses. Shared taxis Leh–Nubra pass through with a brief stop.",
+        "self_drive": "Any roadworthy car or motorcycle can do it in summer. Permit required (Inner Line Permit for Indian nationals, PAP for foreigners).",
+        "last_km_difficulty": "hard"
+      },
+      "sleep": {
+        "price_range_inr": "N/A",
+        "options_count": 0,
+        "types": [],
+        "emergency_stay": "Army canteen at the top — tea only, no overnight. Closest stays at South Pullu or Leh.",
+        "note": "Overnight stay at the pass is not permitted and medically dangerous. Do not attempt."
+      },
+      "fuel": {
+        "nearest_petrol_pump": "Leh (Indian Oil, 39km).",
+        "next_after_that": "Diskit (120km on the Nubra side).",
+        "carry_extra": true,
+        "jerry_can_size_liters": 10,
+        "ev_charging": false
+      },
+      "weather_night": {
+        "summer_low_c": -5,
+        "winter_low_c": -40,
+        "note": "Even in July the pass can feel below freezing in wind. Do not plan to stop more than 20 minutes."
+      },
+      "emergency": {
+        "nearest_hospital": "SNM Hospital Leh (39km).",
+        "ambulance": "108",
+        "helpline": "1363 / +91-1982-252010 (Leh Tourism).",
+        "rescue": "Army checkpost at South Pullu can radio for evacuation.",
+        "note": "At 5,359m, AMS symptoms can escalate to HAPE/HACE within hours. Descend immediately if symptoms appear."
+      },
+      "network": {
+        "jio": false,
+        "airtel": false,
+        "bsnl": true,
+        "vi": false,
+        "note": "BSNL postpaid only — prepaid and other carriers do not work. Signal patchy even then."
+      },
+      "safety_rating": 2,
+      "safety_notes": "Altitude is the defining risk. Do not ascend without two nights of acclimatisation at Leh (3,500m) first."
+    },
+    "kids_friendly": {
+      "suitable": false,
+      "rating": 1,
+      "recommended_age_min": 16,
+      "notes": "5,359m is medically unsuitable for young children. Do not take kids up the pass even for a photo stop."
+    }
+  },
+  {
+    "id": "turtuk",
+    "name": "Turtuk",
+    "state_id": "ladakh",
+    "coords": [34.8527, 76.8237],
+    "elevation_m": 2900,
+    "difficulty": "moderate",
+    "budget_tier": "budget",
+    "tagline": "India's last Balti village on the Shyok — opened to visitors in 2010, still feels half-secret.",
+    "why_special": "Turtuk is a cluster of Balti villages on the north bank of the Shyok river, 7km from the Line of Control with Pakistan. The Balti people here speak a dialect of Tibetan mixed with Urdu, grow apricots that India's top luxury hotels fly in by the ton, and lived under Pakistani administration until 1971 when the village was captured by the Indian army. It was closed to civilian visitors until 2010. The architecture, food, and culture are unlike anywhere else in Ladakh — this is Central Asia, briefly, before the road ends at Thang a few kilometres further.",
+    "tags": ["offbeat", "border", "balti-culture", "last-village", "shyok-valley", "apricots", "photography"],
+    "best_months": [6, 7, 8, 9],
+    "avoid_months": [12, 1, 2, 3],
+    "ideal_duration_min": 2,
+    "ideal_duration_max": 3,
+    "daily_cost": 1200,
+    "family_stress": "moderate",
+    "monthly_suitability": [
+      { "m": 1, "score": 1, "note": "Khardung La closed. Turtuk unreachable." },
+      { "m": 2, "score": 1, "note": "Same." },
+      { "m": 3, "score": 1, "note": "Same." },
+      { "m": 4, "score": 2, "note": "Khardung La begins opening late month. Access still unreliable." },
+      { "m": 5, "score": 3, "note": "Road reliably open by mid-month. Early-season, cold nights." },
+      { "m": 6, "score": 5, "note": "Apricot blossom then fruiting. Clear skies, warm afternoons." },
+      { "m": 7, "score": 5, "note": "Peak apricot harvest. The experience Turtuk is known for." },
+      { "m": 8, "score": 4, "note": "Warm and busy. Occasional Shyok river flash-flood closures on the road." },
+      { "m": 9, "score": 5, "note": "Post-harvest. Quieter, still warm, photographable." },
+      { "m": 10, "score": 3, "note": "First snow on the passes. Road begins closing intermittently." },
+      { "m": 11, "score": 2, "note": "Access unreliable." },
+      { "m": 12, "score": 1, "note": "Closed for winter." }
+    ],
+    "confidence_cards": {
+      "reach": {
+        "from_nearest_city": "Leh to Turtuk 205km (7–8h via Khardung La and Diskit).",
+        "road_condition": "Mostly paved to Diskit. Last 90km Diskit–Turtuk is paved but narrow, with Shyok flash-flood washout sections.",
+        "public_transport": "Shared taxis from Diskit, infrequent. Pre-arranged taxi from Leh is the norm.",
+        "self_drive": "Any 2WD in summer. Inner Line Permit compulsory — issue in Leh before departure.",
+        "last_km_difficulty": "moderate"
+      },
+      "sleep": {
+        "price_range_inr": "700–2,500",
+        "options_count": 20,
+        "types": ["homestays", "guesthouses"],
+        "booking_method": "Direct phone booking (ask your Leh taxi operator) or walk-in shoulder season.",
+        "note": "Homestay experience is the point — you will eat balti cuisine in the host family's kitchen."
+      },
+      "fuel": {
+        "nearest_petrol_pump": "Diskit (90km).",
+        "next_after_that": "Leh (205km).",
+        "carry_extra": true,
+        "jerry_can_size_liters": 10,
+        "ev_charging": false
+      },
+      "weather_night": {
+        "summer_low_c": 10,
+        "winter_low_c": -20,
+        "note": "Warmer than Leh because of lower altitude (2,900m vs 3,500m)."
+      },
+      "emergency": {
+        "nearest_hospital": "Community Health Centre Diskit (90km). Serious cases go to SNM Hospital Leh.",
+        "ambulance": "108",
+        "helpline": "1363",
+        "note": "Army base in Turtuk can coordinate evacuation in genuine emergencies — not for civilian medical use otherwise."
+      },
+      "network": {
+        "jio": false,
+        "airtel": false,
+        "bsnl": true,
+        "vi": false,
+        "wifi_available": "A few guesthouses now offer it, patchy",
+        "note": "BSNL postpaid only. Bring a handwritten itinerary in case the wifi is down."
+      },
+      "safety_rating": 3,
+      "safety_notes": "It is a LoC-adjacent village. Be respectful at checkpoints; photography of military installations is prohibited."
+    },
+    "kids_friendly": {
+      "suitable": true,
+      "rating": 3,
+      "recommended_age_min": 10,
+      "notes": "Lower altitude than most of Ladakh. The long drive via Khardung La is the main stress factor. Apricot season is magical for older kids."
+    }
+  },
+  {
+    "id": "dambuk",
+    "name": "Dambuk",
+    "state_id": "arunachal-pradesh",
+    "coords": [28.3194, 95.8400],
+    "elevation_m": 500,
+    "difficulty": "moderate",
+    "budget_tier": "budget",
+    "tagline": "Orange-growing Dibang valley village that hosts India's most remote music festival each December.",
+    "why_special": "Dambuk is a small Idu Mishmi village in the Dibang Valley, known for two things: its Jampani oranges (which produce one of India's best-regarded orange crops between November and February), and the Orange Festival of Adventure and Music, held every December — a three-day festival of live music, off-road rallies, and kayaking that draws visitors into one of the least-visited corners of the Northeast. Outside the festival, Dambuk is a genuinely quiet place — dirt roads, riverside orange groves, and the Dibang flowing wide and grey through the valley.",
+    "tags": ["offbeat", "northeast", "festival", "orange-orchards", "river", "tribal-culture", "dibang-valley"],
+    "best_months": [11, 12, 1, 2],
+    "avoid_months": [6, 7, 8, 9],
+    "ideal_duration_min": 2,
+    "ideal_duration_max": 4,
+    "daily_cost": 1500,
+    "family_stress": "moderate",
+    "monthly_suitability": [
+      { "m": 1, "score": 5, "note": "Orange harvest window. Cool, dry, clear. Best month." },
+      { "m": 2, "score": 5, "note": "Oranges still on the trees. Warming but still pleasant." },
+      { "m": 3, "score": 4, "note": "Warming up. Orchards past peak but weather still good." },
+      { "m": 4, "score": 3, "note": "Pre-monsoon. Hot and humid. Orchards quiet." },
+      { "m": 5, "score": 2, "note": "Heat + pre-monsoon thunderstorms." },
+      { "m": 6, "score": 1, "note": "Full monsoon. Dibang floods. Roads cut." },
+      { "m": 7, "score": 1, "note": "Peak monsoon. Do not attempt access." },
+      { "m": 8, "score": 1, "note": "Same." },
+      { "m": 9, "score": 2, "note": "Monsoon tails. River still high, road work ongoing." },
+      { "m": 10, "score": 3, "note": "Post-monsoon recovery. Some routes still patchy." },
+      { "m": 11, "score": 5, "note": "Orange harvest begins. Clear, cool. Pre-festival calm." },
+      { "m": 12, "score": 5, "note": "Orange Festival window. Busy for a week; magical otherwise." }
+    ],
+    "confidence_cards": {
+      "reach": {
+        "from_nearest_city": "Dibrugarh airport (Assam) 120km (5–6h, crossing the Dibang at Bomjir).",
+        "road_condition": "Mixed paved and dirt. The Dibang bridge crossing adds complexity. Monsoon access (Jun–Sep) is unreliable.",
+        "public_transport": "Shared sumos from Tinsukia and Roing. Infrequent.",
+        "self_drive": "4WD or high-clearance recommended. Inner Line Permit required for non-Arunachali Indians.",
+        "last_km_difficulty": "moderate"
+      },
+      "sleep": {
+        "price_range_inr": "1,000–5,000",
+        "options_count": 15,
+        "types": ["village homestays", "festival-season tent camps", "a few guesthouses in Roing for overflow"],
+        "booking_method": "Direct phone bookings. Festival-week beds sell out by October.",
+        "note": "Outside festival week, homestay is the authentic experience — families cook local Idu Mishmi food."
+      },
+      "fuel": {
+        "nearest_petrol_pump": "Roing (45km).",
+        "next_after_that": "Tinsukia or Dibrugarh.",
+        "carry_extra": true,
+        "jerry_can_size_liters": 10,
+        "ev_charging": false
+      },
+      "weather_night": {
+        "summer_low_c": 22,
+        "winter_low_c": 8,
+        "note": "Subtropical lowland. Winter nights are cool but not cold; summer nights are humid."
+      },
+      "emergency": {
+        "nearest_hospital": "District Hospital Roing (45km). Serious cases go to Dibrugarh (Assam) — AMCH is the major centre.",
+        "ambulance": "108",
+        "helpline": "1363",
+        "note": "Roing has better medical facilities than most Arunachal district HQs, but anything serious goes to Assam."
+      },
+      "network": {
+        "jio": true,
+        "airtel": true,
+        "bsnl": true,
+        "vi": false,
+        "note": "Signal in the village. Orange-orchard areas and forest trails go dark."
+      },
+      "safety_rating": 4,
+      "safety_notes": "Low-crime, friendly community. The travel risks are weather and access, not safety."
+    },
+    "kids_friendly": {
+      "suitable": true,
+      "rating": 4,
+      "recommended_age_min": 6,
+      "notes": "Low altitude, warm weather, walkable village, welcoming homestays. A good first Northeast trip for families."
+    }
+  },
+  {
+    "id": "aalo",
+    "name": "Aalo",
+    "state_id": "arunachal-pradesh",
+    "coords": [28.1667, 94.8000],
+    "elevation_m": 300,
+    "difficulty": "moderate",
+    "budget_tier": "budget",
+    "tagline": "Siang valley base town — the gateway to Mechuka and the only reliable logistical stop in West Siang.",
+    "why_special": "Aalo (officially Along) is the headquarters of West Siang district and the logistical anchor for trips into Mechuka, the Siyom river valley, and the Galo tribal villages. It is not a destination in itself — it is where you sleep, withdraw cash, fill up the tank, and get your permits sorted before disappearing into the deeper Arunachal interior for a week. The town sits at the confluence of the Siyom and Sike rivers in a wide green valley, and has a handful of tribal museums, a busy evening market, and surprisingly good food.",
+    "tags": ["offbeat", "northeast", "transit-town", "siang-valley", "galo-tribe", "base-town"],
+    "best_months": [10, 11, 12, 1, 2],
+    "avoid_months": [6, 7, 8],
+    "ideal_duration_min": 1,
+    "ideal_duration_max": 2,
+    "daily_cost": 1200,
+    "family_stress": "moderate",
+    "monthly_suitability": [
+      { "m": 1, "score": 4, "note": "Cool, clear. Low traffic. Good base for Mechuka runs." },
+      { "m": 2, "score": 5, "note": "Best month. Stable weather, warm days, dry roads onward to Mechuka." },
+      { "m": 3, "score": 4, "note": "Warm and pleasant. Pre-monsoon haze builds late in month." },
+      { "m": 4, "score": 3, "note": "Getting hot and humid. Occasional thunderstorms." },
+      { "m": 5, "score": 2, "note": "Pre-monsoon. Unstable." },
+      { "m": 6, "score": 1, "note": "Monsoon. Siang floods regularly. Roads cut." },
+      { "m": 7, "score": 1, "note": "Peak monsoon. Don't come." },
+      { "m": 8, "score": 1, "note": "Same." },
+      { "m": 9, "score": 2, "note": "Monsoon tails. Road recovery patchy." },
+      { "m": 10, "score": 4, "note": "Post-monsoon. Roads reopening. Rivers clear." },
+      { "m": 11, "score": 5, "note": "Prime window. Stable weather, clear skies, full access onward." },
+      { "m": 12, "score": 5, "note": "Cool, dry, the photographer's window." }
+    ],
+    "confidence_cards": {
+      "reach": {
+        "from_nearest_city": "Dibrugarh airport 240km (8–10h). Or Pasighat–Aalo 100km (4h) once you are in Arunachal.",
+        "road_condition": "State-highway paved but sections past Likabali are monsoon-vulnerable. NHIDCL is steadily improving the corridor.",
+        "public_transport": "APSRTC buses Itanagar–Aalo–Mechuka. Shared sumos from Itanagar and Pasighat are faster.",
+        "self_drive": "2WD fine outside monsoon. Inner Line Permit required.",
+        "last_km_difficulty": "moderate"
+      },
+      "sleep": {
+        "price_range_inr": "800–3,000",
+        "options_count": 25,
+        "types": ["guesthouses", "homestays", "budget hotels"],
+        "booking_method": "Walk-in off-season; phone-book before peak windows.",
+        "note": "Hotel Donyi Apuk and Hotel Siying River are the reliable mid-range options."
+      },
+      "fuel": {
+        "nearest_petrol_pump": "Aalo town (Indian Oil).",
+        "next_after_that": "Mechuka has a seasonal IOCL outlet 200km further; carry fuel if going deep into Siang.",
+        "carry_extra": true,
+        "jerry_can_size_liters": 10,
+        "ev_charging": false
+      },
+      "weather_night": {
+        "summer_low_c": 22,
+        "winter_low_c": 8,
+        "note": "Subtropical lowland weather — pleasant year-round outside monsoon."
+      },
+      "emergency": {
+        "nearest_hospital": "West Siang District Hospital, Aalo. Major cases go to AMCH Dibrugarh (Assam).",
+        "ambulance": "108",
+        "helpline": "1363",
+        "note": "Aalo has reasonable medical facilities by Arunachal standards — that said, AMCH Dibrugarh is the real trauma centre for the region."
+      },
+      "network": {
+        "jio": true,
+        "airtel": true,
+        "bsnl": true,
+        "vi": false,
+        "wifi_available": "Most hotels and guesthouses have it",
+        "note": "Signal solid in town; goes patchy on the road to Mechuka."
+      },
+      "safety_rating": 4,
+      "safety_notes": "Safe, welcoming. Weather and road conditions are the real constraint."
+    },
+    "kids_friendly": {
+      "suitable": true,
+      "rating": 4,
+      "recommended_age_min": 6,
+      "notes": "Low altitude, warm weather, walkable. Good base-town stop if kids are part of a Northeast itinerary."
+    }
+  }
+]
