@@ -13,8 +13,8 @@
   "posted_today": {
     "PdMu0": "2026-04-21",
     "m8EAd": "2026-04-21",
-    "m8EAd_reel": "2026-04-20",
-    "PdMu0_reel": "2026-04-20",
+    "m8EAd_reel": "2026-04-21",
+    "PdMu0_reel": "2026-04-21",
     "4QL0i_reel": "2026-04-19",
     "m8EAd_canva": "2026-04-20",
     "PdMu0_canva": "2026-04-20",
@@ -255,6 +255,9 @@
     "reel_formats": {
       "seasonal_shift": [
         "2026-04-19"
+      ],
+      "destination_reveal": [
+        "2026-04-21"
       ]
     },
     "reel_seasonal_dests": {
@@ -262,7 +265,11 @@
         "2026-04-19"
       ]
     },
-    "reel_reveal_dests": {},
+    "reel_reveal_dests": {
+      "yuksom": [
+        "2026-04-21"
+      ]
+    },
     "canva_categories": {
       "mood_shots": [
         "2026-04-19"
