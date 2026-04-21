@@ -52,6 +52,30 @@ export function DestinationDetail({ dest }: { dest: any }) {
   const [activeTab, setActiveTab] = useState("overview");
   const [saved, setSaved] = useState(false);
 
+  // Hash → tab deep-linking (search results route through URL hashes to surface a specific item).
+  // Map hash prefixes to which tab renders that kind of content.
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    function syncTabFromHash() {
+      const raw = window.location.hash.replace(/^#/, "");
+      if (!raw) return;
+      let next: string | null = null;
+      if (raw === "places" || raw.startsWith("sub-") || raw === "hidden-gems" || raw.startsWith("gem-") || raw.startsWith("poi-")) next = "places";
+      else if (raw === "festivals" || raw.startsWith("festival-")) next = "overview";
+      else if (raw === "stays" || raw.startsWith("stay-") || raw === "food") next = "food";
+      else if (raw === "monthly" || raw === "kids" || raw === "safety" || raw === "reviews" || raw === "overview") next = raw;
+      if (next) setActiveTab(next);
+      // Let the browser scroll to the anchor after React renders the target tab.
+      requestAnimationFrame(() => {
+        const el = document.getElementById(raw);
+        if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+    }
+    syncTabFromHash();
+    window.addEventListener("hashchange", syncTabFromHash);
+    return () => window.removeEventListener("hashchange", syncTabFromHash);
+  }, []);
+
   // Translation-aware name, tagline, and why_special
   const displayName = (locale !== "en" && dest.translations?.[locale]?.name) || dest.name;
   const displayTagline = (locale !== "en" && dest.translations?.[locale]?.tagline) || dest.tagline;
@@ -558,13 +582,13 @@ export function DestinationDetail({ dest }: { dest: any }) {
 
                 {/* Festivals */}
                 {dest.festivals?.length > 0 && (
-                  <section>
+                  <section id="festivals">
                     <h2 className="text-xl font-semibold mb-3">Festivals & Events</h2>
                     <div className="grid gap-3 sm:grid-cols-2">
                       {dest.festivals.map((f: any, i: number) => {
                         const MONTH_SHORT = ["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
                         return (
-                          <div key={i} className="rounded-xl border border-border p-4 hover:border-primary/30 transition-colors">
+                          <div key={i} id={f.id ? `festival-${f.id}` : undefined} className="rounded-xl border border-border p-4 hover:border-primary/30 transition-colors">
                             <div className="flex items-start justify-between gap-2 mb-1">
                               <h3 className="font-semibold text-sm">{f.name}</h3>
                               <span className="shrink-0 rounded-full bg-primary/10 px-2 py-1 text-xs font-medium text-primary">
@@ -947,13 +971,14 @@ export function DestinationDetail({ dest }: { dest: any }) {
             {activeTab === "places" && (
               <div className="space-y-8">
                 {subs.length > 0 && (
-                  <section>
+                  <section id="places">
                     <h2 id="section-places" className="text-xl font-semibold mb-4">Places Within {dest.name}</h2>
                     <StaggerContainer className="grid gap-3 sm:grid-cols-2" staggerDelay={0.05}>
                       {subs.map((sub: any) => (
                         <StaggerItem key={sub.id}>
                           <HoverCard>
                             <a
+                              id={`sub-${sub.id}`}
                               href={`/${locale}/destination/${dest.id}#places`}
                               className="block rounded-xl border border-border p-4 h-full transition-all hover:border-primary/50"
                             >
@@ -978,11 +1003,11 @@ export function DestinationDetail({ dest }: { dest: any }) {
                 )}
 
                 {gems.length > 0 && (
-                  <section>
+                  <section id="hidden-gems">
                     <h2 className="text-xl font-semibold mb-4">{t("discoverNearby")}</h2>
                     <div className="space-y-3">
                       {gems.map((gem: any) => (
-                        <motion.div key={gem.id} whileHover={{ x: 4 }} className="rounded-xl border border-dashed border-primary/30 bg-primary/5 p-4">
+                        <motion.div key={gem.id} id={`gem-${gem.id}`} whileHover={{ x: 4 }} className="rounded-xl border border-dashed border-primary/30 bg-primary/5 p-4">
                           <div className="flex items-start justify-between">
                             <h3 className="font-semibold text-primary">{gem.name}</h3>
                             <span className="text-xs text-muted-foreground">{gem.distance_km}km · {gem.drive_time}</span>
@@ -1080,12 +1105,12 @@ export function DestinationDetail({ dest }: { dest: any }) {
 
                 {/* Local Stays & Operators */}
                 {dest.local_stays?.length > 0 && (
-                  <section>
+                  <section id="stays">
                     <h2 className="text-xl font-semibold mb-2">Local Picks</h2>
                     <p className="text-sm text-muted-foreground mb-4">Vetted stays, operators, and local businesses — not a booking site, just honest recommendations.</p>
                     <div className="grid gap-3 sm:grid-cols-2">
                       {dest.local_stays.map((stay: any) => (
-                        <div key={stay.id} className="rounded-xl border border-border p-4 hover:border-primary/30 transition-colors">
+                        <div key={stay.id} id={`stay-${stay.id}`} className="rounded-xl border border-border p-4 hover:border-primary/30 transition-colors">
                           <div className="flex items-start justify-between mb-1">
                             <div>
                               <h3 className="font-semibold text-[15px]">{stay.name}</h3>
