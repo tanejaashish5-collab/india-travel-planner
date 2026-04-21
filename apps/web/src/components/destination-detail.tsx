@@ -23,6 +23,7 @@ import { ReviewsList } from "./reviews-list";
 import { ReviewForm } from "./review-form";
 import { BookingHandoff } from "./booking-handoff";
 import VerdictCard from "./verdict-card";
+import KnowBeforeYouGo from "./know-before-you-go";
 import { EditorsPicks } from "./editors-picks";
 import { InternationalInfoSection } from "./international-info";
 import { EmergencySOSSection, SOSFloatingButton } from "./emergency-sos";
@@ -273,6 +274,16 @@ export function DestinationDetail({ dest }: { dest: any }) {
                 </div>
               </div>
             </div>
+
+            <KnowBeforeYouGo
+              locale={locale}
+              budgetTier={dest.budget_tier}
+              priceRange={cc?.sleep?.price_range_inr}
+              months={months}
+              reach={cc?.reach}
+              emergency={cc?.emergency}
+              stateId={dest.state_id}
+            />
 
             {/* Month-by-Month Navigation */}
             <div className="mt-4">
