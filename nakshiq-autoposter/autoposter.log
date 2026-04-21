@@ -3030,3 +3030,23 @@ Date range: 2026-04-15 → 2026-04-18
 2026-04-21 10:19:17  INFO      Theme tracker updated: campaign=dangerous_roads / img=pomelli_dangerous_vs_overhyped.png
 2026-04-21 10:19:17  INFO      State saved. Pomelli Visual run complete.
 2026-04-21 10:19:17  INFO      ════════════════════════════════════════════════════════════
+2026-04-21 10:50:52  INFO      ════════════════════════════════════════════════════════════
+2026-04-21 10:50:52  INFO      Nakshiq Autoposter · REEL · 2026-04-21 · weekday=1
+2026-04-21 10:50:52  INFO      ════════════════════════════════════════════════════════════
+2026-04-21 10:50:52  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-04-21 10:50:58  INFO      Synced → 20 destinations · 0 traps · 20 articles · total catalog=488
+2026-04-21 10:50:58  INFO      Format: seasonal_shift | Data: {'dest_name': 'Bomdila', 'dest_slug': 'bomdila', 'now_month': 'April', 'now_score': 5, 'future_month': 'July', 'future_score': 2}
+2026-04-21 10:51:08  INFO      Reel rendered: reel_seasonal_shift_bomdila.mp4 (2989 KB)
+2026-04-21 10:51:08  INFO          Requesting upload URL for reel_seasonal_shift_reel_seasonal_shift_bomdila.mp4 (3,061,160 bytes, video/mp4)
+2026-04-21 10:51:09  INFO          Uploading to R2 (timeout=300s)...
+2026-04-21 10:51:10  INFO          R2 PUT OK. Confirming...
+2026-04-21 10:51:11  INFO          Media ready: 4Sw1i (3,061,160 bytes · reel_seasonal_shift_reel_seasonal_shift_bomdila.mp4)
+2026-04-21 10:51:11  INFO      Video uploaded: reel_seasonal_shift_reel_seasonal_shift_bomdila.mp4
+2026-04-21 10:51:12  INFO      [instagram/nakshiq] Already posted reel today — skipping.
+2026-04-21 10:51:12  INFO      [facebook/Nakshiq] Already posted reel today — skipping.
+2026-04-21 10:51:12  INFO      [youtube/@naksh-iq] Publishing reel (seasonal_shift)...
+2026-04-21 10:51:14  INFO      [youtube/@naksh-iq] Outstand accepted (post_id=AvwU7), confirming...
+2026-04-21 10:51:19  INFO      [youtube/@naksh-iq] ✅ Reel published · Outstand=AvwU7 · Platform=KjF8WzmWkB8
+2026-04-21 10:51:19  INFO      Theme tracker updated: format=seasonal_shift
+2026-04-21 10:51:19  INFO      State saved. Reel run complete.
+2026-04-21 10:51:19  INFO      ════════════════════════════════════════════════════════════
