@@ -130,6 +130,52 @@ export const VS_PAIRS: { id1: string; id2: string; theme: string }[] = [
   { id1: "pondicherry", id2: "kovalam", theme: "cross-region" },
   { id1: "munnar", id2: "manali", theme: "cross-region" },
   { id1: "havelock-island", id2: "alleppey", theme: "cross-region" },
+
+  // ─── Jyotirlinga Circuit (Batch 2) ─────────────────────────────
+  { id1: "somnath", id2: "dwarka", theme: "jyotirlinga-circuit" },
+  { id1: "ujjain", id2: "omkareshwar", theme: "jyotirlinga-circuit" },
+  { id1: "nashik", id2: "trimbakeshwar", theme: "jyotirlinga-circuit" },
+
+  // ─── Char Dham (Uttarakhand) ───────────────────────────────────
+  { id1: "gangotri", id2: "yamunotri", theme: "char-dham" },
+  { id1: "gangotri", id2: "kedarnath", theme: "char-dham" },
+
+  // ─── Buddhist Circuit ──────────────────────────────────────────
+  { id1: "bodh-gaya", id2: "sarnath", theme: "buddhist-circuit" },
+  { id1: "rajgir", id2: "nalanda", theme: "buddhist-circuit" },
+  { id1: "bodh-gaya", id2: "rajgir", theme: "buddhist-circuit" },
+  { id1: "bodh-gaya", id2: "varanasi", theme: "buddhist-circuit" },
+
+  // ─── Cross-state heritage (Batch 2) ────────────────────────────
+  { id1: "khajuraho", id2: "hampi", theme: "heritage" },
+  { id1: "agra", id2: "khajuraho", theme: "heritage" },
+  { id1: "hampi", id2: "orchha", theme: "heritage" },
+  { id1: "orchha", id2: "khajuraho", theme: "heritage" },
+  { id1: "agra", id2: "jaipur", theme: "heritage" },
+
+  // ─── Beach trade-offs (Batch 2) ────────────────────────────────
+  { id1: "pondicherry", id2: "palolem", theme: "beaches" },
+  { id1: "gokarna", id2: "palolem", theme: "beaches" },
+  { id1: "varkala", id2: "gokarna", theme: "beaches" },
+  { id1: "gokarna", id2: "alleppey", theme: "beaches" },
+
+  // ─── Seasonal / cross-region (Batch 2) ─────────────────────────
+  { id1: "kutch", id2: "jaisalmer", theme: "cross-region" },
+  { id1: "tawang", id2: "spiti-valley", theme: "cross-region" },
+  { id1: "coorg", id2: "chikmagalur", theme: "cross-region" },
+  { id1: "pushkar", id2: "jaisalmer", theme: "rajasthan" },
+  { id1: "alleppey", id2: "munnar", theme: "kerala" },
+
+  // ─── Traveler splits — spiritual / yoga (Batch 2) ──────────────
+  { id1: "rishikesh", id2: "mcleodganj", theme: "spiritual-retreats" },
+  { id1: "amritsar", id2: "mcleodganj", theme: "spiritual-retreats" },
+  { id1: "manikaran", id2: "rishikesh", theme: "spiritual-retreats" },
+  { id1: "varanasi", id2: "mathura", theme: "spiritual-retreats" },
+  { id1: "pushkar", id2: "varanasi", theme: "spiritual-retreats" },
+  { id1: "amritsar", id2: "varanasi", theme: "spiritual-retreats" },
+
+  // ─── Wildlife splits (Batch 2) ─────────────────────────────────
+  { id1: "kanha", id2: "ranthambore", theme: "wildlife" },
 ];
 
 // Human-readable theme labels for the /vs index page
@@ -150,6 +196,10 @@ export const VS_THEME_LABELS: Record<string, string> = {
   "west-hills": "Western Ghats",
   metros: "Indian Metros",
   "cross-region": "Cross-Region",
+  "jyotirlinga-circuit": "Jyotirlinga Circuit",
+  "char-dham": "Char Dham",
+  "buddhist-circuit": "Buddhist Circuit",
+  "spiritual-retreats": "Spiritual Retreats",
 };
 
 // All unique destination IDs referenced in pairs — used for sitemap validation
