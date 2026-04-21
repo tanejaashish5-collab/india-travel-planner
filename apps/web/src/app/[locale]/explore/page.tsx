@@ -69,6 +69,23 @@ export default async function ExplorePage({ params }: { params: Promise<{ locale
             {t("pageSubtitle", { count: destinations.length })}
           </p>
         </div>
+        <div className="mb-6 rounded-xl border border-border/40 bg-card/40 backdrop-blur-sm px-4 py-3 flex flex-wrap items-center gap-x-3 gap-y-2">
+          <span className="font-mono text-[10px] tracking-[0.3em] uppercase text-muted-foreground">
+            Start from
+          </span>
+          {["delhi","mumbai","bangalore","chennai","kolkata","hyderabad"].map((c) => (
+            <a
+              key={c}
+              href={`/${locale}/weekend-from-${c}`}
+              className="font-mono text-[11px] tracking-[0.15em] uppercase text-foreground/80 hover:text-[#E55642] transition-colors"
+            >
+              {c.charAt(0).toUpperCase() + c.slice(1)}
+            </a>
+          ))}
+          <span className="ml-auto font-mono text-[10px] tracking-[0.22em] uppercase text-[#E55642]">
+            weekend trips →
+          </span>
+        </div>
         <ExploreWithMap destinations={destinationsWithCoords} states={states} />
       </main>
       <Footer />
