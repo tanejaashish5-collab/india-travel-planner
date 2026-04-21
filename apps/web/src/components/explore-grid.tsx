@@ -18,6 +18,7 @@ interface DestinationData {
   elevation_m: number | null;
   tags: string[];
   best_months: number[];
+  budget_tier?: string | null;
   translations: Record<string, Record<string, string>> | null;
   state: { name: string } | Array<{ name: string }> | null;
   state_id: string;
@@ -367,6 +368,11 @@ function DestinationCard({
           <span
             className={`inline-flex items-center rounded-full border px-3 py-1 text-xs font-semibold ${SCORE_COLORS[score] ?? SCORE_COLORS[0]}`}
           >
+            {selectedMonth > 0 && (
+              <span className="font-mono text-[10px] tracking-[0.18em] uppercase opacity-80 mr-1.5">
+                {["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"][selectedMonth]}
+              </span>
+            )}
             {score}/5 — {ts(String(score))}
           </span>
         ) : (
@@ -402,6 +408,14 @@ function DestinationCard({
         <span className={DIFFICULTY_COLORS[dest.difficulty] ?? ""}>
           {dest.difficulty}
         </span>
+        {dest.budget_tier && (
+          <>
+            <span>·</span>
+            <span className="font-medium text-foreground/80 capitalize">
+              {dest.budget_tier}
+            </span>
+          </>
+        )}
         {dest.elevation_m && (
           <>
             <span>·</span>

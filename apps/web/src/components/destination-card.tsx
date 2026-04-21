@@ -15,8 +15,16 @@ interface DestinationCardProps {
   kids_rating: number | null;
   kids_suitable: boolean | null;
   current_month_score: number | null;
+  budget_tier?: string | null;
+  price_range?: string | null;
   translations?: Record<string, Record<string, string>>;
 }
+
+const BUDGET_LABEL: Record<string, string> = {
+  budget: "Budget",
+  mixed: "Mixed",
+  luxury: "Luxury",
+};
 
 const SCORE_COLORS: Record<number, string> = {
   5: "bg-emerald-500/20 text-emerald-400 border-emerald-500/30",
@@ -46,6 +54,8 @@ export function DestinationCard({
   kids_rating,
   kids_suitable,
   current_month_score,
+  budget_tier,
+  price_range,
   translations,
 }: DestinationCardProps) {
   const locale = useLocale();
@@ -65,6 +75,8 @@ export function DestinationCard({
 
   const currentMonth = new Date().getMonth() + 1;
   const scoreToShow = current_month_score ?? null;
+  const monthShort = ["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"][currentMonth];
+  const priceLabel = price_range ? `₹${price_range}` : (budget_tier && BUDGET_LABEL[budget_tier]) || null;
 
   return (
     <Link
@@ -77,6 +89,7 @@ export function DestinationCard({
           <span
             className={`inline-flex items-center rounded-full border px-2.5 py-1 text-xs font-medium ${SCORE_COLORS[scoreToShow] ?? SCORE_COLORS[0]}`}
           >
+            <span className="font-mono text-[10px] tracking-[0.18em] uppercase opacity-80 mr-1.5">{monthShort}</span>
             {scoreToShow}/5 — {ts(String(scoreToShow))}
           </span>
           {kids_suitable !== null && (
@@ -102,6 +115,12 @@ export function DestinationCard({
         <span className={DIFFICULTY_COLORS[difficulty] ?? ""}>
           {difficulty}
         </span>
+        {priceLabel && (
+          <>
+            <span>·</span>
+            <span className="font-medium text-foreground/80">{priceLabel}</span>
+          </>
+        )}
         {elevation_m && (
           <>
             <span>·</span>
