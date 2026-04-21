@@ -23,6 +23,7 @@ import { ReviewsList } from "./reviews-list";
 import { ReviewForm } from "./review-form";
 import { BookingHandoff } from "./booking-handoff";
 import VerdictCard from "./verdict-card";
+import { SuggestEditButton } from "./suggest-edit-button";
 import MethodologyStrip from "./methodology-strip";
 import KnowBeforeYouGo from "./know-before-you-go";
 import { EditorsPicks } from "./editors-picks";
@@ -261,7 +262,7 @@ export function DestinationDetail({ dest }: { dest: any }) {
             <MethodologyStrip
               locale={locale}
               sourceCount={Array.isArray(cc?.sources) ? cc.sources.length : undefined}
-              updatedAt={dest.updated_at}
+              contentReviewedAt={dest.content_reviewed_at}
             />
 
             {currentMonthData?.verdict && (
@@ -424,8 +425,19 @@ export function DestinationDetail({ dest }: { dest: any }) {
 
             {/* Data freshness + methodology */}
             <div className="mt-3 text-xs text-muted-foreground/50">
-              Data verified: April 2026 · Scores based on weather, road access, crowd levels, infrastructure, safety conditions ·
+              {dest.content_reviewed_at
+                ? `Last reviewed: ${new Date(dest.content_reviewed_at).toLocaleDateString("en-IN", { month: "long", year: "numeric" })}`
+                : "Review pending"}
+              {" · Scores based on weather, road access, crowd levels, infrastructure, safety conditions · "}
               Kids ratings factor in: medical access, ATM availability, phone signal, altitude, road safety
+            </div>
+            <div className="mt-2 text-xs">
+              <SuggestEditButton
+                targetTable="destinations"
+                targetId={dest.id}
+                context={dest.name}
+                variant="inline"
+              />
             </div>
           </div>
         </SlideIn>
