@@ -11,8 +11,8 @@
     "06_tribal_pulse"
   ],
   "posted_today": {
-    "PdMu0": "2026-04-20",
-    "m8EAd": "2026-04-20",
+    "PdMu0": "2026-04-21",
+    "m8EAd": "2026-04-21",
     "m8EAd_reel": "2026-04-20",
     "PdMu0_reel": "2026-04-20",
     "4QL0i_reel": "2026-04-19",
@@ -32,7 +32,7 @@
     "PdMu0_infographic": "2026-04-20",
     "jUmP2_reel": "2026-04-20"
   },
-  "last_sync": "2026-04-20T10:10:04.104295+00:00",
+  "last_sync": "2026-04-21T04:38:18.708013+00:00",
   "posted_destinations": [
     {
       "destination_id": "pahalgam",
@@ -121,6 +121,14 @@
     {
       "destination_id": "yercaud",
       "date": "2026-04-20"
+    },
+    {
+      "destination_id": "kausani",
+      "date": "2026-04-21"
+    },
+    {
+      "destination_id": "palampur",
+      "date": "2026-04-21"
     }
   ],
   "posted_formats": {
@@ -290,7 +298,8 @@
       "backpackers": [
         "2026-04-20"
       ]
-    }
+    },
+    "articles": {}
   },
   "infographic": {
     "last_topic_idx": 0,
