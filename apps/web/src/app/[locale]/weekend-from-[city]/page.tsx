@@ -8,10 +8,11 @@ import { METRO_ANCHORS, METRO_SLUGS } from "@/lib/metro-anchors";
 import { localeAlternates } from "@/lib/seo-utils";
 
 export const revalidate = 86400;
-export const dynamicParams = false;
+export const dynamicParams = true;
 
 export function generateStaticParams() {
-  return METRO_SLUGS.map((city) => ({ city }));
+  const locales = ["en", "hi"];
+  return METRO_SLUGS.flatMap((city) => locales.map((locale) => ({ locale, city })));
 }
 
 export async function generateMetadata({
