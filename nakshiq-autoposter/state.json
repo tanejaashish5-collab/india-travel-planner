@@ -30,7 +30,9 @@
     "PdMu0_moat": "2026-04-20",
     "m8EAd_infographic": "2026-04-20",
     "PdMu0_infographic": "2026-04-20",
-    "jUmP2_reel": "2026-04-20"
+    "jUmP2_reel": "2026-04-20",
+    "m8EAd_tourist_map": "2026-04-21",
+    "PdMu0_tourist_map": "2026-04-21"
   },
   "last_sync": "2026-04-21T05:26:19.930466+00:00",
   "posted_destinations": [
@@ -306,7 +308,17 @@
         "2026-04-20"
       ]
     },
-    "articles": {}
+    "articles": {},
+    "tourist_map_states": {
+      "HP": [
+        "2026-04-21"
+      ]
+    },
+    "tourist_map_combos": {
+      "HP_cartographic_dark": [
+        "2026-04-21"
+      ]
+    }
   },
   "infographic": {
     "last_topic_idx": 0,
