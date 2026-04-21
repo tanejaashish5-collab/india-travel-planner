@@ -1,14 +1,19 @@
 ---
+id: agra-day-trip-verdict
 slug: is-agra-day-trip-worth-it
 title: "Is an Agra day trip worth it? The cleanest failure mode"
-category: verdict
+subtitle: "Agra scores 5/5 in October and November. The day-trip from Delhi removes exactly the three things that make the score."
+category: guide
 depth: brief
+reading_time: 5
+cover_image_url: /images/destinations/agra.jpg
+tags: ["verdict","agra","day-trip","taj-mahal","delhi"]
+destinations: ["agra"]
+seo_title: "Is an Agra Day Trip Worth It? Don't Do It — Here's Why"
+seo_description: "Agra's 5/5 score is predicated on sunrise, Mehtab Bagh at dusk, and Fatehpur Sikri. A Delhi day trip misses all three. One night flips the math entirely."
+excerpt: "Agra in October and November scores 5/5. The day-trip version from Delhi scores near zero — not because Agra is wrong, but because the day-trip structure removes the three things that make Agra the monument everyone claims it is."
 generated_at: 2026-04-21T00:00:00.000Z
 review_status: draft
-destinations: ["agra"]
-verdict: skip
-seo_title: "Is an Agra Day Trip Worth It? Don't Do It, and Here's Why"
-seo_description: "Agra scores 5/5 in October and November. The day-trip version from Delhi scores near zero — you miss Mehtab Bagh, you miss sunrise, you miss the entire point. Verdict inside."
 ---
 
 # Is an Agra day trip worth it? The cleanest failure mode

@@ -1,14 +1,19 @@
 ---
+id: manali-june-verdict
 slug: is-manali-in-june-worth-it
 title: "Is Manali in June worth it? The honest answer"
-category: verdict
+subtitle: "3/5 score. Rohtang permit lottery. Hotel rates 3× off-season. Shift your dates by four weeks."
+category: guide
 depth: brief
+reading_time: 4
+cover_image_url: /images/destinations/manali.jpg
+tags: ["verdict","himachal","manali","june","road-safety"]
+destinations: ["manali"]
+seo_title: "Is Manali in June Worth It? The NakshIQ Verdict (2026)"
+seo_description: "Manali is on every family's June list. NakshIQ's data-scored verdict: wait. Road, crowd, and budget math in one paragraph."
+excerpt: "Manali is on every family's June list. The NakshIQ score says wait — 3/5 for the month, and every one of the three reasons is fixable if you shift your dates by four weeks. Go in mid-May or the last week of September."
 generated_at: 2026-04-21T00:00:00.000Z
 review_status: draft
-destinations: ["manali"]
-verdict: wait
-seo_title: "Is Manali in June Worth It? The NakshIQ Verdict (2026)"
-seo_description: "Manali is on every family's June list. Our data-scored verdict: wait. Here's the road, crowd, and budget math in one paragraph."
 ---
 
 # Is Manali in June worth it? The honest answer

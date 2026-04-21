@@ -1,14 +1,19 @@
 ---
+id: pushkar-october-scored
 slug: pushkar-in-october-scored
 title: "Despite the camel-fair reputation, Pushkar in October is better than November"
+subtitle: "Both months score 5/5. One shares the ghats with 50,000 people. The other shares them with nobody."
 category: best-time
 depth: brief
+reading_time: 5
+cover_image_url: /images/destinations/pushkar.jpg
+tags: ["best-time","pushkar","rajasthan","october","camel-fair","lake"]
+destinations: ["pushkar"]
+seo_title: "Pushkar in October vs November — When to Actually Go (Data)"
+seo_description: "Pushkar is a November destination in everyone's head. NakshIQ data says October is a cleaner 5/5 — same weather, full lake, zero fair crowds, 40% cheaper rooms."
+excerpt: "Pushkar is sold as a November destination — the Camel Fair, 50,000 camels. The NakshIQ score says October earns an identical 5/5 and gives you the version of Pushkar that existed before the fair. Same weather, fuller lake, a fraction of the crowd."
 generated_at: 2026-04-21T00:00:00.000Z
 review_status: draft
-destinations: ["pushkar"]
-verdict: go
-seo_title: "Pushkar in October vs November — When to Actually Go (Data)"
-seo_description: "Pushkar is a November destination in everyone's head. The NakshIQ data says October is a cleaner 5/5 — same weather, post-monsoon full lake, zero fair crowds, 40% cheaper rooms."
 ---
 
 # Despite the camel-fair reputation, Pushkar in October is better than November

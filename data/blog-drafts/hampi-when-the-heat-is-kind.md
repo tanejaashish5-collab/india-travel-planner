@@ -1,14 +1,19 @@
 ---
+id: hampi-when-heat-is-kind
 slug: hampi-when-the-heat-is-kind
 title: "Hampi: when the heat is kind"
+subtitle: "January + February score 5/5. April onward the ruins turn oven. October is the underrated twin."
 category: best-time
 depth: brief
+reading_time: 5
+cover_image_url: /images/destinations/hampi.jpg
+tags: ["best-time","hampi","karnataka","february","ruins","unesco"]
+destinations: ["hampi"]
+seo_title: "Best Month to Visit Hampi — When the Heat Actually Works"
+seo_description: "Hampi scores 5/5 in February and October — cool Matanga sunrise, dry boulders, empty ghats. April to June the data says skip. One data-led call."
+excerpt: "Hampi is the classic case of a destination whose reputation outran its calendar. NakshIQ scores 5/5 in January and February, 4/5 in March, and falls off a cliff from April onward. There is exactly one four-month window where the ruins are not hostile."
 generated_at: 2026-04-21T00:00:00.000Z
 review_status: draft
-destinations: ["hampi"]
-verdict: go
-seo_title: "Best Month to Visit Hampi — When the Heat Actually Works"
-seo_description: "Hampi scores 5/5 in January and February — cool mornings on Matanga Hill, dry boulders, empty ghats. The other months, the ruins turn oven. One data-led call."
 ---
 
 # Hampi: when the heat is kind

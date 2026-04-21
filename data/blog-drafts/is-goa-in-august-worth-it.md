@@ -1,14 +1,19 @@
 ---
+id: goa-august-verdict
 slug: is-goa-in-august-worth-it
 title: "Is Goa in August worth it? What actually works in monsoon"
-category: verdict
+subtitle: "Every coastal Goa destination scores 0/5 in August. The interior — Dudhsagar, Mollem, Old Goa — is at its annual peak."
+category: guide
 depth: brief
+reading_time: 4
+cover_image_url: /images/destinations/dudhsagar-falls.jpg
+tags: ["verdict","goa","august","monsoon","interior"]
+destinations: ["calangute-baga","dudhsagar-falls","old-goa","mollem","reis-magos"]
+seo_title: "Is Goa in August Worth It? Skip the Beach, Here's What Works"
+seo_description: "Goa in August scores 0/5 for beach — shacks shut, sea is closed. But Dudhsagar, Mollem, and Old Goa are at their annual peak. The data call, inside."
+excerpt: "Goa in August is sold as the contrarian traveller's secret. NakshIQ scores every coastal destination 0/5 for August. But three interior destinations hit their annual peak in monsoon. Skip the beach; visit the interior."
 generated_at: 2026-04-21T00:00:00.000Z
 review_status: draft
-destinations: ["calangute-baga", "dudhsagar-falls", "old-goa", "mollem", "reis-magos"]
-verdict: skip
-seo_title: "Is Goa in August Worth It? Skip the Beach, Here's What Works"
-seo_description: "Goa in August scores 0/5 for beach activity — shacks shut, sea is closed, rates don't drop enough. But the interior scores higher than in December. Verdict inside."
 ---
 
 # Is Goa in August worth it? What actually works in monsoon
