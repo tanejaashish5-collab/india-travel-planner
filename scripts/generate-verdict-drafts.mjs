@@ -68,17 +68,25 @@ if (!env.ANTHROPIC_API_KEY || !env.SUPABASE_SERVICE_ROLE_KEY) {
 const supabase = createClient(env.NEXT_PUBLIC_SUPABASE_URL, env.SUPABASE_SERVICE_ROLE_KEY);
 const claude = new Anthropic({ apiKey: env.ANTHROPIC_API_KEY });
 
-console.log(`\nFetching tier-${tier} destination-months…`);
-const { data: rows, error } = await supabase
-  .from("destination_months")
-  .select(`
-    destination_id, month, score, note, why_go, why_not, go_or_skip_verdict,
-    verdict, skip_reason,
-    destination:destinations(name, tagline, state_id, elevation_m, tags, difficulty)
-  `)
-  .eq("score", tier);
-
-if (error) { console.error(error); process.exit(1); }
+console.log(`\nFetching tier-${tier} destination-months (paginated)…`);
+const rows = [];
+const pageSize = 1000;
+for (let from = 0; ; from += pageSize) {
+  const { data, error } = await supabase
+    .from("destination_months")
+    .select(`
+      destination_id, month, score, note, why_go, why_not, go_or_skip_verdict,
+      verdict, skip_reason,
+      destination:destinations(name, tagline, state_id, elevation_m, tags, difficulty)
+    `)
+    .eq("score", tier)
+    .order("destination_id", { ascending: true })
+    .order("month", { ascending: true })
+    .range(from, from + pageSize - 1);
+  if (error) { console.error(error); process.exit(1); }
+  rows.push(...data);
+  if (data.length < pageSize) break;
+}
 
 const filtered = onlyMissing ? rows.filter((r) => !r.verdict) : rows;
 const batch = limit ? filtered.slice(0, limit) : filtered;
