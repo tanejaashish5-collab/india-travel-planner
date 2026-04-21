@@ -13,7 +13,7 @@ const tables = [
   'hidden_gems',
   'festivals',
   'local_stays',
-  'pois',
+  'points_of_interest',
   'sub_destinations',
   'traveler_notes',
   'permits',
@@ -35,7 +35,7 @@ const scoped = [
   ['hidden_gems', 'near_destination_id'],
   ['festivals', 'destination_id'],
   ['local_stays', 'destination_id'],
-  ['pois', 'destination_id'],
+  ['points_of_interest', 'destination_id'],
   ['sub_destinations', 'parent_id'],
 ];
 for (const [t, col] of scoped) {
