@@ -169,6 +169,11 @@ export default async function BookIndianTrainsPage({ params }: { params: Promise
               </Link>
             </li>
             <li>
+              <Link href={`/${locale}/arrival`} className="text-[#E55642] hover:underline">
+                Just landed? Arrival playbook for 9 airports →
+              </Link>
+            </li>
+            <li>
               <Link href={`/${locale}/methodology`} className="text-[#E55642] hover:underline">
                 How NakshIQ scores destinations →
               </Link>

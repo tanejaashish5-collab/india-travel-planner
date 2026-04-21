@@ -95,6 +95,8 @@ export default async function sitemap(props: {
       "vs", "compare", "guide/permits", "guide/book-indian-trains",
       "weekend-from-delhi", "weekend-from-mumbai", "weekend-from-bangalore",
       "weekend-from-chennai", "weekend-from-kolkata", "weekend-from-hyderabad",
+      "arrival", "arrival/del", "arrival/bom", "arrival/blr", "arrival/maa",
+      "arrival/ccu", "arrival/hyd", "arrival/cok", "arrival/goi", "arrival/amd",
       // State hub pages
       ...Object.keys(STATE_MAP).map((s) => `state/${s}`),
       // Region pages (legacy)

@@ -63,6 +63,11 @@ export default async function PermitsGuidePage({ params }: { params: Promise<{ l
               </Link>
             </li>
             <li>
+              <Link href={`/${locale}/arrival`} className="text-[#E55642] hover:underline">
+                Arrival playbooks for 9 Indian airports →
+              </Link>
+            </li>
+            <li>
               <Link href={`/${locale}/methodology`} className="text-[#E55642] hover:underline">
                 How NakshIQ scores destinations →
               </Link>
