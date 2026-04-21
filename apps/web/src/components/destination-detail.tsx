@@ -22,6 +22,7 @@ import { TravelerNotes } from "./traveler-notes";
 import { ReviewsList } from "./reviews-list";
 import { ReviewForm } from "./review-form";
 import { BookingHandoff } from "./booking-handoff";
+import VerdictCard from "./verdict-card";
 import { EditorsPicks } from "./editors-picks";
 import { InternationalInfoSection } from "./international-info";
 import { EmergencySOSSection, SOSFloatingButton } from "./emergency-sos";
@@ -229,6 +230,20 @@ export function DestinationDetail({ dest }: { dest: any }) {
                 <span className="font-medium text-foreground">Why {currentScore}/5?</span>{" "}
                 {currentMonthData.note}
               </div>
+            )}
+
+            {currentMonthData?.verdict && (
+              <a
+                href={`/${locale}/destination/${dest.id}/${["","january","february","march","april","may","june","july","august","september","october","november","december"][currentMonth]}`}
+                className="mt-4 inline-block hover:opacity-90 transition-opacity"
+              >
+                <VerdictCard
+                  verdict={currentMonthData.verdict}
+                  skipReason={currentMonthData.skip_reason}
+                  month={["","January","February","March","April","May","June","July","August","September","October","November","December"][currentMonth]}
+                  variant="compact"
+                />
+              </a>
             )}
 
             <p className="mt-4 text-lg leading-relaxed text-muted-foreground/90">{displayTagline}</p>

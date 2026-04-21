@@ -6,6 +6,7 @@ import { SCORE_COLORS, DIFFICULTY_COLORS } from "@/lib/design-tokens";
 import { NewsletterSignup } from "./newsletter-signup";
 import { WhatsAppShare } from "./whatsapp-share";
 import { destinationImage } from "@/lib/image-url";
+import VerdictCard from "./verdict-card";
 
 // ── Constants ──────────────────────────────────────────────────
 
@@ -735,6 +736,11 @@ export function DestinationMonth({
       </div>
 
       <LeadParagraph />
+      <VerdictCard
+        verdict={currentMonth?.verdict ?? null}
+        skipReason={currentMonth?.skip_reason ?? null}
+        month={monthName}
+      />
       <GoOrSkipVerdict />
       <WhyThisScore />
       <ThingsToDo />
