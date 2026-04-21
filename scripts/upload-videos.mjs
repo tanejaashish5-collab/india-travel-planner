@@ -5,8 +5,14 @@
  * Requires: R2_ACCOUNT_ID, R2_ACCESS_KEY_ID, R2_SECRET_ACCESS_KEY in apps/web/.env.local
  */
 import { S3Client, HeadObjectCommand, PutObjectCommand } from "@aws-sdk/client-s3";
-import { readFileSync, readdirSync } from "fs";
+import { readFileSync, readdirSync, statSync } from "fs";
 import { join } from "path";
+
+// --force re-uploads every file regardless of R2 state.
+// Default: re-upload only when local byte size differs from R2 (catches
+// replacement-in-place where the local file changed but R2 wasn't refreshed
+// — agartala.mp4 showing Taj Mahal was exactly this on 2026-04-22).
+const FORCE = process.argv.includes("--force");
 
 // Load env from apps/web/.env.local
 const envPath = "apps/web/.env.local";
@@ -34,12 +40,11 @@ const client = new S3Client({
 const BUCKET = "nakshiq-videos";
 const LOCAL_DIR = "videos";
 
-async function exists(key) {
+async function head(key) {
   try {
-    await client.send(new HeadObjectCommand({ Bucket: BUCKET, Key: key }));
-    return true;
+    return await client.send(new HeadObjectCommand({ Bucket: BUCKET, Key: key }));
   } catch {
-    return false;
+    return null;
   }
 }
 
@@ -50,22 +55,30 @@ async function main() {
   console.log(`Found ${localFiles.length} unique videos locally`);
 
   let uploaded = 0;
+  let replaced = 0;
   let skipped = 0;
   let failed = 0;
 
   for (const f of localFiles) {
     // Strip VIDEO_ or ARTICLE_ prefix for bucket name
     const bucketName = f.replace(/^(VIDEO_|ARTICLE_)/, "");
-
-    // Check if already in bucket
-    if (await exists(bucketName)) {
-      skipped++;
-      continue;
-    }
-
     const filePath = join(LOCAL_DIR, f);
+    const localSize = statSync(filePath).size;
+
+    const r2 = await head(bucketName);
+    let action = null;
+    if (!r2) action = "new";
+    else if (FORCE) action = "forced";
+    else if (r2.ContentLength !== localSize) action = "replace";
+
+    if (!action) { skipped++; continue; }
+
     const fileBuffer = readFileSync(filePath);
-    process.stdout.write(`Uploading ${bucketName} (${(fileBuffer.length / 1024 / 1024).toFixed(1)}MB)... `);
+    const sizeLabel = `${(fileBuffer.length / 1024 / 1024).toFixed(1)}MB`;
+    const prefix = action === "replace" ? `Replacing ${bucketName} (R2 had ${(r2.ContentLength/1024/1024).toFixed(1)}MB from ${r2.LastModified?.toISOString().slice(0,10)}, local ${sizeLabel})`
+                 : action === "forced" ? `Forcing ${bucketName} (${sizeLabel})`
+                 : `Uploading ${bucketName} (${sizeLabel})`;
+    process.stdout.write(`${prefix}... `);
 
     try {
       await client.send(
@@ -78,14 +91,15 @@ async function main() {
         })
       );
       console.log("OK");
-      uploaded++;
+      if (action === "replace") replaced++;
+      else uploaded++;
     } catch (err) {
       console.log(`FAILED: ${err.message}`);
       failed++;
     }
   }
 
-  console.log(`\nDone: ${uploaded} uploaded, ${skipped} already exist, ${failed} failed`);
+  console.log(`\nDone: ${uploaded} new, ${replaced} replaced (size-mismatch), ${skipped} unchanged, ${failed} failed`);
 }
 
 main();
