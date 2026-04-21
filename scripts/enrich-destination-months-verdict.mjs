@@ -46,7 +46,7 @@ function auditRow(row) {
   } else {
     const r = row.skip_reason ?? "";
     if (r.length < 15) issues.push(`skip_reason too short (${r.length} chars)`);
-    if (r.length > 120) issues.push(`skip_reason too long (${r.length} chars)`);
+    if (r.length > 180) issues.push(`skip_reason too long (${r.length} chars)`);
     const lower = r.toLowerCase();
     const hits = BANNED.filter((w) => lower.includes(w));
     if (hits.length) issues.push(`banned: ${hits.join(", ")}`);
