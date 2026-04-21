@@ -107,9 +107,53 @@ async function getDestination(id: string) {
 
   if (error || !data) return null;
 
+  // Pre-fetch coords — needed for the PostGIS nearby query that runs in the parallel batch.
+  const { data: coordData } = await supabase
+    .from("destinations_with_coords")
+    .select("lat, lng")
+    .eq("id", id)
+    .single();
+
+  // Distance-sorted nearby via PostGIS, with same-state fallback when coords are missing.
+  const fetchNearby = async () => {
+    if (coordData?.lat != null && coordData?.lng != null) {
+      const { data: rpcData, error: rpcErr } = await supabase.rpc("find_nearby_destinations", {
+        lat: coordData.lat,
+        lng: coordData.lng,
+        radius_km: 150,
+      });
+      if (!rpcErr && Array.isArray(rpcData) && rpcData.length > 0) {
+        const nearbyIds = rpcData
+          .filter((n: any) => n.destination_id !== id)
+          .slice(0, 8)
+          .map((n: any) => n.destination_id);
+        if (nearbyIds.length > 0) {
+          const { data: full } = await supabase
+            .from("destinations")
+            .select("id, name, difficulty, elevation_m, state:states(name)")
+            .in("id", nearbyIds);
+          const distMap = new Map<string, number>(
+            rpcData.map((n: any) => [n.destination_id, n.distance_km])
+          );
+          return { data: (full ?? [])
+            .map((d: any) => ({ ...d, distance_km: Math.round(distMap.get(d.id) ?? 0) }))
+            .sort((a: any, b: any) => a.distance_km - b.distance_km) };
+        }
+      }
+    }
+    // Fallback: same-state, no distance
+    const { data: sameState } = await supabase
+      .from("destinations")
+      .select("id, name, difficulty, elevation_m")
+      .eq("state_id", data.state_id)
+      .neq("id", id)
+      .limit(8);
+    return { data: (sameState ?? []).map((d: any) => ({ ...d, distance_km: null })) };
+  };
+
   // Fire all remaining queries in parallel — ~70% faster than sequential
   const [
-    gems, trapAlts, festivals, localStays, coordData, travelerNotes,
+    gems, trapAlts, festivals, localStays, travelerNotes,
     allDests, reviews, relatedArticles, relatedCollections, relatedRoutes,
     nearbyDests, emergencySos, pois, editorStayPicks,
   ] = await Promise.all([
@@ -126,7 +170,6 @@ async function getDestination(id: string) {
       .order("rank"),
     supabase.from("festivals").select("*").eq("destination_id", id).order("month"),
     supabase.from("local_stays").select("*").eq("destination_id", id).order("type"),
-    supabase.from("destinations_with_coords").select("lat, lng").eq("id", id).single(),
     supabase.from("traveler_notes").select("*").eq("destination_id", id).order("created_at", { ascending: false }).limit(20),
     supabase.from("destinations").select("id, name").order("name"),
     supabase
@@ -139,7 +182,7 @@ async function getDestination(id: string) {
     supabase.from("articles").select("slug, title, depth, reading_time, category").contains("destinations", [id]).order("depth", { ascending: false }).limit(5),
     supabase.from("collections").select("id, name, description").filter("items", "cs", JSON.stringify([{ destination_id: id }])).limit(5),
     supabase.from("routes").select("id, name, days, difficulty").contains("stops", [id]).limit(5),
-    supabase.from("destinations").select("id, name, difficulty, elevation_m").eq("state_id", data.state_id).neq("id", id).limit(8),
+    fetchNearby(),
     supabase.from("emergency_sos").select("*").eq("destination_id", id).single(),
     supabase.from("points_of_interest").select("id, name, type, description, time_needed, entry_fee, kids_suitable, tags").eq("destination_id", id).order("type"),
     supabase.from("destination_stay_picks")
@@ -156,7 +199,7 @@ async function getDestination(id: string) {
     local_stays: localStays.data ?? [],
     traveler_notes: travelerNotes.data ?? [],
     reviews: reviews.data ?? [],
-    coords: coordData.data ? { lat: coordData.data.lat, lng: coordData.data.lng } : null,
+    coords: coordData ? { lat: coordData.lat, lng: coordData.lng } : null,
     allDestinations: allDests.data ?? [],
     relatedArticles: relatedArticles.data ?? [],
     relatedCollections: relatedCollections.data ?? [],

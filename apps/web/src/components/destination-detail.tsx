@@ -1133,41 +1133,50 @@ export function DestinationDetail({ dest }: { dest: any }) {
       </div>
       {/* === SEO Internal Linking Modules === */}
 
-      {/* Nearby in same state */}
-      {dest.nearbyDestinations?.length > 0 && (
-        <ScrollReveal>
-          <div className="mt-12 border-t border-border pt-8">
-            <h2 className="text-xl font-bold mb-4">Nearby in {stateName}</h2>
-            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-              {dest.nearbyDestinations.map((nd: any) => (
-                <a
-                  key={nd.id}
-                  href={`/${locale}/destination/${nd.id}`}
-                  className="group rounded-xl border border-border bg-card overflow-hidden hover:border-primary/40 transition-all"
-                >
-                  <div className="relative h-24 bg-muted/30 overflow-hidden">
-                    <Image
-                      src={`/images/destinations/${nd.id}.jpg`}
-                      alt={nd.name}
-                      fill
-                      sizes="(max-width: 640px) 50vw, 25vw"
-                      className="object-cover group-hover:scale-105 transition-transform duration-500"
-                      onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }}
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-card/80 to-transparent" />
-                  </div>
-                  <div className="p-3">
-                    <div className="font-semibold text-sm">{nd.name}</div>
-                    <div className="text-xs text-muted-foreground">
-                      {nd.difficulty}{nd.elevation_m ? ` · ${nd.elevation_m.toLocaleString()}m` : ""}
-                    </div>
-                  </div>
-                </a>
-              ))}
+      {/* Nearby Places — PostGIS distance-sorted, with same-state fallback */}
+      {dest.nearbyDestinations?.length > 0 && (() => {
+        const hasDistance = dest.nearbyDestinations.some((nd: any) => nd.distance_km != null);
+        const heading = hasDistance ? "Nearby Places" : `Nearby in ${stateName}`;
+        return (
+          <ScrollReveal>
+            <div className="mt-12 border-t border-border pt-8">
+              <h2 className="text-xl font-bold mb-4">{heading}</h2>
+              <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+                {dest.nearbyDestinations.map((nd: any) => {
+                  const ndState = Array.isArray(nd.state) ? nd.state[0]?.name : nd.state?.name;
+                  return (
+                    <a
+                      key={nd.id}
+                      href={`/${locale}/destination/${nd.id}`}
+                      className="group rounded-xl border border-border bg-card overflow-hidden hover:border-primary/40 transition-all"
+                    >
+                      <div className="relative h-24 bg-muted/30 overflow-hidden">
+                        <Image
+                          src={`/images/destinations/${nd.id}.jpg`}
+                          alt={nd.name}
+                          fill
+                          sizes="(max-width: 640px) 50vw, 25vw"
+                          className="object-cover group-hover:scale-105 transition-transform duration-500"
+                          onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }}
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-card/80 to-transparent" />
+                      </div>
+                      <div className="p-3">
+                        <div className="font-semibold text-sm">{nd.name}</div>
+                        <div className="text-xs text-muted-foreground">
+                          {nd.distance_km != null
+                            ? `${nd.distance_km} km${ndState ? ` · ${ndState}` : ""}${nd.difficulty ? ` · ${nd.difficulty}` : ""}`
+                            : `${nd.difficulty}${nd.elevation_m ? ` · ${nd.elevation_m.toLocaleString()}m` : ""}`}
+                        </div>
+                      </div>
+                    </a>
+                  );
+                })}
+              </div>
             </div>
-          </div>
-        </ScrollReveal>
-      )}
+          </ScrollReveal>
+        );
+      })()}
 
       {/* Featured in Collections */}
       {dest.relatedCollections?.length > 0 && (
