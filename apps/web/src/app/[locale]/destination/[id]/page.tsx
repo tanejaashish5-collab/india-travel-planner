@@ -5,14 +5,17 @@ import { PrevNextNav } from "@/components/prev-next-nav";
 import Link from "next/link";
 import { VS_PAIRS } from "@/lib/vs-pairs";
 import { createClient } from "@supabase/supabase-js";
-import { notFound, redirect } from "next/navigation";
-import { STATE_MAP } from "@/lib/seo-maps";
+import { notFound } from "next/navigation";
 import { StickyDestinationTabs, BottomCTABar } from "@/components/mobile-destination-enhancements";
 import { NewsletterStickyTray } from "@/components/newsletter-sticky-tray";
 import { destinationImage } from "@/lib/image-url";
 
 export const revalidate = 3600; // Revalidate every hour
-export const dynamicParams = true; // Allow pages not pre-generated at build time
+// dynamicParams=false → unknown slugs get real 404 from Next.js (not soft-404
+// via streamed notFound() which returns 200). generateStaticParams below
+// pre-renders every destination in DB × both locales. New destinations added
+// to DB post-deploy will 404 until the next deploy — matches current ops flow.
+export const dynamicParams = false;
 
 export async function generateStaticParams() {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
@@ -218,13 +221,7 @@ export default async function DestinationPage({
 }) {
   const { id, locale } = await params;
   const dest = await getDestination(id);
-  if (!dest) {
-    // If the ID matches a state, redirect to the state page instead of 404
-    if (STATE_MAP[id]) {
-      redirect(`/${locale}/state/${id}`);
-    }
-    notFound();
-  }
+  if (!dest) notFound();
 
   // Find comparison pairs involving this destination
   const comparisons = VS_PAIRS
