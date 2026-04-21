@@ -84,7 +84,7 @@ for (const file of files) {
   console.log(`INSERT INTO articles (`);
   console.log(`  id, slug, title, subtitle, category, depth, reading_time,`);
   console.log(`  cover_image_url, tags, destinations, seo_title, seo_description,`);
-  console.log(`  excerpt, content, published_at, created_at, updated_at, featured, callouts`);
+  console.log(`  excerpt, content, published_at, updated_at, featured, callouts`);
   console.log(`) VALUES (`);
   console.log(`  ${sqlQuote(id)},`);
   console.log(`  ${sqlQuote(slug)},`);
@@ -100,7 +100,7 @@ for (const file of files) {
   console.log(`  ${sqlQuote(seoDescription)},`);
   console.log(`  ${sqlQuote(excerpt)},`);
   console.log(`  ${sqlQuote(body)},`);
-  console.log(`  NOW(), NOW(), NOW(), FALSE, '[]'::jsonb`);
+  console.log(`  NOW(), NOW(), FALSE, '[]'::jsonb`);
   console.log(`) ON CONFLICT (id) DO UPDATE SET`);
   console.log(`  title = EXCLUDED.title,`);
   console.log(`  subtitle = EXCLUDED.subtitle,`);

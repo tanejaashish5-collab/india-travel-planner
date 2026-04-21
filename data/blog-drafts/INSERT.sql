@@ -7,7 +7,7 @@ BEGIN;
 INSERT INTO articles (
   id, slug, title, subtitle, category, depth, reading_time,
   cover_image_url, tags, destinations, seo_title, seo_description,
-  excerpt, content, published_at, created_at, updated_at, featured, callouts
+  excerpt, content, published_at, updated_at, featured, callouts
 ) VALUES (
   'manali-june-verdict',
   'is-manali-in-june-worth-it',
@@ -64,7 +64,7 @@ Either of those windows is a Go verdict on the same Manali row, not a Wait.
 ---
 
 **The one-line answer.** If June is the only window you have, go — and spend two days in Manali, not five. If you can move your dates, don''t.',
-  NOW(), NOW(), NOW(), FALSE, '[]'::jsonb
+  NOW(), NOW(), FALSE, '[]'::jsonb
 ) ON CONFLICT (id) DO UPDATE SET
   title = EXCLUDED.title,
   subtitle = EXCLUDED.subtitle,
@@ -81,7 +81,7 @@ Either of those windows is a Go verdict on the same Manali row, not a Wait.
 INSERT INTO articles (
   id, slug, title, subtitle, category, depth, reading_time,
   cover_image_url, tags, destinations, seo_title, seo_description,
-  excerpt, content, published_at, created_at, updated_at, featured, callouts
+  excerpt, content, published_at, updated_at, featured, callouts
 ) VALUES (
   'goa-august-verdict',
   'is-goa-in-august-worth-it',
@@ -141,7 +141,7 @@ If the only reason you want Goa is a beach chair and a Kingfisher, wait until la
 ---
 
 **The one-line answer.** August is the wrong month to visit beach Goa and the right month to visit the Goa nobody writes about. Do the interior, do it in three days, and come back to the coast in October.',
-  NOW(), NOW(), NOW(), FALSE, '[]'::jsonb
+  NOW(), NOW(), FALSE, '[]'::jsonb
 ) ON CONFLICT (id) DO UPDATE SET
   title = EXCLUDED.title,
   subtitle = EXCLUDED.subtitle,
@@ -158,7 +158,7 @@ If the only reason you want Goa is a beach chair and a Kingfisher, wait until la
 INSERT INTO articles (
   id, slug, title, subtitle, category, depth, reading_time,
   cover_image_url, tags, destinations, seo_title, seo_description,
-  excerpt, content, published_at, created_at, updated_at, featured, callouts
+  excerpt, content, published_at, updated_at, featured, callouts
 ) VALUES (
   'agra-day-trip-verdict',
   'is-agra-day-trip-worth-it',
@@ -220,7 +220,7 @@ The 5/5 rating on NakshIQ''s October and November rows is predicated on the gold
 ---
 
 **The one-line answer.** Agra is worth every word written about it. The day-trip version is not.',
-  NOW(), NOW(), NOW(), FALSE, '[]'::jsonb
+  NOW(), NOW(), FALSE, '[]'::jsonb
 ) ON CONFLICT (id) DO UPDATE SET
   title = EXCLUDED.title,
   subtitle = EXCLUDED.subtitle,
@@ -237,7 +237,7 @@ The 5/5 rating on NakshIQ''s October and November rows is predicated on the gold
 INSERT INTO articles (
   id, slug, title, subtitle, category, depth, reading_time,
   cover_image_url, tags, destinations, seo_title, seo_description,
-  excerpt, content, published_at, created_at, updated_at, featured, callouts
+  excerpt, content, published_at, updated_at, featured, callouts
 ) VALUES (
   'hampi-when-heat-is-kind',
   'hampi-when-the-heat-is-kind',
@@ -307,7 +307,7 @@ Cotton layers, a wide-brim hat, at least 2 litres of water per person for the mi
 ---
 
 **The one-line answer.** February is the window the ruins were built to be seen in. October is the alternative. The rest of the year, the data tells you not to bother.',
-  NOW(), NOW(), NOW(), FALSE, '[]'::jsonb
+  NOW(), NOW(), FALSE, '[]'::jsonb
 ) ON CONFLICT (id) DO UPDATE SET
   title = EXCLUDED.title,
   subtitle = EXCLUDED.subtitle,
@@ -324,7 +324,7 @@ Cotton layers, a wide-brim hat, at least 2 litres of water per person for the mi
 INSERT INTO articles (
   id, slug, title, subtitle, category, depth, reading_time,
   cover_image_url, tags, destinations, seo_title, seo_description,
-  excerpt, content, published_at, created_at, updated_at, featured, callouts
+  excerpt, content, published_at, updated_at, featured, callouts
 ) VALUES (
   'pushkar-october-scored',
   'pushkar-in-october-scored',
@@ -395,7 +395,7 @@ Pushkar is a small town. The main strip — Brahma Temple to Pap Mochini ghat �
 ---
 
 **The one-line answer.** November is the famous month. October is the better one — same score, different Pushkar. Unless the fair is the point, pick October.',
-  NOW(), NOW(), NOW(), FALSE, '[]'::jsonb
+  NOW(), NOW(), FALSE, '[]'::jsonb
 ) ON CONFLICT (id) DO UPDATE SET
   title = EXCLUDED.title,
   subtitle = EXCLUDED.subtitle,
