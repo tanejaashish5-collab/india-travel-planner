@@ -233,6 +233,53 @@ export function GuideContent({
         </StaggerContainer>
       </ScrollReveal>
 
+      {/* Practical Playbooks — operational guides, arrival, permits, trains */}
+      <ScrollReveal className="mb-16" delay={0.15}>
+        <div className="mb-6">
+          <div className="h-1 w-12 rounded-full bg-primary mb-4" />
+          <p className="text-xs font-medium uppercase tracking-widest text-primary mb-1">
+            Just-in-Time Operations
+          </p>
+          <h2 className="text-2xl font-bold sm:text-3xl">Practical Playbooks</h2>
+          <p className="text-muted-foreground mt-1">
+            The operational side — how to arrive, what permits you need, how to book trains, which roads are open
+          </p>
+        </div>
+        <StaggerContainer className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          {[
+            { title: "Arrival Playbook", desc: "9 airports: prepaid taxis, SIM counters, scam warnings, after-midnight notes", href: "/en/arrival", tag: "9 airports" },
+            { title: "Permits & Passes", desc: "Inner Line Permits, Protected Area Permits, national park entries, trek registrations", href: "/en/guide/permits", tag: "ILP · PAP" },
+            { title: "Book Indian Trains", desc: "IRCTC sign-up, Tatkal timing, foreign-passport bookings, waitlist psychology", href: "/en/guide/book-indian-trains", tag: "IRCTC" },
+            { title: "Road Conditions", desc: "Latest pass status, seasonal closures, road-trip readiness by route", href: "/en/road-conditions", tag: "live" },
+            { title: "Tourist Traps", desc: "The overhyped places to skip — and the honest alternative for each", href: "/en/tourist-traps", tag: "skip list" },
+            { title: "Methodology", desc: "How the 5-point scores are built. 12 months × 6 dimensions per destination", href: "/en/methodology", tag: "how it works" },
+          ].map((p) => (
+            <StaggerItem key={p.href}>
+              <HoverCard>
+                <Link
+                  href={p.href}
+                  className="flex items-start gap-3 rounded-xl border border-border bg-card p-4 hover:border-primary/40 hover:shadow-lg hover:shadow-primary/5 transition-all group"
+                >
+                  <div className="min-w-0 flex-1">
+                    <div className="flex items-center gap-2">
+                      <h3 className="font-semibold text-sm group-hover:text-primary transition-colors leading-tight">
+                        {p.title}
+                      </h3>
+                      <span className="text-[10px] font-medium px-2 py-0.5 rounded-full border bg-primary/10 text-primary border-primary/20">
+                        {p.tag}
+                      </span>
+                    </div>
+                    <p className="text-xs text-muted-foreground mt-1 line-clamp-2">
+                      {p.desc}
+                    </p>
+                  </div>
+                </Link>
+              </HoverCard>
+            </StaggerItem>
+          ))}
+        </StaggerContainer>
+      </ScrollReveal>
+
       {/* Family Guides */}
       <ScrollReveal className="mb-16" delay={0.2}>
         <div className="mb-6">
