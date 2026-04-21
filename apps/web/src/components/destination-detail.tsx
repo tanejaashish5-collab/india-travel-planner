@@ -23,6 +23,7 @@ import { ReviewsList } from "./reviews-list";
 import { ReviewForm } from "./review-form";
 import { BookingHandoff } from "./booking-handoff";
 import VerdictCard from "./verdict-card";
+import MethodologyStrip from "./methodology-strip";
 import KnowBeforeYouGo from "./know-before-you-go";
 import { EditorsPicks } from "./editors-picks";
 import { InternationalInfoSection } from "./international-info";
@@ -232,6 +233,12 @@ export function DestinationDetail({ dest }: { dest: any }) {
                 {currentMonthData.note}
               </div>
             )}
+
+            <MethodologyStrip
+              locale={locale}
+              sourceCount={Array.isArray(cc?.sources) ? cc.sources.length : undefined}
+              updatedAt={dest.updated_at}
+            />
 
             {currentMonthData?.verdict && (
               <a
