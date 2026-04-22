@@ -3351,3 +3351,41 @@ Date range: 2026-04-15 → 2026-04-21
 2026-04-22 07:12:35  INFO      ── Syncing Nakshiq content ──────────────────────────────
 2026-04-22 07:12:44  INFO      Synced → 20 destinations · 0 traps · 20 articles · total catalog=488
 2026-04-22 07:12:44  INFO      Sync-only mode. Done.
+2026-04-22 08:15:39  INFO      ════════════════════════════════════════════════════════════
+2026-04-22 08:15:39  INFO      Nakshiq Autoposter · INFOGRAPHIC · 2026-04-22 · weekday=2
+2026-04-22 08:15:39  INFO      ════════════════════════════════════════════════════════════
+2026-04-22 08:15:41  INFO      Generated 5 slides: topic=festivals, theme=topo
+2026-04-22 08:15:41  INFO          Requesting upload URL for infographic_infographic_festivals_topo_01_cover.jpg (108,024 bytes, image/jpeg)
+2026-04-22 08:15:41  INFO          Uploading to R2 (timeout=120s)...
+2026-04-22 08:15:42  INFO          R2 PUT OK. Confirming...
+2026-04-22 08:15:43  INFO          Media ready: WgyJz (108,024 bytes · infographic_infographic_festivals_topo_01_cover.jpg)
+2026-04-22 08:15:43  INFO        Uploaded: infographic_festivals_topo_01_cover.jpg (105 KB)
+2026-04-22 08:15:43  INFO          Requesting upload URL for infographic_infographic_festivals_topo_02_chamba.jpg (262,600 bytes, image/jpeg)
+2026-04-22 08:15:43  INFO          Uploading to R2 (timeout=120s)...
+2026-04-22 08:15:44  INFO          R2 PUT OK. Confirming...
+2026-04-22 08:15:45  INFO          Media ready: Gzenp (262,600 bytes · infographic_infographic_festivals_topo_02_chamba.jpg)
+2026-04-22 08:15:45  INFO        Uploaded: infographic_festivals_topo_02_chamba.jpg (256 KB)
+2026-04-22 08:15:45  INFO          Requesting upload URL for infographic_infographic_festivals_topo_03_champawat.jpg (256,580 bytes, image/jpeg)
+2026-04-22 08:15:45  INFO          Uploading to R2 (timeout=120s)...
+2026-04-22 08:15:46  INFO          R2 PUT OK. Confirming...
+2026-04-22 08:15:47  INFO          Media ready: r2ob4 (256,580 bytes · infographic_infographic_festivals_topo_03_champawat.jpg)
+2026-04-22 08:15:47  INFO        Uploaded: infographic_festivals_topo_03_champawat.jpg (250 KB)
+2026-04-22 08:15:47  INFO          Requesting upload URL for infographic_infographic_festivals_topo_04_dalhousie.jpg (225,807 bytes, image/jpeg)
+2026-04-22 08:15:47  INFO          Uploading to R2 (timeout=120s)...
+2026-04-22 08:15:48  INFO          R2 PUT OK. Confirming...
+2026-04-22 08:15:49  INFO          Media ready: umlSE (225,807 bytes · infographic_infographic_festivals_topo_04_dalhousie.jpg)
+2026-04-22 08:15:49  INFO        Uploaded: infographic_festivals_topo_04_dalhousie.jpg (220 KB)
+2026-04-22 08:15:49  INFO          Requesting upload URL for infographic_infographic_festivals_topo_06_cta.jpg (93,427 bytes, image/jpeg)
+2026-04-22 08:15:49  INFO          Uploading to R2 (timeout=120s)...
+2026-04-22 08:15:50  INFO          R2 PUT OK. Confirming...
+2026-04-22 08:15:50  INFO          Media ready: 4ScGi (93,427 bytes · infographic_infographic_festivals_topo_06_cta.jpg)
+2026-04-22 08:15:50  INFO        Uploaded: infographic_festivals_topo_06_cta.jpg (91 KB)
+2026-04-22 08:15:50  INFO      All slides uploaded: 5 media objects
+2026-04-22 08:15:51  INFO      [instagram/nakshiq] Publishing infographic carousel: festivals/topo...
+2026-04-22 08:15:53  INFO      [instagram/nakshiq] Infographic carousel posted successfully!
+2026-04-22 08:15:53  INFO      [facebook/Nakshiq] Publishing infographic carousel: festivals/topo...
+2026-04-22 08:15:54  INFO      [facebook/Nakshiq] Infographic carousel posted successfully!
+2026-04-22 08:15:54  INFO      [youtube/@naksh-iq] Skipping infographic (YouTube only accepts video/reels).
+2026-04-22 08:15:54  INFO      Infographic state updated: topic=festivals, theme=topo
+2026-04-22 08:15:54  INFO      State saved. Infographic run complete.
+2026-04-22 08:15:54  INFO      ════════════════════════════════════════════════════════════
