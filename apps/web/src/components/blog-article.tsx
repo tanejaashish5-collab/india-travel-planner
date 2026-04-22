@@ -8,6 +8,7 @@ import { SCORE_COLORS, DIFFICULTY_COLORS } from "@/lib/design-tokens";
 import { FadeIn, ScrollReveal } from "./animated-hero";
 import { ArticleCallout } from "./article-callout";
 import HowToDoIt from "./how-to-do-it";
+import { BlogArticleToC } from "./blog-article-toc";
 
 const CATEGORY_LABELS: Record<string, string> = {
   "best-time": "Best Time to Visit",
@@ -342,8 +343,14 @@ export function BlogArticle({
         </ScrollReveal>
       )}
 
-      {/* Article content */}
-      <div className="prose prose-invert prose-lg max-w-none">
+      {/* Article content — 2-col at lg+ with sticky ToC sidebar */}
+      {(() => {
+        const tocSections = sections
+          .filter((s) => s.heading && s.id)
+          .map((s) => ({ id: s.id as string, label: s.heading as string }));
+        return (
+          <div className={tocSections.length >= 3 ? "lg:grid lg:grid-cols-[minmax(0,1fr)_220px] lg:gap-10" : ""}>
+            <div className="prose prose-invert prose-lg max-w-none min-w-0">
         {sections.map((section, i) => {
           const sectionNum = numberSections ? String(i + 1).padStart(2, "0") : null;
           const isFirstProseBlock = i === 0 && section.paragraphs.length > 0;
@@ -365,7 +372,7 @@ export function BlogArticle({
             <ScrollReveal key={i} delay={i * 0.05}>
               <div>
                 {section.heading && numberSections ? (
-                  <div className="flex items-start gap-5 mt-14 mb-5">
+                  <div id={section.id} className="scroll-mt-32 flex items-start gap-5 mt-14 mb-5">
                     <span
                       className="font-serif italic font-medium text-5xl sm:text-6xl lg:text-7xl leading-[0.9] tracking-[-0.02em] text-foreground/90 flex-shrink-0"
                       style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
@@ -381,7 +388,7 @@ export function BlogArticle({
                     </h2>
                   </div>
                 ) : section.heading ? (
-                  <h2 className="text-2xl font-bold mt-10 mb-4">{section.heading}</h2>
+                  <h2 id={section.id} className="scroll-mt-32 text-2xl font-bold mt-10 mb-4">{section.heading}</h2>
                 ) : null}
 
                 {/* Pull-quote treatment for the very first paragraph of deep-dive
@@ -548,7 +555,17 @@ export function BlogArticle({
             </ScrollReveal>
           );
         })}
-      </div>
+            </div>
+
+            {/* Sticky sidebar ToC — only when article has 3+ headings */}
+            {tocSections.length >= 3 && (
+              <aside className="hidden lg:block not-prose">
+                <BlogArticleToC sections={tocSections} />
+              </aside>
+            )}
+          </div>
+        );
+      })()}
 
       {/* WhatsApp share button for viral articles */}
       {isViral && (
@@ -791,11 +808,21 @@ function DestinationThumb({ id, name }: { id: string; name: string }) {
   );
 }
 
-function parseContent(content: string): Array<{ heading?: string; paragraphs: string[] }> {
+function slugifyHeading(h: string): string {
+  return h
+    .toLowerCase()
+    .replace(/[^\w\s-]/g, "")
+    .trim()
+    .replace(/\s+/g, "-")
+    .slice(0, 60);
+}
+
+function parseContent(content: string): Array<{ heading?: string; id?: string; paragraphs: string[] }> {
   if (!content) return [];
   const lines = content.split("\n");
-  const sections: Array<{ heading?: string; paragraphs: string[] }> = [];
-  let current: { heading?: string; paragraphs: string[] } = { paragraphs: [] };
+  const sections: Array<{ heading?: string; id?: string; paragraphs: string[] }> = [];
+  let current: { heading?: string; id?: string; paragraphs: string[] } = { paragraphs: [] };
+  const seen = new Map<string, number>();
 
   for (const line of lines) {
     const trimmed = line.trim();
@@ -803,7 +830,13 @@ function parseContent(content: string): Array<{ heading?: string; paragraphs: st
       if (current.paragraphs.length > 0 || current.heading) {
         sections.push(current);
       }
-      current = { heading: trimmed.replace(/^##\s+/, ""), paragraphs: [] };
+      const heading = trimmed.replace(/^##\s+/, "");
+      let id = slugifyHeading(heading);
+      // Deduplicate IDs if two headings slugify identically
+      const count = seen.get(id) ?? 0;
+      seen.set(id, count + 1);
+      if (count > 0) id = `${id}-${count + 1}`;
+      current = { heading, id, paragraphs: [] };
     } else if (trimmed) {
       current.paragraphs.push(trimmed);
     }

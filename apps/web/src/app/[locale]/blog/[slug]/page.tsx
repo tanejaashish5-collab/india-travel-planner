@@ -172,7 +172,7 @@ export default async function BlogArticlePage({ params }: { params: Promise<{ sl
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
       />
       <Nav />
-      <main className="mx-auto max-w-4xl px-4 py-8">
+      <main className="mx-auto max-w-4xl lg:max-w-6xl px-4 py-8">
         <BlogArticle article={article} destinations={destinations} relatedArticles={related} adjacentArticles={adjacent} />
       </main>
       <Footer />
