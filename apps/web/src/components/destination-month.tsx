@@ -6,7 +6,6 @@ import { SCORE_COLORS, DIFFICULTY_COLORS } from "@/lib/design-tokens";
 import { NewsletterSignup } from "./newsletter-signup";
 import { WhatsAppShare } from "./whatsapp-share";
 import { destinationImage } from "@/lib/image-url";
-import VerdictCard from "./verdict-card";
 import HowToDoIt from "./how-to-do-it";
 import { DestinationSectionNav } from "./destination-section-nav";
 
@@ -133,37 +132,82 @@ export function DestinationMonth({
   );
 
   // ── 1. Score Hero ──────────────────────────────────────────
+  // One unified announcement card — verdict stamp + score + title +
+  // verdict prose + meta chips, all in the first card the reader sees.
+  // Replaces the old 2-box pattern (ScoreHero + separate VerdictCard)
+  // which was duplicative and pushed the actual answer below the fold.
 
-  const ScoreHero = () => (
-    <FadeIn>
-      <div
-        className={`relative overflow-hidden rounded-2xl border bg-gradient-to-br ${SCORE_BG[score]} p-8 md:p-12`}
-      >
-        {/* Decorative glow */}
-        <div className="pointer-events-none absolute -right-20 -top-20 h-60 w-60 rounded-full bg-white/5 blur-3xl" />
+  const ScoreHero = () => {
+    const verdictKey: "go" | "wait" | "skip" | null = currentMonth?.verdict ?? null;
+    const verdictTone: Record<"go" | "wait" | "skip", { stamp: string; accent: string }> = {
+      go: { stamp: "text-emerald-400", accent: "#34D399" },
+      wait: { stamp: "text-amber-400", accent: "#F59E0B" },
+      skip: { stamp: "text-[#E55642]", accent: "#E55642" },
+    };
+    const verdictLabel: Record<"go" | "wait" | "skip", string> = {
+      go: "GO", wait: "WAIT", skip: "SKIP",
+    };
+    const tone = verdictKey ? verdictTone[verdictKey] : null;
+    // Prefer editorial prose; fall back to skip_reason for skip/wait.
+    const verdictProse: string | null =
+      (currentMonth?.go_or_skip_verdict as string | undefined) ??
+      (verdictKey && verdictKey !== "go" ? (currentMonth?.skip_reason as string | undefined) : undefined) ??
+      null;
 
-        {/* Score display */}
-        <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-          <div>
-            <div className="mb-2 flex items-center gap-3">
-              <span className={`text-7xl font-black tracking-tight ${scoreInfo.color}`}>
+    return (
+      <FadeIn>
+        <div
+          className={`relative overflow-hidden rounded-2xl border bg-gradient-to-br ${SCORE_BG[score]} p-6 sm:p-8 md:p-10 lg:p-12`}
+        >
+          {/* Decorative glow */}
+          <div className="pointer-events-none absolute -right-20 -top-20 h-60 w-60 rounded-full bg-white/5 blur-3xl" />
+
+          {/* Top row — verdict stamp on the left, score pill on the right.
+              Stacks on small screens so neither element crushes. */}
+          <div className="mb-5 flex flex-col gap-4 sm:flex-row sm:items-baseline sm:justify-between">
+            {tone ? (
+              <div className="flex items-baseline gap-3">
+                <span
+                  className={`font-serif italic font-medium text-5xl sm:text-6xl lg:text-7xl leading-none tracking-tight ${tone.stamp}`}
+                  style={{ fontFamily: "var(--font-fraunces), Georgia, serif", color: tone.accent }}
+                >
+                  {verdictLabel[verdictKey!]}
+                </span>
+                <span className="font-mono text-[10px] sm:text-xs tracking-[0.3em] uppercase opacity-70 text-zinc-300">
+                  in {monthName}
+                </span>
+              </div>
+            ) : (
+              <div />
+            )}
+            <div className="flex items-baseline gap-2 whitespace-nowrap">
+              <span className={`text-4xl sm:text-5xl font-black tracking-tight ${scoreInfo.color}`}>
                 {score}
               </span>
-              <span className="text-2xl text-zinc-500 font-light">/5</span>
+              <span className="text-xl text-zinc-500 font-light">/5</span>
+              <span className={`ml-2 text-sm font-semibold ${scoreInfo.color}`}>
+                {scoreInfo.label}
+              </span>
             </div>
-            <p className={`text-lg font-semibold ${scoreInfo.color}`}>
-              {scoreInfo.label}
-            </p>
-            <h1 className="mt-3 text-3xl font-bold text-white md:text-4xl">
-              {destination.name} in {monthName}
-            </h1>
-            {stateName && (
-              <p className="mt-1 text-zinc-400">{stateName}, India</p>
-            )}
           </div>
 
-          {/* Quick stats */}
-          <div className="flex flex-wrap gap-3">
+          {/* Title */}
+          <h1 className="text-3xl font-bold text-white sm:text-4xl lg:text-5xl lg:tracking-tight">
+            {destination.name} in {monthName}
+          </h1>
+          {stateName && (
+            <p className="mt-1 text-sm sm:text-base text-zinc-400">{stateName}, India</p>
+          )}
+
+          {/* The actual answer — verdict prose, no longer hidden below the fold */}
+          {verdictProse && (
+            <p className="mt-6 text-base sm:text-lg leading-relaxed text-white/90 max-w-prose">
+              {verdictProse}
+            </p>
+          )}
+
+          {/* Meta chips */}
+          <div className="mt-6 flex flex-wrap gap-2">
             {destination.elevation_m && (
               <span className="rounded-lg border border-zinc-700 bg-zinc-800/60 px-3 py-1.5 text-sm text-zinc-300">
                 {destination.elevation_m.toLocaleString()}m
@@ -179,9 +223,9 @@ export function DestinationMonth({
             )}
           </div>
         </div>
-      </div>
-    </FadeIn>
-  );
+      </FadeIn>
+    );
+  };
 
   // ── 2. Lead Paragraph + Prose Payoff ────────────────────────
 
@@ -665,7 +709,6 @@ export function DestinationMonth({
   // Build sidebar ToC sections — only include ones that have data so the
   // rail doesn't show dead anchors.
   const hasLead = !!(currentMonth?.prose_lead || currentMonth?.note || currentMonth?.why_go);
-  const hasVerdict = !!currentMonth?.verdict;
   const hasThings = Array.isArray(currentMonth?.things_to_do) && currentMonth.things_to_do.length > 0;
   const hasPack = Array.isArray(currentMonth?.pack_list) && currentMonth.pack_list.length > 0;
   const hasNearby = Array.isArray(nearby) && nearby.length > 0;
@@ -680,7 +723,6 @@ export function DestinationMonth({
   );
   const monthSections = [
     hasLead && { id: "lead", label: `${monthName} overview` },
-    hasVerdict && { id: "verdict", label: "Verdict" },
     hasWhy && { id: "why", label: `Why ${score}/5` },
     hasThings && { id: "things", label: "What to do" },
     { id: "who", label: "Who should go" },
@@ -742,14 +784,6 @@ export function DestinationMonth({
 
           <section id="section-lead" className="scroll-mt-28">
             <LeadParagraph />
-          </section>
-          <section id="section-verdict" className="scroll-mt-28">
-            <VerdictCard
-              verdict={currentMonth?.verdict ?? null}
-              skipReason={currentMonth?.skip_reason ?? null}
-              month={monthName}
-              prose={currentMonth?.go_or_skip_verdict ?? null}
-            />
           </section>
           <section id="section-why" className="scroll-mt-28">
             <WhyThisScore />

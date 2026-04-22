@@ -4,7 +4,8 @@
 // v3: 2026-04-22 ToC + long-scroll redesign on destination/state/blog pages.
 // v4: 2026-04-22 full-bleed hero video + mini-map at lg+ (luxury pattern).
 // v5: 2026-04-22 destination-month editorial pass — full-bleed hero, sticky back+breadcrumb, merged verdict, sidebar ToC.
-const CACHE_VERSION = "nakshiq-v5";
+// v6: 2026-04-22 destination-month hero merges verdict stamp + prose into one announcement card (no separate verdict box).
+const CACHE_VERSION = "nakshiq-v6";
 const STATIC_CACHE = `${CACHE_VERSION}-static`;
 const IMAGE_CACHE = `${CACHE_VERSION}-images`;
 const DATA_CACHE = `${CACHE_VERSION}-data`;
