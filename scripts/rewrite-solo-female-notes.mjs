@@ -44,9 +44,13 @@ for (const r of rewrites) {
   const next = row.solo_female_note.replace(r.find, r.replace);
   console.log(`  ${COMMIT ? "✓" : "would update"} ${r.id}`);
   if (!COMMIT) { ok++; continue; }
+  const now = new Date().toISOString();
+  // Rewriting trust-sensitive prose IS a review — bump content_reviewed_at
+  // so the freshness pipeline (news-sweep, mark-reviewed --only-stale) knows
+  // these rows are current. See feedback_data_integrity.md.
   const { error: upErr } = await supabase
     .from("destinations")
-    .update({ solo_female_note: next, updated_at: new Date().toISOString() })
+    .update({ solo_female_note: next, updated_at: now, content_reviewed_at: now })
     .eq("id", r.id);
   if (upErr) { console.error(`    ✗ ${upErr.message}`); failed++; continue; }
   ok++;

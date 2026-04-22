@@ -9,6 +9,7 @@ const { data } = await s.from('destinations').select('solo_female_note').eq('id'
 if (!data?.solo_female_note?.includes(OLD)) { console.log('Find string absent — already patched.'); process.exit(0); }
 console.log(`Found. Patch 'River Camp' → 'Campsite' (matches in-destination DB name).`);
 if (!COMMIT) { console.log('DRY.'); process.exit(0); }
-const { error } = await s.from('destinations').update({ solo_female_note: data.solo_female_note.replace(OLD, NEW) }).eq('id', 'shnongpdeng');
+const now = new Date().toISOString();
+const { error } = await s.from('destinations').update({ solo_female_note: data.solo_female_note.replace(OLD, NEW), updated_at: now, content_reviewed_at: now }).eq('id', 'shnongpdeng');
 if (error) { console.error(error); process.exit(1); }
 console.log('✓ Patched.');
