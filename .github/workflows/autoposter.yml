@@ -7,13 +7,15 @@ on:
     - cron: "0 4 * * *"    # 09:30 IST
     - cron: "30 4 * * *"   # 10:00 IST
     - cron: "0 5 * * *"    # 10:30 IST  ← last fallback
+    - cron: "30 6 * * 1,3,5"   # 12:00 IST Mon/Wed/Fri — moat
     - cron: "0 7 * * 2,4,6"    # 12:30 IST Tue/Thu/Sat — tourist map
+    - cron: "30 7 * * 1,3,5"   # 13:00 IST Mon/Wed/Fri — infographic
     - cron: "0 9 * * *"       # 14:30 IST daily — canva visual
     - cron: "30 9 * * *"      # 15:00 IST daily — pomelli visual
     - cron: "30 5 * * *"      # 11:00 IST daily — reel slot 1
     - cron: "30 10 * * *"     # 16:00 IST daily — reel slot 2
+    - cron: "0 13 * * *"      # 18:30 IST daily — evening
     - cron: "30 14 * * *"     # 20:00 IST daily — reel slot 3
-    - cron: "30 7 * * 1,3,5"   # 13:00 IST Mon/Wed/Fri — infographic
     - cron: "0 11 * * *"        # 21:00 AEST (9 PM) — yt short slot 1
     - cron: "0 2 * * *"         # 12:00 AEST (12 PM) — yt short slot 2
     - cron: "15 2 * * *"        # 12:15 AEST — yt short slot 2 BACKUP (GH drops 02:00 UTC cron repeatedly)
@@ -31,6 +33,10 @@ on:
           - force
           - sync-only
           - dry-run
+          - evening
+          - evening-force
+          - moat
+          - moat-force
           - tourist-map
           - tourist-map-force
           - canva-visual
@@ -105,7 +111,13 @@ jobs:
           INPUT="${{ github.event.inputs.mode }}"
 
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-            if [ "$INPUT" = "tourist-map-force" ]; then
+            if [ "$INPUT" = "evening-force" ]; then
+              echo "args=--evening --force" >> $GITHUB_OUTPUT
+              echo "Manual mode: --evening --force"
+            elif [ "$INPUT" = "moat-force" ]; then
+              echo "args=--moat --force" >> $GITHUB_OUTPUT
+              echo "Manual mode: --moat --force"
+            elif [ "$INPUT" = "tourist-map-force" ]; then
               echo "args=--tourist-map --force" >> $GITHUB_OUTPUT
               echo "Manual mode: --tourist-map --force"
             elif [ "$INPUT" = "canva-visual-force" ]; then
@@ -130,6 +142,10 @@ jobs:
               echo "args=" >> $GITHUB_OUTPUT
               echo "Manual mode: normal (post)"
             fi
+          elif [ "$TOTAL_MINS" -ge 380 ] && [ "$TOTAL_MINS" -lt 420 ] && echo "1 3 5" | grep -qw "$DOW"; then
+            # UTC 06:30 on Mon/Wed/Fri → moat (window: 380-419, 40 min)
+            echo "args=--moat" >> $GITHUB_OUTPUT
+            echo "Scheduled MOAT mode (UTC ${HOUR}:${MINUTE}, DOW=${DOW})"
           elif [ "$TOTAL_MINS" -ge 440 ] && [ "$TOTAL_MINS" -lt 540 ] && echo "1 3 5" | grep -qw "$DOW"; then
             # UTC 07:30 on Mon/Wed/Fri → infographic (window: 440-539, 100 min — 10 min early tolerance for GH jitter)
             echo "args=--infographic" >> $GITHUB_OUTPUT
@@ -154,6 +170,10 @@ jobs:
             # UTC 10:30 (16:00 IST) → reel slot 2 (window: 630-659)
             echo "args=--reel" >> $GITHUB_OUTPUT
             echo "Scheduled REEL slot 2 (UTC ${HOUR}:${MINUTE})"
+          elif [ "$TOTAL_MINS" -ge 770 ] && [ "$TOTAL_MINS" -lt 860 ]; then
+            # UTC 13:00 (18:30 IST) → evening (window: 770-859, 90 min)
+            echo "args=--evening" >> $GITHUB_OUTPUT
+            echo "Scheduled EVENING mode (UTC ${HOUR}:${MINUTE})"
           elif [ "$TOTAL_MINS" -ge 870 ] && [ "$TOTAL_MINS" -lt 1020 ]; then
             # UTC 14:30 (20:00 IST) → reel slot 3 (window: 870-1019, 150 min)
             echo "args=--reel" >> $GITHUB_OUTPUT
