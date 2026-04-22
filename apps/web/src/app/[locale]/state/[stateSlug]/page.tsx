@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { StateDestinationGrid } from "@/components/state-destination-grid";
+import { DestinationSectionNav } from "@/components/destination-section-nav";
 import { createClient } from "@supabase/supabase-js";
 import { STATE_MAP, getRegionNameForState, getRegionForState } from "@/lib/seo-maps";
 
@@ -158,9 +159,21 @@ export default async function StateHubPage({
         </div>
 
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8">
+          {(() => {
+            const sections = [
+              { id: "overview", label: "Overview", show: !!(region?.hero_tagline || region?.description || (region?.famous_for && region.famous_for.length > 0)) },
+              { id: "must-visit", label: "Must Visit", show: !!(region?.must_visit && (region.must_visit as any[]).length > 0) },
+              { id: "regions", label: "Regions", show: subregions.length > 0 },
+              { id: "best-months", label: "Best Months", show: !!(region?.best_months && region.best_months.length > 0) },
+              { id: "destinations", label: `All ${totalDests}`, show: destinations.length > 0 },
+              { id: "guides", label: "More Guides", show: true },
+            ].filter((s) => s.show);
+            return (
+              <div className="lg:grid lg:grid-cols-[minmax(0,1fr)_220px] lg:gap-10">
+                <div className="min-w-0">
           {/* Description */}
           {(region?.hero_tagline || region?.description) && (
-            <div className="mb-8">
+            <section id="section-overview" className="mb-8 scroll-mt-32">
               {region.hero_tagline && (
                 <p className="text-xl sm:text-2xl font-heading text-foreground/90 italic mb-3">
                   &ldquo;{region.hero_tagline}&rdquo;
@@ -169,7 +182,7 @@ export default async function StateHubPage({
               {region.description && (
                 <p className="text-[15px] text-muted-foreground leading-relaxed max-w-3xl">{region.description}</p>
               )}
-            </div>
+            </section>
           )}
 
           {/* Famous For — what this state is known for */}
@@ -189,7 +202,7 @@ export default async function StateHubPage({
 
           {/* Must Visit — top picks if you have limited time */}
           {region?.must_visit && (region.must_visit as any[]).length > 0 && (
-            <div className="mb-8">
+            <section id="section-must-visit" className="mb-8 scroll-mt-32">
               <h2 className="text-sm font-bold uppercase tracking-[0.15em] text-muted-foreground/50 mb-4">Must visit in {stateName}</h2>
               <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
                 {(region.must_visit as any[]).map((mv: any) => (
@@ -206,12 +219,12 @@ export default async function StateHubPage({
                   </a>
                 ))}
               </div>
-            </div>
+            </section>
           )}
 
           {/* Subregion pills */}
           {subregions.length > 0 && (
-            <div className="mb-8">
+            <section id="section-regions" className="mb-8 scroll-mt-32">
               <h2 className="text-sm font-bold uppercase tracking-[0.15em] text-muted-foreground/50 mb-3">Regions within {stateName}</h2>
               <div className="flex flex-wrap gap-2">
                 {subregions.map((sr: any) => (
@@ -227,7 +240,7 @@ export default async function StateHubPage({
                   </div>
                 ))}
               </div>
-            </div>
+            </section>
           )}
 
           {/* Tags */}
@@ -243,7 +256,7 @@ export default async function StateHubPage({
 
           {/* Best months */}
           {region?.best_months && region.best_months.length > 0 && (
-            <div className="mb-8 rounded-xl border border-border/50 bg-card/50 p-4 inline-block">
+            <section id="section-best-months" className="mb-8 scroll-mt-32 rounded-xl border border-border/50 bg-card/50 p-4 inline-block">
               <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground/50 mr-3">Best months:</span>
               {["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"].map((m, i) => {
                 const isBest = region.best_months.includes(i + 1);
@@ -253,17 +266,17 @@ export default async function StateHubPage({
                   </span>
                 );
               })}
-            </div>
+            </section>
           )}
 
           {/* Destination grid */}
-          <div className="mb-12">
+          <section id="section-destinations" className="mb-12 scroll-mt-32">
             <h2 className="text-xl font-bold mb-6">All {totalDests} Destinations in {stateName}</h2>
             <StateDestinationGrid destinations={destinations} locale={locale} />
-          </div>
+          </section>
 
           {/* Quick links */}
-          <div className="mb-12 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          <section id="section-guides" className="mb-12 scroll-mt-32 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             <Link href={`/${locale}/explore/state/${stateSlug}`} className="rounded-xl border border-border p-4 hover:border-primary/40 transition-all">
               <div className="text-sm font-semibold">Explore {stateName}</div>
               <div className="text-xs text-muted-foreground mt-1">Filter by month, difficulty, kids</div>
@@ -280,7 +293,7 @@ export default async function StateHubPage({
               <div className="text-sm font-semibold">Where to Stay</div>
               <div className="text-xs text-muted-foreground mt-1">Lodges, homestays, camps</div>
             </Link>
-          </div>
+          </section>
 
           {/* Prev / Next */}
           <div className="flex items-center justify-between border-t border-border/50 pt-6">
@@ -298,6 +311,15 @@ export default async function StateHubPage({
               </Link>
             ) : <div />}
           </div>
+                </div>
+
+                {/* Sidebar ToC — sticky vertical rail at lg+ */}
+                <aside className="hidden lg:block">
+                  <DestinationSectionNav sections={sections} variant="sidebar" />
+                </aside>
+              </div>
+            );
+          })()}
         </div>
       </main>
       <Footer />
