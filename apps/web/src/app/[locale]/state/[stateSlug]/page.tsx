@@ -100,9 +100,41 @@ export default async function StateHubPage({
     <div className="min-h-screen">
       <Nav />
       <main id="main-content">
-        {/* Hero — video with image poster fallback */}
+        {/* Sticky back + breadcrumb bar — always-visible wayfinding, mirrors
+            the pattern locked in on destination-month + where-to-go. */}
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-4">
+          <div className="sticky top-20 z-30">
+            <div className="flex items-center gap-2 rounded-full border border-border bg-background/85 backdrop-blur px-3 py-2 text-xs sm:text-sm shadow-sm">
+              <Link
+                href={regionGroup && regionSlug ? `/${locale}/india/${regionSlug}` : `/${locale}/states`}
+                className="flex items-center gap-1.5 font-medium text-muted-foreground hover:text-foreground transition-colors whitespace-nowrap"
+              >
+                <span aria-hidden>&larr;</span> Back
+              </Link>
+              <span className="text-border" aria-hidden>•</span>
+              <nav
+                className="flex items-center gap-1.5 text-muted-foreground min-w-0 overflow-hidden"
+                aria-label="Breadcrumb"
+              >
+                <Link href={`/${locale}/states`} className="hover:text-foreground transition-colors truncate hidden sm:inline">India</Link>
+                {regionGroup && regionSlug && (
+                  <>
+                    <span className="opacity-50 hidden sm:inline" aria-hidden>/</span>
+                    <Link href={`/${locale}/india/${regionSlug}`} className="hover:text-foreground transition-colors truncate">{regionGroup}</Link>
+                  </>
+                )}
+                <span className="opacity-50" aria-hidden>/</span>
+                <span className="text-foreground truncate">{stateName}</span>
+              </nav>
+            </div>
+          </div>
+        </div>
+
+        {/* Hero — full-bleed cinematic video, bumped to lg:h-[32rem] to match
+            the destination-month / where-to-go pattern. Breadcrumb lifted out
+            into the sticky bar above so it doesn't scroll off-screen. */}
         <div
-          className="relative h-64 sm:h-80 lg:h-96 overflow-hidden"
+          className="relative h-64 sm:h-80 lg:h-[32rem] overflow-hidden mt-6"
           style={{ background: `linear-gradient(135deg, oklch(0.22 0.03 260), oklch(0.16 0.02 280))` }}
         >
           <video
@@ -119,18 +151,7 @@ export default async function StateHubPage({
           <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
           <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 lg:p-12">
             <div className="mx-auto max-w-7xl">
-              <div className="text-sm text-muted-foreground/70 mb-2">
-                <Link href={`/${locale}/states`} className="hover:text-foreground transition-colors">India</Link>
-                {regionGroup && regionSlug && (
-                  <>
-                    {" → "}
-                    <Link href={`/${locale}/india/${regionSlug}`} className="hover:text-foreground transition-colors">{regionGroup}</Link>
-                  </>
-                )}
-                {" → "}
-                <span className="text-foreground">{stateName}</span>
-              </div>
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold">{stateName}</h1>
+              <h1 className="text-3xl sm:text-4xl lg:text-6xl lg:tracking-tight font-bold">{stateName}</h1>
               {state.capital && (
                 <p className="mt-1 text-sm text-muted-foreground">Capital: {state.capital}</p>
               )}
