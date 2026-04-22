@@ -93,6 +93,7 @@ export default async function sitemap(props: {
       "terms", "privacy", "cookies", "editorial-policy",
       "india-travel", "data-deletion", "newsletter", "the-window",
       "vs", "compare", "guide/permits", "guide/book-indian-trains",
+      "weekend-from",
       "weekend-from-delhi", "weekend-from-mumbai", "weekend-from-bangalore",
       "weekend-from-chennai", "weekend-from-kolkata", "weekend-from-hyderabad",
       "arrival", "arrival/del", "arrival/bom", "arrival/blr", "arrival/maa",
