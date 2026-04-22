@@ -316,7 +316,7 @@ export default async function DestinationPage({
       />
       <Nav />
       <StickyDestinationTabs />
-      <main id="main-content" className="mx-auto max-w-4xl px-4 py-8 pb-24 md:pb-8">
+      <main id="main-content" className="mx-auto max-w-4xl lg:max-w-6xl px-4 py-8 pb-24 md:pb-8">
         <DestinationDetail dest={dest} />
 
         {comparisons.length > 0 && (

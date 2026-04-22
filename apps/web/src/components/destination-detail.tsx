@@ -527,11 +527,13 @@ export function DestinationDetail({ dest }: { dest: any }) {
           }}
         />
 
-        {/* Sticky mini-nav — pops in after ToC scrolls away, scroll-spies visible section */}
-        <DestinationSectionNav sections={availableSections} />
+        {/* Sticky mini-nav — pops in after ToC scrolls away, scroll-spies visible section.
+            Hidden at lg+ where the sidebar variant takes over. */}
+        <DestinationSectionNav sections={availableSections} variant="top" />
 
-        {/* === LONG-SCROLL CONTENT === all sections stacked below, gated by data availability === */}
-        <div className="space-y-10">
+        {/* === LONG-SCROLL CONTENT === at lg+, 2-col grid with sidebar ToC on the right === */}
+        <div className="lg:grid lg:grid-cols-[minmax(0,1fr)_260px] lg:gap-10">
+          <div className="space-y-10 min-w-0">
           {/* Overview — wraps entire overview block so scroll-spy tracks correctly */}
           <section id="section-overview" className="scroll-mt-40 space-y-8">
                 {/* Why Special */}
@@ -1180,6 +1182,12 @@ export function DestinationDetail({ dest }: { dest: any }) {
               <ReviewForm destinationId={dest.id} />
             </section>
           )}
+          </div>
+
+          {/* Sidebar ToC — sticky vertical rail, lg+ only */}
+          <aside className="hidden lg:block">
+            <DestinationSectionNav sections={availableSections} variant="sidebar" />
+          </aside>
         </div>
       </div>
       {/* === SEO Internal Linking Modules === */}

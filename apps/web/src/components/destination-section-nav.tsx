@@ -5,16 +5,25 @@ import { useTranslations } from "next-intl";
 
 type Section = { id: string; label: string };
 
+type Variant = "top" | "sidebar";
+
 /**
  * Sticky section-jumper that pops in after the ToC hero leaves viewport.
  * Scroll-spies the currently-visible section (rootMargin trick: "active" is
  * whichever section straddles the vertical middle of the viewport).
  *
- * - Desktop: horizontal pill bar
- * - Mobile (<768px): collapses to a single "Jump to {current} ▾" pill that
- *   opens a bottom-sheet drawer listing all sections
+ * - variant="top" (default): horizontal pill bar stickied at page top.
+ *   Mobile (<md): collapses to "Jump to {current} ▾" bottom-sheet drawer.
+ * - variant="sidebar": vertical pill rail inside a sticky sidebar. Only
+ *   shown at lg+ breakpoint. Complements the top bar (caller decides).
  */
-export function DestinationSectionNav({ sections }: { sections: Section[] }) {
+export function DestinationSectionNav({
+  sections,
+  variant = "top",
+}: {
+  sections: Section[];
+  variant?: Variant;
+}) {
   const t = useTranslations("destination");
   const [visible, setVisible] = useState(false);
   const [active, setActive] = useState(sections[0]?.id ?? "");
@@ -81,21 +90,65 @@ export function DestinationSectionNav({ sections }: { sections: Section[] }) {
 
   const activeLabel = sections.find((s) => s.id === active)?.label ?? sections[0]?.label ?? "";
 
+  // Sidebar variant — vertical pill rail, always visible (no sentinel gating),
+  // shown only at lg+. The top variant covers smaller screens.
+  if (variant === "sidebar") {
+    return (
+      <nav
+        className="sticky top-28 self-start"
+        role="navigation"
+        aria-label={t("inThisGuide")}
+      >
+        <div className="rounded-xl border border-border bg-background/95 backdrop-blur p-2 shadow-sm">
+          <div className="px-3 py-2 text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
+            {t("inThisGuide")}
+          </div>
+          <div className="flex flex-col gap-1">
+            {sections.map((s) => {
+              const isActive = s.id === active;
+              return (
+                <button
+                  key={s.id}
+                  onClick={() => onJump(s.id)}
+                  className={`flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium text-left transition-colors ${
+                    isActive
+                      ? "bg-primary/10 text-foreground border border-primary/30"
+                      : "text-muted-foreground hover:text-foreground hover:bg-muted/40"
+                  }`}
+                  aria-current={isActive ? "true" : undefined}
+                >
+                  <span
+                    className={`h-1.5 w-1.5 rounded-full transition-colors ${
+                      isActive ? "bg-primary" : "bg-muted-foreground/30"
+                    }`}
+                    aria-hidden="true"
+                  />
+                  <span>{s.label}</span>
+                </button>
+              );
+            })}
+          </div>
+        </div>
+      </nav>
+    );
+  }
+
   return (
     <>
       {/* Sentinel — placed right after ToC hero via component boundary */}
       <div ref={sentinelRef} aria-hidden="true" className="h-0" />
 
-      {/* Sticky nav — shared desktop + mobile shell. top-28 (112px) clears sticky header + banner */}
+      {/* Sticky nav — shared desktop + mobile shell. top-28 (112px) clears sticky header + banner.
+          Hidden at lg+ because the sidebar variant takes over. */}
       <div
-        className={`sticky top-28 z-40 mb-6 transition-all duration-200 ${
+        className={`sticky top-28 z-40 mb-6 transition-all duration-200 lg:hidden ${
           visible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-2 pointer-events-none"
         }`}
         style={{ isolation: "isolate" }}
         role="navigation"
         aria-label={t("inThisGuide")}
       >
-        {/* Desktop: horizontal pills */}
+        {/* Tablet: horizontal pills */}
         <div className="hidden md:flex gap-1 overflow-x-auto rounded-xl border border-border bg-background/95 backdrop-blur p-1 shadow-sm">
           {sections.map((s) => {
             const isActive = s.id === active;
