@@ -171,9 +171,14 @@ export function DestinationDetail({ dest }: { dest: any }) {
         {/* Real-time alerts */}
         <DestinationAlerts destinationId={dest.id} />
 
-        {/* Cinematic Hero — video where available */}
+        {/* Cinematic Hero — video where available. Full-bleed at lg+ (Ferrari / Aman /
+            Four Seasons pattern). Mobile + tablet stay within the container padding for
+            rounded-corner warmth; lg+ breaks out to 100vw for the theatrical hero moment. */}
         <FadeIn>
-          <div className="mb-6 relative h-56 sm:h-72 lg:h-96 rounded-2xl overflow-hidden film-grain" style={{ background: "linear-gradient(135deg, oklch(0.25 0.02 260), oklch(0.18 0.01 280))" }}>
+          <div
+            className="mb-6 relative h-56 sm:h-72 lg:h-[32rem] rounded-2xl lg:rounded-none overflow-hidden film-grain lg:relative lg:left-1/2 lg:right-1/2 lg:-ml-[50vw] lg:-mr-[50vw] lg:w-screen"
+            style={{ background: "linear-gradient(135deg, oklch(0.25 0.02 260), oklch(0.18 0.01 280))" }}
+          >
             {/* Video hero — attempts video, falls back to poster image */}
             <video
               autoPlay
@@ -208,7 +213,7 @@ export function DestinationDetail({ dest }: { dest: any }) {
           <div className="mb-6 rounded-2xl border border-border/50 bg-card p-6 sm:p-8 -mt-24 relative z-10 shadow-2xl shadow-black/20">
             <div className="flex items-start justify-between">
               <div>
-                <h1 className="text-3xl font-bold sm:text-4xl lg:text-5xl">{displayName}</h1>
+                <h1 className="text-3xl font-bold sm:text-4xl lg:text-6xl lg:tracking-tight">{displayName}</h1>
                 {/* Location line */}
                 <p className="mt-2 text-sm text-muted-foreground">
                   {stateName}{dest.region ? ` · ${dest.region}` : ""}
@@ -493,11 +498,12 @@ export function DestinationDetail({ dest }: { dest: any }) {
           </FadeIn>
         )}
 
-        {/* Mini-map — "Where exactly is this?" */}
+        {/* Mini-map — "Where exactly is this?". Full-bleed at lg+ (immersive geography
+            moment, Aman / Four Seasons resort-page pattern). */}
         {dest.coords?.lat && dest.coords?.lng && (
           <FadeIn delay={0.3}>
-            <div className="mb-6 rounded-2xl border border-border overflow-hidden">
-              <div className="h-48 sm:h-56">
+            <div className="mb-6 rounded-2xl lg:rounded-none border border-border lg:border-y lg:border-x-0 overflow-hidden lg:relative lg:left-1/2 lg:right-1/2 lg:-ml-[50vw] lg:-mr-[50vw] lg:w-screen">
+              <div className="h-48 sm:h-56 lg:h-96">
                 <Suspense fallback={<div className="w-full h-full bg-muted/30 flex items-center justify-center text-muted-foreground text-sm">Loading map...</div>}>
                   <DestinationMap lat={dest.coords.lat} lng={dest.coords.lng} name={displayName} elevation={dest.elevation_m} />
                 </Suspense>
@@ -539,7 +545,7 @@ export function DestinationDetail({ dest }: { dest: any }) {
                 {/* Why Special */}
                 <div>
                   <h2 className="text-xl font-semibold mb-3">Why Special</h2>
-                  <p className="text-[15px] text-muted-foreground leading-relaxed">{displayWhySpecial}</p>
+                  <p className="text-[15px] text-muted-foreground leading-[1.75] max-w-prose">{displayWhySpecial}</p>
                 </div>
 
                 {/* Who Should Skip — anti-brochure honesty */}
