@@ -16,29 +16,45 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
     ...localeAlternates(locale, "/guide"),
   };
-}async function getGuideData() {
+}
+
+async function getGuideData() {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-  if (!url || !key) return { destinations: [], comparisons: [] };
+  if (!url || !key) return { destinations: [], comparisons: [], monthScores: [], currentMonth: new Date().getMonth() + 1 };
 
   const supabase = createClient(url, key);
+  const currentMonth = new Date().getMonth() + 1;
 
-  const { data: dests } = await supabase
-    .from("destinations")
-    .select("id, name, difficulty, elevation_m, best_months, state:states(name), kids_friendly(suitable, rating, min_recommended_age, reasons)")
-    .order("name");
+  const [{ data: dests }, { data: pairs }, { data: monthScores }] = await Promise.all([
+    supabase
+      .from("destinations")
+      .select("id, name, difficulty, elevation_m, best_months, state:states(name), kids_friendly(suitable, rating, min_recommended_age, reasons)")
+      .order("name"),
+    // Popular comparison pairs from tourist_trap_alternatives
+    supabase
+      .from("tourist_trap_alternatives")
+      .select("trap_destination_id, alternative_destination_id, destinations!tourist_trap_alternatives_trap_destination_id_fkey(name), destination:destinations!tourist_trap_alternatives_alternative_destination_id_fkey(name)")
+      .limit(20),
+    // Current-month scores for the "Best Time to Visit" section. One row
+    // per destination for this month — used to surface destinations where
+    // NOW is genuinely 4-5/5 instead of the old alphabetical slice.
+    supabase
+      .from("destination_months")
+      .select("destination_id, score, note")
+      .eq("month", currentMonth),
+  ]);
 
-  // Get popular comparison pairs from tourist_trap_alternatives
-  const { data: pairs } = await supabase
-    .from("tourist_trap_alternatives")
-    .select("trap_destination_id, alternative_destination_id, destinations!tourist_trap_alternatives_trap_destination_id_fkey(name), destination:destinations!tourist_trap_alternatives_alternative_destination_id_fkey(name)")
-    .limit(20);
-
-  return { destinations: dests ?? [], comparisons: pairs ?? [] };
+  return {
+    destinations: dests ?? [],
+    comparisons: pairs ?? [],
+    monthScores: monthScores ?? [],
+    currentMonth,
+  };
 }
 
 export default async function GuidesPage() {
-  const { destinations, comparisons } = await getGuideData();
+  const { destinations, comparisons, monthScores, currentMonth } = await getGuideData();
 
   return (
     <div className="min-h-screen">
@@ -69,7 +85,7 @@ export default async function GuidesPage() {
       </section>
 
       <main>
-        <GuideContent destinations={destinations} comparisons={comparisons} />
+        <GuideContent destinations={destinations} comparisons={comparisons} monthScores={monthScores} currentMonth={currentMonth} />
       </main>
 
       <Footer />

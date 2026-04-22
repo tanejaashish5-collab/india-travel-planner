@@ -91,21 +91,44 @@ function DestinationImage({
 export function GuideContent({
   destinations,
   comparisons,
+  monthScores,
+  currentMonth,
 }: {
   destinations: Destination[];
   comparisons: Comparison[];
+  monthScores: { destination_id: string; score: number | null; note: string | null }[];
+  currentMonth: number;
 }) {
-  // Generate "Best time to visit" guides
-  const bestTimeGuides = destinations.slice(0, 30).map((d) => ({
-    id: d.id,
-    title: `Best Time to Visit ${d.name}`,
-    href: `/en/destination/${d.id}`,
-    desc: `Monthly scores, weather, crowds, and costs for ${d.name}${d.elevation_m ? ` (${d.elevation_m}m)` : ""}`,
-    months: d.best_months
-      ?.slice(0, 3)
-      .map((m: number) => MONTH_NAMES[m])
-      .filter(Boolean),
-  }));
+  const currentMonthName = MONTH_NAMES[currentMonth] ?? "";
+  const currentMonthSlug = currentMonthName.toLowerCase();
+
+  // Best Time to Visit — sort by current-month score, pick where NOW is 4+/5.
+  // Replaces the old alphabetical slice(0, 30) that surfaced A-named cards
+  // regardless of seasonal fit. Self-refreshing via ISR (revalidate=86400):
+  // as the month rolls over, the list rotates to that month's top picks.
+  const scoreByDest = new Map(monthScores.map((s) => [s.destination_id, s]));
+  const bestTimeGuides = destinations
+    .filter((d) => (scoreByDest.get(d.id)?.score ?? 0) >= 4)
+    .sort((a, b) => {
+      const sa = scoreByDest.get(a.id)?.score ?? 0;
+      const sb = scoreByDest.get(b.id)?.score ?? 0;
+      if (sb !== sa) return sb - sa;
+      return a.name.localeCompare(b.name);
+    })
+    .slice(0, 30)
+    .map((d) => {
+      const entry = scoreByDest.get(d.id);
+      return {
+        id: d.id,
+        title: `${d.name} in ${currentMonthName}`,
+        href: `/en/destination/${d.id}/${currentMonthSlug}`,
+        desc: entry?.note
+          ? `${entry.score}/5 for ${currentMonthName} — ${entry.note}`
+          : `${entry?.score ?? "—"}/5 for ${currentMonthName} — weather, crowds, costs${d.elevation_m ? ` (${d.elevation_m}m)` : ""}`,
+        months: [currentMonthName],
+      };
+    });
+  const bestTimeCount = destinations.filter((d) => (scoreByDest.get(d.id)?.score ?? 0) >= 4).length;
 
   // Generate "vs" comparison guides
   const vsGuides = comparisons
@@ -151,9 +174,11 @@ export function GuideContent({
           <p className="text-xs font-medium uppercase tracking-widest text-emerald-400 mb-1">
             Seasonal Intelligence
           </p>
-          <h2 className="text-2xl font-bold sm:text-3xl">Best Time to Visit</h2>
+          <h2 className="text-2xl font-bold sm:text-3xl">Best Time to Visit — {currentMonthName}</h2>
           <p className="text-muted-foreground mt-1">
-            Monthly suitability scores, crowd levels, and weather reality
+            {bestTimeCount > 0
+              ? `${bestTimeCount} destinations scoring 4-5/5 for ${currentMonthName} — sorted by monthly score`
+              : `Monthly suitability scores, crowd levels, and weather reality`}
           </p>
         </div>
         <StaggerContainer className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
@@ -195,6 +220,16 @@ export function GuideContent({
             </StaggerItem>
           ))}
         </StaggerContainer>
+        {bestTimeCount > 30 && (
+          <div className="mt-6 text-right">
+            <Link
+              href={`/en/where-to-go/${currentMonthSlug}`}
+              className="text-sm font-medium text-emerald-400 hover:text-emerald-300 transition-colors"
+            >
+              View all {bestTimeCount} destinations for {currentMonthName} →
+            </Link>
+          </div>
+        )}
       </ScrollReveal>
 
       {/* Vs Comparisons */}

@@ -1,0 +1,11 @@
+import { createClient } from '@supabase/supabase-js';
+import { config } from 'dotenv';
+config({ path: 'apps/web/.env.local' });
+const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE_KEY, { auth: { persistSession: false }});
+const m = new Date().getMonth() + 1;
+const names = ['','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+const { count: total } = await supabase.from('destination_months').select('*', { count: 'exact', head: true }).eq('month', m);
+const { count: ge4 } = await supabase.from('destination_months').select('*', { count: 'exact', head: true }).eq('month', m).gte('score', 4);
+console.log(`${names[m]} (month=${m}): ${total} rows, ${ge4} with score>=4`);
+const { data } = await supabase.from('destination_months').select('destination_id, score, destinations:destination_id(name)').eq('month', m).gte('score', 4).order('score', { ascending: false }).limit(35);
+for (const r of data || []) console.log(`  ${r.score}/5  ${r.destinations?.name}`);
