@@ -1,6 +1,8 @@
 /* ── NakshIQ Service Worker — Offline-First for SOS & Saved ── */
 
-const CACHE_VERSION = "nakshiq-v2";
+// Bump when UX/content pages change materially — activate() drops older caches.
+// v3: 2026-04-22 ToC + long-scroll redesign on destination/state/blog pages.
+const CACHE_VERSION = "nakshiq-v3";
 const STATIC_CACHE = `${CACHE_VERSION}-static`;
 const IMAGE_CACHE = `${CACHE_VERSION}-images`;
 const DATA_CACHE = `${CACHE_VERSION}-data`;
