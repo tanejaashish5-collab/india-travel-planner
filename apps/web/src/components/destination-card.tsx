@@ -152,16 +152,27 @@ export function DestinationCard({
         )}
       </div>
 
-      {/* Best months */}
-      <div className="mt-3 flex flex-wrap gap-1">
-        {best_months.slice(0, 4).map((m) => (
-          <span
-            key={m}
-            className="rounded bg-muted px-1.5 py-1 text-xs font-medium text-muted-foreground"
-          >
-            {t(String(m)).slice(0, 3)}
-          </span>
-        ))}
+      {/* Best months — sorted chronologically (not by ranking) so gaps read naturally;
+          consistent pill styling with blog/guide surfaces; current month highlighted. */}
+      <div className="mt-3 flex flex-wrap gap-1.5">
+        {[...best_months]
+          .sort((a, b) => a - b)
+          .slice(0, 6)
+          .map((m) => {
+            const isNow = m === currentMonth;
+            return (
+              <span
+                key={m}
+                className={`rounded-full border px-2.5 py-0.5 text-[11px] font-medium backdrop-blur-sm ${
+                  isNow
+                    ? "border-primary/40 bg-primary/10 text-primary"
+                    : "border-border bg-muted/50 text-muted-foreground"
+                }`}
+              >
+                {t(String(m)).slice(0, 3)}
+              </span>
+            );
+          })}
       </div>
 
       {/* Tags */}

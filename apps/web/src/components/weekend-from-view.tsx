@@ -12,6 +12,15 @@ const BANDS: Band[] = [
   { label: "Long weekend", sublabel: "300–500 km", min: 300, max: 500 },
 ];
 
+// Month in IST — matches the /guide pattern. Vercel runs in UTC; without this,
+// the page flips to the new month at 05:30 IST (UTC midnight) — up to ~5.5h
+// after Indian users' phones say it's the new month.
+function currentMonthIST(): number {
+  return Number(
+    new Date().toLocaleString("en-US", { timeZone: "Asia/Kolkata", month: "numeric" }),
+  );
+}
+
 function getSupabase() {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
@@ -41,7 +50,7 @@ export async function WeekendFromView({ locale, city }: { locale: string; city: 
     .select("id, name, tagline, difficulty, elevation_m, tags, best_months, translations, state_id, budget_tier, solo_female_score, state:states(name), kids_friendly(suitable, rating), destination_months(month, score)")
     .in("id", ids);
 
-  const currentMonth = new Date().getMonth() + 1;
+  const currentMonth = currentMonthIST();
   const distMap = new Map<string, number>(nearby.map((n: any) => [n.destination_id, n.distance_km]));
   const hydrated = (full ?? [])
     .map((d: any) => ({
@@ -125,7 +134,11 @@ export async function WeekendFromView({ locale, city }: { locale: string; city: 
                         translations={d.translations}
                         solo_female_score={d.solo_female_score ?? null}
                       />
-                      <div className="absolute top-3 right-3 rounded-md bg-background/80 px-2 py-1 font-mono text-[10px] tracking-wider uppercase text-foreground backdrop-blur-sm">
+                      {/* Distance pill — bottom-right corner so it doesn't collide
+                          with the score / kids / solo-female chips at the top of
+                          the card. pointer-events-none lets the whole card remain
+                          one click target. */}
+                      <div className="pointer-events-none absolute bottom-3 right-3 z-10 rounded-full border border-border/60 bg-background/85 px-2.5 py-1 font-mono text-[10px] tracking-[0.12em] uppercase text-muted-foreground backdrop-blur-sm">
                         {d.distance_km} km · ~{hours} h
                       </div>
                     </div>
