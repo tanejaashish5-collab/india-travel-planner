@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import {
   View,
   Text,
@@ -53,8 +53,25 @@ export default function DestinationScreen() {
   const { articles: guideArticles } = useArticlesForDestination(id);
   const { isVisited, toggleVisited } = useVisited();
   const { reviews, refetch: refetchReviews } = useReviews(id);
-  const [activeTab, setActiveTab] = useState("overview");
+  // Long-scroll + section-jump pattern — tabs now scroll to their section
+  // instead of hiding/showing content, matching the web destination redesign.
+  const [activeSection, setActiveSection] = useState("overview");
+  const scrollRef = useRef<ScrollView>(null);
+  const sectionYRef = useRef<Record<string, number>>({});
   const currentMonth = new Date().getMonth() + 1;
+
+  const onSectionLayout = (id: string) => (e: any) => {
+    sectionYRef.current[id] = e.nativeEvent.layout.y;
+  };
+
+  const scrollToSection = (id: string) => {
+    setActiveSection(id);
+    const y = sectionYRef.current[id];
+    if (y != null) {
+      // Offset for the sticky-ish header space — keep the label visible.
+      scrollRef.current?.scrollTo({ y: Math.max(0, y - 60), animated: true });
+    }
+  };
 
   if (loading || !dest) {
     return (
@@ -93,7 +110,7 @@ export default function DestinationScreen() {
 
   return (
     <View style={{ flex: 1 }}>
-    <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
+    <ScrollView ref={scrollRef} style={styles.container} showsVerticalScrollIndicator={false}>
       <Stack.Screen options={{ title: dest.name, headerBackTitle: "Back" }} />
 
       {/* Hero image */}
@@ -231,21 +248,22 @@ export default function DestinationScreen() {
         )}
       </View>
 
-      {/* Tab navigation */}
+      {/* Section jumper — taps scroll the page to that section (no longer hides content) */}
       <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.tabBar}>
         {tabs.map((tab) => (
           <TouchableOpacity
             key={tab.id}
-            style={[styles.tab, activeTab === tab.id && styles.tabActive]}
-            onPress={() => setActiveTab(tab.id)}
+            style={[styles.tab, activeSection === tab.id && styles.tabActive]}
+            onPress={() => scrollToSection(tab.id)}
           >
-            <Text style={[styles.tabText, activeTab === tab.id && styles.tabTextActive]}>{tab.label}</Text>
+            <Text style={[styles.tabText, activeSection === tab.id && styles.tabTextActive]}>{tab.label}</Text>
           </TouchableOpacity>
         ))}
       </ScrollView>
 
-      {/* Tab content */}
-      {activeTab === "overview" && (
+      {/* Overview section */}
+      <View onLayout={onSectionLayout("overview")}>
+      {true && (
         <View style={styles.tabContent}>
           {/* Why Special */}
           {dest.why_special && (
@@ -409,9 +427,11 @@ export default function DestinationScreen() {
           )}
         </View>
       )}
+      </View>
 
-      {/* Monthly tab */}
-      {activeTab === "monthly" && (
+      {/* Monthly section */}
+      <View onLayout={onSectionLayout("monthly")}>
+      {true && (
         <View style={styles.tabContent}>
           <View style={styles.sectionCard}>
             <Text style={styles.sectionTitle}>Monthly Scores</Text>
@@ -434,9 +454,11 @@ export default function DestinationScreen() {
           </View>
         </View>
       )}
+      </View>
 
-      {/* Kids tab */}
-      {activeTab === "kids" && kf && (
+      {/* Kids section */}
+      <View onLayout={onSectionLayout("kids")}>
+      {kf && (
         <View style={styles.tabContent}>
           <View style={styles.sectionCard}>
             <Text style={styles.sectionTitle}>Kids & Family</Text>
@@ -455,9 +477,11 @@ export default function DestinationScreen() {
           </View>
         </View>
       )}
+      </View>
 
-      {/* Safety tab */}
-      {activeTab === "safety" && cc && (
+      {/* Safety section */}
+      <View onLayout={onSectionLayout("safety")}>
+      {cc && (
         <View style={styles.tabContent}>
           <View style={styles.sectionCard}>
             <Text style={styles.sectionTitle}>Safety & Infrastructure</Text>
@@ -489,9 +513,11 @@ export default function DestinationScreen() {
           </View>
         </View>
       )}
+      </View>
 
-      {/* Reviews tab */}
-      {activeTab === "reviews" && (
+      {/* Reviews section */}
+      <View onLayout={onSectionLayout("reviews")}>
+      {true && (
         <View style={styles.tabContent}>
           <ReviewForm destinationId={id} onSubmitted={refetchReviews} />
 
@@ -520,6 +546,7 @@ export default function DestinationScreen() {
           )}
         </View>
       )}
+      </View>
 
       {/* Emergency SOS */}
       {dest.emergencySos && (
