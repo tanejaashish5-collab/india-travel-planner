@@ -4234,3 +4234,20 @@ Date range: 2026-04-15 → 2026-04-21
 2026-04-22 11:42:05  INFO      YT Short posted: format=this_vs_that, music=14_monsoon
 2026-04-22 11:42:05  INFO      State saved. YT Short run complete.
 2026-04-22 11:42:05  INFO      ════════════════════════════════════════════════════════════
+2026-04-22 11:49:51  INFO      ════════════════════════════════════════════════════════════
+2026-04-22 11:49:51  INFO      Nakshiq Autoposter · YT SHORT · 2026-04-22
+2026-04-22 11:49:51  INFO      ════════════════════════════════════════════════════════════
+2026-04-22 11:51:15  INFO      Short rendered: yt_short_dont_go_here_2026-04-22.mp4 (18887 KB, 36.0s, fmt=dont_go_here, music=00_golden_hour)
+2026-04-22 11:51:15  INFO          Requesting upload URL for yt_short_dont_go_here_yt_short_dont_go_here_2026-04-22.mp4 (19,340,650 bytes, video/mp4)
+2026-04-22 11:51:16  INFO          Uploading to R2 (timeout=300s)...
+2026-04-22 11:51:18  INFO          R2 PUT OK. Confirming...
+2026-04-22 11:51:18  INFO          Media ready: B3THn (19,340,650 bytes · yt_short_dont_go_here_yt_short_dont_go_here_2026-04-22.mp4)
+2026-04-22 11:51:18  INFO      Video uploaded: yt_short_dont_go_here_yt_short_dont_go_here_2026-04-22.mp4
+2026-04-22 11:51:19  INFO      [instagram/nakshiq] Already posted 2 YT Shorts today — skipping.
+2026-04-22 11:51:19  INFO      [facebook/Nakshiq] Skipping (YT Shorts post to YouTube + Instagram only).
+2026-04-22 11:51:19  INFO      [youtube/@naksh-iq] Publishing YT Short (dont_go_here)...
+2026-04-22 11:51:21  INFO      [youtube/@naksh-iq] Outstand accepted (post_id=OnAcv), waiting for platform confirmation...
+2026-04-22 11:51:27  WARNING       Platform error: Error publishing post to YouTube: Failed to initiate YouTube resumable upload: 401 - "{\"error\":{\"code\":401,\"message\":\"Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.\",\"errors\":[{\"message\":\"Invalid Credentials\",\"domain\":\"global\",\"reason\":\"authError\",\"location\":\"Authorization\",\"locationType\":\"header\"}],\"status\":\"UNAUTHENTICATED\"}}"
+2026-04-22 11:51:27  WARNING   [youtube/@naksh-iq] ⚠️  YT Short queued but NOT confirmed (post_id=OnAcv). May have silently failed.
+2026-04-22 11:51:27  INFO      State saved. YT Short run complete.
+2026-04-22 11:51:27  INFO      ════════════════════════════════════════════════════════════
