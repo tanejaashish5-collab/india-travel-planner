@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
   const { data: dests } = await supabase
     .from("destinations")
-    .select("id, name, difficulty, elevation_m, best_months, state:states(name)")
+    .select("id, name, difficulty, elevation_m, best_months, state:states(name), kids_friendly(suitable, rating, min_recommended_age, reasons)")
     .order("name");
 
   // Get popular comparison pairs from tourist_trap_alternatives

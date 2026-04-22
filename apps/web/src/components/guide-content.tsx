@@ -9,6 +9,13 @@ import {
   ScrollReveal,
 } from "./animated-hero";
 
+interface KidsFriendly {
+  suitable: boolean | null;
+  rating: number | null;
+  min_recommended_age: number | null;
+  reasons: string[] | null;
+}
+
 interface Destination {
   id: string;
   name: string;
@@ -16,6 +23,7 @@ interface Destination {
   elevation_m: number | null;
   best_months: number[] | null;
   state: { name: string } | { name: string }[] | null;
+  kids_friendly?: KidsFriendly | KidsFriendly[] | null;
 }
 
 interface Comparison {
@@ -118,10 +126,15 @@ export function GuideContent({
     })
     .filter((g) => g.title && !g.title.includes("undefined"));
 
-  // Family guides
+  // Family guides — top 30 by kids_friendly rating. Uses the curated
+  // kids_friendly table (suitable + rating 1-5) instead of the old
+  // difficulty="easy" alphabetical slice. Matches the sort/unwrap pattern
+  // used by /en/family/[state] so the two callers stay in sync.
+  const kf = (d: Destination) => (Array.isArray(d.kids_friendly) ? d.kids_friendly[0] : d.kids_friendly) ?? null;
   const familyGuides = destinations
-    .filter((d) => d.difficulty === "easy")
-    .slice(0, 15)
+    .filter((d) => kf(d)?.suitable === true)
+    .sort((a, b) => (kf(b)?.rating ?? 0) - (kf(a)?.rating ?? 0))
+    .slice(0, 30)
     .map((d) => ({
       id: d.id,
       title: `${d.name} with Kids — Family Guide`,
@@ -322,6 +335,14 @@ export function GuideContent({
             </StaggerItem>
           ))}
         </StaggerContainer>
+        <div className="mt-6 text-right">
+          <Link
+            href="/en/explore?kids=true"
+            className="text-sm font-medium text-amber-400 hover:text-amber-300 transition-colors"
+          >
+            View all family-friendly destinations →
+          </Link>
+        </div>
       </ScrollReveal>
     </div>
   );
