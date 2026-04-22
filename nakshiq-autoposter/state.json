@@ -13,8 +13,8 @@
     "12_velvet_noir"
   ],
   "posted_today": {
-    "PdMu0": "2026-04-21",
-    "m8EAd": "2026-04-21",
+    "PdMu0": "2026-04-22",
+    "m8EAd": "2026-04-22",
     "m8EAd_reel": "2026-04-21",
     "PdMu0_reel": "2026-04-21",
     "4QL0i_reel": "2026-04-19",
@@ -41,7 +41,7 @@
     "36BUk_yt_short": "2026-04-21",
     "36BUk_yt_short_count": 1
   },
-  "last_sync": "2026-04-21T05:26:19.930466+00:00",
+  "last_sync": "2026-04-22T04:35:54.670491+00:00",
   "posted_destinations": [
     {
       "destination_id": "pahalgam",
@@ -138,6 +138,14 @@
     {
       "destination_id": "palampur",
       "date": "2026-04-21"
+    },
+    {
+      "destination_id": "coonoor",
+      "date": "2026-04-22"
+    },
+    {
+      "destination_id": "yt_short_did_you_know_yt_short_did_you_know_2026-04-22",
+      "date": "2026-04-22"
     }
   ],
   "posted_formats": {
@@ -345,7 +353,9 @@
       "pomelli_dangerous_vs_overhyped.png": [
         "2026-04-21"
       ]
-    }
+    },
+    "morning_formats": {},
+    "collections": {}
   },
   "infographic": {
     "last_topic_idx": 0,
