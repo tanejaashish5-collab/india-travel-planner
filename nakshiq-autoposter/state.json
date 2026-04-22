@@ -26,9 +26,9 @@
     "4QL0i_reel": "2026-04-19",
     "m8EAd_canva": "2026-04-20",
     "PdMu0_canva": "2026-04-20",
-    "m8EAd_evening": "2026-04-20",
-    "m8EAd_evening_story": "2026-04-20",
-    "PdMu0_evening": "2026-04-20",
+    "m8EAd_evening": "2026-04-22",
+    "m8EAd_evening_story": "2026-04-22",
+    "PdMu0_evening": "2026-04-22",
     "m8EAd_yt_short": "2026-04-22",
     "m8EAd_yt_short_count": 2,
     "jUmP2_yt_short": "2026-04-20",
@@ -47,7 +47,7 @@
     "36BUk_yt_short": "2026-04-21",
     "36BUk_yt_short_count": 1
   },
-  "last_sync": "2026-04-22T07:12:44.489620+00:00",
+  "last_sync": "2026-04-22T10:09:57.724730+00:00",
   "posted_destinations": [
     {
       "destination_id": "pahalgam",
@@ -176,6 +176,22 @@
     {
       "destination_id": "manikaran",
       "date": "2026-04-22"
+    },
+    {
+      "destination_id": "devprayag",
+      "date": "2026-04-22"
+    },
+    {
+      "destination_id": "chopta",
+      "date": "2026-04-22"
+    },
+    {
+      "destination_id": "devprayag",
+      "date": "2026-04-22"
+    },
+    {
+      "destination_id": "chopta",
+      "date": "2026-04-22"
     }
   ],
   "posted_formats": {
@@ -183,13 +199,15 @@
       "monthly_forecast",
       "methodology_roads",
       "score_card",
-      "methodology_family"
+      "methodology_family",
+      "collection_spotlight"
     ],
     "PdMu0": [
       "monthly_forecast",
       "methodology_roads",
       "score_card",
-      "methodology_family"
+      "methodology_family",
+      "collection_spotlight"
     ]
   },
   "post_log": [
@@ -294,6 +312,37 @@
       "destination": "manikaran",
       "format": "methodology_family",
       "has_media": true
+    },
+    {
+      "timestamp": "2026-04-22T10:11:19.330442+00:00",
+      "date": "2026-04-22",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "Xj0ce",
+      "destination": "devprayag",
+      "format": "collection_spotlight",
+      "has_media": true
+    },
+    {
+      "timestamp": "2026-04-22T10:11:43.425383+00:00",
+      "date": "2026-04-22",
+      "platform": "instagram_story",
+      "account_id": "m8EAd",
+      "post_id": "5pSvD",
+      "destination": "kanatal",
+      "format": "blog_promo",
+      "has_media": true,
+      "mode": "evening"
+    },
+    {
+      "timestamp": "2026-04-22T10:12:15.722515+00:00",
+      "date": "2026-04-22",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "FfcyZ",
+      "destination": "devprayag",
+      "format": "collection_spotlight",
+      "has_media": true
     }
   ],
   "theme_usage": {
@@ -321,6 +370,15 @@
         "2026-04-20"
       ],
       "manikaran": [
+        "2026-04-22"
+      ],
+      "devprayag": [
+        "2026-04-22"
+      ],
+      "chopta": [
+        "2026-04-22"
+      ],
+      "kanatal": [
         "2026-04-22"
       ]
     },
@@ -369,6 +427,9 @@
       ],
       "yercaud": [
         "2026-04-20"
+      ],
+      "devprayag": [
+        "2026-04-22"
       ]
     },
     "festivals": {
@@ -389,7 +450,11 @@
         "2026-04-20"
       ]
     },
-    "articles": {},
+    "articles": {
+      "solo-female-manali-guide": [
+        "2026-04-22"
+      ]
+    },
     "tourist_map_states": {
       "HP": [
         "2026-04-21"
@@ -423,7 +488,11 @@
       ]
     },
     "morning_formats": {},
-    "collections": {}
+    "collections": {
+      "adrenaline-rush": [
+        "2026-04-22"
+      ]
+    }
   },
   "infographic": {
     "last_topic_idx": 1,
