@@ -35,8 +35,8 @@
     "jUmP2_reel": "2026-04-20",
     "m8EAd_tourist_map": "2026-04-21",
     "PdMu0_tourist_map": "2026-04-21",
-    "m8EAd_pomelli": "2026-04-21",
-    "PdMu0_pomelli": "2026-04-21",
+    "m8EAd_pomelli": "2026-04-22",
+    "PdMu0_pomelli": "2026-04-22",
     "36BUk_reel": "2026-04-21",
     "36BUk_yt_short": "2026-04-21",
     "36BUk_yt_short_count": 1
@@ -403,11 +403,17 @@
     "pomelli_campaigns": {
       "dangerous_roads": [
         "2026-04-21"
+      ],
+      "safety_data": [
+        "2026-04-22"
       ]
     },
     "pomelli_images": {
       "pomelli_dangerous_vs_overhyped.png": [
         "2026-04-21"
+      ],
+      "pomelli_midnight_safety_scores.png": [
+        "2026-04-22"
       ]
     },
     "morning_formats": {},
