@@ -6,7 +6,19 @@ import { createClient } from "@supabase/supabase-js";
 import { GuideContent } from "@/components/guide-content";
 import { localeAlternates } from "@/lib/seo-utils";
 
-export const revalidate = 86400;
+// 1-hour ISR window so the month rollover flips within ~1h after IST
+// midnight instead of up to ~24h. Combined with IST-aware currentMonth
+// below, May 1 visitors see May content within the first hour.
+export const revalidate = 3600;
+
+// Month in IST, not UTC. Vercel runs in UTC; without this, the page flips
+// to the new month at 05:30 IST (midnight UTC) — ~5.5h after Indian users'
+// phones say it's the new month.
+function currentMonthIST(): number {
+  return Number(
+    new Date().toLocaleString("en-US", { timeZone: "Asia/Kolkata", month: "numeric" }),
+  );
+}
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -21,10 +33,10 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 async function getGuideData() {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-  if (!url || !key) return { destinations: [], comparisons: [], monthScores: [], currentMonth: new Date().getMonth() + 1 };
+  if (!url || !key) return { destinations: [], comparisons: [], monthScores: [], currentMonth: currentMonthIST() };
 
   const supabase = createClient(url, key);
-  const currentMonth = new Date().getMonth() + 1;
+  const currentMonth = currentMonthIST();
 
   const [{ data: dests }, { data: pairs }, { data: monthScores }] = await Promise.all([
     supabase
