@@ -1,0 +1,55 @@
+{
+  "_comment": "Strip unverified eatery names from blog prose — same rule as stays. Where the name is load-bearing (food-trail blogs), replace with a pattern-pointer to the destination's eats section. Generated 2026-04-22 from scripts/audit-blog-eateries.mjs.",
+  "rewrites": [
+    {
+      "slug": "dharamshala-tibetan-food-trail",
+      "find": "Jimmy's Italian Kitchen: Wood-fired pizza that has no business being this good at 2,000m.",
+      "replace": "One unassuming Italian kitchen in upper Mcleodganj turns out wood-fired pizza that has no business being this good at 2,000m — the local food scene's open secret."
+    },
+    {
+      "slug": "dharamshala-tibetan-food-trail",
+      "find": "Common Ground Cafe: Cinnamon rolls and drip coffee.",
+      "replace": "A low-key cafe off the main drag does cinnamon rolls and drip coffee."
+    },
+    {
+      "slug": "first-48-hours-delhi-survival-guide",
+      "find": "Eat at: Rajdhani (Gujarati thali, unlimited food, ₹600), Wenger's (bakery since 1926), or Farzi Cafe (modern Indian, ₹1,500 per person).",
+      "replace": "Eat at: a veg-thali chain (Rajdhani or Govinda's, unlimited food around ₹600), Wenger's (Delhi institution bakery, since 1926), or any modern-Indian place in Connaught Place (₹1,200-1,800 per person)."
+    },
+    {
+      "slug": "pushkar-in-october-scored",
+      "find": "**Cafes on the Main Bazaar strip** (Honey & Spice, Sunset Cafe, the rooftop at Seventh Heaven) are running at 60% capacity in October and 130% in November.",
+      "replace": "**Cafes on the Main Bazaar strip** are running at 60% capacity in October and 130% in November — the rooftop cafes with ghat views fill first."
+    },
+    {
+      "slug": "rajasthani-thali-trail",
+      "find": "Gypsy Restaurant on Airport Road for full Marwari thali: ker sangri, gatte ki sabzi, bajra roti.",
+      "replace": "A full Marwari thali on Airport Road (ker sangri, gatte ki sabzi, bajra roti) is the classic Jodhpur plate — Jodhpur locals can point you to the current best."
+    },
+    {
+      "slug": "rajasthani-thali-trail",
+      "find": "Rajasthan is predominantly vegetarian, but Handi Restaurant in Jaipur does a credible laal maas.",
+      "replace": "Rajasthan is predominantly vegetarian, but a handful of Jaipur restaurants do a credible laal maas — ask at your hotel for the current pick."
+    },
+    {
+      "slug": "solo-female-manali-guide",
+      "find": "**Women-owned stays**: Seven Hills Cafe & Guesthouse, Trimurti Garden Cafe, Bhagsu Cafe guesthouses.",
+      "replace": "**Women-owned stays**: a cluster of small cafe-guesthouses in the Bhagsu neighbourhood — see the [Mcleodganj stays section](/en/destination/mcleodganj) for vetted picks."
+    },
+    {
+      "slug": "things-to-know-goa-in-december",
+      "find": "New Year parties worth doing: Sunburn Festival (when running — check dates) is the big commercial option; Café Mambo, Tito's, LPK are mainstream;",
+      "replace": "New Year parties worth doing: Sunburn Festival (when running — check dates) is the big commercial option; the Baga strip clubs (Tito's Lane) are mainstream;"
+    },
+    {
+      "slug": "things-to-know-meghalaya-in-july",
+      "find": "Shillong's food scene is underrated: Trattoria (local Khasi), Cafe Shillong Heritage, ML 05 Cafe.",
+      "replace": "Shillong's food scene is underrated — Khasi, Chinese, Italian, and cafe-culture pockets all within a 2km radius. See the [Shillong eats section](/en/destination/shillong) for vetted picks."
+    },
+    {
+      "slug": "two-weeks-india-itinerary-first-time",
+      "find": "Afternoon: Tibetan cooking class (book through your hotel or search \"Lhamo's Kitchen\" — ₹1,500 per person, 3 hours).",
+      "replace": "Afternoon: Tibetan cooking class (book through your Dharamshala hotel — ₹1,500 per person, 3 hours; multiple operators run them)."
+    }
+  ]
+}
