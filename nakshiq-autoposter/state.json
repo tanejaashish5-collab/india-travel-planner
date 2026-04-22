@@ -28,8 +28,8 @@
     "jUmP2_yt_short": "2026-04-20",
     "jUmP2_yt_short_count": 1,
     "jUmP2": "2026-04-20",
-    "m8EAd_moat": "2026-04-20",
-    "PdMu0_moat": "2026-04-20",
+    "m8EAd_moat": "2026-04-22",
+    "PdMu0_moat": "2026-04-22",
     "m8EAd_infographic": "2026-04-20",
     "PdMu0_infographic": "2026-04-20",
     "jUmP2_reel": "2026-04-20",
@@ -41,7 +41,7 @@
     "36BUk_yt_short": "2026-04-21",
     "36BUk_yt_short_count": 1
   },
-  "last_sync": "2026-04-22T05:24:37.487320+00:00",
+  "last_sync": "2026-04-22T06:58:22.694418+00:00",
   "posted_destinations": [
     {
       "destination_id": "pahalgam",
@@ -146,18 +146,44 @@
     {
       "destination_id": "yt_short_did_you_know_yt_short_did_you_know_2026-04-22",
       "date": "2026-04-22"
+    },
+    {
+      "destination_id": "dirang",
+      "date": "2026-04-22"
+    },
+    {
+      "destination_id": "morni-hills",
+      "date": "2026-04-22"
+    },
+    {
+      "destination_id": "bandipur",
+      "date": "2026-04-22"
+    },
+    {
+      "destination_id": "reel_seasonal_shift_reel_seasonal_shift_yuksom",
+      "date": "2026-04-22"
+    },
+    {
+      "destination_id": "manikaran",
+      "date": "2026-04-22"
+    },
+    {
+      "destination_id": "manikaran",
+      "date": "2026-04-22"
     }
   ],
   "posted_formats": {
     "m8EAd": [
       "monthly_forecast",
       "methodology_roads",
-      "score_card"
+      "score_card",
+      "methodology_family"
     ],
     "PdMu0": [
       "monthly_forecast",
       "methodology_roads",
-      "score_card"
+      "score_card",
+      "methodology_family"
     ]
   },
   "post_log": [
@@ -242,6 +268,26 @@
       "destination": "yercaud",
       "format": "score_card",
       "has_media": true
+    },
+    {
+      "timestamp": "2026-04-22T06:59:13.547211+00:00",
+      "date": "2026-04-22",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "x9uC8",
+      "destination": "manikaran",
+      "format": "methodology_family",
+      "has_media": true
+    },
+    {
+      "timestamp": "2026-04-22T06:59:30.340503+00:00",
+      "date": "2026-04-22",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "PIaV0",
+      "destination": "manikaran",
+      "format": "methodology_family",
+      "has_media": true
     }
   ],
   "theme_usage": {
@@ -267,6 +313,9 @@
       ],
       "almora": [
         "2026-04-20"
+      ],
+      "manikaran": [
+        "2026-04-22"
       ]
     },
     "reel_formats": {
@@ -324,6 +373,9 @@
     "moat_angles": {
       "methodology_roads": [
         "2026-04-20"
+      ],
+      "methodology_family": [
+        "2026-04-22"
       ]
     },
     "audience_tags": {
