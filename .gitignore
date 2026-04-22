@@ -34,3 +34,9 @@ test-results/
 
 # Generated video-audit thumbnails (regenerate via scripts/generate-video-thumb-grid.mjs)
 data/video-audit/
+
+# Destination videos — authoritative copy lives on Cloudflare R2 (see
+# scripts/upload-videos.mjs). Keep local working copies out of git so the
+# repo doesn't bloat with binary .mp4 files. Historical videos committed
+# before the R2 migration remain in history.
+videos/
