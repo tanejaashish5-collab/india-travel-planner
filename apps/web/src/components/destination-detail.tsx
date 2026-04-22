@@ -4,7 +4,9 @@
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import { useLocale, useTranslations } from "next-intl";
-import { m as motion, AnimatePresence } from "framer-motion";
+import { m as motion } from "framer-motion";
+import { DestinationSectionNav } from "./destination-section-nav";
+import { DestinationGuideToC } from "./destination-guide-toc";
 import { MonthlyChart } from "./monthly-chart";
 import { WeatherWidget } from "./weather-widget";
 import { ShareButton } from "./share-button";
@@ -42,40 +44,24 @@ export function DestinationDetail({ dest }: { dest: any }) {
   const t = useTranslations("destination");
   const tm = useTranslations("months");
 
-  const TABS = [
-    { id: "overview", label: t("overview") },
-    { id: "monthly", label: t("monthly") },
-    { id: "kids", label: t("kids") },
-    { id: "safety", label: t("safety") },
-    { id: "places", label: t("places") },
-    { id: "food", label: t("foodAndPeople") },
-    { id: "reviews", label: "Reviews" },
-  ];
-  const [activeTab, setActiveTab] = useState("overview");
   const [saved, setSaved] = useState(false);
 
-  // Hash → tab deep-linking (search results route through URL hashes to surface a specific item).
-  // Map hash prefixes to which tab renders that kind of content.
+  // Hash-link smooth-scroll (search results + deep links arrive via #sub-xyz, #safety, etc).
+  // With long-scroll all targets are already in DOM, so native anchor scroll does the rest —
+  // we just upgrade it to smooth scroll with sticky-header offset.
   useEffect(() => {
     if (typeof window === "undefined") return;
-    function syncTabFromHash() {
+    function smoothScrollToHash() {
       const raw = window.location.hash.replace(/^#/, "");
       if (!raw) return;
-      let next: string | null = null;
-      if (raw === "places" || raw.startsWith("sub-") || raw === "hidden-gems" || raw.startsWith("gem-") || raw.startsWith("poi-")) next = "places";
-      else if (raw === "festivals" || raw.startsWith("festival-")) next = "overview";
-      else if (raw === "stays" || raw.startsWith("stay-") || raw === "food") next = "food";
-      else if (raw === "monthly" || raw === "kids" || raw === "safety" || raw === "reviews" || raw === "overview") next = raw;
-      if (next) setActiveTab(next);
-      // Let the browser scroll to the anchor after React renders the target tab.
       requestAnimationFrame(() => {
         const el = document.getElementById(raw);
         if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
       });
     }
-    syncTabFromHash();
-    window.addEventListener("hashchange", syncTabFromHash);
-    return () => window.removeEventListener("hashchange", syncTabFromHash);
+    smoothScrollToHash();
+    window.addEventListener("hashchange", smoothScrollToHash);
+    return () => window.removeEventListener("hashchange", smoothScrollToHash);
   }, []);
 
   // Translation-aware name, tagline, and why_special
@@ -120,16 +106,25 @@ export function DestinationDetail({ dest }: { dest: any }) {
   // Traveler fit based on data
   const travelerFit = getTravelerFit(dest, kf);
 
-  // Filter tabs to only show ones with data
-  const availableTabs = TABS.filter((tab) => {
-    if (tab.id === "monthly" && months.length === 0) return false;
-    if (tab.id === "kids" && !kf) return false;
-    if (tab.id === "safety" && !cc) return false;
-    if (tab.id === "places" && subs.length === 0 && gems.length === 0 && pois.length === 0) return false;
-    if (tab.id === "food" && legends.length === 0 && eats.length === 0) return false;
-    if (tab.id === "reviews" && (!dest.traveler_notes || dest.traveler_notes.length === 0) && (!dest.reviews || dest.reviews.length === 0)) return false;
-    return true;
-  });
+  // Section availability — drives which long-scroll sections render AND which tiles
+  // appear in the ToC hero + sticky mini-nav. Keeping same gates as the old availableTabs.
+  const hasMonthly = months.length > 0;
+  const hasKids = !!kf;
+  const hasSafety = !!cc || dest.solo_female_score != null;
+  const hasPlaces = subs.length > 0 || gems.length > 0 || pois.length > 0;
+  const hasFood = legends.length > 0 || eats.length > 0 || (dest.local_stays?.length ?? 0) > 0;
+  const hasReviews = (dest.traveler_notes?.length ?? 0) > 0 || (dest.reviews?.length ?? 0) > 0;
+
+  // Ordered list of sections that will actually render — consumed by the mini-nav and ToC.
+  const availableSections = [
+    { id: "overview", label: t("overview"), show: true },
+    { id: "monthly", label: t("monthly"), show: hasMonthly },
+    { id: "kids", label: t("kids"), show: hasKids },
+    { id: "safety", label: t("safety"), show: hasSafety },
+    { id: "places", label: t("places"), show: hasPlaces },
+    { id: "food", label: t("foodAndPeople"), show: hasFood },
+    { id: "reviews", label: "Reviews", show: hasReviews },
+  ].filter((s) => s.show);
 
   return (
     <>
@@ -511,46 +506,39 @@ export function DestinationDetail({ dest }: { dest: any }) {
           </FadeIn>
         )}
 
-        {/* Tab navigation — no FadeIn wrapper (breaks sticky) */}
-        <div className="mb-6 sticky top-[64px] z-40" style={{ isolation: "isolate" }}>
-          <div className="flex gap-1 overflow-x-auto rounded-xl border border-border bg-background p-1 shadow-sm">
-            {availableTabs.map((tab) => (
-              <button
-                key={tab.id}
-                onClick={() => setActiveTab(tab.id)}
-                className={`relative rounded-lg px-4 py-2 text-sm font-medium whitespace-nowrap transition-colors ${
-                  activeTab === tab.id ? "text-foreground" : "text-muted-foreground hover:text-foreground"
-                }`}
-              >
-                {activeTab === tab.id && (
-                  <motion.div
-                    layoutId="activeTab"
-                    className="absolute inset-0 rounded-lg bg-background border border-border shadow-sm"
-                    transition={{ type: "spring", stiffness: 400, damping: 30 }}
-                  />
-                )}
-                <span className="relative z-10">{tab.label}</span>
-              </button>
-            ))}
-          </div>
-        </div>
+        {/* Visual ToC hero — the "In this guide" grid that surfaces every section's content */}
+        <DestinationGuideToC
+          dest={dest}
+          months={months}
+          kf={kf}
+          cc={cc}
+          subs={subs}
+          gems={gems}
+          pois={pois}
+          eats={eats}
+          legends={legends}
+          has={{
+            monthly: hasMonthly,
+            kids: hasKids,
+            safety: hasSafety,
+            places: hasPlaces,
+            food: hasFood,
+            reviews: hasReviews,
+          }}
+        />
 
-        {/* Tab content */}
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={activeTab}
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.2 }}
-          >
-            {activeTab === "overview" && (
-              <div className="space-y-8">
+        {/* Sticky mini-nav — pops in after ToC scrolls away, scroll-spies visible section */}
+        <DestinationSectionNav sections={availableSections} />
+
+        {/* === LONG-SCROLL CONTENT === all sections stacked below, gated by data availability === */}
+        <div className="space-y-10">
+          {/* Overview — wraps entire overview block so scroll-spy tracks correctly */}
+          <section id="section-overview" className="scroll-mt-40 space-y-8">
                 {/* Why Special */}
-                <section id="section-overview">
+                <div>
                   <h2 className="text-xl font-semibold mb-3">Why Special</h2>
                   <p className="text-[15px] text-muted-foreground leading-relaxed">{displayWhySpecial}</p>
-                </section>
+                </div>
 
                 {/* Who Should Skip — anti-brochure honesty */}
                 {travelerFit.notFor.length > 0 && (
@@ -844,7 +832,7 @@ export function DestinationDetail({ dest }: { dest: any }) {
                 {/* Food & Dining */}
                 {dest.food_scene && Object.keys(dest.food_scene).length > 0 && (
                   <section>
-                    <h2 id="section-food" className="text-xl font-semibold mb-3">Food & Dining</h2>
+                    <h2 className="text-xl font-semibold mb-3">Food & Dining</h2>
                     <div className="grid gap-3 sm:grid-cols-2">
                       {dest.food_scene.vegetarian_ease && (
                         <div className="rounded-xl border border-border p-4 flex items-start gap-3">
@@ -917,18 +905,18 @@ export function DestinationDetail({ dest }: { dest: any }) {
                   <section>
                     <div className="flex items-center justify-between mb-3">
                       <h2 className="text-xl font-semibold">Meet the Locals</h2>
-                      <button
-                        onClick={() => setActiveTab("food")}
+                      <a
+                        href="#section-food"
                         className="text-xs text-primary hover:underline"
                       >
                         View all &rarr;
-                      </button>
+                      </a>
                     </div>
                     <div className="grid gap-3 sm:grid-cols-2">
                       {legends.slice(0, 2).map((legend: any) => (
-                        <button
+                        <a
                           key={legend.id}
-                          onClick={() => setActiveTab("food")}
+                          href="#section-food"
                           className="flex items-center gap-3 rounded-xl border border-border p-3 hover:border-primary/30 transition-colors text-left"
                         >
                           <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-primary/10 text-sm font-bold text-primary">
@@ -944,7 +932,7 @@ export function DestinationDetail({ dest }: { dest: any }) {
                             {legend.role && <div className="text-[11px] text-muted-foreground truncate">{legend.role}</div>}
                             {legend.known_as && <div className="text-[11px] text-primary truncate">{legend.known_as}</div>}
                           </div>
-                        </button>
+                        </a>
                       ))}
                     </div>
                   </section>
@@ -952,106 +940,117 @@ export function DestinationDetail({ dest }: { dest: any }) {
 
                 {/* Booking Handoff */}
                 <BookingHandoff destinationName={dest.name} stateName={stateName} />
-              </div>
-            )}
-
-            {activeTab === "monthly" && months.length > 0 && (
-              <section>
-                <h2 id="section-monthly" className="text-xl font-semibold mb-4">{t("bestMonths")}</h2>
-                <MonthlyChart
-                  scores={months.map((m: any) => ({
-                    m: m.month, score: m.score, note: m.note,
-                    why_go: m.why_go, why_not: m.why_not,
-                  }))}
-                />
               </section>
-            )}
 
-            {activeTab === "kids" && kf && (
-              <section>
-                <h2 id="section-kids" className="text-xl font-semibold mb-4">{t("kidsRating")}</h2>
-                <KidsBadge {...kf} />
-              </section>
-            )}
+          {/* Monthly — 12-month breakdown chart */}
+          {hasMonthly && (
+            <section id="section-monthly" className="scroll-mt-40">
+              <h2 className="text-xl font-semibold mb-4">{t("bestMonths")}</h2>
+              <MonthlyChart
+                scores={months.map((m: any) => ({
+                  m: m.month, score: m.score, note: m.note,
+                  why_go: m.why_go, why_not: m.why_not,
+                }))}
+              />
+            </section>
+          )}
 
-            {activeTab === "safety" && (
-              <section className="space-y-6">
-                <h2 id="section-safety" className="text-xl font-semibold mb-4">{t("confidence")}</h2>
-                <SoloFemaleSafetySection
-                  score={dest.solo_female_score ?? null}
-                  note={dest.solo_female_note ?? null}
-                  monthRows={months.map((m: any) => ({
-                    month: m.month,
-                    solo_female_override: m.solo_female_override ?? null,
-                    solo_female_override_note: m.solo_female_override_note ?? null,
-                  }))}
-                  hubHref={`/${locale}/blog/solo-female-india-month-by-month`}
-                />
-                {cc && <ConfidenceCardComponent {...cc} />}
-              </section>
-            )}
+          {/* Kids — rating badge */}
+          {hasKids && (
+            <section id="section-kids" className="scroll-mt-40">
+              <h2 className="text-xl font-semibold mb-4">{t("kidsRating")}</h2>
+              <KidsBadge {...kf} />
+            </section>
+          )}
 
-            {activeTab === "places" && (
-              <div className="space-y-8">
-                {subs.length > 0 && (
-                  <section id="places">
-                    <h2 id="section-places" className="text-xl font-semibold mb-4">Places Within {dest.name}</h2>
-                    <StaggerContainer className="grid gap-3 sm:grid-cols-2" staggerDelay={0.05}>
-                      {subs.map((sub: any) => (
-                        <StaggerItem key={sub.id}>
-                          <HoverCard>
-                            <a
-                              id={`sub-${sub.id}`}
-                              href={`/${locale}/destination/${dest.id}#places`}
-                              className="block rounded-xl border border-border p-4 h-full transition-all hover:border-primary/50"
-                            >
-                              <div className="flex items-start justify-between">
-                                <h3 className="font-semibold">{sub.name}</h3>
-                                {sub.elevation_m && <span className="text-xs font-mono text-muted-foreground">{sub.elevation_m}m</span>}
-                              </div>
-                              {sub.tagline && <p className="mt-1 text-xs text-primary">{sub.tagline}</p>}
-                              {sub.why_visit && <p className="mt-1 text-[15px] text-muted-foreground line-clamp-3">{sub.why_visit}</p>}
-                              <div className="mt-2 flex items-center gap-2 text-xs text-muted-foreground">
-                                {sub.distance_from_parent_km != null && <span>{sub.distance_from_parent_km}km</span>}
-                                {sub.time_needed && <><span>·</span><span>{sub.time_needed}</span></>}
-                                <span>·</span>
-                                <span>{sub.kids_ok ? "👶 OK" : "Adults"}</span>
-                              </div>
-                            </a>
-                          </HoverCard>
-                        </StaggerItem>
-                      ))}
-                    </StaggerContainer>
-                  </section>
-                )}
+          {/* Safety — solo-female section + confidence card */}
+          {hasSafety && (
+            <section id="section-safety" className="scroll-mt-40 space-y-6">
+              <h2 className="text-xl font-semibold mb-4">{t("confidence")}</h2>
+              <SoloFemaleSafetySection
+                score={dest.solo_female_score ?? null}
+                note={dest.solo_female_note ?? null}
+                monthRows={months.map((m: any) => ({
+                  month: m.month,
+                  solo_female_override: m.solo_female_override ?? null,
+                  solo_female_override_note: m.solo_female_override_note ?? null,
+                }))}
+                hubHref={`/${locale}/blog/solo-female-india-month-by-month`}
+              />
+              {cc && <ConfidenceCardComponent {...cc} />}
+            </section>
+          )}
 
-                {gems.length > 0 && (
-                  <section id="hidden-gems">
-                    <h2 className="text-xl font-semibold mb-4">{t("discoverNearby")}</h2>
-                    <div className="space-y-3">
-                      {gems.map((gem: any) => (
-                        <motion.div key={gem.id} id={`gem-${gem.id}`} whileHover={{ x: 4 }} className="rounded-xl border border-dashed border-primary/30 bg-primary/5 p-4">
-                          <div className="flex items-start justify-between">
-                            <h3 className="font-semibold text-primary">{gem.name}</h3>
-                            <span className="text-xs text-muted-foreground">{gem.distance_km}km · {gem.drive_time}</span>
-                          </div>
-                          {gem.why_unknown && <p className="mt-1 text-xs text-yellow-400">Why unknown: {gem.why_unknown}</p>}
-                          <p className="mt-1 text-sm text-muted-foreground">{gem.why_go}</p>
-                        </motion.div>
-                      ))}
-                    </div>
-                  </section>
-                )}
+          {/* Places — sub-destinations, hidden gems, POIs */}
+          {hasPlaces && (
+            <section
+              id="section-places"
+              className="scroll-mt-40 space-y-8"
+              
+            >
+              {subs.length > 0 && (
+                <div id="places">
+                  <h2 className="text-xl font-semibold mb-4">Places Within {dest.name}</h2>
+                  <StaggerContainer className="grid gap-3 sm:grid-cols-2" staggerDelay={0.05}>
+                    {subs.map((sub: any) => (
+                      <StaggerItem key={sub.id}>
+                        <HoverCard>
+                          <a
+                            id={`sub-${sub.id}`}
+                            href={`/${locale}/destination/${dest.id}#places`}
+                            className="block rounded-xl border border-border p-4 h-full transition-all hover:border-primary/50"
+                          >
+                            <div className="flex items-start justify-between">
+                              <h3 className="font-semibold">{sub.name}</h3>
+                              {sub.elevation_m && <span className="text-xs font-mono text-muted-foreground">{sub.elevation_m}m</span>}
+                            </div>
+                            {sub.tagline && <p className="mt-1 text-xs text-primary">{sub.tagline}</p>}
+                            {sub.why_visit && <p className="mt-1 text-[15px] text-muted-foreground line-clamp-3">{sub.why_visit}</p>}
+                            <div className="mt-2 flex items-center gap-2 text-xs text-muted-foreground">
+                              {sub.distance_from_parent_km != null && <span>{sub.distance_from_parent_km}km</span>}
+                              {sub.time_needed && <><span>·</span><span>{sub.time_needed}</span></>}
+                              <span>·</span>
+                              <span>{sub.kids_ok ? "👶 OK" : "Adults"}</span>
+                            </div>
+                          </a>
+                        </HoverCard>
+                      </StaggerItem>
+                    ))}
+                  </StaggerContainer>
+                </div>
+              )}
 
-                {/* Points of Interest */}
-                {pois.length > 0 && (
-                  <POISection pois={pois} destName={displayName} />
-                )}
-              </div>
-            )}
+              {gems.length > 0 && (
+                <div id="hidden-gems">
+                  <h2 className="text-xl font-semibold mb-4">{t("discoverNearby")}</h2>
+                  <div className="space-y-3">
+                    {gems.map((gem: any) => (
+                      <motion.div key={gem.id} id={`gem-${gem.id}`} whileHover={{ x: 4 }} className="rounded-xl border border-dashed border-primary/30 bg-primary/5 p-4">
+                        <div className="flex items-start justify-between">
+                          <h3 className="font-semibold text-primary">{gem.name}</h3>
+                          <span className="text-xs text-muted-foreground">{gem.distance_km}km · {gem.drive_time}</span>
+                        </div>
+                        {gem.why_unknown && <p className="mt-1 text-xs text-yellow-400">Why unknown: {gem.why_unknown}</p>}
+                        <p className="mt-1 text-sm text-muted-foreground">{gem.why_go}</p>
+                      </motion.div>
+                    ))}
+                  </div>
+                </div>
+              )}
 
-            {activeTab === "food" && (
-              <div className="space-y-8">
+              {pois.length > 0 && (
+                <POISection pois={pois} destName={displayName} />
+              )}
+            </section>
+          )}
+
+          {/* Food & People — local legends, viral eats, local picks */}
+          {hasFood && (
+            <section
+              id="section-food"
+              className="scroll-mt-40 space-y-8"
+              
+            >
                 {legends.length > 0 && (
                   <section>
                     <h2 className="text-xl font-semibold mb-4">{t("localLegends")}</h2>
@@ -1126,65 +1125,62 @@ export function DestinationDetail({ dest }: { dest: any }) {
                   </section>
                 )}
 
-                {/* Local Stays & Operators */}
-                {dest.local_stays?.length > 0 && (
-                  <section id="stays">
-                    <h2 className="text-xl font-semibold mb-2">Local Picks</h2>
-                    <p className="text-sm text-muted-foreground mb-4">Vetted stays, operators, and local businesses — not a booking site, just honest recommendations.</p>
-                    <div className="grid gap-3 sm:grid-cols-2">
-                      {dest.local_stays.map((stay: any) => (
-                        <div key={stay.id} id={`stay-${stay.id}`} className="rounded-xl border border-border p-4 hover:border-primary/30 transition-colors">
-                          <div className="flex items-start justify-between mb-1">
-                            <div>
-                              <h3 className="font-semibold text-[15px]">{stay.name}</h3>
-                              <span className={`text-xs font-medium capitalize ${
-                                stay.type === "homestay" ? "text-emerald-400" :
-                                stay.type === "cafe" ? "text-amber-400" :
-                                stay.type === "operator" || stay.type === "guide" ? "text-blue-400" :
-                                "text-muted-foreground"
-                              }`}>{stay.type}</span>
-                            </div>
-                            {stay.price_range && <span className="text-xs font-mono text-muted-foreground">{stay.price_range}</span>}
+              {dest.local_stays?.length > 0 && (
+                <div id="stays">
+                  <h2 className="text-xl font-semibold mb-2">Local Picks</h2>
+                  <p className="text-sm text-muted-foreground mb-4">Vetted stays, operators, and local businesses — not a booking site, just honest recommendations.</p>
+                  <div className="grid gap-3 sm:grid-cols-2">
+                    {dest.local_stays.map((stay: any) => (
+                      <div key={stay.id} id={`stay-${stay.id}`} className="rounded-xl border border-border p-4 hover:border-primary/30 transition-colors">
+                        <div className="flex items-start justify-between mb-1">
+                          <div>
+                            <h3 className="font-semibold text-[15px]">{stay.name}</h3>
+                            <span className={`text-xs font-medium capitalize ${
+                              stay.type === "homestay" ? "text-emerald-400" :
+                              stay.type === "cafe" ? "text-amber-400" :
+                              stay.type === "operator" || stay.type === "guide" ? "text-blue-400" :
+                              "text-muted-foreground"
+                            }`}>{stay.type}</span>
                           </div>
-                          {stay.location && <p className="text-xs text-muted-foreground/60 mb-1">📍 {stay.location}</p>}
-                          {stay.why_special && <p className="text-sm text-muted-foreground leading-relaxed mt-1">{stay.why_special}</p>}
-                          <div className="mt-2 flex items-center gap-2">
-                            {stay.best_for && <span className="rounded-full border border-border px-2 py-1 text-xs text-muted-foreground">Best for: {stay.best_for}</span>}
-                            {stay.verified && <span className="rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-2 py-1 text-xs">Verified</span>}
-                          </div>
-                          {stay.tags?.length > 0 && (
-                            <div className="mt-2 flex flex-wrap gap-1">
-                              {stay.tags.map((tag: string) => (
-                                <span key={tag} className="rounded-full border border-border px-2 py-1 text-xs text-muted-foreground">{tag}</span>
-                              ))}
-                            </div>
-                          )}
+                          {stay.price_range && <span className="text-xs font-mono text-muted-foreground">{stay.price_range}</span>}
                         </div>
-                      ))}
-                    </div>
-                  </section>
-                )}
-              </div>
-            )}
-          </motion.div>
+                        {stay.location && <p className="text-xs text-muted-foreground/60 mb-1">📍 {stay.location}</p>}
+                        {stay.why_special && <p className="text-sm text-muted-foreground leading-relaxed mt-1">{stay.why_special}</p>}
+                        <div className="mt-2 flex items-center gap-2">
+                          {stay.best_for && <span className="rounded-full border border-border px-2 py-1 text-xs text-muted-foreground">Best for: {stay.best_for}</span>}
+                          {stay.verified && <span className="rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-2 py-1 text-xs">Verified</span>}
+                        </div>
+                        {stay.tags?.length > 0 && (
+                          <div className="mt-2 flex flex-wrap gap-1">
+                            {stay.tags.map((tag: string) => (
+                              <span key={tag} className="rounded-full border border-border px-2 py-1 text-xs text-muted-foreground">{tag}</span>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </section>
+          )}
 
-          {/* Reviews tab */}
-          {activeTab === "reviews" && (
-            <motion.div
-              key="reviews"
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              className="space-y-8"
+          {/* Reviews — traveler notes + reviews list + review form */}
+          {hasReviews && (
+            <section
+              id="section-reviews"
+              className="scroll-mt-40 space-y-8"
+              
             >
+              <h2 className="text-xl font-semibold mb-4">Reviews</h2>
               {dest.traveler_notes?.length > 0 && (
                 <TravelerNotes notes={dest.traveler_notes} />
               )}
               <ReviewsList reviews={dest.reviews ?? []} />
               <ReviewForm destinationId={dest.id} />
-            </motion.div>
+            </section>
           )}
-        </AnimatePresence>
+        </div>
       </div>
       {/* === SEO Internal Linking Modules === */}
 
