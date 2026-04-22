@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useLocale } from "next-intl";
 import Image from "next/image";
@@ -12,6 +12,7 @@ import {
   HoverCard,
 } from "./animated-hero";
 import { SCORE_COLORS, SCORE_SOLID, DIFFICULTY_COLORS } from "@/lib/design-tokens";
+import { destinationImage } from "@/lib/image-url";
 
 // ─── Constants ──────────────────────────────────────────────
 const MONTH_NAMES = [
@@ -273,8 +274,87 @@ export function WhereToGoContent({
   const buildMonthHref = (slug: string) =>
     isRegional ? `/${locale}/where-to-go/${regionSlug}-in-${slug}` : `/${locale}/where-to-go/${slug}`;
 
+  // Top-scoring destination drives the regional hero visual. Array is pre-sorted
+  // score DESC so data[0] is the strongest representative of "go here this month".
+  const heroDestId = isRegional ? data[0]?.id : null;
+  const totalListed = data.length;
+  // Sidebar ToC for regional variant — gated on section data presence so the
+  // rail doesn't show dead anchors when a bucket is empty.
+  const regionalSections = isRegional
+    ? [
+        score5All.length > 0 && { id: "go5", label: `Go now · ${score5All.length}` },
+        score4All.length > 0 && { id: "good4", label: `Good · ${score4All.length}` },
+        score3All.length > 0 && { id: "fair3", label: `Fair · ${score3All.length}` },
+        scoreAvoidAll.length > 0 && { id: "avoid", label: `Skip · ${scoreAvoidAll.length}` },
+        { id: "months", label: "Another month" },
+      ].filter((s): s is { id: string; label: string } => Boolean(s))
+    : [];
+
   return (
     <div className="space-y-12">
+      {/* ───── Regional: sticky back + breadcrumb bar ───── */}
+      {isRegional && regionName && (
+        <div className="sticky top-20 z-30 -mt-2">
+          <div className="flex items-center gap-2 rounded-full border border-border bg-background/85 backdrop-blur px-3 py-2 text-xs sm:text-sm shadow-sm">
+            <Link
+              href={`/${locale}/where-to-go/${monthSlug}`}
+              className="flex items-center gap-1.5 font-medium text-muted-foreground hover:text-foreground transition-colors whitespace-nowrap"
+            >
+              <span aria-hidden>&larr;</span> Back
+            </Link>
+            <span className="text-border" aria-hidden>•</span>
+            <nav
+              className="flex items-center gap-1.5 text-muted-foreground min-w-0 overflow-hidden"
+              aria-label="Breadcrumb"
+            >
+              <Link
+                href={`/${locale}/where-to-go`}
+                className="hover:text-foreground transition-colors truncate hidden sm:inline"
+              >
+                Where to go
+              </Link>
+              <span className="opacity-50 hidden sm:inline" aria-hidden>/</span>
+              <Link
+                href={`/${locale}/where-to-go/${monthSlug}`}
+                className="hover:text-foreground transition-colors truncate"
+              >
+                {monthName}
+              </Link>
+              <span className="opacity-50" aria-hidden>/</span>
+              <span className="text-foreground truncate">{regionName}</span>
+            </nav>
+          </div>
+        </div>
+      )}
+
+      {/* ───── Regional: full-bleed hero video of the top-scoring destination ───── */}
+      {isRegional && heroDestId && (
+        <FadeIn>
+          <div
+            className="relative h-56 sm:h-72 lg:h-[32rem] rounded-2xl lg:rounded-none overflow-hidden film-grain lg:relative lg:left-1/2 lg:right-1/2 lg:-ml-[50vw] lg:-mr-[50vw] lg:w-screen"
+            style={{
+              background:
+                "linear-gradient(135deg, oklch(0.25 0.02 260), oklch(0.18 0.01 280))",
+            }}
+          >
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="w-full h-full object-cover"
+              poster={destinationImage(heroDestId)}
+            >
+              <source
+                src={`${process.env.NEXT_PUBLIC_VIDEO_BASE_URL}/${heroDestId}.mp4`}
+                type="video/mp4"
+              />
+            </video>
+            <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/30 to-transparent pointer-events-none" />
+          </div>
+        </FadeIn>
+      )}
+
       {/* ───── Methodology disclosure strip ───── */}
       <FadeIn>
         <div className="rounded-xl border border-border/40 bg-card/40 backdrop-blur-sm px-4 py-3 sm:px-5 sm:py-3.5">
@@ -284,32 +364,91 @@ export function WhereToGoContent({
         </div>
       </FadeIn>
 
-      {/* ───── Hero ───── */}
-      <FadeIn>
-        <div className="text-center">
-          <p className="mb-2 text-sm font-medium uppercase tracking-widest text-primary/70">
-            Where to go in {regionName ?? "India"}
-          </p>
-          <h1 className="font-fraunces text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl">
-            {regionName
-              ? `${regionName} in ${monthName} — where the data says go, wait, and skip`
-              : `${monthName} in India — where the data says go, wait, and skip`}
-          </h1>
-          <p className="mx-auto mt-4 max-w-xl text-base text-zinc-400">
-            {regionName
-              ? `Every destination in ${regionName} scored 1-5 for ${monthName} — weather, roads, crowds, festivals. Go first, then Wait, then Skip. No opinions, just the data.`
-              : `Every destination scored 1-5 for ${monthName} — weather, roads, crowds, festivals. Go first, then Wait, then Skip. No opinions, just the data.`}
-          </p>
-          {regionName && (
+      {/* ───── Hero ─────
+           Regional: one unified announcement card (title + GO/WAIT/SKIP counts + top-destination prose).
+           Month-only: the original centered text block, unchanged (TopFiveHero lives above on the page). */}
+      {isRegional && regionName ? (
+        <FadeIn>
+          <div className="relative overflow-hidden rounded-2xl border border-emerald-500/20 bg-gradient-to-br from-emerald-500/10 via-zinc-900/40 to-zinc-900/0 p-6 sm:p-8 md:p-10 lg:p-12">
+            <div className="pointer-events-none absolute -right-20 -top-20 h-60 w-60 rounded-full bg-emerald-500/5 blur-3xl" />
+
+            <p className="mb-3 font-mono text-[10px] sm:text-[11px] uppercase tracking-[0.28em] text-primary/70">
+              Where to go · {monthName} · {regionName}
+            </p>
+            <h1 className="font-fraunces text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl lg:text-6xl">
+              {regionName} in {monthName}
+            </h1>
+            <p className="mt-3 max-w-prose text-base sm:text-lg leading-relaxed text-white/80">
+              {goCount > 0
+                ? `${goCount} destination${goCount === 1 ? "" : "s"} score 4 or 5 out of 5 this month. ${skipCount > 0 ? `${skipCount} to skip.` : "None to skip."} ${data[0]?.name ? `Start with ${data[0].name}.` : ""}`
+                : skipCount > 0
+                  ? `No destinations score 4+ this month. ${skipCount} are best avoided; ${waitCount} are borderline.`
+                  : `All ${totalListed} destinations are borderline this month — check the monthly detail before booking.`}
+            </p>
+
+            <div className="mt-6 flex flex-wrap gap-2">
+              {goCount > 0 && (
+                <span className="inline-flex items-center gap-2 rounded-lg border border-emerald-500/30 bg-emerald-500/10 px-3 py-1.5 text-sm text-emerald-200">
+                  <span
+                    className="font-serif italic font-medium"
+                    style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
+                  >
+                    GO
+                  </span>
+                  <span className="font-mono text-xs">· {goCount}</span>
+                </span>
+              )}
+              {waitCount > 0 && (
+                <span className="inline-flex items-center gap-2 rounded-lg border border-amber-500/30 bg-amber-500/10 px-3 py-1.5 text-sm text-amber-200">
+                  <span
+                    className="font-serif italic font-medium"
+                    style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
+                  >
+                    WAIT
+                  </span>
+                  <span className="font-mono text-xs">· {waitCount}</span>
+                </span>
+              )}
+              {skipCount > 0 && (
+                <span className="inline-flex items-center gap-2 rounded-lg border border-[#E55642]/30 bg-[#E55642]/10 px-3 py-1.5 text-sm text-[#f8c8bf]">
+                  <span
+                    className="font-serif italic font-medium"
+                    style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
+                  >
+                    SKIP
+                  </span>
+                  <span className="font-mono text-xs">· {skipCount}</span>
+                </span>
+              )}
+            </div>
+
             <Link
               href={`/${locale}/where-to-go/${monthSlug}`}
-              className="mt-3 inline-block text-sm text-primary/70 hover:text-primary transition-colors"
+              className="mt-6 inline-block text-sm text-primary/70 hover:text-primary transition-colors"
             >
               ← View all India destinations in {monthName}
             </Link>
-          )}
-        </div>
-      </FadeIn>
+          </div>
+        </FadeIn>
+      ) : (
+        <FadeIn>
+          <div className="text-center">
+            <p className="mb-2 text-sm font-medium uppercase tracking-widest text-primary/70">
+              Where to go in {regionName ?? "India"}
+            </p>
+            <h1 className="font-fraunces text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl">
+              {regionName
+                ? `${regionName} in ${monthName} — where the data says go, wait, and skip`
+                : `${monthName} in India — where the data says go, wait, and skip`}
+            </h1>
+            <p className="mx-auto mt-4 max-w-xl text-base text-zinc-400">
+              {regionName
+                ? `Every destination in ${regionName} scored 1-5 for ${monthName} — weather, roads, crowds, festivals. Go first, then Wait, then Skip. No opinions, just the data.`
+                : `Every destination scored 1-5 for ${monthName} — weather, roads, crowds, festivals. Go first, then Wait, then Skip. No opinions, just the data.`}
+            </p>
+          </div>
+        </FadeIn>
+      )}
 
       {/* ───── Month Navigation Strip ───── */}
       <FadeIn delay={0.1}>
@@ -420,9 +559,15 @@ export function WhereToGoContent({
         </div>
       </FadeIn>
 
+      {/* ───── Content buckets — 2-col grid with sidebar ToC for regional variant ─────
+           Month-only: outer wrapper is a transparent div, inner wrapper provides
+           section spacing exactly as before (space-y-12 moved from outer). */}
+      <div className={isRegional ? "lg:grid lg:grid-cols-[minmax(0,1fr)_240px] lg:gap-10 lg:items-start" : ""}>
+        <div className="space-y-12 min-w-0">
+
       {/* ───── Score 5/5 — Go Now ───── */}
       {score5.length > 0 && (
-        <section>
+        <section id="section-go5" className="scroll-mt-28">
           <ScrollReveal>
             <SectionHeader
               title={excluded.size > 0 ? "The other scoring 5/5" : "Go Now"}
@@ -449,7 +594,7 @@ export function WhereToGoContent({
 
       {/* ───── Score 4/5 — Good Time ───── */}
       {score4.length > 0 && (
-        <section>
+        <section id="section-good4" className="scroll-mt-28">
           <ScrollReveal>
             <SectionHeader
               title="Good Time"
@@ -476,7 +621,7 @@ export function WhereToGoContent({
 
       {/* ───── Score 3/5 — Fair (collapsed by default) ───── */}
       {score3.length > 0 && (
-        <section>
+        <section id="section-fair3" className="scroll-mt-28">
           <ScrollReveal>
             <SectionHeader
               title="Fair"
@@ -516,7 +661,7 @@ export function WhereToGoContent({
 
       {/* ───── Score 1-2 — Where NOT to Go ───── */}
       {scoreAvoid.length > 0 && (
-        <section>
+        <section id="section-avoid" className="scroll-mt-28">
           <ScrollReveal>
             <SectionHeader
               title="Where NOT to Go"
@@ -541,7 +686,7 @@ export function WhereToGoContent({
 
       {/* ───── Footer — See Another Month ───── */}
       <ScrollReveal>
-        <div className="rounded-xl border border-white/[0.06] bg-zinc-900/40 p-6">
+        <div id="section-months" className="scroll-mt-28 rounded-xl border border-white/[0.06] bg-zinc-900/40 p-6">
           <h2 className="mb-4 text-center font-fraunces text-xl font-semibold text-white">
             {regionName ? `${regionName} — another month` : "See another month"}
           </h2>
@@ -566,6 +711,14 @@ export function WhereToGoContent({
           </div>
         </div>
       </ScrollReveal>
+
+        </div>
+        {isRegional && regionalSections.length > 0 && (
+          <aside className="hidden lg:block">
+            <WhereToGoSidebar sections={regionalSections} />
+          </aside>
+        )}
+      </div>
     </div>
   );
 }
@@ -649,5 +802,72 @@ function SectionHeader({
         </span>
       )}
     </div>
+  );
+}
+
+// ─── Sidebar ToC for the regional /where-to-go/{state}-in-{month} variant ───
+// Sticky vertical pill rail, lg+ only. IntersectionObserver-based scroll-spy:
+// the "active" bucket is whichever section straddles the vertical middle.
+function WhereToGoSidebar({ sections }: { sections: { id: string; label: string }[] }) {
+  const [active, setActive] = useState(sections[0]?.id ?? "");
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const targets = sections
+      .map((s) => document.getElementById(`section-${s.id}`))
+      .filter((el): el is HTMLElement => !!el);
+    if (targets.length === 0) return;
+    const io = new IntersectionObserver(
+      (entries) => {
+        const hits = entries.filter((e) => e.isIntersecting);
+        if (hits.length === 0) return;
+        hits.sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+        const topId = hits[0].target.id.replace(/^section-/, "");
+        setActive(topId);
+      },
+      { rootMargin: "-40% 0% -40% 0%", threshold: [0, 0.25, 0.5, 0.75, 1] },
+    );
+    targets.forEach((t) => io.observe(t));
+    return () => io.disconnect();
+  }, [sections]);
+
+  const onJump = (id: string) => {
+    const el = document.getElementById(`section-${id}`);
+    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
+  return (
+    <nav className="sticky top-28 self-start" aria-label="In this guide">
+      <div className="rounded-xl border border-border bg-background/95 backdrop-blur p-2 shadow-sm">
+        <div className="px-3 py-2 text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
+          In this guide
+        </div>
+        <div className="flex flex-col gap-1">
+          {sections.map((s) => {
+            const isActive = s.id === active;
+            return (
+              <button
+                key={s.id}
+                onClick={() => onJump(s.id)}
+                className={`flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium text-left transition-colors ${
+                  isActive
+                    ? "bg-primary/10 text-foreground border border-primary/30"
+                    : "text-muted-foreground hover:text-foreground hover:bg-muted/40"
+                }`}
+                aria-current={isActive ? "true" : undefined}
+              >
+                <span
+                  className={`h-1.5 w-1.5 rounded-full transition-colors ${
+                    isActive ? "bg-primary" : "bg-muted-foreground/30"
+                  }`}
+                  aria-hidden="true"
+                />
+                <span>{s.label}</span>
+              </button>
+            );
+          })}
+        </div>
+      </div>
+    </nav>
   );
 }
