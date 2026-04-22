@@ -7,6 +7,7 @@ type Props = {
   skipReason?: string | null;
   month?: string;
   variant?: "full" | "compact";
+  prose?: string | null;
   className?: string;
 };
 
@@ -33,7 +34,7 @@ const TONE: Record<Verdict, { border: string; bg: string; text: string; accent: 
 
 const LABEL: Record<Verdict, string> = { go: "GO", wait: "WAIT", skip: "SKIP" };
 
-export default function VerdictCard({ verdict, skipReason, month, variant = "full", className }: Props) {
+export default function VerdictCard({ verdict, skipReason, month, variant = "full", prose, className }: Props) {
   if (!verdict) return null;
   const tone = TONE[verdict];
   const label = LABEL[verdict];
@@ -83,13 +84,19 @@ export default function VerdictCard({ verdict, skipReason, month, variant = "ful
           </span>
         )}
       </div>
-      {verdict !== "go" && skipReason && (
-        <p className="text-base sm:text-lg leading-snug opacity-95">{skipReason}</p>
-      )}
-      {verdict === "go" && (
-        <p className="font-mono text-[10px] tracking-[0.22em] uppercase opacity-60">
-          Data-scored. No caveats this month.
-        </p>
+      {prose ? (
+        <p className="text-base sm:text-lg leading-relaxed opacity-95">{prose}</p>
+      ) : (
+        <>
+          {verdict !== "go" && skipReason && (
+            <p className="text-base sm:text-lg leading-snug opacity-95">{skipReason}</p>
+          )}
+          {verdict === "go" && (
+            <p className="font-mono text-[10px] tracking-[0.22em] uppercase opacity-60">
+              Data-scored. No caveats this month.
+            </p>
+          )}
+        </>
       )}
     </div>
   );

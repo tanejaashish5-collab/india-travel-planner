@@ -8,6 +8,7 @@ import { WhatsAppShare } from "./whatsapp-share";
 import { destinationImage } from "@/lib/image-url";
 import VerdictCard from "./verdict-card";
 import HowToDoIt from "./how-to-do-it";
+import { DestinationSectionNav } from "./destination-section-nav";
 
 // ── Constants ──────────────────────────────────────────────────
 
@@ -107,7 +108,7 @@ export function DestinationMonth({
   const MediaHero = () => (
     <FadeIn>
       <div
-        className="relative h-56 sm:h-72 lg:h-96 rounded-2xl overflow-hidden film-grain"
+        className="relative h-56 sm:h-72 lg:h-[32rem] rounded-2xl lg:rounded-none overflow-hidden film-grain lg:relative lg:left-1/2 lg:right-1/2 lg:-ml-[50vw] lg:-mr-[50vw] lg:w-screen"
         style={{
           background:
             "linear-gradient(135deg, oklch(0.25 0.02 260), oklch(0.18 0.01 280))",
@@ -127,21 +128,6 @@ export function DestinationMonth({
           />
         </video>
         <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/30 to-transparent pointer-events-none" />
-        <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between gap-4">
-          <div>
-            <div className="font-mono text-[11px] uppercase tracking-[0.24em] text-white/70">
-              {monthName} · {stateName ?? "India"}
-            </div>
-            <div className="mt-1 font-serif italic text-2xl sm:text-3xl text-white">
-              {destination.name}
-            </div>
-          </div>
-          <span
-            className={`rounded-full border border-white/20 bg-black/40 px-3 py-1.5 backdrop-blur-md font-mono text-[10px] uppercase tracking-[0.22em] ${scoreInfo.color}`}
-          >
-            {score}/5 · {scoreInfo.label}
-          </span>
-        </div>
       </div>
     </FadeIn>
   );
@@ -155,22 +141,6 @@ export function DestinationMonth({
       >
         {/* Decorative glow */}
         <div className="pointer-events-none absolute -right-20 -top-20 h-60 w-60 rounded-full bg-white/5 blur-3xl" />
-
-        {/* Breadcrumb */}
-        <nav className="mb-6 flex items-center gap-2 text-sm text-zinc-400">
-          <Link href={`/${locale}/explore`} className="hover:text-white transition-colors">
-            Destinations
-          </Link>
-          <span>/</span>
-          <Link
-            href={`/${locale}/destination/${destination.id}`}
-            className="hover:text-white transition-colors"
-          >
-            {destination.name}
-          </Link>
-          <span>/</span>
-          <span className="text-zinc-300">{monthName}</span>
-        </nav>
 
         {/* Score display */}
         <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
@@ -249,37 +219,6 @@ export function DestinationMonth({
             {whyGo}
           </p>
         )}
-      </FadeIn>
-    );
-  };
-
-  // ── 2b. Go / Skip Verdict ──────────────────────────────────
-  // Column-gated: only renders when editorial has populated it.
-  // Leading word ("Go", "Skip", "Mixed") drives the stamp colour,
-  // mirroring the Weekly-Picks stamp system.
-
-  const GoOrSkipVerdict = () => {
-    const verdict: string | undefined = currentMonth?.go_or_skip_verdict;
-    if (!verdict) return null;
-
-    const leader = verdict.trim().split(/[\s,:.]/, 1)[0]?.toLowerCase() ?? "";
-    const toneClass =
-      leader === "skip"
-        ? "border-red-500/40 from-red-950/40 to-red-900/10 text-red-200"
-        : leader === "mixed"
-          ? "border-amber-500/40 from-amber-950/40 to-amber-900/10 text-amber-200"
-          : "border-emerald-500/40 from-emerald-950/40 to-emerald-900/10 text-emerald-200";
-    const stamp =
-      leader === "skip" ? "SKIP" : leader === "mixed" ? "MIXED" : "GO";
-
-    return (
-      <FadeIn delay={0.2}>
-        <div className={`rounded-2xl border bg-gradient-to-br p-5 sm:p-6 ${toneClass}`}>
-          <div className="text-[10px] font-bold uppercase tracking-[0.2em] opacity-70 mb-2">
-            The verdict · {stamp}
-          </div>
-          <p className="text-base sm:text-lg leading-relaxed">{verdict}</p>
-        </div>
       </FadeIn>
     );
   };
@@ -723,45 +662,135 @@ export function DestinationMonth({
   );
 
   // ── Render ─────────────────────────────────────────────────
+  // Build sidebar ToC sections — only include ones that have data so the
+  // rail doesn't show dead anchors.
+  const hasLead = !!(currentMonth?.prose_lead || currentMonth?.note || currentMonth?.why_go);
+  const hasVerdict = !!currentMonth?.verdict;
+  const hasThings = Array.isArray(currentMonth?.things_to_do) && currentMonth.things_to_do.length > 0;
+  const hasPack = Array.isArray(currentMonth?.pack_list) && currentMonth.pack_list.length > 0;
+  const hasNearby = Array.isArray(nearby) && nearby.length > 0;
+  const hasWhy = !!(
+    currentMonth?.note ||
+    confidence?.reach ||
+    confidence?.emergency ||
+    confidence?.network ||
+    kids ||
+    destination.elevation_m ||
+    (Array.isArray(currentMonth?.festivals_this_month) && currentMonth.festivals_this_month.length > 0)
+  );
+  const monthSections = [
+    hasLead && { id: "lead", label: `${monthName} overview` },
+    hasVerdict && { id: "verdict", label: "Verdict" },
+    hasWhy && { id: "why", label: `Why ${score}/5` },
+    hasThings && { id: "things", label: "What to do" },
+    { id: "who", label: "Who should go" },
+    { id: "months", label: "All 12 months" },
+    { id: "practical", label: "Practical" },
+    hasPack && { id: "pack", label: "What to pack" },
+    hasNearby && { id: "nearby", label: "Nearby" },
+    { id: "how", label: "How to do it" },
+  ].filter((s): s is { id: string; label: string } => Boolean(s));
 
   return (
     <article className="space-y-10">
-      <MediaHero />
-      <ScoreHero />
-
-      {/* WhatsApp Share */}
-      <div className="flex">
-        <WhatsAppShare
-          message={`${destination.name} in ${monthName}: ${score}/5. ${currentMonth?.note?.substring(0, 100) || ""}. Full guide: https://www.nakshiq.com/en/destination/${destination.id}/${monthSlug}`}
-        />
+      {/* Sticky back + breadcrumb bar — always visible wayfinding */}
+      <div className="sticky top-20 z-30 -mt-2">
+        <div className="flex items-center gap-2 rounded-full border border-border bg-background/85 backdrop-blur px-3 py-2 text-xs sm:text-sm shadow-sm">
+          <Link
+            href={`/${locale}/destination/${destination.id}`}
+            className="flex items-center gap-1.5 font-medium text-muted-foreground hover:text-foreground transition-colors whitespace-nowrap"
+          >
+            <span aria-hidden>&larr;</span> Back
+          </Link>
+          <span className="text-border" aria-hidden>•</span>
+          <nav
+            className="flex items-center gap-1.5 text-muted-foreground min-w-0 overflow-hidden"
+            aria-label="Breadcrumb"
+          >
+            <Link
+              href={`/${locale}/explore`}
+              className="hover:text-foreground transition-colors truncate hidden sm:inline"
+            >
+              Destinations
+            </Link>
+            <span className="opacity-50 hidden sm:inline" aria-hidden>/</span>
+            <Link
+              href={`/${locale}/destination/${destination.id}`}
+              className="hover:text-foreground transition-colors truncate"
+            >
+              {destination.name}
+            </Link>
+            <span className="opacity-50" aria-hidden>/</span>
+            <span className="text-foreground truncate">{monthName}</span>
+          </nav>
+        </div>
       </div>
 
-      <LeadParagraph />
-      <VerdictCard
-        verdict={currentMonth?.verdict ?? null}
-        skipReason={currentMonth?.skip_reason ?? null}
-        month={monthName}
-      />
-      <GoOrSkipVerdict />
-      <WhyThisScore />
-      <ThingsToDo />
-      <WhoShouldGo />
-      <MonthTable />
-      <PracticalDetails />
-      <PackList />
-      <NearbySection />
+      <MediaHero />
 
-      <HowToDoIt
-        locale={locale}
-        destinationId={destination.id}
-        destinationName={destination.name}
-        months={allMonths}
-        reach={confidence?.reach}
-        emergency={confidence?.emergency}
-        sleep={confidence?.sleep}
-        stateId={destination.state_id}
-        currentMonth={monthNum}
-      />
+      {/* 2-col grid at lg+ — main content + sticky sidebar ToC */}
+      <div className="lg:grid lg:grid-cols-[minmax(0,1fr)_240px] lg:gap-10 lg:items-start">
+        <div className="space-y-10 min-w-0">
+          <ScoreHero />
+
+          {/* WhatsApp Share */}
+          <div className="flex">
+            <WhatsAppShare
+              message={`${destination.name} in ${monthName}: ${score}/5. ${currentMonth?.note?.substring(0, 100) || ""}. Full guide: https://www.nakshiq.com/en/destination/${destination.id}/${monthSlug}`}
+            />
+          </div>
+
+          <section id="section-lead" className="scroll-mt-28">
+            <LeadParagraph />
+          </section>
+          <section id="section-verdict" className="scroll-mt-28">
+            <VerdictCard
+              verdict={currentMonth?.verdict ?? null}
+              skipReason={currentMonth?.skip_reason ?? null}
+              month={monthName}
+              prose={currentMonth?.go_or_skip_verdict ?? null}
+            />
+          </section>
+          <section id="section-why" className="scroll-mt-28">
+            <WhyThisScore />
+          </section>
+          <section id="section-things" className="scroll-mt-28">
+            <ThingsToDo />
+          </section>
+          <section id="section-who" className="scroll-mt-28">
+            <WhoShouldGo />
+          </section>
+          <section id="section-months" className="scroll-mt-28">
+            <MonthTable />
+          </section>
+          <section id="section-practical" className="scroll-mt-28">
+            <PracticalDetails />
+          </section>
+          <section id="section-pack" className="scroll-mt-28">
+            <PackList />
+          </section>
+          <section id="section-nearby" className="scroll-mt-28">
+            <NearbySection />
+          </section>
+          <section id="section-how" className="scroll-mt-28">
+            <HowToDoIt
+              locale={locale}
+              destinationId={destination.id}
+              destinationName={destination.name}
+              months={allMonths}
+              reach={confidence?.reach}
+              emergency={confidence?.emergency}
+              sleep={confidence?.sleep}
+              stateId={destination.state_id}
+              currentMonth={monthNum}
+            />
+          </section>
+        </div>
+
+        <aside className="hidden lg:block">
+          <DestinationSectionNav sections={monthSections} variant="sidebar" />
+        </aside>
+      </div>
 
       {/* Newsletter */}
       <NewsletterSignup />

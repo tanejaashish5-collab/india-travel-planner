@@ -299,7 +299,7 @@ export default async function DestinationMonthPage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
       <Nav />
-      <main className="mx-auto max-w-4xl px-4 py-8">
+      <main className="mx-auto max-w-4xl lg:max-w-6xl px-4 py-8">
         <DestinationMonth
           destination={destination}
           currentMonth={currentMonth}
