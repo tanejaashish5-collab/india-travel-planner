@@ -4251,3 +4251,23 @@ Date range: 2026-04-15 → 2026-04-21
 2026-04-22 11:51:27  WARNING   [youtube/@naksh-iq] ⚠️  YT Short queued but NOT confirmed (post_id=OnAcv). May have silently failed.
 2026-04-22 11:51:27  INFO      State saved. YT Short run complete.
 2026-04-22 11:51:27  INFO      ════════════════════════════════════════════════════════════
+2026-04-22 14:31:03  INFO      ════════════════════════════════════════════════════════════
+2026-04-22 14:31:03  INFO      Nakshiq Autoposter · REEL · 2026-04-22 · weekday=2
+2026-04-22 14:31:03  INFO      ════════════════════════════════════════════════════════════
+2026-04-22 14:31:03  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-04-22 14:31:10  INFO      Synced → 20 destinations · 0 traps · 20 articles · total catalog=488
+2026-04-22 14:31:10  INFO      Format: destination_reveal | Data: {'dest_name': 'Bomdila', 'dest_slug': 'bomdila', 'state_name': 'Arunachal Pradesh', 'score': 5, 'tagline': 'Gateway to Tawang with Tibetan monasteries, apple orchards, and Sela Pass views'}
+2026-04-22 14:31:19  INFO      Reel rendered: reel_destination_reveal_bomdila.mp4 (972 KB)
+2026-04-22 14:31:19  INFO          Requesting upload URL for reel_destination_reveal_reel_destination_reveal_bomdila.mp4 (996,038 bytes, video/mp4)
+2026-04-22 14:31:20  INFO          Uploading to R2 (timeout=300s)...
+2026-04-22 14:31:21  INFO          R2 PUT OK. Confirming...
+2026-04-22 14:31:23  INFO          Media ready: EdSkA (996,038 bytes · reel_destination_reveal_reel_destination_reveal_bomdila.mp4)
+2026-04-22 14:31:23  INFO      Video uploaded: reel_destination_reveal_reel_destination_reveal_bomdila.mp4
+2026-04-22 14:31:24  INFO      [instagram/nakshiq] Already posted reel today — skipping.
+2026-04-22 14:31:24  INFO      [facebook/Nakshiq] Already posted reel today — skipping.
+2026-04-22 14:31:24  INFO      [youtube/@naksh-iq] Publishing reel (destination_reveal)...
+2026-04-22 14:31:27  INFO      [youtube/@naksh-iq] Outstand accepted (post_id=JDls3), confirming...
+2026-04-22 14:31:33  WARNING       Platform error: Error publishing post to YouTube: Failed to initiate YouTube resumable upload: 401 - "{\"error\":{\"code\":401,\"message\":\"Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.\",\"errors\":[{\"message\":\"Invalid Credentials\",\"domain\":\"global\",\"reason\":\"authError\",\"location\":\"Authorization\",\"locationType\":\"header\"}],\"status\":\"UNAUTHENTICATED\"}}"
+2026-04-22 14:31:33  WARNING   [youtube/@naksh-iq] ⚠️  Reel queued but NOT confirmed (post_id=JDls3).
+2026-04-22 14:31:33  INFO      State saved. Reel run complete.
+2026-04-22 14:31:33  INFO      ════════════════════════════════════════════════════════════
