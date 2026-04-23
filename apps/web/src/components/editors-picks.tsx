@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { BookingHandoff } from "@/components/booking-handoff";
 
 export type EditorSlot = "experience" | "value" | "location" | "xfactor";
 
@@ -194,10 +193,6 @@ export function EditorsPicks({ destinationName, stateName, picks, intelligence }
             ? <PickCard key={slot} pick={pick} />
             : <EmptySlot key={slot} slot={slot} destinationNote={null} />;
         })}
-      </div>
-
-      <div className="mt-6">
-        <BookingHandoff destinationName={destinationName} stateName={stateName} />
       </div>
 
       <div className="mt-4 flex flex-wrap gap-x-4 gap-y-1 text-[11px] text-muted-foreground/80">
