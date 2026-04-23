@@ -13,7 +13,7 @@ import { BlogArticleToC } from "./blog-article-toc";
 const CATEGORY_LABELS: Record<string, string> = {
   "best-time": "Best Time to Visit",
   comparison: "Comparison",
-  guide: "Intelligence Guide",
+  guide: "Field guide",
   "data-story": "Data Story",
   viral: "Viral",
 };

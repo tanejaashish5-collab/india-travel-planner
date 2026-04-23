@@ -26,7 +26,8 @@
 // v25: 2026-04-23 Decision rail polish: "Decision" → "{month} at a glance", prose chips (Kids: Not ideal, Solo female: With operator only) instead of bare "2/5" scores, close + minimise controls with session/local storage. CollapsibleDetails verb "Open/Close" → "See/Hide". Second "Infrastructure Reality" heading → "Infrastructure data" (fixes dup with narrative section).
 // v26: 2026-04-23 Booking handoff dedup — editors-picks.tsx was rendering its own BookingHandoff inline + destination-detail.tsx was rendering one at the page tail. Both fired, so the "Ready to book?" card appeared twice. Removed from editors-picks; kept single instance at page tail.
 // v27: 2026-04-23 KidsBadge defensive render — meta line "Rating: X/5 · Min age: Y+ · Best for: Z" was unconditional; empty best_age_group / null min_age rendered "Best for:" / "Min age: +" trailing on partial rows (Almora and others). Each segment now guards on its own value.
-const CACHE_VERSION = "nakshiq-v27";
+// v28: 2026-04-23 Elite editorial voice sprint (6 commits): state hero reshaped to prose + i18n keys with Hindi parity; month hubs sentence-cased ("Where to skip", "A good time"); guide hub overlines rewritten ("In season", "On the ground", "Field guides"); MethodologyStrip dropped "METHOD" prefix; solo-female month grid softened. Added apps/web/docs/voice.md as single source of truth.
+const CACHE_VERSION = "nakshiq-v28";
 const STATIC_CACHE = `${CACHE_VERSION}-static`;
 const IMAGE_CACHE = `${CACHE_VERSION}-images`;
 const DATA_CACHE = `${CACHE_VERSION}-data`;

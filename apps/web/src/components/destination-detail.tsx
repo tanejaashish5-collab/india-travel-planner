@@ -883,7 +883,7 @@ export function DestinationDetail({ dest }: { dest: any }) {
                 {dest.crowd_calendar && (
                   <section>
                     <div className="flex flex-wrap items-center gap-2 mb-3">
-                      <h2 className="text-xl font-semibold">Crowd Intelligence</h2>
+                      <h2 className="text-xl font-semibold">What crowds look like</h2>
                       <SectionFreshness
                         sectionKey="crowd"
                         sectionReviews={dest.section_reviews}

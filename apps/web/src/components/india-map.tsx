@@ -173,7 +173,7 @@ export function IndiaMap({ states, locale, activeRegion }: IndiaMapProps) {
                 </span>
               )}
             </div>
-            <div className="mt-1 text-[10px] text-muted-foreground/50">Click to explore →</div>
+            <div className="mt-1 text-[10px] text-muted-foreground/50">Explore &rarr;</div>
           </motion.div>
         )}
       </AnimatePresence>

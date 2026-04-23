@@ -225,7 +225,7 @@ export function IndiaHeroMap({ pins, locale }: IndiaHeroMapProps) {
             </span>
             <span className="text-muted-foreground/50">this month</span>
           </div>
-          <div className="mt-1 text-[10px] text-primary">Click to explore →</div>
+          <div className="mt-1 text-[10px] text-primary">Explore &rarr;</div>
         </div>
       )}
 
