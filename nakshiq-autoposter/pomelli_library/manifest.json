@@ -1,28 +1,28 @@
 {
   "version": 2,
   "generated": "2026-04-23",
-  "total_images": 243,
+  "total_images": 235,
   "campaigns": {
     "andhra": 4,
     "bihar": 8,
-    "chhattisgarh": 4,
-    "dangerous_roads": 2,
+    "chhattisgarh": 3,
+    "dangerous_roads": 1,
     "data_authority": 20,
     "delhi": 4,
-    "general": 8,
-    "goa": 7,
-    "himachal": 16,
+    "general": 7,
+    "goa": 6,
+    "himachal": 15,
     "jk": 6,
     "karnataka": 8,
-    "kerala": 18,
+    "kerala": 17,
     "maharashtra": 8,
     "meghalaya": 6,
-    "mp": 8,
+    "mp": 7,
     "northeast": 15,
     "odisha": 6,
     "punjab": 5,
     "rajasthan": 14,
-    "safety_data": 9,
+    "safety_data": 8,
     "seasonal_intel": 24,
     "sikkim": 12,
     "tamilnadu": 12,
@@ -315,15 +315,6 @@
       "cta": ""
     },
     {
-      "file": "pomelli_chhattisgarh_wild_2.png",
-      "campaign_type": "region",
-      "campaign": "chhattisgarh",
-      "subject": "Chhattisgarh Wild 2",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
       "file": "pomelli_chhattisgarh_wild_3.png",
       "campaign_type": "region",
       "campaign": "chhattisgarh",
@@ -397,20 +388,6 @@
       "campaign_type": "feature",
       "campaign": "dangerous_roads",
       "subject": "Dangerous Vs Overhyped",
-      "tags": [
-        "DangerousRoads",
-        "BikerLife",
-        "MountainRoads",
-        "AdventureRide"
-      ],
-      "hook": "12 roads that could kill you. 12 reasons to ride them anyway.",
-      "cta": "SEE THE ROUTES"
-    },
-    {
-      "file": "pomelli_dangerous_vs_overhyped_june.png",
-      "campaign_type": "feature",
-      "campaign": "dangerous_roads",
-      "subject": "Dangerous Vs Overhyped June",
       "tags": [
         "DangerousRoads",
         "BikerLife",
@@ -643,19 +620,6 @@
       "state": "Goa"
     },
     {
-      "file": "pomelli_goa_beach_shack_audit_4.png",
-      "campaign_type": "region",
-      "campaign": "goa",
-      "subject": "Goa Beach Shack Audit 4",
-      "tags": [
-        "Goa",
-        "Beaches",
-        "Coastline",
-        "Nightlife"
-      ],
-      "state": "Goa"
-    },
-    {
       "file": "pomelli_goa_crowd_density_1.png",
       "campaign_type": "region",
       "campaign": "goa",
@@ -692,34 +656,10 @@
       "cta": ""
     },
     {
-      "file": "pomelli_high_altitude_escape.png",
-      "campaign_type": "feature",
-      "campaign": "safety_data",
-      "subject": "High Altitude Escape",
-      "tags": [
-        "Infrastructure",
-        "RoadSafety",
-        "HighAltitude",
-        "TravelReality"
-      ]
-    },
-    {
       "file": "pomelli_high_altitude_havens.png",
       "campaign_type": "feature",
       "campaign": "safety_data",
       "subject": "High Altitude Havens",
-      "tags": [
-        "Infrastructure",
-        "RoadSafety",
-        "HighAltitude",
-        "TravelReality"
-      ]
-    },
-    {
-      "file": "pomelli_hill_station_stability_index.png",
-      "campaign_type": "general",
-      "campaign": "general",
-      "subject": "Hill Station Stability Index",
       "tags": [
         "Infrastructure",
         "RoadSafety",
@@ -841,15 +781,6 @@
       "campaign_type": "region",
       "campaign": "himachal",
       "subject": "Himachal Roads 3",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_himachal_roads_4.png",
-      "campaign_type": "region",
-      "campaign": "himachal",
-      "subject": "Himachal Roads 4",
       "tags": [],
       "hook": "",
       "cta": ""
@@ -1160,19 +1091,6 @@
       "state": "Kerala"
     },
     {
-      "file": "pomelli_kerala_licensing_search.png",
-      "campaign_type": "region",
-      "campaign": "kerala",
-      "subject": "Kerala Licensing Search",
-      "tags": [
-        "Kerala",
-        "GodsOwnCountry",
-        "Backwaters",
-        "Ayurveda"
-      ],
-      "state": "Kerala"
-    },
-    {
       "file": "pomelli_kerala_monsoons_hard_truths.png",
       "campaign_type": "region",
       "campaign": "kerala",
@@ -1469,19 +1387,6 @@
       "tags": [],
       "hook": "",
       "cta": ""
-    },
-    {
-      "file": "pomelli_mp_heritage_crowd_forecasts.png",
-      "campaign_type": "region",
-      "campaign": "mp",
-      "subject": "Mp Heritage Crowd Forecasts",
-      "tags": [
-        "MadhyaPradesh",
-        "Safari",
-        "Heritage",
-        "Temples"
-      ],
-      "state": "Madhya Pradesh"
     },
     {
       "file": "pomelli_mp_pachmarhi_trekking_safety.png",
