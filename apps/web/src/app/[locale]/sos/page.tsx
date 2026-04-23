@@ -51,7 +51,7 @@ export default async function SosLandingPage({ params }: { params: Promise<{ loc
         {/* 112 hero */}
         <div className="rounded-2xl border-2 border-red-500/70 bg-gradient-to-br from-red-950/40 to-red-900/20 p-6 sm:p-8">
           <div className="text-xs uppercase tracking-wider text-red-400 mb-2">{t("emergencyNumbers")}</div>
-          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold leading-tight">
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-semibold leading-tight">
             {t("landingHeading")}
           </h1>
           <p className="mt-3 text-[15px] text-muted-foreground leading-relaxed max-w-2xl">{t("landingIntro")}</p>

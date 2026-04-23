@@ -204,7 +204,7 @@ export function VsComparison({ dest1, dest2, locale }: Props) {
 
         <FadeIn className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 max-w-5xl mx-auto">
           <p className="text-sm font-medium text-primary uppercase tracking-widest mb-2">Head to Head</p>
-          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white drop-shadow-lg">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-white drop-shadow-lg">
             {dest1.name} vs {dest2.name} — The Honest Comparison
           </h1>
         </FadeIn>
@@ -223,7 +223,7 @@ export function VsComparison({ dest1, dest2, locale }: Props) {
         {/* Quick verdict */}
         <ScrollReveal>
           <section className="rounded-2xl border border-primary/20 bg-primary/5 p-6 sm:p-8">
-            <h2 className="text-lg font-bold text-foreground mb-2">Quick Verdict</h2>
+            <h2 className="text-lg font-semibold text-foreground mb-2">Quick Verdict</h2>
             <p className="text-muted-foreground leading-relaxed">
               {currentWin === "left"
                 ? `${dest1.name} edges ahead this month with a score of ${score1}/5 vs ${score2 ?? "N/A"}/5.`
@@ -243,7 +243,7 @@ export function VsComparison({ dest1, dest2, locale }: Props) {
         {/* Side-by-side comparison table */}
         <ScrollReveal delay={0.1}>
           <section>
-            <h2 className="text-xl font-bold text-foreground mb-4">Side-by-Side Comparison</h2>
+            <h2 className="text-xl font-semibold text-foreground mb-4">Side-by-Side Comparison</h2>
             <div className="rounded-2xl border border-border bg-card overflow-hidden">
               {/* Header */}
               <div className="grid grid-cols-3 border-b border-border bg-muted/30">
@@ -290,7 +290,7 @@ export function VsComparison({ dest1, dest2, locale }: Props) {
         {/* Month-by-month comparison */}
         <ScrollReveal delay={0.15}>
           <section>
-            <h2 className="text-xl font-bold text-foreground mb-4">Month-by-Month Score</h2>
+            <h2 className="text-xl font-semibold text-foreground mb-4">Month-by-Month Score</h2>
             <div className="rounded-2xl border border-border bg-card overflow-hidden">
               {/* Header */}
               <div className="grid grid-cols-3 border-b border-border bg-muted/30">

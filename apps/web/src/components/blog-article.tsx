@@ -295,7 +295,7 @@ export function BlogArticle({
                     {new Date(article.published_at).toLocaleDateString("en-IN", { year: "numeric", month: "long", day: "numeric" })}
                   </span>
                 </div>
-                <h1 className="text-3xl sm:text-4xl font-bold leading-tight">{article.title}</h1>
+                <h1 className="text-3xl sm:text-4xl font-semibold leading-tight">{article.title}</h1>
                 {article.subtitle && (
                   <p className="mt-3 text-lg sm:text-xl text-muted-foreground leading-relaxed">{article.subtitle}</p>
                 )}
@@ -388,7 +388,7 @@ export function BlogArticle({
                     </h2>
                   </div>
                 ) : section.heading ? (
-                  <h2 id={section.id} className="scroll-mt-32 text-2xl font-bold mt-10 mb-4">{section.heading}</h2>
+                  <h2 id={section.id} className="scroll-mt-32 text-2xl font-semibold mt-10 mb-4">{section.heading}</h2>
                 ) : null}
 
                 {/* Pull-quote treatment for the very first paragraph of deep-dive

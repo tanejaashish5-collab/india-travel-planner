@@ -124,7 +124,7 @@ export function IndiaArticleGrid({ articles }: { articles: Article[] }) {
           </div>
 
           <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8">
-            <h2 className="text-2xl sm:text-3xl font-bold text-white drop-shadow-lg group-hover:text-primary transition-colors">
+            <h2 className="text-2xl sm:text-3xl font-semibold text-white drop-shadow-lg group-hover:text-primary transition-colors">
               {featured.title}
             </h2>
             {featured.subtitle && (

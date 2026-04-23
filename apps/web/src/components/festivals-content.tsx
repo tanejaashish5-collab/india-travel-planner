@@ -124,7 +124,7 @@ export function FestivalsContent({ festivals }: { festivals: any[] }) {
       {sortedMonths.map((month) => (
         <div key={month} className="space-y-3">
           <ScrollReveal>
-            <h2 className="text-xl font-bold sticky top-[64px] bg-background/95 backdrop-blur-md py-2 z-20 border-b border-border/30">
+            <h2 className="text-xl font-semibold sticky top-[64px] bg-background/95 backdrop-blur-md py-2 z-20 border-b border-border/30">
               {MONTH_NAMES[month]}
               <span className="text-sm font-normal text-muted-foreground ml-2">
                 {grouped[month].length} festival{grouped[month].length !== 1 ? "s" : ""}

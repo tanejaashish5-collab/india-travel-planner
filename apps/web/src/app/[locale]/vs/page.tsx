@@ -63,7 +63,7 @@ export default async function VsIndexPage({
       <Nav />
       <main className="mx-auto max-w-5xl px-4 py-8 pb-24 md:pb-8">
         <div className="mb-10">
-          <h1 className="text-3xl sm:text-4xl font-bold">Compare Destinations</h1>
+          <h1 className="text-3xl sm:text-4xl font-semibold">Compare Destinations</h1>
           <p className="mt-2 text-muted-foreground max-w-2xl">
             {VS_PAIRS.length} side-by-side comparisons across India — weather scores by month,
             cost, difficulty, kid-friendliness, and infrastructure. Pick the one that fits your trip.
@@ -72,7 +72,7 @@ export default async function VsIndexPage({
 
         {themes.map((theme) => (
           <section key={theme} className="mb-10">
-            <h2 className="text-sm font-bold uppercase tracking-[0.15em] text-muted-foreground mb-4">
+            <h2 className="text-sm font-semibold uppercase tracking-[0.15em] text-muted-foreground mb-4">
               {VS_THEME_LABELS[theme] ?? theme}
             </h2>
             <div className="grid gap-2 sm:grid-cols-2">

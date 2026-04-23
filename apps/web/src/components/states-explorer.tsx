@@ -181,7 +181,7 @@ export function StatesExplorer({ states, locale }: { states: StateData[]; locale
                   </div>
                   {/* State name */}
                   <div className="absolute bottom-3 left-4">
-                    <h2 className="text-lg font-bold text-foreground drop-shadow-md group-hover:text-primary transition-colors">
+                    <h2 className="text-lg font-semibold text-foreground drop-shadow-md group-hover:text-primary transition-colors">
                       {state.name}
                     </h2>
                   </div>

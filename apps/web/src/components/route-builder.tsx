@@ -80,7 +80,7 @@ export function RouteBuilder({ destinations }: { destinations: any[] }) {
   return (
     <div className="space-y-8">
       <div>
-        <h1 className="text-3xl font-bold">Build Your Route</h1>
+        <h1 className="text-3xl font-semibold">Build Your Route</h1>
         <p className="mt-1 text-muted-foreground">
           Pick up to 8 destinations. We'll show you the scores and stats.
         </p>

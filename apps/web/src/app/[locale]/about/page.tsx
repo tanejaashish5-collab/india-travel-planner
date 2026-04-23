@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     <div className="min-h-screen">
       <Nav />
       <main className="mx-auto max-w-3xl px-4 py-12">
-        <h1 className="text-4xl font-bold mb-2">About NakshIQ</h1>
+        <h1 className="text-4xl font-semibold mb-2">About NakshIQ</h1>
         <p className="text-sm text-muted-foreground mb-10">
           The honest answers your guidebook won't give you.
         </p>

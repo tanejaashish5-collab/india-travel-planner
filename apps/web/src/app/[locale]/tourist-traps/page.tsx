@@ -121,7 +121,7 @@ export default async function TouristTrapsPage({
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
         <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 max-w-7xl mx-auto">
           <p className="text-sm font-medium text-primary uppercase tracking-widest mb-2">Honest Travel</p>
-          <h1 className="text-3xl font-bold sm:text-4xl text-white drop-shadow-lg">Tourist Traps Exposed</h1>
+          <h1 className="text-3xl font-semibold sm:text-4xl text-white drop-shadow-lg">Tourist Traps Exposed</h1>
           <p className="mt-2 text-white/80 max-w-xl">Honest alternatives to India&apos;s most overhyped destinations. No sponsored recommendations — just data-driven suggestions.</p>
         </div>
       </section>
@@ -150,7 +150,7 @@ export default async function TouristTrapsPage({
                     <span className="rounded bg-red-950/60 px-2 py-0.5 text-xs font-bold uppercase tracking-wider text-red-400">
                       Skip
                     </span>
-                    <h2 className="text-lg font-bold text-foreground">
+                    <h2 className="text-lg font-semibold text-foreground">
                       {trapName || trap.trap_destination_id}
                     </h2>
                   </div>

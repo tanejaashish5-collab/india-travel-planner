@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       <Nav />
       <main id="main-content" className="mx-auto max-w-3xl px-4 sm:px-6 py-8">
         <div className="text-center mb-8">
-          <h1 className="text-3xl sm:text-4xl font-bold">Ask NakshIQ</h1>
+          <h1 className="text-3xl sm:text-4xl font-semibold">Ask NakshIQ</h1>
           <p className="mt-2 text-muted-foreground">
             AI travel assistant — ask anything about destinations, best times, safety, or planning
           </p>

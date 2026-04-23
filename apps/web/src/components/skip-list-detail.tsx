@@ -66,7 +66,7 @@ export function SkipListDetail({ trapDest, alternatives, whyTrapText, goodMonths
               <span className="text-sm text-white/60">{trapDest.state}</span>
             )}
           </div>
-          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white drop-shadow-lg">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-white drop-shadow-lg">
             Skip {trapDest.name} — Here&apos;s Why (and Where to Go Instead)
           </h1>
           <p className="mt-2 text-white/70 max-w-2xl text-sm sm:text-base">
@@ -89,7 +89,7 @@ export function SkipListDetail({ trapDest, alternatives, whyTrapText, goodMonths
         {whyTrapText && (
           <ScrollReveal>
             <section className="rounded-2xl border border-red-500/20 bg-red-950/10 p-6 sm:p-8">
-              <h2 className="text-xl font-bold text-foreground mb-3 flex items-center gap-2">
+              <h2 className="text-xl font-semibold text-foreground mb-3 flex items-center gap-2">
                 <span className="text-red-400">!</span>
                 Why Travelers Are Disappointed
               </h2>
@@ -111,7 +111,7 @@ export function SkipListDetail({ trapDest, alternatives, whyTrapText, goodMonths
         {/* When it's still worth visiting */}
         <ScrollReveal delay={0.1}>
           <section className="rounded-2xl border border-border bg-card p-6 sm:p-8">
-            <h2 className="text-xl font-bold text-foreground mb-4">When It&apos;s Still Worth Visiting</h2>
+            <h2 className="text-xl font-semibold text-foreground mb-4">When It&apos;s Still Worth Visiting</h2>
             {goodMonths.length > 0 ? (
               <>
                 <p className="text-muted-foreground mb-4 text-sm">
@@ -166,7 +166,7 @@ export function SkipListDetail({ trapDest, alternatives, whyTrapText, goodMonths
         {/* Better alternatives */}
         <ScrollReveal delay={0.15}>
           <section>
-            <h2 className="text-xl font-bold text-foreground mb-6">
+            <h2 className="text-xl font-semibold text-foreground mb-6">
               Better Alternatives to {trapDest.name}
             </h2>
             <StaggerContainer className="grid gap-5 sm:grid-cols-2" staggerDelay={0.08}>

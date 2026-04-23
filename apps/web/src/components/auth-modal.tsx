@@ -100,7 +100,7 @@ export function AuthModal({
                   {/* Envelope glyph */}
                   <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><polyline points="3,7 12,13 21,7"/></svg>
                 </div>
-                <h2 className="text-2xl font-bold mb-3 text-center">Check your email</h2>
+                <h2 className="text-2xl font-semibold mb-3 text-center">Check your email</h2>
                 <p className="text-sm text-muted-foreground mb-2 text-center">
                   We sent a confirmation link to
                 </p>
@@ -133,7 +133,7 @@ export function AuthModal({
               </div>
             ) : (
               <>
-            <h2 className="text-2xl font-bold mb-1">
+            <h2 className="text-2xl font-semibold mb-1">
               {mode === "signin" ? ta("welcomeBack") : ta("joinTheJourney")}
             </h2>
             <p className="text-sm text-muted-foreground mb-6">

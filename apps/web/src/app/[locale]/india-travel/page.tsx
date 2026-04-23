@@ -83,7 +83,7 @@ export default async function IndiaTravel() {
           <p className="text-sm font-medium text-[#E55642] uppercase tracking-widest mb-4">
             For International Visitors
           </p>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#F5F1E8]">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-[#F5F1E8]">
             India, Without the Filter
           </h1>
           <p className="mt-4 text-base sm:text-lg text-[#F5F1E8]/70 max-w-2xl mx-auto">

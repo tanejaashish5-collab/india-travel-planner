@@ -87,7 +87,7 @@ export function AdminStayPicksClient() {
   if (!key) {
     return (
       <div className="mx-auto max-w-md p-6">
-        <h1 className="text-xl font-bold text-foreground mb-4">Stay picks admin</h1>
+        <h1 className="text-xl font-semibold text-foreground mb-4">Stay picks admin</h1>
         <p className="text-sm text-muted-foreground mb-4">
           Enter the admin key (same value as <code>NEWSLETTER_SEND_SECRET</code>).
         </p>
@@ -123,7 +123,7 @@ export function AdminStayPicksClient() {
   return (
     <div className="mx-auto max-w-5xl p-6">
       <div className="flex items-center justify-between mb-4">
-        <h1 className="text-xl font-bold text-foreground">Stay picks — {status}</h1>
+        <h1 className="text-xl font-semibold text-foreground">Stay picks — {status}</h1>
         <div className="flex gap-2">
           <select
             value={status}

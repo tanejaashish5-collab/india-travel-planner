@@ -91,7 +91,7 @@ export function GapYearPageClient({ locale }: Props) {
       {!plan && (
         <>
           <header className="mb-8 text-center">
-            <h1 className="text-4xl font-bold text-foreground">The Gap Year Planner</h1>
+            <h1 className="text-4xl font-semibold text-foreground">The Gap Year Planner</h1>
             <p className="mt-3 text-muted-foreground max-w-xl mx-auto">
               3–12 months across India, planned month by month. Real scoring, real data —
               you pick the shape.

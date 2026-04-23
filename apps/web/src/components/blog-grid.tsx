@@ -203,7 +203,7 @@ export function BlogGrid({ articles }: { articles: Article[] }) {
                       Featured
                     </span>
                   </div>
-                  <h2 className="text-2xl sm:text-3xl font-bold text-white drop-shadow-lg group-hover:text-primary transition-colors">
+                  <h2 className="text-2xl sm:text-3xl font-semibold text-white drop-shadow-lg group-hover:text-primary transition-colors">
                     {firstFeatured.title}
                   </h2>
                   {firstFeatured.subtitle && (

@@ -112,7 +112,7 @@ export function GapYearTimeline({ plan, locale, onPlanChange }: Props) {
   return (
     <div className="space-y-6">
       <div className="rounded-xl border border-border bg-gradient-to-br from-primary/10 to-muted/40 p-6">
-        <h1 className="text-2xl font-bold text-foreground">{plan.title}</h1>
+        <h1 className="text-2xl font-semibold text-foreground">{plan.title}</h1>
         <div className="mt-3 grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
           <Stat label="Duration" value={`${plan.input.durationMonths} months`} />
           <Stat label="Destinations" value={String(totalDests)} />

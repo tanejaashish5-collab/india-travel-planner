@@ -141,7 +141,7 @@ export function TripBoard({ destinations }: { destinations: any[] }) {
               className="text-3xl font-bold bg-transparent border-b-2 border-primary outline-none"
             />
           ) : (
-            <h1 className="text-3xl font-bold cursor-pointer hover:text-primary transition-colors" onClick={() => setEditingName(true)}>
+            <h1 className="text-3xl font-semibold cursor-pointer hover:text-primary transition-colors" onClick={() => setEditingName(true)}>
               {trip.name} <span className="text-sm text-muted-foreground font-normal ml-2">{tt("clickToRename")}</span>
             </h1>
           )}

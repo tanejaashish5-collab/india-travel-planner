@@ -34,7 +34,7 @@ export function GapYearBudgetRollup({ plan }: Props) {
 
   return (
     <section className="rounded-xl border border-border bg-card p-6">
-      <h2 className="text-lg font-bold mb-4 text-foreground">Budget roll-up — per person</h2>
+      <h2 className="text-lg font-semibold mb-4 text-foreground">Budget roll-up — per person</h2>
       <p className="text-xs text-muted-foreground mb-4">
         Estimated based on <span className="font-medium capitalize">{plan.input.experienceTier ?? tier}</span> tier, <strong>per person</strong>, excluding flights in. Stays + food + local transport only. Multiply by party size for the household total.
       </p>

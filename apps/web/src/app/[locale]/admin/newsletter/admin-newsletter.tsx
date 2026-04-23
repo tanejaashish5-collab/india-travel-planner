@@ -79,7 +79,7 @@ export function AdminNewsletter() {
 
   return (
     <div className="mx-auto max-w-3xl px-4 py-16">
-      <h1 className="text-2xl font-bold mb-2">The Window — Admin</h1>
+      <h1 className="text-2xl font-semibold mb-2">The Window — Admin</h1>
       <p className="text-sm text-muted-foreground mb-8">
         Preview the next issue, send a test to yourself, then send to the real list.
       </p>
@@ -202,7 +202,7 @@ export function AdminNewsletter() {
 
       {step === "done" && result && (
         <div className="rounded-xl border border-emerald-500/40 bg-emerald-500/10 p-6">
-          <h2 className="text-lg font-bold text-emerald-400 mb-2">Sent.</h2>
+          <h2 className="text-lg font-semibold text-emerald-400 mb-2">Sent.</h2>
           <p className="text-sm">
             Issue <span className="font-mono">{result.slug}</span> sent to {result.sent} recipients.
           </p>

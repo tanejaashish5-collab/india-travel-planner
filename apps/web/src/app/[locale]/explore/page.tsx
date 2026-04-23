@@ -64,7 +64,7 @@ export default async function ExplorePage({ params }: { params: Promise<{ locale
       <Nav />
       <main id="main-content" className="mx-auto max-w-7xl px-4 py-8">
         <div className="mb-6">
-          <h1 className="text-3xl font-bold">{t("pageTitle")}</h1>
+          <h1 className="text-3xl font-semibold">{t("pageTitle")}</h1>
           <p className="mt-1 text-muted-foreground">
             {t("pageSubtitle", { count: destinations.length })}
           </p>

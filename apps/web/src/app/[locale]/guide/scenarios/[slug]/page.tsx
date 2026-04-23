@@ -88,7 +88,7 @@ export default async function ScenarioPage({
           )}
         </div>
 
-        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-6">{s.title}</h1>
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight mb-6">{s.title}</h1>
 
         {/* If / Then announcement card */}
         <section className={`rounded-2xl border p-6 sm:p-8 mb-8 bg-gradient-to-br from-background/80 to-background/40 ${tone}`}>

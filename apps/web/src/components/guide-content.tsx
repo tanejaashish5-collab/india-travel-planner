@@ -174,7 +174,7 @@ export function GuideContent({
           <p className="text-xs font-medium uppercase tracking-widest text-emerald-400 mb-1">
             Seasonal Intelligence
           </p>
-          <h2 className="text-2xl font-bold sm:text-3xl">Best Time to Visit — {currentMonthName}</h2>
+          <h2 className="text-2xl font-semibold sm:text-3xl">Best Time to Visit — {currentMonthName}</h2>
           <p className="text-muted-foreground mt-1">
             {bestTimeCount > 0
               ? `${bestTimeCount} destinations scoring 4-5/5 for ${currentMonthName} — sorted by monthly score`
@@ -239,7 +239,7 @@ export function GuideContent({
           <p className="text-xs font-medium uppercase tracking-widest text-blue-400 mb-1">
             Head-to-Head
           </p>
-          <h2 className="text-2xl font-bold sm:text-3xl">
+          <h2 className="text-2xl font-semibold sm:text-3xl">
             Destination Comparisons
           </h2>
           <p className="text-muted-foreground mt-1">
@@ -288,7 +288,7 @@ export function GuideContent({
           <p className="text-xs font-medium uppercase tracking-widest text-primary mb-1">
             Just-in-Time Operations
           </p>
-          <h2 className="text-2xl font-bold sm:text-3xl">Practical Playbooks</h2>
+          <h2 className="text-2xl font-semibold sm:text-3xl">Practical Playbooks</h2>
           <p className="text-muted-foreground mt-1">
             The operational side — how to arrive, what permits you need, how to book trains, which roads are open
           </p>
@@ -335,7 +335,7 @@ export function GuideContent({
           <p className="text-xs font-medium uppercase tracking-widest text-amber-400 mb-1">
             Kid-Friendly
           </p>
-          <h2 className="text-2xl font-bold sm:text-3xl">
+          <h2 className="text-2xl font-semibold sm:text-3xl">
             Family Travel Guides
           </h2>
           <p className="text-muted-foreground mt-1">

@@ -33,7 +33,7 @@ export default async function CollectionsPage() {
       <Nav />
       <main className="mx-auto max-w-7xl px-4 py-8 pb-24 md:pb-8">
         <div className="mb-8">
-          <h1 className="text-3xl font-bold">Collections</h1>
+          <h1 className="text-3xl font-semibold">Collections</h1>
           <p className="mt-1 text-muted-foreground">
             {collections.length} themed lists of India's most special places
           </p>

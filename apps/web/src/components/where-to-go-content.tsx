@@ -376,7 +376,7 @@ export function WhereToGoContent({
             <p className="mb-3 font-mono text-[10px] sm:text-[11px] uppercase tracking-[0.28em] text-primary/70">
               Where to go · {monthName} · {regionName}
             </p>
-            <h1 className="font-fraunces text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl lg:text-6xl">
+            <h1 className="font-fraunces text-3xl font-semibold tracking-tight text-white sm:text-4xl md:text-5xl lg:text-6xl">
               {regionName} in {monthName}
             </h1>
             <p className="mt-3 max-w-prose text-base sm:text-lg leading-relaxed text-white/80">
@@ -437,7 +437,7 @@ export function WhereToGoContent({
             <p className="mb-2 text-sm font-medium uppercase tracking-widest text-primary/70">
               Where to go in {regionName ?? "India"}
             </p>
-            <h1 className="font-fraunces text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl">
+            <h1 className="font-fraunces text-4xl font-semibold tracking-tight text-white sm:text-5xl md:text-6xl">
               {regionName
                 ? `${regionName} in ${monthName} — where the data says go, wait, and skip`
                 : `${monthName} in India — where the data says go, wait, and skip`}
@@ -791,7 +791,7 @@ function SectionHeader({
   return (
     <div className="flex items-center gap-3">
       <span className={`h-2 w-2 rounded-full ${colors.dot}`} />
-      <h2 className="font-fraunces text-2xl font-bold text-white">{title}</h2>
+      <h2 className="font-fraunces text-2xl font-semibold text-white">{title}</h2>
       <span
         className={`rounded-full border px-2 py-0.5 text-xs font-semibold ${colors.border} ${colors.text} ${colors.bg}`}
       >

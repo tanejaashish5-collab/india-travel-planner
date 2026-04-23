@@ -61,7 +61,7 @@ export function CollectionDetail({ collection }: { collection: any }) {
       <FadeIn delay={0.1}>
         <div className="flex items-start justify-between gap-4">
           <div>
-            <h1 className="text-3xl font-bold">{collection.name}</h1>
+            <h1 className="text-3xl font-semibold">{collection.name}</h1>
             <p className="mt-2 text-muted-foreground leading-relaxed">{collection.description}</p>
           </div>
           <div className="shrink-0 flex items-center gap-2 mt-1">
@@ -248,7 +248,7 @@ function CircuitLayout({
       <FadeIn delay={0.1}>
         <div className="flex items-start justify-between gap-4">
           <div>
-            <h1 className="text-3xl font-bold">{collection.name}</h1>
+            <h1 className="text-3xl font-semibold">{collection.name}</h1>
             <p className="mt-2 text-muted-foreground leading-relaxed">{collection.description}</p>
           </div>
           <div className="shrink-0 flex items-center gap-2 mt-1">

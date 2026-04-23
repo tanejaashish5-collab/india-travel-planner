@@ -73,7 +73,7 @@ export function TrekDetail({ trek }: { trek: any }) {
       <div className="rounded-2xl border border-border/50 bg-card/80 backdrop-blur-xl p-6 sm:p-8 -mt-20 relative z-10 shadow-2xl">
         <div className="flex items-start justify-between">
           <div>
-            <h1 className="text-3xl font-bold">{trek.name}</h1>
+            <h1 className="text-3xl font-semibold">{trek.name}</h1>
             <p className="mt-1 text-muted-foreground">
               {destName && <Link href={`/${locale}/destination/${trek.destination_id}`} className="hover:text-primary transition-colors">{destName}</Link>}
               {stateName && <span> · {stateName}</span>}

@@ -15,7 +15,7 @@ export default function NotFound() {
               <div className="text-5xl">🏔️</div>
             </div>
           </div>
-          <h2 className="text-3xl font-bold">Lost in the mountains</h2>
+          <h2 className="text-3xl font-semibold">Lost in the mountains</h2>
           <p className="text-muted-foreground leading-relaxed max-w-md mx-auto">
             This trail doesn't exist — yet. Maybe the URL is wrong, or this destination
             hasn't been added to our database. Let's get you back on track.

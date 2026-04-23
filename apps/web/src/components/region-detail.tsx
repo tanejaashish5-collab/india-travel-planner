@@ -70,7 +70,7 @@ export function RegionDetail({ region }: RegionDetailProps) {
           <p className="text-xs font-medium text-primary uppercase tracking-widest mb-3">
             Mountain Region Guide
           </p>
-          <h1 className="text-4xl font-bold sm:text-5xl">{region.name}</h1>
+          <h1 className="text-4xl font-semibold sm:text-5xl">{region.name}</h1>
           <p className="mt-2 text-lg text-primary/80 italic">{region.hero_tagline}</p>
           <p className="mt-4 text-muted-foreground leading-relaxed max-w-3xl">{region.description}</p>
 
@@ -95,7 +95,7 @@ export function RegionDetail({ region }: RegionDetailProps) {
       {/* Subregion Clusters */}
       <FadeIn delay={0.2}>
         <section className="mb-10">
-          <h2 className="text-2xl font-bold mb-4">Subregions</h2>
+          <h2 className="text-2xl font-semibold mb-4">Subregions</h2>
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {region.subregions.map((sr: any) => {
               const count = bySubregion[sr.name]?.length ?? 0;
@@ -131,7 +131,7 @@ export function RegionDetail({ region }: RegionDetailProps) {
       {popularVsQuiet.length > 0 && (
         <FadeIn delay={0.3}>
           <section className="mb-10">
-            <h2 className="text-2xl font-bold mb-2">Popular vs Quiet Alternatives</h2>
+            <h2 className="text-2xl font-semibold mb-2">Popular vs Quiet Alternatives</h2>
             <p className="text-muted-foreground mb-4">Everyone goes to the popular one. Here's what they miss.</p>
             <div className="space-y-3">
               {popularVsQuiet.map((pair: any) => (
@@ -188,7 +188,7 @@ export function RegionDetail({ region }: RegionDetailProps) {
 
       {/* Destination Grid */}
       <section className="mb-10">
-        <h2 className="text-2xl font-bold mb-4">
+        <h2 className="text-2xl font-semibold mb-4">
           {selectedSubregion ? `${selectedSubregion}` : "All Destinations"}
           <span className="text-muted-foreground font-normal text-lg ml-2">({filteredDests.length})</span>
         </h2>
@@ -270,7 +270,7 @@ export function RegionDetail({ region }: RegionDetailProps) {
       {region.routes.length > 0 && (
         <FadeIn>
           <section className="mb-10">
-            <h2 className="text-2xl font-bold mb-4">Routes in {region.name}</h2>
+            <h2 className="text-2xl font-semibold mb-4">Routes in {region.name}</h2>
             <div className="grid gap-3 sm:grid-cols-2">
               {region.routes.map((route: any) => (
                 <HoverCard key={route.id}>

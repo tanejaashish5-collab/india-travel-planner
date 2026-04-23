@@ -25,7 +25,7 @@ export function GapYearPublicView({ plan, locale }: Props) {
     <div className="mx-auto max-w-3xl px-4 py-10 space-y-6">
       <header className="rounded-xl border border-border bg-gradient-to-br from-primary/10 to-muted/40 p-6">
         <div className="text-xs uppercase tracking-wider text-muted-foreground">A NakshIQ Gap Year plan</div>
-        <h1 className="text-2xl md:text-3xl font-bold mt-1 text-foreground">{plan.title}</h1>
+        <h1 className="text-2xl md:text-3xl font-semibold mt-1 text-foreground">{plan.title}</h1>
         <div className="mt-4 grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
           <Stat label="Duration" value={`${plan.input.durationMonths} months`} />
           <Stat label="Destinations" value={String(totalDests)} />

@@ -120,7 +120,7 @@ export function WithKidsContent({
           />
           <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
           <div className="absolute bottom-4 left-4 right-4">
-            <h1 className="text-2xl font-bold sm:text-3xl lg:text-4xl text-white drop-shadow-lg">
+            <h1 className="text-2xl font-semibold sm:text-3xl lg:text-4xl text-white drop-shadow-lg">
               {dest.name} with Kids — Family Travel Guide
             </h1>
             <p className="mt-1 text-white/80 text-sm sm:text-base">
@@ -207,7 +207,7 @@ export function WithKidsContent({
           {/* Reasons */}
           {activities.length > 0 && (
             <div className="mt-6">
-              <h2 className="text-lg font-bold mb-3">
+              <h2 className="text-lg font-semibold mb-3">
                 Why this rating?
               </h2>
               <ul className="space-y-2">
@@ -236,7 +236,7 @@ export function WithKidsContent({
       {months.length > 0 && (
         <ScrollReveal>
           <div className="space-y-4">
-            <h2 className="text-2xl font-bold">
+            <h2 className="text-2xl font-semibold">
               Month-by-Month Family Suitability
             </h2>
             <p className="text-muted-foreground">
@@ -368,7 +368,7 @@ export function WithKidsContent({
       {/* Infrastructure Reality for Families */}
       <ScrollReveal>
         <div className="space-y-4">
-          <h2 className="text-2xl font-bold">
+          <h2 className="text-2xl font-semibold">
             {tp("infrastructureReality")}
           </h2>
           <p className="text-muted-foreground">
@@ -457,7 +457,7 @@ export function WithKidsContent({
       {warnings.length > 0 && (
         <ScrollReveal>
           <div className="rounded-xl border border-orange-500/20 bg-orange-500/5 p-6">
-            <h2 className="text-xl font-bold text-orange-400 mb-4">
+            <h2 className="text-xl font-semibold text-orange-400 mb-4">
               {tp("whatToWatchOut")}
             </h2>
             <ul className="space-y-3">

@@ -274,7 +274,7 @@ export function DestinationDetail({ dest }: { dest: any }) {
         <SlideIn delay={0.1}>
           <div className="mb-6 rounded-2xl border border-border/50 bg-card p-6 sm:p-8 -mt-24 relative z-10 shadow-2xl shadow-black/20">
             {/* H1 + location + meta chips */}
-            <h1 className="text-3xl font-bold sm:text-4xl lg:text-6xl lg:tracking-tight">{displayName}</h1>
+            <h1 className="text-3xl font-semibold sm:text-4xl lg:text-6xl lg:tracking-tight">{displayName}</h1>
             <p className="mt-2 text-sm text-muted-foreground">
               {stateName}{dest.region ? ` · ${dest.region}` : ""}
               {dest.elevation_m && <span className="font-mono"> · {dest.elevation_m.toLocaleString()}m</span>}
@@ -1360,7 +1360,7 @@ export function DestinationDetail({ dest }: { dest: any }) {
         return (
           <ScrollReveal>
             <div className="mt-12 border-t border-border pt-8">
-              <h2 className="text-xl font-bold mb-4">{heading}</h2>
+              <h2 className="text-xl font-semibold mb-4">{heading}</h2>
               <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
                 {dest.nearbyDestinations.map((nd: any) => {
                   const ndState = Array.isArray(nd.state) ? nd.state[0]?.name : nd.state?.name;
@@ -1402,7 +1402,7 @@ export function DestinationDetail({ dest }: { dest: any }) {
       {dest.relatedCollections?.length > 0 && (
         <ScrollReveal>
           <div className="mt-8">
-            <h2 className="text-lg font-bold mb-3">Featured in Collections</h2>
+            <h2 className="text-lg font-semibold mb-3">Featured in Collections</h2>
             <div className="flex gap-3 overflow-x-auto pb-2">
               {dest.relatedCollections.map((c: any) => (
                 <a
@@ -1423,7 +1423,7 @@ export function DestinationDetail({ dest }: { dest: any }) {
       {dest.relatedRoutes?.length > 0 && (
         <ScrollReveal>
           <div className="mt-8">
-            <h2 className="text-lg font-bold mb-3">Road Trips Through Here</h2>
+            <h2 className="text-lg font-semibold mb-3">Road Trips Through Here</h2>
             <div className="flex gap-3 overflow-x-auto pb-2">
               {dest.relatedRoutes.map((r: any) => (
                 <a

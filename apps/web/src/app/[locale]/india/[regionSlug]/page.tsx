@@ -131,7 +131,7 @@ export default async function RegionPage({
                 {" → "}
                 <span className="text-foreground">{region.name}</span>
               </div>
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold">{region.name}</h1>
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold">{region.name}</h1>
               <div className="mt-4 flex flex-wrap gap-4 sm:gap-6">
                 <div>
                   <div className="text-2xl font-mono font-bold">{states.length}</div>
@@ -155,7 +155,7 @@ export default async function RegionPage({
           )}
 
           {/* State grid */}
-          <h2 className="text-xl font-bold mb-6">States in {region.name}</h2>
+          <h2 className="text-xl font-semibold mb-6">States in {region.name}</h2>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 mb-12">
             {states.map((state: any) => (
               <Link

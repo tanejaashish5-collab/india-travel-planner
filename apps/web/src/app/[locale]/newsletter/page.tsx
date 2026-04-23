@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
           <p className="text-sm font-medium text-primary uppercase tracking-widest mb-3">
             Weekly Newsletter
           </p>
-          <h1 className="text-4xl font-bold">The Window</h1>
+          <h1 className="text-4xl font-semibold">The Window</h1>
           <p className="mt-3 text-lg text-muted-foreground">
             Every Sunday morning: what changed, what scores shifted, and one
             destination you should know about this week.
@@ -66,7 +66,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
         {/* Subscribe form */}
         <div className="rounded-2xl border border-primary/20 bg-primary/5 p-8 text-center">
-          <h2 className="text-xl font-bold mb-2">Get The Window every Sunday</h2>
+          <h2 className="text-xl font-semibold mb-2">Get The Window every Sunday</h2>
           <p className="text-sm text-muted-foreground mb-6">
             Free. No spam. Unsubscribe anytime. We don't sell your email.
           </p>

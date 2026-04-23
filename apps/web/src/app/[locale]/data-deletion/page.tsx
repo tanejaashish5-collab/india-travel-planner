@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     <div className="min-h-screen">
       <Nav />
       <main className="mx-auto max-w-3xl px-4 py-12">
-        <h1 className="text-3xl font-bold mb-2">Data Deletion Request</h1>
+        <h1 className="text-3xl font-semibold mb-2">Data Deletion Request</h1>
         <p className="text-sm text-muted-foreground mb-10">
           Your data, your choice. We take this seriously.
         </p>

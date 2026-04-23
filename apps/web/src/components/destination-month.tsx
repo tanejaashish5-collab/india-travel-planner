@@ -192,7 +192,7 @@ export function DestinationMonth({
           </div>
 
           {/* Title */}
-          <h1 className="text-3xl font-bold text-white sm:text-4xl lg:text-5xl lg:tracking-tight">
+          <h1 className="text-3xl font-semibold text-white sm:text-4xl lg:text-5xl lg:tracking-tight">
             {destination.name} in {monthName}
           </h1>
           {stateName && (
@@ -293,7 +293,7 @@ export function DestinationMonth({
     return (
       <ScrollReveal>
         <div className="space-y-1">
-          <h2 className="text-2xl font-bold text-white">
+          <h2 className="text-2xl font-semibold text-white">
             Why {monthName} scores {score}/5
           </h2>
           <div className="mt-4 grid gap-3">
@@ -326,7 +326,7 @@ export function DestinationMonth({
 
     return (
       <ScrollReveal>
-        <h2 className="mb-4 text-2xl font-bold text-white">
+        <h2 className="mb-4 text-2xl font-semibold text-white">
           What to do in {destination.name} this {monthName}
         </h2>
         <ul className="grid gap-2 sm:grid-cols-2">
@@ -438,7 +438,7 @@ export function DestinationMonth({
 
     return (
       <ScrollReveal>
-        <h2 className="mb-4 text-2xl font-bold text-white">All 12 Months</h2>
+        <h2 className="mb-4 text-2xl font-semibold text-white">All 12 Months</h2>
         <div className="overflow-x-auto rounded-xl border border-zinc-800">
           <table className="w-full text-sm">
             <thead>
@@ -510,7 +510,7 @@ export function DestinationMonth({
 
     return (
       <ScrollReveal>
-        <h2 className="mb-4 text-2xl font-bold text-white">
+        <h2 className="mb-4 text-2xl font-semibold text-white">
           What to pack for {monthName}
         </h2>
         <ul className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
@@ -559,7 +559,7 @@ export function DestinationMonth({
 
     return (
       <ScrollReveal>
-        <h2 className="mb-4 text-2xl font-bold text-white">
+        <h2 className="mb-4 text-2xl font-semibold text-white">
           Nearby in {stateName} scoring high in {monthName}
         </h2>
         <StaggerContainer className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

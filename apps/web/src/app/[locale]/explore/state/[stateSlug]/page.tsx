@@ -49,7 +49,7 @@ export default async function ExploreByStatePage({ params }: { params: Promise<{
       <main className="mx-auto max-w-7xl px-4 py-8">
         <div className="mb-8">
           <p className="text-sm font-medium text-primary uppercase tracking-widest mb-2">{stateName}</p>
-          <h1 className="text-3xl font-bold">Places to Visit in {stateName}</h1>
+          <h1 className="text-3xl font-semibold">Places to Visit in {stateName}</h1>
           <p className="mt-2 text-muted-foreground">
             {sorted.length} destinations scored for every month — sorted by this month's score
           </p>

@@ -87,7 +87,7 @@ export default async function GuidesPage() {
           <p className="text-sm font-medium text-primary uppercase tracking-widest mb-2">
             Travel Intelligence
           </p>
-          <h1 className="text-3xl font-bold sm:text-4xl text-white drop-shadow-lg">
+          <h1 className="text-3xl font-semibold sm:text-4xl text-white drop-shadow-lg">
             Travel Guides
           </h1>
           <p className="mt-2 text-white/80">

@@ -252,7 +252,7 @@ export function PlanContent({ destinations, states = [] }: PlanContentProps) {
         >
           <span aria-hidden>←</span> Back to home
         </Link>
-        <h1 className="text-3xl font-bold">Plan Your Trip</h1>
+        <h1 className="text-3xl font-semibold">Plan Your Trip</h1>
         <p className="mt-1 text-muted-foreground">
           Tell us what you want — we'll find the best matches.
         </p>
@@ -472,7 +472,7 @@ export function PlanContent({ destinations, states = [] }: PlanContentProps) {
             transition={{ duration: 0.3 }}
           >
             <div className="flex items-center justify-between mb-4">
-              <h2 className="text-xl font-bold">
+              <h2 className="text-xl font-semibold">
                 {recommendations.length} destinations match
               </h2>
               <span className="text-sm text-muted-foreground">

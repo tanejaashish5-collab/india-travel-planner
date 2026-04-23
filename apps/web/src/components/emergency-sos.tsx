@@ -168,7 +168,7 @@ export function EmergencySOSSection({ sos, destinationName }: { sos: EmergencySO
           </svg>
         </div>
         <div className="flex-1 text-left">
-          <h2 className={`text-lg font-bold ${expanded ? "text-red-400" : "text-foreground"}`}>Emergency SOS</h2>
+          <h2 className={`text-lg font-semibold ${expanded ? "text-red-400" : "text-foreground"}`}>Emergency SOS</h2>
           {expanded ? (
             <p className="text-xs text-red-300/60">{destinationName} emergency contacts & protocols</p>
           ) : (

@@ -158,6 +158,13 @@
   .font-heading {
     font-family: var(--font-fraunces), Georgia, serif;
   }
+  /* Italic serif display — verdict stamps, editorial pull-quotes. */
+  .font-display-italic {
+    font-family: var(--font-fraunces), Georgia, serif;
+    font-style: italic;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+  }
 }
 
 /* Editorial serif headings — now handled in @layer base above */

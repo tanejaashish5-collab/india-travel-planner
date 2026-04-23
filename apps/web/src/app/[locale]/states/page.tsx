@@ -78,7 +78,7 @@ export default async function StatesPage({
       <Nav />
       <main id="main-content" className="mx-auto max-w-7xl px-4 sm:px-6 py-8">
         <div className="mb-8 text-center">
-          <h1 className="text-3xl sm:text-4xl font-bold">Browse India</h1>
+          <h1 className="text-3xl sm:text-4xl font-semibold">Browse India</h1>
           <p className="mt-2 text-muted-foreground">
             {totalDests} destinations across {states.length} states — scored for every month
           </p>

@@ -49,6 +49,25 @@ export const DIFFICULTY_BG: Record<string, string> = {
   extreme: "text-red-400 bg-red-500/10 border-red-500/20",
 };
 
+/**
+ * Typography tokens — single source of truth for weights + tracking.
+ * Cap weights at 400/500/600; heavier faces read "SaaS dashboard" at the
+ * display sizes we use. Overline tracking softened from the old 0.22em
+ * SaaS-y pattern to a calmer editorial 0.08em.
+ */
+export const TYPE = {
+  weight: {
+    regular: 400,
+    medium: 500,
+    semibold: 600,
+  },
+  tracking: {
+    overline: "0.08em",
+    heading: "-0.02em",
+    body: "0",
+  },
+} as const;
+
 /** Animation tokens — consistent across all components */
 export const MOTION = {
   duration: {

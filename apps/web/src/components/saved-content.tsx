@@ -65,7 +65,7 @@ export function SavedContent({ destinations }: { destinations: any[] }) {
   return (
     <>
       <div className="mb-8">
-        <h1 className="text-3xl font-bold">{td("savedDestinations")}</h1>
+        <h1 className="text-3xl font-semibold">{td("savedDestinations")}</h1>
         <p className="mt-1 text-muted-foreground">
           {savedDestinations.length} saved · {compareMode ? "Select up to 3 to compare" : td("yourTravelShortlist")}
         </p>
@@ -199,7 +199,7 @@ export function SavedContent({ destinations }: { destinations: any[] }) {
             exit={{ opacity: 0, y: 20 }}
             className="mt-10"
           >
-            <h2 id="compare-table" className="text-2xl font-bold mb-4">Side-by-Side Comparison</h2>
+            <h2 id="compare-table" className="text-2xl font-semibold mb-4">Side-by-Side Comparison</h2>
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
                 <thead>

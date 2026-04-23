@@ -76,7 +76,7 @@ export default async function IssuePage({
               })}
             </span>
           </div>
-          <h1 className="text-3xl font-bold sm:text-4xl">{issue.subject}</h1>
+          <h1 className="text-3xl font-semibold sm:text-4xl">{issue.subject}</h1>
           {issue.preview_text && (
             <p className="mt-3 text-lg text-muted-foreground">{issue.preview_text}</p>
           )}
@@ -94,7 +94,7 @@ export default async function IssuePage({
         </div>
 
         <div className="mt-12 rounded-2xl border border-primary/20 bg-primary/5 p-6">
-          <h2 className="text-lg font-bold text-center mb-2">Get this every Sunday</h2>
+          <h2 className="text-lg font-semibold text-center mb-2">Get this every Sunday</h2>
           <p className="text-sm text-muted-foreground text-center mb-5">
             No spam. Unsubscribe anytime. We don&apos;t sell your email.
           </p>

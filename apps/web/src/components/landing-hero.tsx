@@ -104,7 +104,7 @@ export function LandingHero({
           </FadeIn>
 
           <SlideIn delay={0.2}>
-            <h1 className="text-3xl font-bold tracking-tight sm:text-5xl md:text-7xl lg:text-8xl leading-[0.9]">
+            <h1 className="text-3xl font-semibold tracking-tight sm:text-5xl md:text-7xl lg:text-8xl leading-[0.9]">
               {t("heroTitle")}
               <span className="block bg-gradient-to-r from-muted-foreground to-muted-foreground/50 bg-clip-text text-transparent mt-2">
                 {t("heroSubtitle")}
@@ -241,7 +241,7 @@ export function LandingHero({
                 <p className="text-sm font-medium text-primary uppercase tracking-widest mb-2">
                   Discover India
                 </p>
-                <h2 className="text-3xl font-bold sm:text-4xl">
+                <h2 className="text-3xl font-semibold sm:text-4xl">
                   {stats?.destinations || 285} Destinations Across {stats?.states || 25} States
                 </h2>
                 <p className="mt-2 text-muted-foreground">
@@ -312,7 +312,7 @@ export function LandingHero({
                 <p className="text-sm font-medium text-primary uppercase tracking-widest mb-2">
                   Best for {tm(String(currentMonth))}
                 </p>
-                <h2 className="text-3xl font-bold sm:text-4xl">
+                <h2 className="text-3xl font-semibold sm:text-4xl">
                   Where to go right now
                 </h2>
                 <p className="mt-2 text-muted-foreground">
@@ -399,7 +399,7 @@ export function LandingHero({
                 <p className="text-sm font-medium text-primary uppercase tracking-widest mb-2">
                   Collections
                 </p>
-                <h2 className="text-3xl font-bold sm:text-4xl">
+                <h2 className="text-3xl font-semibold sm:text-4xl">
                   Collections
                 </h2>
                 <p className="mt-2 text-muted-foreground">
@@ -465,7 +465,7 @@ export function LandingHero({
                 <p className="text-sm font-medium text-primary uppercase tracking-widest mb-2">
                   Ready-Made Itineraries
                 </p>
-                <h2 className="text-3xl font-bold sm:text-4xl">
+                <h2 className="text-3xl font-semibold sm:text-4xl">
                   Road Trip Routes
                 </h2>
                 <p className="mt-2 text-muted-foreground">
@@ -521,7 +521,7 @@ export function LandingHero({
           <div className="mx-auto max-w-6xl">
             <FadeIn>
               <ScrollReveal>
-                <h2 className="text-3xl font-bold sm:text-4xl mb-2">Upcoming Festivals</h2>
+                <h2 className="text-3xl font-semibold sm:text-4xl mb-2">Upcoming Festivals</h2>
                 <p className="text-muted-foreground mb-8">Time your trip around these events</p>
               </ScrollReveal>
             </FadeIn>
@@ -574,7 +574,7 @@ export function LandingHero({
               <p className="text-xs font-semibold tracking-[0.2em] uppercase text-primary mb-3">
                 The Window · Every Sunday
               </p>
-              <h2 className="text-3xl font-bold sm:text-4xl">
+              <h2 className="text-3xl font-semibold sm:text-4xl">
                 One score. One skip. Four minutes.
               </h2>
               <p className="mt-3 text-muted-foreground leading-relaxed max-w-xl mx-auto">
@@ -603,7 +603,7 @@ export function LandingHero({
       <section className="px-4 py-20 bg-muted/30">
         <div className="mx-auto max-w-3xl text-center">
           <FadeIn>
-            <h2 className="text-3xl font-bold sm:text-4xl">
+            <h2 className="text-3xl font-semibold sm:text-4xl">
               Stop scrolling. Start exploring.
             </h2>
             <p className="mt-4 text-muted-foreground leading-relaxed">

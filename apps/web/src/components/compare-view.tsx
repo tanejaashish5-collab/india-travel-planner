@@ -139,7 +139,7 @@ export function CompareView({ destinations }: { destinations: any[] }) {
     return (
       <div className="py-20 text-center">
         <div className="text-5xl mb-4">⚖️</div>
-        <h1 className="text-3xl font-bold mb-2">Compare Destinations</h1>
+        <h1 className="text-3xl font-semibold mb-2">Compare Destinations</h1>
         <p className="text-muted-foreground mb-6 max-w-md mx-auto">
           Select 2-3 destinations to compare. Use the ⚖ Compare button on any destination card or detail page.
         </p>
@@ -155,7 +155,7 @@ export function CompareView({ destinations }: { destinations: any[] }) {
 
   return (
     <div>
-      <h1 className="text-3xl font-bold mb-2">Destination Comparison</h1>
+      <h1 className="text-3xl font-semibold mb-2">Destination Comparison</h1>
       <p className="text-muted-foreground mb-8">{compared.length} destinations · {MONTH_SHORT[currentMonth]} scores</p>
 
       {/* Hero cards */}

@@ -47,7 +47,7 @@ export default async function TreksByDifficultyPage({ params }: { params: Promis
       <main className="mx-auto max-w-7xl px-4 py-8">
         <div className="mb-8">
           <p className="text-sm font-medium text-primary uppercase tracking-widest mb-2">Difficulty: {name}</p>
-          <h1 className="text-3xl font-bold">{name} Treks</h1>
+          <h1 className="text-3xl font-semibold">{name} Treks</h1>
           <p className="mt-2 text-muted-foreground">{(treks ?? []).length} {name.toLowerCase()} treks across India</p>
         </div>
         <TreksContent treks={treks ?? []} trekDests={[]} gearChecklists={[]} />

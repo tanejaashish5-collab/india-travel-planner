@@ -173,7 +173,7 @@ export function PersonalisationQuiz() {
               className="text-center space-y-5"
             >
               <div className="text-3xl">🎯</div>
-              <h2 className="text-xl font-bold">Your matches are ready</h2>
+              <h2 className="text-xl font-semibold">Your matches are ready</h2>
               <p className="text-sm text-muted-foreground">
                 Filtered the best destinations for you.
               </p>
@@ -215,7 +215,7 @@ export function PersonalisationQuiz() {
                     Skip
                   </button>
                 </div>
-                <h2 className="text-xl font-bold mb-4">{STEPS[step].question}</h2>
+                <h2 className="text-xl font-semibold mb-4">{STEPS[step].question}</h2>
 
                 <div className="grid grid-cols-2 gap-2.5">
                   {STEPS[step].options.map((opt) => (
@@ -303,7 +303,7 @@ export function PersonalisationQuiz() {
                 className="text-center space-y-6"
               >
                 <div className="text-4xl">🎯</div>
-                <h2 className="text-2xl font-bold">Your matches are ready</h2>
+                <h2 className="text-2xl font-semibold">Your matches are ready</h2>
                 <p className="text-muted-foreground">
                   Based on your preferences, we've filtered the best destinations for you.
                 </p>
@@ -336,7 +336,7 @@ export function PersonalisationQuiz() {
                   <p className="text-xs text-primary font-medium uppercase tracking-widest mb-2">
                     Step {step + 1} of {STEPS.length}
                   </p>
-                  <h2 className="text-2xl font-bold mb-6">{STEPS[step].question}</h2>
+                  <h2 className="text-2xl font-semibold mb-6">{STEPS[step].question}</h2>
 
                   <div className="grid gap-3 sm:grid-cols-2">
                     {STEPS[step].options.map((opt) => (

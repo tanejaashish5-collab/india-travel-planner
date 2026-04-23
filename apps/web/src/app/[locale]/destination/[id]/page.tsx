@@ -377,7 +377,7 @@ export default async function DestinationPage({
 
         {comparisons.length > 0 && (
           <section className="mt-12 border-t border-border/50 pt-8">
-            <h2 className="text-xs font-bold uppercase tracking-[0.15em] text-muted-foreground mb-3">
+            <h2 className="text-xs font-semibold uppercase tracking-[0.15em] text-muted-foreground mb-3">
               Compare {dest.name} with
             </h2>
             <div className="grid gap-2 sm:grid-cols-2">

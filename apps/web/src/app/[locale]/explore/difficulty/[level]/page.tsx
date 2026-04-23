@@ -67,7 +67,7 @@ export default async function ExploreByDifficultyPage({ params }: { params: Prom
       <main className="mx-auto max-w-7xl px-4 py-8">
         <div className="mb-8">
           <p className="text-sm font-medium text-primary uppercase tracking-widest mb-2">Difficulty: {name}</p>
-          <h1 className="text-3xl font-bold">{name} Destinations</h1>
+          <h1 className="text-3xl font-semibold">{name} Destinations</h1>
           <p className="mt-2 text-muted-foreground">{sorted.length} destinations — {DIFF_DESC[level]}</p>
         </div>
         <ExploreGrid destinations={sorted} states={states} />

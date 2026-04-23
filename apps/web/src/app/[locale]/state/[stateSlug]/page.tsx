@@ -152,7 +152,7 @@ export default async function StateHubPage({
           <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
           <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 lg:p-12">
             <div className="mx-auto max-w-7xl">
-              <h1 className="text-3xl sm:text-4xl lg:text-6xl lg:tracking-tight font-bold">{stateName}</h1>
+              <h1 className="text-3xl sm:text-4xl lg:text-6xl lg:tracking-tight font-semibold">{stateName}</h1>
               {state.capital && (
                 <p className="mt-1 text-sm text-muted-foreground">Capital: {state.capital}</p>
               )}
@@ -210,7 +210,7 @@ export default async function StateHubPage({
           {/* Famous For — what this state is known for */}
           {region?.famous_for && region.famous_for.length > 0 && (
             <div className="mb-8 rounded-2xl border border-border/50 bg-card/50 p-5 sm:p-6">
-              <h2 className="text-sm font-bold uppercase tracking-[0.15em] text-muted-foreground/50 mb-4">What {stateName} is known for</h2>
+              <h2 className="text-sm font-semibold uppercase tracking-[0.15em] text-muted-foreground/50 mb-4">What {stateName} is known for</h2>
               <div className="grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
                 {region.famous_for.map((item: string, i: number) => (
                   <div key={i} className="flex items-start gap-2.5">
@@ -225,7 +225,7 @@ export default async function StateHubPage({
           {/* Must Visit — top picks if you have limited time */}
           {region?.must_visit && (region.must_visit as any[]).length > 0 && (
             <section id="section-must-visit" className="mb-8 scroll-mt-32">
-              <h2 className="text-sm font-bold uppercase tracking-[0.15em] text-muted-foreground/50 mb-4">Must visit in {stateName}</h2>
+              <h2 className="text-sm font-semibold uppercase tracking-[0.15em] text-muted-foreground/50 mb-4">Must visit in {stateName}</h2>
               <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
                 {(region.must_visit as any[]).map((mv: any) => (
                   <a
@@ -247,7 +247,7 @@ export default async function StateHubPage({
           {/* Subregion pills */}
           {subregions.length > 0 && (
             <section id="section-regions" className="mb-8 scroll-mt-32">
-              <h2 className="text-sm font-bold uppercase tracking-[0.15em] text-muted-foreground/50 mb-3">Regions within {stateName}</h2>
+              <h2 className="text-sm font-semibold uppercase tracking-[0.15em] text-muted-foreground/50 mb-3">Regions within {stateName}</h2>
               <div className="flex flex-wrap gap-2">
                 {subregions.map((sr: any) => (
                   <div key={sr.id} className="group relative">
@@ -293,7 +293,7 @@ export default async function StateHubPage({
 
           {/* Destination grid */}
           <section id="section-destinations" className="mb-12 scroll-mt-32">
-            <h2 className="text-xl font-bold mb-6">All {totalDests} Destinations in {stateName}</h2>
+            <h2 className="text-xl font-semibold mb-6">All {totalDests} Destinations in {stateName}</h2>
             <StateDestinationGrid destinations={destinations} locale={locale} />
           </section>
 

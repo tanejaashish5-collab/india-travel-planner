@@ -22,7 +22,7 @@ export default function Error({
             <div className="text-5xl">⛈️</div>
           </div>
         </div>
-        <h2 className="text-3xl font-bold">Hit a roadblock</h2>
+        <h2 className="text-3xl font-semibold">Hit a roadblock</h2>
         <p className="text-muted-foreground leading-relaxed max-w-md mx-auto">
           Something went wrong loading this page. Mountain roads are unpredictable — so is software sometimes.
         </p>

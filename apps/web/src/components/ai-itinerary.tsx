@@ -129,7 +129,7 @@ export function AIItinerary({
             <div className="rounded-2xl border border-primary/30 bg-primary/5 p-6">
               <div className="flex items-start justify-between">
                 <div>
-                  <h2 className="text-2xl font-bold">{itinerary.title}</h2>
+                  <h2 className="text-2xl font-semibold">{itinerary.title}</h2>
                   <p className="mt-1 text-muted-foreground">{itinerary.summary}</p>
                 </div>
                 <button

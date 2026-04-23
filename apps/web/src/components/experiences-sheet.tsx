@@ -55,7 +55,7 @@ export function ExperiencesSheet({ open, onClose }: { open: boolean; onClose: ()
             </div>
 
             <div className="px-4 pb-2">
-              <h2 className="text-lg font-bold">Discover</h2>
+              <h2 className="text-lg font-semibold">Discover</h2>
               <p className="text-xs text-muted-foreground">Experiences, guides & tools</p>
             </div>
 
