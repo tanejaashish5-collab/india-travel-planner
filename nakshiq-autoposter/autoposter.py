@@ -1272,36 +1272,69 @@ def copy_adventure_pick(dest: dict, platform: str) -> str:
 
 
 def copy_weekend_escape(dest: dict, platform: str) -> str:
-    """Easy + accessible + high score — 48-hour trip."""
+    """Easy + accessible + high score — 48-hour trip with destination-specific detail."""
     try:
         name  = dest["name"]
         score = dest["score"]
         elev  = dest["elevation_m"]
         state = dest["state"]
         tag   = dest.get("tagline", "")
+        note  = (dest.get("note") or "").strip()
+        diff  = (dest.get("difficulty") or "easy").capitalize()
         url   = dest_url(dest, "social", "post", "weekend-escape")
         stars = "★" * score + "☆" * (5 - score)
         tags  = hashtag("NakshIQ", name, state, "WeekendEscape",
                         "IndiaTravelData", f"{month_name()}Travel", "EasyTrip")
+
+        # Build a destination-specific detail line from note/tagline
+        detail = ""
+        if note and len(note) > 20:
+            # Use the note as the unique detail
+            detail = note if len(note) <= 140 else note[:137] + "..."
+        elif tag and len(tag) > 15:
+            detail = tag
+
+        # Rotating hooks so posts don't repeat the same opener
+        import hashlib
+        hook_seed = int(hashlib.md5(name.encode()).hexdigest(), 16) % 6
+        hooks_fb = [
+            f"{name} scores {score}/5 this {month_name()}. You don't need a week off — just 48 hours and a plan.",
+            f"Two days. {name}. {score}/5 confidence score. The data says go — this {month_name()}.",
+            f"Skip the long-leave request. {name} is a {score}/5 this {month_name()} and 48 hours is all you need.",
+            f"Your next 48 hours could look like {name} — {score}/5, {diff.lower()} access, {state}.",
+            f"{name} this {month_name()}? {score}/5. {diff} access. Two days is enough to do it right.",
+            f"Friday evening to Sunday night. {name}. {score}/5 this {month_name()}. Data-backed, not guesswork.",
+        ]
+        hooks_ig = [
+            f"48 hours. {name}. {score}/5 this {month_name()}.",
+            f"Two days. {diff} access. {score}/5 confidence.",
+            f"Skip the week off. {name} works in 48 hours.",
+            f"Friday to Sunday. {name}. {score}/5.",
+            f"{name} — {score}/5. {diff}. Two days.",
+            f"48 hrs is enough. {name}. {score}/5.",
+        ]
+
         if platform == "facebook":
-            return (
-                f"🌿 WEEKEND ESCAPE: {name.upper()}\n\n"
-                f"{stars} {score}/5 · {elev:,}m · Easy access · {state}\n\n"
-                f"{tag}\n\n"
-                f"48 hours. No drama. Just data.\n"
-                f"{name} scores {score}/5 this {month_name()} and you don't need "
-                f"a week off to get there.\n\n"
-                f"Plan it → {url}\n\n{tags}"
-            ).strip()
+            parts = [
+                f"🌿 WEEKEND ESCAPE: {name.upper()}\n",
+                f"{stars} {score}/5 · {elev:,}m · {diff} access · {state}\n",
+            ]
+            if detail:
+                parts.append(f"\n{detail}\n")
+            parts.append(f"\n{hooks_fb[hook_seed]}\n")
+            parts.append(f"\nPlan it → {url}\n\n{tags}")
+            return "".join(parts).strip()
         else:
-            return (
-                f"🌿 WEEKEND ESCAPE · {month_name().upper()}\n"
-                f"{name.upper()} · {stars} {score}/5\n"
-                f"↑{elev:,}m · Easy · {state}\n\n"
-                f"{tag}\n\n"
-                f"48 hours. No drama. Just data.\n\n"
-                f"Save → {url}\n\n{tags}"
-            ).strip()
+            parts = [
+                f"🌿 WEEKEND ESCAPE · {month_name().upper()}\n",
+                f"{name.upper()} · {stars} {score}/5\n",
+                f"↑{elev:,}m · {diff} · {state}\n",
+            ]
+            if detail:
+                parts.append(f"\n{detail}\n")
+            parts.append(f"\n{hooks_ig[hook_seed]}\n")
+            parts.append(f"\nSave → {url}\n\n{tags}")
+            return "".join(parts).strip()
     except Exception as e:
         log.warning(f"copy_weekend_escape error: {e}")
         return copy_score_card(dest, platform)
