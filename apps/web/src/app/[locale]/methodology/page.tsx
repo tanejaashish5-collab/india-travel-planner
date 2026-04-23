@@ -183,7 +183,7 @@ export default async function MethodologyPage() {
                 {freshness.latest && (
                   <> · latest review {new Date(freshness.latest).toLocaleDateString("en-IN", { month: "short", year: "numeric" })}</>
                 )}
-                .
+                . <Link href="/methodology/freshness" className="text-foreground underline underline-offset-2">See the live dashboard →</Link>
               </p>
             )}
             <p className="mt-3 text-muted-foreground">
