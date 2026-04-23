@@ -317,7 +317,7 @@ export function DestinationDetail({ dest }: { dest: any }) {
                 tooltip="Backed by NakshIQ's 6-dimension methodology — not editorial opinion"
               />
               <span className="text-[11px] text-muted-foreground/60">
-                Data-scored · Tap for the {tm(String(currentMonth))} deep-dive
+                Our take for {tm(String(currentMonth))} in detail
               </span>
             </div>
             <a
@@ -615,7 +615,7 @@ export function DestinationDetail({ dest }: { dest: any }) {
                 {/* Who Should Skip — anti-brochure honesty */}
                 {travelerFit.notFor.length > 0 && (
                   <section className="rounded-xl border border-orange-500/20 bg-orange-500/5 p-5">
-                    <h2 className="text-lg font-semibold text-orange-300 mb-3">Who Should Think Twice</h2>
+                    <h2 className="text-lg font-semibold text-orange-300 mb-3">Who should think twice</h2>
                     <div className="space-y-2">
                       {travelerFit.notFor.map((reason, i) => (
                         <div key={i} className="flex items-start gap-2 text-[15px] text-orange-200/80">
@@ -696,7 +696,7 @@ export function DestinationDetail({ dest }: { dest: any }) {
                       />
                     </div>
                     <CollapsibleDetails
-                      label="full infrastructure data"
+                      label="the full infrastructure breakdown"
                       hint="Network carriers, fuel reliability, AQI history, elevation details — the full scorecard."
                     >
                     <div className="grid gap-3 sm:grid-cols-2">
@@ -842,7 +842,7 @@ export function DestinationDetail({ dest }: { dest: any }) {
                 {/* Trip Cost Estimator */}
                 {dest.daily_cost && (
                   <section>
-                    <h2 className="text-xl font-semibold mb-3">Daily Budget Reality</h2>
+                    <h2 className="text-xl font-semibold mb-3">What a day actually costs</h2>
                     <div className="grid gap-3 sm:grid-cols-3">
                       {[
                         { key: "budget", label: "Budget", color: "emerald", icon: "🎒" },

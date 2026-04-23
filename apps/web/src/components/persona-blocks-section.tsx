@@ -25,7 +25,7 @@ export function PersonaBlocksSection({ data }: { data: PersonaBlocks | null | un
   return (
     <section id="section-personas" className="scroll-mt-24">
       <div className="flex flex-wrap items-center gap-3 mb-4">
-        <h2 className="text-xl font-semibold">If You're…</h2>
+        <h2 className="text-xl font-semibold">For travelers like you</h2>
         <span className="text-sm text-muted-foreground">
           How this place plays out for each kind of traveler.
         </span>

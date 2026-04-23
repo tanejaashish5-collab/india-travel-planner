@@ -176,7 +176,6 @@ export function EmergencySOSSection({ sos, destinationName }: { sos: EmergencySO
               {sos.nearest_hospital && <span className="text-xs text-muted-foreground">🏥 {sos.nearest_hospital_km ? `${sos.nearest_hospital_km}km` : "Available"}</span>}
               <span className="text-xs text-muted-foreground">📞 112</span>
               {sos.avg_ambulance_response_min && <span className="text-xs text-muted-foreground">🚑 ~{sos.avg_ambulance_response_min}min</span>}
-              <span className="text-xs text-muted-foreground/50">Tap to expand</span>
             </div>
           )}
         </div>

@@ -79,11 +79,11 @@ export function CollapsibleDetails({
         <span className="flex-1 min-w-0">
           <span className="flex flex-wrap items-baseline gap-x-2 gap-y-0.5">
             <span className="text-sm font-semibold tracking-tight">
-              {open ? "Hide" : "Show"} {label}
+              {open ? "Close" : "Open"} {label}
             </span>
             {count != null && (
-              <span className="inline-flex items-center rounded-full bg-primary/25 px-2 py-0.5 text-[11px] font-medium uppercase tracking-[0.08em] text-foreground">
-                {count} {count === 1 ? "item" : "items"}
+              <span className="inline-flex items-center rounded-full bg-primary/25 px-2 py-0.5 text-[11px] font-medium tabular-nums text-foreground">
+                &middot; {count}
               </span>
             )}
           </span>
@@ -96,11 +96,11 @@ export function CollapsibleDetails({
         <span
           aria-hidden
           className={cn(
-            "shrink-0 text-[11px] font-medium uppercase tracking-[0.08em] transition-all",
-            open ? "opacity-0 -translate-x-1" : "opacity-80 group-hover:translate-x-0.5",
+            "shrink-0 text-lg transition-all",
+            open ? "opacity-0 -translate-x-1" : "opacity-60 group-hover:opacity-90 group-hover:translate-x-0.5",
           )}
         >
-          Click to open &rarr;
+          &rarr;
         </span>
       </button>
       {open && <div className="mt-3">{children}</div>}
