@@ -71,7 +71,7 @@ export async function WeekendFromView({ locale, city }: { locale: string; city: 
       <Nav />
       <main className="mx-auto max-w-7xl px-4 py-8 sm:py-12">
         <header className="mb-10 max-w-3xl">
-          <p className="mb-2 text-sm font-medium uppercase tracking-widest text-primary/70">
+          <p className="mb-2 text-sm font-medium uppercase tracking-[0.08em] text-primary/70">
             Weekend escape
           </p>
           <h1

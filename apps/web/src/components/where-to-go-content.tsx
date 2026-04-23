@@ -434,7 +434,7 @@ export function WhereToGoContent({
       ) : (
         <FadeIn>
           <div className="text-center">
-            <p className="mb-2 text-sm font-medium uppercase tracking-widest text-primary/70">
+            <p className="mb-2 text-sm font-medium uppercase tracking-[0.08em] text-primary/70">
               Where to go in {regionName ?? "India"}
             </p>
             <h1 className="font-fraunces text-4xl font-semibold tracking-tight text-white sm:text-5xl md:text-6xl">

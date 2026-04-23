@@ -203,7 +203,7 @@ export function VsComparison({ dest1, dest2, locale }: Props) {
         </div>
 
         <FadeIn className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 max-w-5xl mx-auto">
-          <p className="text-sm font-medium text-primary uppercase tracking-widest mb-2">Head to Head</p>
+          <p className="text-sm font-medium text-primary uppercase tracking-[0.08em] mb-2">Head to Head</p>
           <h1 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-white drop-shadow-lg">
             {dest1.name} vs {dest2.name} — The Honest Comparison
           </h1>

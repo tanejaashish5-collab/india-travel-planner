@@ -84,11 +84,11 @@ export default async function GuidesPage() {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
         <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 max-w-5xl mx-auto">
-          <p className="text-sm font-medium text-primary uppercase tracking-widest mb-2">
-            Travel Intelligence
+          <p className="text-sm font-medium text-primary uppercase tracking-[0.08em] mb-2">
+            Field guides
           </p>
           <h1 className="text-3xl font-semibold sm:text-4xl text-white drop-shadow-lg">
-            Travel Guides
+            Travel guides
           </h1>
           <p className="mt-2 text-white/80">
             Data-driven guides for {destinations.length} destinations.

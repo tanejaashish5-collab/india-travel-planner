@@ -42,7 +42,7 @@ export default async function FestivalsPage() {
         <Image src="/images/destinations/pushkar.jpg" alt="Festivals & Events" fill sizes="100vw" priority className="object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
         <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 max-w-7xl mx-auto">
-          <p className="text-sm font-medium text-primary uppercase tracking-widest mb-2">Cultural Calendar</p>
+          <p className="text-sm font-medium text-primary uppercase tracking-[0.08em] mb-2">Cultural Calendar</p>
           <h1 className="text-3xl font-semibold sm:text-4xl text-white drop-shadow-lg">Festivals & Events</h1>
           <p className="mt-2 text-white/80 max-w-xl">{festivals.length} festivals across India — time your trip around something extraordinary</p>
         </div>

@@ -60,7 +60,7 @@ export default async function ArrivalPage({
         </div>
 
         <header className="mb-10">
-          <p className="mb-2 text-sm font-medium uppercase tracking-widest text-primary/70">
+          <p className="mb-2 text-sm font-medium uppercase tracking-[0.08em] text-primary/70">
             {info.iata} · {info.city}
           </p>
           <h1

@@ -55,7 +55,7 @@ export default async function TreksStateMonthPage({ params }: { params: Promise<
       <Nav />
       <main className="mx-auto max-w-7xl px-4 py-8">
         <div className="mb-8">
-          <p className="text-sm font-medium text-primary uppercase tracking-widest mb-2">{stateName} · {m.name}</p>
+          <p className="text-sm font-medium text-primary uppercase tracking-[0.08em] mb-2">{stateName} · {m.name}</p>
           <h1 className="text-3xl font-semibold">Treks in {stateName} in {m.name}</h1>
           <p className="mt-2 text-muted-foreground">{filtered.length} treks open or recommended in {m.name}</p>
         </div>

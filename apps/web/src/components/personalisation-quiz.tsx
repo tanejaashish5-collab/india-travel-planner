@@ -205,7 +205,7 @@ export function PersonalisationQuiz() {
                 transition={{ duration: 0.2 }}
               >
                 <div className="flex items-center justify-between mb-3">
-                  <p className="text-[10px] text-primary font-medium uppercase tracking-widest">
+                  <p className="text-[10px] text-primary font-medium uppercase tracking-[0.08em]">
                     Step {step + 1} of {STEPS.length}
                   </p>
                   <button
@@ -333,7 +333,7 @@ export function PersonalisationQuiz() {
                   exit={{ opacity: 0, x: -20 }}
                   transition={{ duration: 0.2 }}
                 >
-                  <p className="text-xs text-primary font-medium uppercase tracking-widest mb-2">
+                  <p className="text-xs text-primary font-medium uppercase tracking-[0.08em] mb-2">
                     Step {step + 1} of {STEPS.length}
                   </p>
                   <h2 className="text-2xl font-semibold mb-6">{STEPS[step].question}</h2>

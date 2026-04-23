@@ -54,7 +54,7 @@ export default async function FestivalsByStatePage({ params }: { params: Promise
       <Nav />
       <main className="mx-auto max-w-7xl px-4 py-8">
         <div className="mb-8">
-          <p className="text-sm font-medium text-primary uppercase tracking-widest mb-2">Festival Calendar</p>
+          <p className="text-sm font-medium text-primary uppercase tracking-[0.08em] mb-2">Festival Calendar</p>
           <h1 className="text-3xl font-semibold">Festivals in {stateName}</h1>
           <p className="mt-2 text-muted-foreground">
             {(festivals ?? []).length} festivals across {stateName} — organized by month

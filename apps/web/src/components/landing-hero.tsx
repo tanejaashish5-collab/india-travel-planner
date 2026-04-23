@@ -98,7 +98,7 @@ export function LandingHero({
         {/* Hero content — Nav is now provided by the page layout */}
         <div className="relative z-10 max-w-4xl text-center space-y-8">
           <FadeIn delay={0.1}>
-            <p className="text-sm font-medium text-primary uppercase tracking-widest">
+            <p className="text-sm font-medium text-primary uppercase tracking-[0.08em]">
               The Confidence Engine for Exploring India
             </p>
           </FadeIn>
@@ -238,7 +238,7 @@ export function LandingHero({
               transition={{ duration: 0.6, ease: "easeOut" }}
             >
               <div className="text-center mb-10">
-                <p className="text-sm font-medium text-primary uppercase tracking-widest mb-2">
+                <p className="text-sm font-medium text-primary uppercase tracking-[0.08em] mb-2">
                   Discover India
                 </p>
                 <h2 className="text-3xl font-semibold sm:text-4xl">
@@ -309,7 +309,7 @@ export function LandingHero({
           <div className="mx-auto max-w-7xl">
             <FadeIn>
               <div className="text-center mb-12">
-                <p className="text-sm font-medium text-primary uppercase tracking-widest mb-2">
+                <p className="text-sm font-medium text-primary uppercase tracking-[0.08em] mb-2">
                   Best for {tm(String(currentMonth))}
                 </p>
                 <h2 className="text-3xl font-semibold sm:text-4xl">
@@ -396,7 +396,7 @@ export function LandingHero({
           <div className="mx-auto max-w-7xl">
             <FadeIn>
               <div className="text-center mb-12">
-                <p className="text-sm font-medium text-primary uppercase tracking-widest mb-2">
+                <p className="text-sm font-medium text-primary uppercase tracking-[0.08em] mb-2">
                   Collections
                 </p>
                 <h2 className="text-3xl font-semibold sm:text-4xl">
@@ -462,7 +462,7 @@ export function LandingHero({
           <div className="mx-auto max-w-7xl">
             <FadeIn>
               <div className="text-center mb-12">
-                <p className="text-sm font-medium text-primary uppercase tracking-widest mb-2">
+                <p className="text-sm font-medium text-primary uppercase tracking-[0.08em] mb-2">
                   Ready-Made Itineraries
                 </p>
                 <h2 className="text-3xl font-semibold sm:text-4xl">

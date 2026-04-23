@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       <main className="mx-auto max-w-2xl px-4 py-16">
         {/* Hero */}
         <div className="text-center mb-12">
-          <p className="text-sm font-medium text-primary uppercase tracking-widest mb-3">
+          <p className="text-sm font-medium text-primary uppercase tracking-[0.08em] mb-3">
             Weekly Newsletter
           </p>
           <h1 className="text-4xl font-semibold">The Window</h1>

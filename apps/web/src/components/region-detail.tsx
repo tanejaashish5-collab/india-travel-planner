@@ -67,7 +67,7 @@ export function RegionDetail({ region }: RegionDetailProps) {
       {/* Hero */}
       <SlideIn>
         <div className="mb-8 rounded-2xl border border-border bg-gradient-to-br from-primary/5 via-card to-muted/30 p-8 sm:p-10">
-          <p className="text-xs font-medium text-primary uppercase tracking-widest mb-3">
+          <p className="text-xs font-medium text-primary uppercase tracking-[0.08em] mb-3">
             Mountain Region Guide
           </p>
           <h1 className="text-4xl font-semibold sm:text-5xl">{region.name}</h1>

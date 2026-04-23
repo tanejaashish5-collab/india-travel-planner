@@ -24,7 +24,7 @@ export default async function ArrivalIndexPage({ params }: { params: Promise<{ l
       <Nav />
       <main className="mx-auto max-w-3xl px-4 py-10 sm:py-14">
         <header className="mb-10">
-          <p className="mb-2 text-sm font-medium uppercase tracking-widest text-primary/70">
+          <p className="mb-2 text-sm font-medium uppercase tracking-[0.08em] text-primary/70">
             India guide
           </p>
           <h1

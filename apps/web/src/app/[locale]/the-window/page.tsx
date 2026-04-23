@@ -45,7 +45,7 @@ export default async function TheWindowArchive({ params }: { params: Promise<{ l
       <Nav />
       <main className="mx-auto max-w-3xl px-4 py-16">
         <div className="text-center mb-10">
-          <p className="text-sm font-medium text-primary uppercase tracking-widest mb-3">The Window</p>
+          <p className="text-sm font-medium text-primary uppercase tracking-[0.08em] mb-3">The Window</p>
           <h1 className="text-4xl font-semibold">Every Sunday. Signal only.</h1>
           <p className="mt-3 text-lg text-muted-foreground">
             One best-scored destination. One honest skip. One road update. Four minutes to read.

@@ -80,7 +80,7 @@ export default async function IndiaTravel() {
           }}
         />
         <div className="relative mx-auto max-w-4xl px-4 py-16 sm:py-24 text-center">
-          <p className="text-sm font-medium text-[#E55642] uppercase tracking-widest mb-4">
+          <p className="text-sm font-medium text-[#E55642] uppercase tracking-[0.08em] mb-4">
             For International Visitors
           </p>
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-[#F5F1E8]">

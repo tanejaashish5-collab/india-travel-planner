@@ -31,7 +31,7 @@ export default async function PermitsGuidePage({ params }: { params: Promise<{ l
         </div>
 
         <header className="mb-8">
-          <p className="mb-2 text-sm font-medium uppercase tracking-widest text-primary/70">
+          <p className="mb-2 text-sm font-medium uppercase tracking-[0.08em] text-primary/70">
             India permits
           </p>
           <h1 className="font-serif italic font-medium text-3xl sm:text-4xl md:text-5xl leading-tight text-foreground" style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}>

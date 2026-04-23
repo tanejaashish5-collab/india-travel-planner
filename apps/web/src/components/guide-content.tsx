@@ -171,10 +171,10 @@ export function GuideContent({
       <ScrollReveal className="mb-16">
         <div className="mb-6">
           <div className="h-1 w-12 rounded-full bg-emerald-500 mb-4" />
-          <p className="text-xs font-medium uppercase tracking-widest text-emerald-400 mb-1">
-            Seasonal Intelligence
+          <p className="text-xs font-medium uppercase tracking-[0.08em] text-emerald-400 mb-1">
+            In season
           </p>
-          <h2 className="text-2xl font-semibold sm:text-3xl">Best Time to Visit — {currentMonthName}</h2>
+          <h2 className="text-2xl font-semibold sm:text-3xl">Best time to visit — {currentMonthName}</h2>
           <p className="text-muted-foreground mt-1">
             {bestTimeCount > 0
               ? `${bestTimeCount} destinations scoring 4-5/5 for ${currentMonthName} — sorted by monthly score`
@@ -226,7 +226,7 @@ export function GuideContent({
               href={`/en/where-to-go/${currentMonthSlug}`}
               className="text-sm font-medium text-emerald-400 hover:text-emerald-300 transition-colors"
             >
-              View all {bestTimeCount} destinations for {currentMonthName} →
+              All {bestTimeCount} destinations for {currentMonthName} →
             </Link>
           </div>
         )}
@@ -236,14 +236,14 @@ export function GuideContent({
       <ScrollReveal className="mb-16" delay={0.1}>
         <div className="mb-6">
           <div className="h-1 w-12 rounded-full bg-blue-500 mb-4" />
-          <p className="text-xs font-medium uppercase tracking-widest text-blue-400 mb-1">
-            Head-to-Head
+          <p className="text-xs font-medium uppercase tracking-[0.08em] text-blue-400 mb-1">
+            Worth comparing
           </p>
           <h2 className="text-2xl font-semibold sm:text-3xl">
-            Destination Comparisons
+            Side-by-side guides
           </h2>
           <p className="text-muted-foreground mt-1">
-            Side-by-side on 11 dimensions — score, kids, safety, network, cost
+            Weather, safety, kids, cost, crowd, network — measured and compared
           </p>
         </div>
         <StaggerContainer className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
@@ -285,12 +285,12 @@ export function GuideContent({
       <ScrollReveal className="mb-16" delay={0.15}>
         <div className="mb-6">
           <div className="h-1 w-12 rounded-full bg-primary mb-4" />
-          <p className="text-xs font-medium uppercase tracking-widest text-primary mb-1">
-            Just-in-Time Operations
+          <p className="text-xs font-medium uppercase tracking-[0.08em] text-primary mb-1">
+            On the ground
           </p>
-          <h2 className="text-2xl font-semibold sm:text-3xl">Practical Playbooks</h2>
+          <h2 className="text-2xl font-semibold sm:text-3xl">Field guides</h2>
           <p className="text-muted-foreground mt-1">
-            The operational side — how to arrive, what permits you need, how to book trains, which roads are open
+            How to arrive, which permits you need, how to book trains, which roads are open
           </p>
         </div>
         <StaggerContainer className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
@@ -300,7 +300,7 @@ export function GuideContent({
             { title: "Book Indian Trains", desc: "IRCTC sign-up, Tatkal timing, foreign-passport bookings, waitlist psychology", href: "/en/guide/book-indian-trains", tag: "IRCTC" },
             { title: "Road Conditions", desc: "Latest pass status, seasonal closures, road-trip readiness by route", href: "/en/road-conditions", tag: "live" },
             { title: "Tourist Traps", desc: "The overhyped places to skip — and the honest alternative for each", href: "/en/tourist-traps", tag: "skip list" },
-            { title: "Methodology", desc: "How the 5-point scores are built. 12 months × 6 dimensions per destination", href: "/en/methodology", tag: "how it works" },
+            { title: "Scoring methodology", desc: "How the 5-point scores are built. 12 months × 6 dimensions per destination", href: "/en/methodology", tag: "how we score" },
           ].map((p) => (
             <StaggerItem key={p.href}>
               <HoverCard>
@@ -332,11 +332,11 @@ export function GuideContent({
       <ScrollReveal className="mb-16" delay={0.2}>
         <div className="mb-6">
           <div className="h-1 w-12 rounded-full bg-amber-500 mb-4" />
-          <p className="text-xs font-medium uppercase tracking-widest text-amber-400 mb-1">
-            Kid-Friendly
+          <p className="text-xs font-medium uppercase tracking-[0.08em] text-amber-400 mb-1">
+            Travelling with kids
           </p>
           <h2 className="text-2xl font-semibold sm:text-3xl">
-            Family Travel Guides
+            Guides for families
           </h2>
           <p className="text-muted-foreground mt-1">
             Infrastructure-aware kids ratings, medical access, family stress
@@ -375,7 +375,7 @@ export function GuideContent({
             href="/en/explore?kids=true"
             className="text-sm font-medium text-amber-400 hover:text-amber-300 transition-colors"
           >
-            View all family-friendly destinations →
+            All family-friendly destinations →
           </Link>
         </div>
       </ScrollReveal>

@@ -56,7 +56,7 @@ export default async function ExploreStateMonthPage({ params }: { params: Promis
       <Nav />
       <main className="mx-auto max-w-7xl px-4 py-8">
         <div className="mb-8">
-          <p className="text-sm font-medium text-primary uppercase tracking-widest mb-2">{stateName} in {m.name}</p>
+          <p className="text-sm font-medium text-primary uppercase tracking-[0.08em] mb-2">{stateName} in {m.name}</p>
           <h1 className="text-3xl font-semibold">Places to Visit in {stateName} in {m.name}</h1>
           <p className="mt-2 text-muted-foreground">
             {sorted.length} destinations — {score5} score 5/5 this month. Sorted by {m.name} suitability.
