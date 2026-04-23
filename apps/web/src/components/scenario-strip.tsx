@@ -55,7 +55,10 @@ export function ScenarioStrip({
         <span className="text-xs text-muted-foreground/70">{subtitle}</span>
       </div>
 
-      <div className={cn("grid gap-3", sorted.length > 1 && "md:grid-cols-2")}>
+      {/* Stacked full-width rows — scenario text is dense enough that a
+          2-col grid cramps the reading column. Each card gets breathing
+          room and a natural 60–75ch prose width. */}
+      <div className="space-y-3">
         {sorted.map((s) => {
           const tone = SEVERITY_TONE[s.severity];
           return (

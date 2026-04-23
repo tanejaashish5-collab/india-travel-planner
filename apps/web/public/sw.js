@@ -16,7 +16,8 @@
 // v15: 2026-04-23 Sprint-2 tuning — Logistics moved to Simple+Pro, single-scenario full-width card, ToC reasoning documented.
 // v16: 2026-04-23 Simple/Pro toggle removed. Dense blocks now inline-collapsed via CollapsibleDetails. Tourist Trap / Crowd Intelligence / International Info always shown.
 // v17: 2026-04-23 CollapsibleDetails trigger gets a slow breathing ring + brighter tint so cold visitors don't scroll past it. Pulse stops once opened; respects prefers-reduced-motion.
-const CACHE_VERSION = "nakshiq-v17";
+// v18: 2026-04-23 Scenario cards stack full-width instead of 2-col grid — scenario text is too dense for cramped columns.
+const CACHE_VERSION = "nakshiq-v18";
 const STATIC_CACHE = `${CACHE_VERSION}-static`;
 const IMAGE_CACHE = `${CACHE_VERSION}-images`;
 const DATA_CACHE = `${CACHE_VERSION}-data`;
