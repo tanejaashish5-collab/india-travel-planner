@@ -7,7 +7,6 @@ import { NewsletterSignup } from "./newsletter-signup";
 import { WhatsAppShare } from "./whatsapp-share";
 import { destinationImage } from "@/lib/image-url";
 import { videoSrc } from "@/lib/video-url";
-import HowToDoIt from "./how-to-do-it";
 import { DestinationSectionNav } from "./destination-section-nav";
 
 // ── Constants ──────────────────────────────────────────────────
@@ -270,46 +269,15 @@ export function DestinationMonth({
 
   // ── 3. Why This Score ──────────────────────────────────────
 
+  // Only render rows that are genuinely month-specific. Destination-level
+  // facts (reach blob, emergency info, elevation, difficulty, budget,
+  // network availability) live on /destination/[id] — repeating them here
+  // creates 3× duplication with the hero chips + the old Practical section.
   const WhyThisScore = () => {
     const items: { icon: string; label: string; value: string }[] = [];
 
     if (currentMonth?.note) {
       items.push({ icon: "🌤", label: "Weather", value: currentMonth.note });
-    }
-    if (confidence?.reach) {
-      const reachStr = typeof confidence.reach === "object"
-        ? Object.entries(confidence.reach).filter(([, v]) => v != null && typeof v !== 'object').map(([k, v]) => `${String(k).replace(/_/g, " ")}: ${v}`).join(". ")
-        : String(confidence.reach);
-      items.push({ icon: "🛣", label: "Roads & Access", value: reachStr });
-    }
-    if (confidence?.emergency) {
-      const emergStr = typeof confidence.emergency === "object"
-        ? Object.entries(confidence.emergency).filter(([, v]) => v != null && typeof v !== 'object').map(([k, v]) => `${String(k).replace(/_/g, " ")}: ${v}`).join(". ")
-        : String(confidence.emergency);
-      items.push({
-        icon: "🏥",
-        label: "Safety & Emergency",
-        value: `${confidence.safety_rating ? `Safety: ${confidence.safety_rating}/5. ` : ""}${emergStr}`,
-      });
-    }
-    if (confidence?.network) {
-      const netStr = typeof confidence.network === "object"
-        ? Object.entries(confidence.network).filter(([k]) => !["wifi_available"].includes(k)).map(([k, v]) => `${k.toUpperCase()}: ${v ? "Yes" : "No"}`).join(", ") + (confidence.network.note ? `. ${confidence.network.note}` : "")
-        : String(confidence.network);
-      items.push({ icon: "📶", label: "Network", value: netStr });
-    }
-    if (kids) {
-      const kidsVal = kids.suitable
-        ? `Kid-friendly (${kids.rating}/5)${kids.reasons ? ` — ${Array.isArray(kids.reasons) ? kids.reasons.join(", ") : kids.reasons}` : ""}`
-        : `Not ideal for kids${kids.reasons ? ` — ${Array.isArray(kids.reasons) ? kids.reasons.join(", ") : kids.reasons}` : ""}`;
-      items.push({ icon: "👶", label: "Kids", value: kidsVal });
-    }
-    if (destination.elevation_m) {
-      items.push({
-        icon: "⛰",
-        label: "Elevation",
-        value: `${destination.elevation_m.toLocaleString()}m — ${destination.elevation_m > 3500 ? "High altitude, acclimatisation needed" : destination.elevation_m > 2000 ? "Moderate altitude" : "Low altitude, no issues"}`,
-      });
     }
     const festivals: string[] | undefined = currentMonth?.festivals_this_month;
     if (Array.isArray(festivals) && festivals.length > 0) {
@@ -560,64 +528,29 @@ export function DestinationMonth({
     );
   };
 
-  // ── 6. Practical Details ───────────────────────────────────
+  // ── 6. Full-guide link ─────────────────────────────────────
+  // Replaces the old PracticalDetails + HowToDoIt footer blocks. Those
+  // sections re-rendered destination-level facts (reach, emergency,
+  // elevation) that already appear on /destination/[id] — surfacing them
+  // three times cluttered the month page without adding signal.
 
-  const PracticalDetails = () => {
-    const details: { label: string; value: string }[] = [];
-
-    if (confidence?.reach) {
-      const r = confidence.reach;
-      if (typeof r === "object") {
-        // Build rich reach description from structured data
-        const parts: string[] = [];
-        if (r.from_nearest_city) parts.push(r.from_nearest_city);
-        else {
-          if (r.nearest_airport) parts.push(`Nearest airport: ${r.nearest_airport}`);
-          if (r.nearest_railhead) parts.push(`Nearest railhead: ${r.nearest_railhead}`);
-        }
-        if (r.road_condition) parts.push(`Roads: ${r.road_condition}`);
-        if (r.self_drive) parts.push(`Self-drive: ${r.self_drive}`);
-        if (r.public_transport) parts.push(`Public transport: ${r.public_transport}`);
-        if (r.last_km_difficulty) parts.push(`Last stretch: ${r.last_km_difficulty}`);
-        details.push({ label: "How to reach", value: parts.join(". ") || "Contact local transport" });
-      } else {
-        details.push({ label: "How to reach", value: String(r) });
-      }
-    }
-    if (destination.elevation_m)
-      details.push({ label: "Elevation", value: `${destination.elevation_m.toLocaleString()}m` });
-    if (destination.difficulty)
-      details.push({ label: "Difficulty", value: destination.difficulty });
-    if (destination.budget_tier)
-      details.push({ label: "Budget tier", value: destination.budget_tier });
-    if (permits && permits.length > 0) {
-      details.push({
-        label: "Permits required",
-        value: permits.map((p: any) => `${p.name}${p.cost ? ` (${p.cost})` : ""}`).join(", "),
-      });
-    }
-
-    if (details.length === 0) return null;
-
-    return (
-      <ScrollReveal>
-        <h2 className="mb-4 text-2xl font-bold text-white">Practical Details</h2>
-        <div className="grid gap-3 sm:grid-cols-2">
-          {details.map((d) => (
-            <div
-              key={d.label}
-              className="rounded-xl border border-zinc-800 bg-zinc-900/60 p-4"
-            >
-              <p className="text-xs font-medium uppercase tracking-wider text-zinc-500">
-                {d.label}
-              </p>
-              <p className="mt-1 text-sm capitalize text-zinc-300">{d.value}</p>
-            </div>
-          ))}
-        </div>
-      </ScrollReveal>
-    );
-  };
+  const FullGuideLink = () => (
+    <ScrollReveal>
+      <Link
+        href={`/${locale}/destination/${destination.id}`}
+        className="group block rounded-xl border border-zinc-800 bg-zinc-900/40 p-5 transition-colors hover:border-zinc-700 hover:bg-zinc-900/60"
+      >
+        <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-zinc-500">
+          Destination reference
+        </p>
+        <p className="mt-1.5 text-base text-zinc-200">
+          Full reach, permits, stays, emergency contacts and year-round
+          context on the <span className="font-semibold text-white underline-offset-2 group-hover:underline">{destination.name} guide</span>
+          <span className="ml-1 transition-transform inline-block group-hover:translate-x-0.5">&rarr;</span>
+        </p>
+      </Link>
+    </ScrollReveal>
+  );
 
   // ── 7. Nearby Destinations ─────────────────────────────────
 
@@ -715,11 +648,6 @@ export function DestinationMonth({
   const hasNearby = Array.isArray(nearby) && nearby.length > 0;
   const hasWhy = !!(
     currentMonth?.note ||
-    confidence?.reach ||
-    confidence?.emergency ||
-    confidence?.network ||
-    kids ||
-    destination.elevation_m ||
     (Array.isArray(currentMonth?.festivals_this_month) && currentMonth.festivals_this_month.length > 0)
   );
   const monthSections = [
@@ -728,10 +656,9 @@ export function DestinationMonth({
     hasThings && { id: "things", label: "What to do" },
     { id: "who", label: "Who should go" },
     { id: "months", label: "All 12 months" },
-    { id: "practical", label: "Practical" },
     hasPack && { id: "pack", label: "What to pack" },
     hasNearby && { id: "nearby", label: "Nearby" },
-    { id: "how", label: "How to do it" },
+    { id: "guide", label: `Full ${destination.name} guide` },
   ].filter((s): s is { id: string; label: string } => Boolean(s));
 
   return (
@@ -798,27 +725,14 @@ export function DestinationMonth({
           <section id="section-months" className="scroll-mt-28">
             <MonthTable />
           </section>
-          <section id="section-practical" className="scroll-mt-28">
-            <PracticalDetails />
-          </section>
           <section id="section-pack" className="scroll-mt-28">
             <PackList />
           </section>
           <section id="section-nearby" className="scroll-mt-28">
             <NearbySection />
           </section>
-          <section id="section-how" className="scroll-mt-28">
-            <HowToDoIt
-              locale={locale}
-              destinationId={destination.id}
-              destinationName={destination.name}
-              months={allMonths}
-              reach={confidence?.reach}
-              emergency={confidence?.emergency}
-              sleep={confidence?.sleep}
-              stateId={destination.state_id}
-              currentMonth={monthNum}
-            />
+          <section id="section-guide" className="scroll-mt-28">
+            <FullGuideLink />
           </section>
         </div>
 
