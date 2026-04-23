@@ -32,6 +32,12 @@ import { DestinationDecisionRail } from "./destination-decision-rail";
 import { SimpleProToggle, type ViewMode } from "./simple-pro-toggle";
 import { DataSignalBadge } from "./data-signal-badge";
 import { SectionFreshness } from "./section-freshness";
+import { MicroItinerarySection } from "./micro-itinerary-section";
+import { LogisticsChecklist } from "./logistics-checklist";
+import { PersonaBlocksSection } from "./persona-blocks-section";
+import { BestForSegments } from "./best-for-segments";
+import { ScenarioStrip } from "./scenario-strip";
+import { ElevationChart } from "./elevation-chart";
 import SoloFemaleSafetySection from "./solo-female-safety-section";
 import { SuggestEditButton } from "./suggest-edit-button";
 import MethodologyStrip from "./methodology-strip";
@@ -143,14 +149,33 @@ export function DestinationDetail({ dest }: { dest: any }) {
   const hasFood = legends.length > 0 || eats.length > 0 || (dest.local_stays?.length ?? 0) > 0;
   const hasReviews = (dest.traveler_notes?.length ?? 0) > 0 || (dest.reviews?.length ?? 0) > 0;
 
+  // Sprint 2 depth layers — gated on per-row content so pre-backfill dests
+  // don't show empty headings.
+  const hasItinerary = !!dest.micro_itineraries && (
+    !!dest.micro_itineraries.one_day ||
+    (Array.isArray(dest.micro_itineraries.three_days) && dest.micro_itineraries.three_days.length > 0) ||
+    (Array.isArray(dest.micro_itineraries.five_days) && dest.micro_itineraries.five_days.length > 0)
+  );
+  const hasLogistics = !!dest.local_logistics && Object.values(dest.local_logistics).some((v: any) => !!v?.toString().trim());
+  const hasPersonas = !!dest.persona_blocks && Object.values(dest.persona_blocks).some((v: any) => !!v?.toString().trim());
+  const hasBestFor = Array.isArray(dest.best_for_segments) && dest.best_for_segments.length > 0;
+  const hasScenarios = Array.isArray(dest.scenarios) && dest.scenarios.length > 0;
+  const hasElevation = (dest.elevation_m ?? 0) >= 1500;
+
   // Ordered list of sections that will actually render — consumed by the mini-nav and ToC.
   const availableSections = [
     { id: "overview", label: t("overview"), show: true },
     { id: "monthly", label: t("monthly"), show: hasMonthly },
+    { id: "itinerary", label: "On the Ground", show: hasItinerary },
     { id: "kids", label: t("kids"), show: hasKids },
     { id: "safety", label: t("safety"), show: hasSafety },
+    { id: "scenarios", label: "If Things Go Wrong", show: hasScenarios },
+    { id: "personas", label: "If You're…", show: hasPersonas },
+    { id: "logistics", label: "How It Works", show: hasLogistics },
     { id: "places", label: t("places"), show: hasPlaces },
     { id: "food", label: t("foodAndPeople"), show: hasFood },
+    { id: "bestfor", label: "Best For", show: hasBestFor },
+    { id: "elevation", label: "Altitude", show: hasElevation },
     { id: "reviews", label: "Reviews", show: hasReviews },
   ].filter((s) => s.show);
 
@@ -1023,6 +1048,15 @@ export function DestinationDetail({ dest }: { dest: any }) {
             </section>
           )}
 
+          {/* Sprint 2 — On the Ground (micro-itineraries 1/3/5 day). Reveals
+              for Simple + Pro both. This is the answer to "what do I actually
+              DO here?" — the gap every destination page had until now. */}
+          {hasItinerary && (
+            <section id="section-itinerary" className="scroll-mt-40">
+              <MicroItinerarySection data={dest.micro_itineraries} />
+            </section>
+          )}
+
           {/* Kids — rating badge */}
           {hasKids && (
             <section id="section-kids" className="scroll-mt-40">
@@ -1046,6 +1080,33 @@ export function DestinationDetail({ dest }: { dest: any }) {
                 hubHref={`/${locale}/blog/solo-female-india-month-by-month`}
               />
               {isPro && cc && <ConfidenceCardComponent {...cc} />}
+            </section>
+          )}
+
+          {/* Sprint 2 — Scenario playbooks. If-Then protocols matched to this
+              dest by explicit slug OR region OR altitude band. Pre-trip
+              briefing, not warnings in a vacuum. */}
+          {hasScenarios && (
+            <section id="section-scenarios" className="scroll-mt-40">
+              <ScenarioStrip scenarios={dest.scenarios} locale={locale} />
+            </section>
+          )}
+
+          {/* Sprint 2 — Persona-specific prose ("if you're a family / biker /
+              photographer / nomad / solo-f / elderly, here's how this place
+              works for YOU"). Shows in both Simple and Pro. */}
+          {hasPersonas && (
+            <section id="section-personas" className="scroll-mt-40">
+              <PersonaBlocksSection data={dest.persona_blocks} />
+            </section>
+          )}
+
+          {/* Sprint 2 — Local logistics checklist. Pro only — Simple mode
+              travelers don't need the taxi-union / UPI-fails-here level of
+              detail on first visit. */}
+          {isPro && hasLogistics && (
+            <section id="section-logistics" className="scroll-mt-40">
+              <LogisticsChecklist data={dest.local_logistics} />
             </section>
           )}
 
@@ -1230,6 +1291,23 @@ export function DestinationDetail({ dest }: { dest: any }) {
                   </div>
                 </div>
               )}
+            </section>
+          )}
+
+          {/* Sprint 2 — Best For segments. Pitch language: "who we'd send
+              here and why". Anchors the end of the editorial flow before
+              reviews. */}
+          {hasBestFor && (
+            <section id="section-bestfor" className="scroll-mt-40">
+              <BestForSegments data={dest.best_for_segments} />
+            </section>
+          )}
+
+          {/* Sprint 2 — Altitude context. Only for 1500m+ dests where
+              altitude is traveler-relevant. Shows AMS tone per band. */}
+          {hasElevation && (
+            <section id="section-elevation" className="scroll-mt-40">
+              <ElevationChart elevationM={dest.elevation_m} destinationName={displayName} />
             </section>
           )}
 

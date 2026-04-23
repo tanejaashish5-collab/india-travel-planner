@@ -171,11 +171,43 @@ async function getDestination(id: string) {
     return { data: (sameState ?? []).map((d: any) => ({ ...d, distance_km: null })) };
   };
 
+  // Scenario matcher — runs inline because it depends on `data.region`
+  // / `data.elevation_m` / border flags from the main destinations row.
+  // OR-match across 4 criteria, dedup by id.
+  const fetchScenarios = async () => {
+    const orClauses: string[] = [
+      `applies_to_destinations.cs.{${id}}`,
+    ];
+    if (data.region) orClauses.push(`applies_to_regions.cs.{${data.region}}`);
+    if (data.state_id) orClauses.push(`applies_to_regions.cs.{${data.state_id}}`);
+    // PostgREST `.or()` takes comma-joined filter expressions.
+    const { data: byMatch } = await supabase
+      .from("scenarios")
+      .select("*")
+      .or(orClauses.join(","))
+      .order("severity", { ascending: false });
+    let scenarios = byMatch ?? [];
+
+    // Altitude match — separate query because .or() doesn't mix well with
+    // range filters, and altitude scenarios (AMS etc.) need explicit bounds.
+    if (data.elevation_m) {
+      const { data: byAlt } = await supabase
+        .from("scenarios")
+        .select("*")
+        .lte("applies_to_altitude_min", data.elevation_m)
+        .or(`applies_to_altitude_max.is.null,applies_to_altitude_max.gte.${data.elevation_m}`);
+      for (const s of byAlt ?? []) {
+        if (!scenarios.find((x: any) => x.id === s.id)) scenarios.push(s);
+      }
+    }
+    return { data: scenarios };
+  };
+
   // Fire all remaining queries in parallel — ~70% faster than sequential
   const [
     gems, trapAlts, festivals, localStays, travelerNotes,
     allDests, reviews, relatedArticles, relatedCollections, relatedRoutes,
-    nearbyDests, emergencySos, pois, editorStayPicks,
+    nearbyDests, emergencySos, pois, editorStayPicks, scenarios,
   ] = await Promise.all([
     supabase.from("hidden_gems").select("*").eq("near_destination_id", id),
     supabase
@@ -209,6 +241,7 @@ async function getDestination(id: string) {
       .select("slot, name, property_type, price_band, why_nakshiq, signature_experience, sources, contact_only, contact_info, published, confidence")
       .eq("destination_id", id)
       .eq("published", true),
+    fetchScenarios(),
   ]);
 
   return {
@@ -228,6 +261,7 @@ async function getDestination(id: string) {
     emergencySos: emergencySos.data ?? null,
     points_of_interest: pois.data ?? [],
     editor_stay_picks: editorStayPicks.data ?? [],
+    scenarios: scenarios.data ?? [],
   };
 }
 

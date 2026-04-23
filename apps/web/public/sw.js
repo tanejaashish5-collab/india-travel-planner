@@ -12,7 +12,8 @@
 // v11: 2026-04-23 destination map context card moved top-left → bottom-left so zoom controls aren't occluded.
 // v12: 2026-04-23 Sprint-1.1 — unified TL;DR decision card on /destination/[id] (absorbs score badge + verdict + quick-stats into one panel).
 // v13: 2026-04-23 Sprint-1 complete — decision rail (lg+), Simple/Pro toggle, LIVE/SCORED badges, per-section freshness stamps.
-const CACHE_VERSION = "nakshiq-v13";
+// v14: 2026-04-23 Sprint-2 complete — depth schema (014+015+016), ScenarioStrip, MicroItinerary, LogisticsChecklist, PersonaBlocks, BestFor, ElevationChart; 3 pilot destinations populated + 5 foundational scenarios seeded.
+const CACHE_VERSION = "nakshiq-v14";
 const STATIC_CACHE = `${CACHE_VERSION}-static`;
 const IMAGE_CACHE = `${CACHE_VERSION}-images`;
 const DATA_CACHE = `${CACHE_VERSION}-data`;
