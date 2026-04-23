@@ -27,6 +27,7 @@ import { ReviewsList } from "./reviews-list";
 import { ReviewForm } from "./review-form";
 import { BookingHandoff } from "./booking-handoff";
 import VerdictCard from "./verdict-card";
+import DestinationTldrCard from "./destination-tldr-card";
 import SoloFemaleSafetySection from "./solo-female-safety-section";
 import { SuggestEditButton } from "./suggest-edit-button";
 import MethodologyStrip from "./methodology-strip";
@@ -39,7 +40,7 @@ import { FadeIn, SlideIn, HoverCard, StaggerContainer, StaggerItem, ScrollReveal
 import { Footer } from "./footer";
 import { StickyDestinationHeader } from "./sticky-destination-header";
 import { POISection } from "./poi-section";
-import { SCORE_COLORS, DIFFICULTY_BG, DIFFICULTY_COLORS } from "@/lib/design-tokens";
+import { DIFFICULTY_BG } from "@/lib/design-tokens";
 
 export function DestinationDetail({ dest }: { dest: any }) {
   const locale = useLocale();
@@ -104,6 +105,14 @@ export function DestinationDetail({ dest }: { dest: any }) {
   const currentMonth = new Date().getMonth() + 1;
   const currentScore = months.find((m: any) => m.month === currentMonth)?.score ?? null;
   const currentMonthData = months.find((m: any) => m.month === currentMonth);
+
+  const crowdLevel: "quiet" | "moderate" | "peak" | null = (() => {
+    const cal = dest.crowd_calendar;
+    if (!cal) return null;
+    if (cal.peak_months?.includes(currentMonth)) return "peak";
+    if (cal.quiet_months?.includes(currentMonth)) return "quiet";
+    return "moderate";
+  })();
 
   // Traveler fit based on data
   const travelerFit = getTravelerFit(dest, kf);
@@ -216,102 +225,70 @@ export function DestinationDetail({ dest }: { dest: any }) {
         {/* Hero Card */}
         <SlideIn delay={0.1}>
           <div className="mb-6 rounded-2xl border border-border/50 bg-card p-6 sm:p-8 -mt-24 relative z-10 shadow-2xl shadow-black/20">
-            <div className="flex items-start justify-between">
-              <div>
-                <h1 className="text-3xl font-bold sm:text-4xl lg:text-6xl lg:tracking-tight">{displayName}</h1>
-                {/* Location line */}
-                <p className="mt-2 text-sm text-muted-foreground">
-                  {stateName}{dest.region ? ` · ${dest.region}` : ""}
-                  {dest.elevation_m && <span className="font-mono"> · {dest.elevation_m.toLocaleString()}m</span>}
-                </p>
-                {/* Badges row */}
-                <div className="mt-2 flex flex-wrap items-center gap-2">
-                  {dest.vehicle_fit && (
-                    <span className={`inline-flex items-center gap-1 rounded-full border px-2.5 py-1 text-xs font-medium ${
-                      dest.vehicle_fit.includes("hatchback") ? "border-emerald-500/30 text-emerald-400" :
-                      dest.vehicle_fit.includes("SUV") ? "border-yellow-500/30 text-yellow-400" :
-                      dest.vehicle_fit.includes("4WD") ? "border-red-500/30 text-red-400" :
-                      "border-border text-muted-foreground"
-                    }`}>
-                      {dest.vehicle_fit.includes("bike") ? "🏍️" : "🚗"} {dest.vehicle_fit}
-                    </span>
-                  )}
-                  {dest.family_stress && (
-                    <span className="inline-flex items-center gap-1 rounded-full border border-border px-2.5 py-1 text-xs font-medium text-muted-foreground">
-                      👨‍👩‍👧 {dest.family_stress}
-                    </span>
-                  )}
-                  <DistanceBadge destLat={dest.coords?.lat} destLng={dest.coords?.lng} elevation={dest.elevation_m} />
-                </div>
-              </div>
-              {currentScore !== null && (
-                <motion.div
-                  initial={{ scale: 0, rotate: -10 }}
-                  animate={{ scale: 1, rotate: 0 }}
-                  transition={{ type: "spring", stiffness: 300, delay: 0.3 }}
-                  className={`rounded-2xl border-2 px-5 py-3 text-center backdrop-blur-sm shadow-lg ${SCORE_COLORS[currentScore] ?? SCORE_COLORS[0]}`}
-                >
-                  <div className="text-3xl font-bold font-mono">{currentScore}/5</div>
-                  <div className="text-xs font-medium uppercase tracking-wider mt-0.5">{tm(String(currentMonth))}</div>
-                </motion.div>
+            {/* H1 + location + meta chips */}
+            <h1 className="text-3xl font-bold sm:text-4xl lg:text-6xl lg:tracking-tight">{displayName}</h1>
+            <p className="mt-2 text-sm text-muted-foreground">
+              {stateName}{dest.region ? ` · ${dest.region}` : ""}
+              {dest.elevation_m && <span className="font-mono"> · {dest.elevation_m.toLocaleString()}m</span>}
+            </p>
+            <div className="mt-2 flex flex-wrap items-center gap-2">
+              {dest.vehicle_fit && (
+                <span className={`inline-flex items-center gap-1 rounded-full border px-2.5 py-1 text-xs font-medium ${
+                  dest.vehicle_fit.includes("hatchback") ? "border-emerald-500/30 text-emerald-400" :
+                  dest.vehicle_fit.includes("SUV") ? "border-yellow-500/30 text-yellow-400" :
+                  dest.vehicle_fit.includes("4WD") ? "border-red-500/30 text-red-400" :
+                  "border-border text-muted-foreground"
+                }`}>
+                  {dest.vehicle_fit.includes("bike") ? "🏍️" : "🚗"} {dest.vehicle_fit}
+                </span>
+              )}
+              {dest.family_stress && (
+                <span className="inline-flex items-center gap-1 rounded-full border border-border px-2.5 py-1 text-xs font-medium text-muted-foreground">
+                  👨‍👩‍👧 {dest.family_stress}
+                </span>
+              )}
+              <DistanceBadge destLat={dest.coords?.lat} destLng={dest.coords?.lng} elevation={dest.elevation_m} />
+              {(dest.ideal_duration_min || dest.ideal_duration_max) && (
+                <span className="inline-flex items-center gap-1 rounded-full border border-border px-2.5 py-1 text-xs font-medium text-muted-foreground">
+                  ⏱ {dest.ideal_duration_min && dest.ideal_duration_max ? `${dest.ideal_duration_min}–${dest.ideal_duration_max}d` : dest.ideal_duration_min ? `${dest.ideal_duration_min}+d` : `≤${dest.ideal_duration_max}d`}
+                </span>
               )}
             </div>
 
-            {/* Score Explainability */}
-            {currentMonthData && (
-              <div className="mt-3 text-[15px] text-muted-foreground">
-                <span className="font-medium text-foreground">Why {currentScore}/5?</span>{" "}
-                {currentMonthData.note}
-              </div>
-            )}
+            {/* Tagline — editorial hook, above the verdict */}
+            <p className="mt-4 text-lg leading-relaxed text-muted-foreground/90">{displayTagline}</p>
+
+            {/* TL;DR DECISION CARD — the "should I go this month?" answer
+                in one unified panel. Absorbs the old score badge + "Why X/5?"
+                prose + verdict pill + 4 quick-stat tiles. One decision surface
+                instead of four scattered ones. */}
+            <a
+              href={currentMonthData?.verdict
+                ? `/${locale}/destination/${dest.id}/${["","january","february","march","april","may","june","july","august","september","october","november","december"][currentMonth]}`
+                : undefined}
+              className={`mt-5 block ${currentMonthData?.verdict ? "hover:opacity-95 transition-opacity" : ""}`}
+            >
+              <DestinationTldrCard
+                verdict={currentMonthData?.verdict}
+                score={currentScore}
+                monthLabel={tm(String(currentMonth))}
+                prose={currentMonthData?.go_or_skip_verdict}
+                skipReason={currentMonthData?.skip_reason}
+                scoreNote={currentMonthData?.note}
+                kidsRating={kf?.rating ?? null}
+                kidsSuitable={kf?.suitable ?? null}
+                soloFemaleScore={dest.solo_female_score ?? null}
+                crowdLevel={crowdLevel}
+                costTier={dest.budget_tier}
+                difficulty={dest.difficulty}
+              />
+            </a>
 
             <MethodologyStrip
               locale={locale}
               sourceCount={Array.isArray(cc?.sources) ? cc.sources.length : undefined}
               contentReviewedAt={dest.content_reviewed_at}
             />
-
-            {currentMonthData?.verdict && (
-              <a
-                href={`/${locale}/destination/${dest.id}/${["","january","february","march","april","may","june","july","august","september","october","november","december"][currentMonth]}`}
-                className="mt-4 inline-block hover:opacity-90 transition-opacity"
-              >
-                <VerdictCard
-                  verdict={currentMonthData.verdict}
-                  skipReason={currentMonthData.skip_reason}
-                  month={["","January","February","March","April","May","June","July","August","September","October","November","December"][currentMonth]}
-                  variant="compact"
-                />
-              </a>
-            )}
-
-            <p className="mt-4 text-lg leading-relaxed text-muted-foreground/90">{displayTagline}</p>
-
-            {/* Quick stats */}
-            <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-4">
-              <div className="rounded-xl border border-border/30 bg-muted/20 p-3">
-                <div className="text-xs uppercase tracking-wider text-muted-foreground/70">{t("difficulty")}</div>
-                <div className={`mt-1.5 text-sm font-semibold capitalize ${DIFFICULTY_COLORS[dest.difficulty] ?? ""}`}>
-                  {dest.difficulty}
-                </div>
-              </div>
-              {(dest.ideal_duration_min || dest.ideal_duration_max) && (
-              <div className="rounded-xl border border-border/50 bg-background/50 backdrop-blur-sm p-3">
-                <div className="text-xs uppercase tracking-wide text-muted-foreground">{t("duration")}</div>
-                <div className="mt-1 text-sm font-semibold">{dest.ideal_duration_min && dest.ideal_duration_max ? `${dest.ideal_duration_min}-${dest.ideal_duration_max} days` : dest.ideal_duration_min ? `${dest.ideal_duration_min}+ days` : `Up to ${dest.ideal_duration_max} days`}</div>
-              </div>
-              )}
-              <div className="rounded-xl border border-border/50 bg-background/50 backdrop-blur-sm p-3">
-                <div className="text-xs uppercase tracking-wide text-muted-foreground">{t("budget")}</div>
-                <div className="mt-1 text-sm font-semibold capitalize">{dest.budget_tier ?? "mixed"}</div>
-              </div>
-              <div className="rounded-xl border border-border/50 bg-background/50 backdrop-blur-sm p-3">
-                <div className="text-xs uppercase tracking-wide text-muted-foreground">{t("kidsRating")}</div>
-                <div className={`mt-1 text-sm font-semibold ${kf?.suitable ? "text-emerald-400" : kf ? "text-red-400" : ""}`}>
-                  {kf ? (kf.suitable ? `${kf.rating}/5 ✓` : "Not suitable") : "N/A"}
-                </div>
-              </div>
-            </div>
 
             <KnowBeforeYouGo
               locale={locale}

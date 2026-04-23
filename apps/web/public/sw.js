@@ -10,7 +10,8 @@
 // v9: 2026-04-23 video cache-busting (?v=<YYYYMMDD>) + mobile overflow fix on destination page (share/compare row wraps below sm).
 // v10: 2026-04-23 destination map enriched — nearby pins + auto-fit bounds, dark_all labelled basemap across all 3 maps, "Where am I?" context overlay.
 // v11: 2026-04-23 destination map context card moved top-left → bottom-left so zoom controls aren't occluded.
-const CACHE_VERSION = "nakshiq-v11";
+// v12: 2026-04-23 Sprint-1.1 — unified TL;DR decision card on /destination/[id] (absorbs score badge + verdict + quick-stats into one panel).
+const CACHE_VERSION = "nakshiq-v12";
 const STATIC_CACHE = `${CACHE_VERSION}-static`;
 const IMAGE_CACHE = `${CACHE_VERSION}-images`;
 const DATA_CACHE = `${CACHE_VERSION}-data`;
