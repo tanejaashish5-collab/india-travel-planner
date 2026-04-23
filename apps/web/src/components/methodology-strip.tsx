@@ -41,24 +41,26 @@ export default function MethodologyStrip({ locale, sourceCount, contentReviewedA
   const review = reviewLabel(contentReviewedAt);
   parts.push({ text: review.text, tone: review.tone });
 
+  // Dropped the "METHOD ·" all-caps prefix — the facts stand alone and
+  // the external reviewer flagged it as the last product-y overline on
+  // destination pages. Softer tracking + sans font match the site-wide
+  // SectionLabel treatment.
   return (
-    <div className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-1 rounded-lg border border-border/40 bg-card/30 px-3 py-2">
-      <span className="font-mono text-[10px] tracking-[0.3em] uppercase text-muted-foreground">
-        Method
-      </span>
+    <div className="mt-4 flex flex-wrap items-center gap-x-2.5 gap-y-1 rounded-lg border border-border/40 bg-card/30 px-3 py-2">
       {parts.map((p, i) => (
         <span
           key={i}
-          className={`font-mono text-[10px] tracking-[0.2em] uppercase ${p.tone ? TONE_CLASS[p.tone] : "text-muted-foreground/80"}`}
+          className={`text-[11px] font-medium uppercase tracking-[0.08em] ${p.tone ? TONE_CLASS[p.tone] : "text-muted-foreground/80"}`}
         >
-          · {p.text}
+          {i > 0 && <span className="mr-2 text-muted-foreground/40" aria-hidden>·</span>}
+          {p.text}
         </span>
       ))}
       <Link
         href={`/${locale}/methodology`}
-        className="ml-auto font-mono text-[10px] tracking-[0.22em] uppercase text-[#E55642] hover:underline"
+        className="ml-auto text-[11px] font-medium uppercase tracking-[0.08em] text-[#E55642] hover:underline"
       >
-        how we score →
+        how we score &rarr;
       </Link>
     </div>
   );
