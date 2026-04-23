@@ -9,7 +9,8 @@
 // v8: 2026-04-23 state page — sticky back+breadcrumb pill, hero bumped to lg:h-[32rem], breadcrumb lifted out of hero overlay.
 // v9: 2026-04-23 video cache-busting (?v=<YYYYMMDD>) + mobile overflow fix on destination page (share/compare row wraps below sm).
 // v10: 2026-04-23 destination map enriched — nearby pins + auto-fit bounds, dark_all labelled basemap across all 3 maps, "Where am I?" context overlay.
-const CACHE_VERSION = "nakshiq-v10";
+// v11: 2026-04-23 destination map context card moved top-left → bottom-left so zoom controls aren't occluded.
+const CACHE_VERSION = "nakshiq-v11";
 const STATIC_CACHE = `${CACHE_VERSION}-static`;
 const IMAGE_CACHE = `${CACHE_VERSION}-images`;
 const DATA_CACHE = `${CACHE_VERSION}-data`;

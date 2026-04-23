@@ -195,7 +195,7 @@ export function DestinationMap({
         />
         {showContext && (
           <div
-            className="pointer-events-none absolute top-3 left-3 z-[400] max-w-[70%] rounded-lg border border-white/15 bg-black/70 px-3 py-2 backdrop-blur-sm"
+            className="pointer-events-none absolute bottom-3 left-3 z-[400] max-w-[70%] rounded-lg border border-white/15 bg-black/70 px-3 py-2 backdrop-blur-sm"
             aria-hidden="true"
           >
             {contextLine1 && (
