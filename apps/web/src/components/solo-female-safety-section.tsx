@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import { SectionLabel } from "./ui/section-label";
 
 type Score = 1 | 2 | 3 | 4 | 5;
 
@@ -57,9 +58,9 @@ export default function SoloFemaleSafetySection({ score, note, monthRows, hubHre
             ♀
           </span>
           <div>
-            <div className="font-mono text-[10px] tracking-[0.22em] uppercase text-rose-300/70">
+            <SectionLabel as="div" className="text-rose-300/70">
               Solo-female safety
-            </div>
+            </SectionLabel>
             {typeof score === "number" && topTone ? (
               <div className="mt-0.5">
                 <span className={cn("font-serif italic text-2xl sm:text-3xl font-medium tracking-tight", topTone.text)} style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}>
@@ -75,9 +76,9 @@ export default function SoloFemaleSafetySection({ score, note, monthRows, hubHre
         {hubHref && (
           <a
             href={hubHref}
-            className="font-mono text-[10px] tracking-[0.2em] uppercase text-rose-300/70 hover:text-rose-200 transition-colors"
+            className="text-[11px] font-medium uppercase tracking-[0.08em] text-rose-300/70 hover:text-rose-200 transition-colors"
           >
-            Method →
+            How we score &rarr;
           </a>
         )}
       </div>
@@ -90,9 +91,9 @@ export default function SoloFemaleSafetySection({ score, note, monthRows, hubHre
 
       {/* 12-month strip — shows month-effective score; override-carrying months get a dot */}
       <div className="mt-4">
-        <div className="font-mono text-[10px] tracking-[0.22em] uppercase text-rose-300/60 mb-2">
-          Month-by-month
-        </div>
+        <SectionLabel as="div" className="mb-2 text-rose-300/60">
+          Month by month
+        </SectionLabel>
         <div className="grid grid-cols-6 sm:grid-cols-12 gap-1.5">
           {Array.from({ length: 12 }, (_, i) => i + 1).map((m) => {
             const eff = effectiveScore(m);
@@ -116,7 +117,7 @@ export default function SoloFemaleSafetySection({ score, note, monthRows, hubHre
                 )}
                 title={tooltip}
               >
-                <div className="font-mono text-[9px] tracking-[0.12em] uppercase opacity-80">
+                <div className="text-[10px] font-medium uppercase tracking-[0.06em] opacity-85">
                   {MONTH_SHORT[m]}
                 </div>
                 <div
@@ -135,10 +136,12 @@ export default function SoloFemaleSafetySection({ score, note, monthRows, hubHre
             );
           })}
         </div>
-        <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-2 font-mono text-[9px] tracking-[0.15em] uppercase text-zinc-400">
-          <span className="flex items-center gap-1.5"><span className="inline-block h-2.5 w-2.5 rounded-sm bg-emerald-500/50 border border-emerald-400/60" /> 4-5 safe</span>
+        {/* Legend — sentence case, softer tracking, reads as a single
+            editorial caption rather than the old all-caps noise stack. */}
+        <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-1.5 text-[11px] text-muted-foreground">
+          <span className="flex items-center gap-1.5"><span className="inline-block h-2.5 w-2.5 rounded-sm bg-emerald-500/50 border border-emerald-400/60" /> 4&ndash;5 safe</span>
           <span className="flex items-center gap-1.5"><span className="inline-block h-2.5 w-2.5 rounded-sm bg-amber-500/40 border border-amber-400/50" /> 3 vigilant</span>
-          <span className="flex items-center gap-1.5"><span className="inline-block h-2.5 w-2.5 rounded-sm bg-orange-500/40 border border-orange-400/50" /> 2 with guide</span>
+          <span className="flex items-center gap-1.5"><span className="inline-block h-2.5 w-2.5 rounded-sm bg-orange-500/40 border border-orange-400/50" /> 2 with operator</span>
           <span className="flex items-center gap-1.5"><span className="inline-block h-2.5 w-2.5 rounded-sm bg-red-500/50 border border-red-400/60" /> 1 skip</span>
           <span className="flex items-center gap-1.5"><span className="inline-block h-1.5 w-1.5 rounded-full bg-rose-300" /> month-specific note</span>
           <span className="flex items-center gap-1.5"><span className="inline-block h-1.5 w-1.5 rounded-full bg-zinc-500" /> closed</span>
