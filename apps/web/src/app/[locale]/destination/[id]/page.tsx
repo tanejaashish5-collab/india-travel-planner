@@ -11,20 +11,25 @@ import { NewsletterStickyTray } from "@/components/newsletter-sticky-tray";
 import { destinationImage } from "@/lib/image-url";
 
 export const revalidate = 3600; // Revalidate every hour
-// dynamicParams=false → unknown slugs get real 404 from Next.js (not soft-404
-// via streamed notFound() which returns 200). generateStaticParams below
-// pre-renders every destination in DB × both locales. New destinations added
-// to DB post-deploy will 404 until the next deploy — matches current ops flow.
-export const dynamicParams = false;
+// dynamicParams=true → pages not pre-rendered at build time ISR-generate on
+// first hit and then cache. We flipped this from false to true after the
+// Supabase free-plan quota grace period started rate-limiting queries —
+// pre-rendering 460 dests × 2 locales = 920 pages × 17 queries each was
+// exhausting the API limit and hanging builds for hours.
+//
+// Tradeoff: unknown dest slugs now soft-404 (return 200 via notFound()
+// instead of a native 404). Acceptable while the moat work is shipping.
+// If SEO rankings drop, flip back and upgrade Supabase to Pro.
+export const dynamicParams = true;
+
+// Only pre-render the 3 Sprint-2 pilot destinations at build time — these
+// are demo-critical. Everything else lazy-generates via ISR on first hit,
+// then caches for `revalidate` seconds.
+const PRE_RENDER_IDS = ["bomdila", "gurez-valley", "kaza"];
 
 export async function generateStaticParams() {
-  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
-  const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-  if (!url || !key) return [];
-  const supabase = createClient(url, key);
-  const { data } = await supabase.from("destinations").select("id");
   const locales = ["en", "hi"];
-  return (data ?? []).flatMap((d) => locales.map((locale) => ({ id: d.id, locale })));
+  return PRE_RENDER_IDS.flatMap((id) => locales.map((locale) => ({ id, locale })));
 }
 
 export async function generateMetadata({
