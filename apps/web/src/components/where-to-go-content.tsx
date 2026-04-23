@@ -427,7 +427,7 @@ export function WhereToGoContent({
               href={`/${locale}/where-to-go/${monthSlug}`}
               className="mt-6 inline-block text-sm text-primary/70 hover:text-primary transition-colors"
             >
-              ← View all India destinations in {monthName}
+              ← All India destinations in {monthName}
             </Link>
           </div>
         </FadeIn>
@@ -528,7 +528,7 @@ export function WhereToGoContent({
             type="button"
             onClick={() => setSoloFemaleOnly((v) => !v)}
             aria-pressed={soloFemaleOnly}
-            title="Show only destinations with solo-female score 4 or 5 for this month"
+            title="Filter to solo-female-friendly destinations (4–5/5 this month)"
             className={`group inline-flex items-center gap-2 rounded-full border px-4 py-2 text-xs font-semibold tracking-[0.15em] transition-all ${
               soloFemaleOnly
                 ? "border-rose-400/50 bg-rose-500/10 text-rose-200"
@@ -598,7 +598,7 @@ export function WhereToGoContent({
         <section id="section-good4" className="scroll-mt-28">
           <ScrollReveal>
             <SectionHeader
-              title="Good Time"
+              title="A good time"
               subtitle="4/5"
               accent="blue"
               count={score4.length}
@@ -637,7 +637,7 @@ export function WhereToGoContent({
               onClick={() => setFairExpanded(true)}
               className="mt-4 flex w-full items-center justify-center gap-2 rounded-xl border border-yellow-500/10 bg-yellow-500/[0.03] py-3 text-sm text-yellow-400 transition-colors hover:bg-yellow-500/[0.06]"
             >
-              <span>Show {score3.length} destinations</span>
+              <span>See {score3.length} fair options</span>
               <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
               </svg>
@@ -665,7 +665,7 @@ export function WhereToGoContent({
         <section id="section-avoid" className="scroll-mt-28">
           <ScrollReveal>
             <SectionHeader
-              title="Where NOT to Go"
+              title="Where to skip"
               subtitle={`${scoreAvoid.length} destinations`}
               accent="red"
               count={scoreAvoid.length}

@@ -73,7 +73,6 @@ export default async function WeekendFromIndexPage({
                   500 km radius · 3 drive bands · current-month scores
                 </p>
                 <p className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-primary/80 group-hover:text-primary">
-                  Open
                   <span className="transition-transform group-hover:translate-x-0.5" aria-hidden>
                     →
                   </span>
