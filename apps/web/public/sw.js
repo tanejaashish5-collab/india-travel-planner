@@ -25,7 +25,8 @@
 // v24: 2026-04-23 Typography polish sprint (5 commits): TYPE tokens + h1/h2 weight cap → SectionLabel component + 44-file overline migration → editorial copy rewrite → emoji restraint in structural positions (scenario-strip/logistics/personas). Premium shift: 85+ mono-uppercase SaaS overlines now one softer sans pattern.
 // v25: 2026-04-23 Decision rail polish: "Decision" → "{month} at a glance", prose chips (Kids: Not ideal, Solo female: With operator only) instead of bare "2/5" scores, close + minimise controls with session/local storage. CollapsibleDetails verb "Open/Close" → "See/Hide". Second "Infrastructure Reality" heading → "Infrastructure data" (fixes dup with narrative section).
 // v26: 2026-04-23 Booking handoff dedup — editors-picks.tsx was rendering its own BookingHandoff inline + destination-detail.tsx was rendering one at the page tail. Both fired, so the "Ready to book?" card appeared twice. Removed from editors-picks; kept single instance at page tail.
-const CACHE_VERSION = "nakshiq-v26";
+// v27: 2026-04-23 KidsBadge defensive render — meta line "Rating: X/5 · Min age: Y+ · Best for: Z" was unconditional; empty best_age_group / null min_age rendered "Best for:" / "Min age: +" trailing on partial rows (Almora and others). Each segment now guards on its own value.
+const CACHE_VERSION = "nakshiq-v27";
 const STATIC_CACHE = `${CACHE_VERSION}-static`;
 const IMAGE_CACHE = `${CACHE_VERSION}-images`;
 const DATA_CACHE = `${CACHE_VERSION}-data`;

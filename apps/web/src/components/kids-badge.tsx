@@ -27,6 +27,19 @@ export function KidsBadge({
 }: KidsBadgeProps) {
   const t = useTranslations("destination");
 
+  // Build the meta line defensively. Each segment only emits if its data
+  // is present — otherwise the label fires with an empty value (e.g.
+  // "Best for:" or "Min age: +") when rows are partial. `0` is treated
+  // as missing for min_age since India travel data rarely means
+  // "infant-friendly" when it's 0 — more often it's unset.
+  function buildMetaLine(): string | null {
+    const parts: string[] = [];
+    if (rating != null) parts.push(`Rating: ${rating}/5`);
+    if (min_recommended_age) parts.push(`${t("minAge")}: ${min_recommended_age}+`);
+    if (best_age_group?.trim()) parts.push(`Best for: ${best_age_group}`);
+    return parts.length > 0 ? parts.join(" · ") : null;
+  }
+
   if (!suitable) {
     return (
       <div className="rounded-xl border border-red-500/30 bg-red-500/5 p-5">
@@ -38,9 +51,9 @@ export function KidsBadge({
             <h3 className="font-semibold text-red-400">
               {t("notSuitableForKids")}
             </h3>
-            <p className="text-xs text-muted-foreground">
-              Rating: {rating}/5
-            </p>
+            {buildMetaLine() && (
+              <p className="text-xs text-muted-foreground">{buildMetaLine()}</p>
+            )}
           </div>
         </div>
         {not_suitable_reason && (
@@ -76,10 +89,9 @@ export function KidsBadge({
             <h3 className="font-semibold text-emerald-400">
               {t("suitableForKids")}
             </h3>
-            <p className="text-xs text-muted-foreground">
-              Rating: {rating}/5 · {t("minAge")}: {min_recommended_age}+ · Best
-              for: {best_age_group}
-            </p>
+            {buildMetaLine() && (
+              <p className="text-xs text-muted-foreground">{buildMetaLine()}</p>
+            )}
           </div>
         </div>
         <div className="text-2xl font-mono font-bold text-emerald-400">
