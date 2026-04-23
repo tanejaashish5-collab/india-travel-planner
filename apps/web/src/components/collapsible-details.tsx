@@ -34,40 +34,26 @@ export function CollapsibleDetails({
   hint?: string;
 }) {
   const [open, setOpen] = useState(defaultOpen);
+  // Consistent green styling across all variants. `tone` prop is accepted
+  // for backwards compat but no longer forks appearance — mixed greens +
+  // yellows felt noisy and the yellow was too bright on dark mode.
+  void tone;
   const toneClasses =
-    tone === "warning"
-      ? "border-yellow-500/50 bg-yellow-500/10 hover:border-yellow-500/80 hover:bg-yellow-500/20 text-yellow-100"
-      : "border-primary/55 bg-primary/10 hover:border-primary/85 hover:bg-primary/20 text-foreground";
-  const iconBgClasses =
-    tone === "warning"
-      ? "bg-yellow-500/25 text-yellow-200"
-      : "bg-primary/25 text-primary";
-  const pulseClass =
-    !open
-      ? tone === "warning"
-        ? "collapsible-pulse-warning"
-        : "collapsible-pulse-neutral"
-      : "";
+    "border-primary/55 bg-primary/10 hover:border-primary/85 hover:bg-primary/20 text-foreground";
+  const iconBgClasses = "bg-primary/25 text-primary";
+  const pulseClass = !open ? "collapsible-pulse-neutral" : "";
   return (
     <div className={className}>
       <style>{`
         @keyframes collapsible-breathe-neutral {
           0%, 100% { box-shadow: 0 0 0 0 rgba(52, 211, 153, 0); }
-          50%      { box-shadow: 0 0 0 8px rgba(52, 211, 153, 0.32); }
-        }
-        @keyframes collapsible-breathe-warning {
-          0%, 100% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0); }
-          50%      { box-shadow: 0 0 0 8px rgba(245, 158, 11, 0.36); }
+          50%      { box-shadow: 0 0 0 4px rgba(52, 211, 153, 0.22); }
         }
         .collapsible-pulse-neutral {
-          animation: collapsible-breathe-neutral 2.2s ease-in-out infinite;
-        }
-        .collapsible-pulse-warning {
-          animation: collapsible-breathe-warning 2.2s ease-in-out infinite;
+          animation: collapsible-breathe-neutral 2.4s ease-in-out infinite;
         }
         @media (prefers-reduced-motion: reduce) {
-          .collapsible-pulse-neutral,
-          .collapsible-pulse-warning { animation: none; }
+          .collapsible-pulse-neutral { animation: none; }
         }
       `}</style>
       <button
@@ -96,12 +82,7 @@ export function CollapsibleDetails({
               {open ? "Hide" : "Show"} {label}
             </span>
             {count != null && (
-              <span
-                className={cn(
-                  "inline-flex items-center rounded-full px-2 py-0.5 font-mono text-[10px] tracking-[0.14em] uppercase",
-                  tone === "warning" ? "bg-yellow-500/25 text-yellow-100" : "bg-primary/25 text-foreground",
-                )}
-              >
+              <span className="inline-flex items-center rounded-full bg-primary/25 px-2 py-0.5 font-mono text-[10px] tracking-[0.14em] uppercase text-foreground">
                 {count} {count === 1 ? "item" : "items"}
               </span>
             )}
