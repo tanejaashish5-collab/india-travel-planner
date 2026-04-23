@@ -14,7 +14,8 @@
 // v13: 2026-04-23 Sprint-1 complete — decision rail (lg+), Simple/Pro toggle, LIVE/SCORED badges, per-section freshness stamps.
 // v14: 2026-04-23 Sprint-2 complete — depth schema (014+015+016), ScenarioStrip, MicroItinerary, LogisticsChecklist, PersonaBlocks, BestFor, ElevationChart; 3 pilot destinations populated + 5 foundational scenarios seeded.
 // v15: 2026-04-23 Sprint-2 tuning — Logistics moved to Simple+Pro, single-scenario full-width card, ToC reasoning documented.
-const CACHE_VERSION = "nakshiq-v15";
+// v16: 2026-04-23 Simple/Pro toggle removed. Dense blocks now inline-collapsed via CollapsibleDetails. Tourist Trap / Crowd Intelligence / International Info always shown.
+const CACHE_VERSION = "nakshiq-v16";
 const STATIC_CACHE = `${CACHE_VERSION}-static`;
 const IMAGE_CACHE = `${CACHE_VERSION}-images`;
 const DATA_CACHE = `${CACHE_VERSION}-data`;

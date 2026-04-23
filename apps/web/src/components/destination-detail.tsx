@@ -29,7 +29,7 @@ import { BookingHandoff } from "./booking-handoff";
 import VerdictCard from "./verdict-card";
 import DestinationTldrCard from "./destination-tldr-card";
 import { DestinationDecisionRail } from "./destination-decision-rail";
-import { SimpleProToggle, type ViewMode } from "./simple-pro-toggle";
+import { CollapsibleDetails } from "./collapsible-details";
 import { DataSignalBadge } from "./data-signal-badge";
 import { SectionFreshness } from "./section-freshness";
 import { MicroItinerarySection } from "./micro-itinerary-section";
@@ -58,19 +58,6 @@ export function DestinationDetail({ dest }: { dest: any }) {
   const tm = useTranslations("months");
 
   const [saved, setSaved] = useState(false);
-  // View mode — Pro (current full page) by default, Simple hides the dense
-  // infra/crowd/international blocks for first-time visitors. Persists per
-  // user in localStorage.
-  const [viewMode, setViewMode] = useState<ViewMode>("pro");
-  useEffect(() => {
-    const saved = typeof window !== "undefined" ? (localStorage.getItem("destViewMode") as ViewMode | null) : null;
-    if (saved === "simple" || saved === "pro") setViewMode(saved);
-  }, []);
-  function changeViewMode(next: ViewMode) {
-    setViewMode(next);
-    if (typeof window !== "undefined") localStorage.setItem("destViewMode", next);
-  }
-  const isPro = viewMode === "pro";
 
   // Hash-link smooth-scroll (search results + deep links arrive via #sub-xyz, #safety, etc).
   // With long-scroll all targets are already in DOM, so native anchor scroll does the rest —
@@ -163,10 +150,10 @@ export function DestinationDetail({ dest }: { dest: any }) {
   const hasElevation = (dest.elevation_m ?? 0) >= 1500;
 
   // Ordered list of sections that will actually render — consumed by the mini-nav and ToC.
-  // Simple/Pro rule: every section here is a FRONTSTAGE entry point. The 5
-  // Pro-only BLOCKS (infrastructure-concerns, tourist-trap, crowd-intelligence,
-  // international, confidence-card) don't have ToC entries since they live
-  // inside other section containers — not a navigation concern.
+  // Every entry here is frontstage content. Two dense reference blocks
+  // (infrastructure reality grid + full safety ConfidenceCard) live inside
+  // section containers and are collapsed behind inline "+ Show" disclosures
+  // — so nothing is hidden forever, but the default scroll stays digestible.
   const availableSections = [
     { id: "overview", label: t("overview"), show: true },
     { id: "monthly", label: t("monthly"), show: hasMonthly },
@@ -182,9 +169,6 @@ export function DestinationDetail({ dest }: { dest: any }) {
     { id: "elevation", label: "Altitude", show: hasElevation },
     { id: "reviews", label: "Reviews", show: hasReviews },
   ].filter((s) => s.show);
-  // NOTE: every id here corresponds to a section that renders in BOTH Simple
-  // and Pro modes after the Logistics move (2026-04-23). If a new Pro-only
-  // section is added, filter it out here when viewMode === "simple".
 
   return (
     <>
@@ -203,7 +187,6 @@ export function DestinationDetail({ dest }: { dest: any }) {
               <span className="text-foreground">{displayName}</span>
             </div>
             <div className="flex flex-wrap items-center gap-2 gap-y-2">
-              <SimpleProToggle value={viewMode} onChange={changeViewMode} />
               {/* Compare */}
               <CompareButton destinationId={dest.id} size="md" />
               {/* Share */}
@@ -469,20 +452,28 @@ export function DestinationDetail({ dest }: { dest: any }) {
               ))}
             </div>
 
-            {/* Infrastructure Concerns — honest warnings. Pro only — Simple
-                mode keeps the first-time visitor focused on the decision. */}
-            {isPro && travelerFit.infraConcerns.length > 0 && (
-              <div className="mt-4 rounded-xl border border-yellow-500/20 bg-yellow-500/5 p-3">
-                <div className="text-xs font-medium text-yellow-400 mb-2">⚠ Infrastructure reality check</div>
-                <div className="space-y-1">
-                  {travelerFit.infraConcerns.map((concern, i) => (
-                    <div key={i} className="flex items-start gap-1.5 text-xs text-yellow-300/70">
-                      <span className="mt-0.5 shrink-0">•</span>
-                      <span>{concern}</span>
-                    </div>
-                  ))}
+            {/* Infrastructure Concerns — collapsed by default. Reveals on
+                click for the planners who care about BSNL coverage, fuel
+                gaps, ambulance reliability; stays out of the way for
+                casual decision-stage visitors. */}
+            {travelerFit.infraConcerns.length > 0 && (
+              <CollapsibleDetails
+                label="infrastructure reality check"
+                count={travelerFit.infraConcerns.length}
+                tone="warning"
+                className="mt-4"
+              >
+                <div className="rounded-xl border border-yellow-500/20 bg-yellow-500/5 p-3">
+                  <div className="space-y-1">
+                    {travelerFit.infraConcerns.map((concern, i) => (
+                      <div key={i} className="flex items-start gap-1.5 text-xs text-yellow-300/70">
+                        <span className="mt-0.5 shrink-0">•</span>
+                        <span>{concern}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-              </div>
+              </CollapsibleDetails>
             )}
 
             {/* Data freshness + methodology */}
@@ -644,10 +635,9 @@ export function DestinationDetail({ dest }: { dest: any }) {
                   </section>
                 )}
 
-                {/* Tourist Trap Alternatives — Pro only. This block names
-                    named destinations as traps; Simple mode (first-time
-                    visitor) skips the subtext. */}
-                {isPro && trapAlts.length > 0 && (
+                {/* Tourist Trap Alternatives — always shown when populated.
+                    Editorial-opinion block; users who disagree just scroll. */}
+                {trapAlts.length > 0 && (
                   <TouristTrapIntervention trapName={dest.name} alternatives={trapAlts} />
                 )}
 
@@ -689,10 +679,11 @@ export function DestinationDetail({ dest }: { dest: any }) {
                   </section>
                 )}
 
-                {/* Infrastructure Reality Panel — Pro only. Network operator
-                    detail, ambulance ETAs, police station — high-signal for
-                    serious planners, overwhelming for casual visitors. */}
-                {isPro && cc && (
+                {/* Infrastructure Reality Panel — heading visible, dense
+                    grid collapsed by default. Click-to-reveal covers network
+                    operator detail, ambulance ETAs, police stations — the
+                    data planners need without forcing it on casual visitors. */}
+                {cc && (
                   <section>
                     <div className="flex flex-wrap items-center gap-2 mb-3">
                       <h2 id="section-infrastructure" className="text-xl font-semibold">Infrastructure Reality</h2>
@@ -702,6 +693,7 @@ export function DestinationDetail({ dest }: { dest: any }) {
                         fallback={dest.content_reviewed_at}
                       />
                     </div>
+                    <CollapsibleDetails label="full infrastructure data">
                     <div className="grid gap-3 sm:grid-cols-2">
                       {/* Network detail */}
                       {cc.network && (
@@ -771,6 +763,7 @@ export function DestinationDetail({ dest }: { dest: any }) {
                         <p className="text-sm"><span className="font-semibold">Helpline:</span> {cc.emergency.helpline}</p>
                       </div>
                     )}
+                    </CollapsibleDetails>
                   </section>
                 )}
 
@@ -879,9 +872,10 @@ export function DestinationDetail({ dest }: { dest: any }) {
                   </section>
                 )}
 
-                {/* Crowd Calendar — Pro only. Simple mode already surfaces
-                    the current-month crowd level in the TL;DR card chip. */}
-                {isPro && dest.crowd_calendar && (
+                {/* Crowd Calendar — always shown. Quick visual chart; not
+                    dense-operational data. Current-month crowd level also
+                    appears in the TL;DR card chip. */}
+                {dest.crowd_calendar && (
                   <section>
                     <div className="flex flex-wrap items-center gap-2 mb-3">
                       <h2 className="text-xl font-semibold">Crowd Intelligence</h2>
@@ -995,10 +989,9 @@ export function DestinationDetail({ dest }: { dest: any }) {
                 {/* Emergency SOS */}
                 <EmergencySOSSection sos={dest.emergencySos} destinationName={displayName} />
 
-                {/* International Traveler Info — Pro only. Casual Indian
-                    visitors in Simple mode don't need the foreign-passport
-                    cultural context. */}
-                {isPro && <InternationalInfoSection info={dest.international_info} />}
+                {/* International Traveler Info — always shown when populated.
+                    Self-labeled; Indian visitors will scroll past. */}
+                <InternationalInfoSection info={dest.international_info} />
 
                 {/* Meet the Locals Preview */}
                 {legends.length > 0 && (
@@ -1086,7 +1079,11 @@ export function DestinationDetail({ dest }: { dest: any }) {
                 }))}
                 hubHref={`/${locale}/blog/solo-female-india-month-by-month`}
               />
-              {isPro && cc && <ConfidenceCardComponent {...cc} />}
+              {cc && (
+                <CollapsibleDetails label="full safety reference">
+                  <ConfidenceCardComponent {...cc} />
+                </CollapsibleDetails>
+              )}
             </section>
           )}
 
