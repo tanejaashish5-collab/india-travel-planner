@@ -70,7 +70,7 @@ export function MicroItinerarySection({ data }: { data: MicroItineraries | null 
     <section id="section-itinerary" className="scroll-mt-24">
       <div className="flex flex-wrap items-center gap-3 mb-4">
         <h2 className="text-xl font-semibold">On the Ground</h2>
-        <span className="text-xs text-muted-foreground/70">How to spend your time here, block by block.</span>
+        <span className="text-sm text-muted-foreground">How to spend your time here, block by block.</span>
       </div>
 
       {/* Duration tabs */}

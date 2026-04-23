@@ -29,7 +29,7 @@ export function LogisticsChecklist({ data, className }: { data: Logistics | null
     <section id="section-logistics" className={cn("scroll-mt-24", className)}>
       <div className="flex flex-wrap items-center gap-3 mb-4">
         <h2 className="text-xl font-semibold">How This Place Actually Works</h2>
-        <span className="text-xs text-muted-foreground/70">
+        <span className="text-sm text-muted-foreground">
           Day-to-day logistics — what locals know that maps don't show.
         </span>
       </div>

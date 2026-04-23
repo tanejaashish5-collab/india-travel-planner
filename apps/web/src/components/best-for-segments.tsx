@@ -7,7 +7,7 @@ export function BestForSegments({ data }: { data: Segment[] | null | undefined }
     <section id="section-bestfor" className="scroll-mt-24">
       <div className="flex flex-wrap items-center gap-3 mb-4">
         <h2 className="text-xl font-semibold">Best For</h2>
-        <span className="text-xs text-muted-foreground/70">Who we'd send here — and why.</span>
+        <span className="text-sm text-muted-foreground">Who we'd send here — and why.</span>
       </div>
       <div className="grid gap-3 sm:grid-cols-2">
         {data.map((s, i) => (

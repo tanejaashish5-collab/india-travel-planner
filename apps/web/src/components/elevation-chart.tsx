@@ -44,7 +44,7 @@ export function ElevationChart({
     <section id="section-elevation" className={cn("scroll-mt-24", className)}>
       <div className="flex flex-wrap items-center gap-3 mb-4">
         <h2 className="text-xl font-semibold">Altitude Context</h2>
-        <span className="text-xs text-muted-foreground/70">
+        <span className="text-sm text-muted-foreground">
           How high this sits vs places you already know.
         </span>
       </div>

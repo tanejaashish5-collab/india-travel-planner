@@ -52,7 +52,7 @@ export function ScenarioStrip({
     <section id="section-scenarios" className="scroll-mt-24">
       <div className="flex flex-wrap items-center gap-3 mb-4">
         <h2 className="text-xl font-semibold">{title}</h2>
-        <span className="text-xs text-muted-foreground/70">{subtitle}</span>
+        <span className="text-sm text-muted-foreground">{subtitle}</span>
       </div>
 
       {/* Stacked full-width rows — scenario text is dense enough that a
@@ -73,24 +73,31 @@ export function ScenarioStrip({
                 tone.border,
               )}
             >
-              <div className="flex items-center gap-2 mb-2">
+              <div className="flex items-center gap-2 mb-3">
                 <span aria-hidden className="text-base">{CATEGORY_ICON[s.category] ?? "•"}</span>
-                <span className={cn("font-mono text-[9px] tracking-[0.22em] uppercase rounded-full px-2 py-0.5", tone.badge)}>
+                <span className={cn("font-mono text-[10px] tracking-[0.22em] uppercase rounded-full px-2 py-0.5", tone.badge)}>
                   {s.severity}
                 </span>
-                <h3 className="text-sm font-semibold flex-1">{s.title}</h3>
+                <h3 className="text-base font-semibold flex-1">{s.title}</h3>
               </div>
-              <div className="space-y-1.5">
-                <p className="text-xs text-muted-foreground/80">
-                  <span className="font-mono text-[9px] tracking-[0.18em] uppercase text-muted-foreground/60 mr-1">If</span>
-                  {s.if_clause}
-                </p>
-                <p className={cn("text-sm leading-relaxed", tone.text)}>
-                  <span className="font-mono text-[9px] tracking-[0.18em] uppercase text-muted-foreground/60 mr-1">Then</span>
-                  {s.then_clause}
-                </p>
+              {/* IF / THEN blocks each on their own rows — inline labels at
+                  tiny sizes were unreadable and the prose was hugging the
+                  label without breathing room. */}
+              <div className="space-y-3">
+                <div>
+                  <div className="font-mono text-[10px] tracking-[0.24em] uppercase text-muted-foreground mb-1">
+                    If
+                  </div>
+                  <p className="text-sm leading-relaxed text-foreground/80">{s.if_clause}</p>
+                </div>
+                <div>
+                  <div className="font-mono text-[10px] tracking-[0.24em] uppercase text-muted-foreground mb-1">
+                    Then
+                  </div>
+                  <p className={cn("text-sm leading-relaxed font-medium", tone.text)}>{s.then_clause}</p>
+                </div>
               </div>
-              <div className="mt-3 font-mono text-[10px] uppercase tracking-[0.18em] text-muted-foreground/50">
+              <div className="mt-4 font-mono text-[10px] uppercase tracking-[0.22em] text-muted-foreground/70">
                 Full protocol →
               </div>
             </LocaleLink>

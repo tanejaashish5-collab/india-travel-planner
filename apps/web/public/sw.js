@@ -18,7 +18,8 @@
 // v17: 2026-04-23 CollapsibleDetails trigger gets a slow breathing ring + brighter tint so cold visitors don't scroll past it. Pulse stops once opened; respects prefers-reduced-motion.
 // v18: 2026-04-23 Scenario cards stack full-width instead of 2-col grid — scenario text is too dense for cramped columns.
 // v19: 2026-04-23 fix: scenario cards missing block display → border tangled around text lines. Added `block` class + bumped border opacity so cards read as proper containers.
-const CACHE_VERSION = "nakshiq-v19";
+// v20: 2026-04-23 readability: scenario IF/THEN labels + prose restructured for contrast; all 6 Sprint-2 section subtitles bumped text-xs/70 → text-sm (clearer tagline).
+const CACHE_VERSION = "nakshiq-v20";
 const STATIC_CACHE = `${CACHE_VERSION}-static`;
 const IMAGE_CACHE = `${CACHE_VERSION}-images`;
 const DATA_CACHE = `${CACHE_VERSION}-data`;
