@@ -7,6 +7,7 @@ import { m as motion } from "framer-motion";
 import { useEffect, useRef, useState, useCallback } from "react";
 import { useRouter } from "next/navigation";
 import { getBrowserSupabase } from "@/lib/supabase-browser";
+import { videoSrc } from "@/lib/video-url";
 // LanguageToggle now in main Nav component
 import {
   FadeIn,
@@ -88,7 +89,7 @@ export function LandingHero({
             className="w-full h-full object-cover opacity-[0.18]"
             poster={destinationImage("spiti-valley")}
           >
-            <source src={`${process.env.NEXT_PUBLIC_VIDEO_BASE_URL}/hero.mp4`} type="video/mp4" />
+            <source src={videoSrc("hero")} type="video/mp4" />
           </video>
           <div className={`absolute inset-0 bg-gradient-to-b ${timeGradient}`} />
         </div>

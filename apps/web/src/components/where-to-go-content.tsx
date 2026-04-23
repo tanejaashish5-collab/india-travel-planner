@@ -13,6 +13,7 @@ import {
 } from "./animated-hero";
 import { SCORE_COLORS, SCORE_SOLID, DIFFICULTY_COLORS } from "@/lib/design-tokens";
 import { destinationImage } from "@/lib/image-url";
+import { videoSrc } from "@/lib/video-url";
 
 // ─── Constants ──────────────────────────────────────────────
 const MONTH_NAMES = [
@@ -346,7 +347,7 @@ export function WhereToGoContent({
               poster={destinationImage(heroDestId)}
             >
               <source
-                src={`${process.env.NEXT_PUBLIC_VIDEO_BASE_URL}/${heroDestId}.mp4`}
+                src={videoSrc(heroDestId)}
                 type="video/mp4"
               />
             </video>

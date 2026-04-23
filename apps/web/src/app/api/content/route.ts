@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
 import { resolveCover } from "@/lib/collection-covers";
+import { videoSrc } from "@/lib/video-url";
 
 export const runtime = "edge";
 
@@ -104,7 +105,7 @@ export async function GET(req: NextRequest) {
           note: dm.note,
           url: `${baseUrl}/en/destination/${d.id}`,
           image: `${baseUrl}/images/destinations/${d.id}.jpg`,
-          video: `${process.env.NEXT_PUBLIC_VIDEO_BASE_URL}/${d.id}.mp4`,
+          video: videoSrc(d.id),
         };
       });
 

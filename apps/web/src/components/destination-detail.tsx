@@ -16,6 +16,7 @@ import { DistanceBadge } from "./distance-badge";
 import { lazy, Suspense } from "react";
 import { ConfidenceCardComponent } from "./confidence-card";
 import { destinationImage } from "@/lib/image-url";
+import { videoSrc } from "@/lib/video-url";
 
 const DestinationMap = lazy(() => import("./destination-map").then((mod) => ({ default: mod.DestinationMap })));
 import { KidsBadge } from "./kids-badge";
@@ -129,17 +130,20 @@ export function DestinationDetail({ dest }: { dest: any }) {
   return (
     <>
       <div>
-        {/* Breadcrumb */}
+        {/* Breadcrumb + actions row — stacks below sm so the 4-button row
+            (~460px wide) no longer forces horizontal overflow on 375px
+            phones. flex-wrap on the inner row lets buttons break if still
+            too wide on tiny screens. */}
         <FadeIn>
-          <div className="mb-4 flex items-center justify-between">
-            <div className="text-[15px] text-muted-foreground">
+          <div className="mb-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+            <div className="text-[15px] text-muted-foreground min-w-0 truncate">
               <a href={`/${locale}/explore`} className="hover:text-foreground transition-colors">Explore</a>
               {" → "}
               <a href={`/${locale}/state/${dest.state_id}`} className="hover:text-foreground transition-colors">{stateName}</a>
               {" → "}
               <span className="text-foreground">{displayName}</span>
             </div>
-            <div className="flex items-center gap-2">
+            <div className="flex flex-wrap items-center gap-2 gap-y-2">
               {/* Compare */}
               <CompareButton destinationId={dest.id} size="md" />
               {/* Share */}
@@ -188,7 +192,7 @@ export function DestinationDetail({ dest }: { dest: any }) {
               className="w-full h-full object-cover"
               poster={destinationImage(dest.id)}
             >
-              <source src={`${process.env.NEXT_PUBLIC_VIDEO_BASE_URL}/${dest.id}.mp4`} type="video/mp4" />
+              <source src={videoSrc(dest.id)} type="video/mp4" />
             </video>
             <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/30 to-transparent pointer-events-none" />
             {/* Floating difficulty badge */}

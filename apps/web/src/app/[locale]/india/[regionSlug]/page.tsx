@@ -5,6 +5,7 @@ import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { createClient } from "@supabase/supabase-js";
 import { REGION_GROUPS, STATE_MAP } from "@/lib/seo-maps";
+import { videoSrc } from "@/lib/video-url";
 
 export const revalidate = 86400;
 export const dynamicParams = true;
@@ -120,7 +121,7 @@ export default async function RegionPage({
             poster={`/images/destinations/${heroDestId}.jpg`}
             className="absolute inset-0 w-full h-full object-cover"
           >
-            <source src={`${process.env.NEXT_PUBLIC_VIDEO_BASE_URL}/${heroDestId}.mp4`} type="video/mp4" />
+            <source src={videoSrc(heroDestId)} type="video/mp4" />
           </video>
           <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
           <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 lg:p-12">

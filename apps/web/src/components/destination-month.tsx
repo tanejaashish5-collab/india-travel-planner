@@ -6,6 +6,7 @@ import { SCORE_COLORS, DIFFICULTY_COLORS } from "@/lib/design-tokens";
 import { NewsletterSignup } from "./newsletter-signup";
 import { WhatsAppShare } from "./whatsapp-share";
 import { destinationImage } from "@/lib/image-url";
+import { videoSrc } from "@/lib/video-url";
 import HowToDoIt from "./how-to-do-it";
 import { DestinationSectionNav } from "./destination-section-nav";
 
@@ -122,7 +123,7 @@ export function DestinationMonth({
           poster={destinationImage(destination.id)}
         >
           <source
-            src={`${process.env.NEXT_PUBLIC_VIDEO_BASE_URL}/${destination.id}.mp4`}
+            src={videoSrc(destination.id)}
             type="video/mp4"
           />
         </video>

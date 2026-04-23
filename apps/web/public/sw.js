@@ -7,7 +7,8 @@
 // v6: 2026-04-22 destination-month hero merges verdict stamp + prose into one announcement card (no separate verdict box).
 // v7: 2026-04-22 where-to-go state-in-month: sticky back+breadcrumb, full-bleed hero, announcement card with GO/WAIT/SKIP counts, sidebar ToC.
 // v8: 2026-04-23 state page — sticky back+breadcrumb pill, hero bumped to lg:h-[32rem], breadcrumb lifted out of hero overlay.
-const CACHE_VERSION = "nakshiq-v8";
+// v9: 2026-04-23 video cache-busting (?v=<YYYYMMDD>) + mobile overflow fix on destination page (share/compare row wraps below sm).
+const CACHE_VERSION = "nakshiq-v9";
 const STATIC_CACHE = `${CACHE_VERSION}-static`;
 const IMAGE_CACHE = `${CACHE_VERSION}-images`;
 const DATA_CACHE = `${CACHE_VERSION}-data`;
