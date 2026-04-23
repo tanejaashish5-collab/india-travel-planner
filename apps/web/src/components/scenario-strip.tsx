@@ -55,7 +55,7 @@ export function ScenarioStrip({
         <span className="text-xs text-muted-foreground/70">{subtitle}</span>
       </div>
 
-      <div className="grid gap-3 md:grid-cols-2">
+      <div className={cn("grid gap-3", sorted.length > 1 && "md:grid-cols-2")}>
         {sorted.map((s) => {
           const tone = SEVERITY_TONE[s.severity];
           return (

@@ -163,6 +163,10 @@ export function DestinationDetail({ dest }: { dest: any }) {
   const hasElevation = (dest.elevation_m ?? 0) >= 1500;
 
   // Ordered list of sections that will actually render — consumed by the mini-nav and ToC.
+  // Simple/Pro rule: every section here is a FRONTSTAGE entry point. The 5
+  // Pro-only BLOCKS (infrastructure-concerns, tourist-trap, crowd-intelligence,
+  // international, confidence-card) don't have ToC entries since they live
+  // inside other section containers — not a navigation concern.
   const availableSections = [
     { id: "overview", label: t("overview"), show: true },
     { id: "monthly", label: t("monthly"), show: hasMonthly },
@@ -178,6 +182,9 @@ export function DestinationDetail({ dest }: { dest: any }) {
     { id: "elevation", label: "Altitude", show: hasElevation },
     { id: "reviews", label: "Reviews", show: hasReviews },
   ].filter((s) => s.show);
+  // NOTE: every id here corresponds to a section that renders in BOTH Simple
+  // and Pro modes after the Logistics move (2026-04-23). If a new Pro-only
+  // section is added, filter it out here when viewMode === "simple".
 
   return (
     <>
@@ -1101,10 +1108,10 @@ export function DestinationDetail({ dest }: { dest: any }) {
             </section>
           )}
 
-          {/* Sprint 2 — Local logistics checklist. Pro only — Simple mode
-              travelers don't need the taxi-union / UPI-fails-here level of
-              detail on first visit. */}
-          {isPro && hasLogistics && (
+          {/* Sprint 2 — Local logistics checklist. Shown in Simple + Pro:
+              this is practical "how to use this place" info (taxi norms, UPI
+              reality, shop hours) — mainstream, not intimidating. */}
+          {hasLogistics && (
             <section id="section-logistics" className="scroll-mt-40">
               <LogisticsChecklist data={dest.local_logistics} />
             </section>
