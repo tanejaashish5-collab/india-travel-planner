@@ -88,6 +88,12 @@ export async function GET(req: NextRequest) {
     }
   }
 
+  await supabase.from("ops_reports").insert({
+    job: "refresh-stay-picks",
+    summary: { ok, fail, pending, total: candidates.length, batch_size: BATCH_SIZE },
+    alerts_count: fail,
+  });
+
   return NextResponse.json({ ok, fail, pending, total: candidates.length });
 }
 

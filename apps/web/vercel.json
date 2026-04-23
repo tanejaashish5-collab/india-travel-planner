@@ -6,6 +6,18 @@
     {
       "path": "/api/newsletter/send",
       "schedule": "30 1 * * 0"
+    },
+    {
+      "path": "/api/cron/refresh-stay-picks",
+      "schedule": "0 22 * * *"
+    },
+    {
+      "path": "/api/cron/freshness-drift",
+      "schedule": "0 1 * * 1"
+    },
+    {
+      "path": "/api/cron/news-sweep",
+      "schedule": "0 1 1 * *"
     }
   ]
 }
