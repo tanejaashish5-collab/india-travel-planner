@@ -2,10 +2,11 @@ import type { Metadata } from "next";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import Link from "next/link";
+import { createClient } from "@supabase/supabase-js";
 import { localeAlternates } from "@/lib/seo-utils";
 
-// Static content — cache aggressively so prefetches served from CDN, not
-// regenerated (fixes intermittent 503s on _rsc= reported in BUG-002).
+// Live-computed freshness: ISR-cached daily, but the numbers come from DB
+// state, not hardcoded dates.
 export const revalidate = 86400;
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
@@ -16,7 +17,41 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
     ...localeAlternates(locale, "/methodology"),
   };
-}export default function MethodologyPage() {
+}
+
+async function getFreshnessStats() {
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+  if (!url || !key) return null;
+
+  const supabase = createClient(url, key);
+  const { data, error } = await supabase
+    .from("destinations")
+    .select("content_reviewed_at");
+
+  if (error || !data) return null;
+
+  const total = data.length;
+  const ninetyDaysAgo = Date.now() - 90 * 24 * 60 * 60 * 1000;
+  const reviewed = data.filter((d) => {
+    const ts = (d as { content_reviewed_at: string | null }).content_reviewed_at;
+    return ts && new Date(ts).getTime() >= ninetyDaysAgo;
+  }).length;
+  const pct = total > 0 ? Math.round((reviewed / total) * 100) : 0;
+
+  const latest = data
+    .map((d) => (d as { content_reviewed_at: string | null }).content_reviewed_at)
+    .filter((ts): ts is string => !!ts)
+    .sort()
+    .pop();
+
+  return { pct, latest };
+}
+
+export default async function MethodologyPage() {
+  const freshness = await getFreshnessStats();
+  const now = new Date();
+  const monthYear = now.toLocaleDateString("en-IN", { month: "long", year: "numeric" });
   return (
     <div className="min-h-screen">
       <Nav />
@@ -133,11 +168,28 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
           {/* Data Freshness */}
           <section>
-            <h2 className="text-2xl font-semibold mb-4">Data Freshness</h2>
+            <h2 className="text-2xl font-semibold mb-4">Data freshness</h2>
             <p className="text-muted-foreground">
-              Our data is verified as of April 2026. Road conditions, infrastructure, and
-              seasonal patterns can change — always verify locally before traveling, especially
-              for remote destinations. If you find inaccurate data, we want to know.
+              Weather, season, and permit-regime content is structurally cycle-based — June in Leh
+              reads the same every year. Infrastructure, stays, and contacts are on a rolling
+              90-day review cadence.
+            </p>
+            {freshness && (
+              <p className="mt-3 text-muted-foreground tabular-nums">
+                Current as of {monthYear}
+                {freshness.pct > 0 && (
+                  <> · <span className="font-semibold text-foreground">{freshness.pct}%</span> of destinations reviewed in the last 90 days</>
+                )}
+                {freshness.latest && (
+                  <> · latest review {new Date(freshness.latest).toLocaleDateString("en-IN", { month: "short", year: "numeric" })}</>
+                )}
+                .
+              </p>
+            )}
+            <p className="mt-3 text-muted-foreground">
+              Road conditions, infrastructure, and seasonal patterns can shift — always verify
+              locally before traveling, especially for remote destinations. If you find
+              inaccurate data, we want to know.
             </p>
             <div className="mt-4 rounded-xl border border-border p-4 text-sm text-muted-foreground">
               <strong>Disclaimer:</strong> This data is for planning purposes. Always verify conditions

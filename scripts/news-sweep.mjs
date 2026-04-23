@@ -98,9 +98,10 @@ if (!PROBE) {
 
 console.log(`\nProbing news for ${rows.length} destinations (1s delay each)…`);
 const FLAG_KEYWORDS = ["road closure", "flood", "landslide", "accident", "closed", "evacuation", "strike", "lockdown"];
+const CURRENT_YEAR = new Date().getFullYear();
 const flagged = [];
 for (const r of rows) {
-  const query = `"${r.name}" 2026 road closure OR landslide OR flood`;
+  const query = `"${r.name}" ${CURRENT_YEAR} road closure OR landslide OR flood`;
   // Use DuckDuckGo HTML endpoint (no key). We only check if the page contains flag keywords.
   try {
     const res = await fetch(`https://duckduckgo.com/html/?q=${encodeURIComponent(query)}`, {

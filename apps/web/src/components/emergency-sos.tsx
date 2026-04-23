@@ -546,7 +546,7 @@ export function EmergencySOSSection({ sos, destinationName }: { sos: EmergencySO
                   Emergency information is provided as guidance based on publicly available data. Phone numbers, addresses, and service availability may change without notice. Always verify critical emergency contacts locally upon arrival. For any life-threatening emergency anywhere in India, dial 112 — it works on all networks, even without a SIM card.
                 </p>
                 <p className="text-[10px] text-muted-foreground/40 mt-2">
-                  Last updated: April 2026 | Data source: State government websites, tourism departments, training knowledge | Status: Unverified — community verification in progress
+                  Data source: State government websites, tourism departments, training knowledge | Status: Unverified — community verification in progress
                 </p>
               </div>
             </div>
