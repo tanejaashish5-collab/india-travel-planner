@@ -28,6 +28,10 @@ import { ReviewForm } from "./review-form";
 import { BookingHandoff } from "./booking-handoff";
 import VerdictCard from "./verdict-card";
 import DestinationTldrCard from "./destination-tldr-card";
+import { DestinationDecisionRail } from "./destination-decision-rail";
+import { SimpleProToggle, type ViewMode } from "./simple-pro-toggle";
+import { DataSignalBadge } from "./data-signal-badge";
+import { SectionFreshness } from "./section-freshness";
 import SoloFemaleSafetySection from "./solo-female-safety-section";
 import { SuggestEditButton } from "./suggest-edit-button";
 import MethodologyStrip from "./methodology-strip";
@@ -48,6 +52,19 @@ export function DestinationDetail({ dest }: { dest: any }) {
   const tm = useTranslations("months");
 
   const [saved, setSaved] = useState(false);
+  // View mode — Pro (current full page) by default, Simple hides the dense
+  // infra/crowd/international blocks for first-time visitors. Persists per
+  // user in localStorage.
+  const [viewMode, setViewMode] = useState<ViewMode>("pro");
+  useEffect(() => {
+    const saved = typeof window !== "undefined" ? (localStorage.getItem("destViewMode") as ViewMode | null) : null;
+    if (saved === "simple" || saved === "pro") setViewMode(saved);
+  }, []);
+  function changeViewMode(next: ViewMode) {
+    setViewMode(next);
+    if (typeof window !== "undefined") localStorage.setItem("destViewMode", next);
+  }
+  const isPro = viewMode === "pro";
 
   // Hash-link smooth-scroll (search results + deep links arrive via #sub-xyz, #safety, etc).
   // With long-scroll all targets are already in DOM, so native anchor scroll does the rest —
@@ -154,6 +171,7 @@ export function DestinationDetail({ dest }: { dest: any }) {
               <span className="text-foreground">{displayName}</span>
             </div>
             <div className="flex flex-wrap items-center gap-2 gap-y-2">
+              <SimpleProToggle value={viewMode} onChange={changeViewMode} />
               {/* Compare */}
               <CompareButton destinationId={dest.id} size="md" />
               {/* Share */}
@@ -222,6 +240,21 @@ export function DestinationDetail({ dest }: { dest: any }) {
           stateId={dest.state_id}
         />
 
+        {/* Desktop decision rail — pinned right side at lg+ after hero scrolls out */}
+        <DestinationDecisionRail
+          destinationId={dest.id}
+          name={displayName}
+          score={currentScore}
+          monthLabel={tm(String(currentMonth))}
+          monthSlug={["","january","february","march","april","may","june","july","august","september","october","november","december"][currentMonth]}
+          verdict={currentMonthData?.verdict}
+          kidsRating={kf?.rating ?? null}
+          soloFemaleScore={dest.solo_female_score ?? null}
+          crowdLevel={crowdLevel}
+          compareWithId={dest.nearbyDestinations?.[0]?.id ?? null}
+          compareWithName={dest.nearbyDestinations?.[0]?.name ?? null}
+        />
+
         {/* Hero Card */}
         <SlideIn delay={0.1}>
           <div className="mb-6 rounded-2xl border border-border/50 bg-card p-6 sm:p-8 -mt-24 relative z-10 shadow-2xl shadow-black/20">
@@ -262,11 +295,20 @@ export function DestinationDetail({ dest }: { dest: any }) {
                 in one unified panel. Absorbs the old score badge + "Why X/5?"
                 prose + verdict pill + 4 quick-stat tiles. One decision surface
                 instead of four scattered ones. */}
+            <div className="mt-5 flex items-center gap-2">
+              <DataSignalBadge
+                kind="scored"
+                tooltip="Backed by NakshIQ's 6-dimension methodology — not editorial opinion"
+              />
+              <span className="text-[11px] text-muted-foreground/60">
+                Data-scored · Tap for the {tm(String(currentMonth))} deep-dive
+              </span>
+            </div>
             <a
               href={currentMonthData?.verdict
                 ? `/${locale}/destination/${dest.id}/${["","january","february","march","april","may","june","july","august","september","october","november","december"][currentMonth]}`
                 : undefined}
-              className={`mt-5 block ${currentMonthData?.verdict ? "hover:opacity-95 transition-opacity" : ""}`}
+              className={`mt-2 block ${currentMonthData?.verdict ? "hover:opacity-95 transition-opacity" : ""}`}
             >
               <DestinationTldrCard
                 verdict={currentMonthData?.verdict}
@@ -352,6 +394,10 @@ export function DestinationDetail({ dest }: { dest: any }) {
 
             {/* Live Weather */}
             <div className="mt-4">
+              <div className="flex items-center gap-2 mb-2">
+                <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">Weather</span>
+                <DataSignalBadge kind="live" tooltip="Refetched on each page view from OpenWeatherMap" />
+              </div>
               <WeatherWidget destinationId={dest.id} />
             </div>
 
@@ -391,8 +437,9 @@ export function DestinationDetail({ dest }: { dest: any }) {
               ))}
             </div>
 
-            {/* Infrastructure Concerns — honest warnings */}
-            {travelerFit.infraConcerns.length > 0 && (
+            {/* Infrastructure Concerns — honest warnings. Pro only — Simple
+                mode keeps the first-time visitor focused on the decision. */}
+            {isPro && travelerFit.infraConcerns.length > 0 && (
               <div className="mt-4 rounded-xl border border-yellow-500/20 bg-yellow-500/5 p-3">
                 <div className="text-xs font-medium text-yellow-400 mb-2">⚠ Infrastructure reality check</div>
                 <div className="space-y-1">
@@ -565,8 +612,10 @@ export function DestinationDetail({ dest }: { dest: any }) {
                   </section>
                 )}
 
-                {/* Tourist Trap Alternatives — ASSISTIVE, not pre-emptive */}
-                {trapAlts.length > 0 && (
+                {/* Tourist Trap Alternatives — Pro only. This block names
+                    named destinations as traps; Simple mode (first-time
+                    visitor) skips the subtext. */}
+                {isPro && trapAlts.length > 0 && (
                   <TouristTrapIntervention trapName={dest.name} alternatives={trapAlts} />
                 )}
 
@@ -608,10 +657,19 @@ export function DestinationDetail({ dest }: { dest: any }) {
                   </section>
                 )}
 
-                {/* Infrastructure Reality Panel — from confidence_cards */}
-                {cc && (
+                {/* Infrastructure Reality Panel — Pro only. Network operator
+                    detail, ambulance ETAs, police station — high-signal for
+                    serious planners, overwhelming for casual visitors. */}
+                {isPro && cc && (
                   <section>
-                    <h2 id="section-infrastructure" className="text-xl font-semibold mb-3">Infrastructure Reality</h2>
+                    <div className="flex flex-wrap items-center gap-2 mb-3">
+                      <h2 id="section-infrastructure" className="text-xl font-semibold">Infrastructure Reality</h2>
+                      <SectionFreshness
+                        sectionKey="infrastructure"
+                        sectionReviews={dest.section_reviews}
+                        fallback={dest.content_reviewed_at}
+                      />
+                    </div>
                     <div className="grid gap-3 sm:grid-cols-2">
                       {/* Network detail */}
                       {cc.network && (
@@ -789,10 +847,18 @@ export function DestinationDetail({ dest }: { dest: any }) {
                   </section>
                 )}
 
-                {/* Crowd Calendar */}
-                {dest.crowd_calendar && (
+                {/* Crowd Calendar — Pro only. Simple mode already surfaces
+                    the current-month crowd level in the TL;DR card chip. */}
+                {isPro && dest.crowd_calendar && (
                   <section>
-                    <h2 className="text-xl font-semibold mb-3">Crowd Intelligence</h2>
+                    <div className="flex flex-wrap items-center gap-2 mb-3">
+                      <h2 className="text-xl font-semibold">Crowd Intelligence</h2>
+                      <SectionFreshness
+                        sectionKey="crowd"
+                        sectionReviews={dest.section_reviews}
+                        fallback={dest.content_reviewed_at}
+                      />
+                    </div>
                     <div className="rounded-xl border border-border p-5">
                       {/* Visual month strip */}
                       <div className="flex gap-0.5 mb-3">
@@ -897,8 +963,10 @@ export function DestinationDetail({ dest }: { dest: any }) {
                 {/* Emergency SOS */}
                 <EmergencySOSSection sos={dest.emergencySos} destinationName={displayName} />
 
-                {/* International Traveler Info */}
-                <InternationalInfoSection info={dest.international_info} />
+                {/* International Traveler Info — Pro only. Casual Indian
+                    visitors in Simple mode don't need the foreign-passport
+                    cultural context. */}
+                {isPro && <InternationalInfoSection info={dest.international_info} />}
 
                 {/* Meet the Locals Preview */}
                 {legends.length > 0 && (
@@ -977,7 +1045,7 @@ export function DestinationDetail({ dest }: { dest: any }) {
                 }))}
                 hubHref={`/${locale}/blog/solo-female-india-month-by-month`}
               />
-              {cc && <ConfidenceCardComponent {...cc} />}
+              {isPro && cc && <ConfidenceCardComponent {...cc} />}
             </section>
           )}
 
