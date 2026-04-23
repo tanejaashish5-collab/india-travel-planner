@@ -19,8 +19,8 @@
     "22_carnival"
   ],
   "posted_today": {
-    "PdMu0": "2026-04-22",
-    "m8EAd": "2026-04-22",
+    "PdMu0": "2026-04-23",
+    "m8EAd": "2026-04-23",
     "m8EAd_reel": "2026-04-22",
     "PdMu0_reel": "2026-04-22",
     "4QL0i_reel": "2026-04-19",
@@ -47,7 +47,7 @@
     "36BUk_yt_short": "2026-04-21",
     "36BUk_yt_short_count": 1
   },
-  "last_sync": "2026-04-22T10:09:57.724730+00:00",
+  "last_sync": "2026-04-23T04:40:37.067588+00:00",
   "posted_destinations": [
     {
       "destination_id": "pahalgam",
@@ -192,6 +192,14 @@
     {
       "destination_id": "chopta",
       "date": "2026-04-22"
+    },
+    {
+      "destination_id": "nagarhole",
+      "date": "2026-04-23"
+    },
+    {
+      "destination_id": "great-himalayan-np",
+      "date": "2026-04-23"
     }
   ],
   "posted_formats": {
@@ -207,7 +215,8 @@
       "methodology_roads",
       "score_card",
       "methodology_family",
-      "collection_spotlight"
+      "collection_spotlight",
+      "score_card"
     ]
   },
   "post_log": [
@@ -343,6 +352,16 @@
       "destination": "devprayag",
       "format": "collection_spotlight",
       "has_media": true
+    },
+    {
+      "timestamp": "2026-04-23T04:41:00.460740+00:00",
+      "date": "2026-04-23",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "IyghX",
+      "destination": "great-himalayan-np",
+      "format": "score_card",
+      "has_media": true
     }
   ],
   "theme_usage": {
@@ -380,6 +399,9 @@
       ],
       "kanatal": [
         "2026-04-22"
+      ],
+      "great-himalayan-np": [
+        "2026-04-23"
       ]
     },
     "reel_formats": {
@@ -487,7 +509,11 @@
         "2026-04-22"
       ]
     },
-    "morning_formats": {},
+    "morning_formats": {
+      "score_card": [
+        "2026-04-23"
+      ]
+    },
     "collections": {
       "adrenaline-rush": [
         "2026-04-22"

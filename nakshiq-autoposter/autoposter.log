@@ -3378,3 +3378,28 @@ Date range: 2026-04-15 → 2026-04-21
 2026-04-22 06:46:56  INFO          R2 PUT OK. Confirming...
 2026-04-22 06:46:58  INFO          Media ready: RTPqH (9,210,699 bytes · dirang.mp4)
 2026-04-22 06:46:58  INFO      [instagram/nakshiq] Publishing Reel...
+2026-04-23 04:40:29  INFO      ════════════════════════════════════════════════════════════
+2026-04-23 04:40:29  INFO      Nakshiq Autoposter · MORNING · 2026-04-23 · weekday=3
+2026-04-23 04:40:29  INFO      ════════════════════════════════════════════════════════════
+2026-04-23 04:40:29  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-04-23 04:40:37  INFO      Synced → 20 destinations · 0 traps · 20 articles · total catalog=488
+2026-04-23 04:40:38  INFO      Active accounts: ['instagram/nakshiq', 'facebook/Nakshiq', 'youtube/@naksh-iq']
+2026-04-23 04:40:39  INFO      Outstand dedup guard: merged 1 remote posts into state.
+2026-04-23 04:40:39  INFO      Morning format (round-robin): score_card (18/18 never featured)
+2026-04-23 04:40:39  INFO      Formats — IG: score_card  ·  FB: score_card  ·  Story: score_card
+2026-04-23 04:40:39  INFO      Used destinations (14d): 25
+2026-04-23 04:40:40  INFO      Shared best destination locked: Great Himalayan National Park
+2026-04-23 04:40:40  INFO      [instagram/nakshiq] Already posted today (morning) — skipping.
+2026-04-23 04:40:40  INFO      [facebook/Nakshiq] Generating score_card post...
+2026-04-23 04:40:40  INFO      [facebook/Nakshiq] Caption ready (591 chars, dest=great-himalayan-np)
+2026-04-23 04:40:40  INFO      [facebook/Nakshiq] Video available — uploading for Reel...
+2026-04-23 04:40:40  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/great-himalayan-np.mp4?v=20260423
+2026-04-23 04:40:43  INFO          Requesting upload URL for great-himalayan-np.mp4 (14,474,231 bytes, video/mp4)
+2026-04-23 04:40:43  INFO          Uploading to R2 (timeout=300s)...
+2026-04-23 04:40:45  INFO          R2 PUT OK. Confirming...
+2026-04-23 04:40:46  INFO          Media ready: vnVdg (14,474,231 bytes · great-himalayan-np.mp4)
+2026-04-23 04:40:46  INFO      [facebook/Nakshiq] Publishing Reel...
+2026-04-23 04:41:00  INFO      [facebook/Nakshiq] ✅ Published · Outstand=IyghX · Platform=3261020357392070
+2026-04-23 04:41:00  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-04-23 04:41:00  INFO      State saved. Run complete.
+2026-04-23 04:41:00  INFO      ════════════════════════════════════════════════════════════
