@@ -49,11 +49,18 @@ export function InternationalInfoSection({ info }: { info: InternationalInfo | n
         {info.scams && info.scams.length > 0 && (
           <div>
             <h4 className="font-semibold text-foreground mb-1">{t("commonScams")}</h4>
-            <ul className="list-disc list-inside space-y-1">
-              {info.scams.map((scam, i) => (
-                <li key={i}>{scam}</li>
-              ))}
-            </ul>
+            {info.scams.length === 1 ? (
+              <p className="leading-relaxed">{info.scams[0]}</p>
+            ) : (
+              <ul className="space-y-1">
+                {info.scams.map((scam, i) => (
+                  <li key={i} className="flex items-start gap-2 leading-relaxed">
+                    <span className="mt-1.5 shrink-0 text-muted-foreground/50" aria-hidden>•</span>
+                    <span>{scam}</span>
+                  </li>
+                ))}
+              </ul>
+            )}
           </div>
         )}
 
