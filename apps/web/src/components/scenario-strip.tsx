@@ -11,9 +11,9 @@ export type Scenario = {
 };
 
 const SEVERITY_TONE: Record<Scenario["severity"], { border: string; text: string; badge: string }> = {
-  info:     { border: "border-sky-500/25",     text: "text-sky-300",     badge: "bg-sky-500/10 text-sky-300" },
-  warning:  { border: "border-amber-500/30",   text: "text-amber-200",   badge: "bg-amber-500/10 text-amber-300" },
-  critical: { border: "border-red-500/35",     text: "text-red-200",     badge: "bg-red-500/15 text-red-300" },
+  info:     { border: "border-sky-500/50",     text: "text-sky-300",     badge: "bg-sky-500/10 text-sky-300" },
+  warning:  { border: "border-amber-500/55",   text: "text-amber-200",   badge: "bg-amber-500/10 text-amber-300" },
+  critical: { border: "border-red-500/60",     text: "text-red-200",     badge: "bg-red-500/15 text-red-300" },
 };
 
 const CATEGORY_ICON: Record<string, string> = {
@@ -66,7 +66,10 @@ export function ScenarioStrip({
               key={s.id}
               to={`/${locale}/guide/scenarios/${s.slug}`}
               className={cn(
-                "rounded-xl border bg-background/40 p-4 transition-all hover:bg-background/60",
+                // `block` is load-bearing: <a> defaults to inline, so without
+                // it `border` + `p-4` don't form a proper card — the border
+                // tangles around text lines. (This bit us; don't remove.)
+                "block rounded-xl border bg-background/40 p-5 transition-all hover:bg-background/60",
                 tone.border,
               )}
             >
@@ -75,7 +78,7 @@ export function ScenarioStrip({
                 <span className={cn("font-mono text-[9px] tracking-[0.22em] uppercase rounded-full px-2 py-0.5", tone.badge)}>
                   {s.severity}
                 </span>
-                <h3 className="text-sm font-semibold truncate flex-1">{s.title}</h3>
+                <h3 className="text-sm font-semibold flex-1">{s.title}</h3>
               </div>
               <div className="space-y-1.5">
                 <p className="text-xs text-muted-foreground/80">
