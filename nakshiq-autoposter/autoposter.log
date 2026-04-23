@@ -3594,3 +3594,23 @@ Date range: 2026-04-15 → 2026-04-21
 2026-04-23 10:54:19  WARNING   [youtube/@naksh-iq] ⚠️  Reel queued but NOT confirmed (post_id=EvWzA).
 2026-04-23 10:54:19  INFO      State saved. Reel run complete.
 2026-04-23 10:54:19  INFO      ════════════════════════════════════════════════════════════
+2026-04-23 11:42:28  INFO      ════════════════════════════════════════════════════════════
+2026-04-23 11:42:28  INFO      Nakshiq Autoposter · YT SHORT · 2026-04-23
+2026-04-23 11:42:28  INFO      ════════════════════════════════════════════════════════════
+2026-04-23 11:43:29  INFO      Short rendered: yt_short_mini_guide_2026-04-23.mp4 (10517 KB, 28.0s, fmt=mini_guide, music=00_discovery_beat)
+2026-04-23 11:43:29  INFO          Requesting upload URL for yt_short_mini_guide_yt_short_mini_guide_2026-04-23.mp4 (10,770,374 bytes, video/mp4)
+2026-04-23 11:43:30  INFO          Uploading to R2 (timeout=300s)...
+2026-04-23 11:43:32  INFO          R2 PUT OK. Confirming...
+2026-04-23 11:43:33  INFO          Media ready: r2E24 (10,770,374 bytes · yt_short_mini_guide_yt_short_mini_guide_2026-04-23.mp4)
+2026-04-23 11:43:33  INFO      Video uploaded: yt_short_mini_guide_yt_short_mini_guide_2026-04-23.mp4
+2026-04-23 11:43:34  INFO      [instagram/nakshiq] Publishing YT Short (mini_guide)...
+2026-04-23 11:43:37  INFO      [instagram/nakshiq] Outstand accepted (post_id=253vS), waiting for platform confirmation...
+2026-04-23 11:44:18  INFO      [instagram/nakshiq] ✅ YT Short published · Outstand=253vS · Platform=18431599843141864
+2026-04-23 11:44:18  INFO      [facebook/Nakshiq] Skipping (YT Shorts post to YouTube + Instagram only).
+2026-04-23 11:44:18  INFO      [youtube/@naksh-iq] Publishing YT Short (mini_guide)...
+2026-04-23 11:44:20  INFO      [youtube/@naksh-iq] Outstand accepted (post_id=5Mc9D), waiting for platform confirmation...
+2026-04-23 11:44:26  WARNING       Platform error: Error publishing post to YouTube: Failed to initiate YouTube resumable upload: 401 - "{\"error\":{\"code\":401,\"message\":\"Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.\",\"errors\":[{\"message\":\"Invalid Credentials\",\"domain\":\"global\",\"reason\":\"authError\",\"location\":\"Authorization\",\"locationType\":\"header\"}],\"status\":\"UNAUTHENTICATED\"}}"
+2026-04-23 11:44:26  WARNING   [youtube/@naksh-iq] ⚠️  YT Short queued but NOT confirmed (post_id=5Mc9D). May have silently failed.
+2026-04-23 11:44:26  INFO      YT Short posted: format=mini_guide, music=00_discovery_beat
+2026-04-23 11:44:26  INFO      State saved. YT Short run complete.
+2026-04-23 11:44:26  INFO      ════════════════════════════════════════════════════════════
