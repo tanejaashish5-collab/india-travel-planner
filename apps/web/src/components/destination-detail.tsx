@@ -461,6 +461,7 @@ export function DestinationDetail({ dest }: { dest: any }) {
                 label="infrastructure reality check"
                 count={travelerFit.infraConcerns.length}
                 tone="warning"
+                hint="What might bite you on the ground — network gaps, fuel, ambulance, altitude."
                 className="mt-4"
               >
                 <div className="rounded-xl border border-yellow-500/20 bg-yellow-500/5 p-3">
@@ -693,7 +694,10 @@ export function DestinationDetail({ dest }: { dest: any }) {
                         fallback={dest.content_reviewed_at}
                       />
                     </div>
-                    <CollapsibleDetails label="full infrastructure data">
+                    <CollapsibleDetails
+                      label="full infrastructure data"
+                      hint="Network carriers, fuel reliability, AQI history, elevation details — the full scorecard."
+                    >
                     <div className="grid gap-3 sm:grid-cols-2">
                       {/* Network detail */}
                       {cc.network && (
@@ -1031,8 +1035,6 @@ export function DestinationDetail({ dest }: { dest: any }) {
                   </section>
                 )}
 
-                {/* Booking Handoff */}
-                <BookingHandoff destinationName={dest.name} stateName={stateName} />
               </section>
 
           {/* Monthly — 12-month breakdown chart */}
@@ -1080,7 +1082,10 @@ export function DestinationDetail({ dest }: { dest: any }) {
                 hubHref={`/${locale}/blog/solo-female-india-month-by-month`}
               />
               {cc && (
-                <CollapsibleDetails label="full safety reference">
+                <CollapsibleDetails
+                  label="full safety reference"
+                  hint="Emergency contacts, health notes, altitude advice, crime snapshot — every field."
+                >
                   <ConfidenceCardComponent {...cc} />
                 </CollapsibleDetails>
               )}
@@ -1339,6 +1344,14 @@ export function DestinationDetail({ dest }: { dest: any }) {
         </div>
       </div>
       {/* === SEO Internal Linking Modules === */}
+
+      {/* Booking Handoff — pushed to the tail just above Nearby because we
+          don't take paid placement; it's a conversion card, not editorial.
+          Previously sat mid-page inside the People section which made it
+          compete with the content instead of capping the page. */}
+      <div className="mt-12">
+        <BookingHandoff destinationName={dest.name} stateName={stateName} />
+      </div>
 
       {/* Nearby Places — PostGIS distance-sorted, with same-state fallback */}
       {dest.nearbyDestinations?.length > 0 && (() => {

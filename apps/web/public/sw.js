@@ -20,7 +20,8 @@
 // v19: 2026-04-23 fix: scenario cards missing block display → border tangled around text lines. Added `block` class + bumped border opacity so cards read as proper containers.
 // v20: 2026-04-23 readability: scenario IF/THEN labels + prose restructured for contrast; all 6 Sprint-2 section subtitles bumped text-xs/70 → text-sm (clearer tagline).
 // v21: 2026-04-23 destination/month restructure: trim Why-scores to weather+festivals, remove PracticalDetails + HowToDoIt footer (were dup of hero chips + destination page), add FullGuideLink CTA instead.
-const CACHE_VERSION = "nakshiq-v21";
+// v22: 2026-04-23 CollapsibleDetails trigger redesigned (full-width bar + chevron + hint copy + stronger pulse) — tiny pill was missed on first scroll. BookingHandoff moved to page tail just above Nearby Places (was mid-page inside People section; no paid placement so editorial flow comes first).
+const CACHE_VERSION = "nakshiq-v22";
 const STATIC_CACHE = `${CACHE_VERSION}-static`;
 const IMAGE_CACHE = `${CACHE_VERSION}-images`;
 const DATA_CACHE = `${CACHE_VERSION}-data`;
