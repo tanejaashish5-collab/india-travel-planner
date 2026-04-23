@@ -3556,6 +3556,54 @@ Date range: 2026-04-15 → 2026-04-21
 2026-04-23 08:57:18  INFO      [youtube/@naksh-iq] Skipping tourist map (YouTube only accepts video/reels).
 2026-04-23 08:57:18  INFO      State saved. Tourist Map run complete.
 2026-04-23 08:57:18  INFO      ════════════════════════════════════════════════════════════
+2026-04-23 10:09:33  INFO      ════════════════════════════════════════════════════════════
+2026-04-23 10:09:33  INFO      Nakshiq Autoposter · EVENING · 2026-04-23 · weekday=3
+2026-04-23 10:09:33  INFO      ════════════════════════════════════════════════════════════
+2026-04-23 10:09:33  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-04-23 10:09:43  INFO      Synced → 20 destinations · 0 traps · 20 articles · total catalog=488
+2026-04-23 10:09:45  INFO      Active accounts: ['instagram/nakshiq', 'facebook/Nakshiq', 'youtube/@naksh-iq']
+2026-04-23 10:09:45  INFO      Formats — IG: festival_alert  ·  FB: festival_alert  ·  Story: collection_spotlight
+2026-04-23 10:09:45  INFO      Used destinations (14d): 26
+2026-04-23 10:09:45  INFO      Collection locked: After Dark — Night Experiences Worth Staying Up For (19/20 never featured)
+2026-04-23 10:09:45  INFO      Festival locked: Tulip Festival (19/20 never featured)
+2026-04-23 10:09:48  INFO      Shared best destination locked: Kabini
+2026-04-23 10:09:48  INFO      Carousel locked (collection_spotlight): no valid images found
+2026-04-23 10:09:48  INFO      [instagram/nakshiq] Generating festival_alert post...
+2026-04-23 10:09:48  INFO      [instagram/nakshiq] Caption ready (331 chars, dest=kabini)
+2026-04-23 10:09:48  INFO      [instagram/nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-04-23 10:09:48  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/kabini.mp4?v=20260423
+2026-04-23 10:09:50  INFO          Requesting upload URL for kabini.mp4 (4,085,722 bytes, video/mp4)
+2026-04-23 10:09:51  INFO          Uploading to R2 (timeout=300s)...
+2026-04-23 10:09:54  INFO          R2 PUT OK. Confirming...
+2026-04-23 10:09:56  INFO          Media ready: 1WS5G (4,085,722 bytes · kabini.mp4)
+2026-04-23 10:09:56  INFO      [instagram/nakshiq] Publishing Reel...
+2026-04-23 10:13:59  INFO      Stale lock (age=3703s) — overriding.
+2026-04-23 10:13:59  INFO      ════════════════════════════════════════════════════════════
+2026-04-23 10:13:59  INFO      Nakshiq Autoposter · EVENING · 2026-04-23 · weekday=3
+2026-04-23 10:13:59  INFO      ════════════════════════════════════════════════════════════
+2026-04-23 10:13:59  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-04-23 10:14:05  INFO      Synced → 20 destinations · 0 traps · 20 articles · total catalog=488
+2026-04-23 10:14:06  INFO      Active accounts: ['instagram/nakshiq', 'facebook/Nakshiq', 'youtube/@naksh-iq']
+2026-04-23 10:14:06  INFO      Formats — IG: festival_alert  ·  FB: festival_alert  ·  Story: collection_spotlight
+2026-04-23 10:14:06  INFO      Used destinations (14d): 26
+2026-04-23 10:14:06  INFO      Collection locked: After Dark — Night Experiences Worth Staying Up For (19/20 never featured)
+2026-04-23 10:14:06  INFO      Festival locked: Tulip Festival (19/20 never featured)
+2026-04-23 10:14:07  INFO      Shared best destination locked: Kabini
+2026-04-23 10:14:07  INFO      Carousel locked (collection_spotlight): no valid images found
+2026-04-23 10:14:07  INFO      [instagram/nakshiq] Already posted today (evening) — skipping.
+2026-04-23 10:14:07  INFO      [facebook/Nakshiq] Generating festival_alert post...
+2026-04-23 10:14:07  INFO      [facebook/Nakshiq] Caption ready (331 chars, dest=kabini)
+2026-04-23 10:14:07  INFO      [facebook/Nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-04-23 10:14:07  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/kabini.mp4?v=20260423
+2026-04-23 10:14:08  INFO          Requesting upload URL for kabini.mp4 (4,085,722 bytes, video/mp4)
+2026-04-23 10:14:10  INFO          Uploading to R2 (timeout=300s)...
+2026-04-23 10:14:12  INFO          R2 PUT OK. Confirming...
+2026-04-23 10:14:14  INFO          Media ready: oMnUc (4,085,722 bytes · kabini.mp4)
+2026-04-23 10:14:14  INFO      [facebook/Nakshiq] Publishing Reel...
+2026-04-23 10:14:32  INFO      [facebook/Nakshiq] ✅ Published · Outstand=vKxUg · Platform=973253998521681
+2026-04-23 10:14:32  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-04-23 10:14:32  INFO      State saved. Run complete.
+2026-04-23 10:14:32  INFO      ════════════════════════════════════════════════════════════
 2026-04-23 10:22:18  INFO      ════════════════════════════════════════════════════════════
 2026-04-23 10:22:18  INFO      Nakshiq Autoposter · POMELLI VISUAL · 2026-04-23 · weekday=3
 2026-04-23 10:22:18  INFO      ════════════════════════════════════════════════════════════
