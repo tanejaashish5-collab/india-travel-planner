@@ -49,7 +49,8 @@ export function TrekTrailMap({ points, trekName }: { points: TrailPoint[]; trekN
         tilePane.setAttribute("aria-hidden", "true");
         tilePane.setAttribute("role", "presentation");
       }
-      L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png", {
+      // dark_all (labelled) — for parity with destination-map and explore-map.
+      L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png", {
         attribution: '&copy; OSM &copy; CARTO',
         maxZoom: 16,
       }).addTo(map);

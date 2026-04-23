@@ -131,15 +131,32 @@ async function getDestination(id: string) {
           .slice(0, 8)
           .map((n: any) => n.destination_id);
         if (nearbyIds.length > 0) {
-          const { data: full } = await supabase
-            .from("destinations")
-            .select("id, name, difficulty, elevation_m, state:states(name)")
-            .in("id", nearbyIds);
+          // Fetch details + coords in parallel. Coords power the enriched
+          // mini-map pins (destination-map.tsx); details feed the textual
+          // "Nearby" section lower on the page.
+          const [{ data: full }, { data: coords }] = await Promise.all([
+            supabase
+              .from("destinations")
+              .select("id, name, difficulty, elevation_m, state:states(name)")
+              .in("id", nearbyIds),
+            supabase
+              .from("destinations_with_coords")
+              .select("id, lat, lng")
+              .in("id", nearbyIds),
+          ]);
           const distMap = new Map<string, number>(
             rpcData.map((n: any) => [n.destination_id, n.distance_km])
           );
+          const coordMap = new Map<string, { lat: number; lng: number }>(
+            (coords ?? []).map((c: any) => [c.id, { lat: c.lat, lng: c.lng }])
+          );
           return { data: (full ?? [])
-            .map((d: any) => ({ ...d, distance_km: Math.round(distMap.get(d.id) ?? 0) }))
+            .map((d: any) => ({
+              ...d,
+              distance_km: Math.round(distMap.get(d.id) ?? 0),
+              lat: coordMap.get(d.id)?.lat ?? null,
+              lng: coordMap.get(d.id)?.lng ?? null,
+            }))
             .sort((a: any, b: any) => a.distance_km - b.distance_km) };
         }
       }

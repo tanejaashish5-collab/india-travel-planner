@@ -17,6 +17,7 @@ import { lazy, Suspense } from "react";
 import { ConfidenceCardComponent } from "./confidence-card";
 import { destinationImage } from "@/lib/image-url";
 import { videoSrc } from "@/lib/video-url";
+import { getRegionNameForState } from "@/lib/seo-maps";
 
 const DestinationMap = lazy(() => import("./destination-map").then((mod) => ({ default: mod.DestinationMap })));
 import { KidsBadge } from "./kids-badge";
@@ -509,7 +510,17 @@ export function DestinationDetail({ dest }: { dest: any }) {
             <div className="mb-6 rounded-2xl lg:rounded-none border border-border lg:border-y lg:border-x-0 overflow-hidden lg:relative lg:left-1/2 lg:right-1/2 lg:-ml-[50vw] lg:-mr-[50vw] lg:w-screen">
               <div className="h-48 sm:h-56 lg:h-96">
                 <Suspense fallback={<div className="w-full h-full bg-muted/30 flex items-center justify-center text-muted-foreground text-sm">Loading map...</div>}>
-                  <DestinationMap lat={dest.coords.lat} lng={dest.coords.lng} name={displayName} elevation={dest.elevation_m} />
+                  <DestinationMap
+                    lat={dest.coords.lat}
+                    lng={dest.coords.lng}
+                    name={displayName}
+                    elevation={dest.elevation_m}
+                    nearby={dest.nearbyDestinations}
+                    stateName={stateName}
+                    region={getRegionNameForState(dest.state_id) ?? undefined}
+                    nearestCity={cc?.reach?.from_nearest_city ?? undefined}
+                    nearestAirport={cc?.reach?.nearest_airport ?? undefined}
+                  />
                 </Suspense>
               </div>
             </div>

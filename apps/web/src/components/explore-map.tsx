@@ -41,7 +41,9 @@ export function ExploreMap({ destinations }: { destinations: MapDestination[] })
         zoomControl: true,
       });
 
-      // dark_nolabels avoids Chinese/local-script labels near borders.
+      // dark_all (labelled) — state/district/city names help travelers
+      // orient at a glance. Trade-off: Chinese-script labels appear near
+      // the AP/Ladakh border (CartoDB quirk); accepted for orientation value.
       // BUG-113: hide the tile pane from the a11y tree. Pane-level is O(1) and
       // covers future tiles on zoom/pan; per-tile tileload races with sync tileadd.
       const tilePane = map.getPane("tilePane");
@@ -49,7 +51,7 @@ export function ExploreMap({ destinations }: { destinations: MapDestination[] })
         tilePane.setAttribute("aria-hidden", "true");
         tilePane.setAttribute("role", "presentation");
       }
-      L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png", {
+      L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png", {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> &copy; <a href="https://carto.com/">CARTO</a>',
         maxZoom: 19,
       }).addTo(map);
