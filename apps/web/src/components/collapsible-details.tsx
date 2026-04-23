@@ -79,7 +79,7 @@ export function CollapsibleDetails({
         <span className="flex-1 min-w-0">
           <span className="flex flex-wrap items-baseline gap-x-2 gap-y-0.5">
             <span className="text-sm font-semibold tracking-tight">
-              {open ? "Close" : "Open"} {label}
+              {open ? "Hide" : "See"} {label}
             </span>
             {count != null && (
               <span className="inline-flex items-center rounded-full bg-primary/25 px-2 py-0.5 text-[11px] font-medium tabular-nums text-foreground">

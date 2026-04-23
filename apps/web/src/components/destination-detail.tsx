@@ -688,7 +688,7 @@ export function DestinationDetail({ dest }: { dest: any }) {
                 {cc && (
                   <section>
                     <div className="flex flex-wrap items-center gap-2 mb-3">
-                      <h2 id="section-infrastructure" className="text-xl font-semibold">Infrastructure Reality</h2>
+                      <h2 id="section-infrastructure" className="text-xl font-semibold">Infrastructure data</h2>
                       <SectionFreshness
                         sectionKey="infrastructure"
                         sectionReviews={dest.section_reviews}
