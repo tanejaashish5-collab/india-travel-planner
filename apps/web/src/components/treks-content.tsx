@@ -262,7 +262,7 @@ function GearChecklists({ checklists }: { checklists: any[] }) {
                     }, {} as Record<string, any[]>)
                   ).map(([category, catItems]) => (
                     <div key={category} className="mb-4 last:mb-0">
-                      <h4 className="text-xs font-medium text-muted-foreground uppercase tracking-wider mb-2">
+                      <h4 className="text-xs font-medium text-muted-foreground uppercase tracking-[0.08em] mb-2">
                         {CATEGORY_ICONS[category] ?? "📦"} {category}
                       </h4>
                       <div className="space-y-1.5">

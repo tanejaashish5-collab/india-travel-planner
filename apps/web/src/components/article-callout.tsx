@@ -14,7 +14,7 @@ export function ArticleCallout({ type, text, label }: CalloutProps) {
           {text}
         </div>
         {label && (
-          <div className="mt-2 text-sm text-muted-foreground uppercase tracking-wider">
+          <div className="mt-2 text-sm text-muted-foreground uppercase tracking-[0.08em]">
             {label}
           </div>
         )}

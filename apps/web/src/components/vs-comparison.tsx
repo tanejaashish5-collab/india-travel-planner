@@ -247,7 +247,7 @@ export function VsComparison({ dest1, dest2, locale }: Props) {
             <div className="rounded-2xl border border-border bg-card overflow-hidden">
               {/* Header */}
               <div className="grid grid-cols-3 border-b border-border bg-muted/30">
-                <div className="p-3 text-xs font-medium text-muted-foreground uppercase tracking-wider" />
+                <div className="p-3 text-xs font-medium text-muted-foreground uppercase tracking-[0.08em]" />
                 <div className="p-3 text-center text-sm font-bold text-foreground border-l border-border">
                   {dest1.name}
                 </div>
@@ -294,7 +294,7 @@ export function VsComparison({ dest1, dest2, locale }: Props) {
             <div className="rounded-2xl border border-border bg-card overflow-hidden">
               {/* Header */}
               <div className="grid grid-cols-3 border-b border-border bg-muted/30">
-                <div className="p-3 text-xs font-medium text-muted-foreground uppercase tracking-wider">Month</div>
+                <div className="p-3 text-xs font-medium text-muted-foreground uppercase tracking-[0.08em]">Month</div>
                 <div className="p-3 text-center text-sm font-bold text-foreground border-l border-border">
                   {dest1.name}
                 </div>

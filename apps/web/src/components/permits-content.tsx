@@ -126,14 +126,14 @@ export function PermitsContent({ permits }: { permits: any[] }) {
                     <div className="p-4 space-y-4">
                       {/* How to get */}
                       <div>
-                        <h4 className="text-xs font-medium text-muted-foreground uppercase tracking-wider mb-1">How to Get</h4>
+                        <h4 className="text-xs font-medium text-muted-foreground uppercase tracking-[0.08em] mb-1">How to Get</h4>
                         <p className="text-sm">{permit.how_to_get}</p>
                       </div>
 
                       {/* Documents needed */}
                       {permit.documents_needed?.length > 0 && (
                         <div>
-                          <h4 className="text-xs font-medium text-muted-foreground uppercase tracking-wider mb-1">Documents Needed</h4>
+                          <h4 className="text-xs font-medium text-muted-foreground uppercase tracking-[0.08em] mb-1">Documents Needed</h4>
                           <ul className="space-y-1">
                             {permit.documents_needed.map((doc: string, i: number) => (
                               <li key={i} className="flex items-start gap-2 text-sm">

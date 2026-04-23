@@ -113,19 +113,19 @@ export function AdminNewsletter() {
       {step === "preview" && preview && (
         <div className="space-y-6">
           <div className="rounded-xl border border-border bg-card p-5">
-            <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+            <p className="text-xs font-semibold uppercase tracking-[0.08em] text-muted-foreground">
               Issue slug
             </p>
             <p className="font-mono text-sm mt-1">{preview.issue.slug}</p>
-            <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mt-4">
+            <p className="text-xs font-semibold uppercase tracking-[0.08em] text-muted-foreground mt-4">
               Subject
             </p>
             <p className="mt-1">{preview.issue.subject}</p>
-            <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mt-4">
+            <p className="text-xs font-semibold uppercase tracking-[0.08em] text-muted-foreground mt-4">
               Preview text
             </p>
             <p className="mt-1 text-sm text-muted-foreground">{preview.issue.previewText}</p>
-            <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mt-4">
+            <p className="text-xs font-semibold uppercase tracking-[0.08em] text-muted-foreground mt-4">
               Confirmed recipients
             </p>
             <p className="mt-1 font-mono text-lg">{preview.recipientCount}</p>

@@ -8,6 +8,7 @@ import { WhatsAppShare } from "./whatsapp-share";
 import { destinationImage } from "@/lib/image-url";
 import { videoSrc } from "@/lib/video-url";
 import { DestinationSectionNav } from "./destination-section-nav";
+import { SectionLabel } from "./ui/section-label";
 
 // ── Constants ──────────────────────────────────────────────────
 
@@ -173,9 +174,9 @@ export function DestinationMonth({
                 >
                   {verdictLabel[verdictKey!]}
                 </span>
-                <span className="font-mono text-[10px] sm:text-xs tracking-[0.3em] uppercase opacity-70 text-zinc-300">
+                <SectionLabel as="span" className="text-zinc-300 opacity-70">
                   in {monthName}
-                </span>
+                </SectionLabel>
               </div>
             ) : (
               <div />
@@ -247,7 +248,7 @@ export function DestinationMonth({
             </p>
             {prosePayoff && (
               <div className="mt-6 rounded-xl border border-zinc-800 bg-zinc-900/50 p-6">
-                <h2 className="text-sm font-semibold uppercase tracking-wider text-zinc-500 mb-3">
+                <h2 className="text-sm font-semibold uppercase tracking-[0.08em] text-zinc-500 mb-3">
                   The {monthName} story
                 </h2>
                 <p className="text-base leading-relaxed text-zinc-300">
@@ -540,9 +541,7 @@ export function DestinationMonth({
         href={`/${locale}/destination/${destination.id}`}
         className="group block rounded-xl border border-zinc-800 bg-zinc-900/40 p-5 transition-colors hover:border-zinc-700 hover:bg-zinc-900/60"
       >
-        <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-zinc-500">
-          Destination reference
-        </p>
+        <SectionLabel className="text-zinc-500">Destination reference</SectionLabel>
         <p className="mt-1.5 text-base text-zinc-200">
           Full reach, permits, stays, emergency contacts and year-round
           context on the <span className="font-semibold text-white underline-offset-2 group-hover:underline">{destination.name} guide</span>

@@ -129,7 +129,7 @@ function PickCard({ pick }: { pick: EditorStayPick }) {
 
       {sources.length > 0 && (
         <div className="flex flex-wrap gap-1 pt-1">
-          <span className="text-[10px] uppercase tracking-wider text-muted-foreground/70 mr-1 self-center">Sources</span>
+          <span className="text-[10px] uppercase tracking-[0.08em] text-muted-foreground/70 mr-1 self-center">Sources</span>
           {sources.slice(0, 4).map((s, i) => sourceBadge(s, i))}
         </div>
       )}
@@ -168,7 +168,7 @@ export function EditorsPicks({ destinationName, stateName, picks, intelligence }
           Editor&rsquo;s Picks
         </span>
         <span className="h-px flex-1 bg-gradient-to-r from-border/60 to-transparent" />
-        <span className="text-[10px] uppercase tracking-wider text-muted-foreground">
+        <span className="text-[10px] uppercase tracking-[0.08em] text-muted-foreground">
           Where to stay
         </span>
       </div>

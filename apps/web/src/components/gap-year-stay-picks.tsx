@@ -44,7 +44,7 @@ export function GapYearStayPicks({ stays, loading }: Props) {
 
   return (
     <div className="mt-3 rounded-md border border-border/60 bg-muted/20 p-3">
-      <div className="text-[10px] uppercase tracking-wider text-muted-foreground mb-2">
+      <div className="text-[10px] uppercase tracking-[0.08em] text-muted-foreground mb-2">
         NakshIQ stay picks
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-2">

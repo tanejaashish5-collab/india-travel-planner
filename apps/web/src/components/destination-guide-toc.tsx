@@ -132,7 +132,7 @@ export function DestinationGuideToC({
   return (
     <section aria-label={t("inThisGuide")} className="mb-6">
       <div className="mb-3 flex items-baseline justify-between">
-        <h2 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground">
+        <h2 className="text-sm font-semibold uppercase tracking-[0.08em] text-muted-foreground">
           {t("inThisGuide")}
         </h2>
         <span className="text-xs text-muted-foreground/60">{t("tapToJump")}</span>

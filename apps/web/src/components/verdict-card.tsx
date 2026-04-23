@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import { SectionLabel } from "./ui/section-label";
 
 type Verdict = "go" | "wait" | "skip";
 
@@ -58,9 +59,9 @@ export default function VerdictCard({ verdict, skipReason, month, variant = "ful
           {label}
         </span>
         {month && (
-          <span className="font-mono text-[10px] tracking-[0.22em] uppercase opacity-70">
+          <SectionLabel as="span" className="opacity-70">
             in {month}
-          </span>
+          </SectionLabel>
         )}
         {verdict !== "go" && skipReason && (
           <span className="text-xs opacity-85 max-w-[28ch] truncate">— {skipReason}</span>
@@ -79,9 +80,9 @@ export default function VerdictCard({ verdict, skipReason, month, variant = "ful
           {label}
         </span>
         {month && (
-          <span className="font-mono text-[10px] sm:text-xs tracking-[0.3em] uppercase opacity-70">
+          <SectionLabel as="span" className="opacity-70">
             in {month}
-          </span>
+          </SectionLabel>
         )}
       </div>
       {prose ? (
@@ -92,9 +93,9 @@ export default function VerdictCard({ verdict, skipReason, month, variant = "ful
             <p className="text-base sm:text-lg leading-snug opacity-95">{skipReason}</p>
           )}
           {verdict === "go" && (
-            <p className="font-mono text-[10px] tracking-[0.22em] uppercase opacity-60">
-              Data-scored. No caveats this month.
-            </p>
+            <SectionLabel tone="muted" className="opacity-60">
+              Our take: no caveats this month.
+            </SectionLabel>
           )}
         </>
       )}

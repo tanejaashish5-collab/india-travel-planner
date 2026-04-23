@@ -90,7 +90,7 @@ export function KidsBadge({
       {/* Why it works */}
       {reasons.length > 0 && (
         <div className="mt-4">
-          <h4 className="text-xs font-medium uppercase tracking-wide text-muted-foreground mb-2">
+          <h4 className="text-xs font-medium uppercase tracking-[0.08em] text-muted-foreground mb-2">
             Why it works for families
           </h4>
           <ul className="space-y-1">
@@ -110,7 +110,7 @@ export function KidsBadge({
       {/* Kid highlights */}
       {kid_highlights.length > 0 && (
         <div className="mt-4">
-          <h4 className="text-xs font-medium uppercase tracking-wide text-muted-foreground mb-2">
+          <h4 className="text-xs font-medium uppercase tracking-[0.08em] text-muted-foreground mb-2">
             What kids will love
           </h4>
           <ul className="space-y-1">
@@ -130,7 +130,7 @@ export function KidsBadge({
       {/* Concerns */}
       {concerns.length > 0 && (
         <div className="mt-4">
-          <h4 className="text-xs font-medium uppercase tracking-wide text-muted-foreground mb-2">
+          <h4 className="text-xs font-medium uppercase tracking-[0.08em] text-muted-foreground mb-2">
             Heads up
           </h4>
           <ul className="space-y-1">

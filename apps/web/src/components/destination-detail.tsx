@@ -32,6 +32,7 @@ import { DestinationDecisionRail } from "./destination-decision-rail";
 import { CollapsibleDetails } from "./collapsible-details";
 import { DataSignalBadge } from "./data-signal-badge";
 import { SectionFreshness } from "./section-freshness";
+import { SectionLabel } from "./ui/section-label";
 import { MicroItinerarySection } from "./micro-itinerary-section";
 import { LogisticsChecklist } from "./logistics-checklist";
 import { PersonaBlocksSection } from "./persona-blocks-section";
@@ -359,7 +360,7 @@ export function DestinationDetail({ dest }: { dest: any }) {
 
             {/* Month-by-Month Navigation */}
             <div className="mt-4">
-              <div className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">See by month</div>
+              <SectionLabel className="mb-2">Month by month</SectionLabel>
               <div className="flex flex-wrap gap-1">
                 {["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"].map((m, i) => {
                   const monthData = months.find((md: any) => md.month === i + 1);
@@ -410,7 +411,7 @@ export function DestinationDetail({ dest }: { dest: any }) {
             {/* Live Weather */}
             <div className="mt-4">
               <div className="flex items-center gap-2 mb-2">
-                <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">Weather</span>
+                <SectionLabel as="span">Weather</SectionLabel>
                 <DataSignalBadge kind="live" tooltip="Refetched on each page view from OpenWeatherMap" />
               </div>
               <WeatherWidget destinationId={dest.id} />
@@ -625,7 +626,7 @@ export function DestinationDetail({ dest }: { dest: any }) {
                     </div>
                     {travelerFit.infraConcerns.length > 0 && (
                       <div className="mt-3 pt-3 border-t border-orange-500/10">
-                        <p className="text-xs font-medium text-orange-300/60 uppercase tracking-wider mb-2">Infrastructure concerns</p>
+                        <SectionLabel tone="warning" className="mb-2">Infrastructure reality</SectionLabel>
                         <div className="space-y-1.5">
                           {travelerFit.infraConcerns.map((c, i) => (
                             <p key={i} className="text-sm text-orange-200/60">{c}</p>
@@ -791,25 +792,25 @@ export function DestinationDetail({ dest }: { dest: any }) {
                     <div className="grid gap-3 sm:grid-cols-2">
                       {dest.stay_zones.best_for_families && (
                         <div className="rounded-xl border border-border p-4">
-                          <div className="text-xs text-emerald-400 font-medium uppercase tracking-wide mb-1">Best for Families</div>
+                          <SectionLabel tone="accent" className="mb-1 text-emerald-400">Best for families</SectionLabel>
                           <div className="text-[15px]">{dest.stay_zones.best_for_families}</div>
                         </div>
                       )}
                       {dest.stay_zones.best_for_backpackers && (
                         <div className="rounded-xl border border-border p-4">
-                          <div className="text-xs text-blue-400 font-medium uppercase tracking-wide mb-1">Best for Backpackers</div>
+                          <SectionLabel className="mb-1 text-blue-400">Best for backpackers</SectionLabel>
                           <div className="text-[15px]">{dest.stay_zones.best_for_backpackers}</div>
                         </div>
                       )}
                       {dest.stay_zones.best_for_quiet && (
                         <div className="rounded-xl border border-border p-4">
-                          <div className="text-xs text-purple-400 font-medium uppercase tracking-wide mb-1">Best for Peace & Quiet</div>
+                          <SectionLabel className="mb-1 text-purple-400">Best for peace &amp; quiet</SectionLabel>
                           <div className="text-[15px]">{dest.stay_zones.best_for_quiet}</div>
                         </div>
                       )}
                       {dest.stay_zones.avoid && (
                         <div className="rounded-xl border border-orange-500/20 bg-orange-500/5 p-4">
-                          <div className="text-xs text-orange-400 font-medium uppercase tracking-wide mb-1">Avoid</div>
+                          <SectionLabel tone="warning" className="mb-1 text-orange-400">Think twice</SectionLabel>
                           <div className="text-[15px] text-orange-200/80">{dest.stay_zones.avoid}</div>
                         </div>
                       )}
@@ -934,7 +935,7 @@ export function DestinationDetail({ dest }: { dest: any }) {
                         <div className="rounded-xl border border-border p-4 flex items-start gap-3">
                           <span className="text-lg">🥬</span>
                           <div>
-                            <div className="text-xs text-muted-foreground uppercase tracking-wide">Vegetarian</div>
+                            <SectionLabel>Vegetarian</SectionLabel>
                             <div className="text-sm font-medium capitalize mt-0.5">{dest.food_scene.vegetarian_ease}</div>
                           </div>
                         </div>
@@ -943,7 +944,7 @@ export function DestinationDetail({ dest }: { dest: any }) {
                         <div className="rounded-xl border border-border p-4 flex items-start gap-3">
                           <span className="text-lg">👨‍👩‍👧</span>
                           <div>
-                            <div className="text-xs text-muted-foreground uppercase tracking-wide">Family Dining</div>
+                            <SectionLabel>Family dining</SectionLabel>
                             <div className="text-sm font-medium mt-0.5">{dest.food_scene.family_dining}</div>
                           </div>
                         </div>
@@ -980,11 +981,11 @@ export function DestinationDetail({ dest }: { dest: any }) {
                   <h2 className="text-xl font-semibold mb-3">{t("howToReach")}</h2>
                   <div className="grid gap-3 sm:grid-cols-2">
                     <div className="rounded-xl border border-border p-4">
-                      <div className="text-xs text-muted-foreground uppercase tracking-wide">Airport</div>
+                      <SectionLabel>Airport</SectionLabel>
                       <div className="mt-1 text-sm">{dest.nearest_airport}</div>
                     </div>
                     <div className="rounded-xl border border-border p-4">
-                      <div className="text-xs text-muted-foreground uppercase tracking-wide">Rail</div>
+                      <SectionLabel>Rail</SectionLabel>
                       <div className="mt-1 text-sm">{dest.nearest_railhead}</div>
                     </div>
                   </div>

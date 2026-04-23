@@ -373,7 +373,7 @@ export function WhereToGoContent({
           <div className="relative overflow-hidden rounded-2xl border border-emerald-500/20 bg-gradient-to-br from-emerald-500/10 via-zinc-900/40 to-zinc-900/0 p-6 sm:p-8 md:p-10 lg:p-12">
             <div className="pointer-events-none absolute -right-20 -top-20 h-60 w-60 rounded-full bg-emerald-500/5 blur-3xl" />
 
-            <p className="mb-3 font-mono text-[10px] sm:text-[11px] uppercase tracking-[0.28em] text-primary/70">
+            <p className="mb-3 text-[11px] font-medium uppercase tracking-[0.08em] text-primary/70">
               Where to go · {monthName} · {regionName}
             </p>
             <h1 className="font-fraunces text-3xl font-semibold tracking-tight text-white sm:text-4xl md:text-5xl lg:text-6xl">
@@ -840,7 +840,7 @@ function WhereToGoSidebar({ sections }: { sections: { id: string; label: string 
   return (
     <nav className="sticky top-28 self-start" aria-label="In this guide">
       <div className="rounded-xl border border-border bg-background/95 backdrop-blur p-2 shadow-sm">
-        <div className="px-3 py-2 text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
+        <div className="px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.08em] text-muted-foreground">
           In this guide
         </div>
         <div className="flex flex-col gap-1">

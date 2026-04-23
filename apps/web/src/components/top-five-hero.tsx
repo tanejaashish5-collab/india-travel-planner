@@ -133,7 +133,7 @@ export function TopFiveHero({
       </FadeIn>
 
       {/* ── Caption strip ───────────────────────────────────── */}
-      <div className="mt-6 flex flex-wrap items-center justify-between gap-3 border-y border-white/10 py-3 font-mono text-[10px] uppercase tracking-[0.22em] text-white/45">
+      <div className="mt-6 flex flex-wrap items-center justify-between gap-3 border-y border-white/10 py-3 text-[11px] font-medium uppercase tracking-[0.08em] text-white/45">
         <span>{dateRange ?? `As of ${asOfDate}`}</span>
         <span className="hidden sm:inline">Verified by editors</span>
         <span>Scores out of 5</span>
@@ -209,7 +209,7 @@ export function TopFiveHero({
                         boxShadow: scoreDotGlow(row.score),
                       }}
                     />
-                    <span className="font-mono text-[10px] font-bold uppercase tracking-[0.22em] text-white">
+                    <span className="text-[11px] font-semibold uppercase tracking-[0.08em] text-white">
                       {row.score}/5 · {chipLabel(row.score)}
                     </span>
                   </div>

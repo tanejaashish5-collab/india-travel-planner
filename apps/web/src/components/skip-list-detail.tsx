@@ -59,7 +59,7 @@ export function SkipListDetail({ trapDest, alternatives, whyTrapText, goodMonths
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-transparent" />
         <FadeIn className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 max-w-5xl mx-auto">
           <div className="flex items-center gap-2 mb-2">
-            <span className="rounded bg-red-950/60 px-2.5 py-1 text-xs font-bold uppercase tracking-wider text-red-400">
+            <span className="rounded bg-red-950/60 px-2.5 py-1 text-xs font-bold uppercase tracking-[0.08em] text-red-400">
               Skip List
             </span>
             {trapDest.state && (
@@ -185,7 +185,7 @@ export function SkipListDetail({ trapDest, alternatives, whyTrapText, goodMonths
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent" />
                         <div className="absolute bottom-3 left-3 right-3">
-                          <span className="rounded bg-emerald-950/60 px-2 py-0.5 text-xs font-bold uppercase tracking-wider text-emerald-400">
+                          <span className="rounded bg-emerald-950/60 px-2 py-0.5 text-xs font-bold uppercase tracking-[0.08em] text-emerald-400">
                             Go here instead
                           </span>
                         </div>

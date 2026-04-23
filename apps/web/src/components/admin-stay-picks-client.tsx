@@ -215,7 +215,7 @@ export function AdminStayPicksClient() {
 
               {sources.length > 0 && (
                 <div className="mt-3 flex flex-wrap gap-1.5">
-                  <span className="text-[10px] uppercase tracking-wider text-muted-foreground mr-1 self-center">Sources</span>
+                  <span className="text-[10px] uppercase tracking-[0.08em] text-muted-foreground mr-1 self-center">Sources</span>
                   {sources.map((s, i) => {
                     let host = "";
                     try { host = new URL(s.url).hostname.replace(/^www\./, ""); } catch { host = `src-${i + 1}`; }
@@ -237,7 +237,7 @@ export function AdminStayPicksClient() {
 
               {intel?.upgrade_reasoning && (
                 <div className="mt-3 rounded border border-primary/30 bg-primary/5 p-2">
-                  <div className="text-[10px] uppercase tracking-wider text-primary mb-1">Upgrade Question</div>
+                  <div className="text-[10px] uppercase tracking-[0.08em] text-primary mb-1">Upgrade Question</div>
                   <p className="text-xs text-foreground">{intel.upgrade_reasoning}</p>
                 </div>
               )}

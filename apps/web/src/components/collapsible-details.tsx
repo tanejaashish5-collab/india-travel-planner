@@ -82,7 +82,7 @@ export function CollapsibleDetails({
               {open ? "Hide" : "Show"} {label}
             </span>
             {count != null && (
-              <span className="inline-flex items-center rounded-full bg-primary/25 px-2 py-0.5 font-mono text-[10px] tracking-[0.14em] uppercase text-foreground">
+              <span className="inline-flex items-center rounded-full bg-primary/25 px-2 py-0.5 text-[11px] font-medium uppercase tracking-[0.08em] text-foreground">
                 {count} {count === 1 ? "item" : "items"}
               </span>
             )}
@@ -96,7 +96,7 @@ export function CollapsibleDetails({
         <span
           aria-hidden
           className={cn(
-            "shrink-0 font-mono text-[10px] tracking-[0.22em] uppercase transition-all",
+            "shrink-0 text-[11px] font-medium uppercase tracking-[0.08em] transition-all",
             open ? "opacity-0 -translate-x-1" : "opacity-80 group-hover:translate-x-0.5",
           )}
         >

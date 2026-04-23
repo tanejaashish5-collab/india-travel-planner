@@ -196,7 +196,7 @@ export function EmergencySOSSection({ sos, destinationName }: { sos: EmergencySO
 
               {/* ── Universal Emergency Numbers ── */}
               <div>
-                <h3 className="text-xs font-bold text-red-300/70 uppercase tracking-wider mb-3">Emergency Numbers</h3>
+                <h3 className="text-[11px] font-medium text-red-300/70 uppercase tracking-[0.08em] mb-3">Emergency Numbers</h3>
 
                 {/* Hero: 112 Universal Emergency */}
                 <a
@@ -243,7 +243,7 @@ export function EmergencySOSSection({ sos, destinationName }: { sos: EmergencySO
               {/* ── Hospital & Medical ── */}
               {(sos.nearest_hospital || sos.nearest_pharmacy) && (
                 <div className="rounded-xl border border-red-500/15 bg-red-500/5 p-4">
-                  <h3 className="text-xs font-bold text-red-300/70 uppercase tracking-wider mb-2">Hospital & Medical</h3>
+                  <h3 className="text-[11px] font-medium text-red-300/70 uppercase tracking-[0.08em] mb-2">Hospital & Medical</h3>
                   {sos.nearest_hospital && (
                     <div className="flex items-start gap-2 mb-2">
                       <span className="text-base mt-0.5">🏥</span>
@@ -289,7 +289,7 @@ export function EmergencySOSSection({ sos, destinationName }: { sos: EmergencySO
                 <div className="flex items-start gap-2">
                   <span className="text-base mt-0.5">👮</span>
                   <div>
-                    <p className="text-xs font-bold text-muted-foreground uppercase tracking-wider">Local Police Station</p>
+                    <p className="text-[11px] font-medium text-muted-foreground uppercase tracking-[0.08em]">Local Police Station</p>
                     <p className="text-sm mt-0.5">{sos.local_police_station}</p>
                     {sos.police_address && (
                       <p className="text-xs text-muted-foreground mt-0.5">{sos.police_address}</p>
@@ -313,7 +313,7 @@ export function EmergencySOSSection({ sos, destinationName }: { sos: EmergencySO
               {/* ── Vehicle Help ── */}
               {hasVehicleHelp && (
                 <div className="rounded-xl border border-border/50 p-4">
-                  <h3 className="text-xs font-bold text-muted-foreground uppercase tracking-wider mb-2">Vehicle & Road Help</h3>
+                  <h3 className="text-[11px] font-medium text-muted-foreground uppercase tracking-[0.08em] mb-2">Vehicle & Road Help</h3>
                   <div className="space-y-2">
                     {sos.mechanic_contact && (
                       <div className="flex items-center gap-2 flex-wrap">
@@ -351,7 +351,7 @@ export function EmergencySOSSection({ sos, destinationName }: { sos: EmergencySO
               {/* ── Shelter & Rescue ── */}
               {hasShelter && (
                 <div className="rounded-xl border border-border/50 p-4">
-                  <h3 className="text-xs font-bold text-muted-foreground uppercase tracking-wider mb-2">Shelter & Rescue</h3>
+                  <h3 className="text-[11px] font-medium text-muted-foreground uppercase tracking-[0.08em] mb-2">Shelter & Rescue</h3>
                   <div className="space-y-2">
                     {sos.nearest_guesthouse_emergency && (
                       <div className="flex items-start gap-2">
@@ -384,14 +384,14 @@ export function EmergencySOSSection({ sos, destinationName }: { sos: EmergencySO
                     <div className="rounded-xl border border-border/50 p-3 text-center">
                       <div className="text-lg">📶</div>
                       <div className="text-sm font-bold font-mono">{sos.nearest_phone_signal_km}km</div>
-                      <div className="text-[10px] text-muted-foreground uppercase tracking-wider">Phone signal</div>
+                      <div className="text-[11px] font-medium text-muted-foreground uppercase tracking-[0.08em]">Phone signal</div>
                     </div>
                   )}
                   {sos.nearest_atm_km != null && (
                     <div className="rounded-xl border border-border/50 p-3 text-center">
                       <div className="text-lg">🏧</div>
                       <div className="text-sm font-bold font-mono">{sos.nearest_atm_km}km</div>
-                      <div className="text-[10px] text-muted-foreground uppercase tracking-wider">Nearest ATM</div>
+                      <div className="text-[11px] font-medium text-muted-foreground uppercase tracking-[0.08em]">Nearest ATM</div>
                       {sos.atm_banks && (
                         <p className="text-[10px] text-muted-foreground mt-1">{sos.atm_banks}</p>
                       )}
@@ -409,7 +409,7 @@ export function EmergencySOSSection({ sos, destinationName }: { sos: EmergencySO
               {/* ── Weather Protocols ── */}
               {hasWeatherProtocols && (
                 <div>
-                  <h3 className="text-xs font-bold text-muted-foreground uppercase tracking-wider mb-2">Weather Protocols</h3>
+                  <h3 className="text-[11px] font-medium text-muted-foreground uppercase tracking-[0.08em] mb-2">Weather Protocols</h3>
                   <div className="space-y-2">
                     {sos.extreme_heat_protocol && (
                       <div className="flex items-start gap-2 rounded-lg border border-orange-500/20 bg-orange-500/5 p-3">
@@ -454,7 +454,7 @@ export function EmergencySOSSection({ sos, destinationName }: { sos: EmergencySO
               {/* ── International ── */}
               {hasInternational && (
                 <div className="rounded-xl border border-primary/20 bg-primary/5 p-4">
-                  <h3 className="text-xs font-bold text-primary/70 uppercase tracking-wider mb-2">International Travelers</h3>
+                  <h3 className="text-[11px] font-medium text-primary/70 uppercase tracking-[0.08em] mb-2">International Travelers</h3>
                   <div className="space-y-2">
                     {sos.embassy_emergency_line && (
                       <div className="flex items-center gap-2">
@@ -491,7 +491,7 @@ export function EmergencySOSSection({ sos, destinationName }: { sos: EmergencySO
               {/* ── Local Helpers ── */}
               {hasLocalHelpers && (
                 <div>
-                  <h3 className="text-xs font-bold text-muted-foreground uppercase tracking-wider mb-2">Local Helpers</h3>
+                  <h3 className="text-[11px] font-medium text-muted-foreground uppercase tracking-[0.08em] mb-2">Local Helpers</h3>
                   <div className="grid gap-2 sm:grid-cols-2">
                     {sos.local_helpers?.map((helper, i) => (
                       <div key={i} className="flex items-center gap-3 rounded-xl border border-border/50 p-3">
@@ -600,7 +600,7 @@ export function EmergencySOSSection({ sos, destinationName }: { sos: EmergencySO
 
                   <div className="space-y-3">
                     <div>
-                      <label className="text-xs font-bold text-muted-foreground uppercase tracking-wider">
+                      <label className="text-[11px] font-medium text-muted-foreground uppercase tracking-[0.08em]">
                         Which information is incorrect?
                       </label>
                       <select
@@ -616,7 +616,7 @@ export function EmergencySOSSection({ sos, destinationName }: { sos: EmergencySO
                     </div>
 
                     <div>
-                      <label className="text-xs font-bold text-muted-foreground uppercase tracking-wider">
+                      <label className="text-[11px] font-medium text-muted-foreground uppercase tracking-[0.08em]">
                         What&apos;s the correct information?
                       </label>
                       <input
@@ -629,7 +629,7 @@ export function EmergencySOSSection({ sos, destinationName }: { sos: EmergencySO
                     </div>
 
                     <div>
-                      <label className="text-xs font-bold text-muted-foreground uppercase tracking-wider">
+                      <label className="text-[11px] font-medium text-muted-foreground uppercase tracking-[0.08em]">
                         Any additional notes? (optional)
                       </label>
                       <textarea

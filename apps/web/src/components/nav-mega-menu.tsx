@@ -250,14 +250,14 @@ function ExperiencesPanel({ locale, onNavigate }: { locale: string; onNavigate: 
     <motion.div variants={staggerContainer} initial="initial" animate="animate" className="grid grid-cols-3 gap-6">
       {/* Primary */}
       <div className="space-y-1">
-        <p className="px-3 mb-2 text-[10px] font-semibold uppercase tracking-wider text-muted-foreground/60">Explore</p>
+        <p className="px-3 mb-2 text-[10px] font-semibold uppercase tracking-[0.08em] text-muted-foreground/60">Explore</p>
         <MenuItem href={`/${locale}/collections`} icon={GridIcon} label={t("collections")} desc="Curated themed lists" count={String(FALLBACK.collections)} onNavigate={onNavigate} />
         <MenuItem href={`/${locale}/routes`} icon={RouteIcon} label={t("routes")} desc="Multi-day road trips" count={String(FALLBACK.routes)} onNavigate={onNavigate} />
         <MenuItem href={`/${locale}/treks`} icon={MountainIcon} label={t("treks")} desc="Trails & summit hikes" count={String(FALLBACK.treks)} onNavigate={onNavigate} />
       </div>
       {/* Secondary */}
       <div className="space-y-1">
-        <p className="px-3 mb-2 text-[10px] font-semibold uppercase tracking-wider text-muted-foreground/60">Activities</p>
+        <p className="px-3 mb-2 text-[10px] font-semibold uppercase tracking-[0.08em] text-muted-foreground/60">Activities</p>
         <MenuItem href={`/${locale}/camping`} icon={TentIcon} label={t("camping")} desc="Camp under the stars" onNavigate={onNavigate} />
         <MenuItem href={`/${locale}/festivals`} icon={SparkleIcon} label={t("festivals")} desc="Cultural celebrations" count={String(FALLBACK.festivals)} onNavigate={onNavigate} />
         <MenuItem href={`/${locale}/stays`} icon={HouseIcon} label={t("stays")} desc="Verified places to sleep" onNavigate={onNavigate} />
@@ -265,7 +265,7 @@ function ExperiencesPanel({ locale, onNavigate }: { locale: string; onNavigate: 
       {/* Featured card */}
       <div className="rounded-xl border border-primary/20 bg-gradient-to-br from-primary/5 via-transparent to-transparent p-5 flex flex-col justify-between">
         <div>
-          <p className="text-[10px] font-semibold uppercase tracking-wider text-primary/60 mb-2">Featured</p>
+          <p className="text-[10px] font-semibold uppercase tracking-[0.08em] text-primary/60 mb-2">Featured</p>
           <h4 className="text-sm font-semibold text-foreground">Best Destinations This Month</h4>
           <p className="text-xs text-muted-foreground mt-1.5 leading-relaxed">
             See which destinations score 5/5 right now — weather, crowds, and accessibility all considered.
@@ -294,7 +294,7 @@ function PlanPanel({ locale, onNavigate }: { locale: string; onNavigate: () => v
     <motion.div variants={staggerContainer} initial="initial" animate="animate" className="grid grid-cols-5 gap-6">
       {/* Tools */}
       <div className="col-span-3 space-y-1">
-        <p className="px-3 mb-2 text-[10px] font-semibold uppercase tracking-wider text-muted-foreground/60">Tools</p>
+        <p className="px-3 mb-2 text-[10px] font-semibold uppercase tracking-[0.08em] text-muted-foreground/60">Tools</p>
         <div className="grid grid-cols-2 gap-x-4">
           <MenuItem href={`/${locale}/where-to-go/${currentMonthSlug}`} icon={CalendarIcon} label={t("whereToGoNow")} desc="Best destinations this month" onNavigate={onNavigate} />
           <MenuItem href={`/${locale}/build-route`} icon={MapPinIcon} label={t("buildRoute")} desc="Design your road trip" onNavigate={onNavigate} />
@@ -345,7 +345,7 @@ function LearnPanel({ locale, onNavigate }: { locale: string; onNavigate: () => 
     <motion.div variants={staggerContainer} initial="initial" animate="animate" className="grid grid-cols-3 gap-6">
       {/* Regular items */}
       <div className="col-span-2 space-y-1">
-        <p className="px-3 mb-2 text-[10px] font-semibold uppercase tracking-wider text-muted-foreground/60">Read</p>
+        <p className="px-3 mb-2 text-[10px] font-semibold uppercase tracking-[0.08em] text-muted-foreground/60">Read</p>
         <div className="grid grid-cols-2 gap-x-4">
           <MenuItem href={`/${locale}/blog`} icon={PenIcon} label={t("blog")} desc="Stories & insights" onNavigate={onNavigate} />
           <MenuItem href={`/${locale}/tourist-traps`} icon={AlertIcon} label={t("touristTraps")} desc="Overhyped places to skip" onNavigate={onNavigate} />

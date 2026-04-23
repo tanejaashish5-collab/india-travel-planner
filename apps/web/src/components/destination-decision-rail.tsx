@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useLocale } from "next-intl";
 import { cn } from "@/lib/utils";
+import { SectionLabel } from "./ui/section-label";
 
 type Verdict = "go" | "wait" | "skip";
 
@@ -90,7 +91,7 @@ export function DestinationDecisionRail({
         <div className={cn("rounded-2xl border bg-background/85 backdrop-blur-xl p-4 shadow-xl shadow-black/30", tone.ring)}>
           {/* Header — name truncated */}
           <div className="mb-3">
-            <div className="font-mono text-[10px] tracking-[0.18em] uppercase text-white/50">Decision</div>
+            <SectionLabel as="div" className="text-white/50">Decision</SectionLabel>
             <div className="mt-0.5 text-sm font-semibold text-foreground truncate" title={name}>
               {name}
             </div>
@@ -109,30 +110,30 @@ export function DestinationDecisionRail({
             {score != null && (
               <div className="flex items-baseline gap-1">
                 <span className={cn("font-mono text-2xl font-bold tabular-nums", scoreTone(score))}>{score}</span>
-                <span className="font-mono text-[10px] tracking-[0.2em] uppercase text-white/50">/5</span>
+                <span className="text-[11px] font-medium uppercase tracking-[0.08em] text-white/50">/5</span>
               </div>
             )}
           </div>
-          <div className="font-mono text-[10px] tracking-[0.18em] uppercase text-white/40 -mt-2 mb-3">
+          <SectionLabel as="div" className="text-white/40 -mt-2 mb-3">
             in {monthLabel}
-          </div>
+          </SectionLabel>
 
           {/* Mini signal row */}
           <div className="grid grid-cols-3 gap-2 mb-4">
             <div className="rounded-lg border border-white/10 bg-background/40 px-2 py-1.5 text-center">
-              <div className="text-[9px] font-mono uppercase tracking-wider text-white/45">Kids</div>
+              <div className="text-[9px] font-mono uppercase tracking-[0.08em] text-white/45">Kids</div>
               <div className={cn("mt-0.5 text-xs font-semibold", scoreTone(kidsRating))}>
                 {kidsRating != null ? `${kidsRating}/5` : "—"}
               </div>
             </div>
             <div className="rounded-lg border border-white/10 bg-background/40 px-2 py-1.5 text-center">
-              <div className="text-[9px] font-mono uppercase tracking-wider text-white/45">Solo F</div>
+              <div className="text-[9px] font-mono uppercase tracking-[0.08em] text-white/45">Solo F</div>
               <div className={cn("mt-0.5 text-xs font-semibold", scoreTone(soloFemaleScore))}>
                 {soloFemaleScore != null ? `${soloFemaleScore}/5` : "—"}
               </div>
             </div>
             <div className="rounded-lg border border-white/10 bg-background/40 px-2 py-1.5 text-center">
-              <div className="text-[9px] font-mono uppercase tracking-wider text-white/45">Crowd</div>
+              <div className="text-[9px] font-mono uppercase tracking-[0.08em] text-white/45">Crowd</div>
               <div className={cn("mt-0.5 text-xs font-semibold", crowd?.tone ?? "text-white/45")}>
                 {crowd?.text ?? "—"}
               </div>

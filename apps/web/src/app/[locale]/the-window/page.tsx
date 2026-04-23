@@ -62,7 +62,7 @@ export default async function TheWindowArchive({ params }: { params: Promise<{ l
           </div>
         ) : (
           <div className="space-y-3">
-            <h2 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground mb-4">
+            <h2 className="text-sm font-semibold uppercase tracking-[0.08em] text-muted-foreground mb-4">
               Past issues
             </h2>
             {issues.map((issue: any) => (

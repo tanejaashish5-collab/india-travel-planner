@@ -86,7 +86,7 @@ function Section({
 }) {
   return (
     <div className="rounded-lg border border-border p-4">
-      <div className="mb-2 flex items-center gap-2 text-xs font-medium uppercase tracking-wide text-muted-foreground">
+      <div className="mb-2 flex items-center gap-2 text-xs font-medium uppercase tracking-[0.08em] text-muted-foreground">
         <span>{icon}</span>
         <span>{title}</span>
       </div>
@@ -267,7 +267,7 @@ export function ConfidenceCardComponent(props: ConfidenceCardProps) {
       {/* People Who Can Help */}
       {props.people_who_help.length > 0 && (
         <div className="rounded-lg border border-border p-4">
-          <div className="mb-3 flex items-center gap-2 text-xs font-medium uppercase tracking-wide text-muted-foreground">
+          <div className="mb-3 flex items-center gap-2 text-xs font-medium uppercase tracking-[0.08em] text-muted-foreground">
             <span>🤝</span>
             <span>{t("peopleWhoHelp")}</span>
           </div>

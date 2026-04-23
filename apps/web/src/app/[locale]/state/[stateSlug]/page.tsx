@@ -159,20 +159,20 @@ export default async function StateHubPage({
               <div className="mt-4 flex flex-wrap gap-4 sm:gap-6">
                 <div>
                   <div className="text-2xl font-mono font-bold">{totalDests}</div>
-                  <div className="text-xs uppercase tracking-wider text-muted-foreground/70">Destinations</div>
+                  <div className="text-xs uppercase tracking-[0.08em] text-muted-foreground/70">Destinations</div>
                 </div>
                 <div>
                   <div className="text-2xl font-mono font-bold">{avgScore}/5</div>
-                  <div className="text-xs uppercase tracking-wider text-muted-foreground/70">Avg Score Now</div>
+                  <div className="text-xs uppercase tracking-[0.08em] text-muted-foreground/70">Avg Score Now</div>
                 </div>
                 <div>
                   <div className="text-2xl font-mono font-bold">{kidsCount}</div>
-                  <div className="text-xs uppercase tracking-wider text-muted-foreground/70">Kids Friendly</div>
+                  <div className="text-xs uppercase tracking-[0.08em] text-muted-foreground/70">Kids Friendly</div>
                 </div>
                 {subregions.length > 0 && (
                   <div>
                     <div className="text-2xl font-mono font-bold">{subregions.length}</div>
-                    <div className="text-xs uppercase tracking-wider text-muted-foreground/70">Sub-regions</div>
+                    <div className="text-xs uppercase tracking-[0.08em] text-muted-foreground/70">Sub-regions</div>
                   </div>
                 )}
               </div>
@@ -279,7 +279,7 @@ export default async function StateHubPage({
           {/* Best months */}
           {region?.best_months && region.best_months.length > 0 && (
             <section id="section-best-months" className="mb-8 scroll-mt-32 rounded-xl border border-border/50 bg-card/50 p-4 inline-block">
-              <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground/50 mr-3">Best months:</span>
+              <span className="text-xs font-bold uppercase tracking-[0.08em] text-muted-foreground/50 mr-3">Best months:</span>
               {["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"].map((m, i) => {
                 const isBest = region.best_months.includes(i + 1);
                 return (

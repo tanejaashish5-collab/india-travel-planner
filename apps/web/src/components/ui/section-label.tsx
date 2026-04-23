@@ -19,7 +19,7 @@ export function SectionLabel({
   ...rest
 }: {
   children: React.ReactNode;
-  as?: "p" | "span" | "div" | "h3" | "h4";
+  as?: "p" | "span" | "div" | "h3" | "h4" | "dt" | "dd" | "li";
   tone?: "neutral" | "muted" | "accent" | "warning" | "danger";
   className?: string;
 } & React.HTMLAttributes<HTMLElement>) {

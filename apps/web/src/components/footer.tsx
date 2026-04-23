@@ -125,7 +125,7 @@ export function Footer({ stats }: { stats?: { destinations: number; places: numb
           ].map((stat) => (
             <div key={stat.label} className="text-center">
               <div className="text-lg font-mono font-bold text-muted-foreground/30">{stat.num}</div>
-              <div className="text-xs uppercase tracking-wider text-muted-foreground/30">{stat.label}</div>
+              <div className="text-xs uppercase tracking-[0.08em] text-muted-foreground/30">{stat.label}</div>
             </div>
           ))}
         </div>

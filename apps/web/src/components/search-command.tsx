@@ -441,7 +441,7 @@ export function SearchCommand({ open, onClose }: SearchCommandProps) {
               if (!items || items.length === 0) return null;
               return (
                 <div key={cat} className="mb-2">
-                  <div className="px-3 py-1.5 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                  <div className="px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.08em] text-muted-foreground">
                     {CATEGORY_LABELS[cat]}
                   </div>
                   {items.map((item) => {

@@ -65,7 +65,7 @@ export function StickyDestinationHeader({ name, score, monthLabel, stateId }: St
           {/* Score badge */}
           {score !== null && (
             <div className={`rounded-lg px-2.5 py-1 text-center backdrop-blur-sm text-xs font-bold font-mono border ${SCORE_COLORS[score] ?? SCORE_COLORS[0]}`}>
-              {score}/5 <span className="text-[10px] font-medium uppercase tracking-wider opacity-80">{monthLabel}</span>
+              {score}/5 <span className="text-[10px] font-medium uppercase tracking-[0.08em] opacity-80">{monthLabel}</span>
             </div>
           )}
         </div>

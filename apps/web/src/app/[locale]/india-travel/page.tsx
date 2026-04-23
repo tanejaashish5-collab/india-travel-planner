@@ -106,7 +106,7 @@ export default async function IndiaTravel() {
               <div className="text-xl sm:text-2xl font-mono font-bold text-foreground">
                 {stat.num}
               </div>
-              <div className="text-xs uppercase tracking-wider text-muted-foreground">
+              <div className="text-xs uppercase tracking-[0.08em] text-muted-foreground">
                 {stat.label}
               </div>
             </div>

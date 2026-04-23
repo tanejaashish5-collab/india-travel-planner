@@ -147,7 +147,7 @@ export default async function TouristTrapsPage({
                 {/* Trap side */}
                 <div className="mb-4">
                   <div className="mb-1.5 flex items-center gap-2">
-                    <span className="rounded bg-red-950/60 px-2 py-0.5 text-xs font-bold uppercase tracking-wider text-red-400">
+                    <span className="rounded bg-red-950/60 px-2 py-0.5 text-xs font-bold uppercase tracking-[0.08em] text-red-400">
                       Skip
                     </span>
                     <h2 className="text-lg font-semibold text-foreground">
@@ -187,7 +187,7 @@ export default async function TouristTrapsPage({
                 {/* Alternative side */}
                 <div>
                   <div className="mb-1.5 flex items-center gap-2">
-                    <span className="rounded bg-emerald-950/60 px-2 py-0.5 text-xs font-bold uppercase tracking-wider text-emerald-400">
+                    <span className="rounded bg-emerald-950/60 px-2 py-0.5 text-xs font-bold uppercase tracking-[0.08em] text-emerald-400">
                       Go here instead
                     </span>
                     {altName && (

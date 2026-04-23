@@ -309,7 +309,7 @@ export function BlogArticle({
       {destinations.length > 0 && (
         <ScrollReveal delay={0.1}>
           <div className="mb-8 rounded-xl border border-border bg-card/60 backdrop-blur-sm p-5">
-            <h2 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-4">
+            <h2 className="text-xs font-semibold text-muted-foreground uppercase tracking-[0.08em] mb-4">
               Destinations in this article
             </h2>
             <div className="flex flex-wrap gap-2">

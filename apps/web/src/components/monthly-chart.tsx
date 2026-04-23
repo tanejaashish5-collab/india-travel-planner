@@ -146,7 +146,7 @@ export function MonthlyChart({
                 </div>
               </div>
               {selectedMonth === currentMonth && (
-                <span className="text-xs uppercase tracking-wide text-primary font-medium bg-primary/10 px-2 py-0.5 rounded-full">
+                <span className="text-xs uppercase tracking-[0.08em] text-primary font-medium bg-primary/10 px-2 py-0.5 rounded-full">
                   This month
                 </span>
               )}

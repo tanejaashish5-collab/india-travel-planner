@@ -135,11 +135,11 @@ export default async function RegionPage({
               <div className="mt-4 flex flex-wrap gap-4 sm:gap-6">
                 <div>
                   <div className="text-2xl font-mono font-bold">{states.length}</div>
-                  <div className="text-xs uppercase tracking-wider text-muted-foreground/70">States</div>
+                  <div className="text-xs uppercase tracking-[0.08em] text-muted-foreground/70">States</div>
                 </div>
                 <div>
                   <div className="text-2xl font-mono font-bold">{totalDests}</div>
-                  <div className="text-xs uppercase tracking-wider text-muted-foreground/70">Destinations</div>
+                  <div className="text-xs uppercase tracking-[0.08em] text-muted-foreground/70">Destinations</div>
                 </div>
               </div>
             </div>

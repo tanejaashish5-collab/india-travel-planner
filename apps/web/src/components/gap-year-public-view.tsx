@@ -24,7 +24,7 @@ export function GapYearPublicView({ plan, locale }: Props) {
   return (
     <div className="mx-auto max-w-3xl px-4 py-10 space-y-6">
       <header className="rounded-xl border border-border bg-gradient-to-br from-primary/10 to-muted/40 p-6">
-        <div className="text-xs uppercase tracking-wider text-muted-foreground">A NakshIQ Gap Year plan</div>
+        <div className="text-xs uppercase tracking-[0.08em] text-muted-foreground">A NakshIQ Gap Year plan</div>
         <h1 className="text-2xl md:text-3xl font-semibold mt-1 text-foreground">{plan.title}</h1>
         <div className="mt-4 grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
           <Stat label="Duration" value={`${plan.input.durationMonths} months`} />
@@ -46,7 +46,7 @@ export function GapYearPublicView({ plan, locale }: Props) {
       {plan.months.map((m, idx) => (
         <section key={idx} className="rounded-xl border border-border bg-card overflow-hidden">
           <header className="px-5 py-4 border-b border-border bg-muted/30">
-            <div className="text-xs uppercase tracking-wider text-muted-foreground">Month {idx + 1}</div>
+            <div className="text-xs uppercase tracking-[0.08em] text-muted-foreground">Month {idx + 1}</div>
             <div className="font-semibold text-lg text-foreground">{m.monthName}</div>
             {m.region && m.region !== "any" && (
               <div className="text-xs text-muted-foreground capitalize mt-0.5">{m.region} India</div>
@@ -106,7 +106,7 @@ export function GapYearPublicView({ plan, locale }: Props) {
 function Stat({ label, value }: { label: string; value: string }) {
   return (
     <div>
-      <div className="text-xs uppercase tracking-wider text-muted-foreground">{label}</div>
+      <div className="text-xs uppercase tracking-[0.08em] text-muted-foreground">{label}</div>
       <div className="font-semibold mt-0.5 text-foreground">{value}</div>
     </div>
   );

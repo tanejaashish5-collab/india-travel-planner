@@ -307,7 +307,7 @@ function CircuitLayout({
                         <h3 className="font-semibold text-base sm:text-lg leading-tight break-words">
                           {dest?.name ?? item.destination_id}
                         </h3>
-                        <span className="shrink-0 font-mono text-[10px] sm:text-xs tracking-wider uppercase text-muted-foreground">
+                        <span className="shrink-0 font-mono text-[10px] sm:text-xs tracking-[0.08em] uppercase text-muted-foreground">
                           {days} {days === 1 ? "day" : "days"}
                         </span>
                       </div>

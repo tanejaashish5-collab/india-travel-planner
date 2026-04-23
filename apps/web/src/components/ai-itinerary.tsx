@@ -183,7 +183,7 @@ export function AIItinerary({
                     {/* Activities */}
                     {day.activities?.length > 0 && (
                       <div>
-                        <h4 className="text-xs font-medium uppercase tracking-wider text-muted-foreground mb-1.5">Activities</h4>
+                        <h4 className="text-xs font-medium uppercase tracking-[0.08em] text-muted-foreground mb-1.5">Activities</h4>
                         <ul className="space-y-1">
                           {day.activities.map((a, i) => (
                             <li key={i} className="flex items-start gap-2 text-sm">

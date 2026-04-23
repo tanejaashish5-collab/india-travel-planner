@@ -100,7 +100,7 @@ export function DestinationSectionNav({
         aria-label={t("inThisGuide")}
       >
         <div className="rounded-xl border border-border bg-background/95 backdrop-blur p-2 shadow-sm">
-          <div className="px-3 py-2 text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
+          <div className="px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.08em] text-muted-foreground">
             {t("inThisGuide")}
           </div>
           <div className="flex flex-col gap-1">

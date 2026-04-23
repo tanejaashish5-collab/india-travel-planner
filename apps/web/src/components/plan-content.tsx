@@ -483,7 +483,7 @@ export function PlanContent({ destinations, states = [] }: PlanContentProps) {
             {/* Suggested Itineraries */}
             {itineraries.length > 0 && (
               <div className="mb-6 space-y-3">
-                <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">Suggested Itineraries</h3>
+                <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-[0.08em]">Suggested Itineraries</h3>
                 <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
                   {itineraries.map((itin, i) => (
                     <div key={i} className="rounded-xl border border-primary/30 bg-primary/5 p-4">

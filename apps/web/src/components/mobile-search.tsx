@@ -116,7 +116,7 @@ export function MobileSearch({ open, onClose }: { open: boolean; onClose: () => 
                 {/* Recent searches */}
                 {recents.length > 0 && (
                   <div className="mb-6">
-                    <h3 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">Recent</h3>
+                    <h3 className="text-xs font-semibold uppercase tracking-[0.08em] text-muted-foreground mb-3">Recent</h3>
                     <div className="flex flex-col gap-1">
                       {recents.map((r, i) => (
                         <button key={i} onClick={() => setQuery(r)} className="flex items-center gap-3 py-2.5 text-sm text-foreground text-left">
@@ -129,7 +129,7 @@ export function MobileSearch({ open, onClose }: { open: boolean; onClose: () => 
                 )}
 
                 {/* Category chips */}
-                <h3 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">Browse by category</h3>
+                <h3 className="text-xs font-semibold uppercase tracking-[0.08em] text-muted-foreground mb-3">Browse by category</h3>
                 <div className="flex flex-wrap gap-2">
                   {CATEGORIES.map((cat) => (
                     <button
@@ -144,7 +144,7 @@ export function MobileSearch({ open, onClose }: { open: boolean; onClose: () => 
                 </div>
 
                 {/* Quick links */}
-                <h3 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3 mt-6">Quick access</h3>
+                <h3 className="text-xs font-semibold uppercase tracking-[0.08em] text-muted-foreground mb-3 mt-6">Quick access</h3>
                 <div className="grid grid-cols-2 gap-2">
                   {[
                     { label: "Where to Go", href: `/${locale}/where-to-go`, icon: "📅" },
@@ -178,7 +178,7 @@ export function MobileSearch({ open, onClose }: { open: boolean; onClose: () => 
 
                 {results.map((group) => (
                   <div key={group.type} className="mb-5">
-                    <h3 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2">{group.type}</h3>
+                    <h3 className="text-xs font-semibold uppercase tracking-[0.08em] text-muted-foreground mb-2">{group.type}</h3>
                     <div className="flex flex-col">
                       {group.items.map((item: any) => (
                         <button

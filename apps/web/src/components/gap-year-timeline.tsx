@@ -144,7 +144,7 @@ export function GapYearTimeline({ plan, locale, onPlanChange }: Props) {
 function Stat({ label, value }: { label: string; value: string }) {
   return (
     <div>
-      <div className="text-xs uppercase tracking-wider text-muted-foreground">{label}</div>
+      <div className="text-xs uppercase tracking-[0.08em] text-muted-foreground">{label}</div>
       <div className="font-semibold mt-0.5 text-foreground">{value}</div>
     </div>
   );
@@ -174,7 +174,7 @@ function MonthCard({
     <section className="rounded-xl border border-border bg-card overflow-hidden">
       <header className="flex items-center justify-between px-5 py-4 border-b border-border bg-muted/30">
         <div>
-          <div className="text-xs uppercase tracking-wider text-muted-foreground">
+          <div className="text-xs uppercase tracking-[0.08em] text-muted-foreground">
             Month {monthNumber}
           </div>
           <div className="font-semibold text-lg text-foreground">{month.monthName}</div>
@@ -263,7 +263,7 @@ function DestCard({
               <Link href={detailHref} className="font-semibold hover:underline block truncate text-foreground">
                 {pick.name}
                 {pick.isIconic && (
-                  <span className="ml-2 text-[10px] uppercase tracking-wider text-primary">iconic</span>
+                  <span className="ml-2 text-[10px] uppercase tracking-[0.08em] text-primary">iconic</span>
                 )}
               </Link>
               <div className="text-xs text-muted-foreground truncate">{pick.state} · {pick.days} days</div>
@@ -289,7 +289,7 @@ function DestCard({
       {/* Alt-pair "also try" card */}
       {pick.alsoTry && (
         <div className="mt-3 rounded-md border border-dashed border-border/60 bg-muted/20 p-3">
-          <div className="text-[10px] uppercase tracking-wider text-muted-foreground mb-1">Also try</div>
+          <div className="text-[10px] uppercase tracking-[0.08em] text-muted-foreground mb-1">Also try</div>
           <div className="flex items-start gap-3">
             <Link
               href={`/${locale}/destination/${pick.alsoTry.altId}`}

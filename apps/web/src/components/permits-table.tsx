@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { SectionLabel } from "./ui/section-label";
 
 type Row = {
   state: string;
@@ -88,28 +89,28 @@ export default function PermitsTable() {
             <h2 className="font-serif italic font-medium text-2xl sm:text-3xl text-foreground" style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}>
               {row.state}
             </h2>
-            <Link href={`/en/state/${row.stateId}`} className="font-mono text-[10px] tracking-[0.22em] uppercase text-[#E55642] hover:underline">
+            <Link href={`/en/state/${row.stateId}`} className="text-[11px] font-medium uppercase tracking-[0.08em] text-[#E55642] hover:underline">
               Destinations in {row.state} →
             </Link>
           </div>
-          <div className="font-mono text-[10px] tracking-[0.22em] uppercase text-muted-foreground/80 mb-4">
+          <div className="text-[11px] font-medium uppercase tracking-[0.08em] text-muted-foreground/80 mb-4">
             {row.permitType}
           </div>
           <dl className="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-6 text-sm">
             <div>
-              <dt className="font-mono text-[10px] tracking-[0.22em] uppercase text-muted-foreground/80 mb-1">For Indian citizens</dt>
+              <dt className="text-[11px] font-medium uppercase tracking-[0.08em] text-muted-foreground/80 mb-1">For Indian citizens</dt>
               <dd className="text-foreground leading-relaxed">{row.indianProcess}</dd>
             </div>
             <div>
-              <dt className="font-mono text-[10px] tracking-[0.22em] uppercase text-muted-foreground/80 mb-1">For foreign nationals</dt>
+              <dt className="text-[11px] font-medium uppercase tracking-[0.08em] text-muted-foreground/80 mb-1">For foreign nationals</dt>
               <dd className="text-foreground leading-relaxed">{row.foreignerProcess}</dd>
             </div>
             <div>
-              <dt className="font-mono text-[10px] tracking-[0.22em] uppercase text-muted-foreground/80 mb-1">Validity</dt>
+              <dt className="text-[11px] font-medium uppercase tracking-[0.08em] text-muted-foreground/80 mb-1">Validity</dt>
               <dd className="text-foreground">{row.validity}</dd>
             </div>
             <div>
-              <dt className="font-mono text-[10px] tracking-[0.22em] uppercase text-muted-foreground/80 mb-1">Official source</dt>
+              <dt className="text-[11px] font-medium uppercase tracking-[0.08em] text-muted-foreground/80 mb-1">Official source</dt>
               <dd>
                 <a
                   href={row.officialUrl}
@@ -123,7 +124,7 @@ export default function PermitsTable() {
             </div>
             {row.notes && (
               <div className="sm:col-span-2">
-                <dt className="font-mono text-[10px] tracking-[0.22em] uppercase text-muted-foreground/80 mb-1">Note</dt>
+                <dt className="text-[11px] font-medium uppercase tracking-[0.08em] text-muted-foreground/80 mb-1">Note</dt>
                 <dd className="text-foreground/80 leading-relaxed">{row.notes}</dd>
               </div>
             )}
