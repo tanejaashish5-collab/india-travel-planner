@@ -19,7 +19,7 @@ INSERT INTO articles (
   '/images/destinations/leh.jpg',
   ARRAY['primer', 'ladakh', 'leh', 'june', 'high-altitude', 'international'],
   ARRAY['leh'],
-  '22 Things to Know Before Leh in June (2026)',
+  '22 Things to Know Before Leh in June',
   'Leh in June — altitude risks, road conditions, permits, hotel math, and the 22 specifics every first-timer underestimates. Data-backed, no sponsored spin.',
   'June is the month Leh opens up. It''s also the month the most people land with zero acclimatisation and lose the first two days to altitude. Here are the twenty-two things that matter.',
   '# 22 things to know before Leh in June
@@ -116,7 +116,7 @@ INSERT INTO articles (
   '/images/destinations/rishikesh.jpg',
   ARRAY['primer', 'uttarakhand', 'rishikesh', 'april', 'yoga', 'rafting'],
   ARRAY['rishikesh'],
-  '15 Things to Know Before Rishikesh in April (2026)',
+  '15 Things to Know Before Rishikesh in April',
   'Rishikesh in April — rafting season, yoga festival aftermath, ashram rules, and the fifteen specifics that make the difference between a good visit and a frustrating one.',
   'April is the sweet spot between the International Yoga Festival crowds (March) and the pre-monsoon heat (May). Here''s what the guidebooks don''t tell you.',
   '# 15 things to know before Rishikesh in April
@@ -189,8 +189,8 @@ INSERT INTO articles (
   '/images/destinations/hampi.jpg',
   ARRAY['primer', 'karnataka', 'hampi', 'december', 'heritage', 'ruins'],
   ARRAY['hampi'],
-  '18 Things to Know Before Hampi in December (2026)',
-  'Hampi in December — weather, two-bank logistics, ruin-walking strategy, and the eighteen specifics the guidebooks skip. Updated 2026.',
+  '18 Things to Know Before Hampi in December',
+  'Hampi in December — weather, two-bank logistics, ruin-walking strategy, and the eighteen specifics the guidebooks skip.',
   'Hampi in December is when the heat finally lets you walk the ruins without wilting. Eighteen specifics that save you a day and a sunburn.',
   '# 18 things to know before Hampi in December
 
@@ -278,7 +278,7 @@ INSERT INTO articles (
   '/images/destinations/jaisalmer.jpg',
   ARRAY['primer', 'rajasthan', 'jaisalmer', 'november', 'desert', 'fort'],
   ARRAY['jaisalmer'],
-  '12 Things to Know Before Jaisalmer in November (2026)',
+  '12 Things to Know Before Jaisalmer in November',
   'Jaisalmer in November — camel safari season opens, fort logistics, desert-camp reality, and the twelve specifics that separate a great trip from a tourist-trap one.',
   'November is Jaisalmer''s reopening month — the desert becomes walkable, the fort no longer cooks at noon. Twelve things first-timers underestimate.',
   '# 12 things to know before Jaisalmer in November
@@ -345,7 +345,7 @@ INSERT INTO articles (
   '/images/destinations/shillong.jpg',
   ARRAY['primer', 'meghalaya', 'july', 'monsoon', 'northeast', 'waterfalls'],
   ARRAY['shillong', 'cherrapunji'],
-  '20 Things to Know Before Meghalaya in July Monsoon (2026)',
+  '20 Things to Know Before Meghalaya in July Monsoon',
   'Meghalaya in July — the wettest month, waterfalls at peak, living-root-bridge access, landslide risk, and twenty specifics for monsoon travel in the abode of clouds.',
   'July in Meghalaya is 800mm of rain, closed-shut skies, and waterfalls at volumes you will not see anywhere else in India. Travel it right or don''t travel it.',
   '# 20 things to know before Meghalaya in July (monsoon)
@@ -440,7 +440,7 @@ INSERT INTO articles (
   '/images/destinations/goa.jpg',
   ARRAY['primer', 'goa', 'december', 'beaches', 'new-year', 'nightlife'],
   ARRAY['palolem', 'anjuna', 'calangute-baga'],
-  '14 Things to Know Before Goa in December (2026)',
+  '14 Things to Know Before Goa in December',
   'Goa in December — weather, pricing, airport logistics, beach-by-beach guide, and the fourteen specifics that save you from paying 3× for everything.',
   'December is when Goa fills up. Hotel prices triple, shacks run out of seating, New Year becomes its own logistical project. Fourteen things to know before you book.',
   '# 14 things to know before Goa in December

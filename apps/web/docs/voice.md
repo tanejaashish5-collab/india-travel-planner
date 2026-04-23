@@ -93,6 +93,22 @@ Every new user-facing string wraps in `next-intl` i18n keys with a
 Hindi translation. Literal translations are fine (`"Known for"` →
 `"के लिए प्रसिद्ध"`). No raw English strings in Hindi locale.
 
+## Years in copy
+
+**No years in blog titles, URL slugs, or headlines.** "Things to know before
+Leh in June" is timeless; "Things to know before Leh in June (2026)" ages
+into dead weight by next April.
+
+Article bodies may reference a specific year only when the claim is
+genuinely year-bound — a one-off event (a specific festival date, a
+once-in-12-years bloom, a scheduled road project). Never for weather,
+seasons, permit regimes, or recurring cultural calendars. "June is the
+best Leh month" is true every year; stamping it "(2026)" makes it look
+stale on the 1st of the next year.
+
+Same for page headers: "Our data is verified as of April 2026" → prefer
+live signals (computed from `content_reviewed_at`) over hardcoded months.
+
 ## When in doubt
 
 Read it aloud. If it sounds like a dashboard, rewrite it. If it sounds

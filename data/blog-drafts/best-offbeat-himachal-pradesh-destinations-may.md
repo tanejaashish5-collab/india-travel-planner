@@ -1,12 +1,12 @@
 ---
-slug: best-offbeat-himachal-pradesh-destinations-may-2026
-title: "7 offbeat himachal pradesh destinations scored 5/5 for May 2026"
+slug: best-offbeat-himachal-pradesh-destinations-may
+title: "7 offbeat Himachal Pradesh destinations scored 5/5 for May"
 category: data-story
 generated_at: 2026-04-20T12:46:28.781Z
 review_status: draft
 ---
 
-# 7 Offbeat Himachal Pradesh Destinations Scored 5/5 for May 2026
+# 7 Offbeat Himachal Pradesh Destinations Scored 5/5 for May
 
 ## Why This List Exists
 
@@ -116,4 +116,4 @@ Late spring at GHNP means all trails open, wildflowers carpeting the high meadow
 
 ## How We Scored These
 
-NakshIQ's monthly destination score runs four variables simultaneously: weather window (temperature range and precipitation risk), trail and road access (pass status, landslide exposure), infrastructure readiness (accommodation availability, permit systems), and crowd load relative to capacity. A 5/5 means all four variables land in the green for the same month. Every destination above clears that threshold for May 2026 — none of them are coasting on reputation alone.
+NakshIQ's monthly destination score runs four variables simultaneously: weather window (temperature range and precipitation risk), trail and road access (pass status, landslide exposure), infrastructure readiness (accommodation availability, permit systems), and crowd load relative to capacity. A 5/5 means all four variables land in the green for the same month. Every destination above clears that threshold for May — none of them are coasting on reputation alone.
