@@ -22,7 +22,7 @@
     "PdMu0": "2026-04-23",
     "m8EAd": "2026-04-23",
     "m8EAd_reel": "2026-04-22",
-    "PdMu0_reel": "2026-04-22",
+    "PdMu0_reel": "2026-04-23",
     "4QL0i_reel": "2026-04-19",
     "m8EAd_canva": "2026-04-20",
     "PdMu0_canva": "2026-04-20",
@@ -411,7 +411,8 @@
         "2026-04-22"
       ],
       "destination_reveal": [
-        "2026-04-21"
+        "2026-04-21",
+        "2026-04-23"
       ]
     },
     "reel_seasonal_dests": {
@@ -428,6 +429,9 @@
     "reel_reveal_dests": {
       "yuksom": [
         "2026-04-21"
+      ],
+      "bomdila": [
+        "2026-04-23"
       ]
     },
     "canva_categories": {
