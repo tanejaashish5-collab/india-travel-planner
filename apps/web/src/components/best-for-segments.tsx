@@ -1,3 +1,5 @@
+import { SectionLabel } from "@/components/ui/section-label";
+
 type Segment = { segment: string; reason: string };
 
 export function BestForSegments({ data }: { data: Segment[] | null | undefined }) {
@@ -12,9 +14,7 @@ export function BestForSegments({ data }: { data: Segment[] | null | undefined }
       <div className="grid gap-3 sm:grid-cols-2">
         {data.map((s, i) => (
           <div key={i} className="rounded-xl border border-border bg-background/40 p-4">
-            <div className="font-mono text-[10px] tracking-[0.22em] uppercase text-muted-foreground mb-1.5">
-              Best for
-            </div>
+            <SectionLabel className="mb-1.5">Best for</SectionLabel>
             <div className="text-sm font-semibold text-foreground mb-1.5 capitalize">
               {s.segment}
             </div>

@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import { SectionLabel } from "@/components/ui/section-label";
 
 /**
  * Elevation context chart — renders an altitude stripe with the destination
@@ -101,7 +102,7 @@ export function ElevationChart({
 
         {/* AMS indicator row */}
         <div className={cn("mt-5 rounded-lg border bg-background/40 px-3 py-2 text-xs", amsTone)}>
-          <span className="font-mono text-[10px] tracking-[0.22em] uppercase mr-2 opacity-60">AMS risk</span>
+          <SectionLabel as="span" tone="muted" className="mr-2">AMS risk</SectionLabel>
           {elevationM >= 3500 && "High — acclimatize at least 2 nights before going higher. Diamox prophylaxis recommended."}
           {elevationM >= 2500 && elevationM < 3500 && "Moderate — sleep one night here before ascending further."}
           {elevationM >= 2100 && elevationM < 2500 && "Low but present — some travelers feel mild effects. Hydrate, go easy on day 1."}

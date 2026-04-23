@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { cn } from "@/lib/utils";
+import { SectionLabel } from "@/components/ui/section-label";
 
 type Block = { time: string; text: string };
 type OneDay = { title?: string; blocks: Block[]; bad_weather_plan?: string };
@@ -29,10 +30,10 @@ function TimeBlock({ block }: { block: Block }) {
   const key = block.time.toLowerCase().split(/\s+/)[0];
   return (
     <div className="flex gap-3 py-2">
-      <div className="w-28 shrink-0 font-mono text-[10px] tracking-[0.18em] uppercase text-muted-foreground pt-1">
+      <SectionLabel as="div" className="w-28 shrink-0 pt-1">
         <span className="mr-1.5" aria-hidden>{TIME_ICON[key] ?? "•"}</span>
         {block.time}
-      </div>
+      </SectionLabel>
       <p className="flex-1 text-sm leading-relaxed text-foreground/90">{block.text}</p>
     </div>
   );
@@ -42,7 +43,7 @@ function DayCard({ day }: { day: DayPlan }) {
   return (
     <div className="rounded-xl border border-border bg-background/40 p-4">
       <div className="flex items-baseline gap-2 mb-2">
-        <span className="font-mono text-[10px] tracking-[0.22em] uppercase text-muted-foreground">Day {day.day}</span>
+        <SectionLabel as="span">Day {day.day}</SectionLabel>
         {day.headline && <span className="text-sm font-semibold">{day.headline}</span>}
       </div>
       <div className="divide-y divide-border/40">
@@ -104,7 +105,7 @@ export function MicroItinerarySection({ data }: { data: MicroItineraries | null 
           </div>
           {data.one_day.bad_weather_plan && (
             <div className="mt-4 rounded-lg border border-yellow-500/25 bg-yellow-500/5 p-3">
-              <div className="font-mono text-[10px] tracking-[0.18em] uppercase text-yellow-400/80 mb-1">If weather turns</div>
+              <SectionLabel tone="warning" className="mb-1">If weather turns</SectionLabel>
               <p className="text-sm leading-relaxed text-yellow-200/85">{data.one_day.bad_weather_plan}</p>
             </div>
           )}

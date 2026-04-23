@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import { SectionLabel } from "@/components/ui/section-label";
 
 export type Scenario = {
   id: string;
@@ -75,7 +76,7 @@ export function ScenarioStrip({
             >
               <div className="flex items-center gap-2 mb-3">
                 <span aria-hidden className="text-base">{CATEGORY_ICON[s.category] ?? "•"}</span>
-                <span className={cn("font-mono text-[10px] tracking-[0.22em] uppercase rounded-full px-2 py-0.5", tone.badge)}>
+                <span className={cn("rounded-full px-2 py-0.5 text-[10px] font-medium uppercase tracking-[0.08em]", tone.badge)}>
                   {s.severity}
                 </span>
                 <h3 className="text-base font-semibold flex-1">{s.title}</h3>
@@ -85,21 +86,17 @@ export function ScenarioStrip({
                   label without breathing room. */}
               <div className="space-y-3">
                 <div>
-                  <div className="font-mono text-[10px] tracking-[0.24em] uppercase text-muted-foreground mb-1">
-                    If
-                  </div>
+                  <SectionLabel className="mb-1">If</SectionLabel>
                   <p className="text-sm leading-relaxed text-foreground/80">{s.if_clause}</p>
                 </div>
                 <div>
-                  <div className="font-mono text-[10px] tracking-[0.24em] uppercase text-muted-foreground mb-1">
-                    Then
-                  </div>
+                  <SectionLabel className="mb-1">Then</SectionLabel>
                   <p className={cn("text-sm leading-relaxed font-medium", tone.text)}>{s.then_clause}</p>
                 </div>
               </div>
-              <div className="mt-4 font-mono text-[10px] uppercase tracking-[0.22em] text-muted-foreground/70">
-                Full protocol →
-              </div>
+              <SectionLabel tone="muted" className="mt-4">
+                Full protocol &rarr;
+              </SectionLabel>
             </LocaleLink>
           );
         })}
