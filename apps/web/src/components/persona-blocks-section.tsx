@@ -7,13 +7,18 @@ type PersonaKey = "family" | "biker" | "photographer" | "nomad" | "solo_female" 
 
 type PersonaBlocks = Partial<Record<PersonaKey, string>>;
 
-const META: Record<PersonaKey, { icon: string; label: string; tone: string }> = {
-  family:        { icon: "👨‍👩‍👧", label: "Family with kids",     tone: "border-emerald-500/30 bg-emerald-500/5" },
-  biker:         { icon: "🏍️",     label: "Biker / road trip",   tone: "border-orange-500/30 bg-orange-500/5" },
-  photographer:  { icon: "📷",     label: "Photographer",        tone: "border-purple-500/30 bg-purple-500/5" },
-  nomad:         { icon: "💻",     label: "Digital nomad",       tone: "border-sky-500/30 bg-sky-500/5" },
-  solo_female:   { icon: "♀",      label: "Solo-female traveler", tone: "border-pink-500/30 bg-pink-500/5" },
-  elderly:       { icon: "🌿",     label: "Elderly parents",     tone: "border-amber-500/30 bg-amber-500/5" },
+// Kept `♀` on solo-female — it's a typographic symbol (Unicode U+2640)
+// not a face emoji, and the rest of the app (card chips, explore filter)
+// already uses it as a consistent identity marker. Face/object emojis
+// on the other persona tabs were removed as part of the D4 emoji
+// restraint pass — they competed with the tab label text.
+const META: Record<PersonaKey, { glyph: string | null; label: string; tone: string }> = {
+  family:        { glyph: null, label: "Family with kids",      tone: "border-emerald-500/30 bg-emerald-500/5" },
+  biker:         { glyph: null, label: "Biker / road trip",     tone: "border-orange-500/30 bg-orange-500/5" },
+  photographer:  { glyph: null, label: "Photographer",          tone: "border-purple-500/30 bg-purple-500/5" },
+  nomad:         { glyph: null, label: "Digital nomad",         tone: "border-sky-500/30 bg-sky-500/5" },
+  solo_female:   { glyph: "♀",  label: "Solo-female traveler",  tone: "border-pink-500/30 bg-pink-500/5" },
+  elderly:       { glyph: null, label: "Elderly parents",       tone: "border-amber-500/30 bg-amber-500/5" },
 };
 
 export function PersonaBlocksSection({ data }: { data: PersonaBlocks | null | undefined }) {
@@ -48,7 +53,7 @@ export function PersonaBlocksSection({ data }: { data: PersonaBlocks | null | un
               )}
               aria-pressed={isActive}
             >
-              <span aria-hidden>{meta.icon}</span>
+              {meta.glyph && <span aria-hidden>{meta.glyph}</span>}
               {meta.label}
             </button>
           );

@@ -10,14 +10,14 @@ type Logistics = {
   internet_backup?: string;
 };
 
-const ROWS: Array<{ key: keyof Logistics; icon: string; label: string }> = [
-  { key: "taxi",               icon: "🚕", label: "Taxis & local transport" },
-  { key: "checkin_norms",      icon: "🛎️", label: "Check-in / check-out norms" },
-  { key: "cash_vs_upi",        icon: "💳", label: "Cash vs UPI" },
-  { key: "atm_reliability",    icon: "🏧", label: "ATMs (real-world reliability)" },
-  { key: "shop_hours",         icon: "🛍️", label: "Shop & restaurant hours" },
-  { key: "language_realities", icon: "🗣️", label: "Language realities" },
-  { key: "internet_backup",    icon: "📶", label: "Internet backup plan" },
+const ROWS: Array<{ key: keyof Logistics; label: string }> = [
+  { key: "taxi",               label: "Taxis & local transport" },
+  { key: "checkin_norms",      label: "Check-in / check-out norms" },
+  { key: "cash_vs_upi",        label: "Cash vs UPI" },
+  { key: "atm_reliability",    label: "ATMs (real-world reliability)" },
+  { key: "shop_hours",         label: "Shop & restaurant hours" },
+  { key: "language_realities", label: "Language realities" },
+  { key: "internet_backup",    label: "Internet backup plan" },
 ];
 
 export function LogisticsChecklist({ data, className }: { data: Logistics | null | undefined; className?: string }) {
@@ -35,12 +35,9 @@ export function LogisticsChecklist({ data, className }: { data: Logistics | null
       </div>
 
       <div className="grid gap-3 sm:grid-cols-2">
-        {filled.map(({ key, icon, label }) => (
+        {filled.map(({ key, label }) => (
           <div key={key} className="rounded-xl border border-border bg-background/40 p-4">
-            <div className="flex items-center gap-2 mb-2">
-              <span aria-hidden className="text-lg">{icon}</span>
-              <h3 className="text-sm font-semibold">{label}</h3>
-            </div>
+            <h3 className="mb-2 text-sm font-semibold">{label}</h3>
             <p className="text-sm leading-relaxed text-muted-foreground">{data[key]}</p>
           </div>
         ))}

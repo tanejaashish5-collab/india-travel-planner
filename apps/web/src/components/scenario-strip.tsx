@@ -17,16 +17,6 @@ const SEVERITY_TONE: Record<Scenario["severity"], { border: string; text: string
   critical: { border: "border-red-500/60",     text: "text-red-200",     badge: "bg-red-500/15 text-red-300" },
 };
 
-const CATEGORY_ICON: Record<string, string> = {
-  pass_closure: "⛰",
-  health:       "🩺",
-  network:      "📡",
-  logistics:    "🗝",
-  safety:       "🚨",
-  money:        "💸",
-  weather:      "🌧",
-};
-
 function LocaleLink({ to, children, className }: { to: string; children: React.ReactNode; className?: string }) {
   // eslint-disable-next-line @next/next/no-html-link-for-pages — matches destination-detail pattern
   return <a href={to} className={className}>{children}</a>;
@@ -75,7 +65,6 @@ export function ScenarioStrip({
               )}
             >
               <div className="flex items-center gap-2 mb-3">
-                <span aria-hidden className="text-base">{CATEGORY_ICON[s.category] ?? "•"}</span>
                 <span className={cn("rounded-full px-2 py-0.5 text-[10px] font-medium uppercase tracking-[0.08em]", tone.badge)}>
                   {s.severity}
                 </span>

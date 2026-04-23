@@ -22,7 +22,8 @@
 // v21: 2026-04-23 destination/month restructure: trim Why-scores to weather+festivals, remove PracticalDetails + HowToDoIt footer (were dup of hero chips + destination page), add FullGuideLink CTA instead.
 // v22: 2026-04-23 CollapsibleDetails trigger redesigned (full-width bar + chevron + hint copy + stronger pulse) — tiny pill was missed on first scroll. BookingHandoff moved to page tail just above Nearby Places (was mid-page inside People section; no paid placement so editorial flow comes first).
 // v23: 2026-04-23 CollapsibleDetails now consistent green across all variants (dropped warning/yellow — too bright on dark mode + noisy mix). Pulse ring reduced from 8px/32% to 4px/22% now that the bar is full-width.
-const CACHE_VERSION = "nakshiq-v23";
+// v24: 2026-04-23 Typography polish sprint (5 commits): TYPE tokens + h1/h2 weight cap → SectionLabel component + 44-file overline migration → editorial copy rewrite → emoji restraint in structural positions (scenario-strip/logistics/personas). Premium shift: 85+ mono-uppercase SaaS overlines now one softer sans pattern.
+const CACHE_VERSION = "nakshiq-v24";
 const STATIC_CACHE = `${CACHE_VERSION}-static`;
 const IMAGE_CACHE = `${CACHE_VERSION}-images`;
 const DATA_CACHE = `${CACHE_VERSION}-data`;
