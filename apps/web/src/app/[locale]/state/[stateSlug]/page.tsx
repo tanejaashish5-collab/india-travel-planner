@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import { getTranslations } from "next-intl/server";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { StateDestinationGrid } from "@/components/state-destination-grid";
@@ -65,6 +66,8 @@ export default async function StateHubPage({
   const { stateSlug, locale } = await params;
   const stateName = STATE_MAP[stateSlug];
   if (!stateName) notFound();
+
+  const t = await getTranslations({ locale, namespace: "state" });
 
   const data = await getData(stateSlug);
   if (!data) notFound();
@@ -154,28 +157,19 @@ export default async function StateHubPage({
             <div className="mx-auto max-w-7xl">
               <h1 className="text-3xl sm:text-4xl lg:text-6xl lg:tracking-tight font-semibold">{stateName}</h1>
               {state.capital && (
-                <p className="mt-1 text-sm text-muted-foreground">Capital: {state.capital}</p>
+                <p className="mt-1 text-sm text-muted-foreground">
+                  {t("capital")}: {state.capital}
+                </p>
               )}
-              <div className="mt-4 flex flex-wrap gap-4 sm:gap-6">
-                <div>
-                  <div className="text-2xl font-mono font-bold">{totalDests}</div>
-                  <div className="text-xs uppercase tracking-[0.08em] text-muted-foreground/70">Destinations</div>
-                </div>
-                <div>
-                  <div className="text-2xl font-mono font-bold">{avgScore}/5</div>
-                  <div className="text-xs uppercase tracking-[0.08em] text-muted-foreground/70">Avg Score Now</div>
-                </div>
-                <div>
-                  <div className="text-2xl font-mono font-bold">{kidsCount}</div>
-                  <div className="text-xs uppercase tracking-[0.08em] text-muted-foreground/70">Kids Friendly</div>
-                </div>
-                {subregions.length > 0 && (
-                  <div>
-                    <div className="text-2xl font-mono font-bold">{subregions.length}</div>
-                    <div className="text-xs uppercase tracking-[0.08em] text-muted-foreground/70">Sub-regions</div>
-                  </div>
-                )}
-              </div>
+              {/* Hero summary as prose, not a dashboard stat-row. Same
+                  numbers, less chip-soup. `avgScore` omitted — too much
+                  precision at this glance; the reader can see per-dest
+                  scores below. */}
+              <p className="mt-4 text-sm sm:text-base text-foreground/85 tabular-nums">
+                {subregions.length > 0
+                  ? t("heroProse", { count: totalDests, kids: kidsCount, regions: subregions.length })
+                  : t("heroProseNoRegions", { count: totalDests, kids: kidsCount })}
+              </p>
             </div>
           </div>
         </div>
@@ -184,11 +178,11 @@ export default async function StateHubPage({
           {(() => {
             const sections = [
               { id: "overview", label: "Overview", show: !!(region?.hero_tagline || region?.description || (region?.famous_for && region.famous_for.length > 0)) },
-              { id: "must-visit", label: "Must Visit", show: !!(region?.must_visit && (region.must_visit as any[]).length > 0) },
-              { id: "regions", label: "Regions", show: subregions.length > 0 },
-              { id: "best-months", label: "Best Months", show: !!(region?.best_months && region.best_months.length > 0) },
+              { id: "must-visit", label: t("dontMiss"), show: !!(region?.must_visit && (region.must_visit as any[]).length > 0) },
+              { id: "regions", label: t("byRegion"), show: subregions.length > 0 },
+              { id: "best-months", label: t("bestTimeToVisit"), show: !!(region?.best_months && region.best_months.length > 0) },
               { id: "destinations", label: `All ${totalDests}`, show: destinations.length > 0 },
-              { id: "guides", label: "More Guides", show: true },
+              { id: "guides", label: "More guides", show: true },
             ].filter((s) => s.show);
             return (
               <div className="lg:grid lg:grid-cols-[minmax(0,1fr)_220px] lg:gap-10">
@@ -210,7 +204,7 @@ export default async function StateHubPage({
           {/* Famous For — what this state is known for */}
           {region?.famous_for && region.famous_for.length > 0 && (
             <div className="mb-8 rounded-2xl border border-border/50 bg-card/50 p-5 sm:p-6">
-              <h2 className="text-sm font-semibold uppercase tracking-[0.15em] text-muted-foreground/50 mb-4">What {stateName} is known for</h2>
+              <h2 className="text-sm font-semibold uppercase tracking-[0.08em] text-muted-foreground/70 mb-4">{t("knownFor")}</h2>
               <div className="grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
                 {region.famous_for.map((item: string, i: number) => (
                   <div key={i} className="flex items-start gap-2.5">
@@ -225,7 +219,7 @@ export default async function StateHubPage({
           {/* Must Visit — top picks if you have limited time */}
           {region?.must_visit && (region.must_visit as any[]).length > 0 && (
             <section id="section-must-visit" className="mb-8 scroll-mt-32">
-              <h2 className="text-sm font-semibold uppercase tracking-[0.15em] text-muted-foreground/50 mb-4">Must visit in {stateName}</h2>
+              <h2 className="text-sm font-semibold uppercase tracking-[0.08em] text-muted-foreground/70 mb-4">{t("dontMiss")}</h2>
               <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
                 {(region.must_visit as any[]).map((mv: any) => (
                   <a
@@ -247,7 +241,7 @@ export default async function StateHubPage({
           {/* Subregion pills */}
           {subregions.length > 0 && (
             <section id="section-regions" className="mb-8 scroll-mt-32">
-              <h2 className="text-sm font-semibold uppercase tracking-[0.15em] text-muted-foreground/50 mb-3">Regions within {stateName}</h2>
+              <h2 className="text-sm font-semibold uppercase tracking-[0.08em] text-muted-foreground/70 mb-3">{t("byRegion")}</h2>
               <div className="flex flex-wrap gap-2">
                 {subregions.map((sr: any) => (
                   <div key={sr.id} className="group relative">
@@ -279,7 +273,7 @@ export default async function StateHubPage({
           {/* Best months */}
           {region?.best_months && region.best_months.length > 0 && (
             <section id="section-best-months" className="mb-8 scroll-mt-32 rounded-xl border border-border/50 bg-card/50 p-4 inline-block">
-              <span className="text-xs font-bold uppercase tracking-[0.08em] text-muted-foreground/50 mr-3">Best months:</span>
+              <span className="text-xs font-semibold uppercase tracking-[0.08em] text-muted-foreground/70 mr-3">{t("bestTimeToVisit")}</span>
               {["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"].map((m, i) => {
                 const isBest = region.best_months.includes(i + 1);
                 return (
@@ -293,27 +287,27 @@ export default async function StateHubPage({
 
           {/* Destination grid */}
           <section id="section-destinations" className="mb-12 scroll-mt-32">
-            <h2 className="text-xl font-semibold mb-6">All {totalDests} Destinations in {stateName}</h2>
+            <h2 className="text-xl font-semibold mb-6">{t("allDestinations", { count: totalDests, state: stateName })}</h2>
             <StateDestinationGrid destinations={destinations} locale={locale} />
           </section>
 
           {/* Quick links */}
           <section id="section-guides" className="mb-12 scroll-mt-32 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             <Link href={`/${locale}/explore/state/${stateSlug}`} className="rounded-xl border border-border p-4 hover:border-primary/40 transition-all">
-              <div className="text-sm font-semibold">Explore {stateName}</div>
-              <div className="text-xs text-muted-foreground mt-1">Filter by month, difficulty, kids</div>
+              <div className="text-sm font-semibold">{t("exploreState", { state: stateName })}</div>
+              <div className="text-xs text-muted-foreground mt-1">{t("exploreStateHint")}</div>
             </Link>
             <Link href={`/${locale}/treks/state/${stateSlug}`} className="rounded-xl border border-border p-4 hover:border-primary/40 transition-all">
-              <div className="text-sm font-semibold">Treks in {stateName}</div>
-              <div className="text-xs text-muted-foreground mt-1">Hiking trails by difficulty</div>
+              <div className="text-sm font-semibold">{t("treksInState", { state: stateName })}</div>
+              <div className="text-xs text-muted-foreground mt-1">{t("treksHint")}</div>
             </Link>
             <Link href={`/${locale}/festivals/state/${stateSlug}`} className="rounded-xl border border-border p-4 hover:border-primary/40 transition-all">
-              <div className="text-sm font-semibold">Festivals in {stateName}</div>
-              <div className="text-xs text-muted-foreground mt-1">Cultural celebrations by month</div>
+              <div className="text-sm font-semibold">{t("festivalsInState", { state: stateName })}</div>
+              <div className="text-xs text-muted-foreground mt-1">{t("festivalsHint")}</div>
             </Link>
             <Link href={`/${locale}/stays/state/${stateSlug}`} className="rounded-xl border border-border p-4 hover:border-primary/40 transition-all">
-              <div className="text-sm font-semibold">Where to Stay</div>
-              <div className="text-xs text-muted-foreground mt-1">Lodges, homestays, camps</div>
+              <div className="text-sm font-semibold">{t("whereToStay")}</div>
+              <div className="text-xs text-muted-foreground mt-1">{t("whereToStayHint")}</div>
             </Link>
           </section>
 
@@ -325,7 +319,7 @@ export default async function StateHubPage({
                 <span>{prevState.name}</span>
               </Link>
             ) : <div />}
-            <Link href={`/${locale}/states`} className="text-sm text-muted-foreground hover:text-foreground transition-colors">All States</Link>
+            <Link href={`/${locale}/states`} className="text-sm text-muted-foreground hover:text-foreground transition-colors">{t("allStates")}</Link>
             {nextState ? (
               <Link href={`/${locale}/state/${nextState.id}`} prefetch={false} className="group flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
                 <span>{nextState.name}</span>

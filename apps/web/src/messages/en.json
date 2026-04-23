@@ -258,6 +258,26 @@
     "metaTitle": "Explore Destinations — Filter by Month, Difficulty, Kids & More",
     "metaDescription": "Browse 143+ destinations across India with monthly suitability scores. Filter by state, difficulty, kids-friendliness, and sort by elevation or score. Grid and map views."
   },
+  "state": {
+    "heroProse": "{count} destinations · {kids} good for kids this month · {regions} regions",
+    "heroProseNoRegions": "{count} destinations · {kids} good for kids this month",
+    "capital": "Capital",
+    "knownFor": "Known for",
+    "dontMiss": "Don't miss",
+    "byRegion": "By region",
+    "bestTimeToVisit": "Best time to visit",
+    "allDestinations": "All {count} destinations in {state}",
+    "bestThisMonth": "Best this month",
+    "exploreState": "Explore {state}",
+    "exploreStateHint": "Filter by month, difficulty, kids",
+    "treksInState": "Treks in {state}",
+    "treksHint": "Hiking trails by difficulty",
+    "festivalsInState": "Festivals in {state}",
+    "festivalsHint": "Cultural celebrations by month",
+    "whereToStay": "Where to stay",
+    "whereToStayHint": "Lodges, homestays, camps",
+    "allStates": "All states"
+  },
   "page": {
     "himalayaTrails": "Himalayan Trails",
     "treksAndHikes": "Treks & Hikes",

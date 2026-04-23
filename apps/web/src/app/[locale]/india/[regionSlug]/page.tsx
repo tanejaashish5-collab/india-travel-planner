@@ -132,16 +132,11 @@ export default async function RegionPage({
                 <span className="text-foreground">{region.name}</span>
               </div>
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold">{region.name}</h1>
-              <div className="mt-4 flex flex-wrap gap-4 sm:gap-6">
-                <div>
-                  <div className="text-2xl font-mono font-bold">{states.length}</div>
-                  <div className="text-xs uppercase tracking-[0.08em] text-muted-foreground/70">States</div>
-                </div>
-                <div>
-                  <div className="text-2xl font-mono font-bold">{totalDests}</div>
-                  <div className="text-xs uppercase tracking-[0.08em] text-muted-foreground/70">Destinations</div>
-                </div>
-              </div>
+              {/* Prose-y summary, not a dashboard stat-row. */}
+              <p className="mt-4 text-sm sm:text-base text-foreground/85 tabular-nums">
+                <span className="font-semibold">{states.length}</span> states ·{" "}
+                <span className="font-semibold">{totalDests}</span> destinations
+              </p>
             </div>
           </div>
         </div>

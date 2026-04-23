@@ -258,6 +258,26 @@
     "metaTitle": "गंतव्य खोजें — महीना, कठिनाई, बच्चों के अनुसार फ़िल्टर करें",
     "metaDescription": "भारत भर के 143+ गंतव्यों को मासिक उपयुक्तता स्कोर के साथ देखें। राज्य, कठिनाई, बच्चों-के-लिए-अनुकूलता से फ़िल्टर करें और ऊंचाई या स्कोर के अनुसार क्रमबद्ध करें।"
   },
+  "state": {
+    "heroProse": "{count} गंतव्य · इस महीने {kids} बच्चों के लिए उपयुक्त · {regions} क्षेत्र",
+    "heroProseNoRegions": "{count} गंतव्य · इस महीने {kids} बच्चों के लिए उपयुक्त",
+    "capital": "राजधानी",
+    "knownFor": "के लिए प्रसिद्ध",
+    "dontMiss": "ज़रूर देखें",
+    "byRegion": "क्षेत्र अनुसार",
+    "bestTimeToVisit": "जाने का सबसे अच्छा समय",
+    "allDestinations": "{state} के सभी {count} गंतव्य",
+    "bestThisMonth": "इस महीने सर्वश्रेष्ठ",
+    "exploreState": "{state} खोजें",
+    "exploreStateHint": "महीना, कठिनाई, बच्चों के अनुसार फ़िल्टर",
+    "treksInState": "{state} में ट्रेक",
+    "treksHint": "कठिनाई अनुसार हाइकिंग ट्रेल्स",
+    "festivalsInState": "{state} में त्योहार",
+    "festivalsHint": "महीना अनुसार सांस्कृतिक उत्सव",
+    "whereToStay": "कहाँ रुकें",
+    "whereToStayHint": "लॉज, होमस्टे, कैंप",
+    "allStates": "सभी राज्य"
+  },
   "page": {
     "himalayaTrails": "हिमालयी रास्ते",
     "treksAndHikes": "ट्रेक और हाइक",

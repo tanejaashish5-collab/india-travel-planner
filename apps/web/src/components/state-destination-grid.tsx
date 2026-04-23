@@ -82,7 +82,7 @@ export function StateDestinationGrid({
                 sortBy === s ? "bg-foreground text-background" : "text-muted-foreground hover:text-foreground"
               }`}
             >
-              {s === "score" ? "Best Now" : s}
+              {s === "score" ? "Best this month" : s}
             </button>
           ))}
         </div>
