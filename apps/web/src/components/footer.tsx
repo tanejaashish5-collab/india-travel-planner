@@ -58,6 +58,7 @@ export function Footer({ stats }: { stats?: { destinations: number; places: numb
               {[
                 { href: `/${locale}/plan`, label: tf("aiTripPlanner") },
                 { href: `/${locale}/build-route`, label: tf("routeBuilder") },
+                { href: `/${locale}/explore-by-persona`, label: "By persona" },
                 { href: `/${locale}/permits`, label: tn("permits") },
                 { href: `/${locale}/road-conditions`, label: tf("roadStatus") },
                 { href: `/${locale}/saved`, label: tf("saved") },
