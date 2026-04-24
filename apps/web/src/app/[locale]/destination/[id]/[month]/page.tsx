@@ -80,18 +80,30 @@ export async function generateMetadata({
     : score >= 1 ? "Why to Avoid"
     : "Travel Guide";
 
-  // Compact title — under 60 chars where possible
-  const title = tempStr
-    ? `${name} in ${monthName}: ${tempStr}, Weather Guide`
-    : `${name} in ${monthName}: Weather & Travel Guide`;
+  // Title optimised for GSC-flagged zero-click queries (2026-04-24 audit):
+  // users search "<dest> weather in <month>" and "<dest> temperature in <month>",
+  // so "Weather" leads + temp range sits in subtitle. Year token signals
+  // freshness and captures "is it worth going now" intent. Stays ≤60 chars
+  // with a fallback to a shorter standard variant for long destinations.
+  const year = new Date().getFullYear();
+  const withTemp = tempStr
+    ? `${name} Weather in ${monthName} ${year} — ${tempStr}`
+    : null;
+  const standard = `${name} Weather in ${monthName} ${year}: Temperature & Guide`;
+  const title = withTemp && withTemp.length <= 60 ? withTemp : standard;
 
   const ogTitle = `${name} in ${monthName} — ${scoreVerdict} | NakshIQ`;
 
-  // Description: lead with the actual answer, include temp, region, and specific value prop
+  // Description: lead with real numeric temp (matches "weather in X" query
+  // intent), then a destination-specific line, then score + state. Drops the
+  // generic "kids safety, road conditions" listicle that was there before —
+  // GSC CTR audit 2026-04-24 flagged generic copy as under-performing at pos 7-12.
   const descParts = [
-    tempStr ? `${monthName} in ${name}: ${tempStr}.` : `${name} in ${monthName}.`,
+    typeof lowTemp === "number"
+      ? `${monthName} in ${name}: nights drop to ${lowTemp}°C.`
+      : `${monthName} in ${name}.`,
     note || whyGo,
-    `Monthly score ${score}/5, kids safety, road conditions, and what to expect in ${stateName || "India"}.`,
+    stateName ? `NakshIQ scores ${score}/5 for ${stateName}.` : `NakshIQ scores ${score}/5.`,
   ].filter(Boolean);
   const description = descParts.join(" ").slice(0, 160);
   const canonicalUrl = `https://www.nakshiq.com/${locale}/destination/${id}/${month}`;
