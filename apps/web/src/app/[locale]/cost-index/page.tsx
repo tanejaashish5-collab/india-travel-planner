@@ -24,12 +24,17 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
 const BASE_URL = "https://www.nakshiq.com";
 
-// Only categories that are actually seeded in destination_costs — avoids
-// the "No rows match" trap when a user picks a category the seed script
-// never populated. Sprint-9 seed shipped 6 of the originally-specced 9.
+// Only categories actually seeded in destination_costs — avoids the
+// "No rows match" trap. Sprint-9 originally spec'd 9 categories but the
+// seeder's budget_tier comparison (string vs. number) silently dropped
+// hotel-splurge / hostel-dorm / transport-intercity. Sprint-11-fix top-up
+// (scripts/seed-cost-index-splurge.mjs) restored hotel-splurge for all
+// 488 dests × 3 seasons. Hostel-dorm and transport-intercity remain
+// deferred until those seeders are written.
 const CATEGORY_LABELS: Record<string, string> = {
   homestay: "Homestay",
   "hotel-mid": "Hotel (3★ mid-range)",
+  "hotel-splurge": "Hotel (4–5★ splurge)",
   "food-per-day": "Food (3 meals)",
   "transport-taxi-day": "Taxi (8-hour day hire)",
   "permit-fees": "Permits & entry",
