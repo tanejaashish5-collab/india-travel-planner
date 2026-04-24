@@ -4,12 +4,13 @@ import { Footer } from "@/components/footer";
 import { ExploreGrid } from "@/components/explore-grid";
 import { notFound } from "next/navigation";
 import { STATE_MAP, getSupabase } from "@/lib/seo-maps";
+import { localeAlternates } from "@/lib/seo-utils";
 
 export const revalidate = 86400;
 export const dynamicParams = true;
 
-export async function generateMetadata({ params }: { params: Promise<{ stateSlug: string}> }): Promise<Metadata> {
-  const { stateSlug } = await params;
+export async function generateMetadata({ params }: { params: Promise<{ locale: string; stateSlug: string}> }): Promise<Metadata> {
+  const { locale, stateSlug } = await params;
   const stateName = STATE_MAP[stateSlug];
   if (!stateName) return {
   };
@@ -17,6 +18,7 @@ export async function generateMetadata({ params }: { params: Promise<{ stateSlug
   return {
     title: `Places to Visit in ${stateName} — Every Destination Scored | NakshIQ`,
     description: `All destinations in ${stateName} scored 1-5 for ${currentMonth}. Kids ratings, safety data, infrastructure reality, and honest assessments. No sponsored content.`,
+    ...localeAlternates(locale, `/explore/state/${stateSlug}`),
   };
 }
 

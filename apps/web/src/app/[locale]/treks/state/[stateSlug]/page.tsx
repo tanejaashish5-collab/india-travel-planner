@@ -4,18 +4,20 @@ import { Footer } from "@/components/footer";
 import { TreksContent } from "@/components/treks-content";
 import { notFound } from "next/navigation";
 import { STATE_MAP, getSupabase } from "@/lib/seo-maps";
+import { localeAlternates } from "@/lib/seo-utils";
 
 export const revalidate = 86400;
 export const dynamicParams = true;
 
-export async function generateMetadata({ params }: { params: Promise<{ stateSlug: string}> }): Promise<Metadata> {
-  const { stateSlug } = await params;
+export async function generateMetadata({ params }: { params: Promise<{ locale: string; stateSlug: string}> }): Promise<Metadata> {
+  const { locale, stateSlug } = await params;
   const stateName = STATE_MAP[stateSlug];
   if (!stateName) return {
   };
   return {
     title: `Treks in ${stateName} — Scored Trails & Routes | NakshIQ`,
     description: `Every trek in ${stateName} scored by difficulty, altitude, best months, and fitness level. Gear checklists, route maps, and honest assessments.`,
+    ...localeAlternates(locale, `/treks/state/${stateSlug}`),
   };
 }
 

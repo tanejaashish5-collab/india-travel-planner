@@ -5,6 +5,7 @@ import { ExploreGrid } from "@/components/explore-grid";
 import { createClient } from "@supabase/supabase-js";
 import { notFound } from "next/navigation";
 import { STATE_MAP, MONTH_MAP } from "@/lib/seo-maps";
+import { localeAlternates } from "@/lib/seo-utils";
 
 export const revalidate = 86400;
 export const dynamicParams = true;
@@ -16,8 +17,8 @@ function getSupabase() {
   return createClient(url, key);
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ stateSlug: string; month: string}> }): Promise<Metadata> {
-  const { stateSlug, month } = await params;
+export async function generateMetadata({ params }: { params: Promise<{ locale: string; stateSlug: string; month: string}> }): Promise<Metadata> {
+  const { locale, stateSlug, month } = await params;
   const stateName = STATE_MAP[stateSlug];
   const m = MONTH_MAP[month];
   if (!stateName || !m) return {
@@ -25,6 +26,7 @@ export async function generateMetadata({ params }: { params: Promise<{ stateSlug
   return {
     title: `Places to Visit in ${stateName} in ${m.name} — Scored & Ranked | NakshIQ`,
     description: `Best destinations in ${stateName} for ${m.name}, scored 1-5 based on weather, crowds, and accessibility. See which score 5/5 and which to avoid.`,
+    ...localeAlternates(locale, `/explore/state/${stateSlug}/${month}`),
   };
 }
 

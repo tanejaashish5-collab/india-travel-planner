@@ -4,6 +4,7 @@ import { Footer } from "@/components/footer";
 import { createClient } from "@supabase/supabase-js";
 import { notFound } from "next/navigation";
 import { STATE_MAP } from "@/lib/seo-maps";
+import { localeAlternates } from "@/lib/seo-utils";
 
 export const revalidate = 86400;
 export const dynamicParams = true;
@@ -31,6 +32,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return {
     title: `Where to Stay in ${stateName} — Verified Accommodations | NakshIQ`,
     description: `Hotels, homestays, camps, and hostels across ${stateName}. Honest reviews, real prices, no sponsored placements.`,
+    ...localeAlternates(locale, `/stays/state/${stateSlug}`),
   };
 }
 

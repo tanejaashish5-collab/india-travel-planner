@@ -4,6 +4,7 @@ import { Footer } from "@/components/footer";
 import { createClient } from "@supabase/supabase-js";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import { localeAlternates } from "@/lib/seo-utils";
 
 export const revalidate = 86400;
 export const dynamicParams = true;
@@ -32,6 +33,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return {
     title: `Festivals in India in ${m.name} — Complete Calendar | NakshIQ`,
     description: `Every festival happening across India in ${m.name} with dates, locations, and what to expect. Time your trip around India's celebrations.`,
+    ...localeAlternates(locale, `/festivals/month/${monthSlug}`),
   };
 }
 

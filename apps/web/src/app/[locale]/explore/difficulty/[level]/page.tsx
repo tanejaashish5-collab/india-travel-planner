@@ -5,6 +5,7 @@ import { ExploreGrid } from "@/components/explore-grid";
 import { createClient } from "@supabase/supabase-js";
 import { notFound } from "next/navigation";
 import { DIFFICULTY_MAP } from "@/lib/seo-maps";
+import { localeAlternates } from "@/lib/seo-utils";
 
 export const revalidate = 86400;
 export const dynamicParams = true;
@@ -23,14 +24,15 @@ const DIFF_DESC: Record<string, string> = {
   extreme: "Remote, dangerous roads, extreme altitude. Only for experienced travelers.",
 };
 
-export async function generateMetadata({ params }: { params: Promise<{ level: string}> }): Promise<Metadata> {
-  const { level } = await params;
+export async function generateMetadata({ params }: { params: Promise<{ locale: string; level: string}> }): Promise<Metadata> {
+  const { locale, level } = await params;
   const name = DIFFICULTY_MAP[level];
   if (!name) return {
   };
   return {
     title: `${name} Destinations in India — Scored & Ranked | NakshIQ`,
     description: `All ${name.toLowerCase()} destinations in India. ${DIFF_DESC[level]} Scored for every month with kids ratings and safety data.`,
+    ...localeAlternates(locale, `/explore/difficulty/${level}`),
   };
 }
 

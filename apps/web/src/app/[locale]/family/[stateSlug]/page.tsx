@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import { STATE_MAP, getSupabase } from "@/lib/seo-maps";
+import { localeAlternates } from "@/lib/seo-utils";
 
 export const revalidate = 86400;
 export const dynamicParams = true;
@@ -17,6 +18,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return {
     title: `Family-Friendly Destinations in ${stateName} — Kids Ratings | NakshIQ`,
     description: `Every family-friendly destination in ${stateName} with kids ratings, age suitability, medical access, altitude warnings, and honest assessments. Written by parents.`,
+    ...localeAlternates(locale, `/family/${stateSlug}`),
   };
 }
 

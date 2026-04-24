@@ -9,6 +9,7 @@ import { DestinationSectionNav } from "@/components/destination-section-nav";
 import { createClient } from "@supabase/supabase-js";
 import { STATE_MAP, getRegionNameForState, getRegionForState } from "@/lib/seo-maps";
 import { videoSrc } from "@/lib/video-url";
+import { localeAlternates } from "@/lib/seo-utils";
 
 export const revalidate = 86400;
 export const dynamicParams = true;
@@ -26,6 +27,7 @@ export async function generateMetadata({
   return {
     title: `${name} — Destinations, Scores & Travel Guide`,
     description: `Explore destinations in ${name}${region ? `, ${region}` : ""}. Monthly scores, kids ratings, safety data, and honest travel intelligence.`,
+    ...localeAlternates(locale, `/state/${stateSlug}`),
   };
 }
 

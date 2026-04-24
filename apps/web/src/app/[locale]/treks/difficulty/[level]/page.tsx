@@ -5,6 +5,7 @@ import { TreksContent } from "@/components/treks-content";
 import { createClient } from "@supabase/supabase-js";
 import { notFound } from "next/navigation";
 import { DIFFICULTY_MAP } from "@/lib/seo-maps";
+import { localeAlternates } from "@/lib/seo-utils";
 
 export const revalidate = 86400;
 export const dynamicParams = true;
@@ -16,14 +17,15 @@ function getSupabase() {
   return createClient(url, key);
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ level: string}> }): Promise<Metadata> {
-  const { level } = await params;
+export async function generateMetadata({ params }: { params: Promise<{ locale: string; level: string}> }): Promise<Metadata> {
+  const { locale, level } = await params;
   const name = DIFFICULTY_MAP[level];
   if (!name) return {
   };
   return {
     title: `${name} Treks in India — Scored Trails | NakshIQ`,
     description: `All ${name.toLowerCase()} treks across India with altitude, duration, best months, gear requirements, and fitness level needed.`,
+    ...localeAlternates(locale, `/treks/difficulty/${level}`),
   };
 }
 

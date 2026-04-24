@@ -4,6 +4,7 @@ import { Footer } from "@/components/footer";
 import { createClient } from "@supabase/supabase-js";
 import { notFound } from "next/navigation";
 import { STATE_MAP, MONTH_MAP } from "@/lib/seo-maps";
+import { localeAlternates } from "@/lib/seo-utils";
 
 export const revalidate = 86400;
 export const dynamicParams = true;
@@ -15,14 +16,15 @@ function getSupabase() {
   return createClient(url, key);
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ stateSlug: string; monthSlug: string }> }): Promise<Metadata> {
-  const { stateSlug, monthSlug } = await params;
+export async function generateMetadata({ params }: { params: Promise<{ locale: string; stateSlug: string; monthSlug: string }> }): Promise<Metadata> {
+  const { locale, stateSlug, monthSlug } = await params;
   const stateName = STATE_MAP[stateSlug];
   const m = MONTH_MAP[monthSlug];
   if (!stateName || !m) return {};
   return {
     title: `Festivals in ${stateName} in ${m.name} | NakshIQ`,
     description: `Festivals happening in ${stateName} during ${m.name} — dates, locations, and travel tips. Plan your trip around these celebrations.`,
+    ...localeAlternates(locale, `/festivals/state/${stateSlug}/${monthSlug}`),
   };
 }
 
