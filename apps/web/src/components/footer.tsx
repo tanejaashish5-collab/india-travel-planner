@@ -97,11 +97,14 @@ export function Footer({ stats }: { stats?: { destinations: number; places: numb
               ))}
               <div className="h-3" />
               {[
-                { href: `/${locale}/newsletter`, label: "The Window" },
-              { href: `/${locale}/about`, label: tn("about") },
+                { href: `/${locale}/the-window`, label: "The Window" },
+                { href: `/${locale}/about`, label: tn("about") },
+                { href: `/${locale}/about/team`, label: "Masthead" },
                 { href: `/${locale}/methodology`, label: tf("howWeScore") },
                 { href: `/${locale}/cost-index`, label: "Cost Index" },
                 { href: `/${locale}/nakshiq-100`, label: "NakshIQ 100" },
+                { href: `/${locale}/press`, label: "Press & research" },
+                { href: `/${locale}/corrections`, label: "Corrections" },
                 { href: `/${locale}/editorial-policy`, label: tf("editorialPolicy") },
                 { href: `/${locale}/contact`, label: "Contact" },
               ].map((link) => (
