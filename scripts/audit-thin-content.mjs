@@ -60,25 +60,34 @@ const MONTH_NAMES = {
   9: "September", 10: "October", 11: "November", 12: "December",
 };
 
-// Pull all destination_months with parent destination info
-let query = supabase
-  .from("destination_months")
-  .select(`
-    destination_id, month, verdict, score,
-    why_go, why_not,
-    destinations!inner(name, state:states!inner(id, name))
-  `);
-
-if (STATE_FILTER) {
-  // Filter via nested state
-  // Note: Supabase PostgREST doesn't support filtering on deeply nested, so we post-filter
+// Pull all destination_months with parent destination info — paginated past
+// Supabase's 1000-row default (the earlier version of this script hit that
+// silent cap and reported 999 thin rows when the true count was ~5,800).
+async function fetchAll() {
+  const all = [];
+  const page = 1000;
+  let from = 0;
+  while (true) {
+    const { data, error } = await supabase
+      .from("destination_months")
+      .select(`
+        destination_id, month, verdict, score,
+        why_go, why_not,
+        destinations!inner(name, state:states!inner(id, name))
+      `)
+      .range(from, from + page - 1);
+    if (error) {
+      console.error(`✗ query failed: ${error.message}`);
+      process.exit(1);
+    }
+    all.push(...(data ?? []));
+    if (!data || data.length < page) break;
+    from += page;
+  }
+  return all;
 }
 
-const { data, error } = await query;
-if (error) {
-  console.error(`✗ query failed: ${error.message}`);
-  process.exit(1);
-}
+const data = await fetchAll();
 
 const rows = (data ?? []).filter((r) => {
   if (!STATE_FILTER) return true;
