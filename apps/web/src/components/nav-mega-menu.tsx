@@ -6,7 +6,7 @@ import { useLocale, useTranslations } from "next-intl";
 import { FALLBACK } from "@/lib/stats";
 import { REGION_GROUPS, STATE_MAP } from "@/lib/seo-maps";
 
-export type PanelType = "experiences" | "plan" | "learn" | "browse" | null;
+export type PanelType = "explore" | "plan" | "learn" | null;
 
 const panelAnimation = {
   initial: { opacity: 0, y: -8 },
@@ -241,43 +241,107 @@ function MenuItem({
   );
 }
 
-/* ─── Experiences Panel ─── */
+/* Region cards retained — used by ExplorePanel below (Browse merged into Explore in Sprint 11). */
+const REGION_CARDS: { slug: string; icon: string; description: string }[] = [
+  { slug: "north", icon: "🏔️", description: "Himalayas, deserts, holy cities" },
+  { slug: "west", icon: "🏖️", description: "Beaches, caves, Bollywood" },
+  { slug: "northeast", icon: "🌿", description: "Living root bridges, tea gardens" },
+  { slug: "east", icon: "🛕", description: "Temples, tigers, Durga Puja" },
+  { slug: "central", icon: "🐅", description: "Tiger reserves, tribal art" },
+  { slug: "south", icon: "🌴", description: "Backwaters, temples, spices" },
+  { slug: "islands", icon: "🏝️", description: "Beaches, diving, coral reefs" },
+];
 
-function ExperiencesPanel({ locale, onNavigate }: { locale: string; onNavigate: () => void }) {
+/* ─── Explore Panel (consolidates old Destinations + Experiences + Browse)
+   Sprint 11 nav-simplification: merges three top-level triggers into one.
+   Left column = region cards, middle = experiences, right = featured.
+   Footer row has the "all destinations" + "all states" escape hatches.
+─── */
+
+function ExplorePanel({ locale, onNavigate }: { locale: string; onNavigate: () => void }) {
   const t = useTranslations("nav");
+  const currentMonthSlug = ["", "january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december"][new Date().getMonth() + 1];
 
   return (
-    <motion.div variants={staggerContainer} initial="initial" animate="animate" className="grid grid-cols-3 gap-6">
-      {/* Primary */}
-      <div className="space-y-1">
-        <p className="px-3 mb-2 text-[10px] font-semibold uppercase tracking-[0.08em] text-muted-foreground/60">Explore</p>
-        <MenuItem href={`/${locale}/collections`} icon={GridIcon} label={t("collections")} desc="Curated themed lists" count={String(FALLBACK.collections)} onNavigate={onNavigate} />
-        <MenuItem href={`/${locale}/routes`} icon={RouteIcon} label={t("routes")} desc="Multi-day road trips" count={String(FALLBACK.routes)} onNavigate={onNavigate} />
-        <MenuItem href={`/${locale}/treks`} icon={MountainIcon} label={t("treks")} desc="Trails & summit hikes" count={String(FALLBACK.treks)} onNavigate={onNavigate} />
-      </div>
-      {/* Secondary */}
-      <div className="space-y-1">
-        <p className="px-3 mb-2 text-[10px] font-semibold uppercase tracking-[0.08em] text-muted-foreground/60">Activities</p>
-        <MenuItem href={`/${locale}/camping`} icon={TentIcon} label={t("camping")} desc="Camp under the stars" onNavigate={onNavigate} />
-        <MenuItem href={`/${locale}/festivals`} icon={SparkleIcon} label={t("festivals")} desc="Cultural celebrations" count={String(FALLBACK.festivals)} onNavigate={onNavigate} />
-        <MenuItem href={`/${locale}/stays`} icon={HouseIcon} label={t("stays")} desc="Verified places to sleep" onNavigate={onNavigate} />
-      </div>
-      {/* Featured card */}
-      <div className="rounded-xl border border-primary/20 bg-gradient-to-br from-primary/5 via-transparent to-transparent p-5 flex flex-col justify-between">
-        <div>
-          <p className="text-[10px] font-semibold uppercase tracking-[0.08em] text-primary/60 mb-2">Featured</p>
-          <h4 className="text-sm font-semibold text-foreground">Best Destinations This Month</h4>
-          <p className="text-xs text-muted-foreground mt-1.5 leading-relaxed">
-            See which destinations score 5/5 right now — weather, crowds, and accessibility all considered.
-          </p>
+    <motion.div variants={staggerContainer} initial="initial" animate="animate">
+      <div className="grid grid-cols-5 gap-6">
+        {/* Regions (2 cols) */}
+        <div className="col-span-2 space-y-1">
+          <p className="px-3 mb-2 text-[10px] font-semibold uppercase tracking-[0.08em] text-muted-foreground/60">By region</p>
+          <div className="grid grid-cols-2 gap-1.5">
+            {REGION_CARDS.map((rc) => {
+              const region = REGION_GROUPS[rc.slug];
+              if (!region || region.states.length === 0) return null;
+              return (
+                <motion.div key={rc.slug} variants={staggerItem}>
+                  <a
+                    href={`/${locale}/states?region=${rc.slug}`}
+                    onClick={onNavigate}
+                    className="group flex items-center gap-2 rounded-lg border border-border/40 bg-card/40 px-3 py-2 transition-all hover:border-primary/40 hover:bg-primary/5"
+                  >
+                    <span className="text-base">{rc.icon}</span>
+                    <span className="text-xs font-medium text-foreground group-hover:text-primary transition-colors">
+                      {region.name}
+                    </span>
+                  </a>
+                </motion.div>
+              );
+            })}
+          </div>
         </div>
+
+        {/* Experiences (2 cols) */}
+        <div className="col-span-2 space-y-1">
+          <p className="px-3 mb-2 text-[10px] font-semibold uppercase tracking-[0.08em] text-muted-foreground/60">By experience</p>
+          <div className="grid grid-cols-2 gap-x-3">
+            <MenuItem href={`/${locale}/collections`} icon={GridIcon} label={t("collections")} desc="Themed lists" count={String(FALLBACK.collections)} onNavigate={onNavigate} />
+            <MenuItem href={`/${locale}/routes`} icon={RouteIcon} label={t("routes")} desc="Road trips" count={String(FALLBACK.routes)} onNavigate={onNavigate} />
+            <MenuItem href={`/${locale}/treks`} icon={MountainIcon} label={t("treks")} desc="Trails & summits" count={String(FALLBACK.treks)} onNavigate={onNavigate} />
+            <MenuItem href={`/${locale}/camping`} icon={TentIcon} label={t("camping")} desc="Camp sites" onNavigate={onNavigate} />
+            <MenuItem href={`/${locale}/festivals`} icon={SparkleIcon} label={t("festivals")} desc="Celebrations" count={String(FALLBACK.festivals)} onNavigate={onNavigate} />
+            <MenuItem href={`/${locale}/stays`} icon={HouseIcon} label={t("stays")} desc="Verified places" onNavigate={onNavigate} />
+          </div>
+        </div>
+
+        {/* Featured card */}
+        <div className="rounded-xl border border-primary/20 bg-gradient-to-br from-primary/5 via-transparent to-transparent p-5 flex flex-col justify-between">
+          <div>
+            <p className="text-[10px] font-semibold uppercase tracking-[0.08em] text-primary/60 mb-2">This month</p>
+            <h4 className="text-sm font-semibold text-foreground">Best destinations right now</h4>
+            <p className="text-xs text-muted-foreground mt-1.5 leading-relaxed">
+              5/5 scored — weather, crowds, and accessibility aligned for {new Date().toLocaleString("en-IN", { month: "long" })}.
+            </p>
+          </div>
+          <a
+            href={`/${locale}/where-to-go/${currentMonthSlug}`}
+            onClick={onNavigate}
+            className="mt-4 inline-flex items-center text-xs font-medium text-primary hover:text-primary/80 transition-colors"
+          >
+            View picks
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="ml-1"><path d="m9 18 6-6-6-6" /></svg>
+          </a>
+        </div>
+      </div>
+
+      {/* Footer escape hatches — "I want the full list" */}
+      <div className="mt-5 pt-4 border-t border-border/30 flex flex-wrap items-center justify-between gap-3">
         <a
-          href={`/${locale}/where-to-go/${["", "january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december"][new Date().getMonth() + 1]}`}
+          href={`/${locale}/explore`}
           onClick={onNavigate}
-          className="mt-4 inline-flex items-center text-xs font-medium text-primary hover:text-primary/80 transition-colors"
+          className="inline-flex items-center gap-2 rounded-lg px-3 py-1.5 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-accent transition-all"
         >
-          View this month's picks
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="ml-1"><path d="m9 18 6-6-6-6" /></svg>
+          <GridIcon />
+          <span>All {FALLBACK.destinations} destinations</span>
+          <span className="text-muted-foreground/40">→</span>
+        </a>
+        <a
+          href={`/${locale}/states`}
+          onClick={onNavigate}
+          className="inline-flex items-center gap-2 rounded-lg px-3 py-1.5 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-accent transition-all"
+        >
+          <MapPinIcon />
+          <span>All {Object.keys(STATE_MAP).length} states on map</span>
+          <span className="text-muted-foreground/40">→</span>
         </a>
       </div>
     </motion.div>
@@ -292,7 +356,8 @@ function PlanPanel({ locale, onNavigate }: { locale: string; onNavigate: () => v
 
   return (
     <motion.div variants={staggerContainer} initial="initial" animate="animate" className="grid grid-cols-5 gap-6">
-      {/* Tools */}
+      {/* Tools — Sprint 11 trim: Gap Year + Book Trains moved to Discover.
+         Keeps Plan panel to 6 items, the active-trip toolkit. */}
       <div className="col-span-3 space-y-1">
         <p className="px-3 mb-2 text-[10px] font-semibold uppercase tracking-[0.08em] text-muted-foreground/60">Tools</p>
         <div className="grid grid-cols-2 gap-x-4">
@@ -300,10 +365,7 @@ function PlanPanel({ locale, onNavigate }: { locale: string; onNavigate: () => v
           <MenuItem href={`/${locale}/build-route`} icon={MapPinIcon} label={t("buildRoute")} desc="Design your road trip" onNavigate={onNavigate} />
           <MenuItem href={`/${locale}/explore-by-persona`} icon={GridIcon} label="By persona" desc="Families, bikers, solo — 10 hubs" onNavigate={onNavigate} />
           <MenuItem href={`/${locale}/cost-index`} icon={BookIcon} label="Cost Index" desc="Season-tagged travel costs" onNavigate={onNavigate} />
-          <MenuItem href={`/${locale}/gap-year`} icon={CalendarIcon} label="Gap Year Planner" desc="3–12 months, month by month" onNavigate={onNavigate} />
-          <MenuItem href={`/${locale}/arrival`} icon={PlaneIcon} label="Arrival Playbook" desc="Airport-by-airport arrival guide" onNavigate={onNavigate} />
           <MenuItem href={`/${locale}/permits`} icon={ShieldIcon} label={t("permits")} desc="Required passes & permits" onNavigate={onNavigate} />
-          <MenuItem href={`/${locale}/guide/book-indian-trains`} icon={TrainIcon} label="Book Indian Trains" desc="IRCTC, Tatkal, foreigner tips" onNavigate={onNavigate} />
           <MenuItem href={`/${locale}/road-conditions`} icon={RoadIcon} label={t("roads")} desc="Latest road status" onNavigate={onNavigate} />
         </div>
       </div>
@@ -345,16 +407,20 @@ function LearnPanel({ locale, onNavigate }: { locale: string; onNavigate: () => 
 
   return (
     <motion.div variants={staggerContainer} initial="initial" animate="animate" className="grid grid-cols-3 gap-6">
-      {/* Regular items */}
+      {/* Regular items — Sprint 11: Gap Year + Train booking moved here
+         (they're how-to content, not active-trip tools). Superlatives removed
+         (low-traffic, reachable via /superlatives direct). */}
       <div className="col-span-2 space-y-1">
         <p className="px-3 mb-2 text-[10px] font-semibold uppercase tracking-[0.08em] text-muted-foreground/60">Read</p>
         <div className="grid grid-cols-2 gap-x-4">
           <MenuItem href={`/${locale}/blog`} icon={PenIcon} label={t("blog")} desc="Stories & insights" onNavigate={onNavigate} />
-          <MenuItem href={`/${locale}/nakshiq-100`} icon={TrophyIcon} label="NakshIQ 100" desc="India's 100 best destination-months" onNavigate={onNavigate} />
+          <MenuItem href={`/${locale}/guide`} icon={BookIcon} label={t("guides")} desc="In-depth travel guides" onNavigate={onNavigate} />
+          <MenuItem href={`/${locale}/nakshiq-100`} icon={TrophyIcon} label="NakshIQ 100" desc="India's best destination-months" onNavigate={onNavigate} />
           <MenuItem href={`/${locale}/tourist-traps`} icon={AlertIcon} label={t("touristTraps")} desc="Overhyped places to skip" onNavigate={onNavigate} />
           <MenuItem href={`/${locale}/guide/first-trip-india`} icon={GlobeIcon} label="First trip to India" desc="Where, when, and how" onNavigate={onNavigate} />
-          <MenuItem href={`/${locale}/guide`} icon={BookIcon} label={t("guides")} desc="In-depth travel guides" onNavigate={onNavigate} />
-          <MenuItem href={`/${locale}/superlatives`} icon={TrophyIcon} label={t("records")} desc="India's bests & firsts" onNavigate={onNavigate} />
+          <MenuItem href={`/${locale}/guide/book-indian-trains`} icon={TrainIcon} label="Book trains" desc="IRCTC, Tatkal, foreigner tips" onNavigate={onNavigate} />
+          <MenuItem href={`/${locale}/arrival`} icon={PlaneIcon} label="Arrival playbook" desc="Airport-by-airport guide" onNavigate={onNavigate} />
+          <MenuItem href={`/${locale}/gap-year`} icon={CalendarIcon} label="Gap Year" desc="3–12 months month by month" onNavigate={onNavigate} />
         </div>
       </div>
       {/* Featured: For International Visitors */}
@@ -371,73 +437,6 @@ function LearnPanel({ locale, onNavigate }: { locale: string; onNavigate: () => 
           className="mt-4 inline-flex items-center justify-center rounded-lg bg-blue-500/20 border border-blue-500/30 px-4 py-2 text-sm font-medium text-blue-400 hover:bg-blue-500/30 transition-colors"
         >
           {t("startHere")}
-        </a>
-      </div>
-    </motion.div>
-  );
-}
-
-/* ─── Browse Panel (Region-First Design) ─── */
-
-const REGION_CARDS: { slug: string; icon: string; description: string }[] = [
-  { slug: "north", icon: "🏔️", description: "Himalayas, deserts, holy cities" },
-  { slug: "west", icon: "🏖️", description: "Beaches, caves, Bollywood" },
-  { slug: "northeast", icon: "🌿", description: "Living root bridges, tea gardens" },
-  { slug: "east", icon: "🛕", description: "Temples, tigers, Durga Puja" },
-  { slug: "central", icon: "🐅", description: "Tiger reserves, tribal art" },
-  { slug: "south", icon: "🌴", description: "Backwaters, temples, spices" },
-  { slug: "islands", icon: "🏝️", description: "Beaches, diving, coral reefs" },
-];
-
-function BrowsePanel({ locale, onNavigate }: { locale: string; onNavigate: () => void }) {
-  function handleClick() {
-    onNavigate();
-  }
-
-  return (
-    <motion.div variants={staggerContainer} initial="initial" animate="animate">
-      <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-        {REGION_CARDS.map((rc) => {
-          const region = REGION_GROUPS[rc.slug];
-          if (!region || region.states.length === 0) return null;
-          const stateCount = region.states.length;
-          const topStates = region.states.slice(0, 3).map((s) => STATE_MAP[s] ?? s);
-
-          return (
-            <motion.div key={rc.slug} variants={staggerItem}>
-              <a
-                href={`/${locale}/states?region=${rc.slug}`}
-                onClick={handleClick}
-                className="group block rounded-xl border border-border/40 bg-card/50 p-4 transition-all hover:border-primary/40 hover:bg-accent/50 hover:shadow-lg cursor-pointer"
-              >
-                <div className="flex items-center gap-2.5 mb-2">
-                  <span className="text-lg">{rc.icon}</span>
-                  <h3 className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors">{region.name}</h3>
-                </div>
-                <p className="text-xs text-muted-foreground/70 mb-2.5">{rc.description}</p>
-                <div className="flex flex-wrap gap-1">
-                  {topStates.map((name) => (
-                    <span key={name} className="rounded-full bg-muted/50 px-2 py-0.5 text-[10px] font-medium text-muted-foreground">{name}</span>
-                  ))}
-                  {stateCount > 3 && (
-                    <span className="rounded-full bg-muted/50 px-2 py-0.5 text-[10px] font-medium text-muted-foreground/50">+{stateCount - 3}</span>
-                  )}
-                </div>
-              </a>
-            </motion.div>
-          );
-        })}
-      </div>
-      {/* Full states page CTA */}
-      <div className="mt-4 pt-4 border-t border-border/30 flex items-center justify-between">
-        <a
-          href={`/${locale}/states`}
-          onClick={handleClick}
-          className="inline-flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-accent transition-all"
-        >
-          <MapPinIcon />
-          <span>Browse all {Object.keys(STATE_MAP).length} states on map</span>
-          <span className="text-muted-foreground/40">→</span>
         </a>
       </div>
     </motion.div>
@@ -482,10 +481,9 @@ export function NavMegaMenu({
             onMouseLeave={onMouseLeave}
           >
             <div className="mx-auto max-w-7xl px-6 py-6">
-              {activePanel === "experiences" && <ExperiencesPanel locale={locale} onNavigate={onClose} />}
+              {activePanel === "explore" && <ExplorePanel locale={locale} onNavigate={onClose} />}
               {activePanel === "plan" && <PlanPanel locale={locale} onNavigate={onClose} />}
               {activePanel === "learn" && <LearnPanel locale={locale} onNavigate={onClose} />}
-              {activePanel === "browse" && <BrowsePanel locale={locale} onNavigate={onClose} />}
             </div>
           </motion.div>
         </>

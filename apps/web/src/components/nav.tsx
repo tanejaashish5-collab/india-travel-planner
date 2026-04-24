@@ -70,25 +70,23 @@ export function Nav() {
     return pathname.startsWith(href);
   }
 
-  // Which panel should be "active" based on current path
+  // Which panel should be "active" based on current path.
+  // Sprint 11 nav-simplification: merged Destinations + Experiences + Browse
+  // into one Explore panel. Three triggers now (Explore / Plan / Discover)
+  // instead of five.
   function panelActiveForPath(panel: PanelType) {
-    if (panel === "experiences") {
-      return ["/collections", "/routes", "/treks", "/camping", "/festivals", "/stays"].some(
+    if (panel === "explore") {
+      return ["/explore", "/collections", "/routes", "/treks", "/camping", "/festivals", "/stays", "/state/", "/states", "/region/", "/for/"].some(
         (p) => pathname.includes(p)
       );
     }
     if (panel === "plan") {
-      return ["/where-to-go", "/build-route", "/gap-year", "/permits", "/road-conditions", "/plan", "/arrival", "/guide/book-indian-trains"].some(
-        (p) => pathname.includes(p)
-      );
-    }
-    if (panel === "browse") {
-      return ["/state/", "/states", "/region/"].some(
+      return ["/where-to-go", "/build-route", "/permits", "/road-conditions", "/plan", "/cost-index", "/explore-by-persona"].some(
         (p) => pathname.includes(p)
       );
     }
     if (panel === "learn") {
-      return ["/india-travel", "/blog", "/tourist-traps", "/guide", "/superlatives"].some(
+      return ["/india-travel", "/blog", "/tourist-traps", "/guide", "/superlatives", "/nakshiq-100", "/arrival", "/gap-year"].some(
         (p) => pathname.includes(p)
       );
     }
@@ -96,8 +94,7 @@ export function Nav() {
   }
 
   const triggers: { panel: PanelType; label: string }[] = [
-    { panel: "experiences", label: t("experiences") },
-    { panel: "browse", label: t("browse") },
+    { panel: "explore", label: t("explore") },
     { panel: "plan", label: t("planLabel") },
     { panel: "learn", label: t("learn") },
   ];
@@ -120,20 +117,9 @@ export function Nav() {
           </span>
         </Link>
 
-        {/* Desktop nav */}
+        {/* Desktop nav — Sprint 11: 3 mega-menu triggers (Explore/Plan/Discover)
+           replace the old 5-trigger + Destinations direct link setup. */}
         <nav className="hidden items-center gap-1 md:flex">
-          {/* Direct link: Destinations */}
-          <Link
-            href={`/${locale}/explore`}
-            className={`rounded-lg px-3 py-1.5 text-sm font-medium transition-colors ${
-              isActive(`/${locale}/explore`)
-                ? "bg-primary/10 text-primary"
-                : "text-muted-foreground hover:text-foreground hover:bg-muted"
-            }`}
-          >
-            {t("destinations")}
-          </Link>
-
           {/* Mega-menu triggers */}
           {triggers.map(({ panel, label }) => (
             <div
