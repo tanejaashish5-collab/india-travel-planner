@@ -4197,3 +4197,28 @@ Date range: 2026-04-15 → 2026-04-23
 2026-04-24 16:17:31  INFO      Theme tracker updated: format=route_trace, slug=rj
 2026-04-24 16:17:31  INFO      State saved. Reel-map run complete.
 2026-04-24 16:17:31  INFO      ════════════════════════════════════════════════════════════
+2026-04-24 16:31:47  INFO      ════════════════════════════════════════════════════════════
+2026-04-24 16:31:47  INFO      Nakshiq Autoposter · REEL-MAP · 2026-04-24 · weekday=4
+2026-04-24 16:31:47  INFO      ════════════════════════════════════════════════════════════
+2026-04-24 16:31:47  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-04-24 16:31:54  INFO      Synced → 20 destinations · 0 traps · 20 articles · total catalog=488
+2026-04-24 16:31:54  INFO      Format: cluster_reveal | Slug: india
+2026-04-24 16:32:19  INFO      Reel-map rendered: reel_map_cluster_reveal_india.mp4 (6661 KB)
+2026-04-24 16:32:19  INFO          Requesting upload URL for reel_map_cluster_reveal_reel_map_cluster_reveal_india.mp4 (6,821,180 bytes, video/mp4)
+2026-04-24 16:32:20  INFO          Uploading to R2 (timeout=300s)...
+2026-04-24 16:32:21  INFO          R2 PUT OK. Confirming...
+2026-04-24 16:32:22  INFO          Media ready: 2RBzS (6,821,180 bytes · reel_map_cluster_reveal_reel_map_cluster_reveal_india.mp4)
+2026-04-24 16:32:22  INFO      Video uploaded: reel_map_cluster_reveal_reel_map_cluster_reveal_india.mp4
+2026-04-24 16:32:23  INFO      [youtube/@naksh-iq] Publishing reel-map (cluster_reveal)...
+2026-04-24 16:32:26  INFO      [youtube/@naksh-iq] Outstand accepted (post_id=ikYSB), confirming...
+2026-04-24 16:32:32  WARNING       Platform error: Error publishing post to YouTube: Failed to initiate YouTube resumable upload: 401 - "{\"error\":{\"code\":401,\"message\":\"Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.\",\"errors\":[{\"message\":\"Invalid Credentials\",\"domain\":\"global\",\"reason\":\"authError\",\"location\":\"Authorization\",\"locationType\":\"header\"}],\"status\":\"UNAUTHENTICATED\"}}"
+2026-04-24 16:32:32  WARNING   [youtube/@naksh-iq] ⚠️  Reel-map queued but NOT confirmed (post_id=ikYSB).
+2026-04-24 16:32:32  INFO      [instagram/nakshiq] Publishing reel-map (cluster_reveal)...
+2026-04-24 16:32:35  INFO      [instagram/nakshiq] Outstand accepted (post_id=mBQid), confirming...
+2026-04-24 16:33:22  WARNING   [instagram/nakshiq] ⚠️  Reel-map queued but NOT confirmed (post_id=mBQid).
+2026-04-24 16:33:22  INFO      [facebook/Nakshiq] Publishing reel-map (cluster_reveal)...
+2026-04-24 16:33:26  INFO      [facebook/Nakshiq] Outstand accepted (post_id=xQJy8), confirming...
+2026-04-24 16:33:37  INFO      [facebook/Nakshiq] ✅ Reel-map published · Outstand=xQJy8 · Platform=35826041443676336
+2026-04-24 16:33:37  INFO      Theme tracker updated: format=cluster_reveal, slug=india
+2026-04-24 16:33:37  INFO      State saved. Reel-map run complete.
+2026-04-24 16:33:37  INFO      ════════════════════════════════════════════════════════════
