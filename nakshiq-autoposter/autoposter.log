@@ -3971,3 +3971,38 @@ Date range: 2026-04-15 → 2026-04-23
 2026-04-24 03:37:20  INFO      Nakshiq Autoposter · MORNING · 2026-04-24 · weekday=4
 2026-04-24 03:37:20  INFO      ════════════════════════════════════════════════════════════
 2026-04-24 03:37:20  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-04-24 06:25:37  INFO      Stale lock (age=171538s) — overriding.
+2026-04-24 06:25:37  INFO      ════════════════════════════════════════════════════════════
+2026-04-24 06:25:37  INFO      Nakshiq Autoposter · MOAT · 2026-04-24 · weekday=4
+2026-04-24 06:25:37  INFO      ════════════════════════════════════════════════════════════
+2026-04-24 06:25:37  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-04-24 06:25:45  INFO      Synced → 20 destinations · 0 traps · 20 articles · total catalog=488
+2026-04-24 06:25:46  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-04-24 06:25:48  INFO      Outstand dedup guard: merged 5 remote posts into state.
+2026-04-24 06:25:48  INFO      Moat angle locked: methodology_altitude (7/9 never featured)
+2026-04-24 06:25:48  INFO      Formats — IG: methodology_altitude  ·  FB: methodology_altitude  ·  Story: None
+2026-04-24 06:25:48  INFO      Used destinations (14d): 30
+2026-04-24 06:25:48  INFO      Shared best destination locked: Phawngpui Peak
+2026-04-24 06:25:48  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-04-24 06:25:48  INFO      [instagram/nakshiq] Generating methodology_altitude post...
+2026-04-24 06:25:48  INFO      [instagram/nakshiq] Caption ready (623 chars, dest=phawngpui-peak)
+2026-04-24 06:25:49  INFO      [instagram/nakshiq] Video available — uploading for Reel...
+2026-04-24 06:25:49  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/phawngpui-peak.mp4?v=20260423-2
+2026-04-24 06:25:50  INFO          Requesting upload URL for phawngpui-peak.mp4 (8,653,180 bytes, video/mp4)
+2026-04-24 06:25:50  INFO          Uploading to R2 (timeout=300s)...
+2026-04-24 06:25:56  INFO          R2 PUT OK. Confirming...
+2026-04-24 06:25:58  INFO          Media ready: Zfczu (8,653,180 bytes · phawngpui-peak.mp4)
+2026-04-24 06:25:58  INFO      [instagram/nakshiq] Publishing Reel...
+2026-04-24 06:26:36  INFO      [instagram/nakshiq] ✅ Published · Outstand=OlB0v · Platform=17962299069101169
+2026-04-24 06:26:36  INFO      [facebook/Nakshiq] Generating methodology_altitude post...
+2026-04-24 06:26:36  INFO      [facebook/Nakshiq] Caption ready (752 chars, dest=phawngpui-peak)
+2026-04-24 06:26:37  INFO      [facebook/Nakshiq] Video available — uploading for Reel...
+2026-04-24 06:26:37  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/phawngpui-peak.mp4?v=20260423-2
+2026-04-24 06:26:37  INFO          Requesting upload URL for phawngpui-peak.mp4 (8,653,180 bytes, video/mp4)
+2026-04-24 06:26:38  INFO          Uploading to R2 (timeout=300s)...
+2026-04-24 06:26:40  INFO          R2 PUT OK. Confirming...
+2026-04-24 06:26:41  INFO          Media ready: NuUMa (8,653,180 bytes · phawngpui-peak.mp4)
+2026-04-24 06:26:41  INFO      [facebook/Nakshiq] Publishing Reel...
+2026-04-24 06:26:55  INFO      [facebook/Nakshiq] ✅ Published · Outstand=yRYnj · Platform=1541536860827348
+2026-04-24 06:26:55  INFO      State saved. Run complete.
+2026-04-24 06:26:55  INFO      ════════════════════════════════════════════════════════════

@@ -34,8 +34,8 @@
     "jUmP2_yt_short": "2026-04-20",
     "jUmP2_yt_short_count": 1,
     "jUmP2": "2026-04-20",
-    "m8EAd_moat": "2026-04-22",
-    "PdMu0_moat": "2026-04-22",
+    "m8EAd_moat": "2026-04-24",
+    "PdMu0_moat": "2026-04-24",
     "m8EAd_infographic": "2026-04-22",
     "PdMu0_infographic": "2026-04-22",
     "jUmP2_reel": "2026-04-20",
@@ -49,9 +49,10 @@
     "m8EAd_story": "2026-04-23",
     "xBQy8_yt_short": "2026-04-23",
     "xBQy8_yt_short_count": 1,
-    "xBQy8_reel": "2026-04-24"
+    "xBQy8_reel": "2026-04-24",
+    "xBQy8": "2026-04-24"
   },
-  "last_sync": "2026-04-24T05:18:36.842444+00:00",
+  "last_sync": "2026-04-24T06:25:45.551809+00:00",
   "posted_destinations": [
     {
       "destination_id": "pahalgam",
@@ -220,6 +221,18 @@
     {
       "destination_id": "sarahan",
       "date": "2026-04-24"
+    },
+    {
+      "destination_id": "reel_seasonal_shift_reel_seasonal_shift_kausani",
+      "date": "2026-04-24"
+    },
+    {
+      "destination_id": "phawngpui-peak",
+      "date": "2026-04-24"
+    },
+    {
+      "destination_id": "phawngpui-peak",
+      "date": "2026-04-24"
     }
   ],
   "posted_formats": {
@@ -228,7 +241,8 @@
       "methodology_roads",
       "score_card",
       "methodology_family",
-      "collection_spotlight"
+      "collection_spotlight",
+      "methodology_altitude"
     ],
     "PdMu0": [
       "monthly_forecast",
@@ -238,7 +252,8 @@
       "collection_spotlight",
       "score_card",
       "festival_alert",
-      "reality_check"
+      "reality_check",
+      "methodology_altitude"
     ]
   },
   "post_log": [
@@ -415,6 +430,26 @@
       "destination": "sarahan",
       "format": "reality_check",
       "has_media": true
+    },
+    {
+      "timestamp": "2026-04-24T06:26:36.978738+00:00",
+      "date": "2026-04-24",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "OlB0v",
+      "destination": "phawngpui-peak",
+      "format": "methodology_altitude",
+      "has_media": true
+    },
+    {
+      "timestamp": "2026-04-24T06:26:55.691508+00:00",
+      "date": "2026-04-24",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "yRYnj",
+      "destination": "phawngpui-peak",
+      "format": "methodology_altitude",
+      "has_media": true
     }
   ],
   "theme_usage": {
@@ -461,6 +496,9 @@
         "2026-04-23"
       ],
       "sarahan": [
+        "2026-04-24"
+      ],
+      "phawngpui-peak": [
         "2026-04-24"
       ]
     },
@@ -543,6 +581,9 @@
       ],
       "methodology_family": [
         "2026-04-22"
+      ],
+      "methodology_altitude": [
+        "2026-04-24"
       ]
     },
     "audience_tags": {
