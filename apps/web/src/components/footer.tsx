@@ -99,6 +99,8 @@ export function Footer({ stats }: { stats?: { destinations: number; places: numb
                 { href: `/${locale}/newsletter`, label: "The Window" },
               { href: `/${locale}/about`, label: tn("about") },
                 { href: `/${locale}/methodology`, label: tf("howWeScore") },
+                { href: `/${locale}/cost-index`, label: "Cost Index" },
+                { href: `/${locale}/nakshiq-100`, label: "NakshIQ 100" },
                 { href: `/${locale}/editorial-policy`, label: tf("editorialPolicy") },
                 { href: `/${locale}/contact`, label: "Contact" },
               ].map((link) => (
