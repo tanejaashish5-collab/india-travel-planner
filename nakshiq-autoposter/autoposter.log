@@ -4078,3 +4078,20 @@ Date range: 2026-04-15 → 2026-04-23
 2026-04-24 10:23:15  INFO      Nakshiq Autoposter · POMELLI VISUAL · 2026-04-24 · weekday=4
 2026-04-24 10:23:15  INFO      ════════════════════════════════════════════════════════════
 2026-04-24 10:23:15  ERROR     No images in pomelli_library/manifest.json.
+2026-04-24 10:51:51  INFO      ════════════════════════════════════════════════════════════
+2026-04-24 10:51:51  INFO      Nakshiq Autoposter · REEL · 2026-04-24 · weekday=4
+2026-04-24 10:51:51  INFO      ════════════════════════════════════════════════════════════
+2026-04-24 10:51:51  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-04-24 10:51:58  INFO      Synced → 20 destinations · 0 traps · 20 articles · total catalog=488
+2026-04-24 10:51:58  INFO      Format: destination_reveal | Data: {'dest_name': 'Kokernag', 'dest_slug': 'kokernag', 'state_name': 'Jammu & Kashmir', 'score': 5, 'tagline': "Kashmir's largest freshwater spring — trout hatchery, botanical garden, and water pure enough to drink from source."}
+2026-04-24 10:52:07  INFO      Reel rendered: reel_destination_reveal_kokernag.mp4 (1143 KB)
+2026-04-24 10:52:07  INFO          Requesting upload URL for reel_destination_reveal_reel_destination_reveal_kokernag.mp4 (1,170,482 bytes, video/mp4)
+2026-04-24 10:52:08  INFO          Uploading to R2 (timeout=300s)...
+2026-04-24 10:52:09  INFO          R2 PUT OK. Confirming...
+2026-04-24 10:52:10  INFO          Media ready: r2fY4 (1,170,482 bytes · reel_destination_reveal_reel_destination_reveal_kokernag.mp4)
+2026-04-24 10:52:10  INFO      Video uploaded: reel_destination_reveal_reel_destination_reveal_kokernag.mp4
+2026-04-24 10:52:11  INFO      [youtube/@naksh-iq] Already posted reel today — skipping.
+2026-04-24 10:52:11  INFO      [instagram/nakshiq] Already posted reel today — skipping.
+2026-04-24 10:52:11  INFO      [facebook/Nakshiq] Already posted reel today — skipping.
+2026-04-24 10:52:11  INFO      State saved. Reel run complete.
+2026-04-24 10:52:11  INFO      ════════════════════════════════════════════════════════════
