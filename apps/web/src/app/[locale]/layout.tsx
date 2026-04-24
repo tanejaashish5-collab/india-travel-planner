@@ -20,6 +20,7 @@ const StickyCTA = dynamic(() => import("@/components/sticky-cta").then((m) => ({
 const PersonalisationQuiz = dynamic(() => import("@/components/personalisation-quiz").then((m) => ({ default: m.PersonalisationQuiz })));
 const AskNakshIQ = dynamic(() => import("@/components/ask-nakshiq").then((m) => ({ default: m.AskNakshIQ })));
 const PWAInstallPrompt = dynamic(() => import("@/components/pwa-install-prompt").then((m) => ({ default: m.PWAInstallPrompt })));
+const OfflineIndicator = dynamic(() => import("@/components/offline-indicator").then((m) => ({ default: m.OfflineIndicator })));
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -256,6 +257,7 @@ export default async function LocaleLayout({
               <PersonalisationQuiz />
               <MobileTabBar />
               <PWAInstallPrompt />
+              <OfflineIndicator />
             </CompareProvider>
           </MotionProvider>
         </NextIntlClientProvider>

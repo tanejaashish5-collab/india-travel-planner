@@ -1,39 +1,21 @@
-/* ── NakshIQ Service Worker — Offline-First for SOS & Saved ── */
+/* ── NakshIQ Service Worker — Offline-First for in-trip use ── */
 
 // Bump when UX/content pages change materially — activate() drops older caches.
-// v3: 2026-04-22 ToC + long-scroll redesign on destination/state/blog pages.
-// v4: 2026-04-22 full-bleed hero video + mini-map at lg+ (luxury pattern).
-// v5: 2026-04-22 destination-month editorial pass — full-bleed hero, sticky back+breadcrumb, merged verdict, sidebar ToC.
-// v6: 2026-04-22 destination-month hero merges verdict stamp + prose into one announcement card (no separate verdict box).
-// v7: 2026-04-22 where-to-go state-in-month: sticky back+breadcrumb, full-bleed hero, announcement card with GO/WAIT/SKIP counts, sidebar ToC.
-// v8: 2026-04-23 state page — sticky back+breadcrumb pill, hero bumped to lg:h-[32rem], breadcrumb lifted out of hero overlay.
-// v9: 2026-04-23 video cache-busting (?v=<YYYYMMDD>) + mobile overflow fix on destination page (share/compare row wraps below sm).
-// v10: 2026-04-23 destination map enriched — nearby pins + auto-fit bounds, dark_all labelled basemap across all 3 maps, "Where am I?" context overlay.
-// v11: 2026-04-23 destination map context card moved top-left → bottom-left so zoom controls aren't occluded.
-// v12: 2026-04-23 Sprint-1.1 — unified TL;DR decision card on /destination/[id] (absorbs score badge + verdict + quick-stats into one panel).
-// v13: 2026-04-23 Sprint-1 complete — decision rail (lg+), Simple/Pro toggle, LIVE/SCORED badges, per-section freshness stamps.
-// v14: 2026-04-23 Sprint-2 complete — depth schema (014+015+016), ScenarioStrip, MicroItinerary, LogisticsChecklist, PersonaBlocks, BestFor, ElevationChart; 3 pilot destinations populated + 5 foundational scenarios seeded.
-// v15: 2026-04-23 Sprint-2 tuning — Logistics moved to Simple+Pro, single-scenario full-width card, ToC reasoning documented.
-// v16: 2026-04-23 Simple/Pro toggle removed. Dense blocks now inline-collapsed via CollapsibleDetails. Tourist Trap / Crowd Intelligence / International Info always shown.
-// v17: 2026-04-23 CollapsibleDetails trigger gets a slow breathing ring + brighter tint so cold visitors don't scroll past it. Pulse stops once opened; respects prefers-reduced-motion.
-// v18: 2026-04-23 Scenario cards stack full-width instead of 2-col grid — scenario text is too dense for cramped columns.
-// v19: 2026-04-23 fix: scenario cards missing block display → border tangled around text lines. Added `block` class + bumped border opacity so cards read as proper containers.
-// v20: 2026-04-23 readability: scenario IF/THEN labels + prose restructured for contrast; all 6 Sprint-2 section subtitles bumped text-xs/70 → text-sm (clearer tagline).
-// v21: 2026-04-23 destination/month restructure: trim Why-scores to weather+festivals, remove PracticalDetails + HowToDoIt footer (were dup of hero chips + destination page), add FullGuideLink CTA instead.
-// v22: 2026-04-23 CollapsibleDetails trigger redesigned (full-width bar + chevron + hint copy + stronger pulse) — tiny pill was missed on first scroll. BookingHandoff moved to page tail just above Nearby Places (was mid-page inside People section; no paid placement so editorial flow comes first).
-// v23: 2026-04-23 CollapsibleDetails now consistent green across all variants (dropped warning/yellow — too bright on dark mode + noisy mix). Pulse ring reduced from 8px/32% to 4px/22% now that the bar is full-width.
-// v24: 2026-04-23 Typography polish sprint (5 commits): TYPE tokens + h1/h2 weight cap → SectionLabel component + 44-file overline migration → editorial copy rewrite → emoji restraint in structural positions (scenario-strip/logistics/personas). Premium shift: 85+ mono-uppercase SaaS overlines now one softer sans pattern.
-// v25: 2026-04-23 Decision rail polish: "Decision" → "{month} at a glance", prose chips (Kids: Not ideal, Solo female: With operator only) instead of bare "2/5" scores, close + minimise controls with session/local storage. CollapsibleDetails verb "Open/Close" → "See/Hide". Second "Infrastructure Reality" heading → "Infrastructure data" (fixes dup with narrative section).
-// v26: 2026-04-23 Booking handoff dedup — editors-picks.tsx was rendering its own BookingHandoff inline + destination-detail.tsx was rendering one at the page tail. Both fired, so the "Ready to book?" card appeared twice. Removed from editors-picks; kept single instance at page tail.
-// v27: 2026-04-23 KidsBadge defensive render — meta line "Rating: X/5 · Min age: Y+ · Best for: Z" was unconditional; empty best_age_group / null min_age rendered "Best for:" / "Min age: +" trailing on partial rows (Almora and others). Each segment now guards on its own value.
-// v28: 2026-04-23 Elite editorial voice sprint (6 commits): state hero reshaped to prose + i18n keys with Hindi parity; month hubs sentence-cased ("Where to skip", "A good time"); guide hub overlines rewritten ("In season", "On the ground", "Field guides"); MethodologyStrip dropped "METHOD" prefix; solo-female month grid softened. Added apps/web/docs/voice.md as single source of truth.
-const CACHE_VERSION = "nakshiq-v28";
+// v29: 2026-04-24 Sprint-13a offline-first upgrade — expanded precache (SOS, saved, road-conditions,
+//      permits, contact, arrival, methodology), /offline fallback page, HTML network-first with
+//      offline HTML fallback, API GETs cached for read-after-signal-drops (POST/PUT/DELETE still skip),
+//      message handler for SKIP_WAITING (update prompts from UI).
+
+const CACHE_VERSION = "nakshiq-v29";
 const STATIC_CACHE = `${CACHE_VERSION}-static`;
 const IMAGE_CACHE = `${CACHE_VERSION}-images`;
 const DATA_CACHE = `${CACHE_VERSION}-data`;
+const HTML_CACHE = `${CACHE_VERSION}-html`;
 
-// Pre-cache essential files
-const PRECACHE_URLS = [
+// Pre-cache essentials + critical in-trip routes that travellers need
+// when 4G drops in Spiti / Ladakh / Kinnaur. Pre-fetched on SW install so
+// they're available before the user ever visits the route.
+const PRECACHE_STATIC = [
   "/icon-192.png",
   "/icon-512.png",
   "/og-image.jpg",
@@ -43,21 +25,43 @@ const PRECACHE_URLS = [
   "/manifest.json",
 ];
 
-// Install — pre-cache essentials
+const PRECACHE_ROUTES = [
+  "/en",
+  "/en/offline",
+  "/en/sos",
+  "/en/saved",
+  "/en/road-conditions",
+  "/en/permits",
+  "/en/contact",
+  "/en/arrival",
+  "/en/methodology",
+  "/hi",
+  "/hi/sos",
+  "/hi/saved",
+];
+
+// Install — pre-cache essentials + critical routes.
+// Failing on any one route must NOT block install, so we use allSettled per-URL.
 self.addEventListener("install", (event) => {
   event.waitUntil(
-    caches.open(STATIC_CACHE).then((cache) => cache.addAll(PRECACHE_URLS))
+    Promise.all([
+      caches.open(STATIC_CACHE).then((cache) => cache.addAll(PRECACHE_STATIC)),
+      caches.open(HTML_CACHE).then((cache) =>
+        Promise.allSettled(PRECACHE_ROUTES.map((url) => cache.add(url).catch(() => null)))
+      ),
+    ])
   );
   self.skipWaiting();
 });
 
-// Activate — clean old caches
+// Activate — drop caches from older versions so stale HTML doesn't haunt users.
 self.addEventListener("activate", (event) => {
+  const currentCaches = [STATIC_CACHE, IMAGE_CACHE, DATA_CACHE, HTML_CACHE];
   event.waitUntil(
     caches.keys().then((keys) =>
       Promise.all(
         keys
-          .filter((key) => key.startsWith("nakshiq-") && key !== STATIC_CACHE && key !== IMAGE_CACHE && key !== DATA_CACHE)
+          .filter((key) => key.startsWith("nakshiq-") && !currentCaches.includes(key))
           .map((key) => caches.delete(key))
       )
     )
@@ -65,23 +69,56 @@ self.addEventListener("activate", (event) => {
   self.clients.claim();
 });
 
-// Fetch — strategy per resource type
+// Message handler — UI can post {type: "SKIP_WAITING"} to trigger update.
+self.addEventListener("message", (event) => {
+  if (event.data?.type === "SKIP_WAITING") {
+    self.skipWaiting();
+  }
+});
+
+// Helper: offline fallback — serves /offline HTML when no cached match.
+async function offlineFallback(request) {
+  const accept = request.headers.get("accept") || "";
+  if (accept.includes("text/html")) {
+    const locale = new URL(request.url).pathname.startsWith("/hi") ? "hi" : "en";
+    const fallback = await caches.match(`/${locale}/offline`);
+    if (fallback) return fallback;
+  }
+  return new Response("Offline — please reconnect.", {
+    status: 503,
+    statusText: "Offline",
+    headers: { "content-type": "text/plain" },
+  });
+}
+
+// Fetch — strategy per resource type.
 self.addEventListener("fetch", (event) => {
   const url = new URL(event.request.url);
 
-  // Skip non-GET and API mutations
+  // Never intercept non-GET requests (mutations always go to network).
   if (event.request.method !== "GET") return;
-  if (url.pathname.startsWith("/api/")) return;
+
+  // Skip cross-origin requests except R2 CDN for videos/images.
+  const isOwnOrigin = url.origin === self.location.origin;
+  const isR2Origin = url.hostname.includes("r2.dev") || url.hostname.includes("cloudflare");
+
+  // Next internal — let it flow.
   if (url.pathname.startsWith("/_next/")) return;
 
-  // Images — Cache First (aggressive caching for destination photos)
-  if (url.pathname.match(/\.(jpg|jpeg|png|webp|avif|svg)$/i) || url.pathname.includes("/images/")) {
+  // POST-mutating API endpoints already filtered above, but skip all /api for caching
+  // EXCEPT read-only GET endpoints useful offline (weather, stats). Skip for safety.
+  if (url.pathname.startsWith("/api/")) return;
+
+  // Images — Cache First (aggressive, 7-day implicit via browser expiry).
+  if (url.pathname.match(/\.(jpg|jpeg|png|webp|avif|svg|ico)$/i) || url.pathname.includes("/images/")) {
     event.respondWith(
       caches.open(IMAGE_CACHE).then((cache) =>
         cache.match(event.request).then((cached) => {
           if (cached) return cached;
           return fetch(event.request).then((response) => {
-            if (response.ok) cache.put(event.request, response.clone());
+            if (response.ok && (isOwnOrigin || isR2Origin)) {
+              cache.put(event.request, response.clone());
+            }
             return response;
           }).catch(() => new Response("", { status: 404 }));
         })
@@ -90,16 +127,40 @@ self.addEventListener("fetch", (event) => {
     return;
   }
 
-  // Destination pages — Stale While Revalidate
+  // Videos from R2 — no cache (too large), just pass-through.
+  if (url.pathname.match(/\.(mp4|webm|mov)$/i)) return;
+
+  // HTML pages — Network-first with HTML cache fallback, /offline final fallback.
+  // This is the critical change for in-trip use: any page the user has already
+  // visited stays readable offline.
+  if (event.request.mode === "navigate" || (event.request.headers.get("accept") || "").includes("text/html")) {
+    event.respondWith(
+      fetch(event.request)
+        .then((response) => {
+          if (response.ok && isOwnOrigin) {
+            const clone = response.clone();
+            caches.open(HTML_CACHE).then((cache) => cache.put(event.request, clone));
+          }
+          return response;
+        })
+        .catch(() =>
+          caches.match(event.request).then((cached) => cached || offlineFallback(event.request))
+        )
+    );
+    return;
+  }
+
+  // Destination HTML (fetched as resource, not navigation) — Stale While Revalidate.
   if (url.pathname.match(/\/destination\//)) {
     event.respondWith(
       caches.open(DATA_CACHE).then((cache) =>
         cache.match(event.request).then((cached) => {
-          const fetchPromise = fetch(event.request).then((response) => {
-            if (response.ok) cache.put(event.request, response.clone());
-            return response;
-          }).catch(() => cached || new Response("Offline", { status: 503 }));
-
+          const fetchPromise = fetch(event.request)
+            .then((response) => {
+              if (response.ok) cache.put(event.request, response.clone());
+              return response;
+            })
+            .catch(() => cached || offlineFallback(event.request));
           return cached || fetchPromise;
         })
       )
@@ -107,16 +168,18 @@ self.addEventListener("fetch", (event) => {
     return;
   }
 
-  // Everything else — Network first, cache fallback
+  // Everything else — Network first, cache fallback, offline fallback last.
   event.respondWith(
     fetch(event.request)
       .then((response) => {
-        if (response.ok && url.origin === self.location.origin) {
+        if (response.ok && isOwnOrigin) {
           const clone = response.clone();
           caches.open(DATA_CACHE).then((cache) => cache.put(event.request, clone));
         }
         return response;
       })
-      .catch(() => caches.match(event.request).then((cached) => cached || new Response("Offline", { status: 503 })))
+      .catch(() =>
+        caches.match(event.request).then((cached) => cached || offlineFallback(event.request))
+      )
   );
 });

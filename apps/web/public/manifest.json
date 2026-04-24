@@ -1,9 +1,12 @@
 {
-  "name": "NakshIQ — Travel with IQ",
+  "id": "com.nakshiq.travel",
+  "name": "NakshIQ — India travel confidence",
   "short_name": "NakshIQ",
-  "description": "India's travel confidence engine. 480 destinations across 36 states — monthly scores, kids ratings, safety data, and honest travel intelligence.",
-  "start_url": "/en/explore",
+  "description": "India's travel confidence engine. 488 destinations, 5,856 month scores, honest Go/Wait/Skip verdicts, and offline-first access for in-trip use in Ladakh, Spiti, Kinnaur.",
+  "start_url": "/en",
+  "scope": "/",
   "display": "standalone",
+  "display_override": ["window-controls-overlay", "standalone"],
   "background_color": "#161614",
   "theme_color": "#E55642",
   "orientation": "portrait-primary",
@@ -12,6 +15,31 @@
     { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
     { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
   ],
-  "categories": ["travel", "lifestyle"],
+  "categories": ["travel", "lifestyle", "navigation"],
+  "lang": "en-IN",
+  "dir": "ltr",
+  "shortcuts": [
+    {
+      "name": "Saved trips",
+      "short_name": "Saved",
+      "description": "Your saved destinations — works offline",
+      "url": "/en/saved",
+      "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "SOS",
+      "short_name": "SOS",
+      "description": "Emergency contacts and helplines",
+      "url": "/en/sos",
+      "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Road conditions",
+      "short_name": "Roads",
+      "description": "Pass closures and road status",
+      "url": "/en/road-conditions",
+      "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }]
+    }
+  ],
   "screenshots": []
 }
