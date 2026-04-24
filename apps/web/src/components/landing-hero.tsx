@@ -19,7 +19,21 @@ import {
   ScrollReveal,
 } from "./animated-hero";
 import { AnimatedCounter } from "./animated-counter";
-import { IndiaHeroMap } from "./india-hero-map";
+import dynamic from "next/dynamic";
+
+// IndiaHeroMap is a below-the-fold Leaflet map with all 488 pins — dynamically
+// imported so its ~200KB bundle (Leaflet + leaflet-css + pin assets) doesn't
+// block FCP/LCP. Renders on the client once the containing section hits the
+// viewport (Next.js dynamic import + ssr:false).
+const IndiaHeroMap = dynamic(
+  () => import("./india-hero-map").then((m) => ({ default: m.IndiaHeroMap })),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="w-full aspect-[4/3] sm:aspect-[16/10] rounded-2xl border border-border/40 bg-background/30 animate-pulse" />
+    ),
+  }
+);
 import { REGION_GROUPS, STATE_MAP } from "@/lib/seo-maps";
 import { resolveCover } from "@/lib/collection-covers";
 import { destinationImage } from "@/lib/image-url";
@@ -79,15 +93,20 @@ export function LandingHero({
     <>
       {/* Hero Section — day/night gradient */}
       <section className="relative min-h-screen flex flex-col items-center justify-center px-4 overflow-hidden">
-        {/* Background video with time-aware overlay */}
+        {/* Background video — LCP-safe: metadata-only preload (browsers won't
+            fetch the full MP4 until autoplay fires after parse), poster frame
+            is an R2 CDN image that renders as LCP while video loads lazily. */}
         <div className="absolute inset-0">
           <video
             autoPlay
             muted
             loop
             playsInline
+            preload="metadata"
+            disablePictureInPicture
             className="w-full h-full object-cover opacity-[0.18]"
             poster={destinationImage("spiti-valley")}
+            aria-hidden="true"
           >
             <source src={videoSrc("hero")} type="video/mp4" />
           </video>

@@ -298,6 +298,8 @@ function PlanPanel({ locale, onNavigate }: { locale: string; onNavigate: () => v
         <div className="grid grid-cols-2 gap-x-4">
           <MenuItem href={`/${locale}/where-to-go/${currentMonthSlug}`} icon={CalendarIcon} label={t("whereToGoNow")} desc="Best destinations this month" onNavigate={onNavigate} />
           <MenuItem href={`/${locale}/build-route`} icon={MapPinIcon} label={t("buildRoute")} desc="Design your road trip" onNavigate={onNavigate} />
+          <MenuItem href={`/${locale}/explore-by-persona`} icon={GridIcon} label="By persona" desc="Families, bikers, solo — 10 hubs" onNavigate={onNavigate} />
+          <MenuItem href={`/${locale}/cost-index`} icon={BookIcon} label="Cost Index" desc="Season-tagged travel costs" onNavigate={onNavigate} />
           <MenuItem href={`/${locale}/gap-year`} icon={CalendarIcon} label="Gap Year Planner" desc="3–12 months, month by month" onNavigate={onNavigate} />
           <MenuItem href={`/${locale}/arrival`} icon={PlaneIcon} label="Arrival Playbook" desc="Airport-by-airport arrival guide" onNavigate={onNavigate} />
           <MenuItem href={`/${locale}/permits`} icon={ShieldIcon} label={t("permits")} desc="Required passes & permits" onNavigate={onNavigate} />
@@ -348,7 +350,9 @@ function LearnPanel({ locale, onNavigate }: { locale: string; onNavigate: () => 
         <p className="px-3 mb-2 text-[10px] font-semibold uppercase tracking-[0.08em] text-muted-foreground/60">Read</p>
         <div className="grid grid-cols-2 gap-x-4">
           <MenuItem href={`/${locale}/blog`} icon={PenIcon} label={t("blog")} desc="Stories & insights" onNavigate={onNavigate} />
+          <MenuItem href={`/${locale}/nakshiq-100`} icon={TrophyIcon} label="NakshIQ 100" desc="India's 100 best destination-months" onNavigate={onNavigate} />
           <MenuItem href={`/${locale}/tourist-traps`} icon={AlertIcon} label={t("touristTraps")} desc="Overhyped places to skip" onNavigate={onNavigate} />
+          <MenuItem href={`/${locale}/guide/first-trip-india`} icon={GlobeIcon} label="First trip to India" desc="Where, when, and how" onNavigate={onNavigate} />
           <MenuItem href={`/${locale}/guide`} icon={BookIcon} label={t("guides")} desc="In-depth travel guides" onNavigate={onNavigate} />
           <MenuItem href={`/${locale}/superlatives`} icon={TrophyIcon} label={t("records")} desc="India's bests & firsts" onNavigate={onNavigate} />
         </div>

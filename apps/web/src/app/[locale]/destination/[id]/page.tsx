@@ -22,10 +22,35 @@ export const revalidate = 3600; // Revalidate every hour
 // If SEO rankings drop, flip back and upgrade Supabase to Pro.
 export const dynamicParams = true;
 
-// Only pre-render the 3 Sprint-2 pilot destinations at build time — these
-// are demo-critical. Everything else lazy-generates via ISR on first hit,
-// then caches for `revalidate` seconds.
-const PRE_RENDER_IDS = ["bomdila", "gurez-valley", "kaza"];
+// Pre-render the marquee destinations at build time for FCP-critical pages.
+// Long-tail destinations lazy-generate via ISR on first hit (dynamicParams=true).
+// Sprint 11 expansion: 3 Sprint-2 pilots + Tier-1 marquee set (~50 total).
+// Using a hardcoded list rather than a DB query so build-time latency stays
+// predictable. Re-evaluate quarterly based on GA4 traffic.
+const PRE_RENDER_IDS = [
+  // Sprint-2 pilots — demo-critical, kept first
+  "bomdila", "gurez-valley", "kaza",
+  // Himalayas — Ladakh / J&K
+  "leh", "pangong-lake", "nubra-valley", "srinagar", "gulmarg", "pahalgam",
+  // Himalayas — Himachal
+  "manali", "shimla", "dharamshala", "mcleod-ganj", "spiti-valley",
+  // Himalayas — Uttarakhand
+  "rishikesh", "mussoorie", "nainital", "valley-of-flowers", "auli",
+  // Northeast
+  "tawang", "dzukou-valley", "cherrapunji", "gangtok", "ziro-valley", "shillong",
+  // Rajasthan heritage spine
+  "jaisalmer", "udaipur", "jaipur", "jodhpur", "pushkar",
+  // UP / Delhi / Agra
+  "varanasi", "agra", "delhi",
+  // Heritage + UNESCO
+  "hampi", "khajuraho", "ajanta-caves", "ellora-caves", "mahabalipuram", "konark",
+  // Southern marquee
+  "munnar", "alleppey", "kochi", "kodaikanal", "ooty", "coorg",
+  // Coastal
+  "panaji", "palolem", "havelock-island", "neil-island", "puducherry", "gokarna",
+  // Gujarat / Central
+  "rann-of-kutch", "ahmedabad",
+];
 
 export async function generateStaticParams() {
   const locales = ["en", "hi"];
