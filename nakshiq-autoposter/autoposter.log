@@ -4018,3 +4018,41 @@ Date range: 2026-04-15 → 2026-04-23
 2026-04-24 07:18:58  INFO      ── Syncing Nakshiq content ──────────────────────────────
 2026-04-24 07:19:03  INFO      Synced → 20 destinations · 0 traps · 20 articles · total catalog=488
 2026-04-24 07:19:03  INFO      Sync-only mode. Done.
+2026-04-24 08:31:42  INFO      ════════════════════════════════════════════════════════════
+2026-04-24 08:31:42  INFO      Nakshiq Autoposter · INFOGRAPHIC · 2026-04-24 · weekday=4
+2026-04-24 08:31:42  INFO      ════════════════════════════════════════════════════════════
+2026-04-24 08:31:45  INFO      Generated 5 slides: topic=hidden_gems, theme=datacard
+2026-04-24 08:31:45  INFO          Requesting upload URL for infographic_infographic_hidden_gems_datacard_01_cover.jpg (107,200 bytes, image/jpeg)
+2026-04-24 08:31:46  INFO          Uploading to R2 (timeout=120s)...
+2026-04-24 08:31:47  INFO          R2 PUT OK. Confirming...
+2026-04-24 08:31:47  INFO          Media ready: 3D42k (107,200 bytes · infographic_infographic_hidden_gems_datacard_01_cover.jpg)
+2026-04-24 08:31:47  INFO        Uploaded: infographic_hidden_gems_datacard_01_cover.jpg (104 KB)
+2026-04-24 08:31:47  INFO          Requesting upload URL for infographic_infographic_hidden_gems_datacard_02_achabal.jpg (282,011 bytes, image/jpeg)
+2026-04-24 08:31:48  INFO          Uploading to R2 (timeout=120s)...
+2026-04-24 08:31:49  INFO          R2 PUT OK. Confirming...
+2026-04-24 08:31:50  INFO          Media ready: koiJh (282,011 bytes · infographic_infographic_hidden_gems_datacard_02_achabal.jpg)
+2026-04-24 08:31:50  INFO        Uploaded: infographic_hidden_gems_datacard_02_achabal.jpg (275 KB)
+2026-04-24 08:31:50  INFO          Requesting upload URL for infographic_infographic_hidden_gems_datacard_03_almora.jpg (227,772 bytes, image/jpeg)
+2026-04-24 08:31:51  INFO          Uploading to R2 (timeout=120s)...
+2026-04-24 08:31:52  INFO          R2 PUT OK. Confirming...
+2026-04-24 08:31:52  INFO          Media ready: 1W6TG (227,772 bytes · infographic_infographic_hidden_gems_datacard_03_almora.jpg)
+2026-04-24 08:31:52  INFO        Uploaded: infographic_hidden_gems_datacard_03_almora.jpg (222 KB)
+2026-04-24 08:31:52  INFO          Requesting upload URL for infographic_infographic_hidden_gems_datacard_04_bandipur.jpg (235,093 bytes, image/jpeg)
+2026-04-24 08:31:53  INFO          Uploading to R2 (timeout=120s)...
+2026-04-24 08:31:53  INFO          R2 PUT OK. Confirming...
+2026-04-24 08:31:54  INFO          Media ready: oMJoc (235,093 bytes · infographic_infographic_hidden_gems_datacard_04_bandipur.jpg)
+2026-04-24 08:31:54  INFO        Uploaded: infographic_hidden_gems_datacard_04_bandipur.jpg (229 KB)
+2026-04-24 08:31:54  INFO          Requesting upload URL for infographic_infographic_hidden_gems_datacard_06_cta.jpg (51,868 bytes, image/jpeg)
+2026-04-24 08:31:55  INFO          Uploading to R2 (timeout=120s)...
+2026-04-24 08:31:55  INFO          R2 PUT OK. Confirming...
+2026-04-24 08:31:56  INFO          Media ready: pP5CM (51,868 bytes · infographic_infographic_hidden_gems_datacard_06_cta.jpg)
+2026-04-24 08:31:56  INFO        Uploaded: infographic_hidden_gems_datacard_06_cta.jpg (50 KB)
+2026-04-24 08:31:56  INFO      All slides uploaded: 5 media objects
+2026-04-24 08:31:57  INFO      [youtube/@naksh-iq] Skipping infographic (YouTube only accepts video/reels).
+2026-04-24 08:31:57  INFO      [instagram/nakshiq] Publishing infographic carousel: hidden_gems/datacard...
+2026-04-24 08:31:59  INFO      [instagram/nakshiq] Infographic carousel posted successfully!
+2026-04-24 08:31:59  INFO      [facebook/Nakshiq] Publishing infographic carousel: hidden_gems/datacard...
+2026-04-24 08:32:01  INFO      [facebook/Nakshiq] Infographic carousel posted successfully!
+2026-04-24 08:32:01  INFO      Infographic state updated: topic=hidden_gems, theme=datacard
+2026-04-24 08:32:01  INFO      State saved. Infographic run complete.
+2026-04-24 08:32:01  INFO      ════════════════════════════════════════════════════════════
