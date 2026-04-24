@@ -71,7 +71,33 @@ export function CollectionDetail({ collection }: { collection: any }) {
             />
           </div>
         </div>
-        <div className="mt-3 text-sm text-muted-foreground">{items.length} destinations in this collection</div>
+        <div className="mt-3 text-sm text-muted-foreground">
+          {items.length} destinations in this collection
+          {collection.risk_level && (
+            <span className="ml-3 inline-flex items-center gap-1.5 rounded-full border border-border bg-background/40 px-2 py-0.5 font-mono text-[10px] tracking-[0.08em] uppercase">
+              <span className="opacity-60">Commitment:</span>
+              <span className="text-foreground">{collection.risk_level}</span>
+            </span>
+          )}
+        </div>
+
+        {collection.strategy_intro && (
+          <div className="mt-6 rounded-2xl border border-primary/30 bg-primary/5 p-5">
+            <div className="font-mono text-[10px] tracking-[0.2em] uppercase text-muted-foreground/70 mb-2">
+              Why this collection exists
+            </div>
+            <p className="text-sm leading-relaxed text-foreground/90">{collection.strategy_intro}</p>
+          </div>
+        )}
+
+        {collection.connector_notes && (
+          <div className="mt-4 rounded-2xl border border-border bg-background/40 p-5">
+            <div className="font-mono text-[10px] tracking-[0.2em] uppercase text-muted-foreground/70 mb-2">
+              How the stops connect
+            </div>
+            <p className="text-sm leading-relaxed text-muted-foreground">{collection.connector_notes}</p>
+          </div>
+        )}
       </FadeIn>
 
       <StaggerContainer className="mt-8 space-y-4" staggerDelay={0.1}>

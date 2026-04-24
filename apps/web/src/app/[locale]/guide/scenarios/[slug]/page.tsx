@@ -64,8 +64,87 @@ export default async function ScenarioPage({
   const tone = CATEGORY_TONE[s.category] ?? "border-border bg-background/40";
   const categoryLabel = CATEGORY_LABEL[s.category] ?? s.category;
 
+  const scenarioUrl = `https://www.nakshiq.com/${locale}/guide/scenarios/${slug}`;
+  const steps: Array<string | { title?: string; text?: string }> = Array.isArray(s.steps) ? s.steps : [];
+
+  // HowTo schema — scenarios are step-by-step protocols. AI answer engines
+  // surface HowTo content as structured walkthroughs.
+  const howToLd = steps.length > 0 ? {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "@id": `${scenarioUrl}#howto`,
+    name: s.title,
+    description: `${s.if_clause} — ${s.then_clause}`,
+    url: scenarioUrl,
+    inLanguage: locale === "hi" ? "hi-IN" : "en-IN",
+    isPartOf: { "@id": "https://www.nakshiq.com#website" },
+    publisher: { "@id": "https://www.nakshiq.com#organization" },
+    ...(s.reviewed_at && { dateModified: s.reviewed_at }),
+    step: steps.map((step, i) => {
+      const name = typeof step === "string" ? `Step ${i + 1}` : (step.title ?? `Step ${i + 1}`);
+      const text = typeof step === "string" ? step : (step.text ?? step.title ?? "");
+      return {
+        "@type": "HowToStep",
+        position: i + 1,
+        name,
+        text,
+      };
+    }),
+  } : null;
+
+  // FAQPage schema — one Q/A derived from the If/Then card
+  const faqLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": `${scenarioUrl}#faq`,
+    isPartOf: { "@id": "https://www.nakshiq.com#website" },
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: `What should I do if ${String(s.if_clause).replace(/\.$/, "").toLowerCase()}?`,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: String(s.then_clause),
+        },
+      },
+      ...(s.applies_to_altitude_min ? [{
+        "@type": "Question",
+        name: `At what altitude does this scenario apply?`,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: `This scenario triggers at ${Number(s.applies_to_altitude_min).toLocaleString()}m${s.applies_to_altitude_max ? ` to ${Number(s.applies_to_altitude_max).toLocaleString()}m` : " and above"} elevation.`,
+        },
+      }] : []),
+    ],
+  };
+
+  const breadcrumbLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: `https://www.nakshiq.com/${locale}` },
+      { "@type": "ListItem", position: 2, name: "Guides", item: `https://www.nakshiq.com/${locale}/guide` },
+      { "@type": "ListItem", position: 3, name: "Scenarios", item: `https://www.nakshiq.com/${locale}/guide/scenarios` },
+      { "@type": "ListItem", position: 4, name: s.title, item: scenarioUrl },
+    ],
+  };
+
   return (
     <div className="min-h-screen">
+      {howToLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(howToLd) }}
+        />
+      )}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+      />
       <Nav />
       <main className="mx-auto max-w-3xl px-4 py-10 sm:py-14">
         {/* Breadcrumb */}
