@@ -1,7 +1,7 @@
 {
-  "version": 5,
-  "total_images": 272,
-  "total_campaigns": 137,
+  "version": 6,
+  "total_images": 284,
+  "total_campaigns": 140,
   "campaigns": {
     "17000Ft Reality Check": [
       "pomelli_17000ft_reality_check.png"
@@ -548,6 +548,24 @@
     ],
     "12 Months 12 Perfect Scores": [
       "pomelli_12months_scores_1.png"
+    ],
+    "India Solo Safety Scorecard": [
+      "pomelli_solo_safety_scorecard_1.png",
+      "pomelli_solo_safety_scorecard_2.png",
+      "pomelli_solo_safety_scorecard_3.png",
+      "pomelli_solo_safety_scorecard_4.png"
+    ],
+    "The High-Altitude Medical Gap": [
+      "pomelli_high_altitude_medical_1.png",
+      "pomelli_high_altitude_medical_2.png",
+      "pomelli_high_altitude_medical_3.png",
+      "pomelli_high_altitude_medical_4.png"
+    ],
+    "The 2000 Stay Quality Index": [
+      "pomelli_2000_stay_quality_1.png",
+      "pomelli_2000_stay_quality_2.png",
+      "pomelli_2000_stay_quality_3.png",
+      "pomelli_2000_stay_quality_4.png"
     ]
   }
 }
