@@ -3880,3 +3880,27 @@ Date range: 2026-04-15 → 2026-04-23
 2026-04-24 05:18:40  INFO      [facebook/Nakshiq] Already posted today (morning) — skipping.
 2026-04-24 05:18:40  INFO      State saved. Run complete.
 2026-04-24 05:18:40  INFO      ════════════════════════════════════════════════════════════
+2026-04-24 05:34:14  INFO      ════════════════════════════════════════════════════════════
+2026-04-24 05:34:14  INFO      Nakshiq Autoposter · REEL · 2026-04-24 · weekday=4
+2026-04-24 05:34:14  INFO      ════════════════════════════════════════════════════════════
+2026-04-24 05:34:14  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-04-24 05:34:21  INFO      Synced → 20 destinations · 0 traps · 20 articles · total catalog=488
+2026-04-24 05:34:21  INFO      Format: seasonal_shift | Data: {'dest_name': 'Kausani', 'dest_slug': 'kausani', 'now_month': 'April', 'now_score': 5, 'future_month': 'July', 'future_score': 2}
+2026-04-24 05:34:33  INFO      Reel rendered: reel_seasonal_shift_kausani.mp4 (4991 KB)
+2026-04-24 05:34:33  INFO          Requesting upload URL for reel_seasonal_shift_reel_seasonal_shift_kausani.mp4 (5,110,821 bytes, video/mp4)
+2026-04-24 05:34:33  INFO          Uploading to R2 (timeout=300s)...
+2026-04-24 05:34:35  INFO          R2 PUT OK. Confirming...
+2026-04-24 05:34:36  INFO          Media ready: 4Sqxi (5,110,821 bytes · reel_seasonal_shift_reel_seasonal_shift_kausani.mp4)
+2026-04-24 05:34:36  INFO      Video uploaded: reel_seasonal_shift_reel_seasonal_shift_kausani.mp4
+2026-04-24 05:34:36  INFO      [youtube/@naksh-iq] Publishing reel (seasonal_shift)...
+2026-04-24 05:34:38  INFO      [youtube/@naksh-iq] Outstand accepted (post_id=Mt0YC), confirming...
+2026-04-24 05:34:49  INFO      [youtube/@naksh-iq] ✅ Reel published · Outstand=Mt0YC · Platform=t1mBPYWciQo
+2026-04-24 05:34:49  INFO      [instagram/nakshiq] Publishing reel (seasonal_shift)...
+2026-04-24 05:34:51  INFO      [instagram/nakshiq] Outstand accepted (post_id=ikJqB), confirming...
+2026-04-24 05:35:30  INFO      [instagram/nakshiq] ✅ Reel published · Outstand=ikJqB · Platform=17854610520641609
+2026-04-24 05:35:30  INFO      [facebook/Nakshiq] Publishing reel (seasonal_shift)...
+2026-04-24 05:35:32  INFO      [facebook/Nakshiq] Outstand accepted (post_id=zIxbP), confirming...
+2026-04-24 05:35:43  INFO      [facebook/Nakshiq] ✅ Reel published · Outstand=zIxbP · Platform=1681461333287091
+2026-04-24 05:35:43  INFO      Theme tracker updated: format=seasonal_shift
+2026-04-24 05:35:43  INFO      State saved. Reel run complete.
+2026-04-24 05:35:43  INFO      ════════════════════════════════════════════════════════════
