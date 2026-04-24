@@ -237,7 +237,7 @@ async function getDestination(id: string) {
   const [
     gems, trapAlts, festivals, localStays, travelerNotes,
     allDests, reviews, relatedArticles, relatedCollections, relatedRoutes,
-    nearbyDests, emergencySos, pois, editorStayPicks, scenarios,
+    nearbyDests, emergencySos, pois, editorStayPicks, scenarios, tripReports,
   ] = await Promise.all([
     supabase.from("hidden_gems").select("*").eq("near_destination_id", id),
     supabase
@@ -272,6 +272,13 @@ async function getDestination(id: string) {
       .eq("destination_id", id)
       .eq("published", true),
     fetchScenarios(),
+    supabase
+      .from("trip_reports")
+      .select("id, destination_id, visited_month, visited_year, rating, summary, body, reporter_name, reporter_location, highlights, warnings, approved_at")
+      .eq("destination_id", id)
+      .eq("status", "approved")
+      .order("approved_at", { ascending: false })
+      .limit(10),
   ]);
 
   return {
@@ -292,6 +299,7 @@ async function getDestination(id: string) {
     points_of_interest: pois.data ?? [],
     editor_stay_picks: editorStayPicks.data ?? [],
     scenarios: scenarios.data ?? [],
+    trip_reports: tripReports.data ?? [],
   };
 }
 
@@ -344,6 +352,24 @@ export default async function DestinationPage({
       containedInPlace: { "@type": "Country", name: "India" },
     },
     touristType: dest.difficulty === "easy" ? "Family" : dest.difficulty === "extreme" ? "Adventure" : "General",
+    ...((() => {
+      // AggregateRating — computed live from approved trip_reports. Only
+      // emitted when there's at least one report to average, per schema.org
+      // AggregateRating requirement.
+      const reports: Array<{ rating: number }> = (dest as any).trip_reports ?? [];
+      if (reports.length === 0) return {};
+      const sum = reports.reduce((acc, r) => acc + Number(r.rating), 0);
+      const avg = sum / reports.length;
+      return {
+        aggregateRating: {
+          "@type": "AggregateRating",
+          ratingValue: Number(avg.toFixed(1)),
+          reviewCount: reports.length,
+          bestRating: 5,
+          worstRating: 1,
+        },
+      };
+    })()),
   };
 
   // BreadcrumbList schema — locale-aware

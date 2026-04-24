@@ -24,6 +24,7 @@ import { KidsBadge } from "./kids-badge";
 import { TouristTrapIntervention } from "./tourist-trap-intervention";
 import { TravelerNotes } from "./traveler-notes";
 import { ReviewsList } from "./reviews-list";
+import { TravelerReports } from "./traveler-reports";
 import { ReviewForm } from "./review-form";
 import { BookingHandoff } from "./booking-handoff";
 import VerdictCard from "./verdict-card";
@@ -1326,7 +1327,7 @@ export function DestinationDetail({ dest }: { dest: any }) {
             <section
               id="section-reviews"
               className="scroll-mt-40 space-y-8"
-              
+
             >
               <h2 className="text-xl font-semibold mb-4">Reviews</h2>
               {dest.traveler_notes?.length > 0 && (
@@ -1336,6 +1337,16 @@ export function DestinationDetail({ dest }: { dest: any }) {
               <ReviewForm destinationId={dest.id} />
             </section>
           )}
+
+          {/* Sprint 12 — structured traveler trip reports. Approved UGC with
+              month + year + rating context. AggregateRating JSON-LD wraps
+              these on the page-level TouristDestination schema. */}
+          <TravelerReports
+            reports={dest.trip_reports ?? []}
+            destinationId={dest.id}
+            destinationName={displayName}
+            locale={locale}
+          />
           </div>
 
           {/* Sidebar ToC — sticky vertical rail, lg+ only */}
