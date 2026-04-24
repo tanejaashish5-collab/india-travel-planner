@@ -291,16 +291,24 @@ export default async function DestinationPage({
     ? (dest.allDestinations ?? []).filter((d: any) => comparisons.some((c) => c.other === d.id))
     : [];
 
-  // Schema.org JSON-LD for TouristDestination
+  // Schema.org JSON-LD — TouristDestination with @id chain back to the
+  // Organization/WebSite entities declared in the root layout. This lets
+  // search + AI engines resolve "this destination is published by NakshIQ"
+  // without having to re-fetch the site's homepage.
   const stateInfo = dest.state as any;
   const stateName = Array.isArray(stateInfo) ? stateInfo[0]?.name : stateInfo?.name;
+  const destUrl = `https://www.nakshiq.com/${locale}/destination/${id}`;
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "TouristDestination",
+    "@id": `${destUrl}#destination`,
     name: dest.name,
     description: dest.tagline || `Travel guide for ${dest.name}`,
-    url: `https://www.nakshiq.com/en/destination/${id}`,
+    url: destUrl,
     image: destinationImage(id),
+    inLanguage: locale === "hi" ? "hi-IN" : "en-IN",
+    isPartOf: { "@id": "https://www.nakshiq.com#website" },
+    publisher: { "@id": "https://www.nakshiq.com#organization" },
     ...(dest.elevation_m && { elevation: { "@type": "QuantitativeValue", value: dest.elevation_m, unitCode: "MTR" } }),
     ...(dest.coords && {
       geo: { "@type": "GeoCoordinates", latitude: dest.coords.lat, longitude: dest.coords.lng },
@@ -308,19 +316,20 @@ export default async function DestinationPage({
     containedInPlace: {
       "@type": "AdministrativeArea",
       name: stateName || "India",
+      containedInPlace: { "@type": "Country", name: "India" },
     },
     touristType: dest.difficulty === "easy" ? "Family" : dest.difficulty === "extreme" ? "Adventure" : "General",
   };
 
-  // BreadcrumbList schema
+  // BreadcrumbList schema — locale-aware
   const breadcrumbLd = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.nakshiq.com/en" },
-      { "@type": "ListItem", position: 2, name: "Destinations", item: "https://www.nakshiq.com/en/explore" },
-      { "@type": "ListItem", position: 3, name: stateName || "India", item: `https://www.nakshiq.com/en/region/${dest.state_id || "india"}` },
-      { "@type": "ListItem", position: 4, name: dest.name, item: `https://www.nakshiq.com/en/destination/${id}` },
+      { "@type": "ListItem", position: 1, name: "Home", item: `https://www.nakshiq.com/${locale}` },
+      { "@type": "ListItem", position: 2, name: "Destinations", item: `https://www.nakshiq.com/${locale}/explore` },
+      { "@type": "ListItem", position: 3, name: stateName || "India", item: `https://www.nakshiq.com/${locale}/region/${dest.state_id || "india"}` },
+      { "@type": "ListItem", position: 4, name: dest.name, item: destUrl },
     ],
   };
 

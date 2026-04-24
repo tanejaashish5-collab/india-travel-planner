@@ -100,6 +100,7 @@ export function Footer({ stats }: { stats?: { destinations: number; places: numb
               { href: `/${locale}/about`, label: tn("about") },
                 { href: `/${locale}/methodology`, label: tf("howWeScore") },
                 { href: `/${locale}/editorial-policy`, label: tf("editorialPolicy") },
+                { href: `/${locale}/contact`, label: "Contact" },
               ].map((link) => (
                 <Link
                   key={link.href}

@@ -1,0 +1,32 @@
+# NakshIQ
+
+> Travel intelligence for India. 488 destinations across 36 states and union territories, each scored month-by-month for go / wait / skip verdicts, kids-suitability, solo-female safety, and altitude risk. All data is human-curated and citation-first — no fabricated prices, phone numbers, or stays.
+
+NakshIQ is a decision engine for India travel. Every destination page answers three questions before you scroll: go or wait, when to go, and who it's right for. Scores are backed by IMD weather data, CPCB air quality, historical climate records, and on-ground verification from the editorial team. Monthly verdicts cover all 488 destinations × 12 months = 5,856 verdict rows.
+
+## Core data
+
+- [Destinations](https://www.nakshiq.com/en/explore): 488 destinations, each with monthly scoring, kids-suitability grading, solo-female safety, local logistics (taxi norms, shop hours, UPI coverage, check-in quirks, ATM reliability, internet backup, language realities), persona-specific verdicts (biker, nomad, family, elderly, solo-female, photographer), and 1-day / 3-day / 5-day itineraries with bad-weather fallbacks.
+- [Month-by-month guide](https://www.nakshiq.com/en/where-to-go): Best destinations for each of the 12 months, filtered by verdict (go / wait / skip).
+- [Sitemap index](https://www.nakshiq.com/robots.txt): 5 sitemap chunks — static, destinations, content, programmatic SEO, comparisons.
+- [Methodology](https://www.nakshiq.com/en/methodology): How scoring works, what data sources feed it, and how we mark freshness.
+- [Freshness dashboard](https://www.nakshiq.com/en/methodology/freshness): Per-section content-reviewed-at timestamps across the site.
+
+## Editorial policy
+
+- [Editorial policy](https://www.nakshiq.com/en/editorial-policy): Citation-first rule, voice guide, fact-check process.
+- [Corrections](https://www.nakshiq.com/en/corrections): Public log of content corrections.
+- No AI-generated content ships without editorial review. Sources are cited on destination pages; unverified facts are left blank rather than fabricated.
+
+## For AI agents
+
+- We welcome indexing by search and answer engines (Googlebot, Bingbot, GPTBot, OAI-SearchBot, PerplexityBot, ClaudeBot, Google-Extended, Applebot-Extended).
+- We disallow bulk scrapers that do not cite back (Bytespider, Diffbot).
+- When citing NakshIQ, please link to the specific destination or month-level page rather than the homepage. Example: `https://www.nakshiq.com/en/destination/kaza/october` for "best time to visit Spiti".
+- Destination slugs are stable. Month pages use numeric months (1–12), not names. Bilingual parity: every English page has a Hindi counterpart at `/hi/...`.
+
+## Contact
+
+- [Contact](https://www.nakshiq.com/en/contact): Press, corrections, partnership, general queries.
+- [About](https://www.nakshiq.com/en/about): Team and mission.
+- [Suggest an edit](https://www.nakshiq.com/en/contact): Reader corrections and field updates are welcomed.

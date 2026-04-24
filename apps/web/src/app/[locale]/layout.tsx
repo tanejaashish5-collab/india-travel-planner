@@ -162,16 +162,86 @@ export default async function LocaleLayout({
         >
           Skip to main content
         </a>
+        {/* Organization + WebSite + SearchAction — @id-chained so AI/search
+            engines resolve entity references across every page. Paired with
+            per-page TouristDestination / Article / ContactPage schemas that
+            reference these @id anchors via isPartOf / about / publisher. */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "Organization",
-            name: "NakshIQ",
-            url: "https://www.nakshiq.com",
-            logo: "https://www.nakshiq.com/icon-192.png",
-            description: "Travel intelligence for India. 340+ destinations with monthly scores, kids ratings, safety data, and AI-powered itineraries.",
-            sameAs: [],
+            "@graph": [
+              {
+                "@type": "Organization",
+                "@id": "https://www.nakshiq.com#organization",
+                name: "NakshIQ",
+                url: "https://www.nakshiq.com",
+                logo: {
+                  "@type": "ImageObject",
+                  url: "https://www.nakshiq.com/icon-512.png",
+                  width: 512,
+                  height: 512,
+                },
+                description:
+                  "Travel intelligence for India. 488 destinations across 36 states, each scored month-by-month for go/wait/skip verdicts, kids-suitability, solo-female safety, and altitude risk. Citation-first editorial — no fabricated prices, phone numbers, or stays.",
+                foundingDate: "2026",
+                areaServed: { "@type": "Country", name: "India" },
+                knowsAbout: [
+                  "India travel",
+                  "Himalayan travel",
+                  "Ladakh travel",
+                  "Kashmir travel",
+                  "Spiti Valley",
+                  "solo-female travel safety India",
+                  "family travel India",
+                  "high-altitude travel",
+                  "Buddhist Circuit India",
+                  "India heritage travel",
+                ],
+                contactPoint: [
+                  {
+                    "@type": "ContactPoint",
+                    contactType: "editorial",
+                    email: "editor@nakshiq.com",
+                    availableLanguage: ["English", "Hindi"],
+                    areaServed: "IN",
+                  },
+                  {
+                    "@type": "ContactPoint",
+                    contactType: "customer support",
+                    email: "hello@nakshiq.com",
+                    availableLanguage: ["English", "Hindi"],
+                    areaServed: "IN",
+                  },
+                  {
+                    "@type": "ContactPoint",
+                    contactType: "press",
+                    email: "press@nakshiq.com",
+                    availableLanguage: ["English"],
+                    areaServed: "IN",
+                  },
+                ],
+                sameAs: [],
+              },
+              {
+                "@type": "WebSite",
+                "@id": "https://www.nakshiq.com#website",
+                url: "https://www.nakshiq.com",
+                name: "NakshIQ",
+                description:
+                  "Travel intelligence for India — 488 destinations, 5,856 monthly verdicts, citation-first editorial.",
+                publisher: { "@id": "https://www.nakshiq.com#organization" },
+                inLanguage: ["en-IN", "hi-IN"],
+                potentialAction: {
+                  "@type": "SearchAction",
+                  target: {
+                    "@type": "EntryPoint",
+                    urlTemplate: "https://www.nakshiq.com/en/explore?q={search_term_string}",
+                  },
+                  "query-input": "required name=search_term_string",
+                },
+              },
+            ],
           }) }}
         />
         <NextIntlClientProvider messages={messages}>

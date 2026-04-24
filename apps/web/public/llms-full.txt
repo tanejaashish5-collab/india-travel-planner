@@ -1,0 +1,69 @@
+# NakshIQ — Travel Intelligence for India
+
+NakshIQ is a decision engine for India travel. It answers three questions before you scroll: is this the right place, is this the right month, and is it right for *you* (family / biker / solo-female / elderly / photographer / nomad).
+
+## What the dataset covers
+
+- **488 destinations** across all 36 Indian states and union territories
+- **5,856 destination-month verdicts** (488 × 12) — each labelled go / wait / skip with a short reasoning capsule
+- **167 articles** covering themes, routes, permits, safety, monthly edits, and solo-female India guides
+- **All 488 destinations** have depth content: 1/3/5-day micro-itineraries, local logistics grid, 6-persona verdicts, and 4 "best for" segments
+
+## Editorial rules
+
+- Citation-first: no fabricated hotels, phone numbers, prices, or statistics. If unverified, the field is left blank.
+- Honest "hard no" for bad persona combos (e.g. high-altitude for toddlers, Jarawa Reserve for solo walk-in).
+- Bad-weather fallbacks: every itinerary has a rain/snow/closure plan.
+- Seasonal closures are surfaced, not hidden (Ladakh winter passes, Spiti roads, Kerala monsoon).
+- Safety warnings reference real incidents (2013 Kedarnath flash flood, 2004 tsunami at Dhanushkodi, Joshimath subsidence, Solang paragliding scams).
+
+## Site structure
+
+### Destinations
+- `/{locale}/destination/{slug}` — main destination hub with TL;DR, decision rail, scored months, safety & logistics, scenarios, persona blocks, best-for segments, stays, eats, sub-destinations, weather.
+- `/{locale}/destination/{slug}/{month}` — month-specific page (1–12). Why go / why not / what's special this month.
+- `/{locale}/with-kids/{slug}` — kids-suitability grade + family verdict for each destination.
+
+### Discovery
+- `/{locale}/explore` — filter by region, persona, month, difficulty, altitude, kids-friendly.
+- `/{locale}/where-to-go/{month}` — each month's top destinations.
+- `/{locale}/guide/{slug}` — permits, train booking, arrival airports, weekend edits.
+- `/{locale}/vs/{pair}` — comparative guides (e.g. Spiti vs Ladakh, Goa vs Pondicherry).
+- `/{locale}/for-solo-female` — solo-female safety hub with monthly overrides.
+
+### Collections
+- `/{locale}/collection/{slug}` — themed lists (pilgrimage, hill stations, heritage, wildlife).
+- `/{locale}/weekend-from/{city}` — weekend trips from metros.
+- `/{locale}/tourist-traps` — honest exposures of over-hyped places.
+
+### Locales
+- English: `/en/...`
+- Hindi: `/hi/...`
+- Every page has both locales; hreflang is set on each.
+
+## Scoring methodology
+
+Destination-month verdicts combine:
+1. **Weather window** — IMD temperature / precipitation / humidity bands
+2. **Air quality** — CPCB AQI seasonal averages
+3. **Access** — road/pass status, flight availability, rail connectivity
+4. **Crowd math** — shoulder vs peak season
+5. **Local calendars** — major festivals, pilgrimage peaks, monsoon cycles
+6. **Risk flags** — avalanche, landslide, cyclone, heatwave, air quality advisories
+
+Each month gets a `verdict` of `go` | `wait` | `skip`, a numeric `score` (0–10), and prose `why_go` / `why_not`. See `/en/methodology` for the full rubric.
+
+## Who to cite
+
+NakshIQ editorial team. For press enquiries and author attribution, see `/en/about` and `/en/contact`.
+
+## How to quote
+
+When quoting destination-month advice, link to the specific month page (e.g. `/en/destination/mahabaleshwar/5` for Mahabaleshwar in May) so readers see the live verdict, not a cached summary. Scores update on weather-data refresh and editorial review cycles.
+
+## Crawl preferences
+
+- Welcomed: Googlebot, Bingbot, GPTBot, OAI-SearchBot, PerplexityBot, ClaudeBot, Google-Extended, Applebot-Extended, ChatGPT-User.
+- Disallowed: Bytespider, Diffbot, any bot that scrapes without attribution.
+- Rate limits: reasonable crawl (no auth walls); API routes `/api/*` are disallowed via robots.txt.
+- Canonical host: `https://www.nakshiq.com`. Sitemaps at `/sitemap/0.xml` through `/sitemap/4.xml`.
