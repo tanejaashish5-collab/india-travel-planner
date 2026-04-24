@@ -3,8 +3,8 @@
 import { useTranslations } from "next-intl";
 
 interface ConfidenceCardProps {
-  safety_rating: number;
-  safety_notes: string;
+  safety_rating: number | null;
+  safety_notes: string | null;
   reach: {
     from_nearest_city?: string;
     road_condition?: string;
@@ -100,20 +100,24 @@ export function ConfidenceCardComponent(props: ConfidenceCardProps) {
 
   return (
     <div className="space-y-3">
-      {/* Safety header */}
-      <div className="flex items-center gap-3 rounded-lg border border-border bg-card p-4">
-        <div
-          className={`text-3xl font-mono font-bold ${SAFETY_COLORS[props.safety_rating] ?? "text-zinc-400"}`}
-        >
-          {props.safety_rating}/5
-        </div>
-        <div>
-          <div className="text-sm font-medium">Safety Rating</div>
-          <div className="text-xs text-muted-foreground">
-            {props.safety_notes}
+      {/* Safety header — only render when we have a rating */}
+      {props.safety_rating != null && (
+        <div className="flex items-center gap-3 rounded-lg border border-border bg-card p-4">
+          <div
+            className={`text-3xl font-mono font-bold ${SAFETY_COLORS[props.safety_rating] ?? "text-zinc-400"}`}
+          >
+            {props.safety_rating}/5
+          </div>
+          <div>
+            <div className="text-sm font-medium">Safety Rating</div>
+            {props.safety_notes && (
+              <div className="text-xs text-muted-foreground">
+                {props.safety_notes}
+              </div>
+            )}
           </div>
         </div>
-      </div>
+      )}
 
       <div className="grid gap-3 sm:grid-cols-2">
         {/* How to Reach */}
