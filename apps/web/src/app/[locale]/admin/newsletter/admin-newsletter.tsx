@@ -4,6 +4,38 @@ import { useState } from "react";
 
 type Step = "auth" | "preview" | "sending" | "done";
 
+// Special-edition override fields. Empty strings are dropped before POST so
+// the cron + regular weekly sends stay on auto-compose. Filled fields get
+// applied in buildWindowIssue().
+type OverrideState = {
+  issueNumber: string;
+  subject: string;
+  previewText: string;
+  opening: string;
+  closing: string;
+};
+
+const EMPTY_OVERRIDES: OverrideState = {
+  issueNumber: "",
+  subject: "",
+  previewText: "",
+  opening: "",
+  closing: "",
+};
+
+function buildOverridesPayload(ov: OverrideState): Record<string, string | number> | undefined {
+  const out: Record<string, string | number> = {};
+  if (ov.issueNumber.trim()) {
+    const n = Number(ov.issueNumber.trim());
+    if (Number.isFinite(n) && n > 0) out.issueNumber = n;
+  }
+  if (ov.subject.trim()) out.subject = ov.subject.trim();
+  if (ov.previewText.trim()) out.previewText = ov.previewText.trim();
+  if (ov.opening.trim()) out.opening = ov.opening;
+  if (ov.closing.trim()) out.closing = ov.closing;
+  return Object.keys(out).length ? out : undefined;
+}
+
 export function AdminNewsletter() {
   const [step, setStep] = useState<Step>("auth");
   const [secret, setSecret] = useState("");
@@ -12,12 +44,19 @@ export function AdminNewsletter() {
   const [result, setResult] = useState<any>(null);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+  const [overrides, setOverrides] = useState<OverrideState>(EMPTY_OVERRIDES);
 
   async function loadPreview() {
     setError("");
     setLoading(true);
     try {
-      const res = await fetch(`/api/newsletter/send?dry=1&secret=${encodeURIComponent(secret)}`);
+      const body = buildOverridesPayload(overrides);
+      // POST so we can pass overrides JSON body; route reads dry=1 from query.
+      const res = await fetch(`/api/newsletter/send?dry=1&secret=${encodeURIComponent(secret)}`, {
+        method: "POST",
+        headers: body ? { "content-type": "application/json" } : undefined,
+        body: body ? JSON.stringify({ overrides: body }) : undefined,
+      });
       const data = await res.json();
       if (!res.ok) {
         setError(data?.error || "Failed");
@@ -38,9 +77,14 @@ export function AdminNewsletter() {
     setError("");
     setLoading(true);
     try {
+      const body = buildOverridesPayload(overrides);
       const res = await fetch(
         `/api/newsletter/send?test=${encodeURIComponent(testEmail)}&secret=${encodeURIComponent(secret)}`,
-        { method: "POST" }
+        {
+          method: "POST",
+          headers: body ? { "content-type": "application/json" } : undefined,
+          body: body ? JSON.stringify({ overrides: body }) : undefined,
+        }
       );
       const data = await res.json();
       if (!res.ok) setError(data?.error || "Test send failed");
@@ -58,8 +102,11 @@ export function AdminNewsletter() {
     setLoading(true);
     setStep("sending");
     try {
+      const body = buildOverridesPayload(overrides);
       const res = await fetch(`/api/newsletter/send?secret=${encodeURIComponent(secret)}`, {
         method: "POST",
+        headers: body ? { "content-type": "application/json" } : undefined,
+        body: body ? JSON.stringify({ overrides: body }) : undefined,
       });
       const data = await res.json();
       if (!res.ok) {
@@ -91,27 +138,125 @@ export function AdminNewsletter() {
       )}
 
       {step === "auth" && (
-        <div className="rounded-xl border border-border bg-card p-6 space-y-4">
-          <label className="block text-sm font-medium">Admin secret</label>
-          <input
-            type="password"
-            value={secret}
-            onChange={(e) => setSecret(e.target.value)}
-            placeholder="NEWSLETTER_SEND_SECRET"
-            className="w-full rounded-lg border border-border bg-background px-4 py-2 text-sm"
-          />
-          <button
-            onClick={loadPreview}
-            disabled={!secret || loading}
-            className="rounded-lg bg-primary px-5 py-2 text-sm font-semibold text-primary-foreground disabled:opacity-50"
-          >
-            {loading ? "Loading..." : "Load preview"}
-          </button>
+        <div className="space-y-4">
+          <div className="rounded-xl border border-border bg-card p-6 space-y-4">
+            <label className="block text-sm font-medium">Admin secret</label>
+            <input
+              type="password"
+              value={secret}
+              onChange={(e) => setSecret(e.target.value)}
+              placeholder="NEWSLETTER_SEND_SECRET"
+              className="w-full rounded-lg border border-border bg-background px-4 py-2 text-sm"
+            />
+            <button
+              onClick={loadPreview}
+              disabled={!secret || loading}
+              className="rounded-lg bg-primary px-5 py-2 text-sm font-semibold text-primary-foreground disabled:opacity-50"
+            >
+              {loading ? "Loading..." : "Load preview"}
+            </button>
+          </div>
+
+          {/* Launch / special-edition overrides — collapsed by default so
+              regular weekly auto-ships can't accidentally use it. Fill any
+              subset; empty fields fall back to auto-compose. */}
+          <details className="rounded-xl border border-amber-500/30 bg-amber-500/5 p-5">
+            <summary className="cursor-pointer text-sm font-medium text-amber-300">
+              Launch / special-edition overrides (advanced)
+            </summary>
+            <div className="mt-4 space-y-4">
+              <p className="text-xs text-muted-foreground">
+                Fill only the fields you want to override. Empty fields fall back to
+                the auto-composed value. Use this for Issue #1 launch, year-end,
+                100th, crisis response.
+              </p>
+              <div>
+                <label className="block text-xs font-medium mb-1.5">Issue number override</label>
+                <input
+                  type="number"
+                  value={overrides.issueNumber}
+                  onChange={(e) => setOverrides({ ...overrides, issueNumber: e.target.value })}
+                  placeholder="auto = ISO week of year"
+                  min={1}
+                  className="w-full rounded-lg border border-border bg-background px-3 py-2 text-sm"
+                />
+              </div>
+              <div>
+                <label className="block text-xs font-medium mb-1.5">Subject line override</label>
+                <input
+                  type="text"
+                  value={overrides.subject}
+                  onChange={(e) => setOverrides({ ...overrides, subject: e.target.value })}
+                  placeholder="auto = {destName} scores {score}/5 this week"
+                  maxLength={100}
+                  className="w-full rounded-lg border border-border bg-background px-3 py-2 text-sm"
+                />
+                <p className="text-[10px] text-muted-foreground mt-1 font-mono">
+                  {overrides.subject.length}/100 · mobile preview truncates around 40-50
+                </p>
+              </div>
+              <div>
+                <label className="block text-xs font-medium mb-1.5">Preview text override</label>
+                <input
+                  type="text"
+                  value={overrides.previewText}
+                  onChange={(e) => setOverrides({ ...overrides, previewText: e.target.value })}
+                  placeholder="auto = {destName}, {state} — and the place you should skip instead."
+                  maxLength={150}
+                  className="w-full rounded-lg border border-border bg-background px-3 py-2 text-sm"
+                />
+                <p className="text-[10px] text-muted-foreground mt-1 font-mono">
+                  {overrides.previewText.length}/150
+                </p>
+              </div>
+              <div>
+                <label className="block text-xs font-medium mb-1.5">Opening letter override</label>
+                <textarea
+                  value={overrides.opening}
+                  onChange={(e) => setOverrides({ ...overrides, opening: e.target.value })}
+                  placeholder="auto = rotated from voice-pool (pickOpening). Use blank lines for paragraph breaks."
+                  rows={6}
+                  className="w-full rounded-lg border border-border bg-background px-3 py-2 text-sm font-serif italic leading-relaxed"
+                />
+              </div>
+              <div>
+                <label className="block text-xs font-medium mb-1.5">Closing line override</label>
+                <textarea
+                  value={overrides.closing}
+                  onChange={(e) => setOverrides({ ...overrides, closing: e.target.value })}
+                  placeholder="auto = rotated from voice-pool (pickClosing)"
+                  rows={3}
+                  className="w-full rounded-lg border border-border bg-background px-3 py-2 text-sm font-serif italic leading-relaxed"
+                />
+              </div>
+              <button
+                type="button"
+                onClick={() => setOverrides(EMPTY_OVERRIDES)}
+                className="text-xs text-muted-foreground hover:text-foreground underline"
+              >
+                Clear all overrides
+              </button>
+            </div>
+          </details>
         </div>
       )}
 
       {step === "preview" && preview && (
         <div className="space-y-6">
+          <button
+            onClick={() => setStep("auth")}
+            className="text-xs text-muted-foreground hover:text-foreground underline"
+          >
+            ← Back / edit overrides
+          </button>
+
+          {buildOverridesPayload(overrides) && (
+            <div className="rounded-lg border border-amber-500/30 bg-amber-500/10 p-3 text-xs text-amber-200">
+              <strong>Overrides active:</strong>{" "}
+              {Object.keys(buildOverridesPayload(overrides) ?? {}).join(", ")}
+            </div>
+          )}
+
           <div className="rounded-xl border border-border bg-card p-5">
             <p className="text-xs font-semibold uppercase tracking-[0.08em] text-muted-foreground">
               Issue slug

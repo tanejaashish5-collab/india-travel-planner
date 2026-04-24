@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
 import { render } from "@react-email/render";
-import { buildWindowIssue } from "@/lib/newsletter/build-issue";
+import { buildWindowIssue, type IssueOverrides } from "@/lib/newsletter/build-issue";
 import TheWindow from "@/emails/the-window";
 import { getResend, FROM_ADDRESS, REPLY_TO, SITE_URL } from "@/lib/resend";
 
@@ -54,8 +54,19 @@ async function handle(req: NextRequest) {
     return NextResponse.json({ error: "Supabase not configured" }, { status: 503 });
   }
 
+  // Optional per-request overrides (launch issue, year-end, crisis response).
+  // JSON body only; GET requests (Vercel Cron) pass nothing → weekly auto-ship
+  // behaves exactly as before. POST from the admin UI may include overrides.
+  let overrides: IssueOverrides | undefined;
+  if (req.method === "POST" && req.headers.get("content-type")?.includes("application/json")) {
+    const body = await req.json().catch(() => null);
+    if (body && typeof body === "object" && body.overrides && typeof body.overrides === "object") {
+      overrides = body.overrides as IssueOverrides;
+    }
+  }
+
   // 1. Build issue content from DB
-  const issue = await buildWindowIssue();
+  const issue = await buildWindowIssue(overrides);
   if ("error" in issue) {
     return NextResponse.json({ error: issue.error }, { status: 500 });
   }

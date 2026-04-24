@@ -32,16 +32,30 @@ export type IssueBuildResult = {
 } | { error: string };
 
 /**
+ * Optional overrides for special-edition ships (Issue #1 launch, year-end,
+ * 100th issue, crisis response, etc). Weekly auto-cron passes nothing;
+ * regular sends behave identically to before.
+ */
+export type IssueOverrides = Partial<{
+  issueNumber: number;
+  subject: string;
+  previewText: string;
+  opening: string;
+  closing: string;
+  slug: string;
+}>;
+
+/**
  * Builds "The Window" issue content from live Supabase data.
  * Returns the template props ready for React Email, OR an error if required data is missing.
  */
-export async function buildWindowIssue(): Promise<IssueBuildResult> {
+export async function buildWindowIssue(overrides?: IssueOverrides): Promise<IssueBuildResult> {
   const supabase = getSupabase();
   if (!supabase) return { error: "Supabase not configured" };
 
   const now = new Date();
   const currentMonth = now.getMonth() + 1;
-  const issueNumber = isoWeekNumber(now);
+  const issueNumber = overrides?.issueNumber ?? isoWeekNumber(now);
   const monthName = MONTH_NAMES[currentMonth];
   const year = now.getFullYear();
   // Alignment contract: newsletter slug matches the Weekly Picks week the
@@ -49,7 +63,7 @@ export async function buildWindowIssue(): Promise<IssueBuildResult> {
   // sends are inside that week (Mon 00:00 IST → Sun 23:59 IST), so using
   // weekOfMonth(now) keeps newsletter + hero + autoposter on one story.
   const weeklyWeek = weekOfMonth(now);
-  const slug = `${year}-${String(currentMonth).padStart(2, "0")}-w${weeklyWeek}`;
+  const slug = overrides?.slug ?? `${year}-${String(currentMonth).padStart(2, "0")}-w${weeklyWeek}`;
 
   // 1. Best score — the #1 Weekly Picks pick for this month + week. Same
   //    selectPicks() call the landing page and autoposter make, so the
@@ -154,11 +168,11 @@ export async function buildWindowIssue(): Promise<IssueBuildResult> {
     destinationsAdded: destsRes.count ?? 0,
   };
 
-  const opening = pickOpening(issueNumber);
-  const closing = pickClosing(issueNumber);
+  const opening = overrides?.opening ?? pickOpening(issueNumber);
+  const closing = overrides?.closing ?? pickClosing(issueNumber);
 
-  const subject = `${bestScore.name} scores ${bestScore.score}/5 this week`;
-  const previewText = `${bestScore.name}, ${bestScore.state} — and the place you should skip instead.`;
+  const subject = overrides?.subject ?? `${bestScore.name} scores ${bestScore.score}/5 this week`;
+  const previewText = overrides?.previewText ?? `${bestScore.name}, ${bestScore.state} — and the place you should skip instead.`;
 
   return {
     props: {
