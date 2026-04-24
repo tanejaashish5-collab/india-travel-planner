@@ -3862,3 +3862,21 @@ Date range: 2026-04-15 → 2026-04-23
 2026-04-24 04:45:08  INFO      [facebook/Nakshiq] ✅ Published · Outstand=IjQ5X · Platform=2512242302544351
 2026-04-24 04:45:08  INFO      State saved. Run complete.
 2026-04-24 04:45:08  INFO      ════════════════════════════════════════════════════════════
+2026-04-24 05:18:32  INFO      Stale lock (age=1777007912s) — overriding.
+2026-04-24 05:18:32  INFO      ════════════════════════════════════════════════════════════
+2026-04-24 05:18:32  INFO      Nakshiq Autoposter · MORNING · 2026-04-24 · weekday=4
+2026-04-24 05:18:32  INFO      ════════════════════════════════════════════════════════════
+2026-04-24 05:18:32  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-04-24 05:18:36  INFO      Synced → 20 destinations · 0 traps · 20 articles · total catalog=488
+2026-04-24 05:18:37  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-04-24 05:18:39  INFO      Outstand dedup guard: merged 2 remote posts into state.
+2026-04-24 05:18:39  INFO      Morning format (round-robin): data_carousel (16/18 never featured)
+2026-04-24 05:18:39  INFO      Formats — IG: data_carousel  ·  FB: data_carousel  ·  Story: infrastructure_truth
+2026-04-24 05:18:39  INFO      Used destinations (14d): 29
+2026-04-24 05:18:39  INFO      Shared best destination locked: Phawngpui Peak
+2026-04-24 05:18:40  INFO      Carousel locked (data_carousel): bomdila, phawngpui-peak, kanatal
+2026-04-24 05:18:40  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-04-24 05:18:40  INFO      [instagram/nakshiq] Already posted today (morning) — skipping.
+2026-04-24 05:18:40  INFO      [facebook/Nakshiq] Already posted today (morning) — skipping.
+2026-04-24 05:18:40  INFO      State saved. Run complete.
+2026-04-24 05:18:40  INFO      ════════════════════════════════════════════════════════════
