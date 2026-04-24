@@ -1,2540 +1,519 @@
 {
-  "version": 2,
-  "generated": "2026-04-23",
-  "total_images": 235,
+  "version": 3,
+  "total_images": 251,
   "campaigns": {
-    "andhra": 4,
-    "bihar": 8,
-    "chhattisgarh": 3,
-    "dangerous_roads": 1,
-    "data_authority": 20,
-    "delhi": 4,
-    "general": 7,
-    "goa": 6,
-    "himachal": 15,
-    "jk": 6,
-    "karnataka": 8,
-    "kerala": 17,
-    "maharashtra": 8,
-    "meghalaya": 6,
-    "mp": 7,
-    "northeast": 15,
-    "odisha": 6,
-    "punjab": 5,
-    "rajasthan": 14,
-    "safety_data": 8,
-    "seasonal_intel": 24,
-    "sikkim": 12,
-    "tamilnadu": 12,
-    "up": 7,
-    "uttarakhand": 8,
-    "wb": 4
-  },
-  "images": [
-    {
-      "file": "pomelli_17000ft_reality_check.png",
-      "campaign_type": "general",
-      "campaign": "general",
-      "subject": "17000Ft Reality Check",
-      "tags": [
-        "Infrastructure",
-        "RoadSafety",
-        "HighAltitude",
-        "TravelReality"
-      ]
-    },
-    {
-      "file": "pomelli_ajanta_accessibility_1.png",
-      "campaign_type": "region",
-      "campaign": "maharashtra",
-      "subject": "Ajanta Accessibility 1",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_ajanta_accessibility_2.png",
-      "campaign_type": "region",
-      "campaign": "maharashtra",
-      "subject": "Ajanta Accessibility 2",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_ajanta_accessibility_3.png",
-      "campaign_type": "region",
-      "campaign": "maharashtra",
-      "subject": "Ajanta Accessibility 3",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_ajanta_accessibility_4.png",
-      "campaign_type": "region",
-      "campaign": "maharashtra",
-      "subject": "Ajanta Accessibility 4",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_alleppey_license_1.png",
-      "campaign_type": "region",
-      "campaign": "kerala",
-      "subject": "Alleppey License 1",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_alleppey_license_2.png",
-      "campaign_type": "region",
-      "campaign": "kerala",
-      "subject": "Alleppey License 2",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_alleppey_license_3.png",
-      "campaign_type": "region",
-      "campaign": "kerala",
-      "subject": "Alleppey License 3",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_alleppey_license_4.png",
-      "campaign_type": "region",
-      "campaign": "kerala",
-      "subject": "Alleppey License 4",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_amritsar_density_1.png",
-      "campaign_type": "region",
-      "campaign": "punjab",
-      "subject": "Amritsar Density 1",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_ams_reality_check.png",
-      "campaign_type": "general",
-      "campaign": "general",
-      "subject": "Ams Reality Check",
-      "tags": [
-        "Infrastructure",
-        "RoadSafety",
-        "HighAltitude",
-        "TravelReality"
-      ]
-    },
-    {
-      "file": "pomelli_araku_valley_1.png",
-      "campaign_type": "region",
-      "campaign": "andhra",
-      "subject": "Araku Valley 1",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_araku_valley_2.png",
-      "campaign_type": "region",
-      "campaign": "andhra",
-      "subject": "Araku Valley 2",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_araku_valley_3.png",
-      "campaign_type": "region",
-      "campaign": "andhra",
-      "subject": "Araku Valley 3",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_araku_valley_4.png",
-      "campaign_type": "region",
-      "campaign": "andhra",
-      "subject": "Araku Valley 4",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_backwater_infrastructure_report.png",
-      "campaign_type": "region",
-      "campaign": "kerala",
-      "subject": "Backwater Infrastructure Report",
-      "tags": [
-        "Kerala",
-        "GodsOwnCountry",
-        "Backwaters",
-        "Ayurveda"
-      ],
-      "state": "Kerala"
-    },
-    {
-      "file": "pomelli_bandipur_safari_1.png",
-      "campaign_type": "region",
-      "campaign": "karnataka",
-      "subject": "Bandipur Safari 1",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_bandipur_safari_2.png",
-      "campaign_type": "region",
-      "campaign": "karnataka",
-      "subject": "Bandipur Safari 2",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_bandipur_safari_3.png",
-      "campaign_type": "region",
-      "campaign": "karnataka",
-      "subject": "Bandipur Safari 3",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_bandipur_safari_4.png",
-      "campaign_type": "region",
-      "campaign": "karnataka",
-      "subject": "Bandipur Safari 4",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_beyond_filter_lethal_heat.png",
-      "campaign_type": "feature",
-      "campaign": "seasonal_intel",
-      "subject": "Beyond Filter Lethal Heat",
-      "tags": [
-        "SummerTravel",
-        "HeatSafety",
-        "MonsoonTravel",
-        "SeasonalData"
-      ]
-    },
-    {
-      "file": "pomelli_bihar_transit_1.png",
-      "campaign_type": "region",
-      "campaign": "bihar",
-      "subject": "Bihar Transit 1",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_bihar_transit_2.png",
-      "campaign_type": "region",
-      "campaign": "bihar",
-      "subject": "Bihar Transit 2",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_bihar_transit_3.png",
-      "campaign_type": "region",
-      "campaign": "bihar",
-      "subject": "Bihar Transit 3",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_bihar_transit_4.png",
-      "campaign_type": "region",
-      "campaign": "bihar",
-      "subject": "Bihar Transit 4",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_brahmaputra_safely_1.png",
-      "campaign_type": "region",
-      "campaign": "northeast",
-      "subject": "Brahmaputra Safely 1",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_brahmaputra_safely_2.png",
-      "campaign_type": "region",
-      "campaign": "northeast",
-      "subject": "Brahmaputra Safely 2",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_brahmaputra_safely_3.png",
-      "campaign_type": "region",
-      "campaign": "northeast",
-      "subject": "Brahmaputra Safely 3",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_brahmaputra_safely_4.png",
-      "campaign_type": "region",
-      "campaign": "northeast",
-      "subject": "Brahmaputra Safely 4",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_chhattisgarh_wild_1.png",
-      "campaign_type": "region",
-      "campaign": "chhattisgarh",
-      "subject": "Chhattisgarh Wild 1",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_chhattisgarh_wild_3.png",
-      "campaign_type": "region",
-      "campaign": "chhattisgarh",
-      "subject": "Chhattisgarh Wild 3",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_chhattisgarh_wild_4.png",
-      "campaign_type": "region",
-      "campaign": "chhattisgarh",
-      "subject": "Chhattisgarh Wild 4",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_chilika_audit_1.png",
-      "campaign_type": "region",
-      "campaign": "odisha",
-      "subject": "Chilika Audit 1",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_chilika_audit_2.png",
-      "campaign_type": "region",
-      "campaign": "odisha",
-      "subject": "Chilika Audit 2",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_chilika_audit_4.png",
-      "campaign_type": "region",
-      "campaign": "odisha",
-      "subject": "Chilika Audit 4",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_coastal_erosion_data.png",
-      "campaign_type": "general",
-      "campaign": "general",
-      "subject": "Coastal Erosion Data",
-      "tags": [
-        "Infrastructure",
-        "RoadSafety",
-        "HighAltitude",
-        "TravelReality"
-      ]
-    },
-    {
-      "file": "pomelli_creative_image_1_1_0420.png",
-      "campaign_type": "general",
-      "campaign": "general",
-      "subject": "Creative Image 1 1 0420",
-      "tags": [
-        "DataDriven",
-        "TravelIntelligence",
-        "VerifiedData",
-        "SmartTravel"
-      ]
-    },
-    {
-      "file": "pomelli_dangerous_vs_overhyped.png",
-      "campaign_type": "feature",
-      "campaign": "dangerous_roads",
-      "subject": "Dangerous Vs Overhyped",
-      "tags": [
-        "DangerousRoads",
-        "BikerLife",
-        "MountainRoads",
-        "AdventureRide"
-      ],
-      "hook": "12 roads that could kill you. 12 reasons to ride them anyway.",
-      "cta": "SEE THE ROUTES"
-    },
-    {
-      "file": "pomelli_data_over_hype_1.png",
-      "campaign_type": "feature",
-      "campaign": "data_authority",
-      "subject": "Data Over Hype 1",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_data_over_hype_2.png",
-      "campaign_type": "feature",
-      "campaign": "data_authority",
-      "subject": "Data Over Hype 2",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_data_over_hype_3.png",
-      "campaign_type": "feature",
-      "campaign": "data_authority",
-      "subject": "Data Over Hype 3",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_data_over_hype_4.png",
-      "campaign_type": "feature",
-      "campaign": "data_authority",
-      "subject": "Data Over Hype 4",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_delhi_fake_guides_1.png",
-      "campaign_type": "region",
-      "campaign": "delhi",
-      "subject": "Delhi Fake Guides 1",
-      "tags": [
-        "Delhi",
-        "OldDelhi",
-        "StreetFood",
-        "Heritage"
-      ],
-      "state": "Delhi"
-    },
-    {
-      "file": "pomelli_delhi_fake_guides_2.png",
-      "campaign_type": "region",
-      "campaign": "delhi",
-      "subject": "Delhi Fake Guides 2",
-      "tags": [
-        "Delhi",
-        "OldDelhi",
-        "StreetFood",
-        "Heritage"
-      ],
-      "state": "Delhi"
-    },
-    {
-      "file": "pomelli_delhi_fake_guides_3.png",
-      "campaign_type": "region",
-      "campaign": "delhi",
-      "subject": "Delhi Fake Guides 3",
-      "tags": [
-        "Delhi",
-        "OldDelhi",
-        "StreetFood",
-        "Heritage"
-      ],
-      "state": "Delhi"
-    },
-    {
-      "file": "pomelli_delhi_fake_guides_4.png",
-      "campaign_type": "region",
-      "campaign": "delhi",
-      "subject": "Delhi Fake Guides 4",
-      "tags": [
-        "Delhi",
-        "OldDelhi",
-        "StreetFood",
-        "Heritage"
-      ],
-      "state": "Delhi"
-    },
-    {
-      "file": "pomelli_deoghar_crowds_1.png",
-      "campaign_type": "region",
-      "campaign": "bihar",
-      "subject": "Deoghar Crowds 1",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_deoghar_crowds_2.png",
-      "campaign_type": "region",
-      "campaign": "bihar",
-      "subject": "Deoghar Crowds 2",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_deoghar_crowds_3.png",
-      "campaign_type": "region",
-      "campaign": "bihar",
-      "subject": "Deoghar Crowds 3",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_deoghar_crowds_4.png",
-      "campaign_type": "region",
-      "campaign": "bihar",
-      "subject": "Deoghar Crowds 4",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_dzukou_valley_intel.png",
-      "campaign_type": "region",
-      "campaign": "northeast",
-      "subject": "Dzukou Valley Intel",
-      "tags": [
-        "NortheastIndia",
-        "Unexplored",
-        "TribalCulture",
-        "Wildlife"
-      ],
-      "state": "Northeast India"
-    },
-    {
-      "file": "pomelli_eastern_ghats_1.png",
-      "campaign_type": "region",
-      "campaign": "up",
-      "subject": "Eastern Ghats 1",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_fail_to_acclimatize.png",
-      "campaign_type": "feature",
-      "campaign": "safety_data",
-      "subject": "Fail To Acclimatize",
-      "tags": [
-        "Infrastructure",
-        "RoadSafety",
-        "HighAltitude",
-        "TravelReality"
-      ]
-    },
-    {
-      "file": "pomelli_ghats_lack_lighting.png",
-      "campaign_type": "region",
-      "campaign": "up",
-      "subject": "Ghats Lack Lighting",
-      "tags": [
-        "NakshIQ",
-        "TravelIntelligence",
-        "IndiaTravel",
-        "DataDriven"
-      ]
-    },
-    {
-      "file": "pomelli_goa_beach_audit.png",
-      "campaign_type": "region",
-      "campaign": "goa",
-      "subject": "Goa Beach Audit",
-      "tags": [
-        "Goa",
-        "Beaches",
-        "Coastline",
-        "Nightlife"
-      ],
-      "state": "Goa"
-    },
-    {
-      "file": "pomelli_goa_beach_shack_audit_1.png",
-      "campaign_type": "region",
-      "campaign": "goa",
-      "subject": "Goa Beach Shack Audit 1",
-      "tags": [
-        "Goa",
-        "Beaches",
-        "Coastline",
-        "Nightlife"
-      ],
-      "state": "Goa"
-    },
-    {
-      "file": "pomelli_goa_beach_shack_audit_2.png",
-      "campaign_type": "region",
-      "campaign": "goa",
-      "subject": "Goa Beach Shack Audit 2",
-      "tags": [
-        "Goa",
-        "Beaches",
-        "Coastline",
-        "Nightlife"
-      ],
-      "state": "Goa"
-    },
-    {
-      "file": "pomelli_goa_beach_shack_audit_3.png",
-      "campaign_type": "region",
-      "campaign": "goa",
-      "subject": "Goa Beach Shack Audit 3",
-      "tags": [
-        "Goa",
-        "Beaches",
-        "Coastline",
-        "Nightlife"
-      ],
-      "state": "Goa"
-    },
-    {
-      "file": "pomelli_goa_crowd_density_1.png",
-      "campaign_type": "region",
-      "campaign": "goa",
-      "subject": "Goa Crowd Density 1",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_heatwaves_escape_1.png",
-      "campaign_type": "feature",
-      "campaign": "seasonal_intel",
-      "subject": "Heatwaves Escape 1",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_heatwaves_infrastructure_3.png",
-      "campaign_type": "feature",
-      "campaign": "seasonal_intel",
-      "subject": "Heatwaves Infrastructure 3",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_heatwaves_medical_2.png",
-      "campaign_type": "feature",
-      "campaign": "seasonal_intel",
-      "subject": "Heatwaves Medical 2",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_high_altitude_havens.png",
-      "campaign_type": "feature",
-      "campaign": "safety_data",
-      "subject": "High Altitude Havens",
-      "tags": [
-        "Infrastructure",
-        "RoadSafety",
-        "HighAltitude",
-        "TravelReality"
-      ]
-    },
-    {
-      "file": "pomelli_himachal_carrier_safety_rankings.png",
-      "campaign_type": "region",
-      "campaign": "himachal",
-      "subject": "Himachal Carrier Safety Rankings",
-      "tags": [
-        "HimachalPradesh",
-        "Mountains",
-        "HillStation",
-        "Shimla"
-      ],
-      "state": "Himachal Pradesh"
-    },
-    {
-      "file": "pomelli_himachal_hp_bus_audit.png",
-      "campaign_type": "region",
-      "campaign": "himachal",
-      "subject": "Himachal Hp Bus Audit",
-      "tags": [
-        "HimachalPradesh",
-        "Mountains",
-        "HillStation",
-        "Shimla"
-      ],
-      "state": "Himachal Pradesh"
-    },
-    {
-      "file": "pomelli_himachal_landslide_risk_mapped.png",
-      "campaign_type": "region",
-      "campaign": "himachal",
-      "subject": "Himachal Landslide Risk Mapped",
-      "tags": [
-        "HimachalPradesh",
-        "Mountains",
-        "HillStation",
-        "Shimla"
-      ],
-      "state": "Himachal Pradesh"
-    },
-    {
-      "file": "pomelli_himachal_manali_audit_1.png",
-      "campaign_type": "region",
-      "campaign": "himachal",
-      "subject": "Himachal Manali Audit 1",
-      "tags": [
-        "HimachalPradesh",
-        "Mountains",
-        "HillStation",
-        "Shimla"
-      ],
-      "state": "Himachal Pradesh"
-    },
-    {
-      "file": "pomelli_himachal_manali_audit_2.png",
-      "campaign_type": "region",
-      "campaign": "himachal",
-      "subject": "Himachal Manali Audit 2",
-      "tags": [
-        "HimachalPradesh",
-        "Mountains",
-        "HillStation",
-        "Shimla"
-      ],
-      "state": "Himachal Pradesh"
-    },
-    {
-      "file": "pomelli_himachal_manali_audit_3.png",
-      "campaign_type": "region",
-      "campaign": "himachal",
-      "subject": "Himachal Manali Audit 3",
-      "tags": [
-        "HimachalPradesh",
-        "Mountains",
-        "HillStation",
-        "Shimla"
-      ],
-      "state": "Himachal Pradesh"
-    },
-    {
-      "file": "pomelli_himachal_manali_audit_4.png",
-      "campaign_type": "region",
-      "campaign": "himachal",
-      "subject": "Himachal Manali Audit 4",
-      "tags": [
-        "HimachalPradesh",
-        "Mountains",
-        "HillStation",
-        "Shimla"
-      ],
-      "state": "Himachal Pradesh"
-    },
-    {
-      "file": "pomelli_himachal_roads_1.png",
-      "campaign_type": "region",
-      "campaign": "himachal",
-      "subject": "Himachal Roads 1",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_himachal_roads_2.png",
-      "campaign_type": "region",
-      "campaign": "himachal",
-      "subject": "Himachal Roads 2",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_himachal_roads_3.png",
-      "campaign_type": "region",
-      "campaign": "himachal",
-      "subject": "Himachal Roads 3",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_himachal_verified_facts_only.png",
-      "campaign_type": "region",
-      "campaign": "himachal",
-      "subject": "Himachal Verified Facts Only",
-      "tags": [
-        "HimachalPradesh",
-        "Mountains",
-        "HillStation",
-        "Shimla"
-      ],
-      "state": "Himachal Pradesh"
-    },
-    {
-      "file": "pomelli_houseboat_safety_1.png",
-      "campaign_type": "region",
-      "campaign": "kerala",
-      "subject": "Houseboat Safety 1",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_houseboat_safety_2.png",
-      "campaign_type": "region",
-      "campaign": "kerala",
-      "subject": "Houseboat Safety 2",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_houseboat_safety_3.png",
-      "campaign_type": "region",
-      "campaign": "kerala",
-      "subject": "Houseboat Safety 3",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_houseboat_safety_4.png",
-      "campaign_type": "region",
-      "campaign": "kerala",
-      "subject": "Houseboat Safety 4",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_india_summer_data_over_hype.png",
-      "campaign_type": "feature",
-      "campaign": "seasonal_intel",
-      "subject": "India Summer Data Over Hype",
-      "tags": [
-        "SummerTravel",
-        "HeatSafety",
-        "MonsoonTravel",
-        "SeasonalData"
-      ]
-    },
-    {
-      "file": "pomelli_infrastructure_gaps_exposed.png",
-      "campaign_type": "feature",
-      "campaign": "data_authority",
-      "subject": "Infrastructure Gaps Exposed",
-      "tags": [
-        "Infrastructure",
-        "RoadSafety",
-        "HighAltitude",
-        "TravelReality"
-      ]
-    },
-    {
-      "file": "pomelli_jaisalmer_desert_trap.png",
-      "campaign_type": "region",
-      "campaign": "rajasthan",
-      "subject": "Jaisalmer Desert Trap",
-      "tags": [
-        "Rajasthan",
-        "Desert",
-        "Heritage",
-        "Forts"
-      ],
-      "state": "Rajasthan"
-    },
-    {
-      "file": "pomelli_jodhpur_crowd_heatmaps.png",
-      "campaign_type": "region",
-      "campaign": "rajasthan",
-      "subject": "Jodhpur Crowd Heatmaps",
-      "tags": [
-        "Rajasthan",
-        "Desert",
-        "Heritage",
-        "Forts"
-      ],
-      "state": "Rajasthan"
-    },
-    {
-      "file": "pomelli_june_heat_trap.png",
-      "campaign_type": "feature",
-      "campaign": "seasonal_intel",
-      "subject": "June Heat Trap",
-      "tags": [
-        "SummerTravel",
-        "HeatSafety",
-        "MonsoonTravel",
-        "SeasonalData"
-      ]
-    },
-    {
-      "file": "pomelli_june_safest_1.png",
-      "campaign_type": "feature",
-      "campaign": "seasonal_intel",
-      "subject": "June Safest 1",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_june_safest_2.png",
-      "campaign_type": "feature",
-      "campaign": "seasonal_intel",
-      "subject": "June Safest 2",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_june_safest_3.png",
-      "campaign_type": "feature",
-      "campaign": "seasonal_intel",
-      "subject": "June Safest 3",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_june_safest_4.png",
-      "campaign_type": "feature",
-      "campaign": "seasonal_intel",
-      "subject": "June Safest 4",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_karnataka_bandipur_safari.png",
-      "campaign_type": "region",
-      "campaign": "karnataka",
-      "subject": "Karnataka Bandipur Safari",
-      "tags": [
-        "Karnataka",
-        "WesternGhats",
-        "Coorg",
-        "Wildlife"
-      ],
-      "state": "Karnataka"
-    },
-    {
-      "file": "pomelli_karnataka_coorg_homestay.png",
-      "campaign_type": "region",
-      "campaign": "karnataka",
-      "subject": "Karnataka Coorg Homestay",
-      "tags": [
-        "Karnataka",
-        "WesternGhats",
-        "Coorg",
-        "Wildlife"
-      ],
-      "state": "Karnataka"
-    },
-    {
-      "file": "pomelli_karnataka_verify_operator.png",
-      "campaign_type": "region",
-      "campaign": "karnataka",
-      "subject": "Karnataka Verify Operator",
-      "tags": [
-        "Karnataka",
-        "WesternGhats",
-        "Coorg",
-        "Wildlife"
-      ],
-      "state": "Karnataka"
-    },
-    {
-      "file": "pomelli_karnataka_western_ghats.png",
-      "campaign_type": "region",
-      "campaign": "karnataka",
-      "subject": "Karnataka Western Ghats",
-      "tags": [
-        "Karnataka",
-        "WesternGhats",
-        "Coorg",
-        "Wildlife"
-      ],
-      "state": "Karnataka"
-    },
-    {
-      "file": "pomelli_kashmir_safety_1.png",
-      "campaign_type": "region",
-      "campaign": "jk",
-      "subject": "Kashmir Safety 1",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_kaziranga_safari_1.png",
-      "campaign_type": "region",
-      "campaign": "northeast",
-      "subject": "Kaziranga Safari 1",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_kedarnath_density_1.png",
-      "campaign_type": "region",
-      "campaign": "uttarakhand",
-      "subject": "Kedarnath Density 1",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_kedarnath_density_2.png",
-      "campaign_type": "region",
-      "campaign": "uttarakhand",
-      "subject": "Kedarnath Density 2",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_kedarnath_density_3.png",
-      "campaign_type": "region",
-      "campaign": "uttarakhand",
-      "subject": "Kedarnath Density 3",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_kedarnath_density_4.png",
-      "campaign_type": "region",
-      "campaign": "uttarakhand",
-      "subject": "Kedarnath Density 4",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_kerala_alleppey_houseboat_audit.png",
-      "campaign_type": "region",
-      "campaign": "kerala",
-      "subject": "Kerala Alleppey Houseboat Audit",
-      "tags": [
-        "Kerala",
-        "GodsOwnCountry",
-        "Backwaters",
-        "Ayurveda"
-      ],
-      "state": "Kerala"
-    },
-    {
-      "file": "pomelli_kerala_alleppey_reality_check.png",
-      "campaign_type": "region",
-      "campaign": "kerala",
-      "subject": "Kerala Alleppey Reality Check",
-      "tags": [
-        "Kerala",
-        "GodsOwnCountry",
-        "Backwaters",
-        "Ayurveda"
-      ],
-      "state": "Kerala"
-    },
-    {
-      "file": "pomelli_kerala_backwater_quality.png",
-      "campaign_type": "region",
-      "campaign": "kerala",
-      "subject": "Kerala Backwater Quality",
-      "tags": [
-        "Kerala",
-        "GodsOwnCountry",
-        "Backwaters",
-        "Ayurveda"
-      ],
-      "state": "Kerala"
-    },
-    {
-      "file": "pomelli_kerala_hidden_costs.png",
-      "campaign_type": "region",
-      "campaign": "kerala",
-      "subject": "Kerala Hidden Costs",
-      "tags": [
-        "Kerala",
-        "GodsOwnCountry",
-        "Backwaters",
-        "Ayurveda"
-      ],
-      "state": "Kerala"
-    },
-    {
-      "file": "pomelli_kerala_monsoons_hard_truths.png",
-      "campaign_type": "region",
-      "campaign": "kerala",
-      "subject": "Kerala Monsoons Hard Truths",
-      "tags": [
-        "Kerala",
-        "GodsOwnCountry",
-        "Backwaters",
-        "Ayurveda"
-      ],
-      "state": "Kerala"
-    },
-    {
-      "file": "pomelli_kerala_sewage_zones_map.png",
-      "campaign_type": "region",
-      "campaign": "kerala",
-      "subject": "Kerala Sewage Zones Map",
-      "tags": [
-        "Kerala",
-        "GodsOwnCountry",
-        "Backwaters",
-        "Ayurveda"
-      ],
-      "state": "Kerala"
-    },
-    {
-      "file": "pomelli_kerala_unlicensed_uninsured.png",
-      "campaign_type": "region",
-      "campaign": "kerala",
-      "subject": "Kerala Unlicensed Uninsured",
-      "tags": [
-        "Kerala",
-        "GodsOwnCountry",
-        "Backwaters",
-        "Ayurveda"
-      ],
-      "state": "Kerala"
-    },
-    {
-      "file": "pomelli_kerala_zero_friction.png",
-      "campaign_type": "region",
-      "campaign": "kerala",
-      "subject": "Kerala Zero Friction",
-      "tags": [
-        "Kerala",
-        "GodsOwnCountry",
-        "Backwaters",
-        "Ayurveda"
-      ],
-      "state": "Kerala"
-    },
-    {
-      "file": "pomelli_konkan_beaches_1.png",
-      "campaign_type": "region",
-      "campaign": "maharashtra",
-      "subject": "Konkan Beaches 1",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_konkan_beaches_2.png",
-      "campaign_type": "region",
-      "campaign": "maharashtra",
-      "subject": "Konkan Beaches 2",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_konkan_beaches_3.png",
-      "campaign_type": "region",
-      "campaign": "maharashtra",
-      "subject": "Konkan Beaches 3",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_konkan_beaches_4.png",
-      "campaign_type": "region",
-      "campaign": "maharashtra",
-      "subject": "Konkan Beaches 4",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_ladakh_june_risk_map.png",
-      "campaign_type": "region",
-      "campaign": "jk",
-      "subject": "Ladakh June Risk Map",
-      "tags": [
-        "Kashmir",
-        "JammuKashmir",
-        "Dal",
-        "Paradise"
-      ],
-      "state": "Jammu & Kashmir"
-    },
-    {
-      "file": "pomelli_lethal_riptide_zones.png",
-      "campaign_type": "feature",
-      "campaign": "safety_data",
-      "subject": "Lethal Riptide Zones",
-      "tags": [
-        "Infrastructure",
-        "RoadSafety",
-        "HighAltitude",
-        "TravelReality"
-      ]
-    },
-    {
-      "file": "pomelli_manali_operator_1.png",
-      "campaign_type": "region",
-      "campaign": "himachal",
-      "subject": "Manali Operator 1",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_manali_operator_2.png",
-      "campaign_type": "region",
-      "campaign": "himachal",
-      "subject": "Manali Operator 2",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_manali_operator_3.png",
-      "campaign_type": "region",
-      "campaign": "himachal",
-      "subject": "Manali Operator 3",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_manali_operator_4.png",
-      "campaign_type": "region",
-      "campaign": "himachal",
-      "subject": "Manali Operator 4",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_may_heat_trap_1.png",
-      "campaign_type": "feature",
-      "campaign": "seasonal_intel",
-      "subject": "May Heat Trap 1",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_may_heat_trap_2.png",
-      "campaign_type": "feature",
-      "campaign": "seasonal_intel",
-      "subject": "May Heat Trap 2",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_may_heat_trap_3.png",
-      "campaign_type": "feature",
-      "campaign": "seasonal_intel",
-      "subject": "May Heat Trap 3",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_may_heat_trap_4.png",
-      "campaign_type": "feature",
-      "campaign": "seasonal_intel",
-      "subject": "May Heat Trap 4",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_may_travel_math_solved.png",
-      "campaign_type": "feature",
-      "campaign": "seasonal_intel",
-      "subject": "May Travel Math Solved",
-      "tags": [
-        "SummerTravel",
-        "HeatSafety",
-        "MonsoonTravel",
-        "SeasonalData"
-      ]
-    },
-    {
-      "file": "pomelli_meghalaya_monsoon_1.png",
-      "campaign_type": "region",
-      "campaign": "meghalaya",
-      "subject": "Meghalaya Monsoon 1",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_meghalaya_monsoon_2.png",
-      "campaign_type": "region",
-      "campaign": "meghalaya",
-      "subject": "Meghalaya Monsoon 2",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_meghalaya_monsoon_3.png",
-      "campaign_type": "region",
-      "campaign": "meghalaya",
-      "subject": "Meghalaya Monsoon 3",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_meghalaya_monsoon_4.png",
-      "campaign_type": "region",
-      "campaign": "meghalaya",
-      "subject": "Meghalaya Monsoon 4",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_meghalaya_not_just_waterfalls.png",
-      "campaign_type": "region",
-      "campaign": "meghalaya",
-      "subject": "Meghalaya Not Just Waterfalls",
-      "tags": [
-        "Meghalaya",
-        "Northeast",
-        "LivingRootBridge",
-        "Cherrapunji"
-      ],
-      "state": "Meghalaya"
-    },
-    {
-      "file": "pomelli_meghalaya_root_bridge.png",
-      "campaign_type": "region",
-      "campaign": "meghalaya",
-      "subject": "Meghalaya Root Bridge",
-      "tags": [
-        "Meghalaya",
-        "Northeast",
-        "LivingRootBridge",
-        "Cherrapunji"
-      ],
-      "state": "Meghalaya"
-    },
-    {
-      "file": "pomelli_midnight_safety_scores.png",
-      "campaign_type": "feature",
-      "campaign": "safety_data",
-      "subject": "Midnight Safety Scores",
-      "tags": [
-        "TravelSafety",
-        "VerifiedData",
-        "SafeTravel",
-        "TravelIntel"
-      ]
-    },
-    {
-      "file": "pomelli_monsoon_master_1.png",
-      "campaign_type": "feature",
-      "campaign": "seasonal_intel",
-      "subject": "Monsoon Master 1",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_monsoon_master_2.png",
-      "campaign_type": "feature",
-      "campaign": "seasonal_intel",
-      "subject": "Monsoon Master 2",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_monsoon_master_3.png",
-      "campaign_type": "feature",
-      "campaign": "seasonal_intel",
-      "subject": "Monsoon Master 3",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_mp_pachmarhi_trekking_safety.png",
-      "campaign_type": "region",
-      "campaign": "mp",
-      "subject": "Mp Pachmarhi Trekking Safety",
-      "tags": [
-        "MadhyaPradesh",
-        "Safari",
-        "Heritage",
-        "Temples"
-      ],
-      "state": "Madhya Pradesh"
-    },
-    {
-      "file": "pomelli_mp_safari_1.png",
-      "campaign_type": "region",
-      "campaign": "mp",
-      "subject": "Mp Safari 1",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_mp_safari_2.png",
-      "campaign_type": "region",
-      "campaign": "mp",
-      "subject": "Mp Safari 2",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_mp_safari_3.png",
-      "campaign_type": "region",
-      "campaign": "mp",
-      "subject": "Mp Safari 3",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_mp_safari_4.png",
-      "campaign_type": "region",
-      "campaign": "mp",
-      "subject": "Mp Safari 4",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_mp_safari_license_audit.png",
-      "campaign_type": "region",
-      "campaign": "mp",
-      "subject": "Mp Safari License Audit",
-      "tags": [
-        "MadhyaPradesh",
-        "Safari",
-        "Heritage",
-        "Temples"
-      ],
-      "state": "Madhya Pradesh"
-    },
-    {
-      "file": "pomelli_mp_verified_safari_operators.png",
-      "campaign_type": "region",
-      "campaign": "mp",
-      "subject": "Mp Verified Safari Operators",
-      "tags": [
-        "MadhyaPradesh",
-        "Safari",
-        "Heritage",
-        "Temples"
-      ],
-      "state": "Madhya Pradesh"
-    },
-    {
-      "file": "pomelli_navigate_old_city_safely.png",
-      "campaign_type": "general",
-      "campaign": "general",
-      "subject": "Navigate Old City Safely",
-      "tags": [
-        "DataDriven",
-        "TravelIntelligence",
-        "VerifiedData",
-        "SmartTravel"
-      ]
-    },
-    {
-      "file": "pomelli_night_boat_safety_audit.png",
-      "campaign_type": "feature",
-      "campaign": "safety_data",
-      "subject": "Night Boat Safety Audit",
-      "tags": [
-        "TravelSafety",
-        "VerifiedData",
-        "SafeTravel",
-        "TravelIntel"
-      ]
-    },
-    {
-      "file": "pomelli_no_infrastructure_guesswork.png",
-      "campaign_type": "feature",
-      "campaign": "data_authority",
-      "subject": "No Infrastructure Guesswork",
-      "tags": [
-        "Infrastructure",
-        "RoadSafety",
-        "HighAltitude",
-        "TravelReality"
-      ]
-    },
-    {
-      "file": "pomelli_northeast_india_decoded_01.png",
-      "campaign_type": "region",
-      "campaign": "northeast",
-      "subject": "Northeast India Decoded 01",
-      "tags": [
-        "NortheastIndia",
-        "Unexplored",
-        "TribalCulture",
-        "Wildlife"
-      ],
-      "state": "Northeast India"
-    },
-    {
-      "file": "pomelli_northeast_infra_audit_1.png",
-      "campaign_type": "region",
-      "campaign": "northeast",
-      "subject": "Northeast Infra Audit 1",
-      "tags": [
-        "NortheastIndia",
-        "Unexplored",
-        "TribalCulture",
-        "Wildlife"
-      ],
-      "state": "Northeast India"
-    },
-    {
-      "file": "pomelli_northeast_infra_audit_2.png",
-      "campaign_type": "region",
-      "campaign": "northeast",
-      "subject": "Northeast Infra Audit 2",
-      "tags": [
-        "NortheastIndia",
-        "Unexplored",
-        "TribalCulture",
-        "Wildlife"
-      ],
-      "state": "Northeast India"
-    },
-    {
-      "file": "pomelli_northeast_infra_audit_3.png",
-      "campaign_type": "region",
-      "campaign": "northeast",
-      "subject": "Northeast Infra Audit 3",
-      "tags": [
-        "NortheastIndia",
-        "Unexplored",
-        "TribalCulture",
-        "Wildlife"
-      ],
-      "state": "Northeast India"
-    },
-    {
-      "file": "pomelli_northeast_infra_audit_4.png",
-      "campaign_type": "region",
-      "campaign": "northeast",
-      "subject": "Northeast Infra Audit 4",
-      "tags": [
-        "NortheastIndia",
-        "Unexplored",
-        "TribalCulture",
-        "Wildlife"
-      ],
-      "state": "Northeast India"
-    },
-    {
-      "file": "pomelli_northeast_kaziranga_safari_audit.png",
-      "campaign_type": "region",
-      "campaign": "northeast",
-      "subject": "Northeast Kaziranga Safari Audit",
-      "tags": [
-        "NortheastIndia",
-        "Unexplored",
-        "TribalCulture",
-        "Wildlife"
-      ],
-      "state": "Northeast India"
-    },
-    {
-      "file": "pomelli_northeast_regional_reality_check.png",
-      "campaign_type": "region",
-      "campaign": "northeast",
-      "subject": "Northeast Regional Reality Check",
-      "tags": [
-        "NortheastIndia",
-        "Unexplored",
-        "TribalCulture",
-        "Wildlife"
-      ],
-      "state": "Northeast India"
-    },
-    {
-      "file": "pomelli_northeast_reliable_rhino_sightings.png",
-      "campaign_type": "region",
-      "campaign": "northeast",
-      "subject": "Northeast Reliable Rhino Sightings",
-      "tags": [
-        "NortheastIndia",
-        "Unexplored",
-        "TribalCulture",
-        "Wildlife"
-      ],
-      "state": "Northeast India"
-    },
-    {
-      "file": "pomelli_northeast_verified_operator_rankings.png",
-      "campaign_type": "region",
-      "campaign": "northeast",
-      "subject": "Northeast Verified Operator Rankings",
-      "tags": [
-        "NortheastIndia",
-        "Unexplored",
-        "TribalCulture",
-        "Wildlife"
-      ],
-      "state": "Northeast India"
-    },
-    {
-      "file": "pomelli_odisha_chilika_boat_license_audit.png",
-      "campaign_type": "region",
-      "campaign": "odisha",
-      "subject": "Odisha Chilika Boat License Audit",
-      "tags": [
-        "Odisha",
-        "Temples",
-        "Wildlife",
-        "Coastal"
-      ],
-      "state": "Odisha"
-    },
-    {
-      "file": "pomelli_odisha_ethical_wildlife_watching.png",
-      "campaign_type": "region",
-      "campaign": "odisha",
-      "subject": "Odisha Ethical Wildlife Watching",
-      "tags": [
-        "Odisha",
-        "Temples",
-        "Wildlife",
-        "Coastal"
-      ],
-      "state": "Odisha"
-    },
-    {
-      "file": "pomelli_odisha_verified_boat_permits.png",
-      "campaign_type": "region",
-      "campaign": "odisha",
-      "subject": "Odisha Verified Boat Permits",
-      "tags": [
-        "Odisha",
-        "Temples",
-        "Wildlife",
-        "Coastal"
-      ],
-      "state": "Odisha"
-    },
-    {
-      "file": "pomelli_pahalgam_treks_1.png",
-      "campaign_type": "region",
-      "campaign": "jk",
-      "subject": "Pahalgam Treks 1",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_pahalgam_treks_2.png",
-      "campaign_type": "region",
-      "campaign": "jk",
-      "subject": "Pahalgam Treks 2",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_pahalgam_treks_3.png",
-      "campaign_type": "region",
-      "campaign": "jk",
-      "subject": "Pahalgam Treks 3",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_pahalgam_treks_4.png",
-      "campaign_type": "region",
-      "campaign": "jk",
-      "subject": "Pahalgam Treks 4",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_premonsoon_cooling_scores.png",
-      "campaign_type": "feature",
-      "campaign": "seasonal_intel",
-      "subject": "Premonsoon Cooling Scores",
-      "tags": [
-        "SummerTravel",
-        "HeatSafety",
-        "MonsoonTravel",
-        "SeasonalData"
-      ]
-    },
-    {
-      "file": "pomelli_punjab_amritsar_density.png",
-      "campaign_type": "region",
-      "campaign": "punjab",
-      "subject": "Punjab Amritsar Density",
-      "tags": [
-        "Punjab",
-        "GoldenTemple",
-        "Amritsar",
-        "StreetFood"
-      ],
-      "state": "Punjab"
-    },
-    {
-      "file": "pomelli_punjab_gate_logistics.png",
-      "campaign_type": "region",
-      "campaign": "punjab",
-      "subject": "Punjab Gate Logistics",
-      "tags": [
-        "Punjab",
-        "GoldenTemple",
-        "Amritsar",
-        "StreetFood"
-      ],
-      "state": "Punjab"
-    },
-    {
-      "file": "pomelli_punjab_golden_temple_crowds.png",
-      "campaign_type": "region",
-      "campaign": "punjab",
-      "subject": "Punjab Golden Temple Crowds",
-      "tags": [
-        "Punjab",
-        "GoldenTemple",
-        "Amritsar",
-        "StreetFood"
-      ],
-      "state": "Punjab"
-    },
-    {
-      "file": "pomelli_punjab_street_food_confidence.png",
-      "campaign_type": "region",
-      "campaign": "punjab",
-      "subject": "Punjab Street Food Confidence",
-      "tags": [
-        "Punjab",
-        "GoldenTemple",
-        "Amritsar",
-        "StreetFood"
-      ],
-      "state": "Punjab"
-    },
-    {
-      "file": "pomelli_rajasthan_45c_1.png",
-      "campaign_type": "region",
-      "campaign": "rajasthan",
-      "subject": "Rajasthan 45c 1",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_rajasthan_45c_2.png",
-      "campaign_type": "region",
-      "campaign": "rajasthan",
-      "subject": "Rajasthan 45c 2",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_rajasthan_45c_3.png",
-      "campaign_type": "region",
-      "campaign": "rajasthan",
-      "subject": "Rajasthan 45c 3",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_rajasthan_45c_4.png",
-      "campaign_type": "region",
-      "campaign": "rajasthan",
-      "subject": "Rajasthan 45c 4",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_rajasthan_48c_tomorrow.png",
-      "campaign_type": "region",
-      "campaign": "rajasthan",
-      "subject": "Rajasthan 48C Tomorrow",
-      "tags": [
-        "Rajasthan",
-        "Desert",
-        "Heritage",
-        "Forts"
-      ],
-      "state": "Rajasthan"
-    },
-    {
-      "file": "pomelli_rajasthan_heritage_pricing_1.png",
-      "campaign_type": "region",
-      "campaign": "rajasthan",
-      "subject": "Rajasthan Heritage Pricing 1",
-      "tags": [
-        "Rajasthan",
-        "Desert",
-        "Heritage",
-        "Forts"
-      ],
-      "state": "Rajasthan"
-    },
-    {
-      "file": "pomelli_rajasthan_palace_costs_1.png",
-      "campaign_type": "region",
-      "campaign": "rajasthan",
-      "subject": "Rajasthan Palace Costs 1",
-      "tags": [
-        "Rajasthan",
-        "Desert",
-        "Heritage",
-        "Forts"
-      ],
-      "state": "Rajasthan"
-    },
-    {
-      "file": "pomelli_rajasthan_palace_costs_2.png",
-      "campaign_type": "region",
-      "campaign": "rajasthan",
-      "subject": "Rajasthan Palace Costs 2",
-      "tags": [
-        "Rajasthan",
-        "Desert",
-        "Heritage",
-        "Forts"
-      ],
-      "state": "Rajasthan"
-    },
-    {
-      "file": "pomelli_rajasthan_palace_costs_3.png",
-      "campaign_type": "region",
-      "campaign": "rajasthan",
-      "subject": "Rajasthan Palace Costs 3",
-      "tags": [
-        "Rajasthan",
-        "Desert",
-        "Heritage",
-        "Forts"
-      ],
-      "state": "Rajasthan"
-    },
-    {
-      "file": "pomelli_rajasthan_palace_costs_4.png",
-      "campaign_type": "region",
-      "campaign": "rajasthan",
-      "subject": "Rajasthan Palace Costs 4",
-      "tags": [
-        "Rajasthan",
-        "Desert",
-        "Heritage",
-        "Forts"
-      ],
-      "state": "Rajasthan"
-    },
-    {
-      "file": "pomelli_rajasthan_safety_gap.png",
-      "campaign_type": "region",
-      "campaign": "rajasthan",
-      "subject": "Rajasthan Safety Gap",
-      "tags": [
-        "Rajasthan",
-        "Desert",
-        "Heritage",
-        "Forts"
-      ],
-      "state": "Rajasthan"
-    },
-    {
-      "file": "pomelli_real_48_hour_rule.png",
-      "campaign_type": "general",
-      "campaign": "general",
-      "subject": "Real 48 Hour Rule",
-      "tags": [
-        "DataDriven",
-        "TravelIntelligence",
-        "VerifiedData",
-        "SmartTravel"
-      ]
-    },
-    {
-      "file": "pomelli_roads_disappear_overnight.png",
-      "campaign_type": "general",
-      "campaign": "general",
-      "subject": "Roads Disappear Overnight",
-      "tags": [
-        "Infrastructure",
-        "RoadSafety",
-        "HighAltitude",
-        "TravelReality"
-      ]
-    },
-    {
-      "file": "pomelli_safest_summer_1.png",
-      "campaign_type": "feature",
-      "campaign": "seasonal_intel",
-      "subject": "Safest Summer 1",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_safest_summer_2.png",
-      "campaign_type": "feature",
-      "campaign": "seasonal_intel",
-      "subject": "Safest Summer 2",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_safest_summer_3.png",
-      "campaign_type": "feature",
-      "campaign": "seasonal_intel",
-      "subject": "Safest Summer 3",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_safest_summer_4.png",
-      "campaign_type": "feature",
-      "campaign": "seasonal_intel",
-      "subject": "Safest Summer 4",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_safety_beyond_the_signal.png",
-      "campaign_type": "feature",
-      "campaign": "safety_data",
-      "subject": "Safety Beyond The Signal",
-      "tags": [
-        "TravelSafety",
-        "VerifiedData",
-        "SafeTravel",
-        "TravelIntel"
-      ]
-    },
-    {
-      "file": "pomelli_safety_first_intelligence.png",
-      "campaign_type": "feature",
-      "campaign": "safety_data",
-      "subject": "Safety First Intelligence",
-      "tags": [
-        "TravelSafety",
-        "VerifiedData",
-        "SafeTravel",
-        "TravelIntel"
-      ]
-    },
-    {
-      "file": "pomelli_shack_hygiene_failures.png",
-      "campaign_type": "region",
-      "campaign": "goa",
-      "subject": "Shack Hygiene Failures",
-      "tags": [
-        "Goa",
-        "Beaches",
-        "Coastline",
-        "Nightlife"
-      ],
-      "state": "Goa"
-    },
-    {
-      "file": "pomelli_sikkim_logistics_1.png",
-      "campaign_type": "region",
-      "campaign": "sikkim",
-      "subject": "Sikkim Logistics 1",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_sikkim_logistics_2.png",
-      "campaign_type": "region",
-      "campaign": "sikkim",
-      "subject": "Sikkim Logistics 2",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_sikkim_logistics_3.png",
-      "campaign_type": "region",
-      "campaign": "sikkim",
-      "subject": "Sikkim Logistics 3",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_sikkim_logistics_4.png",
-      "campaign_type": "region",
-      "campaign": "sikkim",
-      "subject": "Sikkim Logistics 4",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_sikkim_monastery_1.png",
-      "campaign_type": "region",
-      "campaign": "sikkim",
-      "subject": "Sikkim Monastery 1",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_sikkim_monastery_2.png",
-      "campaign_type": "region",
-      "campaign": "sikkim",
-      "subject": "Sikkim Monastery 2",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_sikkim_monastery_3.png",
-      "campaign_type": "region",
-      "campaign": "sikkim",
-      "subject": "Sikkim Monastery 3",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_sikkim_monastery_4.png",
-      "campaign_type": "region",
-      "campaign": "sikkim",
-      "subject": "Sikkim Monastery 4",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_sikkim_road_hazards_1.png",
-      "campaign_type": "region",
-      "campaign": "sikkim",
-      "subject": "Sikkim Road Hazards 1",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_sikkim_road_hazards_2.png",
-      "campaign_type": "region",
-      "campaign": "sikkim",
-      "subject": "Sikkim Road Hazards 2",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_sikkim_road_hazards_3.png",
-      "campaign_type": "region",
-      "campaign": "sikkim",
-      "subject": "Sikkim Road Hazards 3",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_sikkim_road_hazards_4.png",
-      "campaign_type": "region",
-      "campaign": "sikkim",
-      "subject": "Sikkim Road Hazards 4",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_solitude_index_1.png",
-      "campaign_type": "feature",
-      "campaign": "data_authority",
-      "subject": "Solitude Index 1",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_solitude_index_2.png",
-      "campaign_type": "feature",
-      "campaign": "data_authority",
-      "subject": "Solitude Index 2",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_solitude_index_3.png",
-      "campaign_type": "feature",
-      "campaign": "data_authority",
-      "subject": "Solitude Index 3",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_solitude_index_4.png",
-      "campaign_type": "feature",
-      "campaign": "data_authority",
-      "subject": "Solitude Index 4",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_sundarbans_audit_1.png",
-      "campaign_type": "region",
-      "campaign": "wb",
-      "subject": "Sundarbans Audit 1",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_sundarbans_audit_2.png",
-      "campaign_type": "region",
-      "campaign": "wb",
-      "subject": "Sundarbans Audit 2",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_sundarbans_audit_3.png",
-      "campaign_type": "region",
-      "campaign": "wb",
-      "subject": "Sundarbans Audit 3",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_sundarbans_audit_4.png",
-      "campaign_type": "region",
-      "campaign": "wb",
-      "subject": "Sundarbans Audit 4",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_tamilnadu_hidden_guide_fee_data.png",
-      "campaign_type": "region",
-      "campaign": "tamilnadu",
-      "subject": "Tamilnadu Hidden Guide Fee Data",
-      "tags": [
-        "TamilNadu",
-        "Temples",
-        "SouthIndia",
-        "Heritage"
-      ],
-      "state": "Tamil Nadu"
-    },
-    {
-      "file": "pomelli_tamilnadu_kanchipuram_silk_scams.png",
-      "campaign_type": "region",
-      "campaign": "tamilnadu",
-      "subject": "Tamilnadu Kanchipuram Silk Scams",
-      "tags": [
-        "TamilNadu",
-        "Temples",
-        "SouthIndia",
-        "Heritage"
-      ],
-      "state": "Tamil Nadu"
-    },
-    {
-      "file": "pomelli_tamilnadu_mahabalipuram_menu_markups.png",
-      "campaign_type": "region",
-      "campaign": "tamilnadu",
-      "subject": "Tamilnadu Mahabalipuram Menu Markups",
-      "tags": [
-        "TamilNadu",
-        "Temples",
-        "SouthIndia",
-        "Heritage"
-      ],
-      "state": "Tamil Nadu"
-    },
-    {
-      "file": "pomelli_tamilnadu_temple_1.png",
-      "campaign_type": "region",
-      "campaign": "tamilnadu",
-      "subject": "Tamilnadu Temple 1",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_tamilnadu_temple_2.png",
-      "campaign_type": "region",
-      "campaign": "tamilnadu",
-      "subject": "Tamilnadu Temple 2",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_tamilnadu_temple_3.png",
-      "campaign_type": "region",
-      "campaign": "tamilnadu",
-      "subject": "Tamilnadu Temple 3",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_tamilnadu_temple_4.png",
-      "campaign_type": "region",
-      "campaign": "tamilnadu",
-      "subject": "Tamilnadu Temple 4",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_tamilnadu_temple_audit_1.png",
-      "campaign_type": "region",
-      "campaign": "tamilnadu",
-      "subject": "Tamilnadu Temple Audit 1",
-      "tags": [
-        "TamilNadu",
-        "Temples",
-        "SouthIndia",
-        "Heritage"
-      ],
-      "state": "Tamil Nadu"
-    },
-    {
-      "file": "pomelli_tamilnadu_temple_audit_2.png",
-      "campaign_type": "region",
-      "campaign": "tamilnadu",
-      "subject": "Tamilnadu Temple Audit 2",
-      "tags": [
-        "TamilNadu",
-        "Temples",
-        "SouthIndia",
-        "Heritage"
-      ],
-      "state": "Tamil Nadu"
-    },
-    {
-      "file": "pomelli_tamilnadu_temple_audit_3.png",
-      "campaign_type": "region",
-      "campaign": "tamilnadu",
-      "subject": "Tamilnadu Temple Audit 3",
-      "tags": [
-        "TamilNadu",
-        "Temples",
-        "SouthIndia",
-        "Heritage"
-      ],
-      "state": "Tamil Nadu"
-    },
-    {
-      "file": "pomelli_tamilnadu_temple_audit_4.png",
-      "campaign_type": "region",
-      "campaign": "tamilnadu",
-      "subject": "Tamilnadu Temple Audit 4",
-      "tags": [
-        "TamilNadu",
-        "Temples",
-        "SouthIndia",
-        "Heritage"
-      ],
-      "state": "Tamil Nadu"
-    },
-    {
-      "file": "pomelli_tamilnadu_tourist_tax_map.png",
-      "campaign_type": "region",
-      "campaign": "tamilnadu",
-      "subject": "Tamilnadu Tourist Tax Map",
-      "tags": [
-        "TamilNadu",
-        "Temples",
-        "SouthIndia",
-        "Heritage"
-      ],
-      "state": "Tamil Nadu"
-    },
-    {
-      "file": "pomelli_travel_by_data_not_vibes.png",
-      "campaign_type": "feature",
-      "campaign": "data_authority",
-      "subject": "Travel By Data Not Vibes",
-      "tags": [
-        "DataDriven",
-        "TravelIntelligence",
-        "VerifiedData",
-        "SmartTravel"
-      ]
-    },
-    {
-      "file": "pomelli_travel_intel_1.png",
-      "campaign_type": "feature",
-      "campaign": "data_authority",
-      "subject": "Travel Intel 1",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_travel_intel_2.png",
-      "campaign_type": "feature",
-      "campaign": "data_authority",
-      "subject": "Travel Intel 2",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_travel_intel_3.png",
-      "campaign_type": "feature",
-      "campaign": "data_authority",
-      "subject": "Travel Intel 3",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_travel_intel_4.png",
-      "campaign_type": "feature",
-      "campaign": "data_authority",
-      "subject": "Travel Intel 4",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_travel_on_hard_facts.png",
-      "campaign_type": "feature",
-      "campaign": "data_authority",
-      "subject": "Travel On Hard Facts",
-      "tags": [
-        "DataDriven",
-        "TravelIntelligence",
-        "VerifiedData",
-        "SmartTravel"
-      ]
-    },
-    {
-      "file": "pomelli_udaipur_beneath_blue.png",
-      "campaign_type": "region",
-      "campaign": "rajasthan",
-      "subject": "Udaipur Beneath Blue",
-      "tags": [
-        "Rajasthan",
-        "Desert",
-        "Heritage",
-        "Forts"
-      ],
-      "state": "Rajasthan"
-    },
-    {
-      "file": "pomelli_unglamorous_truth_1.png",
-      "campaign_type": "feature",
-      "campaign": "data_authority",
-      "subject": "Unglamorous Truth 1",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_unglamorous_truth_2.png",
-      "campaign_type": "feature",
-      "campaign": "data_authority",
-      "subject": "Unglamorous Truth 2",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_unglamorous_truth_3.png",
-      "campaign_type": "feature",
-      "campaign": "data_authority",
-      "subject": "Unglamorous Truth 3",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_uttarakhand_char_dham_truth.png",
-      "campaign_type": "region",
-      "campaign": "uttarakhand",
-      "subject": "Uttarakhand Char Dham Truth",
-      "tags": [
-        "Uttarakhand",
-        "CharDham",
-        "Trekking",
-        "Himalayas"
-      ],
-      "state": "Uttarakhand"
-    },
-    {
-      "file": "pomelli_uttarakhand_kedarnath_density.png",
-      "campaign_type": "region",
-      "campaign": "uttarakhand",
-      "subject": "Uttarakhand Kedarnath Density",
-      "tags": [
-        "Uttarakhand",
-        "CharDham",
-        "Trekking",
-        "Himalayas"
-      ],
-      "state": "Uttarakhand"
-    },
-    {
-      "file": "pomelli_uttarakhand_oxygen_risk.png",
-      "campaign_type": "region",
-      "campaign": "uttarakhand",
-      "subject": "Uttarakhand Oxygen Risk",
-      "tags": [
-        "Uttarakhand",
-        "CharDham",
-        "Trekking",
-        "Himalayas"
-      ],
-      "state": "Uttarakhand"
-    },
-    {
-      "file": "pomelli_uttarakhand_travel_confidence.png",
-      "campaign_type": "region",
-      "campaign": "uttarakhand",
-      "subject": "Uttarakhand Travel Confidence",
-      "tags": [
-        "Uttarakhand",
-        "CharDham",
-        "Trekking",
-        "Himalayas"
-      ],
-      "state": "Uttarakhand"
-    },
-    {
-      "file": "pomelli_varanasi_after_the_aarti.png",
-      "campaign_type": "region",
-      "campaign": "up",
-      "subject": "Varanasi After The Aarti",
-      "tags": [
-        "UttarPradesh",
-        "Varanasi",
-        "TajMahal",
-        "Ayodhya"
-      ],
-      "state": "Uttar Pradesh"
-    },
-    {
-      "file": "pomelli_varanasi_ghat_1.png",
-      "campaign_type": "region",
-      "campaign": "up",
-      "subject": "Varanasi Ghat 1",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_varanasi_ghat_2.png",
-      "campaign_type": "region",
-      "campaign": "up",
-      "subject": "Varanasi Ghat 2",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_varanasi_ghat_3.png",
-      "campaign_type": "region",
-      "campaign": "up",
-      "subject": "Varanasi Ghat 3",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_varanasi_ghat_4.png",
-      "campaign_type": "region",
-      "campaign": "up",
-      "subject": "Varanasi Ghat 4",
-      "tags": [],
-      "hook": "",
-      "cta": ""
-    },
-    {
-      "file": "pomelli_verified_cool_hour_windows.png",
-      "campaign_type": "feature",
-      "campaign": "seasonal_intel",
-      "subject": "Verified Cool Hour Windows",
-      "tags": [
-        "TravelSafety",
-        "VerifiedData",
-        "SafeTravel",
-        "TravelIntel"
-      ]
-    },
-    {
-      "file": "pomelli_verified_data_zero_hype.png",
-      "campaign_type": "feature",
-      "campaign": "data_authority",
-      "subject": "Verified Data Zero Hype",
-      "tags": [
-        "TravelSafety",
-        "VerifiedData",
-        "SafeTravel",
-        "TravelIntel"
-      ]
-    },
-    {
-      "file": "pomelli_verified_solo_safety.png",
-      "campaign_type": "feature",
-      "campaign": "safety_data",
-      "subject": "Verified Solo Safety",
-      "tags": [
-        "TravelSafety",
-        "VerifiedData",
-        "SafeTravel",
-        "TravelIntel"
-      ]
-    }
-  ]
+    "17000Ft Reality Check": [
+      "pomelli_17000ft_reality_check.png"
+    ],
+    "Ajanta Accessibility": [
+      "pomelli_ajanta_accessibility_1.png",
+      "pomelli_ajanta_accessibility_2.png",
+      "pomelli_ajanta_accessibility_3.png",
+      "pomelli_ajanta_accessibility_4.png"
+    ],
+    "Alleppey License": [
+      "pomelli_alleppey_license_1.png",
+      "pomelli_alleppey_license_2.png",
+      "pomelli_alleppey_license_3.png",
+      "pomelli_alleppey_license_4.png"
+    ],
+    "Amritsar Density": [
+      "pomelli_amritsar_density_1.png"
+    ],
+    "Ams Reality Check": [
+      "pomelli_ams_reality_check.png"
+    ],
+    "Araku Valley": [
+      "pomelli_araku_valley_1.png",
+      "pomelli_araku_valley_2.png",
+      "pomelli_araku_valley_3.png",
+      "pomelli_araku_valley_4.png"
+    ],
+    "Aug Road Stability": [
+      "pomelli_aug_road_stability_1.png",
+      "pomelli_aug_road_stability_2.png",
+      "pomelli_aug_road_stability_3.png",
+      "pomelli_aug_road_stability_4.png"
+    ],
+    "Backwater Infrastructure Report": [
+      "pomelli_backwater_infrastructure_report.png"
+    ],
+    "Bandipur Safari": [
+      "pomelli_bandipur_safari_1.png",
+      "pomelli_bandipur_safari_2.png",
+      "pomelli_bandipur_safari_3.png",
+      "pomelli_bandipur_safari_4.png"
+    ],
+    "Beyond Filter Lethal Heat": [
+      "pomelli_beyond_filter_lethal_heat.png"
+    ],
+    "Bihar Transit": [
+      "pomelli_bihar_transit_1.png",
+      "pomelli_bihar_transit_2.png",
+      "pomelli_bihar_transit_3.png",
+      "pomelli_bihar_transit_4.png"
+    ],
+    "Brahmaputra Safely": [
+      "pomelli_brahmaputra_safely_1.png",
+      "pomelli_brahmaputra_safely_2.png",
+      "pomelli_brahmaputra_safely_3.png",
+      "pomelli_brahmaputra_safely_4.png"
+    ],
+    "Chhattisgarh Wild": [
+      "pomelli_chhattisgarh_wild_1.png",
+      "pomelli_chhattisgarh_wild_3.png",
+      "pomelli_chhattisgarh_wild_4.png"
+    ],
+    "Chilika Audit": [
+      "pomelli_chilika_audit_1.png",
+      "pomelli_chilika_audit_2.png",
+      "pomelli_chilika_audit_4.png"
+    ],
+    "Coastal Erosion Data": [
+      "pomelli_coastal_erosion_data.png"
+    ],
+    "Creative Image 1 1": [
+      "pomelli_creative_image_1_1_0420.png"
+    ],
+    "Dangerous Vs Overhyped": [
+      "pomelli_dangerous_vs_overhyped.png"
+    ],
+    "Data Over Hype": [
+      "pomelli_data_over_hype_1.png",
+      "pomelli_data_over_hype_2.png",
+      "pomelli_data_over_hype_3.png",
+      "pomelli_data_over_hype_4.png"
+    ],
+    "Delhi Fake Guides": [
+      "pomelli_delhi_fake_guides_1.png",
+      "pomelli_delhi_fake_guides_2.png",
+      "pomelli_delhi_fake_guides_3.png",
+      "pomelli_delhi_fake_guides_4.png"
+    ],
+    "Deoghar Crowds": [
+      "pomelli_deoghar_crowds_1.png",
+      "pomelli_deoghar_crowds_2.png",
+      "pomelli_deoghar_crowds_3.png",
+      "pomelli_deoghar_crowds_4.png"
+    ],
+    "Dzukou Valley Intel": [
+      "pomelli_dzukou_valley_intel.png"
+    ],
+    "Eastern Ghats": [
+      "pomelli_eastern_ghats_1.png"
+    ],
+    "Fail To Acclimatize": [
+      "pomelli_fail_to_acclimatize.png"
+    ],
+    "Ghats Lack Lighting": [
+      "pomelli_ghats_lack_lighting.png"
+    ],
+    "Goa Beach Audit": [
+      "pomelli_goa_beach_audit.png"
+    ],
+    "Goa Beach Shack Audit": [
+      "pomelli_goa_beach_shack_audit_1.png",
+      "pomelli_goa_beach_shack_audit_2.png",
+      "pomelli_goa_beach_shack_audit_3.png"
+    ],
+    "Goa Crowd Density": [
+      "pomelli_goa_crowd_density_1.png"
+    ],
+    "Heatwaves Escape": [
+      "pomelli_heatwaves_escape_1.png"
+    ],
+    "Heatwaves Infrastructure": [
+      "pomelli_heatwaves_infrastructure_3.png"
+    ],
+    "Heatwaves Medical": [
+      "pomelli_heatwaves_medical_2.png"
+    ],
+    "High Altitude Havens": [
+      "pomelli_high_altitude_havens.png"
+    ],
+    "Himachal Carrier Safety Rankings": [
+      "pomelli_himachal_carrier_safety_rankings.png"
+    ],
+    "Himachal Hp Bus Audit": [
+      "pomelli_himachal_hp_bus_audit.png"
+    ],
+    "Himachal Landslide Risk Mapped": [
+      "pomelli_himachal_landslide_risk_mapped.png"
+    ],
+    "Himachal Manali Audit": [
+      "pomelli_himachal_manali_audit_1.png",
+      "pomelli_himachal_manali_audit_2.png",
+      "pomelli_himachal_manali_audit_3.png",
+      "pomelli_himachal_manali_audit_4.png"
+    ],
+    "Himachal Roads": [
+      "pomelli_himachal_roads_1.png",
+      "pomelli_himachal_roads_2.png",
+      "pomelli_himachal_roads_3.png"
+    ],
+    "Himachal Verified Facts Only": [
+      "pomelli_himachal_verified_facts_only.png"
+    ],
+    "Houseboat Safety": [
+      "pomelli_houseboat_safety_1.png",
+      "pomelli_houseboat_safety_2.png",
+      "pomelli_houseboat_safety_3.png",
+      "pomelli_houseboat_safety_4.png"
+    ],
+    "India Summer Data Over Hype": [
+      "pomelli_india_summer_data_over_hype.png"
+    ],
+    "Infrastructure Gaps Exposed": [
+      "pomelli_infrastructure_gaps_exposed.png"
+    ],
+    "Jaisalmer Desert Trap": [
+      "pomelli_jaisalmer_desert_trap.png"
+    ],
+    "Jodhpur Crowd Heatmaps": [
+      "pomelli_jodhpur_crowd_heatmaps.png"
+    ],
+    "July Flood Risk": [
+      "pomelli_july_flood_risk_1.png",
+      "pomelli_july_flood_risk_2.png",
+      "pomelli_july_flood_risk_3.png",
+      "pomelli_july_flood_risk_4.png"
+    ],
+    "June Heat Trap": [
+      "pomelli_june_heat_trap.png"
+    ],
+    "June Safest": [
+      "pomelli_june_safest_1.png",
+      "pomelli_june_safest_2.png",
+      "pomelli_june_safest_3.png",
+      "pomelli_june_safest_4.png"
+    ],
+    "Karnataka Bandipur Safari": [
+      "pomelli_karnataka_bandipur_safari.png"
+    ],
+    "Karnataka Coorg Homestay": [
+      "pomelli_karnataka_coorg_homestay.png"
+    ],
+    "Karnataka Verify Operator": [
+      "pomelli_karnataka_verify_operator.png"
+    ],
+    "Karnataka Western Ghats": [
+      "pomelli_karnataka_western_ghats.png"
+    ],
+    "Kashmir Safety": [
+      "pomelli_kashmir_safety_1.png"
+    ],
+    "Kaziranga Safari": [
+      "pomelli_kaziranga_safari_1.png"
+    ],
+    "Kedarnath Density": [
+      "pomelli_kedarnath_density_1.png",
+      "pomelli_kedarnath_density_2.png",
+      "pomelli_kedarnath_density_3.png",
+      "pomelli_kedarnath_density_4.png"
+    ],
+    "Kerala Alleppey Houseboat Audit": [
+      "pomelli_kerala_alleppey_houseboat_audit.png"
+    ],
+    "Kerala Alleppey Reality Check": [
+      "pomelli_kerala_alleppey_reality_check.png"
+    ],
+    "Kerala Backwater Quality": [
+      "pomelli_kerala_backwater_quality.png"
+    ],
+    "Kerala Hidden Costs": [
+      "pomelli_kerala_hidden_costs.png"
+    ],
+    "Kerala Monsoons Hard Truths": [
+      "pomelli_kerala_monsoons_hard_truths.png"
+    ],
+    "Kerala Sewage Zones Map": [
+      "pomelli_kerala_sewage_zones_map.png"
+    ],
+    "Kerala Unlicensed Uninsured": [
+      "pomelli_kerala_unlicensed_uninsured.png"
+    ],
+    "Kerala Zero Friction": [
+      "pomelli_kerala_zero_friction.png"
+    ],
+    "Konkan Beaches": [
+      "pomelli_konkan_beaches_1.png",
+      "pomelli_konkan_beaches_2.png",
+      "pomelli_konkan_beaches_3.png",
+      "pomelli_konkan_beaches_4.png"
+    ],
+    "Ladakh June Risk Map": [
+      "pomelli_ladakh_june_risk_map.png"
+    ],
+    "Lethal Riptide Zones": [
+      "pomelli_lethal_riptide_zones.png"
+    ],
+    "Manali Operator": [
+      "pomelli_manali_operator_1.png",
+      "pomelli_manali_operator_2.png",
+      "pomelli_manali_operator_3.png",
+      "pomelli_manali_operator_4.png"
+    ],
+    "May Heat Trap": [
+      "pomelli_may_heat_trap_1.png",
+      "pomelli_may_heat_trap_2.png",
+      "pomelli_may_heat_trap_3.png",
+      "pomelli_may_heat_trap_4.png"
+    ],
+    "May Travel Math Solved": [
+      "pomelli_may_travel_math_solved.png"
+    ],
+    "Meghalaya Monsoon": [
+      "pomelli_meghalaya_monsoon_1.png",
+      "pomelli_meghalaya_monsoon_2.png",
+      "pomelli_meghalaya_monsoon_3.png",
+      "pomelli_meghalaya_monsoon_4.png"
+    ],
+    "Meghalaya Not Just Waterfalls": [
+      "pomelli_meghalaya_not_just_waterfalls.png"
+    ],
+    "Meghalaya Root Bridge": [
+      "pomelli_meghalaya_root_bridge.png"
+    ],
+    "Midnight Safety Scores": [
+      "pomelli_midnight_safety_scores.png"
+    ],
+    "Monsoon Master": [
+      "pomelli_monsoon_master_1.png",
+      "pomelli_monsoon_master_2.png",
+      "pomelli_monsoon_master_3.png"
+    ],
+    "Mp Pachmarhi Trekking Safety": [
+      "pomelli_mp_pachmarhi_trekking_safety.png"
+    ],
+    "Mp Safari": [
+      "pomelli_mp_safari_1.png",
+      "pomelli_mp_safari_2.png",
+      "pomelli_mp_safari_3.png",
+      "pomelli_mp_safari_4.png"
+    ],
+    "Mp Safari License Audit": [
+      "pomelli_mp_safari_license_audit.png"
+    ],
+    "Mp Verified Safari Operators": [
+      "pomelli_mp_verified_safari_operators.png"
+    ],
+    "Navigate Old City Safely": [
+      "pomelli_navigate_old_city_safely.png"
+    ],
+    "Night Boat Safety Audit": [
+      "pomelli_night_boat_safety_audit.png"
+    ],
+    "No Infrastructure Guesswork": [
+      "pomelli_no_infrastructure_guesswork.png"
+    ],
+    "Northeast India Decoded": [
+      "pomelli_northeast_india_decoded_01.png"
+    ],
+    "Northeast Infra Audit": [
+      "pomelli_northeast_infra_audit_1.png",
+      "pomelli_northeast_infra_audit_2.png",
+      "pomelli_northeast_infra_audit_3.png",
+      "pomelli_northeast_infra_audit_4.png"
+    ],
+    "Northeast Kaziranga Safari Audit": [
+      "pomelli_northeast_kaziranga_safari_audit.png"
+    ],
+    "Northeast Regional Reality Check": [
+      "pomelli_northeast_regional_reality_check.png"
+    ],
+    "Northeast Reliable Rhino Sightings": [
+      "pomelli_northeast_reliable_rhino_sightings.png"
+    ],
+    "Northeast Verified Operator Rankings": [
+      "pomelli_northeast_verified_operator_rankings.png"
+    ],
+    "Odisha Chilika Boat License Audit": [
+      "pomelli_odisha_chilika_boat_license_audit.png"
+    ],
+    "Odisha Ethical Wildlife Watching": [
+      "pomelli_odisha_ethical_wildlife_watching.png"
+    ],
+    "Odisha Verified Boat Permits": [
+      "pomelli_odisha_verified_boat_permits.png"
+    ],
+    "Pahalgam Treks": [
+      "pomelli_pahalgam_treks_1.png",
+      "pomelli_pahalgam_treks_2.png",
+      "pomelli_pahalgam_treks_3.png",
+      "pomelli_pahalgam_treks_4.png"
+    ],
+    "Premonsoon Cooling Scores": [
+      "pomelli_premonsoon_cooling_scores.png"
+    ],
+    "Punjab Amritsar Density": [
+      "pomelli_punjab_amritsar_density.png"
+    ],
+    "Punjab Gate Logistics": [
+      "pomelli_punjab_gate_logistics.png"
+    ],
+    "Punjab Golden Temple Crowds": [
+      "pomelli_punjab_golden_temple_crowds.png"
+    ],
+    "Punjab Street Food Confidence": [
+      "pomelli_punjab_street_food_confidence.png"
+    ],
+    "Rajasthan 45C": [
+      "pomelli_rajasthan_45c_1.png",
+      "pomelli_rajasthan_45c_2.png",
+      "pomelli_rajasthan_45c_3.png",
+      "pomelli_rajasthan_45c_4.png"
+    ],
+    "Rajasthan 48C Tomorrow": [
+      "pomelli_rajasthan_48c_tomorrow.png"
+    ],
+    "Rajasthan Heritage Pricing": [
+      "pomelli_rajasthan_heritage_pricing_1.png"
+    ],
+    "Rajasthan Palace Costs": [
+      "pomelli_rajasthan_palace_costs_1.png",
+      "pomelli_rajasthan_palace_costs_2.png",
+      "pomelli_rajasthan_palace_costs_3.png",
+      "pomelli_rajasthan_palace_costs_4.png"
+    ],
+    "Rajasthan Safety Gap": [
+      "pomelli_rajasthan_safety_gap.png"
+    ],
+    "Real 48 Hour Rule": [
+      "pomelli_real_48_hour_rule.png"
+    ],
+    "Roads Disappear Overnight": [
+      "pomelli_roads_disappear_overnight.png"
+    ],
+    "Safest Summer": [
+      "pomelli_safest_summer_1.png",
+      "pomelli_safest_summer_2.png",
+      "pomelli_safest_summer_3.png",
+      "pomelli_safest_summer_4.png"
+    ],
+    "Safety Beyond The Signal": [
+      "pomelli_safety_beyond_the_signal.png"
+    ],
+    "Safety First Intelligence": [
+      "pomelli_safety_first_intelligence.png"
+    ],
+    "Sept Safe Destination": [
+      "pomelli_sept_safe_destination_1.png",
+      "pomelli_sept_safe_destination_2.png",
+      "pomelli_sept_safe_destination_3.png",
+      "pomelli_sept_safe_destination_4.png"
+    ],
+    "Shack Hygiene Failures": [
+      "pomelli_shack_hygiene_failures.png"
+    ],
+    "Sikkim Logistics": [
+      "pomelli_sikkim_logistics_1.png",
+      "pomelli_sikkim_logistics_2.png",
+      "pomelli_sikkim_logistics_3.png",
+      "pomelli_sikkim_logistics_4.png"
+    ],
+    "Sikkim Monastery": [
+      "pomelli_sikkim_monastery_1.png",
+      "pomelli_sikkim_monastery_2.png",
+      "pomelli_sikkim_monastery_3.png",
+      "pomelli_sikkim_monastery_4.png"
+    ],
+    "Sikkim Road Hazards": [
+      "pomelli_sikkim_road_hazards_1.png",
+      "pomelli_sikkim_road_hazards_2.png",
+      "pomelli_sikkim_road_hazards_3.png",
+      "pomelli_sikkim_road_hazards_4.png"
+    ],
+    "Solitude Index": [
+      "pomelli_solitude_index_1.png",
+      "pomelli_solitude_index_2.png",
+      "pomelli_solitude_index_3.png",
+      "pomelli_solitude_index_4.png"
+    ],
+    "Sundarbans Audit": [
+      "pomelli_sundarbans_audit_1.png",
+      "pomelli_sundarbans_audit_2.png",
+      "pomelli_sundarbans_audit_3.png",
+      "pomelli_sundarbans_audit_4.png"
+    ],
+    "Tamilnadu Hidden Guide Fee Data": [
+      "pomelli_tamilnadu_hidden_guide_fee_data.png"
+    ],
+    "Tamilnadu Kanchipuram Silk Scams": [
+      "pomelli_tamilnadu_kanchipuram_silk_scams.png"
+    ],
+    "Tamilnadu Mahabalipuram Menu Markups": [
+      "pomelli_tamilnadu_mahabalipuram_menu_markups.png"
+    ],
+    "Tamilnadu Temple": [
+      "pomelli_tamilnadu_temple_1.png",
+      "pomelli_tamilnadu_temple_2.png",
+      "pomelli_tamilnadu_temple_3.png",
+      "pomelli_tamilnadu_temple_4.png"
+    ],
+    "Tamilnadu Temple Audit": [
+      "pomelli_tamilnadu_temple_audit_1.png",
+      "pomelli_tamilnadu_temple_audit_2.png",
+      "pomelli_tamilnadu_temple_audit_3.png",
+      "pomelli_tamilnadu_temple_audit_4.png"
+    ],
+    "Tamilnadu Tourist Tax Map": [
+      "pomelli_tamilnadu_tourist_tax_map.png"
+    ],
+    "Travel By Data Not Vibes": [
+      "pomelli_travel_by_data_not_vibes.png"
+    ],
+    "Travel Intel": [
+      "pomelli_travel_intel_1.png",
+      "pomelli_travel_intel_2.png",
+      "pomelli_travel_intel_3.png",
+      "pomelli_travel_intel_4.png"
+    ],
+    "Travel On Hard Facts": [
+      "pomelli_travel_on_hard_facts.png"
+    ],
+    "Udaipur Beneath Blue": [
+      "pomelli_udaipur_beneath_blue.png"
+    ],
+    "Unglamorous Truth": [
+      "pomelli_unglamorous_truth_1.png",
+      "pomelli_unglamorous_truth_2.png",
+      "pomelli_unglamorous_truth_3.png"
+    ],
+    "Uttarakhand Char Dham Truth": [
+      "pomelli_uttarakhand_char_dham_truth.png"
+    ],
+    "Uttarakhand Kedarnath Density": [
+      "pomelli_uttarakhand_kedarnath_density.png"
+    ],
+    "Uttarakhand Oxygen Risk": [
+      "pomelli_uttarakhand_oxygen_risk.png"
+    ],
+    "Uttarakhand Travel Confidence": [
+      "pomelli_uttarakhand_travel_confidence.png"
+    ],
+    "Varanasi After The Aarti": [
+      "pomelli_varanasi_after_the_aarti.png"
+    ],
+    "Varanasi Ghat": [
+      "pomelli_varanasi_ghat_1.png",
+      "pomelli_varanasi_ghat_2.png",
+      "pomelli_varanasi_ghat_3.png",
+      "pomelli_varanasi_ghat_4.png"
+    ],
+    "Verified Cool Hour Windows": [
+      "pomelli_verified_cool_hour_windows.png"
+    ],
+    "Verified Data Zero Hype": [
+      "pomelli_verified_data_zero_hype.png"
+    ],
+    "Verified Solo Safety": [
+      "pomelli_verified_solo_safety.png"
+    ],
+    "Winter Confidence": [
+      "pomelli_winter_confidence_1.png",
+      "pomelli_winter_confidence_2.png",
+      "pomelli_winter_confidence_3.png",
+      "pomelli_winter_confidence_4.png"
+    ]
+  }
 }
