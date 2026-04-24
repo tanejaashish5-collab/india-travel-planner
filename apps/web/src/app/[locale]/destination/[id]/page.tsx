@@ -338,31 +338,93 @@ export default async function DestinationPage({
   const cc = Array.isArray(dest.confidence_cards) ? dest.confidence_cards[0] : dest.confidence_cards;
   const bestMonthNames = (dest.best_months || []).map((m: number) => ["","January","February","March","April","May","June","July","August","September","October","November","December"][m]).filter(Boolean).join(", ");
 
+  // FAQPage schema — expanded to 8 questions covering best-time, kids, safety,
+  // solo-female, altitude, reach, stay, budget. Each answer pulls from real DB
+  // data (no fabrication). Structured so LLM answer engines (ChatGPT Search,
+  // Perplexity, AIO) can extract specific sub-answers.
+  const solofScore = (dest as any).solo_female_score ?? null;
+  const soloPct = solofScore?.annual_score ?? null;
+  const budgetTier = (dest as any).budget_tier ?? null;
+  const budgetText = budgetTier === 1 ? "Budget-friendly (under ₹2,000/day)"
+    : budgetTier === 2 ? "Mid-range (₹2,000–5,000/day)"
+    : budgetTier === 3 ? "Premium (₹5,000–15,000/day)"
+    : budgetTier === 4 ? "Luxury (₹15,000+/day)"
+    : null;
+
+  const faqQuestions: Array<{ name: string; text: string }> = [];
+
+  if (bestMonthNames) {
+    faqQuestions.push({
+      name: `What is the best time to visit ${dest.name}?`,
+      text: `The best months to visit ${dest.name} are ${bestMonthNames}. Every month has a separate go/wait/skip verdict with specific weather reasoning on NakshIQ — see /destination/${id}/[month] pages for month-level detail.`,
+    });
+  }
+  if (kf) {
+    faqQuestions.push({
+      name: `Is ${dest.name} safe for families with kids?`,
+      text: kf.suitable
+        ? `Yes, ${dest.name} is rated ${kf.rating}/5 for families with kids. ${(kf.reasons || []).slice(0, 2).join(". ")}.`
+        : `${dest.name} is rated ${kf.rating}/5 for families and is not recommended for young children. ${(kf.reasons || []).slice(0, 2).join(". ")}.`,
+    });
+  }
+  if (soloPct != null) {
+    faqQuestions.push({
+      name: `Is ${dest.name} safe for solo female travelers?`,
+      text: `${dest.name} scores ${soloPct}/5 for solo-female travel safety on NakshIQ's annual index. ${solofScore?.note ? String(solofScore.note) : "See the Safety & Logistics section for month-by-month overrides and local advisory notes."}`,
+    });
+  }
+  if (cc?.reach) {
+    faqQuestions.push({
+      name: `How do I reach ${dest.name}?`,
+      text: typeof cc.reach === "object"
+        ? (cc.reach.from_nearest_city || cc.reach.public_transport || `See the ${dest.name} travel guide on NakshIQ for detailed route information.`)
+        : String(cc.reach),
+    });
+  }
+  if (dest.elevation_m) {
+    faqQuestions.push({
+      name: `What altitude is ${dest.name}?`,
+      text: `${dest.name} sits at ${dest.elevation_m.toLocaleString()}m above sea level. ${dest.difficulty === "extreme" ? "Altitude sickness (AMS) is a real risk — acclimatise for 24-48 hours at a lower altitude before arrival, and watch for headache, nausea, or shortness of breath." : dest.elevation_m > 3000 ? "Some altitude awareness is needed. Anyone with cardiovascular or respiratory conditions should consult a doctor before travel." : "Altitude is not a concern for most visitors."}`,
+    });
+  }
+  if (cc?.emergency) {
+    const emergency = typeof cc.emergency === "object" ? cc.emergency : {};
+    const hospital = (emergency as any).nearest_hospital;
+    if (hospital) {
+      faqQuestions.push({
+        name: `Where is the nearest hospital to ${dest.name}?`,
+        text: `The nearest hospital or medical facility for ${dest.name} is ${hospital}. For altitude-related emergencies, Diamox and supplemental oxygen may be available at local chemists; for serious emergencies, evacuation to the nearest district hospital is standard.`,
+      });
+    }
+  }
+  if (cc?.network) {
+    const network = typeof cc.network === "object" ? cc.network : {};
+    const signal = (network as any).note || (network as any).best_carrier || (network as any).coverage;
+    if (signal) {
+      faqQuestions.push({
+        name: `Is there mobile network and internet in ${dest.name}?`,
+        text: `Mobile signal at ${dest.name}: ${String(signal)}. Carry offline maps (Google Maps offline download or Maps.me) for any stretches beyond town limits, especially if the route passes through low-signal valleys or forest corridors.`,
+      });
+    }
+  }
+  if (budgetText) {
+    faqQuestions.push({
+      name: `What is the budget for a trip to ${dest.name}?`,
+      text: `${dest.name} falls in the ${budgetText} tier on NakshIQ's scale. This covers typical mid-range accommodation, local transport, meals, and one paid activity per day. Solo travelers, families, and luxury travelers will see ±30-50% variation from this baseline.`,
+    });
+  }
+
   const faqLd = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    mainEntity: [
-      {
-        "@type": "Question",
-        name: `What is the best time to visit ${dest.name}?`,
-        acceptedAnswer: { "@type": "Answer", text: bestMonthNames ? `The best months to visit ${dest.name} are ${bestMonthNames}. See our full month-by-month scoring at nakshiq.com.` : `Visit nakshiq.com for month-by-month scoring of ${dest.name}.` },
-      },
-      ...(kf ? [{
-        "@type": "Question",
-        name: `Is ${dest.name} safe for families with kids?`,
-        acceptedAnswer: { "@type": "Answer", text: kf.suitable ? `Yes, ${dest.name} is rated ${kf.rating}/5 for families. ${(kf.reasons || []).slice(0, 2).join(". ")}.` : `${dest.name} is not recommended for families with young children. ${(kf.reasons || []).slice(0, 2).join(". ")}.` },
-      }] : []),
-      ...(cc?.reach ? [{
-        "@type": "Question",
-        name: `How do I reach ${dest.name}?`,
-        acceptedAnswer: { "@type": "Answer", text: typeof cc.reach === "object" ? (cc.reach.from_nearest_city || cc.reach.public_transport || `See the ${dest.name} travel guide on NakshIQ for detailed route information.`) : String(cc.reach) },
-      }] : []),
-      ...(dest.elevation_m ? [{
-        "@type": "Question",
-        name: `What altitude is ${dest.name}?`,
-        acceptedAnswer: { "@type": "Answer", text: `${dest.name} sits at ${dest.elevation_m.toLocaleString()}m above sea level. ${dest.difficulty === "extreme" ? "Altitude sickness is a real risk — acclimatize properly." : dest.elevation_m > 3000 ? "Some altitude awareness needed." : "Altitude is not a concern for most visitors."}` },
-      }] : []),
-    ].filter(Boolean),
+    "@id": `${destUrl}#faq`,
+    isPartOf: { "@id": "https://www.nakshiq.com#website" },
+    about: { "@id": `${destUrl}#destination` },
+    mainEntity: faqQuestions.map((q) => ({
+      "@type": "Question",
+      name: q.name,
+      acceptedAnswer: { "@type": "Answer", text: q.text },
+    })),
   };
 
   return (

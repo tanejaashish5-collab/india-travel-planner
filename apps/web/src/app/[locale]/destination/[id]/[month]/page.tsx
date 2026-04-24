@@ -135,7 +135,7 @@ async function getMonthData(id: string, month: string) {
   const { data: dest, error } = await supabase
     .from("destinations")
     .select(`
-      id, name, tagline, difficulty, elevation_m, budget_tier, best_months,
+      id, name, tagline, difficulty, elevation_m, budget_tier, best_months, coords, content_reviewed_at,
       state:states(id, name),
       kids_friendly(*),
       confidence_cards(*),
@@ -207,26 +207,61 @@ export default async function DestinationMonthPage({
   const stateInfo = destination.state as any;
   const stateName = Array.isArray(stateInfo) ? stateInfo[0]?.name : stateInfo?.name;
 
-  // Schema.org JSON-LD — Article
+  const monthUrl = `https://www.nakshiq.com/${locale}/destination/${id}/${month}`;
+  const destHubUrl = `https://www.nakshiq.com/${locale}/destination/${id}`;
+  const reviewedAt = (destination as any).content_reviewed_at ?? null;
+
+  // Schema.org JSON-LD — Article (month-specific guide, @id-chained)
   const articleJsonLd = {
     "@context": "https://schema.org",
     "@type": "Article",
+    "@id": `${monthUrl}#article`,
     headline: `${destination.name} in ${monthName} — ${score}/5`,
-    description: currentMonth?.note || `Travel guide for ${destination.name} in ${monthName}`,
-    datePublished: "2026-04-10",
-    author: {
-      "@type": "Organization",
-      name: "NakshIQ",
-      url: "https://www.nakshiq.com",
-    },
-    publisher: {
-      "@type": "Organization",
-      name: "NakshIQ",
-      url: "https://www.nakshiq.com",
+    description: currentMonth?.note || currentMonth?.why_go || `Travel guide for ${destination.name} in ${monthName}`,
+    inLanguage: locale === "hi" ? "hi-IN" : "en-IN",
+    ...(reviewedAt && { dateModified: reviewedAt }),
+    author: { "@id": "https://www.nakshiq.com#organization" },
+    publisher: { "@id": "https://www.nakshiq.com#organization" },
+    isPartOf: { "@id": "https://www.nakshiq.com#website" },
+    about: {
+      "@type": "TouristDestination",
+      name: destination.name,
+      url: destHubUrl,
+      ...((destination as any).coords && {
+        geo: {
+          "@type": "GeoCoordinates",
+          latitude: (destination as any).coords.lat,
+          longitude: (destination as any).coords.lng,
+        },
+      }),
+      ...((destination as any).elevation_m && {
+        elevation: { "@type": "QuantitativeValue", value: (destination as any).elevation_m, unitCode: "MTR" },
+      }),
     },
     image: destinationImage(id),
-    url: `https://www.nakshiq.com/${locale}/destination/${id}/${month}`,
+    url: monthUrl,
+    mainEntityOfPage: monthUrl,
   };
+
+  // Schema.org JSON-LD — TouristTrip (month-specific suggested trip envelope)
+  const verdict = currentMonth?.verdict;
+  const touristTripJsonLd = verdict === "go" || verdict === "wait" ? {
+    "@context": "https://schema.org",
+    "@type": "TouristTrip",
+    "@id": `${monthUrl}#trip`,
+    name: `${destination.name} in ${monthName}`,
+    description: currentMonth?.why_go || `${destination.name} visit planned for ${monthName}`,
+    url: monthUrl,
+    touristType: (destination as any).difficulty === "easy" ? "Family"
+      : (destination as any).difficulty === "extreme" ? "Adventure"
+      : "General",
+    itinerary: {
+      "@type": "TouristDestination",
+      name: destination.name,
+      url: destHubUrl,
+    },
+    provider: { "@id": "https://www.nakshiq.com#organization" },
+  } : null;
 
   // Schema.org JSON-LD — BreadcrumbList
   const breadcrumbJsonLd = {
@@ -260,28 +295,68 @@ export default async function DestinationMonthPage({
     ],
   };
 
-  // Schema.org JSON-LD — FAQPage
+  // Schema.org JSON-LD — FAQPage (month-specific, expanded to 6 questions)
   const kf = Array.isArray(destination.kids_friendly) ? destination.kids_friendly[0] : destination.kids_friendly;
+  const cc = Array.isArray(destination.confidence_cards) ? destination.confidence_cards[0] : destination.confidence_cards;
+  const bestMonthsArr: number[] = (destination as any).best_months ?? [];
+  const bestMonthNamesMonth = bestMonthsArr
+    .map((m: number) => ["", "January","February","March","April","May","June","July","August","September","October","November","December"][m])
+    .filter(Boolean)
+    .join(", ");
+
+  const faqEntries: Array<{ name: string; text: string }> = [];
+
+  faqEntries.push({
+    name: `Is ${monthName} a good time to visit ${destination.name}?`,
+    text: `${destination.name} scores ${score}/5 in ${monthName}${verdict ? ` (verdict: ${verdict})` : ""}. ${currentMonth?.why_go || currentMonth?.why_not || currentMonth?.note || "Check the full monthly breakdown on NakshIQ for weather, crowd, and access reasoning."}`,
+  });
+
+  if (currentMonth?.why_not && verdict === "skip") {
+    faqEntries.push({
+      name: `Why should I skip ${destination.name} in ${monthName}?`,
+      text: String(currentMonth.why_not),
+    });
+  }
+
+  if (bestMonthNamesMonth) {
+    faqEntries.push({
+      name: `What are the best months to visit ${destination.name}?`,
+      text: `The best months to visit ${destination.name} are ${bestMonthNamesMonth}. ${verdict === "go" ? `${monthName} is one of them.` : verdict === "skip" ? `${monthName} is not — consider one of the ${bestMonthNamesMonth} months instead.` : ""}`,
+    });
+  }
+
+  faqEntries.push({
+    name: `What is the weather like in ${destination.name} in ${monthName}?`,
+    text: currentMonth?.note || currentMonth?.why_go || `Check the ${destination.name} page on NakshIQ for detailed monthly weather data including temperature range, precipitation, and season-specific warnings.`,
+  });
+
+  if (kf) {
+    faqEntries.push({
+      name: `Is ${destination.name} safe for kids in ${monthName}?`,
+      text: kf.suitable
+        ? `${destination.name} is rated ${kf.rating}/5 for families. ${monthName} ${verdict === "go" ? "is a suitable travel window" : verdict === "skip" ? "is not the recommended travel window — prefer the best-months list" : "is workable but not peak"}.`
+        : `${destination.name} is rated ${kf.rating}/5 for families and not recommended for young children, regardless of month. ${(kf.reasons || []).slice(0, 1).join(". ")}.`,
+    });
+  }
+
+  if (cc?.safety_rating != null) {
+    faqEntries.push({
+      name: `Is ${destination.name} safe in ${monthName}?`,
+      text: `${destination.name} has a safety rating of ${cc.safety_rating}/5. ${cc.safety_notes ? String(cc.safety_notes) : ""}`,
+    });
+  }
+
   const faqJsonLd = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    mainEntity: [
-      {
-        "@type": "Question",
-        name: `Is ${monthName} a good time to visit ${destination.name}?`,
-        acceptedAnswer: { "@type": "Answer", text: `${destination.name} scores ${score}/5 in ${monthName}. ${currentMonth?.note || ""}. ${currentMonth?.why_go || ""}` },
-      },
-      {
-        "@type": "Question",
-        name: `What is the weather like in ${destination.name} in ${monthName}?`,
-        acceptedAnswer: { "@type": "Answer", text: currentMonth?.note || `Check the ${destination.name} page on NakshIQ for detailed monthly weather data.` },
-      },
-      ...(kf ? [{
-        "@type": "Question",
-        name: `Is ${destination.name} safe for kids in ${monthName}?`,
-        acceptedAnswer: { "@type": "Answer", text: kf.suitable ? `Yes, ${destination.name} is rated ${kf.rating}/5 for families.` : `${destination.name} is not recommended for families with young children.` },
-      }] : []),
-    ],
+    "@id": `${monthUrl}#faq`,
+    isPartOf: { "@id": "https://www.nakshiq.com#website" },
+    about: { "@id": `${monthUrl}#article` },
+    mainEntity: faqEntries.map((q) => ({
+      "@type": "Question",
+      name: q.name,
+      acceptedAnswer: { "@type": "Answer", text: q.text },
+    })),
   };
 
   return (
@@ -294,6 +369,12 @@ export default async function DestinationMonthPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
+      {touristTripJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(touristTripJsonLd) }}
+        />
+      )}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}

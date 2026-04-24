@@ -24,6 +24,8 @@ type Metrics = {
   staysTotal: number;
   staysRefreshedPct30d: number;
   lastRuns: Record<string, { run_at: string; summary: Record<string, unknown>; alerts: number } | null>;
+  botHits30d: Array<{ bot_name: string; count: number }>;
+  botHitsTotal30d: number;
 };
 
 async function getMetrics(): Promise<Metrics | null> {
@@ -78,6 +80,23 @@ async function getMetrics(): Promise<Metrics | null> {
       : null;
   }
 
+  // Bot-traffic metrics — last 30 days, grouped by bot_name
+  const thirtyDaysAgoISO = new Date(thirtyDaysAgo).toISOString();
+  const { data: botVisits } = await supabase
+    .from("bot_visits")
+    .select("bot_name")
+    .gte("hit_at", thirtyDaysAgoISO);
+  const botCountsMap = new Map<string, number>();
+  for (const row of botVisits ?? []) {
+    const name = (row as { bot_name: string }).bot_name;
+    botCountsMap.set(name, (botCountsMap.get(name) ?? 0) + 1);
+  }
+  const botHits30d = Array.from(botCountsMap.entries())
+    .map(([bot_name, count]) => ({ bot_name, count }))
+    .sort((a, b) => b.count - a.count)
+    .slice(0, 15);
+  const botHitsTotal30d = botVisits?.length ?? 0;
+
   return {
     totalDests: total,
     reviewedPct90d,
@@ -85,6 +104,8 @@ async function getMetrics(): Promise<Metrics | null> {
     staysTotal,
     staysRefreshedPct30d,
     lastRuns,
+    botHits30d,
+    botHitsTotal30d,
   };
 }
 
@@ -105,8 +126,98 @@ export default async function FreshnessDashboardPage() {
   const now = new Date();
   const asOf = now.toLocaleDateString("en-IN", { day: "numeric", month: "long", year: "numeric" });
 
+  // Dataset schema — makes NakshIQ's 488×12×6 dimension claim machine-readable
+  // for search engines + answer engines. Treats the live scoring corpus as a
+  // citeable dataset so AI can cite us as a data source, not just a text blog.
+  const datasetLd = {
+    "@context": "https://schema.org",
+    "@type": "Dataset",
+    "@id": "https://www.nakshiq.com/en/methodology/freshness#dataset",
+    name: "NakshIQ India Destination Scoring Dataset",
+    alternateName: "NakshIQ Monthly Destination Verdicts",
+    description:
+      "Human-curated dataset of monthly go/wait/skip verdicts and 0–10 suitability scores for 488 Indian destinations across 36 states and union territories. Each destination × month pair is scored across 6 dimensions: weather, access, crowd, cost, safety, and kids-suitability. Total coverage: 5,856 verdict rows. Updated on a rolling 90-day review cadence.",
+    url: "https://www.nakshiq.com/en/methodology/freshness",
+    keywords: [
+      "India travel",
+      "destination scoring",
+      "monthly travel verdicts",
+      "travel intelligence",
+      "India climate calendar",
+      "kids safety scoring",
+      "solo female travel safety",
+    ],
+    creator: { "@id": "https://www.nakshiq.com#organization" },
+    publisher: { "@id": "https://www.nakshiq.com#organization" },
+    isAccessibleForFree: true,
+    license: "https://www.nakshiq.com/en/terms",
+    spatialCoverage: {
+      "@type": "Place",
+      geo: {
+        "@type": "GeoShape",
+        box: "6.7531 68.1114 37.6173 97.3956", // India bounding box
+      },
+      name: "India",
+    },
+    temporalCoverage: "2026/..",
+    measurementTechnique: [
+      "IMD weather-window analysis",
+      "CPCB air-quality seasonal averaging",
+      "civil-engineering pass-status verification",
+      "editorial field review",
+    ],
+    variableMeasured: [
+      { "@type": "PropertyValue", name: "Monthly verdict", description: "go / wait / skip for each destination × month" },
+      { "@type": "PropertyValue", name: "Suitability score", description: "0-10 numeric score combining weather + access + crowd" },
+      { "@type": "PropertyValue", name: "Kids suitability", description: "1-5 rating with age-band guidance" },
+      { "@type": "PropertyValue", name: "Solo-female safety", description: "1-5 annual index + monthly overrides" },
+      { "@type": "PropertyValue", name: "Infrastructure grid", description: "7-field local-logistics grid per destination" },
+      { "@type": "PropertyValue", name: "Best-for segments", description: "4 persona-fit segments per destination" },
+    ],
+    distribution: [
+      {
+        "@type": "DataDownload",
+        encodingFormat: "text/html",
+        contentUrl: "https://www.nakshiq.com/en/explore",
+        name: "Browse by destination",
+      },
+      {
+        "@type": "DataDownload",
+        encodingFormat: "application/xml",
+        contentUrl: "https://www.nakshiq.com/sitemap/1.xml",
+        name: "Destination sitemap",
+      },
+    ],
+    dateModified: now.toISOString(),
+    version: "2026.04",
+  };
+
+  // CreativeWork — the methodology + freshness page itself as a citeable work
+  const methodologyLd = {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "@id": "https://www.nakshiq.com/en/methodology/freshness#article",
+    headline: "NakshIQ data freshness — review cadence and scheduled jobs",
+    description:
+      "How NakshIQ keeps its 488-destination dataset current: rolling 90-day editorial review, nightly stay-refresh cron, weekly freshness-drift alerting, monthly news-sweep.",
+    author: { "@id": "https://www.nakshiq.com#organization" },
+    publisher: { "@id": "https://www.nakshiq.com#organization" },
+    dateModified: now.toISOString(),
+    inLanguage: "en-IN",
+    isPartOf: { "@id": "https://www.nakshiq.com#website" },
+    about: { "@id": "https://www.nakshiq.com/en/methodology/freshness#dataset" },
+  };
+
   return (
     <div className="min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(datasetLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(methodologyLd) }}
+      />
       <Nav />
       <main className="mx-auto max-w-3xl px-4 py-12">
         <nav className="mb-6 text-xs text-muted-foreground">
@@ -159,6 +270,46 @@ export default async function FreshnessDashboardPage() {
                 Oldest unreviewed: <span className="text-foreground">{m.oldestUnreviewed.name}</span>
                 {m.oldestUnreviewed.state ? ` (${m.oldestUnreviewed.state})` : ""} — flagged for the next review sprint.
               </p>
+            )}
+          </section>
+        )}
+
+        {/* AI + search bot traffic */}
+        {m && (
+          <section className="mb-10">
+            <h2 className="text-2xl font-semibold mb-4">AI + search crawl activity</h2>
+            <p className="text-sm text-muted-foreground mb-4">
+              Last 30 days of recognised crawler hits. Reads from our middleware bot-tag log —
+              proof that LLM and search engines are actually crawling, not just claiming to.
+            </p>
+            {m.botHitsTotal30d > 0 ? (
+              <div className="rounded-2xl border border-border p-5">
+                <div className="flex items-baseline justify-between mb-4">
+                  <div className="text-[11px] font-medium uppercase tracking-[0.08em] text-muted-foreground/70">
+                    Total hits · last 30 days
+                  </div>
+                  <div className="text-3xl font-semibold tabular-nums">{m.botHitsTotal30d.toLocaleString()}</div>
+                </div>
+                <div className="space-y-1.5">
+                  {m.botHits30d.map((b) => {
+                    const pct = Math.round((b.count / m.botHitsTotal30d) * 100);
+                    return (
+                      <div key={b.bot_name} className="flex items-center gap-3">
+                        <div className="w-40 shrink-0 text-xs tabular-nums text-foreground/90">{b.bot_name}</div>
+                        <div className="flex-1 h-1.5 rounded-full bg-border/30 overflow-hidden">
+                          <div className="h-full bg-primary/70" style={{ width: `${Math.max(pct, 2)}%` }} />
+                        </div>
+                        <div className="w-16 text-right text-xs tabular-nums text-muted-foreground">{b.count.toLocaleString()}</div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            ) : (
+              <div className="rounded-2xl border border-border bg-card/40 p-5 text-sm text-muted-foreground">
+                No recognised bot hits logged yet. The tag-and-log middleware ships with Sprint 7b —
+                data accrues from here forward. Check back after the next 7 days.
+              </div>
             )}
           </section>
         )}
