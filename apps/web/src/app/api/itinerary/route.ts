@@ -3,6 +3,14 @@ import { createClient } from "@supabase/supabase-js";
 
 export const dynamic = "force-dynamic";
 
+type RiskMode = "budget" | "comfort" | "safety";
+type Variant = "primary" | "wet-proof" | "altitude-light";
+
+const MONSOON_MONTHS = new Set([6, 7, 8, 9]);
+const ALTITUDE_SENSITIVE_CAP_M = 3000;
+const MONTH_NAMES = ["", "January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December"];
+
 export async function POST(req: NextRequest) {
   const apiKey = process.env.ANTHROPIC_API_KEY;
   if (!apiKey) {
@@ -13,10 +21,12 @@ export async function POST(req: NextRequest) {
   }
 
   const body = await req.json();
-  const { month, days, travelerType, budget, origin, destinationIds } = body;
+  const { month, days, travelerType, budget, origin, destinationIds, riskMode, variant } = body;
 
   const VALID_TYPES = ["solo", "couple", "family", "biker", "backpacker", "spiritual"];
   const VALID_BUDGETS = ["budget", "mid-range", "luxury"];
+  const VALID_RISK: RiskMode[] = ["budget", "comfort", "safety"];
+  const VALID_VARIANT: Variant[] = ["primary", "wet-proof", "altitude-light"];
 
   if (!month || !days || !travelerType) {
     return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
@@ -34,9 +44,11 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Days must be 1-30" }, { status: 400 });
   }
 
+  const risk: RiskMode = VALID_RISK.includes(riskMode) ? riskMode : "comfort";
+  const variantMode: Variant = VALID_VARIANT.includes(variant) ? variant : "primary";
+
   const safeOrigin = typeof origin === "string" ? origin.slice(0, 100) : "Delhi";
 
-  // Fetch destination data for context
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
   if (!url || !key) {
@@ -45,13 +57,12 @@ export async function POST(req: NextRequest) {
 
   const supabase = createClient(url, key);
 
-  // Fetch destinations, tourist traps, and prose in parallel
   let destQuery = supabase
     .from("destinations")
     .select(`
       id, name, tagline, difficulty, elevation_m, budget_tier, tags,
       state:states(name),
-      destination_months(month, score, note, prose_lead, who_should_go, who_should_avoid),
+      destination_months(month, score, note, prose_lead, who_should_go, who_should_avoid, verdict),
       kids_friendly(suitable, rating, reasons),
       confidence_cards(network, medical, transport, safety, best_tip, warning)
     `);
@@ -72,7 +83,6 @@ export async function POST(req: NextRequest) {
 
   const destinations = destResult.data ?? [];
 
-  // Build tourist trap map
   const trapMap: Record<string, { altId: string; altName: string; reason: string }> = {};
   for (const t of (trapResult.data ?? [])) {
     if (!trapMap[t.trap_destination_id]) {
@@ -85,7 +95,6 @@ export async function POST(req: NextRequest) {
     }
   }
 
-  // Build destination context with prose
   const destContextFull = destinations.map((d: any) => {
     const monthData = d.destination_months?.find((m: any) => m.month === month);
     const kf = Array.isArray(d.kids_friendly) ? d.kids_friendly[0] : d.kids_friendly;
@@ -102,6 +111,7 @@ export async function POST(req: NextRequest) {
       budget: d.budget_tier,
       monthScore: monthData?.score ?? null,
       monthNote: monthData?.note ?? null,
+      monthVerdict: monthData?.verdict ?? null,
       proseLead: monthData?.prose_lead ?? null,
       whoShouldGo: monthData?.who_should_go ?? null,
       whoShouldAvoid: monthData?.who_should_avoid ?? null,
@@ -117,18 +127,76 @@ export async function POST(req: NextRequest) {
     };
   }).filter((d: any) => d.monthScore === null || d.monthScore >= 3);
 
-  // Slim the payload sent to Anthropic. Thirty destinations × long prose each
-  // was blowing the token budget on Haiku and returning 502 (BUG-101). Keep
-  // the top 12 scorers for the selected month; the deterministic fallback
-  // below still uses the full list.
-  const destContext = [...destContextFull]
-    .sort((a: any, b: any) => (b.monthScore ?? 0) - (a.monthScore ?? 0))
-    .slice(0, 12);
+  // Apply variant filtering: wet-proof drops monsoon-rated-low, altitude-light caps elevation.
+  const afterVariant = destContextFull.filter((d: any) => {
+    if (variantMode === "altitude-light") {
+      if (d.elevation && d.elevation > ALTITUDE_SENSITIVE_CAP_M) return false;
+    }
+    if (variantMode === "wet-proof") {
+      // In monsoon months, drop anything with verdict=skip or score <= 3 (leaves rain-safe picks).
+      if (MONSOON_MONTHS.has(month)) {
+        if (d.monthVerdict === "skip") return false;
+        if ((d.monthScore ?? 0) <= 3) return false;
+      }
+    }
+    return true;
+  });
 
-  const MONTH_NAMES = ["", "January", "February", "March", "April", "May", "June",
-    "July", "August", "September", "October", "November", "December"];
+  // Apply risk-mode weighting to sort (budget → cheap first, safety → easy+low-altitude first).
+  const riskSorted = [...afterVariant].sort((a: any, b: any) => {
+    const scoreA = a.monthScore ?? 0;
+    const scoreB = b.monthScore ?? 0;
+
+    let weightA = scoreA;
+    let weightB = scoreB;
+
+    if (risk === "budget") {
+      if (a.budget === "budget") weightA += 2;
+      if (b.budget === "budget") weightB += 2;
+      if (a.budget === "splurge") weightA -= 1;
+      if (b.budget === "splurge") weightB -= 1;
+    }
+    if (risk === "safety") {
+      if (a.difficulty === "easy") weightA += 2;
+      if (b.difficulty === "easy") weightB += 2;
+      if (a.difficulty === "extreme" || a.difficulty === "hard") weightA -= 2;
+      if (b.difficulty === "extreme" || b.difficulty === "hard") weightB -= 2;
+      if ((a.elevation ?? 0) > 3500) weightA -= 1;
+      if ((b.elevation ?? 0) > 3500) weightB -= 1;
+    }
+    // comfort = default month score ranking
+
+    return weightB - weightA;
+  });
+
+  const destContext = riskSorted.slice(0, 12);
+
+  // Deterministic per-day rationale — composed from DB facts, not LLM output.
+  function buildRationale(d: any): string {
+    const parts: string[] = [];
+    if (d.monthScore) parts.push(`scores ${d.monthScore}/5 in ${MONTH_NAMES[month]}`);
+    if (d.elevation && d.elevation > 2500) parts.push(`${d.elevation.toLocaleString()}m altitude`);
+    if (d.difficulty && d.difficulty !== "moderate") parts.push(`${d.difficulty} terrain`);
+    if (risk === "safety" && d.difficulty === "easy") parts.push("safe-first pick");
+    if (risk === "budget" && d.budget === "budget") parts.push("budget-friendly base");
+    if (variantMode === "wet-proof") parts.push("stays dry even in monsoon windows");
+    if (variantMode === "altitude-light") parts.push("AMS-safe elevation");
+    return parts.length ? `Why this day: ${parts.join(", ")}.` : "";
+  }
 
   const MAINSTREAM = ["manali", "shimla", "nainital", "mussoorie", "rishikesh", "srinagar", "gulmarg", "jaipur", "udaipur", "darjeeling", "goa"];
+
+  const riskInstructions = risk === "budget"
+    ? "RISK MODE: BUDGET — prefer cheap stays, street food, shared transport. Call out where we'd save vs. splurge."
+    : risk === "safety"
+    ? "RISK MODE: SAFETY-FIRST — prefer easy terrain, low elevation (<3000m), established hospitals within 50km, reliable network. Flag medical-evac distance for every stop."
+    : "RISK MODE: COMFORT — balanced picks, reliable hot water, mid-range stays.";
+
+  const variantInstructions = variantMode === "wet-proof"
+    ? "VARIANT: WET-PROOF — monsoon-safe route. Avoid landslide-prone passes, muddy treks, cloudburst zones. Prefer dry-rain-shadow regions (Ladakh/Spiti/Kutch)."
+    : variantMode === "altitude-light"
+    ? `VARIANT: ALTITUDE-LIGHT — AMS-safe. No destination above ${ALTITUDE_SENSITIVE_CAP_M}m. Build for travelers with cardiac/respiratory concerns or elderly parents.`
+    : "VARIANT: PRIMARY — optimal route without hard constraints.";
 
   const prompt = `You are NakshIQ's itinerary engine. NakshIQ is India's travel confidence platform — we score destinations month-by-month, we don't sell packages. Our voice is declarative, honest, and specific.
 
@@ -140,6 +208,9 @@ VOICE RULES (mandatory):
 - Be specific: name the exact viewpoint, the road condition, the chai stall before the pass
 - If a place has bad roads or no ATM, say so plainly
 - Use the proseLead field for each destination — your descriptions should feel like NakshIQ editorial, not generic travel writing
+
+${riskInstructions}
+${variantInstructions}
 
 TRAVELER PROFILE:
 - Type: ${travelerType}
@@ -155,7 +226,6 @@ ${Object.entries(trapMap).map(([id, alt]) => `- ${id} → use ${alt.altName} ins
 OFFBEAT RULE:
 At least 60% of destinations MUST NOT be from this mainstream list: [${MAINSTREAM.join(", ")}].
 For every mainstream destination included, name a specific lesser-known alternative within 2 hours drive.
-NakshIQ exists to take people off the beaten path — the itinerary should reflect that.
 
 DESTINATIONS DATA (with ${MONTH_NAMES[month]} scores, editorial prose, and infrastructure):
 ${JSON.stringify(destContext, null, 2)}
@@ -166,10 +236,8 @@ PLANNING RULES:
 3. Include realistic driving times between stops (Indian roads, not Google Maps optimistic estimates)
 4. For families: prioritize kids-suitable places (kidsRating 3+), avoid extreme difficulty
 5. For bikers: include road surface conditions and fuel stop distances
-6. For budget travelers: mention specific budget stays (not generic "budget hotel")
-7. Warn about altitude sickness, permits, and infrastructure gaps (no ATM, no network, etc.)
-8. Include one off-the-beaten-path stop per 3 days that most tourists skip
-9. Reference the monthNote and proseLead in your day descriptions — make it feel editorial, not algorithmic
+6. Warn about altitude sickness, permits, and infrastructure gaps
+7. Include one off-the-beaten-path stop per 3 days
 
 Return ONLY valid JSON in this exact format (no markdown, no code fences):
 {
@@ -200,10 +268,19 @@ Return ONLY valid JSON in this exact format (no markdown, no code fences):
   }
 }`;
 
-  // Deterministic fallback builder — returns an itinerary shaped exactly
-  // like the AI response when the Anthropic call fails (quota, timeout,
-  // token overflow, transient 5xx). Used to keep the flagship /plan CTA
-  // from ever dead-ending at a 502 (BUG-101).
+  function enrichWithRationale(itinerary: any) {
+    if (!itinerary?.days) return itinerary;
+    itinerary.days = itinerary.days.map((d: any) => {
+      if (d.rationale) return d; // already present
+      const dest = destContext.find((x: any) => x.id === d.destination);
+      if (dest) d.rationale = buildRationale(dest);
+      return d;
+    });
+    itinerary.riskMode = risk;
+    itinerary.variant = variantMode;
+    return itinerary;
+  }
+
   function buildFallbackItinerary() {
     const top = destContext.slice(0, Math.min(days, 8));
     const daysOut = Array.from({ length: days }, (_, i) => {
@@ -222,6 +299,7 @@ Return ONLY valid JSON in this exact format (no markdown, no code fences):
         travelTime: i === 0 ? `From ${safeOrigin}` : "3–5 hours from previous stop",
         tips: d?.warning ?? d?.bestTip ?? "Carry cash — not every town has a working ATM.",
         meals: "Local thali or dhaba dinner — ask for what's cooked fresh today.",
+        rationale: d ? buildRationale(d) : "",
       };
     });
 
@@ -245,6 +323,8 @@ Return ONLY valid JSON in this exact format (no markdown, no code fences):
         midRange: `₹${days * 4000}–${days * 7000} per person`,
         luxury: `₹${days * 10000}–${days * 18000} per person`,
       },
+      riskMode: risk,
+      variant: variantMode,
       _fallback: true,
     };
   }
@@ -273,17 +353,15 @@ Return ONLY valid JSON in this exact format (no markdown, no code fences):
     const result = await response.json();
     const text = result.content?.[0]?.text ?? "";
 
-    // Parse the JSON from the response
     try {
       const itinerary = JSON.parse(text);
-      return NextResponse.json({ itinerary });
+      return NextResponse.json({ itinerary: enrichWithRationale(itinerary) });
     } catch {
-      // Try to extract JSON from the response if it has extra text
       const jsonMatch = text.match(/\{[\s\S]*\}/);
       if (jsonMatch) {
         try {
           const itinerary = JSON.parse(jsonMatch[0]);
-          return NextResponse.json({ itinerary });
+          return NextResponse.json({ itinerary: enrichWithRationale(itinerary) });
         } catch (parseErr) {
           console.error("Failed to parse extracted JSON — serving fallback:", parseErr);
           return NextResponse.json({ itinerary: buildFallbackItinerary() });
