@@ -1,7 +1,7 @@
 {
-  "version": 4,
-  "total_images": 263,
-  "total_campaigns": 134,
+  "version": 5,
+  "total_images": 272,
+  "total_campaigns": 137,
   "campaigns": {
     "17000Ft Reality Check": [
       "pomelli_17000ft_reality_check.png"
@@ -533,6 +533,21 @@
       "pomelli_winter_confidence_2.png",
       "pomelli_winter_confidence_3.png",
       "pomelli_winter_confidence_4.png"
+    ],
+    "The Self-Drive Logic": [
+      "pomelli_self_drive_logic_1.png",
+      "pomelli_self_drive_logic_2.png",
+      "pomelli_self_drive_logic_3.png",
+      "pomelli_self_drive_logic_4.png"
+    ],
+    "The 5-Factor Audit Logic": [
+      "pomelli_5factor_audit_1.png",
+      "pomelli_5factor_audit_2.png",
+      "pomelli_5factor_audit_3.png",
+      "pomelli_5factor_audit_4.png"
+    ],
+    "12 Months 12 Perfect Scores": [
+      "pomelli_12months_scores_1.png"
     ]
   }
 }
