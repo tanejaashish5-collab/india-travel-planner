@@ -221,7 +221,9 @@ export default async function LocaleLayout({
                     areaServed: "IN",
                   },
                 ],
-                sameAs: [],
+                sameAs: [
+                  "https://www.wikidata.org/wiki/Q139549464",
+                ],
               },
               {
                 "@type": "WebSite",
