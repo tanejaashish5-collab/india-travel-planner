@@ -41,7 +41,7 @@ except ImportError:
 
 # ── Paths ────────────────────────────────────────────────────────────────
 ASSETS_DIR = Path(__file__).parent / "assets"
-MUSIC_DIR  = ASSETS_DIR / "music"
+MUSIC_DIR  = ASSETS_DIR / "yt_music"
 POMELLI_DIR = Path(__file__).parent / "pomelli_library"
 MANIFEST_FILE = POMELLI_DIR / "manifest.json"
 DATA_FILE = Path(__file__).parent / "map_data.json"
@@ -49,7 +49,7 @@ DATA_FILE = Path(__file__).parent / "map_data.json"
 # ── Output specs ─────────────────────────────────────────────────────────
 REEL_W, REEL_H = 1080, 1920
 REEL_FPS = 30
-REEL_DURATION = 12  # seconds
+REEL_DURATION = 30  # seconds
 
 # ── Font paths (used in ffmpeg drawtext) ─────────────────────────────────
 FONT_CRIMSON = str(FONT_DIR / "CrimsonPro-Italic.ttf") if FONT_DIR.exists() else ""
@@ -58,10 +58,10 @@ FONT_JETBRAINS = str(FONT_DIR / "JetBrainsMono-Bold.ttf") if FONT_DIR.exists() e
 
 # ── Music preferences per format (trendy tracks first) ──────────────────
 _MUSIC_PREFS: dict[str, list[str]] = {
-    "state_heatmap":  ["amapiano_sun", "golden_hour", "melodic_house", "cinematic_warm"],
-    "route_trace":    ["lofi_wanderer", "chill_hop", "coastal_breeze", "travel_pulse"],
-    "cluster_reveal": ["cinematic_trap", "epic_journey", "horizon_swell", "amapiano_sun"],
-    "score_pulse":    ["desi_future", "monsoon_groove", "mystic_india", "golden_hour"],
+    "state_heatmap":  ["00_amapiano_glow", "06_sunset_gaze", "05_house_emotion", "12_epic_rise"],
+    "route_trace":    ["01_lofi_rain", "09_boom_bap_chill", "15_coastal_vibes", "20_retro_drive"],
+    "cluster_reveal": ["02_trap_cinema", "12_epic_rise", "32_cinematic_pulse", "28_amapiano_heat"],
+    "score_pulse":    ["03_desi_bounce", "13_monsoon_pulse", "30_rajasthan_groove", "21_golden_temple"],
 }
 
 # ── Zoompan variations for visual variety ────────────────────────────────
@@ -487,13 +487,7 @@ def _build_heatmap_overlay(state_name: str) -> str:
         enable="gte(t,8)", border_w=1
     ))
 
-    # Bottom branding
-    parts.append(_build_drawtext("NAKSHIQ", FONT_INSTRUMENT, 32,
-                                  BONE, "40", "h-140", border_w=0))
-    parts.append(_build_drawtext("Travel with IQ", FONT_CRIMSON, 26,
-                                  SAFFRON, "40", "h-100", border_w=0))
-    parts.append(_build_drawtext("nakshiq.com", FONT_INSTRUMENT, 22,
-                                  BONE, "w-240", "h-120", border_w=0))
+    # Bottom branding removed — Pomelli images already have NakshIQ branding baked in
 
     return ",".join(parts)
 
@@ -520,13 +514,7 @@ def _build_route_overlay(state_name: str) -> str:
         enable="gte(t,8)", border_w=1
     ))
 
-    # Bottom branding
-    parts.append(_build_drawtext("NAKSHIQ", FONT_INSTRUMENT, 32,
-                                  BONE, "40", "h-140", border_w=0))
-    parts.append(_build_drawtext("Travel with IQ", FONT_CRIMSON, 26,
-                                  SAFFRON, "40", "h-100", border_w=0))
-    parts.append(_build_drawtext("nakshiq.com", FONT_INSTRUMENT, 22,
-                                  BONE, "w-240", "h-120", border_w=0))
+    # Bottom branding removed — Pomelli images already have NakshIQ branding baked in
 
     return ",".join(parts)
 
@@ -562,13 +550,7 @@ def _build_cluster_overlay() -> str:
         enable="gte(t,8)", border_w=1
     ))
 
-    # Bottom branding
-    parts.append(_build_drawtext("NAKSHIQ", FONT_INSTRUMENT, 32,
-                                  BONE, "40", "h-140", border_w=0))
-    parts.append(_build_drawtext("Travel with IQ", FONT_CRIMSON, 26,
-                                  SAFFRON, "40", "h-100", border_w=0))
-    parts.append(_build_drawtext("nakshiq.com", FONT_INSTRUMENT, 22,
-                                  BONE, "w-240", "h-120", border_w=0))
+    # Bottom branding removed — Pomelli images already have NakshIQ branding baked in
 
     return ",".join(parts)
 
@@ -649,13 +631,7 @@ def _build_pulse_overlay(dest_name: str, score: int,
         enable="gte(t,8)", border_w=0
     ))
 
-    # Bottom branding
-    parts.append(_build_drawtext("NAKSHIQ", FONT_INSTRUMENT, 32,
-                                  BONE, "40", "h-140", border_w=0))
-    parts.append(_build_drawtext("Travel with IQ", FONT_CRIMSON, 26,
-                                  SAFFRON, "40", "h-100", border_w=0))
-    parts.append(_build_drawtext("nakshiq.com", FONT_INSTRUMENT, 22,
-                                  BONE, "w-240", "h-120", border_w=0))
+    # Bottom branding removed — Pomelli images already have NakshIQ branding baked in
 
     return ",".join(parts)
 

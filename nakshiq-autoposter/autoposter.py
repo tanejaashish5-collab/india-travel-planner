@@ -4249,8 +4249,8 @@ def _reel_map_caption(reel_format: str, data: dict, platform: str) -> str:
     from datetime import datetime as _dt
     month_name = calendar.month_name[_dt.now().month]
 
-    utm = f"utm_source={'ig' if platform == 'instagram' else 'fb'}&utm_medium=reel&utm_campaign=reel-map"
-
+    # UTM params hidden from visible caption — Instagram doesn't support clickable
+    # links in captions anyway, so keep URLs clean for readability
     if reel_format == "state_heatmap":
         state_name = data.get("state_data", {}).get("name", "India")
         if platform == "instagram":
@@ -4259,7 +4259,7 @@ def _reel_map_caption(reel_format: str, data: dict, platform: str) -> str:
                 f"Every destination in {state_name}, scored 1-5 for this month. "
                 f"No opinions. No sponsors. Just data.\n\n"
                 f"Which destination scores highest? Check the map.\n\n"
-                f"🔗 Full scores → nakshiq.com/destinations?state={data.get('state_code', '').lower()}&{utm}\n\n"
+                f"🔗 Full scores → nakshiq.com\n\n"
                 f"#NakshIQ #TravelIndia #{state_name.replace(' ', '')} "
                 f"#TravelScores #DataDrivenTravel #IndiaTravel "
                 f"#{month_name}Travel #TravelPlanning"
@@ -4269,7 +4269,7 @@ def _reel_map_caption(reel_format: str, data: dict, platform: str) -> str:
                 f"How does {state_name} score this {month_name}? "
                 f"We scored every destination 1-5 based on weather, crowds, "
                 f"roads, and safety. No vibes — just data.\n\n"
-                f"nakshiq.com/destinations?state={data.get('state_code', '').lower()}&{utm}"
+                f"nakshiq.com"
             )
 
     elif reel_format == "route_trace":
@@ -4279,7 +4279,7 @@ def _reel_map_caption(reel_format: str, data: dict, platform: str) -> str:
                 f"🗺️ {state_name} Route — Top Destinations Connected\n\n"
                 f"The best-scored destinations in {state_name} this {month_name}, "
                 f"mapped and connected. Plan your route with real data.\n\n"
-                f"🔗 Plan your trip → nakshiq.com/trip-planner?{utm}\n\n"
+                f"🔗 Plan your trip → nakshiq.com\n\n"
                 f"#NakshIQ #TravelIndia #{state_name.replace(' ', '')} "
                 f"#RoadTrip #TravelRoute #IndiaByRoad"
             )
@@ -4288,7 +4288,7 @@ def _reel_map_caption(reel_format: str, data: dict, platform: str) -> str:
                 f"Planning a {state_name} road trip? "
                 f"Here are the top-scored destinations connected — "
                 f"plan your route with data, not guesswork.\n\n"
-                f"nakshiq.com/trip-planner?{utm}"
+                f"nakshiq.com"
             )
 
     elif reel_format == "cluster_reveal":
@@ -4297,7 +4297,7 @@ def _reel_map_caption(reel_format: str, data: dict, platform: str) -> str:
                 f"🇮🇳 India Destination Scores by Region — {month_name}\n\n"
                 f"North, South, East, West, Northeast — every region scored. "
                 f"Where should you travel this month? The map tells all.\n\n"
-                f"🔗 Explore all scores → nakshiq.com/destinations?{utm}\n\n"
+                f"🔗 Explore all scores → nakshiq.com\n\n"
                 f"#NakshIQ #TravelIndia #IndiaMap #TravelScores "
                 f"#WhereToTravel #{month_name}Travel #DataDrivenTravel"
             )
@@ -4306,7 +4306,7 @@ def _reel_map_caption(reel_format: str, data: dict, platform: str) -> str:
                 f"India's destination scores by region for {month_name}. "
                 f"Which region scores highest right now? "
                 f"No opinions — just data.\n\n"
-                f"nakshiq.com/destinations?{utm}"
+                f"nakshiq.com"
             )
 
     elif reel_format == "score_pulse":
@@ -4320,7 +4320,7 @@ def _reel_map_caption(reel_format: str, data: dict, platform: str) -> str:
                 f"{dest_name}{', ' + state_name if state_name else ''} "
                 f"scores {score}/5 this {month_name}. "
                 f"{'Go now.' if score >= 4 else 'Check the details before you book.'}\n\n"
-                f"🔗 Full breakdown → nakshiq.com/destination/{dest.get('id', '')}?{utm}\n\n"
+                f"🔗 Full breakdown → nakshiq.com\n\n"
                 f"#NakshIQ #{dest_name.replace(' ', '')} "
                 f"{'#' + state_name.replace(' ', '') + ' ' if state_name else ''}"
                 f"#TravelIndia #DestinationScore #{month_name}Travel"
@@ -4329,13 +4329,13 @@ def _reel_map_caption(reel_format: str, data: dict, platform: str) -> str:
             return (
                 f"{dest_name} scores {score}/5 this {month_name}. "
                 f"{'Worth the trip.' if score >= 4 else 'Maybe wait for a better month.'}\n\n"
-                f"nakshiq.com/destination/{dest.get('id', '')}?{utm}"
+                f"nakshiq.com"
             )
 
     # Fallback
     return (
         f"Travel smarter with NakshIQ — every destination scored, every month.\n\n"
-        f"nakshiq.com?{utm}"
+        f"nakshiq.com"
     )
 
 
