@@ -14,7 +14,7 @@
  *   - aio         (https://www.google.com/search?udm=50&q=...)  [Google AI Overviews]
  *   - gemini      (https://gemini.google.com/app?q=...)
  *   - claude      (https://claude.ai/new?q=...)
- *   - copilot     (https://www.bing.com/search?q=...&showconv=1)
+ *   - copilot     (https://www.bing.com/search?q=...) — regular Bing shows inline Copilot AI answer for most queries. Old &showconv=1 flag now redirects to copilot.microsoft.com which rejects URL-param queries, so tracker uses plain search URL.
  *
  * Usage:
  *   node scripts/track-ai-citations.mjs --list                    # print all 100 prompts
@@ -42,7 +42,7 @@ const ENGINE_URL = {
   aio:        (q) => `https://www.google.com/search?udm=50&q=${encodeURIComponent(q)}`,
   gemini:     (q) => `https://gemini.google.com/app?q=${encodeURIComponent(q)}`,
   claude:     (q) => `https://claude.ai/new?q=${encodeURIComponent(q)}`,
-  copilot:    (q) => `https://www.bing.com/search?q=${encodeURIComponent(q)}&showconv=1`,
+  copilot:    (q) => `https://www.bing.com/search?q=${encodeURIComponent(q)}`,
 };
 
 const args = process.argv.slice(2);

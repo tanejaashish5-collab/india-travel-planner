@@ -273,7 +273,23 @@ export default async function LocaleLayout({
               strategy="afterInteractive"
             />
             <Script id="ga4-init" strategy="afterInteractive">
-              {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${process.env.NEXT_PUBLIC_GA4_ID}');`}
+              {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());
+                // AIO attribution — GA4 channel rules can't match on Page URL,
+                // so we detect Google AI Overview referrals by checking the
+                // referrer for udm=50 (the reliable SGE signal) and tagging
+                // the user property + firing a landing event.
+                // Register 'aio_referral' as a GA4 user-scoped custom dimension:
+                // Admin → Custom definitions → Create custom dimension →
+                // Scope: User, User property: aio_referral.
+                var __aioRef = (document.referrer || '').indexOf('udm=50') !== -1;
+                gtag('config','${process.env.NEXT_PUBLIC_GA4_ID}');
+                if (__aioRef) {
+                  gtag('set', 'user_properties', { aio_referral: 'true' });
+                  gtag('event', 'aio_referral_landing', {
+                    referrer_host: (function(){ try { return new URL(document.referrer).host; } catch(e){ return 'unknown'; } })(),
+                    landing_path: location.pathname,
+                  });
+                }`}
             </Script>
           </>
         )}
