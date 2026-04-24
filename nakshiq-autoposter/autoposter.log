@@ -4155,3 +4155,20 @@ Date range: 2026-04-15 → 2026-04-23
 2026-04-24 14:31:39  INFO      YT Short posted: format=dont_go_here, music=00_desi_groove
 2026-04-24 14:31:39  INFO      State saved. YT Short run complete.
 2026-04-24 14:31:39  INFO      ════════════════════════════════════════════════════════════
+2026-04-24 15:50:19  INFO      ════════════════════════════════════════════════════════════
+2026-04-24 15:50:19  INFO      Nakshiq Autoposter · REEL · 2026-04-24 · weekday=4
+2026-04-24 15:50:19  INFO      ════════════════════════════════════════════════════════════
+2026-04-24 15:50:19  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-04-24 15:50:24  INFO      Synced → 20 destinations · 0 traps · 20 articles · total catalog=488
+2026-04-24 15:50:24  INFO      Format: destination_reveal | Data: {'dest_name': 'Kokernag', 'dest_slug': 'kokernag', 'state_name': 'Jammu & Kashmir', 'score': 5, 'tagline': "Kashmir's largest freshwater spring — trout hatchery, botanical garden, and water pure enough to drink from source."}
+2026-04-24 15:50:33  INFO      Reel rendered: reel_destination_reveal_kokernag.mp4 (1151 KB)
+2026-04-24 15:50:33  INFO          Requesting upload URL for reel_destination_reveal_reel_destination_reveal_kokernag.mp4 (1,179,122 bytes, video/mp4)
+2026-04-24 15:50:34  INFO          Uploading to R2 (timeout=300s)...
+2026-04-24 15:50:35  INFO          R2 PUT OK. Confirming...
+2026-04-24 15:50:37  INFO          Media ready: H1kM5 (1,179,122 bytes · reel_destination_reveal_reel_destination_reveal_kokernag.mp4)
+2026-04-24 15:50:37  INFO      Video uploaded: reel_destination_reveal_reel_destination_reveal_kokernag.mp4
+2026-04-24 15:50:37  INFO      [youtube/@naksh-iq] Already posted reel today — skipping.
+2026-04-24 15:50:37  INFO      [instagram/nakshiq] Already posted reel today — skipping.
+2026-04-24 15:50:37  INFO      [facebook/Nakshiq] Already posted reel today — skipping.
+2026-04-24 15:50:37  INFO      State saved. Reel run complete.
+2026-04-24 15:50:37  INFO      ════════════════════════════════════════════════════════════
