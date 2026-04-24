@@ -548,6 +548,9 @@ const ledeText: React.CSSProperties = {
   fontSize: 17,
   lineHeight: 1.55,
   color: "#E7E4DE",
+  // `pre-line` preserves \n as real line breaks so override opening letters
+  // with blank-line paragraph breaks render correctly without needing <br> tags.
+  whiteSpace: "pre-line",
 };
 
 const signOff: React.CSSProperties = {

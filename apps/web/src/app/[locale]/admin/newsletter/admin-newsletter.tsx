@@ -23,6 +23,23 @@ const EMPTY_OVERRIDES: OverrideState = {
   closing: "",
 };
 
+// Template renders {opening}/{closing} as text. HTML tags like <br> would show
+// as literal characters. Normalize: <br>, <br/>, <br /> → \n\n; strip other
+// incidental HTML so pasted drafts self-heal. Template CSS uses
+// white-space: pre-line so real newlines become paragraph breaks.
+function sanitizeProseOverride(s: string): string {
+  return s
+    .replace(/<br\s*\/?>/gi, "\n\n")
+    .replace(/<\/p>\s*<p>/gi, "\n\n")
+    .replace(/<\/?p>/gi, "")
+    .replace(/<\/?span[^>]*>/gi, "")
+    .replace(/<\/?em>/gi, "")
+    .replace(/<\/?strong>/gi, "")
+    // collapse runs of 3+ newlines to exactly 2 (one blank line)
+    .replace(/\n{3,}/g, "\n\n")
+    .trim();
+}
+
 function buildOverridesPayload(ov: OverrideState): Record<string, string | number> | undefined {
   const out: Record<string, string | number> = {};
   if (ov.issueNumber.trim()) {
@@ -31,8 +48,8 @@ function buildOverridesPayload(ov: OverrideState): Record<string, string | numbe
   }
   if (ov.subject.trim()) out.subject = ov.subject.trim();
   if (ov.previewText.trim()) out.previewText = ov.previewText.trim();
-  if (ov.opening.trim()) out.opening = ov.opening;
-  if (ov.closing.trim()) out.closing = ov.closing;
+  if (ov.opening.trim()) out.opening = sanitizeProseOverride(ov.opening);
+  if (ov.closing.trim()) out.closing = sanitizeProseOverride(ov.closing);
   return Object.keys(out).length ? out : undefined;
 }
 
