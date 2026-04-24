@@ -3835,3 +3835,30 @@ Date range: 2026-04-15 → 2026-04-23
 2026-04-23 23:13:48  INFO      YT Short posted: format=before_after, music=02_sahara_drift
 2026-04-23 23:13:48  INFO      State saved. YT Short run complete.
 2026-04-23 23:13:48  INFO      ════════════════════════════════════════════════════════════
+2026-04-24 04:44:37  INFO      Stale lock (age=1777005877s) — overriding.
+2026-04-24 04:44:37  INFO      ════════════════════════════════════════════════════════════
+2026-04-24 04:44:37  INFO      Nakshiq Autoposter · MORNING · 2026-04-24 · weekday=4
+2026-04-24 04:44:37  INFO      ════════════════════════════════════════════════════════════
+2026-04-24 04:44:37  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-04-24 04:44:45  INFO      Synced → 20 destinations · 0 traps · 20 articles · total catalog=488
+2026-04-24 04:44:46  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-04-24 04:44:48  INFO      Outstand dedup guard: merged 1 remote posts into state.
+2026-04-24 04:44:48  INFO      Morning format (round-robin): reality_check (17/18 never featured)
+2026-04-24 04:44:48  INFO      Formats — IG: reality_check  ·  FB: reality_check  ·  Story: infrastructure_truth
+2026-04-24 04:44:48  INFO      Used destinations (14d): 28
+2026-04-24 04:44:48  INFO      Reality Check pair (fallback): Bomdila ↔ Sarahan
+2026-04-24 04:44:49  INFO      Shared best destination locked: Sarahan
+2026-04-24 04:44:49  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-04-24 04:44:49  INFO      [instagram/nakshiq] Already posted today (morning) — skipping.
+2026-04-24 04:44:49  INFO      [facebook/Nakshiq] Generating reality_check post...
+2026-04-24 04:44:49  INFO      [facebook/Nakshiq] Caption ready (777 chars, dest=sarahan)
+2026-04-24 04:44:49  INFO      [facebook/Nakshiq] Video available — uploading for Reel...
+2026-04-24 04:44:49  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/sarahan.mp4?v=20260423-2
+2026-04-24 04:44:49  INFO          Requesting upload URL for sarahan.mp4 (7,275,156 bytes, video/mp4)
+2026-04-24 04:44:50  INFO          Uploading to R2 (timeout=300s)...
+2026-04-24 04:44:52  INFO          R2 PUT OK. Confirming...
+2026-04-24 04:44:53  INFO          Media ready: j68q2 (7,275,156 bytes · sarahan.mp4)
+2026-04-24 04:44:53  INFO      [facebook/Nakshiq] Publishing Reel...
+2026-04-24 04:45:08  INFO      [facebook/Nakshiq] ✅ Published · Outstand=IjQ5X · Platform=2512242302544351
+2026-04-24 04:45:08  INFO      State saved. Run complete.
+2026-04-24 04:45:08  INFO      ════════════════════════════════════════════════════════════

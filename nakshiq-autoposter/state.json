@@ -19,8 +19,8 @@
     "02_sahara_drift"
   ],
   "posted_today": {
-    "PdMu0": "2026-04-23",
-    "m8EAd": "2026-04-23",
+    "PdMu0": "2026-04-24",
+    "m8EAd": "2026-04-24",
     "m8EAd_reel": "2026-04-23",
     "PdMu0_reel": "2026-04-23",
     "4QL0i_reel": "2026-04-19",
@@ -50,7 +50,7 @@
     "xBQy8_yt_short": "2026-04-23",
     "xBQy8_yt_short_count": 1
   },
-  "last_sync": "2026-04-23T10:14:05.442822+00:00",
+  "last_sync": "2026-04-24T04:44:45.544452+00:00",
   "posted_destinations": [
     {
       "destination_id": "pahalgam",
@@ -211,6 +211,14 @@
     {
       "destination_id": "kabini",
       "date": "2026-04-23"
+    },
+    {
+      "destination_id": "yuksom",
+      "date": "2026-04-24"
+    },
+    {
+      "destination_id": "sarahan",
+      "date": "2026-04-24"
     }
   ],
   "posted_formats": {
@@ -228,7 +236,8 @@
       "methodology_family",
       "collection_spotlight",
       "score_card",
-      "festival_alert"
+      "festival_alert",
+      "reality_check"
     ]
   },
   "post_log": [
@@ -395,6 +404,16 @@
       "destination": "kabini",
       "format": "festival_alert",
       "has_media": true
+    },
+    {
+      "timestamp": "2026-04-24T04:45:08.249158+00:00",
+      "date": "2026-04-24",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "IjQ5X",
+      "destination": "sarahan",
+      "format": "reality_check",
+      "has_media": true
     }
   ],
   "theme_usage": {
@@ -439,6 +458,9 @@
       "nagarhole": "2026-04-23",
       "kabini": [
         "2026-04-23"
+      ],
+      "sarahan": [
+        "2026-04-24"
       ]
     },
     "reel_formats": {
@@ -575,6 +597,9 @@
     "morning_formats": {
       "score_card": [
         "2026-04-23"
+      ],
+      "reality_check": [
+        "2026-04-24"
       ]
     },
     "collections": {
