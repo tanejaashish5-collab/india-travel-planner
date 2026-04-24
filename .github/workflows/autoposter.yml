@@ -47,6 +47,8 @@ on:
           - infographic-force
           - pomelli-visual
           - pomelli-visual-force
+          - reel-map
+          - reel-map-force
           - yt-short
           - yt-short-force
           - analytics
@@ -129,6 +131,9 @@ jobs:
             elif [ "$INPUT" = "reel-force" ]; then
               echo "args=--reel --force" >> $GITHUB_OUTPUT
               echo "Manual mode: --reel --force"
+            elif [ "$INPUT" = "reel-map-force" ]; then
+              echo "args=--reel-map --force" >> $GITHUB_OUTPUT
+              echo "Manual mode: --reel-map --force"
             elif [ "$INPUT" = "infographic-force" ]; then
               echo "args=--infographic --force" >> $GITHUB_OUTPUT
               echo "Manual mode: --infographic --force"

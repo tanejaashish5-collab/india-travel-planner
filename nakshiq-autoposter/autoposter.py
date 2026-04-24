@@ -4154,6 +4154,349 @@ def run_reel(force: bool = False, dry_run: bool = False):
 
 
 # ─────────────────────────────────────────────────────────────────────────────
+# REEL-MAP MODE — animated map Reels with destination data overlays
+# ─────────────────────────────────────────────────────────────────────────────
+
+REEL_MAP_LOCK_FILE = Path(__file__).parent / ".autoposter-reel-map.lock"
+
+REEL_MAP_FORMATS = ["state_heatmap", "route_trace", "cluster_reveal", "score_pulse"]
+
+# State codes for rotation (28 states)
+_REEL_MAP_STATES = [
+    "HP", "RJ", "KL", "GA", "UK", "MH", "KA", "TN", "WB", "AS",
+    "MP", "GJ", "OR", "JH", "CG", "SK", "ML", "MN", "MZ", "NL",
+    "TR", "AP", "TS", "PB", "HR", "BR", "UP", "JK",
+]
+
+
+def _pick_reel_map_data(state: dict, content: dict, reel_format: str) -> dict | None:
+    """Pick data for a reel-map format from synced content + map_data.json."""
+    import json as _json
+
+    map_data_path = Path(__file__).parent / "map_data.json"
+    if not map_data_path.exists():
+        log.error("map_data.json not found — cannot generate reel maps.")
+        return None
+    with open(map_data_path) as f:
+        map_data = _json.load(f)
+
+    destinations = content.get("destinations", {}).get("data", [])
+    destinations_all = content.get("destinations_low", {}).get("data", [])
+
+    if reel_format in ("state_heatmap", "route_trace"):
+        # Pick a state (oldest-unused rotation)
+        states_list = map_data.get("states", [])
+        if not states_list:
+            return None
+
+        state_items = [{"id": s["short_code"], **s} for s in states_list
+                       if "short_code" in s]
+        ordered = pick_oldest_unused(state, "reel_map_states", state_items, key="id")
+
+        for s in ordered:
+            # Need at least 3 landmarks for a meaningful map
+            if len(s.get("landmarks", [])) >= 3:
+                return {
+                    "state_code": s["short_code"],
+                    "state_data": s,
+                    "destinations": destinations_all or destinations,
+                    "slug": s["short_code"].lower(),
+                }
+        return None
+
+    elif reel_format == "cluster_reveal":
+        return {
+            "map_data": map_data,
+            "destinations": destinations_all or destinations,
+            "slug": "india",
+        }
+
+    elif reel_format == "score_pulse":
+        # Pick a HIGH-scored destination that exists in map_data landmarks
+        high_scored = [d for d in destinations
+                       if isinstance(d.get("score"), (int, float)) and d["score"] >= 4]
+        if not high_scored:
+            high_scored = [d for d in destinations_all
+                          if isinstance(d.get("score"), (int, float)) and d["score"] >= 3]
+        if not high_scored:
+            return None
+
+        ordered = pick_oldest_unused(state, "reel_map_pulse_dests",
+                                     [{"id": d.get("id", d.get("name", "")), **d}
+                                      for d in high_scored], key="id")
+
+        # Try to find the state data for this destination
+        for d in ordered:
+            dest_state = d.get("state", "")
+            state_data = None
+            for s in map_data.get("states", []):
+                if s.get("name", "").lower() == dest_state.lower():
+                    state_data = s
+                    break
+            return {
+                "dest_data": d,
+                "state_data": state_data,
+                "slug": (d.get("id") or d.get("name", "dest")).lower().replace(" ", "_"),
+            }
+        return None
+
+    return None
+
+
+def _reel_map_caption(reel_format: str, data: dict, platform: str) -> str:
+    """Generate platform-specific captions for reel-map posts."""
+    import calendar
+    from datetime import datetime as _dt
+    month_name = calendar.month_name[_dt.now().month]
+
+    utm = f"utm_source={'ig' if platform == 'instagram' else 'fb'}&utm_medium=reel&utm_campaign=reel-map"
+
+    if reel_format == "state_heatmap":
+        state_name = data.get("state_data", {}).get("name", "India")
+        if platform == "instagram":
+            return (
+                f"📍 {state_name} Destination Scores — {month_name}\n\n"
+                f"Every destination in {state_name}, scored 1-5 for this month. "
+                f"No opinions. No sponsors. Just data.\n\n"
+                f"Which destination scores highest? Check the map.\n\n"
+                f"🔗 Full scores → nakshiq.com/destinations?state={data.get('state_code', '').lower()}&{utm}\n\n"
+                f"#NakshIQ #TravelIndia #{state_name.replace(' ', '')} "
+                f"#TravelScores #DataDrivenTravel #IndiaTravel "
+                f"#{month_name}Travel #TravelPlanning"
+            )
+        else:
+            return (
+                f"How does {state_name} score this {month_name}? "
+                f"We scored every destination 1-5 based on weather, crowds, "
+                f"roads, and safety. No vibes — just data.\n\n"
+                f"nakshiq.com/destinations?state={data.get('state_code', '').lower()}&{utm}"
+            )
+
+    elif reel_format == "route_trace":
+        state_name = data.get("state_data", {}).get("name", "India")
+        if platform == "instagram":
+            return (
+                f"🗺️ {state_name} Route — Top Destinations Connected\n\n"
+                f"The best-scored destinations in {state_name} this {month_name}, "
+                f"mapped and connected. Plan your route with real data.\n\n"
+                f"🔗 Plan your trip → nakshiq.com/trip-planner?{utm}\n\n"
+                f"#NakshIQ #TravelIndia #{state_name.replace(' ', '')} "
+                f"#RoadTrip #TravelRoute #IndiaByRoad"
+            )
+        else:
+            return (
+                f"Planning a {state_name} road trip? "
+                f"Here are the top-scored destinations connected — "
+                f"plan your route with data, not guesswork.\n\n"
+                f"nakshiq.com/trip-planner?{utm}"
+            )
+
+    elif reel_format == "cluster_reveal":
+        if platform == "instagram":
+            return (
+                f"🇮🇳 India Destination Scores by Region — {month_name}\n\n"
+                f"North, South, East, West, Northeast — every region scored. "
+                f"Where should you travel this month? The map tells all.\n\n"
+                f"🔗 Explore all scores → nakshiq.com/destinations?{utm}\n\n"
+                f"#NakshIQ #TravelIndia #IndiaMap #TravelScores "
+                f"#WhereToTravel #{month_name}Travel #DataDrivenTravel"
+            )
+        else:
+            return (
+                f"India's destination scores by region for {month_name}. "
+                f"Which region scores highest right now? "
+                f"No opinions — just data.\n\n"
+                f"nakshiq.com/destinations?{utm}"
+            )
+
+    elif reel_format == "score_pulse":
+        dest = data.get("dest_data", {})
+        dest_name = dest.get("name", "")
+        score = int(dest.get("score", 4))
+        state_name = dest.get("state", "")
+        if platform == "instagram":
+            return (
+                f"📊 {dest_name} — NakshIQ Score: {score}/5\n\n"
+                f"{dest_name}{', ' + state_name if state_name else ''} "
+                f"scores {score}/5 this {month_name}. "
+                f"{'Go now.' if score >= 4 else 'Check the details before you book.'}\n\n"
+                f"🔗 Full breakdown → nakshiq.com/destination/{dest.get('id', '')}?{utm}\n\n"
+                f"#NakshIQ #{dest_name.replace(' ', '')} "
+                f"{'#' + state_name.replace(' ', '') + ' ' if state_name else ''}"
+                f"#TravelIndia #DestinationScore #{month_name}Travel"
+            )
+        else:
+            return (
+                f"{dest_name} scores {score}/5 this {month_name}. "
+                f"{'Worth the trip.' if score >= 4 else 'Maybe wait for a better month.'}\n\n"
+                f"nakshiq.com/destination/{dest.get('id', '')}?{utm}"
+            )
+
+    # Fallback
+    return (
+        f"Travel smarter with NakshIQ — every destination scored, every month.\n\n"
+        f"nakshiq.com?{utm}"
+    )
+
+
+def _run_reel_map(force: bool = False, dry_run: bool = False):
+    """
+    Reel-Map mode — generates and posts animated map Reels.
+    Rotates through 4 map formats × 28 states with anti-repetition.
+    """
+    import tempfile
+    from reel_map_gen import render_reel_map
+
+    today   = date.today().isoformat()
+    weekday = date.today().weekday()
+    st      = load_state()
+
+    log.info("═" * 60)
+    log.info(f"Nakshiq Autoposter · REEL-MAP · {today} · weekday={weekday}")
+    log.info("═" * 60)
+
+    content = sync_all_content()
+
+    # ── Pick reel-map format (oldest-unused rotation) ────────────────────
+    fmt_items = [{"id": f} for f in REEL_MAP_FORMATS]
+    fmt_ordered = pick_oldest_unused(st, "reel_map_formats", fmt_items, key="id")
+
+    reel_data = None
+    chosen_format = None
+
+    for fmt_item in fmt_ordered:
+        fmt_id = fmt_item["id"]
+        data = _pick_reel_map_data(st, content, fmt_id)
+        if data:
+            reel_data = data
+            chosen_format = fmt_id
+            break
+
+    if not reel_data or not chosen_format:
+        log.warning("No suitable reel-map data available for any format.")
+        save_state(st)
+        return
+
+    log.info(f"Format: {chosen_format} | Slug: {reel_data.get('slug', '?')}")
+
+    # ── Render video ─────────────────────────────────────────────────────
+    with tempfile.TemporaryDirectory(prefix="nakshiq_reel_map_") as td:
+        out_dir = Path(td)
+        try:
+            video_path = render_reel_map(chosen_format, reel_data, out_dir)
+        except Exception as e:
+            log.error(f"Reel-map rendering crashed: {e}")
+            save_state(st)
+            return
+
+        if not video_path or not video_path.exists():
+            log.error("Reel-map rendering failed (no output).")
+            save_state(st)
+            return
+
+        video_bytes = video_path.read_bytes()
+        video_size_kb = len(video_bytes) // 1024
+        log.info(f"Reel-map rendered: {video_path.name} ({video_size_kb} KB)")
+
+        # ── Upload ────────────────────────────────────────────────────────
+        media_filename = f"reel_map_{chosen_format}_{video_path.stem}.mp4"
+        media_obj = upload_media_bytes(video_bytes, media_filename, "video/mp4")
+        if not media_obj:
+            log.error("Reel-map video upload failed.")
+            save_state(st)
+            return
+
+        log.info(f"Video uploaded: {media_filename}")
+
+    # ── Publish to all platforms ─────────────────────────────────────────
+    accounts = get_connected_accounts()
+    active   = [a for a in accounts if a.get("isActive")]
+    if not active:
+        log.warning("No active connected accounts.")
+        save_state(st)
+        return
+
+    mode_suffix = "_reel_map"
+    posted_any = False
+
+    for account in active:
+        acc_id   = account["id"]
+        platform = account["network"]
+        username = account.get("username", acc_id)
+        label    = f"{platform}/{username}"
+
+        acc_scoped_key = acc_id + mode_suffix
+        if st.get("posted_today", {}).get(acc_scoped_key) == today and not force:
+            log.info(f"[{label}] Already posted reel-map today — skipping.")
+            continue
+
+        caption = _reel_map_caption(chosen_format, reel_data, platform)
+        caption = sanitize(caption)
+
+        log.info(f"[{label}] Publishing reel-map ({chosen_format})...")
+
+        if dry_run:
+            log.info(f"[{label}] DRY RUN — would publish:\n{caption[:200]}...")
+            posted_any = True
+            continue
+
+        result = publish_reel(caption, account, media_obj, dry_run=False)
+        if not result:
+            log.warning(f"[{label}] Reel-map post failed (API rejected).")
+            continue
+
+        post_id = result.get("post", {}).get("id", "unknown")
+        log.info(f"[{label}] Outstand accepted (post_id={post_id}), confirming...")
+
+        confirmed = wait_for_publish(post_id) if post_id != "unknown" else None
+        if confirmed:
+            platform_id = confirmed.get("platformPostId", "—")
+            log.info(f"[{label}] ✅ Reel-map published · Outstand={post_id} · Platform={platform_id}")
+            st.setdefault("posted_today", {})[acc_scoped_key] = today
+            posted_any = True
+        else:
+            log.warning(f"[{label}] ⚠️  Reel-map queued but NOT confirmed (post_id={post_id}).")
+
+    # Mark format + data as used
+    if posted_any:
+        mark_theme_used(st, "reel_map_formats", chosen_format)
+        slug = reel_data.get("slug", "")
+        if chosen_format in ("state_heatmap", "route_trace"):
+            mark_theme_used(st, "reel_map_states", reel_data.get("state_code", slug))
+        elif chosen_format == "score_pulse":
+            dest_id = reel_data.get("dest_data", {}).get("id") or \
+                      reel_data.get("dest_data", {}).get("name", "")
+            mark_theme_used(st, "reel_map_pulse_dests", dest_id)
+        log.info(f"Theme tracker updated: format={chosen_format}, slug={slug}")
+
+    save_state(st)
+    log.info("State saved. Reel-map run complete.")
+    log.info("═" * 60)
+
+
+def run_reel_map(force: bool = False, dry_run: bool = False):
+    """Entry point for reel-map mode with its own lock file."""
+    if not OUTSTAND_API_KEY:
+        log.error("OUTSTAND_API_KEY not set. Exiting.")
+        sys.exit(1)
+
+    global LOCK_FILE
+    original_lock = LOCK_FILE
+    LOCK_FILE = REEL_MAP_LOCK_FILE
+
+    try:
+        if not dry_run and not _acquire_lock(force=force):
+            sys.exit(0)
+        try:
+            _run_reel_map(force=force, dry_run=dry_run)
+        finally:
+            if not dry_run:
+                _release_lock()
+    finally:
+        LOCK_FILE = original_lock
+
+
+# ─────────────────────────────────────────────────────────────────────────────
 # INFOGRAPHIC MODE — branded carousel infographics (treks, festivals, etc.)
 # ─────────────────────────────────────────────────────────────────────────────
 
@@ -4771,13 +5114,17 @@ if __name__ == "__main__":
                         help="Generate and post a YouTube Short video. "
                              "Rotates through 6 formats with anti-repetition. "
                              "Posts to YouTube + Instagram, max 2 per day.")
+    parser.add_argument("--reel-map", action="store_true",
+                        help="Generate and post an animated map Reel. "
+                             "Rotates through 4 formats (state_heatmap, route_trace, "
+                             "cluster_reveal, score_pulse) × 28 states.")
     parser.add_argument("--analytics", action="store_true",
                         help="Sync post history from Outstand and generate "
                              "performance analytics report. No posting.")
     args = parser.parse_args()
-    exclusive = sum([args.evening, args.moat, args.tourist_map, args.canva_visual, args.pomelli_visual, args.reel, args.infographic, args.yt_short, args.analytics])
+    exclusive = sum([args.evening, args.moat, args.tourist_map, args.canva_visual, args.pomelli_visual, args.reel, args.reel_map, args.infographic, args.yt_short, args.analytics])
     if exclusive > 1:
-        parser.error("--evening, --moat, --tourist-map, --canva-visual, --pomelli-visual, --reel, --infographic, --yt-short, and --analytics are mutually exclusive.")
+        parser.error("--evening, --moat, --tourist-map, --canva-visual, --pomelli-visual, --reel, --reel-map, --infographic, --yt-short, and --analytics are mutually exclusive.")
     if args.tourist_map:
         run_tourist_map(force=args.force, dry_run=args.dry_run)
     elif args.canva_visual:
@@ -4786,6 +5133,8 @@ if __name__ == "__main__":
         run_pomelli_visual(force=args.force, dry_run=args.dry_run)
     elif args.reel:
         run_reel(force=args.force, dry_run=args.dry_run)
+    elif args.reel_map:
+        run_reel_map(force=args.force, dry_run=args.dry_run)
     elif args.infographic:
         run_infographic(force=args.force, dry_run=args.dry_run)
     elif args.yt_short:
