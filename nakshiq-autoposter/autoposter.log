@@ -3938,3 +3938,36 @@ Date range: 2026-04-15 → 2026-04-23
 2026-04-24 06:11:52  INFO      [facebook/Nakshiq] Already posted reel today — skipping.
 2026-04-24 06:11:52  INFO      State saved. Reel run complete.
 2026-04-24 06:11:52  INFO      ════════════════════════════════════════════════════════════
+2026-04-24 03:31:46  INFO      Stale lock (age=1777001506s) — overriding.
+2026-04-24 03:31:46  INFO      ════════════════════════════════════════════════════════════
+2026-04-24 03:31:46  INFO      Nakshiq Autoposter · MORNING · 2026-04-24 · weekday=4
+2026-04-24 03:31:46  INFO      ════════════════════════════════════════════════════════════
+2026-04-24 03:31:46  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-04-24 03:31:56  INFO      Synced → 20 destinations · 0 traps · 20 articles · total catalog=488
+2026-04-24 03:31:58  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-04-24 03:32:00  INFO      Morning format (round-robin): reality_check (17/18 never featured)
+2026-04-24 03:32:00  INFO      Formats — IG: reality_check  ·  FB: reality_check  ·  Story: infrastructure_truth
+2026-04-24 03:32:00  INFO      Used destinations (14d): 27
+2026-04-24 03:32:00  INFO      Reality Check pair (fallback): Bomdila ↔ Yuksom
+2026-04-24 03:32:03  INFO      Shared best destination locked: Sarahan
+2026-04-24 03:32:03  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-04-24 03:32:03  INFO      [instagram/nakshiq] Generating reality_check post...
+2026-04-24 03:32:03  INFO      [instagram/nakshiq] Caption ready (590 chars, dest=yuksom)
+2026-04-24 03:32:03  INFO      [instagram/nakshiq] Video available — uploading for Reel...
+2026-04-24 03:32:03  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/yuksom.mp4?v=20260423-2
+2026-04-24 03:32:06  INFO          Requesting upload URL for yuksom.mp4 (15,375,705 bytes, video/mp4)
+2026-04-24 03:32:08  INFO          Uploading to R2 (timeout=300s)...
+2026-04-24 03:32:15  INFO          R2 PUT OK. Confirming...
+2026-04-24 03:32:18  INFO          Media ready: T7s91 (15,375,705 bytes · yuksom.mp4)
+2026-04-24 03:32:18  INFO      [instagram/nakshiq] Publishing Reel...
+2026-04-24 03:35:07  WARNING   Another run in progress (pid=7, age=201s) — exiting.
+2026-04-24 03:36:02  INFO      Stale lock (age=777001762s) — overriding.
+2026-04-24 03:36:02  INFO      ════════════════════════════════════════════════════════════
+2026-04-24 03:36:02  INFO      Nakshiq Autoposter · MORNING · 2026-04-24 · weekday=4
+2026-04-24 03:36:02  INFO      ════════════════════════════════════════════════════════════
+2026-04-24 03:36:02  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-04-24 03:37:20  INFO      Stale lock (age=777001840s) — overriding.
+2026-04-24 03:37:20  INFO      ════════════════════════════════════════════════════════════
+2026-04-24 03:37:20  INFO      Nakshiq Autoposter · MORNING · 2026-04-24 · weekday=4
+2026-04-24 03:37:20  INFO      ════════════════════════════════════════════════════════════
+2026-04-24 03:37:20  INFO      ── Syncing Nakshiq content ──────────────────────────────
