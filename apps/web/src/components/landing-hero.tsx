@@ -19,22 +19,10 @@ import {
   ScrollReveal,
 } from "./animated-hero";
 import { AnimatedCounter } from "./animated-counter";
-import dynamic from "next/dynamic";
-
-// IndiaHeroMap is a below-the-fold Leaflet map with all 488 pins — dynamically
-// imported so its ~200KB bundle (Leaflet + leaflet-css + pin assets) doesn't
-// block FCP/LCP. Renders on the client once the containing section hits the
-// viewport (Next.js dynamic import + ssr:false).
-const IndiaHeroMap = dynamic(
-  () => import("./india-hero-map").then((m) => ({ default: m.IndiaHeroMap })),
-  {
-    ssr: false,
-    loading: () => (
-      <div className="w-full aspect-[4/3] sm:aspect-[16/10] rounded-2xl border border-border/40 bg-background/30 animate-pulse" />
-    ),
-  }
-);
-import { REGION_GROUPS, STATE_MAP } from "@/lib/seo-maps";
+// IndiaHeroMap + dynamic import removed in Sprint 11 homepage simplification.
+// The 200KB Leaflet bundle never loads on the homepage now; map lives at
+// its own route. FCP/LCP improves without the below-the-fold cost.
+// REGION_GROUPS + STATE_MAP no longer used here (region cards section removed).
 import { resolveCover } from "@/lib/collection-covers";
 import { destinationImage } from "@/lib/image-url";
 
@@ -246,81 +234,10 @@ export function LandingHero({
         </motion.div>
       </section>
 
-      {/* Animated India Map + Region Cards */}
-      {mapPins && mapPins.length > 0 && (
-        <section className="px-4 py-20">
-          <div className="mx-auto max-w-5xl">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.6, ease: "easeOut" }}
-            >
-              <div className="text-center mb-10">
-                <p className="text-sm font-medium text-primary uppercase tracking-[0.08em] mb-2">
-                  Discover India
-                </p>
-                <h2 className="text-3xl font-semibold sm:text-4xl">
-                  {stats?.destinations || 285} Destinations Across {stats?.states || 25} States
-                </h2>
-                <p className="mt-2 text-muted-foreground">
-                  Watch India light up — hover a dot for this month&apos;s score, click to explore
-                </p>
-              </div>
-              <IndiaHeroMap pins={mapPins} locale={locale} />
-            </motion.div>
-
-            {/* Region Cards */}
-            <div className="mt-16">
-              <FadeIn>
-                <h3 className="text-center text-sm font-bold uppercase tracking-[0.15em] text-muted-foreground/50 mb-6">Explore by region</h3>
-              </FadeIn>
-              <StaggerContainer className="grid gap-3 grid-cols-2 sm:grid-cols-3 lg:grid-cols-6" staggerDelay={0.08}>
-                {([
-                  { slug: "north", icon: "🏔️", desc: "Himalayas, deserts, holy cities", hero: "spiti-valley" },
-                  { slug: "south", icon: "🛕", desc: "Temples, backwaters, biryani", hero: "hyderabad" },
-                  { slug: "west", icon: "🏖️", desc: "Beaches, caves, Bollywood", hero: "mumbai" },
-                  { slug: "east", icon: "🎭", desc: "Temples, tigers, Durga Puja", hero: "darjeeling" },
-                  { slug: "northeast", icon: "🌿", desc: "Living root bridges, tea gardens", hero: "cherrapunji" },
-                  { slug: "central", icon: "🐅", desc: "Tiger reserves, tribal art", hero: "kanha" },
-                  { slug: "islands", icon: "🏝️", desc: "Beaches, diving, coral reefs", hero: "havelock-island" },
-                ] as const).map((r) => {
-                  const region = REGION_GROUPS[r.slug];
-                  if (!region || region.states.length === 0) return null;
-                  const count = region.states.length;
-                  return (
-                    <StaggerItem key={r.slug}>
-                      <HoverCard>
-                        <Link
-                          href={`/${locale}/states?region=${r.slug}`}
-                          className="group block rounded-xl border border-border/40 bg-card/50 overflow-hidden transition-all hover:border-primary/40 hover:shadow-lg cursor-pointer"
-                        >
-                          <div className="relative h-20 overflow-hidden bg-gradient-to-br from-primary/20 via-card to-amber-500/10">
-                            <Image
-                              src={`/images/destinations/${r.hero}.jpg`}
-                              alt={region.name}
-                              fill
-                              sizes="(max-width: 768px) 50vw, 200px"
-                              className="object-cover transition-transform duration-500 group-hover:scale-110"
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-card via-card/40 to-transparent" />
-                            <span className="absolute bottom-2 left-3 text-lg">{r.icon}</span>
-                          </div>
-                          <div className="p-3 pt-2">
-                            <h4 className="text-sm font-semibold group-hover:text-primary transition-colors">{region.name}</h4>
-                            <p className="text-[10px] text-muted-foreground/60 mt-0.5">{r.desc}</p>
-                            <p className="text-[10px] text-muted-foreground/40 mt-1 font-mono">{count} states →</p>
-                          </div>
-                        </Link>
-                      </HoverCard>
-                    </StaggerItem>
-                  );
-                })}
-              </StaggerContainer>
-            </div>
-          </div>
-        </section>
-      )}
+      {/* Sprint 11 homepage simplification: India Map + Region Cards section
+         removed from homepage (lines 249-323). Hero already has 8 quick-region
+         shortcuts, and Explore mega-menu has region cards with richer context.
+         The map itself lives at its original route for users who want it. */}
 
       {/* Featured This Month */}
       {featuredDestinations.length > 0 && (
@@ -533,57 +450,10 @@ export function LandingHero({
         </section>
       )}
 
-      {/* CTA Section */}
-      {/* Upcoming Festivals */}
-      {festivals && festivals.length > 0 && (
-        <section className="px-4 py-20">
-          <div className="mx-auto max-w-6xl">
-            <FadeIn>
-              <ScrollReveal>
-                <h2 className="text-3xl font-semibold sm:text-4xl mb-2">Upcoming Festivals</h2>
-                <p className="text-muted-foreground mb-8">Time your trip around these events</p>
-              </ScrollReveal>
-            </FadeIn>
-            <StaggerContainer className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4" staggerDelay={0.05}>
-              {festivals.slice(0, 8).map((f: any) => {
-                const MONTH_NAMES = ["","January","February","March","April","May","June","July","August","September","October","November","December"];
-                const destName = Array.isArray(f.destinations) ? f.destinations[0]?.name : f.destinations?.name;
-                return (
-                  <StaggerItem key={f.id}>
-                    <HoverCard>
-                      <Link
-                        href={`/${locale}/destination/${f.destination_id}`}
-                        className="block rounded-xl border border-border p-4 h-full transition-all hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5"
-                      >
-                        <div className="flex items-center justify-between mb-2">
-                          <span className="rounded-full bg-primary/10 px-2.5 py-1 text-xs font-medium text-primary">
-                            {MONTH_NAMES[f.month]}
-                          </span>
-                        </div>
-                        <h3 className="font-semibold text-sm mb-1">{f.name}</h3>
-                        <p className="text-sm text-muted-foreground/80 mb-2">{f.approximate_date}</p>
-                        <p className="text-xs text-muted-foreground line-clamp-2">{f.significance}</p>
-                        {destName && (
-                          <p className="mt-2 text-xs text-primary/70">📍 {destName}</p>
-                        )}
-                      </Link>
-                    </HoverCard>
-                  </StaggerItem>
-                );
-              })}
-            </StaggerContainer>
-
-            <div className="text-center mt-8">
-              <Link
-                href={`/${locale}/festivals`}
-                className="inline-flex items-center gap-2 text-sm text-primary hover:underline font-medium"
-              >
-                See all {stats?.festivals ?? 183} festivals →
-              </Link>
-            </div>
-          </div>
-        </section>
-      )}
+      {/* Sprint 11 homepage simplification: Upcoming Festivals section removed
+         from homepage. Festivals are reachable via hero stat card ("Festivals")
+         and /festivals route directly. Goal is 4 core sections on the homepage
+         per R1 §1.1 / R3 §1 "data buffet" finding. */}
 
       {/* Newsletter — The Window */}
       <section className="px-4 py-20">

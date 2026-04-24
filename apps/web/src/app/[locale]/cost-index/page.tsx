@@ -24,14 +24,14 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
 const BASE_URL = "https://www.nakshiq.com";
 
+// Only categories that are actually seeded in destination_costs — avoids
+// the "No rows match" trap when a user picks a category the seed script
+// never populated. Sprint-9 seed shipped 6 of the originally-specced 9.
 const CATEGORY_LABELS: Record<string, string> = {
   homestay: "Homestay",
-  "hostel-dorm": "Hostel dorm bed",
   "hotel-mid": "Hotel (3★ mid-range)",
-  "hotel-splurge": "Hotel (4–5★ splurge)",
   "food-per-day": "Food (3 meals)",
   "transport-taxi-day": "Taxi (8-hour day hire)",
-  "transport-intercity": "Intercity transport (per leg)",
   "permit-fees": "Permits & entry",
   "activity-sample": "Activity / entry fee",
 };
@@ -100,7 +100,7 @@ export default async function CostIndexPage({ params }: { params: Promise<{ loca
     "@id": `${pageUrl}#dataset`,
     name: "NakshIQ India Travel Cost Index 2026",
     alternateName: "NakshIQ Cost Index",
-    description: `Season-tagged cost dataset for ${destCount} Indian destinations across 9 spending categories (homestay, hotel, food, taxi, intercity transport, permits, activities). Each row carries peak/shoulder/low season context and source citation. Total: ${totalRows.toLocaleString()} cost observations.`,
+    description: `Season-tagged cost dataset for ${destCount} Indian destinations across ${Object.keys(CATEGORY_LABELS).length} spending categories (homestay, hotel, food, taxi, permits, activities). Each row carries peak/shoulder/low season context and source citation. Total: ${totalRows.toLocaleString()} cost observations.`,
     url: pageUrl,
     keywords: [
       "India travel cost",
@@ -189,7 +189,7 @@ export default async function CostIndexPage({ params }: { params: Promise<{ loca
           </div>
           <div className="rounded-2xl border border-border bg-card/40 p-4">
             <div className="text-[11px] font-medium uppercase tracking-[0.08em] text-muted-foreground/70">Categories</div>
-            <div className="text-2xl font-semibold tabular-nums mt-1">9</div>
+            <div className="text-2xl font-semibold tabular-nums mt-1">{Object.keys(CATEGORY_LABELS).length}</div>
           </div>
           <div className="rounded-2xl border border-border bg-card/40 p-4">
             <div className="text-[11px] font-medium uppercase tracking-[0.08em] text-muted-foreground/70">Seasons tracked</div>
