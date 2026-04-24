@@ -268,14 +268,36 @@ main {
 }
 .animate-pulse-subtle { animation: pulse-subtle 3s ease-in-out infinite; }
 
-/* Cursor pointer on all interactive elements — !important to override Tailwind reset */
-a, button, [role="button"], [role="tab"], [role="link"],
-input[type="submit"], input[type="button"], input[type="reset"],
-select, label[for], summary {
+/* Cursor pointer on ALL interactive elements — !important to override Tailwind v4 preflight.
+   Covers: anchors, buttons, ARIA roles, form controls, shadcn data-slots, Tailwind cursor utility,
+   hover states (some browsers require explicit hover), footer/nav children. */
+a, a *, button, button *,
+[role="button"], [role="button"] *,
+[role="tab"], [role="tab"] *,
+[role="link"], [role="link"] *,
+[role="menuitem"], [role="option"], [role="checkbox"], [role="radio"], [role="switch"],
+input[type="submit"], input[type="button"], input[type="reset"], input[type="checkbox"], input[type="radio"],
+select, label[for], summary,
+[data-slot="trigger"], [data-slot="button"], [data-slot="item"],
+[onclick], .cursor-pointer,
+nav a, nav button, footer a, footer button {
   cursor: pointer !important;
 }
 
+/* Hover-state explicit (belt-and-braces for browsers that reset on :hover) */
+a:hover, button:hover, [role="button"]:hover, [role="tab"]:hover,
+summary:hover, label[for]:hover, .cursor-pointer:hover {
+  cursor: pointer !important;
+}
+
+/* Disabled elements should NOT show pointer — narrow exception */
+a[aria-disabled="true"], button:disabled, button[aria-disabled="true"],
+[role="button"][aria-disabled="true"], input:disabled {
+  cursor: not-allowed !important;
+}
+
 /* Leaflet and SVG interactive elements */
-.leaflet-interactive, .leaflet-marker-icon {
+.leaflet-interactive, .leaflet-marker-icon,
+svg[role="button"], svg a, [role="img"][onclick] {
   cursor: pointer !important;
 }
