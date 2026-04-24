@@ -3921,3 +3921,20 @@ Date range: 2026-04-15 → 2026-04-23
 2026-04-24 05:56:20  INFO      [facebook/Nakshiq] Already posted reel today — skipping.
 2026-04-24 05:56:20  INFO      State saved. Reel run complete.
 2026-04-24 05:56:20  INFO      ════════════════════════════════════════════════════════════
+2026-04-24 06:11:33  INFO      ════════════════════════════════════════════════════════════
+2026-04-24 06:11:33  INFO      Nakshiq Autoposter · REEL · 2026-04-24 · weekday=4
+2026-04-24 06:11:33  INFO      ════════════════════════════════════════════════════════════
+2026-04-24 06:11:33  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-04-24 06:11:40  INFO      Synced → 20 destinations · 0 traps · 20 articles · total catalog=488
+2026-04-24 06:11:40  INFO      Format: destination_reveal | Data: {'dest_name': 'Palampur', 'dest_slug': 'palampur', 'state_name': 'Himachal Pradesh', 'score': 5, 'tagline': "India's tea capital that nobody talks about — Kangra tea gardens with Dhauladhar snow peaks behind them, minus the Darjeeling crowds."}
+2026-04-24 06:11:49  INFO      Reel rendered: reel_destination_reveal_palampur.mp4 (944 KB)
+2026-04-24 06:11:49  INFO          Requesting upload URL for reel_destination_reveal_reel_destination_reveal_palampur.mp4 (966,756 bytes, video/mp4)
+2026-04-24 06:11:50  INFO          Uploading to R2 (timeout=300s)...
+2026-04-24 06:11:50  INFO          R2 PUT OK. Confirming...
+2026-04-24 06:11:51  INFO          Media ready: pPRpM (966,756 bytes · reel_destination_reveal_reel_destination_reveal_palampur.mp4)
+2026-04-24 06:11:51  INFO      Video uploaded: reel_destination_reveal_reel_destination_reveal_palampur.mp4
+2026-04-24 06:11:52  INFO      [youtube/@naksh-iq] Already posted reel today — skipping.
+2026-04-24 06:11:52  INFO      [instagram/nakshiq] Already posted reel today — skipping.
+2026-04-24 06:11:52  INFO      [facebook/Nakshiq] Already posted reel today — skipping.
+2026-04-24 06:11:52  INFO      State saved. Reel run complete.
+2026-04-24 06:11:52  INFO      ════════════════════════════════════════════════════════════
