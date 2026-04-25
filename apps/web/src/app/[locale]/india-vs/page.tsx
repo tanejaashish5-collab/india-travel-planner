@@ -16,7 +16,7 @@ export async function generateMetadata({
   return {
     title: "India vs the World — Honest Country Comparisons for Travelers",
     description:
-      "Decision-grade comparisons between India and other travel-heavy countries. Vietnam, Morocco, Peru, Egypt — what's similar, what's different, what to plan for.",
+      "Decision-grade comparisons between India and other travel-heavy countries. Vietnam, Thailand, Indonesia, Morocco, Peru, Egypt, Sri Lanka, Nepal — what's similar, what's different, what to plan for.",
     ...localeAlternates(locale, "/india-vs"),
   };
 }
@@ -38,10 +38,10 @@ export default async function IndiaVsIndexPage({
           </p>
           <h1 className="text-3xl sm:text-5xl font-semibold leading-tight">India vs the world</h1>
           <p className="mt-5 text-base sm:text-lg text-muted-foreground leading-relaxed">
-            For travelers deciding between India and a comparable country — Vietnam,
-            Morocco, Peru, Egypt. Each comparison runs decision-grade: what India does
-            better, what the other country does better, concrete swap pairs, and what
-            to expect if you did the other country first.
+            For travelers deciding between India and a comparable country. Each
+            comparison runs decision-grade: what India does better, what the other
+            country does better, concrete swap pairs, and what to expect if you did
+            the other country first.
           </p>
         </header>
 
@@ -71,8 +71,8 @@ export default async function IndiaVsIndexPage({
         </div>
 
         <p className="mt-12 text-sm text-muted-foreground">
-          More comparisons in development — Thailand, Sri Lanka, Nepal, Indonesia. If
-          there's a specific comparison you'd find useful,{" "}
+          More comparisons in development. If there's a specific comparison you'd
+          find useful,{" "}
           <Link href={`/${locale}/contact`} className="text-primary hover:underline">
             tell us
           </Link>
