@@ -95,7 +95,7 @@ from commit history.
 | 4 Strategic Content Library | ✓ closed | 10-persona hub + collections framing + 14 India-vs profiles. Commits 2bbc229, 3c8815b, 6d705bc, 0d0bb15 |
 | 5 Planner Intelligence | ✓ closed | Risk mode + variants + iCal. Commit fa54adb |
 | 6 E-E-A-T | ✓ closed | Bylines + /about/team + risk quiz + weather-advisory. Commit 2548735 |
-| 7a/7b AI citability | ✓ closed | FAQ × 2700 + Dataset + bot tracker + Wikidata. Commits 109837f, 8f761a0, 72bfd0b |
+| 7a/7b AI citability | ✓ closed | FAQ × 2700 + Dataset + bot tracker + Wikidata Q139549464 + AIO referrer attribution + Cowork scheduled tasks (health-check daily, citation tracker + Bing scrape weekly). Commits 109837f, 8f761a0, 72bfd0b |
 | 8 Quality floor + thin content | ✓ closed | Every dest_month ≥150 chars + states/articles/treks fixed. Commits 21a6e80, 86a09be |
 | 9 Cost Index + NakshIQ 100 | ✓ closed | Proprietary moat citation magnets. Commit 0fbfe55 |
 | 10 | absorbed into 11 | No standalone commits — likely merged into Sprint 11 nav simplification |
@@ -115,7 +115,18 @@ from commit history.
 - **R4** (Mobile/PWA/offline): §5 Ladakh 4G drops — ✓ (web PWA + Expo parity); §7.3 E-E-A-T — ✓
 
 **Pending user-action items** (Claude can't do these):
-- Bing Webmaster verify, GA4 AI channel-group config, IMD/CPCB env keys, Kaza video upload to R2, photographer brief budget (Sprint 9)
+- IMD/CPCB env keys (Sprint 9)
+- Kaza video upload to R2 (Sprint 9)
+- Photographer brief budget (Sprint 9)
+- GA4: register custom dimension `aio_referral` (User scope) so the AIO attribution event we ship in `ga4-init` is queryable in reports
+- Sprint 7b follow-ups (one-time, after this session): run `node scripts/log-citation-baseline-2026-04-24.mjs` to seed Supabase; click "Run now" on each of the 3 Cowork scheduled tasks to pre-approve their tools
+- Wikidata COI risk: username `NakshIQ` edits item Q139549464 — add independent press references via P248/P1343 statements as press pickups land
+
+**Closed in 2026-04-24 follow-up session** (do not re-flag as pending):
+- Bing Webmaster verify ✓ (already verified before this session; sitemaps 0-4 submitted, IndexNow key file live, /api/indexnow returns ok:true, test push got upstream 202)
+- GA4 AI channel-group config ✓ (channel group "AI referrals (NakshIQ)" with Channel 1 "AI search" matching 10 LLM domains via regex; Channel 2 "AI Overviews (Google SGE)" implemented as a gtag event in `ga4-init` instead because GA4 channel rules don't expose Page URL as a dimension)
+- Wikidata entity ✓ (Q139549464 with EN+HI labels, descriptions, aliases, and 6 statements — wired into Organization sameAs in layout.tsx line 224)
+- AI-citation baseline ✓ (17 btv prompts × Perplexity + Google AIO = 34 checks, all 0 cited at 2026-04-24 baseline; tracker script Copilot URL fixed)
 
 **Pending propagation** (just waiting):
 - DNS MX records on nakshiq.com (cleanup pushed today, GoDaddy authoritative servers catching up)
