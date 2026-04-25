@@ -24,6 +24,59 @@ ALTER TABLE traveler_notes ADD COLUMN IF NOT EXISTS rejected_at timestamptz;
 ALTER TABLE traveler_notes ADD COLUMN IF NOT EXISTS submitter_ip_hash text;
 ALTER TABLE traveler_notes ADD COLUMN IF NOT EXISTS created_at timestamptz NOT NULL DEFAULT now();
 
+-- Drop NOT NULL on columns that should be nullable per the new schema.
+-- Same defensive pattern as 032_reviews.
+DO $$
+BEGIN
+  ALTER TABLE traveler_notes ALTER COLUMN tip DROP NOT NULL;
+EXCEPTION WHEN undefined_column OR invalid_table_definition THEN NULL;
+END $$;
+DO $$
+BEGIN
+  ALTER TABLE traveler_notes ALTER COLUMN rating DROP NOT NULL;
+EXCEPTION WHEN undefined_column OR invalid_table_definition THEN NULL;
+END $$;
+DO $$
+BEGIN
+  ALTER TABLE traveler_notes ALTER COLUMN visit_month DROP NOT NULL;
+EXCEPTION WHEN undefined_column OR invalid_table_definition THEN NULL;
+END $$;
+DO $$
+BEGIN
+  ALTER TABLE traveler_notes ALTER COLUMN visit_year DROP NOT NULL;
+EXCEPTION WHEN undefined_column OR invalid_table_definition THEN NULL;
+END $$;
+DO $$
+BEGIN
+  ALTER TABLE traveler_notes ALTER COLUMN reporter_name DROP NOT NULL;
+EXCEPTION WHEN undefined_column OR invalid_table_definition THEN NULL;
+END $$;
+DO $$
+BEGIN
+  ALTER TABLE traveler_notes ALTER COLUMN reporter_email DROP NOT NULL;
+EXCEPTION WHEN undefined_column OR invalid_table_definition THEN NULL;
+END $$;
+DO $$
+BEGIN
+  ALTER TABLE traveler_notes ALTER COLUMN moderator_note DROP NOT NULL;
+EXCEPTION WHEN undefined_column OR invalid_table_definition THEN NULL;
+END $$;
+DO $$
+BEGIN
+  ALTER TABLE traveler_notes ALTER COLUMN approved_at DROP NOT NULL;
+EXCEPTION WHEN undefined_column OR invalid_table_definition THEN NULL;
+END $$;
+DO $$
+BEGIN
+  ALTER TABLE traveler_notes ALTER COLUMN rejected_at DROP NOT NULL;
+EXCEPTION WHEN undefined_column OR invalid_table_definition THEN NULL;
+END $$;
+DO $$
+BEGIN
+  ALTER TABLE traveler_notes ALTER COLUMN submitter_ip_hash DROP NOT NULL;
+EXCEPTION WHEN undefined_column OR invalid_table_definition THEN NULL;
+END $$;
+
 ALTER TABLE traveler_notes DROP CONSTRAINT IF EXISTS traveler_notes_destination_id_fkey;
 ALTER TABLE traveler_notes
   ADD CONSTRAINT traveler_notes_destination_id_fkey

@@ -29,6 +29,58 @@ ALTER TABLE reviews ADD COLUMN IF NOT EXISTS rejected_at timestamptz;
 ALTER TABLE reviews ADD COLUMN IF NOT EXISTS submitter_ip_hash text;
 ALTER TABLE reviews ADD COLUMN IF NOT EXISTS created_at timestamptz NOT NULL DEFAULT now();
 
+-- Drop NOT NULL on columns that should be nullable per the new schema.
+-- The pre-existing Studio-UI table set user_id NOT NULL (mirrored the
+-- original review-form which required login); the new anon flow allows
+-- it to be empty. Same for the optional reporter / moderator / timestamp
+-- columns. Wrapped in DO blocks so it's safe even if a column is already
+-- nullable.
+DO $$
+BEGIN
+  ALTER TABLE reviews ALTER COLUMN user_id DROP NOT NULL;
+EXCEPTION WHEN undefined_column OR invalid_table_definition THEN NULL;
+END $$;
+DO $$
+BEGIN
+  ALTER TABLE reviews ALTER COLUMN visit_month DROP NOT NULL;
+EXCEPTION WHEN undefined_column OR invalid_table_definition THEN NULL;
+END $$;
+DO $$
+BEGIN
+  ALTER TABLE reviews ALTER COLUMN visit_year DROP NOT NULL;
+EXCEPTION WHEN undefined_column OR invalid_table_definition THEN NULL;
+END $$;
+DO $$
+BEGIN
+  ALTER TABLE reviews ALTER COLUMN reporter_name DROP NOT NULL;
+EXCEPTION WHEN undefined_column OR invalid_table_definition THEN NULL;
+END $$;
+DO $$
+BEGIN
+  ALTER TABLE reviews ALTER COLUMN reporter_email DROP NOT NULL;
+EXCEPTION WHEN undefined_column OR invalid_table_definition THEN NULL;
+END $$;
+DO $$
+BEGIN
+  ALTER TABLE reviews ALTER COLUMN moderator_note DROP NOT NULL;
+EXCEPTION WHEN undefined_column OR invalid_table_definition THEN NULL;
+END $$;
+DO $$
+BEGIN
+  ALTER TABLE reviews ALTER COLUMN approved_at DROP NOT NULL;
+EXCEPTION WHEN undefined_column OR invalid_table_definition THEN NULL;
+END $$;
+DO $$
+BEGIN
+  ALTER TABLE reviews ALTER COLUMN rejected_at DROP NOT NULL;
+EXCEPTION WHEN undefined_column OR invalid_table_definition THEN NULL;
+END $$;
+DO $$
+BEGIN
+  ALTER TABLE reviews ALTER COLUMN submitter_ip_hash DROP NOT NULL;
+EXCEPTION WHEN undefined_column OR invalid_table_definition THEN NULL;
+END $$;
+
 -- Foreign keys (drop+recreate to keep idempotent).
 ALTER TABLE reviews DROP CONSTRAINT IF EXISTS reviews_destination_id_fkey;
 ALTER TABLE reviews
