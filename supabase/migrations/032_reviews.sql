@@ -1,36 +1,73 @@
 -- Sprint 20 — reviews table.
 -- Used by destination/[id] page query + ReviewForm component since Sprint 11
--- but never migrated; would have failed in production once any visitor tried
--- to submit. Now formalised.
+-- but never migrated; the table may already exist (created ad-hoc via the
+-- Supabase Studio UI when the form first tried to insert) without all the
+-- moderation columns this sprint requires. So every column gets an idempotent
+-- ALTER TABLE ADD COLUMN IF NOT EXISTS — works whether the table is
+-- brand-new or pre-existing.
 
 CREATE TABLE IF NOT EXISTS reviews (
-  id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
-  destination_id text NOT NULL REFERENCES destinations(id) ON DELETE CASCADE,
-  user_id uuid REFERENCES auth.users(id) ON DELETE SET NULL,
-  rating int NOT NULL,
-  text text NOT NULL,
-  traveler_type text NOT NULL,
-  visit_month int,
-  visit_year int,
-  reporter_name text,
-  reporter_email text,
-  status text NOT NULL DEFAULT 'pending',
-  moderator_note text,
-  submitted_at timestamptz NOT NULL DEFAULT now(),
-  approved_at timestamptz,
-  rejected_at timestamptz,
-  submitter_ip_hash text,
-  created_at timestamptz NOT NULL DEFAULT now(),
-
-  CONSTRAINT reviews_rating_check CHECK (rating BETWEEN 1 AND 5),
-  CONSTRAINT reviews_text_check CHECK (char_length(text) BETWEEN 50 AND 2000),
-  CONSTRAINT reviews_traveler_type_check CHECK (
-    traveler_type IN ('solo', 'couple', 'family', 'biker', 'backpacker', 'photographer', 'first-timer', 'senior')
-  ),
-  CONSTRAINT reviews_visit_month_check CHECK (visit_month IS NULL OR visit_month BETWEEN 1 AND 12),
-  CONSTRAINT reviews_visit_year_check CHECK (visit_year IS NULL OR visit_year BETWEEN 2020 AND 2030),
-  CONSTRAINT reviews_status_check CHECK (status IN ('pending', 'approved', 'rejected'))
+  id uuid PRIMARY KEY DEFAULT gen_random_uuid()
 );
+
+-- Columns (ADD COLUMN IF NOT EXISTS for every one, in case the table
+-- pre-exists with a smaller column set).
+ALTER TABLE reviews ADD COLUMN IF NOT EXISTS destination_id text;
+ALTER TABLE reviews ADD COLUMN IF NOT EXISTS user_id uuid;
+ALTER TABLE reviews ADD COLUMN IF NOT EXISTS rating int;
+ALTER TABLE reviews ADD COLUMN IF NOT EXISTS text text;
+ALTER TABLE reviews ADD COLUMN IF NOT EXISTS traveler_type text;
+ALTER TABLE reviews ADD COLUMN IF NOT EXISTS visit_month int;
+ALTER TABLE reviews ADD COLUMN IF NOT EXISTS visit_year int;
+ALTER TABLE reviews ADD COLUMN IF NOT EXISTS reporter_name text;
+ALTER TABLE reviews ADD COLUMN IF NOT EXISTS reporter_email text;
+ALTER TABLE reviews ADD COLUMN IF NOT EXISTS status text NOT NULL DEFAULT 'pending';
+ALTER TABLE reviews ADD COLUMN IF NOT EXISTS moderator_note text;
+ALTER TABLE reviews ADD COLUMN IF NOT EXISTS submitted_at timestamptz NOT NULL DEFAULT now();
+ALTER TABLE reviews ADD COLUMN IF NOT EXISTS approved_at timestamptz;
+ALTER TABLE reviews ADD COLUMN IF NOT EXISTS rejected_at timestamptz;
+ALTER TABLE reviews ADD COLUMN IF NOT EXISTS submitter_ip_hash text;
+ALTER TABLE reviews ADD COLUMN IF NOT EXISTS created_at timestamptz NOT NULL DEFAULT now();
+
+-- Foreign keys (drop+recreate to keep idempotent).
+ALTER TABLE reviews DROP CONSTRAINT IF EXISTS reviews_destination_id_fkey;
+ALTER TABLE reviews
+  ADD CONSTRAINT reviews_destination_id_fkey
+  FOREIGN KEY (destination_id) REFERENCES destinations(id) ON DELETE CASCADE;
+
+ALTER TABLE reviews DROP CONSTRAINT IF EXISTS reviews_user_id_fkey;
+ALTER TABLE reviews
+  ADD CONSTRAINT reviews_user_id_fkey
+  FOREIGN KEY (user_id) REFERENCES auth.users(id) ON DELETE SET NULL;
+
+-- Check constraints (drop+recreate so updates flow cleanly).
+ALTER TABLE reviews DROP CONSTRAINT IF EXISTS reviews_rating_check;
+ALTER TABLE reviews
+  ADD CONSTRAINT reviews_rating_check CHECK (rating BETWEEN 1 AND 5);
+
+ALTER TABLE reviews DROP CONSTRAINT IF EXISTS reviews_text_check;
+ALTER TABLE reviews
+  ADD CONSTRAINT reviews_text_check CHECK (char_length(text) BETWEEN 50 AND 2000);
+
+ALTER TABLE reviews DROP CONSTRAINT IF EXISTS reviews_traveler_type_check;
+ALTER TABLE reviews
+  ADD CONSTRAINT reviews_traveler_type_check
+  CHECK (traveler_type IN ('solo', 'couple', 'family', 'biker', 'backpacker', 'photographer', 'first-timer', 'senior'));
+
+ALTER TABLE reviews DROP CONSTRAINT IF EXISTS reviews_visit_month_check;
+ALTER TABLE reviews
+  ADD CONSTRAINT reviews_visit_month_check
+  CHECK (visit_month IS NULL OR visit_month BETWEEN 1 AND 12);
+
+ALTER TABLE reviews DROP CONSTRAINT IF EXISTS reviews_visit_year_check;
+ALTER TABLE reviews
+  ADD CONSTRAINT reviews_visit_year_check
+  CHECK (visit_year IS NULL OR visit_year BETWEEN 2020 AND 2030);
+
+ALTER TABLE reviews DROP CONSTRAINT IF EXISTS reviews_status_check;
+ALTER TABLE reviews
+  ADD CONSTRAINT reviews_status_check
+  CHECK (status IN ('pending', 'approved', 'rejected'));
 
 CREATE INDEX IF NOT EXISTS reviews_dest_status_idx ON reviews (destination_id, status);
 CREATE INDEX IF NOT EXISTS reviews_status_submitted_idx ON reviews (status, submitted_at DESC);

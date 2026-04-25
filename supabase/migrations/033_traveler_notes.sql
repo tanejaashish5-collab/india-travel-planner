@@ -1,37 +1,68 @@
 -- Sprint 20 — traveler_notes table.
--- Used by destination/[id] page query since Sprint 11 + TravelerNotes component
--- but never migrated. Lighter than reviews (no star rating-as-summary; just
--- type-segmented one-liner experience notes + optional tip).
+-- Same defensive pattern as 032_reviews: table may pre-exist via Studio UI
+-- without all the moderation columns. Every column gets ADD COLUMN IF NOT
+-- EXISTS so the migration is idempotent across blank + partial-existing DBs.
 
 CREATE TABLE IF NOT EXISTS traveler_notes (
-  id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
-  destination_id text NOT NULL REFERENCES destinations(id) ON DELETE CASCADE,
-  traveler_type text NOT NULL,
-  note text NOT NULL,
-  tip text,
-  rating int,
-  visit_month int,
-  visit_year int,
-  reporter_name text,
-  reporter_email text,
-  status text NOT NULL DEFAULT 'pending',
-  moderator_note text,
-  submitted_at timestamptz NOT NULL DEFAULT now(),
-  approved_at timestamptz,
-  rejected_at timestamptz,
-  submitter_ip_hash text,
-  created_at timestamptz NOT NULL DEFAULT now(),
-
-  CONSTRAINT traveler_notes_traveler_type_check CHECK (
-    traveler_type IN ('parent', 'biker', 'solo_female', 'backpacker', 'couple', 'senior', 'first_timer', 'photographer')
-  ),
-  CONSTRAINT traveler_notes_note_check CHECK (char_length(note) BETWEEN 30 AND 800),
-  CONSTRAINT traveler_notes_tip_check CHECK (tip IS NULL OR char_length(tip) BETWEEN 10 AND 400),
-  CONSTRAINT traveler_notes_rating_check CHECK (rating IS NULL OR rating BETWEEN 1 AND 5),
-  CONSTRAINT traveler_notes_visit_month_check CHECK (visit_month IS NULL OR visit_month BETWEEN 1 AND 12),
-  CONSTRAINT traveler_notes_visit_year_check CHECK (visit_year IS NULL OR visit_year BETWEEN 2020 AND 2030),
-  CONSTRAINT traveler_notes_status_check CHECK (status IN ('pending', 'approved', 'rejected'))
+  id uuid PRIMARY KEY DEFAULT gen_random_uuid()
 );
+
+ALTER TABLE traveler_notes ADD COLUMN IF NOT EXISTS destination_id text;
+ALTER TABLE traveler_notes ADD COLUMN IF NOT EXISTS traveler_type text;
+ALTER TABLE traveler_notes ADD COLUMN IF NOT EXISTS note text;
+ALTER TABLE traveler_notes ADD COLUMN IF NOT EXISTS tip text;
+ALTER TABLE traveler_notes ADD COLUMN IF NOT EXISTS rating int;
+ALTER TABLE traveler_notes ADD COLUMN IF NOT EXISTS visit_month int;
+ALTER TABLE traveler_notes ADD COLUMN IF NOT EXISTS visit_year int;
+ALTER TABLE traveler_notes ADD COLUMN IF NOT EXISTS reporter_name text;
+ALTER TABLE traveler_notes ADD COLUMN IF NOT EXISTS reporter_email text;
+ALTER TABLE traveler_notes ADD COLUMN IF NOT EXISTS status text NOT NULL DEFAULT 'pending';
+ALTER TABLE traveler_notes ADD COLUMN IF NOT EXISTS moderator_note text;
+ALTER TABLE traveler_notes ADD COLUMN IF NOT EXISTS submitted_at timestamptz NOT NULL DEFAULT now();
+ALTER TABLE traveler_notes ADD COLUMN IF NOT EXISTS approved_at timestamptz;
+ALTER TABLE traveler_notes ADD COLUMN IF NOT EXISTS rejected_at timestamptz;
+ALTER TABLE traveler_notes ADD COLUMN IF NOT EXISTS submitter_ip_hash text;
+ALTER TABLE traveler_notes ADD COLUMN IF NOT EXISTS created_at timestamptz NOT NULL DEFAULT now();
+
+ALTER TABLE traveler_notes DROP CONSTRAINT IF EXISTS traveler_notes_destination_id_fkey;
+ALTER TABLE traveler_notes
+  ADD CONSTRAINT traveler_notes_destination_id_fkey
+  FOREIGN KEY (destination_id) REFERENCES destinations(id) ON DELETE CASCADE;
+
+ALTER TABLE traveler_notes DROP CONSTRAINT IF EXISTS traveler_notes_traveler_type_check;
+ALTER TABLE traveler_notes
+  ADD CONSTRAINT traveler_notes_traveler_type_check
+  CHECK (traveler_type IN ('parent', 'biker', 'solo_female', 'backpacker', 'couple', 'senior', 'first_timer', 'photographer'));
+
+ALTER TABLE traveler_notes DROP CONSTRAINT IF EXISTS traveler_notes_note_check;
+ALTER TABLE traveler_notes
+  ADD CONSTRAINT traveler_notes_note_check
+  CHECK (char_length(note) BETWEEN 30 AND 800);
+
+ALTER TABLE traveler_notes DROP CONSTRAINT IF EXISTS traveler_notes_tip_check;
+ALTER TABLE traveler_notes
+  ADD CONSTRAINT traveler_notes_tip_check
+  CHECK (tip IS NULL OR char_length(tip) BETWEEN 10 AND 400);
+
+ALTER TABLE traveler_notes DROP CONSTRAINT IF EXISTS traveler_notes_rating_check;
+ALTER TABLE traveler_notes
+  ADD CONSTRAINT traveler_notes_rating_check
+  CHECK (rating IS NULL OR rating BETWEEN 1 AND 5);
+
+ALTER TABLE traveler_notes DROP CONSTRAINT IF EXISTS traveler_notes_visit_month_check;
+ALTER TABLE traveler_notes
+  ADD CONSTRAINT traveler_notes_visit_month_check
+  CHECK (visit_month IS NULL OR visit_month BETWEEN 1 AND 12);
+
+ALTER TABLE traveler_notes DROP CONSTRAINT IF EXISTS traveler_notes_visit_year_check;
+ALTER TABLE traveler_notes
+  ADD CONSTRAINT traveler_notes_visit_year_check
+  CHECK (visit_year IS NULL OR visit_year BETWEEN 2020 AND 2030);
+
+ALTER TABLE traveler_notes DROP CONSTRAINT IF EXISTS traveler_notes_status_check;
+ALTER TABLE traveler_notes
+  ADD CONSTRAINT traveler_notes_status_check
+  CHECK (status IN ('pending', 'approved', 'rejected'));
 
 CREATE INDEX IF NOT EXISTS traveler_notes_dest_status_idx ON traveler_notes (destination_id, status);
 CREATE INDEX IF NOT EXISTS traveler_notes_status_submitted_idx ON traveler_notes (status, submitted_at DESC);
