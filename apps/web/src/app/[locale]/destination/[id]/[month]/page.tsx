@@ -7,12 +7,12 @@ import { destinationImage } from "@/lib/image-url";
 import { AuthorByline } from "@/components/author-byline";
 import { getPrimaryEditor } from "@/lib/editor";
 
-export const revalidate = 21600;
+export const revalidate = 86400; // 24h — 5,856 month pages × bots = function-invocation tax. Monthly content doesn't need 6h freshness.
 export const dynamicParams = true;
 
 // No generateStaticParams — 6,840 month pages render on-demand via ISR
 // instead of at build time. Cuts build from 20min to ~2min.
-// First visit: 1-2s server render, then cached for 1hr (revalidate=3600).
+// First visit: 1-2s server render, then cached for 24h (revalidate=86400).
 
 const VALID_MONTHS = [
   "january","february","march","april","may","june",

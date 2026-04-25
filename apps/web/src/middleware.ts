@@ -36,7 +36,12 @@ function matchBot(ua: string | null): string | null {
 }
 
 // Fire-and-forget bot-visit logging. Non-blocking, never fails the request.
+// 10% sample rate: bot crawls hammer 6k+ pages; full logging burned ~$0.30/day
+// in Vercel function invocations. 1-in-10 keeps trend signal intact for the
+// /admin/bot-traffic dashboard (multiply by 10 for true volume).
+const BOT_LOG_SAMPLE_RATE = 0.1;
 function logBotVisit(request: NextRequest, botName: string) {
+  if (Math.random() >= BOT_LOG_SAMPLE_RATE) return;
   try {
     const origin = request.nextUrl.origin;
     const body = JSON.stringify({

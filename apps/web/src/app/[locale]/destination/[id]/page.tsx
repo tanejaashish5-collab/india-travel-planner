@@ -13,7 +13,7 @@ import { AuthorByline } from "@/components/author-byline";
 import { getPrimaryEditor } from "@/lib/editor";
 import { videoObjectJsonLd } from "@/lib/video-schema";
 
-export const revalidate = 3600; // Revalidate every hour
+export const revalidate = 86400; // 24h — UGC moderation lag is already 24-48h, so hourly revalidation just burned function invocations
 // dynamicParams=true → pages not pre-rendered at build time ISR-generate on
 // first hit and then cache. We flipped this from false to true after the
 // Supabase free-plan quota grace period started rate-limiting queries —
