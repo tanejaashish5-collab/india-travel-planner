@@ -2,11 +2,13 @@ import Link from "next/link";
 import { useLocale, useTranslations } from "next-intl";
 import { FALLBACK } from "@/lib/stats";
 import { SuggestEditButton } from "./suggest-edit-button";
+import { getSocialHandles } from "@/lib/social";
 
 export function Footer({ stats }: { stats?: { destinations: number; places: number; festivals: number; traps: number; collections: number } }) {
   const locale = useLocale();
   const tf = useTranslations("footer");
   const tn = useTranslations("nav");
+  const social = getSocialHandles();
 
   return (
     <footer className="relative mt-24 overflow-hidden">
@@ -136,6 +138,25 @@ export function Footer({ stats }: { stats?: { destinations: number; places: numb
             </div>
           ))}
         </div>
+
+        {/* Social handles — render only when env-configured. Each link
+            uses rel="me" so identity proofs (Mastodon, Bridgy) can verify. */}
+        {social.length > 0 && (
+          <div className="flex justify-center gap-5 mb-8">
+            {social.map((s) => (
+              <a
+                key={s.platform}
+                href={s.url}
+                target="_blank"
+                rel="noopener noreferrer me"
+                aria-label={`NakshIQ on ${s.label}`}
+                className="text-xs uppercase tracking-[0.18em] text-muted-foreground/50 hover:text-foreground transition-colors"
+              >
+                {s.label}
+              </a>
+            ))}
+          </div>
+        )}
 
         {/* Bottom bar */}
         <div className="h-px bg-gradient-to-r from-transparent via-border/20 to-transparent mb-6" />

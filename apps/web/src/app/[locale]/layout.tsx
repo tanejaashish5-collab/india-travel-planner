@@ -13,6 +13,7 @@ import { ScrollToTop } from "@/components/scroll-to-top";
 import { PageTransition } from "@/components/page-transition";
 import { MobileTabBar } from "@/components/mobile-tab-bar";
 import { MotionProvider } from "@/components/motion-provider";
+import { getSameAsUrls } from "@/lib/social";
 import "../globals.css";
 
 // Deferred client chunks — never block first paint or TTI
@@ -222,9 +223,7 @@ export default async function LocaleLayout({
                     areaServed: "IN",
                   },
                 ],
-                sameAs: [
-                  "https://www.wikidata.org/wiki/Q139549464",
-                ],
+                sameAs: getSameAsUrls(),
               },
               {
                 "@type": "WebSite",

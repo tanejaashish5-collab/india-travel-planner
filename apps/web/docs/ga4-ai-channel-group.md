@@ -63,6 +63,38 @@ Rule: Match **any** of:
 Note: GA4 typically doesn't receive bot traffic (it's client-side JS). This
 channel is for completeness if you later pipe server logs into GA4.
 
+## Custom dimension — `aio_referral` (Sprint 19, R4 §12 #24)
+
+The `gtag` snippet in `apps/web/src/app/[locale]/layout.tsx` already fires a
+user property named `aio_referral` (set to `'true'`) whenever a visitor lands
+from a Google AIO referrer (URL parameter `udm=50` in the document referrer).
+This needs a one-time GA4 admin click to surface it as a reportable
+dimension:
+
+1. GA4 → **Admin** (gear icon, bottom-left).
+2. Under *Property*, click **Data display** → **Custom definitions**.
+3. Click **Create custom dimensions** (top-right).
+4. Fill in:
+   - **Dimension name**: `AI Overview referral`
+   - **Scope**: `User`
+   - **Description**: `True when the user landed from Google AI Overview (udm=50 referrer).`
+   - **User property**: `aio_referral`
+5. Save.
+
+After 24 hours data starts flowing into Reports → Engagement → User
+properties → `AI Overview referral`. Use it as a filter on any report
+to compare AIO-referred users vs organic.
+
+**Verification curl** (24h after deploy + at least one AIO referral):
+
+```
+GA4 Reports → Engagement → Pages and screens → "Add filter" →
+Dimension: AI Overview referral, Match type: exactly matches, Value: true
+```
+
+Should show a non-zero session count once any visitor has arrived from a
+Google AIO link.
+
 ## What to monitor
 
 After 30 days of data:

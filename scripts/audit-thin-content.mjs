@@ -41,6 +41,9 @@ function flag(name, fallback = null) {
 const STATE_FILTER = flag("state");
 const LIMIT = flag("limit") ? Number(flag("limit")) : null;
 const EXPORT = args.includes("--export");
+// --ci → exit non-zero when any CRITICAL row exists. Used by GitHub Actions
+// to block merges that re-introduce sub-150-char "go" pages (R2 §9 #4).
+const CI = args.includes("--ci");
 
 const GO_MIN = 150;
 const SKIP_MIN = 100;
@@ -196,3 +199,12 @@ if (EXPORT) {
 }
 
 console.log(`\n  Next step: Sprint 8 rewrite queue. Prioritize CRITICAL; merge or 410 LOW.`);
+
+if (CI) {
+  if (critical.length > 0) {
+    console.error(`\n✗ CI gate failed: ${critical.length} CRITICAL rows (verdict=go with why_go < ${GO_MIN} chars).`);
+    console.error(`  Fix the critical rows above before merging. Run without --ci for the full report.`);
+    process.exit(1);
+  }
+  console.log(`\n✓ CI gate passed: 0 CRITICAL rows below ${GO_MIN}-char threshold.`);
+}

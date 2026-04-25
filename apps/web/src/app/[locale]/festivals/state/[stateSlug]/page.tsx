@@ -5,6 +5,7 @@ import { createClient } from "@supabase/supabase-js";
 import { notFound } from "next/navigation";
 import { STATE_MAP } from "@/lib/seo-maps";
 import { localeAlternates } from "@/lib/seo-utils";
+import { festivalsItemListJsonLd } from "@/lib/festival-schema";
 
 export const revalidate = 86400;
 export const dynamicParams = true;
@@ -30,8 +31,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   };
 }
 
-export default async function FestivalsByStatePage({ params }: { params: Promise<{ stateSlug: string }> }) {
-  const { stateSlug } = await params;
+export default async function FestivalsByStatePage({ params }: { params: Promise<{ locale: string; stateSlug: string }> }) {
+  const { locale, stateSlug } = await params;
   const stateName = STATE_MAP[stateSlug];
   if (!stateName) notFound();
 
@@ -51,8 +52,20 @@ export default async function FestivalsByStatePage({ params }: { params: Promise
     return acc;
   }, {});
 
+  const pageUrl = `https://www.nakshiq.com/${locale}/festivals/state/${stateSlug}`;
+  const eventListLd = festivalsItemListJsonLd(
+    (festivals ?? []) as any,
+    null,
+    pageUrl,
+    stateName,
+  );
+
   return (
     <div className="min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(eventListLd) }}
+      />
       <Nav />
       <main className="mx-auto max-w-7xl px-4 py-8">
         <div className="mb-8">

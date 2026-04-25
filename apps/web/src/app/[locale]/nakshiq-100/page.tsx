@@ -264,6 +264,44 @@ export default async function NakshIQ100Page({ params }: { params: Promise<{ loc
           </p>
         </section>
 
+        {/* Embed badge — for tourism boards + destination operators whose
+            marquee month is on the list. The image link is the canonical
+            artefact; the rel="noopener" + the entire <a> wrapping makes the
+            attribution requirement explicit at the markup level. */}
+        <section className="rounded-2xl border border-border bg-card/40 p-6 mb-6">
+          <h2 className="text-xl font-semibold mb-3">Embed the badge</h2>
+          <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+            For tourism boards, destination operators, and editors whose region appears on
+            this list — embed the NakshIQ 100 badge on your site. Free to use, attribution
+            required (the snippet handles it).
+          </p>
+          <div className="flex flex-wrap items-center gap-4 mb-4">
+            <img
+              src="/badges/nakshiq-100.svg"
+              alt="Featured in NakshIQ 100 — 2026 Annual Index"
+              width={240}
+              height={80}
+              className="rounded-md border border-border/50"
+            />
+            <a
+              href="/badges/nakshiq-100.svg"
+              download
+              className="text-xs uppercase tracking-[0.16em] text-primary hover:underline"
+            >
+              Download SVG ↓
+            </a>
+          </div>
+          <pre className="bg-background/50 border border-border/50 rounded-lg p-3 text-[11px] font-mono overflow-x-auto leading-relaxed">{`<a href="https://www.nakshiq.com/${locale}/nakshiq-100" rel="noopener" target="_blank">
+  <img src="https://www.nakshiq.com/badges/nakshiq-100.svg"
+       alt="Featured in NakshIQ 100 — 2026 Annual Index"
+       width="240" height="80" />
+</a>`}</pre>
+          <p className="text-xs text-muted-foreground/70 mt-3 leading-relaxed">
+            The badge links back to this page. We re-issue annually; the file URL stays
+            stable. Editorial badges are unconditional — no fee, no agreement required.
+          </p>
+        </section>
+
         {/* Citation + press */}
         <section className="text-xs text-muted-foreground/70 leading-relaxed">
           <p className="mb-1">

@@ -5,6 +5,7 @@ import { Footer } from "@/components/footer";
 import { FestivalsContent } from "@/components/festivals-content";
 import { createClient } from "@supabase/supabase-js";
 import { localeAlternates } from "@/lib/seo-utils";
+import { festivalsItemListJsonLd } from "@/lib/festival-schema";
 
 export const revalidate = 3600;
 
@@ -31,11 +32,18 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return data ?? [];
 }
 
-export default async function FestivalsPage() {
+export default async function FestivalsPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
   const festivals = await getFestivals();
+  const pageUrl = `https://www.nakshiq.com/${locale}/festivals`;
+  const eventListLd = festivalsItemListJsonLd(festivals as any, null, pageUrl);
 
   return (
     <div className="min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(eventListLd) }}
+      />
       <Nav />
       {/* Visual page hero */}
       <section className="relative h-48 sm:h-64 overflow-hidden">

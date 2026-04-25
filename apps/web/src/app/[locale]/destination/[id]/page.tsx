@@ -9,6 +9,8 @@ import { notFound } from "next/navigation";
 import { StickyDestinationTabs, BottomCTABar } from "@/components/mobile-destination-enhancements";
 import { NewsletterStickyTray } from "@/components/newsletter-sticky-tray";
 import { destinationImage } from "@/lib/image-url";
+import { AuthorByline } from "@/components/author-byline";
+import { getPrimaryEditor } from "@/lib/editor";
 
 export const revalidate = 3600; // Revalidate every hour
 // dynamicParams=true → pages not pre-rendered at build time ISR-generate on
@@ -309,8 +311,9 @@ export default async function DestinationPage({
   params: Promise<{ id: string; locale: string }>;
 }) {
   const { id, locale } = await params;
-  const dest = await getDestination(id);
+  const [dest, editor] = await Promise.all([getDestination(id), getPrimaryEditor()]);
   if (!dest) notFound();
+  const reviewedAt = (dest as any).content_reviewed_at ?? null;
 
   // Find comparison pairs involving this destination
   const comparisons = VS_PAIRS
@@ -495,6 +498,16 @@ export default async function DestinationPage({
       <Nav />
       <StickyDestinationTabs />
       <main id="main-content" className="mx-auto max-w-4xl lg:max-w-6xl px-4 py-8 pb-24 md:pb-8">
+        {editor && (
+          <div className="mb-6">
+            <AuthorByline
+              author={editor}
+              locale={locale}
+              variant="compact"
+              reviewedAt={reviewedAt}
+            />
+          </div>
+        )}
         <DestinationDetail dest={dest} />
 
         {comparisons.length > 0 && (

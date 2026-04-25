@@ -4,6 +4,8 @@ import { DestinationMonth } from "@/components/destination-month";
 import { createClient } from "@supabase/supabase-js";
 import { notFound } from "next/navigation";
 import { destinationImage } from "@/lib/image-url";
+import { AuthorByline } from "@/components/author-byline";
+import { getPrimaryEditor } from "@/lib/editor";
 
 export const revalidate = 21600;
 export const dynamicParams = true;
@@ -208,7 +210,10 @@ export default async function DestinationMonthPage({
   // Validate month slug
   if (!VALID_MONTHS.includes(month as any)) notFound();
 
-  const data = await getMonthData(id, month);
+  const [data, editor] = await Promise.all([
+    getMonthData(id, month),
+    getPrimaryEditor(),
+  ]);
   if (!data) notFound();
 
   const { destination, currentMonth, allMonths, permits, nearby } = data;
@@ -232,7 +237,9 @@ export default async function DestinationMonthPage({
     description: currentMonth?.note || currentMonth?.why_go || `Travel guide for ${destination.name} in ${monthName}`,
     inLanguage: locale === "hi" ? "hi-IN" : "en-IN",
     ...(reviewedAt && { dateModified: reviewedAt }),
-    author: { "@id": "https://www.nakshiq.com#organization" },
+    author: editor
+      ? { "@id": `https://www.nakshiq.com/about/team#${editor.slug}` }
+      : { "@id": "https://www.nakshiq.com#organization" },
     publisher: { "@id": "https://www.nakshiq.com#organization" },
     isPartOf: { "@id": "https://www.nakshiq.com#website" },
     about: {
@@ -393,6 +400,16 @@ export default async function DestinationMonthPage({
       />
       <Nav />
       <main className="mx-auto max-w-4xl lg:max-w-6xl px-4 py-8">
+        {editor && (
+          <div className="mb-6">
+            <AuthorByline
+              author={editor}
+              locale={locale}
+              variant="compact"
+              reviewedAt={reviewedAt}
+            />
+          </div>
+        )}
         <DestinationMonth
           destination={destination}
           currentMonth={currentMonth}

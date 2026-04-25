@@ -5,6 +5,7 @@ import { createClient } from "@supabase/supabase-js";
 import { notFound } from "next/navigation";
 import { STATE_MAP, MONTH_MAP } from "@/lib/seo-maps";
 import { localeAlternates } from "@/lib/seo-utils";
+import { festivalsItemListJsonLd } from "@/lib/festival-schema";
 
 export const revalidate = 86400;
 export const dynamicParams = true;
@@ -44,8 +45,20 @@ export default async function FestivalsStateMonthPage({ params }: { params: Prom
     .eq("month", m.num)
     .order("name");
 
+  const pageUrl = `https://www.nakshiq.com/${locale}/festivals/state/${stateSlug}/${monthSlug}`;
+  const eventListLd = festivalsItemListJsonLd(
+    (festivals ?? []) as any,
+    m.num,
+    pageUrl,
+    stateName,
+  );
+
   return (
     <div className="min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(eventListLd) }}
+      />
       <Nav />
       <main className="mx-auto max-w-7xl px-4 py-8">
         <div className="mb-8">
