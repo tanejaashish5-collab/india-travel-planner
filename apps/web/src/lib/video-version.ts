@@ -5,4 +5,4 @@
 // The value is a YYYYMMDD date stamp; collisions within the same day are
 // fine since we only care that the cache key changes between replacement
 // batches. Older clients see the new URL, old URL stays valid.
-export const VIDEO_CACHE_VERSION = "20260424";
+export const VIDEO_CACHE_VERSION = "20260425";
