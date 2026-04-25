@@ -4125,3 +4125,22 @@ Date range: 2026-04-15 → 2026-04-23
 2026-04-24 10:16:04  INFO      [facebook/Nakshiq] ✅ Published · Outstand=PXe80 · Platform=4267257603524066
 2026-04-24 10:16:04  INFO      State saved. Run complete.
 2026-04-24 10:16:04  INFO      ════════════════════════════════════════════════════════════
+2026-04-25 05:27:42  INFO      ════════════════════════════════════════════════════════════
+2026-04-25 05:27:42  INFO      Nakshiq Autoposter · YT SHORT · 2026-04-25
+2026-04-25 05:27:42  INFO      ════════════════════════════════════════════════════════════
+2026-04-25 05:28:34  INFO      Short rendered: yt_short_this_vs_that_2026-04-25.mp4 (8858 KB, 24.0s, fmt=this_vs_that, music=px_bollywood_hindi)
+2026-04-25 05:28:34  INFO          Requesting upload URL for yt_short_this_vs_that_yt_short_this_vs_that_2026-04-25.mp4 (9,071,284 bytes, video/mp4)
+2026-04-25 05:28:35  INFO          Uploading to R2 (timeout=300s)...
+2026-04-25 05:28:37  INFO          R2 PUT OK. Confirming...
+2026-04-25 05:28:37  INFO          Media ready: 2RQfS (9,071,284 bytes · yt_short_this_vs_that_yt_short_this_vs_that_2026-04-25.mp4)
+2026-04-25 05:28:37  INFO      Video uploaded: yt_short_this_vs_that_yt_short_this_vs_that_2026-04-25.mp4
+2026-04-25 05:28:38  INFO      [youtube/@naksh-iq] Publishing YT Short (this_vs_that)...
+2026-04-25 05:28:41  INFO      [youtube/@naksh-iq] Outstand accepted (post_id=Hpzn5), waiting for platform confirmation...
+2026-04-25 05:28:47  INFO      [youtube/@naksh-iq] ✅ YT Short published · Outstand=Hpzn5 · Platform=2sxZTxBhcmE
+2026-04-25 05:28:47  INFO      [instagram/nakshiq] Publishing YT Short (this_vs_that)...
+2026-04-25 05:28:49  INFO      [instagram/nakshiq] Outstand accepted (post_id=IjYuX), waiting for platform confirmation...
+2026-04-25 05:29:33  WARNING   [instagram/nakshiq] ⚠️  YT Short queued but NOT confirmed (post_id=IjYuX). May have silently failed.
+2026-04-25 05:29:33  INFO      [facebook/Nakshiq] Skipping (YT Shorts post to YouTube + Instagram only).
+2026-04-25 05:29:33  INFO      YT Short posted: format=this_vs_that, music=px_bollywood_hindi
+2026-04-25 05:29:33  INFO      State saved. YT Short run complete.
+2026-04-25 05:29:33  INFO      ════════════════════════════════════════════════════════════
