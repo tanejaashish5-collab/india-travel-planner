@@ -21,12 +21,27 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale, stateSlug } = await params;
   const name = STATE_MAP[stateSlug];
-  if (!name) return {
-  };
+  if (!name) return {};
   const region = getRegionNameForState(stateSlug);
+
+  // Pull the curated state description for a unique meta description per state.
+  // Falls back to a regional default if the row is thin.
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+  let description = `Destinations across ${name}${region ? `, ${region}` : ""} — monthly scores, kids ratings, safety data, and honest travel intelligence.`;
+  if (url && key) {
+    const supabase = createClient(url, key);
+    const { data } = await supabase.from("states").select("description").eq("id", stateSlug).single();
+    if (data?.description && data.description.length > 80) {
+      // Truncate to ~158 chars on a sentence boundary for SERP fit.
+      const raw = data.description.replace(/\s+/g, " ").trim();
+      description = raw.length <= 158 ? raw : raw.slice(0, 155).replace(/[\s,;—-]+\S*$/, "") + "…";
+    }
+  }
+
   return {
     title: `${name} — Destinations, Scores & Travel Guide`,
-    description: `Explore destinations in ${name}${region ? `, ${region}` : ""}. Monthly scores, kids ratings, safety data, and honest travel intelligence.`,
+    description,
     ...localeAlternates(locale, `/state/${stateSlug}`),
   };
 }
