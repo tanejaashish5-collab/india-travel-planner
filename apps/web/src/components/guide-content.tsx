@@ -296,8 +296,16 @@ export function GuideContent({
         <StaggerContainer className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {[
             { title: "Arrival Playbook", desc: "9 airports: prepaid taxis, SIM counters, scam warnings, after-midnight notes", href: "/en/arrival", tag: "9 airports" },
+            { title: "Tourist visa", desc: "e-Tourist Visa categories, application window, designated airports, common rejections", href: "/en/guide/visa", tag: "eTV" },
             { title: "Permits & Passes", desc: "Inner Line Permits, Protected Area Permits, national park entries, trek registrations", href: "/en/guide/permits", tag: "ILP · PAP" },
+            { title: "SIM card & data", desc: "Airtel vs Jio vs Vi for tourists, where to buy, plan ranges, activation gotchas", href: "/en/guide/sim-card", tag: "Jio · Airtel" },
+            { title: "Money & UPI", desc: "Cards, ATMs, foreign-tourist UPI, tipping ranges, what catches travelers out", href: "/en/guide/currency", tag: "UPI · ATM" },
             { title: "Book Indian Trains", desc: "IRCTC sign-up, Tatkal timing, foreign-passport bookings, waitlist psychology", href: "/en/guide/book-indian-trains", tag: "IRCTC" },
+            { title: "Transport overview", desc: "Train, bus, flight, ride-share — when to use which, by distance and route", href: "/en/guide/transport-overview", tag: "by route" },
+            { title: "Food safety", desc: "What to eat, what to skip, water sourcing, regional dishes worth seeking", href: "/en/guide/food-safety", tag: "without paranoia" },
+            { title: "Etiquette", desc: "Temples, dress, dining, photography, gestures — practical without stereotypes", href: "/en/guide/etiquette", tag: "by region" },
+            { title: "Packing", desc: "By region and season — Himalaya, plains, monsoon, desert, altitude considerations", href: "/en/guide/packing", tag: "season × region" },
+            { title: "Scams to spot", desc: "Airport touts, hotel-relocation, gem export — the patterns and the simple defences", href: "/en/guide/scams", tag: "8 defences" },
             { title: "Road Conditions", desc: "Latest pass status, seasonal closures, road-trip readiness by route", href: "/en/road-conditions", tag: "live" },
             { title: "Tourist Traps", desc: "The overhyped places to skip — and the honest alternative for each", href: "/en/tourist-traps", tag: "skip list" },
             { title: "Scoring methodology", desc: "How the 5-point scores are built. 12 months × 6 dimensions per destination", href: "/en/methodology", tag: "how we score" },
