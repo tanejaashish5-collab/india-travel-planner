@@ -4,15 +4,16 @@ import { unstable_cache } from "next/cache";
 import { STATE_MAP, ALL_STATE_SLUGS, ALL_MONTH_SLUGS } from "@/lib/seo-maps";
 
 /*
- * Sitemap split into 5 chunks via generateSitemaps().
+ * Sitemap split into 6 chunks via generateSitemaps().
  * Next.js auto-generates a sitemap index at /sitemap.xml
- * pointing to /sitemap/0.xml through /sitemap/4.xml.
+ * pointing to /sitemap/0.xml through /sitemap/5.xml.
  *
  * 0 = static pages + where-to-go hubs
  * 1 = destinations + destination-month pages
  * 2 = collections + routes + articles + treks
  * 3 = programmatic SEO (state×month, difficulty, tags, festivals, stays, camping, family)
  * 4 = vs comparisons + skip-lists + with-kids + region-months
+ * 5 = Sprint 21 Q&A pages (answered questions only)
  */
 
 const LOCALES = ["en", "hi"] as const;
@@ -46,7 +47,7 @@ const TAGS = [
 ];
 
 export async function generateSitemaps() {
-  return [{ id: "0" }, { id: "1" }, { id: "2" }, { id: "3" }, { id: "4" }];
+  return [{ id: "0" }, { id: "1" }, { id: "2" }, { id: "3" }, { id: "4" }, { id: "5" }];
 }
 
 function entry(path: string, freq: "daily" | "weekly" | "monthly", priority: number): MetadataRoute.Sitemap {
@@ -93,6 +94,7 @@ export default async function sitemap(props: {
       "terms", "privacy", "cookies", "editorial-policy",
       "india-travel", "data-deletion", "newsletter", "the-window",
       "vs", "compare", "guide/permits", "guide/book-indian-trains",
+      "guide/first-trip-india", "guide/scenarios",
       "weekend-from",
       "weekend-from-delhi", "weekend-from-mumbai", "weekend-from-bangalore",
       "weekend-from-chennai", "weekend-from-kolkata", "weekend-from-hyderabad",
@@ -281,6 +283,28 @@ export default async function sitemap(props: {
     );
 
     return [...vsEntries, ...skipEntries, ...kidsEntries, ...regionMonthEntries];
+  }
+
+  // ─── Chunk 5: Sprint 21 Q&A pages (answered questions only) ───
+  if (id === "5") {
+    const supabase = getSupabase();
+    if (!supabase) return [];
+
+    const { data } = await supabase
+      .from("questions")
+      .select("destination_id, slug, answered_at")
+      .eq("status", "answered")
+      .order("answered_at", { ascending: false })
+      .limit(50000);
+
+    return (data ?? []).flatMap((q: { destination_id: string; slug: string; answered_at: string }) =>
+      LOCALES.map((locale) => ({
+        url: `${BASE}/${locale}/destination/${q.destination_id}/q/${q.slug}`,
+        lastModified: q.answered_at ? new Date(q.answered_at) : new Date(),
+        changeFrequency: "monthly" as const,
+        priority: 0.65,
+      })),
+    );
   }
 
   return [];

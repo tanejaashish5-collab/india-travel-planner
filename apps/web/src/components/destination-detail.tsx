@@ -26,6 +26,8 @@ import { TravelerNotes } from "./traveler-notes";
 import { ReviewsList } from "./reviews-list";
 import { TravelerReports } from "./traveler-reports";
 import { ReviewForm } from "./review-form";
+import { QuestionsList } from "./questions-list";
+import { QuestionForm } from "./question-form";
 import { BookingHandoff } from "./booking-handoff";
 import VerdictCard from "./verdict-card";
 import DestinationTldrCard from "./destination-tldr-card";
@@ -137,6 +139,10 @@ export function DestinationDetail({ dest }: { dest: any }) {
   const hasPlaces = subs.length > 0 || gems.length > 0 || pois.length > 0;
   const hasFood = legends.length > 0 || eats.length > 0 || (dest.local_stays?.length ?? 0) > 0;
   const hasReviews = (dest.traveler_notes?.length ?? 0) > 0 || (dest.reviews?.length ?? 0) > 0;
+  // Sprint 21 — Q&A section always shows (so visitors can submit even before
+  // first question is answered). The list portion empty-states gracefully.
+  const answeredQuestions = dest.questions ?? [];
+  const hasQuestions = true;
 
   // Sprint 2 depth layers — gated on per-row content so pre-backfill dests
   // don't show empty headings.
@@ -169,6 +175,7 @@ export function DestinationDetail({ dest }: { dest: any }) {
     { id: "food", label: t("foodAndPeople"), show: hasFood },
     { id: "bestfor", label: "Best For", show: hasBestFor },
     { id: "elevation", label: "Altitude", show: hasElevation },
+    { id: "questions", label: t("questions"), show: hasQuestions },
     { id: "reviews", label: "Reviews", show: hasReviews },
   ].filter((s) => s.show);
 
@@ -1319,6 +1326,29 @@ export function DestinationDetail({ dest }: { dest: any }) {
           {hasElevation && (
             <section id="section-elevation" className="scroll-mt-40">
               <ElevationChart elevationM={dest.elevation_m} destinationName={displayName} />
+            </section>
+          )}
+
+          {/* Sprint 21 — Q&A board. Always rendered so visitors can submit
+              even before the first answered question. Renders top 5 most-
+              recent answered questions with a "Read full answer" deep-link
+              into /destination/[id]/q/[slug] (FAQPage JSON-LD per page). */}
+          {hasQuestions && (
+            <section id="section-questions" className="scroll-mt-40 space-y-6">
+              <div className="flex items-baseline justify-between gap-3 flex-wrap">
+                <h2 className="text-xl font-semibold">Questions &amp; answers</h2>
+                {answeredQuestions.length > 0 && (
+                  <span className="text-xs text-muted-foreground tabular-nums">
+                    {answeredQuestions.length} answered
+                  </span>
+                )}
+              </div>
+              <QuestionsList
+                questions={answeredQuestions}
+                destinationId={dest.id}
+                locale={locale}
+              />
+              <QuestionForm destinationId={dest.id} />
             </section>
           )}
 

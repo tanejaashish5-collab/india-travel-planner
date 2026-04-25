@@ -19,6 +19,7 @@ const SECTION_TABS = [
   { id: "section-kids", label: "Kids" },
   { id: "section-safety", label: "Safety" },
   { id: "section-places", label: "Places" },
+  { id: "section-questions", label: "Q&A" },
   { id: "section-reviews", label: "Reviews" },
 ];
 

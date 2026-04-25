@@ -241,6 +241,7 @@ async function getDestination(id: string) {
     gems, trapAlts, festivals, localStays, travelerNotes,
     allDests, reviews, relatedArticles, relatedCollections, relatedRoutes,
     nearbyDests, emergencySos, pois, editorStayPicks, scenarios, tripReports,
+    questions,
   ] = await Promise.all([
     supabase.from("hidden_gems").select("*").eq("near_destination_id", id),
     supabase
@@ -282,6 +283,13 @@ async function getDestination(id: string) {
       .eq("status", "approved")
       .order("approved_at", { ascending: false })
       .limit(10),
+    supabase
+      .from("questions")
+      .select("id, slug, question, answer, category, traveler_type, editor_handle, answered_at")
+      .eq("destination_id", id)
+      .eq("status", "answered")
+      .order("answered_at", { ascending: false })
+      .limit(5),
   ]);
 
   return {
@@ -303,6 +311,7 @@ async function getDestination(id: string) {
     editor_stay_picks: editorStayPicks.data ?? [],
     scenarios: scenarios.data ?? [],
     trip_reports: tripReports.data ?? [],
+    questions: questions.data ?? [],
   };
 }
 
