@@ -76,7 +76,7 @@ function DestinationImage({
   return (
     <Image
       src={`/images/destinations/${id}.jpg`}
-      alt=""
+      alt={id.replace(/-/g, " ")}
       width={size}
       height={size}
       sizes={`${size}px`}

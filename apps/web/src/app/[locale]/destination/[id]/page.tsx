@@ -11,6 +11,7 @@ import { NewsletterStickyTray } from "@/components/newsletter-sticky-tray";
 import { destinationImage } from "@/lib/image-url";
 import { AuthorByline } from "@/components/author-byline";
 import { getPrimaryEditor } from "@/lib/editor";
+import { videoObjectJsonLd } from "@/lib/video-schema";
 
 export const revalidate = 3600; // Revalidate every hour
 // dynamicParams=true → pages not pre-rendered at build time ISR-generate on
@@ -356,18 +357,24 @@ export default async function DestinationPage({
     },
     touristType: dest.difficulty === "easy" ? "Family" : dest.difficulty === "extreme" ? "Adventure" : "General",
     ...((() => {
-      // AggregateRating — computed live from approved trip_reports. Only
-      // emitted when there's at least one report to average, per schema.org
-      // AggregateRating requirement.
+      // AggregateRating — computed live from approved reviews + trip_reports.
+      // Only emitted when there's at least one to average, per schema.org spec.
+      // Combining the two tables gives a more honest reviewCount and avg —
+      // they're separate UGC streams (long-form trip_reports and quick reviews)
+      // but both rate 1-5, so averaging together is fair.
       const reports: Array<{ rating: number }> = (dest as any).trip_reports ?? [];
-      if (reports.length === 0) return {};
-      const sum = reports.reduce((acc, r) => acc + Number(r.rating), 0);
-      const avg = sum / reports.length;
+      const reviews: Array<{ rating: number }> = (dest as any).reviews ?? [];
+      const total = reports.length + reviews.length;
+      if (total === 0) return {};
+      const sum =
+        reports.reduce((a, r) => a + Number(r.rating), 0) +
+        reviews.reduce((a, r) => a + Number(r.rating), 0);
+      const avg = sum / total;
       return {
         aggregateRating: {
           "@type": "AggregateRating",
           ratingValue: Number(avg.toFixed(1)),
-          reviewCount: reports.length,
+          reviewCount: total,
           bestRating: 5,
           worstRating: 1,
         },
@@ -481,6 +488,50 @@ export default async function DestinationPage({
     })),
   };
 
+  // VideoObject JSON-LD — only emit when an MP4 actually exists. We don't
+  // probe R2; we infer presence from the same id pattern videoSrc() uses.
+  // Description pulls from tagline so it's destination-specific.
+  const videoLd = videoObjectJsonLd({
+    id,
+    name: `${dest.name} — NakshIQ travel reel`,
+    description: dest.tagline
+      ? `${dest.tagline}. Aerial and on-ground footage from NakshIQ's ${dest.name} coverage.`
+      : `Travel footage from NakshIQ's ${dest.name} coverage in ${stateName ?? "India"}.`,
+    thumbnailUrl: destinationImage(id),
+  });
+
+  // Review JSON-LD — one Review entity per approved review, capped at 10
+  // (Google rich results cap). Each links back to the destination via
+  // itemReviewed @id chain. Skips quietly if reviews is empty.
+  const reviewsForLd: Array<{
+    id: string;
+    rating: number;
+    text: string;
+    traveler_type?: string | null;
+    created_at: string;
+  }> = ((dest as any).reviews ?? []).slice(0, 10);
+  const reviewLdBlocks = reviewsForLd.map((rev) => ({
+    "@context": "https://schema.org",
+    "@type": "Review",
+    "@id": `${destUrl}#review-${rev.id}`,
+    itemReviewed: { "@id": `${destUrl}#destination` },
+    reviewRating: {
+      "@type": "Rating",
+      ratingValue: rev.rating,
+      bestRating: 5,
+      worstRating: 1,
+    },
+    reviewBody: rev.text,
+    datePublished: rev.created_at,
+    author: {
+      "@type": "Person",
+      name: rev.traveler_type
+        ? `${rev.traveler_type.charAt(0).toUpperCase()}${rev.traveler_type.slice(1)} traveler`
+        : "Anonymous traveler",
+    },
+    publisher: { "@id": "https://www.nakshiq.com#organization" },
+  }));
+
   return (
     <div className="min-h-screen">
       <script
@@ -495,6 +546,19 @@ export default async function DestinationPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
       />
+      {videoLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(videoLd) }}
+        />
+      )}
+      {reviewLdBlocks.map((rb) => (
+        <script
+          key={rb["@id"]}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(rb) }}
+        />
+      ))}
       <Nav />
       <StickyDestinationTabs />
       <main id="main-content" className="mx-auto max-w-4xl lg:max-w-6xl px-4 py-8 pb-24 md:pb-8">

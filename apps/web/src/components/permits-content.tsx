@@ -91,7 +91,7 @@ export function PermitsContent({ permits }: { permits: any[] }) {
                 onClick={() => setOpenId(isOpen ? null : permit.id)}
                 className="w-full flex items-center gap-4 p-4 text-left hover:bg-muted/20 transition-colors"
               >
-                <Image src={`/images/destinations/${permit.destination_id}.jpg`} width={48} height={48} className="rounded-lg object-cover flex-shrink-0" sizes="48px" alt="" onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }} />
+                <Image src={`/images/destinations/${permit.destination_id}.jpg`} width={48} height={48} className="rounded-lg object-cover flex-shrink-0" sizes="48px" alt={permit.destination_id?.replace(/-/g, " ") ?? "destination"} onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }} />
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-2 flex-wrap mb-1">
                     <span className={`rounded-full border px-2.5 py-1 text-xs font-medium ${colorClass}`}>

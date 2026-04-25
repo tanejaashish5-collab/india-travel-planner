@@ -8,6 +8,7 @@ import { useEffect, useRef, useState, useCallback } from "react";
 import { useRouter } from "next/navigation";
 import { getBrowserSupabase } from "@/lib/supabase-browser";
 import { videoSrc } from "@/lib/video-url";
+import { videoObjectJsonLd } from "@/lib/video-schema";
 // LanguageToggle now in main Nav component
 import {
   FadeIn,
@@ -77,8 +78,22 @@ export function LandingHero({
     : "from-indigo-950/40 via-background/90 to-background";
   const glowColor = isDawn ? "bg-orange-500/10" : isDay ? "bg-blue-500/8" : isDusk ? "bg-amber-500/10" : "bg-indigo-500/10";
 
+  const heroVideoLd = videoObjectJsonLd({
+    id: "hero",
+    name: "NakshIQ — India travel intelligence hero reel",
+    description:
+      "Aerial pans of Spiti Valley, Ladakh and Himalayan high passes — the visual signature of NakshIQ's homepage.",
+    thumbnailUrl: destinationImage("spiti-valley"),
+  });
+
   return (
     <>
+      {heroVideoLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(heroVideoLd) }}
+        />
+      )}
       {/* Hero Section — day/night gradient */}
       <section className="relative min-h-screen flex flex-col items-center justify-center px-4 overflow-hidden">
         {/* Background video — LCP-safe: metadata-only preload (browsers won't

@@ -62,7 +62,7 @@ export default function RootNotFound() {
         {/* Hero 404 with background */}
         <div className="nf-hero">
           <div className="nf-hero-bg">
-            <Image src="/images/destinations/spiti-valley.jpg" alt="" fill sizes="100vw" style={{ objectFit: "cover", opacity: 0.08 }} />
+            <Image src="/images/destinations/spiti-valley.jpg" alt="" role="presentation" fill sizes="100vw" style={{ objectFit: "cover", opacity: 0.08 }} />
             <div className="nf-hero-overlay" />
           </div>
 

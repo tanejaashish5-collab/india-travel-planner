@@ -24,19 +24,19 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
 const BASE_URL = "https://www.nakshiq.com";
 
-// Only categories actually seeded in destination_costs — avoids the
-// "No rows match" trap. Sprint-9 originally spec'd 9 categories but the
-// seeder's budget_tier comparison (string vs. number) silently dropped
-// hotel-splurge / hostel-dorm / transport-intercity. Sprint-11-fix top-up
-// (scripts/seed-cost-index-splurge.mjs) restored hotel-splurge for all
-// 488 dests × 3 seasons. Hostel-dorm and transport-intercity remain
-// deferred until those seeders are written.
+// All 9 cost-index categories now seeded across 488 destinations × 3 seasons.
+// hostel-dorm + transport-intercity were closed in Sprint 20 via
+// scripts/_seed-cost-index-{hostels,intercity}.mjs. hotel-splurge was
+// closed in Sprint 11 (seed-cost-index-splurge.mjs). Original Sprint-9 seed
+// covers homestay / hotel-mid / food / taxi / permits / activity.
 const CATEGORY_LABELS: Record<string, string> = {
   homestay: "Homestay",
+  "hostel-dorm": "Hostel (dorm bed)",
   "hotel-mid": "Hotel (3★ mid-range)",
   "hotel-splurge": "Hotel (4–5★ splurge)",
   "food-per-day": "Food (3 meals)",
   "transport-taxi-day": "Taxi (8-hour day hire)",
+  "transport-intercity": "Intercity transport",
   "permit-fees": "Permits & entry",
   "activity-sample": "Activity / entry fee",
 };

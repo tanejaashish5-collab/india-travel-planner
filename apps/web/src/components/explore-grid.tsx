@@ -46,11 +46,13 @@ export function ExploreGrid({
   states,
   sharedFilters,
   onFiltersChange,
+  ecoCount,
 }: {
   destinations: DestinationData[];
   states: Array<{ id: string; name: string }>;
   sharedFilters?: FilterState;
   onFiltersChange?: (filters: FilterState) => void;
+  ecoCount?: number;
 }) {
   const locale = useLocale();
   const ts = useTranslations("score");
@@ -69,6 +71,7 @@ export function ExploreGrid({
     month: Number(searchParams.get("month")) || currentMonth,
     kidsOnly: searchParams.get("kids") === "true",
     soloFemaleOnly: searchParams.get("solof") === "true",
+    ecoOnly: searchParams.get("eco") === "true",
     sort: searchParams.get("sort") ?? "",
     difficulty: searchParams.get("difficulty") ?? "",
     search: searchParams.get("q") ?? "",
@@ -84,6 +87,7 @@ export function ExploreGrid({
     if (filters.month !== currentMonth) params.set("month", String(filters.month));
     if (filters.kidsOnly) params.set("kids", "true");
     if (filters.soloFemaleOnly) params.set("solof", "true");
+    if (filters.ecoOnly) params.set("eco", "true");
     if (filters.difficulty) params.set("difficulty", filters.difficulty);
     if (filters.search) params.set("q", filters.search);
     if (filters.sort) params.set("sort", filters.sort);
@@ -115,6 +119,12 @@ export function ExploreGrid({
           : null;
         const effective = override != null ? override : (d.solo_female_score ?? null);
         if (effective == null || effective < 4) return false;
+      }
+
+      // Eco filter — sustainable destinations only (high or mid tier)
+      if (filters.ecoOnly) {
+        const tier = (d as any).eco_tier;
+        if (tier !== "high" && tier !== "mid") return false;
       }
 
       // Month score filter (only show score 3+ for selected month)
@@ -217,6 +227,7 @@ export function ExploreGrid({
         filters={filters}
         onChange={setFilters}
         resultCount={sorted.length}
+        ecoCount={ecoCount}
       />
 
       <StaggerContainer className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3" staggerDelay={0.04}>

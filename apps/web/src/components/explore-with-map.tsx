@@ -58,10 +58,19 @@ export function ExploreWithMap({
     month: Number(searchParams.get("month")) || currentMonth,
     kidsOnly: searchParams.get("kids") === "true",
     soloFemaleOnly: searchParams.get("solof") === "true",
+    ecoOnly: searchParams.get("eco") === "true",
     sort: searchParams.get("sort") ?? "",
     difficulty: searchParams.get("difficulty") ?? "",
     search: searchParams.get("q") ?? "",
   });
+
+  const ecoCount = useMemo(
+    () => destinations.filter((d) => {
+      const tier = (d as any).eco_tier;
+      return tier === "high" || tier === "mid";
+    }).length,
+    [destinations],
+  );
 
   // Apply filters to destinations (shared between grid + map)
   const filtered = useMemo(() => {
@@ -80,6 +89,11 @@ export function ExploreWithMap({
           : null;
         const effective = override != null ? override : ((d as any).solo_female_score ?? null);
         if (effective == null || effective < 4) return false;
+      }
+
+      if (filters.ecoOnly) {
+        const tier = (d as any).eco_tier;
+        if (tier !== "high" && tier !== "mid") return false;
       }
 
       if (filters.search) {
@@ -159,6 +173,7 @@ export function ExploreWithMap({
           filters={filters}
           onChange={setFilters}
           resultCount={filtered.length}
+          ecoCount={ecoCount}
         />
       )}
 
@@ -169,6 +184,7 @@ export function ExploreWithMap({
           states={states}
           sharedFilters={filters}
           onFiltersChange={setFilters}
+          ecoCount={ecoCount}
         />
       ) : (
         <Suspense

@@ -9,6 +9,8 @@ import { DestinationSectionNav } from "@/components/destination-section-nav";
 import { createClient } from "@supabase/supabase-js";
 import { STATE_MAP, getRegionNameForState, getRegionForState } from "@/lib/seo-maps";
 import { videoSrc } from "@/lib/video-url";
+import { videoObjectJsonLd } from "@/lib/video-schema";
+import { destinationImage } from "@/lib/image-url";
 import { localeAlternates } from "@/lib/seo-utils";
 
 export const revalidate = 86400;
@@ -117,8 +119,21 @@ export default async function StateHubPage({
 
   const subregions: any[] = region?.subregions ?? [];
 
+  const stateVideoLd = videoObjectJsonLd({
+    id: heroDestId,
+    name: `${stateName} — NakshIQ travel reel`,
+    description: `Hero footage from NakshIQ's ${stateName} coverage. ${totalDests} scored destinations across ${stateName}.`,
+    thumbnailUrl: destinationImage(heroDestId),
+  });
+
   return (
     <div className="min-h-screen">
+      {stateVideoLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(stateVideoLd) }}
+        />
+      )}
       <Nav />
       <main id="main-content">
         {/* Sticky back + breadcrumb bar — always-visible wayfinding, mirrors

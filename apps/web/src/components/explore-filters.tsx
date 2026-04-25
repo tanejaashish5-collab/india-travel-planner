@@ -7,6 +7,7 @@ export interface FilterState {
   month: number;
   kidsOnly: boolean;
   soloFemaleOnly: boolean;
+  ecoOnly: boolean;
   difficulty: string;
   search: string;
   sort: string;
@@ -17,6 +18,9 @@ interface ExploreFiltersProps {
   filters: FilterState;
   onChange: (filters: FilterState) => void;
   resultCount: number;
+  // Hide the eco toggle when zero destinations carry an eco_tier rating —
+  // prevents shipping a filter that returns 0 results during seeding.
+  ecoCount?: number;
 }
 
 export function ExploreFilters({
@@ -24,6 +28,7 @@ export function ExploreFilters({
   filters,
   onChange,
   resultCount,
+  ecoCount = 0,
 }: ExploreFiltersProps) {
   const locale = useLocale();
   const tf = useTranslations("filters");
@@ -38,6 +43,7 @@ export function ExploreFilters({
     filters.month !== 0 ||
     filters.kidsOnly ||
     filters.soloFemaleOnly ||
+    filters.ecoOnly ||
     filters.difficulty !== "" ||
     filters.search !== "" ||
     filters.sort !== "";
@@ -136,6 +142,24 @@ export function ExploreFilters({
           Solo-female friendly
         </button>
 
+        {/* Eco-rated toggle — only renders when ≥1 destination carries an
+            eco_tier value (high or mid). Hidden during early seeding so we
+            never ship a chip that maps to zero results. */}
+        {ecoCount > 0 && (
+          <button
+            onClick={() => update({ ecoOnly: !filters.ecoOnly })}
+            aria-pressed={filters.ecoOnly}
+            title="Community-managed and low-impact destinations (eco_tier high/mid)"
+            className={`shrink-0 rounded-lg border px-3 py-2 text-sm font-medium transition-colors ${
+              filters.ecoOnly
+                ? "border-emerald-500/50 bg-emerald-500/15 text-emerald-200"
+                : "border-border text-muted-foreground hover:text-foreground"
+            }`}
+          >
+            🌱 Eco-rated ({ecoCount})
+          </button>
+        )}
+
         {/* Sort */}
         <select
           aria-label="Sort destinations"
@@ -161,6 +185,7 @@ export function ExploreFilters({
                 month: 0,
                 kidsOnly: false,
                 soloFemaleOnly: false,
+                ecoOnly: false,
                 difficulty: "",
                 search: "",
                 sort: "",

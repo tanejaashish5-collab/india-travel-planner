@@ -1,0 +1,49 @@
+name: Quality Gate
+
+on:
+  schedule:
+    # Daily 02:00 UTC ≈ 07:30 IST. Catches drift introduced by autoposter
+    # cron jobs (which can re-introduce thin destination_months rows when
+    # they blank out a cell during refresh).
+    - cron: "0 2 * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/audit-thin-content.mjs"
+      - "scripts/audit-hreflang.mjs"
+      - "supabase/migrations/**"
+
+env:
+  BASE: https://www.nakshiq.com
+
+jobs:
+  thin-content:
+    name: Thin-content gate (R2 §9 #4)
+    runs-on: ubuntu-latest
+    if: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY != '' }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - name: Audit destination_months for sub-150-char "go" pages
+        run: node scripts/audit-thin-content.mjs --ci
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+
+  hreflang-and-schema:
+    name: hreflang + JSON-LD audit
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Verify hreflang + JSON-LD on representative URLs
+        run: node scripts/audit-hreflang.mjs
+        env:
+          BASE: ${{ env.BASE }}
