@@ -4181,3 +4181,28 @@ Date range: 2026-04-15 → 2026-04-23
 2026-04-25 08:32:56  INFO      Theme tracker updated: cat=this_or_that / img=this_or_that/mountains_vs_beaches_01.jpg
 2026-04-25 08:32:56  INFO      State saved. Canva Visual run complete.
 2026-04-25 08:32:56  INFO      ════════════════════════════════════════════════════════════
+2026-04-25 10:38:50  INFO      ════════════════════════════════════════════════════════════
+2026-04-25 10:38:50  INFO      Nakshiq Autoposter · REEL-MAP · 2026-04-25 · weekday=5
+2026-04-25 10:38:50  INFO      ════════════════════════════════════════════════════════════
+2026-04-25 10:38:50  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-04-25 10:38:57  INFO      Synced → 20 destinations · 0 traps · 20 articles · total catalog=488
+2026-04-25 10:38:57  INFO      Format: state_heatmap | Slug: hp
+2026-04-25 10:39:24  INFO      Reel-map rendered: reel_map_state_heatmap_hp.mp4 (8897 KB)
+2026-04-25 10:39:24  INFO          Requesting upload URL for reel_map_state_heatmap_reel_map_state_heatmap_hp.mp4 (9,111,282 bytes, video/mp4)
+2026-04-25 10:39:25  INFO          Uploading to R2 (timeout=300s)...
+2026-04-25 10:39:26  INFO          R2 PUT OK. Confirming...
+2026-04-25 10:39:28  INFO          Media ready: ZfZIu (9,111,282 bytes · reel_map_state_heatmap_reel_map_state_heatmap_hp.mp4)
+2026-04-25 10:39:28  INFO      Video uploaded: reel_map_state_heatmap_reel_map_state_heatmap_hp.mp4
+2026-04-25 10:39:29  INFO      [youtube/@naksh-iq] Publishing reel-map (state_heatmap)...
+2026-04-25 10:39:31  INFO      [youtube/@naksh-iq] Outstand accepted (post_id=Ij5WX), confirming...
+2026-04-25 10:39:37  WARNING       Platform error: Error publishing post to YouTube: Failed to initiate YouTube resumable upload: 401 - "{\"error\":{\"code\":401,\"message\":\"Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.\",\"errors\":[{\"message\":\"Invalid Credentials\",\"domain\":\"global\",\"reason\":\"authError\",\"location\":\"Authorization\",\"locationType\":\"header\"}],\"status\":\"UNAUTHENTICATED\"}}"
+2026-04-25 10:39:37  WARNING   [youtube/@naksh-iq] ⚠️  Reel-map queued but NOT confirmed (post_id=Ij5WX).
+2026-04-25 10:39:37  INFO      [instagram/nakshiq] Publishing reel-map (state_heatmap)...
+2026-04-25 10:39:40  INFO      [instagram/nakshiq] Outstand accepted (post_id=vKYEg), confirming...
+2026-04-25 10:40:26  INFO      [instagram/nakshiq] ✅ Reel-map published · Outstand=vKYEg · Platform=18141751441512831
+2026-04-25 10:40:26  INFO      [facebook/Nakshiq] Publishing reel-map (state_heatmap)...
+2026-04-25 10:40:29  INFO      [facebook/Nakshiq] Outstand accepted (post_id=Q6GIy), confirming...
+2026-04-25 10:40:40  INFO      [facebook/Nakshiq] ✅ Reel-map published · Outstand=Q6GIy · Platform=1641666653747723
+2026-04-25 10:40:40  INFO      Theme tracker updated: format=state_heatmap, slug=hp
+2026-04-25 10:40:40  INFO      State saved. Reel-map run complete.
+2026-04-25 10:40:40  INFO      ════════════════════════════════════════════════════════════

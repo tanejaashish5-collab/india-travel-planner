@@ -54,7 +54,9 @@
     "xBQy8_reel": "2026-04-24",
     "xBQy8": "2026-04-24",
     "5bWND_yt_short": "2026-04-25",
-    "5bWND_yt_short_count": 1
+    "5bWND_yt_short_count": 1,
+    "m8EAd_reel_map": "2026-04-25",
+    "PdMu0_reel_map": "2026-04-25"
   },
   "last_sync": "2026-04-25T06:51:18.361782+00:00",
   "posted_destinations": [
@@ -714,6 +716,16 @@
     "collections": {
       "adrenaline-rush": [
         "2026-04-22"
+      ]
+    },
+    "reel_map_formats": {
+      "state_heatmap": [
+        "2026-04-25"
+      ]
+    },
+    "reel_map_states": {
+      "HP": [
+        "2026-04-25"
       ]
     }
   },
