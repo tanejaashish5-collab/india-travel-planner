@@ -1,571 +1,2927 @@
 {
-  "version": 6,
-  "total_images": 284,
-  "total_campaigns": 140,
+  "version": 7,
+  "total_images": 506,
+  "total_campaigns": 194,
+  "images": [
+    {
+      "file": "pomelli_12city_taxi_fare_map_1.png",
+      "campaign": "12city_taxi_fare_map"
+    },
+    {
+      "file": "pomelli_12city_taxi_fare_map_2.png",
+      "campaign": "12city_taxi_fare_map"
+    },
+    {
+      "file": "pomelli_12city_taxi_fare_map_3.png",
+      "campaign": "12city_taxi_fare_map"
+    },
+    {
+      "file": "pomelli_12city_taxi_fare_map_4.png",
+      "campaign": "12city_taxi_fare_map"
+    },
+    {
+      "file": "pomelli_12months_scores_1.png",
+      "campaign": "12months_scores"
+    },
+    {
+      "file": "pomelli_17000ft_reality_check.png",
+      "campaign": "17000ft_reality_check"
+    },
+    {
+      "file": "pomelli_2000_palace_vs_closet_1.png",
+      "campaign": "2000_palace_vs_closet"
+    },
+    {
+      "file": "pomelli_2000_palace_vs_closet_2.png",
+      "campaign": "2000_palace_vs_closet"
+    },
+    {
+      "file": "pomelli_2000_palace_vs_closet_3.png",
+      "campaign": "2000_palace_vs_closet"
+    },
+    {
+      "file": "pomelli_2000_palace_vs_closet_4.png",
+      "campaign": "2000_palace_vs_closet"
+    },
+    {
+      "file": "pomelli_2000_palace_vs_closet_5.png",
+      "campaign": "2000_palace_vs_closet"
+    },
+    {
+      "file": "pomelli_2000_palace_vs_closet_6.png",
+      "campaign": "2000_palace_vs_closet"
+    },
+    {
+      "file": "pomelli_2000_palace_vs_closet_7.png",
+      "campaign": "2000_palace_vs_closet"
+    },
+    {
+      "file": "pomelli_2000_stay_quality_1.png",
+      "campaign": "2000_stay_quality"
+    },
+    {
+      "file": "pomelli_2000_stay_quality_2.png",
+      "campaign": "2000_stay_quality"
+    },
+    {
+      "file": "pomelli_2000_stay_quality_3.png",
+      "campaign": "2000_stay_quality"
+    },
+    {
+      "file": "pomelli_2000_stay_quality_4.png",
+      "campaign": "2000_stay_quality"
+    },
+    {
+      "file": "pomelli_2000_stay_quality_index_1.png",
+      "campaign": "2000_stay_quality_index"
+    },
+    {
+      "file": "pomelli_2000_stay_quality_index_2.png",
+      "campaign": "2000_stay_quality_index"
+    },
+    {
+      "file": "pomelli_2000_stay_quality_index_3.png",
+      "campaign": "2000_stay_quality_index"
+    },
+    {
+      "file": "pomelli_40_free_lunch_1.png",
+      "campaign": "40_free_lunch"
+    },
+    {
+      "file": "pomelli_40_free_lunch_2.png",
+      "campaign": "40_free_lunch"
+    },
+    {
+      "file": "pomelli_40_free_lunch_3.png",
+      "campaign": "40_free_lunch"
+    },
+    {
+      "file": "pomelli_40_free_lunch_4.png",
+      "campaign": "40_free_lunch"
+    },
+    {
+      "file": "pomelli_45degree_safety_2.png",
+      "campaign": "45degree_safety"
+    },
+    {
+      "file": "pomelli_45degree_safety_3.png",
+      "campaign": "45degree_safety"
+    },
+    {
+      "file": "pomelli_45degree_safety_4.png",
+      "campaign": "45degree_safety"
+    },
+    {
+      "file": "pomelli_5factor_audit_1.png",
+      "campaign": "5factor_audit"
+    },
+    {
+      "file": "pomelli_5factor_audit_2.png",
+      "campaign": "5factor_audit"
+    },
+    {
+      "file": "pomelli_5factor_audit_3.png",
+      "campaign": "5factor_audit"
+    },
+    {
+      "file": "pomelli_5factor_audit_4.png",
+      "campaign": "5factor_audit"
+    },
+    {
+      "file": "pomelli_74routes_easy_extreme_1.png",
+      "campaign": "74routes_easy_extreme"
+    },
+    {
+      "file": "pomelli_74routes_easy_extreme_2.png",
+      "campaign": "74routes_easy_extreme"
+    },
+    {
+      "file": "pomelli_74routes_easy_extreme_3.png",
+      "campaign": "74routes_easy_extreme"
+    },
+    {
+      "file": "pomelli_74routes_easy_extreme_4.png",
+      "campaign": "74routes_easy_extreme"
+    },
+    {
+      "file": "pomelli_ajanta_accessibility_1.png",
+      "campaign": "ajanta_accessibility"
+    },
+    {
+      "file": "pomelli_ajanta_accessibility_2.png",
+      "campaign": "ajanta_accessibility"
+    },
+    {
+      "file": "pomelli_ajanta_accessibility_3.png",
+      "campaign": "ajanta_accessibility"
+    },
+    {
+      "file": "pomelli_ajanta_accessibility_4.png",
+      "campaign": "ajanta_accessibility"
+    },
+    {
+      "file": "pomelli_alleppey_license_1.png",
+      "campaign": "alleppey_license"
+    },
+    {
+      "file": "pomelli_alleppey_license_2.png",
+      "campaign": "alleppey_license"
+    },
+    {
+      "file": "pomelli_alleppey_license_3.png",
+      "campaign": "alleppey_license"
+    },
+    {
+      "file": "pomelli_alleppey_license_4.png",
+      "campaign": "alleppey_license"
+    },
+    {
+      "file": "pomelli_alleppey_license_audit_1.png",
+      "campaign": "alleppey_license_audit"
+    },
+    {
+      "file": "pomelli_alleppey_license_audit_2.png",
+      "campaign": "alleppey_license_audit"
+    },
+    {
+      "file": "pomelli_alleppey_license_audit_3.png",
+      "campaign": "alleppey_license_audit"
+    },
+    {
+      "file": "pomelli_alleppey_license_audit_4.png",
+      "campaign": "alleppey_license_audit"
+    },
+    {
+      "file": "pomelli_amritsar_4am_density_map_1.png",
+      "campaign": "amritsar_4am_density_map"
+    },
+    {
+      "file": "pomelli_amritsar_4am_density_map_2.png",
+      "campaign": "amritsar_4am_density_map"
+    },
+    {
+      "file": "pomelli_amritsar_4am_density_map_3.png",
+      "campaign": "amritsar_4am_density_map"
+    },
+    {
+      "file": "pomelli_amritsar_4am_density_map_4.png",
+      "campaign": "amritsar_4am_density_map"
+    },
+    {
+      "file": "pomelli_amritsar_density_1.png",
+      "campaign": "amritsar_density"
+    },
+    {
+      "file": "pomelli_ams_reality_check.png",
+      "campaign": "ams_reality_check"
+    },
+    {
+      "file": "pomelli_araku_valley_1.png",
+      "campaign": "araku_valley"
+    },
+    {
+      "file": "pomelli_araku_valley_2.png",
+      "campaign": "araku_valley"
+    },
+    {
+      "file": "pomelli_araku_valley_3.png",
+      "campaign": "araku_valley"
+    },
+    {
+      "file": "pomelli_araku_valley_4.png",
+      "campaign": "araku_valley"
+    },
+    {
+      "file": "pomelli_assam_rhino_1.png",
+      "campaign": "assam_rhino"
+    },
+    {
+      "file": "pomelli_atm_desert_starts_here_1.png",
+      "campaign": "atm_desert_starts_here"
+    },
+    {
+      "file": "pomelli_atm_desert_starts_here_2.png",
+      "campaign": "atm_desert_starts_here"
+    },
+    {
+      "file": "pomelli_atm_desert_starts_here_3.png",
+      "campaign": "atm_desert_starts_here"
+    },
+    {
+      "file": "pomelli_atm_desert_starts_here_4.png",
+      "campaign": "atm_desert_starts_here"
+    },
+    {
+      "file": "pomelli_atm_desert_starts_here_5.png",
+      "campaign": "atm_desert_starts_here"
+    },
+    {
+      "file": "pomelli_atm_desert_starts_here_6.png",
+      "campaign": "atm_desert_starts_here"
+    },
+    {
+      "file": "pomelli_atm_desert_starts_here_7.png",
+      "campaign": "atm_desert_starts_here"
+    },
+    {
+      "file": "pomelli_aug_road_stability_1.png",
+      "campaign": "aug_road_stability"
+    },
+    {
+      "file": "pomelli_aug_road_stability_2.png",
+      "campaign": "aug_road_stability"
+    },
+    {
+      "file": "pomelli_aug_road_stability_3.png",
+      "campaign": "aug_road_stability"
+    },
+    {
+      "file": "pomelli_aug_road_stability_4.png",
+      "campaign": "aug_road_stability"
+    },
+    {
+      "file": "pomelli_backwater_infrastructure_report.png",
+      "campaign": "backwater_infrastructure_report"
+    },
+    {
+      "file": "pomelli_bandipur_safari_1.png",
+      "campaign": "bandipur_safari"
+    },
+    {
+      "file": "pomelli_bandipur_safari_2.png",
+      "campaign": "bandipur_safari"
+    },
+    {
+      "file": "pomelli_bandipur_safari_3.png",
+      "campaign": "bandipur_safari"
+    },
+    {
+      "file": "pomelli_bandipur_safari_4.png",
+      "campaign": "bandipur_safari"
+    },
+    {
+      "file": "pomelli_bandipur_safari_license_1.png",
+      "campaign": "bandipur_safari_license"
+    },
+    {
+      "file": "pomelli_bandipur_safari_license_2.png",
+      "campaign": "bandipur_safari_license"
+    },
+    {
+      "file": "pomelli_bandipur_safari_license_3.png",
+      "campaign": "bandipur_safari_license"
+    },
+    {
+      "file": "pomelli_bandipur_safari_license_4.png",
+      "campaign": "bandipur_safari_license"
+    },
+    {
+      "file": "pomelli_bastar_emergency_1.png",
+      "campaign": "bastar_emergency"
+    },
+    {
+      "file": "pomelli_bastar_emergency_2.png",
+      "campaign": "bastar_emergency"
+    },
+    {
+      "file": "pomelli_bastar_emergency_3.png",
+      "campaign": "bastar_emergency"
+    },
+    {
+      "file": "pomelli_bastar_emergency_4.png",
+      "campaign": "bastar_emergency"
+    },
+    {
+      "file": "pomelli_bastar_infra_1.png",
+      "campaign": "bastar_infra"
+    },
+    {
+      "file": "pomelli_bastar_infra_2.png",
+      "campaign": "bastar_infra"
+    },
+    {
+      "file": "pomelli_bastar_infra_3.png",
+      "campaign": "bastar_infra"
+    },
+    {
+      "file": "pomelli_bastar_infra_4.png",
+      "campaign": "bastar_infra"
+    },
+    {
+      "file": "pomelli_beyond_filter_lethal_heat.png",
+      "campaign": "beyond_filter_lethal_heat"
+    },
+    {
+      "file": "pomelli_bihar_flood_route_1.png",
+      "campaign": "bihar_flood_route"
+    },
+    {
+      "file": "pomelli_bihar_transit_1.png",
+      "campaign": "bihar_transit"
+    },
+    {
+      "file": "pomelli_bihar_transit_2.png",
+      "campaign": "bihar_transit"
+    },
+    {
+      "file": "pomelli_bihar_transit_3.png",
+      "campaign": "bihar_transit"
+    },
+    {
+      "file": "pomelli_bihar_transit_4.png",
+      "campaign": "bihar_transit"
+    },
+    {
+      "file": "pomelli_brahmaputra_safely_1.png",
+      "campaign": "brahmaputra_safely"
+    },
+    {
+      "file": "pomelli_brahmaputra_safely_2.png",
+      "campaign": "brahmaputra_safely"
+    },
+    {
+      "file": "pomelli_brahmaputra_safely_3.png",
+      "campaign": "brahmaputra_safely"
+    },
+    {
+      "file": "pomelli_brahmaputra_safely_4.png",
+      "campaign": "brahmaputra_safely"
+    },
+    {
+      "file": "pomelli_chhattisgarh_wild_1.png",
+      "campaign": "chhattisgarh_wild"
+    },
+    {
+      "file": "pomelli_chhattisgarh_wild_3.png",
+      "campaign": "chhattisgarh_wild"
+    },
+    {
+      "file": "pomelli_chhattisgarh_wild_4.png",
+      "campaign": "chhattisgarh_wild"
+    },
+    {
+      "file": "pomelli_chilika_audit_1.png",
+      "campaign": "chilika_audit"
+    },
+    {
+      "file": "pomelli_chilika_audit_2.png",
+      "campaign": "chilika_audit"
+    },
+    {
+      "file": "pomelli_chilika_audit_4.png",
+      "campaign": "chilika_audit"
+    },
+    {
+      "file": "pomelli_chilika_boat_audit_1.png",
+      "campaign": "chilika_boat_audit"
+    },
+    {
+      "file": "pomelli_chilika_boat_audit_2.png",
+      "campaign": "chilika_boat_audit"
+    },
+    {
+      "file": "pomelli_chilika_boat_audit_3.png",
+      "campaign": "chilika_boat_audit"
+    },
+    {
+      "file": "pomelli_chilika_boat_audit_4.png",
+      "campaign": "chilika_boat_audit"
+    },
+    {
+      "file": "pomelli_chilika_boat_license_audit_1.png",
+      "campaign": "chilika_boat_license_audit"
+    },
+    {
+      "file": "pomelli_chilika_boat_license_audit_2.png",
+      "campaign": "chilika_boat_license_audit"
+    },
+    {
+      "file": "pomelli_chilika_boat_license_audit_3.png",
+      "campaign": "chilika_boat_license_audit"
+    },
+    {
+      "file": "pomelli_coastal_erosion_data.png",
+      "campaign": "coastal_erosion_data"
+    },
+    {
+      "file": "pomelli_creative_image_1_1_0420.png",
+      "campaign": "creative_image_1_1"
+    },
+    {
+      "file": "pomelli_dal_lake_bacteria_count_1.png",
+      "campaign": "dal_lake_bacteria_count"
+    },
+    {
+      "file": "pomelli_dal_lake_bacteria_count_2.png",
+      "campaign": "dal_lake_bacteria_count"
+    },
+    {
+      "file": "pomelli_dal_lake_bacteria_count_3.png",
+      "campaign": "dal_lake_bacteria_count"
+    },
+    {
+      "file": "pomelli_dal_lake_bacteria_count_4.png",
+      "campaign": "dal_lake_bacteria_count"
+    },
+    {
+      "file": "pomelli_dangerous_vs_overhyped.png",
+      "campaign": "dangerous_vs_overhyped"
+    },
+    {
+      "file": "pomelli_dassam_falls_safety_1.png",
+      "campaign": "dassam_falls_safety"
+    },
+    {
+      "file": "pomelli_dassam_falls_safety_2.png",
+      "campaign": "dassam_falls_safety"
+    },
+    {
+      "file": "pomelli_dassam_falls_safety_3.png",
+      "campaign": "dassam_falls_safety"
+    },
+    {
+      "file": "pomelli_dassam_falls_safety_4.png",
+      "campaign": "dassam_falls_safety"
+    },
+    {
+      "file": "pomelli_data_over_hype_1.png",
+      "campaign": "data_over_hype"
+    },
+    {
+      "file": "pomelli_data_over_hype_2.png",
+      "campaign": "data_over_hype"
+    },
+    {
+      "file": "pomelli_data_over_hype_3.png",
+      "campaign": "data_over_hype"
+    },
+    {
+      "file": "pomelli_data_over_hype_4.png",
+      "campaign": "data_over_hype"
+    },
+    {
+      "file": "pomelli_delhi_fake_guides_1.png",
+      "campaign": "delhi_fake_guides"
+    },
+    {
+      "file": "pomelli_delhi_fake_guides_2.png",
+      "campaign": "delhi_fake_guides"
+    },
+    {
+      "file": "pomelli_delhi_fake_guides_3.png",
+      "campaign": "delhi_fake_guides"
+    },
+    {
+      "file": "pomelli_delhi_fake_guides_4.png",
+      "campaign": "delhi_fake_guides"
+    },
+    {
+      "file": "pomelli_deoghar_crowds_1.png",
+      "campaign": "deoghar_crowds"
+    },
+    {
+      "file": "pomelli_deoghar_crowds_2.png",
+      "campaign": "deoghar_crowds"
+    },
+    {
+      "file": "pomelli_deoghar_crowds_3.png",
+      "campaign": "deoghar_crowds"
+    },
+    {
+      "file": "pomelli_deoghar_crowds_4.png",
+      "campaign": "deoghar_crowds"
+    },
+    {
+      "file": "pomelli_dwarka_12operator_audit_1.png",
+      "campaign": "dwarka_12operator_audit"
+    },
+    {
+      "file": "pomelli_dwarka_12operator_audit_2.png",
+      "campaign": "dwarka_12operator_audit"
+    },
+    {
+      "file": "pomelli_dwarka_12operator_audit_3.png",
+      "campaign": "dwarka_12operator_audit"
+    },
+    {
+      "file": "pomelli_dzukou_valley_intel.png",
+      "campaign": "dzukou_valley_intel"
+    },
+    {
+      "file": "pomelli_eastern_ghats_1.png",
+      "campaign": "eastern_ghats"
+    },
+    {
+      "file": "pomelli_fail_to_acclimatize.png",
+      "campaign": "fail_to_acclimatize"
+    },
+    {
+      "file": "pomelli_ghats_lack_lighting.png",
+      "campaign": "ghats_lack_lighting"
+    },
+    {
+      "file": "pomelli_goa_bacteria_map_1.png",
+      "campaign": "goa_bacteria_map"
+    },
+    {
+      "file": "pomelli_goa_bacteria_map_2.png",
+      "campaign": "goa_bacteria_map"
+    },
+    {
+      "file": "pomelli_goa_bacteria_map_3.png",
+      "campaign": "goa_bacteria_map"
+    },
+    {
+      "file": "pomelli_goa_bacteria_map_4.png",
+      "campaign": "goa_bacteria_map"
+    },
+    {
+      "file": "pomelli_goa_beach_audit.png",
+      "campaign": "goa_beach_audit"
+    },
+    {
+      "file": "pomelli_goa_beach_shack_audit_1.png",
+      "campaign": "goa_beach_shack_audit"
+    },
+    {
+      "file": "pomelli_goa_beach_shack_audit_2.png",
+      "campaign": "goa_beach_shack_audit"
+    },
+    {
+      "file": "pomelli_goa_beach_shack_audit_3.png",
+      "campaign": "goa_beach_shack_audit"
+    },
+    {
+      "file": "pomelli_goa_crowd_density_1.png",
+      "campaign": "goa_crowd_density"
+    },
+    {
+      "file": "pomelli_gokarna_riptides_1.png",
+      "campaign": "gokarna_riptides"
+    },
+    {
+      "file": "pomelli_gokarna_riptides_2.png",
+      "campaign": "gokarna_riptides"
+    },
+    {
+      "file": "pomelli_gokarna_riptides_3.png",
+      "campaign": "gokarna_riptides"
+    },
+    {
+      "file": "pomelli_gokarna_riptides_4.png",
+      "campaign": "gokarna_riptides"
+    },
+    {
+      "file": "pomelli_gujarat_coast_safe_stressed_1.png",
+      "campaign": "gujarat_coast_safe_stressed"
+    },
+    {
+      "file": "pomelli_gujarat_coast_safe_stressed_2.png",
+      "campaign": "gujarat_coast_safe_stressed"
+    },
+    {
+      "file": "pomelli_gujarat_coast_safe_stressed_3.png",
+      "campaign": "gujarat_coast_safe_stressed"
+    },
+    {
+      "file": "pomelli_gujarat_coast_safe_stressed_4.png",
+      "campaign": "gujarat_coast_safe_stressed"
+    },
+    {
+      "file": "pomelli_heatwaves_escape_1.png",
+      "campaign": "heatwaves_escape"
+    },
+    {
+      "file": "pomelli_heatwaves_infrastructure_3.png",
+      "campaign": "heatwaves_infrastructure"
+    },
+    {
+      "file": "pomelli_heatwaves_medical_2.png",
+      "campaign": "heatwaves_medical"
+    },
+    {
+      "file": "pomelli_high_altitude_havens.png",
+      "campaign": "high_altitude_havens"
+    },
+    {
+      "file": "pomelli_high_altitude_medical_1.png",
+      "campaign": "high_altitude_medical"
+    },
+    {
+      "file": "pomelli_high_altitude_medical_2.png",
+      "campaign": "high_altitude_medical"
+    },
+    {
+      "file": "pomelli_high_altitude_medical_3.png",
+      "campaign": "high_altitude_medical"
+    },
+    {
+      "file": "pomelli_high_altitude_medical_4.png",
+      "campaign": "high_altitude_medical"
+    },
+    {
+      "file": "pomelli_high_altitude_medical_gap_1.png",
+      "campaign": "high_altitude_medical_gap"
+    },
+    {
+      "file": "pomelli_high_altitude_medical_gap_2.png",
+      "campaign": "high_altitude_medical_gap"
+    },
+    {
+      "file": "pomelli_high_altitude_medical_gap_3.png",
+      "campaign": "high_altitude_medical_gap"
+    },
+    {
+      "file": "pomelli_high_altitude_medical_gap_4.png",
+      "campaign": "high_altitude_medical_gap"
+    },
+    {
+      "file": "pomelli_himachal_carrier_safety_rankings.png",
+      "campaign": "himachal_carrier_safety_rankings"
+    },
+    {
+      "file": "pomelli_himachal_hp_bus_audit.png",
+      "campaign": "himachal_hp_bus_audit"
+    },
+    {
+      "file": "pomelli_himachal_landslide_risk_mapped.png",
+      "campaign": "himachal_landslide_risk_mapped"
+    },
+    {
+      "file": "pomelli_himachal_manali_audit_1.png",
+      "campaign": "himachal_manali_audit"
+    },
+    {
+      "file": "pomelli_himachal_manali_audit_2.png",
+      "campaign": "himachal_manali_audit"
+    },
+    {
+      "file": "pomelli_himachal_manali_audit_3.png",
+      "campaign": "himachal_manali_audit"
+    },
+    {
+      "file": "pomelli_himachal_manali_audit_4.png",
+      "campaign": "himachal_manali_audit"
+    },
+    {
+      "file": "pomelli_himachal_roads_1.png",
+      "campaign": "himachal_roads"
+    },
+    {
+      "file": "pomelli_himachal_roads_2.png",
+      "campaign": "himachal_roads"
+    },
+    {
+      "file": "pomelli_himachal_roads_3.png",
+      "campaign": "himachal_roads"
+    },
+    {
+      "file": "pomelli_himachal_verified_facts_only.png",
+      "campaign": "himachal_verified_facts_only"
+    },
+    {
+      "file": "pomelli_houseboat_safety_1.png",
+      "campaign": "houseboat_safety"
+    },
+    {
+      "file": "pomelli_houseboat_safety_2.png",
+      "campaign": "houseboat_safety"
+    },
+    {
+      "file": "pomelli_houseboat_safety_3.png",
+      "campaign": "houseboat_safety"
+    },
+    {
+      "file": "pomelli_houseboat_safety_4.png",
+      "campaign": "houseboat_safety"
+    },
+    {
+      "file": "pomelli_india_summer_data_over_hype.png",
+      "campaign": "india_summer_data_over_hype"
+    },
+    {
+      "file": "pomelli_infrastructure_gaps_exposed.png",
+      "campaign": "infrastructure_gaps_exposed"
+    },
+    {
+      "file": "pomelli_jagdalpur_homestay_1.png",
+      "campaign": "jagdalpur_homestay"
+    },
+    {
+      "file": "pomelli_jagdalpur_homestay_2.png",
+      "campaign": "jagdalpur_homestay"
+    },
+    {
+      "file": "pomelli_jagdalpur_homestay_3.png",
+      "campaign": "jagdalpur_homestay"
+    },
+    {
+      "file": "pomelli_jagdalpur_homestay_4.png",
+      "campaign": "jagdalpur_homestay"
+    },
+    {
+      "file": "pomelli_jagdalpur_hygiene_1.png",
+      "campaign": "jagdalpur_hygiene"
+    },
+    {
+      "file": "pomelli_jagdalpur_hygiene_2.png",
+      "campaign": "jagdalpur_hygiene"
+    },
+    {
+      "file": "pomelli_jagdalpur_hygiene_3.png",
+      "campaign": "jagdalpur_hygiene"
+    },
+    {
+      "file": "pomelli_jagdalpur_hygiene_4.png",
+      "campaign": "jagdalpur_hygiene"
+    },
+    {
+      "file": "pomelli_jaisalmer_desert_trap.png",
+      "campaign": "jaisalmer_desert_trap"
+    },
+    {
+      "file": "pomelli_jharkhand_monsoon_road_1.png",
+      "campaign": "jharkhand_monsoon_road"
+    },
+    {
+      "file": "pomelli_jharkhand_monsoon_road_2.png",
+      "campaign": "jharkhand_monsoon_road"
+    },
+    {
+      "file": "pomelli_jharkhand_monsoon_road_3.png",
+      "campaign": "jharkhand_monsoon_road"
+    },
+    {
+      "file": "pomelli_jharkhand_monsoon_road_4.png",
+      "campaign": "jharkhand_monsoon_road"
+    },
+    {
+      "file": "pomelli_jharkhand_transport_1.png",
+      "campaign": "jharkhand_transport"
+    },
+    {
+      "file": "pomelli_jharkhand_transport_2.png",
+      "campaign": "jharkhand_transport"
+    },
+    {
+      "file": "pomelli_jharkhand_transport_4.png",
+      "campaign": "jharkhand_transport"
+    },
+    {
+      "file": "pomelli_jodhpur_crowd_heatmaps.png",
+      "campaign": "jodhpur_crowd_heatmaps"
+    },
+    {
+      "file": "pomelli_july_flood_risk_1.png",
+      "campaign": "july_flood_risk"
+    },
+    {
+      "file": "pomelli_july_flood_risk_2.png",
+      "campaign": "july_flood_risk"
+    },
+    {
+      "file": "pomelli_july_flood_risk_3.png",
+      "campaign": "july_flood_risk"
+    },
+    {
+      "file": "pomelli_july_flood_risk_4.png",
+      "campaign": "july_flood_risk"
+    },
+    {
+      "file": "pomelli_june1st_safety_gap_1.png",
+      "campaign": "june1st_safety_gap"
+    },
+    {
+      "file": "pomelli_june1st_safety_gap_2.png",
+      "campaign": "june1st_safety_gap"
+    },
+    {
+      "file": "pomelli_june1st_safety_gap_3.png",
+      "campaign": "june1st_safety_gap"
+    },
+    {
+      "file": "pomelli_june_heat_trap.png",
+      "campaign": "june_heat_trap"
+    },
+    {
+      "file": "pomelli_june_safest_1.png",
+      "campaign": "june_safest"
+    },
+    {
+      "file": "pomelli_june_safest_2.png",
+      "campaign": "june_safest"
+    },
+    {
+      "file": "pomelli_june_safest_3.png",
+      "campaign": "june_safest"
+    },
+    {
+      "file": "pomelli_june_safest_4.png",
+      "campaign": "june_safest"
+    },
+    {
+      "file": "pomelli_karnataka_bandipur_safari.png",
+      "campaign": "karnataka_bandipur_safari"
+    },
+    {
+      "file": "pomelli_karnataka_coorg_homestay.png",
+      "campaign": "karnataka_coorg_homestay"
+    },
+    {
+      "file": "pomelli_karnataka_verify_operator.png",
+      "campaign": "karnataka_verify_operator"
+    },
+    {
+      "file": "pomelli_karnataka_western_ghats.png",
+      "campaign": "karnataka_western_ghats"
+    },
+    {
+      "file": "pomelli_kashmir_safety_1.png",
+      "campaign": "kashmir_safety"
+    },
+    {
+      "file": "pomelli_kashmir_safety_audit_1.png",
+      "campaign": "kashmir_safety_audit"
+    },
+    {
+      "file": "pomelli_kashmir_safety_audit_2.png",
+      "campaign": "kashmir_safety_audit"
+    },
+    {
+      "file": "pomelli_kashmir_safety_audit_3.png",
+      "campaign": "kashmir_safety_audit"
+    },
+    {
+      "file": "pomelli_kaziranga_safari_1.png",
+      "campaign": "kaziranga_safari"
+    },
+    {
+      "file": "pomelli_kedarnath_density_1.png",
+      "campaign": "kedarnath_density"
+    },
+    {
+      "file": "pomelli_kedarnath_density_2.png",
+      "campaign": "kedarnath_density"
+    },
+    {
+      "file": "pomelli_kedarnath_density_3.png",
+      "campaign": "kedarnath_density"
+    },
+    {
+      "file": "pomelli_kedarnath_density_4.png",
+      "campaign": "kedarnath_density"
+    },
+    {
+      "file": "pomelli_kedarnath_density_map_1.png",
+      "campaign": "kedarnath_density_map"
+    },
+    {
+      "file": "pomelli_kedarnath_density_map_2.png",
+      "campaign": "kedarnath_density_map"
+    },
+    {
+      "file": "pomelli_kedarnath_density_map_3.png",
+      "campaign": "kedarnath_density_map"
+    },
+    {
+      "file": "pomelli_kedarnath_density_map_4.png",
+      "campaign": "kedarnath_density_map"
+    },
+    {
+      "file": "pomelli_kerala_alleppey_houseboat_audit.png",
+      "campaign": "kerala_alleppey_houseboat_audit"
+    },
+    {
+      "file": "pomelli_kerala_alleppey_reality_check.png",
+      "campaign": "kerala_alleppey_reality_check"
+    },
+    {
+      "file": "pomelli_kerala_backwater_quality.png",
+      "campaign": "kerala_backwater_quality"
+    },
+    {
+      "file": "pomelli_kerala_hidden_costs.png",
+      "campaign": "kerala_hidden_costs"
+    },
+    {
+      "file": "pomelli_kerala_monsoons_hard_truths.png",
+      "campaign": "kerala_monsoons_hard_truths"
+    },
+    {
+      "file": "pomelli_kerala_sewage_zones_map.png",
+      "campaign": "kerala_sewage_zones_map"
+    },
+    {
+      "file": "pomelli_kerala_unlicensed_uninsured.png",
+      "campaign": "kerala_unlicensed_uninsured"
+    },
+    {
+      "file": "pomelli_kerala_zero_friction.png",
+      "campaign": "kerala_zero_friction"
+    },
+    {
+      "file": "pomelli_konark_mobility_audit_1.png",
+      "campaign": "konark_mobility_audit"
+    },
+    {
+      "file": "pomelli_konark_mobility_audit_2.png",
+      "campaign": "konark_mobility_audit"
+    },
+    {
+      "file": "pomelli_konark_mobility_audit_3.png",
+      "campaign": "konark_mobility_audit"
+    },
+    {
+      "file": "pomelli_konark_mobility_audit_4.png",
+      "campaign": "konark_mobility_audit"
+    },
+    {
+      "file": "pomelli_konkan_beaches_1.png",
+      "campaign": "konkan_beaches"
+    },
+    {
+      "file": "pomelli_konkan_beaches_2.png",
+      "campaign": "konkan_beaches"
+    },
+    {
+      "file": "pomelli_konkan_beaches_3.png",
+      "campaign": "konkan_beaches"
+    },
+    {
+      "file": "pomelli_konkan_beaches_4.png",
+      "campaign": "konkan_beaches"
+    },
+    {
+      "file": "pomelli_kutch_60km_medical_gap_1.png",
+      "campaign": "kutch_60km_medical_gap"
+    },
+    {
+      "file": "pomelli_kutch_60km_medical_gap_2.png",
+      "campaign": "kutch_60km_medical_gap"
+    },
+    {
+      "file": "pomelli_kutch_60km_medical_gap_3.png",
+      "campaign": "kutch_60km_medical_gap"
+    },
+    {
+      "file": "pomelli_kutch_60km_medical_gap_4.png",
+      "campaign": "kutch_60km_medical_gap"
+    },
+    {
+      "file": "pomelli_ladakh_june_risk_map.png",
+      "campaign": "ladakh_june_risk_map"
+    },
+    {
+      "file": "pomelli_lethal_riptide_zones.png",
+      "campaign": "lethal_riptide_zones"
+    },
+    {
+      "file": "pomelli_luxury_rail_amenity_gap_1.png",
+      "campaign": "luxury_rail_amenity_gap"
+    },
+    {
+      "file": "pomelli_luxury_rail_amenity_gap_2.png",
+      "campaign": "luxury_rail_amenity_gap"
+    },
+    {
+      "file": "pomelli_luxury_rail_amenity_gap_3.png",
+      "campaign": "luxury_rail_amenity_gap"
+    },
+    {
+      "file": "pomelli_manali_operator_1.png",
+      "campaign": "manali_operator"
+    },
+    {
+      "file": "pomelli_manali_operator_2.png",
+      "campaign": "manali_operator"
+    },
+    {
+      "file": "pomelli_manali_operator_3.png",
+      "campaign": "manali_operator"
+    },
+    {
+      "file": "pomelli_manali_operator_4.png",
+      "campaign": "manali_operator"
+    },
+    {
+      "file": "pomelli_manali_operator_audit_1.png",
+      "campaign": "manali_operator_audit"
+    },
+    {
+      "file": "pomelli_manali_operator_audit_2.png",
+      "campaign": "manali_operator_audit"
+    },
+    {
+      "file": "pomelli_manali_operator_audit_3.png",
+      "campaign": "manali_operator_audit"
+    },
+    {
+      "file": "pomelli_manali_operator_audit_4.png",
+      "campaign": "manali_operator_audit"
+    },
+    {
+      "file": "pomelli_mangalore_surf_1.png",
+      "campaign": "mangalore_surf"
+    },
+    {
+      "file": "pomelli_mangalore_surf_2.png",
+      "campaign": "mangalore_surf"
+    },
+    {
+      "file": "pomelli_mangalore_surf_3.png",
+      "campaign": "mangalore_surf"
+    },
+    {
+      "file": "pomelli_mangalore_surf_4.png",
+      "campaign": "mangalore_surf"
+    },
+    {
+      "file": "pomelli_may_heat_trap_1.png",
+      "campaign": "may_heat_trap"
+    },
+    {
+      "file": "pomelli_may_heat_trap_2.png",
+      "campaign": "may_heat_trap"
+    },
+    {
+      "file": "pomelli_may_heat_trap_3.png",
+      "campaign": "may_heat_trap"
+    },
+    {
+      "file": "pomelli_may_heat_trap_4.png",
+      "campaign": "may_heat_trap"
+    },
+    {
+      "file": "pomelli_may_suitability_audit_1.png",
+      "campaign": "may_suitability_audit"
+    },
+    {
+      "file": "pomelli_may_suitability_audit_2.png",
+      "campaign": "may_suitability_audit"
+    },
+    {
+      "file": "pomelli_may_suitability_audit_3.png",
+      "campaign": "may_suitability_audit"
+    },
+    {
+      "file": "pomelli_may_suitability_audit_4.png",
+      "campaign": "may_suitability_audit"
+    },
+    {
+      "file": "pomelli_may_travel_math_solved.png",
+      "campaign": "may_travel_math_solved"
+    },
+    {
+      "file": "pomelli_medical_response_maps_1.png",
+      "campaign": "medical_response_maps"
+    },
+    {
+      "file": "pomelli_medical_response_maps_2.png",
+      "campaign": "medical_response_maps"
+    },
+    {
+      "file": "pomelli_medical_response_maps_3.png",
+      "campaign": "medical_response_maps"
+    },
+    {
+      "file": "pomelli_medical_response_maps_4.png",
+      "campaign": "medical_response_maps"
+    },
+    {
+      "file": "pomelli_meghalaya_bridge_1.png",
+      "campaign": "meghalaya_bridge"
+    },
+    {
+      "file": "pomelli_meghalaya_bridge_2.png",
+      "campaign": "meghalaya_bridge"
+    },
+    {
+      "file": "pomelli_meghalaya_bridge_3.png",
+      "campaign": "meghalaya_bridge"
+    },
+    {
+      "file": "pomelli_meghalaya_bridge_4.png",
+      "campaign": "meghalaya_bridge"
+    },
+    {
+      "file": "pomelli_meghalaya_monsoon_1.png",
+      "campaign": "meghalaya_monsoon"
+    },
+    {
+      "file": "pomelli_meghalaya_monsoon_2.png",
+      "campaign": "meghalaya_monsoon"
+    },
+    {
+      "file": "pomelli_meghalaya_monsoon_3.png",
+      "campaign": "meghalaya_monsoon"
+    },
+    {
+      "file": "pomelli_meghalaya_monsoon_4.png",
+      "campaign": "meghalaya_monsoon"
+    },
+    {
+      "file": "pomelli_meghalaya_not_just_waterfalls.png",
+      "campaign": "meghalaya_not_just_waterfalls"
+    },
+    {
+      "file": "pomelli_meghalaya_not_just_waterfalls_1.png",
+      "campaign": "meghalaya_not_just_waterfalls"
+    },
+    {
+      "file": "pomelli_meghalaya_not_just_waterfalls_2.png",
+      "campaign": "meghalaya_not_just_waterfalls"
+    },
+    {
+      "file": "pomelli_meghalaya_not_just_waterfalls_3.png",
+      "campaign": "meghalaya_not_just_waterfalls"
+    },
+    {
+      "file": "pomelli_meghalaya_not_just_waterfalls_4.png",
+      "campaign": "meghalaya_not_just_waterfalls"
+    },
+    {
+      "file": "pomelli_meghalaya_not_just_waterfalls_5.png",
+      "campaign": "meghalaya_not_just_waterfalls"
+    },
+    {
+      "file": "pomelli_meghalaya_not_just_waterfalls_6.png",
+      "campaign": "meghalaya_not_just_waterfalls"
+    },
+    {
+      "file": "pomelli_meghalaya_not_just_waterfalls_7.png",
+      "campaign": "meghalaya_not_just_waterfalls"
+    },
+    {
+      "file": "pomelli_meghalaya_root_bridge.png",
+      "campaign": "meghalaya_root_bridge"
+    },
+    {
+      "file": "pomelli_midnight_safety_scores.png",
+      "campaign": "midnight_safety_scores"
+    },
+    {
+      "file": "pomelli_monsoon_highway_risk_1.png",
+      "campaign": "monsoon_highway_risk"
+    },
+    {
+      "file": "pomelli_monsoon_highway_risk_2.png",
+      "campaign": "monsoon_highway_risk"
+    },
+    {
+      "file": "pomelli_monsoon_highway_risk_3.png",
+      "campaign": "monsoon_highway_risk"
+    },
+    {
+      "file": "pomelli_monsoon_highway_risk_4.png",
+      "campaign": "monsoon_highway_risk"
+    },
+    {
+      "file": "pomelli_monsoon_master_1.png",
+      "campaign": "monsoon_master"
+    },
+    {
+      "file": "pomelli_monsoon_master_2.png",
+      "campaign": "monsoon_master"
+    },
+    {
+      "file": "pomelli_monsoon_master_3.png",
+      "campaign": "monsoon_master"
+    },
+    {
+      "file": "pomelli_mp_pachmarhi_trekking_safety.png",
+      "campaign": "mp_pachmarhi_trekking_safety"
+    },
+    {
+      "file": "pomelli_mp_safari_1.png",
+      "campaign": "mp_safari"
+    },
+    {
+      "file": "pomelli_mp_safari_2.png",
+      "campaign": "mp_safari"
+    },
+    {
+      "file": "pomelli_mp_safari_3.png",
+      "campaign": "mp_safari"
+    },
+    {
+      "file": "pomelli_mp_safari_4.png",
+      "campaign": "mp_safari"
+    },
+    {
+      "file": "pomelli_mp_safari_license_audit.png",
+      "campaign": "mp_safari_license_audit"
+    },
+    {
+      "file": "pomelli_mp_safari_license_audit_1.png",
+      "campaign": "mp_safari_license_audit"
+    },
+    {
+      "file": "pomelli_mp_safari_license_audit_2.png",
+      "campaign": "mp_safari_license_audit"
+    },
+    {
+      "file": "pomelli_mp_safari_license_audit_3.png",
+      "campaign": "mp_safari_license_audit"
+    },
+    {
+      "file": "pomelli_mp_safari_license_audit_4.png",
+      "campaign": "mp_safari_license_audit"
+    },
+    {
+      "file": "pomelli_mp_verified_safari_operators.png",
+      "campaign": "mp_verified_safari_operators"
+    },
+    {
+      "file": "pomelli_murdeshwar_cliff_1.png",
+      "campaign": "murdeshwar_cliff"
+    },
+    {
+      "file": "pomelli_murdeshwar_cliff_2.png",
+      "campaign": "murdeshwar_cliff"
+    },
+    {
+      "file": "pomelli_murdeshwar_cliff_3.png",
+      "campaign": "murdeshwar_cliff"
+    },
+    {
+      "file": "pomelli_murdeshwar_cliff_4.png",
+      "campaign": "murdeshwar_cliff"
+    },
+    {
+      "file": "pomelli_nagaland_homestay_1.png",
+      "campaign": "nagaland_homestay"
+    },
+    {
+      "file": "pomelli_nagaland_homestay_2.png",
+      "campaign": "nagaland_homestay"
+    },
+    {
+      "file": "pomelli_nagaland_homestay_3.png",
+      "campaign": "nagaland_homestay"
+    },
+    {
+      "file": "pomelli_nagaland_homestay_4.png",
+      "campaign": "nagaland_homestay"
+    },
+    {
+      "file": "pomelli_navigate_old_city_safely.png",
+      "campaign": "navigate_old_city_safely"
+    },
+    {
+      "file": "pomelli_nh44_waterlogging_1.png",
+      "campaign": "nh44_waterlogging"
+    },
+    {
+      "file": "pomelli_night_boat_safety_audit.png",
+      "campaign": "night_boat_safety_audit"
+    },
+    {
+      "file": "pomelli_no_infrastructure_guesswork.png",
+      "campaign": "no_infrastructure_guesswork"
+    },
+    {
+      "file": "pomelli_northeast_india_decoded_01.png",
+      "campaign": "northeast_india_decoded"
+    },
+    {
+      "file": "pomelli_northeast_infra_audit_1.png",
+      "campaign": "northeast_infra_audit"
+    },
+    {
+      "file": "pomelli_northeast_infra_audit_2.png",
+      "campaign": "northeast_infra_audit"
+    },
+    {
+      "file": "pomelli_northeast_infra_audit_3.png",
+      "campaign": "northeast_infra_audit"
+    },
+    {
+      "file": "pomelli_northeast_infra_audit_4.png",
+      "campaign": "northeast_infra_audit"
+    },
+    {
+      "file": "pomelli_northeast_infrastructure_audit_1.png",
+      "campaign": "northeast_infrastructure_audit"
+    },
+    {
+      "file": "pomelli_northeast_infrastructure_audit_2.png",
+      "campaign": "northeast_infrastructure_audit"
+    },
+    {
+      "file": "pomelli_northeast_infrastructure_audit_3.png",
+      "campaign": "northeast_infrastructure_audit"
+    },
+    {
+      "file": "pomelli_northeast_infrastructure_audit_4.png",
+      "campaign": "northeast_infrastructure_audit"
+    },
+    {
+      "file": "pomelli_northeast_kaziranga_safari_audit.png",
+      "campaign": "northeast_kaziranga_safari_audit"
+    },
+    {
+      "file": "pomelli_northeast_regional_reality_check.png",
+      "campaign": "northeast_regional_reality_check"
+    },
+    {
+      "file": "pomelli_northeast_reliable_rhino_sightings.png",
+      "campaign": "northeast_reliable_rhino_sightings"
+    },
+    {
+      "file": "pomelli_northeast_verified_operator_rankings.png",
+      "campaign": "northeast_verified_operator_rankings"
+    },
+    {
+      "file": "pomelli_odisha_chilika_boat_license_audit.png",
+      "campaign": "odisha_chilika_boat_license_audit"
+    },
+    {
+      "file": "pomelli_odisha_ethical_wildlife_watching.png",
+      "campaign": "odisha_ethical_wildlife_watching"
+    },
+    {
+      "file": "pomelli_odisha_verified_boat_permits.png",
+      "campaign": "odisha_verified_boat_permits"
+    },
+    {
+      "file": "pomelli_oxygen_gaps_17582ft_1.png",
+      "campaign": "oxygen_gaps_17582ft"
+    },
+    {
+      "file": "pomelli_oxygen_gaps_17582ft_2.png",
+      "campaign": "oxygen_gaps_17582ft"
+    },
+    {
+      "file": "pomelli_oxygen_gaps_17582ft_3.png",
+      "campaign": "oxygen_gaps_17582ft"
+    },
+    {
+      "file": "pomelli_oxygen_gaps_17582ft_4.png",
+      "campaign": "oxygen_gaps_17582ft"
+    },
+    {
+      "file": "pomelli_pahalgam_treks_1.png",
+      "campaign": "pahalgam_treks"
+    },
+    {
+      "file": "pomelli_pahalgam_treks_2.png",
+      "campaign": "pahalgam_treks"
+    },
+    {
+      "file": "pomelli_pahalgam_treks_3.png",
+      "campaign": "pahalgam_treks"
+    },
+    {
+      "file": "pomelli_pahalgam_treks_4.png",
+      "campaign": "pahalgam_treks"
+    },
+    {
+      "file": "pomelli_premonsoon_cooling_scores.png",
+      "campaign": "premonsoon_cooling_scores"
+    },
+    {
+      "file": "pomelli_punjab_amritsar_density.png",
+      "campaign": "punjab_amritsar_density"
+    },
+    {
+      "file": "pomelli_punjab_gate_logistics.png",
+      "campaign": "punjab_gate_logistics"
+    },
+    {
+      "file": "pomelli_punjab_golden_temple_crowds.png",
+      "campaign": "punjab_golden_temple_crowds"
+    },
+    {
+      "file": "pomelli_punjab_street_food_confidence.png",
+      "campaign": "punjab_street_food_confidence"
+    },
+    {
+      "file": "pomelli_puri_crush_data_1.png",
+      "campaign": "puri_crush_data"
+    },
+    {
+      "file": "pomelli_puri_crush_data_2.png",
+      "campaign": "puri_crush_data"
+    },
+    {
+      "file": "pomelli_puri_crush_data_3.png",
+      "campaign": "puri_crush_data"
+    },
+    {
+      "file": "pomelli_puri_crush_data_4.png",
+      "campaign": "puri_crush_data"
+    },
+    {
+      "file": "pomelli_pushkar_3x_markup_1.png",
+      "campaign": "pushkar_3x_markup"
+    },
+    {
+      "file": "pomelli_pushkar_3x_markup_2.png",
+      "campaign": "pushkar_3x_markup"
+    },
+    {
+      "file": "pomelli_pushkar_3x_markup_3.png",
+      "campaign": "pushkar_3x_markup"
+    },
+    {
+      "file": "pomelli_pushkar_3x_markup_4.png",
+      "campaign": "pushkar_3x_markup"
+    },
+    {
+      "file": "pomelli_rain_vs_road_june_map_1.png",
+      "campaign": "rain_vs_road_june_map"
+    },
+    {
+      "file": "pomelli_rain_vs_road_june_map_2.png",
+      "campaign": "rain_vs_road_june_map"
+    },
+    {
+      "file": "pomelli_rajasthan_45c_1.png",
+      "campaign": "rajasthan_45c"
+    },
+    {
+      "file": "pomelli_rajasthan_45c_2.png",
+      "campaign": "rajasthan_45c"
+    },
+    {
+      "file": "pomelli_rajasthan_45c_3.png",
+      "campaign": "rajasthan_45c"
+    },
+    {
+      "file": "pomelli_rajasthan_45c_4.png",
+      "campaign": "rajasthan_45c"
+    },
+    {
+      "file": "pomelli_rajasthan_48c_tomorrow.png",
+      "campaign": "rajasthan_48c_tomorrow"
+    },
+    {
+      "file": "pomelli_rajasthan_48c_tomorrow_1.png",
+      "campaign": "rajasthan_48c_tomorrow"
+    },
+    {
+      "file": "pomelli_rajasthan_48c_tomorrow_2.png",
+      "campaign": "rajasthan_48c_tomorrow"
+    },
+    {
+      "file": "pomelli_rajasthan_48c_tomorrow_3.png",
+      "campaign": "rajasthan_48c_tomorrow"
+    },
+    {
+      "file": "pomelli_rajasthan_48c_tomorrow_4.png",
+      "campaign": "rajasthan_48c_tomorrow"
+    },
+    {
+      "file": "pomelli_rajasthan_heritage_pricing_1.png",
+      "campaign": "rajasthan_heritage_pricing"
+    },
+    {
+      "file": "pomelli_rajasthan_hidden_palace_costs_1.png",
+      "campaign": "rajasthan_hidden_palace_costs"
+    },
+    {
+      "file": "pomelli_rajasthan_hidden_palace_costs_2.png",
+      "campaign": "rajasthan_hidden_palace_costs"
+    },
+    {
+      "file": "pomelli_rajasthan_hidden_palace_costs_3.png",
+      "campaign": "rajasthan_hidden_palace_costs"
+    },
+    {
+      "file": "pomelli_rajasthan_hidden_palace_costs_4.png",
+      "campaign": "rajasthan_hidden_palace_costs"
+    },
+    {
+      "file": "pomelli_rajasthan_palace_costs_1.png",
+      "campaign": "rajasthan_palace_costs"
+    },
+    {
+      "file": "pomelli_rajasthan_palace_costs_2.png",
+      "campaign": "rajasthan_palace_costs"
+    },
+    {
+      "file": "pomelli_rajasthan_palace_costs_3.png",
+      "campaign": "rajasthan_palace_costs"
+    },
+    {
+      "file": "pomelli_rajasthan_palace_costs_4.png",
+      "campaign": "rajasthan_palace_costs"
+    },
+    {
+      "file": "pomelli_rajasthan_renovation_tax_1.png",
+      "campaign": "rajasthan_renovation_tax"
+    },
+    {
+      "file": "pomelli_rajasthan_renovation_tax_2.png",
+      "campaign": "rajasthan_renovation_tax"
+    },
+    {
+      "file": "pomelli_rajasthan_renovation_tax_3.png",
+      "campaign": "rajasthan_renovation_tax"
+    },
+    {
+      "file": "pomelli_rajasthan_renovation_tax_4.png",
+      "campaign": "rajasthan_renovation_tax"
+    },
+    {
+      "file": "pomelli_rajasthan_safety_gap.png",
+      "campaign": "rajasthan_safety_gap"
+    },
+    {
+      "file": "pomelli_real_48_hour_rule.png",
+      "campaign": "real_48_hour_rule"
+    },
+    {
+      "file": "pomelli_rivers_rise_45_minutes_1.png",
+      "campaign": "rivers_rise_45_minutes"
+    },
+    {
+      "file": "pomelli_rivers_rise_45_minutes_2.png",
+      "campaign": "rivers_rise_45_minutes"
+    },
+    {
+      "file": "pomelli_rivers_rise_45_minutes_3.png",
+      "campaign": "rivers_rise_45_minutes"
+    },
+    {
+      "file": "pomelli_rivers_rise_45_minutes_4.png",
+      "campaign": "rivers_rise_45_minutes"
+    },
+    {
+      "file": "pomelli_rivers_rise_45_minutes_5.png",
+      "campaign": "rivers_rise_45_minutes"
+    },
+    {
+      "file": "pomelli_rivers_rise_45_minutes_6.png",
+      "campaign": "rivers_rise_45_minutes"
+    },
+    {
+      "file": "pomelli_rivers_rise_45_minutes_7.png",
+      "campaign": "rivers_rise_45_minutes"
+    },
+    {
+      "file": "pomelli_roads_disappear_overnight.png",
+      "campaign": "roads_disappear_overnight"
+    },
+    {
+      "file": "pomelli_safest_summer_1.png",
+      "campaign": "safest_summer"
+    },
+    {
+      "file": "pomelli_safest_summer_2.png",
+      "campaign": "safest_summer"
+    },
+    {
+      "file": "pomelli_safest_summer_3.png",
+      "campaign": "safest_summer"
+    },
+    {
+      "file": "pomelli_safest_summer_4.png",
+      "campaign": "safest_summer"
+    },
+    {
+      "file": "pomelli_safety_beyond_the_signal.png",
+      "campaign": "safety_beyond_the_signal"
+    },
+    {
+      "file": "pomelli_safety_first_intelligence.png",
+      "campaign": "safety_first_intelligence"
+    },
+    {
+      "file": "pomelli_self_drive_logic_1.png",
+      "campaign": "self_drive_logic"
+    },
+    {
+      "file": "pomelli_self_drive_logic_2.png",
+      "campaign": "self_drive_logic"
+    },
+    {
+      "file": "pomelli_self_drive_logic_3.png",
+      "campaign": "self_drive_logic"
+    },
+    {
+      "file": "pomelli_self_drive_logic_4.png",
+      "campaign": "self_drive_logic"
+    },
+    {
+      "file": "pomelli_sept_safe_destination_1.png",
+      "campaign": "sept_safe_destination"
+    },
+    {
+      "file": "pomelli_sept_safe_destination_2.png",
+      "campaign": "sept_safe_destination"
+    },
+    {
+      "file": "pomelli_sept_safe_destination_3.png",
+      "campaign": "sept_safe_destination"
+    },
+    {
+      "file": "pomelli_sept_safe_destination_4.png",
+      "campaign": "sept_safe_destination"
+    },
+    {
+      "file": "pomelli_shack_hygiene_failures.png",
+      "campaign": "shack_hygiene_failures"
+    },
+    {
+      "file": "pomelli_sikkim_logistics_1.png",
+      "campaign": "sikkim_logistics"
+    },
+    {
+      "file": "pomelli_sikkim_logistics_2.png",
+      "campaign": "sikkim_logistics"
+    },
+    {
+      "file": "pomelli_sikkim_logistics_3.png",
+      "campaign": "sikkim_logistics"
+    },
+    {
+      "file": "pomelli_sikkim_logistics_4.png",
+      "campaign": "sikkim_logistics"
+    },
+    {
+      "file": "pomelli_sikkim_monastery_1.png",
+      "campaign": "sikkim_monastery"
+    },
+    {
+      "file": "pomelli_sikkim_monastery_2.png",
+      "campaign": "sikkim_monastery"
+    },
+    {
+      "file": "pomelli_sikkim_monastery_3.png",
+      "campaign": "sikkim_monastery"
+    },
+    {
+      "file": "pomelli_sikkim_monastery_4.png",
+      "campaign": "sikkim_monastery"
+    },
+    {
+      "file": "pomelli_sikkim_road_hazards_1.png",
+      "campaign": "sikkim_road_hazards"
+    },
+    {
+      "file": "pomelli_sikkim_road_hazards_2.png",
+      "campaign": "sikkim_road_hazards"
+    },
+    {
+      "file": "pomelli_sikkim_road_hazards_3.png",
+      "campaign": "sikkim_road_hazards"
+    },
+    {
+      "file": "pomelli_sikkim_road_hazards_4.png",
+      "campaign": "sikkim_road_hazards"
+    },
+    {
+      "file": "pomelli_solitude_index_1.png",
+      "campaign": "solitude_index"
+    },
+    {
+      "file": "pomelli_solitude_index_2.png",
+      "campaign": "solitude_index"
+    },
+    {
+      "file": "pomelli_solitude_index_3.png",
+      "campaign": "solitude_index"
+    },
+    {
+      "file": "pomelli_solitude_index_4.png",
+      "campaign": "solitude_index"
+    },
+    {
+      "file": "pomelli_solo_safety_scorecard_1.png",
+      "campaign": "solo_safety_scorecard"
+    },
+    {
+      "file": "pomelli_solo_safety_scorecard_2.png",
+      "campaign": "solo_safety_scorecard"
+    },
+    {
+      "file": "pomelli_solo_safety_scorecard_3.png",
+      "campaign": "solo_safety_scorecard"
+    },
+    {
+      "file": "pomelli_solo_safety_scorecard_4.png",
+      "campaign": "solo_safety_scorecard"
+    },
+    {
+      "file": "pomelli_spiti_dead_spots_1.png",
+      "campaign": "spiti_dead_spots"
+    },
+    {
+      "file": "pomelli_spiti_dead_spots_2.png",
+      "campaign": "spiti_dead_spots"
+    },
+    {
+      "file": "pomelli_spiti_dead_spots_3.png",
+      "campaign": "spiti_dead_spots"
+    },
+    {
+      "file": "pomelli_spiti_dead_spots_4.png",
+      "campaign": "spiti_dead_spots"
+    },
+    {
+      "file": "pomelli_sundarbans_audit_1.png",
+      "campaign": "sundarbans_audit"
+    },
+    {
+      "file": "pomelli_sundarbans_audit_2.png",
+      "campaign": "sundarbans_audit"
+    },
+    {
+      "file": "pomelli_sundarbans_audit_3.png",
+      "campaign": "sundarbans_audit"
+    },
+    {
+      "file": "pomelli_sundarbans_audit_4.png",
+      "campaign": "sundarbans_audit"
+    },
+    {
+      "file": "pomelli_sundarbans_operator_audit_1.png",
+      "campaign": "sundarbans_operator_audit"
+    },
+    {
+      "file": "pomelli_sundarbans_operator_audit_2.png",
+      "campaign": "sundarbans_operator_audit"
+    },
+    {
+      "file": "pomelli_sundarbans_operator_audit_3.png",
+      "campaign": "sundarbans_operator_audit"
+    },
+    {
+      "file": "pomelli_sundarbans_operator_audit_4.png",
+      "campaign": "sundarbans_operator_audit"
+    },
+    {
+      "file": "pomelli_tamil_nadu_temple_audit_1.png",
+      "campaign": "tamil_nadu_temple_audit"
+    },
+    {
+      "file": "pomelli_tamil_nadu_temple_audit_2.png",
+      "campaign": "tamil_nadu_temple_audit"
+    },
+    {
+      "file": "pomelli_tamil_nadu_temple_audit_3.png",
+      "campaign": "tamil_nadu_temple_audit"
+    },
+    {
+      "file": "pomelli_tamil_nadu_temple_audit_4.png",
+      "campaign": "tamil_nadu_temple_audit"
+    },
+    {
+      "file": "pomelli_tamilnadu_hidden_guide_fee_data.png",
+      "campaign": "tamilnadu_hidden_guide_fee_data"
+    },
+    {
+      "file": "pomelli_tamilnadu_kanchipuram_silk_scams.png",
+      "campaign": "tamilnadu_kanchipuram_silk_scams"
+    },
+    {
+      "file": "pomelli_tamilnadu_mahabalipuram_menu_markups.png",
+      "campaign": "tamilnadu_mahabalipuram_menu_markups"
+    },
+    {
+      "file": "pomelli_tamilnadu_temple_1.png",
+      "campaign": "tamilnadu_temple"
+    },
+    {
+      "file": "pomelli_tamilnadu_temple_2.png",
+      "campaign": "tamilnadu_temple"
+    },
+    {
+      "file": "pomelli_tamilnadu_temple_3.png",
+      "campaign": "tamilnadu_temple"
+    },
+    {
+      "file": "pomelli_tamilnadu_temple_4.png",
+      "campaign": "tamilnadu_temple"
+    },
+    {
+      "file": "pomelli_tamilnadu_temple_audit_1.png",
+      "campaign": "tamilnadu_temple_audit"
+    },
+    {
+      "file": "pomelli_tamilnadu_temple_audit_2.png",
+      "campaign": "tamilnadu_temple_audit"
+    },
+    {
+      "file": "pomelli_tamilnadu_temple_audit_3.png",
+      "campaign": "tamilnadu_temple_audit"
+    },
+    {
+      "file": "pomelli_tamilnadu_temple_audit_4.png",
+      "campaign": "tamilnadu_temple_audit"
+    },
+    {
+      "file": "pomelli_tamilnadu_tourist_tax_map.png",
+      "campaign": "tamilnadu_tourist_tax_map"
+    },
+    {
+      "file": "pomelli_tarmac_terror_road_ratings_1.png",
+      "campaign": "tarmac_terror_road_ratings"
+    },
+    {
+      "file": "pomelli_tarmac_terror_road_ratings_2.png",
+      "campaign": "tarmac_terror_road_ratings"
+    },
+    {
+      "file": "pomelli_tarmac_terror_road_ratings_3.png",
+      "campaign": "tarmac_terror_road_ratings"
+    },
+    {
+      "file": "pomelli_tarmac_terror_road_ratings_4.png",
+      "campaign": "tarmac_terror_road_ratings"
+    },
+    {
+      "file": "pomelli_tarmac_terror_road_ratings_5.png",
+      "campaign": "tarmac_terror_road_ratings"
+    },
+    {
+      "file": "pomelli_travel_by_data_not_vibes.png",
+      "campaign": "travel_by_data_not_vibes"
+    },
+    {
+      "file": "pomelli_travel_intel_1.png",
+      "campaign": "travel_intel"
+    },
+    {
+      "file": "pomelli_travel_intel_2.png",
+      "campaign": "travel_intel"
+    },
+    {
+      "file": "pomelli_travel_intel_3.png",
+      "campaign": "travel_intel"
+    },
+    {
+      "file": "pomelli_travel_intel_4.png",
+      "campaign": "travel_intel"
+    },
+    {
+      "file": "pomelli_travel_on_hard_facts.png",
+      "campaign": "travel_on_hard_facts"
+    },
+    {
+      "file": "pomelli_tribal_guide_1.png",
+      "campaign": "tribal_guide"
+    },
+    {
+      "file": "pomelli_tribal_guide_2.png",
+      "campaign": "tribal_guide"
+    },
+    {
+      "file": "pomelli_tribal_guide_3.png",
+      "campaign": "tribal_guide"
+    },
+    {
+      "file": "pomelli_tribal_guide_4.png",
+      "campaign": "tribal_guide"
+    },
+    {
+      "file": "pomelli_udaipur_beneath_blue.png",
+      "campaign": "udaipur_beneath_blue"
+    },
+    {
+      "file": "pomelli_unglamorous_truth_1.png",
+      "campaign": "unglamorous_truth"
+    },
+    {
+      "file": "pomelli_unglamorous_truth_2.png",
+      "campaign": "unglamorous_truth"
+    },
+    {
+      "file": "pomelli_unglamorous_truth_3.png",
+      "campaign": "unglamorous_truth"
+    },
+    {
+      "file": "pomelli_uttarakhand_char_dham_truth.png",
+      "campaign": "uttarakhand_char_dham_truth"
+    },
+    {
+      "file": "pomelli_uttarakhand_kedarnath_density.png",
+      "campaign": "uttarakhand_kedarnath_density"
+    },
+    {
+      "file": "pomelli_uttarakhand_oxygen_risk.png",
+      "campaign": "uttarakhand_oxygen_risk"
+    },
+    {
+      "file": "pomelli_uttarakhand_travel_confidence.png",
+      "campaign": "uttarakhand_travel_confidence"
+    },
+    {
+      "file": "pomelli_varanasi_after_the_aarti.png",
+      "campaign": "varanasi_after_the_aarti"
+    },
+    {
+      "file": "pomelli_varanasi_ghat_1.png",
+      "campaign": "varanasi_ghat"
+    },
+    {
+      "file": "pomelli_varanasi_ghat_2.png",
+      "campaign": "varanasi_ghat"
+    },
+    {
+      "file": "pomelli_varanasi_ghat_3.png",
+      "campaign": "varanasi_ghat"
+    },
+    {
+      "file": "pomelli_varanasi_ghat_4.png",
+      "campaign": "varanasi_ghat"
+    },
+    {
+      "file": "pomelli_verified_cool_hour_windows.png",
+      "campaign": "verified_cool_hour_windows"
+    },
+    {
+      "file": "pomelli_verified_data_zero_hype.png",
+      "campaign": "verified_data_zero_hype"
+    },
+    {
+      "file": "pomelli_verified_solo_safety.png",
+      "campaign": "verified_solo_safety"
+    },
+    {
+      "file": "pomelli_western_ghats_hairpin_1.png",
+      "campaign": "western_ghats_hairpin"
+    },
+    {
+      "file": "pomelli_western_ghats_hairpin_2.png",
+      "campaign": "western_ghats_hairpin"
+    },
+    {
+      "file": "pomelli_western_ghats_hairpin_3.png",
+      "campaign": "western_ghats_hairpin"
+    },
+    {
+      "file": "pomelli_western_ghats_hairpin_4.png",
+      "campaign": "western_ghats_hairpin"
+    },
+    {
+      "file": "pomelli_wildlife_corridor_safety_1.png",
+      "campaign": "wildlife_corridor_safety"
+    },
+    {
+      "file": "pomelli_wildlife_corridor_safety_2.png",
+      "campaign": "wildlife_corridor_safety"
+    },
+    {
+      "file": "pomelli_wildlife_corridor_safety_3.png",
+      "campaign": "wildlife_corridor_safety"
+    },
+    {
+      "file": "pomelli_wildlife_corridor_safety_4.png",
+      "campaign": "wildlife_corridor_safety"
+    },
+    {
+      "file": "pomelli_winter_confidence_1.png",
+      "campaign": "winter_confidence"
+    },
+    {
+      "file": "pomelli_winter_confidence_2.png",
+      "campaign": "winter_confidence"
+    },
+    {
+      "file": "pomelli_winter_confidence_3.png",
+      "campaign": "winter_confidence"
+    },
+    {
+      "file": "pomelli_winter_confidence_4.png",
+      "campaign": "winter_confidence"
+    }
+  ],
   "campaigns": {
-    "17000Ft Reality Check": [
+    "12city_taxi_fare_map": [
+      "pomelli_12city_taxi_fare_map_1.png",
+      "pomelli_12city_taxi_fare_map_2.png",
+      "pomelli_12city_taxi_fare_map_3.png",
+      "pomelli_12city_taxi_fare_map_4.png"
+    ],
+    "12months_scores": [
+      "pomelli_12months_scores_1.png"
+    ],
+    "17000ft_reality_check": [
       "pomelli_17000ft_reality_check.png"
     ],
-    "Ajanta Accessibility": [
-      "pomelli_ajanta_accessibility_1.png",
-      "pomelli_ajanta_accessibility_2.png",
-      "pomelli_ajanta_accessibility_3.png",
-      "pomelli_ajanta_accessibility_4.png"
-    ],
-    "Alleppey License": [
-      "pomelli_alleppey_license_1.png",
-      "pomelli_alleppey_license_2.png",
-      "pomelli_alleppey_license_3.png",
-      "pomelli_alleppey_license_4.png"
-    ],
-    "Amritsar Density": [
-      "pomelli_amritsar_density_1.png"
-    ],
-    "Ams Reality Check": [
-      "pomelli_ams_reality_check.png"
-    ],
-    "Araku Valley": [
-      "pomelli_araku_valley_1.png",
-      "pomelli_araku_valley_2.png",
-      "pomelli_araku_valley_3.png",
-      "pomelli_araku_valley_4.png"
-    ],
-    "Aug Road Stability": [
-      "pomelli_aug_road_stability_1.png",
-      "pomelli_aug_road_stability_2.png",
-      "pomelli_aug_road_stability_3.png",
-      "pomelli_aug_road_stability_4.png"
-    ],
-    "Backwater Infrastructure Report": [
-      "pomelli_backwater_infrastructure_report.png"
-    ],
-    "Bandipur Safari": [
-      "pomelli_bandipur_safari_1.png",
-      "pomelli_bandipur_safari_2.png",
-      "pomelli_bandipur_safari_3.png",
-      "pomelli_bandipur_safari_4.png"
-    ],
-    "Beyond Filter Lethal Heat": [
-      "pomelli_beyond_filter_lethal_heat.png"
-    ],
-    "Bihar Transit": [
-      "pomelli_bihar_transit_1.png",
-      "pomelli_bihar_transit_2.png",
-      "pomelli_bihar_transit_3.png",
-      "pomelli_bihar_transit_4.png"
-    ],
-    "Brahmaputra Safely": [
-      "pomelli_brahmaputra_safely_1.png",
-      "pomelli_brahmaputra_safely_2.png",
-      "pomelli_brahmaputra_safely_3.png",
-      "pomelli_brahmaputra_safely_4.png"
-    ],
-    "Chhattisgarh Wild": [
-      "pomelli_chhattisgarh_wild_1.png",
-      "pomelli_chhattisgarh_wild_3.png",
-      "pomelli_chhattisgarh_wild_4.png"
-    ],
-    "Chilika Audit": [
-      "pomelli_chilika_audit_1.png",
-      "pomelli_chilika_audit_2.png",
-      "pomelli_chilika_audit_4.png"
-    ],
-    "Coastal Erosion Data": [
-      "pomelli_coastal_erosion_data.png"
-    ],
-    "Creative Image 1 1": [
-      "pomelli_creative_image_1_1_0420.png"
-    ],
-    "Dangerous Vs Overhyped": [
-      "pomelli_dangerous_vs_overhyped.png"
-    ],
-    "Data Over Hype": [
-      "pomelli_data_over_hype_1.png",
-      "pomelli_data_over_hype_2.png",
-      "pomelli_data_over_hype_3.png",
-      "pomelli_data_over_hype_4.png"
-    ],
-    "Delhi Fake Guides": [
-      "pomelli_delhi_fake_guides_1.png",
-      "pomelli_delhi_fake_guides_2.png",
-      "pomelli_delhi_fake_guides_3.png",
-      "pomelli_delhi_fake_guides_4.png"
-    ],
-    "Deoghar Crowds": [
-      "pomelli_deoghar_crowds_1.png",
-      "pomelli_deoghar_crowds_2.png",
-      "pomelli_deoghar_crowds_3.png",
-      "pomelli_deoghar_crowds_4.png"
-    ],
-    "Dzukou Valley Intel": [
-      "pomelli_dzukou_valley_intel.png"
-    ],
-    "Eastern Ghats": [
-      "pomelli_eastern_ghats_1.png"
-    ],
-    "Fail To Acclimatize": [
-      "pomelli_fail_to_acclimatize.png"
-    ],
-    "Ghats Lack Lighting": [
-      "pomelli_ghats_lack_lighting.png"
-    ],
-    "Goa Beach Audit": [
-      "pomelli_goa_beach_audit.png"
-    ],
-    "Goa Beach Shack Audit": [
-      "pomelli_goa_beach_shack_audit_1.png",
-      "pomelli_goa_beach_shack_audit_2.png",
-      "pomelli_goa_beach_shack_audit_3.png"
-    ],
-    "Goa Crowd Density": [
-      "pomelli_goa_crowd_density_1.png"
-    ],
-    "Heatwaves Escape": [
-      "pomelli_heatwaves_escape_1.png"
-    ],
-    "Heatwaves Infrastructure": [
-      "pomelli_heatwaves_infrastructure_3.png"
-    ],
-    "Heatwaves Medical": [
-      "pomelli_heatwaves_medical_2.png"
-    ],
-    "High Altitude Havens": [
-      "pomelli_high_altitude_havens.png"
-    ],
-    "Himachal Carrier Safety Rankings": [
-      "pomelli_himachal_carrier_safety_rankings.png"
-    ],
-    "Himachal Hp Bus Audit": [
-      "pomelli_himachal_hp_bus_audit.png"
-    ],
-    "Himachal Landslide Risk Mapped": [
-      "pomelli_himachal_landslide_risk_mapped.png"
-    ],
-    "Himachal Manali Audit": [
-      "pomelli_himachal_manali_audit_1.png",
-      "pomelli_himachal_manali_audit_2.png",
-      "pomelli_himachal_manali_audit_3.png",
-      "pomelli_himachal_manali_audit_4.png"
-    ],
-    "Himachal Roads": [
-      "pomelli_himachal_roads_1.png",
-      "pomelli_himachal_roads_2.png",
-      "pomelli_himachal_roads_3.png"
-    ],
-    "Himachal Verified Facts Only": [
-      "pomelli_himachal_verified_facts_only.png"
-    ],
-    "Houseboat Safety": [
-      "pomelli_houseboat_safety_1.png",
-      "pomelli_houseboat_safety_2.png",
-      "pomelli_houseboat_safety_3.png",
-      "pomelli_houseboat_safety_4.png"
-    ],
-    "India Summer Data Over Hype": [
-      "pomelli_india_summer_data_over_hype.png"
-    ],
-    "Infrastructure Gaps Exposed": [
-      "pomelli_infrastructure_gaps_exposed.png"
-    ],
-    "Jaisalmer Desert Trap": [
-      "pomelli_jaisalmer_desert_trap.png"
-    ],
-    "Jodhpur Crowd Heatmaps": [
-      "pomelli_jodhpur_crowd_heatmaps.png"
-    ],
-    "July Flood Risk": [
-      "pomelli_july_flood_risk_1.png",
-      "pomelli_july_flood_risk_2.png",
-      "pomelli_july_flood_risk_3.png",
-      "pomelli_july_flood_risk_4.png"
-    ],
-    "June Heat Trap": [
-      "pomelli_june_heat_trap.png"
-    ],
-    "June Safest": [
-      "pomelli_june_safest_1.png",
-      "pomelli_june_safest_2.png",
-      "pomelli_june_safest_3.png",
-      "pomelli_june_safest_4.png"
-    ],
-    "Karnataka Bandipur Safari": [
-      "pomelli_karnataka_bandipur_safari.png"
-    ],
-    "Karnataka Coorg Homestay": [
-      "pomelli_karnataka_coorg_homestay.png"
-    ],
-    "Karnataka Verify Operator": [
-      "pomelli_karnataka_verify_operator.png"
-    ],
-    "Karnataka Western Ghats": [
-      "pomelli_karnataka_western_ghats.png"
-    ],
-    "Kashmir Safety": [
-      "pomelli_kashmir_safety_1.png"
-    ],
-    "Kaziranga Safari": [
-      "pomelli_kaziranga_safari_1.png"
-    ],
-    "Kedarnath Density": [
-      "pomelli_kedarnath_density_1.png",
-      "pomelli_kedarnath_density_2.png",
-      "pomelli_kedarnath_density_3.png",
-      "pomelli_kedarnath_density_4.png"
-    ],
-    "Kerala Alleppey Houseboat Audit": [
-      "pomelli_kerala_alleppey_houseboat_audit.png"
-    ],
-    "Kerala Alleppey Reality Check": [
-      "pomelli_kerala_alleppey_reality_check.png"
-    ],
-    "Kerala Backwater Quality": [
-      "pomelli_kerala_backwater_quality.png"
-    ],
-    "Kerala Hidden Costs": [
-      "pomelli_kerala_hidden_costs.png"
-    ],
-    "Kerala Monsoons Hard Truths": [
-      "pomelli_kerala_monsoons_hard_truths.png"
-    ],
-    "Kerala Sewage Zones Map": [
-      "pomelli_kerala_sewage_zones_map.png"
-    ],
-    "Kerala Unlicensed Uninsured": [
-      "pomelli_kerala_unlicensed_uninsured.png"
-    ],
-    "Kerala Zero Friction": [
-      "pomelli_kerala_zero_friction.png"
-    ],
-    "Konkan Beaches": [
-      "pomelli_konkan_beaches_1.png",
-      "pomelli_konkan_beaches_2.png",
-      "pomelli_konkan_beaches_3.png",
-      "pomelli_konkan_beaches_4.png"
-    ],
-    "Ladakh June Risk Map": [
-      "pomelli_ladakh_june_risk_map.png"
-    ],
-    "Lethal Riptide Zones": [
-      "pomelli_lethal_riptide_zones.png"
-    ],
-    "Manali Operator": [
-      "pomelli_manali_operator_1.png",
-      "pomelli_manali_operator_2.png",
-      "pomelli_manali_operator_3.png",
-      "pomelli_manali_operator_4.png"
-    ],
-    "May Heat Trap": [
-      "pomelli_may_heat_trap_1.png",
-      "pomelli_may_heat_trap_2.png",
-      "pomelli_may_heat_trap_3.png",
-      "pomelli_may_heat_trap_4.png"
-    ],
-    "May Travel Math Solved": [
-      "pomelli_may_travel_math_solved.png"
-    ],
-    "Medical Response Maps": [
-      "pomelli_medical_response_maps_1.png",
-      "pomelli_medical_response_maps_2.png",
-      "pomelli_medical_response_maps_3.png",
-      "pomelli_medical_response_maps_4.png"
-    ],
-    "Meghalaya Monsoon": [
-      "pomelli_meghalaya_monsoon_1.png",
-      "pomelli_meghalaya_monsoon_2.png",
-      "pomelli_meghalaya_monsoon_3.png",
-      "pomelli_meghalaya_monsoon_4.png"
-    ],
-    "Meghalaya Not Just Waterfalls": [
-      "pomelli_meghalaya_not_just_waterfalls.png"
-    ],
-    "Meghalaya Root Bridge": [
-      "pomelli_meghalaya_root_bridge.png"
-    ],
-    "Midnight Safety Scores": [
-      "pomelli_midnight_safety_scores.png"
-    ],
-    "Monsoon Highway Risk": [
-      "pomelli_monsoon_highway_risk_1.png",
-      "pomelli_monsoon_highway_risk_2.png",
-      "pomelli_monsoon_highway_risk_3.png",
-      "pomelli_monsoon_highway_risk_4.png"
-    ],
-    "Monsoon Master": [
-      "pomelli_monsoon_master_1.png",
-      "pomelli_monsoon_master_2.png",
-      "pomelli_monsoon_master_3.png"
-    ],
-    "Mp Pachmarhi Trekking Safety": [
-      "pomelli_mp_pachmarhi_trekking_safety.png"
-    ],
-    "Mp Safari": [
-      "pomelli_mp_safari_1.png",
-      "pomelli_mp_safari_2.png",
-      "pomelli_mp_safari_3.png",
-      "pomelli_mp_safari_4.png"
-    ],
-    "Mp Safari License Audit": [
-      "pomelli_mp_safari_license_audit.png"
-    ],
-    "Mp Verified Safari Operators": [
-      "pomelli_mp_verified_safari_operators.png"
-    ],
-    "Navigate Old City Safely": [
-      "pomelli_navigate_old_city_safely.png"
-    ],
-    "Night Boat Safety Audit": [
-      "pomelli_night_boat_safety_audit.png"
-    ],
-    "No Infrastructure Guesswork": [
-      "pomelli_no_infrastructure_guesswork.png"
-    ],
-    "Northeast India Decoded": [
-      "pomelli_northeast_india_decoded_01.png"
-    ],
-    "Northeast Infra Audit": [
-      "pomelli_northeast_infra_audit_1.png",
-      "pomelli_northeast_infra_audit_2.png",
-      "pomelli_northeast_infra_audit_3.png",
-      "pomelli_northeast_infra_audit_4.png"
-    ],
-    "Northeast Kaziranga Safari Audit": [
-      "pomelli_northeast_kaziranga_safari_audit.png"
-    ],
-    "Northeast Regional Reality Check": [
-      "pomelli_northeast_regional_reality_check.png"
-    ],
-    "Northeast Reliable Rhino Sightings": [
-      "pomelli_northeast_reliable_rhino_sightings.png"
-    ],
-    "Northeast Verified Operator Rankings": [
-      "pomelli_northeast_verified_operator_rankings.png"
-    ],
-    "Odisha Chilika Boat License Audit": [
-      "pomelli_odisha_chilika_boat_license_audit.png"
-    ],
-    "Odisha Ethical Wildlife Watching": [
-      "pomelli_odisha_ethical_wildlife_watching.png"
-    ],
-    "Odisha Verified Boat Permits": [
-      "pomelli_odisha_verified_boat_permits.png"
-    ],
-    "Pahalgam Treks": [
-      "pomelli_pahalgam_treks_1.png",
-      "pomelli_pahalgam_treks_2.png",
-      "pomelli_pahalgam_treks_3.png",
-      "pomelli_pahalgam_treks_4.png"
-    ],
-    "Premonsoon Cooling Scores": [
-      "pomelli_premonsoon_cooling_scores.png"
-    ],
-    "Punjab Amritsar Density": [
-      "pomelli_punjab_amritsar_density.png"
-    ],
-    "Punjab Gate Logistics": [
-      "pomelli_punjab_gate_logistics.png"
-    ],
-    "Punjab Golden Temple Crowds": [
-      "pomelli_punjab_golden_temple_crowds.png"
-    ],
-    "Punjab Street Food Confidence": [
-      "pomelli_punjab_street_food_confidence.png"
-    ],
-    "Rajasthan 45C": [
-      "pomelli_rajasthan_45c_1.png",
-      "pomelli_rajasthan_45c_2.png",
-      "pomelli_rajasthan_45c_3.png",
-      "pomelli_rajasthan_45c_4.png"
-    ],
-    "Rajasthan 48C Tomorrow": [
-      "pomelli_rajasthan_48c_tomorrow.png"
-    ],
-    "Rajasthan Heritage Pricing": [
-      "pomelli_rajasthan_heritage_pricing_1.png"
-    ],
-    "Rajasthan Palace Costs": [
-      "pomelli_rajasthan_palace_costs_1.png",
-      "pomelli_rajasthan_palace_costs_2.png",
-      "pomelli_rajasthan_palace_costs_3.png",
-      "pomelli_rajasthan_palace_costs_4.png"
-    ],
-    "Rajasthan Safety Gap": [
-      "pomelli_rajasthan_safety_gap.png"
-    ],
-    "Real 48 Hour Rule": [
-      "pomelli_real_48_hour_rule.png"
-    ],
-    "Roads Disappear Overnight": [
-      "pomelli_roads_disappear_overnight.png"
-    ],
-    "Safest Summer": [
-      "pomelli_safest_summer_1.png",
-      "pomelli_safest_summer_2.png",
-      "pomelli_safest_summer_3.png",
-      "pomelli_safest_summer_4.png"
-    ],
-    "Safety Beyond The Signal": [
-      "pomelli_safety_beyond_the_signal.png"
-    ],
-    "Safety First Intelligence": [
-      "pomelli_safety_first_intelligence.png"
-    ],
-    "Sept Safe Destination": [
-      "pomelli_sept_safe_destination_1.png",
-      "pomelli_sept_safe_destination_2.png",
-      "pomelli_sept_safe_destination_3.png",
-      "pomelli_sept_safe_destination_4.png"
-    ],
-    "Shack Hygiene Failures": [
-      "pomelli_shack_hygiene_failures.png"
-    ],
-    "Sikkim Logistics": [
-      "pomelli_sikkim_logistics_1.png",
-      "pomelli_sikkim_logistics_2.png",
-      "pomelli_sikkim_logistics_3.png",
-      "pomelli_sikkim_logistics_4.png"
-    ],
-    "Sikkim Monastery": [
-      "pomelli_sikkim_monastery_1.png",
-      "pomelli_sikkim_monastery_2.png",
-      "pomelli_sikkim_monastery_3.png",
-      "pomelli_sikkim_monastery_4.png"
-    ],
-    "Sikkim Road Hazards": [
-      "pomelli_sikkim_road_hazards_1.png",
-      "pomelli_sikkim_road_hazards_2.png",
-      "pomelli_sikkim_road_hazards_3.png",
-      "pomelli_sikkim_road_hazards_4.png"
-    ],
-    "Solitude Index": [
-      "pomelli_solitude_index_1.png",
-      "pomelli_solitude_index_2.png",
-      "pomelli_solitude_index_3.png",
-      "pomelli_solitude_index_4.png"
-    ],
-    "Sundarbans Audit": [
-      "pomelli_sundarbans_audit_1.png",
-      "pomelli_sundarbans_audit_2.png",
-      "pomelli_sundarbans_audit_3.png",
-      "pomelli_sundarbans_audit_4.png"
-    ],
-    "Tamilnadu Hidden Guide Fee Data": [
-      "pomelli_tamilnadu_hidden_guide_fee_data.png"
-    ],
-    "Tamilnadu Kanchipuram Silk Scams": [
-      "pomelli_tamilnadu_kanchipuram_silk_scams.png"
-    ],
-    "Tamilnadu Mahabalipuram Menu Markups": [
-      "pomelli_tamilnadu_mahabalipuram_menu_markups.png"
-    ],
-    "Tamilnadu Temple": [
-      "pomelli_tamilnadu_temple_1.png",
-      "pomelli_tamilnadu_temple_2.png",
-      "pomelli_tamilnadu_temple_3.png",
-      "pomelli_tamilnadu_temple_4.png"
-    ],
-    "Tamilnadu Temple Audit": [
-      "pomelli_tamilnadu_temple_audit_1.png",
-      "pomelli_tamilnadu_temple_audit_2.png",
-      "pomelli_tamilnadu_temple_audit_3.png",
-      "pomelli_tamilnadu_temple_audit_4.png"
-    ],
-    "Tamilnadu Tourist Tax Map": [
-      "pomelli_tamilnadu_tourist_tax_map.png"
-    ],
-    "Travel By Data Not Vibes": [
-      "pomelli_travel_by_data_not_vibes.png"
-    ],
-    "Travel Intel": [
-      "pomelli_travel_intel_1.png",
-      "pomelli_travel_intel_2.png",
-      "pomelli_travel_intel_3.png",
-      "pomelli_travel_intel_4.png"
-    ],
-    "Travel On Hard Facts": [
-      "pomelli_travel_on_hard_facts.png"
-    ],
-    "Udaipur Beneath Blue": [
-      "pomelli_udaipur_beneath_blue.png"
-    ],
-    "Unglamorous Truth": [
-      "pomelli_unglamorous_truth_1.png",
-      "pomelli_unglamorous_truth_2.png",
-      "pomelli_unglamorous_truth_3.png"
-    ],
-    "Uttarakhand Char Dham Truth": [
-      "pomelli_uttarakhand_char_dham_truth.png"
-    ],
-    "Uttarakhand Kedarnath Density": [
-      "pomelli_uttarakhand_kedarnath_density.png"
-    ],
-    "Uttarakhand Oxygen Risk": [
-      "pomelli_uttarakhand_oxygen_risk.png"
-    ],
-    "Uttarakhand Travel Confidence": [
-      "pomelli_uttarakhand_travel_confidence.png"
-    ],
-    "Varanasi After The Aarti": [
-      "pomelli_varanasi_after_the_aarti.png"
-    ],
-    "Varanasi Ghat": [
-      "pomelli_varanasi_ghat_1.png",
-      "pomelli_varanasi_ghat_2.png",
-      "pomelli_varanasi_ghat_3.png",
-      "pomelli_varanasi_ghat_4.png"
-    ],
-    "Verified Cool Hour Windows": [
-      "pomelli_verified_cool_hour_windows.png"
-    ],
-    "Verified Data Zero Hype": [
-      "pomelli_verified_data_zero_hype.png"
-    ],
-    "Verified Solo Safety": [
-      "pomelli_verified_solo_safety.png"
-    ],
-    "Wildlife Corridor Safety": [
-      "pomelli_wildlife_corridor_safety_1.png",
-      "pomelli_wildlife_corridor_safety_2.png",
-      "pomelli_wildlife_corridor_safety_3.png",
-      "pomelli_wildlife_corridor_safety_4.png"
-    ],
-    "Winter Confidence": [
-      "pomelli_winter_confidence_1.png",
-      "pomelli_winter_confidence_2.png",
-      "pomelli_winter_confidence_3.png",
-      "pomelli_winter_confidence_4.png"
-    ],
-    "The Self-Drive Logic": [
-      "pomelli_self_drive_logic_1.png",
-      "pomelli_self_drive_logic_2.png",
-      "pomelli_self_drive_logic_3.png",
-      "pomelli_self_drive_logic_4.png"
-    ],
-    "The 5-Factor Audit Logic": [
+    "2000_palace_vs_closet": [
+      "pomelli_2000_palace_vs_closet_1.png",
+      "pomelli_2000_palace_vs_closet_2.png",
+      "pomelli_2000_palace_vs_closet_3.png",
+      "pomelli_2000_palace_vs_closet_4.png",
+      "pomelli_2000_palace_vs_closet_5.png",
+      "pomelli_2000_palace_vs_closet_6.png",
+      "pomelli_2000_palace_vs_closet_7.png"
+    ],
+    "2000_stay_quality": [
+      "pomelli_2000_stay_quality_1.png",
+      "pomelli_2000_stay_quality_2.png",
+      "pomelli_2000_stay_quality_3.png",
+      "pomelli_2000_stay_quality_4.png"
+    ],
+    "2000_stay_quality_index": [
+      "pomelli_2000_stay_quality_index_1.png",
+      "pomelli_2000_stay_quality_index_2.png",
+      "pomelli_2000_stay_quality_index_3.png"
+    ],
+    "40_free_lunch": [
+      "pomelli_40_free_lunch_1.png",
+      "pomelli_40_free_lunch_2.png",
+      "pomelli_40_free_lunch_3.png",
+      "pomelli_40_free_lunch_4.png"
+    ],
+    "45degree_safety": [
+      "pomelli_45degree_safety_2.png",
+      "pomelli_45degree_safety_3.png",
+      "pomelli_45degree_safety_4.png"
+    ],
+    "5factor_audit": [
       "pomelli_5factor_audit_1.png",
       "pomelli_5factor_audit_2.png",
       "pomelli_5factor_audit_3.png",
       "pomelli_5factor_audit_4.png"
     ],
-    "12 Months 12 Perfect Scores": [
-      "pomelli_12months_scores_1.png"
+    "74routes_easy_extreme": [
+      "pomelli_74routes_easy_extreme_1.png",
+      "pomelli_74routes_easy_extreme_2.png",
+      "pomelli_74routes_easy_extreme_3.png",
+      "pomelli_74routes_easy_extreme_4.png"
     ],
-    "India Solo Safety Scorecard": [
-      "pomelli_solo_safety_scorecard_1.png",
-      "pomelli_solo_safety_scorecard_2.png",
-      "pomelli_solo_safety_scorecard_3.png",
-      "pomelli_solo_safety_scorecard_4.png"
+    "ajanta_accessibility": [
+      "pomelli_ajanta_accessibility_1.png",
+      "pomelli_ajanta_accessibility_2.png",
+      "pomelli_ajanta_accessibility_3.png",
+      "pomelli_ajanta_accessibility_4.png"
     ],
-    "The High-Altitude Medical Gap": [
+    "alleppey_license": [
+      "pomelli_alleppey_license_1.png",
+      "pomelli_alleppey_license_2.png",
+      "pomelli_alleppey_license_3.png",
+      "pomelli_alleppey_license_4.png"
+    ],
+    "alleppey_license_audit": [
+      "pomelli_alleppey_license_audit_1.png",
+      "pomelli_alleppey_license_audit_2.png",
+      "pomelli_alleppey_license_audit_3.png",
+      "pomelli_alleppey_license_audit_4.png"
+    ],
+    "amritsar_4am_density_map": [
+      "pomelli_amritsar_4am_density_map_1.png",
+      "pomelli_amritsar_4am_density_map_2.png",
+      "pomelli_amritsar_4am_density_map_3.png",
+      "pomelli_amritsar_4am_density_map_4.png"
+    ],
+    "amritsar_density": [
+      "pomelli_amritsar_density_1.png"
+    ],
+    "ams_reality_check": [
+      "pomelli_ams_reality_check.png"
+    ],
+    "araku_valley": [
+      "pomelli_araku_valley_1.png",
+      "pomelli_araku_valley_2.png",
+      "pomelli_araku_valley_3.png",
+      "pomelli_araku_valley_4.png"
+    ],
+    "assam_rhino": [
+      "pomelli_assam_rhino_1.png"
+    ],
+    "atm_desert_starts_here": [
+      "pomelli_atm_desert_starts_here_1.png",
+      "pomelli_atm_desert_starts_here_2.png",
+      "pomelli_atm_desert_starts_here_3.png",
+      "pomelli_atm_desert_starts_here_4.png",
+      "pomelli_atm_desert_starts_here_5.png",
+      "pomelli_atm_desert_starts_here_6.png",
+      "pomelli_atm_desert_starts_here_7.png"
+    ],
+    "aug_road_stability": [
+      "pomelli_aug_road_stability_1.png",
+      "pomelli_aug_road_stability_2.png",
+      "pomelli_aug_road_stability_3.png",
+      "pomelli_aug_road_stability_4.png"
+    ],
+    "backwater_infrastructure_report": [
+      "pomelli_backwater_infrastructure_report.png"
+    ],
+    "bandipur_safari": [
+      "pomelli_bandipur_safari_1.png",
+      "pomelli_bandipur_safari_2.png",
+      "pomelli_bandipur_safari_3.png",
+      "pomelli_bandipur_safari_4.png"
+    ],
+    "bandipur_safari_license": [
+      "pomelli_bandipur_safari_license_1.png",
+      "pomelli_bandipur_safari_license_2.png",
+      "pomelli_bandipur_safari_license_3.png",
+      "pomelli_bandipur_safari_license_4.png"
+    ],
+    "bastar_emergency": [
+      "pomelli_bastar_emergency_1.png",
+      "pomelli_bastar_emergency_2.png",
+      "pomelli_bastar_emergency_3.png",
+      "pomelli_bastar_emergency_4.png"
+    ],
+    "bastar_infra": [
+      "pomelli_bastar_infra_1.png",
+      "pomelli_bastar_infra_2.png",
+      "pomelli_bastar_infra_3.png",
+      "pomelli_bastar_infra_4.png"
+    ],
+    "beyond_filter_lethal_heat": [
+      "pomelli_beyond_filter_lethal_heat.png"
+    ],
+    "bihar_flood_route": [
+      "pomelli_bihar_flood_route_1.png"
+    ],
+    "bihar_transit": [
+      "pomelli_bihar_transit_1.png",
+      "pomelli_bihar_transit_2.png",
+      "pomelli_bihar_transit_3.png",
+      "pomelli_bihar_transit_4.png"
+    ],
+    "brahmaputra_safely": [
+      "pomelli_brahmaputra_safely_1.png",
+      "pomelli_brahmaputra_safely_2.png",
+      "pomelli_brahmaputra_safely_3.png",
+      "pomelli_brahmaputra_safely_4.png"
+    ],
+    "chhattisgarh_wild": [
+      "pomelli_chhattisgarh_wild_1.png",
+      "pomelli_chhattisgarh_wild_3.png",
+      "pomelli_chhattisgarh_wild_4.png"
+    ],
+    "chilika_audit": [
+      "pomelli_chilika_audit_1.png",
+      "pomelli_chilika_audit_2.png",
+      "pomelli_chilika_audit_4.png"
+    ],
+    "chilika_boat_audit": [
+      "pomelli_chilika_boat_audit_1.png",
+      "pomelli_chilika_boat_audit_2.png",
+      "pomelli_chilika_boat_audit_3.png",
+      "pomelli_chilika_boat_audit_4.png"
+    ],
+    "chilika_boat_license_audit": [
+      "pomelli_chilika_boat_license_audit_1.png",
+      "pomelli_chilika_boat_license_audit_2.png",
+      "pomelli_chilika_boat_license_audit_3.png"
+    ],
+    "coastal_erosion_data": [
+      "pomelli_coastal_erosion_data.png"
+    ],
+    "creative_image_1_1": [
+      "pomelli_creative_image_1_1_0420.png"
+    ],
+    "dal_lake_bacteria_count": [
+      "pomelli_dal_lake_bacteria_count_1.png",
+      "pomelli_dal_lake_bacteria_count_2.png",
+      "pomelli_dal_lake_bacteria_count_3.png",
+      "pomelli_dal_lake_bacteria_count_4.png"
+    ],
+    "dangerous_vs_overhyped": [
+      "pomelli_dangerous_vs_overhyped.png"
+    ],
+    "dassam_falls_safety": [
+      "pomelli_dassam_falls_safety_1.png",
+      "pomelli_dassam_falls_safety_2.png",
+      "pomelli_dassam_falls_safety_3.png",
+      "pomelli_dassam_falls_safety_4.png"
+    ],
+    "data_over_hype": [
+      "pomelli_data_over_hype_1.png",
+      "pomelli_data_over_hype_2.png",
+      "pomelli_data_over_hype_3.png",
+      "pomelli_data_over_hype_4.png"
+    ],
+    "delhi_fake_guides": [
+      "pomelli_delhi_fake_guides_1.png",
+      "pomelli_delhi_fake_guides_2.png",
+      "pomelli_delhi_fake_guides_3.png",
+      "pomelli_delhi_fake_guides_4.png"
+    ],
+    "deoghar_crowds": [
+      "pomelli_deoghar_crowds_1.png",
+      "pomelli_deoghar_crowds_2.png",
+      "pomelli_deoghar_crowds_3.png",
+      "pomelli_deoghar_crowds_4.png"
+    ],
+    "dwarka_12operator_audit": [
+      "pomelli_dwarka_12operator_audit_1.png",
+      "pomelli_dwarka_12operator_audit_2.png",
+      "pomelli_dwarka_12operator_audit_3.png"
+    ],
+    "dzukou_valley_intel": [
+      "pomelli_dzukou_valley_intel.png"
+    ],
+    "eastern_ghats": [
+      "pomelli_eastern_ghats_1.png"
+    ],
+    "fail_to_acclimatize": [
+      "pomelli_fail_to_acclimatize.png"
+    ],
+    "ghats_lack_lighting": [
+      "pomelli_ghats_lack_lighting.png"
+    ],
+    "goa_bacteria_map": [
+      "pomelli_goa_bacteria_map_1.png",
+      "pomelli_goa_bacteria_map_2.png",
+      "pomelli_goa_bacteria_map_3.png",
+      "pomelli_goa_bacteria_map_4.png"
+    ],
+    "goa_beach_audit": [
+      "pomelli_goa_beach_audit.png"
+    ],
+    "goa_beach_shack_audit": [
+      "pomelli_goa_beach_shack_audit_1.png",
+      "pomelli_goa_beach_shack_audit_2.png",
+      "pomelli_goa_beach_shack_audit_3.png"
+    ],
+    "goa_crowd_density": [
+      "pomelli_goa_crowd_density_1.png"
+    ],
+    "gokarna_riptides": [
+      "pomelli_gokarna_riptides_1.png",
+      "pomelli_gokarna_riptides_2.png",
+      "pomelli_gokarna_riptides_3.png",
+      "pomelli_gokarna_riptides_4.png"
+    ],
+    "gujarat_coast_safe_stressed": [
+      "pomelli_gujarat_coast_safe_stressed_1.png",
+      "pomelli_gujarat_coast_safe_stressed_2.png",
+      "pomelli_gujarat_coast_safe_stressed_3.png",
+      "pomelli_gujarat_coast_safe_stressed_4.png"
+    ],
+    "heatwaves_escape": [
+      "pomelli_heatwaves_escape_1.png"
+    ],
+    "heatwaves_infrastructure": [
+      "pomelli_heatwaves_infrastructure_3.png"
+    ],
+    "heatwaves_medical": [
+      "pomelli_heatwaves_medical_2.png"
+    ],
+    "high_altitude_havens": [
+      "pomelli_high_altitude_havens.png"
+    ],
+    "high_altitude_medical": [
       "pomelli_high_altitude_medical_1.png",
       "pomelli_high_altitude_medical_2.png",
       "pomelli_high_altitude_medical_3.png",
       "pomelli_high_altitude_medical_4.png"
     ],
-    "The 2000 Stay Quality Index": [
-      "pomelli_2000_stay_quality_1.png",
-      "pomelli_2000_stay_quality_2.png",
-      "pomelli_2000_stay_quality_3.png",
-      "pomelli_2000_stay_quality_4.png"
+    "high_altitude_medical_gap": [
+      "pomelli_high_altitude_medical_gap_1.png",
+      "pomelli_high_altitude_medical_gap_2.png",
+      "pomelli_high_altitude_medical_gap_3.png",
+      "pomelli_high_altitude_medical_gap_4.png"
+    ],
+    "himachal_carrier_safety_rankings": [
+      "pomelli_himachal_carrier_safety_rankings.png"
+    ],
+    "himachal_hp_bus_audit": [
+      "pomelli_himachal_hp_bus_audit.png"
+    ],
+    "himachal_landslide_risk_mapped": [
+      "pomelli_himachal_landslide_risk_mapped.png"
+    ],
+    "himachal_manali_audit": [
+      "pomelli_himachal_manali_audit_1.png",
+      "pomelli_himachal_manali_audit_2.png",
+      "pomelli_himachal_manali_audit_3.png",
+      "pomelli_himachal_manali_audit_4.png"
+    ],
+    "himachal_roads": [
+      "pomelli_himachal_roads_1.png",
+      "pomelli_himachal_roads_2.png",
+      "pomelli_himachal_roads_3.png"
+    ],
+    "himachal_verified_facts_only": [
+      "pomelli_himachal_verified_facts_only.png"
+    ],
+    "houseboat_safety": [
+      "pomelli_houseboat_safety_1.png",
+      "pomelli_houseboat_safety_2.png",
+      "pomelli_houseboat_safety_3.png",
+      "pomelli_houseboat_safety_4.png"
+    ],
+    "india_summer_data_over_hype": [
+      "pomelli_india_summer_data_over_hype.png"
+    ],
+    "infrastructure_gaps_exposed": [
+      "pomelli_infrastructure_gaps_exposed.png"
+    ],
+    "jagdalpur_homestay": [
+      "pomelli_jagdalpur_homestay_1.png",
+      "pomelli_jagdalpur_homestay_2.png",
+      "pomelli_jagdalpur_homestay_3.png",
+      "pomelli_jagdalpur_homestay_4.png"
+    ],
+    "jagdalpur_hygiene": [
+      "pomelli_jagdalpur_hygiene_1.png",
+      "pomelli_jagdalpur_hygiene_2.png",
+      "pomelli_jagdalpur_hygiene_3.png",
+      "pomelli_jagdalpur_hygiene_4.png"
+    ],
+    "jaisalmer_desert_trap": [
+      "pomelli_jaisalmer_desert_trap.png"
+    ],
+    "jharkhand_monsoon_road": [
+      "pomelli_jharkhand_monsoon_road_1.png",
+      "pomelli_jharkhand_monsoon_road_2.png",
+      "pomelli_jharkhand_monsoon_road_3.png",
+      "pomelli_jharkhand_monsoon_road_4.png"
+    ],
+    "jharkhand_transport": [
+      "pomelli_jharkhand_transport_1.png",
+      "pomelli_jharkhand_transport_2.png",
+      "pomelli_jharkhand_transport_4.png"
+    ],
+    "jodhpur_crowd_heatmaps": [
+      "pomelli_jodhpur_crowd_heatmaps.png"
+    ],
+    "july_flood_risk": [
+      "pomelli_july_flood_risk_1.png",
+      "pomelli_july_flood_risk_2.png",
+      "pomelli_july_flood_risk_3.png",
+      "pomelli_july_flood_risk_4.png"
+    ],
+    "june1st_safety_gap": [
+      "pomelli_june1st_safety_gap_1.png",
+      "pomelli_june1st_safety_gap_2.png",
+      "pomelli_june1st_safety_gap_3.png"
+    ],
+    "june_heat_trap": [
+      "pomelli_june_heat_trap.png"
+    ],
+    "june_safest": [
+      "pomelli_june_safest_1.png",
+      "pomelli_june_safest_2.png",
+      "pomelli_june_safest_3.png",
+      "pomelli_june_safest_4.png"
+    ],
+    "karnataka_bandipur_safari": [
+      "pomelli_karnataka_bandipur_safari.png"
+    ],
+    "karnataka_coorg_homestay": [
+      "pomelli_karnataka_coorg_homestay.png"
+    ],
+    "karnataka_verify_operator": [
+      "pomelli_karnataka_verify_operator.png"
+    ],
+    "karnataka_western_ghats": [
+      "pomelli_karnataka_western_ghats.png"
+    ],
+    "kashmir_safety": [
+      "pomelli_kashmir_safety_1.png"
+    ],
+    "kashmir_safety_audit": [
+      "pomelli_kashmir_safety_audit_1.png",
+      "pomelli_kashmir_safety_audit_2.png",
+      "pomelli_kashmir_safety_audit_3.png"
+    ],
+    "kaziranga_safari": [
+      "pomelli_kaziranga_safari_1.png"
+    ],
+    "kedarnath_density": [
+      "pomelli_kedarnath_density_1.png",
+      "pomelli_kedarnath_density_2.png",
+      "pomelli_kedarnath_density_3.png",
+      "pomelli_kedarnath_density_4.png"
+    ],
+    "kedarnath_density_map": [
+      "pomelli_kedarnath_density_map_1.png",
+      "pomelli_kedarnath_density_map_2.png",
+      "pomelli_kedarnath_density_map_3.png",
+      "pomelli_kedarnath_density_map_4.png"
+    ],
+    "kerala_alleppey_houseboat_audit": [
+      "pomelli_kerala_alleppey_houseboat_audit.png"
+    ],
+    "kerala_alleppey_reality_check": [
+      "pomelli_kerala_alleppey_reality_check.png"
+    ],
+    "kerala_backwater_quality": [
+      "pomelli_kerala_backwater_quality.png"
+    ],
+    "kerala_hidden_costs": [
+      "pomelli_kerala_hidden_costs.png"
+    ],
+    "kerala_monsoons_hard_truths": [
+      "pomelli_kerala_monsoons_hard_truths.png"
+    ],
+    "kerala_sewage_zones_map": [
+      "pomelli_kerala_sewage_zones_map.png"
+    ],
+    "kerala_unlicensed_uninsured": [
+      "pomelli_kerala_unlicensed_uninsured.png"
+    ],
+    "kerala_zero_friction": [
+      "pomelli_kerala_zero_friction.png"
+    ],
+    "konark_mobility_audit": [
+      "pomelli_konark_mobility_audit_1.png",
+      "pomelli_konark_mobility_audit_2.png",
+      "pomelli_konark_mobility_audit_3.png",
+      "pomelli_konark_mobility_audit_4.png"
+    ],
+    "konkan_beaches": [
+      "pomelli_konkan_beaches_1.png",
+      "pomelli_konkan_beaches_2.png",
+      "pomelli_konkan_beaches_3.png",
+      "pomelli_konkan_beaches_4.png"
+    ],
+    "kutch_60km_medical_gap": [
+      "pomelli_kutch_60km_medical_gap_1.png",
+      "pomelli_kutch_60km_medical_gap_2.png",
+      "pomelli_kutch_60km_medical_gap_3.png",
+      "pomelli_kutch_60km_medical_gap_4.png"
+    ],
+    "ladakh_june_risk_map": [
+      "pomelli_ladakh_june_risk_map.png"
+    ],
+    "lethal_riptide_zones": [
+      "pomelli_lethal_riptide_zones.png"
+    ],
+    "luxury_rail_amenity_gap": [
+      "pomelli_luxury_rail_amenity_gap_1.png",
+      "pomelli_luxury_rail_amenity_gap_2.png",
+      "pomelli_luxury_rail_amenity_gap_3.png"
+    ],
+    "manali_operator": [
+      "pomelli_manali_operator_1.png",
+      "pomelli_manali_operator_2.png",
+      "pomelli_manali_operator_3.png",
+      "pomelli_manali_operator_4.png"
+    ],
+    "manali_operator_audit": [
+      "pomelli_manali_operator_audit_1.png",
+      "pomelli_manali_operator_audit_2.png",
+      "pomelli_manali_operator_audit_3.png",
+      "pomelli_manali_operator_audit_4.png"
+    ],
+    "mangalore_surf": [
+      "pomelli_mangalore_surf_1.png",
+      "pomelli_mangalore_surf_2.png",
+      "pomelli_mangalore_surf_3.png",
+      "pomelli_mangalore_surf_4.png"
+    ],
+    "may_heat_trap": [
+      "pomelli_may_heat_trap_1.png",
+      "pomelli_may_heat_trap_2.png",
+      "pomelli_may_heat_trap_3.png",
+      "pomelli_may_heat_trap_4.png"
+    ],
+    "may_suitability_audit": [
+      "pomelli_may_suitability_audit_1.png",
+      "pomelli_may_suitability_audit_2.png",
+      "pomelli_may_suitability_audit_3.png",
+      "pomelli_may_suitability_audit_4.png"
+    ],
+    "may_travel_math_solved": [
+      "pomelli_may_travel_math_solved.png"
+    ],
+    "medical_response_maps": [
+      "pomelli_medical_response_maps_1.png",
+      "pomelli_medical_response_maps_2.png",
+      "pomelli_medical_response_maps_3.png",
+      "pomelli_medical_response_maps_4.png"
+    ],
+    "meghalaya_bridge": [
+      "pomelli_meghalaya_bridge_1.png",
+      "pomelli_meghalaya_bridge_2.png",
+      "pomelli_meghalaya_bridge_3.png",
+      "pomelli_meghalaya_bridge_4.png"
+    ],
+    "meghalaya_monsoon": [
+      "pomelli_meghalaya_monsoon_1.png",
+      "pomelli_meghalaya_monsoon_2.png",
+      "pomelli_meghalaya_monsoon_3.png",
+      "pomelli_meghalaya_monsoon_4.png"
+    ],
+    "meghalaya_not_just_waterfalls": [
+      "pomelli_meghalaya_not_just_waterfalls.png",
+      "pomelli_meghalaya_not_just_waterfalls_1.png",
+      "pomelli_meghalaya_not_just_waterfalls_2.png",
+      "pomelli_meghalaya_not_just_waterfalls_3.png",
+      "pomelli_meghalaya_not_just_waterfalls_4.png",
+      "pomelli_meghalaya_not_just_waterfalls_5.png",
+      "pomelli_meghalaya_not_just_waterfalls_6.png",
+      "pomelli_meghalaya_not_just_waterfalls_7.png"
+    ],
+    "meghalaya_root_bridge": [
+      "pomelli_meghalaya_root_bridge.png"
+    ],
+    "midnight_safety_scores": [
+      "pomelli_midnight_safety_scores.png"
+    ],
+    "monsoon_highway_risk": [
+      "pomelli_monsoon_highway_risk_1.png",
+      "pomelli_monsoon_highway_risk_2.png",
+      "pomelli_monsoon_highway_risk_3.png",
+      "pomelli_monsoon_highway_risk_4.png"
+    ],
+    "monsoon_master": [
+      "pomelli_monsoon_master_1.png",
+      "pomelli_monsoon_master_2.png",
+      "pomelli_monsoon_master_3.png"
+    ],
+    "mp_pachmarhi_trekking_safety": [
+      "pomelli_mp_pachmarhi_trekking_safety.png"
+    ],
+    "mp_safari": [
+      "pomelli_mp_safari_1.png",
+      "pomelli_mp_safari_2.png",
+      "pomelli_mp_safari_3.png",
+      "pomelli_mp_safari_4.png"
+    ],
+    "mp_safari_license_audit": [
+      "pomelli_mp_safari_license_audit.png",
+      "pomelli_mp_safari_license_audit_1.png",
+      "pomelli_mp_safari_license_audit_2.png",
+      "pomelli_mp_safari_license_audit_3.png",
+      "pomelli_mp_safari_license_audit_4.png"
+    ],
+    "mp_verified_safari_operators": [
+      "pomelli_mp_verified_safari_operators.png"
+    ],
+    "murdeshwar_cliff": [
+      "pomelli_murdeshwar_cliff_1.png",
+      "pomelli_murdeshwar_cliff_2.png",
+      "pomelli_murdeshwar_cliff_3.png",
+      "pomelli_murdeshwar_cliff_4.png"
+    ],
+    "nagaland_homestay": [
+      "pomelli_nagaland_homestay_1.png",
+      "pomelli_nagaland_homestay_2.png",
+      "pomelli_nagaland_homestay_3.png",
+      "pomelli_nagaland_homestay_4.png"
+    ],
+    "navigate_old_city_safely": [
+      "pomelli_navigate_old_city_safely.png"
+    ],
+    "nh44_waterlogging": [
+      "pomelli_nh44_waterlogging_1.png"
+    ],
+    "night_boat_safety_audit": [
+      "pomelli_night_boat_safety_audit.png"
+    ],
+    "no_infrastructure_guesswork": [
+      "pomelli_no_infrastructure_guesswork.png"
+    ],
+    "northeast_india_decoded": [
+      "pomelli_northeast_india_decoded_01.png"
+    ],
+    "northeast_infra_audit": [
+      "pomelli_northeast_infra_audit_1.png",
+      "pomelli_northeast_infra_audit_2.png",
+      "pomelli_northeast_infra_audit_3.png",
+      "pomelli_northeast_infra_audit_4.png"
+    ],
+    "northeast_infrastructure_audit": [
+      "pomelli_northeast_infrastructure_audit_1.png",
+      "pomelli_northeast_infrastructure_audit_2.png",
+      "pomelli_northeast_infrastructure_audit_3.png",
+      "pomelli_northeast_infrastructure_audit_4.png"
+    ],
+    "northeast_kaziranga_safari_audit": [
+      "pomelli_northeast_kaziranga_safari_audit.png"
+    ],
+    "northeast_regional_reality_check": [
+      "pomelli_northeast_regional_reality_check.png"
+    ],
+    "northeast_reliable_rhino_sightings": [
+      "pomelli_northeast_reliable_rhino_sightings.png"
+    ],
+    "northeast_verified_operator_rankings": [
+      "pomelli_northeast_verified_operator_rankings.png"
+    ],
+    "odisha_chilika_boat_license_audit": [
+      "pomelli_odisha_chilika_boat_license_audit.png"
+    ],
+    "odisha_ethical_wildlife_watching": [
+      "pomelli_odisha_ethical_wildlife_watching.png"
+    ],
+    "odisha_verified_boat_permits": [
+      "pomelli_odisha_verified_boat_permits.png"
+    ],
+    "oxygen_gaps_17582ft": [
+      "pomelli_oxygen_gaps_17582ft_1.png",
+      "pomelli_oxygen_gaps_17582ft_2.png",
+      "pomelli_oxygen_gaps_17582ft_3.png",
+      "pomelli_oxygen_gaps_17582ft_4.png"
+    ],
+    "pahalgam_treks": [
+      "pomelli_pahalgam_treks_1.png",
+      "pomelli_pahalgam_treks_2.png",
+      "pomelli_pahalgam_treks_3.png",
+      "pomelli_pahalgam_treks_4.png"
+    ],
+    "premonsoon_cooling_scores": [
+      "pomelli_premonsoon_cooling_scores.png"
+    ],
+    "punjab_amritsar_density": [
+      "pomelli_punjab_amritsar_density.png"
+    ],
+    "punjab_gate_logistics": [
+      "pomelli_punjab_gate_logistics.png"
+    ],
+    "punjab_golden_temple_crowds": [
+      "pomelli_punjab_golden_temple_crowds.png"
+    ],
+    "punjab_street_food_confidence": [
+      "pomelli_punjab_street_food_confidence.png"
+    ],
+    "puri_crush_data": [
+      "pomelli_puri_crush_data_1.png",
+      "pomelli_puri_crush_data_2.png",
+      "pomelli_puri_crush_data_3.png",
+      "pomelli_puri_crush_data_4.png"
+    ],
+    "pushkar_3x_markup": [
+      "pomelli_pushkar_3x_markup_1.png",
+      "pomelli_pushkar_3x_markup_2.png",
+      "pomelli_pushkar_3x_markup_3.png",
+      "pomelli_pushkar_3x_markup_4.png"
+    ],
+    "rain_vs_road_june_map": [
+      "pomelli_rain_vs_road_june_map_1.png",
+      "pomelli_rain_vs_road_june_map_2.png"
+    ],
+    "rajasthan_45c": [
+      "pomelli_rajasthan_45c_1.png",
+      "pomelli_rajasthan_45c_2.png",
+      "pomelli_rajasthan_45c_3.png",
+      "pomelli_rajasthan_45c_4.png"
+    ],
+    "rajasthan_48c_tomorrow": [
+      "pomelli_rajasthan_48c_tomorrow.png",
+      "pomelli_rajasthan_48c_tomorrow_1.png",
+      "pomelli_rajasthan_48c_tomorrow_2.png",
+      "pomelli_rajasthan_48c_tomorrow_3.png",
+      "pomelli_rajasthan_48c_tomorrow_4.png"
+    ],
+    "rajasthan_heritage_pricing": [
+      "pomelli_rajasthan_heritage_pricing_1.png"
+    ],
+    "rajasthan_hidden_palace_costs": [
+      "pomelli_rajasthan_hidden_palace_costs_1.png",
+      "pomelli_rajasthan_hidden_palace_costs_2.png",
+      "pomelli_rajasthan_hidden_palace_costs_3.png",
+      "pomelli_rajasthan_hidden_palace_costs_4.png"
+    ],
+    "rajasthan_palace_costs": [
+      "pomelli_rajasthan_palace_costs_1.png",
+      "pomelli_rajasthan_palace_costs_2.png",
+      "pomelli_rajasthan_palace_costs_3.png",
+      "pomelli_rajasthan_palace_costs_4.png"
+    ],
+    "rajasthan_renovation_tax": [
+      "pomelli_rajasthan_renovation_tax_1.png",
+      "pomelli_rajasthan_renovation_tax_2.png",
+      "pomelli_rajasthan_renovation_tax_3.png",
+      "pomelli_rajasthan_renovation_tax_4.png"
+    ],
+    "rajasthan_safety_gap": [
+      "pomelli_rajasthan_safety_gap.png"
+    ],
+    "real_48_hour_rule": [
+      "pomelli_real_48_hour_rule.png"
+    ],
+    "rivers_rise_45_minutes": [
+      "pomelli_rivers_rise_45_minutes_1.png",
+      "pomelli_rivers_rise_45_minutes_2.png",
+      "pomelli_rivers_rise_45_minutes_3.png",
+      "pomelli_rivers_rise_45_minutes_4.png",
+      "pomelli_rivers_rise_45_minutes_5.png",
+      "pomelli_rivers_rise_45_minutes_6.png",
+      "pomelli_rivers_rise_45_minutes_7.png"
+    ],
+    "roads_disappear_overnight": [
+      "pomelli_roads_disappear_overnight.png"
+    ],
+    "safest_summer": [
+      "pomelli_safest_summer_1.png",
+      "pomelli_safest_summer_2.png",
+      "pomelli_safest_summer_3.png",
+      "pomelli_safest_summer_4.png"
+    ],
+    "safety_beyond_the_signal": [
+      "pomelli_safety_beyond_the_signal.png"
+    ],
+    "safety_first_intelligence": [
+      "pomelli_safety_first_intelligence.png"
+    ],
+    "self_drive_logic": [
+      "pomelli_self_drive_logic_1.png",
+      "pomelli_self_drive_logic_2.png",
+      "pomelli_self_drive_logic_3.png",
+      "pomelli_self_drive_logic_4.png"
+    ],
+    "sept_safe_destination": [
+      "pomelli_sept_safe_destination_1.png",
+      "pomelli_sept_safe_destination_2.png",
+      "pomelli_sept_safe_destination_3.png",
+      "pomelli_sept_safe_destination_4.png"
+    ],
+    "shack_hygiene_failures": [
+      "pomelli_shack_hygiene_failures.png"
+    ],
+    "sikkim_logistics": [
+      "pomelli_sikkim_logistics_1.png",
+      "pomelli_sikkim_logistics_2.png",
+      "pomelli_sikkim_logistics_3.png",
+      "pomelli_sikkim_logistics_4.png"
+    ],
+    "sikkim_monastery": [
+      "pomelli_sikkim_monastery_1.png",
+      "pomelli_sikkim_monastery_2.png",
+      "pomelli_sikkim_monastery_3.png",
+      "pomelli_sikkim_monastery_4.png"
+    ],
+    "sikkim_road_hazards": [
+      "pomelli_sikkim_road_hazards_1.png",
+      "pomelli_sikkim_road_hazards_2.png",
+      "pomelli_sikkim_road_hazards_3.png",
+      "pomelli_sikkim_road_hazards_4.png"
+    ],
+    "solitude_index": [
+      "pomelli_solitude_index_1.png",
+      "pomelli_solitude_index_2.png",
+      "pomelli_solitude_index_3.png",
+      "pomelli_solitude_index_4.png"
+    ],
+    "solo_safety_scorecard": [
+      "pomelli_solo_safety_scorecard_1.png",
+      "pomelli_solo_safety_scorecard_2.png",
+      "pomelli_solo_safety_scorecard_3.png",
+      "pomelli_solo_safety_scorecard_4.png"
+    ],
+    "spiti_dead_spots": [
+      "pomelli_spiti_dead_spots_1.png",
+      "pomelli_spiti_dead_spots_2.png",
+      "pomelli_spiti_dead_spots_3.png",
+      "pomelli_spiti_dead_spots_4.png"
+    ],
+    "sundarbans_audit": [
+      "pomelli_sundarbans_audit_1.png",
+      "pomelli_sundarbans_audit_2.png",
+      "pomelli_sundarbans_audit_3.png",
+      "pomelli_sundarbans_audit_4.png"
+    ],
+    "sundarbans_operator_audit": [
+      "pomelli_sundarbans_operator_audit_1.png",
+      "pomelli_sundarbans_operator_audit_2.png",
+      "pomelli_sundarbans_operator_audit_3.png",
+      "pomelli_sundarbans_operator_audit_4.png"
+    ],
+    "tamil_nadu_temple_audit": [
+      "pomelli_tamil_nadu_temple_audit_1.png",
+      "pomelli_tamil_nadu_temple_audit_2.png",
+      "pomelli_tamil_nadu_temple_audit_3.png",
+      "pomelli_tamil_nadu_temple_audit_4.png"
+    ],
+    "tamilnadu_hidden_guide_fee_data": [
+      "pomelli_tamilnadu_hidden_guide_fee_data.png"
+    ],
+    "tamilnadu_kanchipuram_silk_scams": [
+      "pomelli_tamilnadu_kanchipuram_silk_scams.png"
+    ],
+    "tamilnadu_mahabalipuram_menu_markups": [
+      "pomelli_tamilnadu_mahabalipuram_menu_markups.png"
+    ],
+    "tamilnadu_temple": [
+      "pomelli_tamilnadu_temple_1.png",
+      "pomelli_tamilnadu_temple_2.png",
+      "pomelli_tamilnadu_temple_3.png",
+      "pomelli_tamilnadu_temple_4.png"
+    ],
+    "tamilnadu_temple_audit": [
+      "pomelli_tamilnadu_temple_audit_1.png",
+      "pomelli_tamilnadu_temple_audit_2.png",
+      "pomelli_tamilnadu_temple_audit_3.png",
+      "pomelli_tamilnadu_temple_audit_4.png"
+    ],
+    "tamilnadu_tourist_tax_map": [
+      "pomelli_tamilnadu_tourist_tax_map.png"
+    ],
+    "tarmac_terror_road_ratings": [
+      "pomelli_tarmac_terror_road_ratings_1.png",
+      "pomelli_tarmac_terror_road_ratings_2.png",
+      "pomelli_tarmac_terror_road_ratings_3.png",
+      "pomelli_tarmac_terror_road_ratings_4.png",
+      "pomelli_tarmac_terror_road_ratings_5.png"
+    ],
+    "travel_by_data_not_vibes": [
+      "pomelli_travel_by_data_not_vibes.png"
+    ],
+    "travel_intel": [
+      "pomelli_travel_intel_1.png",
+      "pomelli_travel_intel_2.png",
+      "pomelli_travel_intel_3.png",
+      "pomelli_travel_intel_4.png"
+    ],
+    "travel_on_hard_facts": [
+      "pomelli_travel_on_hard_facts.png"
+    ],
+    "tribal_guide": [
+      "pomelli_tribal_guide_1.png",
+      "pomelli_tribal_guide_2.png",
+      "pomelli_tribal_guide_3.png",
+      "pomelli_tribal_guide_4.png"
+    ],
+    "udaipur_beneath_blue": [
+      "pomelli_udaipur_beneath_blue.png"
+    ],
+    "unglamorous_truth": [
+      "pomelli_unglamorous_truth_1.png",
+      "pomelli_unglamorous_truth_2.png",
+      "pomelli_unglamorous_truth_3.png"
+    ],
+    "uttarakhand_char_dham_truth": [
+      "pomelli_uttarakhand_char_dham_truth.png"
+    ],
+    "uttarakhand_kedarnath_density": [
+      "pomelli_uttarakhand_kedarnath_density.png"
+    ],
+    "uttarakhand_oxygen_risk": [
+      "pomelli_uttarakhand_oxygen_risk.png"
+    ],
+    "uttarakhand_travel_confidence": [
+      "pomelli_uttarakhand_travel_confidence.png"
+    ],
+    "varanasi_after_the_aarti": [
+      "pomelli_varanasi_after_the_aarti.png"
+    ],
+    "varanasi_ghat": [
+      "pomelli_varanasi_ghat_1.png",
+      "pomelli_varanasi_ghat_2.png",
+      "pomelli_varanasi_ghat_3.png",
+      "pomelli_varanasi_ghat_4.png"
+    ],
+    "verified_cool_hour_windows": [
+      "pomelli_verified_cool_hour_windows.png"
+    ],
+    "verified_data_zero_hype": [
+      "pomelli_verified_data_zero_hype.png"
+    ],
+    "verified_solo_safety": [
+      "pomelli_verified_solo_safety.png"
+    ],
+    "western_ghats_hairpin": [
+      "pomelli_western_ghats_hairpin_1.png",
+      "pomelli_western_ghats_hairpin_2.png",
+      "pomelli_western_ghats_hairpin_3.png",
+      "pomelli_western_ghats_hairpin_4.png"
+    ],
+    "wildlife_corridor_safety": [
+      "pomelli_wildlife_corridor_safety_1.png",
+      "pomelli_wildlife_corridor_safety_2.png",
+      "pomelli_wildlife_corridor_safety_3.png",
+      "pomelli_wildlife_corridor_safety_4.png"
+    ],
+    "winter_confidence": [
+      "pomelli_winter_confidence_1.png",
+      "pomelli_winter_confidence_2.png",
+      "pomelli_winter_confidence_3.png",
+      "pomelli_winter_confidence_4.png"
     ]
   }
 }
