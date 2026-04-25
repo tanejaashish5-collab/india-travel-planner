@@ -1,11 +1,6 @@
 {
   "yt_short_formats_used": [
-    "before_after",
-    "this_vs_that",
-    "listicle",
-    "dont_go_here",
-    "mini_guide",
-    "did_you_know"
+    "before_after"
   ],
   "yt_short_music_used": [
     "11_caravan",
@@ -21,12 +16,7 @@
     "22_carnival",
     "00_discovery_beat",
     "23_ghost_protocol",
-    "02_sahara_drift",
-    "01_neon_rush",
-    "10_reggae_sun",
-    "00_desi_groove",
-    "34_dark_phonk",
-    "36_club_energy"
+    "02_sahara_drift"
   ],
   "posted_today": {
     "PdMu0": "2026-04-24",
@@ -36,11 +26,11 @@
     "4QL0i_reel": "2026-04-19",
     "m8EAd_canva": "2026-04-24",
     "PdMu0_canva": "2026-04-24",
-    "m8EAd_evening": "2026-04-23",
+    "m8EAd_evening": "2026-04-24",
     "m8EAd_evening_story": "2026-04-22",
-    "PdMu0_evening": "2026-04-23",
-    "m8EAd_yt_short": "2026-04-25",
-    "m8EAd_yt_short_count": 1,
+    "PdMu0_evening": "2026-04-24",
+    "m8EAd_yt_short": "2026-04-23",
+    "m8EAd_yt_short_count": 2,
     "jUmP2_yt_short": "2026-04-20",
     "jUmP2_yt_short_count": 1,
     "jUmP2": "2026-04-20",
@@ -60,12 +50,9 @@
     "xBQy8_yt_short": "2026-04-23",
     "xBQy8_yt_short_count": 1,
     "xBQy8_reel": "2026-04-24",
-    "xBQy8": "2026-04-24",
-    "PdMu0_reel_map": "2026-04-24",
-    "5bWND_yt_short": "2026-04-25",
-    "5bWND_yt_short_count": 1
+    "xBQy8": "2026-04-24"
   },
-  "last_sync": "2026-04-24T07:19:03.178432+00:00",
+  "last_sync": "2026-04-24T10:15:33.918949+00:00",
   "posted_destinations": [
     {
       "destination_id": "pahalgam",
@@ -246,6 +233,14 @@
     {
       "destination_id": "phawngpui-peak",
       "date": "2026-04-24"
+    },
+    {
+      "destination_id": "tehri",
+      "date": "2026-04-24"
+    },
+    {
+      "destination_id": "bir-billing",
+      "date": "2026-04-24"
     }
   ],
   "posted_formats": {
@@ -255,7 +250,8 @@
       "score_card",
       "methodology_family",
       "collection_spotlight",
-      "methodology_altitude"
+      "methodology_altitude",
+      "score_card"
     ],
     "PdMu0": [
       "monthly_forecast",
@@ -266,7 +262,8 @@
       "score_card",
       "festival_alert",
       "reality_check",
-      "methodology_altitude"
+      "methodology_altitude",
+      "score_card"
     ]
   },
   "post_log": [
@@ -463,6 +460,28 @@
       "destination": "phawngpui-peak",
       "format": "methodology_altitude",
       "has_media": true
+    },
+    {
+      "timestamp": "2026-04-24T10:14:59.120949+00:00",
+      "date": "2026-04-24",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "mBnXd",
+      "destination": "tehri",
+      "format": "score_card",
+      "has_media": true,
+      "recovered": true,
+      "note": "recovered after bash-timeout killed process post-Outstand-publish (platformPostId=18116930236675918)"
+    },
+    {
+      "timestamp": "2026-04-24T10:16:04.960638+00:00",
+      "date": "2026-04-24",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "PXe80",
+      "destination": "bir-billing",
+      "format": "score_card",
+      "has_media": true
     }
   ],
   "theme_usage": {
@@ -512,6 +531,12 @@
         "2026-04-24"
       ],
       "phawngpui-peak": [
+        "2026-04-24"
+      ],
+      "tehri": [
+        "2026-04-24"
+      ],
+      "bir-billing": [
         "2026-04-24"
       ]
     },
@@ -584,6 +609,12 @@
       ],
       "kabini": [
         "2026-04-23"
+      ],
+      "tehri": [
+        "2026-04-24"
+      ],
+      "bir-billing": [
+        "2026-04-24"
       ]
     },
     "festivals": {
@@ -608,6 +639,9 @@
     "audience_tags": {
       "backpackers": [
         "2026-04-20"
+      ],
+      "adventurers": [
+        "2026-04-24"
       ]
     },
     "articles": {
@@ -670,25 +704,6 @@
     "collections": {
       "adrenaline-rush": [
         "2026-04-22"
-      ]
-    },
-    "reel_map_formats": {
-      "state_heatmap": [
-        "2026-04-24"
-      ],
-      "route_trace": [
-        "2026-04-24"
-      ],
-      "cluster_reveal": [
-        "2026-04-24"
-      ]
-    },
-    "reel_map_states": {
-      "HP": [
-        "2026-04-24"
-      ],
-      "RJ": [
-        "2026-04-24"
       ]
     }
   },

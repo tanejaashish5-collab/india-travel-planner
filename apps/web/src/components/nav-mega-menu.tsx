@@ -421,7 +421,7 @@ function LearnPanel({ locale, onNavigate }: { locale: string; onNavigate: () => 
           <MenuItem href={`/${locale}/guide/book-indian-trains`} icon={TrainIcon} label="Book trains" desc="IRCTC, Tatkal, foreigner tips" onNavigate={onNavigate} />
           <MenuItem href={`/${locale}/arrival`} icon={PlaneIcon} label="Arrival playbook" desc="Airport-by-airport guide" onNavigate={onNavigate} />
           <MenuItem href={`/${locale}/gap-year`} icon={CalendarIcon} label="Gap Year" desc="3–12 months month by month" onNavigate={onNavigate} />
-          <MenuItem href={`/${locale}/india-vs`} icon={GlobeIcon} label="India vs the world" desc="8 country comparisons" onNavigate={onNavigate} />
+          <MenuItem href={`/${locale}/india-vs`} icon={GlobeIcon} label="India vs the world" desc="14 country comparisons" onNavigate={onNavigate} />
         </div>
       </div>
       {/* Featured: For International Visitors */}

@@ -42,3 +42,4 @@ next-env.d.ts
 
 # Videos served from Supabase Storage CDN
 public/videos/
+.env*.local

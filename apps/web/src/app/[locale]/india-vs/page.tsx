@@ -16,7 +16,7 @@ export async function generateMetadata({
   return {
     title: "India vs the World — Honest Country Comparisons for Travelers",
     description:
-      "Decision-grade comparisons between India and other travel-heavy countries. Vietnam, Thailand, Indonesia, Morocco, Peru, Egypt, Sri Lanka, Nepal — what's similar, what's different, what to plan for.",
+      "Decision-grade comparisons between India and 14 travel-heavy countries — Vietnam, Thailand, Indonesia, Morocco, Peru, Egypt, Sri Lanka, Nepal, Bhutan, Singapore, Japan, Tibet, Iran, UAE.",
     ...localeAlternates(locale, "/india-vs"),
   };
 }

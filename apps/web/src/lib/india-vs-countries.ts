@@ -921,6 +921,666 @@ const INDONESIA: CountryProfile = {
     "Indonesia is the right archipelago trip — Bali for one rhythm, Java for another, the eastern islands for adventure and reefs. India is the continental trip — 7x the area, 4x the population, with a different cultural register every 200 km. If Bali's Hindu culture moved you, India is its source — Bali's temples descend from south-Indian Hindu architecture. If you want islands and surf above all, Indonesia is the better fit.",
 };
 
+const BHUTAN: CountryProfile = {
+  slug: "bhutan",
+  name: "Bhutan",
+  flag: "🇧🇹",
+  region: "South Asia (Himalayas)",
+  meta_description:
+    "Bhutan vs India — Tiger's Nest, Buddhist heritage, GNH and Himalayan trekking compared. Honest decision-grade read.",
+  overline: "Bhutan to India",
+  lede: "Bhutan is a 38,394 km² Himalayan kingdom east of Sikkim — Thimphu, Paro, Punakha, Bumthang — gated for foreign visitors by a $200/day Sustainable Development Fee. Indian visitors enter visa-free without the SDF, which makes Bhutan uniquely accessible to Indian travelers and the most controlled tourism economy in the region.",
+  facts: {
+    best_months:
+      "Bhutan: March to May (rhododendron bloom) and September to November (post-monsoon clarity). India's Himalayan belt: same windows for Sikkim, Arunachal, Himachal; April-June for higher Ladakh.",
+    visa_for_indians:
+      "Indians need a permit (issued at the Phuentsholing border or Paro airport) but pay no SDF — Bhutan is uniquely accessible to Indians compared to all other foreign visitors. Bhutanese enjoy visa-free entry to India under the bilateral free-movement arrangement.",
+    daily_cost_usd:
+      "Bhutan: For Indians, $30-70 a day (no SDF, similar to mid-range India). For non-Indians, $200/day SDF + $60-120 land costs. India: $20-60 a day for the same band. Bhutan is among the cheapest Himalayan trips for Indians and among the most expensive for everyone else.",
+    language_overlap:
+      "Bhutan: Dzongkha + English (English is the medium of education). India: Hindi + English + 22 official languages. Both are language-friendly for English-speaking travelers; Hindi works in many Bhutanese border districts.",
+    safety_read:
+      "Bhutan has among the lowest crime rates in the region — no aggressive sales pressure, minimal touts. India is safe but variable: Tier-1 cities and most listed destinations score well, remote areas need more awareness. Bhutan is the easier read on every safety axis.",
+    cuisine_signature:
+      "Bhutan's signature is ema datshi (chilli + cheese), kewa datshi (potato + cheese), shakam (dried beef), and red rice. Heat-forward, simple. India's regional masala kitchen runs across 25+ traditions Bhutan's compact geography doesn't replicate.",
+  },
+  india_more: [
+    {
+      topic: "Cultural variety",
+      detail:
+        "Bhutan is uniformly Vajrayana Buddhist with Tibetan-derived culture across one country. India runs four major civilisations layered visibly — Hindu, Mughal Islamic, Sikh, British colonial — plus Buddhism's birthplace at Bodh Gaya.",
+    },
+    {
+      topic: "Architectural variety",
+      detail:
+        "Bhutan's architecture is consistently Tibetan-Buddhist (dzongs, lhakhangs, temples). India runs six architectural traditions — Indus, Vedic Hindu, Mughal Islamic, Dravidian temple, Indo-Saracenic colonial, modernist (Le Corbusier's Chandigarh).",
+    },
+    {
+      topic: "Coastline and tropical south",
+      detail:
+        "Bhutan is landlocked. India offers 7,500 km of coastline and a sub-tropical south (Kerala, Tamil Nadu, Andaman) Bhutan can't match.",
+    },
+    {
+      topic: "Wildlife at scale",
+      detail:
+        "Bhutan's wildlife is rich but small-scale (Manas Royal National Park rhinos, Black-necked cranes at Phobjikha). India runs five tiger reserves, two-thirds of the world's one-horned rhinos at Kaziranga, snow leopards in Ladakh, Asiatic lions at Gir.",
+    },
+  ],
+  country_more: [
+    {
+      topic: "Tourism cap and quality control",
+      detail:
+        "Bhutan's $200/day SDF for foreigners (Indian travelers exempt) controls tourist volume, environmental load and cultural integrity at a level India doesn't approach. Bhutan is the world's only carbon-negative country.",
+    },
+    {
+      topic: "Tiger's Nest Monastery (Paro Taktsang)",
+      detail:
+        "Paro Taktsang clinging to a 900 m cliff is one of Asia's most-photographed monuments. Indian Buddhist monasteries (Tawang, Hemis, Lamayuru) are larger but don't deliver the same single-image emotional pull.",
+    },
+    {
+      topic: "Gross National Happiness as policy",
+      detail:
+        "GNH is constitutional, not a slogan — Bhutan's constitution mandates 60% forest cover, regulates building heights to preserve traditional roofs, and limits foreign tourism. The country runs at a different cultural rhythm.",
+    },
+    {
+      topic: "Trip simplicity for Indians",
+      detail:
+        "Bhutan can be done in 7-10 days with road entry from Phuentsholing or air via Paro. India's equivalent slot covers one Indian region. For Indians wanting a passport-stamp Himalayan trip, Bhutan is the tightest option.",
+    },
+  ],
+  swaps: [
+    {
+      their: "Tiger's Nest Monastery (Paro Taktsang)",
+      our: "Tawang Monastery (Arunachal) + Hemis (Ladakh) + Tabo (Spiti)",
+      reason:
+        "If cliff-top Buddhist monastery was Bhutan's headline draw, Tawang (India's largest Buddhist monastery, ~400 years old) and Hemis (largest in Ladakh) deliver the parallel. Tabo's 1,000-year-old murals match Bhutan's older lhakhangs.",
+    },
+    {
+      their: "Punakha Dzong (river-island fortress)",
+      our: "Leh Palace + the dzongs of Spiti",
+      reason:
+        "Punakha Dzong's river-island fortress is unique in form, but the Tibetan dzong-style architecture is matched in spirit by Leh Palace and the smaller fortified monasteries of Spiti.",
+    },
+    {
+      their: "Bumthang Valley + Phobjikha black-necked cranes",
+      our: "Khangchendzonga National Park (Sikkim) + Loktak Lake (Manipur)",
+      reason:
+        "Bumthang's high-valley + winter-bird draw maps onto Sikkim's Khangchendzonga (UNESCO) for the high valleys, and Loktak Lake's floating phumdis for the wetland-bird parallel.",
+    },
+    {
+      their: "Druk Path Trek (Paro to Thimphu)",
+      our: "Markha Valley trek (Ladakh) + Singalila Ridge (Sikkim/West Bengal)",
+      reason:
+        "If multi-day Himalayan trekking with Buddhist village stops was the appeal, Markha Valley (5-7 days) covers the gompa-trek combination. Singalila Ridge offers Kanchenjunga sunrise without the SDF.",
+    },
+    {
+      their: "Bhutanese hot stone bath + traditional medicine",
+      our: "Kerala Ayurveda + Sowa Rigpa (Tibetan medicine in Sikkim, McLeod Ganj, Ladakh)",
+      reason:
+        "Sowa Rigpa is practiced in the same lineage in India's Himalayan belt — the parallel medicine system. Hot stone baths (dotsho) appear in some Himachal hot-springs villages too.",
+    },
+  ],
+  expectations: [
+    "Bigger scale. Bhutan is roughly the size of Switzerland (38,394 km²); India is 86x larger. India's Himalayan belt alone is 5x Bhutan's total area.",
+    "More religious variety in everyday space. Bhutan is Vajrayana Buddhist; India runs Hindu temples + mosques + gurdwaras + churches in active layered presence.",
+    "Less tourism control, more variability. Bhutan's $200/day SDF guarantees quality for non-Indians. India's tourism quality is much more variable — top-end matches Bhutan, mid-range does not.",
+    "More aggressive sales pressure. Bhutan's tourism is fixed-price and minimal; India's is bargain-driven with constant pressure at heritage sites.",
+    "Wider altitude range. Bhutan's tourist circuit is mostly 2,000-3,500 m; India's offers 0-5,000+ m motorable, plus Kerala backwaters at sea level.",
+  ],
+  verdict:
+    "Bhutan is the world's most controlled tourism economy — $200/day SDF for foreigners, no SDF for Indians, near-zero tourism wear-and-tear. For Indian travelers specifically, it's the cheapest passport-stamp Himalayan trip with luxury-grade quality control. India is the broader, scrappier, more variable trip — same Himalayan range plus seven other regional traditions and 7,500 km of coast. If you want one perfectly-curated Buddhist mountain week, do Bhutan. If you want the rest of South Asia, India is the longer answer.",
+};
+
+const SINGAPORE: CountryProfile = {
+  slug: "singapore",
+  name: "Singapore",
+  flag: "🇸🇬",
+  region: "Southeast Asia",
+  meta_description:
+    "Singapore vs India for travel — hawker food, multicultural city-state vs continental India compared. Decision-grade read.",
+  overline: "Singapore to India",
+  lede: "Singapore is a 728 km² city-state — five days fits a complete itinerary. India is a 3.3-million-km² continent — a year of trips wouldn't exhaust it. The comparison is between a curated multicultural city and a country that contains 25+ comparable cities.",
+  facts: {
+    best_months:
+      "Singapore: February to April are the driest, but the country is humid year-round (~28-32°C). India: October to March across most of the country; the hot months in the plains push the trip into the Himalayas (April-June).",
+    visa_for_indians:
+      "Indians need an e-visa for Singapore (~SGD 30, processing 1-3 working days). Singaporeans visiting India need a tourist visa (e-visa available, 30-90 days).",
+    daily_cost_usd:
+      "Singapore: $80-150 a day for mid-range — among Asia's most expensive. India: $20-60 for the same band. India is 3-5x cheaper across most price tiers.",
+    language_overlap:
+      "Singapore: English (official) + Mandarin + Malay + Tamil. India: Hindi + English + 22 official languages. Both are highly English-friendly; the Tamil overlap with Tamil Nadu is direct.",
+    safety_read:
+      "Singapore is one of the world's safest countries — minimal crime, predictable infrastructure, strict laws. India is variable: Tier-1 cities are safe; some destinations score 5/5; remote areas need awareness. Singapore is the easier read overall.",
+    cuisine_signature:
+      "Singapore's signature is the hawker centre — Chinese, Malay, Indian and Peranakan dishes side-by-side, $5-10 a plate, world-class quality (UNESCO Intangible Heritage 2020). India's regional masala kitchen carries 25+ traditions across the country, but the multi-cuisine convenience of a single hawker centre is uniquely Singaporean.",
+  },
+  india_more: [
+    {
+      topic: "Scale and depth",
+      detail:
+        "Singapore is 728 km²; India is 3.3 million. India has 25+ cities individually larger than Singapore. The depth and variety axis is incomparable.",
+    },
+    {
+      topic: "History and architecture",
+      detail:
+        "Singapore's history is mostly 19th-20th century (post-Raffles 1819). India runs 5,000+ years of continuous civilization with monuments dating from 2,500 BCE (Indus Valley) onwards. 42 UNESCO inscriptions to Singapore's 1.",
+    },
+    {
+      topic: "Mountain and natural variety",
+      detail:
+        "Singapore has Sentosa beach and Bukit Timah at 164 m. India offers Himalayan altitudes above 5,000 m, 7,500 km of coastline, and unique ecosystems (Sundarbans, Western Ghats, Andaman) Singapore can't match.",
+    },
+    {
+      topic: "Cultural depth at the source",
+      detail:
+        "Singapore preserves Chinese, Malay, Indian and Peranakan heritage in compressed neighborhoods (Chinatown, Little India, Kampong Glam). India is the source of much of South Asia's culture — Singapore's Little India is one neighborhood; India is 30+ regional Indias.",
+    },
+  ],
+  country_more: [
+    {
+      topic: "Trip simplicity",
+      detail:
+        "Singapore can be done in 4-5 days with every detail planned. India's equivalent slot doesn't even cover one region properly. For travelers wanting a tight, polished, no-decision trip, Singapore is hard to beat.",
+    },
+    {
+      topic: "Infrastructure quality",
+      detail:
+        "Public transit is world-class (MRT runs perfectly, no traffic). Hotels are reliably high-quality at every price tier. India's infrastructure varies — Tier-1 cities have decent public transit, but the overall standard is meaningfully below Singapore's.",
+    },
+    {
+      topic: "Hawker centre culture",
+      detail:
+        "Singapore's hawker centres are UNESCO Intangible Cultural Heritage. The Chinese-Malay-Indian-Peranakan compression in one venue is unique. India's regional kitchens are deeper but never compressed into one open-air food court.",
+    },
+    {
+      topic: "Convenience for first-time Asia",
+      detail:
+        "Singapore is widely considered the best Asian first-trip — English everywhere, easy logistics, low crime, all major cuisines accessible. India is more rewarding for return visitors who want to invest in a country.",
+    },
+  ],
+  swaps: [
+    {
+      their: "Marina Bay Sands skyline",
+      our: "Mumbai's Bandra-Worli Sea Link + Bandra Kurla Complex",
+      reason:
+        "If iconic-skyline-with-luxury-stay was Singapore's draw, Mumbai's Sea Link panorama from BKC's hotels (Trident, JW Marriott Sahar) delivers the parallel. Mumbai's overall density runs higher per km² than Singapore.",
+    },
+    {
+      their: "Hawker centre food courts (Maxwell, Lau Pa Sat)",
+      our: "Mumbai's Mohammed Ali Road + Old Delhi's Chandni Chowk",
+      reason:
+        "If multi-cuisine street-food density was Singapore's appeal, Mumbai's Mohammed Ali Road during Ramzan and Old Delhi's Chandni Chowk lanes deliver the equivalent eat-standing-up density (different organisation, similar variety).",
+    },
+    {
+      their: "Sentosa beach and integrated resorts",
+      our: "South Goa beach belt + Andaman water activities",
+      reason:
+        "Sentosa is curated-beach-meets-theme-park. India's parallel is fragmented — Goa for beach, Andaman for marine activities — but the Singapore-style integration doesn't exist as a single venue.",
+    },
+    {
+      their: "Little India neighborhood",
+      our: "Tamil Nadu (Madurai, Chennai) for the source culture",
+      reason:
+        "Singapore's Little India is the preserved enclave; the unfiltered source is Tamil Nadu itself. Madurai's Meenakshi temple, Chennai's Marina, and the Tamil-coast cuisine are the originals.",
+    },
+    {
+      their: "Gardens by the Bay (engineered nature)",
+      our: "Lalbagh Bengaluru + Lodi Gardens Delhi",
+      reason:
+        "Engineered urban biodiversity is Singapore's specialty. India's parallel is older botanical gardens — Bengaluru's 240-acre Lalbagh and Delhi's Lodi Gardens — less curated, more layered with Mughal and colonial history.",
+    },
+  ],
+  expectations: [
+    "Continental scale. Singapore can be done in 5 days; India's smallest meaningful trip is 10-14 days, and most regions deserve 7+ days.",
+    "Variable infrastructure. Singapore is uniformly high-quality; India ranges from world-class (Mumbai metro, Tier-1 hotels) to basic. Plan accordingly when booking outside the top tier.",
+    "More religious presence in everyday life. Singapore's religious diversity is preserved in dedicated neighborhoods; India's runs across the entire country in active layered practice.",
+    "Hotter average. Singapore is humid 28-32°C year-round. India varies from sub-zero (Ladakh winter) to 45°C+ (plains in May).",
+    "Slower transit per km. Singapore's MRT is world-class; India's domestic flights are reliable but ground travel is slower per km due to traffic and country scale.",
+  ],
+  verdict:
+    "Singapore is the world's most polished city-state — the best Asia first-trip if you want minimal friction. India is what you do when Singapore's polish bored you and you want a country that runs at 4,500x the area, 240x the population, and has not been engineered for tourism. If Singapore was a clean meal, India is a noisy multi-course feast across 30 different kitchens. Different category of trip.",
+};
+
+const JAPAN: CountryProfile = {
+  slug: "japan",
+  name: "Japan",
+  flag: "🇯🇵",
+  region: "East Asia",
+  meta_description:
+    "Japan vs India for travel — temples, mountains, food, infrastructure compared. Decision-grade read for travelers choosing.",
+  overline: "Japan to India",
+  lede: "Japan is a 377,975 km² archipelago — Tokyo, Kyoto, Osaka, Hiroshima, Hokkaido, Okinawa — coverable in 14-21 days at peak quality. India is 9x larger and 11x more populous, with comparable cultural depth on a different timeline. The decision is between Japan's compressed perfection and India's expansive imperfection.",
+  facts: {
+    best_months:
+      "Japan: late March to April for cherry blossom (sakura), September to November for autumn colours (kōyō). India: October to March across most of the country; April-June for higher Himalayan zones.",
+    visa_for_indians:
+      "Indians need a visa for Japan (e-visa or paper, ~$25-50 depending on category). Japanese visiting India need a tourist visa (e-visa available, 30-90 days).",
+    daily_cost_usd:
+      "Japan: $80-150 a day for mid-range. India: $20-60 for the same band. Japan is 3-4x more expensive than India consistently.",
+    language_overlap:
+      "Japan: Japanese; English limited outside major hotels and tourist hubs. India: Hindi + English + 22 official languages. India is markedly easier on the language axis for English-speaking travelers.",
+    safety_read:
+      "Japan is among the world's safest countries — minimal crime, lost wallets returned. India is variable: Tier-1 cities are safe, some destinations score 5/5 on solo female safety, remote areas need awareness. Japan is uniformly easier.",
+    cuisine_signature:
+      "Japan's signature is washoku (UNESCO Intangible Cultural Heritage) — sushi, ramen, kaiseki, regional specialities (Hokkaido seafood, Osaka takoyaki, Kyoto kaiseki). India's regional masala kitchen runs across 25+ traditions; both countries have comparable culinary depth in different lineages.",
+  },
+  india_more: [
+    {
+      topic: "Religious variety",
+      detail:
+        "Japan is mostly Shinto + Buddhist (often syncretic). India is the homeland of Hinduism, Sikhism, Jainism, Buddhism with 200+ million Muslims, significant Christian + Parsi communities — all in active layered practice.",
+    },
+    {
+      topic: "Climate range",
+      detail:
+        "Japan runs from sub-tropical Okinawa to sub-arctic Hokkaido. India's range is wider — Himalayan cold-desert (Ladakh), tropical equatorial (Kerala), Thar Desert, and the Andaman archipelago in one country.",
+    },
+    {
+      topic: "Cultural longevity",
+      detail:
+        "Japan's continuous cultural tradition runs ~2,000 years. India's runs 5,000+ years — the world's longest unbroken cultural lineage, with continuously-practised temple traditions from the 7th century onwards (Hampi, Khajuraho, Brihadeeswarar).",
+    },
+    {
+      topic: "Wildlife at scale",
+      detail:
+        "Japan's wildlife is unique (snow monkeys, brown bears in Hokkaido) but small-scale. India runs 75% of the world's wild tigers, two-thirds of the world's one-horned rhinos at Kaziranga, snow leopards in Ladakh, Asiatic lions at Gir.",
+    },
+  ],
+  country_more: [
+    {
+      topic: "Infrastructure perfection",
+      detail:
+        "Japan's bullet trains (shinkansen) are the world's most punctual high-speed rail. Subways, public transit, and signage are uniformly world-class. India's infrastructure is patchy — domestic flights work, but ground travel reliability is much lower.",
+    },
+    {
+      topic: "Aesthetic discipline",
+      detail:
+        "Japan's design sensibility (wabi-sabi, ma, shibui) runs end-to-end — temples, gardens, food, packaging, train stations. India's design has peaks (Kerala traditional homes, Mughal gardens) but no consistent national aesthetic.",
+    },
+    {
+      topic: "Cherry blossom + autumn colour seasons",
+      detail:
+        "Sakura and kōyō are unique global tourist phenomena Japan has commercialised perfectly. India's seasonal equivalents (rhododendrons in spring, post-monsoon Himalayan clarity) are real but not as concentrated or commercialised.",
+    },
+    {
+      topic: "Food precision",
+      detail:
+        "Japanese kitchens chase precision — 30-year sushi apprenticeships, single-dish specialty restaurants. Indian kitchens chase complexity — many spices, longer marinations, regional improvisation. Different culinary philosophies.",
+    },
+  ],
+  swaps: [
+    {
+      their: "Kyoto temples and gardens",
+      our: "Hampi (UNESCO) + Khajuraho temple complex + Madurai Meenakshi",
+      reason:
+        "If concentrated temple architecture with 1,000+ years of continuous worship was Kyoto's draw, Madurai's still-active Meenakshi temple, Hampi's Vijayanagara ruins, and Khajuraho's Chandela complex deliver India's equivalent — denser religious space, different aesthetic.",
+    },
+    {
+      their: "Mt Fuji + Hakone hot springs",
+      our: "Manimahesh + Manikaran hot springs + Stok Kangri view",
+      reason:
+        "Mt Fuji's iconic single-peak silhouette is hard to match, but Manimahesh (Himachal) and Stok Kangri (Ladakh) deliver iconic Himalayan peaks. Manikaran's hot springs are India's version of Hakone's onsen culture — different ritual, similar geology.",
+    },
+    {
+      their: "Tokyo + Osaka megacities",
+      our: "Mumbai + Delhi + Bengaluru",
+      reason:
+        "Tokyo's compact density and Osaka's food culture map onto Mumbai's density (denser per km² than Tokyo) and Delhi's heritage-meets-modern. Bengaluru is the Indian Silicon Valley parallel.",
+    },
+    {
+      their: "Hiroshima Peace Memorial (UNESCO)",
+      our: "Bodh Gaya + Sabarmati Ashram",
+      reason:
+        "If sites of historical reconciliation and global pilgrimage was the appeal, Bodh Gaya (where the Buddha attained enlightenment, UNESCO) and Sabarmati Ashram (Gandhi's home from where the Salt March began) deliver India's equivalents.",
+    },
+    {
+      their: "Hokkaido (powder snow + skiing)",
+      our: "Auli + Gulmarg",
+      reason:
+        "If powder snow + ski season was Hokkaido's draw, India's two real ski destinations — Auli (Uttarakhand) and Gulmarg (Kashmir) — deliver shorter seasons but real Himalayan skiing.",
+    },
+  ],
+  expectations: [
+    "More chaos. Japan's order is unmatched; India runs on improvisation. Plan for delays, traffic, and surprises.",
+    "Less English in rural areas. Japan's English is limited but signposted; India's English coverage is wider but variable across states.",
+    "Cheaper across most categories. India is 3-4x cheaper than Japan; budget travel is genuinely possible in India in a way Japan rarely allows.",
+    "More direct contact with strangers. Indians ask personal questions; Japanese reserve is the opposite extreme.",
+    "Bigger crowds and density. Japan's crowds are organised; India's crowds are unfiltered.",
+  ],
+  verdict:
+    "Japan is the world's most-polished high-cost trip — perfection, precision, infrastructure. India is the high-depth low-cost trip — chaos, variety, intensity. They are opposite ends of the Asian travel spectrum. If Japan taught you that you like aesthetic discipline, India will be a shock; if Japan felt overly curated, India is its philosophical opposite — improvisation, layered tradition, and the world's longest unbroken cultural lineage at one-fourth the cost.",
+};
+
+const TIBET: CountryProfile = {
+  slug: "tibet",
+  name: "Tibet (Tibet Autonomous Region, China)",
+  flag: "🏔️",
+  region: "East Asia (Tibetan Plateau)",
+  meta_description:
+    "Tibet vs India for travel — Lhasa, Buddhist heritage, Himalayan altitudes and the Indian Ladakh parallel compared.",
+  overline: "Tibet to India",
+  lede: "Tibet (the Tibet Autonomous Region of China) sits north of the Indian Himalayas — Lhasa, Shigatse, Mt Kailash, Everest base camp from the north — and travel requires both a Chinese visa and a Tibet Travel Permit issued only through registered tour operators. India's Ladakh and Sikkim share the same Tibetan Buddhist culture and similar Himalayan altitudes without the permit complexity. For Indian passport holders specifically, Tibet permits run through additional diplomatic layers and are functionally inaccessible some years.",
+  facts: {
+    best_months:
+      "Tibet: April to June and September to October (avoiding monsoon haze and winter cold). India's Ladakh and Sikkim: same windows.",
+    visa_for_indians:
+      "Indians need a Chinese visa + Tibet Travel Permit issued through registered tour operators. For Indian passport holders, the permit process is more restrictive than for Western passports — sometimes denied without explanation, particularly during periods of India-China diplomatic tension.",
+    daily_cost_usd:
+      "Tibet: $80-150 a day on organised group tour (independent travel not permitted). India's Ladakh: $30-80 a day independent. India is 2-3x cheaper for an equivalent altitude and cultural experience.",
+    language_overlap:
+      "Tibet: Tibetan + Mandarin; English limited outside the major tourist hotels. India: Hindi + English + 22 official languages, with Bhoti spoken in Ladakh. India is significantly easier for English-speaking travelers.",
+    safety_read:
+      "Both rate well on petty-crime axis. Tibet has visible state security at religious sites and in Lhasa; certain topics (Dalai Lama, political speech) require careful avoidance. India is more open in religious-cultural discussion. Both are safer than the global tourism average.",
+    cuisine_signature:
+      "Tibet's signature is tsampa (roasted barley flour), thukpa (noodle soup), momos, and butter tea (po cha). India's Ladakh shares the same kitchen — momos, thukpa, butter tea are ubiquitous in Leh, McLeod Ganj, and Sikkim. The cuisine overlap is direct.",
+  },
+  india_more: [
+    {
+      topic: "Cultural variety",
+      detail:
+        "Tibet is uniformly Vajrayana Buddhist with concentrated heritage. India runs Hindu, Muslim, Sikh, Buddhist, Christian, Jain and Parsi traditions in active practice — the cultural span is much wider.",
+    },
+    {
+      topic: "Trip flexibility",
+      detail:
+        "Tibet requires organised group tours with fixed itineraries. India's Ladakh, Sikkim, McLeod Ganj allow independent travel, customised stays, longer immersion. The freedom of movement axis is incomparable.",
+    },
+    {
+      topic: "Religious access without state oversight",
+      detail:
+        "Tibet's Buddhist monasteries are accessible but with state oversight. India's Tibetan Buddhist monasteries (Tawang, Hemis, Tabo, Lamayuru, Rumtek) are equally ancient and freely accessible without escort.",
+    },
+    {
+      topic: "Geographic diversity",
+      detail:
+        "Tibet is uniformly high-altitude plateau (avg 4,500 m). India offers Tibet's altitude experience plus 7,500 km of coastline, the Indo-Gangetic plain, the Western Ghats, and the Andaman archipelago.",
+    },
+  ],
+  country_more: [
+    {
+      topic: "Mt Kailash and Manasarovar",
+      detail:
+        "Mt Kailash is the unique sacred-mountain pilgrimage point for Hindus, Buddhists, Jains and the Bon. India does not have access to Mt Kailash itself, though it organises Kailash Mansarovar Yatras through Tibet. For the actual Kailash kora, Tibet is the only way.",
+    },
+    {
+      topic: "Lhasa, Potala Palace and Jokhang",
+      detail:
+        "Lhasa's Potala Palace, Jokhang Temple, and Norbulingka (UNESCO inscriptions) are the world's most-photographed Tibetan Buddhist sites. India's parallels — Tawang Monastery, Hemis — are smaller in monumental scale.",
+    },
+    {
+      topic: "Everest north face access by road",
+      detail:
+        "Tibet offers road access to Everest Base Camp (north face) at 5,200 m. India does not have direct Everest access (Nepal does for the south face). For the closest road-accessible Everest view, Tibet is unique.",
+    },
+    {
+      topic: "Sky burial and ritual practice",
+      detail:
+        "Tibet's traditional sky burial sites (Drikung Til, Tagong) and certain ritual practices are not present in India's Tibetan Buddhist regions. Some funerary and ritual traditions remain Tibet-specific.",
+    },
+  ],
+  swaps: [
+    {
+      their: "Lhasa (Potala + Jokhang)",
+      our: "Leh (Leh Palace + Hemis Monastery) + Tawang (Galden Namgyal Lhatse)",
+      reason:
+        "If Tibetan Buddhist capital architecture was the appeal, Leh's old town with the 17th-century Leh Palace and the surrounding monasteries (Hemis, Thiksey, Shey) deliver the cluster experience. Tawang's monastery is the largest Tibetan Buddhist monastery in India.",
+    },
+    {
+      their: "Mt Kailash kora (52 km circuit)",
+      our: "Adi Kailash + Om Parvat (Pithoragarh, Uttarakhand)",
+      reason:
+        "Adi Kailash (Chhota Kailash, 5,945 m) in Uttarakhand is the sacred-mountain pilgrimage Indians can do without crossing into Tibet. The peak is a Hindu-Buddhist sacred site with parallel pilgrimage tradition.",
+    },
+    {
+      their: "Manasarovar Lake",
+      our: "Tso Moriri + Pangong Tso (Ladakh)",
+      reason:
+        "If sacred high-altitude lake at 4,500+ m was the draw, Tso Moriri (4,522 m) and Pangong Tso (4,250 m, India shares with China) deliver the parallel without the Tibet permit.",
+    },
+    {
+      their: "Tibetan Buddhist monasteries with centuries-old murals",
+      our: "Tabo (1,000+ years) + Lamayuru + Hemis + Tawang",
+      reason:
+        "Tabo Monastery in Spiti is over 1,000 years old, with Indo-Tibetan murals as old as anything in Tibet. Lamayuru and Hemis hold the same Tibetan Buddhist artistic tradition.",
+    },
+    {
+      their: "Everest Base Camp (north face)",
+      our: "Stok Kangri base + Goecha La (Kanchenjunga base)",
+      reason:
+        "If road-accessible high-base of an iconic peak was the appeal, Stok Kangri base in Ladakh and Goecha La (Kanchenjunga base in Sikkim) provide the parallel. Different mountain, similar high-base experience.",
+    },
+  ],
+  expectations: [
+    "More open religious discussion. India is freer on Tibetan Buddhist topics, the Dalai Lama, exile politics. McLeod Ganj is the Dalai Lama's seat in exile.",
+    "More variable infrastructure outside Lhasa. Tibet has consistent tour-grade infrastructure; India's Ladakh and Sikkim run from luxury to homestay.",
+    "Lower cost. India is 2-3x cheaper for an equivalent altitude and cultural experience.",
+    "Wider dietary variety. Tibet's diet is meat-heavy (yak, mutton); India offers full vegetarian and meat options at every altitude.",
+    "Less government oversight. India's Buddhist regions (Ladakh, Sikkim, Tawang) have Inner Line Permit requirements but no tour-mandate.",
+  ],
+  verdict:
+    "Tibet is unique for Mt Kailash, Lhasa's monumental Buddhist architecture, and the Everest north face. India's Tibetan Buddhist regions (Ladakh, Sikkim, Tawang, McLeod Ganj) carry the same culture, the same altitudes, the same architectural lineage at one-third the cost and full freedom of movement. For Mt Kailash specifically, Tibet (or the Indian-organised Kailash Mansarovar Yatra) is the only option. For everything else Tibetan, India is the cheaper, freer, deeper trip.",
+};
+
+const IRAN: CountryProfile = {
+  slug: "iran",
+  name: "Iran",
+  flag: "🇮🇷",
+  region: "West Asia",
+  meta_description:
+    "Iran vs India for travel — Persian heritage, Mughal ancestry, food and Islamic architecture compared. Decision-grade read.",
+  overline: "Iran to India",
+  lede: "Iran is a 1.6-million-km² country anchored on Persian heritage — Tehran, Isfahan, Shiraz, Yazd, Persepolis. India's Mughal heritage is direct descent from Persian culture; the architectural overlap (Taj Mahal, Humayun's Tomb, Lucknow's Imambaras) is genuine. The decision is between Persia at the source and Mughal-Indian as the outcome.",
+  facts: {
+    best_months:
+      "Iran: March to May and September to November (avoiding summer heat in the south and winter cold in the north). India: October to March across most of the country.",
+    visa_for_indians:
+      "Indians need a visa for Iran (e-visa available, 30-day tourist; processing 1-2 weeks). Iranians visiting India need a tourist visa (e-visa available, 30-90 days).",
+    daily_cost_usd:
+      "Iran: $30-60 a day for mid-range. India: $20-60 for the same band. Both countries are price-comparable; Iran's tourist economy has limited card-payment infrastructure due to international sanctions, requiring travelers to bring cash USD or EUR.",
+    language_overlap:
+      "Iran: Farsi (Persian); English in tourist hubs. India: Hindi + English + 22 official languages. Persian and Urdu/Hindavi share significant vocabulary from the Mughal era; some words overlap directly. India is structurally easier on the language axis.",
+    safety_read:
+      "Both rate well on the petty-crime axis. Iran is generally safe for tourists, with conservative dress requirements (head scarf for women in public, modest clothing for men). India is variable: Tier-1 cities are safe; some destinations score 5/5 on solo female safety; remote areas need awareness.",
+    cuisine_signature:
+      "Iran's signature is rice with saffron, kebab varieties (koobideh, jujeh, barg), ghormeh sabzi, and fesenjān. India's biryani (Hyderabadi, Lucknowi) and pulao traditions descend directly from Persian rice cuisine — the lineage is visible in both kitchens.",
+  },
+  india_more: [
+    {
+      topic: "Religious variety",
+      detail:
+        "Iran is mostly Twelver Shia Muslim with smaller Christian, Zoroastrian, Jewish, and Sunni communities. India is the homeland of Hinduism, Sikhism, Jainism, Buddhism — with 200+ million Muslims, significant Christian and Parsi communities (Indian Parsis are descendants of Iranian Zoroastrian refugees from the 8th century).",
+    },
+    {
+      topic: "Climate range",
+      detail:
+        "Iran runs from desert (Lut, Dasht-e Kavir) to mountains (Damavand at 5,610 m, Alborz). India's range is wider — Himalayan cold-desert (Ladakh), tropical equatorial (Kerala), Thar Desert, and the Andaman archipelago in one country.",
+    },
+    {
+      topic: "Wildlife at scale",
+      detail:
+        "Iran's wildlife is rich (Persian leopards, Caspian seals, the critically-endangered Asiatic cheetah). India runs much larger — 75% of the world's wild tigers, two-thirds of the world's one-horned rhinos at Kaziranga, snow leopards in Ladakh, Asiatic lions at Gir.",
+    },
+    {
+      topic: "Architectural variety",
+      detail:
+        "Iran's architecture is uniformly Persian-Islamic. India runs six layered architectural traditions — Indus, Vedic Hindu, Mughal Islamic (direct Persian descent), Dravidian Hindu, Indo-Saracenic colonial, modernist (Le Corbusier's Chandigarh).",
+    },
+  ],
+  country_more: [
+    {
+      topic: "Persian heritage at the source",
+      detail:
+        "Iran is the source of the Persian cultural lineage that shaped Mughal India. Persepolis, Pasargadae, Naqsh-e Jahan Square in Isfahan, Yazd's adobe heritage — these are originals. India's Mughal monuments descend from Persian architecture but remixed with Hindu traditions.",
+    },
+    {
+      topic: "Concentrated UNESCO depth",
+      detail:
+        "Iran has 27 UNESCO inscriptions in a more concentrated geography. The Shiraz-Persepolis-Pasargadae triangle holds three UNESCO sites within 200 km. India's 42 inscriptions are spread across the entire country.",
+    },
+    {
+      topic: "Bazaar architecture",
+      detail:
+        "Tehran's Grand Bazaar, Isfahan's Naqsh-e Jahan, and Tabriz's bazaar (the world's largest covered bazaar, UNESCO) are unique architectural forms. India's bazaars are alive but in different built forms — closer to chaos than to enclosed grandeur.",
+    },
+    {
+      topic: "Caspian Sea + Persian Gulf coast",
+      detail:
+        "Iran has both Caspian Sea (north) and Persian Gulf (south). India has Indian Ocean and Bay of Bengal coastlines — different bodies of water, different beach culture.",
+    },
+  ],
+  swaps: [
+    {
+      their: "Isfahan (Naqsh-e Jahan, mosques)",
+      our: "Lucknow (Bara Imambara) + Old Delhi (Jama Masjid + Red Fort)",
+      reason:
+        "If Persian-Islamic monumental architecture was Iran's draw, Lucknow's Imambara complex and Old Delhi's Mughal monuments deliver the direct descendant. Bara Imambara was built by Asaf-ud-Daula in 1784 in clear Persian style.",
+    },
+    {
+      their: "Persepolis ruins",
+      our: "Hampi (UNESCO) + Vijayanagara empire ruins",
+      reason:
+        "If abandoned-imperial-stone-capital was Iran's appeal, Hampi's 26 km² of granite ruins (UNESCO) deliver the parallel. Both are former empire capitals frozen in time at similar civilisational scales.",
+    },
+    {
+      their: "Yazd (mud-brick desert architecture)",
+      our: "Jaisalmer (sandstone fort + havelis)",
+      reason:
+        "Yazd's adobe architecture and wind catchers (badgir) have parallel in Jaisalmer's living fort and the Shekhawati havelis. Both are desert-adapted architectural traditions with shared Persian heritage influence.",
+    },
+    {
+      their: "Shiraz (Persian poetry, gardens, Hafez)",
+      our: "Lucknow (Awadhi culture, ghazals, kababs)",
+      reason:
+        "Shiraz's Persian poetry and refinement has direct cultural descent in Lucknow's Awadhi court culture under the Nawabs of Oudh — Persian-derived ghazals, kebab traditions, Urdu literature.",
+    },
+    {
+      their: "Iranian carpet weaving (Kashan, Tabriz)",
+      our: "Kashmir (Pashmina + carpet weaving) + Bhadohi-Mirzapur",
+      reason:
+        "Persian carpet tradition has direct descendants in Kashmir's Pashmina-and-carpet weaving and Uttar Pradesh's Bhadohi-Mirzapur carpet belt — both lineages trace techniques to Persian masters.",
+    },
+  ],
+  expectations: [
+    "Strict dress code in Iran. Head scarf for women in public + modest dress for men is the legal requirement. India has no national dress code, though specific religious sites require modest dress.",
+    "Cash-heavy economy in Iran. Iranian banking is sanctioned; bring USD or EUR cash. India accepts cards widely + UPI is universal.",
+    "Less religious diversity in everyday space. Iran is uniformly Shia Muslim public space; India runs Hindu, Muslim, Sikh, Christian etc. simultaneously.",
+    "Cooler average. Iran's high-altitude regions (Alborz, Tehran in winter) get genuinely cold; India's Himalayan equivalents are matched but the plains run warmer.",
+    "Less English in smaller cities. Iranian tourist hubs have decent English signage; smaller cities and villages have less. India's English coverage is broader.",
+  ],
+  verdict:
+    "Iran is the source of much of Mughal-Indian culture — Persian poetry, Islamic architecture, biryani, the Imambara design language. India is the descendant culture remixed with Hindu and Sikh traditions. If you want Persian heritage at its source, Iran. If you want the same heritage in a country with broader cultural variety, larger geographic scale, lower travel restrictions, and fewer banking complications, India is the practical choice.",
+};
+
+const UAE: CountryProfile = {
+  slug: "uae",
+  name: "UAE",
+  flag: "🇦🇪",
+  region: "West Asia",
+  meta_description:
+    "UAE vs India for travel — Dubai luxury, Abu Dhabi heritage, deserts and Indian regional culture compared. Decision-grade read.",
+  overline: "UAE to India",
+  lede: "UAE is an 83,600 km² federation — Dubai, Abu Dhabi, Sharjah, Ras Al Khaimah, Fujairah — and most travelers cover Dubai + Abu Dhabi in 5-7 days. India is 40x larger and 150x more populous, with cultural depth UAE explicitly imports from elsewhere — including from India itself (UAE has 2.6+ million Indian residents). The decision is between curated luxury and lived diversity.",
+  facts: {
+    best_months:
+      "UAE: November to March (avoiding extreme summer heat that hits 45°C+). India: October to March for most of the country. Same primary window.",
+    visa_for_indians:
+      "Indians can get a UAE visa-on-arrival if holding a valid US, UK, or Schengen visa OR a UAE residence permit; otherwise a pre-issued tourist visa (e-visa available). UAE residents (including the 2.6M+ Indian diaspora) need a tourist visa for India.",
+    daily_cost_usd:
+      "UAE: $80-200 a day for mid-range (Dubai pulls high). India: $20-60 for the same band. UAE is 3-5x more expensive than India consistently.",
+    language_overlap:
+      "UAE: Arabic + English (English is the working language; Hindi/Urdu widely used due to South Asian diaspora). India: Hindi + English + 22 official languages. Both are highly English-friendly; Hindi is functionally a second tourist language in UAE.",
+    safety_read:
+      "UAE is one of the world's safest countries — minimal crime, predictable infrastructure. India is variable. UAE is uniformly safer; just be aware of strict laws on alcohol consumption, public behaviour, and cohabitation outside marriage.",
+    cuisine_signature:
+      "UAE's signature is Emirati (machboos, harees, luqaimat) layered with Lebanese, Iranian, Indian, and global cuisine — Dubai is one of the world's most diverse food cities. India's regional masala kitchen is denser and longer-rooted, with 25+ distinct regional traditions.",
+  },
+  india_more: [
+    {
+      topic: "Cultural depth and history",
+      detail:
+        "UAE was founded in 1971 (53 years old); India runs 5,000+ years of continuous civilization. UAE's heritage is mostly Bedouin pearl-diving + post-oil rapid growth. India runs Indus Valley (2,500 BCE) onwards through Mauryan, Mughal, Maratha, British colonial.",
+    },
+    {
+      topic: "Architectural variety",
+      detail:
+        "UAE has 1 UNESCO inscription (Cultural Sites of Al Ain). India has 42 across six architectural traditions. UAE's iconic buildings (Burj Khalifa, Sheikh Zayed Mosque, Louvre Abu Dhabi) are recent; India's monuments are 500+ years old.",
+    },
+    {
+      topic: "Wildlife at scale",
+      detail:
+        "UAE's wildlife is limited (some Arabian leopards, oryx in protected reserves). India runs 75% of the world's wild tigers, two-thirds of the world's one-horned rhinos, snow leopards, Asiatic lions, Asian elephants.",
+    },
+    {
+      topic: "Mountain access",
+      detail:
+        "UAE's highest peak is Jebel Jais at 1,934 m. India runs to motorable peaks above 5,000 m (Khardung La, Umlingla) and trekking peaks above 6,000 m. Different category entirely.",
+    },
+  ],
+  country_more: [
+    {
+      topic: "Luxury infrastructure density",
+      detail:
+        "UAE (Dubai specifically) has among the world's highest concentrations of 5-star hotels per km². Burj Al Arab, Atlantis, Palm Jumeirah are unique forms. India has comparable individual luxury (Oberoi, Taj, Leela palaces) but not at UAE's density.",
+    },
+    {
+      topic: "Year-round predictability",
+      detail:
+        "Dubai's tourist infrastructure runs uniformly across price tiers — every hotel reliable, every restaurant clean. India's experience is highly variable, even within the same price band.",
+    },
+    {
+      topic: "Dubai as global hub",
+      detail:
+        "Dubai International (DXB) is the world's busiest international airport. The city is a hub for 100+ million travelers annually. India has Mumbai, Delhi, Bengaluru — all major airports but no single hub of Dubai's scale.",
+    },
+    {
+      topic: "Curated desert experiences",
+      detail:
+        "UAE's curated desert experiences (Bedouin camps, falconry, dune bashing) are world-class and consistently delivered. India's Thar (Jaisalmer) offers similar geography but the experience is less polished.",
+    },
+  ],
+  swaps: [
+    {
+      their: "Dubai megacity (Burj Khalifa + Dubai Mall)",
+      our: "Mumbai (Bandra-Kurla Complex, Bandra-Worli Sea Link)",
+      reason:
+        "If hyper-modern megacity with vertical density was Dubai's draw, Mumbai's BKC and the Sea Link skyline deliver India's parallel. Mumbai's overall density runs higher per km² than Dubai.",
+    },
+    {
+      their: "Sheikh Zayed Grand Mosque (Abu Dhabi)",
+      our: "Jama Masjid Delhi + Hyderabad's Mecca Masjid + Lucknow Bara Imambara",
+      reason:
+        "If monumental Islamic architecture was UAE's appeal, India's Mughal-era mosques and Imambaras (Jama Masjid 1656, Mecca Masjid 1693, Bara Imambara 1784) deliver the older, deeper architectural lineage.",
+    },
+    {
+      their: "Dubai desert safari (Bedouin camp + dunes)",
+      our: "Jaisalmer Thar Desert + Rann of Kutch",
+      reason:
+        "If desert + camel + dune-camp was UAE's draw, Jaisalmer's Sam dunes and the Rann of Kutch (Asia's largest salt desert) deliver the parallel. India's desert experience is more authentic and less curated.",
+    },
+    {
+      their: "Dubai luxury shopping (Mall of the Emirates, Dubai Mall)",
+      our: "Mumbai (Palladium, Jio World) + Delhi (DLF Emporio)",
+      reason:
+        "Dubai's luxury retail is concentrated; India's is split across multiple metro hubs. For specific purchases, both work; for the high-volume luxury shopping experience, Dubai is denser.",
+    },
+    {
+      their: "Atlantis the Palm + Aquaventure waterpark",
+      our: "Andaman Havelock + Goa beach resort + EsselWorld",
+      reason:
+        "If integrated beach resort + theme park was UAE's appeal, India's parallel is fragmented — Goa for beach, Andaman for water activities, EsselWorld or Imagicaa for theme parks. The UAE-style integration doesn't exist as a single venue.",
+    },
+  ],
+  expectations: [
+    "Continental scale. UAE can be done in 5-7 days; India's smallest meaningful trip is 10-14 days, and most regions deserve 7+ days each.",
+    "More variability. UAE infrastructure is uniform; India ranges from world-class (Tier-1 hotels, Mumbai metro) to basic.",
+    "More religious presence in everyday space. UAE is officially Muslim but tolerant; India has all major religions in active layered practice in everyday space.",
+    "Cheaper across categories. India is 3-5x cheaper than UAE consistently; budget travel is genuinely possible in India in a way UAE rarely allows.",
+    "Fewer alcohol restrictions. UAE has strict alcohol laws (only at licensed venues, hotels, with permits). India varies by state but is mostly more permissive.",
+  ],
+  verdict:
+    "UAE is the world's most curated luxury Middle East trip — polished, safe, fast, predictable. India is the unfiltered version — cheaper, deeper, more variable, with the cultural depth UAE explicitly imports from elsewhere. UAE's South Asian diaspora makes India familiar to anyone who's lived in Dubai, Sharjah or Abu Dhabi — the cuisine, the languages, and the workforce overlap directly. If UAE's curated experience was the draw, India will be a different speed entirely; if you wanted authentic Asian heritage rather than the hyper-curated version, India is the source culture.",
+};
+
 export const COUNTRY_PROFILES: Record<string, CountryProfile> = {
   vietnam: VIETNAM,
   morocco: MOROCCO,
@@ -930,6 +1590,12 @@ export const COUNTRY_PROFILES: Record<string, CountryProfile> = {
   "sri-lanka": SRI_LANKA,
   nepal: NEPAL,
   indonesia: INDONESIA,
+  bhutan: BHUTAN,
+  singapore: SINGAPORE,
+  japan: JAPAN,
+  tibet: TIBET,
+  iran: IRAN,
+  uae: UAE,
 };
 
 export const COUNTRY_LIST = Object.values(COUNTRY_PROFILES);

@@ -4074,236 +4074,54 @@ Date range: 2026-04-15 → 2026-04-23
 2026-04-24 09:17:44  INFO      Theme tracker updated: cat=collections / img=collections/motorcycle_routes_01.jpg
 2026-04-24 09:17:44  INFO      State saved. Canva Visual run complete.
 2026-04-24 09:17:44  INFO      ════════════════════════════════════════════════════════════
-2026-04-24 10:23:15  INFO      ════════════════════════════════════════════════════════════
-2026-04-24 10:23:15  INFO      Nakshiq Autoposter · POMELLI VISUAL · 2026-04-24 · weekday=4
-2026-04-24 10:23:15  INFO      ════════════════════════════════════════════════════════════
-2026-04-24 10:23:15  ERROR     No images in pomelli_library/manifest.json.
-2026-04-24 10:51:51  INFO      ════════════════════════════════════════════════════════════
-2026-04-24 10:51:51  INFO      Nakshiq Autoposter · REEL · 2026-04-24 · weekday=4
-2026-04-24 10:51:51  INFO      ════════════════════════════════════════════════════════════
-2026-04-24 10:51:51  INFO      ── Syncing Nakshiq content ──────────────────────────────
-2026-04-24 10:51:58  INFO      Synced → 20 destinations · 0 traps · 20 articles · total catalog=488
-2026-04-24 10:51:58  INFO      Format: destination_reveal | Data: {'dest_name': 'Kokernag', 'dest_slug': 'kokernag', 'state_name': 'Jammu & Kashmir', 'score': 5, 'tagline': "Kashmir's largest freshwater spring — trout hatchery, botanical garden, and water pure enough to drink from source."}
-2026-04-24 10:52:07  INFO      Reel rendered: reel_destination_reveal_kokernag.mp4 (1143 KB)
-2026-04-24 10:52:07  INFO          Requesting upload URL for reel_destination_reveal_reel_destination_reveal_kokernag.mp4 (1,170,482 bytes, video/mp4)
-2026-04-24 10:52:08  INFO          Uploading to R2 (timeout=300s)...
-2026-04-24 10:52:09  INFO          R2 PUT OK. Confirming...
-2026-04-24 10:52:10  INFO          Media ready: r2fY4 (1,170,482 bytes · reel_destination_reveal_reel_destination_reveal_kokernag.mp4)
-2026-04-24 10:52:10  INFO      Video uploaded: reel_destination_reveal_reel_destination_reveal_kokernag.mp4
-2026-04-24 10:52:11  INFO      [youtube/@naksh-iq] Already posted reel today — skipping.
-2026-04-24 10:52:11  INFO      [instagram/nakshiq] Already posted reel today — skipping.
-2026-04-24 10:52:11  INFO      [facebook/Nakshiq] Already posted reel today — skipping.
-2026-04-24 10:52:11  INFO      State saved. Reel run complete.
-2026-04-24 10:52:11  INFO      ════════════════════════════════════════════════════════════
-2026-04-24 11:43:17  INFO      ════════════════════════════════════════════════════════════
-2026-04-24 11:43:17  INFO      Nakshiq Autoposter · YT SHORT · 2026-04-24
-2026-04-24 11:43:17  INFO      ════════════════════════════════════════════════════════════
-2026-04-24 11:44:16  INFO      Short rendered: yt_short_this_vs_that_2026-04-24.mp4 (13549 KB, 24.0s, fmt=this_vs_that, music=01_neon_rush)
-2026-04-24 11:44:16  INFO          Requesting upload URL for yt_short_this_vs_that_yt_short_this_vs_that_2026-04-24.mp4 (13,874,819 bytes, video/mp4)
-2026-04-24 11:44:17  INFO          Uploading to R2 (timeout=300s)...
-2026-04-24 11:44:19  INFO          R2 PUT OK. Confirming...
-2026-04-24 11:44:20  INFO          Media ready: xKz78 (13,874,819 bytes · yt_short_this_vs_that_yt_short_this_vs_that_2026-04-24.mp4)
-2026-04-24 11:44:20  INFO      Video uploaded: yt_short_this_vs_that_yt_short_this_vs_that_2026-04-24.mp4
-2026-04-24 11:44:21  INFO      [youtube/@naksh-iq] Publishing YT Short (this_vs_that)...
-2026-04-24 11:44:24  INFO      [youtube/@naksh-iq] Outstand accepted (post_id=25DnS), waiting for platform confirmation...
-2026-04-24 11:44:31  WARNING       Platform error: Error publishing post to YouTube: Failed to initiate YouTube resumable upload: 401 - "{\"error\":{\"code\":401,\"message\":\"Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.\",\"errors\":[{\"message\":\"Invalid Credentials\",\"domain\":\"global\",\"reason\":\"authError\",\"location\":\"Authorization\",\"locationType\":\"header\"}],\"status\":\"UNAUTHENTICATED\"}}"
-2026-04-24 11:44:31  WARNING   [youtube/@naksh-iq] ⚠️  YT Short queued but NOT confirmed (post_id=25DnS). May have silently failed.
-2026-04-24 11:44:31  INFO      [instagram/nakshiq] Publishing YT Short (this_vs_that)...
-2026-04-24 11:44:33  INFO      [instagram/nakshiq] Outstand accepted (post_id=5MCwD), waiting for platform confirmation...
-2026-04-24 11:45:14  INFO      [instagram/nakshiq] ✅ YT Short published · Outstand=5MCwD · Platform=18579429268012252
-2026-04-24 11:45:14  INFO      [facebook/Nakshiq] Skipping (YT Shorts post to YouTube + Instagram only).
-2026-04-24 11:45:14  INFO      YT Short posted: format=this_vs_that, music=01_neon_rush
-2026-04-24 11:45:14  INFO      State saved. YT Short run complete.
-2026-04-24 11:45:14  INFO      ════════════════════════════════════════════════════════════
-2026-04-24 11:51:04  INFO      ════════════════════════════════════════════════════════════
-2026-04-24 11:51:04  INFO      Nakshiq Autoposter · YT SHORT · 2026-04-24
-2026-04-24 11:51:04  INFO      ════════════════════════════════════════════════════════════
-2026-04-24 11:52:21  INFO      Short rendered: yt_short_listicle_2026-04-24.mp4 (14607 KB, 35.0s, fmt=listicle, music=10_reggae_sun)
-2026-04-24 11:52:21  INFO          Requesting upload URL for yt_short_listicle_yt_short_listicle_2026-04-24.mp4 (14,958,284 bytes, video/mp4)
-2026-04-24 11:52:22  INFO          Uploading to R2 (timeout=300s)...
-2026-04-24 11:52:24  INFO          R2 PUT OK. Confirming...
-2026-04-24 11:52:24  INFO          Media ready: AObb7 (14,958,284 bytes · yt_short_listicle_yt_short_listicle_2026-04-24.mp4)
-2026-04-24 11:52:24  INFO      Video uploaded: yt_short_listicle_yt_short_listicle_2026-04-24.mp4
-2026-04-24 11:52:25  INFO      [youtube/@naksh-iq] Publishing YT Short (listicle)...
-2026-04-24 11:52:28  INFO      [youtube/@naksh-iq] Outstand accepted (post_id=g9Qmx), waiting for platform confirmation...
-2026-04-24 11:52:33  WARNING       Platform error: Error publishing post to YouTube: Failed to initiate YouTube resumable upload: 401 - "{\"error\":{\"code\":401,\"message\":\"Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.\",\"errors\":[{\"message\":\"Invalid Credentials\",\"domain\":\"global\",\"reason\":\"authError\",\"location\":\"Authorization\",\"locationType\":\"header\"}],\"status\":\"UNAUTHENTICATED\"}}"
-2026-04-24 11:52:33  WARNING   [youtube/@naksh-iq] ⚠️  YT Short queued but NOT confirmed (post_id=g9Qmx). May have silently failed.
-2026-04-24 11:52:33  INFO      [instagram/nakshiq] Publishing YT Short (listicle)...
-2026-04-24 11:52:35  INFO      [instagram/nakshiq] Outstand accepted (post_id=OlKfv), waiting for platform confirmation...
-2026-04-24 11:53:20  WARNING   [instagram/nakshiq] ⚠️  YT Short queued but NOT confirmed (post_id=OlKfv). May have silently failed.
-2026-04-24 11:53:20  INFO      [facebook/Nakshiq] Skipping (YT Shorts post to YouTube + Instagram only).
-2026-04-24 11:53:20  INFO      State saved. YT Short run complete.
-2026-04-24 11:53:20  INFO      ════════════════════════════════════════════════════════════
-2026-04-24 13:40:53  ERROR     OUTSTAND_API_KEY not set. Exiting.
-2026-04-24 14:29:26  INFO      ════════════════════════════════════════════════════════════
-2026-04-24 14:29:26  INFO      Nakshiq Autoposter · YT SHORT · 2026-04-24
-2026-04-24 14:29:26  INFO      ════════════════════════════════════════════════════════════
-2026-04-24 14:30:43  INFO      Short rendered: yt_short_dont_go_here_2026-04-24.mp4 (15884 KB, 36.0s, fmt=dont_go_here, music=00_desi_groove)
-2026-04-24 14:30:43  INFO          Requesting upload URL for yt_short_dont_go_here_yt_short_dont_go_here_2026-04-24.mp4 (16,265,236 bytes, video/mp4)
-2026-04-24 14:30:44  INFO          Uploading to R2 (timeout=300s)...
-2026-04-24 14:30:46  INFO          R2 PUT OK. Confirming...
-2026-04-24 14:30:48  INFO          Media ready: B3gzn (16,265,236 bytes · yt_short_dont_go_here_yt_short_dont_go_here_2026-04-24.mp4)
-2026-04-24 14:30:48  INFO      Video uploaded: yt_short_dont_go_here_yt_short_dont_go_here_2026-04-24.mp4
-2026-04-24 14:30:49  INFO      [youtube/@naksh-iq] Publishing YT Short (dont_go_here)...
-2026-04-24 14:30:51  INFO      [youtube/@naksh-iq] Outstand accepted (post_id=iks2B), waiting for platform confirmation...
-2026-04-24 14:30:57  WARNING       Platform error: Error publishing post to YouTube: Failed to initiate YouTube resumable upload: 401 - "{\"error\":{\"code\":401,\"message\":\"Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.\",\"errors\":[{\"message\":\"Invalid Credentials\",\"domain\":\"global\",\"reason\":\"authError\",\"location\":\"Authorization\",\"locationType\":\"header\"}],\"status\":\"UNAUTHENTICATED\"}}"
-2026-04-24 14:30:57  WARNING   [youtube/@naksh-iq] ⚠️  YT Short queued but NOT confirmed (post_id=iks2B). May have silently failed.
-2026-04-24 14:30:57  INFO      [instagram/nakshiq] Publishing YT Short (dont_go_here)...
-2026-04-24 14:30:59  INFO      [instagram/nakshiq] Outstand accepted (post_id=bWqET), waiting for platform confirmation...
-2026-04-24 14:31:39  INFO      [instagram/nakshiq] ✅ YT Short published · Outstand=bWqET · Platform=18129753706569765
-2026-04-24 14:31:39  INFO      [facebook/Nakshiq] Skipping (YT Shorts post to YouTube + Instagram only).
-2026-04-24 14:31:39  INFO      YT Short posted: format=dont_go_here, music=00_desi_groove
-2026-04-24 14:31:39  INFO      State saved. YT Short run complete.
-2026-04-24 14:31:39  INFO      ════════════════════════════════════════════════════════════
-2026-04-24 15:50:19  INFO      ════════════════════════════════════════════════════════════
-2026-04-24 15:50:19  INFO      Nakshiq Autoposter · REEL · 2026-04-24 · weekday=4
-2026-04-24 15:50:19  INFO      ════════════════════════════════════════════════════════════
-2026-04-24 15:50:19  INFO      ── Syncing Nakshiq content ──────────────────────────────
-2026-04-24 15:50:24  INFO      Synced → 20 destinations · 0 traps · 20 articles · total catalog=488
-2026-04-24 15:50:24  INFO      Format: destination_reveal | Data: {'dest_name': 'Kokernag', 'dest_slug': 'kokernag', 'state_name': 'Jammu & Kashmir', 'score': 5, 'tagline': "Kashmir's largest freshwater spring — trout hatchery, botanical garden, and water pure enough to drink from source."}
-2026-04-24 15:50:33  INFO      Reel rendered: reel_destination_reveal_kokernag.mp4 (1151 KB)
-2026-04-24 15:50:33  INFO          Requesting upload URL for reel_destination_reveal_reel_destination_reveal_kokernag.mp4 (1,179,122 bytes, video/mp4)
-2026-04-24 15:50:34  INFO          Uploading to R2 (timeout=300s)...
-2026-04-24 15:50:35  INFO          R2 PUT OK. Confirming...
-2026-04-24 15:50:37  INFO          Media ready: H1kM5 (1,179,122 bytes · reel_destination_reveal_reel_destination_reveal_kokernag.mp4)
-2026-04-24 15:50:37  INFO      Video uploaded: reel_destination_reveal_reel_destination_reveal_kokernag.mp4
-2026-04-24 15:50:37  INFO      [youtube/@naksh-iq] Already posted reel today — skipping.
-2026-04-24 15:50:37  INFO      [instagram/nakshiq] Already posted reel today — skipping.
-2026-04-24 15:50:37  INFO      [facebook/Nakshiq] Already posted reel today — skipping.
-2026-04-24 15:50:37  INFO      State saved. Reel run complete.
-2026-04-24 15:50:37  INFO      ════════════════════════════════════════════════════════════
-2026-04-24 16:16:01  INFO      ════════════════════════════════════════════════════════════
-2026-04-24 16:16:01  INFO      Nakshiq Autoposter · REEL-MAP · 2026-04-24 · weekday=4
-2026-04-24 16:16:01  INFO      ════════════════════════════════════════════════════════════
-2026-04-24 16:16:01  INFO      ── Syncing Nakshiq content ──────────────────────────────
-2026-04-24 16:16:08  INFO      Synced → 20 destinations · 0 traps · 20 articles · total catalog=488
-2026-04-24 16:16:08  INFO      Format: route_trace | Slug: rj
-2026-04-24 16:16:19  INFO      Reel-map rendered: reel_map_route_trace_rj.mp4 (3095 KB)
-2026-04-24 16:16:19  INFO          Requesting upload URL for reel_map_route_trace_reel_map_route_trace_rj.mp4 (3,170,077 bytes, video/mp4)
-2026-04-24 16:16:20  INFO          Uploading to R2 (timeout=300s)...
-2026-04-24 16:16:20  INFO          R2 PUT OK. Confirming...
-2026-04-24 16:16:22  INFO          Media ready: r2OH4 (3,170,077 bytes · reel_map_route_trace_reel_map_route_trace_rj.mp4)
-2026-04-24 16:16:22  INFO      Video uploaded: reel_map_route_trace_reel_map_route_trace_rj.mp4
-2026-04-24 16:16:22  INFO      [youtube/@naksh-iq] Publishing reel-map (route_trace)...
-2026-04-24 16:16:25  INFO      [youtube/@naksh-iq] Outstand accepted (post_id=9Y5rQ), confirming...
-2026-04-24 16:16:31  WARNING       Platform error: Error publishing post to YouTube: Failed to initiate YouTube resumable upload: 401 - "{\"error\":{\"code\":401,\"message\":\"Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.\",\"errors\":[{\"message\":\"Invalid Credentials\",\"domain\":\"global\",\"reason\":\"authError\",\"location\":\"Authorization\",\"locationType\":\"header\"}],\"status\":\"UNAUTHENTICATED\"}}"
-2026-04-24 16:16:31  WARNING   [youtube/@naksh-iq] ⚠️  Reel-map queued but NOT confirmed (post_id=9Y5rQ).
-2026-04-24 16:16:31  INFO      [instagram/nakshiq] Publishing reel-map (route_trace)...
-2026-04-24 16:16:33  INFO      [instagram/nakshiq] Outstand accepted (post_id=X2kOe), confirming...
-2026-04-24 16:17:18  WARNING   [instagram/nakshiq] ⚠️  Reel-map queued but NOT confirmed (post_id=X2kOe).
-2026-04-24 16:17:18  INFO      [facebook/Nakshiq] Publishing reel-map (route_trace)...
-2026-04-24 16:17:20  INFO      [facebook/Nakshiq] Outstand accepted (post_id=5Mu6D), confirming...
-2026-04-24 16:17:31  INFO      [facebook/Nakshiq] ✅ Reel-map published · Outstand=5Mu6D · Platform=2612304752497664
-2026-04-24 16:17:31  INFO      Theme tracker updated: format=route_trace, slug=rj
-2026-04-24 16:17:31  INFO      State saved. Reel-map run complete.
-2026-04-24 16:17:31  INFO      ════════════════════════════════════════════════════════════
-2026-04-24 16:31:47  INFO      ════════════════════════════════════════════════════════════
-2026-04-24 16:31:47  INFO      Nakshiq Autoposter · REEL-MAP · 2026-04-24 · weekday=4
-2026-04-24 16:31:47  INFO      ════════════════════════════════════════════════════════════
-2026-04-24 16:31:47  INFO      ── Syncing Nakshiq content ──────────────────────────────
-2026-04-24 16:31:54  INFO      Synced → 20 destinations · 0 traps · 20 articles · total catalog=488
-2026-04-24 16:31:54  INFO      Format: cluster_reveal | Slug: india
-2026-04-24 16:32:19  INFO      Reel-map rendered: reel_map_cluster_reveal_india.mp4 (6661 KB)
-2026-04-24 16:32:19  INFO          Requesting upload URL for reel_map_cluster_reveal_reel_map_cluster_reveal_india.mp4 (6,821,180 bytes, video/mp4)
-2026-04-24 16:32:20  INFO          Uploading to R2 (timeout=300s)...
-2026-04-24 16:32:21  INFO          R2 PUT OK. Confirming...
-2026-04-24 16:32:22  INFO          Media ready: 2RBzS (6,821,180 bytes · reel_map_cluster_reveal_reel_map_cluster_reveal_india.mp4)
-2026-04-24 16:32:22  INFO      Video uploaded: reel_map_cluster_reveal_reel_map_cluster_reveal_india.mp4
-2026-04-24 16:32:23  INFO      [youtube/@naksh-iq] Publishing reel-map (cluster_reveal)...
-2026-04-24 16:32:26  INFO      [youtube/@naksh-iq] Outstand accepted (post_id=ikYSB), confirming...
-2026-04-24 16:32:32  WARNING       Platform error: Error publishing post to YouTube: Failed to initiate YouTube resumable upload: 401 - "{\"error\":{\"code\":401,\"message\":\"Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.\",\"errors\":[{\"message\":\"Invalid Credentials\",\"domain\":\"global\",\"reason\":\"authError\",\"location\":\"Authorization\",\"locationType\":\"header\"}],\"status\":\"UNAUTHENTICATED\"}}"
-2026-04-24 16:32:32  WARNING   [youtube/@naksh-iq] ⚠️  Reel-map queued but NOT confirmed (post_id=ikYSB).
-2026-04-24 16:32:32  INFO      [instagram/nakshiq] Publishing reel-map (cluster_reveal)...
-2026-04-24 16:32:35  INFO      [instagram/nakshiq] Outstand accepted (post_id=mBQid), confirming...
-2026-04-24 16:33:22  WARNING   [instagram/nakshiq] ⚠️  Reel-map queued but NOT confirmed (post_id=mBQid).
-2026-04-24 16:33:22  INFO      [facebook/Nakshiq] Publishing reel-map (cluster_reveal)...
-2026-04-24 16:33:26  INFO      [facebook/Nakshiq] Outstand accepted (post_id=xQJy8), confirming...
-2026-04-24 16:33:37  INFO      [facebook/Nakshiq] ✅ Reel-map published · Outstand=xQJy8 · Platform=35826041443676336
-2026-04-24 16:33:37  INFO      Theme tracker updated: format=cluster_reveal, slug=india
-2026-04-24 16:33:37  INFO      State saved. Reel-map run complete.
-2026-04-24 16:33:37  INFO      ════════════════════════════════════════════════════════════
-2026-04-24 17:42:51  INFO      ════════════════════════════════════════════════════════════
-2026-04-24 17:42:51  INFO      Nakshiq Autoposter · YT SHORT · 2026-04-24
-2026-04-24 17:42:51  INFO      ════════════════════════════════════════════════════════════
-2026-04-24 17:43:53  INFO      Short rendered: yt_short_mini_guide_2026-04-24.mp4 (14852 KB, 28.0s, fmt=mini_guide, music=34_dark_phonk)
-2026-04-24 17:43:53  INFO          Requesting upload URL for yt_short_mini_guide_yt_short_mini_guide_2026-04-24.mp4 (15,209,024 bytes, video/mp4)
-2026-04-24 17:43:54  INFO          Uploading to R2 (timeout=300s)...
-2026-04-24 17:43:57  INFO          R2 PUT OK. Confirming...
-2026-04-24 17:43:58  INFO          Media ready: B380n (15,209,024 bytes · yt_short_mini_guide_yt_short_mini_guide_2026-04-24.mp4)
-2026-04-24 17:43:58  INFO      Video uploaded: yt_short_mini_guide_yt_short_mini_guide_2026-04-24.mp4
-2026-04-24 17:43:59  INFO      [youtube/@naksh-iq] Publishing YT Short (mini_guide)...
-2026-04-24 17:44:02  INFO      [youtube/@naksh-iq] Outstand accepted (post_id=kL1Ah), waiting for platform confirmation...
-2026-04-24 17:44:08  WARNING       Platform error: Error publishing post to YouTube: Failed to initiate YouTube resumable upload: 401 - "{\"error\":{\"code\":401,\"message\":\"Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.\",\"errors\":[{\"message\":\"Invalid Credentials\",\"domain\":\"global\",\"reason\":\"authError\",\"location\":\"Authorization\",\"locationType\":\"header\"}],\"status\":\"UNAUTHENTICATED\"}}"
-2026-04-24 17:44:08  WARNING   [youtube/@naksh-iq] ⚠️  YT Short queued but NOT confirmed (post_id=kL1Ah). May have silently failed.
-2026-04-24 17:44:08  INFO      [instagram/nakshiq] Already posted 2 YT Shorts today — skipping.
-2026-04-24 17:44:08  INFO      [facebook/Nakshiq] Skipping (YT Shorts post to YouTube + Instagram only).
-2026-04-24 17:44:08  INFO      State saved. YT Short run complete.
-2026-04-24 17:44:08  INFO      ════════════════════════════════════════════════════════════
-2026-04-24 19:06:43  INFO      ════════════════════════════════════════════════════════════
-2026-04-24 19:06:43  INFO      Nakshiq Autoposter · ANALYTICS SYNC · 2026-04-24
-2026-04-24 19:06:43  INFO      ════════════════════════════════════════════════════════════
-2026-04-24 19:06:49  INFO      Synced 34 new posts (total: 208)
-2026-04-24 19:06:49  INFO      ── Analytics Summary ──
-2026-04-24 19:06:49  INFO      Total posts tracked: 208
-2026-04-24 19:06:49  INFO      Successfully published: 156 | Failed: 43
-2026-04-24 19:06:49  INFO      
-2026-04-24 19:06:49  INFO      By content type:
-2026-04-24 19:06:49  INFO        feed_post: 65
-2026-04-24 19:06:49  INFO        reel: 55
-2026-04-24 19:06:49  INFO        yt_short: 54
-2026-04-24 19:06:49  INFO        canva_visual: 10
-2026-04-24 19:06:49  INFO        tourist_map: 10
-2026-04-24 19:06:49  INFO        infographic: 8
-2026-04-24 19:06:49  INFO        pomelli_visual: 6
-2026-04-24 19:06:49  INFO      
-2026-04-24 19:06:49  INFO      By format:
-2026-04-24 19:06:49  INFO        feed_post:unknown: 65
-2026-04-24 19:06:49  INFO        reel:seasonal: 22
-2026-04-24 19:06:49  INFO        reel:destination: 18
-2026-04-24 19:06:49  INFO        yt_short:listicle: 13
-2026-04-24 19:06:49  INFO        yt_short:before: 11
-2026-04-24 19:06:49  INFO        yt_short:mini: 11
-2026-04-24 19:06:49  INFO        canva_visual:unknown: 10
-2026-04-24 19:06:49  INFO        tourist_map:unknown: 10
-2026-04-24 19:06:49  INFO        reel:map: 9
-2026-04-24 19:06:49  INFO        infographic:unknown: 8
-2026-04-24 19:06:49  INFO        yt_short:did: 8
-2026-04-24 19:06:49  INFO        reel:score: 6
-2026-04-24 19:06:49  INFO        yt_short:this: 6
-2026-04-24 19:06:49  INFO        pomelli_visual:unknown: 6
-2026-04-24 19:06:49  INFO        yt_short:dont: 5
-2026-04-24 19:06:49  INFO      
-2026-04-24 19:06:49  INFO      By platform:
-2026-04-24 19:06:49  INFO        instagram: 96
-2026-04-24 19:06:49  INFO        facebook: 56
-2026-04-24 19:06:49  INFO        youtube: 47
-2026-04-24 19:06:49  INFO      
-2026-04-24 19:06:49  INFO      YT Short format distribution:
-2026-04-24 19:06:49  INFO        listicle: 13 (24%)
-2026-04-24 19:06:49  INFO        before: 11 (20%)
-2026-04-24 19:06:49  INFO        mini: 11 (20%)
-2026-04-24 19:06:49  INFO        did: 8 (15%)
-2026-04-24 19:06:49  INFO        this: 6 (11%)
-2026-04-24 19:06:49  INFO        dont: 5 (9%)
-2026-04-24 19:06:49  INFO      
-Date range: 2026-04-15 → 2026-04-24
-2026-04-24 19:06:49  INFO      ════════════════════════════════════════════════════════════
-2026-04-25 01:09:11  INFO      ════════════════════════════════════════════════════════════
-2026-04-25 01:09:11  INFO      Nakshiq Autoposter · YT SHORT · 2026-04-25
-2026-04-25 01:09:11  INFO      ════════════════════════════════════════════════════════════
-2026-04-25 01:09:52  INFO      Short rendered: yt_short_did_you_know_2026-04-25.mp4 (6443 KB, 20.0s, fmt=did_you_know, music=36_club_energy)
-2026-04-25 01:09:52  INFO          Requesting upload URL for yt_short_did_you_know_yt_short_did_you_know_2026-04-25.mp4 (6,598,147 bytes, video/mp4)
-2026-04-25 01:09:53  INFO          Uploading to R2 (timeout=300s)...
-2026-04-25 01:09:56  INFO          R2 PUT OK. Confirming...
-2026-04-25 01:09:57  INFO          Media ready: AOFF7 (6,598,147 bytes · yt_short_did_you_know_yt_short_did_you_know_2026-04-25.mp4)
-2026-04-25 01:09:57  INFO      Video uploaded: yt_short_did_you_know_yt_short_did_you_know_2026-04-25.mp4
-2026-04-25 01:09:58  INFO      [youtube/@naksh-iq] Publishing YT Short (did_you_know)...
-2026-04-25 01:10:14  INFO      [youtube/@naksh-iq] Outstand accepted (post_id=vKk0g), waiting for platform confirmation...
-2026-04-25 01:10:27  INFO      [youtube/@naksh-iq] ✅ YT Short published · Outstand=vKk0g · Platform=G-gw5EtdMT0
-2026-04-25 01:10:27  INFO      [instagram/nakshiq] Publishing YT Short (did_you_know)...
-2026-04-25 01:10:30  INFO      [instagram/nakshiq] Outstand accepted (post_id=ik5XB), waiting for platform confirmation...
-2026-04-25 01:11:19  INFO      [instagram/nakshiq] ✅ YT Short published · Outstand=ik5XB · Platform=18590253436035438
-2026-04-25 01:11:19  INFO      [facebook/Nakshiq] Skipping (YT Shorts post to YouTube + Instagram only).
-2026-04-25 01:11:19  INFO      YT Short posted: format=did_you_know, music=36_club_energy
-2026-04-25 01:11:19  INFO      State saved. YT Short run complete.
-2026-04-25 01:11:19  INFO      ════════════════════════════════════════════════════════════
+2026-04-24 10:09:38  INFO      Stale lock (age=86139s) — overriding.
+2026-04-24 10:09:38  INFO      ════════════════════════════════════════════════════════════
+2026-04-24 10:09:38  INFO      Nakshiq Autoposter · EVENING · 2026-04-24 · weekday=4
+2026-04-24 10:09:38  INFO      ════════════════════════════════════════════════════════════
+2026-04-24 10:09:38  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-04-24 10:09:47  INFO      Synced → 20 destinations · 0 traps · 20 articles · total catalog=488
+2026-04-24 10:09:48  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-04-24 10:09:48  INFO      Formats — IG: score_card  ·  FB: score_card  ·  Story: reality_check  ·  Audience: adventurers
+2026-04-24 10:09:48  INFO      Used destinations (14d): 31
+2026-04-24 10:09:48  INFO      Audience filter 'adventurers' → 9 destinations match.
+2026-04-24 10:09:53  INFO      Shared best destination locked: Tehri Lake
+2026-04-24 10:09:53  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-04-24 10:09:53  INFO      [instagram/nakshiq] Generating score_card post...
+2026-04-24 10:09:53  INFO      [instagram/nakshiq] Caption ready (570 chars, dest=tehri)
+2026-04-24 10:09:54  INFO      [instagram/nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-04-24 10:09:54  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/tehri.mp4?v=20260423-2
+2026-04-24 10:09:57  INFO          Requesting upload URL for tehri.mp4 (13,339,881 bytes, video/mp4)
+2026-04-24 10:09:59  INFO          Uploading to R2 (timeout=300s)...
+2026-04-24 10:10:09  INFO          R2 PUT OK. Confirming...
+2026-04-24 10:10:11  INFO          Media ready: oMkLc (13,339,881 bytes · tehri.mp4)
+2026-04-24 10:10:11  INFO      [instagram/nakshiq] Publishing Reel...
+2026-04-24 10:15:06  INFO      Stale lock (age=1777025705s) — overriding.
+2026-04-24 10:15:06  INFO      ════════════════════════════════════════════════════════════
+2026-04-24 10:15:06  INFO      Nakshiq Autoposter · EVENING · 2026-04-24 · weekday=4
+2026-04-24 10:15:06  INFO      ════════════════════════════════════════════════════════════
+2026-04-24 10:15:06  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-04-24 10:15:28  INFO      Stale lock (age=1777025727s) — overriding.
+2026-04-24 10:15:28  INFO      ════════════════════════════════════════════════════════════
+2026-04-24 10:15:28  INFO      Nakshiq Autoposter · EVENING · 2026-04-24 · weekday=4
+2026-04-24 10:15:28  INFO      ════════════════════════════════════════════════════════════
+2026-04-24 10:15:28  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-04-24 10:15:33  INFO      Synced → 20 destinations · 0 traps · 20 articles · total catalog=488
+2026-04-24 10:15:35  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-04-24 10:15:35  INFO      Formats — IG: score_card  ·  FB: score_card  ·  Story: reality_check  ·  Audience: adventurers
+2026-04-24 10:15:35  INFO      Used destinations (14d): 32
+2026-04-24 10:15:35  INFO      Audience filter 'adventurers' → 9 destinations match.
+2026-04-24 10:15:36  INFO      Shared best destination locked: Bir Billing
+2026-04-24 10:15:36  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-04-24 10:15:36  INFO      [instagram/nakshiq] Already posted today (evening) — skipping.
+2026-04-24 10:15:36  INFO      [facebook/Nakshiq] Generating score_card post...
+2026-04-24 10:15:36  INFO      [facebook/Nakshiq] Caption ready (616 chars, dest=bir-billing)
+2026-04-24 10:15:36  INFO      [facebook/Nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-04-24 10:15:36  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/bir-billing.mp4?v=20260423-2
+2026-04-24 10:15:39  INFO          Requesting upload URL for bir-billing.mp4 (6,519,605 bytes, video/mp4)
+2026-04-24 10:15:41  INFO          Uploading to R2 (timeout=300s)...
+2026-04-24 10:15:45  INFO          R2 PUT OK. Confirming...
+2026-04-24 10:15:47  INFO          Media ready: 4SmKi (6,519,605 bytes · bir-billing.mp4)
+2026-04-24 10:15:47  INFO      [facebook/Nakshiq] Publishing Reel...
+2026-04-24 10:16:04  INFO      [facebook/Nakshiq] ✅ Published · Outstand=PXe80 · Platform=4267257603524066
+2026-04-24 10:16:04  INFO      State saved. Run complete.
+2026-04-24 10:16:04  INFO      ════════════════════════════════════════════════════════════
