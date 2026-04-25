@@ -4226,3 +4226,37 @@ Date range: 2026-04-15 → 2026-04-23
 2026-04-25 12:04:17  INFO      YT Short posted: format=did_you_know, music=11_rnb_midnight
 2026-04-25 12:04:17  INFO      State saved. YT Short run complete.
 2026-04-25 12:04:17  INFO      ════════════════════════════════════════════════════════════
+2026-04-25 13:58:57  INFO      ════════════════════════════════════════════════════════════
+2026-04-25 13:58:57  INFO      Nakshiq Autoposter · EVENING · 2026-04-25 · weekday=5
+2026-04-25 13:58:57  INFO      ════════════════════════════════════════════════════════════
+2026-04-25 13:58:57  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-04-25 13:59:05  INFO      Synced → 20 destinations · 0 traps · 20 articles · total catalog=488
+2026-04-25 13:59:05  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-04-25 13:59:05  INFO      Formats — IG: score_card  ·  FB: score_card  ·  Story: route_spotlight  ·  Audience: families
+2026-04-25 13:59:05  INFO      Used destinations (14d): 33
+2026-04-25 13:59:05  INFO      Audience filter 'families' → 18 destinations match.
+2026-04-25 13:59:05  INFO      Route format requested but /routes API returned no data — will fall back to score_card.
+2026-04-25 13:59:07  INFO      Shared best destination locked: Kokernag
+2026-04-25 13:59:07  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-04-25 13:59:07  INFO      [instagram/nakshiq] Generating score_card post...
+2026-04-25 13:59:07  INFO      [instagram/nakshiq] Caption ready (576 chars, dest=kokernag)
+2026-04-25 13:59:08  INFO      [instagram/nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-04-25 13:59:08  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/kokernag.mp4?v=20260425
+2026-04-25 13:59:09  INFO          Requesting upload URL for kokernag.mp4 (14,504,684 bytes, video/mp4)
+2026-04-25 13:59:10  INFO          Uploading to R2 (timeout=300s)...
+2026-04-25 13:59:12  INFO          R2 PUT OK. Confirming...
+2026-04-25 13:59:12  INFO          Media ready: 2H3gS (14,504,684 bytes · kokernag.mp4)
+2026-04-25 13:59:12  INFO      [instagram/nakshiq] Publishing Reel...
+2026-04-25 13:59:54  INFO      [instagram/nakshiq] ✅ Published · Outstand=Ag2y7 · Platform=17859605685685928
+2026-04-25 13:59:54  INFO      [facebook/Nakshiq] Generating score_card post...
+2026-04-25 13:59:54  INFO      [facebook/Nakshiq] Caption ready (559 chars, dest=kokernag)
+2026-04-25 13:59:54  INFO      [facebook/Nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-04-25 13:59:54  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/kokernag.mp4?v=20260425
+2026-04-25 13:59:55  INFO          Requesting upload URL for kokernag.mp4 (14,504,684 bytes, video/mp4)
+2026-04-25 13:59:56  INFO          Uploading to R2 (timeout=300s)...
+2026-04-25 14:00:10  INFO          R2 PUT OK. Confirming...
+2026-04-25 14:00:10  INFO          Media ready: Onxuv (14,504,684 bytes · kokernag.mp4)
+2026-04-25 14:00:10  INFO      [facebook/Nakshiq] Publishing Reel...
+2026-04-25 14:00:34  INFO      [facebook/Nakshiq] ✅ Published · Outstand=G0BKp · Platform=978306118012866
+2026-04-25 14:00:34  INFO      State saved. Run complete.
+2026-04-25 14:00:34  INFO      ════════════════════════════════════════════════════════════

@@ -23,16 +23,16 @@
     "11_rnb_midnight"
   ],
   "posted_today": {
-    "PdMu0": "2026-04-24",
-    "m8EAd": "2026-04-24",
+    "PdMu0": "2026-04-25",
+    "m8EAd": "2026-04-25",
     "m8EAd_reel": "2026-04-24",
     "PdMu0_reel": "2026-04-24",
     "4QL0i_reel": "2026-04-19",
     "m8EAd_canva": "2026-04-25",
     "PdMu0_canva": "2026-04-25",
-    "m8EAd_evening": "2026-04-24",
+    "m8EAd_evening": "2026-04-25",
     "m8EAd_evening_story": "2026-04-22",
-    "PdMu0_evening": "2026-04-24",
+    "PdMu0_evening": "2026-04-25",
     "m8EAd_yt_short": "2026-04-25",
     "m8EAd_yt_short_count": 1,
     "jUmP2_yt_short": "2026-04-20",
@@ -60,7 +60,7 @@
     "m8EAd_reel_map": "2026-04-25",
     "PdMu0_reel_map": "2026-04-25"
   },
-  "last_sync": "2026-04-25T06:51:18.361782+00:00",
+  "last_sync": "2026-04-25T13:59:05.027022+00:00",
   "posted_destinations": [
     {
       "destination_id": "pahalgam",
@@ -249,6 +249,14 @@
     {
       "destination_id": "bir-billing",
       "date": "2026-04-24"
+    },
+    {
+      "destination_id": "kokernag",
+      "date": "2026-04-25"
+    },
+    {
+      "destination_id": "kokernag",
+      "date": "2026-04-25"
     }
   ],
   "posted_formats": {
@@ -259,6 +267,7 @@
       "methodology_family",
       "collection_spotlight",
       "methodology_altitude",
+      "score_card",
       "score_card"
     ],
     "PdMu0": [
@@ -271,6 +280,7 @@
       "festival_alert",
       "reality_check",
       "methodology_altitude",
+      "score_card",
       "score_card"
     ]
   },
@@ -490,6 +500,26 @@
       "destination": "bir-billing",
       "format": "score_card",
       "has_media": true
+    },
+    {
+      "timestamp": "2026-04-25T13:59:54.568957+00:00",
+      "date": "2026-04-25",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "Ag2y7",
+      "destination": "kokernag",
+      "format": "score_card",
+      "has_media": true
+    },
+    {
+      "timestamp": "2026-04-25T14:00:34.852540+00:00",
+      "date": "2026-04-25",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "G0BKp",
+      "destination": "kokernag",
+      "format": "score_card",
+      "has_media": true
     }
   ],
   "theme_usage": {
@@ -546,6 +576,9 @@
       ],
       "bir-billing": [
         "2026-04-24"
+      ],
+      "kokernag": [
+        "2026-04-25"
       ]
     },
     "reel_formats": {
@@ -629,6 +662,9 @@
       ],
       "bir-billing": [
         "2026-04-24"
+      ],
+      "kokernag": [
+        "2026-04-25"
       ]
     },
     "festivals": {
@@ -656,6 +692,9 @@
       ],
       "adventurers": [
         "2026-04-24"
+      ],
+      "families": [
+        "2026-04-25"
       ]
     },
     "articles": {
