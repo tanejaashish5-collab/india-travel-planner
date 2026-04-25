@@ -4144,3 +4144,16 @@ Date range: 2026-04-15 → 2026-04-23
 2026-04-25 05:29:33  INFO      YT Short posted: format=this_vs_that, music=px_bollywood_hindi
 2026-04-25 05:29:33  INFO      State saved. YT Short run complete.
 2026-04-25 05:29:33  INFO      ════════════════════════════════════════════════════════════
+2026-04-25 06:06:52  INFO      ════════════════════════════════════════════════════════════
+2026-04-25 06:06:52  INFO      Nakshiq Autoposter · REEL · 2026-04-25 · weekday=5
+2026-04-25 06:06:52  INFO      ════════════════════════════════════════════════════════════
+2026-04-25 06:06:52  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-04-25 06:06:52  WARNING   Nakshiq [stats] fetch failed: 402 Client Error: Payment Required for url: https://nakshiq.com/api/content?type=stats
+2026-04-25 06:06:52  WARNING   Nakshiq [destinations] fetch failed: 402 Client Error: Payment Required for url: https://nakshiq.com/api/content?type=destinations&month=4&min_score=4
+2026-04-25 06:06:52  WARNING   Nakshiq [destinations] fetch failed: 402 Client Error: Payment Required for url: https://nakshiq.com/api/content?type=destinations&month=4&min_score=0&limit=100
+2026-04-25 06:06:52  WARNING   Nakshiq [articles] fetch failed: 402 Client Error: Payment Required for url: https://nakshiq.com/api/content?type=articles&since=2026-04-18
+2026-04-25 06:06:52  WARNING   Nakshiq [traps] fetch failed: 402 Client Error: Payment Required for url: https://nakshiq.com/api/content?type=traps
+2026-04-25 06:06:52  WARNING   Nakshiq [festivals] fetch failed: 402 Client Error: Payment Required for url: https://nakshiq.com/api/content?type=festivals&month=4
+2026-04-25 06:06:53  WARNING   Nakshiq [collections] fetch failed: 402 Client Error: Payment Required for url: https://nakshiq.com/api/content?type=collections
+2026-04-25 06:06:53  INFO      Synced → 0 destinations · 0 traps · 0 articles · total catalog=260
+2026-04-25 06:06:53  WARNING   No suitable reel data available for any format.
