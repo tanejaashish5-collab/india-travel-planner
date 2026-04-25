@@ -11,6 +11,7 @@ import {
 import { router, Stack, useLocalSearchParams } from "expo-router";
 import { colors, spacing, fontSize, borderRadius } from "../lib/theme";
 import { supabase } from "../lib/supabase";
+import { getCached, TTL } from "../lib/cache";
 
 const MONTH_FULL = [
   "", "January", "February", "March", "April", "May", "June",
@@ -63,16 +64,30 @@ export default function DestinationMonthScreen() {
     setLoading(true);
 
     const [destRes, monthsRes] = await Promise.all([
-      supabase
-        .from("destinations")
-        .select("id, name, tagline, difficulty, elevation_m")
-        .eq("id", id)
-        .single(),
-      supabase
-        .from("destination_months")
-        .select("month, score, note, prose_lead, prose_payoff, who_should_go, who_should_avoid")
-        .eq("destination_id", id)
-        .order("month"),
+      getCached(
+        `dest-meta:${id}`,
+        async () => {
+          const { data } = await supabase
+            .from("destinations")
+            .select("id, name, tagline, difficulty, elevation_m")
+            .eq("id", id)
+            .single();
+          return data;
+        },
+        TTL.medium,
+      ),
+      getCached(
+        `dest-months:${id}`,
+        async () => {
+          const { data } = await supabase
+            .from("destination_months")
+            .select("month, score, note, prose_lead, prose_payoff, who_should_go, who_should_avoid")
+            .eq("destination_id", id)
+            .order("month");
+          return data ?? [];
+        },
+        TTL.medium,
+      ),
     ]);
 
     if (destRes.data) setDestination(destRes.data as DestinationData);

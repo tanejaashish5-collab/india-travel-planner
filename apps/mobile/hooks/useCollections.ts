@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { supabase } from "../lib/supabase";
+import { getCached, TTL } from "../lib/cache";
 
 export interface Collection {
   id: string;
@@ -17,14 +18,20 @@ export function useCollections() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    supabase
-      .from("collections")
-      .select("*")
-      .order("name")
-      .then(({ data }) => {
-        setCollections((data as any[]) ?? []);
-        setLoading(false);
-      });
+    let mounted = true;
+    getCached(
+      "collections:all",
+      async () => {
+        const { data } = await supabase.from("collections").select("*").order("name");
+        return data ?? [];
+      },
+      TTL.long,
+    ).then((res) => {
+      if (!mounted) return;
+      setCollections(((res.data as any[]) ?? []) as Collection[]);
+      setLoading(false);
+    });
+    return () => { mounted = false; };
   }, []);
 
   return { collections, loading };
@@ -35,15 +42,18 @@ export function useCollection(id: string) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    async function fetch() {
-      const { data: col } = await supabase
-        .from("collections")
-        .select("*")
-        .eq("id", id)
-        .single();
+    let mounted = true;
+    if (!id) { setLoading(false); return; }
+    getCached(
+      `collection:${id}`,
+      async () => {
+        const { data: col } = await supabase
+          .from("collections")
+          .select("*")
+          .eq("id", id)
+          .single();
+        if (!col) return null;
 
-      if (col) {
-        // Resolve destination items
         const items = col.items ?? [];
         const destIds = items
           .map((item: any) => item.destination_id || item.id || item)
@@ -57,12 +67,15 @@ export function useCollection(id: string) {
             .in("id", destIds);
           destinations = data ?? [];
         }
-
-        setCollection({ ...col, destinations });
-      }
+        return { ...col, destinations };
+      },
+      TTL.long,
+    ).then((res) => {
+      if (!mounted) return;
+      setCollection(res.data);
       setLoading(false);
-    }
-    fetch();
+    });
+    return () => { mounted = false; };
   }, [id]);
 
   return { collection, loading };

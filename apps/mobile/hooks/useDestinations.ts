@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { supabase } from "../lib/supabase";
+import { getCached, TTL } from "../lib/cache";
 
 export interface Destination {
   id: string;
@@ -22,22 +23,29 @@ export function useDestinations() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    async function fetch() {
-      const { data } = await supabase
-        .from("destinations")
-        .select(`
-          id, name, tagline, difficulty, elevation_m, tags, best_months, state_id,
-          vehicle_fit, family_stress,
-          state:states(name),
-          kids_friendly(suitable, rating),
-          destination_months(month, score, note)
-        `)
-        .order("name");
-
-      setDestinations((data as any[]) ?? []);
+    let mounted = true;
+    getCached(
+      "destinations:all",
+      async () => {
+        const { data } = await supabase
+          .from("destinations")
+          .select(`
+            id, name, tagline, difficulty, elevation_m, tags, best_months, state_id,
+            vehicle_fit, family_stress,
+            state:states(name),
+            kids_friendly(suitable, rating),
+            destination_months(month, score, note)
+          `)
+          .order("name");
+        return data ?? [];
+      },
+      TTL.medium,
+    ).then((res) => {
+      if (!mounted) return;
+      setDestinations(((res.data as any[]) ?? []) as Destination[]);
       setLoading(false);
-    }
-    fetch();
+    });
+    return () => { mounted = false; };
   }, []);
 
   return { destinations, loading };
@@ -48,24 +56,29 @@ export function useDestination(id: string) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    async function fetch() {
-      const { data } = await supabase
-        .from("destinations")
-        .select(`
-          *,
-          state:states(name),
-          kids_friendly(*),
-          confidence_cards(*),
-          destination_months(*),
-          sub_destinations(*),
-          local_legends(*),
-          viral_eats(*)
-        `)
-        .eq("id", id)
-        .single();
+    let mounted = true;
+    if (!id) { setLoading(false); return; }
 
-      if (data) {
-        // Also fetch related data
+    getCached(
+      `destination:${id}`,
+      async () => {
+        const { data } = await supabase
+          .from("destinations")
+          .select(`
+            *,
+            state:states(name),
+            kids_friendly(*),
+            confidence_cards(*),
+            destination_months(*),
+            sub_destinations(*),
+            local_legends(*),
+            viral_eats(*)
+          `)
+          .eq("id", id)
+          .single();
+
+        if (!data) return null;
+
         const [gems, traps, festivals, stays, notes, coords, emergencySos, editorPicks] = await Promise.all([
           supabase.from("hidden_gems").select("*").eq("near_destination_id", id),
           supabase.from("tourist_trap_alternatives").select("*, destination:destinations!tourist_trap_alternatives_alternative_destination_id_fkey(name, tagline, difficulty, elevation_m)").eq("trap_destination_id", id).order("rank"),
@@ -81,7 +94,7 @@ export function useDestination(id: string) {
             .eq("published", true),
         ]);
 
-        setDestination({
+        return {
           ...data,
           hidden_gems: gems.data ?? [],
           trap_alternatives: traps.data ?? [],
@@ -91,11 +104,16 @@ export function useDestination(id: string) {
           coords: coords.data ? { lat: coords.data.lat, lng: coords.data.lng } : null,
           emergencySos: emergencySos.data ?? null,
           editor_stay_picks: editorPicks.data ?? [],
-        });
-      }
+        };
+      },
+      TTL.medium,
+    ).then((res) => {
+      if (!mounted) return;
+      setDestination(res.data);
       setLoading(false);
-    }
-    fetch();
+    });
+
+    return () => { mounted = false; };
   }, [id]);
 
   return { destination, loading };
@@ -106,20 +124,27 @@ export function useFeaturedDestinations() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    async function fetch() {
-      const currentMonth = new Date().getMonth() + 1;
-      const { data } = await supabase
-        .from("destination_months")
-        .select("destination_id, score, destinations(id, name, tagline, difficulty, elevation_m, state:states(name))")
-        .eq("month", currentMonth)
-        .gte("score", 4)
-        .order("score", { ascending: false })
-        .limit(10);
-
-      setFeatured((data as any[]) ?? []);
+    let mounted = true;
+    const currentMonth = new Date().getMonth() + 1;
+    getCached(
+      `featured:${currentMonth}`,
+      async () => {
+        const { data } = await supabase
+          .from("destination_months")
+          .select("destination_id, score, destinations(id, name, tagline, difficulty, elevation_m, state:states(name))")
+          .eq("month", currentMonth)
+          .gte("score", 4)
+          .order("score", { ascending: false })
+          .limit(10);
+        return data ?? [];
+      },
+      TTL.medium,
+    ).then((res) => {
+      if (!mounted) return;
+      setFeatured((res.data as any[]) ?? []);
       setLoading(false);
-    }
-    fetch();
+    });
+    return () => { mounted = false; };
   }, []);
 
   return { featured, loading };

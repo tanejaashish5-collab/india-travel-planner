@@ -3,6 +3,7 @@ import { View, Text, FlatList, TouchableOpacity, StyleSheet, ActivityIndicator }
 import { useLocalSearchParams, Stack, router } from "expo-router";
 import { colors, spacing, fontSize, borderRadius } from "../../lib/theme";
 import { supabase } from "../../lib/supabase";
+import { getCached, TTL } from "../../lib/cache";
 
 const DIFF_COLOR: Record<string, string> = { easy: colors.easy, moderate: colors.moderate, hard: colors.hard, extreme: colors.extreme };
 const SCORE_COLOR: Record<number, string> = { 5: colors.score5, 4: colors.score4, 3: colors.score3, 2: colors.score2, 1: colors.score1 };
@@ -15,16 +16,36 @@ export default function RegionScreen() {
   const currentMonth = new Date().getMonth() + 1;
 
   useEffect(() => {
-    async function fetch() {
-      const [regRes, destRes] = await Promise.all([
-        supabase.from("regions").select("*").eq("id", id).single(),
-        supabase.from("destinations").select("id, name, tagline, difficulty, elevation_m, state:states(name), destination_months(month, score)").eq("state_id", id).order("name"),
-      ]);
+    let mounted = true;
+    if (!id) { setLoading(false); return; }
+    Promise.all([
+      getCached(
+        `region:${id}`,
+        async () => {
+          const { data } = await supabase.from("regions").select("*").eq("id", id).single();
+          return data;
+        },
+        TTL.long,
+      ),
+      getCached(
+        `region-dests:${id}`,
+        async () => {
+          const { data } = await supabase
+            .from("destinations")
+            .select("id, name, tagline, difficulty, elevation_m, state:states(name), destination_months(month, score)")
+            .eq("state_id", id)
+            .order("name");
+          return data ?? [];
+        },
+        TTL.medium,
+      ),
+    ]).then(([regRes, destRes]) => {
+      if (!mounted) return;
       setRegion(regRes.data);
-      setDestinations(destRes.data ?? []);
+      setDestinations((destRes.data as any[]) ?? []);
       setLoading(false);
-    }
-    fetch();
+    });
+    return () => { mounted = false; };
   }, [id]);
 
   if (loading) return <View style={s.center}><Stack.Screen options={{ title: "Loading..." }} /><ActivityIndicator size="large" color={colors.primary} /></View>;

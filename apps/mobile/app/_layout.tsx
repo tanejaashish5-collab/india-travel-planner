@@ -6,6 +6,9 @@ import { useEffect } from "react";
 import "react-native-reanimated";
 import { colors } from "../lib/theme";
 import { usePreferences } from "../hooks/usePreferences";
+import { OfflineIndicator } from "../components/OfflineIndicator";
+import { useNetworkState } from "../hooks/useNetworkState";
+import { prefetchCoreContent, drainOfflineQueue } from "../lib/prefetch";
 
 export { ErrorBoundary } from "expo-router";
 
@@ -34,6 +37,7 @@ export default function RootLayout() {
     SpaceMono: require("../assets/fonts/SpaceMono-Regular.ttf"),
   });
   const { onboarded, loading: prefsLoading } = usePreferences();
+  const { isConnected } = useNetworkState();
 
   useEffect(() => {
     if (error) throw error;
@@ -49,6 +53,21 @@ export default function RootLayout() {
       router.replace("/onboarding");
     }
   }, [loaded, prefsLoading, onboarded]);
+
+  // Prefetch core content on first launch — warms cache so flaky-network
+  // sessions in Ladakh/Spiti can browse without spinning.
+  useEffect(() => {
+    if (loaded && !prefsLoading && isConnected) {
+      prefetchCoreContent().catch(() => {});
+    }
+  }, [loaded, prefsLoading, isConnected]);
+
+  // Drain queued mutations whenever the device reconnects.
+  useEffect(() => {
+    if (isConnected) {
+      drainOfflineQueue().catch(() => {});
+    }
+  }, [isConnected]);
 
   if (!loaded || prefsLoading) return null;
 
@@ -95,6 +114,7 @@ export default function RootLayout() {
         <Stack.Screen name="vs" options={{ headerStyle: { backgroundColor: colors.background }, headerTintColor: colors.foreground, headerBackTitle: "Back" }} />
         <Stack.Screen name="with-kids" options={{ headerStyle: { backgroundColor: colors.background }, headerTintColor: colors.foreground, headerBackTitle: "Back" }} />
       </Stack>
+      <OfflineIndicator />
     </ThemeProvider>
   );
 }

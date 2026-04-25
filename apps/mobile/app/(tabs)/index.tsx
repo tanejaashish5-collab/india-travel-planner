@@ -15,6 +15,7 @@ import { router } from "expo-router";
 import { colors, spacing, fontSize, borderRadius } from "../../lib/theme";
 import { usePreferences } from "../../hooks/usePreferences";
 import { supabase } from "../../lib/supabase";
+import { getCached, TTL } from "../../lib/cache";
 import SearchOverlay from "../../components/SearchOverlay";
 
 const { width } = Dimensions.get("window");
@@ -70,23 +71,57 @@ export default function HomeScreen() {
 
   async function fetchData() {
     const currentMonth = new Date().getMonth() + 1;
-    const [featResult, festResult, destCount, subCount, gemCount, trekCount, festCount] = await Promise.all([
-      supabase.from("destination_months").select("destination_id, score, destinations(id, name, tagline, difficulty, elevation_m, state:states(name))").eq("month", currentMonth).gte("score", 4).order("score", { ascending: false }).limit(8),
-      supabase.from("festivals").select("*, destinations(name)").or(`month.eq.${currentMonth},month.eq.${(currentMonth % 12) + 1}`).order("month").limit(6),
-      supabase.from("destinations").select("*", { count: "exact", head: true }),
-      supabase.from("sub_destinations").select("*", { count: "exact", head: true }),
-      supabase.from("hidden_gems").select("*", { count: "exact", head: true }),
-      supabase.from("treks").select("*", { count: "exact", head: true }),
-      supabase.from("festivals").select("*", { count: "exact", head: true }),
+    const [featRes, festRes, statsRes] = await Promise.all([
+      getCached(
+        `home:featured:${currentMonth}`,
+        async () => {
+          const { data } = await supabase
+            .from("destination_months")
+            .select("destination_id, score, destinations(id, name, tagline, difficulty, elevation_m, state:states(name))")
+            .eq("month", currentMonth)
+            .gte("score", 4)
+            .order("score", { ascending: false })
+            .limit(8);
+          return data ?? [];
+        },
+        TTL.medium,
+      ),
+      getCached(
+        `home:festivals:${currentMonth}`,
+        async () => {
+          const { data } = await supabase
+            .from("festivals")
+            .select("*, destinations(name)")
+            .or(`month.eq.${currentMonth},month.eq.${(currentMonth % 12) + 1}`)
+            .order("month")
+            .limit(6);
+          return data ?? [];
+        },
+        TTL.medium,
+      ),
+      getCached(
+        "home:stats",
+        async () => {
+          const [destCount, subCount, gemCount, trekCount, festCount] = await Promise.all([
+            supabase.from("destinations").select("*", { count: "exact", head: true }),
+            supabase.from("sub_destinations").select("*", { count: "exact", head: true }),
+            supabase.from("hidden_gems").select("*", { count: "exact", head: true }),
+            supabase.from("treks").select("*", { count: "exact", head: true }),
+            supabase.from("festivals").select("*", { count: "exact", head: true }),
+          ]);
+          return {
+            destinations: destCount.count ?? 488,
+            places: (destCount.count ?? 0) + (subCount.count ?? 0) + (gemCount.count ?? 0),
+            treks: trekCount.count ?? 130,
+            festivals: festCount.count ?? 325,
+          };
+        },
+        TTL.long,
+      ),
     ]);
-    setFeatured(featResult.data ?? []);
-    setFestivals(festResult.data ?? []);
-    setStats({
-      destinations: destCount.count ?? 403,
-      places: (destCount.count ?? 0) + (subCount.count ?? 0) + (gemCount.count ?? 0),
-      treks: trekCount.count ?? 96,
-      festivals: festCount.count ?? 252,
-    });
+    setFeatured((featRes.data as any[]) ?? []);
+    setFestivals((festRes.data as any[]) ?? []);
+    setStats((statsRes.data as any) ?? { destinations: 488, places: 1057, treks: 130, festivals: 325 });
   }
 
   useEffect(() => { fetchData().then(() => setLoading(false)); }, []);
