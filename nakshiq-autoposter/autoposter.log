@@ -4163,3 +4163,21 @@ Date range: 2026-04-15 → 2026-04-23
 2026-04-25 06:51:13  INFO      ── Syncing Nakshiq content ──────────────────────────────
 2026-04-25 06:51:18  INFO      Synced → 20 destinations · 0 traps · 20 articles · total catalog=488
 2026-04-25 06:51:18  INFO      Sync-only mode. Done.
+2026-04-25 08:32:49  INFO      ════════════════════════════════════════════════════════════
+2026-04-25 08:32:49  INFO      Nakshiq Autoposter · CANVA VISUAL · 2026-04-25 · weekday=5
+2026-04-25 08:32:49  INFO      ════════════════════════════════════════════════════════════
+2026-04-25 08:32:49  INFO      Library: 88 images across 8 categories
+2026-04-25 08:32:49  INFO      Selected: [this_or_that] Mountains vs Beaches → this_or_that/mountains_vs_beaches_01.jpg
+2026-04-25 08:32:49  INFO          Requesting upload URL for canva_this_or_that_mountains_vs_beaches_01.jpg (344,925 bytes, image/jpeg)
+2026-04-25 08:32:50  INFO          Uploading to R2 (timeout=120s)...
+2026-04-25 08:32:51  INFO          R2 PUT OK. Confirming...
+2026-04-25 08:32:52  INFO          Media ready: umZPE (344,925 bytes · canva_this_or_that_mountains_vs_beaches_01.jpg)
+2026-04-25 08:32:52  INFO      Image uploaded: canva_this_or_that_mountains_vs_beaches_01.jpg (336 KB)
+2026-04-25 08:32:53  INFO      [youtube/@naksh-iq] Skipping canva visual (YouTube only accepts video/reels).
+2026-04-25 08:32:53  INFO      [instagram/nakshiq] Publishing canva visual: Mountains vs Beaches...
+2026-04-25 08:32:54  INFO      [instagram/nakshiq] Canva visual posted successfully!
+2026-04-25 08:32:54  INFO      [facebook/Nakshiq] Publishing canva visual: Mountains vs Beaches...
+2026-04-25 08:32:56  INFO      [facebook/Nakshiq] Canva visual posted successfully!
+2026-04-25 08:32:56  INFO      Theme tracker updated: cat=this_or_that / img=this_or_that/mountains_vs_beaches_01.jpg
+2026-04-25 08:32:56  INFO      State saved. Canva Visual run complete.
+2026-04-25 08:32:56  INFO      ════════════════════════════════════════════════════════════
