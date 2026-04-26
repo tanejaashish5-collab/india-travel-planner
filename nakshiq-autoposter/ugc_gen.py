@@ -96,6 +96,7 @@ AVATARS = {
         "gender": "male",
         "role": "The Local Expert",
         "origin": "indian",
+        "has_builtin_bg": False,  # Pure green screen → chromakey PiP over destination
         "categories": ["cultural_insider"],
         "secondary_categories": ["practical_tips"],
         "voice_id": "09c3d65e44e247dd8b78a97a903feb58",  # Aditya default
@@ -128,6 +129,7 @@ AVATARS = {
         "gender": "female",
         "role": "The Cultural Guide",
         "origin": "indian",
+        "has_builtin_bg": False,  # Pure green screen → chromakey PiP over destination
         "categories": ["cultural_insider"],
         "secondary_categories": ["wellness_spiritual", "practical_tips"],
         "voice_id": "6d5ef2eb0cb94193b90dd3cb397ae898",  # Coral (female, multilingual)
@@ -160,6 +162,7 @@ AVATARS = {
         "gender": "female",
         "role": "The Adventure Seeker",
         "origin": "indian",
+        "has_builtin_bg": False,  # Green screen with scene padding — use Mode B PiP
         "categories": ["adventure_trek"],
         "secondary_categories": ["cultural_insider"],
         "voice_id": "71b0aa6499f6458e8b040818a017db1f",  # Nova (female, multilingual)
@@ -192,6 +195,7 @@ AVATARS = {
         "gender": "female",
         "role": "The Mindful Traveler",
         "origin": "south_asian",
+        "has_builtin_bg": False,  # Pure green screen → chromakey PiP over destination
         "categories": ["wellness_spiritual"],
         "secondary_categories": ["cultural_insider", "discovery_gems"],
         "voice_id": "8273e0a033074b5bb98d7ce3ab727bd9",  # Shimmer (female, multilingual)
@@ -226,6 +230,7 @@ AVATARS = {
         "gender": "male",
         "role": "The Enthusiastic Traveler",
         "origin": "international",
+        "has_builtin_bg": False,  # Pure green screen → chromakey PiP over destination
         "categories": ["discovery_gems"],
         "secondary_categories": ["adventure_trek", "practical_tips"],
         "voice_id": "bfc6d0242de24106a104339f0618b68d",  # Alloy (male, multilingual)
@@ -263,6 +268,7 @@ AVATARS = {
         "gender": "female",
         "role": "The Wellness Wanderer",
         "origin": "international",
+        "has_builtin_bg": False,  # Green screen with scene padding — use Mode B PiP
         "categories": ["wellness_spiritual"],
         "secondary_categories": ["discovery_gems"],
         "voice_id": "71b0aa6499f6458e8b040818a017db1f",  # Nova (female, multilingual)
@@ -304,6 +310,7 @@ AVATARS = {
         "gender": "male",
         "role": "The Trail Runner",
         "origin": "international",
+        "has_builtin_bg": False,  # Green screen with scene padding — use Mode B PiP
         "categories": ["adventure_trek"],
         "secondary_categories": ["discovery_gems"],
         "voice_id": "433c48a6c8944d89b3b76d2ddcc7176a",  # Echo (male, multilingual)
@@ -344,6 +351,7 @@ AVATARS = {
         "gender": "female",
         "role": "The Solo Explorer",
         "origin": "western",
+        "has_builtin_bg": False,  # Green screen with scene padding — use Mode B PiP
         "categories": ["practical_tips"],
         "secondary_categories": ["discovery_gems"],
         "voice_id": "6d5ef2eb0cb94193b90dd3cb397ae898",  # Coral (female, multilingual)
@@ -384,6 +392,7 @@ AVATARS = {
         "gender": "male",
         "role": "The Cozy Storyteller",
         "origin": "western",
+        "has_builtin_bg": False,  # Green screen with scene padding — use Mode B PiP
         "categories": ["practical_tips"],
         "secondary_categories": ["discovery_gems"],
         "voice_id": "26b2064088674c80b1e5fc5ab1a068ea",  # Onyx (male, multilingual)
@@ -421,6 +430,7 @@ AVATARS = {
         "gender": "male",
         "role": "The Casual Recommender",
         "origin": "international",
+        "has_builtin_bg": False,  # Assumed green screen (to be verified when generated)
         "categories": ["practical_tips"],
         "secondary_categories": ["discovery_gems", "cultural_insider"],
         "voice_id": "bfc6d0242de24106a104339f0618b68d",  # Alloy (male, multilingual)
@@ -1074,19 +1084,19 @@ def submit_avatar_video(avatar_key: str, script: str, title: str) -> str:
     if avatar["voice_id"]:
         voice_config["voice_id"] = avatar["voice_id"]
 
+    # All avatars use green screen for chromakey compositing
+    video_input = {
+        "character": {
+            "type": "avatar",
+            "avatar_id": avatar["avatar_id"],
+            "avatar_style": "normal",
+        },
+        "voice": voice_config,
+        "background": {"type": "color", "value": "#00FF00"},
+    }
+
     payload = {
-        "video_inputs": [{
-            "character": {
-                "type": "avatar",
-                "avatar_id": avatar["avatar_id"],
-                "avatar_style": "normal",
-            },
-            "voice": voice_config,
-            "background": {
-                "type": "color",
-                "value": "#00FF00",  # Green screen for chromakey compositing
-            },
-        }],
+        "video_inputs": [video_input],
         "dimension": {"width": 1080, "height": 1920},
         "title": title,
     }
@@ -1166,26 +1176,63 @@ def composite_ugc_video(
     background_images: list[Path],
     music_track: Path,
     output_path: Path,
-    avatar_name: str,
+    avatar_key: str,
     dest_name: str,
     duration: int = 35,
 ) -> Path:
     """
-    Composite the final UGC video:
-      - Background: Ken Burns panning over 4 Pomelli images
-      - Avatar: Picture-in-picture overlay (bottom-right, ~30% width)
-      - Audio: Avatar speech + background music (ducked during speech)
-      - Branding: NakshIQ bar at bottom
+    Composite the final UGC video.
+
+    All avatars use PiP mode: chromakey green screen removal, overlay avatar
+    as PiP (bottom-right ~35% width) over Ken Burns Pomelli destination images.
+    Adds NakshIQ branding bar (160px, fully opaque) + mixed audio (speech + ducked music).
+
+    Note: All HeyGen public avatars render on green screen (#00FF00), even those
+    with "built-in" scene backgrounds — those just have a landscape scene composited
+    in the center with green padding above/below.
 
     Returns path to the final video.
     """
     if not shutil.which("ffmpeg"):
         raise RuntimeError("ffmpeg not found")
 
+    avatar = AVATARS[avatar_key]
+    avatar_name = avatar["name"]
+
     tmpdir = Path(tempfile.mkdtemp(prefix="ugc_"))
 
     try:
-        # ── Step 1: Create background video from Pomelli images ──────
+        # ── Step 1: Prepare music ────────────────────────────────────
+        music_segment = tmpdir / "music_segment.wav"
+        _prepare_music(music_track, music_segment, duration)
+
+        # ── Step 2: Build branding filter chain (shared by both modes) ─
+        branding_filters = [
+            f"drawbox=x=0:y=h-160:w=iw:h=160:color={_hex(INK_DEEP)}:t=fill",
+        ]
+        if FONT_INSTRUMENT:
+            branding_filters.append(
+                f"drawtext=text='{_esc('NAKSHIQ')}':fontfile='{FONT_INSTRUMENT}':"
+                f"fontsize=30:fontcolor={_hex(BONE)}:x=40:y=h-120:borderw=0"
+            )
+        if FONT_CRIMSON:
+            branding_filters.append(
+                f"drawtext=text='{_esc('Travel with IQ')}':fontfile='{FONT_CRIMSON}':"
+                f"fontsize=24:fontcolor={_hex(SAFFRON)}:x=40:y=h-80:borderw=0"
+            )
+        if FONT_INSTRUMENT and dest_name:
+            branding_filters.append(
+                f"drawtext=text='{_esc(dest_name)}':fontfile='{FONT_INSTRUMENT}':"
+                f"fontsize=26:fontcolor={_hex(BONE)}:x=w-tw-40:y=h-105:borderw=0"
+            )
+
+        branding_chain = ",".join(branding_filters)
+
+        # ── Step 3: Build PiP composite ────────────────────────────
+        final_video = tmpdir / "final.mp4"
+        filters = []
+
+        # Create Ken Burns background from Pomelli images
         bg_video = tmpdir / "background.mp4"
         if background_images:
             _create_ken_burns_bg(background_images, bg_video, duration)
@@ -1198,27 +1245,18 @@ def composite_ugc_video(
                 str(bg_video)
             ], check=True, capture_output=True)
 
-        # ── Step 2: Prepare music (crop from last 90s, take 35s segment) ─
-        music_segment = tmpdir / "music_segment.wav"
-        _prepare_music(music_track, music_segment, duration)
-
-        # ── Step 3: Composite avatar over background ─────────────────
-        # Avatar PiP: bottom-right corner, ~30% frame width
-        # Green screen removal via chromakey
-        final_video = tmpdir / "final.mp4"
-
+        # Avatar PiP dimensions
         avatar_w = int(REEL_W * 0.35)  # 378px wide
         avatar_x = REEL_W - avatar_w - 40  # 40px margin from right
         avatar_y = REEL_H - int(REEL_H * 0.45)  # Upper portion of lower half
 
-        # Build ffmpeg filter complex
-        filters = []
-
         # Background scaled to 1080x1920
-        filters.append(f"[0:v]scale={REEL_W}:{REEL_H}:force_original_aspect_ratio=increase,"
-                       f"crop={REEL_W}:{REEL_H},setsar=1[bg]")
+        filters.append(
+            f"[0:v]scale={REEL_W}:{REEL_H}:force_original_aspect_ratio=increase,"
+            f"crop={REEL_W}:{REEL_H},setsar=1[bg]"
+        )
 
-        # Avatar: chromakey green screen removal + scale + position
+        # Avatar: chromakey green screen removal + scale
         filters.append(
             f"[1:v]chromakey=0x00FF00:0.15:0.1,"
             f"scale={avatar_w}:-1[avatar_clean]"
@@ -1231,33 +1269,11 @@ def composite_ugc_video(
         )
 
         # Add branding bar
-        branding_filters = [
-            f"drawbox=x=0:y=h-140:w=iw:h=140:color={_hex(INK_DEEP)}@0.90:t=fill",
-        ]
-        if FONT_INSTRUMENT:
-            branding_filters.append(
-                f"drawtext=text='{_esc('NAKSHIQ')}':fontfile='{FONT_INSTRUMENT}':"
-                f"fontsize=30:fontcolor={_hex(BONE)}:x=40:y=h-105:borderw=0"
-            )
-        if FONT_CRIMSON:
-            branding_filters.append(
-                f"drawtext=text='{_esc('Travel with IQ')}':fontfile='{FONT_CRIMSON}':"
-                f"fontsize=24:fontcolor={_hex(SAFFRON)}:x=40:y=h-70:borderw=0"
-            )
-
-        # Destination name in branding bar
-        if FONT_INSTRUMENT and dest_name:
-            branding_filters.append(
-                f"drawtext=text='{_esc(dest_name)}':fontfile='{FONT_INSTRUMENT}':"
-                f"fontsize=26:fontcolor={_hex(BONE)}:x=w-tw-40:y=h-95:borderw=0"
-            )
-
         filters.append(
-            f"[composited]{','.join(branding_filters)}[branded]"
+            f"[composited]{branding_chain}[branded]"
         )
 
-        # Audio: mix avatar speech with ducked background music
-        # Avatar speech at 0dB, music at -18dB during speech, -12dB during gaps
+        # Audio mix: speech + ducked music
         filters.append(
             f"[1:a]aformat=sample_fmts=fltp:sample_rates=44100:channel_layouts=mono[speech]"
         )
@@ -1288,6 +1304,7 @@ def composite_ugc_video(
             str(final_video),
         ]
 
+        print(f"  Compositing (PiP over destination)")
         result = subprocess.run(cmd, capture_output=True, text=True)
         if result.returncode != 0:
             print(f"ffmpeg stderr: {result.stderr[-1000:]}")
@@ -1325,10 +1342,12 @@ def _create_ken_burns_bg(images: list[Path], output: Path, duration: int):
             y_e = y_e.replace("{f}", str(frames_per))
 
             seg = tmpdir / f"seg_{i}.mp4"
+            # Crop bottom 200px (Pomelli branding area) then scale for Ken Burns
             subprocess.run([
                 "ffmpeg", "-y",
                 "-loop", "1", "-i", str(img),
                 "-vf", (
+                    f"crop=iw:ih-200:0:0,"
                     f"scale=8000:-1,"
                     f"zoompan=z='{zoom_e}':x='{x_e}':y='{y_e}':"
                     f"d={frames_per}:s={REEL_W}x{REEL_H}:fps={REEL_FPS},"
@@ -1553,7 +1572,7 @@ def generate_ugc(
         background_images=backgrounds,
         music_track=music,
         output_path=final_path,
-        avatar_name=avatar["name"],
+        avatar_key=avatar_key,
         dest_name=dest,
         duration=TARGET_DURATION,
     )
