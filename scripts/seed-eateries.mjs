@@ -29,23 +29,12 @@ const ROOT = path.resolve(import.meta.dirname, "..");
 const DATA_DIR = path.join(ROOT, "data", "research", "eateries");
 
 // Auto-load env from apps/web/.env.local so the script can be run from
-// repo root without needing a wrapper.
-function loadEnvFile(filePath) {
-  if (!existsSync(filePath)) return;
-  for (const line of readFileSync(filePath, "utf8").split("\n")) {
-    const m = line.match(/^([A-Z_][A-Z0-9_]*)=(.*)$/);
-    if (!m) continue;
-    const [, key, rawVal] = m;
-    if (process.env[key]) continue; // don't overwrite caller-provided env
-    let val = rawVal.trim();
-    if ((val.startsWith('"') && val.endsWith('"')) || (val.startsWith("'") && val.endsWith("'"))) {
-      val = val.slice(1, -1);
-    }
-    process.env[key] = val;
-  }
-}
-loadEnvFile(path.join(ROOT, "apps", "web", ".env.local"));
-loadEnvFile(path.join(ROOT, ".env.local"));
+// repo root without needing a wrapper. dotenv handles the literal \n
+// escape sequences in values that the previous hand-rolled parser missed
+// (memory: feedback_env_var_hygiene).
+const { config: dotenvConfig } = await import("dotenv");
+dotenvConfig({ path: path.join(ROOT, "apps", "web", ".env.local") });
+dotenvConfig({ path: path.join(ROOT, ".env.local") });
 
 const args = new Set(process.argv.slice(2));
 const DRY_RUN = args.has("--dry-run");
