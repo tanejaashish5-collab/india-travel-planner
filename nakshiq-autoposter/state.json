@@ -32,9 +32,9 @@
     "4QL0i_reel": "2026-04-19",
     "m8EAd_canva": "2026-04-26",
     "PdMu0_canva": "2026-04-26",
-    "m8EAd_evening": "2026-04-25",
-    "m8EAd_evening_story": "2026-04-22",
-    "PdMu0_evening": "2026-04-25",
+    "m8EAd_evening": "2026-04-26",
+    "m8EAd_evening_story": "2026-04-26",
+    "PdMu0_evening": "2026-04-26",
     "m8EAd_yt_short": "2026-04-25",
     "m8EAd_yt_short_count": 1,
     "jUmP2_yt_short": "2026-04-20",
@@ -62,7 +62,7 @@
     "m8EAd_reel_map": "2026-04-25",
     "PdMu0_reel_map": "2026-04-25"
   },
-  "last_sync": "2026-04-26T04:56:28.629294+00:00",
+  "last_sync": "2026-04-26T05:02:39.940513+00:00",
   "posted_destinations": [
     {
       "destination_id": "pahalgam",
@@ -307,6 +307,54 @@
     {
       "destination_id": "lansdowne",
       "date": "2026-04-26"
+    },
+    {
+      "destination_id": "mukteshwar",
+      "date": "2026-04-26"
+    },
+    {
+      "destination_id": "mukteshwar",
+      "date": "2026-04-26"
+    },
+    {
+      "destination_id": "nainital",
+      "date": "2026-04-26"
+    },
+    {
+      "destination_id": "ravangla",
+      "date": "2026-04-26"
+    },
+    {
+      "destination_id": "ranthambore",
+      "date": "2026-04-26"
+    },
+    {
+      "destination_id": "shimla",
+      "date": "2026-04-26"
+    },
+    {
+      "destination_id": "kokernag",
+      "date": "2026-04-26"
+    },
+    {
+      "destination_id": "mukteshwar",
+      "date": "2026-04-26"
+    },
+    {
+      "destination_id": "nainital",
+      "date": "2026-04-26"
+    },
+    {
+      "destination_id": "ravangla",
+      "date": "2026-04-26"
+    },
+    {
+      "destination_id": "ranthambore",
+      "date": "2026-04-26"
+    },
+    {
+      "destination_id": "shimla",
+      "date": "2026-04-26"
     }
   ],
   "posted_formats": {
@@ -319,7 +367,8 @@
       "methodology_altitude",
       "score_card",
       "score_card",
-      "data_carousel"
+      "data_carousel",
+      "monthly_forecast"
     ],
     "PdMu0": [
       "monthly_forecast",
@@ -333,7 +382,8 @@
       "methodology_altitude",
       "score_card",
       "score_card",
-      "data_carousel"
+      "data_carousel",
+      "monthly_forecast"
     ]
   },
   "post_log": [
@@ -603,6 +653,37 @@
       "destination": "mcleodganj",
       "format": "data_carousel",
       "has_media": true
+    },
+    {
+      "timestamp": "2026-04-26T05:03:43.581516+00:00",
+      "date": "2026-04-26",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "ikCNB",
+      "destination": "mukteshwar",
+      "format": "monthly_forecast",
+      "has_media": true
+    },
+    {
+      "timestamp": "2026-04-26T05:04:10.257880+00:00",
+      "date": "2026-04-26",
+      "platform": "instagram_story",
+      "account_id": "m8EAd",
+      "post_id": "bWKeT",
+      "destination": "ranthambore",
+      "format": "kids_intel",
+      "has_media": true,
+      "mode": "evening"
+    },
+    {
+      "timestamp": "2026-04-26T05:04:48.750965+00:00",
+      "date": "2026-04-26",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "mBoYd",
+      "destination": "kokernag",
+      "format": "monthly_forecast",
+      "has_media": true
     }
   ],
   "theme_usage": {
@@ -661,7 +742,8 @@
         "2026-04-24"
       ],
       "kokernag": [
-        "2026-04-25"
+        "2026-04-25",
+        "2026-04-26"
       ],
       "verinag": [
         "2026-04-26"
@@ -679,6 +761,21 @@
         "2026-04-26"
       ],
       "mcleodganj": [
+        "2026-04-26"
+      ],
+      "mukteshwar": [
+        "2026-04-26"
+      ],
+      "nainital": [
+        "2026-04-26"
+      ],
+      "ravangla": [
+        "2026-04-26"
+      ],
+      "ranthambore": [
+        "2026-04-26"
+      ],
+      "shimla": [
         "2026-04-26"
       ]
     },
@@ -775,7 +872,11 @@
         "2026-04-24"
       ],
       "kokernag": [
-        "2026-04-25"
+        "2026-04-25",
+        "2026-04-26"
+      ],
+      "mukteshwar": [
+        "2026-04-26"
       ]
     },
     "festivals": {
