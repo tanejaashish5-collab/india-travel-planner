@@ -81,8 +81,18 @@ export default function middleware(request: NextRequest) {
   // Preserve the state-redirect previously handled inside the destination
   // page component. After switching to dynamicParams=false, the page is never
   // invoked for non-destination slugs, so the redirect has to live here.
+  //
+  // STATE_AND_DESTINATION: slugs that are BOTH a state and a real destination
+  // row (city-states / UTs where the city == the state). For these, the
+  // destination page wins — skip the redirect or the destination page never
+  // renders. Caught after the Delhi eateries section silently disappeared.
+  const STATE_AND_DESTINATION = new Set(["delhi"]);
   const destStateMatch = request.nextUrl.pathname.match(/^\/(en|hi)\/destination\/([^/]+)\/?$/);
-  if (destStateMatch && STATE_MAP[destStateMatch[2]]) {
+  if (
+    destStateMatch &&
+    STATE_MAP[destStateMatch[2]] &&
+    !STATE_AND_DESTINATION.has(destStateMatch[2])
+  ) {
     const [, locale, stateId] = destStateMatch;
     return NextResponse.redirect(new URL(`/${locale}/state/${stateId}`, request.url), 301);
   }
