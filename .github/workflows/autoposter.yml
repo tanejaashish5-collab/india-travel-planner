@@ -13,6 +13,9 @@ on:
     #   Mon/Wed → moat, Tue/Thu → tourist map, Fri → infographic,
     #   Sat → canva, Sun → pomelli (rotation in mode detection)
     - cron: "30 7 * * *"
+    # UGC avatar video: 14:30 IST (09:00 UTC) — Wed+Sat only, IG+FB+YT
+    # DISABLED: HeyGen balance too low ($0.32). Uncomment after topping up.
+    # - cron: "0 9 * * 3,6"
     # Reel-map: 15:30 IST (10:00 UTC) — daily IG+FB+YT
     - cron: "0 10 * * *"
     # YT Short slot 2: 17:00 IST (11:30 UTC) — daily YT only
@@ -164,6 +167,9 @@ jobs:
             elif [ "$INPUT" = "yt-short-force" ]; then
               echo "args=--yt-short --force" >> $GITHUB_OUTPUT
               echo "Manual mode: --yt-short --force"
+            elif [ "$INPUT" = "ugc-force" ]; then
+              echo "args=--ugc --force" >> $GITHUB_OUTPUT
+              echo "Manual mode: --ugc --force"
             elif [ -n "$INPUT" ]; then
               echo "args=--${INPUT}" >> $GITHUB_OUTPUT
               echo "Manual mode: --${INPUT}"
@@ -207,6 +213,12 @@ jobs:
               echo "Scheduled POMELLI VISUAL · 13:00 IST Sun (UTC ${HOUR}:${MINUTE})"
             fi
 
+          # 14:30 IST = UTC 09:00 → UGC avatar video (window: 530-590) — Wed+Sat only
+          # NOTE: cron trigger is currently commented out (HeyGen balance too low)
+          elif [ "$TOTAL_MINS" -ge 530 ] && [ "$TOTAL_MINS" -lt 590 ]; then
+            echo "args=--ugc" >> $GITHUB_OUTPUT
+            echo "Scheduled UGC · 14:30 IST (UTC ${HOUR}:${MINUTE})"
+
           # 15:30 IST = UTC 10:00 → Reel-map (window: 590-660) — IG+FB+YT
           elif [ "$TOTAL_MINS" -ge 590 ] && [ "$TOTAL_MINS" -lt 660 ]; then
             echo "args=--reel-map" >> $GITHUB_OUTPUT
@@ -240,6 +252,7 @@ jobs:
       - name: Run autoposter
         env:
           OUTSTAND_API_KEY: ${{ secrets.OUTSTAND_API_KEY }}
+          HEYGEN_API_KEY: ${{ secrets.HEYGEN_API_KEY }}
         run: python nakshiq-autoposter/autoposter.py ${{ steps.mode.outputs.args }}
 
       - name: Commit updated state to autoposter-state branch
