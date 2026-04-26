@@ -120,34 +120,65 @@ export async function POST(req: Request) {
       }, { status: 429 });
     }
 
-    // 1. Embed the question for vector search
+    // 1. Embed the question for vector search. If OpenAI is unhealthy
+    //    (billing 429, transient outage), don't fail the whole request — fall
+    //    back to keyword search and structured queries below.
     const openai = new OpenAI({ apiKey: openaiKey });
-    const embResponse = await openai.embeddings.create({
-      model: "text-embedding-3-small",
-      input: question,
-    });
-    const queryEmbedding = embResponse.data[0].embedding;
-
-    // 2. HYBRID SEARCH — vector + keyword combined
-    const { data: matches, error: matchError } = await supabase.rpc("hybrid_search", {
-      query_text: question,
-      query_embedding: JSON.stringify(queryEmbedding),
-      match_count: 12,
-      keyword_weight: 0.3,
-      semantic_weight: 0.7,
-    });
-
-    if (matchError) {
-      console.error("Hybrid search error:", matchError);
-      // Fallback to pure vector search
-      const { data: fallbackMatches } = await supabase.rpc("match_documents", {
-        query_embedding: JSON.stringify(queryEmbedding),
-        match_count: 10,
+    let queryEmbedding: number[] | null = null;
+    let embeddingFailed = false;
+    try {
+      const embResponse = await openai.embeddings.create({
+        model: "text-embedding-3-small",
+        input: question,
       });
-      if (fallbackMatches) {
-        return await generateResponse(fallbackMatches, question, history, "", supabase, anthropicKey, ipHash);
+      queryEmbedding = embResponse.data[0].embedding;
+    } catch (err: any) {
+      embeddingFailed = true;
+      console.error("OpenAI embedding failed:", err?.status, err?.message ?? err);
+    }
+
+    // 2. HYBRID SEARCH (vector + keyword) — only when we have an embedding.
+    //    Without it, fall back to a plain ilike on the documents table so the
+    //    LLM still gets some retrieved context to ground the answer.
+    let matches: any[] = [];
+    if (queryEmbedding) {
+      const { data, error: matchError } = await supabase.rpc("hybrid_search", {
+        query_text: question,
+        query_embedding: JSON.stringify(queryEmbedding),
+        match_count: 12,
+        keyword_weight: 0.3,
+        semantic_weight: 0.7,
+      });
+
+      if (matchError) {
+        console.error("Hybrid search error:", matchError);
+        // Pure-vector fallback if hybrid_search RPC itself errored
+        const { data: fallbackMatches } = await supabase.rpc("match_documents", {
+          query_embedding: JSON.stringify(queryEmbedding),
+          match_count: 10,
+        });
+        matches = fallbackMatches ?? [];
+      } else {
+        matches = data ?? [];
       }
-      return NextResponse.json({ error: "Search failed" }, { status: 500 });
+    } else if (embeddingFailed) {
+      // Keyword-only fallback when embeddings are unavailable
+      const stop = new Set(["what","is","the","for","of","in","at","to","a","an","how","much","does","cost","entry","fee","price","ticket","visit","time","open","hours","where","best","near","about","can","i","do","things","with","and","or","my","me","when","why","which","this","that"]);
+      const keywords = question
+        .toLowerCase()
+        .replace(/[?.,!'"]/g, "")
+        .split(/\s+/)
+        .filter((w) => !stop.has(w) && w.length > 3)
+        .slice(0, 4);
+      if (keywords.length > 0) {
+        const orFilter = keywords.map((k) => `content.ilike.%${k.replace(/[%_]/g, "")}%`).join(",");
+        const { data: textMatches } = await supabase
+          .from("documents")
+          .select("source_type, source_id, content, metadata")
+          .or(orFilter)
+          .limit(8);
+        matches = (textMatches ?? []).map((d: any) => ({ ...d, similarity: 0.5 }));
+      }
     }
 
     // 3. STRUCTURED QUERIES — pull live data for specific entities
@@ -272,6 +303,16 @@ export async function POST(req: Request) {
     return await generateResponse(matches ?? [], question, history, structuredData, supabase, anthropicKey, ipHash);
   } catch (err: any) {
     console.error("Chat error:", err);
+    // Distinguish upstream LLM provider 429s from generic failures so the
+    // client can show a helpful message instead of "Something went wrong".
+    const status = err?.status ?? err?.response?.status;
+    if (status === 429) {
+      return NextResponse.json({
+        error: "Our AI provider is rate-limited or out of credit right now. Please try again in a few minutes.",
+        answer: "I'm temporarily offline — our AI provider is rate-limited or out of credit. Please try again in a few minutes, or browse our destination guides while we sort it out.",
+        sources: [],
+      }, { status: 503 });
+    }
     return NextResponse.json({ error: "Something went wrong" }, { status: 500 });
   }
 }
