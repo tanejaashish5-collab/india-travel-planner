@@ -25,8 +25,8 @@
     "px_absolutesound-aggressive-brazilian-phonk-3-514615"
   ],
   "posted_today": {
-    "PdMu0": "2026-04-25",
-    "m8EAd": "2026-04-25",
+    "PdMu0": "2026-04-26",
+    "m8EAd": "2026-04-26",
     "m8EAd_reel": "2026-04-25",
     "PdMu0_reel": "2026-04-25",
     "4QL0i_reel": "2026-04-19",
@@ -52,7 +52,7 @@
     "36BUk_reel": "2026-04-21",
     "36BUk_yt_short": "2026-04-21",
     "36BUk_yt_short_count": 1,
-    "m8EAd_story": "2026-04-23",
+    "m8EAd_story": "2026-04-26",
     "xBQy8_yt_short": "2026-04-23",
     "xBQy8_yt_short_count": 1,
     "xBQy8_reel": "2026-04-24",
@@ -62,7 +62,7 @@
     "m8EAd_reel_map": "2026-04-25",
     "PdMu0_reel_map": "2026-04-25"
   },
-  "last_sync": "2026-04-25T13:59:05.027022+00:00",
+  "last_sync": "2026-04-26T04:56:28.629294+00:00",
   "posted_destinations": [
     {
       "destination_id": "pahalgam",
@@ -259,6 +259,54 @@
     {
       "destination_id": "kokernag",
       "date": "2026-04-25"
+    },
+    {
+      "destination_id": "verinag",
+      "date": "2026-04-26"
+    },
+    {
+      "destination_id": "verinag",
+      "date": "2026-04-26"
+    },
+    {
+      "destination_id": "binsar",
+      "date": "2026-04-26"
+    },
+    {
+      "destination_id": "dharamshala",
+      "date": "2026-04-26"
+    },
+    {
+      "destination_id": "gopeshwar",
+      "date": "2026-04-26"
+    },
+    {
+      "destination_id": "lansdowne",
+      "date": "2026-04-26"
+    },
+    {
+      "destination_id": "mcleodganj",
+      "date": "2026-04-26"
+    },
+    {
+      "destination_id": "verinag",
+      "date": "2026-04-26"
+    },
+    {
+      "destination_id": "binsar",
+      "date": "2026-04-26"
+    },
+    {
+      "destination_id": "dharamshala",
+      "date": "2026-04-26"
+    },
+    {
+      "destination_id": "gopeshwar",
+      "date": "2026-04-26"
+    },
+    {
+      "destination_id": "lansdowne",
+      "date": "2026-04-26"
     }
   ],
   "posted_formats": {
@@ -270,7 +318,8 @@
       "collection_spotlight",
       "methodology_altitude",
       "score_card",
-      "score_card"
+      "score_card",
+      "data_carousel"
     ],
     "PdMu0": [
       "monthly_forecast",
@@ -283,7 +332,8 @@
       "reality_check",
       "methodology_altitude",
       "score_card",
-      "score_card"
+      "score_card",
+      "data_carousel"
     ]
   },
   "post_log": [
@@ -522,6 +572,37 @@
       "destination": "kokernag",
       "format": "score_card",
       "has_media": true
+    },
+    {
+      "timestamp": "2026-04-26T04:57:42.267696+00:00",
+      "date": "2026-04-26",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "Tz9v1",
+      "destination": "verinag",
+      "format": "data_carousel",
+      "has_media": true
+    },
+    {
+      "timestamp": "2026-04-26T04:58:16.462305+00:00",
+      "date": "2026-04-26",
+      "platform": "instagram_story",
+      "account_id": "m8EAd",
+      "post_id": "SD0GJ",
+      "destination": "verinag",
+      "format": "score_card",
+      "has_media": true,
+      "mode": "morning"
+    },
+    {
+      "timestamp": "2026-04-26T04:59:06.543444+00:00",
+      "date": "2026-04-26",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "BhFcn",
+      "destination": "mcleodganj",
+      "format": "data_carousel",
+      "has_media": true
     }
   ],
   "theme_usage": {
@@ -581,6 +662,24 @@
       ],
       "kokernag": [
         "2026-04-25"
+      ],
+      "verinag": [
+        "2026-04-26"
+      ],
+      "binsar": [
+        "2026-04-26"
+      ],
+      "dharamshala": [
+        "2026-04-26"
+      ],
+      "gopeshwar": [
+        "2026-04-26"
+      ],
+      "lansdowne": [
+        "2026-04-26"
+      ],
+      "mcleodganj": [
+        "2026-04-26"
       ]
     },
     "reel_formats": {
@@ -758,6 +857,9 @@
       ],
       "reality_check": [
         "2026-04-24"
+      ],
+      "data_carousel": [
+        "2026-04-26"
       ]
     },
     "collections": {
