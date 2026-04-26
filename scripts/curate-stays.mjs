@@ -19,13 +19,13 @@ import { readFileSync, writeFileSync, mkdirSync } from "fs";
 import { createClient } from "@supabase/supabase-js";
 
 // ===== env =====
-const envContent = readFileSync("apps/web/.env.local", "utf-8");
-const env = {};
-for (const line of envContent.split("\n")) {
-  const m = line.match(/^([A-Z_][A-Z0-9_]*)=(.+)$/);
-  if (m) env[m[1]] = m[2].replace(/^["']|["']$/g, "");
-}
-const { NEXT_PUBLIC_SUPABASE_URL: SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY: SERVICE_KEY, ANTHROPIC_API_KEY: ANTHROPIC_KEY } = env;
+// Use dotenv — the previous hand-rolled parser didn't handle literal \n
+// escape sequences in values (memory: feedback_env_var_hygiene).
+const { config: dotenvConfig } = await import("dotenv");
+dotenvConfig({ path: "apps/web/.env.local" });
+const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL;
+const SERVICE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY;
+const ANTHROPIC_KEY = process.env.ANTHROPIC_API_KEY;
 if (!SUPABASE_URL || !SERVICE_KEY || !ANTHROPIC_KEY) {
   console.error("Missing env in apps/web/.env.local (need NEXT_PUBLIC_SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, ANTHROPIC_API_KEY)");
   process.exit(1);
