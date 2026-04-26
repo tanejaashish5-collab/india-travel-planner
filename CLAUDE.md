@@ -114,7 +114,7 @@ Plan: `~/.claude/plans/smooth-orbiting-music.md`. Strict state-by-state, north-t
 | State | Status | Date | Coverage |
 |---|---|---|---|
 | Ladakh | ✓ done | 2026-04-26 | 14/14 dests · 93 eateries · 48 stays · 47 picks · 15-18 sections live. Sessions 1-4 + cleanup. Commits 5bc1bb5, 3d5a542, 0016205 |
-| Jammu & Kashmir | pending | - | 17 dests (Srinagar, Pahalgam, Gulmarg, Sonmarg + 13) |
+| Jammu & Kashmir | ✓ done | 2026-04-26 | 17/17 dests · 98 eateries · 40 stays · 44 picks. 5 sessions: Srinagar deep (5 zones, 36 rows after dedupe), Pahalgam/Gulmarg/Sonamarg (28), Bhaderwah/Kishtwar/Patnitop (19), 5 day-trip dests (11), 5 remote valleys (4 — honest scarcity). Sections 15-18 live. |
 | Himachal Pradesh | pending | - | ~55 dests |
 | Uttarakhand | pending | - | ~45 dests |
 | Punjab + Haryana + Chandigarh | pending | - | ~25 dests |
