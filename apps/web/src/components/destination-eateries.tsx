@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { CollapsibleDetails } from "./collapsible-details";
 
 type Eatery = {
   id: string;
@@ -75,8 +76,16 @@ export function DestinationEateries({ eateries, destinationName }: { eateries: E
 
   if (eateries.length === 0) return null;
 
+  // Compute a list of distinct area names for the hint, capped to 4 so the
+  // trigger row stays readable even on Delhi-scale data (25+ areas).
+  const areaPreview = areas.slice(0, 4).map((a) => a.label).join(", ");
+  const areaHint =
+    areas.length > 4
+      ? `${areaPreview} + ${areas.length - 4} more areas`
+      : areaPreview || "Filter by area or category — addresses, signatures, insider tips.";
+
   return (
-    <div className="space-y-5">
+    <div className="space-y-4">
       <div className="flex flex-wrap items-baseline gap-2">
         <h2 className="font-serif italic text-2xl sm:text-3xl">Where to eat in {destinationName}</h2>
         <span className="text-xs text-muted-foreground">{eateries.length} verified spots</span>
@@ -85,8 +94,18 @@ export function DestinationEateries({ eateries, destinationName }: { eateries: E
         From legacy institutions to modern bistros — addresses, signature dishes, and what locals actually order. Every entry verified against multiple sources.
       </p>
 
-      {/* Area chips */}
-      {areas.length > 1 && (
+      {/* Collapsed by default — 72 dense restaurant cards swamp the page on
+          long-scroll. Hide behind the same disclosure pattern used for the
+          infrastructure reality check; serious planners click in, casual
+          visitors scroll past. */}
+      <CollapsibleDetails
+        label="all places to eat"
+        count={eateries.length}
+        hint={areaHint}
+      >
+        <div className="space-y-5">
+          {/* Area chips */}
+          {areas.length > 1 && (
         <div className="flex flex-wrap gap-2">
           <button
             onClick={() => setActiveArea(null)}
@@ -242,6 +261,8 @@ export function DestinationEateries({ eateries, destinationName }: { eateries: E
           </article>
         ))}
       </div>
+        </div>
+      </CollapsibleDetails>
     </div>
   );
 }
