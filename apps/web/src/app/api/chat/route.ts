@@ -217,17 +217,33 @@ export async function POST(req: Request) {
             .select("name, type, entry_fee, time_needed, kids_suitable")
             .eq("destination_id", dest.id);
 
+          // Get eateries (real restaurant data) — surfaced when the question
+          // is food-shaped, otherwise included briefly for general context.
+          const isFoodQ = /\b(eat|food|restaurant|cafe|breakfast|lunch|dinner|kebab|chaat|biryani|sweets?|dessert|cuisine|veg|vegetarian|street food|fine dining|where.*to.*eat|hungry)\b/i.test(question);
+          const { data: eateries } = await supabase
+            .from("local_eateries")
+            .select("name, area, category, signature_dish, must_try, price_range, vegetarian, established_year, why_it_matters, insider_tip, is_legendary")
+            .eq("destination_id", dest.id)
+            .eq("is_active", true)
+            .order("is_legendary", { ascending: false })
+            .limit(isFoodQ ? 20 : 5);
+
           const monthNames = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
           const scoreStr = (scores ?? []).map((s: any) => `${monthNames[s.month-1]}: ${s.score}/5${s.note ? ` (${s.note})` : ""}`).join(", ");
           const kf = kids?.[0];
           const kidsStr = kf ? `Kids: ${kf.suitable ? "suitable" : "not suitable"}, rating ${kf.rating || "N/A"}/5${kf.notes ? `. ${kf.notes}` : ""}` : "";
           const poiStr = (pois ?? []).map((p: any) => `- ${p.name} (${p.type}): ${p.entry_fee || "Free"}, ${p.time_needed || "N/A"}, kids: ${p.kids_suitable ? "yes" : "no"}`).join("\n");
+          const eateriesStr = (eateries ?? []).map((r: any) => {
+            const tags = [r.is_legendary ? "legendary" : null, r.vegetarian === "pure-veg" ? "pure-veg" : null, r.established_year ? `since ${r.established_year}` : null].filter(Boolean).join(", ");
+            return `- ${r.name} (${r.area || "?"}, ${r.category}, ${r.price_range || "?"}${tags ? `, ${tags}` : ""}): ${r.signature_dish || ""}${r.must_try?.length ? ` — try ${r.must_try.slice(0, 3).join(", ")}` : ""}${r.why_it_matters ? `. ${r.why_it_matters}` : ""}${r.insider_tip ? ` Tip: ${r.insider_tip}` : ""}`;
+          }).join("\n");
 
           structuredData += `\n\n=== LIVE DATA: ${dest.name} (${dest.state_id}) ===\n`;
           structuredData += `Tagline: ${dest.tagline}\nDifficulty: ${dest.difficulty}\nElevation: ${dest.elevation_m || "N/A"}m\nTags: ${(dest.tags ?? []).join(", ")}\n`;
           structuredData += `Monthly Scores: ${scoreStr}\n`;
           if (kidsStr) structuredData += `${kidsStr}\n`;
           if (poiStr) structuredData += `Places to visit:\n${poiStr}\n`;
+          if (eateriesStr) structuredData += `${isFoodQ ? "Where to eat (verified, name + area + signature):" : "Notable eateries:"}\n${eateriesStr}\n`;
         }
       }
     }

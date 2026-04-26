@@ -28,6 +28,7 @@ import { TravelerReports } from "./traveler-reports";
 import { ReviewForm } from "./review-form";
 import { QuestionsList } from "./questions-list";
 import { QuestionForm } from "./question-form";
+import { DestinationEateries } from "./destination-eateries";
 import { BookingHandoff } from "./booking-handoff";
 import VerdictCard from "./verdict-card";
 import DestinationTldrCard from "./destination-tldr-card";
@@ -144,6 +145,12 @@ export function DestinationDetail({ dest }: { dest: any }) {
   const answeredQuestions = dest.questions ?? [];
   const hasQuestions = true;
 
+  // Sprint 22 — local eateries (verified restaurant-level data, joined on the
+  // server query). Section only renders when there's at least one row, so
+  // pre-seed destinations don't show an empty heading.
+  const eateries = dest.eateries ?? [];
+  const hasEateries = eateries.length > 0;
+
   // Sprint 2 depth layers — gated on per-row content so pre-backfill dests
   // don't show empty headings.
   const hasItinerary = !!dest.micro_itineraries && (
@@ -173,6 +180,7 @@ export function DestinationDetail({ dest }: { dest: any }) {
     { id: "logistics", label: "How It Works", show: hasLogistics },
     { id: "places", label: t("places"), show: hasPlaces },
     { id: "food", label: t("foodAndPeople"), show: hasFood },
+    { id: "eateries", label: "Where to eat", show: hasEateries },
     { id: "bestfor", label: "Best For", show: hasBestFor },
     { id: "elevation", label: "Altitude", show: hasElevation },
     { id: "questions", label: t("questions"), show: hasQuestions },
@@ -1326,6 +1334,17 @@ export function DestinationDetail({ dest }: { dest: any }) {
           {hasElevation && (
             <section id="section-elevation" className="scroll-mt-40">
               <ElevationChart elevationM={dest.elevation_m} destinationName={displayName} />
+            </section>
+          )}
+
+          {/* Sprint 22 — Where to eat. Verified restaurant-level data
+              keyed by destination_id. Renders cards with area chips,
+              category filter, signature dish, must-try, address,
+              insider tips. Replaces fuzzy area-level guidance the
+              chatbot used to give for food questions. */}
+          {hasEateries && (
+            <section id="section-eateries" className="scroll-mt-40 space-y-4">
+              <DestinationEateries eateries={eateries} destinationName={displayName} />
             </section>
           )}
 
