@@ -4444,3 +4444,21 @@ Date range: 2026-04-15 → 2026-04-25
 2026-04-26 04:59:06  INFO      [facebook/Nakshiq] ✅ Published · Outstand=BhFcn · Platform=1040562729145369_122104616252700092
 2026-04-26 04:59:06  INFO      State saved. Run complete.
 2026-04-26 04:59:06  INFO      ════════════════════════════════════════════════════════════
+2026-04-26 05:00:52  INFO      ════════════════════════════════════════════════════════════
+2026-04-26 05:00:52  INFO      Nakshiq Autoposter · CANVA VISUAL · 2026-04-26 · weekday=6
+2026-04-26 05:00:52  INFO      ════════════════════════════════════════════════════════════
+2026-04-26 05:00:52  INFO      Library: 88 images across 8 categories
+2026-04-26 05:00:52  INFO      Selected: [activities] Trek India — Himalayan sunrise → activities/trek_india_01.jpg
+2026-04-26 05:00:52  INFO          Requesting upload URL for canva_activities_trek_india_01.jpg (206,707 bytes, image/jpeg)
+2026-04-26 05:00:53  INFO          Uploading to R2 (timeout=120s)...
+2026-04-26 05:00:54  INFO          R2 PUT OK. Confirming...
+2026-04-26 05:00:55  INFO          Media ready: 2HYrS (206,707 bytes · canva_activities_trek_india_01.jpg)
+2026-04-26 05:00:55  INFO      Image uploaded: canva_activities_trek_india_01.jpg (201 KB)
+2026-04-26 05:00:56  INFO      [youtube/@naksh-iq] Skipping canva visual (YouTube only accepts video/reels).
+2026-04-26 05:00:56  INFO      [instagram/nakshiq] Publishing canva visual: Trek India — Himalayan sunrise...
+2026-04-26 05:00:58  INFO      [instagram/nakshiq] Canva visual posted successfully!
+2026-04-26 05:00:58  INFO      [facebook/Nakshiq] Publishing canva visual: Trek India — Himalayan sunrise...
+2026-04-26 05:01:01  INFO      [facebook/Nakshiq] Canva visual posted successfully!
+2026-04-26 05:01:01  INFO      Theme tracker updated: cat=activities / img=activities/trek_india_01.jpg
+2026-04-26 05:01:01  INFO      State saved. Canva Visual run complete.
+2026-04-26 05:01:01  INFO      ════════════════════════════════════════════════════════════
