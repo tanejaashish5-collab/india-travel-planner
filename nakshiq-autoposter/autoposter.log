@@ -4334,3 +4334,22 @@ Date range: 2026-04-15 → 2026-04-23
 2026-04-25 19:06:58  INFO      
 Date range: 2026-04-15 → 2026-04-25
 2026-04-25 19:06:58  INFO      ════════════════════════════════════════════════════════════
+2026-04-26 04:51:19  INFO      ════════════════════════════════════════════════════════════
+2026-04-26 04:51:19  INFO      Nakshiq Autoposter · YT SHORT · 2026-04-26
+2026-04-26 04:51:19  INFO      ════════════════════════════════════════════════════════════
+2026-04-26 04:52:04  INFO      Short rendered: yt_short_mini_guide_2026-04-26.mp4 (10000 KB, 28.0s, fmt=mini_guide, music=px_absolutesound-aggressive-brazilian-phonk-3-514615)
+2026-04-26 04:52:04  INFO          Requesting upload URL for yt_short_mini_guide_yt_short_mini_guide_2026-04-26.mp4 (10,240,060 bytes, video/mp4)
+2026-04-26 04:52:05  INFO          Uploading to R2 (timeout=300s)...
+2026-04-26 04:52:06  INFO          R2 PUT OK. Confirming...
+2026-04-26 04:52:08  INFO          Media ready: cFpXL (10,240,060 bytes · yt_short_mini_guide_yt_short_mini_guide_2026-04-26.mp4)
+2026-04-26 04:52:08  INFO      Video uploaded: yt_short_mini_guide_yt_short_mini_guide_2026-04-26.mp4
+2026-04-26 04:52:09  INFO      [youtube/@naksh-iq] Publishing YT Short (mini_guide)...
+2026-04-26 04:52:12  INFO      [youtube/@naksh-iq] Outstand accepted (post_id=OlL2v), waiting for platform confirmation...
+2026-04-26 04:52:18  WARNING       Platform error: Error publishing post to YouTube: Failed to initiate YouTube resumable upload: 401 - "{\"error\":{\"code\":401,\"message\":\"Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.\",\"errors\":[{\"message\":\"Invalid Credentials\",\"domain\":\"global\",\"reason\":\"authError\",\"location\":\"Authorization\",\"locationType\":\"header\"}],\"status\":\"UNAUTHENTICATED\"}}"
+2026-04-26 04:52:18  WARNING   [youtube/@naksh-iq] ⚠️  YT Short queued but NOT confirmed (post_id=OlL2v). May have silently failed.
+2026-04-26 04:52:18  INFO      [instagram/nakshiq] Publishing YT Short (mini_guide)...
+2026-04-26 04:52:21  INFO      [instagram/nakshiq] Outstand accepted (post_id=yRWVj), waiting for platform confirmation...
+2026-04-26 04:53:08  WARNING   [instagram/nakshiq] ⚠️  YT Short queued but NOT confirmed (post_id=yRWVj). May have silently failed.
+2026-04-26 04:53:08  INFO      [facebook/Nakshiq] Skipping (YT Shorts post to YouTube + Instagram only).
+2026-04-26 04:53:08  INFO      State saved. YT Short run complete.
+2026-04-26 04:53:08  INFO      ════════════════════════════════════════════════════════════
