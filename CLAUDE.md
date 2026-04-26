@@ -107,6 +107,20 @@ from commit history.
 | 15-17 Monetisation | 🔒 gated | Per R2 warning: requires 100K MUV + 2K email list before opening |
 | 18 | placeholder for 15-17 | No standalone scope — was a placeholder for the gated monetisation block |
 
+## North-to-south eateries + stays backfill
+
+Plan: `~/.claude/plans/smooth-orbiting-music.md`. Strict state-by-state, north-to-south. Per-dest scope = `local_eateries` + `local_stays` + `destination_stay_picks`. Existing tools: `seed-eateries.mjs` (eateries → SQL/upsert) + `curate-stays.mjs --ids X` (Haiku research → Sonnet voice for picks).
+
+| State | Status | Date | Coverage |
+|---|---|---|---|
+| Ladakh | ✓ done | 2026-04-26 | 14/14 dests · 93 eateries · 48 stays · 47 picks · 15-18 sections live. Sessions 1-4 + cleanup. Commits 5bc1bb5, 3d5a542, 0016205 |
+| Jammu & Kashmir | pending | - | 17 dests (Srinagar, Pahalgam, Gulmarg, Sonmarg + 13) |
+| Himachal Pradesh | pending | - | ~55 dests |
+| Uttarakhand | pending | - | ~45 dests |
+| Punjab + Haryana + Chandigarh | pending | - | ~25 dests |
+| Rajasthan | pending | - | ~50 dests |
+| Uttar Pradesh | pending | - | ~30 dests |
+
 **R-report gap closure** (reconstructed from citations; source PDFs not in repo):
 
 - **R1** (SEO/E-E-A-T): §1.1 homepage, §2.2 thin-content quality, §3.2 i18n — all ✓
