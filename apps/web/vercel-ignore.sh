@@ -10,7 +10,7 @@ if [ -z "$CHANGED" ]; then
   exit 1
 fi
 
-NON_TRIVIAL=$(echo "$CHANGED" | grep -vE '^(nakshiq-autoposter/|videos/|images/|\.claude/|\.expo/|.*\.docx$|.*\.md$|MEMORY\.md)' || true)
+NON_TRIVIAL=$(echo "$CHANGED" | grep -vE '^(nakshiq-autoposter/|videos/|images/|\.claude/|\.expo/|\.playwright-mcp/|\.match_ashish\.py$|data/|gsc-audits/|Web Res reports/|Branding/|.*\.docx$|.*\.md$|MEMORY\.md|[^/]+\.png$|.*\.csv$)' || true)
 
 if [ -z "$NON_TRIVIAL" ]; then
   echo "Skipping build — only autoposter / media / docs changed:"

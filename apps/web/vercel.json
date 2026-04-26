@@ -3,6 +3,12 @@
   "installCommand": "npm install",
   "framework": "nextjs",
   "ignoreCommand": "bash vercel-ignore.sh",
+  "git": {
+    "deploymentEnabled": {
+      "main": true,
+      "autoposter-state": false
+    }
+  },
   "crons": [
     {
       "path": "/api/newsletter/send",

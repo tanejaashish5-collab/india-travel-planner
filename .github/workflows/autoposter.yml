@@ -90,6 +90,23 @@ jobs:
       - name: Install Python dependencies
         run: pip install -r nakshiq-autoposter/requirements.txt
 
+      - name: Sync latest autoposter state from autoposter-state branch
+        # State files (state.json / autoposter.log / analytics.json) live on the
+        # `autoposter-state` side branch so they don't trigger Vercel rebuilds on
+        # main. Pull the latest state into the main worktree before the autoposter
+        # runs so it sees yesterday's already-posted content.
+        run: |
+          if git ls-remote --exit-code --heads origin autoposter-state >/dev/null 2>&1; then
+            git fetch origin autoposter-state --depth=1
+            git checkout origin/autoposter-state -- \
+              nakshiq-autoposter/state.json \
+              nakshiq-autoposter/autoposter.log \
+              nakshiq-autoposter/analytics.json 2>/dev/null || true
+            echo "Synced state from autoposter-state branch"
+          else
+            echo "autoposter-state branch not on origin yet — using state from main checkout (first run)"
+          fi
+
       - name: Cache social image library
         uses: actions/cache@v4
         with:
@@ -220,20 +237,57 @@ jobs:
           OUTSTAND_API_KEY: ${{ secrets.OUTSTAND_API_KEY }}
         run: python nakshiq-autoposter/autoposter.py ${{ steps.mode.outputs.args }}
 
-      - name: Commit updated state
+      - name: Commit updated state to autoposter-state branch
+        # Push the autoposter's state files to the side branch `autoposter-state`,
+        # not to main. main only receives real code changes — Vercel deploys from
+        # main, so this eliminates ~16 chore-driven rebuilds per day. A separate
+        # worktree keeps the main checkout untouched.
         run: |
+          set -e
           git config user.name  "Nakshiq Autoposter"
           git config user.email "autoposter@nakshiq.com"
-          git add nakshiq-autoposter/state.json nakshiq-autoposter/autoposter.log nakshiq-autoposter/analytics.json
-          git diff --staged --quiet || git commit -m "chore: autoposter state $(date -u +'%Y-%m-%d %H:%M UTC')"
 
-          # Retry push with rebase to handle concurrent pushes (e.g. manual commits)
-          for attempt in 1 2 3; do
-            if git push; then
-              echo "Push succeeded (attempt $attempt)"
-              break
-            fi
-            echo "Push failed (attempt $attempt), pulling with rebase and retrying..."
-            git pull --rebase origin main
-            sleep $((attempt * 2))
-          done
+          # 1. Snapshot autoposter's freshly-written state files
+          mkdir -p /tmp/autoposter-snap
+          [ -f nakshiq-autoposter/state.json ]     && cp nakshiq-autoposter/state.json     /tmp/autoposter-snap/state.json     || true
+          [ -f nakshiq-autoposter/autoposter.log ] && cp nakshiq-autoposter/autoposter.log /tmp/autoposter-snap/autoposter.log || true
+          [ -f nakshiq-autoposter/analytics.json ] && cp nakshiq-autoposter/analytics.json /tmp/autoposter-snap/analytics.json || true
+
+          # 2. Ensure autoposter-state branch exists on origin (bootstrap on first run)
+          if ! git ls-remote --exit-code --heads origin autoposter-state >/dev/null 2>&1; then
+            echo "Bootstrapping autoposter-state branch from main..."
+            git push origin HEAD:refs/heads/autoposter-state
+          fi
+
+          # 3. Fetch + add a worktree for the side branch
+          git fetch origin autoposter-state --depth=1
+          rm -rf /tmp/autoposter-state-worktree
+          git worktree add /tmp/autoposter-state-worktree autoposter-state
+
+          # 4. Drop the snapshot into the worktree
+          mkdir -p /tmp/autoposter-state-worktree/nakshiq-autoposter
+          cp /tmp/autoposter-snap/state.json     /tmp/autoposter-state-worktree/nakshiq-autoposter/state.json     2>/dev/null || true
+          cp /tmp/autoposter-snap/autoposter.log /tmp/autoposter-state-worktree/nakshiq-autoposter/autoposter.log 2>/dev/null || true
+          cp /tmp/autoposter-snap/analytics.json /tmp/autoposter-state-worktree/nakshiq-autoposter/analytics.json 2>/dev/null || true
+
+          # 5. Commit + push from the worktree
+          pushd /tmp/autoposter-state-worktree
+          git add nakshiq-autoposter/state.json nakshiq-autoposter/autoposter.log nakshiq-autoposter/analytics.json
+          if git diff --staged --quiet; then
+            echo "No state changes to commit"
+          else
+            git commit -m "chore: autoposter state $(date -u +'%Y-%m-%d %H:%M UTC')"
+            for attempt in 1 2 3; do
+              if git push origin autoposter-state; then
+                echo "Push succeeded (attempt $attempt)"
+                break
+              fi
+              echo "Push failed (attempt $attempt), pulling with rebase and retrying..."
+              git pull --rebase origin autoposter-state || true
+              sleep $((attempt * 2))
+            done
+          fi
+          popd
+
+          # 6. Cleanup
+          git worktree remove --force /tmp/autoposter-state-worktree || true
