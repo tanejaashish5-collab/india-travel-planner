@@ -55,12 +55,17 @@ on:
           - yt-short-force
           - analytics
 
+concurrency:
+  group: autoposter
+  cancel-in-progress: true
+
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
   post:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     permissions:
       contents: write
 
