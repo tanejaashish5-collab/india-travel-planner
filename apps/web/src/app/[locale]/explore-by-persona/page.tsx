@@ -23,8 +23,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       ? "व्यक्तित्व के अनुसार भारत यात्रा — परिवार, बाइकर, हनीमून, और अधिक"
       : "Explore India by persona — families, bikers, honeymooners, and more",
     description: isHindi
-      ? "भारत के 488 स्थलों को 10 व्यक्तित्व श्रेणियों में फ़िल्टर करें। हर पिक वास्तविक डेटाबेस मिलान — कोई संपादकीय सूची नहीं।"
-      : "Filter India's 488 destinations by the 10 personas that actually travel together — families, bikers, digital nomads, elderly, photographers, solo female, honeymooners, pilgrims, wellness, culinary. Every pick is a real database match, not a hand-curated listicle.",
+      ? "भारत के 491 स्थलों को 10 व्यक्तित्व श्रेणियों में फ़िल्टर करें। हर पिक वास्तविक डेटाबेस मिलान — कोई संपादकीय सूची नहीं।"
+      : "Filter India's 491 destinations by the 10 personas that actually travel together — families, bikers, digital nomads, elderly, photographers, solo female, honeymooners, pilgrims, wellness, culinary. Every pick is a real database match, not a hand-curated listicle.",
     ...localeAlternates(locale, "/explore-by-persona"),
   };
 }

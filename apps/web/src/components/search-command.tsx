@@ -424,7 +424,7 @@ export function SearchCommand({ open, onClose }: SearchCommandProps) {
         <div ref={listRef} className="max-h-[60vh] overflow-y-auto p-2">
           {!hasQuery && (
             <p className="px-3 py-8 text-center text-sm text-muted-foreground">
-              Search {destinations?.length || 488} destinations, {subs?.length || 343} places, {states?.length || 36} states, {treks?.length || 60} treks, festivals, stays, and more...
+              Search {destinations?.length || 491} destinations, {subs?.length || 343} places, {states?.length || 36} states, {treks?.length || 60} treks, festivals, stays, and more...
             </p>
           )}
 

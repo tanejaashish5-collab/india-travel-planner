@@ -16,15 +16,15 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       ? "NakshIQ यात्रा लागत सूचकांक 2026"
       : "NakshIQ India Travel Cost Index 2026",
     description: isHindi
-      ? "भारत के 488 स्थलों के लिए मौसम-अनुसार होमस्टे, होटल, भोजन, टैक्सी और परमिट की लागत। हर आंकड़ा स्रोत-संदर्भ के साथ।"
-      : "Season-tagged, source-cited travel costs for 488 Indian destinations across homestay, hotel, food, taxi, permit, and activity categories. The open, citation-ready cost reference that generic blog posts don't give you.",
+      ? "भारत के 491 स्थलों के लिए मौसम-अनुसार होमस्टे, होटल, भोजन, टैक्सी और परमिट की लागत। हर आंकड़ा स्रोत-संदर्भ के साथ।"
+      : "Season-tagged, source-cited travel costs for 491 Indian destinations across homestay, hotel, food, taxi, permit, and activity categories. The open, citation-ready cost reference that generic blog posts don't give you.",
     ...localeAlternates(locale, "/cost-index"),
   };
 }
 
 const BASE_URL = "https://www.nakshiq.com";
 
-// All 9 cost-index categories now seeded across 488 destinations × 3 seasons.
+// All 9 cost-index categories now seeded across 491 destinations × 3 seasons.
 // hostel-dorm + transport-intercity were closed in Sprint 20 via
 // scripts/_seed-cost-index-{hostels,intercity}.mjs. hotel-splurge was
 // closed in Sprint 11 (seed-cost-index-splurge.mjs). Original Sprint-9 seed

@@ -185,7 +185,7 @@ export default async function LocaleLayout({
                   height: 512,
                 },
                 description:
-                  "Travel intelligence for India. 488 destinations across 36 states, each scored month-by-month for go/wait/skip verdicts, kids-suitability, solo-female safety, and altitude risk. Citation-first editorial — no fabricated prices, phone numbers, or stays.",
+                  "Travel intelligence for India. 491 destinations across 36 states, each scored month-by-month for go/wait/skip verdicts, kids-suitability, solo-female safety, and altitude risk. Citation-first editorial — no fabricated prices, phone numbers, or stays.",
                 foundingDate: "2026",
                 areaServed: { "@type": "Country", name: "India" },
                 knowsAbout: [
@@ -231,7 +231,7 @@ export default async function LocaleLayout({
                 url: "https://www.nakshiq.com",
                 name: "NakshIQ",
                 description:
-                  "Travel intelligence for India — 488 destinations, 5,856 monthly verdicts, citation-first editorial.",
+                  "Travel intelligence for India — 491 destinations, 5,856 monthly verdicts, citation-first editorial.",
                 publisher: { "@id": "https://www.nakshiq.com#organization" },
                 inLanguage: ["en-IN", "hi-IN"],
                 potentialAction: {

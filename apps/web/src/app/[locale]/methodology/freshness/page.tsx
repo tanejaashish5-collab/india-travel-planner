@@ -126,7 +126,7 @@ export default async function FreshnessDashboardPage() {
   const now = new Date();
   const asOf = now.toLocaleDateString("en-IN", { day: "numeric", month: "long", year: "numeric" });
 
-  // Dataset schema — makes NakshIQ's 488×12×6 dimension claim machine-readable
+  // Dataset schema — makes NakshIQ's 491×12×6 dimension claim machine-readable
   // for search engines + answer engines. Treats the live scoring corpus as a
   // citeable dataset so AI can cite us as a data source, not just a text blog.
   const datasetLd = {
@@ -136,7 +136,7 @@ export default async function FreshnessDashboardPage() {
     name: "NakshIQ India Destination Scoring Dataset",
     alternateName: "NakshIQ Monthly Destination Verdicts",
     description:
-      "Human-curated dataset of monthly go/wait/skip verdicts and 0–10 suitability scores for 488 Indian destinations across 36 states and union territories. Each destination × month pair is scored across 6 dimensions: weather, access, crowd, cost, safety, and kids-suitability. Total coverage: 5,856 verdict rows. Updated on a rolling 90-day review cadence.",
+      "Human-curated dataset of monthly go/wait/skip verdicts and 0–10 suitability scores for 491 Indian destinations across 36 states and union territories. Each destination × month pair is scored across 6 dimensions: weather, access, crowd, cost, safety, and kids-suitability. Total coverage: 5,856 verdict rows. Updated on a rolling 90-day review cadence.",
     url: "https://www.nakshiq.com/en/methodology/freshness",
     keywords: [
       "India travel",
@@ -199,7 +199,7 @@ export default async function FreshnessDashboardPage() {
     "@id": "https://www.nakshiq.com/en/methodology/freshness#article",
     headline: "NakshIQ data freshness — review cadence and scheduled jobs",
     description:
-      "How NakshIQ keeps its 488-destination dataset current: rolling 90-day editorial review, nightly stay-refresh cron, weekly freshness-drift alerting, monthly news-sweep.",
+      "How NakshIQ keeps its 491-destination dataset current: rolling 90-day editorial review, nightly stay-refresh cron, weekly freshness-drift alerting, monthly news-sweep.",
     author: { "@id": "https://www.nakshiq.com#organization" },
     publisher: { "@id": "https://www.nakshiq.com#organization" },
     dateModified: now.toISOString(),

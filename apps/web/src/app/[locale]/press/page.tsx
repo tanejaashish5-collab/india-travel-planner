@@ -14,7 +14,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return {
     title: "Press & research — NakshIQ",
     description:
-      "Citable datasets on India travel: the NakshIQ Cost Index (7,000+ verified cost rows across 488 destinations), month-by-month scoring on 5,856 destination-months, and the Tourist Trap Atlas. Attribution, methodology, and a direct line to the newsroom.",
+      "Citable datasets on India travel: the NakshIQ Cost Index (7,000+ verified cost rows across 491 destinations), month-by-month scoring on 5,856 destination-months, and the Tourist Trap Atlas. Attribution, methodology, and a direct line to the newsroom.",
     ...localeAlternates(locale, "/press"),
   };
 }
@@ -23,11 +23,12 @@ async function getCounts() {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
   if (!url || !key) {
-    return { rows: 7449, destinations: 488, goCount: 2720, skipCount: 1893, waitCount: 1058, totalDm: 5856, traps: 109 };
+    return { rows: 7449, destinations: 491, goCount: 2720, skipCount: 1893, waitCount: 1058, totalDm: 5856, traps: 109 };
   }
   const supabase = createClient(url, key);
-  const [costs, goCnt, skipCnt, waitCnt, totalDm, traps] = await Promise.all([
+  const [costs, dests, goCnt, skipCnt, waitCnt, totalDm, traps] = await Promise.all([
     supabase.from("destination_costs").select("id", { count: "exact", head: true }),
+    supabase.from("destinations").select("id", { count: "exact", head: true }),
     supabase.from("destination_months").select("id", { count: "exact", head: true }).eq("verdict", "go"),
     supabase.from("destination_months").select("id", { count: "exact", head: true }).eq("verdict", "skip"),
     supabase.from("destination_months").select("id", { count: "exact", head: true }).eq("verdict", "wait"),
@@ -36,7 +37,7 @@ async function getCounts() {
   ]);
   return {
     rows: costs.count ?? 7449,
-    destinations: 488,
+    destinations: dests.count ?? 491,
     goCount: goCnt.count ?? 2720,
     skipCount: skipCnt.count ?? 1893,
     waitCount: waitCnt.count ?? 1058,

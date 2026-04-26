@@ -360,7 +360,7 @@ export function WhereToGoContent({
       <FadeIn>
         <div className="rounded-xl border border-border/40 bg-card/40 backdrop-blur-sm px-4 py-3 sm:px-5 sm:py-3.5">
           <div className="text-[11px] font-medium uppercase tracking-[0.08em] text-muted-foreground/80">
-            {destinationCount ?? 480} destinations <span className="text-muted-foreground/40 mx-2" aria-hidden>·</span> 12 months <span className="text-muted-foreground/40 mx-2" aria-hidden>·</span> monthly scores are cycle-based{monthReviewedAt ? (
+            {destinationCount ?? 491} destinations <span className="text-muted-foreground/40 mx-2" aria-hidden>·</span> 12 months <span className="text-muted-foreground/40 mx-2" aria-hidden>·</span> monthly scores are cycle-based{monthReviewedAt ? (
               <><span className="text-muted-foreground/40 mx-2" aria-hidden>·</span>prose reviewed {new Date(monthReviewedAt).toLocaleDateString("en-IN", { month: "short", year: "numeric" })}</>
             ) : null}
           </div>

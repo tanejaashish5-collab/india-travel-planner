@@ -70,7 +70,7 @@ export default async function CostIndexMethodologyPage({ params }: { params: Pro
             <h2 className="text-2xl font-semibold mb-3">What the dataset covers</h2>
             <p className="text-sm leading-relaxed text-muted-foreground mb-3">
               The Cost Index publishes representative 2026 INR price points for nine travel-spend
-              categories across all 488 NakshIQ-covered destinations. Each row is a{" "}
+              categories across all 491 NakshIQ-covered destinations. Each row is a{" "}
               <code className="font-mono text-xs">(destination, category, season)</code> triple with
               a median, a low-end (budget), and a high-end (splurge) figure, plus the unit
               ({" "}<code className="font-mono text-xs">per_night</code>,

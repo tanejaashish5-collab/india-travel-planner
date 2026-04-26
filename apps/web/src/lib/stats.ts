@@ -14,10 +14,10 @@ export interface AppStats {
   campingSpots: number;
 }
 
-// Fallback values if DB is unavailable — keep these updated (April 2026, comprehensive backfill)
+// Fallback values if DB is unavailable — keep these updated (April 2026, post-Goa expansion: candolim/assagao/siolim added)
 export const FALLBACK: AppStats = {
-  destinations: 480,
-  places: 1057,
+  destinations: 491,
+  places: 1060,
   routes: 74,
   festivals: 325,
   collections: 91,
