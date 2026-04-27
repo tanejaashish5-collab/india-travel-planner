@@ -187,15 +187,23 @@ def _find_pomelli_images(keywords: list[str], count: int = 1,
     kw_lower = [k.lower().replace(" ", "_").replace("-", "_") for k in keywords if k]
 
     for entry in manifest:
-        f = entry.get("file", "")
+        # Handle both dict entries and plain filename strings
+        if isinstance(entry, str):
+            f = entry
+            campaign = entry.lower().replace(".png", "").replace("pomelli_", "")
+            subject = ""
+            tags = []
+            ctype = ""
+        else:
+            f = entry.get("file", "")
+            campaign = entry.get("campaign", "").lower()
+            subject = (entry.get("subject") or "").lower()
+            tags = [t.lower() for t in entry.get("tags", [])]
+            ctype = entry.get("campaign_type", "")
+
         path = POMELLI_DIR / f
         if not path.exists():
             continue
-
-        campaign = entry.get("campaign", "").lower()
-        subject = (entry.get("subject") or "").lower()
-        tags = [t.lower() for t in entry.get("tags", [])]
-        ctype = entry.get("campaign_type", "")
 
         # Score relevance
         score = 0
@@ -217,8 +225,12 @@ def _find_pomelli_images(keywords: list[str], count: int = 1,
 
     if not scored:
         # Random fallback from full library
-        all_imgs = [POMELLI_DIR / e["file"] for e in manifest
-                    if (POMELLI_DIR / e["file"]).exists()]
+        all_imgs = []
+        for e in manifest:
+            fname = e if isinstance(e, str) else e.get("file", "")
+            p = POMELLI_DIR / fname
+            if p.exists():
+                all_imgs.append(p)
         random.shuffle(all_imgs)
         return all_imgs[:count]
 
