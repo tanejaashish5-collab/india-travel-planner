@@ -55,7 +55,7 @@ export async function generateMetadata({
 
   const [{ data: dest }, { data: monthData }, { data: card }] = await Promise.all([
     supabase.from("destinations").select("name, tagline, state:states(name)").eq("id", id).single(),
-    supabase.from("destination_months").select("score, note, why_go, verdict").eq("destination_id", id).eq("month", monthNum).single(),
+    supabase.from("destination_months").select("score, note, why_go, why_not, verdict").eq("destination_id", id).eq("month", monthNum).single(),
     supabase.from("confidence_cards").select("weather_night").eq("destination_id", id).single(),
   ]);
 
@@ -65,6 +65,7 @@ export async function generateMetadata({
   const score = monthData?.score ?? 0;
   const note = (monthData?.note ?? "").toString();
   const whyGo = (monthData?.why_go ?? "").toString();
+  const whyNot = (monthData?.why_not ?? "").toString();
   const verdict = (monthData?.verdict ?? "").toString().toLowerCase();
   const stateData = dest.state as any;
   const stateName = Array.isArray(stateData) ? stateData[0]?.name : stateData?.name;
@@ -146,8 +147,10 @@ export async function generateMetadata({
     ? `${verdictPrefix}NakshIQ scores ${score}/5 (${stateName}).`
     : `${verdictPrefix}NakshIQ scores ${score}/5.`;
   // Budget = 155 total - lead - close - 2 spaces. Trim editorial note to fit cleanly.
+  // Fallback chain: note → why_go (go/wait verdicts) → why_not (skip verdict).
+  // Without why_not, ~5% of skip-verdict pages had empty bodies in production.
   const noteBudget = Math.max(40, 155 - descLead.length - descClose.length - 2);
-  const noteSource = note || whyGo;
+  const noteSource = note || whyGo || (verdict === "skip" ? whyNot : "");
   const descBody = noteSource ? trimToBoundary(noteSource, noteBudget) : "";
   const descBodyClean = descBody ? (/[.!?]$/.test(descBody) ? descBody : `${descBody}.`) : "";
   const description = [descLead, descBodyClean, descClose].filter(Boolean).join(" ").trim();
