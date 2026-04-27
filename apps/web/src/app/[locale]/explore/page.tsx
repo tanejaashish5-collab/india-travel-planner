@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { getTranslations } from "next-intl/server";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
@@ -86,7 +87,9 @@ export default async function ExplorePage({ params }: { params: Promise<{ locale
             weekend trips →
           </span>
         </div>
-        <ExploreWithMap destinations={destinationsWithCoords} states={states} />
+        <Suspense fallback={<div className="min-h-[400px] animate-pulse rounded bg-foreground/5" />}>
+          <ExploreWithMap destinations={destinationsWithCoords} states={states} />
+        </Suspense>
       </main>
       <Footer />
     </div>

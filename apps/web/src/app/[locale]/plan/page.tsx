@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { PlanContent } from "@/components/plan-content";
@@ -54,7 +55,9 @@ export default async function PlanTripPage() {
     <div className="min-h-screen">
       <Nav />
       <main className="mx-auto max-w-5xl px-4 py-8">
-        <PlanContent destinations={destinations} states={states} />
+        <Suspense fallback={<div className="min-h-[400px] animate-pulse rounded bg-foreground/5" />}>
+          <PlanContent destinations={destinations} states={states} />
+        </Suspense>
       </main>
       <Footer />
     </div>

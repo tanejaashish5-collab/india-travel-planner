@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { StatesExplorer } from "@/components/states-explorer";
@@ -83,7 +84,9 @@ export default async function StatesPage({
             {totalDests} destinations across {states.length} states — scored for every month
           </p>
         </div>
-        <StatesExplorer states={states} locale={locale} />
+        <Suspense fallback={<div className="min-h-[400px] animate-pulse rounded bg-foreground/5" />}>
+          <StatesExplorer states={states} locale={locale} />
+        </Suspense>
       </main>
       <Footer />
     </div>

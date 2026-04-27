@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { ExploreGrid } from "@/components/explore-grid";
@@ -64,7 +65,9 @@ export default async function ExploreStateMonthPage({ params }: { params: Promis
             {sorted.length} destinations — {score5} score 5/5 this month. Sorted by {m.name} suitability.
           </p>
         </div>
-        <ExploreGrid destinations={sorted} states={[{ id: stateSlug, name: stateName }]} />
+        <Suspense fallback={<div className="min-h-[400px] animate-pulse rounded bg-foreground/5" />}>
+          <ExploreGrid destinations={sorted} states={[{ id: stateSlug, name: stateName }]} />
+        </Suspense>
       </main>
       <Footer />
     </div>

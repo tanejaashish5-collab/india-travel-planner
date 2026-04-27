@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { ExploreGrid } from "@/components/explore-grid";
@@ -72,7 +73,9 @@ export default async function ExploreByDifficultyPage({ params }: { params: Prom
           <h1 className="text-3xl font-semibold">{name} Destinations</h1>
           <p className="mt-2 text-muted-foreground">{sorted.length} destinations — {DIFF_DESC[level]}</p>
         </div>
-        <ExploreGrid destinations={sorted} states={states} />
+        <Suspense fallback={<div className="min-h-[400px] animate-pulse rounded bg-foreground/5" />}>
+          <ExploreGrid destinations={sorted} states={states} />
+        </Suspense>
       </main>
       <Footer />
     </div>

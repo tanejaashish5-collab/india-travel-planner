@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { SavedContent } from "@/components/saved-content";
@@ -30,7 +31,9 @@ export default async function SavedPage() {
     <div className="min-h-screen">
       <Nav />
       <main className="mx-auto max-w-7xl px-4 py-8">
-        <SavedContent destinations={destinations} />
+        <Suspense fallback={<div className="min-h-[400px] animate-pulse rounded bg-foreground/5" />}>
+          <SavedContent destinations={destinations} />
+        </Suspense>
       </main>
       <Footer />
     </div>

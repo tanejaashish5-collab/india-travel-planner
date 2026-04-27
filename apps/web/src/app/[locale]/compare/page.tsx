@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { CompareView } from "@/components/compare-view";
@@ -40,7 +41,9 @@ export default async function ComparePage() {
     <div className="min-h-screen">
       <Nav />
       <main className="mx-auto max-w-6xl px-4 py-8">
-        <CompareView destinations={destinations} />
+        <Suspense fallback={<div className="min-h-[400px] animate-pulse rounded bg-foreground/5" />}>
+          <CompareView destinations={destinations} />
+        </Suspense>
       </main>
       <Footer />
     </div>
