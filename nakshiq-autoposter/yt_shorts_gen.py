@@ -954,150 +954,143 @@ def _concat_with_music(segments: list[Path], total_dur: float,
 
 YT_CAPTION_TEMPLATES = {
     "listicle": (
-        "This week's picks for {month} — 5 destinations ranked by NakshIQ scores.\n\n"
-        "Which one surprised you? Drop a comment!\n\n"
+        "5 places scoring 5/5 in {month} — ranked by road access, crowd density, weather, hospitals & cell signal.\n\n"
+        "Which one surprised you?\n\n"
         "→ {link}\n\n"
-        "#india #travel #shorts #top5 #nakshiq #travelindia #wanderlust "
-        "#indiantravel #bestplaces #traveltips"
+        "#{month}Travel #WeeklyPicks #{state_tag} #ScoreData #NakshIQ"
     ),
     "before_after": (
-        "Same place, different month — the scores tell the story.\n\n"
-        "Timing is everything when you travel India.\n\n"
+        "{dest} drops from {score_before}/5 to {score_after}/5 next month.\n\n"
+        "Roads close. Crowds vanish. The data shifts overnight.\n\n"
         "→ {link}\n\n"
-        "#india #travel #shorts #nakshiq #traveltiming #indiantravel "
-        "#travelindia #travelhacks #besttimetovisit"
+        "#{dest_tag} #{state_tag} #ScoreShift #{month}Travel #NakshIQ"
     ),
     "mini_guide": (
-        "48 hours in {dest} — everything you need to know.\n\n"
-        "NakshIQ Score: {score}/5\n\n"
+        "48 hours in {dest} — score {score}/5 this month.\n\n"
+        "Road condition, nearest hospital, cell signal, crowd level — all checked.\n\n"
         "→ {link}\n\n"
-        "#india #travel #shorts #{dest_tag} #nakshiq #travelguide "
-        "#indiantravel #travelindia #wanderlust #explore"
+        "#{dest_tag} #{state_tag} #{month}Travel #MiniGuide #NakshIQ"
     ),
     "did_you_know": (
-        "Did you know this about {dest}?\n\n"
-        "NakshIQ Score: {score}/5 this month.\n\n"
+        "{dest} scores {score}/5 in {month}.\n\n"
+        "Most people visit in the wrong month. The data says go now.\n\n"
         "→ {link}\n\n"
-        "#india #travel #shorts #{dest_tag} #nakshiq #didyouknow "
-        "#indiantravel #travelindia #travelfacts #hiddengems"
+        "#{dest_tag} #{state_tag} #{month}Travel #HiddenGem #NakshIQ"
     ),
     "this_vs_that": (
-        "{dest_a} vs {dest_b} — which one wins in {month}?\n\n"
-        "The NakshIQ scores decide.\n\n"
+        "{dest_a} ({score_a}/5) vs {dest_b} ({score_b}/5) in {month}.\n\n"
+        "Same region, different scores. One has better roads, less crowd.\n\n"
         "→ {link}\n\n"
-        "#india #travel #shorts #nakshiq #thisvsthat #indiantravel "
-        "#travelindia #travelcompare #bestplaces #traveldebate"
+        "#{dest_a_tag}vs{dest_b_tag} #{state_tag} #{month}Travel #HeadToHead #NakshIQ"
     ),
     "dont_go_here": (
-        "Don't go here in {month} — the scores tell you why.\n\n"
-        "Save your trip. Check the data first.\n\n"
+        "These places score 1/5 in {month}. Roads shut, 40°C+ heat, zero cell signal.\n\n"
+        "Don't waste your leave. Check the score first.\n\n"
         "→ {link}\n\n"
-        "#india #travel #shorts #nakshiq #travelmistakes #indiantravel "
-        "#travelindia #traveltips #travelwarning #besttimetovisit"
+        "#{month}AvoidList #{state_tag} #ScoreData #SkipThis #NakshIQ"
     ),
 }
 
 
 def _yt_caption(fmt: str, data: dict) -> str:
-    """Generate YouTube Short caption."""
+    """Generate YouTube Short caption with niche, destination-specific hashtags."""
     template = YT_CAPTION_TEMPLATES.get(fmt, YT_CAPTION_TEMPLATES["listicle"])
-    dest_name = data.get("dest_name", "India")
-    dest_tag = dest_name.lower().replace(" ", "").replace("-", "")
+    dest_name = data.get("dest_name", "")
+    dest_tag = dest_name.replace(" ", "").replace("-", "") if dest_name else ""
+    state_name = data.get("state", "")
+    state_tag = state_name.replace(" ", "").replace("&", "").replace("-", "") if state_name else ""
+    dest_a_name = data.get("dest_a", "")
+    dest_b_name = data.get("dest_b", "")
+    dest_a_tag = dest_a_name.replace(" ", "").replace("-", "") if dest_a_name else ""
+    dest_b_tag = dest_b_name.replace(" ", "").replace("-", "") if dest_b_name else ""
     fallback_link = "https://nakshiq.com?utm_source=youtube&utm_medium=short&utm_campaign=yt-short"
     try:
         return template.format(
             month=data.get("month", ""),
             dest=dest_name,
             score=data.get("score", ""),
+            score_before=data.get("score_before", ""),
+            score_after=data.get("score_after", ""),
+            score_a=data.get("score_a", ""),
+            score_b=data.get("score_b", ""),
             dest_tag=dest_tag,
+            state_tag=state_tag,
             link=data.get("link", fallback_link),
-            dest_a=data.get("dest_a", ""),
-            dest_b=data.get("dest_b", ""),
+            dest_a=dest_a_name,
+            dest_b=dest_b_name,
+            dest_a_tag=dest_a_tag,
+            dest_b_tag=dest_b_tag,
         )
-    except KeyError:
-        return f"Travel smarter with NakshIQ.\n\n→ {fallback_link}\n\n#india #travel #shorts #nakshiq"
+    except (KeyError, IndexError):
+        return f"{dest_name or 'India'} — scored by NakshIQ.\n\n→ {fallback_link}\n\n#{dest_tag or 'NakshIQ'} #{state_tag or 'ScoreData'} #NakshIQ"
 
 
 # ── Instagram-optimized captions (more emoji, IG hashtags, no YT CTAs) ──
 
 IG_CAPTION_TEMPLATES = {
     "listicle": (
-        "Top 5 places to visit in India in {month} \U0001f1ee\U0001f1f3\u2728\n\n"
-        "Ranked by real NakshIQ travel scores \u2014 not opinions.\n"
-        "Save this for your next trip \U0001f4cc\n\n"
-        "\U0001f517 Link in bio\n\n"
-        "#indiatravel #travelindia #incredibleindia #indiatravelgram "
-        "#nakshiq #top5 #bestplacesinindia #wanderlustindia "
-        "#travelreels #indiantourism #explorindia #indiadiaries"
+        "5 destinations scoring 5/5 right now \u2014 weather, roads, crowds, hospitals, cell signal all checked.\n\n"
+        "{month} picks based on real data, not opinions.\n\n"
+        "#{month}Travel #WeeklyPicks #{state_tag} #ScoreData #NakshIQ"
     ),
     "before_after": (
-        "Same place. Different month. Totally different experience \U0001f4c5\u2194\ufe0f\U0001f4c5\n\n"
-        "Timing can make or break your India trip.\n"
-        "Swipe to see why \U0001f447\n\n"
-        "\U0001f517 Link in bio\n\n"
-        "#indiatravel #travelindia #incredibleindia #besttimetovisit "
-        "#nakshiq #traveltiming #indiatravelgram #travelreels "
-        "#indiantourism #travelsmarter #indiadiaries"
+        "{dest} \u2014 {score_before}/5 now, drops to {score_after}/5 next month.\n\n"
+        "Roads, weather, everything shifts. Timing matters.\n\n"
+        "#{dest_tag} #{state_tag} #ScoreShift #{month}Travel #NakshIQ"
     ),
     "mini_guide": (
-        "48 hours in {dest} \U0001f30d\u2728\n\n"
-        "NakshIQ Score: {score}/5 this month\n"
-        "Everything you need to know \U0001f447\n\n"
-        "\U0001f517 Link in bio\n\n"
-        "#indiatravel #{dest_tag} #travelindia #incredibleindia "
-        "#nakshiq #travelguide #48hours #indiatravelgram "
-        "#travelreels #indiantourism #explorindia"
+        "48 hours in {dest} \u2014 score {score}/5 this month.\n\n"
+        "Road access, hospital distance, crowd level, cell coverage \u2014 all in one place.\n\n"
+        "#{dest_tag} #{state_tag} #{month}Travel #MiniGuide #NakshIQ"
     ),
     "did_you_know": (
-        "Did you know this about {dest}? \U0001f914\n\n"
-        "NakshIQ Score: {score}/5 this month \U0001f4ca\n"
-        "Drop a \U0001f525 if you didn't know!\n\n"
-        "\U0001f517 Link in bio\n\n"
-        "#indiatravel #{dest_tag} #travelindia #incredibleindia "
-        "#nakshiq #didyouknow #travelfacts #hiddengems "
-        "#travelreels #indiantourism #indiadiaries"
+        "{dest} scores {score}/5 in {month}.\n\n"
+        "Most people don't know this place exists. The data says go now.\n\n"
+        "#{dest_tag} #{state_tag} #{month}Travel #HiddenGem #NakshIQ"
     ),
     "this_vs_that": (
-        "{dest_a} vs {dest_b} \u2014 which one wins in {month}? \U0001f3c6\n\n"
-        "The data decides. Not opinions.\n"
-        "Comment your pick \U0001f447\n\n"
-        "\U0001f517 Link in bio\n\n"
-        "#indiatravel #travelindia #incredibleindia #thisvsthat "
-        "#nakshiq #travelcompare #bestplacesinindia #travelreels "
-        "#indiantourism #indiatravelgram #explorindia"
+        "{dest_a} ({score_a}/5) vs {dest_b} ({score_b}/5) \u2014 {month} head-to-head.\n\n"
+        "Same region, different scores. The data picks a winner.\n\n"
+        "#{dest_a_tag}vs{dest_b_tag} #{state_tag} #{month}Travel #HeadToHead #NakshIQ"
     ),
     "dont_go_here": (
-        "Don't go here in {month} \u274c\n\n"
-        "These places score low right now. Save your trip \U0001f4a1\n"
-        "Check the data before you book.\n\n"
-        "\U0001f517 Link in bio\n\n"
-        "#indiatravel #travelindia #incredibleindia #travelmistakes "
-        "#nakshiq #traveltips #travelwarning #besttimetovisit "
-        "#travelreels #indiantourism #indiadiaries"
+        "Scoring 1/5 in {month} \u2014 roads shut, extreme heat, no signal.\n\n"
+        "Don't waste your leave on these right now.\n\n"
+        "#{month}AvoidList #{state_tag} #ScoreData #SkipThis #NakshIQ"
     ),
 }
 
 
 def _ig_caption(fmt: str, data: dict) -> str:
-    """Generate Instagram Reel caption — optimized for IG engagement."""
+    """Generate Instagram Reel caption with niche, destination-specific hashtags."""
     template = IG_CAPTION_TEMPLATES.get(fmt, IG_CAPTION_TEMPLATES["listicle"])
-    dest_name = data.get("dest_name", "India")
-    dest_tag = dest_name.lower().replace(" ", "").replace("-", "")
+    dest_name = data.get("dest_name", "")
+    dest_tag = dest_name.replace(" ", "").replace("-", "") if dest_name else ""
+    state_name = data.get("state", "")
+    state_tag = state_name.replace(" ", "").replace("&", "").replace("-", "") if state_name else ""
+    dest_a_name = data.get("dest_a", "")
+    dest_b_name = data.get("dest_b", "")
+    dest_a_tag = dest_a_name.replace(" ", "").replace("-", "") if dest_a_name else ""
+    dest_b_tag = dest_b_name.replace(" ", "").replace("-", "") if dest_b_name else ""
     try:
         return template.format(
             month=data.get("month", ""),
             dest=dest_name,
             score=data.get("score", ""),
+            score_before=data.get("score_before", ""),
+            score_after=data.get("score_after", ""),
+            score_a=data.get("score_a", ""),
+            score_b=data.get("score_b", ""),
             dest_tag=dest_tag,
-            dest_a=data.get("dest_a", ""),
-            dest_b=data.get("dest_b", ""),
+            state_tag=state_tag,
+            dest_a=dest_a_name,
+            dest_b=dest_b_name,
+            dest_a_tag=dest_a_tag,
+            dest_b_tag=dest_b_tag,
         )
-    except KeyError:
-        return (
-            "Travel smarter with NakshIQ \U0001f1ee\U0001f1f3\u2728\n\n"
-            "\U0001f517 Link in bio\n\n"
-            "#indiatravel #travelindia #incredibleindia #nakshiq #travelreels"
-        )
+    except (KeyError, IndexError):
+        return f"{dest_name or 'India'} — scored by NakshIQ.\n\n#{dest_tag or 'NakshIQ'} #{state_tag or 'ScoreData'} #NakshIQ"
+
 
 
 # ═══════════════════════════════════════════════════════════════════════
@@ -1173,9 +1166,12 @@ def build_yt_short(
             wp = _fetch_weekly_picks(month=month_now, week=wk_num)
             listicle_dests = wp if wp else destinations
             segments, total_dur, _meta = _build_listicle(listicle_dests, month_name, out_dir)
+            # Use state from top-scoring dest for hashtag
+            top_dest = listicle_dests[0] if listicle_dests else {}
             caption_data = {
                 "month": month_name,
                 "week": wk_num,
+                "state": top_dest.get("state", ""),
                 "link": f"https://nakshiq.com/en/where-to-go/{month_slug}?week={wk_num}&utm_source=youtube&utm_medium=short&utm_campaign=weekly-picks",
             }
         elif fmt == "before_after":
@@ -1184,6 +1180,10 @@ def build_yt_short(
             ba_id = ba_dest.get("id", "")
             caption_data = {
                 "month": month_name,
+                "dest_name": ba_dest.get("name", ""),
+                "state": ba_dest.get("state", ""),
+                "score_before": _meta.get("score_before", ba_dest.get("score", "")),
+                "score_after": _meta.get("score_after", ""),
                 "link": (
                     f"https://nakshiq.com/en/destination/{ba_id}/{month_slug}?utm_source=youtube&utm_medium=short&utm_campaign=before-after"
                     if ba_id else
@@ -1195,7 +1195,9 @@ def build_yt_short(
             dest = _meta.get("dest", destinations[0])
             dest_id = dest.get("id", "")
             caption_data = {
-                "dest_name": dest.get("name", "India"),
+                "month": month_name,
+                "dest_name": dest.get("name", ""),
+                "state": dest.get("state", ""),
                 "score": dest.get("score", 4),
                 "link": (
                     f"https://nakshiq.com/en/destination/{dest_id}/{month_slug}?utm_source=youtube&utm_medium=short&utm_campaign=mini-guide"
@@ -1208,7 +1210,9 @@ def build_yt_short(
             dyk_dest = _meta.get("dest", destinations[0])
             dyk_id = dyk_dest.get("id", "")
             caption_data = {
-                "dest_name": dyk_dest.get("name", "India"),
+                "month": month_name,
+                "dest_name": dyk_dest.get("name", ""),
+                "state": dyk_dest.get("state", ""),
                 "score": dyk_dest.get("score", 4),
                 "link": (
                     f"https://nakshiq.com/en/destination/{dyk_id}/{month_slug}?utm_source=youtube&utm_medium=short&utm_campaign=did-you-know"
@@ -1224,12 +1228,18 @@ def build_yt_short(
                 "month": month_name,
                 "dest_a": tvt_a.get("name", "A"),
                 "dest_b": tvt_b.get("name", "B"),
+                "score_a": tvt_a.get("score", ""),
+                "score_b": tvt_b.get("score", ""),
+                "state": tvt_a.get("state", ""),
                 "link": f"https://nakshiq.com/en/where-to-go/{month_slug}?utm_source=youtube&utm_medium=short&utm_campaign=this-vs-that",
             }
         elif fmt == "dont_go_here":
             segments, total_dur, _meta = _build_dont_go_here(destinations, month_name, out_dir)
+            dgh_dests = _meta.get("dests", [])
+            dgh_state = dgh_dests[0].get("state", "") if dgh_dests else ""
             caption_data = {
                 "month": month_name,
+                "state": dgh_state,
                 "link": f"https://nakshiq.com/en/where-to-go/{month_slug}?utm_source=youtube&utm_medium=short&utm_campaign=dont-go-here",
             }
         else:
@@ -1242,8 +1252,10 @@ def build_yt_short(
             if fmt != "listicle":
                 fmt = "listicle"
                 segments, total_dur, _meta = _build_listicle(destinations, month_name, out_dir)
+                top_dest = destinations[0] if destinations else {}
                 caption_data = {
                     "month": month_name,
+                    "state": top_dest.get("state", ""),
                     "link": f"https://nakshiq.com/en/where-to-go/{month_slug}?utm_source=youtube&utm_medium=short&utm_campaign=listicle",
                 }
             if not segments or len(segments) < 2:
