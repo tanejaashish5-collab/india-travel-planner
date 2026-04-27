@@ -1,0 +1,62 @@
+[
+  {
+    "destination_id": "barmer",
+    "name": "Brahman Food Plaza",
+    "area": "Mahaveer Nagar",
+    "area_slug": "mahaveer-nagar",
+    "cuisine": ["north-indian", "south-indian", "rajasthani", "vegetarian"],
+    "category": "casual",
+    "signature_dish": "Rajasthani thali with lassi",
+    "must_try": ["Rajasthani thali", "lassi", "south-Indian dosa", "veg curry"],
+    "price_range": "₹",
+    "price_per_head_inr": "[200,450]",
+    "vegetarian": "pure-veg",
+    "kid_friendly": true,
+    "reservation": "walk-in",
+    "dress_code": null,
+    "established_year": 1965,
+    "why_it_matters": "Pure-veg North and South Indian restaurant in Mahaveer Nagar, established by Mr. Moolchand in 1965 — two outlets across Barmer today. Lassi is the local citation. TripAdvisor 3.9, ranked #5 of 8 in Barmer.",
+    "insider_tip": "Barmer's restaurant scene is thin; this is the most reliable sit-down for travellers stopping over en route to Jaisalmer or the border.",
+    "signature_address": "Brahman Food Plaza, Mahaveer Nagar, Barmer, Rajasthan 344001",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Brahman+Food+Plaza+Barmer",
+    "zomato_url": "https://www.zomato.com/barmer/brahman-food-plaza-1-barmer-locality/order",
+    "source_urls": [
+      "https://brahmanfoodplaza.com/",
+      "https://www.tripadvisor.com/Restaurant_Review-g1602164-d12157069-Reviews-Brahman_Food_Plaza-Barmer_Barmer_District_Rajasthan.html",
+      "https://www.zomato.com/barmer/brahman-food-plaza-1-barmer-locality/order"
+    ],
+    "last_verified": "2026-04-27",
+    "is_legendary": false,
+    "is_active": true
+  },
+  {
+    "destination_id": "barmer",
+    "name": "Hotel Krishna Restaurant",
+    "area": "Barmer Town",
+    "area_slug": "barmer-town",
+    "cuisine": ["north-indian", "rajasthani", "multi-cuisine"],
+    "category": "casual",
+    "signature_dish": "Rajasthani dal baati",
+    "must_try": ["dal baati churma", "tandoori platter", "veg curry", "Rajasthani thali"],
+    "price_range": "₹",
+    "price_per_head_inr": "[250,500]",
+    "vegetarian": "veg-friendly",
+    "kid_friendly": true,
+    "reservation": "walk-in",
+    "dress_code": null,
+    "established_year": null,
+    "why_it_matters": "In-house restaurant of Hotel Krishna — paired with the larger sister property Hotel Krishna White House International nearby. The cleaner sit-down option in central Barmer for North-Indian and Rajasthani staples.",
+    "insider_tip": "The White House sister property has no kitchen of its own — guests there walk over to this restaurant. Useful to know if you book the cheaper White House rooms.",
+    "signature_address": "Hotel Krishna, Barmer, Rajasthan 344001",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Hotel+Krishna+Barmer",
+    "zomato_url": null,
+    "source_urls": [
+      "https://www.tripadvisor.com/Hotel_Review-g1602164-d9562950-Reviews-Hotel_Krishna-Barmer_Barmer_District_Rajasthan.html",
+      "https://www.tripadvisor.com/Hotel_Review-g1602164-d9562960-Reviews-Hotel_Krishna_White_House_International-Barmer_Barmer_District_Rajasthan.html",
+      "https://www.yatra.com/hotels/hotels-in-barmar/hotel-krishna"
+    ],
+    "last_verified": "2026-04-27",
+    "is_legendary": false,
+    "is_active": true
+  }
+]

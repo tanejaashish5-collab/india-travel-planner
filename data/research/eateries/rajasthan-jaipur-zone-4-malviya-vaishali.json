@@ -1,0 +1,62 @@
+[
+  {
+    "destination_id": "jaipur",
+    "name": "House of People (HOP)",
+    "area": "Bais Godam",
+    "area_slug": "bais-godam",
+    "cuisine": ["multi-cuisine", "italian", "north-indian", "continental"],
+    "category": "bar",
+    "signature_dish": "wood-fired pizza with craft cocktails",
+    "must_try": ["wood-fired pizza", "pasta", "tandoori platter", "signature cocktails"],
+    "price_range": "₹₹₹",
+    "price_per_head_inr": "[1500,2500]",
+    "vegetarian": "veg-friendly",
+    "kid_friendly": false,
+    "reservation": "recommended",
+    "dress_code": "smart casual",
+    "established_year": null,
+    "why_it_matters": "Bais Godam multi-floor music-and-food venue — third-floor and rooftop, live band most weekends. The Jaipur night-out address that pulls south-Jaipur regulars who don't want to drive into the heritage hotel circuit.",
+    "insider_tip": "Rooftop is loud after 9pm; book the third-floor seats if you want food-first. Italian holds up better than the Chinese section of the menu.",
+    "signature_address": "Bais Godam, Jaipur 302006",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=House+of+People+HOP+Bais+Godam+Jaipur",
+    "zomato_url": "https://www.google.com/maps/search/?api=1&query=House+of+People+Jaipur",
+    "source_urls": [
+      "https://www.tripadvisor.in/Restaurant_Review-g304555-d10528817-Reviews-House_Of_People-Jaipur_Jaipur_District_Rajasthan.html",
+      "https://magicpin.in/Jaipur/Bais-Godam/Restaurant/House-Of-People/store/58653/menu/",
+      "https://www.eazydiner.com/jaipur/house-of-people-hop-bais-godam-jaipur-698884"
+    ],
+    "last_verified": "2026-04-27",
+    "is_legendary": false,
+    "is_active": true
+  },
+  {
+    "destination_id": "jaipur",
+    "name": "On The House",
+    "area": "C-Scheme",
+    "area_slug": "c-scheme",
+    "cuisine": ["italian", "continental", "mexican", "desserts"],
+    "category": "cafe",
+    "signature_dish": "Belgian waffles",
+    "must_try": ["Belgian waffles", "wood-fired pizza", "pasta", "loaded fries"],
+    "price_range": "₹₹",
+    "price_per_head_inr": "[700,1300]",
+    "vegetarian": "pure-veg",
+    "kid_friendly": true,
+    "reservation": "walk-in",
+    "dress_code": null,
+    "established_year": null,
+    "why_it_matters": "Standalone cafe on Ramesh Marg, behind Talwalkars — Italian/continental/Mexican plus a heavy waffle and dessert counter. Pure-veg, wifi-friendly, the daytime alternative to Tapri Central for under-30s.",
+    "insider_tip": "Lunch is the value slot — weekday set lunches under ₹400. Skip the Mexican section, which leans Indian-Mexican fusion; pizzas and waffles are why locals come back.",
+    "signature_address": "E-145, Ramesh Marg, behind Talwalkars, C-Scheme, Jaipur 302001",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=On+The+House+C+Scheme+Jaipur",
+    "zomato_url": "https://www.google.com/maps/search/?api=1&query=On+The+House+C+Scheme+Jaipur",
+    "source_urls": [
+      "https://magicpin.in/Jaipur/C-Scheme/Restaurant/On-The-House/store/1c061/menu/",
+      "https://www.eazydiner.com/jaipur/restaurants/c-scheme",
+      "https://www.zomato.com/jaipur/c-scheme-restaurants"
+    ],
+    "last_verified": "2026-04-27",
+    "is_legendary": false,
+    "is_active": true
+  }
+]

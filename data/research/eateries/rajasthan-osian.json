@@ -1,0 +1,62 @@
+[
+  {
+    "destination_id": "osian",
+    "name": "Reggie's Camel Camp Dining",
+    "area": "Reggie's Camp / Thar dunes",
+    "area_slug": "reggies-camp",
+    "cuisine": ["rajasthani", "indian", "vegetarian"],
+    "category": "fine_dining",
+    "signature_dish": "open-fire Rajasthani thali",
+    "must_try": ["open-fire Rajasthani thali", "kitchen-garden vegetable course", "ker sangri", "starlight dinner"],
+    "price_range": "₹₹₹₹",
+    "price_per_head_inr": "[2000,4000]",
+    "vegetarian": "veg-friendly",
+    "kid_friendly": true,
+    "reservation": "required",
+    "dress_code": null,
+    "established_year": null,
+    "why_it_matters": "Pioneering luxury tented camp 60 km from Jodhpur, in the Thar dunes overlooking the 8th-century Osian temple town — pitched as 'India's first luxury tented camp'. Owns its kitchen garden; multiple dining setups (open fire, tented dining tent, under the stars).",
+    "insider_tip": "The in-house Rajasthani musicians do a one-hour set most evenings — confirm at booking; the kitchen times the courses to that performance, not the other way around.",
+    "signature_address": "Reggie's Camel Camp, near Osian, Jodhpur District, Rajasthan 342303",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Reggie%27s+Camel+Camp+Osian",
+    "zomato_url": null,
+    "source_urls": [
+      "https://reggiescamelcamposian.com/",
+      "https://www.reggiescamelcamposian.com/dining/",
+      "https://www.tripadvisor.in/Hotel_Review-g970112-d951147-Reviews-Reggie_s_Camel_Camps-Osian_Jodhpur_District_Rajasthan.html"
+    ],
+    "last_verified": "2026-04-27",
+    "is_legendary": true,
+    "is_active": true
+  },
+  {
+    "destination_id": "osian",
+    "name": "Manvar Sevan Desert Camp Dining",
+    "area": "Dechu / near Osian",
+    "area_slug": "dechu",
+    "cuisine": ["rajasthani", "indian", "barbeque"],
+    "category": "mid_range",
+    "signature_dish": "tent-dining Rajasthani spread",
+    "must_try": ["Rajasthani tent dinner", "barbeque", "kitchen-garden curry", "dal baati"],
+    "price_range": "₹₹₹",
+    "price_per_head_inr": "[1500,3000]",
+    "vegetarian": "veg-friendly",
+    "kid_friendly": true,
+    "reservation": "required",
+    "dress_code": null,
+    "established_year": null,
+    "why_it_matters": "Manvar Sevan is the desert camp wing of the Manvar Resort group at Dechu, near Osian — central dining tent serves a Rajasthani-Indian buffet with barbeque add-ons in the cooler months. Lower price point than the Shergarh resort building.",
+    "insider_tip": "Manvar has three properties under the same name — confirm whether your booking is the Sevan tents (cheaper, more rustic) or Shergarh resort (rooms with AC) before arriving for dinner.",
+    "signature_address": "Manvar Sevan Desert Camp, Khetsingh Nagar, Dechu, Jodhpur District, Rajasthan 342303",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Manvar+Sevan+Desert+Camp+Dechu",
+    "zomato_url": null,
+    "source_urls": [
+      "https://www.manvar.com/manvar-sevan-the-desert-camp/",
+      "https://www.tripadvisor.com/Hotel_Review-g25007042-d24983556-Reviews-MANVAR_Sevan_The_Desert_Camp-Khetsingh_Nagar_Jodhpur_District_Rajasthan.html",
+      "https://www.agoda.com/manvar-resort-and-desert-camp/hotel/dechu-in.html"
+    ],
+    "last_verified": "2026-04-27",
+    "is_legendary": false,
+    "is_active": true
+  }
+]

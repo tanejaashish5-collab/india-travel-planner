@@ -1,0 +1,62 @@
+[
+  {
+    "destination_id": "neemrana",
+    "name": "Jalgiri Mahal at Neemrana Fort-Palace",
+    "area": "Neemrana Fort-Palace",
+    "area_slug": "neemrana-fort",
+    "cuisine": ["rajasthani", "north-indian", "continental", "italian", "thai"],
+    "category": "fine_dining",
+    "signature_dish": "outdoor Rajasthani thali",
+    "must_try": ["Rajasthani thali", "tandoori platter", "Italian pasta", "South Indian breakfast"],
+    "price_range": "₹₹₹₹",
+    "price_per_head_inr": "[1800,3500]",
+    "vegetarian": "veg-friendly",
+    "kid_friendly": true,
+    "reservation": "required",
+    "dress_code": "smart-casual",
+    "established_year": null,
+    "why_it_matters": "Main multi-cuisine dining room of Neemrana Fort-Palace, the 15th-century fort restoration that essentially defined the heritage-hotel category in north India. Buffet menu rotates Rajasthani / North-Indian core with French, Italian, Chinese, Thai, South Indian supplements.",
+    "insider_tip": "Day-trippers from Delhi can book a lunch package that includes a fort tour, pool access and the buffet — must reserve a day ahead via the Neemrana booking line.",
+    "signature_address": "Neemrana Fort-Palace, Delhi-Jaipur Highway (NH-8), Neemrana, Alwar District, Rajasthan 301705",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Neemrana+Fort+Palace",
+    "zomato_url": "https://www.zomato.com/neemrana/jalgiri-mahal-neemrana-fort-palace-neemrana",
+    "source_urls": [
+      "https://www.neemranahotels.com/fort-palace-neemrana/dining/dining.html",
+      "https://www.zomato.com/neemrana/jalgiri-mahal-neemrana-fort-palace-neemrana",
+      "https://www.tripadvisor.in/Hotel_Feature-g679018-d302883-zft9165-Neemrana_Fort_palace.html"
+    ],
+    "last_verified": "2026-04-27",
+    "is_legendary": true,
+    "is_active": true
+  },
+  {
+    "destination_id": "neemrana",
+    "name": "Raj Mahal Bar at Neemrana Fort-Palace",
+    "area": "Neemrana Fort-Palace",
+    "area_slug": "neemrana-fort",
+    "cuisine": ["bar", "cocktails", "appetisers"],
+    "category": "bar",
+    "signature_dish": "fort-rampart cocktail",
+    "must_try": ["whisky-soda", "appetiser platter", "Indian-craft beer", "evening tea"],
+    "price_range": "₹₹₹₹",
+    "price_per_head_inr": "[1000,2500]",
+    "vegetarian": "veg-friendly",
+    "kid_friendly": false,
+    "reservation": "recommended",
+    "dress_code": null,
+    "established_year": null,
+    "why_it_matters": "Fort-rampart bar inside Neemrana Fort-Palace — the only 'pub' setting on the property, run alongside the main dining hall. Stays open later than the kitchen and serves the candlelit-couples sundowner the property is known for.",
+    "insider_tip": "Bar service on the open ramparts depends on weather — if there's wind, they shift inside without warning. Tip: sit indoors first, then walk out with the drink.",
+    "signature_address": "Raj Mahal Bar, Neemrana Fort-Palace, Delhi-Jaipur Highway, Neemrana, Alwar District, Rajasthan 301705",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Raj+Mahal+Bar+Neemrana+Fort+Palace",
+    "zomato_url": "https://www.zomato.com/neemrana/raj-mahal-bar-neemrana-fort-palace-neemrana",
+    "source_urls": [
+      "https://www.zomato.com/neemrana/raj-mahal-bar-neemrana-fort-palace-neemrana",
+      "https://www.neemranahotels.com/fort-palace-neemrana/dining/dining.html",
+      "https://neemrana-fort-palace-alwar.hotelsgds.com/restaurant/"
+    ],
+    "last_verified": "2026-04-27",
+    "is_legendary": false,
+    "is_active": true
+  }
+]
