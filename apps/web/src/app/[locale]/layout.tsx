@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono, Fraunces } from "next/font/google";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
-import { getMessages } from "next-intl/server";
+import { getMessages, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import dynamic from "next/dynamic";
 import { routing } from "@/i18n/routing";
@@ -48,6 +48,10 @@ export const viewport: Viewport = {
   maximumScale: 5,
   viewportFit: "cover",
 };
+
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
 
 // Locale-aware metadata — fixes BUG-109 (Hindi pages were shipping English
 // <title>/og:title/og:locale). Uses generateMetadata instead of a static
@@ -143,6 +147,14 @@ export default async function LocaleLayout({
     notFound();
   }
 
+  // Enable static rendering for this locale segment. Without this, every
+  // page reads request headers via next-intl's request-locale lookup,
+  // forcing all routes into dynamic rendering and bypassing ISR — even
+  // routes with `export const revalidate = N`. Confirmed via prod curl:
+  // every hit returned `x-vercel-cache: MISS` + `cache-control: private,
+  // no-cache, no-store` until this was added.
+  setRequestLocale(locale);
+
   const messages = await getMessages();
 
   return (
@@ -154,6 +166,12 @@ export default async function LocaleLayout({
         <meta name="theme-color" content="#161614" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        {process.env.NEXT_PUBLIC_IMAGE_BASE_URL ? (
+          <link rel="preconnect" href={process.env.NEXT_PUBLIC_IMAGE_BASE_URL} crossOrigin="anonymous" />
+        ) : null}
+        {process.env.NEXT_PUBLIC_VIDEO_BASE_URL && process.env.NEXT_PUBLIC_VIDEO_BASE_URL !== process.env.NEXT_PUBLIC_IMAGE_BASE_URL ? (
+          <link rel="preconnect" href={process.env.NEXT_PUBLIC_VIDEO_BASE_URL} crossOrigin="anonymous" />
+        ) : null}
       </head>
       <body className="min-h-full flex flex-col bg-background text-foreground text-base pb-16 md:pb-0">
         {/* Skip to content — accessibility (WCAG 2.4.1 Level A). Keep both
