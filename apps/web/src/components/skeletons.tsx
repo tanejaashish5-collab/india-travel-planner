@@ -1,5 +1,3 @@
-"use client";
-
 /* ── Reusable skeleton screens for mobile-first loading states ── */
 
 function Shimmer({ className, style }: { className?: string; style?: React.CSSProperties }) {

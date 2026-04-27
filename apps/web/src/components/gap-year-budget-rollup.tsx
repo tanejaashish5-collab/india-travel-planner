@@ -1,5 +1,3 @@
-"use client";
-
 import type { GapYearPlan, Budget } from "@/lib/gap-year/types";
 
 interface Props {

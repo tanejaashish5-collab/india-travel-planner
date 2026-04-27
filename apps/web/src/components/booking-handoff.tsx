@@ -1,5 +1,3 @@
-"use client";
-
 export function BookingHandoff({ destinationName, stateName }: { destinationName: string; stateName?: string }) {
   const searchQuery = encodeURIComponent(`${destinationName} ${stateName || "India"} hotels`);
 

@@ -1,5 +1,3 @@
-"use client";
-
 interface RouteMapProps {
   stops: string[];
 }

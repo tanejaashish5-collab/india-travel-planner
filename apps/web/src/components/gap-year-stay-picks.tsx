@@ -1,5 +1,3 @@
-"use client";
-
 import type { StayPick, StaySlot } from "@/lib/gap-year/types";
 
 interface Props {

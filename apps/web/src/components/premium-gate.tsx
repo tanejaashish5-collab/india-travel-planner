@@ -1,5 +1,3 @@
-"use client";
-
 import { isFeatureGated, type PremiumFeature } from "@/lib/premium";
 
 export function PremiumGate({

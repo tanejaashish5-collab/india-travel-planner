@@ -1,5 +1,3 @@
-"use client";
-
 interface CalloutProps {
   type: "stat" | "pull_quote" | "verdict";
   text: string;
