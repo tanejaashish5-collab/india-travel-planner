@@ -842,69 +842,81 @@ def select_music(avatar_key: str, state: dict) -> Optional[Path]:
 
 
 # ═══════════════════════════════════════════════════════════════════════════
-# BACKGROUND SELECTION — Pomelli images matched to destination
+# BACKGROUND SELECTION — clean destination photos from social_image_library
 # ═══════════════════════════════════════════════════════════════════════════
+
+SOCIAL_IMG_DIR = Path("social_image_library")
+
+# Alternate destination folder names for fuzzy matching
+_DEST_ALIASES = {
+    "goa": ["panaji_GO", "calangute-baga_GO", "anjuna_GO", "old-goa_GO"],
+    "dharamsala": ["dharamshala_HI"],
+    "dharamshala": ["dharamshala_HI"],
+    "kerala_backwaters": ["alleppey-(alappuzha)_KE", "kumarakom_KE"],
+    "hampta_pass": ["manali_HI", "kullu_HI"],
+    "valley_of_flowers": ["joshimath_UT", "badrinath_UT", "auli_UT"],
+}
+
 
 def select_backgrounds(dest_slug: str, count: int = 4) -> list[Path]:
     """
-    Select Pomelli background images for a destination.
+    Select clean destination photos from social_image_library for UGC backgrounds.
 
-    Searches manifest for campaigns matching the destination name,
-    then picks `count` images. Falls back to generic travel images
-    if no exact match.
+    Uses story-format images (9:16) when available, falls back to feed images.
+    The bottom 200px is cropped during Ken Burns to remove any watermark text.
     """
-    if not MANIFEST_FILE.exists():
+    slug_lower = dest_slug.lower().replace(" ", "_")
+    matched_images: list[Path] = []
+
+    if not SOCIAL_IMG_DIR.exists():
         return []
 
-    with open(MANIFEST_FILE) as f:
-        manifest = json.load(f)
-
-    campaigns = manifest.get("campaigns", {})
-    slug_lower = dest_slug.lower().replace(" ", "_")
-
-    # Exact match first
-    matched_images = []
-    for camp_name, images in campaigns.items():
-        if not isinstance(images, list):
+    # 1. Try exact folder match (e.g. "jaipur" → "jaipur_RA/")
+    for folder in SOCIAL_IMG_DIR.iterdir():
+        if not folder.is_dir():
             continue
-        if slug_lower in camp_name.lower():
-            for img in images:
-                img_path = POMELLI_DIR / img
-                if img_path.exists():
-                    matched_images.append(img_path)
+        folder_base = folder.name.split("_")[0].lower()  # "jaipur_RA" → "jaipur"
+        if folder_base == slug_lower or slug_lower.startswith(folder_base):
+            for img in sorted(folder.glob("*.jpg")):
+                matched_images.append(img)
 
-    # If not enough, try broader keyword match
+    # 2. Try alias mapping
     if len(matched_images) < count:
-        # Extract state/region from dest name
-        words = dest_slug.lower().split()
-        for camp_name, images in campaigns.items():
-            if not isinstance(images, list):
-                continue
-            if any(w in camp_name.lower() for w in words if len(w) > 3):
-                for img in images:
-                    img_path = POMELLI_DIR / img
-                    if img_path.exists() and img_path not in matched_images:
-                        matched_images.append(img_path)
+        aliases = _DEST_ALIASES.get(slug_lower, [])
+        for alias in aliases:
+            alias_dir = SOCIAL_IMG_DIR / alias
+            if alias_dir.is_dir():
+                for img in sorted(alias_dir.glob("*.jpg")):
+                    if img not in matched_images:
+                        matched_images.append(img)
 
-    # If still not enough, use any available images
+    # 3. Try partial match on multi-word slugs (e.g. "valley_of_flowers" → "valley-of-flowers_UT")
     if len(matched_images) < count:
-        for camp_name, images in campaigns.items():
-            if not isinstance(images, list):
+        slug_hyphen = slug_lower.replace("_", "-")
+        for folder in SOCIAL_IMG_DIR.iterdir():
+            if not folder.is_dir():
                 continue
-            for img in images:
-                img_path = POMELLI_DIR / img
-                if img_path.exists() and img_path not in matched_images:
-                    matched_images.append(img_path)
-                    if len(matched_images) >= count * 3:
-                        break
-            if len(matched_images) >= count * 3:
-                break
+            if slug_hyphen in folder.name.lower():
+                for img in sorted(folder.glob("*.jpg")):
+                    if img not in matched_images:
+                        matched_images.append(img)
 
-    # Pick `count` images, preferring matched ones
-    if len(matched_images) > count:
-        matched_images = random.sample(matched_images, count)
+    # 4. Filter out typographic-art images (they have large text baked in)
+    matched_images = [p for p in matched_images if "typographic-art" not in p.name]
 
-    return matched_images[:count]
+    # 5. Prefer story images (9:16) over feed for vertical video backgrounds
+    story_imgs = [p for p in matched_images if "_story_" in p.name]
+    feed_imgs = [p for p in matched_images if "_feed_" in p.name]
+    other_imgs = [p for p in matched_images if "_story_" not in p.name and "_feed_" not in p.name]
+
+    # Prioritise: story first, then feed, then other
+    prioritised = story_imgs + feed_imgs + other_imgs
+
+    # Pick up to `count`, shuffling within each tier for variety
+    if len(prioritised) > count:
+        prioritised = prioritised[:count]
+
+    return prioritised
 
 
 # ═══════════════════════════════════════════════════════════════════════════
@@ -1347,7 +1359,7 @@ def _create_ken_burns_bg(images: list[Path], output: Path, duration: int):
                 "ffmpeg", "-y",
                 "-loop", "1", "-i", str(img),
                 "-vf", (
-                    f"crop=iw:ih-200:0:0,"
+                    f"crop=iw:ih-400:0:0,"  # Crop bottom 400px (source image labels + branding)
                     f"scale=8000:-1,"
                     f"zoompan=z='{zoom_e}':x='{x_e}':y='{y_e}':"
                     f"d={frames_per}:s={REEL_W}x{REEL_H}:fps={REEL_FPS},"
