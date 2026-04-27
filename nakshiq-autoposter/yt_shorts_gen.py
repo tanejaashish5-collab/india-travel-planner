@@ -43,6 +43,8 @@ except ImportError:
 
 # ── Paths ─────────────────────────────────────────────────────────────
 VIDEOS_DIR = Path(__file__).parent.parent / "videos"
+POMELLI_DIR = Path(__file__).parent / "pomelli_library"
+POMELLI_MANIFEST = POMELLI_DIR / "manifest.json"
 ASSETS_DIR = Path(__file__).parent / "assets"
 YT_MUSIC_DIR = ASSETS_DIR / "yt_music"
 STATE_FILE = Path(__file__).parent / "state.json"
@@ -150,6 +152,172 @@ def _find_similar_video(dest: dict) -> Optional[Path]:
     # Random scenic fallback
     all_vids = [v for v in VIDEOS_DIR.glob("VIDEO_*.mp4") if " 2" not in v.stem]
     return random.choice(all_vids) if all_vids else None
+
+
+# ── Pomelli image selection ──────────────────────────────────────────
+
+_POMELLI_CACHE: list = []
+
+def _load_pomelli_manifest() -> list:
+    """Load and cache Pomelli manifest images."""
+    global _POMELLI_CACHE
+    if _POMELLI_CACHE:
+        return _POMELLI_CACHE
+    if not POMELLI_MANIFEST.exists():
+        return []
+    try:
+        data = json.loads(POMELLI_MANIFEST.read_text())
+        _POMELLI_CACHE = data.get("images", [])
+    except Exception:
+        _POMELLI_CACHE = []
+    return _POMELLI_CACHE
+
+
+def _find_pomelli_images(keywords: list[str], count: int = 1,
+                         campaign_type: str = None) -> list[Path]:
+    """Find Pomelli images matching keywords (campaign name, subject, tags).
+
+    Returns up to `count` image paths, shuffled for variety.
+    """
+    manifest = _load_pomelli_manifest()
+    if not manifest:
+        return []
+
+    scored = []
+    kw_lower = [k.lower().replace(" ", "_").replace("-", "_") for k in keywords if k]
+
+    for entry in manifest:
+        f = entry.get("file", "")
+        path = POMELLI_DIR / f
+        if not path.exists():
+            continue
+
+        campaign = entry.get("campaign", "").lower()
+        subject = (entry.get("subject") or "").lower()
+        tags = [t.lower() for t in entry.get("tags", [])]
+        ctype = entry.get("campaign_type", "")
+
+        # Score relevance
+        score = 0
+        for kw in kw_lower:
+            if kw in campaign:
+                score += 3
+            if kw in subject:
+                score += 2
+            if any(kw in t for t in tags):
+                score += 1
+            if kw in f.lower():
+                score += 1
+
+        if campaign_type and ctype == campaign_type:
+            score += 2
+
+        if score > 0:
+            scored.append((score, random.random(), path))
+
+    if not scored:
+        # Random fallback from full library
+        all_imgs = [POMELLI_DIR / e["file"] for e in manifest
+                    if (POMELLI_DIR / e["file"]).exists()]
+        random.shuffle(all_imgs)
+        return all_imgs[:count]
+
+    scored.sort(key=lambda x: (-x[0], x[1]))
+    return [s[2] for s in scored[:count]]
+
+
+def _render_segment_image(image_file: Path, duration: float,
+                          text_filters: list[str], out_path: Path,
+                          zoom_dir: str = "in") -> Optional[Path]:
+    """Render a segment from a static Pomelli image with Ken Burns effect.
+
+    Applies zoompan (slow zoom in/out + slight drift) then text overlays.
+    Output is 1080x1920 at REEL_FPS.
+    """
+    if not image_file or not image_file.exists():
+        return None
+
+    total_frames = int(REEL_FPS * duration)
+
+    # Ken Burns: zoom from 1.0→1.15 (in) or 1.15→1.0 (out), slight x/y drift
+    if zoom_dir == "in":
+        z_expr = f"min(1+0.15*on/{total_frames},1.15)"
+        x_expr = f"iw/2-(iw/zoom/2)+10*on/{total_frames}"
+    else:
+        z_expr = f"max(1.15-0.15*on/{total_frames},1.0)"
+        x_expr = f"iw/2-(iw/zoom/2)-10*on/{total_frames}"
+    y_expr = "ih/2-(ih/zoom/2)"
+
+    all_filters = text_filters + _branding_bar()
+    text_chain = ",".join(all_filters) if all_filters else ""
+
+    # Pipeline: image → scale up → zoompan → scale to 1080x1920 → text
+    vf_parts = [
+        f"scale=2160:-1:flags=lanczos",
+        f"zoompan=z='{z_expr}':x='{x_expr}':y='{y_expr}'"
+        f":d={total_frames}:s={REEL_W}x{REEL_H}:fps={REEL_FPS}",
+        f"setsar=1",
+    ]
+    if text_chain:
+        vf_parts.append(text_chain)
+
+    vf = ",".join(vf_parts)
+
+    ffmpeg = shutil.which("ffmpeg") or "/usr/bin/ffmpeg"
+    cmd = [
+        ffmpeg, "-y",
+        "-loop", "1", "-i", str(image_file),
+        "-vf", vf,
+        "-c:v", "libx264", "-preset", "fast", "-crf", "22",
+        "-pix_fmt", "yuv420p", "-r", str(REEL_FPS),
+        "-t", str(duration), "-an",
+        str(out_path)
+    ]
+    try:
+        r = subprocess.run(cmd, capture_output=True, text=True, timeout=60)
+        if r.returncode != 0:
+            print(f"  Image segment render failed: {r.stderr[-500:]}")
+            return None
+        return out_path
+    except Exception as e:
+        print(f"  Image segment render error: {e}")
+        return None
+
+
+def _pick_background(dest: dict, keywords: list[str] = None,
+                     campaign_type: str = None) -> tuple:
+    """Pick a background for a segment — Pomelli image preferred, video fallback.
+
+    Returns (path, is_image: bool).
+    """
+    kw = keywords or []
+    # Add destination name + state as keywords
+    name = dest.get("name", "")
+    state = dest.get("state", "")
+    if name:
+        kw.append(name)
+    if state:
+        kw.append(state)
+
+    imgs = _find_pomelli_images(kw, count=1, campaign_type=campaign_type)
+    if imgs:
+        return imgs[0], True
+
+    # Video fallback
+    bg, is_img = _pick_background(dest)
+    if vid:
+        return vid, False
+    return None, False
+
+
+def _render_segment_auto(bg_path: Path, is_image: bool, duration: float,
+                         text_filters: list[str], out_path: Path,
+                         zoom_dir: str = "in") -> Optional[Path]:
+    """Render a segment using either Pomelli image or video background."""
+    if is_image:
+        return _render_segment_image(bg_path, duration, text_filters, out_path, zoom_dir)
+    else:
+        return _render_segment_auto(bg_path, is_img, duration, text_filters, out_path)
 
 
 def _pick_music(state: dict) -> Optional[Path]:
@@ -332,26 +500,26 @@ def _build_listicle(destinations: list[dict], month_name: str,
     SG = _hex(SAGE)
 
     # Hook
-    hook_vid = _find_similar_video(picks[-1])  # #1 destination
+    hook_bg, hook_is_img = _pick_background(picks[-1], ["top5", "listicle", month_name.lower()])
     hook_texts = [
         _dt("TOP 5", FONT_JETBRAINS, 120, V, "(w-text_w)/2", "h*0.25", bw=5),
         _dt("PLACES TO VISIT", FONT_INSTRUMENT, 52, B, "(w-text_w)/2", "h*0.38"),
         _dt(f"IN {month_name.upper()}", FONT_INSTRUMENT, 48, S, "(w-text_w)/2", "h*0.46", "gte(t,0.4)"),
         _dt("Based on NakshIQ scores", FONT_CRIMSON, 32, B, "(w-text_w)/2", "h*0.55", "gte(t,1.0)"),
     ]
-    p = _render_segment(hook_vid, HOOK_DUR, hook_texts, out_dir / "seg_00_hook.mp4")
+    p = _render_segment_auto(hook_bg, hook_is_img, HOOK_DUR, hook_texts, out_dir / "seg_00_hook.mp4")
     if p: segments.append(p)
 
     # Destination reveals
     for i, dest in enumerate(picks):
         rank = 5 - i
-        vid = _find_similar_video(dest)
+        name = dest.get("name", "Unknown")
+        state = dest.get("state", "")
+        bg, is_img = _pick_background(dest, [name, state])
         rc = V if rank == 1 else S
         rs = 160 if rank == 1 else 120
         ns = 72 if rank == 1 else 64
         sc = G if dest.get("score", 0) >= 4 else S
-        name = dest.get("name", "Unknown")
-        state = dest.get("state", "")
         score = int(dest.get("score", 3))
         tagline = dest.get("tagline") or dest.get("note") or ""
         if len(tagline) > 45:
@@ -364,17 +532,18 @@ def _build_listicle(destinations: list[dict], month_name: str,
             _dt(f"{score}/5", FONT_JETBRAINS, 72, sc, "(w-text_w)/2", "h*0.50", "gte(t,1.2)", 4),
             _dt(tagline, FONT_CRIMSON, 34, B, "(w-text_w)/2", "h*0.60", "gte(t,1.8)"),
         ]
-        p = _render_segment(vid, REVEAL_DUR, texts, out_dir / f"seg_{i+1:02d}_rank{rank}.mp4")
+        zoom = "in" if i % 2 == 0 else "out"
+        p = _render_segment_auto(bg, is_img, REVEAL_DUR, texts, out_dir / f"seg_{i+1:02d}_rank{rank}.mp4", zoom_dir=zoom)
         if p: segments.append(p)
 
     # CTA
-    cta_vid = _find_similar_video(picks[0])  # different video for variety
+    cta_bg, cta_is_img = _pick_background(picks[0], ["nakshiq", "follow"])
     cta_texts = [
         _dt("FOLLOW", FONT_INSTRUMENT, 48, B, "(w-text_w)/2", "h*0.30"),
         _dt("@NAKSHIQ", FONT_INSTRUMENT, 72, V, "(w-text_w)/2", "h*0.38", "gte(t,0.3)", 4),
         _dt("Data-driven travel for India", FONT_CRIMSON, 34, S, "(w-text_w)/2", "h*0.48", "gte(t,0.6)"),
     ]
-    p = _render_segment(cta_vid, CTA_DUR, cta_texts, out_dir / "seg_06_cta.mp4")
+    p = _render_segment_auto(cta_bg, cta_is_img, CTA_DUR, cta_texts, out_dir / "seg_06_cta.mp4", zoom_dir="out")
     if p: segments.append(p)
 
     return segments, total, {}
@@ -449,7 +618,7 @@ def _build_before_after(destinations: list[dict], month_now: int,
     month_name_fut = calendar.month_name[picks[0]["future_month"]]
 
     # Hook
-    hook_vid = _find_similar_video(picks[0])
+    hook_bg, hook_is_img = _pick_background(picks[0])
     hook_texts = [
         _dt("TIMING IS", FONT_INSTRUMENT, 52, B, "(w-text_w)/2", "h*0.28"),
         _dt("EVERYTHING", FONT_JETBRAINS, 100, V, "(w-text_w)/2", "h*0.36", bw=5),
@@ -458,12 +627,12 @@ def _build_before_after(destinations: list[dict], month_now: int,
         _dt("Same place. Different month.", FONT_CRIMSON, 32, B,
             "(w-text_w)/2", "h*0.58", "gte(t,1.2)"),
     ]
-    p = _render_segment(hook_vid, HOOK_DUR, hook_texts, out_dir / "seg_00_hook.mp4")
+    p = _render_segment_auto(hook_bg, hook_is_img, HOOK_DUR, hook_texts, out_dir / "seg_00_hook.mp4")
     if p: segments.append(p)
 
     # Contrast reveals
     for i, dest in enumerate(picks):
-        vid = _find_similar_video(dest)
+        bg, is_img = _pick_background(dest)
         name = dest.get("name", "Unknown")
         ns = int(dest["now_score"])
         fs = int(dest["future_score"])
@@ -481,7 +650,7 @@ def _build_before_after(destinations: list[dict], month_now: int,
             _dt(f"{fs}/5", FONT_JETBRAINS, 120, fc, "(w-text_w)/2", "h*0.40", "gte(t,4)", 5),
             _dt(f"Score {direction} {fs}/5", FONT_CRIMSON, 34, B, "(w-text_w)/2", "h*0.58", "gte(t,5)"),
         ]
-        p = _render_segment(vid, CONTRAST_DUR, texts, out_dir / f"seg_{i+1:02d}_contrast.mp4")
+        p = _render_segment_auto(bg, is_img, CONTRAST_DUR, texts, out_dir / f"seg_{i+1:02d}_contrast.mp4")
         if p: segments.append(p)
 
     # CTA
@@ -490,7 +659,8 @@ def _build_before_after(destinations: list[dict], month_now: int,
         _dt("@NAKSHIQ", FONT_INSTRUMENT, 72, V, "(w-text_w)/2", "h*0.38", "gte(t,0.3)", 4),
         _dt("nakshiq.com", FONT_CRIMSON, 34, S, "(w-text_w)/2", "h*0.48", "gte(t,0.6)"),
     ]
-    p = _render_segment(_find_similar_video(picks[-1]), CTA_DUR, cta_texts,
+    cta_bg, cta_is_img = _pick_background(picks[-1], ["timing", "nakshiq"])
+    p = _render_segment_auto(cta_bg, cta_is_img, CTA_DUR, cta_texts,
                          out_dir / "seg_04_cta.mp4")
     if p: segments.append(p)
 
@@ -546,26 +716,26 @@ def _build_mini_guide(destinations: list[dict], out_dir: Path) -> tuple[list[Pat
     sc = G if score >= 4 else S
 
     # Hook — destination reveal
-    vid = _find_similar_video(dest)
+    bg, is_img = _pick_background(dest)
     hook_texts = [
         _dt("48 HOURS IN", FONT_INSTRUMENT, 44, S, "(w-text_w)/2", "h*0.25"),
         _dt(name.upper(), FONT_INSTRUMENT, 76, B, "(w-text_w)/2", "h*0.33", "gte(t,0.3)", 5),
         _dt(state, FONT_CRIMSON, 32, SG, "(w-text_w)/2", "h*0.43", "gte(t,0.6)"),
         _dt(f"NakshIQ Score: {score}/5", FONT_JETBRAINS, 48, sc, "(w-text_w)/2", "h*0.52", "gte(t,1.2)", 4),
     ]
-    p = _render_segment(vid, HOOK_DUR, hook_texts, out_dir / "seg_00_hook.mp4")
+    p = _render_segment_auto(bg, is_img, HOOK_DUR, hook_texts, out_dir / "seg_00_hook.mp4")
     if p: segments.append(p)
 
     # Tips
     for i in range(num_tips):
         tip = tips[i]
-        tip_vid = _find_similar_video(dest)  # Same destination, different angle
+        tip_bg, tip_is_img = _pick_background(dest, [name, state, tip.lower()])
         texts = [
             _dt(f"TIP #{i+1}", FONT_JETBRAINS, 72, V if i == 0 else S,
                 "(w-text_w)/2", "h*0.25", bw=4),
             _dt(tip, FONT_CRIMSON, 38, B, "(w-text_w)/2", "h*0.40", "gte(t,0.5)"),
         ]
-        p = _render_segment(tip_vid, TIP_DUR, texts, out_dir / f"seg_{i+1:02d}_tip.mp4")
+        p = _render_segment_auto(tip_bg, tip_is_img, TIP_DUR, texts, out_dir / f"seg_{i+1:02d}_tip.mp4")
         if p: segments.append(p)
 
     # CTA
@@ -574,7 +744,7 @@ def _build_mini_guide(destinations: list[dict], out_dir: Path) -> tuple[list[Pat
         _dt("@NAKSHIQ", FONT_INSTRUMENT, 72, V, "(w-text_w)/2", "h*0.38", "gte(t,0.3)", 4),
         _dt("Full guide on nakshiq.com", FONT_CRIMSON, 34, S, "(w-text_w)/2", "h*0.48", "gte(t,0.6)"),
     ]
-    p = _render_segment(vid, CTA_DUR, cta_texts, out_dir / "seg_cta.mp4")
+    p = _render_segment_auto(bg, is_img, CTA_DUR, cta_texts, out_dir / "seg_cta.mp4", zoom_dir="out")
     if p: segments.append(p)
 
     return segments, total, {"dest": dest}
@@ -632,14 +802,14 @@ def _build_did_you_know(destinations: list[dict], out_dir: Path) -> tuple[list[P
     sc = G if score >= 4 else S
 
     # Hook — "DID YOU KNOW?"
-    vid = _find_similar_video(dest)
+    bg, is_img = _pick_background(dest)
     hook_texts = [
         _dt("DID YOU", FONT_INSTRUMENT, 52, B, "(w-text_w)/2", "h*0.28"),
         _dt("KNOW?", FONT_JETBRAINS, 120, V, "(w-text_w)/2", "h*0.36", bw=5),
         _dt(name.upper(), FONT_INSTRUMENT, 56, S, "(w-text_w)/2", "h*0.50", "gte(t,0.8)", 4),
         _dt(state, FONT_CRIMSON, 30, SG, "(w-text_w)/2", "h*0.58", "gte(t,1.2)"),
     ]
-    p = _render_segment(vid, HOOK_DUR, hook_texts, out_dir / "seg_00_hook.mp4")
+    p = _render_segment_auto(bg, is_img, HOOK_DUR, hook_texts, out_dir / "seg_00_hook.mp4")
     if p: segments.append(p)
 
     # Fact reveal — staggered line appearance
@@ -651,7 +821,7 @@ def _build_did_you_know(destinations: list[dict], out_dir: Path) -> tuple[list[P
             _dt(line, FONT_CRIMSON, 42, B, "(w-text_w)/2",
                 f"h*{y_start + i * 0.08:.2f}", f"gte(t,{delay:.1f})")
         )
-    p = _render_segment(vid, FACT_DUR, fact_texts, out_dir / "seg_01_fact.mp4")
+    p = _render_segment_auto(bg, is_img, FACT_DUR, fact_texts, out_dir / "seg_01_fact.mp4", zoom_dir="out")
     if p: segments.append(p)
 
     # Stats card
@@ -666,7 +836,7 @@ def _build_did_you_know(destinations: list[dict], out_dir: Path) -> tuple[list[P
             _dt(f"Elevation: {elevation:,}m", FONT_INSTRUMENT, 36, SG,
                 "(w-text_w)/2", "h*0.53", "gte(t,1.2)")
         )
-    p = _render_segment(vid, STAT_DUR, stat_texts, out_dir / "seg_02_stats.mp4")
+    p = _render_segment_auto(bg, is_img, STAT_DUR, stat_texts, out_dir / "seg_02_stats.mp4")
     if p: segments.append(p)
 
     # CTA
@@ -675,7 +845,8 @@ def _build_did_you_know(destinations: list[dict], out_dir: Path) -> tuple[list[P
         _dt("@NAKSHIQ", FONT_INSTRUMENT, 72, V, "(w-text_w)/2", "h*0.38", "gte(t,0.3)", 4),
         _dt("Travel with IQ", FONT_CRIMSON, 34, S, "(w-text_w)/2", "h*0.48", "gte(t,0.6)"),
     ]
-    p = _render_segment(_find_similar_video(dest), CTA_DUR, cta_texts, out_dir / "seg_03_cta.mp4")
+    _cta_bg, _cta_is_img = _pick_background(dest)
+    p = _render_segment_auto(_cta_bg, _cta_is_img, CTA_DUR, cta_texts, out_dir / "seg_03_cta.mp4")
     if p: segments.append(p)
 
     return segments, total, {"dest": dest}
@@ -709,6 +880,8 @@ def _build_this_vs_that(destinations: list[dict], out_dir: Path) -> tuple[list[P
     dest_a, dest_b = pair
     name_a = dest_a.get("name", "A")
     name_b = dest_b.get("name", "B")
+    state_a = dest_a.get("state", "")
+    state_b = dest_b.get("state", "")
     score_a = int(dest_a.get("score", 3))
     score_b = int(dest_b.get("score", 3))
 
@@ -723,14 +896,14 @@ def _build_this_vs_that(destinations: list[dict], out_dir: Path) -> tuple[list[P
     G = "0x4CAF50"; SG = _hex(SAGE)
 
     # Hook — "THIS vs THAT"
-    vid_a = _find_similar_video(dest_a)
+    bg_a, is_img_a = _pick_background(dest_a, [name_a, state_a])
     hook_texts = [
         _dt(name_a.upper(), FONT_INSTRUMENT, 52, S, "(w-text_w)/2", "h*0.25"),
         _dt("VS", FONT_JETBRAINS, 120, V, "(w-text_w)/2", "h*0.34", "gte(t,0.5)", bw=5),
         _dt(name_b.upper(), FONT_INSTRUMENT, 52, S, "(w-text_w)/2", "h*0.48", "gte(t,1.0)"),
         _dt("Which one wins this month?", FONT_CRIMSON, 32, B, "(w-text_w)/2", "h*0.58", "gte(t,1.5)"),
     ]
-    p = _render_segment(vid_a, HOOK_DUR, hook_texts, out_dir / "seg_00_hook.mp4")
+    p = _render_segment_auto(bg_a, is_img_a, HOOK_DUR, hook_texts, out_dir / "seg_00_hook.mp4")
     if p: segments.append(p)
 
     # Card A
@@ -746,11 +919,11 @@ def _build_this_vs_that(destinations: list[dict], out_dir: Path) -> tuple[list[P
             "(w-text_w)/2", "h*0.52", "gte(t,1.2)"),
         _dt(tagline_a, FONT_CRIMSON, 30, B, "(w-text_w)/2", "h*0.60", "gte(t,2.0)"),
     ]
-    p = _render_segment(vid_a, CARD_DUR, card_a_texts, out_dir / "seg_01_card_a.mp4")
+    p = _render_segment_auto(bg_a, is_img_a, CARD_DUR, card_a_texts, out_dir / "seg_01_card_a.mp4")
     if p: segments.append(p)
 
     # Card B
-    vid_b = _find_similar_video(dest_b)
+    bg_b, is_img_b = _pick_background(dest_b, [name_b, state_b])
     sc_b = G if score_b >= 4 else S if score_b == 3 else V
     tagline_b = dest_b.get("tagline") or dest_b.get("note") or ""
     if len(tagline_b) > 45:
@@ -763,7 +936,7 @@ def _build_this_vs_that(destinations: list[dict], out_dir: Path) -> tuple[list[P
             "(w-text_w)/2", "h*0.52", "gte(t,1.2)"),
         _dt(tagline_b, FONT_CRIMSON, 30, B, "(w-text_w)/2", "h*0.60", "gte(t,2.0)"),
     ]
-    p = _render_segment(vid_b, CARD_DUR, card_b_texts, out_dir / "seg_02_card_b.mp4")
+    p = _render_segment_auto(bg_b, is_img_b, CARD_DUR, card_b_texts, out_dir / "seg_02_card_b.mp4")
     if p: segments.append(p)
 
     # Verdict
@@ -774,14 +947,15 @@ def _build_this_vs_that(destinations: list[dict], out_dir: Path) -> tuple[list[P
     else:
         winner, w_score = "IT'S A TIE", score_a
     wc = G if w_score >= 4 else S
-    verdict_vid = vid_a if score_a >= score_b else vid_b
+    verdict_bg = bg_a if score_a >= score_b else bg_b
+    verdict_is_img = is_img_a if score_a >= score_b else is_img_b
     verdict_texts = [
         _dt("THE VERDICT", FONT_INSTRUMENT, 48, B, "(w-text_w)/2", "h*0.25"),
         _dt(winner.upper(), FONT_INSTRUMENT, 72, wc, "(w-text_w)/2", "h*0.35", "gte(t,0.8)", 5),
         _dt(f"NakshIQ Score: {w_score}/5", FONT_JETBRAINS, 48, B, "(w-text_w)/2", "h*0.46", "gte(t,1.5)", 4),
         _dt("This month's pick", FONT_CRIMSON, 34, S, "(w-text_w)/2", "h*0.56", "gte(t,2.2)"),
     ]
-    p = _render_segment(verdict_vid, VERDICT_DUR, verdict_texts, out_dir / "seg_03_verdict.mp4")
+    p = _render_segment_auto(verdict_bg, verdict_is_img, VERDICT_DUR, verdict_texts, out_dir / "seg_03_verdict.mp4")
     if p: segments.append(p)
 
     # CTA
@@ -790,7 +964,8 @@ def _build_this_vs_that(destinations: list[dict], out_dir: Path) -> tuple[list[P
         _dt("@NAKSHIQ", FONT_INSTRUMENT, 72, V, "(w-text_w)/2", "h*0.38", "gte(t,0.3)", 4),
         _dt("Data-driven travel for India", FONT_CRIMSON, 34, S, "(w-text_w)/2", "h*0.48", "gte(t,0.6)"),
     ]
-    p = _render_segment(_find_similar_video(dest_a), CTA_DUR, cta_texts, out_dir / "seg_04_cta.mp4")
+    _cta_bg, _cta_is_img = _pick_background(dest_a)
+    p = _render_segment_auto(_cta_bg, _cta_is_img, CTA_DUR, cta_texts, out_dir / "seg_04_cta.mp4")
     if p: segments.append(p)
 
     return segments, total, {"dest_a": dest_a, "dest_b": dest_b}
@@ -833,19 +1008,19 @@ def _build_dont_go_here(destinations: list[dict], month_name: str,
     RED = "0xE55642"; SG = _hex(SAGE)
 
     # Hook — "DON'T GO HERE"
-    vid = _find_similar_video(picks[0])
+    bg, is_img = _pick_background(picks[0])
     hook_texts = [
         _dt("WAIT ON", FONT_INSTRUMENT, 52, B, "(w-text_w)/2", "h*0.28"),
         _dt("THESE", FONT_JETBRAINS, 120, RED, "(w-text_w)/2", "h*0.36", bw=5),
         _dt(f"in {month_name}", FONT_INSTRUMENT, 48, S, "(w-text_w)/2", "h*0.50", "gte(t,0.5)"),
         _dt("Better months exist.", FONT_CRIMSON, 32, B, "(w-text_w)/2", "h*0.58", "gte(t,1.2)"),
     ]
-    p = _render_segment(vid, HOOK_DUR, hook_texts, out_dir / "seg_00_hook.mp4")
+    p = _render_segment_auto(bg, is_img, HOOK_DUR, hook_texts, out_dir / "seg_00_hook.mp4")
     if p: segments.append(p)
 
     # Warning cards
     for i, dest in enumerate(picks):
-        vid = _find_similar_video(dest)
+        bg, is_img = _pick_background(dest)
         name = dest.get("name", "Unknown")
         state = dest.get("state", "")
         score = int(dest.get("score", 1))
@@ -862,13 +1037,13 @@ def _build_dont_go_here(destinations: list[dict], month_name: str,
             _dt(f"{score}/5", FONT_JETBRAINS, 100, sc, "(w-text_w)/2", "h*0.45", "gte(t,1.0)", 5),
             _dt(reason, FONT_CRIMSON, 30, B, "(w-text_w)/2", "h*0.58", "gte(t,2.0)"),
         ]
-        p = _render_segment(vid, WARN_DUR, texts, out_dir / f"seg_{i+1:02d}_warn.mp4")
+        p = _render_segment_auto(bg, is_img, WARN_DUR, texts, out_dir / f"seg_{i+1:02d}_warn.mp4")
         if p: segments.append(p)
 
     # Better alternatives — show top score destination
     best = sorted(destinations, key=lambda d: -d.get("score", 0))
     alt = best[0] if best else picks[0]
-    alt_vid = _find_similar_video(alt)
+    alt_bg, alt_is_img = _pick_background(alt, [alt.get("name",""), alt.get("state","")])
     alt_name = alt.get("name", "Unknown")
     alt_score = int(alt.get("score", 5))
     alt_texts = [
@@ -877,7 +1052,7 @@ def _build_dont_go_here(destinations: list[dict], month_name: str,
         _dt(f"Score: {alt_score}/5 this month", FONT_JETBRAINS, 44, B, "(w-text_w)/2", "h*0.46", "gte(t,1.2)", 4),
         _dt(alt.get("state", ""), FONT_CRIMSON, 30, SG, "(w-text_w)/2", "h*0.55", "gte(t,1.8)"),
     ]
-    p = _render_segment(alt_vid, ALT_DUR, alt_texts, out_dir / f"seg_{num_warns+1:02d}_alt.mp4")
+    p = _render_segment_auto(alt_bg, alt_is_img, ALT_DUR, alt_texts, out_dir / f"seg_{num_warns+1:02d}_alt.mp4")
     if p: segments.append(p)
 
     # CTA
@@ -886,7 +1061,8 @@ def _build_dont_go_here(destinations: list[dict], month_name: str,
         _dt("@NAKSHIQ", FONT_INSTRUMENT, 72, V, "(w-text_w)/2", "h*0.38", "gte(t,0.3)", 4),
         _dt("Don't waste your trip", FONT_CRIMSON, 34, S, "(w-text_w)/2", "h*0.48", "gte(t,0.6)"),
     ]
-    p = _render_segment(_find_similar_video(alt), CTA_DUR, cta_texts, out_dir / f"seg_{num_warns+2:02d}_cta.mp4")
+    _cta_bg, _cta_is_img = _pick_background(alt)
+    p = _render_segment_auto(_cta_bg, _cta_is_img, CTA_DUR, cta_texts, out_dir / f"seg_{num_warns+2:02d}_cta.mp4")
     if p: segments.append(p)
 
     return segments, total, {}
