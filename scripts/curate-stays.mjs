@@ -35,12 +35,19 @@ if (!SUPABASE_URL || !SERVICE_KEY || !ANTHROPIC_KEY) {
 const args = process.argv.slice(2);
 const argv = { state: null, ids: [], mode: "auto", dryRun: true, concurrency: 3 };
 for (let i = 0; i < args.length; i++) {
-  if (args[i] === "--state") argv.state = args[++i];
-  else if (args[i] === "--ids") argv.ids = (args[++i] || "").split(",").filter(Boolean);
-  else if (args[i] === "--mode") argv.mode = args[++i];
-  else if (args[i] === "--commit") argv.dryRun = false;
-  else if (args[i] === "--dry-run") argv.dryRun = true;
-  else if (args[i] === "--concurrency") argv.concurrency = parseInt(args[++i], 10);
+  const a = args[i];
+  // Support both "--flag value" and "--flag=value" forms (memory: 2026-04-27
+  // burn — passed --mode=enrich-only, parser fell through to default "auto").
+  const eq = a.indexOf("=");
+  const key = eq >= 0 ? a.slice(0, eq) : a;
+  const inlineVal = eq >= 0 ? a.slice(eq + 1) : null;
+  const nextVal = () => inlineVal ?? args[++i];
+  if (key === "--state") argv.state = nextVal();
+  else if (key === "--ids") argv.ids = (nextVal() || "").split(",").filter(Boolean);
+  else if (key === "--mode") argv.mode = nextVal();
+  else if (key === "--commit") argv.dryRun = false;
+  else if (key === "--dry-run") argv.dryRun = true;
+  else if (key === "--concurrency") argv.concurrency = parseInt(nextVal(), 10);
 }
 
 if (!argv.state && argv.ids.length === 0) {
@@ -419,7 +426,7 @@ async function processDestination(dest) {
     }
   }
 
-  return {
+  const out = {
     destination_id: dest.id,
     destination_name: dest.name,
     state: stateName,
@@ -432,6 +439,15 @@ async function processDestination(dest) {
       picks_with_flags: picksAudit,
     },
   };
+
+  // Commit-as-you-go: persist each dest before moving on, so a crash mid-run
+  // doesn't wipe API-paid work. Was previously a single end-of-run commit loop
+  // (memory: session_2026_04_27 — pkill killed runPool before commit phase,
+  // burned ~50% of credit on results that never reached DB).
+  if (!argv.dryRun) {
+    await commitResult(out);
+  }
+  return out;
 }
 
 // ===== persistence =====
@@ -536,11 +552,7 @@ if (argv.dryRun) {
   console.log(`\nDRY RUN complete. Output written to: ${outPath}`);
   console.log(`Review, iterate prompts if needed, then re-run with --commit.`);
 } else {
-  console.log(`\nCommitting ${okResults.length} results to DB...`);
-  for (const r of okResults) {
-    await commitResult(r);
-  }
-  console.log(`Done. Check /en/admin/stay-picks for low-confidence / voice-flagged rows.`);
+  console.log(`\nCommitted ${okResults.length} results inline (per-dest). Check /en/admin/stay-picks for low-confidence / voice-flagged rows.`);
 }
 
 // ===== summary =====
