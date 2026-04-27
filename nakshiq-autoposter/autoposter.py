@@ -419,7 +419,10 @@ def mark_posted(state: dict, account_id: str, destination_id: str,
     state["posted_destinations"] = [
         d for d in state["posted_destinations"] if d["date"] >= cutoff
     ]
-    state["posted_destinations"].append({"destination_id": destination_id, "date": today})
+    # Deduplicate: only add if this dest+date combo isn't already recorded
+    if not any(d["destination_id"] == destination_id and d["date"] == today
+               for d in state["posted_destinations"]):
+        state["posted_destinations"].append({"destination_id": destination_id, "date": today})
     if account_id not in state["posted_formats"]:
         state["posted_formats"][account_id] = []
     state["posted_formats"][account_id] = (
@@ -2844,8 +2847,11 @@ def _run_inner(force: bool, sync_only: bool, dry_run: bool,
             if is_carousel:
                 for sd in slide_dests:
                     used.add(sd["id"])
-                    state.setdefault("posted_destinations", []).append(
-                        {"destination_id": sd["id"], "date": today})
+                    # Deduplicate: mark_posted already stamps the anchor dest
+                    if not any(d["destination_id"] == sd["id"] and d["date"] == today
+                               for d in state.get("posted_destinations", [])):
+                        state.setdefault("posted_destinations", []).append(
+                            {"destination_id": sd["id"], "date": today})
                     mark_theme_used(state, "destinations", sd["id"])
 
         # ── Instagram Story (separate format — every day except Reel days) ────
