@@ -164,9 +164,10 @@ async function auditVideos() {
       for (const p of candidates) {
         if (existsSync(p)) { localFile = p; break; }
       }
-      // R2 key always matches the CSV id directly (e.g. "spiti-valley.mp4"),
-      // even when the local file has a "VIDEO_" prefix.
-      const r2Key = `${id}.mp4`;
+      // upload-videos.mjs strips VIDEO_/ARTICLE_ prefix when storing on R2,
+      // so the bucket key is the bare slug regardless of local filename or
+      // CSV id. Strip the same prefix here.
+      const r2Key = `${id.replace(/^(VIDEO_|ARTICLE_)/, "")}.mp4`;
       const onR2 = await r2Head("nakshiq-videos", r2Key);
 
       results.push({
