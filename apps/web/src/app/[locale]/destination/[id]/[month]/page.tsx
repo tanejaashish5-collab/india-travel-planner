@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { setRequestLocale } from "next-intl/server";
 import { Nav } from "@/components/nav";
 import { DestinationMonth } from "@/components/destination-month";
 import { createClient } from "@supabase/supabase-js";
@@ -46,6 +47,10 @@ export async function generateMetadata({
   const { id, locale, month } = await params;
 
   if (!VALID_MONTHS.includes(month as any)) return {};
+
+  // Same setRequestLocale rationale as the page handler — the metadata pass
+  // is a separate render context.
+  setRequestLocale(locale);
 
   const supabase = getSupabase();
   if (!supabase) return {};
@@ -252,6 +257,13 @@ export default async function DestinationMonthPage({
   params: Promise<{ id: string; locale: string; month: string }>;
 }) {
   const { id, locale, month } = await params;
+
+  // Per-page setRequestLocale call — required for on-demand ISR with next-intl
+  // when the page doesn't have generateStaticParams. Without it, the layout's
+  // setRequestLocale call alone leaves THIS render context dynamic (we
+  // intentionally skipped generateStaticParams here to avoid pre-rendering
+  // 6,840 month pages at build time).
+  setRequestLocale(locale);
 
   // Validate month slug
   if (!VALID_MONTHS.includes(month as any)) notFound();
