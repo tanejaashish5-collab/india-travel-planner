@@ -81,11 +81,11 @@ Plan: `~/.claude/plans/smooth-orbiting-music.md` (full workflow — read before 
 | Jammu & Kashmir | ✓ done | 2026-04-26 | 17/17 dests · 98 eateries |
 | Himachal Pradesh | ✓ done | 2026-04-27 | 32/34 dests · 286 eateries (Chandratal + GHNP `[]`) |
 | Uttarakhand | ✓ done | 2026-04-27 | 38/38 dests · 316 eateries (4 honest-scarcity `[]`) |
-| Punjab + Haryana + Chandigarh | **next** | - | ~25 dests, anchor = Amritsar |
-| Rajasthan | pending | - | ~50 dests |
+| Punjab + Haryana + Chandigarh | ✓ done | 2026-04-27 | 8/8 dests · 69 eateries (Damdama Sahib `[]` honest scarcity, stays skipped — API key depleted) |
+| Rajasthan | **next** | - | ~50 dests |
 | Uttar Pradesh | pending | - | ~30 dests |
 
-**North progress so far**: 4 states done, 101 dests, 793 eateries. Per-state details (sessions, zones, rationale) in session memory files — see `MEMORY.md` index.
+**North progress so far**: 5 states+UT clusters done, 109 dests, 862 eateries. Per-state details (sessions, zones, rationale) in session memory files — see `MEMORY.md` index.
 
 ## Cost-aware operating rules (added 2026-04-27)
 
