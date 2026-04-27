@@ -101,9 +101,10 @@ from commit history.
 | 10 | absorbed into 11 | No standalone commits — likely merged into Sprint 11 nav simplification |
 | 11 Nav + perf + homepage | ✓ closed | 7→4 top items + LCP fixes + homepage simplification. Commits 07f0981, dbd743e, 0a91dd2 |
 | 12 UGC + membership waitlist | ✓ closed | Trip reports + waitlist + admin moderation. Commit 19ea53a |
-| 13a Offline web PWA | ✓ closed | SW v29 + /offline + indicator. Commit 5a14e62 |
+| 13a Offline web PWA | ✓ closed | SW v29 + /offline + indicator. Commit 5a14e62. **2026-04-27 drift fix:** SW v30, +5 routes (corrections/press/india-vs/cost-index/weekend-from), theme-color sync, +2 manifest shortcuts. Commit a34f208 |
 | 13b Expo offline parity | ✓ closed | cache.ts + offline-queue.ts + OfflineIndicator + 8 screen wraps. Commit (this session) |
 | 14 Acquisition polish | ✓ closed | /corrections + /press + masthead. Commits 915a60a, 8f7df68 |
+| GSC snippet sweep (post-13a) | ✓ closed 2026-04-27 | Dest-month meta rewrite (verdict-led, day-temp range from editorial note, FAQ +1 Q for "temperature" pattern, why_not fallback). prewarm-month.mjs script with --flush flag. 200 May URLs flushed/rewarmed + 148 June URLs warmed. Targets GSC 0% CTR pages at pos 7-12. Commits a34f208, 344c87b, ee45093 |
 | 15-17 Monetisation | 🔒 gated | Per R2 warning: requires 100K MUV + 2K email list before opening |
 | 18 | placeholder for 15-17 | No standalone scope — was a placeholder for the gated monetisation block |
 
