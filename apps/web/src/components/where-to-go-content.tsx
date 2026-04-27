@@ -344,7 +344,7 @@ export function WhereToGoContent({
               loop
               playsInline
               className="w-full h-full object-cover"
-              poster={destinationImage(heroDestId)}
+              poster={destinationImage(heroDestId, 1600)}
             >
               <source
                 src={videoSrc(heroDestId)}

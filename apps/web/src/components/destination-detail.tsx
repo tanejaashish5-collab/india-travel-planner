@@ -250,7 +250,7 @@ export function DestinationDetail({ dest }: { dest: any }) {
               loop
               playsInline
               className="w-full h-full object-cover"
-              poster={destinationImage(dest.id)}
+              poster={destinationImage(dest.id, 1600)}
             >
               <source src={videoSrc(dest.id)} type="video/mp4" />
             </video>

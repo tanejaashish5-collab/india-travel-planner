@@ -1,10 +1,13 @@
-// Custom Next.js image loader — routes /images/* paths to the R2 CDN.
+// Custom Next.js image loader — routes /images/* paths to the R2 CDN and
+// rewrites the request to the smallest pre-generated WebP variant ≥ width.
 //
-// Bypasses Vercel's Image Optimization service (which 402'd on free-tier quota).
-// Raw JPGs are served directly from R2 through Cloudflare's CDN (free egress).
+// Variants are produced by scripts/upload-images.mjs at upload time at widths
+// [400, 800, 1200, 1600] and stored as `<subdir>/<stem>-w<width>.webp`.
+// Vercel's Image Optimization service is bypassed (free-tier quota was blown
+// 2026-04-17), so cutting JPEG → resized WebP at the source is what we have.
 //
-// Paths that already point to an absolute URL (e.g. https://...) pass through
-// unchanged so external images (OG images, Supabase avatars, etc) still work.
+// Paths that already point to an absolute URL pass through unchanged so
+// external images (OG, Supabase avatars, etc) still work.
 
 interface LoaderArgs {
   src: string;
@@ -12,18 +15,30 @@ interface LoaderArgs {
   quality?: number;
 }
 
-export default function r2Loader({ src }: LoaderArgs): string {
-  // Already absolute → pass through
+const VARIANT_WIDTHS = [400, 800, 1200, 1600] as const;
+
+function pickVariantWidth(requested: number): number {
+  for (const w of VARIANT_WIDTHS) {
+    if (requested <= w) return w;
+  }
+  return VARIANT_WIDTHS[VARIANT_WIDTHS.length - 1];
+}
+
+export default function r2Loader({ src, width }: LoaderArgs): string {
   if (/^https?:\/\//i.test(src)) return src;
 
   const base = process.env.NEXT_PUBLIC_IMAGE_BASE_URL;
-  if (!base) {
-    // Dev fallback: serve locally from public/ so dev works without R2 env set
-    return src;
-  }
+  if (!base) return src;
 
-  // Strip leading slash and `images/` prefix — our R2 bucket keys start with
-  // `destinations/` or `collections/`, not `images/destinations/...`
   const normalized = src.replace(/^\/+/, "").replace(/^images\//, "");
-  return `${base.replace(/\/+$/, "")}/${normalized}`;
+  const cdn = base.replace(/\/+$/, "");
+
+  // Match raster files we generate variants for; everything else (svg, gif,
+  // weird paths) falls through to the original key on R2.
+  const m = normalized.match(/^(.+)\.(jpe?g|png)$/i);
+  if (!m) return `${cdn}/${normalized}`;
+
+  const stem = m[1];
+  const variantW = pickVariantWidth(width);
+  return `${cdn}/${stem}-w${variantW}.webp`;
 }

@@ -118,7 +118,7 @@ export function DestinationMonth({
           loop
           playsInline
           className="w-full h-full object-cover"
-          poster={destinationImage(destination.id)}
+          poster={destinationImage(destination.id, 1600)}
         >
           <source
             src={videoSrc(destination.id)}

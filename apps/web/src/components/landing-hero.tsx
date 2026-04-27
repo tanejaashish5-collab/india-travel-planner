@@ -108,7 +108,7 @@ export function LandingHero({
             preload="metadata"
             disablePictureInPicture
             className="w-full h-full object-cover opacity-[0.18]"
-            poster={destinationImage("spiti-valley")}
+            poster={destinationImage("spiti-valley", 1600)}
             aria-hidden="true"
           >
             <source src={videoSrc("hero")} type="video/mp4" />
