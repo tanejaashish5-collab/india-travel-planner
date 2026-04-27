@@ -36,9 +36,9 @@
     "4QL0i_reel": "2026-04-19",
     "m8EAd_canva": "2026-04-26",
     "PdMu0_canva": "2026-04-26",
-    "m8EAd_evening": "2026-04-26",
+    "m8EAd_evening": "2026-04-27",
     "m8EAd_evening_story": "2026-04-26",
-    "PdMu0_evening": "2026-04-26",
+    "PdMu0_evening": "2026-04-27",
     "m8EAd_yt_short": "2026-04-25",
     "m8EAd_yt_short_count": 1,
     "jUmP2_yt_short": "2026-04-20",
@@ -67,7 +67,7 @@
     "PdMu0_reel_map": "2026-04-26",
     "PvYR0": "2026-04-27"
   },
-  "last_sync": "2026-04-27T07:55:07.147038+00:00",
+  "last_sync": "2026-04-27T13:05:30.179078+00:00",
   "posted_destinations": [
     {
       "destination_id": "pahalgam",
@@ -414,7 +414,8 @@
       "score_card",
       "data_carousel",
       "monthly_forecast",
-      "methodology_crowds"
+      "methodology_crowds",
+      "score_card"
     ],
     "PdMu0": [
       "monthly_forecast",
@@ -430,7 +431,8 @@
       "score_card",
       "data_carousel",
       "monthly_forecast",
-      "methodology_crowds"
+      "methodology_crowds",
+      "score_card"
     ]
   },
   "post_log": [
@@ -751,6 +753,26 @@
       "destination": "pahalgam",
       "format": "methodology_crowds",
       "has_media": true
+    },
+    {
+      "timestamp": "2026-04-27T13:06:36.599798+00:00",
+      "date": "2026-04-27",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "nUrGl",
+      "destination": "pahalgam",
+      "format": "score_card",
+      "has_media": true
+    },
+    {
+      "timestamp": "2026-04-27T13:06:57.057767+00:00",
+      "date": "2026-04-27",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "ikX1B",
+      "destination": "pahalgam",
+      "format": "score_card",
+      "has_media": true
     }
   ],
   "theme_usage": {
@@ -955,6 +977,9 @@
       ],
       "mukteshwar": [
         "2026-04-26"
+      ],
+      "pahalgam": [
+        "2026-04-27"
       ]
     },
     "festivals": {
@@ -981,7 +1006,8 @@
     },
     "audience_tags": {
       "backpackers": [
-        "2026-04-20"
+        "2026-04-20",
+        "2026-04-27"
       ],
       "adventurers": [
         "2026-04-24"
