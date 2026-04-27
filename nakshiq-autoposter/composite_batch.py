@@ -82,14 +82,17 @@ elif cmd == "comp":
         parts.append(f"drawtext=text='{_esc(dest)}':fontfile='{FONT_INSTRUMENT}':fontsize=26:fontcolor={_hex(BONE)}:x=w-tw-40:y=h-105:borderw=0")
     bc = ",".join(parts)
 
-    aw = int(REEL_W * 0.35)
-    ax = REEL_W - aw - 40
-    ay = REEL_H - int(REEL_H * 0.45)
-
+    # Full-screen chromakey: avatar fills the frame, green replaced by destination bg.
+    # Crop avatar to upper body (top 50%, offset 12% from top) to hide chair/props.
     filters = [
         f"[0:v]scale={REEL_W}:{REEL_H}:force_original_aspect_ratio=increase,crop={REEL_W}:{REEL_H},setsar=1[bg]",
-        f"[1:v]chromakey=0x00FF00:0.15:0.1,scale={aw}:-1[avatar_clean]",
-        f"[bg][avatar_clean]overlay=x={ax}:y={ay}:shortest=1[composited]",
+        f"[1:v]scale={REEL_W}:{REEL_H}:force_original_aspect_ratio=increase,"
+        f"crop={REEL_W}:{REEL_H},"
+        f"crop=iw:ih*0.50:0:ih*0.12,"
+        f"scale={REEL_W}:-1,"
+        f"chromakey=0x00FF00:0.20:0.10,"
+        f"colorbalance=gs=-0.12:gm=-0.06[avatar_clean]",
+        f"[bg][avatar_clean]overlay=(W-w)/2:(H-160-h):shortest=1[composited]",
         f"[composited]{bc}[branded]",
         "[1:a]aformat=sample_fmts=fltp:sample_rates=44100:channel_layouts=mono[speech]",
         "[2:a]aformat=sample_fmts=fltp:sample_rates=44100:channel_layouts=mono,volume=0.15[music_ducked]",

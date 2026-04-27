@@ -1257,10 +1257,8 @@ def composite_ugc_video(
                 str(bg_video)
             ], check=True, capture_output=True)
 
-        # Avatar PiP dimensions
-        avatar_w = int(REEL_W * 0.35)  # 378px wide
-        avatar_x = REEL_W - avatar_w - 40  # 40px margin from right
-        avatar_y = REEL_H - int(REEL_H * 0.45)  # Upper portion of lower half
+        # Full-screen chromakey: avatar fills the frame, green replaced by destination bg.
+        # Crop avatar to upper body (top 50%, offset 12% from top) to hide chair/props.
 
         # Background scaled to 1080x1920
         filters.append(
@@ -1268,15 +1266,19 @@ def composite_ugc_video(
             f"crop={REEL_W}:{REEL_H},setsar=1[bg]"
         )
 
-        # Avatar: chromakey green screen removal + scale
+        # Avatar: scale to full width, crop to upper body, chromakey + green despill
         filters.append(
-            f"[1:v]chromakey=0x00FF00:0.15:0.1,"
-            f"scale={avatar_w}:-1[avatar_clean]"
+            f"[1:v]scale={REEL_W}:{REEL_H}:force_original_aspect_ratio=increase,"
+            f"crop={REEL_W}:{REEL_H},"
+            f"crop=iw:ih*0.50:0:ih*0.12,"
+            f"scale={REEL_W}:-1,"
+            f"chromakey=0x00FF00:0.20:0.10,"
+            f"colorbalance=gs=-0.12:gm=-0.06[avatar_clean]"
         )
 
-        # Overlay avatar on background
+        # Overlay avatar on background (positioned above branding bar)
         filters.append(
-            f"[bg][avatar_clean]overlay=x={avatar_x}:y={avatar_y}:"
+            f"[bg][avatar_clean]overlay=(W-w)/2:(H-160-h):"
             f"shortest=1[composited]"
         )
 
