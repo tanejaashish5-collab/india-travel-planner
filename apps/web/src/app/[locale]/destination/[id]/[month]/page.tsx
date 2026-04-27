@@ -55,7 +55,7 @@ export async function generateMetadata({
 
   const [{ data: dest }, { data: monthData }, { data: card }] = await Promise.all([
     supabase.from("destinations").select("name, tagline, state:states(name)").eq("id", id).single(),
-    supabase.from("destination_months").select("score, note, why_go").eq("destination_id", id).eq("month", monthNum).single(),
+    supabase.from("destination_months").select("score, note, why_go, verdict").eq("destination_id", id).eq("month", monthNum).single(),
     supabase.from("confidence_cards").select("weather_night").eq("destination_id", id).single(),
   ]);
 
@@ -63,18 +63,46 @@ export async function generateMetadata({
 
   const name = dest.name;
   const score = monthData?.score ?? 0;
-  const note = monthData?.note ?? "";
-  const whyGo = monthData?.why_go ?? "";
+  const note = (monthData?.note ?? "").toString();
+  const whyGo = (monthData?.why_go ?? "").toString();
+  const verdict = (monthData?.verdict ?? "").toString().toLowerCase();
   const stateData = dest.state as any;
   const stateName = Array.isArray(stateData) ? stateData[0]?.name : stateData?.name;
 
-  // Temperature range — summer (Apr-Sep) vs winter (Oct-Mar)
-  const weather = (card?.weather_night ?? {}) as { summer_low_c?: number; winter_low_c?: number };
+  // Temperature range — try multiple JSONB shapes (weather_night schema is sparse).
+  // Most dests use summer_low_c/winter_low_c; some (south India) use min_temp_c/max_temp_c.
+  const weather = (card?.weather_night ?? {}) as {
+    summer_low_c?: number; winter_low_c?: number;
+    summer_high_c?: number; winter_high_c?: number;
+    min_temp_c?: number; max_temp_c?: number;
+  };
   const isSummer = monthNum >= 4 && monthNum <= 9;
-  const lowTemp = isSummer ? weather.summer_low_c : weather.winter_low_c;
-  const tempStr = typeof lowTemp === "number" ? `${lowTemp}°C nights` : "";
+  const lowTemp = isSummer ? weather.summer_low_c ?? weather.min_temp_c : weather.winter_low_c ?? weather.min_temp_c;
+  const highTemp = isSummer ? weather.summer_high_c ?? weather.max_temp_c : weather.winter_high_c ?? weather.max_temp_c;
 
-  // Short verdict for CTR (titles must stay under ~60 chars for Google)
+  // Try to extract a day-temp range straight from the editorial note (e.g. "Extreme 38-46°C.").
+  // The note is hand-written per dest×month and usually leads with the temp story —
+  // pulling that range gives us a more honest signal than the JSONB extremes.
+  const noteRangeMatch = note.match(/(-?\d{1,2})\s*(?:to|-|–|—)\s*(-?\d{1,2})\s*°?\s*[Cc]/);
+  const noteLow = noteRangeMatch ? Number(noteRangeMatch[1]) : null;
+  const noteHigh = noteRangeMatch ? Number(noteRangeMatch[2]) : null;
+
+  const rangeStr =
+    typeof noteLow === "number" && typeof noteHigh === "number"
+      ? `${noteLow}–${noteHigh}°C`
+      : typeof lowTemp === "number" && typeof highTemp === "number"
+      ? `${lowTemp}–${highTemp}°C`
+      : typeof lowTemp === "number"
+      ? `${lowTemp}°C nights`
+      : "";
+
+  // Verdict label — front-loads the answer for "is it worth going" intent.
+  const verdictLabel = verdict === "go" ? "Go"
+    : verdict === "skip" ? "Skip"
+    : verdict === "wait" ? "Wait"
+    : "";
+
+  // Title byline — used in OG cards (longer, brand-anchored).
   const scoreVerdict = score >= 5 ? "Perfect Time to Visit"
     : score >= 4 ? "Great Time to Visit"
     : score >= 3 ? "Is It Worth Visiting?"
@@ -83,31 +111,46 @@ export async function generateMetadata({
     : "Travel Guide";
 
   // Title optimised for GSC-flagged zero-click queries (2026-04-24 audit):
-  // users search "<dest> weather in <month>" and "<dest> temperature in <month>",
-  // so "Weather" leads + temp range sits in subtitle. Year token signals
-  // freshness and captures "is it worth going now" intent. Stays ≤60 chars
-  // with a fallback to a shorter standard variant for long destinations.
+  // users search "<dest> weather in <month>" and "<dest> temperature in <month>".
+  // 2026-04-27 update: prefer day-temp range over "X°C nights" — better matches
+  // searcher's actual question and uses the editorial note's already-curated range.
   const year = new Date().getFullYear();
-  const withTemp = tempStr
-    ? `${name} Weather in ${monthName} ${year} — ${tempStr}`
+  const withTemp = rangeStr
+    ? `${name} Weather in ${monthName} ${year} — ${rangeStr}`
     : null;
   const standard = `${name} Weather in ${monthName} ${year}: Temperature & Guide`;
   const title = withTemp && withTemp.length <= 60 ? withTemp : standard;
 
   const ogTitle = `${name} in ${monthName} — ${scoreVerdict} | NakshIQ`;
 
-  // Description: lead with real numeric temp (matches "weather in X" query
-  // intent), then a destination-specific line, then score + state. Drops the
-  // generic "kids safety, road conditions" listicle that was there before —
-  // GSC CTR audit 2026-04-24 flagged generic copy as under-performing at pos 7-12.
-  const descParts = [
-    typeof lowTemp === "number"
-      ? `${monthName} in ${name}: nights drop to ${lowTemp}°C.`
-      : `${monthName} in ${name}.`,
-    note || whyGo,
-    stateName ? `NakshIQ scores ${score}/5 for ${stateName}.` : `NakshIQ scores ${score}/5.`,
-  ].filter(Boolean);
-  const description = descParts.join(" ").slice(0, 160);
+  // Description: lead with name + month + year (matches "X weather in <month>" intent
+  // and signals freshness), front-load the verdict word (Skip/Go/Wait — strong CTR
+  // signal for page-2 results), include the editorial note (real opinion + temps),
+  // close with the score. 160-char ceiling, but build to <155 to avoid mid-word truncation.
+  // 2026-04-27: derived from GSC patterns showing 0% CTR at positions 7-12 — snippet
+  // copy is the bottleneck, not ranking, since editorial note already contains the answer.
+  // Cut a string at the last sentence end (or last whole word) before `max`.
+  // Avoids mid-word truncation in SERP snippets.
+  const trimToBoundary = (s: string, max: number): string => {
+    if (s.length <= max) return s.trim();
+    const slice = s.slice(0, max);
+    const lastSentence = Math.max(slice.lastIndexOf(". "), slice.lastIndexOf("? "), slice.lastIndexOf("! "));
+    if (lastSentence > max * 0.5) return slice.slice(0, lastSentence + 1).trim();
+    const lastSpace = slice.lastIndexOf(" ");
+    return (lastSpace > 0 ? slice.slice(0, lastSpace) : slice).trim();
+  };
+
+  const verdictPrefix = verdictLabel ? `${verdictLabel} — ` : "";
+  const descLead = `${name} in ${monthName} ${year}:`;
+  const descClose = stateName
+    ? `${verdictPrefix}NakshIQ scores ${score}/5 (${stateName}).`
+    : `${verdictPrefix}NakshIQ scores ${score}/5.`;
+  // Budget = 155 total - lead - close - 2 spaces. Trim editorial note to fit cleanly.
+  const noteBudget = Math.max(40, 155 - descLead.length - descClose.length - 2);
+  const noteSource = note || whyGo;
+  const descBody = noteSource ? trimToBoundary(noteSource, noteBudget) : "";
+  const descBodyClean = descBody ? (/[.!?]$/.test(descBody) ? descBody : `${descBody}.`) : "";
+  const description = [descLead, descBodyClean, descClose].filter(Boolean).join(" ").trim();
   const canonicalUrl = `https://www.nakshiq.com/${locale}/destination/${id}/${month}`;
   const imageUrl = `https://www.nakshiq.com/api/og?dest=${encodeURIComponent(name)}&month=${monthName}&score=${score}&note=${encodeURIComponent(note?.substring(0, 80) || '')}`;
 
@@ -314,7 +357,9 @@ export default async function DestinationMonthPage({
     ],
   };
 
-  // Schema.org JSON-LD — FAQPage (month-specific, expanded to 6 questions)
+  // Schema.org JSON-LD — FAQPage (month-specific, expanded to 7 questions).
+  // 2026-04-27: split "weather" and "temperature" questions to double-target
+  // the GSC patterns "<dest> weather in <month>" + "<dest> temperature in <month>".
   const kf = Array.isArray(destination.kids_friendly) ? destination.kids_friendly[0] : destination.kids_friendly;
   const cc = Array.isArray(destination.confidence_cards) ? destination.confidence_cards[0] : destination.confidence_cards;
   const bestMonthsArr: number[] = (destination as any).best_months ?? [];
@@ -322,6 +367,12 @@ export default async function DestinationMonthPage({
     .map((m: number) => ["", "January","February","March","April","May","June","July","August","September","October","November","December"][m])
     .filter(Boolean)
     .join(", ");
+
+  // Extract day-temp range from the editorial note (e.g., "Extreme 38-46°C.").
+  // Hand-written notes already lead with the temp story per dest×month.
+  const faqNote = (currentMonth?.note ?? "").toString();
+  const faqRangeMatch = faqNote.match(/(-?\d{1,2})\s*(?:to|-|–|—)\s*(-?\d{1,2})\s*°?\s*[Cc]/);
+  const faqRangeStr = faqRangeMatch ? `${faqRangeMatch[1]}–${faqRangeMatch[2]}°C` : "";
 
   const faqEntries: Array<{ name: string; text: string }> = [];
 
@@ -344,9 +395,19 @@ export default async function DestinationMonthPage({
     });
   }
 
+  // Temperature Q — explicit numeric answer for the "temperature in X in Y" pattern.
+  if (faqRangeStr) {
+    faqEntries.push({
+      name: `What is the temperature in ${destination.name} in ${monthName}?`,
+      text: `${destination.name} sees ${faqRangeStr} in ${monthName}. ${faqNote}`,
+    });
+  }
+
   faqEntries.push({
     name: `What is the weather like in ${destination.name} in ${monthName}?`,
-    text: currentMonth?.note || currentMonth?.why_go || `Check the ${destination.name} page on NakshIQ for detailed monthly weather data including temperature range, precipitation, and season-specific warnings.`,
+    text: faqRangeStr
+      ? `${destination.name} weather in ${monthName}: ${faqRangeStr}. ${faqNote || currentMonth?.why_go || ""}`.trim()
+      : currentMonth?.note || currentMonth?.why_go || `Check the ${destination.name} page on NakshIQ for detailed monthly weather data including temperature range, precipitation, and season-specific warnings.`,
   });
 
   if (kf) {

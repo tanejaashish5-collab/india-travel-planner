@@ -5,8 +5,11 @@
 //      permits, contact, arrival, methodology), /offline fallback page, HTML network-first with
 //      offline HTML fallback, API GETs cached for read-after-signal-drops (POST/PUT/DELETE still skip),
 //      message handler for SKIP_WAITING (update prompts from UI).
+// v30: 2026-04-27 PWA drift fix — added Sprint-4/9/14 high-traffic routes to precache
+//      (corrections, press, india-vs, cost-index, weekend-from) so they're available on
+//      first offline visit instead of after second navigation.
 
-const CACHE_VERSION = "nakshiq-v29";
+const CACHE_VERSION = "nakshiq-v30";
 const STATIC_CACHE = `${CACHE_VERSION}-static`;
 const IMAGE_CACHE = `${CACHE_VERSION}-images`;
 const DATA_CACHE = `${CACHE_VERSION}-data`;
@@ -35,6 +38,11 @@ const PRECACHE_ROUTES = [
   "/en/contact",
   "/en/arrival",
   "/en/methodology",
+  "/en/corrections",
+  "/en/press",
+  "/en/india-vs",
+  "/en/cost-index",
+  "/en/weekend-from",
   "/hi",
   "/hi/sos",
   "/hi/saved",
