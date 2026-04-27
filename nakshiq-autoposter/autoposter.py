@@ -3472,6 +3472,20 @@ POMELLI_CAMPAIGN_ORDER = [
     "uttarakhand", "punjab", "mp", "karnataka", "delhi", "odisha", "sikkim",
     "jk", "assam", "as", "bihar", "chhattisgarh", "northeast",
     "maharashtra", "mh", "wb", "up", "ap", "andhra", "jharkhand", "guj",
+    # ── May 2026 campaigns (27) — seasonal + monsoon prep ──────────────
+    "may_heat_trap", "may_suitability_audit", "may_the_may_suitability_audit",
+    "may_monsoon_myths_reality", "may_verified_safe_monsoon_corridors",
+    "may_june_s_landslide_hazard_map", "may_the_june_drainage_map",
+    "may_luxury_stays_monsoon_prices", "may_safe_corridors_for_summer_pilgrims",
+    "may_the_may_heat_exhaustion_map", "may_the_28_state_water_safety_map",
+    "may_oxygen_gaps_at_17_582_feet", "may_spiti_s_400km_of_dead_spots",
+    "may_4g_dead_zone_map", "may_pediatric_icu_distance_verified",
+    "may_the_72_hour_permit_backlog", "may_midnight_arrival_read_this_first",
+    "may_the_senior_friendly_circuit", "may_travel_guides_without_the_filters",
+    "may_the_andhra_temple_food_audit", "may_17_stepwells_the_audit",
+    "may_bengal_s_30_heritage_rail_audits", "may_gokarna_s_4_hidden_riptides",
+    "may_mangalore_s_may_surf_data", "may_the_murdeshwar_cliff_audit",
+    "may_6_people_per_square_meter", "may_travel_math_solved",
     # ── Catchall ─────────────────────────────────────────────────────────
     "brand_authority",
 ]
