@@ -27,8 +27,8 @@
     "px_humanstudioedm-cyberpunk-techno-510219"
   ],
   "posted_today": {
-    "PdMu0": "2026-04-26",
-    "m8EAd": "2026-04-26",
+    "PdMu0": "2026-04-27",
+    "m8EAd": "2026-04-27",
     "m8EAd_reel": "2026-04-27",
     "PdMu0_reel": "2026-04-27",
     "4QL0i_reel": "2026-04-19",
@@ -42,8 +42,8 @@
     "jUmP2_yt_short": "2026-04-20",
     "jUmP2_yt_short_count": 1,
     "jUmP2": "2026-04-20",
-    "m8EAd_moat": "2026-04-24",
-    "PdMu0_moat": "2026-04-24",
+    "m8EAd_moat": "2026-04-27",
+    "PdMu0_moat": "2026-04-27",
     "m8EAd_infographic": "2026-04-24",
     "PdMu0_infographic": "2026-04-24",
     "jUmP2_reel": "2026-04-20",
@@ -62,9 +62,10 @@
     "5bWND_yt_short": "2026-04-25",
     "5bWND_yt_short_count": 1,
     "m8EAd_reel_map": "2026-04-26",
-    "PdMu0_reel_map": "2026-04-26"
+    "PdMu0_reel_map": "2026-04-26",
+    "PvYR0": "2026-04-27"
   },
-  "last_sync": "2026-04-27T07:14:45.904313+00:00",
+  "last_sync": "2026-04-27T07:55:07.147038+00:00",
   "posted_destinations": [
     {
       "destination_id": "pahalgam",
@@ -357,6 +358,46 @@
     {
       "destination_id": "shimla",
       "date": "2026-04-26"
+    },
+    {
+      "destination_id": "nainital",
+      "date": "2026-04-27"
+    },
+    {
+      "destination_id": "reel_destination_reveal_reel_destination_reveal_verinag",
+      "date": "2026-04-27"
+    },
+    {
+      "destination_id": "reel_seasonal_shift_reel_seasonal_shift_kokernag",
+      "date": "2026-04-27"
+    },
+    {
+      "destination_id": "reel_map_route_trace_reel_map_route_trace_rj",
+      "date": "2026-04-27"
+    },
+    {
+      "destination_id": "yt_short_listicle_yt_short_listicle_2026-04-27",
+      "date": "2026-04-27"
+    },
+    {
+      "destination_id": "yt_short_mini_guide_yt_short_mini_guide_2026-04-27",
+      "date": "2026-04-27"
+    },
+    {
+      "destination_id": "mukteshwar",
+      "date": "2026-04-27"
+    },
+    {
+      "destination_id": "data_carousel_01_title",
+      "date": "2026-04-27"
+    },
+    {
+      "destination_id": "verinag",
+      "date": "2026-04-27"
+    },
+    {
+      "destination_id": "pahalgam",
+      "date": "2026-04-27"
     }
   ],
   "posted_formats": {
@@ -370,7 +411,8 @@
       "score_card",
       "score_card",
       "data_carousel",
-      "monthly_forecast"
+      "monthly_forecast",
+      "methodology_crowds"
     ],
     "PdMu0": [
       "monthly_forecast",
@@ -385,7 +427,8 @@
       "score_card",
       "score_card",
       "data_carousel",
-      "monthly_forecast"
+      "monthly_forecast",
+      "methodology_crowds"
     ]
   },
   "post_log": [
@@ -686,6 +729,26 @@
       "destination": "kokernag",
       "format": "monthly_forecast",
       "has_media": true
+    },
+    {
+      "timestamp": "2026-04-27T07:56:04.806026+00:00",
+      "date": "2026-04-27",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "yRrzj",
+      "destination": "pahalgam",
+      "format": "methodology_crowds",
+      "has_media": true
+    },
+    {
+      "timestamp": "2026-04-27T07:56:21.669106+00:00",
+      "date": "2026-04-27",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "g9Pbx",
+      "destination": "pahalgam",
+      "format": "methodology_crowds",
+      "has_media": true
     }
   ],
   "theme_usage": {
@@ -779,6 +842,9 @@
       ],
       "shimla": [
         "2026-04-26"
+      ],
+      "pahalgam": [
+        "2026-04-27"
       ]
     },
     "reel_formats": {
@@ -906,6 +972,9 @@
       ],
       "methodology_altitude": [
         "2026-04-24"
+      ],
+      "methodology_crowds": [
+        "2026-04-27"
       ]
     },
     "audience_tags": {
