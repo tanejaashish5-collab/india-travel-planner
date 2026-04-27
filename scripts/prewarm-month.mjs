@@ -11,6 +11,7 @@
  *   node scripts/prewarm-month.mjs --month june              # default: june, all 488 dests, both locales
  *   node scripts/prewarm-month.mjs --month july --locale en  # en only
  *   node scripts/prewarm-month.mjs --month june --top 50     # top 50 by June score (>= 4 = recommended)
+ *   node scripts/prewarm-month.mjs --month may --flush       # ISR-flush before warm (use after metadata changes)
  *   node scripts/prewarm-month.mjs --month june --dry-run    # print URLs only
  */
 import { createClient } from "@supabase/supabase-js";
@@ -30,6 +31,7 @@ const MONTH = (argVal("month", "june") || "june").toLowerCase();
 const LOCALE = argVal("locale", null); // null = both
 const TOP = argVal("top", null);
 const DRY = argFlag("dry-run");
+const FLUSH = argFlag("flush");
 const CONCURRENCY = Number(argVal("concurrency", "5"));
 
 const MONTHS = ["january","february","march","april","may","june","july","august","september","october","november","december"];
@@ -89,10 +91,18 @@ const startedAt = Date.now();
 // Parallel batches with concurrency limit.
 async function warm(url) {
   try {
+    // Optional ISR flush before re-fetch — used after metadata changes ship,
+    // so cached HTML with old snippets is invalidated. Path = URL minus origin.
+    if (FLUSH) {
+      const path = url.replace(BASE, "");
+      await fetch(`${BASE}/api/admin/revalidate?path=${encodeURIComponent(path)}`, {
+        method: "POST",
+        headers: { authorization: "Bearer NAKSHIQ" },
+      }).catch(() => null);
+    }
     const res = await fetch(url, {
       method: "GET",
       headers: {
-        // Identify ourselves so logs are clean (matches our middleware bot list = no, intentionally not).
         "user-agent": "NakshIQ-PreWarmer/1.0",
         "accept": "text/html",
       },
