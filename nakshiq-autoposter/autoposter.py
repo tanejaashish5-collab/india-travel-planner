@@ -818,8 +818,8 @@ def copy_score_card(dest: dict, platform: str) -> str:
     url   = dest_url(dest, "social", "post", "score-card")
     stars = "★" * score + "☆" * (5 - score)
     mon   = month_name().upper()
-    tags  = hashtag(name, state, "IndiaTravelData",
-                    "DataDrivenTravel", f"{month_name()}Travel")
+    tags  = hashtag(name, state, f"{month_name()}Travel",
+                    f"{score}outOf5", "NakshIQ")
     if platform == "facebook":
         return (
             f"{name.upper()} IN {mon}: {score}/5  {stars}\n\n"
@@ -854,8 +854,8 @@ def copy_reality_check(destinations: list, platform: str,
     a, b = pair
     note = (b.get("note") or "").strip()
     url  = dest_url(b, "social", "post", "reality-check")
-    tags = hashtag("RealityCheck", b["name"], b["state"],
-                   "SkipTheCrowd", f"{month_name()}Travel")
+    tags = hashtag(b["name"], b["state"], "RealityCheck",
+                   f"{month_name()}Travel", "NakshIQ")
     if platform == "facebook":
         body = (
             f"REALITY CHECK — {month_name().upper()} {date.today().year}\n\n"
@@ -884,8 +884,8 @@ def copy_data_carousel(destinations: list, platform: str) -> str:
         f"   → {(d['tagline'] or '')[:72]}..."
         for d in top5
     )
-    tags = hashtag("IndiaTravelData", f"{month_name()}Travel",
-                   "DataDrivenTravel", "5outof5", "IndiaTravel")
+    tags = hashtag(f"{month_name()}Top5", "ScoreData",
+                   f"{month_name()}Travel", "BestTimeToVisit", "NakshIQ")
     explore_url = utm("https://nakshiq.com/en/explore", "social", "post", "carousel")
     if platform == "facebook":
         return (
@@ -907,8 +907,8 @@ def copy_data_carousel(destinations: list, platform: str) -> str:
 def copy_tourist_trap(trap: dict, platform: str) -> str:
     name = trap.get("name", "This destination")
     desc = trap.get("description", "")
-    tags = hashtag("TouristTrap", "IndiaTravelData",
-                   "TravelSmart", f"{month_name()}Travel", "IndiaTravel")
+    tags = hashtag("TouristTrap", name.replace(" ", ""),
+                   f"{month_name()}Avoid", "SkipThis", "NakshIQ")
     return (
         f"{'TOURIST TRAP' if platform == 'facebook' else '🚩 TOURIST TRAP'} — {name.upper()}\n\n"
         f"{desc}\n\n"
@@ -919,8 +919,8 @@ def copy_tourist_trap(trap: dict, platform: str) -> str:
 def copy_infrastructure_truth(dest: dict, platform: str) -> str:
     note = (dest.get("note") or dest.get("tagline") or "").strip()
     url  = dest_url(dest, "social", "post", "score-card")
-    tags = hashtag("InfrastructureTruth", dest["name"], "RoadTrip",
-                   dest["state"], f"{month_name()}Travel")
+    tags = hashtag(dest["name"].replace(" ", ""), dest["state"].replace(" ", ""),
+                   "RoadConditions", "InfraAudit", "NakshIQ")
     return (
         f"INFRASTRUCTURE REALITY — {dest['name'].upper()}\n\n"
         f"↑ {dest['elevation_m']:,}m · {dest['state']}\n\n{note}\n\n"
@@ -935,8 +935,8 @@ def copy_monthly_forecast(destinations: list, platform: str) -> str:
         for d in top3
     )
     explore_url = utm("https://nakshiq.com/en/explore", "social", "post", "carousel")
-    tags = hashtag(f"{month_name()}Forecast", "IndiaTravelData",
-                   "DataDrivenTravel", f"{month_name()}Travel", "IndiaTravel")
+    tags = hashtag(f"{month_name()}Forecast", "MonthlyScores",
+                   "BestTimeToVisit", f"{month_name()}Travel", "NakshIQ")
     return (
         f"📊 {month_name().upper()} FORECAST — NakshIQ Monthly Update\n\n"
         f"{TOTAL_DESTINATIONS} destinations re-scored. This month's top 5/5 picks:\n\n{lines}\n\n"
@@ -965,7 +965,7 @@ def copy_collection_spotlight(collection: dict, dest_map: dict, platform: str) -
             top3_names.append(did.replace("-", " ").title())
     top3_line  = " · ".join(top3_names) if top3_names else f"{count} destinations"
     coll_tags  = [t for t in (collection.get("tags") or [])[:3] if t]
-    tags       = hashtag(*coll_tags[:3], "IndiaTravelData", "DataDrivenTravel")
+    tags       = hashtag(*coll_tags[:3], f"{month_name()}Travel", "NakshIQ")
     if platform == "facebook":
         return (
             f"{name.upper()}\n\n"
@@ -992,8 +992,8 @@ def copy_festival_alert(festival: dict, dest_map: dict, platform: str) -> str:
     deep_url  = utm((dest_map[did]["url"] if did in dest_map else
                  (festival.get("url") or "https://nakshiq.com/en/festivals")).strip(),
                  "social", "post", "festival")
-    tags = hashtag(name, dest_name,
-                   "IndiaFestivals", "IndiaTravelData", f"{month_name()}Travel")
+    tags = hashtag(name.replace(" ", ""), dest_name.replace(" ", ""),
+                   "FestivalAlert", f"{month_name()}Festival", "NakshIQ")
     emoji = "🎪" if platform == "facebook" else "🪔"
     return (
         f"{emoji} {name.upper()} — {month_name().upper()}\n\n"
@@ -1019,8 +1019,8 @@ def copy_kids_intel(dest: dict, platform: str) -> str:
         verdict = "Moderate difficulty. Older kids (10+) do fine."
     else:
         verdict = "Challenging terrain + altitude. Best for teens or older."
-    tags = hashtag("FamilyTravel", "IndiaWithKids",
-                   name, state, f"{month_name()}Travel")
+    tags = hashtag(name, state, "TravelWithKids",
+                   "FamilyTrip", f"{month_name()}Travel")
     return (
         f"KIDS TRAVEL INTEL — {name.upper()}\n\n"
         f"👧 {verdict}\n"
@@ -1046,8 +1046,8 @@ def copy_seasonal_shift(dest: dict, next_month: str, next_score: int,
         stars_now  = "★" * score + "☆" * (5 - score)
         stars_next = "★" * next_score + "☆" * (5 - next_score)
         url = dest_url(dest, "social", "post", "seasonal-shift")
-        tags = hashtag(name, state, "GoNow", "SeasonalTravel",
-                       f"{month_name()}Travel")
+        tags = hashtag(name, state, "GoNow",
+                       f"{month_name()}Travel", "ScoreDrop")
         if platform == "facebook":
             return (
                 f"⏳ {name.upper()} — TIMING IS EVERYTHING\n\n"
@@ -1081,7 +1081,7 @@ def copy_elevation_face_off(low_dest: dict, high_dest: dict,
         lo_url = dest_url(low_dest, "social", "post", "elevation-face-off")
         hi_url = dest_url(high_dest, "social", "post", "elevation-face-off")
         tags = hashtag(lo_name, hi_name, "ElevationData",
-                       "IndiaTravel", f"{month_name()}Travel")
+                       f"{month_name()}Travel", "BeachVsMountain")
         if platform == "facebook":
             return (
                 f"SEA LEVEL vs SKY LEVEL — both score high this {month_name()}\n\n"
@@ -1115,7 +1115,7 @@ def copy_state_showdown(dest_a: dict, dest_b: dict, platform: str) -> str:
         url_a = dest_url(dest_a, "social", "post", "state-showdown")
         url_b = dest_url(dest_b, "social", "post", "state-showdown")
         tags = hashtag(a_state, b_state, "StateVsState",
-                       "IndiaTravel", f"{month_name()}Travel")
+                       f"{month_name()}Travel", "NakshIQ")
         if platform == "facebook":
             return (
                 f"{a_state.upper()} vs {b_state.upper()} — {month_name()} data\n\n"
@@ -1148,7 +1148,7 @@ def copy_difficulty_spectrum(easy_dest: dict, hard_dest: dict,
         url_e = dest_url(easy_dest, "social", "post", "difficulty-spectrum")
         url_h = dest_url(hard_dest, "social", "post", "difficulty-spectrum")
         tags = hashtag(e_name, h_name, "EasyVsHard",
-                       "IndiaTravel", f"{month_name()}Travel")
+                       f"{month_name()}Travel", "DifficultyLevel")
         if platform == "facebook":
             return (
                 f"EASY vs HARD — both score high this {month_name()}\n\n"
@@ -1184,7 +1184,7 @@ def copy_underdog_spotlight(dest: dict, platform: str) -> str:
         url   = dest_url(dest, "social", "post", "underdog")
         stars = "★" * score + "☆" * (5 - score)
         tags  = hashtag(name, state, "HiddenGem",
-                        "IndiaTravel", f"{month_name()}Travel")
+                        f"{month_name()}Travel", "Underdog")
         if platform == "facebook":
             return (
                 f"UNDERDOG ALERT: {name.upper()}\n\n"
@@ -1219,7 +1219,7 @@ def copy_this_month_only(dest: dict, prev_score: int, next_score: int,
         state = dest["state"]
         url   = dest_url(dest, "social", "post", "this-month-only")
         tags  = hashtag(name, state, "NarrowWindow",
-                        "GoNow", f"{month_name()}Travel")
+                        f"{month_name()}Only", "GoNow")
         if platform == "facebook":
             return (
                 f"🎯 {name.upper()} — THIS MONTH ONLY\n\n"
@@ -1258,8 +1258,8 @@ def copy_adventure_pick(dest: dict, platform: str) -> str:
         tag   = dest.get("tagline", "")
         url   = dest_url(dest, "social", "post", "adventure")
         stars = "★" * score + "☆" * (5 - score)
-        tags  = hashtag(name, state, "Adventure",
-                        "HighAltitude", f"{month_name()}Travel")
+        tags  = hashtag(name, state, "AdventurePick",
+                        f"{elev}m", f"{month_name()}Trek")
         if platform == "facebook":
             return (
                 f"🧗 ADVENTURE PICK: {name.upper()}\n\n"
@@ -1297,7 +1297,7 @@ def copy_weekend_escape(dest: dict, platform: str) -> str:
         url   = dest_url(dest, "social", "post", "weekend-escape")
         stars = "★" * score + "☆" * (5 - score)
         tags  = hashtag(name, state, "WeekendEscape",
-                        "EasyTrip", f"{month_name()}Travel")
+                        f"{month_name()}Getaway", "48Hours")
 
         # Build a destination-specific detail line from note/tagline
         detail = ""
@@ -1376,16 +1376,16 @@ def copy_methodology(dimension: str, platform: str) -> str:
             f"{c['closing']}\n\n"
             f"Full methodology: {utm('https://nakshiq.com/methodology', 'social', 'post', 'methodology')}\n\n"
             f"{TOTAL_DESTINATIONS} destinations. Scored monthly. Zero paid placements.\n\n"
-            + hashtag("Methodology", "IndiaTravelData",
-                      "DataDrivenTravel", "IndiaTravel", "TravelIndia")
+            + hashtag("Methodology", "HowWeScore",
+                      "TransparentData", "ScoringMethod", "NakshIQ")
         ).strip()
     return (
         f"{c['title']}\n\n"
         f"{signals}\n\n"
         f"{c['closing']}\n\n"
         f"↓ Full methodology → {utm('https://nakshiq.com/methodology', 'social', 'post', 'methodology')}\n\n"
-        + hashtag("Methodology", "IndiaTravelData",
-                  "DataDrivenTravel", "IndiaTravel", "TravelIndia")
+        + hashtag("Methodology", "HowWeScore",
+                  "TransparentData", "ScoringMethod", "NakshIQ")
     ).strip()
 
 
@@ -1422,8 +1422,8 @@ def copy_skip_list(dest: dict, platform: str,
             f"Other sites are paid to say every place is worth visiting.\n"
             f"We're paid by nobody.\n\n"
             f"Better alternatives → {utm('https://nakshiq.com/en/tourist-traps', 'social', 'post', 'skip-list')}\n\n"
-            + hashtag("SkipList", "TravelHonesty",
-                      "NoPaidPlacements", "IndiaTravel", f"{month_name()}Travel")
+            + hashtag("SkipList", name.replace(" ", ""),
+                      f"{month_name()}Avoid", "HonestReview", "NakshIQ")
         ).strip()
     return (
         f"{header}\n\n"
@@ -1431,7 +1431,8 @@ def copy_skip_list(dest: dict, platform: str,
         f"If we won't tell you when not to go, nobody will.\n"
         f"Zero paid placements. Ever.\n\n"
         f"↓ Better picks → {url}\n\n"
-        + hashtag("SkipList", "TravelHonesty", "IndiaTravel", f"{month_name()}Travel")
+        + hashtag("SkipList", name.replace(" ", ""),
+                  f"{month_name()}Avoid", "HonestReview", "NakshIQ")
     ).strip()
 
 
@@ -1454,7 +1455,7 @@ def copy_chinese_wall(platform: str) -> str:
             f"Our editorial policy is published: {utm('https://nakshiq.com/editorial-policy', 'social', 'post', 'chinese-wall')}\n\n"
             f"This isn't marketing. It's the reason NakshIQ exists.\n\n"
             + hashtag("EditorialIntegrity", "NoPaidPlacements",
-                      "DataDrivenTravel", "IndiaTravel", "TravelIndia")
+                      "ZeroSponsors", "TrustBrand", "NakshIQ")
         ).strip()
     return (
         f"THE CHINESE WALL\n\n"
@@ -1468,7 +1469,7 @@ def copy_chinese_wall(platform: str) -> str:
         f"{TOTAL_DESTINATIONS} destinations scored.\n\n"
         f"Editorial policy → {utm('https://nakshiq.com/editorial-policy', 'social', 'post', 'chinese-wall')}\n\n"
         + hashtag("EditorialIntegrity", "NoPaidPlacements",
-                  "DataDrivenTravel", "IndiaTravel")
+                  "ZeroSponsors", "TrustBrand", "NakshIQ")
     ).strip()
 
 
@@ -1491,8 +1492,8 @@ def copy_four_questions(platform: str) -> str:
             f"{TOTAL_DESTINATIONS} destinations × 12 months × 6 dimensions = proprietary scores.\n"
             f"No advertiser paid for any of them.\n\n"
             f"{utm('https://nakshiq.com/en/explore', 'social', 'post', 'compare')}\n\n"
-            + hashtag("DataDrivenTravel", "IndiaTravel",
-                      "TravelIndia", "NoPaidPlacements", "TravelSmart")
+            + hashtag("4Questions", "WhenToGo",
+                      "TravelSafety", "FamilyTravel", "NakshIQ")
         ).strip()
     return (
         f"THE 4 QUESTIONS\n"
@@ -1505,7 +1506,8 @@ def copy_four_questions(platform: str) -> str:
         f"We don't compete there.\n\n"
         f"But 1-4 — {TOTAL_DESTINATIONS} destinations deep.\n\n"
         f"↓ {utm('https://nakshiq.com/en/explore', 'social', 'post', 'compare')}\n\n"
-        + hashtag("DataDrivenTravel", "IndiaTravel", "TravelIndia")
+        + hashtag("4Questions", "WhenToGo", "TravelSafety",
+                  "FamilyTravel", "NakshIQ")
     ).strip()
 
 
@@ -1534,7 +1536,7 @@ def copy_data_provenance(dest: dict, platform: str) -> str:
             f"discount for a glowing review. No tourism board subsidy.\n\n"
             f"{name} detail → {url}\n\n"
             + hashtag("DataProvenance", "HowWeScore",
-                      name, state, "IndiaTravel")
+                      name.replace(" ", ""), state.replace(" ", ""), "NakshIQ")
         ).strip()
     return (
         f"WHY {name.upper()}: {score}/5\n"
@@ -1571,8 +1573,8 @@ def copy_same_place_12_months(dest: dict, monthly_scores: dict, platform: str) -
             f"{lines}\n\n"
             f"NakshIQ scores every destination monthly. No other site does.\n\n"
             f"Full monthly data → {url}\n\n"
-            + hashtag("MonthlyScores", "IndiaTravelData",
-                      "DataDrivenTravel", name, "IndiaTravel")
+            + hashtag("MonthlyScores", name.replace(" ", ""),
+                      "12Months", "BestTimeToVisit", "NakshIQ")
         ).strip()
     return (
         f"{name.upper()}\n"
@@ -1581,7 +1583,8 @@ def copy_same_place_12_months(dest: dict, monthly_scores: dict, platform: str) -
         f"'Best time to visit' isn't one query.\n"
         f"We score every destination monthly.\n\n"
         f"↓ {url}\n\n"
-        + hashtag("MonthlyScores", name, "IndiaTravelData")
+        + hashtag("MonthlyScores", name.replace(" ", ""),
+                  "12Months", "BestTimeToVisit", "NakshIQ")
     ).strip()
 
 
@@ -1617,8 +1620,8 @@ def copy_route_spotlight(route: dict, dest_map: dict, platform: str) -> str:
     if bike_ok:  badges.append("Bike-friendly")
     badge_line = " · ".join(badges)
 
-    tags = hashtag("RoadTrip", name, "IndiaTravel",
-                   "DataDrivenTravel", f"{days}DayTrip")
+    tags = hashtag("RoadTrip", name.replace(" ", "").replace("–", ""),
+                   f"{days}DayTrip", difficulty.replace(" ", ""), "NakshIQ")
 
     if platform == "facebook":
         return (
@@ -1650,7 +1653,8 @@ def copy_blog_promo(article: dict, platform: str) -> str:
     url      = utm((article.get("url") or
                 f"https://nakshiq.com/en/blog/{article.get('slug','')}").strip(),
                 "social", "post", "article")
-    tags = hashtag(cat_tag or "IndiaTravel", "IndiaTravelData", "DataDrivenTravel")
+    tags = hashtag(cat_tag or "TravelRead", f"{minutes}MinRead",
+                   "NakshIQBlog", "TravelIntel", "NakshIQ")
     return (
         f"NEW on NakshIQ: {title}\n\n"
         f"{excerpt}\n\n"
@@ -2957,14 +2961,14 @@ def _tourist_map_caption(state_name: str, tagline: str, landmarks: list,
     )
 
     # Platform-specific hashtags (max 5)
+    st = state_name.replace(' ', '')
     if platform in ("instagram", "facebook"):
         caption += (
-            f"#{state_name.replace(' ', '')} "
-            f"#TouristMap #TravelIndia #IncredibleIndia "
-            f"#{state_name.replace(' ', '')}Tourism"
+            f"#{st} #{st}Tourism #TouristMap "
+            f"#{month_name()}Travel #NakshIQ"
         )
     elif platform == "linkedin":
-        caption += "#TravelTech #IndiaTravel #TouristMap"
+        caption += f"#{st} #TravelTech #TouristMap #NakshIQ #{month_name()}Travel"
 
     return caption
 
@@ -3166,94 +3170,94 @@ CANVA_CATEGORY_ORDER = [
 CANVA_CAPTION_TEMPLATES = {
     "mood_destination": (
         "📍 {subject}\n\n"
-        "Some places don't need words. They need data.\n"
-        "NakshIQ scores every Indian destination, every month — so you know "
-        "exactly when to go.\n\n"
-        "Save this. Plan smarter.\n\n"
-        "—\n"
-        "Data, not opinions.\n\n"
+        "This destination is scored 1-5 every month based on weather, "
+        "road access, crowd density, infrastructure, and safety.\n"
+        "Right now? Check the score before you book.\n\n"
+        "→ nakshiq.com?utm_source=ig&utm_medium=post&utm_campaign=canva-visual\n\n"
         "{hashtags}"
     ),
     "color_palette": (
         "🎨 {subject}\n\n"
-        "Every destination has a color story. This one speaks for itself.\n\n"
-        "NakshIQ doesn't just tell you where to go — we tell you when "
-        "the colors are at their best.\n\n"
-        "—\n"
-        "Travel with IQ.\n\n"
+        "These colors peak in a specific 6-week window. "
+        "NakshIQ tracks exactly when — because 3 weeks late means brown, not gold.\n\n"
+        "→ nakshiq.com?utm_source=ig&utm_medium=post&utm_campaign=canva-visual\n\n"
         "{hashtags}"
     ),
     "this_or_that": (
         "🤔 {comparison_a} or {comparison_b}?\n\n"
-        "Drop your pick in the comments. No wrong answers — "
-        "but NakshIQ data says one scores higher this month 👀\n\n"
-        "—\n"
-        "https://nakshiq.com?utm_source=social&utm_medium=post&utm_campaign=canva-visual — scores, not opinions.\n\n"
+        "One scores higher this month. One has better roads. "
+        "One costs 40% less. Drop your pick — we'll drop the data.\n\n"
+        "→ nakshiq.com?utm_source=ig&utm_medium=post&utm_campaign=canva-visual\n\n"
         "{hashtags}"
     ),
     "collection": (
         "📌 {subject}\n\n"
-        "Not a random list. Every spot in this collection is scored and "
-        "verified — real data, real traveler intel, updated monthly.\n\n"
-        "Explore the full collection on https://nakshiq.com?utm_source=social&utm_medium=post&utm_campaign=canva-visual\n\n"
-        "—\n"
-        "Travel with IQ.\n\n"
+        "Every spot in this list is scored monthly on 5 real dimensions. "
+        "Not a blogger's top 10 — a data-backed shortlist updated in real time.\n\n"
+        "→ nakshiq.com?utm_source=ig&utm_medium=post&utm_campaign=canva-visual\n\n"
         "{hashtags}"
     ),
     "activity": (
         "⛰️ {subject}\n\n"
-        "India has 460+ destinations we score monthly. Some are best "
-        "experienced with your heart racing.\n\n"
-        "Check https://nakshiq.com?utm_source=social&utm_medium=post&utm_campaign=canva-visual for the best time + safety intel before you go.\n\n"
-        "—\n"
-        "Data, not opinions.\n\n"
+        "Before you go: NakshIQ checked the road conditions, nearest hospital, "
+        "cell coverage, and crowd density at this spot. You should too.\n\n"
+        "→ nakshiq.com?utm_source=ig&utm_medium=post&utm_campaign=canva-visual\n\n"
         "{hashtags}"
     ),
     "season": (
         "🌦️ {subject}\n\n"
-        "Timing is everything. NakshIQ tracks seasonal scores for 460+ "
-        "destinations so you never visit at the wrong time.\n\n"
-        "Check your destination's score this month → https://nakshiq.com?utm_source=social&utm_medium=post&utm_campaign=canva-visual\n\n"
-        "—\n"
-        "Travel with IQ.\n\n"
+        "Wrong month = washed-out roads, 45°C heat, or surprise closures. "
+        "NakshIQ scores 491 destinations monthly so you don't learn this the hard way.\n\n"
+        "→ nakshiq.com?utm_source=ig&utm_medium=post&utm_campaign=canva-visual\n\n"
         "{hashtags}"
     ),
     "food_city": (
         "🍽️ {subject}\n\n"
-        "Forget the tourist restaurants. NakshIQ's local intel covers "
-        "the real food trail — verified, mapped, no fake reviews.\n\n"
-        "Full food guide → https://nakshiq.com?utm_source=social&utm_medium=post&utm_campaign=canva-visual\n\n"
-        "—\n"
-        "Data, not opinions.\n\n"
+        "Skip the Google Maps 4.2-star tourist traps. "
+        "NakshIQ audits local eateries with real prices, hygiene notes, and timings.\n\n"
+        "→ nakshiq.com?utm_source=ig&utm_medium=post&utm_campaign=canva-visual\n\n"
         "{hashtags}"
     ),
     "festival": (
         "🪔 {subject}\n\n"
-        "India celebrates 311+ festivals across the year. NakshIQ tracks "
-        "them all — dates, locations, what to expect, safety intel.\n\n"
-        "Plan around a festival → https://nakshiq.com?utm_source=social&utm_medium=post&utm_campaign=canva-visual\n\n"
-        "—\n"
-        "Travel with IQ.\n\n"
+        "NakshIQ tracks 325+ Indian festivals — exact dates, "
+        "which roads are open, crowd density data, and whether your carrier gets signal there.\n\n"
+        "→ nakshiq.com?utm_source=ig&utm_medium=post&utm_campaign=canva-visual\n\n"
         "{hashtags}"
     ),
 }
 
 
 def _canva_hashtags(entry: dict, platform: str) -> str:
-    """Build platform-appropriate hashtags from image metadata (max 5)."""
+    """Build platform-appropriate hashtags from image metadata (max 5).
+    Prioritises destination/topic-specific tags over generic ones."""
     tags = entry.get("tags", [])
     state = entry.get("state")
     dest = entry.get("destination")
+    category = entry.get("category", "")
 
-    base = ["IndiaTravel", "IncredibleIndia"]
-    if state:
-        base.append(state)
+    # Start with the most specific tags — destination + state + topic
+    base: list[str] = []
     if dest:
-        base.append(dest.replace("_", "").title())
+        base.append(dest.replace("_", "").replace(" ", ""))
+    if state:
+        base.append(state.replace(" ", ""))
     for t in tags[:3]:
-        clean = t.replace("_", "").title()
-        if clean not in base:
+        clean = t.replace("_", "").replace(" ", "")
+        if clean and clean not in base:
             base.append(clean)
+    # Category-specific niche tag
+    CAT_TAGS = {
+        "food": "IndiaFood", "festivals": "IndiaFestivals",
+        "activities": "IndiaAdventure", "seasons": "SeasonalTravel",
+        "mood_shots": "IndiaVibes", "collections": "TravelCollection",
+    }
+    cat_tag = CAT_TAGS.get(category)
+    if cat_tag and len(base) < 5 and cat_tag not in base:
+        base.append(cat_tag)
+    # NakshIQ branding only if room
+    if len(base) < 5 and "NakshIQ" not in base:
+        base.append("NakshIQ")
 
     return " ".join(f"#{h}" for h in base[:5])
 
@@ -3580,28 +3584,36 @@ POMELLI_FEATURE_CAPTIONS = {
 
 # Generic caption templates for region + general campaigns
 POMELLI_REGION_CAPTION = {
-    "ig": "📍 {subject}\n\n{state} — scored, mapped, and verified by NakshIQ.\nMonthly scores. Safety data. Budget reality. Infrastructure truth.\n\nTravel with data, not guesswork.\n→ nakshiq.com?utm_source=ig&utm_medium=post&utm_campaign=pomelli-visual\n\n—\nData, not opinions.\n\n{hashtags}",
-    "fb": "Planning a trip to {state}? NakshIQ has the safety data, budget reality, and infrastructure truth that blogs don't cover.\n\n{subject}\n\n→ nakshiq.com?utm_source=fb&utm_medium=post&utm_campaign=pomelli-visual",
+    "ig": "📍 {subject}\n\n{state} — every destination scored on road access, hospital distance, cell signal, crowd density, and budget.\nUpdated monthly. Not a blog post.\n\n→ nakshiq.com?utm_source=ig&utm_medium=post&utm_campaign=pomelli-visual\n\n{hashtags}",
+    "fb": "{subject}\n\nEvery {state} destination scored monthly on 5 real dimensions.\nRoad conditions. Hospital proximity. Signal coverage. The data that actually matters.\n\n→ nakshiq.com?utm_source=fb&utm_medium=post&utm_campaign=pomelli-visual",
 }
 
 POMELLI_GENERAL_CAPTION = {
-    "ig": "📊 {subject}\n\nIndia travel intelligence. Not opinions — verified data.\n480 destinations. Monthly scores. Real safety data.\n\n→ nakshiq.com?utm_source=ig&utm_medium=post&utm_campaign=pomelli-visual\n\n—\nTravel with IQ.\n\n{hashtags}",
-    "fb": "Travel blogs give you opinions. NakshIQ gives you data.\n\n{subject}\n\n480 destinations scored monthly → nakshiq.com?utm_source=fb&utm_medium=post&utm_campaign=pomelli-visual",
+    "ig": "📊 {subject}\n\n491 destinations. Scored 1-5 every month.\nWeather. Roads. Crowds. Hospitals. Cell signal.\nThe stuff travel blogs skip.\n\n→ nakshiq.com?utm_source=ig&utm_medium=post&utm_campaign=pomelli-visual\n\n{hashtags}",
+    "fb": "{subject}\n\n491 destinations scored monthly on 5 real dimensions — not vibes, not reviews, not sponsored lists.\n\nCheck the data → nakshiq.com?utm_source=fb&utm_medium=post&utm_campaign=pomelli-visual",
 }
 
 
 def _pomelli_hashtags(entry: dict, platform: str) -> str:
-    """Build platform-appropriate hashtags for a Pomelli post (max 5)."""
+    """Build platform-appropriate hashtags for a Pomelli post (max 5).
+    Prioritises niche, campaign-specific tags over generic travel tags."""
     tags = entry.get("tags", [])
     state = entry.get("state")
 
-    base = ["IndiaTravel", "DataDrivenTravel"]
-    if state:
-        base.append(state.replace(" ", ""))
+    # Start with campaign-specific tags (the most discoverable)
+    base: list[str] = []
     for t in tags:
         clean = t.replace(" ", "").replace("_", "")
-        if clean not in base:
+        if clean and clean not in base:
             base.append(clean)
+    # Add state if present and we have room
+    if state and len(base) < 5:
+        st = state.replace(" ", "")
+        if st not in base:
+            base.append(st)
+    # Only add NakshIQ branding tag if we still have room
+    if len(base) < 5 and "NakshIQ" not in base:
+        base.append("NakshIQ")
 
     # Max 5 hashtags on all platforms
     return " ".join(f"#{h}" for h in base[:5])
@@ -3855,12 +3867,17 @@ REEL_CAPTION_TEMPLATES = {
 
 
 def _reel_hashtags(dest_name: str, platform: str) -> str:
-    """Build reel-specific hashtags (max 5)."""
-    base = ["IndiaTravel", "TravelReels", "IndiaReels"]
+    """Build reel-specific hashtags (max 5).
+    Destination-first, then niche travel tags."""
+    base: list[str] = []
     if dest_name:
         clean = dest_name.replace(" ", "").replace("-", "")
         base.append(clean)
-    base.append("DataDrivenTravel")
+    base.extend(["TravelReels", f"{month_name()}Travel", "NakshIQ"])
+    if platform == "youtube":
+        base.append("Shorts")
+    else:
+        base.append("ReelsIndia")
     return " ".join(f"#{h}" for h in base[:5])
 
 
