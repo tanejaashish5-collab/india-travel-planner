@@ -1,0 +1,406 @@
+[
+  {
+    "destination_id": "shimla",
+    "name": "Indian Coffee House",
+    "area": "Mall Road",
+    "area_slug": "mall-road",
+    "cuisine": [
+      "coffee",
+      "south-indian",
+      "continental"
+    ],
+    "category": "cafe",
+    "signature_dish": "filter coffee with masala dosa",
+    "must_try": [
+      "filter coffee",
+      "masala dosa",
+      "mutton dosa",
+      "omelette",
+      "vegetable cutlet"
+    ],
+    "price_range": "₹",
+    "price_per_head_inr": "[100,250]",
+    "vegetarian": "veg-friendly",
+    "kid_friendly": true,
+    "reservation": "walk-in",
+    "dress_code": null,
+    "established_year": 1957,
+    "why_it_matters": "The Mall's worker-owned coffee co-operative since 1957 — same wooden booths, same turbaned waiters, same priced-in-another-decade menu. Nehru, Jinnah, Indira Gandhi and Hamid Karzai have all eaten here; locals still come for the dosa-and-coffee breakfast.",
+    "insider_tip": "Order a half-set of mutton dosa with filter coffee — it's the dish staff recommend over the better-known masala dosa, and most tourists never see the menu page it's on.",
+    "signature_address": "The Mall Road, Shimla 171001",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Indian+Coffee+House+Mall+Road+Shimla",
+    "zomato_url": "https://www.zomato.com/shimla/indian-coffee-house-longwood",
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Indian_Coffee_House",
+      "https://www.foodravel.com/indian-coffee-house-shimla/",
+      "https://hillpost.in/2011/02/indian-coffee-house-shimla-surviving-tough-times/26196/"
+    ],
+    "last_verified": "2026-04-26",
+    "is_legendary": true,
+    "is_active": true
+  },
+  {
+    "destination_id": "shimla",
+    "name": "Goofa Ashiana",
+    "area": "The Ridge",
+    "area_slug": "the-ridge",
+    "cuisine": [
+      "north-indian",
+      "continental",
+      "chinese",
+      "himachali"
+    ],
+    "category": "mid_range",
+    "signature_dish": "Himachali thali",
+    "must_try": [
+      "Himachali thali",
+      "siddu",
+      "chha gosht",
+      "mutton rogan josh",
+      "tomato shorba"
+    ],
+    "price_range": "₹₹",
+    "price_per_head_inr": "[600,1200]",
+    "vegetarian": "veg-friendly",
+    "kid_friendly": true,
+    "reservation": "recommended",
+    "dress_code": null,
+    "established_year": null,
+    "why_it_matters": "HPTDC's flagship restaurant on the Ridge — circular wood-and-stone pavilion built around the old Shimla Band Stand. Goofa is the cave-style basement, Ashiana the upstairs glasshouse with panoramic valley views. Government-run, so prices stay honest.",
+    "insider_tip": "Book the Ashiana side at sunset, not Goofa — the windows wrap around to face Jakhu and the valley. Order the Himachali thali; it's the only government-run place on the Ridge that takes the regional menu seriously.",
+    "signature_address": "The Ridge, Mall Road, Shimla 171001",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Goofa+Ashiana+HPTDC+Ridge+Shimla",
+    "zomato_url": "https://www.zomato.com/shimla/hptdc-goofa-ashiana-bar-and-restaurant-longwood",
+    "source_urls": [
+      "https://www.zomato.com/shimla/hptdc-goofa-ashiana-bar-and-restaurant-longwood",
+      "https://www.tripadvisor.in/Restaurant_Review-g304552-d1202015-Reviews-Goofa_Ashiana_Restaurant-Shimla_Shimla_District_Himachal_Pradesh.html",
+      "https://hpshimla.nic.in/public-utility/hptdc-ashiyana-gupha-bar-and-restaurant/"
+    ],
+    "last_verified": "2026-04-26",
+    "is_legendary": true,
+    "is_active": true
+  },
+  {
+    "destination_id": "shimla",
+    "name": "Cafe Sol",
+    "area": "Mall Road",
+    "area_slug": "mall-road",
+    "cuisine": [
+      "italian",
+      "continental",
+      "mexican",
+      "multi-cuisine"
+    ],
+    "category": "mid_range",
+    "signature_dish": "wood-fired pizza",
+    "must_try": [
+      "wood-fired pizza",
+      "pasta arrabbiata",
+      "grilled trout",
+      "tiramisu",
+      "sangria"
+    ],
+    "price_range": "₹₹",
+    "price_per_head_inr": "[1200,1800]",
+    "vegetarian": "veg-friendly",
+    "kid_friendly": true,
+    "reservation": "recommended",
+    "dress_code": null,
+    "established_year": 2003,
+    "why_it_matters": "Hotel Combermere's roof-garden restaurant has been Shimla's go-to Italian for 20+ years. The terrace looks straight down Mall Road; the kitchen is one of the few in town that takes pasta and pizza dough seriously. Reach it via the hotel's private Mall lift — saves the climb.",
+    "insider_tip": "Skip the printed Indian menu — order off the Italian side and ask for a window-rail table. Sunset hour fills up fast in season; arrive by 6pm or book.",
+    "signature_address": "Hotel Combermere, Opp. Tourism Lift, The Mall, Shimla 171001",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Cafe+Sol+Hotel+Combermere+Mall+Road+Shimla",
+    "zomato_url": "https://www.zomato.com/shimla/cafe-sol-1-longwood",
+    "source_urls": [
+      "https://www.tripadvisor.in/Restaurant_Review-g304552-d1202018-Reviews-Cafe_Sol-Shimla_Shimla_District_Himachal_Pradesh.html",
+      "https://www.hotelcombermere.com/drink-dine/",
+      "https://magicpin.in/Shimla/Lower-Bazar/Restaurant/Cafe-Sol/store/3ca9c2/menu/"
+    ],
+    "last_verified": "2026-04-26",
+    "is_legendary": false,
+    "is_active": true
+  },
+  {
+    "destination_id": "shimla",
+    "name": "Cafe Simla Times",
+    "area": "Mall Road",
+    "area_slug": "mall-road",
+    "cuisine": [
+      "italian",
+      "continental",
+      "lebanese",
+      "north-indian"
+    ],
+    "category": "mid_range",
+    "signature_dish": "wood-fired pizza",
+    "must_try": [
+      "wood-fired pizza",
+      "hummus platter",
+      "thin-crust margherita",
+      "shakes",
+      "biergarten craft beer"
+    ],
+    "price_range": "₹₹",
+    "price_per_head_inr": "[1000,1700]",
+    "vegetarian": "veg-friendly",
+    "kid_friendly": true,
+    "reservation": "recommended",
+    "dress_code": null,
+    "established_year": 2015,
+    "why_it_matters": "Hotel Willow Banks' bistro — opened 2015 and named after Shimla's first English newspaper. Cosy by day, lounge with live local bands by evening. Often called Himachal's most Instagrammable cafe; in practice it's the Mall's reliable mid-range bet for pizza and bar food.",
+    "insider_tip": "Show up before 7pm if you want a window table during the band set. The Lebanese mezze is better than the more-ordered Indian sides — the kitchen actually makes the labneh in-house.",
+    "signature_address": "Hotel Willow Banks, near Tourism Lift Exit, The Mall, Shimla 171001",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Cafe+Simla+Times+Mall+Road+Shimla",
+    "zomato_url": "https://www.zomato.com/shimla/cafe-simla-times-longwood",
+    "source_urls": [
+      "https://www.tripadvisor.in/Restaurant_Review-g304552-d7927220-Reviews-Cafe_Simla_Times-Shimla_Shimla_District_Himachal_Pradesh.html",
+      "https://www.willowbanks.com/cafe-simla.php",
+      "https://www.zomato.com/shimla/cafe-simla-times-longwood"
+    ],
+    "last_verified": "2026-04-26",
+    "is_legendary": false,
+    "is_active": true
+  },
+  {
+    "destination_id": "shimla",
+    "name": "Wake and Bake Cafe",
+    "area": "Mall Road",
+    "area_slug": "mall-road",
+    "cuisine": [
+      "cafe",
+      "continental",
+      "middle-eastern",
+      "bakery"
+    ],
+    "category": "cafe",
+    "signature_dish": "pancakes with bacon",
+    "must_try": [
+      "pancakes",
+      "falafel wrap",
+      "hummus and pita",
+      "rectangle pizza",
+      "filter coffee"
+    ],
+    "price_range": "₹₹",
+    "price_per_head_inr": "[600,1100]",
+    "vegetarian": "veg-friendly",
+    "kid_friendly": true,
+    "reservation": "walk-in",
+    "dress_code": null,
+    "established_year": null,
+    "why_it_matters": "Second-floor cafe directly opposite Shimla Town Hall — one of the longest-running independent cafes on the Mall. Falafel wraps, slow-batch pancakes, the kind of breakfast menu you can't find anywhere else on the strip. Rated 4/5 with 3000+ reviews on TripAdvisor.",
+    "insider_tip": "It's a steep climb to the second floor; the corner tables overlook the Mall walkway. Pancakes are made to order — allow 15 minutes and ask for the maple syrup separate so the stack stays crisp.",
+    "signature_address": "2nd Floor, Opposite Town Hall, The Mall, Shimla 171001",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Wake+and+Bake+Cafe+Mall+Road+Shimla",
+    "zomato_url": "https://www.zomato.com/shimla/wake-bake-longwood",
+    "source_urls": [
+      "https://www.wakeandbakecafe.in/",
+      "https://www.tripadvisor.in/Restaurant_Review-g304552-d2452360-Reviews-Wake_and_Bake-Shimla_Shimla_District_Himachal_Pradesh.html",
+      "https://www.zomato.com/shimla/wake-bake-longwood"
+    ],
+    "last_verified": "2026-04-26",
+    "is_legendary": false,
+    "is_active": true
+  },
+  {
+    "destination_id": "shimla",
+    "name": "Honey Hut Cafe",
+    "area": "Mall Road",
+    "area_slug": "mall-road",
+    "cuisine": [
+      "cafe",
+      "italian",
+      "himachali",
+      "bakery"
+    ],
+    "category": "cafe",
+    "signature_dish": "honey cappuccino",
+    "must_try": [
+      "honey cappuccino",
+      "honey fruit salad",
+      "honey chilli mushroom",
+      "walnut chocopie",
+      "honey banana cake"
+    ],
+    "price_range": "₹₹",
+    "price_per_head_inr": "[400,800]",
+    "vegetarian": "pure-veg",
+    "kid_friendly": true,
+    "reservation": "walk-in",
+    "dress_code": null,
+    "established_year": 2007,
+    "why_it_matters": "Started in 2007 by a group of Himachali entrepreneurs as a hive-to-table concept — every dish lets you add Himalayan honey from a small jug at the table. Sells the local apiary's honey, lip balms and tea packs alongside the menu. The terrace looks out at the Ridge.",
+    "insider_tip": "The walnut chocopie and honey cappuccino is the order — small portions but the honey tea pairs with it for a 30-minute Mall break. They sell sealed honey jars at the counter; it travels well as a Shimla souvenir.",
+    "signature_address": "70, The Mall Road, Shimla 171001",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Honey+Hut+Cafe+Mall+Road+Shimla",
+    "zomato_url": "https://www.zomato.com/shimla/honey-hut-longwood",
+    "source_urls": [
+      "https://www.honeyhut.in/",
+      "https://www.tripadvisor.com/Restaurant_Review-g304552-d3448148-Reviews-Cafe_Honey_Hut_Shimla-Shimla_Shimla_District_Himachal_Pradesh.html",
+      "https://www.justdial.com/Shimla/Honey-Hut-Near-Khadi-Gramudyog-Mall-Road/0177PX177-X177-140521152822-B2M5_BZDET"
+    ],
+    "last_verified": "2026-04-26",
+    "is_legendary": false,
+    "is_active": true
+  },
+  {
+    "destination_id": "shimla",
+    "name": "Embassy Restaurant",
+    "area": "Mall Road",
+    "area_slug": "mall-road",
+    "cuisine": [
+      "multi-cuisine",
+      "north-indian",
+      "continental"
+    ],
+    "category": "casual",
+    "signature_dish": "Persian lamb biryani",
+    "must_try": [
+      "Persian lamb biryani",
+      "roasted lamb",
+      "apple almond cake",
+      "chocolate brownie",
+      "hot rum coffee"
+    ],
+    "price_range": "₹₹",
+    "price_per_head_inr": "[600,1100]",
+    "vegetarian": "veg-friendly",
+    "kid_friendly": true,
+    "reservation": "walk-in",
+    "dress_code": null,
+    "established_year": null,
+    "why_it_matters": "Family-run wooden room near Hotel Willow Banks — the owners cook and serve themselves, claim 50+ years on the Mall. Half breakfast cafe, half all-day diner; the apple almond cake and rum coffee are the order locals send tourists for.",
+    "insider_tip": "Cash-friendly and tiny — six tables, walk-in only. Come for breakfast not dinner; the dosas and pancakes are the kitchen's strength, the dinner menu wanders.",
+    "signature_address": "The Mall, Near Hotel Willow Banks, Shimla 171001",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Embassy+Restaurant+Mall+Road+Shimla",
+    "zomato_url": "https://www.zomato.com/shimla/embassy-the-restaurant-longwood",
+    "source_urls": [
+      "https://www.tripadvisor.com/Restaurant_Review-g304552-d3736427-Reviews-or30-Embassy_Restaurant-Shimla_Shimla_District_Himachal_Pradesh.html",
+      "https://www.zomato.com/shimla/embassy-the-restaurant-longwood",
+      "https://www.mappls.com/bactf6"
+    ],
+    "last_verified": "2026-04-26",
+    "is_legendary": false,
+    "is_active": true
+  },
+  {
+    "destination_id": "shimla",
+    "name": "The Devicos",
+    "area": "Mall Road",
+    "area_slug": "mall-road",
+    "cuisine": [
+      "north-indian",
+      "continental",
+      "chinese"
+    ],
+    "category": "mid_range",
+    "signature_dish": "butter chicken with naan",
+    "must_try": [
+      "butter chicken",
+      "Devicos signature kebab platter",
+      "chilli chicken",
+      "dal makhani",
+      "sizzlers"
+    ],
+    "price_range": "₹₹",
+    "price_per_head_inr": "[800,1500]",
+    "vegetarian": "veg-friendly",
+    "kid_friendly": true,
+    "reservation": "recommended",
+    "dress_code": null,
+    "established_year": 1970,
+    "why_it_matters": "Devicos was a Shimla institution in the 70s and 80s; the current Mall Road location at No. 5 has been running 25+ years as a gastropub-style multi-cuisine. Sister D Lounge Bar upstairs handles the late-evening crowd. Reliable for big-group North Indian dinners on the strip.",
+    "insider_tip": "Skip the Chinese section and order off the North Indian menu — the kitchen's tandoor is its strength. D Lounge upstairs has the same kitchen but a livelier bar room if you're staying late.",
+    "signature_address": "5, The Mall, Shimla 171001",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=The+Devicos+Mall+Road+Shimla",
+    "zomato_url": "https://www.zomato.com/shimla/devicos-restaurant-longwood",
+    "source_urls": [
+      "https://www.devicos.com/order-now.html",
+      "https://www.tripadvisor.com/Restaurant_Review-g304552-d2403748-Reviews-The_Devicos-Shimla_Shimla_District_Himachal_Pradesh.html",
+      "https://www.zomato.com/shimla/devicos-restaurant-longwood"
+    ],
+    "last_verified": "2026-04-26",
+    "is_legendary": true,
+    "is_active": true
+  },
+  {
+    "destination_id": "shimla",
+    "name": "Trishool Bakers",
+    "area": "Lakkar Bazaar",
+    "area_slug": "lakkar-bazaar",
+    "cuisine": [
+      "bakery",
+      "patisserie"
+    ],
+    "category": "casual",
+    "signature_dish": "chocolate truffle cake",
+    "must_try": [
+      "chocolate truffle cake",
+      "Japanese pastries",
+      "cream rolls",
+      "Spoonie dessert",
+      "coconut macaroon"
+    ],
+    "price_range": "₹",
+    "price_per_head_inr": "[150,400]",
+    "vegetarian": "veg-friendly",
+    "kid_friendly": true,
+    "reservation": "walk-in",
+    "dress_code": null,
+    "established_year": 1946,
+    "why_it_matters": "Family-run bakery at the Gaiety Theatre end of Lower Bazaar/Lakkar Bazaar since 1946 — pre-Independence on the same counter. The Japanese pastries and cream rolls have stayed on the case for three generations; locals queue here on Sunday morning before tourists wake up.",
+    "insider_tip": "Cream rolls run out by 1pm in season — go before noon. Cash counter only at the front; for cake-by-the-slice ask at the back counter where they cut from the day's whole cakes.",
+    "signature_address": "Gaiety Theatre Complex, Near Gaiety Theatre, Lower Bazaar, The Mall, Shimla 171001",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Trishool+Bakers+Lakkar+Bazaar+Shimla",
+    "zomato_url": "https://www.zomato.com/shimla/trishool-bakers-longwood",
+    "source_urls": [
+      "https://www.tripadvisor.in/Restaurant_Review-g304552-d20214089-Reviews-Trishool_Bakers_Confectioners-Shimla_Shimla_District_Himachal_Pradesh.html",
+      "https://magicpin.in/Shimla/Lakkar-Bazar/Restaurant/Trishool-Bakers/store/352973/menu/",
+      "https://www.facebook.com/TrishoolBakers/"
+    ],
+    "last_verified": "2026-04-26",
+    "is_legendary": true,
+    "is_active": true
+  },
+  {
+    "destination_id": "shimla",
+    "name": "Himachali Rasoi",
+    "area": "Mall Road",
+    "area_slug": "mall-road",
+    "cuisine": [
+      "himachali"
+    ],
+    "category": "casual",
+    "signature_dish": "Kangri Dham (full thali)",
+    "must_try": [
+      "Kangri Dham",
+      "Mandyali Dham",
+      "siddu",
+      "babru",
+      "chha gosht",
+      "kullu trout",
+      "aktori"
+    ],
+    "price_range": "₹",
+    "price_per_head_inr": "[300,600]",
+    "vegetarian": "mixed",
+    "kid_friendly": true,
+    "reservation": "walk-in",
+    "dress_code": null,
+    "established_year": null,
+    "why_it_matters": "Tiny wood-panelled room next to Shiv Temple in Middle Bazaar — markets itself as the world's first dedicated Himachali cuisine restaurant. Kangri Dham (Thursday-Sunday) and Mandyali Dham (Monday-Wednesday) rotate on the menu — these are the regional festival thalis you can't get at any hotel restaurant on the Mall.",
+    "insider_tip": "Come on a Thursday-Sunday lunch for the Kangri Dham — that's the temple-feast version with khatta, madra, sepu vadi. Order siddu (Himachali stuffed steamed bun) on the side; it's the snack tourists never know to ask for.",
+    "signature_address": "Shop No. 54, Next to Shiv Temple, Middle Bazaar, Mall Road, Shimla 171001",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Himachali+Rasoi+Mall+Road+Shimla",
+    "zomato_url": "https://www.zomato.com/shimla/himachali-rasoi-longwood",
+    "source_urls": [
+      "https://www.tripadvisor.in/Restaurant_Review-g304552-d8664505-Reviews-Himachali_Rasoi-Shimla_Shimla_District_Himachal_Pradesh.html",
+      "https://www.zomato.com/shimla/himachali-rasoi-longwood",
+      "https://www.himachalwonders.in/most-popular-restaurant-himachali-rasoi-in-shimla/"
+    ],
+    "last_verified": "2026-04-26",
+    "is_legendary": false,
+    "is_active": true
+  }
+]

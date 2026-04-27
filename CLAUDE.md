@@ -115,7 +115,7 @@ Plan: `~/.claude/plans/smooth-orbiting-music.md`. Strict state-by-state, north-t
 |---|---|---|---|
 | Ladakh | ✓ done | 2026-04-26 | 14/14 dests · 93 eateries · 48 stays · 47 picks · 15-18 sections live. Sessions 1-4 + cleanup. Commits 5bc1bb5, 3d5a542, 0016205 |
 | Jammu & Kashmir | ✓ done | 2026-04-26 | 17/17 dests · 98 eateries · 40 stays · 44 picks. 5 sessions: Srinagar deep (5 zones, 36 rows after dedupe), Pahalgam/Gulmarg/Sonamarg (28), Bhaderwah/Kishtwar/Patnitop (19), 5 day-trip dests (11), 5 remote valleys (4 — honest scarcity). Sections 15-18 live. |
-| Himachal Pradesh | pending | - | ~55 dests |
+| Himachal Pradesh | ✓ done | 2026-04-27 | 32/34 dests · 286 eateries (Chandratal + GHNP intentionally `[]` — no verifiable independent eateries). 8 sessions: S1 Manali (47, 5 zones), S2 Shimla (32, 4 zones), S3 Dharamshala+McLeodganj (23), S4 Kasol/Parvati/Manikaran/Jibhi/Tirthan (36), S5 Spiti cluster Kaza/Spiti-valley/Nako/Kalpa/Sangla/Chitkul (33), S6 Lahaul Keylong/Sissu/Lahaul-valley/Chandratal (18), S7 Hill towns Dalhousie/Kasauli/Palampur/Bir-Billing/Chamba (54), S8 final batch Chail/Kufri/Kullu/Mandi/Sarahan/Solan/Prashar-Lake/GHNP/Barot-Valley/Kinnaur (43). |
 | Uttarakhand | pending | - | ~45 dests |
 | Punjab + Haryana + Chandigarh | pending | - | ~25 dests |
 | Rajasthan | pending | - | ~50 dests |
