@@ -1,14 +1,12 @@
-"use client";
-
 import Link from "next/link";
 import Image from "next/image";
-import { useLocale } from "next-intl";
-import React, { useState } from "react";
+import React from "react";
 import { SCORE_COLORS, DIFFICULTY_COLORS } from "@/lib/design-tokens";
 import { FadeIn, ScrollReveal } from "./animated-hero";
 import { ArticleCallout } from "./article-callout";
 import HowToDoIt from "./how-to-do-it";
 import { BlogArticleToC } from "./blog-article-toc";
+import { DestinationThumb } from "./destination-thumb";
 
 const CATEGORY_LABELS: Record<string, string> = {
   "best-time": "Best Time to Visit",
@@ -164,13 +162,14 @@ export function BlogArticle({
   destinations,
   relatedArticles,
   adjacentArticles,
+  locale,
 }: {
   article: any;
   destinations: Destination[];
   relatedArticles: any[];
   adjacentArticles?: { prev: any; next: any };
+  locale: string;
 }) {
-  const locale = useLocale();
   const currentMonth = new Date().getMonth() + 1;
 
   // Parse content sections — split by ## headers
@@ -783,28 +782,6 @@ export function BlogArticle({
         <p className="italic text-muted-foreground font-serif text-lg">Go with confidence.</p>
       </div>
     </article>
-  );
-}
-
-/** Small destination thumbnail with graceful fallback */
-function DestinationThumb({ id, name }: { id: string; name: string }) {
-  const [failed, setFailed] = useState(false);
-  if (failed) {
-    return (
-      <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-xs font-bold text-primary shrink-0">
-        {name.charAt(0)}
-      </div>
-    );
-  }
-  return (
-    <Image
-      src={`/images/destinations/${id}.jpg`}
-      alt={name}
-      width={40}
-      height={40}
-      className="rounded-lg object-cover shrink-0"
-      onError={() => setFailed(true)}
-    />
   );
 }
 

@@ -1,5 +1,3 @@
-import { imageUrl } from "./image-url";
-
 // Collections without their own COLLECTION_*.jpg cover — map to a representative
 // image (destination OR other collection) instead. Keeps grids resilient when
 // cover art hasn't been produced yet. Add entries as new collections ship
@@ -7,7 +5,11 @@ import { imageUrl } from "./image-url";
 //
 // NOTE: fallback takes precedence over DB cover_image_url, because some DB
 // rows reference files that don't exist on disk (e.g. odisha-turtle-trail).
-// Values are site-relative paths; resolveCover() normalizes them to R2 URLs.
+//
+// resolveCover() returns a SITE-RELATIVE path (e.g. "/images/collections/x.jpg").
+// Pass to <Image src={...}> and the custom loader will rewrite to the WebP
+// variant. For raw URL contexts (CSS background, og:image strings, API
+// payloads) wrap with imageUrl(path, width) from ./image-url.
 export const COVER_FALLBACK: Record<string, string> = {
   "andaman-diving-snorkeling": "/images/destinations/havelock-island.jpg",
   "andaman-island-hopping": "/images/destinations/havelock-island.jpg",
@@ -18,10 +20,9 @@ export const COVER_FALLBACK: Record<string, string> = {
 };
 
 export function resolveCover(c: { id: string; cover_image_url?: string | null }): string {
-  // Hardcoded fallback wins over DB — DB may point to a file that doesn't exist on disk.
-  if (COVER_FALLBACK[c.id]) return imageUrl(COVER_FALLBACK[c.id]);
+  if (COVER_FALLBACK[c.id]) return COVER_FALLBACK[c.id];
   if (c.cover_image_url && typeof c.cover_image_url === "string" && c.cover_image_url.startsWith("/images/")) {
-    return imageUrl(c.cover_image_url);
+    return c.cover_image_url;
   }
-  return imageUrl(`/images/collections/COLLECTION_${c.id}.jpg`);
+  return `/images/collections/COLLECTION_${c.id}.jpg`;
 }

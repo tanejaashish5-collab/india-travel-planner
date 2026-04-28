@@ -173,7 +173,7 @@ export default async function BlogArticlePage({ params }: { params: Promise<{ sl
       />
       <Nav />
       <main className="mx-auto max-w-4xl lg:max-w-6xl px-4 py-8">
-        <BlogArticle article={article} destinations={destinations} relatedArticles={related} adjacentArticles={adjacent} />
+        <BlogArticle article={article} destinations={destinations} relatedArticles={related} adjacentArticles={adjacent} locale={locale} />
       </main>
       <Footer />
     </div>

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useLocale } from "next-intl";
 import { useState, useMemo } from "react";
 import { resolveCover } from "@/lib/collection-covers";
+import { imageUrl } from "@/lib/image-url";
 
 /* ── Theme categories mapped from tags ── */
 const THEME_FILTERS: Record<string, { label: string; match: string[] }> = {
@@ -176,7 +177,7 @@ export function CollectionsGrid({ collections }: { collections: any[] }) {
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {filtered.map((c: any) => {
           const items = c.items ?? [];
-          const coverUrl = resolveCover(c);
+          const coverUrl = imageUrl(resolveCover(c), 800);
 
           return (
             <a
