@@ -84,12 +84,13 @@ Plan: `~/.claude/plans/smooth-orbiting-music.md` (full workflow — read before 
 | Punjab + Haryana + Chandigarh | ✓ done | 2026-04-27 | 8/8 dests · 69 eateries (Damdama Sahib `[]` honest scarcity, stays skipped — API key depleted) |
 | Rajasthan | ✓ done | 2026-04-27 | 23/23 dests · 105 eateries (Deeg + Gagron Fort `[]` honest scarcity) |
 | Uttar Pradesh | ✓ done | 2026-04-28 | 13/13 dests · 98 eateries · 44 stays (100% sourced) |
-| Bihar | ✓ done | 2026-04-28 | 6/6 dests · 36 eateries · 13 stays (100% sourced, 11 honest-scarcity nulls — small Buddhist circuit) |
-| Jharkhand | **next** | - | TBD (Ranchi anchor + Netarhat + Hazaribagh + Betla NP + tribal Saraikela belt) |
+| Bihar | ✓ done | 2026-04-28 | 6/6 dests · 36 eateries · 13 stays (100% sourced, 11 honest-scarcity nulls) |
+| Jharkhand | ✓ done | 2026-04-28 | 4/4 dests · 15 eateries · 13 stays (100% sourced, 3 honest-scarcity nulls — 78% fabrication rate caught) |
+| West Bengal | **next** | - | TBD (Kolkata multi-zone + Darjeeling + Kalimpong + Sunderbans + Shantiniketan) |
 
 **Per-state quality bar (going forward)**: Each session ships eateries (greenfield/backfill via 1-2 agents) **AND** stays (audit + replace fabricated picks via 1 agent, target 100% sourced) in the same session. Total budget ≤3 agents per state (cost-aware rule).
 
-**Progress so far**: 8 states+UT clusters done, 151 dests, 1101 eateries. Stays: Ladakh+J&K+UK+HP+PB+HR+CH+UP+Bihar+Rajasthan all 100% sourced post-audit. Per-state details in session memory files — see `MEMORY.md` index.
+**Progress so far**: 9 states+UT clusters done, 155 dests, 1116 eateries. Stays: 10 clusters audited 100% sourced (Ladakh+J&K+UK+HP+PB+HR+CH+UP+Rajasthan+Bihar+Jharkhand). Per-state details in session memory files — see `MEMORY.md` index.
 
 ## Cost-aware operating rules (added 2026-04-27)
 
