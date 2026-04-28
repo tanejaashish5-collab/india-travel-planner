@@ -16,14 +16,6 @@ function getSupabase() {
   return createClient(url, key);
 }
 
-function isoWeekNumber(d: Date): number {
-  const date = new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate()));
-  const dayNum = date.getUTCDay() || 7;
-  date.setUTCDate(date.getUTCDate() + 4 - dayNum);
-  const yearStart = new Date(Date.UTC(date.getUTCFullYear(), 0, 1));
-  return Math.ceil((((date.getTime() - yearStart.getTime()) / 86400000) + 1) / 7);
-}
-
 export type IssueBuildResult = {
   props: Omit<WindowIssueProps, "unsubscribeUrl" | "webViewUrl">;
   slug: string;
@@ -55,7 +47,22 @@ export async function buildWindowIssue(overrides?: IssueOverrides): Promise<Issu
 
   const now = new Date();
   const currentMonth = now.getMonth() + 1;
-  const issueNumber = overrides?.issueNumber ?? isoWeekNumber(now);
+  // Sequential numbering: next issue = (highest issue_number ever sent) + 1.
+  // Apr 19 pre-launch row was renumbered to 0 so launch (Apr 24) stays the
+  // canonical №01 and the cron-shipped sequence continues №02, №03, …
+  let issueNumber: number;
+  if (overrides?.issueNumber !== undefined) {
+    issueNumber = overrides.issueNumber;
+  } else {
+    const { data: lastIssue } = await supabase
+      .from("newsletter_issues")
+      .select("issue_number")
+      .not("sent_at", "is", null)
+      .order("issue_number", { ascending: false })
+      .limit(1)
+      .maybeSingle();
+    issueNumber = (lastIssue?.issue_number ?? 0) + 1;
+  }
   const monthName = MONTH_NAMES[currentMonth];
   const year = now.getFullYear();
   // Alignment contract: newsletter slug matches the Weekly Picks week the
