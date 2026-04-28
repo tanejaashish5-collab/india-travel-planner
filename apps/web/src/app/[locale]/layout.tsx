@@ -300,6 +300,7 @@ export default async function LocaleLayout({
                 // Scope: User, User property: aio_referral.
                 var __aioRef = (document.referrer || '').indexOf('udm=50') !== -1;
                 gtag('config','${process.env.NEXT_PUBLIC_GA4_ID}');
+                ${process.env.NEXT_PUBLIC_GA4_ID_SECONDARY ? `gtag('config','${process.env.NEXT_PUBLIC_GA4_ID_SECONDARY}');` : ''}
                 if (__aioRef) {
                   gtag('set', 'user_properties', { aio_referral: 'true' });
                   gtag('event', 'aio_referral_landing', {
