@@ -5161,3 +5161,52 @@ requests.exceptions.HTTPError: 401 Client Error: UNAUTHORIZED for url: https://a
 2026-04-28 16:58:53  INFO      ── Syncing Nakshiq content ──────────────────────────────
 2026-04-28 16:58:57  INFO      Synced → 20 destinations · 0 traps · 20 articles · total catalog=491
 2026-04-28 16:58:57  INFO      Sync-only mode. Done.
+2026-04-28 19:53:59  INFO      ════════════════════════════════════════════════════════════
+2026-04-28 19:53:59  INFO      Nakshiq Autoposter · ANALYTICS SYNC · 2026-04-28
+2026-04-28 19:53:59  INFO      ════════════════════════════════════════════════════════════
+2026-04-28 19:54:05  INFO      Synced 18 new posts (total: 309)
+2026-04-28 19:54:05  INFO      ── Analytics Summary ──
+2026-04-28 19:54:05  INFO      Total posts tracked: 309
+2026-04-28 19:54:05  INFO      Successfully published: 238 | Failed: 68
+2026-04-28 19:54:05  INFO      
+2026-04-28 19:54:05  INFO      By content type:
+2026-04-28 19:54:05  INFO        feed_post: 92
+2026-04-28 19:54:05  INFO        reel: 89
+2026-04-28 19:54:05  INFO        yt_short: 88
+2026-04-28 19:54:05  INFO        canva_visual: 14
+2026-04-28 19:54:05  INFO        tourist_map: 12
+2026-04-28 19:54:05  INFO        infographic: 8
+2026-04-28 19:54:05  INFO        pomelli_visual: 6
+2026-04-28 19:54:05  INFO      
+2026-04-28 19:54:05  INFO      By format:
+2026-04-28 19:54:05  INFO        feed_post:unknown: 92
+2026-04-28 19:54:05  INFO        reel:seasonal: 33
+2026-04-28 19:54:05  INFO        reel:destination: 28
+2026-04-28 19:54:05  INFO        reel:map: 22
+2026-04-28 19:54:05  INFO        yt_short:listicle: 20
+2026-04-28 19:54:05  INFO        yt_short:did: 19
+2026-04-28 19:54:05  INFO        yt_short:mini: 15
+2026-04-28 19:54:05  INFO        canva_visual:unknown: 14
+2026-04-28 19:54:05  INFO        yt_short:before: 14
+2026-04-28 19:54:05  INFO        tourist_map:unknown: 12
+2026-04-28 19:54:05  INFO        yt_short:this: 11
+2026-04-28 19:54:05  INFO        yt_short:dont: 9
+2026-04-28 19:54:05  INFO        infographic:unknown: 8
+2026-04-28 19:54:05  INFO        reel:score: 6
+2026-04-28 19:54:05  INFO        pomelli_visual:unknown: 6
+2026-04-28 19:54:05  INFO      
+2026-04-28 19:54:05  INFO      By platform:
+2026-04-28 19:54:05  INFO        instagram: 141
+2026-04-28 19:54:05  INFO        youtube: 87
+2026-04-28 19:54:05  INFO        facebook: 78
+2026-04-28 19:54:05  INFO      
+2026-04-28 19:54:05  INFO      YT Short format distribution:
+2026-04-28 19:54:05  INFO        listicle: 20 (23%)
+2026-04-28 19:54:05  INFO        did: 19 (22%)
+2026-04-28 19:54:05  INFO        mini: 15 (17%)
+2026-04-28 19:54:05  INFO        before: 14 (16%)
+2026-04-28 19:54:05  INFO        this: 11 (12%)
+2026-04-28 19:54:05  INFO        dont: 9 (10%)
+2026-04-28 19:54:05  INFO      
+Date range: 2026-04-15 → 2026-04-28
+2026-04-28 19:54:05  INFO      ════════════════════════════════════════════════════════════
