@@ -1,0 +1,61 @@
+[
+  {
+    "destination_id": "aalo",
+    "name": "Hotel Toshi Palace Restaurant",
+    "area": "Sipu Colony, Aalo",
+    "area_slug": "sipu-colony",
+    "cuisine": ["indian", "chinese", "continental"],
+    "category": "mid_range",
+    "signature_dish": "rooftop bar-grill",
+    "must_try": ["thukpa", "momos", "chicken curry", "fried rice"],
+    "price_range": "₹₹",
+    "price_per_head_inr": "[400,800]",
+    "vegetarian": "veg-friendly",
+    "kid_friendly": true,
+    "reservation": "recommended",
+    "dress_code": null,
+    "established_year": null,
+    "why_it_matters": "Three-floor 14-room hotel opposite the State Transport Station with an in-house multi-cuisine restaurant (7am-9pm) and a rooftop bar that locals use — rare combination in Aalo. Default sit-down option for both visitors and West Siang residents.",
+    "insider_tip": "Rooftop is the room to ask for — the State Transport Station crowd makes the ground floor noisy in the morning. Apong (rice beer) availability depends on the week; ask on entry.",
+    "signature_address": "Opposite State Transport Station, Rime Market, Sipu Colony, Aalo, West Siang, Arunachal Pradesh 791001",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Hotel+Toshi+Palace+Aalo",
+    "zomato_url": null,
+    "source_urls": [
+      "https://www.tripadvisor.in/Hotel_Review-g2289017-d4297655-Reviews-Hotel_Toshi_Palace-Along_West_Siang_District_Arunachal_Pradesh.html",
+      "https://www.travelguru.com/hotels/hotels-in-along/hotel-toshi-palace-aalo",
+      "https://westsiang.nic.in/accommodation/"
+    ],
+    "last_verified": "2026-04-28",
+    "is_legendary": false,
+    "is_active": true
+  },
+  {
+    "destination_id": "aalo",
+    "name": "Cafe Aalo",
+    "area": "Aalo",
+    "area_slug": "aalo-town",
+    "cuisine": ["cafe", "continental", "indian"],
+    "category": "cafe",
+    "signature_dish": "coffee + snacks",
+    "must_try": ["coffee", "sandwiches", "burgers"],
+    "price_range": "₹",
+    "price_per_head_inr": "[200,450]",
+    "vegetarian": "veg-friendly",
+    "kid_friendly": true,
+    "reservation": "walk-in",
+    "dress_code": null,
+    "established_year": null,
+    "why_it_matters": "Aalo's standalone cafe-format venue listed on TripAdvisor's Arunachal Pradesh restaurant page (rated 4.0). Small, independent — the rare option in West Siang HQ with a cafe menu rather than a hotel-attached multi-cuisine kitchen.",
+    "insider_tip": "Verify hours on visit — small-town independent cafes in Arunachal often run owner-set timings rather than published ones. Cash preferred.",
+    "signature_address": "Aalo, West Siang, Arunachal Pradesh 791001",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Cafe+Aalo+West+Siang",
+    "zomato_url": null,
+    "source_urls": [
+      "https://www.tripadvisor.in/Restaurants-g297589-Arunachal_Pradesh.html",
+      "https://www.tripadvisor.in/Tourism-g27107716-Aalo_West_Siang_District_Arunachal_Pradesh-Vacations.html"
+    ],
+    "last_verified": "2026-04-28",
+    "is_legendary": false,
+    "is_active": true
+  }
+]

@@ -88,11 +88,12 @@ Plan: `~/.claude/plans/smooth-orbiting-music.md` (full workflow — read before 
 | Jharkhand | ✓ done | 2026-04-28 | 4/4 dests · 15 eateries · 13 stays (100% sourced, 78% fabrication rate caught) |
 | West Bengal | ✓ done | 2026-04-28 | 6/6 dests · 38 eateries · 20 stays (100% sourced, 4 honest-scarcity nulls) |
 | Sikkim | ✓ done | 2026-04-28 | 11/11 dests · 19 eateries · 21 stays (100% sourced, 4 dests honest-scarcity `[]` for restricted high-altitude lakes/NP) |
-| Arunachal Pradesh | **next** | - | TBD (Tawang + Bomdila + Ziro + Mechuka + Dirang + Sela Pass + remote NE circuit) |
+| Arunachal Pradesh | ✓ done | 2026-04-28 | 11/11 dests · 22 eateries · 25 stays (100% sourced, 6 honest-scarcity nulls + Bhalukpong/Dambuk eateries `[]`, 61% fabrication rate caught — 7 cross-state contaminations) |
+| Nagaland | **next** | - | TBD (Kohima + Mokokchung + Mon + Dzukou + Khonoma + Tuophema — Hornbill Festival belt) |
 
 **Per-state quality bar (going forward)**: Each session ships eateries (greenfield/backfill via 1-2 agents) **AND** stays (audit + replace fabricated picks via 1 agent, target 100% sourced) in the same session. Total budget ≤3 agents per state (cost-aware rule).
 
-**Progress so far**: 11 states+UT clusters done, 172 dests, 1173 eateries. Stays: 12 clusters audited 100% sourced (Ladakh+J&K+UK+HP+PB+HR+CH+UP+Rajasthan+Bihar+Jharkhand+West Bengal+Sikkim). Per-state details in session memory files — see `MEMORY.md` index.
+**Progress so far**: 12 states+UT clusters done, 183 dests, 1195 eateries. Stays: 13 clusters audited 100% sourced (Ladakh+J&K+UK+HP+PB+HR+CH+UP+Rajasthan+Bihar+Jharkhand+West Bengal+Sikkim+Arunachal Pradesh). Per-state details in session memory files — see `MEMORY.md` index.
 
 ## Cost-aware operating rules (added 2026-04-27)
 
