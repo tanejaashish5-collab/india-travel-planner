@@ -5099,3 +5099,39 @@ requests.exceptions.HTTPError: 401 Client Error: UNAUTHORIZED for url: https://a
 2026-04-28 11:45:26  INFO      YT Short posted: format=this_vs_that, music=22_afro_carnival
 2026-04-28 11:45:26  INFO      State saved. YT Short run complete.
 2026-04-28 11:45:26  INFO      ════════════════════════════════════════════════════════════
+2026-04-28 13:14:58  INFO      ════════════════════════════════════════════════════════════
+2026-04-28 13:14:58  INFO      Nakshiq Autoposter · EVENING · 2026-04-28 · weekday=1
+2026-04-28 13:14:58  INFO      ════════════════════════════════════════════════════════════
+2026-04-28 13:14:58  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-04-28 13:15:07  INFO      Synced → 20 destinations · 0 traps · 20 articles · total catalog=491
+2026-04-28 13:15:08  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-04-28 13:15:08  INFO      Formats — IG: reality_check  ·  FB: reality_check  ·  Story: collection_spotlight
+2026-04-28 13:15:08  INFO      Used destinations (14d): 51
+2026-04-28 13:15:08  INFO      Reality Check pair (fallback): Yuksom ↔ Almora
+2026-04-28 13:15:08  INFO      Collection locked: After Dark — Night Experiences Worth Staying Up For (19/20 never featured)
+2026-04-28 13:15:15  INFO      Shared best destination locked: Pahalgam
+2026-04-28 13:15:15  INFO      Carousel locked (collection_spotlight): mcleodganj
+2026-04-28 13:15:15  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-04-28 13:15:15  INFO      [instagram/nakshiq] Generating reality_check post...
+2026-04-28 13:15:15  INFO      [instagram/nakshiq] Caption ready (635 chars, dest=almora)
+2026-04-28 13:15:15  INFO      [instagram/nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-04-28 13:15:15  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/almora.mp4?v=20260428
+2026-04-28 13:15:16  INFO          Requesting upload URL for almora.mp4 (4,699,691 bytes, video/mp4)
+2026-04-28 13:15:17  INFO          Uploading to R2 (timeout=300s)...
+2026-04-28 13:15:18  INFO          R2 PUT OK. Confirming...
+2026-04-28 13:15:19  INFO          Media ready: EOaTA (4,699,691 bytes · almora.mp4)
+2026-04-28 13:15:19  INFO      [instagram/nakshiq] Publishing Reel...
+2026-04-28 13:15:53  INFO      [instagram/nakshiq] ✅ Published · Outstand=96o4Q · Platform=18078679511312308
+2026-04-28 13:15:53  INFO      [facebook/Nakshiq] Generating reality_check post...
+2026-04-28 13:15:53  INFO      [facebook/Nakshiq] Caption ready (712 chars, dest=almora)
+2026-04-28 13:15:53  INFO      [facebook/Nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-04-28 13:15:53  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/almora.mp4?v=20260428
+2026-04-28 13:15:54  INFO          Requesting upload URL for almora.mp4 (4,699,691 bytes, video/mp4)
+2026-04-28 13:15:55  INFO          Uploading to R2 (timeout=300s)...
+2026-04-28 13:15:57  INFO          R2 PUT OK. Confirming...
+2026-04-28 13:15:57  INFO          Media ready: Wx1Mz (4,699,691 bytes · almora.mp4)
+2026-04-28 13:15:57  INFO      [facebook/Nakshiq] Publishing Reel...
+2026-04-28 13:16:18  WARNING       Platform error: Error publishing post to Facebook: Failed to upload Facebook video: 500 - Please reduce the amount of data you're asking for, then retry your request
+2026-04-28 13:16:18  WARNING   [facebook/Nakshiq] ⚠️  Queued (ID=XSUve)
+2026-04-28 13:16:18  INFO      State saved. Run complete.
+2026-04-28 13:16:18  INFO      ════════════════════════════════════════════════════════════

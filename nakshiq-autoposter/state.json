@@ -27,16 +27,16 @@
     "22_afro_carnival"
   ],
   "posted_today": {
-    "PdMu0": "2026-04-27",
-    "m8EAd": "2026-04-27",
+    "PdMu0": "2026-04-28",
+    "m8EAd": "2026-04-28",
     "m8EAd_reel": "2026-04-27",
     "PdMu0_reel": "2026-04-28",
     "4QL0i_reel": "2026-04-19",
     "m8EAd_canva": "2026-04-26",
     "PdMu0_canva": "2026-04-26",
-    "m8EAd_evening": "2026-04-27",
+    "m8EAd_evening": "2026-04-28",
     "m8EAd_evening_story": "2026-04-26",
-    "PdMu0_evening": "2026-04-27",
+    "PdMu0_evening": "2026-04-28",
     "m8EAd_yt_short": "2026-04-28",
     "m8EAd_yt_short_count": 1,
     "jUmP2_yt_short": "2026-04-20",
@@ -66,7 +66,7 @@
     "PvYR0": "2026-04-27",
     "GAh5p_reel": "2026-04-28"
   },
-  "last_sync": "2026-04-28T07:15:13.184486+00:00",
+  "last_sync": "2026-04-28T13:15:07.668073+00:00",
   "posted_destinations": [
     {
       "destination_id": "pahalgam",
@@ -399,6 +399,10 @@
     {
       "destination_id": "pahalgam",
       "date": "2026-04-27"
+    },
+    {
+      "destination_id": "almora",
+      "date": "2026-04-28"
     }
   ],
   "posted_formats": {
@@ -414,7 +418,8 @@
       "data_carousel",
       "monthly_forecast",
       "methodology_crowds",
-      "score_card"
+      "score_card",
+      "reality_check"
     ],
     "PdMu0": [
       "monthly_forecast",
@@ -431,7 +436,8 @@
       "data_carousel",
       "monthly_forecast",
       "methodology_crowds",
-      "score_card"
+      "score_card",
+      "reality_check"
     ]
   },
   "post_log": [
@@ -772,6 +778,26 @@
       "destination": "pahalgam",
       "format": "score_card",
       "has_media": true
+    },
+    {
+      "timestamp": "2026-04-28T13:15:53.329419+00:00",
+      "date": "2026-04-28",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "96o4Q",
+      "destination": "almora",
+      "format": "reality_check",
+      "has_media": true
+    },
+    {
+      "timestamp": "2026-04-28T13:16:18.310737+00:00",
+      "date": "2026-04-28",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "XSUve",
+      "destination": "almora",
+      "format": "reality_check",
+      "has_media": true
     }
   ],
   "theme_usage": {
@@ -796,7 +822,8 @@
         "2026-04-19"
       ],
       "almora": [
-        "2026-04-20"
+        "2026-04-20",
+        "2026-04-28"
       ],
       "manikaran": [
         "2026-04-22"
@@ -983,6 +1010,9 @@
       ],
       "pahalgam": [
         "2026-04-27"
+      ],
+      "almora": [
+        "2026-04-28"
       ]
     },
     "festivals": {
