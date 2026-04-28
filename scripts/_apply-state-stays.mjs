@@ -95,13 +95,21 @@ function buildInsert({ destination_id, slot, payload, conf }) {
 }
 
 // === Task A: delete current row in slot, insert replacement (or leave null) ===
+// SAFETY (2026-04-28): if verdict is keep_existing AND no payload provided, SKIP entirely
+// (don't delete, don't insert). Agent should put enrichment in task_b_results instead.
+// Without this guard, keep_existing-without-payload would silently delete the row.
 const inserts = [];
 const nulls = [];
+const skipped = [];
 const taskADeletes = [];
 for (const r of taskA) {
-  taskADeletes.push({ destination_id: r.destination_id, slot: r.slot });
-  // Pick whichever payload key the agent used
   const payload = r.result ?? r.replacement ?? null;
+  // Defensive: keep_existing verdict with no replacement payload = leave row alone
+  if (r.verdict === "keep_existing" && !payload?.name) {
+    skipped.push({ destination_id: r.destination_id, slot: r.slot });
+    continue;
+  }
+  taskADeletes.push({ destination_id: r.destination_id, slot: r.slot });
   // Honest-scarcity (null_slot) → no payload AND verdict explicitly says null,
   // OR no payload at all
   if (!payload?.name) {
@@ -115,6 +123,12 @@ for (const r of taskA) {
       payload,
     })
   );
+}
+
+if (skipped.length) {
+  console.log(`Skipping ${skipped.length} keep_existing rows without payload (left untouched in DB):`);
+  for (const sk of skipped) console.log(`    · ${sk.destination_id.padEnd(22)} ${sk.slot.padEnd(11)} (kept as-is)`);
+  console.log();
 }
 
 console.log(`Deleting ${taskADeletes.length} current rows in target slots…`);

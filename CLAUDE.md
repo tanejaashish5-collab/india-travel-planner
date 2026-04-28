@@ -77,13 +77,13 @@ Plan: `~/.claude/plans/smooth-orbiting-music.md` (full workflow — read before 
 
 | State | Status | Date | Coverage |
 |---|---|---|---|
-| Ladakh | ✓ done | 2026-04-26 | 14/14 dests · 93 eateries |
-| Jammu & Kashmir | ✓ done | 2026-04-26 | 17/17 dests · 98 eateries |
-| Himachal Pradesh | ✓ done | 2026-04-27 | 32/34 dests · 286 eateries (Chandratal + GHNP `[]`) |
-| Uttarakhand | ✓ done | 2026-04-27 | 38/38 dests · 316 eateries (4 honest-scarcity `[]`) |
-| Punjab + Haryana + Chandigarh | ✓ done | 2026-04-27 | 8/8 dests · 69 eateries (Damdama Sahib `[]` honest scarcity, stays skipped — API key depleted) |
-| Rajasthan | ✓ done | 2026-04-27 | 23/23 dests · 105 eateries (Deeg + Gagron Fort `[]` honest scarcity) |
-| Uttar Pradesh | ✓ done | 2026-04-28 | 13/13 dests · 98 eateries · 44 stays (100% sourced) |
+| Ladakh | eateries done · stays partial | 2026-04-26 | 14/14 dests · 93 eateries · 43 stays (3 manual + **40 un-audited web_search** ← BACKLOG) |
+| Jammu & Kashmir | eateries done · stays partial | 2026-04-26 | 17/17 dests · 98 eateries · 38 stays (10 manual + **28 un-audited web_search** ← BACKLOG) |
+| Himachal Pradesh | eateries done · stays NOT audited | 2026-04-27 | 32/34 dests · 286 eateries · 118 stays (9 manual + **109 un-audited web_search** ← BIGGEST BACKLOG) |
+| Uttarakhand | eateries done · stays NOT audited | 2026-04-27 | 38/38 dests · 316 eateries · 117 stays (18 manual + **99 un-audited web_search** ← BACKLOG) |
+| Punjab + Haryana + Chandigarh | ✓ done | 2026-04-28 | 8/8 dests · 69 eateries · 24 stays (100% sourced, 2 honest-scarcity nulls in Anandpur Sahib) |
+| Rajasthan | eateries done · stays partial | 2026-04-27 | 23/23 dests · 105 eateries · 70 stays (44 manual + **26 un-audited web_search** ← BACKLOG) |
+| Uttar Pradesh | ✓ done · stays partial | 2026-04-28 | 13/13 dests · 98 eateries · 44 stays (19 manual + **25 un-audited web_search** ← BACKLOG, includes 4 thin <2 sources) |
 | Bihar | ✓ done | 2026-04-28 | 6/6 dests · 36 eateries · 13 stays (100% sourced, 11 honest-scarcity nulls) |
 | Jharkhand | ✓ done | 2026-04-28 | 4/4 dests · 15 eateries · 13 stays (100% sourced, 78% fabrication rate caught) |
 | West Bengal | ✓ done | 2026-04-28 | 6/6 dests · 38 eateries · 20 stays (100% sourced, 4 honest-scarcity nulls) |
@@ -91,9 +91,11 @@ Plan: `~/.claude/plans/smooth-orbiting-music.md` (full workflow — read before 
 | Arunachal Pradesh | ✓ done | 2026-04-28 | 11/11 dests · 22 eateries · 25 stays (100% sourced, 6 honest-scarcity nulls + Bhalukpong/Dambuk eateries `[]`, 61% fabrication rate caught — 7 cross-state contaminations) |
 | Nagaland | **next** | - | TBD (Kohima + Mokokchung + Mon + Dzukou + Khonoma + Tuophema — Hornbill Festival belt) |
 
-**Per-state quality bar (going forward)**: Each session ships eateries (greenfield/backfill via 1-2 agents) **AND** stays (audit + replace fabricated picks via 1 agent, target 100% sourced) in the same session. Total budget ≤3 agents per state (cost-aware rule).
+**Per-state quality bar (going forward)**: Each session ships eateries (greenfield/backfill via 1-2 agents) **AND** stays (audit + replace fabricated picks via 1 agent, target 100% sourced) in the same session. Total budget ≤3 agents per state (cost-aware rule). **All research via WebFetch/WebSearch agents — NEVER curate-stays.mjs (Anthropic API/Haiku) per 2026-04-28 user instruction.**
 
-**Progress so far**: 12 states+UT clusters done, 183 dests, 1195 eateries. Stays: 13 clusters audited 100% sourced (Ladakh+J&K+UK+HP+PB+HR+CH+UP+Rajasthan+Bihar+Jharkhand+West Bengal+Sikkim+Arunachal Pradesh). Per-state details in session memory files — see `MEMORY.md` index.
+**Eateries progress**: 12 state clusters done (eateries side), 183 dests, 1195 eateries. Per-state details in session memory files — see `MEMORY.md` index.
+
+**Stays progress (HONEST 2026-04-28 audit + ongoing backlog burndown)**: 6 state clusters truly 100% manual-audited (**Bihar+Jharkhand+West Bengal+Sikkim+Arunachal Pradesh+Punjab+Haryana+Chandigarh** — unified workflow). **6 clusters with stays-audit BACKLOG = 327 unaudited `web_search` picks remaining**: HP 109, UK 99, Ladakh 40, J&K 28, Rajasthan 26, UP 25. Plan: 1 stays-audit agent per cluster, manual WebFetch only, ~1 cluster per session. Order: smallest-first (J&K → UP-finish → RJ-finish → Ladakh → UK → HP).
 
 ## Cost-aware operating rules (added 2026-04-27)
 
