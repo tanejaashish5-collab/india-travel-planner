@@ -1,0 +1,62 @@
+[
+  {
+    "destination_id": "yuksom",
+    "name": "Gupta Restaurant",
+    "area": "Main Road",
+    "area_slug": "main-road",
+    "cuisine": ["indian", "tibetan", "continental"],
+    "category": "casual",
+    "signature_dish": "veg thali with thukpa",
+    "must_try": ["veg thali", "thukpa", "paneer curry", "wood-fired pizza", "quesadilla", "momos"],
+    "price_range": "₹",
+    "price_per_head_inr": "[200,500]",
+    "vegetarian": "veg-friendly",
+    "kid_friendly": true,
+    "reservation": "walk-in",
+    "dress_code": null,
+    "established_year": null,
+    "why_it_matters": "Yuksom's foremost trekker meeting point — Lonely Planet-listed, run by Raj Gupta and family on the main road. Where Goecha La and Dzongri trekkers swap notes over thalis, pizzas, paneer curry and quesadillas.",
+    "insider_tip": "Trek-day breakfast crowds peak 7-8am; eat by 6.30am or after 9. The pizza is genuinely wood-fired — order it the night before you start the trek as a final non-camp meal.",
+    "signature_address": "Main Road, Yuksom 737113, West Sikkim",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Gupta+Restaurant+Yuksom+Sikkim",
+    "zomato_url": null,
+    "source_urls": [
+      "https://www.tripadvisor.in/Restaurant_Review-g2289068-d17435223-Reviews-Gupta_Restaurant-Yuksom_West_Sikkim_Sikkim.html",
+      "https://www.lonelyplanet.com/india/sikkim/yuksom-yuksam/restaurants/gupta-restaurant/a/poi-eat/1292607/356481",
+      "https://themountainwalker.com/2019/11/26/multi-cuisine-gupta-restaurant-yuksom-sikkim/"
+    ],
+    "last_verified": "2026-04-28",
+    "is_legendary": true,
+    "is_active": true
+  },
+  {
+    "destination_id": "yuksom",
+    "name": "Shangrilla Restaurant (Hotel Tashi Gang)",
+    "area": "Yuksom Village",
+    "area_slug": "yuksom-village",
+    "cuisine": ["sikkimese", "indian", "chinese", "continental"],
+    "category": "mid_range",
+    "signature_dish": "Sikkimese thali with tongba",
+    "must_try": ["Sikkimese thali", "thukpa", "tongba (millet beer)", "chang", "chicken curry"],
+    "price_range": "₹₹",
+    "price_per_head_inr": "[500,1000]",
+    "vegetarian": "veg-friendly",
+    "kid_friendly": true,
+    "reservation": "recommended",
+    "dress_code": null,
+    "established_year": null,
+    "why_it_matters": "In-house restaurant of Hotel Tashi Gang, Yuksom's longest-running heritage hotel. Serves Sikkimese, Indian, Chinese and continental — and is one of the few places in the village with a proper bar stocked with tongba (warm millet beer in a bamboo flask) and chang.",
+    "insider_tip": "Non-residents are welcome but call ahead for dinner — kitchen sizes order to occupancy. The tongba is the signature post-trek warm-up; ask them to top it with hot water as you sip down.",
+    "signature_address": "Hotel Tashi Gang, Yuksom 737113, West Sikkim",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Hotel+Tashi+Gang+Yuksom+Sikkim",
+    "zomato_url": null,
+    "source_urls": [
+      "https://www.tripadvisor.com/Hotel_Review-g2289068-d1585761-Reviews-Tashigang_Hotel-Yuksom_West_Sikkim_Sikkim.html",
+      "https://www.tourmyindia.com/states/sikkim/tashigang-hotel-yuksom.html",
+      "https://www.windhorsetours.com/hotels/tashi-gang-hotel"
+    ],
+    "last_verified": "2026-04-28",
+    "is_legendary": false,
+    "is_active": true
+  }
+]

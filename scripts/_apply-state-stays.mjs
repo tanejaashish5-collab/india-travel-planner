@@ -30,35 +30,91 @@ console.log(`${file}: task_a=${taskA.length} task_b=${taskB.length}\n`);
 
 const now = new Date().toISOString();
 
+// Schema-translation helpers — handle the two agent output styles we've seen.
+// Style A (Bihar/Jharkhand/WB): {result: {name, property_type, price_band("₹15–40k"), why_nakshiq, sources: [{url,title,source_type}]}}
+// Style B (Sikkim onward):      {replacement: {name, tier, tagline, price_band("₹₹₹"), book_url, address, phone, sources: [url,...]}}
+const tierToType = {
+  luxury: "luxury_hotel",
+  boutique: "boutique_hotel",
+  comfort: "comfort_hotel",
+  budget: "budget_hotel",
+  homestay: "homestay",
+  heritage: "heritage_hotel",
+};
+const symToBand = {
+  "₹": "₹2–4k",
+  "₹₹": "₹4–8k",
+  "₹₹₹": "₹8–15k",
+  "₹₹₹₹": "₹15–40k",
+};
+function urlToSourceObj(u) {
+  if (typeof u !== "string") return u; // already an object
+  try {
+    const host = new URL(u).hostname.replace(/^www\./, "");
+    let type = "directory";
+    if (host.includes("tripadvisor")) type = "tripadvisor";
+    else if (host.includes("booking")) type = "booking";
+    else if (host.includes("makemytrip") || host.includes("goibibo")) type = "ota";
+    else type = "official";
+    return { url: u, title: host, source_type: type };
+  } catch {
+    return { url: u, title: u, source_type: "directory" };
+  }
+}
+function normalizeSources(arr) {
+  if (!Array.isArray(arr)) return [];
+  return arr.map(urlToSourceObj);
+}
+function buildInsert({ destination_id, slot, payload, conf }) {
+  const sources = normalizeSources(payload.sources);
+  // why_nakshiq: prefer explicit; else compose from tagline + address/phone
+  let why = payload.why_nakshiq ?? payload.tagline ?? null;
+  if (!payload.why_nakshiq) {
+    const facts = [];
+    if (payload.address) facts.push(`Address: ${payload.address}.`);
+    if (payload.phone) facts.push(`Phone: ${payload.phone}.`);
+    if (facts.length && why) why = `${why} ${facts.join(" ")}`;
+  }
+  return {
+    destination_id,
+    slot,
+    name: payload.name,
+    property_type: payload.property_type ?? tierToType[payload.tier] ?? "hotel",
+    price_band: symToBand[payload.price_band] ?? payload.price_band ?? null,
+    why_nakshiq: why,
+    signature_experience: payload.signature_experience ?? null,
+    sources,
+    confidence: Math.max(0, Math.min(1, Number(payload.confidence ?? conf ?? (sources.length >= 2 ? 0.85 : 0.6)))),
+    voice_flags: [],
+    source: "manual",
+    contact_only: false,
+    contact_info: payload.book_url ? { book_url: payload.book_url } : null,
+    published: sources.length >= 2,
+    refreshed_at: now,
+  };
+}
+
 // === Task A: delete current row in slot, insert replacement (or leave null) ===
 const inserts = [];
 const nulls = [];
 const taskADeletes = [];
 for (const r of taskA) {
   taskADeletes.push({ destination_id: r.destination_id, slot: r.slot });
-  if (!r.result) {
+  // Pick whichever payload key the agent used
+  const payload = r.result ?? r.replacement ?? null;
+  // Honest-scarcity (null_slot) → no payload AND verdict explicitly says null,
+  // OR no payload at all
+  if (!payload?.name) {
     nulls.push({ destination_id: r.destination_id, slot: r.slot });
     continue;
   }
-  const conf = Math.max(0, Math.min(1, Number(r.result.confidence) || 0.75));
-  const sources = Array.isArray(r.result.sources) ? r.result.sources : [];
-  inserts.push({
-    destination_id: r.destination_id,
-    slot: r.slot,
-    name: r.result.name,
-    property_type: r.result.property_type,
-    price_band: r.result.price_band,
-    why_nakshiq: r.result.why_nakshiq,
-    signature_experience: r.result.signature_experience ?? null,
-    sources,
-    confidence: conf,
-    voice_flags: [],
-    source: "manual",
-    contact_only: false,
-    contact_info: null,
-    published: sources.length >= 2 && conf >= 0.6,
-    refreshed_at: now,
-  });
+  inserts.push(
+    buildInsert({
+      destination_id: r.destination_id,
+      slot: r.slot,
+      payload,
+    })
+  );
 }
 
 console.log(`Deleting ${taskADeletes.length} current rows in target slots…`);
@@ -97,8 +153,9 @@ if (nulls.length) {
 
 // === Task B ===
 if (taskB.length) {
-  console.log(`\nTask B: enriching ${taskB.length} KEEPs…`);
+  console.log(`\nTask B: enriching ${taskB.length} KEEPs (UPDATE if row exists, else INSERT)…`);
   let bUpdated = 0;
+  let bInserted = 0;
   let bDubious = 0;
   for (const r of taskB) {
     if (r.dubious_after_research) {
@@ -114,25 +171,32 @@ if (taskB.length) {
       }
       continue;
     }
-    const sources = Array.isArray(r.sources) ? r.sources : [];
-    const { error, count } = await s
+    // Build the full row from the enriched payload (handles both schemas)
+    const row = buildInsert({
+      destination_id: r.destination_id,
+      slot: r.slot,
+      payload: r,
+    });
+    // Try update first (preserves any other fields). If no row exists, insert.
+    const { count: updCount, error: updErr } = await s
       .from("destination_stay_picks")
-      .update(
-        {
-          sources,
-          voice_flags: [],
-          source: "manual",
-          refreshed_at: now,
-          published: sources.length >= 2,
-        },
-        { count: "exact" }
-      )
+      .update(row, { count: "exact" })
       .eq("destination_id", r.destination_id)
       .eq("slot", r.slot);
-    if (error) console.error(`  ✗ ${r.destination_id}/${r.slot}: ${error.message}`);
-    else bUpdated += count ?? 0;
+    if (updErr) {
+      console.error(`  ✗ UPDATE ${r.destination_id}/${r.slot}: ${updErr.message}`);
+      continue;
+    }
+    if (updCount > 0) {
+      bUpdated += updCount;
+      continue;
+    }
+    // No existing row → insert
+    const { error: insErr } = await s.from("destination_stay_picks").insert(row);
+    if (insErr) console.error(`  ✗ INSERT ${r.destination_id}/${r.slot}: ${insErr.message}`);
+    else bInserted++;
   }
-  console.log(`  ✓ Enriched: ${bUpdated} | DELETE (dubious): ${bDubious}`);
+  console.log(`  ✓ Updated: ${bUpdated} | Inserted: ${bInserted} | DELETE (dubious): ${bDubious}`);
 }
 
 // === Final state ===

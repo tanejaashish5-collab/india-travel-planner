@@ -1,0 +1,62 @@
+[
+  {
+    "destination_id": "namchi",
+    "name": "Mayal Hotel Restaurant",
+    "area": "Namchi Town",
+    "area_slug": "namchi-town",
+    "cuisine": ["sikkimese", "indian", "chinese"],
+    "category": "mid_range",
+    "signature_dish": "Sikkimese thali",
+    "must_try": ["Sikkimese thali", "thukpa", "veg curry", "chicken momos", "filter coffee"],
+    "price_range": "₹₹",
+    "price_per_head_inr": "[500,1000]",
+    "vegetarian": "veg-friendly",
+    "kid_friendly": true,
+    "reservation": "recommended",
+    "dress_code": null,
+    "established_year": null,
+    "why_it_matters": "In-house dining at Mayal Hotel — one of Namchi's longest-standing town hotels. The default sit-down lunch stop for tourists doing the Char Dham–Samdruptse statue–Namchi loop. Decent Sikkimese thali alongside reliable Indian-Chinese.",
+    "insider_tip": "Lunch is busy 1-2.30pm with Char Dham tour groups; arrive by 12.30 for a quiet table. Non-residents welcome but the hotel restaurant prefers a call-ahead for dinner.",
+    "signature_address": "Mayal Hotel, Namchi Town, Namchi 737126, South Sikkim",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Mayal+Hotel+Namchi+Sikkim",
+    "zomato_url": null,
+    "source_urls": [
+      "https://www.tripadvisor.in/ShowUserReviews-g2282617-d1195385-r359232034-Mayal_Hotel-Namchi_South_Sikkim_Sikkim.html",
+      "https://www.tripadvisor.com/RestaurantsNear-g2282617-d1195385-Mayal_Hotel-Namchi_South_Sikkim_Sikkim.html",
+      "https://www.tripadvisor.in/Restaurants-g2282617-Namchi_South_Sikkim_Sikkim.html"
+    ],
+    "last_verified": "2026-04-28",
+    "is_legendary": false,
+    "is_active": true
+  },
+  {
+    "destination_id": "namchi",
+    "name": "Cherry Resort Restaurant",
+    "area": "Temi Tea Estate",
+    "area_slug": "temi-tea-estate",
+    "cuisine": ["sikkimese", "indian", "continental"],
+    "category": "mid_range",
+    "signature_dish": "Sikkimese set meal with tea-estate view",
+    "must_try": ["Sikkimese set meal", "thukpa", "chicken curry", "Temi tea", "fruit cake"],
+    "price_range": "₹₹₹",
+    "price_per_head_inr": "[800,1500]",
+    "vegetarian": "veg-friendly",
+    "kid_friendly": true,
+    "reservation": "required",
+    "dress_code": null,
+    "established_year": null,
+    "why_it_matters": "Restaurant inside Cherry Resort, set within Temi Tea Garden — Sikkim's only tea estate. The view-meal pairing (Kanchenjunga-facing tea slopes) is the draw, not just the food. Sikkimese set meals on a fixed lunch menu.",
+    "insider_tip": "Non-residents must reserve — security gates the property. Lunch (12.30-2.30pm) is when Temi catches the best light; ask for the verandah.",
+    "signature_address": "Cherry Resort, Temi Tea Estate, near Namchi 737134, South Sikkim",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Cherry+Resort+Temi+Tea+Estate+Sikkim",
+    "zomato_url": null,
+    "source_urls": [
+      "https://cherry-resort.wheree.com/",
+      "https://www.tripadvisor.in/Restaurants-g2282617-Namchi_South_Sikkim_Sikkim.html",
+      "https://curlytales.com/7-cafes-restaurants-in-sikkim-to-enjoy-great-food-with-the-most-enigmatic-views/"
+    ],
+    "last_verified": "2026-04-28",
+    "is_legendary": false,
+    "is_active": true
+  }
+]

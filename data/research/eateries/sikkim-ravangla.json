@@ -1,0 +1,62 @@
+[
+  {
+    "destination_id": "ravangla",
+    "name": "Taste of Sikkim",
+    "area": "Ravangla Bazaar",
+    "area_slug": "ravangla-bazaar",
+    "cuisine": ["sikkimese", "tibetan", "indian"],
+    "category": "casual",
+    "signature_dish": "Sikkimese thali with phaley",
+    "must_try": ["Sikkimese thali", "phaley (Tibetan stuffed bread)", "thukpa", "pork momos", "gundruk soup"],
+    "price_range": "₹",
+    "price_per_head_inr": "[300,600]",
+    "vegetarian": "veg-friendly",
+    "kid_friendly": true,
+    "reservation": "walk-in",
+    "dress_code": null,
+    "established_year": null,
+    "why_it_matters": "The most-cited local-food kitchen in Ravangla — with sister branding in Gangtok and Pelling. Tibetan-Sikkimese menu (phaley, thukpa, gundruk, pork momos) priced for trekkers and Buddha Park day-trippers.",
+    "insider_tip": "Stop here on the way down from Buddha Park — the cafe at the park itself is pure-veg only and limited; this is where you go for pork momos and Sikkimese thali. Lunch goes 12.30-2.30pm.",
+    "signature_address": "Main Bazaar, Ravangla 737139, South Sikkim",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Taste+of+Sikkim+Ravangla",
+    "zomato_url": null,
+    "source_urls": [
+      "https://www.tripadvisor.in/Restaurant_Review-g1234789-d9609294-Reviews-Taste_Of_Sikkim-Ravangla_South_Sikkim_Sikkim.html",
+      "https://wanderlog.com/list/geoCategory/376037/best-restaurants-to-have-dinner-in-south-sikkim",
+      "https://www.crazymasalafood.com/top-19-restaurants-visit-sikkim-dinner/"
+    ],
+    "last_verified": "2026-04-28",
+    "is_legendary": false,
+    "is_active": true
+  },
+  {
+    "destination_id": "ravangla",
+    "name": "Mt. Narsing Village Resort Restaurant",
+    "area": "Lower Ravangla",
+    "area_slug": "lower-ravangla",
+    "cuisine": ["sikkimese", "indian", "chinese", "continental"],
+    "category": "mid_range",
+    "signature_dish": "Sikkimese set meal",
+    "must_try": ["Sikkimese set meal", "thukpa", "chicken curry", "veg thali"],
+    "price_range": "₹₹",
+    "price_per_head_inr": "[600,1200]",
+    "vegetarian": "veg-friendly",
+    "kid_friendly": true,
+    "reservation": "recommended",
+    "dress_code": null,
+    "established_year": null,
+    "why_it_matters": "In-house restaurant at Mt. Narsing — the village-resort cluster a few kilometres outside Ravangla bazaar. Two restaurants on property serving Sikkimese, Indian, Chinese, continental. The default for guests; non-residents accepted with a call.",
+    "insider_tip": "Sit in the garden-view section if the weather holds — the Kanchenjunga ridge is visible on a clear morning. Dinner closes by 9pm; arrive by 8.",
+    "signature_address": "Mt. Narsing Village Resort, Ravangla 737139, South Sikkim",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Mt+Narsing+Village+Resort+Ravangla",
+    "zomato_url": null,
+    "source_urls": [
+      "https://www.tripadvisor.com/Hotel_Review-g1234789-d649259-Reviews-or30-Mt_Narsing_Village_Resort-Ravangla_South_Sikkim_Sikkim.html",
+      "https://www.booking.com/hotel/in/mt-narsing-village-resort.html",
+      "https://www.travelguru.com/hotels/hotels-in-ravangla/mt-narsing-the-village-resort"
+    ],
+    "last_verified": "2026-04-28",
+    "is_legendary": false,
+    "is_active": true
+  }
+]
