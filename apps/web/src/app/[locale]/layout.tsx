@@ -283,10 +283,10 @@ export default async function LocaleLayout({
         <Script id="sw-register" strategy="afterInteractive">
           {`if('serviceWorker' in navigator){navigator.serviceWorker.register('/sw.js').catch(()=>{})}`}
         </Script>
-        {process.env.NEXT_PUBLIC_GA4_ID && (
+        {process.env.NEXT_PUBLIC_GA4_ID?.trim() && (
           <>
             <Script
-              src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA4_ID}`}
+              src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA4_ID.trim()}`}
               strategy="afterInteractive"
             />
             <Script id="ga4-init" strategy="afterInteractive">
@@ -299,8 +299,8 @@ export default async function LocaleLayout({
                 // Admin → Custom definitions → Create custom dimension →
                 // Scope: User, User property: aio_referral.
                 var __aioRef = (document.referrer || '').indexOf('udm=50') !== -1;
-                gtag('config','${process.env.NEXT_PUBLIC_GA4_ID}');
-                ${process.env.NEXT_PUBLIC_GA4_ID_SECONDARY ? `gtag('config','${process.env.NEXT_PUBLIC_GA4_ID_SECONDARY}');` : ''}
+                gtag('config','${process.env.NEXT_PUBLIC_GA4_ID.trim()}');
+                ${process.env.NEXT_PUBLIC_GA4_ID_SECONDARY?.trim() ? `gtag('config','${process.env.NEXT_PUBLIC_GA4_ID_SECONDARY.trim()}');` : ''}
                 if (__aioRef) {
                   gtag('set', 'user_properties', { aio_referral: 'true' });
                   gtag('event', 'aio_referral_landing', {
