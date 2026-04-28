@@ -87,6 +87,21 @@ export default function middleware(request: NextRequest) {
   // destination page wins — skip the redirect or the destination page never
   // renders. Caught after the Delhi eateries section silently disappeared.
   const STATE_AND_DESTINATION = new Set(["delhi"]);
+
+  // Non-locale-prefixed state redirect: /destination/{stateId} → /en/state/{stateId}
+  // Without this, the chain is /destination/X → /en/destination/X → /en/state/X (2 hops).
+  // Google flags 2-hop chains as "Redirect error". Single hop fixes it.
+  const bareDestStateMatch = request.nextUrl.pathname.match(/^\/destination\/([^/]+)\/?$/);
+  if (
+    bareDestStateMatch &&
+    STATE_MAP[bareDestStateMatch[1]] &&
+    !STATE_AND_DESTINATION.has(bareDestStateMatch[1])
+  ) {
+    const stateId = bareDestStateMatch[1];
+    return NextResponse.redirect(new URL(`/en/state/${stateId}`, request.url), 301);
+  }
+
+  // Locale-prefixed state redirect: /(en|hi)/destination/{stateId} → /{locale}/state/{stateId}
   const destStateMatch = request.nextUrl.pathname.match(/^\/(en|hi)\/destination\/([^/]+)\/?$/);
   if (
     destStateMatch &&
