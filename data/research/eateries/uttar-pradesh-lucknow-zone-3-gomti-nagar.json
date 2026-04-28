@@ -1,0 +1,62 @@
+[
+  {
+    "destination_id": "lucknow",
+    "name": "Dastarkhwan",
+    "area": "Kaiserbagh",
+    "area_slug": "kaiserbagh",
+    "cuisine": ["awadhi", "mughlai", "biryani", "kebab"],
+    "category": "mid_range",
+    "signature_dish": "Lucknawi biryani with korma",
+    "must_try": ["awadhi biryani", "korma", "nihari", "boti kebab", "mughlai paratha"],
+    "price_range": "₹₹",
+    "price_per_head_inr": "[400,900]",
+    "vegetarian": "meat-heavy",
+    "kid_friendly": true,
+    "reservation": "recommended",
+    "dress_code": null,
+    "established_year": null,
+    "why_it_matters": "Boti kebab cooked over open charcoal, served with Mughlai paratha — Dastarkhwan's signature setup that draws Awadhi-cuisine first-timers across multiple branches. The Kaiserbagh original is the kitchen with the most consistent reviews.",
+    "insider_tip": "Opens 1:30pm — does not run breakfast. Multiple namesake branches now operate (Aminabad, Gomti Nagar's Vivek Khand) — the Kaiserbagh and Vivek Khand outlets are the in-family ones; verify branch on Zomato before booking.",
+    "signature_address": "20, DM Compound Colony, Wala Qadar Road, Kaiserbagh, Lucknow 226001",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Dastarkhwan+Kaiserbagh+Lucknow",
+    "zomato_url": "https://www.zomato.com/lucknow/dastarkhwan-1-kaiserbagh",
+    "source_urls": [
+      "https://www.zomato.com/lucknow/dastarkhwan-1-kaiserbagh",
+      "https://www.tripadvisor.in/Restaurant_Review-g297684-d1436609-Reviews-Dastarkhwan-Lucknow_Lucknow_District_Uttar_Pradesh.html",
+      "https://thecentrum.in/where-to-eat-in-lucknow-the-best-spots-for-authentic-awadhi-dishes/"
+    ],
+    "last_verified": "2026-04-28",
+    "is_legendary": false,
+    "is_active": true
+  },
+  {
+    "destination_id": "lucknow",
+    "name": "Kakori House",
+    "area": "Gomti Nagar",
+    "area_slug": "gomti-nagar",
+    "cuisine": ["awadhi", "kebab", "mughlai"],
+    "category": "mid_range",
+    "signature_dish": "kakori kebab",
+    "must_try": ["kakori kebab", "galouti", "biryani", "shahi tukda"],
+    "price_range": "₹₹",
+    "price_per_head_inr": "[600,1200]",
+    "vegetarian": "meat-heavy",
+    "kid_friendly": true,
+    "reservation": "recommended",
+    "dress_code": null,
+    "established_year": null,
+    "why_it_matters": "Gomti Nagar's specialist for the kakori kebab — the smooth-as-silk minced-meat skewer technique that originates from Kakori town just outside Lucknow. The kitchen brings the old-city kebab tradition to the eastern modern-Lucknow side of the river.",
+    "insider_tip": "Order the kakori-galouti combo plate to compare the two minced-meat techniques in one sitting. Reserve for weekend dinners; the dining room is small.",
+    "signature_address": "Vivek Khand 3, Gomti Nagar, Lucknow 226010",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Kakori+House+Gomti+Nagar+Lucknow",
+    "zomato_url": "https://www.zomato.com/lucknow/kakori-house-gomti-nagar",
+    "source_urls": [
+      "https://wanderlog.com/list/geoCategory/1501228/best-spots-for-kebab-in-lucknow",
+      "https://whatlucknow.com/kababs-in-lucknow/",
+      "https://www.knocksense.com/ampstories/lucknow/galouti-kakori-more-heres-where-to-eat-lucknows-best-kebabs"
+    ],
+    "last_verified": "2026-04-28",
+    "is_legendary": false,
+    "is_active": true
+  }
+]

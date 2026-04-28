@@ -1,0 +1,62 @@
+[
+  {
+    "destination_id": "lucknow",
+    "name": "Oudhyana",
+    "area": "Gomti Nagar",
+    "area_slug": "gomti-nagar",
+    "cuisine": ["awadhi", "lucknowi", "mughlai"],
+    "category": "fine_dining",
+    "signature_dish": "Awadhi degh-cooked biryani",
+    "must_try": ["kakori kebab", "dum biryani", "korma", "shahi tukda", "sheermal"],
+    "price_range": "₹₹₹₹",
+    "price_per_head_inr": "[3500,5500]",
+    "vegetarian": "veg-friendly",
+    "kid_friendly": true,
+    "reservation": "required",
+    "dress_code": "smart-casual",
+    "established_year": null,
+    "why_it_matters": "Taj Mahal Lucknow's Awadhi specialty room — the city's only fine-dining setup running the slow-cooked Awadhi cuisine in full pomp, with live ghazal-style music nightly. Subtle spicing built around hours of dum and yakhni reduction, the way Lucknow's tehzeeb school of cooks practised it.",
+    "insider_tip": "Lunch service is much quieter; book 12:30-3pm for a calmer kitchen pace. The galouti and ulte-tawa paratha pairing is the dish to test the kitchen on.",
+    "signature_address": "Taj Mahal Lucknow, Vipin Khand, Gomti Nagar, Lucknow 226010",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Oudhyana+Taj+Mahal+Gomti+Nagar+Lucknow",
+    "zomato_url": "https://www.zomato.com/lucknow/oudhyana-taj-mahal-gomti-nagar",
+    "source_urls": [
+      "https://www.tajhotels.com/en-in/hotels/taj-mahal-lucknow/restaurants/oudhyana",
+      "https://www.zomato.com/lucknow/oudhyana-taj-mahal-gomti-nagar",
+      "https://www.tripadvisor.in/Restaurant_Review-g297684-d1998740-Reviews-Oudhyana-Lucknow_Lucknow_District_Uttar_Pradesh.html"
+    ],
+    "last_verified": "2026-04-28",
+    "is_legendary": true,
+    "is_active": true
+  },
+  {
+    "destination_id": "lucknow",
+    "name": "Falaknuma",
+    "area": "Hazratganj",
+    "area_slug": "hazratganj",
+    "cuisine": ["awadhi", "north-indian", "continental"],
+    "category": "fine_dining",
+    "signature_dish": "Ghost Falaknuma",
+    "must_try": ["ghost falaknuma", "galouti kebab", "paneer hazratmahal", "daal tadka"],
+    "price_range": "₹₹₹",
+    "price_per_head_inr": "[2000,3500]",
+    "vegetarian": "veg-friendly",
+    "kid_friendly": true,
+    "reservation": "recommended",
+    "dress_code": null,
+    "established_year": null,
+    "why_it_matters": "The rooftop a-la-carte of Hotel Clarks Avadh — sightlines onto the Gomti and Chhatar Manzil Palace. Live ghazal accompaniment most nights; the kitchen leans Awadhi but the view is the bigger sell. Not a revolving restaurant despite local description.",
+    "insider_tip": "Sunset table is non-negotiable — call ahead for a window seat at 6pm. Afternoon service is slower (12:30-3:30pm) and view-only; dinner has the ghazal.",
+    "signature_address": "Hotel Clarks Avadh, 8 Mahatma Gandhi Marg, Hazratganj, Lucknow 226001",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Falaknuma+Clarks+Avadh+Hazratganj+Lucknow",
+    "zomato_url": "https://www.zomato.com/lucknow/falak-numa-restaurant-hotel-clarks-avadh-hazratganj",
+    "source_urls": [
+      "https://www.zomato.com/lucknow/falak-numa-restaurant-hotel-clarks-avadh-hazratganj",
+      "https://www.hotelclarks.com/avadh-lucknow/bar-buffet-restaurants-in-lucknow/falaknuma-rooftop-restaurant.html",
+      "https://www.knocksense.com/lucknow/heritage-restaurants-of-clarks-avadh-lucknow-a-royal-tale-of-culinary-excellence"
+    ],
+    "last_verified": "2026-04-28",
+    "is_legendary": false,
+    "is_active": true
+  }
+]

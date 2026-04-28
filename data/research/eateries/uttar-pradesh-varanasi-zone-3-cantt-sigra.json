@@ -1,0 +1,62 @@
+[
+  {
+    "destination_id": "varanasi",
+    "name": "Canton Royale",
+    "area": "Cantonment",
+    "area_slug": "cantonment",
+    "cuisine": ["multi-cuisine", "north-indian", "chinese", "continental"],
+    "category": "fine_dining",
+    "signature_dish": "Awadhi dum biryani",
+    "must_try": ["awadhi dum biryani", "thai red curry", "tandoori platter", "pasta arrabiata"],
+    "price_range": "₹₹₹",
+    "price_per_head_inr": "[1500,3000]",
+    "vegetarian": "veg-friendly",
+    "kid_friendly": true,
+    "reservation": "recommended",
+    "dress_code": null,
+    "established_year": null,
+    "why_it_matters": "The all-day multi-cuisine room at Hotel Surya Kaiser Palace — al fresco wing under mango trees, pan-Asian and Mediterranean alongside North Indian. Long Varanasi's go-to for business lunches and arriving travellers wanting AC and a proper bar.",
+    "insider_tip": "Sit outside on winter evenings; Mangri Ferra (the open-air juice bar in the same complex) handles afternoon coffee better than the indoor room.",
+    "signature_address": "Hotel Surya Kaiser Palace, S-20/51 A-5, The Mall Road, Varuna Bridge, Cantonment, Varanasi 221002",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Canton+Royale+Hotel+Surya+Varanasi",
+    "zomato_url": "https://www.zomato.com/varanasi/canton-royale-restaurant-hotel-surya-nadesar",
+    "source_urls": [
+      "https://www.zomato.com/varanasi/canton-royale-restaurant-hotel-surya-nadesar",
+      "https://www.hotelsuryavns.com/eat-drink",
+      "https://www.tripadvisor.in/Hotel_Review-g297685-d811033-Reviews-Hotel_Surya_Kaiser_Palace-Varanasi_Varanasi_District_Uttar_Pradesh.html"
+    ],
+    "last_verified": "2026-04-28",
+    "is_legendary": false,
+    "is_active": true
+  },
+  {
+    "destination_id": "varanasi",
+    "name": "Varuna",
+    "area": "Cantonment",
+    "area_slug": "cantonment",
+    "cuisine": ["awadhi", "north-indian", "mughlai"],
+    "category": "fine_dining",
+    "signature_dish": "lucknawi galouti kebab",
+    "must_try": ["galouti kebab", "kakori kebab", "rogan josh", "biryani"],
+    "price_range": "₹₹₹",
+    "price_per_head_inr": "[2000,3500]",
+    "vegetarian": "veg-friendly",
+    "kid_friendly": true,
+    "reservation": "recommended",
+    "dress_code": null,
+    "established_year": null,
+    "why_it_matters": "Indian-specialty restaurant inside Taj Ganges (formerly The Gateway Hotel Ganges) — the city's only five-star kitchen running a dedicated Awadhi-Mughlai menu, set in 40 acres of Cantonment gardens.",
+    "insider_tip": "The all-day room Chowk handles breakfast and casual meals; book Varuna only for the kebab tasting menu — the daytime crowd here is in-house.",
+    "signature_address": "Taj Ganges, Nadesar Palace Grounds, Raja Bazaar Road, Cantonment, Varanasi 221002",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Varuna+Restaurant+Taj+Ganges+Varanasi",
+    "zomato_url": "https://www.zomato.com/varanasi/taj-ganges-cantt",
+    "source_urls": [
+      "https://www.tajhotels.com/en-in/hotels/taj-ganges-varanasi",
+      "https://www.tripadvisor.com/Hotel_Review-g297685-d304796-Reviews-Taj_Ganges_Varanasi-Varanasi_Varanasi_District_Uttar_Pradesh.html",
+      "https://www.expedia.com/Varanasi-Hotels-Taj-Ganges.h526343.Hotel-Information"
+    ],
+    "last_verified": "2026-04-28",
+    "is_legendary": false,
+    "is_active": true
+  }
+]
