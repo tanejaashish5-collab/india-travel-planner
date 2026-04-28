@@ -1,0 +1,60 @@
+[
+  {
+    "destination_id": "nalanda",
+    "name": "ASI Cafeteria, Nalanda Ruins",
+    "area": "Nalanda University Ruins archaeological site",
+    "area_slug": "ruins-site",
+    "cuisine": ["indian", "snacks", "tea-coffee"],
+    "category": "casual",
+    "signature_dish": "samosa with masala chai",
+    "must_try": ["samosa", "masala chai", "veg sandwich", "biscuits"],
+    "price_range": "₹",
+    "price_per_head_inr": "[80,200]",
+    "vegetarian": "pure-veg",
+    "kid_friendly": true,
+    "reservation": "walk-in",
+    "dress_code": null,
+    "established_year": null,
+    "why_it_matters": "The small canteen on the Archaeological Survey of India site at the Nalanda Ruins — limited menu of snacks, tea and bottled water. Practical rather than scenic; the only food option inside the protected zone.",
+    "insider_tip": "Open during ruin visiting hours (9am-5pm). For a full meal, head 11 km to Rajgir or 9 km to Bihar Sharif — Nalanda village itself has only roadside dhabas.",
+    "signature_address": "Nalanda University Ruins, Nalanda 803111",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Nalanda+University+Ruins+Cafeteria",
+    "zomato_url": null,
+    "source_urls": [
+      "https://www.tripadvisor.in/Attraction_Review-g3929053-d4932677-Reviews-Nalanda_University_Ruins-Nalanda_Nalanda_District_Bihar.html",
+      "https://travelsetu.com/guide/nalanda-university-ruins-tourism/nalanda-university-ruins-faqs"
+    ],
+    "last_verified": "2026-04-28",
+    "is_legendary": false,
+    "is_active": true
+  },
+  {
+    "destination_id": "nalanda",
+    "name": "Highway Dhaba, Nalanda-Rajgir Road",
+    "area": "Nalanda-Rajgir Main Road, opposite ruins entrance",
+    "area_slug": "rajgir-road",
+    "cuisine": ["bihari", "north-indian", "dhaba"],
+    "category": "casual",
+    "signature_dish": "litti chokha with sattu paratha",
+    "must_try": ["litti chokha", "sattu paratha", "dal-chawal", "aloo sabzi"],
+    "price_range": "₹",
+    "price_per_head_inr": "[100,250]",
+    "vegetarian": "veg-friendly",
+    "kid_friendly": true,
+    "reservation": "walk-in",
+    "dress_code": null,
+    "established_year": null,
+    "why_it_matters": "The cluster of small dhabas on the Nalanda-Rajgir road opposite the ruins entrance — about 3 km from the protected site. Sattu paratha, litti chokha and a working tea-stall format; the default lunch stop for tour buses.",
+    "insider_tip": "Multiple competing carts — pick one with steam visibly rising from the litti coals. Cash only at most stalls; the chai is fresher than the food after the lunch rush.",
+    "signature_address": "Nalanda-Rajgir Main Road, opposite Nalanda Ruins entrance, Nalanda 803111",
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Dhaba+Nalanda+Rajgir+Road+ruins",
+    "zomato_url": null,
+    "source_urls": [
+      "https://www.tripadvisor.com/RestaurantsNear-g3929053-d4932677-Nalanda_University_Ruins-Nalanda_Nalanda_District_Bihar.html",
+      "https://wanderlog.com/list/geoCategory/375942/best-restaurants-to-have-dinner-in-nalanda-district"
+    ],
+    "last_verified": "2026-04-28",
+    "is_legendary": false,
+    "is_active": true
+  }
+]
