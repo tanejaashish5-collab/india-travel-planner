@@ -26,35 +26,16 @@ import tempfile
 from pathlib import Path
 from typing import Optional
 
-# ── Brand constants ──────────────────────────────────────────────────────
-try:
-    from slide_gen import (INK_DEEP, BONE, VERMILLION_BRIGHT, VERMILLION_DEEP,
-                           SAFFRON, SAGE, FONT_DIR)
-except ImportError:
-    INK_DEEP = "#161614"
-    BONE = "#F5F1E8"
-    VERMILLION_BRIGHT = "#E55642"
-    VERMILLION_DEEP = "#C43E2D"
-    SAFFRON = "#D4883A"
-    SAGE = "#5C6B5A"
-    FONT_DIR = Path(__file__).parent / "assets" / "fonts"
-
 # ── Paths ────────────────────────────────────────────────────────────────
 ASSETS_DIR = Path(__file__).parent / "assets"
 MUSIC_DIR  = ASSETS_DIR / "yt_music"
 POMELLI_DIR = Path(__file__).parent / "pomelli_library"
 MANIFEST_FILE = POMELLI_DIR / "manifest.json"
-DATA_FILE = Path(__file__).parent / "map_data.json"
 
 # ── Output specs ─────────────────────────────────────────────────────────
 REEL_W, REEL_H = 1080, 1920
 REEL_FPS = 30
 REEL_DURATION = 30  # seconds
-
-# ── Font paths (used in ffmpeg drawtext) ─────────────────────────────────
-FONT_CRIMSON = str(FONT_DIR / "CrimsonPro-Italic.ttf") if FONT_DIR.exists() else ""
-FONT_INSTRUMENT = str(FONT_DIR / "InstrumentSans-Bold.ttf") if FONT_DIR.exists() else ""
-FONT_JETBRAINS = str(FONT_DIR / "JetBrainsMono-Bold.ttf") if FONT_DIR.exists() else ""
 
 # ── Music preferences per format (trendy tracks first) ──────────────────
 _MUSIC_PREFS: dict[str, list[str]] = {
@@ -211,28 +192,6 @@ def _find_ffmpeg() -> str:
                 break
     return ffmpeg_bin or "ffmpeg"
 
-
-def _build_drawtext(text: str, font_path: str, size: int,
-                    color: str, x: str, y: str,
-                    enable: str = "", border_w: int = 2) -> str:
-    """Build an ffmpeg drawtext filter expression."""
-    # Escape special chars for ffmpeg
-    safe_text = (text.replace("'", "'\\''")
-                     .replace(":", "\\:")
-                     .replace("%", "%%"))
-    parts = [
-        f"drawtext=text='{safe_text}'",
-        f"fontfile='{font_path}'" if font_path else "",
-        f"fontsize={size}",
-        f"fontcolor={color}",
-        f"x={x}", f"y={y}",
-        f"borderw={border_w}" if border_w else "",
-        f"bordercolor=black@0.6" if border_w else "",
-    ]
-    if enable:
-        safe_enable = enable.replace(",", "\\,")
-        parts.append(f"enable='{safe_enable}'")
-    return ":".join(p for p in parts if p)
 
 
 # ═══════════════════════════════════════════════════════════════════════════
@@ -456,299 +415,53 @@ def _build_single_image_reel(
 
 
 # ═══════════════════════════════════════════════════════════════════════════
-# TEXT OVERLAY BUILDERS (format-specific)
+# TEXT OVERLAY — REMOVED
 # ═══════════════════════════════════════════════════════════════════════════
-
-def _build_heatmap_overlay(state_name: str) -> str:
-    """Text overlay for state_heatmap format."""
-    import calendar
-    from datetime import datetime
-    month = calendar.month_name[datetime.now().month].upper()
-
-    parts = []
-    # Dark semi-transparent bars for text readability
-    parts.append("drawbox=x=0:y=0:w=iw:h=200:color=black@0.5:t=fill")
-    parts.append("drawbox=x=0:y=ih-180:w=iw:h=180:color=0x161614@0.85:t=fill")
-
-    # Top: State name + month
-    parts.append(_build_drawtext(
-        state_name.upper(), FONT_INSTRUMENT, 52,
-        BONE, "(w-text_w)/2", "40",
-        border_w=3
-    ))
-    parts.append(_build_drawtext(
-        f"DESTINATION SCORES — {month}", FONT_INSTRUMENT, 28,
-        SAFFRON, "(w-text_w)/2", "105",
-        border_w=2
-    ))
-    parts.append(_build_drawtext(
-        f"Swipe for details", FONT_CRIMSON, 24,
-        BONE, "(w-text_w)/2", "145",
-        enable="gte(t,8)", border_w=1
-    ))
-
-    # Bottom branding removed — Pomelli images already have NakshIQ branding baked in
-
-    return ",".join(parts)
-
-
-def _build_route_overlay(state_name: str) -> str:
-    """Text overlay for route_trace format."""
-    parts = []
-    parts.append("drawbox=x=0:y=0:w=iw:h=200:color=black@0.5:t=fill")
-    parts.append("drawbox=x=0:y=ih-180:w=iw:h=180:color=0x161614@0.85:t=fill")
-
-    parts.append(_build_drawtext(
-        f"{state_name.upper()} ROUTE", FONT_INSTRUMENT, 48,
-        BONE, "(w-text_w)/2", "40",
-        border_w=3
-    ))
-    parts.append(_build_drawtext(
-        "TOP DESTINATIONS CONNECTED", FONT_INSTRUMENT, 26,
-        SAFFRON, "(w-text_w)/2", "100",
-        border_w=2
-    ))
-    parts.append(_build_drawtext(
-        "Plan your route at nakshiq.com", FONT_CRIMSON, 24,
-        BONE, "(w-text_w)/2", "145",
-        enable="gte(t,8)", border_w=1
-    ))
-
-    # Bottom branding removed — Pomelli images already have NakshIQ branding baked in
-
-    return ",".join(parts)
-
-
-def _build_cluster_overlay() -> str:
-    """Text overlay for cluster_reveal format."""
-    import calendar
-    from datetime import datetime
-    month = calendar.month_name[datetime.now().month].upper()
-
-    parts = []
-    parts.append("drawbox=x=0:y=0:w=iw:h=220:color=black@0.5:t=fill")
-    parts.append("drawbox=x=0:y=ih-180:w=iw:h=180:color=0x161614@0.85:t=fill")
-
-    parts.append(_build_drawtext(
-        "INDIA", FONT_INSTRUMENT, 56,
-        BONE, "(w-text_w)/2", "30",
-        border_w=3
-    ))
-    parts.append(_build_drawtext(
-        f"DESTINATION SCORES — {month}", FONT_INSTRUMENT, 28,
-        SAFFRON, "(w-text_w)/2", "100",
-        border_w=2
-    ))
-    parts.append(_build_drawtext(
-        "Every region. Every month.", FONT_CRIMSON, 24,
-        BONE, "(w-text_w)/2", "145",
-        border_w=1
-    ))
-    parts.append(_build_drawtext(
-        "Explore all scores at nakshiq.com", FONT_CRIMSON, 24,
-        BONE, "(w-text_w)/2", "175",
-        enable="gte(t,8)", border_w=1
-    ))
-
-    # Bottom branding removed — Pomelli images already have NakshIQ branding baked in
-
-    return ",".join(parts)
-
-
-def _build_pulse_overlay(dest_name: str, score: int,
-                         state_name: str = "", tagline: str = "") -> str:
-    """Text overlay for score_pulse format."""
-    score_color = VERMILLION_BRIGHT if score <= 2 else SAFFRON if score == 3 else "#4CAF50"
-
-    parts = []
-    # Dark overlay for readability
-    parts.append("drawbox=x=0:y=0:w=iw:h=ih:color=black@0.25:t=fill")
-    parts.append("drawbox=x=0:y=ih-180:w=iw:h=180:color=0x161614@0.85:t=fill")
-
-    # "DISCOVER" teaser (0-2s)
-    parts.append(_build_drawtext(
-        "DISCOVER", FONT_INSTRUMENT, 40,
-        SAFFRON, "(w-text_w)/2", "h*0.28",
-        enable="between(t,0.3,5)", border_w=2
-    ))
-
-    # Destination name (appear at 1s)
-    parts.append(_build_drawtext(
-        dest_name.upper(), FONT_INSTRUMENT, 72,
-        BONE, "(w-text_w)/2", "h*0.35",
-        enable="gte(t,1)", border_w=4
-    ))
-
-    # State name (appear at 1.5s)
-    if state_name:
-        parts.append(_build_drawtext(
-            state_name.upper(), FONT_CRIMSON, 34,
-            BONE, "(w-text_w)/2", "h*0.43",
-            enable="gte(t,1.5)", border_w=2
-        ))
-
-    # Score (appear at 4s)
-    parts.append(_build_drawtext(
-        f"{score}/5", FONT_JETBRAINS, 120,
-        score_color, "(w-text_w)/2", "h*0.52",
-        enable="gte(t,4)", border_w=5
-    ))
-
-    # "NAKSHIQ SCORE" label
-    parts.append(_build_drawtext(
-        "NAKSHIQ SCORE", FONT_INSTRUMENT, 24,
-        BONE, "(w-text_w)/2", "h*0.62",
-        enable="gte(t,4.5)", border_w=1
-    ))
-
-    # Tagline (appear at 5.5s)
-    if tagline:
-        tag = tagline[:70] + ("..." if len(tagline) > 70 else "")
-        words = tag.split()
-        mid = len(words) // 2
-        t1 = " ".join(words[:mid])
-        t2 = " ".join(words[mid:])
-        parts.append(_build_drawtext(
-            t1, FONT_CRIMSON, 30,
-            BONE, "(w-text_w)/2", "h*0.68",
-            enable="gte(t,5.5)", border_w=2
-        ))
-        if t2:
-            parts.append(_build_drawtext(
-                t2, FONT_CRIMSON, 30,
-                BONE, "(w-text_w)/2", "h*0.72",
-                enable="gte(t,5.5)", border_w=2
-            ))
-
-    # CTA (8s+)
-    parts.append(
-        "drawbox=x=(w-480)/2:y=h*0.78:w=480:h=60"
-        ":color=0xE55642:t=fill:enable='gte(t\\,8)'"
-    )
-    parts.append(_build_drawtext(
-        "Plan on nakshiq.com", FONT_INSTRUMENT, 28,
-        BONE, "(w-text_w)/2", "h*0.79",
-        enable="gte(t,8)", border_w=0
-    ))
-
-    # Bottom branding removed — Pomelli images already have NakshIQ branding baked in
-
-    return ",".join(parts)
+# Pomelli images are self-contained designs with their own headlines,
+# subtitles, data callouts, and NakshIQ branding baked in.
+# Adding drawtext overlays on top of Ken Burns animation caused:
+#   1. Text overflow (no width constraint)
+#   2. Text-on-text stacking (Pomelli text + overlay text)
+#   3. Triple branding (Pomelli has logo + handle + tagline)
+#   4. Unreadable text during zoompan animation
+# Fix: let Pomelli designs speak for themselves — no additional overlays.
 
 
 # ═══════════════════════════════════════════════════════════════════════════
-# FORMAT RENDERERS
+# CAMPAIGN-DRIVEN RENDERER (unified)
 # ═══════════════════════════════════════════════════════════════════════════
 
-def _render_state_heatmap(data: dict, out_dir: Path) -> Optional[Path]:
+def render_campaign_reel(
+    campaign_name: str,
+    images: list[Path],
+    out_dir: Path,
+    music_style: str = "state_heatmap",
+) -> Optional[Path]:
     """
-    State Heatmap: 4 Pomelli images from a campaign with Ken Burns + xfade.
-    Text overlay shows state name + month + branding.
-    """
-    state_name = data.get("state_data", {}).get("name", "India")
-    slug = data.get("slug", "map")
+    Render a reel from a Pomelli campaign's images — no text overlays.
+    The Pomelli designs already contain all visual content (headlines,
+    subtitles, branding). We just animate them with Ken Burns + xfade.
 
-    campaign_name, images = _pick_campaign_for_reel(n_images=4)
+    Args:
+        campaign_name: Campaign key from manifest (used for filename)
+        images: Pre-selected image paths from the campaign
+        out_dir: Output directory
+        music_style: Key for music preference lookup
+    Returns:
+        Path to output MP4, or None on failure
+    """
     if not images:
-        print("No Pomelli campaign with 4 images found.")
+        print(f"No images for campaign '{campaign_name}'")
         return None
 
-    print(f"Using campaign: '{campaign_name}' ({len(images)} images)")
+    print(f"Rendering campaign reel: '{campaign_name}' ({len(images)} images, no text overlay)")
 
-    music = _pick_music("state_heatmap")
-    overlay = _build_heatmap_overlay(state_name)
-    out_path = out_dir / f"reel_map_state_heatmap_{slug}.mp4"
+    music = _pick_music(music_style)
+    slug = campaign_name.replace(" ", "_")[:40]
+    out_path = out_dir / f"reel_pomelli_{slug}.mp4"
 
-    success = _build_multi_image_reel(images, music, out_path, text_overlay=overlay)
-    return out_path if success else None
-
-
-def _render_route_trace(data: dict, out_dir: Path) -> Optional[Path]:
-    """
-    Route Trace: 4 Pomelli images with slide transitions.
-    Text overlay shows state route + branding.
-    """
-    state_name = data.get("state_data", {}).get("name", "India")
-    slug = data.get("slug", "route")
-
-    campaign_name, images = _pick_campaign_for_reel(n_images=4)
-    if not images:
-        print("No Pomelli campaign with 4 images found.")
-        return None
-
-    print(f"Using campaign: '{campaign_name}' ({len(images)} images)")
-
-    music = _pick_music("route_trace")
-    overlay = _build_route_overlay(state_name)
-    out_path = out_dir / f"reel_map_route_trace_{slug}.mp4"
-
-    success = _build_multi_image_reel(images, music, out_path, text_overlay=overlay)
-    return out_path if success else None
-
-
-def _render_cluster_reveal(data: dict, out_dir: Path) -> Optional[Path]:
-    """
-    Cluster Reveal: Images from different campaigns for region diversity.
-    Text overlay shows India-wide title + branding.
-    """
-    slug = data.get("slug", "india")
-
-    images = _pick_multi_campaign_images(n_images=4)
-    if len(images) < 2:
-        print("Not enough Pomelli images across campaigns.")
-        return None
-
-    print(f"Using {len(images)} images from different campaigns")
-
-    music = _pick_music("cluster_reveal")
-    overlay = _build_cluster_overlay()
-    out_path = out_dir / f"reel_map_cluster_reveal_{slug}.mp4"
-
-    success = _build_multi_image_reel(images, music, out_path, text_overlay=overlay)
-    return out_path if success else None
-
-
-def _render_score_pulse(data: dict, out_dir: Path) -> Optional[Path]:
-    """
-    Score Pulse: Single Pomelli image with extended Ken Burns + score overlay.
-    Picks the best matching Pomelli image for the destination.
-    """
-    dest_data = data.get("dest_data", {})
-    dest_name = dest_data.get("name", "Unknown")
-    score = int(dest_data.get("score", 4))
-    state_name = dest_data.get("state", "")
-    tagline = dest_data.get("tagline") or dest_data.get("note") or ""
-    slug = data.get("slug", "pulse")
-
-    # Try to find a Pomelli campaign matching the destination name
-    manifest = _load_manifest()
-    campaigns = manifest.get("campaigns", {})
-    image = None
-
-    # Search for campaign name containing destination keywords
-    dest_lower = dest_name.lower()
-    for name, imgs in campaigns.items():
-        if any(word in name.lower() for word in dest_lower.split() if len(word) > 3):
-            valid = [POMELLI_DIR / i for i in imgs if (POMELLI_DIR / i).exists()]
-            if valid:
-                image = valid[0]
-                print(f"Matched Pomelli campaign: '{name}' for {dest_name}")
-                break
-
-    # Fallback: random campaign hero image
-    if image is None:
-        _, imgs = _pick_campaign_for_reel(n_images=1)
-        if imgs:
-            image = imgs[0]
-        else:
-            print("No Pomelli images available for score_pulse.")
-            return None
-
-    music = _pick_music("score_pulse")
-    overlay = _build_pulse_overlay(dest_name, score, state_name, tagline)
-    out_path = out_dir / f"reel_map_score_pulse_{slug}.mp4"
-
-    success = _build_single_image_reel(image, music, out_path, text_overlay=overlay)
+    # No text_overlay — Pomelli images are self-contained designs
+    success = _build_multi_image_reel(images, music, out_path, text_overlay="")
     return out_path if success else None
 
 
@@ -759,41 +472,54 @@ def _render_score_pulse(data: dict, out_dir: Path) -> Optional[Path]:
 REEL_MAP_FORMATS = ["state_heatmap", "route_trace", "cluster_reveal", "score_pulse"]
 
 
+def pick_campaign_with_images(
+    n_images: int = 4,
+    exclude_campaigns: list[str] | None = None,
+) -> tuple[str, list[Path]]:
+    """
+    Public wrapper for campaign picking.
+    Returns (campaign_name, [image_paths]).
+    Called from autoposter.py so the caller controls which campaign
+    is selected and can build a matching caption.
+    """
+    return _pick_campaign_for_reel(n_images, exclude_campaigns)
+
+
 def render_reel_map(
     reel_format: str,
     data: dict,
     out_dir: Path,
 ) -> Optional[Path]:
     """
-    Render an animated map/infographic Reel using Pomelli images.
+    Render an animated Reel using Pomelli images — campaign-driven, no text overlays.
     Returns path to the output MP4.
 
+    The caller (autoposter.py) picks the campaign and passes it in data["campaign_name"]
+    and data["campaign_images"]. This ensures the caption and video always match.
+
     Args:
-        reel_format: One of REEL_MAP_FORMATS
-        data: Format-specific data dict (same interface as v1):
-            - state_heatmap: {state_code, state_data, destinations}
-            - route_trace:   {state_code, state_data, destinations}
-            - cluster_reveal: {map_data, destinations}
-            - score_pulse:   {dest_data, state_data}
+        reel_format: One of REEL_MAP_FORMATS (used for music style selection)
+        data: Must contain:
+            - campaign_name: str — campaign key from manifest
+            - campaign_images: list[Path] — pre-selected image paths
         out_dir: Directory for output file
     """
-    print(f"Rendering reel-map format: {reel_format} (Pomelli v2)")
+    campaign_name = data.get("campaign_name", "unknown")
+    images = data.get("campaign_images", [])
+
+    print(f"Rendering reel: campaign='{campaign_name}', format={reel_format}, "
+          f"images={len(images)}, no text overlay (Pomelli v3)")
     out_dir.mkdir(parents=True, exist_ok=True)
 
     try:
-        if reel_format == "state_heatmap":
-            return _render_state_heatmap(data, out_dir)
-        elif reel_format == "route_trace":
-            return _render_route_trace(data, out_dir)
-        elif reel_format == "cluster_reveal":
-            return _render_cluster_reveal(data, out_dir)
-        elif reel_format == "score_pulse":
-            return _render_score_pulse(data, out_dir)
-        else:
-            print(f"Unknown reel-map format: {reel_format}")
-            return None
+        return render_campaign_reel(
+            campaign_name=campaign_name,
+            images=images,
+            out_dir=out_dir,
+            music_style=reel_format,
+        )
     except Exception as e:
-        print(f"Reel-map rendering error: {e}")
+        print(f"Reel rendering error: {e}")
         import traceback
         traceback.print_exc()
         return None
@@ -805,12 +531,12 @@ def render_reel_map(
 
 if __name__ == "__main__":
     import argparse
-    parser = argparse.ArgumentParser(description="NakshIQ Reel Map Generator v2")
+    parser = argparse.ArgumentParser(description="NakshIQ Reel Generator v3 (campaign-driven)")
+    parser.add_argument("--campaign", default="",
+                        help="Campaign name from manifest (empty = random)")
     parser.add_argument("--format", choices=REEL_MAP_FORMATS,
                         default="state_heatmap",
-                        help="Reel map format to render")
-    parser.add_argument("--state", default="HP",
-                        help="State code (for state_heatmap / route_trace)")
+                        help="Music style to use")
     parser.add_argument("--out", default="/tmp/reel_map_test",
                         help="Output directory")
     args = parser.parse_args()
@@ -818,41 +544,23 @@ if __name__ == "__main__":
     out_dir = Path(args.out)
     out_dir.mkdir(parents=True, exist_ok=True)
 
-    # Load map data for CLI testing
-    map_data = {}
-    if DATA_FILE.exists():
-        with open(DATA_FILE) as f:
-            map_data = json.load(f)
-
-    state_data = None
-    for s in map_data.get("states", []):
-        if s.get("short_code") == args.state:
-            state_data = s
-            break
-
-    # Build test data
-    if args.format in ("state_heatmap", "route_trace"):
-        if not state_data:
-            print(f"No state data for {args.state}")
-            exit(1)
-        data = {
-            "state_code": args.state,
-            "state_data": state_data,
-            "destinations": [],
-            "slug": args.state.lower(),
-        }
-    elif args.format == "cluster_reveal":
-        data = {"map_data": map_data, "destinations": [], "slug": "india"}
-    elif args.format == "score_pulse":
-        data = {
-            "dest_data": {"name": "Shimla", "score": 4, "state": "Himachal Pradesh",
-                          "tagline": "Colonial charm meets Himalayan views"},
-            "state_data": state_data,
-            "slug": "shimla",
-        }
+    # Pick campaign
+    if args.campaign:
+        images = _get_campaign_images(args.campaign)
+        campaign_name = args.campaign
     else:
-        print(f"Unknown format: {args.format}")
+        campaign_name, images = _pick_campaign_for_reel(n_images=4)
+
+    if not images:
+        print(f"No images found for campaign '{campaign_name}'")
         exit(1)
+
+    print(f"Campaign: '{campaign_name}' ({len(images)} images)")
+
+    data = {
+        "campaign_name": campaign_name,
+        "campaign_images": images,
+    }
 
     result = render_reel_map(args.format, data, out_dir)
     if result:

@@ -4570,187 +4570,97 @@ REEL_MAP_LOCK_FILE = Path(__file__).parent / ".autoposter-reel-map.lock"
 
 REEL_MAP_FORMATS = ["state_heatmap", "route_trace", "cluster_reveal", "score_pulse"]
 
-# State codes for rotation (28 states)
-_REEL_MAP_STATES = [
-    "HP", "RJ", "KL", "GA", "UK", "MH", "KA", "TN", "WB", "AS",
-    "MP", "GJ", "OR", "JH", "CG", "SK", "ML", "MN", "MZ", "NL",
-    "TR", "AP", "TS", "PB", "HR", "BR", "UP", "JK",
-]
 
-
-def _pick_reel_map_data(state: dict, content: dict, reel_format: str) -> dict | None:
-    """Pick data for a reel-map format from synced content + map_data.json."""
+def _pick_reel_campaign(state: dict) -> dict | None:
+    """
+    Campaign-driven reel picking.
+    Picks a Pomelli campaign (oldest-unused rotation, needs ≥2 images),
+    and returns a unified data dict that contains both the campaign info
+    AND image paths. This guarantees caption ↔ visual alignment.
+    """
+    from reel_map_gen import pick_campaign_with_images
     import json as _json
+    from pathlib import Path as _Path
 
-    map_data_path = Path(__file__).parent / "map_data.json"
-    if not map_data_path.exists():
-        log.error("map_data.json not found — cannot generate reel maps.")
-        return None
-    with open(map_data_path) as f:
-        map_data = _json.load(f)
-
-    destinations = content.get("destinations", {}).get("data", [])
-    destinations_all = content.get("destinations_low", {}).get("data", [])
-
-    if reel_format in ("state_heatmap", "route_trace"):
-        # Pick a state (oldest-unused rotation)
-        states_list = map_data.get("states", [])
-        if not states_list:
-            return None
-
-        state_items = [{"id": s["short_code"], **s} for s in states_list
-                       if "short_code" in s]
-        ordered = pick_oldest_unused(state, "reel_map_states", state_items, key="id")
-
-        for s in ordered:
-            # Need at least 3 landmarks for a meaningful map
-            if len(s.get("landmarks", [])) >= 3:
-                return {
-                    "state_code": s["short_code"],
-                    "state_data": s,
-                    "destinations": destinations_all or destinations,
-                    "slug": s["short_code"].lower(),
-                }
+    manifest_path = _Path(__file__).parent / "pomelli_library" / "manifest.json"
+    if not manifest_path.exists():
+        log.error("pomelli manifest.json not found.")
         return None
 
-    elif reel_format == "cluster_reveal":
-        return {
-            "map_data": map_data,
-            "destinations": destinations_all or destinations,
-            "slug": "india",
-        }
+    with open(manifest_path) as f:
+        manifest = _json.load(f)
 
-    elif reel_format == "score_pulse":
-        # Pick a HIGH-scored destination that exists in map_data landmarks
-        high_scored = [d for d in destinations
-                       if isinstance(d.get("score"), (int, float)) and d["score"] >= 4]
-        if not high_scored:
-            high_scored = [d for d in destinations_all
-                          if isinstance(d.get("score"), (int, float)) and d["score"] >= 3]
-        if not high_scored:
-            return None
+    campaigns = manifest.get("campaigns", {})
 
-        ordered = pick_oldest_unused(state, "reel_map_pulse_dests",
-                                     [{"id": d.get("id", d.get("name", "")), **d}
-                                      for d in high_scored], key="id")
+    # Build candidate list: campaigns with ≥2 valid images
+    pomelli_dir = _Path(__file__).parent / "pomelli_library"
+    candidates = []
+    for name, imgs in campaigns.items():
+        valid = [pomelli_dir / img for img in imgs if (pomelli_dir / img).exists()]
+        if len(valid) >= 2:
+            candidates.append({"id": name, "images": valid})
 
-        # Try to find the state data for this destination
-        for d in ordered:
-            dest_state = d.get("state", "")
-            state_data = None
-            for s in map_data.get("states", []):
-                if s.get("name", "").lower() == dest_state.lower():
-                    state_data = s
-                    break
-            return {
-                "dest_data": d,
-                "state_data": state_data,
-                "slug": (d.get("id") or d.get("name", "dest")).lower().replace(" ", "_"),
-            }
+    if not candidates:
+        log.error("No Pomelli campaigns with ≥2 images found.")
         return None
 
-    return None
+    # Oldest-unused rotation
+    ordered = pick_oldest_unused(state, "reel_map_campaigns", candidates, key="id")
+    chosen = ordered[0]
+
+    campaign_name = chosen["id"]
+    images = chosen["images"][:4]  # Cap at 4 for reel
+
+    # Build human-readable title from campaign name
+    # e.g. "ghnp_48hrs" → "GHNP 48hrs", "jagdalpur_monsoon" → "Jagdalpur Monsoon"
+    readable = campaign_name.replace("_", " ").title()
+
+    log.info(f"Picked campaign: '{campaign_name}' ({len(images)} images) → \"{readable}\"")
+
+    return {
+        "campaign_name": campaign_name,
+        "campaign_images": images,
+        "campaign_readable": readable,
+        "slug": campaign_name[:40],
+    }
 
 
 def _reel_map_caption(reel_format: str, data: dict, platform: str) -> str:
-    """Generate platform-specific captions for reel-map posts."""
+    """
+    Generate platform-specific captions for reel-map posts.
+    Campaign-driven: caption is derived from the campaign name/readable title,
+    guaranteeing it matches the visual content the viewer sees.
+    """
     import calendar
     from datetime import datetime as _dt
     month_name = calendar.month_name[_dt.now().month]
 
-    # UTM params hidden from visible caption — Instagram doesn't support clickable
-    # links in captions anyway, so keep URLs clean for readability
-    if reel_format == "state_heatmap":
-        state_name = data.get("state_data", {}).get("name", "India")
-        if platform == "instagram":
-            return (
-                f"📍 {state_name} Destination Scores — {month_name}\n\n"
-                f"Every destination in {state_name}, scored 1-5 for this month. "
-                f"No opinions. No sponsors. Just data.\n\n"
-                f"Which destination scores highest? Check the map.\n\n"
-                f"🔗 Full scores → nakshiq.com\n\n"
-                f"#TravelIndia #{state_name.replace(' ', '')} "
-                f"#{month_name}Travel #TravelScores #IndiaTravel"
-            )
-        else:
-            return (
-                f"How does {state_name} score this {month_name}? "
-                f"We scored every destination 1-5 based on weather, crowds, "
-                f"roads, and safety. No vibes — just data.\n\n"
-                f"nakshiq.com"
-            )
+    title = data.get("campaign_readable", "India Travel Intelligence")
+    campaign = data.get("campaign_name", "")
 
-    elif reel_format == "route_trace":
-        state_name = data.get("state_data", {}).get("name", "India")
-        if platform == "instagram":
-            return (
-                f"🗺️ {state_name} Route — Top Destinations Connected\n\n"
-                f"The best-scored destinations in {state_name} this {month_name}, "
-                f"mapped and connected. Plan your route with real data.\n\n"
-                f"🔗 Plan your trip → nakshiq.com\n\n"
-                f"#TravelIndia #{state_name.replace(' ', '')} "
-                f"#RoadTrip #IndiaByRoad #{month_name}Travel"
-            )
-        else:
-            return (
-                f"Planning a {state_name} road trip? "
-                f"Here are the top-scored destinations connected — "
-                f"plan your route with data, not guesswork.\n\n"
-                f"nakshiq.com"
-            )
-
-    elif reel_format == "cluster_reveal":
-        if platform == "instagram":
-            return (
-                f"🇮🇳 India Destination Scores by Region — {month_name}\n\n"
-                f"North, South, East, West, Northeast — every region scored. "
-                f"Where should you travel this month? The map tells all.\n\n"
-                f"🔗 Explore all scores → nakshiq.com\n\n"
-                f"#TravelIndia #IndiaTravel #{month_name}Travel "
-                f"#TravelScores #WhereToTravel"
-            )
-        else:
-            return (
-                f"India's destination scores by region for {month_name}. "
-                f"Which region scores highest right now? "
-                f"No opinions — just data.\n\n"
-                f"nakshiq.com"
-            )
-
-    elif reel_format == "score_pulse":
-        dest = data.get("dest_data", {})
-        dest_name = dest.get("name", "")
-        score = int(dest.get("score", 4))
-        state_name = dest.get("state", "")
-        if platform == "instagram":
-            return (
-                f"📊 {dest_name} — NakshIQ Score: {score}/5\n\n"
-                f"{dest_name}{', ' + state_name if state_name else ''} "
-                f"scores {score}/5 this {month_name}. "
-                f"{'Go now.' if score >= 4 else 'Check the details before you book.'}\n\n"
-                f"🔗 Full breakdown → nakshiq.com\n\n"
-                f"#TravelIndia #{dest_name.replace(' ', '')} "
-                f"{'#' + state_name.replace(' ', '') + ' ' if state_name else ''}"
-                f"#{month_name}Travel #IndiaTravel"
-            )
-        else:
-            return (
-                f"{dest_name} scores {score}/5 this {month_name}. "
-                f"{'Worth the trip.' if score >= 4 else 'Maybe wait for a better month.'}\n\n"
-                f"nakshiq.com"
-            )
-
-    # Fallback
-    return (
-        f"Travel smarter with NakshIQ — every destination scored, every month.\n\n"
-        f"nakshiq.com"
-    )
+    if platform == "instagram":
+        return (
+            f"{title} — data you won't find on travel blogs.\n\n"
+            f"Road access, hospital distance, crowd level, cell coverage — "
+            f"all scored for this month.\n\n"
+            f"Full breakdown → nakshiq.com\n\n"
+            f"#NakshIQ #{month_name}Travel #TravelIndia "
+            f"#DataDrivenTravel #IndiaTravel"
+        )
+    else:
+        return (
+            f"{title}\n\n"
+            f"Every destination scored 1-5, every month. "
+            f"No opinions — just data.\n\n"
+            f"nakshiq.com"
+        )
 
 
 def _run_reel_map(force: bool = False, dry_run: bool = False):
     """
-    Reel-Map mode — generates and posts animated map Reels.
-    Rotates through 4 map formats × 28 states with anti-repetition.
+    Reel-Map mode v3 — campaign-driven, no text overlays.
+    Picks a Pomelli campaign → animates its images → derives caption from
+    the campaign name. Guarantees caption ↔ visual alignment.
     """
     import tempfile
     from reel_map_gen import render_reel_map
@@ -4760,32 +4670,23 @@ def _run_reel_map(force: bool = False, dry_run: bool = False):
     st      = load_state()
 
     log.info("═" * 60)
-    log.info(f"Nakshiq Autoposter · REEL-MAP · {today} · weekday={weekday}")
+    log.info(f"Nakshiq Autoposter · REEL-MAP v3 · {today} · weekday={weekday}")
     log.info("═" * 60)
 
-    content = sync_all_content()
-
-    # ── Pick reel-map format (oldest-unused rotation) ────────────────────
-    fmt_items = [{"id": f} for f in REEL_MAP_FORMATS]
-    fmt_ordered = pick_oldest_unused(st, "reel_map_formats", fmt_items, key="id")
-
-    reel_data = None
-    chosen_format = None
-
-    for fmt_item in fmt_ordered:
-        fmt_id = fmt_item["id"]
-        data = _pick_reel_map_data(st, content, fmt_id)
-        if data:
-            reel_data = data
-            chosen_format = fmt_id
-            break
-
-    if not reel_data or not chosen_format:
-        log.warning("No suitable reel-map data available for any format.")
+    # ── Pick a Pomelli campaign (oldest-unused rotation) ─────────────────
+    reel_data = _pick_reel_campaign(st)
+    if not reel_data:
+        log.warning("No suitable Pomelli campaign available for reel.")
         save_state(st)
         return
 
-    log.info(f"Format: {chosen_format} | Slug: {reel_data.get('slug', '?')}")
+    # Pick music style (rotate through formats for variety)
+    fmt_items = [{"id": f} for f in REEL_MAP_FORMATS]
+    fmt_ordered = pick_oldest_unused(st, "reel_map_formats", fmt_items, key="id")
+    chosen_format = fmt_ordered[0]["id"]
+
+    campaign_name = reel_data["campaign_name"]
+    log.info(f"Campaign: {campaign_name} | Music style: {chosen_format}")
 
     # ── Render video ─────────────────────────────────────────────────────
     with tempfile.TemporaryDirectory(prefix="nakshiq_reel_map_") as td:
@@ -4793,24 +4694,24 @@ def _run_reel_map(force: bool = False, dry_run: bool = False):
         try:
             video_path = render_reel_map(chosen_format, reel_data, out_dir)
         except Exception as e:
-            log.error(f"Reel-map rendering crashed: {e}")
+            log.error(f"Reel rendering crashed: {e}")
             save_state(st)
             return
 
         if not video_path or not video_path.exists():
-            log.error("Reel-map rendering failed (no output).")
+            log.error("Reel rendering failed (no output).")
             save_state(st)
             return
 
         video_bytes = video_path.read_bytes()
         video_size_kb = len(video_bytes) // 1024
-        log.info(f"Reel-map rendered: {video_path.name} ({video_size_kb} KB)")
+        log.info(f"Reel rendered: {video_path.name} ({video_size_kb} KB)")
 
         # ── Upload ────────────────────────────────────────────────────────
-        media_filename = f"reel_map_{chosen_format}_{video_path.stem}.mp4"
+        media_filename = f"reel_pomelli_{campaign_name[:40]}.mp4"
         media_obj = upload_media_bytes(video_bytes, media_filename, "video/mp4")
         if not media_obj:
-            log.error("Reel-map video upload failed.")
+            log.error("Reel video upload failed.")
             save_state(st)
             return
 
@@ -4841,7 +4742,7 @@ def _run_reel_map(force: bool = False, dry_run: bool = False):
         caption = _reel_map_caption(chosen_format, reel_data, platform)
         caption = sanitize(caption)
 
-        log.info(f"[{label}] Publishing reel-map ({chosen_format})...")
+        log.info(f"[{label}] Publishing reel ({campaign_name})...")
 
         if dry_run:
             log.info(f"[{label}] DRY RUN — would publish:\n{caption[:200]}...")
@@ -4850,7 +4751,7 @@ def _run_reel_map(force: bool = False, dry_run: bool = False):
 
         result = publish_reel(caption, account, media_obj, dry_run=False)
         if not result:
-            log.warning(f"[{label}] Reel-map post failed (API rejected).")
+            log.warning(f"[{label}] Reel post failed (API rejected).")
             continue
 
         post_id = result.get("post", {}).get("id", "unknown")
@@ -4859,23 +4760,17 @@ def _run_reel_map(force: bool = False, dry_run: bool = False):
         confirmed = wait_for_publish(post_id) if post_id != "unknown" else None
         if confirmed:
             platform_id = confirmed.get("platformPostId", "—")
-            log.info(f"[{label}] ✅ Reel-map published · Outstand={post_id} · Platform={platform_id}")
+            log.info(f"[{label}] ✅ Reel published · Outstand={post_id} · Platform={platform_id}")
             st.setdefault("posted_today", {})[acc_scoped_key] = today
             posted_any = True
         else:
-            log.warning(f"[{label}] ⚠️  Reel-map queued but NOT confirmed (post_id={post_id}).")
+            log.warning(f"[{label}] ⚠️  Reel queued but NOT confirmed (post_id={post_id}).")
 
-    # Mark format + data as used
+    # Mark campaign + format as used
     if posted_any:
+        mark_theme_used(st, "reel_map_campaigns", campaign_name)
         mark_theme_used(st, "reel_map_formats", chosen_format)
-        slug = reel_data.get("slug", "")
-        if chosen_format in ("state_heatmap", "route_trace"):
-            mark_theme_used(st, "reel_map_states", reel_data.get("state_code", slug))
-        elif chosen_format == "score_pulse":
-            dest_id = reel_data.get("dest_data", {}).get("id") or \
-                      reel_data.get("dest_data", {}).get("name", "")
-            mark_theme_used(st, "reel_map_pulse_dests", dest_id)
-        log.info(f"Theme tracker updated: format={chosen_format}, slug={slug}")
+        log.info(f"Theme tracker updated: campaign={campaign_name}, music={chosen_format}")
 
     save_state(st)
     log.info("State saved. Reel-map run complete.")
