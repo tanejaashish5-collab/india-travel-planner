@@ -12,6 +12,7 @@ import { CompareProvider } from "@/components/compare-tray";
 import { ScrollToTop } from "@/components/scroll-to-top";
 import { PageTransition } from "@/components/page-transition";
 import { MobileTabBar } from "@/components/mobile-tab-bar";
+import { GA4RouteTracker } from "@/components/ga4-route-tracker";
 import { MotionProvider } from "@/components/motion-provider";
 import { getSameAsUrls } from "@/lib/social";
 import "../globals.css";
@@ -311,6 +312,7 @@ export default async function LocaleLayout({
             </Script>
           </>
         )}
+        <GA4RouteTracker />
       </body>
     </html>
   );
