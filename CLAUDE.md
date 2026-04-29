@@ -77,7 +77,7 @@ Plan: `~/.claude/plans/smooth-orbiting-music.md` (full workflow — read before 
 
 | State | Status | Date | Coverage |
 |---|---|---|---|
-| Ladakh | eateries done · stays partial | 2026-04-26 | 14/14 dests · 93 eateries · 43 stays (3 manual + **40 un-audited web_search** ← BACKLOG) |
+| Ladakh | ✓ done | 2026-04-29 | 14/14 dests · 93 eateries · 42 stays (100% sourced + 100% manual, 5 honest-scarcity nulls — 4 Umlingla pass + 1 Tso Moriri dup) |
 | Jammu & Kashmir | ✓ done | 2026-04-28 | 17/17 dests · 98 eateries · 34 stays (100% sourced, 4 honest-scarcity nulls — 3 Sinthan Top no-infra, 1 Yusmarg xfactor dedup) |
 | Himachal Pradesh | eateries done · stays NOT audited | 2026-04-27 | 32/34 dests · 286 eateries · 118 stays (9 manual + **109 un-audited web_search** ← BIGGEST BACKLOG) |
 | Uttarakhand | eateries done · stays NOT audited | 2026-04-27 | 38/38 dests · 316 eateries · 117 stays (18 manual + **99 un-audited web_search** ← BACKLOG) |
@@ -95,7 +95,7 @@ Plan: `~/.claude/plans/smooth-orbiting-music.md` (full workflow — read before 
 
 **Eateries progress**: 12 state clusters done (eateries side), 183 dests, 1195 eateries. Per-state details in session memory files — see `MEMORY.md` index.
 
-**Stays progress (HONEST 2026-04-29 audit + ongoing backlog burndown)**: 9 state clusters truly 100% manual-audited (**Bihar+Jharkhand+West Bengal+Sikkim+Arunachal Pradesh+Punjab+Haryana+Chandigarh+Jammu & Kashmir+Uttar Pradesh+Rajasthan** — unified workflow). **3 clusters with stays-audit BACKLOG = 252 unaudited `web_search` picks remaining**: HP 109, UK 99, Ladakh 44. Plan: 1 stays-audit agent per cluster, manual WebFetch only, ~1 cluster per session. Order: smallest-first (Ladakh → UK → HP).
+**Stays progress (HONEST 2026-04-29 audit + ongoing backlog burndown)**: 10 state clusters truly 100% manual-audited (**Bihar+Jharkhand+West Bengal+Sikkim+Arunachal Pradesh+Punjab+Haryana+Chandigarh+Jammu & Kashmir+Uttar Pradesh+Rajasthan+Ladakh** — unified workflow). **2 clusters with stays-audit BACKLOG = 208 unaudited `web_search` picks remaining**: HP 109, UK 99. Plan: 1 stays-audit agent per cluster, manual WebFetch only, ~1 cluster per session. Order: smaller-first (UK → HP).
 
 ## Cost-aware operating rules (added 2026-04-27)
 
