@@ -35,18 +35,22 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   if (!url || !key) return {};
 
   const supabase = createClient(url, key);
-  const { data: region } = await supabase.from("regions").select("id, name").eq("id", id).single();
+  const { data: region } = await supabase.from("regions").select("id, name, state_id").eq("id", id).single();
   if (!region) return {};
 
   const monthName = MONTH_NAMES[month];
   const monthNum = MONTH_NUMBER[month];
 
-  // Count score-5 destinations for this region + month
+  // Count score-5 destinations for THIS region + month. Pre-2026-04-29 the
+  // query was unscoped, so the desc said "52 destinations in Arunachal Pradesh"
+  // when the actual figure was India-wide. Scope to region.state_id via inner
+  // join — same field the page handler uses to fetch destinations below.
   const { count: score5Count } = await supabase
     .from("destination_months")
-    .select("destination_id", { count: "exact", head: true })
+    .select("destination_id, destination:destinations!inner(state_id)", { count: "exact", head: true })
     .eq("month", monthNum)
-    .eq("score", 5);
+    .eq("score", 5)
+    .eq("destination.state_id", region.state_id);
 
   // 2026-04-29 CTR rewrite: drop "Best Destinations Ranked" boilerplate,
   // lead with count + 5/5 picks. Layout appends " | NakshIQ" (10 chars) so
