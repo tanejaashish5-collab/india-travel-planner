@@ -49,16 +49,23 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     .eq("score", 5);
 
   // 2026-04-29 CTR rewrite: drop "Best Destinations Ranked" boilerplate,
-  // lead with count + 5/5 picks. Honest copy when count is zero.
+  // lead with count + 5/5 picks. Layout appends " | NakshIQ" (10 chars) so
+  // page-specific title budget is ~50.
   const year = new Date().getFullYear();
   const count = score5Count ?? 0;
+  const destWord = count === 1 ? "destination" : "destinations";
+  const pickWord = count === 1 ? "pick" : "picks";
 
-  const title = count > 0
-    ? `Where to go in ${region.name} in ${monthName} ${year} — ${count} 5/5 picks`
+  const titleLong = count > 0
+    ? `Where to go in ${region.name} in ${monthName} ${year} — ${count} 5/5 ${pickWord}`
     : `Where to go in ${region.name} in ${monthName} ${year} — ranked by month`;
+  const titleShort = count > 0
+    ? `${region.name} in ${monthName} ${year}: ${count} 5/5 ${pickWord}`
+    : `${region.name} in ${monthName} ${year}: ranked picks`;
+  const title = titleLong.length <= 50 ? titleLong : titleShort;
 
   const description = count > 0
-    ? `${count} destinations in ${region.name} scored 5/5 for ${monthName} ${year}. Ranked by weather, crowds, road conditions — see what actually works this month before you commit.`
+    ? `${count} ${destWord} in ${region.name} scored 5/5 for ${monthName} ${year}. Ranked by weather, crowds, road conditions — see what actually works this month before you commit.`
     : `Every destination in ${region.name} scored for ${monthName} ${year} on weather, crowds, road conditions. The honest pick if anywhere works this month — and what to skip.`;
 
   return {

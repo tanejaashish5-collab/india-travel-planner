@@ -132,10 +132,13 @@ export async function generateMetadata({
 
   const year = new Date().getFullYear();
 
-  // Title with progressive shortening so we always fit ≤60 chars (SERP truncation).
+  // Title with progressive shortening. Layout appends " | NakshIQ" via title.template
+  // (10 chars), so the page-specific portion needs to fit ≤50 chars to stay
+  // under Google's ~60-char SERP truncation total.
   // Long: "{name} in {month} {year}: {hook} ({temp})"
   // Med:  "{name} in {month}: {hook} ({temp})"
   // Min:  "{name} in {month} {year}"
+  const TITLE_BUDGET = 50;
   const titleLong = rangeStr
     ? `${name} in ${monthName} ${year}: ${titleHook} (${rangeStr})`
     : `${name} in ${monthName} ${year}: ${titleHook}`;
@@ -143,8 +146,8 @@ export async function generateMetadata({
     ? `${name} in ${monthName}: ${titleHook} (${rangeStr})`
     : `${name} in ${monthName}: ${titleHook}`;
   const title =
-    titleLong.length <= 60 ? titleLong
-    : titleMed.length <= 60 ? titleMed
+    titleLong.length <= TITLE_BUDGET ? titleLong
+    : titleMed.length <= TITLE_BUDGET ? titleMed
     : `${name} in ${monthName} ${year}`;
 
   const ogTitle = `${name} in ${monthName} — ${scoreVerdict} | NakshIQ`;
@@ -187,7 +190,13 @@ export async function generateMetadata({
 
   const noteBudget = Math.max(40, 155 - descLead.length - descClose.length - 2);
   const descBody = noteStripped ? trimToBoundary(noteStripped, noteBudget) : "";
-  const descBodyClean = descBody ? (/[.!?]$/.test(descBody) ? descBody : `${descBody}.`) : "";
+  // Strip trailing punctuation + conjunctions so the auto-period doesn't stick
+  // an awkward "and." or ", but." at the end (caught: Yercaud/May ended ", and.").
+  const descBodyTrimmed = descBody
+    .replace(/[,;:\-—\s]+(and|or|but|with|for|to|of|the|a|an|on|at|in)$/i, "")
+    .replace(/[,;:\-—]+$/, "")
+    .trim();
+  const descBodyClean = descBodyTrimmed ? (/[.!?]$/.test(descBodyTrimmed) ? descBodyTrimmed : `${descBodyTrimmed}.`) : "";
   const description = [descLead, descBodyClean, descClose].filter(Boolean).join(" ").trim();
   const canonicalUrl = `https://www.nakshiq.com/${locale}/destination/${id}/${month}`;
   const imageUrl = `https://www.nakshiq.com/api/og?dest=${encodeURIComponent(name)}&month=${monthName}&score=${score}&note=${encodeURIComponent(note?.substring(0, 80) || '')}`;
