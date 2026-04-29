@@ -83,7 +83,7 @@ Plan: `~/.claude/plans/smooth-orbiting-music.md` (full workflow — read before 
 | Uttarakhand | eateries done · stays NOT audited | 2026-04-27 | 38/38 dests · 316 eateries · 117 stays (18 manual + **99 un-audited web_search** ← BACKLOG) |
 | Punjab + Haryana + Chandigarh | ✓ done | 2026-04-28 | 8/8 dests · 69 eateries · 24 stays (100% sourced, 2 honest-scarcity nulls in Anandpur Sahib) |
 | Rajasthan | eateries done · stays partial | 2026-04-27 | 23/23 dests · 105 eateries · 70 stays (44 manual + **26 un-audited web_search** ← BACKLOG) |
-| Uttar Pradesh | ✓ done · stays partial | 2026-04-28 | 13/13 dests · 98 eateries · 44 stays (19 manual + **25 un-audited web_search** ← BACKLOG, includes 4 thin <2 sources) |
+| Uttar Pradesh | ✓ done | 2026-04-29 | 13/13 dests · 98 eateries · 44 stays (100% sourced, 4 fabrications caught — Hosteller Sarnath, Dudhwa Sarai Homestay + Teli Jungle Camp, Brijwas Dham address rewrite) |
 | Bihar | ✓ done | 2026-04-28 | 6/6 dests · 36 eateries · 13 stays (100% sourced, 11 honest-scarcity nulls) |
 | Jharkhand | ✓ done | 2026-04-28 | 4/4 dests · 15 eateries · 13 stays (100% sourced, 78% fabrication rate caught) |
 | West Bengal | ✓ done | 2026-04-28 | 6/6 dests · 38 eateries · 20 stays (100% sourced, 4 honest-scarcity nulls) |
@@ -95,7 +95,7 @@ Plan: `~/.claude/plans/smooth-orbiting-music.md` (full workflow — read before 
 
 **Eateries progress**: 12 state clusters done (eateries side), 183 dests, 1195 eateries. Per-state details in session memory files — see `MEMORY.md` index.
 
-**Stays progress (HONEST 2026-04-28 audit + ongoing backlog burndown)**: 7 state clusters truly 100% manual-audited (**Bihar+Jharkhand+West Bengal+Sikkim+Arunachal Pradesh+Punjab+Haryana+Chandigarh+Jammu & Kashmir** — unified workflow). **5 clusters with stays-audit BACKLOG = 299 unaudited `web_search` picks remaining**: HP 109, UK 99, Ladakh 40, Rajasthan 26, UP 25. Plan: 1 stays-audit agent per cluster, manual WebFetch only, ~1 cluster per session. Order: smallest-first (UP-finish → RJ-finish → Ladakh → UK → HP).
+**Stays progress (HONEST 2026-04-28 audit + ongoing backlog burndown)**: 8 state clusters truly 100% manual-audited (**Bihar+Jharkhand+West Bengal+Sikkim+Arunachal Pradesh+Punjab+Haryana+Chandigarh+Jammu & Kashmir+Uttar Pradesh** — unified workflow). **4 clusters with stays-audit BACKLOG = 274 unaudited `web_search` picks remaining**: HP 109, UK 99, Ladakh 40, Rajasthan 26. Plan: 1 stays-audit agent per cluster, manual WebFetch only, ~1 cluster per session. Order: smallest-first (RJ-finish → Ladakh → UK → HP).
 
 ## Cost-aware operating rules (added 2026-04-27)
 
