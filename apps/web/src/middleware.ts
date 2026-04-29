@@ -125,6 +125,17 @@ export default function middleware(request: NextRequest) {
     return NextResponse.redirect(new URL(`/${locale}/state/${stateId}`, request.url), 301);
   }
 
+  // /(en|hi)/region/northeast(/{anything})? → /{locale}/india/northeast.
+  // "northeast" isn't a region row (sub-regions only), and isn't a state slug
+  // (it's a regional cluster). The /india/northeast page is the existing
+  // 8-state NE landing — closest semantic match. Caught from GSC's 2026-04-29
+  // Not-found bucket where /hi/region/northeast/june was the residual 404.
+  const regionNortheastMatch = request.nextUrl.pathname.match(/^\/(en|hi)\/region\/northeast(?:\/.*)?$/);
+  if (regionNortheastMatch) {
+    const [, locale] = regionNortheastMatch;
+    return NextResponse.redirect(new URL(`/${locale}/india/northeast`, request.url), 301);
+  }
+
   const response = intlMiddleware(request);
 
   // Convert temporary redirects (307) to permanent (301) for SEO
