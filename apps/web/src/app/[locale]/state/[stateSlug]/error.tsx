@@ -1,8 +1,10 @@
 "use client";
 
 import Link from "next/link";
+import { useChunkErrorRecovery } from "@/lib/use-chunk-error-recovery";
 
 export default function StateError({ error, reset }: { error: Error; reset: () => void }) {
+  useChunkErrorRecovery(error);
   return (
     <div className="min-h-screen flex items-center justify-center px-4">
       <div className="text-center space-y-4">

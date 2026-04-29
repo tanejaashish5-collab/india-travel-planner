@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useTranslations } from "next-intl";
+import { useChunkErrorRecovery } from "@/lib/use-chunk-error-recovery";
 
 export default function Error({
   error,
@@ -11,6 +12,9 @@ export default function Error({
   reset: () => void;
 }) {
   const t = useTranslations("ui");
+  // Auto-recover from "Failed to load chunk" errors caused by a fresh deploy
+  // invalidating the open tab's chunk references. No-op for real errors.
+  useChunkErrorRecovery(error);
   return (
     <div className="min-h-screen flex items-center justify-center px-4">
       <div className="max-w-lg text-center space-y-6">
