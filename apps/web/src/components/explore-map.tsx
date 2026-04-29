@@ -150,6 +150,12 @@ export function ExploreMap({ destinations }: { destinations: MapDestination[] })
         href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"
       />
       <style>{`
+        /* Ocean tint — sepia introduces hue into the greyscale tile, hue-rotate
+           shifts it to blue. Scoped to .leaflet-tile-pane so our markers stay
+           in their native colours. See destination-map.tsx for full rationale. */
+        .leaflet-tile-pane {
+          filter: sepia(0.5) hue-rotate(195deg) saturate(1.1) brightness(0.95);
+        }
         .dark-popup .leaflet-popup-content-wrapper {
           background: #1a1a2e;
           border: 1px solid #333;

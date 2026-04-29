@@ -154,6 +154,14 @@ export function DestinationMap({
         href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"
       />
       <style>{`
+        /* Carto dark_all tiles render water as slightly-lighter grey on dark
+           land — the difference reads as nothing on screen. Sepia first
+           introduces hue into the greyscale, hue-rotate shifts it to ocean
+           blue. Scoped to .leaflet-tile-pane so markers, popups, controls,
+           and our overlay pins keep their native colours. */
+        .leaflet-tile-pane {
+          filter: sepia(0.5) hue-rotate(195deg) saturate(1.1) brightness(0.95);
+        }
         .dark-popup .leaflet-popup-content-wrapper {
           background: #1a1a2e;
           border: 1px solid #333;
