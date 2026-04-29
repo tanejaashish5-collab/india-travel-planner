@@ -3812,7 +3812,24 @@ FLOW_STORIES_DIR    = Path(__file__).parent / "flow_stories_library"
 FLOW_STORY_LOCK_FILE = Path(__file__).parent / ".autoposter-flow-story.lock"
 
 # Caption templates — destination-specific, no generic fluff
-FLOW_STORY_CAPTIONS_IG = [
+FLOW_STORY_CAPTIONS_IG_SCORED = [
+    (
+        "{dest}, {state} — {score}/5 this month\n\n"
+        "{score_note}\n\n"
+        "NakshIQ scores 303 Indian destinations monthly.\n"
+        "→ nakshiq.com/destination/{slug}?utm_source=ig&utm_medium=post&utm_campaign=flow-story\n\n"
+        "{hashtags}"
+    ),
+    (
+        "{dest} · NakshIQ Score: {score}/5\n\n"
+        "{score_note}\n\n"
+        "303 destinations. 5 dimensions. Updated monthly.\n"
+        "→ nakshiq.com/destination/{slug}?utm_source=ig&utm_medium=post&utm_campaign=flow-story\n\n"
+        "{hashtags}"
+    ),
+]
+
+FLOW_STORY_CAPTIONS_IG_UNSCORED = [
     (
         "{dest}, {state}\n\n"
         "NakshIQ rates 303 Indian destinations monthly.\n"
@@ -3827,16 +3844,18 @@ FLOW_STORY_CAPTIONS_IG = [
         "→ nakshiq.com/destination/{slug}?utm_source=ig&utm_medium=post&utm_campaign=flow-story\n\n"
         "{hashtags}"
     ),
+]
+
+FLOW_STORY_CAPTIONS_FB_SCORED = [
     (
-        "{dest}, {state}\n\n"
-        "303 destinations. 5 dimensions. Monthly scores.\n"
-        "One question: when should you actually go?\n\n"
-        "→ nakshiq.com?utm_source=ig&utm_medium=post&utm_campaign=flow-story\n\n"
-        "{hashtags}"
+        "{dest}, {state} — {score}/5 this month\n\n"
+        "{score_note}\n\n"
+        "We score 303 destinations monthly so you don't have to guess.\n"
+        "→ nakshiq.com/destination/{slug}"
     ),
 ]
 
-FLOW_STORY_CAPTIONS_FB = [
+FLOW_STORY_CAPTIONS_FB_UNSCORED = [
     (
         "{dest}, {state}\n\n"
         "Have you been? When did you go — and would you time it differently?\n\n"
@@ -3850,6 +3869,14 @@ FLOW_STORY_CAPTIONS_FB = [
         "→ nakshiq.com/destination/{slug}"
     ),
 ]
+
+FLOW_STORY_SCORE_NOTES = {
+    5: "Peak season — ideal weather, festivals, and accessibility.",
+    4: "Great time to visit. Slightly off-peak but that's often better.",
+    3: "Decent conditions. Do your research on specific dates.",
+    2: "Not the best month. Expect compromises.",
+    1: "Avoid unless you have a specific reason.",
+}
 
 # Fallback for generic images (no dest)
 FLOW_STORY_GENERIC_IG = (
@@ -3884,11 +3911,12 @@ def _flow_story_hashtags(dest: str, state: str) -> str:
 
 
 def _flow_story_caption(entry: dict, platform: str) -> str:
-    """Generate a caption for a Flow story image."""
+    """Generate a caption for a Flow story image. Uses score when available."""
     import random as _random
 
     dest  = entry.get("dest")
     state = entry.get("state")
+    score = entry.get("_score")  # injected by seasonal picker
 
     if not dest or dest == state:
         # Generic / state-level image
@@ -3902,17 +3930,31 @@ def _flow_story_caption(entry: dict, platform: str) -> str:
 
     hashtags = _flow_story_hashtags(dest, state)
 
-    if platform == "facebook":
-        template = _random.choice(FLOW_STORY_CAPTIONS_FB)
+    if score and score > 0:
+        score_note = FLOW_STORY_SCORE_NOTES.get(score, "")
+        if platform == "facebook":
+            template = _random.choice(FLOW_STORY_CAPTIONS_FB_SCORED)
+        else:
+            template = _random.choice(FLOW_STORY_CAPTIONS_IG_SCORED)
+        return template.format(
+            dest=dest,
+            state=state or "India",
+            slug=slug,
+            score=score,
+            score_note=score_note,
+            hashtags=hashtags,
+        )
     else:
-        template = _random.choice(FLOW_STORY_CAPTIONS_IG)
-
-    return template.format(
-        dest=dest,
-        state=state or "India",
-        slug=slug,
-        hashtags=hashtags,
-    )
+        if platform == "facebook":
+            template = _random.choice(FLOW_STORY_CAPTIONS_FB_UNSCORED)
+        else:
+            template = _random.choice(FLOW_STORY_CAPTIONS_IG_UNSCORED)
+        return template.format(
+            dest=dest,
+            state=state or "India",
+            slug=slug,
+            hashtags=hashtags,
+        )
 
 
 def _run_flow_story(force: bool = False, dry_run: bool = False):
@@ -3962,11 +4004,78 @@ def _run_flow_story(force: bool = False, dry_run: bool = False):
     log.info(f"Library: {len(available)} images ({len(with_dest)} dest-matched, "
              f"{len(generic)} generic)")
 
-    # ── Pick image: oldest-unused, dest-matched first ────────────────────
-    pool = with_dest if with_dest else generic
+    # ── Seasonal-smart picking ───────────────────────────────────────────
+    # Fetch current month's scores from Supabase so we post destinations
+    # that are actually relevant right now (hill stations in summer,
+    # Rajasthan in winter, etc.)
+    month = datetime.now().month
+    score_lookup = {}  # dest_name → score (1-5)
+    try:
+        # Fetch ALL destinations with scores (min_score=0, limit=500)
+        scored = nakshiq_fetch("destinations", {"month": month, "min_score": 0, "limit": 500})
+        scored_data = scored.get("data", [])
+        for d in scored_data:
+            name = d.get("name", "")
+            score_lookup[name] = d.get("score", 0)
+            # Also index by lowercase for fuzzy matching
+            score_lookup[name.lower()] = d.get("score", 0)
+        log.info(f"Seasonal scores loaded: {len(scored_data)} destinations for month {month}")
+    except Exception as e:
+        log.warning(f"Could not fetch seasonal scores: {e} — falling back to round-robin")
+
+    def _seasonal_score(entry):
+        """Return score for sorting: higher = post sooner. 5→post first, 0→last."""
+        dest = entry.get("dest", "")
+        if not dest:
+            return -1  # generic images last
+        # Try exact match, then lowercase
+        s = score_lookup.get(dest) or score_lookup.get(dest.lower()) or 0
+        return s
+
+    # Sort dest-matched pool: high-scoring destinations first, then by name for stability
+    # Within each score tier, pick_oldest_unused still handles anti-repetition
+    if score_lookup and with_dest:
+        # Bucket into tiers: 5, 4, 3, 2, 1, 0/unscored
+        tier_5 = [e for e in with_dest if _seasonal_score(e) >= 5]
+        tier_4 = [e for e in with_dest if _seasonal_score(e) == 4]
+        tier_3 = [e for e in with_dest if _seasonal_score(e) == 3]
+        tier_low = [e for e in with_dest if 0 < _seasonal_score(e) < 3]
+        tier_unscored = [e for e in with_dest if _seasonal_score(e) <= 0]
+
+        log.info(f"Seasonal tiers: 5★={len(tier_5)} · 4★={len(tier_4)} · "
+                 f"3★={len(tier_3)} · low={len(tier_low)} · unscored={len(tier_unscored)}")
+
+        # Pick from highest available tier (oldest-unused within that tier)
+        pool = None
+        for tier_name, tier in [("5★", tier_5), ("4★", tier_4), ("3★", tier_3),
+                                 ("low", tier_low), ("unscored", tier_unscored)]:
+            if not tier:
+                continue
+            items = [{"id": e["file"], **e} for e in tier]
+            ordered = pick_oldest_unused(st, "flow_story_images", items, key="id")
+            # Check if top pick is actually unused (not just least-recently-used)
+            top = ordered[0]
+            used_list = st.get("theme_history", {}).get("flow_story_images", [])
+            if top["id"] not in used_list:
+                pool = tier
+                log.info(f"Picking from {tier_name} tier (has unused images)")
+                break
+        # If all tiers exhausted, fall back to full pool (round-robin restarts)
+        if pool is None:
+            pool = with_dest
+            log.info("All seasonal tiers cycled — using full dest pool")
+    else:
+        pool = with_dest if with_dest else generic
+
     img_items = [{"id": e["file"], **e} for e in pool]
     img_ordered = pick_oldest_unused(st, "flow_story_images", img_items, key="id")
     chosen = img_ordered[0]
+
+    # Enhance caption with score if available
+    chosen_score = _seasonal_score(chosen)
+    if chosen_score > 0:
+        chosen["_score"] = chosen_score
+        log.info(f"Seasonal score: {chosen_score}/5 for {chosen.get('dest')}")
 
     log.info(f"Selected: {chosen['file']} → {chosen.get('dest', 'generic')} "
              f"({chosen.get('state', '?')})")
