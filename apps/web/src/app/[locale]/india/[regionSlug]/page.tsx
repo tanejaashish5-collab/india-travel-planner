@@ -6,6 +6,8 @@ import { Footer } from "@/components/footer";
 import { createClient } from "@supabase/supabase-js";
 import { REGION_GROUPS, STATE_MAP } from "@/lib/seo-maps";
 import { videoSrc } from "@/lib/video-url";
+import { videoObjectJsonLd } from "@/lib/video-schema";
+import { destinationImage } from "@/lib/image-url";
 
 export const revalidate = 86400;
 export const dynamicParams = true;
@@ -113,8 +115,25 @@ export default async function RegionPage({
   const { states, totalDests, heroDestId } = data;
   const description = REGION_DESCRIPTIONS[regionSlug] ?? "";
 
+  // VideoObject JSON-LD — same library as the destination + state pages.
+  // Hero <video> on this page plays heroDestId.mp4 (e.g. neil-island.mp4 for
+  // /india/islands), so the schema mirrors that contentUrl. Without this,
+  // GSC's "Video isn't on a watch page" alert flagged these regional URLs.
+  const videoLd = videoObjectJsonLd({
+    id: heroDestId,
+    name: `${region.name} — NakshIQ regional travel reel`,
+    description: `Travel footage from ${region.name} (${region.states.length} states). NakshIQ's regional coverage of India's ${regionSlug} cluster.`,
+    thumbnailUrl: destinationImage(heroDestId),
+  });
+
   return (
     <div className="min-h-screen">
+      {videoLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(videoLd) }}
+        />
+      )}
       <Nav />
       <main id="main-content">
         {/* Hero */}

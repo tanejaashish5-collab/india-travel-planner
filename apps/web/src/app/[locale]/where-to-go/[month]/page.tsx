@@ -8,6 +8,8 @@ import { weekOfMonth, currentYear } from "@/lib/weekly-picks/weight";
 import { computeWeeklyPicks } from "@/lib/weekly-picks/compute";
 import type { WeeklyPicksResponse } from "@/lib/weekly-picks/types";
 import { getAppStats } from "@/lib/stats";
+import { videoObjectJsonLd } from "@/lib/video-schema";
+import { destinationImage } from "@/lib/image-url";
 
 export const revalidate = 86400;
 export const dynamicParams = true;
@@ -391,6 +393,28 @@ export default async function WhereToGoPage({
   // ItemList schema for weekly picks — emitted alongside BreadcrumbList.
   const itemListSchema = weeklyPicks?.seo ?? null;
 
+  // VideoObject JSON-LD — only emitted on the regional (state×month) form.
+  // The India-wide /where-to-go/{month} page doesn't show a hero video.
+  // The regional page's <video> in WhereToGoContent picks data[0].id (top
+  // scored destination), so we mirror that pick here for the schema.
+  let videoLd: ReturnType<typeof videoObjectJsonLd> = null;
+  if (regionInfo && data.length > 0) {
+    const heroDest = data[0]?.destination as any;
+    const heroDestId = heroDest?.id ?? data[0]?.destination_id;
+    if (heroDestId) {
+      const heroName = heroDest?.name ?? heroDestId;
+      const heroTagline = heroDest?.tagline ?? "";
+      videoLd = videoObjectJsonLd({
+        id: heroDestId,
+        name: `${regionInfo.displayName} in ${monthName} — NakshIQ travel reel`,
+        description: heroTagline
+          ? `Top destination in ${regionInfo.displayName} for ${monthName}: ${heroName}. ${heroTagline} Aerial and on-ground footage from NakshIQ's coverage.`
+          : `Top destination in ${regionInfo.displayName} for ${monthName}: ${heroName}. Aerial and on-ground footage from NakshIQ's coverage.`,
+        thumbnailUrl: destinationImage(heroDestId),
+      });
+    }
+  }
+
   return (
     <div className="min-h-screen">
       <script
@@ -401,6 +425,12 @@ export default async function WhereToGoPage({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }}
+        />
+      )}
+      {videoLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(videoLd) }}
         />
       )}
       <Nav />
