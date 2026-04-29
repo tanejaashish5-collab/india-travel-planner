@@ -136,6 +136,17 @@ export default function middleware(request: NextRequest) {
     return NextResponse.redirect(new URL(`/${locale}/india/northeast`, request.url), 301);
   }
 
+  // /(en|hi)/vs/kasol-parvati-valley-vs-manikaran → /(en|hi)/vs/kasol-vs-manikaran.
+  // Legacy URL refers to a non-existent "kasol-parvati-valley" destination ID;
+  // the actual destinations are kasol + parvati-valley + manikaran (separate
+  // rows). Google has the legacy URL indexed; redirect to the canonical
+  // kasol-vs-manikaran pair so we don't lose the impressions.
+  const kasolMatch = request.nextUrl.pathname.match(/^\/(en|hi)\/vs\/kasol-parvati-valley-vs-manikaran\/?$/);
+  if (kasolMatch) {
+    const [, locale] = kasolMatch;
+    return NextResponse.redirect(new URL(`/${locale}/vs/kasol-vs-manikaran`, request.url), 301);
+  }
+
   const response = intlMiddleware(request);
 
   // Convert temporary redirects (307) to permanent (301) for SEO

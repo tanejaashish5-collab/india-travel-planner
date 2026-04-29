@@ -25,7 +25,9 @@ export const VS_PAIRS: { id1: string; id2: string; theme: string }[] = [
   { id1: "jibhi", id2: "manali", theme: "offbeat-valleys" },
   { id1: "tirthan-valley", id2: "barot-valley", theme: "offbeat-valleys" },
   { id1: "parvati-valley", id2: "spiti-valley", theme: "offbeat-valleys" },
-  { id1: "kasol-parvati-valley", id2: "manikaran", theme: "offbeat-valleys" },
+  // (removed: kasol-parvati-valley vs manikaran — destination "kasol-parvati-valley"
+  //  doesn't exist; was producing a 404'd vs page. The legacy URL is 301-redirected
+  //  to /vs/kasol-vs-manikaran via middleware. See 2026-04-29 GSC 404 cleanup.)
   { id1: "kasol", id2: "manikaran", theme: "offbeat-valleys" },
   { id1: "chitkul", id2: "sangla", theme: "offbeat-valleys" },
   { id1: "kalpa", id2: "kinnaur", theme: "offbeat-valleys" },
