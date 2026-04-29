@@ -44,6 +44,11 @@ export function StatesExplorer({ states, locale }: { states: StateData[]; locale
     return states.filter((s) => regionGroup.states.includes(s.id));
   }, [states, activeRegion]);
 
+  const currentMonthName = useMemo(
+    () => new Date().toLocaleString("en-US", { month: "long" }),
+    [],
+  );
+
   const regionStats = useMemo(() => {
     const stats: Record<string, { count: number; dests: number }> = {};
     states.forEach((s) => {
@@ -165,17 +170,38 @@ export function StatesExplorer({ states, locale }: { states: StateData[]; locale
                   <div className="absolute inset-0 bg-gradient-to-t from-card via-card/30 to-transparent" />
                   {/* Badges */}
                   <div className="absolute top-3 right-3 flex gap-2">
-                    <span className="rounded-full bg-black/60 backdrop-blur-sm px-3 py-1 text-xs font-mono font-bold text-white">
-                      {state.destCount}
+                    <span className="group/badge relative">
+                      <span className="rounded-full bg-black/60 backdrop-blur-sm px-3 py-1 text-xs font-mono font-bold text-white">
+                        {state.destCount}
+                      </span>
+                      <span
+                        role="tooltip"
+                        className="pointer-events-none absolute right-0 top-full mt-2 z-20 whitespace-nowrap rounded-md border border-white/10 bg-black/85 backdrop-blur-md px-2.5 py-1.5 text-[10px] font-mono uppercase tracking-[0.16em] text-white/90 opacity-0 -translate-y-1 transition-all duration-200 group-hover/badge:opacity-100 group-hover/badge:translate-y-0"
+                      >
+                        {state.destCount} {state.destCount === 1 ? "destination" : "destinations"}
+                      </span>
                     </span>
                     {state.avgScore !== null && (
-                      <span className={`rounded-full px-3 py-1 text-xs font-mono font-bold backdrop-blur-sm ${
-                        state.avgScore >= 4 ? "bg-emerald-500/60 text-white" :
-                        state.avgScore >= 3 ? "bg-yellow-500/60 text-white" :
-                        state.avgScore >= 2 ? "bg-orange-500/60 text-white" :
-                        "bg-red-500/60 text-white"
-                      }`}>
-                        {state.avgScore.toFixed(1)}/5
+                      <span className="group/badge relative">
+                        <span
+                          className={`rounded-full px-3 py-1 text-xs font-mono font-bold backdrop-blur-sm ${
+                            state.avgScore >= 4
+                              ? "bg-emerald-500/60 text-white"
+                              : state.avgScore >= 3
+                              ? "bg-yellow-500/60 text-white"
+                              : state.avgScore >= 2
+                              ? "bg-orange-500/60 text-white"
+                              : "bg-red-500/60 text-white"
+                          }`}
+                        >
+                          {state.avgScore.toFixed(1)}/5
+                        </span>
+                        <span
+                          role="tooltip"
+                          className="pointer-events-none absolute right-0 top-full mt-2 z-20 whitespace-nowrap rounded-md border border-white/10 bg-black/85 backdrop-blur-md px-2.5 py-1.5 text-[10px] font-mono uppercase tracking-[0.16em] text-white/90 opacity-0 -translate-y-1 transition-all duration-200 group-hover/badge:opacity-100 group-hover/badge:translate-y-0"
+                        >
+                          {currentMonthName} avg · {state.avgScore.toFixed(1)}/5
+                        </span>
                       </span>
                     )}
                   </div>
