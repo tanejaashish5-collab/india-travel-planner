@@ -160,7 +160,7 @@ export function DestinationMap({
            blue. Scoped to .leaflet-tile-pane so markers, popups, controls,
            and our overlay pins keep their native colours. */
         .leaflet-tile-pane {
-          filter: sepia(0.5) hue-rotate(195deg) saturate(1.1) brightness(0.95);
+          filter: sepia(1) hue-rotate(195deg) saturate(2.5) brightness(1.15);
         }
         .dark-popup .leaflet-popup-content-wrapper {
           background: #1a1a2e;
