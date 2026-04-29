@@ -3,12 +3,14 @@ import { createClient } from "@supabase/supabase-js";
 import { unstable_cache } from "next/cache";
 import { STATE_MAP, ALL_STATE_SLUGS, ALL_MONTH_SLUGS } from "@/lib/seo-maps";
 
-// 6h ISG. Without an explicit revalidate, Next.js 16 detects this route as
-// SSG with revalidate=0 and throws E132 ("Page changed from static to
-// dynamic at runtime") on the auto-generated /sitemap.xml index — the
-// chunks themselves render fine but the parent route 500s. See
+// Force dynamic so Next.js 16 stops detecting this as SSG-with-revalidate=0
+// and throwing E132 ("Page changed from static to dynamic at runtime") on
+// the auto-generated /sitemap.xml index. Setting `revalidate = 21600`
+// alone wasn't enough — the auto-index still tripped the SSG check.
+// Sitemaps are low-frequency reads (mostly Googlebot), so per-request
+// generation is fine. See
 // https://nextjs.org/docs/messages/app-static-to-dynamic-error.
-export const revalidate = 21600;
+export const dynamic = "force-dynamic";
 
 /*
  * Sitemap split into 6 chunks via generateSitemaps().
