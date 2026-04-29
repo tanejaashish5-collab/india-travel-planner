@@ -5239,3 +5239,25 @@ Date range: 2026-04-15 → 2026-04-28
 2026-04-29 06:15:34  INFO      Theme tracker updated: format=seasonal_shift
 2026-04-29 06:15:34  INFO      State saved. Reel run complete.
 2026-04-29 06:15:34  INFO      ════════════════════════════════════════════════════════════
+2026-04-29 06:27:24  INFO      ════════════════════════════════════════════════════════════
+2026-04-29 06:27:24  INFO      Nakshiq Autoposter · FLOW STORY · 2026-04-29 · weekday=2
+2026-04-29 06:27:24  INFO      ════════════════════════════════════════════════════════════
+2026-04-29 06:27:24  INFO      Library: 956 images (813 dest-matched, 143 generic)
+2026-04-29 06:27:25  INFO      Seasonal scores loaded: 100 destinations for month 4
+2026-04-29 06:27:25  INFO      Seasonal tiers: 5★=70 · 4★=58 · 3★=0 · low=0 · unscored=685
+2026-04-29 06:27:25  INFO      Picking from 5★ tier (has unused images)
+2026-04-29 06:27:25  INFO      Seasonal score: 5/5 for Morni Hills
+2026-04-29 06:27:25  INFO      Selected: flow_0029_95e0edf7.jpg → Morni Hills (Haryana)
+2026-04-29 06:27:25  INFO          Requesting upload URL for flow_story_flow_0029_95e0edf7.jpg (780,491 bytes, image/jpeg)
+2026-04-29 06:27:26  INFO          Uploading to R2 (timeout=120s)...
+2026-04-29 06:27:27  INFO          R2 PUT OK. Confirming...
+2026-04-29 06:27:28  INFO          Media ready: 1zbAG (780,491 bytes · flow_story_flow_0029_95e0edf7.jpg)
+2026-04-29 06:27:28  INFO      Image uploaded: flow_story_flow_0029_95e0edf7.jpg (762 KB)
+2026-04-29 06:27:28  INFO      [youtube/@naksh-iq] Skipping flow story (YouTube only accepts video).
+2026-04-29 06:27:28  INFO      [instagram/nakshiq] Publishing flow story: Morni Hills...
+2026-04-29 06:27:30  INFO      [instagram/nakshiq] Flow story posted successfully!
+2026-04-29 06:27:30  INFO      [facebook/Nakshiq] Publishing flow story: Morni Hills...
+2026-04-29 06:27:31  INFO      [facebook/Nakshiq] Flow story posted successfully!
+2026-04-29 06:27:31  INFO      Theme tracker updated: flow_story_images=flow_0029_95e0edf7.jpg
+2026-04-29 06:27:31  INFO      State saved. Flow Story run complete.
+2026-04-29 06:27:31  INFO      ════════════════════════════════════════════════════════════
