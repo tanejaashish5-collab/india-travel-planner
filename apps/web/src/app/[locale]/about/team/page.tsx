@@ -38,8 +38,19 @@ export default async function TeamPage({ params }: { params: Promise<{ locale: s
   const team = await getTeam();
   const pageUrl = `${BASE_URL}/${locale}/about/team`;
 
-  const editors = team.filter((a) => a.role === "editor");
-  const family = team.filter((a) => a.role === "family");
+  // Founders sort to the top, then editors/family/contributors/experts.
+  // Single flat list since with 2 founders, role-based subsections are noise.
+  const ROLE_ORDER: Record<string, number> = {
+    founder: 0,
+    "co-founder": 1,
+    editor: 2,
+    family: 3,
+    contributor: 4,
+    expert: 5,
+  };
+  const founders = team
+    .filter((a) => a.role === "founder" || a.role === "co-founder")
+    .sort((a, b) => (ROLE_ORDER[a.role] ?? 99) - (ROLE_ORDER[b.role] ?? 99));
   const contributors = team.filter((a) => a.role === "contributor");
   const experts = team.filter((a) => a.role === "expert");
 
@@ -83,24 +94,10 @@ export default async function TeamPage({ params }: { params: Promise<{ locale: s
           who stands behind the recommendation — not a shared account, not an AI pseudonym.
         </p>
 
-        {editors.length > 0 && (
+        {founders.length > 0 && (
           <section className="mb-10">
-            <h2 className="text-xl font-semibold mb-4">Editorial</h2>
             <div className="space-y-4">
-              {editors.map((a) => (
-                <div key={a.slug} id={a.slug}>
-                  <AuthorByline author={a} locale={locale} variant="full" />
-                </div>
-              ))}
-            </div>
-          </section>
-        )}
-
-        {family.length > 0 && (
-          <section className="mb-10">
-            <h2 className="text-xl font-semibold mb-4">Family perspective</h2>
-            <div className="space-y-4">
-              {family.map((a) => (
+              {founders.map((a) => (
                 <div key={a.slug} id={a.slug}>
                   <AuthorByline author={a} locale={locale} variant="full" />
                 </div>

@@ -28,6 +28,8 @@ type Props = {
 };
 
 const ROLE_LABEL: Record<string, string> = {
+  founder: "Founder",
+  "co-founder": "Co-Founder",
   editor: "Editor",
   contributor: "Contributor",
   expert: "Expert",
