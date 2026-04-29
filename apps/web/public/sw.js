@@ -8,8 +8,11 @@
 // v30: 2026-04-27 PWA drift fix — added Sprint-4/9/14 high-traffic routes to precache
 //      (corrections, press, india-vs, cost-index, weekend-from) so they're available on
 //      first offline visit instead of after second navigation.
+// v31: 2026-04-30 More hub launch — precache /en/more + /hi/more so the secondary
+//      navigation surface (linked from the dead-button-now-fixed mobile tab bar) is
+//      available offline alongside the rest of the in-trip toolset.
 
-const CACHE_VERSION = "nakshiq-v30";
+const CACHE_VERSION = "nakshiq-v31";
 const STATIC_CACHE = `${CACHE_VERSION}-static`;
 const IMAGE_CACHE = `${CACHE_VERSION}-images`;
 const DATA_CACHE = `${CACHE_VERSION}-data`;
@@ -43,9 +46,11 @@ const PRECACHE_ROUTES = [
   "/en/india-vs",
   "/en/cost-index",
   "/en/weekend-from",
+  "/en/more",
   "/hi",
   "/hi/sos",
   "/hi/saved",
+  "/hi/more",
 ];
 
 // Install — pre-cache essentials + critical routes.

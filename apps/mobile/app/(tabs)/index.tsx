@@ -45,6 +45,7 @@ const DISCOVER_ITEMS = [
   { label: "Roads", sub: "", icon: "🚗", route: "/road-conditions", color: colors.saffron },
   { label: "Records", sub: "", icon: "🏆", route: "/superlatives", color: colors.score3 },
   { label: "Blog", sub: "", icon: "📝", route: "/blog", color: "#8b5cf6" },
+  { label: "More", sub: "", icon: "≡", route: "/more", color: colors.mutedForeground },
 ];
 
 const TRAVELER_GREETINGS: Record<string, string> = {

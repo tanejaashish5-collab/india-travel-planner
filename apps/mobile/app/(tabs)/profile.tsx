@@ -105,6 +105,16 @@ export default function ProfileScreen() {
           </TouchableOpacity>
         </View>
 
+        {/* More tools — surfaces tools, guides, and policies that don't fit the 5 tabs. */}
+        <View style={styles.section}>
+          <Text style={styles.sectionTitle}>Explore more</Text>
+
+          <TouchableOpacity style={styles.settingsRow} onPress={() => router.push("/more" as any)}>
+            <Text style={styles.settingsLabel}>More tools</Text>
+            <Text style={styles.settingsChevron}>→</Text>
+          </TouchableOpacity>
+        </View>
+
         {/* About */}
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>About</Text>
