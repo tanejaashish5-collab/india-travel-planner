@@ -27,8 +27,8 @@
     "22_afro_carnival"
   ],
   "posted_today": {
-    "PdMu0": "2026-04-28",
-    "m8EAd": "2026-04-28",
+    "PdMu0": "2026-04-29",
+    "m8EAd": "2026-04-29",
     "m8EAd_reel": "2026-04-28",
     "PdMu0_reel": "2026-04-29",
     "4QL0i_reel": "2026-04-19",
@@ -42,8 +42,8 @@
     "jUmP2_yt_short": "2026-04-20",
     "jUmP2_yt_short_count": 1,
     "jUmP2": "2026-04-20",
-    "m8EAd_moat": "2026-04-27",
-    "PdMu0_moat": "2026-04-27",
+    "m8EAd_moat": "2026-04-29",
+    "PdMu0_moat": "2026-04-29",
     "m8EAd_infographic": "2026-04-24",
     "PdMu0_infographic": "2026-04-24",
     "jUmP2_reel": "2026-04-20",
@@ -68,7 +68,7 @@
     "m8EAd_flow_story": "2026-04-29",
     "PdMu0_flow_story": "2026-04-29"
   },
-  "last_sync": "2026-04-29T06:45:18.066983+00:00",
+  "last_sync": "2026-04-29T07:41:19.365533+00:00",
   "posted_destinations": [
     {
       "destination_id": "pahalgam",
@@ -405,6 +405,30 @@
     {
       "destination_id": "almora",
       "date": "2026-04-28"
+    },
+    {
+      "destination_id": "flow_story_flow_0029_95e0edf7",
+      "date": "2026-04-29"
+    },
+    {
+      "destination_id": "reel_seasonal_shift_reel_seasonal_shift_tehri",
+      "date": "2026-04-29"
+    },
+    {
+      "destination_id": "flow_tamenglong_manipur",
+      "date": "2026-04-29"
+    },
+    {
+      "destination_id": "flow_story_anini",
+      "date": "2026-04-29"
+    },
+    {
+      "destination_id": "collection_spotlight_01_title",
+      "date": "2026-04-29"
+    },
+    {
+      "destination_id": "devprayag",
+      "date": "2026-04-29"
     }
   ],
   "posted_formats": {
@@ -421,7 +445,8 @@
       "monthly_forecast",
       "methodology_crowds",
       "score_card",
-      "reality_check"
+      "reality_check",
+      "skip_list"
     ],
     "PdMu0": [
       "monthly_forecast",
@@ -439,7 +464,8 @@
       "monthly_forecast",
       "methodology_crowds",
       "score_card",
-      "reality_check"
+      "reality_check",
+      "skip_list"
     ]
   },
   "post_log": [
@@ -800,6 +826,26 @@
       "destination": "almora",
       "format": "reality_check",
       "has_media": true
+    },
+    {
+      "timestamp": "2026-04-29T07:42:19.537396+00:00",
+      "date": "2026-04-29",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "eJVsr",
+      "destination": "devprayag",
+      "format": "skip_list",
+      "has_media": true
+    },
+    {
+      "timestamp": "2026-04-29T07:42:43.079719+00:00",
+      "date": "2026-04-29",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "mnYJd",
+      "destination": "devprayag",
+      "format": "skip_list",
+      "has_media": true
     }
   ],
   "theme_usage": {
@@ -831,7 +877,8 @@
         "2026-04-22"
       ],
       "devprayag": [
-        "2026-04-22"
+        "2026-04-22",
+        "2026-04-29"
       ],
       "chopta": [
         "2026-04-22"
@@ -1045,6 +1092,9 @@
       ],
       "methodology_crowds": [
         "2026-04-27"
+      ],
+      "skip_list": [
+        "2026-04-29"
       ]
     },
     "audience_tags": {

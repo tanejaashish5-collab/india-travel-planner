@@ -5267,3 +5267,39 @@ Date range: 2026-04-15 → 2026-04-28
 2026-04-29 06:45:09  INFO      ── Syncing Nakshiq content ──────────────────────────────
 2026-04-29 06:45:18  INFO      Synced → 20 destinations · 0 traps · 0 articles · total catalog=491
 2026-04-29 06:45:18  INFO      Sync-only mode. Done.
+2026-04-29 07:41:10  INFO      Stale lock (age=608071s) — overriding.
+2026-04-29 07:41:10  INFO      ════════════════════════════════════════════════════════════
+2026-04-29 07:41:10  INFO      Nakshiq Autoposter · MOAT · 2026-04-29 · weekday=2
+2026-04-29 07:41:10  INFO      ════════════════════════════════════════════════════════════
+2026-04-29 07:41:10  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-04-29 07:41:19  INFO      Synced → 20 destinations · 0 traps · 0 articles · total catalog=491
+2026-04-29 07:41:20  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-04-29 07:41:21  INFO      Outstand dedup guard: merged 8 remote posts into state.
+2026-04-29 07:41:21  INFO      Moat angle locked: skip_list (5/9 never featured)
+2026-04-29 07:41:21  INFO      Formats — IG: skip_list  ·  FB: skip_list  ·  Story: None
+2026-04-29 07:41:21  INFO      Used destinations (14d): 56
+2026-04-29 07:41:22  INFO      Skip List (forward June): Devprayag drops from 5/5 to 3/5 in June
+2026-04-29 07:41:27  INFO      Shared best destination locked: Pahalgam
+2026-04-29 07:41:27  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-04-29 07:41:27  INFO      [instagram/nakshiq] Generating skip_list post...
+2026-04-29 07:41:27  INFO      [instagram/nakshiq] Caption ready (485 chars, dest=devprayag)
+2026-04-29 07:41:27  INFO      [instagram/nakshiq] Video available — uploading for Reel...
+2026-04-29 07:41:27  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/devprayag.mp4?v=20260429
+2026-04-29 07:41:28  INFO          Requesting upload URL for devprayag.mp4 (9,415,677 bytes, video/mp4)
+2026-04-29 07:41:28  INFO          Uploading to R2 (timeout=300s)...
+2026-04-29 07:41:29  INFO          R2 PUT OK. Confirming...
+2026-04-29 07:41:30  INFO          Media ready: OndMv (9,415,677 bytes · devprayag.mp4)
+2026-04-29 07:41:30  INFO      [instagram/nakshiq] Publishing Reel...
+2026-04-29 07:42:19  WARNING   [instagram/nakshiq] ⚠️  Queued (ID=eJVsr)
+2026-04-29 07:42:19  INFO      [facebook/Nakshiq] Generating skip_list post...
+2026-04-29 07:42:19  INFO      [facebook/Nakshiq] Caption ready (558 chars, dest=devprayag)
+2026-04-29 07:42:19  INFO      [facebook/Nakshiq] Video available — uploading for Reel...
+2026-04-29 07:42:19  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/devprayag.mp4?v=20260429
+2026-04-29 07:42:20  INFO          Requesting upload URL for devprayag.mp4 (9,415,677 bytes, video/mp4)
+2026-04-29 07:42:20  INFO          Uploading to R2 (timeout=300s)...
+2026-04-29 07:42:22  INFO          R2 PUT OK. Confirming...
+2026-04-29 07:42:23  INFO          Media ready: TWbs1 (9,415,677 bytes · devprayag.mp4)
+2026-04-29 07:42:23  INFO      [facebook/Nakshiq] Publishing Reel...
+2026-04-29 07:42:43  INFO      [facebook/Nakshiq] ✅ Published · Outstand=mnYJd · Platform=2106449049918562
+2026-04-29 07:42:43  INFO      State saved. Run complete.
+2026-04-29 07:42:43  INFO      ════════════════════════════════════════════════════════════
