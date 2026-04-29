@@ -5416,3 +5416,25 @@ requests.exceptions.HTTPError: 401 Client Error: UNAUTHORIZED for url: https://a
 2026-04-29 13:12:42  INFO      [facebook/Nakshiq] ✅ Published · Outstand=kVOrh · Platform=1040562729145369_122105343818700092
 2026-04-29 13:12:42  INFO      State saved. Run complete.
 2026-04-29 13:12:42  INFO      ════════════════════════════════════════════════════════════
+2026-04-29 15:06:14  INFO      ════════════════════════════════════════════════════════════
+2026-04-29 15:06:14  INFO      Nakshiq Autoposter · REEL · 2026-04-29 · weekday=2
+2026-04-29 15:06:14  INFO      ════════════════════════════════════════════════════════════
+2026-04-29 15:06:14  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-04-29 15:06:23  INFO      Synced → 20 destinations · 0 traps · 0 articles · total catalog=491
+2026-04-29 15:06:23  INFO      Format: destination_reveal | Data: {'dest_name': 'Bir Billing', 'dest_slug': 'bir-billing', 'state_name': 'Himachal Pradesh', 'score': 5, 'tagline': 'India paragliding capital — Tibetan colony and cafe scene mean you stay even if wind does not cooperate.'}
+2026-04-29 15:06:32  INFO      Reel rendered: reel_destination_reveal_bir-billing.mp4 (1026 KB)
+2026-04-29 15:06:32  INFO          Requesting upload URL for reel_destination_reveal_reel_destination_reveal_bir-billing.mp4 (1,051,205 bytes, video/mp4)
+2026-04-29 15:06:33  INFO          Uploading to R2 (timeout=300s)...
+2026-04-29 15:06:35  INFO          R2 PUT OK. Confirming...
+2026-04-29 15:06:36  INFO          Media ready: 9YwgQ (1,051,205 bytes · reel_destination_reveal_reel_destination_reveal_bir-billing.mp4)
+2026-04-29 15:06:36  INFO      Video uploaded: reel_destination_reveal_reel_destination_reveal_bir-billing.mp4
+2026-04-29 15:06:37  INFO      [youtube/@naksh-iq] Publishing reel (destination_reveal)...
+2026-04-29 15:06:40  INFO      [youtube/@naksh-iq] Outstand accepted (post_id=N7yoa), confirming...
+2026-04-29 15:06:52  INFO      [youtube/@naksh-iq] ✅ Reel published · Outstand=N7yoa · Platform=a1ICVekYCpw
+2026-04-29 15:06:52  INFO      [instagram/nakshiq] Publishing reel (destination_reveal)...
+2026-04-29 15:06:55  INFO      [instagram/nakshiq] Outstand accepted (post_id=8jMvI), confirming...
+2026-04-29 15:07:25  INFO      [instagram/nakshiq] ✅ Reel published · Outstand=8jMvI · Platform=18414019612182635
+2026-04-29 15:07:25  INFO      [facebook/Nakshiq] Already posted reel today — skipping.
+2026-04-29 15:07:25  INFO      Theme tracker updated: format=destination_reveal
+2026-04-29 15:07:25  INFO      State saved. Reel run complete.
+2026-04-29 15:07:25  INFO      ════════════════════════════════════════════════════════════
