@@ -12,13 +12,17 @@ type PersonaBlocks = Partial<Record<PersonaKey, string>>;
 // already uses it as a consistent identity marker. Face/object emojis
 // on the other persona tabs were removed as part of the D4 emoji
 // restraint pass — they competed with the tab label text.
-const META: Record<PersonaKey, { glyph: string | null; label: string; tone: string }> = {
-  family:        { glyph: null, label: "Family with kids",      tone: "border-emerald-500/30 bg-emerald-500/5" },
-  biker:         { glyph: null, label: "Biker / road trip",     tone: "border-orange-500/30 bg-orange-500/5" },
-  photographer:  { glyph: null, label: "Photographer",          tone: "border-purple-500/30 bg-purple-500/5" },
-  nomad:         { glyph: null, label: "Digital nomad",         tone: "border-sky-500/30 bg-sky-500/5" },
-  solo_female:   { glyph: "♀",  label: "Solo-female traveler",  tone: "border-pink-500/30 bg-pink-500/5" },
-  elderly:       { glyph: null, label: "Elderly parents",       tone: "border-amber-500/30 bg-amber-500/5" },
+//
+// `tone` is for the active-chip + content-card surface; `ring` lifts the
+// active chip a step further so first-time visitors see "this is selected,
+// the others are switchable" at a glance.
+const META: Record<PersonaKey, { glyph: string | null; label: string; tone: string; ring: string }> = {
+  family:        { glyph: null, label: "Family with kids",      tone: "border-emerald-500/40 bg-emerald-500/15", ring: "ring-emerald-500/40" },
+  biker:         { glyph: null, label: "Biker / road trip",     tone: "border-orange-500/40 bg-orange-500/15",   ring: "ring-orange-500/40"   },
+  photographer:  { glyph: null, label: "Photographer",          tone: "border-purple-500/40 bg-purple-500/15",   ring: "ring-purple-500/40"   },
+  nomad:         { glyph: null, label: "Digital nomad",         tone: "border-sky-500/40 bg-sky-500/15",         ring: "ring-sky-500/40"      },
+  solo_female:   { glyph: "♀",  label: "Solo-female traveler",  tone: "border-pink-500/40 bg-pink-500/15",       ring: "ring-pink-500/40"     },
+  elderly:       { glyph: null, label: "Elderly parents",       tone: "border-amber-500/40 bg-amber-500/15",     ring: "ring-amber-500/40"    },
 };
 
 export function PersonaBlocksSection({ data }: { data: PersonaBlocks | null | undefined }) {
@@ -29,14 +33,14 @@ export function PersonaBlocksSection({ data }: { data: PersonaBlocks | null | un
 
   return (
     <section id="section-personas" className="scroll-mt-24">
-      <div className="flex flex-wrap items-center gap-3 mb-4">
+      <div className="mb-4">
         <h2 className="text-xl font-semibold">For travelers like you</h2>
-        <span className="text-sm text-muted-foreground">
-          How this place plays out for each kind of traveler.
-        </span>
+        <p className="text-sm text-muted-foreground mt-1">
+          Tap any traveler type below to see how this place feels for them.
+        </p>
       </div>
 
-      <div className="flex flex-wrap gap-2 mb-4">
+      <div className="flex flex-wrap gap-2 mb-4" role="tablist" aria-label="Traveler type">
         {available.map((k) => {
           const isActive = active === k;
           const meta = META[k];
@@ -45,11 +49,13 @@ export function PersonaBlocksSection({ data }: { data: PersonaBlocks | null | un
               key={k}
               type="button"
               onClick={() => setActive(k)}
+              role="tab"
+              aria-selected={isActive}
               className={cn(
-                "inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs font-medium transition-all",
+                "inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs font-medium transition-all cursor-pointer",
                 isActive
-                  ? `${meta.tone} text-foreground`
-                  : "border-border text-muted-foreground hover:text-foreground hover:border-muted-foreground",
+                  ? `${meta.tone} ${meta.ring} ring-2 text-foreground font-semibold`
+                  : "border-border/70 text-muted-foreground hover:text-foreground hover:border-foreground/40 hover:bg-foreground/5",
               )}
               aria-pressed={isActive}
             >
