@@ -1,28 +1,15 @@
-import type { MetadataRoute } from "next";
+import { NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
 import { STATE_MAP, ALL_STATE_SLUGS, ALL_MONTH_SLUGS } from "@/lib/seo-maps";
 
-// Force dynamic so Next.js 16 stops detecting this as SSG-with-revalidate=0
-// and throwing E132 ("Page changed from static to dynamic at runtime") on
-// the auto-generated /sitemap.xml index. Setting `revalidate = 21600`
-// alone wasn't enough — the auto-index still tripped the SSG check.
-// Sitemaps are low-frequency reads (mostly Googlebot), so per-request
-// generation is fine. See
-// https://nextjs.org/docs/messages/app-static-to-dynamic-error.
-export const dynamic = "force-dynamic";
+// Manual sitemap chunk handlers. Replaces Next.js 16's sitemap.ts +
+// generateSitemaps() convention because its auto-generated /sitemap.xml
+// index was 500-ing (E132 SSG-vs-dynamic detection bug). All chunk
+// generation logic is ported verbatim from the previous sitemap.ts; the
+// only change is emitting XML directly instead of returning
+// MetadataRoute.Sitemap entries.
 
-/*
- * Sitemap split into 6 chunks via generateSitemaps().
- * Next.js auto-generates a sitemap index at /sitemap.xml
- * pointing to /sitemap/0.xml through /sitemap/5.xml.
- *
- * 0 = static pages + where-to-go hubs
- * 1 = destinations + destination-month pages
- * 2 = collections + routes + articles + treks
- * 3 = programmatic SEO (state×month, difficulty, tags, festivals, stays, camping, family)
- * 4 = vs comparisons + skip-lists + with-kids + region-months
- * 5 = Sprint 21 Q&A pages (answered questions only)
- */
+export const dynamic = "force-dynamic";
 
 const LOCALES = ["en", "hi"] as const;
 const BASE = "https://www.nakshiq.com";
@@ -31,34 +18,39 @@ const MONTH_SLUGS = ALL_MONTH_SLUGS;
 const STATE_SLUGS = ALL_STATE_SLUGS;
 
 const TREK_STATES = [
-  "himachal-pradesh","uttarakhand","jammu-kashmir","ladakh","sikkim",
-  "arunachal-pradesh","meghalaya","nagaland","west-bengal","rajasthan",
+  "himachal-pradesh", "uttarakhand", "jammu-kashmir", "ladakh", "sikkim",
+  "arunachal-pradesh", "meghalaya", "nagaland", "west-bengal", "rajasthan",
 ];
 
 const CAMP_STATES = [
-  "himachal-pradesh","uttarakhand","jammu-kashmir","ladakh","sikkim",
-  "rajasthan","meghalaya","arunachal-pradesh","madhya-pradesh","uttar-pradesh",
+  "himachal-pradesh", "uttarakhand", "jammu-kashmir", "ladakh", "sikkim",
+  "rajasthan", "meghalaya", "arunachal-pradesh", "madhya-pradesh", "uttar-pradesh",
 ];
 
 const FAMILY_STATES = [
-  "himachal-pradesh","uttarakhand","jammu-kashmir","ladakh","rajasthan","punjab",
-  "sikkim","meghalaya","assam","uttar-pradesh","madhya-pradesh","west-bengal",
-  "arunachal-pradesh","nagaland",
+  "himachal-pradesh", "uttarakhand", "jammu-kashmir", "ladakh", "rajasthan", "punjab",
+  "sikkim", "meghalaya", "assam", "uttar-pradesh", "madhya-pradesh", "west-bengal",
+  "arunachal-pradesh", "nagaland",
 ];
 
 const DIFFICULTIES = ["easy", "moderate", "hard", "extreme"];
 
 const TAGS = [
-  "offbeat","trek","spiritual","heritage","wildlife","lake","romantic",
-  "adventure","family","winter","monsoon","photography","budget","pilgrimage",
-  "hill-station","border","desert","valley","monastery","waterfall",
+  "offbeat", "trek", "spiritual", "heritage", "wildlife", "lake", "romantic",
+  "adventure", "family", "winter", "monsoon", "photography", "budget", "pilgrimage",
+  "hill-station", "border", "desert", "valley", "monastery", "waterfall",
 ];
 
-export async function generateSitemaps() {
-  return [{ id: "0" }, { id: "1" }, { id: "2" }, { id: "3" }, { id: "4" }, { id: "5" }];
-}
+type Freq = "daily" | "weekly" | "monthly";
 
-function entry(path: string, freq: "daily" | "weekly" | "monthly", priority: number): MetadataRoute.Sitemap {
+type Entry = {
+  url: string;
+  lastModified: Date;
+  changeFrequency: Freq;
+  priority: number;
+};
+
+function entry(path: string, freq: Freq, priority: number): Entry[] {
   return LOCALES.map((locale) => ({
     url: `${BASE}/${locale}${path ? `/${path}` : ""}`,
     lastModified: new Date(),
@@ -74,11 +66,6 @@ function getSupabase() {
   return createClient(url, key);
 }
 
-// Destination IDs — used by chunks 1 and 4. Originally wrapped in
-// unstable_cache, but that caused Next.js 16 to detect this route as
-// SSG-with-revalidate=0 and 500 the auto-generated /sitemap.xml index.
-// Per-call DB hit is cheap (one indexed query) and only runs on
-// sitemap-chunk requests (very low frequency).
 async function getDestinationIds(): Promise<string[]> {
   const supabase = getSupabase();
   if (!supabase) return [];
@@ -86,12 +73,24 @@ async function getDestinationIds(): Promise<string[]> {
   return (data ?? []).map((d: any) => d.id);
 }
 
-export default async function sitemap(props: {
-  id: Promise<string>;
-}): Promise<MetadataRoute.Sitemap> {
-  const id = await props.id;
+function escapeXml(s: string): string {
+  return s
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&apos;");
+}
 
-  // ─── Chunk 0: Static pages + where-to-go hubs ───
+function toUrlsetXml(entries: Entry[]): string {
+  const urls = entries.map((e) => {
+    const lastmod = (e.lastModified instanceof Date ? e.lastModified : new Date(e.lastModified)).toISOString();
+    return `  <url>\n    <loc>${escapeXml(e.url)}</loc>\n    <lastmod>${lastmod}</lastmod>\n    <changefreq>${e.changeFrequency}</changefreq>\n    <priority>${e.priority.toFixed(2)}</priority>\n  </url>`;
+  }).join("\n");
+  return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>\n`;
+}
+
+async function buildChunk(id: string): Promise<Entry[]> {
   if (id === "0") {
     const staticPages = [
       "", "explore", "states", "collections", "routes", "treks", "plan",
@@ -110,11 +109,7 @@ export default async function sitemap(props: {
       "weekend-from-chennai", "weekend-from-kolkata", "weekend-from-hyderabad",
       "arrival", "arrival/del", "arrival/bom", "arrival/blr", "arrival/maa",
       "arrival/ccu", "arrival/hyd", "arrival/cok", "arrival/goi", "arrival/amd",
-      // State hub pages — canonical URL for state-level content
       ...Object.keys(STATE_MAP).map((s) => `state/${s}`),
-      // (Legacy /region/{stateSlug} entries removed — now 301-redirect to
-      //  /state/{stateSlug} via middleware. The state/* entries above
-      //  already cover every state in STATE_MAP.)
     ];
 
     const staticEntries = staticPages.flatMap((page) => entry(
@@ -123,31 +118,28 @@ export default async function sitemap(props: {
       page === "" ? 1.0 : page === "explore" || page === "india-travel" ? 0.9 : 0.7,
     ));
 
-    // Where-to-go monthly hubs (12 × 2 = 24 URLs)
     const whereToGoEntries = MONTH_SLUGS.flatMap((month) =>
-      entry(`where-to-go/${month}`, "weekly", 0.85)
+      entry(`where-to-go/${month}`, "weekly", 0.85),
     );
 
     return [...staticEntries, ...whereToGoEntries];
   }
 
-  // ─── Chunk 1: Destinations + destination-month pages ───
   if (id === "1") {
     const destIds = await getDestinationIds();
     if (!destIds.length) return [];
 
     const destEntries = destIds.flatMap((dId) =>
-      entry(`destination/${dId}`, "weekly", 0.8)
+      entry(`destination/${dId}`, "weekly", 0.8),
     );
 
     const destMonthEntries = destIds.flatMap((dId) =>
-      MONTH_SLUGS.flatMap((month) => entry(`destination/${dId}/${month}`, "monthly", 0.7))
+      MONTH_SLUGS.flatMap((month) => entry(`destination/${dId}/${month}`, "monthly", 0.7)),
     );
 
     return [...destEntries, ...destMonthEntries];
   }
 
-  // ─── Chunk 2: Collections + routes + articles + treks ───
   if (id === "2") {
     const supabase = getSupabase();
     if (!supabase) return [];
@@ -161,78 +153,50 @@ export default async function sitemap(props: {
     ]);
 
     const collEntries = (collResult.data ?? []).flatMap((c: any) =>
-      entry(`collections/${c.id}`, "monthly", 0.6)
+      entry(`collections/${c.id}`, "monthly", 0.6),
     );
 
     const routeEntries = (routeResult.data ?? []).flatMap((r: any) =>
-      entry(`routes/${r.id}`, "monthly", 0.6)
+      entry(`routes/${r.id}`, "monthly", 0.6),
     );
 
     const articleEntries = (articleResult.data ?? []).flatMap((a: any) =>
-      entry(`blog/${a.slug}`, "weekly", 0.8)
+      entry(`blog/${a.slug}`, "weekly", 0.8),
     );
 
     const trekEntries = (trekResult.data ?? []).flatMap((t: any) =>
-      entry(`treks/${t.id}`, "monthly", 0.7)
+      entry(`treks/${t.id}`, "monthly", 0.7),
     );
 
     const issueEntries = (issueResult.data ?? []).flatMap((i: any) =>
-      entry(`the-window/${i.slug}`, "monthly", 0.7)
+      entry(`the-window/${i.slug}`, "monthly", 0.7),
     );
 
     return [...collEntries, ...routeEntries, ...articleEntries, ...trekEntries, ...issueEntries];
   }
 
-  // ─── Chunk 3: Programmatic SEO pages ───
   if (id === "3") {
-    // Explore by state (23 × 2 = 46)
     const exploreState = STATE_SLUGS.flatMap((s) => entry(`explore/state/${s}`, "weekly", 0.8));
-
-    // Explore state × month (23 × 12 × 2 = 552)
     const exploreStateMonth = STATE_SLUGS.flatMap((s) =>
-      MONTH_SLUGS.flatMap((m) => entry(`explore/state/${s}/${m}`, "monthly", 0.7))
+      MONTH_SLUGS.flatMap((m) => entry(`explore/state/${s}/${m}`, "monthly", 0.7)),
     );
-
-    // Explore by difficulty (4 × 2 = 8)
     const exploreDiff = DIFFICULTIES.flatMap((d) => entry(`explore/difficulty/${d}`, "monthly", 0.7));
-
-    // Explore by tag (20 × 2 = 40)
     const exploreTag = TAGS.flatMap((t) => entry(`explore/tag/${t}`, "monthly", 0.7));
-
-    // Treks by state (10 × 2 = 20)
     const trekState = TREK_STATES.flatMap((s) => entry(`treks/state/${s}`, "monthly", 0.7));
-
-    // Treks state × month (10 × 12 × 2 = 240)
     const trekStateMonth = TREK_STATES.flatMap((s) =>
-      MONTH_SLUGS.flatMap((m) => entry(`treks/state/${s}/${m}`, "monthly", 0.65))
+      MONTH_SLUGS.flatMap((m) => entry(`treks/state/${s}/${m}`, "monthly", 0.65)),
     );
-
-    // Treks by difficulty (4 × 2 = 8)
     const trekDiff = DIFFICULTIES.flatMap((d) => entry(`treks/difficulty/${d}`, "monthly", 0.7));
-
-    // Camping by state (10 × 2 = 20)
     const campState = CAMP_STATES.flatMap((s) => entry(`camping/state/${s}`, "monthly", 0.7));
-
-    // Festivals by month (12 × 2 = 24)
     const festMonth = MONTH_SLUGS.flatMap((m) => entry(`festivals/month/${m}`, "monthly", 0.75));
-
-    // Festivals by state (23 × 2 = 46)
     const festState = STATE_SLUGS.flatMap((s) => entry(`festivals/state/${s}`, "monthly", 0.7));
-
-    // Festivals state × month (23 × 12 × 2 = 552)
     const festStateMonth = STATE_SLUGS.flatMap((s) =>
-      MONTH_SLUGS.flatMap((m) => entry(`festivals/state/${s}/${m}`, "monthly", 0.65))
+      MONTH_SLUGS.flatMap((m) => entry(`festivals/state/${s}/${m}`, "monthly", 0.65)),
     );
-
-    // Stays by state (23 × 2 = 46)
     const staysState = STATE_SLUGS.flatMap((s) => entry(`stays/state/${s}`, "monthly", 0.7));
-
-    // Family by state (14 × 2 = 28)
     const familyState = FAMILY_STATES.flatMap((s) => entry(`family/${s}`, "monthly", 0.7));
-
-    // State × month where-to-go (23 × 12 × 2 = 552)
     const stateMonth = STATE_SLUGS.flatMap((s) =>
-      MONTH_SLUGS.flatMap((m) => entry(`where-to-go/${s}-in-${m}`, "monthly", 0.75))
+      MONTH_SLUGS.flatMap((m) => entry(`where-to-go/${s}-in-${m}`, "monthly", 0.75)),
     );
 
     return [
@@ -243,7 +207,6 @@ export default async function sitemap(props: {
     ];
   }
 
-  // ─── Chunk 4: VS comparisons + skip-lists + with-kids + region-months ───
   if (id === "4") {
     const supabase = getSupabase();
     if (!supabase) return [];
@@ -254,7 +217,6 @@ export default async function sitemap(props: {
       supabase.from("regions").select("id").order("id"),
     ]);
 
-    // VS comparison pages — curated pairs first, then trap alternatives
     const { VS_PAIRS } = await import("@/lib/vs-pairs");
     const seenPairs = new Set<string>();
     const curatedVsEntries = VS_PAIRS.flatMap((p) => {
@@ -271,7 +233,6 @@ export default async function sitemap(props: {
     });
     const vsEntries = [...curatedVsEntries, ...trapVsEntries];
 
-    // Skip-list pages
     const seenTraps = new Set<string>();
     const skipEntries = (trapResult.data ?? []).flatMap((t: any) => {
       if (seenTraps.has(t.trap_destination_id)) return [];
@@ -279,20 +240,17 @@ export default async function sitemap(props: {
       return entry(`skip-list/${t.trap_destination_id}`, "monthly", 0.7);
     });
 
-    // With-kids pages
     const kidsEntries = destIds.flatMap((dId) =>
-      entry(`with-kids/${dId}`, "monthly", 0.6)
+      entry(`with-kids/${dId}`, "monthly", 0.6),
     );
 
-    // Region × month pages
     const regionMonthEntries = (regionResult.data ?? []).flatMap((r: any) =>
-      MONTH_SLUGS.flatMap((month) => entry(`region/${r.id}/${month}`, "monthly", 0.7))
+      MONTH_SLUGS.flatMap((month) => entry(`region/${r.id}/${month}`, "monthly", 0.7)),
     );
 
     return [...vsEntries, ...skipEntries, ...kidsEntries, ...regionMonthEntries];
   }
 
-  // ─── Chunk 5: Sprint 21 Q&A pages (answered questions only) ───
   if (id === "5") {
     const supabase = getSupabase();
     if (!supabase) return [];
@@ -315,4 +273,27 @@ export default async function sitemap(props: {
   }
 
   return [];
+}
+
+export async function GET(_req: Request, { params }: { params: Promise<{ file: string }> }) {
+  const { file } = await params;
+  const match = file.match(/^([0-5])\.xml$/);
+  if (!match) {
+    return new NextResponse("Not Found", { status: 404 });
+  }
+  const id = match[1];
+
+  try {
+    const entries = await buildChunk(id);
+    const xml = toUrlsetXml(entries);
+    return new NextResponse(xml, {
+      headers: {
+        "content-type": "application/xml; charset=utf-8",
+        "cache-control": "public, max-age=0, s-maxage=21600, stale-while-revalidate=86400",
+      },
+    });
+  } catch (err) {
+    console.error(`[sitemap] chunk ${id} failed:`, err);
+    return new NextResponse(`Sitemap chunk ${id} generation failed`, { status: 500 });
+  }
 }
