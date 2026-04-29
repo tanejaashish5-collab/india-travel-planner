@@ -68,12 +68,20 @@ export function DestinationMap({
         tilePane.setAttribute("role", "presentation");
       }
 
-      // dark_all (labelled) replaces dark_nolabels — traveler needs to
-      // answer "what state, what nearby towns?" without zooming around.
-      // Chinese-script labels near the AP/Ladakh border are a known
-      // CartoDB quirk; accepted for orientation value.
-      L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png", {
+      // Two-layer Carto: base tiles get the ocean tint filter, label tiles
+      // sit on a separate pane (no filter) so place names stay crisp white
+      // instead of tinted blue. Without this, the filter applied to dark_all
+      // tinted everything — water, land AND labels — and labels became hard
+      // to read against the now-blueish backdrop.
+      L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png", {
         attribution: '&copy; OSM &copy; CARTO',
+        maxZoom: 16,
+      }).addTo(map);
+      map.createPane("labels");
+      map.getPane("labels")!.style.zIndex = "250";
+      map.getPane("labels")!.style.pointerEvents = "none";
+      L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_only_labels/{z}/{x}/{y}{r}.png", {
+        pane: "labels",
         maxZoom: 16,
       }).addTo(map);
 
@@ -158,9 +166,14 @@ export function DestinationMap({
            land — the difference reads as nothing on screen. Sepia first
            introduces hue into the greyscale, hue-rotate shifts it to ocean
            blue. Scoped to .leaflet-tile-pane so markers, popups, controls,
-           and our overlay pins keep their native colours. */
+           and our overlay pins keep their native colours.
+           Labels live on a separate pane so they bypass this filter and
+           stay crisp. */
         .leaflet-tile-pane {
-          filter: sepia(1) hue-rotate(195deg) saturate(2.5) brightness(1.15);
+          filter: sepia(0.85) hue-rotate(195deg) saturate(2) brightness(1.05);
+        }
+        .leaflet-pane.leaflet-labels-pane {
+          filter: none;
         }
         .dark-popup .leaflet-popup-content-wrapper {
           background: #1a1a2e;

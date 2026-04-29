@@ -49,9 +49,17 @@ export function TrekTrailMap({ points, trekName }: { points: TrailPoint[]; trekN
         tilePane.setAttribute("aria-hidden", "true");
         tilePane.setAttribute("role", "presentation");
       }
-      // dark_all (labelled) — for parity with destination-map and explore-map.
-      L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png", {
+      // Two-layer Carto: base tiles get the ocean tint filter, label tiles
+      // sit on a separate pane (no filter) so place names stay crisp.
+      L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png", {
         attribution: '&copy; OSM &copy; CARTO',
+        maxZoom: 16,
+      }).addTo(map);
+      map.createPane("labels");
+      map.getPane("labels")!.style.zIndex = "250";
+      map.getPane("labels")!.style.pointerEvents = "none";
+      L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_only_labels/{z}/{x}/{y}{r}.png", {
+        pane: "labels",
         maxZoom: 16,
       }).addTo(map);
 
@@ -158,10 +166,13 @@ export function TrekTrailMap({ points, trekName }: { points: TrailPoint[]; trekN
       <style>{`
         /* Ocean tint — sepia introduces hue into the greyscale tile, hue-rotate
            shifts it to blue. Scoped to .leaflet-tile-pane so trail polylines
-           and pins stay in their native colours. See destination-map.tsx for
-           full rationale. */
+           and pins stay in their native colours. Labels are on a separate
+           pane and bypass the filter. See destination-map.tsx for rationale. */
         .leaflet-tile-pane {
-          filter: sepia(1) hue-rotate(195deg) saturate(2.5) brightness(1.15);
+          filter: sepia(0.85) hue-rotate(195deg) saturate(2) brightness(1.05);
+        }
+        .leaflet-pane.leaflet-labels-pane {
+          filter: none;
         }
         .dark-popup .leaflet-popup-content-wrapper {
           background: #1a1a2e;

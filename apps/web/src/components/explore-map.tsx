@@ -51,8 +51,17 @@ export function ExploreMap({ destinations }: { destinations: MapDestination[] })
         tilePane.setAttribute("aria-hidden", "true");
         tilePane.setAttribute("role", "presentation");
       }
-      L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png", {
+      // Two-layer Carto: base tiles get the ocean tint filter, label tiles
+      // sit on a separate pane (no filter) so place names stay crisp.
+      L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png", {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> &copy; <a href="https://carto.com/">CARTO</a>',
+        maxZoom: 19,
+      }).addTo(map);
+      map.createPane("labels");
+      map.getPane("labels")!.style.zIndex = "250";
+      map.getPane("labels")!.style.pointerEvents = "none";
+      L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_only_labels/{z}/{x}/{y}{r}.png", {
+        pane: "labels",
         maxZoom: 19,
       }).addTo(map);
 
@@ -152,9 +161,13 @@ export function ExploreMap({ destinations }: { destinations: MapDestination[] })
       <style>{`
         /* Ocean tint — sepia introduces hue into the greyscale tile, hue-rotate
            shifts it to blue. Scoped to .leaflet-tile-pane so our markers stay
-           in their native colours. See destination-map.tsx for full rationale. */
+           in their native colours. Labels are on a separate pane and bypass
+           the filter. See destination-map.tsx for full rationale. */
         .leaflet-tile-pane {
-          filter: sepia(1) hue-rotate(195deg) saturate(2.5) brightness(1.15);
+          filter: sepia(0.85) hue-rotate(195deg) saturate(2) brightness(1.05);
+        }
+        .leaflet-pane.leaflet-labels-pane {
+          filter: none;
         }
         .dark-popup .leaflet-popup-content-wrapper {
           background: #1a1a2e;
