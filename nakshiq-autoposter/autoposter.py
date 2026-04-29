@@ -3805,6 +3805,263 @@ def run_pomelli_visual(force: bool = False, dry_run: bool = False):
 
 
 # ─────────────────────────────────────────────────────────────────────────────
+# FLOW STORY MODE — posts AI-generated destination visuals from Flow library
+# ─────────────────────────────────────────────────────────────────────────────
+
+FLOW_STORIES_DIR    = Path(__file__).parent / "flow_stories_library"
+FLOW_STORY_LOCK_FILE = Path(__file__).parent / ".autoposter-flow-story.lock"
+
+# Caption templates — destination-specific, no generic fluff
+FLOW_STORY_CAPTIONS_IG = [
+    (
+        "{dest}, {state}\n\n"
+        "NakshIQ rates 303 Indian destinations monthly.\n"
+        "When to go, what to skip, what nobody tells you.\n\n"
+        "→ nakshiq.com/destination/{slug}?utm_source=ig&utm_medium=post&utm_campaign=flow-story\n\n"
+        "{hashtags}"
+    ),
+    (
+        "{dest}\n\n"
+        "Every destination has a best month and a worst month.\n"
+        "We score both — no ads, no sponsorships, just data.\n\n"
+        "→ nakshiq.com/destination/{slug}?utm_source=ig&utm_medium=post&utm_campaign=flow-story\n\n"
+        "{hashtags}"
+    ),
+    (
+        "{dest}, {state}\n\n"
+        "303 destinations. 5 dimensions. Monthly scores.\n"
+        "One question: when should you actually go?\n\n"
+        "→ nakshiq.com?utm_source=ig&utm_medium=post&utm_campaign=flow-story\n\n"
+        "{hashtags}"
+    ),
+]
+
+FLOW_STORY_CAPTIONS_FB = [
+    (
+        "{dest}, {state}\n\n"
+        "Have you been? When did you go — and would you time it differently?\n\n"
+        "We score 303 destinations monthly so you don't have to guess.\n"
+        "→ nakshiq.com/destination/{slug}"
+    ),
+    (
+        "{dest}\n\n"
+        "Most travel advice is recycled. Ours is scored.\n"
+        "303 destinations, updated monthly, zero sponsorships.\n\n"
+        "→ nakshiq.com/destination/{slug}"
+    ),
+]
+
+# Fallback for generic images (no dest)
+FLOW_STORY_GENERIC_IG = (
+    "India has 303 destinations worth scoring.\n\n"
+    "Weather. Crowds. Safety. Infrastructure. Cultural access.\n"
+    "We rate them all — every month.\n\n"
+    "→ nakshiq.com?utm_source=ig&utm_medium=post&utm_campaign=flow-story\n\n"
+    "#NakshIQ #IndiaTravel #TravelIndia #IncredibleIndia #TravelData"
+)
+
+FLOW_STORY_GENERIC_FB = (
+    "303 Indian destinations. 5 scoring dimensions. Updated monthly.\n\n"
+    "Which one are you checking first?\n"
+    "→ nakshiq.com"
+)
+
+
+def _flow_story_hashtags(dest: str, state: str) -> str:
+    """Generate 5 niche hashtags for a Flow story post."""
+    tags = ["#NakshIQ"]
+    if dest:
+        # Clean dest for hashtag: remove parenthetical, spaces, special chars
+        clean = dest.split("(")[0].strip().replace(" ", "").replace("-", "").replace("&", "And")
+        tags.append(f"#{clean}")
+        tags.append(f"#{clean}Travel")
+    if state:
+        clean_state = state.replace(" ", "").replace("&", "And")
+        if f"#{clean_state}" not in tags:
+            tags.append(f"#{clean_state}")
+    tags.append("#IndiaTravel")
+    return " ".join(tags[:5])
+
+
+def _flow_story_caption(entry: dict, platform: str) -> str:
+    """Generate a caption for a Flow story image."""
+    import random as _random
+
+    dest  = entry.get("dest")
+    state = entry.get("state")
+
+    if not dest or dest == state:
+        # Generic / state-level image
+        if platform == "facebook":
+            return FLOW_STORY_GENERIC_FB
+        return FLOW_STORY_GENERIC_IG
+
+    # Build slug from dest name
+    slug = dest.lower().replace(" ", "-").replace("(", "").replace(")", "")
+    slug = slug.split("-")[0] if len(slug) > 30 else slug
+
+    hashtags = _flow_story_hashtags(dest, state)
+
+    if platform == "facebook":
+        template = _random.choice(FLOW_STORY_CAPTIONS_FB)
+    else:
+        template = _random.choice(FLOW_STORY_CAPTIONS_IG)
+
+    return template.format(
+        dest=dest,
+        state=state or "India",
+        slug=slug,
+        hashtags=hashtags,
+    )
+
+
+def _run_flow_story(force: bool = False, dry_run: bool = False):
+    """
+    Flow Story mode — posts AI-generated destination visuals from flow_stories_library/.
+    956 images across 410 destinations, generated via Google Flow (Nano Banana 2).
+    Rotates through dest-matched images first, then generic ones.
+    """
+    import json as _json
+
+    today   = date.today().isoformat()
+    weekday = date.today().weekday()
+    st      = load_state()
+
+    log.info("═" * 60)
+    log.info(f"Nakshiq Autoposter · FLOW STORY · {today} · weekday={weekday}")
+    log.info("═" * 60)
+
+    # Load manifest
+    manifest_path = FLOW_STORIES_DIR / "manifest.json"
+    if not manifest_path.exists():
+        log.error("flow_stories_library/manifest.json not found.")
+        return
+
+    with open(manifest_path) as f:
+        manifest = _json.load(f)
+
+    if not manifest:
+        log.error("Empty manifest in flow_stories_library.")
+        return
+
+    # Verify image files exist
+    available = []
+    for entry in manifest:
+        img_path = FLOW_STORIES_DIR / entry["file"]
+        if img_path.exists():
+            available.append(entry)
+
+    if not available:
+        log.error("No available images in flow stories library.")
+        return
+
+    # Prefer dest-matched images over generic ones
+    with_dest = [e for e in available if e.get("dest")]
+    generic   = [e for e in available if not e.get("dest")]
+
+    log.info(f"Library: {len(available)} images ({len(with_dest)} dest-matched, "
+             f"{len(generic)} generic)")
+
+    # ── Pick image: oldest-unused, dest-matched first ────────────────────
+    pool = with_dest if with_dest else generic
+    img_items = [{"id": e["file"], **e} for e in pool]
+    img_ordered = pick_oldest_unused(st, "flow_story_images", img_items, key="id")
+    chosen = img_ordered[0]
+
+    log.info(f"Selected: {chosen['file']} → {chosen.get('dest', 'generic')} "
+             f"({chosen.get('state', '?')})")
+
+    # Read image bytes
+    img_path = FLOW_STORIES_DIR / chosen["file"]
+    img_bytes = img_path.read_bytes()
+
+    # Upload
+    media_filename = f"flow_story_{Path(chosen['file']).stem}.jpg"
+    media_obj = upload_media_bytes(img_bytes, media_filename, "image/jpeg")
+    if not media_obj:
+        log.error("Media upload failed.")
+        return
+
+    log.info(f"Image uploaded: {media_filename} ({len(img_bytes) // 1024} KB)")
+
+    # Get accounts
+    accounts = get_connected_accounts()
+    active   = [a for a in accounts if a.get("isActive")]
+    if not active:
+        log.warning("No active connected accounts.")
+        return
+
+    mode_suffix = "_flow_story"
+    posted_any  = False
+
+    for account in active:
+        acc_id   = account["id"]
+        platform = account["network"]
+        username = account.get("username", acc_id)
+        label    = f"{platform}/{username}"
+
+        # YouTube only supports video — skip image posts
+        if platform == "youtube":
+            log.info(f"[{label}] Skipping flow story (YouTube only accepts video).")
+            continue
+
+        acc_scoped_key = acc_id + mode_suffix
+        if st.get("posted_today", {}).get(acc_scoped_key) == today and not force:
+            log.info(f"[{label}] Already posted flow story today — skipping.")
+            continue
+
+        caption = _flow_story_caption(chosen, platform)
+        caption = sanitize(caption)
+
+        log.info(f"[{label}] Publishing flow story: "
+                 f"{chosen.get('dest', 'generic')}...")
+
+        if dry_run:
+            log.info(f"[{label}] DRY RUN — would publish:\n{caption[:300]}...")
+            posted_any = True
+            continue
+
+        result = publish_feed_post(caption, account, media_obj, dry_run=False)
+        if result:
+            log.info(f"[{label}] Flow story posted successfully!")
+            st.setdefault("posted_today", {})[acc_scoped_key] = today
+            posted_any = True
+        else:
+            log.warning(f"[{label}] Flow story post failed.")
+
+    # Mark image as used
+    if posted_any:
+        mark_theme_used(st, "flow_story_images", chosen["file"])
+        log.info(f"Theme tracker updated: flow_story_images={chosen['file']}")
+
+    save_state(st)
+    log.info("State saved. Flow Story run complete.")
+    log.info("═" * 60)
+
+
+def run_flow_story(force: bool = False, dry_run: bool = False):
+    """Entry point for flow story mode with its own lock file."""
+    if not OUTSTAND_API_KEY:
+        log.error("OUTSTAND_API_KEY not set. Exiting.")
+        sys.exit(1)
+
+    global LOCK_FILE
+    original_lock = LOCK_FILE
+    LOCK_FILE = FLOW_STORY_LOCK_FILE
+
+    try:
+        if not dry_run and not _acquire_lock(force=force):
+            sys.exit(0)
+        try:
+            _run_flow_story(force=force, dry_run=dry_run)
+        finally:
+            if not dry_run:
+                _release_lock()
+    finally:
+        LOCK_FILE = original_lock
+
+
+# ─────────────────────────────────────────────────────────────────────────────
 # REEL MODE — programmatic short-form vertical video
 # ─────────────────────────────────────────────────────────────────────────────
 
@@ -5061,6 +5318,8 @@ def _parse_post_metadata(post: dict) -> dict:
         content_type = "infographic"
     elif "tourist_map" in filename.lower():
         content_type = "tourist_map"
+    elif "flow_story" in filename.lower():
+        content_type = "flow_story"
     elif "pomelli" in filename.lower():
         content_type = "pomelli_visual"
     elif "canva" in filename.lower():
@@ -5291,6 +5550,10 @@ if __name__ == "__main__":
                         help="Post a Pomelli AI-generated campaign creative. "
                              "Rotates 20 feature + 20 region campaigns with "
                              "platform-specific captions (IG vs FB).")
+    parser.add_argument("--flow-story", action="store_true",
+                        help="Post a Flow AI-generated destination visual. "
+                             "956 images across 410 destinations, rotates with "
+                             "anti-repetition. Daily at 16:00 IST.")
     parser.add_argument("--reel", action="store_true",
                         help="Generate and post a short-form vertical Reel video. "
                              "Rotates through score_reveal, contrarian, seasonal_shift, "
@@ -5315,15 +5578,17 @@ if __name__ == "__main__":
                         help="Sync post history from Outstand and generate "
                              "performance analytics report. No posting.")
     args = parser.parse_args()
-    exclusive = sum([args.evening, args.moat, args.tourist_map, args.canva_visual, args.pomelli_visual, args.reel, args.reel_map, args.ugc, args.infographic, args.yt_short, args.analytics])
+    exclusive = sum([args.evening, args.moat, args.tourist_map, args.canva_visual, args.pomelli_visual, args.flow_story, args.reel, args.reel_map, args.ugc, args.infographic, args.yt_short, args.analytics])
     if exclusive > 1:
-        parser.error("--evening, --moat, --tourist-map, --canva-visual, --pomelli-visual, --reel, --reel-map, --ugc, --infographic, --yt-short, and --analytics are mutually exclusive.")
+        parser.error("--evening, --moat, --tourist-map, --canva-visual, --pomelli-visual, --flow-story, --reel, --reel-map, --ugc, --infographic, --yt-short, and --analytics are mutually exclusive.")
     if args.tourist_map:
         run_tourist_map(force=args.force, dry_run=args.dry_run)
     elif args.canva_visual:
         run_canva_visual(force=args.force, dry_run=args.dry_run)
     elif args.pomelli_visual:
         run_pomelli_visual(force=args.force, dry_run=args.dry_run)
+    elif args.flow_story:
+        run_flow_story(force=args.force, dry_run=args.dry_run)
     elif args.reel:
         run_reel(force=args.force, dry_run=args.dry_run)
     elif args.reel_map:

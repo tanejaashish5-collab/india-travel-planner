@@ -18,6 +18,8 @@ on:
     # - cron: "0 9 * * 3,6"
     # Reel-map: 15:30 IST (10:00 UTC) — daily IG+FB+YT
     - cron: "0 10 * * *"
+    # Flow story: 16:00 IST (10:30 UTC) — daily IG+FB
+    - cron: "30 10 * * *"
     # YT Short slot 2: 17:00 IST (11:30 UTC) — daily YT only
     - cron: "30 11 * * *"
     # Evening post: 18:30 IST (13:00 UTC) — daily IG+FB
@@ -52,6 +54,8 @@ on:
           - infographic-force
           - pomelli-visual
           - pomelli-visual-force
+          - flow-story
+          - flow-story-force
           - reel-map
           - reel-map-force
           - yt-short
@@ -155,6 +159,9 @@ jobs:
             elif [ "$INPUT" = "pomelli-visual-force" ]; then
               echo "args=--pomelli-visual --force" >> $GITHUB_OUTPUT
               echo "Manual mode: --pomelli-visual --force"
+            elif [ "$INPUT" = "flow-story-force" ]; then
+              echo "args=--flow-story --force" >> $GITHUB_OUTPUT
+              echo "Manual mode: --flow-story --force"
             elif [ "$INPUT" = "reel-force" ]; then
               echo "args=--reel --force" >> $GITHUB_OUTPUT
               echo "Manual mode: --reel --force"
@@ -219,10 +226,15 @@ jobs:
             echo "args=--ugc" >> $GITHUB_OUTPUT
             echo "Scheduled UGC · 14:30 IST (UTC ${HOUR}:${MINUTE})"
 
-          # 15:30 IST = UTC 10:00 → Reel-map (window: 590-660) — IG+FB+YT
-          elif [ "$TOTAL_MINS" -ge 590 ] && [ "$TOTAL_MINS" -lt 660 ]; then
+          # 15:30 IST = UTC 10:00 → Reel-map (window: 590-640) — IG+FB+YT
+          elif [ "$TOTAL_MINS" -ge 590 ] && [ "$TOTAL_MINS" -lt 640 ]; then
             echo "args=--reel-map" >> $GITHUB_OUTPUT
             echo "Scheduled REEL-MAP · 15:30 IST (UTC ${HOUR}:${MINUTE})"
+
+          # 16:00 IST = UTC 10:30 → Flow story (window: 640-680) — daily IG+FB
+          elif [ "$TOTAL_MINS" -ge 640 ] && [ "$TOTAL_MINS" -lt 680 ]; then
+            echo "args=--flow-story" >> $GITHUB_OUTPUT
+            echo "Scheduled FLOW STORY · 16:00 IST (UTC ${HOUR}:${MINUTE})"
 
           # 17:00 IST = UTC 11:30 → YT Short slot 2 (window: 680-760)
           elif [ "$TOTAL_MINS" -ge 680 ] && [ "$TOTAL_MINS" -lt 760 ]; then
