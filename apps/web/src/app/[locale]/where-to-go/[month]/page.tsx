@@ -136,11 +136,23 @@ export async function generateMetadata({
     score5Count = count ?? 0;
   }
 
+  // 2026-04-29 CTR rewrite: previous title was 65+ chars (Google truncated)
+  // and led with "Where to Go" boilerplate. New version front-loads the
+  // count + verdict score, drops "Best Destinations Ranked" filler.
   const regionLabel = regionInfo ? regionInfo.displayName : "India";
-  const title = `Where to Go in ${regionLabel} in ${monthName} — Best Destinations Ranked | NakshIQ`;
+  const year = new Date().getFullYear();
+
+  const title = score5Count > 0
+    ? `Where to go in ${regionLabel} in ${monthName} ${year} — ${score5Count} 5/5 picks`
+    : `Where to go in ${regionLabel} in ${monthName} ${year} — ranked by month`;
+
   const description = regionInfo
-    ? `${score5Count} destinations in ${regionInfo.displayName} score 5/5 in ${monthName}. Ranked by weather, crowds, and road conditions.`
-    : `${score5Count} destinations score 5/5 in ${monthName}. Ranked by monthly suitability with weather, crowds, and road data. No guesswork.`;
+    ? (score5Count > 0
+        ? `${score5Count} destinations in ${regionInfo.displayName} scored 5/5 for ${monthName} ${year}. Ranked by weather, crowds, road conditions — see what actually works this month before you commit.`
+        : `Every destination in ${regionInfo.displayName} scored for ${monthName} ${year} on weather, crowds, road conditions. The honest pick if anywhere works this month — and what to skip.`)
+    : (score5Count > 0
+        ? `${score5Count} destinations across India scored 5/5 for ${monthName} ${year}. Ranked by weather, crowds, road conditions — not generic listicles. See where to go and what to skip.`
+        : `Every destination in India scored for ${monthName} ${year} on weather, crowds, road conditions. No 5/5 picks this month — see what's the closest, and what to skip.`);
   const canonicalUrl = `https://www.nakshiq.com/${locale}/where-to-go/${slug}`;
   const ogImage = `https://www.nakshiq.com/og-image.jpg`;
 

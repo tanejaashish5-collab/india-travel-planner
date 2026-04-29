@@ -102,13 +102,27 @@ export async function generateMetadata({
       ? `${lowTemp}°C nights`
       : "";
 
-  // Verdict label — front-loads the answer for "is it worth going" intent.
-  const verdictLabel = verdict === "go" ? "Go"
-    : verdict === "skip" ? "Skip"
-    : verdict === "wait" ? "Wait"
-    : "";
+  // 2026-04-29 CTR rewrite: replace "{Name} Weather in {Month}" template
+  // with verdict-led titles + verb-first descriptions. The previous template
+  // (factual "weather + temp") was getting 800+ impressions / 1 click on
+  // high-volume URLs (Vrindavan/May, Yercaud/May, Kodaikanal/June) — Google
+  // showed it, users scrolled past. Verdict-led copy front-loads the answer
+  // ("Skip", "Visit", "Wait") in both title and description.
 
-  // Title byline — used in OG cards (longer, brand-anchored).
+  // Title hook keyed off score. Honest but click-driving:
+  // 5 → "Peak season" (best month)
+  // 4 → "Great time"
+  // 3 → "Mixed conditions" (typically wait verdict)
+  // 2 → "Tough season"
+  // 1 → "Avoid this month"
+  const titleHook = score >= 5 ? "Peak season"
+    : score >= 4 ? "Great time"
+    : score >= 3 ? "Mixed conditions"
+    : score >= 2 ? "Tough season"
+    : score >= 1 ? "Avoid this month"
+    : "Travel guide";
+
+  // OG title — used in social link previews. Longer + brand-anchored.
   const scoreVerdict = score >= 5 ? "Perfect Time to Visit"
     : score >= 4 ? "Great Time to Visit"
     : score >= 3 ? "Is It Worth Visiting?"
@@ -116,27 +130,30 @@ export async function generateMetadata({
     : score >= 1 ? "Why to Avoid"
     : "Travel Guide";
 
-  // Title optimised for GSC-flagged zero-click queries (2026-04-24 audit):
-  // users search "<dest> weather in <month>" and "<dest> temperature in <month>".
-  // 2026-04-27 update: prefer day-temp range over "X°C nights" — better matches
-  // searcher's actual question and uses the editorial note's already-curated range.
   const year = new Date().getFullYear();
-  const withTemp = rangeStr
-    ? `${name} Weather in ${monthName} ${year} — ${rangeStr}`
-    : null;
-  const standard = `${name} Weather in ${monthName} ${year}: Temperature & Guide`;
-  const title = withTemp && withTemp.length <= 60 ? withTemp : standard;
+
+  // Title with progressive shortening so we always fit ≤60 chars (SERP truncation).
+  // Long: "{name} in {month} {year}: {hook} ({temp})"
+  // Med:  "{name} in {month}: {hook} ({temp})"
+  // Min:  "{name} in {month} {year}"
+  const titleLong = rangeStr
+    ? `${name} in ${monthName} ${year}: ${titleHook} (${rangeStr})`
+    : `${name} in ${monthName} ${year}: ${titleHook}`;
+  const titleMed = rangeStr
+    ? `${name} in ${monthName}: ${titleHook} (${rangeStr})`
+    : `${name} in ${monthName}: ${titleHook}`;
+  const title =
+    titleLong.length <= 60 ? titleLong
+    : titleMed.length <= 60 ? titleMed
+    : `${name} in ${monthName} ${year}`;
 
   const ogTitle = `${name} in ${monthName} — ${scoreVerdict} | NakshIQ`;
 
-  // Description: lead with name + month + year (matches "X weather in <month>" intent
-  // and signals freshness), front-load the verdict word (Skip/Go/Wait — strong CTR
-  // signal for page-2 results), include the editorial note (real opinion + temps),
-  // close with the score. 160-char ceiling, but build to <155 to avoid mid-word truncation.
-  // 2026-04-27: derived from GSC patterns showing 0% CTR at positions 7-12 — snippet
-  // copy is the bottleneck, not ranking, since editorial note already contains the answer.
-  // Cut a string at the last sentence end (or last whole word) before `max`.
-  // Avoids mid-word truncation in SERP snippets.
+  // Editorial note often starts with "{Month} at {Name}: ..." — strip that prefix
+  // so the description doesn't read awkwardly when our verb-led lead joins it.
+  const escName = name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const stripPrefix = new RegExp(`^${monthName}(?:\\s+at\\s+${escName})?\\s*:\\s*`, "i");
+
   const trimToBoundary = (s: string, max: number): string => {
     if (s.length <= max) return s.trim();
     const slice = s.slice(0, max);
@@ -146,17 +163,30 @@ export async function generateMetadata({
     return (lastSpace > 0 ? slice.slice(0, lastSpace) : slice).trim();
   };
 
-  const verdictPrefix = verdictLabel ? `${verdictLabel} — ` : "";
-  const descLead = `${name} in ${monthName} ${year}:`;
+  // Verb-first lead based on verdict. "Skip" / "Visit" / "Wait on" fronts
+  // the answer in the first ~15 chars — exactly where the eye lands in a SERP.
+  const descVerb =
+    verdict === "skip" ? "Skip"
+    : verdict === "go" ? "Visit"
+    : verdict === "wait" ? "Wait on"
+    : "";
+  const descLead = descVerb
+    ? `${descVerb} ${name} in ${monthName} ${year}:`
+    : `${name} in ${monthName} ${year}:`;
   const descClose = stateName
-    ? `${verdictPrefix}NakshIQ scores ${score}/5 (${stateName}).`
-    : `${verdictPrefix}NakshIQ scores ${score}/5.`;
-  // Budget = 155 total - lead - close - 2 spaces. Trim editorial note to fit cleanly.
-  // Fallback chain: note → why_go (go/wait verdicts) → why_not (skip verdict).
-  // Without why_not, ~5% of skip-verdict pages had empty bodies in production.
+    ? `NakshIQ verdict: ${score}/5 (${stateName}).`
+    : `NakshIQ verdict: ${score}/5.`;
+
+  // Fallback chain by verdict: skip → why_not first, others → why_go first.
+  // Note already contains the editorial perspective for most rows; fall
+  // through only when note is empty.
+  const noteSource = note
+    || (verdict === "skip" ? (whyNot || whyGo) : (whyGo || whyNot))
+    || "";
+  const noteStripped = noteSource.replace(stripPrefix, "").trim();
+
   const noteBudget = Math.max(40, 155 - descLead.length - descClose.length - 2);
-  const noteSource = note || whyGo || (verdict === "skip" ? whyNot : "");
-  const descBody = noteSource ? trimToBoundary(noteSource, noteBudget) : "";
+  const descBody = noteStripped ? trimToBoundary(noteStripped, noteBudget) : "";
   const descBodyClean = descBody ? (/[.!?]$/.test(descBody) ? descBody : `${descBody}.`) : "";
   const description = [descLead, descBodyClean, descClose].filter(Boolean).join(" ").trim();
   const canonicalUrl = `https://www.nakshiq.com/${locale}/destination/${id}/${month}`;

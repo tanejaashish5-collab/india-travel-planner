@@ -48,9 +48,22 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     .eq("month", monthNum)
     .eq("score", 5);
 
+  // 2026-04-29 CTR rewrite: drop "Best Destinations Ranked" boilerplate,
+  // lead with count + 5/5 picks. Honest copy when count is zero.
+  const year = new Date().getFullYear();
+  const count = score5Count ?? 0;
+
+  const title = count > 0
+    ? `Where to go in ${region.name} in ${monthName} ${year} — ${count} 5/5 picks`
+    : `Where to go in ${region.name} in ${monthName} ${year} — ranked by month`;
+
+  const description = count > 0
+    ? `${count} destinations in ${region.name} scored 5/5 for ${monthName} ${year}. Ranked by weather, crowds, road conditions — see what actually works this month before you commit.`
+    : `Every destination in ${region.name} scored for ${monthName} ${year} on weather, crowds, road conditions. The honest pick if anywhere works this month — and what to skip.`;
+
   return {
-    title: `${region.name} in ${monthName}: Best Destinations Ranked | NakshIQ`,
-    description: `${score5Count ?? 0} destinations in ${region.name} score 5/5 in ${monthName}. Ranked by weather, crowds, and road conditions. Data-backed travel intelligence.`,
+    title,
+    description,
     alternates: {
       canonical: `https://www.nakshiq.com/${locale}/region/${id}/${month}`,
       languages: {
