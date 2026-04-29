@@ -534,6 +534,55 @@ export function BlogArticle({
                         );
                       }
                       if (/^---+$/.test(p.trim())) return null;
+                      // Markdown table: first line starts with `|`, second line is a `|---|---|` separator.
+                      const tableLines = p.split("\n").map((l) => l.trim()).filter(Boolean);
+                      if (
+                        tableLines.length >= 2 &&
+                        tableLines[0].startsWith("|") &&
+                        /^\|[\s\-:|]+\|$/.test(tableLines[1])
+                      ) {
+                        const splitRow = (line: string) =>
+                          line.replace(/^\|/, "").replace(/\|$/, "").split("|").map((c) => c.trim());
+                        const headers = splitRow(tableLines[0]);
+                        const rows = tableLines.slice(2).map(splitRow);
+                        return (
+                          <div key={j} className="my-6 -mx-4 sm:mx-0 overflow-x-auto">
+                            <table className="w-full border-collapse text-sm sm:text-base">
+                              <thead>
+                                <tr className="border-b-2 border-[#E55642]/40">
+                                  {headers.map((h, k) => (
+                                    <th
+                                      key={k}
+                                      className="font-mono text-[10px] sm:text-[11px] tracking-[0.18em] uppercase text-[#E55642] text-left px-3 sm:px-4 py-3"
+                                    >
+                                      {renderInline(h)}
+                                    </th>
+                                  ))}
+                                </tr>
+                              </thead>
+                              <tbody>
+                                {rows.map((row, ri) => (
+                                  <tr
+                                    key={ri}
+                                    className="border-b border-border/40 even:bg-muted/10 hover:bg-muted/20 transition-colors"
+                                  >
+                                    {row.map((cell, ci) => (
+                                      <td
+                                        key={ci}
+                                        className={`px-3 sm:px-4 py-3 align-top leading-relaxed ${
+                                          ci === 0 ? "text-foreground font-medium" : "text-muted-foreground"
+                                        }`}
+                                      >
+                                        {renderInline(cell)}
+                                      </td>
+                                    ))}
+                                  </tr>
+                                ))}
+                              </tbody>
+                            </table>
+                          </div>
+                        );
+                      }
                       return (
                         <p key={j} className="text-muted-foreground leading-relaxed mb-4">
                           {renderInline(p)}
@@ -815,7 +864,14 @@ function parseContent(content: string): Array<{ heading?: string; id?: string; p
       if (count > 0) id = `${id}-${count + 1}`;
       current = { heading, id, paragraphs: [] };
     } else if (trimmed) {
-      current.paragraphs.push(trimmed);
+      // Group consecutive `|`-prefixed lines into one paragraph so the renderer
+      // sees a full markdown table (header + separator + body) as one block.
+      const last = current.paragraphs[current.paragraphs.length - 1];
+      if (trimmed.startsWith("|") && last && last.startsWith("|")) {
+        current.paragraphs[current.paragraphs.length - 1] = `${last}\n${trimmed}`;
+      } else {
+        current.paragraphs.push(trimmed);
+      }
     }
   }
   if (current.paragraphs.length > 0 || current.heading) {
