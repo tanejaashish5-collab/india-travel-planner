@@ -31,14 +31,14 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
   const currentMonth = new Date().getMonth() + 1;
 
-  // Build per-state: dest count, first dest ID, avg score
+  // Build per-state: dest count, hero dest ID, avg score
   const countMap: Record<string, number> = {};
-  const firstDestMap: Record<string, string> = {};
+  const allDestsByState: Record<string, string[]> = {};
   const scoreSum: Record<string, { total: number; count: number }> = {};
 
   (destResult.data ?? []).forEach((d: any) => {
     countMap[d.state_id] = (countMap[d.state_id] || 0) + 1;
-    if (!firstDestMap[d.state_id]) firstDestMap[d.state_id] = d.id;
+    (allDestsByState[d.state_id] ??= []).push(d.id);
 
     const monthData = d.destination_months?.find((m: any) => m.month === currentMonth);
     if (monthData?.score) {
@@ -47,6 +47,16 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       scoreSum[d.state_id].count++;
     }
   });
+
+  // Hero pick: prefer a destination whose id matches a token in the state id
+  // (e.g. daman-diu → daman), falling back to alphabetical-first. Deterministic
+  // across renders and gives the most recognisable image for compound UTs.
+  const firstDestMap: Record<string, string> = {};
+  for (const [stateId, dests] of Object.entries(allDestsByState)) {
+    const sorted = [...dests].sort();
+    const tokens = stateId.split("-");
+    firstDestMap[stateId] = sorted.find((d) => tokens.includes(d)) ?? sorted[0];
+  }
 
   // Build region detail map
   const regionMap: Record<string, any> = {};
