@@ -1,6 +1,5 @@
 import type { MetadataRoute } from "next";
 import { createClient } from "@supabase/supabase-js";
-import { unstable_cache } from "next/cache";
 import { STATE_MAP, ALL_STATE_SLUGS, ALL_MONTH_SLUGS } from "@/lib/seo-maps";
 
 // Force dynamic so Next.js 16 stops detecting this as SSG-with-revalidate=0
@@ -75,18 +74,17 @@ function getSupabase() {
   return createClient(url, key);
 }
 
-// Cache destination IDs across sitemap chunks (chunk 1 + chunk 4 both need them).
-// 6hr TTL — destinations are added rarely.
-const getDestinationIds = unstable_cache(
-  async (): Promise<string[]> => {
-    const supabase = getSupabase();
-    if (!supabase) return [];
-    const { data } = await supabase.from("destinations").select("id").order("id");
-    return (data ?? []).map((d: any) => d.id);
-  },
-  ["sitemap-destination-ids-v1"],
-  { revalidate: 21600, tags: ["sitemap"] }
-);
+// Destination IDs — used by chunks 1 and 4. Originally wrapped in
+// unstable_cache, but that caused Next.js 16 to detect this route as
+// SSG-with-revalidate=0 and 500 the auto-generated /sitemap.xml index.
+// Per-call DB hit is cheap (one indexed query) and only runs on
+// sitemap-chunk requests (very low frequency).
+async function getDestinationIds(): Promise<string[]> {
+  const supabase = getSupabase();
+  if (!supabase) return [];
+  const { data } = await supabase.from("destinations").select("id").order("id");
+  return (data ?? []).map((d: any) => d.id);
+}
 
 export default async function sitemap(props: {
   id: Promise<string>;
