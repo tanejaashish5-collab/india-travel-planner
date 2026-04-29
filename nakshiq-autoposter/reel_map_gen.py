@@ -266,7 +266,8 @@ def _build_multi_image_reel(
         y_expr = y_expr.replace("FRAMES", str(frames_per_segment))
 
         filter_parts.append(
-            f"[{i}:v]scale=1188:2112:flags=lanczos,"
+            f"[{i}:v]crop=iw:ih-56:0:0,"
+            f"scale=1188:2112:flags=lanczos,"
             f"zoompan=z='{z_expr}':x='{x_expr}':y='{y_expr}'"
             f":d={frames_per_segment}:s={REEL_W}x{REEL_H}:fps={REEL_FPS},"
             f"setsar=1[v{i}]"
@@ -359,7 +360,8 @@ def _build_single_image_reel(
 
     # Dark overlay + text overlay
     filters = (
-        f"[0:v]scale=1188:2112:flags=lanczos,"
+        f"[0:v]crop=iw:ih-56:0:0,"
+        f"scale=1188:2112:flags=lanczos,"
         f"zoompan=z='{z_expr}':x='{x_expr}':y='{y_expr}'"
         f":d={total_frames}:s={REEL_W}x{REEL_H}:fps={REEL_FPS},"
         f"setsar=1"
@@ -425,6 +427,12 @@ def _build_single_image_reel(
 #   3. Triple branding (Pomelli has logo + handle + tagline)
 #   4. Unreadable text during zoompan animation
 # Fix: let Pomelli designs speak for themselves — no additional overlays.
+#
+# BRANDING CROP: Each Pomelli image has a 56px charcoal branding bar at the
+# bottom (stamped by brand_pomelli.py). When 4 images are animated together,
+# the branding shows 4-6 times via Ken Burns + crossfade. We crop it off
+# (crop=iw:ih-56:0:0) before scaling/zoompan so the reel is brand-clean.
+# The reel caption + account handle provide sufficient branding.
 
 
 # ═══════════════════════════════════════════════════════════════════════════
