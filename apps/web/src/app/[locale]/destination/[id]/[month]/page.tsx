@@ -7,6 +7,7 @@ import { notFound } from "next/navigation";
 import { destinationImage } from "@/lib/image-url";
 import { AuthorByline } from "@/components/author-byline";
 import { getPrimaryEditor } from "@/lib/editor";
+import { videoObjectJsonLd } from "@/lib/video-schema";
 
 export const revalidate = 86400; // 24h — 5,856 month pages × bots = function-invocation tax. Monthly content doesn't need 6h freshness.
 export const dynamicParams = true;
@@ -493,6 +494,20 @@ export default async function DestinationMonthPage({
     })),
   };
 
+  // VideoObject JSON-LD — same pattern as the parent /destination/[id] page
+  // (see [id]/page.tsx:511). Each dest×month page renders the destination's
+  // hero MP4; without this schema Google's video index flagged 3,669 pages as
+  // "Video isn't on a watch page" (GSC export 2026-04-30). Description is
+  // month-aware so each /destination/{id}/{month} variant has unique text.
+  const videoLd = videoObjectJsonLd({
+    id,
+    name: `${destination.name} in ${monthName} — NakshIQ travel reel`,
+    description: (destination as any).tagline
+      ? `${(destination as any).tagline}. ${destination.name} in ${monthName} — aerial and on-ground footage from NakshIQ's coverage.`
+      : `${destination.name} (${stateName ?? "India"}) in ${monthName} — aerial and on-ground footage from NakshIQ's coverage.`,
+    thumbnailUrl: destinationImage(id),
+  });
+
   return (
     <div className="min-h-screen">
       <script
@@ -513,6 +528,12 @@ export default async function DestinationMonthPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
+      {videoLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(videoLd) }}
+        />
+      )}
       <Nav />
       <main className="mx-auto max-w-4xl lg:max-w-6xl px-4 py-8">
         {editor && (
