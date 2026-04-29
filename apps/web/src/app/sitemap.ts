@@ -3,6 +3,13 @@ import { createClient } from "@supabase/supabase-js";
 import { unstable_cache } from "next/cache";
 import { STATE_MAP, ALL_STATE_SLUGS, ALL_MONTH_SLUGS } from "@/lib/seo-maps";
 
+// 6h ISG. Without an explicit revalidate, Next.js 16 detects this route as
+// SSG with revalidate=0 and throws E132 ("Page changed from static to
+// dynamic at runtime") on the auto-generated /sitemap.xml index — the
+// chunks themselves render fine but the parent route 500s. See
+// https://nextjs.org/docs/messages/app-static-to-dynamic-error.
+export const revalidate = 21600;
+
 /*
  * Sitemap split into 6 chunks via generateSitemaps().
  * Next.js auto-generates a sitemap index at /sitemap.xml
@@ -103,14 +110,11 @@ export default async function sitemap(props: {
       "weekend-from-chennai", "weekend-from-kolkata", "weekend-from-hyderabad",
       "arrival", "arrival/del", "arrival/bom", "arrival/blr", "arrival/maa",
       "arrival/ccu", "arrival/hyd", "arrival/cok", "arrival/goi", "arrival/amd",
-      // State hub pages
+      // State hub pages — canonical URL for state-level content
       ...Object.keys(STATE_MAP).map((s) => `state/${s}`),
-      // Region pages (legacy)
-      "region/himachal-pradesh", "region/uttarakhand", "region/jammu-kashmir",
-      "region/ladakh", "region/rajasthan", "region/punjab",
-      "region/arunachal-pradesh", "region/assam", "region/bihar",
-      "region/meghalaya", "region/nagaland", "region/sikkim",
-      "region/manipur", "region/west-bengal", "region/madhya-pradesh",
+      // (Legacy /region/{stateSlug} entries removed — now 301-redirect to
+      //  /state/{stateSlug} via middleware. The state/* entries above
+      //  already cover every state in STATE_MAP.)
     ];
 
     const staticEntries = staticPages.flatMap((page) => entry(

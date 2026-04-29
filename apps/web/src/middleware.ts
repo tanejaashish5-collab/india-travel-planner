@@ -112,6 +112,19 @@ export default function middleware(request: NextRequest) {
     return NextResponse.redirect(new URL(`/${locale}/state/${stateId}`, request.url), 301);
   }
 
+  // /region/{stateSlug} → /{locale}/state/{stateSlug}. The /region/ route was
+  // the legacy path before /state/ became canonical; some states (kerala,
+  // tamil-nadu) never had a flat region row so /region/kerala 404s while
+  // /region/himachal-pradesh 200s. Consolidate everything to /state/ to kill
+  // duplicate-content drift and fix the 404s in one shot. Sub-region IDs
+  // (kerala-backwaters, tn-coast etc) aren't in STATE_MAP so they fall through
+  // to the existing /region/[id] route as before.
+  const regionStateMatch = request.nextUrl.pathname.match(/^\/(en|hi)\/region\/([^/]+)\/?$/);
+  if (regionStateMatch && STATE_MAP[regionStateMatch[2]]) {
+    const [, locale, stateId] = regionStateMatch;
+    return NextResponse.redirect(new URL(`/${locale}/state/${stateId}`, request.url), 301);
+  }
+
   const response = intlMiddleware(request);
 
   // Convert temporary redirects (307) to permanent (301) for SEO
