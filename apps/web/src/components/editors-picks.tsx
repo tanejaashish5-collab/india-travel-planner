@@ -85,6 +85,32 @@ function sourceBadge(src: EditorSource, index: number) {
   );
 }
 
+// Earlier curate-stays runs occasionally wrote a JSON string ({"phone":null,
+// "email":null,"address":"..."}) into contact_info instead of a plain phone/
+// address line. Render that gracefully: parse JSON if possible, drop null/
+// empty fields, fall back to the raw string. Pure cosmetic guard — DB has
+// since been cleaned, but this prevents a regression from leaking through.
+function parseContactInfo(raw: string): Array<[label: string, value: string]> {
+  const trimmed = raw.trim();
+  if (!trimmed) return [];
+  if (trimmed.startsWith("{")) {
+    try {
+      const obj = JSON.parse(trimmed);
+      if (obj && typeof obj === "object") {
+        return Object.entries(obj)
+          .filter(([, v]) => v !== null && v !== undefined && String(v).trim() !== "")
+          .map(([k, v]) => {
+            const label = k.charAt(0).toUpperCase() + k.slice(1).replace(/_/g, " ");
+            return [label, String(v)] as [string, string];
+          });
+      }
+    } catch {
+      // not valid JSON despite leading brace — fall through to raw render
+    }
+  }
+  return [["", trimmed]];
+}
+
 function PickCard({ pick }: { pick: EditorStayPick }) {
   const sources = (pick.sources ?? []).filter((s) => s && typeof s.url === "string" && s.url.length > 0);
   return (
@@ -120,11 +146,23 @@ function PickCard({ pick }: { pick: EditorStayPick }) {
         </div>
       )}
 
-      {pick.contact_only && pick.contact_info && (
-        <div className="text-xs text-foreground/80 rounded-md border border-dashed border-border/50 bg-muted/10 p-2">
-          Not listed on booking sites. Contact directly: <span className="font-mono text-foreground">{pick.contact_info}</span>
-        </div>
-      )}
+      {pick.contact_only && pick.contact_info && (() => {
+        const lines = parseContactInfo(pick.contact_info);
+        if (lines.length === 0) return null;
+        return (
+          <div className="text-xs text-foreground/80 rounded-md border border-dashed border-border/50 bg-muted/10 p-2">
+            <div className="mb-1">Not listed on booking sites. Contact directly:</div>
+            <div className="space-y-0.5">
+              {lines.map(([label, val], i) => (
+                <div key={i} className="font-mono text-foreground">
+                  {label && <span className="text-muted-foreground">{label}: </span>}
+                  {val}
+                </div>
+              ))}
+            </div>
+          </div>
+        );
+      })()}
 
       {sources.length > 0 && (
         <div className="flex flex-wrap gap-1 pt-1">
