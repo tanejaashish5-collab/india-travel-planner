@@ -5635,3 +5635,20 @@ requests.exceptions.HTTPError: 401 Client Error: UNAUTHORIZED for url: https://a
 2026-04-30 13:10:01  INFO      [facebook/Nakshiq] ✅ Published · Outstand=xymP8 · Platform=26750064634623680
 2026-04-30 13:10:01  INFO      State saved. Run complete.
 2026-04-30 13:10:01  INFO      ════════════════════════════════════════════════════════════
+2026-04-30 15:02:50  INFO      ════════════════════════════════════════════════════════════
+2026-04-30 15:02:50  INFO      Nakshiq Autoposter · REEL · 2026-04-30 · weekday=3
+2026-04-30 15:02:50  INFO      ════════════════════════════════════════════════════════════
+2026-04-30 15:02:50  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-04-30 15:02:58  INFO      Synced → 20 destinations · 0 traps · 0 articles · total catalog=491
+2026-04-30 15:02:58  INFO      Format: destination_reveal | Data: {'dest_name': 'Binsar', 'dest_slug': 'binsar', 'state_name': 'Uttarakhand', 'score': 5, 'tagline': '300km Himalayan panorama from inside an oak forest sanctuary — and nobody around.'}
+2026-04-30 15:03:04  INFO      Reel rendered: reel_destination_reveal_binsar.mp4 (1051 KB)
+2026-04-30 15:03:04  INFO          Requesting upload URL for reel_destination_reveal_reel_destination_reveal_binsar.mp4 (1,076,482 bytes, video/mp4)
+2026-04-30 15:03:05  INFO          Uploading to R2 (timeout=300s)...
+2026-04-30 15:03:06  INFO          R2 PUT OK. Confirming...
+2026-04-30 15:03:07  INFO          Media ready: 1PeyG (1,076,482 bytes · reel_destination_reveal_reel_destination_reveal_binsar.mp4)
+2026-04-30 15:03:07  INFO      Video uploaded: reel_destination_reveal_reel_destination_reveal_binsar.mp4
+2026-04-30 15:03:08  INFO      [youtube/@naksh-iq] Already posted reel today — skipping.
+2026-04-30 15:03:08  INFO      [instagram/nakshiq] Already posted reel today — skipping.
+2026-04-30 15:03:08  INFO      [facebook/Nakshiq] Already posted reel today — skipping.
+2026-04-30 15:03:08  INFO      State saved. Reel run complete.
+2026-04-30 15:03:08  INFO      ════════════════════════════════════════════════════════════
