@@ -65,7 +65,7 @@ MORNING_FORMATS = [
     # ── Tier 2: NEW data-driven formats ──
     "seasonal_shift",       # "5/5 now → 2/5 next month — GO NOW"
     "elevation_face_off",   # sea-level vs sky-level, both 5/5
-    "state_showdown",       # Himachal vs Uttarakhand — April's data
+    "state_showdown",       # Two states, same month, different data
     "difficulty_spectrum",   # easy vs hard, both high-scoring
     "underdog_spotlight",   # easy, low-elevation, high-score hidden gem
     "this_month_only",      # 5/5 now, bad before & after — narrow window
@@ -441,8 +441,18 @@ def mark_posted(state: dict, account_id: str, destination_id: str,
     })
     state["post_log"] = state["post_log"][-500:]
 
-def recently_used_destinations(state: dict) -> set:
-    return {d["destination_id"] for d in state.get("posted_destinations", [])}
+def recently_used_destinations(state: dict, cutoff_days: int = 14) -> set:
+    """Destinations posted in the LAST `cutoff_days` (default 14).
+
+    Without a cutoff, posted_destinations grows unboundedly and within a few
+    weeks every catalog dest ends up in the set, which empties the picker's
+    `fresh` pool and forces deterministic max-score fallback (locking onto
+    the same top-scored dest every day, e.g. Pahalgam Apr 19/27/30).
+    """
+    cutoff = (date.today() - timedelta(days=cutoff_days)).isoformat()
+    return {d["destination_id"]
+            for d in state.get("posted_destinations", [])
+            if (d.get("date") or "") >= cutoff}
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -467,26 +477,54 @@ def theme_last_used(state: dict, dimension: str, item_id: str) -> str | None:
 
 
 def pick_oldest_unused(state: dict, dimension: str, items: list,
-                       key: str = "id") -> list:
+                       key: str = "id",
+                       cooldown_days: int = 0,
+                       exclude_ids: set | None = None) -> list:
     """
     Return `items` sorted so the oldest-never-used candidates come first.
     Callers pick [0] (or filter further).
 
     Sort key: (has_been_used_bool, last_used_date_iso). Never-used → (False, "")
     sorts ahead of everything; among-used items, oldest date sorts first.
+
+    cooldown_days: if >0, items used within the last N days are demoted to the
+        end of the result list (unless that would empty the list — in which
+        case the cooldown is bypassed). Prevents same-day or back-to-back
+        repeats even if state.theme_usage gets out of sync between modes.
+    exclude_ids: set of item ids to push to the very end (last-resort fallback).
+        Use this for "last picked X" memory so the picker won't repeat the
+        immediately-previous selection no matter what theme_usage says.
     """
     bucket = theme_bucket(state, dimension)
+    excl = exclude_ids or set()
+    today = date.today()
 
     def _id(item):
         return item.get(key) if isinstance(item, dict) else str(item)
 
-    def _rank(item):
-        hist = bucket.get(_id(item)) or []
-        if not hist:
-            return (0, "")           # never used — highest priority
-        return (1, hist[-1])          # used — earlier last-use sorts first
+    def _within_cooldown(hist: list) -> bool:
+        if not hist or cooldown_days <= 0:
+            return False
+        try:
+            last = date.fromisoformat(hist[-1])
+        except Exception:
+            return False
+        return (today - last).days < cooldown_days
 
-    return sorted(items, key=_rank)
+    def _rank(item):
+        iid = _id(item)
+        hist = bucket.get(iid) or []
+        excluded   = iid in excl
+        in_cool    = _within_cooldown(hist)
+        if not hist:
+            base = (0, "")              # never used — highest priority
+        else:
+            base = (1, hist[-1])         # used — earlier last-use sorts first
+        # Layer cooldown + exclude flags ON TOP, demoting matched items.
+        return (1 if excluded else 0, 1 if in_cool else 0) + base
+
+    ranked = sorted(items, key=_rank)
+    return ranked
 
 
 def mark_theme_used(state: dict, dimension: str, item_id: str):
@@ -668,7 +706,41 @@ def pick_best_destination(destinations: list, used: set,
         if valid_image_pool:
             pool = valid_image_pool
 
-    return max(pool, key=lambda d: (
+    # Ranking strategy:
+    #   1) Oldest-never-featured first (anti-repetition is the LOAD-BEARING goal).
+    #      Score is only a tiebreaker WITHIN equal-staleness candidates.
+    #
+    # Previous design used max(score)+bonuses, which is deterministic and locks
+    # onto the same top-scored dest every run as soon as the 14-day `fresh`
+    # filter empties (e.g. Pahalgam picked Apr 19, 27, 30 in a row).
+    if state is not None:
+        try:
+            # Also exclude the dest that was JUST locked as shared_best last run,
+            # in case state.theme_usage.destinations is out-of-sync.
+            last_best = (state.get("last_picked", {}) or {}).get("shared_best")
+            ordered = pick_oldest_unused(
+                state, "destinations", pool, key="id",
+                cooldown_days=14,
+                exclude_ids={last_best} if last_best else None,
+            )
+        except Exception as e:
+            log.warning(f"pick_best_destination: oldest-unused sort skipped ({e})")
+            ordered = pool
+    else:
+        ordered = pool
+
+    # Among the top stale-tier (head of `ordered`), break ties with score+bonuses.
+    bucket = (state or {}).get("theme_usage", {}).get("destinations", {}) if state else {}
+    def _stale_key(d):
+        hist = bucket.get(d["id"]) or []
+        return (1, hist[-1]) if hist else (0, "")
+    if ordered:
+        top_stale = _stale_key(ordered[0])
+        head = [d for d in ordered if _stale_key(d) == top_stale]
+    else:
+        head = pool
+
+    return max(head, key=lambda d: (
         d.get("score", 0)
         + contrarian_score(d) * 0.5
         + (0.3 if d.get("note") else 0)
@@ -2107,10 +2179,20 @@ def carousel_destinations(fmt: str, content: dict, pool: list,
         if not coll:
             return []
         dest_map = {d["id"]: d for d in content["destinations"].get("data", [])}
-        # Collection items are pre-ranked; walk in order until we have enough valid ones
-        candidates = [dest_map[i["destination_id"]]
-                      for i in coll.get("items", [])
-                      if i.get("destination_id") in dest_map]
+        # Collection items are pre-ranked. Rotate through them with the same
+        # oldest-never-used logic used for collections themselves so we don't
+        # always lock onto the first item (e.g. After Dark always→mcleodganj).
+        # Bucket key is per-collection so each collection has its own rotation.
+        items_in_map = [dest_map[i["destination_id"]]
+                        for i in coll.get("items", [])
+                        if i.get("destination_id") in dest_map]
+        st = content.get("__run_state__") or {}
+        bucket_name = f"collection_carousel_dests:{coll.get('id','?')}"
+        # 14-day cooldown so the same dest doesn't show twice in two weeks.
+        candidates = pick_oldest_unused(
+            st, bucket_name, items_in_map, key="id",
+            cooldown_days=14,
+        )
 
     # 2. Walk candidates, keeping only those with a valid hero image
     result: list = []
@@ -2428,9 +2510,22 @@ def _run_inner(force: bool, sync_only: bool, dry_run: bool,
     if "collection_spotlight" in (ig_fmt, fb_fmt, story_fmt):
         colls = content.get("collections", {}).get("data", []) or []
         if colls:
-            # Oldest-never-used collection first (anti-repetition tracker).
-            ordered = pick_oldest_unused(state, "collections", colls, key="id")
+            # Oldest-never-used collection first, with a 14-day cooldown AND
+            # explicit exclude of the last picked collection. Belt + braces:
+            # if state.theme_usage gets clobbered between mode runs, the
+            # last_picked_collection memory still prevents back-to-back repeats.
+            last_pick = (state.get("last_picked", {}) or {}).get("collection")
+            ordered = pick_oldest_unused(
+                state, "collections", colls, key="id",
+                cooldown_days=14,
+                exclude_ids={last_pick} if last_pick else None,
+            )
             content["__run_collection__"] = ordered[0]
+            # Stamp the pick IMMEDIATELY at lock-time (not just at publish-success
+            # time) so concurrent mode runs see the same state and don't re-pick.
+            mark_theme_used(state, "collections", ordered[0]["id"])
+            state.setdefault("last_picked", {})["collection"] = ordered[0]["id"]
+            save_state(state)
             status = dimension_cycle_status(state, "collections", len(colls))
             log.info(f"Collection locked: {ordered[0]['name']} "
                      f"({status['unused']}/{status['total']} never featured)")
@@ -2681,6 +2776,11 @@ def _run_inner(force: bool, sync_only: bool, dry_run: bool,
     shared_best = pick_best_destination(_dest_pool(), used, content, state)
     if shared_best:
         content["__run_best__"] = shared_best
+        # Stamp at lock-time so concurrent mode runs see the same anti-repeat
+        # history (mirrors the collection_spotlight fix).
+        mark_theme_used(state, "destinations", shared_best["id"])
+        state.setdefault("last_picked", {})["shared_best"] = shared_best["id"]
+        save_state(state)
         log.info(f"Shared best destination locked: {shared_best['name']}")
 
     # 8) Carousel destinations — lock a SINGLE list so IG and FB show the same
@@ -2690,11 +2790,24 @@ def _run_inner(force: bool, sync_only: bool, dry_run: bool,
         # Priority: oldest-unused first, BUT collection_spotlight defers to
         # the collection's own item ranking (which is intentionally curated).
         pool_for_carousel = pick_oldest_unused(state, "destinations", base_pool, key="id")
+        # Stash state into content so format-specific picks (e.g. collection
+        # carousel rotation) can apply the per-collection cooldown tracker.
+        content["__run_state__"] = state
         for carousel_fmt in {ig_fmt, fb_fmt, story_fmt}:
             if carousel_fmt not in CAROUSEL_FORMATS:
                 continue
             picks = carousel_destinations(carousel_fmt, content, pool_for_carousel, target_count=5)
             content[f"__run_carousel_dests__{carousel_fmt}"] = picks
+            # For collection_spotlight, stamp the chosen carousel dest in the
+            # per-collection bucket so tomorrow we rotate to a different item.
+            # Stamp at lock-time, not publish-time, so concurrent mode runs
+            # see the same anti-repeat history.
+            if carousel_fmt == "collection_spotlight" and picks:
+                coll = content.get("__run_collection__") or {}
+                bucket_name = f"collection_carousel_dests:{coll.get('id','?')}"
+                for d in picks:
+                    mark_theme_used(state, bucket_name, d["id"])
+                save_state(state)
             log.info(f"Carousel locked ({carousel_fmt}): "
                      + (", ".join(d['id'] for d in picks) if picks else "no valid images found"))
 
