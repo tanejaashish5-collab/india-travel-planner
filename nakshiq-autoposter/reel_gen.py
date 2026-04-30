@@ -622,12 +622,14 @@ def render_reel(
             data.get("reason", "Overpriced and overcrowded")
         )
     elif reel_format == "destination_reveal":
-        text_filters = _build_destination_reveal_filters(
-            data["dest_name"],
-            data.get("state_name", ""),
-            data.get("score", 4),
-            data.get("tagline", ""),
-        )
+        # ── NO TEXT OVERLAYS on branded images ──────────────────────────
+        # Pomelli / branded images already contain headlines, subtitles,
+        # data callouts, and NakshIQ branding baked in. Adding drawtext
+        # on top causes: text overflow, text-on-text stacking, triple
+        # branding, and unreadable text during Ken Burns zoompan.
+        # Rule: let Pomelli designs speak for themselves.
+        # (See also: reel_map_gen.py which follows the same rule.)
+        text_filters = ""
     else:
         print(f"Unknown reel format: {reel_format}")
         return None
@@ -654,14 +656,18 @@ def render_reel(
 
     if use_image_input:
         # ── IMAGE-BASED pipeline (destination_reveal) ────────────────────
+        # Branded images have a 56px charcoal branding footer (stamped by
+        # brand_pomelli.py, BAR_HEIGHT=56). Crop it BEFORE scale so the
+        # Ken Burns animation doesn't show redundant branding.
+        # No drawtext overlays — branded images are self-contained designs.
         # Music is the ONLY audio source → 40% volume, fade in/out
         video_filter = (
-            f"[0:v]scale=1188:2112:flags=lanczos,"
+            f"[0:v]crop=iw:ih-56:0:0,"
+            f"scale=1188:2112:flags=lanczos,"
             f"zoompan=z='1.1-0.01*on/{REEL_FPS * REEL_DURATION}'"
             f":x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)'"
             f":d={REEL_FPS * REEL_DURATION}:s={REEL_W}x{REEL_H}:fps={REEL_FPS},"
-            f"setsar=1,"
-            f"{text_filters}"
+            f"setsar=1"
             f"[out]"
         )
         if has_music:
