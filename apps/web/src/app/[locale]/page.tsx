@@ -7,6 +7,14 @@ import { getAppStats } from "@/lib/stats";
 
 export const revalidate = 3600;
 
+// Use IST so the homepage's "best in {month}" flips at IST midnight, not UTC.
+// Without this, May content appears 5.5h late vs Indian phones (00:00 IST = 18:30 UTC prev day).
+function currentMonthIST(): number {
+  return Number(
+    new Date().toLocaleString("en-US", { timeZone: "Asia/Kolkata", month: "numeric" }),
+  );
+}
+
 export async function generateMetadata({
   params,
 }: {
@@ -30,7 +38,7 @@ async function getFeaturedData() {
   if (!url || !key) return { destinations: [], collections: [], routes: [], festivals: [], mapPins: [] as any[], stats: { places: 0, destinations: 0, states: 0, routes: 0, festivals: 0, collections: 0, treks: 0, traps: 0, permits: 0, campingSpots: 0 } };
 
   const supabase = createClient(url, key);
-  const currentMonth = new Date().getMonth() + 1;
+  const currentMonth = currentMonthIST();
 
   const [destResult, collResult, routeResult, destCount, subCount, gemCount, stateCount, routeCount, festResult, coordsResult, allMonthScores, allDestsResult] = await Promise.all([
     supabase
