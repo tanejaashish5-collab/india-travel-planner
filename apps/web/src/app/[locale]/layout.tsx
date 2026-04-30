@@ -271,7 +271,7 @@ export default async function LocaleLayout({
               <ScrollToTop />
               <PageTransition>{children}</PageTransition>
               <StickyCTA />
-              <AskNakshIQ />
+              <AskNakshIQ hideTrigger />
               <PersonalisationQuiz />
               <MobileTabBar />
               <PWAInstallPrompt />

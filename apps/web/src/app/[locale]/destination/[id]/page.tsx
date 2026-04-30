@@ -12,6 +12,7 @@ import { destinationImage } from "@/lib/image-url";
 import { AuthorByline } from "@/components/author-byline";
 import { getPrimaryEditor } from "@/lib/editor";
 import { videoObjectJsonLd } from "@/lib/video-schema";
+import { AskNakshIQInlineCTA } from "@/components/ask-nakshiq-inline-cta";
 
 export const revalidate = 86400; // 24h — UGC moderation lag is already 24-48h, so hourly revalidation just burned function invocations
 // dynamicParams=true → pages not pre-rendered at build time ISR-generate on
@@ -590,6 +591,8 @@ export default async function DestinationPage({
           </div>
         )}
         <DestinationDetail dest={dest} />
+
+        <AskNakshIQInlineCTA subject={dest.name} />
 
         {comparisons.length > 0 && (
           <section className="mt-12 border-t border-border/50 pt-8">
