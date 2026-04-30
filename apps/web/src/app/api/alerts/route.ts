@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
+import { currentMonthIST } from "@itp/shared";
 
 export const dynamic = "force-dynamic";
 
@@ -36,7 +37,7 @@ export async function GET(req: NextRequest) {
   }
 
   // Check for seasonal alerts based on current month
-  const currentMonth = new Date().getMonth() + 1;
+  const currentMonth = currentMonthIST();
   if (destId) {
     const { data: dest } = await supabase
       .from("destinations")

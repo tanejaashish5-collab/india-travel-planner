@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils";
 import { SectionLabel } from "./ui/section-label";
+import { currentMonthIST } from "@itp/shared";
 
 type Score = 1 | 2 | 3 | 4 | 5;
 
@@ -33,7 +34,7 @@ export default function SoloFemaleSafetySection({ score, note, monthRows, hubHre
   // Invisible when there's no data — enrichment hasn't reached this destination yet.
   if (!score && !note && !(monthRows?.some((r) => r.solo_female_override != null))) return null;
 
-  const currentMonth = new Date().getMonth() + 1;
+  const currentMonth = currentMonthIST();
   const rowByMonth = new Map<number, MonthRow>();
   for (const r of monthRows ?? []) rowByMonth.set(r.month, r);
 

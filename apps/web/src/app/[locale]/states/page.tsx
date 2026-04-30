@@ -5,6 +5,7 @@ import { Footer } from "@/components/footer";
 import { StatesExplorer } from "@/components/states-explorer";
 import { createClient } from "@supabase/supabase-js";
 import { localeAlternates } from "@/lib/seo-utils";
+import { currentMonthIST } from "@itp/shared";
 
 export const revalidate = 3600;
 
@@ -29,7 +30,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     supabase.from("destinations").select("id, state_id, destination_months(month, score)"),
   ]);
 
-  const currentMonth = new Date().getMonth() + 1;
+  const currentMonth = currentMonthIST();
 
   // Build per-state: dest count, hero dest ID, avg score
   const countMap: Record<string, number> = {};

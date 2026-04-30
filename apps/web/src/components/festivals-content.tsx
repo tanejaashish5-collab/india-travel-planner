@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useLocale } from "next-intl";
 import { StaggerContainer, StaggerItem, HoverCard, ScrollReveal, PulseGlow } from "./animated-hero";
 import { RegionFilterBar, RegionKey, getStateId, stateInRegion } from "./region-filter";
+import { currentMonthIST } from "@itp/shared";
 
 const MONTH_NAMES = ["", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 const MONTH_SHORT = ["", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
@@ -28,7 +29,7 @@ function getSeasonLabel(month: number): string {
 
 export function FestivalsContent({ festivals }: { festivals: any[] }) {
   const locale = useLocale();
-  const currentMonth = new Date().getMonth() + 1;
+  const currentMonth = currentMonthIST();
   const [selectedMonth, setSelectedMonth] = useState(0); // 0 = all
   const [search, setSearch] = useState("");
   const [activeRegion, setActiveRegion] = useState<RegionKey>(null);

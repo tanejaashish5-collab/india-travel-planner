@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useLocale, useTranslations } from "next-intl";
+import { currentMonthIST } from "@itp/shared";
 
 interface DestinationCardProps {
   id: string;
@@ -84,7 +85,7 @@ export function DestinationCard({
       ? translations[locale].tagline
       : tagline;
 
-  const currentMonth = new Date().getMonth() + 1;
+  const currentMonth = currentMonthIST();
   const scoreToShow = current_month_score ?? null;
   const monthShort = ["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"][currentMonth];
   const priceLabel = price_range ? `₹${price_range}` : (budget_tier && BUDGET_LABEL[budget_tier]) || null;

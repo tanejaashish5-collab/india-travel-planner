@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
 import { revalidatePath } from "next/cache";
+import { currentMonthIST } from "@itp/shared";
 
 export const dynamic = "force-dynamic";
 export const maxDuration = 300;
@@ -16,9 +17,7 @@ const COVERAGE_THRESHOLD = 0.95;
 const BASE = "https://www.nakshiq.com";
 
 function nextMonthIST(): { name: string; num: number } {
-  const m = Number(
-    new Date().toLocaleString("en-US", { timeZone: "Asia/Kolkata", month: "numeric" }),
-  );
+  const m = currentMonthIST();
   const next = (m % 12) + 1;
   return { name: MONTHS[next - 1], num: next };
 }
@@ -66,12 +65,15 @@ export async function GET(req: NextRequest) {
     .order("score", { ascending: false });
   const destIds: string[] = (ranked ?? []).map((r: any) => r.destination_id);
 
-  // 3) Drop ISR cache for every destination×month path + aggregator pages,
+  // 3) Drop ISR cache for every month-keyed route + aggregator pages,
   // both locales. revalidatePath is in-process and millisecond-fast — no
-  // need to fan out HTTP calls.
+  // need to fan out HTTP calls. Keep this list in sync with the
+  // [month] / [monthSlug] route folders under apps/web/src/app/[locale]/.
   const locales = ["en", "hi"] as const;
   let revalidated = 0;
   const revalidateErrors: string[] = [];
+
+  // Per-destination month pages (the bulk — ~982 paths)
   for (const slug of destIds) {
     for (const loc of locales) {
       try {
@@ -82,10 +84,33 @@ export async function GET(req: NextRequest) {
       }
     }
   }
+
+  // Region × month
+  const { data: regions } = await supabase.from("regions").select("id");
+  for (const r of regions ?? []) {
+    for (const loc of locales) {
+      try { revalidatePath(`/${loc}/region/${r.id}/${month}`); revalidated++; } catch {}
+    }
+  }
+
+  // State × month — explore + treks + festivals
+  const { data: states } = await supabase.from("states").select("id");
+  for (const s of states ?? []) {
+    for (const loc of locales) {
+      try { revalidatePath(`/${loc}/explore/state/${s.id}/${month}`); revalidated++; } catch {}
+      try { revalidatePath(`/${loc}/treks/state/${s.id}/${month}`); revalidated++; } catch {}
+      try { revalidatePath(`/${loc}/festivals/state/${s.id}/${month}`); revalidated++; } catch {}
+    }
+  }
+
+  // Aggregator pages (root list views, hubs that use currentMonthIST)
   for (const loc of locales) {
     try { revalidatePath(`/${loc}/where-to-go/${month}`); revalidated++; } catch {}
+    try { revalidatePath(`/${loc}/festivals/month/${month}`); revalidated++; } catch {}
     try { revalidatePath(`/${loc}`); revalidated++; } catch {}
     try { revalidatePath(`/${loc}/guide`); revalidated++; } catch {}
+    try { revalidatePath(`/${loc}/where-to-go`); revalidated++; } catch {}
+    try { revalidatePath(`/${loc}/states`); revalidated++; } catch {}
   }
 
   // 4) Actually warm top-N highest-traffic destination pages so the first

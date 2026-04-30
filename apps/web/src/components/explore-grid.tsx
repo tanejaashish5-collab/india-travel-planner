@@ -9,6 +9,7 @@ import { ExploreFilters, type FilterState } from "./explore-filters";
 import { CompareButton } from "./compare-tray";
 import { StaggerContainer, StaggerItem, HoverCard } from "./animated-hero";
 import { SCORE_COLORS, DIFFICULTY_COLORS } from "@/lib/design-tokens";
+import { currentMonthIST } from "@itp/shared";
 
 const SOLO_FEMALE_COLOR: Record<number, string> = {
   5: "border-emerald-400/40 bg-emerald-500/15 text-emerald-200",
@@ -63,7 +64,7 @@ export function ExploreGrid({
   const router = useRouter();
   const pathname = usePathname();
 
-  const currentMonth = new Date().getMonth() + 1;
+  const currentMonth = currentMonthIST();
 
   // Use shared filters from parent if provided, otherwise manage own state
   const [localFilters, setLocalFilters] = useState<FilterState>({

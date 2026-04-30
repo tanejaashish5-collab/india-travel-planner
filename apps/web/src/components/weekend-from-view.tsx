@@ -4,6 +4,7 @@ import { DestinationCard } from "@/components/destination-card";
 import { createClient } from "@supabase/supabase-js";
 import { notFound } from "next/navigation";
 import { METRO_ANCHORS, METRO_SLUGS, type MetroAnchor } from "@/lib/metro-anchors";
+import { currentMonthIST } from "@itp/shared";
 
 type Band = { label: string; sublabel: string; min: number; max: number };
 const BANDS: Band[] = [
@@ -11,15 +12,6 @@ const BANDS: Band[] = [
   { label: "Half-day drive", sublabel: "150–300 km", min: 150, max: 300 },
   { label: "Long weekend", sublabel: "300–500 km", min: 300, max: 500 },
 ];
-
-// Month in IST — matches the /guide pattern. Vercel runs in UTC; without this,
-// the page flips to the new month at 05:30 IST (UTC midnight) — up to ~5.5h
-// after Indian users' phones say it's the new month.
-function currentMonthIST(): number {
-  return Number(
-    new Date().toLocaleString("en-US", { timeZone: "Asia/Kolkata", month: "numeric" }),
-  );
-}
 
 function getSupabase() {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;

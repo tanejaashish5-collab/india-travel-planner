@@ -26,6 +26,7 @@ import { AnimatedCounter } from "./animated-counter";
 // REGION_GROUPS + STATE_MAP no longer used here (region cards section removed).
 import { resolveCover } from "@/lib/collection-covers";
 import { destinationImage } from "@/lib/image-url";
+import { currentMonthIST } from "@itp/shared";
 
 const DIFFICULTY_COLORS: Record<string, string> = {
   easy: "text-emerald-400",
@@ -61,7 +62,7 @@ export function LandingHero({
   const t = useTranslations("home");
   const tn = useTranslations("nav");
   const tm = useTranslations("months");
-  const currentMonth = new Date().getMonth() + 1;
+  const currentMonth = currentMonthIST();
 
   // Day/night gradient based on user's local time
   const hour = new Date().getHours();

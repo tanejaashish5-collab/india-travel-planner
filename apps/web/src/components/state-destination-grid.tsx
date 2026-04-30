@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { m as motion } from "framer-motion";
 import { SCORE_COLORS, DIFFICULTY_COLORS } from "@/lib/design-tokens";
+import { currentMonthIST } from "@itp/shared";
 
 interface Destination {
   id: string;
@@ -34,7 +35,7 @@ export function StateDestinationGrid({
   destinations: Destination[];
   locale: string;
 }) {
-  const currentMonth = new Date().getMonth() + 1;
+  const currentMonth = currentMonthIST();
   const [sortBy, setSortBy] = useState<"score" | "name" | "elevation" | "difficulty">("score");
   const [filterDifficulty, setFilterDifficulty] = useState("");
 

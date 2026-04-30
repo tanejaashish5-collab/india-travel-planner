@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { FadeIn, ScrollReveal, StaggerContainer, StaggerItem } from "./animated-hero";
 import { SCORE_COLORS, DIFFICULTY_COLORS } from "@/lib/design-tokens";
+import { currentMonthIST } from "@itp/shared";
 
 const MONTH_SHORT = ["", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
@@ -73,7 +74,7 @@ function formatNetwork(net: unknown): string {
 }
 
 export function VsComparison({ dest1, dest2, locale }: Props) {
-  const currentMonth = new Date().getMonth() + 1;
+  const currentMonth = currentMonthIST();
   const score1 = getMonthScore(dest1.months, currentMonth);
   const score2 = getMonthScore(dest2.months, currentMonth);
 

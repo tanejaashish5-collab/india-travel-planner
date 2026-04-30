@@ -8,6 +8,7 @@ import { REGION_GROUPS, STATE_MAP } from "@/lib/seo-maps";
 import { videoSrc } from "@/lib/video-url";
 import { videoObjectJsonLd } from "@/lib/video-schema";
 import { destinationImage } from "@/lib/image-url";
+import { currentMonthIST } from "@itp/shared";
 
 export const revalidate = 86400;
 export const dynamicParams = true;
@@ -61,7 +62,7 @@ async function getRegionData(regionSlug: string) {
       .in("state_id", region.states as readonly string[]),
   ]);
 
-  const currentMonth = new Date().getMonth() + 1;
+  const currentMonth = currentMonthIST();
   const countMap: Record<string, number> = {};
   const allDestsByState: Record<string, string[]> = {};
   const scoreSum: Record<string, { total: number; count: number }> = {};

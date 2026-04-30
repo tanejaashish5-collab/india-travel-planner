@@ -48,6 +48,7 @@ import { SuggestEditButton } from "./suggest-edit-button";
 import MethodologyStrip from "./methodology-strip";
 import KnowBeforeYouGo from "./know-before-you-go";
 import { EditorsPicks } from "./editors-picks";
+import { currentMonthIST } from "@itp/shared";
 import { InternationalInfoSection } from "./international-info";
 import { EmergencySOSSection, SOSFloatingButton } from "./emergency-sos";
 import { DestinationAlerts } from "./destination-alerts";
@@ -117,7 +118,7 @@ export function DestinationDetail({ dest }: { dest: any }) {
   const trapAlts = dest.trap_alternatives ?? [];
   const pois = dest.points_of_interest ?? [];
 
-  const currentMonth = new Date().getMonth() + 1;
+  const currentMonth = currentMonthIST();
   const currentScore = months.find((m: any) => m.month === currentMonth)?.score ?? null;
   const currentMonthData = months.find((m: any) => m.month === currentMonth);
 

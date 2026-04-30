@@ -5,6 +5,7 @@ import { m as motion, AnimatePresence } from "framer-motion";
 import { useLocale, useTranslations } from "next-intl";
 import { FALLBACK } from "@/lib/stats";
 import { REGION_GROUPS, STATE_MAP } from "@/lib/seo-maps";
+import { currentMonthLongIST, currentMonthSlugIST } from "@itp/shared";
 
 export type PanelType = "explore" | "plan" | "learn" | null;
 
@@ -260,7 +261,7 @@ const REGION_CARDS: { slug: string; icon: string; description: string }[] = [
 
 function ExplorePanel({ locale, onNavigate }: { locale: string; onNavigate: () => void }) {
   const t = useTranslations("nav");
-  const currentMonthSlug = ["", "january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december"][new Date().getMonth() + 1];
+  const currentMonthSlug = currentMonthSlugIST();
 
   return (
     <motion.div variants={staggerContainer} initial="initial" animate="animate">
@@ -309,7 +310,7 @@ function ExplorePanel({ locale, onNavigate }: { locale: string; onNavigate: () =
             <p className="text-[10px] font-semibold uppercase tracking-[0.08em] text-primary/60 mb-2">This month</p>
             <h4 className="text-sm font-semibold text-foreground">Best destinations right now</h4>
             <p className="text-xs text-muted-foreground mt-1.5 leading-relaxed">
-              5/5 scored — weather, crowds, and accessibility aligned for {new Date().toLocaleString("en-IN", { month: "long" })}.
+              5/5 scored — weather, crowds, and accessibility aligned for {currentMonthLongIST()}.
             </p>
           </div>
           <a
@@ -352,7 +353,7 @@ function ExplorePanel({ locale, onNavigate }: { locale: string; onNavigate: () =
 
 function PlanPanel({ locale, onNavigate }: { locale: string; onNavigate: () => void }) {
   const t = useTranslations("nav");
-  const currentMonthSlug = ["", "january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december"][new Date().getMonth() + 1];
+  const currentMonthSlug = currentMonthSlugIST();
 
   return (
     <motion.div variants={staggerContainer} initial="initial" animate="animate" className="grid grid-cols-5 gap-6">

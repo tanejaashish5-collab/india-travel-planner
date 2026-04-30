@@ -12,6 +12,7 @@ import { videoSrc } from "@/lib/video-url";
 import { videoObjectJsonLd } from "@/lib/video-schema";
 import { destinationImage } from "@/lib/image-url";
 import { localeAlternates } from "@/lib/seo-utils";
+import { currentMonthIST } from "@itp/shared";
 
 export const revalidate = 86400;
 export const dynamicParams = true;
@@ -94,7 +95,7 @@ export default async function StateHubPage({
   const { state, region, destinations, allStates } = data;
   const regionGroup = getRegionNameForState(stateSlug);
   const regionSlug = getRegionForState(stateSlug);
-  const currentMonth = new Date().getMonth() + 1;
+  const currentMonth = currentMonthIST();
 
   // Use first destination's image as hero
   const heroDestId = destinations[0]?.id ?? "manali";

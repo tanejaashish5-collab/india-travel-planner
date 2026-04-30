@@ -7,6 +7,7 @@ import { useLocale, useTranslations } from "next-intl";
 import { useSearchParams } from "next/navigation";
 import { m as motion, AnimatePresence } from "framer-motion";
 import { SCORE_COLORS, DIFFICULTY_COLORS } from "@/lib/design-tokens";
+import { currentMonthIST } from "@itp/shared";
 
 const SOLO_FEMALE_COLOR: Record<number, string> = {
   5: "border-emerald-400/50 bg-emerald-500/15 text-emerald-200",
@@ -25,7 +26,7 @@ export function SavedContent({ destinations }: { destinations: any[] }) {
   const [savedIds, setSavedIds] = useState<string[]>([]);
   const [compareMode, setCompareMode] = useState(urlCompare.length > 0);
   const [compareIds, setCompareIds] = useState<string[]>(urlCompare);
-  const currentMonth = new Date().getMonth() + 1;
+  const currentMonth = currentMonthIST();
 
   useEffect(() => {
     const saved = JSON.parse(localStorage.getItem("savedDestinations") || "[]");

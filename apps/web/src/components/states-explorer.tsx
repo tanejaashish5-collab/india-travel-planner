@@ -4,6 +4,7 @@ import { useState, useMemo, lazy, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { m as motion, AnimatePresence } from "framer-motion";
 import { REGION_GROUPS } from "@/lib/seo-maps";
+import { currentMonthLongIST } from "@itp/shared";
 
 const IndiaMap = lazy(() => import("./india-map").then((mod) => ({ default: mod.IndiaMap })));
 
@@ -45,7 +46,7 @@ export function StatesExplorer({ states, locale }: { states: StateData[]; locale
   }, [states, activeRegion]);
 
   const currentMonthName = useMemo(
-    () => new Date().toLocaleString("en-US", { month: "long" }),
+    () => currentMonthLongIST(),
     [],
   );
 

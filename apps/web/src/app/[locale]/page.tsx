@@ -4,16 +4,9 @@ import { Footer } from "@/components/footer";
 import { LandingHero } from "@/components/landing-hero";
 import { createClient } from "@supabase/supabase-js";
 import { getAppStats } from "@/lib/stats";
+import { currentMonthIST } from "@itp/shared";
 
 export const revalidate = 3600;
-
-// Use IST so the homepage's "best in {month}" flips at IST midnight, not UTC.
-// Without this, May content appears 5.5h late vs Indian phones (00:00 IST = 18:30 UTC prev day).
-function currentMonthIST(): number {
-  return Number(
-    new Date().toLocaleString("en-US", { timeZone: "Asia/Kolkata", month: "numeric" }),
-  );
-}
 
 export async function generateMetadata({
   params,

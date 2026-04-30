@@ -5,6 +5,7 @@ import { useSearchParams, useRouter, usePathname } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { ExploreGrid } from "./explore-grid";
 import { ExploreFilters, type FilterState } from "./explore-filters";
+import { currentMonthIST } from "@itp/shared";
 
 // Lazy load map to avoid SSR issues with Leaflet
 const ExploreMap = lazy(() =>
@@ -50,7 +51,7 @@ export function ExploreWithMap({
   const [viewMode, setViewMode] = useState<ViewMode>("grid");
   const t = useTranslations("nav");
   const searchParams = useSearchParams();
-  const currentMonth = new Date().getMonth() + 1;
+  const currentMonth = currentMonthIST();
 
   // Shared filter state — initialized from URL params
   const [filters, setFilters] = useState<FilterState>({

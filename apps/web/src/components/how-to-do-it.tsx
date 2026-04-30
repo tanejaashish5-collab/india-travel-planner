@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { currentMonthIST } from "@itp/shared";
 
 type MonthRow = { month: number; score: number };
 
@@ -51,7 +52,7 @@ export default function HowToDoIt({
   const fieldCount = [accessLine, emergencyLine, sleepLine].filter(Boolean).length + (months?.length ? 1 : 0);
   if (fieldCount < 2) return null;
 
-  const cmIndex = currentMonth ?? new Date().getMonth() + 1;
+  const cmIndex = currentMonth ?? currentMonthIST();
 
   return (
     <div className="mt-10 rounded-2xl border border-border/50 bg-card/50 backdrop-blur-sm p-5 sm:p-7">

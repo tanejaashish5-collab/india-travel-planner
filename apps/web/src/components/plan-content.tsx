@@ -8,6 +8,7 @@ import { useSearchParams } from "next/navigation";
 import { m as motion, AnimatePresence } from "framer-motion";
 import { SCORE_COLORS, DIFFICULTY_COLORS, SCORE_LABELS } from "@/lib/design-tokens";
 import { AIItinerary } from "./ai-itinerary";
+import { currentMonthIST } from "@itp/shared";
 
 interface PlanContentProps {
   destinations: Array<{
@@ -79,7 +80,7 @@ export function PlanContent({ destinations, states = [] }: PlanContentProps) {
   const destinationCount = destinations.length;
   const locale = useLocale();
   const searchParams = useSearchParams();
-  const urlMonth = Number(searchParams.get("month")) || new Date().getMonth() + 1;
+  const urlMonth = Number(searchParams.get("month")) || currentMonthIST();
   const urlDests = searchParams.get("destinations")?.split(",").filter(Boolean) ?? [];
 
   const [month, setMonth] = useState(urlMonth);

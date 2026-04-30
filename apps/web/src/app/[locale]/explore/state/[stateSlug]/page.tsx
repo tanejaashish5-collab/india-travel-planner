@@ -6,6 +6,7 @@ import { ExploreGrid } from "@/components/explore-grid";
 import { notFound } from "next/navigation";
 import { STATE_MAP, getSupabase } from "@/lib/seo-maps";
 import { localeAlternates } from "@/lib/seo-utils";
+import { currentMonthIST, currentMonthLongIST } from "@itp/shared";
 
 export const revalidate = 86400;
 export const dynamicParams = true;
@@ -15,7 +16,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const stateName = STATE_MAP[stateSlug];
   if (!stateName) return {
   };
-  const currentMonth = new Date().toLocaleString("en", { month: "long" });
+  const currentMonth = currentMonthLongIST();
   return {
     title: `Places to Visit in ${stateName} — Every Destination Scored | NakshIQ`,
     description: `All destinations in ${stateName} scored 1-5 for ${currentMonth}. Kids ratings, safety data, infrastructure reality, and honest assessments. No sponsored content.`,
@@ -31,7 +32,7 @@ export default async function ExploreByStatePage({ params }: { params: Promise<{
   const supabase = getSupabase();
   if (!supabase) notFound();
 
-  const currentMonth = new Date().getMonth() + 1;
+  const currentMonth = currentMonthIST();
 
   const { data: destinations } = await supabase
     .from("destinations")

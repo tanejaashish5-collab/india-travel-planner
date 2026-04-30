@@ -4,6 +4,7 @@ import { useState, useMemo } from "react";
 import Link from "next/link";
 import { useLocale } from "next-intl";
 import { m as motion, AnimatePresence } from "framer-motion";
+import { currentMonthIST } from "@itp/shared";
 
 const MONTH_NAMES = ["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
 const MONTH_FULL = ["","January","February","March","April","May","June","July","August","September","October","November","December"];
@@ -11,7 +12,7 @@ const MONTH_FULL = ["","January","February","March","April","May","June","July",
 export function RouteBuilder({ destinations }: { destinations: any[] }) {
   const locale = useLocale();
   const [selected, setSelected] = useState<string[]>([]);
-  const [month, setMonth] = useState(new Date().getMonth() + 1);
+  const [month, setMonth] = useState(currentMonthIST());
   const [search, setSearch] = useState("");
 
   const selectedDests = useMemo(() => {

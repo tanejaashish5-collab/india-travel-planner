@@ -7,6 +7,7 @@ import { ArticleCallout } from "./article-callout";
 import HowToDoIt from "./how-to-do-it";
 import { BlogArticleToC } from "./blog-article-toc";
 import { DestinationThumb } from "./destination-thumb";
+import { currentMonthIST } from "@itp/shared";
 
 const CATEGORY_LABELS: Record<string, string> = {
   "best-time": "Best Time to Visit",
@@ -170,7 +171,7 @@ export function BlogArticle({
   adjacentArticles?: { prev: any; next: any };
   locale: string;
 }) {
-  const currentMonth = new Date().getMonth() + 1;
+  const currentMonth = currentMonthIST();
 
   // Parse content sections — split by ## headers
   const sections = parseContent(article.content);

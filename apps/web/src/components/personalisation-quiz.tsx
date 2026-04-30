@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useLocale } from "next-intl";
 import { m as motion, AnimatePresence } from "framer-motion";
+import { currentMonthIST } from "@itp/shared";
 
 interface QuizAnswers {
   travelerType: string;
@@ -54,7 +55,7 @@ export function PersonalisationQuiz() {
   const [show, setShow] = useState(false);
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState<Partial<QuizAnswers>>({
-    month: new Date().getMonth() + 1,
+    month: currentMonthIST(),
     kids: false,
   });
   const [results, setResults] = useState<string[]>([]);

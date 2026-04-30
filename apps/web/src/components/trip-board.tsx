@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useLocale, useTranslations } from "next-intl";
 import { m as motion, AnimatePresence } from "framer-motion";
+import { currentMonthIST } from "@itp/shared";
 
 const MONTH_SHORT = ["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
 
@@ -26,7 +27,7 @@ interface TripState {
 
 const DEFAULT_TRIP: TripState = {
   name: "My North India Trip",
-  month: new Date().getMonth() + 1,
+  month: currentMonthIST(),
   travelers: 2,
   budget: "midrange",
   items: [],

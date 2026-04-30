@@ -7,6 +7,7 @@ import { useLocale } from "next-intl";
 import { useSearchParams } from "next/navigation";
 import { m as motion } from "framer-motion";
 import { useCompare } from "./compare-tray";
+import { currentMonthIST } from "@itp/shared";
 
 const MONTH_SHORT = ["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
 
@@ -20,7 +21,7 @@ export function CompareView({ destinations }: { destinations: any[] }) {
   const locale = useLocale();
   const searchParams = useSearchParams();
   const { compareIds, removeFromCompare } = useCompare();
-  const currentMonth = new Date().getMonth() + 1;
+  const currentMonth = currentMonthIST();
 
   // Use URL params or compare context
   const urlIds = searchParams.get("compare")?.split(",").filter(Boolean) ?? [];

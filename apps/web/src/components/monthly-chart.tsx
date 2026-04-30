@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { m as motion, AnimatePresence } from "framer-motion";
+import { currentMonthIST } from "@itp/shared";
 
 interface MonthlyScore {
   m: number;
@@ -56,7 +57,7 @@ export function MonthlyChart({
   className?: string;
 }) {
   const tm = useTranslations("months");
-  const currentMonth = new Date().getMonth() + 1;
+  const currentMonth = currentMonthIST();
   const [selectedMonth, setSelectedMonth] = useState(currentMonth);
 
   const sorted = [...scores].sort((a, b) => a.m - b.m);

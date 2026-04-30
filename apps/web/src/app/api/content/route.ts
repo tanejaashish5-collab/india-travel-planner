@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
 import { resolveCover } from "@/lib/collection-covers";
 import { videoSrc } from "@/lib/video-url";
+import { currentMonthIST } from "@itp/shared";
 
 export const runtime = "edge";
 
@@ -31,7 +32,7 @@ export async function GET(req: NextRequest) {
   const type = params.get("type") || "destinations";
   const since = params.get("since");
   const limit = Math.min(Number(params.get("limit") || 20), 100);
-  const month = Number(params.get("month") || new Date().getMonth() + 1);
+  const month = Number(params.get("month") || currentMonthIST());
   const minScore = Number(params.get("min_score") || 0);
   const maxScore = Number(params.get("max_score") || 0);
 

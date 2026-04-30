@@ -6,6 +6,7 @@ import { useLocale } from "next-intl";
 import { m as motion } from "framer-motion";
 import { FadeIn, SlideIn, StaggerContainer, StaggerItem, HoverCard } from "./animated-hero";
 import { SCORE_COLORS, DIFFICULTY_COLORS } from "@/lib/design-tokens";
+import { currentMonthIST } from "@itp/shared";
 
 interface RegionDetailProps {
   region: {
@@ -26,7 +27,7 @@ export function RegionDetail({ region }: RegionDetailProps) {
   const locale = useLocale();
   const [selectedSubregion, setSelectedSubregion] = useState<string | null>(null);
   const [showHidden, setShowHidden] = useState(false);
-  const currentMonth = new Date().getMonth() + 1;
+  const currentMonth = currentMonthIST();
 
   // Group destinations by subregion
   const bySubregion = useMemo(() => {

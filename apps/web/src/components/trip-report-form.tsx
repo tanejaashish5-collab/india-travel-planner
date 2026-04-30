@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { currentMonthIST } from "@itp/shared";
 
 type Props = {
   destination_id: string;
@@ -18,7 +19,7 @@ const MONTHS = [
 const YEARS = [2024, 2025, 2026];
 
 export function TripReportForm({ destination_id, destination_name, state_name, locale }: Props) {
-  const [month, setMonth] = useState<number>(new Date().getMonth() + 1);
+  const [month, setMonth] = useState<number>(currentMonthIST());
   const [year, setYear] = useState<number>(new Date().getFullYear());
   const [rating, setRating] = useState<number>(4);
   const [summary, setSummary] = useState("");

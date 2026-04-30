@@ -7,6 +7,7 @@ import { createClient } from "@supabase/supabase-js";
 import { notFound } from "next/navigation";
 import { DIFFICULTY_MAP } from "@/lib/seo-maps";
 import { localeAlternates } from "@/lib/seo-utils";
+import { currentMonthIST } from "@itp/shared";
 
 export const revalidate = 86400;
 export const dynamicParams = true;
@@ -45,7 +46,7 @@ export default async function ExploreByDifficultyPage({ params }: { params: Prom
   const supabase = getSupabase();
   if (!supabase) notFound();
 
-  const currentMonth = new Date().getMonth() + 1;
+  const currentMonth = currentMonthIST();
 
   const { data } = await supabase
     .from("destinations")
