@@ -39,15 +39,28 @@ async function getRoute(id: string) {
   if (!routeData.data) return null;
 
   // Pull destination coords + names for each stop ID so Trip/ItemList schemas
-  // can cite real GeoCoordinates per stop.
+  // can cite real GeoCoordinates per stop. `destinations.coords` is PostGIS
+  // GEOGRAPHY and arrives as a raw WKB hex string from PostgREST — so we read
+  // through the `destinations_with_coords` view that already splits it into
+  // numeric lat/lng. (Direct `dest.coords.lat` access used to throw a
+  // TypeError and 500 the route page.)
   const stops: string[] = Array.isArray(routeData.data.stops) ? routeData.data.stops : [];
   let stopDests: Array<{ id: string; name: string; coords?: { lat: number; lng: number } | null }> = [];
   if (stops.length > 0) {
-    const { data: dests } = await supabase
-      .from("destinations")
-      .select("id, name, coords")
-      .in("id", stops);
-    stopDests = dests ?? [];
+    const [destsRes, coordsRes] = await Promise.all([
+      supabase.from("destinations").select("id, name").in("id", stops),
+      supabase.from("destinations_with_coords").select("id, lat, lng").in("id", stops),
+    ]);
+    const coordsMap = new Map<string, { lat: number; lng: number }>(
+      (coordsRes.data ?? [])
+        .filter((c: any) => typeof c.lat === "number" && typeof c.lng === "number")
+        .map((c: any) => [c.id, { lat: c.lat, lng: c.lng }]),
+    );
+    stopDests = (destsRes.data ?? []).map((d: any) => ({
+      id: d.id,
+      name: d.name,
+      coords: coordsMap.get(d.id) ?? null,
+    }));
   }
 
   return { ...routeData.data, allRoutes: allRoutes.data ?? [], stopDests };
@@ -106,7 +119,7 @@ export default async function RouteDetailPage({
             "@id": `${destUrl}#destination`,
             name: dest?.name ?? stopId.replace(/-/g, " "),
             url: destUrl,
-            ...(dest?.coords && {
+            ...(typeof dest?.coords?.lat === "number" && typeof dest?.coords?.lng === "number" && {
               geo: {
                 "@type": "GeoCoordinates",
                 latitude: Number(dest.coords.lat.toFixed(4)),

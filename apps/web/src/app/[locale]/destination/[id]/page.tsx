@@ -376,7 +376,7 @@ export default async function DestinationPage({
     isPartOf: { "@id": "https://www.nakshiq.com#website" },
     publisher: { "@id": "https://www.nakshiq.com#organization" },
     ...(dest.elevation_m && { elevation: { "@type": "QuantitativeValue", value: dest.elevation_m, unitCode: "MTR" } }),
-    ...(dest.coords && {
+    ...(typeof dest.coords?.lat === "number" && typeof dest.coords?.lng === "number" && {
       geo: { "@type": "GeoCoordinates", latitude: dest.coords.lat, longitude: dest.coords.lng },
     }),
     containedInPlace: {

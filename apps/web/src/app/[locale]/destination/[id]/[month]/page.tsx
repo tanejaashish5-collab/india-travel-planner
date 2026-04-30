@@ -236,20 +236,33 @@ async function getMonthData(id: string, month: string) {
 
   const monthNum = MONTH_NUMBER[month];
 
-  // Destination core data
-  const { data: dest, error } = await supabase
-    .from("destinations")
-    .select(`
-      id, name, tagline, difficulty, elevation_m, budget_tier, best_months, coords, content_reviewed_at,
-      state:states(id, name),
-      kids_friendly(*),
-      confidence_cards(*),
-      destination_months(*)
-    `)
-    .eq("id", id)
-    .single();
+  // Destination core data — note we drop the raw `coords` column (PostGIS
+  // GEOGRAPHY arrives as a WKB hex string from PostgREST, useless for JSON-LD)
+  // and pull lat/lng from the destinations_with_coords view in parallel.
+  const [{ data: dest, error }, { data: coordRow }] = await Promise.all([
+    supabase
+      .from("destinations")
+      .select(`
+        id, name, tagline, difficulty, elevation_m, budget_tier, best_months, content_reviewed_at,
+        state:states(id, name),
+        kids_friendly(*),
+        confidence_cards(*),
+        destination_months(*)
+      `)
+      .eq("id", id)
+      .single(),
+    supabase
+      .from("destinations_with_coords")
+      .select("lat, lng")
+      .eq("id", id)
+      .single(),
+  ]);
 
   if (error || !dest) return null;
+  (dest as any).coords =
+    coordRow && typeof coordRow.lat === "number" && typeof coordRow.lng === "number"
+      ? { lat: coordRow.lat, lng: coordRow.lng }
+      : null;
 
   // Current month data
   const allMonths = (dest.destination_months as any[]) ?? [];
@@ -344,7 +357,7 @@ export default async function DestinationMonthPage({
       "@type": "TouristDestination",
       name: destination.name,
       url: destHubUrl,
-      ...((destination as any).coords && {
+      ...(typeof (destination as any).coords?.lat === "number" && typeof (destination as any).coords?.lng === "number" && {
         geo: {
           "@type": "GeoCoordinates",
           latitude: (destination as any).coords.lat,
