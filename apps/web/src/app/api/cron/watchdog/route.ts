@@ -58,6 +58,17 @@ export async function GET(req: NextRequest) {
   const now = new Date();
   const monday = isMondayIST(now);
 
+  // First-run guard. Without it, the very first watchdog fire after deploy
+  // would alert "prewarm-next-month MISSING" / "news-sweep MISSING" simply
+  // because those monthly crons haven't fired yet — false positive that
+  // teaches you to ignore the alert. We detect first-run by the absence
+  // of any prior watchdog row in ops_reports and skip emails this time.
+  const { count: priorWatchdogRuns } = await supabase
+    .from("ops_reports")
+    .select("*", { count: "exact", head: true })
+    .eq("job", "watchdog");
+  const isFirstRun = (priorWatchdogRuns ?? 0) === 0;
+
   // For each tracked job, fetch the most recent ops_reports row and
   // compute days-since. We use a separate query per job rather than one
   // window function because Supabase JS doesn't expose DISTINCT ON cleanly.
@@ -105,11 +116,13 @@ export async function GET(req: NextRequest) {
     ok: overall === "ok",
   });
 
-  // Email sends — only on degraded OR Monday digest.
+  // Email sends — only on degraded OR Monday digest. Skip on first run
+  // (see priorWatchdogRuns guard above) so brand-new monthly crons don't
+  // trigger spurious "MISSING" alerts before they've had a chance to fire.
   let alertEmailed = false;
   let digestEmailed = false;
   const resend = getResend();
-  if (resend && degraded.length > 0) {
+  if (resend && degraded.length > 0 && !isFirstRun) {
     try {
       await resend.emails.send({
         from: FROM_ADDRESS,
@@ -124,7 +137,7 @@ export async function GET(req: NextRequest) {
       console.error("[watchdog] alert email failed:", err?.message);
     }
   }
-  if (resend && monday) {
+  if (resend && monday && !isFirstRun) {
     try {
       await resend.emails.send({
         from: FROM_ADDRESS,
@@ -145,6 +158,7 @@ export async function GET(req: NextRequest) {
     overall,
     degraded_count: degraded.length,
     monday_digest: monday,
+    first_run: isFirstRun,
     alert_emailed: alertEmailed,
     digest_emailed: digestEmailed,
     health,
