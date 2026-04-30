@@ -51,6 +51,16 @@ export function AskNakshIQ({ hideTrigger = false }: { hideTrigger?: boolean } = 
     return () => window.removeEventListener(ASK_NAKSHIQ_OPEN_EVENT, onOpen);
   }, []);
 
+  // Esc closes the chat — standard dialog behaviour users expect.
+  useEffect(() => {
+    if (!open) return;
+    function onKey(e: KeyboardEvent) {
+      if (e.key === "Escape") setOpen(false);
+    }
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [open]);
+
   async function sendMessage(text?: string) {
     const question = (text || input).trim();
     if (!question || loading) return;
@@ -160,6 +170,16 @@ export function AskNakshIQ({ hideTrigger = false }: { hideTrigger?: boolean } = 
                 className="text-[10px] text-muted-foreground hover:text-foreground px-2 py-1 rounded-md hover:bg-muted transition-colors"
               >
                 Clear
+              </button>
+              <button
+                onClick={() => setOpen(false)}
+                aria-label="Close Ask NakshIQ"
+                className="ml-1 inline-flex h-7 w-7 items-center justify-center rounded-md text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
+              >
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M18 6 6 18" />
+                  <path d="m6 6 12 12" />
+                </svg>
               </button>
             </div>
 
