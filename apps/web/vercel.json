@@ -25,6 +25,10 @@
     {
       "path": "/api/cron/news-sweep",
       "schedule": "0 1 1 * *"
+    },
+    {
+      "path": "/api/cron/prewarm-next-month",
+      "schedule": "0 1 28 * *"
     }
   ]
 }
