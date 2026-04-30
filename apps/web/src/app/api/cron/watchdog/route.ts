@@ -153,6 +153,25 @@ export async function GET(req: NextRequest) {
     }
   }
 
+  // External heartbeat. If Healthchecks.io doesn't see this ping by the
+  // expected time, THEY email the user — covers the case where the
+  // watchdog itself fails silently (Vercel infra, deploy regression, etc.).
+  // Fire-and-forget; never let a heartbeat failure mask a real result.
+  let heartbeatPinged = false;
+  const hcUrl = process.env.HEALTHCHECKS_WATCHDOG_URL;
+  if (hcUrl) {
+    try {
+      const hcRes = await fetch(hcUrl, {
+        method: "POST",
+        body: JSON.stringify({ overall, degraded: degraded.length, first_run: isFirstRun }),
+        headers: { "content-type": "application/json" },
+      });
+      heartbeatPinged = hcRes.ok;
+    } catch (err: any) {
+      console.error("[watchdog] healthchecks ping failed:", err?.message);
+    }
+  }
+
   return NextResponse.json({
     ok: true,
     overall,
@@ -161,6 +180,7 @@ export async function GET(req: NextRequest) {
     first_run: isFirstRun,
     alert_emailed: alertEmailed,
     digest_emailed: digestEmailed,
+    heartbeat_pinged: heartbeatPinged,
     health,
   });
 }
