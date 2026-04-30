@@ -35,16 +35,16 @@
     "24_festival_anthem"
   ],
   "posted_today": {
-    "PdMu0": "2026-04-29",
-    "m8EAd": "2026-04-29",
+    "PdMu0": "2026-04-30",
+    "m8EAd": "2026-04-30",
     "m8EAd_reel": "2026-04-30",
     "PdMu0_reel": "2026-04-30",
     "4QL0i_reel": "2026-04-19",
     "m8EAd_canva": "2026-04-26",
     "PdMu0_canva": "2026-04-26",
-    "m8EAd_evening": "2026-04-29",
+    "m8EAd_evening": "2026-04-30",
     "m8EAd_evening_story": "2026-04-29",
-    "PdMu0_evening": "2026-04-29",
+    "PdMu0_evening": "2026-04-30",
     "m8EAd_yt_short": "2026-04-30",
     "m8EAd_yt_short_count": 2,
     "jUmP2_yt_short": "2026-04-20",
@@ -78,7 +78,7 @@
     "GAh5p_yt_short": "2026-04-30",
     "GAh5p_yt_short_count": 2
   },
-  "last_sync": "2026-04-30T07:14:19.898926+00:00",
+  "last_sync": "2026-04-30T13:08:43.516720+00:00",
   "posted_destinations": [
     {
       "destination_id": "pahalgam",
@@ -447,6 +447,10 @@
     {
       "destination_id": "mcleodganj",
       "date": "2026-04-29"
+    },
+    {
+      "destination_id": "yuksom",
+      "date": "2026-04-30"
     }
   ],
   "posted_formats": {
@@ -465,7 +469,8 @@
       "score_card",
       "reality_check",
       "skip_list",
-      "collection_spotlight"
+      "collection_spotlight",
+      "festival_alert"
     ],
     "PdMu0": [
       "monthly_forecast",
@@ -485,7 +490,8 @@
       "score_card",
       "reality_check",
       "skip_list",
-      "collection_spotlight"
+      "collection_spotlight",
+      "festival_alert"
     ]
   },
   "post_log": [
@@ -897,6 +903,26 @@
       "destination": "pahalgam",
       "format": "collection_spotlight",
       "has_media": true
+    },
+    {
+      "timestamp": "2026-04-30T13:09:42.686830+00:00",
+      "date": "2026-04-30",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "bzcsT",
+      "destination": "yuksom",
+      "format": "festival_alert",
+      "has_media": true
+    },
+    {
+      "timestamp": "2026-04-30T13:10:01.357154+00:00",
+      "date": "2026-04-30",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "xymP8",
+      "destination": "yuksom",
+      "format": "festival_alert",
+      "has_media": true
     }
   ],
   "theme_usage": {
@@ -997,6 +1023,9 @@
       "pahalgam": [
         "2026-04-27",
         "2026-04-29"
+      ],
+      "yuksom": [
+        "2026-04-30"
       ]
     },
     "reel_formats": {
@@ -1132,6 +1161,9 @@
       ],
       "almora": [
         "2026-04-28"
+      ],
+      "yuksom": [
+        "2026-04-30"
       ]
     },
     "festivals": {
@@ -1140,6 +1172,9 @@
       ],
       "ef0324e9-c7ac-4c7d-a579-3b1e3f169890": [
         "2026-04-23"
+      ],
+      "b674ab84-34ac-45be-a87b-7bbd01239138": [
+        "2026-04-30"
       ]
     },
     "moat_angles": {
@@ -1249,6 +1284,9 @@
       ],
       "after-dark-experiences": [
         "2026-04-29"
+      ],
+      "andaman-diving-snorkeling": [
+        "2026-04-30"
       ]
     },
     "reel_map_formats": {
@@ -1271,7 +1309,8 @@
       "flow_0029_95e0edf7.jpg": [
         "2026-04-29"
       ]
-    }
+    },
+    "collection_carousel_dests:andaman-diving-snorkeling": {}
   },
   "infographic": {
     "last_topic_idx": 2,
@@ -1282,5 +1321,9 @@
     "HP": [
       "2026-04-21"
     ]
+  },
+  "last_picked": {
+    "collection": "andaman-diving-snorkeling",
+    "shared_best": "yuksom"
   }
 }

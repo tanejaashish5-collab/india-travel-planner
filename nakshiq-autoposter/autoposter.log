@@ -5600,3 +5600,38 @@ requests.exceptions.HTTPError: 401 Client Error: UNAUTHORIZED for url: https://a
 2026-04-30 12:03:04  INFO      YT Short posted: format=before_after, music=24_festival_anthem
 2026-04-30 12:03:04  INFO      State saved. YT Short run complete.
 2026-04-30 12:03:04  INFO      ════════════════════════════════════════════════════════════
+2026-04-30 13:08:34  INFO      ════════════════════════════════════════════════════════════
+2026-04-30 13:08:34  INFO      Nakshiq Autoposter · EVENING · 2026-04-30 · weekday=3
+2026-04-30 13:08:34  INFO      ════════════════════════════════════════════════════════════
+2026-04-30 13:08:34  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-04-30 13:08:43  INFO      Synced → 20 destinations · 0 traps · 0 articles · total catalog=491
+2026-04-30 13:08:44  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-04-30 13:08:44  INFO      Formats — IG: festival_alert  ·  FB: festival_alert  ·  Story: collection_spotlight
+2026-04-30 13:08:44  INFO      Used destinations (14d): 56
+2026-04-30 13:08:44  INFO      Collection locked: Andaman Diving & Snorkeling (17/20 never featured)
+2026-04-30 13:08:44  INFO      Festival locked: Guru Shikhar Fair (18/20 never featured)
+2026-04-30 13:08:51  INFO      Shared best destination locked: Yuksom
+2026-04-30 13:08:51  INFO      Carousel locked (collection_spotlight): no valid images found
+2026-04-30 13:08:51  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-04-30 13:08:51  INFO      [instagram/nakshiq] Generating festival_alert post...
+2026-04-30 13:08:51  INFO      [instagram/nakshiq] Caption ready (379 chars, dest=yuksom)
+2026-04-30 13:08:51  INFO      [instagram/nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-04-30 13:08:51  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/yuksom.mp4?v=20260430
+2026-04-30 13:08:52  INFO          Requesting upload URL for yuksom.mp4 (13,102,094 bytes, video/mp4)
+2026-04-30 13:08:53  INFO          Uploading to R2 (timeout=300s)...
+2026-04-30 13:08:56  INFO          R2 PUT OK. Confirming...
+2026-04-30 13:08:57  INFO          Media ready: eSDhr (13,102,094 bytes · yuksom.mp4)
+2026-04-30 13:08:57  INFO      [instagram/nakshiq] Publishing Reel...
+2026-04-30 13:09:42  INFO      [instagram/nakshiq] ✅ Published · Outstand=bzcsT · Platform=18086833421621850
+2026-04-30 13:09:42  INFO      [facebook/Nakshiq] Generating festival_alert post...
+2026-04-30 13:09:42  INFO      [facebook/Nakshiq] Caption ready (379 chars, dest=yuksom)
+2026-04-30 13:09:42  INFO      [facebook/Nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-04-30 13:09:42  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/yuksom.mp4?v=20260430
+2026-04-30 13:09:43  INFO          Requesting upload URL for yuksom.mp4 (13,102,094 bytes, video/mp4)
+2026-04-30 13:09:44  INFO          Uploading to R2 (timeout=300s)...
+2026-04-30 13:09:45  INFO          R2 PUT OK. Confirming...
+2026-04-30 13:09:46  INFO          Media ready: ikLYB (13,102,094 bytes · yuksom.mp4)
+2026-04-30 13:09:46  INFO      [facebook/Nakshiq] Publishing Reel...
+2026-04-30 13:10:01  INFO      [facebook/Nakshiq] ✅ Published · Outstand=xymP8 · Platform=26750064634623680
+2026-04-30 13:10:01  INFO      State saved. Run complete.
+2026-04-30 13:10:01  INFO      ════════════════════════════════════════════════════════════
