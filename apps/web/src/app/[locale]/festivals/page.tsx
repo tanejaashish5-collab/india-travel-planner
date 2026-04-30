@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const supabase = createClient(url, key);
   const { data } = await supabase
     .from("festivals")
-    .select("*, destinations(name)")
+    .select("*, destinations(name, state_id)")
     .order("month")
     .order("name");
 
