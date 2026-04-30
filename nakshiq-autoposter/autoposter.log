@@ -5496,3 +5496,27 @@ requests.exceptions.HTTPError: 401 Client Error: UNAUTHORIZED for url: https://a
 2026-04-29 19:49:28  INFO      
 Date range: 2026-04-15 → 2026-04-29
 2026-04-29 19:49:28  INFO      ════════════════════════════════════════════════════════════
+2026-04-30 06:18:05  INFO      ════════════════════════════════════════════════════════════
+2026-04-30 06:18:05  INFO      Nakshiq Autoposter · REEL · 2026-04-30 · weekday=3
+2026-04-30 06:18:05  INFO      ════════════════════════════════════════════════════════════
+2026-04-30 06:18:05  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-04-30 06:18:14  INFO      Synced → 20 destinations · 0 traps · 0 articles · total catalog=491
+2026-04-30 06:18:14  INFO      Format: seasonal_shift | Data: {'dest_name': 'Bir Billing', 'dest_slug': 'bir-billing', 'now_month': 'April', 'now_score': 5, 'future_month': 'July', 'future_score': 2}
+2026-04-30 06:18:26  INFO      Reel rendered: reel_seasonal_shift_bir-billing.mp4 (3394 KB)
+2026-04-30 06:18:26  INFO          Requesting upload URL for reel_seasonal_shift_reel_seasonal_shift_bir-billing.mp4 (3,476,117 bytes, video/mp4)
+2026-04-30 06:18:28  INFO          Uploading to R2 (timeout=300s)...
+2026-04-30 06:18:29  INFO          R2 PUT OK. Confirming...
+2026-04-30 06:18:30  INFO          Media ready: DCACo (3,476,117 bytes · reel_seasonal_shift_reel_seasonal_shift_bir-billing.mp4)
+2026-04-30 06:18:30  INFO      Video uploaded: reel_seasonal_shift_reel_seasonal_shift_bir-billing.mp4
+2026-04-30 06:18:31  INFO      [youtube/@naksh-iq] Publishing reel (seasonal_shift)...
+2026-04-30 06:18:34  INFO      [youtube/@naksh-iq] Outstand accepted (post_id=r3qk4), confirming...
+2026-04-30 06:18:40  INFO      [youtube/@naksh-iq] ✅ Reel published · Outstand=r3qk4 · Platform=qEidPQMY-cg
+2026-04-30 06:18:40  INFO      [instagram/nakshiq] Publishing reel (seasonal_shift)...
+2026-04-30 06:18:43  INFO      [instagram/nakshiq] Outstand accepted (post_id=KYvR9), confirming...
+2026-04-30 06:19:19  INFO      [instagram/nakshiq] ✅ Reel published · Outstand=KYvR9 · Platform=18074600672642690
+2026-04-30 06:19:19  INFO      [facebook/Nakshiq] Publishing reel (seasonal_shift)...
+2026-04-30 06:19:21  INFO      [facebook/Nakshiq] Outstand accepted (post_id=dlZQO), confirming...
+2026-04-30 06:19:33  INFO      [facebook/Nakshiq] ✅ Reel published · Outstand=dlZQO · Platform=976147714871802
+2026-04-30 06:19:33  INFO      Theme tracker updated: format=seasonal_shift
+2026-04-30 06:19:33  INFO      State saved. Reel run complete.
+2026-04-30 06:19:33  INFO      ════════════════════════════════════════════════════════════
