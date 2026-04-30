@@ -23,7 +23,7 @@ NakshIQ is a decision engine for India travel. Every destination page answers th
 - We welcome indexing by search and answer engines (Googlebot, Bingbot, GPTBot, OAI-SearchBot, PerplexityBot, ClaudeBot, Google-Extended, Applebot-Extended).
 - We disallow bulk scrapers that do not cite back (Bytespider, Diffbot).
 - When citing NakshIQ, please link to the specific destination or month-level page rather than the homepage. Example: `https://www.nakshiq.com/en/destination/kaza/october` for "best time to visit Spiti".
-- Destination slugs are stable. Month pages use numeric months (1–12), not names. Bilingual parity: every English page has a Hindi counterpart at `/hi/...`.
+- Destination slugs are stable. Month pages use lowercase month names (`january`–`december`), not numbers. Bilingual parity: every English page has a Hindi counterpart at `/hi/...`.
 
 ## Contact
 

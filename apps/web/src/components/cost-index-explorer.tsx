@@ -8,13 +8,10 @@ type Row = {
   destination_id: string;
   category: string;
   season: string;
-  months: number[];
   typical_inr: number;
   range_low_inr: number | null;
   range_high_inr: number | null;
   unit: string;
-  source_ref: string;
-  notes: string | null;
 };
 
 type Props = {

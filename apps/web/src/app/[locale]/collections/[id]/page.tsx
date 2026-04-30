@@ -17,10 +17,21 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   if (!url || !key) return {
   };
   const supabase = createClient(url, key);
-  const { data } = await supabase.from("collections").select("name, description").eq("id", id).single();
+  const { data } = await supabase
+    .from("collections")
+    .select("name, description")
+    .eq("id", id)
+    .single();
   if (!data) return {};
+  // Localize the section label even though the curated collection names
+  // (e.g. "Best Beaches in India") live English-only in the DB. No
+  // translations column exists on `collections` yet — back-translating those
+  // 90+ rows is a content-team task. Until then this at least swaps the
+  // "— Collection" suffix to Hindi so the title isn't entirely English.
+  const isHi = locale === "hi";
+  const collectionLabel = isHi ? "संग्रह" : "Collection";
   return {
-    title: `${data.name} — Collection`,
+    title: `${data.name} — ${collectionLabel}`,
     description: data.description,
     ...localeAlternates(locale, `/collections/${id}`),
   };

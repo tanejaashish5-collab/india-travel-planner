@@ -75,6 +75,38 @@ export function getRegionNameForState(stateSlug: string): string | null {
   return null;
 }
 
+// Hindi (Devanagari) state names. Keyed by the same English-slug key used in
+// STATE_MAP. The states table has no translations column today, so titles +
+// breadcrumbs that need a Hindi state name read from this map. Update both
+// maps together when adding a new state.
+export const STATE_NAME_HI: Record<string, string> = {
+  "himachal-pradesh": "हिमाचल प्रदेश", "uttarakhand": "उत्तराखंड",
+  "jammu-kashmir": "जम्मू और कश्मीर", "ladakh": "लद्दाख",
+  "rajasthan": "राजस्थान", "punjab": "पंजाब",
+  "uttar-pradesh": "उत्तर प्रदेश", "sikkim": "सिक्किम",
+  "west-bengal": "पश्चिम बंगाल", "madhya-pradesh": "मध्य प्रदेश",
+  "delhi": "दिल्ली", "chandigarh": "चंडीगढ़",
+  "arunachal-pradesh": "अरुणाचल प्रदेश", "assam": "असम",
+  "bihar": "बिहार", "chhattisgarh": "छत्तीसगढ़",
+  "haryana": "हरियाणा", "jharkhand": "झारखंड",
+  "manipur": "मणिपुर", "meghalaya": "मेघालय",
+  "mizoram": "मिज़ोरम", "nagaland": "नागालैंड", "tripura": "त्रिपुरा",
+  "gujarat": "गुजरात", "maharashtra": "महाराष्ट्र",
+  "goa": "गोवा", "karnataka": "कर्नाटक",
+  "kerala": "केरल", "tamil-nadu": "तमिल नाडु",
+  "andhra-pradesh": "आंध्र प्रदेश", "telangana": "तेलंगाना",
+  "odisha": "ओडिशा",
+  "andaman-nicobar": "अंडमान और निकोबार द्वीप समूह",
+  "lakshadweep": "लक्षद्वीप", "puducherry": "पुडुचेरी",
+  "daman-diu": "दमन और दीव",
+};
+
+/** Localized state name. Falls back to STATE_MAP English when Hindi missing. */
+export function getStateName(stateSlug: string, locale: string): string | undefined {
+  if (locale === "hi") return STATE_NAME_HI[stateSlug] ?? STATE_MAP[stateSlug];
+  return STATE_MAP[stateSlug];
+}
+
 export const MONTH_MAP: Record<string, { num: number; name: string }> = {
   january: { num: 1, name: "January" }, february: { num: 2, name: "February" },
   march: { num: 3, name: "March" }, april: { num: 4, name: "April" },

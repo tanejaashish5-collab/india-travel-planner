@@ -10,7 +10,11 @@ import { NextResponse } from "next/server";
 export const dynamic = "force-dynamic";
 
 const BASE = "https://www.nakshiq.com";
-const CHUNK_IDS = ["0", "1", "2", "3", "4", "5"] as const;
+// Chunk 5 (answered Q&A URLs) is excluded from the index until the questions
+// table has at least one row with status='answered'. Until then chunk 5 emits
+// an empty <urlset>, which Google logs as a sitemap warning. Re-add "5" once
+// the moderation queue starts shipping answered Q&As.
+const CHUNK_IDS = ["0", "1", "2", "3", "4"] as const;
 
 export async function GET() {
   const now = new Date().toISOString();

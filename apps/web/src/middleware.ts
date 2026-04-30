@@ -125,6 +125,16 @@ export default function middleware(request: NextRequest) {
     return NextResponse.redirect(new URL(`/${locale}/state/${stateId}`, request.url), 301);
   }
 
+  // /(en|hi)/regions → /{locale}/states. The plural index page was orphaned
+  // when the region→state route refactor moved /region/{slug} to /state/{slug}
+  // and added /states (plural index). /regions never paired with a redirect
+  // and now 404s — /states is the consolidated index.
+  const regionsIndexMatch = request.nextUrl.pathname.match(/^\/(en|hi)\/regions\/?$/);
+  if (regionsIndexMatch) {
+    const [, locale] = regionsIndexMatch;
+    return NextResponse.redirect(new URL(`/${locale}/states`, request.url), 301);
+  }
+
   // /(en|hi)/region/northeast(/{anything})? → /{locale}/india/northeast.
   // "northeast" isn't a region row (sub-regions only), and isn't a state slug
   // (it's a regional cluster). The /india/northeast page is the existing

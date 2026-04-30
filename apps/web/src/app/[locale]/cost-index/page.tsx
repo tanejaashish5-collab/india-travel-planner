@@ -45,13 +45,10 @@ type CostRow = {
   destination_id: string;
   category: string;
   season: string;
-  months: number[];
   typical_inr: number;
   range_low_inr: number | null;
   range_high_inr: number | null;
   unit: string;
-  source_ref: string;
-  notes: string | null;
 };
 
 async function getData() {
@@ -62,14 +59,17 @@ async function getData() {
   const supabase = createClient(url, key);
 
   // Paginate through the full cost dataset — it's ~7,500 rows, past the
-  // 1000-row default.
+  // 1000-row default. Trim payload fields to only what the client explorer
+  // renders: months / notes / source_ref are unused in the UI and bloated
+  // the page payload to 3.6MB. Citation tags still live in the DB row for
+  // anyone querying the dataset directly.
   const all: CostRow[] = [];
   const page = 1000;
   let from = 0;
   while (true) {
     const { data, error } = await supabase
       .from("destination_costs")
-      .select("destination_id, category, season, months, typical_inr, range_low_inr, range_high_inr, unit, source_ref, notes")
+      .select("destination_id, category, season, typical_inr, range_low_inr, range_high_inr, unit")
       .range(from, from + page - 1);
     if (error) break;
     all.push(...((data as CostRow[]) ?? []));

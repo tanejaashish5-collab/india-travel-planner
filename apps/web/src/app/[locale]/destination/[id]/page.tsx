@@ -74,7 +74,7 @@ export async function generateMetadata({
   const supabase = createClient(url, key);
   const { data } = await supabase
     .from("destinations")
-    .select("name, tagline, difficulty, elevation_m, translations, state:states(name)")
+    .select("name, tagline, difficulty, elevation_m, translations, state_id, state:states(name)")
     .eq("id", id)
     .single();
 
@@ -83,12 +83,23 @@ export async function generateMetadata({
   const name = (locale !== "en" && (data.translations as any)?.[locale]?.name) || data.name;
   const tagline = (locale !== "en" && (data.translations as any)?.[locale]?.tagline) || data.tagline;
   const stateData = data.state as any;
-  const stateName = Array.isArray(stateData) ? stateData[0]?.name : stateData?.name;
+  const enStateName = Array.isArray(stateData) ? stateData[0]?.name : stateData?.name;
+  // Hindi state names live in STATE_NAME_HI (lib/seo-maps) since the states
+  // table has no translations column. getStateName falls back to English.
+  const { getStateName } = await import("@/lib/seo-maps");
+  const stateName = (locale === "hi" && data.state_id ? getStateName(data.state_id, "hi") : enStateName) ?? enStateName;
 
+  const isHi = locale === "hi";
   const title = stateName
-    ? `${name}, ${stateName}: Best Time to Visit & Weather`
-    : `${name}: Best Time to Visit, Weather & Travel Guide`;
-  const description = `Plan your trip to ${name}${stateName ? `, ${stateName}` : ""}. ${tagline} Monthly weather scores, kids safety ratings, road conditions, and real infrastructure data — not sponsored content.`.slice(0, 160);
+    ? (isHi
+        ? `${name}, ${stateName}: सर्वोत्तम यात्रा समय और मौसम`
+        : `${name}, ${stateName}: Best Time to Visit & Weather`)
+    : (isHi
+        ? `${name}: सर्वोत्तम यात्रा समय, मौसम और यात्रा गाइड`
+        : `${name}: Best Time to Visit, Weather & Travel Guide`);
+  const description = isHi
+    ? `${name}${stateName ? `, ${stateName}` : ""} की यात्रा की योजना बनाएं। ${tagline ?? ""} मासिक मौसम स्कोर, बच्चों की सुरक्षा रेटिंग, सड़क की स्थिति, और वास्तविक बुनियादी ढाँचे का डेटा — विज्ञापन नहीं।`.slice(0, 160)
+    : `Plan your trip to ${name}${stateName ? `, ${stateName}` : ""}. ${tagline} Monthly weather scores, kids safety ratings, road conditions, and real infrastructure data — not sponsored content.`.slice(0, 160);
   const canonicalUrl = `https://www.nakshiq.com/${locale}/destination/${id}`;
   const imageUrl = destinationImage(id);
 

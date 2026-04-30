@@ -17,7 +17,7 @@ import { lazy, Suspense } from "react";
 import { ConfidenceCardComponent } from "./confidence-card";
 import { destinationImage } from "@/lib/image-url";
 import { videoSrc } from "@/lib/video-url";
-import { getRegionNameForState } from "@/lib/seo-maps";
+import { getRegionNameForState, getStateName } from "@/lib/seo-maps";
 
 const DestinationMap = lazy(() => import("./destination-map").then((mod) => ({ default: mod.DestinationMap })));
 import { KidsBadge } from "./kids-badge";
@@ -109,7 +109,10 @@ export function DestinationDetail({ dest }: { dest: any }) {
 
   const kf = Array.isArray(dest.kids_friendly) ? dest.kids_friendly[0] : dest.kids_friendly;
   const cc = Array.isArray(dest.confidence_cards) ? dest.confidence_cards[0] : dest.confidence_cards;
-  const stateName = Array.isArray(dest.state) ? dest.state[0]?.name : dest.state?.name;
+  const enStateName = Array.isArray(dest.state) ? dest.state[0]?.name : dest.state?.name;
+  // Hindi state name from seo-maps when locale=hi (states table has no
+  // translations column). Falls back to English when slug missing from map.
+  const stateName = (locale === "hi" && dest.state_id ? getStateName(dest.state_id, "hi") : enStateName) ?? enStateName;
   const months = (dest.destination_months ?? []).sort((a: any, b: any) => a.month - b.month);
   const subs = dest.sub_destinations ?? [];
   const gems = dest.hidden_gems ?? [];
@@ -794,7 +797,7 @@ export function DestinationDetail({ dest }: { dest: any }) {
                   <section id="section-stays">
                     <EditorsPicks
                       destinationName={dest.name}
-                      stateName={Array.isArray(dest.state) ? dest.state[0]?.name : dest.state?.name}
+                      stateName={stateName}
                       picks={dest.editor_stay_picks}
                       intelligence={dest.stay_intelligence}
                     />

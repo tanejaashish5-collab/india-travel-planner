@@ -12,12 +12,17 @@ export function Footer({ stats }: { stats?: { destinations: number; places: numb
 
   return (
     <footer className="relative mt-24 overflow-hidden">
-      {/* Background image with heavy overlay */}
+      {/* Background image with heavy overlay — decorative, never above the
+          fold; lazy + async-decode keeps the footer image off the main thread
+          on first paint. */}
       <div className="absolute inset-0">
         <img
           src="/images/destinations/pangong-lake.jpg"
-          alt="Pangong Lake panoramic background"
+          alt=""
           role="presentation"
+          aria-hidden="true"
+          loading="lazy"
+          decoding="async"
           className="w-full h-full object-cover opacity-[0.07]"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/95 to-background/80" />
