@@ -5778,3 +5778,20 @@ Date range: 2026-04-15 → 2026-04-30
 2026-05-01 07:43:50  INFO      Infographic state updated: topic=camping, theme=noir
 2026-05-01 07:43:50  INFO      State saved. Infographic run complete.
 2026-05-01 07:43:50  INFO      ════════════════════════════════════════════════════════════
+2026-05-01 09:19:07  INFO      ════════════════════════════════════════════════════════════
+2026-05-01 09:19:07  INFO      Nakshiq Autoposter · UGC · 2026-05-01
+2026-05-01 09:19:07  INFO      ════════════════════════════════════════════════════════════
+2026-05-01 09:19:11  ERROR     UGC generation failed: 401 Client Error: UNAUTHORIZED for url: https://api.heygen.com/v3/users/me
+2026-05-01 09:19:11  ERROR     Traceback (most recent call last):
+  File "/home/runner/work/india-travel-planner/india-travel-planner/nakshiq-autoposter/autoposter.py", line 4939, in _run_ugc
+    result = generate_ugc(dry_run=dry_run)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/india-travel-planner/india-travel-planner/nakshiq-autoposter/ugc_gen.py", line 1551, in generate_ugc
+    balance = check_balance()
+              ^^^^^^^^^^^^^^^
+  File "/home/runner/work/india-travel-planner/india-travel-planner/nakshiq-autoposter/ugc_gen.py", line 1077, in check_balance
+    resp.raise_for_status()
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/requests/models.py", line 1028, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 401 Client Error: UNAUTHORIZED for url: https://api.heygen.com/v3/users/me
+
