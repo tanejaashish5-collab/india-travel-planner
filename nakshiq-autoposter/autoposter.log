@@ -5710,3 +5710,27 @@ requests.exceptions.HTTPError: 401 Client Error: UNAUTHORIZED for url: https://a
 2026-04-30 19:47:22  INFO      
 Date range: 2026-04-15 → 2026-04-30
 2026-04-30 19:47:22  INFO      ════════════════════════════════════════════════════════════
+2026-05-01 06:29:20  INFO      ════════════════════════════════════════════════════════════
+2026-05-01 06:29:20  INFO      Nakshiq Autoposter · REEL · 2026-05-01 · weekday=4
+2026-05-01 06:29:20  INFO      ════════════════════════════════════════════════════════════
+2026-05-01 06:29:20  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-05-01 06:29:24  INFO      Synced → 20 destinations · 0 traps · 0 articles · total catalog=491
+2026-05-01 06:29:24  INFO      Format: destination_reveal | Data: {'dest_name': 'Uttarkashi', 'dest_slug': 'uttarkashi', 'state_name': 'Uttarakhand', 'score': 5, 'tagline': 'The Kashi of the North — a riverside temple town that doubles as basecamp for serious Himalayan mountaineering and the Char Dham circuit.'}
+2026-05-01 06:29:29  INFO      Reel rendered: reel_destination_reveal_uttarkashi.mp4 (1227 KB)
+2026-05-01 06:29:29  INFO          Requesting upload URL for reel_destination_reveal_reel_destination_reveal_uttarkashi.mp4 (1,256,487 bytes, video/mp4)
+2026-05-01 06:29:30  INFO          Uploading to R2 (timeout=300s)...
+2026-05-01 06:29:31  INFO          R2 PUT OK. Confirming...
+2026-05-01 06:29:32  INFO          Media ready: EvSJA (1,256,487 bytes · reel_destination_reveal_reel_destination_reveal_uttarkashi.mp4)
+2026-05-01 06:29:32  INFO      Video uploaded: reel_destination_reveal_reel_destination_reveal_uttarkashi.mp4
+2026-05-01 06:29:33  INFO      [youtube/@naksh-iq] Publishing reel (destination_reveal)...
+2026-05-01 06:29:35  INFO      [youtube/@naksh-iq] Outstand accepted (post_id=82rUI), confirming...
+2026-05-01 06:29:41  INFO      [youtube/@naksh-iq] ✅ Reel published · Outstand=82rUI · Platform=s0k7gJ_ZKcg
+2026-05-01 06:29:41  INFO      [instagram/nakshiq] Publishing reel (destination_reveal)...
+2026-05-01 06:29:43  INFO      [instagram/nakshiq] Outstand accepted (post_id=HCcW5), confirming...
+2026-05-01 06:30:22  INFO      [instagram/nakshiq] ✅ Reel published · Outstand=HCcW5 · Platform=18314032654273896
+2026-05-01 06:30:22  INFO      [facebook/Nakshiq] Publishing reel (destination_reveal)...
+2026-05-01 06:30:24  INFO      [facebook/Nakshiq] Outstand accepted (post_id=IS4YX), confirming...
+2026-05-01 06:30:36  INFO      [facebook/Nakshiq] ✅ Reel published · Outstand=IS4YX · Platform=980829224486631
+2026-05-01 06:30:36  INFO      Theme tracker updated: format=destination_reveal
+2026-05-01 06:30:36  INFO      State saved. Reel run complete.
+2026-05-01 06:30:36  INFO      ════════════════════════════════════════════════════════════
