@@ -33,16 +33,16 @@
     "px_solarflex_chill"
   ],
   "posted_today": {
-    "PdMu0": "2026-04-30",
-    "m8EAd": "2026-04-30",
+    "PdMu0": "2026-05-01",
+    "m8EAd": "2026-05-01",
     "m8EAd_reel": "2026-05-01",
     "PdMu0_reel": "2026-05-01",
     "4QL0i_reel": "2026-04-19",
     "m8EAd_canva": "2026-04-26",
     "PdMu0_canva": "2026-04-26",
-    "m8EAd_evening": "2026-04-30",
+    "m8EAd_evening": "2026-05-01",
     "m8EAd_evening_story": "2026-04-29",
-    "PdMu0_evening": "2026-04-30",
+    "PdMu0_evening": "2026-05-01",
     "m8EAd_yt_short": "2026-05-01",
     "m8EAd_yt_short_count": 2,
     "jUmP2_yt_short": "2026-04-20",
@@ -76,7 +76,7 @@
     "GAh5p_yt_short": "2026-05-01",
     "GAh5p_yt_short_count": 2
   },
-  "last_sync": "2026-05-01T07:14:58.753941+00:00",
+  "last_sync": "2026-05-01T14:16:22.171349+00:00",
   "posted_destinations": [
     {
       "destination_id": "pahalgam",
@@ -449,6 +449,10 @@
     {
       "destination_id": "yuksom",
       "date": "2026-04-30"
+    },
+    {
+      "destination_id": "parvati-valley",
+      "date": "2026-05-01"
     }
   ],
   "posted_formats": {
@@ -468,7 +472,8 @@
       "reality_check",
       "skip_list",
       "collection_spotlight",
-      "festival_alert"
+      "festival_alert",
+      "score_card"
     ],
     "PdMu0": [
       "monthly_forecast",
@@ -489,7 +494,8 @@
       "reality_check",
       "skip_list",
       "collection_spotlight",
-      "festival_alert"
+      "festival_alert",
+      "score_card"
     ]
   },
   "post_log": [
@@ -921,6 +927,26 @@
       "destination": "yuksom",
       "format": "festival_alert",
       "has_media": true
+    },
+    {
+      "timestamp": "2026-05-01T14:17:20.496059+00:00",
+      "date": "2026-05-01",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "CdqSF",
+      "destination": "parvati-valley",
+      "format": "score_card",
+      "has_media": true
+    },
+    {
+      "timestamp": "2026-05-01T14:17:38.622044+00:00",
+      "date": "2026-05-01",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "V7ZnN",
+      "destination": "parvati-valley",
+      "format": "score_card",
+      "has_media": true
     }
   ],
   "theme_usage": {
@@ -1024,6 +1050,9 @@
       ],
       "yuksom": [
         "2026-04-30"
+      ],
+      "parvati-valley": [
+        "2026-05-01"
       ]
     },
     "reel_formats": {
@@ -1166,6 +1195,9 @@
       ],
       "yuksom": [
         "2026-04-30"
+      ],
+      "parvati-valley": [
+        "2026-05-01"
       ]
     },
     "festivals": {
@@ -1202,7 +1234,8 @@
         "2026-04-27"
       ],
       "adventurers": [
-        "2026-04-24"
+        "2026-04-24",
+        "2026-05-01"
       ],
       "families": [
         "2026-04-25"
@@ -1329,6 +1362,6 @@
   },
   "last_picked": {
     "collection": "andaman-diving-snorkeling",
-    "shared_best": "yuksom"
+    "shared_best": "parvati-valley"
   }
 }
