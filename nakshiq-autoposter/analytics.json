@@ -5888,7 +5888,151 @@
           "posted_url": ""
         }
       ]
+    },
+    {
+      "post_id": "cEm2L",
+      "created_at": "2026-05-02T14:09:33.625Z",
+      "content_type": "feed_post",
+      "format": "unknown",
+      "campaign": "score-card",
+      "platforms": [
+        {
+          "platform": "facebook",
+          "username": "Nakshiq",
+          "status": "published",
+          "error": null,
+          "posted_url": ""
+        }
+      ]
+    },
+    {
+      "post_id": "HC0n5",
+      "created_at": "2026-05-02T14:08:37.138Z",
+      "content_type": "feed_post",
+      "format": "unknown",
+      "campaign": "score-card",
+      "platforms": [
+        {
+          "platform": "instagram",
+          "username": "nakshiq",
+          "status": "failed",
+          "error": "Error publishing Instagram post: Failed to publish Instagram container: unknown - \"Container processing failed: ERROR\"",
+          "posted_url": ""
+        }
+      ]
+    },
+    {
+      "post_id": "gyw4x",
+      "created_at": "2026-05-02T12:10:23.465Z",
+      "content_type": "yt_short",
+      "format": "before",
+      "campaign": "",
+      "platforms": [
+        {
+          "platform": "instagram",
+          "username": "nakshiq",
+          "status": "published",
+          "error": null,
+          "posted_url": ""
+        }
+      ]
+    },
+    {
+      "post_id": "O9hIv",
+      "created_at": "2026-05-02T12:10:10.542Z",
+      "content_type": "yt_short",
+      "format": "before",
+      "campaign": "before-after",
+      "platforms": [
+        {
+          "platform": "youtube",
+          "username": "@naksh-iq",
+          "status": "published",
+          "error": null,
+          "posted_url": ""
+        }
+      ]
+    },
+    {
+      "post_id": "4hHGi",
+      "created_at": "2026-05-02T10:46:08.406Z",
+      "content_type": "flow_story",
+      "format": "unknown",
+      "campaign": "",
+      "platforms": [
+        {
+          "platform": "facebook",
+          "username": "Nakshiq",
+          "status": "published",
+          "error": null,
+          "posted_url": ""
+        }
+      ]
+    },
+    {
+      "post_id": "JLGz3",
+      "created_at": "2026-05-02T10:46:06.090Z",
+      "content_type": "flow_story",
+      "format": "unknown",
+      "campaign": "flow-story",
+      "platforms": [
+        {
+          "platform": "instagram",
+          "username": "nakshiq",
+          "status": "published",
+          "error": null,
+          "posted_url": ""
+        }
+      ]
+    },
+    {
+      "post_id": "LAzfV",
+      "created_at": "2026-05-02T05:56:55.789Z",
+      "content_type": "reel",
+      "format": "seasonal",
+      "campaign": "reel",
+      "platforms": [
+        {
+          "platform": "facebook",
+          "username": "Nakshiq",
+          "status": "published",
+          "error": null,
+          "posted_url": ""
+        }
+      ]
+    },
+    {
+      "post_id": "ugIrE",
+      "created_at": "2026-05-02T05:56:26.182Z",
+      "content_type": "reel",
+      "format": "seasonal",
+      "campaign": "reel",
+      "platforms": [
+        {
+          "platform": "instagram",
+          "username": "nakshiq",
+          "status": "published",
+          "error": null,
+          "posted_url": ""
+        }
+      ]
+    },
+    {
+      "post_id": "rkwY4",
+      "created_at": "2026-05-02T05:56:18.676Z",
+      "content_type": "reel",
+      "format": "seasonal",
+      "campaign": "reel",
+      "platforms": [
+        {
+          "platform": "youtube",
+          "username": "@naksh-iq",
+          "status": "published",
+          "error": null,
+          "posted_url": ""
+        }
+      ]
     }
   ],
-  "last_sync": "2026-05-01T19:24:53.670447"
+  "last_sync": "2026-05-02T19:14:44.902665"
 }

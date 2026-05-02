@@ -6132,3 +6132,55 @@ requests.exceptions.HTTPError: 401 Client Error: UNAUTHORIZED for url: https://a
 2026-05-02 15:55:21  INFO      [facebook/Nakshiq] Already posted reel today — skipping.
 2026-05-02 15:55:21  INFO      State saved. Reel run complete.
 2026-05-02 15:55:21  INFO      ════════════════════════════════════════════════════════════
+2026-05-02 19:14:38  INFO      ════════════════════════════════════════════════════════════
+2026-05-02 19:14:38  INFO      Nakshiq Autoposter · ANALYTICS SYNC · 2026-05-02
+2026-05-02 19:14:38  INFO      ════════════════════════════════════════════════════════════
+2026-05-02 19:14:44  INFO      Synced 9 new posts (total: 379)
+2026-05-02 19:14:44  INFO      ── Analytics Summary ──
+2026-05-02 19:14:44  INFO      Total posts tracked: 379
+2026-05-02 19:14:44  INFO      Successfully published: 304 | Failed: 71
+2026-05-02 19:14:44  INFO      
+2026-05-02 19:14:44  INFO      By content type:
+2026-05-02 19:14:44  INFO        feed_post: 118
+2026-05-02 19:14:44  INFO        reel: 107
+2026-05-02 19:14:44  INFO        yt_short: 102
+2026-05-02 19:14:44  INFO        canva_visual: 14
+2026-05-02 19:14:44  INFO        tourist_map: 14
+2026-05-02 19:14:44  INFO        infographic: 10
+2026-05-02 19:14:44  INFO        flow_story: 8
+2026-05-02 19:14:44  INFO        pomelli_visual: 6
+2026-05-02 19:14:44  INFO      
+2026-05-02 19:14:44  INFO      By format:
+2026-05-02 19:14:44  INFO        feed_post:unknown: 118
+2026-05-02 19:14:44  INFO        reel:seasonal: 42
+2026-05-02 19:14:44  INFO        reel:destination: 33
+2026-05-02 19:14:44  INFO        yt_short:listicle: 24
+2026-05-02 19:14:44  INFO        reel:map: 22
+2026-05-02 19:14:44  INFO        yt_short:did: 19
+2026-05-02 19:14:44  INFO        yt_short:before: 18
+2026-05-02 19:14:44  INFO        yt_short:mini: 17
+2026-05-02 19:14:44  INFO        canva_visual:unknown: 14
+2026-05-02 19:14:44  INFO        tourist_map:unknown: 14
+2026-05-02 19:14:44  INFO        yt_short:this: 13
+2026-05-02 19:14:44  INFO        yt_short:dont: 11
+2026-05-02 19:14:44  INFO        infographic:unknown: 10
+2026-05-02 19:14:44  INFO        flow_story:unknown: 8
+2026-05-02 19:14:44  INFO        reel:score: 6
+2026-05-02 19:14:44  INFO        pomelli_visual:unknown: 6
+2026-05-02 19:14:44  INFO        reel:pomelli: 4
+2026-05-02 19:14:44  INFO      
+2026-05-02 19:14:44  INFO      By platform:
+2026-05-02 19:14:44  INFO        instagram: 177
+2026-05-02 19:14:44  INFO        youtube: 100
+2026-05-02 19:14:44  INFO        facebook: 99
+2026-05-02 19:14:44  INFO      
+2026-05-02 19:14:44  INFO      YT Short format distribution:
+2026-05-02 19:14:44  INFO        listicle: 24 (24%)
+2026-05-02 19:14:44  INFO        did: 19 (19%)
+2026-05-02 19:14:44  INFO        before: 18 (18%)
+2026-05-02 19:14:44  INFO        mini: 17 (17%)
+2026-05-02 19:14:44  INFO        this: 13 (13%)
+2026-05-02 19:14:44  INFO        dont: 11 (11%)
+2026-05-02 19:14:44  INFO      
+Date range: 2026-04-15 → 2026-05-02
+2026-05-02 19:14:44  INFO      ════════════════════════════════════════════════════════════
