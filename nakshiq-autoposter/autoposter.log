@@ -6043,3 +6043,22 @@ requests.exceptions.HTTPError: 401 Client Error: UNAUTHORIZED for url: https://a
 2026-05-02 10:46:10  INFO      Theme tracker updated: flow_story_images=flow_0046_2e090b54.jpg
 2026-05-02 10:46:10  INFO      State saved. Flow Story run complete.
 2026-05-02 10:46:10  INFO      ════════════════════════════════════════════════════════════
+2026-05-02 11:15:19  INFO      ════════════════════════════════════════════════════════════
+2026-05-02 11:15:19  INFO      Nakshiq Autoposter · FLOW STORY · 2026-05-02 · weekday=5
+2026-05-02 11:15:19  INFO      ════════════════════════════════════════════════════════════
+2026-05-02 11:15:19  INFO      Library: 956 images (813 dest-matched, 143 generic)
+2026-05-02 11:15:22  INFO      Seasonal scores loaded: 100 destinations for month 5
+2026-05-02 11:15:22  INFO      Seasonal tiers: 5★=51 · 4★=69 · 3★=0 · low=0 · unscored=693
+2026-05-02 11:15:22  INFO      Picking from 5★ tier (has unused images)
+2026-05-02 11:15:22  INFO      Seasonal score: 5/5 for Gurudongmar Lake
+2026-05-02 11:15:22  INFO      Selected: flow_0062_3a3eb2ae.jpg → Gurudongmar Lake (Sikkim)
+2026-05-02 11:15:22  INFO          Requesting upload URL for flow_story_flow_0062_3a3eb2ae.jpg (627,423 bytes, image/jpeg)
+2026-05-02 11:15:23  INFO          Uploading to R2 (timeout=120s)...
+2026-05-02 11:15:24  INFO          R2 PUT OK. Confirming...
+2026-05-02 11:15:25  INFO          Media ready: Ksg59 (627,423 bytes · flow_story_flow_0062_3a3eb2ae.jpg)
+2026-05-02 11:15:25  INFO      Image uploaded: flow_story_flow_0062_3a3eb2ae.jpg (612 KB)
+2026-05-02 11:15:26  INFO      [youtube/@naksh-iq] Skipping flow story (YouTube only accepts video).
+2026-05-02 11:15:26  INFO      [instagram/nakshiq] Already posted flow story today — skipping.
+2026-05-02 11:15:26  INFO      [facebook/Nakshiq] Already posted flow story today — skipping.
+2026-05-02 11:15:26  INFO      State saved. Flow Story run complete.
+2026-05-02 11:15:26  INFO      ════════════════════════════════════════════════════════════
