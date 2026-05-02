@@ -6021,3 +6021,25 @@ Date range: 2026-04-15 → 2026-05-01
     raise HTTPError(http_error_msg, response=self)
 requests.exceptions.HTTPError: 401 Client Error: UNAUTHORIZED for url: https://api.heygen.com/v3/users/me
 
+2026-05-02 10:45:57  INFO      ════════════════════════════════════════════════════════════
+2026-05-02 10:45:57  INFO      Nakshiq Autoposter · FLOW STORY · 2026-05-02 · weekday=5
+2026-05-02 10:45:57  INFO      ════════════════════════════════════════════════════════════
+2026-05-02 10:45:57  INFO      Library: 956 images (813 dest-matched, 143 generic)
+2026-05-02 10:46:01  INFO      Seasonal scores loaded: 100 destinations for month 5
+2026-05-02 10:46:01  INFO      Seasonal tiers: 5★=51 · 4★=69 · 3★=0 · low=0 · unscored=693
+2026-05-02 10:46:01  INFO      Picking from 5★ tier (has unused images)
+2026-05-02 10:46:01  INFO      Seasonal score: 5/5 for Yuksom
+2026-05-02 10:46:01  INFO      Selected: flow_0046_2e090b54.jpg → Yuksom (Sikkim)
+2026-05-02 10:46:01  INFO          Requesting upload URL for flow_story_flow_0046_2e090b54.jpg (706,271 bytes, image/jpeg)
+2026-05-02 10:46:02  INFO          Uploading to R2 (timeout=120s)...
+2026-05-02 10:46:03  INFO          R2 PUT OK. Confirming...
+2026-05-02 10:46:04  INFO          Media ready: xQ7A8 (706,271 bytes · flow_story_flow_0046_2e090b54.jpg)
+2026-05-02 10:46:04  INFO      Image uploaded: flow_story_flow_0046_2e090b54.jpg (689 KB)
+2026-05-02 10:46:05  INFO      [youtube/@naksh-iq] Skipping flow story (YouTube only accepts video).
+2026-05-02 10:46:05  INFO      [instagram/nakshiq] Publishing flow story: Yuksom...
+2026-05-02 10:46:07  INFO      [instagram/nakshiq] Flow story posted successfully!
+2026-05-02 10:46:07  INFO      [facebook/Nakshiq] Publishing flow story: Yuksom...
+2026-05-02 10:46:10  INFO      [facebook/Nakshiq] Flow story posted successfully!
+2026-05-02 10:46:10  INFO      Theme tracker updated: flow_story_images=flow_0046_2e090b54.jpg
+2026-05-02 10:46:10  INFO      State saved. Flow Story run complete.
+2026-05-02 10:46:10  INFO      ════════════════════════════════════════════════════════════
