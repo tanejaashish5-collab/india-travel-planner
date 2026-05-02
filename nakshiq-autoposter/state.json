@@ -35,16 +35,16 @@
     "23_dark_trap_soul"
   ],
   "posted_today": {
-    "PdMu0": "2026-05-01",
-    "m8EAd": "2026-05-01",
+    "PdMu0": "2026-05-02",
+    "m8EAd": "2026-05-02",
     "m8EAd_reel": "2026-05-02",
     "PdMu0_reel": "2026-05-02",
     "4QL0i_reel": "2026-04-19",
     "m8EAd_canva": "2026-04-26",
     "PdMu0_canva": "2026-04-26",
-    "m8EAd_evening": "2026-05-01",
+    "m8EAd_evening": "2026-05-02",
     "m8EAd_evening_story": "2026-04-29",
-    "PdMu0_evening": "2026-05-01",
+    "PdMu0_evening": "2026-05-02",
     "m8EAd_yt_short": "2026-05-02",
     "m8EAd_yt_short_count": 1,
     "jUmP2_yt_short": "2026-04-20",
@@ -78,7 +78,7 @@
     "GAh5p_yt_short": "2026-05-02",
     "GAh5p_yt_short_count": 1
   },
-  "last_sync": "2026-05-02T07:15:16.117039+00:00",
+  "last_sync": "2026-05-02T14:08:29.650152+00:00",
   "posted_destinations": [
     {
       "destination_id": "pahalgam",
@@ -455,6 +455,10 @@
     {
       "destination_id": "parvati-valley",
       "date": "2026-05-01"
+    },
+    {
+      "destination_id": "rudraprayag",
+      "date": "2026-05-02"
     }
   ],
   "posted_formats": {
@@ -475,6 +479,7 @@
       "skip_list",
       "collection_spotlight",
       "festival_alert",
+      "score_card",
       "score_card"
     ],
     "PdMu0": [
@@ -497,6 +502,7 @@
       "skip_list",
       "collection_spotlight",
       "festival_alert",
+      "score_card",
       "score_card"
     ]
   },
@@ -949,6 +955,26 @@
       "destination": "parvati-valley",
       "format": "score_card",
       "has_media": true
+    },
+    {
+      "timestamp": "2026-05-02T14:09:28.256169+00:00",
+      "date": "2026-05-02",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "HC0n5",
+      "destination": "rudraprayag",
+      "format": "score_card",
+      "has_media": true
+    },
+    {
+      "timestamp": "2026-05-02T14:09:47.946541+00:00",
+      "date": "2026-05-02",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "cEm2L",
+      "destination": "rudraprayag",
+      "format": "score_card",
+      "has_media": true
     }
   ],
   "theme_usage": {
@@ -1055,6 +1081,9 @@
       ],
       "parvati-valley": [
         "2026-05-01"
+      ],
+      "rudraprayag": [
+        "2026-05-02"
       ]
     },
     "reel_formats": {
@@ -1204,6 +1233,9 @@
       ],
       "parvati-valley": [
         "2026-05-01"
+      ],
+      "rudraprayag": [
+        "2026-05-02"
       ]
     },
     "festivals": {
@@ -1244,7 +1276,8 @@
         "2026-05-01"
       ],
       "families": [
-        "2026-04-25"
+        "2026-04-25",
+        "2026-05-02"
       ]
     },
     "articles": {
@@ -1371,6 +1404,6 @@
   },
   "last_picked": {
     "collection": "andaman-diving-snorkeling",
-    "shared_best": "parvati-valley"
+    "shared_best": "rudraprayag"
   }
 }

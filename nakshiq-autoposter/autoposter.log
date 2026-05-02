@@ -6081,3 +6081,37 @@ requests.exceptions.HTTPError: 401 Client Error: UNAUTHORIZED for url: https://a
 2026-05-02 12:10:59  INFO      YT Short posted: format=before_after, music=23_dark_trap_soul
 2026-05-02 12:10:59  INFO      State saved. YT Short run complete.
 2026-05-02 12:10:59  INFO      ════════════════════════════════════════════════════════════
+2026-05-02 14:08:21  INFO      ════════════════════════════════════════════════════════════
+2026-05-02 14:08:21  INFO      Nakshiq Autoposter · EVENING · 2026-05-02 · weekday=5
+2026-05-02 14:08:21  INFO      ════════════════════════════════════════════════════════════
+2026-05-02 14:08:21  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-05-02 14:08:29  INFO      Synced → 20 destinations · 0 traps · 0 articles · total catalog=491
+2026-05-02 14:08:30  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-05-02 14:08:30  INFO      Formats — IG: score_card  ·  FB: score_card  ·  Story: route_spotlight  ·  Audience: families
+2026-05-02 14:08:30  INFO      Used destinations (14d): 57
+2026-05-02 14:08:30  INFO      Audience filter 'families' → 8 destinations match.
+2026-05-02 14:08:30  INFO      Route format requested but /routes API returned no data — will fall back to score_card.
+2026-05-02 14:08:31  INFO      Shared best destination locked: Rudraprayag
+2026-05-02 14:08:31  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-05-02 14:08:31  INFO      [instagram/nakshiq] Generating score_card post...
+2026-05-02 14:08:31  INFO      [instagram/nakshiq] Caption ready (534 chars, dest=rudraprayag)
+2026-05-02 14:08:31  INFO      [instagram/nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-05-02 14:08:31  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/rudraprayag.mp4?v=20260430
+2026-05-02 14:08:32  INFO          Requesting upload URL for rudraprayag.mp4 (10,361,427 bytes, video/mp4)
+2026-05-02 14:08:33  INFO          Uploading to R2 (timeout=300s)...
+2026-05-02 14:08:34  INFO          R2 PUT OK. Confirming...
+2026-05-02 14:08:36  INFO          Media ready: AgTa7 (10,361,427 bytes · rudraprayag.mp4)
+2026-05-02 14:08:36  INFO      [instagram/nakshiq] Publishing Reel...
+2026-05-02 14:09:28  WARNING   [instagram/nakshiq] ⚠️  Queued (ID=HC0n5)
+2026-05-02 14:09:28  INFO      [facebook/Nakshiq] Generating score_card post...
+2026-05-02 14:09:28  INFO      [facebook/Nakshiq] Caption ready (517 chars, dest=rudraprayag)
+2026-05-02 14:09:28  INFO      [facebook/Nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-05-02 14:09:28  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/rudraprayag.mp4?v=20260430
+2026-05-02 14:09:28  INFO          Requesting upload URL for rudraprayag.mp4 (10,361,427 bytes, video/mp4)
+2026-05-02 14:09:29  INFO          Uploading to R2 (timeout=300s)...
+2026-05-02 14:09:31  INFO          R2 PUT OK. Confirming...
+2026-05-02 14:09:32  INFO          Media ready: rJmg4 (10,361,427 bytes · rudraprayag.mp4)
+2026-05-02 14:09:32  INFO      [facebook/Nakshiq] Publishing Reel...
+2026-05-02 14:09:47  INFO      [facebook/Nakshiq] ✅ Published · Outstand=cEm2L · Platform=2060187054597183
+2026-05-02 14:09:47  INFO      State saved. Run complete.
+2026-05-02 14:09:47  INFO      ════════════════════════════════════════════════════════════
