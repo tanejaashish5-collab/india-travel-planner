@@ -40,12 +40,14 @@ export function CostPanel({
   state,
   rowsByDest: rowsByDestProp,
   onPermitClick,
+  onShareClick,
 }: {
   state: TripStateV2;
   /** Kept in the prop signature for API stability; not currently used now that the RPC returns names. */
   destinations?: DestLite[];
   rowsByDest?: Record<string, LogisticsRow>;
   onPermitClick: (destId: string, destName: string) => void;
+  onShareClick: () => void;
 }) {
   const [tier, setTier] = useState<CostTier>("mid");
 
@@ -242,7 +244,7 @@ export function CostPanel({
         <button
           type="button"
           className="nq-btn"
-          onClick={() => alert("Share / Export — coming in Phase 5")}
+          onClick={onShareClick}
           style={{ width: "100%", justifyContent: "center" }}
         >
           Share trip · Export

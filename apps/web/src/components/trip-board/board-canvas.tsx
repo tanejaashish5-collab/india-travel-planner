@@ -24,6 +24,7 @@ import { scan, type Conflict } from "@/lib/permit-checker";
 import { YearBand } from "./year-band";
 import { StopCard } from "./stop-card";
 import { SidebarPill } from "./sidebar-pill";
+import { MapView } from "./map-view";
 import { doyLabel } from "./atoms";
 
 type DestLite = {
@@ -34,6 +35,8 @@ type DestLite = {
   difficulty: string | null;
   elevation_m: number | null;
   festivals?: { name: string; month: number | null }[] | null;
+  lat?: number | null;
+  lng?: number | null;
 };
 
 const MONTH_STARTS = [1, 32, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335, 366];
@@ -45,6 +48,9 @@ export function BoardCanvas({
   rowsByDest,
   onPermitClick,
   onGenerateItinerary,
+  onShareClick,
+  view,
+  onToggleView,
   leftCollapsed,
   rightCollapsed,
   onToggleLeft,
@@ -57,6 +63,9 @@ export function BoardCanvas({
   rowsByDest: Record<string, LogisticsRow>;
   onPermitClick: (destId: string, destName: string) => void;
   onGenerateItinerary: () => void;
+  onShareClick: () => void;
+  view: "list" | "map";
+  onToggleView: (next: "list" | "map") => void;
   leftCollapsed: boolean;
   rightCollapsed: boolean;
   onToggleLeft: () => void;
@@ -172,7 +181,7 @@ export function BoardCanvas({
           <button
             type="button"
             className="nq-btn nq-btn-ghost"
-            onClick={() => alert("Share / Export — coming in Phase 5")}
+            onClick={onShareClick}
             style={{ padding: "5px 10px", fontSize: 11 }}
           >
             Share · Export
@@ -234,15 +243,18 @@ export function BoardCanvas({
             <button
               type="button"
               className="nq-btn nq-btn-ghost"
-              style={{ background: "var(--paper-3)", borderColor: "var(--ink-3)" }}
+              onClick={() => onToggleView("list")}
+              style={view === "list" ? { background: "var(--paper-3)", borderColor: "var(--ink-3)" } : {}}
             >
               List
             </button>
             <button
               type="button"
               className="nq-btn nq-btn-ghost"
-              title="Map view ships in Phase 5"
-              disabled
+              onClick={() => onToggleView("map")}
+              style={view === "map" ? { background: "var(--paper-3)", borderColor: "var(--ink-3)" } : {}}
+              title="Atlas view — your stops on India outline"
+              disabled={state.stops.length === 0}
             >
               Map
             </button>
@@ -297,8 +309,8 @@ export function BoardCanvas({
         </div>
       </header>
 
-      {/* Body — stop cards */}
-      <div style={{ flex: 1, overflowY: "auto", minHeight: 0 }}>
+      {/* Body — stop cards OR map view */}
+      <div style={{ flex: 1, overflowY: "auto", minHeight: 0, display: "flex", flexDirection: "column" }}>
         {state.stops.length === 0 ? (
           <div style={{ padding: 60, textAlign: "center", color: "var(--ink-3)" }}>
             <p
@@ -313,6 +325,21 @@ export function BoardCanvas({
             </p>
             <p style={{ margin: 0, fontSize: 13 }}>Pick from the Library on the left.</p>
           </div>
+        ) : view === "map" ? (
+          <MapView
+            state={state}
+            destinations={destinations}
+            onPinClick={(destId) => {
+              // Switch to list view + scroll to the matching stop card on next paint.
+              onToggleView("list");
+              requestAnimationFrame(() => {
+                const el = document.querySelector(`[data-stop-id="${destId}"]`);
+                if (el && "scrollIntoView" in el) {
+                  (el as HTMLElement).scrollIntoView({ behavior: "smooth", block: "start" });
+                }
+              });
+            }}
+          />
         ) : (
           <div data-stops-list>
             {state.stops.map((stop, idx) => {

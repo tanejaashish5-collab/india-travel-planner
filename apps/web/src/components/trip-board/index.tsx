@@ -28,6 +28,7 @@ import { CostPanel } from "./cost-panel";
 import { PermitDialog } from "./permit-dialog";
 import { AiModal, type AiModalSubmit } from "./ai-modal";
 import { ItineraryView } from "./itinerary-view";
+import { ShareMenu } from "./share-menu";
 
 type DestinationLite = {
   id: string;
@@ -38,6 +39,9 @@ type DestinationLite = {
   destination_months: { month: number; score: number }[] | null;
   festivals?: { name: string; month: number | null }[] | null;
   daily_cost?: Record<string, unknown> | null;
+  /** Phase 5 — lat/lng from destinations_with_coords view. */
+  lat?: number | null;
+  lng?: number | null;
 };
 
 const COLDSTART_REPLAY_EVENT = "nakshiq:coldstart-replay";
@@ -116,6 +120,7 @@ export function TripBoard({ destinations }: { destinations: DestinationLite[] })
         setState={setState}
         destinations={destinations}
         forceColdStart={() => setForceColdStart(true)}
+        signedIn={signedIn}
       />
 
       {cloudConflict && (
@@ -171,16 +176,20 @@ function ShellWithLogistics({
   setState,
   destinations,
   forceColdStart,
+  signedIn,
 }: {
   state: TripStateV2;
   setState: (updater: (prev: TripStateV2) => TripStateV2) => void;
   destinations: DestinationLite[];
   forceColdStart: () => void;
+  signedIn: boolean;
 }) {
   const { rowsByDest } = useTripLogistics(state.stops, state.month);
   const [permitDialogFor, setPermitDialogFor] = useState<{ id: string; name: string } | null>(null);
   const [aiModalOpen, setAiModalOpen] = useState(false);
   const [aiResult, setAiResult] = useState<AiModalSubmit | null>(null);
+  const [shareMenuOpen, setShareMenuOpen] = useState(false);
+  const [view, setView] = useState<"list" | "map">("list");
   // SSR-safe lazy init from localStorage. Default = expanded (false).
   const [leftCollapsed, setLeftCollapsed] = useState<boolean>(() => {
     if (typeof window === "undefined") return false;
@@ -224,6 +233,9 @@ function ShellWithLogistics({
           rowsByDest={rowsByDest}
           onPermitClick={(id, name) => setPermitDialogFor({ id, name })}
           onGenerateItinerary={() => setAiModalOpen(true)}
+          onShareClick={() => setShareMenuOpen(true)}
+          view={view}
+          onToggleView={setView}
           leftCollapsed={leftCollapsed}
           rightCollapsed={rightCollapsed}
           onToggleLeft={() => setLeftCollapsed((v) => !v)}
@@ -245,6 +257,7 @@ function ShellWithLogistics({
             destinations={destinations}
             rowsByDest={rowsByDest}
             onPermitClick={(id, name) => setPermitDialogFor({ id, name })}
+            onShareClick={() => setShareMenuOpen(true)}
           />
         )}
       </div>
@@ -311,6 +324,15 @@ function ShellWithLogistics({
           scaffold={aiResult.scaffold}
           fallbackUsed={aiResult.fallbackUsed}
           onClose={() => setAiResult(null)}
+        />
+      )}
+
+      {shareMenuOpen && (
+        <ShareMenu
+          state={state}
+          signedIn={signedIn}
+          onClose={() => setShareMenuOpen(false)}
+          onImported={(next) => setState(() => next)}
         />
       )}
     </div>

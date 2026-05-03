@@ -200,6 +200,57 @@ export async function pushToCloud(state: TripStateV2): Promise<{ ok: boolean; er
   return { ok: true };
 }
 
+/**
+ * Phase 5 — generate or reuse the share_token for the current user's
+ * trip_boards row. Returns the token (and full URL) the share-menu copies
+ * to the clipboard.
+ *
+ * Token is a URL-safe 16-char hex slug. Once set, it stays — repeated calls
+ * return the existing token rather than rotating, so previously-shared links
+ * keep working.
+ *
+ * Anonymous users get null — UI surfaces a "sign in to share" copy.
+ */
+export async function generateShareToken(
+  state: TripStateV2,
+): Promise<{ token: string | null; url: string | null; error?: string }> {
+  const supabase = getBrowserSupabase();
+  if (!supabase) return { token: null, url: null, error: "supabase_unavailable" };
+  const uid = await getCurrentUserId();
+  if (!uid) return { token: null, url: null, error: "not_signed_in" };
+
+  // Make sure the cloud row exists with the LATEST payload first — otherwise
+  // the share link renders stale state.
+  await pushToCloud(state);
+
+  // Read existing token (if any) so we don't rotate it.
+  const existing = await supabase
+    .from("trip_boards")
+    .select("share_token")
+    .eq("user_id", uid)
+    .maybeSingle();
+
+  if (existing.data?.share_token) {
+    const token = existing.data.share_token as string;
+    return { token, url: buildShareUrl(token) };
+  }
+
+  // Generate fresh — crypto.randomUUID is in all modern browsers + Node 20+.
+  const token = crypto.randomUUID().replace(/-/g, "").slice(0, 16);
+  const { error } = await supabase
+    .from("trip_boards")
+    .update({ share_token: token, updated_at: new Date().toISOString() })
+    .eq("user_id", uid);
+
+  if (error) return { token: null, url: null, error: error.message };
+  return { token, url: buildShareUrl(token) };
+}
+
+function buildShareUrl(token: string): string {
+  if (typeof window === "undefined") return `/trip/share/${token}`;
+  return `${window.location.origin}/trip/share/${token}`;
+}
+
 /** Pull from trip_boards. Returns null if no row or not signed in. */
 export async function pullFromCloud(): Promise<TripStateV2 | null> {
   const supabase = getBrowserSupabase();

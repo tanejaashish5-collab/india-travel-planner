@@ -27,14 +27,28 @@ async function getAllDestinations() {
   // 12 rows per dest = ~5,892 nested rows total — Supabase returns these
   // inside the parent rows so the cap doesn't apply per-child. If the
   // destination count crosses 1000, switch to RPC-driven fetch.
-  const { data } = await supabase
-    .from("destinations")
-    .select(
-      "id, name, difficulty, elevation_m, daily_cost, vehicle_fit, family_stress, state:states(name), destination_months(month, score), festivals(name, month)"
-    )
-    .order("name");
+  // Coords come from destinations_with_coords view (PostGIS WKB hex —
+  // can't read directly from destinations.coords) per
+  // feedback_postgis_coords_wkb.md. Fetched in parallel and merged.
+  const [destResult, coordsResult] = await Promise.all([
+    supabase
+      .from("destinations")
+      .select(
+        "id, name, difficulty, elevation_m, daily_cost, vehicle_fit, family_stress, state:states(name), destination_months(month, score), festivals(name, month)"
+      )
+      .order("name"),
+    supabase.from("destinations_with_coords").select("id, lat, lng"),
+  ]);
 
-  return data ?? [];
+  const coordsById = new Map<string, { lat: number | null; lng: number | null }>(
+    (coordsResult.data ?? []).map((c) => [c.id, { lat: c.lat, lng: c.lng }]),
+  );
+  type DestRow = NonNullable<typeof destResult.data>[number];
+  return (destResult.data ?? []).map((d: DestRow) => ({
+    ...d,
+    lat: coordsById.get(d.id)?.lat ?? null,
+    lng: coordsById.get(d.id)?.lng ?? null,
+  }));
 }
 
 export default async function TripPage() {
@@ -66,4 +80,8 @@ type TripBoardDest = {
   destination_months: { month: number; score: number }[] | null;
   festivals: { name: string; month: number | null }[] | null;
   daily_cost?: Record<string, unknown> | null;
+  /** Phase 5 map view — pulled from destinations_with_coords. Null when the
+   *  destination has no PostGIS coords on file. */
+  lat: number | null;
+  lng: number | null;
 };
