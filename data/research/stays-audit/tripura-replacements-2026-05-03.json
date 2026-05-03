@@ -1,0 +1,160 @@
+{
+  "task_a_results": [
+    {
+      "destination_id": "agartala",
+      "slot": "experience",
+      "verdict": "replace",
+      "replacement": {
+        "name": "Hotel Polo Towers Agartala",
+        "tier": "luxury",
+        "tagline": "Tripura's only Tripadvisor-Travellers'-Choice 5-star — VIP Road Kunjaban tower with the state's first proper rooftop pool, spa and bar, ten minutes from the Ujjayanta Palace museum.",
+        "price_band": "₹₹₹",
+        "address": "VIP Rd, Kunjaban, Agartala, Tripura 799006",
+        "book_url": "https://www.hotelpolotowers.com/hotel-polo-towers-agartala/",
+        "sources": [
+          "https://www.tripadvisor.in/Hotel_Review-g1028662-d21310888-Reviews-Hotel_Polo_Towers_Agartala-Agartala_West_Tripura_District_Tripura.html",
+          "https://www.booking.com/hotel/in/polo-towers-agartala.html",
+          "https://www.hotelpolotowers.com/hotel-polo-towers-agartala/"
+        ]
+      }
+    },
+    {
+      "destination_id": "agartala",
+      "slot": "value",
+      "verdict": "replace",
+      "replacement": {
+        "name": "Ginger Agartala",
+        "tier": "comfort",
+        "tagline": "Tata IHCL's lean-luxe brand on Khejur Bagan, twenty minutes from MBB Airport — predictable mid-range business stay with a Qmin restaurant and free Wi-Fi.",
+        "price_band": "₹₹",
+        "address": "Khejur Bagan, Airport Road, Barjala Mouja, Agartala, Tripura 799006",
+        "book_url": "https://www.gingerhotels.com/hotels/ginger-agartala",
+        "sources": [
+          "https://www.gingerhotels.com/hotels/ginger-agartala",
+          "https://www.booking.com/hotel/in/ginger-agartala.html",
+          "https://www.ihcltata.com/hotels/ginger-hotels/"
+        ]
+      }
+    },
+    {
+      "destination_id": "agartala",
+      "slot": "location",
+      "verdict": "replace",
+      "replacement": {
+        "name": "Hotel Sonar Tori Agartala",
+        "tier": "comfort",
+        "tagline": "Tagore-named city-centre hotel on Ronaldsay Road by the Fire Brigade Chowmuhoni — walking distance to the Ujjayanta Palace museum and Laxmi Narayan temple.",
+        "price_band": "₹₹",
+        "address": "Ronaldsay Road, near Fire Brigade Chowmuhoni, Agartala, Tripura 799001",
+        "book_url": "https://www.tripadvisor.in/Hotel_Review-g1028662-d7933117-Reviews-Hotel_Sonar_Tori_Agartala-Agartala_West_Tripura_District_Tripura.html",
+        "sources": [
+          "https://www.tripadvisor.in/Hotel_Review-g1028662-d7933117-Reviews-Hotel_Sonar_Tori_Agartala-Agartala_West_Tripura_District_Tripura.html",
+          "https://www.tripadvisor.com/Hotel_Review-g1028662-d7933117-Reviews-Hotel_Sonar_Tori_Agartala-Agartala_West_Tripura_District_Tripura.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "agartala",
+      "slot": "xfactor",
+      "verdict": "replace",
+      "replacement": {
+        "name": "Hotel Noah Spire",
+        "tier": "boutique",
+        "tagline": "Brand-new 69-key boutique at Milan Chakra, Badharghat — Bhoj restaurant, Adda coffee shop and an Agochalo rooftop bar make it the city's freshest design address.",
+        "price_band": "₹₹",
+        "address": "Milan Chakra, Badharghat, Agartala, Tripura 799003",
+        "phone": "+91 92450 49595",
+        "book_url": "https://www.noahspire.com/",
+        "sources": [
+          "https://www.tripadvisor.in/Hotel_Review-g1028662-d30077754-Reviews-Hotel_Noah_Spire-Agartala_West_Tripura_District_Tripura.html",
+          "https://www.noahspire.com/",
+          "https://www.makemytrip.com/hotels/hotel_noah_spire-details-agartala.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "neermahal",
+      "slot": "experience",
+      "verdict": "replace",
+      "replacement": {
+        "name": "Lake Side Resort Neermahal",
+        "tier": "comfort",
+        "tagline": "Polo Hotels group's lake-edge resort on Rajghat Road — about 200 metres from the ferry jetty, with watch-tower views straight across Rudrasagar to the 1930 water palace.",
+        "price_band": "₹₹",
+        "address": "Rajghat Road, Melaghar, Tripura 799115",
+        "book_url": "https://www.polo.polohotelsandresorts.com/lake-side-resort-neermahal/",
+        "sources": [
+          "https://www.tripadvisor.in/Hotel_Review-g4302971-d23268896-Reviews-Lake_Side_Resort_Neermahal-Melaghar_West_Tripura_District_Tripura.html",
+          "https://www.polo.polohotelsandresorts.com/lake-side-resort-neermahal/",
+          "https://www.goibibo.com/hotels/lake-side-resort-neermahal-hotel-in-sonamura-2068362484624163287/"
+        ]
+      }
+    },
+    {
+      "destination_id": "neermahal",
+      "slot": "value",
+      "verdict": "replace",
+      "replacement": {
+        "name": "Sagar Mahal Tourist Lodge",
+        "tier": "budget",
+        "tagline": "Tripura Tourism's lake-bank lodge in Melaghar — old wing sits literally on Rudrasagar, with a watch-tower facing Neermahal and a two-minute walk to the palace ferry.",
+        "price_band": "₹",
+        "address": "Melaghar, West Tripura District, Tripura 799115",
+        "book_url": "http://tripuratourism.gov.in/sagarmahal",
+        "sources": [
+          "https://www.tripadvisor.in/Hotel_Review-g4302971-d4301688-Reviews-Sagar_Mahal_Tourist_Lodge-Melaghar_West_Tripura_District_Tripura.html",
+          "http://tripuratourism.gov.in/sagarmahal",
+          "https://tripuratourism.gov.in/images/documents/1731059147.pdf"
+        ]
+      }
+    },
+    {
+      "destination_id": "neermahal",
+      "slot": "location",
+      "verdict": "replace",
+      "replacement": null
+    },
+    {
+      "destination_id": "neermahal",
+      "slot": "xfactor",
+      "verdict": "replace",
+      "replacement": null
+    },
+    {
+      "destination_id": "unakoti",
+      "slot": "experience",
+      "verdict": "replace",
+      "replacement": null
+    },
+    {
+      "destination_id": "unakoti",
+      "slot": "value",
+      "verdict": "replace",
+      "replacement": null
+    },
+    {
+      "destination_id": "unakoti",
+      "slot": "location",
+      "verdict": "replace",
+      "replacement": null
+    },
+    {
+      "destination_id": "unakoti",
+      "slot": "xfactor",
+      "verdict": "replace",
+      "replacement": {
+        "name": "Unakoti Tourist Lodge",
+        "tier": "budget",
+        "tagline": "Tripura Tourism's bare-bones lodge near Kadalgidi Park — eight kilometres from the 8th-9th-century rock-cut Shaiva carvings and the only state-run roof in Kailashahar.",
+        "price_band": "₹",
+        "address": "Irani To Kailashahar Road, near Kadalgidi Park, Kailashahar, North Tripura, Tripura 799277",
+        "book_url": "https://tripuratourism.gov.in/unakoti",
+        "sources": [
+          "https://www.tripadvisor.in/Hotel_Review-g2531405-d2481678-Reviews-Unakoti_Tourist_Lodge-Kailashahar_North_Tripura_District_Tripura.html",
+          "https://tripuratourism.gov.in/unakoti",
+          "https://tripuratourism.gov.in/accommodation.php?id=32"
+        ]
+      }
+    }
+  ]
+}
