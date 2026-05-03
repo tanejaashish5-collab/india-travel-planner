@@ -183,6 +183,7 @@ export function Footer({ stats }: { stats?: { destinations: number; places: numb
         <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-muted-foreground/60">
           <p>&copy; 2026 NakshIQ</p>
           <div className="flex gap-4">
+            <Link href={`/${locale}/?tour=1`} className="hover:text-foreground transition-colors">Take the tour</Link>
             <Link href={`/${locale}/terms`} className="hover:text-foreground transition-colors">{tf("terms")}</Link>
             <Link href={`/${locale}/privacy`} className="hover:text-foreground transition-colors">{tf("privacy")}</Link>
             <Link href={`/${locale}/cookies`} className="hover:text-foreground transition-colors">{tf("cookies")}</Link>

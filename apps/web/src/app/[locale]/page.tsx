@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { LandingHero } from "@/components/landing-hero";
+import { GuidedTour } from "@/components/guided-tour";
 import { createClient } from "@supabase/supabase-js";
 import { getAppStats } from "@/lib/stats";
 import { currentMonthIST } from "@itp/shared";
@@ -117,6 +118,7 @@ export default async function Home() {
         />
       </main>
       <Footer stats={stats} />
+      <GuidedTour />
     </>
   );
 }

@@ -129,6 +129,7 @@ export function Nav() {
               onMouseLeave={startClose}
             >
               <button
+                data-tour={panel === "plan" ? "plan-menu" : panel === "learn" ? "learn-menu" : undefined}
                 className={`rounded-lg px-3 py-1.5 text-sm font-medium transition-colors flex items-center gap-1 ${
                   activePanel === panel || panelActiveForPath(panel)
                     ? "text-foreground"
@@ -186,6 +187,7 @@ export function Nav() {
           {/* AI Plan CTA */}
           <Link
             href={`/${locale}/plan`}
+            data-tour="plan-cta"
             className="ml-2 rounded-lg bg-primary px-3 py-1.5 text-sm font-medium text-primary-foreground hover:bg-primary/90 flex items-center gap-1.5"
           >
             <span>{t("aiPlan")}</span>
@@ -199,6 +201,7 @@ export function Nav() {
             onClick={() => setSearchOpen(true)}
             className="rounded-lg p-2 text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
             aria-label="Search (Cmd+K)"
+            data-tour="search"
           >
             <svg
               width="18"

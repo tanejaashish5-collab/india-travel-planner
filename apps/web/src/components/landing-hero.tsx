@@ -288,6 +288,7 @@ export function LandingHero({
                     <HoverCard>
                       <Link
                         href={`/${locale}/destination/${dest.id}`}
+                        data-tour={isHero ? "dest-card" : undefined}
                         className="group block rounded-2xl border border-border/50 overflow-hidden transition-all hover:border-primary/50 hover:shadow-2xl hover:shadow-primary/10 h-full"
                       >
                         <div className={`relative ${isHero ? "h-64 sm:h-80 lg:h-full min-h-[320px]" : "h-52"} bg-muted/30 overflow-hidden`}>

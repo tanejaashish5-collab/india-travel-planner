@@ -53,7 +53,14 @@ function buildOverridesPayload(ov: OverrideState): Record<string, string | numbe
   return Object.keys(out).length ? out : undefined;
 }
 
-export function AdminNewsletter() {
+type SubscriberStats = {
+  confirmed: number;
+  pending: number;
+  unsubscribed: number;
+  refreshedAt: string;
+} | null;
+
+export function AdminNewsletter({ subscriberStats }: { subscriberStats?: SubscriberStats } = {}) {
   const [step, setStep] = useState<Step>("auth");
   const [secret, setSecret] = useState("");
   const [testEmail, setTestEmail] = useState("");
@@ -144,9 +151,32 @@ export function AdminNewsletter() {
   return (
     <div className="mx-auto max-w-3xl px-4 py-16">
       <h1 className="text-2xl font-semibold mb-2">The Window — Admin</h1>
-      <p className="text-sm text-muted-foreground mb-8">
+      <p className="text-sm text-muted-foreground mb-4">
         Preview the next issue, send a test to yourself, then send to the real list.
       </p>
+
+      {subscriberStats && (
+        <div className="mb-8 grid grid-cols-3 gap-3">
+          <div className="rounded-xl border border-emerald-500/20 bg-emerald-500/5 p-4">
+            <div className="text-[11px] uppercase tracking-[0.08em] text-muted-foreground mb-1">Confirmed</div>
+            <div className="font-mono text-2xl font-bold text-emerald-400">{subscriberStats.confirmed.toLocaleString()}</div>
+            <div className="mt-1 text-[11px] text-muted-foreground">active list size</div>
+          </div>
+          <div className="rounded-xl border border-yellow-500/20 bg-yellow-500/5 p-4">
+            <div className="text-[11px] uppercase tracking-[0.08em] text-muted-foreground mb-1">Pending</div>
+            <div className="font-mono text-2xl font-bold text-yellow-400">{subscriberStats.pending.toLocaleString()}</div>
+            <div className="mt-1 text-[11px] text-muted-foreground">double opt-in not done</div>
+          </div>
+          <div className="rounded-xl border border-zinc-500/20 bg-zinc-500/5 p-4">
+            <div className="text-[11px] uppercase tracking-[0.08em] text-muted-foreground mb-1">Unsubscribed</div>
+            <div className="font-mono text-2xl font-bold text-zinc-400">{subscriberStats.unsubscribed.toLocaleString()}</div>
+            <div className="mt-1 text-[11px] text-muted-foreground">opt-out total</div>
+          </div>
+          <p className="col-span-3 text-[11px] text-muted-foreground/70">
+            Refreshed {new Date(subscriberStats.refreshedAt).toLocaleString("en-IN", { hour: "2-digit", minute: "2-digit", day: "numeric", month: "short" })} · live read on each load
+          </p>
+        </div>
+      )}
 
       {error && (
         <div className="mb-6 rounded-lg border border-red-500/40 bg-red-500/10 p-4 text-sm text-red-400">
