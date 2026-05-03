@@ -212,7 +212,7 @@ export function ColdStart({ destinations, onSeed }: { destinations: DestLite[]; 
             type="button"
             onClick={() => setTab(t.k)}
             className={`-mb-px shrink-0 border-b-2 px-5 py-4 text-left transition-colors ${
-              tab === t.k ? "border-[var(--accent,#d36843)]" : "border-transparent hover:border-muted"
+              tab === t.k ? "border-[#d36843]" : "border-transparent hover:border-muted"
             }`}
           >
             <div className={`font-serif text-base ${tab === t.k ? "text-foreground" : "text-muted-foreground"}`}>{t.l}</div>
@@ -230,7 +230,7 @@ export function ColdStart({ destinations, onSeed }: { destinations: DestLite[]; 
                 key={c.id}
                 type="button"
                 onClick={() => chooseCurated(c)}
-                className="group block overflow-hidden border border-border bg-card text-left transition-colors hover:border-[var(--accent,#d36843)]"
+                className="group block overflow-hidden border border-border bg-card text-left transition-colors hover:border-[#d36843]"
               >
                 <div className="relative aspect-[4/3] overflow-hidden bg-muted">
                   <Image
@@ -242,7 +242,7 @@ export function ColdStart({ destinations, onSeed }: { destinations: DestLite[]; 
                   />
                 </div>
                 <div className="p-4">
-                  <div className="font-mono text-[11px] uppercase tracking-[0.16em] text-[var(--accent,#d36843)]">{c.sub}</div>
+                  <div className="font-mono text-[11px] uppercase tracking-[0.16em] text-[#d36843]">{c.sub}</div>
                   <h3 className="mt-1 font-serif text-xl font-medium leading-tight">{c.name}</h3>
                   <p className="mt-2 text-xs leading-[1.55] text-muted-foreground">{c.desc}</p>
                   <p className="mt-3 text-[11px] text-muted-foreground/70">use as starting point — drag dates in the year band after</p>
@@ -262,7 +262,7 @@ export function ColdStart({ destinations, onSeed }: { destinations: DestLite[]; 
                   onClick={() => setMonth(i + 1)}
                   className={`border px-3.5 py-2 font-mono text-xs transition-colors ${
                     month === i + 1
-                      ? "border-[var(--accent,#d36843)] bg-[var(--accent,#d36843)] text-white"
+                      ? "border-[#d36843] bg-[#d36843] text-white"
                       : "border-border text-muted-foreground hover:border-foreground"
                   }`}
                 >
@@ -294,7 +294,7 @@ export function ColdStart({ destinations, onSeed }: { destinations: DestLite[]; 
                       {d.state?.name ?? ""}{d.elevation_m ? ` · ${d.elevation_m}m` : ""}
                     </div>
                   </div>
-                  <span className="text-[11px] text-[var(--accent,#d36843)]">add →</span>
+                  <span className="text-[11px] text-[#d36843]">add →</span>
                 </button>
               ))}
             </div>
@@ -311,7 +311,7 @@ export function ColdStart({ destinations, onSeed }: { destinations: DestLite[]; 
                   onClick={() => setProfile(p.id)}
                   className={`border px-4 py-5 text-center transition-colors ${
                     profile === p.id
-                      ? "border-[var(--accent,#d36843)] bg-[var(--accent,#d36843)]/10"
+                      ? "border-[#d36843] bg-[#d36843]/10"
                       : "border-border hover:border-foreground"
                   }`}
                 >
@@ -340,7 +340,7 @@ export function ColdStart({ destinations, onSeed }: { destinations: DestLite[]; 
                           {d.state?.name ?? ""} · {d.difficulty ?? "—"}{d.elevation_m ? ` · ${d.elevation_m}m` : ""}
                         </div>
                       </div>
-                      <span className="text-[11px] text-[var(--accent,#d36843)]">add →</span>
+                      <span className="text-[11px] text-[#d36843]">add →</span>
                     </button>
                   ))}
                 </div>
@@ -361,7 +361,7 @@ export function ColdStart({ destinations, onSeed }: { destinations: DestLite[]; 
                   onClick={() => setTheme(t.id)}
                   className={`flex items-center gap-3 border px-4 py-3.5 text-left transition-colors ${
                     theme === t.id
-                      ? "border-[var(--accent,#d36843)] bg-[var(--accent,#d36843)]/10"
+                      ? "border-[#d36843] bg-[#d36843]/10"
                       : "border-border hover:border-foreground"
                   }`}
                 >
