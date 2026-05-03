@@ -89,13 +89,14 @@ Plan: `~/.claude/plans/smooth-orbiting-music.md` (full workflow — read before 
 | West Bengal | ✓ done | 2026-04-28 | 6/6 dests · 38 eateries · 20 stays (100% sourced, 4 honest-scarcity nulls) |
 | Sikkim | ✓ done | 2026-04-28 | 11/11 dests · 19 eateries · 21 stays (100% sourced, 4 dests honest-scarcity `[]` for restricted high-altitude lakes/NP) |
 | Arunachal Pradesh | ✓ done | 2026-04-28 | 11/11 dests · 22 eateries · 25 stays (100% sourced, 6 honest-scarcity nulls + Bhalukpong/Dambuk eateries `[]`, 61% fabrication rate caught — 7 cross-state contaminations) |
-| Nagaland | **next** | - | TBD (Kohima + Mokokchung + Mon + Dzukou + Khonoma + Tuophema — Hornbill Festival belt) |
+| Nagaland | ✓ done | 2026-05-03 | 6/6 dests · 31 eateries · 23 stays (100% sourced + 100% manual, 1 honest-scarcity null Pfutsero/xfactor + Dzukou eateries `[]`, **78% stays fabrication rate caught** — Dzukou Valley Resort/Tent Camp/Camps fabricated, Hotel Japfu Mon→Kohima cross-dest, Mon Travellers Lodge + Pfutsero Highland Resort + Angh Valley Homestay fabricated; eateries: Été Coffee + Bamboo Shoot + Konyak Tea Retreat anchors; Tripadvisor Pfutsero page contaminated with Kohima cafés caught) |
+| Manipur | **next** | - | TBD (Imphal anchor + Loktak/Ukhrul/Moirang — North-East tribal belt continuation) |
 
 **Per-state quality bar (going forward)**: Each session ships eateries (greenfield/backfill via 1-2 agents) **AND** stays (audit + replace fabricated picks via 1 agent, target 100% sourced) in the same session. Total budget ≤3 agents per state (cost-aware rule). **All research via WebFetch/WebSearch agents — NEVER curate-stays.mjs (Anthropic API/Haiku) per 2026-04-28 user instruction.**
 
-**Eateries progress**: 12 state clusters done (eateries side), 183 dests, 1195 eateries. Per-state details in session memory files — see `MEMORY.md` index.
+**Eateries progress**: 13 state clusters done (eateries side), 189 dests, 1226 eateries. Per-state details in session memory files — see `MEMORY.md` index.
 
-**Stays progress (2026-05-03)**: 12 state clusters truly 100% manual-audited (**Bihar+Jharkhand+West Bengal+Sikkim+Arunachal Pradesh+Punjab+Haryana+Chandigarh+Jammu & Kashmir+Uttar Pradesh+Rajasthan+Ladakh+Uttarakhand+Himachal Pradesh** — unified workflow). **0 backlog clusters remaining** — entire pre-2026-04-28 Haiku-curate `web_search` debt cleared. Next sweep: Nagaland greenfield (eateries+stays unified, queued in active-work table as "next").
+**Stays progress (2026-05-03)**: 13 state clusters truly 100% manual-audited (**Bihar+Jharkhand+West Bengal+Sikkim+Arunachal Pradesh+Punjab+Haryana+Chandigarh+Jammu & Kashmir+Uttar Pradesh+Rajasthan+Ladakh+Uttarakhand+Himachal Pradesh+Nagaland** — unified workflow). **0 backlog clusters remaining**. Next sweep: Manipur greenfield (Imphal + Loktak Lake + Ukhrul + Moirang — NE tribal belt, queued as "next").
 
 ## Cost-aware operating rules (added 2026-04-27)
 

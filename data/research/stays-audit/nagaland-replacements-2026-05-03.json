@@ -1,0 +1,350 @@
+{
+  "task_a_results": [
+    {
+      "destination_id": "dzukou-valley",
+      "slot": "experience",
+      "verdict": "replace",
+      "replacement": {
+        "name": "Dawn Homestay (Kigwema)",
+        "tier": "homestay",
+        "tagline": "Rovi Yhoshii's home in Kigwema, Nagaland's canonical Dzukou trek-base homestay — clean rooms, hearty Naga meals, hosts who arrange Zakhama/Viswema trailhead transfers.",
+        "price_band": "₹",
+        "address": "Kigwema Village, Kohima District, Nagaland — 5 km from Zakhama trailhead, 11 km from Viswema",
+        "phone": "+91 85758 26863 (Rovi) / +91 88373 50125 (Akieno)",
+        "sources": [
+          "https://www.tripoto.com/kohima/trips/dawn-homestay-the-best-place-to-stay-while-heading-for-dzukou-valley-trek-5d0d92b865cfa",
+          "https://logout.world/tours/dzukou-valley-trek-nagaland/"
+        ]
+      }
+    },
+    {
+      "destination_id": "dzukou-valley",
+      "slot": "value",
+      "verdict": "replace",
+      "replacement": {
+        "name": "Viswema Village Homestays (community-run)",
+        "tier": "homestay",
+        "tagline": "The Angami village at the southern Dzukou trailhead has a small cluster of community-run homestays bookable via NagalandTourism.com — closest budget beds before the 4-hour climb to the meadow.",
+        "price_band": "₹",
+        "address": "Viswema Village, Kohima District (NH-2 / Imphal road, 25 km south of Kohima)",
+        "sources": [
+          "https://tourism.nagaland.gov.in/homestay/",
+          "https://chalohoppo.com/a-travellers-guide-to-dzukou-valley-everything-you-need-to-know/"
+        ]
+      }
+    },
+    {
+      "destination_id": "dzukou-valley",
+      "slot": "location",
+      "verdict": "replace",
+      "replacement": {
+        "name": "Kigwema Village Homestays (Zakhama-side trailhead cluster)",
+        "tier": "homestay",
+        "tagline": "Closest cluster to the Zakhama trailhead — you walk to your taxi pickup, not to the valley itself (no human settlement in Dzukou). Best for early-start trekkers.",
+        "price_band": "₹",
+        "address": "Kigwema Village, Kohima District — 5 km from Zakhama and 11 km from Viswema trailheads",
+        "sources": [
+          "https://www.tripoto.com/kohima/trips/dawn-homestay-the-best-place-to-stay-while-heading-for-dzukou-valley-trek-5d0d92b865cfa",
+          "https://chalohoppo.com/a-travellers-guide-to-dzukou-valley-everything-you-need-to-know/"
+        ]
+      }
+    },
+    {
+      "destination_id": "dzukou-valley",
+      "slot": "xfactor",
+      "verdict": "replace",
+      "replacement": {
+        "name": "Dzukou Valley Rest House / Trekkers' Hut (Pilgrim's Inn)",
+        "tier": "budget",
+        "tagline": "The only accommodation inside the meadow — basic dormitory + a couple of VIP cabins run by the Southern Angami Public Organisation. Bring sleeping bag; blankets ₹50, dorm ₹50–₹100/night, no electricity.",
+        "price_band": "₹",
+        "address": "Dzukou Valley meadow, ~4 hour climb from Viswema or Zakhama trailheads, Kohima District",
+        "sources": [
+          "https://www.twobirdsbreakingfree.com/dzukou-valley-nagaland-complete-guide",
+          "https://chalohoppo.com/a-travellers-guide-to-dzukou-valley-everything-you-need-to-know/"
+        ]
+      }
+    },
+    {
+      "destination_id": "khonoma",
+      "slot": "experience",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "kohima",
+      "slot": "experience",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "mon",
+      "slot": "experience",
+      "verdict": "replace",
+      "replacement": {
+        "name": "Helsa Morung Retreat",
+        "tier": "boutique",
+        "tagline": "Konyak-family homestay run by a village head-woman — 5 Konyak-style cottages + 8 bamboo cottages + 5 deluxe tents on a forest clearing styled like a traditional Konyak morung.",
+        "price_band": "₹₹₹",
+        "address": "Mon, Mon District, Nagaland — 135 km from Dibrugarh airport",
+        "book_url": "https://www.aagmanindia.com/helsa-morung-mon-nagaland/",
+        "sources": [
+          "https://www.aagmanindia.com/helsa-morung-mon-nagaland/",
+          "https://www.outlooktraveller.com/destinations/india/offbeat-alert-a-guide-to-nagalands-mon-village-things-to-do-what-to-eat-and-where-to-stay"
+        ]
+      }
+    },
+    {
+      "destination_id": "mon",
+      "slot": "value",
+      "verdict": "replace",
+      "replacement": {
+        "name": "Helsa Cottage",
+        "tier": "homestay",
+        "tagline": "Mon town's canonical mid-budget stay since the 90s — a Konyak-family guesthouse with simple rooms, full-board meals (rice + bucket hot water + candle-lit power cuts), and an 'Aunty' who arranges Konyak-village guides.",
+        "price_band": "₹₹",
+        "address": "Mon town, Mon District 798621, Nagaland",
+        "sources": [
+          "https://www.tripadvisor.com/Hotel_Review-g2285308-d5971631-Reviews-Helsa_Cottage-Mon_Mon_District_Nagaland.html",
+          "https://www.outlookindia.com/traveller/ot-getaway-guides/mon-untouched-country"
+        ]
+      }
+    },
+    {
+      "destination_id": "mon",
+      "slot": "location",
+      "verdict": "replace",
+      "replacement": {
+        "name": "Tourist Lodge, Forest Colony (Govt of Nagaland)",
+        "tier": "budget",
+        "tagline": "Government tourist lodge near the DC office in Forest Colony — a short walk from Mon Bazaar and the de facto starting point for permits and Konyak-village guides.",
+        "price_band": "₹",
+        "address": "Forest Colony, Mon, Mon District, Nagaland",
+        "sources": [
+          "https://mon.nic.in/accommodation/",
+          "https://www.india.gov.in/information-about-hotels-mon-district-nagaland"
+        ]
+      }
+    },
+    {
+      "destination_id": "mon",
+      "slot": "xfactor",
+      "verdict": "replace",
+      "replacement": {
+        "name": "Traveller's Inn, Longwa (run by Angh's family)",
+        "tier": "homestay",
+        "tagline": "Sits directly opposite the Konyak Angh's longhouse on the India-Myanmar border — sleep in a basic homestay where the chief lives in two countries and dinner is cooked over a central fireplace.",
+        "price_band": "₹",
+        "address": "Longwa village, Mon District, Nagaland (Indo-Myanmar border, ~42 km from Mon town)",
+        "phone": "Bookings via village contacts; Facebook page 'Travellers Inn Longwa'",
+        "sources": [
+          "https://www.facebook.com/p/Travellers-Inn-Longwa-100064027333845/",
+          "https://taleof2backpackers.com/longwa-nagaland/"
+        ]
+      }
+    },
+    {
+      "destination_id": "pfutsero",
+      "slot": "experience",
+      "verdict": "replace",
+      "replacement": {
+        "name": "Wander Nagaland Mini Tourist Homestay",
+        "tier": "homestay",
+        "tagline": "Naga-owned homestay on the Kohima–Meluri road in Pfutsero town, run by the Wander Nagaland / Naga Homestay collective — the closest thing to a 'recommended' stay in a town that has only a handful of lodgings.",
+        "price_band": "₹",
+        "address": "Kohima–Meluri Road, Pfutsero 798619, Phek District, Nagaland",
+        "book_url": "https://www.makemytrip.global/hotels/wander_nagaland_mini_tourist_homestay-details-phek.html",
+        "sources": [
+          "https://www.tripadvisor.in/Hotel_Review-g27456647-d27454721-Reviews-Wander_Nagaland_Mini_Tourist_Homestay-Pfutsero_Phek_District_Nagaland.html",
+          "https://morungexpress.com/finally-a-site-to-directly-access-nagalands-homestays"
+        ]
+      }
+    },
+    {
+      "destination_id": "pfutsero",
+      "slot": "value",
+      "verdict": "replace",
+      "replacement": {
+        "name": "Pfutsero Tourist Lodge (Govt of Nagaland)",
+        "tier": "budget",
+        "tagline": "Wooden lodge on a slope overlooking the entire town — book through the Tourism Department in Kohima; basic rooms, sweeping valley views, the de facto budget option in Nagaland's highest town.",
+        "price_band": "₹",
+        "address": "Pfutsero town, Phek District, Nagaland",
+        "sources": [
+          "https://thelandofwanderlust.com/the-highest-town-pfutsero-nagaland/",
+          "https://visittotravel.com/pfutsero/"
+        ]
+      }
+    },
+    {
+      "destination_id": "pfutsero",
+      "slot": "location",
+      "verdict": "replace",
+      "replacement": {
+        "name": "Pfutsero Circuit House (PWD/Govt)",
+        "tier": "budget",
+        "tagline": "Government circuit house perched above the town with views over Pfutsero lake and the Chakhesang valleys — central location, must be pre-booked through the DC office or Kohima tourism.",
+        "price_band": "₹",
+        "address": "Pfutsero, Phek District, Nagaland",
+        "sources": [
+          "https://thelandofwanderlust.com/the-highest-town-pfutsero-nagaland/",
+          "https://visitnortheastindia.info/pfutsero-a-hidden-gem-off-the-tourist-map/"
+        ]
+      }
+    },
+    {
+      "destination_id": "pfutsero",
+      "slot": "xfactor",
+      "verdict": "null_slot"
+    }
+  ],
+  "task_b_results": [
+    {
+      "destination_id": "kohima",
+      "slot": "value",
+      "name": "Hotel Vivor Kohima",
+      "tier": "comfort",
+      "tagline": "Niathu-Group 4-star with 29 rooms blending Naga handicraft and modern comfort — Tripadvisor #1 small hotel in Nagaland; mid-priced sweet spot between budget lodges and Niraamaya luxury.",
+      "price_band": "₹₹",
+      "address": "Lower Agri, near Kohima Bible College, Kohima 797001, Nagaland",
+      "book_url": "https://vivor.niathugroup.com/",
+      "sources": [
+        "https://vivor.niathugroup.com/",
+        "https://www.tripadvisor.com/Hotel_Review-g668044-d5041689-Reviews-Hotel_Vivor_Kohima-Kohima_Kohima_District_Nagaland.html"
+      ],
+      "dubious_after_research": false
+    },
+    {
+      "destination_id": "kohima",
+      "slot": "location",
+      "name": "Hotel Lavisto",
+      "tier": "comfort",
+      "tagline": "Directly opposite Kohima War Cemetery — 50 m from the entrance gate, 5-minute walk to Tibetan Market. Basic but clean rooms, balcony town views; the only stay where you can walk to the WWII memorial in slippers.",
+      "price_band": "₹₹",
+      "address": "Opposite War Cemetery, Kohima 797001, Nagaland",
+      "book_url": "https://hotellavisto.in/",
+      "sources": [
+        "https://hotellavisto.in/",
+        "https://www.tripadvisor.com/Hotel_Review-g668044-d21509897-Reviews-Hotel_Lavisto-Kohima_Kohima_District_Nagaland.html"
+      ],
+      "dubious_after_research": false
+    },
+    {
+      "destination_id": "kohima",
+      "slot": "xfactor",
+      "name": "Razhu Pru",
+      "tier": "heritage",
+      "tagline": "1946 Angami family home in Kohima Village (the original settlement) turned heritage homestay — wooden floors, traditional Naga antiques, post-WWII history baked into the walls; 7 km from the War Cemetery, but the most atmospheric stay in town.",
+      "price_band": "₹₹",
+      "address": "Opposite Baptist High Secondary School, Mission Compound, Kohima Village 797001, Nagaland",
+      "sources": [
+        "https://www.tripadvisor.in/Hotel_Review-g668044-d2154833-Reviews-Razhu_Pru-Kohima_Kohima_District_Nagaland.html",
+        "https://www.northeastodyssey.com/hotels-resorts/nagaland/item/93-razhupru-homestay.html"
+      ],
+      "dubious_after_research": false
+    },
+    {
+      "destination_id": "khonoma",
+      "slot": "value",
+      "name": "Happy Hues Homestay",
+      "tier": "homestay",
+      "tagline": "3-room family homestay run by Vikepeno and Apeno Pier — classic room ₹2,000, family room ₹2,600 (incl. breakfast); balcony view over Khonoma's terraced rice fields. Apeno's cooking and history stories are the draw.",
+      "price_band": "₹",
+      "address": "Khonoma Village, Kohima District 797001, Nagaland (19 km from Kohima)",
+      "book_url": "https://www.homestaysofindia.com/nagaland-kohima-khonoma-happy-hues-homestay/",
+      "sources": [
+        "https://www.homestaysofindia.com/nagaland-kohima-khonoma-happy-hues-homestay/",
+        "https://www.instagram.com/happyhues.in/"
+      ],
+      "dubious_after_research": false
+    },
+    {
+      "destination_id": "khonoma",
+      "slot": "location",
+      "name": "Dovipie Inn",
+      "tier": "boutique",
+      "tagline": "6-room boutique inn inside Khonoma village — closest to the Sopfunuo (warrior's wife) memorial gate and the stone-paved path to the 750-year-old terraces. Cozy hill-view rooms; bird and butterfly walks arranged by the family.",
+      "price_band": "₹",
+      "address": "Khonoma Village, Kohima District 797001, Nagaland",
+      "book_url": "https://dovipieinn.com/",
+      "sources": [
+        "https://dovipieinn.com/",
+        "https://www.tripadvisor.com/Hotel_Review-g668044-d10686332-Reviews-Dovipie_Inn-Kohima_Kohima_District_Nagaland.html"
+      ],
+      "dubious_after_research": false
+    },
+    {
+      "destination_id": "khonoma",
+      "slot": "xfactor",
+      "name": "Dzuleke Eco-tourism Homestays (8 km from Khonoma)",
+      "tier": "homestay",
+      "tagline": "32-house Angami hamlet 8 km beyond Khonoma run as a TATA Trust eco-tourism cluster — basic homestays, trout streams, Blyth's tragopan birding; the 'further-in' stay for travellers who already did Khonoma village.",
+      "price_band": "₹",
+      "address": "Dzuleke village, Kohima District, Nagaland (8 km west of Khonoma)",
+      "sources": [
+        "https://chalohoppo.com/tour/khonoma-village-delving-into-the-stories-and-ways-of-the-angami/",
+        "https://breakbag.com/attractions/khonoma-the-green-village-of-nagaland"
+      ],
+      "dubious_after_research": false
+    },
+    {
+      "destination_id": "mokokchung",
+      "slot": "experience",
+      "name": "Hotel Whispering Winds",
+      "tier": "comfort",
+      "tagline": "On D.C. Hill, the highest point of Mokokchung — modern 3-star with a Naga-cuisine restaurant, licensed bar and 360° valley views; the canonical 'comfortable' stay for visiting Ao-Naga heartland.",
+      "price_band": "₹₹",
+      "address": "D.C. Hill, Sangtemla Ward, Mokokchung 798601, Nagaland",
+      "phone": "0369-2229743 / 9615166202",
+      "sources": [
+        "https://mokokchung.nic.in/where-to-stay/",
+        "https://www.tripadvisor.in/Hotel_Review-g1162208-d2224940-Reviews-Hotel_Whispering_Winds-Mokokchung_Mokokchung_District_Nagaland.html"
+      ],
+      "dubious_after_research": false
+    },
+    {
+      "destination_id": "mokokchung",
+      "slot": "value",
+      "name": "Marvel Guesthouse (Wander Nagaland)",
+      "tier": "homestay",
+      "tagline": "Family-run guesthouse + homestay in Alongmen Ward, 3 minutes from the town square and bus stand — basic rooms, Ao hospitality, terrace 360° view; listed on the Naga Homestay collective and the cheapest decent option in town.",
+      "price_band": "₹",
+      "address": "S.E. Colony Road, Alongmen Ward, Mokokchung 798601, Nagaland",
+      "phone": "+91 70855 78530",
+      "book_url": "https://www.makemytrip.global/hotels/wander_nagaland_marvel_homestay-details-mokokchung.html",
+      "sources": [
+        "https://mokokchung.nic.in/where-to-stay/",
+        "https://www.makemytrip.global/hotels/wander_nagaland_marvel_homestay-details-mokokchung.html"
+      ],
+      "dubious_after_research": false
+    },
+    {
+      "destination_id": "mokokchung",
+      "slot": "location",
+      "name": "Hotel Metsuben",
+      "tier": "comfort",
+      "tagline": "Hilltop hotel above R. Kathing Park, 0.5 km from the centre — 10 spacious rooms, multi-cuisine restaurant, walking distance to the Town Hall and the Ao Senden building. The mid-range default since 1988.",
+      "price_band": "₹",
+      "address": "R. Kathing Park, Mokokchung Compound, Mokokchung 798601, Nagaland",
+      "phone": "0369-2226373 / 9436006169",
+      "sources": [
+        "https://mokokchung.nic.in/where-to-stay/",
+        "https://www.tripadvisor.com/Hotel_Review-g1162208-d3627454-Reviews-Hotel_Metsuben-Mokokchung_Mokokchung_District_Nagaland.html"
+      ],
+      "dubious_after_research": false
+    },
+    {
+      "destination_id": "mokokchung",
+      "slot": "xfactor",
+      "name": "Mokokchung Circuit House (Govt of Nagaland)",
+      "tier": "budget",
+      "tagline": "Sangtemla Ward government circuit house — book through the DC office; basic but the only government-grade option, and the closest you get to a 'heritage administrative' stay in town.",
+      "price_band": "₹",
+      "address": "Sangtemla Ward, Mokokchung 798601, Nagaland",
+      "phone": "0369-22262618 / 7005177857",
+      "sources": [
+        "https://mokokchung.nic.in/where-to-stay/",
+        "https://mokokchung.nic.in/accommodation/"
+      ],
+      "dubious_after_research": false
+    }
+  ]
+}
