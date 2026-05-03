@@ -24,6 +24,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       languages: {
         en: `https://www.nakshiq.com/en/region/${id}`,
         hi: `https://www.nakshiq.com/hi/region/${id}`,
+        "x-default": `https://www.nakshiq.com/en/region/${id}`,
       },
     },
   };

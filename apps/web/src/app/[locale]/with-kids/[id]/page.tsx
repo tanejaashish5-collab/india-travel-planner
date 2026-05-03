@@ -75,6 +75,7 @@ export async function generateMetadata({
       languages: {
         en: `https://www.nakshiq.com/en/with-kids/${id}`,
         hi: `https://www.nakshiq.com/hi/with-kids/${id}`,
+        "x-default": `https://www.nakshiq.com/en/with-kids/${id}`,
       },
     },
     openGraph: {

@@ -21,6 +21,7 @@ export async function generateMetadata({
       languages: {
         en: "https://www.nakshiq.com/en/weekend-from",
         hi: "https://www.nakshiq.com/hi/weekend-from",
+        "x-default": "https://www.nakshiq.com/en/weekend-from",
       },
     },
   };

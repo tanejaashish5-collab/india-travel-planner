@@ -80,6 +80,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       languages: {
         en: `https://www.nakshiq.com/en/region/${id}/${month}`,
         hi: `https://www.nakshiq.com/hi/region/${id}/${month}`,
+        "x-default": `https://www.nakshiq.com/en/region/${id}/${month}`,
       },
     },
   };

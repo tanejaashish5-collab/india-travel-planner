@@ -39,6 +39,7 @@ export async function generateMetadata({
       languages: {
         en: `https://www.nakshiq.com/en/india/${regionSlug}`,
         hi: `https://www.nakshiq.com/hi/india/${regionSlug}`,
+        "x-default": `https://www.nakshiq.com/en/india/${regionSlug}`,
       },
     },
   };
@@ -127,8 +128,22 @@ export default async function RegionPage({
     thumbnailUrl: destinationImage(heroDestId),
   });
 
+  const breadcrumbLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: `https://www.nakshiq.com/${locale}` },
+      { "@type": "ListItem", position: 2, name: "India", item: `https://www.nakshiq.com/${locale}/states` },
+      { "@type": "ListItem", position: 3, name: region.name, item: `https://www.nakshiq.com/${locale}/india/${regionSlug}` },
+    ],
+  };
+
   return (
     <div className="min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+      />
       {videoLd && (
         <script
           type="application/ld+json"

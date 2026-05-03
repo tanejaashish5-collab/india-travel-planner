@@ -59,6 +59,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       languages: {
         en: `https://www.nakshiq.com/en/explore/tag/${tag}`,
         hi: `https://www.nakshiq.com/hi/explore/tag/${tag}`,
+        "x-default": `https://www.nakshiq.com/en/explore/tag/${tag}`,
       },
     },
   };
@@ -70,6 +71,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       languages: {
         en: `https://www.nakshiq.com/en/explore/tag/${tag}`,
         hi: `https://www.nakshiq.com/hi/explore/tag/${tag}`,
+        "x-default": `https://www.nakshiq.com/en/explore/tag/${tag}`,
       },
     },
   };

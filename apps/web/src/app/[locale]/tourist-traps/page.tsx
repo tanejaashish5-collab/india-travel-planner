@@ -29,6 +29,7 @@ export async function generateMetadata({
       languages: {
         en: `${SITE}/en/tourist-traps`,
         hi: `${SITE}/hi/tourist-traps`,
+        "x-default": `${SITE}/en/tourist-traps`,
       },
     },
     openGraph: {

@@ -22,6 +22,7 @@ export async function generateMetadata({
       languages: {
         en: "https://www.nakshiq.com/en",
         hi: "https://www.nakshiq.com/hi",
+        "x-default": "https://www.nakshiq.com/en",
       },
     },
   };

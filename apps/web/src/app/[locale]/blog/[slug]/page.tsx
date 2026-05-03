@@ -49,6 +49,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       languages: {
         en: `https://www.nakshiq.com/en/blog/${slug}`,
         hi: `https://www.nakshiq.com/hi/blog/${slug}`,
+        "x-default": `https://www.nakshiq.com/en/blog/${slug}`,
       },
     },
     openGraph: {

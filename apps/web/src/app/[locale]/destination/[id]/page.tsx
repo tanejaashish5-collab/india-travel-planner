@@ -111,6 +111,7 @@ export async function generateMetadata({
       languages: {
         en: `https://www.nakshiq.com/en/destination/${id}`,
         hi: `https://www.nakshiq.com/hi/destination/${id}`,
+        "x-default": `https://www.nakshiq.com/en/destination/${id}`,
       },
     },
     openGraph: {

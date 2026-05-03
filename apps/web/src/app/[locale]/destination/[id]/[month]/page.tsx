@@ -210,6 +210,7 @@ export async function generateMetadata({
       languages: {
         en: `https://www.nakshiq.com/en/destination/${id}/${month}`,
         hi: `https://www.nakshiq.com/hi/destination/${id}/${month}`,
+        "x-default": `https://www.nakshiq.com/en/destination/${id}/${month}`,
       },
     },
     openGraph: {

@@ -121,6 +121,7 @@ export async function generateMetadata({
       languages: {
         en: `${SITE}/en/skip-list/${slug}`,
         hi: `${SITE}/hi/skip-list/${slug}`,
+        "x-default": `${SITE}/en/skip-list/${slug}`,
       },
     },
     openGraph: {
