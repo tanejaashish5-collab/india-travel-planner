@@ -37,16 +37,16 @@
     "06_sunset_gaze"
   ],
   "posted_today": {
-    "PdMu0": "2026-05-02",
-    "m8EAd": "2026-05-02",
+    "PdMu0": "2026-05-03",
+    "m8EAd": "2026-05-03",
     "m8EAd_reel": "2026-05-02",
     "PdMu0_reel": "2026-05-03",
     "4QL0i_reel": "2026-04-19",
     "m8EAd_canva": "2026-04-26",
     "PdMu0_canva": "2026-04-26",
-    "m8EAd_evening": "2026-05-02",
-    "m8EAd_evening_story": "2026-04-29",
-    "PdMu0_evening": "2026-05-02",
+    "m8EAd_evening": "2026-05-03",
+    "m8EAd_evening_story": "2026-05-03",
+    "PdMu0_evening": "2026-05-03",
     "m8EAd_yt_short": "2026-05-02",
     "m8EAd_yt_short_count": 1,
     "jUmP2_yt_short": "2026-04-20",
@@ -80,7 +80,7 @@
     "GAh5p_yt_short": "2026-05-03",
     "GAh5p_yt_short_count": 1
   },
-  "last_sync": "2026-05-03T07:07:30.504202+00:00",
+  "last_sync": "2026-05-03T14:09:33.927405+00:00",
   "posted_destinations": [
     {
       "destination_id": "pahalgam",
@@ -461,6 +461,30 @@
     {
       "destination_id": "rudraprayag",
       "date": "2026-05-02"
+    },
+    {
+      "destination_id": "uttarkashi",
+      "date": "2026-05-03"
+    },
+    {
+      "destination_id": "kalpa",
+      "date": "2026-05-03"
+    },
+    {
+      "destination_id": "achabal",
+      "date": "2026-05-03"
+    },
+    {
+      "destination_id": "anamalai",
+      "date": "2026-05-03"
+    },
+    {
+      "destination_id": "gurudongmar-lake",
+      "date": "2026-05-03"
+    },
+    {
+      "destination_id": "munsiyari",
+      "date": "2026-05-03"
     }
   ],
   "posted_formats": {
@@ -482,10 +506,10 @@
       "collection_spotlight",
       "festival_alert",
       "score_card",
-      "score_card"
+      "score_card",
+      "monthly_forecast"
     ],
     "PdMu0": [
-      "monthly_forecast",
       "methodology_roads",
       "score_card",
       "methodology_family",
@@ -505,7 +529,8 @@
       "collection_spotlight",
       "festival_alert",
       "score_card",
-      "score_card"
+      "score_card",
+      "monthly_forecast"
     ]
   },
   "post_log": [
@@ -977,6 +1002,37 @@
       "destination": "rudraprayag",
       "format": "score_card",
       "has_media": true
+    },
+    {
+      "timestamp": "2026-05-03T14:10:49.771465+00:00",
+      "date": "2026-05-03",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "xjZM8",
+      "destination": "uttarkashi",
+      "format": "monthly_forecast",
+      "has_media": true
+    },
+    {
+      "timestamp": "2026-05-03T14:11:06.936458+00:00",
+      "date": "2026-05-03",
+      "platform": "instagram_story",
+      "account_id": "m8EAd",
+      "post_id": "RMlBH",
+      "destination": "uttarkashi",
+      "format": "kids_intel",
+      "has_media": true,
+      "mode": "evening"
+    },
+    {
+      "timestamp": "2026-05-03T14:11:52.283476+00:00",
+      "date": "2026-05-03",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "ExD5A",
+      "destination": "munsiyari",
+      "format": "monthly_forecast",
+      "has_media": true
     }
   ],
   "theme_usage": {
@@ -1086,6 +1142,24 @@
       ],
       "rudraprayag": [
         "2026-05-02"
+      ],
+      "munsiyari": [
+        "2026-05-03"
+      ],
+      "uttarkashi": [
+        "2026-05-03"
+      ],
+      "kalpa": [
+        "2026-05-03"
+      ],
+      "achabal": [
+        "2026-05-03"
+      ],
+      "anamalai": [
+        "2026-05-03"
+      ],
+      "gurudongmar-lake": [
+        "2026-05-03"
       ]
     },
     "reel_formats": {
@@ -1242,6 +1316,12 @@
       ],
       "rudraprayag": [
         "2026-05-02"
+      ],
+      "uttarkashi": [
+        "2026-05-03"
+      ],
+      "munsiyari": [
+        "2026-05-03"
       ]
     },
     "festivals": {
@@ -1413,6 +1493,6 @@
   },
   "last_picked": {
     "collection": "andaman-diving-snorkeling",
-    "shared_best": "rudraprayag"
+    "shared_best": "munsiyari"
   }
 }
