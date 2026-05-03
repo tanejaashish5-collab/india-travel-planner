@@ -34,6 +34,10 @@ export type ColdStartSeedStop = {
 export type ColdStartSeed = {
   stops: ColdStartSeedStop[];
   month?: number; // 1-12 — sets state.month if provided
+  /** Trip name to apply to state.name. Picking a curated/themed/profile path
+   * sets a meaningful default so the SimpleView header isn't always the
+   * generic "My India Trip" placeholder. */
+  name?: string;
 };
 
 type DestLite = {
@@ -155,15 +159,28 @@ export function ColdStart({ destinations, onSeed }: { destinations: DestLite[]; 
   }, [destinations, profile]);
 
   function chooseCurated(c: (typeof CURATED)[number]) {
-    onSeed({ stops: c.seed.stops.slice(), month: c.seed.month });
+    onSeed({ stops: c.seed.stops.slice(), month: c.seed.month, name: c.name });
   }
 
   function chooseMonthDestination(slug: string) {
-    onSeed({ stops: [{ slug, startDay: dayFromMonth(month - 1, 5), days: 3 }], month });
+    const dest = destinations.find((d) => d.id === slug);
+    const destName = dest?.name ?? slug;
+    onSeed({
+      stops: [{ slug, startDay: dayFromMonth(month - 1, 5), days: 3 }],
+      month,
+      name: `${destName} · ${MONTHS[month - 1]}`,
+    });
   }
 
   function chooseProfileDestination(slug: string) {
-    onSeed({ stops: [{ slug, startDay: dayFromMonth(month - 1, 5), days: 3 }], month });
+    const dest = destinations.find((d) => d.id === slug);
+    const destName = dest?.name ?? slug;
+    const profileLabel = PROFILES.find((p) => p.id === profile)?.label ?? "Solo";
+    onSeed({
+      stops: [{ slug, startDay: dayFromMonth(month - 1, 5), days: 3 }],
+      month,
+      name: `${destName} · ${profileLabel}`,
+    });
   }
 
   function chooseTheme(t: (typeof THEMES)[number]) {
@@ -177,10 +194,12 @@ export function ColdStart({ destinations, onSeed }: { destinations: DestLite[]; 
         days: 4,
       })),
       month,
+      name: `${t.label} · ${MONTHS[month - 1]}`,
     });
   }
 
   function skipToEmptyBoard() {
+    // Skip → no name override; user starts from a clean default.
     onSeed({ stops: [], month });
   }
 

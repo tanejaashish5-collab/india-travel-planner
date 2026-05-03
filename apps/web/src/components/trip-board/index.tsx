@@ -89,7 +89,7 @@ export function TripBoard({ destinations }: { destinations: DestinationLite[] })
   function applySeed(seed: ColdStartSeed) {
     setForceColdStart(false);
     if (seed.stops.length === 0) {
-      // Skip → open empty three-pane. Set month if provided so the year band
+      // Skip → open empty board. Set month if provided so the year band
       // anchors somewhere reasonable.
       setState((prev) => ({
         ...prev,
@@ -99,6 +99,11 @@ export function TripBoard({ destinations }: { destinations: DestinationLite[] })
     }
     setState((prev) => ({
       ...prev,
+      // seed.name is set by ColdStart when the user picks a curated trip /
+      // by-month / by-profile / by-theme path — overrides the placeholder
+      // default ("My India Trip") so the SimpleView header reads as a real
+      // trip name from the start.
+      name: seed.name ?? prev.name,
       month: seed.month ?? prev.month ?? currentMonthIST(),
       stops: seed.stops.map((s, idx) => ({
         destinationId: s.slug,
