@@ -4,6 +4,7 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import { useLocale } from "next-intl";
 import Link from "next/link";
 import { m as motion, AnimatePresence } from "framer-motion";
+import { KEY_EVENTS, track } from "@/lib/analytics";
 
 /* ── Sticky Section Tabs ──
    Floats above content on mobile, tracks scroll position to highlight active section.
@@ -140,9 +141,11 @@ export function BottomCTABar({ destId, destName }: { destId: string; destName: s
     if (savedItems.includes(destId)) {
       updated = savedItems.filter((id) => id !== destId);
       setSaved(false);
+      track(KEY_EVENTS.SAVE_DESTINATION, { destination: destId, action: "remove", surface: "mobile-cta" });
     } else {
       updated = [...savedItems, destId];
       setSaved(true);
+      track(KEY_EVENTS.SAVE_DESTINATION, { destination: destId, action: "add", surface: "mobile-cta" });
       // Haptic feedback
       if (navigator.vibrate) navigator.vibrate(10);
     }

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useTranslations } from "next-intl";
+import { KEY_EVENTS, track } from "@/lib/analytics";
 
 export function ShareButton({ title, text, url }: { title: string; text: string; url?: string }) {
   const [copied, setCopied] = useState(false);
@@ -13,6 +14,7 @@ export function ShareButton({ title, text, url }: { title: string; text: string;
     if (navigator.share) {
       try {
         await navigator.share({ title, text, url: shareUrl });
+        track(KEY_EVENTS.SHARE_CLICK, { method: "native", url: shareUrl });
         return;
       } catch {
         // User cancelled or error — fall through to WhatsApp
@@ -21,11 +23,13 @@ export function ShareButton({ title, text, url }: { title: string; text: string;
 
     // WhatsApp share
     const waText = encodeURIComponent(`${title}\n${text}\n${shareUrl}`);
+    track(KEY_EVENTS.SHARE_CLICK, { method: "whatsapp", url: shareUrl });
     window.open(`https://wa.me/?text=${waText}`, "_blank");
   }
 
   function handleCopy() {
     navigator.clipboard.writeText(shareUrl);
+    track(KEY_EVENTS.SHARE_CLICK, { method: "copy_link", url: shareUrl });
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   }

@@ -10,6 +10,7 @@ import { CompareButton } from "./compare-tray";
 import { StaggerContainer, StaggerItem, HoverCard } from "./animated-hero";
 import { SCORE_COLORS, DIFFICULTY_COLORS } from "@/lib/design-tokens";
 import { currentMonthIST } from "@itp/shared";
+import { KEY_EVENTS, track } from "@/lib/analytics";
 
 const SOLO_FEMALE_COLOR: Record<number, string> = {
   5: "border-emerald-400/40 bg-emerald-500/15 text-emerald-200",
@@ -350,13 +351,19 @@ function DestinationCard({
             e.preventDefault();
             e.stopPropagation();
             const saved = JSON.parse(localStorage.getItem("savedDestinations") || "[]");
-            if (saved.includes(dest.id)) {
+            const wasSaved = saved.includes(dest.id);
+            if (wasSaved) {
               localStorage.setItem("savedDestinations", JSON.stringify(saved.filter((s: string) => s !== dest.id)));
             } else {
               localStorage.setItem("savedDestinations", JSON.stringify([...saved, dest.id]));
             }
+            track(KEY_EVENTS.SAVE_DESTINATION, {
+              destination: dest.id,
+              action: wasSaved ? "remove" : "add",
+              surface: "explore-grid",
+            });
             // Force re-render — simple toggle
-            (e.target as HTMLElement).textContent = saved.includes(dest.id) ? "♡" : "♥";
+            (e.target as HTMLElement).textContent = wasSaved ? "♡" : "♥";
           }}
           className="absolute top-2 right-2 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-black/50 text-white/80 hover:bg-black/70 hover:text-red-400 transition-all backdrop-blur-sm"
           aria-label="Save destination"

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Nav } from "@/components/nav";
 import { DestinationDetail } from "@/components/destination-detail";
+import { ScrollDepthTracker } from "@/components/scroll-depth-tracker";
 import { PrevNextNav } from "@/components/prev-next-nav";
 import Link from "next/link";
 import { VS_PAIRS } from "@/lib/vs-pairs";
@@ -603,6 +604,7 @@ export default async function DestinationPage({
           </div>
         )}
         <DestinationDetail dest={dest} />
+        <ScrollDepthTracker page="destination" destinationId={id} />
 
         <AskNakshIQInlineCTA subject={dest.name} />
 

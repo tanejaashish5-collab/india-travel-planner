@@ -1,3 +1,7 @@
+"use client";
+
+import { KEY_EVENTS, track } from "@/lib/analytics";
+
 export function BookingHandoff({ destinationName, stateName }: { destinationName: string; stateName?: string }) {
   const searchQuery = encodeURIComponent(`${destinationName} ${stateName || "India"} hotels`);
 
@@ -35,6 +39,13 @@ export function BookingHandoff({ destinationName, stateName }: { destinationName
             href={link.url}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() =>
+              track(KEY_EVENTS.OUTBOUND_BOOKING_CLICK, {
+                partner: link.name,
+                destination: destinationName,
+                state: stateName ?? "",
+              })
+            }
             className={`rounded-full border px-4 py-2 text-xs font-medium transition-all ${link.color}`}
           >
             {link.name} →

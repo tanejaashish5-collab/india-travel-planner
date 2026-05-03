@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { setRequestLocale } from "next-intl/server";
 import { Nav } from "@/components/nav";
 import { DestinationMonth } from "@/components/destination-month";
+import { ScrollDepthTracker } from "@/components/scroll-depth-tracker";
 import { createClient } from "@supabase/supabase-js";
 import { notFound } from "next/navigation";
 import { destinationImage } from "@/lib/image-url";
@@ -549,6 +550,7 @@ export default async function DestinationMonthPage({
         />
       )}
       <Nav />
+      <ScrollDepthTracker page="destination_month" destinationId={id} month={month} />
       <main className="mx-auto max-w-4xl lg:max-w-6xl px-4 py-8">
         {editor && (
           <div className="mb-6">

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { FadeIn } from "./animated-hero";
+import { KEY_EVENTS, track } from "@/lib/analytics";
 
 export function NewsletterSignup({ source = "inline-widget" }: { source?: string } = {}) {
   const [email, setEmail] = useState("");
@@ -33,6 +34,7 @@ export function NewsletterSignup({ source = "inline-widget" }: { source?: string
         return;
       }
 
+      track(KEY_EVENTS.EMAIL_SIGNUP, { source });
       setStatus("success");
     } catch {
       setErrorMsg("Something went wrong. Please try again.");

@@ -10,6 +10,7 @@ import { DestinationGuideToC } from "./destination-guide-toc";
 import { MonthlyChart } from "./monthly-chart";
 import { WeatherWidget } from "./weather-widget";
 import { ShareButton } from "./share-button";
+import { KEY_EVENTS, track } from "@/lib/analytics";
 import { WhatsAppShare } from "./whatsapp-share";
 import { CompareButton } from "./compare-tray";
 import { DistanceBadge } from "./distance-badge";
@@ -100,10 +101,12 @@ export function DestinationDetail({ dest }: { dest: any }) {
       const filtered = savedDests.filter((id: string) => id !== dest.id);
       localStorage.setItem("savedDestinations", JSON.stringify(filtered));
       setSaved(false);
+      track(KEY_EVENTS.SAVE_DESTINATION, { destination: dest.id, action: "remove", surface: "detail" });
     } else {
       savedDests.push(dest.id);
       localStorage.setItem("savedDestinations", JSON.stringify(savedDests));
       setSaved(true);
+      track(KEY_EVENTS.SAVE_DESTINATION, { destination: dest.id, action: "add", surface: "detail" });
     }
   }
 
