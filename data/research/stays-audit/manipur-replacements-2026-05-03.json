@@ -1,0 +1,266 @@
+{
+  "task_a_results": [
+    {
+      "destination_id": "imphal",
+      "slot": "experience",
+      "verdict": "replace",
+      "replacement": {
+        "name": "Classic Grande Imphal, a Member of Radisson Individuals",
+        "tier": "luxury",
+        "tagline": "171 rooms with the only proper pool + full-service spa in town, overlooking the Baruni Hill range. The Classic group's Radisson-flagged property — Imphal's lone 4-star with international service standards.",
+        "price_band": "₹₹₹",
+        "address": "North AOC, Imphal West 795001, Manipur",
+        "book_url": "https://www.radissonhotels.com/en-us/hotels/radisson-individuals-classic-grande-imphal",
+        "sources": [
+          "https://www.tripadvisor.in/Hotel_Review-g668045-d9593395-Reviews-Classic_Grande_Imphal_a_member_of_Radisson_Individuals-Imphal_Imphal_West_District_Manipur.html",
+          "https://www.booking.com/hotel/in/classic-grande.html",
+          "https://www.radissonhotels.com/en-us/hotels/radisson-individuals-classic-grande-imphal"
+        ]
+      }
+    },
+    {
+      "destination_id": "imphal",
+      "slot": "value",
+      "verdict": "replace",
+      "replacement": {
+        "name": "Sangai Continental — The Boutique Hotel",
+        "tier": "comfort",
+        "tagline": "49 rooms on M.G. Avenue at Thangal Bazar, walking distance to Ima Keithel and Kangla Fort. 3-star boutique pitched at business travellers — clean, central, half the price of the Classic Grande.",
+        "price_band": "₹₹",
+        "address": "M.G. Avenue, Thangal Bazar, Imphal West 795001, Manipur",
+        "book_url": "https://www.thesangaicontinental.com/",
+        "sources": [
+          "https://www.booking.com/hotel/in/sangai-continental-the-boutique.en-gb.html",
+          "https://www.thesangaicontinental.com/index.html",
+          "https://www.tripadvisor.in/Hotels-g668045-Imphal_Imphal_West_District_Manipur-Hotels.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "imphal",
+      "slot": "location",
+      "verdict": "replace",
+      "replacement": {
+        "name": "Aurora Boutique Hotel",
+        "tier": "boutique",
+        "tagline": "Behind Polo Ground at Paona Bazar — 3km flat walk to Kangla Fort, Govindajee Temple and Ima Keithel. Rooftop restaurant; Booking.com 8.9. The Kangla-Fort walkability anchor.",
+        "price_band": "₹₹",
+        "address": "Paona Bazar, Behind Polo Ground, Imphal West 795001, Manipur",
+        "book_url": "https://auroraboutiquehotel.in/",
+        "sources": [
+          "https://www.booking.com/hotel/in/aurora-boutique.html",
+          "https://www.tripadvisor.com/Hotel_Review-g668045-d25254399-Reviews-Aurora_Boutique_Hotel-Imphal_Imphal_West_District_Manipur.html",
+          "https://auroraboutiquehotel.in/"
+        ]
+      }
+    },
+    {
+      "destination_id": "imphal",
+      "slot": "xfactor",
+      "verdict": "replace",
+      "replacement": {
+        "name": "The Classic Hotel",
+        "tier": "heritage",
+        "tagline": "Manipur's first 3-star hotel — 1,35,000 sq ft of lawns and open verandas opposite the Kangla Fort gate. The Classic group's flagship before they built the Grande; old-school service from the family that pioneered Manipuri hospitality.",
+        "price_band": "₹₹",
+        "address": "North AOC, Kabo Leikai, Imphal West 795001, Manipur",
+        "book_url": "https://www.theclassichotel.in/",
+        "sources": [
+          "https://www.tripadvisor.com/Hotel_Review-g668045-d1641381-Reviews-The_Classic_Hotel-Imphal_Imphal_West_District_Manipur.html",
+          "https://www.booking.com/hotel/in/the-classic.en-gb.html",
+          "https://www.theclassichotel.in/"
+        ]
+      }
+    },
+
+    {
+      "destination_id": "loktak-lake",
+      "slot": "experience",
+      "verdict": "replace",
+      "replacement": {
+        "name": "Sendra Park & Resort by The Classic",
+        "tier": "comfort",
+        "tagline": "Four cane-and-water-reed cottages on Sendra hill above Loktak — the only mid-range resort actually on the lake. Sangai Café serves Manipuri thalis with phumdi views; 3km from Moirang.",
+        "price_band": "₹₹₹",
+        "address": "Sendra Hill, Ithing, Bishnupur District 795133, Manipur",
+        "book_url": "https://www.classicgroupofhotels.com/sendra-resort/",
+        "sources": [
+          "https://www.tripadvisor.in/Hotel_Review-g13457208-d10251425-Reviews-Sendra_Park_Resort-Ithing_Bishnupur_District_Manipur.html",
+          "https://www.classicgroupofhotels.com/sendra-resort/",
+          "https://www.northeastodyssey.com/hotels-resorts/manipur/item/174-sendra-park-and-resort-by-the-classic.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "loktak-lake",
+      "slot": "value",
+      "verdict": "replace",
+      "replacement": {
+        "name": "Sendra Tourist Home",
+        "tier": "budget",
+        "tagline": "Manipur Tourism's spartan rest house on Sendra Island with attached cafeteria and Takmu Water Sports next door. Deluxe rooms + cottages; the cheapest sleep with a phumdi view.",
+        "price_band": "₹",
+        "address": "Sendra Island, Loktak Lake, Bishnupur District 795133, Manipur",
+        "sources": [
+          "https://manipurtourism.gov.in/in-around-loktak-lake/",
+          "https://indiano.travel/place/sendra-tourist-home/"
+        ]
+      }
+    },
+    {
+      "destination_id": "loktak-lake",
+      "slot": "location",
+      "verdict": "replace",
+      "replacement": null
+    },
+    {
+      "destination_id": "loktak-lake",
+      "slot": "xfactor",
+      "verdict": "replace",
+      "replacement": {
+        "name": "Maipakchao Family Floating Homestay",
+        "tier": "homestay",
+        "tagline": "Oinam Maipakchao Singh, 2013 — Thanga island guesthouse run by the president of the local ecotourism board. ₹1000/person includes three meals, hand-rowed boat tours and a working family loom.",
+        "price_band": "₹",
+        "address": "Thanga Island, Loktak Lake, Bishnupur District 795133, Manipur",
+        "sources": [
+          "https://www.responsibletourismindia.com/stay/maipakchao-family-home-stay/318",
+          "https://www.facebook.com/p/Maipakchao-Family-Floating-Homestay-Loktak-Manipur-contct-no-7005248017-100076122121652/",
+          "https://www.lostwithpurpose.com/loktak-lake/"
+        ]
+      }
+    },
+
+    {
+      "destination_id": "moreh",
+      "slot": "experience",
+      "verdict": "replace",
+      "replacement": {
+        "name": "Elora Hotel",
+        "tier": "comfort",
+        "tagline": "Tengnoupal district's first 3-star — three floors on Indo-Myanmar Road in Ward No 9, the closest decent bed to the international gate. Clean rooms, hot water, the only credible business stay in town.",
+        "price_band": "₹₹",
+        "address": "Indo-Myanmar Road, Ward No 9, Moreh, Tengnoupal District 795131, Manipur",
+        "book_url": "https://elorahotel.com/",
+        "sources": [
+          "https://www.tripadvisor.com/Hotel_Review-g26844686-d13167678-Reviews-Elora_Hotel-Moreh_Tengnoupal_District_Manipur.html",
+          "https://elorahotel.com/",
+          "https://tengnoupal.nic.in/accommodation/"
+        ]
+      }
+    },
+    {
+      "destination_id": "moreh",
+      "slot": "value",
+      "verdict": "replace",
+      "replacement": null
+    },
+    {
+      "destination_id": "moreh",
+      "slot": "location",
+      "verdict": "replace",
+      "replacement": null
+    },
+    {
+      "destination_id": "moreh",
+      "slot": "xfactor",
+      "verdict": "replace",
+      "replacement": null
+    },
+
+    {
+      "destination_id": "tamenglong",
+      "slot": "experience",
+      "verdict": "replace",
+      "replacement": {
+        "name": "Apollo Inn",
+        "tier": "budget",
+        "tagline": "Tripadvisor's only listed Tamenglong property — Ward No 1, near Apollo ground, 3km from the main bus stand. Top-floor in-house restaurant; the lone formal lodging in a district where the next bed is 40km away in Imphal.",
+        "price_band": "₹",
+        "address": "Ward No 1, Utopia, Tamenglong, Tamenglong District 795141, Manipur",
+        "sources": [
+          "https://www.tripadvisor.com/Hotel_Review-g2289032-d13290771-Reviews-Apollo_Inn-Tamenglong_Tamenglong_District_Manipur.html",
+          "https://www.facebook.com/people/Apollo-Inn-Tamenglong/100063330784279/",
+          "https://www.trivago.co.uk/en-GB/oar/hotel-apollo-inn-tamenglong-imphal?search=100-9076304"
+        ]
+      }
+    },
+    {
+      "destination_id": "tamenglong",
+      "slot": "value",
+      "verdict": "replace",
+      "replacement": null
+    },
+    {
+      "destination_id": "tamenglong",
+      "slot": "location",
+      "verdict": "replace",
+      "replacement": null
+    },
+    {
+      "destination_id": "tamenglong",
+      "slot": "xfactor",
+      "verdict": "replace",
+      "replacement": null
+    },
+
+    {
+      "destination_id": "ukhrul",
+      "slot": "experience",
+      "verdict": "replace",
+      "replacement": {
+        "name": "Magen Hills",
+        "tier": "boutique",
+        "tagline": "Zone 1 Viewland — Tripadvisor #1 in Ukhrul with a 5/5 rating, garden access and 24-hr front desk. The newest proper boutique in a hill town that mostly runs on basic lodges; closest thing Tangkhul country has to a hotel.",
+        "price_band": "₹₹",
+        "address": "Zone 1, Viewland Bazar, Ukhrul Town, Ukhrul District 795142, Manipur",
+        "book_url": "https://magenhills.com/",
+        "sources": [
+          "https://www.booking.com/hotel/in/magen-hills.en-gb.html",
+          "https://www.tripadvisor.in/Hotel_Review-g2289049-d28113571-Reviews-Magen_Hills-Ukhrul_Ukhrul_District_Manipur.html",
+          "https://magenhills.com/"
+        ]
+      }
+    },
+    {
+      "destination_id": "ukhrul",
+      "slot": "value",
+      "verdict": "replace",
+      "replacement": {
+        "name": "25 Degree North Hotel and Restaurant",
+        "tier": "comfort",
+        "tagline": "Phungreitang above Gandhi Circle, behind Viewland Church Gate — 2nd-floor rooms over a working restaurant. Tripadvisor #1 Best Value in Ukhrul, MakeMyTrip-bookable, with airport transfer.",
+        "price_band": "₹₹",
+        "address": "2nd Floor, Behind Viewland Church Gate, Gandhi Circle Lane, Phungreitang, Ukhrul 795142, Manipur",
+        "sources": [
+          "https://www.tripadvisor.in/Hotel_Review-g2289049-d10254608-Reviews-25_Degree_North_Hotel-Ukhrul_Ukhrul_District_Manipur.html",
+          "https://www.makemytrip.global/hotels/25_degree_north_hotel-details-ukhrul.html",
+          "https://in.trip.com/hotels/ukhrul-hotel-detail-11236596/25-degree-north-hotel-and-restaurant-ukhrul/"
+        ]
+      }
+    },
+    {
+      "destination_id": "ukhrul",
+      "slot": "location",
+      "verdict": "replace",
+      "replacement": {
+        "name": "Shalom Lodge",
+        "tier": "budget",
+        "tagline": "Wino Bazar in Hundung — 24-hr front desk, free parking, the cleanest budget bed within walking distance of the Ukhrul main bazaar. Pocket-friendly and hospitable; Goibibo 4.2/79 ratings.",
+        "price_band": "₹",
+        "address": "Wino Bazar, Hundung, Ukhrul 795142, Manipur",
+        "sources": [
+          "https://www.tripadvisor.com/Hotel_Review-g2289049-d12233527-Reviews-Shalom_Lodge-Ukhrul_Ukhrul_District_Manipur.html",
+          "https://www.goibibo.com/hotels/shalom-lodge-108-km-away-from-imphal-hotel-in-ukhrul-6395028572969319861/",
+          "https://www.justdial.com/Ukhrul/Shalom-Lodge/9999PX385-X385-170922082528-W8I1_BZDET"
+        ]
+      }
+    },
+    {
+      "destination_id": "ukhrul",
+      "slot": "xfactor",
+      "verdict": "replace",
+      "replacement": null
+    }
+  ]
+}

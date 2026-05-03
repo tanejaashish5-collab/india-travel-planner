@@ -90,13 +90,14 @@ Plan: `~/.claude/plans/smooth-orbiting-music.md` (full workflow — read before 
 | Sikkim | ✓ done | 2026-04-28 | 11/11 dests · 19 eateries · 21 stays (100% sourced, 4 dests honest-scarcity `[]` for restricted high-altitude lakes/NP) |
 | Arunachal Pradesh | ✓ done | 2026-04-28 | 11/11 dests · 22 eateries · 25 stays (100% sourced, 6 honest-scarcity nulls + Bhalukpong/Dambuk eateries `[]`, 61% fabrication rate caught — 7 cross-state contaminations) |
 | Nagaland | ✓ done | 2026-05-03 | 6/6 dests · 31 eateries · 23 stays (100% sourced + 100% manual, 1 honest-scarcity null Pfutsero/xfactor + Dzukou eateries `[]`, **78% stays fabrication rate caught** — Dzukou Valley Resort/Tent Camp/Camps fabricated, Hotel Japfu Mon→Kohima cross-dest, Mon Travellers Lodge + Pfutsero Highland Resort + Angh Valley Homestay fabricated; eateries: Été Coffee + Bamboo Shoot + Konyak Tea Retreat anchors; Tripadvisor Pfutsero page contaminated with Kohima cafés caught) |
-| Manipur | **next** | - | TBD (Imphal anchor + Loktak/Ukhrul/Moirang — North-East tribal belt continuation) |
+| Manipur | ✓ done | 2026-05-03 | 5/5 dests · 14 eateries · 12 stays (100% sourced + 100% manual, **8 honest-scarcity nulls** Loktak/location + Moreh/[v,l,x] + Tamenglong/[v,l,x] + Ukhrul/xfactor, **7 fabrications caught from my own brief** — Hotel Imperial Moreh + Le Tropicana + Magnolia + Phangrei Crest + Mount Everest Ukhrul + Shirui Inn (all listicle ghosts not on district govt accommodation pages) + The Imoinu (Imphal restaurant misclassified as stay), Karang→Thanga island address corrected. Eateries anchors: Luxmi Kitchen all-women Meitei thali · Forage Korou+Kundo 2016 · Sangai Cafe at Sendra. Tamenglong eateries `[]`) |
+| Mizoram | **next** | - | TBD (Aizawl anchor + Champhai/Reiek/Hmuifang — North-East continuation) |
 
 **Per-state quality bar (going forward)**: Each session ships eateries (greenfield/backfill via 1-2 agents) **AND** stays (audit + replace fabricated picks via 1 agent, target 100% sourced) in the same session. Total budget ≤3 agents per state (cost-aware rule). **All research via WebFetch/WebSearch agents — NEVER curate-stays.mjs (Anthropic API/Haiku) per 2026-04-28 user instruction.**
 
-**Eateries progress**: 13 state clusters done (eateries side), 189 dests, 1226 eateries. Per-state details in session memory files — see `MEMORY.md` index.
+**Eateries progress**: 14 state clusters done (eateries side), 194 dests, 1240 eateries. Per-state details in session memory files — see `MEMORY.md` index.
 
-**Stays progress (2026-05-03)**: 13 state clusters truly 100% manual-audited (**Bihar+Jharkhand+West Bengal+Sikkim+Arunachal Pradesh+Punjab+Haryana+Chandigarh+Jammu & Kashmir+Uttar Pradesh+Rajasthan+Ladakh+Uttarakhand+Himachal Pradesh+Nagaland** — unified workflow). **0 backlog clusters remaining**. Next sweep: Manipur greenfield (Imphal + Loktak Lake + Ukhrul + Moirang — NE tribal belt, queued as "next").
+**Stays progress (2026-05-03)**: 14 state clusters truly 100% manual-audited (**Bihar+Jharkhand+West Bengal+Sikkim+Arunachal Pradesh+Punjab+Haryana+Chandigarh+Jammu & Kashmir+Uttar Pradesh+Rajasthan+Ladakh+Uttarakhand+Himachal Pradesh+Nagaland+Manipur** — unified workflow). **0 backlog clusters remaining**. Next sweep: Mizoram greenfield (Aizawl + Champhai + Reiek + Hmuifang — NE continuation, queued as "next").
 
 ## Cost-aware operating rules (added 2026-04-27)
 
