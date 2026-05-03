@@ -85,9 +85,9 @@ export default async function ShareTripReportPage({ params }: { params: Promise<
           <h2 className="text-base font-semibold text-foreground mb-2">How this becomes part of the destination page</h2>
           <p>
             Once approved, your summary, month, rating, and body text land on the {dest.name} page
-            under "Travelers report". Individual image uploads need to go via{" "}
+            under "Travelers report". For now, send any photos to{" "}
             <Link href={`/${locale}/contact`} className="underline hover:text-primary">editor@nakshiq.com</Link>
-            {" "}for now — direct photo upload comes in Sprint 13.
+            {" "}— direct photo upload is coming soon.
           </p>
         </section>
       </main>

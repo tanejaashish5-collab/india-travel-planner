@@ -8,6 +8,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
 import { createHash } from "crypto";
+import { notifyAdminUGC } from "@/lib/notify-ugc";
 
 export const runtime = "nodejs";
 
@@ -140,6 +141,16 @@ export async function POST(req: NextRequest) {
   if (error) {
     return NextResponse.json({ ok: false, error: error.message }, { status: 500 });
   }
+
+  await notifyAdminUGC({
+    type: "trip_report",
+    destinationId: destination_id,
+    summary,
+    body: bodyText,
+    reporterName: reporter_name,
+    reporterEmail: reporter_email,
+    rating,
+  });
 
   return NextResponse.json({ ok: true });
 }

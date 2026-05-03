@@ -1290,10 +1290,10 @@ export function DestinationDetail({ dest }: { dest: any }) {
                   <p className="text-sm text-muted-foreground mb-4">Vetted stays, operators, and local businesses — not a booking site, just honest recommendations.</p>
                   <div className="grid gap-3 sm:grid-cols-2">
                     {dest.local_stays.map((stay: any) => (
-                      <div key={stay.id} id={`stay-${stay.id}`} className="rounded-xl border border-border p-4 hover:border-primary/30 transition-colors">
-                        <div className="flex items-start justify-between mb-1">
-                          <div>
-                            <h3 className="font-semibold text-[15px]">{stay.name}</h3>
+                      <div key={stay.id} id={`stay-${stay.id}`} className="rounded-xl border border-border p-4 hover:border-primary/30 transition-colors overflow-hidden">
+                        <div className="flex items-start justify-between gap-3 mb-1">
+                          <div className="min-w-0">
+                            <h3 className="font-semibold text-[15px] break-words">{stay.name}</h3>
                             <span className={`text-xs font-medium capitalize ${
                               stay.type === "homestay" ? "text-emerald-400" :
                               stay.type === "cafe" ? "text-amber-400" :
@@ -1301,12 +1301,12 @@ export function DestinationDetail({ dest }: { dest: any }) {
                               "text-muted-foreground"
                             }`}>{stay.type}</span>
                           </div>
-                          {stay.price_range && <span className="text-xs font-mono text-muted-foreground">{stay.price_range}</span>}
+                          {stay.price_range && <span className="text-xs font-mono text-muted-foreground text-right shrink-0 max-w-[55%] break-words whitespace-normal leading-snug">{stay.price_range}</span>}
                         </div>
-                        {stay.location && <p className="text-xs text-muted-foreground/60 mb-1">📍 {stay.location}</p>}
-                        {stay.why_special && <p className="text-sm text-muted-foreground leading-relaxed mt-1">{stay.why_special}</p>}
-                        <div className="mt-2 flex items-center gap-2">
-                          {stay.best_for && <span className="rounded-full border border-border px-2 py-1 text-xs text-muted-foreground">Best for: {stay.best_for}</span>}
+                        {stay.location && <p className="text-xs text-muted-foreground/60 mb-1 break-words">📍 {stay.location}</p>}
+                        {stay.why_special && <p className="text-sm text-muted-foreground leading-relaxed mt-1 break-words">{stay.why_special}</p>}
+                        <div className="mt-2 flex flex-wrap items-center gap-2">
+                          {stay.best_for && <span className="rounded-full border border-border px-2 py-1 text-xs text-muted-foreground max-w-full break-words whitespace-normal">Best for: {stay.best_for}</span>}
                           {stay.verified && <span className="rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-2 py-1 text-xs">Verified</span>}
                         </div>
                         {stay.tags?.length > 0 && (

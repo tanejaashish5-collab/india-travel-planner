@@ -207,21 +207,26 @@ export function BlogArticle({
             style={{ filter: "brightness(0.78) saturate(0.92)" }}
             priority
           />
-          {/* Bottom scrim for text legibility */}
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/55 to-transparent" />
+          {/* Bottom scrim for text legibility — decorative, no click capture */}
+          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/55 to-transparent pointer-events-none" />
 
-          {/* Back to blog chip — top left */}
-          <div className="absolute top-4 left-4 z-10">
+          {/* Back to blog chip + state stamp — top left, stacked */}
+          <div className="absolute top-4 left-4 z-20 flex flex-col items-start gap-2">
             <Link
               href={`/${locale}/blog`}
               className="inline-flex items-center gap-1.5 rounded-full bg-black/40 backdrop-blur-md border border-white/15 px-3 py-1.5 text-xs font-medium text-white/85 hover:bg-black/60 hover:text-white transition-all"
             >
               ← All articles
             </Link>
+            {stateHeroLabel && (
+              <span className="rounded-full bg-black/40 backdrop-blur-md border border-white/15 px-3 py-1 font-mono text-[10px] tracking-[0.3em] uppercase text-[#E55642]">
+                {isDataStory ? "№ 01 · " : ""}{stateHeroLabel}
+              </span>
+            )}
           </div>
 
           {/* Category + Depth badges — top right */}
-          <div className="absolute top-4 right-4 flex items-center gap-2 z-10">
+          <div className="absolute top-4 right-4 flex items-center gap-2 z-20">
             <span className={`rounded-full border px-3 py-1 text-xs font-medium backdrop-blur-sm ${CATEGORY_COLORS[article.category] || "bg-primary/10 text-primary border-primary/30"}`}>
               {CATEGORY_LABELS[article.category] || article.category}
             </span>
@@ -233,14 +238,8 @@ export function BlogArticle({
           </div>
 
           {/* Title overlay — bottom */}
-          <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-10 lg:p-14 z-10">
+          <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-10 lg:p-14 z-10 pointer-events-none">
             <div className="mx-auto max-w-4xl">
-              {/* Vermillion stamp: № 01 · State */}
-              {stateHeroLabel && (
-                <div className="font-mono text-[10px] sm:text-[11px] tracking-[0.3em] uppercase text-[#E55642] mb-4">
-                  {isDataStory ? "№ 01 · " : ""}{stateHeroLabel}
-                </div>
-              )}
               <h1
                 className="font-serif italic font-medium text-white text-4xl sm:text-5xl lg:text-6xl leading-[1.05] tracking-[-0.01em] drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)]"
                 style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}

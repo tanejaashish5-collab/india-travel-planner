@@ -115,32 +115,58 @@ export function RouteDetail({ route }: { route: any }) {
       )}
 
       {/* Day by Day */}
-      {dayByDay.length > 0 && (
-        <div className="mb-8">
-          <h2 className="text-xl font-semibold mb-4">Day by Day</h2>
+      <div className="mb-8">
+        <h2 className="text-xl font-semibold mb-4">Day by Day</h2>
+        {dayByDay.length > 0 ? (
           <div className="space-y-4">
-            {dayByDay.map((day: any) => (
-              <div
-                key={day.day}
-                className="flex gap-4 rounded-lg border border-border p-4"
-              >
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary/10 font-mono text-lg font-bold text-primary">
-                  {day.day}
-                </div>
-                <div className="flex-1">
-                  <div className="flex items-center gap-2 text-xs text-muted-foreground mb-1">
-                    <span>
-                      {day.from} → {day.to}
-                    </span>
-                    {day.km > 0 && <span>· {day.km}km</span>}
+            {dayByDay.map((day: any) => {
+              const heading =
+                day.title ||
+                (day.from && day.to ? `${day.from} → ${day.to}` : null);
+              const body = day.plan ?? day.description ?? day.notes ?? null;
+              const stay = day.stay ?? null;
+              return (
+                <div
+                  key={day.day}
+                  className="flex gap-4 rounded-lg border border-border p-4"
+                >
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary/10 font-mono text-lg font-bold text-primary">
+                    {day.day}
                   </div>
-                  <p className="text-sm leading-relaxed">{day.plan}</p>
+                  <div className="flex-1">
+                    {heading && (
+                      <div className="text-sm font-medium text-foreground mb-1">
+                        {heading}
+                        {day.km > 0 && (
+                          <span className="ml-2 text-xs font-normal text-muted-foreground">
+                            · {day.km}km
+                          </span>
+                        )}
+                      </div>
+                    )}
+                    {body && (
+                      <p className="text-sm leading-relaxed text-muted-foreground">
+                        {body}
+                      </p>
+                    )}
+                    {stay && (
+                      <div className="mt-2 text-xs text-muted-foreground">
+                        Overnight: <span className="text-foreground">{stay}</span>
+                      </div>
+                    )}
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
-        </div>
-      )}
+        ) : (
+          <div className="rounded-lg border border-dashed border-border p-6 text-sm text-muted-foreground">
+            Day-by-day enrichment is in progress for this route. In the meantime,
+            see the destination list below — each stop has its own confidence
+            card with logistics, stays, and food.
+          </div>
+        )}
+      </div>
 
       {/* Route Map */}
       {(route.stops ?? []).length >= 2 && (
