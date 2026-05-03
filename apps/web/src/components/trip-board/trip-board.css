@@ -38,9 +38,18 @@
   --score-2: #d68a4a;
   --score-1: #d96050;
   --score-0: #5a5346;
-  --serif: "Source Serif 4", "Source Serif Pro", Georgia, "Times New Roman", serif;
-  --sans: "Inter Tight", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
-  --mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  /* Phase 6 token alignment — use the fonts the layout actually loads
+   * via next/font/google (Geist + Fraunces) instead of Source Serif 4 /
+   * Inter Tight. Without this, the dark editorial design was cascading
+   * through to OS fallbacks (Georgia + system-ui) on prod since the
+   * design source's fonts were never @font-face'd.
+   *
+   * Fraunces ≈ Source Serif 4 in spirit (modern transitional serif with
+   * italic optical sizing). Geist ≈ Inter Tight (geometric humanist
+   * sans). Visual fidelity ~80% of the design source for zero cost. */
+  --serif: var(--font-fraunces), "Source Serif 4", Georgia, "Times New Roman", serif;
+  --sans: var(--font-geist-sans), "Inter Tight", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  --mono: var(--font-geist-mono), "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
   font-family: var(--sans);
   color: var(--ink);
   background: var(--paper);
