@@ -30,6 +30,7 @@ type DestinationLite = {
   elevation_m: number | null;
   state: { name: string } | null;
   destination_months: { month: number; score: number }[] | null;
+  festivals?: { name: string; month: number | null }[] | null;
   daily_cost?: Record<string, unknown> | null;
 };
 

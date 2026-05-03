@@ -2,20 +2,25 @@
 
 // BoardCanvas — center pane of the Trip Board.
 //
-// Phase 1 ships a functional stop list (add / reorder / remove / edit days)
-// so the user can manipulate stops the moment they leave ColdStart.
+// Phase 2: replaces the simple stop list with the YearBand + StopCard grid.
+//   - Desktop (≥ md): YearBand visible above StopCard list. Drag pills to
+//     reschedule; cards reflect the new dates instantly.
+//   - Mobile (< md): YearBand hidden; a month picker stands in. StopCards
+//     stack as before. Drag-on-touch is out of scope for Phase 2.
 //
-// Phase 2 replaces the simple list with the year band + draggable stop pills.
-// Phase 5 adds a Map toggle (Atlas variant) using the existing Leaflet setup.
-//
-// Until then, the list is the canvas. It already gives the user reordering
-// + day-tweaks, which the legacy trip-board.tsx had — no regression.
+// State + persistence routes through the parent useTripBoard hook (lib/trip-storage).
 
+import { useState } from "react";
 import type { TripStateV2 } from "@/lib/trip-storage";
 import { ColdStartReplayLink } from "./cold-start-replay-link";
+import { YearBand } from "./year-band";
+import { StopCard } from "./stop-card";
 import { useLocale } from "next-intl";
 
 const MONTHS_LONG = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+// First-of-month day-of-year (non-leap). Used by mobile month-picker fallback
+// to update startDay when a stop's month is changed without a year band.
+const MONTH_STARTS = [1, 32, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335, 366];
 
 type DestLite = {
   id: string;
@@ -24,13 +29,8 @@ type DestLite = {
   destination_months: { month: number; score: number }[] | null;
   difficulty: string | null;
   elevation_m: number | null;
+  festivals?: { name: string; month: number | null }[] | null;
 };
-
-function scoreFor(d: DestLite | undefined, monthOneIndexed: number): number {
-  if (!d) return 0;
-  const row = (d.destination_months ?? []).find((m) => m.month === monthOneIndexed);
-  return row?.score ?? 0;
-}
 
 export function BoardCanvas({
   state,
@@ -43,6 +43,7 @@ export function BoardCanvas({
 }) {
   const locale = useLocale();
   const destMap = new Map(destinations.map((d) => [d.id, d]));
+  const [selectedStopIdx, setSelectedStopIdx] = useState<number | null>(null);
 
   function moveStop(idx: number, dir: -1 | 1) {
     setState((prev) => {
@@ -80,8 +81,21 @@ export function BoardCanvas({
     setState((prev) => ({ ...prev, name }));
   }
 
+  // Mobile fallback: when the month picker changes, shift every stop by the
+  // delta so their relative spacing is preserved. Beats blowing away the user's
+  // current dates just because they picked a new month.
   function setMonth(month: number) {
-    setState((prev) => ({ ...prev, month }));
+    setState((prev) => {
+      const newFirstDoy = MONTH_STARTS[month - 1];
+      const earliest = prev.stops.length > 0 ? Math.min(...prev.stops.map((s) => s.startDay)) : newFirstDoy;
+      const delta = newFirstDoy - earliest;
+      const stops = prev.stops.map((s) => {
+        const shifted = s.startDay + delta;
+        const maxStart = Math.max(1, 365 - s.days + 1);
+        return { ...s, startDay: Math.max(1, Math.min(maxStart, shifted)) };
+      });
+      return { ...prev, month, stops };
+    });
   }
 
   function setTravelers(travelers: number) {
@@ -106,6 +120,9 @@ export function BoardCanvas({
           </p>
         </div>
         <div className="flex items-center gap-2">
+          {/* Month picker — visible on mobile (where the year band hides) and
+              kept on desktop as a quick-shift control. The setMonth handler
+              preserves relative stop spacing rather than blowing away dates. */}
           <select
             value={state.month}
             onChange={(e) => setMonth(Number(e.target.value))}
@@ -135,7 +152,22 @@ export function BoardCanvas({
         </div>
       </div>
 
-      {/* Stops (Phase 2 will replace with YearBand + StopCard grid) */}
+      {/* YearBand — desktop only. Hidden on < md so the touch-no-drag UX isn't
+          confusing on phones; the month picker above stands in for date
+          control. data-yearband marker is the verify-after-deploy gate. */}
+      {state.stops.length > 0 && (
+        <div className="hidden border-b border-border bg-card/30 px-6 py-4 md:block">
+          <YearBand
+            state={state}
+            setState={setState}
+            destinations={destinations}
+            selectedStopIdx={selectedStopIdx}
+            onSelectStop={setSelectedStopIdx}
+          />
+        </div>
+      )}
+
+      {/* Stop cards (or empty state) */}
       <div className="flex-1 overflow-y-auto px-6 py-6">
         {state.stops.length === 0 ? (
           <div className="flex h-full flex-col items-center justify-center gap-3">
@@ -146,99 +178,24 @@ export function BoardCanvas({
           </div>
         ) : (
           <ul className="space-y-3" data-stops-list>
-            {state.stops.map((stop, idx) => {
-              const d = destMap.get(stop.destinationId);
-              const score = scoreFor(d, state.month);
-              return (
-                <li
-                  key={stop.destinationId}
-                  className="border border-border bg-card p-4"
-                  data-stop-card
-                  data-stop-id={stop.destinationId}
-                >
-                  <div className="flex items-start gap-4">
-                    <span className="font-mono text-[11px] uppercase tracking-[0.16em] text-muted-foreground">#{String(idx + 1).padStart(2, "0")}</span>
-                    <div className="min-w-0 flex-1">
-                      <div className="flex items-baseline gap-3">
-                        <h3 className="font-serif text-xl font-medium">{d?.name ?? stop.destinationId}</h3>
-                        <span className="text-[11px] text-muted-foreground">
-                          {d?.state?.name ?? ""}{d?.elevation_m ? ` · ${d.elevation_m}m` : ""}
-                        </span>
-                      </div>
-                      <div className="mt-2 flex items-center gap-3 text-[11px] text-muted-foreground">
-                        <label className="flex items-center gap-1.5">
-                          <span>Days</span>
-                          <input
-                            type="number"
-                            min={1}
-                            max={30}
-                            value={stop.days}
-                            onChange={(e) => setDays(stop.destinationId, Number(e.target.value))}
-                            className="w-14 border border-border bg-background px-1.5 py-0.5 font-mono text-xs"
-                          />
-                        </label>
-                        <span>·</span>
-                        <span className="font-mono">starts day {stop.startDay}</span>
-                      </div>
-                      <input
-                        type="text"
-                        value={stop.notes}
-                        onChange={(e) => setNotes(stop.destinationId, e.target.value)}
-                        placeholder="Notes for this stop…"
-                        className="mt-2 w-full border-b border-border bg-transparent py-1 text-sm placeholder:text-muted-foreground focus:border-foreground focus:outline-none"
-                      />
-                    </div>
-                    <span
-                      className={`flex h-9 min-w-[40px] items-center justify-center font-mono text-xs font-bold ${
-                        score >= 4
-                          ? "bg-emerald-700 text-white"
-                          : score >= 3
-                            ? "bg-amber-600 text-white"
-                            : score >= 1
-                              ? "bg-rose-600 text-white"
-                              : "bg-muted text-muted-foreground"
-                      }`}
-                      title={`Month ${state.month} score`}
-                    >
-                      {score || "—"}/5
-                    </span>
-                  </div>
-                  <div className="mt-3 flex items-center justify-end gap-2">
-                    <button
-                      type="button"
-                      onClick={() => moveStop(idx, -1)}
-                      disabled={idx === 0}
-                      className="rounded-sm border border-border px-2 py-0.5 font-mono text-[10.5px] uppercase text-muted-foreground hover:border-foreground hover:text-foreground disabled:opacity-30"
-                      aria-label="Move up"
-                    >
-                      ↑
-                    </button>
-                    <button
-                      type="button"
-                      onClick={() => moveStop(idx, 1)}
-                      disabled={idx === state.stops.length - 1}
-                      className="rounded-sm border border-border px-2 py-0.5 font-mono text-[10.5px] uppercase text-muted-foreground hover:border-foreground hover:text-foreground disabled:opacity-30"
-                      aria-label="Move down"
-                    >
-                      ↓
-                    </button>
-                    <button
-                      type="button"
-                      onClick={() => removeStop(stop.destinationId)}
-                      className="rounded-sm border border-border px-2 py-0.5 font-mono text-[10.5px] uppercase text-rose-600 hover:border-rose-600"
-                      aria-label="Remove stop"
-                    >
-                      Remove
-                    </button>
-                  </div>
-                </li>
-              );
-            })}
+            {state.stops.map((stop, idx) => (
+              <StopCard
+                key={`${stop.destinationId}-${idx}`}
+                stop={stop}
+                idx={idx}
+                totalStops={state.stops.length}
+                dest={destMap.get(stop.destinationId)}
+                isSelected={selectedStopIdx === idx}
+                onSelect={() => setSelectedStopIdx(idx)}
+                onMoveUp={() => moveStop(idx, -1)}
+                onMoveDown={() => moveStop(idx, 1)}
+                onRemove={() => removeStop(stop.destinationId)}
+                onSetDays={(days) => setDays(stop.destinationId, days)}
+                onSetNotes={(notes) => setNotes(stop.destinationId, notes)}
+              />
+            ))}
           </ul>
         )}
-
-        {/* Phase-2 marker so a curl test can confirm the new shell shipped. */}
-        <div data-yearband-placeholder hidden />
       </div>
     </section>
   );

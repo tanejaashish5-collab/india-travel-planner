@@ -30,7 +30,7 @@ async function getAllDestinations() {
   const { data } = await supabase
     .from("destinations")
     .select(
-      "id, name, difficulty, elevation_m, daily_cost, vehicle_fit, family_stress, state:states(name), destination_months(month, score)"
+      "id, name, difficulty, elevation_m, daily_cost, vehicle_fit, family_stress, state:states(name), destination_months(month, score), festivals(name, month)"
     )
     .order("name");
 
@@ -64,5 +64,6 @@ type TripBoardDest = {
   elevation_m: number | null;
   state: { name: string } | null;
   destination_months: { month: number; score: number }[] | null;
+  festivals: { name: string; month: number | null }[] | null;
   daily_cost?: Record<string, unknown> | null;
 };
