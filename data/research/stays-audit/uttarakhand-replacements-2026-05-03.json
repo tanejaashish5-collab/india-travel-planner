@@ -1,0 +1,645 @@
+{
+  "task_a_results": [
+    {
+      "destination_id": "almora",
+      "slot": "xfactor",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "almora",
+      "slot": "experience",
+      "verdict": "replace",
+      "replacement": {
+        "name": "Imperial Heights Binsar",
+        "tier": "boutique",
+        "tagline": "8-room boutique retreat at Kasar Devi ridge — Kumaoni mud-stone-pinelog architecture, valley-facing rooms framing Almora town below. Cleaner Almora pin than The Kumaon, which we keep as Binsar's xfactor.",
+        "price_band": "₹₹₹",
+        "address": "Kasar Devi, Almora, Uttarakhand 263601",
+        "book_url": "https://imperialheightsbinsar.in/",
+        "sources": [
+          "https://imperialheightsbinsar.in/",
+          "https://www.tripadvisor.in/Hotel_Review-g679053-d1540971-Reviews-Imperial_Heights_Binsar-Almora_Almora_District_Uttarakhand.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "almora",
+      "slot": "value",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "auli",
+      "slot": "xfactor",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "auli",
+      "slot": "location",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "auli",
+      "slot": "value",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "auli",
+      "slot": "experience",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "badrinath",
+      "slot": "location",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "badrinath",
+      "slot": "value",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "bhimtal",
+      "slot": "xfactor",
+      "verdict": "replace",
+      "replacement": {
+        "name": "Glamping Tales by the Riverside",
+        "tier": "boutique",
+        "tagline": "Geodesic luxe domes and Swiss tents on the Kalsa river ~15km from Bhimtal — sound of the river overnight, dome shape adds the unique-stay angle that the area's standard lake resorts can't match.",
+        "price_band": "₹₹₹",
+        "address": "Chanfi, near Naukuchiatal, Nainital district, Uttarakhand",
+        "book_url": "https://www.makemytrip.com/hotels/glamping_tales_by_the_riverside_luxe_domes_tents-details-naukuchiatal.html",
+        "sources": [
+          "https://www.makemytrip.com/hotels/glamping_tales_by_the_riverside_luxe_domes_tents-details-naukuchiatal.html",
+          "https://glampinghub.com/india/uttarakhand/bhimtal/glamping-experience-riverside-domes-india/"
+        ]
+      }
+    },
+    {
+      "destination_id": "binsar",
+      "slot": "xfactor",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "binsar",
+      "slot": "experience",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "binsar",
+      "slot": "value",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "chakrata",
+      "slot": "xfactor",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "chakrata",
+      "slot": "experience",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "chakrata",
+      "slot": "value",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "champawat",
+      "slot": "value",
+      "verdict": "replace",
+      "replacement": {
+        "name": "Inrira Hotel Lohaghat",
+        "tier": "comfort",
+        "tagline": "Family-run boutique hotel near Lohaghat lake — closer to Champawat town (~10km) than any commercial hotel of similar rating, real value for the pilgrim circuit base.",
+        "price_band": "₹₹",
+        "address": "Lohaghat, Champawat district, Uttarakhand 262524",
+        "sources": [
+          "https://www.holidify.com/places/champawat/hotels-where-to-stay.html",
+          "https://www.tripadvisor.in/Hotels-g12293400-Champawat_District_Uttarakhand-Hotels.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "champawat",
+      "slot": "experience",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "champawat",
+      "slot": "location",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "champawat",
+      "slot": "xfactor",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "chaukori",
+      "slot": "xfactor",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "chaukori",
+      "slot": "value",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "chaukori",
+      "slot": "experience",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "chopta",
+      "slot": "experience",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "chopta",
+      "slot": "value",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "chopta",
+      "slot": "xfactor",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "corbett-national-park",
+      "slot": "xfactor",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "corbett-national-park",
+      "slot": "location",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "corbett-national-park",
+      "slot": "value",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "corbett-national-park",
+      "slot": "experience",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "devprayag",
+      "slot": "experience",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "devprayag",
+      "slot": "location",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "devprayag",
+      "slot": "value",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "devprayag",
+      "slot": "xfactor",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "gangotri",
+      "slot": "location",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "gopeshwar",
+      "slot": "experience",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "guptkashi",
+      "slot": "xfactor",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "guptkashi",
+      "slot": "value",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "guptkashi",
+      "slot": "location",
+      "verdict": "replace",
+      "replacement": {
+        "name": "Char Machan Resort",
+        "tier": "comfort",
+        "tagline": "4-star helipad-adjacent property in Narayankoti (300m from Kedarnath shuttle helipad) — wakes up to Madhyamaheshwar range and Mandakini river views. Resolves the duplicate Himalayan Comforts that filled this slot earlier.",
+        "price_band": "₹₹₹",
+        "address": "Narayankoti, Guptkashi, Rudraprayag district, Uttarakhand 246439",
+        "book_url": "https://charmachan.com/",
+        "sources": [
+          "https://charmachan.com/",
+          "https://www.euttaranchal.com/hotels/hotels-in-guptkashi.php"
+        ]
+      }
+    },
+    {
+      "destination_id": "haridwar",
+      "slot": "value",
+      "verdict": "replace",
+      "replacement": {
+        "name": "Hotel Arihant Haridwar",
+        "tier": "comfort",
+        "tagline": "Top-rated budget hotel 5 minutes' walk from Har Ki Pauri — clean rooms, AC, 24-hour service. Replaces 'The Hosteller Haridwar' which is NOT on The Hosteller chain's official 73-property list (chain has Rishikesh + Mussoorie + Chakrata + Lansdowne in UK, not Haridwar).",
+        "price_band": "₹",
+        "address": "Near Har Ki Pauri, Haridwar, Uttarakhand 249401",
+        "book_url": "https://hotelarihantharidwar.in/",
+        "sources": [
+          "https://hotelarihantharidwar.in/blog/top-budget-hotels-har-ki-pauri.html",
+          "https://www.tripadvisor.com/HotelsNear-g616028-d1754939-Har_Ki_Pauri-Haridwar_Haridwar_District_Uttarakhand.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "haridwar",
+      "slot": "experience",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "haridwar",
+      "slot": "xfactor",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "joshimath",
+      "slot": "location",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "joshimath",
+      "slot": "value",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "joshimath",
+      "slot": "xfactor",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "joshimath",
+      "slot": "experience",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "kanatal",
+      "slot": "value",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "kanatal",
+      "slot": "xfactor",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "kanatal",
+      "slot": "experience",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "kausani",
+      "slot": "experience",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "kausani",
+      "slot": "value",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "kausani",
+      "slot": "xfactor",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "kedarnath",
+      "slot": "location",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "landour",
+      "slot": "experience",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "landour",
+      "slot": "xfactor",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "landour",
+      "slot": "value",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "lansdowne",
+      "slot": "experience",
+      "verdict": "replace",
+      "replacement": {
+        "name": "LaHermitage Resort",
+        "tier": "boutique",
+        "tagline": "55-acre boutique resort with Mandal river views — Lans View Suites + wooden cottages, the largest single-property estate in the Lansdowne cantonment. Replaces 'The Fern Hillside Resort Lansdowne' which is actually in BHIMTAL (Tripadvisor confirms cross-destination contamination).",
+        "price_band": "₹₹₹",
+        "address": "Lansdowne, Pauri Garhwal district, Uttarakhand 246155",
+        "book_url": "https://www.lahermitageresort.com/",
+        "sources": [
+          "https://www.lahermitageresort.com/",
+          "https://luxuryescapes.com/us/hotels/location/lansdowne/uttarakhand/india"
+        ]
+      }
+    },
+    {
+      "destination_id": "lansdowne",
+      "slot": "value",
+      "verdict": "replace",
+      "replacement": {
+        "name": "Blue Pine Resort, Lansdowne",
+        "tier": "comfort",
+        "tagline": "4-star modern resort near St. John's Church — 43 rooms with full-service spa, indoor pool, 24-hour gym. Sources confirm contemporary build — drop the 'colonial heritage' framing the previous tagline implied.",
+        "price_band": "₹₹₹",
+        "address": "Near St. John's Church, Lansdowne, Pauri Garhwal, Uttarakhand 246155",
+        "book_url": "http://www.bluepineresort.com/",
+        "sources": [
+          "http://www.bluepineresort.com/",
+          "https://www.tripadvisor.com/Hotels-g1208973-zff8-Lansdowne_Pauri_Garhwal_District_Uttarakhand-Hotels.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "mukteshwar",
+      "slot": "experience",
+      "verdict": "replace",
+      "replacement": {
+        "name": "Mukteshwar Treat Resort",
+        "tier": "boutique",
+        "tagline": "14-room boutique resort with direct Himalayan views and balconies on every room — chef-led local Kumaoni menu, hand-picked ingredients. Corrects the spelling drift on the previous 'Mukteshwar Retreat' label.",
+        "price_band": "₹₹₹",
+        "address": "Darima, Mukteshwar, Nainital district, Uttarakhand 263138",
+        "book_url": "https://mukteshwartreatresort.com/",
+        "sources": [
+          "https://mukteshwartreatresort.com/",
+          "https://www.tripadvisor.in/Hotel_Review-g20483433-d25900342-Reviews-Mukteshwar_Treat_Resort-Darima_Nainital_District_Uttarakhand.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "mukteshwar",
+      "slot": "value",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "munsiyari",
+      "slot": "value",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "munsiyari",
+      "slot": "location",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "munsiyari",
+      "slot": "experience",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "mussoorie",
+      "slot": "location",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "mussoorie",
+      "slot": "experience",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "mussoorie",
+      "slot": "xfactor",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "mussoorie",
+      "slot": "value",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "nainital",
+      "slot": "experience",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "pithoragarh",
+      "slot": "xfactor",
+      "verdict": "null_slot"
+    },
+    {
+      "destination_id": "pithoragarh",
+      "slot": "value",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "pithoragarh",
+      "slot": "experience",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "pithoragarh",
+      "slot": "location",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "ranikhet",
+      "slot": "value",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "ranikhet",
+      "slot": "location",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "ranikhet",
+      "slot": "xfactor",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "ranikhet",
+      "slot": "experience",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "rishikesh",
+      "slot": "experience",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "rishikesh",
+      "slot": "xfactor",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "rishikesh",
+      "slot": "value",
+      "verdict": "replace",
+      "replacement": {
+        "name": "Crescent Moon Homestay",
+        "tier": "homestay",
+        "tagline": "300m from Laxman Jhula, family-run 3-room homestay with terrace, kitchen access, mountain views — Booking.com guest score 9.5. Real published rate is ~₹900-1,500/night, NOT ₹6k-12k as previously listed.",
+        "price_band": "₹",
+        "address": "Near Laxman Jhula, Rishikesh, Dehradun district, Uttarakhand 249302",
+        "book_url": "https://www.booking.com/hotel/in/naveen-kumar-house.html",
+        "sources": [
+          "https://www.booking.com/hotel/in/naveen-kumar-house.html",
+          "https://en.planetofhotels.com/india/rishikesh/crescent-moon-homestay"
+        ]
+      }
+    },
+    {
+      "destination_id": "rudraprayag",
+      "slot": "value",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "rudraprayag",
+      "slot": "experience",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "tehri",
+      "slot": "location",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "tehri",
+      "slot": "xfactor",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "tehri",
+      "slot": "value",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "tungnath",
+      "slot": "xfactor",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "tungnath",
+      "slot": "location",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "tungnath",
+      "slot": "value",
+      "verdict": "replace",
+      "replacement": {
+        "name": "Ragi Homestay, Sari Village",
+        "tier": "homestay",
+        "tagline": "Sari-village homestay walking distance from Deoria Tal trailhead — complimentary breakfast and dinner with locally sourced ingredients. Replaces 'Kafal Village Woodhouse', which is in Pantwari/Nag Tibba near Mussoorie, NOT Sari/Tungnath (cross-destination drift).",
+        "price_band": "₹",
+        "address": "Sari Village, Ukhimath, Rudraprayag district, Uttarakhand 246472",
+        "book_url": "https://ragihomestay.com/",
+        "sources": [
+          "https://ragihomestay.com/",
+          "https://traveltriangle.com/blog/homestays-in-tungnath/"
+        ]
+      }
+    },
+    {
+      "destination_id": "tungnath",
+      "slot": "experience",
+      "verdict": "replace",
+      "replacement": {
+        "name": "The Chopta Resort",
+        "tier": "luxury",
+        "tagline": "The only luxury resort in Chopta meadow at 2,600m — 10 Siberian-pine wooden cottages on a private alpine ridge by the stream, 4 km from Sari village trailhead to Tungnath. 200m trek from the road is the trade-off for the silence; not advised for elderly guests with knee issues. Run by Magpie Group (12 yrs hospitality).",
+        "price_band": "₹₹₹",
+        "address": "Chopta meadow, Rudraprayag District, Uttarakhand 246449",
+        "book_url": "https://www.choptaresort.com/",
+        "sources": [
+          "https://www.tripadvisor.com/Hotel_Review-g12324032-d25106350-Reviews-Chopta_Resort-Chopta_Rudraprayag_District_Uttarakhand.html",
+          "https://www.holidify.com/hotel-collections/resorts-in-chopta"
+        ]
+      }
+    },
+    {
+      "destination_id": "uttarkashi",
+      "slot": "experience",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "uttarkashi",
+      "slot": "xfactor",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "uttarkashi",
+      "slot": "value",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "valley-of-flowers",
+      "slot": "value",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "valley-of-flowers",
+      "slot": "location",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "valley-of-flowers",
+      "slot": "xfactor",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "valley-of-flowers",
+      "slot": "experience",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "yamunotri",
+      "slot": "location",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "yamunotri",
+      "slot": "xfactor",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "yamunotri",
+      "slot": "value",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "yamunotri",
+      "slot": "experience",
+      "verdict": "keep_existing"
+    }
+  ],
+  "task_b_results": [
+    {
+      "destination_id": "yamunotri",
+      "slot": "experience",
+      "name": "Camp Nirvana Yamunotri",
+      "tier": "boutique",
+      "tagline": "Luxury Swiss tents and cottages on the Yamuna riverbank at Gangani (Barkot–Yamunotri highway) — 45km / 1.5hr drive from Janki Chatti trek base, NOT walking distance to the temple. Real Yamunotri-corridor pick.",
+      "price_band": "₹₹",
+      "sources": [
+        "https://campnirvana.com/",
+        "https://www.tripadvisor.in/Hotel_Review-g1052526-d1972250-Reviews-Camp_Nirvana_Yamunotri-Barkot_Uttarkashi_District_Uttarakhand.html"
+      ],
+      "dubious_after_research": false
+    }
+  ]
+}

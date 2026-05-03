@@ -79,8 +79,8 @@ Plan: `~/.claude/plans/smooth-orbiting-music.md` (full workflow — read before 
 |---|---|---|---|
 | Ladakh | ✓ done | 2026-04-29 | 14/14 dests · 93 eateries · 42 stays (100% sourced + 100% manual, 5 honest-scarcity nulls — 4 Umlingla pass + 1 Tso Moriri dup) |
 | Jammu & Kashmir | ✓ done | 2026-04-28 | 17/17 dests · 98 eateries · 34 stays (100% sourced, 4 honest-scarcity nulls — 3 Sinthan Top no-infra, 1 Yusmarg xfactor dedup) |
-| Himachal Pradesh | eateries done · stays NOT audited | 2026-04-27 | 32/34 dests · 286 eateries · 118 stays (9 manual + **109 un-audited web_search** ← BIGGEST BACKLOG) |
-| Uttarakhand | eateries done · stays NOT audited | 2026-04-27 | 38/38 dests · 316 eateries · 117 stays (18 manual + **99 un-audited web_search** ← BACKLOG) |
+| Himachal Pradesh | ✓ done | 2026-05-03 | 32/34 dests · 286 eateries · 116 stays (100% sourced + 100% manual, 2 honest-scarcity nulls Bir/xfactor + Kasol/xfactor, 10 fabrications/cross-dest caught — Taragarh→Palampur, Tirthan-Grand→Banjar, Kailasha Kasol→Parvati dup, River-View-Mandi→Barot, Apple Country→Apple Valley typo, Maitreya Key→Tabo, +4) |
+| Uttarakhand | ✓ done | 2026-05-03 | 38/38 dests · 316 eateries · 116 stays (100% sourced + 100% manual, 1 honest-scarcity null Pithoragarh xfactor, 11 fabrications/cross-dest caught — Hosteller Haridwar, Fern Hillside Lansdowne→Bhimtal, Sattal Eco Huts, Kafal Woodhouse Tungnath→Pantwari, Swayambhu Tungnath→Karnaprayag, Kumaon Almora/Binsar dup, +5) |
 | Punjab + Haryana + Chandigarh | ✓ done | 2026-04-28 | 8/8 dests · 69 eateries · 24 stays (100% sourced, 2 honest-scarcity nulls in Anandpur Sahib) |
 | Rajasthan | ✓ done | 2026-04-29 | 23/23 dests · 105 eateries · 70 stays (100% sourced + 100% manual, 4 honest-scarcity nulls — all in Deeg) |
 | Uttar Pradesh | ✓ done | 2026-04-29 | 13/13 dests · 98 eateries · 44 stays (100% sourced, 4 fabrications caught — Hosteller Sarnath, Dudhwa Sarai Homestay + Teli Jungle Camp, Brijwas Dham address rewrite) |
@@ -95,7 +95,7 @@ Plan: `~/.claude/plans/smooth-orbiting-music.md` (full workflow — read before 
 
 **Eateries progress**: 12 state clusters done (eateries side), 183 dests, 1195 eateries. Per-state details in session memory files — see `MEMORY.md` index.
 
-**Stays progress (HONEST 2026-04-29 audit + ongoing backlog burndown)**: 10 state clusters truly 100% manual-audited (**Bihar+Jharkhand+West Bengal+Sikkim+Arunachal Pradesh+Punjab+Haryana+Chandigarh+Jammu & Kashmir+Uttar Pradesh+Rajasthan+Ladakh** — unified workflow). **2 clusters with stays-audit BACKLOG = 208 unaudited `web_search` picks remaining**: HP 109, UK 99. Plan: 1 stays-audit agent per cluster, manual WebFetch only, ~1 cluster per session. Order: smaller-first (UK → HP).
+**Stays progress (2026-05-03)**: 12 state clusters truly 100% manual-audited (**Bihar+Jharkhand+West Bengal+Sikkim+Arunachal Pradesh+Punjab+Haryana+Chandigarh+Jammu & Kashmir+Uttar Pradesh+Rajasthan+Ladakh+Uttarakhand+Himachal Pradesh** — unified workflow). **0 backlog clusters remaining** — entire pre-2026-04-28 Haiku-curate `web_search` debt cleared. Next sweep: Nagaland greenfield (eateries+stays unified, queued in active-work table as "next").
 
 ## Cost-aware operating rules (added 2026-04-27)
 

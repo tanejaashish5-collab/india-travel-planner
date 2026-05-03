@@ -1,0 +1,802 @@
+{
+  "task_a_results": [
+    {
+      "destination_id": "barot-valley",
+      "slot": "location",
+      "verdict": "replace",
+      "replacement": {
+        "name": "Red Pine Home Stay",
+        "tier": "homestay",
+        "tagline": "Family-run 4-bedroom homestay in Multhan village (Barot proper), 1.5km from market and 5min walk to the Lambadug river. Walking-distance access to bazaar, trout farms, and the trek-out to Billing.",
+        "price_band": "₹",
+        "address": "Multhan, Barot, Mandi District, Himachal Pradesh 175123",
+        "book_url": "https://www.makemytrip.global/hotels/red_pine_home_stay-details-barot.html",
+        "sources": [
+          "https://www.makemytrip.global/hotels/red_pine_home_stay-details-barot.html",
+          "https://www.tripadvisor.in/Hotel_Review-g12830958-d26107944-Reviews-Red_Pine_Home_Stay-Barot_Mandi_District_Himachal_Pradesh.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "barot-valley",
+      "slot": "experience",
+      "verdict": "replace",
+      "replacement": {
+        "name": "Paradise River Retreat",
+        "tier": "boutique",
+        "tagline": "Luxury riverside tents on a 2-acre Uhl-river property at 6000ft. Modern amenities inside the canvas, the Himalayas as the wallpaper—this is the closest Barot offers to a destination resort, no buildings rising out of the valley floor.",
+        "price_band": "₹₹",
+        "address": "Barot Valley, Mandi District, Himachal Pradesh 175123",
+        "book_url": "https://www.mounty.co/camps/paradise-river-retreat-camping-in-barot-valley",
+        "sources": [
+          "https://www.mounty.co/camps/paradise-river-retreat-camping-in-barot-valley",
+          "http://riverretreatcampbarot.com/about_us.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "barot-valley",
+      "slot": "value",
+      "verdict": "replace",
+      "replacement": {
+        "name": "Malhotra Home Stay Barot Valley",
+        "tier": "homestay",
+        "tagline": "Multhan village home on the Uhl riverbank, run by an uncle-aunty pair who cook the meals themselves. Top Tripadvisor rating in Barot for value—clean, neat, helpful, river right outside.",
+        "price_band": "₹",
+        "address": "Bada Gran Road, near Multhan Bus Stop, Barot Valley, Mandi District 175123",
+        "book_url": "https://www.tripadvisor.in/Hotel_Review-g12830958-d23808708-Reviews-Malhotra_Home_Stay_Barot_Valley-Barot_Mandi_District_Himachal_Pradesh.html",
+        "sources": [
+          "https://www.tripadvisor.in/Hotel_Review-g12830958-d23808708-Reviews-Malhotra_Home_Stay_Barot_Valley-Barot_Mandi_District_Himachal_Pradesh.html",
+          "https://www.facebook.com/Malhotrahomestay101/"
+        ]
+      }
+    },
+    {
+      "destination_id": "bir-billing",
+      "slot": "experience",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "bir-billing",
+      "slot": "xfactor",
+      "verdict": "null_slot"
+    },
+    {
+      "destination_id": "bir-billing",
+      "slot": "location",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "bir-billing",
+      "slot": "value",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "chail",
+      "slot": "experience",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "chail",
+      "slot": "xfactor",
+      "verdict": "replace",
+      "replacement": {
+        "name": "Kali Tibba Resort",
+        "tier": "boutique",
+        "tagline": "Eight rooms on the highest Chail peak (7500ft), wall-to-wall deodar and chir pine, 200m from the Kali ka Tibba shrine that crowns the ridge. The view of the Choor Chandni range from the rooftop is the temple's secular twin.",
+        "price_band": "₹₹",
+        "address": "Kali Tibba Hill, Chail, Solan District, Himachal Pradesh 173217",
+        "book_url": "https://www.makemytrip.com/hotels/kali_tibba_resort-details-chail.html",
+        "sources": [
+          "https://www.makemytrip.com/hotels/kali_tibba_resort-details-chail.html",
+          "https://www.thrillophilia.com/resorts-in-chail"
+        ]
+      }
+    },
+    {
+      "destination_id": "chamba",
+      "slot": "location",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "chamba",
+      "slot": "xfactor",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "chitkul",
+      "slot": "location",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "chitkul",
+      "slot": "xfactor",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "chitkul",
+      "slot": "experience",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "chitkul",
+      "slot": "value",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "dalhousie",
+      "slot": "experience",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "dalhousie",
+      "slot": "location",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "dalhousie",
+      "slot": "xfactor",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "dalhousie",
+      "slot": "value",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "dharamshala",
+      "slot": "experience",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "dharamshala",
+      "slot": "value",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "dharamshala",
+      "slot": "xfactor",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "great-himalayan-np",
+      "slot": "value",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "great-himalayan-np",
+      "slot": "experience",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "great-himalayan-np",
+      "slot": "xfactor",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "jibhi",
+      "slot": "location",
+      "verdict": "replace",
+      "replacement": {
+        "name": "Whoopers Boutique Resort Jibhi",
+        "tier": "boutique",
+        "tagline": "Riverside Jibhi property on the Tirthan tributary—part of the multi-state Whoopers chain, but the Jibhi outlet is the boutique-resort wing (not the hostel). Walk to the village waterfall, 20min to Jalori Pass approach road.",
+        "price_band": "₹₹",
+        "address": "Bini Village, Jibhi, Banjar Tehsil, Kullu District, Himachal Pradesh 175123",
+        "book_url": "https://www.whoopers.in/jibhi",
+        "sources": [
+          "https://www.whoopers.in/jibhi",
+          "https://www.tripadvisor.com/Hotel_Review-g15350081-d25400643-Reviews-Whoopers_Boutique_Resort_Jibhi-Bini_Banjar_Kullu_District_Himachal_Pradesh.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "jibhi",
+      "slot": "xfactor",
+      "verdict": "replace",
+      "replacement": {
+        "name": "8fold by LaRiSa, Jibhi",
+        "tier": "boutique",
+        "tagline": "Kath-kuni heritage architecture (stone+wood, the traditional Himachali earthquake-proof technique) on a deodar-and-pine plot beside the Hidib stream, a Tirthan tributary. Closest the dest gets to a serious heritage stay—1hr from Kullu airport.",
+        "price_band": "₹₹₹",
+        "address": "Jibhi, Banjar Tehsil, Kullu District, Himachal Pradesh 175123",
+        "book_url": "https://8foldhotels.com/jibhi",
+        "sources": [
+          "https://8foldhotels.com/jibhi",
+          "https://www.tripadvisor.com/Hotel_Review-g15350081-d25400643-Reviews-Whoopers_Boutique_Resort_Jibhi-Bini_Banjar_Kullu_District_Himachal_Pradesh.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "kalpa",
+      "slot": "location",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "kalpa",
+      "slot": "xfactor",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "kalpa",
+      "slot": "experience",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "kalpa",
+      "slot": "value",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "kasauli",
+      "slot": "value",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "kasauli",
+      "slot": "experience",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "kasauli",
+      "slot": "xfactor",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "kasol",
+      "slot": "location",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "kasol",
+      "slot": "xfactor",
+      "verdict": "null_slot"
+    },
+    {
+      "destination_id": "kasol",
+      "slot": "experience",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "kasol",
+      "slot": "value",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "keylong",
+      "slot": "xfactor",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "keylong",
+      "slot": "experience",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "keylong",
+      "slot": "value",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "keylong",
+      "slot": "location",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "kinnaur",
+      "slot": "xfactor",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "kinnaur",
+      "slot": "experience",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "kinnaur",
+      "slot": "value",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "kinnaur",
+      "slot": "location",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "kufri",
+      "slot": "xfactor",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "kufri",
+      "slot": "location",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "kufri",
+      "slot": "value",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "kufri",
+      "slot": "experience",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "kullu",
+      "slot": "experience",
+      "verdict": "replace",
+      "replacement": {
+        "name": "Apple Valley Resort",
+        "tier": "comfort",
+        "tagline": "Riverside resort on the Beas at Mohal (Kullu-Manali highway), 6km from Bhuntar airport — apple-orchard backdrop, 36 rooms in 6 wooden cottages, pool + multi-cuisine. The real Kullu-town pin (vs Tirthan Grand Riverside which is 50km off in Banjar).",
+        "price_band": "₹₹",
+        "address": "Mohal, Kullu, Himachal Pradesh 175126",
+        "book_url": "https://applevalleyresortskullu.com/",
+        "sources": [
+          "https://applevalleyresortskullu.com/",
+          "https://www.tripadvisor.com/Hotel_Review-g8111334-d1166358-Reviews-Apple_Valley_Resort-Mohal_Kullu_District_Himachal_Pradesh.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "kullu",
+      "slot": "value",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "kullu",
+      "slot": "location",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "kullu",
+      "slot": "xfactor",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "lahaul-valley",
+      "slot": "value",
+      "verdict": "replace",
+      "replacement": {
+        "name": "Padma Lodge & Cottages, Jispa",
+        "tier": "comfort",
+        "tagline": "Family-run lodge at Jispa village (NH-3, 20km from Keylong, on the Manali-Leh route). Heated rooms, hot water round the clock, and the easiest acclimatisation stop before Sarchu/Pang. Sonam-family hospitality.",
+        "price_band": "₹",
+        "address": "Jispa Village, Lahaul, Himachal Pradesh 175132",
+        "book_url": "https://www.tripadvisor.in/Hotel_Review-g1156023-d2098175-Reviews-Padma_Lodge-Jispa_Lahaul_and_Spiti_District_Himachal_Pradesh.html",
+        "sources": [
+          "https://www.tripadvisor.in/Hotel_Review-g1156023-d2098175-Reviews-Padma_Lodge-Jispa_Lahaul_and_Spiti_District_Himachal_Pradesh.html",
+          "https://www.makemytrip.global/hotels/padma_lodge_and_cottages-details-lahaul.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "lahaul-valley",
+      "slot": "xfactor",
+      "verdict": "replace",
+      "replacement": {
+        "name": "Parasol Camps & Retreat, Chandratal",
+        "tier": "boutique",
+        "tagline": "Seasonal Swiss tented camp 1.5km from Chandratal Lake (camping inside the lake's eco-zone is banned, this is the closest legal stay). All-inclusive package, generator power, hot food, and a 10min walk to the moon-shaped lake at sunrise.",
+        "price_band": "₹₹",
+        "address": "Near Chandratal Lake, Lahaul-Spiti District, Himachal Pradesh",
+        "book_url": "https://www.thegreatnext.com/parasol-camps/",
+        "sources": [
+          "https://www.thegreatnext.com/parasol-camps/",
+          "https://www.facebook.com/parasolcamps.co.in/"
+        ]
+      }
+    },
+    {
+      "destination_id": "manali",
+      "slot": "experience",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "manali",
+      "slot": "value",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "manali",
+      "slot": "xfactor",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "mandi",
+      "slot": "location",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "mandi",
+      "slot": "xfactor",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "mandi",
+      "slot": "experience",
+      "verdict": "replace",
+      "replacement": {
+        "name": "Raj Mahal Palace Hotel",
+        "tier": "heritage",
+        "tagline": "Mandi royal-family residence converted to a 12-room heritage hotel in 1982 (Bhawani Sen's old state guesthouse). 200m from town centre and 600m from Bhima Kali Temple—the only true heritage stay inside Mandi proper.",
+        "price_band": "₹₹",
+        "address": "Mandi, Himachal Pradesh 175001",
+        "book_url": "http://www.rajmahalpalace.com/",
+        "sources": [
+          "http://www.rajmahalpalace.com/",
+          "https://www.tripadvisor.in/Hotel_Review-g1087542-d3974140-Reviews-Raj_Mahal_Palace_Hotel-Mandi_Mandi_District_Himachal_Pradesh.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "mandi",
+      "slot": "value",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "manikaran",
+      "slot": "value",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "manikaran",
+      "slot": "xfactor",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "manikaran",
+      "slot": "experience",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "mcleodganj",
+      "slot": "value",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "mcleodganj",
+      "slot": "location",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "mcleodganj",
+      "slot": "experience",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "mcleodganj",
+      "slot": "xfactor",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "nako",
+      "slot": "xfactor",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "nako",
+      "slot": "experience",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "nako",
+      "slot": "value",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "nako",
+      "slot": "location",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "palampur",
+      "slot": "experience",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "palampur",
+      "slot": "xfactor",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "palampur",
+      "slot": "location",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "palampur",
+      "slot": "value",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "parvati-valley",
+      "slot": "location",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "parvati-valley",
+      "slot": "experience",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "parvati-valley",
+      "slot": "xfactor",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "parvati-valley",
+      "slot": "value",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "prashar-lake",
+      "slot": "value",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "prashar-lake",
+      "slot": "experience",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "prashar-lake",
+      "slot": "xfactor",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "sangla",
+      "slot": "value",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "sangla",
+      "slot": "xfactor",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "sangla",
+      "slot": "experience",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "sangla",
+      "slot": "location",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "sarahan",
+      "slot": "experience",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "sarahan",
+      "slot": "xfactor",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "sarahan",
+      "slot": "location",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "sarahan",
+      "slot": "value",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "shimla",
+      "slot": "experience",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "sissu",
+      "slot": "location",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "sissu",
+      "slot": "value",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "sissu",
+      "slot": "experience",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "sissu",
+      "slot": "xfactor",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "solan",
+      "slot": "xfactor",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "solan",
+      "slot": "location",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "solan",
+      "slot": "value",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "solan",
+      "slot": "experience",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "spiti-valley",
+      "slot": "xfactor",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "spiti-valley",
+      "slot": "value",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "spiti-valley",
+      "slot": "experience",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "spiti-valley",
+      "slot": "location",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "tirthan-valley",
+      "slot": "value",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "tirthan-valley",
+      "slot": "xfactor",
+      "verdict": "keep_existing"
+    },
+    {
+      "destination_id": "tirthan-valley",
+      "slot": "location",
+      "verdict": "keep_existing"
+    }
+  ],
+  "task_b_results": [
+    {
+      "destination_id": "bir-billing",
+      "slot": "experience",
+      "name": "The Himaal, Bir | Luxury Boutique Homestay",
+      "tier": "boutique",
+      "tagline": "Nine rooms designed by host Bhavan and family, blending Himalayan aesthetics with modern luxury (smart-LED, Bluetooth speakers, bathroom amenities). 5-min walk to the Bir paragliding landing zone—rooftop terrace looks straight up at the take-off.",
+      "price_band": "₹₹",
+      "sources": [
+        "https://thehimaal.com/bir/",
+        "https://www.booking.com/hotel/in/the-himaal.html"
+      ],
+      "dubious_after_research": false
+    },
+    {
+      "destination_id": "bir-billing",
+      "slot": "location",
+      "name": "Mohinder & Mohindra Home Stay",
+      "tier": "homestay",
+      "tagline": "Lambahar village home, one of the oldest Bir homestays (Booking 9.2). Walking distance to Chokling Monastery and the Tibetan Colony—paragliders' favourite quiet base, garden-and-terrace property.",
+      "price_band": "₹",
+      "sources": [
+        "https://www.booking.com/hotel/in/mohinder-amp-mohindra-home-stay.en-gb.html",
+        "https://www.tripadvisor.in/VacationRentalReview-g12100319-d13320075-Mohinder_Mohindra_Home_Stay-Chogan_Bir_Kangra_District_Himachal_Pradesh.html"
+      ],
+      "dubious_after_research": false
+    },
+    {
+      "destination_id": "chail",
+      "slot": "experience",
+      "name": "The Palace, Chail (HPTDC)",
+      "tier": "heritage",
+      "tagline": "1891 Patiala-royal palace on a 75-acre estate, HPTDC-run since 1972 with cottages, suites and the world's highest cricket ground at the door. Chail's signature heritage stay—log huts to the Rajgarh cottage range.",
+      "price_band": "₹₹₹",
+      "sources": [
+        "https://hptdc.in/index.php/chail-the-palace/",
+        "https://www.tripadvisor.in/Hotel_Review-g777777-d630459-Reviews-The_Palace_Chail-Chail_Kandaghat_Tehsil_Solan_District_Himachal_Pradesh.html"
+      ],
+      "dubious_after_research": false
+    },
+    {
+      "destination_id": "chamba",
+      "slot": "xfactor",
+      "name": "Himalayan Orchard Huts",
+      "tier": "homestay",
+      "tagline": "Dhami-family eco farmstay 12km from Chamba in Chadiyara village, on the Saal river. Clay-and-wood traditional construction, organic farm-to-table meals, base for Manimahesh and Panj-La treks. Real eco-stay, not greenwashed marketing.",
+      "price_band": "₹₹",
+      "sources": [
+        "https://orchardhuts.com/",
+        "https://hpchamba.nic.in/accommodation/himalayan-orchard-huts/"
+      ],
+      "dubious_after_research": false
+    },
+    {
+      "destination_id": "chitkul",
+      "slot": "value",
+      "name": "Zostel Chitkul",
+      "tier": "budget",
+      "tagline": "Adults-only Zostel branch in India's last village before the China border. Dorms, private tents, and rooms with Baspa-river or mountain views. Café, bonfire nights, and the booked-out backpacker pin for Chitkul.",
+      "price_band": "₹",
+      "sources": [
+        "https://www.zostel.com/destination/chitkul/stay/chitkul-chth585",
+        "https://www.tripadvisor.com/Hotel_Review-g8493891-d14159396-Reviews-Zostel_Chitkul-Chitkul_Kinnaur_District_Himachal_Pradesh.html"
+      ],
+      "dubious_after_research": false
+    },
+    {
+      "destination_id": "dharamshala",
+      "slot": "xfactor",
+      "name": "Navek-La Country Home",
+      "tier": "homestay",
+      "tagline": "Brigadier Sandhu's grey-stone country home on the Manuni stream (Lower Dharamshala / Sidhpur side, near Norbulingka). Five rooms each with a private entrance, retired-army-host stories nightly. Quiet alternative to McLeodganj's bustle.",
+      "price_band": "₹₹",
+      "sources": [
+        "https://www.tripadvisor.com/Hotel_Review-g319724-d1792832-Reviews-Navek_La_Country_Home-Dharamsala_Kangra_District_Himachal_Pradesh.html",
+        "https://instahimachal.com/blog/homestays-and-guesthouses-in-dharamshala/"
+      ],
+      "dubious_after_research": false
+    },
+    {
+      "destination_id": "great-himalayan-np",
+      "slot": "xfactor",
+      "name": "Kudrat - A Boutique Homestay",
+      "tier": "homestay",
+      "tagline": "Sudhir & Bhawana Nehru's two-cottage stone-and-wood home in Bandal village, Sharchi—at 6200ft facing the snow-capped Tirth peaks of GHNP itself. The most architectural eco-homestay on the GHNP fringe.",
+      "price_band": "₹",
+      "sources": [
+        "https://www.tripadvisor.in/Hotel_Review-g15339323-d14108399-Reviews-Kudrat_A_Boutique_Homestay-Sharchi_Kullu_District_Himachal_Pradesh.html",
+        "https://thebetterindia.com/412368/tirthan-valley-himachal-pradesh-tourism-kudrat-boutique-homestay-sustainable-architecture-stone-house-wood-house/"
+      ],
+      "dubious_after_research": false
+    },
+    {
+      "destination_id": "kalpa",
+      "slot": "xfactor",
+      "name": "Fayul Retreat - India's High-Altitude Glamp & EcoLuxury Stay",
+      "tier": "boutique",
+      "tagline": "Geodesic luxury domes plus wooden rooms with jacuzzi at ~11,000ft, 2.2km from Kalpa centre, panoramic Kinnaur Kailash. (Note: marketed as 'India's highest', but Spiti's Komic etc. are higher—still, India's highest commercial dome resort by altitude.)",
+      "price_band": "₹₹",
+      "sources": [
+        "https://fayulretreat.com/",
+        "https://www.booking.com/hotel/in/fayul-retreat-scenic-and-ecoluxury.html"
+      ],
+      "dubious_after_research": false
+    },
+    {
+      "destination_id": "shimla",
+      "slot": "experience",
+      "name": "Wildflower Hall, an Oberoi Resort, Shimla",
+      "tier": "luxury",
+      "tagline": "23-acre cedar-forest estate at 2515m, 15km from Shimla in Mashobra (Lord Kitchener's old residence). Indoor heated pool, spa, 100% hydro-powered. The marquee Shimla luxury stay—the only Oberoi-tier address in this dest.",
+      "price_band": "₹₹₹₹",
+      "sources": [
+        "https://www.oberoihotels.com/hotels-in-shimla-wfh/",
+        "https://www.tripadvisor.com/Hotel_Review-g1156032-d302153-Reviews-Wildflower_Hall_An_Oberoi_Resort-Mashobra_Shimla_District_Himachal_Pradesh.html"
+      ],
+      "dubious_after_research": false
+    },
+    {
+      "destination_id": "spiti-valley",
+      "slot": "experience",
+      "name": "Maitreya Mud House (by Eco Hospitality)",
+      "tier": "comfort",
+      "tagline": "Spitian mud-plaster rooms with natural insulation, adjacent to the 1,028-yr-old Tabo monastery (one of the oldest continuously functioning Buddhist monasteries in the Himalayas). Run by Eco Hospitality. Note: Tabo, NOT Key Monastery — Key is 50km north toward Kaza.",
+      "price_band": "₹₹",
+      "signature_experience": "Traditional Spitian mud-plaster rooms with natural insulation; adjacent to Tabo monastery (1,028 years old)",
+      "sources": [
+        "https://www.ecohospitality.in/maitreya-mud-house",
+        "https://www.tripadvisor.com/Hotel_Review-g2282344-d31662216-Reviews-Maitreya_Mud_House_By_Eco_Hospitality-Tabo_Lahaul_and_Spiti_District_Himachal_Prades.html"
+      ],
+      "dubious_after_research": false
+    }
+  ]
+}
