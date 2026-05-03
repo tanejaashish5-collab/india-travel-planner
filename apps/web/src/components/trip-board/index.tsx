@@ -29,6 +29,10 @@ import { PermitDialog } from "./permit-dialog";
 import { AiModal, type AiModalSubmit } from "./ai-modal";
 import { ItineraryView } from "./itinerary-view";
 import { ShareMenu } from "./share-menu";
+import { SimpleView } from "./simple-view";
+
+const VIEW_MODE_KEY = "nq-trip-mode";
+type ViewMode = "simple" | "advanced";
 
 type DestinationLite = {
   id: string;
@@ -110,12 +114,13 @@ export function TripBoard({ destinations }: { destinations: DestinationLite[] })
     return <ColdStart destinations={destinations} onSeed={applySeed} />;
   }
 
-  // ShellWithLogistics owns the sidebar collapse state + RPC + permit dialog.
   // Wrapped in .nakshiq-trip-board so the dark editorial design tokens apply
   // only to the /trip subtree (rest of the site is light-themed).
+  // BoardWithModals hoists modal + RPC state so SimpleView and ShellWithLogistics
+  // share one set of modals + one logistics fetch.
   return (
     <div className="nakshiq-trip-board" data-trip-shell>
-      <ShellWithLogistics
+      <BoardWithModals
         state={state}
         setState={setState}
         destinations={destinations}
@@ -163,15 +168,11 @@ export function TripBoard({ destinations }: { destinations: DestinationLite[] })
   );
 }
 
-// ShellWithLogistics — three-pane grid with collapsible sidebars.
-// Shape mirrors design's TripBoard.jsx main return.
-//
-// Sidebar collapse persists per-side via localStorage["nq-left-coll"] /
-// "nq-right-coll" — matches the design's localStorage key naming.
-//
-// PermitDialog is hoisted here so both BoardCanvas (StopCard alerts) and
-// CostPanel→ConflictsPanel can launch the same modal.
-function ShellWithLogistics({
+// BoardWithModals — owns the shared logistics RPC + modal state and
+// switches between SimpleView (default) and ThreePane (advanced) based on
+// localStorage["nq-trip-mode"]. Hoisting state up here means SimpleView can
+// open the same AiModal / ShareMenu / PermitDialog that the dense board uses.
+function BoardWithModals({
   state,
   setState,
   destinations,
@@ -189,6 +190,122 @@ function ShellWithLogistics({
   const [aiModalOpen, setAiModalOpen] = useState(false);
   const [aiResult, setAiResult] = useState<AiModalSubmit | null>(null);
   const [shareMenuOpen, setShareMenuOpen] = useState(false);
+
+  // viewMode default = "simple" for new visitors. Power users who explicitly
+  // open the trip board get "advanced" persisted, so revisits skip Simple.
+  // Reverting to Simple = ColdStart "Start over" flow (clears the prefs).
+  const [viewMode, setViewMode] = useState<ViewMode>(() => {
+    if (typeof window === "undefined") return "simple";
+    const stored = localStorage.getItem(VIEW_MODE_KEY);
+    return stored === "advanced" ? "advanced" : "simple";
+  });
+  function switchToAdvanced() {
+    setViewMode("advanced");
+    if (typeof window !== "undefined") localStorage.setItem(VIEW_MODE_KEY, "advanced");
+  }
+
+  return (
+    <>
+      {viewMode === "simple" ? (
+        <SimpleView
+          state={state}
+          setState={setState}
+          destinations={destinations}
+          rowsByDest={rowsByDest}
+          onGenerateItinerary={() => setAiModalOpen(true)}
+          onShareClick={() => setShareMenuOpen(true)}
+          onSwitchToAdvanced={switchToAdvanced}
+          onStartOver={() => {
+            // Wipe the advanced preference too, so re-entering after a fresh
+            // cold-start lands in Simple by default.
+            if (typeof window !== "undefined") localStorage.removeItem(VIEW_MODE_KEY);
+            setViewMode("simple");
+            forceColdStart();
+          }}
+        />
+      ) : (
+        <ThreePane
+          state={state}
+          setState={setState}
+          destinations={destinations}
+          rowsByDest={rowsByDest}
+          onPermitClick={(id, name) => setPermitDialogFor({ id, name })}
+          onGenerateItinerary={() => setAiModalOpen(true)}
+          onShareClick={() => setShareMenuOpen(true)}
+          onStartOver={() => {
+            if (typeof window !== "undefined") localStorage.removeItem(VIEW_MODE_KEY);
+            setViewMode("simple");
+            forceColdStart();
+          }}
+        />
+      )}
+
+      {permitDialogFor && (
+        <PermitDialog
+          destinationId={permitDialogFor.id}
+          destinationName={permitDialogFor.name}
+          onClose={() => setPermitDialogFor(null)}
+        />
+      )}
+
+      {aiModalOpen && (
+        <AiModal
+          state={state}
+          rowsByDest={rowsByDest}
+          onClose={() => setAiModalOpen(false)}
+          onGenerated={(result) => {
+            setAiResult(result);
+            setAiModalOpen(false);
+          }}
+        />
+      )}
+
+      {aiResult && (
+        <ItineraryView
+          itinerary={aiResult.itinerary as never}
+          scaffold={aiResult.scaffold}
+          fallbackUsed={aiResult.fallbackUsed}
+          onClose={() => setAiResult(null)}
+        />
+      )}
+
+      {shareMenuOpen && (
+        <ShareMenu
+          state={state}
+          signedIn={signedIn}
+          onClose={() => setShareMenuOpen(false)}
+          onImported={(next) => setState(() => next)}
+        />
+      )}
+    </>
+  );
+}
+
+// ThreePane — the dense editorial 3-pane shell. Used in viewMode="advanced".
+// All modal state is owned by the BoardWithModals parent — this component
+// just calls the open-callbacks via props.
+//
+// Sidebar collapse persists per-side via localStorage["nq-left-coll"] /
+// "nq-right-coll".
+function ThreePane({
+  state,
+  setState,
+  destinations,
+  rowsByDest,
+  onPermitClick,
+  onGenerateItinerary,
+  onShareClick,
+  onStartOver,
+}: {
+  state: TripStateV2;
+  setState: (updater: (prev: TripStateV2) => TripStateV2) => void;
+  destinations: DestinationLite[];
+  rowsByDest: ReturnType<typeof useTripLogistics>["rowsByDest"];
+  onPermitClick: (id: string, name: string) => void;
+  onGenerateItinerary: () => void;
+  onShareClick: () => void;
+  onStartOver: () => void;
+}) {
   const [view, setView] = useState<"list" | "map">("list");
   // SSR-safe lazy init from localStorage. Default = expanded (false).
   const [leftCollapsed, setLeftCollapsed] = useState<boolean>(() => {
@@ -231,16 +348,16 @@ function ShellWithLogistics({
           setState={setState}
           destinations={destinations}
           rowsByDest={rowsByDest}
-          onPermitClick={(id, name) => setPermitDialogFor({ id, name })}
-          onGenerateItinerary={() => setAiModalOpen(true)}
-          onShareClick={() => setShareMenuOpen(true)}
+          onPermitClick={onPermitClick}
+          onGenerateItinerary={onGenerateItinerary}
+          onShareClick={onShareClick}
           view={view}
           onToggleView={setView}
           leftCollapsed={leftCollapsed}
           rightCollapsed={rightCollapsed}
           onToggleLeft={() => setLeftCollapsed((v) => !v)}
           onToggleRight={() => setRightCollapsed((v) => !v)}
-          onStartOver={forceColdStart}
+          onStartOver={onStartOver}
         />
       </div>
 
@@ -256,8 +373,8 @@ function ShellWithLogistics({
             state={state}
             destinations={destinations}
             rowsByDest={rowsByDest}
-            onPermitClick={(id, name) => setPermitDialogFor({ id, name })}
-            onShareClick={() => setShareMenuOpen(true)}
+            onPermitClick={onPermitClick}
+            onShareClick={onShareClick}
           />
         )}
       </div>
@@ -298,43 +415,6 @@ function ShellWithLogistics({
         </div>
       )}
 
-      {permitDialogFor && (
-        <PermitDialog
-          destinationId={permitDialogFor.id}
-          destinationName={permitDialogFor.name}
-          onClose={() => setPermitDialogFor(null)}
-        />
-      )}
-
-      {aiModalOpen && (
-        <AiModal
-          state={state}
-          rowsByDest={rowsByDest}
-          onClose={() => setAiModalOpen(false)}
-          onGenerated={(result) => {
-            setAiResult(result);
-            setAiModalOpen(false);
-          }}
-        />
-      )}
-
-      {aiResult && (
-        <ItineraryView
-          itinerary={aiResult.itinerary as never}
-          scaffold={aiResult.scaffold}
-          fallbackUsed={aiResult.fallbackUsed}
-          onClose={() => setAiResult(null)}
-        />
-      )}
-
-      {shareMenuOpen && (
-        <ShareMenu
-          state={state}
-          signedIn={signedIn}
-          onClose={() => setShareMenuOpen(false)}
-          onImported={(next) => setState(() => next)}
-        />
-      )}
     </div>
   );
 }
