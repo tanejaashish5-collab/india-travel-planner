@@ -1,0 +1,255 @@
+{
+  "task_a_results": [
+    {
+      "destination_id": "aizawl",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "replacement": {
+        "name": "Hotel Regency",
+        "tier": "comfort",
+        "tagline": "Mizoram's first 3-star hotel, perched on Mac Donald Hill above Zarkawt with hill-side rooms, multi-cuisine restaurant and the city's most reliable hot water — dry-state, so the bar is a juice bar.",
+        "price_band": "₹₹₹",
+        "address": "B-49, Mac Donald Hill, Zarkawt, Aizawl, Mizoram 796007",
+        "phone": "+91 389 234 4234",
+        "book_url": "https://regencyaizawl.com/",
+        "sources": [
+          "https://www.tripadvisor.com/Hotel_Review-g667801-d3423845-Reviews-Hotel_Regency-Aizawl_Aizawl_District_Mizoram.html",
+          "https://aizawl.nic.in/accommodation/hotel-regency/",
+          "https://regencyaizawl.com/"
+        ]
+      }
+    },
+    {
+      "destination_id": "aizawl",
+      "slot": "location",
+      "verdict": "replace",
+      "replacement": {
+        "name": "Hotel Floria",
+        "tier": "comfort",
+        "tagline": "33 rooms one block off Bara Bazaar in Dawrpui — the closest mid-range hotel to the markets, churches and taxi stand, with panoramic hill views from the upper floors and a sober multi-cuisine restaurant (no alcohol, like all of Aizawl).",
+        "price_band": "₹₹₹",
+        "address": "Bara Bazar, Dawrpui, Aizawl, Mizoram 796001",
+        "phone": "+91 76279 93685",
+        "book_url": "https://hotelfloria.com/",
+        "sources": [
+          "https://www.tripadvisor.com/Hotel_Review-g667801-d7849016-Reviews-Hotel_Floria-Aizawl_Aizawl_District_Mizoram.html",
+          "https://hotelfloria.com/",
+          "https://www.justdial.com/Aizawl/Hotel-Floria-Dawrpui/9999PX389-X389-241224021943-S9U6_BZDET"
+        ]
+      }
+    },
+    {
+      "destination_id": "aizawl",
+      "slot": "value",
+      "verdict": "replace",
+      "replacement": {
+        "name": "David's Hotel Clover",
+        "tier": "budget",
+        "tagline": "Long-running budget hotel in Chanmari with four room categories, in-house restaurant and walking access to Mizoram State Museum — the dependable mid-tier option when Regency and Floria are full.",
+        "price_band": "₹₹",
+        "address": "G-16, Chanmari, Aizawl, Mizoram 796007",
+        "phone": null,
+        "book_url": null,
+        "sources": [
+          "https://www.tripadvisor.com/Hotel_Review-g667801-d1585026-Reviews-David_s_Hotel_Clover-Aizawl_Aizawl_District_Mizoram.html",
+          "https://www.makemytrip.com/hotels/david_s_hotel_clover-details-aizawl.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "aizawl",
+      "slot": "xfactor",
+      "verdict": "replace",
+      "replacement": {
+        "name": "Aizawl Guest House",
+        "tier": "homestay",
+        "tagline": "Mary's family-run guest house perched on Laipuitlang ridge — the highest point in Aizawl, with three bedrooms, a serviced apartment and 270-degree views over the city; cash-only and an honest taste of Mizo hospitality and home cooking.",
+        "price_band": "₹₹",
+        "address": "Laipuitlang, Aizawl, Mizoram 796001",
+        "phone": "+91 60330 33337",
+        "book_url": "https://www.aizawlguesthouse.com/",
+        "sources": [
+          "https://www.booking.com/hotel/in/aizawl-guest-house-cozy-homestay.html",
+          "https://www.tripadvisor.in/Hotel_Review-g667801-d19707131-Reviews-Aizawl_Guest_House-Aizawl_Aizawl_District_Mizoram.html",
+          "https://www.aizawlguesthouse.com/"
+        ]
+      }
+    },
+
+    {
+      "destination_id": "champhai",
+      "slot": "experience",
+      "verdict": "replace",
+      "replacement": {
+        "name": "Hotel Hranga Plaza",
+        "tier": "comfort",
+        "tagline": "Recently built mid-range hotel in Vengthlang — the most modern option in Champhai's small inventory, with KFC and Crush N Bite within walking distance for the rare branded meal in this border hill town.",
+        "price_band": "₹₹",
+        "address": "Vengthlang, Champhai, Mizoram 796321",
+        "phone": "+91 389 234 0217",
+        "book_url": null,
+        "sources": [
+          "https://www.tripadvisor.com/Hotel_Review-g2287387-d21221562-Reviews-Hotel_Hranga_Plaza-Champhai_Champhai_District_Mizoram.html",
+          "https://champhai.nic.in/accommodation/"
+        ]
+      }
+    },
+    {
+      "destination_id": "champhai",
+      "slot": "value",
+      "verdict": "replace",
+      "replacement": {
+        "name": "Hotel Chawngthu",
+        "tier": "budget",
+        "tagline": "Family-run budget hotel in Vengthlang from ₹600/night — the working traveller's pick when the Tourist Lodge is full, with simple Mizo home cooking and the usual Sunday closures across town.",
+        "price_band": "₹",
+        "address": "Vengthlang, Champhai, Mizoram 796321",
+        "phone": "+91 82580 65795",
+        "book_url": null,
+        "sources": [
+          "https://champhai.nic.in/accommodation/",
+          "https://www.facebook.com/HotelChawngthu/",
+          "https://mapcarta.com/N6355840586"
+        ]
+      }
+    },
+    {
+      "destination_id": "champhai",
+      "slot": "location",
+      "verdict": "replace",
+      "replacement": null
+    },
+    {
+      "destination_id": "champhai",
+      "slot": "xfactor",
+      "verdict": "replace",
+      "replacement": {
+        "name": "Champhai Tourist Lodge",
+        "tier": "budget",
+        "tagline": "State-run lodge in Zion Veng managed by the Art and Culture Department — single rooms, double rooms and a decorated cottage on the ridge, the default fallback for the eastern border circuit (book through tourism.mizoram.gov.in).",
+        "price_band": "₹",
+        "address": "Champhai Main Road, Zion Veng, Champhai, Mizoram 796321",
+        "phone": "+91 3831 23866",
+        "book_url": "https://tourism.mizoram.gov.in/page/online-booking-of-tourist-lodges",
+        "sources": [
+          "https://champhai.nic.in/accommodation/",
+          "https://tourism.mizoram.gov.in/page/online-booking-of-tourist-lodges",
+          "https://www.mappls.com/8xllzq"
+        ]
+      }
+    },
+
+    {
+      "destination_id": "lunglei",
+      "slot": "experience",
+      "verdict": "replace",
+      "replacement": {
+        "name": "Hotel Elite",
+        "tier": "comfort",
+        "tagline": "Hill-top hotel on the west end of Lunglei in Venglai, near the Circuit House — quiet, balcony views from every room, and the only property in Mizoram's second city with a Travellers' Choice award.",
+        "price_band": "₹₹",
+        "address": "Venglai, near Circuit House, Lunglei, Mizoram 796701",
+        "phone": "+91 94363 61739",
+        "book_url": null,
+        "sources": [
+          "https://www.tripadvisor.in/Hotel_Review-g2282678-d7340199-Reviews-Hotel_Elite-Lunglei_Lunglei_District_Mizoram.html",
+          "https://www.northeastodyssey.com/hotels-resorts/mizoram/item/127-hotel-elite.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "lunglei",
+      "slot": "value",
+      "verdict": "replace",
+      "replacement": {
+        "name": "Lunglei Tourist Lodge (MZTDC)",
+        "tier": "budget",
+        "tagline": "Mizoram Tourism Department lodge in Zotlang — government rates, dependable, the standard fallback for the southern hub when Hotel Elite books out (mandatory online booking via tourism.mizoram.gov.in).",
+        "price_band": "₹",
+        "address": "Zotlang, Lunglei, Mizoram 796701",
+        "phone": "+91 73032 31118",
+        "book_url": "https://tourism.mizoram.gov.in/page/online-booking-of-tourist-lodges",
+        "sources": [
+          "https://tourism.mizoram.gov.in/page/online-booking-of-tourist-lodges",
+          "https://tourism.mizoram.gov.in/page/list-of-tourist-lodges",
+          "https://tourist-lodge-lunglei-mztdc.hotelsgds.com/home.php"
+        ]
+      }
+    },
+    {
+      "destination_id": "lunglei",
+      "slot": "location",
+      "verdict": "replace",
+      "replacement": null
+    },
+    {
+      "destination_id": "lunglei",
+      "slot": "xfactor",
+      "verdict": "replace",
+      "replacement": {
+        "name": "The Hotel Alabasta",
+        "tier": "budget",
+        "tagline": "Small budget hotel in Lunglei town centre — well-kept rooms, walking distance to the bazaar and bus stand, the urban-character contrast to Hotel Elite's quiet hilltop.",
+        "price_band": "₹",
+        "address": "Lunglei town centre, Lunglei, Mizoram 796701",
+        "phone": null,
+        "book_url": null,
+        "sources": [
+          "https://www.tripadvisor.com/Hotel_Review-g2282678-d3955067-Reviews-The_Hotel_Alabasta-Lunglei_Lunglei_District_Mizoram.html",
+          "https://www.tripadvisor.com/Hotels-g2282678-Lunglei_Lunglei_District_Mizoram-Hotels.html"
+        ]
+      }
+    },
+
+    {
+      "destination_id": "phawngpui-peak",
+      "slot": "experience",
+      "verdict": "replace",
+      "replacement": null
+    },
+    {
+      "destination_id": "phawngpui-peak",
+      "slot": "value",
+      "verdict": "replace",
+      "replacement": null
+    },
+    {
+      "destination_id": "phawngpui-peak",
+      "slot": "location",
+      "verdict": "replace",
+      "replacement": {
+        "name": "Sangau Tourist Lodge",
+        "tier": "budget",
+        "tagline": "The default Phawngpui basecamp — Mizoram Tourism's village lodge in Sangau, ~35 km from the National Park gate; basic rooms, hot meals on order, and the trailhead for 4WD onward to Far Pak Forest Rest House (Nov-Apr open season).",
+        "price_band": "₹",
+        "address": "Sangau village, Lawngtlai District, Mizoram",
+        "phone": "+91 98623 44162",
+        "book_url": "https://tourism.mizoram.gov.in/page/online-booking-of-tourist-lodges",
+        "sources": [
+          "https://tourism.mizoram.gov.in/page/online-booking-of-tourist-lodges",
+          "https://www.tripoto.com/mizoram/places-to-visit/phawngpui-national-park",
+          "https://forest.mizoram.gov.in/page/chhimtuipui-wildlife-division-lawngtlai"
+        ]
+      }
+    },
+    {
+      "destination_id": "phawngpui-peak",
+      "slot": "xfactor",
+      "verdict": "replace",
+      "replacement": {
+        "name": "Far Pak Forest Rest House",
+        "tier": "budget",
+        "tagline": "Inside Phawngpui Blue Mountain National Park — Forest Department rest house at Far Pak, 12 km of 4WD beyond Sangau; bunks for 10-15, no power, carry your own supplies. The closest you can sleep to the 2,157 m summit.",
+        "price_band": "₹",
+        "address": "Far Pak, Phawngpui (Blue Mountain) National Park, Lawngtlai District, Mizoram",
+        "phone": null,
+        "book_url": null,
+        "sources": [
+          "https://forest.mizoram.gov.in/page/chhimtuipui-wildlife-division-lawngtlai",
+          "https://lawngtlai.nic.in/tourist-place/phawngpui/",
+          "https://roundglasssustain.com/habitats/phawngpui-national-park"
+        ]
+      }
+    }
+  ]
+}
