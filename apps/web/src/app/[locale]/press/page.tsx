@@ -26,14 +26,17 @@ async function getCounts() {
     return { rows: 7449, destinations: 491, goCount: 2720, skipCount: 1893, waitCount: 1058, totalDm: 5856, traps: 109 };
   }
   const supabase = createClient(url, key);
+  // PostgREST quirk: select("id", { count: "exact", head: true }) silently
+  // returns count=null. Use select("*", ...) for head-counts. (Caught while
+  // fixing the where-to-go zero bug on 2026-05-03.)
   const [costs, dests, goCnt, skipCnt, waitCnt, totalDm, traps] = await Promise.all([
-    supabase.from("destination_costs").select("id", { count: "exact", head: true }),
-    supabase.from("destinations").select("id", { count: "exact", head: true }),
-    supabase.from("destination_months").select("id", { count: "exact", head: true }).eq("verdict", "go"),
-    supabase.from("destination_months").select("id", { count: "exact", head: true }).eq("verdict", "skip"),
-    supabase.from("destination_months").select("id", { count: "exact", head: true }).eq("verdict", "wait"),
-    supabase.from("destination_months").select("id", { count: "exact", head: true }),
-    supabase.from("tourist_trap_alternatives").select("id", { count: "exact", head: true }),
+    supabase.from("destination_costs").select("*", { count: "exact", head: true }),
+    supabase.from("destinations").select("*", { count: "exact", head: true }),
+    supabase.from("destination_months").select("*", { count: "exact", head: true }).eq("verdict", "go"),
+    supabase.from("destination_months").select("*", { count: "exact", head: true }).eq("verdict", "skip"),
+    supabase.from("destination_months").select("*", { count: "exact", head: true }).eq("verdict", "wait"),
+    supabase.from("destination_months").select("*", { count: "exact", head: true }),
+    supabase.from("tourist_trap_alternatives").select("*", { count: "exact", head: true }),
   ]);
   return {
     rows: costs.count ?? 7449,

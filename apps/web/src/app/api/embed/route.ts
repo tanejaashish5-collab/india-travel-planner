@@ -33,9 +33,25 @@ export async function POST(req: Request) {
     .from("destinations")
     .select("id, name, tagline, difficulty, elevation_m, tags, state_id");
 
-  const { data: allMonths } = await supabase
-    .from("destination_months")
-    .select("destination_id, month, score, note");
+  // destination_months is ~5,892 rows — Supabase caps a single .select() at
+  // 1000, so a naive fetch silently dropped 83% of monthly scores from the
+  // RAG index. Paginate explicitly.
+  async function fetchAllMonths() {
+    const all: Array<{ destination_id: string; month: number; score: number; note: string | null }> = [];
+    for (let off = 0; ; off += 1000) {
+      const { data, error } = await supabase
+        .from("destination_months")
+        .select("destination_id, month, score, note")
+        .order("destination_id")
+        .range(off, off + 999);
+      if (error) break;
+      if (!data || data.length === 0) break;
+      all.push(...(data as any[]));
+      if (data.length < 1000) break;
+    }
+    return all;
+  }
+  const allMonths = await fetchAllMonths();
 
   const { data: allKids } = await supabase
     .from("kids_friendly")

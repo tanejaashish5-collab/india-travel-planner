@@ -65,13 +65,16 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ ok: false, error: "db_misconfigured" }, { status: 500 });
   }
 
-  // Step 1: pull all destination_months for the chosen month with go verdict
+  // Step 1: pull all destination_months for the chosen month with go verdict.
+  // Score column is 0–5 (CHECK constraint in 001_initial_schema.sql); the
+  // previous gte("score", 6) silently returned 0 candidates for every quiz
+  // since launch. Threshold 4 = "go now" tier per the methodology.
   const { data: monthRows, error: monthErr } = await supabase
     .from("destination_months")
     .select("destination_id, month, score, verdict, why_go")
     .eq("month", month)
     .in("verdict", ["go", "wait"])
-    .gte("score", 6)
+    .gte("score", 4)
     .order("score", { ascending: false });
 
   if (monthErr) {
