@@ -53,30 +53,35 @@ async function getMonthCounts(): Promise<Record<number, { go: number; skip: numb
   if (!url || !key) return {};
   const supabase = createClient(url, key);
 
-  const { data } = await supabase
-    .from("destination_months")
-    .select("month, score")
-    .gte("score", 4);
+  // destination_months has ~5,892 rows (491 dests × 12 months). Supabase
+  // server-enforces a 1000-row cap on any .select() — even .range(0, 9999)
+  // does NOT bypass it. So a naive .gte("score", 4) returns only the first
+  // 1000 matches, which all sit in Jan–Mar (alphabetic dest_id order),
+  // zeroing every month from April onward.
+  //
+  // Fix: 24 parallel head:true count queries — Postgres returns count(*)
+  // per (month, bucket) as a single number with no row-cap exposure.
+  // Note: select('*', ...) — select('id', ...) returns count=null due to
+  // a PostgREST quirk we hit while debugging.
+  const countFor = async (m: number, bucket: "go" | "skip") => {
+    const q = supabase
+      .from("destination_months")
+      .select("*", { count: "exact", head: true })
+      .eq("month", m);
+    const r = bucket === "go" ? await q.gte("score", 4) : await q.lte("score", 1);
+    return { month: m, bucket, count: r.count ?? 0 };
+  };
 
-  const goCounts: Record<number, number> = {};
-  for (const row of data ?? []) {
-    if (row.score >= 4) goCounts[row.month] = (goCounts[row.month] ?? 0) + 1;
+  const queries: Array<Promise<{ month: number; bucket: "go" | "skip"; count: number }>> = [];
+  for (let m = 1; m <= 12; m++) {
+    queries.push(countFor(m, "go"));
+    queries.push(countFor(m, "skip"));
   }
-
-  const { data: skipData } = await supabase
-    .from("destination_months")
-    .select("month, score")
-    .lte("score", 1);
-
-  const skipCounts: Record<number, number> = {};
-  for (const row of skipData ?? []) {
-    if (row.score <= 1) skipCounts[row.month] = (skipCounts[row.month] ?? 0) + 1;
-  }
+  const results = await Promise.all(queries);
 
   const out: Record<number, { go: number; skip: number }> = {};
-  for (let m = 1; m <= 12; m++) {
-    out[m] = { go: goCounts[m] ?? 0, skip: skipCounts[m] ?? 0 };
-  }
+  for (let m = 1; m <= 12; m++) out[m] = { go: 0, skip: 0 };
+  for (const r of results) out[r.month][r.bucket] = r.count;
   return out;
 }
 
