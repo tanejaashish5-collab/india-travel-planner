@@ -217,15 +217,38 @@ function useCounter(target: number, duration = 800): number {
   return value;
 }
 
-function StatChip({ value, label, suffix, color }: { value: number; label: string; suffix?: string; color: StepColor }) {
-  const counted = useCounter(value, 800);
+/**
+ * Big-number stat tile. The headline number is the hero of each step;
+ * the label sits below in muted small caps. Three-up grid on the popover.
+ */
+function StatTile({ value, label, suffix, color }: { value: number; label: string; suffix?: string; color: StepColor }) {
+  const counted = useCounter(value, 1100);
   const tokens = COLOR_TOKENS[color];
   return (
-    <div className={`inline-flex items-baseline gap-1.5 rounded-full ${tokens.chipBg} px-3 py-1.5`}>
-      <span className={`font-mono text-sm font-bold tabular-nums ${tokens.chipText}`}>
+    <div className={`flex flex-col gap-1 rounded-xl border border-white/[0.04] ${tokens.chipBg} px-3 py-3`}>
+      <span className={`font-mono text-2xl font-bold tabular-nums leading-none ${tokens.chipText}`}>
         {counted.toLocaleString()}{suffix}
       </span>
-      <span className="text-[11px] text-muted-foreground/80">{label}</span>
+      <span className="text-[10.5px] uppercase tracking-[0.06em] text-muted-foreground/75 leading-tight">
+        {label}
+      </span>
+    </div>
+  );
+}
+
+/**
+ * Inline pill version for steps with only one stat (e.g. closing step).
+ * Keeps the smaller chip for that case where a tile would feel oversized.
+ */
+function StatPill({ value, label, suffix, color }: { value: number; label: string; suffix?: string; color: StepColor }) {
+  const counted = useCounter(value, 1100);
+  const tokens = COLOR_TOKENS[color];
+  return (
+    <div className={`inline-flex items-baseline gap-2 rounded-full ${tokens.chipBg} px-4 py-2`}>
+      <span className={`font-mono text-lg font-bold tabular-nums ${tokens.chipText}`}>
+        {counted.toLocaleString()}{suffix}
+      </span>
+      <span className="text-xs text-muted-foreground/80">{label}</span>
     </div>
   );
 }
@@ -282,15 +305,45 @@ export function GuidedTour({ stats }: { stats: TourStats }) {
     return () => window.removeEventListener("nakshiq:tour-replay", handler);
   }, [start]);
 
+  // Auto-scroll anchor into view on step change. Without this, late-tour
+  // anchors (dest-card, search icon) stay below the fold and the spotlight
+  // glows on a region the user can't see — popover sits in the centre but
+  // points at nothing. Scroll first, re-measure after the scroll settles.
+  useEffect(() => {
+    if (!active) return;
+    const step = STEPS[stepIdx];
+    if (!step.selector) {
+      // Centered step — scroll to top so the page background is consistent
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+    const el = document.querySelector(step.selector) as HTMLElement | null;
+    if (!el) return;
+    const r = el.getBoundingClientRect();
+    const inViewport = r.top >= 80 && r.bottom <= (window.innerHeight - 80);
+    if (!inViewport) {
+      el.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [active, stepIdx]);
+
   // Measure anchor — re-run on step change + window changes
   useLayoutEffect(() => {
     if (!active) return;
     const step = STEPS[stepIdx];
     const update = () => setRect(getRect(step.selector));
     update();
+    // After a smooth scroll there's no scrollend event in all browsers, so
+    // re-measure a few times during the typical scroll window (~600ms).
+    const t1 = window.setTimeout(update, 200);
+    const t2 = window.setTimeout(update, 500);
+    const t3 = window.setTimeout(update, 800);
     window.addEventListener("resize", update);
     window.addEventListener("scroll", update, { passive: true });
     return () => {
+      window.clearTimeout(t1);
+      window.clearTimeout(t2);
+      window.clearTimeout(t3);
       window.removeEventListener("resize", update);
       window.removeEventListener("scroll", update);
     };
@@ -326,52 +379,64 @@ export function GuidedTour({ stats }: { stats: TourStats }) {
   if (mobile) {
     return (
       <div
-        className="fixed inset-0 z-[100] bg-black/80 backdrop-blur-sm flex items-end animate-tour-fade"
+        className="fixed inset-0 z-[100] bg-black/85 backdrop-blur-md flex items-end animate-tour-fade"
         role="dialog"
         aria-modal="true"
         aria-labelledby="tour-title"
       >
-        <div className="w-full bg-card border-t border-border rounded-t-3xl p-6 shadow-2xl relative overflow-hidden">
-          <div className={`absolute left-0 top-0 bottom-0 w-1 ${tokens.bar}`} />
+        <div
+          className="w-full bg-card border-t border-white/[0.06] rounded-t-3xl p-6 relative overflow-hidden"
+          style={{
+            background: "linear-gradient(155deg, rgba(255,255,255,0.025) 0%, transparent 60%), color-mix(in oklab, var(--card) 92%, black)",
+            boxShadow: "0 -20px 60px -10px rgba(0,0,0,0.55)",
+          }}
+        >
+          <div className={`absolute left-0 top-0 bottom-0 w-[3px] ${tokens.bar}`} style={{ boxShadow: `0 0 20px ${tokens.ring}80` }} />
           <ProgressDots active={stepIdx} total={STEPS.length} color={step.color} />
-          <div className="mt-3 flex items-start gap-3">
-            <div className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full ${tokens.iconBg} text-lg ${tokens.iconText}`}>
+          <div className="mt-4 flex items-start gap-3">
+            <div className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl ${tokens.iconBg} text-xl ${tokens.iconText}`}>
               {step.icon}
             </div>
             <div className="min-w-0 flex-1">
-              <p className={`text-[10px] font-semibold uppercase tracking-[0.14em] ${tokens.chipText}`}>
+              <p className={`text-[10.5px] font-bold uppercase tracking-[0.18em] ${tokens.chipText}`}>
                 {step.kicker}
               </p>
-              <h3 id="tour-title" className="mt-0.5 text-lg font-semibold text-foreground leading-snug">
+              <h3 id="tour-title" className="mt-1 font-serif text-[20px] font-semibold text-foreground leading-[1.2] tracking-[-0.01em]">
                 {step.title}
               </h3>
             </div>
             <button
               onClick={() => finish("dismissed")}
-              className="text-muted-foreground text-2xl leading-none hover:text-foreground"
+              className="text-muted-foreground/60 text-2xl leading-none hover:text-foreground"
               aria-label="Dismiss tour"
             >
               ×
             </button>
           </div>
-          <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{step.body}</p>
-          {step.stats.length > 0 && (
-            <div className="mt-4 flex flex-wrap gap-2">
+          <p className="mt-4 text-[14px] text-muted-foreground leading-[1.6]">{step.body}</p>
+          {step.stats.length > 1 && (
+            <div className="mt-5 grid grid-cols-3 gap-2">
               {step.stats.map((s) => (
-                <StatChip key={s.label} value={s.value} label={s.label} suffix={s.suffix} color={step.color} />
+                <StatTile key={s.label} value={s.value} label={s.label} suffix={s.suffix} color={step.color} />
               ))}
             </div>
           )}
-          <div className="mt-5 flex items-center justify-between gap-3">
+          {step.stats.length === 1 && (
+            <div className="mt-5">
+              <StatPill {...step.stats[0]} color={step.color} />
+            </div>
+          )}
+          <div className="mt-6 flex items-center justify-between gap-3">
             <button
               onClick={() => (stepIdx === 0 ? finish("dismissed") : setStepIdx((i) => i - 1))}
-              className="text-sm text-muted-foreground hover:text-foreground"
+              className="text-[13px] text-muted-foreground/70 hover:text-foreground"
             >
               {stepIdx === 0 ? "Skip" : "← Back"}
             </button>
             <button
               onClick={() => (isLast ? finish("done") : setStepIdx((i) => i + 1))}
-              className="rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-md hover:opacity-90 transition-opacity"
+              className="rounded-xl bg-foreground px-5 py-2.5 text-[13px] font-semibold text-background hover:opacity-90 transition-opacity"
+              style={{ boxShadow: `0 8px 24px -6px ${tokens.ring}80` }}
             >
               {isLast ? "Got it" : "Next →"}
             </button>
@@ -477,71 +542,97 @@ export function GuidedTour({ stats }: { stats: TourStats }) {
         )}
       </svg>
 
-      {/* Popover */}
+      {/* Popover — premium card */}
       <div
         style={popoverPosition}
-        className="absolute w-[420px] max-w-[92vw] pointer-events-auto animate-tour-pop"
+        className="absolute w-[520px] max-w-[92vw] pointer-events-auto animate-tour-pop"
       >
+        {/* Outer halo — subtle gradient bloom in the step's accent colour */}
         <div
-          className="relative rounded-2xl border border-border/60 bg-card/95 backdrop-blur-xl shadow-2xl overflow-hidden"
+          aria-hidden
+          className="absolute -inset-12 rounded-[40px] blur-2xl pointer-events-none"
+          style={{
+            background: `radial-gradient(closest-side, ${tokens.ring}26, transparent 70%)`,
+          }}
+        />
+
+        <div
+          className="relative rounded-[24px] border border-white/[0.06] bg-card/[0.92] backdrop-blur-2xl overflow-hidden"
           style={{
             background:
-              "linear-gradient(135deg, rgba(255,255,255,0.02) 0%, transparent 50%, rgba(255,255,255,0.01) 100%), var(--card)",
+              "linear-gradient(155deg, rgba(255,255,255,0.025) 0%, rgba(255,255,255,0.008) 38%, transparent 75%), color-mix(in oklab, var(--card) 92%, black)",
+            boxShadow:
+              "0 30px 80px -10px rgba(0,0,0,0.55), 0 8px 24px -4px rgba(0,0,0,0.35), 0 0 0 1px rgba(255,255,255,0.04)",
           }}
         >
           {/* Color bar */}
-          <div className={`absolute left-0 top-0 bottom-0 w-1 ${tokens.bar}`} />
+          <div className={`absolute left-0 top-0 bottom-0 w-[3px] ${tokens.bar}`} style={{ boxShadow: `0 0 24px ${tokens.ring}80` }} />
 
           {/* Shimmer overlay */}
-          <div className="pointer-events-none absolute inset-0 opacity-30 mix-blend-overlay">
+          <div className="pointer-events-none absolute inset-0 opacity-25 mix-blend-overlay">
             <div
               className="absolute inset-y-0 -left-1/4 w-1/2"
               style={{
-                background: `linear-gradient(90deg, transparent 0%, ${tokens.ring}40 50%, transparent 100%)`,
-                animation: "tour-shimmer 2.6s ease-in-out infinite",
+                background: `linear-gradient(90deg, transparent 0%, ${tokens.ring}50 50%, transparent 100%)`,
+                animation: "tour-shimmer 3.2s ease-in-out infinite",
               }}
             />
           </div>
 
-          <div className="relative pl-6 pr-5 py-5">
-            <div className="flex items-start gap-3 mb-3">
-              <div className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl ${tokens.iconBg} text-xl ${tokens.iconText}`}>
+          <div className="relative pl-9 pr-7 py-7">
+            {/* Header row */}
+            <div className="flex items-start gap-4 mb-5">
+              <div
+                className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl ${tokens.iconBg} text-2xl ${tokens.iconText}`}
+                style={{ boxShadow: `inset 0 0 0 1px ${tokens.ring}24` }}
+              >
                 {step.icon}
               </div>
               <div className="min-w-0 flex-1">
                 <ProgressDots active={stepIdx} total={STEPS.length} color={step.color} />
-                <p className={`mt-2 text-[10px] font-bold uppercase tracking-[0.14em] ${tokens.chipText}`}>
+                <p className={`mt-2.5 text-[10.5px] font-bold uppercase tracking-[0.18em] ${tokens.chipText}`}>
                   {step.kicker}
                 </p>
               </div>
               <button
                 onClick={() => finish("dismissed")}
-                className="text-muted-foreground text-2xl leading-none hover:text-foreground -mt-1 -mr-1"
+                className="text-muted-foreground/60 text-2xl leading-none hover:text-foreground transition-colors -mt-1 -mr-1"
                 aria-label="Dismiss tour"
               >
                 ×
               </button>
             </div>
 
-            <h3 id="tour-title" className="text-[19px] font-semibold text-foreground leading-snug mb-2 tracking-tight">
+            {/* Headline — serif for the brand-display feel; tracks the hero's typography */}
+            <h3
+              id="tour-title"
+              className="font-serif text-[24px] font-semibold text-foreground leading-[1.18] mb-3.5 tracking-[-0.01em]"
+            >
               {step.title}
             </h3>
-            <p className="text-[14px] text-muted-foreground leading-relaxed mb-4">
+            <p className="text-[14.5px] text-muted-foreground leading-[1.65] mb-6">
               {step.body}
             </p>
 
-            {step.stats.length > 0 && (
-              <div className="flex flex-wrap gap-2 mb-5">
+            {/* Stats — 3-up grid for ≥2 stats, single pill for 1 */}
+            {step.stats.length > 1 && (
+              <div className="grid grid-cols-3 gap-2.5 mb-7">
                 {step.stats.map((s) => (
-                  <StatChip key={s.label} value={s.value} label={s.label} suffix={s.suffix} color={step.color} />
+                  <StatTile key={s.label} value={s.value} label={s.label} suffix={s.suffix} color={step.color} />
                 ))}
               </div>
             )}
+            {step.stats.length === 1 && (
+              <div className="mb-7">
+                <StatPill {...step.stats[0]} color={step.color} />
+              </div>
+            )}
 
+            {/* Actions */}
             <div className="flex items-center justify-between gap-3">
               <button
                 onClick={() => finish("dismissed")}
-                className="text-sm text-muted-foreground hover:text-foreground"
+                className="text-[13px] text-muted-foreground/70 hover:text-foreground transition-colors"
               >
                 Skip tour
               </button>
@@ -549,16 +640,17 @@ export function GuidedTour({ stats }: { stats: TourStats }) {
                 {stepIdx > 0 && (
                   <button
                     onClick={() => setStepIdx((i) => i - 1)}
-                    className="rounded-lg border border-border px-3 py-1.5 text-sm hover:border-primary/40 transition-colors"
+                    className="rounded-xl border border-white/[0.08] bg-white/[0.02] px-4 py-2.5 text-[13px] font-medium text-muted-foreground hover:text-foreground hover:border-white/15 hover:bg-white/[0.04] transition-all"
                   >
                     ← Back
                   </button>
                 )}
                 <button
                   onClick={() => (isLast ? finish("done") : setStepIdx((i) => i + 1))}
-                  className="rounded-lg bg-primary px-4 py-1.5 text-sm font-semibold text-primary-foreground hover:opacity-90 transition-opacity shadow-lg"
+                  className="rounded-xl bg-foreground px-5 py-2.5 text-[13px] font-semibold text-background hover:opacity-90 transition-opacity"
+                  style={{ boxShadow: `0 8px 24px -6px ${tokens.ring}80, 0 2px 6px -1px rgba(0,0,0,0.4)` }}
                 >
-                  {isLast ? "Got it" : "Next →"}
+                  {isLast ? "Got it" : "Next  →"}
                 </button>
               </div>
             </div>
@@ -594,9 +686,9 @@ function computePopoverStyle(rect: Rect | null, prefer: "top" | "bottom" | "left
   if (!rect || prefer === "center") {
     return { top: "50%", left: "50%", transform: "translate(-50%, -50%)" };
   }
-  const POPOVER_W = 420;
-  const POPOVER_H = 280;
-  const GAP = 18;
+  const POPOVER_W = 520;
+  const POPOVER_H = 360;
+  const GAP = 22;
   const vw = typeof window !== "undefined" ? window.innerWidth : 1280;
   const vh = typeof window !== "undefined" ? window.innerHeight : 800;
 

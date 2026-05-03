@@ -2,6 +2,7 @@ import Link from "next/link";
 import { useLocale, useTranslations } from "next-intl";
 import { FALLBACK } from "@/lib/stats";
 import { SuggestEditButton } from "./suggest-edit-button";
+import { TourReplayLink } from "./tour-replay-link";
 import { getSocialHandles } from "@/lib/social";
 
 export function Footer({ stats }: { stats?: { destinations: number; places: number; festivals: number; traps: number; collections: number } }) {
@@ -183,7 +184,7 @@ export function Footer({ stats }: { stats?: { destinations: number; places: numb
         <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-muted-foreground/60">
           <p>&copy; 2026 NakshIQ</p>
           <div className="flex gap-4">
-            <Link href={`/${locale}/?tour=1`} className="hover:text-foreground transition-colors">Take the tour</Link>
+            <TourReplayLink locale={locale} label="Take the tour" />
             <Link href={`/${locale}/terms`} className="hover:text-foreground transition-colors">{tf("terms")}</Link>
             <Link href={`/${locale}/privacy`} className="hover:text-foreground transition-colors">{tf("privacy")}</Link>
             <Link href={`/${locale}/cookies`} className="hover:text-foreground transition-colors">{tf("cookies")}</Link>
