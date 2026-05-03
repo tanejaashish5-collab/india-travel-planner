@@ -1,0 +1,438 @@
+{
+  "task_a_results": [
+    {
+      "destination_id": "guwahati",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "replacement": {
+        "name": "Vivanta Guwahati",
+        "tier": "luxury",
+        "tagline": "Taj's 5-star Khanapara wing, 150 rooms, full-service spa, indoor and outdoor pools — the city's most polished business-leisure hotel set on a quiet ridge above GS Road.",
+        "price_band": "₹₹₹₹",
+        "address": "Plot 613, Mahapurush Srimanta Sankardev Road, Khanapara, Guwahati 781022",
+        "book_url": "https://www.vivantahotels.com/en-in/vivanta-guwahati/",
+        "sources": [
+          "https://www.tripadvisor.com/Hotel_Review-g503692-d9607549-Reviews-Vivanta_Guwahati-Guwahati_Kamrup_Metropolitan_District_Assam.html",
+          "https://www.booking.com/hotel/in/vivanta-by-taj-guwahati.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "guwahati",
+      "slot": "value",
+      "verdict": "keep_existing",
+      "replacement": {
+        "name": "Radisson Blu Hotel Guwahati",
+        "tier": "comfort",
+        "tagline": "Rooftop pool overlooking the GS Road business strip, walking distance to Maniram Dewan Trade Centre — the city's reliable mid-luxury default for Brahmaputra and Kamakhya day trips.",
+        "price_band": "₹₹₹",
+        "address": "NH-37, Gotanagar, Maligaon, Guwahati 781011",
+        "book_url": "https://www.radissonhotels.com/en-us/hotels/radisson-blu-guwahati",
+        "sources": [
+          "https://www.tripadvisor.in/Hotel_Review-g503692-d6980033-Reviews-Radisson_Blu_Hotel_Guwahati-Guwahati_Kamrup_Metropolitan_District_Assam.html",
+          "https://www.booking.com/hotel/in/radisson-blu-guwahati.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "guwahati",
+      "slot": "location",
+      "verdict": "keep_existing",
+      "replacement": {
+        "name": "Hotel Brahmaputra Ashok",
+        "tier": "comfort",
+        "tagline": "ITDC-Assam-Government joint venture on the Brahmaputra riverbank, 11 km to the railway station — the closest mid-tier option to the Umananda ferry and Pan Bazar promenade.",
+        "price_band": "₹₹",
+        "address": "M.G. Road, Guwahati 781001 (Brahmaputra riverfront)",
+        "book_url": "https://brahmaputraashok-guwahati.h-rez.com/",
+        "sources": [
+          "https://brahmaputraashok-guwahati.h-rez.com/",
+          "https://www.t2india.com/brahmaputra-ashok-guwahati-hotel-bookings.aspx"
+        ]
+      }
+    },
+    {
+      "destination_id": "guwahati",
+      "slot": "xfactor",
+      "verdict": "replace",
+      "replacement": null
+    },
+    {
+      "destination_id": "jorhat",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "replacement": {
+        "name": "Thengal Manor",
+        "tier": "heritage",
+        "tagline": "1929 Barooah-family mansion in Jalukonibari village, 15 km from Jorhat — five high-ceilinged colonial rooms, period furniture, the same lawn where Assam's first daily 'Dainik Batori' was launched in 1935.",
+        "price_band": "₹₹₹₹",
+        "address": "Jalukonibari Village, Mariani, Jorhat District 785637, Assam",
+        "book_url": "https://www.heritagetourismindia.com/",
+        "sources": [
+          "https://www.tripadvisor.in/Hotel_Review-g1155926-d305244-Reviews-Thengal_Manor-Jorhat_Jorhat_District_Assam.html",
+          "https://www.booking.com/hotel/in/thengal-manor.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "jorhat",
+      "slot": "value",
+      "verdict": "replace",
+      "replacement": {
+        "name": "Hotel Earl Grey",
+        "tier": "comfort",
+        "tagline": "3-star with a garden terrace 6 km from Jorhat Airport — clean, polite-managed, the best mid-budget option in town for Kaziranga or Majuli ferry mornings.",
+        "price_band": "₹₹",
+        "address": "AT Road, Jorhat 785001, Assam",
+        "book_url": "https://www.booking.com/hotel/in/earl-grey.html",
+        "sources": [
+          "https://www.booking.com/hotel/in/earl-grey.html",
+          "https://earlgreyhotels.com/"
+        ]
+      }
+    },
+    {
+      "destination_id": "jorhat",
+      "slot": "location",
+      "verdict": "replace",
+      "replacement": {
+        "name": "Banyan Grove",
+        "tier": "heritage",
+        "tagline": "Heritage tea-estate bungalow set among the Cinnamara gardens just outside Jorhat town — colonial verandah, working planter's-residence atmosphere, an easier base than Thengal Manor for tea-tour day-trippers.",
+        "price_band": "₹₹₹",
+        "address": "Cinnamara Tea Estate, Jorhat 785008, Assam",
+        "book_url": "https://heritagenortheast.com/banyan-grove/",
+        "sources": [
+          "https://www.tripadvisor.in/Hotel_Review-g1155926-d1862888-Reviews-Banyan_Grove-Jorhat_Jorhat_District_Assam.html",
+          "https://www.heritagetourismindia.com/"
+        ]
+      }
+    },
+    {
+      "destination_id": "jorhat",
+      "slot": "xfactor",
+      "verdict": "replace",
+      "replacement": {
+        "name": "Burra Sahib's Bungalow",
+        "tier": "heritage",
+        "tagline": "Former British tea-estate manager's bungalow with an 18-hole golf course threaded through working gardens — Victorian dining room, billiards, the most unusual stay between Jorhat and Sivasagar.",
+        "price_band": "₹₹₹₹",
+        "address": "Gatoonga Tea Estate, Jorhat 785611, Assam",
+        "book_url": "https://www.heritagetourismindia.com/",
+        "sources": [
+          "https://www.tripadvisor.com/ShowUserReviews-g1155926-d1171896-r277969814-Burra_Sahib_s_Bungalow-Jorhat_Jorhat_District_Assam.html",
+          "https://www.heritagetourismindia.com/"
+        ]
+      }
+    },
+    {
+      "destination_id": "kaziranga",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "replacement": {
+        "name": "Diphlu River Lodge",
+        "tier": "luxury",
+        "tagline": "Twelve bamboo-and-thatch cottages on the park boundary along the Diphlu river — the only lodge that hosted the Duke and Duchess of Cambridge, with in-house naturalists and evening Bihu singers.",
+        "price_band": "₹₹₹₹",
+        "address": "Bochagaon, Kaziranga National Park, Golaghat District 785609, Assam",
+        "book_url": "https://www.diphluriverlodge.com/",
+        "sources": [
+          "https://www.diphluriverlodge.com/",
+          "https://www.tripadvisor.in/Hotel_Review-g858488-d1219084-Reviews-Diphlu_River_Lodge-Kaziranga_National_Park_Golaghat_District_Assam.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "kaziranga",
+      "slot": "location",
+      "verdict": "keep_existing",
+      "replacement": {
+        "name": "Infinity Resorts Kaziranga",
+        "tier": "boutique",
+        "tagline": "Sixteen garden-facing cottages built from local material, ten minutes from the Central (Kohora) gate — the easiest morning-safari pickup in the park, with the Infinity group's Corbett-style ethos.",
+        "price_band": "₹₹₹",
+        "address": "NH-37, Bocha Gaon, Kaziranga National Park, Golaghat 785609, Assam",
+        "book_url": "https://www.infinityresorts.com/infinity-resorts-kaziranga/",
+        "sources": [
+          "https://www.infinityresorts.com/infinity-resorts-kaziranga/",
+          "https://www.tripadvisor.com/Hotel_Review-g858488-d3825674-Reviews-Infinity_Resorts_Kaziranga-Kaziranga_National_Park_Golaghat_District_Assam.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "kaziranga",
+      "slot": "value",
+      "verdict": "keep_existing",
+      "replacement": {
+        "name": "IORA - The Retreat, Kaziranga",
+        "tier": "comfort",
+        "tagline": "Manicured 4-star set back from NH-37 at Bogorijuri, with an Assamese restaurant guests dine at twice — better-value rooms than the lodge tier and the most reliable safari-desk in Kohora.",
+        "price_band": "₹₹₹",
+        "address": "NH-37, Bogorijuri, Kohora, Kaziranga National Park, Golaghat 785609, Assam",
+        "book_url": "https://iorahotels.com/iora-the-retreat-kaziranga/",
+        "sources": [
+          "https://iorahotels.com/iora-the-retreat-kaziranga/",
+          "https://www.tripadvisor.com/Hotel_Review-g12455888-d1418942-Reviews-IORA_The_Retreat_Kaziranga-Bogorijuri_Golaghat_District_Assam.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "kaziranga",
+      "slot": "xfactor",
+      "verdict": "keep_existing",
+      "replacement": {
+        "name": "Wild Mahseer",
+        "tier": "heritage",
+        "tagline": "150-year-old McLeod Russel Burra Sahib's Bungalow on the Addabarie Tea Estate near Tezpur — Eastern Himalayan Botanic Ark with 1,00,000+ plants, a heritage tea-and-wildlife base for Kaziranga, Nameri and Pakke.",
+        "price_band": "₹₹₹₹",
+        "address": "Addabarie Tea Estate, Balipara, Sonitpur District 784101, Assam",
+        "book_url": "https://wildmahseer.com",
+        "sources": [
+          "https://wildmahseer.com",
+          "https://www.tripadvisor.in/Hotel_Review-g1440264-d1006735-Reviews-Wild_Mahseer-Balipara_Sonitpur_District_Assam.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "majuli",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "replacement": {
+        "name": "La Maison de Ananda",
+        "tier": "homestay",
+        "tagline": "First bamboo cottage on the island, run by Monjit and family in Garamur — the pioneer that taught Majuli homestay tourism, eco-built and meal-included with home-cooked Mising fare.",
+        "price_band": "₹₹",
+        "address": "Garamur, Majuli Island, Majuli District 785104, Assam",
+        "book_url": "https://www.tripadvisor.com/Hotel_Review-g1207703-d2444807-Reviews-La_Maison_de_Ananda-Majuli_Jorhat_District_Assam.html",
+        "sources": [
+          "https://www.tripadvisor.com/Hotel_Review-g1207703-d2444807-Reviews-La_Maison_de_Ananda-Majuli_Jorhat_District_Assam.html",
+          "https://majuliriverisland.wordpress.com/resorts-and-homestays/"
+        ]
+      }
+    },
+    {
+      "destination_id": "majuli",
+      "slot": "value",
+      "verdict": "replace",
+      "replacement": {
+        "name": "Ygdrasill Bamboo Cottage",
+        "tier": "homestay",
+        "tagline": "Beda's all-bamboo cottage colony surrounded by paddy and a private bird-pond — see-through bamboo walls, attached bathrooms, the most consistently positive reviews on Majuli.",
+        "price_band": "₹₹",
+        "address": "Garamur, Majuli Island, Majuli District 785104, Assam",
+        "book_url": "https://www.tripadvisor.in/Hotel_Review-g1207703-d6412276-Reviews-Ygdrasill_Bamboo_Cottage-Majuli_Jorhat_District_Assam.html",
+        "sources": [
+          "https://www.tripadvisor.in/Hotel_Review-g1207703-d6412276-Reviews-Ygdrasill_Bamboo_Cottage-Majuli_Jorhat_District_Assam.html",
+          "https://www.facebook.com/Bedamajuli/"
+        ]
+      }
+    },
+    {
+      "destination_id": "majuli",
+      "slot": "location",
+      "verdict": "replace",
+      "replacement": null
+    },
+    {
+      "destination_id": "majuli",
+      "slot": "xfactor",
+      "verdict": "replace",
+      "replacement": null
+    },
+    {
+      "destination_id": "manas-national-park",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "replacement": {
+        "name": "Musa Jungle Retreat",
+        "tier": "boutique",
+        "tagline": "'Musa' is Bodo for tiger — twenty cottages on 8 acres, ten-minute walk to the Bansbari gate of the UNESCO-listed park. The most polished rooms-and-safari combo in Manas.",
+        "price_band": "₹₹₹",
+        "address": "Bansbari Range, Manas National Park, Baksa District 781315, Assam",
+        "book_url": "https://www.naturesafariindia.com/musa-jungle-retreat/",
+        "sources": [
+          "https://www.tripadvisor.in/Hotel_Review-g2282793-d6528040-Reviews-Musa_Jungle_Retreat-Manas_National_Park_Baksa_District_Assam.html",
+          "https://www.makemytrip.global/hotels/musa_jungle_retreat_cottage_rooms_restaurant-details-manas.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "manas-national-park",
+      "slot": "location",
+      "verdict": "replace",
+      "replacement": {
+        "name": "Bansbari Lodge",
+        "tier": "comfort",
+        "tagline": "Sixteen twin-bedded rooms right at the Bansbari gate with tea gardens on one side and the foothills jungle on the other — Assam Tourism property under Assam Bengal Navigation management, the long-standing safari standard.",
+        "price_band": "₹₹₹",
+        "address": "Bansbari, Manas National Park, Baksa District 781315, Assam",
+        "book_url": "https://www.indiawildliferesorts.com/wildlife-resorts/bansbari-lodge.html",
+        "sources": [
+          "https://www.tripadvisor.in/Hotel_Review-g2282793-d605749-Reviews-Bansbari_Lodge-Manas_National_Park_Baksa_District_Assam.html",
+          "https://www.indiawildliferesorts.com/wildlife-resorts/bansbari-lodge.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "manas-national-park",
+      "slot": "value",
+      "verdict": "replace",
+      "replacement": {
+        "name": "Florican Cottages",
+        "tier": "budget",
+        "tagline": "Community-run by ten youth of MEWS (Manas Ever Welfare Society) under manager Lama, beside the Bansbari gate — basic-but-clean rooms, knowledgeable safari arrangements, the budget conservation choice.",
+        "price_band": "₹",
+        "address": "Bansbari, Manas National Park, Baksa District 781315, Assam",
+        "book_url": "https://www.tripadvisor.in/Hotel_Review-g2282793-d3418073-Reviews-Florican_Cottages-Manas_National_Park_Baksa_District_Assam.html",
+        "sources": [
+          "https://www.tripadvisor.in/Hotel_Review-g2282793-d3418073-Reviews-Florican_Cottages-Manas_National_Park_Baksa_District_Assam.html",
+          "https://www.makemytrip.com/hotels/florican_cottage-details-manas.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "manas-national-park",
+      "slot": "xfactor",
+      "verdict": "replace",
+      "replacement": {
+        "name": "Mathanguri Forest Lodge",
+        "tier": "budget",
+        "tagline": "Government Forest Lodge 22 km inside the park on the Manas river, six rooms — the river the Bhutan border traces is your verandah view. Book through Manas Tiger Reserve office at Barpeta Road.",
+        "price_band": "₹",
+        "address": "Mathanguri, Manas National Park, Baksa District 781315, Assam",
+        "book_url": "https://baksa.assam.gov.in/portlets/manas-national-park",
+        "sources": [
+          "https://www.tripadvisor.in/ShowUserReviews-g2282793-r155043242-Manas_National_Park_Baksa_District_Assam.html",
+          "https://www.outlookindia.com/traveller/ot-getaway-guides/manas-national-park"
+        ]
+      }
+    },
+    {
+      "destination_id": "sivasagar",
+      "slot": "experience",
+      "verdict": "replace",
+      "replacement": {
+        "name": "Hotel Piccolo",
+        "tier": "comfort",
+        "tagline": "Walking-distance (1 km) from Shiv Dol and the Sivasagar Tank — clean, spacious, and the highest-rated property in town for Ahom-monument day-tripping.",
+        "price_band": "₹₹",
+        "address": "Boarding Road, Sivasagar 785640, Assam",
+        "book_url": "https://www.tripadvisor.in/Hotel_Review-g8442886-d8436224-Reviews-Hotel_Piccolo-Sivasagar_Sivsagar_District_Assam.html",
+        "sources": [
+          "https://www.tripadvisor.in/Hotel_Review-g8442886-d8436224-Reviews-Hotel_Piccolo-Sivasagar_Sivsagar_District_Assam.html",
+          "https://www.yatra.com/hotels/hotels-in-sivasagar/hotel-piccolo"
+        ]
+      }
+    },
+    {
+      "destination_id": "sivasagar",
+      "slot": "location",
+      "verdict": "replace",
+      "replacement": {
+        "name": "Hotel Brahmaputra",
+        "tier": "comfort",
+        "tagline": "36 rooms in the heart of historical Sivasagar, near ONGC Sivasagar — the practical mid-budget pick when Piccolo is full, with restaurant and concierge for tank-circuit visits.",
+        "price_band": "₹₹",
+        "address": "Near ONGC Ltd, Sivasagar Ho, Sivasagar 785640, Assam",
+        "book_url": "https://www.tripadvisor.in/Hotel_Review-g2037918-d2037933-Reviews-Hotel_Brahmaputra-Sibsagar_Sivsagar_District_Assam.html",
+        "sources": [
+          "https://www.tripadvisor.in/Hotel_Review-g2037918-d2037933-Reviews-Hotel_Brahmaputra-Sibsagar_Sivsagar_District_Assam.html",
+          "https://www.goibibo.com/hotels/brahmaputra-hotel-in-sivasagar-4485491993661901696/"
+        ]
+      }
+    },
+    {
+      "destination_id": "sivasagar",
+      "slot": "value",
+      "verdict": "replace",
+      "replacement": null
+    },
+    {
+      "destination_id": "sivasagar",
+      "slot": "xfactor",
+      "verdict": "replace",
+      "replacement": null
+    },
+    {
+      "destination_id": "charaideo",
+      "slot": "experience",
+      "verdict": "replace",
+      "replacement": null
+    },
+    {
+      "destination_id": "charaideo",
+      "slot": "value",
+      "verdict": "replace",
+      "replacement": null
+    },
+    {
+      "destination_id": "charaideo",
+      "slot": "location",
+      "verdict": "replace",
+      "replacement": null
+    },
+    {
+      "destination_id": "charaideo",
+      "slot": "xfactor",
+      "verdict": "replace",
+      "replacement": null
+    },
+    {
+      "destination_id": "haflong",
+      "slot": "experience",
+      "verdict": "replace",
+      "replacement": {
+        "name": "Landmark Hotel Haflong",
+        "tier": "comfort",
+        "tagline": "Overlooking Haflong Lake in the centre of Assam's only hill station — AC rooms, in-house dining, the most polished option in Dima Hasao with no real luxury alternative for 100 km.",
+        "price_band": "₹₹",
+        "address": "Near Haflong Lake, Haflong, Dima Hasao District 788819, Assam",
+        "book_url": "https://www.tripadvisor.co.uk/Hotel_Review-g2322205-d6385175-Reviews-Landmark_Hotel_Haflong-Haflong_Dima_Hasao_District_Assam.html",
+        "sources": [
+          "https://www.tripadvisor.co.uk/Hotel_Review-g2322205-d6385175-Reviews-Landmark_Hotel_Haflong-Haflong_Dima_Hasao_District_Assam.html",
+          "https://dimahasao.assam.gov.in/information-and-services/hospitality"
+        ]
+      }
+    },
+    {
+      "destination_id": "haflong",
+      "slot": "value",
+      "verdict": "replace",
+      "replacement": {
+        "name": "Nothao Lodge",
+        "tier": "budget",
+        "tagline": "400 m from the main market — family cottages with hot water and AC, the most reliable budget bed in Haflong outside the Tourist Lodge.",
+        "price_band": "₹",
+        "address": "Haflong, Dima Hasao District 788819, Assam",
+        "book_url": "https://www.tripadvisor.in/Hotel_Review-g2322205-d8762921-Reviews-Nothao_Lodge-Haflong_Dima_Hasao_District_Assam.html",
+        "sources": [
+          "https://www.tripadvisor.in/Hotel_Review-g2322205-d8762921-Reviews-Nothao_Lodge-Haflong_Dima_Hasao_District_Assam.html",
+          "https://dimahasao.assam.gov.in/information-and-services/hospitality"
+        ]
+      }
+    },
+    {
+      "destination_id": "haflong",
+      "slot": "location",
+      "verdict": "replace",
+      "replacement": {
+        "name": "Haflong Tourist Lodge",
+        "tier": "budget",
+        "tagline": "Assam Tourism's hilltop lodge with the original Haflong Lake panorama — basic but the truest 'top-of-the-hill' position in the only Assamese hill town.",
+        "price_band": "₹",
+        "address": "Tourist Lodge Road, Haflong, Dima Hasao District 788819, Assam",
+        "book_url": "https://www.tripadvisor.in/Hotel_Review-g2322205-d1179303-Reviews-Haflong_Tourist_Lodge-Haflong_Dima_Hasao_District_Assam.html",
+        "sources": [
+          "https://www.tripadvisor.in/Hotel_Review-g2322205-d1179303-Reviews-Haflong_Tourist_Lodge-Haflong_Dima_Hasao_District_Assam.html",
+          "https://dimahasao.assam.gov.in/information-and-services/hospitality"
+        ]
+      }
+    },
+    {
+      "destination_id": "haflong",
+      "slot": "xfactor",
+      "verdict": "replace",
+      "replacement": null
+    }
+  ]
+}

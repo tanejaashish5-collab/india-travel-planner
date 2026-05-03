@@ -1,0 +1,418 @@
+{
+  "task_a_results": [
+    {
+      "destination_id": "shillong",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "replacement": {
+        "name": "Ri Kynjai - Serenity By The Lake",
+        "tier": "luxury",
+        "tagline": "Khasi-thatch upturned-boat roofs across 45 acres above Umiam Lake — Centre Point Group's signature boutique resort, the only Shillong stay with a true 'serenity' setting away from Police Bazar.",
+        "price_band": "₹₹₹₹",
+        "address": "Umniuh Khwan, Umbir, Ri-Bhoi District 793122, Meghalaya",
+        "book_url": "https://www.rikynjai.com/",
+        "sources": [
+          "https://www.rikynjai.com/",
+          "https://www.tripadvisor.com/Hotel_Review-g503702-d734366-Reviews-Ri_Kynjai-Shillong_East_Khasi_Hills_District_Meghalaya.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "shillong",
+      "slot": "location",
+      "verdict": "keep_existing",
+      "replacement": {
+        "name": "Hotel Polo Towers Shillong",
+        "tier": "comfort",
+        "tagline": "Opposite the Polo Grounds, two minutes from Police Bazar — Sky Grill rooftop, ranked #2 of 70 Shillong hotels, the easiest walking-distance base for Bara Bazar and Don Bosco Museum.",
+        "price_band": "₹₹₹",
+        "address": "Oakland Road, Police Bazar, Shillong 793001, Meghalaya",
+        "book_url": "https://www.hotelpolotowers.com/polo-towers-shillong/",
+        "sources": [
+          "https://www.tripadvisor.in/Hotel_Review-g503702-d501153-Reviews-Polo_Tower_Hotel-Shillong_East_Khasi_Hills_District_Meghalaya.html",
+          "https://www.booking.com/hotel/in/polo-towers-shillong.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "shillong",
+      "slot": "value",
+      "verdict": "keep_existing",
+      "replacement": {
+        "name": "Courtyard by Marriott Shillong",
+        "tier": "boutique",
+        "tagline": "Marriott's modern Shillong outpost on the M.G. Road / Polo cluster — full spa, masala-tea afternoons, the most consistent international-standard rooms in town.",
+        "price_band": "₹₹₹₹",
+        "address": "M.G. Road, Police Bazar, Shillong 793001, Meghalaya",
+        "book_url": "https://www.marriott.com/en-us/hotels/shlcy-courtyard-shillong/overview/",
+        "sources": [
+          "https://www.marriott.com/en-us/hotels/shlcy-courtyard-shillong/reviews/",
+          "https://www.tripadvisor.in/Hotel_Review-g503702-d25289639-Reviews-Courtyard_By_Marriott_Shillong-Shillong_East_Khasi_Hills_District_Meghalaya.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "shillong",
+      "slot": "xfactor",
+      "verdict": "replace",
+      "replacement": null
+    },
+    {
+      "destination_id": "cherrapunji",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "replacement": {
+        "name": "Polo Orchid Resort Cherrapunji",
+        "tier": "luxury",
+        "tagline": "Infinity pool angled at the Seven Sisters Falls, Khliehshnong cliff-edge — the only resort in Sohra with this view and the closest you can sleep to the Mawsmai falls.",
+        "price_band": "₹₹₹₹",
+        "address": "Near Seven Sisters Falls, Mawsmai-Nongthymmai Road, Sohra (Cherrapunji) 793108, Meghalaya",
+        "book_url": "https://www.poloorchidresort.com/",
+        "sources": [
+          "https://www.tripadvisor.com/Hotel_Review-g668046-d3159049-Reviews-Polo_Orchid_Resort-Sohra_East_Khasi_Hills_District_Meghalaya.html",
+          "https://www.booking.com/hotel/in/polo-orchid-resort.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "cherrapunji",
+      "slot": "location",
+      "verdict": "replace",
+      "replacement": {
+        "name": "Cherrapunjee Holiday Resort",
+        "tier": "boutique",
+        "tagline": "Hilltop in Laitkynsew village with Bangladesh plains views — Khasi-women-run hospitality and the trekking-launch base for the Nongriat double-decker root bridge descent.",
+        "price_band": "₹₹₹",
+        "address": "Laitkynsew Village, Sohra (Cherrapunji), East Khasi Hills 793111, Meghalaya",
+        "book_url": "https://cherrapunjee.com/",
+        "sources": [
+          "https://cherrapunjee.com/",
+          "https://www.tripadvisor.in/Hotel_Review-g668046-d502636-Reviews-Cherrapunjee_Holiday_Resort-Sohra_East_Khasi_Hills_District_Meghalaya.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "cherrapunji",
+      "slot": "value",
+      "verdict": "replace",
+      "replacement": {
+        "name": "Goshen Homestay",
+        "tier": "homestay",
+        "tagline": "Family-run Khasi homestay in Sohra — vibrant garden, complimentary home-cooked breakfast, the cleanest budget bed in Cherrapunji town for waterfall and root-bridge day trips.",
+        "price_band": "₹₹",
+        "address": "Sohra (Cherrapunji), East Khasi Hills 793108, Meghalaya",
+        "book_url": "https://www.booking.com/hotel/in/goshen-home.html",
+        "sources": [
+          "https://www.holidify.com/hotel-collections/homestays-in-mawsynram",
+          "https://www.booking.com/hotel/in/goshen-home.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "cherrapunji",
+      "slot": "xfactor",
+      "verdict": "replace",
+      "replacement": null
+    },
+    {
+      "destination_id": "mawlynnong",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "replacement": {
+        "name": "Kynjai Homestay, Mawlynnong",
+        "tier": "homestay",
+        "tagline": "Inside Asia's cleanest village — neat rooms with mosquito nets, terrace, double beds for four; the most reliable in-village stay, cash-only, hosted on a single Khasi family plot.",
+        "price_band": "₹₹",
+        "address": "Mawlynnong Village, East Khasi Hills 793109, Meghalaya",
+        "book_url": "https://www.booking.com/hotel/in/kynjai-homestay-mawlynnong.html",
+        "sources": [
+          "https://www.booking.com/hotel/in/kynjai-homestay-mawlynnong.html",
+          "https://mawlynnongbamboocottage.com/kynjaihomestay-mawlynnong"
+        ]
+      }
+    },
+    {
+      "destination_id": "mawlynnong",
+      "slot": "location",
+      "verdict": "replace",
+      "replacement": {
+        "name": "By The River Homestay",
+        "tier": "homestay",
+        "tagline": "Stand-alone house with a seasonal stream behind it at the entrance of Mawlynnong — hosted by Livingstone Sangma, his wife Orilin Joel and son Benjamin, ten minutes from the Riwai single-decker root bridge.",
+        "price_band": "₹₹",
+        "address": "Mawlynnong Village, East Khasi Hills 793109, Meghalaya",
+        "book_url": "https://www.homestaysofindia.com/meghalaya-mawlynnong-by-the-river-homestay-living-root-bridge/",
+        "sources": [
+          "https://www.homestaysofindia.com/meghalaya-mawlynnong-by-the-river-homestay-living-root-bridge/",
+          "https://mawlynnongbamboocottage.com/mawlynnong-homestays"
+        ]
+      }
+    },
+    {
+      "destination_id": "mawlynnong",
+      "slot": "value",
+      "verdict": "keep_existing",
+      "replacement": {
+        "name": "Mawlynnong Homestay (Paiñ)",
+        "tier": "homestay",
+        "tagline": "Three-room community homestay (1 Classic, 1 Family, 1 traditional Bamboo Hut) in the cleanest village in Asia — village-walk, bird-watching and bonfire built into the price.",
+        "price_band": "₹",
+        "address": "Mawlynnong Village, East Khasi Hills 793109, Meghalaya",
+        "book_url": "https://www.homestaysofindia.com/meghalaya-mawlynnong-homestay/",
+        "sources": [
+          "https://www.homestaysofindia.com/meghalaya-mawlynnong-homestay/",
+          "https://mawlynnong.wordpress.com/mawlynnong-homestays/"
+        ]
+      }
+    },
+    {
+      "destination_id": "mawlynnong",
+      "slot": "xfactor",
+      "verdict": "replace",
+      "replacement": null
+    },
+    {
+      "destination_id": "mawphlang",
+      "slot": "experience",
+      "verdict": "replace",
+      "replacement": {
+        "name": "Maple Pine Farm",
+        "tier": "homestay",
+        "tagline": "Off-grid solar/wind-powered four-cottage farm at the foot of the Mawphlang Sacred Forest — hosted by Khasi-Canadian couple Valariena Perry Syiemlieh and James Murray Perry, half-hour walk to the grove.",
+        "price_band": "₹₹",
+        "address": "Lyngkien Village, near Mawphlang Sacred Forest, East Khasi Hills 793121, Meghalaya",
+        "book_url": "https://maplepine.culturalpursuits.com/",
+        "sources": [
+          "https://maplepine.culturalpursuits.com/",
+          "https://www.tripadvisor.in/Hotel_Review-g14932312-d3389500-Reviews-Maple_Pine_Farm-Mawphlang_East_Khasi_Hills_District_Meghalaya.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "mawphlang",
+      "slot": "location",
+      "verdict": "replace",
+      "replacement": null
+    },
+    {
+      "destination_id": "mawphlang",
+      "slot": "value",
+      "verdict": "replace",
+      "replacement": {
+        "name": "Lyngdoh Mawphlang Homestay",
+        "tier": "homestay",
+        "tagline": "Khasi family homestay run by the Lyngdoh clan (caretakers of the Mawphlang Sacred Grove) — the most authentic 'sacred-grove' base, simple rooms, home-cooked Khasi meals.",
+        "price_band": "₹",
+        "address": "Mawphlang Village, East Khasi Hills 793121, Meghalaya",
+        "book_url": "https://en.planetofhotels.com/india/cherrapunji/lyngdoh-mawphlang-homestay",
+        "sources": [
+          "https://en.planetofhotels.com/india/cherrapunji/lyngdoh-mawphlang-homestay",
+          "https://www.justdial.com/East-Khasi-Hills/Lyngdoh-Mawphlang-Homestay-Cherrapunji/9999PX364-X364-180101193757-W8A8_BZDET/bookings"
+        ]
+      }
+    },
+    {
+      "destination_id": "mawphlang",
+      "slot": "xfactor",
+      "verdict": "replace",
+      "replacement": null
+    },
+    {
+      "destination_id": "mawsynram",
+      "slot": "experience",
+      "verdict": "replace",
+      "replacement": {
+        "name": "Emily And Sankrita Homestay",
+        "tier": "homestay",
+        "tagline": "Family homestay in Mawsynram village proper — clean rooms with kettles and towels, knowledgeable host who guides Mawjymbuin Cave visits, the only verifiable in-village stay in the wettest place on earth.",
+        "price_band": "₹₹",
+        "address": "Mawsynram Village, East Khasi Hills 793113, Meghalaya",
+        "book_url": "https://www.airbnb.co.in/mawsynram-india/stays",
+        "sources": [
+          "https://www.holidify.com/hotels/resorts-in-mawsynram-7271.html",
+          "https://www.holidayhome.co.in/mawsynram-india"
+        ]
+      }
+    },
+    {
+      "destination_id": "mawsynram",
+      "slot": "location",
+      "verdict": "replace",
+      "replacement": null
+    },
+    {
+      "destination_id": "mawsynram",
+      "slot": "value",
+      "verdict": "replace",
+      "replacement": null
+    },
+    {
+      "destination_id": "mawsynram",
+      "slot": "xfactor",
+      "verdict": "replace",
+      "replacement": null
+    },
+    {
+      "destination_id": "nongriat",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "replacement": {
+        "name": "Serene Homestay",
+        "tier": "homestay",
+        "tagline": "Two minutes from the Umshiang Double-Decker Living Root Bridge — Byron and family started Nongriat tourism, mostly dormitory beds plus two doubles, reachable only via the 3,500-step descent from Tyrna.",
+        "price_band": "₹",
+        "address": "Nongriat Village, Sohra (Cherrapunji), East Khasi Hills 793108, Meghalaya",
+        "book_url": "https://www.tripadvisor.com/Hotel_Review-g668046-d7213655-Reviews-Serene_Homestay-Sohra_East_Khasi_Hills_District_Meghalaya.html",
+        "sources": [
+          "https://www.tripadvisor.com/Hotel_Review-g668046-d7213655-Reviews-Serene_Homestay-Sohra_East_Khasi_Hills_District_Meghalaya.html",
+          "https://eagleflyfree.com/en/serene-homestay/"
+        ]
+      }
+    },
+    {
+      "destination_id": "nongriat",
+      "slot": "location",
+      "verdict": "replace",
+      "replacement": null
+    },
+    {
+      "destination_id": "nongriat",
+      "slot": "value",
+      "verdict": "replace",
+      "replacement": null
+    },
+    {
+      "destination_id": "nongriat",
+      "slot": "xfactor",
+      "verdict": "replace",
+      "replacement": null
+    },
+    {
+      "destination_id": "shnongpdeng",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "replacement": {
+        "name": "Pioneer Adventure Camp Shnongpdeng",
+        "tier": "boutique",
+        "tagline": "Riverside tents on the Umngot beach — co-founder Jason runs scuba, kayaking, cliff-jumping and zip-lining on the clearest river in India, water visibility ~35 ft.",
+        "price_band": "₹₹",
+        "address": "Shnongpdeng Village, West Jaintia Hills 793109, Meghalaya",
+        "book_url": "https://pioneeradventuretour.com/riverside-camping-shnongpdeng/",
+        "sources": [
+          "https://pioneeradventuretour.com/",
+          "https://www.tripadvisor.com/Attraction_Review-g503702-d2426026-Reviews-Pioneer_Adventure_Tour-Shillong_East_Khasi_Hills_District_Meghalaya.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "shnongpdeng",
+      "slot": "location",
+      "verdict": "replace",
+      "replacement": {
+        "name": "Marvel's Camps Riverside Shnongpdeng",
+        "tier": "boutique",
+        "tagline": "Tent-and-cottage operator on the Umngot riverbank with the Betelnut Resort tie-up at Dawki — bonfire and overnight river-camp packages, the second-most-established Shnongpdeng outfit.",
+        "price_band": "₹₹",
+        "address": "Shnongpdeng Village, West Jaintia Hills 793109, Meghalaya",
+        "book_url": "https://www.marvelscamps.com/camping-at-dawki-shnongpdeng-riverside-adventure-2024-2025/",
+        "sources": [
+          "https://www.marvelscamps.com/camping-at-dawki-shnongpdeng-riverside-adventure-2024-2025/",
+          "https://www.marvelscamps.com/camping-overnight-with-bonfire-along-the-riverside-of-shnongpdeng-river-book-your-stay-with-betelnut-resort-in-dawki/"
+        ]
+      }
+    },
+    {
+      "destination_id": "shnongpdeng",
+      "slot": "value",
+      "verdict": "replace",
+      "replacement": null
+    },
+    {
+      "destination_id": "shnongpdeng",
+      "slot": "xfactor",
+      "verdict": "replace",
+      "replacement": null
+    },
+    {
+      "destination_id": "tura",
+      "slot": "experience",
+      "verdict": "replace",
+      "replacement": {
+        "name": "Hotel Polo Orchid Tura",
+        "tier": "boutique",
+        "tagline": "The only luxury hotel in West Garo Hills — Polo Group's Tura outpost with spacious rooms, complimentary breakfast, the gateway base for Nokrek Biosphere and Siju Caves.",
+        "price_band": "₹₹₹",
+        "address": "Hawakhana, Tura, West Garo Hills 794101, Meghalaya",
+        "book_url": "https://www.hotelpolotowers.com/polo-tura-hotel/",
+        "sources": [
+          "https://www.tripadvisor.com/Hotel_Review-g1591396-d7623798-Reviews-Polo_Tura_Hotel-Tura_West_Garo_Hills_District_Meghalaya.html",
+          "https://www.hotelpolotowers.com/polo-tura-hotel/"
+        ]
+      }
+    },
+    {
+      "destination_id": "tura",
+      "slot": "location",
+      "verdict": "replace",
+      "replacement": {
+        "name": "Hotel Rikman Continental",
+        "tier": "comfort",
+        "tagline": "35 rooms in the heart of Tura town adjacent to Tura Super Market and the State Transport bus stand — Garo Hills' most centrally placed and reliably serviced hotel.",
+        "price_band": "₹₹",
+        "address": "Tura Bazar, Tura, West Garo Hills 794001, Meghalaya",
+        "book_url": "https://hotelrikmancontinental.com/",
+        "sources": [
+          "https://hotelrikmancontinental.com/",
+          "https://westgarohills.gov.in/accommodation/hotel-rikman-continental-tura/"
+        ]
+      }
+    },
+    {
+      "destination_id": "tura",
+      "slot": "value",
+      "verdict": "replace",
+      "replacement": {
+        "name": "Tree House Tura",
+        "tier": "boutique",
+        "tagline": "5,00,000 sq-ft greenfield property at the edge of Tura — Garo ethnic-modern cottages, the most distinctive non-luxury option in the West Garo Hills.",
+        "price_band": "₹₹",
+        "address": "Tura, West Garo Hills 794101, Meghalaya",
+        "book_url": "https://www.treehousetura.com/",
+        "sources": [
+          "https://www.treehousetura.com/",
+          "https://westgarohills.gov.in/where-to-stay/"
+        ]
+      }
+    },
+    {
+      "destination_id": "tura",
+      "slot": "xfactor",
+      "verdict": "replace",
+      "replacement": null
+    },
+    {
+      "destination_id": "dawki",
+      "slot": "experience",
+      "verdict": "replace",
+      "replacement": null
+    },
+    {
+      "destination_id": "dawki",
+      "slot": "value",
+      "verdict": "replace",
+      "replacement": null
+    },
+    {
+      "destination_id": "dawki",
+      "slot": "location",
+      "verdict": "replace",
+      "replacement": null
+    },
+    {
+      "destination_id": "dawki",
+      "slot": "xfactor",
+      "verdict": "replace",
+      "replacement": null
+    }
+  ]
+}
