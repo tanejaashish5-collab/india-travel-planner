@@ -26,6 +26,8 @@ import { LibraryPanel } from "./library-panel";
 import { BoardCanvas } from "./board-canvas";
 import { CostPanel } from "./cost-panel";
 import { PermitDialog } from "./permit-dialog";
+import { AiModal, type AiModalSubmit } from "./ai-modal";
+import { ItineraryView } from "./itinerary-view";
 
 type DestinationLite = {
   id: string;
@@ -177,6 +179,8 @@ function ShellWithLogistics({
 }) {
   const { rowsByDest } = useTripLogistics(state.stops, state.month);
   const [permitDialogFor, setPermitDialogFor] = useState<{ id: string; name: string } | null>(null);
+  const [aiModalOpen, setAiModalOpen] = useState(false);
+  const [aiResult, setAiResult] = useState<AiModalSubmit | null>(null);
   // SSR-safe lazy init from localStorage. Default = expanded (false).
   const [leftCollapsed, setLeftCollapsed] = useState<boolean>(() => {
     if (typeof window === "undefined") return false;
@@ -219,6 +223,7 @@ function ShellWithLogistics({
           destinations={destinations}
           rowsByDest={rowsByDest}
           onPermitClick={(id, name) => setPermitDialogFor({ id, name })}
+          onGenerateItinerary={() => setAiModalOpen(true)}
           leftCollapsed={leftCollapsed}
           rightCollapsed={rightCollapsed}
           onToggleLeft={() => setLeftCollapsed((v) => !v)}
@@ -285,6 +290,27 @@ function ShellWithLogistics({
           destinationId={permitDialogFor.id}
           destinationName={permitDialogFor.name}
           onClose={() => setPermitDialogFor(null)}
+        />
+      )}
+
+      {aiModalOpen && (
+        <AiModal
+          state={state}
+          rowsByDest={rowsByDest}
+          onClose={() => setAiModalOpen(false)}
+          onGenerated={(result) => {
+            setAiResult(result);
+            setAiModalOpen(false);
+          }}
+        />
+      )}
+
+      {aiResult && (
+        <ItineraryView
+          itinerary={aiResult.itinerary as never}
+          scaffold={aiResult.scaffold}
+          fallbackUsed={aiResult.fallbackUsed}
+          onClose={() => setAiResult(null)}
         />
       )}
     </div>

@@ -192,7 +192,7 @@ export function ColdStart({ destinations, onSeed }: { destinations: DestLite[]; 
           491 destinations · 12-month windows · permits + passes tracked
         </p>
         <h1 className="mt-3 font-serif text-4xl font-medium leading-[1.05] tracking-[-0.015em] text-foreground md:text-5xl">
-          Plan a trip in India that&rsquo;s <em className="text-[var(--accent,#d36843)]">actually possible</em> on the dates you can take leave.
+          Plan a trip in India that&rsquo;s <em style={{ color: "#d36843" }}>actually possible</em> on the dates you can take leave.
         </h1>
         <p className="mt-5 max-w-3xl font-serif text-base text-muted-foreground md:text-lg">
           Most planners hide the things that ruin a trip — closed passes, permit timelines, weather windows, festival price-spikes. We surface them on day one. Pick a way to start:

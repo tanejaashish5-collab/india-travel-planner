@@ -44,6 +44,7 @@ export function BoardCanvas({
   destinations,
   rowsByDest,
   onPermitClick,
+  onGenerateItinerary,
   leftCollapsed,
   rightCollapsed,
   onToggleLeft,
@@ -55,6 +56,7 @@ export function BoardCanvas({
   destinations: DestLite[];
   rowsByDest: Record<string, LogisticsRow>;
   onPermitClick: (destId: string, destName: string) => void;
+  onGenerateItinerary: () => void;
   leftCollapsed: boolean;
   rightCollapsed: boolean;
   onToggleLeft: () => void;
@@ -359,7 +361,9 @@ export function BoardCanvas({
         <button
           type="button"
           className="nq-btn nq-btn-primary"
-          onClick={() => alert("AI itinerary modal — coming in Phase 4")}
+          onClick={onGenerateItinerary}
+          disabled={state.stops.length === 0}
+          title={state.stops.length === 0 ? "Add a stop first" : "Open the AI itinerary planner"}
         >
           Generate itinerary →
         </button>

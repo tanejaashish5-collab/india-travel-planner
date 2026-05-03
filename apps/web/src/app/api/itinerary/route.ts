@@ -5,6 +5,8 @@ export const dynamic = "force-dynamic";
 
 type RiskMode = "budget" | "comfort" | "safety";
 type Variant = "primary" | "wet-proof" | "altitude-light";
+type Mobility = "fit" | "normal" | "limited" | "wheelchair";
+type Vehicle = "rental" | "self-drive" | "driver" | "bus" | "motorcycle";
 
 const MONSOON_MONTHS = new Set([6, 7, 8, 9]);
 const ALTITUDE_SENSITIVE_CAP_M = 3000;
@@ -21,12 +23,14 @@ export async function POST(req: NextRequest) {
   }
 
   const body = await req.json();
-  const { month, days, travelerType, budget, origin, destinationIds, riskMode, variant } = body;
+  const { month, days, travelerType, budget, origin, destinationIds, riskMode, variant, ages, mobility, vehicle } = body;
 
   const VALID_TYPES = ["solo", "couple", "family", "biker", "backpacker", "spiritual"];
   const VALID_BUDGETS = ["budget", "mid-range", "luxury"];
   const VALID_RISK: RiskMode[] = ["budget", "comfort", "safety"];
   const VALID_VARIANT: Variant[] = ["primary", "wet-proof", "altitude-light"];
+  const VALID_MOBILITY: Mobility[] = ["fit", "normal", "limited", "wheelchair"];
+  const VALID_VEHICLE: Vehicle[] = ["rental", "self-drive", "driver", "bus", "motorcycle"];
 
   if (!month || !days || !travelerType) {
     return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
@@ -44,6 +48,15 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Days must be 1-30" }, { status: 400 });
   }
 
+  // New Phase-4 inputs — silently coerced to safe defaults if absent or
+  // malformed. Existing callers (homepage AI Plan flow) don't send these,
+  // so this stays backwards-compatible.
+  const safeAges: number[] = Array.isArray(ages)
+    ? ages.filter((a: unknown) => typeof a === "number" && a >= 0 && a <= 110).slice(0, 12)
+    : [];
+  const safeMobility: Mobility = VALID_MOBILITY.includes(mobility) ? mobility : "normal";
+  const safeVehicle: Vehicle | null = VALID_VEHICLE.includes(vehicle) ? vehicle : null;
+
   const risk: RiskMode = VALID_RISK.includes(riskMode) ? riskMode : "comfort";
   const variantMode: Variant = VALID_VARIANT.includes(variant) ? variant : "primary";
 
@@ -60,10 +73,10 @@ export async function POST(req: NextRequest) {
   let destQuery = supabase
     .from("destinations")
     .select(`
-      id, name, tagline, difficulty, elevation_m, budget_tier, tags,
+      id, name, tagline, difficulty, elevation_m, budget_tier, tags, solo_female_score,
       state:states(name),
       destination_months(month, score, note, prose_lead, who_should_go, who_should_avoid, verdict),
-      kids_friendly(suitable, rating, reasons),
+      kids_friendly(suitable, rating, reasons, min_recommended_age),
       confidence_cards(network, medical, transport, safety, best_tip, warning)
     `);
 
@@ -117,6 +130,8 @@ export async function POST(req: NextRequest) {
       whoShouldAvoid: monthData?.who_should_avoid ?? null,
       kidsSuitable: kf?.suitable ?? null,
       kidsRating: kf?.rating ?? null,
+      kidsMinAge: kf?.min_recommended_age ?? null,
+      soloFemaleScore: d.solo_female_score ?? null,
       network: typeof cc?.network === "object" ? JSON.stringify(cc.network) : cc?.network ?? null,
       medical: typeof cc?.medical === "object" ? JSON.stringify(cc.medical) : cc?.medical ?? null,
       bestTip: cc?.best_tip ?? null,
@@ -198,6 +213,48 @@ export async function POST(req: NextRequest) {
     ? `VARIANT: ALTITUDE-LIGHT — AMS-safe. No destination above ${ALTITUDE_SENSITIVE_CAP_M}m. Build for travelers with cardiac/respiratory concerns or elderly parents.`
     : "VARIANT: PRIMARY — optimal route without hard constraints.";
 
+  // Phase-4 traveler context block — only emitted when at least one of the
+  // new inputs was provided. Existing callers stay unaffected.
+  const youngestAge = safeAges.length > 0 ? Math.min(...safeAges) : null;
+  const eldestAge = safeAges.length > 0 ? Math.max(...safeAges) : null;
+  const ageBlocks: string[] = [];
+  if (safeAges.length > 0) {
+    ageBlocks.push(
+      `AGES: ${safeAges.join(", ")} (youngest ${youngestAge}, eldest ${eldestAge}). For each stop, check kidsMinAge — if youngestAge < kidsMinAge, EXPLICITLY say "skip / swap" and name a specific age-appropriate alternative within driving distance. For stops with kidsRating ≤ 2, also flag.`,
+    );
+  }
+  if (eldestAge != null && eldestAge >= 60) {
+    ageBlocks.push(
+      `One traveler is 60+. Cap altitude gain per day at 1500m, build a rest day after any 3000m+ overnight, name pharmacy + hospital distance for high-altitude stops.`,
+    );
+  }
+  const mobilityBlock = safeMobility !== "normal"
+    ? `MOBILITY: ${safeMobility.toUpperCase()} — ${
+        safeMobility === "fit"
+          ? "okay with day-long trekking, pass crossings, dirt-road bouncing."
+          : safeMobility === "limited"
+          ? "no multi-hour treks, prefer paved roads, lift-accessible stays where available. Skip stops that require >2h walking on uneven ground."
+          : "WHEELCHAIR — only stops with confirmed wheelchair-accessible stay + transport. If the route can't satisfy this, say so honestly and name where in India is genuinely accessible (Pondicherry promenade, Chandigarh, Mumbai Bandra)."
+      }`
+    : "";
+  const vehicleBlock = safeVehicle
+    ? `VEHICLE: ${safeVehicle.toUpperCase()} — ${
+        safeVehicle === "rental"
+          ? "rental car. Confirm fuel pump density on route; flag any segment >120km without one."
+          : safeVehicle === "self-drive"
+          ? "self-drive. Call out lane discipline, hill-driving experience required, and where the road shoulder disappears."
+          : safeVehicle === "driver"
+          ? "with a driver. Mention driver-stay arrangements at remote stops; cap daily driving at 8h."
+          : safeVehicle === "bus"
+          ? "bus. Name terminus + booking platform per leg; warn where last bus is before sunset."
+          : "motorcycle. Flag fuel + tyre + first-aid; refuse passes already snowed-in this month."
+      }`
+    : "";
+  const soloFemaleBlock = safeAges.length === 1 && travelerType === "solo"
+    ? `SOLO TRAVELER. For each destination, surface soloFemaleScore explicitly (1-5). If ≤ 2, recommend paired-travel option or guide.`
+    : "";
+  const travelerProfileExtras = [...ageBlocks, mobilityBlock, vehicleBlock, soloFemaleBlock].filter(Boolean).join("\n");
+
   const prompt = `You are NakshIQ's itinerary engine. NakshIQ is India's travel confidence platform — we score destinations month-by-month, we don't sell packages. Our voice is declarative, honest, and specific.
 
 Create a ${days}-day itinerary for a ${travelerType} traveler in ${MONTH_NAMES[month]}.
@@ -218,6 +275,7 @@ TRAVELER PROFILE:
 - Origin: ${safeOrigin}
 - Duration: ${days} days
 - Month: ${MONTH_NAMES[month]}
+${travelerProfileExtras ? `\nTRAVELER CONSTRAINTS (mandatory — these are not suggestions):\n${travelerProfileExtras}\n` : ""}
 
 TOURIST TRAP RULES (critical):
 These destinations are known tourist traps. If the route would naturally include them, ALWAYS suggest the alternative instead and explain why:
