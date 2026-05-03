@@ -6403,3 +6403,55 @@ requests.exceptions.HTTPError: 401 Client Error: UNAUTHORIZED for url: https://a
 2026-05-03 15:56:27  INFO      Theme tracker updated: format=seasonal_shift
 2026-05-03 15:56:27  INFO      State saved. Reel run complete.
 2026-05-03 15:56:27  INFO      ════════════════════════════════════════════════════════════
+2026-05-03 19:13:34  INFO      ════════════════════════════════════════════════════════════
+2026-05-03 19:13:34  INFO      Nakshiq Autoposter · ANALYTICS SYNC · 2026-05-03
+2026-05-03 19:13:34  INFO      ════════════════════════════════════════════════════════════
+2026-05-03 19:13:40  INFO      Synced 22 new posts (total: 401)
+2026-05-03 19:13:40  INFO      ── Analytics Summary ──
+2026-05-03 19:13:40  INFO      Total posts tracked: 401
+2026-05-03 19:13:40  INFO      Successfully published: 322 | Failed: 75
+2026-05-03 19:13:40  INFO      
+2026-05-03 19:13:40  INFO      By content type:
+2026-05-03 19:13:40  INFO        feed_post: 125
+2026-05-03 19:13:40  INFO        reel: 111
+2026-05-03 19:13:40  INFO        yt_short: 109
+2026-05-03 19:13:40  INFO        canva_visual: 14
+2026-05-03 19:13:40  INFO        tourist_map: 14
+2026-05-03 19:13:40  INFO        infographic: 10
+2026-05-03 19:13:40  INFO        flow_story: 10
+2026-05-03 19:13:40  INFO        pomelli_visual: 8
+2026-05-03 19:13:40  INFO      
+2026-05-03 19:13:40  INFO      By format:
+2026-05-03 19:13:40  INFO        feed_post:unknown: 125
+2026-05-03 19:13:40  INFO        reel:seasonal: 43
+2026-05-03 19:13:40  INFO        reel:destination: 36
+2026-05-03 19:13:40  INFO        yt_short:listicle: 26
+2026-05-03 19:13:40  INFO        reel:map: 22
+2026-05-03 19:13:40  INFO        yt_short:did: 21
+2026-05-03 19:13:40  INFO        yt_short:before: 19
+2026-05-03 19:13:40  INFO        yt_short:mini: 17
+2026-05-03 19:13:40  INFO        canva_visual:unknown: 14
+2026-05-03 19:13:40  INFO        tourist_map:unknown: 14
+2026-05-03 19:13:40  INFO        yt_short:dont: 13
+2026-05-03 19:13:40  INFO        yt_short:this: 13
+2026-05-03 19:13:40  INFO        infographic:unknown: 10
+2026-05-03 19:13:40  INFO        flow_story:unknown: 10
+2026-05-03 19:13:40  INFO        pomelli_visual:unknown: 8
+2026-05-03 19:13:40  INFO        reel:score: 6
+2026-05-03 19:13:40  INFO        reel:pomelli: 4
+2026-05-03 19:13:40  INFO      
+2026-05-03 19:13:40  INFO      By platform:
+2026-05-03 19:13:40  INFO        instagram: 189
+2026-05-03 19:13:40  INFO        facebook: 105
+2026-05-03 19:13:40  INFO        youtube: 104
+2026-05-03 19:13:40  INFO      
+2026-05-03 19:13:40  INFO      YT Short format distribution:
+2026-05-03 19:13:40  INFO        listicle: 26 (24%)
+2026-05-03 19:13:40  INFO        did: 21 (19%)
+2026-05-03 19:13:40  INFO        before: 19 (17%)
+2026-05-03 19:13:40  INFO        mini: 17 (16%)
+2026-05-03 19:13:40  INFO        dont: 13 (12%)
+2026-05-03 19:13:40  INFO        this: 13 (12%)
+2026-05-03 19:13:40  INFO      
+Date range: 2026-04-15 → 2026-05-03
+2026-05-03 19:13:40  INFO      ════════════════════════════════════════════════════════════
