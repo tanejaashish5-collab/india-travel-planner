@@ -52,6 +52,9 @@ export interface EmergencySOS {
   verified?: boolean;
   verified_date?: string;
   verified_by?: string;
+  source_url?: string;
+  source_label?: string;
+  last_verified_attempt_at?: string;
 }
 
 interface LocalHelper {
@@ -88,7 +91,24 @@ function ResponseBadge({ minutes }: { minutes: number }) {
   );
 }
 
-function VerificationBadge({ verified, verifiedDate }: { verified?: boolean; verifiedDate?: string }) {
+function VerificationBadge({
+  verified,
+  verifiedDate,
+  sourceUrl,
+  sourceLabel,
+}: {
+  verified?: boolean;
+  verifiedDate?: string;
+  sourceUrl?: string;
+  sourceLabel?: string;
+}) {
+  let host: string | null = null;
+  try {
+    if (sourceUrl) host = new URL(sourceUrl).host.replace(/^www\./, "");
+  } catch {
+    host = null;
+  }
+
   if (verified) {
     const dateStr = verifiedDate
       ? new Date(verifiedDate).toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" })
@@ -99,6 +119,20 @@ function VerificationBadge({ verified, verifiedDate }: { verified?: boolean; ver
           <path fillRule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clipRule="evenodd" />
         </svg>
         Verified{dateStr ? ` ${dateStr}` : ""}
+        {sourceUrl && (
+          <>
+            {" "}
+            ·{" "}
+            <a
+              href={sourceUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline decoration-emerald-400/30 hover:text-emerald-300 hover:decoration-emerald-300"
+            >
+              {sourceLabel ?? host ?? "source"}
+            </a>
+          </>
+        )}
       </span>
     );
   }
@@ -192,6 +226,58 @@ export function EmergencySOSSection({ sos, destinationName }: { sos: EmergencySO
             className="overflow-hidden"
           >
             <div className="px-5 pb-5 space-y-5">
+
+              {/* ── Test-now disclaimer (top of panel, before any number) ── */}
+              <div className="rounded-lg border border-yellow-500/20 bg-yellow-500/5 px-4 py-3">
+                <p className="text-[11px] font-semibold text-yellow-400/90 mb-1">
+                  &#9888;&#65039; Test before you need them
+                </p>
+                <p className="text-[11px] leading-relaxed text-muted-foreground/70">
+                  These numbers were correct at the time we verified them, but local
+                  desk numbers DO change. Test-call any number you might rely on as
+                  soon as you arrive. If a number doesn&apos;t connect, dial{" "}
+                  <a href="tel:112" className="font-bold text-red-400 underline">
+                    112
+                  </a>{" "}
+                  — the universal emergency line works on every Indian network even
+                  without a SIM.
+                </p>
+                {(sos.verified && sos.verified_date) || sos.source_url ? (
+                  <p className="text-[10px] text-muted-foreground/60 mt-2">
+                    {sos.verified && sos.verified_date && (
+                      <>
+                        Last verified{" "}
+                        {new Date(sos.verified_date).toLocaleDateString("en-IN", {
+                          day: "numeric",
+                          month: "short",
+                          year: "numeric",
+                        })}
+                      </>
+                    )}
+                    {sos.source_url && (
+                      <>
+                        {sos.verified && sos.verified_date ? " · " : ""}
+                        Source:{" "}
+                        <a
+                          href={sos.source_url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="underline hover:text-foreground"
+                        >
+                          {sos.source_label ??
+                            (() => {
+                              try {
+                                return new URL(sos.source_url!).host.replace(/^www\./, "");
+                              } catch {
+                                return "source";
+                              }
+                            })()}
+                        </a>
+                      </>
+                    )}
+                  </p>
+                ) : null}
+              </div>
 
               {/* ── Universal Emergency Numbers ── */}
               <div>
@@ -520,8 +606,13 @@ export function EmergencySOSSection({ sos, destinationName }: { sos: EmergencySO
               )}
 
               {/* Verification + Updated timestamp */}
-              <div className="flex items-center justify-between mt-2">
-                <VerificationBadge verified={sos.verified} verifiedDate={sos.verified_date} />
+              <div className="flex items-center justify-between mt-2 flex-wrap gap-2">
+                <VerificationBadge
+                  verified={sos.verified}
+                  verifiedDate={sos.verified_date}
+                  sourceUrl={sos.source_url}
+                  sourceLabel={sos.source_label}
+                />
                 {sos.updated_at && (
                   <p className="text-[10px] text-muted-foreground/40">
                     Last updated: {new Date(sos.updated_at).toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" })}
@@ -537,17 +628,6 @@ export function EmergencySOSSection({ sos, destinationName }: { sos: EmergencySO
                 >
                   See incorrect info? Report it — we verify within 48 hours
                 </button>
-              </div>
-
-              {/* Safety Data Disclaimer */}
-              <div className="mt-4 rounded-lg border border-yellow-500/15 bg-yellow-500/5 px-4 py-3">
-                <p className="text-[11px] font-semibold text-yellow-400/80 mb-1">&#9888;&#65039; Safety Data Disclaimer</p>
-                <p className="text-[11px] leading-relaxed text-muted-foreground/60">
-                  Emergency information is provided as guidance based on publicly available data. Phone numbers, addresses, and service availability may change without notice. Always verify critical emergency contacts locally upon arrival. For any life-threatening emergency anywhere in India, dial 112 — it works on all networks, even without a SIM card.
-                </p>
-                <p className="text-[10px] text-muted-foreground/40 mt-2">
-                  Data source: State government websites, tourism departments, training knowledge | Status: Unverified — community verification in progress
-                </p>
               </div>
             </div>
           </motion.div>

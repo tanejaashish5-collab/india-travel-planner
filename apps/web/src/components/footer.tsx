@@ -163,6 +163,21 @@ export function Footer({ stats }: { stats?: { destinations: number; places: numb
           </div>
         )}
 
+        {/* Data freshness disclaimer — sets honest expectations for any
+            price, contact, or road-status claim across the site. */}
+        <div className="h-px bg-gradient-to-r from-transparent via-border/20 to-transparent mb-4" />
+        <p className="text-[11px] leading-relaxed text-muted-foreground/50 text-center mb-4 max-w-2xl mx-auto">
+          Prices, phone numbers, and road conditions are reviewed on the dates shown beside
+          each section. They DO change — always confirm at booking and test-call any
+          emergency number when you arrive. For life-threatening emergencies anywhere
+          in India, dial <span className="font-semibold text-red-400/70">112</span>.
+          Spotted an error?{" "}
+          <Link href={`/${locale}/contact`} className="underline hover:text-foreground">
+            Tell us
+          </Link>
+          .
+        </p>
+
         {/* Bottom bar */}
         <div className="h-px bg-gradient-to-r from-transparent via-border/20 to-transparent mb-6" />
         <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-muted-foreground/60">

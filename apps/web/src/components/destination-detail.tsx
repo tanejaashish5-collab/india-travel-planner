@@ -859,125 +859,257 @@ export function DestinationDetail({ dest }: { dest: any }) {
                   </section>
                 )}
 
-                {/* Trip Cost Estimator */}
-                {dest.daily_cost && (
-                  <section>
-                    <h2 className="text-xl font-semibold mb-3">What a day actually costs</h2>
-                    <div className="grid gap-3 sm:grid-cols-3">
-                      {[
-                        { key: "budget", label: "Budget", color: "emerald", icon: "🎒" },
-                        { key: "midrange", label: "Mid-range", color: "blue", icon: "🏨" },
-                        { key: "luxury", label: "Luxury", color: "purple", icon: "✨" },
-                      ].map(({ key, label, color, icon }) => {
-                        const tier = dest.daily_cost[key];
-                        if (!tier) return null;
-                        return (
-                          <div key={key} className={`rounded-xl border border-${color}-500/20 bg-${color}-500/5 p-4`}>
-                            <div className="flex items-center gap-2 mb-3">
-                              <span className="text-lg">{icon}</span>
-                              <h3 className="text-sm font-semibold">{label}</h3>
-                              <span className={`ml-auto text-lg font-mono font-bold text-${color}-400`}>₹{tier.total?.toLocaleString()}</span>
-                            </div>
-                            <div className="space-y-1.5 text-xs text-muted-foreground">
-                              <div className="flex justify-between"><span>Stay</span><span className="font-mono">₹{tier.stay?.toLocaleString()}</span></div>
-                              <div className="flex justify-between"><span>Food</span><span className="font-mono">₹{tier.food?.toLocaleString()}</span></div>
-                              <div className="flex justify-between"><span>Transport</span><span className="font-mono">₹{tier.transport?.toLocaleString()}</span></div>
-                              <div className="flex justify-between"><span>Activities</span><span className="font-mono">₹{tier.activities?.toLocaleString()}</span></div>
-                            </div>
-                            <div className="mt-2 pt-2 border-t border-border/30 text-xs text-muted-foreground/50">
-                              per person per day
-                            </div>
-                          </div>
-                        );
-                      })}
-                    </div>
-                    {dest.daily_cost.note && (
-                      <p className="mt-3 text-sm italic text-muted-foreground/70">💡 {dest.daily_cost.note}</p>
-                    )}
-                  </section>
-                )}
-
-                {/* Crowd Calendar — always shown. Quick visual chart; not
-                    dense-operational data. Current-month crowd level also
-                    appears in the TL;DR card chip. */}
-                {dest.crowd_calendar && (
-                  <section>
-                    <div className="flex flex-wrap items-center gap-2 mb-3">
-                      <h2 className="text-xl font-semibold">What crowds look like</h2>
-                      <SectionFreshness
-                        sectionKey="crowd"
-                        sectionReviews={dest.section_reviews}
-                        fallback={dest.content_reviewed_at}
-                      />
-                    </div>
-                    <div className="rounded-xl border border-border p-5">
-                      {/* Visual month strip */}
-                      <div className="flex gap-0.5 mb-3">
-                        {Array.from({ length: 12 }, (_, i) => {
-                          const m = i + 1;
-                          const isPeak = dest.crowd_calendar.peak_months?.includes(m);
-                          const isQuiet = dest.crowd_calendar.quiet_months?.includes(m);
-                          const MNAMES = ["","J","F","M","A","M","J","J","A","S","O","N","D"];
+                {/* Trip Cost Estimator — handles both rich shape (per-tier
+                    stay/food/transport/activities breakdown) and thin shape
+                    ({budget: 800, mid: 2000} flat numbers, common on Tier-3
+                    dests). Renders whatever exists; ranges, dates, and a
+                    booking-confirm reminder follow current-spend rules. */}
+                {dest.daily_cost && (() => {
+                  const dc = dest.daily_cost as Record<string, unknown>;
+                  const tiers = [
+                    { key: "budget", altKeys: [] as string[], label: "Budget", color: "emerald", icon: "🎒" },
+                    { key: "midrange", altKeys: ["mid"], label: "Mid-range", color: "blue", icon: "🏨" },
+                    { key: "luxury", altKeys: ["lux", "premium"], label: "Luxury", color: "purple", icon: "✨" },
+                  ];
+                  const resolved = tiers.map((t) => {
+                    const raw = dc[t.key] ?? t.altKeys.map((k) => dc[k]).find((v) => v != null);
+                    return { ...t, raw };
+                  }).filter((t) => t.raw != null);
+                  if (resolved.length === 0) return null;
+                  return (
+                    <section>
+                      <div className="flex flex-wrap items-center gap-2 mb-3">
+                        <h2 className="text-xl font-semibold">What a day actually costs</h2>
+                        <SectionFreshness
+                          sectionKey="cost"
+                          sectionReviews={dest.section_reviews}
+                          fallback={dest.content_reviewed_at}
+                        />
+                      </div>
+                      <div className="grid gap-3 sm:grid-cols-3">
+                        {resolved.map(({ key, label, color, icon, raw }) => {
+                          const isObj = raw && typeof raw === "object";
+                          const tier = isObj ? raw as Record<string, number | undefined> : null;
+                          const flatNumber = !isObj && typeof raw === "number" ? raw : null;
+                          const total = tier?.total ?? (
+                            tier ? (tier.stay ?? 0) + (tier.food ?? 0) + (tier.transport ?? 0) + (tier.activities ?? 0) : flatNumber
+                          );
                           return (
-                            <div key={m} className="flex-1 text-center">
-                              <div className={`h-2 rounded-full mb-1 ${
-                                isPeak ? "bg-red-400" : isQuiet ? "bg-emerald-400" : "bg-yellow-400"
-                              }`} />
-                              <span className="text-xs text-muted-foreground">{MNAMES[m]}</span>
+                            <div key={key} className={`rounded-xl border border-${color}-500/20 bg-${color}-500/5 p-4`}>
+                              <div className="flex items-center gap-2 mb-3">
+                                <span className="text-lg">{icon}</span>
+                                <h3 className="text-sm font-semibold">{label}</h3>
+                                {total != null && (
+                                  <span className={`ml-auto text-lg font-mono font-bold text-${color}-400`}>₹{total.toLocaleString()}</span>
+                                )}
+                              </div>
+                              {tier ? (
+                                <div className="space-y-1.5 text-xs text-muted-foreground">
+                                  {tier.stay != null && <div className="flex justify-between"><span>Stay</span><span className="font-mono">₹{tier.stay.toLocaleString()}</span></div>}
+                                  {tier.food != null && <div className="flex justify-between"><span>Food</span><span className="font-mono">₹{tier.food.toLocaleString()}</span></div>}
+                                  {tier.transport != null && <div className="flex justify-between"><span>Transport</span><span className="font-mono">₹{tier.transport.toLocaleString()}</span></div>}
+                                  {tier.activities != null && <div className="flex justify-between"><span>Activities</span><span className="font-mono">₹{tier.activities.toLocaleString()}</span></div>}
+                                </div>
+                              ) : (
+                                <p className="text-xs text-muted-foreground/70">All-in estimate. Breakdown coming soon.</p>
+                              )}
+                              <div className="mt-2 pt-2 border-t border-border/30 text-xs text-muted-foreground/50">
+                                per person per day
+                              </div>
                             </div>
                           );
                         })}
                       </div>
-                      <div className="flex gap-4 text-xs text-muted-foreground mb-3">
-                        <span className="flex items-center gap-1"><span className="h-2 w-2 rounded-full bg-emerald-400" /> Quiet</span>
-                        <span className="flex items-center gap-1"><span className="h-2 w-2 rounded-full bg-yellow-400" /> Moderate</span>
-                        <span className="flex items-center gap-1"><span className="h-2 w-2 rounded-full bg-red-400" /> Peak</span>
-                      </div>
-                      {dest.crowd_calendar.avoid_weekends && (
-                        <p className="text-sm text-orange-300/80 mb-2">⚠ Avoid weekends — crowded with day-trippers</p>
+                      {typeof dc.note === "string" && (
+                        <p className="mt-3 text-sm italic text-muted-foreground/70">💡 {dc.note}</p>
                       )}
-                      {dest.crowd_calendar.best_day && (
-                        <p className="text-sm text-muted-foreground"><span className="font-medium text-foreground">Best days:</span> {dest.crowd_calendar.best_day}</p>
-                      )}
-                      {dest.crowd_calendar.note && (
-                        <p className="text-sm text-muted-foreground mt-1">{dest.crowd_calendar.note}</p>
-                      )}
-                    </div>
-                  </section>
-                )}
+                      <p className="mt-2 text-xs text-muted-foreground/50">
+                        Estimates based on recent traveler reports + verified listings. Confirm at booking.
+                      </p>
+                    </section>
+                  );
+                })()}
 
-                {/* Food & Dining */}
-                {dest.food_scene && Object.keys(dest.food_scene).length > 0 && (
-                  <section>
-                    <h2 className="text-xl font-semibold mb-3">Food & Dining</h2>
-                    <div className="grid gap-3 sm:grid-cols-2">
-                      {dest.food_scene.vegetarian_ease && (
-                        <div className="rounded-xl border border-border p-4 flex items-start gap-3">
-                          <span className="text-lg">🥬</span>
-                          <div>
-                            <SectionLabel>Vegetarian</SectionLabel>
-                            <div className="text-sm font-medium capitalize mt-0.5">{dest.food_scene.vegetarian_ease}</div>
+                {/* Crowd Calendar — handles both rich shape (peak_months /
+                    quiet_months int[]) and thin shape ({peak, off, shoulder}
+                    string month ranges like "Oct-Feb"). Falls back to a
+                    text summary when no month data can be derived (so we
+                    don't paint everything moderate-yellow misleadingly). */}
+                {dest.crowd_calendar && (() => {
+                  const cc = dest.crowd_calendar as Record<string, unknown>;
+                  const MN = ["jan","feb","mar","apr","may","jun","jul","aug","sep","oct","nov","dec"];
+                  const expandRange = (s: unknown): number[] => {
+                    if (typeof s !== "string") return [];
+                    const m = s.toLowerCase().match(/(\w{3,9})\s*[-–]\s*(\w{3,9})/);
+                    if (!m) return [];
+                    const a = MN.findIndex((n) => m[1].startsWith(n));
+                    const b = MN.findIndex((n) => m[2].startsWith(n));
+                    if (a < 0 || b < 0) return [];
+                    const out: number[] = [];
+                    let i = a;
+                    while (true) {
+                      out.push(i + 1);
+                      if (i === b) break;
+                      i = (i + 1) % 12;
+                      if (out.length > 12) break;
+                    }
+                    return out;
+                  };
+                  const peakRich: number[] | undefined = Array.isArray(cc.peak_months) ? cc.peak_months as number[] : undefined;
+                  const quietRich: number[] | undefined = Array.isArray(cc.quiet_months) ? cc.quiet_months as number[] : undefined;
+                  const peakMonths = peakRich ?? expandRange(cc.peak);
+                  const quietMonths = quietRich ?? expandRange(cc.off ?? cc.quiet);
+                  const moderateMonths = expandRange(cc.shoulder);
+                  const hasMonthData = peakMonths.length > 0 || quietMonths.length > 0 || moderateMonths.length > 0;
+                  return (
+                    <section>
+                      <div className="flex flex-wrap items-center gap-2 mb-3">
+                        <h2 className="text-xl font-semibold">What crowds look like</h2>
+                        <SectionFreshness
+                          sectionKey="crowd"
+                          sectionReviews={dest.section_reviews}
+                          fallback={dest.content_reviewed_at}
+                        />
+                      </div>
+                      <div className="rounded-xl border border-border p-5">
+                        {hasMonthData ? (
+                          <>
+                            <div className="flex gap-0.5 mb-3">
+                              {Array.from({ length: 12 }, (_, i) => {
+                                const m = i + 1;
+                                const isPeak = peakMonths.includes(m);
+                                const isQuiet = quietMonths.includes(m);
+                                const isModerate = moderateMonths.includes(m);
+                                const MNAMES = ["","J","F","M","A","M","J","J","A","S","O","N","D"];
+                                const tone = isPeak
+                                  ? "bg-red-400"
+                                  : isQuiet
+                                  ? "bg-emerald-400"
+                                  : isModerate
+                                  ? "bg-yellow-400"
+                                  : "bg-muted";
+                                return (
+                                  <div key={m} className="flex-1 text-center">
+                                    <div className={`h-2 rounded-full mb-1 ${tone}`} />
+                                    <span className="text-xs text-muted-foreground">{MNAMES[m]}</span>
+                                  </div>
+                                );
+                              })}
+                            </div>
+                            <div className="flex flex-wrap gap-4 text-xs text-muted-foreground mb-3">
+                              <span className="flex items-center gap-1"><span className="h-2 w-2 rounded-full bg-emerald-400" /> Quiet</span>
+                              <span className="flex items-center gap-1"><span className="h-2 w-2 rounded-full bg-yellow-400" /> Moderate</span>
+                              <span className="flex items-center gap-1"><span className="h-2 w-2 rounded-full bg-red-400" /> Peak</span>
+                            </div>
+                          </>
+                        ) : (
+                          <div className="space-y-1 text-sm text-muted-foreground mb-3">
+                            {typeof cc.peak === "string" && <p><span className="text-red-400 font-medium">Peak</span>: {cc.peak as string}</p>}
+                            {typeof cc.shoulder === "string" && <p><span className="text-yellow-400 font-medium">Shoulder</span>: {cc.shoulder as string}</p>}
+                            {typeof cc.off === "string" && <p><span className="text-emerald-400 font-medium">Off / quiet</span>: {cc.off as string}</p>}
                           </div>
+                        )}
+                        {Boolean(cc.avoid_weekends) && (
+                          <p className="text-sm text-orange-300/80 mb-2">⚠ Avoid weekends — crowded with day-trippers</p>
+                        )}
+                        {typeof cc.best_day === "string" && (
+                          <p className="text-sm text-muted-foreground"><span className="font-medium text-foreground">Best days:</span> {cc.best_day as string}</p>
+                        )}
+                        {typeof cc.note === "string" && (
+                          <p className="text-sm text-muted-foreground mt-1">{cc.note as string}</p>
+                        )}
+                      </div>
+                    </section>
+                  );
+                })()}
+
+                {/* Food & Dining — handles BOTH rich shape
+                    (vegetarian_ease + family_dining + cuisine + note) and
+                    thin shape ({type, highlights[], vegetarian_friendly})
+                    used on Tier-3 dests like Kotagiri. Whatever fields
+                    exist render. Section is hidden only when there's
+                    truly nothing to say. */}
+                {dest.food_scene && (() => {
+                  const fs = dest.food_scene as Record<string, unknown>;
+                  const hasContent =
+                    Boolean(fs.vegetarian_ease) ||
+                    Boolean(fs.family_dining) ||
+                    Boolean(fs.cuisine) ||
+                    Boolean(fs.note) ||
+                    Boolean(fs.type) ||
+                    fs.vegetarian_friendly != null ||
+                    (Array.isArray(fs.highlights) && fs.highlights.length > 0);
+                  if (!hasContent) return null;
+                  const highlights = Array.isArray(fs.highlights) ? fs.highlights as string[] : [];
+                  const vegLabel: string | null =
+                    typeof fs.vegetarian_ease === "string"
+                      ? fs.vegetarian_ease as string
+                      : fs.vegetarian_friendly === true
+                      ? "Vegetarian-friendly"
+                      : fs.vegetarian_friendly === false
+                      ? "Limited vegetarian options"
+                      : null;
+                  return (
+                    <section>
+                      <div className="flex flex-wrap items-center gap-2 mb-3">
+                        <h2 className="text-xl font-semibold">Food & Dining</h2>
+                        <SectionFreshness
+                          sectionKey="food"
+                          sectionReviews={dest.section_reviews}
+                          fallback={dest.content_reviewed_at}
+                        />
+                      </div>
+                      <div className="grid gap-3 sm:grid-cols-2">
+                        {typeof fs.type === "string" && (
+                          <div className="rounded-xl border border-border p-4 flex items-start gap-3">
+                            <span className="text-lg">🍽️</span>
+                            <div>
+                              <SectionLabel>Cuisine type</SectionLabel>
+                              <div className="text-sm font-medium mt-0.5">{fs.type as string}</div>
+                            </div>
+                          </div>
+                        )}
+                        {vegLabel && (
+                          <div className="rounded-xl border border-border p-4 flex items-start gap-3">
+                            <span className="text-lg">🥬</span>
+                            <div>
+                              <SectionLabel>Vegetarian</SectionLabel>
+                              <div className="text-sm font-medium capitalize mt-0.5">{vegLabel}</div>
+                            </div>
+                          </div>
+                        )}
+                        {typeof fs.family_dining === "string" && (
+                          <div className="rounded-xl border border-border p-4 flex items-start gap-3">
+                            <span className="text-lg">👨‍👩‍👧</span>
+                            <div>
+                              <SectionLabel>Family dining</SectionLabel>
+                              <div className="text-sm font-medium mt-0.5">{fs.family_dining as string}</div>
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                      {highlights.length > 0 && (
+                        <div className="mt-3">
+                          <SectionLabel>Local highlights</SectionLabel>
+                          <ul className="mt-2 space-y-1.5 text-sm text-muted-foreground">
+                            {highlights.map((h, i) => (
+                              <li key={i} className="flex gap-2">
+                                <span className="text-amber-400/70">•</span>
+                                <span>{h}</span>
+                              </li>
+                            ))}
+                          </ul>
                         </div>
                       )}
-                      {dest.food_scene.family_dining && (
-                        <div className="rounded-xl border border-border p-4 flex items-start gap-3">
-                          <span className="text-lg">👨‍👩‍👧</span>
-                          <div>
-                            <SectionLabel>Family dining</SectionLabel>
-                            <div className="text-sm font-medium mt-0.5">{dest.food_scene.family_dining}</div>
-                          </div>
-                        </div>
+                      {typeof fs.cuisine === "string" && (
+                        <p className="mt-2 text-sm text-muted-foreground"><span className="font-medium text-foreground">Cuisine:</span> {fs.cuisine as string}</p>
                       )}
-                    </div>
-                    {dest.food_scene.cuisine && (
-                      <p className="mt-2 text-sm text-muted-foreground"><span className="font-medium text-foreground">Cuisine:</span> {dest.food_scene.cuisine}</p>
-                    )}
-                    {dest.food_scene.note && (
-                      <p className="mt-1 text-sm italic text-muted-foreground/70">{dest.food_scene.note}</p>
-                    )}
-                  </section>
-                )}
+                      {typeof fs.note === "string" && (
+                        <p className="mt-1 text-sm italic text-muted-foreground/70">{fs.note as string}</p>
+                      )}
+                    </section>
+                  );
+                })()}
 
                 {/* Workability badge — only for remote-work-friendly places */}
                 {dest.workability?.remote_work_rating >= 3 && (
