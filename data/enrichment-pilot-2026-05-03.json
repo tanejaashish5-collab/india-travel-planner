@@ -1,0 +1,310 @@
+[
+  {
+    "id": "kotagiri",
+    "daily_cost": {
+      "budget":   {"stay": 1200, "food": 400, "transport": 250, "activities": 150, "total": 2000},
+      "midrange": {"stay": 3500, "food": 800, "transport": 500, "activities": 300, "total": 5100},
+      "luxury":   {"stay": 9000, "food": 1500, "transport": 800, "activities": 500, "total": 11800},
+      "note": "Kotagiri has fewer hotels than Ooty/Coonoor — book 2-3 weeks ahead in season; most stays are tea-estate bungalows or homestays, not chains."
+    },
+    "crowd_calendar": {
+      "peak_months":     [4, 5, 12],
+      "quiet_months":    [6, 7, 8, 9],
+      "moderate_months": [1, 2, 3, 10, 11],
+      "avoid_weekends":  false,
+      "best_day":        "Tue-Thu",
+      "note":            "Peak ties to Indian summer school break (Apr-May) and Christmas-New Year. Monsoon (Jun-Sep) brings landslip risk on the Coonoor ghat but Kotagiri ghat (33 km, 4 hairpins) is more stable."
+    },
+    "food_scene": {
+      "vegetarian_ease":  "easy",
+      "family_dining":    "Limited dedicated family restaurants — most travelers eat at homestay/resort kitchens; Cafe Diem and Top View are the go-to standalones.",
+      "cuisine":          "Badaga tribal staples (avare bele kootu, hittu), Nilgiri tea-estate fare, South Indian veg thalis. Pick up local cheeses from Acres Wild and avocado from estate farms.",
+      "note":             "Tiny town — kitchens close by 9 pm. Stock snacks if you're staying in an outlying estate bungalow."
+    },
+    "persona_blocks": {
+      "family":       "1900m elevation but a gentle drive-up from Coimbatore (75 km, 2.5 hr) — no altitude issue for kids. Catherine Falls and Elk Falls are short walks; Kodanad viewpoint is a fenced platform safe for toddlers. Stay options like Teanest Nightingale and Solitude by Nature have lawns and are kid-tolerant.",
+      "biker":        "Kotagiri ghat from Mettupalayam (NH-181 alternative, 33 km, 4 hairpins) is the bikers' pick over the Coonoor 14-hairpin route — wider corners, fewer trucks, far less landslip risk. Last fuel station before climb is Mettupalayam; tank up there as the ghat has none. Avoid in heavy monsoon (Jul-Aug).",
+      "photographer": "Kodanad sunrise viewpoint (5 km from town) overlooks the Moyar gorge — get there 30 minutes before first light in Jan-Feb for the cleanest air. Tea-estate golden hour at Glendale and Kannerimukku is best Oct-Nov. Catherine Falls runs full Aug-Oct.",
+      "nomad":        "Wi-Fi at most homestays is patchy 2-10 Mbps; Jio/Airtel 4G covers town centre well. Power is reliable but bring a UPS-friendly setup for monsoon outages. Stay 5-7 days minimum — the town earns its slowness; don't try to work-from-here in under 3.",
+      "solo_female":  "Kotagiri is one of the safer Nilgiri towns — small, residential, almost zero touristy hustle. Walking the bazaar at dusk feels fine; tea-estate trails should be done with a guide or a known group, not solo. Auto drivers are known faces; avoid hitching.",
+      "elderly":      "1900m is mild — no acclimatisation needed for most. Town is hilly with steep streets; Kodanad and Catherine Falls both involve uneven steps. Nearest large hospital is Coimbatore (75 km/2 hr); local Christian Fellowship Hospital handles routine care. Drive-to access is easy — no walk-in finale."
+    }
+  },
+  {
+    "id": "coonoor",
+    "daily_cost": {
+      "budget":   {"stay": 1500, "food": 500, "transport": 300, "activities": 200, "total": 2500},
+      "midrange": {"stay": 4000, "food": 900, "transport": 500, "activities": 400, "total": 5800},
+      "luxury":   {"stay": 16000, "food": 2000, "transport": 800, "activities": 700, "total": 19500},
+      "note": "Gateway Coonoor (Taj/IHCL, 32 rooms, 1857 heritage building) anchors the luxury tier; weekend rates spike 30-50% in May and Dec-Jan."
+    },
+    "crowd_calendar": {
+      "peak_months":     [4, 5, 12],
+      "quiet_months":    [6, 7, 8],
+      "moderate_months": [1, 2, 3, 9, 10, 11],
+      "avoid_weekends":  true,
+      "best_day":        "Tue-Thu",
+      "note":            "Long weekends from Bengaluru/Chennai jam Sim's Park and Dolphin's Nose. Coonoor ghat has 14 hairpins and is landslip-prone in monsoon — Jul-Aug crowds are thin but you trade rain."
+    },
+    "food_scene": {
+      "vegetarian_ease":  "easy",
+      "family_dining":    "Hyderabad Briyani House, La Belle Vie, and the Hampton Bar at Gateway are the safe picks for kids; most tea estates do high tea on prior booking.",
+      "cuisine":          "Single-estate Nilgiri teas (Glendale, Kairbetta), Anglo-Indian roast meats and bakery pastries (Sri Lakshmi/Coffee Cabin biscuits), South Indian thalis, Tibetan momos at Tasty Café.",
+      "note":             "Lower Coonoor is cheaper and grittier; Upper Coonoor is the heritage-bungalow strip. Don't expect fine dining beyond Gateway and a couple of estate stays."
+    },
+    "persona_blocks": {
+      "family":       "1850m, gentle climate, kid-friendly all year except monsoon. Sim's Park (30 acres, ₹40 entry) has a lake with boating and is stroller-doable on the main path. Dolphin's Nose viewpoint is fenced. Gateway Coonoor and Acres Wild farmstay (cheese-making for kids) are the family standouts.",
+      "biker":        "Coonoor sits halfway up the Mettupalayam-Ooty NH-181 ghat — 14 hairpin bends from below, more if you continue to Ooty. The road is the most-used Nilgiri ghat but landslip-prone in Jul-Sep; check road status before riding in monsoon. Last reliable fuel before the ghat is Mettupalayam — Coonoor town pumps exist but queue badly on weekends.",
+      "photographer": "Dolphin's Nose at sunrise (Oct-Feb has clearest air), Lamb's Rock for layered ridge shots, Hidden Valley below Tiger Hill for dawn mist. Tea-pluckers on the Glendale and Kairbetta estates are best photographed Apr-May and Oct-Nov mornings — get permission via the estate office.",
+      "nomad":        "Wi-Fi at branded properties (Gateway, La Maison) is reliable 25-50 Mbps; smaller homestays 5-15 Mbps. Jio/Airtel 4G is solid in Upper Coonoor, weaker in valleys. 7-10 days is the right stay length — long enough to outlast weekend crowds and ride the toy train both directions.",
+      "solo_female":  "Reasonably safe by Indian-hill-station standards; main bazaar and Sim's Park feel fine solo. Avoid the Lamb's Rock/Dolphin's Nose stretch alone after 5 pm — it empties out fast and shared-cab returns dry up. Stay near Bedford Circle for walkable evenings.",
+      "elderly":      "1850m, no altitude prep needed. Many viewpoints have steep approaches — Dolphin's Nose is a 200m walk on uneven path. Government Hospital handles basics; serious cases go to Coimbatore (65 km, 2 hr). Toy train (Mettupalayam-Coonoor leg) is a low-effort highlight and fully wheelchair-accessible at major stations."
+    }
+  },
+  {
+    "id": "trichy",
+    "daily_cost": {
+      "budget":   {"stay": 1000, "food": 350, "transport": 300, "activities": 200, "total": 1850},
+      "midrange": {"stay": 3200, "food": 700, "transport": 500, "activities": 300, "total": 4700},
+      "luxury":   {"stay": 7500, "food": 1500, "transport": 700, "activities": 400, "total": 10100},
+      "note": "Trichy is a temple-pilgrimage town more than a leisure destination — most stays are 2-3 star business class (Sangam, Femina, Ramyas). Top option is SRM Hotel; no true 5-star palace property."
+    },
+    "crowd_calendar": {
+      "peak_months":     [12, 1, 2],
+      "quiet_months":    [4, 5, 6, 9],
+      "moderate_months": [3, 7, 8, 10, 11],
+      "avoid_weekends":  false,
+      "best_day":        "any weekday",
+      "note":            "Peak is winter pleasant-weather window plus Vaikunta Ekadasi (Dec-Jan) at Srirangam — the temple draws 100k+ pilgrims for the 21-day festival. Apr-May brings 38°C heat; Jun-Sep is monsoon-humid."
+    },
+    "food_scene": {
+      "vegetarian_ease":  "easy",
+      "family_dining":    "Kannappa (mutton biryani, since 1962), Vasanta Bhavan, Banana Leaf, and Hotel Sangam's restaurant are the family-tested picks.",
+      "cuisine":          "Chettinad-influenced South Indian veg/non-veg, temple-town tiffin (idli, dosa, pongal), Trichy-style biryani (Kannappa, Anjappar). Filter coffee everywhere.",
+      "note":             "Srirangam side is strictly veg and largely alcohol-light; cantonment side has bars and non-veg. Don't eat heavy before climbing Rockfort's 437 steps."
+    },
+    "persona_blocks": {
+      "family":       "Easy drive from Chennai (320 km, 5 hr) or fly direct (TRZ airport, 5 km from town). Rockfort's 437 rock-cut steps are doable for kids 6+; Srirangam is stroller-friendly on outer prakaras. Hotel Sangam and SRM Hotel both have pools — useful in the heat. Avoid Apr-May with young children — 38-40°C is brutal.",
+      "biker":        "Flat plains around Trichy; the run to Tanjore (55 km), Chettinad (90 km) and Rameswaram (260 km) are all comfortable single-day rides on NH-38/NH-336. Fuel is plentiful, but heat is the real hazard — ride before 10 am and after 4 pm Mar-Jun. No rental scene; bring your own or rent in Madurai.",
+      "photographer": "Sri Ranganathaswamy's seven concentric prakaras reward a wide-angle from the Rajagopuram (236 ft, tallest in Asia) — best at first light in Jan. Rockfort backlit at sunset from the Cauvery's south bank. Vaikunta Ekadasi (Dec/Jan) gives you a once-a-year shot of the 'Paramapada Vasal' gate opening — get press accreditation in advance.",
+      "nomad":        "Wi-Fi at business hotels (Sangam, SRM, Femina) is reliable 30-80 Mbps; Jio/Airtel 4G/5G is strong city-wide. Power is stable. Trichy is a budget-nomad hack — daily cost <₹2k at hostels, decent cafes (Writer's Café, Cafe Coffee Day on Williams Rd) — but stay length 3-5 days is plenty; nothing here needs more.",
+      "solo_female":  "Generally safe by South Indian standards — temple town, dense crowds at religious sites, low harassment reports. Cantonment and Srirangam both fine solo by day; ask hotel reception before walking the Rockfort stairs after 6 pm. Dress modest at temples (cover knees and shoulders); the Srirangam dress code is enforced.",
+      "elderly":      "Sea-level, no altitude. Heat is the problem — visit Nov-Feb only. Rockfort climb (437 steps, no lift) is the one demanding sight; Srirangam is mostly flat with shaded prakaras. Apollo Hospital and KMC are tier-1 facilities; airport (TRZ) handles regional medevac. Drive-to access throughout."
+    }
+  },
+  {
+    "id": "hyderabad",
+    "daily_cost": {
+      "budget":   {"stay": 1500, "food": 500, "transport": 400, "activities": 300, "total": 2700},
+      "midrange": {"stay": 4500, "food": 1000, "transport": 600, "activities": 500, "total": 6600},
+      "luxury":   {"stay": 25000, "food": 3000, "transport": 1200, "activities": 800, "total": 30000},
+      "note": "Luxury is anchored by Taj Falaknuma Palace (₹40k+ on weekends), ITC Kohenur (~₹20k), Taj Krishna (~₹15-25k). Nov is the most expensive month (HICC events); Dec-Feb is the value sweet spot for pleasant weather."
+    },
+    "crowd_calendar": {
+      "peak_months":     [10, 11, 12, 1, 2],
+      "quiet_months":    [4, 5, 6],
+      "moderate_months": [3, 7, 8, 9],
+      "avoid_weekends":  false,
+      "best_day":        "any weekday",
+      "note":            "Winter (Oct-Feb, 14-29°C) is peak — pleasant weather + Hyderabad Literary Festival, Numaish, conference circuit. Apr-Jun touches 42°C and hotels go cheap. Bonalu (Jul-Aug) and Bathukamma (Sep-Oct) are local festival peaks at the temples."
+    },
+    "food_scene": {
+      "vegetarian_ease":  "easy",
+      "family_dining":    "Paradise (biryani institution, multiple branches), Shah Ghouse, Bawarchi for biryani; Chutneys and Ohri's for South Indian veg; Conrad's Asian Lounge and Olive Bistro for fine dining.",
+      "cuisine":          "Hyderabadi dum biryani (Paradise, Shadab, Bawarchi), haleem (Ramadan-only at Pista House and Sarvi), Irani chai and Osmania biscuits (Nimrah Cafe near Charminar), Telugu thalis, kebabs at Hotel Shadab.",
+      "note":             "Old City around Charminar is biryani+Irani heaven but largely dry (alcohol). Banjara/Jubilee Hills is the upscale dining + bar scene. Haleem is Ramadan-only — don't expect it year-round."
+    },
+    "persona_blocks": {
+      "family":       "Tier-1 metro with airport (HYD, voted India's best multiple years), so reaching is trivial. Ramoji Film City and Snow World are kid-magnets; Salar Jung Museum is school-trip ready. Luxury family stays: Park Hyatt, Trident, ITC Kohenur (huge pool, kids-club). Old City auto traffic is intense — Uber/Ola is the default with kids.",
+      "biker":        "Hyderabad is a biker-launchpad more than a destination — ride to Ananthagiri Hills (80 km), Bhongir Fort (50 km), Warangal (140 km), or the Karnataka borderlands. ORR (Outer Ring Road) gets you out fast. Royal Brothers and WheelStreet rent Royal Enfield/Avenger from ₹800-1500/day. Summer (Apr-Jun) is brutal — don't.",
+      "photographer": "Charminar at blue hour (5.45 am winter) before crowds, Golconda sunset from Bala Hisar, Chowmahalla courtyard mid-morning. Falaknuma Palace interior shoots need guest status. Hussain Sagar Buddha statue at sunrise. Pearl shopping at Laad Bazaar — color-rich any time.",
+      "nomad":        "5G citywide (Jio/Airtel/Vi), 50-200 Mbps Wi-Fi at Madhapur/HITEC City coworks (91springboard, Awfis, Innov8). Power is rock-solid. Madhapur, Gachibowli and Banjara Hills are the nomad triangle — 30 days+ is reasonable. Cost-of-living is one of India's better deals for tier-1 quality.",
+      "solo_female":  "Among India's safer big cities — Banjara/Jubilee/Madhapur are fine for late dinners and Uber returns. Old City (Charminar/Laad Bazaar) is best by day; cover up modestly and expect staring more than harassment. Metro is clean, women-only first coach. Avoid empty MMTS train coaches at night.",
+      "elderly":      "Sea-level metro (~500m), no altitude. Apollo, KIMS, Yashoda are top-tier hospitals — Apollo Jubilee Hills is benchmark for cardiac. Charminar/Old City involves walking on uneven streets and stairs at Mecca Masjid; Golconda has a steep 360-step climb but you can sample lower courts only. Falaknuma Palace and Chowmahalla are accessible. Tier-1 air connectivity to Bengaluru/Chennai for medevac."
+    }
+  },
+  {
+    "id": "nainital",
+    "daily_cost": {
+      "budget":   {"stay": 1500, "food": 500, "transport": 400, "activities": 300, "total": 2700},
+      "midrange": {"stay": 5500, "food": 1000, "transport": 600, "activities": 500, "total": 7600},
+      "luxury":   {"stay": 18000, "food": 2200, "transport": 800, "activities": 700, "total": 21700},
+      "note": "Saturday rates spike to ₹11,000+/night vs ₹6,200 Thursday. March is the most expensive month (+58%) thanks to school-holiday + Holi window. Lakeside hotels are pricier and noisier; Mallital is the heritage strip."
+    },
+    "crowd_calendar": {
+      "peak_months":     [4, 5, 6, 10, 12],
+      "quiet_months":    [7, 8, 9],
+      "moderate_months": [1, 2, 3, 11],
+      "avoid_weekends":  true,
+      "best_day":        "Tue-Thu",
+      "note":            "Apr-Jun is summer-escape peak from Delhi/Lucknow + heavy-vehicle bans on Mall Road 8-10:30 am and 2:30-10:30 pm. Christmas-NYE and weekends in May are gridlock — police stop private cars km before town. Monsoon (Jul-Sep) is calm but landslip-risky."
+    },
+    "food_scene": {
+      "vegetarian_ease":  "easy",
+      "family_dining":    "Sakley's Restaurant & Pastry Shop (since 1944), Machan, Embassy on Mall Road, and Sonam Chowmein for Tibetan are the family staples.",
+      "cuisine":          "Kumaoni — bhatt ki churkani, aloo ke gutke, bal mithai (Bhimtal/Bhowali origin, sold at Sah Ji's). North Indian thalis, Tibetan momos and thukpa, classic Mall Road street food (chaat, kebabs, hot maggi at viewpoints).",
+      "note":             "Mall Road shops close ~9-10 pm. Lakeside seafood is mostly farmed trout — fine but don't expect coastal freshness. Mountain stomach: avoid raw salads at street stalls in monsoon."
+    },
+    "persona_blocks": {
+      "family":       "1938m elevation, no acclimatisation needed. Drive from Delhi is 300 km/7 hr; Kathgodam railhead 35 km away is the smarter approach. Boating on Naini Lake, Snow View ropeway, and Naina Devi temple are the kid-classics. Family-tested stays: The Naini Retreat (1926 heritage), Vikram Vintage Inn, Manu Maharani. Avoid weekends in May — Mall Road becomes a stationary queue.",
+      "biker":        "The climb from Kathgodam through Bhimtal-Bhowali-Nainital is short (35 km) and well-paved but hairpin-heavy in the last 10 km. Real bike value is the loop beyond — Mukteshwar (50 km), Almora (65 km), Kausani (115 km). Lower Mall Road has been shut to vehicular traffic since Sep 2025 (land subsidence) — plan parking at Tallital. Fuel is reliable in town and at Bhowali.",
+      "photographer": "Snow View at sunrise (Oct-Feb gives the cleanest Trishul-Nanda Devi line), Tiffin Top for the lake-bowl wide, Naina Peak (2611m) for 360° Himalayan ridge in Nov-Dec. Naini Lake reflections best at first light before boats start. Avoid May haze — Oct-Feb is the photographer's window.",
+      "nomad":        "Wi-Fi 10-50 Mbps at branded hotels (Naini Retreat, Manu Maharani); homestays patchy 5-15 Mbps. Jio/Airtel 4G covers town; thin in Pangot/Kilbury periphery. Power has scheduled cuts in monsoon. Nomad-suitable for 5-7 days max — town is small and tourist-y; for longer Kumaon work, base in Mukteshwar or Bhimtal instead.",
+      "solo_female":  "Reasonably safe by Indian hill-town standards; Mall Road is well-lit and busy until 9 pm. Naini Lake boat operators are licensed — fine to ride solo. Avoid the ropeway last-trip return (after 5 pm Snow View) alone in low season. Ride-shares are scarce — pre-book hotel pickup from Kathgodam rather than negotiating taxis solo at 10 pm.",
+      "elderly":      "1938m is mild — most travelers feel only a brief shortness of breath day 1. Mall Road is walkable and flat; Naina Devi temple is short-step. Snow View, Tiffin Top and Naina Peak need a pony or ropeway. Cantonment Hospital handles basics; B.D. Pandey Government Hospital is the larger facility. Serious cases go to Haldwani (40 km, 1.5 hr) — Krishna Hospital and Soban Singh Jeena Base Hospital. Drive-to access; weekend traffic management can stop cars km outside town, so arrive midweek if mobility is limited."
+    }
+  },
+  {
+    "id": "vrindavan",
+    "daily_cost": {
+      "budget":   {"stay": 500, "food": 250, "transport": 150, "activities": 100, "total": 1000},
+      "midrange": {"stay": 2200, "food": 600, "transport": 400, "activities": 300, "total": 3500},
+      "luxury":   {"stay": 7500, "food": 1500, "transport": 800, "activities": 700, "total": 10500},
+      "note": "Dharamshala dorms run ₹200-400 if you don't mind 5am bhajan wake-ups; Radisson is the only true 5-star in town."
+    },
+    "crowd_calendar": {
+      "peak_months":     [3, 8, 10, 11],
+      "quiet_months":    [5, 6, 9],
+      "moderate_months": [1, 2, 4, 7, 12],
+      "avoid_weekends":  true,
+      "best_day":        "Tue-Wed",
+      "note":            "Holi (Mar) and Janmashtami (Aug-Sep) draw lakhs; Kartik month (Oct-Nov) is parikrama season. Banke Bihari weekend queues regularly cross 3 hours."
+    },
+    "food_scene": {
+      "vegetarian_ease":  "easy",
+      "family_dining":    "Excellent for families — pure-veg town, no alcohol, kid-safe sweets everywhere.",
+      "cuisine":          "Strict satvik vegetarian: kachori-sabzi at MVT/ISKCON canteen, peda from Brijwasi, lassi, chaat at Loi Bazaar, Govinda's thali.",
+      "note":             "Whole town is alcohol-dry and onion/garlic-free in temple-area kitchens. No fine dining outside Radisson."
+    },
+    "persona_blocks": {
+      "family":       "Easy weekend from Delhi (3.5 hr by Yamuna Expressway). Kid-friendly: ISKCON, Prem Mandir light show, cow petting at Radha Damodar gaushala. Hazards: pickpockets in temple lanes, monkeys snatch glasses/phones at Banke Bihari and Vishram Ghat. MVT (ISKCON) and Nidhivan Sarovar Portico are the two reliable family bookings.",
+      "biker":        "Yamuna Expressway from Delhi/Noida is the only sensible ride in — smooth tarmac, fuel at every 60 km, no twisties. Inside Vrindavan: don't ride. Lanes are 6 ft wide, cow-clogged, two-way scooter chaos. Park at Parikrama Marg and walk. Nearest petrol pump: NH-19 bypass, 4 km from temple zone.",
+      "photographer": "Golden hour at Keshi Ghat (sunset on Yamuna ghats) and Nidhivan at first light. Holi week (March) gives the iconic gulal-and-widow shots at Gopinath/Pagal Baba temples. Banke Bihari interior is photo-banned year-round; phones confiscated at the door. Don't shoot widows or sadhus without consent — there's an active local ethics conversation about this.",
+      "nomad":        "Wi-Fi at Radisson and MVT works; most homestays are 4-8 Mbps DSL. Power dips in summer (May-Jun). Two-night max — town is built for darshan, not focus work. Brijwasi Royal and Nidhivan Sarovar have the most usable lobbies for laptop time.",
+      "solo_female":  "Daytime safe, well-policed temple zone. After 8 pm the inner lanes empty out and male sadhus loiter — taxi back, don't walk. The widow-pilgrim context is real: solo women in white/red are sometimes assumed to be widows. Dress modestly (covered shoulders + knees) at Banke Bihari or you'll be turned away. ISKCON guesthouses are the safest single-female stay.",
+      "elderly":      "Flat town (170m elevation) — no altitude. Main hazard: rough-stone lanes, slippery during/after Yamuna aarti spray, and zero wheelchair access at Banke Bihari (descending steps + crowd crush). Cycle rickshaws cover the temple loop for ₹200-300. Mathura Refinery Hospital and KD Medical (Mathura, 12 km) handle most emergencies."
+    }
+  },
+  {
+    "id": "kannur",
+    "daily_cost": {
+      "budget":   {"stay": 800, "food": 350, "transport": 300, "activities": 150, "total": 1600},
+      "midrange": {"stay": 3500, "food": 800, "transport": 500, "activities": 400, "total": 5200},
+      "luxury":   {"stay": 9000, "food": 1500, "transport": 700, "activities": 600, "total": 11800},
+      "note": "Kannur Beach House and Costa Malabari are heritage homestays priced midrange but feel boutique; Mascot Beach Resort is the closest to a city luxury option."
+    },
+    "crowd_calendar": {
+      "peak_months":     [11, 12, 1, 2, 3],
+      "quiet_months":    [6, 7, 8],
+      "moderate_months": [4, 5, 9, 10],
+      "avoid_weekends":  false,
+      "best_day":        null,
+      "note":            "Theyyam ritual season runs Oct-May with most performances Dec-Mar — that drives the actual peak, not just winter weather. Monsoon (Jun-Aug) sees flooded roads and shut beaches."
+    },
+    "food_scene": {
+      "vegetarian_ease":  "moderate",
+      "family_dining":    "Family-friendly Malabar restaurants are common; kids eat well on dosas and Kerala parotta-egg combos.",
+      "cuisine":          "Malabar Muslim cuisine is the headline: thalassery biryani (with khaima rice, not basmati), pathiri, kallummakkaya (mussel) fry, fish moilee. Mambally's bakery is the birthplace of the Indian bakery cake (1883).",
+      "note":             "Beef dishes are openly on menus here unlike most of India — fine for travelers, just flag it for vegetarian/Hindu groups. Alcohol available but most restaurants are dry."
+    },
+    "persona_blocks": {
+      "family":       "Drive from Mangalore (130 km, 3.5 hr) or fly into Kannur International (CNN). Muzhappilangad drive-in beach is a genuine kid-thrill — drive your car on 4 km of hard sand. Hazards: rip currents at Payyambalam after monsoon, jellyfish May-Jun. Kannur Beach House (Thottada) and Ezhara Beach Homestay are the family-tested picks.",
+      "biker":        "Coastal NH-66 from Mangalore to Kannur is one of south India's best rides — palm shade, sea on the right, fuel every 30 km. Don't miss the Muzhappilangad drive-in (legal beach riding on hard sand) and the Aralam-Wayanad climb if you want ghat twisties. Royal Brothers and Wheelstreet rent Royal Enfields from Kannur town (~₹1200/day).",
+      "photographer": "Theyyam (Dec-Mar, pre-dawn 4 am-7 am) is the headline — costumes, fire, possession-state performances at small village kavus. Always ask before shooting; some kavus ban cameras during the kalasham. Daylight: Muzhappilangad sunset, Payyambalam at golden hour, St Angelo Fort ramparts. Costa Malabari can connect you to the local Theyyam performer network.",
+      "nomad":        "Jio/Airtel 4G is solid in town and along the coast; villages drop to 2-3 bars. Many homestays advertise Wi-Fi but speeds are 5-15 Mbps DSL. Better stay length: 4-5 nights — pair Theyyam mornings with afternoon work blocks. Costa Malabari and Blue Mermaid have the most reliable connectivity.",
+      "solo_female":  "Among the safer Indian beach destinations — Kerala's literacy + tea-shop culture means people watch out for solo travelers. Beach walks ok till sunset; avoid empty stretches of Payyambalam after dark. KSRTC buses and prepaid autos work fine. Theyyam pre-dawn outings are best done with a homestay-arranged guide rather than solo at 4 am.",
+      "elderly":      "Sea-level, no altitude. Main accessibility issue: most beaches have soft-sand stretches that aren't wheelchair-friendly; Payyambalam has a paved promenade that works. Theyyam viewings involve standing on uneven temple ground for 1-2 hours pre-dawn. AKG Hospital and IQRAA Hospital cover most emergencies."
+    }
+  },
+  {
+    "id": "bekal",
+    "daily_cost": {
+      "budget":   {"stay": 1000, "food": 400, "transport": 350, "activities": 200, "total": 1950},
+      "midrange": {"stay": 4000, "food": 900, "transport": 500, "activities": 400, "total": 5800},
+      "luxury":   {"stay": 12500, "food": 2200, "transport": 800, "activities": 800, "total": 16300},
+      "note": "Taj Bekal Resort & Spa is the marquee 5-star (rooms from ~₹14,000 in shoulder, ₹25,000+ in winter). The Lalit and Nileshwar Hermitage are the strong midrange-to-upper alternatives."
+    },
+    "crowd_calendar": {
+      "peak_months":     [10, 11, 12, 1, 2],
+      "quiet_months":    [6, 7, 8],
+      "moderate_months": [3, 4, 5, 9],
+      "avoid_weekends":  true,
+      "best_day":        "Wed-Thu",
+      "note":            "Winter (Oct-Feb) is peak for fort + backwaters. Monsoon (Jun-Aug) is photogenic but Bekal Fort's laterite gets dangerously slick. Weekends pull Bangalore + Mangalore day-trippers."
+    },
+    "food_scene": {
+      "vegetarian_ease":  "moderate",
+      "family_dining":    "Resort restaurants are family-safe; standalone options thin outside Kanhangad/Kasaragod.",
+      "cuisine":          "North Malabar coastal: thalassery biryani, fish curry with kudampuli (pot tamarind), neichor, ari pathiri. Yakshagana-belt influence means you'll find Tulu-Kerala fusion at Kasaragod toddy shops.",
+      "note":             "Outside Taj Bekal and Lalit, fine dining doesn't really exist — town is a resort cluster, not a dining destination. Toddy shops shut by 9 pm."
+    },
+    "persona_blocks": {
+      "family":       "Easy 1.5 hr drive from Mangalore airport (IXE) — closest fly-in. Bekal Fort has open ramparts (no railings) over a 30 ft drop in places — hold small kids' hands. Pallikere Beach has gentle surf and a paved walkway. Taj Bekal and The Lalit Resort have kids' clubs and shallow pools.",
+      "biker":        "NH-66 Mangalore-Bekal is 60 km of palm-lined coast — among the easiest rides in south India. Side-trip: the Ranipuram-Konnakkad ghat loop (40 km of curves through rubber plantations). Fuel at Kanhangad and Uppala. Hazards: monsoon road washouts on the Nileshwar-Kasaragod stretch.",
+      "photographer": "Bekal Fort at sunrise (the iconic 'Tu Hi Re' angle from the observation tower) and golden hour at Pallikere. Monsoon (Jun-Aug) gives moody fort + breaking-wave shots but laterite gets slippery. Valiyaparamba backwaters at first light from Nileshwar boat jetty. Drone use is restricted at the fort itself (ASI rule).",
+      "nomad":        "Taj Bekal and Lalit have business-grade Wi-Fi (50+ Mbps); small homestays drop to 5-10 Mbps. Mobile 4G is patchy at the fort and backwater pockets. 3-4 nights is the sweet spot — fort + backwater + Theyyam day-trip to Kannur.",
+      "solo_female":  "Resort zone is well-policed, beaches lifeguarded in season. Bekal Fort itself is fine in daylight but empties out by 5:30 pm — leave before. Kanhangad town is conservative; modest dress draws less attention. Resort-arranged taxis are the safe transport default; auto availability thins after dark.",
+      "elderly":      "Sea-level. Bekal Fort involves a 500 m uphill walk on uneven laterite + steep ramp to the observation tower — strenuous. Pallikere promenade, backwater boat, and resort grounds are accessible. Closest hospital: EMS Memorial (Kasaragod, 18 km) or Yenepoya (Mangalore, 60 km) for serious cases."
+    }
+  },
+  {
+    "id": "mawphlang",
+    "daily_cost": {
+      "budget":   {"stay": 700, "food": 300, "transport": 400, "activities": 200, "total": 1600},
+      "midrange": {"stay": 2400, "food": 600, "transport": 500, "activities": 300, "total": 3800},
+      "note": "Maple Pine Farm (₹1,000-2,450) is the standout homestay; most travelers day-trip from Shillong (25 km). Genuine luxury doesn't exist in Mawphlang — base in Shillong if you need it."
+    },
+    "crowd_calendar": {
+      "peak_months":     [10, 11, 3, 4, 5],
+      "quiet_months":    [12, 1, 2],
+      "moderate_months": [6, 7, 8, 9],
+      "avoid_weekends":  true,
+      "best_day":        "Tue-Wed",
+      "note":            "Sacred grove peaks Oct-Nov (post-monsoon clarity) and Mar-May (rhododendron). Monsoon (Jun-Sep) is scenic but leech-heavy and the grove path gets slippery. Winter mornings drop to 4-8°C."
+    },
+    "food_scene": {
+      "vegetarian_ease":  "hard",
+      "family_dining":    "Limited — homestay meals are the realistic option; Khasi cuisine is meat-led.",
+      "cuisine":          "Khasi tribal: jadoh (rice + pork-blood), dohkhlieh (pork salad), tungrymbai (fermented soybean), pumaloi (steamed rice cake), local rice beer. Maple Pine Farm cooks Khasi-veg on request with notice.",
+      "note":             "Pure-veg travelers should pre-arrange meals. No alcohol shops in the village; local rice beer (kiad) is offered at homestays. Dry on Sundays (Meghalaya state rule)."
+    },
+    "persona_blocks": {
+      "family":       "25 km from Shillong — under 1 hr drive on the Shillong-Cherrapunji road. The sacred grove walk is 2-3 km of gentle forest trail; doable with kids 6+. Hazards: leeches in monsoon, slippery moss on the grove path, no railings near the monoliths. The Khasi Heritage Village (8 acres of replica huts) is a low-effort kid stop.",
+      "biker":        "Shillong-Mawphlang road is smooth tarmac with one fuel pump at Lawsohtun (top off in Shillong before leaving). Continue south on the same road for the Cherrapunji loop (60 km of high-plateau curves) — one of the Northeast's signature rides. Hazards: fog from Nov-Feb closes visibility to 20 m before noon.",
+      "photographer": "Sacred grove (Lawkyntang) at first light gives the moss-on-monolith atmosphere — overcast days actually photograph better than sun. Sunrise from the Mawphlang viewpoint over the David Scott Trail. Tribal protocol: do NOT photograph Khasi residents without explicit permission — village still runs on matrilineal community consent. Drone permissions need village headman approval.",
+      "nomad":        "Forget reliable Wi-Fi. Maple Pine Farm has patchy 5-10 Mbps; mobile data on Jio is 2-3 bars. Use Mawphlang as a 1-night digital-detox add-on, not a work base. Shillong (25 km) has cafes with proper connectivity for catch-up days.",
+      "solo_female":  "Khasi society is matrilineal — among the safest cultural contexts in India for solo women. Village is small and watchful in a benign way. Walk the grove with the mandatory village guide (₹200) — not for safety but because solo grove entry is forbidden by the Lyngdoh (priestly clan). Avoid hitchhiking on the Shillong road after dark.",
+      "elderly":      "Elevation 1,800 m — mild altitude, but no acclimatisation issue for short stays. Sacred grove walk is gentle but uneven (tree roots, mossy stones); skip in monsoon. Closest hospitals are in Shillong (Nazareth, Woodland) — 1 hr by road. Cold mornings need layered warm clothing year-round."
+    }
+  },
+  {
+    "id": "khonoma",
+    "daily_cost": {
+      "budget":   {"stay": 800, "food": 350, "transport": 500, "activities": 200, "total": 1850},
+      "midrange": {"stay": 2500, "food": 700, "transport": 700, "activities": 400, "total": 4300},
+      "note": "Dovipie Inn (₹800) is the budget standby; Morung Lodge (₹2,000) and Alder Retreat (₹3,500) are the mid-range picks. No luxury property exists — village zoning forbids large hotels."
+    },
+    "crowd_calendar": {
+      "peak_months":     [10, 11, 12],
+      "quiet_months":    [6, 7, 8],
+      "moderate_months": [1, 2, 3, 4, 5, 9],
+      "avoid_weekends":  false,
+      "best_day":        null,
+      "note":            "Hornbill Festival (Dec 1-10 at Kisama, 35 km away) makes Dec the absolute peak — book 4 months ahead. Oct-Nov gives terraced-paddy harvest gold. Monsoon (Jun-Aug) brings landslides on the Kohima-Khonoma road."
+    },
+    "food_scene": {
+      "vegetarian_ease":  "hard",
+      "family_dining":    "Homestay-cooked meals are the only realistic option; expect set Naga thali with shared dishes.",
+      "cuisine":          "Angami Naga: smoked pork with akhuni (fermented soybean), bamboo-shoot curry, axone, galho (rice + meat + veg one-pot), zutho (rice beer). Most homestays grow their vegetables on terraced plots.",
+      "note":             "Pure-veg is a special request — meals are pork/chicken-led. No restaurants outside homestays. Dry village officially (alcohol prohibition in Nagaland) but homemade rice beer is served at homestays."
+    },
+    "persona_blocks": {
+      "family":       "20 km from Kohima on a 1 hr drive (winding ghat road). The village walk is steep cobbled paths between Angami stone houses — fine for kids 8+, hard with strollers. Khonoma Nature Conservation Area trek is 3-5 km, family-doable in dry season. Morung Lodge and Alder Retreat take families and arrange village-guided walks.",
+      "biker":        "Kohima-Khonoma road is 20 km of tight switchbacks through pine and rhododendron — slow, scenic, no real fuel after Kohima city. The Dimapur-Kohima approach (74 km) is the bigger problem: poor surface, 3-5 hr drive on what should be 1.5. Royal Enfield rentals from Kohima (Wheels of Nagaland, ~₹1500/day).",
+      "photographer": "Terraced paddy fields at golden hour from the village viewpoint — Oct-Nov harvest gold is the iconic shot. Misty pre-dawn from Khonoma fort site. Hornbill Festival (Dec 1-10) at Kisama for tribal portraits — but request consent every single time, the Angami council is strict on this. Khonoma elders should never be photographed without prior introduction by your homestay host.",
+      "nomad":        "Wi-Fi exists at Alder Retreat and Morung Lodge but is 3-8 Mbps and weather-dependent. Jio/Airtel 4G is 1-3 bars; BSNL is the local default. Treat Khonoma as 2-3 night digital-detox; use Kohima for sustained work. Power cuts of 1-3 hours are routine.",
+      "solo_female":  "Among the safest solo-female destinations in India — Angami village is tightly self-policed and the homestay network is welcoming. Inner Line Permit required for non-NE Indians and foreigners (apply online via Nagaland tourism or at Dimapur). Walk the village freely; modest dress is the cultural norm. Avoid the road back to Kohima after sunset alone.",
+      "elderly":      "Elevation 1,600 m — borderline mild altitude, no acclimatisation needed. Cobbled village paths are steep and uneven — strenuous for limited-mobility travelers. No hospital in Khonoma; Naga Hospital Authority Kohima (NHAK) is 1 hr away. Cold Dec-Feb (4-12°C) — pack layers."
+    }
+  }
+]
