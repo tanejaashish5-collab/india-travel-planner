@@ -1,26 +1,30 @@
 "use client";
 
-// BoardCanvas — center pane of the Trip Board.
+// BoardCanvas — design-matched.
+// Mirrors nakshiq-design-system/project/trip-board/TripBoard.jsx main column.
 //
-// Phase 2: replaces the simple stop list with the YearBand + StopCard grid.
-//   - Desktop (≥ md): YearBand visible above StopCard list. Drag pills to
-//     reschedule; cards reflect the new dates instantly.
-//   - Mobile (< md): YearBand hidden; a month picker stands in. StopCards
-//     stack as before. Drag-on-touch is out of scope for Phase 2.
+// Vertical layout:
+//   1. Top toolbar — SidebarPill (left) + "Library" label when collapsed +
+//      Start over button | Print + Share + SidebarPill (right).
+//   2. Conflict bar — only when issues > 0 (rose tint, ⚠ + count + Review).
+//   3. Trip header — eyebrow (stops/days/range), List/Map toggle (List only
+//      for now; Map view is Phase 5), contentEditable h1, year band below
+//      with caption "Drag a stop to shift dates · pins = festivals · hatched
+//      bands = pass-open windows".
+//   4. Body — list of StopCards (or empty state).
+//   5. Sticky action footer — Generate itinerary CTA + italic copy.
 //
-// State + persistence routes through the parent useTripBoard hook (lib/trip-storage).
+// Phase 4 (AI Modal) and Phase 5 (Map view + Share menu) hook into the
+// existing buttons via props. Print is window.print() — no setup needed.
 
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import type { TripStateV2 } from "@/lib/trip-storage";
-import { ColdStartReplayLink } from "./cold-start-replay-link";
+import type { LogisticsRow } from "@/lib/cost-aggregator";
+import { scan, type Conflict } from "@/lib/permit-checker";
 import { YearBand } from "./year-band";
 import { StopCard } from "./stop-card";
-import { useLocale } from "next-intl";
-
-const MONTHS_LONG = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-// First-of-month day-of-year (non-leap). Used by mobile month-picker fallback
-// to update startDay when a stop's month is changed without a year band.
-const MONTH_STARTS = [1, 32, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335, 366];
+import { SidebarPill } from "./sidebar-pill";
+import { doyLabel } from "./atoms";
 
 type DestLite = {
   id: string;
@@ -32,18 +36,44 @@ type DestLite = {
   festivals?: { name: string; month: number | null }[] | null;
 };
 
+const MONTH_STARTS = [1, 32, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335, 366];
+
 export function BoardCanvas({
   state,
   setState,
   destinations,
+  rowsByDest,
+  onPermitClick,
+  leftCollapsed,
+  rightCollapsed,
+  onToggleLeft,
+  onToggleRight,
+  onStartOver,
 }: {
   state: TripStateV2;
   setState: (updater: (prev: TripStateV2) => TripStateV2) => void;
   destinations: DestLite[];
+  rowsByDest: Record<string, LogisticsRow>;
+  onPermitClick: (destId: string, destName: string) => void;
+  leftCollapsed: boolean;
+  rightCollapsed: boolean;
+  onToggleLeft: () => void;
+  onToggleRight: () => void;
+  onStartOver: () => void;
 }) {
-  const locale = useLocale();
-  const destMap = new Map(destinations.map((d) => [d.id, d]));
+  const destMap = useMemo(() => new Map(destinations.map((d) => [d.id, d])), [destinations]);
   const [selectedStopIdx, setSelectedStopIdx] = useState<number | null>(null);
+
+  const conflictsByDest = useMemo(() => {
+    const all: Conflict[] = scan(state.stops, rowsByDest);
+    const grouped: Record<string, Conflict[]> = {};
+    for (const c of all) {
+      (grouped[c.destinationId] ??= []).push(c);
+    }
+    return { all, grouped };
+  }, [state.stops, rowsByDest]);
+
+  // ---- mutation handlers ----------------------------------------------------
 
   function moveStop(idx: number, dir: -1 | 1) {
     setState((prev) => {
@@ -81,126 +111,275 @@ export function BoardCanvas({
     setState((prev) => ({ ...prev, name }));
   }
 
-  // Mobile fallback: when the month picker changes, shift every stop by the
-  // delta so their relative spacing is preserved. Beats blowing away the user's
-  // current dates just because they picked a new month.
-  function setMonth(month: number) {
-    setState((prev) => {
-      const newFirstDoy = MONTH_STARTS[month - 1];
-      const earliest = prev.stops.length > 0 ? Math.min(...prev.stops.map((s) => s.startDay)) : newFirstDoy;
-      const delta = newFirstDoy - earliest;
-      const stops = prev.stops.map((s) => {
-        const shifted = s.startDay + delta;
-        const maxStart = Math.max(1, 365 - s.days + 1);
-        return { ...s, startDay: Math.max(1, Math.min(maxStart, shifted)) };
-      });
-      return { ...prev, month, stops };
-    });
-  }
+  // ---- derived display values ----------------------------------------------
 
-  function setTravelers(travelers: number) {
-    if (!Number.isFinite(travelers) || travelers < 1) return;
-    setState((prev) => ({ ...prev, travelers }));
-  }
+  const totalDays = state.stops.reduce((sum, s) => sum + (s.days || 0), 0);
+  const dateRange =
+    state.stops.length > 0
+      ? `${doyLabel(Math.min(...state.stops.map((s) => s.startDay)))} – ${doyLabel(
+          Math.max(...state.stops.map((s) => s.startDay + Math.max(1, s.days) - 1)),
+        )}`
+      : "—";
+  const conflictCount = conflictsByDest.all.length;
 
   return (
-    <section className="flex h-full flex-col bg-background" data-trip-canvas>
-      {/* Header strip */}
-      <div className="flex flex-wrap items-center justify-between gap-3 border-b border-border px-6 py-4">
-        <div className="min-w-0 flex-1">
-          <input
-            type="text"
-            value={state.name}
-            onChange={(e) => setName(e.target.value)}
-            placeholder="Name your trip"
-            className="w-full bg-transparent font-serif text-2xl font-medium text-foreground placeholder:text-muted-foreground focus:outline-none"
-          />
-          <p className="mt-1 text-[11px] text-muted-foreground">
-            {state.stops.length} stop{state.stops.length === 1 ? "" : "s"} · {totalDays(state)} days · {state.travelers} traveller{state.travelers === 1 ? "" : "s"}
-          </p>
-        </div>
-        <div className="flex items-center gap-2">
-          {/* Month picker — visible on mobile (where the year band hides) and
-              kept on desktop as a quick-shift control. The setMonth handler
-              preserves relative stop spacing rather than blowing away dates. */}
-          <select
-            value={state.month}
-            onChange={(e) => setMonth(Number(e.target.value))}
-            className="border border-border bg-background px-3 py-1.5 font-mono text-xs"
-            aria-label="Trip month"
+    <main
+      data-trip-canvas
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        height: "100%",
+        background: "var(--paper)",
+      }}
+    >
+      {/* Top toolbar */}
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+          padding: "8px 14px",
+          borderBottom: "1px solid var(--rule)",
+          background: "var(--paper)",
+        }}
+      >
+        <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
+          <SidebarPill side="left" collapsed={leftCollapsed} onClick={onToggleLeft} />
+          <span style={{ fontSize: 11, color: "var(--ink-3)", marginLeft: 4 }}>
+            {leftCollapsed ? "Library" : ""}
+          </span>
+          <button
+            type="button"
+            className="nq-btn nq-btn-ghost"
+            onClick={onStartOver}
+            style={{ padding: "5px 10px", fontSize: 11, marginLeft: 8 }}
+            title="Back to start screen — pick by month / profile / theme / curated"
           >
-            {MONTHS_LONG.map((m, i) => (
-              <option key={m} value={i + 1}>
-                {m}
-              </option>
-            ))}
-          </select>
-          <input
-            type="number"
-            min={1}
-            max={20}
-            value={state.travelers}
-            onChange={(e) => setTravelers(Number(e.target.value))}
-            className="w-16 border border-border bg-background px-2 py-1.5 font-mono text-xs"
-            aria-label="Travellers"
-          />
-          <ColdStartReplayLink
-            locale={locale}
-            label="Start over"
-            className="border border-border px-3 py-1.5 font-mono text-[10.5px] uppercase tracking-[0.16em] text-muted-foreground hover:border-foreground hover:text-foreground"
-          />
+            ← Start over
+          </button>
+        </div>
+        <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
+          <button
+            type="button"
+            className="nq-btn nq-btn-ghost"
+            onClick={() => window.print()}
+            style={{ padding: "5px 10px", fontSize: 11 }}
+          >
+            Print
+          </button>
+          <button
+            type="button"
+            className="nq-btn nq-btn-ghost"
+            onClick={() => alert("Share / Export — coming in Phase 5")}
+            style={{ padding: "5px 10px", fontSize: 11 }}
+          >
+            Share · Export
+          </button>
+          <SidebarPill side="right" collapsed={rightCollapsed} onClick={onToggleRight} />
         </div>
       </div>
 
-      {/* YearBand — desktop only. Hidden on < md so the touch-no-drag UX isn't
-          confusing on phones; the month picker above stands in for date
-          control. data-yearband marker is the verify-after-deploy gate. */}
-      {state.stops.length > 0 && (
-        <div className="hidden border-b border-border bg-card/30 px-6 py-4 md:block">
-          <YearBand
-            state={state}
-            setState={setState}
-            destinations={destinations}
-            selectedStopIdx={selectedStopIdx}
-            onSelectStop={setSelectedStopIdx}
-          />
+      {/* Conflict bar — only when issues > 0 */}
+      {conflictCount > 0 && (
+        <div
+          style={{
+            background: "rgba(217,96,80,.10)",
+            borderBottom: "1px solid rgba(217,96,80,.3)",
+            padding: "8px 26px",
+            fontSize: 11.5,
+            color: "var(--score-1)",
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+          }}
+        >
+          <span>
+            ⚠ {conflictCount} {conflictCount === 1 ? "issue" : "issues"} on this trip — permits,
+            closed passes, or festival overlaps
+          </span>
+          {rightCollapsed && (
+            <button
+              type="button"
+              className="nq-btn nq-btn-ghost"
+              onClick={onToggleRight}
+              style={{
+                padding: "2px 8px",
+                fontSize: 10.5,
+                color: "var(--score-1)",
+                borderColor: "rgba(217,96,80,.4)",
+              }}
+            >
+              Review →
+            </button>
+          )}
         </div>
       )}
 
-      {/* Stop cards (or empty state) */}
-      <div className="flex-1 overflow-y-auto px-6 py-6">
+      {/* Trip header — editable name + List/Map (Map deferred to Phase 5) */}
+      <header style={{ padding: "18px 26px 12px", borderBottom: "1px solid var(--rule-2)" }}>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "baseline",
+            marginBottom: 4,
+          }}
+        >
+          <div className="nq-eyebrow">
+            My Trip · {state.stops.length} stops · {totalDays} {totalDays === 1 ? "night" : "nights"} · {dateRange}
+          </div>
+          <div style={{ display: "flex", gap: 4 }}>
+            <button
+              type="button"
+              className="nq-btn nq-btn-ghost"
+              style={{ background: "var(--paper-3)", borderColor: "var(--ink-3)" }}
+            >
+              List
+            </button>
+            <button
+              type="button"
+              className="nq-btn nq-btn-ghost"
+              title="Map view ships in Phase 5"
+              disabled
+            >
+              Map
+            </button>
+          </div>
+        </div>
+        <input
+          type="text"
+          value={state.name}
+          onChange={(e) => setName(e.target.value)}
+          placeholder="Name your trip"
+          style={{
+            all: "unset",
+            display: "block",
+            width: "100%",
+            fontSize: 32,
+            margin: "0 0 12px 0",
+            fontFamily: "var(--serif)",
+            fontWeight: 500,
+            letterSpacing: "-0.01em",
+            lineHeight: 1.05,
+            color: "var(--ink)",
+          }}
+          aria-label="Trip name"
+        />
+
+        {/* Year band caption + band */}
+        <div>
+          <div className="nq-eyebrow" style={{ marginBottom: 4, color: "var(--ink-3)" }}>
+            Drag a stop to shift dates · pins = festivals · hatched bands = pass-open windows
+          </div>
+          {state.stops.length > 0 ? (
+            <YearBand
+              state={state}
+              setState={setState}
+              destinations={destinations}
+              selectedStopIdx={selectedStopIdx}
+              onSelectStop={setSelectedStopIdx}
+            />
+          ) : (
+            <div
+              style={{
+                padding: 24,
+                fontSize: 12,
+                color: "var(--ink-3)",
+                fontFamily: "var(--serif)",
+                fontStyle: "italic",
+              }}
+            >
+              Year band activates when you add your first stop.
+            </div>
+          )}
+        </div>
+      </header>
+
+      {/* Body — stop cards */}
+      <div style={{ flex: 1, overflowY: "auto", minHeight: 0 }}>
         {state.stops.length === 0 ? (
-          <div className="flex h-full flex-col items-center justify-center gap-3">
-            <p className="font-serif text-lg text-muted-foreground">No stops yet.</p>
-            <p className="text-xs text-muted-foreground">
-              Pick destinations from the library on the left, or hit &ldquo;Start over&rdquo; to reopen the wizard.
+          <div style={{ padding: 60, textAlign: "center", color: "var(--ink-3)" }}>
+            <p
+              style={{
+                fontFamily: "var(--serif)",
+                fontSize: 18,
+                fontStyle: "italic",
+                margin: "0 0 8px 0",
+              }}
+            >
+              An empty board, but not a cold start.
             </p>
+            <p style={{ margin: 0, fontSize: 13 }}>Pick from the Library on the left.</p>
           </div>
         ) : (
-          <ul className="space-y-3" data-stops-list>
-            {state.stops.map((stop, idx) => (
-              <StopCard
-                key={`${stop.destinationId}-${idx}`}
-                stop={stop}
-                idx={idx}
-                totalStops={state.stops.length}
-                dest={destMap.get(stop.destinationId)}
-                isSelected={selectedStopIdx === idx}
-                onSelect={() => setSelectedStopIdx(idx)}
-                onMoveUp={() => moveStop(idx, -1)}
-                onMoveDown={() => moveStop(idx, 1)}
-                onRemove={() => removeStop(stop.destinationId)}
-                onSetDays={(days) => setDays(stop.destinationId, days)}
-                onSetNotes={(notes) => setNotes(stop.destinationId, notes)}
-              />
-            ))}
-          </ul>
+          <div data-stops-list>
+            {state.stops.map((stop, idx) => {
+              const dest = destMap.get(stop.destinationId);
+              return (
+                <StopCard
+                  key={`${stop.destinationId}-${idx}`}
+                  stop={stop}
+                  idx={idx}
+                  totalStops={state.stops.length}
+                  dest={dest}
+                  conflicts={conflictsByDest.grouped[stop.destinationId] ?? []}
+                  isSelected={selectedStopIdx === idx}
+                  onSelect={() => setSelectedStopIdx(idx)}
+                  onMoveUp={() => moveStop(idx, -1)}
+                  onMoveDown={() => moveStop(idx, 1)}
+                  onRemove={() => removeStop(stop.destinationId)}
+                  onSetDays={(days) => setDays(stop.destinationId, days)}
+                  onSetNotes={(notes) => setNotes(stop.destinationId, notes)}
+                  onPermitClick={() =>
+                    onPermitClick(stop.destinationId, dest?.name ?? stop.destinationId)
+                  }
+                />
+              );
+            })}
+          </div>
         )}
       </div>
-    </section>
+
+      {/* Sticky footer — Generate itinerary CTA */}
+      <div
+        style={{
+          position: "sticky",
+          bottom: 0,
+          padding: "14px 26px",
+          borderTop: "1px solid var(--rule-2)",
+          background: "rgba(0,0,0,.92)",
+          backdropFilter: "blur(6px)",
+          WebkitBackdropFilter: "blur(6px)",
+          display: "flex",
+          gap: 10,
+          alignItems: "center",
+          flexWrap: "wrap",
+        }}
+      >
+        <button
+          type="button"
+          className="nq-btn nq-btn-primary"
+          onClick={() => alert("AI itinerary modal — coming in Phase 4")}
+        >
+          Generate itinerary →
+        </button>
+        <span
+          style={{
+            fontSize: 11.5,
+            color: "var(--ink-3)",
+            maxWidth: 460,
+            fontFamily: "var(--serif)",
+            fontStyle: "italic",
+          }}
+        >
+          Builds a day-by-day plan from <em>your</em> stops, dates, ages, mobility, vehicle, risk,
+          pace, tier — not a generic article.
+        </span>
+      </div>
+    </main>
   );
 }
 
-function totalDays(state: TripStateV2): number {
-  return state.stops.reduce((sum, s) => sum + (s.days || 0), 0);
-}
+// Re-export so other files importing TripStateV2 from board-canvas keep working.
+// (atoms re-exports MONTH_STARTS for the no-band fallback, so leaving here.)
+export { MONTH_STARTS };

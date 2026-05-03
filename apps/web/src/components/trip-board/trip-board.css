@@ -1,0 +1,150 @@
+/* Trip Board scoped design tokens — port of
+ * nakshiq-design-system/project/trip-board/tokens.dark.css.
+ *
+ * Scoped under `.nakshiq-trip-board` so the rest of the (light-themed) site
+ * stays untouched. Only /trip and its sub-routes apply this namespace.
+ *
+ * Why a CSS file (not Tailwind config): the design uses ~20 named CSS vars
+ * that are reused across .nq-* utility classes. Mirroring it 1:1 with
+ * Tailwind would require either editing the global theme (breaks the rest
+ * of the site) or duplicating every var as a one-off Tailwind value. A
+ * scoped stylesheet is half the code and matches the upstream design file.
+ *
+ * Source: nakshiq-design-system/project/trip-board/tokens.dark.css.
+ */
+
+/* Google Fonts loaded via next/font in layout.tsx would be cleaner, but the
+ * existing layout has Geist + Fraunces. Adding Source Serif 4 + Inter Tight
+ * for one route's worth of UI is overkill until Phase 6's brand bible
+ * decision finalizes. For now, fall back to the system stack — the visual
+ * difference vs. Source Serif 4 is small, and the brand bible audit will
+ * decide whether to swap globally. */
+
+.nakshiq-trip-board {
+  --paper: #000000;
+  --paper-2: #0a0a0a;
+  --paper-3: #161513;
+  --ink: #f3ece1;
+  --ink-2: #b8aea0;
+  --ink-3: #7a7163;
+  --rule: #1a1814;
+  --rule-2: #2a2620;
+  --accent: #d36843;
+  --accent-soft: #3a221b;
+  --accent-ink: #f3ece1;
+  --score-5: #79b87a;
+  --score-4: #a3c47a;
+  --score-3: #d8b660;
+  --score-2: #d68a4a;
+  --score-1: #d96050;
+  --score-0: #5a5346;
+  --serif: "Source Serif 4", "Source Serif Pro", Georgia, "Times New Roman", serif;
+  --sans: "Inter Tight", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  font-family: var(--sans);
+  color: var(--ink);
+  background: var(--paper);
+  -webkit-font-smoothing: antialiased;
+}
+
+.nakshiq-trip-board * { box-sizing: border-box; }
+.nakshiq-trip-board ::selection { background: var(--accent); color: var(--paper); }
+
+/* Scrollbars */
+.nakshiq-trip-board *::-webkit-scrollbar { width: 10px; height: 10px; }
+.nakshiq-trip-board *::-webkit-scrollbar-track { background: transparent; }
+.nakshiq-trip-board *::-webkit-scrollbar-thumb { background: #3b3225; border-radius: 10px; border: 2px solid var(--paper); }
+.nakshiq-trip-board *::-webkit-scrollbar-thumb:hover { background: #50432f; }
+
+/* Score chips */
+.nakshiq-trip-board .nq-score { display: inline-flex; align-items: center; gap: 4px; font-family: var(--sans); font-weight: 600; font-size: 11px; letter-spacing: .02em; padding: 3px 7px; border-radius: 3px; line-height: 1; white-space: nowrap; }
+.nakshiq-trip-board .nq-score-5 { background: rgba(121, 184, 122, 0.15); color: var(--score-5); border: 1px solid rgba(121, 184, 122, 0.35); }
+.nakshiq-trip-board .nq-score-4 { background: rgba(163, 196, 122, 0.15); color: var(--score-4); border: 1px solid rgba(163, 196, 122, 0.35); }
+.nakshiq-trip-board .nq-score-3 { background: rgba(216, 182, 96, 0.15); color: var(--score-3); border: 1px solid rgba(216, 182, 96, 0.35); }
+.nakshiq-trip-board .nq-score-2 { background: rgba(214, 138, 74, 0.15); color: var(--score-2); border: 1px solid rgba(214, 138, 74, 0.35); }
+.nakshiq-trip-board .nq-score-1 { background: rgba(217, 96, 80, 0.15); color: var(--score-1); border: 1px solid rgba(217, 96, 80, 0.35); }
+.nakshiq-trip-board .nq-score-0 { background: rgba(90, 83, 70, 0.15); color: var(--score-0); border: 1px solid rgba(90, 83, 70, 0.35); }
+
+/* Month strip — 12-cell grid */
+.nakshiq-trip-board .nq-months { display: grid; grid-template-columns: repeat(12, 1fr); gap: 2px; font-family: var(--mono); font-size: 10px; }
+.nakshiq-trip-board .nq-months > span { padding: 4px 0; text-align: center; border-radius: 2px; font-weight: 600; }
+
+/* Status verbs */
+.nakshiq-trip-board .nq-verb { font-family: var(--sans); font-weight: 700; letter-spacing: .08em; font-size: 10px; text-transform: uppercase; }
+.nakshiq-trip-board .nq-verb-go { color: var(--score-5); }
+.nakshiq-trip-board .nq-verb-skip { color: var(--score-1); }
+.nakshiq-trip-board .nq-verb-marginal { color: var(--score-2); }
+
+/* Editorial type */
+.nakshiq-trip-board .nq-eyebrow { font-family: var(--sans); text-transform: uppercase; letter-spacing: .14em; font-size: 10px; font-weight: 600; color: var(--ink-3); }
+.nakshiq-trip-board .nq-h { font-family: var(--serif); font-weight: 500; letter-spacing: -0.01em; line-height: 1.05; color: var(--ink); }
+.nakshiq-trip-board .nq-italic { font-family: var(--serif); font-style: italic; color: var(--ink-2); }
+
+/* Label : value */
+.nakshiq-trip-board .nq-kv { display: grid; grid-template-columns: 110px 1fr; gap: 8px 14px; font-size: 12.5px; line-height: 1.45; }
+.nakshiq-trip-board .nq-kv dt { color: var(--ink-3); font-weight: 500; }
+.nakshiq-trip-board .nq-kv dd { margin: 0; color: var(--ink-2); }
+
+.nakshiq-trip-board .nq-rule { border: 0; border-top: 1px solid var(--rule); margin: 0; }
+.nakshiq-trip-board .nq-rule-thick { border: 0; border-top: 1.5px solid var(--ink); margin: 0; opacity: 0.5; }
+
+.nakshiq-trip-board button { font-family: inherit; cursor: pointer; }
+
+/* Glyph rail — same vocabulary as destination pages */
+.nakshiq-trip-board .nq-glyph-rail { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--rule-2); border: 1px solid var(--rule-2); border-radius: 4px; overflow: hidden; }
+.nakshiq-trip-board .nq-glyph { background: var(--paper-2); padding: 10px 12px; }
+.nakshiq-trip-board .nq-glyph-icon { font-size: 16px; line-height: 1; margin-bottom: 6px; opacity: 0.85; }
+.nakshiq-trip-board .nq-glyph-label { font-family: var(--sans); text-transform: uppercase; letter-spacing: .12em; font-size: 9px; color: var(--ink-3); font-weight: 600; }
+.nakshiq-trip-board .nq-glyph-value { font-family: var(--sans); font-size: 11.5px; color: var(--ink); line-height: 1.35; margin-top: 3px; }
+
+/* Editorial alert callout */
+.nakshiq-trip-board .nq-alert { background: var(--accent-soft); border: 1px solid rgba(211, 104, 67, 0.3); border-left: 3px solid var(--accent); padding: 12px 14px; }
+.nakshiq-trip-board .nq-alert-eyebrow { font-family: var(--sans); text-transform: uppercase; letter-spacing: .14em; font-size: 9.5px; color: var(--accent); font-weight: 700; margin-bottom: 4px; }
+.nakshiq-trip-board .nq-alert h4 { margin: 0 0 4px 0; font-family: var(--serif); font-size: 15px; font-weight: 500; color: var(--ink); }
+.nakshiq-trip-board .nq-alert p { margin: 0; font-size: 12px; color: var(--ink-2); line-height: 1.5; }
+
+/* Buttons */
+.nakshiq-trip-board .nq-btn { display: inline-flex; align-items: center; gap: 6px; padding: 7px 12px; font-size: 12px; font-weight: 500; border: 1px solid var(--rule-2); background: var(--paper-2); color: var(--ink); border-radius: 2px; cursor: pointer; transition: background .12s, border-color .12s, color .12s; font-family: inherit; }
+.nakshiq-trip-board .nq-btn:hover { background: var(--paper-3); border-color: var(--ink-3); }
+.nakshiq-trip-board .nq-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+.nakshiq-trip-board .nq-btn-primary { background: var(--accent); color: var(--paper); border-color: var(--accent); }
+.nakshiq-trip-board .nq-btn-primary:hover { background: #e07a55; border-color: #e07a55; color: var(--paper); }
+.nakshiq-trip-board .nq-btn-ghost { background: transparent; border-color: var(--rule-2); color: var(--ink-2); }
+.nakshiq-trip-board .nq-btn-ghost:hover { background: var(--paper-2); border-color: var(--ink-3); color: var(--ink); }
+
+.nakshiq-trip-board input.nq-input,
+.nakshiq-trip-board select.nq-input,
+.nakshiq-trip-board textarea.nq-input {
+  font-family: inherit; padding: 8px 10px; border: 1px solid var(--rule-2); background: var(--paper-2); border-radius: 2px; font-size: 13px; color: var(--ink);
+}
+.nakshiq-trip-board input.nq-input::placeholder { color: var(--ink-3); }
+.nakshiq-trip-board input.nq-input:focus,
+.nakshiq-trip-board select.nq-input:focus,
+.nakshiq-trip-board textarea.nq-input:focus { outline: none; border-color: var(--accent); }
+
+/* Tags / pills */
+.nakshiq-trip-board .nq-tag { display: inline-block; font-size: 10.5px; padding: 2px 7px; border: 1px solid var(--rule-2); border-radius: 100px; color: var(--ink-3); letter-spacing: .02em; }
+
+/* Modal */
+.nakshiq-trip-board .nq-modal-bg,
+.nakshiq-trip-board-modal-bg {
+  position: fixed; inset: 0; background: rgba(8, 6, 4, 0.78);
+  -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px);
+  z-index: 50; display: flex; align-items: center; justify-content: center; padding: 24px;
+}
+.nakshiq-trip-board .nq-modal,
+.nakshiq-trip-board-modal {
+  background: var(--paper-2); border: 1px solid var(--rule-2); max-width: 640px; width: 100%;
+  max-height: 88vh; display: flex; flex-direction: column; color: var(--ink);
+  font-family: var(--sans);
+}
+.nakshiq-trip-board .nq-modal-head { padding: 22px 28px 14px; border-bottom: 1px solid var(--rule); }
+.nakshiq-trip-board .nq-modal-body { padding: 22px 28px; overflow: auto; }
+.nakshiq-trip-board .nq-modal-foot { padding: 16px 28px; border-top: 1px solid var(--rule); display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+
+/* Stop card flash highlight (used by ConflictsPanel scroll-to) */
+.nakshiq-trip-board .nq-flash {
+  outline: 1.5px solid var(--accent);
+  outline-offset: 2px;
+  transition: outline-color 1.6s ease-out;
+}

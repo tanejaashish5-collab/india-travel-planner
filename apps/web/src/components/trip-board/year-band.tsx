@@ -1,27 +1,23 @@
 "use client";
 
-// YearBand — Phase 2.
+// YearBand — design-matched.
+// Replaces the bare 365-day SVG with the editorial timeline from
+// nakshiq-design-system/project/trip-board/TripBoard.jsx YearBand.
 //
-// 365-day SVG band that lets the user drag stop pills along the calendar.
-// Replaces the order-only stop list; closes PDF Failure #2 (temporal rigidity).
+// Layout (top → bottom):
+//   1. Month grid header — Jan 26 / Feb 26 / … in 9.5px tracked-out caps,
+//      column widths weighted by month days (31/28/31/…).
+//   2. Pass open band — height 14px, hatched green pattern with green
+//      left/right borders per pass.
+//   3. Festival pins row — height 22px, terracotta pins with emoji.
+//   4. Stop pills track — one row per stop, draggable; label sits beside the
+//      bar (flips left if it would overflow the right edge).
+//   5. "now" indicator — vertical accent line at current doy.
 //
-// Layout (desktop):
-//   ┌─ JAN  FEB  MAR  APR  MAY  JUN  JUL  AUG  SEP  OCT  NOV  DEC ─┐  month header
-//   │ ▒▒▒▒▒▒▒▒▒│             │▒▒▒▒▒▒▒▒▒                            │  pass hatched bands
-//   │      ●      ●          ●                                     │  festival pins
-//   │   ┌──[#01 Mechuka]──┐ ┌──[#02 Tawang]──┐                     │  draggable stop pills
-//   └─────────────────────────────────────────────────────────────┘
-//
-// Drag mechanics:
-//   - mousedown on pill → captures pointerOffsetX inside pill + svgRect
-//   - mousemove → x = clientX - svgRect.left - pointerOffsetX
-//                 startDay = clamp(round(x / dayWidth), 1, 365 - days)
-//                 setStopStartDay(idx, startDay)
-//   - mouseup / pointercancel → clears drag
-//
-// Mobile: the SVG is hidden (handled in board-canvas via media query); a
-// month picker stands in. Touch-drag would need pointer events + scroll
-// suppression — out of scope for Phase 2 web-only round.
+// Drag math: pointer-capture + window-level move/up so drags survive cursor
+// leaving the SVG. 1180px design width is the reference; in production we
+// compute live bandWidth via getBoundingClientRect so the grid stays
+// accurate at any container width.
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type { TripStateV2, TripStop } from "@/lib/trip-storage";
@@ -31,25 +27,52 @@ type DestLite = {
   id: string;
   name: string;
   state: { name: string } | null;
+  destination_months: { month: number; score: number }[] | null;
   festivals?: { name: string; month: number | null }[] | null;
 };
 
-const MONTH_LABELS = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
-// First-of-month day-of-year (non-leap). Index 0 = Jan 1 (doy 1).
-// 13 entries so MONTH_STARTS[12] = 366 sentinel for end of December.
+const MONTH_LABELS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+const MONTH_DAYS = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 const MONTH_STARTS = [1, 32, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335, 366];
 
+// Festival emoji from canonical names — fallback "🎉".
+const FEST_EMOJI: Record<string, string> = {
+  holi: "🌈", diwali: "🪔", deepavali: "🪔",
+  losar: "🏔", hornbill: "🪶", ziro: "🎶", "ziro music": "🎶",
+  pushkar: "🐪", kumbh: "🕉", sangai: "🦌",
+  onam: "🌺", "rann utsav": "🐫", "magh bihu": "🌾",
+  "makar sankranti": "🪁", "ladakh": "🏔",
+  losoong: "🏔", saga: "🕉", "buddha purnima": "🪷",
+};
+
+function festEmoji(name: string): string {
+  const k = name.toLowerCase();
+  for (const key of Object.keys(FEST_EMOJI)) {
+    if (k.includes(key)) return FEST_EMOJI[key];
+  }
+  return "🎉";
+}
+
 function monthCenterDoy(month: number): number {
-  // 1-12 → middle day of that month, used for festival pin placement.
-  const start = MONTH_STARTS[month - 1];
-  const end = MONTH_STARTS[month];
-  return Math.round((start + end) / 2);
+  return MONTH_STARTS[month - 1] + Math.round(MONTH_DAYS[month - 1] / 2);
+}
+
+function doyToMonth(doy: number): number {
+  for (let m = 1; m <= 12; m++) {
+    if (doy < MONTH_STARTS[m]) return m;
+  }
+  return 12;
+}
+
+function doyLabel(doy: number): string {
+  const month = doyToMonth(doy);
+  const day = doy - MONTH_STARTS[month - 1] + 1;
+  return `${MONTH_LABELS[month - 1]} ${day}`;
 }
 
 type DragState = {
   stopIdx: number;
-  pointerOffsetPx: number;
-  daysSpan: number;
+  pointerOffsetDays: number;
 };
 
 export function YearBand({
@@ -65,32 +88,26 @@ export function YearBand({
   selectedStopIdx: number | null;
   onSelectStop: (idx: number | null) => void;
 }) {
-  const svgRef = useRef<SVGSVGElement | null>(null);
-  const [dragState, setDragState] = useState<DragState | null>(null);
-  // Tracks the current band width in CSS pixels; recomputed on resize so the
-  // doy → x mapping stays accurate. The viewBox is doy-space (0..365) which
-  // means SVG handles the scaling — we only need px width for drag math.
-  const [bandWidthPx, setBandWidthPx] = useState<number>(0);
+  const bandRef = useRef<HTMLDivElement | null>(null);
+  const [drag, setDrag] = useState<DragState | null>(null);
+  const [bandWidth, setBandWidth] = useState<number>(1180);
 
-  const destMap = useMemo(() => new Map(destinations.map((d) => [d.id, d])), [destinations]);
-
-  // Resize observer keeps drag math in sync when the rail collapses or
-  // viewport changes. ResizeObserver beats window resize because it fires
-  // when CSS grid columns change too.
+  // ResizeObserver keeps drag math in sync as the rail collapses / viewport changes.
   useEffect(() => {
-    const el = svgRef.current;
+    const el = bandRef.current;
     if (!el) return;
     const ro = new ResizeObserver((entries) => {
-      const w = entries[0]?.contentRect.width ?? 0;
-      setBandWidthPx(w);
+      const w = entries[0]?.contentRect.width ?? 1180;
+      setBandWidth(w);
     });
     ro.observe(el);
     return () => ro.disconnect();
   }, []);
 
-  // Build pass overlays for the destinations currently in the trip. Each pass
-  // is shown once even if multiple stops touch it — the alert text identifies
-  // which stop.
+  const dayW = bandWidth / 365;
+  const destMap = useMemo(() => new Map(destinations.map((d) => [d.id, d])), [destinations]);
+
+  // Pass overlays — collapsed to one bar per pass.
   const passOverlays = useMemo(() => {
     const seen = new Set<string>();
     const out: { slug: string; name: string; openDoy: number; closeDoy: number }[] = [];
@@ -105,300 +122,287 @@ export function YearBand({
     return out;
   }, [state.stops]);
 
-  // Festival pins: collapse to one pin per (destination, month) so a dest
-  // with 4 festivals in March doesn't crowd the band.
+  // Festival pins — one per (dest, month).
   const festivalPins = useMemo(() => {
-    const pins: { doy: number; destName: string; festivals: string[] }[] = [];
-    const byMonth = new Map<string, { destName: string; festivals: string[] }>();
+    const pins: { doy: number; destName: string; festivalNames: string; emoji: string; firstName: string }[] = [];
+    const byKey = new Map<string, { destName: string; festivals: string[] }>();
     for (const stop of state.stops) {
       const dest = destMap.get(stop.destinationId);
       const festivals = dest?.festivals ?? [];
       for (const f of festivals) {
         if (f.month == null) continue;
         const key = `${stop.destinationId}-${f.month}`;
-        const existing = byMonth.get(key);
+        const existing = byKey.get(key);
         if (existing) {
           if (!existing.festivals.includes(f.name)) existing.festivals.push(f.name);
         } else {
-          byMonth.set(key, { destName: dest?.name ?? stop.destinationId, festivals: [f.name] });
+          byKey.set(key, { destName: dest?.name ?? stop.destinationId, festivals: [f.name] });
         }
       }
     }
-    for (const [key, val] of byMonth) {
+    for (const [key, val] of byKey) {
       const monthStr = key.split("-").pop() ?? "1";
       const month = parseInt(monthStr, 10);
-      pins.push({ doy: monthCenterDoy(month), destName: val.destName, festivals: val.festivals });
+      pins.push({
+        doy: monthCenterDoy(month),
+        destName: val.destName,
+        festivalNames: val.festivals.join(", "),
+        emoji: festEmoji(val.festivals[0]),
+        firstName: val.festivals[0],
+      });
     }
     return pins;
   }, [state.stops, destMap]);
 
   // ---- Drag handlers --------------------------------------------------------
-  // Math: 365 day-units span bandWidthPx pixels. So 1 day = bandWidthPx / 365.
-  // Stop pill width in days = stop.days; in px = stop.days * dayWidth.
-  // Pointer offset is the delta between pointer mousedown x and the pill's
-  // left edge, captured at drag start so the pill doesn't jump-snap.
 
-  const handlePointerDown = useCallback(
-    (e: React.PointerEvent<SVGRectElement>, stopIdx: number) => {
+  const onPillDown = useCallback(
+    (e: React.PointerEvent<HTMLDivElement>, stopIdx: number) => {
       e.preventDefault();
-      const rect = svgRef.current?.getBoundingClientRect();
+      const rect = bandRef.current?.getBoundingClientRect();
       if (!rect || !state.stops[stopIdx]) return;
-      const dayWidth = rect.width / 365;
-      const stopXLeft = (state.stops[stopIdx].startDay - 1) * dayWidth;
-      const pointerXInBand = e.clientX - rect.left;
-      const offsetPx = pointerXInBand - stopXLeft;
-      setDragState({
-        stopIdx,
-        pointerOffsetPx: offsetPx,
-        daysSpan: state.stops[stopIdx].days,
-      });
+      const mouseDay = (e.clientX - rect.left) / dayW;
+      const offsetDays = mouseDay - (state.stops[stopIdx].startDay - 1);
+      setDrag({ stopIdx, pointerOffsetDays: offsetDays });
       onSelectStop(stopIdx);
-      // Capture so we keep getting moves even if pointer leaves the rect.
-      (e.currentTarget as Element).setPointerCapture(e.pointerId);
+      (e.currentTarget as HTMLElement).setPointerCapture(e.pointerId);
     },
-    [state.stops, onSelectStop]
+    [dayW, state.stops, onSelectStop],
   );
 
-  // Window-level pointermove + pointerup so drags survive cursor leaving the
-  // SVG. The pointer-capture in handlePointerDown is belt-and-braces — most
-  // browsers honour it but window listeners are the safety net.
   useEffect(() => {
-    if (!dragState) return;
-    const handleMove = (e: PointerEvent) => {
-      const rect = svgRef.current?.getBoundingClientRect();
+    if (!drag) return;
+    const onMove = (e: PointerEvent) => {
+      const rect = bandRef.current?.getBoundingClientRect();
       if (!rect) return;
-      const dayWidth = rect.width / 365;
-      const pointerXInBand = e.clientX - rect.left;
-      const newLeftPx = pointerXInBand - dragState.pointerOffsetPx;
-      const rawStartDay = Math.round(newLeftPx / dayWidth) + 1;
-      const maxStart = Math.max(1, 365 - dragState.daysSpan + 1);
-      const clamped = Math.max(1, Math.min(maxStart, rawStartDay));
+      const mouseDay = (e.clientX - rect.left) / rect.width * 365;
       setState((prev) => {
         const stops = prev.stops.slice();
-        const cur = stops[dragState.stopIdx];
-        if (!cur || cur.startDay === clamped) return prev;
-        stops[dragState.stopIdx] = { ...cur, startDay: clamped };
-        // Keep month derived from earliest stop so legacy filters still work.
+        const cur = stops[drag.stopIdx];
+        if (!cur) return prev;
+        const newStart = Math.max(
+          1,
+          Math.min(365 - cur.days + 1, Math.round(mouseDay - drag.pointerOffsetDays) + 1),
+        );
+        if (cur.startDay === newStart) return prev;
+        stops[drag.stopIdx] = { ...cur, startDay: newStart };
         const earliest = stops.reduce((min, s) => Math.min(min, s.startDay), Infinity);
-        const newMonth = doyToMonth(earliest);
-        return { ...prev, stops, month: newMonth };
+        return { ...prev, stops, month: doyToMonth(earliest) };
       });
     };
-    const handleUp = () => setDragState(null);
-    window.addEventListener("pointermove", handleMove);
-    window.addEventListener("pointerup", handleUp);
-    window.addEventListener("pointercancel", handleUp);
+    const onUp = () => setDrag(null);
+    window.addEventListener("pointermove", onMove);
+    window.addEventListener("pointerup", onUp);
+    window.addEventListener("pointercancel", onUp);
     return () => {
-      window.removeEventListener("pointermove", handleMove);
-      window.removeEventListener("pointerup", handleUp);
-      window.removeEventListener("pointercancel", handleUp);
+      window.removeEventListener("pointermove", onMove);
+      window.removeEventListener("pointerup", onUp);
+      window.removeEventListener("pointercancel", onUp);
     };
-  }, [dragState, setState]);
+  }, [drag, setState]);
 
-  // ---- Render ---------------------------------------------------------------
-  // viewBox uses 365 day-units wide × 100 unit tall. SVG scales freely.
-
-  const ROW_TOP = 38;
-  const ROW_HEIGHT = 28;
+  const ROW_H = 28;
+  const STOP_TRACK_H = state.stops.length * (ROW_H + 4) + 8;
+  const todayDoy = dayOfYear(new Date());
 
   return (
-    <div className="select-none" data-yearband>
-      <svg
-        ref={svgRef}
-        viewBox="0 0 365 100"
-        preserveAspectRatio="none"
-        className="block h-[100px] w-full touch-none"
-        role="img"
-        aria-label="Trip year band — drag stops to reschedule"
-      >
-        <defs>
-          <pattern
-            id="pass-hatch"
-            width={2}
-            height={4}
-            patternUnits="userSpaceOnUse"
-            patternTransform="rotate(45)"
-          >
-            <rect width={2} height={4} fill="rgba(16, 185, 129, 0.18)" />
-            <line x1={0} y1={0} x2={0} y2={4} stroke="rgba(16, 185, 129, 0.5)" strokeWidth={0.5} />
-          </pattern>
-        </defs>
-
-        {/* Month grid header — alternating fill so months read at a glance. */}
-        {MONTH_LABELS.map((label, i) => {
-          const x = MONTH_STARTS[i] - 1;
-          const w = MONTH_STARTS[i + 1] - MONTH_STARTS[i];
-          const isAlt = i % 2 === 0;
-          return (
-            <g key={label}>
-              <rect
-                x={x}
-                y={0}
-                width={w}
-                height={20}
-                fill={isAlt ? "rgba(0,0,0,0.04)" : "transparent"}
-              />
-              <text
-                x={x + w / 2}
-                y={13}
-                fontSize={6}
-                textAnchor="middle"
-                fill="currentColor"
-                style={{ fontFamily: "var(--font-geist-mono, monospace)", letterSpacing: "0.16em" }}
-                className="text-muted-foreground"
-              >
-                {label}
-              </text>
-              <line
-                x1={x}
-                y1={20}
-                x2={x}
-                y2={100}
-                stroke="currentColor"
-                strokeOpacity={0.08}
-                strokeWidth={0.4}
-              />
-            </g>
-          );
-        })}
-        {/* Right edge */}
-        <line x1={365} y1={20} x2={365} y2={100} stroke="currentColor" strokeOpacity={0.08} strokeWidth={0.4} />
-
-        {/* Pass open windows — green hatched bands above the stop row. */}
-        {passOverlays.map((p) => {
-          const x = p.openDoy - 1;
-          const w = Math.max(1, p.closeDoy - p.openDoy + 1);
-          return (
-            <g key={p.slug}>
-              <rect
-                x={x}
-                y={22}
-                width={w}
-                height={12}
-                fill="url(#pass-hatch)"
-                opacity={0.9}
-              >
-                <title>{`${p.name} — open ${doyLabel(p.openDoy)} → ${doyLabel(p.closeDoy)}`}</title>
-              </rect>
-            </g>
-          );
-        })}
-
-        {/* Festival pins — small terracotta diamonds on month centers. */}
-        {festivalPins.map((pin, i) => (
-          <g key={`${pin.destName}-${pin.doy}-${i}`}>
-            <polygon
-              points={`${pin.doy - 1},${ROW_TOP - 4} ${pin.doy + 1},${ROW_TOP - 4} ${pin.doy},${ROW_TOP - 1}`}
-              fill="rgb(180, 83, 9)"
-            >
-              <title>{`${pin.destName}: ${pin.festivals.join(", ")}`}</title>
-            </polygon>
-          </g>
-        ))}
-
-        {/* Stop pills — draggable. Layered after overlays so pills are on top. */}
-        {state.stops.map((stop, idx) => {
-          const dest = destMap.get(stop.destinationId);
-          const x = stop.startDay - 1;
-          const w = Math.max(1, stop.days);
-          const isSelected = selectedStopIdx === idx;
-          const fill = isSelected ? "rgb(15, 23, 42)" : "rgb(30, 41, 59)";
-          return (
-            <g key={`${stop.destinationId}-${idx}`} style={{ cursor: dragState?.stopIdx === idx ? "grabbing" : "grab" }}>
-              <rect
-                x={x}
-                y={ROW_TOP}
-                width={w}
-                height={ROW_HEIGHT}
-                fill={fill}
-                stroke={isSelected ? "rgb(245, 158, 11)" : "rgba(255,255,255,0.12)"}
-                strokeWidth={isSelected ? 1.2 : 0.4}
-                rx={1.5}
-                onPointerDown={(e) => handlePointerDown(e, idx)}
-              >
-                <title>{`#${idx + 1} ${dest?.name ?? stop.destinationId} · ${stop.days} day${stop.days === 1 ? "" : "s"} · starts ${doyLabel(stop.startDay)}`}</title>
-              </rect>
-              {/* Pill label — only render if there's room (≥ 8 days wide). */}
-              {w >= 8 && (
-                <text
-                  x={x + 1.5}
-                  y={ROW_TOP + ROW_HEIGHT / 2 + 1.8}
-                  fontSize={5}
-                  fill="white"
-                  style={{ fontFamily: "var(--font-geist-mono, monospace)", pointerEvents: "none" }}
-                >
-                  #{String(idx + 1).padStart(2, "0")}
-                </text>
-              )}
-            </g>
-          );
-        })}
-
-        {/* Today marker — dashed vertical line at current doy. Helps the user
-            see "this is now" vs. their planned dates. */}
-        {(() => {
-          const todayDoy = dayOfYear(new Date());
-          return (
-            <line
-              x1={todayDoy}
-              y1={20}
-              x2={todayDoy}
-              y2={100}
-              stroke="rgb(220, 38, 38)"
-              strokeWidth={0.5}
-              strokeDasharray="1.5,1.5"
-              opacity={0.6}
-            >
-              <title>{`Today · ${doyLabel(todayDoy)}`}</title>
-            </line>
-          );
-        })()}
-      </svg>
-
-      {/* Legend — explains the three overlay types. Tracked-out caps to match
-          Tour v2.1 / brand bible mono treatment. */}
-      <div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1 px-1 font-mono text-[10px] uppercase tracking-[0.16em] text-muted-foreground">
-        <span className="flex items-center gap-1.5">
-          <span className="inline-block h-2 w-2 bg-slate-700" />
-          Stops
-        </span>
-        <span className="flex items-center gap-1.5">
-          <span
-            className="inline-block h-2 w-3"
+    <div ref={bandRef} style={{ position: "relative", userSelect: "none", width: "100%" }} data-yearband>
+      {/* Month grid header — column widths weighted by month days */}
+      <div style={{ display: "grid", gridTemplateColumns: MONTH_DAYS.map((d) => `${d}fr`).join(" ") }}>
+        {MONTH_LABELS.map((m, i) => (
+          <div
+            key={m}
             style={{
-              backgroundImage:
-                "repeating-linear-gradient(45deg, rgba(16,185,129,0.5) 0 1px, rgba(16,185,129,0.18) 1px 3px)",
+              borderLeft: i === 0 ? "none" : "1px solid var(--rule)",
+              padding: "6px 8px",
             }}
-          />
-          Pass open
-        </span>
-        <span className="flex items-center gap-1.5">
-          <span className="inline-block h-2 w-2 rotate-45 bg-amber-700" />
-          Festival
-        </span>
-        {bandWidthPx > 0 && (
-          <span className="ml-auto text-[10px] normal-case text-muted-foreground/70">
-            Drag pills to reschedule · scale 1d ≈ {(bandWidthPx / 365).toFixed(1)}px
-          </span>
-        )}
+          >
+            <div className="nq-eyebrow" style={{ fontSize: 9.5 }}>{m} 26</div>
+          </div>
+        ))}
+      </div>
+
+      {/* Pass open bands */}
+      <div
+        style={{
+          position: "relative",
+          height: 14,
+          borderTop: "1px solid var(--rule)",
+          borderBottom: "1px solid var(--rule)",
+          background: "rgba(121, 184, 122, 0.04)",
+        }}
+      >
+        {passOverlays.map((p) => {
+          const x = (p.openDoy - 1) * dayW;
+          const w = Math.max(2, (p.closeDoy - p.openDoy) * dayW);
+          return (
+            <div
+              key={p.slug}
+              title={`${p.name} open ${doyLabel(p.openDoy)} → ${doyLabel(p.closeDoy)}`}
+              style={{
+                position: "absolute",
+                left: x,
+                width: w,
+                top: 1,
+                height: 12,
+                background:
+                  "repeating-linear-gradient(45deg, rgba(121,184,122,.18), rgba(121,184,122,.18) 3px, transparent 3px, transparent 6px)",
+                borderLeft: "1.5px solid var(--score-5)",
+                borderRight: "1.5px solid var(--score-5)",
+                fontSize: 8.5,
+                fontFamily: "var(--mono)",
+                color: "var(--score-5)",
+                paddingLeft: 4,
+                lineHeight: "12px",
+                whiteSpace: "nowrap",
+                overflow: "hidden",
+                textOverflow: "ellipsis",
+              }}
+            >
+              {p.name}
+            </div>
+          );
+        })}
+      </div>
+
+      {/* Festival pins row */}
+      <div style={{ position: "relative", height: 22, borderBottom: "1px solid var(--rule)" }}>
+        {festivalPins.map((pin, i) => {
+          const x = (pin.doy - 1) * dayW;
+          const w = Math.max(8, dayW * 4);
+          return (
+            <div
+              key={`${pin.destName}-${pin.doy}-${i}`}
+              title={`${pin.destName}: ${pin.festivalNames}`}
+              style={{
+                position: "absolute",
+                left: x,
+                width: w,
+                top: 4,
+                height: 14,
+                background: "var(--accent)",
+                borderRadius: 2,
+                fontSize: 9,
+                color: "var(--paper)",
+                fontWeight: 700,
+                paddingLeft: 4,
+                lineHeight: "14px",
+                whiteSpace: "nowrap",
+                overflow: "hidden",
+                cursor: "help",
+              }}
+            >
+              {pin.emoji} {pin.firstName}
+            </div>
+          );
+        })}
+      </div>
+
+      {/* Stop pills track */}
+      <div style={{ position: "relative", height: STOP_TRACK_H, paddingTop: 6 }}>
+        {state.stops.map((stop, i) => {
+          const dest = destMap.get(stop.destinationId);
+          const x = (stop.startDay - 1) * dayW;
+          const w = Math.max(8, stop.days * dayW);
+          const monthIdx = doyToMonth(stop.startDay);
+          const score =
+            (dest?.destination_months ?? []).find((m) => m.month === monthIdx)?.score ?? 0;
+          const color =
+            score >= 4 ? "var(--score-5)" : score >= 3 ? "var(--score-3)" : "var(--score-1)";
+          const bg =
+            score >= 4
+              ? "rgba(121,184,122,.22)"
+              : score >= 3
+                ? "rgba(216,182,96,.22)"
+                : "rgba(217,96,80,.22)";
+          // Flip label to the left of the pill if it would overflow the right edge.
+          const flipLeft = x + w + 140 > bandWidth;
+          const isDragging = drag?.stopIdx === i;
+          const isSelected = selectedStopIdx === i;
+          return (
+            <div
+              key={`${stop.destinationId}-${i}`}
+              onPointerDown={(e) => onPillDown(e, i)}
+              onClick={() => onSelectStop(i)}
+              style={{
+                position: "absolute",
+                left: x,
+                width: w,
+                top: i * (ROW_H + 4) + 6,
+                height: ROW_H,
+                background: bg,
+                border: `1.5px solid ${color}`,
+                borderRadius: 3,
+                cursor: isDragging ? "grabbing" : "grab",
+                boxShadow: isDragging
+                  ? "0 4px 12px rgba(0,0,0,.5)"
+                  : isSelected
+                    ? "0 0 0 1px var(--accent)"
+                    : "none",
+                zIndex: isDragging ? 10 : 1,
+                touchAction: "none",
+              }}
+            >
+              <div
+                style={{
+                  position: "absolute",
+                  [flipLeft ? "right" : "left"]: w + 6,
+                  top: 1,
+                  height: ROW_H - 2,
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 6,
+                  fontSize: 11,
+                  color: "var(--ink)",
+                  fontWeight: 600,
+                  whiteSpace: "nowrap",
+                  pointerEvents: "none",
+                }}
+              >
+                <span style={{ fontFamily: "var(--mono)", fontSize: 9.5, color: "var(--ink-3)" }}>
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <span>{dest?.name ?? stop.destinationId}</span>
+                <span
+                  className={`nq-score nq-score-${Math.max(0, Math.min(5, score))}`}
+                  style={{ padding: "1px 4px", fontSize: 9.5 }}
+                >
+                  {score}
+                </span>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
+      {/* "now" indicator */}
+      <div
+        style={{
+          position: "absolute",
+          left: (todayDoy - 1) * dayW,
+          top: 22,
+          bottom: 0,
+          width: 1,
+          background: "var(--accent)",
+          opacity: 0.35,
+          pointerEvents: "none",
+        }}
+      >
+        <div
+          style={{
+            position: "absolute",
+            top: -2,
+            left: -22,
+            fontSize: 8.5,
+            color: "var(--accent)",
+            fontFamily: "var(--mono)",
+          }}
+        >
+          now
+        </div>
       </div>
     </div>
   );
-}
-
-// ---- Helpers ----------------------------------------------------------------
-
-function doyToMonth(doy: number): number {
-  for (let m = 1; m <= 12; m++) {
-    if (doy < MONTH_STARTS[m]) return m;
-  }
-  return 12;
-}
-
-function doyLabel(doy: number): string {
-  const month = doyToMonth(doy);
-  const day = doy - MONTH_STARTS[month - 1] + 1;
-  return `${MONTH_LABELS[month - 1]} ${day}`;
 }
 
 export type { TripStop };

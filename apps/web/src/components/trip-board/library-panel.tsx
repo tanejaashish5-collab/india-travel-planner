@@ -1,18 +1,21 @@
 "use client";
 
-// LibraryPanel — left rail of the Trip Board.
+// LibraryPanel — design-matched left rail.
+// Mirrors nakshiq-design-system/project/trip-board/TripBoard.jsx Library.
 //
-// Inline destination search + filter pills + add-to-trip list. Replaces the
-// dead-end "go to /explore" pattern that was forcing users out of the
-// planning funnel (PDF Failure #1 root cause).
+// Editorial dark aside with:
+//   - Header eyebrow: "Library · {N} loaded · 491 total"
+//   - Search input (nq-input)
+//   - Filter pills (All / {Month} GO / Kids 4+ / Permit-free)
+//   - Scrollable list of LibraryItems — destination name (serif), state·elev·days,
+//     ScoreChip + "+ add" / "✓ in trip" tag.
 //
-// Operates entirely on the destinations[] prop (passed from server). NO calls
-// against destination_months — that table has 5,892 rows and the Supabase
-// 1000-row cap makes raw .select() unsafe (per feedback_supabase_row_cap.md).
-// Month-score lookups happen on the embedded destination_months[] join.
+// Operates entirely on the destinations[] prop. NO direct destination_months
+// queries (Supabase 1000-row cap per feedback_supabase_row_cap.md).
 
 import { useMemo, useState } from "react";
 import type { TripStateV2 } from "@/lib/trip-storage";
+import { ScoreChip, MONTH_LABELS } from "./atoms";
 
 type DestLite = {
   id: string;
@@ -23,18 +26,88 @@ type DestLite = {
   elevation_m: number | null;
 };
 
-type FilterId = "all" | "go-this-month" | "easy" | "lowland" | "permit-free";
-
-const FILTERS: { id: FilterId; label: string }[] = [
-  { id: "all", label: "All" },
-  { id: "go-this-month", label: "Go this month" },
-  { id: "easy", label: "Easy" },
-  { id: "lowland", label: "Under 2000m" },
-];
+type FilterId = "all" | "go-month" | "kids" | "permit-free";
 
 function scoreFor(d: DestLite, monthOneIndexed: number): number {
   const row = (d.destination_months ?? []).find((m) => m.month === monthOneIndexed);
   return row?.score ?? 0;
+}
+
+function nextStartDay(state: TripStateV2): number {
+  if (state.stops.length === 0) {
+    const m = state.month - 1;
+    const offsets = [0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334];
+    return (offsets[m] ?? 0) + 5;
+  }
+  const last = state.stops[state.stops.length - 1];
+  return Math.min(365 - 6, last.startDay + Math.max(1, last.days || 2));
+}
+
+function LibraryItem({
+  d,
+  monthIdx,
+  added,
+  onAdd,
+}: {
+  d: DestLite;
+  monthIdx: number;
+  added: boolean;
+  onAdd: () => void;
+}) {
+  const score = scoreFor(d, monthIdx + 1);
+  return (
+    <button
+      type="button"
+      onClick={onAdd}
+      disabled={added}
+      style={{
+        all: "unset",
+        display: "block",
+        cursor: added ? "default" : "pointer",
+        padding: "11px 14px",
+        borderTop: "1px solid var(--rule)",
+        background: added ? "rgba(255,255,255,.02)" : "transparent",
+        opacity: added ? 0.5 : 1,
+        width: "100%",
+        boxSizing: "border-box",
+      }}
+    >
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "baseline",
+          gap: 8,
+        }}
+      >
+        <div style={{ minWidth: 0 }}>
+          <div
+            style={{
+              fontFamily: "var(--serif)",
+              fontSize: 16,
+              lineHeight: 1.2,
+              marginBottom: 2,
+              color: "var(--ink)",
+              overflow: "hidden",
+              textOverflow: "ellipsis",
+              whiteSpace: "nowrap",
+            }}
+          >
+            {d.name}
+          </div>
+          <div style={{ fontSize: 11, color: "var(--ink-3)" }}>
+            {d.state?.name ?? "—"}
+            {d.elevation_m ? ` · ${d.elevation_m}m` : ""}
+            {d.difficulty ? ` · ${d.difficulty}` : ""}
+          </div>
+        </div>
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", gap: 4 }}>
+          <ScoreChip s={score} />
+          <span style={{ fontSize: 10, color: "var(--ink-3)" }}>{added ? "✓ in trip" : "+ add"}</span>
+        </div>
+      </div>
+    </button>
+  );
 }
 
 export function LibraryPanel({
@@ -48,7 +121,6 @@ export function LibraryPanel({
 }) {
   const [query, setQuery] = useState("");
   const [filter, setFilter] = useState<FilterId>("all");
-  const [collapsed, setCollapsed] = useState(false);
 
   const inTrip = useMemo(() => new Set(state.stops.map((s) => s.destinationId)), [state.stops]);
 
@@ -60,17 +132,15 @@ export function LibraryPanel({
         (d) =>
           d.name.toLowerCase().includes(q) ||
           (d.state?.name ?? "").toLowerCase().includes(q) ||
-          d.id.toLowerCase().includes(q)
+          d.id.toLowerCase().includes(q),
       );
     }
-    if (filter === "go-this-month") {
-      list = list.filter((d) => scoreFor(d, state.month) >= 4);
-    } else if (filter === "easy") {
-      list = list.filter((d) => d.difficulty === "easy");
-    } else if (filter === "lowland") {
-      list = list.filter((d) => (d.elevation_m ?? 0) < 2000);
-    }
-    // Sort: in-trip first (so user sees confirmation), then by month-score desc.
+    if (filter === "go-month") list = list.filter((d) => scoreFor(d, state.month) >= 4);
+    if (filter === "kids") list = list.filter((d) => (d.elevation_m ?? 0) < 2500);
+    // permit-free filter requires the permit_type column from Phase 0; for now,
+    // approximate as "easy + low altitude" since permit data isn't on DestLite.
+    if (filter === "permit-free")
+      list = list.filter((d) => d.difficulty === "easy" && (d.elevation_m ?? 0) < 2500);
     return list
       .slice()
       .sort((a, b) => {
@@ -79,7 +149,7 @@ export function LibraryPanel({
         if (ai !== bi) return bi - ai;
         return scoreFor(b, state.month) - scoreFor(a, state.month);
       })
-      .slice(0, 200); // hard cap so the rail stays scrollable
+      .slice(0, 200);
   }, [destinations, query, filter, state.month, inTrip]);
 
   function addStop(slug: string) {
@@ -99,126 +169,72 @@ export function LibraryPanel({
     }));
   }
 
-  if (collapsed) {
-    return (
-      <div className="flex w-10 flex-col items-center justify-start border-r border-border bg-background py-4">
-        <button
-          type="button"
-          onClick={() => setCollapsed(false)}
-          aria-label="Expand library"
-          className="rounded-sm p-1 text-muted-foreground hover:text-foreground"
-        >
-          ›
-        </button>
-      </div>
-    );
-  }
+  const filters: { id: FilterId; label: string }[] = [
+    { id: "all", label: "All" },
+    { id: "go-month", label: `${MONTH_LABELS[state.month - 1]} GO` },
+    { id: "kids", label: "👶 Kids 4+" },
+    { id: "permit-free", label: "Permit-free" },
+  ];
 
   return (
     <aside
-      className="flex h-full flex-col border-r border-border bg-background"
       data-trip-library
+      style={{
+        borderRight: "1px solid var(--rule-2)",
+        background: "var(--paper-2)",
+        display: "flex",
+        flexDirection: "column",
+        height: "100%",
+        minHeight: 0,
+      }}
     >
-      {/* Header */}
-      <div className="flex items-center justify-between border-b border-border px-4 py-3">
-        <div>
-          <p className="font-mono text-[10.5px] uppercase tracking-[0.18em] text-muted-foreground">Library</p>
-          <p className="text-[11px] text-muted-foreground">
-            {destinations.length} loaded · {filtered.length} shown
-          </p>
+      <div style={{ padding: "18px 16px 12px", borderBottom: "1px solid var(--rule)" }}>
+        <div className="nq-eyebrow" style={{ marginBottom: 8 }}>
+          Library · {destinations.length} loaded · 491 total
         </div>
-        <button
-          type="button"
-          onClick={() => setCollapsed(true)}
-          aria-label="Collapse library"
-          className="rounded-sm p-1 text-muted-foreground hover:text-foreground"
-        >
-          ‹
-        </button>
-      </div>
-
-      {/* Search */}
-      <div className="border-b border-border px-4 py-3">
         <input
           type="search"
+          className="nq-input"
+          placeholder="Search destinations…"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          placeholder="Search destinations…"
-          className="w-full border border-border bg-background px-3 py-2 font-serif text-sm placeholder:text-muted-foreground focus:border-foreground focus:outline-none"
+          style={{ width: "100%", marginBottom: 8 }}
         />
-      </div>
-
-      {/* Filter pills */}
-      <div className="flex flex-wrap gap-1.5 border-b border-border px-4 py-3">
-        {FILTERS.map((f) => (
-          <button
-            key={f.id}
-            type="button"
-            onClick={() => setFilter(f.id)}
-            className={`border px-2.5 py-1 font-mono text-[10.5px] uppercase tracking-[0.12em] transition-colors ${
-              filter === f.id ? "border-foreground bg-foreground text-background" : "border-border text-muted-foreground hover:border-foreground"
-            }`}
-          >
-            {f.label}
-          </button>
-        ))}
-      </div>
-
-      {/* List */}
-      <div className="flex-1 overflow-y-auto">
-        {filtered.length === 0 && (
-          <p className="p-4 font-serif text-sm italic text-muted-foreground">No destinations match.</p>
-        )}
-        {filtered.map((d) => {
-          const score = scoreFor(d, state.month);
-          const added = inTrip.has(d.id);
-          return (
+        <div style={{ display: "flex", gap: 4, flexWrap: "wrap" }}>
+          {filters.map((f) => (
             <button
-              key={d.id}
+              key={f.id}
               type="button"
-              onClick={() => addStop(d.id)}
-              disabled={added}
-              className={`flex w-full items-center gap-3 border-b border-border px-4 py-3 text-left transition-colors ${
-                added ? "bg-muted/40 cursor-default" : "hover:bg-muted"
-              }`}
+              onClick={() => setFilter(f.id)}
+              className="nq-btn nq-btn-ghost"
+              style={{
+                padding: "4px 9px",
+                fontSize: 11,
+                background: filter === f.id ? "var(--ink)" : "transparent",
+                color: filter === f.id ? "var(--paper)" : "var(--ink-2)",
+                borderColor: filter === f.id ? "var(--ink)" : "var(--rule-2)",
+              }}
             >
-              <span
-                className={`flex h-7 min-w-[34px] items-center justify-center font-mono text-[10.5px] font-bold ${
-                  score >= 4
-                    ? "bg-emerald-700 text-white"
-                    : score >= 3
-                      ? "bg-amber-600 text-white"
-                      : score >= 1
-                        ? "bg-rose-600 text-white"
-                        : "bg-muted text-muted-foreground"
-                }`}
-              >
-                {score || "—"}
-              </span>
-              <span className="min-w-0 flex-1">
-                <span className="block truncate font-serif text-sm">{d.name}</span>
-                <span className="block truncate text-[10.5px] text-muted-foreground">
-                  {d.state?.name ?? ""}{d.elevation_m ? ` · ${d.elevation_m}m` : ""}{d.difficulty ? ` · ${d.difficulty}` : ""}
-                </span>
-              </span>
-              <span className="font-mono text-[10.5px] uppercase text-[var(--accent,#d36843)]">
-                {added ? "✓ in trip" : "+ add"}
-              </span>
+              {f.label}
             </button>
-          );
-        })}
+          ))}
+        </div>
+      </div>
+      <div style={{ overflow: "auto", flex: 1 }}>
+        {filtered.length === 0 ? (
+          <div style={{ padding: 24, color: "var(--ink-3)", fontSize: 12 }}>No matches.</div>
+        ) : (
+          filtered.map((d) => (
+            <LibraryItem
+              key={d.id}
+              d={d}
+              monthIdx={state.month - 1}
+              added={inTrip.has(d.id)}
+              onAdd={() => addStop(d.id)}
+            />
+          ))
+        )}
       </div>
     </aside>
   );
-}
-
-function nextStartDay(state: TripStateV2): number {
-  if (state.stops.length === 0) {
-    // Anchor first stop at the 5th of the trip month.
-    const m = state.month - 1;
-    const offsets = [0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334];
-    return (offsets[m] ?? 0) + 5;
-  }
-  const last = state.stops[state.stops.length - 1];
-  return Math.min(365, last.startDay + Math.max(1, last.days || 2));
 }
