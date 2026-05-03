@@ -20,6 +20,11 @@ interface TrapAlternative {
   drive_time: string | null;
   crowd_difference: string | null;
   vibe_difference: string | null;
+  pain_points: string[] | null;
+  common_complaints: string[] | null;
+  alt_better_for: string | null;
+  source_url: string | null;
+  last_reviewed_at: string | null;
   alt_dest: { name: string; tagline: string; difficulty: string; elevation_m: number | null } | { name: string; tagline: string; difficulty: string; elevation_m: number | null }[] | null;
 }
 
@@ -70,6 +75,7 @@ async function getSkipListData(slug: string) {
     .from("tourist_trap_alternatives")
     .select(
       `trap_destination_id, alternative_destination_id, why_better, comparison, rank, distance_km, drive_time, crowd_difference, vibe_difference,
+       pain_points, common_complaints, alt_better_for, source_url, last_reviewed_at,
        alt_dest:destinations!alternative_destination_id(name, tagline, difficulty, elevation_m)`
     )
     .eq("trap_destination_id", slug)
@@ -159,6 +165,16 @@ export default async function SkipListSlugPage({
   // Get the comparison text from first alternative
   const whyTrapText = alternatives[0]?.comparison || null;
 
+  // First-row carries trap-level depth (pain_points / complaints / source).
+  const trapDepth = alternatives[0]
+    ? {
+        pain_points: alternatives[0].pain_points ?? [],
+        common_complaints: alternatives[0].common_complaints ?? [],
+        source_url: alternatives[0].source_url ?? null,
+        last_reviewed_at: alternatives[0].last_reviewed_at ?? null,
+      }
+    : null;
+
   // Build JSON-LD
   const jsonLd = {
     "@context": "https://schema.org",
@@ -205,9 +221,11 @@ export default async function SkipListSlugPage({
             drive_time: alt.drive_time,
             crowd_difference: alt.crowd_difference,
             vibe_difference: alt.vibe_difference,
+            alt_better_for: alt.alt_better_for ?? null,
           };
         })}
         whyTrapText={whyTrapText}
+        trapDepth={trapDepth}
         goodMonths={goodMonths}
         allMonths={months}
         locale={locale}

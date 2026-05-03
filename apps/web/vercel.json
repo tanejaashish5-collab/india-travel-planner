@@ -37,6 +37,10 @@
     {
       "path": "/api/cron/sos-verify-reminder",
       "schedule": "30 1 * * 1"
+    },
+    {
+      "path": "/api/cron/road-conditions-sweep",
+      "schedule": "0 2 * * 1"
     }
   ]
 }

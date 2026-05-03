@@ -49,41 +49,50 @@ export function TrekDetail({ trek }: { trek: any }) {
         {stateName && <span className="ml-auto text-xs">{stateName}</span>}
       </nav>
 
-      {/* Hero */}
-      <div className="relative h-56 sm:h-72 rounded-2xl overflow-hidden bg-muted/30">
-        {trek.destination_id && (
-          <Image
-            src={`/images/destinations/${trek.destination_id}.jpg`}
-            alt={trek.name}
-            fill
-            sizes="100vw"
-            className="object-cover"
-            onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
-          />
-        )}
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
-        <div className="absolute top-4 left-4">
-          <span className={`rounded-lg border px-3 py-1.5 text-xs font-semibold capitalize backdrop-blur-md ${DIFFICULTY_COLORS[trek.difficulty] ?? ""}`}>
-            {trek.difficulty}
-          </span>
+      {/* Hero — split layout: image stays prominent on desktop, sits beside prose; on mobile stacks on top of card. */}
+      <div className="grid gap-4 md:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] md:items-stretch">
+        <div className="relative h-56 md:h-auto md:min-h-[320px] rounded-2xl overflow-hidden bg-muted/30">
+          {(trek.hero_image_url || trek.destination_id) && (
+            <Image
+              src={trek.hero_image_url || `/images/destinations/${trek.destination_id}.jpg`}
+              alt={trek.name}
+              fill
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className="object-cover"
+              onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
+            />
+          )}
+          <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/10 to-transparent md:bg-gradient-to-r md:from-transparent md:via-transparent md:to-background/40" />
+          <div className="absolute top-4 left-4">
+            <span className={`rounded-lg border px-3 py-1.5 text-xs font-semibold capitalize backdrop-blur-md ${DIFFICULTY_COLORS[trek.difficulty] ?? ""}`}>
+              {trek.difficulty}
+            </span>
+          </div>
+        </div>
+
+        {/* Title + prose */}
+        <div className="rounded-2xl border border-border/50 bg-card/80 backdrop-blur-xl p-6 sm:p-8 shadow-2xl">
+          <div className="flex items-start justify-between gap-4">
+            <div className="min-w-0">
+              <h1 className="text-2xl sm:text-3xl font-semibold tracking-tight">{trek.name}</h1>
+              <p className="mt-1 text-muted-foreground text-sm">
+                {destName && <Link href={`/${locale}/destination/${trek.destination_id}`} className="hover:text-primary transition-colors">{destName}</Link>}
+                {stateName && <span> · {stateName}</span>}
+              </p>
+            </div>
+            <ShareButton title={trek.name} text={`${trek.duration_days}-day ${trek.difficulty} trek · ${trek.max_altitude_m}m`} />
+          </div>
+
+          {trek.description && (
+            <p className="mt-4 text-[15px] text-muted-foreground leading-relaxed">{trek.description}</p>
+          )}
         </div>
       </div>
 
-      {/* Title card */}
-      <div className="rounded-2xl border border-border/50 bg-card/80 backdrop-blur-xl p-6 sm:p-8 -mt-20 relative z-10 shadow-2xl">
-        <div className="flex items-start justify-between">
-          <div>
-            <h1 className="text-3xl font-semibold">{trek.name}</h1>
-            <p className="mt-1 text-muted-foreground">
-              {destName && <Link href={`/${locale}/destination/${trek.destination_id}`} className="hover:text-primary transition-colors">{destName}</Link>}
-              {stateName && <span> · {stateName}</span>}
-            </p>
-          </div>
-          <ShareButton title={trek.name} text={`${trek.duration_days}-day ${trek.difficulty} trek · ${trek.max_altitude_m}m`} />
-        </div>
-
+      {/* Stats block — kept under the hero so it works at every breakpoint */}
+      <div className="rounded-2xl border border-border/50 bg-card/80 backdrop-blur-xl p-6 sm:p-8 shadow-sm">
         {/* Key stats */}
-        <div className="mt-6 grid grid-cols-2 sm:grid-cols-5 gap-3">
+        <div className="grid grid-cols-2 sm:grid-cols-5 gap-3">
           <div className="rounded-xl border border-border/30 bg-muted/20 p-3 text-center">
             <div className="text-lg font-mono font-bold text-primary">{trek.duration_days}</div>
             <div className="text-xs text-muted-foreground">{tt("days")}</div>
@@ -117,8 +126,6 @@ export function TrekDetail({ trek }: { trek: any }) {
             </div>
           </div>
         )}
-
-        <p className="mt-4 text-[15px] text-muted-foreground leading-relaxed">{trek.description}</p>
 
         {/* Highlights */}
         {trek.highlights?.length > 0 && (

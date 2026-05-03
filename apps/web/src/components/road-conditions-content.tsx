@@ -121,9 +121,19 @@ export function RoadConditionsContent({ reports }: { reports: any[] }) {
 
               <p className="text-sm text-muted-foreground leading-relaxed">{report.report}</p>
 
-              <div className="mt-2 flex items-center gap-3 text-xs text-muted-foreground/60">
+              <div className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-muted-foreground/60">
                 {reportedDate && <span>Updated: {reportedDate}</span>}
                 {report.verified && <span className="text-emerald-400">Verified</span>}
+                {report.source_url && (
+                  <a
+                    href={report.source_url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline-offset-2 hover:text-foreground hover:underline"
+                  >
+                    source: {report.source_label || (() => { try { return new URL(report.source_url).hostname.replace(/^www\./, ""); } catch { return "link"; } })()}
+                  </a>
+                )}
               </div>
             </div>
             </StaggerItem>

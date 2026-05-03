@@ -25,6 +25,7 @@ interface Alternative {
   drive_time: string | null;
   crowd_difference: string | null;
   vibe_difference: string | null;
+  alt_better_for: string | null;
 }
 
 interface MonthScore {
@@ -32,16 +33,47 @@ interface MonthScore {
   score: number;
 }
 
+interface TrapDepth {
+  pain_points: string[];
+  common_complaints: string[];
+  source_url: string | null;
+  last_reviewed_at: string | null;
+}
+
 interface Props {
   trapDest: TrapDest;
   alternatives: Alternative[];
   whyTrapText: string | null;
+  trapDepth?: TrapDepth | null;
   goodMonths: string[];
   allMonths: MonthScore[];
   locale: string;
 }
 
-export function SkipListDetail({ trapDest, alternatives, whyTrapText, goodMonths, allMonths, locale }: Props) {
+function sourceHost(url: string | null): string | null {
+  if (!url) return null;
+  try {
+    return new URL(url).hostname.replace(/^www\./, "");
+  } catch {
+    return null;
+  }
+}
+
+function formatReviewDate(d: string | null): string | null {
+  if (!d) return null;
+  try {
+    return new Date(d).toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" });
+  } catch {
+    return null;
+  }
+}
+
+export function SkipListDetail({ trapDest, alternatives, whyTrapText, trapDepth, goodMonths, allMonths, locale }: Props) {
+  const painPoints = trapDepth?.pain_points ?? [];
+  const complaints = trapDepth?.common_complaints ?? [];
+  const sourceUrl = trapDepth?.source_url ?? null;
+  const reviewedAt = formatReviewDate(trapDepth?.last_reviewed_at ?? null);
+  const host = sourceHost(sourceUrl);
   return (
     <>
       {/* Hero */}
@@ -84,21 +116,73 @@ export function SkipListDetail({ trapDest, alternatives, whyTrapText, goodMonths
         </nav>
 
         {/* Why travelers are disappointed */}
-        {whyTrapText && (
+        {(whyTrapText || painPoints.length > 0 || complaints.length > 0) && (
           <ScrollReveal>
             <section className="rounded-2xl border border-red-500/20 bg-red-950/10 p-6 sm:p-8">
               <h2 className="text-xl font-semibold text-foreground mb-3 flex items-center gap-2">
                 <span className="text-red-400">!</span>
                 Why Travelers Are Disappointed
               </h2>
-              <p className="text-muted-foreground leading-relaxed">{whyTrapText}</p>
-              <div className="mt-4 flex flex-wrap gap-3 text-xs">
+              {whyTrapText && (
+                <p className="text-muted-foreground leading-relaxed">{whyTrapText}</p>
+              )}
+
+              {painPoints.length > 0 && (
+                <div className="mt-5">
+                  <h3 className="text-xs font-semibold uppercase tracking-[0.08em] text-red-300/80 mb-2">
+                    What specifically goes wrong
+                  </h3>
+                  <ul className="space-y-1.5 text-sm text-muted-foreground">
+                    {painPoints.map((p, i) => (
+                      <li key={i} className="flex gap-2 leading-relaxed">
+                        <span className="text-red-400 shrink-0">·</span>
+                        <span>{p}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              {complaints.length > 0 && (
+                <div className="mt-5">
+                  <h3 className="text-xs font-semibold uppercase tracking-[0.08em] text-red-300/80 mb-2">
+                    Common complaints
+                  </h3>
+                  <ul className="space-y-2 text-sm text-muted-foreground italic">
+                    {complaints.map((c, i) => (
+                      <li key={i} className="border-l-2 border-red-500/30 pl-3 leading-relaxed">
+                        &ldquo;{c}&rdquo;
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              <div className="mt-5 flex flex-wrap items-center gap-3 text-xs">
                 <span className={`rounded-full border px-3 py-1 ${DIFFICULTY_COLORS[trapDest.difficulty] || "text-zinc-400"}`}>
                   {trapDest.difficulty}
                 </span>
                 {trapDest.elevation_m && (
                   <span className="rounded-full border border-border px-3 py-1 text-muted-foreground">
                     {trapDest.elevation_m.toLocaleString()}m elevation
+                  </span>
+                )}
+                {(reviewedAt || host) && (
+                  <span className="ml-auto text-[11px] text-muted-foreground">
+                    {reviewedAt && <>Reviewed {reviewedAt}</>}
+                    {host && sourceUrl && (
+                      <>
+                        {" · "}
+                        <a
+                          href={sourceUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="underline-offset-2 hover:underline"
+                        >
+                          source: {host}
+                        </a>
+                      </>
+                    )}
                   </span>
                 )}
               </div>
@@ -200,6 +284,12 @@ export function SkipListDetail({ trapDest, alternatives, whyTrapText, goodMonths
                         {alt.why_better && (
                           <p className="text-sm text-muted-foreground leading-relaxed">
                             {alt.why_better}
+                          </p>
+                        )}
+
+                        {alt.alt_better_for && (
+                          <p className="rounded-lg border border-emerald-500/20 bg-emerald-950/20 px-3 py-2 text-xs text-emerald-300 leading-snug">
+                            {alt.alt_better_for}
                           </p>
                         )}
 

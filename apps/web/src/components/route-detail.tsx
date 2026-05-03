@@ -125,6 +125,9 @@ export function RouteDetail({ route }: { route: any }) {
                 (day.from && day.to ? `${day.from} → ${day.to}` : null);
               const body = day.plan ?? day.description ?? day.notes ?? null;
               const stay = day.stay ?? null;
+              const mapsHref = day.from && day.to
+                ? `https://www.google.com/maps/dir/?api=1&origin=${encodeURIComponent(day.from)}&destination=${encodeURIComponent(day.to)}&travelmode=driving`
+                : null;
               return (
                 <div
                   key={day.day}
@@ -133,13 +136,18 @@ export function RouteDetail({ route }: { route: any }) {
                   <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary/10 font-mono text-lg font-bold text-primary">
                     {day.day}
                   </div>
-                  <div className="flex-1">
+                  <div className="flex-1 min-w-0">
                     {heading && (
-                      <div className="text-sm font-medium text-foreground mb-1">
-                        {heading}
+                      <div className="text-sm font-medium text-foreground mb-1 flex flex-wrap items-baseline gap-x-2 gap-y-1">
+                        <span>{heading}</span>
                         {day.km > 0 && (
-                          <span className="ml-2 text-xs font-normal text-muted-foreground">
+                          <span className="text-xs font-normal text-muted-foreground">
                             · {day.km}km
+                          </span>
+                        )}
+                        {day.duration && (
+                          <span className="text-xs font-normal text-muted-foreground">
+                            · {day.duration}
                           </span>
                         )}
                       </div>
@@ -149,9 +157,24 @@ export function RouteDetail({ route }: { route: any }) {
                         {body}
                       </p>
                     )}
-                    {stay && (
-                      <div className="mt-2 text-xs text-muted-foreground">
-                        Overnight: <span className="text-foreground">{stay}</span>
+                    {(stay || mapsHref) && (
+                      <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-muted-foreground">
+                        {stay && (
+                          <span>
+                            Overnight: <span className="text-foreground">{stay}</span>
+                          </span>
+                        )}
+                        {mapsHref && (
+                          <a
+                            href={mapsHref}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1 rounded-md border border-border bg-muted/40 px-2 py-1 text-[11px] font-medium text-foreground hover:border-primary/40 hover:text-primary transition-colors"
+                          >
+                            <span aria-hidden>📍</span>
+                            <span>Open this leg in Maps</span>
+                          </a>
+                        )}
                       </div>
                     )}
                   </div>
@@ -176,25 +199,38 @@ export function RouteDetail({ route }: { route: any }) {
         </div>
       )}
 
-      {/* Stops */}
+      {/* Stops — numbered sequence pills */}
       {(route.stops ?? []).length > 0 && (
         <div className="mb-8">
           <h2 className="text-xl font-semibold mb-3">
             Destinations on this route
           </h2>
-          <div className="flex flex-wrap gap-2">
-            {route.stops.map((stop: string) => (
-              <Link
-                key={stop}
-                href={`/${locale}/destination/${stop}`}
-                className="rounded-lg border border-border px-3 py-1.5 text-sm hover:border-primary/50 hover:text-primary transition-colors"
-              >
-                {stop
-                  .replace(/-/g, " ")
-                  .replace(/\b\w/g, (c: string) => c.toUpperCase())}
-              </Link>
-            ))}
-          </div>
+          <ol className="flex flex-wrap items-center gap-x-2 gap-y-3">
+            {route.stops.map((stop: string, idx: number) => {
+              const label = stop
+                .replace(/-/g, " ")
+                .replace(/\b\w/g, (c: string) => c.toUpperCase());
+              const isLast = idx === route.stops.length - 1;
+              return (
+                <li key={stop} className="flex items-center gap-2">
+                  <Link
+                    href={`/${locale}/destination/${stop}`}
+                    className="group inline-flex items-center gap-2 rounded-full border border-border bg-card px-2 py-1 pr-3 text-sm hover:border-primary/50 hover:text-primary transition-colors"
+                  >
+                    <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/10 font-mono text-[11px] font-bold text-primary group-hover:bg-primary group-hover:text-primary-foreground">
+                      {idx + 1}
+                    </span>
+                    <span>{label}</span>
+                  </Link>
+                  {!isLast && (
+                    <span className="text-muted-foreground/60 select-none" aria-hidden>
+                      →
+                    </span>
+                  )}
+                </li>
+              );
+            })}
+          </ol>
         </div>
       )}
     </>
