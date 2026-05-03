@@ -6254,3 +6254,22 @@ requests.exceptions.HTTPError: 401 Client Error: UNAUTHORIZED for url: https://a
 2026-05-03 10:51:07  INFO      Theme tracker updated: flow_story_images=flow_0062_3a3eb2ae.jpg
 2026-05-03 10:51:07  INFO      State saved. Flow Story run complete.
 2026-05-03 10:51:07  INFO      ════════════════════════════════════════════════════════════
+2026-05-03 11:13:37  INFO      ════════════════════════════════════════════════════════════
+2026-05-03 11:13:37  INFO      Nakshiq Autoposter · FLOW STORY · 2026-05-03 · weekday=6
+2026-05-03 11:13:37  INFO      ════════════════════════════════════════════════════════════
+2026-05-03 11:13:37  INFO      Library: 956 images (813 dest-matched, 143 generic)
+2026-05-03 11:13:39  INFO      Seasonal scores loaded: 100 destinations for month 5
+2026-05-03 11:13:39  INFO      Seasonal tiers: 5★=51 · 4★=69 · 3★=0 · low=0 · unscored=693
+2026-05-03 11:13:39  INFO      Picking from 5★ tier (has unused images)
+2026-05-03 11:13:39  INFO      Seasonal score: 5/5 for Sissu
+2026-05-03 11:13:39  INFO      Selected: flow_0159_dddae6aa.jpg → Sissu (Himachal Pradesh)
+2026-05-03 11:13:39  INFO          Requesting upload URL for flow_story_flow_0159_dddae6aa.jpg (962,195 bytes, image/jpeg)
+2026-05-03 11:13:40  INFO          Uploading to R2 (timeout=120s)...
+2026-05-03 11:13:42  INFO          R2 PUT OK. Confirming...
+2026-05-03 11:13:43  INFO          Media ready: v9i1g (962,195 bytes · flow_story_flow_0159_dddae6aa.jpg)
+2026-05-03 11:13:43  INFO      Image uploaded: flow_story_flow_0159_dddae6aa.jpg (939 KB)
+2026-05-03 11:13:44  INFO      [youtube/@naksh-iq] Skipping flow story (YouTube only accepts video).
+2026-05-03 11:13:44  INFO      [instagram/nakshiq] Already posted flow story today — skipping.
+2026-05-03 11:13:44  INFO      [facebook/Nakshiq] Already posted flow story today — skipping.
+2026-05-03 11:13:44  INFO      State saved. Flow Story run complete.
+2026-05-03 11:13:44  INFO      ════════════════════════════════════════════════════════════
