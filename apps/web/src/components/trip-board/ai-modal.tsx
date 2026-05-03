@@ -225,7 +225,7 @@ export function AiModal({
                       type="button"
                       onClick={() => removeAge(i)}
                       className="nq-btn nq-btn-ghost"
-                      style={{ padding: "3px 9px", fontSize: 11 }}
+                      style={{ padding: "5px 11px" }}
                       title="Remove"
                     >
                       {a} ✕
@@ -255,7 +255,7 @@ export function AiModal({
                 </div>
               </Field>
               <Field label="Female adult travelling?" hint="Surfaces solo_female_score for each stop.">
-                <label style={{ display: "flex", gap: 8, alignItems: "center", fontSize: 13 }}>
+                <label style={{ display: "flex", gap: 10, alignItems: "center", fontSize: 15 }}>
                   <input
                     type="checkbox"
                     checked={hasFemaleAdult}
@@ -339,20 +339,21 @@ export function AiModal({
               </Field>
               <div
                 className="nq-alert"
-                style={{ marginTop: 4, fontSize: 12 }}
+                style={{ marginTop: 4 }}
                 data-ai-modal-summary
               >
                 <div className="nq-alert-eyebrow">Preview</div>
-                <p style={{ margin: 0, fontFamily: "var(--serif)", fontStyle: "italic" }}>{summaryLine}</p>
+                <p style={{ margin: 0, fontSize: 14, color: "var(--ink)", lineHeight: 1.5 }}>{summaryLine}</p>
               </div>
               {error && (
                 <div
                   style={{
                     background: "rgba(217,96,80,.10)",
                     border: "1px solid rgba(217,96,80,.3)",
-                    padding: 10,
+                    padding: 12,
                     color: "var(--score-1)",
-                    fontSize: 12,
+                    fontSize: 14,
+                    lineHeight: 1.5,
                   }}
                 >
                   {error}
@@ -363,7 +364,7 @@ export function AiModal({
         </div>
 
         <div className="nq-modal-foot">
-          <span style={{ fontSize: 11, color: "var(--ink-3)", fontStyle: "italic", fontFamily: "var(--serif)" }}>
+          <span style={{ fontSize: 13, color: "var(--ink-2)", lineHeight: 1.5 }}>
             {step < 3
               ? `Step ${step} of 3 — your stops & dates carry over.`
               : "Generating uses Anthropic. Local scaffold shows instantly."}
@@ -423,11 +424,10 @@ function Field({
       {hint && (
         <p
           style={{
-            margin: "0 0 8px 0",
-            fontSize: 11.5,
-            color: "var(--ink-3)",
-            fontFamily: "var(--serif)",
-            fontStyle: "italic",
+            margin: "0 0 10px 0",
+            fontSize: 13,
+            color: "var(--ink-2)",
+            lineHeight: 1.5,
           }}
         >
           {hint}
@@ -465,23 +465,21 @@ function Radio<T extends string>({
               style={{
                 all: "unset",
                 cursor: "pointer",
-                padding: "8px 10px",
-                fontSize: 12,
+                padding: "10px 12px",
+                fontSize: 14,
                 background: active ? "var(--ink)" : "transparent",
                 color: active ? "var(--paper)" : "var(--ink-2)",
                 border: `1px solid ${active ? "var(--ink)" : "var(--rule-2)"}`,
-                lineHeight: 1.3,
+                lineHeight: 1.4,
               }}
             >
               <div style={{ fontWeight: 600 }}>{o.l}</div>
               {o.sub && (
                 <div
                   style={{
-                    fontSize: 10.5,
-                    marginTop: 2,
+                    fontSize: 12,
+                    marginTop: 3,
                     color: active ? "var(--paper-2)" : "var(--ink-3)",
-                    fontFamily: "var(--serif)",
-                    fontStyle: "italic",
                   }}
                 >
                   {o.sub}

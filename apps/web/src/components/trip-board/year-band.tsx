@@ -351,21 +351,21 @@ export function YearBand({
                   height: ROW_H - 2,
                   display: "flex",
                   alignItems: "center",
-                  gap: 6,
-                  fontSize: 11,
+                  gap: 8,
+                  fontSize: 13,
                   color: "var(--ink)",
                   fontWeight: 600,
                   whiteSpace: "nowrap",
                   pointerEvents: "none",
                 }}
               >
-                <span style={{ fontFamily: "var(--mono)", fontSize: 9.5, color: "var(--ink-3)" }}>
+                <span style={{ fontSize: 12, color: "var(--ink-2)", fontWeight: 500 }}>
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <span>{dest?.name ?? stop.destinationId}</span>
                 <span
                   className={`nq-score nq-score-${Math.max(0, Math.min(5, score))}`}
-                  style={{ padding: "1px 4px", fontSize: 9.5 }}
+                  style={{ padding: "2px 6px", fontSize: 11 }}
                 >
                   {score}
                 </span>

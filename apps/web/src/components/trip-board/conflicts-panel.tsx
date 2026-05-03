@@ -52,7 +52,7 @@ export function ConflictsPanel({
         Conflicts · {total}
       </div>
       {total === 0 ? (
-        <div style={{ fontSize: 12, color: "var(--score-5)" }}>
+        <div style={{ fontSize: 14, color: "var(--score-5)", lineHeight: 1.5 }}>
           ✓ No conflicts. Permits clear, passes open, no festival spikes.
         </div>
       ) : (
@@ -63,10 +63,10 @@ export function ConflictsPanel({
             data-conflict-kind={c.kind}
             data-conflict-severity={c.severity}
             style={{
-              fontSize: 11.5,
-              marginBottom: 5,
+              fontSize: 14,
+              marginBottom: 8,
               color: "var(--ink-2)",
-              lineHeight: 1.4,
+              lineHeight: 1.5,
               cursor: "pointer",
             }}
           >
@@ -74,14 +74,15 @@ export function ConflictsPanel({
               style={{
                 color: KIND_COLOR[c.kind],
                 fontWeight: 700,
-                fontSize: 10,
+                fontSize: 11,
                 marginRight: 6,
+                letterSpacing: ".04em",
                 textTransform: "uppercase",
               }}
             >
               {c.kind}
             </span>
-            <span style={{ color: "var(--ink)" }}>{c.destinationName}</span>
+            <span style={{ color: "var(--ink)", fontWeight: 500 }}>{c.destinationName}</span>
             <span style={{ marginLeft: 4 }}>— {c.message}</span>
           </div>
         ))

@@ -154,27 +154,26 @@ export function BoardCanvas({
           background: "var(--paper)",
         }}
       >
-        <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
           <SidebarPill side="left" collapsed={leftCollapsed} onClick={onToggleLeft} />
-          <span style={{ fontSize: 11, color: "var(--ink-3)", marginLeft: 4 }}>
+          <span style={{ fontSize: 13, color: "var(--ink-2)", marginLeft: 4 }}>
             {leftCollapsed ? "Library" : ""}
           </span>
           <button
             type="button"
             className="nq-btn nq-btn-ghost"
             onClick={onStartOver}
-            style={{ padding: "5px 10px", fontSize: 11, marginLeft: 8 }}
+            style={{ marginLeft: 8 }}
             title="Back to start screen — pick by month / profile / theme / curated"
           >
             ← Start over
           </button>
         </div>
-        <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
           <button
             type="button"
             className="nq-btn nq-btn-ghost"
             onClick={() => window.print()}
-            style={{ padding: "5px 10px", fontSize: 11 }}
           >
             Print
           </button>
@@ -182,7 +181,6 @@ export function BoardCanvas({
             type="button"
             className="nq-btn nq-btn-ghost"
             onClick={onShareClick}
-            style={{ padding: "5px 10px", fontSize: 11 }}
           >
             Share · Export
           </button>
@@ -196,12 +194,13 @@ export function BoardCanvas({
           style={{
             background: "rgba(217,96,80,.10)",
             borderBottom: "1px solid rgba(217,96,80,.3)",
-            padding: "8px 26px",
-            fontSize: 11.5,
+            padding: "10px 26px",
+            fontSize: 14,
             color: "var(--score-1)",
             display: "flex",
             justifyContent: "space-between",
             alignItems: "center",
+            gap: 12,
           }}
         >
           <span>
@@ -214,8 +213,6 @@ export function BoardCanvas({
               className="nq-btn nq-btn-ghost"
               onClick={onToggleRight}
               style={{
-                padding: "2px 8px",
-                fontSize: 10.5,
                 color: "var(--score-1)",
                 borderColor: "rgba(217,96,80,.4)",
               }}
@@ -297,10 +294,9 @@ export function BoardCanvas({
             <div
               style={{
                 padding: 24,
-                fontSize: 12,
-                color: "var(--ink-3)",
-                fontFamily: "var(--serif)",
-                fontStyle: "italic",
+                fontSize: 14,
+                color: "var(--ink-2)",
+                lineHeight: 1.5,
               }}
             >
               Year band activates when you add your first stop.
@@ -312,18 +308,19 @@ export function BoardCanvas({
       {/* Body — stop cards OR map view */}
       <div style={{ flex: 1, overflowY: "auto", minHeight: 0, display: "flex", flexDirection: "column" }}>
         {state.stops.length === 0 ? (
-          <div style={{ padding: 60, textAlign: "center", color: "var(--ink-3)" }}>
+          <div style={{ padding: 60, textAlign: "center", color: "var(--ink-2)" }}>
             <p
               style={{
                 fontFamily: "var(--serif)",
-                fontSize: 18,
+                fontSize: 22,
                 fontStyle: "italic",
-                margin: "0 0 8px 0",
+                margin: "0 0 12px 0",
+                color: "var(--ink)",
               }}
             >
               An empty board, but not a cold start.
             </p>
-            <p style={{ margin: 0, fontSize: 13 }}>Pick from the Library on the left.</p>
+            <p style={{ margin: 0, fontSize: 15, lineHeight: 1.5 }}>Pick from the Library on the left.</p>
           </div>
         ) : view === "map" ? (
           <MapView
@@ -396,15 +393,13 @@ export function BoardCanvas({
         </button>
         <span
           style={{
-            fontSize: 11.5,
-            color: "var(--ink-3)",
-            maxWidth: 460,
-            fontFamily: "var(--serif)",
-            fontStyle: "italic",
+            fontSize: 14,
+            color: "var(--ink-2)",
+            maxWidth: 480,
+            lineHeight: 1.5,
           }}
         >
-          Builds a day-by-day plan from <em>your</em> stops, dates, ages, mobility, vehicle, risk,
-          pace, tier — not a generic article.
+          Builds a day-by-day plan from your stops, dates, ages, mobility, vehicle, risk, pace, tier — not a generic article.
         </span>
       </div>
     </main>

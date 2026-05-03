@@ -207,7 +207,7 @@ export function ColdStart({ destinations, onSeed }: { destinations: DestLite[]; 
     <section className="mx-auto flex min-h-[calc(100vh-4rem)] w-full max-w-5xl flex-col px-6 py-10 md:px-10 md:py-14" data-coldstart>
       {/* Hero */}
       <div className="border-b border-border pb-10">
-        <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
+        <p className="text-[12px] uppercase tracking-[0.06em] text-muted-foreground font-medium">
           491 destinations · 12-month windows · permits + passes tracked
         </p>
         <h1 className="mt-3 font-serif text-4xl font-medium leading-[1.05] tracking-[-0.015em] text-foreground md:text-5xl">
@@ -234,8 +234,8 @@ export function ColdStart({ destinations, onSeed }: { destinations: DestLite[]; 
               tab === t.k ? "border-[#d36843]" : "border-transparent hover:border-muted"
             }`}
           >
-            <div className={`font-serif text-base ${tab === t.k ? "text-foreground" : "text-muted-foreground"}`}>{t.l}</div>
-            <div className="mt-0.5 text-[10.5px] text-muted-foreground/70">{t.sub}</div>
+            <div className={`font-serif text-lg ${tab === t.k ? "text-foreground" : "text-muted-foreground"}`}>{t.l}</div>
+            <div className="mt-1 text-[13px] text-muted-foreground">{t.sub}</div>
           </button>
         ))}
       </nav>
@@ -261,10 +261,10 @@ export function ColdStart({ destinations, onSeed }: { destinations: DestLite[]; 
                   />
                 </div>
                 <div className="p-4">
-                  <div className="font-mono text-[11px] uppercase tracking-[0.16em] text-[#d36843]">{c.sub}</div>
-                  <h3 className="mt-1 font-serif text-xl font-medium leading-tight">{c.name}</h3>
-                  <p className="mt-2 text-xs leading-[1.55] text-muted-foreground">{c.desc}</p>
-                  <p className="mt-3 text-[11px] text-muted-foreground/70">use as starting point — drag dates in the year band after</p>
+                  <div className="text-[12px] uppercase tracking-[0.06em] text-[#d36843] font-semibold">{c.sub}</div>
+                  <h3 className="mt-2 font-serif text-xl font-medium leading-tight">{c.name}</h3>
+                  <p className="mt-3 text-[14px] leading-[1.55] text-muted-foreground">{c.desc}</p>
+                  <p className="mt-3 text-[13px] text-muted-foreground">Use as starting point — drag dates in the year band after</p>
                 </div>
               </button>
             ))}
@@ -279,7 +279,7 @@ export function ColdStart({ destinations, onSeed }: { destinations: DestLite[]; 
                   key={m}
                   type="button"
                   onClick={() => setMonth(i + 1)}
-                  className={`border px-3.5 py-2 font-mono text-xs transition-colors ${
+                  className={`border px-4 py-2 text-[14px] font-medium transition-colors ${
                     month === i + 1
                       ? "border-[#d36843] bg-[#d36843] text-white"
                       : "border-border text-muted-foreground hover:border-foreground"
@@ -289,7 +289,7 @@ export function ColdStart({ destinations, onSeed }: { destinations: DestLite[]; 
                 </button>
               ))}
             </div>
-            <p className="mt-5 font-mono text-[11px] uppercase tracking-[0.16em] text-muted-foreground">
+            <p className="mt-5 text-[12px] uppercase tracking-[0.06em] text-muted-foreground font-medium">
               Top {monthList.length} destinations scored for {MONTHS[month - 1]}
             </p>
             <div className="mt-3 grid grid-cols-1 gap-2 md:grid-cols-2">
@@ -301,19 +301,19 @@ export function ColdStart({ destinations, onSeed }: { destinations: DestLite[]; 
                   className="flex items-center gap-3 border border-border p-3 text-left transition-colors hover:bg-muted"
                 >
                   <span
-                    className={`flex h-9 min-w-[40px] items-center justify-center font-mono text-xs font-bold ${
+                    className={`flex h-10 min-w-[44px] items-center justify-center text-[13px] font-bold ${
                       score >= 4 ? "bg-emerald-700 text-white" : score >= 3 ? "bg-amber-600 text-white" : score >= 1 ? "bg-rose-600 text-white" : "bg-muted text-muted-foreground"
                     }`}
                   >
                     {score}/5
                   </span>
                   <div className="min-w-0 flex-1">
-                    <div className="font-serif text-base">{d.name}</div>
-                    <div className="text-[11px] text-muted-foreground">
+                    <div className="font-serif text-lg">{d.name}</div>
+                    <div className="text-[13px] text-muted-foreground mt-0.5">
                       {d.state?.name ?? ""}{d.elevation_m ? ` · ${d.elevation_m}m` : ""}
                     </div>
                   </div>
-                  <span className="text-[11px] text-[#d36843]">add →</span>
+                  <span className="text-[13px] text-[#d36843] font-medium">add →</span>
                 </button>
               ))}
             </div>
@@ -335,14 +335,14 @@ export function ColdStart({ destinations, onSeed }: { destinations: DestLite[]; 
                   }`}
                 >
                   <div className="text-2xl">{p.icon}</div>
-                  <div className="mt-2 font-serif text-base">{p.label}</div>
-                  <div className="mt-0.5 text-[10.5px] text-muted-foreground">{p.sub}</div>
+                  <div className="mt-2 font-serif text-lg">{p.label}</div>
+                  <div className="mt-1 text-[13px] text-muted-foreground">{p.sub}</div>
                 </button>
               ))}
             </div>
             {profile ? (
               <>
-                <p className="mt-6 font-mono text-[11px] uppercase tracking-[0.16em] text-muted-foreground">
+                <p className="mt-6 text-[12px] uppercase tracking-[0.06em] text-muted-foreground font-medium">
                   {profileMatches.length} starter destination{profileMatches.length === 1 ? "" : "s"} for {PROFILES.find((p) => p.id === profile)?.label}
                 </p>
                 <div className="mt-3 grid grid-cols-1 gap-2 md:grid-cols-2">
@@ -354,18 +354,18 @@ export function ColdStart({ destinations, onSeed }: { destinations: DestLite[]; 
                       className="flex items-center gap-3 border border-border p-3 text-left transition-colors hover:bg-muted"
                     >
                       <div className="min-w-0 flex-1">
-                        <div className="font-serif text-base">{d.name}</div>
-                        <div className="text-[11px] text-muted-foreground">
+                        <div className="font-serif text-lg">{d.name}</div>
+                        <div className="text-[13px] text-muted-foreground mt-0.5">
                           {d.state?.name ?? ""} · {d.difficulty ?? "—"}{d.elevation_m ? ` · ${d.elevation_m}m` : ""}
                         </div>
                       </div>
-                      <span className="text-[11px] text-[#d36843]">add →</span>
+                      <span className="text-[13px] text-[#d36843] font-medium">add →</span>
                     </button>
                   ))}
                 </div>
               </>
             ) : (
-              <p className="mt-6 font-serif text-sm italic text-muted-foreground">Pick a profile above to filter destinations.</p>
+              <p className="mt-6 text-[14px] text-muted-foreground">Pick a profile above to filter destinations.</p>
             )}
           </div>
         )}
@@ -385,7 +385,7 @@ export function ColdStart({ destinations, onSeed }: { destinations: DestLite[]; 
                   }`}
                 >
                   <span className="text-xl">{t.icon}</span>
-                  <span className="font-serif text-base">{t.label}</span>
+                  <span className="font-serif text-lg">{t.label}</span>
                 </button>
               ))}
             </div>
@@ -393,19 +393,19 @@ export function ColdStart({ destinations, onSeed }: { destinations: DestLite[]; 
               <button
                 type="button"
                 onClick={() => chooseTheme(THEMES.find((t) => t.id === theme)!)}
-                className="mt-6 inline-flex items-center gap-2 bg-foreground px-4 py-2.5 font-mono text-xs uppercase tracking-[0.16em] text-background hover:opacity-90"
+                className="mt-6 inline-flex items-center gap-2 bg-foreground px-5 py-3 text-[13px] uppercase tracking-[0.06em] text-background font-medium hover:opacity-90"
               >
                 Seed trip with {THEMES.find((t) => t.id === theme)?.match.filter((s) => destinations.some((d) => d.id === s)).slice(0, 3).join(" + ")} →
               </button>
             ) : (
-              <p className="mt-6 font-serif text-sm italic text-muted-foreground">Pick a theme to seed a starter trip.</p>
+              <p className="mt-6 text-[14px] text-muted-foreground">Pick a theme to seed a starter trip.</p>
             )}
           </div>
         )}
       </div>
 
       {/* Bottom proof strip + skip */}
-      <footer className="mt-10 grid grid-cols-2 gap-6 border-t border-border pt-6 text-[11.5px] text-muted-foreground md:grid-cols-4">
+      <footer className="mt-10 grid grid-cols-2 gap-6 border-t border-border pt-6 text-[14px] leading-[1.5] text-muted-foreground md:grid-cols-4">
         <div>
           <strong className="text-foreground">491</strong>
           <br />destinations researched
@@ -428,7 +428,7 @@ export function ColdStart({ destinations, onSeed }: { destinations: DestLite[]; 
         <button
           type="button"
           onClick={skipToEmptyBoard}
-          className="text-xs text-muted-foreground underline-offset-4 hover:text-foreground hover:underline"
+          className="text-[14px] text-muted-foreground underline-offset-4 hover:text-foreground hover:underline"
         >
           {tt("skipColdStart") ?? "Skip · open empty board →"}
         </button>

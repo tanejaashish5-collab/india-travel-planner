@@ -95,15 +95,15 @@ function LibraryItem({
           >
             {d.name}
           </div>
-          <div style={{ fontSize: 11, color: "var(--ink-3)" }}>
+          <div style={{ fontSize: 13, color: "var(--ink-2)", marginTop: 2 }}>
             {d.state?.name ?? "—"}
             {d.elevation_m ? ` · ${d.elevation_m}m` : ""}
             {d.difficulty ? ` · ${d.difficulty}` : ""}
           </div>
         </div>
-        <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", gap: 4 }}>
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", gap: 6 }}>
           <ScoreChip s={score} />
-          <span style={{ fontSize: 10, color: "var(--ink-3)" }}>{added ? "✓ in trip" : "+ add"}</span>
+          <span style={{ fontSize: 12, color: added ? "var(--score-5)" : "var(--accent)", fontWeight: 500 }}>{added ? "✓ in trip" : "+ add"}</span>
         </div>
       </div>
     </button>
@@ -208,8 +208,7 @@ export function LibraryPanel({
               onClick={() => setFilter(f.id)}
               className="nq-btn nq-btn-ghost"
               style={{
-                padding: "4px 9px",
-                fontSize: 11,
+                padding: "5px 11px",
                 background: filter === f.id ? "var(--ink)" : "transparent",
                 color: filter === f.id ? "var(--paper)" : "var(--ink-2)",
                 borderColor: filter === f.id ? "var(--ink)" : "var(--rule-2)",
@@ -222,7 +221,7 @@ export function LibraryPanel({
       </div>
       <div style={{ overflow: "auto", flex: 1 }}>
         {filtered.length === 0 ? (
-          <div style={{ padding: 24, color: "var(--ink-3)", fontSize: 12 }}>No matches.</div>
+          <div style={{ padding: 24, color: "var(--ink-2)", fontSize: 14 }}>No matches.</div>
         ) : (
           filtered.map((d) => (
             <LibraryItem

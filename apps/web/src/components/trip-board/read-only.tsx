@@ -91,26 +91,24 @@ export function TripBoardReadOnly({
           style={{
             background: "rgba(211, 104, 67, .10)",
             borderBottom: "1px solid rgba(211, 104, 67, .3)",
-            padding: "10px 26px",
-            fontSize: 11.5,
+            padding: "12px 26px",
+            fontSize: 14,
             color: "#d36843",
             display: "flex",
             justifyContent: "space-between",
             alignItems: "center",
-            fontFamily: "var(--serif)",
-            fontStyle: "italic",
+            gap: 16,
           }}
         >
-          <span>Read-only · this is a shared trip board</span>
+          <span style={{ fontWeight: 500 }}>Read-only · this is a shared trip board</span>
           <Link
             href="/trip"
             style={{
               color: "var(--ink)",
               textDecoration: "underline",
               textDecorationColor: "#d36843",
-              fontFamily: "var(--sans)",
-              fontStyle: "normal",
-              fontSize: 11,
+              textUnderlineOffset: 3,
+              fontSize: 14,
             }}
           >
             Plan your own at nakshiq.com/trip →
@@ -171,10 +169,9 @@ export function TripBoardReadOnly({
                 style={{
                   padding: 60,
                   textAlign: "center",
-                  color: "var(--ink-3)",
-                  fontFamily: "var(--serif)",
-                  fontStyle: "italic",
+                  color: "var(--ink-2)",
                   fontSize: 16,
+                  lineHeight: 1.5,
                 }}
               >
                 This shared board has no stops.
@@ -210,7 +207,7 @@ export function TripBoardReadOnly({
                       {dest?.name ?? stop.destinationId}
                     </h2>
                     <div style={{ display: "flex", gap: 10, alignItems: "center", flexWrap: "wrap" }}>
-                      <span style={{ fontSize: 11.5, color: "var(--ink-3)" }}>
+                      <span style={{ fontSize: 14, color: "var(--ink-2)" }}>
                         {dest?.state?.name ?? "—"}
                         {dest?.elevation_m ? ` · ${dest.elevation_m.toLocaleString()} m` : ""}
                       </span>
@@ -232,8 +229,9 @@ export function TripBoardReadOnly({
                           margin: "6px 0 0 0",
                           fontFamily: "var(--serif)",
                           fontStyle: "italic",
-                          fontSize: 13,
+                          fontSize: 15,
                           color: "var(--ink-2)",
+                          lineHeight: 1.5,
                         }}
                       >
                         “{stop.notes}”
@@ -251,13 +249,11 @@ export function TripBoardReadOnly({
         {/* Footer caption */}
         <div
           style={{
-            padding: "14px 26px",
+            padding: "16px 26px",
             borderTop: "1px solid var(--rule-2)",
             background: "rgba(0, 0, 0, .85)",
-            fontSize: 11,
-            color: "var(--ink-3)",
-            fontFamily: "var(--serif)",
-            fontStyle: "italic",
+            fontSize: 13,
+            color: "var(--ink-2)",
             textAlign: "center",
           }}
         >

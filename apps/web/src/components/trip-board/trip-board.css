@@ -25,8 +25,11 @@
   --paper-2: #0a0a0a;
   --paper-3: #161513;
   --ink: #f3ece1;
-  --ink-2: #b8aea0;
-  --ink-3: #7a7163;
+  --ink-2: #c8bfb1;
+  /* Phase 7 contrast bump: #7a7163 (4.4:1 on black, fails accessibility for
+   * italic small text) → #a39788 (~7.5:1, passes WCAG AAA). The whole UI
+   * lifts from "kind of readable" to "actually readable". */
+  --ink-3: #a39788;
   --rule: #1a1814;
   --rule-2: #2a2620;
   --accent: #d36843;
@@ -65,8 +68,8 @@
 .nakshiq-trip-board *::-webkit-scrollbar-thumb { background: #3b3225; border-radius: 10px; border: 2px solid var(--paper); }
 .nakshiq-trip-board *::-webkit-scrollbar-thumb:hover { background: #50432f; }
 
-/* Score chips */
-.nakshiq-trip-board .nq-score { display: inline-flex; align-items: center; gap: 4px; font-family: var(--sans); font-weight: 600; font-size: 11px; letter-spacing: .02em; padding: 3px 7px; border-radius: 3px; line-height: 1; white-space: nowrap; }
+/* Score chips — bumped 11 → 12px for readability while staying compact. */
+.nakshiq-trip-board .nq-score { display: inline-flex; align-items: center; gap: 4px; font-family: var(--sans); font-weight: 600; font-size: 12px; letter-spacing: .02em; padding: 3px 8px; border-radius: 3px; line-height: 1; white-space: nowrap; }
 .nakshiq-trip-board .nq-score-5 { background: rgba(121, 184, 122, 0.15); color: var(--score-5); border: 1px solid rgba(121, 184, 122, 0.35); }
 .nakshiq-trip-board .nq-score-4 { background: rgba(163, 196, 122, 0.15); color: var(--score-4); border: 1px solid rgba(163, 196, 122, 0.35); }
 .nakshiq-trip-board .nq-score-3 { background: rgba(216, 182, 96, 0.15); color: var(--score-3); border: 1px solid rgba(216, 182, 96, 0.35); }
@@ -74,9 +77,10 @@
 .nakshiq-trip-board .nq-score-1 { background: rgba(217, 96, 80, 0.15); color: var(--score-1); border: 1px solid rgba(217, 96, 80, 0.35); }
 .nakshiq-trip-board .nq-score-0 { background: rgba(90, 83, 70, 0.15); color: var(--score-0); border: 1px solid rgba(90, 83, 70, 0.35); }
 
-/* Month strip — 12-cell grid */
-.nakshiq-trip-board .nq-months { display: grid; grid-template-columns: repeat(12, 1fr); gap: 2px; font-family: var(--mono); font-size: 10px; }
-.nakshiq-trip-board .nq-months > span { padding: 4px 0; text-align: center; border-radius: 2px; font-weight: 600; }
+/* Month strip — 12-cell grid. Switched from mono to sans (these aren't
+ * tabular numerics — they're a 1-letter month + 1-digit score), bumped 10→11px. */
+.nakshiq-trip-board .nq-months { display: grid; grid-template-columns: repeat(12, 1fr); gap: 2px; font-family: var(--sans); font-size: 11px; }
+.nakshiq-trip-board .nq-months > span { padding: 5px 0; text-align: center; border-radius: 2px; font-weight: 600; }
 
 /* Status verbs */
 .nakshiq-trip-board .nq-verb { font-family: var(--sans); font-weight: 700; letter-spacing: .08em; font-size: 10px; text-transform: uppercase; }
@@ -84,13 +88,19 @@
 .nakshiq-trip-board .nq-verb-skip { color: var(--score-1); }
 .nakshiq-trip-board .nq-verb-marginal { color: var(--score-2); }
 
-/* Editorial type */
-.nakshiq-trip-board .nq-eyebrow { font-family: var(--sans); text-transform: uppercase; letter-spacing: .14em; font-size: 10px; font-weight: 600; color: var(--ink-3); }
+/* Editorial type — Phase 7 readability rescue:
+ * - .nq-eyebrow softened from 10px/0.14em → 12px/0.06em (no longer
+ *   forces letter-by-letter reading; still reads as a section label).
+ * - .nq-italic still defined for the brand flourish only; component
+ *   passes have stopped applying it to body captions per
+ *   "italics in body text are banned" rule.
+ */
+.nakshiq-trip-board .nq-eyebrow { font-family: var(--sans); text-transform: uppercase; letter-spacing: .06em; font-size: 12px; font-weight: 500; color: var(--ink-3); }
 .nakshiq-trip-board .nq-h { font-family: var(--serif); font-weight: 500; letter-spacing: -0.01em; line-height: 1.05; color: var(--ink); }
 .nakshiq-trip-board .nq-italic { font-family: var(--serif); font-style: italic; color: var(--ink-2); }
 
-/* Label : value */
-.nakshiq-trip-board .nq-kv { display: grid; grid-template-columns: 110px 1fr; gap: 8px 14px; font-size: 12.5px; line-height: 1.45; }
+/* Label : value — bumped 12.5px → 14px so the dl values are readable. */
+.nakshiq-trip-board .nq-kv { display: grid; grid-template-columns: 110px 1fr; gap: 8px 14px; font-size: 14px; line-height: 1.5; }
 .nakshiq-trip-board .nq-kv dt { color: var(--ink-3); font-weight: 500; }
 .nakshiq-trip-board .nq-kv dd { margin: 0; color: var(--ink-2); }
 
@@ -103,17 +113,18 @@
 .nakshiq-trip-board .nq-glyph-rail { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--rule-2); border: 1px solid var(--rule-2); border-radius: 4px; overflow: hidden; }
 .nakshiq-trip-board .nq-glyph { background: var(--paper-2); padding: 10px 12px; }
 .nakshiq-trip-board .nq-glyph-icon { font-size: 16px; line-height: 1; margin-bottom: 6px; opacity: 0.85; }
-.nakshiq-trip-board .nq-glyph-label { font-family: var(--sans); text-transform: uppercase; letter-spacing: .12em; font-size: 9px; color: var(--ink-3); font-weight: 600; }
-.nakshiq-trip-board .nq-glyph-value { font-family: var(--sans); font-size: 11.5px; color: var(--ink); line-height: 1.35; margin-top: 3px; }
+/* Glyph rail labels — bumped from 9px tracked uppercase to 11px for readability. */
+.nakshiq-trip-board .nq-glyph-label { font-family: var(--sans); text-transform: uppercase; letter-spacing: .04em; font-size: 11px; color: var(--ink-3); font-weight: 600; }
+.nakshiq-trip-board .nq-glyph-value { font-family: var(--sans); font-size: 14px; color: var(--ink); line-height: 1.4; margin-top: 4px; }
 
-/* Editorial alert callout */
+/* Editorial alert callout — alert eyebrow keeps urgency tracking but bumped 9.5 → 11px. Body text 12 → 14px. */
 .nakshiq-trip-board .nq-alert { background: var(--accent-soft); border: 1px solid rgba(211, 104, 67, 0.3); border-left: 3px solid var(--accent); padding: 12px 14px; }
-.nakshiq-trip-board .nq-alert-eyebrow { font-family: var(--sans); text-transform: uppercase; letter-spacing: .14em; font-size: 9.5px; color: var(--accent); font-weight: 700; margin-bottom: 4px; }
-.nakshiq-trip-board .nq-alert h4 { margin: 0 0 4px 0; font-family: var(--serif); font-size: 15px; font-weight: 500; color: var(--ink); }
-.nakshiq-trip-board .nq-alert p { margin: 0; font-size: 12px; color: var(--ink-2); line-height: 1.5; }
+.nakshiq-trip-board .nq-alert-eyebrow { font-family: var(--sans); text-transform: uppercase; letter-spacing: .08em; font-size: 11px; color: var(--accent); font-weight: 700; margin-bottom: 4px; }
+.nakshiq-trip-board .nq-alert h4 { margin: 0 0 4px 0; font-family: var(--serif); font-size: 16px; font-weight: 500; color: var(--ink); }
+.nakshiq-trip-board .nq-alert p { margin: 0; font-size: 14px; color: var(--ink-2); line-height: 1.55; }
 
-/* Buttons */
-.nakshiq-trip-board .nq-btn { display: inline-flex; align-items: center; gap: 6px; padding: 7px 12px; font-size: 12px; font-weight: 500; border: 1px solid var(--rule-2); background: var(--paper-2); color: var(--ink); border-radius: 2px; cursor: pointer; transition: background .12s, border-color .12s, color .12s; font-family: inherit; }
+/* Buttons — bumped 12 → 13px so the labels are readable. */
+.nakshiq-trip-board .nq-btn { display: inline-flex; align-items: center; gap: 6px; padding: 7px 12px; font-size: 13px; font-weight: 500; border: 1px solid var(--rule-2); background: var(--paper-2); color: var(--ink); border-radius: 2px; cursor: pointer; transition: background .12s, border-color .12s, color .12s; font-family: inherit; }
 .nakshiq-trip-board .nq-btn:hover { background: var(--paper-3); border-color: var(--ink-3); }
 .nakshiq-trip-board .nq-btn:disabled { opacity: 0.4; cursor: not-allowed; }
 .nakshiq-trip-board .nq-btn-primary { background: var(--accent); color: var(--paper); border-color: var(--accent); }
@@ -121,18 +132,19 @@
 .nakshiq-trip-board .nq-btn-ghost { background: transparent; border-color: var(--rule-2); color: var(--ink-2); }
 .nakshiq-trip-board .nq-btn-ghost:hover { background: var(--paper-2); border-color: var(--ink-3); color: var(--ink); }
 
+/* Inputs — bumped 13 → 15px so what users type is readable without zoom. */
 .nakshiq-trip-board input.nq-input,
 .nakshiq-trip-board select.nq-input,
 .nakshiq-trip-board textarea.nq-input {
-  font-family: inherit; padding: 8px 10px; border: 1px solid var(--rule-2); background: var(--paper-2); border-radius: 2px; font-size: 13px; color: var(--ink);
+  font-family: inherit; padding: 8px 10px; border: 1px solid var(--rule-2); background: var(--paper-2); border-radius: 2px; font-size: 15px; color: var(--ink);
 }
 .nakshiq-trip-board input.nq-input::placeholder { color: var(--ink-3); }
 .nakshiq-trip-board input.nq-input:focus,
 .nakshiq-trip-board select.nq-input:focus,
 .nakshiq-trip-board textarea.nq-input:focus { outline: none; border-color: var(--accent); }
 
-/* Tags / pills */
-.nakshiq-trip-board .nq-tag { display: inline-block; font-size: 10.5px; padding: 2px 7px; border: 1px solid var(--rule-2); border-radius: 100px; color: var(--ink-3); letter-spacing: .02em; }
+/* Tags / pills — 10.5px was unreadable; 12px holds shape but stays compact. */
+.nakshiq-trip-board .nq-tag { display: inline-block; font-size: 12px; padding: 3px 8px; border: 1px solid var(--rule-2); border-radius: 100px; color: var(--ink-3); letter-spacing: .02em; }
 
 /* Modal */
 .nakshiq-trip-board .nq-modal-bg,

@@ -107,16 +107,15 @@ export function CostPanel({
         </div>
         <div
           style={{
-            fontSize: 11,
-            color: "var(--ink-3)",
-            fontStyle: "italic",
-            fontFamily: "var(--serif)",
+            fontSize: 13,
+            color: "var(--ink-2)",
+            lineHeight: 1.5,
           }}
         >
           Updates as you change stops or dates.
         </div>
-        <div style={{ marginTop: 10, display: "flex", gap: 6, fontSize: 11.5, alignItems: "center" }}>
-          <span style={{ color: "var(--ink-3)" }}>Tier:</span>
+        <div style={{ marginTop: 12, display: "flex", gap: 6, fontSize: 14, alignItems: "center" }}>
+          <span style={{ color: "var(--ink-2)" }}>Tier:</span>
           {TIERS.map((t) => (
             <button
               key={t}
@@ -125,8 +124,9 @@ export function CostPanel({
               style={{
                 all: "unset",
                 cursor: "pointer",
-                padding: "2px 8px",
+                padding: "4px 10px",
                 borderRadius: 2,
+                fontSize: 13,
                 background: tier === t ? "var(--ink)" : "transparent",
                 color: tier === t ? "var(--paper)" : "var(--ink-2)",
                 border: `1px solid ${tier === t ? "var(--ink)" : "var(--rule-2)"}`,
@@ -156,34 +156,36 @@ export function CostPanel({
           {fmt(aggregateResult.total)}
           <span
             style={{
-              fontSize: 13,
+              fontSize: 14,
               fontFamily: "var(--sans)",
-              color: "var(--ink-3)",
+              color: "var(--ink-2)",
               marginLeft: 6,
             }}
           >
             per person
           </span>
         </div>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 10, fontSize: 11 }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 10 }}>
           {(["stay", "food", "transit", "activity"] as const).map((k) => (
             <div key={k}>
               <div
                 style={{
                   color: "var(--ink-3)",
                   textTransform: "uppercase",
-                  letterSpacing: ".08em",
-                  fontSize: 9.5,
+                  letterSpacing: ".04em",
+                  fontSize: 11,
                   fontWeight: 600,
                 }}
               >
                 {k === "transit" ? "Transit" : k.charAt(0).toUpperCase() + k.slice(1)}
               </div>
+              {/* Cost figures stay in mono — these are tabular numerics, the
+                  one place the design rule explicitly allows it. */}
               <div
                 style={{
                   fontFamily: "var(--mono)",
-                  fontSize: 12.5,
-                  marginTop: 3,
+                  fontSize: 14,
+                  marginTop: 4,
                   color: "var(--ink)",
                 }}
               >
@@ -195,11 +197,10 @@ export function CostPanel({
         {aggregateResult.incomplete && (
           <p
             style={{
-              marginTop: 10,
-              fontSize: 10.5,
-              fontStyle: "italic",
+              marginTop: 12,
+              fontSize: 13,
               color: "var(--score-3)",
-              fontFamily: "var(--serif)",
+              lineHeight: 1.5,
             }}
           >
             Some stops missing cost data — total is a floor.
@@ -216,19 +217,18 @@ export function CostPanel({
           Permit timeline
         </div>
         {permitItems.length === 0 ? (
-          <div style={{ fontSize: 11.5, color: "var(--ink-3)" }}>None for this itinerary.</div>
+          <div style={{ fontSize: 14, color: "var(--ink-2)" }}>None for this itinerary.</div>
         ) : (
           permitItems.map((p) => (
             <div
               key={p.id}
-              style={{ fontSize: 11.5, marginBottom: 6, color: "var(--ink-2)" }}
+              style={{ fontSize: 14, marginBottom: 10, color: "var(--ink-2)", lineHeight: 1.5 }}
             >
               <strong style={{ color: "var(--ink)" }}>{p.name}</strong> · {p.type}
               <br />
               <span
                 style={{
-                  fontFamily: "var(--mono)",
-                  fontSize: 10.5,
+                  fontSize: 13,
                   color: "var(--ink-3)",
                 }}
               >

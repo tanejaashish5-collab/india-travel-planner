@@ -202,11 +202,10 @@ export function MapView({
           alignSelf: "center",
           maxWidth: 720,
           width: "100%",
-          fontSize: 11.5,
-          color: "var(--ink-3)",
-          fontFamily: "var(--serif)",
-          fontStyle: "italic",
+          fontSize: 14,
+          color: "var(--ink-2)",
           textAlign: "center",
+          lineHeight: 1.5,
         }}
       >
         Click a pin to scroll to its stop card · vermillion line = trip order
@@ -218,7 +217,7 @@ export function MapView({
           style={{ alignSelf: "center", maxWidth: 720, width: "100%" }}
         >
           <div className="nq-alert-eyebrow">Missing coordinates</div>
-          <p style={{ margin: 0, fontSize: 12 }}>
+          <p style={{ margin: 0, fontSize: 14, lineHeight: 1.55 }}>
             {missingCount} {missingCount === 1 ? "stop has" : "stops have"} no PostGIS coords on file
             and can&rsquo;t be plotted. The list view still shows everything.
           </p>

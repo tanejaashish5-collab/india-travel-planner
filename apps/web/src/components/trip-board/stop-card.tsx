@@ -121,21 +121,21 @@ export function StopCard({
           </span>
           <span
             style={{
-              fontSize: 11.5,
-              color: "var(--ink-2)",
-              fontFamily: "var(--mono)",
+              fontSize: 14,
+              color: "var(--ink)",
+              fontWeight: 500,
             }}
           >
             {dateRangeLabel(stop.startDay, stop.days)} · {stop.days}d
           </span>
         </div>
-        <div style={{ display: "flex", gap: 4 }}>
+        <div style={{ display: "flex", gap: 6 }}>
           <button
             type="button"
             className="nq-btn nq-btn-ghost"
             onClick={onMoveUp}
             disabled={idx === 0}
-            style={{ padding: "4px 8px", fontSize: 11 }}
+            style={{ padding: "6px 10px" }}
             aria-label="Move up"
           >
             ↑
@@ -145,7 +145,7 @@ export function StopCard({
             className="nq-btn nq-btn-ghost"
             onClick={onMoveDown}
             disabled={idx === totalStops - 1}
-            style={{ padding: "4px 8px", fontSize: 11 }}
+            style={{ padding: "6px 10px" }}
             aria-label="Move down"
           >
             ↓
@@ -154,7 +154,7 @@ export function StopCard({
             type="button"
             className="nq-btn nq-btn-ghost"
             onClick={onRemove}
-            style={{ padding: "4px 8px", fontSize: 11 }}
+            style={{ padding: "6px 10px" }}
             aria-label="Remove stop"
           >
             ✕
@@ -175,7 +175,7 @@ export function StopCard({
             marginBottom: 8,
           }}
         >
-          <span style={{ fontSize: 12, color: "var(--ink-3)" }}>
+          <span style={{ fontSize: 14, color: "var(--ink-2)" }}>
             {dest?.state?.name ?? "—"}
             {dest?.elevation_m ? ` · ${dest.elevation_m}m` : ""}
           </span>
@@ -211,9 +211,9 @@ export function StopCard({
             style={{
               display: "flex",
               alignItems: "center",
-              gap: 8,
-              fontSize: 11,
-              color: "var(--ink-3)",
+              gap: 10,
+              fontSize: 13,
+              color: "var(--ink-2)",
             }}
           >
             <span className="nq-eyebrow">Days</span>
@@ -224,18 +224,18 @@ export function StopCard({
               max={30}
               value={stop.days}
               onChange={(e) => onSetDays(Number(e.target.value))}
-              style={{ width: 72, padding: "4px 8px", fontSize: 12 }}
+              style={{ width: 80, padding: "6px 10px" }}
             />
           </label>
           <label
             style={{
               display: "flex",
               alignItems: "center",
-              gap: 8,
-              fontSize: 11,
-              color: "var(--ink-3)",
+              gap: 10,
+              fontSize: 13,
+              color: "var(--ink-2)",
               flex: 1,
-              minWidth: 200,
+              minWidth: 220,
             }}
           >
             <span className="nq-eyebrow">Notes</span>
@@ -245,14 +245,13 @@ export function StopCard({
               value={stop.notes}
               onChange={(e) => onSetNotes(e.target.value)}
               placeholder="Notes for this stop…"
-              style={{ flex: 1, padding: "4px 8px", fontSize: 12 }}
+              style={{ flex: 1, padding: "6px 10px" }}
             />
           </label>
           <span
             style={{
-              fontFamily: "var(--mono)",
-              fontSize: 10.5,
-              color: "var(--ink-3)",
+              fontSize: 13,
+              color: "var(--ink-2)",
             }}
           >
             starts {doyLabel(stop.startDay)}

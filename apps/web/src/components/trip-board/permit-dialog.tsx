@@ -108,7 +108,7 @@ export function PermitDialog({
 
         <div className="nq-modal-body">
           {permits === null && !error && (
-            <p style={{ fontFamily: "var(--serif)", fontStyle: "italic", color: "var(--ink-3)" }}>
+            <p style={{ fontSize: 14, color: "var(--ink-2)", lineHeight: 1.5 }}>
               Loading permit details…
             </p>
           )}
@@ -117,16 +117,17 @@ export function PermitDialog({
               style={{
                 background: "rgba(217,96,80,.10)",
                 border: "1px solid rgba(217,96,80,.3)",
-                padding: 12,
+                padding: 14,
                 color: "var(--score-1)",
-                fontSize: 12,
+                fontSize: 14,
+                lineHeight: 1.5,
               }}
             >
               Couldn&rsquo;t load permits — {error}.
             </div>
           )}
           {permits !== null && permits.length === 0 && (
-            <p style={{ fontFamily: "var(--serif)", fontStyle: "italic", color: "var(--ink-3)" }}>
+            <p style={{ fontSize: 14, color: "var(--ink-2)", lineHeight: 1.5 }}>
               No permit on file for {destinationName}. The trip board flagged a permit type, but
               the detailed entry hasn&rsquo;t been published yet.
             </p>
@@ -167,11 +168,10 @@ export function PermitDialog({
                   <dl
                     className="nq-kv"
                     style={{
-                      marginTop: 14,
-                      paddingTop: 12,
+                      marginTop: 16,
+                      paddingTop: 14,
                       borderTop: "1px solid var(--rule)",
-                      fontSize: 12,
-                      gridTemplateColumns: "90px 1fr 90px 1fr 90px 1fr",
+                      gridTemplateColumns: "90px 1fr 100px 1fr 90px 1fr",
                     }}
                   >
                     <dt>Cost</dt>
@@ -192,10 +192,10 @@ export function PermitDialog({
                     <p
                       data-permit-citation
                       style={{
-                        marginTop: 12,
-                        fontFamily: "var(--mono)",
-                        fontSize: 10.5,
-                        color: "var(--ink-3)",
+                        marginTop: 14,
+                        fontSize: 13,
+                        color: "var(--ink-2)",
+                        wordBreak: "break-all",
                       }}
                     >
                       Source: {p.government_link}
@@ -208,7 +208,7 @@ export function PermitDialog({
         </div>
 
         <div className="nq-modal-foot">
-          <span style={{ fontSize: 11, color: "var(--ink-3)", fontStyle: "italic", fontFamily: "var(--serif)" }}>
+          <span style={{ fontSize: 13, color: "var(--ink-2)", lineHeight: 1.5 }}>
             Permit details from the {destinationName} entry — kept in-board so you don&rsquo;t lose your trip.
           </span>
           <button type="button" className="nq-btn nq-btn-primary" onClick={onClose}>
@@ -222,11 +222,11 @@ export function PermitDialog({
 
 function Section({ label, children }: { label: string; children: React.ReactNode }) {
   return (
-    <div style={{ marginTop: 12 }}>
-      <div className="nq-eyebrow" style={{ fontSize: 9.5, marginBottom: 4 }}>
+    <div style={{ marginTop: 14 }}>
+      <div className="nq-eyebrow" style={{ marginBottom: 6 }}>
         {label}
       </div>
-      <div style={{ fontSize: 13, color: "var(--ink-2)", lineHeight: 1.5 }}>{children}</div>
+      <div style={{ fontSize: 15, color: "var(--ink-2)", lineHeight: 1.55 }}>{children}</div>
     </div>
   );
 }

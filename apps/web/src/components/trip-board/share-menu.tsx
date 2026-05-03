@@ -118,11 +118,10 @@ export function ShareMenu({
             </div>
             <p
               style={{
-                margin: "0 0 10px 0",
-                fontSize: 12,
-                color: "var(--ink-3)",
-                fontFamily: "var(--serif)",
-                fontStyle: "italic",
+                margin: "0 0 12px 0",
+                fontSize: 14,
+                color: "var(--ink-2)",
+                lineHeight: 1.5,
               }}
             >
               {signedIn
@@ -140,16 +139,19 @@ export function ShareMenu({
             {status.kind === "linked" && (
               <div
                 className="nq-alert"
-                style={{ marginTop: 10, fontSize: 11.5 }}
+                style={{ marginTop: 12 }}
               >
                 <div className="nq-alert-eyebrow">Copied</div>
+                {/* URL stays mono — it's tabular-numeric-style and benefits from
+                    fixed-width to reduce visual ambiguity in tokens. */}
                 <code
                   style={{
                     display: "block",
                     fontFamily: "var(--mono)",
+                    fontSize: 13,
                     wordBreak: "break-all",
-                    color: "var(--ink-2)",
-                    marginTop: 4,
+                    color: "var(--ink)",
+                    marginTop: 6,
                   }}
                 >
                   {status.url}
@@ -159,12 +161,13 @@ export function ShareMenu({
             {status.kind === "share-error" && (
               <div
                 style={{
-                  marginTop: 10,
+                  marginTop: 12,
                   background: "rgba(217,96,80,.10)",
                   border: "1px solid rgba(217,96,80,.3)",
-                  padding: 10,
+                  padding: 12,
                   color: "var(--score-1)",
-                  fontSize: 12,
+                  fontSize: 14,
+                  lineHeight: 1.5,
                 }}
               >
                 {status.message}
@@ -179,11 +182,10 @@ export function ShareMenu({
             </div>
             <p
               style={{
-                margin: "0 0 10px 0",
-                fontSize: 12,
-                color: "var(--ink-3)",
-                fontFamily: "var(--serif)",
-                fontStyle: "italic",
+                margin: "0 0 12px 0",
+                fontSize: 14,
+                color: "var(--ink-2)",
+                lineHeight: 1.5,
               }}
             >
               Backup or transfer the board to another device. Re-import via the box below.
@@ -200,11 +202,10 @@ export function ShareMenu({
             </div>
             <p
               style={{
-                margin: "0 0 10px 0",
-                fontSize: 12,
-                color: "var(--ink-3)",
-                fontFamily: "var(--serif)",
-                fontStyle: "italic",
+                margin: "0 0 12px 0",
+                fontSize: 14,
+                color: "var(--ink-2)",
+                lineHeight: 1.5,
               }}
             >
               Replaces the current board with the imported one. Pick a file the trip board exported.
@@ -229,12 +230,13 @@ export function ShareMenu({
             {status.kind === "import-error" && (
               <div
                 style={{
-                  marginTop: 10,
+                  marginTop: 12,
                   background: "rgba(217,96,80,.10)",
                   border: "1px solid rgba(217,96,80,.3)",
-                  padding: 10,
+                  padding: 12,
                   color: "var(--score-1)",
-                  fontSize: 12,
+                  fontSize: 14,
+                  lineHeight: 1.5,
                 }}
               >
                 {status.message}
@@ -244,7 +246,7 @@ export function ShareMenu({
         </div>
 
         <div className="nq-modal-foot">
-          <span style={{ fontSize: 11, color: "var(--ink-3)", fontStyle: "italic", fontFamily: "var(--serif)" }}>
+          <span style={{ fontSize: 13, color: "var(--ink-2)", lineHeight: 1.5 }}>
             Share links work without sign-in for the recipient. Imports overwrite the current board.
           </span>
           <button type="button" className="nq-btn nq-btn-primary" onClick={onClose}>

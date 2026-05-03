@@ -116,12 +116,11 @@ export function ItineraryView({
             {ai?.summary && (
               <p
                 style={{
-                  margin: "6px 0 0 0",
-                  fontFamily: "var(--serif)",
-                  fontStyle: "italic",
-                  fontSize: 13,
+                  margin: "8px 0 0 0",
+                  fontSize: 15,
                   color: "var(--ink-2)",
-                  maxWidth: 580,
+                  maxWidth: 600,
+                  lineHeight: 1.55,
                 }}
               >
                 {ai.summary}
@@ -171,19 +170,19 @@ export function ItineraryView({
                   {d.travelTime && (
                     <p
                       style={{
-                        margin: "0 0 6px 0",
-                        fontSize: 11.5,
-                        color: "var(--ink-3)",
-                        fontFamily: "var(--mono)",
+                        margin: "0 0 8px 0",
+                        fontSize: 14,
+                        color: "var(--ink-2)",
+                        lineHeight: 1.5,
                       }}
                     >
                       {d.travelTime}
                     </p>
                   )}
                   {d.activities && d.activities.length > 0 && (
-                    <ul style={{ margin: "8px 0", paddingLeft: 18, fontSize: 13, color: "var(--ink-2)" }}>
+                    <ul style={{ margin: "10px 0", paddingLeft: 20, fontSize: 15, color: "var(--ink-2)", lineHeight: 1.55 }}>
                       {d.activities.map((a, i) => (
-                        <li key={i} style={{ marginBottom: 3 }}>
+                        <li key={i} style={{ marginBottom: 5 }}>
                           {a}
                         </li>
                       ))}
@@ -192,8 +191,7 @@ export function ItineraryView({
                   <dl
                     className="nq-kv"
                     style={{
-                      marginTop: 8,
-                      fontSize: 12,
+                      marginTop: 10,
                       gridTemplateColumns: "80px 1fr 80px 1fr",
                     }}
                   >
@@ -218,13 +216,7 @@ export function ItineraryView({
                     {d.rationale && (
                       <>
                         <dt>Why</dt>
-                        <dd
-                          style={{
-                            fontFamily: "var(--serif)",
-                            fontStyle: "italic",
-                            color: "var(--ink-3)",
-                          }}
-                        >
+                        <dd style={{ color: "var(--ink-2)" }}>
                           {d.rationale}
                         </dd>
                       </>
@@ -257,7 +249,7 @@ export function ItineraryView({
                   </h3>
                   <dl
                     className="nq-kv"
-                    style={{ fontSize: 13, gridTemplateColumns: "100px 1fr" }}
+                    style={{ gridTemplateColumns: "100px 1fr" }}
                   >
                     <dt>Morning</dt>
                     <dd>{d.morning}</dd>
@@ -268,13 +260,7 @@ export function ItineraryView({
                     {d.rationale && (
                       <>
                         <dt>Why</dt>
-                        <dd
-                          style={{
-                            fontFamily: "var(--serif)",
-                            fontStyle: "italic",
-                            color: "var(--ink-3)",
-                          }}
-                        >
+                        <dd style={{ color: "var(--ink-2)" }}>
                           {d.rationale}
                         </dd>
                       </>
@@ -291,25 +277,25 @@ export function ItineraryView({
             <div style={{ marginTop: 18, display: "flex", flexDirection: "column", gap: 14 }}>
               {ai.packingTips && ai.packingTips.length > 0 && (
                 <SubBlock label="Packing">
-                  <ul style={{ margin: 0, paddingLeft: 18, fontSize: 12.5 }}>
+                  <ul style={{ margin: 0, paddingLeft: 20, fontSize: 14, lineHeight: 1.55, color: "var(--ink-2)" }}>
                     {ai.packingTips.map((t, i) => (
-                      <li key={i}>{t}</li>
+                      <li key={i} style={{ marginBottom: 4 }}>{t}</li>
                     ))}
                   </ul>
                 </SubBlock>
               )}
               {ai.warnings && ai.warnings.length > 0 && (
                 <SubBlock label="Warnings">
-                  <ul style={{ margin: 0, paddingLeft: 18, fontSize: 12.5, color: "var(--score-1)" }}>
+                  <ul style={{ margin: 0, paddingLeft: 20, fontSize: 14, lineHeight: 1.55, color: "var(--score-1)" }}>
                     {ai.warnings.map((t, i) => (
-                      <li key={i}>{t}</li>
+                      <li key={i} style={{ marginBottom: 4 }}>{t}</li>
                     ))}
                   </ul>
                 </SubBlock>
               )}
               {ai.estimatedBudget && (
                 <SubBlock label="Estimated budget">
-                  <dl className="nq-kv" style={{ fontSize: 12, gridTemplateColumns: "90px 1fr 90px 1fr 90px 1fr" }}>
+                  <dl className="nq-kv" style={{ gridTemplateColumns: "90px 1fr 90px 1fr 90px 1fr" }}>
                     <dt>Budget</dt>
                     <dd>{ai.estimatedBudget.budget ?? "—"}</dd>
                     <dt>Mid</dt>
@@ -324,7 +310,7 @@ export function ItineraryView({
         </div>
 
         <div className="nq-modal-foot" data-no-print>
-          <span style={{ fontSize: 11, color: "var(--ink-3)", fontStyle: "italic", fontFamily: "var(--serif)" }}>
+          <span style={{ fontSize: 13, color: "var(--ink-2)", lineHeight: 1.5 }}>
             {fallbackUsed
               ? "AI was unreachable — local scaffold from your stops + dates is shown."
               : "AI used your ages, mobility, vehicle and budget. Edit stops to regenerate."}

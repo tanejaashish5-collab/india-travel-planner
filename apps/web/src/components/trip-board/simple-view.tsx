@@ -131,7 +131,6 @@ export function SimpleView({
           type="button"
           className="nq-btn nq-btn-ghost"
           onClick={onStartOver}
-          style={{ fontSize: 13 }}
           title="Start over — pick a different starting point"
         >
           ← Start over
@@ -141,7 +140,6 @@ export function SimpleView({
             type="button"
             className="nq-btn nq-btn-ghost"
             onClick={() => window.print()}
-            style={{ fontSize: 13 }}
           >
             Print
           </button>
@@ -149,7 +147,6 @@ export function SimpleView({
             type="button"
             className="nq-btn nq-btn-ghost"
             onClick={onShareClick}
-            style={{ fontSize: 13 }}
           >
             Share · Export
           </button>
@@ -196,13 +193,12 @@ export function SimpleView({
               padding: 48,
               textAlign: "center",
               border: "1px dashed var(--rule-2)",
-              color: "var(--ink-3)",
-              fontFamily: "var(--serif)",
-              fontStyle: "italic",
+              color: "var(--ink-2)",
               fontSize: 16,
+              lineHeight: 1.5,
             }}
           >
-            <p style={{ margin: "0 0 12px 0" }}>No stops yet.</p>
+            <p style={{ margin: "0 0 14px 0" }}>No stops yet.</p>
             <button
               type="button"
               className="nq-btn nq-btn-primary"
@@ -273,11 +269,10 @@ export function SimpleView({
                     </h2>
                     <div
                       style={{
-                        fontSize: 13,
-                        color: "var(--ink-3)",
-                        marginTop: 4,
-                        fontFamily: "var(--serif)",
-                        fontStyle: "italic",
+                        fontSize: 15,
+                        color: "var(--ink-2)",
+                        marginTop: 6,
+                        lineHeight: 1.5,
                       }}
                     >
                       {dest?.state?.name ?? "—"}
@@ -287,19 +282,19 @@ export function SimpleView({
                     <div
                       style={{
                         marginTop: 10,
-                        fontSize: 14,
-                        color: "var(--ink-2)",
-                        fontFamily: "var(--mono)",
+                        fontSize: 15,
+                        color: "var(--ink)",
+                        fontWeight: 500,
                       }}
                     >
                       {startLabel} → {endLabel}
                     </div>
 
-                    {/* Days input — small + labelled */}
-                    <div style={{ marginTop: 12, display: "flex", alignItems: "center", gap: 8 }}>
+                    {/* Days input — bumped to 14px label + 15px input for legibility */}
+                    <div style={{ marginTop: 14, display: "flex", alignItems: "center", gap: 10 }}>
                       <label
                         htmlFor={`days-${idx}`}
-                        style={{ fontSize: 12, color: "var(--ink-3)" }}
+                        style={{ fontSize: 14, color: "var(--ink-2)" }}
                       >
                         Nights
                       </label>
@@ -311,7 +306,7 @@ export function SimpleView({
                         value={stop.days}
                         onChange={(e) => setDays(stop.destinationId, parseInt(e.target.value || "1", 10))}
                         className="nq-input"
-                        style={{ width: 64, padding: "4px 8px", fontSize: 13 }}
+                        style={{ width: 72, padding: "6px 10px" }}
                       />
                     </div>
                   </div>
@@ -329,7 +324,7 @@ export function SimpleView({
                       onClick={() => moveStop(idx, -1)}
                       disabled={idx === 0}
                       className="nq-btn nq-btn-ghost"
-                      style={{ padding: "4px 8px", fontSize: 12 }}
+                      style={{ padding: "6px 10px" }}
                       aria-label="Move up"
                       title="Move up"
                     >
@@ -340,7 +335,7 @@ export function SimpleView({
                       onClick={() => moveStop(idx, 1)}
                       disabled={idx === state.stops.length - 1}
                       className="nq-btn nq-btn-ghost"
-                      style={{ padding: "4px 8px", fontSize: 12 }}
+                      style={{ padding: "6px 10px" }}
                       aria-label="Move down"
                       title="Move down"
                     >
@@ -350,7 +345,7 @@ export function SimpleView({
                       type="button"
                       onClick={() => removeStop(stop.destinationId)}
                       className="nq-btn nq-btn-ghost"
-                      style={{ padding: "4px 8px", fontSize: 12, color: "var(--score-1)" }}
+                      style={{ padding: "6px 10px", color: "var(--score-1)" }}
                       aria-label="Remove stop"
                       title="Remove stop"
                     >
@@ -379,17 +374,17 @@ export function SimpleView({
             data-cost-aggregate
           >
             <div>
-              <div className="nq-eyebrow" style={{ marginBottom: 4 }}>
+              <div className="nq-eyebrow" style={{ marginBottom: 6 }}>
                 Estimated cost · {TIER_LABEL[tier]} tier
               </div>
-              <div style={{ fontSize: 13, color: "var(--ink-3)", fontFamily: "var(--serif)", fontStyle: "italic" }}>
+              <div style={{ fontSize: 14, color: "var(--ink-2)", lineHeight: 1.5 }}>
                 Based on stays + meals + local transit. Flights extra.
               </div>
             </div>
             <div
               style={{
                 fontFamily: "var(--serif)",
-                fontSize: 30,
+                fontSize: 32,
                 fontWeight: 500,
                 color: "var(--ink)",
                 whiteSpace: "nowrap",
@@ -398,9 +393,9 @@ export function SimpleView({
               ₹{inrFmt.format(Math.round(cost.total))}
               <span
                 style={{
-                  fontSize: 13,
+                  fontSize: 14,
                   fontFamily: "var(--sans)",
-                  color: "var(--ink-3)",
+                  color: "var(--ink-2)",
                   marginLeft: 8,
                   fontWeight: 400,
                 }}
@@ -431,12 +426,11 @@ export function SimpleView({
             <p
               style={{
                 margin: 0,
-                fontSize: 12,
-                color: "var(--ink-3)",
-                fontStyle: "italic",
-                fontFamily: "var(--serif)",
+                fontSize: 14,
+                color: "var(--ink-2)",
                 textAlign: "center",
-                maxWidth: 420,
+                maxWidth: 460,
+                lineHeight: 1.5,
               }}
             >
               We&rsquo;ll ask a few questions (ages, mobility, vehicle) and write a day-by-day plan.
@@ -444,7 +438,7 @@ export function SimpleView({
           </div>
         )}
 
-        {/* Switch to advanced — small subtle link, not a CTA */}
+        {/* Switch to advanced — subtle link, not a CTA */}
         <div
           style={{
             marginTop: 40,
@@ -459,23 +453,21 @@ export function SimpleView({
             style={{
               all: "unset",
               cursor: "pointer",
-              fontSize: 12,
-              color: "var(--ink-3)",
-              fontFamily: "var(--serif)",
-              fontStyle: "italic",
+              fontSize: 14,
+              color: "var(--ink-2)",
               textDecoration: "underline",
-              textDecorationColor: "var(--rule-2)",
+              textDecorationColor: "var(--accent)",
+              textUnderlineOffset: 3,
             }}
           >
             Open trip board →
           </button>
           <p
             style={{
-              margin: "6px 0 0 0",
-              fontSize: 11,
+              margin: "8px 0 0 0",
+              fontSize: 13,
               color: "var(--ink-3)",
-              fontStyle: "italic",
-              fontFamily: "var(--serif)",
+              lineHeight: 1.5,
             }}
           >
             For more detail — year band, drag-to-reschedule, map view, library, conflicts.
