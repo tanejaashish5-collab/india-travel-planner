@@ -3,6 +3,7 @@ import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { LandingHero } from "@/components/landing-hero";
 import { GuidedTour } from "@/components/guided-tour";
+import { getTourStats } from "@/lib/tour-stats";
 import { createClient } from "@supabase/supabase-js";
 import { getAppStats } from "@/lib/stats";
 import { currentMonthIST } from "@itp/shared";
@@ -96,7 +97,10 @@ async function getFeaturedData() {
 }
 
 export default async function Home() {
-  const { destinations, collections, routes, stats, festivals, mapPins } = await getFeaturedData();
+  const [{ destinations, collections, routes, stats, festivals, mapPins }, tourStats] = await Promise.all([
+    getFeaturedData(),
+    getTourStats(),
+  ]);
 
   return (
     <>
@@ -118,7 +122,7 @@ export default async function Home() {
         />
       </main>
       <Footer stats={stats} />
-      <GuidedTour />
+      <GuidedTour stats={tourStats} />
     </>
   );
 }
