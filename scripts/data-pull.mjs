@@ -126,17 +126,26 @@ async function ga4Run({ dimensions, metrics, dateRanges, dimensionFilter, orderB
   return rows;
 }
 
-// ─── GSC client ───────────────────────────────────────────────────────────
+// ─── GSC client (OAuth) ───────────────────────────────────────────────────
+// GSC's "Add User" UI rejects service-account emails, so we authenticate
+// as the site owner via OAuth refresh token. Token was captured by
+// scripts/gsc-oauth-consent.mjs (one-time run) and stored at
+// .secrets/gsc-refresh-token.txt. For Vercel runtime the same value is
+// read from the GSC_OAUTH_REFRESH_TOKEN env var.
 let _gsc;
 async function gsc() {
   if (_gsc) return _gsc;
   if (!GSC_SITE_URL) throw new Error("GSC_SITE_URL not set");
+  const { readFileSync } = await import("node:fs");
+  const oauthClientPath = path.join(ROOT, ".secrets", "gsc-oauth-client.json");
+  const tokenPath = path.join(ROOT, ".secrets", "gsc-refresh-token.txt");
+  const clientJson = JSON.parse(readFileSync(oauthClientPath, "utf8"));
+  const cfg = clientJson.web ?? clientJson.installed ?? clientJson.desktop;
+  const refreshToken = process.env.GSC_OAUTH_REFRESH_TOKEN || readFileSync(tokenPath, "utf8").trim();
   const { google } = await import("googleapis");
-  const auth = new google.auth.GoogleAuth({
-    scopes: ["https://www.googleapis.com/auth/webmasters.readonly"],
-  });
-  const authClient = await auth.getClient();
-  _gsc = google.searchconsole({ version: "v1", auth: authClient });
+  const oauth2 = new google.auth.OAuth2(cfg.client_id, cfg.client_secret);
+  oauth2.setCredentials({ refresh_token: refreshToken });
+  _gsc = google.searchconsole({ version: "v1", auth: oauth2 });
   return _gsc;
 }
 

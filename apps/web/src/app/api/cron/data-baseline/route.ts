@@ -75,15 +75,27 @@ function getGAClient(): { ok: true; client: BetaAnalyticsDataClient } | { ok: fa
   };
 }
 
+// GSC uses OAuth (not the service account) because GSC's "Add User" UI
+// rejects *.gserviceaccount.com emails. Token captured one-time via
+// scripts/gsc-oauth-consent.mjs and stored as GSC_OAUTH_REFRESH_TOKEN
+// in Vercel env. Client credentials live in GSC_OAUTH_CLIENT_ID +
+// GSC_OAUTH_CLIENT_SECRET — read them from env so we don't bundle the
+// .secrets/gsc-oauth-client.json file into the deployment.
 async function getGSCClient(): Promise<{ ok: true; client: ReturnType<typeof google.searchconsole> } | { ok: false; error: string }> {
-  const c = parseCreds();
-  if (!c.ok) return c;
-  const auth = new google.auth.GoogleAuth({
-    credentials: c.credentials,
-    scopes: ["https://www.googleapis.com/auth/webmasters.readonly"],
-  });
-  const authClient = await auth.getClient();
-  return { ok: true, client: google.searchconsole({ version: "v1", auth: authClient as never }) };
+  const clientId = process.env.GSC_OAUTH_CLIENT_ID;
+  const clientSecret = process.env.GSC_OAUTH_CLIENT_SECRET;
+  const refreshToken = process.env.GSC_OAUTH_REFRESH_TOKEN;
+  if (!clientId || !clientSecret || !refreshToken) {
+    const missing = [
+      !clientId && "GSC_OAUTH_CLIENT_ID",
+      !clientSecret && "GSC_OAUTH_CLIENT_SECRET",
+      !refreshToken && "GSC_OAUTH_REFRESH_TOKEN",
+    ].filter(Boolean).join(", ");
+    return { ok: false, error: `OAuth env vars missing: ${missing}` };
+  }
+  const oauth2 = new google.auth.OAuth2(clientId, clientSecret);
+  oauth2.setCredentials({ refresh_token: refreshToken });
+  return { ok: true, client: google.searchconsole({ version: "v1", auth: oauth2 as never }) };
 }
 
 type WindowMetric = { sessions: number; engaged: number; users: number };

@@ -3,34 +3,6 @@
 **Window:** last 28 days
 **Source:** GA4 property `534427362` + GSC `sc-domain:nakshiq.com`
 **Generator:** `node scripts/data-pull.mjs baseline` — re-run any time
-**Status:** GA4 ✅ live · GSC ⏸ propagation lag (retry in 30-60 min, then re-run baseline)
-
----
-
-## TL;DR — what the data says
-
-### The numbers (honest read)
-- **Real human audience: 228 organic-search sessions / 135 engaged in 28 days.** That's ~4-5 engaged humans per day. Small, but real. Every other "session" number you'll see in raw GA4 is bots.
-- **76% of engaged humans are in India.** Target audience captured. ✅
-- **AIO referral pipeline is working.** ChatGPT.com sent 13 sessions / 11 engaged in 28d at **85% engagement rate** vs 59% for organic search. Tiny absolute numbers, exceptional quality. This is the leading indicator to grow.
-
-### The 4 things to act on (anchored to specific rows below)
-
-1. **🔴 P0 BUG — funnel shows 0 key events across all 6,701 sessions.** The GA4 audit close note (2026-05-03) claimed `track()` helper + 5 key events were wired in commit `8fff5d46`. Either (a) events aren't firing, (b) they're firing under different names than the 5 GA4 admin marked as Key, or (c) reporting lag (events flagged Key after the 28d window started). **Fix this first** — every CRO decision below is blind without it. ~30 min to diagnose.
-
-2. **🟢 `/en/explore` is your hero page, not `/en`.** 17 engaged sessions × 177s avg duration = **the longest-engagement page on the site**. Homepage `/en` is 9 engaged × 46s. Implication: the homepage may be funnelling traffic away too quickly, OR explore is the right entry point and we should surface it more aggressively from `/en` and external links.
-
-3. **🟡 `/en/more` is your top bounce — 13 sessions, 0 engaged.** Investigate: is this a 404? An empty page? A page that loads broken? Same for the empty-path row (12 sessions, 0 engaged) — that's an analytics-config issue (probably page_path not being set on a specific route). Both are quick wins to ship before any other page-level work.
-
-4. **🟢 ChatGPT-User crawls (from bot-blitz finding) ARE converting to real ChatGPT.com referrals (this report).** 9% of bot crawls = ChatGPT-User → 13 referral sessions. That's a measurable cite-rate proxy. Track this number weekly: if `chatgpt.com referral` sessions grow, the AIO citation pipeline is compounding. If it stays flat while OAI-SearchBot crawls grow, we're being indexed but not chosen for citation — that's a content-quality issue to escalate.
-
-### What I'm NOT acting on yet (no signal in the data)
-
-- ❌ Hindi (hi) content optimisation — only `/hi/explore` (4 engaged) in top 20. Real-human Hindi traffic is near-zero. Don't invest until acquisition pulls Indian humans who default to Hindi.
-- ❌ Mobile/desktop split — not surfaced because no current hypothesis hangs on it.
-- ❌ Hourly traffic patterns — irrelevant when you have <5 engaged humans/day.
-
----
 
 ## How to read this
 
@@ -48,9 +20,10 @@
 
 | Page | Engaged | Users | Avg sec |
 | --- | ---: | ---: | ---: |
-| /en/explore | 17 | 27 | 177 |
+| /en/explore | 18 | 53 | 169 |
 | /en | 9 | 23 | 46 |
 | /en/destination/gurudongmar-lake | 6 | 14 | 14 |
+| /en/methodology | 6 | 6 | 0 |
 | /en/destination/dhanaulti/may | 5 | 4 | 120 |
 | /en/destination/tungnath/may | 5 | 8 | 154 |
 | /en/destination/ukhrul | 4 | 15 | 10 |
@@ -67,7 +40,6 @@
 | /en/destination/dhanaulti | 2 | 1 | 3 |
 | /en/destination/dzukou-valley | 2 | 2 | 66 |
 | /en/destination/dzukou-valley/june | 2 | 3 | 24 |
-| /en/destination/horsley-hills/may | 2 | 2 | 167 |
 
 ---
 
@@ -77,9 +49,10 @@
 
 | Landing page | Sessions | Engaged | Engaged% |
 | --- | ---: | ---: | ---: |
-| /en/more | 13 | 0 | 0% |
-|  | 12 | 0 | 0% |
-| /en/collections | 6 | 0 | 0% |
+|  | 150 | 0 | 0% |
+| /en/more | 16 | 0 | 0% |
+| /en/collections | 7 | 0 | 0% |
+| /en/explore | 6 | 0 | 0% |
 
 ---
 
@@ -100,9 +73,9 @@
 
 | Country | Engaged | Users | Avg sec |
 | --- | ---: | ---: | ---: |
-| India | 128 | 197 | 80 |
-| United States | 21 | 119 | 13 |
-| Ireland | 5 | 16 | 12 |
+| India | 129 | 198 | 101 |
+| United States | 26 | 260 | 6 |
+| Ireland | 6 | 17 | 11 |
 | United Arab Emirates | 5 | 5 | 629 |
 | Sweden | 4 | 21 | 7 |
 | Australia | 3 | 4 | 159 |
@@ -124,10 +97,10 @@
 
 | Channel | Sessions | Engaged | Eng% | Key evts | Evts/sess |
 | --- | ---: | ---: | ---: | ---: | ---: |
-| Direct | 6288 | 221 | 4% | 0 | 0.00 |
-| Organic Search | 228 | 135 | 59% | 0 | 0.00 |
-| Organic Social | 122 | 28 | 23% | 0 | 0.00 |
-| Unassigned | 50 | 6 | 12% | 0 | 0.00 |
+| Direct | 6448 | 309 | 5% | 176 | 0.03 |
+| Organic Search | 229 | 136 | 59% | 0 | 0.00 |
+| Unassigned | 192 | 6 | 3% | 418 | 2.18 |
+| Organic Social | 128 | 34 | 27% | 17 | 0.13 |
 | Referral | 8 | 7 | 88% | 0 | 0.00 |
 | Organic Video | 4 | 0 | 0% | 0 | 0.00 |
 | Email | 1 | 0 | 0% | 0 | 0.00 |
@@ -138,38 +111,120 @@
 
 ## High-impression queries with low CTR — title/meta CRO targets
 
-*Skipped: User does not have sufficient permission for site 'sc-domain:nakshiq.com'. See also: https://support.google.com/webmasters/answer/2451999.*
-*If GSC just got access, retry in 30 min — Google's directory takes time to recognise new service accounts.*
+*We're showing up but they're not clicking. Each row = a title or meta description rewrite that directly compounds to clicks. Sorted by impression volume.*
+
+| Query | Impr. | Clicks | CTR | Avg pos |
+| --- | ---: | ---: | ---: | ---: |
+| tungnath temperature in may | 256 | 1 | 0.39% | 10.4 |
+| alibaug temperature in may | 228 | 0 | 0.00% | 11.2 |
+| chakrata weather in may | 170 | 1 | 0.59% | 5.9 |
+| temperature in nainital in may 2026 | 159 | 1 | 0.63% | 8.0 |
+| weather in pondicherry in may | 121 | 1 | 0.83% | 11.8 |
+| landour | 115 | 1 | 0.87% | 2.2 |
+| dhanaulti temperature in may | 109 | 1 | 0.92% | 9.1 |
+| roopkund weather | 101 | 1 | 0.99% | 10.5 |
+| chitrakoot parikrama distance | 97 | 1 | 1.03% | 8.3 |
+| kanatal in may | 95 | 1 | 1.05% | 6.2 |
+| vrindavan temperature in june | 83 | 1 | 1.20% | 11.1 |
+| ranikhet weather in june | 75 | 1 | 1.33% | 7.8 |
+| idukki weather in may | 65 | 1 | 1.54% | 10.6 |
+| aizawl weather in may | 64 | 0 | 0.00% | 10.7 |
+| mizoram in july | 58 | 1 | 1.72% | 7.2 |
+| ziro valley in may | 51 | 1 | 1.96% | 6.0 |
 
 ---
 
 ## Queries ranking 4-15 — almost-on-page-1, highest-leverage SEO
 
-*Skipped: User does not have sufficient permission for site 'sc-domain:nakshiq.com'. See also: https://support.google.com/webmasters/answer/2451999.*
-*If GSC just got access, retry in 30 min — Google's directory takes time to recognise new service accounts.*
+*One position move from 11→9 doubles clicks. From 6→3 quadruples them. These queries are the closest revenue from existing content.*
+
+| Query | Page | Impr. | Clicks | Avg pos |
+| --- | --- | ---: | ---: | ---: |
+| tungnath temperature in may | /en/destination/tungnath/may | 256 | 1 | 10.4 |
+| alibaug temperature in may | /en/destination/alibaug/may | 226 | 0 | 11.2 |
+| chakrata weather in may | /en/destination/chakrata/may | 170 | 1 | 5.9 |
+| temperature in nainital in may 2026 | /en/destination/nainital/may | 159 | 1 | 8.0 |
+| alleppey weather in may | /en/destination/alleppey/may | 152 | 0 | 10.5 |
+| araku valley weather in may | /en/destination/araku-valley/may | 126 | 0 | 8.5 |
+| weather in pondicherry in may | /en/destination/puducherry/may | 121 | 1 | 11.8 |
+| dhanaulti temperature in may | /en/destination/dhanaulti/may | 106 | 1 | 9.0 |
+| chitrakoot parikrama distance | /en/treks/chitrakoot-parikrama | 97 | 1 | 8.3 |
+| kanatal in may | /en/destination/kanatal/may | 91 | 1 | 6.1 |
+| nubra valley temperature in may | /hi/destination/nubra-valley/may | 85 | 2 | 8.8 |
+| vrindavan temperature in june | /en/destination/vrindavan/june | 83 | 1 | 11.1 |
+| ranikhet weather in june | /en/destination/ranikhet/june | 75 | 1 | 7.8 |
+| lambasingi in may | /en/destination/lambasingi/may | 73 | 2 | 10.6 |
+| idukki weather in may | /en/destination/idukki/may | 65 | 1 | 10.6 |
+| araku weather in may | /en/destination/araku-valley/may | 64 | 0 | 8.7 |
+| aizawl weather in may | /en/destination/aizawl/may | 63 | 0 | 10.7 |
+| araku in may month | /en/destination/araku-valley/may | 52 | 0 | 10.7 |
+| ziro valley in may | /destination/ziro-valley/may | 51 | 1 | 6.0 |
+| araku valley in may month | /en/destination/araku-valley/may | 50 | 0 | 11.2 |
+| weather in nainital in may 2026 | /en/destination/nainital/may | 47 | 1 | 6.6 |
+| bir billing temperature in may | /en/destination/bir-billing/may | 46 | 2 | 8.9 |
+| anini weather in may | /en/destination/anini/may | 44 | 1 | 6.4 |
+| athirapally weather in may | /en/destination/athirapally/may | 44 | 0 | 9.8 |
+| pithoragarh weather in may | /en/destination/pithoragarh/may | 42 | 1 | 6.9 |
 
 ---
 
 ## Top-3 ranked queries with low CTR — SERP-feature opportunities
 
-*Skipped: User does not have sufficient permission for site 'sc-domain:nakshiq.com'. See also: https://support.google.com/webmasters/answer/2451999.*
-*If GSC just got access, retry in 30 min — Google's directory takes time to recognise new service accounts.*
+*We're ranking high but losing clicks to AIO/Featured Snippets/People-Also-Ask. Add structured data, FAQ schema, or HowTo to reclaim.*
+
+| Query | Page | Impr. | Clicks | CTR | Pos |
+| --- | --- | ---: | ---: | ---: | ---: |
+| landour | /en/vs/mussoorie-vs-landour | 115 | 1 | 0.87% | 2.2 |
+| chandratal in july | /en/destination/chandratal/july | 31 | 1 | 3.23% | 3.0 |
 
 ---
 
 ## Top 30 pages by clicks (28d)
 
-*Skipped: User does not have sufficient permission for site 'sc-domain:nakshiq.com'. See also: https://support.google.com/webmasters/answer/2451999.*
-*If GSC just got access, retry in 30 min — Google's directory takes time to recognise new service accounts.*
+*Your actual SEO winners. These pages compound — improving them returns more than ranking new ones.*
+
+| Page | Clicks | Impr. | CTR | Pos |
+| --- | ---: | ---: | ---: | ---: |
+| /en/destination/tungnath/may | 9 | 2100 | 0.43% | 7.3 |
+| /en/destination/anini/may | 5 | 239 | 2.09% | 6.0 |
+| /en/destination/dhanaulti/may | 5 | 738 | 0.68% | 7.7 |
+| /hi/destination/tungnath/june | 5 | 1161 | 0.43% | 6.3 |
+| /en | 4 | 8 | 50.00% | 1.4 |
+| /en/destination/kanatal/may | 4 | 492 | 0.81% | 9.1 |
+| /en/destination/kasol/may | 4 | 731 | 0.55% | 8.4 |
+| /en/destination/vrindavan/may | 4 | 1372 | 0.29% | 8.7 |
+| /en/destination/chakrata/june | 3 | 714 | 0.42% | 9.9 |
+| /en/destination/deomali/may | 3 | 125 | 2.40% | 4.5 |
+| /en/destination/gokarna/may | 3 | 356 | 0.84% | 10.1 |
+| /en/destination/gulmarg/may | 3 | 289 | 1.04% | 8.6 |
+| /en/destination/gwalior/may | 3 | 99 | 3.03% | 7.9 |
+| /en/destination/hemkund-sahib/june | 3 | 68 | 4.41% | 7.7 |
+| /en/destination/lambasingi/may | 3 | 532 | 0.56% | 10.4 |
+| /en/destination/mussoorie/may | 3 | 1229 | 0.24% | 10.9 |
+| /en/destination/tirthan-valley/may | 3 | 556 | 0.54% | 7.4 |
+| /hi/destination/lonavala/june | 3 | 228 | 1.32% | 7.7 |
+| /hi/destination/nubra-valley/may | 3 | 287 | 1.05% | 8.7 |
+| https://nakshiq.com/ | 2 | 12 | 16.67% | 1.8 |
+| https://nakshiq.com/en/with-kids/dhanaulti | 2 | 19 | 10.53% | 7.6 |
+| /destination/kumbhalgarh/may | 2 | 391 | 0.51% | 8.7 |
+| /destination/silent-valley/may | 2 | 25 | 8.00% | 12.3 |
+| /destination/ziro-valley/may | 2 | 136 | 1.47% | 7.7 |
+| /en/destination/barot-valley/june | 2 | 227 | 0.88% | 6.3 |
+| /en/destination/bir-billing/may | 2 | 283 | 0.71% | 9.6 |
+| /en/destination/chakrata/may | 2 | 1204 | 0.17% | 6.3 |
+| /en/destination/daulatabad/may | 2 | 6 | 33.33% | 3.2 |
+| /en/destination/hogenakkal/may | 2 | 206 | 0.97% | 8.1 |
+| /en/destination/horsley-hills/may | 2 | 417 | 0.48% | 8.2 |
 
 ---
 
 ## Pages losing position — last 28d vs prior 28d
 
-*Skipped: User does not have sufficient permission for site 'sc-domain:nakshiq.com'. See also: https://support.google.com/webmasters/answer/2451999.*
-*If GSC just got access, retry in 30 min — Google's directory takes time to recognise new service accounts.*
+*Regressions. Investigate before they bleed clicks. Often = competitor outranking, content stale, or a deploy broke something.*
+
+*(no rows)*
 
 ---
 
 
-_Generated 2026-05-04T06:12:41.617Z — 47 actionable rows total._
+_Generated 2026-05-04T07:38:17.758Z — 121 actionable rows total._
