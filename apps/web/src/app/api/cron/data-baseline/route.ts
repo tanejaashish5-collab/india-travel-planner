@@ -223,9 +223,35 @@ export async function GET(req: NextRequest) {
       ga4TopPages(ga, property, thisStart, thisEnd),
     ]);
   } catch (err) {
-    const e = err as { code?: number; message?: string; details?: string; status?: string };
-    const detail = `${e.code ?? "?"} ${e.status ?? ""}: ${e.message ?? "(no message)"}${e.details ? " · " + e.details : ""}`;
-    return NextResponse.json({ error: `GA4 query failed: ${detail}` }, { status: 500 });
+    // Surface enough error context to actually diagnose what failed.
+    // GA4 SDK throws gRPC-style errors with non-standard shape; standard
+    // Error.message is sometimes undefined. Capture the lot.
+    const dump: Record<string, unknown> = {};
+    if (err && typeof err === "object") {
+      for (const key of Object.getOwnPropertyNames(err)) {
+        const v = (err as Record<string, unknown>)[key];
+        if (typeof v === "string" || typeof v === "number") dump[key] = v;
+      }
+      if ("constructor" in err && (err as { constructor: { name?: string } }).constructor?.name) {
+        dump._ctor = (err as { constructor: { name: string } }).constructor.name;
+      }
+    } else {
+      dump._raw = String(err);
+    }
+    // Also include creds shape (without the secret) so we can rule out the
+    // private-key escape issue without redeploying again.
+    const credsCheck = parseCreds();
+    if (credsCheck.ok) {
+      dump._creds_client_email = credsCheck.credentials.client_email;
+      dump._creds_pk_starts = credsCheck.credentials.private_key.slice(0, 30);
+      dump._creds_pk_has_real_newlines = credsCheck.credentials.private_key.includes("\n");
+      dump._creds_pk_has_escaped_newlines = credsCheck.credentials.private_key.includes("\\n");
+      dump._creds_pk_len = credsCheck.credentials.private_key.length;
+    } else {
+      dump._creds_error = credsCheck.error;
+    }
+    dump._property = property;
+    return NextResponse.json({ error: "GA4 query failed", dump }, { status: 500 });
   }
 
   const gscResult = await getGSCClient();
