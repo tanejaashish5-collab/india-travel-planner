@@ -1,0 +1,92 @@
+[
+  {
+    "destination_id": "deoghar",
+    "name": "Deoghar",
+    "verify": true,
+    "source_url": "https://deoghar.nic.in/public-utility-category/hospitals/",
+    "source_label": "Deoghar District Administration — Hospitals directory + Helpline + Contact-us + AIIMS Deoghar official site",
+    "fields": {
+      "local_police_station": null,
+      "police_address": null,
+      "nearest_hospital": "Sadar Hospital Deoghar",
+      "nearest_hospital_km": 2,
+      "hospital_has_er": true,
+      "nearest_pharmacy": null,
+      "pharmacy_24hr": null,
+      "mechanic_contact": null,
+      "tow_service": null,
+      "rescue_contact": "Deoghar DM/Collectorate: 06432-235718",
+      "nearest_guesthouse_emergency": null,
+      "english_speaking_doctor": null
+    },
+    "notes": "Sadar Hospital Deoghar listed at https://deoghar.nic.in/public-utility/sadar-hospital-deoghar/ — Kali Rekha Kusth Jhousaghari, Shahid Ashram Rd, Deoghar 814112. Govt district hospital so ER true. Phone NOT published on .nic.in page (only address) — left out of payload to avoid fabrication. AIIMS Deoghar (Devipur, 814152, ~16 km from Baba Baidyanath Dham) main number 06432-277220 from https://aiimsdeoghar.edu.in/ but its own page states 'Mon-Fri 8:30-4:30 / Sat 8:30-2:00' — that is admin/helpdesk hours, NOT 24x7 emergency, so kept Sadar as nearest ER. DM/Collectorate 06432-235718 from https://deoghar.nic.in/contact-us/ acts as rescue/coordination (Shravani Mela operates under DM control room every Sawan — no dedicated permanent Mela helpline published year-round on .nic.in). SP Deoghar office 06432-232733 from https://deoghar.nic.in/police/ (not station-level). Deoghar police-station-level address/phone (B. Deoghar Town PS / Jasidih PS) not separately published on https://deoghar.nic.in/police/ — only SP office number. Pharmacy/mechanic/tow/guesthouse/EN-doctor not on any .nic.in page → null. Deoghar disaster-management page is descriptive only, no control-room number published."
+  },
+  {
+    "destination_id": "netarhat",
+    "name": "Netarhat",
+    "verify": true,
+    "source_url": "https://latehar.nic.in/public-utility-category/hospitals/",
+    "source_label": "Latehar District Administration — Hospitals directory + Police directory + Disaster Management contacts",
+    "fields": {
+      "local_police_station": "Netarhat PS",
+      "police_address": null,
+      "nearest_hospital": "CHC Latehar (Sadar Hospital Latehar nearest district facility)",
+      "nearest_hospital_km": 60,
+      "hospital_has_er": true,
+      "nearest_pharmacy": null,
+      "pharmacy_24hr": null,
+      "mechanic_contact": null,
+      "tow_service": null,
+      "rescue_contact": "Latehar DC Sandip Kumar IAS (Disaster Mgmt lead): 8986890063 / 06565-247422",
+      "mountain_rescue": null,
+      "nearest_guesthouse_emergency": null,
+      "english_speaking_doctor": null
+    },
+    "notes": "Netarhat is a hill station ~60 km from Latehar district HQ — has no listed govt hospital on https://latehar.nic.in/public-utility-category/hospitals/. Sadar Hospital Latehar (Latehar 829206) is the district govt hospital, ER true. CHC Mahuwadar (Mahuadanr) is geographically closer (~25 km) but not listed in Latehar hospitals page (only Balumath/Barwadih/Chandwa/Garu/Latehar/Manika listed) — kept it out to avoid fabrication. None of the 7 Latehar-district hospitals on .nic.in publish phone numbers — phone left out of payload. Netarhat PS confirmed by name on https://latehar.nic.in/police/ (one of 12 stations) — phone/address not published on the .nic.in police page → null. DC Latehar 8986890063 / 06565-247422 from https://latehar.nic.in/disaster-management/ — Sandip Kumar IAS leads disaster mgmt + DM functions, used as rescue contact (no separate control-room number published). SP Latehar 9431706262 (sp-latehar@jhpolice.gov.in) also on disaster-mgmt page. Mountain_rescue: null — Netarhat is a plateau hill station (1100m), not a Himalayan trek; no dedicated mountain-rescue agency. Pharmacy/mechanic/tow/guesthouse/EN-doctor not on any .nic.in page → null."
+  },
+  {
+    "destination_id": "ranchi",
+    "name": "Ranchi",
+    "verify": true,
+    "source_url": "https://ranchi.nic.in/police/",
+    "source_label": "Ranchi District Administration — Police directory (45 stations w/ phones) + Hospitals directory + Helpline + Disaster Management",
+    "fields": {
+      "local_police_station": "Kotwali PS",
+      "police_address": null,
+      "nearest_hospital": "Sadar Hospital Ranchi",
+      "nearest_hospital_km": 0,
+      "hospital_has_er": true,
+      "nearest_pharmacy": null,
+      "pharmacy_24hr": null,
+      "mechanic_contact": null,
+      "tow_service": null,
+      "rescue_contact": "Ranchi District Collector: 0651-2214001",
+      "nearest_guesthouse_emergency": null,
+      "english_speaking_doctor": null
+    },
+    "notes": "Sadar Hospital Ranchi listed on https://ranchi.nic.in/public-utility-category/hospital/page/2/ — Mahatma Gandhi Main Road, New Barhi Toli, Ranchi 834001, phone +91 9709016627. Govt district hospital, ER true. RIMS Ranchi (Bariatu) referenced only as a blood-bank entry on the .nic.in hospital directory — full RIMS contact NOT directly published on ranchi.nic.in hospital pages (rims-ranchi.org is the institute domain, not .nic.in/.gov.in) — kept Sadar as primary. Kotwali PS 0651-2200968 / 9431706158 confirmed on https://ranchi.nic.in/police/ as the central-Ranchi station (one of 45 listed with full phones — best-published police directory of all 4 Jharkhand dests). DC Ranchi 0651-2214001 from https://ranchi.nic.in/disaster-management/ — Civil Surgeon 0651-2215618 + SDO 0651-2201076 also on that page. Fire emergency 0651-2283825 also published. Phone for Kotwali NOT in payload because the field shape is 'name+address only' — phone is recoverable from source. Pharmacy/mechanic/tow/guesthouse/EN-doctor not on any .nic.in page → null."
+  },
+  {
+    "destination_id": "shikharji",
+    "name": "Shikharji",
+    "verify": true,
+    "source_url": "https://giridih.nic.in/public-utility-category/hospitals/",
+    "source_label": "Giridih District Administration — Hospitals directory + Helpline + DC/SP contacts; Jharkhand Police search-confirmed Madhuban PS exists",
+    "fields": {
+      "local_police_station": "Madhuban PS (Pirtand block, Giridih — gateway to Parasnath/Shikharji)",
+      "police_address": null,
+      "nearest_hospital": "Sadar Hospital Giridih",
+      "nearest_hospital_km": 30,
+      "hospital_has_er": true,
+      "nearest_pharmacy": null,
+      "pharmacy_24hr": null,
+      "mechanic_contact": null,
+      "tow_service": null,
+      "rescue_contact": "Giridih District Control Room: 06532-228828",
+      "mountain_rescue": null,
+      "nearest_guesthouse_emergency": null,
+      "english_speaking_doctor": null
+    },
+    "notes": "Sadar Hospital Giridih confirmed on https://giridih.nic.in/public-utility-category/hospitals/ — New Barganda, Giridih 815301, phone 06532-222797, category 'Government'. Govt district hospital, ER true. Madhuban (the base village for Shikharji/Parasnath Hill Jain pilgrimage) is ~30 km from Giridih town — NO CHC/PHC near Madhuban listed on the Giridih .nic.in hospitals directory (Sadar + 3 private hospitals only — Madhuban falls under Pirtand block which has no listed health facility on .nic.in). Madhuban PS is confirmed to exist via Jharkhand Police portal search (https://jhpolice.gov.in/police-station/madhuban-ps-582-1324714534 — page indexed but timed out on fetch); name kept, phone left null because not directly visible on .nic.in or the police page. Giridih district SP 06532-222056 / 9431706326, SDPO 06532-222766, Control Room 06532-228828 all on https://giridih.nic.in/helpline/ — control room used as rescue contact (Shikharji draws large Paryushan/Mahavir Jayanti crowds; no dedicated pilgrimage helpline published on .nic.in). Mountain_rescue: null — Parasnath Hill is 1370m, ~9 km marked stone trail; no formal mountain-rescue agency, dolly-bearers + forest-dept staff are de-facto first responders, not contactable via .gov.in. Ambulance options on Giridih helpline page (Red Cross 06532-226180 / Rotary 06532-226934 / Late Baijnath Lal 9570108296) are private/charity — not added to payload because field shape expects govt/hospital line. Pharmacy/mechanic/tow/guesthouse/EN-doctor not on any .nic.in page → null."
+  }
+]

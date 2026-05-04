@@ -751,7 +751,13 @@ export function DestinationDetail({ dest }: { dest: any }) {
                           </div>
                           {(cc.emergency?.nearest_hospital || dest.emergencySos?.nearest_hospital) && <p className="text-sm text-muted-foreground mb-1"><span className="font-medium text-foreground">Hospital:</span> {cc.emergency?.nearest_hospital || dest.emergencySos?.nearest_hospital}{dest.emergencySos?.nearest_hospital_km ? ` (${dest.emergencySos.nearest_hospital_km} km)` : ""}</p>}
                           {(cc.emergency?.ambulance || dest.emergencySos?.ambulance) && <p className="text-sm text-muted-foreground mb-1"><span className="font-medium text-foreground">Ambulance:</span> {cc.emergency?.ambulance || dest.emergencySos?.ambulance}</p>}
-                          {(cc.emergency?.police_station || dest.emergencySos?.police) && <p className="text-sm text-muted-foreground"><span className="font-medium text-foreground">Police:</span> {cc.emergency?.police_station || dest.emergencySos?.police}</p>}
+                          {(cc.emergency?.police_station || dest.emergencySos?.local_police_station || dest.emergencySos?.police) && <p className="text-sm text-muted-foreground"><span className="font-medium text-foreground">Police:</span> {cc.emergency?.police_station || dest.emergencySos?.local_police_station || dest.emergencySos?.police}</p>}
+                          {dest.emergencySos?.rescue_contact && <p className="text-sm text-muted-foreground"><span className="font-medium text-foreground">Rescue:</span> {dest.emergencySos.rescue_contact}</p>}
+                          {(dest.emergencySos?.verified && dest.emergencySos?.source_url) && (
+                            <p className="text-[10px] text-emerald-400/70 mt-2 pt-2 border-t border-border/50">
+                              ✓ Verified · <a href={dest.emergencySos.source_url} target="_blank" rel="noopener noreferrer" className="underline hover:text-emerald-300">{dest.emergencySos.source_label ?? "source"}</a>
+                            </p>
+                          )}
                         </div>
                       )}
 

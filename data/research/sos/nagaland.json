@@ -1,0 +1,140 @@
+[
+  {
+    "destination_id": "kohima",
+    "name": "Kohima",
+    "verify": true,
+    "source_url": "https://kohima.nic.in/helpline/",
+    "source_label": "Kohima District Administration — Helpline + Hospitals (Public Utilities)",
+    "fields": {
+      "local_police_station": "Kohima North Police Station / Kohima South Police Station",
+      "police_address": null,
+      "nearest_hospital": "Naga Hospital Authority Kohima (NHAK)",
+      "nearest_hospital_km": 0,
+      "hospital_has_er": true,
+      "nearest_pharmacy": null,
+      "pharmacy_24hr": null,
+      "mechanic_contact": null,
+      "tow_service": null,
+      "rescue_contact": "Kohima Police Control Room: 7005986046 · Fire: 0370-2222952",
+      "mountain_rescue": null,
+      "nearest_guesthouse_emergency": null,
+      "english_speaking_doctor": null
+    },
+    "notes": "NHAK (Hospital Colony, Kohima 797001 — phone 8794805711) listed at https://kohima.nic.in/public-utility-category/hospitals/ — NHAK is the state's tertiary referral govt hospital so ER true. Kohima North PS 7005986018 + Kohima South PS 7005986019 + SP 7005986001 + Control Room 7005986046 + Women PS 7005986026 + Fire 0370-2222952 all listed on https://kohima.nic.in/helpline/. Civil Hospital ambulance 0370-2222893 + IRCS 0370-2244350 + Oking 0370-2290080 also listed. Station-level addresses not published on .nic.in → police_address null. Pharmacy/mechanic/tow/guesthouse/EN-doctor not on any .nic.in page → null."
+  },
+  {
+    "destination_id": "khonoma",
+    "name": "Khonoma",
+    "verify": true,
+    "source_url": "https://kohima.nic.in/helpline/",
+    "source_label": "Kohima District Administration — Helpline (Khonoma is in Kohima district, ~20km west; no village-level station published)",
+    "fields": {
+      "local_police_station": null,
+      "police_address": null,
+      "nearest_hospital": "Naga Hospital Authority Kohima (NHAK)",
+      "nearest_hospital_km": 20,
+      "hospital_has_er": true,
+      "nearest_pharmacy": null,
+      "pharmacy_24hr": null,
+      "mechanic_contact": null,
+      "tow_service": null,
+      "rescue_contact": "Kohima Police Control Room: 7005986046 · NSDMA: 1070",
+      "mountain_rescue": null,
+      "nearest_guesthouse_emergency": null,
+      "english_speaking_doctor": null
+    },
+    "notes": "Khonoma is a heritage village ~20 km west of Kohima town in Kohima district (confirmed on https://kohima.nic.in/places-of-interest/ and village-panchayats list). NO village-level police station / outpost is published on https://kohima.nic.in/helpline/ or any .nic.in page — Khonoma falls under Kohima district SP jurisdiction. NHAK Kohima is the nearest govt tertiary hospital (~20 km drive). NSDMA toll-free 1070 confirmed via Mon district helpline page (state-wide). Pharmacy/mechanic/tow/guesthouse/EN-doctor not on any .nic.in page → null. **Honest scarcity flag:** local_police_station + police_address left null because no Khonoma-specific station is on .nic.in — fabricating one would put trekkers/visitors calling a wrong number in a real incident."
+  },
+  {
+    "destination_id": "dzukou-valley",
+    "name": "Dzukou Valley",
+    "verify": true,
+    "source_url": "https://kohima.nic.in/helpline/",
+    "source_label": "Kohima District Administration — Helpline + Dzukou 2020-21 wildfire control room precedent (Viswema entry point)",
+    "fields": {
+      "local_police_station": null,
+      "police_address": null,
+      "nearest_hospital": "Naga Hospital Authority Kohima (NHAK)",
+      "nearest_hospital_km": 30,
+      "hospital_has_er": true,
+      "nearest_pharmacy": null,
+      "pharmacy_24hr": null,
+      "mechanic_contact": null,
+      "tow_service": null,
+      "rescue_contact": "Kohima Police Control Room: 7005986046 · NSDMA: 1070 · Fire: 0370-2222952",
+      "mountain_rescue": null,
+      "nearest_guesthouse_emergency": null,
+      "english_speaking_doctor": null
+    },
+    "notes": "Dzukou Valley trek base is Viswema village in Kohima district (~25-30 km from Kohima town); valley itself sits on Kohima/Manipur (Senapati) border. NO infrastructure inside the valley — no hospital, no pharmacy, no police station, no permanent stay. NHAK Kohima is the only govt tertiary ER on evacuation route. **Fire/wildfire risk flagged**: 2020-21 wildfires burned for 2 weeks; during that incident Kohima Police set up control room at Dzukou entry point in Viswema and two relay stations at Dzukou base camp (per https://en.wikipedia.org/wiki/2020-21_Dzuko_Valley_wildfires + Outlook India) — NDRF + IAF helicopters + Kohima DFO led ops. So in fire/rescue scenarios the state activates Kohima police control room (7005986046) + DFO Kohima as command. NSDMA 1070 (state disaster mgmt toll-free, confirmed on https://mon.nic.in/helpline/) is the standing helpline. Mountain_rescue null because no permanent dedicated mountain rescue squad is published on any .nic.in page. local_police_station/police_address null — Viswema has no published outpost on Kohima district .nic.in directories. Pharmacy/mechanic/tow/guesthouse/EN-doctor not on any .nic.in page → null."
+  },
+  {
+    "destination_id": "mokokchung",
+    "name": "Mokokchung",
+    "verify": true,
+    "source_url": "https://mokokchung.nic.in/helpline/",
+    "source_label": "Mokokchung District Administration — Helpline + Hospitals (Public Utilities)",
+    "fields": {
+      "local_police_station": "Mokokchung Police Station-I",
+      "police_address": null,
+      "nearest_hospital": "Dr. Imkongliba Memorial District Hospital",
+      "nearest_hospital_km": 0,
+      "hospital_has_er": true,
+      "nearest_pharmacy": null,
+      "pharmacy_24hr": null,
+      "mechanic_contact": null,
+      "tow_service": null,
+      "rescue_contact": "Mokokchung PS-I: 0369-2226241 · SP: 0369-2226207 · NSDMA: 1070",
+      "mountain_rescue": null,
+      "nearest_guesthouse_emergency": null,
+      "english_speaking_doctor": null
+    },
+    "notes": "Dr. Imkongliba Memorial District Hospital (Majakong Ward, Mokokchung 798601) listed on https://mokokchung.nic.in/public-utility-category/hospitals/ — district hospital so ER true. Mokokchung PS-I 0369-2226241 / 9485232688, PS-II 0369-2226213 / 9485232689, SP-District 0369-2226207, IRCS Ambulance 09402993002, NMP+ Ambulance 9856240612 all listed on https://mokokchung.nic.in/helpline/. Station-level addresses not published → police_address null. Christian Hospital Impur (0369-262214) is private and ~40 km away — kept off as primary. Pharmacy/mechanic/tow/guesthouse/EN-doctor not on any .nic.in page → null. NSDMA 1070 (state-wide toll-free, confirmed via Mon district helpline page)."
+  },
+  {
+    "destination_id": "mon",
+    "name": "Mon",
+    "verify": true,
+    "source_url": "https://mon.nic.in/helpline/",
+    "source_label": "Mon District Administration — Helpline + Contact directory (CMO + SP)",
+    "fields": {
+      "local_police_station": "Mon Police Station",
+      "police_address": null,
+      "nearest_hospital": "District Hospital Mon",
+      "nearest_hospital_km": 0,
+      "hospital_has_er": true,
+      "nearest_pharmacy": null,
+      "pharmacy_24hr": null,
+      "mechanic_contact": null,
+      "tow_service": null,
+      "rescue_contact": "SP Mon: 6009308134 · Fire: 03869-221222 / 101 · Ambulance: 102 · NSDMA: 1070",
+      "mountain_rescue": null,
+      "nearest_guesthouse_emergency": null,
+      "english_speaking_doctor": null
+    },
+    "notes": "Mon Police Station named on https://mon.nic.in/police/ (one of 6 stations in district: Mon PS, Tizit PS, Tobu PS, Aboi PS, Naginimora PS, Wakching PS) — station-level phone NOT published on the page → kept name only, escalation goes via SP Mon 6009308134 (from https://mon.nic.in/contact-directory/) and Crime Stopper 1090. CMO Mon Dr. Supongmenla named on contact directory but NO direct phone published — District Hospital Mon phone not on .nic.in (no hospitals public-utility category page exists on mon.nic.in). District Hospital Mon listed as 'present in Mon HQ' generically — assumed ER true per district-hospital classification but flagged for re-verify. Fire 03869-221222 / 101 + Ambulance 102 + NSDMA 1070 all from https://mon.nic.in/helpline/. **Sensitive area note:** Mon is Konyak Naga territory near Myanmar border — ILP required for all non-Naga Indians + foreigners; some sub-areas (Longwa) straddle international border. Pharmacy/mechanic/tow/guesthouse/EN-doctor not on any .nic.in page → null. **Honest scarcity flag:** police_address + nearest_hospital phone left null — no .nic.in page publishes them."
+  },
+  {
+    "destination_id": "pfutsero",
+    "name": "Pfutsero",
+    "verify": true,
+    "source_url": "https://phek.nic.in/helpline/",
+    "source_label": "Phek District Administration — Helpline + Police directory (Pfutsero PS) + District Hospital Phek (Pfutsero CHC not on .nic.in)",
+    "fields": {
+      "local_police_station": "Pfutsero Police Station",
+      "police_address": null,
+      "nearest_hospital": "District Hospital Phek",
+      "nearest_hospital_km": 35,
+      "hospital_has_er": true,
+      "nearest_pharmacy": null,
+      "pharmacy_24hr": null,
+      "mechanic_contact": null,
+      "tow_service": null,
+      "rescue_contact": "Pfutsero PS: 8794804021 · SDPO Pfutsero: 7085063771 · Fire: 8414853765 · Disaster Mgmt: 8257823409 · NSDMA: 1070",
+      "mountain_rescue": null,
+      "nearest_guesthouse_emergency": null,
+      "english_speaking_doctor": null
+    },
+    "notes": "Pfutsero PS 8794804021 + SDPO Pfutsero (Aotula T. Imchen) 7085063771 listed on https://phek.nic.in/police/. District Hospital Phek (Phek 797108, phone +918732884695, email districthospitalphek[at]gmail[dot]com) listed on https://phek.nic.in/public-utility-category/hospitals/ — district hospital, ER true; ~35 km from Pfutsero (Pfutsero is highest town in Nagaland, sub-divisional HQ). Pfutsero CHC exists per Nagaland H&FW dept (https://morungexpress.com/nagaland-hfw-minister-assures-upgrades-for-pfutsero-chc) but is NOT published on phek.nic.in public-utilities — no verifiable .gov.in phone → kept off payload, District Hospital Phek used as primary nearest govt facility. Phek (general police) 03865-223545 + Fire 8414853765 + Disaster Mgmt 8257823409 / 7085052516 + Ambulance toll-free 102 all from https://phek.nic.in/helpline/. Station-level addresses not published → police_address null. Pharmacy/mechanic/tow/guesthouse/EN-doctor not on any .nic.in page → null."
+  }
+]

@@ -1,0 +1,68 @@
+[
+  {
+    "destination_id": "sirpur",
+    "name": "Sirpur",
+    "verify": true,
+    "source_url": "https://mahasamund.gov.in/police/",
+    "source_label": "Mahasamund District Administration — Police directory + Helpline + Hospitals",
+    "fields": {
+      "local_police_station": "Chauki Sirpur (Sub-Division Mahasamund)",
+      "police_address": null,
+      "nearest_hospital": "District Hospital Mahasamund",
+      "nearest_hospital_km": 38,
+      "hospital_has_er": true,
+      "nearest_pharmacy": null,
+      "pharmacy_24hr": null,
+      "mechanic_contact": null,
+      "tow_service": null,
+      "rescue_contact": "Mahasamund District Disaster Control Room: 07723-223305",
+      "nearest_guesthouse_emergency": null,
+      "english_speaking_doctor": null
+    },
+    "notes": "Chauki Sirpur listed on https://mahasamund.gov.in/police/ — chauki phone 9479191285 (out of payload, chauki = sub-station, may not be 24x7-staffed for emergency dispatch — Police Control Room 07723-223155 routes faster). District Hospital Mahasamund listed on https://mahasamund.gov.in/public-utility-category/hospitals/ at 'Kharora Mahasamund' — district HQ hospital so ER true. ~38 km Sirpur (Mahasamund district) → Mahasamund town along NH 53. Disaster control room 07723-223305 + Police Control Room 07723-223155 confirmed on https://mahasamund.gov.in/helpline/. Sanjivani Ambulance 108 statewide. Closest govt facility per .gov.in directory; closer private clinics may exist in Sirpur village (Buddhist site/ASI complex, Mahanadi banks) but no .gov.in listing → not seeded. Pharmacy/mechanic/tow/guesthouse/EN-doctor not on any .nic.in/.gov.in page → null."
+  },
+  {
+    "destination_id": "barnawapara",
+    "name": "Barnawapara",
+    "verify": true,
+    "source_url": "https://balodabazar.gov.in/en/public-utility/community-health-center-kasdol/",
+    "source_label": "Balodabazar-Bhatapara District Administration — Hospitals + Helpline + Police",
+    "fields": {
+      "local_police_station": null,
+      "police_address": null,
+      "nearest_hospital": "Community Health Centre, Kasdol",
+      "nearest_hospital_km": 30,
+      "hospital_has_er": null,
+      "nearest_pharmacy": null,
+      "pharmacy_24hr": null,
+      "mechanic_contact": null,
+      "tow_service": null,
+      "rescue_contact": "Balodabazar Police Control Room: 07727-222102",
+      "nearest_guesthouse_emergency": null,
+      "english_speaking_doctor": null
+    },
+    "notes": "CHC Kasdol listed on https://balodabazar.gov.in/en/public-utility-category/hospitals/ — pin 493335, phone 9755984146 (out of payload as CHC ER capability is unverified on the gov page; CHC = block-level basic emergency care, not a tertiary ER). Barnawapara Wildlife Sanctuary core entry (Bar/Nawapara villages, Kasdol tehsil) ~30 km from Kasdol town. District Hospital Balodabazar (~70 km) is the next-step tertiary; not listed on the dedicated hospital page so kept off payload. Police Control Rooms 07727-222102 + 07727-200100 + Rescue & Relief 1070 confirmed on https://balodabazar.gov.in/en/helpline/. Kasdol-station-level police phone NOT published on https://balodabazar.gov.in/en/divisions/police-department/ ('no posts matched your criteria') → station name/address null. Sanctuary is govt-managed by CG Forest Dept — Range Office Barnawapara is the on-ground rescue contact during forest emergencies but no .gov.in phone publicly listed → omitted. Pharmacy/mechanic/tow/guesthouse/EN-doctor not on any .gov.in page → null."
+  },
+  {
+    "destination_id": "jagdalpur",
+    "name": "Jagdalpur",
+    "verify": true,
+    "source_url": "https://bastar.gov.in/en/public-utility/maharani-hospital-jagdalpur/",
+    "source_label": "Bastar District Administration — Maharani Hospital page + Directory + Disaster Management + Helpline",
+    "fields": {
+      "local_police_station": null,
+      "police_address": null,
+      "nearest_hospital": "Maharani Hospital (District Hospital), Jagdalpur",
+      "nearest_hospital_km": 0,
+      "hospital_has_er": true,
+      "nearest_pharmacy": null,
+      "pharmacy_24hr": null,
+      "mechanic_contact": null,
+      "tow_service": null,
+      "rescue_contact": "Bastar Police Control Room: 07782-222170",
+      "nearest_guesthouse_emergency": null,
+      "english_speaking_doctor": null
+    },
+    "notes": "Maharani Hospital (Chandani Chowk, Jagdalpur 494001) listed on https://bastar.gov.in/en/public-utility/maharani-hospital-jagdalpur/ — district hospital, central Jagdalpur, 24x7 casualty, ER true. Civil Surgeon District Hospital Bastar 07782-224889 + CMHO Bastar 07782-222281 listed on https://bastar.gov.in/en/directory/ (kept off payload — admin lines, not casualty dispatch). Late Baliram Kashyap Memorial Govt Medical College (Dimrapal, ~7 km, 500-bed tertiary inaugurated 2018) is the upgrade-tier referral; Dean line 07782-231403 listed but not on the public-utility hospital category page so kept off payload. Police Control Room 07782-222170 + Fire 07782-264170 + Deputy Collector 07782-223122 listed on https://bastar.gov.in/en/disaster-management/. SP Bastar 07782-222336 from directory. Jagdalpur-Kotwali station-level phone NOT separately published on .gov.in (only district-level numbers) → station name/address null. **SECURITY ADVISORY**: Bastar division is a Maoist-affected (LWE) zone — district SP coordinates with CRPF/DRG; visitors should register with hotel/lodge on arrival, avoid solo travel into rural Bastar after dusk, never leave NH-30/NH-43 trunk routes without local guide. Forest interiors (Kanger Valley NP, Chitrakote backroads) require permits and ranger escort. Sanjivani 108 + national 112 statewide. Pharmacy/mechanic/tow/guesthouse/EN-doctor not on any .gov.in page → null."
+  }
+]

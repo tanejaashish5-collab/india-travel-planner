@@ -1,0 +1,117 @@
+[
+  {
+    "destination_id": "imphal",
+    "name": "Imphal",
+    "verify": true,
+    "source_url": "https://imphalwest.nic.in/public-utility-category/hospitals/page/3/",
+    "source_label": "Imphal West District Administration — Hospitals (page 3) + Police Stations + Helpline; Imphal East — Police + Helpline",
+    "fields": {
+      "local_police_station": "Imphal Police Station",
+      "police_address": null,
+      "nearest_hospital": "Regional Institute of Medical Sciences (RIMS), Lamphelpat",
+      "nearest_hospital_km": 0,
+      "hospital_has_er": true,
+      "nearest_pharmacy": null,
+      "pharmacy_24hr": null,
+      "mechanic_contact": null,
+      "tow_service": null,
+      "rescue_contact": "Imphal East Police Control Room: 0385-2452669",
+      "mountain_rescue": null,
+      "nearest_guesthouse_emergency": null,
+      "english_speaking_doctor": null
+    },
+    "notes": "RIMS Lamphelpat (phone 0385-2414539, pincode 795004) listed on https://imphalwest.nic.in/public-utility-category/hospitals/page/3/ — central govt tertiary teaching hospital, ER assumed true. JNIMS Porompat (Imphal East side, phone 0385-2450385) is the alternate govt tertiary listed on https://imphaleast.nic.in/public-utility-category/hospital/. Imphal Police Station 0385-2450002 (West) listed at https://imphalwest.nic.in/police-stations/ (with City PS 0385-2458515, Lamphel PS 0385-2414616, Singjamei PS 0385-2450316 etc). Porompat PS 0385-2442447 covers Imphal East side per https://imphaleast.nic.in/police/. Helplines from https://imphalwest.nic.in/helpline/ (101 fire, 100 police, 1098 child) + https://imphaleast.nic.in/helpline/ (Police Control Room 0385-2452669, JNIMS Casualty 0385-2450385). Pharmacy/mechanic/tow/EN-doctor not on any .nic.in page → null. SECURITY ADVISORY: Manipur has had ongoing ethnic violence since May 2023 (Meitei-Kuki conflict); Imphal Valley is Meitei-majority and is the state capital — relatively secure but curfews/internet shutdowns recur. Recommend visitor briefing with district SP before travel and check current advisory."
+  },
+  {
+    "destination_id": "loktak-lake",
+    "name": "Loktak Lake",
+    "verify": true,
+    "source_url": "https://bishnupur.nic.in/divisions/police/",
+    "source_label": "Bishnupur District Administration — Police directory + Helpline + District Hospital + PHC directory + main page emergency contacts",
+    "fields": {
+      "local_police_station": "Moirang Police Station (also Loktak P/S covers lake area)",
+      "police_address": "Moirang, Bishnupur District 795133",
+      "nearest_hospital": "District Hospital Bishnupur",
+      "nearest_hospital_km": 16,
+      "hospital_has_er": true,
+      "nearest_pharmacy": null,
+      "pharmacy_24hr": null,
+      "mechanic_contact": null,
+      "tow_service": null,
+      "rescue_contact": "Bishnupur Manipur Police Radio: 03879-222269 / Commando Control: 03879-222339 / Fire Station Moirang: 8415925197",
+      "mountain_rescue": null,
+      "nearest_guesthouse_emergency": null,
+      "english_speaking_doctor": null
+    },
+    "notes": "Moirang P/S (OC: R.K. Anilkumar Singh, Inspector, pin 795133) and Loktak P/S (OC: L. Meghabarna Singh, Inspector, pin 795124) both listed on https://bishnupur.nic.in/divisions/police/ — station-level direct phones not published, only ranks/names. District Hospital Bishnupur (Bishnupur Ward No. 1, pin 795126) listed at https://bishnupur.nic.in/public-utility-category/district-hospital/ — phone not published on page. Distance Moirang→Bishnupur ~16 km on NH-2. PHC Thanga (Thanga Oinam Leikai, Moirang Block, pin 795133) and PHC Kumbi (pin 795133) are closest local-level facilities (on Loktak shore at Sendra approach) per https://bishnupur.nic.in/public-utility-category/public-health-centre/ — phones not published. Manipur Police Radio Bishnupur 03879-222269, Commando Control 03879-222339, Fire Station Moirang 8415925197, Fire Station Bishnupur 03879-222259 listed on https://bishnupur.nic.in/. Helpline page https://bishnupur.nic.in/help-line/ confirms 100/101/102/1091/1098. Forest dept rescue (Keibul Lamjao NP — only floating NP in world, Sangai habitat) NOT separately listed on .nic.in → null for mountain_rescue. Pharmacy/mechanic/tow/EN-doctor not on any .nic.in page → null. SECURITY ADVISORY: Loktak/Moirang is in Bishnupur (Meitei-majority) with active conflict-buffer zone bordering Churachandpur (Kuki-majority); some areas have temporary military/police roadblocks since May 2023. Recommend visitor briefing with district SP Bishnupur before travel."
+  },
+  {
+    "destination_id": "moreh",
+    "name": "Moreh",
+    "verify": true,
+    "source_url": "https://tengnoupal.nic.in/health/",
+    "source_label": "Tengnoupal District Administration — Health (Govt Hospitals) + Helpline; Moreh PS via tengnoupal.nic.in",
+    "fields": {
+      "local_police_station": "Moreh Police Station",
+      "police_address": "Moreh Bazar, Moreh Town, Moreh Sub-Division",
+      "nearest_hospital": "Moreh Hospital (Sub-Divisional Hospital)",
+      "nearest_hospital_km": 1,
+      "hospital_has_er": true,
+      "nearest_pharmacy": null,
+      "pharmacy_24hr": null,
+      "mechanic_contact": null,
+      "tow_service": null,
+      "rescue_contact": "Tengnoupal Helpline: Police 100 / Ambulance 102 / Fire 101",
+      "mountain_rescue": null,
+      "nearest_guesthouse_emergency": null,
+      "english_speaking_doctor": null
+    },
+    "notes": "Moreh Hospital listed on https://tengnoupal.nic.in/health/ — govt 'List of Government Hospitals' page lists Moreh Hospital with phone shown as '961268419' (this is a 9-digit number — almost certainly a printed-typo for 9612684819 per cross-mapped Mappls listing; left phone OUT of payload to avoid life-safety risk from publishing wrong digit count). The Sub-Divisional Hospital Moreh was non-operational from the May 2023 ethnic clashes until reopening Feb 2025 — per news reporting, not in payload. Moreh Police Station (OC: Inspector Letkhohao Vaiphei) at Moreh Bazar, Moreh Sub-Division, listed phones 8730860229 / 7005147026 on https://tengnoupal.nic.in/police/ — phones left out of main payload as one is mobile and OC name implies handset-rotation; police_address kept. Helplines from https://tengnoupal.nic.in/helpline/ (100/101/102/181/1098). Indo-Myanmar border town — AFSPA active in many areas. Army/Assam Rifles direct contact NOT published on .nic.in for civilian use → omitted (do not fabricate). Pharmacy/mechanic/tow/guesthouse/EN-doctor not on any .nic.in page → null. SECURITY ADVISORY: Moreh is at the international Indo-Myanmar border with Tamu, Myanmar; AFSPA is active across Tengnoupal district; ongoing ethnic violence since May 2023 (Meitei-Kuki) was particularly intense in Moreh — town is mixed Kuki/Meitei/Tamil. Inner Line Permit (ILP) required for non-Manipuri Indians. STRONGLY recommend visitor briefing with district SP Tengnoupal AND Assam Rifles sector HQ before travel; check Indo-Myanmar border crossing status."
+  },
+  {
+    "destination_id": "tamenglong",
+    "name": "Tamenglong",
+    "verify": true,
+    "source_url": "https://tamenglong.nic.in/helpline/",
+    "source_label": "Tamenglong District Administration — Helpline + Hospitals + Directory",
+    "fields": {
+      "local_police_station": "Office of the Superintendent of Police, Tamenglong (Ward No. 5, Tamenglong District HQ)",
+      "police_address": "Ward No. 5, Tamenglong District HQ",
+      "nearest_hospital": "District Hospital Tamenglong",
+      "nearest_hospital_km": 0,
+      "hospital_has_er": true,
+      "nearest_pharmacy": null,
+      "pharmacy_24hr": null,
+      "mechanic_contact": null,
+      "tow_service": null,
+      "rescue_contact": "DC Tamenglong: 03877-267003 / Hospital Casualty: 9436683196 / Fire: 7085141112",
+      "mountain_rescue": null,
+      "nearest_guesthouse_emergency": null,
+      "english_speaking_doctor": null
+    },
+    "notes": "District Hospital Tamenglong (location: Duigailong, Tamenglong DHQ) listed on https://tamenglong.nic.in/public-utility-category/hospitals/ — direct phone not on page; Hospital Casualty 9436683196 listed on https://tamenglong.nic.in/helpline/ used as functional ER contact. CHC Nungba (Nungba Block HQ) is the alternate govt facility, no phone published. Office of the Superintendent of Police at Ward No. 5, Tamenglong District HQ per https://tamenglong.nic.in/directory/ — station-level Tamenglong PS phone NOT published on .nic.in (the /police/ page has Lorem Ipsum placeholder text, not real content) → name + address from SP office only. DC Tamenglong 03877-267003, Fire Service 7085141112 both confirmed on https://tamenglong.nic.in/helpline/. CM's Anti-Corruption WhatsApp 9402150000 also listed but not emergency. Pharmacy/mechanic/tow/guesthouse/EN-doctor not on any .nic.in page → null. SECURITY ADVISORY: Tamenglong is Zeliangrong Naga-majority hill district, less affected by Meitei-Kuki conflict than Imphal Valley but tribal-area travel still requires care; AFSPA may apply in parts. Inner Line Permit (ILP) required. Recommend visitor briefing with district SP before travel."
+  },
+  {
+    "destination_id": "ukhrul",
+    "name": "Ukhrul",
+    "verify": true,
+    "source_url": "https://ukhrul.nic.in/helpline/",
+    "source_label": "Ukhrul District Administration — Helpline + Hospitals + Police directory",
+    "fields": {
+      "local_police_station": "Ukhrul Police Station (under SDPO Ukhrul, covers Ukhrul/Litan/Somdal/Shangshak)",
+      "police_address": null,
+      "nearest_hospital": "District Hospital Ukhrul",
+      "nearest_hospital_km": 0,
+      "hospital_has_er": true,
+      "nearest_pharmacy": null,
+      "pharmacy_24hr": null,
+      "mechanic_contact": null,
+      "tow_service": null,
+      "rescue_contact": "Ukhrul Police: 8730090890 / Fire Service: 8415925205",
+      "mountain_rescue": null,
+      "nearest_guesthouse_emergency": null,
+      "english_speaking_doctor": null
+    },
+    "notes": "District Hospital Ukhrul (Naga Gate, Ukhrul, pin 795142) listed on https://ukhrul.nic.in/public-utility-category/hospitals/ — direct phone NOT published on page (page links to https://nextgen.ehospital.gov.in/ dashboard); govt district hospital so ER assumed true. Old District Hospital Ukhrul (Kamphasom, pin 795142) is alternate. Ukhrul Police 8730090890 and Fire Service 8415925205 confirmed on https://ukhrul.nic.in/helpline/. Ukhrul has 9 police stations under 3 SDPOs (Chingai, Jesami, Ukhrul) per https://ukhrul.nic.in/police/ — station-level addresses/individual phones not separately published, only the SDPO Ukhrul which covers Ukhrul town + Litan + Somdal + Shangshak. Child Helpline 1091 (note: 1091 is Women in most states; here ukhrul.nic.in lists it as Child — Women shown as 1090 instead — kept exactly as printed but flagged). Pharmacy/mechanic/tow/guesthouse/EN-doctor not on any .nic.in page → null. SECURITY ADVISORY: Ukhrul is Tangkhul Naga-majority hill district, less directly affected by Meitei-Kuki conflict but borders sensitive areas; AFSPA active in parts; Inner Line Permit (ILP) required for non-Manipuri Indians. Recommend visitor briefing with district SP Ukhrul before travel — particularly important if visiting Shirui Lily area or remote villages."
+  }
+]

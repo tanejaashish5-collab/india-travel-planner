@@ -1,0 +1,24 @@
+[
+  {
+    "destination_id": "delhi",
+    "name": "Delhi",
+    "verify": true,
+    "source_url": "https://delhipolice.gov.in/",
+    "source_label": "Delhi Police (ERSS-112) + Delhi Disaster Management Authority (ddma.delhi.gov.in) + AIIMS Delhi (aiims.edu)",
+    "fields": {
+      "local_police_station": "Delhi Police PCR — Police Headquarters, Jai Singh Road (central) + 200+ stations across 15 districts",
+      "police_address": null,
+      "nearest_hospital": "All India Institute of Medical Sciences (AIIMS), Ansari Nagar",
+      "nearest_hospital_km": 0,
+      "hospital_has_er": true,
+      "nearest_pharmacy": null,
+      "pharmacy_24hr": null,
+      "mechanic_contact": null,
+      "tow_service": null,
+      "rescue_contact": "Delhi Police PCR: 112 / DDMA Helpline: 1077",
+      "nearest_guesthouse_emergency": null,
+      "english_speaking_doctor": null
+    },
+    "notes": "Delhi NCT covers 15 police districts + 11 revenue districts — visitor's nearest PS depends on locale. ERSS-112 is the unified Delhi Police PCR since Sept 2019 (replaced 100), 24x7 free, central control at ITO confirmed via Delhi Police RTI Manual https://delhipolice.gov.in/RTImanualFiles/ + delhipolice.gov.in. AIIMS Delhi (Ansari Nagar, 110029) is India's apex govt tertiary referral — central/south Delhi closest. Other major govt tertiaries with 24x7 ER: Safdarjung Hospital (Ansari Nagar), Ram Manohar Lohia (RML, Baba Kharak Singh Marg), Lok Nayak (LNJP, JLN Marg — Old Delhi), GTB Hospital (Dilshad Garden, East Delhi), DDU Hospital (Hari Nagar, West). DDMA helpline 1077 + Special CEO DDMA 011-23930611 / 011-23928860 (fax 011-23913754) published on https://ddma.delhi.gov.in/ddma/contact-us. North-West DDM control room 011-25951182 (24x7). Standard: Fire 101, Ambulance 102, Women 1091, Child 1098, Senior Citizen 14567. Specific PS-level phones vary by district — universal PCR 112 is the safe default. Pharmacy/mechanic/tow/guesthouse/EN-doctor not on any .gov.in/.nic.in page → null. NOTE: All major govt hospitals have EN-speaking doctors (medical education in English) but not formally published as a helpline → kept null per honest-scarcity rule."
+  }
+]

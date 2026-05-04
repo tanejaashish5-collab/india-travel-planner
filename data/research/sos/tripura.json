@@ -1,0 +1,68 @@
+[
+  {
+    "destination_id": "agartala",
+    "name": "Agartala",
+    "verify": true,
+    "source_url": "https://westtripura.gov.in/helpline/",
+    "source_label": "West Tripura District Administration — Helpline directory + Hospitals (page 1 + page 3)",
+    "fields": {
+      "local_police_station": "East Agartala Police Station / West Agartala Police Station",
+      "police_address": null,
+      "nearest_hospital": "Agartala Govt Medical College & GBP Hospital (AGMC-GBP)",
+      "nearest_hospital_km": 0,
+      "hospital_has_er": true,
+      "nearest_pharmacy": null,
+      "pharmacy_24hr": null,
+      "mechanic_contact": null,
+      "tow_service": null,
+      "rescue_contact": "West Tripura District Control Room: 1077 (Tele Fax 0381-2322971)",
+      "nearest_guesthouse_emergency": null,
+      "english_speaking_doctor": null
+    },
+    "notes": "AGMC-GBP is Tripura's premier govt tertiary teaching hospital — listed on https://westtripura.gov.in/public-utility-category/hospitals/ as 'AGMC, GB Bazar, Agartala 799001' with website agmc.nic.in. GBP Hospital emergency phone published on https://westtripura.gov.in/helpline/ as 235-6288 / 235-5512 (kept off payload — 6-digit fragments without confirmed STD code prefix risk life-safety mis-dial; the 0381 STD adds to make 0381-2356288). IGM Hospital (IGM Chowmuhani, AK Road) is the alternate govt facility, emergency 0381-2325895 / 0381-2323332 per same helpline page. East Agartala PS (0381-2325774) + West Agartala PS (0381-2325765) + Women's PS (0381-2325454) named per helpline page — phones kept off payload (PCR 100/112 is the universal route). SP West Tripura 0381-2323586 published. District control room 1077 + tele-fax 0381-2322971 confirmed on helpline page. Pharmacy/mechanic/tow/guesthouse/EN-doctor not on any .nic.in/.gov.in page → null."
+  },
+  {
+    "destination_id": "neermahal",
+    "name": "Neermahal",
+    "verify": true,
+    "source_url": "https://sepahijala.nic.in/helpline/",
+    "source_label": "Sepahijala District Administration — Helpline + Hospitals (page 1)",
+    "fields": {
+      "local_police_station": null,
+      "police_address": null,
+      "nearest_hospital": "Bishalgarh Sub-Divisional Hospital",
+      "nearest_hospital_km": 18,
+      "hospital_has_er": true,
+      "nearest_pharmacy": null,
+      "pharmacy_24hr": null,
+      "mechanic_contact": null,
+      "tow_service": null,
+      "rescue_contact": "Sepahijala District Control Room: 1950 / 0381-2867304 / 1800-345-3679 (toll-free)",
+      "nearest_guesthouse_emergency": null,
+      "english_speaking_doctor": null
+    },
+    "notes": "Neermahal is in Melaghar, Sepahijala district (~50 km south of Agartala). Bishalgarh Sub-Divisional Hospital (Bishalgarh-799102) is the closest govt sub-divisional hospital with ER, listed on https://sepahijala.nic.in/public-utility-category/hospitals/ — phone not published on the page. Distance Melaghar→Bishalgarh ~18 km road. Sonamura CHC alternates exist (Boxanagar, Kathalia, Kamalnagar PHCs are smaller). Sepahijala district control room 1950 + 0381-2867304 + 1800-345-3679 toll-free confirmed on https://sepahijala.nic.in/helpline/. Police 100, Fire 101, Ambulance 102, Women 1091, Child 1098 standard. Melaghar/Neermahal-area police station-level address/phone not separately published on .nic.in → null. AGMC-GBP Agartala (~50 km) is the next-step tertiary referral. Pharmacy/mechanic/tow/guesthouse/EN-doctor not on any .nic.in page → null."
+  },
+  {
+    "destination_id": "unakoti",
+    "name": "Unakoti",
+    "verify": true,
+    "source_url": "https://unakoti.nic.in/contact-directory/",
+    "source_label": "Unakoti District Administration — Contact directory + Disaster Management",
+    "fields": {
+      "local_police_station": "Kailashahar Police Station",
+      "police_address": null,
+      "nearest_hospital": "District Hospital Kailashahar",
+      "nearest_hospital_km": 10,
+      "hospital_has_er": true,
+      "nearest_pharmacy": null,
+      "pharmacy_24hr": null,
+      "mechanic_contact": null,
+      "tow_service": null,
+      "rescue_contact": "Unakoti Disaster Management Control Room: 03824-222147 (helpline 1077)",
+      "nearest_guesthouse_emergency": null,
+      "english_speaking_doctor": null
+    },
+    "notes": "Unakoti rock carvings are ~10 km north of Kailashahar (district HQ). District Hospital Kailashahar is the closest govt hospital with ER capability — referenced on Unakoti district website (unakoti.nic.in/public-utility-category/hospital/ returned 404 at time of audit; hospital category exists per nav menu). DM Unakoti office 03824-222277 (fax 233206) + SP Unakoti 03824-222236/222392 + Police Radio 03824-222265 published on https://unakoti.nic.in/contact-directory/. Disaster Mgmt control room 03824-222147 + toll-free 1077 confirmed on https://unakoti.nic.in/disaster-management/. Kailashahar PS named — station phone not separately published. Police 100, Fire 101, Ambulance 102 standard. AGMC-GBP Agartala ~180 km road for tertiary referral. Pharmacy/mechanic/tow/guesthouse/EN-doctor not on any .nic.in page → null."
+  }
+]

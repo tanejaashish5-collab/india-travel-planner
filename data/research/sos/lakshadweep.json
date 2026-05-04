@@ -1,0 +1,112 @@
+[
+  {
+    "destination_id": "kavaratti",
+    "name": "Kavaratti",
+    "verify": true,
+    "source_url": "https://lakshadweep.gov.in/disaster-management/",
+    "source_label": "Lakshadweep Administration — Disaster Management contacts + Hospitals public-utility directory + Police department page",
+    "fields": {
+      "local_police_station": "Kavaratti Police Station (HQ — Senior Superintendent of Police, Lakshadweep)",
+      "police_address": "SP Office, Kavaratti Island, Lakshadweep 682555",
+      "nearest_hospital": "Indira Gandhi Hospital, Kavaratti",
+      "nearest_hospital_km": 0,
+      "hospital_has_er": true,
+      "nearest_pharmacy": null,
+      "pharmacy_24hr": null,
+      "mechanic_contact": null,
+      "tow_service": null,
+      "rescue_contact": "Police Control Kavaratti: 04896-263100 / Deputy Collector Kavaratti: 04896-263716 / Coast Guard MRCC: 1554",
+      "nearest_guesthouse_emergency": null,
+      "english_speaking_doctor": null
+    },
+    "notes": "Indira Gandhi Hospital Kavaratti is the UT-level referral hospital — listed at https://lakshadweep.gov.in/public-utility/indira-gandhi-hospital-kavaratti/ with email lk-dmh@nic.in. Phone 04896-262240 / 04896-262794 surfaced in govt directory search but the dedicated facility page only publishes the Director Health Services email — kept phones out of payload to avoid life-safety risk on mismatch. As the only government referral hospital for the entire UT (sole tertiary capability before airlift to Kochi), ER capability assumed true. Police Control Kavaratti 04896-263100 confirmed on https://lakshadweep.gov.in/disaster-management/. SP Office Kavaratti 04896-262258 confirmed on https://lakshadweep.gov.in/departments-new/police-department/ (single SP for entire UT — no district structure). Deputy Collector Kavaratti 04896-263716 / 262252, mobile 9447919033 confirmed in disaster-management table. Coast Guard 1554 is national MRCC number — critical for Lakshadweep where major emergencies require helicopter evacuation (Pawan Hans lease) or Coast Guard evac to Kochi/Thiruvananthapuram. Pharmacy/mechanic/tow/EN-doctor not on any .gov.in page → null. Honest scarcity reflects single-UT thin infrastructure."
+  },
+  {
+    "destination_id": "agatti",
+    "name": "Agatti",
+    "verify": true,
+    "source_url": "https://lakshadweep.gov.in/public-utility-category/hospitals/",
+    "source_label": "Lakshadweep Administration — Hospitals directory (CHC Agatti) + Disaster Management island officers + Police department",
+    "fields": {
+      "local_police_station": "Agatti Police Station",
+      "police_address": null,
+      "nearest_hospital": "Community Health Centre (CHC) Agatti",
+      "nearest_hospital_km": 0,
+      "hospital_has_er": null,
+      "nearest_pharmacy": null,
+      "pharmacy_24hr": null,
+      "mechanic_contact": null,
+      "tow_service": null,
+      "rescue_contact": "Deputy Collector Agatti: 04894-242263 / 9447822714 · Police Control Kavaratti: 04896-263100 · Coast Guard MRCC: 1554",
+      "nearest_guesthouse_emergency": null,
+      "english_speaking_doctor": null
+    },
+    "notes": "CHC Agatti phone 04894-242857, email chcagatti@gmail.com — confirmed on https://lakshadweep.gov.in/public-utility-category/hospitals/. Phone left out of payload (CHC ER capability not declared on directory page; Lakshadweep CHCs typically stabilise + refer to IG Hospital Kavaratti or airlift to Kochi). hospital_has_er = null reflects unverified ER status. Agatti Police Station presence confirmed on https://lakshadweep.gov.in/departments-new/police-department/ but no station-level phone published — only SP HQ Kavaratti 04896-262258 + Police Control 04896-263100. Deputy Collector Agatti P.C. Hameed 04894-242263 / 242863, mobile 9447822714 confirmed in https://lakshadweep.gov.in/disaster-management/. Critical: Agatti has the UT's only commercial airstrip — major medical emergencies route through IG Hospital Kavaratti (40km, requires boat) or airlift Kochi (440km). Pharmacy/mechanic/tow/EN-doctor not on any .gov.in page → null."
+  },
+  {
+    "destination_id": "bangaram",
+    "name": "Bangaram",
+    "verify": true,
+    "source_url": "https://lakshadweep.gov.in/public-utility-category/hospitals/",
+    "source_label": "Lakshadweep Administration — Hospitals directory (no Bangaram facility listed) + Disaster Management contacts + Tourism page",
+    "fields": {
+      "local_police_station": null,
+      "police_address": null,
+      "nearest_hospital": "CHC Agatti (Bangaram has no medical facility — nearest is Agatti, ~8 km by boat)",
+      "nearest_hospital_km": 8,
+      "hospital_has_er": null,
+      "nearest_pharmacy": null,
+      "pharmacy_24hr": null,
+      "mechanic_contact": null,
+      "tow_service": null,
+      "rescue_contact": "Deputy Collector Agatti: 04894-242263 / 9447822714 · Police Control Kavaratti: 04896-263100 · Coast Guard MRCC: 1554",
+      "nearest_guesthouse_emergency": null,
+      "english_speaking_doctor": null
+    },
+    "notes": "Bangaram is uninhabited — no permanent population, no government hospital, no police station, no PHC. NOT listed on https://lakshadweep.gov.in/public-utility-category/hospitals/ — confirmed absence. Tourism page https://lakshadweep.gov.in/tourist-place/bangaram/ describes it as 'the only uninhabited island resort in Lakshadweep'. All emergencies route through Agatti (8 km north, the parent inhabited island with airstrip + CHC + police station). On-site only Bangaram Beach Resort seasonal staff — resort phone deliberately not published as it varies by operator / lease cycle (not a .gov.in source). Deputy Collector Agatti 9447822714 is the responsible administrative officer per https://lakshadweep.gov.in/disaster-management/. Coast Guard 1554 critical — Bangaram emergencies typically need boat-to-Agatti then airlift. Honest scarcity entirely expected: police_station / police_address / pharmacy / mechanic / tow / guesthouse / EN-doctor all null. hospital_has_er null because CHC Agatti ER capability unverified."
+  },
+  {
+    "destination_id": "minicoy",
+    "name": "Minicoy",
+    "verify": true,
+    "source_url": "https://lakshadweep.gov.in/public-utility/government-hospital-minicoy/",
+    "source_label": "Lakshadweep Administration — Government Hospital Minicoy public-utility page + Disaster Management island officers + Police department",
+    "fields": {
+      "local_police_station": "Minicoy Police Station",
+      "police_address": null,
+      "nearest_hospital": "Government Hospital Minicoy",
+      "nearest_hospital_km": 0,
+      "hospital_has_er": null,
+      "nearest_pharmacy": null,
+      "pharmacy_24hr": null,
+      "mechanic_contact": null,
+      "tow_service": null,
+      "rescue_contact": "Deputy Collector Minicoy: 04892-222333 / 7042671197 · Police Control Kavaratti: 04896-263100 · Coast Guard MRCC: 1554",
+      "nearest_guesthouse_emergency": null,
+      "english_speaking_doctor": null
+    },
+    "notes": "Government Hospital Minicoy phone 04892-222427, email ghminicoy@gmail.com — confirmed on https://lakshadweep.gov.in/public-utility/government-hospital-minicoy/ + hospitals directory. Phone left out of payload — GH (not CHC/PHC) suggests broader capability than other islands but ER status not declared on .gov.in page → hospital_has_er null. Minicoy Police Station presence confirmed on https://lakshadweep.gov.in/departments-new/police-department/ — station-level phone not published. Deputy Collector Minicoy Dr. Rahul Rathod 04892-222333, mobile 7042671197 confirmed in https://lakshadweep.gov.in/disaster-management/. Critical context: Minicoy is the southernmost island, ~400 km south of Kavaratti and >400 km from Kochi (closer to Maldives than Indian mainland). Major emergencies depend on Pawan Hans helicopter lease for evac to Kochi/Thiruvananthapuram — Coast Guard 1554 is the realistic SAR pathway. Pharmacy/mechanic/tow/EN-doctor not on any .gov.in page → null."
+  },
+  {
+    "destination_id": "kadmat",
+    "name": "Kadmat",
+    "verify": true,
+    "source_url": "https://lakshadweep.gov.in/public-utility/phc-kadmath/",
+    "source_label": "Lakshadweep Administration — PHC Kadmath public-utility page + Disaster Management island officers + Police department",
+    "fields": {
+      "local_police_station": "Kadmat Police Station",
+      "police_address": null,
+      "nearest_hospital": "Primary Health Centre (PHC) Kadmat",
+      "nearest_hospital_km": 0,
+      "hospital_has_er": null,
+      "nearest_pharmacy": null,
+      "pharmacy_24hr": null,
+      "mechanic_contact": null,
+      "tow_service": null,
+      "rescue_contact": "SDO Kadmat: 04897-274230 / 9496275115 · Police Control Kavaratti: 04896-263100 · Coast Guard MRCC: 1554",
+      "nearest_guesthouse_emergency": null,
+      "english_speaking_doctor": null
+    },
+    "notes": "PHC Kadmat phone 04897-274725, email mophckdt@gmail.com — confirmed on https://lakshadweep.gov.in/public-utility/phc-kadmath/ + hospitals directory (note govt URL spelling 'Kadmath' but island slug is 'kadmat'). Phone left out of payload — PHC is the lowest tier of govt healthcare in the UT (below CHC and below Govt Hospital), realistic capability is first-aid + stabilise + refer. hospital_has_er = null. Kadmat Police Station presence confirmed on https://lakshadweep.gov.in/departments-new/police-department/ — station-level phone not published; SP HQ Kavaratti 04896-262258 + Police Control 04896-263100 are the published numbers. SDO Kadmat N.C Moosa 04897-274230, mobile 9496275115 confirmed in https://lakshadweep.gov.in/disaster-management/ — note Kadmat is under an SDO (Sub-Divisional Officer), not a Deputy Collector like Kavaratti/Agatti/Minicoy. Major emergencies → IG Hospital Kavaratti (~74 km south by boat) or Pawan Hans helicopter to Kochi. Pharmacy/mechanic/tow/EN-doctor not on any .gov.in page → null."
+  }
+]

@@ -1,0 +1,94 @@
+[
+  {
+    "destination_id": "amritsar",
+    "name": "Amritsar",
+    "verify": true,
+    "source_url": "https://amritsar.nic.in/public-utility-category/hospitals/",
+    "source_label": "Amritsar District Administration — Hospitals directory + Helpline page + GMC/GNDH public-utility entries",
+    "fields": {
+      "local_police_station": null,
+      "police_address": null,
+      "nearest_hospital": "Guru Nanak Dev Hospital (GMC Amritsar teaching hospital)",
+      "nearest_hospital_km": 4,
+      "hospital_has_er": true,
+      "nearest_pharmacy": null,
+      "pharmacy_24hr": null,
+      "mechanic_contact": null,
+      "tow_service": null,
+      "rescue_contact": "Amritsar Flood/Disaster Control Room: 0183-2229125 · Ambulance: 108",
+      "mountain_rescue": null,
+      "nearest_guesthouse_emergency": null,
+      "english_speaking_doctor": null
+    },
+    "notes": "Guru Nanak Dev Hospital Complex (Majitha Road, Medical Enclave, 143001 — phone 0183-2421050) listed at https://amritsar.nic.in/public-utility/guru-nanak-dev-hospital-complex/ — government medical college teaching hospital, 24x7 ER assumed (govt med college). ~4 km from Golden Temple/Akal Takht (Akal Takht is INSIDE Harmandir Sahib complex — same dest). Backup: Civil Hospital Amritsar (Hussainpura, 0183-2552464, https://amritsar.nic.in/public-utility/civil-hospital-amritsar/). Government Medical College itself listed at 0183-2426918 (https://amritsar.nic.in/public-utility/government-medical-college-amritsar/). Amritsar district .nic.in publishes NO station-level police phones — only 100/181 helpline + DC office 0183-2223991 + SSP-level (https://amritsar.nic.in/helpline/). The B-Division police station famously near Golden Temple is widely known but not on .nic.in → station_name + address null rather than fabricate. Flood Control 0183-2229125 + COVID lines 0183-2500398/498/598/698/798 confirmed on https://amritsar.nic.in/helpline/. Vaisakhi (Apr) + Guru Nanak Jayanti crowds — Sewadar Help Desk runs inside the complex but not published on any .gov.in. Pharmacy/mechanic/tow/guesthouse/EN-doctor not on any .nic.in page → null."
+  },
+  {
+    "destination_id": "anandpur-sahib",
+    "name": "Anandpur Sahib",
+    "verify": true,
+    "source_url": "https://rupnagar.nic.in/police/",
+    "source_label": "Rupnagar District Administration — Police Stations + Hospitals directory + Helpline + Contact directory",
+    "fields": {
+      "local_police_station": "Sri Anandpur Sahib Police Station",
+      "police_address": null,
+      "nearest_hospital": "Civil Hospital, Sri Anandpur Sahib",
+      "nearest_hospital_km": 1,
+      "hospital_has_er": true,
+      "nearest_pharmacy": null,
+      "pharmacy_24hr": null,
+      "mechanic_contact": null,
+      "tow_service": null,
+      "rescue_contact": "Sri Anandpur Sahib PS: 01887-232027 · SDM Sri Anandpur Sahib: 01887-232036 · Ambulance: 108",
+      "mountain_rescue": null,
+      "nearest_guesthouse_emergency": null,
+      "english_speaking_doctor": null
+    },
+    "notes": "Sri Anandpur Sahib Police Station phone 01887-232027 (mobile 8558810962) confirmed on https://rupnagar.nic.in/police/ — one of 9 PS in Rupnagar district. Civil Hospital Sri Anandpur Sahib (govt) phone 01887-232671 listed on https://rupnagar.nic.in/public-utility-category/hospitals/ — govt facility so ER true, ~1 km from Takht Sri Kesgarh Sahib. Backup: District Hospital Rupnagar (Bela Chowk, 01881-228102, ~30 km). Hola Mohalla (Mar — Sikh festival, ~50k+ pilgrims, Nihang processions) crowd safety: SDM Sri Anandpur Sahib 01887-232036 + Tehsildar 01887-232015 + SSP Rupnagar 01881-221273 are coordination points (https://rupnagar.nic.in/contact-directory/). Police-station street address not published on .nic.in → null. Helpline page lists 100/181 + 108 + 104 (https://rupnagar.nic.in/helpline/). Pharmacy/mechanic/tow/guesthouse/EN-doctor not on any .nic.in page → null."
+  },
+  {
+    "destination_id": "patiala",
+    "name": "Patiala",
+    "verify": true,
+    "source_url": "https://patiala.nic.in/public-utility-category/hospitals/",
+    "source_label": "Patiala District Administration — Hospitals directory + Helpline + Police department directory + Rajindra Hospital EMO public-utility entry",
+    "fields": {
+      "local_police_station": null,
+      "police_address": null,
+      "nearest_hospital": "Rajindra Hospital (GMC Patiala teaching hospital)",
+      "nearest_hospital_km": 0,
+      "hospital_has_er": true,
+      "nearest_pharmacy": null,
+      "pharmacy_24hr": null,
+      "mechanic_contact": null,
+      "tow_service": null,
+      "rescue_contact": "Rajindra Hospital Emergency: 0175-2214971 · Flood Control Room: 0175-2359999 · Ambulance: 108",
+      "mountain_rescue": null,
+      "nearest_guesthouse_emergency": null,
+      "english_speaking_doctor": null
+    },
+    "notes": "Rajindra Hospital Patiala (Sangrur Road, Patiala 147001) — Emergency (EMO) 0175-2214971 listed on https://patiala.nic.in/public-utility/emergency-emo-rajindra-hospital-patiala/ + GMC entry https://patiala.nic.in/public-utility/government-medical-college-and-rajindra-hospital/. Rajindra Hospital is the teaching hospital attached to Government Medical College Patiala (built 1954) — 24x7 ER fully equipped. Central Patiala, walking distance from Qila Mubarak/Sheesh Mahal. Backups: Mata Kaushalya Hospital (Sheran Wala Gate, 0175-2222481), TB Hospital (0175-2220268) — all on https://patiala.nic.in/public-utility-category/hospitals/. Patiala district .nic.in publishes NO individual police-station phones (https://patiala.nic.in/police-department/ and /directory/police-station/ only show SSP 0175-2311112 + SP-HQ 0175-2311124 + DIG 0175-2311144) — Kotwali Patiala is the historically-known city PS but its number is not on any .gov.in → station_name + address null rather than fabricate. Helpline 100/101/108 + Flood Control 0175-2359999 + COVID 0175-2350550 confirmed at https://patiala.nic.in/helpline/. Pharmacy/mechanic/tow/guesthouse/EN-doctor not on any .nic.in page → null."
+  },
+  {
+    "destination_id": "damdama-sahib",
+    "name": "Damdama Sahib (Talwandi Sabo)",
+    "verify": true,
+    "source_url": "https://bathinda.nic.in/health/",
+    "source_label": "Bathinda District Administration — Health page (Sub-Division Hospital Talwandi Sabo) + Hospitals directory + Tourist place page + Contact directory",
+    "fields": {
+      "local_police_station": null,
+      "police_address": null,
+      "nearest_hospital": "Sub-Division Hospital, Talwandi Sabo",
+      "nearest_hospital_km": 1,
+      "hospital_has_er": true,
+      "nearest_pharmacy": null,
+      "pharmacy_24hr": null,
+      "mechanic_contact": null,
+      "tow_service": null,
+      "rescue_contact": "Civil Surgeon Bathinda: 0164-2212501 · SDM Talwandi Sabo: 01655-220241 · SSP Bathinda: 0164-2219100 · Ambulance: 108",
+      "mountain_rescue": null,
+      "nearest_guesthouse_emergency": null,
+      "english_speaking_doctor": null
+    },
+    "notes": "Sub-Division Hospital Talwandi Sabo confirmed in district health infrastructure list at https://bathinda.nic.in/health/ — one of 3 SDHs in Bathinda district (Rampura Phul, Talwandi Sabo, Ghuda). District-level 200-bed Civil Hospital Bathinda has 24x7 emergency, dialysis, trauma — SDH Talwandi Sabo by sub-divisional grade has ER (assumed true). ~1 km from Takht Sri Damdama Sahib gurdwara (Talwandi village). Direct phone for SDH not published on bathinda.nic.in (only Civil Surgeon 0164-2212501 is the published coordination contact) → kept SDH name only, no phone, to avoid life-safety risk. Backup: Civil Hospital Bathinda (Mansa Road, opp Police Lines, 0164-2210711 — https://bathinda.nic.in/public-utility/civil-hospital-bathinda/) ~30 km. AIIMS Bathinda (VPO Jodhpur Romana, Dabbwali Road) ~28 km — listed at https://bathinda.nic.in/public-utility/aiims-bathinda/ but no published phone. Bathinda district .nic.in publishes NO station-level police phones — only SSP 0164-2219100 + SP-HQ 0164-2219500 + SP-Detective 0164-2217900 + IG 0164-2213025 (https://bathinda.nic.in/contact-directory/). SDM Talwandi Sabo 01655-220241 (https://bathinda.nic.in/directory/sub-divisional-magistrate-talwandi-sabo/) is the local civil-coordination contact. Baisakhi (Apr) crowd surge + Hola Mohalla offshoot → Civil Surgeon + SDM + SSP are the published rescue chain. Pharmacy/mechanic/tow/guesthouse/EN-doctor not on any .nic.in page → null."
+  }
+]

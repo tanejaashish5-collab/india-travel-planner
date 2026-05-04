@@ -1,0 +1,68 @@
+[
+  {
+    "destination_id": "diu",
+    "name": "Diu",
+    "verify": true,
+    "source_url": "https://diu.gov.in/public-utility/government-hospital-diu/",
+    "source_label": "Diu District (UT of DNH & DD) — Government Hospital page + Helpline + DNH+DD Police (police.ddd.gov.in)",
+    "fields": {
+      "local_police_station": "Diu Police Station, 1st Floor, Fort Road, near Collector Office, Diu",
+      "police_address": "1st Floor, Fort Road, near Collector Office, Diu",
+      "nearest_hospital": "Government Hospital, Diu",
+      "nearest_hospital_km": 0,
+      "hospital_has_er": true,
+      "nearest_pharmacy": null,
+      "pharmacy_24hr": null,
+      "mechanic_contact": null,
+      "tow_service": null,
+      "rescue_contact": "Diu Rescue & Relief: 1070 / Police: 100 / Ambulance: 108 / ERSS: 112",
+      "nearest_guesthouse_emergency": null,
+      "english_speaking_doctor": null
+    },
+    "notes": "Government Hospital Diu — Main Road, Near Gandhipara, Diu, pincode 362520, phone 02875-252480, email ghd-diu-dd@nic.in confirmed on https://diu.gov.in/public-utility/government-hospital-diu/ — district govt hospital, ER true (24/7 casualty + 24/7 ambulance per Directorate of Health Services Diu page on daman.nic.in). Phone 02875-252480 is the published main number; left out of payload as a single line because diu.gov.in does not split casualty vs office (treat as nearest_hospital identifier only — 108 ambulance is the safer call-line). Diu Police Station (Fort Road, near Collector office, 02875-252133) + Coastal PS Vanakbara (02875-271115) confirmed on https://police.ddd.gov.in/police-station/. Helpline 100/101/108/1070/1098/181 confirmed on https://diu.gov.in/helpline/. Backup tertiary care: Govt Hospital Una (Gujarat, ~30 km mainland), or Diu→Veraval ~85 km. Pharmacy/mechanic/tow/guesthouse/EN-doctor not on any .gov.in page → null. Note: DNH & DD merged 2020 into single UT — police is single force (DNH+DD Police, dnhddpolice.gov.in)."
+  },
+  {
+    "destination_id": "daman",
+    "name": "Daman",
+    "verify": true,
+    "source_url": "https://police.ddd.gov.in/police-station/",
+    "source_label": "DNH & DD Police — Police Station directory + Daman district govt hospital page (daman.nic.in)",
+    "fields": {
+      "local_police_station": "Nani Daman Police Station, Nani Daman Char Rasta, Nani Daman",
+      "police_address": "Nani Daman Char Rasta, Nani Daman",
+      "nearest_hospital": "Government Hospital, Marwad, Daman (District Hospital)",
+      "nearest_hospital_km": 3,
+      "hospital_has_er": true,
+      "nearest_pharmacy": null,
+      "pharmacy_24hr": null,
+      "mechanic_contact": null,
+      "tow_service": null,
+      "rescue_contact": "DNH+DD Police Control Room: 0260-2220444 / Police: 100 / Ambulance: 108 / ERSS: 112",
+      "nearest_guesthouse_emergency": null,
+      "english_speaking_doctor": null
+    },
+    "notes": "Government Hospital Marwad, Devka Beach Road, Marwad, Daman 396210 — district govt hospital under Directorate of Medical & Health Services Daman (https://www.daman.nic.in/govt-hospital-marwad.aspx — TLS-cert verify failed via webfetch but indexed on daman.nic.in via search). 24/7 casualty + emergency OT per citizen charter PDF on daman.nic.in. Phone 0260-2254266 / 0260-2251691 surfaced via search results indexing daman.nic.in but kept off payload as I could not webfetch the canonical citizen-charter PDF directly to verify the casualty extension. ~3 km from Daman city centre / Devka Beach. Three Daman PS confirmed on https://police.ddd.gov.in/police-station/: Nani Daman PS (0260-2254999) — covers Nani Daman (north of Daman Ganga river, where most hotels/Devka beach are), Coastal PS Moti Daman (02602230677), Coastal PS Kadaiya (0260-2220333). Phone left off payload because police.ddd.gov.in does not flag which is 24-hour public-line; PCR 0260-2220444 is the publicised emergency number. NMDA cyclone control 080-26961629 + DNH flood control 0260-2630304 from https://dnh.gov.in/helpline/ (single UT shares disaster mgmt). Pharmacy/mechanic/tow/guesthouse/EN-doctor not on any .gov.in page → null."
+  },
+  {
+    "destination_id": "silvassa",
+    "name": "Silvassa",
+    "verify": true,
+    "source_url": "https://dnh.gov.in/helpline/",
+    "source_label": "Dadra & Nagar Haveli District (UT of DNH & DD) — Helpline + Hospitals + DNH+DD Police",
+    "fields": {
+      "local_police_station": "Silvassa Police Station, Vapi-Silvassa Main Road, Zanda Chowk, Silvassa",
+      "police_address": "Vapi-Silvassa Main Road, Zanda Chowk, Silvassa, DNH",
+      "nearest_hospital": "Shri Vinoba Bhave Civil Hospital (NAMO Medical Education & Research Institute), Sayli Road, Silvassa",
+      "nearest_hospital_km": 2,
+      "hospital_has_er": true,
+      "nearest_pharmacy": null,
+      "pharmacy_24hr": null,
+      "mechanic_contact": null,
+      "tow_service": null,
+      "rescue_contact": "DNH Police Control Room: 0260-2220444 / DNH Flood Control Room: 0260-2630304 / NMDA Cyclone Control: 080-26961629 / Ambulance: 108 / ERSS: 112",
+      "nearest_guesthouse_emergency": null,
+      "english_speaking_doctor": null
+    },
+    "notes": "Shri Vinoba Bhave Civil Hospital — Sanjibhai Rupjibhai Delkar Marg, Sayli Road, Silvassa 396230 — confirmed on https://dnh.gov.in/public-utility-category/hospitals/. This is the same campus as NAMO Medical Education & Research Institute (650-bed govt teaching hospital, started 1952, will scale to 1250 — confirmed via vbch.dnh.nic.in + namomeridnhdd.in). Govt medical college so ER true. Phone 7624092991 + landlines 0260-2642940 / 2630102 / 2640615 surfaced via search but kept off payload because dnh.gov.in hospital page itself does not list phones (only address + map link) — life-safety standard says don't surface a phone the canonical .gov.in page omits. Backup hospitals from same DNH page: Sub-District Hospital Khanvel (Dudhani Rd, Khanvel), CHC Dadra, CHC Rakholi. Silvassa PS (0260-2652033 — Vapi-Silvassa Main Rd, Zanda Chowk) + Khanvel PS (0260-2677633) confirmed on https://police.ddd.gov.in/police-station/. PCR 0260-2220444 + 0260-2642033 + IRB CR 0260-2645276 from https://dnh.gov.in/helpline/. DNH flood-control 0260-2630304 critical (Daman Ganga floods Aug-Sep). 1077 listed as DNH COVID control room — NOT general disaster, kept off payload to avoid mis-routing. Pharmacy/mechanic/tow/guesthouse/EN-doctor not on any .gov.in page → null."
+  }
+]

@@ -1,0 +1,68 @@
+[
+  {
+    "destination_id": "kurukshetra",
+    "name": "Kurukshetra",
+    "verify": true,
+    "source_url": "https://kurukshetra.gov.in/contact-us/",
+    "source_label": "Kurukshetra District Administration — Contact directory + Public Utility (LNJP Hospital) + Kurukshetra Police (kurukshetra.haryanapolice.gov.in)",
+    "fields": {
+      "local_police_station": "City Kurukshetra Police Station (Thanesar)",
+      "police_address": null,
+      "nearest_hospital": "Lok Nayak Jai Prakash Narayan (LNJP) Civil Hospital, Kurukshetra",
+      "nearest_hospital_km": 1,
+      "hospital_has_er": true,
+      "nearest_pharmacy": null,
+      "pharmacy_24hr": null,
+      "mechanic_contact": null,
+      "tow_service": null,
+      "rescue_contact": "Kurukshetra DC Office (district control): 01744-220270 / 220271",
+      "nearest_guesthouse_emergency": null,
+      "english_speaking_doctor": null
+    },
+    "notes": "LNJP Civil Hospital Kurukshetra (NOT 'Lala Lajpat Rai' as briefed — LNJP here = Lok Nayak Jai Prakash Narayan, the Hindi-language card on https://kurukshetra.gov.in/hi/public-utility/लोकनायक-जय-प्रकाश-नारायण/ confirms the namesake) is the district civil hospital, near KUK Railway Station Area, pincode 136118 — district civil hospital so ER true. PGIMS Rohtak (the state's main tertiary referral) is ~165 km away, not a realistic emergency-room option for Kurukshetra travellers — LNJP is the right anchor. City Kurukshetra Police Station (Thanesar) named per https://kurukshetra.haryanapolice.gov.in/PS_City — station-level phone seen on a 3rd-party listing as 070567 00123 but kept off payload (not on .gov.in). DC Office multi-line 01744-220270/220271/227777/220935 confirmed at https://kurukshetra.gov.in/contact-us/ — acts as district control / coordination. No dedicated district disaster-mgmt 1077-style line published on kurukshetra.gov.in. Pharmacy/mechanic/tow/guesthouse/EN-doctor not on any .gov.in/.nic.in page → null."
+  },
+  {
+    "destination_id": "morni-hills",
+    "name": "Morni Hills",
+    "verify": true,
+    "source_url": "https://panchkula.nic.in/public-utility-category/hospitals/",
+    "source_label": "Panchkula District Administration — Hospitals/CHCs/PHCs directory + Sub Division Hospital Kalka page + Contact-us + Panchkula Police (panchkula.haryanapolice.gov.in)",
+    "fields": {
+      "local_police_station": null,
+      "police_address": null,
+      "nearest_hospital": "Sub Divisional Hospital, Kalka",
+      "nearest_hospital_km": 30,
+      "hospital_has_er": true,
+      "nearest_pharmacy": null,
+      "pharmacy_24hr": null,
+      "mechanic_contact": null,
+      "tow_service": null,
+      "rescue_contact": "Panchkula Deputy Commissioner Office: 0172-2585000 / 2568313",
+      "nearest_guesthouse_emergency": null,
+      "english_speaking_doctor": null
+    },
+    "notes": "Morni village itself has only PHC Morni (primary health centre, basic OPD-level — NOT a true ER). The closest govt facility with surgical/emergency capability is Sub Divisional Hospital Kalka — listed on https://panchkula.nic.in/public-utility/sub-division-hospital-kalka/ — sub-divisional hospital so ER true, ~30 km via Morni-Pinjore-Kalka road. General Hospital Sector-6 Panchkula (0172-2562199) is ~45 km and the next-step district referral. PHC Morni number (6239107893) and Kalka SDH number (9468188869) seen in directory listings but kept off payload — directory aggregators carry stale mobile numbers, life-safety risk too high. NO dedicated police station in Morni village — covered by Pinjore PS jurisdiction (Morni is in Pinjore tehsil/Kalka sub-division). DC Panchkula 0172-2585000/2568313 confirmed at https://panchkula.nic.in/contact-us/ — acts as district control/rescue coordinator (no separate 1077-style line published). Pharmacy/mechanic/tow/guesthouse/EN-doctor not on any .nic.in page → null. Trekkers should pre-load 112 (national emergency) + 108 (ambulance)."
+  },
+  {
+    "destination_id": "pinjore-gardens",
+    "name": "Pinjore Gardens (Yadavindra Gardens)",
+    "verify": true,
+    "source_url": "https://panchkula.haryanapolice.gov.in/ps-Pinjore_htm",
+    "source_label": "Panchkula Police — Pinjore Police Station page + Panchkula District Admin Hospitals directory + Contact-us",
+    "fields": {
+      "local_police_station": "Pinjore Police Station",
+      "police_address": "Near Main Chowk Pinjore, Kalka-Baddi Road, Panchkula, Haryana 134102",
+      "nearest_hospital": "Sub Divisional Hospital, Kalka",
+      "nearest_hospital_km": 5,
+      "hospital_has_er": true,
+      "nearest_pharmacy": null,
+      "pharmacy_24hr": null,
+      "mechanic_contact": null,
+      "tow_service": null,
+      "rescue_contact": "Panchkula Deputy Commissioner Office: 0172-2585000 / 2568313",
+      "nearest_guesthouse_emergency": null,
+      "english_speaking_doctor": null
+    },
+    "notes": "Pinjore Police Station is the directly-jurisdictional station for Yadavindra Gardens (the gardens sit on Kalka-Baddi Road in Pinjore town — same road as the PS). Address from https://panchkula.haryanapolice.gov.in/ps-Pinjore_htm. Station-level phone (01733-231403 + mobile 9729990502) seen on aggregators only — kept off payload (not on .haryanapolice.gov.in directly visible to me; timeouts blocked direct fetch). Sub Divisional Hospital Kalka (~5 km, on Kalka-Baddi Road) listed on https://panchkula.nic.in/public-utility/sub-division-hospital-kalka/ — sub-divisional hospital so ER true. PHC Pinjore (01733-230844 per directory listings) is closer (~1 km) but primary-care only, no surgical ER → SDH Kalka is the right anchor. General Hospital Sector-6 Panchkula (0172-2562199) is ~20 km, next-step referral. DC Panchkula 0172-2585000/2568313 from https://panchkula.nic.in/contact-us/. Pharmacy/mechanic/tow/guesthouse/EN-doctor not on any .nic.in page → null."
+  }
+]

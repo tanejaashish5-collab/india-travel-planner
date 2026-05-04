@@ -1,0 +1,24 @@
+[
+  {
+    "destination_id": "chandigarh",
+    "name": "Chandigarh",
+    "verify": true,
+    "source_url": "https://chandigarh.gov.in/information/helpline",
+    "source_label": "Chandigarh Administration — Official Helpline page + GMCH-32 official site",
+    "fields": {
+      "local_police_station": "Police Control Room (PCR), Chandigarh — Sector 9",
+      "police_address": null,
+      "nearest_hospital": "Post Graduate Institute of Medical Education & Research (PGIMER), Sector 12",
+      "nearest_hospital_km": 0,
+      "hospital_has_er": true,
+      "nearest_pharmacy": null,
+      "pharmacy_24hr": null,
+      "mechanic_contact": null,
+      "tow_service": null,
+      "rescue_contact": "Chandigarh Police PCR: 112 / 0172-2749194 (Disaster helpline 1077)",
+      "nearest_guesthouse_emergency": null,
+      "english_speaking_doctor": null
+    },
+    "notes": "PGIMER Sector 12 is India's premier govt tertiary referral institute — emergency 0172-2747585 published on https://chandigarh.gov.in/information/helpline. GMSH-16 (Govt Multi-Specialty Hospital, Sector 16) emergency 0172-2768201 / 0172-2768202 + Medical Supdt 0172-2768109 published on same page. GMCH-32 (Govt Medical College Hospital, Sector 32) emergency 0172-2663301 + PBX 0172-2665253-58 confirmed on https://gmch.gov.in/. Police PCR 112 + 0172-2749194 + 0172-2744100 published on official helpline page. Women & Child Helpline 1091 + 0172-2705011. Fire Sector 17: 0172-2702333 + 101. Ambulance 102 + 0172-2782457. Disaster helpline 1077 (national 24x7). Chandigarh is a UT — single police force under DGP Chandigarh; PS-level phones use STD 0172. PCR Sector 9 is the central response hub. Pharmacy/mechanic/tow/guesthouse/EN-doctor not on any .gov.in page → null. NOTE: PGIMER has 24x7 EN-speaking doctors (it's an All India institute) but not formally published as a helpline → kept null per honest-scarcity rule."
+  }
+]

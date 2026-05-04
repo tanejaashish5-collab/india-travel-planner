@@ -1,0 +1,134 @@
+[
+  {
+    "destination_id": "bodh-gaya",
+    "name": "Bodh Gaya",
+    "verify": true,
+    "source_url": "https://gaya.nic.in/public-utility-category/hospitals/",
+    "source_label": "Gaya District Administration — Hospitals directory + Police directory + Helpline + Contact directory",
+    "fields": {
+      "local_police_station": null,
+      "police_address": null,
+      "nearest_hospital": "Anugrah Narayan Magadh Medical College & Hospital (ANMMCH)",
+      "nearest_hospital_km": 14,
+      "hospital_has_er": true,
+      "nearest_pharmacy": null,
+      "pharmacy_24hr": null,
+      "mechanic_contact": null,
+      "tow_service": null,
+      "rescue_contact": "Gaya District Magistrate (Collectorate): 0631-2222900",
+      "nearest_guesthouse_emergency": null,
+      "english_speaking_doctor": null
+    },
+    "notes": "Hospital ANMMCH listed at https://gaya.nic.in/public-utility-category/hospitals/ — Sherghati Road, Gaya, listed phone 0531-2410339 (the printed STD code is wrong on the gov page — Gaya STD is 0631 — left phone out of payload to avoid life-safety risk). Distance 14 km Bodh Gaya→Gaya is the medical-college teaching hospital, the closest govt tertiary ER. ANMMCH is a govt medical college so ER assumed true. Bodh Gaya station-level number not on https://gaya.nic.in/police/ (only SSP Gaya 9031826204 and SP-City 9031826205 published) — left null rather than fabricate. e-Samadhaan helpline 9304401000 is grievance redressal, not emergency. DM Collectorate 0631-2222900 acts as rescue/coordination per https://gaya.nic.in/contact-directory/. Pharmacy/mechanic/tow not on any .nic.in page → null."
+  },
+  {
+    "destination_id": "nalanda",
+    "name": "Nalanda",
+    "verify": true,
+    "source_url": "https://nalanda.nic.in/public-utility-category/hospitals/",
+    "source_label": "Nalanda District Administration — Hospitals directory (page 1) + Police directory + Helpline",
+    "fields": {
+      "local_police_station": null,
+      "police_address": null,
+      "nearest_hospital": "CHC Silao",
+      "nearest_hospital_km": 5,
+      "hospital_has_er": null,
+      "nearest_pharmacy": null,
+      "pharmacy_24hr": null,
+      "mechanic_contact": null,
+      "tow_service": null,
+      "rescue_contact": "Nalanda Disaster Helpline: 1077",
+      "nearest_guesthouse_emergency": null,
+      "english_speaking_doctor": null
+    },
+    "notes": "CHC Silao is the closest govt facility to Nalanda ruins (~5 km, both in Silao block) — phone 9470003512 listed on https://nalanda.nic.in/public-utility-category/hospitals/ but left out of payload as CHC ER capability is unverified on page. Sadar Hospital Bihar Sharif (~13 km, phone 9470003506) is the next-step district hospital. Disaster helpline 1077 confirmed on https://nalanda.nic.in/helpline/. Nalanda-village station-level police phone not on https://nalanda.nic.in/police/ (only SDPO Sadar Biharsharif 9431800113 + SP Nalanda 9431822972 published) → null. Pharmacy/mechanic/tow/guesthouse/EN-doctor not on any .nic.in page → null."
+  },
+  {
+    "destination_id": "patna",
+    "name": "Patna",
+    "verify": true,
+    "source_url": "https://patna.nic.in/helpline/",
+    "source_label": "Patna District Administration — Helpline + Police directory + Hospitals (Public Utilities)",
+    "fields": {
+      "local_police_station": "Kotwali Police Station (Patna City) — one of 87+ stations under SSP Patna",
+      "police_address": null,
+      "nearest_hospital": "Patna Medical College Hospital (PMCH)",
+      "nearest_hospital_km": 0,
+      "hospital_has_er": true,
+      "nearest_pharmacy": null,
+      "pharmacy_24hr": null,
+      "mechanic_contact": null,
+      "tow_service": null,
+      "rescue_contact": "Patna Disaster Management Control Room: 0612-2217305",
+      "nearest_guesthouse_emergency": null,
+      "english_speaking_doctor": null
+    },
+    "notes": "PMCH (Ashok Rajpath, Patna 800004, phone 0612-2300343) listed on https://patna.nic.in/public-utility-category/hospital/ — govt medical college tertiary ER, central Patna. Police Control Room 0612-2201977/78 + District Control Room 0612-2219810 + Disaster Management 0612-2217305 all listed on https://patna.nic.in/helpline/. Kotwali named per https://patna.nic.in/police/ (lists 87+ stations, station-level addresses not published — only category emails ps.kotwali-pat-bih@nic.in pattern). NMCH (Kankarbagh, 800026) is alternate. AIIMS Patna (Phulwarisharif, 801507) is NOT listed on patna.nic.in hospital directory — kept off payload. Pharmacy/mechanic/tow/guesthouse/EN-doctor not on any .nic.in page → null."
+  },
+  {
+    "destination_id": "pawapuri",
+    "name": "Pawapuri",
+    "verify": true,
+    "source_url": "https://nalanda.nic.in/public-utility-category/hospitals/",
+    "source_label": "Nalanda District Administration — Hospitals directory + Helpline",
+    "fields": {
+      "local_police_station": null,
+      "police_address": null,
+      "nearest_hospital": "Bhagwan Mahavir Institute of Medical Sciences (BMIMS), Pawapuri",
+      "nearest_hospital_km": 1,
+      "hospital_has_er": true,
+      "nearest_pharmacy": null,
+      "pharmacy_24hr": null,
+      "mechanic_contact": null,
+      "tow_service": null,
+      "rescue_contact": "Nalanda Disaster Helpline: 1077",
+      "nearest_guesthouse_emergency": null,
+      "english_speaking_doctor": null
+    },
+    "notes": "BMIMS Pawapuri listed on https://nalanda.nic.in/public-utility-category/hospitals/ + dedicated page https://nalanda.nic.in/en/public-utility/bhagwan-mahavir-institute-of-medical-sciences-pawapuri-nalanda/ — pincode 803115, phone 06112-262794. Govt medical college so ER true. ~1 km from Jal Mandir (the temple complex is essentially on the BMIMS campus). Pawapuri has NO dedicated police station listing on https://nalanda.nic.in/police/ — covered by SDPO Sadar Biharsharif. Disaster helpline 1077 from https://nalanda.nic.in/helpline/. Pharmacy/mechanic/tow/guesthouse/EN-doctor not on any .nic.in page → null."
+  },
+  {
+    "destination_id": "rajgir",
+    "name": "Rajgir",
+    "verify": true,
+    "source_url": "https://nalanda.nic.in/public-utility-category/hospitals/page/3/",
+    "source_label": "Nalanda District Administration — Hospitals (page 3) + Police directory + Helpline",
+    "fields": {
+      "local_police_station": "Rajgir Sub-Division (SDPO Rajgir office)",
+      "police_address": null,
+      "nearest_hospital": "Sub-Divisional Hospital, Rajgir",
+      "nearest_hospital_km": 2,
+      "hospital_has_er": true,
+      "nearest_pharmacy": null,
+      "pharmacy_24hr": null,
+      "mechanic_contact": null,
+      "tow_service": null,
+      "rescue_contact": "Nalanda Disaster Helpline: 1077",
+      "nearest_guesthouse_emergency": null,
+      "english_speaking_doctor": null
+    },
+    "notes": "SDH Rajgir listed on https://nalanda.nic.in/public-utility-category/hospitals/page/3/ — phone 9470003525, pincode covers Rajgir Sub-Division. Sub-divisional hospital so ER true. SDPO Rajgir office at (06112) 255461 / 9431800111 listed on https://nalanda.nic.in/police/ — kept name only, not phone (SDPO is sub-div level not station-level). Disaster helpline 1077 from https://nalanda.nic.in/helpline/. Backup: BMIMS Pawapuri ~14 km. Rajgir police-station-level address/phone not separately published → null. Pharmacy/mechanic/tow/guesthouse/EN-doctor not on any .nic.in page → null."
+  },
+  {
+    "destination_id": "vaishali",
+    "name": "Vaishali",
+    "verify": true,
+    "source_url": "https://vaishali.nic.in/contact-directory/",
+    "source_label": "Vaishali District Administration — Contact directory + Helpline + Disaster Management + Hospitals",
+    "fields": {
+      "local_police_station": null,
+      "police_address": null,
+      "nearest_hospital": "Sadar Hospital, Hajipur",
+      "nearest_hospital_km": 35,
+      "hospital_has_er": true,
+      "nearest_pharmacy": null,
+      "pharmacy_24hr": null,
+      "mechanic_contact": null,
+      "tow_service": null,
+      "rescue_contact": "Vaishali District Disaster Mgmt Control Room: 06224-260220",
+      "nearest_guesthouse_emergency": null,
+      "english_speaking_doctor": null
+    },
+    "notes": "Sadar Hospital Hajipur (Hospital Road, Hajipur — phone 06224-260197) listed on https://vaishali.nic.in/public-utility-category/hospitals/ — district hospital, ER true. Vaishali archaeological site (Basadh) is ~35 km from Hajipur (the district HQ) — Vaishali itself has no listed govt hospital on the district .nic.in page. Disaster control room 06224-260220 confirmed on https://vaishali.nic.in/disaster-management/. SP Vaishali 9031826899 + Police Control Room 9031826900 listed on https://vaishali.nic.in/contact-directory/. Vaishali-village station-level phone not separately published → police_station/address null. Pharmacy/mechanic/tow/guesthouse/EN-doctor not on any .nic.in page → null."
+  }
+]

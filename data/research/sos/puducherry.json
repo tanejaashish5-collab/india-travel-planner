@@ -1,0 +1,68 @@
+[
+  {
+    "destination_id": "auroville",
+    "name": "Auroville",
+    "verify": true,
+    "source_url": "https://auroville.org/page/emergency-numbers-and-services",
+    "source_label": "Auroville Foundation — Emergency Numbers & Services (official) + Tamil Nadu Police (Villupuram district CUG list, police.py.gov.in)",
+    "fields": {
+      "local_police_station": "Auroville Police Station (Vanur sub-division, Villupuram district, Tamil Nadu — Auroville township straddles the TN/Puducherry border but the township + Matrimandir lie inside Villupuram district TN)",
+      "police_address": null,
+      "nearest_hospital": "JIPMER (Jawaharlal Institute of Postgraduate Medical Education & Research), Gorimedu, Puducherry",
+      "nearest_hospital_km": 12,
+      "hospital_has_er": true,
+      "nearest_pharmacy": null,
+      "pharmacy_24hr": null,
+      "mechanic_contact": null,
+      "tow_service": null,
+      "rescue_contact": "Auroville Security & Emergency Services (ASES) 24/7: +91 9443090107 / Auroville Ambulance: +91 94422-24680",
+      "nearest_guesthouse_emergency": null,
+      "english_speaking_doctor": "Auroville Health Centre: 0413-2622018 (international community, English-speaking)"
+    },
+    "notes": "Auroville township + Matrimandir are 6 km west of ECR-Bommayapalayam turnoff in Vanur taluk, Villupuram district, Tamil Nadu (NOT Puducherry UT proper) — confirmed by mappls.com listing 605111 + Wikipedia + auroville.org. Auroville Police Station phone 0413-2677318 and Kottakuppam PS 0413-2236148 listed on auroville.org/page/emergency-numbers-and-services as official jurisdiction stations — kept name only because the auroville.org page is the township admin's own emergency directory not a govt police directory. ASES (Auroville Security & Emergency Services) 9443090107 + Ambulance 9442224680 + Health Centre 0413-2622018 all from same official Auroville page — these ARE the township's primary emergency contact pathway. Nearest tertiary ER = JIPMER Gorimedu (12 km south) or PIMS (Pondicherry Institute of Medical Sciences) ~15 km. JIPMER casualty 0413-2272142 + 24/7 emergency referral 0413-2296568 confirmed via search but not webfetched on jipmer.edu.in (cert error) so kept off payload as named hospital only. Pharmacy/mechanic/tow not on auroville.org emergency page → null."
+  },
+  {
+    "destination_id": "puducherry",
+    "name": "Puducherry",
+    "verify": true,
+    "source_url": "https://puducherry-dt.gov.in/helpline/",
+    "source_label": "Puducherry District Administration — Helpline directory + Hospitals + Puducherry Police (police.py.gov.in)",
+    "fields": {
+      "local_police_station": "Grand Bazaar Police Station (East Region — covers Pondicherry Bazaar / White Town / French Quarter area), one of 25+ stations in Puducherry region",
+      "police_address": null,
+      "nearest_hospital": "Indira Gandhi Medical College & Research Institute (IGMC&RI), Vazhudavur Road, Kathirkamam",
+      "nearest_hospital_km": 6,
+      "hospital_has_er": true,
+      "nearest_pharmacy": null,
+      "pharmacy_24hr": null,
+      "mechanic_contact": null,
+      "tow_service": null,
+      "rescue_contact": "Puducherry District Disaster Helpline: 1077 / State Disaster Helpline: 1070 / ERSS: 112",
+      "nearest_guesthouse_emergency": null,
+      "english_speaking_doctor": null
+    },
+    "notes": "IGMC&RI Vazhudavur Rd, Kathirkamam, Puducherry 605009 + phone 0413-2274552 from https://puducherry-dt.gov.in/public-utility-category/hospitals/ — govt medical college so ER true. JIPMER (the tertiary referral hospital) is on the same district but is a Centre-of-India Govt Institute, not in the Puducherry district govt directory — kept off as nearest_hospital, but is the actual highest-acuity ER (~3 km north of city centre, casualty 0413-2272142). Helpline 1077/1070/112 confirmed on https://puducherry-dt.gov.in/helpline/. Police Control Room ERSS 112 + 1031 + 9489205039 from https://police.py.gov.in/. Grand Bazaar PS named per https://police.py.gov.in/Contact%20us/CUG%20Police%20Stations%20of%20PP.htm (CUG range 9489205040-9489205052) — kept name only, individual CUG range not published as a publicised public phone. Pharmacy/mechanic/tow/EN-doctor not on any .gov.in page → null."
+  },
+  {
+    "destination_id": "karaikal",
+    "name": "Karaikal",
+    "verify": true,
+    "source_url": "https://karaikal.gov.in/contact-disaster-management/",
+    "source_label": "Karaikal District Administration — Disaster Management + Hospitals + Police directories",
+    "fields": {
+      "local_police_station": "Karaikal Town Police Station (Karaikal HQ — one of 9 stations including Town/Traffic/T.R.Pattinam/Kottucherry/Neravy/Thirunallar/Ambagarathur OP/Nedungadu)",
+      "police_address": null,
+      "nearest_hospital": "Karaikal General Hospital (Govt General Hospital, Karaikal)",
+      "nearest_hospital_km": 0,
+      "hospital_has_er": true,
+      "nearest_pharmacy": null,
+      "pharmacy_24hr": null,
+      "mechanic_contact": null,
+      "tow_service": null,
+      "rescue_contact": "Karaikal District Emergency Operation Centre: 04368-228801 / 04368-227704 (Toll-free: 1077 / 1070)",
+      "nearest_guesthouse_emergency": null,
+      "english_speaking_doctor": null
+    },
+    "notes": "Karaikal General Hospital listed on https://karaikal.gov.in/public-utility-category/hospitals/ — govt district hospital with Casualty (222593), Emergency (222488), Maternity (223917), Office (222450), pincode 609602. Casualty/Emergency are 6-digit local numbers (STD 04368) — full numbers would be 04368-222593 / 04368-222488 — left out of payload because the gov page lists them without STD prefix and STD-padding is an inference. EOC 04368-228801 + 04368-227704 + toll-free 1077/1070 from https://karaikal.gov.in/contact-disaster-management/ — these ARE published as full numbers, safer to surface. Karaikal Town PS named per https://karaikal.gov.in/contact-police/ (Police Control Room 04368-225100 / 222067 + Town PS 222402 — left phone off because the page truncates STD code). Karaikal is a Pondicherry-UT enclave inside Tamil Nadu (Nagapattinam district surrounds it) — gov source is correctly karaikal.gov.in. Pharmacy/mechanic/tow/EN-doctor not on any .gov.in page → null."
+  }
+]

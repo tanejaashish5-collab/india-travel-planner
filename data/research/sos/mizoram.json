@@ -1,0 +1,94 @@
+[
+  {
+    "destination_id": "aizawl",
+    "name": "Aizawl",
+    "verify": true,
+    "source_url": "https://aizawl.nic.in/helpline/",
+    "source_label": "Aizawl District Administration — Helpline + Civil Hospital public-utility page + Mizoram Police PCR contact-us",
+    "fields": {
+      "local_police_station": "Aizawl Police Station",
+      "police_address": null,
+      "nearest_hospital": "Civil Hospital Aizawl",
+      "nearest_hospital_km": 1,
+      "hospital_has_er": true,
+      "nearest_pharmacy": null,
+      "pharmacy_24hr": null,
+      "mechanic_contact": null,
+      "tow_service": null,
+      "rescue_contact": "Aizawl Emergency Operation Centre: 1077 / Police Control Room (PCR Aizawl): 0389-2334327, mobile 9862899962",
+      "mountain_rescue": null,
+      "nearest_guesthouse_emergency": null,
+      "english_speaking_doctor": null
+    },
+    "notes": "Civil Hospital Aizawl (Near Millennium Centre, Bazar Bungkawn) phone 0389-2322318 listed on https://aizawl.nic.in/public-utility/civil-hospital/ — central Aizawl, govt district hospital so ER assumed true (not explicitly stated). Independently confirmed as 24/7 Emergency & Casualty 0389-2322318 per cha.mizoram.gov.in (own hospital site, also gov.in). Aizawl PS phone 0389-2322375 listed on https://aizawl.nic.in/helpline/ along with Bawngkawn PS 0389-2347570 and Vaivakawn PS 0389-2342303. Police Control Room (PCR) Aizawl 0389-2334327 + mobile 9862899962 published on https://police.mizoram.gov.in/contact-us/ via search index (raw page returns 403 to bots). Pharmacy/mechanic/tow/guesthouse/EN-doctor not on any .nic.in page → null. ZMC Falkawn (Zoram Medical College) is ~25 km south of Aizawl — not the nearest, not used."
+  },
+  {
+    "destination_id": "champhai",
+    "name": "Champhai",
+    "verify": true,
+    "source_url": "https://champhai.nic.in/helpline/",
+    "source_label": "Champhai District Administration — Helpline + Hospitals public-utility + Police directory",
+    "fields": {
+      "local_police_station": "Champhai Police Station",
+      "police_address": "Champhai (OC: H. Vanlalthanga)",
+      "nearest_hospital": "District Hospital Champhai",
+      "nearest_hospital_km": 1,
+      "hospital_has_er": true,
+      "nearest_pharmacy": null,
+      "pharmacy_24hr": null,
+      "mechanic_contact": null,
+      "tow_service": null,
+      "rescue_contact": "Champhai Emergency Operation Centre: 08413814357 / Disaster Management: 07085925320",
+      "mountain_rescue": null,
+      "nearest_guesthouse_emergency": null,
+      "english_speaking_doctor": null
+    },
+    "notes": "District Hospital Champhai (Vengsang, 796321) listed on https://champhai.nic.in/public-utility-category/hospitals/ — govt district hospital so ER assumed true; phone NOT on the .nic.in page (only email medsupcpi[at]gmail[dot]com + redirect to champhaihospital.in which returns ECONNREFUSED) → kept name only, no fabricated phone. Champhai PS phone 9612194615 (OC H. Vanlalthanga) on https://champhai.nic.in/police/ — also a parallel Champhai PS line 08974924728 listed on https://champhai.nic.in/helpline/. SP Champhai Lokeshwaran R IPS 6909316462. Disaster Management Champhai 07085925320 + EOC 08413814357 from helpline page. Champhai is on Indo-Myanmar border (Zokhawthar PS 9862725474 covers border crossing). Pharmacy/mechanic/tow/guesthouse/EN-doctor not on any .nic.in page → null. MED-AIM Adventist Hospital Zotlang (private) phone 8575711764 also listed but not chosen (district govt hospital prioritised)."
+  },
+  {
+    "destination_id": "lunglei",
+    "name": "Lunglei",
+    "verify": true,
+    "source_url": "https://lunglei.nic.in/helpline/",
+    "source_label": "Lunglei District Administration — Helpline + Hospitals public-utility + Police directory",
+    "fields": {
+      "local_police_station": "Lunglei Police Station",
+      "police_address": null,
+      "nearest_hospital": "Civil Hospital Lunglei",
+      "nearest_hospital_km": 1,
+      "hospital_has_er": true,
+      "nearest_pharmacy": null,
+      "pharmacy_24hr": null,
+      "mechanic_contact": null,
+      "tow_service": null,
+      "rescue_contact": "Lunglei Emergency Operation Centre: 1077 / Lunglei PS: 0372-2324390",
+      "mountain_rescue": null,
+      "nearest_guesthouse_emergency": null,
+      "english_speaking_doctor": null
+    },
+    "notes": "Civil Hospital Lunglei (796701) listed on https://lunglei.nic.in/public-utility-category/hospitals/ — govt district hospital (the term 'Civil Hospital' in Mizoram = district hospital), ER assumed true; phone NOT on the .nic.in page → kept name only, no fabricated phone (Christian Hospital Serkawn 796701 is the alternate). Lunglei PS phone 0372-2324390 confirmed on https://lunglei.nic.in/police/ table along with Lungsen PS 9612790321, Tlabung PS 9612213611, Bunghmun PS 9383075704, Thingsai PS 9383075704. EOC 1077 + Police 100 + Fire 101 + Medical 102 from helpline page. Pharmacy/mechanic/tow/guesthouse/EN-doctor not on any .nic.in page → null."
+  },
+  {
+    "destination_id": "phawngpui-peak",
+    "name": "Phawngpui Peak (Blue Mountain)",
+    "verify": true,
+    "source_url": "https://lawngtlai.nic.in/",
+    "source_label": "Lawngtlai District Administration homepage helplines + Hospital public-utility + Mizoram Forest Dept Chhimtuipui Wildlife Division page",
+    "fields": {
+      "local_police_station": null,
+      "police_address": null,
+      "nearest_hospital": "District Hospital Lawngtlai (Electric Veng, Lawngtlai)",
+      "nearest_hospital_km": 60,
+      "hospital_has_er": true,
+      "nearest_pharmacy": null,
+      "pharmacy_24hr": null,
+      "mechanic_contact": null,
+      "tow_service": null,
+      "rescue_contact": "Lawngtlai Hospital Casualty: 03835-232802 / Police Helpline: 03835-232245 / Disaster Management: 9862305451 / Fire & Emergency: 03835-232801",
+      "mountain_rescue": "Chhimtuipui Wildlife Division, Lawngtlai (Range Officer in-charge of Phawngpui National Park) — phone not published on forest.mizoram.gov.in",
+      "nearest_guesthouse_emergency": null,
+      "english_speaking_doctor": null
+    },
+    "notes": "Phawngpui Blue Mountain National Park is administered by Chhimtuipui Wildlife Division, Lawngtlai (Lawngtlai district, NOT Saiha despite some listings — confirmed via https://forest.mizoram.gov.in/page/chhimtuipui-wildlife-division-lawngtlai and Lawngtlai homepage which features Phawngpui as 'highest mountain in Mizoram'). Sangau village is the access point (~12 km from peak per mizoram.gov.in tourism). District Hospital Lawngtlai (Electric Veng, 796891) phone 03835-232802 listed on https://lawngtlai.nic.in/public-utility-category/hospital/ — also published as 'Hospital Casualty' on Lawngtlai homepage so ER true. Distance peak→Lawngtlai HQ ~60 km via Sangau (rough estimate from Sangau-Lawngtlai sub-divisional structure). Christian Hospital Lawngtlai (Vengpui, 796891) phone 03835-233473 + Lairam Christian Medical Centre 03835-232367 are nearer alternates IN LAWNGTLAI town (still ~60 km from peak). Police Helpline Lawngtlai 03835-232245 + Disaster Mgmt 9862305451 + Fire 03835-232801 from homepage. Police-station-level phone for Sangau OP NOT published on .nic.in → local_police_station null. Mountain rescue: Chhimtuipui Wildlife Division (DCF Lawngtlai + Range Officer Phawngpui) is the legal authority but NO phone published on forest.mizoram.gov.in (page returns 403 to bots, search index also did not surface a number) — name only, no fabricated phone. **Inner Line Permit + separate Forest Dept permit required**. **No mobile signal at peak** — Sangau village has limited connectivity. Pharmacy/mechanic/tow/guesthouse/EN-doctor not on any .nic.in page → null."
+  }
+]

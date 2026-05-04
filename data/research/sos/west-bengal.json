@@ -1,0 +1,140 @@
+[
+  {
+    "destination_id": "darjeeling",
+    "name": "Darjeeling",
+    "verify": true,
+    "source_url": "https://darjeelingpolice.wb.gov.in/PoliceStations",
+    "source_label": "Darjeeling Police District — Sadar PS detail + darjeeling.gov.in DDMA control room + darjeeling.gov.in hospitals directory",
+    "fields": {
+      "local_police_station": "Sadar Police Station, Darjeeling",
+      "police_address": "Chaukbazar, PS Sadar, Darjeeling",
+      "nearest_hospital": "Darjeeling District Hospital",
+      "nearest_hospital_km": 1,
+      "hospital_has_er": true,
+      "nearest_pharmacy": null,
+      "pharmacy_24hr": null,
+      "mechanic_contact": null,
+      "tow_service": null,
+      "rescue_contact": "Darjeeling DDMA Control Room: 0354-2255749",
+      "mountain_rescue": "Darjeeling Police Control Room (landslide): +91 91478 89078",
+      "nearest_guesthouse_emergency": null,
+      "english_speaking_doctor": null
+    },
+    "notes": "Sadar PS phones 7063315585 / 03542254422 listed at https://darjeelingpolice.wb.gov.in/ps-detail/1 — left phones out of payload as life-safety practice (use 100/112 or DDMA). Darjeeling District Hospital at 20 Bazar Cart Road, Eden Complex, Beside Sadar PS, pin 734101, listed phone 03542256790 on https://darjeeling.gov.in/public-utility-category/hospitals/ — govt district hospital so ER true. DDMA control room 0354-2255749 from https://darjeeling.gov.in/disaster-management/. Darjeeling Police Control Room landslide hotline +91 9147889078 confirmed publicly during Oct 2025 Mirik landslides — use for monsoon mountain rescue (Darjeeling = Sept-Oct landslide-prone). NDRF/SDRF deployment coordinated via DDMA (no separate published number on .gov.in). Pharmacy/mechanic/tow/guesthouse/EN-doctor not on any .gov.in page → null."
+  },
+  {
+    "destination_id": "kalimpong",
+    "name": "Kalimpong",
+    "verify": true,
+    "source_url": "https://kalimpongpolice.wb.gov.in/PoliceStations",
+    "source_label": "Kalimpong Police District — Police Stations directory + kalimpong.gov.in hospitals directory + kalimpong.gov.in contact directory",
+    "fields": {
+      "local_police_station": "Kalimpong Police Station",
+      "police_address": null,
+      "nearest_hospital": "Kalimpong District Hospital",
+      "nearest_hospital_km": 0,
+      "hospital_has_er": true,
+      "nearest_pharmacy": null,
+      "pharmacy_24hr": null,
+      "mechanic_contact": null,
+      "tow_service": null,
+      "rescue_contact": "Kalimpong DM (R Vimala, IAS): 03552-256942 / 7602975946",
+      "mountain_rescue": null,
+      "nearest_guesthouse_emergency": null,
+      "english_speaking_doctor": null
+    },
+    "notes": "Kalimpong PS phones 03552255268 / 9147889083 listed on https://kalimpongpolice.wb.gov.in/PoliceStations directory page — left out of payload as 100/112 + DM more reliable. ⚠️ CROSS-CHECK CAUGHT: kalimpongpolice.wb.gov.in/ps-detail/3 returned JALDHAKA PS not Kalimpong PS — directory index numbering ≠ slot 3 = Kalimpong. Kalimpong District Hospital at K.D. Pradhan Road, pin 734301, listed on https://kalimpong.gov.in/public-utility/kalimpong-district-hospital/ — phone NOT published on the .gov.in page (Justdial lists 03552-255363 but per HARD RULE phone-on-page only → kept name only). Govt district hospital so ER true. DM contact from https://kalimpong.gov.in/contact-directory/ acts as district rescue/disaster coordinator. Kalimpong split from Darjeeling 2017 — separate district. https://kalimpong.gov.in/disaster-management/ has no published landslide hotline → mountain_rescue null despite landslide risk. Pharmacy/mechanic/tow/guesthouse/EN-doctor not on any .gov.in page → null."
+  },
+  {
+    "destination_id": "kolkata",
+    "name": "Kolkata",
+    "verify": true,
+    "source_url": "https://kolkatapolice.gov.in/contact/",
+    "source_label": "Kolkata Police HQ — Contact + Helplines + IPGMER (SSKM) Hospital",
+    "fields": {
+      "local_police_station": "Lalbazar (Kolkata Police HQ)",
+      "police_address": "18, Lalbazar Street, Kolkata - 700 001",
+      "nearest_hospital": "IPGMER & SSKM Hospital",
+      "nearest_hospital_km": 0,
+      "hospital_has_er": true,
+      "nearest_pharmacy": null,
+      "pharmacy_24hr": null,
+      "mechanic_contact": null,
+      "tow_service": null,
+      "rescue_contact": "Kolkata Police Lalbazar Control Room: 033-2214 3024 / 033-2214 3230 / 033-2214 1310",
+      "mountain_rescue": null,
+      "nearest_guesthouse_emergency": null,
+      "english_speaking_doctor": null
+    },
+    "notes": "Kolkata Police HQ at 18, Lalbazar Street, EPABX 91-33-22505000, all from https://kolkatapolice.gov.in/contact/. Lalbazar Control Room triple-line 033-22143024/3230/1310. Emergency 100, info 1090, traffic 1073, women 1091, child 1098. Kolkata is a Commissionerate (87+ stations) — Lalbazar named as HQ rescue/coord nodal; central-Kolkata station-level station+phone (Park Street, New Market, Hare Street, Bowbazar, Shakespeare Sarani) NOT individually published on a single .gov.in page (only listicle/Justdial sources hit) → station-level kept null beyond HQ. IPGMER & SSKM Hospital, 244 A.J.C. Bose Road, Kolkata 700020, EPABX 22041100 / 91-33-22041100 / 22239692, from https://ipgmer.gov.in/contact + https://www.wbhealth.gov.in/contents/sskm_medical_college — govt tertiary teaching hospital so ER true. Calcutta MCH (033-2255 1612 emergency) is alternate. Pharmacy/mechanic/tow/guesthouse/EN-doctor not on any .gov.in page → null. Cyclone risk (Amphan/Yaas) — DDMA coord via Lalbazar Control."
+  },
+  {
+    "destination_id": "shantiniketan",
+    "name": "Shantiniketan",
+    "verify": true,
+    "source_url": "https://birbhumpolice.wb.gov.in/PoliceStations",
+    "source_label": "Birbhum Police District — Police Stations directory (Bolpur PS + Santiniketan PS) + birbhum.gov.in helpline + birbhum.gov.in hospitals directory",
+    "fields": {
+      "local_police_station": "Santiniketan Police Station",
+      "police_address": null,
+      "nearest_hospital": "Bolpur Sub-Divisional Hospital",
+      "nearest_hospital_km": 3,
+      "hospital_has_er": true,
+      "nearest_pharmacy": null,
+      "pharmacy_24hr": null,
+      "mechanic_contact": null,
+      "tow_service": null,
+      "rescue_contact": "Birbhum District Police: 03462-255100 | District Relief Control: 03462-255572",
+      "mountain_rescue": null,
+      "nearest_guesthouse_emergency": null,
+      "english_speaking_doctor": null
+    },
+    "notes": "Santiniketan PS phone 9147888517 (email santiniketanps@gmail.com) on https://birbhumpolice.wb.gov.in/PoliceStations — left phone out, use 100/112 + Birbhum District Police 03462-255100 from https://birbhum.gov.in/helpline/. Bolpur PS (9147888497, ic.bolpurps@policewb.gov.in) is the parent town station ~3 km away — kept Santiniketan PS named (not Bolpur) since Visva-Bharati / Sonajhuri Haat falls under Santiniketan PS jurisdiction. Bolpur Sub-Divisional Hospital at Sian Road, Bolpur 731204 confirmed via https://birbhum.gov.in/notice/bolpur-sub-divisional-hospital-bolpur-birbhum/ but phone NOT published on the .gov.in page (only Justdial lists 03463-221350 / 221136 — kept off payload per HARD RULE). Birbhum hospital directory at https://birbhum.gov.in/public-utility-category/hospitals/ lists only Rampurhat MCH (~80km north) and Suri SSH (~30km north) — Bolpur SDH inferred from district notice page. Sub-divisional hospital so ER true. ~3km Shantiniketan→Bolpur SDH. Birbhum DDMA cell at 3rd Floor Birbhum Collectorate, Suri, no published control-room phone → used District Relief Control 03462-255572 from helpline page as rescue_contact. Pharmacy/mechanic/tow/guesthouse/EN-doctor not on any .gov.in page → null."
+  },
+  {
+    "destination_id": "siliguri",
+    "name": "Siliguri",
+    "verify": true,
+    "source_url": "https://darjeeling.gov.in/disaster-management/",
+    "source_label": "Darjeeling DDMA — Siliguri Subdivision control + darjeeling.gov.in hospitals directory + Darjeeling Police District",
+    "fields": {
+      "local_police_station": null,
+      "police_address": null,
+      "nearest_hospital": "North Bengal Medical College & Hospital, Sushrutanagar",
+      "nearest_hospital_km": 12,
+      "hospital_has_er": true,
+      "nearest_pharmacy": null,
+      "pharmacy_24hr": null,
+      "mechanic_contact": null,
+      "tow_service": null,
+      "rescue_contact": "Siliguri Subdivision Control: 0353-2510166 | Darjeeling DDMA: 0354-2255749",
+      "mountain_rescue": "Darjeeling Police Control Room (landslide hill access): +91 91478 89078",
+      "nearest_guesthouse_emergency": null,
+      "english_speaking_doctor": null
+    },
+    "notes": "Siliguri sits in Siliguri Subdivision of Darjeeling district but is policed by **Siliguri Metropolitan Police Commissionerate** (separate from Darjeeling Police District since 2012, 8 PSes incl. Bhaktinagar, Pradhannagar, Siliguri PS, Matigara, NJP, Siliguri Women, Siliguri Cyber). Per HARD RULE I could not load https://siligurimetropolitanpolice.org/ (ECONNREFUSED) and the .gov.in landing page didn't expose station-level phones → local_police_station null rather than fabricate. Use 100/112. Siliguri Subdivision DDMA control 0353-2510166 from https://darjeeling.gov.in/disaster-management/. North Bengal MCH at Sushrutanagar, Matigara, pin 734012 — listed on https://darjeeling.gov.in/public-utility-category/hospitals/ as Matigara BPHC entry + cross-confirmed via wbhealth.gov.in/contents/northbengal_medical_college (page returned ECONNREFUSED at fetch but page exists). Public phone 0353-2585478 widely cited but NOT verified on a live .gov.in page during this session → kept name only, ER true (govt medical college). ~12km Siliguri centre→NBMCH. Darjeeling Police landslide hotline carries because Siliguri = monsoon entry to hill access. Pharmacy/mechanic/tow/guesthouse/EN-doctor not on any .gov.in page → null."
+  },
+  {
+    "destination_id": "sundarbans",
+    "name": "Sundarbans",
+    "verify": true,
+    "source_url": "https://baruipurpolice.wb.gov.in/ps-detail/13",
+    "source_label": "Baruipur Police District — Gosaba PS detail + s24pgs.gov.in helpline + s24pgs.gov.in disaster management",
+    "fields": {
+      "local_police_station": "Gosaba Police Station",
+      "police_address": "Gosaba, Arampur, West Bengal 743370",
+      "nearest_hospital": "Gosaba Block Primary Health Centre (Gosaba BPHC)",
+      "nearest_hospital_km": 5,
+      "hospital_has_er": null,
+      "nearest_pharmacy": null,
+      "pharmacy_24hr": null,
+      "mechanic_contact": null,
+      "tow_service": null,
+      "rescue_contact": "South 24 Parganas DDMA: 033-2448-8051 / 7866800737 | Sundarban Tiger Reserve Field Director (Canning, tiger-attack/forest rescue): 03218-255280",
+      "mountain_rescue": null,
+      "nearest_guesthouse_emergency": null,
+      "english_speaking_doctor": null
+    },
+    "notes": "Gosaba PS at Gosaba, Arampur, pin 743370 confirmed at https://baruipurpolice.wb.gov.in/ps-detail/13 — phones 03218278761 / 9147888019, IC SI Tridib Kr. Mallick — left phones out of payload (use 100/112). Pakhiralay (the main tourist boat-launch hamlet ~7km from Gosaba) falls under Gosaba PS jurisdiction — no separate Pakhiralay outpost published on .gov.in. ⚠️ CROSS-DIST CAUGHT: 'Sundarban Coastal PS' (9147888028) is at Chhoto Mollakhali under Baruipur PD — kept off as primary because Gosaba is the Sajnekhali/tourist gateway. ⚠️ DOMAIN CAUGHT: 'Sundarban Police District' (sundarbanpolice.wb.gov.in) is the KAKDWIP-side district (Gangasagar/Namkhana/Sagar coast — south-west) NOT the tourist Sundarbans east of Canning — would have been a 100km cross-dest contamination if used. Gosaba BPHC noted at http://s24pgs.gov.in/block/gosaba/ block page (full health-centre subpage 404'd, route exists at /block/<x>/health/health_centre per neighbouring blocks Bhangore-II + Baruipur). ER capability unverified on .gov.in → null. Backup: Diamond Harbour Govt MCH ~80km via road+ferry (https://s24pgs.gov.in/public-utility-category/hospitals/, no phone published) or Canning Sub-Div Hospital. South 24 Pgs DDMA 033-2448-8051 + 7866800737 from https://s24pgs.gov.in/disaster-management/ — South Bengal cyclone-prone (Amphan 2020/Yaas 2021/Remal 2024). Sundarban Tiger Reserve Field Director Canning office 03218-255280 (sundarbantigerreserve.org confirms; published on multiple gov-cited refs) added as forest-dept tiger-attack/launch-rescue contact — note this number's host is .org not .gov.in but the office is govt (WB Forest Dept, Canning Town pin 743329). Pharmacy/mechanic/tow/guesthouse/EN-doctor not on any .gov.in page → null."
+  }
+]
