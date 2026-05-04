@@ -7,6 +7,7 @@ import { useLocale } from "next-intl";
 import { m as motion, AnimatePresence } from "framer-motion";
 import { FadeIn, StaggerContainer, StaggerItem, HoverCard } from "./animated-hero";
 import { ShareButton } from "./share-button";
+import { videoSrc } from "@/lib/video-url";
 
 function haversineKm(a: { lat: number; lng: number }, b: { lat: number; lng: number }): number {
   const R = 6371;
@@ -48,6 +49,24 @@ export function CollectionDetail({ collection }: { collection: any }) {
 
   return (
     <>
+      {collection.cover_video && (
+        <FadeIn>
+          <div className="relative -mx-4 mb-6 aspect-[16/7] overflow-hidden rounded-2xl bg-black md:mx-0">
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
+              className="absolute inset-0 h-full w-full object-cover"
+            >
+              <source src={videoSrc(collection.cover_video)} type="video/mp4" />
+            </video>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/0" />
+          </div>
+        </FadeIn>
+      )}
+
       <FadeIn>
         <div className="mb-4 text-sm text-muted-foreground">
           <Link href={`/${locale}/collections`} className="hover:text-foreground transition-colors">
@@ -261,6 +280,24 @@ function CircuitLayout({
 
   return (
     <>
+      {collection.cover_video && (
+        <FadeIn>
+          <div className="relative -mx-4 mb-6 aspect-[16/7] overflow-hidden rounded-2xl bg-black md:mx-0">
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
+              className="absolute inset-0 h-full w-full object-cover"
+            >
+              <source src={videoSrc(collection.cover_video)} type="video/mp4" />
+            </video>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/0" />
+          </div>
+        </FadeIn>
+      )}
+
       <FadeIn>
         <div className="mb-4 text-sm text-muted-foreground">
           <Link href={`/${locale}/collections`} className="hover:text-foreground transition-colors">
