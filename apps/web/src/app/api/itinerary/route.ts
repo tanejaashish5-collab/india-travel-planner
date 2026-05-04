@@ -36,6 +36,13 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
   }
 
+  // Month must be 1-12. Without this, MONTH_NAMES[month] is undefined and the
+  // fallback itinerary ships literal "undefined" in user-facing title/summary
+  // (E2E-2026-05-04-J1).
+  if (typeof month !== "number" || !Number.isInteger(month) || month < 1 || month > 12) {
+    return NextResponse.json({ error: "Month must be an integer 1-12" }, { status: 400 });
+  }
+
   if (!VALID_TYPES.includes(travelerType)) {
     return NextResponse.json({ error: "Invalid traveler type" }, { status: 400 });
   }

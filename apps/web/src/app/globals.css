@@ -129,6 +129,14 @@
     @apply bg-background text-foreground;
     font-size: 16px;
     line-height: 1.6;
+    /* Prevent horizontal page scroll on small viewports. Sticky/absolute
+       descendants (sticky nav, sticky destination tabs, leaflet tile pane)
+       cannot use ancestor `overflow:hidden` because that disables sticky
+       positioning. `overflow-x: clip` clips the same way without breaking
+       sticky. Closes E2E-2026-05-04-I1 (375px → +49px overflow on
+       /destination/<slug>, 768px → +36px overflow on /explore from the
+       desktop nav exceeding the breakpoint). */
+    overflow-x: clip;
   }
   html {
     scroll-behavior: smooth;
