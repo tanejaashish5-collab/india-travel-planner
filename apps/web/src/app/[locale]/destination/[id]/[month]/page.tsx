@@ -59,23 +59,40 @@ export async function generateMetadata({
 
   const monthNum = MONTH_NUMBER[month];
   const monthName = MONTH_NAMES[month];
+  const isHi = locale === "hi";
+  // Hindi month names — covers titles, descriptions, and SERP snippets so the
+  // /hi/destination/<slug>/<month> page no longer ships an English <title> on
+  // a Hindi-locale URL (NEW-2026-05-04-005).
+  const MONTH_NAME_HI: Record<string, string> = {
+    january: "जनवरी", february: "फ़रवरी", march: "मार्च",
+    april: "अप्रैल", may: "मई", june: "जून",
+    july: "जुलाई", august: "अगस्त", september: "सितंबर",
+    october: "अक्टूबर", november: "नवंबर", december: "दिसंबर",
+  };
+  const monthDisplay = isHi ? (MONTH_NAME_HI[month] ?? monthName) : monthName;
 
   const [{ data: dest }, { data: monthData }, { data: card }] = await Promise.all([
-    supabase.from("destinations").select("name, tagline, state:states(name)").eq("id", id).single(),
+    supabase.from("destinations").select("name, tagline, translations, state_id, state:states(name)").eq("id", id).single(),
     supabase.from("destination_months").select("score, note, why_go, why_not, verdict").eq("destination_id", id).eq("month", monthNum).single(),
     supabase.from("confidence_cards").select("weather_night").eq("destination_id", id).single(),
   ]);
 
   if (!dest) return {};
 
-  const name = dest.name;
+  // Locale-aware destination + state name. Mirrors /destination/[id]/page.tsx
+  // generateMetadata so /hi pages don't fall through to English.
+  const enName = (dest as any).name;
+  const hiName = (dest as any).translations?.hi?.name;
+  const name = isHi && hiName ? hiName : enName;
+  const stateData = dest.state as any;
+  const enStateName = Array.isArray(stateData) ? stateData[0]?.name : stateData?.name;
+  const { getStateName } = await import("@/lib/seo-maps");
+  const stateName = (isHi && (dest as any).state_id ? getStateName((dest as any).state_id, "hi") : enStateName) ?? enStateName;
   const score = monthData?.score ?? 0;
   const note = (monthData?.note ?? "").toString();
   const whyGo = (monthData?.why_go ?? "").toString();
   const whyNot = (monthData?.why_not ?? "").toString();
   const verdict = (monthData?.verdict ?? "").toString().toLowerCase();
-  const stateData = dest.state as any;
-  const stateName = Array.isArray(stateData) ? stateData[0]?.name : stateData?.name;
 
   // Temperature range — try multiple JSONB shapes (weather_night schema is sparse).
   // Most dests use summer_low_c/winter_low_c; some (south India) use min_temp_c/max_temp_c.
@@ -117,20 +134,34 @@ export async function generateMetadata({
   // 3 → "Mixed conditions" (typically wait verdict)
   // 2 → "Tough season"
   // 1 → "Avoid this month"
-  const titleHook = score >= 5 ? "Peak season"
-    : score >= 4 ? "Great time"
-    : score >= 3 ? "Mixed conditions"
-    : score >= 2 ? "Tough season"
-    : score >= 1 ? "Avoid this month"
-    : "Travel guide";
+  const titleHook = isHi
+    ? (score >= 5 ? "उच्च मौसम"
+      : score >= 4 ? "बढ़िया समय"
+      : score >= 3 ? "मिश्रित स्थिति"
+      : score >= 2 ? "कठिन मौसम"
+      : score >= 1 ? "इस महीने टालें"
+      : "यात्रा गाइड")
+    : (score >= 5 ? "Peak season"
+      : score >= 4 ? "Great time"
+      : score >= 3 ? "Mixed conditions"
+      : score >= 2 ? "Tough season"
+      : score >= 1 ? "Avoid this month"
+      : "Travel guide");
 
   // OG title — used in social link previews. Longer + brand-anchored.
-  const scoreVerdict = score >= 5 ? "Perfect Time to Visit"
-    : score >= 4 ? "Great Time to Visit"
-    : score >= 3 ? "Is It Worth Visiting?"
-    : score >= 2 ? "Should You Go?"
-    : score >= 1 ? "Why to Avoid"
-    : "Travel Guide";
+  const scoreVerdict = isHi
+    ? (score >= 5 ? "यात्रा का सर्वोत्तम समय"
+      : score >= 4 ? "यात्रा का बढ़िया समय"
+      : score >= 3 ? "क्या जाना उचित है?"
+      : score >= 2 ? "क्या आप जाएँ?"
+      : score >= 1 ? "क्यों टालें"
+      : "यात्रा गाइड")
+    : (score >= 5 ? "Perfect Time to Visit"
+      : score >= 4 ? "Great Time to Visit"
+      : score >= 3 ? "Is It Worth Visiting?"
+      : score >= 2 ? "Should You Go?"
+      : score >= 1 ? "Why to Avoid"
+      : "Travel Guide");
 
   const year = new Date().getFullYear();
 
@@ -141,23 +172,40 @@ export async function generateMetadata({
   // Med:  "{name} in {month}: {hook} ({temp})"
   // Min:  "{name} in {month} {year}"
   const TITLE_BUDGET = 50;
-  const titleLong = rangeStr
-    ? `${name} in ${monthName} ${year}: ${titleHook} (${rangeStr})`
-    : `${name} in ${monthName} ${year}: ${titleHook}`;
-  const titleMed = rangeStr
-    ? `${name} in ${monthName}: ${titleHook} (${rangeStr})`
-    : `${name} in ${monthName}: ${titleHook}`;
+  // Hindi connectives ("में" = "in", year stays in Devanagari numerals via locale rendering).
+  const inWord = isHi ? "में" : "in";
+  const titleLong = isHi
+    ? (rangeStr
+        ? `${monthDisplay} ${year} में ${name}: ${titleHook} (${rangeStr})`
+        : `${monthDisplay} ${year} में ${name}: ${titleHook}`)
+    : (rangeStr
+        ? `${name} ${inWord} ${monthDisplay} ${year}: ${titleHook} (${rangeStr})`
+        : `${name} ${inWord} ${monthDisplay} ${year}: ${titleHook}`);
+  const titleMed = isHi
+    ? (rangeStr
+        ? `${monthDisplay} में ${name}: ${titleHook} (${rangeStr})`
+        : `${monthDisplay} में ${name}: ${titleHook}`)
+    : (rangeStr
+        ? `${name} ${inWord} ${monthDisplay}: ${titleHook} (${rangeStr})`
+        : `${name} ${inWord} ${monthDisplay}: ${titleHook}`);
+  const titleMin = isHi
+    ? `${monthDisplay} ${year} में ${name}`
+    : `${name} ${inWord} ${monthDisplay} ${year}`;
   const title =
     titleLong.length <= TITLE_BUDGET ? titleLong
     : titleMed.length <= TITLE_BUDGET ? titleMed
-    : `${name} in ${monthName} ${year}`;
+    : titleMin;
 
-  const ogTitle = `${name} in ${monthName} — ${scoreVerdict} | NakshIQ`;
+  const ogTitle = isHi
+    ? `${monthDisplay} में ${name} — ${scoreVerdict} | NakshIQ`
+    : `${name} ${inWord} ${monthDisplay} — ${scoreVerdict} | NakshIQ`;
 
   // Editorial note often starts with "{Month} at {Name}: ..." — strip that prefix
   // so the description doesn't read awkwardly when our verb-led lead joins it.
-  const escName = name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-  const stripPrefix = new RegExp(`^${monthName}(?:\\s+at\\s+${escName})?\\s*:\\s*`, "i");
+  // Notes are stored in English (no Hindi translation column on destination_months
+  // yet), so we always strip the English prefix regardless of locale.
+  const escEnName = enName.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const stripPrefix = new RegExp(`^${monthName}(?:\\s+at\\s+${escEnName})?\\s*:\\s*`, "i");
 
   const trimToBoundary = (s: string, max: number): string => {
     if (s.length <= max) return s.trim();
@@ -170,17 +218,29 @@ export async function generateMetadata({
 
   // Verb-first lead based on verdict. "Skip" / "Visit" / "Wait on" fronts
   // the answer in the first ~15 chars — exactly where the eye lands in a SERP.
-  const descVerb =
-    verdict === "skip" ? "Skip"
-    : verdict === "go" ? "Visit"
-    : verdict === "wait" ? "Wait on"
-    : "";
-  const descLead = descVerb
-    ? `${descVerb} ${name} in ${monthName} ${year}:`
-    : `${name} in ${monthName} ${year}:`;
-  const descClose = stateName
-    ? `NakshIQ verdict: ${score}/5 (${stateName}).`
-    : `NakshIQ verdict: ${score}/5.`;
+  const descVerb = isHi
+    ? (verdict === "skip" ? "टालें"
+      : verdict === "go" ? "जाएँ"
+      : verdict === "wait" ? "रुकें"
+      : "")
+    : (verdict === "skip" ? "Skip"
+      : verdict === "go" ? "Visit"
+      : verdict === "wait" ? "Wait on"
+      : "");
+  const descLead = isHi
+    ? (descVerb
+        ? `${monthDisplay} ${year} में ${name} ${descVerb}:`
+        : `${monthDisplay} ${year} में ${name}:`)
+    : (descVerb
+        ? `${descVerb} ${name} in ${monthName} ${year}:`
+        : `${name} in ${monthName} ${year}:`);
+  const descClose = isHi
+    ? (stateName
+        ? `NakshIQ रेटिंग: ${score}/5 (${stateName})।`
+        : `NakshIQ रेटिंग: ${score}/5।`)
+    : (stateName
+        ? `NakshIQ verdict: ${score}/5 (${stateName}).`
+        : `NakshIQ verdict: ${score}/5.`);
 
   // Fallback chain by verdict: skip → why_not first, others → why_go first.
   // Note already contains the editorial perspective for most rows; fall
@@ -221,7 +281,7 @@ export async function generateMetadata({
       url: canonicalUrl,
       siteName: "NakshIQ",
       locale: locale === "hi" ? "hi_IN" : "en_IN",
-      images: [{ url: imageUrl, width: 1200, height: 630, alt: `${name} in ${monthName} — ${stateName || "India"}` }],
+      images: [{ url: imageUrl, width: 1200, height: 630, alt: isHi ? `${monthDisplay} में ${name} — ${stateName || "भारत"}` : `${name} in ${monthName} — ${stateName || "India"}` }],
     },
     twitter: {
       card: "summary_large_image",
@@ -260,7 +320,13 @@ async function getMonthData(id: string, month: string) {
       .single(),
   ]);
 
-  if (error || !dest) return null;
+  // Same transient-vs-not-found split as /destination/[id]/page.tsx — only
+  // soft-404 on PGRST116 (no rows). Other errors (rate-limit, timeout) throw
+  // so ISR retries instead of caching a sticky 404 over a real destination.
+  if (error && error.code !== "PGRST116") {
+    throw new Error(`Supabase getMonthData(${id},${month}) failed: ${error.code} ${error.message}`);
+  }
+  if (!dest) return null;
   (dest as any).coords =
     coordRow && typeof coordRow.lat === "number" && typeof coordRow.lng === "number"
       ? { lat: coordRow.lat, lng: coordRow.lng }

@@ -285,6 +285,14 @@ export async function GET(_req: Request, { params }: { params: Promise<{ file: s
 
   try {
     const entries = await buildChunk(id);
+    // Empty chunks 404 instead of serving an empty <urlset> with HTTP 200.
+    // /sitemap/5.xml had been NEW-2026-04-30-001 / NEW-2026-05-04-007 because
+    // the questions table is unseeded — crawlers were treating it as a real
+    // but-empty sitemap. 404 makes them drop it from the index until content
+    // exists.
+    if (entries.length === 0) {
+      return new NextResponse("Not Found", { status: 404 });
+    }
     const xml = toUrlsetXml(entries);
     return new NextResponse(xml, {
       headers: {

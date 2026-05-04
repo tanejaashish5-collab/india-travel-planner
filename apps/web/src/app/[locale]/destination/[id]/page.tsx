@@ -155,7 +155,16 @@ async function getDestination(id: string) {
     .eq("id", id)
     .single();
 
-  if (error || !data) return null;
+  // PGRST116 = "Results contain 0 rows" — the destination genuinely doesn't exist.
+  // Any other error (rate-limit, timeout, network blip) is transient — throw so
+  // Next.js shows a 500 + retries on next ISR pass instead of soft-404'ing real
+  // destinations and caching that 404 for 24h. NEW-001 (2026-05-04 QA): Shimla
+  // EN was rendering /404 fallback while metadata + APIs served real data —
+  // exactly the signature of a transient Supabase error.
+  if (error && error.code !== "PGRST116") {
+    throw new Error(`Supabase getDestination(${id}) failed: ${error.code} ${error.message}`);
+  }
+  if (!data) return null;
 
   // Pre-fetch coords — needed for the PostGIS nearby query that runs in the parallel batch.
   const { data: coordData } = await supabase
