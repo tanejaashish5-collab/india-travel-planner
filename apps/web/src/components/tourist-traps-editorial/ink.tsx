@@ -6,7 +6,10 @@
 
 import * as React from "react";
 
-const RED_PEN = "#e4593f";
+// Aligned with the rest of the dark site — same terracotta as trip-board's
+// --accent (vermilion brand color) so SVG ink marks belong to the same family
+// as the trip-board pins, share dialog highlight, etc.
+const RED_PEN = "#d36843";
 const PEN_WIDTH = 2.2;
 
 // Simple seeded PRNG so each instance jitters predictably (no hydration drift).
