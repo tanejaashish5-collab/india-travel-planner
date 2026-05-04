@@ -55,22 +55,25 @@ async function getTrapEntries(): Promise<TrapEntry[]> {
     return [];
   }
 
-  // Editorial-grade rows first (those with brochure_line + editorial_verdict),
-  // then plain rows fall back to comparison/why_better. Sort: editorial-grade
-  // by some stable order, plain rows after.
+  // Editorial-grade rows only — those with brochure_line + editorial_verdict.
+  // Plain rows fall back to /skip-list/[slug] detail pages and are folded
+  // into future enrichment batches.
   const rows = data as unknown as RawRow[];
   const enriched = rows.filter((r) => r.brochure_line && r.editorial_verdict);
-  const plain = rows.filter((r) => !r.brochure_line || !r.editorial_verdict);
 
-  // Stable order within enriched: by trap_destination_id (alphabetical) so
-  // numbering is deterministic across builds.
-  enriched.sort((a, b) => a.trap_destination_id.localeCompare(b.trap_destination_id));
-  plain.sort((a, b) => a.trap_destination_id.localeCompare(b.trap_destination_id));
+  // Dedupe by trap_destination_id — some traps have multiple rank-1 alts
+  // (rank ties). Keep the first per trap so each entry shows once.
+  const seen = new Set<string>();
+  const distinct = enriched.filter((r) => {
+    if (seen.has(r.trap_destination_id)) return false;
+    seen.add(r.trap_destination_id);
+    return true;
+  });
 
-  // For v1 ship only the enriched 10 in the editorial issue. Plain rows
-  // remain accessible via the existing /skip-list/[slug] detail pages and
-  // will fold into future editorial batches.
-  const ordered = enriched;
+  // Stable order: alphabetical by trap_destination_id so entry numbering is
+  // deterministic across builds.
+  distinct.sort((a, b) => a.trap_destination_id.localeCompare(b.trap_destination_id));
+  const ordered = distinct;
 
   return ordered.map((r, i): TrapEntry => {
     const trap = pickFirst(r.trap_dest);

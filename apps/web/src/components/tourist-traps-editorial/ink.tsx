@@ -10,7 +10,11 @@ import * as React from "react";
 // --accent (vermilion brand color) so SVG ink marks belong to the same family
 // as the trip-board pins, share dialog highlight, etc.
 const RED_PEN = "#d36843";
-const PEN_WIDTH = 2.2;
+// Thinned 2.2 → 1.0 (per user feedback): the previous stroke covered the
+// brochure-line text. Companion CSS `text-decoration: line-through` on the
+// brochure-line elements provides the second strike so the editorial intent
+// stays clear without obscuring the underlying text.
+const PEN_WIDTH = 1.0;
 
 // Simple seeded PRNG so each instance jitters predictably (no hydration drift).
 function rng(seed: number) {
@@ -27,7 +31,10 @@ function SquiggleStrike({
   height = 28,
   seed = 1,
   color = RED_PEN,
-  passes = 2,
+  // Reduced 2 → 1 pass per user feedback (text behind the strike must remain
+  // readable). One thin pass + the CSS line-through fallback together convey
+  // the editorial mark without blacking out the line.
+  passes = 1,
 }: {
   width?: number;
   height?: number;
@@ -54,10 +61,10 @@ function SquiggleStrike({
         key={p}
         d={d}
         stroke={color}
-        strokeWidth={PEN_WIDTH - p * 0.4}
+        strokeWidth={PEN_WIDTH - p * 0.2}
         fill="none"
         strokeLinecap="round"
-        opacity={0.85 - p * 0.15}
+        opacity={0.7 - p * 0.15}
       />,
     );
   }

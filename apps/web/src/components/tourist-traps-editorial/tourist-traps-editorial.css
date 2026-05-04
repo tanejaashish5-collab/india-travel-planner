@@ -231,6 +231,13 @@
   margin: 0 0 36px 0;
   display: inline-block;
   position: relative;
+  /* Companion strike: the SVG squiggle is now thin (PEN_WIDTH 1.0, single
+   * pass) so text reads through. CSS line-through reinforces the editorial
+   * "struck" mark in a way that even if SVG fails to render, the intent
+   * survives. Color matches --tt-red, thickness 1px. */
+  text-decoration: line-through;
+  text-decoration-color: var(--tt-red);
+  text-decoration-thickness: 1px;
 }
 .tt-verdict {
   font-family: var(--tt-serif);
@@ -320,6 +327,9 @@
   margin: 0 0 56px 0;
   display: inline-block;
   position: relative;
+  text-decoration: line-through;
+  text-decoration-color: var(--tt-red);
+  text-decoration-thickness: 1px;
 }
 .tt-pq-quote {
   font-family: var(--tt-display);
@@ -354,6 +364,9 @@
   margin: 0 0 48px 0;
   display: inline-block;
   position: relative;
+  text-decoration: line-through;
+  text-decoration-color: var(--tt-red);
+  text-decoration-thickness: 1px;
 }
 .tt-ledger-table {
   display: grid;
@@ -386,6 +399,11 @@
   font-style: italic;
   position: relative;
   padding-right: 24px !important;
+}
+.tt-ledger-brochure-cell > span {
+  text-decoration: line-through;
+  text-decoration-color: var(--tt-red);
+  text-decoration-thickness: 1px;
 }
 .tt-ledger-arrow {
   display: flex;
