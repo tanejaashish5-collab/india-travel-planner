@@ -6514,3 +6514,20 @@ Date range: 2026-04-15 → 2026-05-03
 2026-05-04 07:35:20  INFO      [facebook/Nakshiq] ✅ Published · Outstand=5F3OD · Platform=898357543215832
 2026-05-04 07:35:20  INFO      State saved. Run complete.
 2026-05-04 07:35:20  INFO      ════════════════════════════════════════════════════════════
+2026-05-04 08:07:59  INFO      Stale lock (age=1041680s) — overriding.
+2026-05-04 08:07:59  INFO      ════════════════════════════════════════════════════════════
+2026-05-04 08:07:59  INFO      Nakshiq Autoposter · MOAT · 2026-05-04 · weekday=0
+2026-05-04 08:07:59  INFO      ════════════════════════════════════════════════════════════
+2026-05-04 08:07:59  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-05-04 08:08:04  INFO      Synced → 20 destinations · 0 traps · 0 articles · total catalog=505
+2026-05-04 08:08:05  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-05-04 08:08:06  INFO      Outstand dedup guard: merged 9 remote posts into state.
+2026-05-04 08:08:06  INFO      Moat angle locked: four_questions (3/9 never featured)
+2026-05-04 08:08:06  INFO      Formats — IG: four_questions  ·  FB: four_questions  ·  Story: None
+2026-05-04 08:08:06  INFO      Used destinations (14d): 61
+2026-05-04 08:08:07  INFO      Shared best destination locked: Lolab Valley
+2026-05-04 08:08:07  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-05-04 08:08:07  INFO      [instagram/nakshiq] Already posted today (moat) — skipping.
+2026-05-04 08:08:07  INFO      [facebook/Nakshiq] Already posted today (moat) — skipping.
+2026-05-04 08:08:07  INFO      State saved. Run complete.
+2026-05-04 08:08:07  INFO      ════════════════════════════════════════════════════════════
