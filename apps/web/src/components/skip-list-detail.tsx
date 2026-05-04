@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { FadeIn, ScrollReveal, StaggerContainer, StaggerItem, HoverCard } from "./animated-hero";
 import { SCORE_COLORS, DIFFICULTY_COLORS } from "@/lib/design-tokens";
+import "./tourist-traps-editorial/tourist-traps-editorial.css";
 
 const MONTH_SHORT = ["", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
@@ -75,7 +76,7 @@ export function SkipListDetail({ trapDest, alternatives, whyTrapText, trapDepth,
   const reviewedAt = formatReviewDate(trapDepth?.last_reviewed_at ?? null);
   const host = sourceHost(sourceUrl);
   return (
-    <>
+    <div className="nakshiq-tt-detail">
       {/* Hero */}
       <section className="relative h-56 sm:h-72 md:h-80 overflow-hidden">
         <Image
@@ -115,13 +116,13 @@ export function SkipListDetail({ trapDest, alternatives, whyTrapText, trapDepth,
           <span className="text-foreground">{trapDest.name}</span>
         </nav>
 
-        {/* Why travelers are disappointed */}
+        {/* Why travelers are disappointed — editorial-themed */}
         {(whyTrapText || painPoints.length > 0 || complaints.length > 0) && (
           <ScrollReveal>
-            <section className="rounded-2xl border border-red-500/20 bg-red-950/10 p-6 sm:p-8">
-              <h2 className="text-xl font-semibold text-foreground mb-3 flex items-center gap-2">
-                <span className="text-red-400">!</span>
-                Why Travelers Are Disappointed
+            <section className="tt-detail-panel">
+              <h2 className="tt-detail-panel-title">
+                <span className="tt-detail-panel-title-mark">!</span>
+                Why travellers come back disappointed
               </h2>
               {whyTrapText && (
                 <p className="text-muted-foreground leading-relaxed">{whyTrapText}</p>
@@ -129,13 +130,11 @@ export function SkipListDetail({ trapDest, alternatives, whyTrapText, trapDepth,
 
               {painPoints.length > 0 && (
                 <div className="mt-5">
-                  <h3 className="text-xs font-semibold uppercase tracking-[0.08em] text-red-300/80 mb-2">
-                    What specifically goes wrong
-                  </h3>
+                  <h3 className="tt-detail-eyebrow">What specifically goes wrong</h3>
                   <ul className="space-y-1.5 text-sm text-muted-foreground">
                     {painPoints.map((p, i) => (
                       <li key={i} className="flex gap-2 leading-relaxed">
-                        <span className="text-red-400 shrink-0">·</span>
+                        <span className="text-[color:var(--tt-red)] shrink-0">·</span>
                         <span>{p}</span>
                       </li>
                     ))}
@@ -145,12 +144,10 @@ export function SkipListDetail({ trapDest, alternatives, whyTrapText, trapDepth,
 
               {complaints.length > 0 && (
                 <div className="mt-5">
-                  <h3 className="text-xs font-semibold uppercase tracking-[0.08em] text-red-300/80 mb-2">
-                    Common complaints
-                  </h3>
-                  <ul className="space-y-2 text-sm text-muted-foreground italic">
+                  <h3 className="tt-detail-eyebrow">Common complaints</h3>
+                  <ul className="space-y-2">
                     {complaints.map((c, i) => (
-                      <li key={i} className="border-l-2 border-red-500/30 pl-3 leading-relaxed">
+                      <li key={i} className="tt-detail-quote">
                         &ldquo;{c}&rdquo;
                       </li>
                     ))}
@@ -347,6 +344,6 @@ export function SkipListDetail({ trapDest, alternatives, whyTrapText, trapDepth,
           </Link>
         </div>
       </main>
-    </>
+    </div>
   );
 }
