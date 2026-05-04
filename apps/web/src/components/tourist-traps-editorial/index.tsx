@@ -250,6 +250,9 @@ function EntryLedger({ e, seedBase, locale }: { e: TrapEntry; seedBase: number; 
 
 // ─── Editorial colophon footer (in-page, separate from site Footer) ────
 function TTColophon({ entryCount, editedDateLabel }: { entryCount: number; editedDateLabel: string }) {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
   return (
     <footer className="tt-footer" id="submit">
       <div>
@@ -275,8 +278,46 @@ function TTColophon({ entryCount, editedDateLabel }: { entryCount: number; edite
         <div>
           <strong>Disclosures</strong> none
         </div>
+        <div className="tt-colophon-top">
+          <button type="button" onClick={scrollToTop} className="tt-colophon-top-link">
+            ↑ Return to the masthead
+          </button>
+        </div>
       </div>
     </footer>
+  );
+}
+
+// ─── Floating "↑ Top" pill (bottom-left so we don't conflict with the
+//     site-wide bottom-right Plan-My-Trip CTA per feedback_one_floating_cta).
+//     Fades in after ~1.5 viewports of scroll. ───────────────────────────
+function BackToTopPill() {
+  const [visible, setVisible] = React.useState(false);
+  React.useEffect(() => {
+    let ticking = false;
+    const onScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        setVisible(window.scrollY > window.innerHeight * 1.5);
+        ticking = false;
+      });
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  return (
+    <button
+      type="button"
+      onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+      className={`tt-back-to-top${visible ? " is-visible" : ""}`}
+      aria-label="Back to top"
+    >
+      <span aria-hidden="true">↑</span>
+      <span>Top</span>
+    </button>
   );
 }
 
@@ -299,6 +340,7 @@ export function TouristTrapsEditorial({ entries, locale, issueLabel, editedDateL
         })}
       </main>
       <TTColophon entryCount={entries.length} editedDateLabel={editedDateLabel} />
+      <BackToTopPill />
     </div>
   );
 }
