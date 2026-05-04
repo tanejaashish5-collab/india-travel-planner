@@ -17,6 +17,20 @@ export const COVER_FALLBACK: Record<string, string> = {
   "lakshadweep-coral-paradise": "/images/destinations/bangaram.jpg",
   "french-india-trail": "/images/destinations/puducherry.jpg",
   "portuguese-india-trail": "/images/destinations/old-goa.jpg",
+  // Mig 047 + 048 + 049 — 11 new pilgrimage / heritage circuits.
+  // Each fallback points to the most representative dest in the collection
+  // (or to an existing COLLECTION_*.jpg where one was already produced).
+  "dwadasa-jyotirlinga": "/images/collections/COLLECTION_jyotirlinga-pilgrimage.jpg",
+  "pancha-bhoota-stalams": "/images/destinations/chidambaram.jpg",
+  "sapta-puris": "/images/destinations/varanasi.jpg",
+  "original-char-dham": "/images/destinations/badrinath.jpg",
+  "mahabharata-trail": "/images/destinations/kurukshetra.jpg",
+  "major-shakti-peethas": "/images/destinations/guwahati.jpg",
+  "caves-of-india": "/images/destinations/ajanta-caves.jpg",
+  "iconic-train-journeys": "/images/destinations/darjeeling.jpg",
+  "ramayana-trail": "/images/destinations/ayodhya.jpg",
+  "christian-heritage-trail": "/images/destinations/old-goa.jpg",
+  "astavinayak-yatra": "/images/destinations/bhimashankar.jpg",
 };
 
 export function resolveCover(c: { id: string; cover_image_url?: string | null }): string {
