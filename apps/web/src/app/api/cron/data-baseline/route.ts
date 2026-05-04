@@ -37,31 +37,46 @@ function daysAgo(n: number): string {
   return d.toISOString().slice(0, 10);
 }
 
-function getGAClient(): BetaAnalyticsDataClient | null {
-  const json = process.env.GOOGLE_APPLICATION_CREDENTIALS_JSON;
-  if (!json) return null;
+// Parse the service-account JSON from env, handling the common Vercel UI
+// gotcha where the private_key's newlines come through as the literal two-
+// character sequence "\n" instead of actual newlines (memory:
+// feedback_env_var_hygiene). The googleapis SDK silently builds an invalid
+// signer and only fails at request time with a useless "undefined undefined"
+// error, so we normalize before constructing any client.
+function parseCreds(): { ok: true; credentials: { client_email: string; private_key: string } } | { ok: false; error: string } {
+  const raw = process.env.GOOGLE_APPLICATION_CREDENTIALS_JSON;
+  if (!raw) return { ok: false, error: "GOOGLE_APPLICATION_CREDENTIALS_JSON not set" };
+  let parsed: { client_email?: string; private_key?: string };
   try {
-    const credentials = JSON.parse(json);
-    return new BetaAnalyticsDataClient({ credentials });
-  } catch {
-    return null;
+    parsed = JSON.parse(raw);
+  } catch (err) {
+    return { ok: false, error: `JSON.parse failed: ${(err as Error).message}` };
   }
+  if (!parsed.client_email || !parsed.private_key) {
+    return { ok: false, error: `creds missing client_email or private_key (got keys: ${Object.keys(parsed).join(",")})` };
+  }
+  // Normalize literal \n → real \n. Idempotent — safe if already correct.
+  const private_key = parsed.private_key.includes("\\n")
+    ? parsed.private_key.replace(/\\n/g, "\n")
+    : parsed.private_key;
+  return { ok: true, credentials: { client_email: parsed.client_email, private_key } };
 }
 
-async function getGSCClient() {
-  const json = process.env.GOOGLE_APPLICATION_CREDENTIALS_JSON;
-  if (!json) return null;
-  try {
-    const credentials = JSON.parse(json);
-    const auth = new google.auth.GoogleAuth({
-      credentials,
-      scopes: ["https://www.googleapis.com/auth/webmasters.readonly"],
-    });
-    const authClient = await auth.getClient();
-    return google.searchconsole({ version: "v1", auth: authClient as never });
-  } catch {
-    return null;
-  }
+function getGAClient(): { ok: true; client: BetaAnalyticsDataClient } | { ok: false; error: string } {
+  const c = parseCreds();
+  if (!c.ok) return c;
+  return { ok: true, client: new BetaAnalyticsDataClient({ credentials: c.credentials }) };
+}
+
+async function getGSCClient(): Promise<{ ok: true; client: ReturnType<typeof google.searchconsole> } | { ok: false; error: string }> {
+  const c = parseCreds();
+  if (!c.ok) return c;
+  const auth = new google.auth.GoogleAuth({
+    credentials: c.credentials,
+    scopes: ["https://www.googleapis.com/auth/webmasters.readonly"],
+  });
+  const authClient = await auth.getClient();
+  return { ok: true, client: google.searchconsole({ version: "v1", auth: authClient as never }) };
 }
 
 type WindowMetric = { sessions: number; engaged: number; users: number };
@@ -148,9 +163,10 @@ async function ga4TopPages(client: BetaAnalyticsDataClient, property: string, st
 }
 
 type GSCRow = { keys?: string[] | null; impressions?: number | null; clicks?: number | null; position?: number | null };
+type GSCClient = ReturnType<typeof google.searchconsole>;
 
 async function gscQueryDelta(
-  client: NonNullable<Awaited<ReturnType<typeof getGSCClient>>>,
+  client: GSCClient,
   siteUrl: string,
   thisStart: string,
   thisEnd: string,
@@ -189,8 +205,9 @@ export async function GET(req: NextRequest) {
 
   const propertyId = process.env.GA4_PROPERTY_ID;
   if (!propertyId) return NextResponse.json({ error: "GA4_PROPERTY_ID not set" }, { status: 500 });
-  const ga = getGAClient();
-  if (!ga) return NextResponse.json({ error: "GOOGLE_APPLICATION_CREDENTIALS_JSON not set or invalid" }, { status: 500 });
+  const gaResult = getGAClient();
+  if (!gaResult.ok) return NextResponse.json({ error: `GA4 client init failed: ${gaResult.error}` }, { status: 500 });
+  const ga = gaResult.client;
   const property = `properties/${propertyId}`;
 
   const thisStart = daysAgo(7);
@@ -206,19 +223,25 @@ export async function GET(req: NextRequest) {
       ga4TopPages(ga, property, thisStart, thisEnd),
     ]);
   } catch (err) {
-    return NextResponse.json({ error: `GA4 query failed: ${(err as Error).message}` }, { status: 500 });
+    const e = err as { code?: number; message?: string; details?: string; status?: string };
+    const detail = `${e.code ?? "?"} ${e.status ?? ""}: ${e.message ?? "(no message)"}${e.details ? " · " + e.details : ""}`;
+    return NextResponse.json({ error: `GA4 query failed: ${detail}` }, { status: 500 });
   }
 
-  const gsc = await getGSCClient();
+  const gscResult = await getGSCClient();
   const siteUrl = process.env.GSC_SITE_URL;
   let gscDeltas: Awaited<ReturnType<typeof gscQueryDelta>> = [];
   let gscError: string | null = null;
-  if (gsc && siteUrl) {
+  if (gscResult.ok && siteUrl) {
     try {
-      gscDeltas = await gscQueryDelta(gsc, siteUrl, thisStart, thisEnd, priorStart, priorEnd);
+      gscDeltas = await gscQueryDelta(gscResult.client, siteUrl, thisStart, thisEnd, priorStart, priorEnd);
     } catch (err) {
       gscError = (err as Error).message;
     }
+  } else if (!gscResult.ok) {
+    gscError = gscResult.error;
+  } else if (!siteUrl) {
+    gscError = "GSC_SITE_URL not set";
   }
 
   const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
