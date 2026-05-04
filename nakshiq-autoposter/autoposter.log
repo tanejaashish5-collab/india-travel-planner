@@ -6567,3 +6567,22 @@ requests.exceptions.HTTPError: 401 Client Error: UNAUTHORIZED for url: https://a
 2026-05-04 11:47:49  INFO      YT Short posted: format=mini_guide, music=04_afro_heat
 2026-05-04 11:47:49  INFO      State saved. YT Short run complete.
 2026-05-04 11:47:49  INFO      ════════════════════════════════════════════════════════════
+2026-05-04 12:11:53  INFO      ════════════════════════════════════════════════════════════
+2026-05-04 12:11:53  INFO      Nakshiq Autoposter · YT SHORT · 2026-05-04
+2026-05-04 12:11:53  INFO      ════════════════════════════════════════════════════════════
+2026-05-04 12:12:59  INFO      Short rendered: yt_short_dont_go_here_2026-05-04.mp4 (9971 KB, 36.0s, fmt=dont_go_here, music=18_uk_garage)
+2026-05-04 12:12:59  INFO          Requesting upload URL for yt_short_dont_go_here_yt_short_dont_go_here_2026-05-04.mp4 (10,210,350 bytes, video/mp4)
+2026-05-04 12:13:00  INFO          Uploading to R2 (timeout=300s)...
+2026-05-04 12:13:01  INFO          R2 PUT OK. Confirming...
+2026-05-04 12:13:03  INFO          Media ready: KYV89 (10,210,350 bytes · yt_short_dont_go_here_yt_short_dont_go_here_2026-05-04.mp4)
+2026-05-04 12:13:03  INFO      Video uploaded: yt_short_dont_go_here_yt_short_dont_go_here_2026-05-04.mp4
+2026-05-04 12:13:03  INFO      [youtube/@naksh-iq] Publishing YT Short (dont_go_here)...
+2026-05-04 12:13:06  INFO      [youtube/@naksh-iq] Outstand accepted (post_id=DZYJo), waiting for platform confirmation...
+2026-05-04 12:13:18  INFO      [youtube/@naksh-iq] ✅ YT Short published · Outstand=DZYJo · Platform=PKD1z779LzY
+2026-05-04 12:13:18  INFO      [instagram/nakshiq] Publishing YT Short (dont_go_here)...
+2026-05-04 12:13:19  INFO      [instagram/nakshiq] Outstand accepted (post_id=xjmz8), waiting for platform confirmation...
+2026-05-04 12:13:54  INFO      [instagram/nakshiq] ✅ YT Short published · Outstand=xjmz8 · Platform=18105493354928602
+2026-05-04 12:13:54  INFO      [facebook/Nakshiq] Skipping (YT Shorts post to YouTube + Instagram only).
+2026-05-04 12:13:54  INFO      YT Short posted: format=dont_go_here, music=18_uk_garage
+2026-05-04 12:13:54  INFO      State saved. YT Short run complete.
+2026-05-04 12:13:54  INFO      ════════════════════════════════════════════════════════════
