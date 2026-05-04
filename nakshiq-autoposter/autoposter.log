@@ -6639,3 +6639,9 @@ requests.exceptions.HTTPError: 401 Client Error: UNAUTHORIZED for url: https://a
 2026-05-04 15:07:55  INFO      [facebook/Nakshiq] Already posted reel today — skipping.
 2026-05-04 15:07:55  INFO      State saved. Reel run complete.
 2026-05-04 15:07:55  INFO      ════════════════════════════════════════════════════════════
+2026-05-04 16:54:10  INFO      ════════════════════════════════════════════════════════════
+2026-05-04 16:54:10  INFO      Nakshiq Autoposter · MORNING · 2026-05-04 · weekday=0
+2026-05-04 16:54:10  INFO      ════════════════════════════════════════════════════════════
+2026-05-04 16:54:10  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-05-04 16:54:19  INFO      Synced → 20 destinations · 0 traps · 0 articles · total catalog=505
+2026-05-04 16:54:19  INFO      Sync-only mode. Done.
