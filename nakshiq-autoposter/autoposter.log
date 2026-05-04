@@ -6586,3 +6586,37 @@ requests.exceptions.HTTPError: 401 Client Error: UNAUTHORIZED for url: https://a
 2026-05-04 12:13:54  INFO      YT Short posted: format=dont_go_here, music=18_uk_garage
 2026-05-04 12:13:54  INFO      State saved. YT Short run complete.
 2026-05-04 12:13:54  INFO      ════════════════════════════════════════════════════════════
+2026-05-04 13:13:05  INFO      ════════════════════════════════════════════════════════════
+2026-05-04 13:13:05  INFO      Nakshiq Autoposter · EVENING · 2026-05-04 · weekday=0
+2026-05-04 13:13:05  INFO      ════════════════════════════════════════════════════════════
+2026-05-04 13:13:05  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-05-04 13:13:12  INFO      Synced → 20 destinations · 0 traps · 0 articles · total catalog=505
+2026-05-04 13:13:13  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-05-04 13:13:13  INFO      Formats — IG: score_card  ·  FB: score_card  ·  Story: festival_alert  ·  Audience: backpackers
+2026-05-04 13:13:13  INFO      Used destinations (14d): 61
+2026-05-04 13:13:13  INFO      Audience filter 'backpackers' → 1 destinations match.
+2026-05-04 13:13:13  INFO      Festival locked: Kedarnath Opening (15/18 never featured)
+2026-05-04 13:13:13  INFO      Shared best destination locked: Parvati Valley
+2026-05-04 13:13:13  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-05-04 13:13:13  INFO      [instagram/nakshiq] Generating score_card post...
+2026-05-04 13:13:13  INFO      [instagram/nakshiq] Caption ready (609 chars, dest=parvati-valley)
+2026-05-04 13:13:13  INFO      [instagram/nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-05-04 13:13:13  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/parvati-valley.mp4?v=20260504
+2026-05-04 13:13:14  INFO          Requesting upload URL for parvati-valley.mp4 (12,589,747 bytes, video/mp4)
+2026-05-04 13:13:15  INFO          Uploading to R2 (timeout=300s)...
+2026-05-04 13:13:17  INFO          R2 PUT OK. Confirming...
+2026-05-04 13:13:18  INFO          Media ready: ptXyM (12,589,747 bytes · parvati-valley.mp4)
+2026-05-04 13:13:18  INFO      [instagram/nakshiq] Publishing Reel...
+2026-05-04 13:13:57  INFO      [instagram/nakshiq] ✅ Published · Outstand=XJgbe · Platform=18120218596641612
+2026-05-04 13:13:57  INFO      [facebook/Nakshiq] Generating score_card post...
+2026-05-04 13:13:57  INFO      [facebook/Nakshiq] Caption ready (592 chars, dest=parvati-valley)
+2026-05-04 13:13:57  INFO      [facebook/Nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-05-04 13:13:57  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/parvati-valley.mp4?v=20260504
+2026-05-04 13:13:57  INFO          Requesting upload URL for parvati-valley.mp4 (12,589,747 bytes, video/mp4)
+2026-05-04 13:13:58  INFO          Uploading to R2 (timeout=300s)...
+2026-05-04 13:14:07  INFO          R2 PUT OK. Confirming...
+2026-05-04 13:14:08  INFO          Media ready: JcMq3 (12,589,747 bytes · parvati-valley.mp4)
+2026-05-04 13:14:08  INFO      [facebook/Nakshiq] Publishing Reel...
+2026-05-04 13:14:23  INFO      [facebook/Nakshiq] ✅ Published · Outstand=2o9zS · Platform=965573746068912
+2026-05-04 13:14:23  INFO      State saved. Run complete.
+2026-05-04 13:14:23  INFO      ════════════════════════════════════════════════════════════

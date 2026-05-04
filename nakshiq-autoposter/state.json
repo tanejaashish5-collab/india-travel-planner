@@ -48,9 +48,9 @@
     "4QL0i_reel": "2026-04-19",
     "m8EAd_canva": "2026-04-26",
     "PdMu0_canva": "2026-04-26",
-    "m8EAd_evening": "2026-05-03",
+    "m8EAd_evening": "2026-05-04",
     "m8EAd_evening_story": "2026-05-03",
-    "PdMu0_evening": "2026-05-03",
+    "PdMu0_evening": "2026-05-04",
     "m8EAd_yt_short": "2026-05-04",
     "m8EAd_yt_short_count": 2,
     "jUmP2_yt_short": "2026-04-20",
@@ -85,7 +85,7 @@
     "GAh5p_yt_short_count": 2,
     "GAh5p": "2026-05-04"
   },
-  "last_sync": "2026-05-04T08:08:04.408158+00:00",
+  "last_sync": "2026-05-04T13:13:12.495496+00:00",
   "posted_destinations": [
     {
       "destination_id": "bhimtal",
@@ -454,6 +454,10 @@
     {
       "destination_id": "har-ki-doon",
       "date": "2026-05-04"
+    },
+    {
+      "destination_id": "parvati-valley",
+      "date": "2026-05-04"
     }
   ],
   "posted_formats": {
@@ -477,10 +481,10 @@
       "score_card",
       "score_card",
       "monthly_forecast",
-      "chinese_wall"
+      "chinese_wall",
+      "score_card"
     ],
     "PdMu0": [
-      "score_card",
       "methodology_family",
       "collection_spotlight",
       "score_card",
@@ -500,7 +504,8 @@
       "score_card",
       "score_card",
       "monthly_forecast",
-      "chinese_wall"
+      "chinese_wall",
+      "score_card"
     ]
   },
   "post_log": [
@@ -1023,6 +1028,26 @@
       "destination": "har-ki-doon",
       "format": "chinese_wall",
       "has_media": true
+    },
+    {
+      "timestamp": "2026-05-04T13:13:57.117326+00:00",
+      "date": "2026-05-04",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "XJgbe",
+      "destination": "parvati-valley",
+      "format": "score_card",
+      "has_media": true
+    },
+    {
+      "timestamp": "2026-05-04T13:14:23.043381+00:00",
+      "date": "2026-05-04",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "2o9zS",
+      "destination": "parvati-valley",
+      "format": "score_card",
+      "has_media": true
     }
   ],
   "theme_usage": {
@@ -1128,7 +1153,8 @@
         "2026-04-30"
       ],
       "parvati-valley": [
-        "2026-05-01"
+        "2026-05-01",
+        "2026-05-04"
       ],
       "rudraprayag": [
         "2026-05-02"
@@ -1316,7 +1342,8 @@
         "2026-04-30"
       ],
       "parvati-valley": [
-        "2026-05-01"
+        "2026-05-01",
+        "2026-05-04"
       ],
       "rudraprayag": [
         "2026-05-02"
@@ -1362,7 +1389,8 @@
     "audience_tags": {
       "backpackers": [
         "2026-04-20",
-        "2026-04-27"
+        "2026-04-27",
+        "2026-05-04"
       ],
       "adventurers": [
         "2026-04-24",
@@ -1500,6 +1528,6 @@
   },
   "last_picked": {
     "collection": "andaman-diving-snorkeling",
-    "shared_best": "lolab-valley"
+    "shared_best": "parvati-valley"
   }
 }
