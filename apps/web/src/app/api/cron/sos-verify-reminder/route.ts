@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
-import { getResend, FROM_ADDRESS, REPLY_TO } from "@/lib/resend";
+import { getResend, OPS_FROM_ADDRESS, REPLY_TO } from "@/lib/resend";
 
 export const dynamic = "force-dynamic";
 export const maxDuration = 60;
@@ -114,7 +114,7 @@ export async function GET(req: NextRequest) {
       </p>
       ${stateRows}
       <p style="margin-top:24px;">
-        <a href="${SITE_URL}/en/admin" style="background:#E55642;color:white;text-decoration:none;padding:8px 16px;border-radius:4px;display:inline-block;font-size:14px;">Open admin →</a>
+        <a href="${SITE_URL}/en/admin/sos" style="background:#E55642;color:white;text-decoration:none;padding:8px 16px;border-radius:4px;display:inline-block;font-size:14px;">Open admin →</a>
       </p>
       <p style="color:#888;font-size:11px;margin-top:16px;">
         Run locally: <code>node --env-file=apps/web/.env.local scripts/audit-emergency-numbers.mjs</code>
@@ -124,7 +124,7 @@ export async function GET(req: NextRequest) {
 
   try {
     await resend.emails.send({
-      from: FROM_ADDRESS,
+      from: OPS_FROM_ADDRESS,
       to: ADMIN_EMAIL,
       replyTo: REPLY_TO,
       subject: `[NakshIQ · SOS] ${stale.length} rows need re-verification`,

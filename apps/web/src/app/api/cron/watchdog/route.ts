@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
-import { getResend, FROM_ADDRESS, REPLY_TO } from "@/lib/resend";
+import { getResend, OPS_FROM_ADDRESS, REPLY_TO } from "@/lib/resend";
 
 export const dynamic = "force-dynamic";
 export const runtime = "nodejs";
@@ -125,7 +125,7 @@ export async function GET(req: NextRequest) {
   if (resend && degraded.length > 0 && !isFirstRun) {
     try {
       await resend.emails.send({
-        from: FROM_ADDRESS,
+        from: OPS_FROM_ADDRESS,
         to: ALERT_TO,
         replyTo: REPLY_TO,
         subject: `[NakshIQ ops] cron health DEGRADED — ${degraded.length} job(s) need attention`,
@@ -140,7 +140,7 @@ export async function GET(req: NextRequest) {
   if (resend && monday && !isFirstRun) {
     try {
       await resend.emails.send({
-        from: FROM_ADDRESS,
+        from: OPS_FROM_ADDRESS,
         to: ALERT_TO,
         replyTo: REPLY_TO,
         subject: `[NakshIQ ops] weekly cron health digest — ${overall === "ok" ? "ALL GREEN" : "DEGRADED"}`,
