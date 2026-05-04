@@ -22,7 +22,19 @@ export async function POST(req: NextRequest) {
     );
   }
 
-  const body = await req.json();
+  // Phase 7 deep-QA finding: malformed JSON body / oversized payload returned
+  // 500 because req.json() threw and there was no catch wrapper. Now: 413 for
+  // declared-too-large payloads; 400 for parse failures.
+  const declaredLength = Number(req.headers.get("content-length") || "0");
+  if (declaredLength > 50_000) {
+    return NextResponse.json({ error: "Payload too large" }, { status: 413 });
+  }
+  let body: any;
+  try {
+    body = await req.json();
+  } catch {
+    return NextResponse.json({ error: "Malformed JSON body" }, { status: 400 });
+  }
   const { month, days, travelerType, budget, origin, destinationIds, riskMode, variant, ages, mobility, vehicle } = body;
 
   const VALID_TYPES = ["solo", "couple", "family", "biker", "backpacker", "spiritual"];

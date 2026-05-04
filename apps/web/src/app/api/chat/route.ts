@@ -86,7 +86,24 @@ function extractEntities(question: string): { destinations: string[]; months: nu
 
 export async function POST(req: Request) {
   try {
-    const { question, history } = await req.json();
+    // Guard payload size before req.json() to avoid 500s on giant or
+    // malformed bodies. content-length is advisory only — also wrap req.json()
+    // in its own try so parse failures map to 400 not 500. Phase 7 deep-QA
+    // probe found that 500KB junk → 500 "Something went wrong".
+    const declaredLength = Number(req.headers.get("content-length") || "0");
+    if (declaredLength > 50_000) {
+      return NextResponse.json(
+        { error: "Payload too large — questions are capped at 1000 characters." },
+        { status: 413 },
+      );
+    }
+    let body: { question?: unknown; history?: unknown };
+    try {
+      body = await req.json();
+    } catch {
+      return NextResponse.json({ error: "Malformed JSON body" }, { status: 400 });
+    }
+    const { question, history } = body;
     if (!question || typeof question !== "string" || question.length > 1000) {
       return NextResponse.json({ error: "Invalid question" }, { status: 400 });
     }
