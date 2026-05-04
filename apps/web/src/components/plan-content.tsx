@@ -431,6 +431,7 @@ export function PlanContent({ destinations, states = [] }: PlanContentProps) {
                 <select
                   value={regionFocus}
                   onChange={(e) => { setRegionFocus(e.target.value); setShowResults(true); }}
+                  aria-label="Region focus"
                   className="w-full rounded-lg border border-border bg-background px-3 py-2 text-sm"
                 >
                   <option value="">All of India — no preference</option>

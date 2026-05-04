@@ -150,6 +150,7 @@ export function ReviewForm({ destinationId }: { destinationId: string }) {
         <select
           value={travelerType}
           onChange={(e) => setTravelerType(e.target.value)}
+          aria-label="Traveler type"
           className="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary/50"
         >
           <option value="">Select type...</option>
@@ -168,6 +169,7 @@ export function ReviewForm({ destinationId }: { destinationId: string }) {
           <select
             value={visitMonth}
             onChange={(e) => setVisitMonth(e.target.value)}
+            aria-label="Visit month"
             className="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary/50"
           >
             <option value="">Month...</option>
@@ -181,6 +183,7 @@ export function ReviewForm({ destinationId }: { destinationId: string }) {
           <select
             value={visitYear}
             onChange={(e) => setVisitYear(e.target.value)}
+            aria-label="Visit year"
             className="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary/50"
           >
             <option value="">Year...</option>

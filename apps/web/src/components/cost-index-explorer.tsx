@@ -92,6 +92,7 @@ export function CostIndexExplorer({ rows, destLookup, categoryLabels }: Props) {
           <select
             value={category}
             onChange={(e) => setCategory(e.target.value)}
+            aria-label="Cost category"
             className="w-full rounded-xl border border-border bg-background px-3 py-2.5 text-sm focus:border-primary focus:outline-none"
           >
             {Object.entries(categoryLabels).map(([id, label]) => (
@@ -106,6 +107,7 @@ export function CostIndexExplorer({ rows, destLookup, categoryLabels }: Props) {
           <select
             value={season}
             onChange={(e) => setSeason(e.target.value)}
+            aria-label="Travel season"
             className="rounded-xl border border-border bg-background px-3 py-2.5 text-sm focus:border-primary focus:outline-none"
           >
             <option value="peak">Peak</option>
@@ -120,6 +122,7 @@ export function CostIndexExplorer({ rows, destLookup, categoryLabels }: Props) {
           <select
             value={sortBy}
             onChange={(e) => setSortBy(e.target.value as typeof sortBy)}
+            aria-label="Sort order"
             className="rounded-xl border border-border bg-background px-3 py-2.5 text-sm focus:border-primary focus:outline-none"
           >
             <option value="price-asc">Price ↑</option>

@@ -147,6 +147,7 @@ export function QuestionForm({ destinationId }: { destinationId: string }) {
           <select
             value={category}
             onChange={(e) => setCategory(e.target.value)}
+            aria-label="Question category"
             className="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary/50"
           >
             <option value="">Select category…</option>
@@ -160,6 +161,7 @@ export function QuestionForm({ destinationId }: { destinationId: string }) {
           <select
             value={travelerType}
             onChange={(e) => setTravelerType(e.target.value)}
+            aria-label="Traveler type"
             className="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary/50"
           >
             <option value="">Any</option>

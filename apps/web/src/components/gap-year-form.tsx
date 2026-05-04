@@ -74,6 +74,10 @@ export function GapYearForm({ onSubmit, loading }: Props) {
           max={12}
           value={durationMonths}
           onChange={(e) => setDurationMonths(Number(e.target.value))}
+          aria-label={`Trip duration in months. Currently ${durationMonths} months.`}
+          aria-valuemin={3}
+          aria-valuemax={12}
+          aria-valuenow={durationMonths}
           className="w-full accent-primary"
         />
         <div className="flex justify-between text-xs text-muted-foreground mt-1">
@@ -88,6 +92,7 @@ export function GapYearForm({ onSubmit, loading }: Props) {
         <select
           value={startMonth}
           onChange={(e) => setStartMonth(Number(e.target.value))}
+          aria-label="Trip start month"
           className="w-full rounded-lg border border-border bg-background px-3 py-2 text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50"
         >
           {MONTH_NAMES.slice(1).map((name, i) => (

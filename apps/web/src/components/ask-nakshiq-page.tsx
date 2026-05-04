@@ -181,15 +181,16 @@ export function AskNakshIQPage({ locale }: { locale: string }) {
           <button
             type="submit"
             disabled={loading || !input.trim()}
+            aria-label="Send question"
             className="rounded-xl bg-primary px-4 py-3 text-primary-foreground disabled:opacity-40 transition-opacity shrink-0"
           >
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" focusable="false">
               <line x1="22" y1="2" x2="11" y2="13" />
               <polygon points="22 2 15 22 11 13 2 9 22 2" />
             </svg>
           </button>
         </form>
-        <div className="mt-2 text-center text-[10px] text-muted-foreground/40">
+        <div className="mt-2 text-center text-[10px] text-muted-foreground/70">
           20 questions/day — answers powered by NakshIQ verified data
         </div>
       </div>

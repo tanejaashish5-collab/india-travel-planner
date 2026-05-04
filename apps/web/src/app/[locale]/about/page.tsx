@@ -194,7 +194,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
           {/* Signature */}
           <div className="pt-4 text-right">
             <p className="text-muted-foreground italic">— A.T.</p>
-            <p className="text-xs text-muted-foreground/60 mt-1">Editor, NakshIQ</p>
+            <p className="text-xs text-muted-foreground mt-1">Editor, NakshIQ</p>
           </div>
 
           {/* Footer note */}
