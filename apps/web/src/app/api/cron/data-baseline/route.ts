@@ -65,7 +65,14 @@ function parseCreds(): { ok: true; credentials: { client_email: string; private_
 function getGAClient(): { ok: true; client: BetaAnalyticsDataClient } | { ok: false; error: string } {
   const c = parseCreds();
   if (!c.ok) return c;
-  return { ok: true, client: new BetaAnalyticsDataClient({ credentials: c.credentials }) };
+  // fallback: 'rest' forces HTTP/JSON transport instead of gRPC. Required for
+  // Vercel serverless functions because gRPC's native bindings + Next.js
+  // bundling produce silent failures with "undefined undefined: undefined"
+  // gRPC status errors. REST works identically for our query pattern.
+  return {
+    ok: true,
+    client: new BetaAnalyticsDataClient({ credentials: c.credentials, fallback: "rest" }),
+  };
 }
 
 async function getGSCClient(): Promise<{ ok: true; client: ReturnType<typeof google.searchconsole> } | { ok: false; error: string }> {
