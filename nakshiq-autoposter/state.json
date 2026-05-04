@@ -37,8 +37,8 @@
     "06_sunset_gaze"
   ],
   "posted_today": {
-    "PdMu0": "2026-05-03",
-    "m8EAd": "2026-05-03",
+    "PdMu0": "2026-05-04",
+    "m8EAd": "2026-05-04",
     "m8EAd_reel": "2026-05-03",
     "PdMu0_reel": "2026-05-04",
     "4QL0i_reel": "2026-04-19",
@@ -52,8 +52,8 @@
     "jUmP2_yt_short": "2026-04-20",
     "jUmP2_yt_short_count": 1,
     "jUmP2": "2026-04-20",
-    "m8EAd_moat": "2026-04-29",
-    "PdMu0_moat": "2026-04-29",
+    "m8EAd_moat": "2026-05-04",
+    "PdMu0_moat": "2026-05-04",
     "m8EAd_infographic": "2026-05-01",
     "PdMu0_infographic": "2026-05-01",
     "jUmP2_reel": "2026-04-20",
@@ -78,66 +78,11 @@
     "m8EAd_flow_story": "2026-05-03",
     "PdMu0_flow_story": "2026-05-03",
     "GAh5p_yt_short": "2026-05-03",
-    "GAh5p_yt_short_count": 1
+    "GAh5p_yt_short_count": 1,
+    "GAh5p": "2026-05-04"
   },
-  "last_sync": "2026-05-03T14:09:33.927405+00:00",
+  "last_sync": "2026-05-04T07:34:05.580043+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "pahalgam",
-      "date": "2026-04-19"
-    },
-    {
-      "destination_id": "dhanaulti",
-      "date": "2026-04-19"
-    },
-    {
-      "destination_id": "ziro-valley",
-      "date": "2026-04-19"
-    },
-    {
-      "destination_id": "ziro-valley",
-      "date": "2026-04-19"
-    },
-    {
-      "destination_id": "yercaud",
-      "date": "2026-04-19"
-    },
-    {
-      "destination_id": "thrissur",
-      "date": "2026-04-19"
-    },
-    {
-      "destination_id": "mudumalai",
-      "date": "2026-04-19"
-    },
-    {
-      "destination_id": "kotagiri",
-      "date": "2026-04-19"
-    },
-    {
-      "destination_id": "kodaikanal",
-      "date": "2026-04-19"
-    },
-    {
-      "destination_id": "ziro-valley",
-      "date": "2026-04-19"
-    },
-    {
-      "destination_id": "yercaud",
-      "date": "2026-04-19"
-    },
-    {
-      "destination_id": "thrissur",
-      "date": "2026-04-19"
-    },
-    {
-      "destination_id": "mudumalai",
-      "date": "2026-04-19"
-    },
-    {
-      "destination_id": "kotagiri",
-      "date": "2026-04-19"
-    },
     {
       "destination_id": "bhimtal",
       "date": "2026-04-20"
@@ -485,6 +430,26 @@
     {
       "destination_id": "munsiyari",
       "date": "2026-05-03"
+    },
+    {
+      "destination_id": "munsiyari",
+      "date": "2026-05-04"
+    },
+    {
+      "destination_id": "reel_seasonal_shift_reel_seasonal_shift_munsiyari",
+      "date": "2026-05-04"
+    },
+    {
+      "destination_id": "uttarkashi",
+      "date": "2026-05-04"
+    },
+    {
+      "destination_id": "kotagiri",
+      "date": "2026-05-04"
+    },
+    {
+      "destination_id": "har-ki-doon",
+      "date": "2026-05-04"
     }
   ],
   "posted_formats": {
@@ -507,10 +472,10 @@
       "festival_alert",
       "score_card",
       "score_card",
-      "monthly_forecast"
+      "monthly_forecast",
+      "chinese_wall"
     ],
     "PdMu0": [
-      "methodology_roads",
       "score_card",
       "methodology_family",
       "collection_spotlight",
@@ -530,7 +495,8 @@
       "festival_alert",
       "score_card",
       "score_card",
-      "monthly_forecast"
+      "monthly_forecast",
+      "chinese_wall"
     ]
   },
   "post_log": [
@@ -1033,6 +999,26 @@
       "destination": "munsiyari",
       "format": "monthly_forecast",
       "has_media": true
+    },
+    {
+      "timestamp": "2026-05-04T07:35:03.466833+00:00",
+      "date": "2026-05-04",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "XJtDe",
+      "destination": "har-ki-doon",
+      "format": "chinese_wall",
+      "has_media": true
+    },
+    {
+      "timestamp": "2026-05-04T07:35:20.962396+00:00",
+      "date": "2026-05-04",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "5F3OD",
+      "destination": "har-ki-doon",
+      "format": "chinese_wall",
+      "has_media": true
     }
   ],
   "theme_usage": {
@@ -1160,6 +1146,9 @@
       ],
       "gurudongmar-lake": [
         "2026-05-03"
+      ],
+      "har-ki-doon": [
+        "2026-05-04"
       ]
     },
     "reel_formats": {
@@ -1358,6 +1347,9 @@
       ],
       "skip_list": [
         "2026-04-29"
+      ],
+      "chinese_wall": [
+        "2026-05-04"
       ]
     },
     "audience_tags": {
@@ -1501,6 +1493,6 @@
   },
   "last_picked": {
     "collection": "andaman-diving-snorkeling",
-    "shared_best": "munsiyari"
+    "shared_best": "har-ki-doon"
   }
 }

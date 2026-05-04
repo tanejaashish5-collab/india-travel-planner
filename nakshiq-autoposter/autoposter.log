@@ -6479,3 +6479,38 @@ Date range: 2026-04-15 → 2026-05-03
 2026-05-04 06:37:23  INFO      Theme tracker updated: format=seasonal_shift
 2026-05-04 06:37:23  INFO      State saved. Reel run complete.
 2026-05-04 06:37:23  INFO      ════════════════════════════════════════════════════════════
+2026-05-04 07:33:59  INFO      Stale lock (age=1039640s) — overriding.
+2026-05-04 07:33:59  INFO      ════════════════════════════════════════════════════════════
+2026-05-04 07:33:59  INFO      Nakshiq Autoposter · MOAT · 2026-05-04 · weekday=0
+2026-05-04 07:33:59  INFO      ════════════════════════════════════════════════════════════
+2026-05-04 07:33:59  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-05-04 07:34:05  INFO      Synced → 20 destinations · 0 traps · 0 articles · total catalog=505
+2026-05-04 07:34:06  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-05-04 07:34:07  INFO      Outstand dedup guard: merged 7 remote posts into state.
+2026-05-04 07:34:07  INFO      Moat angle locked: chinese_wall (4/9 never featured)
+2026-05-04 07:34:07  INFO      Formats — IG: chinese_wall  ·  FB: chinese_wall  ·  Story: None
+2026-05-04 07:34:07  INFO      Used destinations (14d): 60
+2026-05-04 07:34:09  INFO      Shared best destination locked: Har Ki Doon
+2026-05-04 07:34:09  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-05-04 07:34:09  INFO      [instagram/nakshiq] Generating chinese_wall post...
+2026-05-04 07:34:09  INFO      [instagram/nakshiq] Caption ready (425 chars, dest=har-ki-doon)
+2026-05-04 07:34:10  INFO      [instagram/nakshiq] Video available — uploading for Reel...
+2026-05-04 07:34:10  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/har-ki-doon.mp4?v=20260504
+2026-05-04 07:34:11  INFO          Requesting upload URL for har-ki-doon.mp4 (11,538,809 bytes, video/mp4)
+2026-05-04 07:34:11  INFO          Uploading to R2 (timeout=300s)...
+2026-05-04 07:34:13  INFO          R2 PUT OK. Confirming...
+2026-05-04 07:34:14  INFO          Media ready: I2kGX (11,538,809 bytes · har-ki-doon.mp4)
+2026-05-04 07:34:14  INFO      [instagram/nakshiq] Publishing Reel...
+2026-05-04 07:35:03  WARNING   [instagram/nakshiq] ⚠️  Queued (ID=XJtDe)
+2026-05-04 07:35:03  INFO      [facebook/Nakshiq] Generating chinese_wall post...
+2026-05-04 07:35:03  INFO      [facebook/Nakshiq] Caption ready (700 chars, dest=har-ki-doon)
+2026-05-04 07:35:03  INFO      [facebook/Nakshiq] Video available — uploading for Reel...
+2026-05-04 07:35:03  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/har-ki-doon.mp4?v=20260504
+2026-05-04 07:35:04  INFO          Requesting upload URL for har-ki-doon.mp4 (11,538,809 bytes, video/mp4)
+2026-05-04 07:35:04  INFO          Uploading to R2 (timeout=300s)...
+2026-05-04 07:35:06  INFO          R2 PUT OK. Confirming...
+2026-05-04 07:35:07  INFO          Media ready: QRoqy (11,538,809 bytes · har-ki-doon.mp4)
+2026-05-04 07:35:07  INFO      [facebook/Nakshiq] Publishing Reel...
+2026-05-04 07:35:20  INFO      [facebook/Nakshiq] ✅ Published · Outstand=5F3OD · Platform=898357543215832
+2026-05-04 07:35:20  INFO      State saved. Run complete.
+2026-05-04 07:35:20  INFO      ════════════════════════════════════════════════════════════
