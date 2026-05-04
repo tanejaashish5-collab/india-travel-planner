@@ -1,0 +1,42 @@
+{
+  "url": "/hi/destination/varanasi",
+  "project": "mobile",
+  "serious_count": 3,
+  "moderate_count": 0,
+  "minor_count": 0,
+  "violations": [
+    {
+      "id": "aria-allowed-attr",
+      "impact": "critical",
+      "help": "Elements must only use supported ARIA attributes",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/aria-allowed-attr?application=playwright",
+      "nodes_count": 6,
+      "sampleHtml": "<button type=\"button\" role=\"tab\" aria-selected=\"true\" class=\"inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs transition-all cursor-pointer border-emerald-500/40 bg-emerald-500",
+      "sampleTarget": [
+        ".ring-emerald-500\\/40"
+      ]
+    },
+    {
+      "id": "color-contrast",
+      "impact": "serious",
+      "help": "Elements must meet minimum color contrast ratio thresholds",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=playwright",
+      "nodes_count": 78,
+      "sampleHtml": "<a href=\"https://wa.me/?text=...\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"inline-flex items-ce...\">",
+      "sampleTarget": [
+        ".bg-\\[\\#25D366\\]"
+      ]
+    },
+    {
+      "id": "select-name",
+      "impact": "critical",
+      "help": "Select element must have an accessible name",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/select-name?application=playwright",
+      "nodes_count": 5,
+      "sampleHtml": "<select class=\"w-full rounded-xl border border-border bg-background px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary/50\">",
+      "sampleTarget": [
+        ".grid-cols-1.sm\\:grid-cols-2.grid:nth-child(4) > div:nth-child(1) > select"
+      ]
+    }
+  ]
+}

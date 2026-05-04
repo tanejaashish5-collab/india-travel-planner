@@ -1,0 +1,59 @@
+{
+  "phase": 10,
+  "name": "cross-axis-close-soft-404-family",
+  "started_utc": "2026-05-04T11:50:00Z",
+  "completed_utc": "2026-05-04T12:20:00Z",
+  "outcome": "PASS — both prior-known soft-404 defects closed",
+  "approach": "Build-time slug snapshot + middleware-level slug validation. Cheaper than pre-rendering 491 destinations × 2 locales × 17 queries each (which had blown the Supabase free-plan API limit on the previous build).",
+  "closes": ["NEW-2026-05-04-004", "NEW-2026-05-04-006"],
+  "verification_live": [
+    {
+      "url": "/en/destination/this-does-not-exist-xyz",
+      "before": "HTTP 200 + 404 body (9 days)",
+      "after": "HTTP 404 ✓"
+    },
+    {
+      "url": "/hi/destination/this-does-not-exist-xyz",
+      "before": "HTTP 200 + 404 body",
+      "after": "HTTP 404 ✓"
+    },
+    {
+      "url": "/en/destination/shimla/3 (numeric month)",
+      "before": "HTTP 200 + 404 body",
+      "after": "HTTP 404 ✓"
+    },
+    {
+      "url": "/en/destination/shimla/marchx (invalid month string)",
+      "before": "HTTP 200 + 404 body",
+      "after": "HTTP 404 ✓"
+    }
+  ],
+  "regression_check_live": [
+    { "url": "/en/destination/shimla", "expected": "200", "got": "200 ✓" },
+    { "url": "/en/destination/shimla/march", "expected": "200", "got": "200 ✓" },
+    { "url": "/en/destination/rajasthan (state slug)", "expected": "301 → /en/state/rajasthan", "got": "301 ✓" }
+  ],
+  "files_added": [
+    "apps/web/data/known-destination-slugs.json (505 slugs, sourced from sitemap/1.xml)",
+    "scripts/qa-snapshot-slugs.mjs (regenerator)"
+  ],
+  "files_modified": ["apps/web/src/middleware.ts"],
+  "fix_commit": "e36752d0",
+  "deferred_in_this_phase": [
+    {
+      "name": "visual regression baselines update",
+      "status": "DEFERRED",
+      "reason": "12 mobile + 4 desktop baselines stale post Trip Board / Tourist Traps redesigns. Updating requires manual approval per snapshot — out of scope for an automated deep-QA pass."
+    },
+    {
+      "name": "internal-link integrity crawl",
+      "status": "PARTIAL — implicit via Phase 8 spot-check + middleware fix",
+      "reason": "Phase 8 hit 30 routes with 0 fetch errors. Middleware fix removes most broken internal-link paths (bad-slug + numeric-month). Full BFS crawl was scoped here but skipped to ship the higher-value middleware fix in time."
+    },
+    {
+      "name": "hreflang + schema.org validity sweep",
+      "status": "PASS — verified earlier today (commit 3ab4d8ef closed hreflang loop; Phase 2 confirmed 5+ JSON-LD types per destination)",
+      "reason": "Already covered by morning's QA + earlier in this run."
+    }
+  ]
+}

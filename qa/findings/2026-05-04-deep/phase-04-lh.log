@@ -1,0 +1,101 @@
+
+> lighthouse
+> npx lhci autorun
+
+✅  .lighthouseci/ directory writable
+✅  Configuration file found
+✅  Chrome installation found
+⚠️   GitHub token not set
+Healthcheck passed!
+
+Running Lighthouse 1 time(s) on https://www.nakshiq.com/en
+Run #1...done.
+Running Lighthouse 1 time(s) on https://www.nakshiq.com/en/destination/varanasi
+Run #1...done.
+Running Lighthouse 1 time(s) on https://www.nakshiq.com/en/explore
+Run #1...done.
+Running Lighthouse 1 time(s) on https://www.nakshiq.com/en/collections
+Run #1...done.
+Running Lighthouse 1 time(s) on https://www.nakshiq.com/en/where-to-go/april
+Run #1...done.
+Running Lighthouse 1 time(s) on https://www.nakshiq.com/en/blog
+Run #1...done.
+Running Lighthouse 1 time(s) on https://www.nakshiq.com/en/ask
+Run #1...done.
+Running Lighthouse 1 time(s) on https://www.nakshiq.com/en/gap-year
+Run #1...done.
+Running Lighthouse 1 time(s) on https://www.nakshiq.com/en/trip
+Run #1...done.
+Running Lighthouse 1 time(s) on https://www.nakshiq.com/en/treks
+Run #1...done.
+Done running Lighthouse!
+
+Checking assertions against 10 URL(s), 10 total run(s)
+
+1 result(s) for [1mhttps://www.nakshiq.com/en[0m :
+
+  ⚠️  [1mcategories[0m.performance warning for [1mminScore[0m assertion
+        expected: >=[32m0.7[0m
+           found: [31m0.67[0m
+      [2mall values: 0.67[0m
+
+1 result(s) for [1mhttps://www.nakshiq.com/en/destination/varanasi[0m :
+
+  ⚠️  [1mcategories[0m.performance warning for [1mminScore[0m assertion
+        expected: >=[32m0.7[0m
+           found: [31m0.62[0m
+      [2mall values: 0.62[0m
+
+1 result(s) for [1mhttps://www.nakshiq.com/en/explore[0m :
+
+  ⚠️  [1mcategories[0m.performance warning for [1mminScore[0m assertion
+        expected: >=[32m0.7[0m
+           found: [31m0.59[0m
+      [2mall values: 0.59[0m
+
+1 result(s) for [1mhttps://www.nakshiq.com/en/collections[0m :
+
+  ⚠️  [1mcategories[0m.performance warning for [1mminScore[0m assertion
+        expected: >=[32m0.7[0m
+           found: [31m0.6[0m
+      [2mall values: 0.6[0m
+
+1 result(s) for [1mhttps://www.nakshiq.com/en/where-to-go/april[0m :
+
+  ⚠️  [1mcategories[0m.performance warning for [1mminScore[0m assertion
+        expected: >=[32m0.7[0m
+           found: [31m0.63[0m
+      [2mall values: 0.63[0m
+
+1 result(s) for [1mhttps://www.nakshiq.com/en/trip[0m :
+
+  ⚠️  [1mcategories[0m.performance warning for [1mminScore[0m assertion
+        expected: >=[32m0.7[0m
+           found: [31m0.64[0m
+      [2mall values: 0.64[0m
+
+All results processed!
+
+Uploading median LHR of https://www.nakshiq.com/en...success!
+Open the report at https://storage.googleapis.com/lighthouse-infrastructure.appspot.com/reports/1777892432124-3299.report.html
+Uploading median LHR of https://www.nakshiq.com/en/destination/varanasi...success!
+Open the report at https://storage.googleapis.com/lighthouse-infrastructure.appspot.com/reports/1777892433558-66311.report.html
+Uploading median LHR of https://www.nakshiq.com/en/explore...success!
+Open the report at https://storage.googleapis.com/lighthouse-infrastructure.appspot.com/reports/1777892435658-40936.report.html
+Uploading median LHR of https://www.nakshiq.com/en/collections...success!
+Open the report at https://storage.googleapis.com/lighthouse-infrastructure.appspot.com/reports/1777892437857-14220.report.html
+Uploading median LHR of https://www.nakshiq.com/en/where-to-go/april...success!
+Open the report at https://storage.googleapis.com/lighthouse-infrastructure.appspot.com/reports/1777892439693-77081.report.html
+Uploading median LHR of https://www.nakshiq.com/en/blog...success!
+Open the report at https://storage.googleapis.com/lighthouse-infrastructure.appspot.com/reports/1777892441362-7326.report.html
+Uploading median LHR of https://www.nakshiq.com/en/ask...success!
+Open the report at https://storage.googleapis.com/lighthouse-infrastructure.appspot.com/reports/1777892442847-81174.report.html
+Uploading median LHR of https://www.nakshiq.com/en/gap-year...success!
+Open the report at https://storage.googleapis.com/lighthouse-infrastructure.appspot.com/reports/1777892444159-80235.report.html
+Uploading median LHR of https://www.nakshiq.com/en/trip...success!
+Open the report at https://storage.googleapis.com/lighthouse-infrastructure.appspot.com/reports/1777892445155-68094.report.html
+Uploading median LHR of https://www.nakshiq.com/en/treks...success!
+Open the report at https://storage.googleapis.com/lighthouse-infrastructure.appspot.com/reports/1777892446160-73309.report.html
+No GitHub token set, skipping GitHub status check.
+
+Done running autorun.

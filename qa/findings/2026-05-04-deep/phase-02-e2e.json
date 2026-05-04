@@ -1,0 +1,97 @@
+{
+  "phase": 2,
+  "name": "playwright-suite-and-gap-specs",
+  "started_utc": "2026-05-04T10:00:00Z",
+  "completed_utc": "2026-05-04T10:35:00Z",
+  "outcome": "PARTIAL_PASS",
+  "approach": "Ran existing 13 Playwright specs against production. Categorised failures: 4 root-cause groups, fixed 3 in-phase, 4th deferred with writeup.",
+  "results": {
+    "initial_run": "84 passed / 26 skipped / 28 failed across mobile + desktop",
+    "after_phase_2_fixes": "predicted ~92 passed / 26 skipped / ~20 failed (gap-year combobox + visual regression remain)"
+  },
+  "real_defects_fixed": [
+    {
+      "id": "DEEP-Phase2-D1",
+      "severity": "high",
+      "title": "16 pages had `| NakshIQ | NakshIQ` stutter in <title>",
+      "where": "guide/{permits,sim-card,food-safety,scams,visa,transport-overview,currency,etiquette,packing,book-indian-trains}, where-to-go, the-window, weekend-from, gap-year, gap-year/[token], arrival",
+      "root_cause": "Each page hardcoded ` | NakshIQ` in metadata.title. Layout's title.template = `%s | NakshIQ` then appended another suffix.",
+      "evidence": "before fix: `<title>India Permits Guide — ILP, PAP, RAP state by state | NakshIQ | NakshIQ</title>` ; after: clean single suffix",
+      "impact": "SEO — duplicated brand truncates important keywords in SERP, dilutes click signal",
+      "fix_commit": "bc430571"
+    },
+    {
+      "id": "DEEP-Phase2-D2",
+      "severity": "low",
+      "title": "Hardcoded `491 destinations` on Trip Board cold-start while /explore reads live DB count",
+      "where": "components/trip-board/cold-start.tsx (2 places) + library-panel.tsx (1 place)",
+      "fix": "{destinations.length} interpolation; 491 was stale post pilgrimage-circuits expansion",
+      "closes": "E2E-2026-05-04-G1",
+      "fix_commit": "bc430571"
+    },
+    {
+      "id": "DEEP-Phase2-D3",
+      "severity": "low",
+      "title": "PWA icon-192.png 404 via R2 image-loader",
+      "where": "lib/image-loader.ts unconditionally rewrote root pngs to /icon-192-w400.webp variants that don't exist on R2",
+      "fix": "Skip variant rewrite for paths without subdirectory; root assets fall through to original key",
+      "closes": "E2E-2026-05-04-K1",
+      "fix_commit": "bc430571"
+    }
+  ],
+  "stale_test_assertions_fixed": [
+    {
+      "id": "DEEP-Phase2-T1",
+      "title": "homepage.spec.ts expected `Explore by region` but copy was shortened to `By region`",
+      "fix": "Drop text-match; assert structural region-card count >= 6"
+    },
+    {
+      "id": "DEEP-Phase2-T2",
+      "title": "where-to-go.spec.ts expected /en/where-to-go to 307 to current month — page is now a standalone hub by intent",
+      "fix": "Test now asserts hub page renders with >= 12 month links"
+    },
+    {
+      "id": "DEEP-Phase2-T3",
+      "title": "trip-board.spec.ts × 6 — markers `[data-yearband]` / `[data-cost-aggregate]` / `[data-trip-map]` only render in advanced ThreePane view but tests didn't seed view-mode",
+      "fix": "Add localStorage.setItem('nq-trip-mode','advanced') to beforeEach in 3 describe blocks"
+    },
+    {
+      "id": "DEEP-Phase2-T4",
+      "title": "ALL specs that hover/click navs were intercepted by guided-tour overlay",
+      "where": "playwright.config.ts storageState — only seeded quizSeen + pwa-install-dismissed, not the tour flag",
+      "fix": "Added `nakshiq_tour_v2='dismissed'` to storageState localStorage seed"
+    }
+  ],
+  "deferred_with_writeup": [
+    {
+      "id": "DEEP-Phase2-DEFER-1",
+      "title": "gap-year origin combobox: typing 'Rajas' should surface Jaipur (state: Rajasthan)",
+      "status": "REPRODUCED — likely client hydration timing on the dropdown rather than findCity scoring (verified scoring is correct in lib/gap-year/origin-cities.ts)",
+      "why_defer": "Needs interactive --debug session; 30 min budget exceeded",
+      "next_step": "Check whether `setOpen(true)` fires on Playwright .fill() vs real user typing — may need .pressSequentially()"
+    },
+    {
+      "id": "DEEP-Phase2-DEFER-2",
+      "title": "Visual regression baselines stale (12 mobile + 4 desktop) after Trip Board / Tourist Traps redesigns",
+      "status": "EXPECTED",
+      "why_defer": "Updating baselines requires manual review of every screenshot to confirm new design is intentional. Meaningful only after a design freeze.",
+      "next_step": "Run `npx playwright test tests/e2e/visual.spec.ts --update-snapshots` and review each diff"
+    },
+    {
+      "id": "DEEP-Phase2-DEFER-3",
+      "title": "Welcome tour (E2E-A1) + DestinationMonth labels (E2E-B1) still English on /hi",
+      "status": "REPRODUCED",
+      "why_defer": "Substantial i18n work — guided-tour.tsx and destination-month.tsx have ~30 hard-coded strings each. Each needs a next-intl key + Hindi translation. Belongs in a focused i18n sprint.",
+      "next_step": "Inventory hardcoded strings, add to messages/en.json + hi.json with next-intl t() calls"
+    }
+  ],
+  "gap_specs_planned_but_deprioritised": [
+    "tests/e2e/_deep/persona-routing.spec.ts — needs the persona-quiz to be feature-stable; deferred to Phase 5 persona journey instead",
+    "tests/e2e/_deep/hindi-parity.spec.ts — would currently fail on the known A1/B1 i18n gaps; redundant with manual i18n inventory above",
+    "tests/e2e/_deep/admin-bearer.spec.ts — covered as part of Phase 7 API probes (admin bearer auth tests)"
+  ],
+  "additional_findings_logged_for_user": [
+    "Multiple non-test pages hardcode `491 destinations` (layout.tsx metadata, guide/first-trip-india, cost-index, methodology/freshness). Marketing copy treated as low-priority for this run; could be unified through getAppStats().",
+    "stats.ts FALLBACK has destinations:505 but live DB query returns 491 — fallback is a stale post-expansion estimate. Update FALLBACK to 491 OR rely on the live count and let unstable_cache hold it."
+  ]
+}

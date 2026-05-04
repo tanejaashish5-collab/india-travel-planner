@@ -1,0 +1,20 @@
+{
+  "url": "/en/sos",
+  "project": "desktop",
+  "serious_count": 1,
+  "moderate_count": 0,
+  "minor_count": 0,
+  "violations": [
+    {
+      "id": "color-contrast",
+      "impact": "serious",
+      "help": "Elements must meet minimum color contrast ratio thresholds",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=playwright",
+      "nodes_count": 1,
+      "sampleHtml": "<a href=\"tel:112\" class=\"inline-flex items-center gap-2 rounded-full bg-red-500 hover:bg-red-400 text-white font-bold px-6 py-3 text-lg transition-colors\">112 · <!-- -->Call now</a>",
+      "sampleTarget": [
+        ".bg-red-500"
+      ]
+    }
+  ]
+}

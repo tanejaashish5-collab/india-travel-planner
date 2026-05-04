@@ -1,0 +1,20 @@
+{
+  "url": "/en/explore",
+  "project": "desktop",
+  "serious_count": 1,
+  "moderate_count": 0,
+  "minor_count": 0,
+  "violations": [
+    {
+      "id": "color-contrast",
+      "impact": "serious",
+      "help": "Elements must meet minimum color contrast ratio thresholds",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=playwright",
+      "nodes_count": 49,
+      "sampleHtml": "<p class=\"mt-2 text-xs text-muted-foreground/70 line-clamp-1 italic min-h-[18px]\">Perfect 14-26°C. All three spring gardens accessible and blooming. Chinar trees leafy. Picnic season. Low crowds.</p>",
+      "sampleTarget": [
+        "a[href$=\"achabal\"] > .p-5.pt-3.flex-col > .mt-2.line-clamp-1.min-h-\\[18px\\]"
+      ]
+    }
+  ]
+}

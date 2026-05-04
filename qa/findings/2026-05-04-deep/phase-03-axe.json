@@ -1,0 +1,85 @@
+{
+  "phase": 3,
+  "name": "axe-core-a11y-sweep",
+  "started_utc": "2026-05-04T10:35:00Z",
+  "completed_utc": "2026-05-04T11:10:00Z",
+  "outcome": "PARTIAL_PASS",
+  "approach": "axe-core/playwright sweep over 20 template-distinct URLs × mobile + desktop projects = 40 runs. Failing on serious/critical impact only; moderate warn-logged. Per-URL JSON reports in axe-reports/ for aggregation.",
+  "violation_summary_before_fixes": {
+    "total_serious_critical_runs_failed": 34,
+    "rules_violated": [
+      { "id": "color-contrast", "impact": "serious", "occurrences": 30, "help": "Elements must meet minimum color contrast ratio thresholds" },
+      { "id": "select-name", "impact": "critical", "occurrences": 10, "help": "Select element must have an accessible name" },
+      { "id": "aria-allowed-attr", "impact": "serious", "occurrences": 6, "help": "Elements must only use supported ARIA attributes" },
+      { "id": "button-name", "impact": "critical", "occurrences": 2, "help": "Buttons must have discernible text" },
+      { "id": "label", "impact": "critical", "occurrences": 2, "help": "Form elements must have labels" },
+      { "id": "image-alt", "impact": "critical", "occurrences": 2, "help": "Images must have alternative text" }
+    ]
+  },
+  "fixed_in_phase": [
+    {
+      "rule": "button-name",
+      "before_count": 2,
+      "after_expected": 0,
+      "fix": "/en/ask page + Ask NakshIQ widget: added aria-label='Send question' + aria-hidden on SVG icon",
+      "files": ["components/ask-nakshiq-page.tsx", "components/ask-nakshiq.tsx"]
+    },
+    {
+      "rule": "label",
+      "before_count": 2,
+      "after_expected": 0,
+      "fix": "/en/gap-year duration range slider: added aria-label + aria-valuemin/max/now",
+      "files": ["components/gap-year-form.tsx"]
+    },
+    {
+      "rule": "image-alt",
+      "before_count": 2,
+      "after_expected": 0,
+      "fix": "/en/road-conditions destination thumbnail: alt no longer falls back to empty string",
+      "files": ["components/road-conditions-content.tsx"]
+    },
+    {
+      "rule": "select-name",
+      "before_count": 10,
+      "after_expected": 0,
+      "fix": "Added aria-label to 8 <select> elements across review-form, question-form, gap-year, permits, cost-index, plan",
+      "files": [
+        "components/review-form.tsx",
+        "components/question-form.tsx",
+        "components/gap-year-form.tsx",
+        "components/permits-content.tsx",
+        "components/cost-index-explorer.tsx",
+        "components/plan-content.tsx"
+      ]
+    }
+  ],
+  "carried_forward": [
+    {
+      "rule": "color-contrast",
+      "remaining_count": 30,
+      "scope": "Systemic — text-muted-foreground/40 (14 instances) + /50 (31) + /60 (39) + /70 (93) across the app",
+      "why_defer": "Mass-editing 177 instances is risky without design review. The /40 and /50 tiers are guaranteed to fail AA but each instance had a visual-hierarchy reason for its choice.",
+      "recommended_next_step": "Token-level fix: bump --muted-foreground darkness one notch in tailwind config so /60 → ~4.6:1 ratio (passes AA). Then mass-replace /40 → /60, /50 → /70 with sed."
+    },
+    {
+      "rule": "aria-allowed-attr",
+      "remaining_count": 6,
+      "scope": "Destination page traveler-type pseudo-tabs use role='tab' + aria-selected='true' but no enclosing role='tablist' container",
+      "why_defer": "Belongs in a tablist semantics conversion — change `<button role='tab'>` to wrap in proper tablist + tabpanel structure",
+      "files_to_check": ["components/destination-detail.tsx (tabs near top of page)"]
+    }
+  ],
+  "files_modified": [
+    "apps/web/src/components/ask-nakshiq-page.tsx",
+    "apps/web/src/components/ask-nakshiq.tsx",
+    "apps/web/src/components/gap-year-form.tsx",
+    "apps/web/src/components/road-conditions-content.tsx",
+    "apps/web/src/components/permits-content.tsx",
+    "apps/web/src/components/cost-index-explorer.tsx",
+    "apps/web/src/components/plan-content.tsx",
+    "apps/web/src/components/question-form.tsx",
+    "apps/web/src/components/review-form.tsx",
+    "apps/web/src/app/[locale]/about/page.tsx"
+  ],
+  "fix_commit": "542e9fd9"
+}

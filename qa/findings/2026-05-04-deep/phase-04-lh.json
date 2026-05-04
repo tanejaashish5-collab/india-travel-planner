@@ -1,0 +1,91 @@
+{
+  "phase": 4,
+  "name": "lighthouse-perf-budget",
+  "started_utc": "2026-05-04T11:10:00Z",
+  "completed_utc": "2026-05-04T11:25:00Z",
+  "outcome": "FAIL_BUDGET — performance below 0.70 on 7 of 10 URLs (warn-level)",
+  "approach": "Lighthouse mobile 4G profile (375×812, 1.6Mbps, 4× CPU slowdown) on 10 routes via @lhci/cli. Categories: a11y/best-practices/seo passing, performance under threshold.",
+  "scores_per_url": [
+    { "url": "/en", "performance": 67, "accessibility": 98, "best_practices": 100, "seo": 100 },
+    { "url": "/en/destination/varanasi", "performance": 62, "accessibility": 89, "best_practices": 100, "seo": 100 },
+    { "url": "/en/explore", "performance": 59, "accessibility": 94, "best_practices": 100, "seo": 100 },
+    { "url": "/en/collections", "performance": 60, "accessibility": 94, "best_practices": 100, "seo": 100 },
+    { "url": "/en/where-to-go/april", "performance": 63, "accessibility": 96, "best_practices": 100, "seo": 100 },
+    { "url": "/en/blog", "performance": 73, "accessibility": 96, "best_practices": 100, "seo": 100 },
+    { "url": "/en/ask", "performance": 81, "accessibility": 94, "best_practices": 96, "seo": 100 },
+    { "url": "/en/gap-year", "performance": 77, "accessibility": 92, "best_practices": 96, "seo": 100 },
+    { "url": "/en/trip", "performance": 64, "accessibility": 98, "best_practices": 100, "seo": 100 },
+    { "url": "/en/treks", "performance": 71, "accessibility": 96, "best_practices": 100, "seo": 100 }
+  ],
+  "summary": {
+    "performance_meets_0_70": "3 of 10 (ask, gap-year, treks)",
+    "performance_below_0_70_count": 7,
+    "a11y_meets_0_85": "10 of 10",
+    "a11y_below_0_85_count": 0,
+    "best_practices_meets_0_85": "10 of 10",
+    "seo_meets_0_90": "10 of 10"
+  },
+  "top_opportunities_aggregate": [
+    {
+      "audit_id": "offscreen-images",
+      "savings_ms_total": 1801434,
+      "hits": 1,
+      "explanation": "One URL has massive offscreen-image deferral opportunity. Likely the destination detail page hero/below-fold gallery."
+    },
+    {
+      "audit_id": "uses-responsive-images",
+      "savings_ms_total": 1316414,
+      "hits": 5,
+      "explanation": "5 URLs serve images larger than rendered size. <Image sizes=\"...\"> attribute is too generous, picking 1600w variant when 800w would suffice."
+    },
+    {
+      "audit_id": "modern-image-formats",
+      "savings_ms_total": 445040,
+      "hits": 5,
+      "explanation": "5 URLs serve some assets as JPG instead of WebP. Most destination images use WebP via image-loader.ts but some root-level pngs (icon-192, og-image) and .jpg fallbacks are still raster."
+    },
+    {
+      "audit_id": "legacy-javascript",
+      "savings_ms_total": 69680,
+      "hits": 5,
+      "explanation": "Polyfills/transpiled code being shipped to modern browsers. Likely browserslist target too conservative or a third-party script."
+    },
+    {
+      "audit_id": "uses-http2",
+      "savings_ms_total": 9640,
+      "hits": 3,
+      "explanation": "Few resources still on HTTP/1.1 — investigate which CDN endpoint."
+    },
+    {
+      "audit_id": "unused-javascript",
+      "savings_ms_total": 5530,
+      "hits": 9,
+      "explanation": "Small but ubiquitous — likely unused parts of vendor bundles."
+    }
+  ],
+  "fixes_attempted_in_phase": [],
+  "carried_forward": [
+    {
+      "title": "Image size opportunity sweep",
+      "description": "Audit `sizes` props on every <Image> component. Cards in explore-grid render at ~33vw on desktop, ~50vw on tablet, 100vw on mobile — but `sizes=\"(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw\"` may still pull 1600w on retina mobile. Tighten to actual rendered widths.",
+      "expected_perf_gain": "5-15 points on image-heavy pages",
+      "files_to_audit": [
+        "components/explore-grid.tsx",
+        "components/destination-detail.tsx",
+        "components/collection-detail.tsx",
+        "components/blog-article.tsx"
+      ]
+    },
+    {
+      "title": "Browserslist tightening",
+      "description": "Check apps/web/package.json `browserslist` and remove ES5 targets. Modern Vercel deploys can target ES2020+ for ~70KB savings.",
+      "expected_perf_gain": "2-5 points across the board"
+    },
+    {
+      "title": "Investigate offscreen-images on the 1.8M-savings URL",
+      "description": "The single-hit savings of 1.8s suggests one route has ~10 hero images all set to priority=true or eager-loaded.",
+      "next_step": "Run `lighthouse --view <url>` locally on each URL, sort opportunities by savings, find the largest"
+    }
+  ],
+  "fix_commit": "(deferred — not fixed in phase due to time budget; perf opportunities are real but require careful image-prop audits)"
+}

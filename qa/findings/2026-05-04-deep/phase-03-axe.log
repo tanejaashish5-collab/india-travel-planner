@@ -1,0 +1,1783 @@
+
+Running 40 tests using 2 workers
+
+  ✓   1 [mobile] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en (8.2s)
+  ✓   2 [desktop] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en (9.1s)
+  ✓   3 [mobile] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /hi (7.5s)
+  ✓   4 [desktop] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /hi (7.7s)
+  ✘   5 [mobile] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/explore (4.0s)
+  ✘   6 [desktop] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/explore (3.8s)
+  ✘   7 [mobile] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/explore (retry #1) (3.8s)
+  ✘   8 [desktop] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/explore (retry #1) (4.0s)
+  ✘   9 [mobile] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/destination/varanasi (6.5s)
+  ✘  10 [desktop] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/destination/varanasi (6.1s)
+  ✘  11 [mobile] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/destination/varanasi (retry #1) (5.8s)
+  ✘  12 [desktop] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/destination/varanasi (retry #1) (5.2s)
+  ✘  14 [desktop] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /hi/destination/varanasi (7.0s)
+  ✘  13 [mobile] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /hi/destination/varanasi (7.5s)
+  ✘  15 [desktop] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /hi/destination/varanasi (retry #1) (5.8s)
+  ✘  16 [mobile] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /hi/destination/varanasi (retry #1) (7.5s)
+  ✘  17 [desktop] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/destination/varanasi/april (4.9s)
+  ✘  18 [mobile] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/destination/varanasi/april (4.9s)
+  ✘  19 [desktop] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/destination/varanasi/april (retry #1) (5.0s)
+  ✘  20 [mobile] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/destination/varanasi/april (retry #1) (5.1s)
+  ✘  21 [desktop] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /hi/destination/varanasi/april (4.6s)
+  ✘  22 [mobile] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /hi/destination/varanasi/april (4.7s)
+  ✘  23 [desktop] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /hi/destination/varanasi/april (retry #1) (4.8s)
+  ✘  24 [mobile] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /hi/destination/varanasi/april (retry #1) (4.7s)
+  ✘  25 [desktop] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/where-to-go/april (9.1s)
+  ✘  26 [mobile] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/where-to-go/april (7.3s)
+  ✘  28 [mobile] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/where-to-go/april (retry #1) (7.3s)
+  ✘  27 [desktop] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/where-to-go/april (retry #1) (8.4s)
+  ✘  30 [desktop] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/collections (6.7s)
+  ✘  29 [mobile] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/collections (7.7s)
+  ✘  31 [desktop] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/collections (retry #1) (7.0s)
+  ✘  32 [mobile] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/collections (retry #1) (7.0s)
+  ✘  34 [mobile] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/blog (4.2s)
+  ✘  33 [desktop] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/blog (4.9s)
+  ✘  35 [mobile] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/blog (retry #1) (3.2s)
+  ✘  36 [desktop] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/blog (retry #1) (4.1s)
+  ✘  37 [mobile] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/ask (8.9s)
+  ✘  38 [desktop] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/ask (11.8s)
+  ✘  39 [mobile] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/ask (retry #1) (4.4s)
+  ✘  41 [mobile] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/gap-year (2.6s)
+  ✘  40 [desktop] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/ask (retry #1) (4.3s)
+  ✘  42 [mobile] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/gap-year (retry #1) (2.1s)
+  ✘  43 [desktop] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/gap-year (1.9s)
+  ✓  44 [mobile] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/trip (2.0s)
+  ✘  45 [desktop] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/gap-year (retry #1) (2.0s)
+  ✓  47 [desktop] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/trip (2.1s)
+  ✘  46 [mobile] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/treks (5.9s)
+  ✘  48 [desktop] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/treks (5.6s)
+  ✘  49 [mobile] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/treks (retry #1) (4.9s)
+  ✘  51 [mobile] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/about (2.8s)
+  ✘  50 [desktop] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/treks (retry #1) (6.0s)
+  ✘  52 [mobile] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/about (retry #1) (2.1s)
+  ✘  53 [desktop] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/about (1.9s)
+  ✘  54 [mobile] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/methodology (2.1s)
+  ✘  55 [desktop] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/about (retry #1) (2.0s)
+  ✘  56 [mobile] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/methodology (retry #1) (2.1s)
+  ✘  57 [desktop] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/methodology (1.9s)
+  ✘  58 [mobile] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/sos (2.3s)
+  ✘  59 [desktop] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/methodology (retry #1) (2.6s)
+  ✘  60 [mobile] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/sos (retry #1) (2.1s)
+  ✘  61 [desktop] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/sos (2.0s)
+  ✘  63 [desktop] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/sos (retry #1) (2.8s)
+  ✘  62 [mobile] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/festivals (6.1s)
+  ✘  64 [desktop] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/festivals (5.1s)
+  ✘  65 [mobile] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/festivals (retry #1) (5.3s)
+  ✘  67 [mobile] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/permits (3.0s)
+  ✘  66 [desktop] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/festivals (retry #1) (6.1s)
+  ✘  68 [mobile] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/permits (retry #1) (2.6s)
+  ✘  69 [desktop] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/permits (4.6s)
+  ✘  70 [mobile] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/road-conditions (4.0s)
+  ✘  72 [mobile] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/road-conditions (retry #1) (3.1s)
+  ✘  71 [desktop] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/permits (retry #1) (4.9s)
+  ✘  73 [desktop] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/road-conditions (3.3s)
+  ✘  74 [desktop] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/road-conditions (retry #1) (3.2s)
+
+
+  1) [mobile] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/explore ──────────────────────────────
+
+    Error: 1 serious/critical a11y violation(s) on /en/explore:
+      - color-contrast (serious, 129 nodes): Elements must meet minimum color contrast ratio thresholds
+
+      78 |         .map((v) => `  - ${v.id} (${v.impact}, ${v.nodes.length} nodes): ${v.help}`)
+      79 |         .join("\n");
+    > 80 |       throw new Error(
+         |             ^
+      81 |         `${serious.length} serious/critical a11y violation(s) on ${url}:\n${summary}`,
+      82 |       );
+      83 |     }
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/_deep/axe.spec.ts:80:13
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/_deep-axe-a11y-—-en-explore-mobile/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/_deep-axe-a11y-—-en-explore-mobile/error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: 1 serious/critical a11y violation(s) on /en/explore:
+      - color-contrast (serious, 131 nodes): Elements must meet minimum color contrast ratio thresholds
+
+      78 |         .map((v) => `  - ${v.id} (${v.impact}, ${v.nodes.length} nodes): ${v.help}`)
+      79 |         .join("\n");
+    > 80 |       throw new Error(
+         |             ^
+      81 |         `${serious.length} serious/critical a11y violation(s) on ${url}:\n${summary}`,
+      82 |       );
+      83 |     }
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/_deep/axe.spec.ts:80:13
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/_deep-axe-a11y-—-en-explore-mobile-retry1/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/_deep-axe-a11y-—-en-explore-mobile-retry1/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/_deep-axe-a11y-—-en-explore-mobile-retry1/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/_deep-axe-a11y-—-en-explore-mobile-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [mobile] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/destination/varanasi ─────────────────
+
+    Error: 3 serious/critical a11y violation(s) on /en/destination/varanasi:
+      - aria-allowed-attr (critical, 6 nodes): Elements must only use supported ARIA attributes
+      - color-contrast (serious, 78 nodes): Elements must meet minimum color contrast ratio thresholds
+      - select-name (critical, 5 nodes): Select element must have an accessible name
+
+      78 |         .map((v) => `  - ${v.id} (${v.impact}, ${v.nodes.length} nodes): ${v.help}`)
+      79 |         .join("\n");
+    > 80 |       throw new Error(
+         |             ^
+      81 |         `${serious.length} serious/critical a11y violation(s) on ${url}:\n${summary}`,
+      82 |       );
+      83 |     }
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/_deep/axe.spec.ts:80:13
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/_deep-axe-a11y-—-en-destination-varanasi-mobile/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/_deep-axe-a11y-—-en-destination-varanasi-mobile/error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: 3 serious/critical a11y violation(s) on /en/destination/varanasi:
+      - aria-allowed-attr (critical, 6 nodes): Elements must only use supported ARIA attributes
+      - color-contrast (serious, 78 nodes): Elements must meet minimum color contrast ratio thresholds
+      - select-name (critical, 5 nodes): Select element must have an accessible name
+
+      78 |         .map((v) => `  - ${v.id} (${v.impact}, ${v.nodes.length} nodes): ${v.help}`)
+      79 |         .join("\n");
+    > 80 |       throw new Error(
+         |             ^
+      81 |         `${serious.length} serious/critical a11y violation(s) on ${url}:\n${summary}`,
+      82 |       );
+      83 |     }
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/_deep/axe.spec.ts:80:13
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/_deep-axe-a11y-—-en-destination-varanasi-mobile-retry1/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/_deep-axe-a11y-—-en-destination-varanasi-mobile-retry1/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/_deep-axe-a11y-—-en-destination-varanasi-mobile-retry1/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/_deep-axe-a11y-—-en-destination-varanasi-mobile-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) [mobile] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /hi/destination/varanasi ─────────────────
+
+    Error: 3 serious/critical a11y violation(s) on /hi/destination/varanasi:
+      - aria-allowed-attr (critical, 6 nodes): Elements must only use supported ARIA attributes
+      - color-contrast (serious, 78 nodes): Elements must meet minimum color contrast ratio thresholds
+      - select-name (critical, 5 nodes): Select element must have an accessible name
+
+      78 |         .map((v) => `  - ${v.id} (${v.impact}, ${v.nodes.length} nodes): ${v.help}`)
+      79 |         .join("\n");
+    > 80 |       throw new Error(
+         |             ^
+      81 |         `${serious.length} serious/critical a11y violation(s) on ${url}:\n${summary}`,
+      82 |       );
+      83 |     }
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/_deep/axe.spec.ts:80:13
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/_deep-axe-a11y-—-hi-destination-varanasi-mobile/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/_deep-axe-a11y-—-hi-destination-varanasi-mobile/error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: 3 serious/critical a11y violation(s) on /hi/destination/varanasi:
+      - aria-allowed-attr (critical, 6 nodes): Elements must only use supported ARIA attributes
+      - color-contrast (serious, 78 nodes): Elements must meet minimum color contrast ratio thresholds
+      - select-name (critical, 5 nodes): Select element must have an accessible name
+
+      78 |         .map((v) => `  - ${v.id} (${v.impact}, ${v.nodes.length} nodes): ${v.help}`)
+      79 |         .join("\n");
+    > 80 |       throw new Error(
+         |             ^
+      81 |         `${serious.length} serious/critical a11y violation(s) on ${url}:\n${summary}`,
+      82 |       );
+      83 |     }
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/_deep/axe.spec.ts:80:13
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/_deep-axe-a11y-—-hi-destination-varanasi-mobile-retry1/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/_deep-axe-a11y-—-hi-destination-varanasi-mobile-retry1/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/_deep-axe-a11y-—-hi-destination-varanasi-mobile-retry1/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/_deep-axe-a11y-—-hi-destination-varanasi-mobile-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4) [mobile] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/destination/varanasi/april ───────────
+
+    Error: 1 serious/critical a11y violation(s) on /en/destination/varanasi/april:
+      - color-contrast (serious, 2 nodes): Elements must meet minimum color contrast ratio thresholds
+
+      78 |         .map((v) => `  - ${v.id} (${v.impact}, ${v.nodes.length} nodes): ${v.help}`)
+      79 |         .join("\n");
+    > 80 |       throw new Error(
+         |             ^
+      81 |         `${serious.length} serious/critical a11y violation(s) on ${url}:\n${summary}`,
+      82 |       );
+      83 |     }
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/_deep/axe.spec.ts:80:13
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/_deep-axe-a11y-—-en-destination-varanasi-april-mobile/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/_deep-axe-a11y-—-en-destination-varanasi-april-mobile/error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: 1 serious/critical a11y violation(s) on /en/destination/varanasi/april:
+      - color-contrast (serious, 2 nodes): Elements must meet minimum color contrast ratio thresholds
+
+      78 |         .map((v) => `  - ${v.id} (${v.impact}, ${v.nodes.length} nodes): ${v.help}`)
+      79 |         .join("\n");
+    > 80 |       throw new Error(
+         |             ^
+      81 |         `${serious.length} serious/critical a11y violation(s) on ${url}:\n${summary}`,
+      82 |       );
+      83 |     }
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/_deep/axe.spec.ts:80:13
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/_deep-axe-a11y-—-en-destination-varanasi-april-mobile-retry1/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/_deep-axe-a11y-—-en-destination-varanasi-april-mobile-retry1/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/_deep-axe-a11y-—-en-destination-varanasi-april-mobile-retry1/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/_deep-axe-a11y-—-en-destination-varanasi-april-mobile-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  5) [mobile] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /hi/destination/varanasi/april ───────────
+
+    Error: 1 serious/critical a11y violation(s) on /hi/destination/varanasi/april:
+      - color-contrast (serious, 2 nodes): Elements must meet minimum color contrast ratio thresholds
+
+      78 |         .map((v) => `  - ${v.id} (${v.impact}, ${v.nodes.length} nodes): ${v.help}`)
+      79 |         .join("\n");
+    > 80 |       throw new Error(
+         |             ^
+      81 |         `${serious.length} serious/critical a11y violation(s) on ${url}:\n${summary}`,
+      82 |       );
+      83 |     }
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/_deep/axe.spec.ts:80:13
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/_deep-axe-a11y-—-hi-destination-varanasi-april-mobile/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/_deep-axe-a11y-—-hi-destination-varanasi-april-mobile/error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: 1 serious/critical a11y violation(s) on /hi/destination/varanasi/april:
+      - color-contrast (serious, 2 nodes): Elements must meet minimum color contrast ratio thresholds
+
+      78 |         .map((v) => `  - ${v.id} (${v.impact}, ${v.nodes.length} nodes): ${v.help}`)
+      79 |         .join("\n");
+    > 80 |       throw new Error(
+         |             ^
+      81 |         `${serious.length} serious/critical a11y violation(s) on ${url}:\n${summary}`,
+      82 |       );
+      83 |     }
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/_deep/axe.spec.ts:80:13
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/_deep-axe-a11y-—-hi-destination-varanasi-april-mobile-retry1/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/_deep-axe-a11y-—-hi-destination-varanasi-april-mobile-retry1/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/_deep-axe-a11y-—-hi-destination-varanasi-april-mobile-retry1/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/_deep-axe-a11y-—-hi-destination-varanasi-april-mobile-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  6) [mobile] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/where-to-go/april ────────────────────
+
+    Error: 1 serious/critical a11y violation(s) on /en/where-to-go/april:
+      - color-contrast (serious, 325 nodes): Elements must meet minimum color contrast ratio thresholds
+
+      78 |         .map((v) => `  - ${v.id} (${v.impact}, ${v.nodes.length} nodes): ${v.help}`)
+      79 |         .join("\n");
+    > 80 |       throw new Error(
+         |             ^
+      81 |         `${serious.length} serious/critical a11y violation(s) on ${url}:\n${summary}`,
+      82 |       );
+      83 |     }
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/_deep/axe.spec.ts:80:13
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/_deep-axe-a11y-—-en-where-to-go-april-mobile/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/_deep-axe-a11y-—-en-where-to-go-april-mobile/error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: 1 serious/critical a11y violation(s) on /en/where-to-go/april:
+      - color-contrast (serious, 316 nodes): Elements must meet minimum color contrast ratio thresholds
+
+      78 |         .map((v) => `  - ${v.id} (${v.impact}, ${v.nodes.length} nodes): ${v.help}`)
+      79 |         .join("\n");
+    > 80 |       throw new Error(
+         |             ^
+      81 |         `${serious.length} serious/critical a11y violation(s) on ${url}:\n${summary}`,
+      82 |       );
+      83 |     }
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/_deep/axe.spec.ts:80:13
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/_deep-axe-a11y-—-en-where-to-go-april-mobile-retry1/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/_deep-axe-a11y-—-en-where-to-go-april-mobile-retry1/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/_deep-axe-a11y-—-en-where-to-go-april-mobile-retry1/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/_deep-axe-a11y-—-en-where-to-go-april-mobile-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  7) [mobile] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/collections ──────────────────────────
+
+    Error: 1 serious/critical a11y violation(s) on /en/collections:
+      - color-contrast (serious, 1 nodes): Elements must meet minimum color contrast ratio thresholds
+
+      78 |         .map((v) => `  - ${v.id} (${v.impact}, ${v.nodes.length} nodes): ${v.help}`)
+      79 |         .join("\n");
+    > 80 |       throw new Error(
+         |             ^
+      81 |         `${serious.length} serious/critical a11y violation(s) on ${url}:\n${summary}`,
+      82 |       );
+      83 |     }
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/_deep/axe.spec.ts:80:13
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/_deep-axe-a11y-—-en-collections-mobile/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/_deep-axe-a11y-—-en-collections-mobile/error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: 1 serious/critical a11y violation(s) on /en/collections:
+      - color-contrast (serious, 1 nodes): Elements must meet minimum color contrast ratio thresholds
+
+      78 |         .map((v) => `  - ${v.id} (${v.impact}, ${v.nodes.length} nodes): ${v.help}`)
+      79 |         .join("\n");
+    > 80 |       throw new Error(
+         |             ^
+      81 |         `${serious.length} serious/critical a11y violation(s) on ${url}:\n${summary}`,
+      82 |       );
+      83 |     }
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/_deep/axe.spec.ts:80:13
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/_deep-axe-a11y-—-en-collections-mobile-retry1/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/_deep-axe-a11y-—-en-collections-mobile-retry1/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/_deep-axe-a11y-—-en-collections-mobile-retry1/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/_deep-axe-a11y-—-en-collections-mobile-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  8) [mobile] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/blog ─────────────────────────────────
+
+    Error: 1 serious/critical a11y violation(s) on /en/blog:
+      - color-contrast (serious, 38 nodes): Elements must meet minimum color contrast ratio thresholds
+
+      78 |         .map((v) => `  - ${v.id} (${v.impact}, ${v.nodes.length} nodes): ${v.help}`)
+      79 |         .join("\n");
+    > 80 |       throw new Error(
+         |             ^
+      81 |         `${serious.length} serious/critical a11y violation(s) on ${url}:\n${summary}`,
+      82 |       );
+      83 |     }
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/_deep/axe.spec.ts:80:13
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/_deep-axe-a11y-—-en-blog-mobile/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/_deep-axe-a11y-—-en-blog-mobile/error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: 1 serious/critical a11y violation(s) on /en/blog:
+      - color-contrast (serious, 40 nodes): Elements must meet minimum color contrast ratio thresholds
+
+      78 |         .map((v) => `  - ${v.id} (${v.impact}, ${v.nodes.length} nodes): ${v.help}`)
+      79 |         .join("\n");
+    > 80 |       throw new Error(
+         |             ^
+      81 |         `${serious.length} serious/critical a11y violation(s) on ${url}:\n${summary}`,
+      82 |       );
+      83 |     }
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/_deep/axe.spec.ts:80:13
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/_deep-axe-a11y-—-en-blog-mobile-retry1/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/_deep-axe-a11y-—-en-blog-mobile-retry1/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/_deep-axe-a11y-—-en-blog-mobile-retry1/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/_deep-axe-a11y-—-en-blog-mobile-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  9) [mobile] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/ask ──────────────────────────────────
+
+    Error: 2 serious/critical a11y violation(s) on /en/ask:
+      - button-name (critical, 1 nodes): Buttons must have discernible text
+      - color-contrast (serious, 1 nodes): Elements must meet minimum color contrast ratio thresholds
+
+      78 |         .map((v) => `  - ${v.id} (${v.impact}, ${v.nodes.length} nodes): ${v.help}`)
+      79 |         .join("\n");
+    > 80 |       throw new Error(
+         |             ^
+      81 |         `${serious.length} serious/critical a11y violation(s) on ${url}:\n${summary}`,
+      82 |       );
+      83 |     }
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/_deep/axe.spec.ts:80:13
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/_deep-axe-a11y-—-en-ask-mobile/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/_deep-axe-a11y-—-en-ask-mobile/error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: 2 serious/critical a11y violation(s) on /en/ask:
+      - button-name (critical, 1 nodes): Buttons must have discernible text
+      - color-contrast (serious, 1 nodes): Elements must meet minimum color contrast ratio thresholds
+
+      78 |         .map((v) => `  - ${v.id} (${v.impact}, ${v.nodes.length} nodes): ${v.help}`)
+      79 |         .join("\n");
+    > 80 |       throw new Error(
+         |             ^
+      81 |         `${serious.length} serious/critical a11y violation(s) on ${url}:\n${summary}`,
+      82 |       );
+      83 |     }
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/_deep/axe.spec.ts:80:13
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/_deep-axe-a11y-—-en-ask-mobile-retry1/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/_deep-axe-a11y-—-en-ask-mobile-retry1/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/_deep-axe-a11y-—-en-ask-mobile-retry1/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/_deep-axe-a11y-—-en-ask-mobile-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  10) [mobile] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/gap-year ────────────────────────────
+
+    Error: 3 serious/critical a11y violation(s) on /en/gap-year:
+      - aria-allowed-attr (critical, 1 nodes): Elements must only use supported ARIA attributes
+      - label (critical, 1 nodes): Form elements must have labels
+      - select-name (critical, 1 nodes): Select element must have an accessible name
+
+      78 |         .map((v) => `  - ${v.id} (${v.impact}, ${v.nodes.length} nodes): ${v.help}`)
+      79 |         .join("\n");
+    > 80 |       throw new Error(
+         |             ^
+      81 |         `${serious.length} serious/critical a11y violation(s) on ${url}:\n${summary}`,
+      82 |       );
+      83 |     }
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/_deep/axe.spec.ts:80:13
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/_deep-axe-a11y-—-en-gap-year-mobile/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/_deep-axe-a11y-—-en-gap-year-mobile/error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: 3 serious/critical a11y violation(s) on /en/gap-year:
+      - aria-allowed-attr (critical, 1 nodes): Elements must only use supported ARIA attributes
+      - label (critical, 1 nodes): Form elements must have labels
+      - select-name (critical, 1 nodes): Select element must have an accessible name
+
+      78 |         .map((v) => `  - ${v.id} (${v.impact}, ${v.nodes.length} nodes): ${v.help}`)
+      79 |         .join("\n");
+    > 80 |       throw new Error(
+         |             ^
+      81 |         `${serious.length} serious/critical a11y violation(s) on ${url}:\n${summary}`,
+      82 |       );
+      83 |     }
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/_deep/axe.spec.ts:80:13
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/_deep-axe-a11y-—-en-gap-year-mobile-retry1/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/_deep-axe-a11y-—-en-gap-year-mobile-retry1/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/_deep-axe-a11y-—-en-gap-year-mobile-retry1/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/_deep-axe-a11y-—-en-gap-year-mobile-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  11) [mobile] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/treks ───────────────────────────────
+
+    Error: 1 serious/critical a11y violation(s) on /en/treks:
+      - color-contrast (serious, 303 nodes): Elements must meet minimum color contrast ratio thresholds
+
+      78 |         .map((v) => `  - ${v.id} (${v.impact}, ${v.nodes.length} nodes): ${v.help}`)
+      79 |         .join("\n");
+    > 80 |       throw new Error(
+         |             ^
+      81 |         `${serious.length} serious/critical a11y violation(s) on ${url}:\n${summary}`,
+      82 |       );
+      83 |     }
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/_deep/axe.spec.ts:80:13
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/_deep-axe-a11y-—-en-treks-mobile/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/_deep-axe-a11y-—-en-treks-mobile/error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: 1 serious/critical a11y violation(s) on /en/treks:
+      - color-contrast (serious, 281 nodes): Elements must meet minimum color contrast ratio thresholds
+
+      78 |         .map((v) => `  - ${v.id} (${v.impact}, ${v.nodes.length} nodes): ${v.help}`)
+      79 |         .join("\n");
+    > 80 |       throw new Error(
+         |             ^
+      81 |         `${serious.length} serious/critical a11y violation(s) on ${url}:\n${summary}`,
+      82 |       );
+      83 |     }
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/_deep/axe.spec.ts:80:13
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/_deep-axe-a11y-—-en-treks-mobile-retry1/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/_deep-axe-a11y-—-en-treks-mobile-retry1/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/_deep-axe-a11y-—-en-treks-mobile-retry1/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/_deep-axe-a11y-—-en-treks-mobile-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  12) [mobile] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/about ───────────────────────────────
+
+    Error: 1 serious/critical a11y violation(s) on /en/about:
+      - color-contrast (serious, 2 nodes): Elements must meet minimum color contrast ratio thresholds
+
+      78 |         .map((v) => `  - ${v.id} (${v.impact}, ${v.nodes.length} nodes): ${v.help}`)
+      79 |         .join("\n");
+    > 80 |       throw new Error(
+         |             ^
+      81 |         `${serious.length} serious/critical a11y violation(s) on ${url}:\n${summary}`,
+      82 |       );
+      83 |     }
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/_deep/axe.spec.ts:80:13
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/_deep-axe-a11y-—-en-about-mobile/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/_deep-axe-a11y-—-en-about-mobile/error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: 1 serious/critical a11y violation(s) on /en/about:
+      - color-contrast (serious, 2 nodes): Elements must meet minimum color contrast ratio thresholds
+
+      78 |         .map((v) => `  - ${v.id} (${v.impact}, ${v.nodes.length} nodes): ${v.help}`)
+      79 |         .join("\n");
+    > 80 |       throw new Error(
+         |             ^
+      81 |         `${serious.length} serious/critical a11y violation(s) on ${url}:\n${summary}`,
+      82 |       );
+      83 |     }
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/_deep/axe.spec.ts:80:13
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/_deep-axe-a11y-—-en-about-mobile-retry1/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/_deep-axe-a11y-—-en-about-mobile-retry1/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/_deep-axe-a11y-—-en-about-mobile-retry1/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/_deep-axe-a11y-—-en-about-mobile-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  13) [mobile] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/methodology ─────────────────────────
+
+    Error: 1 serious/critical a11y violation(s) on /en/methodology:
+      - color-contrast (serious, 3 nodes): Elements must meet minimum color contrast ratio thresholds
+
+      78 |         .map((v) => `  - ${v.id} (${v.impact}, ${v.nodes.length} nodes): ${v.help}`)
+      79 |         .join("\n");
+    > 80 |       throw new Error(
+         |             ^
+      81 |         `${serious.length} serious/critical a11y violation(s) on ${url}:\n${summary}`,
+      82 |       );
+      83 |     }
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/_deep/axe.spec.ts:80:13
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/_deep-axe-a11y-—-en-methodology-mobile/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/_deep-axe-a11y-—-en-methodology-mobile/error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: 1 serious/critical a11y violation(s) on /en/methodology:
+      - color-contrast (serious, 3 nodes): Elements must meet minimum color contrast ratio thresholds
+
+      78 |         .map((v) => `  - ${v.id} (${v.impact}, ${v.nodes.length} nodes): ${v.help}`)
+      79 |         .join("\n");
+    > 80 |       throw new Error(
+         |             ^
+      81 |         `${serious.length} serious/critical a11y violation(s) on ${url}:\n${summary}`,
+      82 |       );
+      83 |     }
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/_deep/axe.spec.ts:80:13
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/_deep-axe-a11y-—-en-methodology-mobile-retry1/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/_deep-axe-a11y-—-en-methodology-mobile-retry1/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/_deep-axe-a11y-—-en-methodology-mobile-retry1/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/_deep-axe-a11y-—-en-methodology-mobile-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  14) [mobile] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/sos ─────────────────────────────────
+
+    Error: 1 serious/critical a11y violation(s) on /en/sos:
+      - color-contrast (serious, 1 nodes): Elements must meet minimum color contrast ratio thresholds
+
+      78 |         .map((v) => `  - ${v.id} (${v.impact}, ${v.nodes.length} nodes): ${v.help}`)
+      79 |         .join("\n");
+    > 80 |       throw new Error(
+         |             ^
+      81 |         `${serious.length} serious/critical a11y violation(s) on ${url}:\n${summary}`,
+      82 |       );
+      83 |     }
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/_deep/axe.spec.ts:80:13
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/_deep-axe-a11y-—-en-sos-mobile/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/_deep-axe-a11y-—-en-sos-mobile/error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: 1 serious/critical a11y violation(s) on /en/sos:
+      - color-contrast (serious, 1 nodes): Elements must meet minimum color contrast ratio thresholds
+
+      78 |         .map((v) => `  - ${v.id} (${v.impact}, ${v.nodes.length} nodes): ${v.help}`)
+      79 |         .join("\n");
+    > 80 |       throw new Error(
+         |             ^
+      81 |         `${serious.length} serious/critical a11y violation(s) on ${url}:\n${summary}`,
+      82 |       );
+      83 |     }
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/_deep/axe.spec.ts:80:13
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/_deep-axe-a11y-—-en-sos-mobile-retry1/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/_deep-axe-a11y-—-en-sos-mobile-retry1/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/_deep-axe-a11y-—-en-sos-mobile-retry1/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/_deep-axe-a11y-—-en-sos-mobile-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  15) [mobile] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/festivals ───────────────────────────
+
+    Error: 1 serious/critical a11y violation(s) on /en/festivals:
+      - color-contrast (serious, 447 nodes): Elements must meet minimum color contrast ratio thresholds
+
+      78 |         .map((v) => `  - ${v.id} (${v.impact}, ${v.nodes.length} nodes): ${v.help}`)
+      79 |         .join("\n");
+    > 80 |       throw new Error(
+         |             ^
+      81 |         `${serious.length} serious/critical a11y violation(s) on ${url}:\n${summary}`,
+      82 |       );
+      83 |     }
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/_deep/axe.spec.ts:80:13
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/_deep-axe-a11y-—-en-festivals-mobile/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/_deep-axe-a11y-—-en-festivals-mobile/error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: 1 serious/critical a11y violation(s) on /en/festivals:
+      - color-contrast (serious, 439 nodes): Elements must meet minimum color contrast ratio thresholds
+
+      78 |         .map((v) => `  - ${v.id} (${v.impact}, ${v.nodes.length} nodes): ${v.help}`)
+      79 |         .join("\n");
+    > 80 |       throw new Error(
+         |             ^
+      81 |         `${serious.length} serious/critical a11y violation(s) on ${url}:\n${summary}`,
+      82 |       );
+      83 |     }
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/_deep/axe.spec.ts:80:13
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/_deep-axe-a11y-—-en-festivals-mobile-retry1/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/_deep-axe-a11y-—-en-festivals-mobile-retry1/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/_deep-axe-a11y-—-en-festivals-mobile-retry1/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/_deep-axe-a11y-—-en-festivals-mobile-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  16) [mobile] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/permits ─────────────────────────────
+
+    Error: 2 serious/critical a11y violation(s) on /en/permits:
+      - color-contrast (serious, 3 nodes): Elements must meet minimum color contrast ratio thresholds
+      - select-name (critical, 1 nodes): Select element must have an accessible name
+
+      78 |         .map((v) => `  - ${v.id} (${v.impact}, ${v.nodes.length} nodes): ${v.help}`)
+      79 |         .join("\n");
+    > 80 |       throw new Error(
+         |             ^
+      81 |         `${serious.length} serious/critical a11y violation(s) on ${url}:\n${summary}`,
+      82 |       );
+      83 |     }
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/_deep/axe.spec.ts:80:13
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/_deep-axe-a11y-—-en-permits-mobile/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/_deep-axe-a11y-—-en-permits-mobile/error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: 2 serious/critical a11y violation(s) on /en/permits:
+      - color-contrast (serious, 23 nodes): Elements must meet minimum color contrast ratio thresholds
+      - select-name (critical, 1 nodes): Select element must have an accessible name
+
+      78 |         .map((v) => `  - ${v.id} (${v.impact}, ${v.nodes.length} nodes): ${v.help}`)
+      79 |         .join("\n");
+    > 80 |       throw new Error(
+         |             ^
+      81 |         `${serious.length} serious/critical a11y violation(s) on ${url}:\n${summary}`,
+      82 |       );
+      83 |     }
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/_deep/axe.spec.ts:80:13
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/_deep-axe-a11y-—-en-permits-mobile-retry1/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/_deep-axe-a11y-—-en-permits-mobile-retry1/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/_deep-axe-a11y-—-en-permits-mobile-retry1/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/_deep-axe-a11y-—-en-permits-mobile-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  17) [mobile] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/road-conditions ─────────────────────
+
+    Error: 3 serious/critical a11y violation(s) on /en/road-conditions:
+      - color-contrast (serious, 56 nodes): Elements must meet minimum color contrast ratio thresholds
+      - image-alt (critical, 1 nodes): Images must have alternative text
+      - select-name (critical, 1 nodes): Select element must have an accessible name
+
+      78 |         .map((v) => `  - ${v.id} (${v.impact}, ${v.nodes.length} nodes): ${v.help}`)
+      79 |         .join("\n");
+    > 80 |       throw new Error(
+         |             ^
+      81 |         `${serious.length} serious/critical a11y violation(s) on ${url}:\n${summary}`,
+      82 |       );
+      83 |     }
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/_deep/axe.spec.ts:80:13
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/_deep-axe-a11y-—-en-road-conditions-mobile/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/_deep-axe-a11y-—-en-road-conditions-mobile/error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: 3 serious/critical a11y violation(s) on /en/road-conditions:
+      - color-contrast (serious, 68 nodes): Elements must meet minimum color contrast ratio thresholds
+      - image-alt (critical, 1 nodes): Images must have alternative text
+      - select-name (critical, 1 nodes): Select element must have an accessible name
+
+      78 |         .map((v) => `  - ${v.id} (${v.impact}, ${v.nodes.length} nodes): ${v.help}`)
+      79 |         .join("\n");
+    > 80 |       throw new Error(
+         |             ^
+      81 |         `${serious.length} serious/critical a11y violation(s) on ${url}:\n${summary}`,
+      82 |       );
+      83 |     }
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/_deep/axe.spec.ts:80:13
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/_deep-axe-a11y-—-en-road-conditions-mobile-retry1/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/_deep-axe-a11y-—-en-road-conditions-mobile-retry1/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/_deep-axe-a11y-—-en-road-conditions-mobile-retry1/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/_deep-axe-a11y-—-en-road-conditions-mobile-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  18) [desktop] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/explore ────────────────────────────
+
+    Error: 1 serious/critical a11y violation(s) on /en/explore:
+      - color-contrast (serious, 132 nodes): Elements must meet minimum color contrast ratio thresholds
+
+      78 |         .map((v) => `  - ${v.id} (${v.impact}, ${v.nodes.length} nodes): ${v.help}`)
+      79 |         .join("\n");
+    > 80 |       throw new Error(
+         |             ^
+      81 |         `${serious.length} serious/critical a11y violation(s) on ${url}:\n${summary}`,
+      82 |       );
+      83 |     }
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/_deep/axe.spec.ts:80:13
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/_deep-axe-a11y-—-en-explore-desktop/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/_deep-axe-a11y-—-en-explore-desktop/error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: 1 serious/critical a11y violation(s) on /en/explore:
+      - color-contrast (serious, 133 nodes): Elements must meet minimum color contrast ratio thresholds
+
+      78 |         .map((v) => `  - ${v.id} (${v.impact}, ${v.nodes.length} nodes): ${v.help}`)
+      79 |         .join("\n");
+    > 80 |       throw new Error(
+         |             ^
+      81 |         `${serious.length} serious/critical a11y violation(s) on ${url}:\n${summary}`,
+      82 |       );
+      83 |     }
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/_deep/axe.spec.ts:80:13
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/_deep-axe-a11y-—-en-explore-desktop-retry1/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/_deep-axe-a11y-—-en-explore-desktop-retry1/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/_deep-axe-a11y-—-en-explore-desktop-retry1/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/_deep-axe-a11y-—-en-explore-desktop-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  19) [desktop] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/destination/varanasi ───────────────
+
+    Error: 2 serious/critical a11y violation(s) on /en/destination/varanasi:
+      - aria-allowed-attr (critical, 6 nodes): Elements must only use supported ARIA attributes
+      - select-name (critical, 5 nodes): Select element must have an accessible name
+
+      78 |         .map((v) => `  - ${v.id} (${v.impact}, ${v.nodes.length} nodes): ${v.help}`)
+      79 |         .join("\n");
+    > 80 |       throw new Error(
+         |             ^
+      81 |         `${serious.length} serious/critical a11y violation(s) on ${url}:\n${summary}`,
+      82 |       );
+      83 |     }
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/_deep/axe.spec.ts:80:13
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/_deep-axe-a11y-—-en-destination-varanasi-desktop/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/_deep-axe-a11y-—-en-destination-varanasi-desktop/error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: 2 serious/critical a11y violation(s) on /en/destination/varanasi:
+      - aria-allowed-attr (critical, 6 nodes): Elements must only use supported ARIA attributes
+      - select-name (critical, 5 nodes): Select element must have an accessible name
+
+      78 |         .map((v) => `  - ${v.id} (${v.impact}, ${v.nodes.length} nodes): ${v.help}`)
+      79 |         .join("\n");
+    > 80 |       throw new Error(
+         |             ^
+      81 |         `${serious.length} serious/critical a11y violation(s) on ${url}:\n${summary}`,
+      82 |       );
+      83 |     }
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/_deep/axe.spec.ts:80:13
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/_deep-axe-a11y-—-en-destination-varanasi-desktop-retry1/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/_deep-axe-a11y-—-en-destination-varanasi-desktop-retry1/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/_deep-axe-a11y-—-en-destination-varanasi-desktop-retry1/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/_deep-axe-a11y-—-en-destination-varanasi-desktop-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  20) [desktop] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /hi/destination/varanasi ───────────────
+
+    Error: 3 serious/critical a11y violation(s) on /hi/destination/varanasi:
+      - aria-allowed-attr (critical, 6 nodes): Elements must only use supported ARIA attributes
+      - color-contrast (serious, 77 nodes): Elements must meet minimum color contrast ratio thresholds
+      - select-name (critical, 5 nodes): Select element must have an accessible name
+
+      78 |         .map((v) => `  - ${v.id} (${v.impact}, ${v.nodes.length} nodes): ${v.help}`)
+      79 |         .join("\n");
+    > 80 |       throw new Error(
+         |             ^
+      81 |         `${serious.length} serious/critical a11y violation(s) on ${url}:\n${summary}`,
+      82 |       );
+      83 |     }
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/_deep/axe.spec.ts:80:13
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/_deep-axe-a11y-—-hi-destination-varanasi-desktop/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/_deep-axe-a11y-—-hi-destination-varanasi-desktop/error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: 3 serious/critical a11y violation(s) on /hi/destination/varanasi:
+      - aria-allowed-attr (critical, 6 nodes): Elements must only use supported ARIA attributes
+      - color-contrast (serious, 77 nodes): Elements must meet minimum color contrast ratio thresholds
+      - select-name (critical, 5 nodes): Select element must have an accessible name
+
+      78 |         .map((v) => `  - ${v.id} (${v.impact}, ${v.nodes.length} nodes): ${v.help}`)
+      79 |         .join("\n");
+    > 80 |       throw new Error(
+         |             ^
+      81 |         `${serious.length} serious/critical a11y violation(s) on ${url}:\n${summary}`,
+      82 |       );
+      83 |     }
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/_deep/axe.spec.ts:80:13
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/_deep-axe-a11y-—-hi-destination-varanasi-desktop-retry1/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/_deep-axe-a11y-—-hi-destination-varanasi-desktop-retry1/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/_deep-axe-a11y-—-hi-destination-varanasi-desktop-retry1/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/_deep-axe-a11y-—-hi-destination-varanasi-desktop-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  21) [desktop] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/destination/varanasi/april ─────────
+
+    Error: 1 serious/critical a11y violation(s) on /en/destination/varanasi/april:
+      - color-contrast (serious, 2 nodes): Elements must meet minimum color contrast ratio thresholds
+
+      78 |         .map((v) => `  - ${v.id} (${v.impact}, ${v.nodes.length} nodes): ${v.help}`)
+      79 |         .join("\n");
+    > 80 |       throw new Error(
+         |             ^
+      81 |         `${serious.length} serious/critical a11y violation(s) on ${url}:\n${summary}`,
+      82 |       );
+      83 |     }
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/_deep/axe.spec.ts:80:13
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/_deep-axe-a11y-—-en-destination-varanasi-april-desktop/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/_deep-axe-a11y-—-en-destination-varanasi-april-desktop/error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: 1 serious/critical a11y violation(s) on /en/destination/varanasi/april:
+      - color-contrast (serious, 2 nodes): Elements must meet minimum color contrast ratio thresholds
+
+      78 |         .map((v) => `  - ${v.id} (${v.impact}, ${v.nodes.length} nodes): ${v.help}`)
+      79 |         .join("\n");
+    > 80 |       throw new Error(
+         |             ^
+      81 |         `${serious.length} serious/critical a11y violation(s) on ${url}:\n${summary}`,
+      82 |       );
+      83 |     }
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/_deep/axe.spec.ts:80:13
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/_deep-axe-a11y-—-en-destination-varanasi-april-desktop-retry1/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/_deep-axe-a11y-—-en-destination-varanasi-april-desktop-retry1/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/_deep-axe-a11y-—-en-destination-varanasi-april-desktop-retry1/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/_deep-axe-a11y-—-en-destination-varanasi-april-desktop-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  22) [desktop] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /hi/destination/varanasi/april ─────────
+
+    Error: 1 serious/critical a11y violation(s) on /hi/destination/varanasi/april:
+      - color-contrast (serious, 2 nodes): Elements must meet minimum color contrast ratio thresholds
+
+      78 |         .map((v) => `  - ${v.id} (${v.impact}, ${v.nodes.length} nodes): ${v.help}`)
+      79 |         .join("\n");
+    > 80 |       throw new Error(
+         |             ^
+      81 |         `${serious.length} serious/critical a11y violation(s) on ${url}:\n${summary}`,
+      82 |       );
+      83 |     }
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/_deep/axe.spec.ts:80:13
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/_deep-axe-a11y-—-hi-destination-varanasi-april-desktop/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/_deep-axe-a11y-—-hi-destination-varanasi-april-desktop/error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: 1 serious/critical a11y violation(s) on /hi/destination/varanasi/april:
+      - color-contrast (serious, 2 nodes): Elements must meet minimum color contrast ratio thresholds
+
+      78 |         .map((v) => `  - ${v.id} (${v.impact}, ${v.nodes.length} nodes): ${v.help}`)
+      79 |         .join("\n");
+    > 80 |       throw new Error(
+         |             ^
+      81 |         `${serious.length} serious/critical a11y violation(s) on ${url}:\n${summary}`,
+      82 |       );
+      83 |     }
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/_deep/axe.spec.ts:80:13
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/_deep-axe-a11y-—-hi-destination-varanasi-april-desktop-retry1/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/_deep-axe-a11y-—-hi-destination-varanasi-april-desktop-retry1/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/_deep-axe-a11y-—-hi-destination-varanasi-april-desktop-retry1/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/_deep-axe-a11y-—-hi-destination-varanasi-april-desktop-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  23) [desktop] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/where-to-go/april ──────────────────
+
+    Error: 1 serious/critical a11y violation(s) on /en/where-to-go/april:
+      - color-contrast (serious, 401 nodes): Elements must meet minimum color contrast ratio thresholds
+
+      78 |         .map((v) => `  - ${v.id} (${v.impact}, ${v.nodes.length} nodes): ${v.help}`)
+      79 |         .join("\n");
+    > 80 |       throw new Error(
+         |             ^
+      81 |         `${serious.length} serious/critical a11y violation(s) on ${url}:\n${summary}`,
+      82 |       );
+      83 |     }
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/_deep/axe.spec.ts:80:13
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/_deep-axe-a11y-—-en-where-to-go-april-desktop/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/_deep-axe-a11y-—-en-where-to-go-april-desktop/error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: 1 serious/critical a11y violation(s) on /en/where-to-go/april:
+      - color-contrast (serious, 393 nodes): Elements must meet minimum color contrast ratio thresholds
+
+      78 |         .map((v) => `  - ${v.id} (${v.impact}, ${v.nodes.length} nodes): ${v.help}`)
+      79 |         .join("\n");
+    > 80 |       throw new Error(
+         |             ^
+      81 |         `${serious.length} serious/critical a11y violation(s) on ${url}:\n${summary}`,
+      82 |       );
+      83 |     }
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/_deep/axe.spec.ts:80:13
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/_deep-axe-a11y-—-en-where-to-go-april-desktop-retry1/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/_deep-axe-a11y-—-en-where-to-go-april-desktop-retry1/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/_deep-axe-a11y-—-en-where-to-go-april-desktop-retry1/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/_deep-axe-a11y-—-en-where-to-go-april-desktop-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  24) [desktop] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/collections ────────────────────────
+
+    Error: 1 serious/critical a11y violation(s) on /en/collections:
+      - color-contrast (serious, 1 nodes): Elements must meet minimum color contrast ratio thresholds
+
+      78 |         .map((v) => `  - ${v.id} (${v.impact}, ${v.nodes.length} nodes): ${v.help}`)
+      79 |         .join("\n");
+    > 80 |       throw new Error(
+         |             ^
+      81 |         `${serious.length} serious/critical a11y violation(s) on ${url}:\n${summary}`,
+      82 |       );
+      83 |     }
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/_deep/axe.spec.ts:80:13
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/_deep-axe-a11y-—-en-collections-desktop/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/_deep-axe-a11y-—-en-collections-desktop/error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: 1 serious/critical a11y violation(s) on /en/collections:
+      - color-contrast (serious, 1 nodes): Elements must meet minimum color contrast ratio thresholds
+
+      78 |         .map((v) => `  - ${v.id} (${v.impact}, ${v.nodes.length} nodes): ${v.help}`)
+      79 |         .join("\n");
+    > 80 |       throw new Error(
+         |             ^
+      81 |         `${serious.length} serious/critical a11y violation(s) on ${url}:\n${summary}`,
+      82 |       );
+      83 |     }
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/_deep/axe.spec.ts:80:13
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/_deep-axe-a11y-—-en-collections-desktop-retry1/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/_deep-axe-a11y-—-en-collections-desktop-retry1/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/_deep-axe-a11y-—-en-collections-desktop-retry1/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/_deep-axe-a11y-—-en-collections-desktop-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  25) [desktop] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/blog ───────────────────────────────
+
+    Error: 1 serious/critical a11y violation(s) on /en/blog:
+      - color-contrast (serious, 35 nodes): Elements must meet minimum color contrast ratio thresholds
+
+      78 |         .map((v) => `  - ${v.id} (${v.impact}, ${v.nodes.length} nodes): ${v.help}`)
+      79 |         .join("\n");
+    > 80 |       throw new Error(
+         |             ^
+      81 |         `${serious.length} serious/critical a11y violation(s) on ${url}:\n${summary}`,
+      82 |       );
+      83 |     }
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/_deep/axe.spec.ts:80:13
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/_deep-axe-a11y-—-en-blog-desktop/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/_deep-axe-a11y-—-en-blog-desktop/error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: 1 serious/critical a11y violation(s) on /en/blog:
+      - color-contrast (serious, 35 nodes): Elements must meet minimum color contrast ratio thresholds
+
+      78 |         .map((v) => `  - ${v.id} (${v.impact}, ${v.nodes.length} nodes): ${v.help}`)
+      79 |         .join("\n");
+    > 80 |       throw new Error(
+         |             ^
+      81 |         `${serious.length} serious/critical a11y violation(s) on ${url}:\n${summary}`,
+      82 |       );
+      83 |     }
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/_deep/axe.spec.ts:80:13
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/_deep-axe-a11y-—-en-blog-desktop-retry1/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/_deep-axe-a11y-—-en-blog-desktop-retry1/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/_deep-axe-a11y-—-en-blog-desktop-retry1/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/_deep-axe-a11y-—-en-blog-desktop-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  26) [desktop] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/ask ────────────────────────────────
+
+    Error: 2 serious/critical a11y violation(s) on /en/ask:
+      - button-name (critical, 1 nodes): Buttons must have discernible text
+      - color-contrast (serious, 1 nodes): Elements must meet minimum color contrast ratio thresholds
+
+      78 |         .map((v) => `  - ${v.id} (${v.impact}, ${v.nodes.length} nodes): ${v.help}`)
+      79 |         .join("\n");
+    > 80 |       throw new Error(
+         |             ^
+      81 |         `${serious.length} serious/critical a11y violation(s) on ${url}:\n${summary}`,
+      82 |       );
+      83 |     }
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/_deep/axe.spec.ts:80:13
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/_deep-axe-a11y-—-en-ask-desktop/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/_deep-axe-a11y-—-en-ask-desktop/error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: 2 serious/critical a11y violation(s) on /en/ask:
+      - button-name (critical, 1 nodes): Buttons must have discernible text
+      - color-contrast (serious, 1 nodes): Elements must meet minimum color contrast ratio thresholds
+
+      78 |         .map((v) => `  - ${v.id} (${v.impact}, ${v.nodes.length} nodes): ${v.help}`)
+      79 |         .join("\n");
+    > 80 |       throw new Error(
+         |             ^
+      81 |         `${serious.length} serious/critical a11y violation(s) on ${url}:\n${summary}`,
+      82 |       );
+      83 |     }
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/_deep/axe.spec.ts:80:13
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/_deep-axe-a11y-—-en-ask-desktop-retry1/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/_deep-axe-a11y-—-en-ask-desktop-retry1/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/_deep-axe-a11y-—-en-ask-desktop-retry1/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/_deep-axe-a11y-—-en-ask-desktop-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  27) [desktop] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/gap-year ───────────────────────────
+
+    Error: 3 serious/critical a11y violation(s) on /en/gap-year:
+      - aria-allowed-attr (critical, 1 nodes): Elements must only use supported ARIA attributes
+      - label (critical, 1 nodes): Form elements must have labels
+      - select-name (critical, 1 nodes): Select element must have an accessible name
+
+      78 |         .map((v) => `  - ${v.id} (${v.impact}, ${v.nodes.length} nodes): ${v.help}`)
+      79 |         .join("\n");
+    > 80 |       throw new Error(
+         |             ^
+      81 |         `${serious.length} serious/critical a11y violation(s) on ${url}:\n${summary}`,
+      82 |       );
+      83 |     }
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/_deep/axe.spec.ts:80:13
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/_deep-axe-a11y-—-en-gap-year-desktop/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/_deep-axe-a11y-—-en-gap-year-desktop/error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: 3 serious/critical a11y violation(s) on /en/gap-year:
+      - aria-allowed-attr (critical, 1 nodes): Elements must only use supported ARIA attributes
+      - label (critical, 1 nodes): Form elements must have labels
+      - select-name (critical, 1 nodes): Select element must have an accessible name
+
+      78 |         .map((v) => `  - ${v.id} (${v.impact}, ${v.nodes.length} nodes): ${v.help}`)
+      79 |         .join("\n");
+    > 80 |       throw new Error(
+         |             ^
+      81 |         `${serious.length} serious/critical a11y violation(s) on ${url}:\n${summary}`,
+      82 |       );
+      83 |     }
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/_deep/axe.spec.ts:80:13
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/_deep-axe-a11y-—-en-gap-year-desktop-retry1/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/_deep-axe-a11y-—-en-gap-year-desktop-retry1/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/_deep-axe-a11y-—-en-gap-year-desktop-retry1/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/_deep-axe-a11y-—-en-gap-year-desktop-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  28) [desktop] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/treks ──────────────────────────────
+
+    Error: 1 serious/critical a11y violation(s) on /en/treks:
+      - color-contrast (serious, 235 nodes): Elements must meet minimum color contrast ratio thresholds
+
+      78 |         .map((v) => `  - ${v.id} (${v.impact}, ${v.nodes.length} nodes): ${v.help}`)
+      79 |         .join("\n");
+    > 80 |       throw new Error(
+         |             ^
+      81 |         `${serious.length} serious/critical a11y violation(s) on ${url}:\n${summary}`,
+      82 |       );
+      83 |     }
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/_deep/axe.spec.ts:80:13
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/_deep-axe-a11y-—-en-treks-desktop/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/_deep-axe-a11y-—-en-treks-desktop/error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: 1 serious/critical a11y violation(s) on /en/treks:
+      - color-contrast (serious, 272 nodes): Elements must meet minimum color contrast ratio thresholds
+
+      78 |         .map((v) => `  - ${v.id} (${v.impact}, ${v.nodes.length} nodes): ${v.help}`)
+      79 |         .join("\n");
+    > 80 |       throw new Error(
+         |             ^
+      81 |         `${serious.length} serious/critical a11y violation(s) on ${url}:\n${summary}`,
+      82 |       );
+      83 |     }
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/_deep/axe.spec.ts:80:13
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/_deep-axe-a11y-—-en-treks-desktop-retry1/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/_deep-axe-a11y-—-en-treks-desktop-retry1/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/_deep-axe-a11y-—-en-treks-desktop-retry1/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/_deep-axe-a11y-—-en-treks-desktop-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  29) [desktop] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/about ──────────────────────────────
+
+    Error: 1 serious/critical a11y violation(s) on /en/about:
+      - color-contrast (serious, 2 nodes): Elements must meet minimum color contrast ratio thresholds
+
+      78 |         .map((v) => `  - ${v.id} (${v.impact}, ${v.nodes.length} nodes): ${v.help}`)
+      79 |         .join("\n");
+    > 80 |       throw new Error(
+         |             ^
+      81 |         `${serious.length} serious/critical a11y violation(s) on ${url}:\n${summary}`,
+      82 |       );
+      83 |     }
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/_deep/axe.spec.ts:80:13
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/_deep-axe-a11y-—-en-about-desktop/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/_deep-axe-a11y-—-en-about-desktop/error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: 1 serious/critical a11y violation(s) on /en/about:
+      - color-contrast (serious, 2 nodes): Elements must meet minimum color contrast ratio thresholds
+
+      78 |         .map((v) => `  - ${v.id} (${v.impact}, ${v.nodes.length} nodes): ${v.help}`)
+      79 |         .join("\n");
+    > 80 |       throw new Error(
+         |             ^
+      81 |         `${serious.length} serious/critical a11y violation(s) on ${url}:\n${summary}`,
+      82 |       );
+      83 |     }
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/_deep/axe.spec.ts:80:13
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/_deep-axe-a11y-—-en-about-desktop-retry1/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/_deep-axe-a11y-—-en-about-desktop-retry1/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/_deep-axe-a11y-—-en-about-desktop-retry1/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/_deep-axe-a11y-—-en-about-desktop-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  30) [desktop] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/methodology ────────────────────────
+
+    Error: 1 serious/critical a11y violation(s) on /en/methodology:
+      - color-contrast (serious, 3 nodes): Elements must meet minimum color contrast ratio thresholds
+
+      78 |         .map((v) => `  - ${v.id} (${v.impact}, ${v.nodes.length} nodes): ${v.help}`)
+      79 |         .join("\n");
+    > 80 |       throw new Error(
+         |             ^
+      81 |         `${serious.length} serious/critical a11y violation(s) on ${url}:\n${summary}`,
+      82 |       );
+      83 |     }
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/_deep/axe.spec.ts:80:13
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/_deep-axe-a11y-—-en-methodology-desktop/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/_deep-axe-a11y-—-en-methodology-desktop/error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: 1 serious/critical a11y violation(s) on /en/methodology:
+      - color-contrast (serious, 3 nodes): Elements must meet minimum color contrast ratio thresholds
+
+      78 |         .map((v) => `  - ${v.id} (${v.impact}, ${v.nodes.length} nodes): ${v.help}`)
+      79 |         .join("\n");
+    > 80 |       throw new Error(
+         |             ^
+      81 |         `${serious.length} serious/critical a11y violation(s) on ${url}:\n${summary}`,
+      82 |       );
+      83 |     }
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/_deep/axe.spec.ts:80:13
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/_deep-axe-a11y-—-en-methodology-desktop-retry1/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/_deep-axe-a11y-—-en-methodology-desktop-retry1/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/_deep-axe-a11y-—-en-methodology-desktop-retry1/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/_deep-axe-a11y-—-en-methodology-desktop-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  31) [desktop] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/sos ────────────────────────────────
+
+    Error: 1 serious/critical a11y violation(s) on /en/sos:
+      - color-contrast (serious, 1 nodes): Elements must meet minimum color contrast ratio thresholds
+
+      78 |         .map((v) => `  - ${v.id} (${v.impact}, ${v.nodes.length} nodes): ${v.help}`)
+      79 |         .join("\n");
+    > 80 |       throw new Error(
+         |             ^
+      81 |         `${serious.length} serious/critical a11y violation(s) on ${url}:\n${summary}`,
+      82 |       );
+      83 |     }
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/_deep/axe.spec.ts:80:13
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/_deep-axe-a11y-—-en-sos-desktop/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/_deep-axe-a11y-—-en-sos-desktop/error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: 1 serious/critical a11y violation(s) on /en/sos:
+      - color-contrast (serious, 1 nodes): Elements must meet minimum color contrast ratio thresholds
+
+      78 |         .map((v) => `  - ${v.id} (${v.impact}, ${v.nodes.length} nodes): ${v.help}`)
+      79 |         .join("\n");
+    > 80 |       throw new Error(
+         |             ^
+      81 |         `${serious.length} serious/critical a11y violation(s) on ${url}:\n${summary}`,
+      82 |       );
+      83 |     }
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/_deep/axe.spec.ts:80:13
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/_deep-axe-a11y-—-en-sos-desktop-retry1/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/_deep-axe-a11y-—-en-sos-desktop-retry1/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/_deep-axe-a11y-—-en-sos-desktop-retry1/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/_deep-axe-a11y-—-en-sos-desktop-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  32) [desktop] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/festivals ──────────────────────────
+
+    Error: 1 serious/critical a11y violation(s) on /en/festivals:
+      - color-contrast (serious, 440 nodes): Elements must meet minimum color contrast ratio thresholds
+
+      78 |         .map((v) => `  - ${v.id} (${v.impact}, ${v.nodes.length} nodes): ${v.help}`)
+      79 |         .join("\n");
+    > 80 |       throw new Error(
+         |             ^
+      81 |         `${serious.length} serious/critical a11y violation(s) on ${url}:\n${summary}`,
+      82 |       );
+      83 |     }
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/_deep/axe.spec.ts:80:13
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/_deep-axe-a11y-—-en-festivals-desktop/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/_deep-axe-a11y-—-en-festivals-desktop/error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: 1 serious/critical a11y violation(s) on /en/festivals:
+      - color-contrast (serious, 446 nodes): Elements must meet minimum color contrast ratio thresholds
+
+      78 |         .map((v) => `  - ${v.id} (${v.impact}, ${v.nodes.length} nodes): ${v.help}`)
+      79 |         .join("\n");
+    > 80 |       throw new Error(
+         |             ^
+      81 |         `${serious.length} serious/critical a11y violation(s) on ${url}:\n${summary}`,
+      82 |       );
+      83 |     }
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/_deep/axe.spec.ts:80:13
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/_deep-axe-a11y-—-en-festivals-desktop-retry1/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/_deep-axe-a11y-—-en-festivals-desktop-retry1/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/_deep-axe-a11y-—-en-festivals-desktop-retry1/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/_deep-axe-a11y-—-en-festivals-desktop-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  33) [desktop] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/permits ────────────────────────────
+
+    Error: 1 serious/critical a11y violation(s) on /en/permits:
+      - select-name (critical, 1 nodes): Select element must have an accessible name
+
+      78 |         .map((v) => `  - ${v.id} (${v.impact}, ${v.nodes.length} nodes): ${v.help}`)
+      79 |         .join("\n");
+    > 80 |       throw new Error(
+         |             ^
+      81 |         `${serious.length} serious/critical a11y violation(s) on ${url}:\n${summary}`,
+      82 |       );
+      83 |     }
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/_deep/axe.spec.ts:80:13
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/_deep-axe-a11y-—-en-permits-desktop/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/_deep-axe-a11y-—-en-permits-desktop/error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: 1 serious/critical a11y violation(s) on /en/permits:
+      - select-name (critical, 1 nodes): Select element must have an accessible name
+
+      78 |         .map((v) => `  - ${v.id} (${v.impact}, ${v.nodes.length} nodes): ${v.help}`)
+      79 |         .join("\n");
+    > 80 |       throw new Error(
+         |             ^
+      81 |         `${serious.length} serious/critical a11y violation(s) on ${url}:\n${summary}`,
+      82 |       );
+      83 |     }
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/_deep/axe.spec.ts:80:13
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/_deep-axe-a11y-—-en-permits-desktop-retry1/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/_deep-axe-a11y-—-en-permits-desktop-retry1/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/_deep-axe-a11y-—-en-permits-desktop-retry1/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/_deep-axe-a11y-—-en-permits-desktop-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  34) [desktop] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/road-conditions ────────────────────
+
+    Error: 3 serious/critical a11y violation(s) on /en/road-conditions:
+      - color-contrast (serious, 56 nodes): Elements must meet minimum color contrast ratio thresholds
+      - image-alt (critical, 1 nodes): Images must have alternative text
+      - select-name (critical, 1 nodes): Select element must have an accessible name
+
+      78 |         .map((v) => `  - ${v.id} (${v.impact}, ${v.nodes.length} nodes): ${v.help}`)
+      79 |         .join("\n");
+    > 80 |       throw new Error(
+         |             ^
+      81 |         `${serious.length} serious/critical a11y violation(s) on ${url}:\n${summary}`,
+      82 |       );
+      83 |     }
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/_deep/axe.spec.ts:80:13
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/_deep-axe-a11y-—-en-road-conditions-desktop/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/_deep-axe-a11y-—-en-road-conditions-desktop/error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: 3 serious/critical a11y violation(s) on /en/road-conditions:
+      - color-contrast (serious, 58 nodes): Elements must meet minimum color contrast ratio thresholds
+      - image-alt (critical, 1 nodes): Images must have alternative text
+      - select-name (critical, 1 nodes): Select element must have an accessible name
+
+      78 |         .map((v) => `  - ${v.id} (${v.impact}, ${v.nodes.length} nodes): ${v.help}`)
+      79 |         .join("\n");
+    > 80 |       throw new Error(
+         |             ^
+      81 |         `${serious.length} serious/critical a11y violation(s) on ${url}:\n${summary}`,
+      82 |       );
+      83 |     }
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/_deep/axe.spec.ts:80:13
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/_deep-axe-a11y-—-en-road-conditions-desktop-retry1/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/_deep-axe-a11y-—-en-road-conditions-desktop-retry1/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/_deep-axe-a11y-—-en-road-conditions-desktop-retry1/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/_deep-axe-a11y-—-en-road-conditions-desktop-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  34 failed
+    [mobile] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/explore ───────────────────────────────
+    [mobile] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/destination/varanasi ──────────────────
+    [mobile] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /hi/destination/varanasi ──────────────────
+    [mobile] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/destination/varanasi/april ────────────
+    [mobile] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /hi/destination/varanasi/april ────────────
+    [mobile] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/where-to-go/april ─────────────────────
+    [mobile] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/collections ───────────────────────────
+    [mobile] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/blog ──────────────────────────────────
+    [mobile] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/ask ───────────────────────────────────
+    [mobile] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/gap-year ──────────────────────────────
+    [mobile] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/treks ─────────────────────────────────
+    [mobile] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/about ─────────────────────────────────
+    [mobile] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/methodology ───────────────────────────
+    [mobile] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/sos ───────────────────────────────────
+    [mobile] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/festivals ─────────────────────────────
+    [mobile] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/permits ───────────────────────────────
+    [mobile] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/road-conditions ───────────────────────
+    [desktop] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/explore ──────────────────────────────
+    [desktop] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/destination/varanasi ─────────────────
+    [desktop] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /hi/destination/varanasi ─────────────────
+    [desktop] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/destination/varanasi/april ───────────
+    [desktop] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /hi/destination/varanasi/april ───────────
+    [desktop] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/where-to-go/april ────────────────────
+    [desktop] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/collections ──────────────────────────
+    [desktop] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/blog ─────────────────────────────────
+    [desktop] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/ask ──────────────────────────────────
+    [desktop] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/gap-year ─────────────────────────────
+    [desktop] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/treks ────────────────────────────────
+    [desktop] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/about ────────────────────────────────
+    [desktop] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/methodology ──────────────────────────
+    [desktop] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/sos ──────────────────────────────────
+    [desktop] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/festivals ────────────────────────────
+    [desktop] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/permits ──────────────────────────────
+    [desktop] › tests/e2e/_deep/axe.spec.ts:36:7 › a11y — /en/road-conditions ──────────────────────
+  6 passed (3.4m)

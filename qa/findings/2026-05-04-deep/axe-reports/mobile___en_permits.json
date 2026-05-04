@@ -1,0 +1,31 @@
+{
+  "url": "/en/permits",
+  "project": "mobile",
+  "serious_count": 2,
+  "moderate_count": 0,
+  "minor_count": 0,
+  "violations": [
+    {
+      "id": "color-contrast",
+      "impact": "serious",
+      "help": "Elements must meet minimum color contrast ratio thresholds",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=playwright",
+      "nodes_count": 22,
+      "sampleHtml": "<span class=\"rounded-full border px-2.5 py-1 text-xs font-medium bg-muted/50 text-muted-foreground border-border\">Pilgrimage Virtual Queue Token</span>",
+      "sampleTarget": [
+        "div:nth-child(24) > .rounded-xl.overflow-hidden.border-border > .p-4.text-left.hover\\:bg-muted\\/20 > .min-w-0.flex-1 > .mb-1.flex-wrap.gap-2 > .bg-muted\\/50.px-2\\.5.py-1"
+      ]
+    },
+    {
+      "id": "select-name",
+      "impact": "critical",
+      "help": "Select element must have an accessible name",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/select-name?application=playwright",
+      "nodes_count": 1,
+      "sampleHtml": "<select class=\"rounded-lg border border-border bg-background px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-primary/50\">",
+      "sampleTarget": [
+        "select"
+      ]
+    }
+  ]
+}

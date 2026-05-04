@@ -1,0 +1,13 @@
+{
+  "phase": 1,
+  "name": "tooling-install",
+  "started_utc": "2026-05-04T09:55:00Z",
+  "outcome": "PASS",
+  "actions": [
+    "npm i -D @axe-core/playwright (root) — installed 4.11.3",
+    "mkdir qa/findings/2026-05-04-deep + tests/e2e/_deep",
+    "node -e require resolves AxeBuilder + default exports"
+  ],
+  "audit_warning": "npm reports 28 vulns in pre-existing deps (3 low, 23 moderate, 2 high). Not introduced by this install — pre-existing. Will surface to user as Phase 9 follow-up.",
+  "gate_passed": true
+}

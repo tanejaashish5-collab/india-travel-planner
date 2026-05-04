@@ -1,0 +1,512 @@
+{
+  "phase": 8,
+  "name": "content-correctness-spotcheck",
+  "started_utc": "2026-05-04T11:11:06.123Z",
+  "sample_size": 30,
+  "destinations": [
+    {
+      "slug": "varanasi",
+      "ok": true,
+      "http": 200,
+      "size_bytes": 426153,
+      "stays_section_card_signals": 4,
+      "eateries_section_card_signals": 0,
+      "sos_section_present": true,
+      "sos_numbers_total": 5,
+      "sos_numbers_valid": 5,
+      "sos_numbers_invalid_samples": []
+    },
+    {
+      "slug": "jaipur",
+      "ok": true,
+      "http": 200,
+      "size_bytes": 437970,
+      "stays_section_card_signals": 4,
+      "eateries_section_card_signals": 0,
+      "sos_section_present": true,
+      "sos_numbers_total": 6,
+      "sos_numbers_valid": 6,
+      "sos_numbers_invalid_samples": []
+    },
+    {
+      "slug": "leh",
+      "ok": true,
+      "http": 200,
+      "size_bytes": 471835,
+      "stays_section_card_signals": 4,
+      "eateries_section_card_signals": 0,
+      "sos_section_present": true,
+      "sos_numbers_total": 6,
+      "sos_numbers_valid": 6,
+      "sos_numbers_invalid_samples": []
+    },
+    {
+      "slug": "manali",
+      "ok": true,
+      "http": 200,
+      "size_bytes": 510574,
+      "stays_section_card_signals": 3,
+      "eateries_section_card_signals": 1,
+      "sos_section_present": true,
+      "sos_numbers_total": 6,
+      "sos_numbers_valid": 6,
+      "sos_numbers_invalid_samples": []
+    },
+    {
+      "slug": "shimla",
+      "ok": true,
+      "http": 200,
+      "size_bytes": 463797,
+      "stays_section_card_signals": 4,
+      "eateries_section_card_signals": 0,
+      "sos_section_present": true,
+      "sos_numbers_total": 7,
+      "sos_numbers_valid": 7,
+      "sos_numbers_invalid_samples": []
+    },
+    {
+      "slug": "udaipur",
+      "ok": true,
+      "http": 200,
+      "size_bytes": 407205,
+      "stays_section_card_signals": 4,
+      "eateries_section_card_signals": 0,
+      "sos_section_present": true,
+      "sos_numbers_total": 7,
+      "sos_numbers_valid": 7,
+      "sos_numbers_invalid_samples": []
+    },
+    {
+      "slug": "darjeeling",
+      "ok": true,
+      "http": 200,
+      "size_bytes": 413272,
+      "stays_section_card_signals": 4,
+      "eateries_section_card_signals": 0,
+      "sos_section_present": true,
+      "sos_numbers_total": 7,
+      "sos_numbers_valid": 7,
+      "sos_numbers_invalid_samples": []
+    },
+    {
+      "slug": "panaji",
+      "ok": true,
+      "http": 200,
+      "size_bytes": 316671,
+      "stays_section_card_signals": 4,
+      "eateries_section_card_signals": 0,
+      "sos_section_present": true,
+      "sos_numbers_total": 12,
+      "sos_numbers_valid": 12,
+      "sos_numbers_invalid_samples": []
+    },
+    {
+      "slug": "munnar",
+      "ok": true,
+      "http": 200,
+      "size_bytes": 321919,
+      "stays_section_card_signals": 3,
+      "eateries_section_card_signals": 0,
+      "sos_section_present": true,
+      "sos_numbers_total": 12,
+      "sos_numbers_valid": 12,
+      "sos_numbers_invalid_samples": []
+    },
+    {
+      "slug": "binsar",
+      "ok": true,
+      "http": 200,
+      "size_bytes": 333856,
+      "stays_section_card_signals": 3,
+      "eateries_section_card_signals": 0,
+      "sos_section_present": true,
+      "sos_numbers_total": 7,
+      "sos_numbers_valid": 7,
+      "sos_numbers_invalid_samples": []
+    },
+    {
+      "slug": "kaza",
+      "ok": true,
+      "http": 200,
+      "size_bytes": 302740,
+      "stays_section_card_signals": 0,
+      "eateries_section_card_signals": 0,
+      "sos_section_present": true,
+      "sos_numbers_total": 5,
+      "sos_numbers_valid": 5,
+      "sos_numbers_invalid_samples": []
+    },
+    {
+      "slug": "spiti-valley",
+      "ok": true,
+      "http": 200,
+      "size_bytes": 437529,
+      "stays_section_card_signals": 4,
+      "eateries_section_card_signals": 0,
+      "sos_section_present": true,
+      "sos_numbers_total": 5,
+      "sos_numbers_valid": 5,
+      "sos_numbers_invalid_samples": []
+    },
+    {
+      "slug": "tawang",
+      "ok": true,
+      "http": 200,
+      "size_bytes": 390076,
+      "stays_section_card_signals": 3,
+      "eateries_section_card_signals": 0,
+      "sos_section_present": true,
+      "sos_numbers_total": 10,
+      "sos_numbers_valid": 10,
+      "sos_numbers_invalid_samples": []
+    },
+    {
+      "slug": "dharamshala",
+      "ok": true,
+      "http": 200,
+      "size_bytes": 383528,
+      "stays_section_card_signals": 3,
+      "eateries_section_card_signals": 0,
+      "sos_section_present": true,
+      "sos_numbers_total": 7,
+      "sos_numbers_valid": 7,
+      "sos_numbers_invalid_samples": []
+    },
+    {
+      "slug": "rishikesh",
+      "ok": true,
+      "http": 200,
+      "size_bytes": 468539,
+      "stays_section_card_signals": 3,
+      "eateries_section_card_signals": 1,
+      "sos_section_present": true,
+      "sos_numbers_total": 6,
+      "sos_numbers_valid": 6,
+      "sos_numbers_invalid_samples": []
+    },
+    {
+      "slug": "valley-of-flowers",
+      "ok": true,
+      "http": 200,
+      "size_bytes": 357167,
+      "stays_section_card_signals": 4,
+      "eateries_section_card_signals": 0,
+      "sos_section_present": true,
+      "sos_numbers_total": 7,
+      "sos_numbers_valid": 7,
+      "sos_numbers_invalid_samples": []
+    },
+    {
+      "slug": "auli",
+      "ok": true,
+      "http": 200,
+      "size_bytes": 356550,
+      "stays_section_card_signals": 4,
+      "eateries_section_card_signals": 0,
+      "sos_section_present": true,
+      "sos_numbers_total": 6,
+      "sos_numbers_valid": 6,
+      "sos_numbers_invalid_samples": []
+    },
+    {
+      "slug": "gangtok",
+      "ok": true,
+      "http": 200,
+      "size_bytes": 404899,
+      "stays_section_card_signals": 4,
+      "eateries_section_card_signals": 0,
+      "sos_section_present": true,
+      "sos_numbers_total": 10,
+      "sos_numbers_valid": 10,
+      "sos_numbers_invalid_samples": []
+    },
+    {
+      "slug": "ziro-valley",
+      "ok": true,
+      "http": 200,
+      "size_bytes": 306158,
+      "stays_section_card_signals": 3,
+      "eateries_section_card_signals": 0,
+      "sos_section_present": true,
+      "sos_numbers_total": 12,
+      "sos_numbers_valid": 12,
+      "sos_numbers_invalid_samples": []
+    },
+    {
+      "slug": "shillong",
+      "ok": true,
+      "http": 200,
+      "size_bytes": 350570,
+      "stays_section_card_signals": 3,
+      "eateries_section_card_signals": 0,
+      "sos_section_present": true,
+      "sos_numbers_total": 10,
+      "sos_numbers_valid": 10,
+      "sos_numbers_invalid_samples": []
+    },
+    {
+      "slug": "khajuraho",
+      "ok": true,
+      "http": 200,
+      "size_bytes": 338446,
+      "stays_section_card_signals": 4,
+      "eateries_section_card_signals": 0,
+      "sos_section_present": true,
+      "sos_numbers_total": 6,
+      "sos_numbers_valid": 6,
+      "sos_numbers_invalid_samples": []
+    },
+    {
+      "slug": "alleppey",
+      "ok": true,
+      "http": 200,
+      "size_bytes": 314070,
+      "stays_section_card_signals": 4,
+      "eateries_section_card_signals": 0,
+      "sos_section_present": true,
+      "sos_numbers_total": 12,
+      "sos_numbers_valid": 12,
+      "sos_numbers_invalid_samples": []
+    },
+    {
+      "slug": "ravangla",
+      "ok": true,
+      "http": 200,
+      "size_bytes": 279020,
+      "stays_section_card_signals": 4,
+      "eateries_section_card_signals": 0,
+      "sos_section_present": true,
+      "sos_numbers_total": 12,
+      "sos_numbers_valid": 12,
+      "sos_numbers_invalid_samples": []
+    },
+    {
+      "slug": "phawngpui-peak",
+      "ok": true,
+      "http": 200,
+      "size_bytes": 256823,
+      "stays_section_card_signals": 2,
+      "eateries_section_card_signals": 0,
+      "sos_section_present": true,
+      "sos_numbers_total": 12,
+      "sos_numbers_valid": 12,
+      "sos_numbers_invalid_samples": []
+    },
+    {
+      "slug": "majuli",
+      "ok": true,
+      "http": 200,
+      "size_bytes": 310740,
+      "stays_section_card_signals": 2,
+      "eateries_section_card_signals": 0,
+      "sos_section_present": true,
+      "sos_numbers_total": 10,
+      "sos_numbers_valid": 10,
+      "sos_numbers_invalid_samples": []
+    },
+    {
+      "slug": "mawlynnong",
+      "ok": true,
+      "http": 200,
+      "size_bytes": 287902,
+      "stays_section_card_signals": 3,
+      "eateries_section_card_signals": 0,
+      "sos_section_present": true,
+      "sos_numbers_total": 12,
+      "sos_numbers_valid": 12,
+      "sos_numbers_invalid_samples": []
+    },
+    {
+      "slug": "mechuka",
+      "ok": true,
+      "http": 200,
+      "size_bytes": 263615,
+      "stays_section_card_signals": 3,
+      "eateries_section_card_signals": 0,
+      "sos_section_present": true,
+      "sos_numbers_total": 12,
+      "sos_numbers_valid": 12,
+      "sos_numbers_invalid_samples": []
+    },
+    {
+      "slug": "dzukou-valley",
+      "ok": true,
+      "http": 200,
+      "size_bytes": 293605,
+      "stays_section_card_signals": 4,
+      "eateries_section_card_signals": 0,
+      "sos_section_present": true,
+      "sos_numbers_total": 12,
+      "sos_numbers_valid": 12,
+      "sos_numbers_invalid_samples": []
+    },
+    {
+      "slug": "agra",
+      "ok": true,
+      "http": 200,
+      "size_bytes": 406508,
+      "stays_section_card_signals": 4,
+      "eateries_section_card_signals": 0,
+      "sos_section_present": true,
+      "sos_numbers_total": 6,
+      "sos_numbers_valid": 6,
+      "sos_numbers_invalid_samples": []
+    },
+    {
+      "slug": "delhi",
+      "ok": true,
+      "http": 200,
+      "size_bytes": 475206,
+      "stays_section_card_signals": 4,
+      "eateries_section_card_signals": 1,
+      "sos_section_present": true,
+      "sos_numbers_total": 5,
+      "sos_numbers_valid": 5,
+      "sos_numbers_invalid_samples": []
+    }
+  ],
+  "summary": {
+    "fully_passing": 0,
+    "soft_404s": [],
+    "fetch_errors": [],
+    "stays_below_3": [
+      {
+        "slug": "kaza",
+        "count": 0
+      },
+      {
+        "slug": "phawngpui-peak",
+        "count": 2
+      },
+      {
+        "slug": "majuli",
+        "count": 2
+      }
+    ],
+    "eateries_below_3": [
+      {
+        "slug": "varanasi",
+        "count": 0
+      },
+      {
+        "slug": "jaipur",
+        "count": 0
+      },
+      {
+        "slug": "leh",
+        "count": 0
+      },
+      {
+        "slug": "manali",
+        "count": 1
+      },
+      {
+        "slug": "shimla",
+        "count": 0
+      },
+      {
+        "slug": "udaipur",
+        "count": 0
+      },
+      {
+        "slug": "darjeeling",
+        "count": 0
+      },
+      {
+        "slug": "panaji",
+        "count": 0
+      },
+      {
+        "slug": "munnar",
+        "count": 0
+      },
+      {
+        "slug": "binsar",
+        "count": 0
+      },
+      {
+        "slug": "kaza",
+        "count": 0
+      },
+      {
+        "slug": "spiti-valley",
+        "count": 0
+      },
+      {
+        "slug": "tawang",
+        "count": 0
+      },
+      {
+        "slug": "dharamshala",
+        "count": 0
+      },
+      {
+        "slug": "rishikesh",
+        "count": 1
+      },
+      {
+        "slug": "valley-of-flowers",
+        "count": 0
+      },
+      {
+        "slug": "auli",
+        "count": 0
+      },
+      {
+        "slug": "gangtok",
+        "count": 0
+      },
+      {
+        "slug": "ziro-valley",
+        "count": 0
+      },
+      {
+        "slug": "shillong",
+        "count": 0
+      },
+      {
+        "slug": "khajuraho",
+        "count": 0
+      },
+      {
+        "slug": "alleppey",
+        "count": 0
+      },
+      {
+        "slug": "ravangla",
+        "count": 0
+      },
+      {
+        "slug": "phawngpui-peak",
+        "count": 0
+      },
+      {
+        "slug": "majuli",
+        "count": 0
+      },
+      {
+        "slug": "mawlynnong",
+        "count": 0
+      },
+      {
+        "slug": "mechuka",
+        "count": 0
+      },
+      {
+        "slug": "dzukou-valley",
+        "count": 0
+      },
+      {
+        "slug": "agra",
+        "count": 0
+      },
+      {
+        "slug": "delhi",
+        "count": 1
+      }
+    ],
+    "sos_phones_invalid_format": [],
+    "sos_phones_count_total": 252
+  },
+  "completed_utc": "2026-05-04T11:11:48.092Z"
+}

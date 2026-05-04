@@ -1,0 +1,20 @@
+{
+  "url": "/en/about",
+  "project": "mobile",
+  "serious_count": 1,
+  "moderate_count": 0,
+  "minor_count": 0,
+  "violations": [
+    {
+      "id": "color-contrast",
+      "impact": "serious",
+      "help": "Elements must meet minimum color contrast ratio thresholds",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=playwright",
+      "nodes_count": 2,
+      "sampleHtml": "<p class=\"text-xs text-muted-foreground/60 mt-1\">Editor, NakshIQ</p>",
+      "sampleTarget": [
+        ".mt-1"
+      ]
+    }
+  ]
+}

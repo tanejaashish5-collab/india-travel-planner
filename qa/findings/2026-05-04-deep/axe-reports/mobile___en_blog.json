@@ -1,0 +1,20 @@
+{
+  "url": "/en/blog",
+  "project": "mobile",
+  "serious_count": 1,
+  "moderate_count": 0,
+  "minor_count": 0,
+  "violations": [
+    {
+      "id": "color-contrast",
+      "impact": "serious",
+      "help": "Elements must meet minimum color contrast ratio thresholds",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=playwright",
+      "nodes_count": 33,
+      "sampleHtml": "<span class=\"rounded-full border px-2.5 py-0.5 text-[10px] font-medium text-purple-400 bg-purple-400/10 border-purple-400/20\">Field guide</span>",
+      "sampleTarget": [
+        "div:nth-child(22) > .cursor-pointer > .hover\\:border-primary\\/30.hover\\:shadow-primary\\/5.border-border\\/50 > .p-5.pt-3 > .mb-2.gap-2.flex-wrap > .text-purple-400.bg-purple-400\\/10.border-purple-400\\/20"
+      ]
+    }
+  ]
+}

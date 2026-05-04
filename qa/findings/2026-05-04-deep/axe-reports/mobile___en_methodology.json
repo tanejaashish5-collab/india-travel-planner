@@ -1,0 +1,20 @@
+{
+  "url": "/en/methodology",
+  "project": "mobile",
+  "serious_count": 1,
+  "moderate_count": 0,
+  "minor_count": 0,
+  "violations": [
+    {
+      "id": "color-contrast",
+      "impact": "serious",
+      "help": "Elements must meet minimum color contrast ratio thresholds",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=playwright",
+      "nodes_count": 3,
+      "sampleHtml": "<div class=\"text-xs opacity-80 mt-0.5\">Minor tradeoffs — shoulder crowds, slight weather risk, but still a great time to visit.</div>",
+      "sampleTarget": [
+        ".bg-blue-500\\/20 > div > .opacity-80.mt-0\\.5.text-xs"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "url": "/en/blog",
+  "project": "desktop",
+  "serious_count": 1,
+  "moderate_count": 0,
+  "minor_count": 0,
+  "violations": [
+    {
+      "id": "color-contrast",
+      "impact": "serious",
+      "help": "Elements must meet minimum color contrast ratio thresholds",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=playwright",
+      "nodes_count": 31,
+      "sampleHtml": "<span class=\"rounded-full border px-2 py-0.5 text-[10px] font-medium text-red-400 bg-red-400/10 border-red-400/20\">Deep Dive</span>",
+      "sampleTarget": [
+        "div:nth-child(36) > .cursor-pointer > .hover\\:border-primary\\/30.hover\\:shadow-primary\\/5.border-border\\/50 > .p-5.pt-3 > .mb-2.gap-2.flex-wrap > .text-red-400.bg-red-400\\/10.border-red-400\\/20"
+      ]
+    }
+  ]
+}

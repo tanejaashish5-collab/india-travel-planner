@@ -1,0 +1,2482 @@
+
+Running 138 tests using 3 workers
+
+  ✓    2 [mobile] › tests/e2e/blog.spec.ts:4:7 › Blog › blog list page loads (2.7s)
+  ✓    4 [mobile] › tests/e2e/blog.spec.ts:11:7 › Blog › routes list page loads (3.4s)
+  ✓    3 [mobile] › tests/e2e/destination.spec.ts:4:7 › Destination Detail › loads with all key sections (7.3s)
+  ✓    1 [mobile] › tests/e2e/collections.spec.ts:4:7 › Collections › collections page loads with grid (8.1s)
+  ✓    5 [mobile] › tests/e2e/blog.spec.ts:16:7 › Blog › treks list page loads (2.8s)
+  ✓    6 [mobile] › tests/e2e/destination.spec.ts:15:7 › Destination Detail › confidence cards render (2.1s)
+  ✓    8 [mobile] › tests/e2e/blog.spec.ts:21:7 › Blog › camping page loads (2.0s)
+  ✓    9 [mobile] › tests/e2e/destination.spec.ts:21:7 › Destination Detail › SOS section present (1.9s)
+  ✓   10 [mobile] › tests/e2e/blog.spec.ts:26:7 › Blog › festivals page loads (2.4s)
+  ✓    7 [mobile] › tests/e2e/collections.spec.ts:12:7 › Collections › region filter works (6.5s)
+  ✓   12 [mobile] › tests/e2e/gap-year.spec.ts:4:7 › Gap Year Planner v2 › form shows all 7 required sections (1.3s)
+  ✓   11 [mobile] › tests/e2e/destination.spec.ts:26:7 › Destination Detail › state redirect works (goa → /state/goa) (3.6s)
+  ✓   14 [mobile] › tests/e2e/gap-year.spec.ts:17:7 › Gap Year Planner v2 › submit is disabled until origin + party + familiarity are chosen (893ms)
+  ✓   13 [mobile] › tests/e2e/collections.spec.ts:22:7 › Collections › collection detail page loads (1.9s)
+  ✘   16 [mobile] › tests/e2e/gap-year.spec.ts:38:7 › Gap Year Planner v2 › origin combobox fuzzy-matches across name and state (1.0s)
+  ✓   15 [mobile] › tests/e2e/destination.spec.ts:35:7 › Destination Detail › new A&N destination loads (2.6s)
+  ✓   17 [mobile] › tests/e2e/homepage.spec.ts:4:7 › Homepage › loads with hero and stats (2.1s)
+  ✘   18 [mobile] › tests/e2e/gap-year.spec.ts:38:7 › Gap Year Planner v2 › origin combobox fuzzy-matches across name and state (retry #1) (1.7s)
+  ✓   19 [mobile] › tests/e2e/mobile.spec.ts:10:7 › Mobile Experience › destination detail shows bottom CTA bar on scroll (2.5s)
+  ✘   21 [mobile] › tests/e2e/gap-year.spec.ts:47:7 › Gap Year Planner v2 › themes cap at 3 selected (3.5s)
+  ✓   22 [mobile] › tests/e2e/mobile.spec.ts:19:7 › Mobile Experience › destination detail has sticky section tabs on scroll (5.0s)
+  ✘   23 [mobile] › tests/e2e/gap-year.spec.ts:47:7 › Gap Year Planner v2 › themes cap at 3 selected (retry #1) (2.1s)
+  ✘   20 [mobile] › tests/e2e/homepage.spec.ts:14:7 › Homepage › explore by region cards render (7.0s)
+  ✓   24 [mobile] › tests/e2e/mobile.spec.ts:30:7 › Mobile Experience › explore page loads on mobile (1.2s)
+  ✓   25 [mobile] › tests/e2e/gap-year.spec.ts:61:7 › Gap Year Planner v2 › nav mega-menu includes Gap Year Planner entry (2.1s)
+  ✓   28 [mobile] › tests/e2e/navigation.spec.ts:10:7 › Mobile Navigation › bottom tab bar has 5 tabs (1.5s)
+  ✓   27 [mobile] › tests/e2e/mobile.spec.ts:37:7 › Mobile Experience › ask nakshiq page loads (3.2s)
+  ✓   29 [mobile] › tests/e2e/navigation.spec.ts:18:7 › Mobile Navigation › search tab opens search overlay (686ms)
+  ✓   30 [mobile] › tests/e2e/mobile.spec.ts:42:7 › Mobile Experience › states page loads (1.5s)
+  ✓   32 [mobile] › tests/e2e/mobile.spec.ts:47:7 › Mobile Experience › tourist traps page loads (2.2s)
+  ✘   26 [mobile] › tests/e2e/homepage.spec.ts:14:7 › Homepage › explore by region cards render (retry #1) (7.2s)
+  ✓   33 [mobile] › tests/e2e/mobile.spec.ts:52:7 › Mobile Experience › permits page loads (951ms)
+  ✓   35 [mobile] › tests/e2e/pwa.spec.ts:4:7 › PWA › manifest.json is accessible (238ms)
+  ✓   34 [mobile] › tests/e2e/homepage.spec.ts:22:7 › Homepage › featured destinations show with scores (2.3s)
+  ✘   31 [mobile] › tests/e2e/navigation.spec.ts:32:7 › Mobile Navigation › more tab navigates to homepage (6.6s)
+  ✓   37 [mobile] › tests/e2e/search.spec.ts:10:7 › Search › mobile search shows categories when empty (1.6s)
+  ✓   36 [mobile] › tests/e2e/pwa.spec.ts:13:7 › PWA › service worker is registered (5.3s)
+  ✓   40 [mobile] › tests/e2e/pwa.spec.ts:24:7 › PWA › sw.js is accessible (303ms)
+  ✓   39 [mobile] › tests/e2e/search.spec.ts:20:7 › Search › search returns results for 'manali' (3.3s)
+  ✓   41 [mobile] › tests/e2e/pwa.spec.ts:29:7 › PWA › hindi locale loads (1.7s)
+  ✓   42 [mobile] › tests/e2e/seo.spec.ts:4:7 › SEO › homepage has correct canonical (1.9s)
+  ✓   43 [mobile] › tests/e2e/trip-board.spec.ts:37:7 › Trip Board — Phase 1 (ColdStart) › empty board renders ColdStart with vermillion 'actually possible' (1.5s)
+  ✘   38 [mobile] › tests/e2e/navigation.spec.ts:32:7 › Mobile Navigation › more tab navigates to homepage (retry #1) (6.1s)
+  ✓   44 [mobile] › tests/e2e/seo.spec.ts:11:7 › SEO › destination page has canonical + hreflang (1.9s)
+  ✓   46 [mobile] › tests/e2e/navigation.spec.ts:44:7 › Mobile Navigation › discover tab opens experiences sheet (1.1s)
+  ✓   47 [mobile] › tests/e2e/seo.spec.ts:21:7 › SEO › non-locale URL returns 301 (3.2s)
+  ✓   48 [mobile] › tests/e2e/navigation.spec.ts:63:7 › Desktop Navigation › nav bar has main links (3.7s)
+  ✘   45 [mobile] › tests/e2e/trip-board.spec.ts:61:7 › Trip Board — Phase 2/3 markers (gated on stops > 0) › year band + cost aggregate render (6.1s)
+  ✓   49 [mobile] › tests/e2e/seo.spec.ts:27:7 › SEO › collections page has canonical (6.9s)
+  ✘   51 [mobile] › tests/e2e/trip-board.spec.ts:61:7 › Trip Board — Phase 2/3 markers (gated on stops > 0) › year band + cost aggregate render (retry #1) (6.1s)
+  ✘   50 [mobile] › tests/e2e/visual.spec.ts:24:7 › Visual — Mobile › homepage above the fold (7.3s)
+  ✓   53 [mobile] › tests/e2e/trip-board.spec.ts:68:7 › Trip Board — Phase 2/3 markers (gated on stops > 0) › trip board shell uses the .nakshiq-trip-board scope (2.2s)
+  ✓   55 [mobile] › tests/e2e/trip-board.spec.ts:72:7 › Trip Board — Phase 2/3 markers (gated on stops > 0) › F3 permit dialog never uses target='_blank' (642ms)
+  ✘   54 [mobile] › tests/e2e/visual.spec.ts:24:7 › Visual — Mobile › homepage above the fold (retry #1) (6.6s)
+  ✓   52 [mobile] › tests/e2e/seo.spec.ts:33:7 › SEO › meta description exists on key pages (10.6s)
+  ✓   57 [mobile] › tests/e2e/visual.spec.ts:35:7 › Visual — Mobile › tab bar layout (2.5s)
+  ✘   59 [mobile] › tests/e2e/visual.spec.ts:45:7 › Visual — Mobile › destination detail hero (3.5s)
+  ✓   58 [mobile] › tests/e2e/where-to-go.spec.ts:4:7 › Where to Go › monthly page loads with destinations (4.4s)
+  ✘   60 [mobile] › tests/e2e/visual.spec.ts:45:7 › Visual — Mobile › destination detail hero (retry #1) (4.1s)
+  ✘   62 [mobile] › tests/e2e/visual.spec.ts:55:7 › Visual — Mobile › destination detail bottom CTA bar (5.4s)
+  ✘   63 [mobile] › tests/e2e/visual.spec.ts:55:7 › Visual — Mobile › destination detail bottom CTA bar (retry #1) (5.3s)
+  ✘   56 [mobile] › tests/e2e/trip-board.spec.ts:89:7 › Trip Board — Phase 4 (AI Modal) › Generate itinerary CTA opens 3-step modal (30.1s)
+  ✘   64 [mobile] › tests/e2e/visual.spec.ts:69:7 › Visual — Mobile › chatbot button not cropped by tab bar (4.0s)
+  ✘   66 [mobile] › tests/e2e/visual.spec.ts:69:7 › Visual — Mobile › chatbot button not cropped by tab bar (retry #1) (2.8s)
+  ✘   67 [mobile] › tests/e2e/visual.spec.ts:80:7 › Visual — Mobile › collection detail card layout (3.9s)
+  ✘   61 [mobile] › tests/e2e/where-to-go.spec.ts:12:7 › Where to Go › where-to-go root redirects to current month (30.1s)
+  ✘   68 [mobile] › tests/e2e/visual.spec.ts:80:7 › Visual — Mobile › collection detail card layout (retry #1) (4.6s)
+  ✘   70 [mobile] › tests/e2e/visual.spec.ts:93:7 › Visual — Mobile › collections grid page (6.6s)
+  ✘   71 [mobile] › tests/e2e/visual.spec.ts:93:7 › Visual — Mobile › collections grid page (retry #1) (6.9s)
+  ✘   65 [mobile] › tests/e2e/trip-board.spec.ts:89:7 › Trip Board — Phase 4 (AI Modal) › Generate itinerary CTA opens 3-step modal (retry #1) (30.3s)
+  ✘   72 [mobile] › tests/e2e/visual.spec.ts:103:7 › Visual — Mobile › explore page cards (3.2s)
+  ✘   74 [mobile] › tests/e2e/visual.spec.ts:103:7 › Visual — Mobile › explore page cards (retry #1) (3.7s)
+  ✘   69 [mobile] › tests/e2e/where-to-go.spec.ts:12:7 › Where to Go › where-to-go root redirects to current month (retry #1) (30.2s)
+  ✘   75 [mobile] › tests/e2e/visual.spec.ts:113:7 › Visual — Mobile › where to go page (6.4s)
+  ✓   76 [mobile] › tests/e2e/where-to-go.spec.ts:19:7 › Where to Go › regional where-to-go works (3.8s)
+  ✓   78 [desktop] › tests/e2e/blog.spec.ts:4:7 › Blog › blog list page loads (2.3s)
+  ✓   79 [desktop] › tests/e2e/blog.spec.ts:11:7 › Blog › routes list page loads (1.5s)
+  ✓   80 [desktop] › tests/e2e/blog.spec.ts:16:7 › Blog › treks list page loads (1.4s)
+  ✓   81 [desktop] › tests/e2e/blog.spec.ts:21:7 › Blog › camping page loads (2.5s)
+  ✘   77 [mobile] › tests/e2e/visual.spec.ts:113:7 › Visual — Mobile › where to go page (retry #1) (10.0s)
+  -   83 [mobile] › tests/e2e/visual.spec.ts:133:7 › Visual — Desktop › homepage above the fold
+  -   84 [mobile] › tests/e2e/visual.spec.ts:143:7 › Visual — Desktop › destination detail page
+  -   85 [mobile] › tests/e2e/visual.spec.ts:153:7 › Visual — Desktop › collections page
+  -   86 [mobile] › tests/e2e/visual.spec.ts:163:7 › Visual — Desktop › nav bar layout
+  ✓   82 [desktop] › tests/e2e/blog.spec.ts:26:7 › Blog › festivals page loads (1.6s)
+  ✓   88 [desktop] › tests/e2e/destination.spec.ts:4:7 › Destination Detail › loads with all key sections (3.3s)
+  ✓   89 [desktop] › tests/e2e/destination.spec.ts:15:7 › Destination Detail › confidence cards render (2.7s)
+  ✘   73 [mobile] › tests/e2e/trip-board.spec.ts:113:7 › Trip Board — Phase 5 (Map + Share) › Map toggle renders the SVG atlas with pins (30.1s)
+  ✓   87 [desktop] › tests/e2e/collections.spec.ts:4:7 › Collections › collections page loads with grid (9.2s)
+  ✓   90 [desktop] › tests/e2e/destination.spec.ts:21:7 › Destination Detail › SOS section present (3.2s)
+  ✓   93 [desktop] › tests/e2e/destination.spec.ts:26:7 › Destination Detail › state redirect works (goa → /state/goa) (5.8s)
+  ✓   94 [desktop] › tests/e2e/destination.spec.ts:35:7 › Destination Detail › new A&N destination loads (3.2s)
+  ✓   95 [desktop] › tests/e2e/gap-year.spec.ts:4:7 › Gap Year Planner v2 › form shows all 7 required sections (1.6s)
+  ✓   92 [desktop] › tests/e2e/collections.spec.ts:12:7 › Collections › region filter works (11.6s)
+  ✓   96 [desktop] › tests/e2e/gap-year.spec.ts:17:7 › Gap Year Planner v2 › submit is disabled until origin + party + familiarity are chosen (1.3s)
+  ✘   98 [desktop] › tests/e2e/gap-year.spec.ts:38:7 › Gap Year Planner v2 › origin combobox fuzzy-matches across name and state (1.2s)
+  ✓   97 [desktop] › tests/e2e/collections.spec.ts:22:7 › Collections › collection detail page loads (3.0s)
+  ✘   99 [desktop] › tests/e2e/gap-year.spec.ts:38:7 › Gap Year Planner v2 › origin combobox fuzzy-matches across name and state (retry #1) (1.5s)
+  ✘  101 [desktop] › tests/e2e/gap-year.spec.ts:47:7 › Gap Year Planner v2 › themes cap at 3 selected (1.2s)
+  ✓  100 [desktop] › tests/e2e/homepage.spec.ts:4:7 › Homepage › loads with hero and stats (3.7s)
+  ✘  102 [desktop] › tests/e2e/gap-year.spec.ts:47:7 › Gap Year Planner v2 › themes cap at 3 selected (retry #1) (1.2s)
+  ✘  103 [desktop] › tests/e2e/homepage.spec.ts:14:7 › Homepage › explore by region cards render (6.8s)
+  ✘  104 [desktop] › tests/e2e/gap-year.spec.ts:61:7 › Gap Year Planner v2 › nav mega-menu includes Gap Year Planner entry (6.8s)
+  ✘   91 [mobile] › tests/e2e/trip-board.spec.ts:113:7 › Trip Board — Phase 5 (Map + Share) › Map toggle renders the SVG atlas with pins (retry #1) (30.2s)
+  ✓  107 [mobile] › tests/e2e/trip-board.spec.ts:121:7 › Trip Board — Phase 5 (Map + Share) › Share Export opens share menu with 3 rows (3.4s)
+  ✓  108 [mobile] › tests/e2e/trip-board.spec.ts:129:7 › Trip Board — Phase 5 (Map + Share) › read-only share page returns 404 for bogus token (1.9s)
+  ✘  105 [desktop] › tests/e2e/homepage.spec.ts:14:7 › Homepage › explore by region cards render (retry #1) (8.9s)
+  ✓  109 [mobile] › tests/e2e/trip-board.spec.ts:136:7 › Tour v2.1 unaffected › homepage onboarding still triggers via ?tour=1 (2.7s)
+  -  111 [desktop] › tests/e2e/mobile.spec.ts:10:7 › Mobile Experience › destination detail shows bottom CTA bar on scroll
+  -  112 [desktop] › tests/e2e/mobile.spec.ts:19:7 › Mobile Experience › destination detail has sticky section tabs on scroll
+  -  113 [desktop] › tests/e2e/mobile.spec.ts:30:7 › Mobile Experience › explore page loads on mobile
+  -  114 [desktop] › tests/e2e/mobile.spec.ts:37:7 › Mobile Experience › ask nakshiq page loads
+  -  115 [desktop] › tests/e2e/mobile.spec.ts:42:7 › Mobile Experience › states page loads
+  -  116 [desktop] › tests/e2e/mobile.spec.ts:47:7 › Mobile Experience › tourist traps page loads
+  -  117 [desktop] › tests/e2e/mobile.spec.ts:52:7 › Mobile Experience › permits page loads
+  -  118 [desktop] › tests/e2e/navigation.spec.ts:10:7 › Mobile Navigation › bottom tab bar has 5 tabs
+  -  119 [desktop] › tests/e2e/navigation.spec.ts:18:7 › Mobile Navigation › search tab opens search overlay
+  -  120 [desktop] › tests/e2e/navigation.spec.ts:32:7 › Mobile Navigation › more tab navigates to homepage
+  -  121 [desktop] › tests/e2e/navigation.spec.ts:44:7 › Mobile Navigation › discover tab opens experiences sheet
+  ✓  110 [desktop] › tests/e2e/homepage.spec.ts:22:7 › Homepage › featured destinations show with scores (2.7s)
+  ✓  123 [desktop] › tests/e2e/pwa.spec.ts:4:7 › PWA › manifest.json is accessible (358ms)
+  ✓  122 [desktop] › tests/e2e/navigation.spec.ts:63:7 › Desktop Navigation › nav bar has main links (3.2s)
+  -  125 [desktop] › tests/e2e/search.spec.ts:10:7 › Search › mobile search shows categories when empty
+  -  126 [desktop] › tests/e2e/search.spec.ts:20:7 › Search › search returns results for 'manali'
+  ✓  127 [desktop] › tests/e2e/seo.spec.ts:4:7 › SEO › homepage has correct canonical (2.3s)
+  ✓  124 [desktop] › tests/e2e/pwa.spec.ts:13:7 › PWA › service worker is registered (5.6s)
+  ✓  129 [desktop] › tests/e2e/pwa.spec.ts:24:7 › PWA › sw.js is accessible (695ms)
+  ✓  128 [desktop] › tests/e2e/seo.spec.ts:11:7 › SEO › destination page has canonical + hreflang (3.2s)
+  ✓  130 [desktop] › tests/e2e/pwa.spec.ts:29:7 › PWA › hindi locale loads (2.4s)
+  ✓  132 [desktop] › tests/e2e/trip-board.spec.ts:37:7 › Trip Board — Phase 1 (ColdStart) › empty board renders ColdStart with vermillion 'actually possible' (1.5s)
+  ✓  131 [desktop] › tests/e2e/seo.spec.ts:21:7 › SEO › non-locale URL returns 301 (4.2s)
+  ✘  133 [desktop] › tests/e2e/trip-board.spec.ts:61:7 › Trip Board — Phase 2/3 markers (gated on stops > 0) › year band + cost aggregate render (6.8s)
+  ✘  106 [desktop] › tests/e2e/gap-year.spec.ts:61:7 › Gap Year Planner v2 › nav mega-menu includes Gap Year Planner entry (retry #1) (30.8s)
+  -  136 [desktop] › tests/e2e/visual.spec.ts:24:7 › Visual — Mobile › homepage above the fold
+  -  137 [desktop] › tests/e2e/visual.spec.ts:35:7 › Visual — Mobile › tab bar layout
+  -  138 [desktop] › tests/e2e/visual.spec.ts:45:7 › Visual — Mobile › destination detail hero
+  -  139 [desktop] › tests/e2e/visual.spec.ts:55:7 › Visual — Mobile › destination detail bottom CTA bar
+  -  140 [desktop] › tests/e2e/visual.spec.ts:69:7 › Visual — Mobile › chatbot button not cropped by tab bar
+  -  141 [desktop] › tests/e2e/visual.spec.ts:80:7 › Visual — Mobile › collection detail card layout
+  -  142 [desktop] › tests/e2e/visual.spec.ts:93:7 › Visual — Mobile › collections grid page
+  -  143 [desktop] › tests/e2e/visual.spec.ts:103:7 › Visual — Mobile › explore page cards
+  -  144 [desktop] › tests/e2e/visual.spec.ts:113:7 › Visual — Mobile › where to go page
+  ✓  134 [desktop] › tests/e2e/seo.spec.ts:27:7 › SEO › collections page has canonical (9.1s)
+  ✘  135 [desktop] › tests/e2e/trip-board.spec.ts:61:7 › Trip Board — Phase 2/3 markers (gated on stops > 0) › year band + cost aggregate render (retry #1) (8.5s)
+  ✓  147 [desktop] › tests/e2e/trip-board.spec.ts:68:7 › Trip Board — Phase 2/3 markers (gated on stops > 0) › trip board shell uses the .nakshiq-trip-board scope (2.3s)
+  ✓  148 [desktop] › tests/e2e/trip-board.spec.ts:72:7 › Trip Board — Phase 2/3 markers (gated on stops > 0) › F3 permit dialog never uses target='_blank' (2.7s)
+  ✘  145 [desktop] › tests/e2e/visual.spec.ts:133:7 › Visual — Desktop › homepage above the fold (20.6s)
+  ✓  146 [desktop] › tests/e2e/seo.spec.ts:33:7 › SEO › meta description exists on key pages (27.6s)
+  ✘  150 [desktop] › tests/e2e/visual.spec.ts:133:7 › Visual — Desktop › homepage above the fold (retry #1) (9.1s)
+  ✓  151 [desktop] › tests/e2e/where-to-go.spec.ts:4:7 › Where to Go › monthly page loads with destinations (5.1s)
+  ✘  152 [desktop] › tests/e2e/visual.spec.ts:143:7 › Visual — Desktop › destination detail page (7.7s)
+  ✘  149 [desktop] › tests/e2e/trip-board.spec.ts:89:7 › Trip Board — Phase 4 (AI Modal) › Generate itinerary CTA opens 3-step modal (30.0s)
+  ✘  154 [desktop] › tests/e2e/visual.spec.ts:143:7 › Visual — Desktop › destination detail page (retry #1) (12.4s)
+  ✘  156 [desktop] › tests/e2e/visual.spec.ts:153:7 › Visual — Desktop › collections page (8.4s)
+  ✘  153 [desktop] › tests/e2e/where-to-go.spec.ts:12:7 › Where to Go › where-to-go root redirects to current month (30.1s)
+  ✘  157 [desktop] › tests/e2e/visual.spec.ts:153:7 › Visual — Desktop › collections page (retry #1) (7.8s)
+  ✘  155 [desktop] › tests/e2e/trip-board.spec.ts:89:7 › Trip Board — Phase 4 (AI Modal) › Generate itinerary CTA opens 3-step modal (retry #1) (30.2s)
+  ✘  159 [desktop] › tests/e2e/visual.spec.ts:163:7 › Visual — Desktop › nav bar layout (5.4s)
+  ✘  161 [desktop] › tests/e2e/visual.spec.ts:163:7 › Visual — Desktop › nav bar layout (retry #1) (3.7s)
+  ✘  158 [desktop] › tests/e2e/where-to-go.spec.ts:12:7 › Where to Go › where-to-go root redirects to current month (retry #1) (30.3s)
+  ✓  162 [desktop] › tests/e2e/where-to-go.spec.ts:19:7 › Where to Go › regional where-to-go works (3.2s)
+  ✘  160 [desktop] › tests/e2e/trip-board.spec.ts:113:7 › Trip Board — Phase 5 (Map + Share) › Map toggle renders the SVG atlas with pins (30.1s)
+  ✘  163 [desktop] › tests/e2e/trip-board.spec.ts:113:7 › Trip Board — Phase 5 (Map + Share) › Map toggle renders the SVG atlas with pins (retry #1) (30.2s)
+  ✓  164 [desktop] › tests/e2e/trip-board.spec.ts:121:7 › Trip Board — Phase 5 (Map + Share) › Share Export opens share menu with 3 rows (1.0s)
+  ✓  165 [desktop] › tests/e2e/trip-board.spec.ts:129:7 › Trip Board — Phase 5 (Map + Share) › read-only share page returns 404 for bogus token (1.7s)
+  ✓  166 [desktop] › tests/e2e/trip-board.spec.ts:136:7 › Tour v2.1 unaffected › homepage onboarding still triggers via ?tour=1 (2.6s)
+
+
+  1) [mobile] › tests/e2e/gap-year.spec.ts:38:7 › Gap Year Planner v2 › origin combobox fuzzy-matches across name and state 
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[22m failed
+
+    Locator: getByRole('button', { name: /Jaipur/i })
+    Expected: visible
+    Error: strict mode violation: getByRole('button', { name: /Jaipur/i }) resolved to 2 elements:
+        1) <button type="button" class="w-full text-left px-3 py-2 text-sm transition bg-muted">…</button> aka getByRole('button', { name: 'Jaipur Rajasthan' })
+        2) <button type="button" class="p-4 rounded-lg border-2 text-left transition border-border hover:border-muted-foreground">…</button> aka getByRole('button', { name: 'First major India trip We\'ll' })
+
+    Call log:
+    [2m  - Expect "toBeVisible" with timeout 3000ms[22m
+    [2m  - waiting for getByRole('button', { name: /Jaipur/i })[22m
+
+
+      42 |     await originInput.fill("Rajas");
+      43 |     // Should surface Jaipur (state: Rajasthan) at least
+    > 44 |     await expect(page.getByRole("button", { name: /Jaipur/i })).toBeVisible({ timeout: 3000 });
+         |                                                                 ^
+      45 |   });
+      46 |
+      47 |   test("themes cap at 3 selected", async ({ page }) => {
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/gap-year.spec.ts:44:65
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/gap-year-Gap-Year-Planner--def22-tches-across-name-and-state-mobile/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/gap-year-Gap-Year-Planner--def22-tches-across-name-and-state-mobile/error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[22m failed
+
+    Locator: getByRole('button', { name: /Jaipur/i })
+    Expected: visible
+    Error: strict mode violation: getByRole('button', { name: /Jaipur/i }) resolved to 2 elements:
+        1) <button type="button" class="w-full text-left px-3 py-2 text-sm transition bg-muted">…</button> aka getByRole('button', { name: 'Jaipur Rajasthan' })
+        2) <button type="button" class="p-4 rounded-lg border-2 text-left transition border-border hover:border-muted-foreground">…</button> aka getByRole('button', { name: 'First major India trip We\'ll' })
+
+    Call log:
+    [2m  - Expect "toBeVisible" with timeout 3000ms[22m
+    [2m  - waiting for getByRole('button', { name: /Jaipur/i })[22m
+
+
+      42 |     await originInput.fill("Rajas");
+      43 |     // Should surface Jaipur (state: Rajasthan) at least
+    > 44 |     await expect(page.getByRole("button", { name: /Jaipur/i })).toBeVisible({ timeout: 3000 });
+         |                                                                 ^
+      45 |   });
+      46 |
+      47 |   test("themes cap at 3 selected", async ({ page }) => {
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/gap-year.spec.ts:44:65
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/gap-year-Gap-Year-Planner--def22-tches-across-name-and-state-mobile-retry1/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/gap-year-Gap-Year-Planner--def22-tches-across-name-and-state-mobile-retry1/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/gap-year-Gap-Year-Planner--def22-tches-across-name-and-state-mobile-retry1/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/gap-year-Gap-Year-Planner--def22-tches-across-name-and-state-mobile-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [mobile] › tests/e2e/gap-year.spec.ts:47:7 › Gap Year Planner v2 › themes cap at 3 selected ───
+
+    Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoBeLessThanOrEqual[2m([22m[32mexpected[39m[2m)[22m
+
+    Expected: <= [32m3[39m
+    Received:    [31m4[39m
+
+      56 |     // at most 3 theme chips appear with the primary (selected) style.
+      57 |     const selectedChips = await page.locator("button.bg-primary.text-primary-foreground").count();
+    > 58 |     expect(selectedChips).toBeLessThanOrEqual(3);
+         |                           ^
+      59 |   });
+      60 |
+      61 |   test("nav mega-menu includes Gap Year Planner entry", async ({ page }) => {
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/gap-year.spec.ts:58:27
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/gap-year-Gap-Year-Planner-v2-themes-cap-at-3-selected-mobile/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/gap-year-Gap-Year-Planner-v2-themes-cap-at-3-selected-mobile/error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoBeLessThanOrEqual[2m([22m[32mexpected[39m[2m)[22m
+
+    Expected: <= [32m3[39m
+    Received:    [31m4[39m
+
+      56 |     // at most 3 theme chips appear with the primary (selected) style.
+      57 |     const selectedChips = await page.locator("button.bg-primary.text-primary-foreground").count();
+    > 58 |     expect(selectedChips).toBeLessThanOrEqual(3);
+         |                           ^
+      59 |   });
+      60 |
+      61 |   test("nav mega-menu includes Gap Year Planner entry", async ({ page }) => {
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/gap-year.spec.ts:58:27
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/gap-year-Gap-Year-Planner-v2-themes-cap-at-3-selected-mobile-retry1/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/gap-year-Gap-Year-Planner-v2-themes-cap-at-3-selected-mobile-retry1/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/gap-year-Gap-Year-Planner-v2-themes-cap-at-3-selected-mobile-retry1/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/gap-year-Gap-Year-Planner-v2-themes-cap-at-3-selected-mobile-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) [mobile] › tests/e2e/homepage.spec.ts:14:7 › Homepage › explore by region cards render ────────
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[22m failed
+
+    Locator: getByText('Explore by region')
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+    [2m  - Expect "toBeVisible" with timeout 5000ms[22m
+    [2m  - waiting for getByText('Explore by region')[22m
+
+
+      14 |   test("explore by region cards render", async ({ page }) => {
+      15 |     await page.goto("/en");
+    > 16 |     await expect(page.getByText("Explore by region", { exact: false })).toBeVisible();
+         |                                                                         ^
+      17 |     // At least 6 region cards
+      18 |     const regionCards = page.locator("a[href*='/states?region=']");
+      19 |     await expect(regionCards.first()).toBeVisible();
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/homepage.spec.ts:16:73
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/homepage-Homepage-explore-by-region-cards-render-mobile/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/homepage-Homepage-explore-by-region-cards-render-mobile/error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[22m failed
+
+    Locator: getByText('Explore by region')
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+    [2m  - Expect "toBeVisible" with timeout 5000ms[22m
+    [2m  - waiting for getByText('Explore by region')[22m
+
+
+      14 |   test("explore by region cards render", async ({ page }) => {
+      15 |     await page.goto("/en");
+    > 16 |     await expect(page.getByText("Explore by region", { exact: false })).toBeVisible();
+         |                                                                         ^
+      17 |     // At least 6 region cards
+      18 |     const regionCards = page.locator("a[href*='/states?region=']");
+      19 |     await expect(regionCards.first()).toBeVisible();
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/homepage.spec.ts:16:73
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/homepage-Homepage-explore-by-region-cards-render-mobile-retry1/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/homepage-Homepage-explore-by-region-cards-render-mobile-retry1/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/homepage-Homepage-explore-by-region-cards-render-mobile-retry1/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/homepage-Homepage-explore-by-region-cards-render-mobile-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4) [mobile] › tests/e2e/navigation.spec.ts:32:7 › Mobile Navigation › more tab navigates to homepage 
+
+    TimeoutError: page.waitForURL: Timeout 5000ms exceeded.
+    =========================== logs ===========================
+    waiting for navigation to "**/en" until "load"
+      navigated to "https://www.nakshiq.com/en/more"
+    ============================================================
+
+      35 |     if (await moreBtn.isVisible({ timeout: 5000 }).catch(() => false)) {
+      36 |       await moreBtn.click();
+    > 37 |       await page.waitForURL("**/en", { timeout: 5000 });
+         |                  ^
+      38 |       // Should NOT land on About page
+      39 |       const url = page.url();
+      40 |       expect(url).not.toContain("/about");
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/navigation.spec.ts:37:18
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/navigation-Mobile-Navigation-more-tab-navigates-to-homepage-mobile/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/navigation-Mobile-Navigation-more-tab-navigates-to-homepage-mobile/error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    TimeoutError: page.waitForURL: Timeout 5000ms exceeded.
+    =========================== logs ===========================
+    waiting for navigation to "**/en" until "load"
+      navigated to "https://www.nakshiq.com/en/more"
+    ============================================================
+
+      35 |     if (await moreBtn.isVisible({ timeout: 5000 }).catch(() => false)) {
+      36 |       await moreBtn.click();
+    > 37 |       await page.waitForURL("**/en", { timeout: 5000 });
+         |                  ^
+      38 |       // Should NOT land on About page
+      39 |       const url = page.url();
+      40 |       expect(url).not.toContain("/about");
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/navigation.spec.ts:37:18
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/navigation-Mobile-Navigation-more-tab-navigates-to-homepage-mobile-retry1/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/navigation-Mobile-Navigation-more-tab-navigates-to-homepage-mobile-retry1/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/navigation-Mobile-Navigation-more-tab-navigates-to-homepage-mobile-retry1/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/navigation-Mobile-Navigation-more-tab-navigates-to-homepage-mobile-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  5) [mobile] › tests/e2e/trip-board.spec.ts:61:7 › Trip Board — Phase 2/3 markers (gated on stops > 0) › year band + cost aggregate render 
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoHaveCount[2m([22m[32mexpected[39m[2m)[22m failed
+
+    Locator:  locator('[data-yearband]').or(locator('.nq-yearband'))
+    Expected: [32m1[39m
+    Received: [31m0[39m
+    Timeout:  5000ms
+
+    Call log:
+    [2m  - Expect "toHaveCount" with timeout 5000ms[22m
+    [2m  - waiting for locator('[data-yearband]').or(locator('.nq-yearband'))[22m
+    [2m    9 × locator resolved to 0 elements[22m
+    [2m      - unexpected value "0"[22m
+
+
+      61 |   test("year band + cost aggregate render", async ({ page }) => {
+      62 |     // F2: year band marker present
+    > 63 |     await expect(page.locator("[data-yearband]").or(page.locator(".nq-yearband"))).toHaveCount(1);
+         |                                                                                    ^
+      64 |     // F5: cost panel marker present
+      65 |     await expect(page.locator("[data-cost-aggregate]")).toHaveCount(1);
+      66 |   });
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/trip-board.spec.ts:63:84
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/trip-board-Trip-Board-—-Ph-e881c--band-cost-aggregate-render-mobile/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/trip-board-Trip-Board-—-Ph-e881c--band-cost-aggregate-render-mobile/error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoHaveCount[2m([22m[32mexpected[39m[2m)[22m failed
+
+    Locator:  locator('[data-yearband]').or(locator('.nq-yearband'))
+    Expected: [32m1[39m
+    Received: [31m0[39m
+    Timeout:  5000ms
+
+    Call log:
+    [2m  - Expect "toHaveCount" with timeout 5000ms[22m
+    [2m  - waiting for locator('[data-yearband]').or(locator('.nq-yearband'))[22m
+    [2m    9 × locator resolved to 0 elements[22m
+    [2m      - unexpected value "0"[22m
+
+
+      61 |   test("year band + cost aggregate render", async ({ page }) => {
+      62 |     // F2: year band marker present
+    > 63 |     await expect(page.locator("[data-yearband]").or(page.locator(".nq-yearband"))).toHaveCount(1);
+         |                                                                                    ^
+      64 |     // F5: cost panel marker present
+      65 |     await expect(page.locator("[data-cost-aggregate]")).toHaveCount(1);
+      66 |   });
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/trip-board.spec.ts:63:84
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/trip-board-Trip-Board-—-Ph-e881c--band-cost-aggregate-render-mobile-retry1/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/trip-board-Trip-Board-—-Ph-e881c--band-cost-aggregate-render-mobile-retry1/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/trip-board-Trip-Board-—-Ph-e881c--band-cost-aggregate-render-mobile-retry1/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/trip-board-Trip-Board-—-Ph-e881c--band-cost-aggregate-render-mobile-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  6) [mobile] › tests/e2e/trip-board.spec.ts:89:7 › Trip Board — Phase 4 (AI Modal) › Generate itinerary CTA opens 3-step modal 
+
+    [31mTest timeout of 30000ms exceeded.[39m
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+    [2m  - waiting for getByRole('button', { name: /generate itinerary/i })[22m
+
+
+      88 |
+      89 |   test("Generate itinerary CTA opens 3-step modal", async ({ page }) => {
+    > 90 |     await page.getByRole("button", { name: /generate itinerary/i }).click();
+         |                                                                     ^
+      91 |     await expect(page.locator("[data-ai-modal]")).toBeVisible();
+      92 |     await expect(page.getByText(/who is going/i)).toBeVisible();
+      93 |
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/trip-board.spec.ts:90:69
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/trip-board-Trip-Board-—-Ph-4e081-rary-CTA-opens-3-step-modal-mobile/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/trip-board-Trip-Board-—-Ph-4e081-rary-CTA-opens-3-step-modal-mobile/error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    [31mTest timeout of 30000ms exceeded.[39m
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+    [2m  - waiting for getByRole('button', { name: /generate itinerary/i })[22m
+
+
+      88 |
+      89 |   test("Generate itinerary CTA opens 3-step modal", async ({ page }) => {
+    > 90 |     await page.getByRole("button", { name: /generate itinerary/i }).click();
+         |                                                                     ^
+      91 |     await expect(page.locator("[data-ai-modal]")).toBeVisible();
+      92 |     await expect(page.getByText(/who is going/i)).toBeVisible();
+      93 |
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/trip-board.spec.ts:90:69
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/trip-board-Trip-Board-—-Ph-4e081-rary-CTA-opens-3-step-modal-mobile-retry1/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/trip-board-Trip-Board-—-Ph-4e081-rary-CTA-opens-3-step-modal-mobile-retry1/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/trip-board-Trip-Board-—-Ph-4e081-rary-CTA-opens-3-step-modal-mobile-retry1/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/trip-board-Trip-Board-—-Ph-4e081-rary-CTA-opens-3-step-modal-mobile-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  7) [mobile] › tests/e2e/trip-board.spec.ts:113:7 › Trip Board — Phase 5 (Map + Share) › Map toggle renders the SVG atlas with pins 
+
+    [31mTest timeout of 30000ms exceeded.[39m
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+    [2m  - waiting for getByRole('button', { name: /^Map$/ })[22m
+
+
+      112 |
+      113 |   test("Map toggle renders the SVG atlas with pins", async ({ page }) => {
+    > 114 |     await page.getByRole("button", { name: /^Map$/ }).click();
+          |                                                       ^
+      115 |     await expect(page.locator("[data-trip-map]")).toBeVisible();
+      116 |     // At least 1 pin (could be fewer than seed if some stops have no coords)
+      117 |     const pins = page.locator("[data-pins] [data-pin-id]");
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/trip-board.spec.ts:114:55
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/trip-board-Trip-Board-—-Ph-e14e6-ers-the-SVG-atlas-with-pins-mobile/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/trip-board-Trip-Board-—-Ph-e14e6-ers-the-SVG-atlas-with-pins-mobile/error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    [31mTest timeout of 30000ms exceeded.[39m
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+    [2m  - waiting for getByRole('button', { name: /^Map$/ })[22m
+
+
+      112 |
+      113 |   test("Map toggle renders the SVG atlas with pins", async ({ page }) => {
+    > 114 |     await page.getByRole("button", { name: /^Map$/ }).click();
+          |                                                       ^
+      115 |     await expect(page.locator("[data-trip-map]")).toBeVisible();
+      116 |     // At least 1 pin (could be fewer than seed if some stops have no coords)
+      117 |     const pins = page.locator("[data-pins] [data-pin-id]");
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/trip-board.spec.ts:114:55
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/trip-board-Trip-Board-—-Ph-e14e6-ers-the-SVG-atlas-with-pins-mobile-retry1/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/trip-board-Trip-Board-—-Ph-e14e6-ers-the-SVG-atlas-with-pins-mobile-retry1/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/trip-board-Trip-Board-—-Ph-e14e6-ers-the-SVG-atlas-with-pins-mobile-retry1/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/trip-board-Trip-Board-—-Ph-e14e6-ers-the-SVG-atlas-with-pins-mobile-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  8) [mobile] › tests/e2e/visual.spec.ts:24:7 › Visual — Mobile › homepage above the fold ──────────
+
+    Error: [2mexpect([22m[31mpage[39m[2m).[22mtoHaveScreenshot[2m([22m[32mexpected[39m[2m)[22m failed
+
+      34159 pixels (ratio 0.12 of all image pixels) are different.
+
+      Snapshot: mobile-homepage.png
+
+    Call log:
+    [2m  - Expect "toHaveScreenshot(mobile-homepage.png)" with timeout 5000ms[22m
+    [2m    - verifying given screenshot expectation[22m
+    [2m  - taking page screenshot[22m
+    [2m    - disabled all CSS animations[22m
+    [2m  - waiting for fonts to load...[22m
+    [2m  - fonts loaded[22m
+    [2m  - 34159 pixels (ratio 0.12 of all image pixels) are different.[22m
+    [2m  - waiting 100ms before taking screenshot[22m
+    [2m  - taking page screenshot[22m
+    [2m    - disabled all CSS animations[22m
+    [2m  - waiting for fonts to load...[22m
+    [2m  - fonts loaded[22m
+    [2m  - captured a stable screenshot[22m
+    [2m  - 34159 pixels (ratio 0.12 of all image pixels) are different.[22m
+
+
+      27 |     // Hide dynamic content that changes between runs
+      28 |     await hideVolatileElements(page);
+    > 29 |     await expect(page).toHaveScreenshot("mobile-homepage.png", {
+         |                        ^
+      30 |       maxDiffPixelRatio: 0.03,
+      31 |       fullPage: false,
+      32 |     });
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/visual.spec.ts:29:24
+
+    attachment #1: mobile-homepage (image/png) ─────────────────────────────────────────────────────
+    Expected: tests/e2e/visual.spec.ts-snapshots/mobile-homepage-mobile-darwin.png
+    Received: test-results/visual-Visual-—-Mobile-homepage-above-the-fold-mobile/mobile-homepage-actual.png
+    Diff:     test-results/visual-Visual-—-Mobile-homepage-above-the-fold-mobile/mobile-homepage-diff.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/visual-Visual-—-Mobile-homepage-above-the-fold-mobile/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/visual-Visual-—-Mobile-homepage-above-the-fold-mobile/error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: [2mexpect([22m[31mpage[39m[2m).[22mtoHaveScreenshot[2m([22m[32mexpected[39m[2m)[22m failed
+
+      34159 pixels (ratio 0.12 of all image pixels) are different.
+
+      Snapshot: mobile-homepage.png
+
+    Call log:
+    [2m  - Expect "toHaveScreenshot(mobile-homepage.png)" with timeout 5000ms[22m
+    [2m    - verifying given screenshot expectation[22m
+    [2m  - taking page screenshot[22m
+    [2m    - disabled all CSS animations[22m
+    [2m  - waiting for fonts to load...[22m
+    [2m  - fonts loaded[22m
+    [2m  - 34159 pixels (ratio 0.12 of all image pixels) are different.[22m
+    [2m  - waiting 100ms before taking screenshot[22m
+    [2m  - taking page screenshot[22m
+    [2m    - disabled all CSS animations[22m
+    [2m  - waiting for fonts to load...[22m
+    [2m  - fonts loaded[22m
+    [2m  - captured a stable screenshot[22m
+    [2m  - 34159 pixels (ratio 0.12 of all image pixels) are different.[22m
+
+
+      27 |     // Hide dynamic content that changes between runs
+      28 |     await hideVolatileElements(page);
+    > 29 |     await expect(page).toHaveScreenshot("mobile-homepage.png", {
+         |                        ^
+      30 |       maxDiffPixelRatio: 0.03,
+      31 |       fullPage: false,
+      32 |     });
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/visual.spec.ts:29:24
+
+    attachment #1: mobile-homepage (image/png) ─────────────────────────────────────────────────────
+    Expected: tests/e2e/visual.spec.ts-snapshots/mobile-homepage-mobile-darwin.png
+    Received: test-results/visual-Visual-—-Mobile-homepage-above-the-fold-mobile-retry1/mobile-homepage-actual.png
+    Diff:     test-results/visual-Visual-—-Mobile-homepage-above-the-fold-mobile-retry1/mobile-homepage-diff.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/visual-Visual-—-Mobile-homepage-above-the-fold-mobile-retry1/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/visual-Visual-—-Mobile-homepage-above-the-fold-mobile-retry1/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/visual-Visual-—-Mobile-homepage-above-the-fold-mobile-retry1/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/visual-Visual-—-Mobile-homepage-above-the-fold-mobile-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  9) [mobile] › tests/e2e/visual.spec.ts:45:7 › Visual — Mobile › destination detail hero ──────────
+
+    Error: [2mexpect([22m[31mpage[39m[2m).[22mtoHaveScreenshot[2m([22m[32mexpected[39m[2m)[22m failed
+
+      79497 pixels (ratio 0.27 of all image pixels) are different.
+
+      Snapshot: mobile-destination-hero.png
+
+    Call log:
+    [2m  - Expect "toHaveScreenshot(mobile-destination-hero.png)" with timeout 5000ms[22m
+    [2m    - verifying given screenshot expectation[22m
+    [2m  - taking page screenshot[22m
+    [2m    - disabled all CSS animations[22m
+    [2m  - waiting for fonts to load...[22m
+    [2m  - fonts loaded[22m
+    [2m  - 79497 pixels (ratio 0.27 of all image pixels) are different.[22m
+    [2m  - waiting 100ms before taking screenshot[22m
+    [2m  - taking page screenshot[22m
+    [2m    - disabled all CSS animations[22m
+    [2m  - waiting for fonts to load...[22m
+    [2m  - fonts loaded[22m
+    [2m  - captured a stable screenshot[22m
+    [2m  - 79497 pixels (ratio 0.27 of all image pixels) are different.[22m
+
+
+      47 |     await page.waitForLoadState("networkidle");
+      48 |     await hideVolatileElements(page);
+    > 49 |     await expect(page).toHaveScreenshot("mobile-destination-hero.png", {
+         |                        ^
+      50 |       maxDiffPixelRatio: 0.03,
+      51 |       fullPage: false,
+      52 |     });
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/visual.spec.ts:49:24
+
+    attachment #1: mobile-destination-hero (image/png) ─────────────────────────────────────────────
+    Expected: tests/e2e/visual.spec.ts-snapshots/mobile-destination-hero-mobile-darwin.png
+    Received: test-results/visual-Visual-—-Mobile-destination-detail-hero-mobile/mobile-destination-hero-actual.png
+    Diff:     test-results/visual-Visual-—-Mobile-destination-detail-hero-mobile/mobile-destination-hero-diff.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/visual-Visual-—-Mobile-destination-detail-hero-mobile/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/visual-Visual-—-Mobile-destination-detail-hero-mobile/error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: [2mexpect([22m[31mpage[39m[2m).[22mtoHaveScreenshot[2m([22m[32mexpected[39m[2m)[22m failed
+
+      79497 pixels (ratio 0.27 of all image pixels) are different.
+
+      Snapshot: mobile-destination-hero.png
+
+    Call log:
+    [2m  - Expect "toHaveScreenshot(mobile-destination-hero.png)" with timeout 5000ms[22m
+    [2m    - verifying given screenshot expectation[22m
+    [2m  - taking page screenshot[22m
+    [2m    - disabled all CSS animations[22m
+    [2m  - waiting for fonts to load...[22m
+    [2m  - fonts loaded[22m
+    [2m  - 79497 pixels (ratio 0.27 of all image pixels) are different.[22m
+    [2m  - waiting 100ms before taking screenshot[22m
+    [2m  - taking page screenshot[22m
+    [2m    - disabled all CSS animations[22m
+    [2m  - waiting for fonts to load...[22m
+    [2m  - fonts loaded[22m
+    [2m  - captured a stable screenshot[22m
+    [2m  - 79497 pixels (ratio 0.27 of all image pixels) are different.[22m
+
+
+      47 |     await page.waitForLoadState("networkidle");
+      48 |     await hideVolatileElements(page);
+    > 49 |     await expect(page).toHaveScreenshot("mobile-destination-hero.png", {
+         |                        ^
+      50 |       maxDiffPixelRatio: 0.03,
+      51 |       fullPage: false,
+      52 |     });
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/visual.spec.ts:49:24
+
+    attachment #1: mobile-destination-hero (image/png) ─────────────────────────────────────────────
+    Expected: tests/e2e/visual.spec.ts-snapshots/mobile-destination-hero-mobile-darwin.png
+    Received: test-results/visual-Visual-—-Mobile-destination-detail-hero-mobile-retry1/mobile-destination-hero-actual.png
+    Diff:     test-results/visual-Visual-—-Mobile-destination-detail-hero-mobile-retry1/mobile-destination-hero-diff.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/visual-Visual-—-Mobile-destination-detail-hero-mobile-retry1/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/visual-Visual-—-Mobile-destination-detail-hero-mobile-retry1/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/visual-Visual-—-Mobile-destination-detail-hero-mobile-retry1/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/visual-Visual-—-Mobile-destination-detail-hero-mobile-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  10) [mobile] › tests/e2e/visual.spec.ts:55:7 › Visual — Mobile › destination detail bottom CTA bar 
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoHaveScreenshot[2m([22m[32mexpected[39m[2m)[22m failed
+
+    Locator: locator('[data-testid=\'bottom-cta\'], .fixed.bottom-0').last()
+      Expected an image 532px by 60px, received 375px by 60px. 18684 pixels (ratio 0.59 of all image pixels) are different.
+
+      Snapshot: mobile-bottom-cta.png
+
+    Call log:
+    [2m  - Expect "toHaveScreenshot(mobile-bottom-cta.png)" with timeout 5000ms[22m
+    [2m    - verifying given screenshot expectation[22m
+    [2m  - waiting for locator('[data-testid=\'bottom-cta\'], .fixed.bottom-0').last()[22m
+    [2m    - locator resolved to <nav role="navigation" aria-label="Main navigation" class="fixed bottom-0 left-0 right-0 z-40 border-t border-border/50 bg-background/95 backdrop-blur-lg md:hidden pb-safe">…</nav>[22m
+    [2m  - taking element screenshot[22m
+    [2m    - disabled all CSS animations[22m
+    [2m  - waiting for fonts to load...[22m
+    [2m  - fonts loaded[22m
+    [2m  - attempting scroll into view action[22m
+    [2m    - waiting for element to be stable[22m
+    [2m  - Expected an image 532px by 60px, received 375px by 60px. 18684 pixels (ratio 0.59 of all image pixels) are different.[22m
+    [2m  - waiting 100ms before taking screenshot[22m
+    [2m  - waiting for locator('[data-testid=\'bottom-cta\'], .fixed.bottom-0').last()[22m
+    [2m    - locator resolved to <nav role="navigation" aria-label="Main navigation" class="fixed bottom-0 left-0 right-0 z-40 border-t border-border/50 bg-background/95 backdrop-blur-lg md:hidden pb-safe">…</nav>[22m
+    [2m  - taking element screenshot[22m
+    [2m    - disabled all CSS animations[22m
+    [2m  - waiting for fonts to load...[22m
+    [2m  - fonts loaded[22m
+    [2m  - attempting scroll into view action[22m
+    [2m    - waiting for element to be stable[22m
+    [2m  - captured a stable screenshot[22m
+    [2m  - Expected an image 532px by 60px, received 375px by 60px. 18684 pixels (ratio 0.59 of all image pixels) are different.[22m
+
+
+      61 |     const ctaBar = page.locator("[data-testid='bottom-cta'], .fixed.bottom-0").last();
+      62 |     if (await ctaBar.isVisible().catch(() => false)) {
+    > 63 |       await expect(ctaBar).toHaveScreenshot("mobile-bottom-cta.png", {
+         |                            ^
+      64 |         maxDiffPixelRatio: 0.02,
+      65 |       });
+      66 |     }
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/visual.spec.ts:63:28
+
+    attachment #1: mobile-bottom-cta (image/png) ───────────────────────────────────────────────────
+    Expected: tests/e2e/visual.spec.ts-snapshots/mobile-bottom-cta-mobile-darwin.png
+    Received: test-results/visual-Visual-—-Mobile-destination-detail-bottom-CTA-bar-mobile/mobile-bottom-cta-actual.png
+    Diff:     test-results/visual-Visual-—-Mobile-destination-detail-bottom-CTA-bar-mobile/mobile-bottom-cta-diff.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/visual-Visual-—-Mobile-destination-detail-bottom-CTA-bar-mobile/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/visual-Visual-—-Mobile-destination-detail-bottom-CTA-bar-mobile/error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoHaveScreenshot[2m([22m[32mexpected[39m[2m)[22m failed
+
+    Locator: locator('[data-testid=\'bottom-cta\'], .fixed.bottom-0').last()
+      Expected an image 532px by 60px, received 375px by 60px. 18684 pixels (ratio 0.59 of all image pixels) are different.
+
+      Snapshot: mobile-bottom-cta.png
+
+    Call log:
+    [2m  - Expect "toHaveScreenshot(mobile-bottom-cta.png)" with timeout 5000ms[22m
+    [2m    - verifying given screenshot expectation[22m
+    [2m  - waiting for locator('[data-testid=\'bottom-cta\'], .fixed.bottom-0').last()[22m
+    [2m    - locator resolved to <nav role="navigation" aria-label="Main navigation" class="fixed bottom-0 left-0 right-0 z-40 border-t border-border/50 bg-background/95 backdrop-blur-lg md:hidden pb-safe">…</nav>[22m
+    [2m  - taking element screenshot[22m
+    [2m    - disabled all CSS animations[22m
+    [2m  - waiting for fonts to load...[22m
+    [2m  - fonts loaded[22m
+    [2m  - attempting scroll into view action[22m
+    [2m    - waiting for element to be stable[22m
+    [2m  - Expected an image 532px by 60px, received 375px by 60px. 18684 pixels (ratio 0.59 of all image pixels) are different.[22m
+    [2m  - waiting 100ms before taking screenshot[22m
+    [2m  - waiting for locator('[data-testid=\'bottom-cta\'], .fixed.bottom-0').last()[22m
+    [2m    - locator resolved to <nav role="navigation" aria-label="Main navigation" class="fixed bottom-0 left-0 right-0 z-40 border-t border-border/50 bg-background/95 backdrop-blur-lg md:hidden pb-safe">…</nav>[22m
+    [2m  - taking element screenshot[22m
+    [2m    - disabled all CSS animations[22m
+    [2m  - waiting for fonts to load...[22m
+    [2m  - fonts loaded[22m
+    [2m  - attempting scroll into view action[22m
+    [2m    - waiting for element to be stable[22m
+    [2m  - captured a stable screenshot[22m
+    [2m  - Expected an image 532px by 60px, received 375px by 60px. 18684 pixels (ratio 0.59 of all image pixels) are different.[22m
+
+
+      61 |     const ctaBar = page.locator("[data-testid='bottom-cta'], .fixed.bottom-0").last();
+      62 |     if (await ctaBar.isVisible().catch(() => false)) {
+    > 63 |       await expect(ctaBar).toHaveScreenshot("mobile-bottom-cta.png", {
+         |                            ^
+      64 |         maxDiffPixelRatio: 0.02,
+      65 |       });
+      66 |     }
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/visual.spec.ts:63:28
+
+    attachment #1: mobile-bottom-cta (image/png) ───────────────────────────────────────────────────
+    Expected: tests/e2e/visual.spec.ts-snapshots/mobile-bottom-cta-mobile-darwin.png
+    Received: test-results/visual-Visual-—-Mobile-destination-detail-bottom-CTA-bar-mobile-retry1/mobile-bottom-cta-actual.png
+    Diff:     test-results/visual-Visual-—-Mobile-destination-detail-bottom-CTA-bar-mobile-retry1/mobile-bottom-cta-diff.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/visual-Visual-—-Mobile-destination-detail-bottom-CTA-bar-mobile-retry1/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/visual-Visual-—-Mobile-destination-detail-bottom-CTA-bar-mobile-retry1/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/visual-Visual-—-Mobile-destination-detail-bottom-CTA-bar-mobile-retry1/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/visual-Visual-—-Mobile-destination-detail-bottom-CTA-bar-mobile-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  11) [mobile] › tests/e2e/visual.spec.ts:69:7 › Visual — Mobile › chatbot button not cropped by tab bar 
+
+    Error: [2mexpect([22m[31mpage[39m[2m).[22mtoHaveScreenshot[2m([22m[32mexpected[39m[2m)[22m failed
+
+      16434 pixels (ratio 0.22 of all image pixels) are different.
+
+      Snapshot: mobile-chat-button-area.png
+
+    Call log:
+    [2m  - Expect "toHaveScreenshot(mobile-chat-button-area.png)" with timeout 5000ms[22m
+    [2m    - verifying given screenshot expectation[22m
+    [2m  - taking page screenshot[22m
+    [2m    - disabled all CSS animations[22m
+    [2m  - waiting for fonts to load...[22m
+    [2m  - fonts loaded[22m
+    [2m  - 15877 pixels (ratio 0.22 of all image pixels) are different.[22m
+    [2m  - waiting 100ms before taking screenshot[22m
+    [2m  - taking page screenshot[22m
+    [2m    - disabled all CSS animations[22m
+    [2m  - waiting for fonts to load...[22m
+    [2m  - fonts loaded[22m
+    [2m  - 12336 pixels (ratio 0.17 of all image pixels) are different.[22m
+    [2m  - waiting 250ms before taking screenshot[22m
+    [2m  - taking page screenshot[22m
+    [2m    - disabled all CSS animations[22m
+    [2m  - waiting for fonts to load...[22m
+    [2m  - fonts loaded[22m
+    [2m  - 5524 pixels (ratio 0.08 of all image pixels) are different.[22m
+    [2m  - waiting 500ms before taking screenshot[22m
+    [2m  - taking page screenshot[22m
+    [2m    - disabled all CSS animations[22m
+    [2m  - waiting for fonts to load...[22m
+    [2m  - fonts loaded[22m
+    [2m  - captured a stable screenshot[22m
+    [2m  - 16434 pixels (ratio 0.22 of all image pixels) are different.[22m
+
+
+      71 |     await page.waitForLoadState("networkidle");
+      72 |     // Capture the bottom 200px of viewport where chat button + tab bar live
+    > 73 |     await expect(page).toHaveScreenshot("mobile-chat-button-area.png", {
+         |                        ^
+      74 |       maxDiffPixelRatio: 0.03,
+      75 |       fullPage: false,
+      76 |       clip: { x: 0, y: 612, width: 375, height: 200 },
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/visual.spec.ts:73:24
+
+    attachment #1: mobile-chat-button-area (image/png) ─────────────────────────────────────────────
+    Expected: tests/e2e/visual.spec.ts-snapshots/mobile-chat-button-area-mobile-darwin.png
+    Received: test-results/visual-Visual-—-Mobile-chatbot-button-not-cropped-by-tab-bar-mobile/mobile-chat-button-area-actual.png
+    Diff:     test-results/visual-Visual-—-Mobile-chatbot-button-not-cropped-by-tab-bar-mobile/mobile-chat-button-area-diff.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/visual-Visual-—-Mobile-chatbot-button-not-cropped-by-tab-bar-mobile/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/visual-Visual-—-Mobile-chatbot-button-not-cropped-by-tab-bar-mobile/error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: [2mexpect([22m[31mpage[39m[2m).[22mtoHaveScreenshot[2m([22m[32mexpected[39m[2m)[22m failed
+
+      12963 pixels (ratio 0.18 of all image pixels) are different.
+
+      Snapshot: mobile-chat-button-area.png
+
+    Call log:
+    [2m  - Expect "toHaveScreenshot(mobile-chat-button-area.png)" with timeout 5000ms[22m
+    [2m    - verifying given screenshot expectation[22m
+    [2m  - taking page screenshot[22m
+    [2m    - disabled all CSS animations[22m
+    [2m  - waiting for fonts to load...[22m
+    [2m  - fonts loaded[22m
+    [2m  - 12962 pixels (ratio 0.18 of all image pixels) are different.[22m
+    [2m  - waiting 100ms before taking screenshot[22m
+    [2m  - taking page screenshot[22m
+    [2m    - disabled all CSS animations[22m
+    [2m  - waiting for fonts to load...[22m
+    [2m  - fonts loaded[22m
+    [2m  - captured a stable screenshot[22m
+    [2m  - 12963 pixels (ratio 0.18 of all image pixels) are different.[22m
+
+
+      71 |     await page.waitForLoadState("networkidle");
+      72 |     // Capture the bottom 200px of viewport where chat button + tab bar live
+    > 73 |     await expect(page).toHaveScreenshot("mobile-chat-button-area.png", {
+         |                        ^
+      74 |       maxDiffPixelRatio: 0.03,
+      75 |       fullPage: false,
+      76 |       clip: { x: 0, y: 612, width: 375, height: 200 },
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/visual.spec.ts:73:24
+
+    attachment #1: mobile-chat-button-area (image/png) ─────────────────────────────────────────────
+    Expected: tests/e2e/visual.spec.ts-snapshots/mobile-chat-button-area-mobile-darwin.png
+    Received: test-results/visual-Visual-—-Mobile-chatbot-button-not-cropped-by-tab-bar-mobile-retry1/mobile-chat-button-area-actual.png
+    Diff:     test-results/visual-Visual-—-Mobile-chatbot-button-not-cropped-by-tab-bar-mobile-retry1/mobile-chat-button-area-diff.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/visual-Visual-—-Mobile-chatbot-button-not-cropped-by-tab-bar-mobile-retry1/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/visual-Visual-—-Mobile-chatbot-button-not-cropped-by-tab-bar-mobile-retry1/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/visual-Visual-—-Mobile-chatbot-button-not-cropped-by-tab-bar-mobile-retry1/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/visual-Visual-—-Mobile-chatbot-button-not-cropped-by-tab-bar-mobile-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  12) [mobile] › tests/e2e/visual.spec.ts:80:7 › Visual — Mobile › collection detail card layout ───
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoHaveScreenshot[2m([22m[32mexpected[39m[2m)[22m failed
+
+    Locator: locator('a[href*=\'/destination/\']').first()
+      Expected an image 343px by 82px, received 343px by 83px. 3900 pixels (ratio 0.14 of all image pixels) are different.
+
+      Snapshot: mobile-collection-card.png
+
+    Call log:
+    [2m  - Expect "toHaveScreenshot(mobile-collection-card.png)" with timeout 5000ms[22m
+    [2m    - verifying given screenshot expectation[22m
+    [2m  - waiting for locator('a[href*=\'/destination/\']').first()[22m
+    [2m    - locator resolved to <a href="/en/destination/port-blair" class="flex items-start gap-3 sm:gap-4 rounded-xl border border-border bg-card overflow-hidden transition-all hover:border-primary/50">…</a>[22m
+    [2m  - taking element screenshot[22m
+    [2m    - disabled all CSS animations[22m
+    [2m  - waiting for fonts to load...[22m
+    [2m  - fonts loaded[22m
+    [2m  - attempting scroll into view action[22m
+    [2m    2 × waiting for element to be stable[22m
+    [2m      - element is not stable[22m
+    [2m    - retrying scroll into view action[22m
+    [2m    - waiting 20ms[22m
+    [2m    - waiting for element to be stable[22m
+    [2m    - element is not stable[22m
+    [2m  - retrying scroll into view action[22m
+    [2m    - waiting 100ms[22m
+    [2m    - waiting for element to be stable[22m
+    [2m  - Expected an image 343px by 82px, received 343px by 83px. 3900 pixels (ratio 0.14 of all image pixels) are different.[22m
+    [2m  - waiting 100ms before taking screenshot[22m
+    [2m  - waiting for locator('a[href*=\'/destination/\']').first()[22m
+    [2m    - locator resolved to <a href="/en/destination/port-blair" class="flex items-start gap-3 sm:gap-4 rounded-xl border border-border bg-card overflow-hidden transition-all hover:border-primary/50">…</a>[22m
+    [2m  - taking element screenshot[22m
+    [2m    - disabled all CSS animations[22m
+    [2m  - waiting for fonts to load...[22m
+    [2m  - fonts loaded[22m
+    [2m  - attempting scroll into view action[22m
+    [2m    - waiting for element to be stable[22m
+    [2m  - captured a stable screenshot[22m
+    [2m  - Expected an image 343px by 82px, received 343px by 83px. 3900 pixels (ratio 0.14 of all image pixels) are different.[22m
+
+
+      85 |     const firstCard = page.locator("a[href*='/destination/']").first();
+      86 |     if (await firstCard.isVisible().catch(() => false)) {
+    > 87 |       await expect(firstCard).toHaveScreenshot("mobile-collection-card.png", {
+         |                               ^
+      88 |         maxDiffPixelRatio: 0.05,
+      89 |       });
+      90 |     }
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/visual.spec.ts:87:31
+
+    attachment #1: mobile-collection-card (image/png) ──────────────────────────────────────────────
+    Expected: tests/e2e/visual.spec.ts-snapshots/mobile-collection-card-mobile-darwin.png
+    Received: test-results/visual-Visual-—-Mobile-collection-detail-card-layout-mobile/mobile-collection-card-actual.png
+    Diff:     test-results/visual-Visual-—-Mobile-collection-detail-card-layout-mobile/mobile-collection-card-diff.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/visual-Visual-—-Mobile-collection-detail-card-layout-mobile/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/visual-Visual-—-Mobile-collection-detail-card-layout-mobile/error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoHaveScreenshot[2m([22m[32mexpected[39m[2m)[22m failed
+
+    Locator: locator('a[href*=\'/destination/\']').first()
+      Expected an image 343px by 82px, received 343px by 83px. 3900 pixels (ratio 0.14 of all image pixels) are different.
+
+      Snapshot: mobile-collection-card.png
+
+    Call log:
+    [2m  - Expect "toHaveScreenshot(mobile-collection-card.png)" with timeout 5000ms[22m
+    [2m    - verifying given screenshot expectation[22m
+    [2m  - waiting for locator('a[href*=\'/destination/\']').first()[22m
+    [2m    - locator resolved to <a href="/en/destination/port-blair" class="flex items-start gap-3 sm:gap-4 rounded-xl border border-border bg-card overflow-hidden transition-all hover:border-primary/50">…</a>[22m
+    [2m  - taking element screenshot[22m
+    [2m    - disabled all CSS animations[22m
+    [2m  - waiting for fonts to load...[22m
+    [2m  - fonts loaded[22m
+    [2m  - attempting scroll into view action[22m
+    [2m    - waiting for element to be stable[22m
+    [2m  - Expected an image 343px by 82px, received 343px by 83px. 3900 pixels (ratio 0.14 of all image pixels) are different.[22m
+    [2m  - waiting 100ms before taking screenshot[22m
+    [2m  - waiting for locator('a[href*=\'/destination/\']').first()[22m
+    [2m    - locator resolved to <a href="/en/destination/port-blair" class="flex items-start gap-3 sm:gap-4 rounded-xl border border-border bg-card overflow-hidden transition-all hover:border-primary/50">…</a>[22m
+    [2m  - taking element screenshot[22m
+    [2m    - disabled all CSS animations[22m
+    [2m  - waiting for fonts to load...[22m
+    [2m  - fonts loaded[22m
+    [2m  - attempting scroll into view action[22m
+    [2m    - waiting for element to be stable[22m
+    [2m  - captured a stable screenshot[22m
+    [2m  - Expected an image 343px by 82px, received 343px by 83px. 3900 pixels (ratio 0.14 of all image pixels) are different.[22m
+
+
+      85 |     const firstCard = page.locator("a[href*='/destination/']").first();
+      86 |     if (await firstCard.isVisible().catch(() => false)) {
+    > 87 |       await expect(firstCard).toHaveScreenshot("mobile-collection-card.png", {
+         |                               ^
+      88 |         maxDiffPixelRatio: 0.05,
+      89 |       });
+      90 |     }
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/visual.spec.ts:87:31
+
+    attachment #1: mobile-collection-card (image/png) ──────────────────────────────────────────────
+    Expected: tests/e2e/visual.spec.ts-snapshots/mobile-collection-card-mobile-darwin.png
+    Received: test-results/visual-Visual-—-Mobile-collection-detail-card-layout-mobile-retry1/mobile-collection-card-actual.png
+    Diff:     test-results/visual-Visual-—-Mobile-collection-detail-card-layout-mobile-retry1/mobile-collection-card-diff.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/visual-Visual-—-Mobile-collection-detail-card-layout-mobile-retry1/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/visual-Visual-—-Mobile-collection-detail-card-layout-mobile-retry1/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/visual-Visual-—-Mobile-collection-detail-card-layout-mobile-retry1/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/visual-Visual-—-Mobile-collection-detail-card-layout-mobile-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  13) [mobile] › tests/e2e/visual.spec.ts:93:7 › Visual — Mobile › collections grid page ───────────
+
+    Error: [2mexpect([22m[31mpage[39m[2m).[22mtoHaveScreenshot[2m([22m[32mexpected[39m[2m)[22m failed
+
+      23881 pixels (ratio 0.08 of all image pixels) are different.
+
+      Snapshot: mobile-collections-grid.png
+
+    Call log:
+    [2m  - Expect "toHaveScreenshot(mobile-collections-grid.png)" with timeout 5000ms[22m
+    [2m    - verifying given screenshot expectation[22m
+    [2m  - taking page screenshot[22m
+    [2m    - disabled all CSS animations[22m
+    [2m  - waiting for fonts to load...[22m
+    [2m  - fonts loaded[22m
+    [2m  - 23881 pixels (ratio 0.08 of all image pixels) are different.[22m
+    [2m  - waiting 100ms before taking screenshot[22m
+    [2m  - taking page screenshot[22m
+    [2m    - disabled all CSS animations[22m
+    [2m  - waiting for fonts to load...[22m
+    [2m  - fonts loaded[22m
+    [2m  - captured a stable screenshot[22m
+    [2m  - 23881 pixels (ratio 0.08 of all image pixels) are different.[22m
+
+
+       95 |     await page.waitForLoadState("networkidle");
+       96 |     await hideVolatileElements(page);
+    >  97 |     await expect(page).toHaveScreenshot("mobile-collections-grid.png", {
+          |                        ^
+       98 |       maxDiffPixelRatio: 0.03,
+       99 |       fullPage: false,
+      100 |     });
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/visual.spec.ts:97:24
+
+    attachment #1: mobile-collections-grid (image/png) ─────────────────────────────────────────────
+    Expected: tests/e2e/visual.spec.ts-snapshots/mobile-collections-grid-mobile-darwin.png
+    Received: test-results/visual-Visual-—-Mobile-collections-grid-page-mobile/mobile-collections-grid-actual.png
+    Diff:     test-results/visual-Visual-—-Mobile-collections-grid-page-mobile/mobile-collections-grid-diff.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/visual-Visual-—-Mobile-collections-grid-page-mobile/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/visual-Visual-—-Mobile-collections-grid-page-mobile/error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: [2mexpect([22m[31mpage[39m[2m).[22mtoHaveScreenshot[2m([22m[32mexpected[39m[2m)[22m failed
+
+      23881 pixels (ratio 0.08 of all image pixels) are different.
+
+      Snapshot: mobile-collections-grid.png
+
+    Call log:
+    [2m  - Expect "toHaveScreenshot(mobile-collections-grid.png)" with timeout 5000ms[22m
+    [2m    - verifying given screenshot expectation[22m
+    [2m  - taking page screenshot[22m
+    [2m    - disabled all CSS animations[22m
+    [2m  - waiting for fonts to load...[22m
+    [2m  - fonts loaded[22m
+    [2m  - 23881 pixels (ratio 0.08 of all image pixels) are different.[22m
+    [2m  - waiting 100ms before taking screenshot[22m
+    [2m  - taking page screenshot[22m
+    [2m    - disabled all CSS animations[22m
+    [2m  - waiting for fonts to load...[22m
+    [2m  - fonts loaded[22m
+    [2m  - captured a stable screenshot[22m
+    [2m  - 23881 pixels (ratio 0.08 of all image pixels) are different.[22m
+
+
+       95 |     await page.waitForLoadState("networkidle");
+       96 |     await hideVolatileElements(page);
+    >  97 |     await expect(page).toHaveScreenshot("mobile-collections-grid.png", {
+          |                        ^
+       98 |       maxDiffPixelRatio: 0.03,
+       99 |       fullPage: false,
+      100 |     });
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/visual.spec.ts:97:24
+
+    attachment #1: mobile-collections-grid (image/png) ─────────────────────────────────────────────
+    Expected: tests/e2e/visual.spec.ts-snapshots/mobile-collections-grid-mobile-darwin.png
+    Received: test-results/visual-Visual-—-Mobile-collections-grid-page-mobile-retry1/mobile-collections-grid-actual.png
+    Diff:     test-results/visual-Visual-—-Mobile-collections-grid-page-mobile-retry1/mobile-collections-grid-diff.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/visual-Visual-—-Mobile-collections-grid-page-mobile-retry1/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/visual-Visual-—-Mobile-collections-grid-page-mobile-retry1/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/visual-Visual-—-Mobile-collections-grid-page-mobile-retry1/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/visual-Visual-—-Mobile-collections-grid-page-mobile-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  14) [mobile] › tests/e2e/visual.spec.ts:103:7 › Visual — Mobile › explore page cards ─────────────
+
+    Error: [2mexpect([22m[31mpage[39m[2m).[22mtoHaveScreenshot[2m([22m[32mexpected[39m[2m)[22m failed
+
+      55026 pixels (ratio 0.19 of all image pixels) are different.
+
+      Snapshot: mobile-explore.png
+
+    Call log:
+    [2m  - Expect "toHaveScreenshot(mobile-explore.png)" with timeout 5000ms[22m
+    [2m    - verifying given screenshot expectation[22m
+    [2m  - taking page screenshot[22m
+    [2m    - disabled all CSS animations[22m
+    [2m  - waiting for fonts to load...[22m
+    [2m  - fonts loaded[22m
+    [2m  - 54361 pixels (ratio 0.18 of all image pixels) are different.[22m
+    [2m  - waiting 100ms before taking screenshot[22m
+    [2m  - taking page screenshot[22m
+    [2m    - disabled all CSS animations[22m
+    [2m  - waiting for fonts to load...[22m
+    [2m  - fonts loaded[22m
+    [2m  - 17150 pixels (ratio 0.06 of all image pixels) are different.[22m
+    [2m  - waiting 250ms before taking screenshot[22m
+    [2m  - taking page screenshot[22m
+    [2m    - disabled all CSS animations[22m
+    [2m  - waiting for fonts to load...[22m
+    [2m  - fonts loaded[22m
+    [2m  - captured a stable screenshot[22m
+    [2m  - 55026 pixels (ratio 0.19 of all image pixels) are different.[22m
+
+
+      105 |     await page.waitForLoadState("networkidle");
+      106 |     await hideVolatileElements(page);
+    > 107 |     await expect(page).toHaveScreenshot("mobile-explore.png", {
+          |                        ^
+      108 |       maxDiffPixelRatio: 0.03,
+      109 |       fullPage: false,
+      110 |     });
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/visual.spec.ts:107:24
+
+    attachment #1: mobile-explore (image/png) ──────────────────────────────────────────────────────
+    Expected: tests/e2e/visual.spec.ts-snapshots/mobile-explore-mobile-darwin.png
+    Received: test-results/visual-Visual-—-Mobile-explore-page-cards-mobile/mobile-explore-actual.png
+    Diff:     test-results/visual-Visual-—-Mobile-explore-page-cards-mobile/mobile-explore-diff.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/visual-Visual-—-Mobile-explore-page-cards-mobile/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/visual-Visual-—-Mobile-explore-page-cards-mobile/error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: [2mexpect([22m[31mpage[39m[2m).[22mtoHaveScreenshot[2m([22m[32mexpected[39m[2m)[22m failed
+
+      55026 pixels (ratio 0.19 of all image pixels) are different.
+
+      Snapshot: mobile-explore.png
+
+    Call log:
+    [2m  - Expect "toHaveScreenshot(mobile-explore.png)" with timeout 5000ms[22m
+    [2m    - verifying given screenshot expectation[22m
+    [2m  - taking page screenshot[22m
+    [2m    - disabled all CSS animations[22m
+    [2m  - waiting for fonts to load...[22m
+    [2m  - fonts loaded[22m
+    [2m  - 53000 pixels (ratio 0.18 of all image pixels) are different.[22m
+    [2m  - waiting 100ms before taking screenshot[22m
+    [2m  - taking page screenshot[22m
+    [2m    - disabled all CSS animations[22m
+    [2m  - waiting for fonts to load...[22m
+    [2m  - fonts loaded[22m
+    [2m  - 42346 pixels (ratio 0.14 of all image pixels) are different.[22m
+    [2m  - waiting 250ms before taking screenshot[22m
+    [2m  - taking page screenshot[22m
+    [2m    - disabled all CSS animations[22m
+    [2m  - waiting for fonts to load...[22m
+    [2m  - fonts loaded[22m
+    [2m  - 13093 pixels (ratio 0.05 of all image pixels) are different.[22m
+    [2m  - waiting 500ms before taking screenshot[22m
+    [2m  - taking page screenshot[22m
+    [2m    - disabled all CSS animations[22m
+    [2m  - waiting for fonts to load...[22m
+    [2m  - fonts loaded[22m
+    [2m  - captured a stable screenshot[22m
+    [2m  - 55026 pixels (ratio 0.19 of all image pixels) are different.[22m
+
+
+      105 |     await page.waitForLoadState("networkidle");
+      106 |     await hideVolatileElements(page);
+    > 107 |     await expect(page).toHaveScreenshot("mobile-explore.png", {
+          |                        ^
+      108 |       maxDiffPixelRatio: 0.03,
+      109 |       fullPage: false,
+      110 |     });
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/visual.spec.ts:107:24
+
+    attachment #1: mobile-explore (image/png) ──────────────────────────────────────────────────────
+    Expected: tests/e2e/visual.spec.ts-snapshots/mobile-explore-mobile-darwin.png
+    Received: test-results/visual-Visual-—-Mobile-explore-page-cards-mobile-retry1/mobile-explore-actual.png
+    Diff:     test-results/visual-Visual-—-Mobile-explore-page-cards-mobile-retry1/mobile-explore-diff.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/visual-Visual-—-Mobile-explore-page-cards-mobile-retry1/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/visual-Visual-—-Mobile-explore-page-cards-mobile-retry1/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/visual-Visual-—-Mobile-explore-page-cards-mobile-retry1/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/visual-Visual-—-Mobile-explore-page-cards-mobile-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  15) [mobile] › tests/e2e/visual.spec.ts:113:7 › Visual — Mobile › where to go page ───────────────
+
+    Error: [2mexpect([22m[31mpage[39m[2m).[22mtoHaveScreenshot[2m([22m[32mexpected[39m[2m)[22m failed
+
+      56062 pixels (ratio 0.19 of all image pixels) are different.
+
+      Snapshot: mobile-where-to-go.png
+
+    Call log:
+    [2m  - Expect "toHaveScreenshot(mobile-where-to-go.png)" with timeout 5000ms[22m
+    [2m    - verifying given screenshot expectation[22m
+    [2m  - taking page screenshot[22m
+    [2m    - disabled all CSS animations[22m
+    [2m  - waiting for fonts to load...[22m
+    [2m  - fonts loaded[22m
+    [2m  - 56062 pixels (ratio 0.19 of all image pixels) are different.[22m
+    [2m  - waiting 100ms before taking screenshot[22m
+    [2m  - taking page screenshot[22m
+    [2m    - disabled all CSS animations[22m
+    [2m  - waiting for fonts to load...[22m
+    [2m  - fonts loaded[22m
+    [2m  - captured a stable screenshot[22m
+    [2m  - 56062 pixels (ratio 0.19 of all image pixels) are different.[22m
+
+
+      115 |     await page.waitForLoadState("networkidle");
+      116 |     await hideVolatileElements(page);
+    > 117 |     await expect(page).toHaveScreenshot("mobile-where-to-go.png", {
+          |                        ^
+      118 |       maxDiffPixelRatio: 0.03,
+      119 |       fullPage: false,
+      120 |     });
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/visual.spec.ts:117:24
+
+    attachment #1: mobile-where-to-go (image/png) ──────────────────────────────────────────────────
+    Expected: tests/e2e/visual.spec.ts-snapshots/mobile-where-to-go-mobile-darwin.png
+    Received: test-results/visual-Visual-—-Mobile-where-to-go-page-mobile/mobile-where-to-go-actual.png
+    Diff:     test-results/visual-Visual-—-Mobile-where-to-go-page-mobile/mobile-where-to-go-diff.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/visual-Visual-—-Mobile-where-to-go-page-mobile/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/visual-Visual-—-Mobile-where-to-go-page-mobile/error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: [2mexpect([22m[31mpage[39m[2m).[22mtoHaveScreenshot[2m([22m[32mexpected[39m[2m)[22m failed
+
+      56062 pixels (ratio 0.19 of all image pixels) are different.
+
+      Snapshot: mobile-where-to-go.png
+
+    Call log:
+    [2m  - Expect "toHaveScreenshot(mobile-where-to-go.png)" with timeout 5000ms[22m
+    [2m    - verifying given screenshot expectation[22m
+    [2m  - taking page screenshot[22m
+    [2m    - disabled all CSS animations[22m
+    [2m  - waiting for fonts to load...[22m
+    [2m  - fonts loaded[22m
+    [2m  - 56062 pixels (ratio 0.19 of all image pixels) are different.[22m
+    [2m  - waiting 100ms before taking screenshot[22m
+    [2m  - taking page screenshot[22m
+    [2m    - disabled all CSS animations[22m
+    [2m  - waiting for fonts to load...[22m
+    [2m  - fonts loaded[22m
+    [2m  - captured a stable screenshot[22m
+    [2m  - 56062 pixels (ratio 0.19 of all image pixels) are different.[22m
+
+
+      115 |     await page.waitForLoadState("networkidle");
+      116 |     await hideVolatileElements(page);
+    > 117 |     await expect(page).toHaveScreenshot("mobile-where-to-go.png", {
+          |                        ^
+      118 |       maxDiffPixelRatio: 0.03,
+      119 |       fullPage: false,
+      120 |     });
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/visual.spec.ts:117:24
+
+    attachment #1: mobile-where-to-go (image/png) ──────────────────────────────────────────────────
+    Expected: tests/e2e/visual.spec.ts-snapshots/mobile-where-to-go-mobile-darwin.png
+    Received: test-results/visual-Visual-—-Mobile-where-to-go-page-mobile-retry1/mobile-where-to-go-actual.png
+    Diff:     test-results/visual-Visual-—-Mobile-where-to-go-page-mobile-retry1/mobile-where-to-go-diff.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/visual-Visual-—-Mobile-where-to-go-page-mobile-retry1/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/visual-Visual-—-Mobile-where-to-go-page-mobile-retry1/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/visual-Visual-—-Mobile-where-to-go-page-mobile-retry1/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/visual-Visual-—-Mobile-where-to-go-page-mobile-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  16) [mobile] › tests/e2e/where-to-go.spec.ts:12:7 › Where to Go › where-to-go root redirects to current month 
+
+    [31mTest timeout of 30000ms exceeded.[39m
+
+    Error: page.waitForURL: Test timeout of 30000ms exceeded.
+    =========================== logs ===========================
+    waiting for navigation until "load"
+    ============================================================
+
+      13 |     await page.goto("/en/where-to-go");
+      14 |     // Should redirect to /en/where-to-go/{month}
+    > 15 |     await page.waitForURL(/where-to-go\/[a-z]+/);
+         |                ^
+      16 |     expect(page.url()).toMatch(/where-to-go\/(january|february|march|april|may|june|july|august|september|october|november|december)/);
+      17 |   });
+      18 |
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/where-to-go.spec.ts:15:16
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/where-to-go-Where-to-Go-wh-0e6a1--redirects-to-current-month-mobile/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/where-to-go-Where-to-Go-wh-0e6a1--redirects-to-current-month-mobile/error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    [31mTest timeout of 30000ms exceeded.[39m
+
+    Error: page.waitForURL: Test timeout of 30000ms exceeded.
+    =========================== logs ===========================
+    waiting for navigation until "load"
+    ============================================================
+
+      13 |     await page.goto("/en/where-to-go");
+      14 |     // Should redirect to /en/where-to-go/{month}
+    > 15 |     await page.waitForURL(/where-to-go\/[a-z]+/);
+         |                ^
+      16 |     expect(page.url()).toMatch(/where-to-go\/(january|february|march|april|may|june|july|august|september|october|november|december)/);
+      17 |   });
+      18 |
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/where-to-go.spec.ts:15:16
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/where-to-go-Where-to-Go-wh-0e6a1--redirects-to-current-month-mobile-retry1/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/where-to-go-Where-to-Go-wh-0e6a1--redirects-to-current-month-mobile-retry1/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/where-to-go-Where-to-Go-wh-0e6a1--redirects-to-current-month-mobile-retry1/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/where-to-go-Where-to-Go-wh-0e6a1--redirects-to-current-month-mobile-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  17) [desktop] › tests/e2e/gap-year.spec.ts:38:7 › Gap Year Planner v2 › origin combobox fuzzy-matches across name and state 
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[22m failed
+
+    Locator: getByRole('button', { name: /Jaipur/i })
+    Expected: visible
+    Error: strict mode violation: getByRole('button', { name: /Jaipur/i }) resolved to 2 elements:
+        1) <button type="button" class="w-full text-left px-3 py-2 text-sm transition bg-muted">…</button> aka getByRole('button', { name: 'Jaipur Rajasthan' })
+        2) <button type="button" class="p-4 rounded-lg border-2 text-left transition border-border hover:border-muted-foreground">…</button> aka getByRole('button', { name: 'First major India trip We\'ll' })
+
+    Call log:
+    [2m  - Expect "toBeVisible" with timeout 3000ms[22m
+    [2m  - waiting for getByRole('button', { name: /Jaipur/i })[22m
+
+
+      42 |     await originInput.fill("Rajas");
+      43 |     // Should surface Jaipur (state: Rajasthan) at least
+    > 44 |     await expect(page.getByRole("button", { name: /Jaipur/i })).toBeVisible({ timeout: 3000 });
+         |                                                                 ^
+      45 |   });
+      46 |
+      47 |   test("themes cap at 3 selected", async ({ page }) => {
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/gap-year.spec.ts:44:65
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/gap-year-Gap-Year-Planner--def22-tches-across-name-and-state-desktop/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/gap-year-Gap-Year-Planner--def22-tches-across-name-and-state-desktop/error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[22m failed
+
+    Locator: getByRole('button', { name: /Jaipur/i })
+    Expected: visible
+    Error: strict mode violation: getByRole('button', { name: /Jaipur/i }) resolved to 2 elements:
+        1) <button type="button" class="w-full text-left px-3 py-2 text-sm transition bg-muted">…</button> aka getByRole('button', { name: 'Jaipur Rajasthan' })
+        2) <button type="button" class="p-4 rounded-lg border-2 text-left transition border-border hover:border-muted-foreground">…</button> aka getByRole('button', { name: 'First major India trip We\'ll' })
+
+    Call log:
+    [2m  - Expect "toBeVisible" with timeout 3000ms[22m
+    [2m  - waiting for getByRole('button', { name: /Jaipur/i })[22m
+
+
+      42 |     await originInput.fill("Rajas");
+      43 |     // Should surface Jaipur (state: Rajasthan) at least
+    > 44 |     await expect(page.getByRole("button", { name: /Jaipur/i })).toBeVisible({ timeout: 3000 });
+         |                                                                 ^
+      45 |   });
+      46 |
+      47 |   test("themes cap at 3 selected", async ({ page }) => {
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/gap-year.spec.ts:44:65
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/gap-year-Gap-Year-Planner--def22-tches-across-name-and-state-desktop-retry1/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/gap-year-Gap-Year-Planner--def22-tches-across-name-and-state-desktop-retry1/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/gap-year-Gap-Year-Planner--def22-tches-across-name-and-state-desktop-retry1/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/gap-year-Gap-Year-Planner--def22-tches-across-name-and-state-desktop-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  18) [desktop] › tests/e2e/gap-year.spec.ts:47:7 › Gap Year Planner v2 › themes cap at 3 selected ─
+
+    Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoBeLessThanOrEqual[2m([22m[32mexpected[39m[2m)[22m
+
+    Expected: <= [32m3[39m
+    Received:    [31m4[39m
+
+      56 |     // at most 3 theme chips appear with the primary (selected) style.
+      57 |     const selectedChips = await page.locator("button.bg-primary.text-primary-foreground").count();
+    > 58 |     expect(selectedChips).toBeLessThanOrEqual(3);
+         |                           ^
+      59 |   });
+      60 |
+      61 |   test("nav mega-menu includes Gap Year Planner entry", async ({ page }) => {
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/gap-year.spec.ts:58:27
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/gap-year-Gap-Year-Planner-v2-themes-cap-at-3-selected-desktop/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/gap-year-Gap-Year-Planner-v2-themes-cap-at-3-selected-desktop/error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoBeLessThanOrEqual[2m([22m[32mexpected[39m[2m)[22m
+
+    Expected: <= [32m3[39m
+    Received:    [31m4[39m
+
+      56 |     // at most 3 theme chips appear with the primary (selected) style.
+      57 |     const selectedChips = await page.locator("button.bg-primary.text-primary-foreground").count();
+    > 58 |     expect(selectedChips).toBeLessThanOrEqual(3);
+         |                           ^
+      59 |   });
+      60 |
+      61 |   test("nav mega-menu includes Gap Year Planner entry", async ({ page }) => {
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/gap-year.spec.ts:58:27
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/gap-year-Gap-Year-Planner-v2-themes-cap-at-3-selected-desktop-retry1/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/gap-year-Gap-Year-Planner-v2-themes-cap-at-3-selected-desktop-retry1/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/gap-year-Gap-Year-Planner-v2-themes-cap-at-3-selected-desktop-retry1/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/gap-year-Gap-Year-Planner-v2-themes-cap-at-3-selected-desktop-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  19) [desktop] › tests/e2e/gap-year.spec.ts:61:7 › Gap Year Planner v2 › nav mega-menu includes Gap Year Planner entry 
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[22m failed
+
+    Locator: getByRole('link', { name: /Gap Year Planner/i })
+    Expected: visible
+    Timeout: 3000ms
+    Error: element(s) not found
+
+    Call log:
+    [2m  - Expect "toBeVisible" with timeout 3000ms[22m
+    [2m  - waiting for getByRole('link', { name: /Gap Year Planner/i })[22m
+
+
+      69 |         await expect(
+      70 |           page.getByRole("link", { name: /Gap Year Planner/i })
+    > 71 |         ).toBeVisible({ timeout: 3000 });
+         |           ^
+      72 |       }
+      73 |     }
+      74 |   });
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/gap-year.spec.ts:71:11
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/gap-year-Gap-Year-Planner--0a9e6-udes-Gap-Year-Planner-entry-desktop/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/gap-year-Gap-Year-Planner--0a9e6-udes-Gap-Year-Planner-entry-desktop/error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    [31mTest timeout of 30000ms exceeded.[39m
+
+    Error: locator.hover: Test timeout of 30000ms exceeded.
+    Call log:
+    [2m  - waiting for getByRole('button', { name: /^plan$/i }).first()[22m
+    [2m    - locator resolved to <button data-tour="plan-menu" class="rounded-lg px-3 py-1.5 text-sm font-medium transition-colors flex items-center gap-1 text-muted-foreground hover:text-foreground hover:bg-muted">…</button>[22m
+    [2m  - attempting hover action[22m
+    [2m    2 × waiting for element to be visible and stable[22m
+    [2m      - element is visible and stable[22m
+    [2m      - scrolling into view if needed[22m
+    [2m      - done scrolling[22m
+    [2m      - <rect width="100%" height="100%" fill="rgba(0,0,0,0.85)"></rect> from <div role="dialog" aria-modal="true" aria-labelledby="tour-title" class="fixed inset-0 z-[100] animate-tour-fade">…</div> subtree intercepts pointer events[22m
+    [2m    - retrying hover action[22m
+    [2m    - waiting 20ms[22m
+    [2m    2 × waiting for element to be visible and stable[22m
+    [2m      - element is visible and stable[22m
+    [2m      - scrolling into view if needed[22m
+    [2m      - done scrolling[22m
+    [2m      - <rect width="100%" height="100%" fill="rgba(0,0,0,0.85)"></rect> from <div role="dialog" aria-modal="true" aria-labelledby="tour-title" class="fixed inset-0 z-[100] animate-tour-fade">…</div> subtree intercepts pointer events[22m
+    [2m    - retrying hover action[22m
+    [2m      - waiting 100ms[22m
+    [2m    54 × waiting for element to be visible and stable[22m
+    [2m       - element is visible and stable[22m
+    [2m       - scrolling into view if needed[22m
+    [2m       - done scrolling[22m
+    [2m       - <rect width="100%" height="100%" fill="rgba(0,0,0,0.85)"></rect> from <div role="dialog" aria-modal="true" aria-labelledby="tour-title" class="fixed inset-0 z-[100] animate-tour-fade">…</div> subtree intercepts pointer events[22m
+    [2m     - retrying hover action[22m
+    [2m       - waiting 500ms[22m
+
+
+      66 |       const planTrigger = page.getByRole("button", { name: /^plan$/i }).first();
+      67 |       if (await planTrigger.isVisible({ timeout: 2000 }).catch(() => false)) {
+    > 68 |         await planTrigger.hover();
+         |                           ^
+      69 |         await expect(
+      70 |           page.getByRole("link", { name: /Gap Year Planner/i })
+      71 |         ).toBeVisible({ timeout: 3000 });
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/gap-year.spec.ts:68:27
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/gap-year-Gap-Year-Planner--0a9e6-udes-Gap-Year-Planner-entry-desktop-retry1/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/gap-year-Gap-Year-Planner--0a9e6-udes-Gap-Year-Planner-entry-desktop-retry1/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/gap-year-Gap-Year-Planner--0a9e6-udes-Gap-Year-Planner-entry-desktop-retry1/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/gap-year-Gap-Year-Planner--0a9e6-udes-Gap-Year-Planner-entry-desktop-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  20) [desktop] › tests/e2e/homepage.spec.ts:14:7 › Homepage › explore by region cards render ──────
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[22m failed
+
+    Locator: getByText('Explore by region')
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+    [2m  - Expect "toBeVisible" with timeout 5000ms[22m
+    [2m  - waiting for getByText('Explore by region')[22m
+
+
+      14 |   test("explore by region cards render", async ({ page }) => {
+      15 |     await page.goto("/en");
+    > 16 |     await expect(page.getByText("Explore by region", { exact: false })).toBeVisible();
+         |                                                                         ^
+      17 |     // At least 6 region cards
+      18 |     const regionCards = page.locator("a[href*='/states?region=']");
+      19 |     await expect(regionCards.first()).toBeVisible();
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/homepage.spec.ts:16:73
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/homepage-Homepage-explore-by-region-cards-render-desktop/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/homepage-Homepage-explore-by-region-cards-render-desktop/error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[22m failed
+
+    Locator: getByText('Explore by region')
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+    [2m  - Expect "toBeVisible" with timeout 5000ms[22m
+    [2m  - waiting for getByText('Explore by region')[22m
+
+
+      14 |   test("explore by region cards render", async ({ page }) => {
+      15 |     await page.goto("/en");
+    > 16 |     await expect(page.getByText("Explore by region", { exact: false })).toBeVisible();
+         |                                                                         ^
+      17 |     // At least 6 region cards
+      18 |     const regionCards = page.locator("a[href*='/states?region=']");
+      19 |     await expect(regionCards.first()).toBeVisible();
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/homepage.spec.ts:16:73
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/homepage-Homepage-explore-by-region-cards-render-desktop-retry1/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/homepage-Homepage-explore-by-region-cards-render-desktop-retry1/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/homepage-Homepage-explore-by-region-cards-render-desktop-retry1/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/homepage-Homepage-explore-by-region-cards-render-desktop-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  21) [desktop] › tests/e2e/trip-board.spec.ts:61:7 › Trip Board — Phase 2/3 markers (gated on stops > 0) › year band + cost aggregate render 
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoHaveCount[2m([22m[32mexpected[39m[2m)[22m failed
+
+    Locator:  locator('[data-yearband]').or(locator('.nq-yearband'))
+    Expected: [32m1[39m
+    Received: [31m0[39m
+    Timeout:  5000ms
+
+    Call log:
+    [2m  - Expect "toHaveCount" with timeout 5000ms[22m
+    [2m  - waiting for locator('[data-yearband]').or(locator('.nq-yearband'))[22m
+    [2m    9 × locator resolved to 0 elements[22m
+    [2m      - unexpected value "0"[22m
+
+
+      61 |   test("year band + cost aggregate render", async ({ page }) => {
+      62 |     // F2: year band marker present
+    > 63 |     await expect(page.locator("[data-yearband]").or(page.locator(".nq-yearband"))).toHaveCount(1);
+         |                                                                                    ^
+      64 |     // F5: cost panel marker present
+      65 |     await expect(page.locator("[data-cost-aggregate]")).toHaveCount(1);
+      66 |   });
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/trip-board.spec.ts:63:84
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/trip-board-Trip-Board-—-Ph-e881c--band-cost-aggregate-render-desktop/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/trip-board-Trip-Board-—-Ph-e881c--band-cost-aggregate-render-desktop/error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoHaveCount[2m([22m[32mexpected[39m[2m)[22m failed
+
+    Locator:  locator('[data-yearband]').or(locator('.nq-yearband'))
+    Expected: [32m1[39m
+    Received: [31m0[39m
+    Timeout:  5000ms
+
+    Call log:
+    [2m  - Expect "toHaveCount" with timeout 5000ms[22m
+    [2m  - waiting for locator('[data-yearband]').or(locator('.nq-yearband'))[22m
+    [2m    9 × locator resolved to 0 elements[22m
+    [2m      - unexpected value "0"[22m
+
+
+      61 |   test("year band + cost aggregate render", async ({ page }) => {
+      62 |     // F2: year band marker present
+    > 63 |     await expect(page.locator("[data-yearband]").or(page.locator(".nq-yearband"))).toHaveCount(1);
+         |                                                                                    ^
+      64 |     // F5: cost panel marker present
+      65 |     await expect(page.locator("[data-cost-aggregate]")).toHaveCount(1);
+      66 |   });
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/trip-board.spec.ts:63:84
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/trip-board-Trip-Board-—-Ph-e881c--band-cost-aggregate-render-desktop-retry1/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/trip-board-Trip-Board-—-Ph-e881c--band-cost-aggregate-render-desktop-retry1/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/trip-board-Trip-Board-—-Ph-e881c--band-cost-aggregate-render-desktop-retry1/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/trip-board-Trip-Board-—-Ph-e881c--band-cost-aggregate-render-desktop-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  22) [desktop] › tests/e2e/trip-board.spec.ts:89:7 › Trip Board — Phase 4 (AI Modal) › Generate itinerary CTA opens 3-step modal 
+
+    [31mTest timeout of 30000ms exceeded.[39m
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+    [2m  - waiting for getByRole('button', { name: /generate itinerary/i })[22m
+
+
+      88 |
+      89 |   test("Generate itinerary CTA opens 3-step modal", async ({ page }) => {
+    > 90 |     await page.getByRole("button", { name: /generate itinerary/i }).click();
+         |                                                                     ^
+      91 |     await expect(page.locator("[data-ai-modal]")).toBeVisible();
+      92 |     await expect(page.getByText(/who is going/i)).toBeVisible();
+      93 |
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/trip-board.spec.ts:90:69
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/trip-board-Trip-Board-—-Ph-4e081-rary-CTA-opens-3-step-modal-desktop/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/trip-board-Trip-Board-—-Ph-4e081-rary-CTA-opens-3-step-modal-desktop/error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    [31mTest timeout of 30000ms exceeded.[39m
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+    [2m  - waiting for getByRole('button', { name: /generate itinerary/i })[22m
+
+
+      88 |
+      89 |   test("Generate itinerary CTA opens 3-step modal", async ({ page }) => {
+    > 90 |     await page.getByRole("button", { name: /generate itinerary/i }).click();
+         |                                                                     ^
+      91 |     await expect(page.locator("[data-ai-modal]")).toBeVisible();
+      92 |     await expect(page.getByText(/who is going/i)).toBeVisible();
+      93 |
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/trip-board.spec.ts:90:69
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/trip-board-Trip-Board-—-Ph-4e081-rary-CTA-opens-3-step-modal-desktop-retry1/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/trip-board-Trip-Board-—-Ph-4e081-rary-CTA-opens-3-step-modal-desktop-retry1/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/trip-board-Trip-Board-—-Ph-4e081-rary-CTA-opens-3-step-modal-desktop-retry1/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/trip-board-Trip-Board-—-Ph-4e081-rary-CTA-opens-3-step-modal-desktop-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  23) [desktop] › tests/e2e/trip-board.spec.ts:113:7 › Trip Board — Phase 5 (Map + Share) › Map toggle renders the SVG atlas with pins 
+
+    [31mTest timeout of 30000ms exceeded.[39m
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+    [2m  - waiting for getByRole('button', { name: /^Map$/ })[22m
+
+
+      112 |
+      113 |   test("Map toggle renders the SVG atlas with pins", async ({ page }) => {
+    > 114 |     await page.getByRole("button", { name: /^Map$/ }).click();
+          |                                                       ^
+      115 |     await expect(page.locator("[data-trip-map]")).toBeVisible();
+      116 |     // At least 1 pin (could be fewer than seed if some stops have no coords)
+      117 |     const pins = page.locator("[data-pins] [data-pin-id]");
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/trip-board.spec.ts:114:55
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/trip-board-Trip-Board-—-Ph-e14e6-ers-the-SVG-atlas-with-pins-desktop/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/trip-board-Trip-Board-—-Ph-e14e6-ers-the-SVG-atlas-with-pins-desktop/error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    [31mTest timeout of 30000ms exceeded.[39m
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+    [2m  - waiting for getByRole('button', { name: /^Map$/ })[22m
+
+
+      112 |
+      113 |   test("Map toggle renders the SVG atlas with pins", async ({ page }) => {
+    > 114 |     await page.getByRole("button", { name: /^Map$/ }).click();
+          |                                                       ^
+      115 |     await expect(page.locator("[data-trip-map]")).toBeVisible();
+      116 |     // At least 1 pin (could be fewer than seed if some stops have no coords)
+      117 |     const pins = page.locator("[data-pins] [data-pin-id]");
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/trip-board.spec.ts:114:55
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/trip-board-Trip-Board-—-Ph-e14e6-ers-the-SVG-atlas-with-pins-desktop-retry1/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/trip-board-Trip-Board-—-Ph-e14e6-ers-the-SVG-atlas-with-pins-desktop-retry1/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/trip-board-Trip-Board-—-Ph-e14e6-ers-the-SVG-atlas-with-pins-desktop-retry1/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/trip-board-Trip-Board-—-Ph-e14e6-ers-the-SVG-atlas-with-pins-desktop-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  24) [desktop] › tests/e2e/visual.spec.ts:133:7 › Visual — Desktop › homepage above the fold ──────
+
+    Error: [2mexpect([22m[31mpage[39m[2m).[22mtoHaveScreenshot[2m([22m[32mexpected[39m[2m)[22m failed
+
+      83732 pixels (ratio 0.07 of all image pixels) are different.
+
+      Snapshot: desktop-homepage.png
+
+    Call log:
+    [2m  - Expect "toHaveScreenshot(desktop-homepage.png)" with timeout 5000ms[22m
+    [2m    - verifying given screenshot expectation[22m
+    [2m  - taking page screenshot[22m
+    [2m    - disabled all CSS animations[22m
+    [2m  - waiting for fonts to load...[22m
+    [2m  - fonts loaded[22m
+    [2m  - 83732 pixels (ratio 0.07 of all image pixels) are different.[22m
+    [2m  - waiting 100ms before taking screenshot[22m
+    [2m  - taking page screenshot[22m
+    [2m    - disabled all CSS animations[22m
+    [2m  - waiting for fonts to load...[22m
+    [2m  - fonts loaded[22m
+    [2m  - captured a stable screenshot[22m
+    [2m  - 83732 pixels (ratio 0.07 of all image pixels) are different.[22m
+
+
+      135 |     await page.waitForLoadState("networkidle");
+      136 |     await hideVolatileElements(page);
+    > 137 |     await expect(page).toHaveScreenshot("desktop-homepage.png", {
+          |                        ^
+      138 |       maxDiffPixelRatio: 0.03,
+      139 |       fullPage: false,
+      140 |     });
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/visual.spec.ts:137:24
+
+    attachment #1: desktop-homepage (image/png) ────────────────────────────────────────────────────
+    Expected: tests/e2e/visual.spec.ts-snapshots/desktop-homepage-desktop-darwin.png
+    Received: test-results/visual-Visual-—-Desktop-homepage-above-the-fold-desktop/desktop-homepage-actual.png
+    Diff:     test-results/visual-Visual-—-Desktop-homepage-above-the-fold-desktop/desktop-homepage-diff.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/visual-Visual-—-Desktop-homepage-above-the-fold-desktop/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/visual-Visual-—-Desktop-homepage-above-the-fold-desktop/error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: [2mexpect([22m[31mpage[39m[2m).[22mtoHaveScreenshot[2m([22m[32mexpected[39m[2m)[22m failed
+
+      83732 pixels (ratio 0.07 of all image pixels) are different.
+
+      Snapshot: desktop-homepage.png
+
+    Call log:
+    [2m  - Expect "toHaveScreenshot(desktop-homepage.png)" with timeout 5000ms[22m
+    [2m    - verifying given screenshot expectation[22m
+    [2m  - taking page screenshot[22m
+    [2m    - disabled all CSS animations[22m
+    [2m  - waiting for fonts to load...[22m
+    [2m  - fonts loaded[22m
+    [2m  - 83732 pixels (ratio 0.07 of all image pixels) are different.[22m
+    [2m  - waiting 100ms before taking screenshot[22m
+    [2m  - taking page screenshot[22m
+    [2m    - disabled all CSS animations[22m
+    [2m  - waiting for fonts to load...[22m
+    [2m  - fonts loaded[22m
+    [2m  - captured a stable screenshot[22m
+    [2m  - 83732 pixels (ratio 0.07 of all image pixels) are different.[22m
+
+
+      135 |     await page.waitForLoadState("networkidle");
+      136 |     await hideVolatileElements(page);
+    > 137 |     await expect(page).toHaveScreenshot("desktop-homepage.png", {
+          |                        ^
+      138 |       maxDiffPixelRatio: 0.03,
+      139 |       fullPage: false,
+      140 |     });
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/visual.spec.ts:137:24
+
+    attachment #1: desktop-homepage (image/png) ────────────────────────────────────────────────────
+    Expected: tests/e2e/visual.spec.ts-snapshots/desktop-homepage-desktop-darwin.png
+    Received: test-results/visual-Visual-—-Desktop-homepage-above-the-fold-desktop-retry1/desktop-homepage-actual.png
+    Diff:     test-results/visual-Visual-—-Desktop-homepage-above-the-fold-desktop-retry1/desktop-homepage-diff.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/visual-Visual-—-Desktop-homepage-above-the-fold-desktop-retry1/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/visual-Visual-—-Desktop-homepage-above-the-fold-desktop-retry1/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/visual-Visual-—-Desktop-homepage-above-the-fold-desktop-retry1/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/visual-Visual-—-Desktop-homepage-above-the-fold-desktop-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  25) [desktop] › tests/e2e/visual.spec.ts:143:7 › Visual — Desktop › destination detail page ──────
+
+    Error: [2mexpect([22m[31mpage[39m[2m).[22mtoHaveScreenshot[2m([22m[32mexpected[39m[2m)[22m failed
+
+      358586 pixels (ratio 0.28 of all image pixels) are different.
+
+      Snapshot: desktop-destination.png
+
+    Call log:
+    [2m  - Expect "toHaveScreenshot(desktop-destination.png)" with timeout 5000ms[22m
+    [2m    - verifying given screenshot expectation[22m
+    [2m  - taking page screenshot[22m
+    [2m    - disabled all CSS animations[22m
+    [2m  - waiting for fonts to load...[22m
+    [2m  - fonts loaded[22m
+    [2m  - 358586 pixels (ratio 0.28 of all image pixels) are different.[22m
+    [2m  - waiting 100ms before taking screenshot[22m
+    [2m  - taking page screenshot[22m
+    [2m    - disabled all CSS animations[22m
+    [2m  - waiting for fonts to load...[22m
+    [2m  - fonts loaded[22m
+    [2m  - captured a stable screenshot[22m
+    [2m  - 358586 pixels (ratio 0.28 of all image pixels) are different.[22m
+
+
+      145 |     await page.waitForLoadState("networkidle");
+      146 |     await hideVolatileElements(page);
+    > 147 |     await expect(page).toHaveScreenshot("desktop-destination.png", {
+          |                        ^
+      148 |       maxDiffPixelRatio: 0.03,
+      149 |       fullPage: false,
+      150 |     });
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/visual.spec.ts:147:24
+
+    attachment #1: desktop-destination (image/png) ─────────────────────────────────────────────────
+    Expected: tests/e2e/visual.spec.ts-snapshots/desktop-destination-desktop-darwin.png
+    Received: test-results/visual-Visual-—-Desktop-destination-detail-page-desktop/desktop-destination-actual.png
+    Diff:     test-results/visual-Visual-—-Desktop-destination-detail-page-desktop/desktop-destination-diff.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/visual-Visual-—-Desktop-destination-detail-page-desktop/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/visual-Visual-—-Desktop-destination-detail-page-desktop/error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: [2mexpect([22m[31mpage[39m[2m).[22mtoHaveScreenshot[2m([22m[32mexpected[39m[2m)[22m failed
+
+      358586 pixels (ratio 0.28 of all image pixels) are different.
+
+      Snapshot: desktop-destination.png
+
+    Call log:
+    [2m  - Expect "toHaveScreenshot(desktop-destination.png)" with timeout 5000ms[22m
+    [2m    - verifying given screenshot expectation[22m
+    [2m  - taking page screenshot[22m
+    [2m    - disabled all CSS animations[22m
+    [2m  - waiting for fonts to load...[22m
+    [2m  - fonts loaded[22m
+    [2m  - 358586 pixels (ratio 0.28 of all image pixels) are different.[22m
+    [2m  - waiting 100ms before taking screenshot[22m
+    [2m  - taking page screenshot[22m
+    [2m    - disabled all CSS animations[22m
+    [2m  - waiting for fonts to load...[22m
+    [2m  - fonts loaded[22m
+    [2m  - captured a stable screenshot[22m
+    [2m  - 358586 pixels (ratio 0.28 of all image pixels) are different.[22m
+
+
+      145 |     await page.waitForLoadState("networkidle");
+      146 |     await hideVolatileElements(page);
+    > 147 |     await expect(page).toHaveScreenshot("desktop-destination.png", {
+          |                        ^
+      148 |       maxDiffPixelRatio: 0.03,
+      149 |       fullPage: false,
+      150 |     });
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/visual.spec.ts:147:24
+
+    attachment #1: desktop-destination (image/png) ─────────────────────────────────────────────────
+    Expected: tests/e2e/visual.spec.ts-snapshots/desktop-destination-desktop-darwin.png
+    Received: test-results/visual-Visual-—-Desktop-destination-detail-page-desktop-retry1/desktop-destination-actual.png
+    Diff:     test-results/visual-Visual-—-Desktop-destination-detail-page-desktop-retry1/desktop-destination-diff.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/visual-Visual-—-Desktop-destination-detail-page-desktop-retry1/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/visual-Visual-—-Desktop-destination-detail-page-desktop-retry1/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/visual-Visual-—-Desktop-destination-detail-page-desktop-retry1/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/visual-Visual-—-Desktop-destination-detail-page-desktop-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  26) [desktop] › tests/e2e/visual.spec.ts:153:7 › Visual — Desktop › collections page ─────────────
+
+    Error: [2mexpect([22m[31mpage[39m[2m).[22mtoHaveScreenshot[2m([22m[32mexpected[39m[2m)[22m failed
+
+      182844 pixels (ratio 0.15 of all image pixels) are different.
+
+      Snapshot: desktop-collections.png
+
+    Call log:
+    [2m  - Expect "toHaveScreenshot(desktop-collections.png)" with timeout 5000ms[22m
+    [2m    - verifying given screenshot expectation[22m
+    [2m  - taking page screenshot[22m
+    [2m    - disabled all CSS animations[22m
+    [2m  - waiting for fonts to load...[22m
+    [2m  - fonts loaded[22m
+    [2m  - 182844 pixels (ratio 0.15 of all image pixels) are different.[22m
+    [2m  - waiting 100ms before taking screenshot[22m
+    [2m  - taking page screenshot[22m
+    [2m    - disabled all CSS animations[22m
+    [2m  - waiting for fonts to load...[22m
+    [2m  - fonts loaded[22m
+    [2m  - captured a stable screenshot[22m
+    [2m  - 182844 pixels (ratio 0.15 of all image pixels) are different.[22m
+
+
+      155 |     await page.waitForLoadState("networkidle");
+      156 |     await hideVolatileElements(page);
+    > 157 |     await expect(page).toHaveScreenshot("desktop-collections.png", {
+          |                        ^
+      158 |       maxDiffPixelRatio: 0.03,
+      159 |       fullPage: false,
+      160 |     });
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/visual.spec.ts:157:24
+
+    attachment #1: desktop-collections (image/png) ─────────────────────────────────────────────────
+    Expected: tests/e2e/visual.spec.ts-snapshots/desktop-collections-desktop-darwin.png
+    Received: test-results/visual-Visual-—-Desktop-collections-page-desktop/desktop-collections-actual.png
+    Diff:     test-results/visual-Visual-—-Desktop-collections-page-desktop/desktop-collections-diff.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/visual-Visual-—-Desktop-collections-page-desktop/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/visual-Visual-—-Desktop-collections-page-desktop/error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: [2mexpect([22m[31mpage[39m[2m).[22mtoHaveScreenshot[2m([22m[32mexpected[39m[2m)[22m failed
+
+      182844 pixels (ratio 0.15 of all image pixels) are different.
+
+      Snapshot: desktop-collections.png
+
+    Call log:
+    [2m  - Expect "toHaveScreenshot(desktop-collections.png)" with timeout 5000ms[22m
+    [2m    - verifying given screenshot expectation[22m
+    [2m  - taking page screenshot[22m
+    [2m    - disabled all CSS animations[22m
+    [2m  - waiting for fonts to load...[22m
+    [2m  - fonts loaded[22m
+    [2m  - 182844 pixels (ratio 0.15 of all image pixels) are different.[22m
+    [2m  - waiting 100ms before taking screenshot[22m
+    [2m  - taking page screenshot[22m
+    [2m    - disabled all CSS animations[22m
+    [2m  - waiting for fonts to load...[22m
+    [2m  - fonts loaded[22m
+    [2m  - captured a stable screenshot[22m
+    [2m  - 182844 pixels (ratio 0.15 of all image pixels) are different.[22m
+
+
+      155 |     await page.waitForLoadState("networkidle");
+      156 |     await hideVolatileElements(page);
+    > 157 |     await expect(page).toHaveScreenshot("desktop-collections.png", {
+          |                        ^
+      158 |       maxDiffPixelRatio: 0.03,
+      159 |       fullPage: false,
+      160 |     });
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/visual.spec.ts:157:24
+
+    attachment #1: desktop-collections (image/png) ─────────────────────────────────────────────────
+    Expected: tests/e2e/visual.spec.ts-snapshots/desktop-collections-desktop-darwin.png
+    Received: test-results/visual-Visual-—-Desktop-collections-page-desktop-retry1/desktop-collections-actual.png
+    Diff:     test-results/visual-Visual-—-Desktop-collections-page-desktop-retry1/desktop-collections-diff.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/visual-Visual-—-Desktop-collections-page-desktop-retry1/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/visual-Visual-—-Desktop-collections-page-desktop-retry1/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/visual-Visual-—-Desktop-collections-page-desktop-retry1/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/visual-Visual-—-Desktop-collections-page-desktop-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  27) [desktop] › tests/e2e/visual.spec.ts:163:7 › Visual — Desktop › nav bar layout ───────────────
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoHaveScreenshot[2m([22m[32mexpected[39m[2m)[22m failed
+
+    Locator: locator('header')
+      7182 pixels (ratio 0.05 of all image pixels) are different.
+
+      Snapshot: desktop-nav.png
+
+    Call log:
+    [2m  - Expect "toHaveScreenshot(desktop-nav.png)" with timeout 5000ms[22m
+    [2m    - verifying given screenshot expectation[22m
+    [2m  - waiting for locator('header')[22m
+    [2m    - locator resolved to <header class="sticky top-0 z-50 border-b border-border/50 bg-background/90 backdrop-blur-xl shadow-sm">…</header>[22m
+    [2m  - taking element screenshot[22m
+    [2m    - disabled all CSS animations[22m
+    [2m  - waiting for fonts to load...[22m
+    [2m  - fonts loaded[22m
+    [2m  - attempting scroll into view action[22m
+    [2m    - waiting for element to be stable[22m
+    [2m  - 7182 pixels (ratio 0.05 of all image pixels) are different.[22m
+    [2m  - waiting 100ms before taking screenshot[22m
+    [2m  - waiting for locator('header')[22m
+    [2m    - locator resolved to <header class="sticky top-0 z-50 border-b border-border/50 bg-background/90 backdrop-blur-xl shadow-sm">…</header>[22m
+    [2m  - taking element screenshot[22m
+    [2m    - disabled all CSS animations[22m
+    [2m  - waiting for fonts to load...[22m
+    [2m  - fonts loaded[22m
+    [2m  - attempting scroll into view action[22m
+    [2m    - waiting for element to be stable[22m
+    [2m  - captured a stable screenshot[22m
+    [2m  - 7182 pixels (ratio 0.05 of all image pixels) are different.[22m
+
+
+      165 |     await page.waitForLoadState("networkidle");
+      166 |     const header = page.locator("header");
+    > 167 |     await expect(header).toHaveScreenshot("desktop-nav.png", {
+          |                          ^
+      168 |       maxDiffPixelRatio: 0.01,
+      169 |     });
+      170 |   });
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/visual.spec.ts:167:26
+
+    attachment #1: desktop-nav (image/png) ─────────────────────────────────────────────────────────
+    Expected: tests/e2e/visual.spec.ts-snapshots/desktop-nav-desktop-darwin.png
+    Received: test-results/visual-Visual-—-Desktop-nav-bar-layout-desktop/desktop-nav-actual.png
+    Diff:     test-results/visual-Visual-—-Desktop-nav-bar-layout-desktop/desktop-nav-diff.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/visual-Visual-—-Desktop-nav-bar-layout-desktop/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/visual-Visual-—-Desktop-nav-bar-layout-desktop/error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoHaveScreenshot[2m([22m[32mexpected[39m[2m)[22m failed
+
+    Locator: locator('header')
+      7182 pixels (ratio 0.05 of all image pixels) are different.
+
+      Snapshot: desktop-nav.png
+
+    Call log:
+    [2m  - Expect "toHaveScreenshot(desktop-nav.png)" with timeout 5000ms[22m
+    [2m    - verifying given screenshot expectation[22m
+    [2m  - waiting for locator('header')[22m
+    [2m    - locator resolved to <header class="sticky top-0 z-50 border-b border-border/50 bg-background/90 backdrop-blur-xl shadow-sm">…</header>[22m
+    [2m  - taking element screenshot[22m
+    [2m    - disabled all CSS animations[22m
+    [2m  - waiting for fonts to load...[22m
+    [2m  - fonts loaded[22m
+    [2m  - attempting scroll into view action[22m
+    [2m    - waiting for element to be stable[22m
+    [2m  - 7182 pixels (ratio 0.05 of all image pixels) are different.[22m
+    [2m  - waiting 100ms before taking screenshot[22m
+    [2m  - waiting for locator('header')[22m
+    [2m    - locator resolved to <header class="sticky top-0 z-50 border-b border-border/50 bg-background/90 backdrop-blur-xl shadow-sm">…</header>[22m
+    [2m  - taking element screenshot[22m
+    [2m    - disabled all CSS animations[22m
+    [2m  - waiting for fonts to load...[22m
+    [2m  - fonts loaded[22m
+    [2m  - attempting scroll into view action[22m
+    [2m    - waiting for element to be stable[22m
+    [2m  - captured a stable screenshot[22m
+    [2m  - 7182 pixels (ratio 0.05 of all image pixels) are different.[22m
+
+
+      165 |     await page.waitForLoadState("networkidle");
+      166 |     const header = page.locator("header");
+    > 167 |     await expect(header).toHaveScreenshot("desktop-nav.png", {
+          |                          ^
+      168 |       maxDiffPixelRatio: 0.01,
+      169 |     });
+      170 |   });
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/visual.spec.ts:167:26
+
+    attachment #1: desktop-nav (image/png) ─────────────────────────────────────────────────────────
+    Expected: tests/e2e/visual.spec.ts-snapshots/desktop-nav-desktop-darwin.png
+    Received: test-results/visual-Visual-—-Desktop-nav-bar-layout-desktop-retry1/desktop-nav-actual.png
+    Diff:     test-results/visual-Visual-—-Desktop-nav-bar-layout-desktop-retry1/desktop-nav-diff.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/visual-Visual-—-Desktop-nav-bar-layout-desktop-retry1/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/visual-Visual-—-Desktop-nav-bar-layout-desktop-retry1/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/visual-Visual-—-Desktop-nav-bar-layout-desktop-retry1/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/visual-Visual-—-Desktop-nav-bar-layout-desktop-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  28) [desktop] › tests/e2e/where-to-go.spec.ts:12:7 › Where to Go › where-to-go root redirects to current month 
+
+    [31mTest timeout of 30000ms exceeded.[39m
+
+    Error: page.waitForURL: Test timeout of 30000ms exceeded.
+    =========================== logs ===========================
+    waiting for navigation until "load"
+      navigated to "https://www.nakshiq.com/en/where-to-go"
+    ============================================================
+
+      13 |     await page.goto("/en/where-to-go");
+      14 |     // Should redirect to /en/where-to-go/{month}
+    > 15 |     await page.waitForURL(/where-to-go\/[a-z]+/);
+         |                ^
+      16 |     expect(page.url()).toMatch(/where-to-go\/(january|february|march|april|may|june|july|august|september|october|november|december)/);
+      17 |   });
+      18 |
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/where-to-go.spec.ts:15:16
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/where-to-go-Where-to-Go-wh-0e6a1--redirects-to-current-month-desktop/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/where-to-go-Where-to-Go-wh-0e6a1--redirects-to-current-month-desktop/error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    [31mTest timeout of 30000ms exceeded.[39m
+
+    Error: page.waitForURL: Test timeout of 30000ms exceeded.
+    =========================== logs ===========================
+    waiting for navigation until "load"
+      navigated to "https://www.nakshiq.com/en/where-to-go"
+    ============================================================
+
+      13 |     await page.goto("/en/where-to-go");
+      14 |     // Should redirect to /en/where-to-go/{month}
+    > 15 |     await page.waitForURL(/where-to-go\/[a-z]+/);
+         |                ^
+      16 |     expect(page.url()).toMatch(/where-to-go\/(january|february|march|april|may|june|july|august|september|october|november|december)/);
+      17 |   });
+      18 |
+        at /Users/ashishtaneja/Desktop/India Travel Planner/tests/e2e/where-to-go.spec.ts:15:16
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/where-to-go-Where-to-Go-wh-0e6a1--redirects-to-current-month-desktop-retry1/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/where-to-go-Where-to-Go-wh-0e6a1--redirects-to-current-month-desktop-retry1/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/where-to-go-Where-to-Go-wh-0e6a1--redirects-to-current-month-desktop-retry1/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/where-to-go-Where-to-Go-wh-0e6a1--redirects-to-current-month-desktop-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  28 failed
+    [mobile] › tests/e2e/gap-year.spec.ts:38:7 › Gap Year Planner v2 › origin combobox fuzzy-matches across name and state 
+    [mobile] › tests/e2e/gap-year.spec.ts:47:7 › Gap Year Planner v2 › themes cap at 3 selected ────
+    [mobile] › tests/e2e/homepage.spec.ts:14:7 › Homepage › explore by region cards render ─────────
+    [mobile] › tests/e2e/navigation.spec.ts:32:7 › Mobile Navigation › more tab navigates to homepage 
+    [mobile] › tests/e2e/trip-board.spec.ts:61:7 › Trip Board — Phase 2/3 markers (gated on stops > 0) › year band + cost aggregate render 
+    [mobile] › tests/e2e/trip-board.spec.ts:89:7 › Trip Board — Phase 4 (AI Modal) › Generate itinerary CTA opens 3-step modal 
+    [mobile] › tests/e2e/trip-board.spec.ts:113:7 › Trip Board — Phase 5 (Map + Share) › Map toggle renders the SVG atlas with pins 
+    [mobile] › tests/e2e/visual.spec.ts:24:7 › Visual — Mobile › homepage above the fold ───────────
+    [mobile] › tests/e2e/visual.spec.ts:45:7 › Visual — Mobile › destination detail hero ───────────
+    [mobile] › tests/e2e/visual.spec.ts:55:7 › Visual — Mobile › destination detail bottom CTA bar ─
+    [mobile] › tests/e2e/visual.spec.ts:69:7 › Visual — Mobile › chatbot button not cropped by tab bar 
+    [mobile] › tests/e2e/visual.spec.ts:80:7 › Visual — Mobile › collection detail card layout ─────
+    [mobile] › tests/e2e/visual.spec.ts:93:7 › Visual — Mobile › collections grid page ─────────────
+    [mobile] › tests/e2e/visual.spec.ts:103:7 › Visual — Mobile › explore page cards ───────────────
+    [mobile] › tests/e2e/visual.spec.ts:113:7 › Visual — Mobile › where to go page ─────────────────
+    [mobile] › tests/e2e/where-to-go.spec.ts:12:7 › Where to Go › where-to-go root redirects to current month 
+    [desktop] › tests/e2e/gap-year.spec.ts:38:7 › Gap Year Planner v2 › origin combobox fuzzy-matches across name and state 
+    [desktop] › tests/e2e/gap-year.spec.ts:47:7 › Gap Year Planner v2 › themes cap at 3 selected ───
+    [desktop] › tests/e2e/gap-year.spec.ts:61:7 › Gap Year Planner v2 › nav mega-menu includes Gap Year Planner entry 
+    [desktop] › tests/e2e/homepage.spec.ts:14:7 › Homepage › explore by region cards render ────────
+    [desktop] › tests/e2e/trip-board.spec.ts:61:7 › Trip Board — Phase 2/3 markers (gated on stops > 0) › year band + cost aggregate render 
+    [desktop] › tests/e2e/trip-board.spec.ts:89:7 › Trip Board — Phase 4 (AI Modal) › Generate itinerary CTA opens 3-step modal 
+    [desktop] › tests/e2e/trip-board.spec.ts:113:7 › Trip Board — Phase 5 (Map + Share) › Map toggle renders the SVG atlas with pins 
+    [desktop] › tests/e2e/visual.spec.ts:133:7 › Visual — Desktop › homepage above the fold ────────
+    [desktop] › tests/e2e/visual.spec.ts:143:7 › Visual — Desktop › destination detail page ────────
+    [desktop] › tests/e2e/visual.spec.ts:153:7 › Visual — Desktop › collections page ───────────────
+    [desktop] › tests/e2e/visual.spec.ts:163:7 › Visual — Desktop › nav bar layout ─────────────────
+    [desktop] › tests/e2e/where-to-go.spec.ts:12:7 › Where to Go › where-to-go root redirects to current month 
+  26 skipped
+  84 passed (5.9m)

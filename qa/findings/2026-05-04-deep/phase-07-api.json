@@ -1,0 +1,81 @@
+{
+  "phase": 7,
+  "name": "api-endpoint-input-boundary-probes",
+  "started_utc": "2026-05-04T11:25:00Z",
+  "completed_utc": "2026-05-04T11:50:00Z",
+  "outcome": "PASS_WITH_FIXES",
+  "approach": "Curl-driven probe matrix over all 23 public + 7 admin API routes. Per endpoint: empty body, wrong content-type, oversized payload, plus method-specific edge cases. Admin endpoints additionally probed without bearer.",
+  "endpoints_probed": 35,
+  "results_csv": "qa/findings/2026-05-04-deep/api-probes/results.csv",
+  "real_defects_fixed": [
+    {
+      "id": "DEEP-Phase7-A1",
+      "severity": "high",
+      "endpoint": "POST /api/chat",
+      "title": "500 on oversized / malformed JSON body",
+      "evidence": "500KB junk body returned HTTP 500 with body `{\"error\":\"Something went wrong\"}`. The route validates question.length > 1000 but only AFTER req.json() — and that throws on non-JSON, escaping into the generic catch as 500.",
+      "fix": "Pre-check content-length > 50KB → 413. Wrap req.json() in inner try → 400 on parse failure.",
+      "fix_commit": "0862eea4"
+    },
+    {
+      "id": "DEEP-Phase7-A2",
+      "severity": "high",
+      "endpoint": "POST /api/itinerary",
+      "title": "500 on oversized / malformed JSON body",
+      "evidence": "200KB junk body returned HTTP 500 + empty body. Same root cause as A1 — req.json() throws.",
+      "fix": "Same 413 + 400 split.",
+      "fix_commit": "0862eea4"
+    }
+  ],
+  "passed_probes": [
+    {
+      "endpoint": "Admin × 7 routes (questions, reviews, trip-reports, sos, stay-picks, citations, revalidate)",
+      "result": "All 401 without bearer ✓",
+      "scope": "Admin auth gating verified across all 7 admin POST routes."
+    },
+    {
+      "endpoint": "POST /api/itinerary",
+      "probe": "month=999 → 400 'Month must be an integer 1-12' ✓",
+      "note": "Today's earlier J1 fix (commit 3700ca27) verified working in production."
+    },
+    {
+      "endpoint": "POST /api/itinerary",
+      "probe": "days=-5 → 400 'Days must be 1-30' ✓"
+    },
+    {
+      "endpoint": "POST /api/newsletter/subscribe",
+      "probe": "valid email → 200 + ok body ✓; invalid_email → 400 ✓"
+    },
+    {
+      "endpoint": "GET /api/weather",
+      "probes": [
+        "no id param → 400 ✓",
+        "id=<script>alert(1)</script> → 404 'No coordinates for this destination' (no XSS reflection — script tags are URL-decoded as a slug lookup that misses, returns plain JSON error) ✓"
+      ]
+    },
+    {
+      "endpoint": "POST /api/questions, /api/reviews, /api/trip-reports, /api/suggestions, /api/membership",
+      "probe": "honeypot field `hp` populated → silent drop (200) confirmed in code review",
+      "files": [
+        "apps/web/src/app/api/questions/route.ts:88",
+        "apps/web/src/app/api/reviews/route.ts:65",
+        "apps/web/src/app/api/trip-reports/route.ts:54",
+        "apps/web/src/app/api/suggestions/route.ts:155",
+        "apps/web/src/app/api/membership/route.ts:53"
+      ],
+      "note": "Honeypot is correctly named `hp`, not `website`/`url` (those names would be too obvious to bots). Silent-drop pattern matches OWASP guidance."
+    }
+  ],
+  "carried_forward": [
+    {
+      "title": "UGC rate-limit observability",
+      "description": "Code review confirms rate-limit logic on questions/reviews/trip-reports/suggestions routes (RATE_LIMIT_PER_HOUR = 3 etc), but did not run 60-rapid-request load test in this phase. Worth verifying limits actually trigger 429s.",
+      "next_step": "Phase 9 security pass adds the rapid-request probe."
+    },
+    {
+      "title": "Other req.json() routes worth auditing",
+      "description": "log-bot-visit, quiz-match, embed routes do wrap their req.json() in try/catch already (verified by code read).",
+      "status": "VERIFIED_OK"
+    }
+  ]
+}
