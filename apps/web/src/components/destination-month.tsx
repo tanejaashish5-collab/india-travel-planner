@@ -738,8 +738,24 @@ export function DestinationMonth({
         </aside>
       </div>
 
-      {/* Newsletter */}
-      <NewsletterSignup />
+      {/* Newsletter — destination-aware copy. B1 (2026-05-04, data-baseline):
+          return rate is 3.5%; this is the highest-trafficked CTA surface
+          on the site (~5,800 dest×month URLs). Source carries dest+month
+          for later attribution per signup channel. */}
+      <NewsletterSignup
+        source={`dest-month-${destination.id}-${monthSlug}`}
+        headline={
+          locale === "hi"
+            ? `अगले ${destination.name} के लिए तैयार रहें`
+            : `Don't miss the next ${destination.name} window`
+        }
+        subhead={
+          locale === "hi"
+            ? `हम रविवार को एक ईमेल भेजते हैं — कौन सी जगह अगले हफ़्ते जाने लायक है, बेईमानी से। मुफ़्त, बिना स्पैम।`
+            : `One Sunday email — what's actually worth going to next week, honestly scored. Free, no spam.`
+        }
+        buttonLabel={locale === "hi" ? "साइन अप करें" : "Get the email"}
+      />
 
       {/* Divider */}
       <div className="border-t border-zinc-800" />
