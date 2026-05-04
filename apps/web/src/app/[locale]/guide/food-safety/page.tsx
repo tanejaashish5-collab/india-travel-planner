@@ -61,7 +61,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   return {
-    title: "Eating safely in India — what to eat, what to skip | NakshIQ",
+    title: "Eating safely in India — what to eat, what to skip",
     description:
       "Honest food safety guidance: water, street food, salads, spice, and the regional dishes worth seeking out. Without paranoia.",
     ...localeAlternates(locale, "/guide/food-safety"),

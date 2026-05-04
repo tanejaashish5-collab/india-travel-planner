@@ -26,6 +26,11 @@ export default defineConfig({
         localStorage: [
           { name: "quizSeen", value: "true" },
           { name: "pwa-install-dismissed", value: "9999999999999" },
+          // Tour overlay (guided-tour.tsx) intercepts pointer events on every
+          // page until dismissed; without this seed every nav-hover/click test
+          // fails on a full-page black overlay. Matches the "dismissed"
+          // sentinel that the component itself writes on close.
+          { name: "nakshiq_tour_v2", value: "dismissed" },
         ],
       }],
     },

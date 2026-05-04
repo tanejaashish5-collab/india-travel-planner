@@ -10,7 +10,7 @@ export const revalidate = 86400;
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   return {
-    title: "India Permits Guide — ILP, PAP, RAP state by state | NakshIQ",
+    title: "India Permits Guide — ILP, PAP, RAP state by state",
     description:
       "Ladakh, Sikkim, Arunachal Pradesh, Nagaland, Mizoram, Manipur. Inner Line Permit and Protected Area Permit — process, validity, official sources. For Indian citizens and foreign nationals.",
     ...localeAlternates(locale, "/guide/permits"),

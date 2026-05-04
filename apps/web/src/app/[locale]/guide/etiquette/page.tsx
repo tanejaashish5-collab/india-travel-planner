@@ -61,7 +61,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   return {
-    title: "India etiquette — temples, dress, dining, gestures | NakshIQ",
+    title: "India etiquette — temples, dress, dining, gestures",
     description:
       "Practical cultural etiquette without stereotypes — how to dress, greet, eat, photograph, and behave at religious sites and in homes.",
     ...localeAlternates(locale, "/guide/etiquette"),

@@ -30,7 +30,9 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  const title = "Where to Go in India — by Month | NakshIQ";
+  // Layout's title.template appends " | NakshIQ" — don't hardcode the suffix
+  // here or it duplicates ("… | NakshIQ | NakshIQ"). Phase 2 deep-QA finding.
+  const title = "Where to Go in India — by Month";
   const description = "Pick a month and see India's 5/5 destinations for that window. Honest verdicts, weather windows, and skip-list flags. 460+ destinations scored.";
   const canonical = `${SITE}/${locale}/where-to-go`;
   return {

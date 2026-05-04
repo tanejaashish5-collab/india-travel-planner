@@ -56,7 +56,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   return {
-    title: "India SIM card and mobile data — how it actually works | NakshIQ",
+    title: "India SIM card and mobile data — how it actually works",
     description:
       "Airtel vs Jio vs Vi for tourists, where to buy, what plans give, OTP and activation gotchas, coverage in remote regions.",
     ...localeAlternates(locale, "/guide/sim-card"),

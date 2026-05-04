@@ -9,7 +9,7 @@ export const revalidate = 86400;
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   return {
-    title: "How to book Indian trains as a foreigner — IRCTC, FTQ, Tatkal | NakshIQ",
+    title: "How to book Indian trains as a foreigner — IRCTC, FTQ, Tatkal",
     description:
       "IRCTC account for non-Indian passports, Foreign Tourist Quota (FTQ), RAC / waitlist logic, Tatkal timing, class codes. Step-by-step with official links. Updated 2026.",
     ...localeAlternates(locale, "/guide/book-indian-trains"),

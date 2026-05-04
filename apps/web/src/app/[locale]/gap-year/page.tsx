@@ -11,7 +11,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   return {
-    title: "The Gap Year Planner — 3 to 12 Months Across India | NakshIQ",
+    title: "The Gap Year Planner — 3 to 12 Months Across India",
     description:
       "Plan a 3–12 month India trip month by month. Real monthly scoring, kid-safe filters, budget roll-up, shareable link. Not a brochure — a working plan.",
     ...localeAlternates(locale, "/gap-year"),

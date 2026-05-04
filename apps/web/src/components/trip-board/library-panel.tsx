@@ -190,7 +190,7 @@ export function LibraryPanel({
     >
       <div style={{ padding: "18px 16px 12px", borderBottom: "1px solid var(--rule)" }}>
         <div className="nq-eyebrow" style={{ marginBottom: 8 }}>
-          Library · {destinations.length} loaded · 491 total
+          Library · {destinations.length} loaded
         </div>
         <input
           type="search"

@@ -84,7 +84,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   return {
-    title: "Getting around India — trains, buses, flights, ride-share | NakshIQ",
+    title: "Getting around India — trains, buses, flights, ride-share",
     description:
       "The right transport mode by distance and route. IRCTC tactics, foreign-tourist quota, when to fly, when to bus, when to take a car-and-driver.",
     ...localeAlternates(locale, "/guide/transport-overview"),

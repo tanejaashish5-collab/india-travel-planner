@@ -54,6 +54,11 @@ test.describe("Trip Board — Phase 2/3 markers (gated on stops > 0)", () => {
     await page.goto("/en/trip");
     await page.evaluate((seed) => {
       localStorage.setItem("tripBoard", JSON.stringify(seed));
+      // SimpleView is the default post-ColdStart UI (per
+      // session_2026_05_03_trip_board_simple_view); the [data-yearband] /
+      // [data-cost-aggregate] / [data-trip-map] markers only render in the
+      // advanced ThreePane view. Opt this test session into advanced.
+      localStorage.setItem("nq-trip-mode", "advanced");
     }, SEED_BOARD);
     await page.reload();
   });
@@ -82,6 +87,7 @@ test.describe("Trip Board — Phase 4 (AI Modal)", () => {
     await page.goto("/en/trip");
     await page.evaluate((seed) => {
       localStorage.setItem("tripBoard", JSON.stringify(seed));
+      localStorage.setItem("nq-trip-mode", "advanced");
     }, SEED_BOARD);
     await page.reload();
   });
@@ -106,6 +112,7 @@ test.describe("Trip Board — Phase 5 (Map + Share)", () => {
     await page.goto("/en/trip");
     await page.evaluate((seed) => {
       localStorage.setItem("tripBoard", JSON.stringify(seed));
+      localStorage.setItem("nq-trip-mode", "advanced");
     }, SEED_BOARD);
     await page.reload();
   });

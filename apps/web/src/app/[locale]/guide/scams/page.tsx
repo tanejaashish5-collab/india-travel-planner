@@ -94,7 +94,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   return {
-    title: "Common India scams and how to avoid them | NakshIQ",
+    title: "Common India scams and how to avoid them",
     description:
       "The actual scam patterns travelers run into in India — airport touts, hotel-relocation, gem export, fake government offices — and the simple defences for each.",
     ...localeAlternates(locale, "/guide/scams"),

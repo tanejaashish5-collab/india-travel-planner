@@ -10,7 +10,7 @@ export const revalidate = 86400;
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   return {
-    title: "Arrival Playbooks — India's 9 Major Airports | NakshIQ",
+    title: "Arrival Playbooks — India's 9 Major Airports",
     description: "Step-by-step airport arrival guides for India: prepaid taxi counters, Uber zones, SIM activation, scams to avoid. Delhi, Mumbai, Bangalore, Chennai, Kolkata, Hyderabad, Kochi, Goa, Ahmedabad.",
     ...localeAlternates(locale, "/arrival"),
   };

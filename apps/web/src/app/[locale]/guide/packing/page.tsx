@@ -61,7 +61,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   return {
-    title: "Packing for India by region and season | NakshIQ",
+    title: "Packing for India by region and season",
     description:
       "What to pack for India: summer, monsoon, winter, by region. Plus altitude considerations, electronics, footwear, medications.",
     ...localeAlternates(locale, "/guide/packing"),

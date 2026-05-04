@@ -61,7 +61,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   return {
-    title: "India tourist visa — what you actually need to know | NakshIQ",
+    title: "India tourist visa — what you actually need to know",
     description:
       "e-Tourist Visa categories, application window, designated airports, costs, common rejection reasons. With links to the official Indian government portal.",
     ...localeAlternates(locale, "/guide/visa"),

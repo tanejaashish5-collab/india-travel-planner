@@ -11,7 +11,7 @@ export const revalidate = 3600;
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   return {
-    title: "The Window — Past Issues | NakshIQ",
+    title: "The Window — Past Issues",
     description: "Every Sunday: the best-scored destination of the week, one honest skip, road intelligence, and what changed in our data.",
     ...localeAlternates(locale, "/the-window"),
   };

@@ -35,7 +35,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale, token } = await params;
   const found = await fetchPlan(token);
-  if (!found) return { title: "Plan not found | NakshIQ" };
+  if (!found) return { title: "Plan not found" };
 
   const { plan, title } = found;
   const totalDests = plan.months.reduce((s, m) => s + m.destinations.length, 0);
@@ -47,7 +47,7 @@ export async function generateMetadata({
   const canonicalUrl = `https://www.nakshiq.com/${locale}/gap-year/${token}`;
 
   return {
-    title: `${title} | NakshIQ`,
+    title,
     description,
     alternates: { canonical: canonicalUrl },
     openGraph: {

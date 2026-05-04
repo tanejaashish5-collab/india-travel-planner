@@ -208,7 +208,7 @@ export function ColdStart({ destinations, onSeed }: { destinations: DestLite[]; 
       {/* Hero */}
       <div className="border-b border-border pb-10">
         <p className="text-[12px] uppercase tracking-[0.06em] text-muted-foreground font-medium">
-          491 destinations · 12-month windows · permits + passes tracked
+          {destinations.length} destinations · 12-month windows · permits + passes tracked
         </p>
         <h1 className="mt-3 font-serif text-4xl font-medium leading-[1.05] tracking-[-0.015em] text-foreground md:text-5xl">
           Plan a trip in India that&rsquo;s <em style={{ color: "#d36843" }}>actually possible</em> on the dates you can take leave.
@@ -407,7 +407,7 @@ export function ColdStart({ destinations, onSeed }: { destinations: DestLite[]; 
       {/* Bottom proof strip + skip */}
       <footer className="mt-10 grid grid-cols-2 gap-6 border-t border-border pt-6 text-[14px] leading-[1.5] text-muted-foreground md:grid-cols-4">
         <div>
-          <strong className="text-foreground">491</strong>
+          <strong className="text-foreground">{destinations.length}</strong>
           <br />destinations researched
         </div>
         <div>

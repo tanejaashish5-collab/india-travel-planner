@@ -61,7 +61,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   return {
-    title: "Money in India — UPI, ATMs, cards, cash | NakshIQ",
+    title: "Money in India — UPI, ATMs, cards, cash",
     description:
       "What works where, foreign-tourist UPI options, ATM tactics, tipping ranges, common pitfalls. Practical and current.",
     ...localeAlternates(locale, "/guide/currency"),

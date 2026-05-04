@@ -9,11 +9,14 @@ test.describe("Where to Go", () => {
     await expect(destLinks.first()).toBeVisible();
   });
 
-  test("where-to-go root redirects to current month", async ({ page }) => {
+  test("where-to-go root renders month-picker hub (no auto-redirect)", async ({ page }) => {
+    // Product change: was a 307 to /en/where-to-go/{month}; now serves a
+    // standalone hub page with all 12 month links. Keep the hub for SEO.
     await page.goto("/en/where-to-go");
-    // Should redirect to /en/where-to-go/{month}
-    await page.waitForURL(/where-to-go\/[a-z]+/);
-    expect(page.url()).toMatch(/where-to-go\/(january|february|march|april|may|june|july|august|september|october|november|december)/);
+    expect(page.url()).toMatch(/\/en\/where-to-go$/);
+    await expect(page.getByRole("heading", { name: /Where to Go in India/i })).toBeVisible();
+    const monthLinks = page.locator('main a[href*="/en/where-to-go/"]');
+    expect(await monthLinks.count()).toBeGreaterThanOrEqual(12);
   });
 
   test("regional where-to-go works", async ({ page }) => {

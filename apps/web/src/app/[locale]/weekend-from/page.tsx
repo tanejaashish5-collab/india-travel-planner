@@ -13,7 +13,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   return {
-    title: "Weekend Trips from Indian Metros — Destinations Within 500 km, Scored | NakshIQ",
+    title: "Weekend Trips from Indian Metros — Destinations Within 500 km, Scored",
     description:
       "Weekend escapes from Delhi, Mumbai, Bangalore, Chennai, Kolkata, Hyderabad. Every destination scored for the current month — no hill station that's closed, no beach under monsoon water.",
     alternates: {

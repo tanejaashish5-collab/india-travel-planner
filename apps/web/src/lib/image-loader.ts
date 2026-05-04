@@ -38,6 +38,14 @@ export default function r2Loader({ src, width }: LoaderArgs): string {
   const m = normalized.match(/^(.+)\.(jpe?g|png)$/i);
   if (!m) return `${cdn}/${normalized}`;
 
+  // Only assets under known variant-generating subdirectories (destinations/,
+  // collections/, treks/, blog/, etc) have the -w400/-w800/-w1200/-w1600 webp
+  // family on R2. Root-level pngs (icon-192.png, og-image.jpg) don't — they
+  // are uploaded as-is by upload-static-assets.mjs and have no width variants.
+  // Without this guard, /icon-192.png × width=48 was rewritten to
+  // /icon-192-w400.webp which 404s. Falls back to the original asset on R2.
+  if (!/\//.test(normalized)) return `${cdn}/${normalized}`;
+
   const stem = m[1];
   const variantW = pickVariantWidth(width);
   return `${cdn}/${stem}-w${variantW}.webp`;

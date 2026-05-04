@@ -13,10 +13,12 @@ test.describe("Homepage", () => {
 
   test("explore by region cards render", async ({ page }) => {
     await page.goto("/en");
-    await expect(page.getByText("Explore by region", { exact: false })).toBeVisible();
-    // At least 6 region cards
+    // Region cards link via /states?region=… — assert at least one is present.
+    // The visible label was shortened from "Explore by region" → "By region"
+    // (nav-mega-menu.tsx); keep the structural assertion (cards exist) and
+    // drop the exact-text lookup.
     const regionCards = page.locator("a[href*='/states?region=']");
-    await expect(regionCards.first()).toBeVisible();
+    expect(await regionCards.count()).toBeGreaterThanOrEqual(6);
   });
 
   test("featured destinations show with scores", async ({ page }) => {
