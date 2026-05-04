@@ -11,6 +11,10 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     title: "More — every NakshIQ tool, guide, and policy in one place",
     description:
       "Trip planning tools, destination comparisons, editorial policy, press, corrections, and the rest of NakshIQ — all linked from a single hub.",
+    // GSC: 14 sessions / 0 engaged in 7d. People land here from "site map"-style
+    // queries, see a wall of links, bounce. Hub page useful from internal nav
+    // but not a search-landing target — stop competing with destination pages.
+    robots: { index: false, follow: true },
     ...localeAlternates(locale, "/more"),
   };
 }

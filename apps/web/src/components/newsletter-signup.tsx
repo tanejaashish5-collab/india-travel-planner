@@ -4,7 +4,19 @@ import { useState } from "react";
 import { FadeIn } from "./animated-hero";
 import { KEY_EVENTS, track } from "@/lib/analytics";
 
-export function NewsletterSignup({ source = "inline-widget" }: { source?: string } = {}) {
+export function NewsletterSignup({
+  source = "inline-widget",
+  headline,
+  subhead,
+  buttonLabel,
+  footnote,
+}: {
+  source?: string;
+  headline?: string;
+  subhead?: string;
+  buttonLabel?: string;
+  footnote?: string;
+} = {}) {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState("");
@@ -60,9 +72,9 @@ export function NewsletterSignup({ source = "inline-widget" }: { source?: string
     <FadeIn>
       <div className="rounded-2xl border border-primary/30 bg-gradient-to-br from-primary/5 via-card to-primary/5 p-8">
         <div className="text-center max-w-md mx-auto">
-          <h3 className="text-xl font-bold">The Window — every Sunday</h3>
+          <h3 className="text-xl font-bold">{headline ?? "The Window — every Sunday"}</h3>
           <p className="mt-2 text-sm text-muted-foreground">
-            Best score this week, the honest skip, road intel, and what changed. Free. No spam.
+            {subhead ?? "Best score this week, the honest skip, road intel, and what changed. Free. No spam."}
           </p>
 
           <form onSubmit={handleSubmit} className="mt-6 flex gap-2">
@@ -83,7 +95,7 @@ export function NewsletterSignup({ source = "inline-widget" }: { source?: string
               disabled={status === "loading"}
               className="shrink-0 rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-all hover:bg-primary/90 disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              {status === "loading" ? "..." : "Subscribe"}
+              {status === "loading" ? "..." : (buttonLabel ?? "Subscribe")}
             </button>
           </form>
 
@@ -92,7 +104,7 @@ export function NewsletterSignup({ source = "inline-widget" }: { source?: string
           )}
 
           <p className="mt-4 text-xs text-muted-foreground/60">
-            One email per Sunday. Unsubscribe anytime.
+            {footnote ?? "One email per Sunday. Unsubscribe anytime."}
           </p>
         </div>
       </div>

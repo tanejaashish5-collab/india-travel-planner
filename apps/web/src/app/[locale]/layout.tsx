@@ -300,8 +300,12 @@ export default async function LocaleLayout({
                 // Admin → Custom definitions → Create custom dimension →
                 // Scope: User, User property: aio_referral.
                 var __aioRef = (document.referrer || '').indexOf('udm=50') !== -1;
-                gtag('config','${process.env.NEXT_PUBLIC_GA4_ID.trim()}');
-                ${process.env.NEXT_PUBLIC_GA4_ID_SECONDARY?.trim() ? `gtag('config','${process.env.NEXT_PUBLIC_GA4_ID_SECONDARY.trim()}');` : ''}
+                // Explicitly pass page_path so the initial auto-fired page_view
+                // never leaks an empty string into GA4's landingPagePlusQueryString
+                // dimension (12 sessions/week were landing as "" — F3 fix 2026-05-04).
+                var __pp = location.pathname || '/';
+                gtag('config','${process.env.NEXT_PUBLIC_GA4_ID.trim()}', { page_path: __pp });
+                ${process.env.NEXT_PUBLIC_GA4_ID_SECONDARY?.trim() ? `gtag('config','${process.env.NEXT_PUBLIC_GA4_ID_SECONDARY.trim()}', { page_path: __pp });` : ''}
                 if (__aioRef) {
                   gtag('set', 'user_properties', { aio_referral: 'true' });
                   gtag('event', 'aio_referral_landing', {

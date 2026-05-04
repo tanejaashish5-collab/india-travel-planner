@@ -36,8 +36,12 @@ function RouteTrackerInner() {
 
     // Wait a tick for the document title to update after navigation
     const timer = setTimeout(() => {
+      // Defensive: usePathname can briefly return null/empty during route
+      // transitions. Fall back to "/" so we never fire page_view with an
+      // empty page_path (the source of the F3 empty-landing bug).
+      const safePath = pathname || "/";
       const url =
-        pathname + (searchParams?.toString() ? `?${searchParams.toString()}` : "");
+        safePath + (searchParams?.toString() ? `?${searchParams.toString()}` : "");
 
       if (typeof window.gtag === "function") {
         window.gtag("event", "page_view", {

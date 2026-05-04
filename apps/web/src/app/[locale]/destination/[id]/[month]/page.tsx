@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { setRequestLocale } from "next-intl/server";
 import { Nav } from "@/components/nav";
 import { DestinationMonth } from "@/components/destination-month";
+import { NewsletterSignup } from "@/components/newsletter-signup";
 import { ScrollDepthTracker } from "@/components/scroll-depth-tracker";
 import { createClient } from "@supabase/supabase-js";
 import { notFound } from "next/navigation";
@@ -639,6 +640,36 @@ export default async function DestinationMonthPage({
           nearby={nearby}
           locale={locale}
         />
+        {/*
+          B1 (2026-05-04): destination-aware email capture. Return rate is
+          3.5% (14 of 396 users) — every other CRO compounds zero while
+          that's the bottom line. Single most-trafficked surface on the
+          site (~5,800 dest×month URLs); even 5% capture rate from current
+          150-eng/wk grows the 2K-list monetization gating.
+          Source field carries dest_slug + month for later attribution.
+          Hindi parity via inline copy; existing newsletter signup.
+        */}
+        <div className="mt-12">
+          <NewsletterSignup
+            source={`dest-month-${id}-${month}`}
+            headline={
+              locale === "hi"
+                ? `अगले ${(destination as { name: string }).name} के लिए तैयार रहें`
+                : `Don't miss the next ${(destination as { name: string }).name} window`
+            }
+            subhead={
+              locale === "hi"
+                ? `हम रविवार को एक ईमेल भेजते हैं — कौन सी जगह अगले हफ़्ते जाने लायक है, बेईमानी से। मुफ़्त, बिना स्पैम।`
+                : `One Sunday email — what's actually worth going to next week, honestly scored. Free, no spam.`
+            }
+            buttonLabel={locale === "hi" ? "साइन अप करें" : "Get the email"}
+            footnote={
+              locale === "hi"
+                ? `रविवार को एक ईमेल। कभी भी अनसब्सक्राइब करें।`
+                : `One email per Sunday. Unsubscribe anytime.`
+            }
+          />
+        </div>
       </main>
     </div>
   );
