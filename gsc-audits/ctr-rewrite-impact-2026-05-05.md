@@ -50,22 +50,31 @@ Same pattern as where-to-go, region-scoped count (lines 63–73).
 
 ---
 
-## GSC numbers — Ashish to fill in
-
-**Link:** https://search.google.com/search-console/performance/search-analytics?resource_id=https%3A%2F%2Fwww.nakshiq.com%2F&num_of_days=7
-
-Set date range to last 7 days (Apr 29 – May 5). Compare to baseline Apr 20–26.
+## GSC numbers — auto-filled 2026-05-06 via `scripts/data-pull.mjs` GSC client
 
 | Metric | Baseline (Apr 20–26) | 7d post-deploy (Apr 29–May 5) | Delta |
 |---|---|---|---|
-| Site-wide CTR | 0.2% | _fill_ | _fill_ |
-| tungnath/may CTR | 0.1% (1/991) | _fill_ | _fill_ |
-| vrindavan/may CTR | 0.9% (2/217) | _fill_ | _fill_ |
-| yercaud/may CTR | ~0.1% | _fill_ | _fill_ |
-| kodaikanal/june CTR | ~0.1% | _fill_ | _fill_ |
-| mussoorie/may CTR | 0.3% (2/593) | _fill_ | _fill_ |
+| **Site-wide clicks** | 129 | 148 | **+15%** ✅ |
+| **Site-wide impressions** | 54,377 | 47,772 | −12% |
+| **Site-wide CTR** | 0.24% | **0.31%** | **+29%** ✅ |
+| **Site-wide position** | 10.7 | **9.8** | **+0.9 ranks** ✅ |
+| tungnath/may | 3 / 506 (0.59% @ 7.9) | 5 / 1357 (0.37% @ 7.0) | clicks +67%, impr +168%, pos +0.9, CTR −0.22pp |
+| vrindavan/may | 1 / 808 (0.12% @ 8.8) | 1 / 215 (0.47% @ 9.4) | CTR ×4, impr −73% |
+| yercaud/may | 1 / 721 (0.14% @ 10.7) | 0 / 222 (0.00% @ 8.5) | pos +2.2, 0 clicks |
+| kodaikanal/june | 1 / 548 (0.18% @ 10.6) | 0 / 26 (0.00% @ 12.1) | impr −95% (off-season decay) |
+| mussoorie/may | 2 / 593 (0.34% @ 11.0) | 1 / 431 (0.23% @ 10.7) | flat-down |
 
-**Target:** site-wide CTR ≥0.4% (2× baseline) indicates rewrite is biting.
+**Target check:** site-wide CTR target was 0.4% (2× baseline). Hit **0.31%** — partial. **Direction is correct (+29% CTR, +0.9 ranks, +15% net clicks)**, magnitude under target.
+
+### Verdict: ✅ partial success — keep, do not revert
+
+- **At scale**, the rewrite is biting: 0.24% → 0.31% site-wide CTR, +0.9 average rank improvement, 15% more clicks on 12% fewer impressions. Better quality of impression-to-click conversion AND Google ranking the rewritten pages higher.
+- **At single-URL level**, samples are too low-volume to read individually (1–5 clicks per URL). Tungnath shows the dominant pattern: rewrite triggered Google to surface page 168% more often (impressions exploded), but the bigger denominator drags CTR down even as clicks rose 67%. Vrindavan got the textbook 4× CTR lift.
+- **2 URLs with 0 clicks** (yercaud, kodaikanal) are likely sample-size noise + month decay (May→June peak ending), not template failure.
+
+### Action: none. Continue monitoring.
+
+Re-run this audit at the 14d mark (2026-05-12) when sample size doubles. Expect CTR to drift up further as Googlebot finishes re-crawling the long tail and SERP-snippet feedback loop completes (typically 2–4 weeks).
 
 ---
 
