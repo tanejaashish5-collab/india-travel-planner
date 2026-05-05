@@ -509,6 +509,44 @@ def mark_posted(state: dict, account_id: str, destination_id: str,
     })
     state["post_log"] = state["post_log"][-500:]
 
+def record_publish(state: dict, *, dest_id: str | None, fmt: str,
+                   post_id: str | None, platform: str,
+                   media_id: str | None = None):
+    """Lightweight publish-recorder for non-main flows (pomelli / canva /
+    flow_story / tourist_map). They have their own theme trackers but
+    historically never wrote to `posted_destinations` or `post_log`, so the
+    main-loop's 14-day cooldown couldn't see what they'd already posted —
+    that's how Manali ended up in score_card on Monday + pomelli on Tuesday.
+
+    This appends a minimal post_log entry + (when dest_id is known) extends
+    posted_destinations so the main loop's `recently_used_destinations` set
+    and the new `post_fingerprints()` helper both have full cross-flow data.
+    """
+    today = date.today().isoformat()
+    state.setdefault("post_log", [])
+    state.setdefault("posted_destinations", [])
+    cutoff = (date.today() - timedelta(days=14)).isoformat()
+    # GC posted_destinations
+    state["posted_destinations"] = [
+        d for d in state["posted_destinations"] if (d.get("date") or "") >= cutoff
+    ]
+    if dest_id and not any(
+        d.get("destination_id") == dest_id and d.get("date") == today
+        for d in state["posted_destinations"]
+    ):
+        state["posted_destinations"].append({"destination_id": dest_id, "date": today})
+    state["post_log"].append({
+        "timestamp":   datetime.now(timezone.utc).isoformat(),
+        "date":        today,
+        "platform":    platform,
+        "post_id":     post_id,
+        "destination": dest_id,
+        "format":      fmt,
+        "media_id":    media_id,
+    })
+    state["post_log"] = state["post_log"][-500:]
+
+
 def post_fingerprints(state: dict, *, dest_days: int = 7,
                       fmt_days: int = 30, media_days: int = 60) -> dict:
     """Tier-2 fingerprint dedup. Returns three sets of recently-used identifiers
@@ -3246,11 +3284,27 @@ def _run_inner(force: bool, sync_only: bool, dry_run: bool,
     else:
         audience_pool = dests
 
-    # Helper: build a fresh candidate pool (exclude 14-day used, apply audience
-    # filter if set, then sort by theme_usage.destinations oldest-unused first).
+    # Tier 2.6 — fingerprint dedup snapshot. Computed once at run start so all
+    # downstream pickers see a consistent view. Pulls from post_log (cross-flow,
+    # not just main-loop's posted_destinations) so pomelli + canva + flow_story
+    # posts now contribute to the dedup picture.
+    fp = post_fingerprints(state)
+    log.info(f"Fingerprint dedup snapshot — "
+             f"{len(fp['dests'])} dests in 7d · "
+             f"{len(fp['dest_fmt'])} (dest,fmt) pairs in 30d · "
+             f"{len(fp['media'])} media in 60d")
+
+    # Helper: build a fresh candidate pool. Filters in priority order:
+    #   1. Audience filter (already applied above)
+    #   2. 14-day `used` set (main loop's posted_destinations history)
+    #   3. 7-day fingerprint `dests` set (catches cross-flow posts that
+    #      historically didn't write to posted_destinations — pomelli, canva,
+    #      flow_story)
+    # Falls back gracefully if a filter empties the pool.
     def _dest_pool() -> list:
-        base = [d for d in audience_pool if d["id"] not in used] or audience_pool
-        return pick_oldest_unused(state, "destinations", base, key="id")
+        base  = [d for d in audience_pool if d["id"] not in used] or audience_pool
+        fresh = [d for d in base if d["id"] not in fp["dests"]] or base
+        return pick_oldest_unused(state, "destinations", fresh, key="id")
 
     # Run-scoped pre-picks so FB + IG share the same anchor where appropriate.
     # 1) Reality Check pair (so the contrast matches across platforms)
@@ -4065,6 +4119,16 @@ def _run_tourist_map(force: bool = False, dry_run: bool = False):
             log.info(f"[{label}] Tourist map posted successfully!")
             state.setdefault("posted_today", {})[acc_scoped_key] = today
             posted_any = True
+            # Cross-flow dedup: write to post_log so morning round-robin's
+            # 14-day filter sees this state-themed post on subsequent days.
+            record_publish(
+                state,
+                dest_id=None,  # state-themed, not destination-bound
+                fmt="tourist_map",
+                post_id=(result.get("post") or {}).get("id"),
+                platform=platform,
+                media_id=chosen_combo_id,
+            )
         else:
             log.warning(f"[{label}] Tourist map post failed.")
 
@@ -4238,12 +4302,26 @@ def _canva_caption(entry: dict, platform: str) -> str:
     template = CANVA_CAPTION_TEMPLATES.get(template_key, CANVA_CAPTION_TEMPLATES["mood_destination"])
     hashtags = _canva_hashtags(entry, platform)
 
-    return template.format(
+    caption = template.format(
         subject=entry.get("subject", "India"),
         comparison_a=entry.get("comparison", ["A", "B"])[0] if "comparison" in entry else "This",
         comparison_b=entry.get("comparison", ["A", "B"])[1] if "comparison" in entry else "That",
         hashtags=hashtags,
     )
+
+    # Tier 2.6 — same homepage→deep-link swap as pomelli. Picks the path from
+    # CANVA_CAMPAIGN_PATHS based on entry category (or template_key fallback).
+    cat = entry.get("category", "") or template_key
+    path = CANVA_CAMPAIGN_PATHS.get(cat, CANVA_GENERAL_PATH)
+    utm_source = "fb" if platform == "facebook" else "ig"
+    deep_url = utm(
+        f"https://nakshiq.com{path}",
+        utm_source, "post", "canva-visual",
+        content=build_utm_content(entry.get("destination") or cat or None,
+                                  "canva_visual"),
+    )
+    caption = _swap_homepage_cta(caption, deep_url, "canva-visual")
+    return caption
 
 
 def _run_canva_visual(force: bool = False, dry_run: bool = False):
@@ -4376,6 +4454,14 @@ def _run_canva_visual(force: bool = False, dry_run: bool = False):
             log.info(f"[{label}] Canva visual posted successfully!")
             st.setdefault("posted_today", {})[acc_scoped_key] = today
             posted_any = True
+            record_publish(
+                st,
+                dest_id=chosen_img.get("destination") or None,
+                fmt="canva_visual",
+                post_id=(result.get("post") or {}).get("id"),
+                platform=platform,
+                media_id=chosen_img.get("file"),
+            )
         else:
             log.warning(f"[{label}] Canva visual post failed.")
 
@@ -4585,6 +4671,76 @@ def _pomelli_hashtags(entry: dict, platform: str) -> str:
     return " ".join(f"#{h}" for h in base[:5])
 
 
+# Tier 2.6 — campaign → category-page map. Replaces the homepage CTA in every
+# pomelli + canva caption (~60 hardcoded `nakshiq.com?utm_...` URLs) with a
+# deep link that lands on a verified high-engagement page.
+#
+# Targets chosen from the data-baseline-2026-05-04.md top-engaged list:
+#   - /en/nakshiq-100 (top-100 destinations) — better fresh-landing experience
+#     than /en/explore (which leaks 0% engagement on cold visits per data).
+#   - /en/methodology — 6/6 engaged sessions / users (perfect engagement rate).
+#   - /en/tourist-traps, /en/sos, /en/cost-index, etc. — direct subject match.
+# Pages confirmed to exist via filesystem check (apps/web/src/app/[locale]/*).
+POMELLI_CAMPAIGN_PATHS = {
+    "monthly_scores":         "/en/nakshiq-100",
+    "tourist_traps":          "/en/tourist-traps",
+    "kids_safety":            "/en/explore-by-persona",
+    "budget_reality":         "/en/cost-index",
+    "before_you_decide":      "/en/compare",
+    "crowd_intelligence":     "/en/explore-by-persona",
+    "road_status":            "/en/road-conditions",
+    "budget_1000day":         "/en/cost-index",
+    "dangerous_roads":        "/en/road-conditions",
+    "solo_female_safety":     "/en/explore-by-persona",
+    "74_road_trips":          "/en/build-route",
+    "manali_leh_reality":     "/en/build-route",
+    "festivals_325":          "/en/festivals",
+    "unknown_festivals":      "/en/festivals",
+    "emergency_sos":          "/en/sos",
+    "network_coverage":       "/en/methodology",
+    "ai_trip_planner":        "/en/plan",
+    "route_builder":          "/en/build-route",
+    "480_destinations":       "/en/nakshiq-100",
+    "scoring_methodology":    "/en/methodology",
+}
+# Default for region campaigns + general fallback. Both verified-existing.
+POMELLI_REGION_PATH  = "/en/india-travel"
+POMELLI_GENERAL_PATH = "/en/nakshiq-100"
+
+# Same approach for canva
+CANVA_CAMPAIGN_PATHS = {
+    "destinations":   "/en/nakshiq-100",
+    "festivals":      "/en/festivals",
+    "infrastructure": "/en/methodology",
+    "kids":           "/en/explore-by-persona",
+    "budget":         "/en/cost-index",
+    "trust":          "/en/methodology",
+}
+CANVA_GENERAL_PATH = "/en/nakshiq-100"
+
+
+def _swap_homepage_cta(caption: str, deep_url: str, campaign_token: str) -> str:
+    """Replace any `nakshiq.com?utm_*&utm_campaign=<campaign_token>` URL in
+    `caption` with `deep_url`. Idempotent — running twice produces the same
+    output. Used to swap pomelli/canva captions' homepage CTAs for
+    campaign-specific deep links without rewriting every template.
+    """
+    pattern = re.compile(
+        r"https?://(?:www\.)?nakshiq\.com\?utm_source=[a-z]+"
+        r"&utm_medium=post"
+        rf"&utm_campaign={re.escape(campaign_token)}"
+    )
+    # Some templates omit `https://` (just `nakshiq.com?utm=…`). Catch both.
+    short = re.compile(
+        r"\bnakshiq\.com\?utm_source=[a-z]+"
+        r"&utm_medium=post"
+        rf"&utm_campaign={re.escape(campaign_token)}"
+    )
+    out = pattern.sub(deep_url, caption)
+    out = short.sub(deep_url, out)
+    return out
+
+
 def _pomelli_caption(entry: dict, platform: str) -> str:
     """Generate platform-specific caption for a Pomelli creative."""
     campaign = entry.get("campaign", "")
@@ -4605,11 +4761,30 @@ def _pomelli_caption(entry: dict, platform: str) -> str:
     state = entry.get("state", "India")
     subject = entry.get("subject", "India")
 
-    return template.format(
+    caption = template.format(
         subject=subject,
         state=state,
         hashtags=hashtags,
     )
+
+    # Tier 2.6 — replace the templated homepage CTA with a campaign-specific
+    # deep link that resolves to a high-engagement page (not the 0%-engagement
+    # blank-landing leak from data-baseline-2026-05-04.md).
+    if campaign in POMELLI_CAMPAIGN_PATHS:
+        path = POMELLI_CAMPAIGN_PATHS[campaign]
+    elif campaign_type == "region":
+        path = POMELLI_REGION_PATH
+    else:
+        path = POMELLI_GENERAL_PATH
+    utm_source = "fb" if platform == "facebook" else "ig"
+    deep_url = utm(
+        f"https://nakshiq.com{path}",
+        utm_source, "post", "pomelli-visual",
+        content=build_utm_content(entry.get("destination") or campaign or None,
+                                  "pomelli_visual"),
+    )
+    caption = _swap_homepage_cta(caption, deep_url, "pomelli-visual")
+    return caption
 
 
 def _pomelli_clean_at_post_time(img_path: Path) -> bytes:
@@ -4828,6 +5003,14 @@ def _run_pomelli_visual(force: bool = False, dry_run: bool = False):
             log.info(f"[{label}] Pomelli visual posted successfully!")
             st.setdefault("posted_today", {})[acc_scoped_key] = today
             posted_any = True
+            record_publish(
+                st,
+                dest_id=chosen_img.get("destination") or None,
+                fmt="pomelli_visual",
+                post_id=(result.get("post") or {}).get("id"),
+                platform=platform,
+                media_id=chosen_img.get("file"),
+            )
         else:
             log.warning(f"[{label}] Pomelli visual post failed.")
 
@@ -5265,6 +5448,14 @@ def _run_flow_story(force: bool = False, dry_run: bool = False):
             log.info(f"[{label}] Flow story posted successfully!")
             st.setdefault("posted_today", {})[acc_scoped_key] = today
             posted_any = True
+            record_publish(
+                st,
+                dest_id=flow_dest_id,
+                fmt="flow_story",
+                post_id=(result.get("post") or {}).get("id"),
+                platform=platform,
+                media_id=chosen.get("file"),
+            )
         else:
             log.warning(f"[{label}] Flow story post failed.")
 
