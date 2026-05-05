@@ -1,7 +1,7 @@
 {
   "version": 8,
-  "total_images": 742,
-  "total_campaigns": 313,
+  "total_images": 726,
+  "total_campaigns": 309,
   "images": [
     "pomelli_12city_taxi_fare_map_1.png",
     "pomelli_12city_taxi_fare_map_2 2.png",
@@ -19,7 +19,6 @@
     "pomelli_2000_palace_vs_closet_5 2.png",
     "pomelli_2000_palace_vs_closet_5.png",
     "pomelli_2000_palace_vs_closet_6.png",
-    "pomelli_2000_palace_vs_closet_7.png",
     "pomelli_2000_stay_quality_1.png",
     "pomelli_2000_stay_quality_2.png",
     "pomelli_2000_stay_quality_3.png",
@@ -28,17 +27,11 @@
     "pomelli_2000_stay_quality_index_1.png",
     "pomelli_2000_stay_quality_index_2.png",
     "pomelli_2000_stay_quality_index_3.png",
-    "pomelli_40_free_lunch_1.png",
     "pomelli_40_free_lunch_2.png",
     "pomelli_40_free_lunch_3.png",
     "pomelli_40_free_lunch_4.png",
     "pomelli_45degree_safety_2.png",
     "pomelli_45degree_safety_3.png",
-    "pomelli_45degree_safety_4.png",
-    "pomelli_5factor_audit_1.png",
-    "pomelli_5factor_audit_2.png",
-    "pomelli_5factor_audit_3.png",
-    "pomelli_5factor_audit_4.png",
     "pomelli_74routes_easy_extreme_1.png",
     "pomelli_74routes_easy_extreme_2.png",
     "pomelli_74routes_easy_extreme_3.png",
@@ -77,7 +70,6 @@
     "pomelli_aug_road_stability_2.png",
     "pomelli_aug_road_stability_3.png",
     "pomelli_aug_road_stability_4.png",
-    "pomelli_backwater_infrastructure_report.png",
     "pomelli_bandipur_safari_1.png",
     "pomelli_bandipur_safari_2.png",
     "pomelli_bandipur_safari_3.png",
@@ -148,7 +140,6 @@
     "pomelli_dzukou_valley_intel.png",
     "pomelli_eastern_ghats_1.png",
     "pomelli_fail_to_acclimatize.png",
-    "pomelli_ghats_lack_lighting.png",
     "pomelli_goa_bacteria_map_1.png",
     "pomelli_goa_bacteria_map_2 2.png",
     "pomelli_goa_bacteria_map_2.png",
@@ -176,7 +167,6 @@
     "pomelli_heatwaves_medical_2.png",
     "pomelli_high_altitude_havens.png",
     "pomelli_high_altitude_medical_1.png",
-    "pomelli_high_altitude_medical_2.png",
     "pomelli_high_altitude_medical_3.png",
     "pomelli_high_altitude_medical_4.png",
     "pomelli_high_altitude_medical_gap_1.png",
@@ -275,10 +265,6 @@
     "pomelli_konark_mobility_audit_4.png",
     "pomelli_konkan_beaches_1.png",
     "pomelli_konkan_beaches_2.png",
-    "pomelli_konkan_beaches_3.png",
-    "pomelli_konkan_beaches_4.png",
-    "pomelli_kutch_60km_medical_gap_1.png",
-    "pomelli_kutch_60km_medical_gap_2 2.png",
     "pomelli_kutch_60km_medical_gap_2.png",
     "pomelli_kutch_60km_medical_gap_3.png",
     "pomelli_kutch_60km_medical_gap_4 2.png",
@@ -454,7 +440,6 @@
     "pomelli_may_the_murdeshwar_cliff_audit_4.png",
     "pomelli_may_the_senior_friendly_circuit_2.png",
     "pomelli_may_the_senior_friendly_circuit_3.png",
-    "pomelli_may_the_senior_friendly_circuit_4.png",
     "pomelli_may_travel_guides_without_the_filters_1.png",
     "pomelli_may_travel_guides_without_the_filters_2.png",
     "pomelli_may_travel_guides_without_the_filters_3.png",
@@ -651,7 +636,6 @@
     "pomelli_sikkim_road_hazards_3.png",
     "pomelli_sikkim_road_hazards_4.png",
     "pomelli_solitude_index_1.png",
-    "pomelli_solitude_index_2.png",
     "pomelli_solitude_index_3.png",
     "pomelli_solitude_index_4.png",
     "pomelli_solo_safety_scorecard_1.png",
@@ -765,8 +749,7 @@
       "pomelli_2000_palace_vs_closet_3.png",
       "pomelli_2000_palace_vs_closet_4.png",
       "pomelli_2000_palace_vs_closet_5.png",
-      "pomelli_2000_palace_vs_closet_6.png",
-      "pomelli_2000_palace_vs_closet_7.png"
+      "pomelli_2000_palace_vs_closet_6.png"
     ],
     "2000_stay_quality": [
       "pomelli_2000_stay_quality_1.png",
@@ -780,21 +763,13 @@
       "pomelli_2000_stay_quality_index_3.png"
     ],
     "40_free_lunch": [
-      "pomelli_40_free_lunch_1.png",
       "pomelli_40_free_lunch_2.png",
       "pomelli_40_free_lunch_3.png",
       "pomelli_40_free_lunch_4.png"
     ],
     "45degree_safety": [
       "pomelli_45degree_safety_2.png",
-      "pomelli_45degree_safety_3.png",
-      "pomelli_45degree_safety_4.png"
-    ],
-    "5factor_audit": [
-      "pomelli_5factor_audit_1.png",
-      "pomelli_5factor_audit_2.png",
-      "pomelli_5factor_audit_3.png",
-      "pomelli_5factor_audit_4.png"
+      "pomelli_45degree_safety_3.png"
     ],
     "74routes_easy_extreme": [
       "pomelli_74routes_easy_extreme_1.png",
@@ -855,9 +830,6 @@
       "pomelli_aug_road_stability_2.png",
       "pomelli_aug_road_stability_3.png",
       "pomelli_aug_road_stability_4.png"
-    ],
-    "backwater_infrastructure_report": [
-      "pomelli_backwater_infrastructure_report.png"
     ],
     "bandipur_safari": [
       "pomelli_bandipur_safari_1.png",
@@ -975,9 +947,6 @@
     "fail_to_acclimatize": [
       "pomelli_fail_to_acclimatize.png"
     ],
-    "ghats_lack_lighting": [
-      "pomelli_ghats_lack_lighting.png"
-    ],
     "goa_bacteria_map": [
       "pomelli_goa_bacteria_map_1.png",
       "pomelli_goa_bacteria_map_2.png",
@@ -1021,7 +990,6 @@
     ],
     "high_altitude_medical": [
       "pomelli_high_altitude_medical_1.png",
-      "pomelli_high_altitude_medical_2.png",
       "pomelli_high_altitude_medical_3.png",
       "pomelli_high_altitude_medical_4.png"
     ],
@@ -1182,12 +1150,9 @@
     ],
     "konkan_beaches": [
       "pomelli_konkan_beaches_1.png",
-      "pomelli_konkan_beaches_2.png",
-      "pomelli_konkan_beaches_3.png",
-      "pomelli_konkan_beaches_4.png"
+      "pomelli_konkan_beaches_2.png"
     ],
     "kutch_60km_medical_gap": [
-      "pomelli_kutch_60km_medical_gap_1.png",
       "pomelli_kutch_60km_medical_gap_2.png",
       "pomelli_kutch_60km_medical_gap_3.png",
       "pomelli_kutch_60km_medical_gap_4.png"
@@ -1502,7 +1467,6 @@
     ],
     "solitude_index": [
       "pomelli_solitude_index_1.png",
-      "pomelli_solitude_index_2.png",
       "pomelli_solitude_index_3.png",
       "pomelli_solitude_index_4.png"
     ],
@@ -1766,8 +1730,7 @@
     ],
     "may_the_senior_friendly_circuit": [
       "pomelli_may_the_senior_friendly_circuit_2.png",
-      "pomelli_may_the_senior_friendly_circuit_3.png",
-      "pomelli_may_the_senior_friendly_circuit_4.png"
+      "pomelli_may_the_senior_friendly_circuit_3.png"
     ],
     "may_travel_guides_without_the_filters": [
       "pomelli_may_travel_guides_without_the_filters_1.png",
@@ -1861,9 +1824,6 @@
     ],
     "pomelli_konark_mobility_audit_1 2": [
       "pomelli_konark_mobility_audit_1 2.png"
-    ],
-    "pomelli_kutch_60km_medical_gap_2 2": [
-      "pomelli_kutch_60km_medical_gap_2 2.png"
     ],
     "pomelli_kutch_60km_medical_gap_4 2": [
       "pomelli_kutch_60km_medical_gap_4 2.png"
