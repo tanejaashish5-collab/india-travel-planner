@@ -61,8 +61,8 @@
     "m8EAd_infographic": "2026-05-01",
     "PdMu0_infographic": "2026-05-01",
     "jUmP2_reel": "2026-04-20",
-    "m8EAd_tourist_map": "2026-04-30",
-    "PdMu0_tourist_map": "2026-04-30",
+    "m8EAd_tourist_map": "2026-05-05",
+    "PdMu0_tourist_map": "2026-05-05",
     "m8EAd_pomelli": "2026-04-23",
     "PdMu0_pomelli": "2026-04-23",
     "36BUk_reel": "2026-04-21",
@@ -87,38 +87,6 @@
   },
   "last_sync": "2026-05-04T16:54:19.812315+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "bhimtal",
-      "date": "2026-04-20"
-    },
-    {
-      "destination_id": "yt_short_before_after_yt_short_before_after_2026-04-20",
-      "date": "2026-04-20"
-    },
-    {
-      "destination_id": "yt_short_mini_guide_yt_short_mini_guide_2026-04-20",
-      "date": "2026-04-20"
-    },
-    {
-      "destination_id": "reel_destination_reveal_reel_destination_reveal_ziro-valley",
-      "date": "2026-04-20"
-    },
-    {
-      "destination_id": "almora",
-      "date": "2026-04-20"
-    },
-    {
-      "destination_id": "almora",
-      "date": "2026-04-20"
-    },
-    {
-      "destination_id": "yercaud",
-      "date": "2026-04-20"
-    },
-    {
-      "destination_id": "yercaud",
-      "date": "2026-04-20"
-    },
     {
       "destination_id": "kausani",
       "date": "2026-04-21"
@@ -1048,6 +1016,24 @@
       "destination": "parvati-valley",
       "format": "score_card",
       "has_media": true
+    },
+    {
+      "timestamp": "2026-05-05T07:33:13.310723+00:00",
+      "date": "2026-05-05",
+      "platform": "instagram",
+      "post_id": "d9IDO",
+      "destination": null,
+      "format": "tourist_map",
+      "media_id": "CG_editorial_light"
+    },
+    {
+      "timestamp": "2026-05-05T07:33:15.460110+00:00",
+      "date": "2026-05-05",
+      "platform": "facebook",
+      "post_id": "aPMnb",
+      "destination": null,
+      "format": "tourist_map",
+      "media_id": "CG_editorial_light"
     }
   ],
   "theme_usage": {
@@ -1425,6 +1411,9 @@
       ],
       "UK": [
         "2026-04-30"
+      ],
+      "CG": [
+        "2026-05-05"
       ]
     },
     "tourist_map_combos": {
@@ -1442,6 +1431,9 @@
       ],
       "UK_cartographic_dark": [
         "2026-04-30"
+      ],
+      "CG_editorial_light": [
+        "2026-05-05"
       ]
     },
     "pomelli_campaigns": {

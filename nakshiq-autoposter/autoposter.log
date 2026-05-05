@@ -6738,3 +6738,22 @@ Date range: 2026-04-15 → 2026-05-04
 2026-05-05 06:36:16  INFO      [facebook/Nakshiq] Already posted reel today — skipping.
 2026-05-05 06:36:16  INFO      State saved. Reel run complete.
 2026-05-05 06:36:16  INFO      ════════════════════════════════════════════════════════════
+2026-05-05 07:33:08  INFO      ════════════════════════════════════════════════════════════
+2026-05-05 07:33:08  INFO      Nakshiq Autoposter · TOURIST MAP · 2026-05-05 · weekday=1
+2026-05-05 07:33:08  INFO      ════════════════════════════════════════════════════════════
+2026-05-05 07:33:08  INFO      Tourist Map target: Chhattisgarh (CG) · editorial · light (23/28 states never featured)
+2026-05-05 07:33:08  INFO      Map rendered: tourist_map_CG_light_editorial.jpg (79 KB)
+2026-05-05 07:33:08  INFO          Requesting upload URL for tourist_map_CG_light_editorial.jpg (81,027 bytes, image/jpeg)
+2026-05-05 07:33:09  INFO          Uploading to R2 (timeout=120s)...
+2026-05-05 07:33:09  INFO          R2 PUT OK. Confirming...
+2026-05-05 07:33:10  INFO          Media ready: r3bX4 (81,027 bytes · tourist_map_CG_light_editorial.jpg)
+2026-05-05 07:33:10  INFO      Map image uploaded: tourist_map_CG_light_editorial.jpg
+2026-05-05 07:33:11  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-05-05 07:33:11  INFO      [youtube/@naksh-iq] Skipping tourist map (YouTube only accepts video/reels).
+2026-05-05 07:33:11  INFO      [instagram/nakshiq] Publishing tourist map for Chhattisgarh...
+2026-05-05 07:33:13  INFO      [instagram/nakshiq] Tourist map posted successfully!
+2026-05-05 07:33:13  INFO      [facebook/Nakshiq] Publishing tourist map for Chhattisgarh...
+2026-05-05 07:33:15  INFO      [facebook/Nakshiq] Tourist map posted successfully!
+2026-05-05 07:33:15  INFO      Theme tracker updated: CG / CG_editorial_light
+2026-05-05 07:33:15  INFO      State saved. Tourist Map run complete.
+2026-05-05 07:33:15  INFO      ════════════════════════════════════════════════════════════
