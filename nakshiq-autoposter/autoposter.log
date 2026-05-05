@@ -6697,3 +6697,27 @@ requests.exceptions.HTTPError: 401 Client Error: UNAUTHORIZED for url: https://a
 2026-05-04 19:53:43  INFO      
 Date range: 2026-04-15 → 2026-05-04
 2026-05-04 19:53:43  INFO      ════════════════════════════════════════════════════════════
+2026-05-05 06:08:30  INFO      ════════════════════════════════════════════════════════════
+2026-05-05 06:08:30  INFO      Nakshiq Autoposter · REEL · 2026-05-05 · weekday=1
+2026-05-05 06:08:30  INFO      ════════════════════════════════════════════════════════════
+2026-05-05 06:08:30  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-05-05 06:08:43  INFO      Synced → 20 destinations · 0 traps · 0 articles · 23 routes · 50 treks · 100 eateries · total catalog=505
+2026-05-05 06:08:43  INFO      Format: destination_reveal | Data: {'dest_name': 'Sangla Valley', 'dest_slug': 'sangla', 'state_name': 'Himachal Pradesh', 'score': 5, 'tagline': 'Apple orchards and Kinnauri wooden temples in a valley that Himachal locals keep to themselves.'}
+2026-05-05 06:08:49  INFO      Reel rendered: reel_destination_reveal_sangla.mp4 (1202 KB)
+2026-05-05 06:08:49  INFO          Requesting upload URL for reel_destination_reveal_reel_destination_reveal_sangla.mp4 (1,231,818 bytes, video/mp4)
+2026-05-05 06:08:49  INFO          Uploading to R2 (timeout=300s)...
+2026-05-05 06:08:51  INFO          R2 PUT OK. Confirming...
+2026-05-05 06:08:52  INFO          Media ready: xyo68 (1,231,818 bytes · reel_destination_reveal_reel_destination_reveal_sangla.mp4)
+2026-05-05 06:08:52  INFO      Video uploaded: reel_destination_reveal_reel_destination_reveal_sangla.mp4
+2026-05-05 06:08:52  INFO      [youtube/@naksh-iq] Publishing reel (destination_reveal)...
+2026-05-05 06:08:54  INFO      [youtube/@naksh-iq] Outstand accepted (post_id=mKgPd), confirming...
+2026-05-05 06:09:00  INFO      [youtube/@naksh-iq] ✅ Reel published · Outstand=mKgPd · Platform=8S-HUuz08fk
+2026-05-05 06:09:00  INFO      [instagram/nakshiq] Publishing reel (destination_reveal)...
+2026-05-05 06:09:02  INFO      [instagram/nakshiq] Outstand accepted (post_id=DuV6o), confirming...
+2026-05-05 06:09:42  INFO      [instagram/nakshiq] ✅ Reel published · Outstand=DuV6o · Platform=18094847120147479
+2026-05-05 06:09:42  INFO      [facebook/Nakshiq] Publishing reel (destination_reveal)...
+2026-05-05 06:09:43  INFO      [facebook/Nakshiq] Outstand accepted (post_id=x2eO8), confirming...
+2026-05-05 06:10:00  INFO      [facebook/Nakshiq] ✅ Reel published · Outstand=x2eO8 · Platform=1325304656159677
+2026-05-05 06:10:00  INFO      Theme tracker updated: format=destination_reveal
+2026-05-05 06:10:00  INFO      State saved. Reel run complete.
+2026-05-05 06:10:00  INFO      ════════════════════════════════════════════════════════════
