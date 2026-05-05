@@ -6945,7 +6945,26 @@ if __name__ == "__main__":
     parser.add_argument("--analytics", action="store_true",
                         help="Sync post history from Outstand and generate "
                              "performance analytics report. No posting.")
+    parser.add_argument("--allow-local", action="store_true",
+                        help="Permit running outside GitHub Actions. Without this "
+                             "flag, the autoposter aborts immediately when "
+                             "GITHUB_ACTIONS is unset — protects against sandboxed "
+                             "schedulers (e.g. Cowork) that get killed mid-run and "
+                             "leave stale locks / corrupted state.")
     args = parser.parse_args()
+
+    # Sandbox / unauthorized-scheduler guard.
+    # GHA cron is the only authorized scheduler. Local Mac terminal runs must
+    # pass --allow-local explicitly. Anything else (Cowork sandbox tasks, IDE
+    # subshells, accidental cron) exits cleanly before touching state.json so a
+    # 45s sandbox kill cannot corrupt the canonical state on autoposter-state.
+    if not os.environ.get("GITHUB_ACTIONS") and not args.allow_local:
+        sys.stderr.write(
+            "[autoposter] ABORT: not running on GitHub Actions and --allow-local "
+            "not set. GHA cron is the only authorized scheduler. For manual local "
+            "runs, pass --allow-local explicitly.\n"
+        )
+        sys.exit(0)
     exclusive = sum([args.evening, args.moat, args.tourist_map, args.canva_visual, args.pomelli_visual, args.flow_story, args.reel, args.reel_map, args.ugc, args.infographic, args.yt_short, args.analytics])
     if exclusive > 1:
         parser.error("--evening, --moat, --tourist-map, --canva-visual, --pomelli-visual, --flow-story, --reel, --reel-map, --ugc, --infographic, --yt-short, and --analytics are mutually exclusive.")
