@@ -19,14 +19,27 @@ export function Nav() {
   const [activePanel, setActivePanel] = useState<PanelType>(null);
   const closeTimer = useRef<NodeJS.Timeout | null>(null);
 
-  // Cinematic landing detection — when on `/[locale]` exactly (no extra
-  // path segments), the Nav goes "transparent over hero" so ACT I Dispatch
-  // can render full-bleed. After scrolling past the 100vh hero, the Nav
-  // solidifies to its normal warm-paper backdrop-blur look so links remain
-  // readable over the rest of the page. Internal pages render the Nav as
-  // before (sticky, opaque). Landing redesign PR 1 — Ashish 2026-05-05.
+  // Cinematic-redesigned routes use the magazine-style nav (vs. the legacy
+  // mega-menu). The landing /[locale] is always cinematic; other pages opt in
+  // as their bodies are redesigned. This list grows as Path C propagation
+  // ships each tier — keep nav-style and body-style flips in lockstep so we
+  // never get cinematic-nav-over-old-body or vice versa. Match against
+  // pathname WITHOUT trailing slash; middleware strips it.
   const isLandingRoot = pathname === `/${locale}` || pathname === `/${locale}/`;
-  const [overHero, setOverHero] = useState(true);
+  const CINEMATIC_PAGE_PATHS = [
+    `/${locale}/about`,
+    `/${locale}/methodology`,
+    `/${locale}/privacy`,
+    `/${locale}/terms`,
+    `/${locale}/cookies`,
+    `/${locale}/contact`,
+  ];
+  const isCinematicPage = CINEMATIC_PAGE_PATHS.includes(pathname);
+  const isCinematic = isLandingRoot || isCinematicPage;
+
+  // Hero-scroll transparency only applies to the landing's full-bleed ACT I.
+  // Cinematic legal pages render the nav solid from scroll position 0.
+  const [overHero, setOverHero] = useState(isLandingRoot);
   useEffect(() => {
     if (!isLandingRoot) return;
     function onScroll() {
@@ -127,7 +140,7 @@ export function Nav() {
   // panels, no auth/AI buttons — those add visual weight that breaks the
   // editorial dispatch feel. Search stays available via Cmd+K (handled by
   // the global keyboard listener at the top of this component).
-  if (isLandingRoot) {
+  if (isCinematic) {
     const cinemaItems: { label: string; href: string }[] = [
       { label: t("destinations"), href: `/${locale}/explore` },
       { label: t("collections"), href: `/${locale}/collections` },
@@ -363,10 +376,12 @@ export function Nav() {
 
       {/* Mobile nav removed — handled by bottom tab bar */}
       <SearchCommand open={searchOpen} onClose={() => setSearchOpen(false)} />
-      {/* Banner is suppressed on the cinematic landing — the InternationalBanner
-          adds ~40px of layout space at the top which would push the hero down
-          and break full-bleed. Other pages still render it. */}
-      {!isLandingRoot && <InternationalBanner />}
+      {/* Banner is suppressed on cinematic-redesigned pages — the
+          InternationalBanner adds ~40px of layout space at the top which would
+          push the hero down and break full-bleed on the landing, and clashes
+          with the editorial dark palette on legal pages. Old-design pages
+          still render it. */}
+      {!isCinematic && <InternationalBanner />}
     </header>
     </>
   );

@@ -196,16 +196,8 @@ export function SectionLabel({
 }
 
 /* ============================================================
-   Issue number — auto-derives from the launch month.
-   Issue Nº 47 corresponds to May 2026 (= 47 months after launch
-   2022-07-01). Update LAUNCH_DATE only if the editorial counter
-   ever needs to reset.
+   Issue number — re-exported from the server-safe util so server
+   pages (e.g. /about) and client components share one source of
+   truth without crossing the "use client" boundary.
    ============================================================ */
-const LAUNCH_DATE = new Date("2022-07-01T00:00:00Z");
-
-export function getIssueNumber(now: Date = new Date()): number {
-  const months =
-    (now.getUTCFullYear() - LAUNCH_DATE.getUTCFullYear()) * 12 +
-    (now.getUTCMonth() - LAUNCH_DATE.getUTCMonth());
-  return Math.max(1, months + 1);
-}
+export { getIssueNumber } from "./issue-number";
