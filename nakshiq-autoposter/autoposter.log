@@ -6821,3 +6821,22 @@ requests.exceptions.HTTPError: 401 Client Error: UNAUTHORIZED for url: https://a
 2026-05-05 12:48:45  INFO      ── Syncing Nakshiq content ──────────────────────────────
 2026-05-05 12:49:08  INFO      Synced → 20 destinations · 0 traps · 0 articles · 23 routes · 50 treks · 100 eateries · total catalog=505
 2026-05-05 12:49:08  INFO      Sync-only mode. Done.
+2026-05-05 13:14:34  INFO      ════════════════════════════════════════════════════════════
+2026-05-05 13:14:34  INFO      Nakshiq Autoposter · YT SHORT · 2026-05-05
+2026-05-05 13:14:34  INFO      ════════════════════════════════════════════════════════════
+2026-05-05 13:15:19  INFO      Short rendered: yt_short_this_vs_that_2026-05-05.mp4 (7821 KB, 24.0s, fmt=this_vs_that, music=02_trap_cinema)
+2026-05-05 13:15:19  INFO          Requesting upload URL for yt_short_this_vs_that_yt_short_this_vs_that_2026-05-05.mp4 (8,009,070 bytes, video/mp4)
+2026-05-05 13:15:20  INFO          Uploading to R2 (timeout=300s)...
+2026-05-05 13:15:21  INFO          R2 PUT OK. Confirming...
+2026-05-05 13:15:22  INFO          Media ready: v9bdg (8,009,070 bytes · yt_short_this_vs_that_yt_short_this_vs_that_2026-05-05.mp4)
+2026-05-05 13:15:22  INFO      Video uploaded: yt_short_this_vs_that_yt_short_this_vs_that_2026-05-05.mp4
+2026-05-05 13:15:23  INFO      [youtube/@naksh-iq] Publishing YT Short (this_vs_that)...
+2026-05-05 13:15:25  INFO      [youtube/@naksh-iq] Outstand accepted (post_id=VWElN), waiting for platform confirmation...
+2026-05-05 13:15:37  INFO      [youtube/@naksh-iq] ✅ YT Short published · Outstand=VWElN · Platform=iFniwL9d-rI
+2026-05-05 13:15:37  INFO      [instagram/nakshiq] Publishing YT Short (this_vs_that)...
+2026-05-05 13:15:38  INFO      [instagram/nakshiq] Outstand accepted (post_id=rhJF4), waiting for platform confirmation...
+2026-05-05 13:16:24  INFO      [instagram/nakshiq] ✅ YT Short published · Outstand=rhJF4 · Platform=18102785515784780
+2026-05-05 13:16:24  INFO      [facebook/Nakshiq] Skipping (YT Shorts post to YouTube + Instagram only).
+2026-05-05 13:16:24  INFO      YT Short posted: format=this_vs_that, music=02_trap_cinema
+2026-05-05 13:16:24  INFO      State saved. YT Short run complete.
+2026-05-05 13:16:24  INFO      ════════════════════════════════════════════════════════════
