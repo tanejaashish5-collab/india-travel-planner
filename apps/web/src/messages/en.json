@@ -392,5 +392,12 @@
     "phoneAndSim": "Phone & SIM",
     "nearestEmbassy": "Nearest Embassy",
     "visaNotes": "Visa Notes"
+  },
+  "pwaInstall": {
+    "headline": "Access trips offline",
+    "iosBody": "Tap Share ↗ then \"Add to Home Screen\"",
+    "androidBody": "Add NakshIQ to your home screen — works without internet in remote areas",
+    "cta": "Add to Home Screen",
+    "dismiss": "Dismiss"
   }
 }

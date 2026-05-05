@@ -3,8 +3,10 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import { m as motion, AnimatePresence } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 export function PWAInstallPrompt() {
+  const t = useTranslations("pwaInstall");
   const [deferredPrompt, setDeferredPrompt] = useState<any>(null);
   const [showBanner, setShowBanner] = useState(false);
   const [isIOS, setIsIOS] = useState(false);
@@ -73,15 +75,12 @@ export function PWAInstallPrompt() {
             <div className="flex items-start gap-3">
               <Image src="/icon-192.png" alt="NakshIQ" width={48} height={48} className="w-12 h-12 rounded-xl" />
               <div className="flex-1 min-w-0">
-                <p className="font-semibold text-sm">Access trips offline</p>
+                <p className="font-semibold text-sm">{t("headline")}</p>
                 <p className="text-xs text-muted-foreground mt-0.5">
-                  {isIOS
-                    ? "Tap Share ↗ then \"Add to Home Screen\""
-                    : "Add NakshIQ to your home screen — works without internet in remote areas"
-                  }
+                  {isIOS ? t("iosBody") : t("androidBody")}
                 </p>
               </div>
-              <button onClick={dismiss} className="text-muted-foreground p-1 -mr-1 -mt-1">
+              <button onClick={dismiss} aria-label={t("dismiss")} className="text-muted-foreground p-1 -mr-1 -mt-1">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
               </button>
             </div>
@@ -90,7 +89,7 @@ export function PWAInstallPrompt() {
                 onClick={handleInstall}
                 className="mt-3 w-full bg-[#E55642] text-white rounded-xl py-2.5 text-sm font-semibold active:scale-[0.98] transition-transform"
               >
-                Add to Home Screen
+                {t("cta")}
               </button>
             )}
           </div>
