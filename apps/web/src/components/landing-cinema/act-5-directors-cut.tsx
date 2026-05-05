@@ -79,15 +79,21 @@ export function Act5DirectorsCut({ verdictMap }: { verdictMap: VerdictMap }) {
         <h2
           className="nq-display"
           style={{
-            fontSize: "clamp(48px, 7vw, 128px)",
-            lineHeight: 0.94,
-            letterSpacing: "-0.028em",
+            fontSize: "clamp(40px, 5.5vw, 96px)",
+            lineHeight: 0.96,
+            letterSpacing: "-0.026em",
             margin: "0 0 64px",
             textWrap: "balance",
           }}
         >
           {t("directorsCutLeadIn")}{" "}
-          <Token value={month} options={[...MONTH_LONG_NAMES]} setValue={setMonth} />
+          <Token
+            value={month}
+            options={[...MONTH_LONG_NAMES]}
+            optionLabels={MONTH_LONG_NAMES.map((m) => m.slice(0, 3))}
+            setValue={setMonth}
+            cols={4}
+          />
           {", "}
           <Token
             value={t(`who.${who}`)}
@@ -96,6 +102,7 @@ export function Act5DirectorsCut({ verdictMap }: { verdictMap: VerdictMap }) {
               const idx = whoOptions.findIndex((w) => t(`who.${w}`) === v);
               if (idx >= 0) setWho(whoOptions[idx]);
             }}
+            cols={2}
           />
           ,
           <br />
@@ -107,6 +114,7 @@ export function Act5DirectorsCut({ verdictMap }: { verdictMap: VerdictMap }) {
               const idx = vibeOptions.findIndex((vk) => t(`vibe.${vk}`) === v);
               if (idx >= 0) setVibe(vibeOptions[idx]);
             }}
+            cols={3}
           />
           .
         </h2>
@@ -336,13 +344,17 @@ export function Act5DirectorsCut({ verdictMap }: { verdictMap: VerdictMap }) {
 function Token({
   value,
   options,
+  optionLabels,
   setValue,
   disabled,
+  cols = 2,
 }: {
   value: string;
   options: string[];
+  optionLabels?: string[];
   setValue: (v: string) => void;
   disabled?: boolean;
+  cols?: number;
 }) {
   const [open, setOpen] = useState(false);
   return (
@@ -361,10 +373,10 @@ function Token({
           fontFamily: "var(--cinema-display)",
           fontStyle: "italic",
           fontWeight: 500,
-          fontSize: "clamp(48px, 7vw, 128px)",
-          lineHeight: 0.94,
+          fontSize: "clamp(40px, 5.5vw, 96px)",
+          lineHeight: 0.96,
           color: "var(--vermillion)",
-          letterSpacing: "-0.028em",
+          letterSpacing: "-0.026em",
           padding: "0 4px",
           borderBottom: disabled ? "0" : "3px dashed rgba(229, 86, 66, 0.4)",
         }}
@@ -393,43 +405,55 @@ function Token({
             position: "absolute",
             top: "100%",
             left: 0,
-            marginTop: 8,
-            background: "var(--film)",
+            marginTop: 12,
+            background: "#0f0f0d",
             border: "1px solid var(--hair)",
             zIndex: 20,
-            minWidth: 260,
-            padding: 8,
+            padding: 10,
             letterSpacing: 0,
+            display: "grid",
+            gridTemplateColumns: `repeat(${cols}, minmax(96px, 1fr))`,
+            gap: 4,
+            boxShadow: "0 24px 48px rgba(0,0,0,0.55)",
           }}
         >
-          {options.map((o) => (
-            <button
-              key={o}
-              type="button"
-              onClick={() => {
-                setValue(o);
-                setOpen(false);
-              }}
-              style={{
-                display: "block",
-                width: "100%",
-                textAlign: "left",
-                padding: "12px 18px",
-                background: o === value ? "var(--film-3)" : "transparent",
-                border: 0,
-                color: o === value ? "var(--vermillion)" : "var(--bone)",
-                fontFamily: "var(--cinema-display)",
-                fontStyle: "italic",
-                fontWeight: 500,
-                fontSize: 20,
-                lineHeight: 1.3,
-                letterSpacing: 0,
-                cursor: "pointer",
-              }}
-            >
-              {o}
-            </button>
-          ))}
+          {options.map((o, i) => {
+            const label = optionLabels?.[i] ?? o;
+            const isSelected = o === value;
+            return (
+              <button
+                key={o}
+                type="button"
+                onClick={() => {
+                  setValue(o);
+                  setOpen(false);
+                }}
+                style={{
+                  textAlign: "center",
+                  padding: "14px 18px",
+                  background: isSelected ? "var(--vermillion)" : "transparent",
+                  border: 0,
+                  color: isSelected ? "var(--paper)" : "var(--bone)",
+                  fontFamily: "var(--cinema-ui)",
+                  fontStyle: "normal",
+                  fontWeight: isSelected ? 600 : 500,
+                  fontSize: 16,
+                  lineHeight: 1.2,
+                  letterSpacing: 0,
+                  cursor: "pointer",
+                  transition: "background 120ms ease, color 120ms ease",
+                }}
+                onMouseEnter={(e) => {
+                  if (!isSelected) e.currentTarget.style.background = "rgba(229,86,66,0.08)";
+                }}
+                onMouseLeave={(e) => {
+                  if (!isSelected) e.currentTarget.style.background = "transparent";
+                }}
+              >
+                {label}
+              </button>
+            );
+          })}
         </div>
       )}
     </span>
