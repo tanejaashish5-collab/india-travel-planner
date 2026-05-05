@@ -228,6 +228,58 @@ METHODOLOGY_CONTENT = {
 # Moat lock file (separate from morning / evening locks)
 MOAT_LOCK_FILE = Path(__file__).parent / ".autoposter-moat.lock"
 
+# ─────────────────────────────────────────────────────────────────────────────
+# FESTIVAL DATE AWARENESS
+# The Nakshiq festivals API exposes only an integer `month`, not start/end
+# dates. This lookup records the END day-of-month for festivals where the
+# date is fixed/well-known so we can drop them once they've passed. Festivals
+# not listed here use a generic "first 14 days of the month" planning window
+# — past day 14, current-month festivals drop out and the rotation prefers
+# next-month festivals instead.
+# Names are normalized to lower-case for matching.
+# ─────────────────────────────────────────────────────────────────────────────
+KNOWN_FESTIVAL_END_DAYS: dict[str, int] = {
+    # January
+    "republic day parade":   26,    # Jan 26
+    "republic day":          26,
+    "makar sankranti":       15,    # Jan 14-15
+    "lohri":                 14,    # Jan 13-14
+    # February
+    "vasant panchami":       10,    # early-mid Feb (varies by year, generous cutoff)
+    # March
+    "holi":                  20,    # mid-March (varies, generous cutoff)
+    "shivratri":             10,    # early March (varies)
+    # April
+    "baisakhi":              15,    # Apr 13-14
+    "ram navami":             20,    # mid April (varies)
+    "mahavir jayanti":        21,
+    # May
+    "buddha purnima":         25,    # mid-late May (varies)
+    # August
+    "independence day":       15,
+    "independence day parade":15,
+    "raksha bandhan":         25,
+    "janmashtami":            30,    # late Aug (varies)
+    # September
+    "ganesh chaturthi":       15,    # early-mid Sept (varies)
+    "onam":                   15,    # early-mid Sept (varies)
+    # October
+    "dussehra":               25,    # mid-late Oct (varies)
+    "navratri":               25,    # spans 9 nights, generous cutoff
+    "gandhi jayanti":          2,    # Oct 2
+    # November
+    "diwali":                 15,    # early-mid Nov (varies)
+    "bhai dooj":              17,
+    "chhath puja":            20,
+    # December
+    "christmas":              25,    # Dec 25
+}
+
+# Generic "current month festivals are still in their planning window" cutoff.
+# Past this day-of-month, drop unknown current-month festivals from the pool
+# and let the rotation prefer next-month festivals instead.
+FESTIVAL_PLANNING_CUTOFF_DAY = 14
+
 # Total destinations Nakshiq scores — populated from /stats on each sync.
 # Fallback keeps copy sensible if the stats call fails for any reason.
 TOTAL_DESTINATIONS = 260
@@ -403,8 +455,16 @@ def load_state() -> dict:
     return defaults
 
 def save_state(state: dict):
-    with open(STATE_FILE, "w", encoding="utf-8") as f:
+    """Atomic state write. write→fsync→rename so a kill -9 mid-write can't
+    leave state.json truncated and lose posted_today (root cause of the
+    May-4 duplicate-post cascade).
+    """
+    tmp_path = STATE_FILE.with_suffix(STATE_FILE.suffix + ".tmp")
+    with open(tmp_path, "w", encoding="utf-8") as f:
         json.dump(state, f, indent=2, default=str, ensure_ascii=False)
+        f.flush()
+        os.fsync(f.fileno())
+    os.replace(tmp_path, STATE_FILE)
 
 def already_posted_today(state: dict, key: str) -> bool:
     return state["posted_today"].get(key) == date.today().isoformat()
@@ -523,7 +583,15 @@ def pick_oldest_unused(state: dict, dimension: str, items: list,
         # Layer cooldown + exclude flags ON TOP, demoting matched items.
         return (1 if excluded else 0, 1 if in_cool else 0) + base
 
-    ranked = sorted(items, key=_rank)
+    # Pre-shuffle so tie-breaking is non-deterministic. Without this, items
+    # with identical rank (e.g. all never-used) keep the upstream list order
+    # and the picker locks onto the same head-of-list item every run with
+    # the same input — observed in state.json as Munsiyari posted 2 days
+    # in a row when the upstream catalog ordering was stable.
+    import random as _random
+    shuffled = list(items)
+    _random.shuffle(shuffled)
+    ranked = sorted(shuffled, key=_rank)
     return ranked
 
 
@@ -575,9 +643,78 @@ def nakshiq_fetch(type_: str, extra: dict = {}) -> dict:
         log.warning(f"Nakshiq [{type_}] fetch failed: {e}")
         return {}
 
+
+def fetch_full_destination_catalog() -> list:
+    """
+    The Nakshiq API caps `?type=destinations&limit=N` at 100 rows regardless of N.
+    Union across all 12 month buckets at min_score=0 to get the full ~431 destination
+    catalog so festival_alert can resolve home destinations that aren't in the
+    current month's top-scored slice (e.g. Amritsar in April, Kedarnath in winter).
+    """
+    union: dict = {}
+    for m in range(1, 13):
+        try:
+            r = requests.get(NAKSHIQ_BASE,
+                             params={"type": "destinations",
+                                     "month": m,
+                                     "min_score": 0,
+                                     "limit": 100},
+                             timeout=15)
+            r.raise_for_status()
+            for d in r.json().get("data", []):
+                did = d.get("id")
+                if did and did not in union:
+                    union[did] = d
+        except Exception as e:
+            log.warning(f"destinations_full month={m} fetch failed: {e}")
+    return list(union.values())
+
+
+def filter_active_festivals(fests: list, today=None) -> list:
+    """
+    Drop festivals that are clearly past:
+      • Same-month festivals where we have a known end-day in KNOWN_FESTIVAL_END_DAYS
+        and today.day > end_day
+      • Same-month festivals with no known end-day, where today.day > FESTIVAL_PLANNING_CUTOFF_DAY
+        (mid-month cutoff — past day 14 we prefer next month's festivals)
+    Future-month festivals (festival.month != current month) always pass through.
+    Festivals with no integer `month` field always pass through (defensive).
+    """
+    if today is None:
+        today = date.today()
+    cur_m, cur_d = today.month, today.day
+    out = []
+    dropped = []
+    for f in fests or []:
+        fm = f.get("month")
+        if not isinstance(fm, int):
+            out.append(f)
+            continue
+        if fm != cur_m:
+            out.append(f)        # different month → assume upcoming
+            continue
+        # Same month: check if past
+        nm = (f.get("name") or "").strip().lower()
+        end_day = KNOWN_FESTIVAL_END_DAYS.get(nm)
+        if end_day is not None:
+            if cur_d <= end_day:
+                out.append(f)
+            else:
+                dropped.append(f.get("name") or nm)
+        else:
+            if cur_d <= FESTIVAL_PLANNING_CUTOFF_DAY:
+                out.append(f)
+            else:
+                dropped.append(f.get("name") or nm)
+    if dropped:
+        log.info(f"Festivals filtered (past/post-window): {', '.join(dropped[:8])}"
+                 + (f" (+{len(dropped)-8} more)" if len(dropped) > 8 else ""))
+    return out
+
 def sync_all_content() -> dict:
     log.info("── Syncing Nakshiq content ──────────────────────────────")
-    month = datetime.now().month
+    month      = datetime.now().month
+    next_month = (month % 12) + 1
     since = (date.today() - timedelta(days=7)).isoformat()
     content = {
         "stats":        nakshiq_fetch("stats"),
@@ -587,9 +724,17 @@ def sync_all_content() -> dict:
         # default limit=20 tends to surface only 5/5 destinations in peak months.
         "destinations_low": nakshiq_fetch("destinations",
                                           {"month": month, "min_score": 0, "limit": 100}),
+        # Full catalog — unioned across all 12 month buckets because the API
+        # caps `limit` at 100 rows. This lets festival_alert look up home
+        # destinations that aren't in the current month's top-scoring slice
+        # (e.g. Amritsar for Baisakhi, Kedarnath for the May opening, etc.).
+        "destinations_full": {"data": fetch_full_destination_catalog()},
         "articles":     nakshiq_fetch("articles",     {"since": since}),
         "traps":        nakshiq_fetch("traps"),
         "festivals":    nakshiq_fetch("festivals",    {"month": month}),
+        # Next month's festivals — once we're past mid-month the rotation
+        # prefers these over (potentially-past) current-month festivals.
+        "festivals_next": nakshiq_fetch("festivals",  {"month": next_month}),
         "collections":  nakshiq_fetch("collections"),
         # `routes` is not yet exposed by the Nakshiq content API — the format
         # machinery below is wired and will activate the day `type=routes`
@@ -765,7 +910,14 @@ def pick_morning_format(state: dict, content: dict) -> str:
     """
     try:
         traps    = content.get("traps", {}).get("data", [])
-        fests    = content.get("festivals", {}).get("data", [])
+        # Festival eligibility: combine current + next month and apply the
+        # past-festival filter so we don't keep festival_alert eligible on a
+        # pool of already-completed festivals.
+        fests    = filter_active_festivals(
+            (content.get("festivals", {}).get("data", []) or [])
+            + (content.get("festivals_next", {}).get("data", []) or []),
+            date.today(),
+        )
         articles = content.get("articles", {}).get("data", [])
         colls    = content.get("collections", {}).get("data", [])
         dests    = content.get("destinations", {}).get("data", [])
@@ -893,18 +1045,21 @@ def copy_score_card(dest: dict, platform: str) -> str:
     mon   = month_name().upper()
     tags  = hashtag(name, state, f"{month_name()}Travel",
                     f"{score}outOf5", "NakshIQ")
+    # Caption strips name/score/elev/state metadata — those are already
+    # rendered as text on the carousel slide (see slide_gen render_destination_slide).
+    # Lead with the tagline hook + note + CTA so caption + slide aren't a redundant pair.
     if platform == "facebook":
         return (
-            f"{name.upper()} IN {mon}: {score}/5  {stars}\n\n"
-            f"↑ {elev:,}m · {state}\n\n{tag}\n\n"
+            f"{name.upper()} — {mon}\n\n"
+            f"{tag}\n\n"
             + (f"{note}\n\n" if note else "")
             + f"NakshIQ scores {TOTAL_DESTINATIONS} destinations monthly. Not a blog post — live data.\n\n"
             f"Full {name} data → {url}\n\n{tags}"
         ).strip()
     else:
         return (
-            f"{name.upper()} · {mon}\n"
-            f"{stars} {score}/5 · ↑{elev:,}m · {state}\n\n{tag}\n\n"
+            f"{name.upper()} · {mon}\n\n"
+            f"{tag}\n\n"
             + (f"{note}\n\n" if note else "")
             + f"NakshIQ scores {TOTAL_DESTINATIONS} destinations monthly — actual data, not aspirational content.\n\n"
             f"Save this. {name} detail → {url}\n\n{tags}"
@@ -1775,11 +1930,18 @@ def generate_post(fmt: str, content: dict, platform: str,
     destinations = content["destinations"].get("data", [])
     traps        = content["traps"].get("data", [])
     collections  = content.get("collections", {}).get("data", []) or []
-    festivals    = content.get("festivals",   {}).get("data", []) or []
+    # Combine current + next month festivals so __run_festival__ from either
+    # bucket is reachable here. Truthiness only — pick is already locked.
+    festivals    = ((content.get("festivals",      {}).get("data", []) or [])
+                    + (content.get("festivals_next", {}).get("data", []) or []))
     articles     = content.get("articles",    {}).get("data", []) or []
     fresh        = [d for d in destinations if d["id"] not in used]
     pool         = fresh if fresh else destinations
     dest_map     = {d["id"]: d for d in destinations}
+    # Wider catalog map — lets us resolve festival home destinations that
+    # aren't in the current month's top-scoring slice (e.g. Amritsar in April).
+    full_dests   = content.get("destinations_full", {}).get("data", []) or []
+    dest_map_full = {d["id"]: d for d in full_dests}
     if not pool:
         return None, None
 
@@ -1799,16 +1961,29 @@ def generate_post(fmt: str, content: dict, platform: str,
         return caption, dest_obj
 
     elif fmt == "data_carousel":
-        return copy_data_carousel(pool[:5], platform), pool[0]
+        # CHANGED 2026-05-03: anchor cover image on first carousel slide so
+        # caption + visual match. Falls back to pool[0] if carousel-dests not set.
+        carousel_dests = content.get("__run_carousel_dests__data_carousel") or pool[:5]
+        cover = carousel_dests[0] if carousel_dests else (pool[0] if pool else None)
+        return copy_data_carousel(carousel_dests[:5], platform), cover
 
     elif fmt == "tourist_trap" and traps:
-        return copy_tourist_trap(traps[0], platform), best  # use best dest image
+        # CHANGED 2026-05-03: image must match the trap's home destination,
+        # not the unrelated shared_best. Same pattern as festival_alert.
+        trap = traps[0]
+        trap_did = trap.get("destination_id") or trap.get("dest_id")
+        trap_dest = dest_map_full.get(trap_did) if trap_did else None
+        return copy_tourist_trap(trap, platform), (trap_dest or best)
 
     elif fmt == "infrastructure_truth" and best:
         return copy_infrastructure_truth(best, platform), best
 
     elif fmt == "monthly_forecast":
-        return copy_monthly_forecast(pool, platform), pool[0] if pool else None
+        # CHANGED 2026-05-03: anchor cover image on first carousel slide so
+        # caption + visual match. Falls back to pool[0] if no carousel-dests.
+        carousel_dests = content.get("__run_carousel_dests__monthly_forecast") or pool
+        cover = carousel_dests[0] if carousel_dests else (pool[0] if pool else None)
+        return copy_monthly_forecast(carousel_dests, platform), cover
 
     elif fmt == "collection_spotlight" and collections:
         # Pre-picked at run start so FB + IG show the same collection
@@ -1821,7 +1996,20 @@ def generate_post(fmt: str, content: dict, platform: str,
 
     elif fmt == "festival_alert" and festivals:
         fest = content.get("__run_festival__") or festivals[0]
-        img  = dest_map.get(fest.get("destination_id")) or best
+        fest_did = fest.get("destination_id")
+        # Prefer the festival's own home destination (correct video + image).
+        # Try monthly map first (already-fetched, scored), then fall back to
+        # the full catalog (covers off-season home destinations like Amritsar
+        # in April). Only fall through to `best` if neither resolves — and
+        # log a clear warning so the mismatch is visible.
+        img = dest_map.get(fest_did) or dest_map_full.get(fest_did)
+        if not img:
+            log.warning(
+                f"festival_alert: home destination '{fest_did}' for festival "
+                f"'{fest.get('name')}' not found in catalog — falling back to "
+                f"score_card to avoid caption/video mismatch."
+            )
+            return copy_score_card(best, platform), best
         return copy_festival_alert(fest, dest_map, platform), img
 
     elif fmt == "kids_intel":
@@ -2116,6 +2304,70 @@ def _build_branded_carousel(fmt: str, content: dict, destinations: list,
         return []
 
 
+_BANNED_HASHTAGS = {
+    "#travel", "#india", "#wanderlust", "#explore", "#nature",
+    "#instagood", "#photography", "#tourism", "#trip", "#vacation",
+    "#holiday", "#instatravel", "#incredibleindia", "#mountains",
+    "#beach", "#travelphotography", "#travelgram", "#wanderer",
+    "#instadaily", "#picoftheday", "#photooftheday", "#beautiful",
+    "#amazing", "#awesome", "#bestoftheday", "#follow", "#like4like",
+}
+
+
+def _sanitize_caption(caption: str, platform: str = "") -> str:
+    """Single-point caption sanitizer (added 2026-05-03).
+
+    Enforces brand-voice rules across ALL publish paths:
+    - Strips banned generic hashtags (preserves #NakshIQ + niche tags)
+    - Caps total length: IG/FB feed = 2000 chars, Reels/YT captions = 2200 chars
+    - Logs any banned tag stripping for audit visibility
+
+    Called from publish_feed_post + publish_reel so EVERY post (regardless of
+    which caption generator built it) goes through the same enforcement.
+    """
+    if not caption:
+        return caption
+
+    # Strip banned hashtags. Use regex to match # and following alphanumerics
+    # so that "Body\n\n#travel" still gets the #travel scrubbed.
+    import re
+    stripped = []
+    def _scrub(match: "re.Match") -> str:
+        tag = match.group(0)
+        if tag.lower() in _BANNED_HASHTAGS:
+            stripped.append(tag)
+            return ""
+        return tag
+    sanitized = re.sub(r"#[A-Za-z0-9_]+", _scrub, caption)
+    # Collapse any double-spaces left over from removed tags
+    sanitized = re.sub(r"  +", " ", sanitized)
+    sanitized = re.sub(r" +\n", "\n", sanitized)
+
+    if stripped:
+        log.info(f"    Caption sanitizer: stripped {len(stripped)} banned tags: {stripped[:5]}")
+
+    # Length cap (preserves trailing hashtags by truncating mid-paragraph)
+    # IG long-form caption max = 2200, but most engagement happens in first ~150 chars
+    # so we cap at 2000 to leave room for hashtag block.
+    MAX_LEN = 2000 if platform != "youtube" else 4500
+    if len(sanitized) > MAX_LEN:
+        # Try to keep the last hashtag block; truncate body
+        parts = sanitized.rsplit("\n\n", 1)
+        if len(parts) == 2:
+            body, tags = parts
+            body_max = MAX_LEN - len(tags) - 4  # leave space for "\n\n" + buffer
+            if body_max > 100:
+                body = body[:body_max].rstrip() + "…"
+                sanitized = body + "\n\n" + tags
+            else:
+                sanitized = sanitized[:MAX_LEN].rstrip() + "…"
+        else:
+            sanitized = sanitized[:MAX_LEN].rstrip() + "…"
+        log.info(f"    Caption sanitizer: truncated to {len(sanitized)} chars (was over {MAX_LEN})")
+
+    return sanitized
+
+
 def publish_feed_post(caption: str, account: dict, media,
                       dry_run: bool = False) -> dict | None:
     """
@@ -2126,6 +2378,8 @@ def publish_feed_post(caption: str, account: dict, media,
     """
     username = account.get("username", account["id"])
     platform = account["network"]
+    # Sanitize caption BEFORE any platform call (banned tags + length cap)
+    caption = _sanitize_caption(caption, platform=platform)
 
     # Normalise to a list for uniform handling.
     if media is None:
@@ -2237,6 +2491,8 @@ def publish_reel(caption: str, account: dict, video_media: dict,
     """Post an Instagram/Facebook Reel or YouTube Short (vertical video)."""
     username = account.get("username", account["id"])
     platform = account["network"]
+    # Sanitize caption BEFORE any platform call (banned tags + length cap)
+    caption = _sanitize_caption(caption, platform=platform)
 
     if dry_run:
         log.info(f"    [DRY RUN] Reel → {video_media['filename']}")
@@ -2296,10 +2552,45 @@ def wait_for_publish(post_id: str, timeout: int = 40) -> dict | None:
 # ─────────────────────────────────────────────────────────────────────────────
 
 LOCK_FILE     = Path(__file__).parent / ".autoposter.lock"
-LOCK_MAX_AGE  = 15 * 60  # seconds — any lock older than 15min is considered stale
+LOCK_MAX_AGE  = 30 * 60  # seconds — Reel uploads (R2 download + IG processing) routinely exceed 15min, raised to 30 to absorb that
+
+def _pid_alive(pid) -> bool:
+    """POSIX liveness probe — True if a process with this PID is still running.
+
+    Returns False on AnyError so the caller treats unknown PIDs as dead. We
+    explicitly never want to treat an alive PID as dead (would cause the
+    May-4-class lock-cascade where a force-fired run kills a healthy upload).
+    """
+    if not pid:
+        return False
+    try:
+        pid = int(pid)
+    except (TypeError, ValueError):
+        return False
+    if pid <= 0:
+        return False
+    try:
+        os.kill(pid, 0)  # signal 0 = liveness probe, no actual signal sent
+        return True
+    except ProcessLookupError:
+        return False
+    except PermissionError:
+        # Process exists but is owned by another user — still alive, refuse override.
+        return True
+    except OSError:
+        return False
+
 
 def _acquire_lock(force: bool = False) -> bool:
-    """Prevent concurrent/re-entrant runs. Returns True if lock acquired."""
+    """Prevent concurrent/re-entrant runs. Returns True if lock acquired.
+
+    Override rules (post-2026-05-04 cascade fix):
+    1. If holder PID is still alive → REFUSE override regardless of age and
+       regardless of force=True. A long-running Reel upload should never be
+       killed by a re-fired cron / GH-Actions retry.
+    2. If holder PID is dead → override allowed. Logged as "stale lock".
+    3. If lock parse fails → override allowed (corrupt lock file).
+    """
     now_ts = time.time()
     if LOCK_FILE.exists():
         try:
@@ -2308,10 +2599,25 @@ def _acquire_lock(force: bool = False) -> bool:
             holder = payload.get("pid")
         except Exception:
             age, holder = LOCK_MAX_AGE + 1, None
-        if age < LOCK_MAX_AGE and not force:
-            log.warning(f"Another run in progress (pid={holder}, age={int(age)}s) — exiting.")
+        # Liveness probe — gates ALL override paths, even --force
+        if _pid_alive(holder):
+            log.warning(
+                f"Another run in progress (pid={holder}, age={int(age)}s, alive=yes) — "
+                f"refusing to override even with force={force}. Exiting."
+            )
             return False
-        log.info(f"Stale lock (age={int(age)}s) — overriding.")
+        # PID is dead. Distinguish stale-by-age vs force-override-of-dead-holder
+        # for log clarity (the May-4 cascade was masked by a single ambiguous
+        # "Stale lock — overriding" message).
+        if age >= LOCK_MAX_AGE:
+            log.info(f"Stale lock (pid={holder} dead, age={int(age)}s) — overriding.")
+        elif force:
+            log.info(f"Force override (pid={holder} dead, age={int(age)}s) — overriding.")
+        else:
+            # Dead holder, fresh lock, no force — could be a race between
+            # process death and lock cleanup. Override (the dead holder can't
+            # complete its work anyway).
+            log.info(f"Holder pid={holder} dead (age={int(age)}s) — overriding.")
     LOCK_FILE.write_text(json.dumps({"pid": os.getpid(), "ts": now_ts}))
     return True
 
@@ -2474,9 +2780,19 @@ def _run_inner(force: bool, sync_only: bool, dry_run: bool,
     # will pick the oldest-unused destination that ALSO matches the audience.
     if audience_tag:
         filtered = [d for d in dests if audience_tag in infer_audience_tags(d)]
-        if filtered:
+        # Floor of 3: when the filter narrows to 0-2 candidates the picker
+        # locks onto the same destination every weekday-X run (May-4 cascade
+        # had backpackers→1 dest, Parvati Valley posted 4× the same day).
+        AUDIENCE_FLOOR = 3
+        if len(filtered) >= AUDIENCE_FLOOR:
             log.info(f"Audience filter '{audience_tag}' → {len(filtered)} destinations match.")
             audience_pool = filtered
+        elif filtered:
+            log.warning(
+                f"Audience filter '{audience_tag}' → only {len(filtered)} match "
+                f"(floor={AUDIENCE_FLOOR}). Dropping filter to avoid same-dest spam."
+            )
+            audience_pool = dests
         else:
             log.info(f"Audience filter '{audience_tag}' → no matches, using full pool.")
             audience_pool = dests
@@ -2530,15 +2846,32 @@ def _run_inner(force: bool, sync_only: bool, dry_run: bool,
             log.info(f"Collection locked: {ordered[0]['name']} "
                      f"({status['unused']}/{status['total']} never featured)")
 
-    # 3) Festival — prefer festivals that haven't been featured yet
+    # 3) Festival — prefer festivals that haven't been featured yet.
+    # Pool = current month + next month, with past festivals filtered out
+    # (date-aware via KNOWN_FESTIVAL_END_DAYS + mid-month cutoff). This stops
+    # already-completed festivals like Baisakhi from getting selected on
+    # the last day of the month.
     if "festival_alert" in (ig_fmt, fb_fmt, story_fmt):
-        fests = content.get("festivals", {}).get("data", []) or []
+        cur_fests  = content.get("festivals",      {}).get("data", []) or []
+        next_fests = content.get("festivals_next", {}).get("data", []) or []
+        seen = set()
+        combined = []
+        for f in cur_fests + next_fests:
+            fid = f.get("id")
+            if fid and fid in seen:
+                continue
+            if fid:
+                seen.add(fid)
+            combined.append(f)
+        fests = filter_active_festivals(combined, date.today())
         if fests:
             ordered = pick_oldest_unused(state, "festivals", fests, key="id")
             content["__run_festival__"] = ordered[0]
             status = dimension_cycle_status(state, "festivals", len(fests))
             log.info(f"Festival locked: {ordered[0].get('name','?')} "
-                     f"({status['unused']}/{status['total']} never featured)")
+                     f"({status['unused']}/{status['total']} active festivals never featured)")
+        else:
+            log.warning("No active festivals available — festival_alert will fall back to score_card.")
 
     # 4) Article — oldest-unused article (not "most recent") so the blog rotation
     #    covers every article before repeating.
@@ -2773,12 +3106,16 @@ def _run_inner(force: bool, sync_only: bool, dry_run: bool,
     #     Without this, score_card picks via pick_best_destination() and
     #     collection_spotlight picks via _collection_image_dest(), yielding
     #     different destinations — breaking pair-consistency.
+    #
+    # CHANGED 2026-05-03 (caption-visual coherence fix): Do NOT mark shared_best
+    # as used here. Marking it pre-emptively excluded it from the subsequent
+    # carousel pick, so the caption named shared_best while the carousel showed
+    # 5 OTHER dests (audit log line 12:50:10 proves it). We now lock shared_best
+    # but do NOT stamp it — the carousel logic below explicitly seeds slide 0
+    # with shared_best so caption + visual stay aligned.
     shared_best = pick_best_destination(_dest_pool(), used, content, state)
     if shared_best:
         content["__run_best__"] = shared_best
-        # Stamp at lock-time so concurrent mode runs see the same anti-repeat
-        # history (mirrors the collection_spotlight fix).
-        mark_theme_used(state, "destinations", shared_best["id"])
         state.setdefault("last_picked", {})["shared_best"] = shared_best["id"]
         save_state(state)
         log.info(f"Shared best destination locked: {shared_best['name']}")
@@ -2797,7 +3134,20 @@ def _run_inner(force: bool, sync_only: bool, dry_run: bool,
             if carousel_fmt not in CAROUSEL_FORMATS:
                 continue
             picks = carousel_destinations(carousel_fmt, content, pool_for_carousel, target_count=5)
+
+            # CHANGED 2026-05-03: ensure shared_best is slide 0 so caption ↔
+            # carousel match. Without this, caption.dest != any slide.dest.
+            # Skip for collection_spotlight (it's curated by the collection).
+            if (carousel_fmt != "collection_spotlight" and shared_best
+                    and not any(d.get("id") == shared_best.get("id") for d in picks)):
+                # Insert at front; trim to 5
+                picks = [shared_best] + [d for d in picks if d.get("id") != shared_best.get("id")]
+                picks = picks[:5]
+
             content[f"__run_carousel_dests__{carousel_fmt}"] = picks
+            # Now (post-carousel) mark all shown dests as used so tomorrow rotates.
+            for d in picks:
+                mark_theme_used(state, "destinations", d["id"])
             # For collection_spotlight, stamp the chosen carousel dest in the
             # per-collection bucket so tomorrow we rotate to a different item.
             # Stamp at lock-time, not publish-time, so concurrent mode runs
@@ -2807,7 +3157,7 @@ def _run_inner(force: bool, sync_only: bool, dry_run: bool,
                 bucket_name = f"collection_carousel_dests:{coll.get('id','?')}"
                 for d in picks:
                     mark_theme_used(state, bucket_name, d["id"])
-                save_state(state)
+            save_state(state)
             log.info(f"Carousel locked ({carousel_fmt}): "
                      + (", ".join(d['id'] for d in picks) if picks else "no valid images found"))
 
@@ -3425,8 +3775,12 @@ def _run_canva_visual(force: bool = False, dry_run: bool = False):
         log.error("canva_library/manifest.json not found.")
         return
 
-    with open(manifest_path) as f:
-        manifest = _json.load(f)
+    try:
+        with open(manifest_path) as f:
+            manifest = _json.load(f)
+    except (_json.JSONDecodeError, OSError) as e:
+        log.error(f"canva_library/manifest.json corrupt or unreadable: {e}")
+        return
 
     all_images = manifest.get("images", [])
     if not all_images:
@@ -3760,6 +4114,67 @@ def _pomelli_caption(entry: dict, platform: str) -> str:
     )
 
 
+def _pomelli_clean_at_post_time(img_path: Path) -> bytes:
+    """Defensive cleanup before uploading a Pomelli image to IG/FB (2026-05-03).
+
+    If the on-disk image still has a stacked dark text bar (>80 px charcoal at
+    bottom), strip it dynamically and re-stamp the clean monogram-only bar.
+    Otherwise return the bytes unchanged. Failures fall back silently to the
+    original bytes — never block a post on cleanup.
+    """
+    try:
+        from PIL import Image, ImageFile
+        ImageFile.LOAD_TRUNCATED_IMAGES = True
+        import numpy as np
+        from io import BytesIO
+
+        im = Image.open(img_path).convert("RGB")
+        im.load()
+        arr = np.asarray(im)
+        h = arr.shape[0]
+        # Detect dark bar at bottom
+        bar = 0
+        for row in range(h - 1, -1, -1):
+            if arr[row].mean() < 60:
+                bar += 1
+            else:
+                break
+        # Threshold: only trigger on EXTREME stacked bars (>150 px). Lower
+        # values catch false positives (designs with naturally dark bottom
+        # content like night photos or charcoal data charts).
+        if bar <= 150:
+            # Already clean — return original bytes
+            return img_path.read_bytes()
+
+        log.info(f"    Defensive cleanup: detected {bar}px stacked bar, regenerating in-flight…")
+        w = im.size[0]
+        max_a = int(h * 0.45)
+        cropped = min(bar + 8, max_a)
+        im = im.crop((0, 0, w, h - cropped))
+
+        # Add single 56-px charcoal bar with monogram only (no text)
+        new_h = im.size[1] + 56
+        out = Image.new("RGB", (w, new_h), (22, 22, 20))
+        out.paste(im, (0, 0))
+
+        mono_path = (
+            Path(__file__).parent / "assets" / "brand-pack" / "nakshiq"
+            / "icon-system" / "monogram" / "nakshiq-monogram-light.png"
+        )
+        if mono_path.exists():
+            mono = Image.open(mono_path).convert("RGBA")
+            ratio = 32 / mono.height
+            mono = mono.resize((int(mono.width * ratio), 32), Image.LANCZOS)
+            out.paste(mono, (28, im.size[1] + (56 - mono.height) // 2), mono)
+
+        buf = BytesIO()
+        out.save(buf, "PNG")
+        return buf.getvalue()
+    except Exception as e:
+        log.warning(f"    Defensive cleanup failed ({e}); falling back to raw bytes.")
+        return img_path.read_bytes()
+
+
 def _run_pomelli_visual(force: bool = False, dry_run: bool = False):
     """
     Pomelli Visual mode — posts AI-generated on-brand creatives from pomelli_library/.
@@ -3782,13 +4197,37 @@ def _run_pomelli_visual(force: bool = False, dry_run: bool = False):
         log.error("pomelli_library/manifest.json not found.")
         return
 
-    with open(manifest_path) as f:
-        manifest = _json.load(f)
+    try:
+        with open(manifest_path) as f:
+            manifest = _json.load(f)
+    except (_json.JSONDecodeError, OSError) as e:
+        log.error(f"pomelli_library/manifest.json corrupt or unreadable: {e}")
+        return
 
-    all_images = manifest.get("images", [])
-    if not all_images:
+    raw_images = manifest.get("images", [])
+    if not raw_images:
         log.error("No images in pomelli_library/manifest.json.")
         return
+
+    # Normalize manifest entries: support BOTH string (filename) and dict format.
+    # Build a reverse lookup filename → campaign from the campaigns map so string
+    # entries can be promoted to dicts with campaign info.
+    file_to_campaign = {}
+    for camp_name, files in manifest.get("campaigns", {}).items():
+        for fname in files:
+            file_to_campaign[fname] = camp_name
+
+    all_images = []
+    for entry in raw_images:
+        if isinstance(entry, dict):
+            all_images.append(entry)
+        elif isinstance(entry, str):
+            campaign = file_to_campaign.get(entry, "uncategorized")
+            # Derive a subject from the filename: drop pomelli_ prefix, _N suffix
+            subject = entry.replace("pomelli_", "").replace(".png", "")
+            subject = subject.rsplit("_", 1)[0] if subject.rsplit("_", 1)[-1].isdigit() else subject
+            subject = subject.replace("_", " ").title()
+            all_images.append({"file": entry, "campaign": campaign, "subject": subject})
 
     # Verify image files actually exist
     available = []
@@ -3827,9 +4266,13 @@ def _run_pomelli_visual(force: bool = False, dry_run: bool = False):
 
     log.info(f"Selected: [{chosen_camp}] {chosen_img.get('subject', '')} → {chosen_img['file']}")
 
-    # Read image bytes
+    # Read image bytes — with on-the-fly defensive cleanup (added 2026-05-03)
+    # If the source image still has a stacked text bar (>80 px charcoal bottom),
+    # strip it dynamically and re-stamp the clean monogram. This is a SAFETY net
+    # — the bulk regen on 2026-05-03 already cleaned the library, but any future
+    # dirty PNG that lands in pomelli_library/ will be auto-cleaned at post time.
     img_path = POMELLI_LIBRARY_DIR / chosen_img["file"]
-    img_bytes = img_path.read_bytes()
+    img_bytes = _pomelli_clean_at_post_time(img_path)
 
     # Upload
     media_filename = f"pomelli_{chosen_camp}_{Path(chosen_img['file']).stem}.png"
@@ -3930,14 +4373,14 @@ FLOW_STORY_CAPTIONS_IG_SCORED = [
         "{dest}, {state} — {score}/5 this month\n\n"
         "{score_note}\n\n"
         "NakshIQ scores 303 Indian destinations monthly.\n"
-        "→ nakshiq.com/destination/{slug}?utm_source=ig&utm_medium=post&utm_campaign=flow-story\n\n"
+        "→ {dest_url}\n\n"
         "{hashtags}"
     ),
     (
         "{dest} · NakshIQ Score: {score}/5\n\n"
         "{score_note}\n\n"
         "303 destinations. 5 dimensions. Updated monthly.\n"
-        "→ nakshiq.com/destination/{slug}?utm_source=ig&utm_medium=post&utm_campaign=flow-story\n\n"
+        "→ {dest_url}\n\n"
         "{hashtags}"
     ),
 ]
@@ -3947,14 +4390,14 @@ FLOW_STORY_CAPTIONS_IG_UNSCORED = [
         "{dest}, {state}\n\n"
         "NakshIQ rates 303 Indian destinations monthly.\n"
         "When to go, what to skip, what nobody tells you.\n\n"
-        "→ nakshiq.com/destination/{slug}?utm_source=ig&utm_medium=post&utm_campaign=flow-story\n\n"
+        "→ {dest_url}\n\n"
         "{hashtags}"
     ),
     (
         "{dest}\n\n"
         "Every destination has a best month and a worst month.\n"
         "We score both — no ads, no sponsorships, just data.\n\n"
-        "→ nakshiq.com/destination/{slug}?utm_source=ig&utm_medium=post&utm_campaign=flow-story\n\n"
+        "→ {dest_url}\n\n"
         "{hashtags}"
     ),
 ]
@@ -3964,7 +4407,7 @@ FLOW_STORY_CAPTIONS_FB_SCORED = [
         "{dest}, {state} — {score}/5 this month\n\n"
         "{score_note}\n\n"
         "We score 303 destinations monthly so you don't have to guess.\n"
-        "→ nakshiq.com/destination/{slug}"
+        "→ {dest_url}"
     ),
 ]
 
@@ -3973,13 +4416,13 @@ FLOW_STORY_CAPTIONS_FB_UNSCORED = [
         "{dest}, {state}\n\n"
         "Have you been? When did you go — and would you time it differently?\n\n"
         "We score 303 destinations monthly so you don't have to guess.\n"
-        "→ nakshiq.com/destination/{slug}"
+        "→ {dest_url}"
     ),
     (
         "{dest}\n\n"
         "Most travel advice is recycled. Ours is scored.\n"
         "303 destinations, updated monthly, zero sponsorships.\n\n"
-        "→ nakshiq.com/destination/{slug}"
+        "→ {dest_url}"
     ),
 ]
 
@@ -4023,23 +4466,73 @@ def _flow_story_hashtags(dest: str, state: str) -> str:
     return " ".join(tags[:5])
 
 
-def _flow_story_caption(entry: dict, platform: str) -> str:
-    """Generate a caption for a Flow story image. Uses score when available."""
+def _flow_story_resolve_dest_id(name: str, lookup: dict) -> str | None:
+    """Resolve a flow-story display name (e.g. 'Valley of Flowers', 'Andaman & Nicobar')
+    to the real Supabase destination id used in /en/destination/<id> URLs.
+
+    Returns None when no match — caller must fall back to homepage to avoid 404s.
+    """
+    if not name or not lookup:
+        return None
+    if name in lookup:
+        return lookup[name]
+    if name.lower() in lookup:
+        return lookup[name.lower()]
+    # Strip parenthetical clarifiers: "Spiti Valley (Kaza Region)" → "Spiti Valley"
+    bare = name.split("(")[0].strip()
+    if bare and bare.lower() in lookup:
+        return lookup[bare.lower()]
+    # Last-ditch: normalise to slug-form and try again ("Andaman & Nicobar" → "andaman-nicobar")
+    slug_form = (
+        bare.lower()
+        .replace(" & ", "-")
+        .replace("&", "and")
+        .replace(",", "")
+        .replace(" ", "-")
+    )
+    return lookup.get(slug_form)
+
+
+def _flow_story_caption(entry: dict, platform: str, dest_id_lookup: dict | None = None) -> str:
+    """Generate a caption for a Flow story image. Uses score when available.
+
+    `dest_id_lookup` maps name (and lowercase variants + slug-form) → real DB id.
+    Without it, every URL falls back to the homepage to avoid 404s.
+    """
     import random as _random
 
     dest  = entry.get("dest")
     state = entry.get("state")
     score = entry.get("_score")  # injected by seasonal picker
+    uncertain = entry.get("uncertain", False)  # manual flag for image-dest mismatch
 
-    if not dest or dest == state:
-        # Generic / state-level image
+    # CHANGED 2026-05-03: STATE_SHOWCASE / EDITORIAL entries are themed, not
+    # destination-specific. Treat them as generic to prevent mis-attributing
+    # a specific destination caption to an editorial-style image. Also respects
+    # any image manually flagged as `uncertain` per the visual-audit feedback
+    # in memory: feedback_flow_image_caption_match.md.
+    is_themed = state in ("STATE_SHOWCASE", "EDITORIAL", "GENERIC", None, "")
+    if not dest or dest == state or is_themed or uncertain:
+        # Generic / state-level / unverified image
         if platform == "facebook":
             return FLOW_STORY_GENERIC_FB
         return FLOW_STORY_GENERIC_IG
 
-    # Build slug from dest name
-    slug = dest.lower().replace(" ", "-").replace("(", "").replace(")", "")
-    slug = slug.split("-")[0] if len(slug) > 30 else slug
+    # Resolve real DB id (was: lossy `dest.lower().split("-")[0]` which 404'd on
+    # any multi-word destination — e.g. "Valley of Flowers" → "valley" → 404).
+    dest_id = _flow_story_resolve_dest_id(dest, dest_id_lookup or {})
+    utm_source = "fb" if platform == "facebook" else "ig"
+    if dest_id:
+        dest_url_str = utm(
+            f"https://nakshiq.com/en/destination/{dest_id}",
+            utm_source, "post", "flow-story",
+        )
+    else:
+        # No DB match — link to homepage instead of generating a 404. This is
+        # the failure mode that drove user-reported "random 404s" on flow-story
+        # posts. Healthcheck (Tier 2) will eventually replace this with hard skip.
+        log.warning(f"[flow-story] No dest_id match for '{dest}' — linking to homepage")
+        dest_url_str = utm("https://nakshiq.com/en", utm_source, "post", "flow-story")
 
     hashtags = _flow_story_hashtags(dest, state)
 
@@ -4052,7 +4545,7 @@ def _flow_story_caption(entry: dict, platform: str) -> str:
         return template.format(
             dest=dest,
             state=state or "India",
-            slug=slug,
+            dest_url=dest_url_str,
             score=score,
             score_note=score_note,
             hashtags=hashtags,
@@ -4065,7 +4558,7 @@ def _flow_story_caption(entry: dict, platform: str) -> str:
         return template.format(
             dest=dest,
             state=state or "India",
-            slug=slug,
+            dest_url=dest_url_str,
             hashtags=hashtags,
         )
 
@@ -4092,8 +4585,12 @@ def _run_flow_story(force: bool = False, dry_run: bool = False):
         log.error("flow_stories_library/manifest.json not found.")
         return
 
-    with open(manifest_path) as f:
-        manifest = _json.load(f)
+    try:
+        with open(manifest_path) as f:
+            manifest = _json.load(f)
+    except (_json.JSONDecodeError, OSError) as e:
+        log.error(f"flow_stories_library/manifest.json corrupt or unreadable: {e}")
+        return
 
     if not manifest:
         log.error("Empty manifest in flow_stories_library.")
@@ -4122,16 +4619,24 @@ def _run_flow_story(force: bool = False, dry_run: bool = False):
     # that are actually relevant right now (hill stations in summer,
     # Rajasthan in winter, etc.)
     month = datetime.now().month
-    score_lookup = {}  # dest_name → score (1-5)
+    score_lookup   = {}  # dest_name → score (1-5)
+    dest_id_lookup = {}  # dest_name (+ lowercase + slug-form variants) → DB id
     try:
         # Fetch ALL destinations with scores (min_score=0, limit=500)
         scored = nakshiq_fetch("destinations", {"month": month, "min_score": 0, "limit": 500})
         scored_data = scored.get("data", [])
         for d in scored_data:
             name = d.get("name", "")
+            d_id = d.get("id")
             score_lookup[name] = d.get("score", 0)
             # Also index by lowercase for fuzzy matching
             score_lookup[name.lower()] = d.get("score", 0)
+            # Build name-variant → id lookup so flow-story captions can resolve
+            # 'Valley of Flowers' → 'valley-of-flowers' instead of truncating to 'valley'
+            if d_id:
+                dest_id_lookup[name] = d_id
+                dest_id_lookup[name.lower()] = d_id
+                dest_id_lookup[d_id] = d_id  # idempotent
         log.info(f"Seasonal scores loaded: {len(scored_data)} destinations for month {month}")
     except Exception as e:
         log.warning(f"Could not fetch seasonal scores: {e} — falling back to round-robin")
@@ -4232,7 +4737,7 @@ def _run_flow_story(force: bool = False, dry_run: bool = False):
             log.info(f"[{label}] Already posted flow story today — skipping.")
             continue
 
-        caption = _flow_story_caption(chosen, platform)
+        caption = _flow_story_caption(chosen, platform, dest_id_lookup=dest_id_lookup)
         caption = sanitize(caption)
 
         log.info(f"[{label}] Publishing flow story: "

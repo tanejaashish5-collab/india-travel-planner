@@ -46,3 +46,11 @@ data/video-audit/
 # repo doesn't bloat with binary .mp4 files. Historical videos committed
 # before the R2 migration remain in history.
 videos/
+
+# Autoposter runtime files — ephemeral lock + state, must never be tracked.
+# Pre-2026-05-05 the repo accumulated iCloud-conflict copies (.autoposter 2.lock,
+# .autoposter 3.lock, .autoposter-evening 2.lock) that polluted git status and
+# masked which lock was actually held. See ~/.claude/plans/check-nakshiq-autoposter-*.md.
+nakshiq-autoposter/.autoposter*.lock
+nakshiq-autoposter/state.json.tmp
+nakshiq-autoposter/autoposter*.log
