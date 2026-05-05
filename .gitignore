@@ -47,6 +47,9 @@ data/video-audit/
 # before the R2 migration remain in history.
 videos/
 
+# Editor / refactor backups (e.g. component.legacy.tsx.bak)
+*.bak
+
 # Autoposter runtime files — ephemeral lock + state, must never be tracked.
 # Pre-2026-05-05 the repo accumulated iCloud-conflict copies (.autoposter 2.lock,
 # .autoposter 3.lock, .autoposter-evening 2.lock) that polluted git status and
