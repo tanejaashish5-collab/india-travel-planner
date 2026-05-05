@@ -9,6 +9,7 @@ import { destinationImage } from "@/lib/image-url";
 import { AuthorByline } from "@/components/author-byline";
 import { getPrimaryEditor } from "@/lib/editor";
 import { videoObjectJsonLd } from "@/lib/video-schema";
+import { formatScoreInline } from "@itp/shared";
 
 export const revalidate = 86400; // 24h — 5,856 month pages × bots = function-invocation tax. Monthly content doesn't need 6h freshness.
 export const dynamicParams = true;
@@ -240,13 +241,14 @@ export async function generateMetadata({
     : (descVerb
         ? `${descVerb} ${name} in ${monthName} ${year}:`
         : `${name} in ${monthName} ${year}:`);
+  const scoreLabel = formatScoreInline(score);
   const descClose = isHi
     ? (stateName
-        ? `NakshIQ रेटिंग: ${score}/5 (${stateName})।`
-        : `NakshIQ रेटिंग: ${score}/5।`)
+        ? `NakshIQ रेटिंग: ${scoreLabel} (${stateName})।`
+        : `NakshIQ रेटिंग: ${scoreLabel}।`)
     : (stateName
-        ? `NakshIQ verdict: ${score}/5 (${stateName}).`
-        : `NakshIQ verdict: ${score}/5.`);
+        ? `NakshIQ verdict: ${scoreLabel} (${stateName}).`
+        : `NakshIQ verdict: ${scoreLabel}.`);
 
   // Fallback chain by verdict: skip → why_not first, others → why_go first.
   // Note already contains the editorial perspective for most rows; fall
@@ -418,7 +420,7 @@ export default async function DestinationMonthPage({
     "@context": "https://schema.org",
     "@type": "Article",
     "@id": `${monthUrl}#article`,
-    headline: `${destination.name} in ${monthName} — ${score}/5`,
+    headline: `${destination.name} in ${monthName} — ${formatScoreInline(score)}`,
     description: currentMonth?.note || currentMonth?.why_go || `Travel guide for ${destination.name} in ${monthName}`,
     inLanguage: locale === "hi" ? "hi-IN" : "en-IN",
     ...(reviewedAt && { dateModified: reviewedAt }),
@@ -520,7 +522,7 @@ export default async function DestinationMonthPage({
 
   faqEntries.push({
     name: `Is ${monthName} a good time to visit ${destination.name}?`,
-    text: `${destination.name} scores ${score}/5 in ${monthName}${verdict ? ` (verdict: ${verdict})` : ""}. ${currentMonth?.why_go || currentMonth?.why_not || currentMonth?.note || "Check the full monthly breakdown on NakshIQ for weather, crowd, and access reasoning."}`,
+    text: `${destination.name} scores ${formatScoreInline(score)} in ${monthName}${verdict ? ` (verdict: ${verdict})` : ""}. ${currentMonth?.why_go || currentMonth?.why_not || currentMonth?.note || "Check the full monthly breakdown on NakshIQ for weather, crowd, and access reasoning."}`,
   });
 
   if (currentMonth?.why_not && verdict === "skip") {
@@ -556,15 +558,15 @@ export default async function DestinationMonthPage({
     faqEntries.push({
       name: `Is ${destination.name} safe for kids in ${monthName}?`,
       text: kf.suitable
-        ? `${destination.name} is rated ${kf.rating}/5 for families. ${monthName} ${verdict === "go" ? "is a suitable travel window" : verdict === "skip" ? "is not the recommended travel window — prefer the best-months list" : "is workable but not peak"}.`
-        : `${destination.name} is rated ${kf.rating}/5 for families and not recommended for young children, regardless of month. ${(kf.reasons || []).slice(0, 1).join(". ")}.`,
+        ? `${destination.name} is rated ${formatScoreInline(kf.rating)} for families. ${monthName} ${verdict === "go" ? "is a suitable travel window" : verdict === "skip" ? "is not the recommended travel window — prefer the best-months list" : "is workable but not peak"}.`
+        : `${destination.name} is rated ${formatScoreInline(kf.rating)} for families and not recommended for young children, regardless of month. ${(kf.reasons || []).slice(0, 1).join(". ")}.`,
     });
   }
 
   if (cc?.safety_rating != null) {
     faqEntries.push({
       name: `Is ${destination.name} safe in ${monthName}?`,
-      text: `${destination.name} has a safety rating of ${cc.safety_rating}/5. ${cc.safety_notes ? String(cc.safety_notes) : ""}`,
+      text: `${destination.name} has a safety rating of ${formatScoreInline(cc.safety_rating)}. ${cc.safety_notes ? String(cc.safety_notes) : ""}`,
     });
   }
 

@@ -10,6 +10,7 @@
 
 import { useEffect, useRef } from "react";
 import type { Scaffold, ItineraryDay } from "@/lib/itinerary-generator";
+import { formatScoreInline } from "@itp/shared";
 
 type AiDay = {
   day: number;
@@ -155,7 +156,7 @@ export function ItineraryView({
                 <div key={d.day} data-itinerary-day={d.day}>
                   <div className="nq-eyebrow" style={{ marginBottom: 4 }}>
                     Day {d.day}
-                    {typeof d.nakshiqScore === "number" ? ` · ${d.nakshiqScore}/5` : ""}
+                    {typeof d.nakshiqScore === "number" ? ` · ${formatScoreInline(d.nakshiqScore)}` : ""}
                   </div>
                   <h3
                     style={{

@@ -4,6 +4,7 @@ import { useState, useMemo } from "react";
 import { m as motion, AnimatePresence } from "framer-motion";
 import indiaMapData from "@svg-maps/india";
 import { ALL_STATE_SLUGS, REGION_GROUPS } from "@/lib/seo-maps";
+import { formatScoreInline } from "@itp/shared";
 
 const mapData = (indiaMapData as any).default || indiaMapData;
 
@@ -169,7 +170,7 @@ export function IndiaMap({ states, locale, activeRegion }: IndiaMapProps) {
                     color: getScoreColor(hoveredInfo.avgScore),
                   }}
                 >
-                  {hoveredInfo.avgScore.toFixed(1)}/5 avg
+                  {formatScoreInline(hoveredInfo.avgScore)} avg
                 </span>
               )}
             </div>

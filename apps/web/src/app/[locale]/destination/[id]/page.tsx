@@ -13,6 +13,7 @@ import { destinationImage } from "@/lib/image-url";
 import { AuthorByline } from "@/components/author-byline";
 import { getPrimaryEditor } from "@/lib/editor";
 import { videoObjectJsonLd } from "@/lib/video-schema";
+import { formatScoreInline } from "@itp/shared";
 import { AskNakshIQInlineCTA } from "@/components/ask-nakshiq-inline-cta";
 
 export const revalidate = 86400; // 24h — UGC moderation lag is already 24-48h, so hourly revalidation just burned function invocations
@@ -464,14 +465,14 @@ export default async function DestinationPage({
     faqQuestions.push({
       name: `Is ${dest.name} safe for families with kids?`,
       text: kf.suitable
-        ? `Yes, ${dest.name} is rated ${kf.rating}/5 for families with kids. ${(kf.reasons || []).slice(0, 2).join(". ")}.`
-        : `${dest.name} is rated ${kf.rating}/5 for families and is not recommended for young children. ${(kf.reasons || []).slice(0, 2).join(". ")}.`,
+        ? `Yes, ${dest.name} is rated ${formatScoreInline(kf.rating)} for families with kids. ${(kf.reasons || []).slice(0, 2).join(". ")}.`
+        : `${dest.name} is rated ${formatScoreInline(kf.rating)} for families and is not recommended for young children. ${(kf.reasons || []).slice(0, 2).join(". ")}.`,
     });
   }
   if (soloPct != null) {
     faqQuestions.push({
       name: `Is ${dest.name} safe for solo female travelers?`,
-      text: `${dest.name} scores ${soloPct}/5 for solo-female travel safety on NakshIQ's annual index. ${solofScore?.note ? String(solofScore.note) : "See the Safety & Logistics section for month-by-month overrides and local advisory notes."}`,
+      text: `${dest.name} scores ${formatScoreInline(soloPct)} for solo-female travel safety on NakshIQ's annual index. ${solofScore?.note ? String(solofScore.note) : "See the Safety & Logistics section for month-by-month overrides and local advisory notes."}`,
     });
   }
   if (cc?.reach) {

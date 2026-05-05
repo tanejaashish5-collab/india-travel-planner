@@ -1,5 +1,6 @@
 import { ImageResponse } from "next/og";
 import { NextRequest } from "next/server";
+import { formatScore, SCORE_MAX } from "@itp/shared";
 
 export const runtime = "edge";
 
@@ -9,28 +10,32 @@ export async function GET(req: NextRequest) {
   const month = searchParams.get("month") || "Month";
   const scoreRaw = searchParams.get("score") || "0";
   const note = searchParams.get("note") || "";
-  const score = Math.min(5, Math.max(0, parseInt(scoreRaw, 10) || 0));
+  // Caller passes the raw 0–5 DB score; we multiply internally so the OG image
+  // shows the same 0–10 display scale used everywhere else.
+  const rawScore = Math.min(5, Math.max(0, parseInt(scoreRaw, 10) || 0));
+  const scoreDisplay = formatScore(rawScore);
 
-  // Score badge color
+  // Score badge color (color thresholds operate on the raw 0–5 score; this is
+  // the same banding logic the rest of the site uses internally).
   const badgeColor =
-    score >= 4 ? "#22c55e" : score === 3 ? "#eab308" : "#ef4444";
+    rawScore >= 4 ? "#22c55e" : rawScore === 3 ? "#eab308" : "#ef4444";
   const badgeBg =
-    score >= 4
+    rawScore >= 4
       ? "rgba(34,197,94,0.15)"
-      : score === 3
+      : rawScore === 3
         ? "rgba(234,179,8,0.15)"
         : "rgba(239,68,68,0.15)";
 
   const scoreLabel =
-    score === 5
+    rawScore === 5
       ? "Peak Season"
-      : score === 4
+      : rawScore === 4
         ? "Good Time"
-        : score === 3
+        : rawScore === 3
           ? "Fair"
-          : score === 2
+          : rawScore === 2
             ? "Caution"
-            : score === 1
+            : rawScore === 1
               ? "Avoid"
               : "No Data";
 
@@ -98,7 +103,7 @@ export async function GET(req: NextRequest) {
                   color: badgeColor,
                 }}
               >
-                {score}
+                {scoreDisplay}
               </span>
               <span
                 style={{
@@ -107,7 +112,7 @@ export async function GET(req: NextRequest) {
                   fontWeight: 300,
                 }}
               >
-                /5
+                /{SCORE_MAX}
               </span>
               <span
                 style={{

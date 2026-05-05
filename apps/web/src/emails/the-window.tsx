@@ -5,6 +5,7 @@ import {
   Html,
   Preview,
 } from "@react-email/components";
+import { formatScoreInline } from "@itp/shared";
 
 // ── Data shapes ──
 
@@ -119,7 +120,7 @@ export default function TheWindow(props: WindowIssueProps) {
   const hero = picks[0];
   const rest = picks.slice(1, 5);
 
-  const previewText = `${bestScore.name} scores ${bestScore.score}/5 this week. And one place to skip.`;
+  const previewText = `${bestScore.name} scores ${formatScoreInline(bestScore.score)} this week. And one place to skip.`;
 
   return (
     <Html lang="en">
@@ -176,7 +177,7 @@ export default function TheWindow(props: WindowIssueProps) {
                                 </div>
                                 <div style={heroPillWrap}>
                                   <div style={heroPill}>
-                                    <span style={pillDot} />{hero.score}/5 · Peak
+                                    <span style={pillDot} />{formatScoreInline(hero.score)} · Peak
                                   </div>
                                 </div>
                               </div>
@@ -256,7 +257,7 @@ export default function TheWindow(props: WindowIssueProps) {
                               <tbody><tr>
                                 <td valign="top"><div style={cardNumeral}>{String(position).padStart(2, "0")}</div></td>
                                 <td valign="bottom" style={cardKickerTag}>{categoryTag(p.primary_tag)}</td>
-                                <td align="right" valign="bottom" style={cardScoreTag}>● {p.score}/5 · Peak</td>
+                                <td align="right" valign="bottom" style={cardScoreTag}>● {formatScoreInline(p.score)} · Peak</td>
                               </tr></tbody>
                             </table>
                           </td></tr>

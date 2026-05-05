@@ -5,6 +5,7 @@ import { WithKidsContent } from "@/components/with-kids-content";
 import { createClient } from "@supabase/supabase-js";
 import { notFound } from "next/navigation";
 import { destinationImage } from "@/lib/image-url";
+import { formatScoreInline } from "@itp/shared";
 
 export const revalidate = 21600;
 export const dynamicParams = true;
@@ -59,7 +60,7 @@ export async function generateMetadata({
     ? dest.kids_friendly[0]
     : dest.kids_friendly;
 
-  const ratingText = kf?.rating ? `${kf.rating}/5` : "";
+  const ratingText = kf?.rating ? formatScoreInline(kf.rating) : "";
   const title = ratingText
     ? `${name} with Kids: ${ratingText} Safety · Family Guide`
     : `${name} with Kids: Family Travel Guide`;
@@ -156,7 +157,7 @@ export default async function WithKidsPage({
       acceptedAnswer: {
         "@type": "Answer" as const,
         text: kf?.suitable
-          ? `Yes, ${dest.name} is rated ${kf.rating}/5 for families with children. ${(kf.reasons || []).slice(0, 2).join(". ")}.`
+          ? `Yes, ${dest.name} is rated ${formatScoreInline(kf.rating)} for families with children. ${(kf.reasons || []).slice(0, 2).join(". ")}.`
           : `${dest.name} is generally not recommended for families with young children. ${(kf?.reasons || []).slice(0, 2).join(". ")}.`,
       },
     },

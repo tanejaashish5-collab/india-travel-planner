@@ -1,4 +1,5 @@
 import { getResend, FROM_ADDRESS, REPLY_TO, SITE_URL } from "@/lib/resend";
+import { formatScoreInline } from "@itp/shared";
 
 const ADMIN_EMAIL = process.env.ADMIN_EMAIL ?? "taneja.ashish5@gmail.com";
 
@@ -65,7 +66,7 @@ export async function notifyAdminUGC(args: NotifyUGCArgs): Promise<void> {
       <h2 style="margin: 0 0 16px; font-size: 18px;">New ${escapeHtml(meta.label.toLowerCase())} for ${escapeHtml(destLabel)}</h2>
       ${args.reporterName ? `<p style="margin: 0 0 4px;"><strong>From:</strong> ${escapeHtml(args.reporterName)}</p>` : ""}
       ${args.reporterEmail ? `<p style="margin: 0 0 4px;"><strong>Email:</strong> <a href="mailto:${escapeHtml(args.reporterEmail)}">${escapeHtml(args.reporterEmail)}</a></p>` : ""}
-      ${args.rating != null ? `<p style="margin: 0 0 4px;"><strong>Rating:</strong> ${args.rating}/5</p>` : ""}
+      ${args.rating != null ? `<p style="margin: 0 0 4px;"><strong>Rating:</strong> ${formatScoreInline(args.rating)}</p>` : ""}
       <p style="margin: 8px 0;"><strong>Summary:</strong> ${escapeHtml(args.summary)}</p>
       ${args.body ? `<hr style="border: none; border-top: 1px solid #ddd; margin: 16px 0;" /><p style="white-space: pre-wrap; line-height: 1.5;">${escapeHtml(args.body)}</p>` : ""}
       <p style="margin-top: 24px;">
@@ -80,7 +81,7 @@ export async function notifyAdminUGC(args: NotifyUGCArgs): Promise<void> {
     `Destination: ${destLabel}`,
     args.reporterName ? `From: ${args.reporterName}` : null,
     args.reporterEmail ? `Email: ${args.reporterEmail}` : null,
-    args.rating != null ? `Rating: ${args.rating}/5` : null,
+    args.rating != null ? `Rating: ${formatScoreInline(args.rating)}` : null,
     "",
     `Summary: ${args.summary}`,
     "",

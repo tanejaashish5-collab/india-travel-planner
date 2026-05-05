@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { formatScoreInline } from "@itp/shared";
 
 type Step = "auth" | "preview" | "sending" | "done";
 
@@ -234,7 +235,7 @@ export function AdminNewsletter({ subscriberStats }: { subscriberStats?: Subscri
                   type="text"
                   value={overrides.subject}
                   onChange={(e) => setOverrides({ ...overrides, subject: e.target.value })}
-                  placeholder="auto = {destName} scores {score}/5 this week"
+                  placeholder="auto = {destName} scores {score}/10 this week"
                   maxLength={100}
                   className="w-full rounded-lg border border-border bg-background px-3 py-2 text-sm"
                 />
@@ -327,7 +328,7 @@ export function AdminNewsletter({ subscriberStats }: { subscriberStats?: Subscri
             <div>
               <h3 className="font-semibold mb-1">Best score</h3>
               <p className="text-sm text-muted-foreground">
-                {preview.issue.props.bestScore.name}, {preview.issue.props.bestScore.state} — {preview.issue.props.bestScore.score}/5
+                {preview.issue.props.bestScore.name}, {preview.issue.props.bestScore.state} — {formatScoreInline(preview.issue.props.bestScore.score)}
               </p>
               <p className="text-xs text-muted-foreground mt-1">{preview.issue.props.bestScore.note}</p>
             </div>

@@ -9,7 +9,7 @@ import { ExploreFilters, type FilterState } from "./explore-filters";
 import { CompareButton } from "./compare-tray";
 import { StaggerContainer, StaggerItem, HoverCard } from "./animated-hero";
 import { SCORE_COLORS, DIFFICULTY_COLORS } from "@/lib/design-tokens";
-import { currentMonthIST } from "@itp/shared";
+import { currentMonthIST, formatScore, formatScoreInline } from "@itp/shared";
 import { KEY_EVENTS, track } from "@/lib/analytics";
 
 const SOLO_FEMALE_COLOR: Record<number, string> = {
@@ -413,7 +413,7 @@ function DestinationCard({
                 {["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"][selectedMonth]}
               </span>
             )}
-            {score}/5 — {ts(String(score))}
+            {formatScore(score)} — {ts(String(score))}
           </span>
         ) : (
           <span className="text-xs text-muted-foreground">
@@ -427,15 +427,15 @@ function DestinationCard({
             <span
               className={`inline-flex items-center gap-1 rounded-full border px-2 py-0.5 text-xs ${SOLO_FEMALE_COLOR[dest.solo_female_score] ?? SOLO_FEMALE_COLOR[0]}`}
               title="Solo-female safety — see Safety tab"
-              aria-label={`Solo-female score ${dest.solo_female_score} of 5`}
+              aria-label={`Solo-female score ${formatScoreInline(dest.solo_female_score)}`}
             >
               <span className="font-serif italic" style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}>♀</span>
-              <span className="font-medium">{dest.solo_female_score}/5</span>
+              <span className="font-medium">{formatScoreInline(dest.solo_female_score)}</span>
             </span>
           )}
           {kf && (
             <span className="text-xs font-medium text-muted-foreground">
-              {kf.suitable ? `👶 ${kf.rating}/5` : te("adultsOnly")}
+              {kf.suitable ? `👶 ${formatScoreInline(kf.rating)}` : te("adultsOnly")}
             </span>
           )}
         </span>

@@ -3,20 +3,35 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useLocale } from "next-intl";
+import { usePathname } from "next/navigation";
 import { m as motion, AnimatePresence } from "framer-motion";
 
 export function StickyCTA() {
   const locale = useLocale();
+  const pathname = usePathname();
   const [visible, setVisible] = useState(false);
 
+  // Suppress StickyCTA on the cinematic landing — that page has 4+ inline
+  // CTAs already (Coda "Open the May atlas", "Tell us your trip", Director's
+  // Cut "Read this brief", Map-led Stories cards), so adding a floating
+  // "Plan My Trip" creates clutter. Memory rule: one floating CTA, never two.
+  const isLandingRoot = pathname === `/${locale}` || pathname === `/${locale}/`;
+
   useEffect(() => {
+    if (isLandingRoot) {
+      setVisible(false);
+      return;
+    }
     function onScroll() {
       // Show after scrolling past the hero (roughly 100vh)
       setVisible(window.scrollY > window.innerHeight * 0.8);
     }
+    onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  }, [isLandingRoot]);
+
+  if (isLandingRoot) return null;
 
   return (
     <AnimatePresence>

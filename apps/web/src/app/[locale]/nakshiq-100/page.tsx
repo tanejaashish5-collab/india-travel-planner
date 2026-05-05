@@ -4,6 +4,7 @@ import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { createClient } from "@supabase/supabase-js";
 import { localeAlternates } from "@/lib/seo-utils";
+import { formatScoreInline } from "@itp/shared";
 
 export const revalidate = 3600;
 
@@ -191,7 +192,7 @@ export default async function NakshIQ100Page({ params }: { params: Promise<{ loc
                           {r.destinations?.name} in {MONTH_NAMES[r.month]}
                         </h3>
                         <span className="font-mono text-xs tracking-[0.08em] uppercase text-muted-foreground">
-                          {stateName} · {r.score}/10
+                          {stateName} · {formatScoreInline(r.score)}
                         </span>
                       </div>
                       {r.why_go && (
@@ -238,7 +239,7 @@ export default async function NakshIQ100Page({ params }: { params: Promise<{ loc
                       </td>
                       <td className="px-4 py-2.5 text-muted-foreground hidden sm:table-cell">{stateName ?? "—"}</td>
                       <td className="px-4 py-2.5 text-sm">{MONTH_NAMES[r.month]}</td>
-                      <td className="px-4 py-2.5 text-right font-mono tabular-nums text-sm">{r.score}/10</td>
+                      <td className="px-4 py-2.5 text-right font-mono tabular-nums text-sm">{formatScoreInline(r.score)}</td>
                     </tr>
                   );
                 })}

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { currentMonthIST } from "@itp/shared";
+import { currentMonthIST, formatScoreInline } from "@itp/shared";
 
 type MonthRow = { month: number; score: number };
 
@@ -84,7 +84,7 @@ export default function HowToDoIt({
                   key={m}
                   href={`/${locale}/destination/${destinationId}/${MONTH_FULL[m].toLowerCase()}`}
                   className={`group flex h-7 w-7 sm:h-8 sm:w-8 items-center justify-center rounded-md border text-[10px] font-bold transition-transform hover:scale-110 ${scoreColor(score)} ${isCurrent ? "ring-2 ring-foreground/60 ring-offset-1 ring-offset-background" : ""}`}
-                  title={`${MONTH_FULL[m]} — ${score}/5`}
+                  title={`${MONTH_FULL[m]} — ${formatScoreInline(score)}`}
                 >
                   {MONTH_SHORT[m]}
                 </Link>

@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { FadeIn, ScrollReveal, StaggerContainer, StaggerItem, HoverCard } from "./animated-hero";
 import { SCORE_COLORS, DIFFICULTY_COLORS } from "@/lib/design-tokens";
+import { formatScore } from "@itp/shared";
 import "./tourist-traps-editorial/tourist-traps-editorial.css";
 
 const MONTH_SHORT = ["", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
@@ -232,8 +233,8 @@ export function SkipListDetail({ trapDest, alternatives, whyTrapText, trapDepth,
                     <span className="mt-1 block text-[10px] text-muted-foreground">
                       {MONTH_SHORT[m.month]}
                     </span>
-                    <span className="block text-[10px] font-medium text-foreground">
-                      {m.score}
+                    <span className="block text-[10px] font-medium text-foreground tabular-nums">
+                      {formatScore(m.score)}
                     </span>
                   </div>
                 ))}

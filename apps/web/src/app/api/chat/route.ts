@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
 import Anthropic from "@anthropic-ai/sdk";
 import OpenAI from "openai";
+import { formatScoreInline } from "@itp/shared";
 
 export const dynamic = "force-dynamic";
 
@@ -246,9 +247,9 @@ export async function POST(req: Request) {
             .limit(isFoodQ ? 20 : 5);
 
           const monthNames = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
-          const scoreStr = (scores ?? []).map((s: any) => `${monthNames[s.month-1]}: ${s.score}/5${s.note ? ` (${s.note})` : ""}`).join(", ");
+          const scoreStr = (scores ?? []).map((s: any) => `${monthNames[s.month-1]}: ${formatScoreInline(s.score)}${s.note ? ` (${s.note})` : ""}`).join(", ");
           const kf = kids?.[0];
-          const kidsStr = kf ? `Kids: ${kf.suitable ? "suitable" : "not suitable"}, rating ${kf.rating || "N/A"}/5${kf.notes ? `. ${kf.notes}` : ""}` : "";
+          const kidsStr = kf ? `Kids: ${kf.suitable ? "suitable" : "not suitable"}, rating ${kf.rating != null ? formatScoreInline(kf.rating) : "N/A"}${kf.notes ? `. ${kf.notes}` : ""}` : "";
           const poiStr = (pois ?? []).map((p: any) => `- ${p.name} (${p.type}): ${p.entry_fee || "Free"}, ${p.time_needed || "N/A"}, kids: ${p.kids_suitable ? "yes" : "no"}`).join("\n");
           const eateriesStr = (eateries ?? []).map((r: any) => {
             const tags = [r.is_legendary ? "legendary" : null, r.vegetarian === "pure-veg" ? "pure-veg" : null, r.established_year ? `since ${r.established_year}` : null].filter(Boolean).join(", ");
@@ -309,7 +310,7 @@ export async function POST(req: Request) {
         structuredData += `\n\n=== TOP DESTINATIONS FOR ${monthNames[month-1].toUpperCase()} ===\n`;
         for (const d of topDests) {
           const dest = d.destinations as any;
-          structuredData += `- ${dest.name} (${dest.state_id}): ${d.score}/5${d.note ? ` — ${d.note}` : ""}\n`;
+          structuredData += `- ${dest.name} (${dest.state_id}): ${formatScoreInline(d.score)}${d.note ? ` — ${d.note}` : ""}\n`;
         }
       }
 
@@ -327,7 +328,7 @@ export async function POST(req: Request) {
           structuredData += `\n\n=== TOP KIDS-FRIENDLY DESTINATIONS ===\n`;
           for (const k of kidsDests) {
             const dest = k.destinations as any;
-            structuredData += `- ${dest.name} (${dest.state_id}): rating ${k.rating}/5${k.notes ? ` — ${k.notes}` : ""}\n`;
+            structuredData += `- ${dest.name} (${dest.state_id}): rating ${formatScoreInline(k.rating)}${k.notes ? ` — ${k.notes}` : ""}\n`;
           }
         }
       }

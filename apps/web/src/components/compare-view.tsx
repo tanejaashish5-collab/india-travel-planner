@@ -7,7 +7,7 @@ import { useLocale } from "next-intl";
 import { useSearchParams } from "next/navigation";
 import { m as motion } from "framer-motion";
 import { useCompare } from "./compare-tray";
-import { currentMonthIST } from "@itp/shared";
+import { currentMonthIST, formatScoreInline } from "@itp/shared";
 
 const MONTH_SHORT = ["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
 
@@ -37,7 +37,7 @@ export function CompareView({ destinations }: { destinations: any[] }) {
       icon: "📊",
       getValue: (d) => {
         const s = d.destination_months?.find((m: any) => m.month === currentMonth)?.score;
-        return { text: s ? `${s}/5` : "N/A", color: s >= 4 ? "text-emerald-400" : s >= 3 ? "text-yellow-400" : s ? "text-red-400" : "" };
+        return { text: s ? formatScoreInline(s) : "N/A", color: s >= 4 ? "text-emerald-400" : s >= 3 ? "text-yellow-400" : s ? "text-red-400" : "" };
       },
     },
     {
@@ -68,7 +68,7 @@ export function CompareView({ destinations }: { destinations: any[] }) {
         const kf = Array.isArray(d.kids_friendly) ? d.kids_friendly[0] : d.kids_friendly;
         if (!kf) return { text: "N/A" };
         return {
-          text: kf.suitable ? `${kf.rating}/5` : "Not suitable",
+          text: kf.suitable ? formatScoreInline(kf.rating) : "Not suitable",
           color: kf.suitable ? "text-emerald-400" : "text-red-400",
         };
       },
@@ -79,7 +79,7 @@ export function CompareView({ destinations }: { destinations: any[] }) {
       getValue: (d) => {
         const cc = Array.isArray(d.confidence_cards) ? d.confidence_cards[0] : d.confidence_cards;
         const s = cc?.safety_rating;
-        return { text: s ? `${s}/5` : "N/A", color: s >= 4 ? "text-emerald-400" : s >= 3 ? "text-yellow-400" : s ? "text-red-400" : "" };
+        return { text: s ? formatScoreInline(s) : "N/A", color: s >= 4 ? "text-emerald-400" : s >= 3 ? "text-yellow-400" : s ? "text-red-400" : "" };
       },
     },
     {
@@ -89,7 +89,7 @@ export function CompareView({ destinations }: { destinations: any[] }) {
         const s = d.solo_female_score;
         if (typeof s !== "number") return { text: "N/A" };
         const color = s >= 4 ? "text-emerald-300" : s === 3 ? "text-amber-300" : s === 2 ? "text-orange-300" : "text-red-300";
-        return { text: `${s}/5`, color };
+        return { text: formatScoreInline(s), color };
       },
     },
     {
@@ -232,7 +232,7 @@ export function CompareView({ destinations }: { destinations: any[] }) {
         <p className="text-sm text-muted-foreground max-w-lg mx-auto">
           {compared.map((d: any) => {
             const score = d.destination_months?.find((m: any) => m.month === currentMonth)?.score ?? 0;
-            return `${d.name} scores ${score}/5 in ${MONTH_SHORT[currentMonth]}`;
+            return `${d.name} scores ${formatScoreInline(score)} in ${MONTH_SHORT[currentMonth]}`;
           }).join(" · ")}
         </p>
         <div className="flex justify-center gap-3 mt-4">

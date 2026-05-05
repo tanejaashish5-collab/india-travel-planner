@@ -8,7 +8,7 @@ import { useSearchParams } from "next/navigation";
 import { m as motion, AnimatePresence } from "framer-motion";
 import { SCORE_COLORS, DIFFICULTY_COLORS, SCORE_LABELS } from "@/lib/design-tokens";
 import { AIItinerary } from "./ai-itinerary";
-import { currentMonthIST } from "@itp/shared";
+import { currentMonthIST, formatScoreInline } from "@itp/shared";
 
 interface PlanContentProps {
   destinations: Array<{
@@ -150,8 +150,8 @@ export function PlanContent({ destinations, states = [] }: PlanContentProps) {
 
         // Why it matches
         const reasons: string[] = [];
-        if (score >= 4) reasons.push(`Scores ${score}/5 in ${getMonthName(month)}`);
-        if (traveler === "family" && kf?.suitable) reasons.push(`Kids rating: ${kf.rating}/5`);
+        if (score >= 4) reasons.push(`Scores ${formatScoreInline(score)} in ${getMonthName(month)}`);
+        if (traveler === "family" && kf?.suitable) reasons.push(`Kids rating: ${formatScoreInline(kf.rating)}`);
         if (traveler === "biker" && dest.tags?.includes("biker")) reasons.push("Biker-friendly route");
         if (traveler === "spiritual" && dest.tags?.includes("spiritual")) reasons.push("Spiritual destination");
         if (budget === dest.budget_tier) reasons.push(`Matches your ${budget} budget`);
@@ -160,7 +160,7 @@ export function PlanContent({ destinations, states = [] }: PlanContentProps) {
 
         // Honest warnings
         const warnings: string[] = [];
-        if (score <= 2 && score > 0) warnings.push(`Low season score (${score}/5)`);
+        if (score <= 2 && score > 0) warnings.push(`Low season score (${formatScoreInline(score)})`);
         if (traveler === "family" && !kf?.suitable) warnings.push("Not ideal for kids");
         if (dest.difficulty === "hard" && traveler === "family") warnings.push("Difficult terrain for families");
         if (dest.difficulty === "extreme") warnings.push("Extreme conditions — experienced only");
@@ -544,7 +544,7 @@ export function PlanContent({ destinations, states = [] }: PlanContentProps) {
                         <span
                           className={`absolute top-2 right-2 inline-flex items-center rounded-full border px-2 py-1 text-xs font-medium backdrop-blur-sm ${SCORE_COLORS[dest.monthScore] ?? SCORE_COLORS[0]}`}
                         >
-                          {dest.monthScore}/5
+                          {formatScoreInline(dest.monthScore)}
                         </span>
                         <div className="absolute inset-0 bg-gradient-to-t from-card/80 to-transparent" />
                       </div>

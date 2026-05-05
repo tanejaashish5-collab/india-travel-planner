@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
+import { formatScoreInline } from "@itp/shared";
 
 export const dynamic = "force-dynamic";
 
@@ -208,7 +209,7 @@ export async function POST(req: NextRequest) {
   // Deterministic per-day rationale — composed from DB facts, not LLM output.
   function buildRationale(d: any): string {
     const parts: string[] = [];
-    if (d.monthScore) parts.push(`scores ${d.monthScore}/5 in ${MONTH_NAMES[month]}`);
+    if (d.monthScore) parts.push(`scores ${formatScoreInline(d.monthScore)} in ${MONTH_NAMES[month]}`);
     if (d.elevation && d.elevation > 2500) parts.push(`${d.elevation.toLocaleString()}m altitude`);
     if (d.difficulty && d.difficulty !== "moderate") parts.push(`${d.difficulty} terrain`);
     if (risk === "safety" && d.difficulty === "easy") parts.push("safe-first pick");

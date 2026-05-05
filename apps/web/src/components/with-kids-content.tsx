@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useTranslations } from "next-intl";
 import { FadeIn, SlideIn, ScrollReveal, StaggerContainer, StaggerItem } from "./animated-hero";
 import { SCORE_COLORS } from "@/lib/design-tokens";
+import { formatScoreInline } from "@itp/shared";
 
 const MONTH_NAMES = [
   "",
@@ -155,8 +156,8 @@ export function WithKidsContent({
                   {kf?.suitable ? "\uD83D\uDC76" : "\u26A0\uFE0F"}
                 </span>
                 <div>
-                  <div className="text-3xl font-bold font-mono">
-                    {kf?.rating ?? "N/A"}/5
+                  <div className="text-3xl font-bold font-mono tabular-nums">
+                    {kf?.rating != null ? formatScoreInline(kf.rating) : "N/A"}
                   </div>
                   <div className="text-sm font-medium text-muted-foreground">
                     Kids Friendliness Rating
@@ -263,7 +264,7 @@ export function WithKidsContent({
                       <span
                         className={`rounded-full border px-2.5 py-0.5 text-xs font-semibold ${SCORE_COLORS[m.score] ?? SCORE_COLORS[0]}`}
                       >
-                        {m.score}/5
+                        {formatScoreInline(m.score)}
                       </span>
                     </Link>
                   ))}
@@ -290,7 +291,7 @@ export function WithKidsContent({
                       <span
                         className={`rounded-full border px-2.5 py-0.5 text-xs font-semibold ${SCORE_COLORS[3]}`}
                       >
-                        {m.score}/5
+                        {formatScoreInline(m.score)}
                       </span>
                     </Link>
                   ))}
@@ -316,7 +317,7 @@ export function WithKidsContent({
                       <span
                         className={`rounded-full border px-2.5 py-0.5 text-xs font-semibold ${SCORE_COLORS[m.score] ?? SCORE_COLORS[0]}`}
                       >
-                        {m.score}/5
+                        {formatScoreInline(m.score)}
                       </span>
                     </div>
                   ))}
@@ -351,7 +352,7 @@ export function WithKidsContent({
                     <div
                       key={m}
                       className={`h-2 flex-1 rounded-full ${dotColor}`}
-                      title={`${MONTH_NAMES[m]}: ${s}/5`}
+                      title={`${MONTH_NAMES[m]}: ${formatScoreInline(s)}`}
                     />
                   );
                 })}
@@ -390,7 +391,7 @@ export function WithKidsContent({
                   </p>
                   {cc.safety_rating && (
                     <p className="mt-2 text-xs text-muted-foreground">
-                      Safety rating: {cc.safety_rating}/5
+                      Safety rating: {formatScoreInline(cc.safety_rating)}
                     </p>
                   )}
                 </div>

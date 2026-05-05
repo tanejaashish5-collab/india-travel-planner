@@ -13,7 +13,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const { locale } = await params;
   return {
   title: "How We Score — Methodology",
-  description: "Our scoring methodology explained: how we rate destinations 1-5 each month, calculate kids suitability, assess safety, and evaluate infrastructure. Every number is explainable.",
+  description: "Our scoring methodology explained: how we rate destinations on a 0–10 monthly scale, calculate kids suitability, assess safety, and evaluate infrastructure. Every number is explainable.",
 
     ...localeAlternates(locale, "/methodology"),
   };
@@ -71,15 +71,15 @@ export default async function MethodologyPage() {
             </p>
             <div className="space-y-2">
               {[
-                { score: 5, color: "bg-emerald-500/20 text-emerald-400 border-emerald-500/30", label: "Peak — go now", desc: "This is what the place is famous for. Weather perfect, everything open, activities at their best." },
-                { score: 4, color: "bg-blue-500/20 text-blue-400 border-blue-500/30", label: "Excellent", desc: "Minor tradeoffs — shoulder crowds, slight weather risk, but still a great time to visit." },
-                { score: 3, color: "bg-yellow-500/20 text-yellow-400 border-yellow-500/30", label: "Doable", desc: "Open and worth it, but not the headline experience. Shoulder season." },
-                { score: 2, color: "bg-orange-500/20 text-orange-400 border-orange-500/30", label: "Marginal", desc: "Significant downsides — rain, cold, partial closures, low payoff for the effort." },
-                { score: 1, color: "bg-red-500/20 text-red-400 border-red-500/30", label: "Avoid unless specific reason", desc: "Most things shut, conditions poor, or genuinely risky." },
-                { score: 0, color: "bg-zinc-500/20 text-zinc-400 border-zinc-500/30", label: "Closed / inaccessible", desc: "Place is physically inaccessible — snow, floods, official closure." },
+                { range: "10.0",      color: "bg-emerald-500/20 text-emerald-400 border-emerald-500/30", label: "Peak — go now", desc: "This is what the place is famous for. Weather perfect, everything open, activities at their best." },
+                { range: "8.0",       color: "bg-blue-500/20 text-blue-400 border-blue-500/30", label: "Excellent", desc: "Minor tradeoffs — shoulder crowds, slight weather risk, but still a great time to visit." },
+                { range: "6.0",       color: "bg-yellow-500/20 text-yellow-400 border-yellow-500/30", label: "Doable", desc: "Open and worth it, but not the headline experience. Shoulder season." },
+                { range: "4.0",       color: "bg-orange-500/20 text-orange-400 border-orange-500/30", label: "Marginal", desc: "Significant downsides — rain, cold, partial closures, low payoff for the effort." },
+                { range: "2.0",       color: "bg-red-500/20 text-red-400 border-red-500/30", label: "Avoid unless specific reason", desc: "Most things shut, conditions poor, or genuinely risky." },
+                { range: "0.0",       color: "bg-zinc-500/20 text-zinc-400 border-zinc-500/30", label: "Closed / inaccessible", desc: "Place is physically inaccessible — snow, floods, official closure." },
               ].map((s) => (
-                <div key={s.score} className={`flex items-start gap-3 rounded-xl border p-3 ${s.color}`}>
-                  <span className="font-mono font-bold text-lg shrink-0 w-6 text-center">{s.score}</span>
+                <div key={s.range} className={`flex items-start gap-3 rounded-xl border p-3 ${s.color}`}>
+                  <span className="font-mono font-bold text-base shrink-0 w-12 text-center tabular-nums">{s.range}</span>
                   <div>
                     <div className="font-semibold text-sm">{s.label}</div>
                     <div className="text-xs opacity-80 mt-0.5">{s.desc}</div>
@@ -133,7 +133,7 @@ export default async function MethodologyPage() {
             <div className="mt-4 rounded-xl border border-yellow-500/20 bg-yellow-500/5 p-4">
               <p className="text-sm text-yellow-300/80">
                 <strong className="text-yellow-400">Important:</strong> A destination with stunning views but no hospital
-                within 4 hours, no ATM, and no phone signal will NEVER score 5/5 for kids — regardless of
+                within 4 hours, no ATM, and no phone signal will NEVER score 10/10 for kids — regardless of
                 how beautiful it is. We believe honest safety assessment matters more than Instagram-worthy scenery.
               </p>
             </div>

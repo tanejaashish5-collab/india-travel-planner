@@ -1,3 +1,5 @@
+import { formatScoreInline } from "@itp/shared";
+
 const MONTHS = [
   "", "January", "February", "March", "April", "May", "June",
   "July", "August", "September", "October", "November", "December",
@@ -58,7 +60,7 @@ export function ReviewsList({ reviews }: { reviews: any[] }) {
       {/* Summary */}
       <div className="flex items-center gap-3 mb-2">
         <Stars rating={Math.round(avgRating)} size="text-lg" />
-        <span className="text-lg font-bold">{avgRating.toFixed(1)}/5</span>
+        <span className="text-lg font-bold tabular-nums">{formatScoreInline(avgRating)}</span>
         <span className="text-sm text-muted-foreground">from {reviews.length} review{reviews.length !== 1 ? "s" : ""}</span>
       </div>
 

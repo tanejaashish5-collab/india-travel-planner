@@ -211,6 +211,113 @@
     "luxury": "Luxury",
     "skipColdStart": "Skip · open empty board →"
   },
+  "cinema": {
+    "dispatchKicker": "Dispatch — {month} {year}",
+    "dispatchEmpty": "No peak windows this month",
+    "nakshiqScore": "NakshIQ Score",
+    "verifiedThisMonth": "Verified this month",
+    "prev": "Prev",
+    "next": "Next",
+    "skipSection": "The Skip List",
+    "skipMeta": "{count} entries · updated this month",
+    "skipHeading": "The places we tell you to <strike>skip</strike>.",
+    "skipBlurb": "A travel brand cannot publish this list without losing a sponsor. <em>We're not a travel brand.</em>",
+    "tryInstead": "Try",
+    "scoreOutOf10": "Score / 10",
+    "avoidStamp": "Avoid",
+    "sceneCounter": "Scene {idx} / {total}",
+    "theScore": "The score",
+    "verifiedShort": "Verified",
+    "atlasSection": "The Atlas",
+    "atlasMeta": "{shown} / {total} placed this month",
+    "atlasHeadline": "<dim>This month, plotted </dim><em>where they actually are</em>",
+    "fieldLog": "Field log · this week",
+    "directorsCutSection": "Director's Cut",
+    "directorsCutMeta": "Tap a word — your dispatch updates",
+    "directorsCutPrompt": "Your intake — tap a word",
+    "directorsCutLeadIn": "We're going",
+    "directorsCutForThe": "for the",
+    "directorsCutNoMatch": "Nothing scoring above 6.0 in this category for this month.",
+    "verdictLive": "Verdict · live",
+    "editorsNote": "Editor's note",
+    "editorsNoteNone": "Editor on assignment.",
+    "editorsAttribution": "— NakshIQ · {month} dispatch",
+    "readThisBrief": "Read this brief",
+    "who": {
+      "solo": "solo",
+      "twoOfUs": "two of us",
+      "withFamily": "with family",
+      "withKids": "with kids"
+    },
+    "vibe": {
+      "mountains": "mountains",
+      "beaches": "the coast",
+      "cities": "cities",
+      "wildlife": "the wild",
+      "heritage": "heritage"
+    },
+    "fieldNoteKicker": "Field note · {state} · {name}",
+    "fieldNoteAttribution": "— NakshIQ · {month} dispatch",
+    "dailiesSection": "The Dailies",
+    "dailiesMeta": "Unfakeable · live from the bureau",
+    "dailiesHeading": "<dim>Every entry, </dim><em>signed</em>",
+    "dailiesBlurb": "The most boring section. <em>The most important.</em>",
+    "statsVerifiedEntries": "Verified entries",
+    "statsFreshThisMonth": "Refreshed this month",
+    "statsSkipListed": "Skip-listed this month",
+    "statsSponsored": "Sponsored verdicts. Ever.",
+    "howWeScoreSection": "How we score",
+    "howWeScoreHeadline": "One number, every month, against six tests. Then we tell you what we'd actually do.",
+    "howWeScoreBands": {
+      "peak": {
+        "label": "Peak",
+        "copy": "Go now. Window will close."
+      },
+      "excellent": {
+        "label": "Excellent",
+        "copy": "Worth the trip. Plan around the catch."
+      },
+      "doable": {
+        "label": "Doable",
+        "copy": "Fine if you have a reason."
+      },
+      "marginal": {
+        "label": "Marginal",
+        "copy": "Specific risk. Read carefully."
+      },
+      "avoid": {
+        "label": "Avoid",
+        "copy": "Try our suggested alternative."
+      }
+    },
+    "storiesSection": "Map-led stories",
+    "storiesMeta": "Curated routes — drawn over the data",
+    "storiesHeadline": "Routes drawn over the data",
+    "storyStops": "{count} stops",
+    "codaLabel": "Coda",
+    "codaLede": "We can't make the road easier. We can't make the weather kinder. But we can tell you what's actually there — <em>and trust you with the answer.</em>",
+    "codaSignoff": "Go with confidence",
+    "windowHeadline": "The Window — every Sunday",
+    "windowSubhead": "One score. One skip. Four minutes.",
+    "windowSubscribe": "Subscribe →",
+    "windowFootnote": "Free · no spam · unsubscribe anytime",
+    "credits": "Credits",
+    "creditsLabels": {
+      "bureau": "Bureau",
+      "founded": "Founded",
+      "nextDrop": "Next drop"
+    },
+    "creditsBureau": "Naksh.iq · India",
+    "creditsFounded": "2022",
+    "creditsNextDrop": "Sun 06:00 IST",
+    "openMonthAtlas": "Open the {month} atlas",
+    "tellUsYourTrip": "Tell us your trip",
+    "footerEditorial": "Editorial",
+    "footerAbout": "About",
+    "footerContact": "Contact",
+    "footerPrivacy": "Privacy",
+    "footerTerms": "Terms"
+  },
   "footer": {
     "discover": "Discover",
     "planBuild": "Plan & Build",

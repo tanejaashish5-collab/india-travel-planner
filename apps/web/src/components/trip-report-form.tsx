@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { currentMonthIST } from "@itp/shared";
+import { currentMonthIST, formatScoreInline } from "@itp/shared";
 
 type Props = {
   destination_id: string;
@@ -129,10 +129,10 @@ export function TripReportForm({ destination_id, destination_name, state_name, l
         </div>
         <div>
           <label htmlFor="tr-rating" className="mb-1.5 block text-xs font-medium text-muted-foreground">
-            Your rating (1–5)
+            Your rating (2–10)
           </label>
           <select id="tr-rating" value={rating} onChange={(e) => setRating(Number(e.target.value))} className="w-full rounded-xl border border-border bg-background px-3 py-2.5 text-sm focus:border-primary focus:outline-none">
-            {[5, 4, 3, 2, 1].map((r) => <option key={r} value={r}>{r}/5 — {r === 5 ? "Exceeded" : r === 4 ? "Great" : r === 3 ? "Mixed" : r === 2 ? "Disappointing" : "Avoid"}</option>)}
+            {[5, 4, 3, 2, 1].map((r) => <option key={r} value={r}>{formatScoreInline(r)} — {r === 5 ? "Exceeded" : r === 4 ? "Great" : r === 3 ? "Mixed" : r === 2 ? "Disappointing" : "Avoid"}</option>)}
           </select>
         </div>
       </div>

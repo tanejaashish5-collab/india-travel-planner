@@ -173,6 +173,58 @@
     font-weight: 500;
     letter-spacing: -0.01em;
   }
+  /* Cinema typography — propagated site-wide so destination / state /
+     hub / collection pages can opt into the same editorial voice the
+     landing uses. Strict pair: Fraunces italic for displays, Geist Mono
+     for kicker labels and scores. Cinema-deviation tracking (.18em) on
+     uppercase labels per the cinema voice rules. */
+  .nq-display-italic {
+    font-family: var(--font-fraunces), Georgia, serif;
+    font-style: italic;
+    font-weight: 500;
+    letter-spacing: -0.025em;
+    line-height: 0.92;
+  }
+  .nq-kicker {
+    font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+  }
+  .nq-score {
+    font-family: var(--font-geist-mono), ui-monospace, "SF Mono", Menlo, monospace;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.04em;
+  }
+}
+
+/* ── Devanagari font pairing — Tiro Devanagari Hindi covers the Devanagari
+   range that Fraunces lacks. Without this, the giant italic display titles
+   on `/hi` pages fall back to system fonts and break the visual rhythm.
+   `unicode-range: U+0900-097F` scopes Tiro to Devanagari only so Latin
+   characters in mixed strings still render in Fraunces. ── */
+@font-face {
+  font-family: "TiroDevanagariFallback";
+  src: url("https://fonts.gstatic.com/s/tirodevanagarihindi/v8/55xyezN5UBXN0Y3l4yHGSyz4xx9izv_yqyzVLwM5oU0.woff2") format("woff2");
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  unicode-range: U+0900-097F, U+1CD0-1CFF, U+200C-200D, U+2010-2011, U+25CC, U+A8E0-A8FF;
+}
+@font-face {
+  font-family: "TiroDevanagariFallback";
+  src: url("https://fonts.gstatic.com/s/tirodevanagarihindi/v8/55xqezN5UBXN0Y3l4yHGSyz4xVK0qg5_g7T39Q.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  unicode-range: U+0900-097F, U+1CD0-1CFF, U+200C-200D, U+2010-2011, U+25CC, U+A8E0-A8FF;
+}
+/* Make the Devanagari fallback available wherever Fraunces is used. */
+.font-display-italic, .nq-display-italic, .font-heading, h1, h2 {
+  font-family: var(--font-fraunces), "TiroDevanagariFallback", Georgia, serif;
 }
 
 /* Editorial serif headings — now handled in @layer base above */

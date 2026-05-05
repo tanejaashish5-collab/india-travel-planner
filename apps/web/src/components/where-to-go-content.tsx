@@ -13,6 +13,7 @@ import {
 } from "./animated-hero";
 import { SCORE_COLORS, SCORE_SOLID, DIFFICULTY_COLORS } from "@/lib/design-tokens";
 import { destinationImage } from "@/lib/image-url";
+import { formatScoreInline } from "@itp/shared";
 import { videoSrc } from "@/lib/video-url";
 
 // ─── Constants ──────────────────────────────────────────────
@@ -129,20 +130,20 @@ function DestinationCard({
 
             {/* Score badge */}
             <span
-              className={`absolute top-2 right-2 rounded-full px-2 py-0.5 text-xs font-bold ${SCORE_SOLID[d.score] ?? SCORE_SOLID[0]}`}
+              className={`absolute top-2 right-2 rounded-full px-2 py-0.5 text-xs font-bold tabular-nums ${SCORE_SOLID[d.score] ?? SCORE_SOLID[0]}`}
             >
-              {d.score}/5
+              {formatScoreInline(d.score)}
             </span>
 
             {/* Solo-female safety badge */}
             {soloFemaleEff != null && (
               <span
                 className={`absolute top-2 left-2 inline-flex items-center gap-1 rounded-full border px-2 py-0.5 text-[11px] font-medium backdrop-blur-sm ${SOLO_FEMALE_COLOR[soloFemaleEff] ?? ""}`}
-                title={`Solo-female safety: ${soloFemaleEff}/5${d.solo_female_override != null ? " (month-specific)" : ""}`}
-                aria-label={`Solo-female score ${soloFemaleEff} of 5`}
+                title={`Solo-female safety: ${formatScoreInline(soloFemaleEff)}${d.solo_female_override != null ? " (month-specific)" : ""}`}
+                aria-label={`Solo-female score ${formatScoreInline(soloFemaleEff)}`}
               >
                 <span className="font-serif italic" style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}>♀</span>
-                <span>{soloFemaleEff}/5</span>
+                <span>{formatScoreInline(soloFemaleEff)}</span>
               </span>
             )}
 
@@ -190,8 +191,8 @@ function DestinationCard({
 function AvoidCard({ d }: { d: DestMonthRow }) {
   return (
     <div className="flex items-start gap-3 rounded-lg border border-red-500/10 bg-red-500/[0.03] px-4 py-3">
-      <span className="mt-0.5 shrink-0 rounded-full bg-red-500/20 px-2 py-0.5 text-xs font-bold text-red-400">
-        {d.score}/5
+      <span className="mt-0.5 shrink-0 rounded-full bg-red-500/20 px-2 py-0.5 text-xs font-bold text-red-400 tabular-nums">
+        {formatScoreInline(d.score)}
       </span>
       <div className="min-w-0">
         <span className="font-medium text-zinc-200">{d.name}</span>

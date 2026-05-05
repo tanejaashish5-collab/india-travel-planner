@@ -4,7 +4,7 @@ import { useState, useMemo } from "react";
 import Link from "next/link";
 import { useLocale } from "next-intl";
 import { m as motion, AnimatePresence } from "framer-motion";
-import { currentMonthIST } from "@itp/shared";
+import { currentMonthIST, formatScore, formatScoreInline } from "@itp/shared";
 
 const MONTH_NAMES = ["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
 const MONTH_FULL = ["","January","February","March","April","May","June","July","August","September","October","November","December"];
@@ -141,10 +141,10 @@ export function RouteBuilder({ destinations }: { destinations: any[] }) {
                     </div>
                     <div className="flex items-center gap-2">
                       {monthScore !== undefined && (
-                        <span className={`text-xs font-mono font-bold ${
+                        <span className={`text-xs font-mono font-bold tabular-nums ${
                           monthScore >= 4 ? "text-emerald-400" : monthScore >= 3 ? "text-yellow-400" : "text-red-400"
                         }`}>
-                          {monthScore}/5
+                          {formatScoreInline(monthScore)}
                         </span>
                       )}
                       <span className="text-xs">{isSelected ? "✓" : "+"}</span>
@@ -203,10 +203,10 @@ export function RouteBuilder({ destinations }: { destinations: any[] }) {
 
                       {/* Score */}
                       {monthScore !== undefined && (
-                        <span className={`text-sm font-mono font-bold ${
+                        <span className={`text-sm font-mono font-bold tabular-nums ${
                           monthScore >= 4 ? "text-emerald-400" : monthScore >= 3 ? "text-yellow-400" : "text-red-400"
                         }`}>
-                          {monthScore}/5
+                          {formatScoreInline(monthScore)}
                         </span>
                       )}
 
@@ -230,9 +230,9 @@ export function RouteBuilder({ destinations }: { destinations: any[] }) {
                   <div className="text-xs text-muted-foreground">Stops</div>
                 </div>
                 <div className="rounded-lg bg-muted/30 p-2.5 text-center">
-                  <div className={`text-lg font-mono font-bold ${
+                  <div className={`text-lg font-mono font-bold tabular-nums ${
                     parseFloat(routeStats.avgScore) >= 4 ? "text-emerald-400" : parseFloat(routeStats.avgScore) >= 3 ? "text-yellow-400" : "text-red-400"
-                  }`}>{routeStats.avgScore}/5</div>
+                  }`}>{formatScoreInline(parseFloat(routeStats.avgScore))}</div>
                   <div className="text-xs text-muted-foreground">Avg Score</div>
                 </div>
                 <div className="rounded-lg bg-muted/30 p-2.5 text-center">

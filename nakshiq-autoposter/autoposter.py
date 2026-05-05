@@ -285,8 +285,30 @@ KNOWN_FESTIVAL_END_DAYS: dict[str, int] = {
 FESTIVAL_PLANNING_CUTOFF_DAY = 14
 
 # Total destinations Nakshiq scores — populated from /stats on each sync.
-# Fallback keeps copy sensible if the stats call fails for any reason.
-TOTAL_DESTINATIONS = 260
+# Fallback is the current real catalog size as of 2026-05-05 so captions are
+# never wildly off if the stats call fails. Keep this in sync with
+# apps/web/src/lib/stats.ts:FALLBACK.destinations.
+TOTAL_DESTINATIONS = 505
+
+# ── Score display ─────────────────────────────────────────────────
+# DB stores raw 0–5 integer scores. We display ×2 with one decimal so the
+# 0–10 critic-style scale ("8.0", "10.0") is consistent with apps/web,
+# emails, and the cinematic landing. Mirror of @itp/shared formatScore.
+SCORE_MAX = 10
+
+def format_score(raw) -> str:
+    """0-5 raw → 'X.X' on the displayed 0-10 scale. None → '—'."""
+    if raw is None:
+        return "—"
+    try:
+        v = float(raw)
+    except (TypeError, ValueError):
+        return "—"
+    return f"{min(SCORE_MAX, max(0, v * 2)):.1f}"
+
+def format_score_inline(raw) -> str:
+    """0-5 raw → 'X.X/10' for inline use in caption sentences."""
+    return f"{format_score(raw)}/{SCORE_MAX}"
 
 # Brand-voice guardrails. Captions are passed through sanitize() before publishing
 # so these phrases/hashtags never reach the platforms.
@@ -825,11 +847,23 @@ def sync_all_content() -> dict:
         "treks":        nakshiq_fetch("treks",        {"month": month, "limit": 50}),
         "eateries":     nakshiq_fetch("eateries",     {"limit": 100}),
     }
-    # Keep TOTAL_DESTINATIONS in sync with the real catalog size.
+    # Keep TOTAL_DESTINATIONS in sync with the real catalog size. WARN loudly
+    # when the /stats endpoint returns nothing or a degenerate value, since
+    # captions interpolate this number directly ("NakshIQ scores N
+    # destinations monthly"). Silent fallback to a stale constant is what
+    # caused the "260" / "300–350" drift.
     global TOTAL_DESTINATIONS
     stats_total = (content.get("stats") or {}).get("data", {}).get("destinations")
     if isinstance(stats_total, int) and stats_total > 0:
+        if stats_total != TOTAL_DESTINATIONS:
+            log.info(f"TOTAL_DESTINATIONS updated: {TOTAL_DESTINATIONS} → {stats_total}")
         TOTAL_DESTINATIONS = stats_total
+    else:
+        log.warning(
+            f"⚠️  /stats sync returned {stats_total!r}; "
+            f"falling back to hardcoded TOTAL_DESTINATIONS={TOTAL_DESTINATIONS}. "
+            f"Captions will use this fallback — verify it matches the real catalog."
+        )
     log.info(
         f"Synced → {len(content['destinations'].get('data',[]))} destinations · "
         f"{len(content['traps'].get('data',[]))} traps · "
@@ -1215,7 +1249,7 @@ def copy_reality_check(destinations: list, platform: str,
     if platform == "facebook":
         body = (
             f"REALITY CHECK — {month_name().upper()} {date.today().year}\n\n"
-            f"Both score {a['score']}/5 this month. Same region. Very different experience.\n\n"
+            f"Both score {format_score_inline(a['score'])} this month. Same region. Very different experience.\n\n"
             f"❌ {a['name'].upper()} (↑{a['elevation_m']:,}m)\n{a['tagline']}\n\n"
             f"✅ {b['name'].upper()} (↑{b['elevation_m']:,}m)\n{b['tagline']}\n"
             + (f"{note}\n\n" if note else "\n")
@@ -1225,7 +1259,7 @@ def copy_reality_check(destinations: list, platform: str,
     else:
         body = (
             f"SAME SCORE. DIFFERENT SATURDAY.\n\n"
-            f"{a['name']} and {b['name']} both score {a['score']}/5 this {month_name()}.\n\n"
+            f"{a['name']} and {b['name']} both score {format_score_inline(a['score'])} this {month_name()}.\n\n"
             f"{a['name']}: {a['tagline']}\n\n{b['name']}: {b['tagline']}\n"
             + (f"{note}\n\n" if note else "\n")
             + f"NakshIQ scores {TOTAL_DESTINATIONS} destinations monthly.\n\n"
@@ -1245,16 +1279,16 @@ def copy_data_carousel(destinations: list, platform: str) -> str:
     explore_url = utm("https://nakshiq.com/en/explore", "social", "post", "carousel")
     if platform == "facebook":
         return (
-            f"{month_name().upper()}'S REAL 5/5 DESTINATIONS\n\n"
-            f"NakshIQ scored {TOTAL_DESTINATIONS} destinations this {month_name()}. 20 hit 5/5. "
+            f"{month_name().upper()}'S REAL 10/10 DESTINATIONS\n\n"
+            f"NakshIQ scored {TOTAL_DESTINATIONS} destinations this {month_name()}. 20 hit 10/10. "
             f"Most travelers are booking the same 4.\n\n"
             f"Here's what the data actually shows:\n\n{lines}\n\n"
-            f"Every score is monthly — 5/5 in {month_name()} may be 2/5 in August.\n\n"
+            f"Every score is monthly — 10/10 in {month_name()} may be 4/10 in August.\n\n"
             f"Full ranked list → {explore_url}\n\n{tags}"
         ).strip()
     else:
         return (
-            f"{month_name().upper()}'S 5/5 PICKS\n(Save — the window closes fast)\n\n"
+            f"{month_name().upper()}'S 10/10 PICKS\n(Save — the window closes fast)\n\n"
             f"{lines}\n\n"
             f"NakshIQ scores {TOTAL_DESTINATIONS} destinations monthly. These are {month_name()}'s facts.\n\n"
             f"↓ Full scores → {explore_url}\n\n{tags}"
@@ -1295,7 +1329,7 @@ def copy_monthly_forecast(destinations: list, platform: str) -> str:
                    "BestTimeToVisit", f"{month_name()}Travel", "NakshIQ")
     return (
         f"📊 {month_name().upper()} FORECAST — NakshIQ Monthly Update\n\n"
-        f"{TOTAL_DESTINATIONS} destinations re-scored. This month's top 5/5 picks:\n\n{lines}\n\n"
+        f"{TOTAL_DESTINATIONS} destinations re-scored. This month's top 10/10 picks:\n\n{lines}\n\n"
         f"Scores reset every month. What worked last month may not work now.\n\n"
         f"Full {month_name()} data → {explore_url}\n\n{tags}"
     ).strip()
@@ -1407,18 +1441,18 @@ def copy_seasonal_shift(dest: dict, next_month: str, next_score: int,
         if platform == "facebook":
             return (
                 f"⏳ {name.upper()} — TIMING IS EVERYTHING\n\n"
-                f"Right now: {score}/5 {stars_now}\n"
-                f"In {next_month}: {next_score}/5 {stars_next}\n\n"
-                f"That's a {score - next_score}-point drop. Weather shifts, roads close, "
+                f"Right now: {format_score_inline(score)} {stars_now}\n"
+                f"In {next_month}: {format_score_inline(next_score)} {stars_next}\n\n"
+                f"That's a {(score - next_score) * 2}-point drop. Weather shifts, roads close, "
                 f"crowds change.\n\n"
-                f"Would you rather visit a 5/5 or a 2/5? The data says go now.\n\n"
+                f"Would you rather visit a 10/10 or a 4/10? The data says go now.\n\n"
                 f"Full {name} breakdown → {url}\n\n{tags}"
             ).strip()
         else:
             return (
                 f"⏳ {name.upper()} · {month_name().upper()} → {next_month.upper()}\n"
-                f"{stars_now} {score}/5 now → {stars_next} {next_score}/5\n\n"
-                f"That's a {score - next_score}-point drop in 30 days.\n\n"
+                f"{stars_now} {format_score_inline(score)} now → {stars_next} {format_score_inline(next_score)}\n\n"
+                f"That's a {(score - next_score) * 2}-point drop in 30 days.\n\n"
                 f"Roads, weather, crowds — something shifts. "
                 f"NakshIQ tracks it so you don't have to guess.\n\n"
                 f"Save this. {name} detail → {url}\n\n{tags}"
@@ -1441,8 +1475,8 @@ def copy_elevation_face_off(low_dest: dict, high_dest: dict,
         if platform == "facebook":
             return (
                 f"SEA LEVEL vs SKY LEVEL — both score high this {month_name()}\n\n"
-                f"🏖️ {lo_name} · {lo_elev:,}m · {lo_score}/5\n"
-                f"🏔️ {hi_name} · {hi_elev:,}m · {hi_score}/5\n\n"
+                f"🏖️ {lo_name} · {lo_elev:,}m · {format_score_inline(lo_score)}\n"
+                f"🏔️ {hi_name} · {hi_elev:,}m · {format_score_inline(hi_score)}\n\n"
                 f"Same month, same score, completely different experience.\n"
                 f"One's a beach escape. One needs a down jacket.\n\n"
                 f"Which elevation suits you? Both are data-backed this month.\n\n"
@@ -1451,8 +1485,8 @@ def copy_elevation_face_off(low_dest: dict, high_dest: dict,
         else:
             return (
                 f"🏖️ vs 🏔️ · {month_name().upper()}\n\n"
-                f"{lo_name} · {lo_elev:,}m · {lo_score}/5\n"
-                f"{hi_name} · {hi_elev:,}m · {hi_score}/5\n\n"
+                f"{lo_name} · {lo_elev:,}m · {format_score_inline(lo_score)}\n"
+                f"{hi_name} · {hi_elev:,}m · {format_score_inline(hi_score)}\n\n"
                 f"Same month. Same score. ↑{hi_elev - lo_elev:,}m apart.\n\n"
                 f"NakshIQ doesn't tell you where to go. "
                 f"It tells you what the data says — for {TOTAL_DESTINATIONS} destinations.\n\n"
@@ -1475,8 +1509,8 @@ def copy_state_showdown(dest_a: dict, dest_b: dict, platform: str) -> str:
         if platform == "facebook":
             return (
                 f"{a_state.upper()} vs {b_state.upper()} — {month_name()} data\n\n"
-                f"📍 {a_name} ({a_state}) · {a_score}/5\n"
-                f"📍 {b_name} ({b_state}) · {b_score}/5\n\n"
+                f"📍 {a_name} ({a_state}) · {format_score_inline(a_score)}\n"
+                f"📍 {b_name} ({b_state}) · {format_score_inline(b_score)}\n\n"
                 f"Same month, different states, different experience.\n"
                 f"Which state wins YOUR travel style this {month_name()}?\n\n"
                 f"{a_name} → {url_a}\n{b_name} → {url_b}\n\n{tags}"
@@ -1484,8 +1518,8 @@ def copy_state_showdown(dest_a: dict, dest_b: dict, platform: str) -> str:
         else:
             return (
                 f"{a_state.upper()} vs {b_state.upper()} · {month_name().upper()}\n\n"
-                f"📍 {a_name} · {a_score}/5\n"
-                f"📍 {b_name} · {b_score}/5\n\n"
+                f"📍 {a_name} · {format_score_inline(a_score)}\n"
+                f"📍 {b_name} · {format_score_inline(b_score)}\n\n"
                 f"Not opinions. Not listicles. Monthly scores from "
                 f"{TOTAL_DESTINATIONS} destinations.\n\n"
                 f"Compare → {url_a}\n\n{tags}"
@@ -1508,8 +1542,8 @@ def copy_difficulty_spectrum(easy_dest: dict, hard_dest: dict,
         if platform == "facebook":
             return (
                 f"EASY vs HARD — both score high this {month_name()}\n\n"
-                f"🟢 {e_name} · {e_diff} · {e_score}/5\n"
-                f"🔴 {h_name} · {h_diff} · {h_score}/5\n\n"
+                f"🟢 {e_name} · {e_diff} · {format_score_inline(e_score)}\n"
+                f"🔴 {h_name} · {h_diff} · {format_score_inline(h_score)}\n\n"
                 f"One's a relaxed getaway. One's a proper challenge.\n"
                 f"The data says both are excellent right now.\n\n"
                 f"Pick your speed → {url_e}\n\n{tags}"
@@ -1517,8 +1551,8 @@ def copy_difficulty_spectrum(easy_dest: dict, hard_dest: dict,
         else:
             return (
                 f"🟢 EASY vs 🔴 HARD · {month_name().upper()}\n\n"
-                f"{e_name} · {e_diff} · {e_score}/5\n"
-                f"{h_name} · {h_diff} · {h_score}/5\n\n"
+                f"{e_name} · {e_diff} · {format_score_inline(e_score)}\n"
+                f"{h_name} · {h_diff} · {format_score_inline(h_score)}\n\n"
                 f"Same month. Same score. Totally different trip.\n\n"
                 f"NakshIQ scores difficulty alongside everything else — "
                 f"roads, weather, crowds, safety.\n\n"
@@ -1544,7 +1578,7 @@ def copy_underdog_spotlight(dest: dict, platform: str) -> str:
         if platform == "facebook":
             return (
                 f"UNDERDOG ALERT: {name.upper()}\n\n"
-                f"{stars} {score}/5 · {elev:,}m · {state}\n\n"
+                f"{stars} {format_score_inline(score)} · {elev:,}m · {state}\n\n"
                 f"{tag}\n\n"
                 f"No one's talking about {name}. The data says they should be.\n"
                 f"Easy access. Low elevation. High score. "
@@ -1554,7 +1588,7 @@ def copy_underdog_spotlight(dest: dict, platform: str) -> str:
         else:
             return (
                 f"💎 UNDERDOG · {month_name().upper()}\n"
-                f"{name.upper()} · {stars} {score}/5\n"
+                f"{name.upper()} · {stars} {format_score_inline(score)}\n"
                 f"↑{elev:,}m · {state}\n\n"
                 f"{tag}\n\n"
                 f"Easy access. No hype. The data speaks.\n"
@@ -1579,11 +1613,11 @@ def copy_this_month_only(dest: dict, prev_score: int, next_score: int,
         if platform == "facebook":
             return (
                 f"🎯 {name.upper()} — THIS MONTH ONLY\n\n"
-                f"Last month: {prev_score}/5\n"
-                f"Right now: {score}/5 ★★★★★\n"
-                f"Next month: {next_score}/5\n\n"
+                f"Last month: {format_score_inline(prev_score)}\n"
+                f"Right now: {format_score_inline(score)} ★★★★★\n"
+                f"Next month: {format_score_inline(next_score)}\n\n"
                 f"{name} has a narrow window. The conditions that make it "
-                f"{score}/5 won't last.\n\n"
+                f"{format_score_inline(score)} won't last.\n\n"
                 f"This isn't FOMO. It's data. {TOTAL_DESTINATIONS} destinations, "
                 f"scored monthly.\n\n"
                 f"Plan fast → {url}\n\n{tags}"
@@ -1592,9 +1626,9 @@ def copy_this_month_only(dest: dict, prev_score: int, next_score: int,
             return (
                 f"🎯 NARROW WINDOW · {month_name().upper()}\n"
                 f"{name.upper()} · {state}\n\n"
-                f"Last month: {prev_score}/5\n"
-                f"NOW: {score}/5 ★★★★★\n"
-                f"Next month: {next_score}/5\n\n"
+                f"Last month: {format_score_inline(prev_score)}\n"
+                f"NOW: {format_score_inline(score)} ★★★★★\n"
+                f"Next month: {format_score_inline(next_score)}\n\n"
                 f"The data says go now or wait a year.\n\n"
                 f"Save → {url}\n\n{tags}"
             ).strip()
@@ -1619,7 +1653,7 @@ def copy_adventure_pick(dest: dict, platform: str) -> str:
         if platform == "facebook":
             return (
                 f"🧗 ADVENTURE PICK: {name.upper()}\n\n"
-                f"{stars} {score}/5 · {elev:,}m · {diff} · {state}\n\n"
+                f"{stars} {format_score_inline(score)} · {elev:,}m · {diff} · {state}\n\n"
                 f"{tag}\n\n"
                 f"Not every destination is a weekend escape. {name} asks "
                 f"something of you — and the data says {month_name()} is the month to answer.\n\n"
@@ -1628,7 +1662,7 @@ def copy_adventure_pick(dest: dict, platform: str) -> str:
         else:
             return (
                 f"🧗 ADVENTURE · {month_name().upper()}\n"
-                f"{name.upper()} · {stars} {score}/5\n"
+                f"{name.upper()} · {stars} {format_score_inline(score)}\n"
                 f"↑{elev:,}m · {diff} · {state}\n\n"
                 f"{tag}\n\n"
                 f"For those who don't do easy.\n"
@@ -1667,26 +1701,26 @@ def copy_weekend_escape(dest: dict, platform: str) -> str:
         import hashlib
         hook_seed = int(hashlib.md5(name.encode()).hexdigest(), 16) % 6
         hooks_fb = [
-            f"{name} scores {score}/5 this {month_name()}. You don't need a week off — just 48 hours and a plan.",
-            f"Two days. {name}. {score}/5 confidence score. The data says go — this {month_name()}.",
-            f"Skip the long-leave request. {name} is a {score}/5 this {month_name()} and 48 hours is all you need.",
-            f"Your next 48 hours could look like {name} — {score}/5, {diff.lower()} access, {state}.",
-            f"{name} this {month_name()}? {score}/5. {diff} access. Two days is enough to do it right.",
-            f"Friday evening to Sunday night. {name}. {score}/5 this {month_name()}. Data-backed, not guesswork.",
+            f"{name} scores {format_score_inline(score)} this {month_name()}. You don't need a week off — just 48 hours and a plan.",
+            f"Two days. {name}. {format_score_inline(score)} confidence score. The data says go — this {month_name()}.",
+            f"Skip the long-leave request. {name} is a {format_score_inline(score)} this {month_name()} and 48 hours is all you need.",
+            f"Your next 48 hours could look like {name} — {format_score_inline(score)}, {diff.lower()} access, {state}.",
+            f"{name} this {month_name()}? {format_score_inline(score)}. {diff} access. Two days is enough to do it right.",
+            f"Friday evening to Sunday night. {name}. {format_score_inline(score)} this {month_name()}. Data-backed, not guesswork.",
         ]
         hooks_ig = [
-            f"48 hours. {name}. {score}/5 this {month_name()}.",
-            f"Two days. {diff} access. {score}/5 confidence.",
+            f"48 hours. {name}. {format_score_inline(score)} this {month_name()}.",
+            f"Two days. {diff} access. {format_score_inline(score)} confidence.",
             f"Skip the week off. {name} works in 48 hours.",
-            f"Friday to Sunday. {name}. {score}/5.",
-            f"{name} — {score}/5. {diff}. Two days.",
-            f"48 hrs is enough. {name}. {score}/5.",
+            f"Friday to Sunday. {name}. {format_score_inline(score)}.",
+            f"{name} — {format_score_inline(score)}. {diff}. Two days.",
+            f"48 hrs is enough. {name}. {format_score_inline(score)}.",
         ]
 
         if platform == "facebook":
             parts = [
                 f"🌿 WEEKEND ESCAPE: {name.upper()}\n",
-                f"{stars} {score}/5 · {elev:,}m · {diff} access · {state}\n",
+                f"{stars} {format_score_inline(score)} · {elev:,}m · {diff} access · {state}\n",
             ]
             if detail:
                 parts.append(f"\n{detail}\n")
@@ -1696,7 +1730,7 @@ def copy_weekend_escape(dest: dict, platform: str) -> str:
         else:
             parts = [
                 f"🌿 WEEKEND ESCAPE · {month_name().upper()}\n",
-                f"{name.upper()} · {stars} {score}/5\n",
+                f"{name.upper()} · {stars} {format_score_inline(score)}\n",
                 f"↑{elev:,}m · {diff} · {state}\n",
             ]
             if detail:
@@ -1959,13 +1993,13 @@ def copy_skip_list(dest: dict, platform: str,
         # Forward-looking Skip List: "5/5 now but dropping to 2/5 in July"
         current_score = dest.get("score", 0)
         header = (f"🚩 UPCOMING SKIP LIST — {forward_month.upper()}\n\n"
-                  f"{name.upper()} ({state}): {current_score}/5 this {this_mo.title()}.\n"
-                  f"{forward_score}/5 in {forward_month}.")
+                  f"{name.upper()} ({state}): {format_score_inline(current_score)} this {this_mo.title()}.\n"
+                  f"{format_score_inline(forward_score)} in {forward_month}.")
     else:
         # Standard Skip List: destination scoring low THIS month
         score  = dest.get("score", 0)
         header = (f"🚩 SKIP LIST — {this_mo} {date.today().year}\n\n"
-                  f"{name.upper()} ({state}): {score}/5 this month.")
+                  f"{name.upper()} ({state}): {format_score_inline(score)} this month.")
 
     if platform == "facebook":
         return (
@@ -2078,7 +2112,7 @@ def copy_data_provenance(dest: dict, platform: str) -> str:
     url   = dest_url(dest, "social", "post", "score-card")
     if platform == "facebook":
         return (
-            f"WHY {name.upper()} SCORES {score}/5 IN {mon.upper()}\n\n"
+            f"WHY {name.upper()} SCORES {format_score_inline(score)} IN {mon.upper()}\n\n"
             f"This isn't a vibe check. Here's what went into the score:\n\n"
             f"• Elevation: ↑ {elev:,}m (altitude tolerance factor)\n"
             f"• State: {state}\n"
@@ -2092,7 +2126,7 @@ def copy_data_provenance(dest: dict, platform: str) -> str:
                       name.replace(" ", ""), state.replace(" ", ""), "NakshIQ")
         ).strip()
     return (
-        f"WHY {name.upper()}: {score}/5\n"
+        f"WHY {name.upper()}: {format_score_inline(score)}\n"
         f"· {mon.upper()} ·\n\n"
         f"↑ {elev:,}m · {state}\n"
         f"Difficulty: {diff}\n\n"
@@ -2113,7 +2147,7 @@ def copy_same_place_12_months(dest: dict, monthly_scores: dict, platform: str) -
     months_abbr = ["JAN","FEB","MAR","APR","MAY","JUN",
                    "JUL","AUG","SEP","OCT","NOV","DEC"]
     lines = "\n".join(
-        f"  {months_abbr[i]}: {monthly_scores.get(i+1, '?')}/5"
+        f"  {months_abbr[i]}: {format_score(monthly_scores.get(i+1)) if monthly_scores.get(i+1) is not None else '?'}/{SCORE_MAX}"
         for i in range(12)
     )
     if platform == "facebook":
@@ -3446,7 +3480,7 @@ def _run_inner(force: bool, sync_only: bool, dry_run: bool,
             ordered = pick_oldest_unused(state, "destinations", current_low, key="id")
             content["__run_skip_dest__"] = ordered[0]
             log.info(f"Skip List target: {ordered[0]['name']} "
-                     f"({ordered[0].get('score','?')}/5 this month)")
+                     f"({format_score(ordered[0].get('score'))} this month)")
         else:
             # Forward-looking fallback: look up to 3 months ahead
             import calendar
@@ -3471,8 +3505,8 @@ def _run_inner(force: bool, sync_only: bool, dry_run: bool,
                     content["__run_skip_forward__"] = (fwd_month_name, target.get("score"))
                     forward = fwd_month_name
                     log.info(f"Skip List (forward {fwd_month_name}): "
-                             f"{target['name']} drops from {current_version.get('score','?')}/5 "
-                             f"to {target.get('score','?')}/5 in {fwd_month_name}")
+                             f"{target['name']} drops from {format_score(current_version.get('score'))} "
+                             f"to {format_score(target.get('score'))} in {fwd_month_name}")
                     break
             if not forward:
                 log.info("Skip List: no low-score destinations found in next 3 months — moat picker will rotate.")
@@ -3527,7 +3561,7 @@ def _run_inner(force: bool, sync_only: bool, dry_run: bool,
                 content["__run_seasonal_month__"] = nxt_name
                 content["__run_seasonal_score__"] = target.get("score", 2)
                 log.info(f"Seasonal Shift: {cur_ver['name']} "
-                         f"{cur_ver.get('score','?')}/5 → {target.get('score','?')}/5 in {nxt_name}")
+                         f"{format_score(cur_ver.get('score'))} → {format_score(target.get('score'))} in {nxt_name}")
                 break
 
     # 8b) Elevation Face-Off — pair a low-altitude with a high-altitude destination
@@ -5057,14 +5091,14 @@ FLOW_STORY_LOCK_FILE = Path(__file__).parent / ".autoposter-flow-story.lock"
 # Caption templates — destination-specific, no generic fluff
 FLOW_STORY_CAPTIONS_IG_SCORED = [
     (
-        "{dest}, {state} — {score}/5 this month\n\n"
+        "{dest}, {state} — {format_score_inline(score)} this month\n\n"
         "{score_note}\n\n"
         "NakshIQ scores 303 Indian destinations monthly.\n"
         "→ {dest_url}\n\n"
         "{hashtags}"
     ),
     (
-        "{dest} · NakshIQ Score: {score}/5\n\n"
+        "{dest} · NakshIQ Score: {format_score_inline(score)}\n\n"
         "{score_note}\n\n"
         "303 destinations. 5 dimensions. Updated monthly.\n"
         "→ {dest_url}\n\n"
@@ -5091,7 +5125,7 @@ FLOW_STORY_CAPTIONS_IG_UNSCORED = [
 
 FLOW_STORY_CAPTIONS_FB_SCORED = [
     (
-        "{dest}, {state} — {score}/5 this month\n\n"
+        "{dest}, {state} — {format_score_inline(score)} this month\n\n"
         "{score_note}\n\n"
         "We score 303 destinations monthly so you don't have to guess.\n"
         "→ {dest_url}"
@@ -5380,7 +5414,7 @@ def _run_flow_story(force: bool = False, dry_run: bool = False):
     chosen_score = _seasonal_score(chosen)
     if chosen_score > 0:
         chosen["_score"] = chosen_score
-        log.info(f"Seasonal score: {chosen_score}/5 for {chosen.get('dest')}")
+        log.info(f"Seasonal score: {format_score_inline(chosen_score)} for {chosen.get('dest')}")
 
     log.info(f"Selected: {chosen['file']} → {chosen.get('dest', 'generic')} "
              f"({chosen.get('state', '?')})")
@@ -5503,9 +5537,9 @@ REEL_FORMATS = ["score_reveal", "contrarian", "seasonal_shift", "trap_alert", "d
 REEL_CAPTION_TEMPLATES = {
     "score_reveal": (
         "🎯 Do NOT go to {dest} in {month}.\n\n"
-        "NakshIQ Score: {score}/5\n"
+        "NakshIQ Score: {score_display}\n"
         "{reason}\n\n"
-        "303 destinations. Real-time travel scores.\n"
+        "{total_destinations} destinations. Real-time travel scores.\n"
         "→ https://nakshiq.com?utm_source=social&utm_medium=reel&utm_campaign=reel\n\n"
         "—\n"
         "Data, not opinions.\n\n"
@@ -5513,8 +5547,8 @@ REEL_CAPTION_TEMPLATES = {
     ),
     "contrarian": (
         "💡 Everyone goes to {famous}. Smart travelers go to {hidden}.\n\n"
-        "{famous}: {famous_score}/5\n"
-        "{hidden}: {hidden_score}/5\n\n"
+        "{famous}: {famous_score_display}\n"
+        "{hidden}: {hidden_score_display}\n\n"
         "Same region. Less crowd. Better value.\n"
         "→ https://nakshiq.com?utm_source=social&utm_medium=reel&utm_campaign=reel\n\n"
         "—\n"
@@ -5522,10 +5556,10 @@ REEL_CAPTION_TEMPLATES = {
         "{hashtags}"
     ),
     "seasonal_shift": (
-        "⏰ {dest} is a {now_score}/5 right now.\n"
-        "In {future_month}? {future_score}/5.\n\n"
+        "⏰ {dest} is a {now_score_display} right now.\n"
+        "In {future_month}? {future_score_display}.\n\n"
         "Timing is everything.\n"
-        "303 destinations scored for every month.\n"
+        "{total_destinations} destinations scored for every month.\n"
         "→ https://nakshiq.com?utm_source=social&utm_medium=reel&utm_campaign=reel\n\n"
         "—\n"
         "Data, not opinions.\n\n"
@@ -5543,9 +5577,9 @@ REEL_CAPTION_TEMPLATES = {
     ),
     "destination_reveal": (
         "📍 Discover {dest}, {state}\n\n"
-        "NakshIQ Score: {score}/5\n"
+        "NakshIQ Score: {score_display}\n"
         "{tagline}\n\n"
-        "303 destinations. Real scores. Zero fluff.\n"
+        "{total_destinations} destinations. Real scores. Zero fluff.\n"
         "→ https://nakshiq.com?utm_source=social&utm_medium=reel&utm_campaign=reel\n\n"
         "—\n"
         "Travel with IQ.\n\n"
@@ -5576,22 +5610,31 @@ def _reel_caption(reel_format: str, data: dict, platform: str) -> str:
     hashtags = _reel_hashtags(dest_name, platform)
 
     try:
+        # Pre-format every score on the displayed 0–10 scale and pass the
+        # current catalog total in too — keeps reel captions in lockstep with
+        # web/email/post copy, no hardcoded "303 destinations".
         return template.format(
             dest=data.get("dest_name", ""),
             month=data.get("month", ""),
             score=data.get("score", ""),
+            score_display=format_score_inline(data.get("score")) if data.get("score") not in (None, "") else "",
             reason=data.get("reason", ""),
             famous=data.get("famous", ""),
             hidden=data.get("hidden", ""),
             famous_score=data.get("famous_score", ""),
             hidden_score=data.get("hidden_score", ""),
+            famous_score_display=format_score_inline(data.get("famous_score")) if data.get("famous_score") not in (None, "") else "",
+            hidden_score_display=format_score_inline(data.get("hidden_score")) if data.get("hidden_score") not in (None, "") else "",
             now_score=data.get("now_score", ""),
             future_month=data.get("future_month", ""),
             future_score=data.get("future_score", ""),
+            now_score_display=format_score_inline(data.get("now_score")) if data.get("now_score") not in (None, "") else "",
+            future_score_display=format_score_inline(data.get("future_score")) if data.get("future_score") not in (None, "") else "",
             trap=data.get("trap_name", ""),
             alternative=data.get("alternative", ""),
             state=data.get("state_name", "India"),
             tagline=data.get("tagline", ""),
+            total_destinations=TOTAL_DESTINATIONS,
             hashtags=hashtags,
         )
     except KeyError:

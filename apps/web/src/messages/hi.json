@@ -211,6 +211,113 @@
     "luxury": "लक्ज़री",
     "skipColdStart": "छोड़ें · खाली बोर्ड खोलें →"
   },
+  "cinema": {
+    "dispatchKicker": "डिस्पैच — {month} {year}",
+    "dispatchEmpty": "इस महीने कोई पीक विंडो नहीं",
+    "nakshiqScore": "नक्श.iq स्कोर",
+    "verifiedThisMonth": "इस महीने सत्यापित",
+    "prev": "पिछला",
+    "next": "अगला",
+    "skipSection": "स्किप लिस्ट",
+    "skipMeta": "{count} प्रविष्टियाँ · इस महीने अपडेट",
+    "skipHeading": "वो जगहें जिन्हें हम <strike>छोड़ने</strike> को कहते हैं.",
+    "skipBlurb": "एक ट्रैवल ब्रांड यह सूची प्रकाशित नहीं कर सकता बिना प्रायोजक खोए. <em>हम ट्रैवल ब्रांड नहीं हैं.</em>",
+    "tryInstead": "कोशिश करें",
+    "scoreOutOf10": "स्कोर / 10",
+    "avoidStamp": "बचें",
+    "sceneCounter": "दृश्य {idx} / {total}",
+    "theScore": "स्कोर",
+    "verifiedShort": "सत्यापित",
+    "atlasSection": "एटलस",
+    "atlasMeta": "{shown} / {total} इस महीने रखे गए",
+    "atlasHeadline": "<dim>इस महीने, </dim><em>जहाँ वे असल में हैं</em>",
+    "fieldLog": "फील्ड लॉग · इस सप्ताह",
+    "directorsCutSection": "डायरेक्टर्स कट",
+    "directorsCutMeta": "एक शब्द टैप करें — आपका डिस्पैच अपडेट होगा",
+    "directorsCutPrompt": "आपका इनटेक — एक शब्द टैप करें",
+    "directorsCutLeadIn": "हम जा रहे हैं",
+    "directorsCutForThe": "के लिए",
+    "directorsCutNoMatch": "इस महीने इस श्रेणी में 6.0 से ऊपर कुछ भी नहीं.",
+    "verdictLive": "वर्डिक्ट · लाइव",
+    "editorsNote": "संपादक की टिप्पणी",
+    "editorsNoteNone": "संपादक असाइनमेंट पर हैं.",
+    "editorsAttribution": "— नक्श.iq · {month} डिस्पैच",
+    "readThisBrief": "यह ब्रीफ पढ़ें",
+    "who": {
+      "solo": "अकेले",
+      "twoOfUs": "हम दो",
+      "withFamily": "परिवार के साथ",
+      "withKids": "बच्चों के साथ"
+    },
+    "vibe": {
+      "mountains": "पहाड़",
+      "beaches": "समुद्र तट",
+      "cities": "शहर",
+      "wildlife": "वन्य जीवन",
+      "heritage": "विरासत"
+    },
+    "fieldNoteKicker": "फील्ड नोट · {state} · {name}",
+    "fieldNoteAttribution": "— नक्श.iq · {month} डिस्पैच",
+    "dailiesSection": "द डेलीज़",
+    "dailiesMeta": "अनफेकेबल · ब्यूरो से लाइव",
+    "dailiesHeading": "<dim>हर प्रविष्टि, </dim><em>हस्ताक्षरित</em>",
+    "dailiesBlurb": "सबसे उबाऊ सेक्शन. <em>सबसे ज़रूरी.</em>",
+    "statsVerifiedEntries": "सत्यापित प्रविष्टियाँ",
+    "statsFreshThisMonth": "इस महीने ताज़ा",
+    "statsSkipListed": "इस महीने स्किप-लिस्ट",
+    "statsSponsored": "स्पॉन्सर्ड वर्डिक्ट. कभी नहीं.",
+    "howWeScoreSection": "हम कैसे स्कोर करते हैं",
+    "howWeScoreHeadline": "एक संख्या, हर महीने, छह परीक्षणों के विरुद्ध. फिर हम बताते हैं कि हम वास्तव में क्या करते.",
+    "howWeScoreBands": {
+      "peak": {
+        "label": "पीक",
+        "copy": "अभी जाएं. विंडो बंद होगी."
+      },
+      "excellent": {
+        "label": "उत्कृष्ट",
+        "copy": "यात्रा लायक. सावधानी से योजना बनाएं."
+      },
+      "doable": {
+        "label": "करने योग्य",
+        "copy": "कारण हो तो ठीक है."
+      },
+      "marginal": {
+        "label": "सीमांत",
+        "copy": "विशिष्ट जोखिम. ध्यान से पढ़ें."
+      },
+      "avoid": {
+        "label": "बचें",
+        "copy": "हमारा सुझाया विकल्प आज़माएं."
+      }
+    },
+    "storiesSection": "नक्शा-आधारित कहानियाँ",
+    "storiesMeta": "क्यूरेटेड रूट — डेटा पर खींचे गए",
+    "storiesHeadline": "डेटा पर खींचे गए रूट",
+    "storyStops": "{count} पड़ाव",
+    "codaLabel": "कोडा",
+    "codaLede": "हम सड़क को आसान नहीं बना सकते. हम मौसम को मेहरबान नहीं बना सकते. लेकिन हम बता सकते हैं कि वहाँ असल में क्या है — <em>और आपको जवाब के साथ भरोसा.</em>",
+    "codaSignoff": "विश्वास के साथ जाएं",
+    "windowHeadline": "द विंडो — हर रविवार",
+    "windowSubhead": "एक स्कोर. एक स्किप. चार मिनट.",
+    "windowSubscribe": "सब्सक्राइब →",
+    "windowFootnote": "मुफ़्त · कोई स्पैम नहीं · कभी भी अनसब्सक्राइब करें",
+    "credits": "क्रेडिट्स",
+    "creditsLabels": {
+      "bureau": "ब्यूरो",
+      "founded": "स्थापित",
+      "nextDrop": "अगला अंक"
+    },
+    "creditsBureau": "नक्श.iq · भारत",
+    "creditsFounded": "2022",
+    "creditsNextDrop": "रवि 06:00 IST",
+    "openMonthAtlas": "{month} एटलस खोलें",
+    "tellUsYourTrip": "अपनी यात्रा बताएं",
+    "footerEditorial": "संपादकीय",
+    "footerAbout": "हमारे बारे में",
+    "footerContact": "संपर्क",
+    "footerPrivacy": "गोपनीयता",
+    "footerTerms": "शर्तें"
+  },
   "footer": {
     "discover": "खोजें",
     "planBuild": "प्लान और बनाएं",

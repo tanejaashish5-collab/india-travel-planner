@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { m as motion } from "framer-motion";
 import { SCORE_COLORS, DIFFICULTY_COLORS } from "@/lib/design-tokens";
-import { currentMonthIST } from "@itp/shared";
+import { currentMonthIST, formatScoreInline } from "@itp/shared";
 
 interface Destination {
   id: string;
@@ -151,8 +151,8 @@ export function StateDestinationGrid({
                       {displayName}
                     </h3>
                     {score !== null && (
-                      <span className={`shrink-0 rounded-full border px-2 py-0.5 text-[10px] font-bold ${SCORE_COLORS[score] ?? SCORE_COLORS[0]}`}>
-                        {score}/5
+                      <span className={`shrink-0 rounded-full border px-2 py-0.5 text-[10px] font-bold tabular-nums ${SCORE_COLORS[score] ?? SCORE_COLORS[0]}`}>
+                        {formatScoreInline(score)}
                       </span>
                     )}
                   </div>
@@ -170,7 +170,7 @@ export function StateDestinationGrid({
                     {kf?.suitable && (
                       <>
                         <span>·</span>
-                        <span>👶 {kf.rating}/5</span>
+                        <span>👶 {formatScoreInline(kf.rating)}</span>
                       </>
                     )}
                     {typeof dest.solo_female_score === "number" && (
@@ -178,10 +178,10 @@ export function StateDestinationGrid({
                         <span>·</span>
                         <span
                           className={`inline-flex items-center gap-0.5 rounded-full border px-1.5 py-0 text-[9px] ${SOLO_FEMALE_COLOR[dest.solo_female_score] ?? ""}`}
-                          title={`Solo-female: ${dest.solo_female_score}/5`}
+                          title={`Solo-female: ${formatScoreInline(dest.solo_female_score)}`}
                         >
                           <span className="font-serif italic" style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}>♀</span>
-                          {dest.solo_female_score}/5
+                          {formatScoreInline(dest.solo_female_score)}
                         </span>
                       </>
                     )}

@@ -22,6 +22,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type { TripStateV2, TripStop } from "@/lib/trip-storage";
 import { PASSES_BY_DEST, dayOfYear } from "@/lib/passes";
+import { formatScore } from "@itp/shared";
 
 type DestLite = {
   id: string;
@@ -367,7 +368,7 @@ export function YearBand({
                   className={`nq-score nq-score-${Math.max(0, Math.min(5, score))}`}
                   style={{ padding: "2px 6px", fontSize: 11 }}
                 >
-                  {score}
+                  {formatScore(score)}
                 </span>
               </div>
             </div>

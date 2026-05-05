@@ -4,7 +4,7 @@ import { useState, useMemo, lazy, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { m as motion, AnimatePresence } from "framer-motion";
 import { REGION_GROUPS } from "@/lib/seo-maps";
-import { currentMonthLongIST } from "@itp/shared";
+import { currentMonthLongIST, formatScoreInline } from "@itp/shared";
 
 const IndiaMap = lazy(() => import("./india-map").then((mod) => ({ default: mod.IndiaMap })));
 
@@ -195,13 +195,13 @@ export function StatesExplorer({ states, locale }: { states: StateData[]; locale
                               : "bg-red-500/60 text-white"
                           }`}
                         >
-                          {state.avgScore.toFixed(1)}/5
+                          {formatScoreInline(state.avgScore)}
                         </span>
                         <span
                           role="tooltip"
                           className="pointer-events-none absolute right-0 top-full mt-2 z-20 whitespace-nowrap rounded-md border border-white/10 bg-black/85 backdrop-blur-md px-2.5 py-1.5 text-[10px] font-mono uppercase tracking-[0.16em] text-white/90 opacity-0 -translate-y-1 transition-all duration-200 group-hover/badge:opacity-100 group-hover/badge:translate-y-0"
                         >
-                          {currentMonthName} avg · {state.avgScore.toFixed(1)}/5
+                          {currentMonthName} avg · {formatScoreInline(state.avgScore)}
                         </span>
                       </span>
                     )}

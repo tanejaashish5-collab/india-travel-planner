@@ -17,6 +17,7 @@ import { useMemo } from "react";
 import type { TripStateV2 } from "@/lib/trip-storage";
 import type { LogisticsRow } from "@/lib/cost-aggregator";
 import { aggregate, inrFmt, type CostTier } from "@/lib/cost-aggregator";
+import { formatScoreInline } from "@itp/shared";
 
 const DAY_NAMES = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 const MONTH_LONG = [
@@ -277,7 +278,7 @@ export function SimpleView({
                     >
                       {dest?.state?.name ?? "—"}
                       {dest?.elevation_m ? ` · ${dest.elevation_m.toLocaleString()} m` : ""}
-                      {monthScore != null && ` · scores ${monthScore}/5 in ${MONTH_LONG[monthIdx]}`}
+                      {monthScore != null && ` · scores ${formatScoreInline(monthScore)} in ${MONTH_LONG[monthIdx]}`}
                     </div>
                     <div
                       style={{

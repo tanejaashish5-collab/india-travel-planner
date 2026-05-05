@@ -9,6 +9,7 @@ import { useRouter } from "next/navigation";
 import { getBrowserSupabase } from "@/lib/supabase-browser";
 import { videoSrc } from "@/lib/video-url";
 import { videoObjectJsonLd } from "@/lib/video-schema";
+import { formatScoreInline } from "@itp/shared";
 // LanguageToggle now in main Nav component
 import {
   FadeIn,
@@ -50,6 +51,7 @@ export function LandingHero({
   stats,
   festivals,
   mapPins,
+  hideOwnHero = false,
 }: {
   featuredDestinations: any[];
   collections: any[];
@@ -57,6 +59,11 @@ export function LandingHero({
   stats?: { places: number; destinations: number; states: number; routes: number; festivals: number; collections: number; treks: number; traps: number; permits: number; campingSpots: number };
   festivals?: any[];
   mapPins?: MapPin[];
+  // When true, suppresses the original hero section (video bg, headline, search,
+  // stats counter) so the cinematic ACT I Dispatch slideshow can take its place
+  // upstream. The Featured / Collections / Routes / Newsletter / CTA sections
+  // below the fold still render. PR 1 ship of the cinema redesign.
+  hideOwnHero?: boolean;
 }) {
   const locale = useLocale();
   const t = useTranslations("home");
@@ -89,12 +96,13 @@ export function LandingHero({
 
   return (
     <>
-      {heroVideoLd && (
+      {!hideOwnHero && heroVideoLd && (
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(heroVideoLd) }}
         />
       )}
+      {!hideOwnHero && (<>
       {/* Hero Section — day/night gradient */}
       <section className="relative min-h-screen flex flex-col items-center justify-center px-4 overflow-hidden">
         {/* Background video — LCP-safe: metadata-only preload (browsers won't
@@ -249,6 +257,7 @@ export function LandingHero({
           </div>
         </motion.div>
       </section>
+      </>)}
 
       {/* Sprint 11 homepage simplification: India Map + Region Cards section
          removed from homepage (lines 249-323). Hero already has 8 quick-region
@@ -305,7 +314,7 @@ export function LandingHero({
                           {/* Score badge */}
                           <div className="absolute top-3 right-3">
                             <span className="inline-flex items-center rounded-full bg-emerald-500/90 px-3 py-1 text-xs font-bold text-white shadow-lg backdrop-blur-sm">
-                              {item.score}/5
+                              {formatScoreInline(item.score)}
                             </span>
                           </div>
                           {/* Content over image */}

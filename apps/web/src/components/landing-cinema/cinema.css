@@ -1,0 +1,302 @@
+/* ============================================================
+   NakshIQ Cinema — scoped tokens for the landing page only.
+   Wrap the landing in <div className="nakshiq-cinema"> and these
+   custom-properties + utilities apply ONLY to that subtree, leaving
+   the rest of the site (destination, trip-board, tourist-traps, hubs)
+   untouched.
+
+   Design source: data/research/Landing Page/v1-editorial,
+   v3-atlas, v7-cinema, v7.2-reel, v8-final.
+   Plan: ~/.claude/plans/considering-changing-the-landing-replicated-origami.md
+   ============================================================ */
+
+.nakshiq-cinema {
+  /* Paper — warm-dark base, NOT pure black. The yellow-green undertone
+     reads as film/cinema rather than digital-cold. */
+  --paper:        #0a0a08;
+  --paper-2:      #11110e;
+  --paper-3:      #16160f;
+  --film:         #0c0c0a;
+  --film-2:       #111110;
+  --film-3:       #16160f;
+
+  /* Bone — warm cream for text. Never pure white. */
+  --bone:         #F5F1E8;
+  --bone-dim:     rgba(245, 241, 232, 0.62);
+  --bone-faint:   rgba(245, 241, 232, 0.32);
+  --hair:         rgba(245, 241, 232, 0.14);
+  --hair-2:       rgba(245, 241, 232, 0.08);
+
+  /* Vermillion — the brand red. Score badges, period dots, accents. */
+  --vermillion:        #E55642;
+  --vermillion-bright: #E55642;
+  --vermillion-deep:   #B8341E;
+  --redact:            #D43F2A;
+
+  /* Score band colors — used in How We Score legend + map pins. */
+  --green: #4ade9f;
+  --amber: #E8B547;
+
+  /* Cinema typography — re-uses Fraunces + Geist already loaded by
+     the app shell. TiroDevanagariFallback (defined in globals.css) covers
+     the Devanagari range that Fraunces lacks, so the giant italic titles
+     stay visually consistent on /hi pages. NEVER @import a font file
+     here; the app shell owns loading. */
+  --cinema-display: var(--font-fraunces), "TiroDevanagariFallback", Georgia, "Times New Roman", serif;
+  --cinema-ui:      var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --cinema-mono:    var(--font-geist-mono), ui-monospace, "SF Mono", Menlo, monospace;
+
+  /* Cinema-deviation tracking — half-way between voice.md's .08em
+     (utilitarian) and the mocks' .24-.3em (theatrical). User locked
+     this trade-off; preserves editorial-magazine feel without fully
+     breaking the brand voice rule. */
+  --tracking-kicker: 0.18em;
+  --tracking-meta:   0.16em;
+
+  background: var(--paper);
+  color: var(--bone);
+  font-family: var(--cinema-ui);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Utility classes (scoped) ── */
+
+.nakshiq-cinema .nq-display {
+  font-family: var(--cinema-display);
+  font-style: italic;
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  line-height: 0.92;
+  color: var(--bone);
+}
+
+.nakshiq-cinema .nq-display .dot,
+.nakshiq-cinema .nq-display em.dot {
+  color: var(--vermillion);
+  font-style: normal;
+}
+
+.nakshiq-cinema .nq-kicker {
+  font-family: var(--cinema-ui);
+  font-weight: 700;
+  font-size: 11px;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-kicker);
+  color: var(--vermillion);
+}
+
+.nakshiq-cinema .nq-meta {
+  font-family: var(--cinema-mono);
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 1.4;
+  letter-spacing: var(--tracking-meta);
+  color: var(--bone-dim);
+  font-variant-numeric: tabular-nums;
+}
+
+.nakshiq-cinema .nq-score {
+  font-family: var(--cinema-mono);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  font-variant-numeric: tabular-nums;
+  color: var(--vermillion);
+}
+
+.nakshiq-cinema .nq-mono {
+  font-family: var(--cinema-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ── Scrollytelling reel — sticky 100vh scenes that "pin" while you scroll
+   through them, used by ACT III. Pattern lifted from v8-final/index.html.
+   The parent `.nq-pin-track` is just a relative anchor; each child
+   `.nq-pin-scene` is sticky-top so the previous one stays painted while the
+   next slides in over it. ── */
+.nakshiq-cinema .nq-pin-track {
+  position: relative;
+}
+.nakshiq-cinema .nq-pin-scene {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  min-height: 680px;
+  overflow: hidden;
+}
+
+/* ── Pulse keyframe used by the scenes' verdict label ── */
+@keyframes nq-verdict-pulse {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.45; }
+}
+
+/* ── AVOID stamp — used on Skip List entries to mark each as do-not-go.
+   Vermillion stroke, slight rotation, mock-rubber-stamp feel. ── */
+.nakshiq-cinema .nq-stamp {
+  display: inline-block;
+  border: 3px solid var(--vermillion);
+  color: var(--vermillion);
+  padding: 6px 14px 4px;
+  font-family: var(--cinema-ui);
+  font-weight: 800;
+  font-size: 14px;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 0.32em;
+  transform: rotate(-6deg);
+  box-shadow: inset 0 0 0 1px rgba(229, 86, 66, 0.4);
+}
+
+/* ── Hairline rule ── */
+.nakshiq-cinema .nq-hr {
+  border: 0;
+  border-top: 1px solid var(--hair);
+  margin: 0;
+}
+
+/* ── Ken Burns image animations — three variants for visual variety ── */
+.nakshiq-cinema .nq-kb-1 {
+  animation: nq-kb1 28s ease-in-out infinite;
+  will-change: transform;
+}
+.nakshiq-cinema .nq-kb-2 {
+  animation: nq-kb2 32s ease-in-out infinite;
+  will-change: transform;
+}
+.nakshiq-cinema .nq-kb-3 {
+  animation: nq-kb3 36s ease-in-out infinite;
+  will-change: transform;
+}
+@keyframes nq-kb1 {
+  0%   { transform: scale(1.04) translate(0, 0); filter: saturate(0.86) brightness(0.84); }
+  50%  { transform: scale(1.14) translate(-2%, -1%); filter: saturate(0.92) brightness(0.78); }
+  100% { transform: scale(1.04) translate(0, 0); filter: saturate(0.86) brightness(0.84); }
+}
+@keyframes nq-kb2 {
+  0%   { transform: scale(1.02); }
+  100% { transform: scale(1.16) translate(-1%, 1%); }
+}
+@keyframes nq-kb3 {
+  0%   { transform: scale(1.05) translate(1%, 0); }
+  100% { transform: scale(1.18) translate(-1%, -1%); }
+}
+
+/* ── Pulse dot for "live" indicators ── */
+.nakshiq-cinema .nq-pulse {
+  animation: nq-pulse 1.4s ease-in-out infinite;
+}
+@keyframes nq-pulse {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.35; }
+}
+
+/* ── Fade-up reveal (paired with IntersectionObserver `seen` flag) ── */
+.nakshiq-cinema .nq-fadeup {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 1s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.nakshiq-cinema .nq-fadeup.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Auto-run fade-up — for above-the-fold elements that should always
+   animate on mount without needing a JS `seen` state. Uses CSS @keyframes
+   with animation-fill-mode: forwards so the final state persists. */
+.nakshiq-cinema .nq-fadeup-auto {
+  opacity: 0;
+  transform: translateY(28px);
+  animation: nq-fadeup-auto 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+@keyframes nq-fadeup-auto {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Film grain overlay — subtle, not above content ── */
+.nakshiq-cinema .nq-grain {
+  position: relative;
+}
+.nakshiq-cinema .nq-grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='1.1' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.96  0 0 0 0 0.94  0 0 0 0 0.91  0 0 0 0.6 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='.32'/></svg>");
+  mix-blend-mode: overlay;
+  opacity: 0.14;
+  z-index: 1;
+}
+
+/* ── Vermillion-glow background washes (the "reddish character") ── */
+.nakshiq-cinema .nq-glow-radial {
+  background:
+    radial-gradient(ellipse at 30% 40%, rgba(229, 86, 66, 0.08) 0%, transparent 55%);
+}
+.nakshiq-cinema .nq-glow-bookend {
+  background:
+    linear-gradient(180deg,
+      rgba(212, 63, 42, 0.06) 0%,
+      transparent 30%,
+      transparent 70%,
+      rgba(212, 63, 42, 0.06) 100%);
+}
+
+/* ── Field-log row (Atlas section) — clickable destination link with
+   thumbnail. Hover lifts the thumbnail slightly and slides the arrow
+   right + tints it vermillion, giving each row a clear "this navigates
+   somewhere" affordance. ── */
+.nakshiq-cinema .nq-fieldlog-row {
+  display: grid;
+  grid-template-columns: 56px minmax(0, 1fr) auto 18px;
+  gap: 14px;
+  align-items: center;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--hair);
+  text-decoration: none;
+  color: inherit;
+}
+.nakshiq-cinema .nq-fieldlog-row:hover {
+  background: rgba(245, 241, 232, 0.03);
+}
+.nakshiq-cinema .nq-fieldlog-thumb {
+  position: relative;
+  width: 56px;
+  height: 56px;
+  overflow: hidden;
+  background: var(--paper-2);
+}
+.nakshiq-cinema .nq-fieldlog-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 320ms ease;
+}
+.nakshiq-cinema .nq-fieldlog-row:hover .nq-fieldlog-thumb img {
+  transform: scale(1.06);
+}
+.nakshiq-cinema .nq-fieldlog-arrow {
+  font-family: var(--cinema-mono);
+  font-size: 14px;
+  color: var(--bone-faint);
+  text-align: right;
+  transition: transform 220ms ease, color 220ms ease;
+}
+.nakshiq-cinema .nq-fieldlog-row:hover .nq-fieldlog-arrow {
+  transform: translateX(4px);
+  color: var(--vermillion);
+}
+
+/* ── Scoped scrollbar (subtle, matches paper) ── */
+.nakshiq-cinema ::-webkit-scrollbar { width: 10px; height: 10px; }
+.nakshiq-cinema ::-webkit-scrollbar-track { background: transparent; }
+.nakshiq-cinema ::-webkit-scrollbar-thumb { background: var(--hair); border-radius: 0; }
+
+/* ── Selection accent ── */
+.nakshiq-cinema ::selection { background: var(--vermillion); color: var(--paper); }

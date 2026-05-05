@@ -13,6 +13,7 @@ import { ShareButton } from "./share-button";
 import { KEY_EVENTS, track } from "@/lib/analytics";
 import { WhatsAppShare } from "./whatsapp-share";
 import { CompareButton } from "./compare-tray";
+import { formatScoreInline } from "@itp/shared";
 import { DistanceBadge } from "./distance-badge";
 import { lazy, Suspense } from "react";
 import { ConfidenceCardComponent } from "./confidence-card";
@@ -397,7 +398,7 @@ export function DestinationDetail({ dest }: { dest: any }) {
                       href={`/${locale}/destination/${dest.id}/${slug}`}
                       className={`rounded-full border px-2.5 py-1 text-[10px] font-bold transition-all hover:scale-105 ${scoreColor} ${isCurrent ? "ring-1 ring-primary" : ""}`}
                     >
-                      {m} {score}/5
+                      {m} {formatScoreInline(score)}
                     </a>
                   );
                 })}
@@ -567,7 +568,7 @@ export function DestinationDetail({ dest }: { dest: any }) {
                   <span className="text-lg">🛡️</span>
                   <div className="min-w-0">
                     <div className="text-xs text-muted-foreground">Safety</div>
-                    <div className="text-sm font-medium">{cc.safety_rating}/5</div>
+                    <div className="text-sm font-medium tabular-nums">{formatScoreInline(cc.safety_rating)}</div>
                   </div>
                 </div>
               )}
@@ -1132,7 +1133,7 @@ export function DestinationDetail({ dest }: { dest: any }) {
                           {dest.workability.coworking && dest.workability.coworking !== "none" && ` · Coworking: ${dest.workability.coworking}`}
                         </p>
                       </div>
-                      <span className="ml-auto text-lg font-mono font-bold text-blue-400">{dest.workability.remote_work_rating}/5</span>
+                      <span className="ml-auto text-lg font-mono font-bold text-blue-400 tabular-nums">{formatScoreInline(dest.workability.remote_work_rating)}</span>
                     </div>
                   </section>
                 )}

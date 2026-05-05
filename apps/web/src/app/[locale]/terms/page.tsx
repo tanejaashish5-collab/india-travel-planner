@@ -91,7 +91,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
               Booking.com and Agoda. If you book through these links, we earn a
               small commission at no additional cost to you. Affiliate
               relationships never affect our scores, rankings, or
-              recommendations. A destination can score 1/5 and still carry
+              recommendations. A destination can score 2/10 and still carry
               booking links. See our{" "}
               <Link
                 href="/en/editorial-policy"

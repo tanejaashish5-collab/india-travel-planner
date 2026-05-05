@@ -19,6 +19,27 @@ export function Nav() {
   const [activePanel, setActivePanel] = useState<PanelType>(null);
   const closeTimer = useRef<NodeJS.Timeout | null>(null);
 
+  // Cinematic landing detection — when on `/[locale]` exactly (no extra
+  // path segments), the Nav goes "transparent over hero" so ACT I Dispatch
+  // can render full-bleed. After scrolling past the 100vh hero, the Nav
+  // solidifies to its normal warm-paper backdrop-blur look so links remain
+  // readable over the rest of the page. Internal pages render the Nav as
+  // before (sticky, opaque). Landing redesign PR 1 — Ashish 2026-05-05.
+  const isLandingRoot = pathname === `/${locale}` || pathname === `/${locale}/`;
+  const [overHero, setOverHero] = useState(true);
+  useEffect(() => {
+    if (!isLandingRoot) return;
+    function onScroll() {
+      // 100vh hero — flip to solid bg once you scroll past 80% of it so the
+      // transition completes before the Nav crosses into the lighter content
+      // below the fold.
+      setOverHero(window.scrollY < window.innerHeight * 0.8);
+    }
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [isLandingRoot]);
+
   // Cmd+K / Ctrl+K keyboard shortcut
   useEffect(() => {
     function handleKeyDown(e: KeyboardEvent) {
@@ -99,13 +120,98 @@ export function Nav() {
     { panel: "learn", label: t("learn") },
   ];
 
+  // ── Cinematic landing nav ────────────────────────────────────
+  // On `/[locale]` exactly, render a minimal magazine-style nav that
+  // mirrors the v1-editorial design: Naksh.iq italic logo (left), 6
+  // all-caps magazine links (center), ISSUE badge (right). No mega-menu
+  // panels, no auth/AI buttons — those add visual weight that breaks the
+  // editorial dispatch feel. Search stays available via Cmd+K (handled by
+  // the global keyboard listener at the top of this component).
+  if (isLandingRoot) {
+    const cinemaItems: { label: string; href: string }[] = [
+      { label: t("destinations"), href: `/${locale}/explore` },
+      { label: t("collections"), href: `/${locale}/collections` },
+      { label: t("planLabel"), href: `/${locale}/plan` },
+      // SKIP LIST points at /tourist-traps (the existing analog).
+      // THE WINDOW points at /the-window (the newsletter archive index).
+      { label: "SKIP LIST", href: `/${locale}/tourist-traps` },
+      { label: "THE WINDOW", href: `/${locale}/the-window` },
+      { label: t("about"), href: `/${locale}/about` },
+    ];
+    const issueNum = (() => {
+      // Same derivation as helpers.ts getIssueNumber — May 2026 = Issue Nº 47.
+      const launch = new Date("2022-07-01T00:00:00Z");
+      const now = new Date();
+      const months =
+        (now.getUTCFullYear() - launch.getUTCFullYear()) * 12 +
+        (now.getUTCMonth() - launch.getUTCMonth());
+      return Math.max(1, months + 1);
+    })();
+    const monthLabel = new Date()
+      .toLocaleString("en-IN", { timeZone: "Asia/Kolkata", month: "long", year: "numeric" })
+      .toUpperCase();
+
+    return (
+      <>
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[60] focus:rounded-lg focus:bg-primary focus:px-4 focus:py-2 focus:text-primary-foreground focus:text-sm focus:font-medium"
+        >
+          Skip to content
+        </a>
+        <header
+          className={
+            overHero
+              ? "fixed top-0 left-0 right-0 z-50 bg-transparent transition-[background-color,backdrop-filter] duration-500"
+              : "fixed top-0 left-0 right-0 z-50 bg-[#0a0a08]/85 backdrop-blur-xl border-b border-white/10 transition-[background-color,backdrop-filter] duration-500"
+          }
+        >
+          <div className="mx-auto flex max-w-[1500px] items-center justify-between gap-6 px-8 py-5">
+            {/* Logo — Fraunces italic, vermillion period, no "N." chip */}
+            <Link
+              href={`/${locale}`}
+              className="font-[var(--font-fraunces)] italic font-medium text-[24px] tracking-[-0.015em] text-[#F5F1E8] leading-none"
+              style={{ fontStyle: "italic" }}
+            >
+              Naksh<span className="text-[#E55642]">.</span>iq
+            </Link>
+
+            {/* Center — 6 all-caps magazine links */}
+            <nav className="hidden md:flex items-center gap-8">
+              {cinemaItems.map((item) => (
+                <Link
+                  key={item.label}
+                  href={item.href}
+                  className="font-[var(--font-geist-sans)] font-medium text-[12px] uppercase tracking-[0.18em] text-[#F5F1E8]/85 hover:text-[#F5F1E8] transition-colors whitespace-nowrap"
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </nav>
+
+            {/* Right — ISSUE badge in mono. Locale toggle dropped on landing
+                per design — Hindi readers can switch via the standard nav on
+                any internal page. */}
+            <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#F5F1E8]/60 whitespace-nowrap">
+              ISSUE Nº {issueNum} · {monthLabel}
+            </span>
+          </div>
+        </header>
+
+        <SearchCommand open={searchOpen} onClose={() => setSearchOpen(false)} />
+      </>
+    );
+  }
+
   return (
     <>
     {/* Skip to content — accessibility */}
     <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[60] focus:rounded-lg focus:bg-primary focus:px-4 focus:py-2 focus:text-primary-foreground focus:text-sm focus:font-medium">
       Skip to content
     </a>
-    <header className="sticky top-0 z-50 border-b border-border/50 bg-background/90 backdrop-blur-xl shadow-sm">
+    <header
+      className="sticky top-0 z-50 border-b border-border/50 bg-background/90 backdrop-blur-xl shadow-sm"
+    >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-2 md:py-3">
         {/* Logo */}
         <Link href={`/${locale}`} className="flex items-center gap-2">
@@ -257,7 +363,10 @@ export function Nav() {
 
       {/* Mobile nav removed — handled by bottom tab bar */}
       <SearchCommand open={searchOpen} onClose={() => setSearchOpen(false)} />
-      <InternationalBanner />
+      {/* Banner is suppressed on the cinematic landing — the InternationalBanner
+          adds ~40px of layout space at the top which would push the hero down
+          and break full-bleed. Other pages still render it. */}
+      {!isLandingRoot && <InternationalBanner />}
     </header>
     </>
   );

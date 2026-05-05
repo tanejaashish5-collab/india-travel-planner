@@ -7,6 +7,7 @@ import { destinationImage } from "@/lib/image-url";
 import { videoSrc } from "@/lib/video-url";
 import { DestinationSectionNav } from "./destination-section-nav";
 import { SectionLabel } from "./ui/section-label";
+import { formatScore, formatScoreInline, SCORE_MAX } from "@itp/shared";
 
 // ── Constants ──────────────────────────────────────────────────
 
@@ -180,10 +181,10 @@ export function DestinationMonth({
               <div />
             )}
             <div className="flex items-baseline gap-2 whitespace-nowrap">
-              <span className={`text-4xl sm:text-5xl font-black tracking-tight ${scoreInfo.color}`}>
-                {score}
+              <span className={`text-4xl sm:text-5xl font-black tracking-tight tabular-nums ${scoreInfo.color}`}>
+                {formatScore(score)}
               </span>
-              <span className="text-xl text-zinc-500 font-light">/5</span>
+              <span className="text-xl text-zinc-500 font-light">/{SCORE_MAX}</span>
               <span className={`ml-2 text-sm font-semibold ${scoreInfo.color}`}>
                 {scoreInfo.label}
               </span>
@@ -293,7 +294,7 @@ export function DestinationMonth({
       <ScrollReveal>
         <div className="space-y-1">
           <h2 className="text-2xl font-semibold text-white">
-            Why {monthName} scores {score}/5
+            Why {monthName} scores {formatScoreInline(score)}
           </h2>
           <div className="mt-4 grid gap-3">
             {items.map((item) => (
@@ -482,8 +483,8 @@ export function DestinationMonth({
                       )}
                     </td>
                     <td className="px-4 py-3 text-center">
-                      <span className={`font-bold ${scoreColor}`}>
-                        {mScore}/5
+                      <span className={`font-bold tabular-nums ${scoreColor}`}>
+                        {formatScoreInline(mScore)}
                       </span>
                     </td>
                     <td className="hidden px-4 py-3 text-zinc-500 md:table-cell">
@@ -577,8 +578,8 @@ export function DestinationMonth({
                   >
                     <div className="mb-2 flex items-center justify-between">
                       <h3 className="font-bold text-white">{n.name}</h3>
-                      <span className={`text-lg font-black ${nScoreInfo.color}`}>
-                        {nScore}/5
+                      <span className={`text-lg font-black tabular-nums ${nScoreInfo.color}`}>
+                        {formatScoreInline(nScore)}
                       </span>
                     </div>
                     <div className="flex flex-wrap gap-2 text-xs">
@@ -649,7 +650,7 @@ export function DestinationMonth({
   );
   const monthSections = [
     hasLead && { id: "lead", label: `${monthName} overview` },
-    hasWhy && { id: "why", label: `Why ${score}/5` },
+    hasWhy && { id: "why", label: `Why ${formatScoreInline(score)}` },
     hasThings && { id: "things", label: "What to do" },
     { id: "who", label: "Who should go" },
     { id: "months", label: "All 12 months" },
@@ -703,7 +704,7 @@ export function DestinationMonth({
           {/* WhatsApp Share */}
           <div className="flex">
             <WhatsAppShare
-              message={`${destination.name} in ${monthName}: ${score}/5. ${currentMonth?.note?.substring(0, 100) || ""}. Full guide: https://www.nakshiq.com/en/destination/${destination.id}/${monthSlug}`}
+              message={`${destination.name} in ${monthName}: ${formatScoreInline(score)}. ${currentMonth?.note?.substring(0, 100) || ""}. Full guide: https://www.nakshiq.com/en/destination/${destination.id}/${monthSlug}`}
             />
           </div>
 
