@@ -207,7 +207,87 @@ export async function GET(req: NextRequest) {
       return NextResponse.json({ type: "festivals", month, count: items.length, data: items });
     }
 
-    return NextResponse.json({ error: `Unknown type: ${type}. Valid: destinations, articles, stats, traps, collections, festivals` }, { status: 400 });
+    if (type === "routes") {
+      // Multi-destination road trip routes (e.g. Manali-Leh, Char Dham).
+      // Filter by month — routes with the current month in best_months are surfaced first.
+      let query = supabase
+        .from("routes")
+        .select("id, name, days, difficulty, best_months, stops, description, kids_suitable, bike_route, budget_range, highlights")
+        .order("days")
+        .limit(limit);
+      if (month) {
+        query = query.contains("best_months", [month]);
+      }
+      const { data } = await query;
+      const items = (data ?? []).map((r: any) => ({
+        ...r,
+        url: `${baseUrl}/en/build-route?route=${r.id}`,
+        image: `${baseUrl}/images/routes/${r.id}.jpg`,
+      }));
+      return NextResponse.json({ type: "routes", month, count: items.length, data: items });
+    }
+
+    if (type === "treks") {
+      // Solo/group treks. Filter by month and difficulty similar to routes.
+      const difficulty = params.get("difficulty");
+      let query = supabase
+        .from("treks")
+        .select("id, name, destination_id, difficulty, duration_days, max_altitude_m, distance_km, best_months, permits_required, kids_suitable, fitness_level, description, highlights, destinations(name)")
+        .order("max_altitude_m", { ascending: false })
+        .limit(limit);
+      if (month) {
+        query = query.contains("best_months", [month]);
+      }
+      if (difficulty) {
+        query = query.eq("difficulty", difficulty);
+      }
+      const { data } = await query;
+      const items = (data ?? []).map((t: any) => ({
+        id: t.id,
+        name: t.name,
+        destination_id: t.destination_id,
+        destination_name: t.destinations?.name,
+        difficulty: t.difficulty,
+        duration_days: t.duration_days,
+        max_altitude_m: t.max_altitude_m,
+        distance_km: t.distance_km,
+        best_months: t.best_months,
+        permits_required: t.permits_required,
+        kids_suitable: t.kids_suitable,
+        fitness_level: t.fitness_level,
+        description: t.description,
+        highlights: t.highlights,
+        url: t.destination_id
+          ? `${baseUrl}/en/destination/${t.destination_id}`
+          : `${baseUrl}/en/explore`,
+        image: `${baseUrl}/images/treks/${t.id}.jpg`,
+      }));
+      return NextResponse.json({ type: "treks", month, count: items.length, data: items });
+    }
+
+    if (type === "eateries") {
+      // Surfaces only legendary / well-verified eateries by default. Caller can
+      // pass ?destination_id=<id> to scope to one place.
+      const destId = params.get("destination_id");
+      let query = supabase
+        .from("local_eateries")
+        .select("id, destination_id, name, area, cuisine, category, signature_dish, must_try, price_range, vegetarian, kid_friendly, established_year, why_it_matters, insider_tip, is_legendary, last_verified")
+        .eq("is_active", true)
+        .order("is_legendary", { ascending: false })
+        .order("established_year", { nullsFirst: false })
+        .limit(limit);
+      if (destId) {
+        query = query.eq("destination_id", destId);
+      }
+      const { data } = await query;
+      const items = (data ?? []).map((e: any) => ({
+        ...e,
+        url: e.destination_id ? `${baseUrl}/en/destination/${e.destination_id}` : `${baseUrl}/en`,
+      }));
+      return NextResponse.json({ type: "eateries", count: items.length, data: items });
+    }
+
+    return NextResponse.json({ error: `Unknown type: ${type}. Valid: destinations, articles, stats, traps, collections, festivals, routes, treks, eateries` }, { status: 400 });
   } catch (e: any) {
     return NextResponse.json({ error: e.message }, { status: 500 });
   }

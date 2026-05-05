@@ -20,6 +20,7 @@ import re
 import sys
 import time
 import argparse
+import hashlib
 import logging
 import requests
 from datetime import datetime, timezone, date, timedelta
@@ -470,7 +471,8 @@ def already_posted_today(state: dict, key: str) -> bool:
     return state["posted_today"].get(key) == date.today().isoformat()
 
 def mark_posted(state: dict, account_id: str, destination_id: str,
-                fmt: str, post_id: str, platform: str, has_media: bool):
+                fmt: str, post_id: str, platform: str, has_media: bool,
+                media_id: str | None = None):
     today = date.today().isoformat()
     state.setdefault("posted_today", {})[account_id] = today
     state.setdefault("posted_destinations", [])
@@ -489,6 +491,8 @@ def mark_posted(state: dict, account_id: str, destination_id: str,
     state["posted_formats"][account_id] = (
         state["posted_formats"][account_id][-20:] + [fmt]
     )
+    # post_log carries media_id since 2026-05-05 so post_fingerprints() can
+    # dedup `(dest, fmt, media)` triples on a rolling 7/30/60-day window.
     state["post_log"].append({
         "timestamp":  datetime.now(timezone.utc).isoformat(),
         "date":       today,
@@ -498,8 +502,45 @@ def mark_posted(state: dict, account_id: str, destination_id: str,
         "destination": destination_id,
         "format":     fmt,
         "has_media":  has_media,
+        "media_id":   media_id,
     })
     state["post_log"] = state["post_log"][-500:]
+
+def post_fingerprints(state: dict, *, dest_days: int = 7,
+                      fmt_days: int = 30, media_days: int = 60) -> dict:
+    """Tier-2 fingerprint dedup. Returns three sets of recently-used identifiers
+    so callers can reject candidate `(dest_id, fmt, media_id)` triples and
+    structurally guarantee no repeat within the rolling windows.
+
+    Why three windows: a destination can legitimately reappear in 7 days under
+    a different format (score_card → eateries_pick), the same `(dest, fmt)`
+    pair should not, and the exact media_id (image/video file) should not
+    repeat for 60 days. Tunable per the cost-aware operating rules.
+    """
+    today = date.today()
+    dest_cut  = (today - timedelta(days=dest_days)).isoformat()
+    fmt_cut   = (today - timedelta(days=fmt_days)).isoformat()
+    media_cut = (today - timedelta(days=media_days)).isoformat()
+
+    log_entries = state.get("post_log", []) or []
+
+    used_dests:    set = set()
+    used_dest_fmt: set = set()  # tuples of (dest_id, fmt)
+    used_media:    set = set()
+
+    for e in log_entries:
+        d = e.get("date") or ""
+        did   = e.get("destination") or e.get("dest_id")
+        fmt   = e.get("format")
+        media = e.get("media_id") or e.get("media")
+        if did and d >= dest_cut:
+            used_dests.add(did)
+        if did and fmt and d >= fmt_cut:
+            used_dest_fmt.add((did, fmt))
+        if media and d >= media_cut:
+            used_media.add(media)
+    return {"dests": used_dests, "dest_fmt": used_dest_fmt, "media": used_media}
+
 
 def recently_used_destinations(state: dict, cutoff_days: int = 14) -> set:
     """Destinations posted in the LAST `cutoff_days` (default 14).
@@ -736,10 +777,12 @@ def sync_all_content() -> dict:
         # prefers these over (potentially-past) current-month festivals.
         "festivals_next": nakshiq_fetch("festivals",  {"month": next_month}),
         "collections":  nakshiq_fetch("collections"),
-        # `routes` is not yet exposed by the Nakshiq content API — the format
-        # machinery below is wired and will activate the day `type=routes`
-        # returns data. No upstream error in the meantime.
-        "routes":       {},
+        # Tier-2 content sources (added 2026-05-05). The /api/content endpoint
+        # gained `routes`, `treks`, `eateries` types in the same commit. Each
+        # is filtered by the current month server-side where applicable.
+        "routes":       nakshiq_fetch("routes",       {"month": month, "limit": 50}),
+        "treks":        nakshiq_fetch("treks",        {"month": month, "limit": 50}),
+        "eateries":     nakshiq_fetch("eateries",     {"limit": 100}),
     }
     # Keep TOTAL_DESTINATIONS in sync with the real catalog size.
     global TOTAL_DESTINATIONS
@@ -750,6 +793,9 @@ def sync_all_content() -> dict:
         f"Synced → {len(content['destinations'].get('data',[]))} destinations · "
         f"{len(content['traps'].get('data',[]))} traps · "
         f"{len(content['articles'].get('data',[]))} articles · "
+        f"{len(content['routes'].get('data',[]))} routes · "
+        f"{len(content['treks'].get('data',[]))} treks · "
+        f"{len(content['eateries'].get('data',[]))} eateries · "
         f"total catalog={TOTAL_DESTINATIONS}"
     )
     return content
@@ -1019,17 +1065,48 @@ def sanitize(text: str) -> str:
     text = re.sub(r"\n{3,}", "\n\n", text)
     return text.strip()
 
-def utm(url: str, source: str, medium: str, campaign: str) -> str:
-    """Append UTM tracking parameters to a URL."""
+def utm(url: str, source: str, medium: str, campaign: str,
+        content: str | None = None) -> str:
+    """Append UTM tracking parameters to a URL.
+
+    `content` (optional) maps to GA4's utm_content dimension — set this to a
+    per-post identifier like `<dest_id>-<format>-<YYYYMMDD>` so engagement can
+    be attributed back to the exact post that drove a click. Without it, all
+    flow-story IG posts (for example) collapse into a single GA4 row and we
+    can't tell which one converts.
+    """
     sep = "&" if "?" in url else "?"
-    return f"{url}{sep}utm_source={source}&utm_medium={medium}&utm_campaign={campaign}"
+    suffix = f"utm_source={source}&utm_medium={medium}&utm_campaign={campaign}"
+    if content:
+        suffix += f"&utm_content={content}"
+    return f"{url}{sep}{suffix}"
 
 
-def dest_url(dest: dict, source: str = "", medium: str = "", campaign: str = "") -> str:
+def build_utm_content(dest_id: str | None, fmt: str | None,
+                      date_str: str | None = None) -> str:
+    """Compose utm_content as `<dest_id>-<fmt>-<YYYYMMDD>`. Falls back to
+    `<fmt>-<date>` when dest_id is unknown (generic / topic posts) and
+    `unknown-<date>` if everything else is missing.
+
+    Sanitises chars GA4 dislikes (spaces, ampersands, slashes).
+    """
+    d = (date_str or date.today().strftime("%Y%m%d")).replace("-", "")
+    parts = [p for p in [dest_id, fmt] if p]
+    if not parts:
+        raw = f"unknown-{d}"
+    else:
+        raw = "-".join(parts + [d])
+    # GA4 utm_content allows alphanumerics + dash/underscore. Map everything
+    # else to dash so we don't break URL parsing client-side.
+    return re.sub(r"[^A-Za-z0-9_\-]", "-", raw)[:80]
+
+
+def dest_url(dest: dict, source: str = "", medium: str = "", campaign: str = "",
+             content: str | None = None) -> str:
     """Return the deep-link URL for a destination, optionally with UTM params."""
     base = (dest.get("url") or f"https://nakshiq.com/en/destination/{dest['id']}").strip()
     if source:
-        return utm(base, source, medium, campaign)
+        return utm(base, source, medium, campaign, content=content)
     return base
 
 
@@ -2368,18 +2445,141 @@ def _sanitize_caption(caption: str, platform: str = "") -> str:
     return sanitized
 
 
+_HEALTHCHECK_CACHE: dict[str, tuple[bool, int]] = {}
+_BAD_URL_QUEUE_PATH = Path(__file__).parent / "data" / "bad-url-queue.jsonl"
+_POST_OUTCOMES_PATH = Path(__file__).parent / "data" / "post_outcomes.jsonl"
+
+
+def _log_post_outcome(*, post_id: str | None, dest_id: str | None,
+                      fmt: str | None, media_id: str | None,
+                      account: dict, caption: str, cta_url: str | None,
+                      utm_content: str | None):
+    """Append a structured outcome row to data/post_outcomes.jsonl after every
+    successful publish. Foundation for the weekly engagement digest (Tier 3) —
+    join `utm_content` against GA4 to compute per-post CTR.
+
+    Best-effort: never raises. Logging failure should not block the run.
+    """
+    try:
+        _POST_OUTCOMES_PATH.parent.mkdir(parents=True, exist_ok=True)
+        record = {
+            "ts":            datetime.now(timezone.utc).isoformat(),
+            "post_id":       post_id,
+            "dest_id":       dest_id,
+            "format":        fmt,
+            "media_id":      media_id,
+            "platform":      account.get("network"),
+            "account":       account.get("username") or account.get("id"),
+            "cta_url":       cta_url,
+            "utm_content":   utm_content,
+            "caption_hash":  hashlib.sha256((caption or "").encode("utf-8")).hexdigest()[:12],
+            "caption_preview": (caption or "")[:160],
+        }
+        with open(_POST_OUTCOMES_PATH, "a", encoding="utf-8") as f:
+            f.write(json.dumps(record, ensure_ascii=False) + "\n")
+    except Exception as e:
+        log.warning(f"Could not write post_outcomes entry: {e}")
+
+
+def _extract_caption_url(caption: str) -> str | None:
+    """Pull the first https://nakshiq.com/... URL out of a caption string.
+
+    Captions follow a `→ {url}` pattern; we just match anything starting with
+    https://nakshiq.com or http://nakshiq.com. Returns None if the caption is
+    text-only / has no CTA URL.
+    """
+    m = re.search(r"https?://(?:www\.)?nakshiq\.com[^\s)]*", caption)
+    return m.group(0).rstrip(".,;:") if m else None
+
+
+def _healthcheck_url(url: str, timeout: float = 6.0) -> tuple[bool, int]:
+    """HEAD-probe a URL. Returns (ok, status_code). Cached for the duration of
+    one run so each unique URL is only probed once.
+
+    `ok` is True only on 2xx. 3xx is treated as ok if the redirect target is
+    on nakshiq.com (legit locale redirect). Network errors return (True, 0)
+    so a flaky healthcheck never blocks an otherwise-valid post — only proven
+    4xx/5xx abort the publish.
+    """
+    if not url:
+        return True, 0
+    if url in _HEALTHCHECK_CACHE:
+        return _HEALTHCHECK_CACHE[url]
+    try:
+        r = requests.head(url, allow_redirects=True, timeout=timeout)
+        status = r.status_code
+        ok = 200 <= status < 400
+    except requests.RequestException:
+        # Network blips shouldn't block posting — treat as ok-with-status-0 so
+        # the run continues. Bad URLs that consistently fail will still 4xx
+        # when the user clicks them, but at least the autoposter won't deadlock.
+        ok, status = True, 0
+    _HEALTHCHECK_CACHE[url] = (ok, status)
+    return ok, status
+
+
+def _log_bad_url(url: str, status: int, caption: str, account: dict):
+    """Append a structured record to data/bad-url-queue.jsonl so we can audit
+    bad URLs the autoposter generated. One line per offence — easier to grep
+    + jq than rebuilding the file every time.
+    """
+    try:
+        _BAD_URL_QUEUE_PATH.parent.mkdir(parents=True, exist_ok=True)
+        record = {
+            "ts": datetime.now(timezone.utc).isoformat(),
+            "url": url,
+            "status": status,
+            "platform": account.get("network"),
+            "username": account.get("username"),
+            "caption_preview": (caption or "")[:160],
+        }
+        with open(_BAD_URL_QUEUE_PATH, "a", encoding="utf-8") as f:
+            f.write(json.dumps(record, ensure_ascii=False) + "\n")
+    except Exception as e:
+        log.warning(f"Could not write bad-url-queue entry: {e}")
+
+
 def publish_feed_post(caption: str, account: dict, media,
-                      dry_run: bool = False) -> dict | None:
+                      dry_run: bool = False,
+                      *, dest_id: str | None = None,
+                      fmt: str | None = None,
+                      media_id: str | None = None,
+                      utm_content: str | None = None) -> dict | None:
     """
     Publish a feed post. `media` accepts:
       - None                → text-only post
       - a single media dict → single-image post
       - a list of dicts     → multi-image carousel (2–10 items)
+
+    Optional kwargs are passed straight through to the post-outcomes log so
+    we can attribute future GA4 clicks back to the exact post. Callers that
+    don't supply them will produce a row with nulls — still better than
+    nothing for high-level aggregates.
     """
     username = account.get("username", account["id"])
     platform = account["network"]
     # Sanitize caption BEFORE any platform call (banned tags + length cap)
     caption = _sanitize_caption(caption, platform=platform)
+
+    # Pre-publish healthcheck on the caption's CTA URL. If it's a hard 4xx/5xx,
+    # ABORT the post — better to skip a slot than ship a 404 to followers.
+    # Skipped on dry_run (no actual publish) and silently ignored when no URL
+    # is in the caption (text-only formats). Network errors are treated as ok
+    # so flaky DNS / transient blips never block legitimate posts.
+    cta_url = _extract_caption_url(caption)
+    if cta_url and not dry_run:
+        ok, status = _healthcheck_url(cta_url)
+        if not ok and 400 <= status < 600:
+            log.error(
+                f"[{platform}/{username}] CTA URL healthcheck FAILED "
+                f"(status={status}, url={cta_url}) — aborting post."
+            )
+            _log_bad_url(cta_url, status, caption, account)
+            return None
+        elif status == 0:
+            log.info(f"[{platform}/{username}] CTA healthcheck inconclusive (network) — proceeding.")
+        else:
+            log.debug(f"[{platform}/{username}] CTA healthcheck ok (status={status}, url={cta_url})")
 
     # Normalise to a list for uniform handling.
     if media is None:
@@ -2408,6 +2608,20 @@ def publish_feed_post(caption: str, account: dict, media,
     if not result.get("success"):
         log.error(f"    Feed post failed: {result}")
         return None
+
+    # Best-effort: append a row to data/post_outcomes.jsonl so the weekly
+    # engagement digest can join utm_content × GA4 to compute per-post CTR.
+    post_id = (result.get("post") or {}).get("id")
+    _log_post_outcome(
+        post_id=post_id,
+        dest_id=dest_id,
+        fmt=fmt,
+        media_id=media_id,
+        account=account,
+        caption=caption,
+        cta_url=cta_url,
+        utm_content=utm_content,
+    )
     return result
 
 
@@ -3254,15 +3468,23 @@ def _run_inner(force: bool, sync_only: bool, dry_run: bool,
                     log.warning(f"[{label}] Image upload failed — posting text only.")
 
         # ── Publish feed post / Reel ──────────────────────────────────────────
+        # Per-post utm_content for GA4 attribution (foundation for engagement digest)
+        run_utm_content = build_utm_content(dest_id, fmt)
         if use_video:
             log.info(f"[{label}] Publishing Reel...")
             result = publish_reel(caption, account, media_obj, dry_run=dry_run)
         elif is_carousel:
             log.info(f"[{label}] Publishing {len(media_list)}-slide carousel...")
-            result = publish_feed_post(caption, account, media_list, dry_run=dry_run)
+            result = publish_feed_post(
+                caption, account, media_list, dry_run=dry_run,
+                dest_id=dest_id, fmt=fmt, utm_content=run_utm_content,
+            )
         else:
             log.info(f"[{label}] Publishing feed post...")
-            result = publish_feed_post(caption, account, media_obj, dry_run=dry_run)
+            result = publish_feed_post(
+                caption, account, media_obj, dry_run=dry_run,
+                dest_id=dest_id, fmt=fmt, utm_content=run_utm_content,
+            )
 
         if not result:
             log.error(f"[{label}] ❌ Publish failed.")
@@ -3282,7 +3504,15 @@ def _run_inner(force: bool, sync_only: bool, dry_run: bool,
 
         if not dry_run:
             has_media = bool(media_obj) or bool(media_list)
-            mark_posted(state, acc_id, dest_id, fmt, post_id, platform, has_media)
+            # media_id: filename of single image, or first carousel slide. Used by
+            # post_fingerprints() to enforce a rolling 60-day media-reuse window.
+            media_id = None
+            if media_list and isinstance(media_list, list) and media_list:
+                media_id = media_list[0].get("filename") if isinstance(media_list[0], dict) else None
+            elif media_obj and isinstance(media_obj, dict):
+                media_id = media_obj.get("filename")
+            mark_posted(state, acc_id, dest_id, fmt, post_id, platform, has_media,
+                        media_id=media_id)
             # Mode-scoped today marker (morning vs evening won't collide)
             state.setdefault("posted_today", {})[acc_scoped_key] = today
             used.add(dest_id)
@@ -3568,7 +3798,11 @@ def _run_tourist_map(force: bool = False, dry_run: bool = False):
             posted_any = True
             continue
 
-        result = publish_feed_post(caption, account, media_obj, dry_run=False)
+        result = publish_feed_post(
+            caption, account, media_obj, dry_run=False,
+            fmt="tourist_map",
+            utm_content=build_utm_content(state_name.lower().replace(" ", "-"), "tourist_map"),
+        )
         if result:
             log.info(f"[{label}] Tourist map posted successfully!")
             state.setdefault("posted_today", {})[acc_scoped_key] = today
@@ -3873,7 +4107,13 @@ def _run_canva_visual(force: bool = False, dry_run: bool = False):
             posted_any = True
             continue
 
-        result = publish_feed_post(caption, account, media_obj, dry_run=False)
+        canva_campaign = chosen_img.get("campaign") or chosen_img.get("subject", "")
+        result = publish_feed_post(
+            caption, account, media_obj, dry_run=False,
+            fmt="canva_visual",
+            media_id=chosen_img.get("file"),
+            utm_content=build_utm_content(canva_campaign.replace(" ", "-").lower() or None, "canva_visual"),
+        )
         if result:
             log.info(f"[{label}] Canva visual posted successfully!")
             st.setdefault("posted_today", {})[acc_scoped_key] = today
@@ -4319,7 +4559,13 @@ def _run_pomelli_visual(force: bool = False, dry_run: bool = False):
             posted_any = True
             continue
 
-        result = publish_feed_post(caption, account, media_obj, dry_run=False)
+        pomelli_campaign = chosen_img.get("campaign") or chosen_img.get("subject", "")
+        result = publish_feed_post(
+            caption, account, media_obj, dry_run=False,
+            fmt="pomelli_visual",
+            media_id=chosen_img.get("file"),
+            utm_content=build_utm_content(pomelli_campaign.replace(" ", "-").lower() or None, "pomelli_visual"),
+        )
         if result:
             log.info(f"[{label}] Pomelli visual posted successfully!")
             st.setdefault("posted_today", {})[acc_scoped_key] = today
@@ -4748,7 +4994,15 @@ def _run_flow_story(force: bool = False, dry_run: bool = False):
             posted_any = True
             continue
 
-        result = publish_feed_post(caption, account, media_obj, dry_run=False)
+        # Resolve real DB id for utm_content (matches the URL fix in commit 5cc9386f)
+        flow_dest_id = _flow_story_resolve_dest_id(chosen.get("dest"), dest_id_lookup or {})
+        result = publish_feed_post(
+            caption, account, media_obj, dry_run=False,
+            fmt="flow_story",
+            dest_id=flow_dest_id,
+            media_id=chosen.get("file"),
+            utm_content=build_utm_content(flow_dest_id, "flow_story"),
+        )
         if result:
             log.info(f"[{label}] Flow story posted successfully!")
             st.setdefault("posted_today", {})[acc_scoped_key] = today
