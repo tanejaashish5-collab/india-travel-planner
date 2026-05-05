@@ -6,6 +6,7 @@ import { createClient } from "@supabase/supabase-js";
 import { localeAlternates } from "@/lib/seo-utils";
 import { SectionLabel } from "@/components/landing-cinema/helpers";
 import { getIssueNumber } from "@/components/landing-cinema/issue-number";
+import "@/components/landing-cinema/cinema.css";
 
 // Live-computed freshness: ISR-cached daily, but the numbers come from DB
 // state, not hardcoded dates.
@@ -128,18 +129,18 @@ export default async function MethodologyPage({
 
   return (
     <div
-      className="cinema-page"
+      className="nakshiq-cinema"
       style={{
-        background: "var(--paper)",
-        color: "var(--bone)",
         minHeight: "100vh",
       }}
     >
       <Nav />
       <main
         id="main-content"
+        className="nq-grain nq-glow-bookend"
         style={{
           padding: "140px 24px 96px",
+          position: "relative",
         }}
       >
         {/* Masthead */}

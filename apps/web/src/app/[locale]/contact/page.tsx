@@ -6,6 +6,7 @@ import { ContactForm } from "@/components/contact-form";
 import { SectionLabel } from "@/components/landing-cinema/helpers";
 import { getIssueNumber } from "@/components/landing-cinema/issue-number";
 import { localeAlternates } from "@/lib/seo-utils";
+import "@/components/landing-cinema/cinema.css";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -82,10 +83,8 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
 
   return (
     <div
-      className="cinema-page"
+      className="nakshiq-cinema"
       style={{
-        background: "var(--paper)",
-        color: "var(--bone)",
         minHeight: "100vh",
       }}
     >
@@ -100,8 +99,10 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
       />
       <main
         id="main-content"
+        className="nq-grain nq-glow-bookend"
         style={{
           padding: "140px 24px 96px",
+          position: "relative",
         }}
       >
         {/* Masthead */}
