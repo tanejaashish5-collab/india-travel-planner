@@ -72,6 +72,9 @@ MORNING_FORMATS = [
     "this_month_only",      # 5/5 now, bad before & after — narrow window
     "adventure_pick",       # hard / high-altitude featured pick
     "weekend_escape",       # easy + accessible + high-scoring
+    # ── Tier 2.5 (added 2026-05-05) — fresh content sources beyond destinations ──
+    "eateries_pick",        # legendary local eatery + insider tip
+    "trek_intel",           # trek with altitude + permit + best months
 ]
 
 # Legacy weekday-based schedule (kept for fallback only — round-robin is primary)
@@ -1019,6 +1022,16 @@ def pick_morning_format(state: dict, content: dict) -> str:
                            and (d.get("difficulty") or "").lower() in ("easy", "moderate")]
                 if not escapes:
                     continue
+            # Tier 2.5 — fresh content sources. Skip silently if the API hasn't
+            # returned data yet (e.g. eateries endpoint reachable but empty).
+            if fmt == "eateries_pick":
+                eateries = content.get("eateries", {}).get("data", []) or []
+                if not eateries:
+                    continue
+            if fmt == "trek_intel":
+                treks = content.get("treks", {}).get("data", []) or []
+                if not treks:
+                    continue
             eligible.append(fmt)
 
         if not eligible:
@@ -1659,6 +1672,203 @@ def copy_weekend_escape(dest: dict, platform: str) -> str:
 
 
 # ─────────────────────────────────────────────────────────────────────────────
+# TIER 2.5 — fresh content sources (eateries, treks)
+# ─────────────────────────────────────────────────────────────────────────────
+
+def copy_eateries_pick(eatery: dict, dest_map: dict, platform: str) -> str:
+    """Hyper-local food pick — surfaces a verified eatery (legendary first).
+
+    Inputs (per /api/content?type=eateries):
+      name, area, cuisine[], category, signature_dish, must_try[], price_range,
+      established_year, why_it_matters, insider_tip, is_legendary, destination_id
+
+    Voice anchor: "Eat here, here's why" — local-insider tone, not blog.
+    Always links to the destination page (so the click lands on real depth,
+    not the homepage 0%-engagement leak from the May-4 data baseline).
+    """
+    try:
+        name      = (eatery.get("name") or "").strip()
+        area      = (eatery.get("area") or "").strip()
+        cuisine   = eatery.get("cuisine") or []
+        signature = (eatery.get("signature_dish") or "").strip()
+        must_try  = eatery.get("must_try") or []
+        price     = (eatery.get("price_range") or "").strip()
+        year      = eatery.get("established_year")
+        why       = (eatery.get("why_it_matters") or "").strip()
+        tip       = (eatery.get("insider_tip") or "").strip()
+        legendary = bool(eatery.get("is_legendary"))
+        dest_id   = eatery.get("destination_id")
+
+        if not name:
+            return copy_score_card(dest_map.get(dest_id) or {}, platform)
+
+        # CTA URL: destination page (depth + verified data) not /en/eateries hub.
+        # utm_content matches build_utm_content(<dest_id>, 'eateries_pick') so the
+        # weekly digest can attribute clicks to this format.
+        if dest_id and dest_id in dest_map:
+            url = dest_url(dest_map[dest_id], "social", "post", "eateries-pick",
+                           content=build_utm_content(dest_id, "eateries_pick"))
+        else:
+            url = utm("https://nakshiq.com/en", "social", "post", "eateries-pick",
+                      content=build_utm_content(dest_id, "eateries_pick"))
+
+        prefix = "🍴 LOCAL ICON" if legendary else "🍴 LOCAL PICK"
+        year_str = f" · since {year}" if year else ""
+        first_cuisine = (cuisine[0] if cuisine else "").replace("_", " ").title()
+
+        # State for hashtags — pull from dest_map if available
+        dest_state = ""
+        if dest_id and dest_id in dest_map:
+            dest_state = (dest_map[dest_id].get("state") or "").strip()
+
+        hashtag_inputs = [name.replace(" ", "")[:24] or "FoodIndia"]
+        if dest_state:
+            hashtag_inputs.append(dest_state.replace(" ", ""))
+        if first_cuisine:
+            hashtag_inputs.append(first_cuisine.replace(" ", ""))
+        hashtag_inputs.extend(["EatLocal", "NakshIQ"])
+        tags = hashtag(*hashtag_inputs[:5])
+
+        # Body — assembled lazily so missing fields don't leave dangling lines.
+        lines: list[str] = []
+        if signature:
+            lines.append(f"Order: {signature}")
+        elif must_try:
+            lines.append(f"Order: {', '.join(must_try[:3])}")
+        if price:
+            lines.append(f"Price range: {price}")
+        if first_cuisine:
+            lines.append(f"Cuisine: {first_cuisine}")
+        meta_block = "\n".join(lines)
+
+        if platform == "facebook":
+            return (
+                f"{prefix} — {name.upper()}{year_str}\n\n"
+                f"📍 {area}\n\n"
+                + (f"{why}\n\n" if why else "")
+                + (f"{meta_block}\n\n" if meta_block else "")
+                + (f"Insider tip: {tip}\n\n" if tip else "")
+                + f"NakshIQ verifies every eatery — no sponsored picks.\n"
+                f"Full {area or name} guide → {url}\n\n{tags}"
+            ).strip()
+        else:
+            return (
+                f"{prefix} · {name.upper()}{year_str}\n"
+                f"📍 {area}\n\n"
+                + (f"{why}\n\n" if why else "")
+                + (f"{meta_block}\n\n" if meta_block else "")
+                + (f"💡 {tip}\n\n" if tip else "")
+                + f"Verified, never sponsored.\n↓ Full guide → {url}\n\n{tags}"
+            ).strip()
+    except Exception as e:
+        log.warning(f"copy_eateries_pick error: {e}")
+        # Defensive fallback — don't leave a slot empty if the eatery record
+        # is malformed; degrade to score_card on the home destination.
+        if eatery.get("destination_id") and eatery["destination_id"] in dest_map:
+            return copy_score_card(dest_map[eatery["destination_id"]], platform)
+        return ""
+
+
+def copy_trek_intel(trek: dict, dest_map: dict, platform: str) -> str:
+    """Trek brief — altitude + difficulty + permit + best months.
+
+    Inputs (per /api/content?type=treks):
+      name, destination_id, destination_name, difficulty, duration_days,
+      max_altitude_m, distance_km, best_months[], permits_required,
+      kids_suitable, fitness_level, description, highlights[]
+
+    Voice anchor: trek logbook entry — short, factual, decision-ready.
+    """
+    try:
+        name      = (trek.get("name") or "").strip()
+        dest_id   = trek.get("destination_id")
+        dest_name = trek.get("destination_name") or (dest_map.get(dest_id, {}).get("name") if dest_id else None)
+        difficulty = (trek.get("difficulty") or "moderate").lower()
+        duration  = trek.get("duration_days")
+        altitude  = trek.get("max_altitude_m")
+        distance  = trek.get("distance_km")
+        permits   = bool(trek.get("permits_required"))
+        kids_ok   = bool(trek.get("kids_suitable"))
+        fitness   = (trek.get("fitness_level") or "").strip()
+        desc      = (trek.get("description") or "").strip()
+        highlights = trek.get("highlights") or []
+
+        if not name:
+            return copy_score_card(dest_map.get(dest_id) or {}, platform)
+
+        # CTA URL — link to home destination page when known (depth)
+        if dest_id and dest_id in dest_map:
+            url = dest_url(dest_map[dest_id], "social", "post", "trek-intel",
+                           content=build_utm_content(dest_id, "trek_intel"))
+        else:
+            url = utm("https://nakshiq.com/en", "social", "post", "trek-intel",
+                      content=build_utm_content(dest_id, "trek_intel"))
+
+        # Stat line — only show fields that are present
+        stat_parts: list[str] = []
+        if altitude:
+            stat_parts.append(f"↑ {int(altitude):,}m")
+        if duration:
+            stat_parts.append(f"{int(duration)} day{'s' if int(duration) != 1 else ''}")
+        if distance:
+            stat_parts.append(f"{distance:.0f}km")
+        stat_parts.append(difficulty.title())
+        stat_line = " · ".join(stat_parts)
+
+        # Permit / kids badges
+        badges: list[str] = []
+        if permits:
+            badges.append("Permit required")
+        if kids_ok:
+            badges.append("Kid-friendly")
+        if fitness:
+            badges.append(f"Fitness: {fitness.title()}")
+        badge_line = " · ".join(badges)
+
+        # Highlights line — first 2-3 bullets
+        hl_block = ""
+        if highlights:
+            hl_block = "\n".join(f"• {h}" for h in highlights[:3])
+
+        # State for hashtags
+        dest_state = ""
+        if dest_id and dest_id in dest_map:
+            dest_state = (dest_map[dest_id].get("state") or "").strip()
+
+        hashtag_inputs = [name.replace(" ", "").replace("-", "")[:24] or "Trek"]
+        if dest_state:
+            hashtag_inputs.append(dest_state.replace(" ", ""))
+        hashtag_inputs.extend(["TrekIndia", difficulty.title(), "NakshIQ"])
+        tags = hashtag(*hashtag_inputs[:5])
+
+        if platform == "facebook":
+            return (
+                f"🥾 TREK INTEL — {name.upper()}\n"
+                + (f"📍 {dest_name}\n" if dest_name else "")
+                + (f"\n{stat_line}\n" if stat_line else "")
+                + (f"{badge_line}\n" if badge_line else "")
+                + (f"\n{desc}\n" if desc else "")
+                + (f"\n{hl_block}\n" if hl_block else "")
+                + f"\nFull intel — when to go, what to pack, what nobody tells you → {url}\n\n{tags}"
+            ).strip()
+        else:
+            return (
+                f"🥾 {name.upper()}\n"
+                + (f"📍 {dest_name}\n\n" if dest_name else "\n")
+                + (f"{stat_line}\n" if stat_line else "")
+                + (f"{badge_line}\n" if badge_line else "")
+                + (f"\n{desc}\n" if desc else "")
+                + (f"\n{hl_block}\n" if hl_block else "")
+                + f"\n↓ Full trek intel → {url}\n\n{tags}"
+            ).strip()
+    except Exception as e:
+        log.warning(f"copy_trek_intel error: {e}")
+        if trek.get("destination_id") and trek["destination_id"] in dest_map:
+            return copy_score_card(dest_map[trek["destination_id"]], platform)
+        return ""
+
+
+# ─────────────────────────────────────────────────────────────────────────────
 # MOAT COPY FUNCTIONS
 # -----------------------------------------------------------------------------
 # These are the brand/identity/methodology posts that build the acquisition
@@ -2200,6 +2410,29 @@ def generate_post(fmt: str, content: dict, platform: str,
     elif fmt == "weekend_escape":
         target = content.get("__run_weekend__") or best
         return copy_weekend_escape(target, platform), target
+
+    # ───────────────────────────────────────────────────────────────────────
+    # Tier 2.5 — fresh-content formats (eateries, treks)
+    # ───────────────────────────────────────────────────────────────────────
+    elif fmt == "eateries_pick":
+        eateries = content.get("eateries", {}).get("data", []) or []
+        if not eateries:
+            log.info("eateries_pick: no eateries available — falling back to score_card")
+            return copy_score_card(best, platform), best
+        # Run-scoped pre-pick (set in main loop) for FB/IG anchor consistency.
+        pick = content.get("__run_eatery__") or eateries[0]
+        # Resolve image: home destination's hero, fall back to shared best
+        img = dest_map_full.get(pick.get("destination_id")) or dest_map.get(pick.get("destination_id")) or best
+        return copy_eateries_pick(pick, dest_map, platform), img
+
+    elif fmt == "trek_intel":
+        treks = content.get("treks", {}).get("data", []) or []
+        if not treks:
+            log.info("trek_intel: no treks available — falling back to score_card")
+            return copy_score_card(best, platform), best
+        pick = content.get("__run_trek__") or treks[0]
+        img = dest_map_full.get(pick.get("destination_id")) or dest_map.get(pick.get("destination_id")) or best
+        return copy_trek_intel(pick, dest_map, platform), img
 
     else:
         return copy_score_card(best, platform), best
@@ -3118,6 +3351,31 @@ def _run_inner(force: bool, sync_only: bool, dry_run: bool,
             log.info(f"Route locked: {ordered[0].get('name','?')}")
         else:
             log.info("Route format requested but /routes API returned no data — will fall back to score_card.")
+
+    # 6b) Tier 2.5 — Eatery + Trek pre-picks (oldest-never-used so the rotation
+    # exhausts the catalog before repeating). Each is theme-tracked under its
+    # own dimension so picks don't collide with destinations / collections.
+    if "eateries_pick" in (ig_fmt, fb_fmt, story_fmt):
+        eats = content.get("eateries", {}).get("data", []) or []
+        if eats:
+            ordered = pick_oldest_unused(state, "eateries", eats, key="id")
+            content["__run_eatery__"] = ordered[0]
+            status = dimension_cycle_status(state, "eateries", len(eats))
+            log.info(f"Eatery locked: {ordered[0].get('name','?')} "
+                     f"({status['unused']}/{status['total']} never featured)")
+        else:
+            log.info("eateries_pick requested but /eateries API returned no data — will fall back to score_card.")
+
+    if "trek_intel" in (ig_fmt, fb_fmt, story_fmt):
+        treks = content.get("treks", {}).get("data", []) or []
+        if treks:
+            ordered = pick_oldest_unused(state, "treks", treks, key="id")
+            content["__run_trek__"] = ordered[0]
+            status = dimension_cycle_status(state, "treks", len(treks))
+            log.info(f"Trek locked: {ordered[0].get('name','?')} "
+                     f"({status['unused']}/{status['total']} never featured)")
+        else:
+            log.info("trek_intel requested but /treks API returned no data — will fall back to score_card.")
 
     # 7a) Skip List — pick the oldest-never-used LOW-scored destination.
     # Strategy:
