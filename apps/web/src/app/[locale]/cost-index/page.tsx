@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
 const BASE_URL = "https://www.nakshiq.com";
 
-// All 9 cost-index categories now seeded across 491 destinations × 3 seasons.
+// All 9 cost-index categories now seeded across 505 destinations × 3 seasons.
 // hostel-dorm + transport-intercity were closed in Sprint 20 via
 // scripts/_seed-cost-index-{hostels,intercity}.mjs. hotel-splurge was
 // closed in Sprint 11 (seed-cost-index-splurge.mjs). Original Sprint-9 seed

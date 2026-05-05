@@ -234,7 +234,7 @@ export default async function PersonaHubPage({
           ) : (
             <p className="text-sm text-muted-foreground">
               Editorial is actively expanding this persona. Check back as the coverage grows, or
-              browse <Link href={`/${locale}/explore`} className="underline hover:text-primary">all 491 destinations</Link>.
+              browse <Link href={`/${locale}/explore`} className="underline hover:text-primary">all 505 destinations</Link>.
             </p>
           )}
         </section>

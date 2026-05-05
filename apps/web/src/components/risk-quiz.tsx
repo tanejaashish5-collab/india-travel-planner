@@ -130,7 +130,7 @@ export function RiskQuiz({ locale }: { locale: string }) {
           <div className="rounded-2xl border border-border bg-card/40 p-6 mb-6">
             <p className="text-sm text-muted-foreground">
               No destinations matched this combination cleanly. Try broadening your month or priority —
-              or <Link href={`/${locale}/explore`} className="underline hover:text-primary">browse all 491 destinations</Link>.
+              or <Link href={`/${locale}/explore`} className="underline hover:text-primary">browse all 505 destinations</Link>.
             </p>
           </div>
         ) : (

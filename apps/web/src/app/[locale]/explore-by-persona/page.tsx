@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       : "Explore India by persona — families, bikers, honeymooners, and more",
     description: isHindi
       ? "भारत के 491 स्थलों को 10 व्यक्तित्व श्रेणियों में फ़िल्टर करें। हर पिक वास्तविक डेटाबेस मिलान — कोई संपादकीय सूची नहीं।"
-      : "Filter India's 491 destinations by the 10 personas that actually travel together — families, bikers, digital nomads, elderly, photographers, solo female, honeymooners, pilgrims, wellness, culinary. Every pick is a real database match, not a hand-curated listicle.",
+      : "Filter India's 505 destinations by the 10 personas that actually travel together — families, bikers, digital nomads, elderly, photographers, solo female, honeymooners, pilgrims, wellness, culinary. Every pick is a real database match, not a hand-curated listicle.",
     ...localeAlternates(locale, "/explore-by-persona"),
   };
 }

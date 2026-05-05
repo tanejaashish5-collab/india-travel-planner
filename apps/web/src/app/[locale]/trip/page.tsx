@@ -22,7 +22,7 @@ async function getAllDestinations() {
   if (!url || !key) return [];
 
   const supabase = createClient(url, key);
-  // 491 destinations fits well under the Supabase 1000-row cap (per
+  // 505 destinations fits well under the Supabase 1000-row cap (per
   // feedback_supabase_row_cap.md). The destination_months join returns
   // 12 rows per dest = ~5,892 nested rows total — Supabase returns these
   // inside the parent rows so the cap doesn't apply per-child. If the
