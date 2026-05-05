@@ -11,8 +11,14 @@
 // v31: 2026-04-30 More hub launch — precache /en/more + /hi/more so the secondary
 //      navigation surface (linked from the dead-button-now-fixed mobile tab bar) is
 //      available offline alongside the rest of the in-trip toolset.
+// v32: 2026-05-05 Post-deep-QA precache catch-up — add Trip Board, Tourist Traps,
+//      Ask NakshIQ shells (and HI counterparts). All three shipped after v31:
+//      /trip = saved-itinerary destination so users open it offline mid-trip;
+//      /tourist-traps = trust editorial often deep-linked from social, painful to
+//      cold-load on bad signal; /ask = primary chat entry, shell-only cache (the
+//      stream itself stays network-bound).
 
-const CACHE_VERSION = "nakshiq-v31";
+const CACHE_VERSION = "nakshiq-v32";
 const STATIC_CACHE = `${CACHE_VERSION}-static`;
 const IMAGE_CACHE = `${CACHE_VERSION}-images`;
 const DATA_CACHE = `${CACHE_VERSION}-data`;
@@ -47,10 +53,16 @@ const PRECACHE_ROUTES = [
   "/en/cost-index",
   "/en/weekend-from",
   "/en/more",
+  "/en/trip",
+  "/en/tourist-traps",
+  "/en/ask",
   "/hi",
   "/hi/sos",
   "/hi/saved",
   "/hi/more",
+  "/hi/trip",
+  "/hi/tourist-traps",
+  "/hi/ask",
 ];
 
 // Install — pre-cache essentials + critical routes.
