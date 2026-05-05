@@ -79,8 +79,8 @@
     "PdMu0_reel_map": "2026-04-26",
     "PvYR0": "2026-04-27",
     "GAh5p_reel": "2026-05-05",
-    "m8EAd_flow_story": "2026-05-03",
-    "PdMu0_flow_story": "2026-05-03",
+    "m8EAd_flow_story": "2026-05-05",
+    "PdMu0_flow_story": "2026-05-05",
     "GAh5p_yt_short": "2026-05-04",
     "GAh5p_yt_short_count": 2,
     "GAh5p": "2026-05-04"
@@ -426,6 +426,10 @@
     {
       "destination_id": "parvati-valley",
       "date": "2026-05-04"
+    },
+    {
+      "destination_id": "barot-valley",
+      "date": "2026-05-05"
     }
   ],
   "posted_formats": {
@@ -1034,6 +1038,24 @@
       "destination": null,
       "format": "tourist_map",
       "media_id": "CG_editorial_light"
+    },
+    {
+      "timestamp": "2026-05-05T11:15:47.330174+00:00",
+      "date": "2026-05-05",
+      "platform": "instagram",
+      "post_id": "TqAo1",
+      "destination": "barot-valley",
+      "format": "flow_story",
+      "media_id": "flow_c5abeebb-d45d-40e0-ae91-99b7332955ba.jpg"
+    },
+    {
+      "timestamp": "2026-05-05T11:15:49.467035+00:00",
+      "date": "2026-05-05",
+      "platform": "facebook",
+      "post_id": "SLRKJ",
+      "destination": "barot-valley",
+      "format": "flow_story",
+      "media_id": "flow_c5abeebb-d45d-40e0-ae91-99b7332955ba.jpg"
     }
   ],
   "theme_usage": {
@@ -1508,6 +1530,9 @@
       ],
       "flow_0062_3a3eb2ae.jpg": [
         "2026-05-03"
+      ],
+      "flow_c5abeebb-d45d-40e0-ae91-99b7332955ba.jpg": [
+        "2026-05-05"
       ]
     },
     "collection_carousel_dests:andaman-diving-snorkeling": {}

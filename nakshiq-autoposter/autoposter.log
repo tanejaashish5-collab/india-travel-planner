@@ -6774,3 +6774,25 @@ Date range: 2026-04-15 → 2026-05-04
     raise HTTPError(http_error_msg, response=self)
 requests.exceptions.HTTPError: 401 Client Error: UNAUTHORIZED for url: https://api.heygen.com/v3/users/me
 
+2026-05-05 11:15:36  INFO      ════════════════════════════════════════════════════════════
+2026-05-05 11:15:36  INFO      Nakshiq Autoposter · FLOW STORY · 2026-05-05 · weekday=1
+2026-05-05 11:15:36  INFO      ════════════════════════════════════════════════════════════
+2026-05-05 11:15:36  INFO      Library: 956 images (813 dest-matched, 143 generic)
+2026-05-05 11:15:38  INFO      Seasonal scores loaded: 100 destinations for month 5
+2026-05-05 11:15:38  INFO      Seasonal tiers: 5★=51 · 4★=69 · 3★=0 · low=0 · unscored=693
+2026-05-05 11:15:38  INFO      Picking from 5★ tier (has unused images)
+2026-05-05 11:15:38  INFO      Seasonal score: 5/5 for Barot Valley
+2026-05-05 11:15:38  INFO      Selected: flow_c5abeebb-d45d-40e0-ae91-99b7332955ba.jpg → Barot Valley (Himachal Pradesh)
+2026-05-05 11:15:38  INFO          Requesting upload URL for flow_story_flow_c5abeebb-d45d-40e0-ae91-99b7332955ba.jpg (691,231 bytes, image/jpeg)
+2026-05-05 11:15:39  INFO          Uploading to R2 (timeout=120s)...
+2026-05-05 11:15:39  INFO          R2 PUT OK. Confirming...
+2026-05-05 11:15:41  INFO          Media ready: MfSWC (691,231 bytes · flow_story_flow_c5abeebb-d45d-40e0-ae91-99b7332955ba.jpg)
+2026-05-05 11:15:41  INFO      Image uploaded: flow_story_flow_c5abeebb-d45d-40e0-ae91-99b7332955ba.jpg (675 KB)
+2026-05-05 11:15:41  INFO      [youtube/@naksh-iq] Skipping flow story (YouTube only accepts video).
+2026-05-05 11:15:41  INFO      [instagram/nakshiq] Publishing flow story: Barot Valley...
+2026-05-05 11:15:47  INFO      [instagram/nakshiq] Flow story posted successfully!
+2026-05-05 11:15:47  INFO      [facebook/Nakshiq] Publishing flow story: Barot Valley...
+2026-05-05 11:15:49  INFO      [facebook/Nakshiq] Flow story posted successfully!
+2026-05-05 11:15:49  INFO      Theme tracker updated: flow_story_images=flow_c5abeebb-d45d-40e0-ae91-99b7332955ba.jpg
+2026-05-05 11:15:49  INFO      State saved. Flow Story run complete.
+2026-05-05 11:15:49  INFO      ════════════════════════════════════════════════════════════
