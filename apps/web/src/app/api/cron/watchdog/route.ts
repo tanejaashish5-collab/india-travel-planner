@@ -8,9 +8,10 @@ export const maxDuration = 60;
 
 // Daily watchdog. Runs 02:00 UTC = 07:30 IST. Two jobs in one cron:
 // 1. ALWAYS — read ops_reports, compute "days since last run" per cron,
-//    write a watchdog row capturing the snapshot. If anything is overdue
-//    (or its last run had alerts_count > 0 / ok=false), send an alert
-//    email immediately. Silent when everything is green.
+//    write a watchdog row capturing the snapshot. If any job is errored,
+//    missing past its grace window, or stale past SLA, send an alert email.
+//    needs_review (job ran fine but flagged items) and scheduled (monthly
+//    cron not yet calendar-due) are informational only — digest only.
 // 2. ON MONDAYS — additionally send a weekly digest email with the full
 //    health table, even if everything is green.
 //
@@ -29,12 +30,29 @@ const EXPECTED_CADENCE_DAYS: Record<string, number> = {
   "prewarm-next-month": 32,   // monthly cron 28th 01:00 UTC
 };
 
+// Earliest expected first run per job. Monthly crons deployed mid-cycle may
+// be weeks away from their first calendar opportunity to fire — without this,
+// a "never run" job is indistinguishable from "not yet had a chance to run"
+// and watchdog cries MISSING every day. Set to null once the job has fired
+// at least once in production.
+const EARLIEST_EXPECTED_FIRST_RUN: Record<string, string | null> = {
+  "refresh-stay-picks": null,
+  "freshness-drift": null,
+  "news-sweep": null,
+  "prewarm-next-month": "2026-05-28T01:00:00Z", // first 28th after Apr 30 deploy
+};
+
+// Statuses that should trigger the daily alert email. needs_review (cron ran
+// fine but found items to review) and scheduled (monthly cron not yet due)
+// are informational — they show in the Monday digest but never wake anyone up.
+const ALERT_STATUSES = new Set(["errored", "missing", "stale"]);
+
 type JobHealth = {
   job: string;
   expected_cadence_days: number;
   last_run_at: string | null;
   days_since: number | null;
-  status: "ok" | "stale" | "missing" | "errored";
+  status: "ok" | "stale" | "missing" | "errored" | "needs_review" | "scheduled";
   last_alerts_count: number | null;
   last_ok: boolean | null;
 };
@@ -86,11 +104,14 @@ export async function GET(req: NextRequest) {
     let status: JobHealth["status"];
     let daysSince: number | null = null;
     if (!last) {
-      status = "missing";
+      const earliest = EARLIEST_EXPECTED_FIRST_RUN[job];
+      if (earliest && new Date(earliest).getTime() > now.getTime()) status = "scheduled";
+      else status = "missing";
     } else {
       daysSince = (now.getTime() - new Date(last.run_at).getTime()) / 86400000;
-      if (last.ok === false || (last.alerts_count ?? 0) > 0) status = "errored";
+      if (last.ok === false) status = "errored";
       else if (daysSince > cadence) status = "stale";
+      else if ((last.alerts_count ?? 0) > 0) status = "needs_review";
       else status = "ok";
     }
     health.push({
@@ -104,33 +125,33 @@ export async function GET(req: NextRequest) {
     });
   }
 
-  const degraded = health.filter((h) => h.status !== "ok");
-  const overall: "ok" | "degraded" = degraded.length === 0 ? "ok" : "degraded";
+  const alertable = health.filter((h) => ALERT_STATUSES.has(h.status));
+  const overall: "ok" | "degraded" = alertable.length === 0 ? "ok" : "degraded";
 
   // Persist the snapshot before any side effects so we always have the
   // record even if email sending throws.
   await supabase.from("ops_reports").insert({
     job: "watchdog",
     summary: { overall, monday_digest: monday, health },
-    alerts_count: degraded.length,
+    alerts_count: alertable.length,
     ok: overall === "ok",
   });
 
-  // Email sends — only on degraded OR Monday digest. Skip on first run
-  // (see priorWatchdogRuns guard above) so brand-new monthly crons don't
-  // trigger spurious "MISSING" alerts before they've had a chance to fire.
+  // Email sends — only on alertable failures OR Monday digest. Skip on first
+  // run (see priorWatchdogRuns guard above) so brand-new monthly crons don't
+  // trigger spurious alerts before they've had a chance to fire.
   let alertEmailed = false;
   let digestEmailed = false;
   const resend = getResend();
-  if (resend && degraded.length > 0 && !isFirstRun) {
+  if (resend && alertable.length > 0 && !isFirstRun) {
     try {
       await resend.emails.send({
         from: OPS_FROM_ADDRESS,
         to: ALERT_TO,
         replyTo: REPLY_TO,
-        subject: `[NakshIQ ops] cron health DEGRADED — ${degraded.length} job(s) need attention`,
-        html: renderAlertHtml(degraded, health),
-        text: renderAlertText(degraded, health),
+        subject: `[NakshIQ ops] cron health DEGRADED — ${alertable.length} job(s) need attention`,
+        html: renderAlertHtml(alertable, health),
+        text: renderAlertText(alertable, health),
       });
       alertEmailed = true;
     } catch (err: any) {
@@ -163,7 +184,7 @@ export async function GET(req: NextRequest) {
     try {
       const hcRes = await fetch(hcUrl, {
         method: "POST",
-        body: JSON.stringify({ overall, degraded: degraded.length, first_run: isFirstRun }),
+        body: JSON.stringify({ overall, alertable: alertable.length, first_run: isFirstRun }),
         headers: { "content-type": "application/json" },
       });
       heartbeatPinged = hcRes.ok;
@@ -175,7 +196,7 @@ export async function GET(req: NextRequest) {
   return NextResponse.json({
     ok: true,
     overall,
-    degraded_count: degraded.length,
+    alertable_count: alertable.length,
     monday_digest: monday,
     first_run: isFirstRun,
     alert_emailed: alertEmailed,
@@ -185,30 +206,37 @@ export async function GET(req: NextRequest) {
   });
 }
 
+function statusColour(status: JobHealth["status"]): string {
+  if (status === "ok" || status === "scheduled") return "#16a34a";
+  if (status === "needs_review") return "#d97706";
+  return "#dc2626"; // errored, missing, stale
+}
+
 function fmtRow(h: JobHealth): string {
   const last = h.last_run_at ? new Date(h.last_run_at).toISOString().slice(0, 16).replace("T", " ") + " UTC" : "(never)";
   const days = h.days_since === null ? "—" : `${h.days_since}d ago`;
   return `${h.job} — ${h.status.toUpperCase()} — last ${last} (${days}, expected ≤${h.expected_cadence_days}d)`;
 }
 
-function renderAlertText(degraded: JobHealth[], all: JobHealth[]): string {
+function renderAlertText(alertable: JobHealth[], all: JobHealth[]): string {
   const lines: string[] = [];
-  lines.push(`NakshIQ cron health DEGRADED — ${degraded.length} of ${all.length} jobs need attention.\n`);
+  lines.push(`NakshIQ cron health DEGRADED — ${alertable.length} of ${all.length} jobs need attention.\n`);
   lines.push(`Failing jobs:`);
-  degraded.forEach((h) => lines.push(`  • ${fmtRow(h)}`));
-  if (all.length > degraded.length) {
-    lines.push(`\nHealthy jobs:`);
-    all.filter((h) => h.status === "ok").forEach((h) => lines.push(`  • ${fmtRow(h)}`));
+  alertable.forEach((h) => lines.push(`  • ${fmtRow(h)}`));
+  const others = all.filter((h) => !ALERT_STATUSES.has(h.status));
+  if (others.length > 0) {
+    lines.push(`\nOther jobs:`);
+    others.forEach((h) => lines.push(`  • ${fmtRow(h)}`));
   }
   lines.push(`\nDashboard: https://www.nakshiq.com/methodology/freshness`);
   lines.push(`Vercel cron logs: https://vercel.com/dashboard → project → Cron Jobs`);
   return lines.join("\n");
 }
 
-function renderAlertHtml(degraded: JobHealth[], all: JobHealth[]): string {
+function renderAlertHtml(alertable: JobHealth[], all: JobHealth[]): string {
   const rows = all
     .map((h) => {
-      const colour = h.status === "ok" ? "#16a34a" : "#dc2626";
+      const colour = statusColour(h.status);
       const last = h.last_run_at ? new Date(h.last_run_at).toLocaleString("en-IN", { timeZone: "Asia/Kolkata" }) : "(never)";
       return `<tr>
         <td style="padding:8px 12px;font-family:ui-monospace,monospace;font-size:13px">${h.job}</td>
@@ -220,7 +248,7 @@ function renderAlertHtml(degraded: JobHealth[], all: JobHealth[]): string {
     .join("");
   return `<!doctype html><html><body style="font-family:ui-sans-serif,system-ui,sans-serif;color:#171717;max-width:640px;margin:0 auto;padding:24px">
     <h1 style="font-size:20px;margin:0 0 8px">NakshIQ cron health: <span style="color:#dc2626">DEGRADED</span></h1>
-    <p style="color:#525252;margin:0 0 24px">${degraded.length} of ${all.length} scheduled jobs need attention.</p>
+    <p style="color:#525252;margin:0 0 24px">${alertable.length} of ${all.length} scheduled jobs need attention.</p>
     <table style="width:100%;border-collapse:collapse;border:1px solid #e5e5e5">
       <thead><tr style="background:#fafafa">
         <th style="padding:8px 12px;text-align:left;font-size:12px;color:#525252">Job</th>
@@ -249,7 +277,7 @@ function renderDigestHtml(overall: "ok" | "degraded", all: JobHealth[]): string 
   const colour = overall === "ok" ? "#16a34a" : "#dc2626";
   const rows = all
     .map((h) => {
-      const c = h.status === "ok" ? "#16a34a" : "#dc2626";
+      const c = statusColour(h.status);
       const last = h.last_run_at ? new Date(h.last_run_at).toLocaleString("en-IN", { timeZone: "Asia/Kolkata" }) : "(never)";
       return `<tr>
         <td style="padding:8px 12px;font-family:ui-monospace,monospace;font-size:13px">${h.job}</td>
