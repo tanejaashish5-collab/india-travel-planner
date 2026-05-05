@@ -5,11 +5,7 @@ import Link from "next/link";
 import { localeAlternates } from "@/lib/seo-utils";
 import { SectionLabel } from "@/components/landing-cinema/helpers";
 import { getIssueNumber } from "@/components/landing-cinema/issue-number";
-// Pulls in cinema.css so .nq-grain, .nq-glow-radial, .nq-kicker, .nq-display
-// etc. render their actual cinematic styling (film grain texture, vermillion
-// radial wash, Fraunces italic display). Without this import the legal page
-// renders pure black with default type — see 2026-05-05 user feedback.
-import "@/components/landing-cinema/cinema.css";
+import { CinemaStyles } from "@/components/landing-cinema/cinema-styles";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -32,6 +28,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
         minHeight: "100vh",
       }}
     >
+      <CinemaStyles />
       <Nav />
       <main
         id="main-content"
@@ -41,14 +38,38 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
           position: "relative",
         }}
       >
-        {/* Masthead — issue badge + title */}
-        <header
+        {/* Masthead — issue badge + title, wrapped in a relative container with
+            a nq-glow-radial backdrop. The radial sits absolute behind the
+            content; vermillion ellipse fades to transparent so the paper bg
+            shows through at the edges. Stacked with an inline boosted radial
+            so the warm ambient wash reads more clearly than the default 8%. */}
+        <div
           style={{
+            position: "relative",
             maxWidth: 1100,
             margin: "0 auto 80px",
-            textAlign: "left",
           }}
         >
+          <div
+            aria-hidden
+            className="nq-glow-radial"
+            style={{
+              position: "absolute",
+              inset: "-40px -40px -40px -40px",
+              background:
+                "radial-gradient(ellipse at 30% 45%, rgba(229, 86, 66, 0.18) 0%, rgba(229, 86, 66, 0.05) 35%, transparent 70%)",
+              filter: "blur(40px)",
+              pointerEvents: "none",
+              zIndex: 0,
+            }}
+          />
+          <header
+            style={{
+              position: "relative",
+              zIndex: 1,
+              textAlign: "left",
+            }}
+          >
           <p
             className="nq-kicker"
             style={{
@@ -92,7 +113,8 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
             What follows is the entire reason it exists, and the rules that decide
             what ships.
           </p>
-        </header>
+          </header>
+        </div>
 
         {/* I — Why this exists */}
         <section style={sectionStyle}>
@@ -138,6 +160,8 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
           </Prose>
         </section>
 
+        <Asterism />
+
         {/* II — Who's building this */}
         <section style={sectionStyle}>
           <SectionLabel num="II" name="WHO'S BUILDING THIS" />
@@ -168,6 +192,8 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
             </p>
           </Prose>
         </section>
+
+        <Asterism />
 
         {/* III — What we actually do */}
         <section style={sectionStyle}>
@@ -215,6 +241,8 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
           </div>
         </section>
 
+        <Asterism />
+
         {/* IV — What we cover */}
         <section style={sectionStyle}>
           <SectionLabel num="IV" name="WHAT WE COVER" />
@@ -234,6 +262,8 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
           </Prose>
         </section>
 
+        <Asterism />
+
         {/* V — What we're always building */}
         <section style={sectionStyle}>
           <SectionLabel num="V" name="WHAT WE'RE ALWAYS BUILDING" />
@@ -251,6 +281,8 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
             </p>
           </Prose>
         </section>
+
+        <Asterism />
 
         {/* VI — A note to fellow parents (callout) */}
         <section style={{ ...sectionStyle, maxWidth: 1100, margin: "0 auto 100px" }}>
@@ -454,6 +486,61 @@ function PullQuote({ children }: { children: React.ReactNode }) {
     </blockquote>
   );
 }
+
+/* Atmospheric break between editorial sections — hairline rule with three
+   small vermillion dots in the centre (asterism, classical typographic
+   ornament). Sits in the gap between sections to add visual rhythm without
+   pulling focus from prose. */
+function Asterism() {
+  return (
+    <div
+      aria-hidden
+      style={{
+        maxWidth: 720,
+        margin: "60px auto",
+        display: "flex",
+        alignItems: "center",
+        gap: 18,
+      }}
+    >
+      <span
+        style={{
+          flex: 1,
+          height: 1,
+          background:
+            "linear-gradient(to right, transparent 0%, var(--hair) 40%, var(--hair) 60%, transparent 100%)",
+        }}
+      />
+      <span
+        style={{
+          display: "inline-flex",
+          gap: 6,
+          alignItems: "center",
+        }}
+      >
+        <span style={dotStyle} />
+        <span style={dotStyle} />
+        <span style={dotStyle} />
+      </span>
+      <span
+        style={{
+          flex: 1,
+          height: 1,
+          background:
+            "linear-gradient(to right, transparent 0%, var(--hair) 40%, var(--hair) 60%, transparent 100%)",
+        }}
+      />
+    </div>
+  );
+}
+
+const dotStyle: React.CSSProperties = {
+  width: 4,
+  height: 4,
+  borderRadius: "50%",
+  background: "var(--vermillion)",
+  display: "inline-block",
+};
 
 function EditorialEntry({
   num,

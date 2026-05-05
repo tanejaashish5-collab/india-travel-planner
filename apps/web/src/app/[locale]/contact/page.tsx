@@ -5,8 +5,8 @@ import { Footer } from "@/components/footer";
 import { ContactForm } from "@/components/contact-form";
 import { SectionLabel } from "@/components/landing-cinema/helpers";
 import { getIssueNumber } from "@/components/landing-cinema/issue-number";
+import { CinemaStyles } from "@/components/landing-cinema/cinema-styles";
 import { localeAlternates } from "@/lib/seo-utils";
-import "@/components/landing-cinema/cinema.css";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -88,6 +88,7 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
         minHeight: "100vh",
       }}
     >
+      <CinemaStyles />
       <Nav />
       <script
         type="application/ld+json"

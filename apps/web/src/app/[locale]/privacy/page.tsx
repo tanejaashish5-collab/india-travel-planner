@@ -5,7 +5,7 @@ import Link from "next/link";
 import { localeAlternates } from "@/lib/seo-utils";
 import { SectionLabel } from "@/components/landing-cinema/helpers";
 import { getIssueNumber } from "@/components/landing-cinema/issue-number";
-import "@/components/landing-cinema/cinema.css";
+import { CinemaStyles } from "@/components/landing-cinema/cinema-styles";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -32,6 +32,7 @@ export default async function PrivacyPage({
         minHeight: "100vh",
       }}
     >
+      <CinemaStyles />
       <Nav />
       <main
         id="main-content"
