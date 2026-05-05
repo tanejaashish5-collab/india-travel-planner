@@ -84,6 +84,12 @@ export async function generateMetadata({
   const enName = (dest as any).name;
   const hiName = (dest as any).translations?.hi?.name;
   const name = isHi && hiName ? hiName : enName;
+  // Title-only canonical name: strip alternate-spelling parens like "Alleppey (Alappuzha)".
+  // The full parenthetical name eats title budget and forces fallback to titleMin
+  // (no verdict + no temp range) on dests with long alt names — measured leak on
+  // alleppey/may (152 GSC impr / 0 clicks) and puducherry/may (121 / 1) on 2026-05-05.
+  // Description and H1 keep the full name for disambiguation; SERP only shows title.
+  const titleName = name.replace(/\s*\([^)]+\)\s*/g, "").trim();
   const stateData = dest.state as any;
   const enStateName = Array.isArray(stateData) ? stateData[0]?.name : stateData?.name;
   const { getStateName } = await import("@/lib/seo-maps");
@@ -176,21 +182,21 @@ export async function generateMetadata({
   const inWord = isHi ? "में" : "in";
   const titleLong = isHi
     ? (rangeStr
-        ? `${monthDisplay} ${year} में ${name}: ${titleHook} (${rangeStr})`
-        : `${monthDisplay} ${year} में ${name}: ${titleHook}`)
+        ? `${monthDisplay} ${year} में ${titleName}: ${titleHook} (${rangeStr})`
+        : `${monthDisplay} ${year} में ${titleName}: ${titleHook}`)
     : (rangeStr
-        ? `${name} ${inWord} ${monthDisplay} ${year}: ${titleHook} (${rangeStr})`
-        : `${name} ${inWord} ${monthDisplay} ${year}: ${titleHook}`);
+        ? `${titleName} ${inWord} ${monthDisplay} ${year}: ${titleHook} (${rangeStr})`
+        : `${titleName} ${inWord} ${monthDisplay} ${year}: ${titleHook}`);
   const titleMed = isHi
     ? (rangeStr
-        ? `${monthDisplay} में ${name}: ${titleHook} (${rangeStr})`
-        : `${monthDisplay} में ${name}: ${titleHook}`)
+        ? `${monthDisplay} में ${titleName}: ${titleHook} (${rangeStr})`
+        : `${monthDisplay} में ${titleName}: ${titleHook}`)
     : (rangeStr
-        ? `${name} ${inWord} ${monthDisplay}: ${titleHook} (${rangeStr})`
-        : `${name} ${inWord} ${monthDisplay}: ${titleHook}`);
+        ? `${titleName} ${inWord} ${monthDisplay}: ${titleHook} (${rangeStr})`
+        : `${titleName} ${inWord} ${monthDisplay}: ${titleHook}`);
   const titleMin = isHi
-    ? `${monthDisplay} ${year} में ${name}`
-    : `${name} ${inWord} ${monthDisplay} ${year}`;
+    ? `${monthDisplay} ${year} में ${titleName}`
+    : `${titleName} ${inWord} ${monthDisplay} ${year}`;
   const title =
     titleLong.length <= TITLE_BUDGET ? titleLong
     : titleMed.length <= TITLE_BUDGET ? titleMed
