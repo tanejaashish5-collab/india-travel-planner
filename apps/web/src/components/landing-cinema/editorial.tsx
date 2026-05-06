@@ -5,7 +5,36 @@
    sync; previously each page kept its own local copy.
    ============================================================ */
 
-import type { CSSProperties, ReactNode } from "react";
+import type { CSSProperties, ReactNode, HTMLAttributes } from "react";
+
+/* ============================================================
+   Title — display heading helper that auto-vermillion-colors any
+   trailing punctuation (. ? !). Single design-system primitive so
+   "Manali." renders the period in vermillion and any future cinematic
+   headline that ends in punctuation picks up the rule for free.
+
+   Usage:  <Title as="h1" className="nq-display" style={{...}}>Manali.</Title>
+   No trailing punctuation? It renders as a plain <Tag> — safe to apply
+   broadly even on headlines that don't end in a mark.
+   ============================================================ */
+type TitleProps = {
+  as?: "h1" | "h2" | "h3" | "h4";
+  children: string;
+} & Omit<HTMLAttributes<HTMLElement>, "children">;
+
+export function Title({ as: Tag = "h1", children, ...rest }: TitleProps) {
+  const m = children.match(/^([\s\S]*?)([.?!]+)$/);
+  if (!m) {
+    return <Tag {...rest}>{children}</Tag>;
+  }
+  const [, body, mark] = m;
+  return (
+    <Tag {...rest}>
+      {body}
+      <span style={{ color: "var(--vermillion)" }}>{mark}</span>
+    </Tag>
+  );
+}
 
 export const sectionStyle: CSSProperties = {
   maxWidth: 1100,

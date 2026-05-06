@@ -34,12 +34,13 @@ import {
 import { CinemaStyles } from "@/components/landing-cinema/cinema-styles";
 import { SectionLabel } from "@/components/landing-cinema/helpers";
 import { getIssueNumber } from "@/components/landing-cinema/issue-number";
-import { DestinationScrollRail } from "@/components/landing-cinema/destination-scroll-rail";
+import { DestinationGuideToc } from "@/components/landing-cinema/destination-guide-toc";
 import {
   EditorialEntry,
   EditorialCaption,
   Prose,
   PullQuote,
+  Title,
   ctaPrimary,
   ctaSecondary,
   sectionStyle,
@@ -318,7 +319,8 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
 
           {/* Bottom row: name · tagline */}
           <div style={{ position: "relative", zIndex: 2 }}>
-            <h1
+            <Title
+              as="h1"
               className="nq-display"
               style={{
                 fontFamily: "var(--cinema-display)",
@@ -332,8 +334,8 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
                 textWrap: "balance",
               }}
             >
-              {dest.name}.
-            </h1>
+              {`${dest.name}.`}
+            </Title>
             {dest.tagline && (
               <p
                 style={{
@@ -1137,7 +1139,8 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
                           marginBottom: 6,
                         }}
                       >
-                        <h3
+                        <Title
+                          as="h3"
                           style={{
                             fontFamily: "var(--cinema-display)",
                             fontStyle: "italic",
@@ -1149,7 +1152,7 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
                           }}
                         >
                           {sub.name}
-                        </h3>
+                        </Title>
                         {sub.elevation_m && (
                           <span
                             className="nq-mono"
@@ -1255,7 +1258,8 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
                           marginBottom: 6,
                         }}
                       >
-                        <h3
+                        <Title
+                          as="h3"
                           style={{
                             fontFamily: "var(--cinema-display)",
                             fontStyle: "italic",
@@ -1266,7 +1270,7 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
                           }}
                         >
                           {gem.name}
-                        </h3>
+                        </Title>
                         <span
                           className="nq-mono"
                           style={{
@@ -1749,7 +1753,8 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
                         )}
                       </div>
                       <div>
-                        <h3
+                        <Title
+                          as="h3"
                           style={{
                             fontFamily: "var(--cinema-display)",
                             fontStyle: "italic",
@@ -1761,7 +1766,7 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
                           }}
                         >
                           {e.name}
-                        </h3>
+                        </Title>
                         {e.signature_dish && (
                           <p
                             style={{
@@ -1891,7 +1896,8 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
                         {(p.slot ?? "PICK").replace(/_/g, " ")}
                         {p.price_band ? ` · ${p.price_band.toUpperCase()}` : ""}
                       </div>
-                      <h3
+                      <Title
+                        as="h3"
                         style={{
                           fontFamily: "var(--cinema-display)",
                           fontStyle: "italic",
@@ -1903,7 +1909,7 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
                         }}
                       >
                         {p.name}
-                      </h3>
+                      </Title>
                       {p.property_type && (
                         <p
                           className="nq-mono"
@@ -2086,7 +2092,8 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
                         )}
                       </div>
                       {r.summary && (
-                        <h3
+                        <Title
+                          as="h3"
                           style={{
                             fontFamily: "var(--cinema-display)",
                             fontStyle: "italic",
@@ -2099,7 +2106,7 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
                           }}
                         >
                           {r.summary}
-                        </h3>
+                        </Title>
                       )}
                       {r.body && (
                         <p
@@ -2511,7 +2518,17 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
       </main>
 
       <Footer />
-      <DestinationScrollRail />
+
+      {/* In-guide labelled TOC — appears after the cover scrolls out.
+          Sister to the dots-only DestinationScrollRail; this one shows
+          the section names so readers can jump deliberately. The user
+          asked for this three times. */}
+      <DestinationGuideToc
+        items={sections.map((s) => ({
+          id: s.id,
+          label: s.label.toUpperCase(),
+        }))}
+      />
     </div>
   );
 }
