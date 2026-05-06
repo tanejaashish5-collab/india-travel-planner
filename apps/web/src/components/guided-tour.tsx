@@ -193,6 +193,19 @@ function isMobile(): boolean {
   return window.matchMedia("(max-width: 767px)").matches;
 }
 
+function isPWA(): boolean {
+  if (typeof window === "undefined") return false;
+  return window.matchMedia("(display-mode: standalone)").matches;
+}
+
+// Spotlight + 520px popover doesn't fit small screens or PWA standalone
+// (which has no browser chrome to absorb overflow). Suppress entirely
+// without burning the first-visit flag, so the user still sees the tour
+// the first time they open NakshIQ on a wider browser.
+function shouldSuppressTour(): boolean {
+  return isMobile() || isPWA();
+}
+
 /**
  * Counts up from 0 → target over `duration`. Reset on target change.
  * Uses requestAnimationFrame and an ease-out curve.
@@ -279,6 +292,16 @@ export function GuidedTour({ stats }: { stats: TourStats }) {
     const hasParam = url.searchParams.get("tour") === "1";
     setMobile(isMobile());
 
+    // Suppress on mobile + PWA. Strip ?tour=1 if present so the URL doesn't
+    // stay polluted, but don't open the tour and don't write the flag.
+    if (shouldSuppressTour()) {
+      if (hasParam) {
+        url.searchParams.delete("tour");
+        window.history.replaceState({}, "", url.toString());
+      }
+      return;
+    }
+
     if (hasParam) {
       try { localStorage.removeItem(FLAG_KEY); } catch {}
       start();
@@ -298,6 +321,9 @@ export function GuidedTour({ stats }: { stats: TourStats }) {
   // Replay event
   useEffect(() => {
     const handler = () => {
+      // Honour the same gate — a desktop layout that resized to mobile after
+      // first paint shouldn't be able to open the tour via the footer link.
+      if (shouldSuppressTour()) return;
       try { localStorage.removeItem(FLAG_KEY); } catch {}
       start();
     };

@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter, usePathname } from "next/navigation";
-import { useCallback } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 /**
  * "Take the tour" link.
@@ -12,10 +12,20 @@ import { useCallback } from "react";
  *
  * If we're elsewhere, navigate to /{locale}/?tour=1 and let GuidedTour pick
  * up the param on mount.
+ *
+ * Hidden on mobile (<768px) and PWA standalone — the spotlight + 520px
+ * popover doesn't fit there, and GuidedTour ignores both auto-start and the
+ * replay event under those conditions, so a visible link would dead-end.
  */
 export function TourReplayLink({ locale, label }: { locale: string; label: string }) {
   const router = useRouter();
   const pathname = usePathname();
+  const [hidden, setHidden] = useState(false);
+  useEffect(() => {
+    const m = window.matchMedia("(max-width: 767px)").matches;
+    const p = window.matchMedia("(display-mode: standalone)").matches;
+    setHidden(m || p);
+  }, []);
   const onClick = useCallback(
     (e: React.MouseEvent) => {
       e.preventDefault();
@@ -31,6 +41,7 @@ export function TourReplayLink({ locale, label }: { locale: string; label: strin
     },
     [locale, pathname, router]
   );
+  if (hidden) return null;
   return (
     <a
       href={`/${locale}/?tour=1`}
