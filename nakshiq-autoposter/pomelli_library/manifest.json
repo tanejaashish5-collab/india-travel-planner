@@ -1,7 +1,7 @@
 {
   "version": 8,
-  "total_images": 726,
-  "total_campaigns": 309,
+  "total_images": 737,
+  "total_campaigns": 312,
   "images": [
     "pomelli_12city_taxi_fare_map_1.png",
     "pomelli_12city_taxi_fare_map_2 2.png",
@@ -728,7 +728,18 @@
     "pomelli_winter_confidence_1.png",
     "pomelli_winter_confidence_2.png",
     "pomelli_winter_confidence_3.png",
-    "pomelli_winter_confidence_4.png"
+    "pomelli_winter_confidence_4.png",
+    "pomelli_june_cliff_is_coming_1.png",
+    "pomelli_southern_destinations_crash_1.png",
+    "pomelli_himachal_infrastructure_fails_1.png",
+    "pomelli_secure_2026_travel_pangong_1.png",
+    "pomelli_june_60_percent_suitability_crash_1.png",
+    "pomelli_5_to_2_triple_crash_1.png",
+    "pomelli_uttarakhand_cliff_1.png",
+    "pomelli_navigate_june_raw_data_1.png",
+    "pomelli_60_day_danger_sequence_1.png",
+    "pomelli_act_one_june_1_cliff_1.png",
+    "pomelli_evidence_based_exploration_1.png"
   ],
   "campaigns": {
     "12city_taxi_fare_map": [
@@ -2074,6 +2085,23 @@
     ],
     "pomelli_tribal_guide_4 2": [
       "pomelli_tribal_guide_4 2.png"
+    ],
+    "wave1_the_june_cliff_is_coming": [
+      "pomelli_june_cliff_is_coming_1.png",
+      "pomelli_southern_destinations_crash_1.png",
+      "pomelli_himachal_infrastructure_fails_1.png",
+      "pomelli_secure_2026_travel_pangong_1.png"
+    ],
+    "wave1_june_60_percent_suitability_crash": [
+      "pomelli_june_60_percent_suitability_crash_1.png",
+      "pomelli_5_to_2_triple_crash_1.png",
+      "pomelli_uttarakhand_cliff_1.png",
+      "pomelli_navigate_june_raw_data_1.png"
+    ],
+    "wave1_60_day_danger_sequence": [
+      "pomelli_60_day_danger_sequence_1.png",
+      "pomelli_act_one_june_1_cliff_1.png",
+      "pomelli_evidence_based_exploration_1.png"
     ]
   }
 }
