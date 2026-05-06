@@ -293,6 +293,80 @@
   color: var(--vermillion);
 }
 
+/* ── Editorial-entry link row — used by EditorialEntry when an href is
+   passed (Featured in Collections, Road Trips Through Here, deep-dive
+   reads). Mirrors the .nq-fieldlog-row affordance: row brightens, arrow
+   slides right + tints vermillion, title brightens to bone. Without these
+   the row reads as inert text. The user flagged this three times. ── */
+.nakshiq-cinema .nq-entry-link:hover {
+  background: rgba(245, 241, 232, 0.03);
+}
+.nakshiq-cinema .nq-entry-link:hover .nq-entry-arrow {
+  transform: translateX(4px);
+  color: var(--vermillion);
+}
+.nakshiq-cinema .nq-entry-link:hover h3 {
+  color: var(--bone);
+}
+
+/* ── Vermillion radial wash on alternating acts. Replaces the dead
+   #111110 grey that previously filled Acts I/III/V/VII/IX/XI. The
+   radial centre sits at top so the wash bleeds in from the section
+   transition then fades — gives rhythm without dominating the body
+   copy. User asked: why some sections have a red bg and some don't. ── */
+.nakshiq-cinema .nq-act-warm {
+  background:
+    radial-gradient(ellipse at center top,
+      rgba(229, 86, 66, 0.07) 0%,
+      transparent 60%),
+    var(--paper);
+}
+
+/* ── Cinematic outro — full-bleed Ken Burns image right above the
+   footer. Bridges editorial content to nav chrome with a closing shot
+   so the page doesn't end on text → bare footer. The Ken Burns reuses
+   the slow nq-kb1 keyframes already used by the hero. ── */
+.nakshiq-cinema .nq-outro {
+  position: relative;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  min-height: 70vh;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  color: var(--bone);
+}
+.nakshiq-cinema .nq-outro-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  animation: nq-kb1 32s ease-in-out infinite;
+  will-change: transform;
+}
+.nakshiq-cinema .nq-outro-veil {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    180deg,
+    rgba(10, 10, 8, 0.35) 0%,
+    rgba(10, 10, 8, 0.45) 40%,
+    rgba(10, 10, 8, 0.95) 100%
+  );
+}
+.nakshiq-cinema .nq-outro-copy {
+  position: relative;
+  z-index: 2;
+  padding: 0 32px 80px;
+  text-align: center;
+  max-width: 880px;
+  margin: 0 auto;
+}
+
 /* ── Scoped scrollbar (subtle, matches paper) ── */
 .nakshiq-cinema ::-webkit-scrollbar { width: 10px; height: 10px; }
 .nakshiq-cinema ::-webkit-scrollbar-track { background: transparent; }

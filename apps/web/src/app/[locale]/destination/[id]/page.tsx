@@ -616,13 +616,11 @@ export default async function DestinationPage({
         ))}
         <DestinationDetailCinematic dest={dest} />
         <ScrollDepthTracker page="destination" destinationId={id} />
-        <PrevNextNav
-          items={dest.allDestinations}
-          currentId={id}
-          basePath="destination"
-          backLabel="All Destinations"
-          backHref="explore"
-        />
+        {/* PrevNextNav intentionally NOT rendered here. Cinematic Coda
+            already provides BACK TO ATLAS + the new full-bleed outro shot
+            closes the page on a cinematic visual; layering the shadcn
+            PrevNextNav on top breaks the palette. Production destinations
+            (the other 504, branch below) still get it. */}
       </div>
     );
   }

@@ -87,41 +87,45 @@ export function EditorialEntry({
   title,
   body,
   meta,
+  href,
 }: {
   title: string;
   body?: ReactNode;
   meta?: string;
+  href?: string;
 }) {
-  return (
+  const headRow = (
     <div
       style={{
-        padding: "28px 0",
-        borderTop: "1px solid var(--hair)",
+        display: "flex",
+        alignItems: "baseline",
+        justifyContent: "space-between",
+        gap: 16,
+        marginBottom: body ? 10 : 0,
       }}
     >
+      <h3
+        style={{
+          fontFamily: "var(--cinema-display)",
+          fontStyle: "italic",
+          fontWeight: 500,
+          fontSize: 24,
+          lineHeight: 1.25,
+          letterSpacing: "-0.012em",
+          color: "var(--bone)",
+          margin: 0,
+        }}
+      >
+        {title}
+      </h3>
       <div
         style={{
           display: "flex",
           alignItems: "baseline",
-          justifyContent: "space-between",
-          gap: 16,
-          marginBottom: body ? 10 : 0,
+          gap: 14,
+          whiteSpace: "nowrap",
         }}
       >
-        <h3
-          style={{
-            fontFamily: "var(--cinema-display)",
-            fontStyle: "italic",
-            fontWeight: 500,
-            fontSize: 24,
-            lineHeight: 1.25,
-            letterSpacing: "-0.012em",
-            color: "var(--bone)",
-            margin: 0,
-          }}
-        >
-          {title}
-        </h3>
         {meta && (
           <span
             className="nq-mono"
@@ -129,26 +133,72 @@ export function EditorialEntry({
               fontSize: 12,
               color: "var(--bone-faint)",
               letterSpacing: "0.16em",
-              whiteSpace: "nowrap",
             }}
           >
             {meta}
           </span>
         )}
+        {href && (
+          <span
+            aria-hidden
+            className="nq-entry-arrow"
+            style={{
+              fontFamily: "var(--cinema-mono)",
+              fontSize: 16,
+              color: "var(--bone-faint)",
+              transition: "transform 220ms ease, color 220ms ease",
+            }}
+          >
+            →
+          </span>
+        )}
       </div>
-      {body && (
-        <p
-          style={{
-            fontFamily: "var(--cinema-ui)",
-            fontSize: 16,
-            lineHeight: 1.7,
-            color: "var(--bone-dim)",
-            margin: 0,
-          }}
-        >
-          {body}
-        </p>
-      )}
+    </div>
+  );
+
+  const bodyEl = body ? (
+    <p
+      style={{
+        fontFamily: "var(--cinema-ui)",
+        fontSize: 16,
+        lineHeight: 1.7,
+        color: "var(--bone-dim)",
+        margin: 0,
+      }}
+    >
+      {body}
+    </p>
+  ) : null;
+
+  if (href) {
+    return (
+      <a
+        href={href}
+        className="nq-entry-link"
+        style={{
+          display: "block",
+          padding: "28px 0",
+          borderTop: "1px solid var(--hair)",
+          textDecoration: "none",
+          color: "inherit",
+          transition: "background 220ms ease",
+        }}
+      >
+        {headRow}
+        {bodyEl}
+      </a>
+    );
+  }
+
+  return (
+    <div
+      style={{
+        padding: "28px 0",
+        borderTop: "1px solid var(--hair)",
+      }}
+    >
+      {headRow}
+      {bodyEl}
     </div>
   );
 }

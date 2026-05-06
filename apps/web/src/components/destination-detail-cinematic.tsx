@@ -50,9 +50,10 @@ import {
 // StickyDestinationHeader / DestinationSectionNav / DestinationDecisionRail
 // are intentionally NOT used here — they paint shadcn chrome over the
 // cinematic palette and the user asked them removed. The cinematic right
-// rail in DestinationScrollRail handles act-jumping.
+// rail in DestinationScrollRail handles act-jumping. Footer is rendered
+// inline in cinematic palette below — the production <Footer /> uses
+// shadcn tokens which clash with --paper / --bone.
 import { Nav } from "./nav";
-import { Footer } from "./footer";
 import { MonthlyChart } from "./monthly-chart";
 import { WeatherWidget } from "./weather-widget";
 import { ShareButton } from "./share-button";
@@ -535,8 +536,8 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
            ─────────────────────────────────────────────── */}
         <section
           id="dest-act-3"
+          className="nq-act-warm"
           style={{
-            background: "var(--film-2)",
             borderTop: "1px solid var(--hair)",
             borderBottom: "1px solid var(--hair)",
             padding: "120px 24px 100px",
@@ -694,16 +695,14 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
                         <Link
                           key={a.slug}
                           href={`/${locale}/blog/${a.slug}`}
+                          className="nq-entry-link"
                           style={{
                             display: "flex",
                             alignItems: "baseline",
                             justifyContent: "space-between",
                             gap: 16,
                             padding: "14px 0",
-                            borderTop:
-                              i === 0
-                                ? "1px solid var(--hair)"
-                                : "1px solid var(--hair)",
+                            borderTop: "1px solid var(--hair)",
                             borderBottom:
                               i === dest.relatedArticles.length - 1
                                 ? "1px solid var(--hair)"
@@ -723,18 +722,39 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
                             {a.title}
                           </span>
                           <span
-                            className="nq-mono"
                             style={{
-                              fontSize: 11,
-                              color: "var(--bone-faint)",
-                              letterSpacing: "0.16em",
+                              display: "flex",
+                              alignItems: "baseline",
+                              gap: 14,
                               whiteSpace: "nowrap",
                             }}
                           >
-                            {a.depth === "deep-dive" ? "DEEP DIVE" : "BRIEF"}
-                            {a.reading_time
-                              ? ` · ${a.reading_time} MIN`
-                              : ""}
+                            <span
+                              className="nq-mono"
+                              style={{
+                                fontSize: 11,
+                                color: "var(--bone-faint)",
+                                letterSpacing: "0.16em",
+                              }}
+                            >
+                              {a.depth === "deep-dive" ? "DEEP DIVE" : "BRIEF"}
+                              {a.reading_time
+                                ? ` · ${a.reading_time} MIN`
+                                : ""}
+                            </span>
+                            <span
+                              aria-hidden
+                              className="nq-entry-arrow"
+                              style={{
+                                fontFamily: "var(--cinema-mono)",
+                                fontSize: 16,
+                                color: "var(--bone-faint)",
+                                transition:
+                                  "transform 220ms ease, color 220ms ease",
+                              }}
+                            >
+                              →
+                            </span>
                           </span>
                         </Link>
                       ))}
@@ -811,8 +831,8 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
            ─────────────────────────────────────────────── */}
         <section
           id="dest-act-5"
+          className="nq-act-warm"
           style={{
-            background: "var(--film-2)",
             borderTop: "1px solid var(--hair)",
             borderBottom: "1px solid var(--hair)",
             padding: "120px 24px 100px",
@@ -1287,13 +1307,27 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
                       {gem.why_unknown && (
                         <p
                           style={{
-                            color: "var(--amber)",
-                            fontSize: 12,
-                            margin: "0 0 8px",
+                            margin: "0 0 10px",
                             fontFamily: "var(--cinema-ui)",
+                            fontSize: 13,
+                            lineHeight: 1.55,
+                            color: "var(--bone-dim)",
                           }}
                         >
-                          Why unknown: {gem.why_unknown}
+                          <span
+                            className="nq-mono"
+                            style={{
+                              display: "inline-block",
+                              fontSize: 10,
+                              color: "var(--bone-faint)",
+                              letterSpacing: "0.18em",
+                              textTransform: "uppercase",
+                              marginRight: 8,
+                            }}
+                          >
+                            Why unknown
+                          </span>
+                          {gem.why_unknown}
                         </p>
                       )}
                       {gem.why_go && (
@@ -1322,8 +1356,8 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
            ─────────────────────────────────────────────── */}
         <section
           id="dest-act-7"
+          className="nq-act-warm"
           style={{
-            background: "var(--film-2)",
             borderTop: "1px solid var(--hair)",
             borderBottom: "1px solid var(--hair)",
             padding: "120px 24px 100px",
@@ -1977,6 +2011,148 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
               />
             </div>
 
+            {/* Local Legends — the people behind the place. Restored to
+                close the production-vs-cinematic parity gap. Editorial
+                voice: italic display name + role-mono kicker + Prose-style
+                body. Vermillion accent on the verified-byline. */}
+            {dest.local_legends?.length > 0 && (
+              <div style={{ maxWidth: 820, margin: "80px auto 0" }}>
+                <p
+                  className="nq-kicker"
+                  style={{
+                    color: "var(--vermillion)",
+                    marginBottom: 24,
+                  }}
+                >
+                  LOCAL LEGENDS · WHO MAKES THIS PLACE
+                </p>
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: 0,
+                  }}
+                >
+                  {dest.local_legends.map((legend: any, i: number) => (
+                    <div
+                      key={legend.id ?? legend.name}
+                      style={{
+                        padding: "28px 0",
+                        borderTop:
+                          i === 0
+                            ? "1px solid var(--hair)"
+                            : "1px solid var(--hair)",
+                        borderBottom:
+                          i === dest.local_legends.length - 1
+                            ? "1px solid var(--hair)"
+                            : "0",
+                      }}
+                    >
+                      <div
+                        style={{
+                          display: "flex",
+                          alignItems: "baseline",
+                          justifyContent: "space-between",
+                          gap: 16,
+                          marginBottom: legend.story ? 12 : 0,
+                          flexWrap: "wrap",
+                        }}
+                      >
+                        <Title
+                          as="h3"
+                          style={{
+                            fontFamily: "var(--cinema-display)",
+                            fontStyle: "italic",
+                            fontWeight: 500,
+                            fontSize: 26,
+                            lineHeight: 1.2,
+                            letterSpacing: "-0.012em",
+                            color: "var(--bone)",
+                            margin: 0,
+                          }}
+                        >
+                          {legend.name}
+                        </Title>
+                        <span
+                          className="nq-mono"
+                          style={{
+                            fontSize: 11,
+                            color: legend.verified
+                              ? "var(--vermillion)"
+                              : "var(--bone-faint)",
+                            letterSpacing: "0.18em",
+                            textTransform: "uppercase",
+                            whiteSpace: "nowrap",
+                          }}
+                        >
+                          {[
+                            legend.role,
+                            legend.known_as,
+                            legend.verified ? "VERIFIED" : null,
+                          ]
+                            .filter(Boolean)
+                            .join(" · ")}
+                        </span>
+                      </div>
+                      {legend.story && (
+                        <p
+                          style={{
+                            fontFamily: "var(--cinema-ui)",
+                            fontSize: 16,
+                            lineHeight: 1.7,
+                            color: "var(--bone-dim)",
+                            margin: 0,
+                          }}
+                        >
+                          {legend.story}
+                        </p>
+                      )}
+                      {(legend.instagram || legend.youtube) && (
+                        <div
+                          style={{
+                            marginTop: 12,
+                            display: "flex",
+                            gap: 18,
+                            fontFamily: "var(--cinema-mono)",
+                            fontSize: 11,
+                            letterSpacing: "0.18em",
+                            textTransform: "uppercase",
+                          }}
+                        >
+                          {legend.instagram && (
+                            <a
+                              href={`https://instagram.com/${legend.instagram.replace("@", "")}`}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              style={{
+                                color: "var(--vermillion)",
+                                textDecoration: "none",
+                              }}
+                            >
+                              IG · {legend.instagram} →
+                            </a>
+                          )}
+                          {legend.youtube && (
+                            <a
+                              href={legend.youtube}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              style={{
+                                color: "var(--vermillion)",
+                                textDecoration: "none",
+                              }}
+                            >
+                              YOUTUBE →
+                            </a>
+                          )}
+                        </div>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
             {/* Festivals */}
             {dest.festivals?.length > 0 && (
               <div style={{ maxWidth: 720, margin: "60px auto 0" }}>
@@ -2011,8 +2187,8 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
            ─────────────────────────────────────────────── */}
         <section
           id="dest-act-9"
+          className="nq-act-warm"
           style={{
-            background: "var(--film-2)",
             borderTop: "1px solid var(--hair)",
             borderBottom: "1px solid var(--hair)",
             padding: "120px 24px 100px",
@@ -2383,8 +2559,8 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
            ─────────────────────────────────────────────── */}
         <section
           id="dest-act-11"
+          className="nq-act-warm"
           style={{
-            background: "var(--film-2)",
             borderTop: "1px solid var(--hair)",
             padding: "120px 24px 140px",
           }}
@@ -2409,6 +2585,7 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
                     key={c.id}
                     title={c.name}
                     body={c.description}
+                    href={`/${locale}/collections/${c.id}`}
                   />
                 ))}
               </div>
@@ -2431,6 +2608,7 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
                     key={r.id}
                     title={r.name}
                     meta={`${r.days} DAYS · ${(r.difficulty ?? "").toUpperCase()}`}
+                    href={`/${locale}/routes/${r.id}`}
                   />
                 ))}
               </div>
@@ -2479,45 +2657,236 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
               </EditorialCaption>
             </div>
 
-            {/* Action row — share / WhatsApp / compare / suggest edit */}
+            {/* Action rows — three stacked tiers with breathing room.
+                Tier 1: share affordances (lightest weight)
+                Tier 2: suggest-edit ghost button
+                Tier 3: primary destination-level CTAs (heaviest weight) */}
             <div
               style={{
                 maxWidth: 720,
-                margin: "60px auto 0",
+                margin: "80px auto 0",
                 display: "flex",
-                flexWrap: "wrap",
-                justifyContent: "center",
+                flexDirection: "column",
                 alignItems: "center",
-                gap: 14,
+                gap: 40,
               }}
             >
-              <ShareButton
-                title={displayName}
-                text={dest.tagline ?? `${displayName} — NakshIQ verdict`}
-              />
-              <WhatsAppShare
-                message={`${displayName} on NakshIQ — ${
-                  dest.tagline ?? "the editorial verdict"
-                }`}
-              />
-              <CompareButton destinationId={dest.id} />
+              <div
+                style={{
+                  display: "flex",
+                  flexWrap: "wrap",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  gap: 14,
+                }}
+              >
+                <ShareButton
+                  title={displayName}
+                  text={dest.tagline ?? `${displayName} — NakshIQ verdict`}
+                />
+                <WhatsAppShare
+                  message={`${displayName} on NakshIQ — ${
+                    dest.tagline ?? "the editorial verdict"
+                  }`}
+                />
+                <CompareButton destinationId={dest.id} />
+              </div>
               <SuggestEditButton
+                variant="cinematic"
                 targetTable="destinations"
                 targetId={dest.id}
                 context={`destination · ${displayName}`}
               />
-              <Link href={`/${locale}/explore`} style={ctaSecondary}>
-                BACK TO ATLAS
-              </Link>
-              <Link href={`/${locale}/methodology`} style={ctaPrimary}>
-                HOW WE SCORE →
-              </Link>
+              <div
+                style={{
+                  display: "flex",
+                  flexWrap: "wrap",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  gap: 16,
+                }}
+              >
+                <Link href={`/${locale}/explore`} style={ctaSecondary}>
+                  BACK TO ATLAS
+                </Link>
+                <Link href={`/${locale}/methodology`} style={ctaPrimary}>
+                  HOW WE SCORE →
+                </Link>
+              </div>
             </div>
           </div>
         </section>
       </main>
 
-      <Footer />
+      {/* ───────────────────────────────────────────────
+         Cinematic outro — full-bleed Ken Burns image with closing
+         tagline + Issue Nº. Bridges editorial content to the footer
+         so the page doesn't end on text → bare nav chrome. Single
+         image (cheap), reuses the hero's Ken Burns keyframes for
+         consistency.
+         ─────────────────────────────────────────────── */}
+      <section
+        className="nq-outro nq-grain"
+        aria-label={`${displayName} — closing frame`}
+      >
+        <img
+          className="nq-outro-img"
+          src={destinationImage(dest.id, 2400)}
+          alt=""
+          aria-hidden
+        />
+        <div className="nq-outro-veil" aria-hidden />
+        <div className="nq-outro-copy">
+          <Title
+            as="h2"
+            style={{
+              fontFamily: "var(--cinema-display)",
+              fontStyle: "italic",
+              fontWeight: 400,
+              fontSize: "clamp(48px, 7vw, 96px)",
+              lineHeight: 0.96,
+              letterSpacing: "-0.022em",
+              color: "var(--bone)",
+              margin: 0,
+            }}
+          >
+            {`${dest.name}.`}
+          </Title>
+          <p
+            className="nq-mono"
+            style={{
+              marginTop: 24,
+              fontSize: 11,
+              letterSpacing: "0.26em",
+              textTransform: "uppercase",
+              color: "var(--vermillion)",
+            }}
+          >
+            ISSUE Nº {issueNum} ·{" "}
+            {dest.content_reviewed_at
+              ? `VERIFIED ${new Date(dest.content_reviewed_at)
+                  .toLocaleDateString("en-IN", {
+                    month: "short",
+                    year: "numeric",
+                  })
+                  .toUpperCase()}`
+              : `${currentMonthName.toUpperCase()} 2026`}
+          </p>
+        </div>
+      </section>
+
+      {/* Cinematic footer — inline replacement for <Footer />. Same link
+          set so legal/SEO doesn't regress, but on cinema palette so the
+          page doesn't end on a shadcn grey/border shift. */}
+      <footer
+        style={{
+          borderTop: "1px solid var(--hair)",
+          padding: "48px 32px",
+          background: "var(--paper)",
+          color: "var(--bone-dim)",
+        }}
+      >
+        <div
+          style={{
+            maxWidth: 1200,
+            margin: "0 auto",
+            display: "flex",
+            flexWrap: "wrap",
+            gap: 24,
+            alignItems: "center",
+            justifyContent: "space-between",
+          }}
+        >
+          <div
+            style={{
+              display: "flex",
+              flexWrap: "wrap",
+              gap: 18,
+              alignItems: "center",
+              fontFamily: "var(--cinema-mono)",
+              fontSize: 11,
+              letterSpacing: "0.18em",
+              textTransform: "uppercase",
+            }}
+          >
+            <span
+              style={{
+                fontFamily: "var(--cinema-display)",
+                fontStyle: "italic",
+                fontSize: 16,
+                color: "var(--bone)",
+                letterSpacing: "-0.01em",
+                textTransform: "none",
+              }}
+            >
+              Naksh<span style={{ color: "var(--vermillion)" }}>.</span>iq
+            </span>
+            <Link
+              href={`/${locale}/about`}
+              style={{ color: "var(--bone-dim)", textDecoration: "none" }}
+            >
+              About
+            </Link>
+            <Link
+              href={`/${locale}/methodology`}
+              style={{ color: "var(--bone-dim)", textDecoration: "none" }}
+            >
+              Methodology
+            </Link>
+            <Link
+              href={`/${locale}/contact`}
+              style={{ color: "var(--bone-dim)", textDecoration: "none" }}
+            >
+              Contact
+            </Link>
+          </div>
+          <div
+            style={{
+              display: "flex",
+              flexWrap: "wrap",
+              gap: 18,
+              alignItems: "center",
+              fontFamily: "var(--cinema-mono)",
+              fontSize: 11,
+              color: "var(--bone-faint)",
+              letterSpacing: "0.18em",
+              textTransform: "uppercase",
+            }}
+          >
+            <span>© NakshIQ</span>
+            <span>· Issue Nº {issueNum}</span>
+            <Link
+              href={`/${locale}/privacy`}
+              style={{ color: "var(--bone-faint)", textDecoration: "none" }}
+            >
+              Privacy
+            </Link>
+            <Link
+              href={`/${locale}/terms`}
+              style={{ color: "var(--bone-faint)", textDecoration: "none" }}
+            >
+              Terms
+            </Link>
+            <Link
+              href={`/${locale}/cookies`}
+              style={{ color: "var(--bone-faint)", textDecoration: "none" }}
+            >
+              Cookies
+            </Link>
+            <span
+              style={{
+                fontFamily: "var(--cinema-display)",
+                fontStyle: "italic",
+                color: "var(--vermillion)",
+                letterSpacing: "-0.01em",
+                textTransform: "none",
+              }}
+            >
+              Go with confidence.
+            </span>
+          </div>
+        </div>
+      </footer>
 
       {/* In-guide labelled TOC — appears after the cover scrolls out.
           Sister to the dots-only DestinationScrollRail; this one shows
