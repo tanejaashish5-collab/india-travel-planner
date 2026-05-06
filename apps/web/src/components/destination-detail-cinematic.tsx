@@ -16,8 +16,9 @@
    ============================================================ */
 
 import Link from "next/link";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { destinationImage } from "@/lib/image-url";
+import { videoSrc } from "@/lib/video-url";
 import {
   currentMonthIST,
   currentMonthLongIST,
@@ -46,6 +47,9 @@ import {
 // Existing feature components — preserved verbatim, just re-framed
 import { Nav } from "./nav";
 import { Footer } from "./footer";
+import { StickyDestinationHeader } from "./sticky-destination-header";
+import { DestinationSectionNav } from "./destination-section-nav";
+import { DestinationDecisionRail } from "./destination-decision-rail";
 import { MonthlyChart } from "./monthly-chart";
 import { WeatherWidget } from "./weather-widget";
 import { ShareButton } from "./share-button";
@@ -80,6 +84,7 @@ import { SuggestEditButton } from "./suggest-edit-button";
 
 export function DestinationDetailCinematic({ dest }: { dest: any }) {
   const locale = useLocale();
+  const tm = useTranslations("months");
   const issueNum = getIssueNumber();
   const months = (dest.destination_months ?? []).sort(
     (a: any, b: any) => a.month - b.month,
@@ -118,6 +123,33 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
     why_not: m.why_not,
   }));
 
+  const currentMonthData = months.find((m: any) => m.month === currentMonth);
+  const monthSlugs = ["", "january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december"];
+  const crowdLevel: "quiet" | "moderate" | "peak" | null = (() => {
+    const cal = dest.crowd_calendar;
+    if (!cal || typeof cal !== "object") return null;
+    if (cal.peak_months?.includes(currentMonth)) return "peak";
+    if (cal.quiet_months?.includes(currentMonth)) return "quiet";
+    return "moderate";
+  })();
+
+  // Section TOC — same gates as production. Drives the in-guide jump nav so
+  // readers can skip straight to The Window / The Risks / The Stay etc.
+  const subs = dest.sub_destinations ?? [];
+  const gems = dest.hidden_gems ?? [];
+  const sections = [
+    { id: "dest-act-2", label: "Verdict", show: true },
+    { id: "dest-act-3", label: "12 months", show: months.length > 0 },
+    { id: "dest-act-4", label: "Field brief", show: !!dest.why_special },
+    { id: "dest-act-5", label: "Risks", show: !!cc || dest.solo_female_score != null || !!kf },
+    { id: "dest-act-6", label: "Atlas", show: pois.length > 0 || subs.length > 0 || gems.length > 0 },
+    { id: "dest-act-7", label: "Cost & ground", show: !!dest.daily_cost || !!dest.local_logistics },
+    { id: "dest-act-8", label: "Stay & eat", show: eateries.length > 0 || (dest.editor_stay_picks?.length ?? 0) > 0 },
+    { id: "dest-act-9", label: "Field notes", show: (dest.trip_reports?.length ?? 0) > 0 || (dest.reviews?.length ?? 0) > 0 || answeredQuestions.length > 0 },
+    { id: "dest-act-10", label: "Itinerary", show: !!dest.micro_itineraries },
+    { id: "dest-act-11", label: "Coda", show: true },
+  ].filter((s) => s.show);
+
   // Pre-compute every month's score → tier for the Window strip.
   const windowMonths = MONTH_LONG_NAMES.map((mName, i) => {
     const m = months.find((row: any) => row.month === i + 1);
@@ -147,12 +179,36 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
       <CinemaStyles />
       <Nav />
 
-      {/* Persistent SOS button — scrolls to the act-V emergency block. */}
+      {/* Sticky top chrome — appears when reader scrolls past the cover. */}
+      <StickyDestinationHeader
+        name={displayName}
+        score={currentScore}
+        monthLabel={tm(String(currentMonth))}
+        stateId={dest.state_id}
+      />
+
+      {/* Right-side decision rail — at-a-glance verdict, kids, solo-F, crowd,
+          comparison link. Stays pinned at lg+ once user is past the cover. */}
+      <DestinationDecisionRail
+        destinationId={dest.id}
+        name={displayName}
+        score={currentScore}
+        monthLabel={tm(String(currentMonth))}
+        monthSlug={monthSlugs[currentMonth]}
+        verdict={currentMonthData?.verdict}
+        kidsRating={kf?.rating ?? null}
+        soloFemaleScore={dest.solo_female_score ?? null}
+        crowdLevel={crowdLevel}
+        compareWithId={dest.nearbyDestinations?.[0]?.id ?? null}
+        compareWithName={dest.nearbyDestinations?.[0]?.name ?? null}
+      />
+
+      {/* Floating SOS button — scrolls to the act-V emergency block. */}
       {dest.emergencySos && (
         <SOSFloatingButton
           onClick={() => {
             document
-              .getElementById("dest-act-5")
+              .getElementById("emergency-sos")
               ?.scrollIntoView({ behavior: "smooth", block: "start" });
           }}
         />
@@ -182,19 +238,35 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
             color: "var(--bone)",
           }}
         >
-          {/* Hero image */}
+          {/* Hero — video where R2 has it, poster image always rendered as
+              fallback. Same source-of-truth as the production hero so the
+              same destinations show motion (videoSrc resolves to the R2
+              CDN URL or null). */}
           <div
             aria-hidden
             style={{
               position: "absolute",
               inset: 0,
               zIndex: 0,
-              backgroundImage: `url("${destinationImage(dest.id, 2400)}")`,
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-              animation: "nq-kb-1 22s ease-out forwards",
+              overflow: "hidden",
             }}
-          />
+          >
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              poster={destinationImage(dest.id, 2400)}
+              style={{
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+                animation: "nq-kb-1 22s ease-out forwards",
+              }}
+            >
+              <source src={videoSrc(dest.id)} type="video/mp4" />
+            </video>
+          </div>
           <div
             aria-hidden
             style={{
@@ -319,6 +391,12 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
             )}
           </div>
         </section>
+
+        {/* In-guide TOC — sticky after the cover scrolls out so readers can
+            jump straight to whichever act they need. Uses the same
+            DestinationSectionNav as production, just hands it the cinematic
+            section IDs (dest-act-N). */}
+        <DestinationSectionNav sections={sections} variant="top" />
 
         {/* ───────────────────────────────────────────────
            ACT II — The Verdict (TL;DR + decision rail)
@@ -574,16 +652,108 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
               }}
             >
               <div>
-                <p
-                  className="nq-kicker"
+                <div
                   style={{
-                    color: "var(--vermillion)",
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: 10,
+                    padding: "6px 14px",
+                    border: "1px solid var(--hair)",
+                    borderRadius: 999,
+                    fontFamily: "var(--cinema-ui)",
+                    fontSize: 11,
+                    color: "var(--bone)",
+                    letterSpacing: "0.22em",
+                    textTransform: "uppercase",
                     marginBottom: 16,
                   }}
                 >
-                  LIVE WEATHER
-                </p>
+                  <span
+                    style={{
+                      width: 8,
+                      height: 8,
+                      borderRadius: "50%",
+                      background: "var(--green)",
+                      animation: "nq-pulse 1.6s ease-in-out infinite",
+                      boxShadow: "0 0 0 0 rgba(74,222,159,0.6)",
+                    }}
+                  />
+                  Live weather
+                </div>
                 <WeatherWidget destinationId={dest.id} />
+
+                {/* Related articles — long-form deep-dives below the live
+                    weather signal, same editorial pattern as production. */}
+                {dest.relatedArticles?.length > 0 && (
+                  <div style={{ marginTop: 24 }}>
+                    <p
+                      className="nq-kicker"
+                      style={{
+                        color: "var(--vermillion)",
+                        marginBottom: 12,
+                        fontSize: 11,
+                      }}
+                    >
+                      DEEP-DIVE READS
+                    </p>
+                    <div
+                      style={{
+                        display: "flex",
+                        flexDirection: "column",
+                        gap: 0,
+                      }}
+                    >
+                      {dest.relatedArticles.map((a: any, i: number) => (
+                        <Link
+                          key={a.slug}
+                          href={`/${locale}/blog/${a.slug}`}
+                          style={{
+                            display: "flex",
+                            alignItems: "baseline",
+                            justifyContent: "space-between",
+                            gap: 16,
+                            padding: "14px 0",
+                            borderTop:
+                              i === 0
+                                ? "1px solid var(--hair)"
+                                : "1px solid var(--hair)",
+                            borderBottom:
+                              i === dest.relatedArticles.length - 1
+                                ? "1px solid var(--hair)"
+                                : "0",
+                            textDecoration: "none",
+                            color: "var(--bone)",
+                          }}
+                        >
+                          <span
+                            style={{
+                              fontFamily: "var(--cinema-display)",
+                              fontStyle: "italic",
+                              fontSize: 17,
+                              lineHeight: 1.3,
+                            }}
+                          >
+                            {a.title}
+                          </span>
+                          <span
+                            className="nq-mono"
+                            style={{
+                              fontSize: 11,
+                              color: "var(--bone-faint)",
+                              letterSpacing: "0.16em",
+                              whiteSpace: "nowrap",
+                            }}
+                          >
+                            {a.depth === "deep-dive" ? "DEEP DIVE" : "BRIEF"}
+                            {a.reading_time
+                              ? ` · ${a.reading_time} MIN`
+                              : ""}
+                          </span>
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                )}
               </div>
               {dest.elevation_m != null && (
                 <div>
@@ -764,16 +934,21 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
           <div style={{ maxWidth: 1100, margin: "0 auto" }}>
             <SectionLabel num="VI" name="THE ATLAS · WHERE TO POINT" />
 
-            {/* Sub-destinations / POI */}
+            {/* POI section first — has the map. Use it as the primary "where
+                to point" surface. Subs are rendered below ONLY when they're
+                a different content set (sub-destinations are usually
+                neighbourhoods/sub-towns, POIs are specific stops; some
+                destinations only have one or the other). */}
             {pois.length > 0 && (
               <div style={{ maxWidth: 1100, margin: "32px auto 0" }}>
                 <POISection pois={pois} destName={displayName} />
               </div>
             )}
 
-            {/* Sub-destinations as editorial entries */}
-            {dest.sub_destinations?.length > 0 && (
-              <div style={{ maxWidth: 720, margin: "60px auto 0" }}>
+            {/* Sub-destinations as full cards (neighbourhoods, sub-towns) —
+                only when there are SUBS that aren't already covered by POIs. */}
+            {subs.length > 0 && (
+              <div style={{ maxWidth: 1100, margin: "60px auto 0" }}>
                 <p
                   className="nq-kicker"
                   style={{
@@ -781,22 +956,116 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
                     marginBottom: 16,
                   }}
                 >
-                  PLACES WITHIN {dest.name.toUpperCase()}
+                  NEIGHBOURHOODS · WITHIN {dest.name.toUpperCase()}
                 </p>
-                {dest.sub_destinations.map((sub: any) => (
-                  <EditorialEntry
-                    key={sub.name}
-                    title={sub.name}
-                    body={sub.description ?? sub.note}
-                    meta={sub.distance_km ? `${sub.distance_km} KM` : undefined}
-                  />
-                ))}
+                <div
+                  style={{
+                    display: "grid",
+                    gridTemplateColumns:
+                      "repeat(auto-fit, minmax(280px, 1fr))",
+                    gap: 16,
+                  }}
+                >
+                  {subs.map((sub: any) => (
+                    <div
+                      key={sub.id ?? sub.name}
+                      style={{
+                        border: "1px solid var(--hair)",
+                        padding: "20px",
+                      }}
+                    >
+                      <div
+                        style={{
+                          display: "flex",
+                          alignItems: "baseline",
+                          justifyContent: "space-between",
+                          gap: 12,
+                          marginBottom: 6,
+                        }}
+                      >
+                        <h3
+                          style={{
+                            fontFamily: "var(--cinema-display)",
+                            fontStyle: "italic",
+                            fontWeight: 500,
+                            fontSize: 22,
+                            color: "var(--bone)",
+                            margin: 0,
+                            lineHeight: 1.2,
+                          }}
+                        >
+                          {sub.name}
+                        </h3>
+                        {sub.elevation_m && (
+                          <span
+                            className="nq-mono"
+                            style={{
+                              fontSize: 11,
+                              color: "var(--bone-faint)",
+                              letterSpacing: "0.16em",
+                              whiteSpace: "nowrap",
+                            }}
+                          >
+                            {sub.elevation_m}M
+                          </span>
+                        )}
+                      </div>
+                      {sub.tagline && (
+                        <p
+                          style={{
+                            color: "var(--vermillion)",
+                            fontSize: 13,
+                            margin: "0 0 10px",
+                            fontFamily: "var(--cinema-ui)",
+                          }}
+                        >
+                          {sub.tagline}
+                        </p>
+                      )}
+                      {sub.why_visit && (
+                        <p
+                          style={{
+                            fontFamily: "var(--cinema-ui)",
+                            fontSize: 14,
+                            lineHeight: 1.6,
+                            color: "var(--bone-dim)",
+                            margin: 0,
+                          }}
+                        >
+                          {sub.why_visit}
+                        </p>
+                      )}
+                      <div
+                        style={{
+                          marginTop: 12,
+                          display: "flex",
+                          gap: 12,
+                          fontFamily: "var(--cinema-mono)",
+                          fontSize: 11,
+                          color: "var(--bone-faint)",
+                          letterSpacing: "0.14em",
+                        }}
+                      >
+                        {sub.distance_from_parent_km != null && (
+                          <span>{sub.distance_from_parent_km} KM</span>
+                        )}
+                        {sub.time_needed && <span>· {sub.time_needed}</span>}
+                        {sub.kids_ok != null && (
+                          <span>
+                            · {sub.kids_ok ? "KIDS OK" : "ADULTS"}
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
             )}
 
-            {/* Hidden gems */}
-            {dest.hidden_gems?.length > 0 && (
-              <div style={{ maxWidth: 720, margin: "60px auto 0" }}>
+            {/* Hidden gems — separate column; same editorial-entry layout
+                but with a "why unknown" line that's specific to this set. */}
+            {gems.length > 0 && (
+              <div style={{ maxWidth: 1100, margin: "60px auto 0" }}>
                 <p
                   className="nq-kicker"
                   style={{
@@ -806,14 +1075,85 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
                 >
                   HIDDEN GEMS · NEAR HERE
                 </p>
-                {dest.hidden_gems.map((gem: any) => (
-                  <EditorialEntry
-                    key={gem.id ?? gem.name}
-                    title={gem.name}
-                    body={gem.description}
-                    meta={gem.distance_km ? `${gem.distance_km} KM` : undefined}
-                  />
-                ))}
+                <div
+                  style={{
+                    display: "grid",
+                    gridTemplateColumns:
+                      "repeat(auto-fit, minmax(280px, 1fr))",
+                    gap: 16,
+                  }}
+                >
+                  {gems.map((gem: any) => (
+                    <div
+                      key={gem.id ?? gem.name}
+                      style={{
+                        borderLeft: "2px solid var(--vermillion)",
+                        padding: "16px 20px",
+                        background: "rgba(229,86,66,0.04)",
+                      }}
+                    >
+                      <div
+                        style={{
+                          display: "flex",
+                          alignItems: "baseline",
+                          justifyContent: "space-between",
+                          gap: 12,
+                          marginBottom: 6,
+                        }}
+                      >
+                        <h3
+                          style={{
+                            fontFamily: "var(--cinema-display)",
+                            fontStyle: "italic",
+                            fontWeight: 500,
+                            fontSize: 20,
+                            color: "var(--vermillion)",
+                            margin: 0,
+                          }}
+                        >
+                          {gem.name}
+                        </h3>
+                        <span
+                          className="nq-mono"
+                          style={{
+                            fontSize: 11,
+                            color: "var(--bone-faint)",
+                            letterSpacing: "0.16em",
+                            whiteSpace: "nowrap",
+                          }}
+                        >
+                          {gem.distance_km}KM ·{" "}
+                          {gem.drive_time?.toUpperCase()}
+                        </span>
+                      </div>
+                      {gem.why_unknown && (
+                        <p
+                          style={{
+                            color: "var(--amber)",
+                            fontSize: 12,
+                            margin: "0 0 8px",
+                            fontFamily: "var(--cinema-ui)",
+                          }}
+                        >
+                          Why unknown: {gem.why_unknown}
+                        </p>
+                      )}
+                      {gem.why_go && (
+                        <p
+                          style={{
+                            fontFamily: "var(--cinema-ui)",
+                            fontSize: 14,
+                            lineHeight: 1.6,
+                            color: "var(--bone-dim)",
+                            margin: 0,
+                          }}
+                        >
+                          {gem.why_go}
+                        </p>
+                      )}
+                    </div>
+                  ))}
+                </div>
               </div>
             )}
           </div>
@@ -834,7 +1174,10 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
           <div style={{ maxWidth: 1100, margin: "0 auto" }}>
             <SectionLabel num="VII" name="THE COST · THE CROWDS · THE GROUND" />
 
-            {/* Cost grid */}
+            {/* Cost grid — three tiers (budget / midrange / luxury), each a
+                line-item breakdown of the daily spend. Note rendered above
+                as a caption; non-tier keys (e.g. `note`) skipped from the
+                grid so they don't read as a tier. */}
             {dest.daily_cost && (
               <div style={{ maxWidth: 1100, margin: "48px auto 0" }}>
                 <p
@@ -846,52 +1189,134 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
                 >
                   WHAT A DAY ACTUALLY COSTS
                 </p>
+                {dest.daily_cost.note && (
+                  <p
+                    style={{
+                      fontFamily: "var(--cinema-display)",
+                      fontStyle: "italic",
+                      fontSize: 18,
+                      lineHeight: 1.5,
+                      color: "var(--bone-dim)",
+                      maxWidth: 720,
+                      marginBottom: 24,
+                    }}
+                  >
+                    {dest.daily_cost.note}
+                  </p>
+                )}
                 <div
                   style={{
                     display: "grid",
-                    gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
-                    gap: 0,
+                    gridTemplateColumns:
+                      "repeat(auto-fit, minmax(220px, 1fr))",
                     border: "1px solid var(--hair)",
                   }}
                 >
-                  {Object.entries(dest.daily_cost as Record<string, any>).map(
-                    ([k, v], i, arr) => (
-                      <div
-                        key={k}
-                        style={{
-                          padding: "24px",
-                          borderRight:
-                            i < arr.length - 1
-                              ? "1px solid var(--hair)"
-                              : "0",
-                        }}
-                      >
+                  {(["budget", "midrange", "luxury"] as const).map(
+                    (tierKey, i, arr) => {
+                      const tier = dest.daily_cost?.[tierKey] as
+                        | Record<string, number | undefined>
+                        | undefined;
+                      if (!tier) return null;
+                      const total =
+                        tier.total ??
+                        (tier.stay ?? 0) +
+                          (tier.food ?? 0) +
+                          (tier.transport ?? 0) +
+                          (tier.activities ?? 0);
+                      const tierTint =
+                        tierKey === "budget"
+                          ? "var(--green)"
+                          : tierKey === "midrange"
+                          ? "var(--amber)"
+                          : "#E9876B";
+                      return (
                         <div
-                          className="nq-mono"
+                          key={tierKey}
                           style={{
-                            fontSize: 11,
-                            color: "var(--bone-faint)",
-                            letterSpacing: "0.18em",
-                            marginBottom: 8,
-                            textTransform: "uppercase",
+                            padding: "28px 24px",
+                            borderRight:
+                              i < arr.length - 1
+                                ? "1px solid var(--hair)"
+                                : "0",
                           }}
                         >
-                          {k.replace(/_/g, " ")}
+                          <div
+                            className="nq-mono"
+                            style={{
+                              fontSize: 11,
+                              color: tierTint,
+                              letterSpacing: "0.22em",
+                              marginBottom: 12,
+                              textTransform: "uppercase",
+                            }}
+                          >
+                            {tierKey}
+                          </div>
+                          <div
+                            style={{
+                              fontFamily: "var(--cinema-mono)",
+                              fontSize: 26,
+                              color: "var(--bone)",
+                              fontWeight: 600,
+                              marginBottom: 18,
+                              fontVariantNumeric: "tabular-nums",
+                            }}
+                          >
+                            ₹{(total ?? 0).toLocaleString("en-IN")}
+                            <span
+                              style={{
+                                fontSize: 13,
+                                color: "var(--bone-faint)",
+                                fontWeight: 400,
+                                marginLeft: 6,
+                              }}
+                            >
+                              / day
+                            </span>
+                          </div>
+                          <div
+                            style={{
+                              display: "flex",
+                              flexDirection: "column",
+                              gap: 8,
+                              fontFamily: "var(--cinema-ui)",
+                              fontSize: 14,
+                              color: "var(--bone-dim)",
+                            }}
+                          >
+                            {[
+                              ["stay", "Stay"],
+                              ["food", "Food"],
+                              ["transport", "Transport"],
+                              ["activities", "Activities"],
+                            ].map(([k, label]) =>
+                              tier[k as string] != null ? (
+                                <div
+                                  key={k}
+                                  style={{
+                                    display: "flex",
+                                    justifyContent: "space-between",
+                                  }}
+                                >
+                                  <span>{label}</span>
+                                  <span
+                                    className="nq-mono"
+                                    style={{
+                                      fontVariantNumeric: "tabular-nums",
+                                    }}
+                                  >
+                                    ₹{(
+                                      tier[k as string] as number
+                                    ).toLocaleString("en-IN")}
+                                  </span>
+                                </div>
+                              ) : null,
+                            )}
+                          </div>
                         </div>
-                        <div
-                          style={{
-                            fontFamily: "var(--cinema-mono)",
-                            fontSize: 22,
-                            color: "var(--bone)",
-                            fontWeight: 600,
-                          }}
-                        >
-                          {typeof v === "object" && v !== null
-                            ? JSON.stringify(v).slice(0, 60)
-                            : String(v)}
-                        </div>
-                      </div>
-                    ),
+                      );
+                    },
                   )}
                 </div>
               </div>
@@ -919,9 +1344,11 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
               </div>
             )}
 
-            {/* Infrastructure as editorial entries */}
+            {/* Infrastructure — use the production LogisticsChecklist component
+                so the network / ATM / medical / fuel / permits / night-weather
+                breakdown is identical in shape + completeness. */}
             {dest.local_logistics && (
-              <div style={{ maxWidth: 720, margin: "60px auto 0" }}>
+              <div style={{ maxWidth: 1100, margin: "60px auto 0" }}>
                 <p
                   className="nq-kicker"
                   style={{
@@ -931,23 +1358,13 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
                 >
                   INFRASTRUCTURE · ON THE GROUND
                 </p>
-                {Object.entries(
-                  dest.local_logistics as Record<string, any>,
-                ).map(([k, v]) => (
-                  <EditorialEntry
-                    key={k}
-                    title={k.replace(/_/g, " ")}
-                    body={
-                      typeof v === "string" ? v : JSON.stringify(v).slice(0, 200)
-                    }
-                  />
-                ))}
+                <LogisticsChecklist data={dest.local_logistics} />
               </div>
             )}
 
-            {/* How to reach */}
+            {/* How to reach — strings, render directly. */}
             {(dest.nearest_airport || dest.nearest_railhead) && (
-              <div style={{ maxWidth: 720, margin: "60px auto 0" }}>
+              <div style={{ maxWidth: 1100, margin: "60px auto 0" }}>
                 <p
                   className="nq-kicker"
                   style={{
@@ -957,26 +1374,77 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
                 >
                   HOW TO REACH
                 </p>
-                {dest.nearest_airport && (
-                  <EditorialEntry
-                    title="Nearest airport"
-                    body={
-                      typeof dest.nearest_airport === "string"
-                        ? dest.nearest_airport
-                        : JSON.stringify(dest.nearest_airport).slice(0, 200)
-                    }
-                  />
-                )}
-                {dest.nearest_railhead && (
-                  <EditorialEntry
-                    title="Nearest railhead"
-                    body={
-                      typeof dest.nearest_railhead === "string"
-                        ? dest.nearest_railhead
-                        : JSON.stringify(dest.nearest_railhead).slice(0, 200)
-                    }
-                  />
-                )}
+                <div
+                  style={{
+                    display: "grid",
+                    gridTemplateColumns:
+                      "repeat(auto-fit, minmax(280px, 1fr))",
+                    gap: 16,
+                  }}
+                >
+                  {dest.nearest_airport && (
+                    <div
+                      style={{
+                        border: "1px solid var(--hair)",
+                        padding: "20px",
+                      }}
+                    >
+                      <p
+                        className="nq-mono"
+                        style={{
+                          fontSize: 11,
+                          color: "var(--bone-faint)",
+                          letterSpacing: "0.22em",
+                          marginBottom: 8,
+                        }}
+                      >
+                        AIRPORT
+                      </p>
+                      <p
+                        style={{
+                          fontFamily: "var(--cinema-ui)",
+                          fontSize: 15,
+                          lineHeight: 1.6,
+                          color: "var(--bone-dim)",
+                          margin: 0,
+                        }}
+                      >
+                        {dest.nearest_airport}
+                      </p>
+                    </div>
+                  )}
+                  {dest.nearest_railhead && (
+                    <div
+                      style={{
+                        border: "1px solid var(--hair)",
+                        padding: "20px",
+                      }}
+                    >
+                      <p
+                        className="nq-mono"
+                        style={{
+                          fontSize: 11,
+                          color: "var(--bone-faint)",
+                          letterSpacing: "0.22em",
+                          marginBottom: 8,
+                        }}
+                      >
+                        RAIL
+                      </p>
+                      <p
+                        style={{
+                          fontFamily: "var(--cinema-ui)",
+                          fontSize: 15,
+                          lineHeight: 1.6,
+                          color: "var(--bone-dim)",
+                          margin: 0,
+                        }}
+                      >
+                        {dest.nearest_railhead}
+                      </p>
+                    </div>
+                  )}
+                </div>
               </div>
             )}
           </div>
@@ -1184,11 +1652,6 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
               </div>
             )}
 
-            {dest.local_logistics && (
-              <div style={{ maxWidth: 1100, margin: "60px auto 0" }}>
-                <LogisticsChecklist data={dest.local_logistics} />
-              </div>
-            )}
           </div>
         </section>
 
