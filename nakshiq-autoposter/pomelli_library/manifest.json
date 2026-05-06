@@ -1,7 +1,7 @@
 {
   "version": 8,
-  "total_images": 757,
-  "total_campaigns": 317,
+  "total_images": 726,
+  "total_campaigns": 309,
   "images": [
     "pomelli_12city_taxi_fare_map_1.png",
     "pomelli_12city_taxi_fare_map_2 2.png",
@@ -728,38 +728,7 @@
     "pomelli_winter_confidence_1.png",
     "pomelli_winter_confidence_2.png",
     "pomelli_winter_confidence_3.png",
-    "pomelli_winter_confidence_4.png",
-    "pomelli_june_cliff_is_coming_1.png",
-    "pomelli_southern_destinations_crash_1.png",
-    "pomelli_himachal_infrastructure_fails_1.png",
-    "pomelli_secure_2026_travel_pangong_1.png",
-    "pomelli_june_60_percent_suitability_crash_1.png",
-    "pomelli_5_to_2_triple_crash_1.png",
-    "pomelli_uttarakhand_cliff_1.png",
-    "pomelli_navigate_june_raw_data_1.png",
-    "pomelli_60_day_danger_sequence_1.png",
-    "pomelli_act_one_june_1_cliff_1.png",
-    "pomelli_evidence_based_exploration_1.png",
-    "pomelli_hidden_gem_atlas_cover_1.png",
-    "pomelli_barot_valley_reveal_1.png",
-    "pomelli_tosamaidan_reveal_1.png",
-    "pomelli_gurez_valley_reveal_1.png",
-    "pomelli_six_5_5_june_sanctuaries_1.png",
-    "pomelli_tirthan_valley_reveal_1.png",
-    "pomelli_doodhpathri_reveal_1.png",
-    "pomelli_chitkul_last_village_1.png",
-    "pomelli_4500m_dark_sky_window_1.png",
-    "pomelli_hanle_dark_sky_reserve_1.png",
-    "pomelli_tso_moriri_saltwater_calm_1.png",
-    "pomelli_sangla_apricot_gateway_1.png",
-    "pomelli_mays_perfect_5_5_travel_scores_1.png",
-    "pomelli_kedarnath_5_5_may_1.png",
-    "pomelli_dirang_5_5_may_1.png",
-    "pomelli_tawang_5_5_may_1.png",
-    "pomelli_may_2026_score_reveal_cover_1.png",
-    "pomelli_pahalgam_5_5_may_1.png",
-    "pomelli_kheerganga_5_5_may_1.png",
-    "pomelli_mudumalai_5_5_may_1.png"
+    "pomelli_winter_confidence_4.png"
   ],
   "campaigns": {
     "12city_taxi_fare_map": [
@@ -2105,67 +2074,6 @@
     ],
     "pomelli_tribal_guide_4 2": [
       "pomelli_tribal_guide_4 2.png"
-    ],
-    "wave1_the_june_cliff_is_coming": [
-      "pomelli_june_cliff_is_coming_1.png",
-      "pomelli_southern_destinations_crash_1.png",
-      "pomelli_himachal_infrastructure_fails_1.png",
-      "pomelli_secure_2026_travel_pangong_1.png"
-    ],
-    "wave1_june_60_percent_suitability_crash": [
-      "pomelli_june_60_percent_suitability_crash_1.png",
-      "pomelli_5_to_2_triple_crash_1.png",
-      "pomelli_uttarakhand_cliff_1.png",
-      "pomelli_navigate_june_raw_data_1.png"
-    ],
-    "wave1_60_day_danger_sequence": [
-      "pomelli_60_day_danger_sequence_1.png",
-      "pomelli_act_one_june_1_cliff_1.png",
-      "pomelli_evidence_based_exploration_1.png"
-    ],
-    "wave2_hidden_gem_atlas": [
-      "pomelli_hidden_gem_atlas_cover_1.png",
-      "pomelli_barot_valley_reveal_1.png",
-      "pomelli_tosamaidan_reveal_1.png",
-      "pomelli_gurez_valley_reveal_1.png"
-    ],
-    "wave2_six_5_5_june_sanctuaries": [
-      "pomelli_six_5_5_june_sanctuaries_1.png",
-      "pomelli_tirthan_valley_reveal_1.png",
-      "pomelli_doodhpathri_reveal_1.png",
-      "pomelli_chitkul_last_village_1.png"
-    ],
-    "wave2_4500m_dark_sky_window": [
-      "pomelli_4500m_dark_sky_window_1.png",
-      "pomelli_hanle_dark_sky_reserve_1.png",
-      "pomelli_tso_moriri_saltwater_calm_1.png",
-      "pomelli_sangla_apricot_gateway_1.png"
-    ],
-    "wave3_mays_perfect_5_5_destinations": [
-      "pomelli_mays_perfect_5_5_travel_scores_1.png",
-      "pomelli_kedarnath_5_5_may_1.png",
-      "pomelli_dirang_5_5_may_1.png",
-      "pomelli_tawang_5_5_may_1.png"
-    ],
-    "wave3_may_2026_score_reveal": [
-      "pomelli_may_2026_score_reveal_cover_1.png",
-      "pomelli_pahalgam_5_5_may_1.png",
-      "pomelli_kheerganga_5_5_may_1.png",
-      "pomelli_mudumalai_5_5_may_1.png"
     ]
-  },
-  "aspect_overrides": {
-    "pomelli_dirang_5_5_may_1.png": "9:16",
-    "pomelli_kedarnath_5_5_may_1.png": "9:16",
-    "pomelli_kheerganga_5_5_may_1.png": "9:16",
-    "pomelli_may_2026_score_reveal_cover_1.png": "9:16",
-    "pomelli_mays_perfect_5_5_travel_scores_1.png": "9:16",
-    "pomelli_mudumalai_5_5_may_1.png": "9:16",
-    "pomelli_pahalgam_5_5_may_1.png": "9:16",
-    "pomelli_tawang_5_5_may_1.png": "9:16"
-  },
-  "campaign_aspects": {
-    "wave3_mays_perfect_5_5_destinations": "9:16",
-    "wave3_may_2026_score_reveal": "9:16"
   }
 }
