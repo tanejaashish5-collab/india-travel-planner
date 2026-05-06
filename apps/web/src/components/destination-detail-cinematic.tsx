@@ -636,10 +636,9 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
               </span>
             </EditorialCaption>
 
-            {/* Existing MonthlyChart — preserved as detail strip below */}
-            <div style={{ maxWidth: 1100, margin: "60px auto 0" }}>
-              <MonthlyChart scores={monthlyScores} />
-            </div>
+            {/* The Window strip above already covers the 12 months in
+                cinematic form, so MonthlyChart is hidden here for Manali —
+                kept available in the import surface for other dests. */}
 
             {/* Weather + elevation chart — keep both */}
             <div
@@ -853,19 +852,188 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
               </div>
             )}
 
-            {/* Kids breakdown */}
+            {/* Kids breakdown — inline cinematic; replaces production
+                KidsBadge card with editorial layout. Score on left, full
+                editorial breakdown (reasons / concerns / highlights) on
+                the right as no-bullet typography. */}
             {kf && (
               <div style={{ maxWidth: 1100, margin: "60px auto 0" }}>
                 <p
                   className="nq-kicker"
                   style={{
                     color: "var(--vermillion)",
-                    marginBottom: 16,
+                    marginBottom: 24,
                   }}
                 >
                   KIDS · FAMILY READ
                 </p>
-                <KidsBadge {...kf} />
+                <div
+                  style={{
+                    display: "grid",
+                    gridTemplateColumns: "minmax(200px, 240px) 1fr",
+                    gap: 48,
+                    alignItems: "start",
+                    paddingTop: 32,
+                    borderTop: "1px solid var(--hair)",
+                  }}
+                >
+                  <div>
+                    <div
+                      className="nq-mono"
+                      style={{
+                        fontSize: 64,
+                        fontWeight: 700,
+                        color:
+                          (kf.rating ?? 0) >= 4
+                            ? VERDICT_COLOR.peak
+                            : (kf.rating ?? 0) >= 3
+                            ? VERDICT_COLOR.doable
+                            : VERDICT_COLOR.avoid,
+                        lineHeight: 0.85,
+                        letterSpacing: "-0.04em",
+                        fontVariantNumeric: "tabular-nums",
+                      }}
+                    >
+                      {((kf.rating ?? 0) * 2).toFixed(1)}
+                    </div>
+                    <div
+                      className="nq-mono"
+                      style={{
+                        marginTop: 8,
+                        fontSize: 11,
+                        color: "var(--bone)",
+                        letterSpacing: "0.22em",
+                      }}
+                    >
+                      {kf.suitable ? "FAMILY-APPROPRIATE" : "ADULTS"}
+                    </div>
+                    <div
+                      style={{
+                        marginTop: 24,
+                        fontFamily: "var(--cinema-ui)",
+                        fontSize: 14,
+                        color: "var(--bone-dim)",
+                        lineHeight: 1.7,
+                      }}
+                    >
+                      {kf.min_recommended_age != null && (
+                        <div>
+                          Minimum age:{" "}
+                          <span className="nq-mono" style={{ color: "var(--bone)" }}>
+                            {kf.min_recommended_age}+ yrs
+                          </span>
+                        </div>
+                      )}
+                      {kf.best_age_group && (
+                        <div>
+                          Best for:{" "}
+                          <span style={{ color: "var(--bone)" }}>{kf.best_age_group}</span>
+                        </div>
+                      )}
+                      <div>
+                        Stroller:{" "}
+                        <span style={{ color: "var(--bone)" }}>
+                          {kf.stroller_accessible ? "Possible" : "Not possible"}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    {kf.kid_highlights?.length > 0 && (
+                      <div style={{ marginBottom: 28 }}>
+                        <p
+                          className="nq-mono"
+                          style={{
+                            fontSize: 11,
+                            color: "var(--green)",
+                            letterSpacing: "0.22em",
+                            marginBottom: 12,
+                          }}
+                        >
+                          HIGHLIGHTS FOR KIDS
+                        </p>
+                        {kf.kid_highlights.map((h: string) => (
+                          <div
+                            key={h}
+                            style={{
+                              padding: "12px 0",
+                              borderTop: "1px solid var(--hair)",
+                              fontFamily: "var(--cinema-ui)",
+                              fontSize: 15,
+                              lineHeight: 1.6,
+                              color: "var(--bone-dim)",
+                            }}
+                          >
+                            {h}
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                    {kf.reasons?.length > 0 && (
+                      <div style={{ marginBottom: 28 }}>
+                        <p
+                          className="nq-mono"
+                          style={{
+                            fontSize: 11,
+                            color: "var(--bone-faint)",
+                            letterSpacing: "0.22em",
+                            marginBottom: 12,
+                          }}
+                        >
+                          REASONS
+                        </p>
+                        {kf.reasons.map((r: string) => (
+                          <div
+                            key={r}
+                            style={{
+                              padding: "12px 0",
+                              borderTop: "1px solid var(--hair)",
+                              fontFamily: "var(--cinema-ui)",
+                              fontSize: 15,
+                              lineHeight: 1.6,
+                              color: "var(--bone-dim)",
+                            }}
+                          >
+                            {r}
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                    {kf.concerns?.length > 0 && (
+                      <div>
+                        <p
+                          className="nq-mono"
+                          style={{
+                            fontSize: 11,
+                            color: "var(--vermillion)",
+                            letterSpacing: "0.22em",
+                            marginBottom: 12,
+                          }}
+                        >
+                          CONCERNS
+                        </p>
+                        {kf.concerns.map((c: string) => (
+                          <div
+                            key={c}
+                            style={{
+                              padding: "12px 0",
+                              borderTop: "1px solid var(--hair)",
+                              fontFamily: "var(--cinema-ui)",
+                              fontSize: 15,
+                              lineHeight: 1.6,
+                              color: "var(--bone-dim)",
+                            }}
+                          >
+                            {c}
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                    {!kf.suitable && kf.not_suitable_reason && (
+                      <PullQuote>{kf.not_suitable_reason}</PullQuote>
+                    )}
+                  </div>
+                </div>
               </div>
             )}
 
@@ -1465,30 +1633,281 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
           <div style={{ maxWidth: 1100, margin: "0 auto" }}>
             <SectionLabel num="VIII" name="THE STAY · THE EAT" />
 
-            {/* Eateries */}
+            {/* Eateries — inline Field Log style. Legendary anchors get a
+                vermillion FOUNDED tag; everything else is editorial entry
+                with category meta and signature dish callout. */}
             {eateries.length > 0 && (
               <div style={{ maxWidth: 1100, margin: "32px auto 0" }}>
-                <DestinationEateries
-                  eateries={eateries}
-                  destinationName={displayName}
-                />
+                <p
+                  className="nq-kicker"
+                  style={{
+                    color: "var(--vermillion)",
+                    marginBottom: 24,
+                  }}
+                >
+                  WHERE TO EAT · {eateries.length} VERIFIED PICKS
+                </p>
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: 0,
+                  }}
+                >
+                  {eateries.map((e: any, i: number) => (
+                    <div
+                      key={e.id ?? e.name}
+                      style={{
+                        display: "grid",
+                        gridTemplateColumns: "120px 1fr auto",
+                        gap: 24,
+                        padding: "28px 0",
+                        borderTop: i === 0 ? "1px solid var(--hair)" : "1px solid var(--hair)",
+                        borderBottom:
+                          i === eateries.length - 1
+                            ? "1px solid var(--hair)"
+                            : "0",
+                        alignItems: "baseline",
+                      }}
+                    >
+                      <div
+                        className="nq-mono"
+                        style={{
+                          fontSize: 11,
+                          color: e.is_legendary ? "var(--vermillion)" : "var(--bone-faint)",
+                          letterSpacing: "0.22em",
+                          textTransform: "uppercase",
+                        }}
+                      >
+                        {e.is_legendary ? "★ LEGENDARY" : (e.category ?? "").replace(/_/g, " ").toUpperCase()}
+                        {e.established_year && (
+                          <div
+                            style={{
+                              marginTop: 4,
+                              color: "var(--bone-faint)",
+                              fontSize: 10,
+                            }}
+                          >
+                            EST. {e.established_year}
+                          </div>
+                        )}
+                      </div>
+                      <div>
+                        <h3
+                          style={{
+                            fontFamily: "var(--cinema-display)",
+                            fontStyle: "italic",
+                            fontWeight: 500,
+                            fontSize: 26,
+                            lineHeight: 1.2,
+                            color: "var(--bone)",
+                            margin: 0,
+                          }}
+                        >
+                          {e.name}
+                        </h3>
+                        {e.signature_dish && (
+                          <p
+                            style={{
+                              marginTop: 8,
+                              fontFamily: "var(--cinema-display)",
+                              fontStyle: "italic",
+                              fontSize: 16,
+                              color: "var(--vermillion)",
+                              margin: "8px 0 0",
+                            }}
+                          >
+                            Signature: {e.signature_dish}
+                          </p>
+                        )}
+                        {e.why_it_matters && (
+                          <p
+                            style={{
+                              marginTop: 10,
+                              fontFamily: "var(--cinema-ui)",
+                              fontSize: 15,
+                              lineHeight: 1.65,
+                              color: "var(--bone-dim)",
+                              margin: "10px 0 0",
+                            }}
+                          >
+                            {e.why_it_matters}
+                          </p>
+                        )}
+                        {e.insider_tip && (
+                          <p
+                            style={{
+                              marginTop: 8,
+                              fontFamily: "var(--cinema-ui)",
+                              fontSize: 13,
+                              lineHeight: 1.6,
+                              color: "var(--amber)",
+                              margin: "8px 0 0",
+                            }}
+                          >
+                            Tip: {e.insider_tip}
+                          </p>
+                        )}
+                        <div
+                          className="nq-mono"
+                          style={{
+                            marginTop: 12,
+                            fontSize: 11,
+                            color: "var(--bone-faint)",
+                            letterSpacing: "0.16em",
+                            display: "flex",
+                            gap: 14,
+                            flexWrap: "wrap",
+                          }}
+                        >
+                          {e.area && <span>{e.area.toUpperCase()}</span>}
+                          {e.price_range && <span>· {e.price_range}</span>}
+                          {e.vegetarian === "fully" && <span>· VEG</span>}
+                          {e.kid_friendly && <span>· KIDS OK</span>}
+                        </div>
+                      </div>
+                      <div style={{ textAlign: "right" }}>
+                        {e.google_maps_url ? (
+                          <a
+                            href={e.google_maps_url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="nq-mono"
+                            style={{
+                              fontSize: 11,
+                              color: "var(--vermillion)",
+                              letterSpacing: "0.22em",
+                              textDecoration: "none",
+                              borderBottom: "1px solid var(--vermillion)",
+                              paddingBottom: 2,
+                            }}
+                          >
+                            FIND IT ↗
+                          </a>
+                        ) : null}
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
             )}
 
-            {/* Editor stay picks */}
+            {/* Editor stay picks — inline cinematic. Each pick is its own
+                editorial card with the slot label as kicker. */}
             {dest.editor_stay_picks?.length > 0 && (
               <div style={{ maxWidth: 1100, margin: "60px auto 0" }}>
-                <EditorsPicks
-                  destinationName={displayName}
-                  stateName={stateName}
-                  picks={dest.editor_stay_picks}
-                  intelligence={dest.stay_intelligence}
-                />
+                <p
+                  className="nq-kicker"
+                  style={{
+                    color: "var(--vermillion)",
+                    marginBottom: 24,
+                  }}
+                >
+                  WHERE TO SLEEP · EDITOR&apos;S PICKS
+                </p>
+                <div
+                  style={{
+                    display: "grid",
+                    gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
+                    gap: 24,
+                  }}
+                >
+                  {dest.editor_stay_picks.map((p: any) => (
+                    <div
+                      key={p.slot ?? p.name}
+                      style={{
+                        border: "1px solid var(--hair)",
+                        padding: "28px 24px",
+                        background: "var(--film)",
+                      }}
+                    >
+                      <div
+                        className="nq-mono"
+                        style={{
+                          fontSize: 11,
+                          color: "var(--vermillion)",
+                          letterSpacing: "0.22em",
+                          marginBottom: 12,
+                          textTransform: "uppercase",
+                        }}
+                      >
+                        {(p.slot ?? "PICK").replace(/_/g, " ")}
+                        {p.price_band ? ` · ${p.price_band.toUpperCase()}` : ""}
+                      </div>
+                      <h3
+                        style={{
+                          fontFamily: "var(--cinema-display)",
+                          fontStyle: "italic",
+                          fontWeight: 500,
+                          fontSize: 24,
+                          lineHeight: 1.2,
+                          color: "var(--bone)",
+                          margin: "0 0 12px",
+                        }}
+                      >
+                        {p.name}
+                      </h3>
+                      {p.property_type && (
+                        <p
+                          className="nq-mono"
+                          style={{
+                            fontSize: 11,
+                            color: "var(--bone-faint)",
+                            letterSpacing: "0.18em",
+                            margin: "0 0 12px",
+                            textTransform: "uppercase",
+                          }}
+                        >
+                          {p.property_type}
+                        </p>
+                      )}
+                      {p.why_nakshiq && (
+                        <p
+                          style={{
+                            fontFamily: "var(--cinema-ui)",
+                            fontSize: 15,
+                            lineHeight: 1.65,
+                            color: "var(--bone-dim)",
+                            margin: "0 0 14px",
+                          }}
+                        >
+                          {p.why_nakshiq}
+                        </p>
+                      )}
+                      {p.signature_experience && (
+                        <p
+                          style={{
+                            fontFamily: "var(--cinema-display)",
+                            fontStyle: "italic",
+                            fontSize: 15,
+                            lineHeight: 1.5,
+                            color: "var(--vermillion)",
+                            margin: 0,
+                            paddingTop: 14,
+                            borderTop: "1px solid var(--hair)",
+                          }}
+                        >
+                          &ldquo;{p.signature_experience}&rdquo;
+                        </p>
+                      )}
+                    </div>
+                  ))}
+                </div>
               </div>
             )}
 
-            {/* Local stays — booking-handoff component handles its own data fetch */}
+            {/* Local stays — preserved BookingHandoff component for its
+                affiliate logic, just framed in cinematic kicker. */}
             <div style={{ maxWidth: 1100, margin: "60px auto 0" }}>
+              <p
+                className="nq-kicker"
+                style={{
+                  color: "var(--vermillion)",
+                  marginBottom: 16,
+                }}
+              >
+                BOOK A STAY · CURATED PROPERTIES
+              </p>
               <BookingHandoff
                 destinationName={displayName}
                 stateName={stateName}
@@ -1539,40 +1958,269 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
           <div style={{ maxWidth: 1100, margin: "0 auto" }}>
             <SectionLabel num="IX" name="THE FIELD · TRAVELER NOTES" />
 
-            {/* Trip reports */}
+            {/* Trip reports — inline cinematic. Italic display title +
+                serif italic body + mono attribution + highlights/warnings
+                as no-bullet kicker rows. */}
             {dest.trip_reports?.length > 0 && (
               <div style={{ maxWidth: 1100, margin: "32px auto 0" }}>
                 <p
                   className="nq-kicker"
                   style={{
                     color: "var(--vermillion)",
-                    marginBottom: 16,
+                    marginBottom: 24,
                   }}
                 >
-                  RECENT TRIP REPORTS
+                  RECENT TRIP REPORTS · {dest.trip_reports.length}
                 </p>
-                <TravelerReports
-                  reports={dest.trip_reports}
-                  destinationId={dest.id}
-                  destinationName={displayName}
-                  locale={locale}
-                />
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: 0,
+                  }}
+                >
+                  {dest.trip_reports.map((r: any, i: number) => (
+                    <div
+                      key={r.id ?? i}
+                      style={{
+                        padding: "40px 0",
+                        borderTop: "1px solid var(--hair)",
+                        borderBottom:
+                          i === dest.trip_reports.length - 1
+                            ? "1px solid var(--hair)"
+                            : "0",
+                      }}
+                    >
+                      <div
+                        className="nq-mono"
+                        style={{
+                          fontSize: 11,
+                          color: "var(--bone-faint)",
+                          letterSpacing: "0.22em",
+                          marginBottom: 14,
+                        }}
+                      >
+                        {[
+                          MONTH_LONG_NAMES[(r.visited_month ?? 1) - 1]?.toUpperCase(),
+                          r.visited_year,
+                          r.reporter_location?.toUpperCase(),
+                        ]
+                          .filter(Boolean)
+                          .join(" · ")}
+                        {r.rating != null && (
+                          <span
+                            style={{
+                              marginLeft: 12,
+                              color:
+                                r.rating >= 5
+                                  ? VERDICT_COLOR.peak
+                                  : r.rating >= 3
+                                  ? VERDICT_COLOR.doable
+                                  : VERDICT_COLOR.avoid,
+                            }}
+                          >
+                            {r.rating}/5
+                          </span>
+                        )}
+                      </div>
+                      {r.summary && (
+                        <h3
+                          style={{
+                            fontFamily: "var(--cinema-display)",
+                            fontStyle: "italic",
+                            fontWeight: 500,
+                            fontSize: 28,
+                            lineHeight: 1.25,
+                            color: "var(--bone)",
+                            margin: "0 0 16px",
+                            letterSpacing: "-0.012em",
+                          }}
+                        >
+                          {r.summary}
+                        </h3>
+                      )}
+                      {r.body && (
+                        <p
+                          style={{
+                            fontFamily: "var(--cinema-ui)",
+                            fontSize: 16,
+                            lineHeight: 1.75,
+                            color: "var(--bone-dim)",
+                            margin: "0 0 18px",
+                          }}
+                        >
+                          {r.body}
+                        </p>
+                      )}
+                      {r.highlights?.length > 0 && (
+                        <div style={{ marginTop: 12 }}>
+                          <p
+                            className="nq-mono"
+                            style={{
+                              fontSize: 10,
+                              color: "var(--green)",
+                              letterSpacing: "0.22em",
+                              marginBottom: 6,
+                            }}
+                          >
+                            HIGHLIGHTS
+                          </p>
+                          {r.highlights.map((h: string) => (
+                            <div
+                              key={h}
+                              style={{
+                                fontFamily: "var(--cinema-ui)",
+                                fontSize: 14,
+                                lineHeight: 1.6,
+                                color: "var(--bone-dim)",
+                                paddingLeft: 0,
+                              }}
+                            >
+                              — {h}
+                            </div>
+                          ))}
+                        </div>
+                      )}
+                      {r.warnings?.length > 0 && (
+                        <div style={{ marginTop: 12 }}>
+                          <p
+                            className="nq-mono"
+                            style={{
+                              fontSize: 10,
+                              color: "var(--vermillion)",
+                              letterSpacing: "0.22em",
+                              marginBottom: 6,
+                            }}
+                          >
+                            WARNINGS
+                          </p>
+                          {r.warnings.map((w: string) => (
+                            <div
+                              key={w}
+                              style={{
+                                fontFamily: "var(--cinema-ui)",
+                                fontSize: 14,
+                                lineHeight: 1.6,
+                                color: "var(--bone-dim)",
+                              }}
+                            >
+                              — {w}
+                            </div>
+                          ))}
+                        </div>
+                      )}
+                      {r.reporter_name && (
+                        <p
+                          className="nq-mono"
+                          style={{
+                            marginTop: 16,
+                            fontSize: 12,
+                            color: "var(--bone-faint)",
+                            letterSpacing: "0.18em",
+                            textTransform: "uppercase",
+                          }}
+                        >
+                          — {r.reporter_name}
+                        </p>
+                      )}
+                    </div>
+                  ))}
+                </div>
               </div>
             )}
 
-            {/* Reviews */}
+            {/* Reviews — inline cinematic. Italic serif quote with mono
+                star/date metadata; replaces production rounded review
+                cards with editorial typography. */}
             {dest.reviews?.length > 0 && (
               <div style={{ maxWidth: 1100, margin: "60px auto 0" }}>
                 <p
                   className="nq-kicker"
                   style={{
                     color: "var(--vermillion)",
-                    marginBottom: 16,
+                    marginBottom: 24,
                   }}
                 >
-                  REVIEWS
+                  REVIEWS · {dest.reviews.length}
                 </p>
-                <ReviewsList reviews={dest.reviews} />
+                <div
+                  style={{
+                    display: "grid",
+                    gridTemplateColumns:
+                      "repeat(auto-fit, minmax(360px, 1fr))",
+                    gap: 0,
+                    borderTop: "1px solid var(--hair)",
+                  }}
+                >
+                  {dest.reviews.map((rev: any) => (
+                    <div
+                      key={rev.id}
+                      style={{
+                        padding: "32px 24px",
+                        borderRight: "1px solid var(--hair)",
+                        borderBottom: "1px solid var(--hair)",
+                      }}
+                    >
+                      <div
+                        className="nq-mono"
+                        style={{
+                          fontSize: 11,
+                          color: "var(--amber)",
+                          letterSpacing: "0.22em",
+                          marginBottom: 12,
+                        }}
+                      >
+                        {"★".repeat(rev.rating)}
+                        {"☆".repeat(5 - (rev.rating ?? 0))}
+                        {rev.traveler_type && (
+                          <span
+                            style={{
+                              marginLeft: 12,
+                              color: "var(--bone-faint)",
+                            }}
+                          >
+                            · {rev.traveler_type.toUpperCase()}
+                          </span>
+                        )}
+                      </div>
+                      {rev.text && (
+                        <p
+                          style={{
+                            fontFamily: "var(--cinema-display)",
+                            fontStyle: "italic",
+                            fontSize: 18,
+                            lineHeight: 1.55,
+                            color: "var(--bone)",
+                            margin: 0,
+                          }}
+                        >
+                          &ldquo;{rev.text}&rdquo;
+                        </p>
+                      )}
+                      <p
+                        className="nq-mono"
+                        style={{
+                          marginTop: 14,
+                          fontSize: 11,
+                          color: "var(--bone-faint)",
+                          letterSpacing: "0.18em",
+                          textTransform: "uppercase",
+                        }}
+                      >
+                        {rev.visit_month && rev.visit_year
+                          ? `VISITED ${MONTH_LONG_NAMES[rev.visit_month - 1]?.toUpperCase()} ${rev.visit_year}`
+                          : rev.created_at
+                          ? new Date(rev.created_at)
+                              .toLocaleDateString("en-IN", {
+                                month: "short",
+                                year: "numeric",
+                              })
+                              .toUpperCase()
+                          : ""}
+                      </p>
+                    </div>
+                  ))}
+                </div>
               </div>
             )}
 
