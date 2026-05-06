@@ -1982,7 +1982,7 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
                             fontStyle: "italic",
                             fontSize: 15,
                             lineHeight: 1.5,
-                            color: "var(--vermillion)",
+                            color: "var(--amber)",
                             margin: 0,
                             paddingTop: 14,
                             borderTop: "1px solid var(--hair)",

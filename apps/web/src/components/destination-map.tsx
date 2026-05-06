@@ -44,10 +44,23 @@ export function DestinationMap({
   useEffect(() => {
     if (!mapRef.current) return;
 
+    let cancelled = false;
     let mapInstance: any = null;
 
     import("leaflet").then((L) => {
-      if (!mapRef.current) return;
+      if (cancelled || !mapRef.current) return;
+
+      // React strict-mode double-invokes effects in dev; HMR can also remount
+      // without finishing cleanup. Either path can leave Leaflet's internal
+      // `_leaflet_id` on the container div, then the next L.map() call
+      // throws "Map container is already initialized." Null it out before
+      // calling L.map() so the second mount can start fresh.
+      const containerEl = mapRef.current as HTMLElement & {
+        _leaflet_id?: number | null;
+      };
+      if (containerEl._leaflet_id) {
+        containerEl._leaflet_id = null;
+      }
 
       // Start at a wider zoom so state context is visible before the user
       // interacts. fitBounds (below) will override this when nearby pins
@@ -138,8 +151,10 @@ export function DestinationMap({
     });
 
     return () => {
+      cancelled = true;
       if (mapInstance) {
         mapInstance.remove();
+        mapInstance = null;
       }
     };
   }, [lat, lng, name, elevation, nearby, locale]);

@@ -126,7 +126,9 @@ export function TouristTrapIntervention({
                           {/* Badge */}
                           <div className="flex items-center justify-between mb-3">
                             <span className="inline-flex items-center rounded-full bg-primary/20 border border-primary/30 px-2.5 py-1 text-xs font-medium text-primary">
-                              {alt.drive_time} away
+                              {alt.drive_time
+                                ? `${alt.drive_time.split(/\s+via\s+/i)[0].trim()} away`
+                                : "Nearby"}
                             </span>
                             {dest?.difficulty && (
                               <span
