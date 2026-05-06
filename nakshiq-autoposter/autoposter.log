@@ -6952,3 +6952,26 @@ Date range: 2026-04-15 → 2026-05-05
 2026-05-06 07:18:13  INFO      [facebook/Nakshiq] ✅ Published · Outstand=SLFHJ · Platform=1362905502526183
 2026-05-06 07:18:13  INFO      State saved. Run complete.
 2026-05-06 07:18:13  INFO      ════════════════════════════════════════════════════════════
+2026-05-06 09:46:21  INFO      ════════════════════════════════════════════════════════════
+2026-05-06 09:46:21  INFO      Nakshiq Autoposter · REEL-MAP v3 · 2026-05-06 · weekday=2
+2026-05-06 09:46:21  INFO      ════════════════════════════════════════════════════════════
+2026-05-06 09:46:21  INFO      Picked campaign: 'goa_bacteria_map' (4 images) → "Goa Bacteria Map"
+2026-05-06 09:46:21  INFO      Campaign: goa_bacteria_map | Music style: score_pulse
+2026-05-06 09:46:47  INFO      Reel rendered: reel_pomelli_goa_bacteria_map.mp4 (5901 KB)
+2026-05-06 09:46:47  INFO          Requesting upload URL for reel_pomelli_goa_bacteria_map.mp4 (6,043,569 bytes, video/mp4)
+2026-05-06 09:46:48  INFO          Uploading to R2 (timeout=300s)...
+2026-05-06 09:46:50  INFO          R2 PUT OK. Confirming...
+2026-05-06 09:46:51  INFO          Media ready: zXCSP (6,043,569 bytes · reel_pomelli_goa_bacteria_map.mp4)
+2026-05-06 09:46:51  INFO      Video uploaded: reel_pomelli_goa_bacteria_map.mp4
+2026-05-06 09:46:52  INFO      [youtube/@naksh-iq] Publishing reel (goa_bacteria_map)...
+2026-05-06 09:46:54  INFO      [youtube/@naksh-iq] Outstand accepted (post_id=X3LBe), confirming...
+2026-05-06 09:47:06  INFO      [youtube/@naksh-iq] ✅ Reel published · Outstand=X3LBe · Platform=aKXIMaNknBA
+2026-05-06 09:47:06  INFO      [instagram/nakshiq] Publishing reel (goa_bacteria_map)...
+2026-05-06 09:47:08  INFO      [instagram/nakshiq] Outstand accepted (post_id=2cuUS), confirming...
+2026-05-06 09:47:43  INFO      [instagram/nakshiq] ✅ Reel published · Outstand=2cuUS · Platform=18096272972122519
+2026-05-06 09:47:43  INFO      [facebook/Nakshiq] Publishing reel (goa_bacteria_map)...
+2026-05-06 09:47:45  INFO      [facebook/Nakshiq] Outstand accepted (post_id=5ZOaD), confirming...
+2026-05-06 09:47:56  INFO      [facebook/Nakshiq] ✅ Reel published · Outstand=5ZOaD · Platform=1701903310828150
+2026-05-06 09:47:56  INFO      Theme tracker updated: campaign=goa_bacteria_map, music=score_pulse
+2026-05-06 09:47:56  INFO      State saved. Reel-map run complete.
+2026-05-06 09:47:56  INFO      ════════════════════════════════════════════════════════════

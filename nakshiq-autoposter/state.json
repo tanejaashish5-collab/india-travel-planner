@@ -58,7 +58,10 @@
     "m8EAd": "2026-05-06",
     "GAh5p": "2026-05-06",
     "m8EAd_moat": "2026-05-06",
-    "PdMu0_moat": "2026-05-06"
+    "PdMu0_moat": "2026-05-06",
+    "GAh5p_reel_map": "2026-05-06",
+    "m8EAd_reel_map": "2026-05-06",
+    "PdMu0_reel_map": "2026-05-06"
   },
   "last_sync": "2026-05-06T07:17:09.718914+00:00",
   "posted_destinations": [
@@ -1084,6 +1087,33 @@
       "format": "data_provenance",
       "has_media": true,
       "media_id": "guptkashi.mp4"
+    },
+    {
+      "timestamp": "2026-05-06T09:47:06.186786+00:00",
+      "date": "2026-05-06",
+      "platform": "youtube",
+      "post_id": "X3LBe",
+      "destination": null,
+      "format": "reel_map.score_pulse",
+      "media_id": "reel_pomelli_goa_bacteria_map.mp4"
+    },
+    {
+      "timestamp": "2026-05-06T09:47:43.219584+00:00",
+      "date": "2026-05-06",
+      "platform": "instagram",
+      "post_id": "2cuUS",
+      "destination": null,
+      "format": "reel_map.score_pulse",
+      "media_id": "reel_pomelli_goa_bacteria_map.mp4"
+    },
+    {
+      "timestamp": "2026-05-06T09:47:56.697750+00:00",
+      "date": "2026-05-06",
+      "platform": "facebook",
+      "post_id": "5ZOaD",
+      "destination": null,
+      "format": "reel_map.score_pulse",
+      "media_id": "reel_pomelli_goa_bacteria_map.mp4"
     }
   ],
   "theme_usage": {
@@ -1546,6 +1576,9 @@
       ],
       "route_trace": [
         "2026-04-26"
+      ],
+      "score_pulse": [
+        "2026-05-06"
       ]
     },
     "reel_map_states": {
@@ -1573,7 +1606,12 @@
         "2026-05-05"
       ]
     },
-    "collection_carousel_dests:andaman-diving-snorkeling": {}
+    "collection_carousel_dests:andaman-diving-snorkeling": {},
+    "reel_map_campaigns": {
+      "goa_bacteria_map": [
+        "2026-05-06"
+      ]
+    }
   },
   "infographic": {
     "last_topic_idx": 3,
