@@ -16,6 +16,7 @@
    ============================================================ */
 
 import Link from "next/link";
+import { useState, type ReactNode } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { destinationImage } from "@/lib/image-url";
 import { videoSrc } from "@/lib/video-url";
@@ -44,12 +45,13 @@ import {
   sectionStyle,
 } from "@/components/landing-cinema/editorial";
 
-// Existing feature components — preserved verbatim, just re-framed
+// Existing feature components — preserved verbatim, just re-framed.
+// StickyDestinationHeader / DestinationSectionNav / DestinationDecisionRail
+// are intentionally NOT used here — they paint shadcn chrome over the
+// cinematic palette and the user asked them removed. The cinematic right
+// rail in DestinationScrollRail handles act-jumping.
 import { Nav } from "./nav";
 import { Footer } from "./footer";
-import { StickyDestinationHeader } from "./sticky-destination-header";
-import { DestinationSectionNav } from "./destination-section-nav";
-import { DestinationDecisionRail } from "./destination-decision-rail";
 import { MonthlyChart } from "./monthly-chart";
 import { WeatherWidget } from "./weather-widget";
 import { ShareButton } from "./share-button";
@@ -179,30 +181,6 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
       <CinemaStyles />
       <Nav />
 
-      {/* Sticky top chrome — appears when reader scrolls past the cover. */}
-      <StickyDestinationHeader
-        name={displayName}
-        score={currentScore}
-        monthLabel={tm(String(currentMonth))}
-        stateId={dest.state_id}
-      />
-
-      {/* Right-side decision rail — at-a-glance verdict, kids, solo-F, crowd,
-          comparison link. Stays pinned at lg+ once user is past the cover. */}
-      <DestinationDecisionRail
-        destinationId={dest.id}
-        name={displayName}
-        score={currentScore}
-        monthLabel={tm(String(currentMonth))}
-        monthSlug={monthSlugs[currentMonth]}
-        verdict={currentMonthData?.verdict}
-        kidsRating={kf?.rating ?? null}
-        soloFemaleScore={dest.solo_female_score ?? null}
-        crowdLevel={crowdLevel}
-        compareWithId={dest.nearbyDestinations?.[0]?.id ?? null}
-        compareWithName={dest.nearbyDestinations?.[0]?.name ?? null}
-      />
-
       {/* Floating SOS button — scrolls to the act-V emergency block. */}
       {dest.emergencySos && (
         <SOSFloatingButton
@@ -216,7 +194,7 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
 
       <main
         id="main-content"
-        className="nq-grain"
+        className="nq-grain nq-glow-bookend"
         style={{ position: "relative" }}
       >
         {/* ───────────────────────────────────────────────
@@ -392,11 +370,12 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
           </div>
         </section>
 
-        {/* In-guide TOC — sticky after the cover scrolls out so readers can
-            jump straight to whichever act they need. Uses the same
-            DestinationSectionNav as production, just hands it the cinematic
-            section IDs (dest-act-N). */}
-        <DestinationSectionNav sections={sections} variant="top" />
+        {/* In-guide jumping is handled exclusively by the cinematic
+            <DestinationScrollRail /> on the right edge (rendered at the
+            end of <main>). It auto-hides on cover thanks to its
+            IntersectionObserver. The production DestinationSectionNav was
+            removed because its dot+chip styling clashes with the
+            cinematic palette (white dots on dark background). */}
 
         {/* ───────────────────────────────────────────────
            ACT II — The Verdict (TL;DR + decision rail)
@@ -629,12 +608,19 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
               ))}
             </div>
 
-            <EditorialCaption align="right">
-              <span style={{ marginTop: 18, display: "inline-block" }}>
-                COLOURS MATCH THE NAKSHIQ VERDICT BANDS · TAP A MONTH FOR THE
-                FULL READ
-              </span>
-            </EditorialCaption>
+            <p
+              className="nq-mono"
+              style={{
+                marginTop: 18,
+                fontSize: 12,
+                color: "var(--vermillion)",
+                letterSpacing: "0.22em",
+                textTransform: "uppercase",
+                textAlign: "center",
+              }}
+            >
+              ↑ Tap any month for the full read · colours match verdict bands
+            </p>
 
             {/* The Window strip above already covers the 12 months in
                 cinematic form, so MonthlyChart is hidden here for Manali —
@@ -1490,8 +1476,9 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
               </div>
             )}
 
-            {/* Crowd calendar */}
-            {dest.crowd_calendar && (
+            {/* Crowd calendar — 12-month strip colour-coded peak / shoulder /
+                quiet. Note rendered as italic body below. */}
+            {dest.crowd_calendar && typeof dest.crowd_calendar === "object" && (
               <div style={{ maxWidth: 1100, margin: "60px auto 0" }}>
                 <p
                   className="nq-kicker"
@@ -1502,13 +1489,77 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
                 >
                   WHAT CROWDS LOOK LIKE
                 </p>
-                <Prose>
-                  <p>
-                    {typeof dest.crowd_calendar === "string"
-                      ? dest.crowd_calendar
-                      : dest.crowd_calendar.note ?? ""}
+                <div
+                  style={{
+                    display: "grid",
+                    gridTemplateColumns: "repeat(12, 1fr)",
+                    gap: 4,
+                    marginBottom: 18,
+                  }}
+                >
+                  {MONTH_LONG_NAMES.map((mName, i) => {
+                    const monthIdx = i + 1;
+                    const isPeak =
+                      dest.crowd_calendar.peak_months?.includes(monthIdx);
+                    const isQuiet =
+                      dest.crowd_calendar.quiet_months?.includes(monthIdx);
+                    const tint = isPeak
+                      ? "var(--vermillion)"
+                      : isQuiet
+                      ? "var(--green)"
+                      : "var(--amber)";
+                    const label = isPeak ? "PEAK" : isQuiet ? "QUIET" : "MOD";
+                    return (
+                      <div
+                        key={monthIdx}
+                        style={{
+                          padding: "16px 4px",
+                          textAlign: "center",
+                          background: `${tint}1A`,
+                          borderTop: `2px solid ${tint}`,
+                        }}
+                      >
+                        <div
+                          className="nq-mono"
+                          style={{
+                            fontSize: 10,
+                            color: "var(--bone-faint)",
+                            letterSpacing: "0.18em",
+                            marginBottom: 4,
+                          }}
+                        >
+                          {mName.slice(0, 3).toUpperCase()}
+                        </div>
+                        <div
+                          className="nq-mono"
+                          style={{
+                            fontSize: 9,
+                            color: tint,
+                            letterSpacing: "0.16em",
+                            fontWeight: 600,
+                          }}
+                        >
+                          {label}
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+                {dest.crowd_calendar.note && (
+                  <p
+                    style={{
+                      fontFamily: "var(--cinema-display)",
+                      fontStyle: "italic",
+                      fontSize: 18,
+                      lineHeight: 1.55,
+                      color: "var(--bone-dim)",
+                      maxWidth: 720,
+                      margin: 0,
+                    }}
+                  >
+                    {dest.crowd_calendar.note}
                   </p>
-                </Prose>
+                )}
               </div>
             )}
 
@@ -1652,9 +1703,14 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
                     display: "flex",
                     flexDirection: "column",
                     gap: 0,
+                    alignItems: "stretch",
                   }}
                 >
-                  {eateries.map((e: any, i: number) => (
+                  <ExpandableList
+                    items={eateries}
+                    initial={6}
+                    totalLabel="eateries"
+                    renderItem={(e: any, i: number, total: number) => (
                     <div
                       key={e.id ?? e.name}
                       style={{
@@ -1662,9 +1718,9 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
                         gridTemplateColumns: "120px 1fr auto",
                         gap: 24,
                         padding: "28px 0",
-                        borderTop: i === 0 ? "1px solid var(--hair)" : "1px solid var(--hair)",
+                        borderTop: "1px solid var(--hair)",
                         borderBottom:
-                          i === eateries.length - 1
+                          i === total - 1
                             ? "1px solid var(--hair)"
                             : "0",
                         alignItems: "baseline",
@@ -1787,7 +1843,8 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
                         ) : null}
                       </div>
                     </div>
-                  ))}
+                    )}
+                  />
                 </div>
               </div>
             )}
@@ -1977,16 +2034,21 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
                     display: "flex",
                     flexDirection: "column",
                     gap: 0,
+                    alignItems: "stretch",
                   }}
                 >
-                  {dest.trip_reports.map((r: any, i: number) => (
+                  <ExpandableList
+                    items={dest.trip_reports}
+                    initial={3}
+                    totalLabel="trip reports"
+                    renderItem={(r: any, i: number, total: number) => (
                     <div
                       key={r.id ?? i}
                       style={{
                         padding: "40px 0",
                         borderTop: "1px solid var(--hair)",
                         borderBottom:
-                          i === dest.trip_reports.length - 1
+                          i === total - 1
                             ? "1px solid var(--hair)"
                             : "0",
                       }}
@@ -2124,7 +2186,8 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
                         </p>
                       )}
                     </div>
-                  ))}
+                    )}
+                  />
                 </div>
               </div>
             )}
@@ -2152,7 +2215,11 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
                     borderTop: "1px solid var(--hair)",
                   }}
                 >
-                  {dest.reviews.map((rev: any) => (
+                  <ExpandableList
+                    items={dest.reviews}
+                    initial={4}
+                    totalLabel="reviews"
+                    renderItem={(rev: any) => (
                     <div
                       key={rev.id}
                       style={{
@@ -2219,7 +2286,8 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
                           : ""}
                       </p>
                     </div>
-                  ))}
+                    )}
+                  />
                 </div>
               </div>
             )}
@@ -2445,5 +2513,80 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
       <Footer />
       <DestinationScrollRail />
     </div>
+  );
+}
+
+/* ============================================================
+   ExpandableList — show first N items, "+ Show all" reveals the rest.
+   Keeps long lists (eateries, reviews, trip reports) from blowing up
+   the page height while preserving every item.
+   ============================================================ */
+function ExpandableList<T>({
+  items,
+  initial,
+  totalLabel,
+  renderItem,
+}: {
+  items: T[];
+  initial: number;
+  totalLabel: string;
+  renderItem: (item: T, index: number, total: number) => ReactNode;
+}) {
+  const [expanded, setExpanded] = useState(false);
+  const visible = expanded ? items : items.slice(0, initial);
+  const remaining = items.length - initial;
+
+  return (
+    <>
+      {visible.map((item, i) => renderItem(item, i, visible.length))}
+      {remaining > 0 && !expanded && (
+        <button
+          type="button"
+          onClick={() => setExpanded(true)}
+          style={{
+            marginTop: 24,
+            padding: "16px 24px",
+            background: "transparent",
+            color: "var(--vermillion)",
+            border: "1px solid var(--vermillion)",
+            fontFamily: "var(--cinema-ui)",
+            fontWeight: 700,
+            fontSize: 11,
+            lineHeight: 1,
+            textTransform: "uppercase",
+            letterSpacing: "0.22em",
+            cursor: "pointer",
+            alignSelf: "center",
+            display: "inline-block",
+          }}
+        >
+          + Show all {remaining} more {totalLabel}
+        </button>
+      )}
+      {expanded && items.length > initial && (
+        <button
+          type="button"
+          onClick={() => setExpanded(false)}
+          style={{
+            marginTop: 24,
+            padding: "16px 24px",
+            background: "transparent",
+            color: "var(--bone-faint)",
+            border: "1px solid var(--hair)",
+            fontFamily: "var(--cinema-ui)",
+            fontWeight: 700,
+            fontSize: 11,
+            lineHeight: 1,
+            textTransform: "uppercase",
+            letterSpacing: "0.22em",
+            cursor: "pointer",
+            alignSelf: "center",
+            display: "inline-block",
+          }}
+        >
+          Collapse
+        </button>
+      )}
+    </>
   );
 }
