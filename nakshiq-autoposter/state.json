@@ -54,7 +54,7 @@
     "m8EAd_evening_story": "2026-05-06",
     "PdMu0_evening": "2026-05-06"
   },
-  "last_sync": "2026-05-06T12:19:05.535501+00:00",
+  "last_sync": "2026-05-06T13:16:45.486950+00:00",
   "posted_destinations": [
     {
       "destination_id": "coonoor",
@@ -1199,7 +1199,8 @@
         "2026-04-29"
       ],
       "chopta": [
-        "2026-04-22"
+        "2026-04-22",
+        "2026-05-06"
       ],
       "kanatal": [
         "2026-04-22"
@@ -1276,7 +1277,8 @@
         "2026-05-02"
       ],
       "munsiyari": [
-        "2026-05-03"
+        "2026-05-03",
+        "2026-05-06"
       ],
       "uttarkashi": [
         "2026-05-03"
@@ -1627,6 +1629,9 @@
       ],
       "best-beaches-india": [
         "2026-05-06"
+      ],
+      "best-stargazing-spots": [
+        "2026-05-06"
       ]
     },
     "reel_map_formats": {
@@ -1671,7 +1676,15 @@
         "2026-05-06"
       ]
     },
-    "collection_carousel_dests:best-beaches-india": {}
+    "collection_carousel_dests:best-beaches-india": {},
+    "collection_carousel_dests:best-stargazing-spots": {
+      "munsiyari": [
+        "2026-05-06"
+      ],
+      "chopta": [
+        "2026-05-06"
+      ]
+    }
   },
   "infographic": {
     "last_topic_idx": 3,
@@ -1684,7 +1697,7 @@
     ]
   },
   "last_picked": {
-    "collection": "best-beaches-india",
-    "shared_best": "tirthan-valley"
+    "collection": "best-stargazing-spots",
+    "shared_best": "jibhi"
   }
 }
