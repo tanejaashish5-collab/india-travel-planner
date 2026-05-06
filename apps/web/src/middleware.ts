@@ -192,6 +192,17 @@ export default function middleware(request: NextRequest) {
     return NextResponse.redirect(new URL(`/${locale}/india/northeast`, request.url), 301);
   }
 
+  // /(en|hi)/skip-list → /(en|hi)/tourist-traps. The /skip-list/[slug] detail
+  // pages still resolve (they're individual trap entries); only the index was
+  // missing. Tourist Traps is the editorial home for the same content. Caught
+  // 2026-05-06 GSC non-indexing audit (was 404'ing for ~4 GSC URL records and
+  // had a broken link from /more).
+  const skipListMatch = request.nextUrl.pathname.match(/^\/(en|hi)\/skip-list\/?$/);
+  if (skipListMatch) {
+    const [, locale] = skipListMatch;
+    return NextResponse.redirect(new URL(`/${locale}/tourist-traps`, request.url), 301);
+  }
+
   // /(en|hi)/vs/kasol-parvati-valley-vs-manikaran → /(en|hi)/vs/kasol-vs-manikaran.
   // Legacy URL refers to a non-existent "kasol-parvati-valley" destination ID;
   // the actual destinations are kasol + parvati-valley + manikaran (separate
