@@ -39,60 +39,24 @@
     "02_trap_cinema"
   ],
   "posted_today": {
-    "PdMu0": "2026-05-04",
-    "m8EAd": "2026-05-04",
-    "m8EAd_reel": "2026-05-05",
-    "PdMu0_reel": "2026-05-05",
-    "4QL0i_reel": "2026-04-19",
-    "m8EAd_canva": "2026-04-26",
-    "PdMu0_canva": "2026-04-26",
-    "m8EAd_evening": "2026-05-04",
-    "m8EAd_evening_story": "2026-05-03",
-    "PdMu0_evening": "2026-05-04",
+    "m8EAd_reel": "2026-05-06",
+    "PdMu0_reel": "2026-05-06",
     "m8EAd_yt_short": "2026-05-05",
     "m8EAd_yt_short_count": 1,
-    "jUmP2_yt_short": "2026-04-20",
     "jUmP2_yt_short_count": 1,
-    "jUmP2": "2026-04-20",
-    "m8EAd_moat": "2026-05-04",
-    "PdMu0_moat": "2026-05-04",
-    "m8EAd_infographic": "2026-05-01",
-    "PdMu0_infographic": "2026-05-01",
-    "jUmP2_reel": "2026-04-20",
     "m8EAd_tourist_map": "2026-05-05",
     "PdMu0_tourist_map": "2026-05-05",
-    "m8EAd_pomelli": "2026-04-23",
-    "PdMu0_pomelli": "2026-04-23",
-    "36BUk_reel": "2026-04-21",
-    "36BUk_yt_short": "2026-04-21",
     "36BUk_yt_short_count": 1,
-    "m8EAd_story": "2026-04-26",
-    "xBQy8_yt_short": "2026-04-23",
     "xBQy8_yt_short_count": 1,
-    "xBQy8_reel": "2026-04-24",
-    "xBQy8": "2026-04-24",
-    "5bWND_yt_short": "2026-04-25",
     "5bWND_yt_short_count": 1,
-    "m8EAd_reel_map": "2026-04-26",
-    "PdMu0_reel_map": "2026-04-26",
-    "PvYR0": "2026-04-27",
-    "GAh5p_reel": "2026-05-05",
+    "GAh5p_reel": "2026-05-06",
     "m8EAd_flow_story": "2026-05-05",
     "PdMu0_flow_story": "2026-05-05",
     "GAh5p_yt_short": "2026-05-05",
-    "GAh5p_yt_short_count": 2,
-    "GAh5p": "2026-05-04"
+    "GAh5p_yt_short_count": 2
   },
   "last_sync": "2026-05-05T12:49:08.284419+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "kausani",
-      "date": "2026-04-21"
-    },
-    {
-      "destination_id": "palampur",
-      "date": "2026-04-21"
-    },
     {
       "destination_id": "coonoor",
       "date": "2026-04-22"
@@ -428,6 +392,10 @@
     {
       "destination_id": "barot-valley",
       "date": "2026-05-05"
+    },
+    {
+      "destination_id": "bhaderwah",
+      "date": "2026-05-06"
     }
   ],
   "posted_formats": {
@@ -1054,6 +1022,33 @@
       "destination": "barot-valley",
       "format": "flow_story",
       "media_id": "flow_c5abeebb-d45d-40e0-ae91-99b7332955ba.jpg"
+    },
+    {
+      "timestamp": "2026-05-06T06:20:40.184113+00:00",
+      "date": "2026-05-06",
+      "platform": "youtube",
+      "post_id": "8SRCI",
+      "destination": "bhaderwah",
+      "format": "reel.seasonal_shift",
+      "media_id": "reel_seasonal_shift_reel_seasonal_shift_bhaderwah.mp4"
+    },
+    {
+      "timestamp": "2026-05-06T06:21:24.002800+00:00",
+      "date": "2026-05-06",
+      "platform": "instagram",
+      "post_id": "HFqn5",
+      "destination": "bhaderwah",
+      "format": "reel.seasonal_shift",
+      "media_id": "reel_seasonal_shift_reel_seasonal_shift_bhaderwah.mp4"
+    },
+    {
+      "timestamp": "2026-05-06T06:21:38.305264+00:00",
+      "date": "2026-05-06",
+      "platform": "facebook",
+      "post_id": "IJHuX",
+      "destination": "bhaderwah",
+      "format": "reel.seasonal_shift",
+      "media_id": "reel_seasonal_shift_reel_seasonal_shift_bhaderwah.mp4"
     }
   ],
   "theme_usage": {
@@ -1203,7 +1198,8 @@
         "2026-04-30",
         "2026-05-02",
         "2026-05-03",
-        "2026-05-04"
+        "2026-05-04",
+        "2026-05-06"
       ],
       "destination_reveal": [
         "2026-04-21",
@@ -1253,6 +1249,9 @@
       ],
       "munsiyari": [
         "2026-05-04"
+      ],
+      "bhaderwah": [
+        "2026-05-06"
       ]
     },
     "reel_reveal_dests": {
