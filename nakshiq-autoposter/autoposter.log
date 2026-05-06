@@ -6994,3 +6994,50 @@ Date range: 2026-04-15 → 2026-05-05
 2026-05-06 11:49:56  INFO      YT Short posted: format=did_you_know, music=09_boom_bap_chill
 2026-05-06 11:49:56  INFO      State saved. YT Short run complete.
 2026-05-06 11:49:56  INFO      ════════════════════════════════════════════════════════════
+2026-05-06 12:18:45  INFO      ════════════════════════════════════════════════════════════
+2026-05-06 12:18:45  INFO      Nakshiq Autoposter · EVENING · 2026-05-06 · weekday=2
+2026-05-06 12:18:45  INFO      ════════════════════════════════════════════════════════════
+2026-05-06 12:18:45  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-05-06 12:19:05  INFO      Synced → 20 destinations · 0 traps · 0 articles · 23 routes · 50 treks · 100 eateries · total catalog=505
+2026-05-06 12:19:06  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-05-06 12:19:06  INFO      Formats — IG: collection_spotlight  ·  FB: collection_spotlight  ·  Story: blog_promo
+2026-05-06 12:19:06  INFO      Used destinations (14d): 58
+2026-05-06 12:19:06  INFO      Fingerprint dedup snapshot — 12 dests in 7d · 40 (dest,fmt) pairs in 30d · 6 media in 60d
+2026-05-06 12:19:06  INFO      Collection locked: Best Beaches in India — Beyond Goa (16/20 never featured)
+2026-05-06 12:19:08  INFO      Shared best destination locked: Tirthan Valley
+2026-05-06 12:19:08  INFO      Carousel locked (collection_spotlight): no valid images found
+2026-05-06 12:19:08  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-05-06 12:19:08  INFO      [instagram/nakshiq] Generating collection_spotlight post...
+2026-05-06 12:19:08  INFO      [instagram/nakshiq] Caption ready (444 chars, dest=tirthan-valley)
+2026-05-06 12:19:08  WARNING   [instagram/nakshiq] No carousel destinations resolved — falling back to single image.
+2026-05-06 12:19:08  INFO      [instagram/nakshiq] Uploading image...
+2026-05-06 12:19:08  INFO          Using branded image: tirthan-valley_feed_bold-cinematic_footer-bar.jpg (298,718 bytes)
+2026-05-06 12:19:08  INFO          Requesting upload URL for tirthan-valley.jpg (298,718 bytes, image/jpeg)
+2026-05-06 12:19:09  INFO          Uploading to R2 (timeout=120s)...
+2026-05-06 12:19:10  INFO          R2 PUT OK. Confirming...
+2026-05-06 12:19:11  INFO          Media ready: xydf8 (298,718 bytes · tirthan-valley.jpg)
+2026-05-06 12:19:11  INFO      [instagram/nakshiq] Publishing feed post...
+2026-05-06 12:19:11  INFO          Caption sanitizer: stripped 1 banned tags: ['#beach']
+2026-05-06 12:19:27  INFO      [instagram/nakshiq] ✅ Published · Outstand=E83SA · Platform=18061560452452169
+2026-05-06 12:19:27  INFO      [instagram/nakshiq] Uploading Story image (tirthan-valley.jpg)...
+2026-05-06 12:19:27  INFO          Using branded image: tirthan-valley_story_bold-cinematic_footer-bar.jpg (349,567 bytes)
+2026-05-06 12:19:27  INFO          Requesting upload URL for tirthan-valley.jpg (349,567 bytes, image/jpeg)
+2026-05-06 12:19:28  INFO          Uploading to R2 (timeout=120s)...
+2026-05-06 12:19:29  INFO          R2 PUT OK. Confirming...
+2026-05-06 12:19:30  INFO          Media ready: RpwUH (349,567 bytes · tirthan-valley.jpg)
+2026-05-06 12:19:30  INFO      [instagram/nakshiq] Publishing Story · format=blog_promo · dest=tirthan-valley
+2026-05-06 12:19:45  INFO      [instagram/nakshiq] ✅ Story live · ID=17998405169948346
+2026-05-06 12:19:45  INFO      [facebook/Nakshiq] Generating collection_spotlight post...
+2026-05-06 12:19:45  INFO      [facebook/Nakshiq] Caption ready (501 chars, dest=tirthan-valley)
+2026-05-06 12:19:45  WARNING   [facebook/Nakshiq] No carousel destinations resolved — falling back to single image.
+2026-05-06 12:19:45  INFO      [facebook/Nakshiq] Uploading image...
+2026-05-06 12:19:45  INFO          Using branded image: tirthan-valley_feed_bold-cinematic_footer-bar.jpg (298,718 bytes)
+2026-05-06 12:19:45  INFO          Requesting upload URL for tirthan-valley.jpg (298,718 bytes, image/jpeg)
+2026-05-06 12:19:46  INFO          Uploading to R2 (timeout=120s)...
+2026-05-06 12:19:46  INFO          R2 PUT OK. Confirming...
+2026-05-06 12:19:47  INFO          Media ready: WIuEz (298,718 bytes · tirthan-valley.jpg)
+2026-05-06 12:19:47  INFO      [facebook/Nakshiq] Publishing feed post...
+2026-05-06 12:19:47  INFO          Caption sanitizer: stripped 1 banned tags: ['#beach']
+2026-05-06 12:19:56  INFO      [facebook/Nakshiq] ✅ Published · Outstand=rh1G4 · Platform=1040562729145369_122106536960700092
+2026-05-06 12:19:56  INFO      State saved. Run complete.
+2026-05-06 12:19:56  INFO      ════════════════════════════════════════════════════════════

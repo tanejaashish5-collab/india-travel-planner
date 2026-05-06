@@ -49,9 +49,12 @@
     "PdMu0_moat": "2026-05-06",
     "GAh5p_reel_map": "2026-05-06",
     "m8EAd_reel_map": "2026-05-06",
-    "PdMu0_reel_map": "2026-05-06"
+    "PdMu0_reel_map": "2026-05-06",
+    "m8EAd_evening": "2026-05-06",
+    "m8EAd_evening_story": "2026-05-06",
+    "PdMu0_evening": "2026-05-06"
   },
-  "last_sync": "2026-05-06T07:17:09.718914+00:00",
+  "last_sync": "2026-05-06T12:19:05.535501+00:00",
   "posted_destinations": [
     {
       "destination_id": "coonoor",
@@ -404,11 +407,14 @@
     {
       "destination_id": "gopeshwar",
       "date": "2026-05-06"
+    },
+    {
+      "destination_id": "tirthan-valley",
+      "date": "2026-05-06"
     }
   ],
   "posted_formats": {
     "m8EAd": [
-      "methodology_roads",
       "score_card",
       "methodology_family",
       "collection_spotlight",
@@ -428,10 +434,10 @@
       "monthly_forecast",
       "chinese_wall",
       "score_card",
-      "data_provenance"
+      "data_provenance",
+      "collection_spotlight"
     ],
     "PdMu0": [
-      "collection_spotlight",
       "score_card",
       "festival_alert",
       "reality_check",
@@ -451,7 +457,8 @@
       "monthly_forecast",
       "chinese_wall",
       "score_card",
-      "data_provenance"
+      "data_provenance",
+      "collection_spotlight"
     ]
   },
   "post_log": [
@@ -1124,6 +1131,39 @@
       "destination": "gopeshwar",
       "format": "yt_short.did_you_know",
       "media_id": "yt_short_did_you_know_yt_short_did_you_know_2026-05-06.mp4"
+    },
+    {
+      "timestamp": "2026-05-06T12:19:27.477968+00:00",
+      "date": "2026-05-06",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "E83SA",
+      "destination": "tirthan-valley",
+      "format": "collection_spotlight",
+      "has_media": true,
+      "media_id": "tirthan-valley.jpg"
+    },
+    {
+      "timestamp": "2026-05-06T12:19:45.334876+00:00",
+      "date": "2026-05-06",
+      "platform": "instagram_story",
+      "account_id": "m8EAd",
+      "post_id": "WeUhz",
+      "destination": "tirthan-valley",
+      "format": "blog_promo",
+      "has_media": true,
+      "mode": "evening"
+    },
+    {
+      "timestamp": "2026-05-06T12:19:56.298597+00:00",
+      "date": "2026-05-06",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "rh1G4",
+      "destination": "tirthan-valley",
+      "format": "collection_spotlight",
+      "has_media": true,
+      "media_id": "tirthan-valley.jpg"
     }
   ],
   "theme_usage": {
@@ -1260,6 +1300,9 @@
         "2026-05-04"
       ],
       "guptkashi": [
+        "2026-05-06"
+      ],
+      "tirthan-valley": [
         "2026-05-06"
       ]
     },
@@ -1440,6 +1483,9 @@
       ],
       "munsiyari": [
         "2026-05-03"
+      ],
+      "tirthan-valley": [
+        "2026-05-06"
       ]
     },
     "festivals": {
@@ -1578,6 +1624,9 @@
       ],
       "andaman-diving-snorkeling": [
         "2026-04-30"
+      ],
+      "best-beaches-india": [
+        "2026-05-06"
       ]
     },
     "reel_map_formats": {
@@ -1621,7 +1670,8 @@
       "goa_bacteria_map": [
         "2026-05-06"
       ]
-    }
+    },
+    "collection_carousel_dests:best-beaches-india": {}
   },
   "infographic": {
     "last_topic_idx": 3,
@@ -1634,7 +1684,7 @@
     ]
   },
   "last_picked": {
-    "collection": "andaman-diving-snorkeling",
+    "collection": "best-beaches-india",
     "shared_best": "tirthan-valley"
   }
 }
