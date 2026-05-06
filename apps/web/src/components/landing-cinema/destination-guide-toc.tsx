@@ -24,27 +24,45 @@ export function DestinationGuideToc({ items }: { items: TocItem[] }) {
 
   useEffect(() => {
     if (!items.length) return;
-    const targets = items
-      .map((a) => document.getElementById(a.id))
-      .filter((el): el is HTMLElement => !!el);
-    if (!targets.length) return;
 
-    const obs = new IntersectionObserver(
-      (entries) => {
-        let bestIdx = active;
-        let bestRatio = 0;
-        for (const entry of entries) {
-          if (entry.isIntersecting && entry.intersectionRatio > bestRatio) {
-            bestRatio = entry.intersectionRatio;
-            const idx = items.findIndex((a) => a.id === entry.target.id);
-            if (idx >= 0) bestIdx = idx;
-          }
+    // Active-section tracking via scroll position. IntersectionObserver
+    // with intersectionRatio is unreliable for sections taller than the
+    // viewport — once you're mid-section no entries fire and the active
+    // index stops updating (user noticed: scrolled into Stay & Eat but
+    // TOC still highlighted Verdict). Strategy: every scroll frame, pick
+    // the section whose top is closest at-or-above 38% of the viewport.
+    // That tracks an editorial "now reading" line consistently.
+    const updateActive = () => {
+      const targets = items
+        .map((a) => document.getElementById(a.id))
+        .filter((el): el is HTMLElement => !!el);
+      if (!targets.length) return;
+      const midline = window.innerHeight * 0.38;
+      let bestIdx = 0;
+      let bestTop = -Infinity;
+      targets.forEach((el) => {
+        const top = el.getBoundingClientRect().top;
+        if (top <= midline && top > bestTop) {
+          bestTop = top;
+          const idx = items.findIndex((a) => a.id === el.id);
+          if (idx >= 0) bestIdx = idx;
         }
-        setActive(bestIdx);
-      },
-      { threshold: [0.05, 0.25, 0.5, 0.75], rootMargin: "-30% 0px -30% 0px" },
-    );
-    targets.forEach((t) => obs.observe(t));
+      });
+      setActive((prev) => (prev !== bestIdx ? bestIdx : prev));
+    };
+
+    let rafId: number | null = null;
+    const onScroll = () => {
+      if (rafId != null) return;
+      rafId = requestAnimationFrame(() => {
+        updateActive();
+        rafId = null;
+      });
+    };
+
+    updateActive();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll, { passive: true });
 
     // Hide on hero — only show once cover (#dest-act-1) is largely scrolled past.
     const cover = document.getElementById("dest-act-1");
@@ -53,9 +71,6 @@ export function DestinationGuideToc({ items }: { items: TocItem[] }) {
       hideObs = new IntersectionObserver(
         (entries) => {
           for (const e of entries) {
-            // When the cover's bottom is above the viewport (i.e. user
-            // scrolled past it), the cover is no longer intersecting →
-            // show the TOC.
             setVisible(!e.isIntersecting);
           }
         },
@@ -67,11 +82,12 @@ export function DestinationGuideToc({ items }: { items: TocItem[] }) {
     }
 
     return () => {
-      obs.disconnect();
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+      if (rafId != null) cancelAnimationFrame(rafId);
       hideObs?.disconnect();
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [items.length]);
+  }, [items]);
 
   if (!items.length) return null;
 
