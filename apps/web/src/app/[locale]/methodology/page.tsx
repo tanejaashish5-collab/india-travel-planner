@@ -7,6 +7,7 @@ import { localeAlternates } from "@/lib/seo-utils";
 import { SectionLabel } from "@/components/landing-cinema/helpers";
 import { getIssueNumber } from "@/components/landing-cinema/issue-number";
 import { CinemaStyles } from "@/components/landing-cinema/cinema-styles";
+import { SCORE_BANDS, VERDICT_COLOR, verdictTier, type VerdictTier } from "@itp/shared";
 
 // Live-computed freshness: ISR-cached daily, but the numbers come from DB
 // state, not hardcoded dates.
@@ -92,74 +93,10 @@ async function getScoreBandCounts(): Promise<Record<string, number> | null> {
   for (const { sum, n } of sums.values()) {
     if (n === 0) continue;
     const display = (sum / n) * 2;
-    if (display >= 8.0) counts.peak++;
-    else if (display >= 6.5) counts.excellent++;
-    else if (display >= 5.0) counts.doable++;
-    else if (display >= 3.5) counts.marginal++;
-    else counts.avoid++;
+    counts[verdictTier(display)]++;
   }
   return counts;
 }
-
-type ScoreTier = "peak" | "excellent" | "doable" | "marginal" | "avoid";
-
-const TIER_COLOR: Record<ScoreTier, string> = {
-  peak: "var(--green)",
-  excellent: "var(--green)",
-  doable: "var(--amber)",
-  marginal: "#E9876B",
-  avoid: "var(--vermillion)",
-};
-
-const SCORE_BANDS: {
-  tier: ScoreTier;
-  range: string;
-  min: number;
-  max: number; // inclusive; max=10 covers everything ≥ min
-  label: string;
-  tagline: string;
-}[] = [
-  {
-    tier: "peak",
-    range: "8.0–10.0",
-    min: 8.0,
-    max: 10.0,
-    label: "PEAK",
-    tagline: "Go. Now. Editors say this is the window.",
-  },
-  {
-    tier: "excellent",
-    range: "6.5–7.9",
-    min: 6.5,
-    max: 7.9,
-    label: "EXCELLENT",
-    tagline: "Worth the trip. Minor caveats. Plan around them.",
-  },
-  {
-    tier: "doable",
-    range: "5.0–6.4",
-    min: 5.0,
-    max: 6.4,
-    label: "DOABLE",
-    tagline: "Fine, with a workaround. Cruises pre-9am, hotels off-strip.",
-  },
-  {
-    tier: "marginal",
-    range: "3.5–4.9",
-    min: 3.5,
-    max: 4.9,
-    label: "MARGINAL",
-    tagline: "You can go. But you have a better option this month.",
-  },
-  {
-    tier: "avoid",
-    range: "0.0–3.4",
-    min: 0.0,
-    max: 3.4,
-    label: "AVOID",
-    tagline: "The Skip List. Editorially against. We say so out loud.",
-  },
-];
 
 const SCORE_FACTORS = [
   "Weather (temperature, rain, snow, visibility)",
@@ -306,6 +243,18 @@ export default async function MethodologyPage({
                 count={bandCounts ? bandCounts[s.tier] ?? null : null}
               />
             ))}
+            <p
+              className="nq-meta"
+              style={{
+                marginTop: 24,
+                color: "var(--bone-faint)",
+                fontSize: 12,
+                letterSpacing: "0.16em",
+                textAlign: "right",
+              }}
+            >
+              COUNTS LIVE FROM SUPABASE · BUCKETED BY ANNUAL-AVERAGE SCORE · REFRESHED DAILY
+            </p>
           </div>
 
           <div style={{ maxWidth: 720, margin: "60px auto 0" }}>
@@ -686,13 +635,13 @@ function ScoreBand({
   tagline,
   count,
 }: {
-  tier: ScoreTier;
+  tier: VerdictTier;
   range: string;
   label: string;
   tagline: string;
   count: number | null;
 }) {
-  const tint = TIER_COLOR[tier];
+  const tint = VERDICT_COLOR[tier];
   return (
     <div
       style={{

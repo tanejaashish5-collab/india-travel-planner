@@ -5,7 +5,7 @@ import { useLocale, useTranslations } from "next-intl";
 import { destinationImage } from "@/lib/image-url";
 import { useInView } from "./use-in-view";
 import { SectionLabel } from "./helpers";
-import { currentMonthLongIST, MONTH_LONG_NAMES } from "@itp/shared";
+import { currentMonthLongIST, MONTH_LONG_NAMES, VERDICT_COLOR, verdictTier } from "@itp/shared";
 
 /* ============================================================
    ACT V — Director's Cut (Mad-libs intake)
@@ -53,12 +53,7 @@ export function Act5DirectorsCut({ verdictMap }: { verdictMap: VerdictMap }) {
 
   const verdict = useMemo(() => verdictMap[vibe], [verdictMap, vibe]);
 
-  const verdictColor =
-    verdict?.verdictLabel === "PEAK" || verdict?.verdictLabel === "EXCELLENT"
-      ? "var(--green)"
-      : verdict?.verdictLabel === "AVOID" || verdict?.verdictLabel === "MARGINAL"
-      ? "var(--vermillion)"
-      : "var(--amber)";
+  const verdictColor = verdict ? VERDICT_COLOR[verdictTier(verdict.score)] : "var(--bone)";
 
   return (
     <section

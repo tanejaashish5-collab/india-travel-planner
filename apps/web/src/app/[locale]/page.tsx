@@ -14,7 +14,7 @@ import type { DailyEntry, DailiesStats } from "@/components/landing-cinema/act-6
 // exists for other pages — just not mounted here.
 import { createClient } from "@supabase/supabase-js";
 import { getAppStats } from "@/lib/stats";
-import { currentMonthIST } from "@itp/shared";
+import { currentMonthIST, verdictFor } from "@itp/shared";
 
 export const revalidate = 3600;
 
@@ -250,12 +250,7 @@ async function getFeaturedData() {
     const d = row.destinations;
     const stateName = Array.isArray(d?.state) ? d.state[0]?.name : d?.state?.name;
     const displayScore = Math.min(10, (row.score ?? 0) * 2);
-    const verdictLabel: VerdictCard["verdictLabel"] =
-      displayScore >= 8 ? "PEAK"
-      : displayScore >= 6.5 ? "EXCELLENT"
-      : displayScore >= 5 ? "DOABLE"
-      : displayScore >= 3.5 ? "MARGINAL"
-      : "AVOID";
+    const verdictLabel = verdictFor(displayScore);
     verdictMap[vibe] = {
       id: d.id ?? "",
       name: d.name ?? "",

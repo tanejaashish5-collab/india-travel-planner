@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
 import { destinationImage } from "@/lib/image-url";
-import { currentMonthLongIST } from "@itp/shared";
+import { currentMonthLongIST, verdictFor } from "@itp/shared";
 import { Kinetic, useClock } from "./helpers";
 
 /* ============================================================
@@ -29,15 +29,6 @@ export type DispatchHero = {
   verified_at: string | null;
   elevation_m: number | null;
 };
-
-function verdictFor(displayScore: number): string {
-  // Bands match v3-atlas Legend (0-10 scale):
-  if (displayScore >= 8.0) return "PEAK";
-  if (displayScore >= 6.5) return "EXCELLENT";
-  if (displayScore >= 5.0) return "DOABLE";
-  if (displayScore >= 3.5) return "MARGINAL";
-  return "AVOID";
-}
 
 export function Act1Dispatch({ heroes }: { heroes: DispatchHero[] }) {
   const t = useTranslations("cinema");

@@ -4,7 +4,7 @@ import { useTranslations } from "next-intl";
 import { destinationImage } from "@/lib/image-url";
 import { useInView } from "./use-in-view";
 import { ScoreNum } from "./helpers";
-import { currentMonthLongIST } from "@itp/shared";
+import { currentMonthLongIST, verdictFor } from "@itp/shared";
 
 /* ============================================================
    ACT III — The Scenes (scrollytelling reel)
@@ -31,14 +31,6 @@ export type SceneEntry = {
   difficulty: string | null;
   verified_at: string | null;
 };
-
-function verdictFor(displayScore: number): "PEAK" | "EXCELLENT" | "DOABLE" | "MARGINAL" | "AVOID" {
-  if (displayScore >= 8.0) return "PEAK";
-  if (displayScore >= 6.5) return "EXCELLENT";
-  if (displayScore >= 5.0) return "DOABLE";
-  if (displayScore >= 3.5) return "MARGINAL";
-  return "AVOID";
-}
 
 export function Act3Scenes({ scenes }: { scenes: SceneEntry[] }) {
   const t = useTranslations("cinema");
