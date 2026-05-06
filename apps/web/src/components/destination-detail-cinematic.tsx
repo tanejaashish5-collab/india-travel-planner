@@ -149,9 +149,13 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
     { id: "dest-act-6", label: "Atlas", show: pois.length > 0 || subs.length > 0 || gems.length > 0 },
     { id: "dest-act-7", label: "Cost & ground", show: !!dest.daily_cost || !!dest.local_logistics },
     { id: "dest-act-8", label: "Stay & eat", show: eateries.length > 0 || (dest.editor_stay_picks?.length ?? 0) > 0 },
-    { id: "dest-act-9", label: "Field notes", show: (dest.trip_reports?.length ?? 0) > 0 || (dest.reviews?.length ?? 0) > 0 || answeredQuestions.length > 0 },
+    { id: "dest-act-9", label: "Field notes", show: (dest.trip_reports?.length ?? 0) > 0 || (dest.traveler_notes?.length ?? 0) > 0 },
     { id: "dest-act-10", label: "Itinerary", show: !!dest.micro_itineraries },
     { id: "dest-act-11", label: "Coda", show: true },
+    // Tail "Travellers' voice" section — moved out of Act IX at user
+    // request so it sits last, just before the footer. Kept in the TOC
+    // so deliberate readers can jump to it.
+    { id: "dest-tail-voice", label: "Voice", show: (dest.reviews?.length ?? 0) > 0 || answeredQuestions.length > 0 },
   ].filter((s) => s.show);
 
   // Pre-compute every month's score → tier for the Window strip.
@@ -2077,21 +2081,27 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
                           className="nq-mono"
                           style={{
                             fontSize: 11,
-                            color: legend.verified
-                              ? "var(--vermillion)"
-                              : "var(--bone-faint)",
                             letterSpacing: "0.18em",
                             textTransform: "uppercase",
                             whiteSpace: "nowrap",
+                            color: "var(--bone-dim)",
                           }}
                         >
-                          {[
-                            legend.role,
-                            legend.known_as,
-                            legend.verified ? "VERIFIED" : null,
-                          ]
+                          {[legend.role, legend.known_as]
                             .filter(Boolean)
                             .join(" · ")}
+                          {legend.verified && (
+                            <>
+                              {(legend.role || legend.known_as) && (
+                                <span style={{ color: "var(--bone-faint)" }}>
+                                  {" · "}
+                                </span>
+                              )}
+                              <span style={{ color: "var(--green)" }}>
+                                VERIFIED
+                              </span>
+                            </>
+                          )}
                         </span>
                       </div>
                       {legend.story && (
@@ -2375,146 +2385,17 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
               </div>
             )}
 
-            {/* Reviews — inline cinematic. Italic serif quote with mono
-                star/date metadata; replaces production rounded review
-                cards with editorial typography. */}
-            {dest.reviews?.length > 0 && (
-              <div style={{ maxWidth: 1100, margin: "60px auto 0" }}>
-                <p
-                  className="nq-kicker"
-                  style={{
-                    color: "var(--vermillion)",
-                    marginBottom: 24,
-                  }}
-                >
-                  REVIEWS · {dest.reviews.length}
-                </p>
-                <div
-                  style={{
-                    display: "grid",
-                    gridTemplateColumns:
-                      "repeat(auto-fit, minmax(360px, 1fr))",
-                    gap: 0,
-                    borderTop: "1px solid var(--hair)",
-                  }}
-                >
-                  <ExpandableList
-                    items={dest.reviews}
-                    initial={4}
-                    totalLabel="reviews"
-                    renderItem={(rev: any) => (
-                    <div
-                      key={rev.id}
-                      style={{
-                        padding: "32px 24px",
-                        borderRight: "1px solid var(--hair)",
-                        borderBottom: "1px solid var(--hair)",
-                      }}
-                    >
-                      <div
-                        className="nq-mono"
-                        style={{
-                          fontSize: 11,
-                          color: "var(--amber)",
-                          letterSpacing: "0.22em",
-                          marginBottom: 12,
-                        }}
-                      >
-                        {"★".repeat(rev.rating)}
-                        {"☆".repeat(5 - (rev.rating ?? 0))}
-                        {rev.traveler_type && (
-                          <span
-                            style={{
-                              marginLeft: 12,
-                              color: "var(--bone-faint)",
-                            }}
-                          >
-                            · {rev.traveler_type.toUpperCase()}
-                          </span>
-                        )}
-                      </div>
-                      {rev.text && (
-                        <p
-                          style={{
-                            fontFamily: "var(--cinema-display)",
-                            fontStyle: "italic",
-                            fontSize: 18,
-                            lineHeight: 1.55,
-                            color: "var(--bone)",
-                            margin: 0,
-                          }}
-                        >
-                          &ldquo;{rev.text}&rdquo;
-                        </p>
-                      )}
-                      <p
-                        className="nq-mono"
-                        style={{
-                          marginTop: 14,
-                          fontSize: 11,
-                          color: "var(--bone-faint)",
-                          letterSpacing: "0.18em",
-                          textTransform: "uppercase",
-                        }}
-                      >
-                        {rev.visit_month && rev.visit_year
-                          ? `VISITED ${MONTH_LONG_NAMES[rev.visit_month - 1]?.toUpperCase()} ${rev.visit_year}`
-                          : rev.created_at
-                          ? new Date(rev.created_at)
-                              .toLocaleDateString("en-IN", {
-                                month: "short",
-                                year: "numeric",
-                              })
-                              .toUpperCase()
-                          : ""}
-                      </p>
-                    </div>
-                    )}
-                  />
-                </div>
-              </div>
-            )}
-
-            {/* Traveler notes */}
+            {/* Traveler notes — kept in Act IX as editorial field log.
+                Reviews + Q&A + submission forms moved out per user
+                instruction (they should sit at the absolute tail of the
+                page, just before the footer, as the last "user voice"
+                section). See the new <section id="dest-tail-voice">
+                rendered after the outro below. */}
             {dest.traveler_notes?.length > 0 && (
               <div style={{ maxWidth: 1100, margin: "60px auto 0" }}>
                 <TravelerNotes notes={dest.traveler_notes} />
               </div>
             )}
-
-            {/* Questions */}
-            {answeredQuestions.length > 0 && (
-              <div style={{ maxWidth: 1100, margin: "60px auto 0" }}>
-                <p
-                  className="nq-kicker"
-                  style={{
-                    color: "var(--vermillion)",
-                    marginBottom: 16,
-                  }}
-                >
-                  QUESTIONS &amp; ANSWERS
-                </p>
-                <QuestionsList
-                  questions={answeredQuestions}
-                  destinationId={dest.id}
-                  locale={locale}
-                />
-              </div>
-            )}
-
-            {/* Submission forms */}
-            <div
-              style={{
-                maxWidth: 1100,
-                margin: "60px auto 0",
-                display: "grid",
-                gridTemplateColumns: "minmax(0,1fr) minmax(0,1fr)",
-                gap: 48,
-              }}
-            >
-              <ReviewForm destinationId={dest.id} />
-              <QuestionForm destinationId={dest.id} />
-            </div>
           </div>
         </section>
 
@@ -2772,6 +2653,191 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
                   .toUpperCase()}`
               : `${currentMonthName.toUpperCase()} 2026`}
           </p>
+        </div>
+      </section>
+
+      {/* ───────────────────────────────────────────────
+         Travellers' voice — moved here at user request: should be the
+         absolute last point before the footer. Reviews + Q&A + submission
+         forms. Lives outside the cinematic <main> on purpose so the outro
+         reads as a clean closing visual; this is the "now you talk"
+         section that always tails a magazine piece.
+         ─────────────────────────────────────────────── */}
+      <section
+        id="dest-tail-voice"
+        aria-label="Travellers' voice"
+        style={{
+          padding: "120px 24px 100px",
+          background: "var(--paper)",
+          color: "var(--bone)",
+          borderTop: "1px solid var(--hair)",
+        }}
+      >
+        <div style={{ maxWidth: 1100, margin: "0 auto" }}>
+          <p
+            className="nq-kicker"
+            style={{
+              color: "var(--vermillion)",
+              marginBottom: 24,
+              textAlign: "center",
+            }}
+          >
+            TRAVELLERS&apos; VOICE
+          </p>
+          <Title
+            as="h2"
+            style={{
+              fontFamily: "var(--cinema-display)",
+              fontStyle: "italic",
+              fontWeight: 400,
+              fontSize: "clamp(36px, 5vw, 64px)",
+              lineHeight: 1.05,
+              letterSpacing: "-0.02em",
+              color: "var(--bone)",
+              margin: "0 0 56px",
+              textAlign: "center",
+            }}
+          >
+            What travellers say.
+          </Title>
+
+          {dest.reviews?.length > 0 && (
+            <div style={{ maxWidth: 1100, margin: "0 auto" }}>
+              <p
+                className="nq-kicker"
+                style={{ color: "var(--vermillion)", marginBottom: 24 }}
+              >
+                REVIEWS · {dest.reviews.length}
+              </p>
+              <div
+                style={{
+                  display: "grid",
+                  gridTemplateColumns: "repeat(auto-fit, minmax(360px, 1fr))",
+                  gap: 0,
+                  borderTop: "1px solid var(--hair)",
+                }}
+              >
+                <ExpandableList
+                  items={dest.reviews}
+                  initial={4}
+                  totalLabel="reviews"
+                  renderItem={(rev: any) => (
+                    <div
+                      key={rev.id}
+                      style={{
+                        padding: "32px 24px",
+                        borderRight: "1px solid var(--hair)",
+                        borderBottom: "1px solid var(--hair)",
+                      }}
+                    >
+                      <div
+                        className="nq-mono"
+                        style={{
+                          fontSize: 11,
+                          color: "var(--amber)",
+                          letterSpacing: "0.22em",
+                          marginBottom: 12,
+                        }}
+                      >
+                        {"★".repeat(rev.rating)}
+                        {"☆".repeat(5 - (rev.rating ?? 0))}
+                        {rev.traveler_type && (
+                          <span
+                            style={{
+                              marginLeft: 12,
+                              color: "var(--bone-faint)",
+                            }}
+                          >
+                            · {rev.traveler_type.toUpperCase()}
+                          </span>
+                        )}
+                      </div>
+                      {rev.text && (
+                        <p
+                          style={{
+                            fontFamily: "var(--cinema-display)",
+                            fontStyle: "italic",
+                            fontSize: 18,
+                            lineHeight: 1.55,
+                            color: "var(--bone)",
+                            margin: 0,
+                          }}
+                        >
+                          &ldquo;{rev.text}&rdquo;
+                        </p>
+                      )}
+                      <p
+                        className="nq-mono"
+                        style={{
+                          marginTop: 14,
+                          fontSize: 11,
+                          color: "var(--bone-faint)",
+                          letterSpacing: "0.18em",
+                          textTransform: "uppercase",
+                        }}
+                      >
+                        {rev.visit_month && rev.visit_year
+                          ? `VISITED ${MONTH_LONG_NAMES[rev.visit_month - 1]?.toUpperCase()} ${rev.visit_year}`
+                          : rev.created_at
+                            ? new Date(rev.created_at)
+                                .toLocaleDateString("en-IN", {
+                                  month: "short",
+                                  year: "numeric",
+                                })
+                                .toUpperCase()
+                            : ""}
+                      </p>
+                    </div>
+                  )}
+                />
+              </div>
+            </div>
+          )}
+
+          {answeredQuestions.length > 0 && (
+            <div style={{ maxWidth: 1100, margin: "80px auto 0" }}>
+              <p
+                className="nq-kicker"
+                style={{ color: "var(--vermillion)", marginBottom: 16 }}
+              >
+                QUESTIONS &amp; ANSWERS
+              </p>
+              <QuestionsList
+                questions={answeredQuestions}
+                destinationId={dest.id}
+                locale={locale}
+              />
+            </div>
+          )}
+
+          <div
+            style={{
+              maxWidth: 1100,
+              margin: "80px auto 0",
+              display: "grid",
+              gridTemplateColumns: "minmax(0,1fr) minmax(0,1fr)",
+              gap: 48,
+            }}
+          >
+            <div>
+              <p
+                className="nq-kicker"
+                style={{ color: "var(--vermillion)", marginBottom: 16 }}
+              >
+                SHARE YOUR EXPERIENCE
+              </p>
+              <ReviewForm destinationId={dest.id} />
+            </div>
+            <div>
+              <p
+                className="nq-kicker"
+                style={{ color: "var(--vermillion)", marginBottom: 16 }}
+              >
+                ASK A QUESTION
+              </p>
+              <QuestionForm destinationId={dest.id} />
+            </div>
+          </div>
         </div>
       </section>
 
