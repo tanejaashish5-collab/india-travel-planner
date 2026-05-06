@@ -455,6 +455,22 @@ def load_state() -> dict:
         # Backfill any missing keys so callers never hit KeyError
         for k, v in defaults.items():
             state.setdefault(k, v)
+        # Drop posted_today entries whose date is more than 1 day stale.
+        # Pre-existing keys like "jUmP2_yt_short: 2026-04-20" lingered for
+        # 16 days because rotation only resets when the same key fires again
+        # — that left the daily 2/2 cap permanently active for accounts
+        # whose Shorts cron silently dropped. Numeric counters (e.g.
+        # "_count") aren't dates and stay untouched.
+        today_iso = date.today().isoformat()
+        yesterday_iso = (date.today() - timedelta(days=1)).isoformat()
+        pruned = {}
+        for k, v in state["posted_today"].items():
+            if isinstance(v, str) and len(v) == 10 and v[4] == "-":
+                if v >= yesterday_iso:
+                    pruned[k] = v
+            else:
+                pruned[k] = v  # not a date — keep (counters etc.)
+        state["posted_today"] = pruned
         return state
     return defaults
 
@@ -2724,10 +2740,16 @@ _POST_OUTCOMES_PATH = Path(__file__).parent / "data" / "post_outcomes.jsonl"
 def _log_post_outcome(*, post_id: str | None, dest_id: str | None,
                       fmt: str | None, media_id: str | None,
                       account: dict, caption: str, cta_url: str | None,
-                      utm_content: str | None):
+                      utm_content: str | None,
+                      status: str = "published"):
     """Append a structured outcome row to data/post_outcomes.jsonl after every
-    successful publish. Foundation for the weekly engagement digest (Tier 3) —
+    publish attempt. Foundation for the weekly engagement digest (Tier 3) —
     join `utm_content` against GA4 to compute per-post CTR.
+
+    `status` defaults to "published" (post confirmed by the platform). Pass
+    "queued_unconfirmed" when Outstand accepted the post but `wait_for_publish`
+    never saw a platform confirmation — surfaces ghost posts (e.g. IG Short
+    post_id=iwJiB on 2026-05-05) in the watchdog instead of dropping silently.
 
     Best-effort: never raises. Logging failure should not block the run.
     """
@@ -2735,6 +2757,7 @@ def _log_post_outcome(*, post_id: str | None, dest_id: str | None,
         _POST_OUTCOMES_PATH.parent.mkdir(parents=True, exist_ok=True)
         record = {
             "ts":            datetime.now(timezone.utc).isoformat(),
+            "status":        status,
             "post_id":       post_id,
             "dest_id":       dest_id,
             "format":        fmt,
@@ -2978,6 +3001,20 @@ def publish_reel(caption: str, account: dict, video_media: dict,
     platform = account["network"]
     # Sanitize caption BEFORE any platform call (banned tags + length cap)
     caption = _sanitize_caption(caption, platform=platform)
+
+    # Pre-publish healthcheck — same gate as publish_feed_post. Reels and YT
+    # Shorts both flow through here, so a single check covers both. Skipped on
+    # dry_run; transient network errors are tolerated (status=0).
+    cta_url = _extract_caption_url(caption)
+    if cta_url and not dry_run:
+        ok, status = _healthcheck_url(cta_url)
+        if not ok and 400 <= status < 600:
+            log.error(
+                f"[{platform}/{username}] Reel CTA URL healthcheck FAILED "
+                f"(status={status}, url={cta_url}) — aborting post."
+            )
+            _log_bad_url(cta_url, status, caption, account)
+            return None
 
     if dry_run:
         log.info(f"    [DRY RUN] Reel → {video_media['filename']}")
@@ -5829,13 +5866,44 @@ def _run_reel(force: bool = False, dry_run: bool = False):
         log.info(f"[{label}] Outstand accepted (post_id={post_id}), confirming...")
 
         confirmed = wait_for_publish(post_id) if post_id != "unknown" else None
+        reel_dest_id = (
+            reel_data.get("dest_id")
+            or reel_data.get("dest_slug")
+            or reel_data.get("hidden")
+            or reel_data.get("trap_name")
+            or None
+        )
+        cta_url = _extract_caption_url(caption)
+        utm_content = build_utm_content(reel_dest_id, f"reel.{chosen_format}")
         if confirmed:
             platform_id = confirmed.get("platformPostId", "—")
             log.info(f"[{label}] ✅ Reel published · Outstand={post_id} · Platform={platform_id}")
             st.setdefault("posted_today", {})[acc_scoped_key] = today
             posted_any = True
+            record_publish(
+                st,
+                dest_id=reel_dest_id,
+                fmt=f"reel.{chosen_format}",
+                post_id=post_id,
+                platform=platform,
+                media_id=media_filename,
+            )
+            _log_post_outcome(
+                post_id=post_id, dest_id=reel_dest_id,
+                fmt=f"reel.{chosen_format}", media_id=media_filename,
+                account=account, caption=caption,
+                cta_url=cta_url, utm_content=utm_content,
+                status="published",
+            )
         else:
             log.warning(f"[{label}] ⚠️  Reel queued but NOT confirmed (post_id={post_id}).")
+            _log_post_outcome(
+                post_id=post_id, dest_id=reel_dest_id,
+                fmt=f"reel.{chosen_format}", media_id=media_filename,
+                account=account, caption=caption,
+                cta_url=cta_url, utm_content=utm_content,
+                status="queued_unconfirmed",
+            )
 
     # Mark format + data as used
     if posted_any:
@@ -6079,13 +6147,38 @@ def _run_reel_map(force: bool = False, dry_run: bool = False):
         log.info(f"[{label}] Outstand accepted (post_id={post_id}), confirming...")
 
         confirmed = wait_for_publish(post_id) if post_id != "unknown" else None
+        cta_url = _extract_caption_url(caption)
+        utm_content = build_utm_content(campaign_name, f"reel_map.{chosen_format}")
         if confirmed:
             platform_id = confirmed.get("platformPostId", "—")
             log.info(f"[{label}] ✅ Reel published · Outstand={post_id} · Platform={platform_id}")
             st.setdefault("posted_today", {})[acc_scoped_key] = today
             posted_any = True
+            # Reel-map is campaign-driven, not destination-driven, so dest_id stays None.
+            record_publish(
+                st,
+                dest_id=None,
+                fmt=f"reel_map.{chosen_format}",
+                post_id=post_id,
+                platform=platform,
+                media_id=media_filename,
+            )
+            _log_post_outcome(
+                post_id=post_id, dest_id=None,
+                fmt=f"reel_map.{chosen_format}", media_id=media_filename,
+                account=account, caption=caption,
+                cta_url=cta_url, utm_content=utm_content,
+                status="published",
+            )
         else:
             log.warning(f"[{label}] ⚠️  Reel queued but NOT confirmed (post_id={post_id}).")
+            _log_post_outcome(
+                post_id=post_id, dest_id=None,
+                fmt=f"reel_map.{chosen_format}", media_id=media_filename,
+                account=account, caption=caption,
+                cta_url=cta_url, utm_content=utm_content,
+                status="queued_unconfirmed",
+            )
 
     # Mark campaign + format as used
     if posted_any:
@@ -6477,6 +6570,7 @@ def _run_yt_short(force: bool = False, dry_run: bool = False):
     fmt         = result["format"]
     duration    = result.get("duration", 0)
     music       = result.get("music", "unknown")
+    primary_dest_id = result.get("primary_dest_id")  # may be None for multi-dest formats
 
     video_size_kb = len(video_bytes) // 1024
     log.info(f"Short rendered: {video_fname} ({video_size_kb} KB, {duration:.1f}s, fmt={fmt}, music={music})")
@@ -6543,6 +6637,8 @@ def _run_yt_short(force: bool = False, dry_run: bool = False):
         log.info(f"[{label}] Outstand accepted (post_id={post_id}), waiting for platform confirmation...")
 
         confirmed = wait_for_publish(post_id) if post_id != "unknown" else None
+        cta_url = _extract_caption_url(post_caption)
+        utm_content = build_utm_content(primary_dest_id, "yt_short")
         if confirmed:
             platform_id = confirmed.get("platformPostId", "—")
             log.info(f"[{label}] ✅ YT Short published · Outstand={post_id} · Platform={platform_id}")
@@ -6552,8 +6648,33 @@ def _run_yt_short(force: bool = False, dry_run: bool = False):
             posted_today[acc_scoped_key] = today
             posted_today[daily_count_key] = prev_count + 1
             posted_any = True
+            # Cross-flow dedup: register this Short with the main loop so the
+            # same dest doesn't get re-used in carousel within 14 days.
+            record_publish(
+                st,
+                dest_id=primary_dest_id,
+                fmt=f"yt_short.{fmt}",
+                post_id=post_id,
+                platform=platform,
+                media_id=media_filename,
+            )
+            _log_post_outcome(
+                post_id=post_id, dest_id=primary_dest_id,
+                fmt=f"yt_short.{fmt}", media_id=media_filename,
+                account=account, caption=post_caption,
+                cta_url=cta_url, utm_content=utm_content,
+                status="published",
+            )
         else:
             log.warning(f"[{label}] ⚠️  YT Short queued but NOT confirmed (post_id={post_id}). May have silently failed.")
+            # Surface ghost posts in the watchdog instead of dropping silently.
+            _log_post_outcome(
+                post_id=post_id, dest_id=primary_dest_id,
+                fmt=f"yt_short.{fmt}", media_id=media_filename,
+                account=account, caption=post_caption,
+                cta_url=cta_url, utm_content=utm_content,
+                status="queued_unconfirmed",
+            )
 
     if posted_any:
         log.info(f"YT Short posted: format={fmt}, music={music}")

@@ -174,10 +174,15 @@ def _load_pomelli_manifest() -> list:
 
 
 def _find_pomelli_images(keywords: list[str], count: int = 1,
-                         campaign_type: str = None) -> list[Path]:
+                         campaign_type: str = None,
+                         strict: bool = False) -> list[Path]:
     """Find Pomelli images matching keywords (campaign name, subject, tags).
 
     Returns up to `count` image paths, shuffled for variety.
+
+    When strict=True, returns [] if no keyword match scores positive — i.e.
+    skips the random library fallback. Use this in callers that need to avoid
+    cross-destination leakage (Pomelli backgrounds for Shorts, etc.).
     """
     manifest = _load_pomelli_manifest()
     if not manifest:
@@ -224,6 +229,8 @@ def _find_pomelli_images(keywords: list[str], count: int = 1,
             scored.append((score, random.random(), path))
 
     if not scored:
+        if strict:
+            return []
         # Random fallback from full library
         all_imgs = []
         for e in manifest:
@@ -298,38 +305,54 @@ def _render_segment_image(image_file: Path, duration: float,
 
 def _pick_background(dest: dict, keywords: list[str] = None,
                      campaign_type: str = None) -> tuple:
-    """Pick a background for a segment — Pomelli image preferred, video fallback.
+    """Pick a background for a segment.
+
+    Priority (changed 2026-05-06 to fix double-title bug):
+      1. Destination video from R2 library — clean, no baked text.
+      2. Pomelli image — only when a strict name-keyword match exists, since
+         Pomelli images carry baked-in titles + CTA buttons that collide with
+         the Short's own text overlays. State alone is NEVER enough (caused
+         Khangchendzonga→Nathula cross-leakage on 2026-05-05).
+      3. None.
 
     Returns (path, is_image: bool).
     """
-    kw = keywords or []
-    # Add destination name + state as keywords
-    name = dest.get("name", "")
-    state = dest.get("state", "")
-    if name:
-        kw.append(name)
-    if state:
-        kw.append(state)
-
-    imgs = _find_pomelli_images(kw, count=1, campaign_type=campaign_type)
-    if imgs:
-        return imgs[0], True
-
-    # Video fallback
-    bg, is_img = _pick_background(dest)
+    # 1. Prefer destination video (no baked text → no title collision).
+    vid = _find_similar_video(dest)
     if vid:
         return vid, False
+
+    # 2. Pomelli fallback — strict name-match only.
+    name = dest.get("name", "")
+    if name:
+        kw = list(keywords or []) + [name]
+        imgs = _find_pomelli_images(kw, count=1, campaign_type=campaign_type, strict=True)
+        if imgs:
+            return imgs[0], True
+
     return None, False
 
 
 def _render_segment_auto(bg_path: Path, is_image: bool, duration: float,
                          text_filters: list[str], out_path: Path,
                          zoom_dir: str = "in") -> Optional[Path]:
-    """Render a segment using either Pomelli image or video background."""
+    """Render a segment using either Pomelli image or destination video.
+
+    When the background is a Pomelli image we drop the text_filters — Pomelli
+    creatives already have baked title + tagline + CTA, and stacking our own
+    overlays on top produced the double-text bug seen on 2026-05-05.
+    """
+    if bg_path is None:
+        return None
     if is_image:
-        return _render_segment_image(bg_path, duration, text_filters, out_path, zoom_dir)
-    else:
-        return _render_segment_auto(bg_path, is_img, duration, text_filters, out_path)
+        is_pomelli = False
+        try:
+            is_pomelli = POMELLI_DIR.resolve() in bg_path.resolve().parents
+        except Exception:
+            is_pomelli = str(bg_path).startswith(str(POMELLI_DIR))
+        safe_filters = [] if is_pomelli else text_filters
+        return _render_segment_image(bg_path, duration, safe_filters, out_path, zoom_dir)
+    return _render_segment(bg_path, duration, text_filters, out_path)
 
 
 def _pick_music(state: dict) -> Optional[Path]:
@@ -340,12 +363,18 @@ def _pick_music(state: dict) -> Optional[Path]:
     if not tracks:
         return None
 
-    # Use state-based rotation
-    used = state.get("yt_short_music_used", [])
+    # Cap the rotation array at the library size — without this, every pick
+    # appends and the array grows unbounded (35+ entries seen in prod 2026-05-05
+    # against a ~37-track library). The reset-when-empty branch never fires
+    # because stale-but-still-listed names match against current files.
+    track_stems = {t.stem for t in tracks}
+    used = [s for s in state.get("yt_short_music_used", []) if s in track_stems]
+    if len(used) >= len(tracks):
+        used = []
+    state["yt_short_music_used"] = used
+
     unused = [t for t in tracks if t.stem not in used]
     if not unused:
-        # All used — reset rotation
-        state["yt_short_music_used"] = []
         unused = tracks
 
     pick = random.choice(unused)
@@ -1344,6 +1373,10 @@ def build_yt_short(
 
         month_slug = month_name.lower()   # e.g. "april"
 
+        primary_dest_id = None  # Tier-3 telemetry: the single dest a Short
+                                # most-prominently features, used by record_publish
+                                # + _log_post_outcome for cross-flow dedup.
+
         if fmt == "listicle":
             # Weekly Picks alignment contract (PRD §8.1): if the new endpoint
             # is live, use its 5 picks for the Short so what the viewer sees
@@ -1356,6 +1389,7 @@ def build_yt_short(
             segments, total_dur, _meta = _build_listicle(listicle_dests, month_name, out_dir)
             # Use state from top-scoring dest for hashtag
             top_dest = listicle_dests[0] if listicle_dests else {}
+            primary_dest_id = top_dest.get("id") or None
             caption_data = {
                 "month": month_name,
                 "week": wk_num,
@@ -1366,6 +1400,7 @@ def build_yt_short(
             segments, total_dur, _meta = _build_before_after(destinations, month_now, out_dir)
             ba_dest = _meta.get("dest", {})
             ba_id = ba_dest.get("id", "")
+            primary_dest_id = ba_id or None
             caption_data = {
                 "month": month_name,
                 "dest_name": ba_dest.get("name", ""),
@@ -1382,6 +1417,7 @@ def build_yt_short(
             segments, total_dur, _meta = _build_mini_guide(destinations, out_dir)
             dest = _meta.get("dest", destinations[0])
             dest_id = dest.get("id", "")
+            primary_dest_id = dest_id or None
             caption_data = {
                 "month": month_name,
                 "dest_name": dest.get("name", ""),
@@ -1397,6 +1433,7 @@ def build_yt_short(
             segments, total_dur, _meta = _build_did_you_know(destinations, out_dir)
             dyk_dest = _meta.get("dest", destinations[0])
             dyk_id = dyk_dest.get("id", "")
+            primary_dest_id = dyk_id or None
             caption_data = {
                 "month": month_name,
                 "dest_name": dyk_dest.get("name", ""),
@@ -1412,6 +1449,7 @@ def build_yt_short(
             segments, total_dur, _meta = _build_this_vs_that(destinations, out_dir)
             tvt_a = _meta.get("dest_a", destinations[0])
             tvt_b = _meta.get("dest_b", destinations[1] if len(destinations) > 1 else destinations[0])
+            primary_dest_id = tvt_a.get("id") or None
             caption_data = {
                 "month": month_name,
                 "dest_a": tvt_a.get("name", "A"),
@@ -1425,6 +1463,8 @@ def build_yt_short(
             segments, total_dur, _meta = _build_dont_go_here(destinations, month_name, out_dir)
             dgh_dests = _meta.get("dests", [])
             dgh_state = dgh_dests[0].get("state", "") if dgh_dests else ""
+            # Multi-dest format — leave primary_dest_id None so cross-flow dedup
+            # doesn't mistakenly block any single dest from the main loop.
             caption_data = {
                 "month": month_name,
                 "state": dgh_state,
@@ -1441,6 +1481,7 @@ def build_yt_short(
                 fmt = "listicle"
                 segments, total_dur, _meta = _build_listicle(destinations, month_name, out_dir)
                 top_dest = destinations[0] if destinations else {}
+                primary_dest_id = top_dest.get("id") or None
                 caption_data = {
                     "month": month_name,
                     "state": top_dest.get("state", ""),
@@ -1488,6 +1529,7 @@ def build_yt_short(
             "format": fmt,
             "duration": total_dur,
             "music": music.stem,
+            "primary_dest_id": primary_dest_id,
         }
 
 
