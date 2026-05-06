@@ -6916,3 +6916,39 @@ Date range: 2026-04-15 → 2026-05-05
 2026-05-06 06:21:38  INFO      Theme tracker updated: format=seasonal_shift
 2026-05-06 06:21:38  INFO      State saved. Reel run complete.
 2026-05-06 06:21:38  INFO      ════════════════════════════════════════════════════════════
+2026-05-06 07:16:56  INFO      ════════════════════════════════════════════════════════════
+2026-05-06 07:16:56  INFO      Nakshiq Autoposter · MOAT · 2026-05-06 · weekday=2
+2026-05-06 07:16:56  INFO      ════════════════════════════════════════════════════════════
+2026-05-06 07:16:56  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-05-06 07:17:09  INFO      Synced → 20 destinations · 0 traps · 0 articles · 23 routes · 50 treks · 100 eateries · total catalog=505
+2026-05-06 07:17:10  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-05-06 07:17:12  INFO      Outstand dedup guard: merged 3 remote posts into state.
+2026-05-06 07:17:12  INFO      Moat angle locked: data_provenance (3/9 never featured)
+2026-05-06 07:17:12  INFO      Formats — IG: data_provenance  ·  FB: data_provenance  ·  Story: None
+2026-05-06 07:17:12  INFO      Used destinations (14d): 57
+2026-05-06 07:17:12  INFO      Fingerprint dedup snapshot — 10 dests in 7d · 38 (dest,fmt) pairs in 30d · 3 media in 60d
+2026-05-06 07:17:12  INFO      Data Provenance target: Guptkashi
+2026-05-06 07:17:13  INFO      Shared best destination locked: Tirthan Valley
+2026-05-06 07:17:13  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-05-06 07:17:13  INFO      [instagram/nakshiq] Generating data_provenance post...
+2026-05-06 07:17:13  INFO      [instagram/nakshiq] Caption ready (459 chars, dest=guptkashi)
+2026-05-06 07:17:13  INFO      [instagram/nakshiq] Video available — uploading for Reel...
+2026-05-06 07:17:13  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/guptkashi.mp4?v=20260506
+2026-05-06 07:17:14  INFO          Requesting upload URL for guptkashi.mp4 (4,710,701 bytes, video/mp4)
+2026-05-06 07:17:14  INFO          Uploading to R2 (timeout=300s)...
+2026-05-06 07:17:16  INFO          R2 PUT OK. Confirming...
+2026-05-06 07:17:17  INFO          Media ready: bz6JT (4,710,701 bytes · guptkashi.mp4)
+2026-05-06 07:17:17  INFO      [instagram/nakshiq] Publishing Reel...
+2026-05-06 07:17:56  INFO      [instagram/nakshiq] ✅ Published · Outstand=TqXA1 · Platform=18150917497468400
+2026-05-06 07:17:56  INFO      [facebook/Nakshiq] Generating data_provenance post...
+2026-05-06 07:17:56  INFO      [facebook/Nakshiq] Caption ready (702 chars, dest=guptkashi)
+2026-05-06 07:17:56  INFO      [facebook/Nakshiq] Video available — uploading for Reel...
+2026-05-06 07:17:56  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/guptkashi.mp4?v=20260506
+2026-05-06 07:17:57  INFO          Requesting upload URL for guptkashi.mp4 (4,710,701 bytes, video/mp4)
+2026-05-06 07:17:57  INFO          Uploading to R2 (timeout=300s)...
+2026-05-06 07:17:59  INFO          R2 PUT OK. Confirming...
+2026-05-06 07:17:59  INFO          Media ready: DF3Qo (4,710,701 bytes · guptkashi.mp4)
+2026-05-06 07:17:59  INFO      [facebook/Nakshiq] Publishing Reel...
+2026-05-06 07:18:13  INFO      [facebook/Nakshiq] ✅ Published · Outstand=SLFHJ · Platform=1362905502526183
+2026-05-06 07:18:13  INFO      State saved. Run complete.
+2026-05-06 07:18:13  INFO      ════════════════════════════════════════════════════════════

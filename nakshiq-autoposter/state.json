@@ -53,9 +53,14 @@
     "m8EAd_flow_story": "2026-05-05",
     "PdMu0_flow_story": "2026-05-05",
     "GAh5p_yt_short": "2026-05-05",
-    "GAh5p_yt_short_count": 2
+    "GAh5p_yt_short_count": 2,
+    "PdMu0": "2026-05-06",
+    "m8EAd": "2026-05-06",
+    "GAh5p": "2026-05-06",
+    "m8EAd_moat": "2026-05-06",
+    "PdMu0_moat": "2026-05-06"
   },
-  "last_sync": "2026-05-05T12:49:08.284419+00:00",
+  "last_sync": "2026-05-06T07:17:09.718914+00:00",
   "posted_destinations": [
     {
       "destination_id": "coonoor",
@@ -396,11 +401,18 @@
     {
       "destination_id": "bhaderwah",
       "date": "2026-05-06"
+    },
+    {
+      "destination_id": "reel_seasonal_shift_reel_seasonal_shift_bhaderwah",
+      "date": "2026-05-06"
+    },
+    {
+      "destination_id": "guptkashi",
+      "date": "2026-05-06"
     }
   ],
   "posted_formats": {
     "m8EAd": [
-      "monthly_forecast",
       "methodology_roads",
       "score_card",
       "methodology_family",
@@ -420,10 +432,10 @@
       "score_card",
       "monthly_forecast",
       "chinese_wall",
-      "score_card"
+      "score_card",
+      "data_provenance"
     ],
     "PdMu0": [
-      "methodology_family",
       "collection_spotlight",
       "score_card",
       "festival_alert",
@@ -443,7 +455,8 @@
       "score_card",
       "monthly_forecast",
       "chinese_wall",
-      "score_card"
+      "score_card",
+      "data_provenance"
     ]
   },
   "post_log": [
@@ -1049,6 +1062,28 @@
       "destination": "bhaderwah",
       "format": "reel.seasonal_shift",
       "media_id": "reel_seasonal_shift_reel_seasonal_shift_bhaderwah.mp4"
+    },
+    {
+      "timestamp": "2026-05-06T07:17:56.343744+00:00",
+      "date": "2026-05-06",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "TqXA1",
+      "destination": "guptkashi",
+      "format": "data_provenance",
+      "has_media": true,
+      "media_id": "guptkashi.mp4"
+    },
+    {
+      "timestamp": "2026-05-06T07:18:13.141126+00:00",
+      "date": "2026-05-06",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "SLFHJ",
+      "destination": "guptkashi",
+      "format": "data_provenance",
+      "has_media": true,
+      "media_id": "guptkashi.mp4"
     }
   ],
   "theme_usage": {
@@ -1183,6 +1218,9 @@
       ],
       "lolab-valley": [
         "2026-05-04"
+      ],
+      "guptkashi": [
+        "2026-05-06"
       ]
     },
     "reel_formats": {
@@ -1393,6 +1431,9 @@
       ],
       "chinese_wall": [
         "2026-05-04"
+      ],
+      "data_provenance": [
+        "2026-05-06"
       ]
     },
     "audience_tags": {
@@ -1546,6 +1587,6 @@
   },
   "last_picked": {
     "collection": "andaman-diving-snorkeling",
-    "shared_best": "parvati-valley"
+    "shared_best": "tirthan-valley"
   }
 }
