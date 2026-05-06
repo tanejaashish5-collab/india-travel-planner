@@ -51,36 +51,113 @@ async function getFreshnessStats() {
   return { pct, latest };
 }
 
-const SCORE_BANDS: { range: string; label: string; desc: string }[] = [
+// Bucket every destination by its annual average score. Average across all
+// 12 months (×2 for the 0–10 display scale) decides which band a place lands
+// in. Each destination counts exactly once, so totals sum to the destination
+// count. Average — not peak — because almost every place has at least one
+// strong month, which would over-pack the PEAK bucket and tell readers nothing.
+async function getScoreBandCounts(): Promise<Record<string, number> | null> {
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+  if (!url || !key) return null;
+
+  const supabase = createClient(url, key);
+  const counts: Record<string, number> = {
+    peak: 0,
+    excellent: 0,
+    doable: 0,
+    marginal: 0,
+    avoid: 0,
+  };
+
+  // 5,856 rows max — paginate around the Supabase 1000-row cap.
+  const PAGE = 1000;
+  const sums = new Map<string, { sum: number; n: number }>();
+  for (let from = 0; from < 8000; from += PAGE) {
+    const { data, error } = await supabase
+      .from("destination_months")
+      .select("destination_id, score")
+      .range(from, from + PAGE - 1);
+    if (error || !data || data.length === 0) break;
+    for (const row of data as { destination_id: string; score: number | null }[]) {
+      if (row.score == null) continue;
+      const cur = sums.get(row.destination_id) ?? { sum: 0, n: 0 };
+      cur.sum += row.score;
+      cur.n += 1;
+      sums.set(row.destination_id, cur);
+    }
+    if (data.length < PAGE) break;
+  }
+
+  for (const { sum, n } of sums.values()) {
+    if (n === 0) continue;
+    const display = (sum / n) * 2;
+    if (display >= 8.0) counts.peak++;
+    else if (display >= 6.5) counts.excellent++;
+    else if (display >= 5.0) counts.doable++;
+    else if (display >= 3.5) counts.marginal++;
+    else counts.avoid++;
+  }
+  return counts;
+}
+
+type ScoreTier = "peak" | "excellent" | "doable" | "marginal" | "avoid";
+
+const TIER_COLOR: Record<ScoreTier, string> = {
+  peak: "var(--green)",
+  excellent: "var(--green)",
+  doable: "var(--amber)",
+  marginal: "#E9876B",
+  avoid: "var(--vermillion)",
+};
+
+const SCORE_BANDS: {
+  tier: ScoreTier;
+  range: string;
+  min: number;
+  max: number; // inclusive; max=10 covers everything ≥ min
+  label: string;
+  tagline: string;
+}[] = [
   {
-    range: "10.0",
-    label: "Peak — go now",
-    desc: "This is what the place is famous for. Weather perfect, everything open, activities at their best.",
+    tier: "peak",
+    range: "8.0–10.0",
+    min: 8.0,
+    max: 10.0,
+    label: "PEAK",
+    tagline: "Go. Now. Editors say this is the window.",
   },
   {
-    range: "8.0",
-    label: "Excellent",
-    desc: "Minor tradeoffs — shoulder crowds, slight weather risk, but still a great time to visit.",
+    tier: "excellent",
+    range: "6.5–7.9",
+    min: 6.5,
+    max: 7.9,
+    label: "EXCELLENT",
+    tagline: "Worth the trip. Minor caveats. Plan around them.",
   },
   {
-    range: "6.0",
-    label: "Doable",
-    desc: "Open and worth it, but not the headline experience. Shoulder season.",
+    tier: "doable",
+    range: "5.0–6.4",
+    min: 5.0,
+    max: 6.4,
+    label: "DOABLE",
+    tagline: "Fine, with a workaround. Cruises pre-9am, hotels off-strip.",
   },
   {
-    range: "4.0",
-    label: "Marginal",
-    desc: "Significant downsides — rain, cold, partial closures, low payoff for the effort.",
+    tier: "marginal",
+    range: "3.5–4.9",
+    min: 3.5,
+    max: 4.9,
+    label: "MARGINAL",
+    tagline: "You can go. But you have a better option this month.",
   },
   {
-    range: "2.0",
-    label: "Avoid unless specific reason",
-    desc: "Most things shut, conditions poor, or genuinely risky.",
-  },
-  {
-    range: "0.0",
-    label: "Closed / inaccessible",
-    desc: "Place is physically inaccessible — snow, floods, official closure.",
+    tier: "avoid",
+    range: "0.0–3.4",
+    min: 0.0,
+    max: 3.4,
+    label: "AVOID",
+    tagline: "The Skip List. Editorially against. We say so out loud.",
   },
 ];
 
@@ -120,7 +197,10 @@ export default async function MethodologyPage({
 }) {
   const { locale } = await params;
   const issueNum = getIssueNumber();
-  const freshness = await getFreshnessStats();
+  const [freshness, bandCounts] = await Promise.all([
+    getFreshnessStats(),
+    getScoreBandCounts(),
+  ]);
   const now = new Date();
   const monthYear = now.toLocaleDateString("en-IN", {
     month: "long",
@@ -216,13 +296,14 @@ export default async function MethodologyPage({
               gap: 0,
             }}
           >
-            {SCORE_BANDS.map((s, i) => (
+            {SCORE_BANDS.map((s) => (
               <ScoreBand
-                key={s.range}
-                num={String(i + 1)}
+                key={s.tier}
+                tier={s.tier}
                 range={s.range}
                 label={s.label}
-                desc={s.desc}
+                tagline={s.tagline}
+                count={bandCounts ? bandCounts[s.tier] ?? null : null}
               />
             ))}
           </div>
@@ -256,40 +337,19 @@ export default async function MethodologyPage({
                 <li
                   key={f}
                   style={{
-                    display: "grid",
-                    gridTemplateColumns: "48px 1fr",
-                    gap: 16,
                     padding: "18px 0",
-                    borderTop:
-                      i === 0
-                        ? "1px solid var(--hair)"
-                        : "1px solid var(--hair)",
+                    borderTop: "1px solid var(--hair)",
                     borderBottom:
                       i === SCORE_FACTORS.length - 1
                         ? "1px solid var(--hair)"
                         : "none",
+                    fontFamily: "var(--cinema-ui)",
+                    fontSize: 16,
+                    lineHeight: 1.6,
+                    color: "var(--bone-dim)",
                   }}
                 >
-                  <span
-                    className="nq-mono"
-                    style={{
-                      fontSize: 13,
-                      color: "var(--vermillion)",
-                      letterSpacing: "0.18em",
-                    }}
-                  >
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <span
-                    style={{
-                      fontFamily: "var(--cinema-ui)",
-                      fontSize: 15,
-                      lineHeight: 1.6,
-                      color: "var(--bone-dim)",
-                    }}
-                  >
-                    {f}
-                  </span>
+                  {f}
                 </li>
               ))}
             </ul>
@@ -337,37 +397,19 @@ export default async function MethodologyPage({
                 <li
                   key={f}
                   style={{
-                    display: "grid",
-                    gridTemplateColumns: "48px 1fr",
-                    gap: 16,
                     padding: "18px 0",
                     borderTop: "1px solid var(--hair)",
                     borderBottom:
                       i === KIDS_CHECKS.length - 1
                         ? "1px solid var(--hair)"
                         : "none",
+                    fontFamily: "var(--cinema-ui)",
+                    fontSize: 16,
+                    lineHeight: 1.6,
+                    color: "var(--bone-dim)",
                   }}
                 >
-                  <span
-                    className="nq-mono"
-                    style={{
-                      fontSize: 13,
-                      color: "var(--vermillion)",
-                      letterSpacing: "0.18em",
-                    }}
-                  >
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <span
-                    style={{
-                      fontFamily: "var(--cinema-ui)",
-                      fontSize: 15,
-                      lineHeight: 1.6,
-                      color: "var(--bone-dim)",
-                    }}
-                  >
-                    {f}
-                  </span>
+                  {f}
                 </li>
               ))}
             </ul>
@@ -407,10 +449,9 @@ export default async function MethodologyPage({
               gap: 0,
             }}
           >
-            {INFRA_FIELDS.map((f, i) => (
+            {INFRA_FIELDS.map((f) => (
               <EditorialEntry
                 key={f.label}
-                num={String(i + 1)}
                 title={f.label}
                 body={f.desc}
               />
@@ -596,138 +637,126 @@ function PullQuote({ children }: { children: React.ReactNode }) {
 }
 
 function EditorialEntry({
-  num,
   title,
   body,
 }: {
-  num: string;
   title: string;
   body: string;
 }) {
   return (
     <div
       style={{
-        display: "grid",
-        gridTemplateColumns: "48px 1fr",
-        gap: 24,
         padding: "28px 0",
         borderTop: "1px solid var(--hair)",
       }}
     >
-      <span
-        className="nq-mono"
+      <h3
         style={{
-          fontSize: 14,
-          color: "var(--vermillion)",
-          letterSpacing: "0.18em",
-          paddingTop: 4,
+          fontFamily: "var(--cinema-display)",
+          fontStyle: "italic",
+          fontWeight: 500,
+          fontSize: 24,
+          lineHeight: 1.25,
+          letterSpacing: "-0.012em",
+          color: "var(--bone)",
+          margin: "0 0 10px",
         }}
       >
-        {num.padStart(2, "0")}
-      </span>
-      <div>
-        <h3
-          style={{
-            fontFamily: "var(--cinema-display)",
-            fontStyle: "italic",
-            fontWeight: 500,
-            fontSize: 24,
-            lineHeight: 1.25,
-            letterSpacing: "-0.012em",
-            color: "var(--bone)",
-            margin: "0 0 10px",
-          }}
-        >
-          {title}
-        </h3>
-        <p
-          style={{
-            fontFamily: "var(--cinema-ui)",
-            fontSize: 15,
-            lineHeight: 1.7,
-            color: "var(--bone-dim)",
-            margin: 0,
-          }}
-        >
-          {body}
-        </p>
-      </div>
+        {title}
+      </h3>
+      <p
+        style={{
+          fontFamily: "var(--cinema-ui)",
+          fontSize: 16,
+          lineHeight: 1.7,
+          color: "var(--bone-dim)",
+          margin: 0,
+        }}
+      >
+        {body}
+      </p>
     </div>
   );
 }
 
 function ScoreBand({
-  num,
+  tier,
   range,
   label,
-  desc,
+  tagline,
+  count,
 }: {
-  num: string;
+  tier: ScoreTier;
   range: string;
   label: string;
-  desc: string;
+  tagline: string;
+  count: number | null;
 }) {
+  const tint = TIER_COLOR[tier];
   return (
     <div
       style={{
         display: "grid",
-        gridTemplateColumns: "48px 96px 1fr",
-        gap: 24,
-        padding: "28px 0",
+        gridTemplateColumns: "minmax(120px, 140px) minmax(110px, 140px) 1fr auto",
+        columnGap: 32,
+        rowGap: 8,
+        padding: "32px 0",
         borderTop: "1px solid var(--hair)",
-        alignItems: "baseline",
+        alignItems: "center",
       }}
     >
       <span
         className="nq-mono"
         style={{
-          fontSize: 14,
-          color: "var(--vermillion)",
-          letterSpacing: "0.18em",
+          fontFamily: "var(--cinema-mono)",
+          fontSize: 22,
+          color: tint,
+          fontWeight: 500,
+          fontVariantNumeric: "tabular-nums",
+          letterSpacing: "0",
+          whiteSpace: "nowrap",
         }}
       >
-        {num.padStart(2, "0")}
+        {range}
+      </span>
+      <span
+        className="nq-mono"
+        style={{
+          fontSize: 12,
+          color: tint,
+          letterSpacing: "0.22em",
+          fontWeight: 600,
+        }}
+      >
+        {label}
+      </span>
+      <span
+        style={{
+          fontFamily: "var(--cinema-display)",
+          fontStyle: "italic",
+          fontWeight: 400,
+          fontSize: 18,
+          lineHeight: 1.45,
+          color: "var(--bone-dim)",
+          letterSpacing: "-0.005em",
+        }}
+      >
+        {tagline}
       </span>
       <span
         className="nq-mono"
         style={{
           fontFamily: "var(--cinema-mono)",
           fontSize: 28,
-          color: "var(--bone)",
-          fontWeight: 600,
+          fontWeight: 500,
+          color: count == null ? "var(--bone-faint)" : "var(--bone)",
           fontVariantNumeric: "tabular-nums",
-          letterSpacing: "-0.02em",
+          textAlign: "right",
+          minWidth: 56,
         }}
       >
-        {range}
+        {count == null ? "—" : count}
       </span>
-      <div>
-        <h4
-          style={{
-            fontFamily: "var(--cinema-display)",
-            fontStyle: "italic",
-            fontWeight: 500,
-            fontSize: 22,
-            lineHeight: 1.3,
-            letterSpacing: "-0.012em",
-            color: "var(--bone)",
-            margin: "0 0 8px",
-          }}
-        >
-          {label}
-        </h4>
-        <p
-          style={{
-            fontFamily: "var(--cinema-ui)",
-            fontSize: 14,
-            lineHeight: 1.7,
-            color: "var(--bone-dim)",
-            margin: 0,
-          }}
-        >
-          {desc}
-        </p>
-      </div>
     </div>
   );
 }
