@@ -1,7 +1,7 @@
 {
   "version": 8,
-  "total_images": 749,
-  "total_campaigns": 315,
+  "total_images": 757,
+  "total_campaigns": 317,
   "images": [
     "pomelli_12city_taxi_fare_map_1.png",
     "pomelli_12city_taxi_fare_map_2 2.png",
@@ -751,7 +751,15 @@
     "pomelli_4500m_dark_sky_window_1.png",
     "pomelli_hanle_dark_sky_reserve_1.png",
     "pomelli_tso_moriri_saltwater_calm_1.png",
-    "pomelli_sangla_apricot_gateway_1.png"
+    "pomelli_sangla_apricot_gateway_1.png",
+    "pomelli_mays_perfect_5_5_travel_scores_1.png",
+    "pomelli_kedarnath_5_5_may_1.png",
+    "pomelli_dirang_5_5_may_1.png",
+    "pomelli_tawang_5_5_may_1.png",
+    "pomelli_may_2026_score_reveal_cover_1.png",
+    "pomelli_pahalgam_5_5_may_1.png",
+    "pomelli_kheerganga_5_5_may_1.png",
+    "pomelli_mudumalai_5_5_may_1.png"
   ],
   "campaigns": {
     "12city_taxi_fare_map": [
@@ -2132,6 +2140,18 @@
       "pomelli_hanle_dark_sky_reserve_1.png",
       "pomelli_tso_moriri_saltwater_calm_1.png",
       "pomelli_sangla_apricot_gateway_1.png"
+    ],
+    "wave3_mays_perfect_5_5_destinations": [
+      "pomelli_mays_perfect_5_5_travel_scores_1.png",
+      "pomelli_kedarnath_5_5_may_1.png",
+      "pomelli_dirang_5_5_may_1.png",
+      "pomelli_tawang_5_5_may_1.png"
+    ],
+    "wave3_may_2026_score_reveal": [
+      "pomelli_may_2026_score_reveal_cover_1.png",
+      "pomelli_pahalgam_5_5_may_1.png",
+      "pomelli_kheerganga_5_5_may_1.png",
+      "pomelli_mudumalai_5_5_may_1.png"
     ]
   }
 }
