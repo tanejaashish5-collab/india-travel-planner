@@ -1,7 +1,7 @@
 {
   "version": 8,
-  "total_images": 737,
-  "total_campaigns": 312,
+  "total_images": 749,
+  "total_campaigns": 315,
   "images": [
     "pomelli_12city_taxi_fare_map_1.png",
     "pomelli_12city_taxi_fare_map_2 2.png",
@@ -739,7 +739,19 @@
     "pomelli_navigate_june_raw_data_1.png",
     "pomelli_60_day_danger_sequence_1.png",
     "pomelli_act_one_june_1_cliff_1.png",
-    "pomelli_evidence_based_exploration_1.png"
+    "pomelli_evidence_based_exploration_1.png",
+    "pomelli_hidden_gem_atlas_cover_1.png",
+    "pomelli_barot_valley_reveal_1.png",
+    "pomelli_tosamaidan_reveal_1.png",
+    "pomelli_gurez_valley_reveal_1.png",
+    "pomelli_six_5_5_june_sanctuaries_1.png",
+    "pomelli_tirthan_valley_reveal_1.png",
+    "pomelli_doodhpathri_reveal_1.png",
+    "pomelli_chitkul_last_village_1.png",
+    "pomelli_4500m_dark_sky_window_1.png",
+    "pomelli_hanle_dark_sky_reserve_1.png",
+    "pomelli_tso_moriri_saltwater_calm_1.png",
+    "pomelli_sangla_apricot_gateway_1.png"
   ],
   "campaigns": {
     "12city_taxi_fare_map": [
@@ -2102,6 +2114,24 @@
       "pomelli_60_day_danger_sequence_1.png",
       "pomelli_act_one_june_1_cliff_1.png",
       "pomelli_evidence_based_exploration_1.png"
+    ],
+    "wave2_hidden_gem_atlas": [
+      "pomelli_hidden_gem_atlas_cover_1.png",
+      "pomelli_barot_valley_reveal_1.png",
+      "pomelli_tosamaidan_reveal_1.png",
+      "pomelli_gurez_valley_reveal_1.png"
+    ],
+    "wave2_six_5_5_june_sanctuaries": [
+      "pomelli_six_5_5_june_sanctuaries_1.png",
+      "pomelli_tirthan_valley_reveal_1.png",
+      "pomelli_doodhpathri_reveal_1.png",
+      "pomelli_chitkul_last_village_1.png"
+    ],
+    "wave2_4500m_dark_sky_window": [
+      "pomelli_4500m_dark_sky_window_1.png",
+      "pomelli_hanle_dark_sky_reserve_1.png",
+      "pomelli_tso_moriri_saltwater_calm_1.png",
+      "pomelli_sangla_apricot_gateway_1.png"
     ]
   }
 }
