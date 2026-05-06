@@ -2600,68 +2600,12 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
       </main>
 
       {/* ───────────────────────────────────────────────
-         Cinematic outro — full-bleed Ken Burns image with closing
-         tagline + Issue Nº. Bridges editorial content to the footer
-         so the page doesn't end on text → bare nav chrome. Single
-         image (cheap), reuses the hero's Ken Burns keyframes for
-         consistency.
-         ─────────────────────────────────────────────── */}
-      <section
-        className="nq-outro nq-grain"
-        aria-label={`${displayName} — closing frame`}
-      >
-        <img
-          className="nq-outro-img"
-          src={destinationImage(dest.id, 2400)}
-          alt=""
-          aria-hidden
-        />
-        <div className="nq-outro-veil" aria-hidden />
-        <div className="nq-outro-copy">
-          <Title
-            as="h2"
-            style={{
-              fontFamily: "var(--cinema-display)",
-              fontStyle: "italic",
-              fontWeight: 400,
-              fontSize: "clamp(48px, 7vw, 96px)",
-              lineHeight: 0.96,
-              letterSpacing: "-0.022em",
-              color: "var(--bone)",
-              margin: 0,
-            }}
-          >
-            {`${dest.name}.`}
-          </Title>
-          <p
-            className="nq-mono"
-            style={{
-              marginTop: 24,
-              fontSize: 11,
-              letterSpacing: "0.26em",
-              textTransform: "uppercase",
-              color: "var(--vermillion)",
-            }}
-          >
-            ISSUE Nº {issueNum} ·{" "}
-            {dest.content_reviewed_at
-              ? `VERIFIED ${new Date(dest.content_reviewed_at)
-                  .toLocaleDateString("en-IN", {
-                    month: "short",
-                    year: "numeric",
-                  })
-                  .toUpperCase()}`
-              : `${currentMonthName.toUpperCase()} 2026`}
-          </p>
-        </div>
-      </section>
-
-      {/* ───────────────────────────────────────────────
-         Travellers' voice — moved here at user request: should be the
-         absolute last point before the footer. Reviews + Q&A + submission
-         forms. Lives outside the cinematic <main> on purpose so the outro
-         reads as a clean closing visual; this is the "now you talk"
-         section that always tails a magazine piece.
+         Travellers' voice — sits ABOVE the closing outro+footer per
+         user instruction (the outro is the page's actual footer, with
+         the legal links absorbed into the bottom of the full-bleed
+         image, matching landing Act 9 Coda). So the order is:
+            main content → Travellers' voice → Outro-as-footer
+         Reviews + Q&A + submission forms.
          ─────────────────────────────────────────────── */}
       <section
         id="dest-tail-voice"
@@ -2841,118 +2785,209 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
         </div>
       </section>
 
-      {/* Cinematic footer — inline replacement for <Footer />. Same link
-          set so legal/SEO doesn't regress, but on cinema palette so the
-          page doesn't end on a shadcn grey/border shift. */}
-      <footer
+      {/* ───────────────────────────────────────────────
+         Outro = footer. Full-bleed Ken Burns image with the closing
+         tagline floating mid-frame and the legal/nav line absorbed at
+         the bottom edge — matches the landing page Act 9 Coda pattern
+         (no separate <Footer/> rendered). User decided this is the
+         actual footer; Travellers' voice sits above it.
+         ─────────────────────────────────────────────── */}
+      <section
+        className="nq-outro nq-grain"
+        aria-label={`${displayName} — closing frame`}
         style={{
-          borderTop: "1px solid var(--hair)",
-          padding: "48px 32px",
-          background: "var(--paper)",
-          color: "var(--bone-dim)",
+          position: "relative",
+          width: "100vw",
+          marginLeft: "calc(50% - 50vw)",
+          minHeight: "100vh",
+          overflow: "hidden",
+          display: "flex",
+          flexDirection: "column",
+          color: "var(--bone)",
         }}
       >
+        <img
+          className="nq-outro-img"
+          src={destinationImage(dest.id, 2400)}
+          alt=""
+          aria-hidden
+        />
+        <div
+          className="nq-outro-veil"
+          aria-hidden
+          style={{
+            position: "absolute",
+            inset: 0,
+            zIndex: 1,
+            background:
+              "radial-gradient(ellipse at 50% 55%, rgba(10,10,8,0.35) 0%, rgba(10,10,8,0.7) 65%, rgba(10,10,8,0.96) 100%)",
+          }}
+        />
+
         <div
           style={{
-            maxWidth: 1200,
-            margin: "0 auto",
+            position: "relative",
+            zIndex: 2,
+            flex: 1,
             display: "flex",
-            flexWrap: "wrap",
-            gap: 24,
-            alignItems: "center",
+            flexDirection: "column",
             justifyContent: "space-between",
+            padding: "calc(8vh + 80px) 48px calc(4vh + 24px)",
+            maxWidth: 1500,
+            width: "100%",
+            margin: "0 auto",
+            boxSizing: "border-box",
           }}
         >
-          <div
-            style={{
-              display: "flex",
-              flexWrap: "wrap",
-              gap: 18,
-              alignItems: "center",
-              fontFamily: "var(--cinema-mono)",
-              fontSize: 11,
-              letterSpacing: "0.18em",
-              textTransform: "uppercase",
-            }}
-          >
-            <span
+          {/* spacer top — keeps the headline mid-frame */}
+          <div />
+
+          {/* Closing tagline — center-aligned over the image. */}
+          <div style={{ textAlign: "center", maxWidth: 880, margin: "0 auto" }}>
+            <Title
+              as="h2"
               style={{
                 fontFamily: "var(--cinema-display)",
                 fontStyle: "italic",
-                fontSize: 16,
+                fontWeight: 400,
+                fontSize: "clamp(48px, 8vw, 112px)",
+                lineHeight: 0.94,
+                letterSpacing: "-0.024em",
                 color: "var(--bone)",
-                letterSpacing: "-0.01em",
-                textTransform: "none",
+                margin: 0,
               }}
             >
-              Naksh<span style={{ color: "var(--vermillion)" }}>.</span>iq
-            </span>
-            <Link
-              href={`/${locale}/about`}
-              style={{ color: "var(--bone-dim)", textDecoration: "none" }}
+              {`${dest.name}.`}
+            </Title>
+            <p
+              className="nq-mono"
+              style={{
+                marginTop: 24,
+                fontSize: 11,
+                letterSpacing: "0.26em",
+                textTransform: "uppercase",
+                color: "var(--vermillion)",
+              }}
             >
-              About
-            </Link>
-            <Link
-              href={`/${locale}/methodology`}
-              style={{ color: "var(--bone-dim)", textDecoration: "none" }}
+              ISSUE Nº {issueNum} ·{" "}
+              {dest.content_reviewed_at
+                ? `VERIFIED ${new Date(dest.content_reviewed_at)
+                    .toLocaleDateString("en-IN", {
+                      month: "short",
+                      year: "numeric",
+                    })
+                    .toUpperCase()}`
+                : `${currentMonthName.toUpperCase()} 2026`}
+            </p>
+            <p
+              style={{
+                marginTop: 18,
+                fontFamily: "var(--cinema-display)",
+                fontStyle: "italic",
+                fontSize: 22,
+                color: "var(--bone)",
+                opacity: 0.78,
+                letterSpacing: "-0.01em",
+              }}
             >
-              Methodology
-            </Link>
-            <Link
-              href={`/${locale}/contact`}
-              style={{ color: "var(--bone-dim)", textDecoration: "none" }}
-            >
-              Contact
-            </Link>
+              Go with confidence<span style={{ color: "var(--vermillion)" }}>.</span>
+            </p>
           </div>
+
+          {/* Absorbed footer line — sits at the very bottom edge of the
+              image. Same link set as the production footer; cinema-styled
+              so the legal/nav transition no longer reads as shadcn chrome. */}
           <div
             style={{
+              marginTop: 64,
+              paddingTop: 24,
+              borderTop: "1px solid var(--hair-2)",
               display: "flex",
-              flexWrap: "wrap",
-              gap: 18,
+              justifyContent: "space-between",
               alignItems: "center",
+              flexWrap: "wrap",
+              gap: 16,
               fontFamily: "var(--cinema-mono)",
+              fontWeight: 500,
               fontSize: 11,
               color: "var(--bone-faint)",
               letterSpacing: "0.18em",
               textTransform: "uppercase",
             }}
           >
-            <span>© NakshIQ</span>
-            <span>· Issue Nº {issueNum}</span>
-            <Link
-              href={`/${locale}/privacy`}
-              style={{ color: "var(--bone-faint)", textDecoration: "none" }}
-            >
-              Privacy
-            </Link>
-            <Link
-              href={`/${locale}/terms`}
-              style={{ color: "var(--bone-faint)", textDecoration: "none" }}
-            >
-              Terms
-            </Link>
-            <Link
-              href={`/${locale}/cookies`}
-              style={{ color: "var(--bone-faint)", textDecoration: "none" }}
-            >
-              Cookies
-            </Link>
-            <span
+            <div
               style={{
-                fontFamily: "var(--cinema-display)",
-                fontStyle: "italic",
-                color: "var(--vermillion)",
-                letterSpacing: "-0.01em",
-                textTransform: "none",
+                display: "flex",
+                gap: 18,
+                alignItems: "center",
+                flexWrap: "wrap",
               }}
             >
-              Go with confidence.
-            </span>
+              <span
+                style={{
+                  fontFamily: "var(--cinema-display)",
+                  fontStyle: "italic",
+                  fontWeight: 500,
+                  fontSize: 18,
+                  color: "var(--bone)",
+                  letterSpacing: "-0.015em",
+                  textTransform: "none",
+                }}
+              >
+                Naksh<span style={{ color: "var(--vermillion)" }}>.</span>iq
+              </span>
+              <Link
+                href={`/${locale}/about`}
+                style={{ color: "var(--bone-dim)", textDecoration: "none" }}
+              >
+                About
+              </Link>
+              <Link
+                href={`/${locale}/methodology`}
+                style={{ color: "var(--bone-dim)", textDecoration: "none" }}
+              >
+                Methodology
+              </Link>
+              <Link
+                href={`/${locale}/contact`}
+                style={{ color: "var(--bone-dim)", textDecoration: "none" }}
+              >
+                Contact
+              </Link>
+            </div>
+            <div
+              style={{
+                display: "flex",
+                gap: 18,
+                alignItems: "center",
+                flexWrap: "wrap",
+              }}
+            >
+              <span>
+                © {new Date().getFullYear()} NakshIQ · Issue Nº {issueNum}
+              </span>
+              <Link
+                href={`/${locale}/privacy`}
+                style={{ color: "var(--bone-faint)", textDecoration: "none" }}
+              >
+                Privacy
+              </Link>
+              <Link
+                href={`/${locale}/terms`}
+                style={{ color: "var(--bone-faint)", textDecoration: "none" }}
+              >
+                Terms
+              </Link>
+              <Link
+                href={`/${locale}/cookies`}
+                style={{ color: "var(--bone-faint)", textDecoration: "none" }}
+              >
+                Cookies
+              </Link>
+            </div>
           </div>
         </div>
-      </footer>
+      </section>
 
       {/* In-guide labelled TOC — appears after the cover scrolls out.
           Sister to the dots-only DestinationScrollRail; this one shows
