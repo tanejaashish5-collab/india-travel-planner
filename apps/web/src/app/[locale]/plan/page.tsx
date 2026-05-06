@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Suspense } from "react";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
+import { NewsletterSignup } from "@/components/newsletter-signup";
 import { PlanContent } from "@/components/plan-content";
 import { createClient } from "@supabase/supabase-js";
 import { localeAlternates } from "@/lib/seo-utils";
@@ -58,6 +59,14 @@ export default async function PlanTripPage() {
         <Suspense fallback={<div className="min-h-[400px] animate-pulse rounded bg-foreground/5" />}>
           <PlanContent destinations={destinations} states={states} />
         </Suspense>
+        <div className="mt-16 max-w-2xl mx-auto">
+          <NewsletterSignup
+            source="plan-end"
+            headline="Locked in a trip? Skip the next regret."
+            subhead="Every Sunday: India's best destination this week, the honest skip, road conditions, and what changed. So your next plan starts smart. Free."
+            buttonLabel="Get the Sunday brief"
+          />
+        </div>
       </main>
       <Footer />
     </div>

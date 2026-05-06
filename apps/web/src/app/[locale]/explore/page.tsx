@@ -3,6 +3,7 @@ import { Suspense } from "react";
 import { getTranslations } from "next-intl/server";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
+import { NewsletterSignup } from "@/components/newsletter-signup";
 import { ExploreWithMap } from "@/components/explore-with-map";
 import { createClient } from "@supabase/supabase-js";
 import { localeAlternates } from "@/lib/seo-utils";
@@ -90,6 +91,14 @@ export default async function ExplorePage({ params }: { params: Promise<{ locale
         <Suspense fallback={<div className="min-h-[400px] animate-pulse rounded bg-foreground/5" />}>
           <ExploreWithMap destinations={destinationsWithCoords} states={states} />
         </Suspense>
+        <div className="mt-16 max-w-2xl mx-auto">
+          <NewsletterSignup
+            source="explore-end"
+            headline="Stop scrolling. Get the one that's worth it."
+            subhead="Every Sunday: the single best India destination this week, the honest skip, and what changed on the road. Free. No spam."
+            buttonLabel="Get Sunday's pick"
+          />
+        </div>
       </main>
       <Footer />
     </div>
