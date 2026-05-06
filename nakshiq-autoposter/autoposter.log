@@ -7058,3 +7058,20 @@ Date range: 2026-04-15 → 2026-05-05
 2026-05-06 13:16:47  INFO      [facebook/Nakshiq] Already posted today (evening) — skipping.
 2026-05-06 13:16:47  INFO      State saved. Run complete.
 2026-05-06 13:16:47  INFO      ════════════════════════════════════════════════════════════
+2026-05-06 15:30:02  INFO      ════════════════════════════════════════════════════════════
+2026-05-06 15:30:02  INFO      Nakshiq Autoposter · REEL · 2026-05-06 · weekday=2
+2026-05-06 15:30:02  INFO      ════════════════════════════════════════════════════════════
+2026-05-06 15:30:02  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-05-06 15:30:23  INFO      Synced → 20 destinations · 0 traps · 0 articles · 23 routes · 50 treks · 100 eateries · total catalog=505
+2026-05-06 15:30:23  INFO      Format: destination_reveal | Data: {'dest_name': 'Bhandardara', 'dest_slug': 'bhandardara', 'state_name': 'Maharashtra', 'score': 5, 'tagline': "Arthur Lake, fireflies in May, and Kalsubai — Maharashtra's rooftop"}
+2026-05-06 15:30:28  INFO      Reel rendered: reel_destination_reveal_bhandardara.mp4 (827 KB)
+2026-05-06 15:30:28  INFO          Requesting upload URL for reel_destination_reveal_reel_destination_reveal_bhandardara.mp4 (846,999 bytes, video/mp4)
+2026-05-06 15:30:31  INFO          Uploading to R2 (timeout=300s)...
+2026-05-06 15:30:32  INFO          R2 PUT OK. Confirming...
+2026-05-06 15:30:34  INFO          Media ready: ZOZgu (846,999 bytes · reel_destination_reveal_reel_destination_reveal_bhandardara.mp4)
+2026-05-06 15:30:34  INFO      Video uploaded: reel_destination_reveal_reel_destination_reveal_bhandardara.mp4
+2026-05-06 15:30:35  INFO      [youtube/@naksh-iq] Already posted reel today — skipping.
+2026-05-06 15:30:35  INFO      [instagram/nakshiq] Already posted reel today — skipping.
+2026-05-06 15:30:35  INFO      [facebook/Nakshiq] Already posted reel today — skipping.
+2026-05-06 15:30:35  INFO      State saved. Reel run complete.
+2026-05-06 15:30:35  INFO      ════════════════════════════════════════════════════════════
