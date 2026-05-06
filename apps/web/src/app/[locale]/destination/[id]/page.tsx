@@ -1,6 +1,13 @@
 import type { Metadata } from "next";
 import { Nav } from "@/components/nav";
 import { DestinationDetail } from "@/components/destination-detail";
+import { DestinationDetailCinematic } from "@/components/destination-detail-cinematic";
+
+// Cinematic-template allowlist. Add a slug here to opt that single
+// destination into the cinematic redesign. Everyone else continues
+// rendering through DestinationDetail (the production design) so we
+// can live-test the new template without affecting all 504 places.
+const CINEMATIC_DESTINATIONS: ReadonlySet<string> = new Set(["manali"]);
 import { ScrollDepthTracker } from "@/components/scroll-depth-tracker";
 import { PrevNextNav } from "@/components/prev-next-nav";
 import Link from "next/link";
@@ -572,6 +579,53 @@ export default async function DestinationPage({
     },
     publisher: { "@id": "https://www.nakshiq.com#organization" },
   }));
+
+  const isCinematic = CINEMATIC_DESTINATIONS.has(id);
+
+  // ── Cinematic template (currently allowlisted to one slug for live test).
+  // SEO/JSON-LD blocks are duplicated above the new component so structured
+  // data parity stays intact — Google sees the same Schema.org payload as
+  // the production design.
+  if (isCinematic) {
+    return (
+      <div className="min-h-screen">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
+        />
+        {videoLd && (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(videoLd) }}
+          />
+        )}
+        {reviewLdBlocks.map((rb) => (
+          <script
+            key={rb["@id"]}
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(rb) }}
+          />
+        ))}
+        <DestinationDetailCinematic dest={dest} />
+        <ScrollDepthTracker page="destination" destinationId={id} />
+        <PrevNextNav
+          items={dest.allDestinations}
+          currentId={id}
+          basePath="destination"
+          backLabel="All Destinations"
+          backHref="explore"
+        />
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen">
