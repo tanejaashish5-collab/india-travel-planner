@@ -1,23 +1,10 @@
 {
   "yt_short_formats_used": [
     "dont_go_here",
-    "this_vs_that"
+    "this_vs_that",
+    "did_you_know"
   ],
   "yt_short_music_used": [
-    "11_caravan",
-    "17_street_beats",
-    "21_zen_garden",
-    "06_tribal_pulse",
-    "26_ritual_sun",
-    "15_bossa_sunset",
-    "27_sahel_nights",
-    "12_velvet_noir",
-    "14_monsoon",
-    "00_golden_hour",
-    "22_carnival",
-    "00_discovery_beat",
-    "23_ghost_protocol",
-    "02_sahara_drift",
     "px_bollywood_hindi",
     "11_rnb_midnight",
     "px_absolutesound-aggressive-brazilian-phonk-3-514615",
@@ -36,12 +23,13 @@
     "04_afro_heat",
     "18_uk_garage",
     "14_deep_tech",
-    "02_trap_cinema"
+    "02_trap_cinema",
+    "09_boom_bap_chill"
   ],
   "posted_today": {
     "m8EAd_reel": "2026-05-06",
     "PdMu0_reel": "2026-05-06",
-    "m8EAd_yt_short": "2026-05-05",
+    "m8EAd_yt_short": "2026-05-06",
     "m8EAd_yt_short_count": 1,
     "jUmP2_yt_short_count": 1,
     "m8EAd_tourist_map": "2026-05-05",
@@ -52,8 +40,8 @@
     "GAh5p_reel": "2026-05-06",
     "m8EAd_flow_story": "2026-05-05",
     "PdMu0_flow_story": "2026-05-05",
-    "GAh5p_yt_short": "2026-05-05",
-    "GAh5p_yt_short_count": 2,
+    "GAh5p_yt_short": "2026-05-06",
+    "GAh5p_yt_short_count": 1,
     "PdMu0": "2026-05-06",
     "m8EAd": "2026-05-06",
     "GAh5p": "2026-05-06",
@@ -411,6 +399,10 @@
     },
     {
       "destination_id": "guptkashi",
+      "date": "2026-05-06"
+    },
+    {
+      "destination_id": "gopeshwar",
       "date": "2026-05-06"
     }
   ],
@@ -1114,6 +1106,24 @@
       "destination": null,
       "format": "reel_map.score_pulse",
       "media_id": "reel_pomelli_goa_bacteria_map.mp4"
+    },
+    {
+      "timestamp": "2026-05-06T11:49:20.731030+00:00",
+      "date": "2026-05-06",
+      "platform": "youtube",
+      "post_id": "7XkcW",
+      "destination": "gopeshwar",
+      "format": "yt_short.did_you_know",
+      "media_id": "yt_short_did_you_know_yt_short_did_you_know_2026-05-06.mp4"
+    },
+    {
+      "timestamp": "2026-05-06T11:49:56.533402+00:00",
+      "date": "2026-05-06",
+      "platform": "instagram",
+      "post_id": "IJNAX",
+      "destination": "gopeshwar",
+      "format": "yt_short.did_you_know",
+      "media_id": "yt_short_did_you_know_yt_short_did_you_know_2026-05-06.mp4"
     }
   ],
   "theme_usage": {
