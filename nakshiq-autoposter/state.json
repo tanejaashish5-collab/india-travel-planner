@@ -43,9 +43,9 @@
     "GAh5p": "2026-05-06",
     "m8EAd_moat": "2026-05-06",
     "PdMu0_moat": "2026-05-06",
-    "GAh5p_reel_map": "2026-05-06",
-    "m8EAd_reel_map": "2026-05-06",
-    "PdMu0_reel_map": "2026-05-06",
+    "GAh5p_reel_map": "2026-05-07",
+    "m8EAd_reel_map": "2026-05-07",
+    "PdMu0_reel_map": "2026-05-07",
     "m8EAd_evening": "2026-05-06",
     "m8EAd_evening_story": "2026-05-06",
     "PdMu0_evening": "2026-05-06",
@@ -1132,6 +1132,33 @@
       "destination": null,
       "format": "tourist_map",
       "media_id": "JH_editorial_dark"
+    },
+    {
+      "timestamp": "2026-05-07T10:05:25.997350+00:00",
+      "date": "2026-05-07",
+      "platform": "youtube",
+      "post_id": "Q5v3y",
+      "destination": null,
+      "format": "reel_map.cluster_reveal",
+      "media_id": "reel_pomelli_wave1_60_day_danger_sequence.mp4"
+    },
+    {
+      "timestamp": "2026-05-07T10:06:08.227980+00:00",
+      "date": "2026-05-07",
+      "platform": "instagram",
+      "post_id": "l6mSK",
+      "destination": null,
+      "format": "reel_map.cluster_reveal",
+      "media_id": "reel_pomelli_wave1_60_day_danger_sequence.mp4"
+    },
+    {
+      "timestamp": "2026-05-07T10:06:21.313520+00:00",
+      "date": "2026-05-07",
+      "platform": "facebook",
+      "post_id": "VW3FN",
+      "destination": null,
+      "format": "reel_map.cluster_reveal",
+      "media_id": "reel_pomelli_wave1_60_day_danger_sequence.mp4"
     }
   ],
   "theme_usage": {
@@ -1617,6 +1644,9 @@
       ],
       "score_pulse": [
         "2026-05-06"
+      ],
+      "cluster_reveal": [
+        "2026-05-07"
       ]
     },
     "reel_map_states": {
@@ -1648,6 +1678,9 @@
     "reel_map_campaigns": {
       "goa_bacteria_map": [
         "2026-05-06"
+      ],
+      "wave1_60_day_danger_sequence": [
+        "2026-05-07"
       ]
     },
     "collection_carousel_dests:best-beaches-india": {},

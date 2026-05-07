@@ -7122,3 +7122,26 @@ Date range: 2026-04-15 → 2026-05-05
 2026-05-07 08:06:44  INFO      [facebook/Nakshiq] Already posted tourist map today — skipping.
 2026-05-07 08:06:44  INFO      State saved. Tourist Map run complete.
 2026-05-07 08:06:44  INFO      ════════════════════════════════════════════════════════════
+2026-05-07 10:04:40  INFO      ════════════════════════════════════════════════════════════
+2026-05-07 10:04:40  INFO      Nakshiq Autoposter · REEL-MAP v3 · 2026-05-07 · weekday=3
+2026-05-07 10:04:40  INFO      ════════════════════════════════════════════════════════════
+2026-05-07 10:04:40  INFO      Picked campaign: 'wave1_60_day_danger_sequence' (3 images) → "Wave1 60 Day Danger Sequence"
+2026-05-07 10:04:40  INFO      Campaign: wave1_60_day_danger_sequence | Music style: cluster_reveal
+2026-05-07 10:05:08  INFO      Reel rendered: reel_pomelli_wave1_60_day_danger_sequence.mp4 (10086 KB)
+2026-05-07 10:05:08  INFO          Requesting upload URL for reel_pomelli_wave1_60_day_danger_sequence.mp4 (10,329,024 bytes, video/mp4)
+2026-05-07 10:05:09  INFO          Uploading to R2 (timeout=300s)...
+2026-05-07 10:05:10  INFO          R2 PUT OK. Confirming...
+2026-05-07 10:05:11  INFO          Media ready: zevLP (10,329,024 bytes · reel_pomelli_wave1_60_day_danger_sequence.mp4)
+2026-05-07 10:05:11  INFO      Video uploaded: reel_pomelli_wave1_60_day_danger_sequence.mp4
+2026-05-07 10:05:11  INFO      [youtube/@naksh-iq] Publishing reel (wave1_60_day_danger_sequence)...
+2026-05-07 10:05:14  INFO      [youtube/@naksh-iq] Outstand accepted (post_id=Q5v3y), confirming...
+2026-05-07 10:05:25  INFO      [youtube/@naksh-iq] ✅ Reel published · Outstand=Q5v3y · Platform=MUoS7_mwMl0
+2026-05-07 10:05:25  INFO      [instagram/nakshiq] Publishing reel (wave1_60_day_danger_sequence)...
+2026-05-07 10:05:27  INFO      [instagram/nakshiq] Outstand accepted (post_id=l6mSK), confirming...
+2026-05-07 10:06:08  INFO      [instagram/nakshiq] ✅ Reel published · Outstand=l6mSK · Platform=18152576764478229
+2026-05-07 10:06:08  INFO      [facebook/Nakshiq] Publishing reel (wave1_60_day_danger_sequence)...
+2026-05-07 10:06:10  INFO      [facebook/Nakshiq] Outstand accepted (post_id=VW3FN), confirming...
+2026-05-07 10:06:21  INFO      [facebook/Nakshiq] ✅ Reel published · Outstand=VW3FN · Platform=1684413669540853
+2026-05-07 10:06:21  INFO      Theme tracker updated: campaign=wave1_60_day_danger_sequence, music=cluster_reveal
+2026-05-07 10:06:21  INFO      State saved. Reel-map run complete.
+2026-05-07 10:06:21  INFO      ════════════════════════════════════════════════════════════
