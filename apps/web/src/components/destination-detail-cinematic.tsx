@@ -3253,6 +3253,141 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
             >
               Go with confidence<span style={{ color: "var(--vermillion)" }}>.</span>
             </p>
+
+            {/* Editor signature — italic serif, small, sits a beat under
+                the bookend tagline. No fabricated bylines (per memory rule
+                — "no fabricated stats, contacts, or people"); the
+                attribution is the editorial collective. */}
+            <p
+              style={{
+                marginTop: 28,
+                fontFamily: "var(--cinema-display)",
+                fontStyle: "italic",
+                fontSize: 14,
+                color: "var(--bone-faint)",
+                letterSpacing: "0.01em",
+              }}
+            >
+              — The NakshIQ editors ·{" "}
+              {currentMonthName} 2026
+            </p>
+
+            {/* Next-read teaser — uses the closest PostGIS neighbour so the
+                "what to read next" actually makes geographic sense. Editorial
+                pill in mono caps. */}
+            {dest.nearbyDestinations?.[0] && (
+              <Link
+                href={`/${locale}/destination/${dest.nearbyDestinations[0].id}`}
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: 12,
+                  marginTop: 36,
+                  padding: "10px 20px",
+                  background: "transparent",
+                  color: "var(--bone)",
+                  border: "1px solid var(--vermillion)",
+                  borderRadius: 999,
+                  fontFamily: "var(--cinema-mono)",
+                  fontSize: 11,
+                  letterSpacing: "0.22em",
+                  textTransform: "uppercase",
+                  textDecoration: "none",
+                  transition: "background 200ms ease, color 200ms ease",
+                }}
+                onMouseEnter={(e) => {
+                  const el = e.currentTarget as HTMLAnchorElement;
+                  el.style.background = "var(--vermillion)";
+                  el.style.color = "var(--paper)";
+                }}
+                onMouseLeave={(e) => {
+                  const el = e.currentTarget as HTMLAnchorElement;
+                  el.style.background = "transparent";
+                  el.style.color = "var(--bone)";
+                }}
+              >
+                <span style={{ color: "var(--vermillion)" }}>READ NEXT</span>
+                <span style={{ opacity: 0.5 }}>·</span>
+                <span>{dest.nearbyDestinations[0].name}</span>
+                <span aria-hidden="true">→</span>
+              </Link>
+            )}
+
+            {/* "What changed in this issue" — quiet native <details>
+                disclosure. Three honest update categories computed from
+                the data the page actually has: verification date, count
+                of curated stays/eateries, count of approved reviews. No
+                hardcoded changelog entries (would rot the moment they're
+                added). */}
+            <details
+              style={{
+                marginTop: 32,
+                color: "var(--bone-faint)",
+                fontFamily: "var(--cinema-mono)",
+                fontSize: 10,
+                letterSpacing: "0.22em",
+                textTransform: "uppercase",
+                maxWidth: 520,
+                marginInline: "auto",
+              }}
+            >
+              <summary
+                style={{
+                  cursor: "pointer",
+                  textAlign: "center",
+                  paddingBottom: 8,
+                  borderBottom: "1px solid var(--hair-2)",
+                }}
+              >
+                What changed in this issue +
+              </summary>
+              <ul
+                style={{
+                  marginTop: 16,
+                  padding: 0,
+                  listStyle: "none",
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: 8,
+                  textAlign: "left",
+                }}
+              >
+                {dest.content_reviewed_at && (
+                  <li>
+                    <span style={{ color: "var(--vermillion)" }}>+ </span>
+                    Editorial review{" "}
+                    {new Date(dest.content_reviewed_at)
+                      .toLocaleDateString("en-IN", {
+                        month: "short",
+                        day: "numeric",
+                      })
+                      .toUpperCase()}
+                  </li>
+                )}
+                {(dest.editor_stay_picks?.length ?? 0) > 0 && (
+                  <li>
+                    <span style={{ color: "var(--vermillion)" }}>+ </span>
+                    {dest.editor_stay_picks.length} stay pick
+                    {dest.editor_stay_picks.length === 1 ? "" : "s"}{" "}
+                    audited &amp; sourced
+                  </li>
+                )}
+                {(dest.eateries?.length ?? 0) > 0 && (
+                  <li>
+                    <span style={{ color: "var(--vermillion)" }}>+ </span>
+                    {dest.eateries.length} eater
+                    {dest.eateries.length === 1 ? "y" : "ies"} verified
+                  </li>
+                )}
+                {(dest.reviews?.length ?? 0) > 0 && (
+                  <li>
+                    <span style={{ color: "var(--vermillion)" }}>+ </span>
+                    {dest.reviews.length} traveller review
+                    {dest.reviews.length === 1 ? "" : "s"} approved
+                  </li>
+                )}
+              </ul>
+            </details>
           </div>
 
           {/* Absorbed footer line — sits at the very bottom edge of the
