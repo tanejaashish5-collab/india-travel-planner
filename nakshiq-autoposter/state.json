@@ -54,7 +54,7 @@
     "m8EAd_tourist_map": "2026-05-07",
     "PdMu0_tourist_map": "2026-05-07"
   },
-  "last_sync": "2026-05-07T12:20:17.354762+00:00",
+  "last_sync": "2026-05-07T13:18:54.814252+00:00",
   "posted_destinations": [
     {
       "destination_id": "nagarhole",
@@ -1245,7 +1245,8 @@
       ],
       "chopta": [
         "2026-04-22",
-        "2026-05-06"
+        "2026-05-06",
+        "2026-05-07"
       ],
       "kanatal": [
         "2026-04-22"
@@ -1354,6 +1355,9 @@
         "2026-05-06"
       ],
       "ooty": [
+        "2026-05-07"
+      ],
+      "jibhi": [
         "2026-05-07"
       ]
     },
@@ -1696,6 +1700,9 @@
       ],
       "budget-under-5000": [
         "2026-05-07"
+      ],
+      "budget-under-1000": [
+        "2026-05-07"
       ]
     },
     "reel_map_formats": {
@@ -1759,6 +1766,17 @@
       "bir-billing": [
         "2026-05-07"
       ]
+    },
+    "collection_carousel_dests:budget-under-1000": {
+      "bir-billing": [
+        "2026-05-07"
+      ],
+      "chopta": [
+        "2026-05-07"
+      ],
+      "jibhi": [
+        "2026-05-07"
+      ]
     }
   },
   "infographic": {
@@ -1772,7 +1790,7 @@
     ]
   },
   "last_picked": {
-    "collection": "budget-under-5000",
+    "collection": "budget-under-1000",
     "shared_best": "jibhi"
   }
 }
