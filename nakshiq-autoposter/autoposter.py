@@ -2244,20 +2244,45 @@ def _pick_kid_friendly(pool: list) -> dict:
     return sorted(pool, key=rank)[0]
 
 
-def _collection_image_dest(collection: dict, dest_map: dict) -> dict | None:
-    """Return a destination object whose image we can borrow for a collection post."""
-    for item in collection.get("items", []):
+def _collection_image_dest(collection: dict, dest_map: dict,
+                           dest_map_full: dict | None = None) -> dict | None:
+    """Return a destination object whose image we can borrow for a collection post.
+
+    Two-pass lookup: prefer this month's scored pool (better hero image), fall
+    back to the full catalog. Off-season collections (e.g. monsoon beaches in
+    May) MUST still resolve to a member of the collection — never to the day's
+    shared `best` dest, which would land us with mismatches like the
+    'Best Beaches' Story carrying a Tirthan Valley image (incident 2026-05-06).
+    """
+    items = collection.get("items", [])
+    for item in items:
         did = item.get("destination_id")
         if did in dest_map:
             return dest_map[did]
+    if dest_map_full:
+        for item in items:
+            did = item.get("destination_id")
+            if did in dest_map_full:
+                return dest_map_full[did]
     return None
 
 
-def _article_image_dest(article: dict, dest_map: dict) -> dict | None:
-    """Return a destination object whose image we can borrow for a blog post."""
-    for did in (article.get("destinations") or []):
+def _article_image_dest(article: dict, dest_map: dict,
+                        dest_map_full: dict | None = None) -> dict | None:
+    """Return a destination object whose image we can borrow for a blog post.
+
+    Same two-pass pattern as _collection_image_dest. Articles that span
+    off-season destinations (e.g. a beach roundup in May) need full-catalog
+    lookup so the image stays on-topic.
+    """
+    dests = article.get("destinations") or []
+    for did in dests:
         if did in dest_map:
             return dest_map[did]
+    if dest_map_full:
+        for did in dests:
+            if did in dest_map_full:
+                return dest_map_full[did]
     return None
 
 
@@ -2329,10 +2354,18 @@ def generate_post(fmt: str, content: dict, platform: str,
     elif fmt == "collection_spotlight" and collections:
         # Pre-picked at run start so FB + IG show the same collection
         coll = content.get("__run_collection__") or collections[0]
-        # Prefer shared best (pair-consistency with score_card on split-format
-        # days like Thu). Fall back to collection's own image dest only if
-        # no shared best is available.
-        img  = best or _collection_image_dest(coll, dest_map)
+        # Image MUST come from the collection's own destinations, never from
+        # the day's shared `best`. Otherwise a "Best Beaches" collection ships
+        # with a Himalayan image (incident: 2026-05-06 IG Story for
+        # 'Best Beaches in India — Beyond Goa' carried a Tirthan Valley image).
+        img = _collection_image_dest(coll, dest_map, dest_map_full)
+        if not img:
+            log.warning(
+                f"collection_spotlight: no member of '{coll.get('name')}' "
+                f"resolves in catalog — falling back to score_card to avoid "
+                f"caption/image mismatch."
+            )
+            return copy_score_card(best, platform), best
         return copy_collection_spotlight(coll, dest_map, platform), img
 
     elif fmt == "festival_alert" and festivals:
@@ -2359,7 +2392,17 @@ def generate_post(fmt: str, content: dict, platform: str,
 
     elif fmt == "blog_promo" and articles:
         article = content.get("__run_article__") or articles[0]
-        img     = _article_image_dest(article, dest_map) or best
+        # Search the article's destinations against this month's pool first,
+        # then the full catalog. Falling through to `best` produced the
+        # Tirthan-on-a-beach-article Story on 2026-05-06.
+        img = _article_image_dest(article, dest_map, dest_map_full)
+        if not img:
+            log.warning(
+                f"blog_promo: article '{article.get('title')}' has no "
+                f"linked destinations in catalog — falling back to score_card "
+                f"to avoid caption/image mismatch."
+            )
+            return copy_score_card(best, platform), best
         return copy_blog_promo(article, platform), img
 
     elif fmt == "route_spotlight":
@@ -2368,13 +2411,32 @@ def generate_post(fmt: str, content: dict, platform: str,
             # Data not yet available — fall back silently to score_card
             return copy_score_card(best, platform), best
         route = content.get("__run_route__") or routes[0]
-        # Pick an image from the route's first stop, or best destination
-        img = best
-        if route.get("stops"):
-            first = route["stops"][0]
-            first_id = first.get("destination_id") if isinstance(first, dict) else first
-            if first_id in dest_map:
-                img = dest_map[first_id]
+        # Image MUST come from a stop on the route. Iterate every stop against
+        # this month's pool first, then the full catalog. The previous code
+        # only checked the FIRST stop and only against dest_map, so an
+        # off-season route (e.g. Ladakh circuit in May) would silently
+        # ship with `best` as its hero — same class of bug as collection_spotlight.
+        stops = route.get("stops", []) or []
+        def _stop_id(s):
+            return s.get("destination_id") if isinstance(s, dict) else s
+        img = None
+        for s in stops:
+            sid = _stop_id(s)
+            if sid in dest_map:
+                img = dest_map[sid]
+                break
+        if not img:
+            for s in stops:
+                sid = _stop_id(s)
+                if sid in dest_map_full:
+                    img = dest_map_full[sid]
+                    break
+        if not img:
+            log.warning(
+                f"route_spotlight: no stops of route '{route.get('name')}' "
+                f"resolve in catalog — falling back to score_card."
+            )
+            return copy_score_card(best, platform), best
         return copy_route_spotlight(route, dest_map, platform), img
 
     # ───────────────────────────────────────────────────────────────────────
