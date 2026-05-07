@@ -88,6 +88,7 @@ import { SuggestEditButton } from "./suggest-edit-button";
 import { CinematicShareBar } from "./cinematic-share-bar";
 import { CinematicBreadcrumb } from "./cinematic-breadcrumb";
 import { CinematicVerdictStrip } from "./cinematic-verdict-strip";
+import { CinematicVsCards } from "./cinematic-vs-cards";
 
 export function DestinationDetailCinematic({ dest }: { dest: any }) {
   const locale = useLocale();
@@ -1467,6 +1468,17 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
                 </div>
               </div>
             )}
+
+            {/* vs neighbour cards — closes ACT VI Atlas with three quick
+                comparison cards lifted from the PostGIS-sorted
+                dest.nearbyDestinations array (no new query). Each links
+                into the existing /compare?compare=A,B page. */}
+            <CinematicVsCards
+              destinationId={dest.id}
+              destinationName={dest.name}
+              neighbours={dest.nearbyDestinations ?? []}
+              limit={3}
+            />
           </div>
         </section>
 
