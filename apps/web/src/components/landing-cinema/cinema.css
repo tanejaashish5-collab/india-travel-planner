@@ -382,6 +382,82 @@
 /* ── Selection accent ── */
 .nakshiq-cinema ::selection { background: var(--vermillion); color: var(--paper); }
 
+/* ──────────────────────────────────────────────────────────────────────
+   Reused-shadcn neutralisation.
+
+   The cinematic destination shell embeds ~14 production components that
+   were authored with shadcn tokens (bg-card, border-border,
+   text-muted-foreground, rounded-xl, etc.). When those components render
+   inside .nakshiq-cinema they paint cream/light cards over the dark paper
+   background — the Manali QA caught two big white form blocks (Review +
+   Q&A) plus 200+ smaller leaks (Safety Rating card, KBYG, tourist-trap
+   intervention, elevation chart, solo-female safety, etc.) that broke
+   the editorial palette.
+
+   This block scopes overrides under .nakshiq-cinema only — production
+   destinations rendering DestinationDetail (not in the cinematic
+   allowlist) keep their existing shadcn chrome unchanged. This is a
+   pragmatic palette-only fix; proper variant="cinematic" props on each
+   reused component remain a longer-term option for typography polish.
+   ────────────────────────────────────────────────────────────────────── */
+.nakshiq-cinema .text-muted-foreground { color: var(--bone-dim); }
+.nakshiq-cinema .text-card-foreground  { color: var(--bone); }
+.nakshiq-cinema .text-foreground       { color: var(--bone); }
+.nakshiq-cinema .bg-card,
+.nakshiq-cinema .bg-popover,
+.nakshiq-cinema .bg-muted {
+  background: rgba(245, 241, 232, 0.04);
+  color: var(--bone);
+}
+.nakshiq-cinema .bg-background {
+  background: rgba(10, 10, 8, 0.6);
+  color: var(--bone);
+}
+.nakshiq-cinema .border,
+.nakshiq-cinema .border-t,
+.nakshiq-cinema .border-b,
+.nakshiq-cinema .border-l,
+.nakshiq-cinema .border-r,
+.nakshiq-cinema .border-border,
+.nakshiq-cinema .border-border\/50,
+.nakshiq-cinema .divide-border > * + * {
+  border-color: var(--hair);
+}
+/* Tone down chunky shadcn corners — editorial wants hairline rectangles
+   not pill cards. Don't kill them entirely (would break round avatars,
+   etc.) — just clamp the radii. */
+.nakshiq-cinema .rounded-xl,
+.nakshiq-cinema .rounded-2xl,
+.nakshiq-cinema .rounded-3xl {
+  border-radius: 4px;
+}
+/* Form controls inside the cinematic shell — labels, inputs, selects.
+   These were the cream blocks at the bottom of the QA screenshot
+   (Review form + Q&A form selects for traveler type / month / year). */
+.nakshiq-cinema input[type="text"],
+.nakshiq-cinema input[type="email"]:not([style*="background"]),
+.nakshiq-cinema input[type="search"],
+.nakshiq-cinema input[type="number"],
+.nakshiq-cinema textarea,
+.nakshiq-cinema select {
+  background: rgba(10, 10, 8, 0.4);
+  color: var(--bone);
+  border-color: var(--hair);
+}
+.nakshiq-cinema input::placeholder,
+.nakshiq-cinema textarea::placeholder {
+  color: var(--bone-fade);
+}
+/* Shadcn primary buttons inside cinema — vermillion, not the default blue/
+   slate the original token resolves to. Limit to the obvious shadcn shape. */
+.nakshiq-cinema .bg-primary {
+  background: var(--vermillion);
+  color: var(--paper);
+}
+.nakshiq-cinema .text-primary { color: var(--vermillion); }
+.nakshiq-cinema .border-primary { border-color: var(--vermillion); }
+.nakshiq-cinema .text-primary-foreground { color: var(--paper); }
+
 /* ── Smooth-scroll for in-page anchors (skim-to-verdict, TOC jumps) ── */
 .nakshiq-cinema { scroll-behavior: smooth; }
 html:has(.nakshiq-cinema) { scroll-behavior: smooth; }
