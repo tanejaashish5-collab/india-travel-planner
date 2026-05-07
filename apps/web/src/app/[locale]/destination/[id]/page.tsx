@@ -3,11 +3,12 @@ import { Nav } from "@/components/nav";
 import { DestinationDetail } from "@/components/destination-detail";
 import { DestinationDetailCinematic } from "@/components/destination-detail-cinematic";
 
-// Cinematic-template allowlist. Add a slug here to opt that single
-// destination into the cinematic redesign. Everyone else continues
-// rendering through DestinationDetail (the production design) so we
-// can live-test the new template without affecting all 504 places.
-const CINEMATIC_DESTINATIONS: ReadonlySet<string> = new Set(["manali"]);
+// Cinematic-template allowlist now lives in lib/cinematic-destinations
+// so the OG image route can share it.
+import {
+  CINEMATIC_DESTINATIONS,
+  isCinematicDestination,
+} from "@/lib/cinematic-destinations";
 import { ScrollDepthTracker } from "@/components/scroll-depth-tracker";
 import { PrevNextNav } from "@/components/prev-next-nav";
 import Link from "next/link";
@@ -110,7 +111,12 @@ export async function generateMetadata({
     ? `${name}${stateName ? `, ${stateName}` : ""} की यात्रा की योजना बनाएं। ${tagline ?? ""} मासिक मौसम स्कोर, बच्चों की सुरक्षा रेटिंग, सड़क की स्थिति, और वास्तविक बुनियादी ढाँचे का डेटा — विज्ञापन नहीं।`.slice(0, 160)
     : `Plan your trip to ${name}${stateName ? `, ${stateName}` : ""}. ${tagline} Monthly weather scores, kids safety ratings, road conditions, and real infrastructure data — not sponsored content.`.slice(0, 160);
   const canonicalUrl = `https://www.nakshiq.com/${locale}/destination/${id}`;
-  const imageUrl = destinationImage(id);
+  // Cinematic destinations use the dedicated OG composition (hero photo +
+  // giant italic name + score badge + Issue Nº). Production destinations
+  // keep the raw R2 photo as the OG image.
+  const imageUrl = isCinematicDestination(id)
+    ? `https://www.nakshiq.com/api/og/destination/${id}?locale=${locale}`
+    : destinationImage(id);
 
   return {
     title,
