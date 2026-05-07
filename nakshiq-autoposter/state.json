@@ -48,58 +48,12 @@
     "PdMu0_reel_map": "2026-05-06",
     "m8EAd_evening": "2026-05-06",
     "m8EAd_evening_story": "2026-05-06",
-    "PdMu0_evening": "2026-05-06"
+    "PdMu0_evening": "2026-05-06",
+    "m8EAd_tourist_map": "2026-05-07",
+    "PdMu0_tourist_map": "2026-05-07"
   },
   "last_sync": "2026-05-07T06:50:40.686152+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "coonoor",
-      "date": "2026-04-22"
-    },
-    {
-      "destination_id": "yt_short_did_you_know_yt_short_did_you_know_2026-04-22",
-      "date": "2026-04-22"
-    },
-    {
-      "destination_id": "dirang",
-      "date": "2026-04-22"
-    },
-    {
-      "destination_id": "morni-hills",
-      "date": "2026-04-22"
-    },
-    {
-      "destination_id": "bandipur",
-      "date": "2026-04-22"
-    },
-    {
-      "destination_id": "reel_seasonal_shift_reel_seasonal_shift_yuksom",
-      "date": "2026-04-22"
-    },
-    {
-      "destination_id": "manikaran",
-      "date": "2026-04-22"
-    },
-    {
-      "destination_id": "manikaran",
-      "date": "2026-04-22"
-    },
-    {
-      "destination_id": "devprayag",
-      "date": "2026-04-22"
-    },
-    {
-      "destination_id": "chopta",
-      "date": "2026-04-22"
-    },
-    {
-      "destination_id": "devprayag",
-      "date": "2026-04-22"
-    },
-    {
-      "destination_id": "chopta",
-      "date": "2026-04-22"
-    },
     {
       "destination_id": "nagarhole",
       "date": "2026-04-23"
@@ -1160,6 +1114,24 @@
       "format": "collection_spotlight",
       "has_media": true,
       "media_id": "tirthan-valley.jpg"
+    },
+    {
+      "timestamp": "2026-05-07T07:29:53.661703+00:00",
+      "date": "2026-05-07",
+      "platform": "instagram",
+      "post_id": "pmwcM",
+      "destination": null,
+      "format": "tourist_map",
+      "media_id": "JH_editorial_dark"
+    },
+    {
+      "timestamp": "2026-05-07T07:29:56.743403+00:00",
+      "date": "2026-05-07",
+      "platform": "facebook",
+      "post_id": "JVxl3",
+      "destination": null,
+      "format": "tourist_map",
+      "media_id": "JH_editorial_dark"
     }
   ],
   "theme_usage": {
@@ -1558,6 +1530,9 @@
       ],
       "CG": [
         "2026-05-05"
+      ],
+      "JH": [
+        "2026-05-07"
       ]
     },
     "tourist_map_combos": {
@@ -1578,6 +1553,9 @@
       ],
       "CG_editorial_light": [
         "2026-05-05"
+      ],
+      "JH_editorial_dark": [
+        "2026-05-07"
       ]
     },
     "pomelli_campaigns": {
