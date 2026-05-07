@@ -85,6 +85,7 @@ import { DestinationAlerts } from "./destination-alerts";
 import { POISection } from "./poi-section";
 import { AskNakshIQInlineCTA } from "@/components/ask-nakshiq-inline-cta";
 import { SuggestEditButton } from "./suggest-edit-button";
+import { CinematicShareBar } from "./cinematic-share-bar";
 
 export function DestinationDetailCinematic({ dest }: { dest: any }) {
   const locale = useLocale();
@@ -198,6 +199,16 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
         />
       )}
 
+      {/* Sticky share/save bar — fades in once the cover scrolls past, hides
+          on the Coda so the bookend reads final. Mirrors the hero overlay
+          version inside ACT I. */}
+      <CinematicShareBar
+        position="sticky"
+        destinationId={dest.id}
+        destinationName={displayName}
+        tagline={dest.tagline ?? null}
+      />
+
       <main
         id="main-content"
         className="nq-grain nq-glow-bookend"
@@ -260,6 +271,17 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
               background:
                 "linear-gradient(180deg, rgba(10,10,8,0.55) 0%, rgba(10,10,8,0.15) 35%, rgba(10,10,8,0.45) 75%, rgba(10,10,8,0.92) 100%)",
             }}
+          />
+
+          {/* Hero share/save row — sits above the dispatch/score row. The
+              sticky variant rendered at root takes over once this scrolls
+              past; together they replace the share bar that used to be
+              buried at Y≈21,000px in the Coda. */}
+          <CinematicShareBar
+            position="hero"
+            destinationId={dest.id}
+            destinationName={displayName}
+            tagline={dest.tagline ?? null}
           />
 
           {/* Top row: dispatch metadata · score */}
