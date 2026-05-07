@@ -379,20 +379,21 @@
 .nakshiq-cinema { scroll-behavior: smooth; }
 html:has(.nakshiq-cinema) { scroll-behavior: smooth; }
 
-/* ── Drop-cap on chapter openers ── pure Esquire/Atlantic energy.
-   Sized by clamp so the cap stays proportional to the prose lead at
-   any viewport. Skips ACT I cover and ACT XI Coda. Apply to the
-   first paragraph of an act with the .nq-leadin class. */
+/* ── Drop-cap on chapter openers — restrained version.
+   ~2 lines tall instead of magazine 4–5 lines. Keeps the vermillion
+   editorial accent without dominating the lead. Skips ACT I cover
+   and ACT XI Coda. Apply to the first paragraph of an act with the
+   .nq-leadin class. */
 .nakshiq-cinema .nq-leadin::first-letter {
   font-family: var(--cinema-display);
   font-style: italic;
-  font-weight: 400;
-  font-size: clamp(56px, 6.4em, 96px);
-  line-height: 0.86;
+  font-weight: 500;
+  font-size: 2.6em;
+  line-height: 1;
   float: left;
-  margin: 6px 12px 0 0;
+  margin: 0.08em 0.12em 0 0;
   color: var(--vermillion);
-  letter-spacing: -0.04em;
+  letter-spacing: -0.02em;
 }
 
 /* ── Hairline section rule — magazine plate-rule. 30% width, centered,
