@@ -86,6 +86,7 @@ import { POISection } from "./poi-section";
 import { AskNakshIQInlineCTA } from "@/components/ask-nakshiq-inline-cta";
 import { SuggestEditButton } from "./suggest-edit-button";
 import { CinematicShareBar } from "./cinematic-share-bar";
+import { CinematicBreadcrumb } from "./cinematic-breadcrumb";
 
 export function DestinationDetailCinematic({ dest }: { dest: any }) {
   const locale = useLocale();
@@ -272,6 +273,23 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
                 "linear-gradient(180deg, rgba(10,10,8,0.55) 0%, rgba(10,10,8,0.15) 35%, rgba(10,10,8,0.45) 75%, rgba(10,10,8,0.92) 100%)",
             }}
           />
+
+          {/* Editorial breadcrumb — top-left corner of the hero, mirror
+              of the share bar on the right. Mono caps, muted cream. */}
+          <div
+            style={{
+              position: "absolute",
+              top: 32,
+              left: 48,
+              zIndex: 4,
+            }}
+          >
+            <CinematicBreadcrumb
+              stateName={stateName}
+              stateId={dest.state_id}
+              destinationName={dest.name}
+            />
+          </div>
 
           {/* Hero share/save row — sits above the dispatch/score row. The
               sticky variant rendered at root takes over once this scrolls
