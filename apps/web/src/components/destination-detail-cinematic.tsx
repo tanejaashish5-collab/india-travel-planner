@@ -89,6 +89,7 @@ import { CinematicShareBar } from "./cinematic-share-bar";
 import { CinematicBreadcrumb } from "./cinematic-breadcrumb";
 import { CinematicVerdictStrip } from "./cinematic-verdict-strip";
 import { CinematicVsCards } from "./cinematic-vs-cards";
+import { CinematicScorecard } from "./cinematic-scorecard";
 
 export function DestinationDetailCinematic({ dest }: { dest: any }) {
   const locale = useLocale();
@@ -604,10 +605,24 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
               </div>
             )}
 
-            {/* Alerts inline — current advisories ride here */}
-            <div style={{ maxWidth: 720, margin: "32px auto 0" }}>
-              <DestinationAlerts destinationId={dest.id} />
-            </div>
+            {/* 5-cell scorecard — quiet roll-up of the dimensions production
+                scatters across confidence-card / kids-badge / solo-female.
+                Sits flush under the GO/WAIT/SKIP rail so the reader sees
+                the verdict and the supporting numbers in one beat. */}
+            {displayScore != null && (
+              <CinematicScorecard
+                kidsRating={kf?.rating ?? null}
+                soloFemaleScore={dest.solo_female_score ?? null}
+                crowdLevel={crowdLevel}
+                budgetTier={dest.budget_tier ?? null}
+                difficulty={dest.difficulty ?? null}
+              />
+            )}
+
+            {/* Inline alerts removed — the cinematic-variant alerts strip
+                now sits between the cover and ACT II (Phase 1.4), so
+                rendering them again here would double-display the same
+                advisories. */}
 
             {/* Know-before-you-go (preserved component) */}
             <div style={{ maxWidth: 720, margin: "60px auto 0" }}>
