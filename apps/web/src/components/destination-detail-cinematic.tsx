@@ -819,7 +819,7 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
               style={{
                 marginTop: 18,
                 fontSize: 12,
-                color: "var(--vermillion)",
+                color: "var(--amber)",
                 letterSpacing: "0.22em",
                 textTransform: "uppercase",
                 textAlign: "center",
