@@ -2764,10 +2764,134 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
             <div style={{ maxWidth: 1100, margin: "0 auto" }}>
               <p
                 className="nq-kicker"
-                style={{ color: "var(--vermillion)", marginBottom: 24 }}
+                style={{ color: "var(--vermillion)", marginBottom: 12 }}
               >
                 REVIEWS · {dest.reviews.length}
               </p>
+              {(() => {
+                const ratings = dest.reviews
+                  .map((r: any) => Number(r.rating))
+                  .filter((n: number) => n >= 1 && n <= 5);
+                if (ratings.length === 0) return null;
+                const avg =
+                  ratings.reduce((a: number, b: number) => a + b, 0) /
+                  ratings.length;
+                const buckets = [0, 0, 0, 0, 0];
+                ratings.forEach((r: number) => (buckets[r - 1] += 1));
+                const max = Math.max(...buckets, 1);
+                return (
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: 28,
+                      flexWrap: "wrap",
+                      marginBottom: 36,
+                      paddingBottom: 28,
+                      borderBottom: "1px solid var(--hair)",
+                    }}
+                  >
+                    <div
+                      style={{
+                        display: "flex",
+                        alignItems: "baseline",
+                        gap: 10,
+                      }}
+                    >
+                      <span
+                        style={{
+                          fontFamily: "var(--cinema-mono)",
+                          fontSize: 36,
+                          fontWeight: 700,
+                          color: "var(--amber)",
+                          fontVariantNumeric: "tabular-nums",
+                          letterSpacing: "-0.02em",
+                        }}
+                      >
+                        {avg.toFixed(1)}
+                      </span>
+                      <span
+                        className="nq-mono"
+                        style={{
+                          fontSize: 11,
+                          color: "var(--bone-faint)",
+                          letterSpacing: "0.22em",
+                          textTransform: "uppercase",
+                        }}
+                      >
+                        / 5 · {ratings.length} traveller
+                        {ratings.length === 1 ? "" : "s"}
+                      </span>
+                    </div>
+                    <div
+                      style={{
+                        display: "flex",
+                        flexDirection: "column",
+                        gap: 4,
+                        flex: 1,
+                        minWidth: 200,
+                        maxWidth: 320,
+                      }}
+                      aria-label="Rating distribution"
+                    >
+                      {[5, 4, 3, 2, 1].map((s) => {
+                        const count = buckets[s - 1];
+                        const pct = (count / max) * 100;
+                        return (
+                          <div
+                            key={s}
+                            style={{
+                              display: "flex",
+                              alignItems: "center",
+                              gap: 8,
+                              fontFamily: "var(--cinema-mono)",
+                              fontSize: 10,
+                              color: "var(--bone-faint)",
+                              letterSpacing: "0.10em",
+                            }}
+                          >
+                            <span style={{ width: 14, color: "var(--amber)" }}>
+                              {s}★
+                            </span>
+                            <span
+                              aria-hidden="true"
+                              style={{
+                                flex: 1,
+                                height: 4,
+                                background: "var(--hair-2)",
+                                position: "relative",
+                                overflow: "hidden",
+                              }}
+                            >
+                              <span
+                                style={{
+                                  position: "absolute",
+                                  inset: 0,
+                                  width: `${pct}%`,
+                                  background:
+                                    s >= 4
+                                      ? "var(--amber)"
+                                      : "var(--bone-faint)",
+                                }}
+                              />
+                            </span>
+                            <span
+                              style={{
+                                width: 24,
+                                textAlign: "right",
+                                color: "var(--bone-dim)",
+                                fontVariantNumeric: "tabular-nums",
+                              }}
+                            >
+                              {count}
+                            </span>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+                );
+              })()}
               <div
                 style={{
                   display: "grid",
