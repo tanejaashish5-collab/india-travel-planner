@@ -210,6 +210,7 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
       tier: t,
       color: t ? VERDICT_COLOR[t] : "rgba(245,241,232,0.10)",
       verdict: ds != null ? verdictFor(ds) : null,
+      note: m?.note ?? null,
       whyGo: m?.why_go ?? null,
       whyNot: m?.why_not ?? null,
       isCurrent: i + 1 === currentMonth,
@@ -826,7 +827,7 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
                       {(m.note || m.whyGo || m.whyNot) && (
                         <p className="nq-month-tip__note">
                           {m.note ||
-                            (m.tier === "PEAK" || m.tier === "EXCELLENT"
+                            (m.tier === "peak" || m.tier === "excellent"
                               ? m.whyGo
                               : m.whyNot) ||
                             m.whyGo ||
