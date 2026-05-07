@@ -95,6 +95,7 @@ import { CinematicActIndicator } from "./cinematic-act-indicator";
 import { CinematicCountUp } from "./cinematic-count-up";
 import { CinematicHeroParallax } from "./cinematic-hero-parallax";
 import { CinematicMobileActionBar } from "./cinematic-mobile-action-bar";
+import { CinematicNewsletter } from "./cinematic-newsletter";
 
 export function DestinationDetailCinematic({ dest }: { dest: any }) {
   const locale = useLocale();
@@ -348,23 +349,6 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
             }}
           />
 
-          {/* Editorial breadcrumb — top-left corner of the hero, mirror
-              of the share bar on the right. Mono caps, muted cream. */}
-          <div
-            style={{
-              position: "absolute",
-              top: 32,
-              left: 48,
-              zIndex: 4,
-            }}
-          >
-            <CinematicBreadcrumb
-              stateName={stateName}
-              stateId={dest.state_id}
-              destinationName={dest.name}
-            />
-          </div>
-
           {/* Hero share/save row — sits above the dispatch/score row. The
               sticky variant rendered at root takes over once this scrolls
               past; together they replace the share bar that used to be
@@ -442,6 +426,17 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
 
           {/* Bottom row: name · tagline */}
           <div style={{ position: "relative", zIndex: 2 }}>
+            {/* Breadcrumb sits directly above the destination name so it
+                anchors the hero composition without competing with the
+                centred Naksh.iq logo in the magazine nav at the very
+                top of the viewport. */}
+            <div style={{ marginBottom: 18 }}>
+              <CinematicBreadcrumb
+                stateName={stateName}
+                stateId={dest.state_id}
+                destinationName={dest.name}
+              />
+            </div>
             <Title
               as="h1"
               className="nq-display"
@@ -3388,6 +3383,12 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
                 )}
               </ul>
             </details>
+
+            {/* Newsletter slot — single-line editorial form, hairline-bordered
+                input + vermillion subscribe action. Subtle by design; sits
+                between the changelog and the absorbed footer so the closing
+                rhythm reads: bookend → updates → join us → footer. */}
+            <CinematicNewsletter source="cinematic-coda" />
           </div>
 
           {/* Absorbed footer line — sits at the very bottom edge of the
