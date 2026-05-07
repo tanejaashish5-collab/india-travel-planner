@@ -414,6 +414,29 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
                   : ""}
               </p>
             )}
+            {/* Trust kicker — VERIFIED date + Issue Nº. Quiet line under
+                the dispatch metadata that gives early readers the proof
+                signal production exposes near the verdict (was buried
+                in the Coda before this round). */}
+            <p
+              className="nq-mono"
+              style={{
+                marginTop: 14,
+                color: "var(--vermillion)",
+                letterSpacing: "0.26em",
+                fontSize: 10,
+                textTransform: "uppercase",
+              }}
+            >
+              {dest.content_reviewed_at
+                ? `VERIFIED ${new Date(dest.content_reviewed_at)
+                    .toLocaleString("en-US", {
+                      month: "short",
+                      year: "numeric",
+                    })
+                    .toUpperCase()} · ISSUE Nº ${issueNum}`
+                : `ISSUE Nº ${issueNum}`}
+            </p>
           </div>
         </section>
 
@@ -678,6 +701,33 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
               }}
             >
               ↑ Tap any month for the full read · colours match verdict bands
+            </p>
+
+            {/* Methodology link — quiet trust signal directly under the grid.
+                Production exposes "HOW WE SCORE →" near the verdict; we mirror
+                it here in editorial form so readers can verify the math
+                behind the colours they just saw. */}
+            <p
+              style={{
+                textAlign: "center",
+                marginTop: 18,
+                fontFamily: "var(--cinema-mono, ui-monospace)",
+                fontSize: 11,
+                letterSpacing: "0.22em",
+                textTransform: "uppercase",
+              }}
+            >
+              <Link
+                href={`/${locale}/methodology`}
+                style={{
+                  color: "var(--vermillion)",
+                  textDecoration: "none",
+                  borderBottom: "1px solid var(--vermillion)",
+                  paddingBottom: 2,
+                }}
+              >
+                Read our scoring methodology →
+              </Link>
             </p>
 
             {/* The Window strip above already covers the 12 months in
