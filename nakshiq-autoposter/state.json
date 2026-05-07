@@ -2,7 +2,8 @@
   "yt_short_formats_used": [
     "dont_go_here",
     "this_vs_that",
-    "did_you_know"
+    "did_you_know",
+    "before_after"
   ],
   "yt_short_music_used": [
     "px_bollywood_hindi",
@@ -24,19 +25,20 @@
     "18_uk_garage",
     "14_deep_tech",
     "02_trap_cinema",
-    "09_boom_bap_chill"
+    "09_boom_bap_chill",
+    "px_cinematic_bg"
   ],
   "posted_today": {
     "m8EAd_reel": "2026-05-06",
     "PdMu0_reel": "2026-05-06",
-    "m8EAd_yt_short": "2026-05-06",
+    "m8EAd_yt_short": "2026-05-07",
     "m8EAd_yt_short_count": 1,
     "jUmP2_yt_short_count": 1,
     "36BUk_yt_short_count": 1,
     "xBQy8_yt_short_count": 1,
     "5bWND_yt_short_count": 1,
     "GAh5p_reel": "2026-05-06",
-    "GAh5p_yt_short": "2026-05-06",
+    "GAh5p_yt_short": "2026-05-07",
     "GAh5p_yt_short_count": 1,
     "PdMu0": "2026-05-06",
     "m8EAd": "2026-05-06",
@@ -361,6 +363,10 @@
     {
       "destination_id": "tirthan-valley",
       "date": "2026-05-06"
+    },
+    {
+      "destination_id": "bhaderwah",
+      "date": "2026-05-07"
     }
   ],
   "posted_formats": {
@@ -1159,6 +1165,24 @@
       "destination": null,
       "format": "reel_map.cluster_reveal",
       "media_id": "reel_pomelli_wave1_60_day_danger_sequence.mp4"
+    },
+    {
+      "timestamp": "2026-05-07T11:48:47.492139+00:00",
+      "date": "2026-05-07",
+      "platform": "youtube",
+      "post_id": "5ZjqD",
+      "destination": "bhaderwah",
+      "format": "yt_short.before_after",
+      "media_id": "yt_short_before_after_yt_short_before_after_2026-05-07.mp4"
+    },
+    {
+      "timestamp": "2026-05-07T11:49:29.464796+00:00",
+      "date": "2026-05-07",
+      "platform": "instagram",
+      "post_id": "FvDBZ",
+      "destination": "bhaderwah",
+      "format": "yt_short.before_after",
+      "media_id": "yt_short_before_after_yt_short_before_after_2026-05-07.mp4"
     }
   ],
   "theme_usage": {
