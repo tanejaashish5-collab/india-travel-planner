@@ -94,6 +94,7 @@ import { CinematicProgressBar } from "./cinematic-progress-bar";
 import { CinematicActIndicator } from "./cinematic-act-indicator";
 import { CinematicCountUp } from "./cinematic-count-up";
 import { CinematicHeroParallax } from "./cinematic-hero-parallax";
+import { CinematicMobileActionBar } from "./cinematic-mobile-action-bar";
 
 export function DestinationDetailCinematic({ dest }: { dest: any }) {
   const locale = useLocale();
@@ -266,6 +267,16 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
         rawScore={currentScore}
         firstNeighbourId={dest.nearbyDestinations?.[0]?.id ?? null}
         firstNeighbourName={dest.nearbyDestinations?.[0]?.name ?? null}
+      />
+
+      {/* Mobile bottom action bar — three buttons (Plan AI · Save ·
+          WhatsApp) pinned to the bottom edge on phones only. Hides under
+          md via CSS. Replaces the editorial Plan-AI pill on mobile (also
+          hidden under md now) so we don't double-stack actions. */}
+      <CinematicMobileActionBar
+        destinationId={dest.id}
+        destinationName={displayName}
+        tagline={dest.tagline ?? null}
       />
 
       <main

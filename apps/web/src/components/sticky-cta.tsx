@@ -62,7 +62,10 @@ export function StickyCTA() {
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: 16, opacity: 0 }}
             transition={{ type: "tween", duration: 0.24, ease: "easeOut" }}
-            className="fixed bottom-20 right-4 sm:bottom-6 sm:right-6 z-30 md:z-50"
+            // Hidden on mobile — the cinematic mobile action bar takes
+            // over there. Visible only at md+ where the editorial pill
+            // floats bottom-right and the action bar isn't rendered.
+            className="hidden md:block fixed sm:bottom-6 sm:right-6 z-30 md:z-50"
             style={{ fontFamily: "var(--cinema-mono, ui-monospace)" }}
           >
             <Link
