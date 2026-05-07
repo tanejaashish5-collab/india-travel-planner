@@ -96,6 +96,7 @@ import { CinematicCountUp } from "./cinematic-count-up";
 import { CinematicHeroParallax } from "./cinematic-hero-parallax";
 import { CinematicMobileActionBar } from "./cinematic-mobile-action-bar";
 import { CinematicNewsletter } from "./cinematic-newsletter";
+import { CinematicHiddenGems } from "./cinematic-hidden-gems";
 
 export function DestinationDetailCinematic({ dest }: { dest: any }) {
   const locale = useLocale();
@@ -1464,115 +1465,12 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
               </div>
             )}
 
-            {/* Hidden gems — separate column; same editorial-entry layout
-                but with a "why unknown" line that's specific to this set. */}
-            {gems.length > 0 && (
-              <div style={{ maxWidth: 1100, margin: "60px auto 0" }}>
-                <p
-                  className="nq-kicker"
-                  style={{
-                    color: "var(--vermillion)",
-                    marginBottom: 16,
-                  }}
-                >
-                  HIDDEN GEMS · NEAR HERE
-                </p>
-                <div
-                  style={{
-                    display: "grid",
-                    gridTemplateColumns:
-                      "repeat(auto-fit, minmax(280px, 1fr))",
-                    gap: 16,
-                  }}
-                >
-                  {gems.map((gem: any) => (
-                    <div
-                      key={gem.id ?? gem.name}
-                      style={{
-                        borderLeft: "2px solid var(--vermillion)",
-                        padding: "16px 20px",
-                        background: "rgba(229,86,66,0.04)",
-                      }}
-                    >
-                      <div
-                        style={{
-                          display: "flex",
-                          alignItems: "baseline",
-                          justifyContent: "space-between",
-                          gap: 12,
-                          marginBottom: 6,
-                        }}
-                      >
-                        <Title
-                          as="h3"
-                          style={{
-                            fontFamily: "var(--cinema-display)",
-                            fontStyle: "italic",
-                            fontWeight: 500,
-                            fontSize: 20,
-                            color: "var(--bone)",
-                            margin: 0,
-                          }}
-                        >
-                          {gem.name}
-                        </Title>
-                        <span
-                          className="nq-mono"
-                          style={{
-                            fontSize: 11,
-                            color: "var(--bone-faint)",
-                            letterSpacing: "0.16em",
-                            whiteSpace: "nowrap",
-                          }}
-                        >
-                          {gem.distance_km}KM ·{" "}
-                          {gem.drive_time?.toUpperCase()}
-                        </span>
-                      </div>
-                      {gem.why_unknown && (
-                        <p
-                          style={{
-                            margin: "0 0 10px",
-                            fontFamily: "var(--cinema-ui)",
-                            fontSize: 13,
-                            lineHeight: 1.55,
-                            color: "var(--bone-dim)",
-                          }}
-                        >
-                          <span
-                            className="nq-mono"
-                            style={{
-                              display: "inline-block",
-                              fontSize: 10,
-                              color: "var(--bone-faint)",
-                              letterSpacing: "0.18em",
-                              textTransform: "uppercase",
-                              marginRight: 8,
-                            }}
-                          >
-                            Why unknown
-                          </span>
-                          {gem.why_unknown}
-                        </p>
-                      )}
-                      {gem.why_go && (
-                        <p
-                          style={{
-                            fontFamily: "var(--cinema-ui)",
-                            fontSize: 14,
-                            lineHeight: 1.6,
-                            color: "var(--bone-dim)",
-                            margin: 0,
-                          }}
-                        >
-                          {gem.why_go}
-                        </p>
-                      )}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
+            {/* Hidden gems — Lead + Stack rhythm. The first gem is a
+                magazine-cover lead with a serif pull-quote built from the
+                why-unknown line; the rest become a numbered editorial list
+                below. Surfaces confidence_score (★) + social_proof (italic
+                tease) which were unused in the previous grid. */}
+            <CinematicHiddenGems gems={gems} destinationName={dest.name} />
 
             {/* vs neighbour cards — closes ACT VI Atlas with three quick
                 comparison cards lifted from the PostGIS-sorted
