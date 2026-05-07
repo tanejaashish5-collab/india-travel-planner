@@ -1510,7 +1510,7 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
                             fontStyle: "italic",
                             fontWeight: 500,
                             fontSize: 20,
-                            color: "var(--vermillion)",
+                            color: "var(--bone)",
                             margin: 0,
                           }}
                         >
