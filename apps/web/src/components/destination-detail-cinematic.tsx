@@ -91,6 +91,7 @@ import { CinematicVerdictStrip } from "./cinematic-verdict-strip";
 import { CinematicVsCards } from "./cinematic-vs-cards";
 import { CinematicScorecard } from "./cinematic-scorecard";
 import { CinematicProgressBar } from "./cinematic-progress-bar";
+import { CinematicActIndicator } from "./cinematic-act-indicator";
 
 export function DestinationDetailCinematic({ dest }: { dest: any }) {
   const locale = useLocale();
@@ -224,6 +225,12 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
           reader scrolls. Suppressed on the cover so it doesn't read like a
           dashboard bar; auto-hides at the absolute bottom (Coda). */}
       <CinematicProgressBar />
+
+      {/* Slim left-rail current-act indicator — large vertical roman numeral
+          (II, III, IV…) so the reader always knows which chapter they're in.
+          Companion to DestinationScrollRail (right edge ticks). Auto-hides
+          on cover + Coda + below md viewport. */}
+      <CinematicActIndicator />
 
       {/* Floating SOS button — scrolls to the act-V emergency block. */}
       {dest.emergencySos && (
@@ -996,7 +1003,7 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
 
             {dest.why_special && (
               <Prose>
-                <p>{dest.why_special}</p>
+                <p className="nq-leadin nq-prose">{dest.why_special}</p>
               </Prose>
             )}
 
@@ -1290,6 +1297,9 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
             )}
           </div>
         </section>
+
+        {/* Magazine plate-rule between ACT V (Risks) and ACT VI (Atlas) */}
+        <hr className="nq-plate-rule" />
 
         {/* ───────────────────────────────────────────────
            ACT VI — The Atlas (POI + nearby + hidden gems)
@@ -1914,6 +1924,9 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
           </div>
         </section>
 
+        {/* Magazine plate-rule between ACT VII (Cost) and ACT VIII (Stay) */}
+        <hr className="nq-plate-rule" />
+
         {/* ───────────────────────────────────────────────
            ACT VIII — The Stay & Eat
            ─────────────────────────────────────────────── */}
@@ -2394,6 +2407,9 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
             )}
           </div>
         </section>
+
+        {/* Magazine plate-rule between ACT VIII (Stay) and ACT IX (Field) */}
+        <hr className="nq-plate-rule" />
 
         {/* ───────────────────────────────────────────────
            ACT IX — The Field (Reviews + Q&A + Notes)
