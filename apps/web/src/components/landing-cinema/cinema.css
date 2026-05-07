@@ -22,10 +22,17 @@
 
   /* Bone — warm cream for text. Never pure white. */
   --bone:         #F5F1E8;
-  --bone-dim:     rgba(245, 241, 232, 0.62);
-  --bone-faint:   rgba(245, 241, 232, 0.32);
-  --hair:         rgba(245, 241, 232, 0.14);
-  --hair-2:       rgba(245, 241, 232, 0.08);
+  /* Bumped for WCAG AA legibility — bone-faint was 0.32 (~5.4:1 over the
+     dark paper, fails AAA for body) and bone-dim was 0.62 (~11.4:1, fine).
+     New values keep the editorial mute but pass AAA for body text and
+     remove the "elegant but unreadable" complaint that shipped earlier.
+     bone-fade kept at the old ultra-faint level for ornamental separators
+     where contrast doesn't matter. */
+  --bone-dim:     rgba(245, 241, 232, 0.72);
+  --bone-faint:   rgba(245, 241, 232, 0.50);
+  --bone-fade:    rgba(245, 241, 232, 0.32);
+  --hair:         rgba(245, 241, 232, 0.18);
+  --hair-2:       rgba(245, 241, 232, 0.10);
 
   /* Vermillion — the brand red. Score badges, period dots, accents. */
   --vermillion:        #E55642;
