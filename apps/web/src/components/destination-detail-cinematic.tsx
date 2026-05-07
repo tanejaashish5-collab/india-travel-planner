@@ -1030,7 +1030,7 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
 
             {dest.why_special && (
               <Prose>
-                <p className="nq-leadin nq-prose">{dest.why_special}</p>
+                <p className="nq-prose">{dest.why_special}</p>
               </Prose>
             )}
 
