@@ -21,6 +21,7 @@ export function CinematicShareBar({
 }) {
   const locale = useLocale();
   const tUi = useTranslations("ui");
+  const tDest = useTranslations("destination");
   const [saved, setSaved] = useState(false);
   const [copied, setCopied] = useState(false);
   const [visible, setVisible] = useState(position === "hero");
@@ -319,8 +320,8 @@ export function CinematicShareBar({
       <Link
         href={`/${locale}/compare?compare=${destinationId}`}
         onClick={handleCompare}
-        aria-label={comparing ? tUi("comparing") || "Comparing" : tUi("compare")}
-        title={comparing ? tUi("comparing") || "Comparing" : tUi("compare")}
+        aria-label={comparing ? tDest("comparing") : tDest("compare")}
+        title={comparing ? tDest("comparing") : tDest("compare")}
         style={{
           ...btnBase,
           textDecoration: "none",
