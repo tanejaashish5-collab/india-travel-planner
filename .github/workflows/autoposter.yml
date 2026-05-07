@@ -91,10 +91,18 @@ jobs:
 
       - name: Install ffmpeg (system package with drawtext/freetype)
         run: |
-          sudo apt-get install -y -qq ffmpeg 2>/dev/null || {
-            echo "Direct install failed, running apt-get update with 60s timeout..."
+          # Wrap apt-get in `timeout` so a hung Ubuntu 24.04 apt mirror can't
+          # burn the entire 15-min job budget. Today (2026-05-07 06:24-06:37 UTC)
+          # the FIRST install hung silently for 13 min before the job-level
+          # timeout killed the run with no posts. Bounded retries make the
+          # failure mode "fail fast in <5 min" instead of "hang for 15 min".
+          timeout 90 sudo apt-get install -y -qq ffmpeg 2>/dev/null || {
+            echo "Initial ffmpeg install timed out or failed — retrying after update..."
             timeout 60 sudo apt-get update -qq || true
-            sudo apt-get install -y -qq ffmpeg
+            timeout 120 sudo apt-get install -y -qq ffmpeg || {
+              echo "::error::ffmpeg install failed twice — aborting job."
+              exit 1
+            }
           }
           ffmpeg -filters 2>/dev/null | grep -c draw
           which ffmpeg
