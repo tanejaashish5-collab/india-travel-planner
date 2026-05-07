@@ -40,21 +40,21 @@
     "GAh5p_reel": "2026-05-06",
     "GAh5p_yt_short": "2026-05-07",
     "GAh5p_yt_short_count": 1,
-    "PdMu0": "2026-05-06",
-    "m8EAd": "2026-05-06",
+    "PdMu0": "2026-05-07",
+    "m8EAd": "2026-05-07",
     "GAh5p": "2026-05-06",
     "m8EAd_moat": "2026-05-06",
     "PdMu0_moat": "2026-05-06",
     "GAh5p_reel_map": "2026-05-07",
     "m8EAd_reel_map": "2026-05-07",
     "PdMu0_reel_map": "2026-05-07",
-    "m8EAd_evening": "2026-05-06",
+    "m8EAd_evening": "2026-05-07",
     "m8EAd_evening_story": "2026-05-06",
-    "PdMu0_evening": "2026-05-06",
+    "PdMu0_evening": "2026-05-07",
     "m8EAd_tourist_map": "2026-05-07",
     "PdMu0_tourist_map": "2026-05-07"
   },
-  "last_sync": "2026-05-07T06:50:40.686152+00:00",
+  "last_sync": "2026-05-07T12:20:17.354762+00:00",
   "posted_destinations": [
     {
       "destination_id": "nagarhole",
@@ -367,11 +367,14 @@
     {
       "destination_id": "bhaderwah",
       "date": "2026-05-07"
+    },
+    {
+      "destination_id": "ooty",
+      "date": "2026-05-07"
     }
   ],
   "posted_formats": {
     "m8EAd": [
-      "score_card",
       "methodology_family",
       "collection_spotlight",
       "methodology_altitude",
@@ -391,10 +394,10 @@
       "chinese_wall",
       "score_card",
       "data_provenance",
-      "collection_spotlight"
+      "collection_spotlight",
+      "festival_alert"
     ],
     "PdMu0": [
-      "score_card",
       "festival_alert",
       "reality_check",
       "methodology_altitude",
@@ -414,7 +417,8 @@
       "chinese_wall",
       "score_card",
       "data_provenance",
-      "collection_spotlight"
+      "collection_spotlight",
+      "festival_alert"
     ]
   },
   "post_log": [
@@ -1183,6 +1187,28 @@
       "destination": "bhaderwah",
       "format": "yt_short.before_after",
       "media_id": "yt_short_before_after_yt_short_before_after_2026-05-07.mp4"
+    },
+    {
+      "timestamp": "2026-05-07T12:21:06.203945+00:00",
+      "date": "2026-05-07",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "4UqXi",
+      "destination": "ooty",
+      "format": "festival_alert",
+      "has_media": true,
+      "media_id": "ooty.mp4"
+    },
+    {
+      "timestamp": "2026-05-07T12:21:38.006307+00:00",
+      "date": "2026-05-07",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "7XNEW",
+      "destination": "ooty",
+      "format": "festival_alert",
+      "has_media": true,
+      "media_id": "ooty.mp4"
     }
   ],
   "theme_usage": {
@@ -1241,7 +1267,8 @@
         "2026-04-24"
       ],
       "bir-billing": [
-        "2026-04-24"
+        "2026-04-24",
+        "2026-05-07"
       ],
       "kokernag": [
         "2026-04-25",
@@ -1325,6 +1352,9 @@
       ],
       "tirthan-valley": [
         "2026-05-06"
+      ],
+      "ooty": [
+        "2026-05-07"
       ]
     },
     "reel_formats": {
@@ -1507,6 +1537,9 @@
       ],
       "tirthan-valley": [
         "2026-05-06"
+      ],
+      "ooty": [
+        "2026-05-07"
       ]
     },
     "festivals": {
@@ -1518,6 +1551,9 @@
       ],
       "b674ab84-34ac-45be-a87b-7bbd01239138": [
         "2026-04-30"
+      ],
+      "7eb02557-973a-4df4-8864-b7e90de4acac": [
+        "2026-05-07"
       ]
     },
     "moat_angles": {
@@ -1657,6 +1693,9 @@
       ],
       "best-stargazing-spots": [
         "2026-05-06"
+      ],
+      "budget-under-5000": [
+        "2026-05-07"
       ]
     },
     "reel_map_formats": {
@@ -1715,6 +1754,11 @@
       "chopta": [
         "2026-05-06"
       ]
+    },
+    "collection_carousel_dests:budget-under-5000": {
+      "bir-billing": [
+        "2026-05-07"
+      ]
     }
   },
   "infographic": {
@@ -1728,7 +1772,7 @@
     ]
   },
   "last_picked": {
-    "collection": "best-stargazing-spots",
+    "collection": "budget-under-5000",
     "shared_best": "jibhi"
   }
 }

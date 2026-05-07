@@ -7164,3 +7164,39 @@ Date range: 2026-04-15 → 2026-05-05
 2026-05-07 11:49:29  INFO      YT Short posted: format=before_after, music=px_cinematic_bg
 2026-05-07 11:49:29  INFO      State saved. YT Short run complete.
 2026-05-07 11:49:29  INFO      ════════════════════════════════════════════════════════════
+2026-05-07 12:19:59  INFO      ════════════════════════════════════════════════════════════
+2026-05-07 12:19:59  INFO      Nakshiq Autoposter · EVENING · 2026-05-07 · weekday=3
+2026-05-07 12:19:59  INFO      ════════════════════════════════════════════════════════════
+2026-05-07 12:19:59  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-05-07 12:20:17  INFO      Synced → 20 destinations · 0 traps · 0 articles · 23 routes · 50 treks · 100 eateries · total catalog=505
+2026-05-07 12:20:18  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-05-07 12:20:18  INFO      Formats — IG: festival_alert  ·  FB: festival_alert  ·  Story: collection_spotlight
+2026-05-07 12:20:18  INFO      Used destinations (14d): 51
+2026-05-07 12:20:18  INFO      Fingerprint dedup snapshot — 11 dests in 7d · 43 (dest,fmt) pairs in 30d · 10 media in 60d
+2026-05-07 12:20:18  INFO      Collection locked: Best on ₹5,000/Day — The Sweet Spot (14/20 never featured)
+2026-05-07 12:20:18  INFO      Festival locked: Ooty Flower Show (34/37 active festivals never featured)
+2026-05-07 12:20:20  INFO      Shared best destination locked: Jibhi
+2026-05-07 12:20:20  INFO      Carousel locked (collection_spotlight): bir-billing
+2026-05-07 12:20:20  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-05-07 12:20:20  INFO      [instagram/nakshiq] Generating festival_alert post...
+2026-05-07 12:20:20  INFO      [instagram/nakshiq] Caption ready (428 chars, dest=ooty)
+2026-05-07 12:20:20  INFO      [instagram/nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-05-07 12:20:20  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/ooty.mp4?v=20260507
+2026-05-07 12:20:22  INFO          Requesting upload URL for ooty.mp4 (7,697,909 bytes, video/mp4)
+2026-05-07 12:20:22  INFO          Uploading to R2 (timeout=300s)...
+2026-05-07 12:20:24  INFO          R2 PUT OK. Confirming...
+2026-05-07 12:20:25  INFO          Media ready: 7IvKW (7,697,909 bytes · ooty.mp4)
+2026-05-07 12:20:25  INFO      [instagram/nakshiq] Publishing Reel...
+2026-05-07 12:21:06  INFO      [instagram/nakshiq] ✅ Published · Outstand=4UqXi · Platform=18591380677002480
+2026-05-07 12:21:06  INFO      [facebook/Nakshiq] Generating festival_alert post...
+2026-05-07 12:21:06  INFO      [facebook/Nakshiq] Caption ready (428 chars, dest=ooty)
+2026-05-07 12:21:06  INFO      [facebook/Nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-05-07 12:21:06  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/ooty.mp4?v=20260507
+2026-05-07 12:21:06  INFO          Requesting upload URL for ooty.mp4 (7,697,909 bytes, video/mp4)
+2026-05-07 12:21:07  INFO          Uploading to R2 (timeout=300s)...
+2026-05-07 12:21:10  INFO          R2 PUT OK. Confirming...
+2026-05-07 12:21:11  INFO          Media ready: ISQRX (7,697,909 bytes · ooty.mp4)
+2026-05-07 12:21:11  INFO      [facebook/Nakshiq] Publishing Reel...
+2026-05-07 12:21:38  INFO      [facebook/Nakshiq] ✅ Published · Outstand=7XNEW · Platform=993331773393617
+2026-05-07 12:21:38  INFO      State saved. Run complete.
+2026-05-07 12:21:38  INFO      ════════════════════════════════════════════════════════════
