@@ -87,6 +87,7 @@ import { AskNakshIQInlineCTA } from "@/components/ask-nakshiq-inline-cta";
 import { SuggestEditButton } from "./suggest-edit-button";
 import { CinematicShareBar } from "./cinematic-share-bar";
 import { CinematicBreadcrumb } from "./cinematic-breadcrumb";
+import { CinematicVerdictStrip } from "./cinematic-verdict-strip";
 
 export function DestinationDetailCinematic({ dest }: { dest: any }) {
   const locale = useLocale();
@@ -208,6 +209,19 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
         destinationId={dest.id}
         destinationName={displayName}
         tagline={dest.tagline ?? null}
+      />
+
+      {/* Mini verdict strip — bottom edge, single line with the current
+          verdict + score + month and three quick links. Compromise version
+          of production's permanent floating MAY-AT-A-GLANCE card; thin and
+          auto-hides after 8s of no scroll so it doesn't break the cinematic
+          flow. Reads firstNeighbour for the inline 'vs' link. */}
+      <CinematicVerdictStrip
+        destinationId={dest.id}
+        destinationName={dest.name}
+        rawScore={currentScore}
+        firstNeighbourId={dest.nearbyDestinations?.[0]?.id ?? null}
+        firstNeighbourName={dest.nearbyDestinations?.[0]?.name ?? null}
       />
 
       <main
