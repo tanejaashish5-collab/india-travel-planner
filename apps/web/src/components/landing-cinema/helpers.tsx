@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 /* ============================================================
    Kinetic — split-text per-character reveal.
@@ -168,8 +168,35 @@ export function SectionLabel({
   name: string;
   right?: string;
 }) {
+  const headerRef = useRef<HTMLElement>(null);
+  const [inView, setInView] = useState(false);
+  useEffect(() => {
+    const el = headerRef.current;
+    if (!el) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      setInView(true);
+      return;
+    }
+    const obs = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            setInView(true);
+            obs.disconnect();
+            break;
+          }
+        }
+      },
+      { threshold: 0.4 },
+    );
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
+
+  const isIn = inView ? "is-in" : "";
   return (
     <header
+      ref={headerRef}
       style={{
         display: "flex",
         alignItems: "center",
@@ -178,14 +205,13 @@ export function SectionLabel({
       }}
     >
       <span
+        className={`nq-divider-dot ${isIn}`}
         style={{
-          display: "inline-block",
           width: 8,
           height: 8,
-          background: "var(--vermillion)",
-          borderRadius: "50%",
         }}
       />
+      <span className={`nq-divider-line ${isIn}`} aria-hidden="true" />
       <span className="nq-kicker" style={{ color: "var(--vermillion)" }}>
         {num} · {name}
       </span>

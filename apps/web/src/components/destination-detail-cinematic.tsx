@@ -93,6 +93,7 @@ import { CinematicScorecard } from "./cinematic-scorecard";
 import { CinematicProgressBar } from "./cinematic-progress-bar";
 import { CinematicActIndicator } from "./cinematic-act-indicator";
 import { CinematicCountUp } from "./cinematic-count-up";
+import { CinematicHeroParallax } from "./cinematic-hero-parallax";
 
 export function DestinationDetailCinematic({ dest }: { dest: any }) {
   const locale = useLocale();
@@ -294,32 +295,36 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
           {/* Hero — video where R2 has it, poster image always rendered as
               fallback. Same source-of-truth as the production hero so the
               same destinations show motion (videoSrc resolves to the R2
-              CDN URL or null). */}
-          <div
-            aria-hidden
-            style={{
-              position: "absolute",
-              inset: 0,
-              zIndex: 0,
-              overflow: "hidden",
-            }}
-          >
-            <video
-              autoPlay
-              muted
-              loop
-              playsInline
-              poster={destinationImage(dest.id, 2400)}
+              CDN URL or null). Wrapped in CinematicHeroParallax so the
+              cover drifts ~3% slower than scroll while still in view —
+              NYT longform pattern. Inner Ken Burns animation continues
+              independently on the <video> element. */}
+          <CinematicHeroParallax strength={0.03}>
+            <div
+              aria-hidden
               style={{
-                width: "100%",
-                height: "100%",
-                objectFit: "cover",
-                animation: "nq-kb-1 22s ease-out forwards",
+                position: "absolute",
+                inset: 0,
+                overflow: "hidden",
               }}
             >
-              <source src={videoSrc(dest.id)} type="video/mp4" />
-            </video>
-          </div>
+              <video
+                autoPlay
+                muted
+                loop
+                playsInline
+                poster={destinationImage(dest.id, 2400)}
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                  animation: "nq-kb-1 22s ease-out forwards",
+                }}
+              >
+                <source src={videoSrc(dest.id)} type="video/mp4" />
+              </video>
+            </div>
+          </CinematicHeroParallax>
           <div
             aria-hidden
             style={{
