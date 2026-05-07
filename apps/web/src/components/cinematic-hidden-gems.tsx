@@ -17,6 +17,8 @@ export function CinematicHiddenGems({
   const lead = gems[0];
   const rest = gems.slice(1);
   const fromLabel = destinationName.toUpperCase();
+  const mapsHref = (gemName: string) =>
+    `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${gemName} near ${destinationName}`)}`;
 
   return (
     <div style={{ maxWidth: 1100, margin: "60px auto 0" }}>
@@ -44,7 +46,20 @@ export function CinematicHiddenGems({
           </span>
         </header>
 
-        <h3 className="nq-gem-lead__title nq-balance">{lead.name}.</h3>
+        <h3 className="nq-gem-lead__title nq-balance">
+          <a
+            className="nq-gem-lead__link"
+            href={mapsHref(lead.name)}
+            target="_blank"
+            rel="noopener noreferrer"
+            title={`Find ${lead.name} on Google Maps`}
+          >
+            {lead.name}.
+            <span className="nq-gem-lead__arrow" aria-hidden="true">
+              {" "}↗
+            </span>
+          </a>
+        </h3>
 
         {lead.why_unknown && (
           <blockquote className="nq-gem-pullquote">
@@ -94,10 +109,18 @@ export function CinematicHiddenGems({
                       {numeral}
                     </span>
                     <h4 className="nq-gem-row__title">
-                      {gem.name}
-                      <span className="nq-gem-row__arrow" aria-hidden="true">
-                        →
-                      </span>
+                      <a
+                        className="nq-gem-row__link"
+                        href={mapsHref(gem.name)}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        title={`Find ${gem.name} on Google Maps`}
+                      >
+                        {gem.name}
+                        <span className="nq-gem-row__arrow" aria-hidden="true">
+                          →
+                        </span>
+                      </a>
                     </h4>
                     <span className="nq-gem-row__lockup nq-mono">
                       {gem.distance_km}KM
