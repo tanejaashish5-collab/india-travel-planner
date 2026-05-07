@@ -90,6 +90,7 @@ import { CinematicBreadcrumb } from "./cinematic-breadcrumb";
 import { CinematicVerdictStrip } from "./cinematic-verdict-strip";
 import { CinematicVsCards } from "./cinematic-vs-cards";
 import { CinematicScorecard } from "./cinematic-scorecard";
+import { CinematicProgressBar } from "./cinematic-progress-bar";
 
 export function DestinationDetailCinematic({ dest }: { dest: any }) {
   const locale = useLocale();
@@ -131,6 +132,33 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
     why_go: m.why_go,
     why_not: m.why_not,
   }));
+
+  // Editorial read-time estimate — counts characters across the major prose
+  // fields the page actually renders, divides by ~1100 chars/min (≈220wpm
+  // accounting for skim-friendly editorial pacing). Server-computed so
+  // there's no post-mount flash.
+  const readMinutes = (() => {
+    const buckets: string[] = [
+      dest.why_special ?? "",
+      dest.why_not ?? "",
+      dest.tagline ?? "",
+      dest.daily_cost?.note ?? "",
+      dest.crowd_calendar?.note ?? "",
+      ...months.flatMap((m: any) => [
+        m.note ?? "",
+        m.why_go ?? "",
+        m.why_not ?? "",
+      ]),
+      ...(dest.scenarios ?? []).map(
+        (s: any) => `${s.title ?? ""} ${s.body ?? ""}`,
+      ),
+      ...(dest.trip_reports ?? []).map(
+        (r: any) => `${r.summary ?? ""} ${r.body ?? ""}`,
+      ),
+    ];
+    const chars = buckets.join(" ").length;
+    return Math.max(3, Math.round(chars / 1100));
+  })();
 
   const currentMonthData = months.find((m: any) => m.month === currentMonth);
   const monthSlugs = ["", "january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december"];
@@ -191,6 +219,11 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
     >
       <CinemaStyles />
       <Nav />
+
+      {/* Magazine longform reading-progress line — top edge, fills as the
+          reader scrolls. Suppressed on the cover so it doesn't read like a
+          dashboard bar; auto-hides at the absolute bottom (Coda). */}
+      <CinematicProgressBar />
 
       {/* Floating SOS button — scrolls to the act-V emergency block. */}
       {dest.emergencySos && (
@@ -452,6 +485,34 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
                     })
                     .toUpperCase()} · ISSUE Nº ${issueNum}`
                 : `ISSUE Nº ${issueNum}`}
+            </p>
+            {/* Read-time + skim-to-verdict — busy readers get a quiet
+                "skip to the verdict" anchor; commit readers see the
+                length up front. Plain anchor link → smooth-scroll
+                handled by the global CSS scroll-behavior rule. */}
+            <p
+              className="nq-mono"
+              style={{
+                marginTop: 10,
+                color: "var(--bone-faint)",
+                letterSpacing: "0.22em",
+                fontSize: 10,
+                textTransform: "uppercase",
+              }}
+            >
+              {readMinutes} MIN READ
+              <span style={{ margin: "0 10px", opacity: 0.6 }}>·</span>
+              <a
+                href="#dest-act-2"
+                style={{
+                  color: "var(--bone-dim)",
+                  textDecoration: "none",
+                  borderBottom: "1px solid var(--bone-faint)",
+                  paddingBottom: 1,
+                }}
+              >
+                Or skip to the verdict ↓
+              </a>
             </p>
           </div>
         </section>
