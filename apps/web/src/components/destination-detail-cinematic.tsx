@@ -974,7 +974,7 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
                               style={{
                                 fontFamily: "var(--cinema-mono)",
                                 fontSize: 16,
-                                color: "var(--bone-faint)",
+                                color: "var(--vermillion)",
                                 transition:
                                   "transform 220ms ease, color 220ms ease",
                               }}
