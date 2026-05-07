@@ -424,6 +424,17 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
             removed because its dot+chip styling clashes with the
             cinematic palette (white dots on dark background). */}
 
+        {/* Live alerts band — thin horizontal strip immediately under
+            the cover. Renders nothing when there are no active alerts
+            for the destination (most days). Variant="cinematic" gives
+            it the editorial mono+serif treatment instead of the
+            shadcn-tinted card style production uses. */}
+        <DestinationAlerts
+          destinationId={dest.id}
+          variant="cinematic"
+          maxVisible={2}
+        />
+
         {/* ───────────────────────────────────────────────
            ACT II — The Verdict (TL;DR + decision rail)
            ─────────────────────────────────────────────── */}
