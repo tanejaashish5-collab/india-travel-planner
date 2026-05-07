@@ -72,30 +72,73 @@ export function ElevationChart({
             />
           </div>
 
-          {/* Reference labels on the right, vertically aligned */}
+          {/* Reference labels — collision-resolved against the destination
+              pin. Walk top-down; if a label falls within the protected band
+              of the destination (±MIN_GAP_PCT), suppress it (the destination
+              already shows the altitude — duplicate labels add noise without
+              context). Adjacent reference labels also get nudged apart so
+              short charts (low ceilings like Manali's 2130m) stay legible. */}
           <div className="relative flex-1 h-64 text-xs">
-            {visibleRefs.map((r) => {
-              const topPct = 100 - (r.m / ceiling) * 100;
-              return (
+            {(() => {
+              const MIN_GAP_PCT = 5; // ~13px on a 256px chart
+              const destTop = 100 - pct;
+              // Build label list with positions and a "muted" priority order;
+              // destination is rendered separately (always at exact pct).
+              const items = visibleRefs
+                .map((r) => ({
+                  m: r.m,
+                  label: r.label,
+                  topPct: 100 - (r.m / ceiling) * 100,
+                }))
+                .filter(
+                  (it) => Math.abs(it.topPct - destTop) >= MIN_GAP_PCT,
+                )
+                .sort((a, b) => a.topPct - b.topPct);
+              // Forward pass — push subsequent labels down if they overlap
+              // the previous (preserving order).
+              for (let i = 1; i < items.length; i++) {
+                const prev = items[i - 1].topPct;
+                if (items[i].topPct - prev < MIN_GAP_PCT) {
+                  items[i].topPct = prev + MIN_GAP_PCT;
+                }
+              }
+              // Backward pass — also keep them clear of the destination pin.
+              for (let i = items.length - 1; i >= 0; i--) {
+                if (
+                  items[i].topPct > destTop - MIN_GAP_PCT &&
+                  items[i].topPct < destTop
+                ) {
+                  items[i].topPct = destTop - MIN_GAP_PCT;
+                }
+                if (
+                  items[i].topPct < destTop + MIN_GAP_PCT &&
+                  items[i].topPct >= destTop
+                ) {
+                  items[i].topPct = destTop + MIN_GAP_PCT;
+                }
+              }
+              return items.map((r) => (
                 <div
                   key={r.m}
-                  className="absolute left-0 right-0 flex items-center gap-2 text-muted-foreground/70"
-                  style={{ top: `calc(${topPct}% - 0.5em)` }}
+                  className="absolute left-0 right-0 flex items-baseline gap-1.5 text-muted-foreground/70 leading-tight"
+                  style={{ top: `calc(${r.topPct}% - 0.5em)` }}
                 >
-                  <span className="font-mono text-[10px] tabular-nums opacity-60">
+                  <span className="font-mono text-[10px] tabular-nums opacity-50">
                     {r.m.toLocaleString()}m
                   </span>
-                  <span className="opacity-75">· {r.label}</span>
+                  <span className="text-[11px] opacity-70">· {r.label}</span>
                 </div>
-              );
-            })}
-            {/* Destination label — bolder, overriding ticks if same height */}
+              ));
+            })()}
+            {/* Destination label — bolder, always at the pin's exact pct */}
             <div
-              className="absolute left-0 right-0 flex items-center gap-2 text-foreground font-semibold"
+              className="absolute left-0 right-0 flex items-baseline gap-1.5 text-foreground font-semibold leading-tight"
               style={{ top: `calc(${100 - pct}% - 0.5em)` }}
             >
-              <span className="font-mono text-[11px] tabular-nums">{elevationM.toLocaleString()}m</span>
-              <span>· {destinationName}</span>
+              <span className="font-mono text-[11px] tabular-nums">
+                {elevationM.toLocaleString()}m
+              </span>
+              <span className="text-[12px]">· {destinationName}</span>
             </div>
           </div>
         </div>

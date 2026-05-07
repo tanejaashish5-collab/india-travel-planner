@@ -765,13 +765,13 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
                 <Link
                   key={m.monthIdx}
                   href={`/${locale}/destination/${dest.id}/${m.name.toLowerCase()}`}
-                  className="nq-month-cell"
                   aria-label={`${m.name}${
                     m.displayScore != null
                       ? ` — ${m.displayScore.toFixed(1)}/10 ${m.verdict ?? ""}`
                       : " — no data"
                   }`}
                   style={{
+                    display: "block",
                     border: m.isCurrent
                       ? "2px solid var(--bone)"
                       : "1px solid var(--hair)",
@@ -810,35 +810,6 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
                       ? m.displayScore.toFixed(1)
                       : "—"}
                   </div>
-                  {/* Hover/focus popover — verdict + note + read-more cue.
-                      CSS-driven, suppressed on (hover: none) touch devices
-                      so the cell's primary tap action wins on mobile. */}
-                  {m.displayScore != null && (
-                    <span className="nq-month-tip" role="tooltip">
-                      <span className="nq-month-tip__head">
-                        {m.name.toUpperCase()}
-                      </span>
-                      <span
-                        className="nq-month-tip__verdict"
-                        style={{ color: m.color }}
-                      >
-                        {m.displayScore.toFixed(1)} · {m.verdict}
-                      </span>
-                      {(m.note || m.whyGo || m.whyNot) && (
-                        <p className="nq-month-tip__note">
-                          {m.note ||
-                            (m.tier === "peak" || m.tier === "excellent"
-                              ? m.whyGo
-                              : m.whyNot) ||
-                            m.whyGo ||
-                            m.whyNot}
-                        </p>
-                      )}
-                      <span className="nq-month-tip__cta">
-                        Read the full {m.shortName} read →
-                      </span>
-                    </span>
-                  )}
                 </Link>
               ))}
             </div>
