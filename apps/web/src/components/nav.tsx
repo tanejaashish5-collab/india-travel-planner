@@ -10,6 +10,7 @@ import { NavMegaMenu, type PanelType } from "./nav-mega-menu";
 import { InternationalBanner } from "./international-banner";
 import { m as motion } from "framer-motion";
 import { useState, useEffect, useRef, useCallback } from "react";
+import { CINEMATIC_DESTINATIONS } from "@/lib/cinematic-destinations";
 
 export function Nav() {
   const locale = useLocale();
@@ -35,13 +36,24 @@ export function Nav() {
     `/${locale}/contact`,
   ];
   const isCinematicPage = CINEMATIC_PAGE_PATHS.includes(pathname);
-  const isCinematic = isLandingRoot || isCinematicPage;
+  // Destinations that have opted into the cinematic body template ALSO get
+  // the magazine-style full-bleed nav, so the chrome matches the body.
+  // Without this, the destination page rendered the production mega-menu
+  // which clashes with the editorial dispatch feel.
+  const isCinematicDestination = Array.from(CINEMATIC_DESTINATIONS).some(
+    (slug) =>
+      pathname === `/${locale}/destination/${slug}` ||
+      pathname.startsWith(`/${locale}/destination/${slug}/`),
+  );
+  const isCinematic = isLandingRoot || isCinematicPage || isCinematicDestination;
 
-  // Hero-scroll transparency only applies to the landing's full-bleed ACT I.
-  // Cinematic legal pages render the nav solid from scroll position 0.
-  const [overHero, setOverHero] = useState(isLandingRoot);
+  // Hero-scroll transparency applies to any cinematic page with a full-bleed
+  // 100vh hero (landing + cinematic destination). Legal pages render solid
+  // from scroll position 0 since they have no hero.
+  const hasHero = isLandingRoot || isCinematicDestination;
+  const [overHero, setOverHero] = useState(hasHero);
   useEffect(() => {
-    if (!isLandingRoot) return;
+    if (!hasHero) return;
     function onScroll() {
       // 100vh hero — flip to solid bg once you scroll past 80% of it so the
       // transition completes before the Nav crosses into the lighter content
@@ -51,7 +63,7 @@ export function Nav() {
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
-  }, [isLandingRoot]);
+  }, [hasHero]);
 
   // Cmd+K / Ctrl+K keyboard shortcut
   useEffect(() => {
