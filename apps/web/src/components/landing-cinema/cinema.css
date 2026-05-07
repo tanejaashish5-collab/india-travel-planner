@@ -379,21 +379,12 @@
 .nakshiq-cinema { scroll-behavior: smooth; }
 html:has(.nakshiq-cinema) { scroll-behavior: smooth; }
 
-/* ── Drop-cap on chapter openers — restrained version.
-   ~2 lines tall instead of magazine 4–5 lines. Keeps the vermillion
-   editorial accent without dominating the lead. Skips ACT I cover
-   and ACT XI Coda. Apply to the first paragraph of an act with the
-   .nq-leadin class. */
+/* ── Lead-in capital — same size as body text, vermillion only.
+   Quietest possible editorial mark on the chapter opener: no float, no
+   resize, just the first letter inheriting the vermillion accent.
+   Apply to the first paragraph of an act with the .nq-leadin class. */
 .nakshiq-cinema .nq-leadin::first-letter {
-  font-family: var(--cinema-display);
-  font-style: italic;
-  font-weight: 500;
-  font-size: 2.6em;
-  line-height: 1;
-  float: left;
-  margin: 0.08em 0.12em 0 0;
   color: var(--vermillion);
-  letter-spacing: -0.02em;
 }
 
 /* ── Hairline section rule — magazine plate-rule. 30% width, centered,
