@@ -1325,9 +1325,6 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
           </div>
         </section>
 
-        {/* Magazine plate-rule between ACT V (Risks) and ACT VI (Atlas) */}
-        <hr className="nq-plate-rule" />
-
         {/* ───────────────────────────────────────────────
            ACT VI — The Atlas (POI + nearby + hidden gems)
            ─────────────────────────────────────────────── */}
@@ -1951,9 +1948,6 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
           </div>
         </section>
 
-        {/* Magazine plate-rule between ACT VII (Cost) and ACT VIII (Stay) */}
-        <hr className="nq-plate-rule" />
-
         {/* ───────────────────────────────────────────────
            ACT VIII — The Stay & Eat
            ─────────────────────────────────────────────── */}
@@ -2434,9 +2428,6 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
             )}
           </div>
         </section>
-
-        {/* Magazine plate-rule between ACT VIII (Stay) and ACT IX (Field) */}
-        <hr className="nq-plate-rule" />
 
         {/* ───────────────────────────────────────────────
            ACT IX — The Field (Reviews + Q&A + Notes)
