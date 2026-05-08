@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-05-08T04:05:14.317Z",
+  "generated_at": "2026-05-08T05:11:25.766Z",
   "totals": {
-    "A": 40,
-    "B": 258,
+    "A": 50,
+    "B": 248,
     "C": 207,
     "total": 505
   },
@@ -49,8 +49,8 @@
     },
     {
       "state": "chandigarh",
-      "A": 0,
-      "B": 1,
+      "A": 1,
+      "B": 0,
       "C": 0,
       "total": 1
     },
@@ -112,8 +112,8 @@
     },
     {
       "state": "jharkhand",
-      "A": 3,
-      "B": 1,
+      "A": 4,
+      "B": 0,
       "C": 0,
       "total": 4
     },
@@ -182,8 +182,8 @@
     },
     {
       "state": "nagaland",
-      "A": 0,
-      "B": 6,
+      "A": 2,
+      "B": 4,
       "C": 0,
       "total": 6
     },
@@ -238,8 +238,8 @@
     },
     {
       "state": "tripura",
-      "A": 0,
-      "B": 3,
+      "A": 1,
+      "B": 2,
       "C": 0,
       "total": 3
     },
@@ -259,8 +259,8 @@
     },
     {
       "state": "west-bengal",
-      "A": 1,
-      "B": 5,
+      "A": 6,
+      "B": 0,
       "C": 0,
       "total": 6
     }
@@ -268,11 +268,11 @@
   "gap_counts": [
     {
       "field": "gems",
-      "count": 444
+      "count": 431
     },
     {
       "field": "eats",
-      "count": 380
+      "count": 377
     },
     {
       "field": "months_prose",
@@ -280,7 +280,7 @@
     },
     {
       "field": "stays",
-      "count": 116
+      "count": 115
     }
   ],
   "destinations": [
@@ -4914,26 +4914,6 @@
       ]
     },
     {
-      "id": "agartala",
-      "name": "Agartala",
-      "state": "tripura",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 2,
-        "eats": 8,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:2/3"
-      ]
-    },
-    {
       "id": "agra",
       "name": "Agra",
       "state": "uttar-pradesh",
@@ -5791,26 +5771,6 @@
       ]
     },
     {
-      "id": "chandigarh",
-      "name": "Chandigarh",
-      "state": "chandigarh",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 2,
-        "eats": 17,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:2/3"
-      ]
-    },
-    {
       "id": "chandipur",
       "name": "Chandipur",
       "state": "odisha",
@@ -6123,26 +6083,6 @@
       ]
     },
     {
-      "id": "darjeeling",
-      "name": "Darjeeling",
-      "state": "west-bengal",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 0,
-        "eats": 7,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:0/3"
-      ]
-    },
-    {
       "id": "dawki",
       "name": "Dawki",
       "state": "meghalaya",
@@ -6426,7 +6366,7 @@
       "counts": {
         "months_scored": 12,
         "months_prose": 12,
-        "gems": 0,
+        "gems": 3,
         "eats": 0,
         "stays": 4
       },
@@ -6435,7 +6375,6 @@
         "why_special": true
       },
       "missing": [
-        "gems:0/3",
         "eats:0/5"
       ]
     },
@@ -7001,26 +6940,6 @@
       ]
     },
     {
-      "id": "kalimpong",
-      "name": "Kalimpong",
-      "state": "west-bengal",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 0,
-        "eats": 5,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:0/3"
-      ]
-    },
-    {
       "id": "kalpa",
       "name": "Kalpa",
       "state": "himachal-pradesh",
@@ -7255,7 +7174,7 @@
       "counts": {
         "months_scored": 12,
         "months_prose": 12,
-        "gems": 0,
+        "gems": 3,
         "eats": 3,
         "stays": 4
       },
@@ -7264,7 +7183,6 @@
         "why_special": true
       },
       "missing": [
-        "gems:0/3",
         "eats:3/5"
       ]
     },
@@ -7309,26 +7227,6 @@
         "gems:0/3",
         "eats:3/5",
         "stays:2/3"
-      ]
-    },
-    {
-      "id": "kohima",
-      "name": "Kohima",
-      "state": "nagaland",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 2,
-        "eats": 17,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:2/3"
       ]
     },
     {
@@ -8070,26 +7968,6 @@
       ]
     },
     {
-      "id": "mokokchung",
-      "name": "Mokokchung",
-      "state": "nagaland",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 0,
-        "eats": 6,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:0/3"
-      ]
-    },
-    {
       "id": "mon",
       "name": "Mon",
       "state": "nagaland",
@@ -8097,7 +7975,7 @@
       "counts": {
         "months_scored": 12,
         "months_prose": 12,
-        "gems": 0,
+        "gems": 3,
         "eats": 4,
         "stays": 4
       },
@@ -8106,7 +7984,6 @@
         "why_special": true
       },
       "missing": [
-        "gems:0/3",
         "eats:4/5"
       ]
     },
@@ -8699,7 +8576,7 @@
       "counts": {
         "months_scored": 12,
         "months_prose": 12,
-        "gems": 0,
+        "gems": 3,
         "eats": 1,
         "stays": 4
       },
@@ -8708,7 +8585,6 @@
         "why_special": true
       },
       "missing": [
-        "gems:0/3",
         "eats:1/5"
       ]
     },
@@ -9301,27 +9177,6 @@
       ]
     },
     {
-      "id": "shantiniketan",
-      "name": "Shantiniketan",
-      "state": "west-bengal",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 0,
-        "eats": 3,
-        "stays": 3
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:0/3",
-        "eats:3/5"
-      ]
-    },
-    {
       "id": "shekhawati",
       "name": "Shekhawati",
       "state": "rajasthan",
@@ -9340,26 +9195,6 @@
       "missing": [
         "gems:1/3",
         "eats:4/5"
-      ]
-    },
-    {
-      "id": "shikharji",
-      "name": "Shikharji (Parasnath Hill)",
-      "state": "jharkhand",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 3,
-        "eats": 5,
-        "stays": 2
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "stays:2/3"
       ]
     },
     {
@@ -9382,27 +9217,6 @@
         "gems:0/3",
         "eats:0/5",
         "stays:2/3"
-      ]
-    },
-    {
-      "id": "siliguri",
-      "name": "Siliguri",
-      "state": "west-bengal",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 0,
-        "eats": 4,
-        "stays": 3
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:0/3",
-        "eats:4/5"
       ]
     },
     {
@@ -9595,27 +9409,6 @@
         "gems:1/3",
         "eats:0/5",
         "stays:0/3"
-      ]
-    },
-    {
-      "id": "sundarbans",
-      "name": "Sundarbans",
-      "state": "west-bengal",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 0,
-        "eats": 2,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:0/3",
-        "eats:2/5"
       ]
     },
     {
@@ -10267,6 +10060,24 @@
       ]
     },
     {
+      "id": "agartala",
+      "name": "Agartala",
+      "state": "tripura",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 8,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
       "id": "aizawl",
       "name": "Aizawl",
       "state": "mizoram",
@@ -10393,6 +10204,42 @@
       "missing": []
     },
     {
+      "id": "chandigarh",
+      "name": "Chandigarh",
+      "state": "chandigarh",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 17,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "darjeeling",
+      "name": "Darjeeling",
+      "state": "west-bengal",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 7,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
       "id": "delhi",
       "name": "Delhi",
       "state": "delhi",
@@ -10501,6 +10348,24 @@
       "missing": []
     },
     {
+      "id": "kalimpong",
+      "name": "Kalimpong",
+      "state": "west-bengal",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
       "id": "kasol",
       "name": "Kasol",
       "state": "himachal-pradesh",
@@ -10511,6 +10376,24 @@
         "gems": 5,
         "eats": 12,
         "stays": 3
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "kohima",
+      "name": "Kohima",
+      "state": "nagaland",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 17,
+        "stays": 4
       },
       "has": {
         "tagline": true,
@@ -10655,6 +10538,24 @@
         "gems": 7,
         "eats": 43,
         "stays": 3
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "mokokchung",
+      "name": "Mokokchung",
+      "state": "nagaland",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 6,
+        "stays": 4
       },
       "has": {
         "tagline": true,
@@ -10861,6 +10762,42 @@
       "missing": []
     },
     {
+      "id": "shantiniketan",
+      "name": "Shantiniketan",
+      "state": "west-bengal",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 3
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "shikharji",
+      "name": "Shikharji (Parasnath Hill)",
+      "state": "jharkhand",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 3
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
       "id": "shillong",
       "name": "Shillong",
       "state": "meghalaya",
@@ -10889,6 +10826,24 @@
         "gems": 3,
         "eats": 32,
         "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "siliguri",
+      "name": "Siliguri",
+      "state": "west-bengal",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 3
       },
       "has": {
         "tagline": true,
@@ -10942,6 +10897,24 @@
         "months_prose": 12,
         "gems": 4,
         "eats": 36,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "sundarbans",
+      "name": "Sundarbans",
+      "state": "west-bengal",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
         "stays": 4
       },
       "has": {
