@@ -29,49 +29,29 @@
     "px_cinematic_bg"
   ],
   "posted_today": {
-    "m8EAd_reel": "2026-05-07",
-    "PdMu0_reel": "2026-05-07",
+    "m8EAd_reel": "2026-05-08",
+    "PdMu0_reel": "2026-05-08",
     "m8EAd_yt_short": "2026-05-07",
     "m8EAd_yt_short_count": 1,
     "jUmP2_yt_short_count": 1,
     "36BUk_yt_short_count": 1,
     "xBQy8_yt_short_count": 1,
     "5bWND_yt_short_count": 1,
-    "GAh5p_reel": "2026-05-07",
+    "GAh5p_reel": "2026-05-08",
     "GAh5p_yt_short": "2026-05-07",
     "GAh5p_yt_short_count": 1,
     "PdMu0": "2026-05-07",
     "m8EAd": "2026-05-07",
-    "GAh5p": "2026-05-06",
-    "m8EAd_moat": "2026-05-06",
-    "PdMu0_moat": "2026-05-06",
     "GAh5p_reel_map": "2026-05-07",
     "m8EAd_reel_map": "2026-05-07",
     "PdMu0_reel_map": "2026-05-07",
     "m8EAd_evening": "2026-05-07",
-    "m8EAd_evening_story": "2026-05-06",
     "PdMu0_evening": "2026-05-07",
     "m8EAd_tourist_map": "2026-05-07",
     "PdMu0_tourist_map": "2026-05-07"
   },
   "last_sync": "2026-05-07T13:18:54.814252+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "nagarhole",
-      "date": "2026-04-23"
-    },
-    {
-      "destination_id": "great-himalayan-np",
-      "date": "2026-04-23"
-    },
-    {
-      "destination_id": "nagarhole",
-      "date": "2026-04-23"
-    },
-    {
-      "destination_id": "kabini",
-      "date": "2026-04-23"
-    },
     {
       "destination_id": "yuksom",
       "date": "2026-04-24"
@@ -375,6 +355,10 @@
     {
       "destination_id": "sarahan",
       "date": "2026-05-07"
+    },
+    {
+      "destination_id": "tirthan-valley",
+      "date": "2026-05-08"
     }
   ],
   "posted_formats": {
@@ -1240,6 +1224,33 @@
       "destination": "sarahan",
       "format": "reel.destination_reveal",
       "media_id": "reel_destination_reveal_reel_destination_reveal_sarahan.mp4"
+    },
+    {
+      "timestamp": "2026-05-08T05:43:29.419903+00:00",
+      "date": "2026-05-08",
+      "platform": "youtube",
+      "post_id": "OQ0Lv",
+      "destination": "tirthan-valley",
+      "format": "reel.seasonal_shift",
+      "media_id": "reel_seasonal_shift_reel_seasonal_shift_tirthan-valley.mp4"
+    },
+    {
+      "timestamp": "2026-05-08T05:44:02.468637+00:00",
+      "date": "2026-05-08",
+      "platform": "instagram",
+      "post_id": "yDBzj",
+      "destination": "tirthan-valley",
+      "format": "reel.seasonal_shift",
+      "media_id": "reel_seasonal_shift_reel_seasonal_shift_tirthan-valley.mp4"
+    },
+    {
+      "timestamp": "2026-05-08T05:44:29.290121+00:00",
+      "date": "2026-05-08",
+      "platform": "facebook",
+      "post_id": "gjtbx",
+      "destination": "tirthan-valley",
+      "format": "reel.seasonal_shift",
+      "media_id": "reel_seasonal_shift_reel_seasonal_shift_tirthan-valley.mp4"
     }
   ],
   "theme_usage": {
@@ -1406,7 +1417,8 @@
         "2026-05-02",
         "2026-05-03",
         "2026-05-04",
-        "2026-05-06"
+        "2026-05-06",
+        "2026-05-08"
       ],
       "destination_reveal": [
         "2026-04-21",
@@ -1460,6 +1472,9 @@
       ],
       "bhaderwah": [
         "2026-05-06"
+      ],
+      "tirthan-valley": [
+        "2026-05-08"
       ]
     },
     "reel_reveal_dests": {

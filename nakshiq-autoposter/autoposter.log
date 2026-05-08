@@ -7346,3 +7346,27 @@ Date range: 2026-04-15 → 2026-05-07
 2026-05-07 23:28:01  INFO      Theme tracker updated: format=destination_reveal
 2026-05-07 23:28:01  INFO      State saved. Reel run complete.
 2026-05-07 23:28:01  INFO      ════════════════════════════════════════════════════════════
+2026-05-08 05:42:41  INFO      ════════════════════════════════════════════════════════════
+2026-05-08 05:42:41  INFO      Nakshiq Autoposter · REEL · 2026-05-08 · weekday=4
+2026-05-08 05:42:41  INFO      ════════════════════════════════════════════════════════════
+2026-05-08 05:42:41  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-05-08 05:42:57  INFO      Synced → 20 destinations · 0 traps · 0 articles · 23 routes · 50 treks · 100 eateries · total catalog=505
+2026-05-08 05:42:57  INFO      Format: seasonal_shift | Data: {'dest_name': 'Tirthan Valley', 'dest_slug': 'tirthan-valley', 'now_month': 'May', 'now_score': 5, 'future_month': 'August', 'future_score': 2}
+2026-05-08 05:43:15  INFO      Reel rendered: reel_seasonal_shift_tirthan-valley.mp4 (9634 KB)
+2026-05-08 05:43:15  INFO          Requesting upload URL for reel_seasonal_shift_reel_seasonal_shift_tirthan-valley.mp4 (9,865,864 bytes, video/mp4)
+2026-05-08 05:43:16  INFO          Uploading to R2 (timeout=300s)...
+2026-05-08 05:43:17  INFO          R2 PUT OK. Confirming...
+2026-05-08 05:43:18  INFO          Media ready: 5FusD (9,865,864 bytes · reel_seasonal_shift_reel_seasonal_shift_tirthan-valley.mp4)
+2026-05-08 05:43:18  INFO      Video uploaded: reel_seasonal_shift_reel_seasonal_shift_tirthan-valley.mp4
+2026-05-08 05:43:19  INFO      [youtube/@naksh-iq] Publishing reel (seasonal_shift)...
+2026-05-08 05:43:23  INFO      [youtube/@naksh-iq] Outstand accepted (post_id=OQ0Lv), confirming...
+2026-05-08 05:43:29  INFO      [youtube/@naksh-iq] ✅ Reel published · Outstand=OQ0Lv · Platform=RvEVQn-8erM
+2026-05-08 05:43:29  INFO      [instagram/nakshiq] Publishing reel (seasonal_shift)...
+2026-05-08 05:43:32  INFO      [instagram/nakshiq] Outstand accepted (post_id=yDBzj), confirming...
+2026-05-08 05:44:02  INFO      [instagram/nakshiq] ✅ Reel published · Outstand=yDBzj · Platform=17860928460588071
+2026-05-08 05:44:02  INFO      [facebook/Nakshiq] Publishing reel (seasonal_shift)...
+2026-05-08 05:44:05  INFO      [facebook/Nakshiq] Outstand accepted (post_id=gjtbx), confirming...
+2026-05-08 05:44:29  INFO      [facebook/Nakshiq] ✅ Reel published · Outstand=gjtbx · Platform=1692462175093868
+2026-05-08 05:44:29  INFO      Theme tracker updated: format=seasonal_shift
+2026-05-08 05:44:29  INFO      State saved. Reel run complete.
+2026-05-08 05:44:29  INFO      ════════════════════════════════════════════════════════════
