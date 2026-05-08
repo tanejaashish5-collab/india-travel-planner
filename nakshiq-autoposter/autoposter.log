@@ -7476,3 +7476,20 @@ requests.exceptions.HTTPError: 401 Client Error: UNAUTHORIZED for url: https://a
 2026-05-08 14:34:55  INFO      [facebook/Nakshiq] Already posted reel today — skipping.
 2026-05-08 14:34:55  INFO      State saved. Reel run complete.
 2026-05-08 14:34:55  INFO      ════════════════════════════════════════════════════════════
+2026-05-08 16:22:48  INFO      ════════════════════════════════════════════════════════════
+2026-05-08 16:22:48  INFO      Nakshiq Autoposter · REEL · 2026-05-08 · weekday=4
+2026-05-08 16:22:48  INFO      ════════════════════════════════════════════════════════════
+2026-05-08 16:22:48  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-05-08 16:23:12  INFO      Synced → 20 destinations · 0 traps · 0 articles · 23 routes · 50 treks · 100 eateries · total catalog=505
+2026-05-08 16:23:13  INFO      Format: destination_reveal | Data: {'dest_name': 'Bhaderwah', 'dest_slug': 'bhaderwah', 'state_name': 'Jammu & Kashmir', 'score': 5, 'tagline': 'The Mini Kashmir that nobody from outside J&K has heard of — meadows, deodar forests, and zero tourists.'}
+2026-05-08 16:23:18  INFO      Reel rendered: reel_destination_reveal_bhaderwah.mp4 (1203 KB)
+2026-05-08 16:23:18  INFO          Requesting upload URL for reel_destination_reveal_reel_destination_reveal_bhaderwah.mp4 (1,232,294 bytes, video/mp4)
+2026-05-08 16:23:19  INFO          Uploading to R2 (timeout=300s)...
+2026-05-08 16:23:21  INFO          R2 PUT OK. Confirming...
+2026-05-08 16:23:22  INFO          Media ready: T08E1 (1,232,294 bytes · reel_destination_reveal_reel_destination_reveal_bhaderwah.mp4)
+2026-05-08 16:23:22  INFO      Video uploaded: reel_destination_reveal_reel_destination_reveal_bhaderwah.mp4
+2026-05-08 16:23:23  INFO      [youtube/@naksh-iq] Already posted reel today — skipping.
+2026-05-08 16:23:23  INFO      [instagram/nakshiq] Already posted reel today — skipping.
+2026-05-08 16:23:23  INFO      [facebook/Nakshiq] Already posted reel today — skipping.
+2026-05-08 16:23:23  INFO      State saved. Reel run complete.
+2026-05-08 16:23:23  INFO      ════════════════════════════════════════════════════════════
