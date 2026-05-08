@@ -4,7 +4,8 @@
     "this_vs_that",
     "did_you_know",
     "before_after",
-    "mini_guide"
+    "mini_guide",
+    "listicle"
   ],
   "yt_short_music_used": [
     "px_bollywood_hindi",
@@ -28,20 +29,21 @@
     "02_trap_cinema",
     "09_boom_bap_chill",
     "px_cinematic_bg",
-    "00_amapiano_glow"
+    "00_amapiano_glow",
+    "v2_amapiano_deep"
   ],
   "posted_today": {
     "m8EAd_reel": "2026-05-08",
     "PdMu0_reel": "2026-05-08",
     "m8EAd_yt_short": "2026-05-08",
-    "m8EAd_yt_short_count": 1,
+    "m8EAd_yt_short_count": 2,
     "jUmP2_yt_short_count": 1,
     "36BUk_yt_short_count": 1,
     "xBQy8_yt_short_count": 1,
     "5bWND_yt_short_count": 1,
     "GAh5p_reel": "2026-05-08",
     "GAh5p_yt_short": "2026-05-08",
-    "GAh5p_yt_short_count": 1,
+    "GAh5p_yt_short_count": 2,
     "PdMu0": "2026-05-07",
     "m8EAd": "2026-05-07",
     "GAh5p_reel_map": "2026-05-07",
@@ -364,6 +366,10 @@
     },
     {
       "destination_id": "pahalgam",
+      "date": "2026-05-08"
+    },
+    {
+      "destination_id": "bhaderwah",
       "date": "2026-05-08"
     }
   ],
@@ -1275,6 +1281,24 @@
       "destination": "pahalgam",
       "format": "yt_short.mini_guide",
       "media_id": "yt_short_mini_guide_yt_short_mini_guide_2026-05-08.mp4"
+    },
+    {
+      "timestamp": "2026-05-08T11:58:08.312770+00:00",
+      "date": "2026-05-08",
+      "platform": "youtube",
+      "post_id": "gjv1x",
+      "destination": "bhaderwah",
+      "format": "yt_short.listicle",
+      "media_id": "yt_short_listicle_yt_short_listicle_2026-05-08.mp4"
+    },
+    {
+      "timestamp": "2026-05-08T11:58:45.643967+00:00",
+      "date": "2026-05-08",
+      "platform": "instagram",
+      "post_id": "OQdTv",
+      "destination": "bhaderwah",
+      "format": "yt_short.listicle",
+      "media_id": "yt_short_listicle_yt_short_listicle_2026-05-08.mp4"
     }
   ],
   "theme_usage": {

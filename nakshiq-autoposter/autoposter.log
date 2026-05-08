@@ -7406,3 +7406,22 @@ requests.exceptions.HTTPError: 401 Client Error: UNAUTHORIZED for url: https://a
 2026-05-08 11:12:02  INFO      YT Short posted: format=mini_guide, music=00_amapiano_glow
 2026-05-08 11:12:02  INFO      State saved. YT Short run complete.
 2026-05-08 11:12:02  INFO      ════════════════════════════════════════════════════════════
+2026-05-08 11:56:25  INFO      ════════════════════════════════════════════════════════════
+2026-05-08 11:56:25  INFO      Nakshiq Autoposter · YT SHORT · 2026-05-08
+2026-05-08 11:56:25  INFO      ════════════════════════════════════════════════════════════
+2026-05-08 11:57:46  INFO      Short rendered: yt_short_listicle_2026-05-08.mp4 (17798 KB, 35.0s, fmt=listicle, music=v2_amapiano_deep)
+2026-05-08 11:57:46  INFO          Requesting upload URL for yt_short_listicle_yt_short_listicle_2026-05-08.mp4 (18,225,450 bytes, video/mp4)
+2026-05-08 11:57:47  INFO          Uploading to R2 (timeout=300s)...
+2026-05-08 11:57:49  INFO          R2 PUT OK. Confirming...
+2026-05-08 11:57:50  INFO          Media ready: 4hHGi (18,225,450 bytes · yt_short_listicle_yt_short_listicle_2026-05-08.mp4)
+2026-05-08 11:57:50  INFO      Video uploaded: yt_short_listicle_yt_short_listicle_2026-05-08.mp4
+2026-05-08 11:57:51  INFO      [youtube/@naksh-iq] Publishing YT Short (listicle)...
+2026-05-08 11:57:56  INFO      [youtube/@naksh-iq] Outstand accepted (post_id=gjv1x), waiting for platform confirmation...
+2026-05-08 11:58:08  INFO      [youtube/@naksh-iq] ✅ YT Short published · Outstand=gjv1x · Platform=Y9kfbESq48g
+2026-05-08 11:58:08  INFO      [instagram/nakshiq] Publishing YT Short (listicle)...
+2026-05-08 11:58:09  INFO      [instagram/nakshiq] Outstand accepted (post_id=OQdTv), waiting for platform confirmation...
+2026-05-08 11:58:45  INFO      [instagram/nakshiq] ✅ YT Short published · Outstand=OQdTv · Platform=18043922420557054
+2026-05-08 11:58:45  INFO      [facebook/Nakshiq] Skipping (YT Shorts post to YouTube + Instagram only).
+2026-05-08 11:58:45  INFO      YT Short posted: format=listicle, music=v2_amapiano_deep
+2026-05-08 11:58:45  INFO      State saved. YT Short run complete.
+2026-05-08 11:58:45  INFO      ════════════════════════════════════════════════════════════
