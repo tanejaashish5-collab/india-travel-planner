@@ -3,7 +3,8 @@
     "dont_go_here",
     "this_vs_that",
     "did_you_know",
-    "before_after"
+    "before_after",
+    "mini_guide"
   ],
   "yt_short_music_used": [
     "px_bollywood_hindi",
@@ -26,19 +27,20 @@
     "14_deep_tech",
     "02_trap_cinema",
     "09_boom_bap_chill",
-    "px_cinematic_bg"
+    "px_cinematic_bg",
+    "00_amapiano_glow"
   ],
   "posted_today": {
     "m8EAd_reel": "2026-05-08",
     "PdMu0_reel": "2026-05-08",
-    "m8EAd_yt_short": "2026-05-07",
+    "m8EAd_yt_short": "2026-05-08",
     "m8EAd_yt_short_count": 1,
     "jUmP2_yt_short_count": 1,
     "36BUk_yt_short_count": 1,
     "xBQy8_yt_short_count": 1,
     "5bWND_yt_short_count": 1,
     "GAh5p_reel": "2026-05-08",
-    "GAh5p_yt_short": "2026-05-07",
+    "GAh5p_yt_short": "2026-05-08",
     "GAh5p_yt_short_count": 1,
     "PdMu0": "2026-05-07",
     "m8EAd": "2026-05-07",
@@ -358,6 +360,10 @@
     },
     {
       "destination_id": "tirthan-valley",
+      "date": "2026-05-08"
+    },
+    {
+      "destination_id": "pahalgam",
       "date": "2026-05-08"
     }
   ],
@@ -1251,6 +1257,24 @@
       "destination": "tirthan-valley",
       "format": "reel.seasonal_shift",
       "media_id": "reel_seasonal_shift_reel_seasonal_shift_tirthan-valley.mp4"
+    },
+    {
+      "timestamp": "2026-05-08T11:11:23.037158+00:00",
+      "date": "2026-05-08",
+      "platform": "youtube",
+      "post_id": "x2vf8",
+      "destination": "pahalgam",
+      "format": "yt_short.mini_guide",
+      "media_id": "yt_short_mini_guide_yt_short_mini_guide_2026-05-08.mp4"
+    },
+    {
+      "timestamp": "2026-05-08T11:12:02.227814+00:00",
+      "date": "2026-05-08",
+      "platform": "instagram",
+      "post_id": "RCYUH",
+      "destination": "pahalgam",
+      "format": "yt_short.mini_guide",
+      "media_id": "yt_short_mini_guide_yt_short_mini_guide_2026-05-08.mp4"
     }
   ],
   "theme_usage": {
