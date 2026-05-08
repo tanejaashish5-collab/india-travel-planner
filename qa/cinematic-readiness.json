@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-05-08T00:53:16.644Z",
+  "generated_at": "2026-05-08T01:50:20.583Z",
   "totals": {
     "A": 14,
-    "B": 272,
-    "C": 219,
+    "B": 277,
+    "C": 214,
     "total": 505
   },
   "thresholds": {
@@ -15,8 +15,8 @@
     {
       "state": "andaman-nicobar",
       "A": 0,
-      "B": 0,
-      "C": 12,
+      "B": 5,
+      "C": 7,
       "total": 12
     },
     {
@@ -276,7 +276,7 @@
     },
     {
       "field": "months_prose",
-      "count": 219
+      "count": 214
     },
     {
       "field": "stays",
@@ -746,28 +746,6 @@
         "gems:1/3",
         "eats:0/5",
         "stays:1/3"
-      ]
-    },
-    {
-      "id": "baratang-island",
-      "name": "Baratang Island",
-      "state": "andaman-nicobar",
-      "tier": "C",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 0,
-        "gems": 0,
-        "eats": 0,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "months_prose:0/12",
-        "gems:0/3",
-        "eats:0/5"
       ]
     },
     {
@@ -1587,29 +1565,6 @@
       ]
     },
     {
-      "id": "diglipur",
-      "name": "Diglipur",
-      "state": "andaman-nicobar",
-      "tier": "C",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 0,
-        "gems": 1,
-        "eats": 0,
-        "stays": 2
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "months_prose:0/12",
-        "gems:1/3",
-        "eats:0/5",
-        "stays:2/3"
-      ]
-    },
-    {
       "id": "diu",
       "name": "Diu",
       "state": "daman-diu",
@@ -2010,28 +1965,6 @@
         "gems:1/3",
         "eats:0/5",
         "stays:0/3"
-      ]
-    },
-    {
-      "id": "havelock-island",
-      "name": "Havelock Island (Swaraj Dweep)",
-      "state": "andaman-nicobar",
-      "tier": "C",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 0,
-        "gems": 0,
-        "eats": 0,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "months_prose:0/12",
-        "gems:0/3",
-        "eats:0/5"
       ]
     },
     {
@@ -3588,29 +3521,6 @@
       ]
     },
     {
-      "id": "neil-island",
-      "name": "Neil Island (Shaheed Dweep)",
-      "state": "andaman-nicobar",
-      "tier": "C",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 0,
-        "gems": 0,
-        "eats": 0,
-        "stays": 1
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "months_prose:0/12",
-        "gems:0/3",
-        "eats:0/5",
-        "stays:1/3"
-      ]
-    },
-    {
       "id": "nelliyampathy",
       "name": "Nelliyampathy",
       "state": "kerala",
@@ -3989,29 +3899,6 @@
       "id": "porbandar",
       "name": "Porbandar",
       "state": "gujarat",
-      "tier": "C",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 0,
-        "gems": 0,
-        "eats": 0,
-        "stays": 2
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "months_prose:0/12",
-        "gems:0/3",
-        "eats:0/5",
-        "stays:2/3"
-      ]
-    },
-    {
-      "id": "port-blair",
-      "name": "Port Blair (Sri Vijaya Puram)",
-      "state": "andaman-nicobar",
       "tier": "C",
       "counts": {
         "months_scored": 12,
@@ -5580,6 +5467,27 @@
       ]
     },
     {
+      "id": "baratang-island",
+      "name": "Baratang Island",
+      "state": "andaman-nicobar",
+      "tier": "B",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 0,
+        "eats": 0,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": [
+        "gems:0/3",
+        "eats:0/5"
+      ]
+    },
+    {
       "id": "baripada",
       "name": "Baripada",
       "state": "odisha",
@@ -6642,6 +6550,28 @@
       ]
     },
     {
+      "id": "diglipur",
+      "name": "Diglipur",
+      "state": "andaman-nicobar",
+      "tier": "B",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 1,
+        "eats": 0,
+        "stays": 2
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": [
+        "gems:1/3",
+        "eats:0/5",
+        "stays:2/3"
+      ]
+    },
+    {
       "id": "dirang",
       "name": "Dirang",
       "state": "arunachal-pradesh",
@@ -7144,6 +7074,27 @@
       },
       "missing": [
         "gems:0/3"
+      ]
+    },
+    {
+      "id": "havelock-island",
+      "name": "Havelock Island (Swaraj Dweep)",
+      "state": "andaman-nicobar",
+      "tier": "B",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 0,
+        "eats": 0,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": [
+        "gems:0/3",
+        "eats:0/5"
       ]
     },
     {
@@ -8816,6 +8767,28 @@
       ]
     },
     {
+      "id": "neil-island",
+      "name": "Neil Island (Shaheed Dweep)",
+      "state": "andaman-nicobar",
+      "tier": "B",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 0,
+        "eats": 0,
+        "stays": 1
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": [
+        "gems:0/3",
+        "eats:0/5",
+        "stays:1/3"
+      ]
+    },
+    {
       "id": "netarhat",
       "name": "Netarhat",
       "state": "jharkhand",
@@ -9313,6 +9286,28 @@
       "missing": [
         "gems:0/3",
         "eats:0/5"
+      ]
+    },
+    {
+      "id": "port-blair",
+      "name": "Port Blair (Sri Vijaya Puram)",
+      "state": "andaman-nicobar",
+      "tier": "B",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 0,
+        "eats": 0,
+        "stays": 2
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": [
+        "gems:0/3",
+        "eats:0/5",
+        "stays:2/3"
       ]
     },
     {
