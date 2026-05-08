@@ -7425,3 +7425,37 @@ requests.exceptions.HTTPError: 401 Client Error: UNAUTHORIZED for url: https://a
 2026-05-08 11:58:45  INFO      YT Short posted: format=listicle, music=v2_amapiano_deep
 2026-05-08 11:58:45  INFO      State saved. YT Short run complete.
 2026-05-08 11:58:45  INFO      ════════════════════════════════════════════════════════════
+2026-05-08 12:56:22  INFO      ════════════════════════════════════════════════════════════
+2026-05-08 12:56:22  INFO      Nakshiq Autoposter · EVENING · 2026-05-08 · weekday=4
+2026-05-08 12:56:22  INFO      ════════════════════════════════════════════════════════════
+2026-05-08 12:56:22  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-05-08 12:56:37  INFO      Synced → 20 destinations · 0 traps · 0 articles · 23 routes · 50 treks · 100 eateries · total catalog=505
+2026-05-08 12:56:38  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-05-08 12:56:38  INFO      Formats — IG: score_card  ·  FB: score_card  ·  Story: reality_check  ·  Audience: adventurers
+2026-05-08 12:56:38  INFO      Used destinations (14d): 49
+2026-05-08 12:56:38  INFO      Audience filter 'adventurers' → 10 destinations match.
+2026-05-08 12:56:38  INFO      Fingerprint dedup snapshot — 13 dests in 7d · 48 (dest,fmt) pairs in 30d · 15 media in 60d
+2026-05-08 12:56:38  INFO      Shared best destination locked: Chopta
+2026-05-08 12:56:38  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-05-08 12:56:38  INFO      [instagram/nakshiq] Generating score_card post...
+2026-05-08 12:56:38  INFO      [instagram/nakshiq] Caption ready (424 chars, dest=chopta)
+2026-05-08 12:56:39  INFO      [instagram/nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-05-08 12:56:39  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/chopta.mp4?v=20260508
+2026-05-08 12:56:39  INFO          Requesting upload URL for chopta.mp4 (4,144,210 bytes, video/mp4)
+2026-05-08 12:56:40  INFO          Uploading to R2 (timeout=300s)...
+2026-05-08 12:56:41  INFO          R2 PUT OK. Confirming...
+2026-05-08 12:56:42  INFO          Media ready: ExBiA (4,144,210 bytes · chopta.mp4)
+2026-05-08 12:56:42  INFO      [instagram/nakshiq] Publishing Reel...
+2026-05-08 12:57:26  INFO      [instagram/nakshiq] ✅ Published · Outstand=iwiGB · Platform=17961272478113292
+2026-05-08 12:57:26  INFO      [facebook/Nakshiq] Generating score_card post...
+2026-05-08 12:57:26  INFO      [facebook/Nakshiq] Caption ready (405 chars, dest=chopta)
+2026-05-08 12:57:26  INFO      [facebook/Nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-05-08 12:57:26  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/chopta.mp4?v=20260508
+2026-05-08 12:57:27  INFO          Requesting upload URL for chopta.mp4 (4,144,210 bytes, video/mp4)
+2026-05-08 12:57:27  INFO          Uploading to R2 (timeout=300s)...
+2026-05-08 12:57:28  INFO          R2 PUT OK. Confirming...
+2026-05-08 12:57:29  INFO          Media ready: WXKKz (4,144,210 bytes · chopta.mp4)
+2026-05-08 12:57:29  INFO      [facebook/Nakshiq] Publishing Reel...
+2026-05-08 12:57:42  INFO      [facebook/Nakshiq] ✅ Published · Outstand=zrzwP · Platform=937320129262412
+2026-05-08 12:57:42  INFO      State saved. Run complete.
+2026-05-08 12:57:42  INFO      ════════════════════════════════════════════════════════════

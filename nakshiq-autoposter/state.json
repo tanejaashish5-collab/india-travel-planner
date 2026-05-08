@@ -44,17 +44,17 @@
     "GAh5p_reel": "2026-05-08",
     "GAh5p_yt_short": "2026-05-08",
     "GAh5p_yt_short_count": 2,
-    "PdMu0": "2026-05-07",
-    "m8EAd": "2026-05-07",
+    "PdMu0": "2026-05-08",
+    "m8EAd": "2026-05-08",
     "GAh5p_reel_map": "2026-05-07",
     "m8EAd_reel_map": "2026-05-07",
     "PdMu0_reel_map": "2026-05-07",
-    "m8EAd_evening": "2026-05-07",
-    "PdMu0_evening": "2026-05-07",
+    "m8EAd_evening": "2026-05-08",
+    "PdMu0_evening": "2026-05-08",
     "m8EAd_tourist_map": "2026-05-07",
     "PdMu0_tourist_map": "2026-05-07"
   },
-  "last_sync": "2026-05-07T13:18:54.814252+00:00",
+  "last_sync": "2026-05-08T12:56:37.727171+00:00",
   "posted_destinations": [
     {
       "destination_id": "yuksom",
@@ -371,11 +371,14 @@
     {
       "destination_id": "bhaderwah",
       "date": "2026-05-08"
+    },
+    {
+      "destination_id": "chopta",
+      "date": "2026-05-08"
     }
   ],
   "posted_formats": {
     "m8EAd": [
-      "methodology_family",
       "collection_spotlight",
       "methodology_altitude",
       "score_card",
@@ -395,10 +398,10 @@
       "score_card",
       "data_provenance",
       "collection_spotlight",
-      "festival_alert"
+      "festival_alert",
+      "score_card"
     ],
     "PdMu0": [
-      "festival_alert",
       "reality_check",
       "methodology_altitude",
       "score_card",
@@ -418,7 +421,8 @@
       "score_card",
       "data_provenance",
       "collection_spotlight",
-      "festival_alert"
+      "festival_alert",
+      "score_card"
     ]
   },
   "post_log": [
@@ -1299,6 +1303,28 @@
       "destination": "bhaderwah",
       "format": "yt_short.listicle",
       "media_id": "yt_short_listicle_yt_short_listicle_2026-05-08.mp4"
+    },
+    {
+      "timestamp": "2026-05-08T12:57:26.497933+00:00",
+      "date": "2026-05-08",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "iwiGB",
+      "destination": "chopta",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "chopta.mp4"
+    },
+    {
+      "timestamp": "2026-05-08T12:57:42.409152+00:00",
+      "date": "2026-05-08",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "zrzwP",
+      "destination": "chopta",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "chopta.mp4"
     }
   ],
   "theme_usage": {
@@ -1336,7 +1362,8 @@
       "chopta": [
         "2026-04-22",
         "2026-05-06",
-        "2026-05-07"
+        "2026-05-07",
+        "2026-05-08"
       ],
       "kanatal": [
         "2026-04-22"
@@ -1642,6 +1669,9 @@
       ],
       "ooty": [
         "2026-05-07"
+      ],
+      "chopta": [
+        "2026-05-08"
       ]
     },
     "festivals": {
@@ -1689,7 +1719,8 @@
       ],
       "adventurers": [
         "2026-04-24",
-        "2026-05-01"
+        "2026-05-01",
+        "2026-05-08"
       ],
       "families": [
         "2026-04-25",
@@ -1889,6 +1920,6 @@
   },
   "last_picked": {
     "collection": "budget-under-1000",
-    "shared_best": "jibhi"
+    "shared_best": "chopta"
   }
 }
