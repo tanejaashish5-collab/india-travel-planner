@@ -57,6 +57,35 @@ type JobHealth = {
   last_ok: boolean | null;
 };
 
+type AssetCoverage = {
+  collections_total: number;
+  collections_with_video: number;
+  collections_pct: number;
+  unlinked_examples: string[];
+};
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+async function computeAssetCoverage(supabase: any): Promise<AssetCoverage | null> {
+  // One query, two counters. Informational only — never alertable.
+  // Surfaces the gap until Cowork's collection-cover queue is drained.
+  const { data, error } = await supabase
+    .from("collections")
+    .select("id, name, cover_video");
+  if (error || !data) return null;
+  const total = data.length;
+  const linked = data.filter((c: any) => c.cover_video).length;
+  const unlinked = data
+    .filter((c: any) => !c.cover_video)
+    .slice(0, 5)
+    .map((c: any) => c.id);
+  return {
+    collections_total: total,
+    collections_with_video: linked,
+    collections_pct: total > 0 ? Number(((linked / total) * 100).toFixed(1)) : 0,
+    unlinked_examples: unlinked,
+  };
+}
+
 function isMondayIST(d: Date): boolean {
   // toLocaleString with weekday returns the Asia/Kolkata day-of-week regardless of server tz.
   return d.toLocaleString("en-US", { timeZone: "Asia/Kolkata", weekday: "short" }) === "Mon";
@@ -128,11 +157,15 @@ export async function GET(req: NextRequest) {
   const alertable = health.filter((h) => ALERT_STATUSES.has(h.status));
   const overall: "ok" | "degraded" = alertable.length === 0 ? "ok" : "degraded";
 
+  // Asset-coverage snapshot — informational, never alertable. Surfaces the
+  // gap of collections without a cover_video URL until Cowork's queue drains.
+  const assetCoverage = await computeAssetCoverage(supabase);
+
   // Persist the snapshot before any side effects so we always have the
   // record even if email sending throws.
   await supabase.from("ops_reports").insert({
     job: "watchdog",
-    summary: { overall, monday_digest: monday, health },
+    summary: { overall, monday_digest: monday, health, asset_coverage: assetCoverage },
     alerts_count: alertable.length,
     ok: overall === "ok",
   });
@@ -165,8 +198,8 @@ export async function GET(req: NextRequest) {
         to: ALERT_TO,
         replyTo: REPLY_TO,
         subject: `[NakshIQ ops] weekly cron health digest — ${overall === "ok" ? "ALL GREEN" : "DEGRADED"}`,
-        html: renderDigestHtml(overall, health),
-        text: renderDigestText(overall, health),
+        html: renderDigestHtml(overall, health, assetCoverage),
+        text: renderDigestText(overall, health, assetCoverage),
       });
       digestEmailed = true;
     } catch (err: any) {
@@ -203,6 +236,7 @@ export async function GET(req: NextRequest) {
     digest_emailed: digestEmailed,
     heartbeat_pinged: heartbeatPinged,
     health,
+    asset_coverage: assetCoverage,
   });
 }
 
@@ -265,15 +299,32 @@ function renderAlertHtml(alertable: JobHealth[], all: JobHealth[]): string {
   </body></html>`;
 }
 
-function renderDigestText(overall: "ok" | "degraded", all: JobHealth[]): string {
+function renderDigestText(
+  overall: "ok" | "degraded",
+  all: JobHealth[],
+  coverage: AssetCoverage | null
+): string {
   const lines: string[] = [];
   lines.push(`NakshIQ weekly cron health — ${overall.toUpperCase()}\n`);
   all.forEach((h) => lines.push(`  • ${fmtRow(h)}`));
+  if (coverage) {
+    lines.push(`\nAsset coverage:`);
+    lines.push(
+      `  • Collection cover videos: ${coverage.collections_with_video}/${coverage.collections_total} (${coverage.collections_pct}%)`
+    );
+    if (coverage.unlinked_examples.length > 0) {
+      lines.push(`    Sample unlinked: ${coverage.unlinked_examples.join(", ")}`);
+    }
+  }
   lines.push(`\nDashboard: https://www.nakshiq.com/methodology/freshness`);
   return lines.join("\n");
 }
 
-function renderDigestHtml(overall: "ok" | "degraded", all: JobHealth[]): string {
+function renderDigestHtml(
+  overall: "ok" | "degraded",
+  all: JobHealth[],
+  coverage: AssetCoverage | null
+): string {
   const colour = overall === "ok" ? "#16a34a" : "#dc2626";
   const rows = all
     .map((h) => {
@@ -287,6 +338,18 @@ function renderDigestHtml(overall: "ok" | "degraded", all: JobHealth[]): string 
       </tr>`;
     })
     .join("");
+  const coverageBlock = coverage
+    ? `<h2 style="font-size:14px;margin:24px 0 8px;color:#525252;text-transform:uppercase;letter-spacing:.05em">Asset coverage</h2>
+       <table style="width:100%;border-collapse:collapse;border:1px solid #e5e5e5">
+         <tbody>
+           <tr>
+             <td style="padding:8px 12px;font-family:ui-monospace,monospace;font-size:13px">Collection cover videos</td>
+             <td style="padding:8px 12px;color:#525252;font-family:ui-monospace,monospace;font-size:13px">${coverage.collections_with_video}/${coverage.collections_total} (${coverage.collections_pct}%)</td>
+           </tr>
+         </tbody>
+       </table>
+       ${coverage.unlinked_examples.length > 0 ? `<p style="color:#525252;font-size:12px;margin:8px 0 0">Sample unlinked: ${coverage.unlinked_examples.join(", ")}</p>` : ""}`
+    : "";
   return `<!doctype html><html><body style="font-family:ui-sans-serif,system-ui,sans-serif;color:#171717;max-width:640px;margin:0 auto;padding:24px">
     <h1 style="font-size:20px;margin:0 0 8px">Weekly cron health: <span style="color:${colour}">${overall.toUpperCase()}</span></h1>
     <p style="color:#525252;margin:0 0 24px">All four scheduled jobs and their last-known-good runs.</p>
@@ -299,6 +362,7 @@ function renderDigestHtml(overall: "ok" | "degraded", all: JobHealth[]): string 
       </tr></thead>
       <tbody>${rows}</tbody>
     </table>
+    ${coverageBlock}
     <p style="color:#525252;font-size:13px;margin:24px 0 0">
       Dashboard: <a href="https://www.nakshiq.com/methodology/freshness">/methodology/freshness</a>
     </p>
