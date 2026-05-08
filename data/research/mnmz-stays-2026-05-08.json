@@ -1,0 +1,46 @@
+[
+  {
+    "destination_id": "moreh",
+    "slot": "experience",
+    "name": "Elora Hotel",
+    "property_type": "3-star hotel",
+    "price_band": "mid-range",
+    "why_nakshiq": "Tengnoupal district's first 3-star property — the only Moreh option that walks the line between travelling-with-comfort and being-on-the-border. 110 km from Imphal on AH-1 (Asian Highway 1), with its own multi-cuisine restaurant, hot water on demand, and the cleanest non-residence rooms in town. The point-to-point hotel for the Indo-Myanmar trade-corridor traveller.",
+    "source": "web_search",
+    "source_ref": "elorahotel.com (official) + Tripadvisor + Tengnoupal district government accommodation page",
+    "confidence": 0.95
+  },
+  {
+    "destination_id": "tamenglong",
+    "slot": "experience",
+    "name": "Tamenglong District Tourist Lodge",
+    "property_type": "government tourist lodge",
+    "price_band": "budget",
+    "why_nakshiq": "The Manipur Tourism Department lodge is the default circuit-stop for Tamenglong's hill-and-waterfall trips — a clean district-headquarters stay with a small dining room and a sunrise-facing balcony over the town. The realistic Tamenglong stay; commercial inventory beyond the lodge and a couple of guest-houses is genuinely thin. Closer to a circuit house than a hotel — set expectations and book through manipurtourism.gov.in.",
+    "source": "web_search",
+    "source_ref": "manipurtourism.gov.in find-accommodation + Tripadvisor Tamenglong district hotels",
+    "confidence": 0.85
+  },
+  {
+    "destination_id": "phawngpui-peak",
+    "slot": "experience",
+    "name": "Far Pak Forest Rest House",
+    "property_type": "forest department rest house",
+    "price_band": "budget",
+    "why_nakshiq": "Twelve-bed rest house at Far Pak meadow inside Phawngpui National Park — the only legal overnight option above Sangau village. 4WD-only access, oil-lamp lighting, water from a piped spring, and a 2-3 hour summit walk above the rest house porch. Bookings strictly through the Mizoram Forest Department's Chhimtuipui Wildlife Division at Lawngtlai before you set out — there is no on-the-spot facility.",
+    "source": "web_search",
+    "source_ref": "forest.mizoram.gov.in/page/chhimtuipui-wildlife-division-lawngtlai + Roundglass Sustain Phawngpui feature + Tripzilla complete-guide-to-trek-Phawngpui",
+    "confidence": 0.9
+  },
+  {
+    "destination_id": "phawngpui-peak",
+    "slot": "xfactor",
+    "name": null,
+    "property_type": null,
+    "price_band": null,
+    "why_nakshiq": "Honest scarcity. Phawngpui Blue Mountain National Park is one of India's most remote protected areas — the commercial inventory beyond the Far Pak Forest Rest House and Sangau village basic guest-houses is non-existent. No boutique stay, no tribal-immersion lodge, no signature property within 50 km of the park gate. Anything we'd write here would be either fabricated or a duplicate of the Far Pak rest house. Better to leave the slot null than invent a placeholder.",
+    "source": "web_search",
+    "source_ref": "Verified absence: forest.mizoram.gov.in (Chhimtuipui Wildlife Division), tourism.mizoram.gov.in/page/list-of-hotels-other-accommodations, Lawngtlai district accommodation page (lawngtlai.nic.in/accommodation/) — no commercial xfactor property in or near the park",
+    "confidence": 0.95
+  }
+]

@@ -1,0 +1,57 @@
+[
+  {
+    "destination_id": "shikharji",
+    "slot": "experience",
+    "name": "Digambar Jain Bees Panthi Kothi",
+    "property_type": "dharamshala",
+    "price_band": "budget",
+    "why_nakshiq": "The 400+ room Digambar Jain dharamshala at the foot of Parasnath Hill - the canonical Shikharji yatri stay since the early 20th century, with its own bhojnalaya, prayer halls and pre-dawn yatra logistics. The cleanest read of how Jain pilgrimage is organised in India.",
+    "source": "web_search",
+    "source_ref": "https://parasnathmadhuban.com/",
+    "confidence": 0.9
+  },
+  {
+    "destination_id": "shikharji",
+    "slot": "value",
+    "name": "Shwetambar Jain Kothi",
+    "property_type": "dharamshala",
+    "price_band": "budget",
+    "why_nakshiq": "Shwetambar-tradition kothi in Madhuban with several hundred rooms, in-house bhojnalaya and direct access to the Bhomiyaji yatra start point. Booking opens to non-Shwetambars when capacity allows; rates are fixed and modest by sect convention.",
+    "source": "web_search",
+    "source_ref": "https://www.siddhachalam.org/about/shikharji-at-siddhachalam/shikharji-yatra/",
+    "confidence": 0.85
+  },
+  {
+    "destination_id": "sirpur",
+    "slot": "experience",
+    "name": "Hiuen Tsiang Tourist Resort",
+    "property_type": "heritage-themed government resort",
+    "price_band": "mid-range",
+    "why_nakshiq": "The 19-room CG Tourism resort 800m from the Lakshmana Temple, named for the 7th-century Chinese Buddhist pilgrim who recorded Sirpur in his Da Tang Xiyu Ji. The only sit-down lodging at the site itself - and the only way to be on the monuments at sunrise without driving in from Raipur.",
+    "source": "web_search",
+    "source_ref": "https://www.tripadvisor.in/Hotel_Review-g3792047-d6914982-Reviews-Hiuen_Tsiang_Tourist_Resort-Sirpur_Mahasamund_District_Chhattisgarh.html",
+    "confidence": 0.95
+  },
+  {
+    "destination_id": "sirpur",
+    "slot": "value",
+    "name": "Hiuen Tsiang Tourist Resort - Dorm",
+    "property_type": "tourist-resort dormitory",
+    "price_band": "budget",
+    "why_nakshiq": "The same CG Tourism resort runs two 15-bedded dorms alongside its private rooms - the cheapest legitimate stay in Sirpur and the only option at the village price band that won't fall apart on monsoon nights. Used by archaeology students and researchers on site visits.",
+    "source": "web_search",
+    "source_ref": "https://www.chhattisgarhtourism.co.in/hotels-in-sirpur-chhattisgarh.html",
+    "confidence": 0.85
+  },
+  {
+    "destination_id": "sirpur",
+    "slot": "location",
+    "name": "Hareli Eco Resort, Mohda",
+    "property_type": "eco-resort",
+    "price_band": "mid-range",
+    "why_nakshiq": "Forest-edge eco-resort at Mohda, 35 km from Sirpur - close enough to combine the archaeology day with a Barnawapara safari morning, and the pairing most Raipur-based travellers actually do. Rooms overlook a tank inside Barnawapara's buffer; the Sirpur drive is on a clean two-lane road.",
+    "source": "web_search",
+    "source_ref": "https://tourism.cgstate.gov.in/hotels/hotel-details?hotel_name=HARELI+ECO+RESORT",
+    "confidence": 0.85
+  }
+]

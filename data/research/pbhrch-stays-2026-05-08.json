@@ -1,0 +1,24 @@
+[
+  {
+    "destination_id": "pinjore-gardens",
+    "slot": "location",
+    "name": "Hotel Emerald Heights",
+    "property_type": "budget hotel",
+    "price_band": "budget",
+    "why_nakshiq": "Sits directly opposite the Yadavindra Gardens main gate on the Pinjore-Kalka Highway - the closest non-Haryana-Tourism roof to the gardens. Plain budget rooms with AC and on-site restaurant; the address is the entire pitch.",
+    "source": "web_search",
+    "source_ref": "https://www.tripadvisor.com/Hotel_Review-g1156018-d7816382-Reviews-Hotel_Emerald_Heights-Pinjore_Panchkula_District_Haryana.html",
+    "confidence": 0.85
+  },
+  {
+    "destination_id": "pinjore-gardens",
+    "slot": "xfactor",
+    "name": "Budgerigar Sheesh Mahal / Rang Mahal Suites (Haryana Tourism)",
+    "property_type": "heritage suite",
+    "price_band": "premium",
+    "why_nakshiq": "Three named suites inside the gardens themselves - Sheesh Mahal, Rang Mahal Honeymoon Suite, Maharaja Suite - decorated in traditional Mughal style with modern fittings, at 5,400-6,000 INR. You sleep within the same monument complex you've come to see, which most heritage stays only adjoin. Single rooms each, so book direct via the Haryana Tourism contact line, not OTAs.",
+    "source": "web_search",
+    "source_ref": "https://haryanatourism.gov.in/where_to_stay/pinjore-gardens/",
+    "confidence": 0.95
+  }
+]
