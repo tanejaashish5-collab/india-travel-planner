@@ -1,0 +1,200 @@
+[
+  {
+    "id": "auroville-sadhana-forest",
+    "name": "Sadhana Forest",
+    "near_destination_id": "auroville",
+    "category": "eco-community",
+    "description": "A volunteer-run reforestation project on 70 acres of formerly arid land off the Auroville plateau, started in 2003 by Aviram and Yorit Rozin. Roughly 35,000 trees of 70 indigenous species replanted, water catchment via earthworks. Every Friday: a free guided tour through the work areas, an environmental documentary screening, and a vegan organic dinner cooked over a smokeless wood stove — open to non-Aurovilians without booking.",
+    "why_hidden": "Most day-trippers stop at Matrimandir viewpoint and Visitors Centre and never travel the extra 15 minutes north to the Forest road; Sadhana sits well outside the standard Auroville circuit and runs on volunteer rhythm rather than tourist hours.",
+    "best_time": "Friday afternoons for the 4 PM community tour-screening-dinner cycle (free); October-March overall",
+    "how_to_reach": "5km from Auroville Visitors Centre toward Eddyanchavadi/Tindivanam; rough red-dirt approach last 1km, scooter or auto only — no cabs",
+    "tips": "Strictly no plastic, no leather, no perfume on premises. Friday programme starts 4 PM and ends ~9 PM after dinner — bring a torch for the walk back. Long-term volunteers share dorms; day visitors don't stay overnight."
+  },
+  {
+    "id": "auroville-matrimandir-gardens",
+    "name": "The Twelve Gardens around Matrimandir",
+    "near_destination_id": "auroville",
+    "category": "garden",
+    "description": "Twelve themed gardens — Existence, Consciousness, Bliss, Light, Life, Power, Wealth, Utility, Progress, Youth, Harmony, and Perfection — radiating from the Matrimandir's outer petal walls. The Mother conceived the symbolic scheme in 1970; landscape work has continued for five decades. Most visitors only see the urn-and-banyan-tree viewpoint at the Park of Unity from 400m away. The actual gardens require an inner-zone access pass.",
+    "why_hidden": "The standard Visitor Centre tour stops at the viewpoint; you can only walk inside the gardens after a same-day or next-day pass booked at the Visitor Centre information desk before noon. Almost no one realises the second pass exists.",
+    "best_time": "Early morning (6-8 AM) when light hits the gold disks and gardens before the heat",
+    "how_to_reach": "Visitors Centre — apply for inner-area access at the information desk; Matrimandir gardens entry is via separate gate, 1km walk past the lotus pond",
+    "tips": "Inner-area pass slots fill quickly in December-January peak. No phones inside the garden zone. Closed Tuesdays for maintenance. Children under 3 not admitted."
+  },
+  {
+    "id": "auroville-solitude-farm",
+    "name": "Solitude Farm Cafe",
+    "near_destination_id": "auroville",
+    "category": "farm",
+    "description": "A six-acre permaculture farm inside Auroville run by British-Aurovilian Krishna McKenzie since 1996, deeply influenced by Masanobu Fukuoka's natural-farming philosophy. Open kitchen serves a fixed daily lunch (₹250 donation) made entirely from what's harvested that morning — millet thalis, wild greens, banana-flower curry, jackfruit-seed cutlets. Saturday open-mic evenings draw the Auroville musician circuit.",
+    "why_hidden": "Off the Visitors Centre road, signed only at the lane mouth; farm hours are erratic (lunch 12:30-2:30 only) and the place fills with regulars who heard about it from other regulars.",
+    "best_time": "Saturdays for the 6 PM open mic with Krishna's band; weekday lunches for a quieter ethos talk over thali",
+    "how_to_reach": "Take the Bommayapalayam road from Auroville Bakery, 3km past Solar Kitchen turnoff; farm sign on the right after the Aurodam community gate",
+    "tips": "Lunch is donation-supported, not a fixed menu. Bring cash. The farm tour at 11:30 AM precedes lunch and is the better introduction. Bare feet welcome on the dining mat."
+  },
+  {
+    "id": "karaikal-tharangambadi-fort-dansborg",
+    "name": "Fort Dansborg, Tharangambadi",
+    "near_destination_id": "karaikal",
+    "category": "heritage",
+    "description": "India's only surviving Danish fort, built in 1620 when Admiral Ove Gjedde of the Danish East India Company secured Tharangambadi from the Thanjavur Nayak king. The fort housed Denmark's South Indian operation for 225 years until sold to the British in 1845. Inside: a small but well-curated museum with original Danish trading-post documents, palanquins, terracotta lamps from the Roman-era port, and the 1714 first-Tamil-printed-Bible plate from the adjacent Tranquebar mission press.",
+    "why_hidden": "Tharangambadi is 15km north of Karaikal across the Tamil Nadu border, and most Karaikal visitors stay within the UT enclave. The Danish-Tamil layered history is barely on the south-Indian heritage circuit despite being the first formal European fort still standing in Tamil Nadu.",
+    "best_time": "October-February, weekday mornings; sunrise on the rampart facing the Bay of Bengal is the photograph",
+    "how_to_reach": "15km from Karaikal town via ECR through Akkaraipettai; bus from Karaikal bus stand or taxi 30 minutes; signposted as Tharangambadi Fort",
+    "tips": "Museum closed Fridays. Combine with a walk up King Street to the New Jerusalem Church (1718), Bungalow on the Beach Neemrana (lunch stop), and the Maritime Museum — half a day total."
+  },
+  {
+    "id": "karaikal-thirunallar-temple",
+    "name": "Thirunallar Saneeswaran Temple",
+    "near_destination_id": "karaikal",
+    "category": "temple",
+    "description": "One of the nine Navagraha temples of Tamil Nadu and the only major shrine in India where Saturn (Sani Bhagavan) is the principal deity, not a peripheral planet stone. The current granite structure is 7th-century Chola, expanded under the Pandyas. Devotees take a ritual bath in Nala Theertham — said to absolve the curse-of-Saturn — change into wet clothes, and walk to darshan. Saturdays draw 30,000+ pilgrims; Sani Peyarchi (planetary transit, every 2.5 years) draws lakhs.",
+    "why_hidden": "Hides 5km west of Karaikal town in Thirunallar village. Mainstream tourism circuits ignore Karaikal entirely, so even Tamil Nadu pilgrim-tour aggregators bundle this without flagging it as architecturally distinct.",
+    "best_time": "Avoid Saturdays unless you're up for a 4-hour darshan queue; weekday mornings 6-9 AM are calm. Sani Peyarchi day is unforgettable but logistically chaotic.",
+    "how_to_reach": "5km west of Karaikal town via Thirunallar Road; share-auto or local bus 15 minutes; ample parking",
+    "tips": "The wet-clothes-change ritual is mandatory for the curse-removal vow — bring a spare set. Photography prohibited inside the sanctum. The Nala Theertham tank water is replaced before each Saturday rush."
+  },
+  {
+    "id": "karaikal-nagore-dargah",
+    "name": "Nagore Hazrat Dargah",
+    "near_destination_id": "karaikal",
+    "category": "shrine",
+    "description": "A 16th-century Sufi shrine to Saint Hazrat Meeran Sahib Abdul Qadir, with five minarets (the tallest 131 feet) funded by a Maratha ruler in gratitude for a son granted at the saint's blessing. The dargah is one of the rare South Indian Sufi shrines where Muslim and Hindu devotees mix freely on the same offering line — the Kandoori festival in May draws 200,000+ across both communities.",
+    "why_hidden": "30 minutes south of Karaikal in coastal Nagore, off most pilgrim circuits that focus on Velankanni (the Catholic basilica 12km further south). The Hindu-Muslim devotional cohabitation is locally famous but never travel-press flagged.",
+    "best_time": "October-March; avoid Friday afternoons (jamaat congregation). Kandoori festival 14 days in May for the full atmospheric experience.",
+    "how_to_reach": "22km south of Karaikal via ECR through Nagapattinam; bus or taxi 45 minutes; the five minarets are visible from 2km out",
+    "tips": "Cover head and shoulders; no leather inside. The boat-shaped silver vessel near the inner sanctum collects ghee offerings — light a lamp from one of the central oil pots. Combine with Velankanni Basilica 12km further south for a Sufi-Catholic afternoon."
+  },
+  {
+    "id": "puducherry-arikamedu",
+    "name": "Arikamedu Roman Trading Post",
+    "near_destination_id": "puducherry",
+    "category": "archaeology",
+    "description": "An Indo-Roman trading port active from 1st century BCE to 1st century CE — Mortimer Wheeler's 1945 ASI dig identified it as Poduke, a port mentioned in the 1st-century Greek Periplus of the Erythraean Sea. Roman amphorae shards, Mediterranean glass, rouletted blackware, and a stone-built brickwork warehouse foundation survive on a peninsular site by the Ariyankuppam river estuary. The Jesuit Pere Faureau first noticed Roman coins here in 1734.",
+    "why_hidden": "7km south of central Pondicherry but completely off the French-Quarter beach circuit. ASI signage is poor, the site is partially overgrown, and most cab drivers don't know it. Locals call it 'Virampattinam ruins'.",
+    "best_time": "October-February, early morning before the heat; bring sunhat — there's almost no shade",
+    "how_to_reach": "7km south of Pondicherry via Cuddalore Main Road; turn left at Ariyankuppam river bridge, follow signs for Veerampattinam village; final 800m unpaved",
+    "tips": "Free entry, no ticket. Nothing reconstructed — bring your imagination and a Periplus reference. The Pondicherry Museum on Saint Louis Street has the actual amphorae and rouletted-ware shards from the dig if you want to see them post-visit."
+  },
+  {
+    "id": "puducherry-sacred-heart-basilica",
+    "name": "Basilica of the Sacred Heart of Jesus",
+    "near_destination_id": "puducherry",
+    "category": "heritage",
+    "description": "A Gothic-Revival Catholic basilica completed 1907 on Subbaiah Salai, designed by French Jesuits with stained glass shipped from France illustrating the life of Christ in 28 panels. The church received minor basilica status from Pope John Paul II in 2011 — one of only 25 in India. The corner-altar cabinet holds a 19th-century Madonna of Lourdes brought from southern France.",
+    "why_hidden": "Most French-Quarter visitors orbit Notre Dame des Anges on the Promenade and never walk the 1km inland to Subbaiah Salai. The Sacred Heart Basilica is taller, older as a parish, and architecturally richer — and almost empty on weekday afternoons.",
+    "best_time": "Weekday mornings 7-10 AM for the light through the stained glass; avoid Sunday masses unless attending",
+    "how_to_reach": "Subbaiah Salai, 800m west of the railway station; tuk-tuk from Promenade Beach 10 minutes",
+    "tips": "Quiet entry from the south side gate. Photography permitted but no flash. The basilica's August 15 Feast of the Assumption procession through old Tamil quarter is a lesser-known parallel to the bigger Notre Dame celebrations."
+  },
+  {
+    "id": "puducherry-ousteri-lake",
+    "name": "Ousteri (Oussudu) Lake",
+    "near_destination_id": "puducherry",
+    "category": "wetland",
+    "description": "A 390-hectare freshwater lake straddling the Tamil Nadu-Puducherry border, declared a National Wetland in 2002. Birding hotspot: pintail, garganey, glossy ibis, painted stork, and the rare grey-headed swamphen winter here November-February. The lake is also the source of much of Pondicherry's drinking water — silty inlet at the southwest corner is the pump-house intake.",
+    "why_hidden": "10km west of Pondicherry on the Villianur road, off all standard tourist routes. No boating concession, no entrance gate, just a sandy berm walk along the bund. Birders find it by word of mouth.",
+    "best_time": "November-February for migrant waterfowl; arrive 6:30 AM for the heron lift-off",
+    "how_to_reach": "10km west of Pondicherry on Villianur Road, then turn at Oussudu sign past the village; auto from JIPMER 20 minutes",
+    "tips": "No infrastructure — bring water, binoculars, no public toilets. Stay on the bund, don't enter the catchment village fields. Auto-drivers will need explicit Tamil directions to 'Oussudu Eri'."
+  },
+  {
+    "id": "daman-bom-jesus-church",
+    "name": "Cathedral of Bom Jesus, Moti Daman",
+    "near_destination_id": "daman",
+    "category": "heritage",
+    "description": "A 1603 Portuguese Jesuit cathedral inside Moti Daman fort with one of India's most spectacular Iberian-Baroque altar retablos — seven gilded niches with painted-wood saint sculptures, original 17th-century pigment surviving without restoration. Father António de Andrade led the first Jesuit mission from this church into Tibet in 1624. The pulpit is one carved teak block, taller than two men.",
+    "why_hidden": "Inside Moti Daman fort but tucked behind the secretariat building; the lighthouse and beach get every visitor's attention while this church sits unmarked in the fort plaza. Mass is held only on Sundays — rest of the week the door is unlocked but no signage tells you to enter.",
+    "best_time": "Late afternoon for the western light through the side windows hitting the gilded altar; Sunday 9 AM mass is in Konkani-Portuguese hybrid",
+    "how_to_reach": "Inside Moti Daman fort, 100m past the secretariat; walk through the main fort gate from Nani Daman over the Daman Ganga bridge",
+    "tips": "Photography permitted, no flash. Caretaker often dozing in the side-chapel — knock politely. Combine with the Dominican Monastery ruins 100m north and the Bocage House (1750s administrator's residence) for a Portuguese-Catholic Daman half-day."
+  },
+  {
+    "id": "daman-jampore-beach-casuarina",
+    "name": "Jampore Beach Casuarina Grove",
+    "near_destination_id": "daman",
+    "category": "beach",
+    "description": "5km south of Moti Daman, this is Daman's quietest beach — 2km of black sand with low waves and a planted Casuarina equisetifolia grove inland of the high-tide line that creates a cool, hushed canopy. The Casuarinas were planted in the 1960s by the Forest Department for cyclone-shelter protection; they accidentally produced one of the best beach-shade picnic spots on India's west coast.",
+    "why_hidden": "Devka Beach has all the resorts and chai stalls and amusement-park noise; Jampore is what Devka was before the 1990s. Most short-trippers from Mumbai never make it the extra 5km south.",
+    "best_time": "Weekday mornings October-February; weekends fill with Surat day-trippers but still less crowded than Devka",
+    "how_to_reach": "5km south of Moti Daman jetty via Jampore Road; auto 20 minutes from Nani Daman; signposted",
+    "tips": "Camel and horse rides on the sand are the local touts' offering — fixed rates not negotiable, ₹150 per round. Swimming dangerous at high tide due to soft sand currents — locals stay knee-deep. No food stalls inside the grove — pack a tiffin."
+  },
+  {
+    "id": "daman-mirasol-lake-garden",
+    "name": "Mirasol Lake (Kadaiya) Garden",
+    "near_destination_id": "daman",
+    "category": "park",
+    "description": "A 30-acre lake-and-garden complex 4km inland from Moti Daman, originally a 1970s irrigation reservoir converted to a public garden by the UT administration. Paddle-boats on the central lake, manicured Mughal-style lawns, a children's railway, and an unexpected Japanese-style pavilion at the eastern end. Locals call it Kadaiya Lake Garden after the village; signage uses Mirasol.",
+    "why_hidden": "Daman is so beach-coded that visitors skip the inland gardens entirely. Mirasol gets domestic Gujarati families on weekends but almost no out-of-state tourists.",
+    "best_time": "Weekday evenings 4-6 PM for the musical fountain; avoid weekends if you want quiet",
+    "how_to_reach": "4km inland from Moti Daman via Kadaiya village road; auto 12 minutes from Nani Daman; ample parking",
+    "tips": "Entry ₹20, paddle-boat ₹100 for 30 min. Closed Tuesdays. The Hirwa Van Garden (a separate forest-themed park) is 2km further inland and pairs naturally with this stop."
+  },
+  {
+    "id": "diu-naida-caves",
+    "name": "Naida Caves",
+    "near_destination_id": "diu",
+    "category": "geology",
+    "description": "A network of 19 interlinked sandstone chambers and tunnels just outside the Diu Fort north wall — a mix of natural sea-erosion caverns and Portuguese 16th-17th-century quarrying for the fort's masonry. Sunlight filters through ceiling collapses to create dramatic light shafts. Used by Portuguese soldiers as a hideout during Operation Vijay 1961, the Indian liberation campaign for Diu.",
+    "why_hidden": "Most Diu visitors stop at the fort itself and never walk the 200m around its north wall to the caves. No ticket, no signboard till you reach the entry — feels unfinished, which is why it's atmospheric.",
+    "best_time": "11 AM-2 PM when light shafts are vertical; avoid monsoon (July-September) when interior pools form and footing turns slippery",
+    "how_to_reach": "200m north of Diu Fort main entrance; walk along the outer fort wall; entry is a step-down rocky path",
+    "tips": "Wear shoes with grip — the rock floor is uneven. Mobile flashlight useful in deep chambers. No barriers, no guides, no railings — children and elderly need company."
+  },
+  {
+    "id": "diu-gangeshwar-temple",
+    "name": "Gangeshwar Mahadev Temple",
+    "near_destination_id": "diu",
+    "category": "temple",
+    "description": "Five Shiva lingams set in a natural rock crevice on the Fudam village shore, washed by the Arabian Sea at every high tide. Local lore credits the Pandavas with placing them during their forest exile (Mahabharata). At low tide all five are exposed; at high tide only the tallest emerges from foamy water — devotees time their abhishekam to the lunar tide table posted at the temple gate.",
+    "why_hidden": "3km west of Diu town in Fudam village, off the Nagoa-fort circuit. No big Shiva-pilgrim-tour bus stops here; the temple priest is local and the offering rate is by donation.",
+    "best_time": "New moon and full moon high-tide hours for the dramatic submersion; avoid monsoon high tide (waves can be hazardous)",
+    "how_to_reach": "3km west of Diu town in Fudam village; signed off the airport road; final 300m unpaved sand track",
+    "tips": "Bring a cloth — saltwater and rocks make the lingam approach slippery. Tide chart posted at temple gate; staff will warn you off during dangerous swells. No shoes past the outer compound."
+  },
+  {
+    "id": "diu-ins-khukri-memorial",
+    "name": "INS Khukri Memorial",
+    "near_destination_id": "diu",
+    "category": "memorial",
+    "description": "A glass-walled hilltop memorial above the Arabian Sea commemorating INS Khukri (F-149), an Indian Navy frigate sunk by Pakistan submarine PNS Hangor on 9 December 1971 — the only Indian warship lost in the 1971 war. Captain Mahendra Nath Mulla refused to abandon ship and went down with his vessel; 18 officers and 176 sailors died. The memorial holds a bronze model of the frigate, photographs of the crew, and a marble plaque listing every name.",
+    "why_hidden": "Built only in 1999, the memorial is on a hilltop opposite Chakratirth Beach but tour buses rarely climb the 500m walk. Most beach visitors take a glance and leave without entering the small gallery.",
+    "best_time": "Late afternoon for the hilltop sunset view; closed for cleaning Mondays",
+    "how_to_reach": "1km from Chakratirth Beach via the hilltop access road; walk or rickshaw 5 minutes",
+    "tips": "Free entry, photography permitted in outdoor area only. Naval Day (4 December) and the 9 December anniversary draw veterans — moving but crowded. The view east toward Diu fort is the best in town."
+  },
+  {
+    "id": "silvassa-vasona-lion-safari",
+    "name": "Silvassa Vasona Lion Safari",
+    "near_destination_id": "silvassa",
+    "category": "wildlife",
+    "description": "A 25-acre lion enclosure inside the Vasona Reserve Forest 8km north of Silvassa town. Two prides totalling around 7-9 lions are housed in the open-range section; visitors ride a caged AC bus through the enclosure for 20-25 minutes, then stop at a viewing tower above an artificial waterhole. The forest-dept project began in 2002 with Gir-relocated lions.",
+    "why_hidden": "Easy to miss because Silvassa itself is off the main travel circuit (a Mumbai-Surat stopover, not a destination). The safari runs limited slots through the day and is closed Mondays — visitors who arrive ad-hoc often miss the morning shows.",
+    "best_time": "First slot 9 AM or last slot 4 PM (cooler, lions are active). Closed Mondays.",
+    "how_to_reach": "8km north of Silvassa town on the Khanvel road; auto from town 20 minutes; ample parking",
+    "tips": "Tickets ₹150 adult, ₹75 child, sold only at the gate counter — no online booking. Bus takes 30 passengers per slot, fills fast on weekends. Combine with Hirwa Van Garden 2km further north."
+  },
+  {
+    "id": "silvassa-dudhni-lake",
+    "name": "Dudhni Lake",
+    "near_destination_id": "silvassa",
+    "category": "lake",
+    "description": "A reservoir formed by the 1980s Madhuban Dam on the Daman Ganga river, 40km east of Silvassa toward the Sahyadri foothills. Locally nicknamed 'Kashmir of the West' for the Shikara-style covered boats imported by the UT tourism department. Jet-ski, kayak, and houseboat options now run from a single jetty. The dam wall itself is a 5-minute walk from the boat ramp.",
+    "why_hidden": "40km from Silvassa town on a winding ghat road few day-trippers attempt — most stop at Vanganga Garden 5km from town and skip Dudhni entirely. The Shikara-replica boats are bizarre but earnest.",
+    "best_time": "October-February weekdays; sunset boat rides 5-6 PM are the best slot",
+    "how_to_reach": "40km east of Silvassa via Khanvel-Sayli road; private taxi or rented scooter; final 2km is bumpy approach",
+    "tips": "Shikara ride ₹200/head shared, or ₹1500 private hire 30 min. Jet-ski ₹500/10 min. No restaurant on site — pack snacks. The Madhuban Dam top walk is free but check security clearance during politically sensitive periods."
+  },
+  {
+    "id": "silvassa-tribal-cultural-museum",
+    "name": "Tribal Cultural Museum",
+    "near_destination_id": "silvassa",
+    "category": "museum",
+    "description": "A small but earnest UT-administered ethnographic museum 2km from Silvassa town centre, dedicated to the Warli, Dhodia, Kokna, Halpati, and Dubla tribal communities of Dadra & Nagar Haveli. Exhibits include hunting tools, fishing gear, kitchen articles, masks, handmade musical instruments (the Tarpa flute, the Dholak drum), and a small wall of original Warli wedding-painting panels — the regional art form that uses simple geometric figures on dark mud walls.",
+    "why_hidden": "Most Silvassa weekenders are Mumbai-Surat couples doing Khanvel + Vasona Lion Safari; the museum sits off the main resort circuit. The Warli wedding-painting panels are arguably the most authentic art-historical artefact in the entire UT, and almost no one stops here.",
+    "best_time": "Weekday mornings 10 AM-12 PM; Sundays close at 1 PM. Closed Tuesdays.",
+    "how_to_reach": "2km from Silvassa town centre on Vasona-Lion-Safari road; auto 8 minutes; signed as 'Tribal Museum' on the Khanvel highway approach",
+    "tips": "Free entry. No photography of the Warli paintings (curatorial protection). Combine with the Hirwa Van Garden 5km further north for a half-day cultural-and-nature loop."
+  }
+]
