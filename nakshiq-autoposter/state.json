@@ -1,11 +1,6 @@
 {
   "yt_short_formats_used": [
-    "dont_go_here",
-    "this_vs_that",
-    "did_you_know",
-    "before_after",
-    "mini_guide",
-    "listicle"
+    "did_you_know"
   ],
   "yt_short_music_used": [
     "px_bollywood_hindi",
@@ -30,7 +25,8 @@
     "09_boom_bap_chill",
     "px_cinematic_bg",
     "00_amapiano_glow",
-    "v2_amapiano_deep"
+    "v2_amapiano_deep",
+    "px_ambient_bg"
   ],
   "posted_today": {
     "m8EAd_reel": "2026-05-09",
@@ -42,8 +38,8 @@
     "xBQy8_yt_short_count": 1,
     "5bWND_yt_short_count": 1,
     "GAh5p_reel": "2026-05-09",
-    "GAh5p_yt_short": "2026-05-08",
-    "GAh5p_yt_short_count": 2,
+    "GAh5p_yt_short": "2026-05-09",
+    "GAh5p_yt_short_count": 1,
     "PdMu0": "2026-05-08",
     "m8EAd": "2026-05-08",
     "m8EAd_evening": "2026-05-08",
@@ -357,6 +353,10 @@
     },
     {
       "destination_id": "srinagar",
+      "date": "2026-05-09"
+    },
+    {
+      "destination_id": "ukhrul",
       "date": "2026-05-09"
     }
   ],
@@ -1371,6 +1371,15 @@
       "destination": "srinagar",
       "format": "flow_story",
       "media_id": "flow_0839_9864d42f.jpg"
+    },
+    {
+      "timestamp": "2026-05-09T11:29:27.414368+00:00",
+      "date": "2026-05-09",
+      "platform": "youtube",
+      "post_id": "4wS3i",
+      "destination": "ukhrul",
+      "format": "yt_short.did_you_know",
+      "media_id": "yt_short_did_you_know_yt_short_did_you_know_2026-05-09.mp4"
     }
   ],
   "theme_usage": {
