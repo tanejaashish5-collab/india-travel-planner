@@ -7696,3 +7696,20 @@ requests.exceptions.HTTPError: 401 Client Error: UNAUTHORIZED for url: https://a
 2026-05-09 14:17:49  INFO      [facebook/Nakshiq] Already posted reel today — skipping.
 2026-05-09 14:17:49  INFO      State saved. Reel run complete.
 2026-05-09 14:17:49  INFO      ════════════════════════════════════════════════════════════
+2026-05-09 16:01:05  INFO      ════════════════════════════════════════════════════════════
+2026-05-09 16:01:05  INFO      Nakshiq Autoposter · REEL · 2026-05-09 · weekday=5
+2026-05-09 16:01:05  INFO      ════════════════════════════════════════════════════════════
+2026-05-09 16:01:05  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-05-09 16:01:19  INFO      Synced → 20 destinations · 0 traps · 0 articles · 23 routes · 50 treks · 100 eateries · total catalog=505
+2026-05-09 16:01:19  INFO      Format: seasonal_shift | Data: {'dest_name': 'Kalpa', 'dest_slug': 'kalpa', 'now_month': 'May', 'now_score': 5, 'future_month': 'August', 'future_score': 2}
+2026-05-09 16:01:30  INFO      Reel rendered: reel_seasonal_shift_kalpa.mp4 (2993 KB)
+2026-05-09 16:01:30  INFO          Requesting upload URL for reel_seasonal_shift_reel_seasonal_shift_kalpa.mp4 (3,065,552 bytes, video/mp4)
+2026-05-09 16:01:31  INFO          Uploading to R2 (timeout=300s)...
+2026-05-09 16:01:32  INFO          R2 PUT OK. Confirming...
+2026-05-09 16:01:33  INFO          Media ready: vQc8g (3,065,552 bytes · reel_seasonal_shift_reel_seasonal_shift_kalpa.mp4)
+2026-05-09 16:01:33  INFO      Video uploaded: reel_seasonal_shift_reel_seasonal_shift_kalpa.mp4
+2026-05-09 16:01:34  INFO      [youtube/@naksh-iq] Already posted reel today — skipping.
+2026-05-09 16:01:34  INFO      [instagram/nakshiq] Already posted reel today — skipping.
+2026-05-09 16:01:34  INFO      [facebook/Nakshiq] Already posted reel today — skipping.
+2026-05-09 16:01:34  INFO      State saved. Reel run complete.
+2026-05-09 16:01:34  INFO      ════════════════════════════════════════════════════════════
