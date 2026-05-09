@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-05-09T06:05:51.962Z",
+  "generated_at": "2026-05-09T08:16:24.306Z",
   "totals": {
-    "A": 53,
-    "B": 245,
+    "A": 63,
+    "B": 235,
     "C": 207,
     "total": 505
   },
@@ -42,8 +42,8 @@
     },
     {
       "state": "bihar",
-      "A": 2,
-      "B": 4,
+      "A": 3,
+      "B": 3,
       "C": 0,
       "total": 6
     },
@@ -98,8 +98,8 @@
     },
     {
       "state": "himachal-pradesh",
-      "A": 6,
-      "B": 26,
+      "A": 8,
+      "B": 24,
       "C": 2,
       "total": 34
     },
@@ -210,8 +210,8 @@
     },
     {
       "state": "rajasthan",
-      "A": 0,
-      "B": 23,
+      "A": 3,
+      "B": 20,
       "C": 0,
       "total": 23
     },
@@ -245,15 +245,15 @@
     },
     {
       "state": "uttar-pradesh",
-      "A": 0,
-      "B": 13,
+      "A": 2,
+      "B": 11,
       "C": 0,
       "total": 13
     },
     {
       "state": "uttarakhand",
-      "A": 6,
-      "B": 30,
+      "A": 8,
+      "B": 28,
       "C": 2,
       "total": 38
     },
@@ -268,11 +268,11 @@
   "gap_counts": [
     {
       "field": "gems",
-      "count": 422
+      "count": 414
     },
     {
       "field": "eats",
-      "count": 373
+      "count": 372
     },
     {
       "field": "months_prose",
@@ -280,7 +280,7 @@
     },
     {
       "field": "stays",
-      "count": 110
+      "count": 109
     }
   ],
   "destinations": [
@@ -5594,26 +5594,6 @@
       ]
     },
     {
-      "id": "bir-billing",
-      "name": "Bir Billing",
-      "state": "himachal-pradesh",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 2,
-        "eats": 13,
-        "stays": 3
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:2/3"
-      ]
-    },
-    {
       "id": "bomdila",
       "name": "Bomdila",
       "state": "arunachal-pradesh",
@@ -5924,26 +5904,6 @@
       "missing": [
         "gems:1/3",
         "eats:3/5"
-      ]
-    },
-    {
-      "id": "chopta",
-      "name": "Chopta",
-      "state": "uttarakhand",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 2,
-        "eats": 5,
-        "stays": 3
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:2/3"
       ]
     },
     {
@@ -6785,46 +6745,6 @@
       ]
     },
     {
-      "id": "jaipur",
-      "name": "Jaipur",
-      "state": "rajasthan",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 2,
-        "eats": 22,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:2/3"
-      ]
-    },
-    {
-      "id": "jaisalmer",
-      "name": "Jaisalmer",
-      "state": "rajasthan",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 2,
-        "eats": 6,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:2/3"
-      ]
-    },
-    {
       "id": "jibhi",
       "name": "Jibhi",
       "state": "himachal-pradesh",
@@ -6842,26 +6762,6 @@
       },
       "missing": [
         "gems:1/3"
-      ]
-    },
-    {
-      "id": "jodhpur",
-      "name": "Jodhpur",
-      "state": "rajasthan",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 2,
-        "eats": 11,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:2/3"
       ]
     },
     {
@@ -8014,26 +7914,6 @@
       ]
     },
     {
-      "id": "munsiyari",
-      "name": "Munsiyari",
-      "state": "uttarakhand",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 2,
-        "eats": 6,
-        "stays": 3
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:2/3"
-      ]
-    },
-    {
       "id": "nagarjuna-konda",
       "name": "Nagarjuna Konda",
       "state": "telangana",
@@ -8094,26 +7974,6 @@
       "missing": [
         "gems:0/3",
         "eats:3/5"
-      ]
-    },
-    {
-      "id": "nalanda",
-      "name": "Nalanda",
-      "state": "bihar",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 3,
-        "eats": 5,
-        "stays": 2
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "stays:2/3"
       ]
     },
     {
@@ -9442,26 +9302,6 @@
       ]
     },
     {
-      "id": "tirthan-valley",
-      "name": "Tirthan Valley",
-      "state": "himachal-pradesh",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 5,
-        "eats": 4,
-        "stays": 3
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "eats:4/5"
-      ]
-    },
-    {
       "id": "tirupati",
       "name": "Tirupati",
       "state": "andhra-pradesh",
@@ -9755,26 +9595,6 @@
       ]
     },
     {
-      "id": "varanasi",
-      "name": "Varanasi",
-      "state": "uttar-pradesh",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 2,
-        "eats": 14,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:2/3"
-      ]
-    },
-    {
       "id": "verinag",
       "name": "Verinag",
       "state": "jammu-kashmir",
@@ -9837,26 +9657,6 @@
       "missing": [
         "gems:0/3",
         "eats:0/5"
-      ]
-    },
-    {
-      "id": "vrindavan",
-      "name": "Vrindavan",
-      "state": "uttar-pradesh",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 2,
-        "eats": 7,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:2/3"
       ]
     },
     {
@@ -10111,6 +9911,24 @@
       "missing": []
     },
     {
+      "id": "bir-billing",
+      "name": "Bir Billing",
+      "state": "himachal-pradesh",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 13,
+        "stays": 3
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
       "id": "bodh-gaya",
       "name": "Bodh Gaya",
       "state": "bihar",
@@ -10157,6 +9975,24 @@
         "gems": 3,
         "eats": 17,
         "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "chopta",
+      "name": "Chopta",
+      "state": "uttarakhand",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 3
       },
       "has": {
         "tagline": true,
@@ -10282,6 +10118,60 @@
         "months_prose": 12,
         "gems": 3,
         "eats": 5,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "jaipur",
+      "name": "Jaipur",
+      "state": "rajasthan",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 22,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "jaisalmer",
+      "name": "Jaisalmer",
+      "state": "rajasthan",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 6,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "jodhpur",
+      "name": "Jodhpur",
+      "state": "rajasthan",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 11,
         "stays": 4
       },
       "has": {
@@ -10525,6 +10415,24 @@
       "missing": []
     },
     {
+      "id": "munsiyari",
+      "name": "Munsiyari",
+      "state": "uttarakhand",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 6,
+        "stays": 3
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
       "id": "mussoorie",
       "name": "Mussoorie",
       "state": "uttarakhand",
@@ -10552,6 +10460,24 @@
         "months_prose": 12,
         "gems": 5,
         "eats": 26,
+        "stays": 3
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "nalanda",
+      "name": "Nalanda",
+      "state": "bihar",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
         "stays": 3
       },
       "has": {
@@ -10903,6 +10829,24 @@
       "missing": []
     },
     {
+      "id": "tirthan-valley",
+      "name": "Tirthan Valley",
+      "state": "himachal-pradesh",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 5,
+        "eats": 5,
+        "stays": 3
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
       "id": "ukhrul",
       "name": "Ukhrul",
       "state": "manipur",
@@ -10913,6 +10857,42 @@
         "gems": 3,
         "eats": 5,
         "stays": 3
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "varanasi",
+      "name": "Varanasi",
+      "state": "uttar-pradesh",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 14,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "vrindavan",
+      "name": "Vrindavan",
+      "state": "uttar-pradesh",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 7,
+        "stays": 4
       },
       "has": {
         "tagline": true,
