@@ -47,7 +47,9 @@
     "PdMu0": "2026-05-08",
     "m8EAd": "2026-05-08",
     "m8EAd_evening": "2026-05-08",
-    "PdMu0_evening": "2026-05-08"
+    "PdMu0_evening": "2026-05-08",
+    "m8EAd_canva": "2026-05-09",
+    "PdMu0_canva": "2026-05-09"
   },
   "last_sync": "2026-05-08T12:56:37.727171+00:00",
   "posted_destinations": [
@@ -345,6 +347,10 @@
     },
     {
       "destination_id": "guptkashi",
+      "date": "2026-05-09"
+    },
+    {
+      "destination_id": "delhi",
       "date": "2026-05-09"
     }
   ],
@@ -1323,6 +1329,24 @@
       "destination": "guptkashi",
       "format": "reel.destination_reveal",
       "media_id": "reel_destination_reveal_reel_destination_reveal_guptkashi.mp4"
+    },
+    {
+      "timestamp": "2026-05-09T06:35:54.319524+00:00",
+      "date": "2026-05-09",
+      "platform": "instagram",
+      "post_id": "4wy2i",
+      "destination": "delhi",
+      "format": "canva_visual",
+      "media_id": "food/delhi_DL_01.jpg"
+    },
+    {
+      "timestamp": "2026-05-09T06:35:57.431696+00:00",
+      "date": "2026-05-09",
+      "platform": "facebook",
+      "post_id": "LWpFV",
+      "destination": "delhi",
+      "format": "canva_visual",
+      "media_id": "food/delhi_DL_01.jpg"
     }
   ],
   "theme_usage": {
@@ -1598,6 +1622,9 @@
       ],
       "activities": [
         "2026-04-26"
+      ],
+      "food": [
+        "2026-05-09"
       ]
     },
     "canva_images": {
@@ -1612,6 +1639,9 @@
       ],
       "activities/trek_india_01.jpg": [
         "2026-04-26"
+      ],
+      "food/delhi_DL_01.jpg": [
+        "2026-05-09"
       ]
     },
     "reels": {
