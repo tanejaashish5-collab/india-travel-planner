@@ -7660,3 +7660,22 @@ requests.exceptions.HTTPError: 401 Client Error: UNAUTHORIZED for url: https://a
 2026-05-09 11:30:17  INFO      YT Short posted: format=did_you_know, music=px_ambient_bg
 2026-05-09 11:30:17  INFO      State saved. YT Short run complete.
 2026-05-09 11:30:17  INFO      ════════════════════════════════════════════════════════════
+2026-05-09 12:12:40  INFO      ════════════════════════════════════════════════════════════
+2026-05-09 12:12:40  INFO      Nakshiq Autoposter · YT SHORT · 2026-05-09
+2026-05-09 12:12:40  INFO      ════════════════════════════════════════════════════════════
+2026-05-09 12:14:10  INFO      Short rendered: yt_short_listicle_2026-05-09.mp4 (19881 KB, 35.0s, fmt=listicle, music=07_synthwave_run)
+2026-05-09 12:14:10  INFO          Requesting upload URL for yt_short_listicle_yt_short_listicle_2026-05-09.mp4 (20,359,036 bytes, video/mp4)
+2026-05-09 12:14:11  INFO          Uploading to R2 (timeout=300s)...
+2026-05-09 12:14:13  INFO          R2 PUT OK. Confirming...
+2026-05-09 12:14:14  INFO          Media ready: Sc7VJ (20,359,036 bytes · yt_short_listicle_yt_short_listicle_2026-05-09.mp4)
+2026-05-09 12:14:14  INFO      Video uploaded: yt_short_listicle_yt_short_listicle_2026-05-09.mp4
+2026-05-09 12:14:15  INFO      [youtube/@naksh-iq] Publishing YT Short (listicle)...
+2026-05-09 12:14:21  INFO      [youtube/@naksh-iq] Outstand accepted (post_id=rU2p4), waiting for platform confirmation...
+2026-05-09 12:14:39  INFO      [youtube/@naksh-iq] ✅ YT Short published · Outstand=rU2p4 · Platform=0p9VSgXi-Kw
+2026-05-09 12:14:39  INFO      [instagram/nakshiq] Publishing YT Short (listicle)...
+2026-05-09 12:14:41  INFO      [instagram/nakshiq] Outstand accepted (post_id=KHUA9), waiting for platform confirmation...
+2026-05-09 12:15:29  WARNING   [instagram/nakshiq] ⚠️  YT Short queued but NOT confirmed (post_id=KHUA9). May have silently failed.
+2026-05-09 12:15:29  INFO      [facebook/Nakshiq] Skipping (YT Shorts post to YouTube + Instagram only).
+2026-05-09 12:15:29  INFO      YT Short posted: format=listicle, music=07_synthwave_run
+2026-05-09 12:15:29  INFO      State saved. YT Short run complete.
+2026-05-09 12:15:29  INFO      ════════════════════════════════════════════════════════════
