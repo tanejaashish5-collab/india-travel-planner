@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-05-09T08:16:24.306Z",
+  "generated_at": "2026-05-09T08:35:52.926Z",
   "totals": {
-    "A": 63,
-    "B": 235,
+    "A": 73,
+    "B": 225,
     "C": 207,
     "total": 505
   },
@@ -28,8 +28,8 @@
     },
     {
       "state": "arunachal-pradesh",
-      "A": 0,
-      "B": 9,
+      "A": 1,
+      "B": 8,
       "C": 2,
       "total": 11
     },
@@ -98,15 +98,15 @@
     },
     {
       "state": "himachal-pradesh",
-      "A": 8,
-      "B": 24,
+      "A": 11,
+      "B": 21,
       "C": 2,
       "total": 34
     },
     {
       "state": "jammu-kashmir",
-      "A": 1,
-      "B": 16,
+      "A": 2,
+      "B": 15,
       "C": 1,
       "total": 18
     },
@@ -133,8 +133,8 @@
     },
     {
       "state": "ladakh",
-      "A": 1,
-      "B": 11,
+      "A": 2,
+      "B": 10,
       "C": 2,
       "total": 14
     },
@@ -168,8 +168,8 @@
     },
     {
       "state": "meghalaya",
-      "A": 1,
-      "B": 8,
+      "A": 2,
+      "B": 7,
       "C": 0,
       "total": 9
     },
@@ -210,8 +210,8 @@
     },
     {
       "state": "rajasthan",
-      "A": 3,
-      "B": 20,
+      "A": 4,
+      "B": 19,
       "C": 0,
       "total": 23
     },
@@ -245,15 +245,15 @@
     },
     {
       "state": "uttar-pradesh",
-      "A": 2,
-      "B": 11,
+      "A": 3,
+      "B": 10,
       "C": 0,
       "total": 13
     },
     {
       "state": "uttarakhand",
-      "A": 8,
-      "B": 28,
+      "A": 9,
+      "B": 27,
       "C": 2,
       "total": 38
     },
@@ -268,11 +268,11 @@
   "gap_counts": [
     {
       "field": "gems",
-      "count": 414
+      "count": 405
     },
     {
       "field": "eats",
-      "count": 372
+      "count": 369
     },
     {
       "field": "months_prose",
@@ -280,7 +280,7 @@
     },
     {
       "field": "stays",
-      "count": 109
+      "count": 108
     }
   ],
   "destinations": [
@@ -4901,26 +4901,6 @@
       ]
     },
     {
-      "id": "agra",
-      "name": "Agra",
-      "state": "uttar-pradesh",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 1,
-        "eats": 12,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:1/3"
-      ]
-    },
-    {
       "id": "ahobilam",
       "name": "Ahobilam",
       "state": "andhra-pradesh",
@@ -5676,27 +5656,6 @@
       ]
     },
     {
-      "id": "chamba",
-      "name": "Chamba",
-      "state": "himachal-pradesh",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 2,
-        "eats": 8,
-        "stays": 2
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:2/3",
-        "stays:2/3"
-      ]
-    },
-    {
       "id": "champawat",
       "name": "Champawat",
       "state": "uttarakhand",
@@ -5781,27 +5740,6 @@
       ]
     },
     {
-      "id": "cherrapunji",
-      "name": "Cherrapunji (Sohra)",
-      "state": "meghalaya",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 2,
-        "eats": 4,
-        "stays": 3
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:2/3",
-        "eats:4/5"
-      ]
-    },
-    {
       "id": "chidiya-tapu",
       "name": "Chidiya Tapu",
       "state": "andaman-nicobar",
@@ -5842,26 +5780,6 @@
         "gems:0/3",
         "eats:0/5",
         "stays:2/3"
-      ]
-    },
-    {
-      "id": "chitkul",
-      "name": "Chitkul",
-      "state": "himachal-pradesh",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 3,
-        "eats": 3,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "eats:3/5"
       ]
     },
     {
@@ -6639,26 +6557,6 @@
         "gems:1/3",
         "eats:4/5",
         "stays:1/3"
-      ]
-    },
-    {
-      "id": "haridwar",
-      "name": "Haridwar",
-      "state": "uttarakhand",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 1,
-        "eats": 29,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:1/3"
       ]
     },
     {
@@ -7751,26 +7649,6 @@
       ]
     },
     {
-      "id": "mcleodganj",
-      "name": "McLeod Ganj",
-      "state": "himachal-pradesh",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 1,
-        "eats": 15,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:1/3"
-      ]
-    },
-    {
       "id": "mechuka",
       "name": "Mechuka",
       "state": "arunachal-pradesh",
@@ -8233,26 +8111,6 @@
       ]
     },
     {
-      "id": "pahalgam",
-      "name": "Pahalgam",
-      "state": "jammu-kashmir",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 1,
-        "eats": 11,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:1/3"
-      ]
-    },
-    {
       "id": "palampur",
       "name": "Palampur",
       "state": "himachal-pradesh",
@@ -8262,26 +8120,6 @@
         "months_prose": 12,
         "gems": 1,
         "eats": 10,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:1/3"
-      ]
-    },
-    {
-      "id": "pangong-lake",
-      "name": "Pangong Tso",
-      "state": "ladakh",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 1,
-        "eats": 7,
         "stays": 4
       },
       "has": {
@@ -8739,26 +8577,6 @@
         "months_prose": 12,
         "gems": 1,
         "eats": 8,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:1/3"
-      ]
-    },
-    {
-      "id": "ranthambore",
-      "name": "Ranthambore",
-      "state": "rajasthan",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 1,
-        "eats": 5,
         "stays": 4
       },
       "has": {
@@ -9258,27 +9076,6 @@
       "missing": [
         "gems:0/3",
         "eats:0/5"
-      ]
-    },
-    {
-      "id": "tawang",
-      "name": "Tawang",
-      "state": "arunachal-pradesh",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 2,
-        "eats": 4,
-        "stays": 3
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:2/3",
-        "eats:4/5"
       ]
     },
     {
@@ -9803,6 +9600,24 @@
       "missing": []
     },
     {
+      "id": "agra",
+      "name": "Agra",
+      "state": "uttar-pradesh",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 12,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
       "id": "aizawl",
       "name": "Aizawl",
       "state": "mizoram",
@@ -9947,6 +9762,24 @@
       "missing": []
     },
     {
+      "id": "chamba",
+      "name": "Chamba",
+      "state": "himachal-pradesh",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 8,
+        "stays": 3
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
       "id": "champhai",
       "name": "Champhai",
       "state": "mizoram",
@@ -9974,6 +9807,42 @@
         "months_prose": 12,
         "gems": 3,
         "eats": 17,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "cherrapunji",
+      "name": "Cherrapunji (Sohra)",
+      "state": "meghalaya",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 3
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "chitkul",
+      "name": "Chitkul",
+      "state": "himachal-pradesh",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
         "stays": 4
       },
       "has": {
@@ -10082,6 +9951,24 @@
         "months_prose": 12,
         "gems": 3,
         "eats": 8,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "haridwar",
+      "name": "Haridwar",
+      "state": "uttarakhand",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 29,
         "stays": 4
       },
       "has": {
@@ -10397,6 +10284,24 @@
       "missing": []
     },
     {
+      "id": "mcleodganj",
+      "name": "McLeod Ganj",
+      "state": "himachal-pradesh",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 15,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
       "id": "mokokchung",
       "name": "Mokokchung",
       "state": "nagaland",
@@ -10523,6 +10428,42 @@
       "missing": []
     },
     {
+      "id": "pahalgam",
+      "name": "Pahalgam",
+      "state": "jammu-kashmir",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 11,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "pangong-lake",
+      "name": "Pangong Tso",
+      "state": "ladakh",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 7,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
       "id": "patiala",
       "name": "Patiala",
       "state": "punjab",
@@ -10604,6 +10545,24 @@
         "months_prose": 12,
         "gems": 3,
         "eats": 8,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "ranthambore",
+      "name": "Ranthambore",
+      "state": "rajasthan",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
         "stays": 4
       },
       "has": {
@@ -10821,6 +10780,24 @@
         "gems": 3,
         "eats": 5,
         "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "tawang",
+      "name": "Tawang",
+      "state": "arunachal-pradesh",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 3
       },
       "has": {
         "tagline": true,
