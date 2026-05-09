@@ -33,57 +33,24 @@
     "v2_amapiano_deep"
   ],
   "posted_today": {
-    "m8EAd_reel": "2026-05-08",
-    "PdMu0_reel": "2026-05-08",
+    "m8EAd_reel": "2026-05-09",
+    "PdMu0_reel": "2026-05-09",
     "m8EAd_yt_short": "2026-05-08",
     "m8EAd_yt_short_count": 2,
     "jUmP2_yt_short_count": 1,
     "36BUk_yt_short_count": 1,
     "xBQy8_yt_short_count": 1,
     "5bWND_yt_short_count": 1,
-    "GAh5p_reel": "2026-05-08",
+    "GAh5p_reel": "2026-05-09",
     "GAh5p_yt_short": "2026-05-08",
     "GAh5p_yt_short_count": 2,
     "PdMu0": "2026-05-08",
     "m8EAd": "2026-05-08",
-    "GAh5p_reel_map": "2026-05-07",
-    "m8EAd_reel_map": "2026-05-07",
-    "PdMu0_reel_map": "2026-05-07",
     "m8EAd_evening": "2026-05-08",
-    "PdMu0_evening": "2026-05-08",
-    "m8EAd_tourist_map": "2026-05-07",
-    "PdMu0_tourist_map": "2026-05-07"
+    "PdMu0_evening": "2026-05-08"
   },
   "last_sync": "2026-05-08T12:56:37.727171+00:00",
   "posted_destinations": [
-    {
-      "destination_id": "yuksom",
-      "date": "2026-04-24"
-    },
-    {
-      "destination_id": "sarahan",
-      "date": "2026-04-24"
-    },
-    {
-      "destination_id": "reel_seasonal_shift_reel_seasonal_shift_kausani",
-      "date": "2026-04-24"
-    },
-    {
-      "destination_id": "phawngpui-peak",
-      "date": "2026-04-24"
-    },
-    {
-      "destination_id": "phawngpui-peak",
-      "date": "2026-04-24"
-    },
-    {
-      "destination_id": "tehri",
-      "date": "2026-04-24"
-    },
-    {
-      "destination_id": "bir-billing",
-      "date": "2026-04-24"
-    },
     {
       "destination_id": "kokernag",
       "date": "2026-04-25"
@@ -375,6 +342,10 @@
     {
       "destination_id": "chopta",
       "date": "2026-05-08"
+    },
+    {
+      "destination_id": "guptkashi",
+      "date": "2026-05-09"
     }
   ],
   "posted_formats": {
@@ -1325,6 +1296,33 @@
       "format": "score_card",
       "has_media": true,
       "media_id": "chopta.mp4"
+    },
+    {
+      "timestamp": "2026-05-09T06:08:23.484651+00:00",
+      "date": "2026-05-09",
+      "platform": "youtube",
+      "post_id": "g24ux",
+      "destination": "guptkashi",
+      "format": "reel.destination_reveal",
+      "media_id": "reel_destination_reveal_reel_destination_reveal_guptkashi.mp4"
+    },
+    {
+      "timestamp": "2026-05-09T06:09:02.674015+00:00",
+      "date": "2026-05-09",
+      "platform": "instagram",
+      "post_id": "OyeZv",
+      "destination": "guptkashi",
+      "format": "reel.destination_reveal",
+      "media_id": "reel_destination_reveal_reel_destination_reveal_guptkashi.mp4"
+    },
+    {
+      "timestamp": "2026-05-09T06:09:17.450467+00:00",
+      "date": "2026-05-09",
+      "platform": "facebook",
+      "post_id": "yoh8j",
+      "destination": "guptkashi",
+      "format": "reel.destination_reveal",
+      "media_id": "reel_destination_reveal_reel_destination_reveal_guptkashi.mp4"
     }
   ],
   "theme_usage": {
@@ -1505,7 +1503,8 @@
         "2026-05-01",
         "2026-05-03",
         "2026-05-05",
-        "2026-05-07"
+        "2026-05-07",
+        "2026-05-09"
       ]
     },
     "reel_seasonal_dests": {
@@ -1582,6 +1581,9 @@
       ],
       "sarahan": [
         "2026-05-07"
+      ],
+      "guptkashi": [
+        "2026-05-09"
       ]
     },
     "canva_categories": {

@@ -7545,3 +7545,27 @@ requests.exceptions.HTTPError: 401 Client Error: UNAUTHORIZED for url: https://a
 2026-05-08 19:44:04  INFO      
 Date range: 2026-04-15 → 2026-05-08
 2026-05-08 19:44:04  INFO      ════════════════════════════════════════════════════════════
+2026-05-09 06:07:48  INFO      ════════════════════════════════════════════════════════════
+2026-05-09 06:07:48  INFO      Nakshiq Autoposter · REEL · 2026-05-09 · weekday=5
+2026-05-09 06:07:48  INFO      ════════════════════════════════════════════════════════════
+2026-05-09 06:07:48  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-05-09 06:08:04  INFO      Synced → 20 destinations · 0 traps · 0 articles · 23 routes · 50 treks · 100 eateries · total catalog=505
+2026-05-09 06:08:04  INFO      Format: destination_reveal | Data: {'dest_name': 'Guptkashi', 'dest_slug': 'guptkashi', 'state_name': 'Uttarakhand', 'score': 5, 'tagline': 'The last comfortable town before Kedarnath — where smart pilgrims base themselves instead of suffering at 3583m.'}
+2026-05-09 06:08:09  INFO      Reel rendered: reel_destination_reveal_guptkashi.mp4 (1204 KB)
+2026-05-09 06:08:09  INFO          Requesting upload URL for reel_destination_reveal_reel_destination_reveal_guptkashi.mp4 (1,233,368 bytes, video/mp4)
+2026-05-09 06:08:09  INFO          Uploading to R2 (timeout=300s)...
+2026-05-09 06:08:11  INFO          R2 PUT OK. Confirming...
+2026-05-09 06:08:12  INFO          Media ready: zeJ0P (1,233,368 bytes · reel_destination_reveal_reel_destination_reveal_guptkashi.mp4)
+2026-05-09 06:08:12  INFO      Video uploaded: reel_destination_reveal_reel_destination_reveal_guptkashi.mp4
+2026-05-09 06:08:13  INFO      [youtube/@naksh-iq] Publishing reel (destination_reveal)...
+2026-05-09 06:08:17  INFO      [youtube/@naksh-iq] Outstand accepted (post_id=g24ux), confirming...
+2026-05-09 06:08:23  INFO      [youtube/@naksh-iq] ✅ Reel published · Outstand=g24ux · Platform=TI_Fpg8G2_A
+2026-05-09 06:08:23  INFO      [instagram/nakshiq] Publishing reel (destination_reveal)...
+2026-05-09 06:08:26  INFO      [instagram/nakshiq] Outstand accepted (post_id=OyeZv), confirming...
+2026-05-09 06:09:02  INFO      [instagram/nakshiq] ✅ Reel published · Outstand=OyeZv · Platform=17872516665668080
+2026-05-09 06:09:02  INFO      [facebook/Nakshiq] Publishing reel (destination_reveal)...
+2026-05-09 06:09:05  INFO      [facebook/Nakshiq] Outstand accepted (post_id=yoh8j), confirming...
+2026-05-09 06:09:17  INFO      [facebook/Nakshiq] ✅ Reel published · Outstand=yoh8j · Platform=26824227817213871
+2026-05-09 06:09:17  INFO      Theme tracker updated: format=destination_reveal
+2026-05-09 06:09:17  INFO      State saved. Reel run complete.
+2026-05-09 06:09:17  INFO      ════════════════════════════════════════════════════════════
