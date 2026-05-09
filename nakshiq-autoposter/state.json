@@ -49,7 +49,9 @@
     "m8EAd_evening": "2026-05-08",
     "PdMu0_evening": "2026-05-08",
     "m8EAd_canva": "2026-05-09",
-    "PdMu0_canva": "2026-05-09"
+    "PdMu0_canva": "2026-05-09",
+    "m8EAd_flow_story": "2026-05-09",
+    "PdMu0_flow_story": "2026-05-09"
   },
   "last_sync": "2026-05-08T12:56:37.727171+00:00",
   "posted_destinations": [
@@ -351,6 +353,10 @@
     },
     {
       "destination_id": "delhi",
+      "date": "2026-05-09"
+    },
+    {
+      "destination_id": "srinagar",
       "date": "2026-05-09"
     }
   ],
@@ -1347,6 +1353,24 @@
       "destination": "delhi",
       "format": "canva_visual",
       "media_id": "food/delhi_DL_01.jpg"
+    },
+    {
+      "timestamp": "2026-05-09T10:55:03.739572+00:00",
+      "date": "2026-05-09",
+      "platform": "instagram",
+      "post_id": "yosej",
+      "destination": "srinagar",
+      "format": "flow_story",
+      "media_id": "flow_0839_9864d42f.jpg"
+    },
+    {
+      "timestamp": "2026-05-09T10:55:05.542405+00:00",
+      "date": "2026-05-09",
+      "platform": "facebook",
+      "post_id": "g2nPx",
+      "destination": "srinagar",
+      "format": "flow_story",
+      "media_id": "flow_0839_9864d42f.jpg"
     }
   ],
   "theme_usage": {
@@ -1903,6 +1927,9 @@
       ],
       "flow_c5abeebb-d45d-40e0-ae91-99b7332955ba.jpg": [
         "2026-05-05"
+      ],
+      "flow_0839_9864d42f.jpg": [
+        "2026-05-09"
       ]
     },
     "collection_carousel_dests:andaman-diving-snorkeling": {},
