@@ -75,6 +75,13 @@ MORNING_FORMATS = [
     # ── Tier 2.5 (added 2026-05-05) — fresh content sources beyond destinations ──
     "eateries_pick",        # legendary local eatery + insider tip
     "trek_intel",           # trek with altitude + permit + best months
+    # ── Tier 6 (added 2026-05-10) — close the data-vertical coverage gap ──
+    "stays_pick",           # editor-curated stay pick (signature_experience)
+    "emergency_intel",      # per-dest SOS contacts + local helper
+    "viral_eats_pick",      # viral-on-X eatery + honest review
+    "camping_intel",        # camping spot with permit/water/facilities
+    "confidence_intel",     # unified reach+sleep+fuel+network report card
+    "collection_series",    # themed multi-post (root bridges / sacred lakes / etc)
 ]
 
 # Legacy weekday-based schedule (kept for fallback only — round-robin is primary)
@@ -1013,6 +1020,14 @@ def sync_all_content() -> dict:
         "routes":       nakshiq_fetch("routes",       {"month": month, "limit": 50}),
         "treks":        nakshiq_fetch("treks",        {"month": month, "limit": 50}),
         "eateries":     nakshiq_fetch("eateries",     {"limit": 100}),
+        # Tier 6 (2026-05-10) — close coverage gap on stays / emergency / viral
+        # eats / camping / hidden gems verticals. Each backed by /api/content
+        # types added in the same commit.
+        "stays":        nakshiq_fetch("stays",        {"limit": 100}),
+        "emergency":    nakshiq_fetch("emergency",    {"limit": 100}),
+        "viral_eats":   nakshiq_fetch("viral_eats",   {"limit": 100}),
+        "camping":      nakshiq_fetch("camping",      {"month": month, "limit": 50}),
+        "hidden_gems":  nakshiq_fetch("hidden_gems",  {"limit": 50}),
     }
     # Keep TOTAL_DESTINATIONS in sync with the real catalog size.
     global TOTAL_DESTINATIONS
@@ -1026,6 +1041,11 @@ def sync_all_content() -> dict:
         f"{len(content['routes'].get('data',[]))} routes · "
         f"{len(content['treks'].get('data',[]))} treks · "
         f"{len(content['eateries'].get('data',[]))} eateries · "
+        f"{len(content['stays'].get('data',[]))} stays · "
+        f"{len(content['emergency'].get('data',[]))} sos · "
+        f"{len(content['viral_eats'].get('data',[]))} viral · "
+        f"{len(content['camping'].get('data',[]))} camping · "
+        f"{len(content['hidden_gems'].get('data',[]))} gems · "
         f"total catalog={TOTAL_DESTINATIONS}"
     )
     return content
@@ -1258,6 +1278,42 @@ def pick_morning_format(state: dict, content: dict) -> str:
             if fmt == "trek_intel":
                 treks = content.get("treks", {}).get("data", []) or []
                 if not treks:
+                    continue
+            # Tier 6 — close the coverage gap on stays / emergency / viral eats /
+            # camping / confidence cards / collections. Each guarded by the
+            # corresponding /api/content type populating in sync_all_content.
+            if fmt == "stays_pick":
+                stays = content.get("stays", {}).get("data", []) or []
+                if not stays:
+                    continue
+            if fmt == "emergency_intel":
+                sos = content.get("emergency", {}).get("data", []) or []
+                # Floor at 5 — guarantees the round-robin doesn't lock onto the
+                # same destination if the API returns a thin slice for a day.
+                if len(sos) < 5:
+                    continue
+            if fmt == "viral_eats_pick":
+                viral = content.get("viral_eats", {}).get("data", []) or []
+                if not viral:
+                    continue
+            if fmt == "camping_intel":
+                camps = content.get("camping", {}).get("data", []) or []
+                if not camps:
+                    continue
+            if fmt == "confidence_intel":
+                # Needs at least one high-scoring dest with a populated reach OR
+                # network confidence card so the report-card has 2+ filled rows.
+                # Fallback to score_card otherwise (no point posting an empty
+                # infrastructure report).
+                rich = [d for d in dests if (d.get("score") or 0) >= 4]
+                if not rich:
+                    continue
+            if fmt == "collection_series":
+                colls = content.get("collections", {}).get("data", []) or []
+                # Need at least one collection with 5+ items so the mini-series
+                # has enough rotation. Single-item collections become trivia.
+                eligible_colls = [c for c in colls if (c.get("itemCount") or 0) >= 5]
+                if not eligible_colls:
                     continue
             eligible.append(fmt)
 
@@ -2096,6 +2152,521 @@ def copy_trek_intel(trek: dict, dest_map: dict, platform: str) -> str:
 
 
 # ─────────────────────────────────────────────────────────────────────────────
+# TIER 6 — closes the data-vertical coverage gap (added 2026-05-10)
+# -----------------------------------------------------------------------------
+# Five missing verticals + one fragmented angle become first-class formats:
+#   stays_pick       — editor-curated stay (signature_experience, why_nakshiq)
+#   emergency_intel  — per-dest SOS (police, hospital, local_helpers contact)
+#   viral_eats_pick  — viral-on-Reels eatery + honest review
+#   camping_intel    — camping spot (permit, water, facilities)
+#   confidence_intel — unified reach + sleep + fuel + network report card
+#   collection_series — themed multi-post (root bridges / sacred lakes / etc)
+# Voice: same as Tier 2.5 (data-first, decision-ready, no hype).
+# ─────────────────────────────────────────────────────────────────────────────
+
+
+def copy_stays_pick(stay: dict, dest_map: dict, platform: str) -> str:
+    """Editor-curated stay pick — signature experience drives the hook.
+
+    Inputs (per /api/content?type=stays):
+      destination_id, destination_name, state, slot, name, property_type,
+      price_band, why_nakshiq, signature_experience, contact_only.
+
+    Voice anchor: "Where to actually sleep — picked, not advertised."
+    """
+    try:
+        name      = (stay.get("name") or "").strip()
+        dest_id   = stay.get("destination_id")
+        dest_name = stay.get("destination_name") or (dest_map.get(dest_id, {}).get("name") if dest_id else None)
+        prop_type = (stay.get("property_type") or "").strip()
+        price     = (stay.get("price_band") or "").strip()
+        why       = (stay.get("why_nakshiq") or "").strip()
+        sig       = (stay.get("signature_experience") or "").strip()
+        contact_only = bool(stay.get("contact_only"))
+        dest_state = (stay.get("state") or "").strip()
+
+        if not name or not dest_id:
+            return copy_score_card(dest_map.get(dest_id) or {}, platform)
+
+        if dest_id in dest_map:
+            url = dest_url(dest_map[dest_id], "social", "post", "stays-pick",
+                           content=build_utm_content(dest_id, "stays_pick"))
+        else:
+            url = utm("https://nakshiq.com/en", "social", "post", "stays-pick",
+                      content=build_utm_content(dest_id, "stays_pick"))
+
+        meta_parts: list[str] = []
+        if prop_type:
+            meta_parts.append(prop_type.title())
+        if price:
+            meta_parts.append(price)
+        if contact_only:
+            meta_parts.append("contact-only booking")
+        meta_line = " · ".join(meta_parts)
+
+        hashtag_inputs = [name.replace(" ", "")[:24] or "Stay"]
+        if dest_state:
+            hashtag_inputs.append(dest_state.replace(" ", ""))
+        hashtag_inputs.extend(["StayIndia", "NakshIQ"])
+        tags = hashtag(*hashtag_inputs[:5])
+
+        if platform == "facebook":
+            return (
+                f"🛏️ STAY PICK — {name.upper()}\n"
+                + (f"📍 {dest_name}\n" if dest_name else "")
+                + (f"\n{meta_line}\n" if meta_line else "")
+                + (f"\n{why}\n" if why else "")
+                + (f"\n💡 Signature: {sig}\n" if sig else "")
+                + f"\nWhere to actually sleep in {dest_name or 'India'} — picked, not advertised. → {url}\n\n{tags}"
+            ).strip()
+        else:
+            return (
+                f"🛏️ {name.upper()}\n"
+                + (f"📍 {dest_name}\n\n" if dest_name else "\n")
+                + (f"{meta_line}\n" if meta_line else "")
+                + (f"\n{why}\n" if why else "")
+                + (f"\n💡 {sig}\n" if sig else "")
+                + f"\nNo sponsored picks — ever.\n↓ Full stay guide → {url}\n\n{tags}"
+            ).strip()
+    except Exception as e:
+        log.warning(f"copy_stays_pick error: {e}")
+        if stay.get("destination_id") and stay["destination_id"] in dest_map:
+            return copy_score_card(dest_map[stay["destination_id"]], platform)
+        return ""
+
+
+def copy_emergency_intel(sos: dict, dest_map: dict, platform: str) -> str:
+    """Per-dest emergency intel — phones + nearest hospital + one local helper.
+
+    Inputs (per /api/content?type=emergency):
+      destination_id, destination_name, state, police, ambulance,
+      nearest_hospital, nearest_hospital_km, women_helpline, mountain_rescue,
+      rescue_contact, local_helpers (array of {name, role, contact, note}).
+
+    Voice anchor: "If something goes wrong here, this is who to call."
+    NakshIQ moat: no other India travel account posts real per-dest contacts.
+    """
+    try:
+        dest_id   = sos.get("destination_id")
+        dest_name = sos.get("destination_name") or (dest_map.get(dest_id, {}).get("name") if dest_id else None)
+        dest_state = (sos.get("state") or "").strip()
+        if not dest_id or not dest_name:
+            return ""
+
+        helpers = sos.get("local_helpers") or []
+        helper = helpers[0] if isinstance(helpers, list) and helpers else None
+
+        # Phone lines — only show fields that are present and non-trivial
+        phone_lines: list[str] = []
+        if sos.get("police"):
+            phone_lines.append(f"🚓 Police: {sos['police']}")
+        if sos.get("ambulance"):
+            phone_lines.append(f"🚑 Ambulance: {sos['ambulance']}")
+        if sos.get("nearest_hospital"):
+            km = sos.get("nearest_hospital_km")
+            km_str = f" ({km}km away)" if km else ""
+            phone_lines.append(f"🏥 {sos['nearest_hospital']}{km_str}")
+        if sos.get("mountain_rescue"):
+            phone_lines.append(f"⛰️ Mountain rescue: {sos['mountain_rescue']}")
+        elif sos.get("rescue_contact"):
+            phone_lines.append(f"🆘 Rescue: {sos['rescue_contact']}")
+        if sos.get("women_helpline"):
+            phone_lines.append(f"👩 Women helpline: {sos['women_helpline']}")
+
+        phone_block = "\n".join(phone_lines[:4])  # cap at 4 lines for visual
+
+        # Helper card
+        helper_block = ""
+        if helper and helper.get("name") and helper.get("contact"):
+            helper_role = (helper.get("role") or "").strip()
+            helper_contact = (helper.get("contact") or "").strip()
+            helper_block = (
+                f"\n🤝 Local helper: {helper['name']}"
+                + (f" ({helper_role})" if helper_role else "")
+                + f"\n📞 {helper_contact}"
+            )
+
+        if dest_id in dest_map:
+            url = dest_url(dest_map[dest_id], "social", "post", "emergency-intel",
+                           content=build_utm_content(dest_id, "emergency_intel"))
+        else:
+            url = utm(f"https://nakshiq.com/en/destination/{dest_id}", "social", "post",
+                      "emergency-intel", content=build_utm_content(dest_id, "emergency_intel"))
+
+        hashtag_inputs = [dest_name.replace(" ", "")[:24] or "TravelSafety"]
+        if dest_state:
+            hashtag_inputs.append(dest_state.replace(" ", ""))
+        hashtag_inputs.extend(["TravelSafetyIndia", "EmergencyIntel", "NakshIQ"])
+        tags = hashtag(*hashtag_inputs[:5])
+
+        if platform == "facebook":
+            return (
+                f"🚨 IF SOMETHING GOES WRONG IN {dest_name.upper()}\n\n"
+                f"This is who to call. Verified, not crowdsourced.\n\n"
+                + (f"{phone_block}\n" if phone_block else "")
+                + (helper_block + "\n" if helper_block else "")
+                + f"\nNakshIQ verifies every contact through district sources. No tourist board theatre.\n"
+                f"Full safety brief for {dest_name} → {url}\n\n{tags}"
+            ).strip()
+        else:
+            return (
+                f"🚨 EMERGENCY INTEL — {dest_name.upper()}\n"
+                + (f"📍 {dest_state}\n" if dest_state else "")
+                + f"\nIf something goes wrong here, this is who to call.\n\n"
+                + (f"{phone_block}\n" if phone_block else "")
+                + (helper_block + "\n" if helper_block else "")
+                + f"\n💾 Save this — pull it up before you arrive.\n↓ Full safety brief → {url}\n\n{tags}"
+            ).strip()
+    except Exception as e:
+        log.warning(f"copy_emergency_intel error: {e}")
+        if sos.get("destination_id") and sos["destination_id"] in dest_map:
+            return copy_score_card(dest_map[sos["destination_id"]], platform)
+        return ""
+
+
+def copy_viral_eats_pick(viral: dict, dest_map: dict, platform: str) -> str:
+    """Viral-on-X eatery — different angle from local_eateries (insider) — this
+    one is "the place that went viral, here's the honest take".
+
+    Inputs (per /api/content?type=viral_eats):
+      name, location, type, famous_for, viral_on, price_range, honest_review,
+      destination_id, destination_name, state.
+
+    Voice anchor: "Viral on Reels. Here's whether it's actually worth it."
+    """
+    try:
+        name      = (viral.get("name") or "").strip()
+        location  = (viral.get("location") or "").strip()
+        kind      = (viral.get("type") or "").strip()
+        famous    = (viral.get("famous_for") or "").strip()
+        viral_on  = (viral.get("viral_on") or "").strip()
+        price     = (viral.get("price_range") or "").strip()
+        review    = (viral.get("honest_review") or "").strip()
+        dest_id   = viral.get("destination_id")
+        dest_name = viral.get("destination_name") or (dest_map.get(dest_id, {}).get("name") if dest_id else None)
+        dest_state = (viral.get("state") or "").strip()
+
+        if not name:
+            return copy_score_card(dest_map.get(dest_id) or {}, platform)
+
+        if dest_id and dest_id in dest_map:
+            url = dest_url(dest_map[dest_id], "social", "post", "viral-eats",
+                           content=build_utm_content(dest_id, "viral_eats_pick"))
+        else:
+            url = utm("https://nakshiq.com/en", "social", "post", "viral-eats",
+                      content=build_utm_content(dest_id, "viral_eats_pick"))
+
+        meta_parts: list[str] = []
+        if kind:
+            meta_parts.append(kind.replace("_", " ").title())
+        if price:
+            meta_parts.append(price)
+        if viral_on:
+            meta_parts.append(f"Viral on {viral_on}")
+        meta_line = " · ".join(meta_parts)
+
+        hashtag_inputs = [name.replace(" ", "")[:24] or "FoodIndia"]
+        if dest_state:
+            hashtag_inputs.append(dest_state.replace(" ", ""))
+        hashtag_inputs.extend(["ViralEats", "FoodieIndia", "NakshIQ"])
+        tags = hashtag(*hashtag_inputs[:5])
+
+        if platform == "facebook":
+            return (
+                f"🍴 VIRAL — {name.upper()}\n"
+                + (f"📍 {location or dest_name}\n" if (location or dest_name) else "")
+                + (f"\n{meta_line}\n" if meta_line else "")
+                + (f"\nFamous for: {famous}\n" if famous else "")
+                + (f"\nHonest take: {review}\n" if review else "")
+                + f"\nWe rate places, not promote them. No sponsorships.\n"
+                f"Full {dest_name or name} food guide → {url}\n\n{tags}"
+            ).strip()
+        else:
+            return (
+                f"🍴 {name.upper()}\n"
+                + (f"📍 {location or dest_name}\n\n" if (location or dest_name) else "\n")
+                + (f"{meta_line}\n" if meta_line else "")
+                + (f"\nFamous for: {famous}\n" if famous else "")
+                + (f"\nHonest take: {review}\n" if review else "")
+                + f"\nWe rate, never promote.\n💬 Worth the queue? Comment below.\n↓ Full guide → {url}\n\n{tags}"
+            ).strip()
+    except Exception as e:
+        log.warning(f"copy_viral_eats_pick error: {e}")
+        if viral.get("destination_id") and viral["destination_id"] in dest_map:
+            return copy_score_card(dest_map[viral["destination_id"]], platform)
+        return ""
+
+
+def copy_camping_intel(camp: dict, dest_map: dict, platform: str) -> str:
+    """Camping spot brief — permit + water + facilities + month-window.
+
+    Inputs (per /api/content?type=camping):
+      name, destination_id, destination_name, state, elevation_m, open_months,
+      permit_required, water_source, facilities, description.
+
+    Voice anchor: "Camp here this month — here's what to know before you pitch."
+    """
+    try:
+        name      = (camp.get("name") or "").strip()
+        dest_id   = camp.get("destination_id")
+        dest_name = camp.get("destination_name") or (dest_map.get(dest_id, {}).get("name") if dest_id else None)
+        dest_state = (camp.get("state") or "").strip()
+        elev      = camp.get("elevation_m")
+        permit    = bool(camp.get("permit_required"))
+        water_raw = camp.get("water_source")
+        # water_source is a bool in this table — True = available on-site, False = carry your own.
+        # Future schema migration may make it a string description; handle both shapes defensively.
+        if isinstance(water_raw, bool):
+            water = "Available on-site" if water_raw else "Carry your own"
+        else:
+            water = (str(water_raw) if water_raw else "").strip()
+        facilities_raw = camp.get("facilities")
+        # facilities is a free-text string in this table, but the API serializer
+        # may pass an array shape later — handle both.
+        if isinstance(facilities_raw, list):
+            facilities_str = ", ".join(facilities_raw[:3])
+        else:
+            facilities_str = (str(facilities_raw) if facilities_raw else "").strip()
+        desc      = (camp.get("description") or "").strip()
+
+        if not name:
+            return copy_score_card(dest_map.get(dest_id) or {}, platform)
+
+        if dest_id and dest_id in dest_map:
+            url = dest_url(dest_map[dest_id], "social", "post", "camping-intel",
+                           content=build_utm_content(dest_id, "camping_intel"))
+        else:
+            url = utm("https://nakshiq.com/en/camping", "social", "post", "camping-intel",
+                      content=build_utm_content(dest_id, "camping_intel"))
+
+        stat_parts: list[str] = []
+        if elev:
+            stat_parts.append(f"↑ {int(elev):,}m")
+        stat_parts.append(month_name())
+        if permit:
+            stat_parts.append("Permit required")
+        else:
+            stat_parts.append("No permit")
+        stat_line = " · ".join(stat_parts)
+
+        info_parts: list[str] = []
+        if water:
+            info_parts.append(f"💧 Water: {water}")
+        if facilities_str:
+            info_parts.append(f"🛠 {facilities_str}")
+        info_block = "\n".join(info_parts)
+
+        hashtag_inputs = [name.replace(" ", "")[:24] or "Camping"]
+        if dest_state:
+            hashtag_inputs.append(dest_state.replace(" ", ""))
+        hashtag_inputs.extend(["CampingIndia", "Camping", "NakshIQ"])
+        tags = hashtag(*hashtag_inputs[:5])
+
+        if platform == "facebook":
+            return (
+                f"⛺ CAMPING INTEL — {name.upper()}\n"
+                + (f"📍 {dest_name}\n" if dest_name else "")
+                + (f"\n{stat_line}\n" if stat_line else "")
+                + (f"\n{info_block}\n" if info_block else "")
+                + (f"\n{desc}\n" if desc else "")
+                + f"\nFull intel — when, what to pack, what nobody tells you → {url}\n\n{tags}"
+            ).strip()
+        else:
+            return (
+                f"⛺ {name.upper()}\n"
+                + (f"📍 {dest_name}\n\n" if dest_name else "\n")
+                + (f"{stat_line}\n" if stat_line else "")
+                + (f"\n{info_block}\n" if info_block else "")
+                + (f"\n{desc}\n" if desc else "")
+                + f"\n💾 Save before you pitch.\n↓ Full camping intel → {url}\n\n{tags}"
+            ).strip()
+    except Exception as e:
+        log.warning(f"copy_camping_intel error: {e}")
+        if camp.get("destination_id") and camp["destination_id"] in dest_map:
+            return copy_score_card(dest_map[camp["destination_id"]], platform)
+        return ""
+
+
+def copy_confidence_intel(dest: dict, platform: str) -> str:
+    """Unified infrastructure report card — all 4 confidence cards in one post.
+
+    Voice anchor: "Everything you need before you drive in."
+    Pulls from dest's confidence_cards JSONB (already on every dest record):
+      reach (road_condition, public_transport)
+      sleep (options_count, price_range_inr)
+      fuel (nearest_petrol_pump, carry_extra)
+      network (jio, airtel, bsnl, vi)
+    """
+    try:
+        name = (dest.get("name") or "").strip()
+        dest_id = dest.get("id") or dest.get("destination_id")
+        dest_state = (dest.get("state") or "").strip()
+        cc_raw = dest.get("confidence_cards") or {}
+        if isinstance(cc_raw, list):
+            cc_raw = cc_raw[0] if cc_raw else {}
+        if not isinstance(cc_raw, dict):
+            cc_raw = {}
+
+        reach   = cc_raw.get("reach") or {}
+        sleep   = cc_raw.get("sleep") or {}
+        fuel    = cc_raw.get("fuel") or {}
+        network = cc_raw.get("network") or {}
+
+        rows: list[str] = []
+        if reach.get("road_condition"):
+            rows.append(f"🚗 Reach: {reach['road_condition']}")
+        elif reach.get("from_nearest_city"):
+            rows.append(f"🚗 Reach: {reach['from_nearest_city']}")
+        if sleep.get("options_count"):
+            price = sleep.get("price_range_inr")
+            price_str = f", ₹{price}/night" if price else ""
+            rows.append(f"🛏️ Sleep: {sleep['options_count']} options{price_str}")
+        elif sleep.get("note"):
+            rows.append(f"🛏️ Sleep: {sleep['note']}")
+        if fuel.get("nearest_petrol_pump"):
+            warn = " ⚠ carry extra" if fuel.get("carry_extra") else ""
+            rows.append(f"⛽ Fuel: {fuel['nearest_petrol_pump']}{warn}")
+        elif fuel.get("note"):
+            rows.append(f"⛽ Fuel: {fuel['note']}")
+        nets = []
+        if network.get("jio"):    nets.append("Jio")
+        if network.get("airtel"): nets.append("Airtel")
+        if network.get("bsnl"):   nets.append("BSNL")
+        if network.get("vi"):     nets.append("Vi")
+        if nets:
+            rows.append(f"📶 Network: {', '.join(nets)}")
+        elif network.get("note"):
+            rows.append(f"📶 Network: {network['note']}")
+
+        if len(rows) < 2:
+            # Not enough card data — degrade rather than post a thin caption.
+            return copy_score_card(dest, platform)
+
+        url = dest_url(dest, "social", "post", "confidence-intel",
+                       content=build_utm_content(dest_id, "confidence_intel"))
+
+        rows_block = "\n".join(rows)
+        month = month_name()
+
+        hashtag_inputs = [name.replace(" ", "")[:24] or "TravelIndia"]
+        if dest_state:
+            hashtag_inputs.append(dest_state.replace(" ", ""))
+        hashtag_inputs.extend(["TravelIntel", "RoadTripIndia", "NakshIQ"])
+        tags = hashtag(*hashtag_inputs[:5])
+
+        if platform == "facebook":
+            return (
+                f"📋 {name.upper()} — {month.upper()} INFRASTRUCTURE REPORT\n\n"
+                f"Everything you need to know before you drive in:\n\n"
+                f"{rows_block}\n\n"
+                f"Verified, not crowdsourced. NakshIQ scores every road, hospital, fuel pump.\n"
+                f"Full report card → {url}\n\n{tags}"
+            ).strip()
+        else:
+            return (
+                f"📋 {name.upper()} INFRA — {month}\n"
+                + (f"📍 {dest_state}\n\n" if dest_state else "\n")
+                + f"Before you drive in, check this:\n\n"
+                + f"{rows_block}\n\n"
+                + f"💾 Save this — don't lose phone signal mid-route without knowing.\n↓ Full report → {url}\n\n{tags}"
+            ).strip()
+    except Exception as e:
+        log.warning(f"copy_confidence_intel error: {e}")
+        return copy_score_card(dest, platform)
+
+
+def copy_collection_series(collection: dict, dest_map: dict, dest_map_full: dict, series_index: int, platform: str) -> str:
+    """One post in a themed collection mini-series (e.g. "Root Bridge #3/6").
+
+    Inputs (per /api/content?type=collections):
+      id, name, description, items (array of dest ids), itemCount, image.
+
+    Voice anchor: "All N {theme}, ranked. This is #{i}."
+    Differs from collection_spotlight (which posts the whole collection at once).
+    """
+    try:
+        coll_id   = collection.get("id") or ""
+        coll_name = (collection.get("name") or "").strip()
+        items     = collection.get("items") or []
+        total     = collection.get("itemCount") or len(items) if isinstance(items, list) else 0
+
+        if not items or not isinstance(items, list) or total < 2:
+            return copy_score_card(_first_qualifying_dest(dest_map_full), platform)
+
+        # Pick item by series_index (mod total) — caller may iterate the series.
+        idx = max(0, min(series_index, total - 1))
+        raw_item = items[idx]
+        # Items are stored as either bare dest-id strings (legacy) or
+        # {note, rank, destination_id} objects (current). Handle both.
+        if isinstance(raw_item, str):
+            item_id = raw_item
+            item_note = ""
+        elif isinstance(raw_item, dict):
+            item_id = raw_item.get("destination_id") or raw_item.get("id")
+            item_note = (raw_item.get("note") or "").strip()
+        else:
+            item_id = None
+            item_note = ""
+        if not item_id:
+            return copy_score_card(_first_qualifying_dest(dest_map_full), platform)
+
+        item_dest = dest_map_full.get(item_id) or dest_map.get(item_id) or {}
+        if not item_dest:
+            return copy_score_card(_first_qualifying_dest(dest_map_full), platform)
+
+        item_name = (item_dest.get("name") or "").strip()
+        item_score = item_dest.get("score") or 0
+        score_str = format_score(item_score) if item_score else ""
+        item_state = (item_dest.get("state") or "").strip()
+
+        url = dest_url(item_dest, "social", "post", "collection-series",
+                       content=build_utm_content(item_id, f"collection_series_{coll_id}"))
+
+        # Use collection name as the prefix — strip "best of" / "top" prefixes
+        clean_coll = coll_name.replace("Best of ", "").replace("Top ", "").strip()
+
+        hashtag_inputs = [item_name.replace(" ", "")[:24] or clean_coll.replace(" ", "")[:24]]
+        if item_state:
+            hashtag_inputs.append(item_state.replace(" ", ""))
+        hashtag_inputs.extend([clean_coll.replace(" ", "")[:18], "TravelIndia", "NakshIQ"])
+        tags = hashtag(*hashtag_inputs[:5])
+
+        position = f"#{idx + 1}/{total}"
+
+        if platform == "facebook":
+            return (
+                f"{clean_coll.upper()} — {position}\n"
+                f"📍 {item_name}{f' ({item_state})' if item_state else ''}"
+                + (f"\nNakshIQ score: {score_str}" if score_str else "")
+                + (f"\n\n{item_note}" if item_note else "")
+                + f"\n\nThis is #{idx + 1} of {total} in our {clean_coll.lower()} series. "
+                f"Each scored monthly — no sponsorships, no vibes.\n\n"
+                f"Full series → https://www.nakshiq.com/en/collections/{coll_id}\n"
+                f"This destination → {url}\n\n{tags}"
+            ).strip()
+        else:
+            return (
+                f"{clean_coll.upper()} {position}\n"
+                f"📍 {item_name}\n"
+                + (f"⭐ {score_str}\n" if score_str else "")
+                + (f"\n{item_note}\n" if item_note else "")
+                + f"\nThis is #{idx + 1} of {total}. All scored, none sponsored.\n\n"
+                f"💾 Save the series.\n↓ {item_name} guide → {url}\n\n{tags}"
+            ).strip()
+    except Exception as e:
+        log.warning(f"copy_collection_series error: {e}")
+        return ""
+
+
+def _first_qualifying_dest(dest_map_full: dict) -> dict:
+    """Helper for collection_series fallback — return any dest with score >=4."""
+    for d in dest_map_full.values():
+        if (d.get("score") or 0) >= 4:
+            return d
+    return next(iter(dest_map_full.values()), {})
+
+
+# ─────────────────────────────────────────────────────────────────────────────
 # MOAT COPY FUNCTIONS
 # -----------------------------------------------------------------------------
 # These are the brand/identity/methodology posts that build the acquisition
@@ -2722,6 +3293,61 @@ def generate_post(fmt: str, content: dict, platform: str,
         pick = content.get("__run_trek__") or treks[0]
         img = dest_map_full.get(pick.get("destination_id")) or dest_map.get(pick.get("destination_id")) or best
         return copy_trek_intel(pick, dest_map, platform), img
+
+    # ───────────────────────────────────────────────────────────────────────
+    # Tier 6 — coverage-gap formats (added 2026-05-10)
+    # ───────────────────────────────────────────────────────────────────────
+    elif fmt == "stays_pick":
+        stays = content.get("stays", {}).get("data", []) or []
+        if not stays:
+            log.info("stays_pick: no stays available — falling back to score_card")
+            return copy_score_card(best, platform), best
+        pick = content.get("__run_stay__") or stays[0]
+        img = dest_map_full.get(pick.get("destination_id")) or dest_map.get(pick.get("destination_id")) or best
+        return copy_stays_pick(pick, dest_map_full or dest_map, platform), img
+
+    elif fmt == "emergency_intel":
+        sos_list = content.get("emergency", {}).get("data", []) or []
+        if len(sos_list) < 5:
+            log.info(f"emergency_intel: only {len(sos_list)} SOS records — falling back")
+            return copy_score_card(best, platform), best
+        pick = content.get("__run_sos__") or sos_list[0]
+        img = dest_map_full.get(pick.get("destination_id")) or dest_map.get(pick.get("destination_id")) or best
+        return copy_emergency_intel(pick, dest_map_full or dest_map, platform), img
+
+    elif fmt == "viral_eats_pick":
+        viral = content.get("viral_eats", {}).get("data", []) or []
+        if not viral:
+            log.info("viral_eats_pick: no viral eats available — falling back to score_card")
+            return copy_score_card(best, platform), best
+        pick = content.get("__run_viral__") or viral[0]
+        img = dest_map_full.get(pick.get("destination_id")) or dest_map.get(pick.get("destination_id")) or best
+        return copy_viral_eats_pick(pick, dest_map_full or dest_map, platform), img
+
+    elif fmt == "camping_intel":
+        camps = content.get("camping", {}).get("data", []) or []
+        if not camps:
+            log.info("camping_intel: no camping spots available — falling back to score_card")
+            return copy_score_card(best, platform), best
+        pick = content.get("__run_camp__") or camps[0]
+        img = dest_map_full.get(pick.get("destination_id")) or dest_map.get(pick.get("destination_id")) or best
+        return copy_camping_intel(pick, dest_map_full or dest_map, platform), img
+
+    elif fmt == "confidence_intel":
+        # Use `best` (already a high-scoring dest with confidence_cards loaded)
+        return copy_confidence_intel(best, platform), best
+
+    elif fmt == "collection_series":
+        colls = content.get("collections", {}).get("data", []) or []
+        eligible_colls = [c for c in colls if (c.get("itemCount") or 0) >= 5]
+        if not eligible_colls:
+            log.info("collection_series: no eligible collections — falling back to score_card")
+            return copy_score_card(best, platform), best
+        pick_coll = content.get("__run_coll_series__") or eligible_colls[0]
+        # Series index: rotates through items via state.theme_usage["coll_series"][coll_id]
+        # For now, use a deterministic-by-day picker so each day surfaces the next item.
+        series_idx = (date.today().toordinal() % max(1, pick_coll.get("itemCount") or 1))
+        return copy_collection_series(pick_coll, dest_map, dest_map_full, series_idx, platform), best
 
     else:
         return copy_score_card(best, platform), best
@@ -3703,6 +4329,64 @@ def _run_inner(force: bool, sync_only: bool, dry_run: bool,
         else:
             log.info("trek_intel requested but /treks API returned no data — will fall back to score_card.")
 
+    # 6c) Tier 6 (2026-05-10) — coverage-gap formats. Each pre-picks an oldest-never-used
+    # record from its own theme_usage dimension so the catalog is exhausted before repeating.
+    if "stays_pick" in (ig_fmt, fb_fmt, story_fmt):
+        stays = content.get("stays", {}).get("data", []) or []
+        if stays:
+            ordered = pick_oldest_unused(state, "stays", stays, key="destination_id")
+            content["__run_stay__"] = ordered[0]
+            status = dimension_cycle_status(state, "stays", len(stays))
+            log.info(f"Stay locked: {ordered[0].get('name','?')} "
+                     f"({status['unused']}/{status['total']} never featured)")
+        else:
+            log.info("stays_pick requested but /stays API returned no data — will fall back to score_card.")
+
+    if "emergency_intel" in (ig_fmt, fb_fmt, story_fmt):
+        sos = content.get("emergency", {}).get("data", []) or []
+        if len(sos) >= 5:
+            ordered = pick_oldest_unused(state, "emergency", sos, key="destination_id")
+            content["__run_sos__"] = ordered[0]
+            status = dimension_cycle_status(state, "emergency", len(sos))
+            log.info(f"SOS locked: {ordered[0].get('destination_name','?')} "
+                     f"({status['unused']}/{status['total']} never featured)")
+        else:
+            log.info(f"emergency_intel requested but only {len(sos)} SOS records — will fall back.")
+
+    if "viral_eats_pick" in (ig_fmt, fb_fmt, story_fmt):
+        viral = content.get("viral_eats", {}).get("data", []) or []
+        if viral:
+            ordered = pick_oldest_unused(state, "viral_eats", viral, key="id")
+            content["__run_viral__"] = ordered[0]
+            status = dimension_cycle_status(state, "viral_eats", len(viral))
+            log.info(f"Viral eatery locked: {ordered[0].get('name','?')} "
+                     f"({status['unused']}/{status['total']} never featured)")
+        else:
+            log.info("viral_eats_pick requested but /viral_eats API returned no data — will fall back to score_card.")
+
+    if "camping_intel" in (ig_fmt, fb_fmt, story_fmt):
+        camps = content.get("camping", {}).get("data", []) or []
+        if camps:
+            ordered = pick_oldest_unused(state, "camping", camps, key="id")
+            content["__run_camp__"] = ordered[0]
+            status = dimension_cycle_status(state, "camping", len(camps))
+            log.info(f"Camp locked: {ordered[0].get('name','?')} "
+                     f"({status['unused']}/{status['total']} never featured)")
+        else:
+            log.info("camping_intel requested but /camping API returned no data — will fall back to score_card.")
+
+    if "collection_series" in (ig_fmt, fb_fmt, story_fmt):
+        colls = content.get("collections", {}).get("data", []) or []
+        eligible_colls = [c for c in colls if (c.get("itemCount") or 0) >= 5]
+        if eligible_colls:
+            ordered = pick_oldest_unused(state, "collection_series", eligible_colls, key="id")
+            content["__run_coll_series__"] = ordered[0]
+            status = dimension_cycle_status(state, "collection_series", len(eligible_colls))
+            log.info(f"Collection series locked: {ordered[0].get('name','?')} "
+                     f"({status['unused']}/{status['total']} never featured)")
+        else:
+            log.info("collection_series requested but no eligible collections — will fall back to score_card.")
+
     # 7a) Skip List — pick the oldest-never-used LOW-scored destination.
     # Strategy:
     #   1. Look at CURRENT month's pool for destinations scoring 1-3/5. Feature
@@ -4115,6 +4799,21 @@ def _run_inner(force: bool, sync_only: bool, dry_run: bool,
                 mark_theme_used(state, "articles", content["__run_article__"].get("slug","?"))
             if fmt == "route_spotlight" and content.get("__run_route__"):
                 mark_theme_used(state, "routes", content["__run_route__"].get("id","?"))
+            if fmt == "eateries_pick" and content.get("__run_eatery__"):
+                mark_theme_used(state, "eateries", content["__run_eatery__"].get("id","?"))
+            if fmt == "trek_intel" and content.get("__run_trek__"):
+                mark_theme_used(state, "treks", content["__run_trek__"].get("id","?"))
+            # Tier 6 trackers — each new format advances its own catalog dimension.
+            if fmt == "stays_pick" and content.get("__run_stay__"):
+                mark_theme_used(state, "stays", content["__run_stay__"].get("destination_id","?"))
+            if fmt == "emergency_intel" and content.get("__run_sos__"):
+                mark_theme_used(state, "emergency", content["__run_sos__"].get("destination_id","?"))
+            if fmt == "viral_eats_pick" and content.get("__run_viral__"):
+                mark_theme_used(state, "viral_eats", content["__run_viral__"].get("id","?"))
+            if fmt == "camping_intel" and content.get("__run_camp__"):
+                mark_theme_used(state, "camping", content["__run_camp__"].get("id","?"))
+            if fmt == "collection_series" and content.get("__run_coll_series__"):
+                mark_theme_used(state, "collection_series", content["__run_coll_series__"].get("id","?"))
             if audience_tag:
                 mark_theme_used(state, "audience_tags", audience_tag)
             # Moat tracker: the angle itself, so it rotates through all of MOAT_ANGLES
@@ -5828,7 +6527,7 @@ def run_flow_story(force: bool = False, dry_run: bool = False):
 
 REEL_LOCK_FILE = Path(__file__).parent / ".autoposter-reel.lock"
 
-REEL_FORMATS = ["score_reveal", "contrarian", "seasonal_shift", "trap_alert", "destination_reveal"]
+REEL_FORMATS = ["score_reveal", "contrarian", "seasonal_shift", "trap_alert", "destination_reveal", "hidden_gem_callout"]
 
 # Captions per reel format
 REEL_CAPTION_TEMPLATES = {
@@ -5880,6 +6579,20 @@ REEL_CAPTION_TEMPLATES = {
         "→ https://nakshiq.com?utm_source=social&utm_medium=reel&utm_campaign=reel\n\n"
         "—\n"
         "Travel with IQ.\n\n"
+        "{hashtags}"
+    ),
+    # Tier 6 (2026-05-10): hidden gem narrative — flips the algorithmic
+    # underdog_spotlight angle into a "you've never heard of this" hook.
+    # Pulls from /api/content?type=hidden_gems (confidence_score>=0.7).
+    "hidden_gem_callout": (
+        "🤫 Nobody talks about {dest}.\n\n"
+        "{near_dest_label}{distance_label}\n"
+        "{why_unknown}\n\n"
+        "Why go: {why_go}\n\n"
+        "{total} destinations scored. This one shouldn't be a secret.\n"
+        "→ https://nakshiq.com?utm_source=social&utm_medium=reel&utm_campaign=hidden-gem\n\n"
+        "—\n"
+        "Real data. Honest scoring.\n\n"
         "{hashtags}"
     ),
 }
@@ -5940,6 +6653,11 @@ def _reel_caption(reel_format: str, data: dict, platform: str) -> str:
             alternative=data.get("alternative", ""),
             state=data.get("state_name", "India"),
             tagline=data.get("tagline", ""),
+            # hidden_gem_callout fields (Tier 6)
+            near_dest_label=(f"📍 Near {data.get('near_dest_name', '')}" if data.get("near_dest_name") else ""),
+            distance_label=(f" · {data.get('distance_km', '')}km away\n" if data.get("distance_km") else "\n"),
+            why_unknown=data.get("why_unknown", ""),
+            why_go=data.get("why_go", ""),
             total=TOTAL_DESTINATIONS,
             hashtags=hashtags,
         )
@@ -6072,6 +6790,28 @@ def _pick_reel_data(state: dict, content: dict, reel_format: str) -> dict | None
             "state_name": d.get("state", ""),
             "score": int(d.get("score", 4)),
             "tagline": d.get("tagline") or d.get("note") or "",
+        }
+
+    elif reel_format == "hidden_gem_callout":
+        # Tier 6 (2026-05-10) — pulls from /api/content?type=hidden_gems.
+        # Differs from underdog_spotlight (algorithmic high-score + low-elev): this
+        # uses verified hidden_gems table records with confidence_score>=0.7 +
+        # has why_unknown / why_go prose for the narrative hook.
+        gems = content.get("hidden_gems", {}).get("data", []) or []
+        if not gems:
+            return None
+        ordered = pick_oldest_unused(state, "reel_hidden_gems",
+                                     [{"id": g.get("id", g.get("name", "")), **g}
+                                      for g in gems], key="id")
+        g = ordered[0]
+        return {
+            "dest_name": g.get("name", "Unknown"),
+            "dest_slug": g.get("near_destination_id", "india"),
+            "state_name": g.get("state", ""),
+            "near_dest_name": g.get("near_destination_name", ""),
+            "distance_km": g.get("distance_km", ""),
+            "why_unknown": g.get("why_unknown", ""),
+            "why_go": g.get("why_go", ""),
         }
 
     return None
@@ -6239,6 +6979,10 @@ def _run_reel(force: bool = False, dry_run: bool = False):
             mark_theme_used(st, "reel_trap_alerts", reel_data.get("trap_name", ""))
         elif chosen_format == "destination_reveal":
             mark_theme_used(st, "reel_reveal_dests", dest_id)
+        elif chosen_format == "hidden_gem_callout":
+            # Track by gem id (UUID) so the catalog of 625 gems exhausts before repeats
+            gem_id = reel_data.get("dest_slug") or reel_data.get("dest_name", "")
+            mark_theme_used(st, "reel_hidden_gems", gem_id)
 
         log.info(f"Theme tracker updated: format={chosen_format}")
 

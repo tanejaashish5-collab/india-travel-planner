@@ -287,7 +287,161 @@ export async function GET(req: NextRequest) {
       return NextResponse.json({ type: "eateries", count: items.length, data: items });
     }
 
-    return NextResponse.json({ error: `Unknown type: ${type}. Valid: destinations, articles, stats, traps, collections, festivals, routes, treks, eateries` }, { status: 400 });
+    if (type === "stays") {
+      // Editor-curated stay picks joined with their parent destination name.
+      // Only returns published picks with non-trivial why_nakshiq prose so the
+      // social caption has a real differentiation hook.
+      const { data } = await supabase
+        .from("destination_stay_picks")
+        .select("destination_id, slot, name, property_type, price_band, why_nakshiq, signature_experience, contact_only, destinations(name, state:states(name))")
+        .eq("published", true)
+        .not("why_nakshiq", "is", null)
+        .order("refreshed_at", { ascending: false, nullsFirst: false })
+        .limit(limit);
+      const items = (data ?? []).map((s: any) => ({
+        destination_id: s.destination_id,
+        destination_name: s.destinations?.name,
+        state: s.destinations?.state?.name,
+        slot: s.slot,
+        name: s.name,
+        property_type: s.property_type,
+        price_band: s.price_band,
+        why_nakshiq: s.why_nakshiq,
+        signature_experience: s.signature_experience,
+        contact_only: s.contact_only,
+        url: `${baseUrl}/en/destination/${s.destination_id}`,
+        image: `${baseUrl}/images/destinations/${s.destination_id}.jpg`,
+      }));
+      return NextResponse.json({ type: "stays", count: items.length, data: items });
+    }
+
+    if (type === "emergency") {
+      // Per-destination SOS data — only rows with a real local_helpers entry
+      // (post the 2026-05-10 placeholder strip we have ~410 dests with at least
+      // one verified phone). Helpers JSONB shape: [{name, role, contact, note}]
+      const { data } = await supabase
+        .from("emergency_sos")
+        .select("destination_id, police, ambulance, nearest_hospital, nearest_hospital_km, women_helpline, tourist_helpline, mountain_rescue, rescue_contact, local_helpers, source_label, destinations(name, state:states(name))")
+        .not("local_helpers", "is", null)
+        .order("verified_date", { ascending: false, nullsFirst: false })
+        .limit(limit);
+      const items = (data ?? [])
+        .filter((e: any) => Array.isArray(e.local_helpers) && e.local_helpers.length > 0)
+        .map((e: any) => ({
+          destination_id: e.destination_id,
+          destination_name: e.destinations?.name,
+          state: e.destinations?.state?.name,
+          police: e.police,
+          ambulance: e.ambulance,
+          nearest_hospital: e.nearest_hospital,
+          nearest_hospital_km: e.nearest_hospital_km,
+          women_helpline: e.women_helpline,
+          tourist_helpline: e.tourist_helpline,
+          mountain_rescue: e.mountain_rescue,
+          rescue_contact: e.rescue_contact,
+          local_helpers: e.local_helpers,
+          source_label: e.source_label,
+          url: `${baseUrl}/en/destination/${e.destination_id}`,
+          image: `${baseUrl}/images/destinations/${e.destination_id}.jpg`,
+        }));
+      return NextResponse.json({ type: "emergency", count: items.length, data: items });
+    }
+
+    if (type === "viral_eats") {
+      // Eateries that have gone viral on social — different angle from local_eateries.
+      // Caller can pass ?destination_id to scope.
+      const destId = params.get("destination_id");
+      let query = supabase
+        .from("viral_eats")
+        .select("id, destination_id, name, location, type, famous_for, viral_on, price_range, honest_review, destinations(name, state:states(name))")
+        .order("name")
+        .limit(limit);
+      if (destId) {
+        query = query.eq("destination_id", destId);
+      }
+      const { data } = await query;
+      const items = (data ?? []).map((v: any) => ({
+        id: v.id,
+        destination_id: v.destination_id,
+        destination_name: v.destinations?.name,
+        state: v.destinations?.state?.name,
+        name: v.name,
+        location: v.location,
+        type: v.type,
+        famous_for: v.famous_for,
+        viral_on: v.viral_on,
+        price_range: v.price_range,
+        honest_review: v.honest_review,
+        url: `${baseUrl}/en/destination/${v.destination_id}`,
+        image: `${baseUrl}/images/destinations/${v.destination_id}.jpg`,
+      }));
+      return NextResponse.json({ type: "viral_eats", count: items.length, data: items });
+    }
+
+    if (type === "camping") {
+      // Camping spots filtered by current month in `open_months` (1-12 array).
+      let query = supabase
+        .from("camping_spots")
+        .select("id, name, destination_id, elevation_m, open_months, permit_required, water_source, facilities, description, tags, destinations(name, state:states(name))")
+        .order("name")
+        .limit(limit);
+      if (month) {
+        query = query.contains("open_months", [month]);
+      }
+      const { data } = await query;
+      const items = (data ?? []).map((c: any) => ({
+        id: c.id,
+        name: c.name,
+        destination_id: c.destination_id,
+        destination_name: c.destinations?.name,
+        state: c.destinations?.state?.name,
+        elevation_m: c.elevation_m,
+        open_months: c.open_months,
+        permit_required: c.permit_required,
+        water_source: c.water_source,
+        facilities: c.facilities,
+        description: c.description,
+        tags: c.tags,
+        url: c.destination_id
+          ? `${baseUrl}/en/destination/${c.destination_id}`
+          : `${baseUrl}/en/camping`,
+        image: c.destination_id
+          ? `${baseUrl}/images/destinations/${c.destination_id}.jpg`
+          : `${baseUrl}/images/collections/camping-india.jpg`,
+      }));
+      return NextResponse.json({ type: "camping", month, count: items.length, data: items });
+    }
+
+    if (type === "hidden_gems") {
+      // High-confidence hidden gems — used for the "fewer than X IG posts" reel angle.
+      // Filters confidence_score >= 0.7 so we only post gems that survived audit.
+      const { data } = await supabase
+        .from("hidden_gems")
+        .select("id, near_destination_id, name, distance_km, drive_time, why_unknown, why_go, difficulty, social_proof, confidence_score, tags, destinations:destinations!hidden_gems_near_destination_id_fkey(name, state:states(name))")
+        .gte("confidence_score", 0.7)
+        .order("confidence_score", { ascending: false })
+        .limit(limit);
+      const items = (data ?? []).map((g: any) => ({
+        id: g.id,
+        near_destination_id: g.near_destination_id,
+        near_destination_name: g.destinations?.name,
+        state: g.destinations?.state?.name,
+        name: g.name,
+        distance_km: g.distance_km,
+        drive_time: g.drive_time,
+        why_unknown: g.why_unknown,
+        why_go: g.why_go,
+        difficulty: g.difficulty,
+        social_proof: g.social_proof,
+        confidence_score: g.confidence_score,
+        tags: g.tags,
+        url: g.near_destination_id ? `${baseUrl}/en/destination/${g.near_destination_id}` : `${baseUrl}/en/explore`,
+        image: g.near_destination_id ? `${baseUrl}/images/destinations/${g.near_destination_id}.jpg` : null,
+      }));
+      return NextResponse.json({ type: "hidden_gems", count: items.length, data: items });
+    }
+
+    return NextResponse.json({ error: `Unknown type: ${type}. Valid: destinations, articles, stats, traps, collections, festivals, routes, treks, eateries, stays, emergency, viral_eats, camping, hidden_gems` }, { status: 400 });
   } catch (e: any) {
     return NextResponse.json({ error: e.message }, { status: 500 });
   }
