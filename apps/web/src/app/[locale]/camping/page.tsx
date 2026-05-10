@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const supabase = createClient(url, key);
   const { data } = await supabase
     .from("camping_spots")
-    .select("*, destinations(name)")
+    .select("*, destinations(name, state_id)")
     .order("name");
 
   return data ?? [];
