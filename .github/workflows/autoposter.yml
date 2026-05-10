@@ -27,16 +27,18 @@ on:
     # UGC avatar video: 14:30 IST (09:00 UTC) — Wed+Sat only, IG+FB+YT
     # DISABLED: HeyGen balance too low ($0.32). Uncomment after topping up.
     # - cron: "0 9 * * 3,6"
-    # Reel-map: 15:17 IST (09:47 UTC) — daily IG+FB+YT (pomelli pipeline)
+    # Reel-map: 15:17 IST (09:47 UTC) — Tue/Thu/Sat only, IG+FB+YT (pomelli pipeline)
+    # Cron fires daily; mode-detection DOW-gates to T/Th/Sa (Tier 3, 2026-05-10).
     - cron: "47 9 * * *"
-    # Flow story: 16:17 IST (10:47 UTC) — daily IG+FB
+    # Flow story: 16:17 IST (10:47 UTC) — Sun only, IG+FB
+    # Cron fires daily; mode-detection DOW-gates to Sun (Tier 3, 2026-05-10).
     - cron: "47 10 * * *"
     # YT Short slot 2: 17:17 IST (11:47 UTC) — daily YT only
     - cron: "47 11 * * *"
     # Evening post: 18:47 IST (13:17 UTC) — daily IG+FB
     - cron: "17 13 * * *"
-    # Reel slot 2: 20:47 IST (15:17 UTC) — daily IG+FB
-    - cron: "17 15 * * *"
+    # Reel slot 2: REMOVED 2026-05-10 (Tier 3 cadence cut: 6→4 IG posts/day to
+    # respect IG's algorithmic penalty for sub-10K-follower accounts posting >3/day).
     # Analytics sync: 23:47 IST (18:17 UTC) — internal
     - cron: "17 18 * * *"
   workflow_dispatch:
@@ -227,23 +229,25 @@ jobs:
             echo "Scheduled REEL slot 1 · 11:00 IST (UTC ${HOUR}:${MINUTE})"
 
           # 13:17 IST = UTC 07:47 → Visual slot (cron=467, window: 390-494)
-          #   Mon/Wed=moat, Tue/Thu=tourist-map, Fri=infographic, Sat=canva, Sun=pomelli
+          # TIER 3 cadence cut (2026-05-10): fires Mon/Wed/Fri only — keeps format
+          # diversity (moat / canva / pomelli) at 3×/wk while honouring IG's
+          # sub-10K-follower posting-cadence guardrail.
+          #   Mon → moat, Wed → canva-visual, Fri → pomelli-visual.
+          #   Tue/Thu/Sat/Sun → sync-only (gives reel-map / flow-story / weekend
+          #   pacing room without competing for the same daily slot).
           elif [ "$TOTAL_MINS" -ge 390 ] && [ "$TOTAL_MINS" -lt 495 ]; then
-            if echo "1 3" | grep -qw "$DOW"; then
+            if [ "$DOW" = "1" ]; then
               echo "args=--moat" >> $GITHUB_OUTPUT
-              echo "Scheduled MOAT · 13:00 IST Mon/Wed (UTC ${HOUR}:${MINUTE})"
-            elif echo "2 4" | grep -qw "$DOW"; then
-              echo "args=--tourist-map" >> $GITHUB_OUTPUT
-              echo "Scheduled TOURIST MAP · 13:00 IST Tue/Thu (UTC ${HOUR}:${MINUTE})"
-            elif [ "$DOW" = "5" ]; then
-              echo "args=--infographic" >> $GITHUB_OUTPUT
-              echo "Scheduled INFOGRAPHIC · 13:00 IST Fri (UTC ${HOUR}:${MINUTE})"
-            elif [ "$DOW" = "6" ]; then
+              echo "Scheduled MOAT · 13:17 IST Mon (UTC ${HOUR}:${MINUTE})"
+            elif [ "$DOW" = "3" ]; then
               echo "args=--canva-visual" >> $GITHUB_OUTPUT
-              echo "Scheduled CANVA VISUAL · 13:00 IST Sat (UTC ${HOUR}:${MINUTE})"
-            else
+              echo "Scheduled CANVA VISUAL · 13:17 IST Wed (UTC ${HOUR}:${MINUTE})"
+            elif [ "$DOW" = "5" ]; then
               echo "args=--pomelli-visual" >> $GITHUB_OUTPUT
-              echo "Scheduled POMELLI VISUAL · 13:00 IST Sun (UTC ${HOUR}:${MINUTE})"
+              echo "Scheduled POMELLI VISUAL · 13:17 IST Fri (UTC ${HOUR}:${MINUTE})"
+            else
+              echo "args=--sync-only" >> $GITHUB_OUTPUT
+              echo "Visual slot skipped (Tier 3: Mon/Wed/Fri only) · DOW=${DOW}"
             fi
 
           # 14:30 IST = UTC 09:00 → UGC avatar video (cron=540, window: 495-569) — Wed+Sat only
@@ -253,35 +257,51 @@ jobs:
             echo "Scheduled UGC · 14:30 IST (UTC ${HOUR}:${MINUTE})"
 
           # 15:17 IST = UTC 09:47 → Reel-map (cron=587, window: 570-614) — IG+FB+YT
+          # TIER 3 (2026-05-10): DOW-gated to Tue/Thu/Sat only.  Pomelli pipeline
+          # stays alive at 3×/wk; alternates with the M/W/F visual slot.
           elif [ "$TOTAL_MINS" -ge 570 ] && [ "$TOTAL_MINS" -lt 615 ]; then
-            echo "args=--reel-map" >> $GITHUB_OUTPUT
-            echo "Scheduled REEL-MAP · 15:30 IST (UTC ${HOUR}:${MINUTE})"
+            if echo "2 4 6" | grep -qw "$DOW"; then
+              echo "args=--reel-map" >> $GITHUB_OUTPUT
+              echo "Scheduled REEL-MAP · 15:17 IST Tue/Thu/Sat (UTC ${HOUR}:${MINUTE})"
+            else
+              echo "args=--sync-only" >> $GITHUB_OUTPUT
+              echo "Reel-map skipped (Tier 3: Tue/Thu/Sat only) · DOW=${DOW}"
+            fi
 
-          # 16:17 IST = UTC 10:47 → Flow story (cron=647, window: 615-659) — daily IG+FB
+          # 16:17 IST = UTC 10:47 → Flow story (cron=647, window: 615-659) — IG+FB
+          # TIER 3 (2026-05-10): DOW-gated to Sun only — replaces the Sat→canva
+          # / Sun→pomelli rotation that the visual slot used to handle weekly.
           elif [ "$TOTAL_MINS" -ge 615 ] && [ "$TOTAL_MINS" -lt 660 ]; then
-            echo "args=--flow-story" >> $GITHUB_OUTPUT
-            echo "Scheduled FLOW STORY · 16:00 IST (UTC ${HOUR}:${MINUTE})"
+            if [ "$DOW" = "7" ]; then
+              echo "args=--flow-story" >> $GITHUB_OUTPUT
+              echo "Scheduled FLOW STORY · 16:17 IST Sun (UTC ${HOUR}:${MINUTE})"
+            else
+              echo "args=--sync-only" >> $GITHUB_OUTPUT
+              echo "Flow-story skipped (Tier 3: Sun only) · DOW=${DOW}"
+            fi
 
           # 17:17 IST = UTC 11:47 → YT Short slot 2 (cron=707, window: 660-734)
           elif [ "$TOTAL_MINS" -ge 660 ] && [ "$TOTAL_MINS" -lt 735 ]; then
             echo "args=--yt-short" >> $GITHUB_OUTPUT
-            echo "Scheduled YT SHORT slot 2 · 17:00 IST (UTC ${HOUR}:${MINUTE})"
+            echo "Scheduled YT SHORT slot 2 · 17:17 IST (UTC ${HOUR}:${MINUTE})"
 
           # 18:47 IST = UTC 13:17 → Evening post (cron=797, window: 735-839)
           # Catches the -14 min drift seen 2026-05-05 (12:46 UTC = 766).
           elif [ "$TOTAL_MINS" -ge 735 ] && [ "$TOTAL_MINS" -lt 840 ]; then
             echo "args=--evening" >> $GITHUB_OUTPUT
-            echo "Scheduled EVENING · 18:30 IST (UTC ${HOUR}:${MINUTE})"
+            echo "Scheduled EVENING · 18:47 IST (UTC ${HOUR}:${MINUTE})"
 
-          # 20:47 IST = UTC 15:17 → Reel slot 2 (cron=917, window: 840-989)
+          # 20:47 IST = UTC 15:17 → Reel slot 2 — REMOVED 2026-05-10 (Tier 3).
+          # Window 840-989 retained as a sync-only fallback for any drift from
+          # the evening cron (which has window 735-839 ending at 13:59 UTC).
           elif [ "$TOTAL_MINS" -ge 840 ] && [ "$TOTAL_MINS" -lt 990 ]; then
-            echo "args=--reel" >> $GITHUB_OUTPUT
-            echo "Scheduled REEL slot 2 · 20:30 IST (UTC ${HOUR}:${MINUTE})"
+            echo "args=--sync-only" >> $GITHUB_OUTPUT
+            echo "Reel slot 2 removed (Tier 3 cadence cut) · sync-only"
 
           # 23:47 IST = UTC 18:17 → Analytics sync (cron=1097, window: 990-1199)
           elif [ "$TOTAL_MINS" -ge 990 ] && [ "$TOTAL_MINS" -lt 1200 ]; then
             echo "args=--analytics" >> $GITHUB_OUTPUT
-            echo "Scheduled ANALYTICS · 23:30 IST (UTC ${HOUR}:${MINUTE})"
+            echo "Scheduled ANALYTICS · 23:47 IST (UTC ${HOUR}:${MINUTE})"
 
           else
             # Reachable only for off-schedule manual fires before 03:00 UTC
