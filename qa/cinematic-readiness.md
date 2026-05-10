@@ -1,6 +1,6 @@
 # Cinematic readiness — 2026-05-10
 
-Total: **505** dests · A=**108** · B=**190** · C=**207**
+Total: **505** dests · A=**112** · B=**207** · C=**186**
 
 Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 
@@ -10,7 +10,7 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 |---|---:|
 | gems | 370 |
 | eats | 369 |
-| months_prose | 207 |
+| months_prose | 186 |
 | stays | 106 |
 
 ## By state
@@ -18,24 +18,24 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | State | A | B | C | Total |
 |---|---:|---:|---:|---:|
 | andaman-nicobar | 0 | 12 | 0 | 12 |
-| andhra-pradesh | 0 | 20 | 1 | 21 |
-| arunachal-pradesh | 1 | 8 | 2 | 11 |
+| andhra-pradesh | 0 | 21 | 0 | 21 |
+| arunachal-pradesh | 1 | 10 | 0 | 11 |
 | assam | 0 | 8 | 0 | 8 |
 | bihar | 3 | 3 | 0 | 6 |
 | chandigarh | 1 | 0 | 0 | 1 |
 | chhattisgarh | 3 | 0 | 0 | 3 |
-| daman-diu | 0 | 0 | 3 | 3 |
+| daman-diu | 1 | 2 | 0 | 3 |
 | delhi | 1 | 0 | 0 | 1 |
 | goa | 0 | 0 | 21 | 21 |
 | gujarat | 0 | 0 | 29 | 29 |
 | haryana | 2 | 1 | 0 | 3 |
-| himachal-pradesh | 22 | 10 | 2 | 34 |
-| jammu-kashmir | 3 | 14 | 1 | 18 |
+| himachal-pradesh | 22 | 12 | 0 | 34 |
+| jammu-kashmir | 3 | 15 | 0 | 18 |
 | jharkhand | 4 | 0 | 0 | 4 |
 | karnataka | 0 | 0 | 30 | 30 |
 | kerala | 0 | 0 | 30 | 30 |
-| ladakh | 3 | 9 | 2 | 14 |
-| lakshadweep | 0 | 0 | 5 | 5 |
+| ladakh | 3 | 11 | 0 | 14 |
+| lakshadweep | 0 | 5 | 0 | 5 |
 | madhya-pradesh | 0 | 13 | 0 | 13 |
 | maharashtra | 0 | 0 | 46 | 46 |
 | manipur | 3 | 2 | 0 | 5 |
@@ -43,7 +43,7 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | mizoram | 3 | 1 | 0 | 4 |
 | nagaland | 2 | 4 | 0 | 6 |
 | odisha | 0 | 22 | 0 | 22 |
-| puducherry | 0 | 0 | 3 | 3 |
+| puducherry | 3 | 0 | 0 | 3 |
 | punjab | 3 | 1 | 0 | 4 |
 | rajasthan | 5 | 18 | 0 | 23 |
 | sikkim | 7 | 4 | 0 | 11 |
@@ -51,15 +51,13 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | telangana | 0 | 15 | 0 | 15 |
 | tripura | 1 | 2 | 0 | 3 |
 | uttar-pradesh | 6 | 7 | 0 | 13 |
-| uttarakhand | 27 | 9 | 2 | 38 |
+| uttarakhand | 27 | 11 | 0 | 38 |
 | west-bengal | 6 | 0 | 0 | 6 |
 
 ## Tier C destinations (must backfill)
 
 | Dest | State | Missing |
 |---|---|---|
-| Aalo (aalo) | arunachal-pradesh | months_prose:0/12 · gems:2/3 · eats:2/5 · stays:0/3 |
-| Agatti Island (agatti) | lakshadweep | months_prose:0/12 · gems:0/3 · eats:0/5 · stays:1/3 |
 | Agonda (agonda) | goa | months_prose:0/12 · gems:0/3 · eats:0/5 |
 | Ahmedabad (ahmedabad) | gujarat | months_prose:0/12 · gems:2/3 · eats:0/5 |
 | Aihole (aihole) | karnataka | months_prose:0/12 · gems:0/3 · eats:0/5 |
@@ -75,10 +73,8 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Astavinayak Circuit (astavinayak-circuit) | maharashtra | months_prose:0/12 · gems:0/3 · eats:0/5 |
 | Athirapally Falls (athirapally) | kerala | months_prose:0/12 · gems:1/3 · eats:0/5 |
 | Aurangabad (aurangabad) | maharashtra | months_prose:0/12 · gems:0/3 · eats:0/5 · stays:2/3 |
-| Auroville (auroville) | puducherry | months_prose:0/12 |
 | Badami (badami) | karnataka | months_prose:0/12 · gems:0/3 · eats:0/5 |
 | Bandipur National Park (bandipur) | karnataka | months_prose:0/12 · gems:0/3 · eats:0/5 |
-| Bangaram Island (bangaram) | lakshadweep | months_prose:0/12 · gems:1/3 · eats:0/5 · stays:1/3 |
 | Bekal (bekal) | kerala | months_prose:0/12 · gems:0/3 · eats:0/5 |
 | Belur (belur) | karnataka | months_prose:0/12 · gems:0/3 · eats:0/5 |
 | Bengaluru (bengaluru) | karnataka | months_prose:0/12 |
@@ -88,11 +84,9 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Bhimashankar (bhimashankar) | maharashtra | months_prose:0/12 · gems:0/3 · eats:0/5 · stays:0/3 |
 | Bidar (bidar) | karnataka | months_prose:0/12 · gems:0/3 · eats:0/5 |
 | Bijapur (Vijayapura) (bijapur) | karnataka | months_prose:0/12 · gems:0/3 · eats:0/5 |
-| Borra Caves (borra-caves) | andhra-pradesh | months_prose:0/12 · gems:0/3 · eats:0/5 |
 | Calangute-Baga (calangute-baga) | goa | months_prose:0/12 · gems:0/3 · eats:3/5 |
 | Candolim (candolim) | goa | months_prose:0/12 · gems:0/3 · eats:4/5 |
 | Champaner-Pavagadh (champaner-pavagadh) | gujarat | months_prose:0/12 · gems:0/3 · eats:0/5 |
-| Chandratal (chandratal) | himachal-pradesh | months_prose:0/12 · gems:2/3 · eats:0/5 · stays:0/3 |
 | Chennai (chennai) | tamil-nadu | months_prose:0/12 · gems:1/3 · eats:0/5 |
 | Cherai Beach (cherai) | kerala | months_prose:0/12 · gems:0/3 · eats:0/5 |
 | Chettinad (chettinad) | tamil-nadu | months_prose:0/12 · gems:0/3 · eats:0/5 |
@@ -107,14 +101,11 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Coorg (Kodagu) (coorg) | karnataka | months_prose:0/12 · gems:0/3 · eats:0/5 |
 | Courtallam (Kutralam) (courtallam) | tamil-nadu | months_prose:0/12 · gems:0/3 · eats:0/5 |
 | Dakor (dakor) | gujarat | months_prose:0/12 · gems:0/3 · eats:0/5 · stays:2/3 |
-| Daman (daman) | daman-diu | months_prose:0/12 · eats:4/5 |
-| Dambuk (dambuk) | arunachal-pradesh | months_prose:0/12 · gems:2/3 · eats:0/5 · stays:0/3 |
 | Dandeli (dandeli) | karnataka | months_prose:0/12 · gems:1/3 · eats:0/5 |
 | Daulatabad Fort (daulatabad) | maharashtra | months_prose:0/12 · gems:0/3 · eats:0/5 |
 | Dhanushkodi (dhanushkodi) | tamil-nadu | months_prose:0/12 · gems:0/3 · eats:0/5 |
 | Dharmasthala (dharmasthala) | karnataka | months_prose:0/12 · gems:0/3 · eats:0/5 |
 | Dholavira (dholavira) | gujarat | months_prose:0/12 · gems:0/3 · eats:0/5 |
-| Diu (diu) | daman-diu | months_prose:0/12 · eats:3/5 |
 | Dudhsagar Falls (dudhsagar-falls) | goa | months_prose:0/12 · gems:0/3 · eats:0/5 |
 | Dwarka (dwarka) | gujarat | months_prose:0/12 · gems:1/3 · eats:0/5 |
 | Elephanta Caves (elephanta-caves) | maharashtra | months_prose:0/12 · gems:0/3 · eats:0/5 · stays:0/3 |
@@ -130,29 +121,21 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Guruvayur (guruvayur) | kerala | months_prose:0/12 · gems:0/3 · eats:0/5 |
 | Halebidu (halebidu) | karnataka | months_prose:0/12 · gems:0/3 · eats:0/5 |
 | Hampi (hampi) | karnataka | months_prose:0/12 · gems:0/3 · eats:0/5 |
-| Har Ki Doon (har-ki-doon) | uttarakhand | months_prose:0/12 · gems:2/3 · eats:0/5 · stays:0/3 |
 | Harihareshwar (harihareshwar) | maharashtra | months_prose:0/12 · gems:1/3 · eats:0/5 · stays:0/3 |
-| Hemkund Sahib (hemkund-sahib) | uttarakhand | months_prose:0/12 · gems:1/3 · eats:3/5 · stays:0/3 |
 | Hogenakkal Falls (hogenakkal) | tamil-nadu | months_prose:0/12 · gems:0/3 · eats:0/5 |
 | Idukki (idukki) | kerala | months_prose:0/12 · gems:0/3 · eats:0/5 · stays:2/3 |
 | Igatpuri (igatpuri) | maharashtra | months_prose:0/12 · gems:2/3 · eats:0/5 · stays:2/3 |
 | Jog Falls (jog-falls) | karnataka | months_prose:0/12 · gems:0/3 · eats:0/5 |
 | Junagadh (junagadh) | gujarat | months_prose:0/12 · gems:0/3 · eats:0/5 |
 | Kabini (kabini) | karnataka | months_prose:0/12 · gems:0/3 · eats:0/5 |
-| Kadmat Island (kadmat) | lakshadweep | months_prose:0/12 · gems:0/3 · eats:0/5 · stays:1/3 |
 | Kanchipuram (kanchipuram) | tamil-nadu | months_prose:0/12 · gems:0/3 · eats:0/5 |
 | Kanheri Caves (kanheri-caves) | maharashtra | months_prose:0/12 · gems:0/3 · eats:0/5 |
 | Kannur (kannur) | kerala | months_prose:0/12 · gems:0/3 · eats:0/5 |
 | Kanyakumari (kanyakumari) | tamil-nadu | months_prose:0/12 · gems:1/3 · eats:0/5 |
-| Karaikal (karaikal) | puducherry | months_prose:0/12 |
 | Karla & Bhaja Caves (karla-bhaja-caves) | maharashtra | months_prose:0/12 · gems:0/3 · eats:0/5 |
 | Karwar (karwar) | karnataka | months_prose:0/12 · gems:0/3 · eats:0/5 |
 | Kashid (kashid) | maharashtra | months_prose:0/12 · gems:0/3 · eats:0/5 |
-| Katra (katra) | jammu-kashmir | months_prose:0/12 · gems:0/3 · eats:0/5 |
-| Kavaratti (kavaratti) | lakshadweep | months_prose:0/12 · gems:0/3 · eats:0/5 · stays:1/3 |
-| Kaza (kaza) | himachal-pradesh | months_prose:0/12 · stays:0/3 |
 | Khandala (khandala) | maharashtra | months_prose:0/12 · gems:0/3 · eats:0/5 |
-| Khardung La (khardung-la) | ladakh | months_prose:0/12 · gems:2/3 · eats:1/5 · stays:0/3 |
 | Kochi (Fort Kochi) (kochi) | kerala | months_prose:0/12 · gems:1/3 · eats:0/5 |
 | Kodaikanal (kodaikanal) | tamil-nadu | months_prose:0/12 · gems:1/3 · eats:0/5 |
 | Kolad (kolad) | maharashtra | months_prose:0/12 · gems:1/3 · eats:0/5 · stays:1/3 |
@@ -184,7 +167,6 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Marine National Park (marine-national-park) | gujarat | months_prose:0/12 · gems:0/3 · eats:0/5 |
 | Matheran (matheran) | maharashtra | months_prose:0/12 · gems:0/3 · eats:0/5 · stays:1/3 |
 | Meghamalai (High Wavy Mountains) (meghamalai) | tamil-nadu | months_prose:0/12 · gems:0/3 · eats:0/5 |
-| Minicoy Island (minicoy) | lakshadweep | months_prose:0/12 · gems:0/3 · eats:0/5 |
 | Modhera Sun Temple (modhera) | gujarat | months_prose:0/12 · gems:0/3 · eats:0/5 |
 | Mollem (Bhagwan Mahavir Sanctuary) (mollem) | goa | months_prose:0/12 · gems:1/3 · eats:0/5 |
 | Morgaon (morgaon) | maharashtra | months_prose:0/12 · gems:0/3 · eats:0/5 |
@@ -217,7 +199,6 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Ponmudi (ponmudi) | kerala | months_prose:0/12 · gems:0/3 · eats:0/5 |
 | Poovar (poovar) | kerala | months_prose:0/12 · gems:0/3 · eats:0/5 |
 | Porbandar (porbandar) | gujarat | months_prose:0/12 · gems:0/3 · eats:0/5 · stays:2/3 |
-| Puducherry (Pondicherry) (puducherry) | puducherry | months_prose:0/12 |
 | Pune (pune) | maharashtra | months_prose:0/12 · gems:0/3 · eats:0/5 |
 | Raigad Fort (raigad-fort) | maharashtra | months_prose:0/12 · gems:0/3 · eats:0/5 · stays:0/3 |
 | Rajkot (rajkot) | gujarat | months_prose:0/12 · gems:0/3 · eats:0/5 |
@@ -236,7 +217,6 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Shravanabelagola (shravanabelagola) | karnataka | months_prose:0/12 · gems:0/3 · eats:0/5 · stays:0/3 |
 | Siddhatek (siddhatek) | maharashtra | months_prose:0/12 · gems:0/3 · eats:0/5 |
 | Silent Valley National Park (silent-valley) | kerala | months_prose:0/12 · gems:0/3 · eats:0/5 |
-| Silvassa (silvassa) | daman-diu | months_prose:0/12 |
 | Siolim (siolim) | goa | months_prose:0/12 · gems:0/3 · eats:2/5 |
 | Somnath (somnath) | gujarat | months_prose:0/12 · gems:0/3 · eats:0/5 |
 | Srirangam (srirangam) | tamil-nadu | months_prose:0/12 · gems:0/3 · eats:0/5 |
@@ -254,7 +234,6 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Trichy (Tiruchirappalli) (trichy) | tamil-nadu | months_prose:0/12 · gems:0/3 · eats:0/5 |
 | Trimbakeshwar (trimbakeshwar) | maharashtra | months_prose:0/12 · gems:0/3 · eats:0/5 · stays:0/3 |
 | Thiruvananthapuram (Trivandrum) (trivandrum) | kerala | months_prose:0/12 · gems:1/3 · eats:0/5 |
-| Turtuk (turtuk) | ladakh | months_prose:0/12 · gems:2/3 |
 | Udupi (udupi) | karnataka | months_prose:0/12 · gems:0/3 · eats:0/5 |
 | Vadodara (vadodara) | gujarat | months_prose:0/12 · gems:1/3 · eats:0/5 · stays:1/3 |
 | Vagamon (vagamon) | kerala | months_prose:0/12 · gems:0/3 · eats:0/5 |
@@ -270,8 +249,10 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 
 | Dest | State | Thin |
 |---|---|---|
+| Aalo (aalo) | arunachal-pradesh | gems:2/3 · eats:2/5 · stays:0/3 |
 | Achabal (achabal) | jammu-kashmir | gems:0/3 · eats:2/5 · stays:1/3 |
 | Adilabad (adilabad) | telangana | gems:0/3 · eats:0/5 |
+| Agatti Island (agatti) | lakshadweep | gems:0/3 · eats:0/5 · stays:1/3 |
 | Ahobilam (ahobilam) | andhra-pradesh | gems:0/3 · eats:0/5 |
 | Ajmer (ajmer) | rajasthan | gems:0/3 · eats:3/5 · stays:1/3 |
 | Alampur (alampur) | telangana | gems:0/3 · eats:0/5 · stays:0/3 |
@@ -282,6 +263,7 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Anini (anini) | arunachal-pradesh | gems:0/3 · eats:1/5 |
 | Araku Valley (araku-valley) | andhra-pradesh | gems:1/3 · eats:0/5 |
 | Bandhavgarh National Park (bandhavgarh) | madhya-pradesh | gems:0/3 · eats:0/5 |
+| Bangaram Island (bangaram) | lakshadweep | gems:1/3 · eats:0/5 · stays:1/3 |
 | Bangus Valley (bangus-valley) | jammu-kashmir | gems:1/3 · eats:0/5 · stays:1/3 |
 | Baratang Island (baratang-island) | andaman-nicobar | gems:0/3 · eats:0/5 |
 | Baripada (baripada) | odisha | gems:0/3 · eats:0/5 |
@@ -301,14 +283,18 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Bhubaneswar (bhubaneswar) | odisha | gems:2/3 · eats:0/5 |
 | Bikaner (bikaner) | rajasthan | gems:0/3 |
 | Bomdila (bomdila) | arunachal-pradesh | gems:0/3 · eats:3/5 |
+| Borra Caves (borra-caves) | andhra-pradesh | gems:0/3 · eats:0/5 |
 | Bundi (bundi) | rajasthan | gems:1/3 · eats:3/5 |
 | Chandipur (chandipur) | odisha | gems:1/3 · eats:0/5 · stays:0/3 |
+| Chandratal (chandratal) | himachal-pradesh | gems:2/3 · eats:0/5 · stays:0/3 |
 | Charaideo Moidams (charaideo) | assam | gems:0/3 · eats:0/5 · stays:0/3 |
 | Chidiya Tapu (chidiya-tapu) | andaman-nicobar | gems:1/3 · eats:0/5 |
 | Chilika Lake (chilika-lake) | odisha | gems:0/3 · eats:0/5 · stays:2/3 |
 | Chitrakoot (chitrakoot) | uttar-pradesh | gems:0/3 · eats:4/5 |
 | Chittorgarh (chittorgarh) | rajasthan | gems:1/3 · eats:3/5 |
 | Cuttack (cuttack) | odisha | gems:0/3 · eats:0/5 |
+| Daman (daman) | daman-diu | eats:4/5 |
+| Dambuk (dambuk) | arunachal-pradesh | gems:2/3 · eats:0/5 · stays:0/3 |
 | Takht Sri Damdama Sahib (damdama-sahib) | punjab | eats:0/5 |
 | Daringbadi (daringbadi) | odisha | gems:0/3 · eats:0/5 |
 | Dawki (dawki) | meghalaya | gems:0/3 · eats:0/5 · stays:0/3 |
@@ -319,6 +305,7 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Buddhist Diamond Triangle (diamond-triangle) | odisha | gems:0/3 · eats:0/5 |
 | Diglipur (diglipur) | andaman-nicobar | gems:1/3 · eats:0/5 · stays:2/3 |
 | Dirang (dirang) | arunachal-pradesh | gems:0/3 · eats:3/5 |
+| Diu (diu) | daman-diu | eats:3/5 |
 | Doodhpathri (doodhpathri) | jammu-kashmir | gems:1/3 · eats:1/5 · stays:2/3 |
 | Drass (drass) | ladakh | gems:0/3 |
 | Dudhwa National Park (dudhwa-national-park) | uttar-pradesh | gems:0/3 · eats:4/5 |
@@ -338,17 +325,24 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Gwalior (gwalior) | madhya-pradesh | gems:1/3 · eats:0/5 |
 | Haflong (haflong) | assam | gems:0/3 · eats:2/5 |
 | Hanle (hanle) | ladakh | gems:1/3 · eats:4/5 · stays:1/3 |
+| Har Ki Doon (har-ki-doon) | uttarakhand | gems:2/3 · eats:0/5 · stays:0/3 |
 | Havelock Island (Swaraj Dweep) (havelock-island) | andaman-nicobar | gems:0/3 · eats:0/5 |
+| Hemkund Sahib (hemkund-sahib) | uttarakhand | gems:1/3 · eats:3/5 · stays:0/3 |
 | Horsley Hills (horsley-hills) | andhra-pradesh | gems:0/3 · eats:0/5 |
 | Hyderabad (hyderabad) | telangana | eats:0/5 |
 | Jabalpur (jabalpur) | madhya-pradesh | gems:0/3 · eats:0/5 |
 | Jorhat (jorhat) | assam | gems:0/3 · eats:2/5 |
+| Kadmat Island (kadmat) | lakshadweep | gems:0/3 · eats:0/5 · stays:1/3 |
 | Kalpa (kalpa) | himachal-pradesh | gems:1/3 · eats:4/5 |
 | Kanha National Park (kanha) | madhya-pradesh | gems:0/3 · eats:0/5 |
+| Katra (katra) | jammu-kashmir | gems:0/3 · eats:0/5 |
+| Kavaratti (kavaratti) | lakshadweep | gems:0/3 · eats:0/5 · stays:1/3 |
+| Kaza (kaza) | himachal-pradesh | stays:0/3 |
 | Kaziranga (kaziranga) | assam | gems:2/3 · eats:2/5 |
 | Kedarnath (kedarnath) | uttarakhand | gems:2/3 · eats:3/5 · stays:2/3 |
 | Khajuraho (khajuraho) | madhya-pradesh | gems:1/3 · eats:0/5 |
 | Khangchendzonga National Park (khangchendzonga-np) | sikkim | eats:0/5 · stays:0/3 |
+| Khardung La (khardung-la) | ladakh | gems:2/3 · eats:1/5 · stays:0/3 |
 | Khonoma (khonoma) | nagaland | eats:3/5 |
 | Kinnaur (kinnaur) | himachal-pradesh | gems:0/3 · eats:4/5 |
 | Kishtwar (kishtwar) | jammu-kashmir | gems:0/3 · eats:3/5 · stays:2/3 |
@@ -381,6 +375,7 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Mawsynram (mawsynram) | meghalaya | gems:0/3 · eats:0/5 · stays:1/3 |
 | Mechuka (mechuka) | arunachal-pradesh | gems:0/3 · eats:1/5 |
 | Medak (medak) | telangana | gems:0/3 · eats:0/5 · stays:0/3 |
+| Minicoy Island (minicoy) | lakshadweep | gems:0/3 · eats:0/5 |
 | Mon (mon) | nagaland | eats:4/5 |
 | Moreh (moreh) | manipur | stays:1/3 |
 | Morni Hills (morni-hills) | haryana | eats:3/5 |
@@ -444,6 +439,7 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Tsomgo Lake (tsomgo-lake) | sikkim | eats:2/5 · stays:0/3 |
 | Tungnath (tungnath) | uttarakhand | gems:0/3 · eats:0/5 |
 | Tura (tura) | meghalaya | gems:0/3 · eats:2/5 |
+| Turtuk (turtuk) | ladakh | gems:2/3 |
 | Udaipur (udaipur) | rajasthan | gems:0/3 |
 | Ujjain (ujjain) | madhya-pradesh | gems:0/3 · eats:0/5 |
 | Umlingla (umlingla) | ladakh | gems:0/3 · eats:0/5 |
@@ -472,6 +468,7 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Amritsar (amritsar) | punjab |
 | Anandpur Sahib (anandpur-sahib) | punjab |
 | Auli (auli) | uttarakhand |
+| Auroville (auroville) | puducherry |
 | Ayodhya (ayodhya) | uttar-pradesh |
 | Badrinath (badrinath) | uttarakhand |
 | Barnawapara (barnawapara) | chhattisgarh |
@@ -509,6 +506,7 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Joshimath (joshimath) | uttarakhand |
 | Kalimpong (kalimpong) | west-bengal |
 | Kanatal (kanatal) | uttarakhand |
+| Karaikal (karaikal) | puducherry |
 | Kargil (kargil) | ladakh |
 | Kasauli (kasauli) | himachal-pradesh |
 | Kasol (kasol) | himachal-pradesh |
@@ -549,6 +547,7 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Pinjore Gardens (pinjore-gardens) | haryana |
 | Pithoragarh (pithoragarh) | uttarakhand |
 | Prayagraj (prayagraj) | uttar-pradesh |
+| Puducherry (Pondicherry) (puducherry) | puducherry |
 | Ranchi (ranchi) | jharkhand |
 | Ranikhet (ranikhet) | uttarakhand |
 | Ranthambore (ranthambore) | rajasthan |
@@ -559,6 +558,7 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Shillong (shillong) | meghalaya |
 | Shimla (shimla) | himachal-pradesh |
 | Siliguri (siliguri) | west-bengal |
+| Silvassa (silvassa) | daman-diu |
 | Sirpur (sirpur) | chhattisgarh |
 | Sissu (sissu) | himachal-pradesh |
 | Solan (solan) | himachal-pradesh |
