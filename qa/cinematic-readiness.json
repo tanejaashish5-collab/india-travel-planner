@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-05-10T01:18:17.032Z",
+  "generated_at": "2026-05-10T01:37:59.786Z",
   "totals": {
-    "A": 83,
-    "B": 215,
+    "A": 108,
+    "B": 190,
     "C": 207,
     "total": 505
   },
@@ -98,15 +98,15 @@
     },
     {
       "state": "himachal-pradesh",
-      "A": 13,
-      "B": 19,
+      "A": 22,
+      "B": 10,
       "C": 2,
       "total": 34
     },
     {
       "state": "jammu-kashmir",
-      "A": 2,
-      "B": 15,
+      "A": 3,
+      "B": 14,
       "C": 1,
       "total": 18
     },
@@ -133,8 +133,8 @@
     },
     {
       "state": "ladakh",
-      "A": 2,
-      "B": 10,
+      "A": 3,
+      "B": 9,
       "C": 2,
       "total": 14
     },
@@ -252,8 +252,8 @@
     },
     {
       "state": "uttarakhand",
-      "A": 13,
-      "B": 23,
+      "A": 27,
+      "B": 9,
       "C": 2,
       "total": 38
     },
@@ -268,7 +268,7 @@
   "gap_counts": [
     {
       "field": "gems",
-      "count": 395
+      "count": 370
     },
     {
       "field": "eats",
@@ -5386,26 +5386,6 @@
       ]
     },
     {
-      "id": "bhimtal",
-      "name": "Bhimtal",
-      "state": "uttarakhand",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 1,
-        "eats": 9,
-        "stays": 3
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:1/3"
-      ]
-    },
-    {
       "id": "bhitarkanika",
       "name": "Bhitarkanika",
       "state": "odisha",
@@ -5512,26 +5492,6 @@
       ]
     },
     {
-      "id": "binsar",
-      "name": "Binsar",
-      "state": "uttarakhand",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 1,
-        "eats": 5,
-        "stays": 3
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:1/3"
-      ]
-    },
-    {
       "id": "bomdila",
       "name": "Bomdila",
       "state": "arunachal-pradesh",
@@ -5571,66 +5531,6 @@
       "missing": [
         "gems:1/3",
         "eats:3/5"
-      ]
-    },
-    {
-      "id": "chail",
-      "name": "Chail",
-      "state": "himachal-pradesh",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 1,
-        "eats": 5,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:1/3"
-      ]
-    },
-    {
-      "id": "chakrata",
-      "name": "Chakrata",
-      "state": "uttarakhand",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 1,
-        "eats": 5,
-        "stays": 3
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:1/3"
-      ]
-    },
-    {
-      "id": "champawat",
-      "name": "Champawat",
-      "state": "uttarakhand",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 1,
-        "eats": 6,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:1/3"
       ]
     },
     {
@@ -5675,26 +5575,6 @@
         "gems:0/3",
         "eats:0/5",
         "stays:0/3"
-      ]
-    },
-    {
-      "id": "chaukori",
-      "name": "Chaukori",
-      "state": "uttarakhand",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 1,
-        "eats": 5,
-        "stays": 3
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:1/3"
       ]
     },
     {
@@ -5927,26 +5807,6 @@
       "missing": [
         "gems:0/3",
         "eats:4/5"
-      ]
-    },
-    {
-      "id": "dhanaulti",
-      "name": "Dhanaulti",
-      "state": "uttarakhand",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 1,
-        "eats": 7,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:1/3"
       ]
     },
     {
@@ -6270,26 +6130,6 @@
       ]
     },
     {
-      "id": "gopeshwar",
-      "name": "Gopeshwar",
-      "state": "uttarakhand",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 1,
-        "eats": 6,
-        "stays": 3
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:1/3"
-      ]
-    },
-    {
       "id": "great-himalayan-np",
       "name": "Great Himalayan National Park",
       "state": "himachal-pradesh",
@@ -6329,26 +6169,6 @@
       "missing": [
         "gems:1/3",
         "stays:2/3"
-      ]
-    },
-    {
-      "id": "guptkashi",
-      "name": "Guptkashi",
-      "state": "uttarakhand",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 1,
-        "eats": 5,
-        "stays": 3
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:1/3"
       ]
     },
     {
@@ -6561,26 +6381,6 @@
       ]
     },
     {
-      "id": "jibhi",
-      "name": "Jibhi",
-      "state": "himachal-pradesh",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 1,
-        "eats": 5,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:1/3"
-      ]
-    },
-    {
       "id": "jorhat",
       "name": "Jorhat",
       "state": "assam",
@@ -6599,26 +6399,6 @@
       "missing": [
         "gems:0/3",
         "eats:2/5"
-      ]
-    },
-    {
-      "id": "joshimath",
-      "name": "Joshimath",
-      "state": "uttarakhand",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 1,
-        "eats": 8,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:1/3"
       ]
     },
     {
@@ -6643,26 +6423,6 @@
       ]
     },
     {
-      "id": "kanatal",
-      "name": "Kanatal",
-      "state": "uttarakhand",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 1,
-        "eats": 7,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:1/3"
-      ]
-    },
-    {
       "id": "kanha",
       "name": "Kanha National Park",
       "state": "madhya-pradesh",
@@ -6681,26 +6441,6 @@
       "missing": [
         "gems:0/3",
         "eats:0/5"
-      ]
-    },
-    {
-      "id": "kargil",
-      "name": "Kargil",
-      "state": "ladakh",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 1,
-        "eats": 10,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:1/3"
       ]
     },
     {
@@ -6744,26 +6484,6 @@
         "gems:2/3",
         "eats:3/5",
         "stays:2/3"
-      ]
-    },
-    {
-      "id": "keylong",
-      "name": "Keylong",
-      "state": "himachal-pradesh",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 1,
-        "eats": 6,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:1/3"
       ]
     },
     {
@@ -7001,26 +6721,6 @@
       ]
     },
     {
-      "id": "kullu",
-      "name": "Kullu",
-      "state": "himachal-pradesh",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 1,
-        "eats": 8,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:1/3"
-      ]
-    },
-    {
       "id": "kumbhalgarh",
       "name": "Kumbhalgarh",
       "state": "rajasthan",
@@ -7059,26 +6759,6 @@
       },
       "missing": [
         "gems:0/3"
-      ]
-    },
-    {
-      "id": "lahaul-valley",
-      "name": "Lahaul Valley",
-      "state": "himachal-pradesh",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 1,
-        "eats": 7,
-        "stays": 3
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:1/3"
       ]
     },
     {
@@ -7142,26 +6822,6 @@
       "missing": [
         "gems:0/3",
         "eats:0/5"
-      ]
-    },
-    {
-      "id": "landour",
-      "name": "Landour",
-      "state": "uttarakhand",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 1,
-        "eats": 8,
-        "stays": 3
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:1/3"
       ]
     },
     {
@@ -7355,26 +7015,6 @@
       "missing": [
         "gems:0/3",
         "eats:0/5"
-      ]
-    },
-    {
-      "id": "mandi",
-      "name": "Mandi",
-      "state": "himachal-pradesh",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 1,
-        "eats": 7,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:1/3"
       ]
     },
     {
@@ -7949,46 +7589,6 @@
       ]
     },
     {
-      "id": "palampur",
-      "name": "Palampur",
-      "state": "himachal-pradesh",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 1,
-        "eats": 10,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:1/3"
-      ]
-    },
-    {
-      "id": "parvati-valley",
-      "name": "Parvati Valley",
-      "state": "himachal-pradesh",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 1,
-        "eats": 11,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:1/3"
-      ]
-    },
-    {
       "id": "pasighat",
       "name": "Pasighat",
       "state": "arunachal-pradesh",
@@ -8007,26 +7607,6 @@
       "missing": [
         "gems:0/3",
         "eats:4/5"
-      ]
-    },
-    {
-      "id": "patnitop",
-      "name": "Patnitop",
-      "state": "jammu-kashmir",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 1,
-        "eats": 9,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:1/3"
       ]
     },
     {
@@ -8109,26 +7689,6 @@
       "missing": [
         "gems:0/3",
         "eats:0/5"
-      ]
-    },
-    {
-      "id": "pithoragarh",
-      "name": "Pithoragarh",
-      "state": "uttarakhand",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 1,
-        "eats": 8,
-        "stays": 3
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:1/3"
       ]
     },
     {
@@ -8708,26 +8268,6 @@
       ]
     },
     {
-      "id": "solan",
-      "name": "Solan",
-      "state": "himachal-pradesh",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 1,
-        "eats": 6,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:1/3"
-      ]
-    },
-    {
       "id": "sonamarg",
       "name": "Sonamarg",
       "state": "jammu-kashmir",
@@ -8874,26 +8414,6 @@
       "missing": [
         "gems:0/3",
         "eats:0/5"
-      ]
-    },
-    {
-      "id": "tehri",
-      "name": "Tehri Lake",
-      "state": "uttarakhand",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 1,
-        "eats": 7,
-        "stays": 3
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:1/3"
       ]
     },
     {
@@ -9126,26 +8646,6 @@
         "gems:0/3",
         "eats:0/5",
         "stays:0/3"
-      ]
-    },
-    {
-      "id": "uttarkashi",
-      "name": "Uttarkashi",
-      "state": "uttarakhand",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 1,
-        "eats": 8,
-        "stays": 3
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:1/3"
       ]
     },
     {
@@ -9560,6 +9060,42 @@
       "missing": []
     },
     {
+      "id": "bhimtal",
+      "name": "Bhimtal",
+      "state": "uttarakhand",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 9,
+        "stays": 3
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "binsar",
+      "name": "Binsar",
+      "state": "uttarakhand",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 3
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
       "id": "bir-billing",
       "name": "Bir Billing",
       "state": "himachal-pradesh",
@@ -9596,6 +9132,42 @@
       "missing": []
     },
     {
+      "id": "chail",
+      "name": "Chail",
+      "state": "himachal-pradesh",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "chakrata",
+      "name": "Chakrata",
+      "state": "uttarakhand",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 3
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
       "id": "chamba",
       "name": "Chamba",
       "state": "himachal-pradesh",
@@ -9606,6 +9178,24 @@
         "gems": 3,
         "eats": 8,
         "stays": 3
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "champawat",
+      "name": "Champawat",
+      "state": "uttarakhand",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 6,
+        "stays": 4
       },
       "has": {
         "tagline": true,
@@ -9642,6 +9232,24 @@
         "gems": 3,
         "eats": 17,
         "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "chaukori",
+      "name": "Chaukori",
+      "state": "uttarakhand",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 3
       },
       "has": {
         "tagline": true,
@@ -9794,6 +9402,24 @@
       "missing": []
     },
     {
+      "id": "dhanaulti",
+      "name": "Dhanaulti",
+      "state": "uttarakhand",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 7,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
       "id": "dharamshala",
       "name": "Dharamshala",
       "state": "himachal-pradesh",
@@ -9822,6 +9448,42 @@
         "gems": 3,
         "eats": 8,
         "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "gopeshwar",
+      "name": "Gopeshwar",
+      "state": "uttarakhand",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 6,
+        "stays": 3
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "guptkashi",
+      "name": "Guptkashi",
+      "state": "uttarakhand",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 3
       },
       "has": {
         "tagline": true,
@@ -9920,6 +9582,24 @@
       "missing": []
     },
     {
+      "id": "jibhi",
+      "name": "Jibhi",
+      "state": "himachal-pradesh",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
       "id": "jodhpur",
       "name": "Jodhpur",
       "state": "rajasthan",
@@ -9938,6 +9618,24 @@
       "missing": []
     },
     {
+      "id": "joshimath",
+      "name": "Joshimath",
+      "state": "uttarakhand",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 8,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
       "id": "kalimpong",
       "name": "Kalimpong",
       "state": "west-bengal",
@@ -9947,6 +9645,42 @@
         "months_prose": 12,
         "gems": 3,
         "eats": 5,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "kanatal",
+      "name": "Kanatal",
+      "state": "uttarakhand",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 7,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "kargil",
+      "name": "Kargil",
+      "state": "ladakh",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 10,
         "stays": 4
       },
       "has": {
@@ -10010,6 +9744,24 @@
       "missing": []
     },
     {
+      "id": "keylong",
+      "name": "Keylong",
+      "state": "himachal-pradesh",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 6,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
       "id": "kohima",
       "name": "Kohima",
       "state": "nagaland",
@@ -10037,6 +9789,24 @@
         "months_prose": 12,
         "gems": 3,
         "eats": 17,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "kullu",
+      "name": "Kullu",
+      "state": "himachal-pradesh",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 8,
         "stays": 4
       },
       "has": {
@@ -10092,6 +9862,42 @@
         "gems": 3,
         "eats": 5,
         "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "lahaul-valley",
+      "name": "Lahaul Valley",
+      "state": "himachal-pradesh",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 7,
+        "stays": 3
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "landour",
+      "name": "Landour",
+      "state": "uttarakhand",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 8,
+        "stays": 3
       },
       "has": {
         "tagline": true,
@@ -10182,6 +9988,24 @@
         "gems": 7,
         "eats": 43,
         "stays": 3
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "mandi",
+      "name": "Mandi",
+      "state": "himachal-pradesh",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 7,
+        "stays": 4
       },
       "has": {
         "tagline": true,
@@ -10388,6 +10212,24 @@
       "missing": []
     },
     {
+      "id": "palampur",
+      "name": "Palampur",
+      "state": "himachal-pradesh",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 10,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
       "id": "pangong-lake",
       "name": "Pangong Tso",
       "state": "ladakh",
@@ -10397,6 +10239,24 @@
         "months_prose": 12,
         "gems": 3,
         "eats": 7,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "parvati-valley",
+      "name": "Parvati Valley",
+      "state": "himachal-pradesh",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 11,
         "stays": 4
       },
       "has": {
@@ -10442,6 +10302,24 @@
       "missing": []
     },
     {
+      "id": "patnitop",
+      "name": "Patnitop",
+      "state": "jammu-kashmir",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 9,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
       "id": "pelling",
       "name": "Pelling",
       "state": "sikkim",
@@ -10470,6 +10348,24 @@
         "gems": 3,
         "eats": 5,
         "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "pithoragarh",
+      "name": "Pithoragarh",
+      "state": "uttarakhand",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 8,
+        "stays": 3
       },
       "has": {
         "tagline": true,
@@ -10712,6 +10608,24 @@
       "missing": []
     },
     {
+      "id": "solan",
+      "name": "Solan",
+      "state": "himachal-pradesh",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 6,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
       "id": "spiti-valley",
       "name": "Spiti Valley",
       "state": "himachal-pradesh",
@@ -10784,6 +10698,24 @@
       "missing": []
     },
     {
+      "id": "tehri",
+      "name": "Tehri Lake",
+      "state": "uttarakhand",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 7,
+        "stays": 3
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
       "id": "tirthan-valley",
       "name": "Tirthan Valley",
       "state": "himachal-pradesh",
@@ -10811,6 +10743,24 @@
         "months_prose": 12,
         "gems": 3,
         "eats": 5,
+        "stays": 3
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "uttarkashi",
+      "name": "Uttarkashi",
+      "state": "uttarakhand",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 8,
         "stays": 3
       },
       "has": {
