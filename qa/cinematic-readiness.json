@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-05-10T04:15:02.102Z",
+  "generated_at": "2026-05-10T07:30:26.993Z",
   "totals": {
     "A": 122,
-    "B": 197,
-    "C": 186,
+    "B": 218,
+    "C": 165,
     "total": 505
   },
   "thresholds": {
@@ -78,8 +78,8 @@
     {
       "state": "goa",
       "A": 0,
-      "B": 0,
-      "C": 21,
+      "B": 21,
+      "C": 0,
       "total": 21
     },
     {
@@ -276,7 +276,7 @@
     },
     {
       "field": "months_prose",
-      "count": 186
+      "count": 165
     },
     {
       "field": "stays",
@@ -284,28 +284,6 @@
     }
   ],
   "destinations": [
-    {
-      "id": "agonda",
-      "name": "Agonda",
-      "state": "goa",
-      "tier": "C",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 0,
-        "gems": 0,
-        "eats": 0,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "months_prose:0/12",
-        "gems:0/3",
-        "eats:0/5"
-      ]
-    },
     {
       "id": "ahmedabad",
       "name": "Ahmedabad",
@@ -480,70 +458,6 @@
         "months_prose:0/12",
         "gems:0/3",
         "eats:0/5"
-      ]
-    },
-    {
-      "id": "anjuna",
-      "name": "Anjuna",
-      "state": "goa",
-      "tier": "C",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 0,
-        "gems": 0,
-        "eats": 6,
-        "stays": 3
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "months_prose:0/12",
-        "gems:0/3"
-      ]
-    },
-    {
-      "id": "arambol",
-      "name": "Arambol",
-      "state": "goa",
-      "tier": "C",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 0,
-        "gems": 0,
-        "eats": 0,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "months_prose:0/12",
-        "gems:0/3",
-        "eats:0/5"
-      ]
-    },
-    {
-      "id": "assagao",
-      "name": "Assagao",
-      "state": "goa",
-      "tier": "C",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 0,
-        "gems": 0,
-        "eats": 5,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "months_prose:0/12",
-        "gems:0/3"
       ]
     },
     {
@@ -854,50 +768,6 @@
       ]
     },
     {
-      "id": "calangute-baga",
-      "name": "Calangute-Baga",
-      "state": "goa",
-      "tier": "C",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 0,
-        "gems": 0,
-        "eats": 3,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "months_prose:0/12",
-        "gems:0/3",
-        "eats:3/5"
-      ]
-    },
-    {
-      "id": "candolim",
-      "name": "Candolim",
-      "state": "goa",
-      "tier": "C",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 0,
-        "gems": 0,
-        "eats": 4,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "months_prose:0/12",
-        "gems:0/3",
-        "eats:4/5"
-      ]
-    },
-    {
       "id": "champaner-pavagadh",
       "name": "Champaner-Pavagadh",
       "state": "gujarat",
@@ -1074,28 +944,6 @@
       ]
     },
     {
-      "id": "chorao-divar",
-      "name": "Chorao & Divar Islands",
-      "state": "goa",
-      "tier": "C",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 0,
-        "gems": 0,
-        "eats": 0,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "months_prose:0/12",
-        "gems:0/3",
-        "eats:0/5"
-      ]
-    },
-    {
       "id": "coimbatore",
       "name": "Coimbatore",
       "state": "tamil-nadu",
@@ -1115,27 +963,6 @@
         "months_prose:0/12",
         "gems:2/3",
         "eats:0/5"
-      ]
-    },
-    {
-      "id": "colva-benaulim",
-      "name": "Colva & Benaulim",
-      "state": "goa",
-      "tier": "C",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 0,
-        "gems": 0,
-        "eats": 5,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "months_prose:0/12",
-        "gems:0/3"
       ]
     },
     {
@@ -1338,28 +1165,6 @@
       ]
     },
     {
-      "id": "dudhsagar-falls",
-      "name": "Dudhsagar Falls",
-      "state": "goa",
-      "tier": "C",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 0,
-        "gems": 0,
-        "eats": 0,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "months_prose:0/12",
-        "gems:0/3",
-        "eats:0/5"
-      ]
-    },
-    {
       "id": "dwarka",
       "name": "Dwarka",
       "state": "gujarat",
@@ -1447,29 +1252,6 @@
         "months_prose:0/12",
         "gems:0/3",
         "eats:0/5"
-      ]
-    },
-    {
-      "id": "fort-aguada",
-      "name": "Fort Aguada & Candolim",
-      "state": "goa",
-      "tier": "C",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 0,
-        "gems": 0,
-        "eats": 0,
-        "stays": 1
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "months_prose:0/12",
-        "gems:0/3",
-        "eats:0/5",
-        "stays:1/3"
       ]
     },
     {
@@ -2514,29 +2296,6 @@
       ]
     },
     {
-      "id": "mandrem",
-      "name": "Mandrem",
-      "state": "goa",
-      "tier": "C",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 0,
-        "gems": 0,
-        "eats": 0,
-        "stays": 2
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "months_prose:0/12",
-        "gems:0/3",
-        "eats:0/5",
-        "stays:2/3"
-      ]
-    },
-    {
       "id": "mandvi",
       "name": "Mandvi",
       "state": "gujarat",
@@ -2600,28 +2359,6 @@
         "months_prose:0/12",
         "gems:0/3",
         "eats:0/5"
-      ]
-    },
-    {
-      "id": "margao",
-      "name": "Margao",
-      "state": "goa",
-      "tier": "C",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 0,
-        "gems": 2,
-        "eats": 2,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "months_prose:0/12",
-        "gems:2/3",
-        "eats:2/5"
       ]
     },
     {
@@ -2714,28 +2451,6 @@
       ]
     },
     {
-      "id": "mollem",
-      "name": "Mollem (Bhagwan Mahavir Sanctuary)",
-      "state": "goa",
-      "tier": "C",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 0,
-        "gems": 1,
-        "eats": 0,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "months_prose:0/12",
-        "gems:1/3",
-        "eats:0/5"
-      ]
-    },
-    {
       "id": "morgaon",
       "name": "Morgaon",
       "state": "maharashtra",
@@ -2755,28 +2470,6 @@
         "months_prose:0/12",
         "gems:0/3",
         "eats:0/5"
-      ]
-    },
-    {
-      "id": "morjim",
-      "name": "Morjim",
-      "state": "goa",
-      "tier": "C",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 0,
-        "gems": 0,
-        "eats": 1,
-        "stays": 3
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "months_prose:0/12",
-        "gems:0/3",
-        "eats:1/5"
       ]
     },
     {
@@ -3045,28 +2738,6 @@
       ]
     },
     {
-      "id": "old-goa",
-      "name": "Old Goa",
-      "state": "goa",
-      "tier": "C",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 0,
-        "gems": 0,
-        "eats": 0,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "months_prose:0/12",
-        "gems:0/3",
-        "eats:0/5"
-      ]
-    },
-    {
       "id": "ooty",
       "name": "Ooty (Udagamandalam)",
       "state": "tamil-nadu",
@@ -3152,49 +2823,6 @@
         "months_prose:0/12",
         "gems:0/3",
         "eats:0/5"
-      ]
-    },
-    {
-      "id": "palolem",
-      "name": "Palolem",
-      "state": "goa",
-      "tier": "C",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 0,
-        "gems": 2,
-        "eats": 1,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "months_prose:0/12",
-        "gems:2/3",
-        "eats:1/5"
-      ]
-    },
-    {
-      "id": "panaji",
-      "name": "Panaji",
-      "state": "goa",
-      "tier": "C",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 0,
-        "gems": 1,
-        "eats": 7,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "months_prose:0/12",
-        "gems:1/3"
       ]
     },
     {
@@ -3284,29 +2912,6 @@
         "months_prose:0/12",
         "gems:0/3",
         "eats:0/5"
-      ]
-    },
-    {
-      "id": "ponda-spice",
-      "name": "Spice Plantations (Ponda)",
-      "state": "goa",
-      "tier": "C",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 0,
-        "gems": 0,
-        "eats": 0,
-        "stays": 0
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "months_prose:0/12",
-        "gems:0/3",
-        "eats:0/5",
-        "stays:0/3"
       ]
     },
     {
@@ -3577,28 +3182,6 @@
       ]
     },
     {
-      "id": "reis-magos",
-      "name": "Reis Magos Fort",
-      "state": "goa",
-      "tier": "C",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 0,
-        "gems": 0,
-        "eats": 0,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "months_prose:0/12",
-        "gems:0/3",
-        "eats:0/5"
-      ]
-    },
-    {
       "id": "sabarimala",
       "name": "Sabarimala",
       "state": "kerala",
@@ -3794,28 +3377,6 @@
         "months_prose:0/12",
         "gems:0/3",
         "eats:0/5"
-      ]
-    },
-    {
-      "id": "siolim",
-      "name": "Siolim",
-      "state": "goa",
-      "tier": "C",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 0,
-        "gems": 0,
-        "eats": 2,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "months_prose:0/12",
-        "gems:0/3",
-        "eats:2/5"
       ]
     },
     {
@@ -4242,29 +3803,6 @@
       ]
     },
     {
-      "id": "vagator",
-      "name": "Vagator",
-      "state": "goa",
-      "tier": "C",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 0,
-        "gems": 0,
-        "eats": 3,
-        "stays": 2
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "months_prose:0/12",
-        "gems:0/3",
-        "eats:3/5",
-        "stays:2/3"
-      ]
-    },
-    {
       "id": "valparai",
       "name": "Valparai",
       "state": "tamil-nadu",
@@ -4422,6 +3960,27 @@
       "id": "adilabad",
       "name": "Adilabad",
       "state": "telangana",
+      "tier": "B",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 0,
+        "eats": 0,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": [
+        "gems:0/3",
+        "eats:0/5"
+      ]
+    },
+    {
+      "id": "agonda",
+      "name": "Agonda",
+      "state": "goa",
       "tier": "B",
       "counts": {
         "months_scored": 12,
@@ -4610,6 +4169,26 @@
       ]
     },
     {
+      "id": "anjuna",
+      "name": "Anjuna",
+      "state": "goa",
+      "tier": "B",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 0,
+        "eats": 6,
+        "stays": 3
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": [
+        "gems:0/3"
+      ]
+    },
+    {
       "id": "araku-valley",
       "name": "Araku Valley",
       "state": "andhra-pradesh",
@@ -4628,6 +4207,47 @@
       "missing": [
         "gems:1/3",
         "eats:0/5"
+      ]
+    },
+    {
+      "id": "arambol",
+      "name": "Arambol",
+      "state": "goa",
+      "tier": "B",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 0,
+        "eats": 0,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": [
+        "gems:0/3",
+        "eats:0/5"
+      ]
+    },
+    {
+      "id": "assagao",
+      "name": "Assagao",
+      "state": "goa",
+      "tier": "B",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 0,
+        "eats": 5,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": [
+        "gems:0/3"
       ]
     },
     {
@@ -5094,6 +4714,48 @@
       ]
     },
     {
+      "id": "calangute-baga",
+      "name": "Calangute-Baga",
+      "state": "goa",
+      "tier": "B",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 0,
+        "eats": 3,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": [
+        "gems:0/3",
+        "eats:3/5"
+      ]
+    },
+    {
+      "id": "candolim",
+      "name": "Candolim",
+      "state": "goa",
+      "tier": "B",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 0,
+        "eats": 4,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": [
+        "gems:0/3",
+        "eats:4/5"
+      ]
+    },
+    {
       "id": "chandipur",
       "name": "Chandipur",
       "state": "odisha",
@@ -5241,6 +4903,47 @@
       "missing": [
         "gems:1/3",
         "eats:3/5"
+      ]
+    },
+    {
+      "id": "chorao-divar",
+      "name": "Chorao & Divar Islands",
+      "state": "goa",
+      "tier": "B",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 0,
+        "eats": 0,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": [
+        "gems:0/3",
+        "eats:0/5"
+      ]
+    },
+    {
+      "id": "colva-benaulim",
+      "name": "Colva & Benaulim",
+      "state": "goa",
+      "tier": "B",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 0,
+        "eats": 5,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": [
+        "gems:0/3"
       ]
     },
     {
@@ -5539,6 +5242,27 @@
       ]
     },
     {
+      "id": "dudhsagar-falls",
+      "name": "Dudhsagar Falls",
+      "state": "goa",
+      "tier": "B",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 0,
+        "eats": 0,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": [
+        "gems:0/3",
+        "eats:0/5"
+      ]
+    },
+    {
       "id": "dudhwa-national-park",
       "name": "Dudhwa National Park",
       "state": "uttar-pradesh",
@@ -5621,6 +5345,28 @@
         "gems:0/3",
         "eats:3/5",
         "stays:2/3"
+      ]
+    },
+    {
+      "id": "fort-aguada",
+      "name": "Fort Aguada & Candolim",
+      "state": "goa",
+      "tier": "B",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 0,
+        "eats": 0,
+        "stays": 1
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": [
+        "gems:0/3",
+        "eats:0/5",
+        "stays:1/3"
       ]
     },
     {
@@ -6681,6 +6427,28 @@
       ]
     },
     {
+      "id": "mandrem",
+      "name": "Mandrem",
+      "state": "goa",
+      "tier": "B",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 0,
+        "eats": 0,
+        "stays": 2
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": [
+        "gems:0/3",
+        "eats:0/5",
+        "stays:2/3"
+      ]
+    },
+    {
       "id": "mandu",
       "name": "Mandu",
       "state": "madhya-pradesh",
@@ -6742,6 +6510,27 @@
         "gems:0/3",
         "eats:0/5",
         "stays:2/3"
+      ]
+    },
+    {
+      "id": "margao",
+      "name": "Margao",
+      "state": "goa",
+      "tier": "B",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 2,
+        "eats": 2,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": [
+        "gems:2/3",
+        "eats:2/5"
       ]
     },
     {
@@ -6893,6 +6682,27 @@
       ]
     },
     {
+      "id": "mollem",
+      "name": "Mollem (Bhagwan Mahavir Sanctuary)",
+      "state": "goa",
+      "tier": "B",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 1,
+        "eats": 0,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": [
+        "gems:1/3",
+        "eats:0/5"
+      ]
+    },
+    {
       "id": "mon",
       "name": "Mon",
       "state": "nagaland",
@@ -6930,6 +6740,27 @@
       },
       "missing": [
         "stays:1/3"
+      ]
+    },
+    {
+      "id": "morjim",
+      "name": "Morjim",
+      "state": "goa",
+      "tier": "B",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 0,
+        "eats": 1,
+        "stays": 3
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": [
+        "gems:0/3",
+        "eats:1/5"
       ]
     },
     {
@@ -7187,6 +7018,27 @@
       ]
     },
     {
+      "id": "old-goa",
+      "name": "Old Goa",
+      "state": "goa",
+      "tier": "B",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 0,
+        "eats": 0,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": [
+        "gems:0/3",
+        "eats:0/5"
+      ]
+    },
+    {
       "id": "omkareshwar",
       "name": "Omkareshwar",
       "state": "madhya-pradesh",
@@ -7269,6 +7121,47 @@
       "missing": [
         "gems:0/3",
         "eats:0/5"
+      ]
+    },
+    {
+      "id": "palolem",
+      "name": "Palolem",
+      "state": "goa",
+      "tier": "B",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 2,
+        "eats": 1,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": [
+        "gems:2/3",
+        "eats:1/5"
+      ]
+    },
+    {
+      "id": "panaji",
+      "name": "Panaji",
+      "state": "goa",
+      "tier": "B",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 1,
+        "eats": 7,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": [
+        "gems:1/3"
       ]
     },
     {
@@ -7393,6 +7286,28 @@
       "missing": [
         "gems:0/3",
         "eats:0/5"
+      ]
+    },
+    {
+      "id": "ponda-spice",
+      "name": "Spice Plantations (Ponda)",
+      "state": "goa",
+      "tier": "B",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 0,
+        "eats": 0,
+        "stays": 0
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": [
+        "gems:0/3",
+        "eats:0/5",
+        "stays:0/3"
       ]
     },
     {
@@ -7626,6 +7541,27 @@
         "gems:1/3",
         "eats:0/5",
         "stays:0/3"
+      ]
+    },
+    {
+      "id": "reis-magos",
+      "name": "Reis Magos Fort",
+      "state": "goa",
+      "tier": "B",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 0,
+        "eats": 0,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": [
+        "gems:0/3",
+        "eats:0/5"
       ]
     },
     {
@@ -7926,6 +7862,27 @@
         "gems:1/3",
         "eats:0/5",
         "stays:0/3"
+      ]
+    },
+    {
+      "id": "siolim",
+      "name": "Siolim",
+      "state": "goa",
+      "tier": "B",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 0,
+        "eats": 2,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": [
+        "gems:0/3",
+        "eats:2/5"
       ]
     },
     {
@@ -8329,6 +8286,28 @@
         "gems:0/3",
         "eats:0/5",
         "stays:0/3"
+      ]
+    },
+    {
+      "id": "vagator",
+      "name": "Vagator",
+      "state": "goa",
+      "tier": "B",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 0,
+        "eats": 3,
+        "stays": 2
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": [
+        "gems:0/3",
+        "eats:3/5",
+        "stays:2/3"
       ]
     },
     {
