@@ -1,0 +1,235 @@
+{
+  "schema_version": "1.0",
+  "run": {
+    "id": "nakshiq-daily-test-2026-05-10",
+    "date": "2026-05-10",
+    "started_utc": "2026-05-10T01:50:00Z",
+    "completed_utc": "2026-05-10T02:25:00Z",
+    "target": "https://www.nakshiq.com/",
+    "executor": "Claude Opus 4.7 (Cowork) — curl + Python HTTP probes + Chrome MCP for Section K (interactive)",
+    "mode": "Daily regression — A through K matrix per qa/SKILL.md, real verification, no fabricated numbers",
+    "real_verification": true,
+    "fabricated_numbers": false,
+    "duration_minutes": 35,
+    "user_present": false,
+    "status": "completed"
+  },
+
+  "blockers": [],
+
+  "phases_completed": [
+    "Section A — soft-404 regression (8 routes vs prior NEW-004/NEW-006 closures)",
+    "Section B — destination availability + TTFB (10 random sample from sitemap-1)",
+    "Section C — Hindi parity (same 10 destinations, /hi locale)",
+    "Section D — SEO meta sanity (title stutter, canonical, hreflang en/hi/x-default, og:image on 12 URLs — case-insensitive grep this run after self-correcting a false-negative on `hreflang` casing)",
+    "Section E — SOS phone format on 10 destinations",
+    "Section F — API smoke (10 endpoint+body combos including DEEP-Phase7-A1/A2 regressions)",
+    "Section G — PWA / SW / manifest / robots.txt sanity",
+    "Section H — Sitemap integrity (5 sitemap chunks, 20152 entries)",
+    "Section I — Core routes HTTP matrix (21 high-traffic routes)",
+    "Section J — Locale-routing redirect from `/` and bare paths",
+    "Section K — Chrome E2E (5 pages: 3 destinations + explore + trip; map tiles + marker count + console errors)"
+  ],
+
+  "phases_skipped": [
+    {
+      "phase": "Axe-core a11y sweep across 20 templates × 2 viewports",
+      "reason": "Cost-aware rule per qa/SKILL.md: axe-core not run daily unless material changes since last deep pass. Last full axe pass: 2026-05-04 (qa/findings/2026-05-04-deep/phase-03-axe.json). Carry-forward color-contrast + aria-allowed-attr remain open."
+    },
+    {
+      "phase": "Lighthouse perf/a11y/SEO/best-practices",
+      "reason": "Last LH pass: 2026-05-05 (qa/findings/2026-05-05-pwa/lh-pwa-en.json — perf 61, a11y 98, BP 100, SEO 100). No re-run today on a quiet day."
+    },
+    {
+      "phase": "Persona round-trip (Phase 5 from 2026-05-04)",
+      "reason": "Carry-forward defer; not regressed by recent commits."
+    },
+    {
+      "phase": "Dedicated security probes (Phase 9 from 2026-05-04)",
+      "reason": "Carry-forward defer; needs its own session."
+    }
+  ],
+
+  "regression_matrix": [
+    {
+      "id": "NEW-2026-05-04-004",
+      "title": "Bad-slug soft-404 returning HTTP 200",
+      "prior_status": "STILL CLOSED 2026-05-08",
+      "today_status": "STILL CLOSED",
+      "evidence": "/en/destination/this-does-not-exist-xyz → 404; /en/destination/zzzzzz-fake → 404; /hi/destination/this-does-not-exist-xyz → 404 (section-A-soft404.csv)"
+    },
+    {
+      "id": "NEW-2026-05-04-006",
+      "title": "Numeric/garbage month sub-route soft-404",
+      "prior_status": "STILL CLOSED 2026-05-08",
+      "today_status": "STILL CLOSED",
+      "evidence": "/en/destination/shimla/3 → 404; /en/destination/shimla/marchx → 404; /en/destination/shimla/99 → 404 (section-A-soft404.csv). Three-letter abbreviations (jan, jul) also 404 — by design per slug-validator allowlist (full month names only). Same as INFO-2026-05-07-001."
+    },
+    {
+      "id": "DEEP-Phase7-A1",
+      "title": "/api/chat 500 on malformed JSON / oversized body",
+      "prior_status": "STILL CLOSED 2026-05-08",
+      "today_status": "STILL CLOSED",
+      "evidence": "POST /api/chat with body `{\"broken` → 400 {\"error\":\"Malformed JSON body\"}; empty body → 400; valid `{\"message\":\"hi\"}` → 400 {\"error\":\"Invalid question\"} (input validation, not 5xx). section-F-api.csv"
+    },
+    {
+      "id": "DEEP-Phase7-A2",
+      "title": "/api/itinerary 500 on malformed JSON",
+      "prior_status": "STILL CLOSED 2026-05-08",
+      "today_status": "STILL CLOSED",
+      "evidence": "POST /api/itinerary with body `{\"broken` → 400 {\"error\":\"Malformed JSON body\"}; empty body → 400. section-F-api.csv"
+    },
+    {
+      "id": "DEEP-Phase2-D1",
+      "title": "16 pages with `| NakshIQ | NakshIQ` title stutter",
+      "prior_status": "STILL CLOSED 2026-05-08",
+      "today_status": "STILL CLOSED",
+      "evidence": "0/12 sampled URLs (landing + 10 destinations + pushkar/may sub-route) showed stutter. section-D-seo.csv"
+    },
+    {
+      "id": "PWA-2026-05-05",
+      "title": "Service worker v32 / manifest with 3 icons + 5 shortcuts + offline page",
+      "prior_status": "STILL GREEN 2026-05-08",
+      "today_status": "STILL GREEN",
+      "evidence": "VERSION = \"nakshiq-v32\" in /sw.js; manifest.json: name=\"NakshIQ — India travel confidence\", icons=3, shortcuts=5, display=standalone, start_url=/en, theme_color=#161614. /offline → 301 → /en/offline → 200."
+    },
+    {
+      "id": "INFO-2026-05-08-001",
+      "title": "Destination map tile pane renders, but marker pane is empty",
+      "prior_status": "OPEN — info-only, intent unconfirmed (logged 2026-05-08)",
+      "today_status": "STILL OPEN",
+      "evidence": "Same pattern reproduced today on 3 sampled destinations — pushkar (28 tiles, 0 markers), ajmer (28 tiles, 0 markers), sabarimala (42 tiles, 0 markers). marker-pane innerHTML length = 0. 0 console errors. section-K-chrome-e2e.csv"
+    },
+    {
+      "id": "E2E-2026-05-04-A1",
+      "title": "Welcome tour modal hard-coded English on /hi",
+      "prior_status": "STILL OPEN — needs i18n sprint",
+      "today_status": "STILL OPEN — not investigated today",
+      "evidence": "Static-HTML check shows /hi/<dest> pages have lang=\"hi\" + Devanagari titles (10/10), but the tour modal is a client-side mount; not exercised in today's Chrome E2E pass."
+    },
+    {
+      "id": "E2E-2026-05-04-B1",
+      "title": "/hi/destination/<slug>/<month> H1 + body labels still English",
+      "prior_status": "STILL OPEN — needs i18n sprint",
+      "today_status": "STILL OPEN — not actively re-tested"
+    },
+    {
+      "id": "Phase-3-carry-color-contrast",
+      "title": "30 sites flagged WCAG-AA color contrast",
+      "prior_status": "STILL OPEN — token sweep needed",
+      "today_status": "STILL OPEN — not re-tested without axe in this session"
+    },
+    {
+      "id": "Phase-3-carry-aria-allowed-attr",
+      "title": "Destination tabs use role=tab without enclosing tablist",
+      "prior_status": "STILL OPEN — ARIA pattern conversion needed",
+      "today_status": "STILL OPEN — not re-tested without axe today"
+    },
+    {
+      "id": "Phase-4-carry-perf",
+      "title": "7/10 routes below LH perf 0.70 on mobile 4G",
+      "prior_status": "STILL OPEN — image responsiveness/offscreen/format levers catalogued",
+      "today_status": "STILL OPEN",
+      "evidence": "Today's destination-TTFB sample (curl from sandbox region, not LH-equivalent): min 465 ms, median 2693 ms, max 3614 ms across 10 destinations. Wider spread than 2026-05-08 (2302–3810 ms band) — badrinath was warm (465 ms) while ajmer/barnawapara/uttarkashi/barren-island all sat in the 3.3-3.6 s tail. section-B-destinations.csv"
+    },
+    {
+      "id": "Phase-8-carry-sparse-stays",
+      "title": "kaza/phawngpui-peak/majuli show <3 stay cards in rendered HTML",
+      "prior_status": "STILL OPEN — investigation needed",
+      "today_status": "NOT IN TODAY'S 10-DEST RANDOM SAMPLE",
+      "evidence": "Random shuf drew pushkar/barnawapara/badrinath/ajmer/anini/dholavira/saputara/barren-island/sabarimala/uttarkashi. Edge-case slugs (kaza, phawngpui-peak, majuli) deferred again."
+    }
+  ],
+
+  "new_findings_today": [
+    {
+      "id": "NEW-2026-05-10-001",
+      "severity": "high",
+      "title": "Uttarkashi SOS publishes a literal placeholder phone `+91-94120-XXXXX` for `Taxi Union Uttarkashi`",
+      "detail": "/en/destination/uttarkashi page contains `\"phone\":\"+91-94120-XXXXX\"` in the embedded RSC payload for the Taxi Union Uttarkashi SOS contact. The `XXXXX` substring is a literal redacted-template placeholder, not a real phone number. This violates the CLAUDE.md rule: \"All data must be real and verifiable — zero fabricated phones, contacts, statistics. Honest scarcity (`[]`) preferred over fabrication.\" The other 4 Uttarkashi phones (+91-1374-222123, 01352559898, 1070, 112) are valid Indian formats. Across the 10-destination sample, this is the only invalid phone (1 / 27 = 3.7%).",
+      "evidence": "section-E-sos.csv — uttarkashi row: 5 phones extracted, 1 invalid_format = `+9194120XXXXX`. Source HTML context: `\"name\":\"Taxi Union Uttarkashi\",\"role\":\"Taxi stand with 24/7 service to Rishikesh/Gangotri\",\"phone\":\"+91-94120-XXXXX\"` (RSC payload).",
+      "recommendation": "Either (a) replace `+91-94120-XXXXX` with the actual Taxi Union Uttarkashi number sourced from a verifiable channel (district tourism office, taxi stand signage, news reference), or (b) drop the contact entirely and let the Taxi Union row fall to honest-scarcity null. Then audit the rest of the 488-destination corpus for any other `XXXXX`/`XXXX`/`####` placeholder strings in `phone` fields — `grep -roE '\"phone\":\"[^\"]*X{2,}[^\"]*\"' supabase/seed*.sql data/sos/` and `grep -roE '\"phone\":\"[^\"]*#{2,}[^\"]*\"'` should surface any siblings."
+    },
+    {
+      "id": "INFO-2026-05-10-001",
+      "severity": "info",
+      "title": "Self-corrected false-negative on hreflang grep: site uses `hrefLang` (camelCase JSX), not `hreflang`",
+      "detail": "First Section-D run with case-sensitive `grep -E 'hreflang=\"en\"'` returned 0/12 — would have shown a regression vs. yesterday's 12/12. Investigation showed the head emits `<link rel=\"alternate\" hrefLang=\"en\" ...>` (React JSX preserves casing). Re-ran with `grep -i` and got the expected 12/12. Documenting so future probes use case-insensitive matching, and noting this matches the existing memory entry `nakshiq_hreflang_fix.md` (next-intl 4.9 emits broken x-default, so Next.js metadata is the single hreflang source, and React renders it camelCased).",
+      "evidence": "section-D-seo.csv (final, case-insensitive); 12/12 canonical, 12/12 hreflang en/hi/x-default, 12/12 og:image, 0/12 title stutter.",
+      "recommendation": "Bake `grep -i` into qa/SKILL.md guidance for SEO meta probes. No code change required."
+    }
+  ],
+
+  "headline_metrics": {
+    "core_routes_probed": 21,
+    "core_routes_2xx": 21,
+    "core_routes_3xx_redirect": 0,
+    "core_routes_4xx_or_5xx": 0,
+    "core_routes_TTFB_ms": { "min": 154, "median": 738, "p90": 938, "max": 1617 },
+    "destinations_sampled": 10,
+    "destinations_all_200": true,
+    "destinations_TTFB_ms": { "min": 465, "median": 2693, "max": 3614 },
+    "hindi_parity_sampled": 10,
+    "hindi_pages_with_lang_hi": 10,
+    "hindi_pages_with_devanagari_title": 10,
+    "seo_urls_sampled": 12,
+    "seo_title_stutter": 0,
+    "seo_canonical_present": 12,
+    "seo_hreflang_en_present": 12,
+    "seo_hreflang_hi_present": 12,
+    "seo_hreflang_xdefault_present": 12,
+    "seo_og_image_present": 12,
+    "soft_404_regression_passes": 8,
+    "soft_404_regression_misses": 0,
+    "soft_404_regression_note": "All 8 bad-slug + garbage-month probes returned 404. Three-letter month abbreviations (jan, jul) 404 by design per slug-validator allowlist; consistent with 2026-05-07 INFO-2026-05-07-001. Not a regression.",
+    "sos_phones_total_across_10_dests": 27,
+    "sos_phones_invalid_format": 1,
+    "sos_phones_extraction_note": "Combined extraction: tel: links + JSON-embedded `\"phone\"` fields (bare and escaped variants) in the RSC payload. Per-destination range: 1-6 phones. The sole invalid phone is the literal placeholder `+91-94120-XXXXX` published for Uttarkashi's Taxi Union (NEW-2026-05-10-001). All other 26 phones conform to Indian phone formats (short codes 100/112/1070/1363/1364, STD-prefixed landlines, +91-prefixed mobiles).",
+    "api_endpoints_probed": 10,
+    "api_5xx_returned": 0,
+    "api_4xx_validation_returned": 6,
+    "api_2xx_returned": 2,
+    "api_404_html_returned": 2,
+    "service_worker_version": "nakshiq-v32",
+    "manifest_icons": 3,
+    "manifest_shortcuts": 5,
+    "sitemap_chunks": 5,
+    "sitemap_total_destination_slug_urls": 505,
+    "sitemap_total_destination_month_urls": 6060,
+    "sitemap_total_urls": 20152,
+    "chrome_e2e_pages_probed": 5,
+    "chrome_e2e_console_errors_total": 0,
+    "chrome_e2e_destination_map_tiles_loaded": true,
+    "chrome_e2e_destination_map_markers_rendered": false,
+    "chrome_e2e_destination_map_markers_note": "0 markers across 3 sampled destination pages — STILL OPEN as INFO-2026-05-08-001 (intent still unconfirmed)."
+  },
+
+  "deliverables": [
+    "qa/findings/2026-05-10.json (this file)",
+    "qa/findings/2026-05-10/section-A-soft404.csv",
+    "qa/findings/2026-05-10/section-B-destinations.csv",
+    "qa/findings/2026-05-10/section-C-hindi-parity.csv",
+    "qa/findings/2026-05-10/section-D-seo.csv",
+    "qa/findings/2026-05-10/section-E-sos.csv",
+    "qa/findings/2026-05-10/section-F-api.csv",
+    "qa/findings/2026-05-10/section-J-locale-redirect.csv",
+    "qa/findings/2026-05-10/section-K-chrome-e2e.csv",
+    "qa/findings/2026-05-10/http-matrix.csv",
+    "qa/findings/2026-05-10/sitemap-{0..4}.xml",
+    "qa/findings/2026-05-10/sitemap-index.xml",
+    "qa/findings/2026-05-10/sw.js",
+    "qa/findings/2026-05-10/manifest.json",
+    "qa/findings/2026-05-10/robots.txt",
+    "NakshIQ_Developer_Report.docx (workspace root)",
+    "NakshIQ_QA_Report.docx (workspace root)",
+    "NakshIQ_Business_Report.docx (workspace root)"
+  ],
+
+  "honest_caveats": [
+    "TTFB for destinations is curl-from-sandbox, not 4G mobile Lighthouse. Useful as relative comparison + hot/cold cache signal, not absolute web-vitals.",
+    "Sample size is 10 destinations from a 505-EN-destination corpus (~2%). Random selection via `shuf -n 10 --random-source=<(yes 2026-05-10)` against sitemap-1's en-destination-only filter for reproducibility.",
+    "Section K (Chrome E2E) probed 3 destination pages + explore + trip — enough to confirm map renders, destCards visible on /explore, h1 visible on /trip, and 0 console errors across all 5. The 0-marker observation is logged as INFO-2026-05-08-001 — STILL OPEN pending product-intent confirmation.",
+    "Section D first-pass had a self-introduced false-negative (case-sensitive grep on `hreflang`); corrected with case-insensitive re-run before recording. INFO-2026-05-10-001 documents the lesson; no site-side change.",
+    "axe-core, Lighthouse, Playwright full E2E specs, persona round-trips, and dedicated security probes were skipped per cost-aware rules in qa/SKILL.md (last deep pass 2026-05-04, last LH pass 2026-05-05; no material commits since)."
+  ]
+}

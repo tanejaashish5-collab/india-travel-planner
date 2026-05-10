@@ -1,0 +1,92 @@
+# NakshIQ robots.txt — AI-citability + search crawl allowlist
+
+# Default: allow search + answer engines
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+Crawl-delay: 10
+
+# Explicit AI-answer bot allowlist (R2 §12 Tier-1 — these bots deliver citations).
+# Crawl-delay added 2026-05-06 after PerplexityBot blitz (~60K hits / 13d) blew
+# Supabase free-tier egress (5 GB → 32 GB). Bots that respect Crawl-delay get
+# 10s between requests → ~8,600 hits/day cap. GPTBot and Googlebot ignore the
+# directive (self-regulated via their consoles).
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+Crawl-delay: 10
+
+User-agent: ChatGPT-User
+Allow: /
+Crawl-delay: 10
+
+User-agent: PerplexityBot
+Allow: /
+Crawl-delay: 30
+
+User-agent: ClaudeBot
+Allow: /
+Crawl-delay: 10
+
+User-agent: anthropic-ai
+Allow: /
+Crawl-delay: 10
+
+User-agent: Claude-Web
+Allow: /
+Crawl-delay: 10
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+Crawl-delay: 10
+
+User-agent: CCBot
+Allow: /
+Crawl-delay: 30
+
+User-agent: Amazonbot
+Allow: /
+Crawl-delay: 10
+
+User-agent: YouBot
+Allow: /
+Crawl-delay: 30
+
+User-agent: PhindBot
+Allow: /
+Crawl-delay: 10
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 5
+
+# Bulk scrapers without attribution — disallowed
+User-agent: Bytespider
+Disallow: /
+
+User-agent: Diffbot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+# AI-agent guidance
+# Structured site overview for LLM crawlers: /llms.txt and /llms-full.txt
+
+# Sitemaps (6 chunks: static, destinations, content, programmatic SEO, comparisons, Q&A)
+Sitemap: https://www.nakshiq.com/sitemap/0.xml
+Sitemap: https://www.nakshiq.com/sitemap/1.xml
+Sitemap: https://www.nakshiq.com/sitemap/2.xml
+Sitemap: https://www.nakshiq.com/sitemap/3.xml
+Sitemap: https://www.nakshiq.com/sitemap/4.xml
+Sitemap: https://www.nakshiq.com/sitemap/5.xml
