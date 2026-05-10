@@ -284,9 +284,182 @@ KNOWN_FESTIVAL_END_DAYS: dict[str, int] = {
 # and let the rotation prefer next-month festivals instead.
 FESTIVAL_PLANNING_CUTOFF_DAY = 14
 
-# Total destinations Nakshiq scores — populated from /stats on each sync.
-# Fallback keeps copy sensible if the stats call fails for any reason.
-TOTAL_DESTINATIONS = 260
+# Total destinations Nakshiq scores — populated from /stats on each sync (see
+# sync_all_content, autoposter.py:845-848).  Fallback only matters when the
+# stats call fails; bumping to current catalog size (2026-05-10) so a sync
+# failure doesn't stamp every caption with a stale number.
+TOTAL_DESTINATIONS = 505
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Caption helpers (Tier 1 overhaul, 2026-05-10)
+# Centralises score scaling, IG-only URL stripping, and hashtag expansion so
+# every caption builder shares one source of truth.  The website moved to a
+# 0-10 scale during the 2026-05-05 sweep; raw API values remain on /5 so we
+# scale at display time only.
+# ─────────────────────────────────────────────────────────────────────────────
+
+def format_score(raw) -> str:
+    """Convert raw 1-5 score from the API into the website-aligned '8/10' form.
+    Mirrors the formatScore() helper in apps/web/src/components/destination-detail-cinematic.tsx.
+    """
+    try:
+        if raw is None or raw == "":
+            return "—/10"
+        return f"{int(raw) * 2}/10"
+    except (TypeError, ValueError):
+        return "—/10"
+
+
+# Niche/branded hashtag pool used by _build_ig_hashtags.  Every entry has been
+# checked against _BANNED_HASHTAGS — none get stripped by _sanitize_caption.
+# Broad tags (#travel, #india, #wanderlust, #travelgram …) are intentionally
+# excluded; the existing brand rules sanitise those out anyway.
+_IG_NICHE_POOL = [
+    "IndianHillStations", "IndianRoadtrip", "IndianAdventures",
+    "DesiTravel", "DesiTraveller", "TravelBharat", "BharatTravel",
+    "DiscoverIndia", "ExploreBharat", "IndianTravelDiaries",
+    "HimalayanIndia", "IndianMonuments", "IndianForts",
+    "IndianTemples", "IndianTrails",
+]
+
+_IG_BRAND_POOL = [
+    "NakshIQ", "TravelWithIQ", "DataDrivenTravel",
+    "PlanWithData", "ScoredDestinations", "VerifiedTravel",
+]
+
+_IG_CATEGORY_POOL = {
+    "food":         ["IndianFood", "IndianStreetFood", "IndianCuisine"],
+    "festivals":    ["IndianFestivals", "FestivalsOfIndia", "DesiFestivals"],
+    "activities":   ["IndianAdventures", "AdventureIndia", "IndianTrails"],
+    "seasons":      ["SeasonalTravel", "MonsoonTravel", "IndianClimate"],
+    "mood_shots":   ["IndianTravelDiaries", "DesiTravel", "TravelBharat"],
+    "collections":  ["TravelCollection", "IndianRoadtrip", "DiscoverIndia"],
+    "score_card":   ["VerifiedTravel", "ScoredDestinations", "TravelData"],
+    "reel":         ["TravelReels", "ReelsOfIndia", "IndianTravelReels"],
+    "yt_short":     ["TravelShorts", "IndianTravelShorts", "Shorts"],
+    "tourist_trap": ["TouristTrapAlert", "IndianTravelTips", "TravelSmart"],
+    "budget":       ["BudgetTravelIndia", "AffordableTravel", "TravelOnBudget"],
+    "kids":         ["FamilyTravelIndia", "KidsTravelIndia", "FamilyAdventure"],
+    "festival":     ["IndianFestivals", "FestivalsOfIndia", "DesiFestivals"],
+    "pomelli":      ["VerifiedTravel", "DataDrivenTravel", "TravelIntel"],
+    "canva":        ["IndianTravelDiaries", "DesiTravel", "TravelCollection"],
+    "flow_story":   ["IndianLandscapes", "TravelMoments", "DesiTravel"],
+}
+
+
+def _build_ig_hashtags(dest_name: str | None = None,
+                       state_name: str | None = None,
+                       category: str | None = None,
+                       max_tags: int = 18) -> str:
+    """Build a 15-20 tag hashtag block for Instagram captions.
+
+    Tier 1 (2026-05-10): expands from 5 → ~18 niche/branded tags to improve IG
+    discoverability.  Pool order: dest-specific → state-specific → category
+    niche → safe broad-Indian-travel → branded.  Broad tags like #travel are
+    intentionally absent (sanitiser strips them; brand rule).
+    """
+    tags: list[str] = []
+
+    def _push(t: str) -> None:
+        if not t:
+            return
+        if t not in tags and len(tags) < max_tags:
+            tags.append(t)
+
+    # 1. Destination-specific (up to 3)
+    if dest_name and dest_name not in ("India", "STATE_SHOWCASE", "EDITORIAL", "GENERIC"):
+        clean = dest_name.replace(" ", "").replace("-", "").replace("&", "").replace(",", "")
+        if clean:
+            _push(clean)
+            _push(f"{clean}Travel")
+            _push(f"Visit{clean}")
+
+    # 2. State-specific (up to 3)
+    if state_name and state_name not in ("India", "STATE_SHOWCASE", "EDITORIAL", "GENERIC"):
+        clean_state = state_name.replace(" ", "").replace("&", "And").replace("-", "")
+        if clean_state:
+            _push(clean_state)
+            _push(f"{clean_state}Travel")
+            _push(f"{clean_state}Tourism")
+
+    # 3. Category niche (up to 3)
+    cat_key = (category or "").lower()
+    cat_tags = _IG_CATEGORY_POOL.get(cat_key, [])
+    for t in cat_tags[:3]:
+        _push(t)
+
+    # 4. Safe niche-Indian-travel pool (top up to ~14)
+    for t in _IG_NICHE_POOL:
+        if len(tags) >= max_tags - 4:
+            break
+        _push(t)
+
+    # 5. Branded (last 4 slots)
+    for t in _IG_BRAND_POOL:
+        _push(t)
+
+    return " ".join(f"#{t}" for t in tags[:max_tags])
+
+
+def _strip_url_for_ig(caption: str, platform: str,
+                      replacement: str = "📲 Full data → link in bio") -> str:
+    """Replace the '→ http(s)://nakshiq.com…' line with link-in-bio CTA when
+    posting to Instagram.  IG renders caption URLs as plain text (unclickable)
+    so they add clutter; FB and YT keep the URL intact.
+    """
+    if platform != "instagram" or not caption:
+        return caption
+    import re as _re
+    pattern = _re.compile(
+        r'^(?:→\s*)?(?:https?://)?(?:www\.)?nakshiq\.com[^\n]*\n?',
+        _re.MULTILINE,
+    )
+    if not pattern.search(caption):
+        return caption
+    # Replace first match with the link-in-bio CTA, drop subsequent URL lines.
+    first_replaced = [False]
+    def _sub(m):  # noqa: ANN001
+        if first_replaced[0]:
+            return ""
+        first_replaced[0] = True
+        return f"{replacement}\n"
+    out = pattern.sub(_sub, caption)
+    # Collapse any tripled blank lines created by the strip.
+    out = _re.sub(r'\n{3,}', '\n\n', out)
+    return out
+
+
+_IG_ENGAGEMENT_CTAS = {
+    "reel":         "💾 Save this — the timing window closes faster than you think.",
+    "reel_map":     "💾 Save this map for your next trip planning session.",
+    "canva":        "💬 Comment which one fits your trip — we'll DM you the data.",
+    "pomelli":      "📌 Save for trip planning. Tag a travel buddy below.",
+    "flow_story":   "💾 Save this — pull it up when you're booking.",
+    "yt_short":     "💾 Save for later. Comment your next destination.",
+    "feed_post":    "💾 Save this — refer back when you plan your trip.",
+}
+
+
+def _add_ig_engagement_cta(caption: str, platform: str, kind: str) -> str:
+    """Inject a saves/comments-bait line above the hashtag block when posting
+    to Instagram.  Saves and comments are IG's #1 ranking signals as of 2025/26.
+    No-op for FB / YT (their feed mechanics differ; CTAs would feel forced).
+    """
+    if platform != "instagram" or not caption:
+        return caption
+    cta = _IG_ENGAGEMENT_CTAS.get(kind)
+    if not cta:
+        return caption
+    if cta in caption:
+        return caption
+    # Insert above trailing hashtag block ("…\n\n#tag1 #tag2 …")
+    import re as _re
+    m = _re.search(r'\n\n#[A-Za-z0-9_ ]+(?:\s|$)', caption)
+    if m:
+        return caption[:m.start()] + f"\n\n{cta}" + caption[m.start():]
+    return caption.rstrip() + f"\n\n{cta}"
+
 
 # Brand-voice guardrails. Captions are passed through sanitize() before publishing
 # so these phrases/hashtags never reach the platforms.
@@ -1231,7 +1404,7 @@ def copy_reality_check(destinations: list, platform: str,
     if platform == "facebook":
         body = (
             f"REALITY CHECK — {month_name().upper()} {date.today().year}\n\n"
-            f"Both score {a['score']}/5 this month. Same region. Very different experience.\n\n"
+            f"Both score {format_score(a['score'])} this month. Same region. Very different experience.\n\n"
             f"❌ {a['name'].upper()} (↑{a['elevation_m']:,}m)\n{a['tagline']}\n\n"
             f"✅ {b['name'].upper()} (↑{b['elevation_m']:,}m)\n{b['tagline']}\n"
             + (f"{note}\n\n" if note else "\n")
@@ -1241,7 +1414,7 @@ def copy_reality_check(destinations: list, platform: str,
     else:
         body = (
             f"SAME SCORE. DIFFERENT SATURDAY.\n\n"
-            f"{a['name']} and {b['name']} both score {a['score']}/5 this {month_name()}.\n\n"
+            f"{a['name']} and {b['name']} both score {format_score(a['score'])} this {month_name()}.\n\n"
             f"{a['name']}: {a['tagline']}\n\n{b['name']}: {b['tagline']}\n"
             + (f"{note}\n\n" if note else "\n")
             + f"NakshIQ scores {TOTAL_DESTINATIONS} destinations monthly.\n\n"
@@ -1261,16 +1434,16 @@ def copy_data_carousel(destinations: list, platform: str) -> str:
     explore_url = utm("https://nakshiq.com/en/explore", "social", "post", "carousel")
     if platform == "facebook":
         return (
-            f"{month_name().upper()}'S REAL 5/5 DESTINATIONS\n\n"
-            f"NakshIQ scored {TOTAL_DESTINATIONS} destinations this {month_name()}. 20 hit 5/5. "
+            f"{month_name().upper()}'S REAL 10/10 DESTINATIONS\n\n"
+            f"NakshIQ scored {TOTAL_DESTINATIONS} destinations this {month_name()}. 20 hit 10/10. "
             f"Most travelers are booking the same 4.\n\n"
             f"Here's what the data actually shows:\n\n{lines}\n\n"
-            f"Every score is monthly — 5/5 in {month_name()} may be 2/5 in August.\n\n"
+            f"Every score is monthly — 10/10 in {month_name()} may be 4/10 in August.\n\n"
             f"Full ranked list → {explore_url}\n\n{tags}"
         ).strip()
     else:
         return (
-            f"{month_name().upper()}'S 5/5 PICKS\n(Save — the window closes fast)\n\n"
+            f"{month_name().upper()}'S 10/10 PICKS\n(Save — the window closes fast)\n\n"
             f"{lines}\n\n"
             f"NakshIQ scores {TOTAL_DESTINATIONS} destinations monthly. These are {month_name()}'s facts.\n\n"
             f"↓ Full scores → {explore_url}\n\n{tags}"
@@ -1311,7 +1484,7 @@ def copy_monthly_forecast(destinations: list, platform: str) -> str:
                    "BestTimeToVisit", f"{month_name()}Travel", "NakshIQ")
     return (
         f"📊 {month_name().upper()} FORECAST — NakshIQ Monthly Update\n\n"
-        f"{TOTAL_DESTINATIONS} destinations re-scored. This month's top 5/5 picks:\n\n{lines}\n\n"
+        f"{TOTAL_DESTINATIONS} destinations re-scored. This month's top 10/10 picks:\n\n{lines}\n\n"
         f"Scores reset every month. What worked last month may not work now.\n\n"
         f"Full {month_name()} data → {explore_url}\n\n{tags}"
     ).strip()
@@ -1423,17 +1596,17 @@ def copy_seasonal_shift(dest: dict, next_month: str, next_score: int,
         if platform == "facebook":
             return (
                 f"⏳ {name.upper()} — TIMING IS EVERYTHING\n\n"
-                f"Right now: {score}/5 {stars_now}\n"
-                f"In {next_month}: {next_score}/5 {stars_next}\n\n"
+                f"Right now: {format_score(score)} {stars_now}\n"
+                f"In {next_month}: {format_score(next_score)} {stars_next}\n\n"
                 f"That's a {score - next_score}-point drop. Weather shifts, roads close, "
                 f"crowds change.\n\n"
-                f"Would you rather visit a 5/5 or a 2/5? The data says go now.\n\n"
+                f"Would you rather visit a 10/10 or a 4/10? The data says go now.\n\n"
                 f"Full {name} breakdown → {url}\n\n{tags}"
             ).strip()
         else:
             return (
                 f"⏳ {name.upper()} · {month_name().upper()} → {next_month.upper()}\n"
-                f"{stars_now} {score}/5 now → {stars_next} {next_score}/5\n\n"
+                f"{stars_now} {format_score(score)} now → {stars_next} {format_score(next_score)}\n\n"
                 f"That's a {score - next_score}-point drop in 30 days.\n\n"
                 f"Roads, weather, crowds — something shifts. "
                 f"NakshIQ tracks it so you don't have to guess.\n\n"
@@ -1457,8 +1630,8 @@ def copy_elevation_face_off(low_dest: dict, high_dest: dict,
         if platform == "facebook":
             return (
                 f"SEA LEVEL vs SKY LEVEL — both score high this {month_name()}\n\n"
-                f"🏖️ {lo_name} · {lo_elev:,}m · {lo_score}/5\n"
-                f"🏔️ {hi_name} · {hi_elev:,}m · {hi_score}/5\n\n"
+                f"🏖️ {lo_name} · {lo_elev:,}m · {format_score(lo_score)}\n"
+                f"🏔️ {hi_name} · {hi_elev:,}m · {format_score(hi_score)}\n\n"
                 f"Same month, same score, completely different experience.\n"
                 f"One's a beach escape. One needs a down jacket.\n\n"
                 f"Which elevation suits you? Both are data-backed this month.\n\n"
@@ -1467,8 +1640,8 @@ def copy_elevation_face_off(low_dest: dict, high_dest: dict,
         else:
             return (
                 f"🏖️ vs 🏔️ · {month_name().upper()}\n\n"
-                f"{lo_name} · {lo_elev:,}m · {lo_score}/5\n"
-                f"{hi_name} · {hi_elev:,}m · {hi_score}/5\n\n"
+                f"{lo_name} · {lo_elev:,}m · {format_score(lo_score)}\n"
+                f"{hi_name} · {hi_elev:,}m · {format_score(hi_score)}\n\n"
                 f"Same month. Same score. ↑{hi_elev - lo_elev:,}m apart.\n\n"
                 f"NakshIQ doesn't tell you where to go. "
                 f"It tells you what the data says — for {TOTAL_DESTINATIONS} destinations.\n\n"
@@ -1491,8 +1664,8 @@ def copy_state_showdown(dest_a: dict, dest_b: dict, platform: str) -> str:
         if platform == "facebook":
             return (
                 f"{a_state.upper()} vs {b_state.upper()} — {month_name()} data\n\n"
-                f"📍 {a_name} ({a_state}) · {a_score}/5\n"
-                f"📍 {b_name} ({b_state}) · {b_score}/5\n\n"
+                f"📍 {a_name} ({a_state}) · {format_score(a_score)}\n"
+                f"📍 {b_name} ({b_state}) · {format_score(b_score)}\n\n"
                 f"Same month, different states, different experience.\n"
                 f"Which state wins YOUR travel style this {month_name()}?\n\n"
                 f"{a_name} → {url_a}\n{b_name} → {url_b}\n\n{tags}"
@@ -1500,8 +1673,8 @@ def copy_state_showdown(dest_a: dict, dest_b: dict, platform: str) -> str:
         else:
             return (
                 f"{a_state.upper()} vs {b_state.upper()} · {month_name().upper()}\n\n"
-                f"📍 {a_name} · {a_score}/5\n"
-                f"📍 {b_name} · {b_score}/5\n\n"
+                f"📍 {a_name} · {format_score(a_score)}\n"
+                f"📍 {b_name} · {format_score(b_score)}\n\n"
                 f"Not opinions. Not listicles. Monthly scores from "
                 f"{TOTAL_DESTINATIONS} destinations.\n\n"
                 f"Compare → {url_a}\n\n{tags}"
@@ -1524,8 +1697,8 @@ def copy_difficulty_spectrum(easy_dest: dict, hard_dest: dict,
         if platform == "facebook":
             return (
                 f"EASY vs HARD — both score high this {month_name()}\n\n"
-                f"🟢 {e_name} · {e_diff} · {e_score}/5\n"
-                f"🔴 {h_name} · {h_diff} · {h_score}/5\n\n"
+                f"🟢 {e_name} · {e_diff} · {format_score(e_score)}\n"
+                f"🔴 {h_name} · {h_diff} · {format_score(h_score)}\n\n"
                 f"One's a relaxed getaway. One's a proper challenge.\n"
                 f"The data says both are excellent right now.\n\n"
                 f"Pick your speed → {url_e}\n\n{tags}"
@@ -1533,8 +1706,8 @@ def copy_difficulty_spectrum(easy_dest: dict, hard_dest: dict,
         else:
             return (
                 f"🟢 EASY vs 🔴 HARD · {month_name().upper()}\n\n"
-                f"{e_name} · {e_diff} · {e_score}/5\n"
-                f"{h_name} · {h_diff} · {h_score}/5\n\n"
+                f"{e_name} · {e_diff} · {format_score(e_score)}\n"
+                f"{h_name} · {h_diff} · {format_score(h_score)}\n\n"
                 f"Same month. Same score. Totally different trip.\n\n"
                 f"NakshIQ scores difficulty alongside everything else — "
                 f"roads, weather, crowds, safety.\n\n"
@@ -1560,7 +1733,7 @@ def copy_underdog_spotlight(dest: dict, platform: str) -> str:
         if platform == "facebook":
             return (
                 f"UNDERDOG ALERT: {name.upper()}\n\n"
-                f"{stars} {score}/5 · {elev:,}m · {state}\n\n"
+                f"{stars} {format_score(score)} · {elev:,}m · {state}\n\n"
                 f"{tag}\n\n"
                 f"No one's talking about {name}. The data says they should be.\n"
                 f"Easy access. Low elevation. High score. "
@@ -1570,7 +1743,7 @@ def copy_underdog_spotlight(dest: dict, platform: str) -> str:
         else:
             return (
                 f"💎 UNDERDOG · {month_name().upper()}\n"
-                f"{name.upper()} · {stars} {score}/5\n"
+                f"{name.upper()} · {stars} {format_score(score)}\n"
                 f"↑{elev:,}m · {state}\n\n"
                 f"{tag}\n\n"
                 f"Easy access. No hype. The data speaks.\n"
@@ -1595,11 +1768,11 @@ def copy_this_month_only(dest: dict, prev_score: int, next_score: int,
         if platform == "facebook":
             return (
                 f"🎯 {name.upper()} — THIS MONTH ONLY\n\n"
-                f"Last month: {prev_score}/5\n"
-                f"Right now: {score}/5 ★★★★★\n"
-                f"Next month: {next_score}/5\n\n"
+                f"Last month: {format_score(prev_score)}\n"
+                f"Right now: {format_score(score)} ★★★★★\n"
+                f"Next month: {format_score(next_score)}\n\n"
                 f"{name} has a narrow window. The conditions that make it "
-                f"{score}/5 won't last.\n\n"
+                f"{format_score(score)} won't last.\n\n"
                 f"This isn't FOMO. It's data. {TOTAL_DESTINATIONS} destinations, "
                 f"scored monthly.\n\n"
                 f"Plan fast → {url}\n\n{tags}"
@@ -1608,9 +1781,9 @@ def copy_this_month_only(dest: dict, prev_score: int, next_score: int,
             return (
                 f"🎯 NARROW WINDOW · {month_name().upper()}\n"
                 f"{name.upper()} · {state}\n\n"
-                f"Last month: {prev_score}/5\n"
-                f"NOW: {score}/5 ★★★★★\n"
-                f"Next month: {next_score}/5\n\n"
+                f"Last month: {format_score(prev_score)}\n"
+                f"NOW: {format_score(score)} ★★★★★\n"
+                f"Next month: {format_score(next_score)}\n\n"
                 f"The data says go now or wait a year.\n\n"
                 f"Save → {url}\n\n{tags}"
             ).strip()
@@ -1635,7 +1808,7 @@ def copy_adventure_pick(dest: dict, platform: str) -> str:
         if platform == "facebook":
             return (
                 f"🧗 ADVENTURE PICK: {name.upper()}\n\n"
-                f"{stars} {score}/5 · {elev:,}m · {diff} · {state}\n\n"
+                f"{stars} {format_score(score)} · {elev:,}m · {diff} · {state}\n\n"
                 f"{tag}\n\n"
                 f"Not every destination is a weekend escape. {name} asks "
                 f"something of you — and the data says {month_name()} is the month to answer.\n\n"
@@ -1644,7 +1817,7 @@ def copy_adventure_pick(dest: dict, platform: str) -> str:
         else:
             return (
                 f"🧗 ADVENTURE · {month_name().upper()}\n"
-                f"{name.upper()} · {stars} {score}/5\n"
+                f"{name.upper()} · {stars} {format_score(score)}\n"
                 f"↑{elev:,}m · {diff} · {state}\n\n"
                 f"{tag}\n\n"
                 f"For those who don't do easy.\n"
@@ -1683,26 +1856,26 @@ def copy_weekend_escape(dest: dict, platform: str) -> str:
         import hashlib
         hook_seed = int(hashlib.md5(name.encode()).hexdigest(), 16) % 6
         hooks_fb = [
-            f"{name} scores {score}/5 this {month_name()}. You don't need a week off — just 48 hours and a plan.",
-            f"Two days. {name}. {score}/5 confidence score. The data says go — this {month_name()}.",
-            f"Skip the long-leave request. {name} is a {score}/5 this {month_name()} and 48 hours is all you need.",
-            f"Your next 48 hours could look like {name} — {score}/5, {diff.lower()} access, {state}.",
-            f"{name} this {month_name()}? {score}/5. {diff} access. Two days is enough to do it right.",
-            f"Friday evening to Sunday night. {name}. {score}/5 this {month_name()}. Data-backed, not guesswork.",
+            f"{name} scores {format_score(score)} this {month_name()}. You don't need a week off — just 48 hours and a plan.",
+            f"Two days. {name}. {format_score(score)} confidence score. The data says go — this {month_name()}.",
+            f"Skip the long-leave request. {name} is a {format_score(score)} this {month_name()} and 48 hours is all you need.",
+            f"Your next 48 hours could look like {name} — {format_score(score)}, {diff.lower()} access, {state}.",
+            f"{name} this {month_name()}? {format_score(score)}. {diff} access. Two days is enough to do it right.",
+            f"Friday evening to Sunday night. {name}. {format_score(score)} this {month_name()}. Data-backed, not guesswork.",
         ]
         hooks_ig = [
-            f"48 hours. {name}. {score}/5 this {month_name()}.",
-            f"Two days. {diff} access. {score}/5 confidence.",
+            f"48 hours. {name}. {format_score(score)} this {month_name()}.",
+            f"Two days. {diff} access. {format_score(score)} confidence.",
             f"Skip the week off. {name} works in 48 hours.",
-            f"Friday to Sunday. {name}. {score}/5.",
-            f"{name} — {score}/5. {diff}. Two days.",
-            f"48 hrs is enough. {name}. {score}/5.",
+            f"Friday to Sunday. {name}. {format_score(score)}.",
+            f"{name} — {format_score(score)}. {diff}. Two days.",
+            f"48 hrs is enough. {name}. {format_score(score)}.",
         ]
 
         if platform == "facebook":
             parts = [
                 f"🌿 WEEKEND ESCAPE: {name.upper()}\n",
-                f"{stars} {score}/5 · {elev:,}m · {diff} access · {state}\n",
+                f"{stars} {format_score(score)} · {elev:,}m · {diff} access · {state}\n",
             ]
             if detail:
                 parts.append(f"\n{detail}\n")
@@ -1712,7 +1885,7 @@ def copy_weekend_escape(dest: dict, platform: str) -> str:
         else:
             parts = [
                 f"🌿 WEEKEND ESCAPE · {month_name().upper()}\n",
-                f"{name.upper()} · {stars} {score}/5\n",
+                f"{name.upper()} · {stars} {format_score(score)}\n",
                 f"↑{elev:,}m · {diff} · {state}\n",
             ]
             if detail:
@@ -1975,13 +2148,13 @@ def copy_skip_list(dest: dict, platform: str,
         # Forward-looking Skip List: "5/5 now but dropping to 2/5 in July"
         current_score = dest.get("score", 0)
         header = (f"🚩 UPCOMING SKIP LIST — {forward_month.upper()}\n\n"
-                  f"{name.upper()} ({state}): {current_score}/5 this {this_mo.title()}.\n"
-                  f"{forward_score}/5 in {forward_month}.")
+                  f"{name.upper()} ({state}): {format_score(current_score)} this {this_mo.title()}.\n"
+                  f"{format_score(forward_score)} in {forward_month}.")
     else:
         # Standard Skip List: destination scoring low THIS month
         score  = dest.get("score", 0)
         header = (f"🚩 SKIP LIST — {this_mo} {date.today().year}\n\n"
-                  f"{name.upper()} ({state}): {score}/5 this month.")
+                  f"{name.upper()} ({state}): {format_score(score)} this month.")
 
     if platform == "facebook":
         return (
@@ -2094,7 +2267,7 @@ def copy_data_provenance(dest: dict, platform: str) -> str:
     url   = dest_url(dest, "social", "post", "score-card")
     if platform == "facebook":
         return (
-            f"WHY {name.upper()} SCORES {score}/5 IN {mon.upper()}\n\n"
+            f"WHY {name.upper()} SCORES {format_score(score)} IN {mon.upper()}\n\n"
             f"This isn't a vibe check. Here's what went into the score:\n\n"
             f"• Elevation: ↑ {elev:,}m (altitude tolerance factor)\n"
             f"• State: {state}\n"
@@ -2108,7 +2281,7 @@ def copy_data_provenance(dest: dict, platform: str) -> str:
                       name.replace(" ", ""), state.replace(" ", ""), "NakshIQ")
         ).strip()
     return (
-        f"WHY {name.upper()}: {score}/5\n"
+        f"WHY {name.upper()}: {format_score(score)}\n"
         f"· {mon.upper()} ·\n\n"
         f"↑ {elev:,}m · {state}\n"
         f"Difficulty: {diff}\n\n"
@@ -2129,7 +2302,7 @@ def copy_same_place_12_months(dest: dict, monthly_scores: dict, platform: str) -
     months_abbr = ["JAN","FEB","MAR","APR","MAY","JUN",
                    "JUL","AUG","SEP","OCT","NOV","DEC"]
     lines = "\n".join(
-        f"  {months_abbr[i]}: {monthly_scores.get(i+1, '?')}/5"
+        f"  {months_abbr[i]}: {format_score(monthly_scores.get(i+1))}"
         for i in range(12)
     )
     if platform == "facebook":
@@ -4289,7 +4462,7 @@ CANVA_CATEGORY_ORDER = [
 CANVA_CAPTION_TEMPLATES = {
     "mood_destination": (
         "📍 {subject}\n\n"
-        "This destination is scored 1-5 every month based on weather, "
+        "This destination is scored 1-10 every month based on weather, "
         "road access, crowd density, infrastructure, and safety.\n"
         "Right now? Check the score before you book.\n\n"
         "→ nakshiq.com?utm_source=ig&utm_medium=post&utm_campaign=canva-visual\n\n"
@@ -4326,7 +4499,7 @@ CANVA_CAPTION_TEMPLATES = {
     "season": (
         "🌦️ {subject}\n\n"
         "Wrong month = washed-out roads, 45°C heat, or surprise closures. "
-        "NakshIQ scores 491 destinations monthly so you don't learn this the hard way.\n\n"
+        "NakshIQ scores {total} destinations monthly so you don't learn this the hard way.\n\n"
         "→ nakshiq.com?utm_source=ig&utm_medium=post&utm_campaign=canva-visual\n\n"
         "{hashtags}"
     ),
@@ -4348,14 +4521,24 @@ CANVA_CAPTION_TEMPLATES = {
 
 
 def _canva_hashtags(entry: dict, platform: str) -> str:
-    """Build platform-appropriate hashtags from image metadata (max 5).
-    Prioritises destination/topic-specific tags over generic ones."""
-    tags = entry.get("tags", [])
+    """Build platform-appropriate hashtags from image metadata.
+
+    Tier 1 (2026-05-10): IG gets ~18 niche/branded tags from the shared pool;
+    FB/YT keep the legacy 5-tag block where the algorithm doesn't reward depth.
+    """
     state = entry.get("state")
     dest = entry.get("destination")
     category = entry.get("category", "")
 
-    # Start with the most specific tags — destination + state + topic
+    if platform == "instagram":
+        return _build_ig_hashtags(
+            dest_name=dest,
+            state_name=state,
+            category=category or "canva",
+        )
+
+    # Legacy 5-tag block for FB/other.
+    tags = entry.get("tags", [])
     base: list[str] = []
     if dest:
         base.append(dest.replace("_", "").replace(" ", ""))
@@ -4365,7 +4548,6 @@ def _canva_hashtags(entry: dict, platform: str) -> str:
         clean = t.replace("_", "").replace(" ", "")
         if clean and clean not in base:
             base.append(clean)
-    # Category-specific niche tag
     CAT_TAGS = {
         "food": "IndiaFood", "festivals": "IndiaFestivals",
         "activities": "IndiaAdventure", "seasons": "SeasonalTravel",
@@ -4374,7 +4556,6 @@ def _canva_hashtags(entry: dict, platform: str) -> str:
     cat_tag = CAT_TAGS.get(category)
     if cat_tag and len(base) < 5 and cat_tag not in base:
         base.append(cat_tag)
-    # NakshIQ branding only if room
     if len(base) < 5 and "NakshIQ" not in base:
         base.append("NakshIQ")
 
@@ -4405,6 +4586,7 @@ def _canva_caption(entry: dict, platform: str) -> str:
         subject=entry.get("subject", "India"),
         comparison_a=entry.get("comparison", ["A", "B"])[0] if "comparison" in entry else "This",
         comparison_b=entry.get("comparison", ["A", "B"])[1] if "comparison" in entry else "That",
+        total=TOTAL_DESTINATIONS,
         hashtags=hashtags,
     )
 
@@ -4420,6 +4602,9 @@ def _canva_caption(entry: dict, platform: str) -> str:
                                   "canva_visual"),
     )
     caption = _swap_homepage_cta(caption, deep_url, "canva-visual")
+    # Tier 1.3 + 1.5: strip IG URL → link-in-bio + add comments-bait CTA.
+    caption = _strip_url_for_ig(caption, platform)
+    caption = _add_ig_engagement_cta(caption, platform, "canva")
     return caption
 
 
@@ -4653,7 +4838,7 @@ POMELLI_CAMPAIGN_ORDER = [
 POMELLI_FEATURE_CAPTIONS = {
     "monthly_scores": {
         "ig": "📊 {subject}\n\nEvery destination. Every month. One honest score.\nWeather × Crowds × Roads × Infrastructure × Safety = one number.\n\nStop guessing. Start planning with data.\n→ nakshiq.com?utm_source=ig&utm_medium=post&utm_campaign=pomelli-visual\n\n—\nData, not opinions.\n\n{hashtags}",
-        "fb": "What if you could see exactly when to visit any Indian destination — scored 1 to 5 for every month?\n\nThat's what NakshIQ does. {subject}\n\n→ nakshiq.com?utm_source=fb&utm_medium=post&utm_campaign=pomelli-visual",
+        "fb": "What if you could see exactly when to visit any Indian destination — scored 1 to 10 for every month?\n\nThat's what NakshIQ does. {subject}\n\n→ nakshiq.com?utm_source=fb&utm_medium=post&utm_campaign=pomelli-visual",
     },
     "tourist_traps": {
         "ig": "🚫 {subject}\n\n109 tourist traps exposed. The overcrowded, overpriced, overhyped spots travel blogs won't warn you about.\n\nNakshIQ doesn't just recommend — we anti-recommend.\n→ nakshiq.com?utm_source=ig&utm_medium=post&utm_campaign=pomelli-visual\n\n—\nTravel with IQ.\n\n{hashtags}",
@@ -4740,33 +4925,51 @@ POMELLI_REGION_CAPTION = {
 }
 
 POMELLI_GENERAL_CAPTION = {
-    "ig": "📊 {subject}\n\n491 destinations. Scored 1-5 every month.\nWeather. Roads. Crowds. Hospitals. Cell signal.\nThe stuff travel blogs skip.\n\n→ nakshiq.com?utm_source=ig&utm_medium=post&utm_campaign=pomelli-visual\n\n{hashtags}",
-    "fb": "{subject}\n\n491 destinations scored monthly on 5 real dimensions — not vibes, not reviews, not sponsored lists.\n\nCheck the data → nakshiq.com?utm_source=fb&utm_medium=post&utm_campaign=pomelli-visual",
+    "ig": "📊 {subject}\n\n{total} destinations. Scored 1-10 every month.\nWeather. Roads. Crowds. Hospitals. Cell signal.\nThe stuff travel blogs skip.\n\n→ nakshiq.com?utm_source=ig&utm_medium=post&utm_campaign=pomelli-visual\n\n{hashtags}",
+    "fb": "{subject}\n\n{total} destinations scored monthly on 5 real dimensions — not vibes, not reviews, not sponsored lists.\n\nCheck the data → nakshiq.com?utm_source=fb&utm_medium=post&utm_campaign=pomelli-visual",
 }
 
 
 def _pomelli_hashtags(entry: dict, platform: str) -> str:
-    """Build platform-appropriate hashtags for a Pomelli post (max 5).
-    Prioritises niche, campaign-specific tags over generic travel tags."""
-    tags = entry.get("tags", [])
+    """Build platform-appropriate hashtags for a Pomelli post.
+
+    Tier 1 (2026-05-10): IG path now returns ~18 niche/branded tags via the
+    shared pool, blending in any campaign-specific tags from `entry["tags"]`.
+    FB/YT keep the legacy 5-tag block (algorithm doesn't reward depth).
+    """
     state = entry.get("state")
 
-    # Start with campaign-specific tags (the most discoverable)
+    if platform == "instagram":
+        block = _build_ig_hashtags(
+            dest_name=entry.get("destination") or None,
+            state_name=state,
+            category="pomelli",
+        )
+        # Prepend up to 2 campaign-specific tags so feature campaigns stay
+        # discoverable inside their own hashtag pool (e.g. #SoloFemaleSafety).
+        camp_tags = []
+        for t in entry.get("tags", [])[:2]:
+            clean = t.replace(" ", "").replace("_", "")
+            if clean and f"#{clean}" not in block:
+                camp_tags.append(f"#{clean}")
+        if camp_tags:
+            block = " ".join(camp_tags) + " " + block
+        return block
+
+    # Legacy 5-tag block for FB / other.
+    tags = entry.get("tags", [])
     base: list[str] = []
     for t in tags:
         clean = t.replace(" ", "").replace("_", "")
         if clean and clean not in base:
             base.append(clean)
-    # Add state if present and we have room
     if state and len(base) < 5:
         st = state.replace(" ", "")
         if st not in base:
             base.append(st)
-    # Only add NakshIQ branding tag if we still have room
     if len(base) < 5 and "NakshIQ" not in base:
         base.append("NakshIQ")
 
-    # Max 5 hashtags on all platforms
     return " ".join(f"#{h}" for h in base[:5])
 
 
@@ -4863,6 +5066,7 @@ def _pomelli_caption(entry: dict, platform: str) -> str:
     caption = template.format(
         subject=subject,
         state=state,
+        total=TOTAL_DESTINATIONS,
         hashtags=hashtags,
     )
 
@@ -4883,6 +5087,9 @@ def _pomelli_caption(entry: dict, platform: str) -> str:
                                   "pomelli_visual"),
     )
     caption = _swap_homepage_cta(caption, deep_url, "pomelli-visual")
+    # Tier 1.3 + 1.5: strip IG URL → link-in-bio + add saves-bait CTA.
+    caption = _strip_url_for_ig(caption, platform)
+    caption = _add_ig_engagement_cta(caption, platform, "pomelli")
     return caption
 
 
@@ -5156,16 +5363,16 @@ FLOW_STORY_LOCK_FILE = Path(__file__).parent / ".autoposter-flow-story.lock"
 # Caption templates — destination-specific, no generic fluff
 FLOW_STORY_CAPTIONS_IG_SCORED = [
     (
-        "{dest}, {state} — {score}/5 this month\n\n"
+        "{dest}, {state} — {score_display} this month\n\n"
         "{score_note}\n\n"
-        "NakshIQ scores 303 Indian destinations monthly.\n"
+        "NakshIQ scores {total} Indian destinations monthly.\n"
         "→ {dest_url}\n\n"
         "{hashtags}"
     ),
     (
-        "{dest} · NakshIQ Score: {score}/5\n\n"
+        "{dest} · NakshIQ Score: {score_display}\n\n"
         "{score_note}\n\n"
-        "303 destinations. 5 dimensions. Updated monthly.\n"
+        "{total} destinations. 5 dimensions. Updated monthly.\n"
         "→ {dest_url}\n\n"
         "{hashtags}"
     ),
@@ -5174,7 +5381,7 @@ FLOW_STORY_CAPTIONS_IG_SCORED = [
 FLOW_STORY_CAPTIONS_IG_UNSCORED = [
     (
         "{dest}, {state}\n\n"
-        "NakshIQ rates 303 Indian destinations monthly.\n"
+        "NakshIQ rates {total} Indian destinations monthly.\n"
         "When to go, what to skip, what nobody tells you.\n\n"
         "→ {dest_url}\n\n"
         "{hashtags}"
@@ -5190,9 +5397,9 @@ FLOW_STORY_CAPTIONS_IG_UNSCORED = [
 
 FLOW_STORY_CAPTIONS_FB_SCORED = [
     (
-        "{dest}, {state} — {score}/5 this month\n\n"
+        "{dest}, {state} — {score_display} this month\n\n"
         "{score_note}\n\n"
-        "We score 303 destinations monthly so you don't have to guess.\n"
+        "We score {total} destinations monthly so you don't have to guess.\n"
         "→ {dest_url}"
     ),
 ]
@@ -5201,17 +5408,18 @@ FLOW_STORY_CAPTIONS_FB_UNSCORED = [
     (
         "{dest}, {state}\n\n"
         "Have you been? When did you go — and would you time it differently?\n\n"
-        "We score 303 destinations monthly so you don't have to guess.\n"
+        "We score {total} destinations monthly so you don't have to guess.\n"
         "→ {dest_url}"
     ),
     (
         "{dest}\n\n"
         "Most travel advice is recycled. Ours is scored.\n"
-        "303 destinations, updated monthly, zero sponsorships.\n\n"
+        "{total} destinations, updated monthly, zero sponsorships.\n\n"
         "→ {dest_url}"
     ),
 ]
 
+# Score-context notes for the 1-5 raw scale (kept here; mapping is internal).
 FLOW_STORY_SCORE_NOTES = {
     5: "Peak season — ideal weather, festivals, and accessibility.",
     4: "Great time to visit. Slightly off-peak but that's often better.",
@@ -5220,27 +5428,39 @@ FLOW_STORY_SCORE_NOTES = {
     1: "Avoid unless you have a specific reason.",
 }
 
-# Fallback for generic images (no dest)
+# Fallback for generic images (no dest).  IG hashtag block intentionally avoids
+# generic broad tags that _sanitize_caption strips (#travel/#india/#wanderlust).
 FLOW_STORY_GENERIC_IG = (
-    "India has 303 destinations worth scoring.\n\n"
+    "India has {total} destinations worth scoring.\n\n"
     "Weather. Crowds. Safety. Infrastructure. Cultural access.\n"
     "We rate them all — every month.\n\n"
     "→ nakshiq.com?utm_source=ig&utm_medium=post&utm_campaign=flow-story\n\n"
-    "#NakshIQ #IndiaTravel #TravelIndia #IncredibleIndia #TravelData"
+    "{hashtags}"
 )
 
 FLOW_STORY_GENERIC_FB = (
-    "303 Indian destinations. 5 scoring dimensions. Updated monthly.\n\n"
+    "{total} Indian destinations. 5 scoring dimensions. Updated monthly.\n\n"
     "Which one are you checking first?\n"
     "→ nakshiq.com"
 )
 
 
-def _flow_story_hashtags(dest: str, state: str) -> str:
-    """Generate 5 niche hashtags for a Flow story post."""
+def _flow_story_hashtags(dest: str, state: str, platform: str = "instagram") -> str:
+    """Generate hashtags for a Flow story post.
+
+    Tier 1 (2026-05-10): IG → ~18 niche/branded tags via shared pool; FB keeps
+    the legacy 5-tag block.
+    """
+    if platform == "instagram":
+        # Strip parenthetical clarifiers from dest before hashtag-ifying.
+        bare_dest = dest.split("(")[0].strip() if dest else None
+        return _build_ig_hashtags(
+            dest_name=bare_dest,
+            state_name=state,
+            category="flow_story",
+        )
     tags = ["#NakshIQ"]
     if dest:
-        # Clean dest for hashtag: remove parenthetical, spaces, special chars
         clean = dest.split("(")[0].strip().replace(" ", "").replace("-", "").replace("&", "And")
         tags.append(f"#{clean}")
         tags.append(f"#{clean}Travel")
@@ -5301,8 +5521,13 @@ def _flow_story_caption(entry: dict, platform: str, dest_id_lookup: dict | None 
     if not dest or dest == state or is_themed or uncertain:
         # Generic / state-level / unverified image
         if platform == "facebook":
-            return FLOW_STORY_GENERIC_FB
-        return FLOW_STORY_GENERIC_IG
+            return FLOW_STORY_GENERIC_FB.format(total=TOTAL_DESTINATIONS)
+        # IG path — pull a 18-tag hashtag block (no dest/state to specialise).
+        ig_hashtags = _build_ig_hashtags(category="flow_story")
+        caption = FLOW_STORY_GENERIC_IG.format(total=TOTAL_DESTINATIONS, hashtags=ig_hashtags)
+        caption = _strip_url_for_ig(caption, platform)
+        caption = _add_ig_engagement_cta(caption, platform, "flow_story")
+        return caption
 
     # Resolve real DB id (was: lossy `dest.lower().split("-")[0]` which 404'd on
     # any multi-word destination — e.g. "Valley of Flowers" → "valley" → 404).
@@ -5320,7 +5545,7 @@ def _flow_story_caption(entry: dict, platform: str, dest_id_lookup: dict | None 
         log.warning(f"[flow-story] No dest_id match for '{dest}' — linking to homepage")
         dest_url_str = utm("https://nakshiq.com/en", utm_source, "post", "flow-story")
 
-    hashtags = _flow_story_hashtags(dest, state)
+    hashtags = _flow_story_hashtags(dest, state, platform)
 
     if score and score > 0:
         score_note = FLOW_STORY_SCORE_NOTES.get(score, "")
@@ -5328,12 +5553,14 @@ def _flow_story_caption(entry: dict, platform: str, dest_id_lookup: dict | None 
             template = _random.choice(FLOW_STORY_CAPTIONS_FB_SCORED)
         else:
             template = _random.choice(FLOW_STORY_CAPTIONS_IG_SCORED)
-        return template.format(
+        caption = template.format(
             dest=dest,
             state=state or "India",
             dest_url=dest_url_str,
             score=score,
+            score_display=format_score(score),
             score_note=score_note,
+            total=TOTAL_DESTINATIONS,
             hashtags=hashtags,
         )
     else:
@@ -5341,12 +5568,17 @@ def _flow_story_caption(entry: dict, platform: str, dest_id_lookup: dict | None 
             template = _random.choice(FLOW_STORY_CAPTIONS_FB_UNSCORED)
         else:
             template = _random.choice(FLOW_STORY_CAPTIONS_IG_UNSCORED)
-        return template.format(
+        caption = template.format(
             dest=dest,
             state=state or "India",
             dest_url=dest_url_str,
+            total=TOTAL_DESTINATIONS,
             hashtags=hashtags,
         )
+    # Tier 1.3 + 1.5: IG → strip URL + saves-bait CTA.
+    caption = _strip_url_for_ig(caption, platform)
+    caption = _add_ig_engagement_cta(caption, platform, "flow_story")
+    return caption
 
 
 def _run_flow_story(force: bool = False, dry_run: bool = False):
@@ -5479,7 +5711,7 @@ def _run_flow_story(force: bool = False, dry_run: bool = False):
     chosen_score = _seasonal_score(chosen)
     if chosen_score > 0:
         chosen["_score"] = chosen_score
-        log.info(f"Seasonal score: {chosen_score}/5 for {chosen.get('dest')}")
+        log.info(f"Seasonal score: raw={chosen_score} → {format_score(chosen_score)} for {chosen.get('dest')}")
 
     log.info(f"Selected: {chosen['file']} → {chosen.get('dest', 'generic')} "
              f"({chosen.get('state', '?')})")
@@ -5602,9 +5834,9 @@ REEL_FORMATS = ["score_reveal", "contrarian", "seasonal_shift", "trap_alert", "d
 REEL_CAPTION_TEMPLATES = {
     "score_reveal": (
         "🎯 Do NOT go to {dest} in {month}.\n\n"
-        "NakshIQ Score: {score}/5\n"
+        "NakshIQ Score: {score_display}\n"
         "{reason}\n\n"
-        "303 destinations. Real-time travel scores.\n"
+        "{total} destinations. Real-time travel scores.\n"
         "→ https://nakshiq.com?utm_source=social&utm_medium=reel&utm_campaign=reel\n\n"
         "—\n"
         "Data, not opinions.\n\n"
@@ -5612,8 +5844,8 @@ REEL_CAPTION_TEMPLATES = {
     ),
     "contrarian": (
         "💡 Everyone goes to {famous}. Smart travelers go to {hidden}.\n\n"
-        "{famous}: {famous_score}/5\n"
-        "{hidden}: {hidden_score}/5\n\n"
+        "{famous}: {famous_score_display}\n"
+        "{hidden}: {hidden_score_display}\n\n"
         "Same region. Less crowd. Better value.\n"
         "→ https://nakshiq.com?utm_source=social&utm_medium=reel&utm_campaign=reel\n\n"
         "—\n"
@@ -5621,10 +5853,10 @@ REEL_CAPTION_TEMPLATES = {
         "{hashtags}"
     ),
     "seasonal_shift": (
-        "⏰ {dest} is a {now_score}/5 right now.\n"
-        "In {future_month}? {future_score}/5.\n\n"
+        "⏰ {dest} is a {now_score_display} right now.\n"
+        "In {future_month}? {future_score_display}.\n\n"
         "Timing is everything.\n"
-        "303 destinations scored for every month.\n"
+        "{total} destinations scored for every month.\n"
         "→ https://nakshiq.com?utm_source=social&utm_medium=reel&utm_campaign=reel\n\n"
         "—\n"
         "Data, not opinions.\n\n"
@@ -5642,9 +5874,9 @@ REEL_CAPTION_TEMPLATES = {
     ),
     "destination_reveal": (
         "📍 Discover {dest}, {state}\n\n"
-        "NakshIQ Score: {score}/5\n"
+        "NakshIQ Score: {score_display}\n"
         "{tagline}\n\n"
-        "303 destinations. Real scores. Zero fluff.\n"
+        "{total} destinations. Real scores. Zero fluff.\n"
         "→ https://nakshiq.com?utm_source=social&utm_medium=reel&utm_campaign=reel\n\n"
         "—\n"
         "Travel with IQ.\n\n"
@@ -5653,9 +5885,20 @@ REEL_CAPTION_TEMPLATES = {
 }
 
 
-def _reel_hashtags(dest_name: str, platform: str) -> str:
-    """Build reel-specific hashtags (max 5).
-    Destination-first, then niche travel tags."""
+def _reel_hashtags(dest_name: str, platform: str, state_name: str | None = None) -> str:
+    """Build reel-specific hashtags.
+
+    Tier 1 (2026-05-10): platform-aware sizing.  IG = ~18 niche/branded tags
+    via _build_ig_hashtags (raises discoverability ~3x).  YT/FB still cap at 5
+    since beyond that there's no measurable ranking benefit on those platforms.
+    """
+    if platform == "instagram":
+        return _build_ig_hashtags(
+            dest_name=dest_name,
+            state_name=state_name,
+            category="reel",
+        )
+    # YT / FB: keep the legacy 5-tag block.
     base: list[str] = []
     if dest_name:
         clean = dest_name.replace(" ", "").replace("-", "")
@@ -5672,29 +5915,42 @@ def _reel_caption(reel_format: str, data: dict, platform: str) -> str:
     """Generate caption for a reel post."""
     template = REEL_CAPTION_TEMPLATES.get(reel_format, REEL_CAPTION_TEMPLATES["score_reveal"])
     dest_name = data.get("dest_name") or data.get("famous") or data.get("trap_name") or "India"
-    hashtags = _reel_hashtags(dest_name, platform)
+    state_name = data.get("state_name") or data.get("state") or None
+    hashtags = _reel_hashtags(dest_name, platform, state_name)
 
     try:
-        return template.format(
+        caption = template.format(
             dest=data.get("dest_name", ""),
             month=data.get("month", ""),
             score=data.get("score", ""),
+            score_display=format_score(data.get("score")),
             reason=data.get("reason", ""),
             famous=data.get("famous", ""),
             hidden=data.get("hidden", ""),
             famous_score=data.get("famous_score", ""),
+            famous_score_display=format_score(data.get("famous_score")),
             hidden_score=data.get("hidden_score", ""),
+            hidden_score_display=format_score(data.get("hidden_score")),
             now_score=data.get("now_score", ""),
+            now_score_display=format_score(data.get("now_score")),
             future_month=data.get("future_month", ""),
             future_score=data.get("future_score", ""),
+            future_score_display=format_score(data.get("future_score")),
             trap=data.get("trap_name", ""),
             alternative=data.get("alternative", ""),
             state=data.get("state_name", "India"),
             tagline=data.get("tagline", ""),
+            total=TOTAL_DESTINATIONS,
             hashtags=hashtags,
         )
     except KeyError:
-        return f"🎯 Travel smarter. {dest_name} on NakshIQ.\n\n→ https://nakshiq.com?utm_source=social&utm_medium=reel&utm_campaign=reel\n\n{hashtags}"
+        caption = (f"🎯 Travel smarter. {dest_name} on NakshIQ.\n\n"
+                   f"→ https://nakshiq.com?utm_source=social&utm_medium=reel&utm_campaign=reel\n\n"
+                   f"{hashtags}")
+    # Tier 1.3 + 1.5: strip IG URL → link in bio + add saves-bait CTA.
+    caption = _strip_url_for_ig(caption, platform)
+    caption = _add_ig_engagement_cta(caption, platform, "reel")
+    return caption
 
 
 def _pick_reel_data(state: dict, content: dict, reel_format: str) -> dict | None:
@@ -6084,26 +6340,37 @@ def _reel_map_caption(reel_format: str, data: dict, platform: str) -> str:
     """
     import calendar
     from datetime import datetime as _dt
-    month_name = calendar.month_name[_dt.now().month]
+    _month_name = calendar.month_name[_dt.now().month]
 
     title = data.get("campaign_readable", "India Travel Intelligence")
-    campaign = data.get("campaign_name", "")
+    campaign = data.get("campaign_name", "")  # noqa: F841 — kept for future use
 
     if platform == "instagram":
-        return (
+        # Tier 1 (2026-05-10): expanded hashtag block, link-in-bio CTA, saves-bait.
+        ig_hashtags = _build_ig_hashtags(category="reel")
+        caption = (
             f"{title} — data you won't find on travel blogs.\n\n"
             f"Road access, hospital distance, crowd level, cell coverage — "
             f"all scored for this month.\n\n"
-            f"Full breakdown → nakshiq.com\n\n"
-            f"#NakshIQ #{month_name}Travel #TravelIndia "
-            f"#DataDrivenTravel #IndiaTravel"
+            f"📲 Full breakdown → link in bio\n\n"
+            f"{ig_hashtags}"
+        )
+        caption = _add_ig_engagement_cta(caption, platform, "reel_map")
+        return caption
+    elif platform == "youtube":
+        return (
+            f"{title}\n\n"
+            f"Every destination scored 1-10, every month. "
+            f"No opinions — just data.\n\n"
+            f"→ https://nakshiq.com?utm_source=youtube&utm_medium=short&utm_campaign=reel-map\n\n"
+            f"#NakshIQ #{_month_name}Travel #DataDrivenTravel #Shorts"
         )
     else:
         return (
             f"{title}\n\n"
-            f"Every destination scored 1-5, every month. "
+            f"Every destination scored 1-10, every month. "
             f"No opinions — just data.\n\n"
-            f"nakshiq.com"
+            f"→ nakshiq.com"
         )
 
 

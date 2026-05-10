@@ -28,6 +28,20 @@ from datetime import datetime, date
 from pathlib import Path
 from typing import Optional
 
+
+def _format_score(raw) -> str:
+    """Convert raw 1-5 API score into the website-aligned '8/10' display string.
+    Mirrors format_score() in autoposter.py and formatScore() in
+    apps/web/src/components/destination-detail-cinematic.tsx (Tier 1, 2026-05-10).
+    """
+    try:
+        if raw is None or raw == "":
+            return "—/10"
+        return f"{int(raw) * 2}/10"
+    except (TypeError, ValueError):
+        return "—/10"
+
+
 # ── Brand constants ──────────────────────────────────────────────────
 try:
     from slide_gen import (INK_DEEP, BONE, VERMILLION_BRIGHT, VERMILLION_DEEP,
@@ -570,7 +584,7 @@ def _build_listicle(destinations: list[dict], month_name: str,
             _dt(f"#{rank}", FONT_JETBRAINS, rs, rc, "(w-text_w)/2", "h*0.18", bw=5),
             _dt(name.upper(), FONT_INSTRUMENT, ns, B, "(w-text_w)/2", "h*0.33", "gte(t,0.5)", 4),
             _dt(state, FONT_CRIMSON, 32, SG, "(w-text_w)/2", "h*0.42", "gte(t,0.8)"),
-            _dt(f"{score}/5", FONT_JETBRAINS, 72, sc, "(w-text_w)/2", "h*0.50", "gte(t,1.2)", 4),
+            _dt(_format_score(score), FONT_JETBRAINS, 72, sc, "(w-text_w)/2", "h*0.50", "gte(t,1.2)", 4),
             _dt(tagline, FONT_CRIMSON, 34, B, "(w-text_w)/2", "h*0.60", "gte(t,1.8)"),
         ]
         zoom = "in" if i % 2 == 0 else "out"
@@ -685,11 +699,11 @@ def _build_before_after(destinations: list[dict], month_now: int,
             _dt(name.upper(), FONT_INSTRUMENT, 64, B, "(w-text_w)/2", "h*0.22", bw=4),
             # "Now" month + score: visible from 0.3–3.4s, then disappear
             _dt(f"{month_name_now.upper()}", FONT_INSTRUMENT, 40, B, "(w-text_w)/2", "h*0.32", "between(t,0.3,3.4)"),
-            _dt(f"{ns}/5", FONT_JETBRAINS, 100, nc, "(w-text_w)/2", "h*0.38", "between(t,0.6,3.4)", 5),
+            _dt(_format_score(ns), FONT_JETBRAINS, 100, nc, "(w-text_w)/2", "h*0.38", "between(t,0.6,3.4)", 5),
             # "Future" month + score: appear at 3.5s onward (no overlap)
             _dt(f"In {month_name_fut}?", FONT_INSTRUMENT, 44, B, "(w-text_w)/2", "h*0.32", "gte(t,3.5)"),
-            _dt(f"{fs}/5", FONT_JETBRAINS, 120, fc, "(w-text_w)/2", "h*0.40", "gte(t,4)", 5),
-            _dt(f"Score {direction} {fs}/5", FONT_CRIMSON, 34, B, "(w-text_w)/2", "h*0.58", "gte(t,5)"),
+            _dt(_format_score(fs), FONT_JETBRAINS, 120, fc, "(w-text_w)/2", "h*0.40", "gte(t,4)", 5),
+            _dt(f"Score {direction} {_format_score(fs)}", FONT_CRIMSON, 34, B, "(w-text_w)/2", "h*0.58", "gte(t,5)"),
         ]
         p = _render_segment_auto(bg, is_img, CONTRAST_DUR, texts, out_dir / f"seg_{i+1:02d}_contrast.mp4")
         if p: segments.append(p)
@@ -762,7 +776,7 @@ def _build_mini_guide(destinations: list[dict], out_dir: Path) -> tuple[list[Pat
         _dt("48 HOURS IN", FONT_INSTRUMENT, 44, S, "(w-text_w)/2", "h*0.25"),
         _dt(name.upper(), FONT_INSTRUMENT, 76, B, "(w-text_w)/2", "h*0.33", "gte(t,0.3)", 5),
         _dt(state, FONT_CRIMSON, 32, SG, "(w-text_w)/2", "h*0.43", "gte(t,0.6)"),
-        _dt(f"NakshIQ Score: {score}/5", FONT_JETBRAINS, 48, sc, "(w-text_w)/2", "h*0.52", "gte(t,1.2)", 4),
+        _dt(f"NakshIQ Score: {_format_score(score)}", FONT_JETBRAINS, 48, sc, "(w-text_w)/2", "h*0.52", "gte(t,1.2)", 4),
     ]
     p = _render_segment_auto(bg, is_img, HOOK_DUR, hook_texts, out_dir / "seg_00_hook.mp4")
     if p: segments.append(p)
@@ -868,7 +882,7 @@ def _build_did_you_know(destinations: list[dict], out_dir: Path) -> tuple[list[P
     # Stats card
     stat_texts = [
         _dt(name.upper(), FONT_INSTRUMENT, 56, B, "(w-text_w)/2", "h*0.25", bw=4),
-        _dt(f"Score: {score}/5", FONT_JETBRAINS, 64, sc, "(w-text_w)/2", "h*0.35", "gte(t,0.4)", 4),
+        _dt(f"Score: {_format_score(score)}", FONT_JETBRAINS, 64, sc, "(w-text_w)/2", "h*0.35", "gte(t,0.4)", 4),
         _dt(f"Difficulty: {dest.get('difficulty', 'easy').title()}", FONT_INSTRUMENT, 36, S,
             "(w-text_w)/2", "h*0.46", "gte(t,0.8)"),
     ]
@@ -955,7 +969,7 @@ def _build_this_vs_that(destinations: list[dict], out_dir: Path) -> tuple[list[P
     card_a_texts = [
         _dt(name_a.upper(), FONT_INSTRUMENT, 68, B, "(w-text_w)/2", "h*0.22", bw=4),
         _dt(dest_a.get("state", ""), FONT_CRIMSON, 30, SG, "(w-text_w)/2", "h*0.32", "gte(t,0.3)"),
-        _dt(f"{score_a}/5", FONT_JETBRAINS, 100, sc_a, "(w-text_w)/2", "h*0.40", "gte(t,0.6)", 5),
+        _dt(_format_score(score_a), FONT_JETBRAINS, 100, sc_a, "(w-text_w)/2", "h*0.40", "gte(t,0.6)", 5),
         _dt(f"Difficulty: {dest_a.get('difficulty', 'easy').title()}", FONT_INSTRUMENT, 32, S,
             "(w-text_w)/2", "h*0.52", "gte(t,1.2)"),
         _dt(tagline_a, FONT_CRIMSON, 30, B, "(w-text_w)/2", "h*0.60", "gte(t,2.0)"),
@@ -972,7 +986,7 @@ def _build_this_vs_that(destinations: list[dict], out_dir: Path) -> tuple[list[P
     card_b_texts = [
         _dt(name_b.upper(), FONT_INSTRUMENT, 68, B, "(w-text_w)/2", "h*0.22", bw=4),
         _dt(dest_b.get("state", ""), FONT_CRIMSON, 30, SG, "(w-text_w)/2", "h*0.32", "gte(t,0.3)"),
-        _dt(f"{score_b}/5", FONT_JETBRAINS, 100, sc_b, "(w-text_w)/2", "h*0.40", "gte(t,0.6)", 5),
+        _dt(_format_score(score_b), FONT_JETBRAINS, 100, sc_b, "(w-text_w)/2", "h*0.40", "gte(t,0.6)", 5),
         _dt(f"Difficulty: {dest_b.get('difficulty', 'easy').title()}", FONT_INSTRUMENT, 32, S,
             "(w-text_w)/2", "h*0.52", "gte(t,1.2)"),
         _dt(tagline_b, FONT_CRIMSON, 30, B, "(w-text_w)/2", "h*0.60", "gte(t,2.0)"),
@@ -993,7 +1007,7 @@ def _build_this_vs_that(destinations: list[dict], out_dir: Path) -> tuple[list[P
     verdict_texts = [
         _dt("THE VERDICT", FONT_INSTRUMENT, 48, B, "(w-text_w)/2", "h*0.25"),
         _dt(winner.upper(), FONT_INSTRUMENT, 72, wc, "(w-text_w)/2", "h*0.35", "gte(t,0.8)", 5),
-        _dt(f"NakshIQ Score: {w_score}/5", FONT_JETBRAINS, 48, B, "(w-text_w)/2", "h*0.46", "gte(t,1.5)", 4),
+        _dt(f"NakshIQ Score: {_format_score(w_score)}", FONT_JETBRAINS, 48, B, "(w-text_w)/2", "h*0.46", "gte(t,1.5)", 4),
         _dt("This month's pick", FONT_CRIMSON, 34, S, "(w-text_w)/2", "h*0.56", "gte(t,2.2)"),
     ]
     p = _render_segment_auto(verdict_bg, verdict_is_img, VERDICT_DUR, verdict_texts, out_dir / "seg_03_verdict.mp4")
@@ -1075,7 +1089,7 @@ def _build_dont_go_here(destinations: list[dict], month_name: str,
             _dt(label, FONT_JETBRAINS, 52, RED, "(w-text_w)/2", "h*0.18", bw=4),
             _dt(name.upper(), FONT_INSTRUMENT, 64, B, "(w-text_w)/2", "h*0.28", "gte(t,0.3)", 4),
             _dt(state, FONT_CRIMSON, 28, SG, "(w-text_w)/2", "h*0.38", "gte(t,0.6)"),
-            _dt(f"{score}/5", FONT_JETBRAINS, 100, sc, "(w-text_w)/2", "h*0.45", "gte(t,1.0)", 5),
+            _dt(_format_score(score), FONT_JETBRAINS, 100, sc, "(w-text_w)/2", "h*0.45", "gte(t,1.0)", 5),
             _dt(reason, FONT_CRIMSON, 30, B, "(w-text_w)/2", "h*0.58", "gte(t,2.0)"),
         ]
         p = _render_segment_auto(bg, is_img, WARN_DUR, texts, out_dir / f"seg_{i+1:02d}_warn.mp4")
@@ -1090,7 +1104,7 @@ def _build_dont_go_here(destinations: list[dict], month_name: str,
     alt_texts = [
         _dt("GO HERE INSTEAD", FONT_INSTRUMENT, 44, B, "(w-text_w)/2", "h*0.25"),
         _dt(alt_name.upper(), FONT_INSTRUMENT, 68, "0x4CAF50", "(w-text_w)/2", "h*0.35", "gte(t,0.5)", 5),
-        _dt(f"Score: {alt_score}/5 this month", FONT_JETBRAINS, 44, B, "(w-text_w)/2", "h*0.46", "gte(t,1.2)", 4),
+        _dt(f"Score: {_format_score(alt_score)} this month", FONT_JETBRAINS, 44, B, "(w-text_w)/2", "h*0.46", "gte(t,1.2)", 4),
         _dt(alt.get("state", ""), FONT_CRIMSON, 30, SG, "(w-text_w)/2", "h*0.55", "gte(t,1.8)"),
     ]
     p = _render_segment_auto(alt_bg, alt_is_img, ALT_DUR, alt_texts, out_dir / f"seg_{num_warns+1:02d}_alt.mp4")
@@ -1171,37 +1185,37 @@ def _concat_with_music(segments: list[Path], total_dur: float,
 
 YT_CAPTION_TEMPLATES = {
     "listicle": (
-        "5 places scoring 5/5 in {month} — ranked by road access, crowd density, weather, hospitals & cell signal.\n\n"
+        "5 places scoring 10/10 in {month} — ranked by road access, crowd density, weather, hospitals & cell signal.\n\n"
         "Which one surprised you?\n\n"
         "→ {link}\n\n"
         "#{month}Travel #WeeklyPicks #{state_tag} #ScoreData #NakshIQ"
     ),
     "before_after": (
-        "{dest} drops from {score_before}/5 to {score_after}/5 next month.\n\n"
+        "{dest} drops from {score_before_display} to {score_after_display} next month.\n\n"
         "Roads close. Crowds vanish. The data shifts overnight.\n\n"
         "→ {link}\n\n"
         "#{dest_tag} #{state_tag} #ScoreShift #{month}Travel #NakshIQ"
     ),
     "mini_guide": (
-        "48 hours in {dest} — score {score}/5 this month.\n\n"
+        "48 hours in {dest} — score {score_display} this month.\n\n"
         "Road condition, nearest hospital, cell signal, crowd level — all checked.\n\n"
         "→ {link}\n\n"
         "#{dest_tag} #{state_tag} #{month}Travel #MiniGuide #NakshIQ"
     ),
     "did_you_know": (
-        "{dest} scores {score}/5 in {month}.\n\n"
+        "{dest} scores {score_display} in {month}.\n\n"
         "Most people visit in the wrong month. The data says go now.\n\n"
         "→ {link}\n\n"
         "#{dest_tag} #{state_tag} #{month}Travel #HiddenGem #NakshIQ"
     ),
     "this_vs_that": (
-        "{dest_a} ({score_a}/5) vs {dest_b} ({score_b}/5) in {month}.\n\n"
+        "{dest_a} ({score_a_display}) vs {dest_b} ({score_b_display}) in {month}.\n\n"
         "Same region, different scores. One has better roads, less crowd.\n\n"
         "→ {link}\n\n"
         "#{dest_a_tag}vs{dest_b_tag} #{state_tag} #{month}Travel #HeadToHead #NakshIQ"
     ),
     "dont_go_here": (
-        "These places score 1/5 in {month}. Roads shut, 40°C+ heat, zero cell signal.\n\n"
+        "These places score 2/10 in {month}. Roads shut, 40°C+ heat, zero cell signal.\n\n"
         "Don't waste your leave. Check the score first.\n\n"
         "→ {link}\n\n"
         "#{month}AvoidList #{state_tag} #ScoreData #SkipThis #NakshIQ"
@@ -1226,10 +1240,15 @@ def _yt_caption(fmt: str, data: dict) -> str:
             month=data.get("month", ""),
             dest=dest_name,
             score=data.get("score", ""),
+            score_display=_format_score(data.get("score")),
             score_before=data.get("score_before", ""),
+            score_before_display=_format_score(data.get("score_before")),
             score_after=data.get("score_after", ""),
+            score_after_display=_format_score(data.get("score_after")),
             score_a=data.get("score_a", ""),
+            score_a_display=_format_score(data.get("score_a")),
             score_b=data.get("score_b", ""),
+            score_b_display=_format_score(data.get("score_b")),
             dest_tag=dest_tag,
             state_tag=state_tag,
             link=data.get("link", fallback_link),
@@ -1246,67 +1265,143 @@ def _yt_caption(fmt: str, data: dict) -> str:
 
 IG_CAPTION_TEMPLATES = {
     "listicle": (
-        "5 destinations scoring 5/5 right now \u2014 weather, roads, crowds, hospitals, cell signal all checked.\n\n"
+        "5 destinations scoring 10/10 right now \u2014 weather, roads, crowds, hospitals, cell signal all checked.\n\n"
         "{month} picks based on real data, not opinions.\n\n"
-        "#{month}Travel #WeeklyPicks #{state_tag} #ScoreData #NakshIQ"
+        "\ud83d\udcbe Save this \u2014 refer back when you're booking.\n\n"
+        "{hashtags}"
     ),
     "before_after": (
-        "{dest} \u2014 {score_before}/5 now, drops to {score_after}/5 next month.\n\n"
+        "{dest} \u2014 {score_before_display} now, drops to {score_after_display} next month.\n\n"
         "Roads, weather, everything shifts. Timing matters.\n\n"
-        "#{dest_tag} #{state_tag} #ScoreShift #{month}Travel #NakshIQ"
+        "\ud83d\udcbe Save this \u2014 the timing window closes faster than you think.\n\n"
+        "{hashtags}"
     ),
     "mini_guide": (
-        "48 hours in {dest} \u2014 score {score}/5 this month.\n\n"
+        "48 hours in {dest} \u2014 score {score_display} this month.\n\n"
         "Road access, hospital distance, crowd level, cell coverage \u2014 all in one place.\n\n"
-        "#{dest_tag} #{state_tag} #{month}Travel #MiniGuide #NakshIQ"
+        "\ud83d\udcbe Save this for your weekend planning.\n\n"
+        "{hashtags}"
     ),
     "did_you_know": (
-        "{dest} scores {score}/5 in {month}.\n\n"
+        "{dest} scores {score_display} in {month}.\n\n"
         "Most people don't know this place exists. The data says go now.\n\n"
-        "#{dest_tag} #{state_tag} #{month}Travel #HiddenGem #NakshIQ"
+        "\ud83d\udcac Comment 'PLAN' and we'll DM you the {month} window.\n\n"
+        "{hashtags}"
     ),
     "this_vs_that": (
-        "{dest_a} ({score_a}/5) vs {dest_b} ({score_b}/5) \u2014 {month} head-to-head.\n\n"
+        "{dest_a} ({score_a_display}) vs {dest_b} ({score_b_display}) \u2014 {month} head-to-head.\n\n"
         "Same region, different scores. The data picks a winner.\n\n"
-        "#{dest_a_tag}vs{dest_b_tag} #{state_tag} #{month}Travel #HeadToHead #NakshIQ"
+        "\ud83d\udcac Which one would you pick? Drop your vote below.\n\n"
+        "{hashtags}"
     ),
     "dont_go_here": (
-        "Scoring 1/5 in {month} \u2014 roads shut, extreme heat, no signal.\n\n"
+        "Scoring 2/10 in {month} \u2014 roads shut, extreme heat, no signal.\n\n"
         "Don't waste your leave on these right now.\n\n"
-        "#{month}AvoidList #{state_tag} #ScoreData #SkipThis #NakshIQ"
+        "\ud83d\udcbe Save this \u2014 check the score before you book.\n\n"
+        "{hashtags}"
     ),
 }
 
 
+# Niche/branded hashtag pool for IG (kept local so this module avoids circular
+# imports from autoposter.py).  All tags below are NOT in autoposter._BANNED_HASHTAGS.
+_IG_NICHE_POOL = [
+    "IndianHillStations", "IndianRoadtrip", "IndianAdventures",
+    "DesiTravel", "DesiTraveller", "TravelBharat", "BharatTravel",
+    "DiscoverIndia", "ExploreBharat", "IndianTravelDiaries",
+    "HimalayanIndia", "IndianMonuments", "IndianForts",
+    "IndianTemples", "IndianTrails",
+]
+_IG_BRAND_POOL = [
+    "NakshIQ", "TravelWithIQ", "DataDrivenTravel",
+    "PlanWithData", "ScoredDestinations", "VerifiedTravel",
+]
+
+
+def _ig_hashtag_block(dest_name: str | None,
+                      state_name: str | None,
+                      month: str | None,
+                      max_tags: int = 18) -> str:
+    """Build a 15-20 tag IG-only hashtag block.  Mirrors _build_ig_hashtags()
+    in autoposter.py.  Pool order: dest → state → month/format → niche → branded.
+    """
+    tags: list[str] = []
+    seen: set[str] = set()
+
+    def _push(t: str) -> None:
+        if not t or t in seen or len(tags) >= max_tags:
+            return
+        tags.append(t)
+        seen.add(t)
+
+    if dest_name and dest_name not in ("India", ""):
+        clean = dest_name.replace(" ", "").replace("-", "").replace("&", "")
+        if clean:
+            _push(clean)
+            _push(f"{clean}Travel")
+            _push(f"Visit{clean}")
+    if state_name and state_name not in ("India", ""):
+        clean_state = state_name.replace(" ", "").replace("&", "And").replace("-", "")
+        if clean_state:
+            _push(clean_state)
+            _push(f"{clean_state}Travel")
+            _push(f"{clean_state}Tourism")
+    if month:
+        clean_month = month.replace(" ", "")
+        if clean_month:
+            _push(f"{clean_month}Travel")
+    for t in ("TravelReels", "TravelShorts", "IndianTravelReels"):
+        _push(t)
+    for t in _IG_NICHE_POOL:
+        if len(tags) >= max_tags - 4:
+            break
+        _push(t)
+    for t in _IG_BRAND_POOL:
+        _push(t)
+
+    return " ".join(f"#{t}" for t in tags[:max_tags])
+
+
 def _ig_caption(fmt: str, data: dict) -> str:
-    """Generate Instagram Reel caption with niche, destination-specific hashtags."""
+    """Generate Instagram Reel caption with expanded hashtags + saves-bait CTA.
+    Tier 1 (2026-05-10): no caption URL (IG renders it as plain text), 18-tag
+    hashtag block, save/comment CTA inline in template.
+    """
     template = IG_CAPTION_TEMPLATES.get(fmt, IG_CAPTION_TEMPLATES["listicle"])
     dest_name = data.get("dest_name", "")
-    dest_tag = dest_name.replace(" ", "").replace("-", "") if dest_name else ""
     state_name = data.get("state", "")
+    month = data.get("month", "")
+    dest_tag = dest_name.replace(" ", "").replace("-", "") if dest_name else ""
     state_tag = state_name.replace(" ", "").replace("&", "").replace("-", "") if state_name else ""
     dest_a_name = data.get("dest_a", "")
     dest_b_name = data.get("dest_b", "")
     dest_a_tag = dest_a_name.replace(" ", "").replace("-", "") if dest_a_name else ""
     dest_b_tag = dest_b_name.replace(" ", "").replace("-", "") if dest_b_name else ""
+    hashtags = _ig_hashtag_block(dest_name or dest_a_name, state_name, month)
     try:
         return template.format(
-            month=data.get("month", ""),
+            month=month,
             dest=dest_name,
             score=data.get("score", ""),
+            score_display=_format_score(data.get("score")),
             score_before=data.get("score_before", ""),
+            score_before_display=_format_score(data.get("score_before")),
             score_after=data.get("score_after", ""),
+            score_after_display=_format_score(data.get("score_after")),
             score_a=data.get("score_a", ""),
+            score_a_display=_format_score(data.get("score_a")),
             score_b=data.get("score_b", ""),
+            score_b_display=_format_score(data.get("score_b")),
             dest_tag=dest_tag,
             state_tag=state_tag,
             dest_a=dest_a_name,
             dest_b=dest_b_name,
             dest_a_tag=dest_a_tag,
             dest_b_tag=dest_b_tag,
+            hashtags=hashtags,
         )
     except (KeyError, IndexError):
-        return f"{dest_name or 'India'} — scored by NakshIQ.\n\n#{dest_tag or 'NakshIQ'} #{state_tag or 'ScoreData'} #NakshIQ"
+        return f"{dest_name or 'India'} — scored by NakshIQ.\n\n💾 Save this for your next trip.\n\n{hashtags}"
 
 
 
