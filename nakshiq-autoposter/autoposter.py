@@ -7352,6 +7352,14 @@ if __name__ == "__main__":
     parser.add_argument("--analytics", action="store_true",
                         help="Sync post history from Outstand and generate "
                              "performance analytics report. No posting.")
+    parser.add_argument("--engagement-pull", action="store_true",
+                        help="Pull per-post engagement (likes/comments/saves/"
+                             "shares/reach/views) from Outstand /v1/posts/"
+                             "{id}/analytics into data/post_engagement.json. "
+                             "Tier 2 (2026-05-10).  No posting.")
+    parser.add_argument("--engagement-days", type=int, default=7,
+                        help="Days back to pull engagement for "
+                             "(default 7).")
     parser.add_argument("--allow-local", action="store_true",
                         help="Permit running outside GitHub Actions. Without this "
                              "flag, the autoposter aborts immediately when "
@@ -7372,9 +7380,9 @@ if __name__ == "__main__":
             "runs, pass --allow-local explicitly.\n"
         )
         sys.exit(0)
-    exclusive = sum([args.evening, args.moat, args.tourist_map, args.canva_visual, args.pomelli_visual, args.flow_story, args.reel, args.reel_map, args.ugc, args.infographic, args.yt_short, args.analytics])
+    exclusive = sum([args.evening, args.moat, args.tourist_map, args.canva_visual, args.pomelli_visual, args.flow_story, args.reel, args.reel_map, args.ugc, args.infographic, args.yt_short, args.analytics, args.engagement_pull])
     if exclusive > 1:
-        parser.error("--evening, --moat, --tourist-map, --canva-visual, --pomelli-visual, --flow-story, --reel, --reel-map, --ugc, --infographic, --yt-short, and --analytics are mutually exclusive.")
+        parser.error("--evening, --moat, --tourist-map, --canva-visual, --pomelli-visual, --flow-story, --reel, --reel-map, --ugc, --infographic, --yt-short, --analytics, and --engagement-pull are mutually exclusive.")
     if args.tourist_map:
         run_tourist_map(force=args.force, dry_run=args.dry_run)
     elif args.canva_visual:
@@ -7395,6 +7403,10 @@ if __name__ == "__main__":
         run_yt_short(force=args.force, dry_run=args.dry_run)
     elif args.analytics:
         run_analytics()
+    elif args.engagement_pull:
+        # Tier 2 (2026-05-10): pull per-post engagement from Outstand /analytics.
+        from engagement_pull import run as run_engagement_pull
+        run_engagement_pull(days=args.engagement_days)
     else:
         run(force=args.force, sync_only=args.sync_only,
             dry_run=args.dry_run, evening=args.evening, moat=args.moat)

@@ -41,6 +41,11 @@ on:
     # respect IG's algorithmic penalty for sub-10K-follower accounts posting >3/day).
     # Analytics sync: 23:47 IST (18:17 UTC) — internal
     - cron: "17 18 * * *"
+    # Engagement pull: 02:47 IST next day (21:17 UTC) — daily, internal
+    # Pulls likes/comments/saves/shares/reach/views from Outstand /analytics
+    # for posts in the last 7 days (Tier 2, 2026-05-10).  Runs after evening
+    # publish so latest posts have ~6h to accumulate engagement before pull.
+    - cron: "17 21 * * *"
   workflow_dispatch:
     inputs:
       mode:
@@ -124,17 +129,20 @@ jobs:
         run: pip install -r nakshiq-autoposter/requirements.txt
 
       - name: Sync latest autoposter state from autoposter-state branch
-        # State files (state.json / autoposter.log / analytics.json) live on the
-        # `autoposter-state` side branch so they don't trigger Vercel rebuilds on
-        # main. Pull the latest state into the main worktree before the autoposter
-        # runs so it sees yesterday's already-posted content.
+        # State files (state.json / autoposter.log / analytics.json /
+        # post_engagement.json / post_outcomes.jsonl) live on the
+        # `autoposter-state` side branch so they don't trigger Vercel rebuilds
+        # on main. Pull the latest state into the main worktree before the
+        # autoposter runs so it sees yesterday's already-posted content.
         run: |
           if git ls-remote --exit-code --heads origin autoposter-state >/dev/null 2>&1; then
             git fetch origin autoposter-state --depth=1
             git checkout origin/autoposter-state -- \
               nakshiq-autoposter/state.json \
               nakshiq-autoposter/autoposter.log \
-              nakshiq-autoposter/analytics.json 2>/dev/null || true
+              nakshiq-autoposter/analytics.json \
+              nakshiq-autoposter/data/post_engagement.json \
+              nakshiq-autoposter/data/post_outcomes.jsonl 2>/dev/null || true
             echo "Synced state from autoposter-state branch"
           else
             echo "autoposter-state branch not on origin yet — using state from main checkout (first run)"
@@ -303,6 +311,13 @@ jobs:
             echo "args=--analytics" >> $GITHUB_OUTPUT
             echo "Scheduled ANALYTICS · 23:47 IST (UTC ${HOUR}:${MINUTE})"
 
+          # 02:47 IST next day = UTC 21:17 → Engagement pull (cron=1277, window: 1200-1379)
+          # Tier 2 (2026-05-10): pulls likes/comments/saves/shares/reach/views
+          # from Outstand /v1/posts/{id}/analytics for last 7 days of posts.
+          elif [ "$TOTAL_MINS" -ge 1200 ] && [ "$TOTAL_MINS" -lt 1380 ]; then
+            echo "args=--engagement-pull" >> $GITHUB_OUTPUT
+            echo "Scheduled ENGAGEMENT PULL · 02:47 IST (UTC ${HOUR}:${MINUTE})"
+
           else
             # Reachable only for off-schedule manual fires before 03:00 UTC
             # or after 20:00 UTC. Loud log so future drift > 60 min surfaces.
@@ -328,9 +343,11 @@ jobs:
 
           # 1. Snapshot autoposter's freshly-written state files
           mkdir -p /tmp/autoposter-snap
-          [ -f nakshiq-autoposter/state.json ]     && cp nakshiq-autoposter/state.json     /tmp/autoposter-snap/state.json     || true
-          [ -f nakshiq-autoposter/autoposter.log ] && cp nakshiq-autoposter/autoposter.log /tmp/autoposter-snap/autoposter.log || true
-          [ -f nakshiq-autoposter/analytics.json ] && cp nakshiq-autoposter/analytics.json /tmp/autoposter-snap/analytics.json || true
+          [ -f nakshiq-autoposter/state.json ]                  && cp nakshiq-autoposter/state.json                  /tmp/autoposter-snap/state.json                  || true
+          [ -f nakshiq-autoposter/autoposter.log ]              && cp nakshiq-autoposter/autoposter.log              /tmp/autoposter-snap/autoposter.log              || true
+          [ -f nakshiq-autoposter/analytics.json ]              && cp nakshiq-autoposter/analytics.json              /tmp/autoposter-snap/analytics.json              || true
+          [ -f nakshiq-autoposter/data/post_engagement.json ]   && cp nakshiq-autoposter/data/post_engagement.json   /tmp/autoposter-snap/post_engagement.json        || true
+          [ -f nakshiq-autoposter/data/post_outcomes.jsonl ]    && cp nakshiq-autoposter/data/post_outcomes.jsonl    /tmp/autoposter-snap/post_outcomes.jsonl         || true
 
           # 2. Ensure autoposter-state branch exists on origin (bootstrap on first run)
           if ! git ls-remote --exit-code --heads origin autoposter-state >/dev/null 2>&1; then
@@ -344,14 +361,17 @@ jobs:
           git worktree add /tmp/autoposter-state-worktree autoposter-state
 
           # 4. Drop the snapshot into the worktree
-          mkdir -p /tmp/autoposter-state-worktree/nakshiq-autoposter
-          cp /tmp/autoposter-snap/state.json     /tmp/autoposter-state-worktree/nakshiq-autoposter/state.json     2>/dev/null || true
-          cp /tmp/autoposter-snap/autoposter.log /tmp/autoposter-state-worktree/nakshiq-autoposter/autoposter.log 2>/dev/null || true
-          cp /tmp/autoposter-snap/analytics.json /tmp/autoposter-state-worktree/nakshiq-autoposter/analytics.json 2>/dev/null || true
+          mkdir -p /tmp/autoposter-state-worktree/nakshiq-autoposter/data
+          cp /tmp/autoposter-snap/state.json            /tmp/autoposter-state-worktree/nakshiq-autoposter/state.json                 2>/dev/null || true
+          cp /tmp/autoposter-snap/autoposter.log        /tmp/autoposter-state-worktree/nakshiq-autoposter/autoposter.log             2>/dev/null || true
+          cp /tmp/autoposter-snap/analytics.json        /tmp/autoposter-state-worktree/nakshiq-autoposter/analytics.json             2>/dev/null || true
+          cp /tmp/autoposter-snap/post_engagement.json  /tmp/autoposter-state-worktree/nakshiq-autoposter/data/post_engagement.json  2>/dev/null || true
+          cp /tmp/autoposter-snap/post_outcomes.jsonl   /tmp/autoposter-state-worktree/nakshiq-autoposter/data/post_outcomes.jsonl   2>/dev/null || true
 
           # 5. Commit + push from the worktree
           pushd /tmp/autoposter-state-worktree
-          git add nakshiq-autoposter/state.json nakshiq-autoposter/autoposter.log nakshiq-autoposter/analytics.json
+          git add nakshiq-autoposter/state.json nakshiq-autoposter/autoposter.log nakshiq-autoposter/analytics.json \
+                  nakshiq-autoposter/data/post_engagement.json nakshiq-autoposter/data/post_outcomes.jsonl
           if git diff --staged --quiet; then
             echo "No state changes to commit"
           else
