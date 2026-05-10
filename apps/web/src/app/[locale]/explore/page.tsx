@@ -5,6 +5,7 @@ import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { NewsletterSignup } from "@/components/newsletter-signup";
 import { ExploreWithMap } from "@/components/explore-with-map";
+import { TrendingMonthPages } from "@/components/trending-month-pages";
 import { createClient } from "@supabase/supabase-js";
 import { localeAlternates } from "@/lib/seo-utils";
 
@@ -91,6 +92,7 @@ export default async function ExplorePage({ params }: { params: Promise<{ locale
         <Suspense fallback={<div className="min-h-[400px] animate-pulse rounded bg-foreground/5" />}>
           <ExploreWithMap destinations={destinationsWithCoords} states={states} />
         </Suspense>
+        <TrendingMonthPages locale={locale} />
         <div className="mt-16 max-w-2xl mx-auto">
           <NewsletterSignup
             source="explore-end"
