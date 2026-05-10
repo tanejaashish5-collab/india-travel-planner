@@ -317,16 +317,19 @@ export async function GET(req: NextRequest) {
 
     if (type === "emergency") {
       // Per-destination SOS data — only rows with a real local_helpers entry
-      // (post the 2026-05-10 placeholder strip we have ~410 dests with at least
-      // one verified phone). Helpers JSONB shape: [{name, role, contact, note}]
+      // (post the 2026-05-10 placeholder strip ~46 dests landed at `[]`).
+      // Filter empties SQL-side via the JSONB length so the limit applies to
+      // genuinely-populated rows. Helpers shape: [{name, role, contact, note}]
       const { data } = await supabase
         .from("emergency_sos")
         .select("destination_id, police, ambulance, nearest_hospital, nearest_hospital_km, women_helpline, tourist_helpline, mountain_rescue, rescue_contact, local_helpers, source_label, destinations(name, state:states(name))")
         .not("local_helpers", "is", null)
+        .gt("local_helpers->>0", "")  // require at least one element in the JSONB array
         .order("verified_date", { ascending: false, nullsFirst: false })
-        .limit(limit);
+        .limit(limit * 2);  // over-fetch since post-filter still drops `[]` rows
       const items = (data ?? [])
         .filter((e: any) => Array.isArray(e.local_helpers) && e.local_helpers.length > 0)
+        .slice(0, limit)
         .map((e: any) => ({
           destination_id: e.destination_id,
           destination_name: e.destinations?.name,
@@ -413,12 +416,13 @@ export async function GET(req: NextRequest) {
     }
 
     if (type === "hidden_gems") {
-      // High-confidence hidden gems — used for the "fewer than X IG posts" reel angle.
-      // Filters confidence_score >= 0.7 so we only post gems that survived audit.
+      // High-confidence hidden gems — used for the "nobody talks about" reel angle.
+      // confidence_score is INT 1-5 (NOT a 0-1 float). Filter >=4 so we only
+      // post gems that survived editorial audit (high confidence).
       const { data } = await supabase
         .from("hidden_gems")
         .select("id, near_destination_id, name, distance_km, drive_time, why_unknown, why_go, difficulty, social_proof, confidence_score, tags, destinations:destinations!hidden_gems_near_destination_id_fkey(name, state:states(name))")
-        .gte("confidence_score", 0.7)
+        .gte("confidence_score", 4)
         .order("confidence_score", { ascending: false })
         .limit(limit);
       const items = (data ?? []).map((g: any) => ({
