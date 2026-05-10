@@ -7360,6 +7360,11 @@ if __name__ == "__main__":
     parser.add_argument("--engagement-days", type=int, default=7,
                         help="Days back to pull engagement for "
                              "(default 7).")
+    parser.add_argument("--digest-weekly", action="store_true",
+                        help="Generate the weekly engagement digest from "
+                             "data/post_engagement.json and write it to "
+                             "data/research/social-engagement-week-{date}.md. "
+                             "Tier 2.5 (2026-05-10).  No posting.")
     parser.add_argument("--allow-local", action="store_true",
                         help="Permit running outside GitHub Actions. Without this "
                              "flag, the autoposter aborts immediately when "
@@ -7380,9 +7385,9 @@ if __name__ == "__main__":
             "runs, pass --allow-local explicitly.\n"
         )
         sys.exit(0)
-    exclusive = sum([args.evening, args.moat, args.tourist_map, args.canva_visual, args.pomelli_visual, args.flow_story, args.reel, args.reel_map, args.ugc, args.infographic, args.yt_short, args.analytics, args.engagement_pull])
+    exclusive = sum([args.evening, args.moat, args.tourist_map, args.canva_visual, args.pomelli_visual, args.flow_story, args.reel, args.reel_map, args.ugc, args.infographic, args.yt_short, args.analytics, args.engagement_pull, args.digest_weekly])
     if exclusive > 1:
-        parser.error("--evening, --moat, --tourist-map, --canva-visual, --pomelli-visual, --flow-story, --reel, --reel-map, --ugc, --infographic, --yt-short, --analytics, and --engagement-pull are mutually exclusive.")
+        parser.error("--evening, --moat, --tourist-map, --canva-visual, --pomelli-visual, --flow-story, --reel, --reel-map, --ugc, --infographic, --yt-short, --analytics, --engagement-pull, and --digest-weekly are mutually exclusive.")
     if args.tourist_map:
         run_tourist_map(force=args.force, dry_run=args.dry_run)
     elif args.canva_visual:
@@ -7407,6 +7412,10 @@ if __name__ == "__main__":
         # Tier 2 (2026-05-10): pull per-post engagement from Outstand /analytics.
         from engagement_pull import run as run_engagement_pull
         run_engagement_pull(days=args.engagement_days)
+    elif args.digest_weekly:
+        # Tier 2.5 (2026-05-10): write weekly markdown digest from engagement data.
+        from digest_weekly import run as run_digest_weekly
+        run_digest_weekly(days=7)
     else:
         run(force=args.force, sync_only=args.sync_only,
             dry_run=args.dry_run, evening=args.evening, moat=args.moat)

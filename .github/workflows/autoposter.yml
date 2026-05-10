@@ -46,6 +46,10 @@ on:
     # for posts in the last 7 days (Tier 2, 2026-05-10).  Runs after evening
     # publish so latest posts have ~6h to accumulate engagement before pull.
     - cron: "17 21 * * *"
+    # Weekly engagement digest: Sun 03:47 IST Mon (Sun 22:17 UTC) — internal
+    # Aggregates the week's engagement into data/research/social-engagement-week-*.md.
+    # Runs after Sunday's engagement pull (21:17 UTC) so the digest is fresh.
+    - cron: "17 22 * * 0"
   workflow_dispatch:
     inputs:
       mode:
@@ -314,9 +318,16 @@ jobs:
           # 02:47 IST next day = UTC 21:17 → Engagement pull (cron=1277, window: 1200-1379)
           # Tier 2 (2026-05-10): pulls likes/comments/saves/shares/reach/views
           # from Outstand /v1/posts/{id}/analytics for last 7 days of posts.
+          # On Sundays (DOW=7) the 22:17 UTC window also fires the weekly digest.
           elif [ "$TOTAL_MINS" -ge 1200 ] && [ "$TOTAL_MINS" -lt 1380 ]; then
-            echo "args=--engagement-pull" >> $GITHUB_OUTPUT
-            echo "Scheduled ENGAGEMENT PULL · 02:47 IST (UTC ${HOUR}:${MINUTE})"
+            # 22:17 UTC = 1337 mins → digest_weekly (Sunday only — DOW=7)
+            if [ "$TOTAL_MINS" -ge 1320 ] && [ "$DOW" = "7" ]; then
+              echo "args=--digest-weekly" >> $GITHUB_OUTPUT
+              echo "Scheduled WEEKLY DIGEST · 03:47 IST Mon (UTC ${HOUR}:${MINUTE})"
+            else
+              echo "args=--engagement-pull" >> $GITHUB_OUTPUT
+              echo "Scheduled ENGAGEMENT PULL · 02:47 IST (UTC ${HOUR}:${MINUTE})"
+            fi
 
           else
             # Reachable only for off-schedule manual fires before 03:00 UTC
