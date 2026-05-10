@@ -2,32 +2,43 @@ name: Nakshiq Autoposter
 
 on:
   schedule:
-    # ── Optimized schedule (all times IST, 2hr+ gaps) ──────────────
-    # Morning post: 09:00 IST (03:30 UTC) — daily IG+FB
-    - cron: "30 3 * * *"
-    # YT Short slot 1: 10:00 IST (04:30 UTC) — daily YT only
-    - cron: "30 4 * * *"
-    # Reel slot 1: 11:00 IST (05:30 UTC) — daily IG+FB
-    - cron: "30 5 * * *"
-    # Visual slot: 13:00 IST (07:30 UTC) — daily IG+FB
+    # ── Schedule rationale (2026-05-10 rewrite) ──────────────────────
+    # GHA silently SKIPS scheduled workflows on heavy minute marks
+    # (:00, :15, :30, :45) during high-load periods. Evidence from
+    # autoposter.log 2026-05-04 → 2026-05-09:
+    #   - "0 10 * * *" (reel-map, top-of-hour) skipped 2 days running
+    #     → pomelli content went dark for 3 days
+    #   - "30 3 * * *" (morning post) skipped or delayed 3+ hours
+    #     on 9 of 11 days
+    # Fix: every cron now lands on :17 or :47 — far from any heavy
+    # boundary. All times stay inside their mode-detection windows
+    # below so the bash routing logic doesn't need to change.
+    #
+    # Morning post: 08:47 IST (03:17 UTC) — daily IG+FB
+    - cron: "17 3 * * *"
+    # YT Short slot 1: 09:47 IST (04:17 UTC) — daily YT only
+    - cron: "17 4 * * *"
+    # Reel slot 1: 11:17 IST (05:47 UTC) — daily IG+FB
+    - cron: "47 5 * * *"
+    # Visual slot: 13:17 IST (07:47 UTC) — daily IG+FB
     #   Mon/Wed → moat, Tue/Thu → tourist map, Fri → infographic,
     #   Sat → canva, Sun → pomelli (rotation in mode detection)
-    - cron: "30 7 * * *"
+    - cron: "47 7 * * *"
     # UGC avatar video: 14:30 IST (09:00 UTC) — Wed+Sat only, IG+FB+YT
     # DISABLED: HeyGen balance too low ($0.32). Uncomment after topping up.
     # - cron: "0 9 * * 3,6"
-    # Reel-map: 15:30 IST (10:00 UTC) — daily IG+FB+YT
-    - cron: "0 10 * * *"
-    # Flow story: 16:00 IST (10:30 UTC) — daily IG+FB
-    - cron: "30 10 * * *"
-    # YT Short slot 2: 17:00 IST (11:30 UTC) — daily YT only
-    - cron: "30 11 * * *"
-    # Evening post: 18:30 IST (13:00 UTC) — daily IG+FB
-    - cron: "0 13 * * *"
-    # Reel slot 2: 20:30 IST (15:00 UTC) — daily IG+FB
-    - cron: "0 15 * * *"
-    # Analytics sync: 23:30 IST (18:00 UTC) — internal
-    - cron: "0 18 * * *"
+    # Reel-map: 15:17 IST (09:47 UTC) — daily IG+FB+YT (pomelli pipeline)
+    - cron: "47 9 * * *"
+    # Flow story: 16:17 IST (10:47 UTC) — daily IG+FB
+    - cron: "47 10 * * *"
+    # YT Short slot 2: 17:17 IST (11:47 UTC) — daily YT only
+    - cron: "47 11 * * *"
+    # Evening post: 18:47 IST (13:17 UTC) — daily IG+FB
+    - cron: "17 13 * * *"
+    # Reel slot 2: 20:47 IST (15:17 UTC) — daily IG+FB
+    - cron: "17 15 * * *"
+    # Analytics sync: 23:47 IST (18:17 UTC) — internal
+    - cron: "17 18 * * *"
   workflow_dispatch:
     inputs:
       mode:
@@ -200,22 +211,22 @@ jobs:
           # below the old window start of 770 → silent --sync-only. The new
           # evening window 735-839 captures it.
           #
-          # 09:00 IST = UTC 03:30 → morning post (cron=210, window: 180-239)
+          # 08:47 IST = UTC 03:17 → morning post (cron=197, window: 180-239)
           elif [ "$TOTAL_MINS" -ge 180 ] && [ "$TOTAL_MINS" -lt 240 ]; then
             echo "args=" >> $GITHUB_OUTPUT
             echo "Scheduled POST mode · 09:00 IST (UTC ${HOUR}:${MINUTE})"
 
-          # 10:00 IST = UTC 04:30 → YT Short slot 1 (cron=270, window: 240-299)
+          # 09:47 IST = UTC 04:17 → YT Short slot 1 (cron=257, window: 240-299)
           elif [ "$TOTAL_MINS" -ge 240 ] && [ "$TOTAL_MINS" -lt 300 ]; then
             echo "args=--yt-short" >> $GITHUB_OUTPUT
             echo "Scheduled YT SHORT slot 1 · 10:00 IST (UTC ${HOUR}:${MINUTE})"
 
-          # 11:00 IST = UTC 05:30 → Reel slot 1 (cron=330, window: 300-389)
+          # 11:17 IST = UTC 05:47 → Reel slot 1 (cron=347, window: 300-389)
           elif [ "$TOTAL_MINS" -ge 300 ] && [ "$TOTAL_MINS" -lt 390 ]; then
             echo "args=--reel" >> $GITHUB_OUTPUT
             echo "Scheduled REEL slot 1 · 11:00 IST (UTC ${HOUR}:${MINUTE})"
 
-          # 13:00 IST = UTC 07:30 → Visual slot (cron=450, window: 390-494)
+          # 13:17 IST = UTC 07:47 → Visual slot (cron=467, window: 390-494)
           #   Mon/Wed=moat, Tue/Thu=tourist-map, Fri=infographic, Sat=canva, Sun=pomelli
           elif [ "$TOTAL_MINS" -ge 390 ] && [ "$TOTAL_MINS" -lt 495 ]; then
             if echo "1 3" | grep -qw "$DOW"; then
@@ -241,33 +252,33 @@ jobs:
             echo "args=--ugc" >> $GITHUB_OUTPUT
             echo "Scheduled UGC · 14:30 IST (UTC ${HOUR}:${MINUTE})"
 
-          # 15:30 IST = UTC 10:00 → Reel-map (cron=600, window: 570-614) — IG+FB+YT
+          # 15:17 IST = UTC 09:47 → Reel-map (cron=587, window: 570-614) — IG+FB+YT
           elif [ "$TOTAL_MINS" -ge 570 ] && [ "$TOTAL_MINS" -lt 615 ]; then
             echo "args=--reel-map" >> $GITHUB_OUTPUT
             echo "Scheduled REEL-MAP · 15:30 IST (UTC ${HOUR}:${MINUTE})"
 
-          # 16:00 IST = UTC 10:30 → Flow story (cron=630, window: 615-659) — daily IG+FB
+          # 16:17 IST = UTC 10:47 → Flow story (cron=647, window: 615-659) — daily IG+FB
           elif [ "$TOTAL_MINS" -ge 615 ] && [ "$TOTAL_MINS" -lt 660 ]; then
             echo "args=--flow-story" >> $GITHUB_OUTPUT
             echo "Scheduled FLOW STORY · 16:00 IST (UTC ${HOUR}:${MINUTE})"
 
-          # 17:00 IST = UTC 11:30 → YT Short slot 2 (cron=690, window: 660-734)
+          # 17:17 IST = UTC 11:47 → YT Short slot 2 (cron=707, window: 660-734)
           elif [ "$TOTAL_MINS" -ge 660 ] && [ "$TOTAL_MINS" -lt 735 ]; then
             echo "args=--yt-short" >> $GITHUB_OUTPUT
             echo "Scheduled YT SHORT slot 2 · 17:00 IST (UTC ${HOUR}:${MINUTE})"
 
-          # 18:30 IST = UTC 13:00 → Evening post (cron=780, window: 735-839)
-          # Catches the -14 min drift seen yesterday (12:46 UTC = 766).
+          # 18:47 IST = UTC 13:17 → Evening post (cron=797, window: 735-839)
+          # Catches the -14 min drift seen 2026-05-05 (12:46 UTC = 766).
           elif [ "$TOTAL_MINS" -ge 735 ] && [ "$TOTAL_MINS" -lt 840 ]; then
             echo "args=--evening" >> $GITHUB_OUTPUT
             echo "Scheduled EVENING · 18:30 IST (UTC ${HOUR}:${MINUTE})"
 
-          # 20:30 IST = UTC 15:00 → Reel slot 2 (cron=900, window: 840-989)
+          # 20:47 IST = UTC 15:17 → Reel slot 2 (cron=917, window: 840-989)
           elif [ "$TOTAL_MINS" -ge 840 ] && [ "$TOTAL_MINS" -lt 990 ]; then
             echo "args=--reel" >> $GITHUB_OUTPUT
             echo "Scheduled REEL slot 2 · 20:30 IST (UTC ${HOUR}:${MINUTE})"
 
-          # 23:30 IST = UTC 18:00 → Analytics sync (cron=1080, window: 990-1199)
+          # 23:47 IST = UTC 18:17 → Analytics sync (cron=1097, window: 990-1199)
           elif [ "$TOTAL_MINS" -ge 990 ] && [ "$TOTAL_MINS" -lt 1200 ]; then
             echo "args=--analytics" >> $GITHUB_OUTPUT
             echo "Scheduled ANALYTICS · 23:30 IST (UTC ${HOUR}:${MINUTE})"
