@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-05-09T08:35:52.926Z",
+  "generated_at": "2026-05-10T01:18:17.032Z",
   "totals": {
-    "A": 73,
-    "B": 225,
+    "A": 83,
+    "B": 215,
     "C": 207,
     "total": 505
   },
@@ -98,8 +98,8 @@
     },
     {
       "state": "himachal-pradesh",
-      "A": 11,
-      "B": 21,
+      "A": 13,
+      "B": 19,
       "C": 2,
       "total": 34
     },
@@ -210,8 +210,8 @@
     },
     {
       "state": "rajasthan",
-      "A": 4,
-      "B": 19,
+      "A": 5,
+      "B": 18,
       "C": 0,
       "total": 23
     },
@@ -245,15 +245,15 @@
     },
     {
       "state": "uttar-pradesh",
-      "A": 3,
-      "B": 10,
+      "A": 6,
+      "B": 7,
       "C": 0,
       "total": 13
     },
     {
       "state": "uttarakhand",
-      "A": 9,
-      "B": 27,
+      "A": 13,
+      "B": 23,
       "C": 2,
       "total": 38
     },
@@ -268,7 +268,7 @@
   "gap_counts": [
     {
       "field": "gems",
-      "count": 405
+      "count": 395
     },
     {
       "field": "eats",
@@ -280,7 +280,7 @@
     },
     {
       "field": "stays",
-      "count": 108
+      "count": 106
     }
   ],
   "destinations": [
@@ -1636,7 +1636,7 @@
         "months_prose": 0,
         "gems": 0,
         "eats": 0,
-        "stays": 3
+        "stays": 4
       },
       "has": {
         "tagline": true,
@@ -3231,7 +3231,7 @@
         "months_prose": 0,
         "gems": 1,
         "eats": 0,
-        "stays": 3
+        "stays": 4
       },
       "has": {
         "tagline": true,
@@ -4115,7 +4115,7 @@
         "months_prose": 0,
         "gems": 3,
         "eats": 0,
-        "stays": 0
+        "stays": 4
       },
       "has": {
         "tagline": true,
@@ -4123,8 +4123,7 @@
       },
       "missing": [
         "months_prose:0/12",
-        "eats:0/5",
-        "stays:0/3"
+        "eats:0/5"
       ]
     },
     {
@@ -5092,46 +5091,6 @@
       ]
     },
     {
-      "id": "ayodhya",
-      "name": "Ayodhya",
-      "state": "uttar-pradesh",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 1,
-        "eats": 10,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:1/3"
-      ]
-    },
-    {
-      "id": "badrinath",
-      "name": "Badrinath",
-      "state": "uttarakhand",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 1,
-        "eats": 7,
-        "stays": 3
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:1/3"
-      ]
-    },
-    {
       "id": "bandhavgarh",
       "name": "Bandhavgarh National Park",
       "state": "madhya-pradesh",
@@ -5500,7 +5459,7 @@
         "months_prose": 12,
         "gems": 1,
         "eats": 0,
-        "stays": 1
+        "stays": 4
       },
       "has": {
         "tagline": true,
@@ -5508,8 +5467,7 @@
       },
       "missing": [
         "gems:1/3",
-        "eats:0/5",
-        "stays:1/3"
+        "eats:0/5"
       ]
     },
     {
@@ -5825,26 +5783,6 @@
       ]
     },
     {
-      "id": "corbett-national-park",
-      "name": "Jim Corbett National Park",
-      "state": "uttarakhand",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 1,
-        "eats": 12,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:1/3"
-      ]
-    },
-    {
       "id": "cuttack",
       "name": "Cuttack",
       "state": "odisha",
@@ -5863,26 +5801,6 @@
       "missing": [
         "gems:0/3",
         "eats:0/5"
-      ]
-    },
-    {
-      "id": "dalhousie",
-      "name": "Dalhousie",
-      "state": "himachal-pradesh",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 1,
-        "eats": 12,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:1/3"
       ]
     },
     {
@@ -6734,7 +6652,7 @@
         "months_prose": 12,
         "gems": 1,
         "eats": 7,
-        "stays": 3
+        "stays": 4
       },
       "has": {
         "tagline": true,
@@ -6776,26 +6694,6 @@
         "gems": 1,
         "eats": 10,
         "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:1/3"
-      ]
-    },
-    {
-      "id": "kasauli",
-      "name": "Kasauli",
-      "state": "himachal-pradesh",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 1,
-        "eats": 11,
-        "stays": 3
       },
       "has": {
         "tagline": true,
@@ -7396,26 +7294,6 @@
       ]
     },
     {
-      "id": "lucknow",
-      "name": "Lucknow",
-      "state": "uttar-pradesh",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 1,
-        "eats": 13,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:1/3"
-      ]
-    },
-    {
       "id": "machilipatnam",
       "name": "Machilipatnam",
       "state": "andhra-pradesh",
@@ -7749,46 +7627,6 @@
       },
       "missing": [
         "eats:3/5"
-      ]
-    },
-    {
-      "id": "mount-abu",
-      "name": "Mount Abu",
-      "state": "rajasthan",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 1,
-        "eats": 5,
-        "stays": 3
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:1/3"
-      ]
-    },
-    {
-      "id": "mukteshwar",
-      "name": "Mukteshwar",
-      "state": "uttarakhand",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 1,
-        "eats": 7,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:1/3"
       ]
     },
     {
@@ -8358,26 +8196,6 @@
       ]
     },
     {
-      "id": "prayagraj",
-      "name": "Prayagraj",
-      "state": "uttar-pradesh",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 1,
-        "eats": 10,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:1/3"
-      ]
-    },
-    {
       "id": "pulicat-lake",
       "name": "Pulicat Lake",
       "state": "andhra-pradesh",
@@ -8565,26 +8383,6 @@
         "gems:1/3",
         "eats:0/5",
         "stays:0/3"
-      ]
-    },
-    {
-      "id": "ranikhet",
-      "name": "Ranikhet",
-      "state": "uttarakhand",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 1,
-        "eats": 8,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:1/3"
       ]
     },
     {
@@ -9708,6 +9506,42 @@
       "missing": []
     },
     {
+      "id": "ayodhya",
+      "name": "Ayodhya",
+      "state": "uttar-pradesh",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 10,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "badrinath",
+      "name": "Badrinath",
+      "state": "uttarakhand",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 7,
+        "stays": 3
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
       "id": "barnawapara",
       "name": "Barnawapara",
       "state": "chhattisgarh",
@@ -9862,6 +9696,42 @@
         "gems": 3,
         "eats": 5,
         "stays": 3
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "corbett-national-park",
+      "name": "Jim Corbett National Park",
+      "state": "uttarakhand",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 12,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "dalhousie",
+      "name": "Dalhousie",
+      "state": "himachal-pradesh",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 12,
+        "stays": 4
       },
       "has": {
         "tagline": true,
@@ -10086,6 +9956,24 @@
       "missing": []
     },
     {
+      "id": "kasauli",
+      "name": "Kasauli",
+      "state": "himachal-pradesh",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 11,
+        "stays": 3
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
       "id": "kasol",
       "name": "Kasol",
       "state": "himachal-pradesh",
@@ -10248,6 +10136,24 @@
       "missing": []
     },
     {
+      "id": "lucknow",
+      "name": "Lucknow",
+      "state": "uttar-pradesh",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 13,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
       "id": "lunglei",
       "name": "Lunglei",
       "state": "mizoram",
@@ -10311,6 +10217,42 @@
         "months_prose": 12,
         "gems": 3,
         "eats": 6,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "mount-abu",
+      "name": "Mount Abu",
+      "state": "rajasthan",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 3
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "mukteshwar",
+      "name": "Mukteshwar",
+      "state": "uttarakhand",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 7,
         "stays": 4
       },
       "has": {
@@ -10536,9 +10478,45 @@
       "missing": []
     },
     {
+      "id": "prayagraj",
+      "name": "Prayagraj",
+      "state": "uttar-pradesh",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 10,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
       "id": "ranchi",
       "name": "Ranchi",
       "state": "jharkhand",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 8,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "ranikhet",
+      "name": "Ranikhet",
+      "state": "uttarakhand",
       "tier": "A",
       "counts": {
         "months_scored": 12,
