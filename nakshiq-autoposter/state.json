@@ -1,14 +1,18 @@
 {
-  "yt_short_formats_used": [],
-  "yt_short_music_used": [],
+  "yt_short_formats_used": [
+    "before_after"
+  ],
+  "yt_short_music_used": [
+    "33_kerala_sunset"
+  ],
   "posted_today": {
-    "m8EAd": "2026-05-11",
-    "PdMu0": "2026-05-11"
+    "GAh5p_yt_short": "2026-05-11",
+    "GAh5p_yt_short_count": 1
   },
-  "last_sync": "2026-05-11T06:21:29.970756+00:00",
+  "last_sync": "2026-04-30T04:05:30.154914+00:00",
   "posted_destinations": [
     {
-      "destination_id": "bir-billing",
+      "destination_id": "bhaderwah",
       "date": "2026-05-11"
     }
   ],
@@ -26,8 +30,7 @@
       "score_card",
       "collection_spotlight",
       "festival_alert",
-      "kids_intel",
-      "camping_intel"
+      "kids_intel"
     ],
     "PdMu0": [
       "monthly_forecast",
@@ -47,8 +50,7 @@
       "reality_check",
       "collection_spotlight",
       "festival_alert",
-      "kids_intel",
-      "camping_intel"
+      "kids_intel"
     ]
   },
   "post_log": [
@@ -443,46 +445,16 @@
       "has_media": true
     },
     {
-      "timestamp": "2026-05-11T06:22:34.160796+00:00",
+      "timestamp": "2026-05-11T06:33:43.656642+00:00",
       "date": "2026-05-11",
-      "platform": "instagram",
-      "account_id": "m8EAd",
-      "post_id": "8JRQI",
-      "destination": "bir-billing",
-      "format": "camping_intel",
-      "has_media": true,
-      "media_id": "bir-billing.mp4"
-    },
-    {
-      "timestamp": "2026-05-11T06:22:59.423110+00:00",
-      "date": "2026-05-11",
-      "platform": "facebook",
-      "account_id": "PdMu0",
-      "post_id": "ehDSr",
-      "destination": "bir-billing",
-      "format": "camping_intel",
-      "has_media": true,
-      "media_id": "bir-billing.mp4"
+      "platform": "youtube",
+      "post_id": "bq8PT",
+      "destination": "bhaderwah",
+      "format": "yt_short.before_after",
+      "media_id": "yt_short_before_after_yt_short_before_after_2026-05-11.mp4"
     }
   ],
-  "theme_usage": {
-    "morning_formats": {
-      "camping_intel": [
-        "2026-05-11"
-      ]
-    },
-    "festivals": {},
-    "camping": {
-      "camp-bir-billing-landing": [
-        "2026-05-11"
-      ]
-    },
-    "destinations": {
-      "bir-billing": [
-        "2026-05-11"
-      ]
-    }
-  },
+  "theme_usage": {},
   "infographic": {
     "last_topic_idx": 0,
     "last_theme_idx": 0,
@@ -494,7 +466,5 @@
     ]
   },
   "ugc_music_history": [],
-  "last_picked": {
-    "shared_best": "tirthan-valley"
-  }
+  "last_picked": {}
 }

@@ -1,36 +1,20 @@
-2026-05-11 06:21:11  INFO      ════════════════════════════════════════════════════════════
-2026-05-11 06:21:11  INFO      Nakshiq Autoposter · MORNING · 2026-05-11 · weekday=0
-2026-05-11 06:21:11  INFO      ════════════════════════════════════════════════════════════
-2026-05-11 06:21:11  INFO      ── Syncing Nakshiq content ──────────────────────────────
-2026-05-11 06:21:29  INFO      Synced → 20 destinations · 0 traps · 0 articles · 23 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 50 camping · 50 gems · total catalog=505
-2026-05-11 06:21:30  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
-2026-05-11 06:21:30  INFO      Morning format (round-robin): camping_intel (26/26 never featured)
-2026-05-11 06:21:30  INFO      Formats — IG: camping_intel  ·  FB: camping_intel  ·  Story: festival_alert
-2026-05-11 06:21:30  INFO      Used destinations (14d): 0
-2026-05-11 06:21:30  INFO      Fingerprint dedup snapshot — 0 dests in 7d · 27 (dest,fmt) pairs in 30d · 0 media in 60d
-2026-05-11 06:21:30  INFO      Festival locked: Chail Cricket Festival (37/37 active festivals never featured)
-2026-05-11 06:21:30  INFO      Camp locked: Bir Billing Paragliding Camp (50/50 never featured)
-2026-05-11 06:21:36  INFO      Shared best destination locked: Tirthan Valley
-2026-05-11 06:21:36  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
-2026-05-11 06:21:36  INFO      [instagram/nakshiq] Generating camping_intel post...
-2026-05-11 06:21:36  INFO      [instagram/nakshiq] Caption ready (603 chars, dest=bir-billing)
-2026-05-11 06:21:36  INFO      [instagram/nakshiq] Video available — uploading for Reel...
-2026-05-11 06:21:36  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/bir-billing.mp4?v=20260510
-2026-05-11 06:21:37  INFO          Requesting upload URL for bir-billing.mp4 (6,519,605 bytes, video/mp4)
-2026-05-11 06:21:37  INFO          Uploading to R2 (timeout=300s)...
-2026-05-11 06:21:38  INFO          R2 PUT OK. Confirming...
-2026-05-11 06:21:40  INFO          Media ready: PrV50 (6,519,605 bytes · bir-billing.mp4)
-2026-05-11 06:21:40  INFO      [instagram/nakshiq] Publishing Reel...
-2026-05-11 06:22:34  WARNING   [instagram/nakshiq] ⚠️  Queued (ID=8JRQI)
-2026-05-11 06:22:34  INFO      [facebook/Nakshiq] Generating camping_intel post...
-2026-05-11 06:22:34  INFO      [facebook/Nakshiq] Caption ready (628 chars, dest=bir-billing)
-2026-05-11 06:22:34  INFO      [facebook/Nakshiq] Video available — uploading for Reel...
-2026-05-11 06:22:34  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/bir-billing.mp4?v=20260510
-2026-05-11 06:22:34  INFO          Requesting upload URL for bir-billing.mp4 (6,519,605 bytes, video/mp4)
-2026-05-11 06:22:35  INFO          Uploading to R2 (timeout=300s)...
-2026-05-11 06:22:37  INFO          R2 PUT OK. Confirming...
-2026-05-11 06:22:38  INFO          Media ready: A8D67 (6,519,605 bytes · bir-billing.mp4)
-2026-05-11 06:22:38  INFO      [facebook/Nakshiq] Publishing Reel...
-2026-05-11 06:22:59  INFO      [facebook/Nakshiq] ✅ Published · Outstand=ehDSr · Platform=1317908916969153
-2026-05-11 06:22:59  INFO      State saved. Run complete.
-2026-05-11 06:22:59  INFO      ════════════════════════════════════════════════════════════
+2026-05-11 06:32:13  INFO      ════════════════════════════════════════════════════════════
+2026-05-11 06:32:13  INFO      Nakshiq Autoposter · YT SHORT · 2026-05-11
+2026-05-11 06:32:13  INFO      ════════════════════════════════════════════════════════════
+2026-05-11 06:33:24  INFO      Short rendered: yt_short_before_after_2026-05-11.mp4 (14974 KB, 31.0s, fmt=before_after, music=33_kerala_sunset)
+2026-05-11 06:33:24  INFO          Requesting upload URL for yt_short_before_after_yt_short_before_after_2026-05-11.mp4 (15,333,420 bytes, video/mp4)
+2026-05-11 06:33:25  INFO          Uploading to R2 (timeout=300s)...
+2026-05-11 06:33:27  INFO          R2 PUT OK. Confirming...
+2026-05-11 06:33:28  INFO          Media ready: xjFp8 (15,333,420 bytes · yt_short_before_after_yt_short_before_after_2026-05-11.mp4)
+2026-05-11 06:33:28  INFO      Video uploaded: yt_short_before_after_yt_short_before_after_2026-05-11.mp4
+2026-05-11 06:33:29  INFO      [youtube/@naksh-iq] Publishing YT Short (before_after)...
+2026-05-11 06:33:31  INFO      [youtube/@naksh-iq] Outstand accepted (post_id=bq8PT), waiting for platform confirmation...
+2026-05-11 06:33:43  INFO      [youtube/@naksh-iq] ✅ YT Short published · Outstand=bq8PT · Platform=rprgAuQABRE
+2026-05-11 06:33:43  INFO      [instagram/nakshiq] Publishing YT Short (before_after)...
+2026-05-11 06:33:46  INFO      [instagram/nakshiq] Outstand accepted (post_id=m9hKd), waiting for platform confirmation...
+2026-05-11 06:34:32  WARNING   [instagram/nakshiq] ⚠️  YT Short queued but NOT confirmed (post_id=m9hKd). May have silently failed.
+2026-05-11 06:34:32  WARNING   Could not write post_outcomes entry: 'utf-8' codec can't encode characters in position 102-103: surrogates not allowed
+2026-05-11 06:34:32  INFO      [facebook/Nakshiq] Skipping (YT Shorts post to YouTube + Instagram only).
+2026-05-11 06:34:32  INFO      YT Short posted: format=before_after, music=33_kerala_sunset
+2026-05-11 06:34:32  INFO      State saved. YT Short run complete.
+2026-05-11 06:34:32  INFO      ════════════════════════════════════════════════════════════
