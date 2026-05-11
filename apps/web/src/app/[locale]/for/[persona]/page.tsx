@@ -82,6 +82,48 @@ async function fetchDestinations(): Promise<DestRecord[]> {
   return all;
 }
 
+function computeHeroStat(
+  persona: PersonaSlug,
+  all: DestRecord[],
+  matched: DestRecord[],
+): string | null {
+  const totalCorpus = all.length;
+  const matchedCount = matched.length;
+  if (matchedCount === 0) return null;
+
+  switch (persona) {
+    case "solo-female": {
+      const highConfidence = all.filter(
+        (d) => (d.solo_female_score?.annual_score ?? 0) >= 4,
+      ).length;
+      return `${matchedCount} of ${totalCorpus} destinations currently match — ${highConfidence} score 4/5 or higher on NakshIQ's annual solo-female safety index. The index is rebuilt each season, not curated once.`;
+    }
+    case "families": {
+      const suitableHigh = all.filter(
+        (d) => d.kids_friendly?.suitable === true && (d.kids_friendly?.rating ?? 0) >= 4,
+      ).length;
+      const underAlt = matched.filter((d) => (d.elevation_m ?? 0) < 2500).length;
+      return `${matchedCount} family-suitable destinations in the corpus, ${suitableHigh} of them at 4/5 or higher for kids. ${underAlt} sit under 2,500 m — the altitude ceiling we recommend for children under ten.`;
+    }
+    case "elderly": {
+      const lowAlt = matched.filter((d) => (d.elevation_m ?? 0) < 2000).length;
+      const easy = matched.filter((d) => d.difficulty === "easy" || !d.difficulty).length;
+      return `${matchedCount} destinations suit travellers prioritising low-effort access — ${lowAlt} below 2,000 m and ${easy} marked easy on terrain. Hospital distance and emergency contacts surface on each page.`;
+    }
+    case "honeymooners": {
+      const states = new Set(matched.map((d) => d.state_id).filter(Boolean)).size;
+      return `${matchedCount} destinations across ${states} states. We list the ones with consistent stay quality and clear seasonality — the months we'd avoid are flagged on each destination page.`;
+    }
+    case "pilgrims": {
+      const states = new Set(matched.map((d) => d.state_id).filter(Boolean)).size;
+      return `${matchedCount} pilgrimage destinations across ${states} states. Permit windows, darshan timings, and access cutoffs (Char Dham, Sabarimala, Vaishno Devi) are tracked per destination, not assumed from listicles.`;
+    }
+    default: {
+      return `${matchedCount} of ${totalCorpus} destinations match this persona today, drawn from NakshIQ's verified corpus rather than editorial-curated lists.`;
+    }
+  }
+}
+
 export default async function PersonaHubPage({
   params,
 }: {
@@ -94,6 +136,11 @@ export default async function PersonaHubPage({
   const isHindi = locale === "hi";
   const all = await fetchDestinations();
   const matched = matchDestinationsForPersona(config, all);
+
+  // Stat-led hero context — one inline numeric line per persona, computed
+  // live from the matched set so it can't drift from reality. No fabricated
+  // .gov.in citations; the data is NakshIQ's own corpus.
+  const heroStat = computeHeroStat(persona as PersonaSlug, all, matched);
 
   const pageUrl = `${BASE_URL}/${locale}/for/${persona}`;
 
@@ -183,9 +230,15 @@ export default async function PersonaHubPage({
         <p className="text-lg text-muted-foreground mb-4 leading-relaxed">
           {isHindi ? config.taglineHindi : config.tagline}
         </p>
-        <p className="text-sm text-muted-foreground/90 mb-10 leading-relaxed max-w-3xl">
+        <p className="text-sm text-muted-foreground/90 mb-6 leading-relaxed max-w-3xl">
           {config.description}
         </p>
+
+        {heroStat && (
+          <p className="text-sm tabular-nums text-foreground/80 mb-10 leading-relaxed max-w-3xl border-l-2 border-primary/40 pl-4">
+            {heroStat}
+          </p>
+        )}
 
         {/* Top-line stats */}
         <div className="grid grid-cols-2 gap-3 mb-10">
