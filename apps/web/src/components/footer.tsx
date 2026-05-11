@@ -114,6 +114,7 @@ export function Footer({ stats }: { stats?: { destinations: number; places: numb
                 { href: `/${locale}/press`, label: "Press & research" },
                 { href: `/${locale}/corrections`, label: "Corrections" },
                 { href: `/${locale}/editorial-policy`, label: tf("editorialPolicy") },
+                { href: `/${locale}/why-we-say-no-data`, label: "Why we say no data" },
                 { href: `/${locale}/contact`, label: "Contact" },
               ].map((link) => (
                 <Link

@@ -191,6 +191,14 @@ export default async function MethodologyPage() {
               locally before traveling, especially for remote destinations. If you find
               inaccurate data, we want to know.
             </p>
+            <p className="mt-3 text-muted-foreground">
+              When a primary source doesn't surface a number, we leave it blank
+              rather than guess. Read{" "}
+              <Link href="/why-we-say-no-data" className="text-foreground underline underline-offset-2">
+                why we say no data
+              </Link>
+              {" "}for what a dash on this site actually means.
+            </p>
             <div className="mt-4 rounded-xl border border-border p-4 text-sm text-muted-foreground">
               <strong>Disclaimer:</strong> This data is for planning purposes. Always verify conditions
               locally before traveling. Mountain roads, weather, and infrastructure can change rapidly.
