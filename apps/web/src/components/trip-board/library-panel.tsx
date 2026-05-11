@@ -24,9 +24,10 @@ type DestLite = {
   destination_months: { month: number; score: number }[] | null;
   difficulty: string | null;
   elevation_m: number | null;
+  family_stress?: string | null;
 };
 
-type FilterId = "all" | "go-month" | "kids" | "permit-free";
+type FilterId = "all" | "go-month" | "kids" | "permit-free" | "multi-gen";
 
 function scoreFor(d: DestLite, monthOneIndexed: number): number {
   const row = (d.destination_months ?? []).find((m) => m.month === monthOneIndexed);
@@ -141,6 +142,17 @@ export function LibraryPanel({
     // approximate as "easy + low altitude" since permit data isn't on DestLite.
     if (filter === "permit-free")
       list = list.filter((d) => d.difficulty === "easy" && (d.elevation_m ?? 0) < 2500);
+    // multi-gen — safe for grandparents AND small kids in one trip. No
+    // dedicated column; derived from low altitude (AMS risk at both age
+    // extremes), easy difficulty, and family_stress that's not flagged hard.
+    if (filter === "multi-gen")
+      list = list.filter((d) => {
+        const safeElev = (d.elevation_m ?? 0) < 2000;
+        const easyEnough = !d.difficulty || d.difficulty === "easy";
+        const fs = (d.family_stress ?? "").toLowerCase();
+        const familyOk = !fs.includes("not recommended") && !fs.includes("high");
+        return safeElev && easyEnough && familyOk;
+      });
     return list
       .slice()
       .sort((a, b) => {
@@ -173,6 +185,7 @@ export function LibraryPanel({
     { id: "all", label: "All" },
     { id: "go-month", label: `${MONTH_LABELS[state.month - 1]} GO` },
     { id: "kids", label: "👶 Kids 4+" },
+    { id: "multi-gen", label: "👨‍👩‍👧 Multi-gen" },
     { id: "permit-free", label: "Permit-free" },
   ];
 
