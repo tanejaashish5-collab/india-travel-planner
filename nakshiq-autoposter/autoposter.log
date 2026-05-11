@@ -1,6 +1,35 @@
-2026-05-11 10:52:05  INFO      ════════════════════════════════════════════════════════════
-2026-05-11 10:52:05  INFO      Nakshiq Autoposter · MORNING · 2026-05-11 · weekday=0
-2026-05-11 10:52:05  INFO      ════════════════════════════════════════════════════════════
-2026-05-11 10:52:05  INFO      ── Syncing Nakshiq content ──────────────────────────────
-2026-05-11 10:52:29  INFO      Synced → 20 destinations · 0 traps · 0 articles · 23 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 50 camping · 50 gems · total catalog=505
-2026-05-11 10:52:29  INFO      Sync-only mode. Done.
+2026-05-11 12:35:19  INFO      ════════════════════════════════════════════════════════════
+2026-05-11 12:35:19  INFO      Nakshiq Autoposter · EVENING · 2026-05-11 · weekday=0
+2026-05-11 12:35:19  INFO      ════════════════════════════════════════════════════════════
+2026-05-11 12:35:19  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-05-11 12:35:40  INFO      Synced → 20 destinations · 0 traps · 0 articles · 23 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 50 camping · 50 gems · total catalog=505
+2026-05-11 12:35:41  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-05-11 12:35:41  INFO      Formats — IG: score_card  ·  FB: score_card  ·  Story: festival_alert  ·  Audience: backpackers
+2026-05-11 12:35:41  INFO      Used destinations (14d): 0
+2026-05-11 12:35:41  WARNING   Audience filter 'backpackers' → only 2 match (floor=3). Dropping filter to avoid same-dest spam.
+2026-05-11 12:35:41  INFO      Fingerprint dedup snapshot — 0 dests in 7d · 27 (dest,fmt) pairs in 30d · 0 media in 60d
+2026-05-11 12:35:41  INFO      Festival locked: Buddha Purnima (Vesak) (37/37 active festivals never featured)
+2026-05-11 12:35:46  INFO      Shared best destination locked: Tirthan Valley
+2026-05-11 12:35:46  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-05-11 12:35:46  INFO      [instagram/nakshiq] Generating score_card post...
+2026-05-11 12:35:46  INFO      [instagram/nakshiq] Caption ready (535 chars, dest=tirthan-valley)
+2026-05-11 12:35:46  INFO      [instagram/nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-05-11 12:35:46  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/tirthan-valley.mp4?v=20260511
+2026-05-11 12:35:47  INFO          Requesting upload URL for tirthan-valley.mp4 (14,753,314 bytes, video/mp4)
+2026-05-11 12:35:48  INFO          Uploading to R2 (timeout=300s)...
+2026-05-11 12:35:50  INFO          R2 PUT OK. Confirming...
+2026-05-11 12:35:51  INFO          Media ready: FO5BZ (14,753,314 bytes · tirthan-valley.mp4)
+2026-05-11 12:35:51  INFO      [instagram/nakshiq] Publishing Reel...
+2026-05-11 12:36:31  INFO      [instagram/nakshiq] ✅ Published · Outstand=4wNbi · Platform=18097167070888210
+2026-05-11 12:36:31  INFO      [facebook/Nakshiq] Generating score_card post...
+2026-05-11 12:36:31  INFO      [facebook/Nakshiq] Caption ready (516 chars, dest=tirthan-valley)
+2026-05-11 12:36:31  INFO      [facebook/Nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-05-11 12:36:31  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/tirthan-valley.mp4?v=20260511
+2026-05-11 12:36:32  INFO          Requesting upload URL for tirthan-valley.mp4 (14,753,314 bytes, video/mp4)
+2026-05-11 12:36:33  INFO          Uploading to R2 (timeout=300s)...
+2026-05-11 12:36:34  INFO          R2 PUT OK. Confirming...
+2026-05-11 12:36:35  INFO          Media ready: gyu6x (14,753,314 bytes · tirthan-valley.mp4)
+2026-05-11 12:36:35  INFO      [facebook/Nakshiq] Publishing Reel...
+2026-05-11 12:36:50  INFO      [facebook/Nakshiq] ✅ Published · Outstand=LWxXV · Platform=1869443603769746
+2026-05-11 12:36:50  INFO      State saved. Run complete.
+2026-05-11 12:36:50  INFO      ════════════════════════════════════════════════════════════
