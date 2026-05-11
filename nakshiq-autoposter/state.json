@@ -2,11 +2,18 @@
   "yt_short_formats_used": [],
   "yt_short_music_used": [],
   "posted_today": {
-    "m8EAd_infographic": "2026-05-11",
-    "PdMu0_infographic": "2026-05-11"
+    "m8EAd": "2026-05-11",
+    "m8EAd_evening": "2026-05-11",
+    "PdMu0": "2026-05-11",
+    "PdMu0_evening": "2026-05-11"
   },
-  "last_sync": "2026-04-30T04:05:30.154914+00:00",
-  "posted_destinations": [],
+  "last_sync": "2026-05-11T13:38:14.590829+00:00",
+  "posted_destinations": [
+    {
+      "destination_id": "tirthan-valley",
+      "date": "2026-05-11"
+    }
+  ],
   "posted_formats": {
     "m8EAd": [
       "monthly_forecast",
@@ -21,7 +28,8 @@
       "score_card",
       "collection_spotlight",
       "festival_alert",
-      "kids_intel"
+      "kids_intel",
+      "score_card"
     ],
     "PdMu0": [
       "monthly_forecast",
@@ -41,7 +49,8 @@
       "reality_check",
       "collection_spotlight",
       "festival_alert",
-      "kids_intel"
+      "kids_intel",
+      "score_card"
     ]
   },
   "post_log": [
@@ -434,13 +443,52 @@
       "destination": "ranthambore",
       "format": "kids_intel",
       "has_media": true
+    },
+    {
+      "timestamp": "2026-05-11T13:39:10.706973+00:00",
+      "date": "2026-05-11",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "g25ix",
+      "destination": "tirthan-valley",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "tirthan-valley.mp4"
+    },
+    {
+      "timestamp": "2026-05-11T13:39:39.324898+00:00",
+      "date": "2026-05-11",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "OyR4v",
+      "destination": "tirthan-valley",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "tirthan-valley.mp4"
     }
   ],
-  "theme_usage": {},
+  "theme_usage": {
+    "festivals": {},
+    "destinations": {
+      "tirthan-valley": [
+        "2026-05-11"
+      ]
+    },
+    "reels": {
+      "tirthan-valley": [
+        "2026-05-11"
+      ]
+    },
+    "audience_tags": {
+      "backpackers": [
+        "2026-05-11"
+      ]
+    }
+  },
   "infographic": {
-    "last_topic_idx": 1,
-    "last_theme_idx": 1,
-    "last_posted": "2026-05-11"
+    "last_topic_idx": 0,
+    "last_theme_idx": 0,
+    "last_posted": ""
   },
   "tourist_map_states": {
     "HP": [
@@ -448,5 +496,7 @@
     ]
   },
   "ugc_music_history": [],
-  "last_picked": {}
+  "last_picked": {
+    "shared_best": "tirthan-valley"
+  }
 }
