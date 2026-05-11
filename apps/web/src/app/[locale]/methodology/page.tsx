@@ -48,8 +48,30 @@ async function getFreshnessStats() {
   return { pct, latest };
 }
 
+async function getVerificationCounts() {
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+  if (!url || !key) return null;
+
+  const supabase = createClient(url, key);
+  const [destinations, eateries, stays] = await Promise.all([
+    supabase.from("destinations").select("id", { count: "exact", head: true }),
+    supabase.from("local_eateries").select("id", { count: "exact", head: true }),
+    supabase.from("destination_stay_picks").select("destination_id", { count: "exact", head: true }),
+  ]);
+
+  return {
+    destinations: destinations.count ?? null,
+    eateries: eateries.count ?? null,
+    stays: stays.count ?? null,
+  };
+}
+
 export default async function MethodologyPage() {
-  const freshness = await getFreshnessStats();
+  const [freshness, counts] = await Promise.all([
+    getFreshnessStats(),
+    getVerificationCounts(),
+  ]);
   const now = new Date();
   const monthYear = now.toLocaleDateString("en-IN", { month: "long", year: "numeric" });
   return (
@@ -204,6 +226,113 @@ export default async function MethodologyPage() {
               locally before traveling. Mountain roads, weather, and infrastructure can change rapidly.
               We are not responsible for decisions made based on this data.
             </div>
+          </section>
+
+          {/* How we keep data honest */}
+          <section>
+            <h2 className="text-2xl font-semibold mb-4">How we keep data honest</h2>
+            <p className="text-muted-foreground leading-relaxed">
+              Scoring is one half of methodology. The other half is making
+              sure the numbers we score are real in the first place. Roughly
+              one in three numbers we research turns out to be wrong, dead,
+              or moved. The work of catching that — and refusing to ship it
+              — is the harder half of the job.
+            </p>
+
+            {counts && (
+              <p className="mt-4 text-muted-foreground tabular-nums">
+                Current corpus:{" "}
+                {counts.destinations != null && (
+                  <><span className="font-semibold text-foreground">{counts.destinations.toLocaleString("en-IN")}</span> destinations · </>
+                )}
+                {counts.eateries != null && (
+                  <><span className="font-semibold text-foreground">{counts.eateries.toLocaleString("en-IN")}</span> verified eateries · </>
+                )}
+                {counts.stays != null && (
+                  <><span className="font-semibold text-foreground">{counts.stays.toLocaleString("en-IN")}</span> verified stay picks</>
+                )}
+                .
+              </p>
+            )}
+
+            <h3 className="text-lg font-semibold mt-6 mb-3">Guardrails built into the data layer</h3>
+            <p className="text-muted-foreground leading-relaxed mb-3">
+              Some forms of bad data are caught in the editor's head. Some
+              are caught by the database itself. We've codified the patterns
+              we keep encountering into schema-level checks, so a row that
+              would fabricate an emergency contact can't be saved at all.
+            </p>
+            <ul className="space-y-3 text-muted-foreground">
+              <li className="flex items-start gap-2">
+                <span className="text-primary mt-0.5">—</span>
+                <span>
+                  <strong className="text-foreground">Placeholder phone numbers are blocked at write time.</strong>{" "}
+                  Numbers containing <code className="text-xs">XXXXX</code>, runs of six or more zeros or nines, or strings like <code className="text-xs">TBD</code>/<code className="text-xs">TODO</code>/<code className="text-xs">PLACEHOLDER</code> are rejected by a database trigger. The dash you see is the only honest response when a source doesn't surface one.
+                </span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-primary mt-0.5">—</span>
+                <span>
+                  <strong className="text-foreground">Editorial prose has a minimum substance floor.</strong>{" "}
+                  Destinations marked "go" must justify it in at least 150 characters of why-to-go prose — or the field stays null. Stub copy can't sneak past as a verdict.
+                </span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-primary mt-0.5">—</span>
+                <span>
+                  <strong className="text-foreground">Price tiers are an enum, not a free-text guess.</strong>{" "}
+                  Eateries are tagged on a four-step rupee scale, not "₹150-350 per head" style fabricated precision. The scale is consistent across every destination.
+                </span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-primary mt-0.5">—</span>
+                <span>
+                  <strong className="text-foreground">Stays must declare their sourcing.</strong>{" "}
+                  Every stay pick records whether it came from the verified eateries-and-stays index, an open web search, or a manual editor entry — so the audit trail survives review.
+                </span>
+              </li>
+            </ul>
+
+            <h3 className="text-lg font-semibold mt-6 mb-3">What we've caught while auditing</h3>
+            <p className="text-muted-foreground leading-relaxed mb-3">
+              The single most useful audit habit is reading the proposed
+              data with a sceptic's eye and asking "where did this actually
+              come from?" Cross-destination contamination — where a
+              listicle's "best stays in Pfutsero" was secretly a Kohima list
+              — is the most common failure mode. We've caught it in every
+              state we've audited.
+            </p>
+            <ul className="space-y-2 text-sm text-muted-foreground">
+              <li className="flex items-start gap-2">
+                <span className="text-primary mt-0.5">—</span>
+                <span>
+                  In Tripura, eight of the first nine web-search stay candidates turned out to be hallucinated or attached to a museum, not a hotel. We replaced them with the two that survived the audit and left the rest blank.
+                </span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-primary mt-0.5">—</span>
+                <span>
+                  In Meghalaya, multiple "Mawphlang" homestay candidates were actually in Cherrapunji — a 30-kilometre cross-destination contamination that travel listicles repeat without checking.
+                </span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-primary mt-0.5">—</span>
+                <span>
+                  In Nagaland, more than three quarters of the web-search stay candidates for the Dzukou and Mon districts couldn't be confirmed against any government accommodation list. Those slots are blank.
+                </span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-primary mt-0.5">—</span>
+                <span>
+                  In Assam, a candidate called "Bonhomie Farm Guwahati" turned out to be a real place — in Davao, the Philippines. It nearly made it into the corpus.
+                </span>
+              </li>
+            </ul>
+            <p className="mt-4 text-muted-foreground leading-relaxed">
+              The pattern is the point. A travel listicle never tells you it
+              was wrong. We publish what we caught, because the catching is
+              the moat.
+            </p>
           </section>
 
           <div className="text-center pt-4">
