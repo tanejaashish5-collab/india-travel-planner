@@ -139,7 +139,7 @@ export function CinematicShareBar({
     position === "hero"
       ? {
           position: "absolute",
-          top: 84,
+          bottom: 120,
           right: 48,
           zIndex: 4,
           display: "flex",
