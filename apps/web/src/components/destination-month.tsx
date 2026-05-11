@@ -266,6 +266,75 @@ export function DestinationMonth({
     );
   };
 
+  // ── 2b. Off-Season Drivers ──────────────────────────────────
+  //
+  // When the verdict is "skip" or "wait", a destination still serves
+  // specific audiences in this month: destination weddings, work-trip
+  // bookings, festival pilgrims, off-season corporate. Surface them so
+  // the page answers "but if I have to come this month, who actually does?"
+  // Reads currentMonth.off_season_drivers (jsonb, nullable — UI hides if absent).
+
+  const OffSeasonDrivers = () => {
+    type Driver = {
+      driver: "wedding" | "festival" | "corporate" | "pilgrimage" | "study" | "other";
+      audience: string;
+      note: string;
+      source_url?: string;
+    };
+    const drivers = (currentMonth?.off_season_drivers as Driver[] | null | undefined) ?? null;
+    if (!drivers || drivers.length === 0) return null;
+
+    const verdictKey = currentMonth?.verdict;
+    // Only surface when the month is otherwise a "wait" or "skip" — the
+    // section is about explaining why people still come in down months.
+    if (verdictKey === "go") return null;
+
+    const LABEL: Record<Driver["driver"], string> = {
+      wedding: "Wedding",
+      festival: "Festival",
+      corporate: "Corporate",
+      pilgrimage: "Pilgrimage",
+      study: "Study",
+      other: "Other",
+    };
+
+    return (
+      <FadeIn delay={0.18}>
+        <div className="mt-6 rounded-xl border border-zinc-800 bg-zinc-900/30 p-6">
+          <h2 className="text-sm font-semibold uppercase tracking-[0.08em] text-zinc-500 mb-3">
+            Who still comes in {monthName}
+          </h2>
+          <ul className="space-y-3">
+            {drivers.map((d, i) => (
+              <li key={`${d.driver}-${i}`} className="flex gap-3">
+                <span className="shrink-0 inline-flex items-center rounded-full border border-amber-500/30 bg-amber-500/5 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wide text-amber-300/90">
+                  {LABEL[d.driver] ?? "Other"}
+                </span>
+                <div className="text-sm leading-relaxed text-zinc-300">
+                  <span className="font-medium text-zinc-200">{d.audience}.</span>{" "}
+                  <span className="text-zinc-400">{d.note}</span>
+                  {d.source_url && (
+                    <>
+                      {" "}
+                      <a
+                        href={d.source_url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-xs text-zinc-500 hover:text-zinc-300 underline underline-offset-2"
+                      >
+                        source ↗
+                      </a>
+                    </>
+                  )}
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </FadeIn>
+    );
+  };
+
   // ── 3. Why This Score ──────────────────────────────────────
 
   // Only render rows that are genuinely month-specific. Destination-level
@@ -709,6 +778,7 @@ export function DestinationMonth({
 
           <section id="section-lead" className="scroll-mt-28">
             <LeadParagraph />
+            <OffSeasonDrivers />
           </section>
           <section id="section-why" className="scroll-mt-28">
             <WhyThisScore />

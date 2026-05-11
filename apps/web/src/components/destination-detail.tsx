@@ -31,6 +31,7 @@ import { QuestionsList } from "./questions-list";
 import { QuestionForm } from "./question-form";
 import { DestinationEateries } from "./destination-eateries";
 import { BookingHandoff } from "./booking-handoff";
+import { VerifiedByStrip } from "./verified-by-strip";
 import VerdictCard from "./verdict-card";
 import DestinationTldrCard from "./destination-tldr-card";
 import { DestinationDecisionRail } from "./destination-decision-rail";
@@ -1556,7 +1557,17 @@ export function DestinationDetail({ dest }: { dest: any }) {
           Previously sat mid-page inside the People section which made it
           compete with the content instead of capping the page. */}
       <div className="mt-12">
+        <VerifiedByStrip anchors={dest.institutional_anchors} />
         <BookingHandoff destinationName={dest.name} stateName={stateName} />
+        <div className="mt-4 flex justify-end">
+          <SuggestEditButton
+            targetTable="destinations"
+            targetId={dest.id}
+            context={`${dest.name}${stateName ? `, ${stateName}` : ""}`}
+            variant="inline"
+            mode="fabrication"
+          />
+        </div>
       </div>
 
       {/* Nearby Places — PostGIS distance-sorted, with same-state fallback */}
