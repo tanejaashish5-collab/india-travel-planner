@@ -1,18 +1,25 @@
 {
-  "yt_short_formats_used": [
-    "before_after"
-  ],
-  "yt_short_music_used": [
-    "33_kerala_sunset"
-  ],
+  "yt_short_formats_used": [],
+  "yt_short_music_used": [],
   "posted_today": {
-    "GAh5p_yt_short": "2026-05-11",
-    "GAh5p_yt_short_count": 1
+    "m8EAd": "2026-05-11",
+    "GAh5p": "2026-05-11",
+    "PdMu0": "2026-05-11",
+    "m8EAd_moat": "2026-05-11",
+    "PdMu0_moat": "2026-05-11"
   },
-  "last_sync": "2026-04-30T04:05:30.154914+00:00",
+  "last_sync": "2026-05-11T06:55:08.560322+00:00",
   "posted_destinations": [
     {
-      "destination_id": "bhaderwah",
+      "destination_id": "yt_short_before_after_yt_short_before_after_2026-05-11",
+      "date": "2026-05-11"
+    },
+    {
+      "destination_id": "bir-billing",
+      "date": "2026-05-11"
+    },
+    {
+      "destination_id": "tirthan-valley",
       "date": "2026-05-11"
     }
   ],
@@ -30,7 +37,8 @@
       "score_card",
       "collection_spotlight",
       "festival_alert",
-      "kids_intel"
+      "kids_intel",
+      "four_questions"
     ],
     "PdMu0": [
       "monthly_forecast",
@@ -50,7 +58,8 @@
       "reality_check",
       "collection_spotlight",
       "festival_alert",
-      "kids_intel"
+      "kids_intel",
+      "four_questions"
     ]
   },
   "post_log": [
@@ -445,16 +454,40 @@
       "has_media": true
     },
     {
-      "timestamp": "2026-05-11T06:33:43.656642+00:00",
+      "timestamp": "2026-05-11T06:55:54.044007+00:00",
       "date": "2026-05-11",
-      "platform": "youtube",
-      "post_id": "bq8PT",
-      "destination": "bhaderwah",
-      "format": "yt_short.before_after",
-      "media_id": "yt_short_before_after_yt_short_before_after_2026-05-11.mp4"
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "Pi2n0",
+      "destination": "tirthan-valley",
+      "format": "four_questions",
+      "has_media": true,
+      "media_id": "tirthan-valley.mp4"
+    },
+    {
+      "timestamp": "2026-05-11T06:56:10.771654+00:00",
+      "date": "2026-05-11",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "xS6h8",
+      "destination": "tirthan-valley",
+      "format": "four_questions",
+      "has_media": true,
+      "media_id": "tirthan-valley.mp4"
     }
   ],
-  "theme_usage": {},
+  "theme_usage": {
+    "moat_angles": {
+      "four_questions": [
+        "2026-05-11"
+      ]
+    },
+    "destinations": {
+      "tirthan-valley": [
+        "2026-05-11"
+      ]
+    }
+  },
   "infographic": {
     "last_topic_idx": 0,
     "last_theme_idx": 0,
@@ -466,5 +499,7 @@
     ]
   },
   "ugc_music_history": [],
-  "last_picked": {}
+  "last_picked": {
+    "shared_best": "tirthan-valley"
+  }
 }
