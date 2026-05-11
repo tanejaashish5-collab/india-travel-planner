@@ -1,35 +1,6 @@
-2026-05-11 13:37:57  INFO      ════════════════════════════════════════════════════════════
-2026-05-11 13:37:57  INFO      Nakshiq Autoposter · EVENING · 2026-05-11 · weekday=0
-2026-05-11 13:37:57  INFO      ════════════════════════════════════════════════════════════
-2026-05-11 13:37:57  INFO      ── Syncing Nakshiq content ──────────────────────────────
-2026-05-11 13:38:14  INFO      Synced → 20 destinations · 0 traps · 0 articles · 23 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 50 camping · 50 gems · total catalog=505
-2026-05-11 13:38:15  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
-2026-05-11 13:38:15  INFO      Formats — IG: score_card  ·  FB: score_card  ·  Story: festival_alert  ·  Audience: backpackers
-2026-05-11 13:38:15  INFO      Used destinations (14d): 0
-2026-05-11 13:38:15  WARNING   Audience filter 'backpackers' → only 2 match (floor=3). Dropping filter to avoid same-dest spam.
-2026-05-11 13:38:15  INFO      Fingerprint dedup snapshot — 0 dests in 7d · 27 (dest,fmt) pairs in 30d · 0 media in 60d
-2026-05-11 13:38:15  INFO      Festival locked: Buddha Purnima (37/37 active festivals never featured)
-2026-05-11 13:38:18  INFO      Shared best destination locked: Tirthan Valley
-2026-05-11 13:38:18  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
-2026-05-11 13:38:18  INFO      [instagram/nakshiq] Generating score_card post...
-2026-05-11 13:38:18  INFO      [instagram/nakshiq] Caption ready (535 chars, dest=tirthan-valley)
-2026-05-11 13:38:19  INFO      [instagram/nakshiq] Video available — uploading for Reel  (evening mode)...
-2026-05-11 13:38:19  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/tirthan-valley.mp4?v=20260511
-2026-05-11 13:38:19  INFO          Requesting upload URL for tirthan-valley.mp4 (14,753,314 bytes, video/mp4)
-2026-05-11 13:38:20  INFO          Uploading to R2 (timeout=300s)...
-2026-05-11 13:38:21  INFO          R2 PUT OK. Confirming...
-2026-05-11 13:38:22  INFO          Media ready: 827eI (14,753,314 bytes · tirthan-valley.mp4)
-2026-05-11 13:38:22  INFO      [instagram/nakshiq] Publishing Reel...
-2026-05-11 13:39:10  INFO      [instagram/nakshiq] ✅ Published · Outstand=g25ix · Platform=17954692817966255
-2026-05-11 13:39:10  INFO      [facebook/Nakshiq] Generating score_card post...
-2026-05-11 13:39:10  INFO      [facebook/Nakshiq] Caption ready (516 chars, dest=tirthan-valley)
-2026-05-11 13:39:11  INFO      [facebook/Nakshiq] Video available — uploading for Reel  (evening mode)...
-2026-05-11 13:39:11  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/tirthan-valley.mp4?v=20260511
-2026-05-11 13:39:11  INFO          Requesting upload URL for tirthan-valley.mp4 (14,753,314 bytes, video/mp4)
-2026-05-11 13:39:12  INFO          Uploading to R2 (timeout=300s)...
-2026-05-11 13:39:14  INFO          R2 PUT OK. Confirming...
-2026-05-11 13:39:14  INFO          Media ready: HCyc5 (14,753,314 bytes · tirthan-valley.mp4)
-2026-05-11 13:39:14  INFO      [facebook/Nakshiq] Publishing Reel...
-2026-05-11 13:39:39  INFO      [facebook/Nakshiq] ✅ Published · Outstand=OyR4v · Platform=920325951054782
-2026-05-11 13:39:39  INFO      State saved. Run complete.
-2026-05-11 13:39:39  INFO      ════════════════════════════════════════════════════════════
+2026-05-11 14:10:54  INFO      ════════════════════════════════════════════════════════════
+2026-05-11 14:10:54  INFO      Nakshiq Autoposter · MORNING · 2026-05-11 · weekday=0
+2026-05-11 14:10:54  INFO      ════════════════════════════════════════════════════════════
+2026-05-11 14:10:54  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-05-11 14:11:16  INFO      Synced → 20 destinations · 0 traps · 0 articles · 23 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 50 camping · 50 gems · total catalog=505
+2026-05-11 14:11:16  INFO      Sync-only mode. Done.
