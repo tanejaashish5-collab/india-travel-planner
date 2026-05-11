@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-05-10T09:09:50.222Z",
+  "generated_at": "2026-05-11T00:26:46.470Z",
   "totals": {
-    "A": 140,
-    "B": 230,
+    "A": 158,
+    "B": 212,
     "C": 135,
     "total": 505
   },
@@ -126,8 +126,8 @@
     },
     {
       "state": "kerala",
-      "A": 0,
-      "B": 30,
+      "A": 18,
+      "B": 12,
       "C": 0,
       "total": 30
     },
@@ -268,11 +268,11 @@
   "gap_counts": [
     {
       "field": "eats",
-      "count": 347
+      "count": 329
     },
     {
       "field": "gems",
-      "count": 335
+      "count": 305
     },
     {
       "field": "months_prose",
@@ -280,7 +280,7 @@
     },
     {
       "field": "stays",
-      "count": 94
+      "count": 87
     }
   ],
   "destinations": [
@@ -3400,27 +3400,6 @@
       ]
     },
     {
-      "id": "alleppey",
-      "name": "Alleppey (Alappuzha)",
-      "state": "kerala",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 1,
-        "eats": 0,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:1/3",
-        "eats:0/5"
-      ]
-    },
-    {
       "id": "alwar",
       "name": "Alwar",
       "state": "rajasthan",
@@ -3508,27 +3487,6 @@
       "id": "araku-valley",
       "name": "Araku Valley",
       "state": "andhra-pradesh",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 1,
-        "eats": 0,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:1/3",
-        "eats:0/5"
-      ]
-    },
-    {
-      "id": "athirapally",
-      "name": "Athirapally Falls",
-      "state": "kerala",
       "tier": "B",
       "counts": {
         "months_scored": 12,
@@ -3737,51 +3695,9 @@
       ]
     },
     {
-      "id": "bekal",
-      "name": "Bekal",
-      "state": "kerala",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 0,
-        "eats": 0,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:0/3",
-        "eats:0/5"
-      ]
-    },
-    {
       "id": "belum-caves",
       "name": "Belum Caves",
       "state": "andhra-pradesh",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 0,
-        "eats": 0,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:0/3",
-        "eats:0/5"
-      ]
-    },
-    {
-      "id": "beypore",
-      "name": "Beypore",
-      "state": "kerala",
       "tier": "B",
       "counts": {
         "months_scored": 12,
@@ -4083,15 +3999,14 @@
         "months_prose": 12,
         "gems": 3,
         "eats": 2,
-        "stays": 2
+        "stays": 4
       },
       "has": {
         "tagline": true,
         "why_special": true
       },
       "missing": [
-        "eats:2/5",
-        "stays:2/3"
+        "eats:2/5"
       ]
     },
     {
@@ -4124,8 +4039,8 @@
       "counts": {
         "months_scored": 12,
         "months_prose": 12,
-        "gems": 0,
-        "eats": 0,
+        "gems": 3,
+        "eats": 3,
         "stays": 4
       },
       "has": {
@@ -4133,8 +4048,7 @@
         "why_special": true
       },
       "missing": [
-        "gems:0/3",
-        "eats:0/5"
+        "eats:3/5"
       ]
     },
     {
@@ -4188,18 +4102,16 @@
       "counts": {
         "months_scored": 12,
         "months_prose": 12,
-        "gems": 0,
-        "eats": 0,
-        "stays": 2
+        "gems": 3,
+        "eats": 2,
+        "stays": 3
       },
       "has": {
         "tagline": true,
         "why_special": true
       },
       "missing": [
-        "gems:0/3",
-        "eats:0/5",
-        "stays:2/3"
+        "eats:2/5"
       ]
     },
     {
@@ -4650,8 +4562,8 @@
       "counts": {
         "months_scored": 12,
         "months_prose": 12,
-        "gems": 0,
-        "eats": 0,
+        "gems": 3,
+        "eats": 2,
         "stays": 4
       },
       "has": {
@@ -4659,8 +4571,7 @@
         "why_special": true
       },
       "missing": [
-        "gems:0/3",
-        "eats:0/5"
+        "eats:2/5"
       ]
     },
     {
@@ -4877,27 +4788,6 @@
       ]
     },
     {
-      "id": "guruvayur",
-      "name": "Guruvayur",
-      "state": "kerala",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 0,
-        "eats": 0,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:0/3",
-        "eats:0/5"
-      ]
-    },
-    {
       "id": "guwahati",
       "name": "Guwahati",
       "state": "assam",
@@ -5071,18 +4961,16 @@
       "counts": {
         "months_scored": 12,
         "months_prose": 12,
-        "gems": 0,
-        "eats": 0,
-        "stays": 2
+        "gems": 3,
+        "eats": 3,
+        "stays": 3
       },
       "has": {
         "tagline": true,
         "why_special": true
       },
       "missing": [
-        "gems:0/3",
-        "eats:0/5",
-        "stays:2/3"
+        "eats:3/5"
       ]
     },
     {
@@ -5173,27 +5061,6 @@
       "id": "kanha",
       "name": "Kanha National Park",
       "state": "madhya-pradesh",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 0,
-        "eats": 0,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:0/3",
-        "eats:0/5"
-      ]
-    },
-    {
-      "id": "kannur",
-      "name": "Kannur",
-      "state": "kerala",
       "tier": "B",
       "counts": {
         "months_scored": 12,
@@ -5306,15 +5173,14 @@
         "months_prose": 12,
         "gems": 3,
         "eats": 1,
-        "stays": 0
+        "stays": 4
       },
       "has": {
         "tagline": true,
         "why_special": true
       },
       "missing": [
-        "eats:1/5",
-        "stays:0/3"
+        "eats:1/5"
       ]
     },
     {
@@ -5381,27 +5247,6 @@
       ]
     },
     {
-      "id": "kochi",
-      "name": "Kochi (Fort Kochi)",
-      "state": "kerala",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 1,
-        "eats": 0,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:1/3",
-        "eats:0/5"
-      ]
-    },
-    {
       "id": "kokernag",
       "name": "Kokernag",
       "state": "jammu-kashmir",
@@ -5441,27 +5286,6 @@
       },
       "missing": [
         "gems:0/3",
-        "eats:0/5"
-      ]
-    },
-    {
-      "id": "kollam",
-      "name": "Kollam",
-      "state": "kerala",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 1,
-        "eats": 0,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:1/3",
         "eats:0/5"
       ]
     },
@@ -5531,48 +5355,6 @@
       ]
     },
     {
-      "id": "kovalam",
-      "name": "Kovalam",
-      "state": "kerala",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 0,
-        "eats": 0,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:0/3",
-        "eats:0/5"
-      ]
-    },
-    {
-      "id": "kozhikode",
-      "name": "Kozhikode (Calicut)",
-      "state": "kerala",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 2,
-        "eats": 0,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:2/3",
-        "eats:0/5"
-      ]
-    },
-    {
       "id": "kufri",
       "name": "Kufri",
       "state": "himachal-pradesh",
@@ -5594,27 +5376,6 @@
       ]
     },
     {
-      "id": "kumarakom",
-      "name": "Kumarakom",
-      "state": "kerala",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 1,
-        "eats": 0,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:1/3",
-        "eats:0/5"
-      ]
-    },
-    {
       "id": "kumbalangi",
       "name": "Kumbalangi",
       "state": "kerala",
@@ -5622,8 +5383,8 @@
       "counts": {
         "months_scored": 12,
         "months_prose": 12,
-        "gems": 0,
-        "eats": 0,
+        "gems": 3,
+        "eats": 2,
         "stays": 3
       },
       "has": {
@@ -5631,8 +5392,7 @@
         "why_special": true
       },
       "missing": [
-        "gems:0/3",
-        "eats:0/5"
+        "eats:2/5"
       ]
     },
     {
@@ -5674,27 +5434,6 @@
       },
       "missing": [
         "gems:0/3"
-      ]
-    },
-    {
-      "id": "kuttanad",
-      "name": "Kuttanad",
-      "state": "kerala",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 0,
-        "eats": 0,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:0/3",
-        "eats:0/5"
       ]
     },
     {
@@ -6003,8 +5742,8 @@
       "counts": {
         "months_scored": 12,
         "months_prose": 12,
-        "gems": 0,
-        "eats": 0,
+        "gems": 3,
+        "eats": 3,
         "stays": 4
       },
       "has": {
@@ -6012,8 +5751,7 @@
         "why_special": true
       },
       "missing": [
-        "gems:0/3",
-        "eats:0/5"
+        "eats:3/5"
       ]
     },
     {
@@ -6267,27 +6005,6 @@
       ]
     },
     {
-      "id": "munnar",
-      "name": "Munnar",
-      "state": "kerala",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 1,
-        "eats": 0,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:1/3",
-        "eats:0/5"
-      ]
-    },
-    {
       "id": "nagarjuna-konda",
       "name": "Nagarjuna Konda",
       "state": "telangana",
@@ -6445,8 +6162,8 @@
       "counts": {
         "months_scored": 12,
         "months_prose": 12,
-        "gems": 1,
-        "eats": 0,
+        "gems": 3,
+        "eats": 3,
         "stays": 3
       },
       "has": {
@@ -6454,8 +6171,7 @@
         "why_special": true
       },
       "missing": [
-        "gems:1/3",
-        "eats:0/5"
+        "eats:3/5"
       ]
     },
     {
@@ -6759,8 +6475,8 @@
       "counts": {
         "months_scored": 12,
         "months_prose": 12,
-        "gems": 0,
-        "eats": 0,
+        "gems": 3,
+        "eats": 3,
         "stays": 4
       },
       "has": {
@@ -6768,8 +6484,7 @@
         "why_special": true
       },
       "missing": [
-        "gems:0/3",
-        "eats:0/5"
+        "eats:3/5"
       ]
     },
     {
@@ -6780,8 +6495,8 @@
       "counts": {
         "months_scored": 12,
         "months_prose": 12,
-        "gems": 0,
-        "eats": 0,
+        "gems": 3,
+        "eats": 3,
         "stays": 4
       },
       "has": {
@@ -6789,8 +6504,7 @@
         "why_special": true
       },
       "missing": [
-        "gems:0/3",
-        "eats:0/5"
+        "eats:3/5"
       ]
     },
     {
@@ -7079,15 +6793,14 @@
         "months_prose": 12,
         "gems": 0,
         "eats": 7,
-        "stays": 2
+        "stays": 4
       },
       "has": {
         "tagline": true,
         "why_special": true
       },
       "missing": [
-        "gems:0/3",
-        "stays:2/3"
+        "gems:0/3"
       ]
     },
     {
@@ -7098,8 +6811,8 @@
       "counts": {
         "months_scored": 12,
         "months_prose": 12,
-        "gems": 0,
-        "eats": 0,
+        "gems": 3,
+        "eats": 4,
         "stays": 4
       },
       "has": {
@@ -7107,8 +6820,7 @@
         "why_special": true
       },
       "missing": [
-        "gems:0/3",
-        "eats:0/5"
+        "eats:4/5"
       ]
     },
     {
@@ -7311,8 +7023,8 @@
       "counts": {
         "months_scored": 12,
         "months_prose": 12,
-        "gems": 0,
-        "eats": 0,
+        "gems": 3,
+        "eats": 3,
         "stays": 3
       },
       "has": {
@@ -7320,8 +7032,7 @@
         "why_special": true
       },
       "missing": [
-        "gems:0/3",
-        "eats:0/5"
+        "eats:3/5"
       ]
     },
     {
@@ -7540,50 +7251,6 @@
       ]
     },
     {
-      "id": "thekkady",
-      "name": "Thekkady (Periyar)",
-      "state": "kerala",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 0,
-        "eats": 0,
-        "stays": 2
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:0/3",
-        "eats:0/5",
-        "stays:2/3"
-      ]
-    },
-    {
-      "id": "thrissur",
-      "name": "Thrissur",
-      "state": "kerala",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 0,
-        "eats": 0,
-        "stays": 1
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:0/3",
-        "eats:0/5",
-        "stays:1/3"
-      ]
-    },
-    {
       "id": "tirupati",
       "name": "Tirupati",
       "state": "andhra-pradesh",
@@ -7608,27 +7275,6 @@
       "id": "tosamaidan",
       "name": "Tosamaidan",
       "state": "jammu-kashmir",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 1,
-        "eats": 0,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:1/3",
-        "eats:0/5"
-      ]
-    },
-    {
-      "id": "trivandrum",
-      "name": "Thiruvananthapuram (Trivandrum)",
-      "state": "kerala",
       "tier": "B",
       "counts": {
         "months_scored": 12,
@@ -7844,8 +7490,8 @@
       "counts": {
         "months_scored": 12,
         "months_prose": 12,
-        "gems": 0,
-        "eats": 0,
+        "gems": 3,
+        "eats": 3,
         "stays": 3
       },
       "has": {
@@ -7853,8 +7499,7 @@
         "why_special": true
       },
       "missing": [
-        "gems:0/3",
-        "eats:0/5"
+        "eats:3/5"
       ]
     },
     {
@@ -7881,27 +7526,6 @@
       "id": "valley-of-flowers",
       "name": "Valley of Flowers",
       "state": "uttarakhand",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 0,
-        "eats": 0,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:0/3",
-        "eats:0/5"
-      ]
-    },
-    {
-      "id": "varkala",
-      "name": "Varkala",
-      "state": "kerala",
       "tier": "B",
       "counts": {
         "months_scored": 12,
@@ -8002,27 +7626,6 @@
       },
       "missing": [
         "gems:1/3",
-        "eats:0/5"
-      ]
-    },
-    {
-      "id": "wayanad",
-      "name": "Wayanad",
-      "state": "kerala",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 0,
-        "eats": 0,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:0/3",
         "eats:0/5"
       ]
     },
@@ -8239,6 +7842,24 @@
       "missing": []
     },
     {
+      "id": "alleppey",
+      "name": "Alleppey (Alappuzha)",
+      "state": "kerala",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
       "id": "almora",
       "name": "Almora",
       "state": "uttarakhand",
@@ -8347,6 +7968,24 @@
       "missing": []
     },
     {
+      "id": "athirapally",
+      "name": "Athirapally Falls",
+      "state": "kerala",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
       "id": "auli",
       "name": "Auli",
       "state": "uttarakhand",
@@ -8429,6 +8068,42 @@
         "gems": 3,
         "eats": 5,
         "stays": 3
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "bekal",
+      "name": "Bekal",
+      "state": "kerala",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "beypore",
+      "name": "Beypore",
+      "state": "kerala",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 4
       },
       "has": {
         "tagline": true,
@@ -8995,6 +8670,24 @@
       "missing": []
     },
     {
+      "id": "guruvayur",
+      "name": "Guruvayur",
+      "state": "kerala",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
       "id": "haridwar",
       "name": "Haridwar",
       "state": "uttarakhand",
@@ -9193,6 +8886,24 @@
       "missing": []
     },
     {
+      "id": "kannur",
+      "name": "Kannur",
+      "state": "kerala",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
       "id": "karaikal",
       "name": "Karaikal",
       "state": "puducherry",
@@ -9355,6 +9066,24 @@
       "missing": []
     },
     {
+      "id": "kochi",
+      "name": "Kochi (Fort Kochi)",
+      "state": "kerala",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
       "id": "kohima",
       "name": "Kohima",
       "state": "nagaland",
@@ -9391,6 +9120,60 @@
       "missing": []
     },
     {
+      "id": "kollam",
+      "name": "Kollam",
+      "state": "kerala",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "kovalam",
+      "name": "Kovalam",
+      "state": "kerala",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "kozhikode",
+      "name": "Kozhikode (Calicut)",
+      "state": "kerala",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
       "id": "kullu",
       "name": "Kullu",
       "state": "himachal-pradesh",
@@ -9409,9 +9192,45 @@
       "missing": []
     },
     {
+      "id": "kumarakom",
+      "name": "Kumarakom",
+      "state": "kerala",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
       "id": "kurukshetra",
       "name": "Kurukshetra",
       "state": "haryana",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "kuttanad",
+      "name": "Kuttanad",
+      "state": "kerala",
       "tier": "A",
       "counts": {
         "months_scored": 12,
@@ -9562,7 +9381,7 @@
         "months_prose": 12,
         "gems": 3,
         "eats": 5,
-        "stays": 3
+        "stays": 4
       },
       "has": {
         "tagline": true,
@@ -9724,6 +9543,24 @@
         "months_prose": 12,
         "gems": 3,
         "eats": 7,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "munnar",
+      "name": "Munnar",
+      "state": "kerala",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
         "stays": 4
       },
       "has": {
@@ -10498,6 +10335,42 @@
         "months_prose": 12,
         "gems": 3,
         "eats": 7,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "thekkady",
+      "name": "Thekkady (Periyar)",
+      "state": "kerala",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 3
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "thrissur",
+      "name": "Thrissur",
+      "state": "kerala",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
         "stays": 3
       },
       "has": {
@@ -10517,6 +10390,24 @@
         "gems": 5,
         "eats": 5,
         "stays": 3
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "trivandrum",
+      "name": "Thiruvananthapuram (Trivandrum)",
+      "state": "kerala",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 4
       },
       "has": {
         "tagline": true,
@@ -10615,6 +10506,24 @@
       "missing": []
     },
     {
+      "id": "varkala",
+      "name": "Varkala",
+      "state": "kerala",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
       "id": "vrindavan",
       "name": "Vrindavan",
       "state": "uttar-pradesh",
@@ -10624,6 +10533,24 @@
         "months_prose": 12,
         "gems": 3,
         "eats": 7,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "wayanad",
+      "name": "Wayanad",
+      "state": "kerala",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
         "stays": 4
       },
       "has": {
