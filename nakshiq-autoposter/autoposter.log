@@ -1,19 +1,40 @@
-2026-05-11 13:09:56  INFO      ════════════════════════════════════════════════════════════
-2026-05-11 13:09:56  INFO      Nakshiq Autoposter · YT SHORT · 2026-05-11
-2026-05-11 13:09:56  INFO      ════════════════════════════════════════════════════════════
-2026-05-11 13:11:16  INFO      Short rendered: yt_short_dont_go_here_2026-05-11.mp4 (15631 KB, 36.0s, fmt=dont_go_here, music=px_bollywood_indian)
-2026-05-11 13:11:16  INFO          Requesting upload URL for yt_short_dont_go_here_yt_short_dont_go_here_2026-05-11.mp4 (16,006,833 bytes, video/mp4)
-2026-05-11 13:11:16  INFO          Uploading to R2 (timeout=300s)...
-2026-05-11 13:11:18  INFO          R2 PUT OK. Confirming...
-2026-05-11 13:11:19  INFO          Media ready: WXNNz (16,006,833 bytes · yt_short_dont_go_here_yt_short_dont_go_here_2026-05-11.mp4)
-2026-05-11 13:11:19  INFO      Video uploaded: yt_short_dont_go_here_yt_short_dont_go_here_2026-05-11.mp4
-2026-05-11 13:11:20  INFO      [youtube/@naksh-iq] Publishing YT Short (dont_go_here)...
-2026-05-11 13:11:24  INFO      [youtube/@naksh-iq] Outstand accepted (post_id=lR1vK), waiting for platform confirmation...
-2026-05-11 13:12:11  WARNING   [youtube/@naksh-iq] ⚠️  YT Short queued but NOT confirmed (post_id=lR1vK). May have silently failed.
-2026-05-11 13:12:11  INFO      [instagram/nakshiq] Publishing YT Short (dont_go_here)...
-2026-05-11 13:12:13  INFO      [instagram/nakshiq] Outstand accepted (post_id=CvlLF), waiting for platform confirmation...
-2026-05-11 13:12:58  WARNING   [instagram/nakshiq] ⚠️  YT Short queued but NOT confirmed (post_id=CvlLF). May have silently failed.
-2026-05-11 13:12:58  WARNING   Could not write post_outcomes entry: 'utf-8' codec can't encode characters in position 104-105: surrogates not allowed
-2026-05-11 13:12:58  INFO      [facebook/Nakshiq] Skipping (YT Shorts post to YouTube + Instagram only).
-2026-05-11 13:12:58  INFO      State saved. YT Short run complete.
-2026-05-11 13:12:58  INFO      ════════════════════════════════════════════════════════════
+2026-05-11 13:30:12  INFO      ════════════════════════════════════════════════════════════
+2026-05-11 13:30:12  INFO      Nakshiq Autoposter · INFOGRAPHIC · 2026-05-11 · weekday=0
+2026-05-11 13:30:12  INFO      ════════════════════════════════════════════════════════════
+2026-05-11 13:30:14  INFO      Generated 5 slides: topic=festivals, theme=topo
+2026-05-11 13:30:14  INFO          Requesting upload URL for infographic_infographic_festivals_topo_01_cover.jpg (114,710 bytes, image/jpeg)
+2026-05-11 13:30:15  INFO          Uploading to R2 (timeout=120s)...
+2026-05-11 13:30:16  INFO          R2 PUT OK. Confirming...
+2026-05-11 13:30:17  INFO          Media ready: 1qscG (114,710 bytes · infographic_infographic_festivals_topo_01_cover.jpg)
+2026-05-11 13:30:17  INFO        Uploaded: infographic_festivals_topo_01_cover.jpg (112 KB)
+2026-05-11 13:30:17  INFO          Requesting upload URL for infographic_infographic_festivals_topo_02_gangotri.jpg (315,856 bytes, image/jpeg)
+2026-05-11 13:30:18  INFO          Uploading to R2 (timeout=120s)...
+2026-05-11 13:30:18  INFO          R2 PUT OK. Confirming...
+2026-05-11 13:30:19  INFO          Media ready: ou2Yc (315,856 bytes · infographic_infographic_festivals_topo_02_gangotri.jpg)
+2026-05-11 13:30:19  INFO        Uploaded: infographic_festivals_topo_02_gangotri.jpg (308 KB)
+2026-05-11 13:30:19  INFO          Requesting upload URL for infographic_infographic_festivals_topo_03_kedarnath.jpg (290,437 bytes, image/jpeg)
+2026-05-11 13:30:20  INFO          Uploading to R2 (timeout=120s)...
+2026-05-11 13:30:21  INFO          R2 PUT OK. Confirming...
+2026-05-11 13:30:21  INFO          Media ready: pf6aM (290,437 bytes · infographic_infographic_festivals_topo_03_kedarnath.jpg)
+2026-05-11 13:30:21  INFO        Uploaded: infographic_festivals_topo_03_kedarnath.jpg (283 KB)
+2026-05-11 13:30:21  INFO          Requesting upload URL for infographic_infographic_festivals_topo_04_mudumalai.jpg (300,919 bytes, image/jpeg)
+2026-05-11 13:30:22  INFO          Uploading to R2 (timeout=120s)...
+2026-05-11 13:30:23  INFO          R2 PUT OK. Confirming...
+2026-05-11 13:30:24  INFO          Media ready: JLXy3 (300,919 bytes · infographic_infographic_festivals_topo_04_mudumalai.jpg)
+2026-05-11 13:30:24  INFO        Uploaded: infographic_festivals_topo_04_mudumalai.jpg (293 KB)
+2026-05-11 13:30:24  INFO          Requesting upload URL for infographic_infographic_festivals_topo_06_cta.jpg (93,427 bytes, image/jpeg)
+2026-05-11 13:30:24  INFO          Uploading to R2 (timeout=120s)...
+2026-05-11 13:30:25  INFO          R2 PUT OK. Confirming...
+2026-05-11 13:30:26  INFO          Media ready: 4h0Xi (93,427 bytes · infographic_infographic_festivals_topo_06_cta.jpg)
+2026-05-11 13:30:26  INFO        Uploaded: infographic_festivals_topo_06_cta.jpg (91 KB)
+2026-05-11 13:30:26  INFO      All slides uploaded: 5 media objects
+2026-05-11 13:30:26  INFO      [youtube/@naksh-iq] Skipping infographic (YouTube only accepts video/reels).
+2026-05-11 13:30:26  INFO      [instagram/nakshiq] Publishing infographic carousel: festivals/topo...
+2026-05-11 13:30:26  INFO          Caption sanitizer: stripped 1 banned tags: ['#incredibleindia']
+2026-05-11 13:30:28  INFO      [instagram/nakshiq] Infographic carousel posted successfully!
+2026-05-11 13:30:28  INFO      [facebook/Nakshiq] Publishing infographic carousel: festivals/topo...
+2026-05-11 13:30:28  INFO          Caption sanitizer: stripped 1 banned tags: ['#incredibleindia']
+2026-05-11 13:30:29  INFO      [facebook/Nakshiq] Infographic carousel posted successfully!
+2026-05-11 13:30:29  INFO      Infographic state updated: topic=festivals, theme=topo
+2026-05-11 13:30:29  INFO      State saved. Infographic run complete.
+2026-05-11 13:30:29  INFO      ════════════════════════════════════════════════════════════
