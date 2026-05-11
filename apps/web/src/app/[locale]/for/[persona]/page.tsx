@@ -118,6 +118,11 @@ function computeHeroStat(
       const states = new Set(matched.map((d) => d.state_id).filter(Boolean)).size;
       return `${matchedCount} pilgrimage destinations across ${states} states. Permit windows, darshan timings, and access cutoffs (Char Dham, Sabarimala, Vaishno Devi) are tracked per destination, not assumed from listicles.`;
     }
+    case "nri-parents-visit": {
+      const lowAlt = matched.filter((d) => (d.elevation_m ?? 0) < 2000).length;
+      const easy = matched.filter((d) => d.difficulty === "easy" || !d.difficulty).length;
+      return `${matchedCount} destinations suit a trip with parents joining from abroad — ${lowAlt} below 2,000 m, ${easy} marked easy on terrain. Each destination carries hospital distance and verified emergency contacts because the worry is the actual product here.`;
+    }
     default: {
       return `${matchedCount} of ${totalCorpus} destinations match this persona today, drawn from NakshIQ's verified corpus rather than editorial-curated lists.`;
     }

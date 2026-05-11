@@ -167,6 +167,33 @@ export function DestinationEateries({ eateries, destinationName }: { eateries: E
                       Legendary
                     </span>
                   )}
+                  {(() => {
+                    if (!e.established_year) return null;
+                    const yearsOpen = new Date().getUTCFullYear() - e.established_year;
+                    if (yearsOpen >= 50) {
+                      // 1970s and older — heritage tier
+                      return (
+                        <span
+                          title={`Operating since ${e.established_year} — ${yearsOpen} years`}
+                          className="inline-flex items-center rounded-full border border-sky-500/30 bg-sky-500/10 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wide text-sky-600 dark:text-sky-400"
+                        >
+                          {yearsOpen >= 100 ? "Centenary+" : `${Math.floor(yearsOpen / 10) * 10}+ years`}
+                        </span>
+                      );
+                    }
+                    if (yearsOpen >= 5) {
+                      // Survived the 2-year cliff — 70% of Indian F&B closes inside 2 years.
+                      return (
+                        <span
+                          title={`Operating since ${e.established_year} — past the 2-year cliff`}
+                          className="inline-flex items-center rounded-full border border-emerald-500/30 bg-emerald-500/5 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wide text-emerald-600 dark:text-emerald-400"
+                        >
+                          Established
+                        </span>
+                      );
+                    }
+                    return null;
+                  })()}
                   {e.vegetarian === "pure-veg" && (
                     <span title="Pure vegetarian" className="inline-flex h-4 w-4 items-center justify-center rounded-sm border border-green-600/40">
                       <span className="h-1.5 w-1.5 rounded-full bg-green-600" />
