@@ -1,35 +1,35 @@
-2026-05-11 06:54:51  INFO      ════════════════════════════════════════════════════════════
-2026-05-11 06:54:51  INFO      Nakshiq Autoposter · MOAT · 2026-05-11 · weekday=0
-2026-05-11 06:54:51  INFO      ════════════════════════════════════════════════════════════
-2026-05-11 06:54:51  INFO      ── Syncing Nakshiq content ──────────────────────────────
-2026-05-11 06:55:08  INFO      Synced → 20 destinations · 0 traps · 0 articles · 23 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 50 camping · 50 gems · total catalog=505
-2026-05-11 06:55:09  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
-2026-05-11 06:55:10  INFO      Outstand dedup guard: merged 4 remote posts into state.
-2026-05-11 06:55:10  INFO      Moat angle locked: four_questions (9/9 never featured)
-2026-05-11 06:55:10  INFO      Formats — IG: four_questions  ·  FB: four_questions  ·  Story: None
-2026-05-11 06:55:10  INFO      Used destinations (14d): 2
-2026-05-11 06:55:10  INFO      Fingerprint dedup snapshot — 0 dests in 7d · 27 (dest,fmt) pairs in 30d · 0 media in 60d
-2026-05-11 06:55:13  INFO      Shared best destination locked: Tirthan Valley
-2026-05-11 06:55:13  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
-2026-05-11 06:55:13  INFO      [instagram/nakshiq] Generating four_questions post...
-2026-05-11 06:55:13  INFO      [instagram/nakshiq] Caption ready (369 chars, dest=tirthan-valley)
-2026-05-11 06:55:13  INFO      [instagram/nakshiq] Video available — uploading for Reel...
-2026-05-11 06:55:13  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/tirthan-valley.mp4?v=20260510
-2026-05-11 06:55:14  INFO          Requesting upload URL for tirthan-valley.mp4 (14,753,314 bytes, video/mp4)
-2026-05-11 06:55:14  INFO          Uploading to R2 (timeout=300s)...
-2026-05-11 06:55:17  INFO          R2 PUT OK. Confirming...
-2026-05-11 06:55:18  INFO          Media ready: Ex5HA (14,753,314 bytes · tirthan-valley.mp4)
-2026-05-11 06:55:18  INFO      [instagram/nakshiq] Publishing Reel...
-2026-05-11 06:55:54  INFO      [instagram/nakshiq] ✅ Published · Outstand=Pi2n0 · Platform=18101875970052979
-2026-05-11 06:55:54  INFO      [facebook/Nakshiq] Generating four_questions post...
-2026-05-11 06:55:54  INFO      [facebook/Nakshiq] Caption ready (659 chars, dest=tirthan-valley)
-2026-05-11 06:55:54  INFO      [facebook/Nakshiq] Video available — uploading for Reel...
-2026-05-11 06:55:54  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/tirthan-valley.mp4?v=20260510
-2026-05-11 06:55:55  INFO          Requesting upload URL for tirthan-valley.mp4 (14,753,314 bytes, video/mp4)
-2026-05-11 06:55:55  INFO          Uploading to R2 (timeout=300s)...
-2026-05-11 06:55:57  INFO          R2 PUT OK. Confirming...
-2026-05-11 06:55:57  INFO          Media ready: GtUwp (14,753,314 bytes · tirthan-valley.mp4)
-2026-05-11 06:55:57  INFO      [facebook/Nakshiq] Publishing Reel...
-2026-05-11 06:56:10  INFO      [facebook/Nakshiq] ✅ Published · Outstand=xS6h8 · Platform=1490928346049924
-2026-05-11 06:56:10  INFO      State saved. Run complete.
-2026-05-11 06:56:10  INFO      ════════════════════════════════════════════════════════════
+2026-05-11 07:57:36  INFO      ════════════════════════════════════════════════════════════
+2026-05-11 07:57:36  INFO      Nakshiq Autoposter · MOAT · 2026-05-11 · weekday=0
+2026-05-11 07:57:36  INFO      ════════════════════════════════════════════════════════════
+2026-05-11 07:57:36  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-05-11 07:58:00  INFO      Synced → 20 destinations · 0 traps · 0 articles · 23 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 50 camping · 50 gems · total catalog=505
+2026-05-11 07:58:01  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-05-11 07:58:02  INFO      Outstand dedup guard: merged 6 remote posts into state.
+2026-05-11 07:58:02  INFO      Moat angle locked: methodology_roads (9/9 never featured)
+2026-05-11 07:58:02  INFO      Formats — IG: methodology_roads  ·  FB: methodology_roads  ·  Story: None
+2026-05-11 07:58:02  INFO      Used destinations (14d): 3
+2026-05-11 07:58:02  INFO      Fingerprint dedup snapshot — 0 dests in 7d · 27 (dest,fmt) pairs in 30d · 0 media in 60d
+2026-05-11 07:58:08  INFO      Shared best destination locked: Jibhi
+2026-05-11 07:58:08  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-05-11 07:58:08  INFO      [instagram/nakshiq] Generating methodology_roads post...
+2026-05-11 07:58:08  INFO      [instagram/nakshiq] Caption ready (589 chars, dest=jibhi)
+2026-05-11 07:58:08  INFO      [instagram/nakshiq] Video available — uploading for Reel...
+2026-05-11 07:58:08  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/jibhi.mp4?v=20260511
+2026-05-11 07:58:09  INFO          Requesting upload URL for jibhi.mp4 (15,357,687 bytes, video/mp4)
+2026-05-11 07:58:10  INFO          Uploading to R2 (timeout=300s)...
+2026-05-11 07:58:12  INFO          R2 PUT OK. Confirming...
+2026-05-11 07:58:13  INFO          Media ready: e37Kr (15,357,687 bytes · jibhi.mp4)
+2026-05-11 07:58:13  INFO      [instagram/nakshiq] Publishing Reel...
+2026-05-11 07:58:52  INFO      [instagram/nakshiq] ✅ Published · Outstand=c7djL · Platform=18086434607616154
+2026-05-11 07:58:52  INFO      [facebook/Nakshiq] Generating methodology_roads post...
+2026-05-11 07:58:52  INFO      [facebook/Nakshiq] Caption ready (718 chars, dest=jibhi)
+2026-05-11 07:58:52  INFO      [facebook/Nakshiq] Video available — uploading for Reel...
+2026-05-11 07:58:52  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/jibhi.mp4?v=20260511
+2026-05-11 07:58:53  INFO          Requesting upload URL for jibhi.mp4 (15,357,687 bytes, video/mp4)
+2026-05-11 07:58:54  INFO          Uploading to R2 (timeout=300s)...
+2026-05-11 07:58:56  INFO          R2 PUT OK. Confirming...
+2026-05-11 07:58:57  INFO          Media ready: Cd6zF (15,357,687 bytes · jibhi.mp4)
+2026-05-11 07:58:57  INFO      [facebook/Nakshiq] Publishing Reel...
+2026-05-11 07:59:17  INFO      [facebook/Nakshiq] ✅ Published · Outstand=QD1Oy · Platform=1312481507517082
+2026-05-11 07:59:17  INFO      State saved. Run complete.
+2026-05-11 07:59:17  INFO      ════════════════════════════════════════════════════════════

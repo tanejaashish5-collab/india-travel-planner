@@ -2,14 +2,18 @@
   "yt_short_formats_used": [],
   "yt_short_music_used": [],
   "posted_today": {
+    "PdMu0": "2026-05-11",
     "m8EAd": "2026-05-11",
     "GAh5p": "2026-05-11",
-    "PdMu0": "2026-05-11",
     "m8EAd_moat": "2026-05-11",
     "PdMu0_moat": "2026-05-11"
   },
-  "last_sync": "2026-05-11T06:55:08.560322+00:00",
+  "last_sync": "2026-05-11T07:58:00.102170+00:00",
   "posted_destinations": [
+    {
+      "destination_id": "tirthan-valley",
+      "date": "2026-05-11"
+    },
     {
       "destination_id": "yt_short_before_after_yt_short_before_after_2026-05-11",
       "date": "2026-05-11"
@@ -19,7 +23,7 @@
       "date": "2026-05-11"
     },
     {
-      "destination_id": "tirthan-valley",
+      "destination_id": "jibhi",
       "date": "2026-05-11"
     }
   ],
@@ -38,7 +42,7 @@
       "collection_spotlight",
       "festival_alert",
       "kids_intel",
-      "four_questions"
+      "methodology_roads"
     ],
     "PdMu0": [
       "monthly_forecast",
@@ -59,7 +63,7 @@
       "collection_spotlight",
       "festival_alert",
       "kids_intel",
-      "four_questions"
+      "methodology_roads"
     ]
   },
   "post_log": [
@@ -454,36 +458,36 @@
       "has_media": true
     },
     {
-      "timestamp": "2026-05-11T06:55:54.044007+00:00",
+      "timestamp": "2026-05-11T07:58:52.574664+00:00",
       "date": "2026-05-11",
       "platform": "instagram",
       "account_id": "m8EAd",
-      "post_id": "Pi2n0",
-      "destination": "tirthan-valley",
-      "format": "four_questions",
+      "post_id": "c7djL",
+      "destination": "jibhi",
+      "format": "methodology_roads",
       "has_media": true,
-      "media_id": "tirthan-valley.mp4"
+      "media_id": "jibhi.mp4"
     },
     {
-      "timestamp": "2026-05-11T06:56:10.771654+00:00",
+      "timestamp": "2026-05-11T07:59:17.600078+00:00",
       "date": "2026-05-11",
       "platform": "facebook",
       "account_id": "PdMu0",
-      "post_id": "xS6h8",
-      "destination": "tirthan-valley",
-      "format": "four_questions",
+      "post_id": "QD1Oy",
+      "destination": "jibhi",
+      "format": "methodology_roads",
       "has_media": true,
-      "media_id": "tirthan-valley.mp4"
+      "media_id": "jibhi.mp4"
     }
   ],
   "theme_usage": {
     "moat_angles": {
-      "four_questions": [
+      "methodology_roads": [
         "2026-05-11"
       ]
     },
     "destinations": {
-      "tirthan-valley": [
+      "jibhi": [
         "2026-05-11"
       ]
     }
@@ -500,6 +504,6 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "tirthan-valley"
+    "shared_best": "jibhi"
   }
 }
