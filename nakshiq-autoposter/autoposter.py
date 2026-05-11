@@ -84,6 +84,131 @@ MORNING_FORMATS = [
     "collection_series",    # themed multi-post (root bridges / sacred lakes / etc)
 ]
 
+# ─────────────────────────────────────────────────────────────────────────────
+# CONTENT PILLARS — see docs/social-playbook.md
+# Every format maps to exactly one pillar. The rotation selector biases toward
+# the most-under-share pillar (over rolling 7 days) before falling back to
+# pick_oldest_unused, so brand recall stays consistent without losing variety.
+# ─────────────────────────────────────────────────────────────────────────────
+
+FORMAT_PILLARS = {
+    # VERDICT — "Should I go to X in Y month?" (NakshIQ's core utility)
+    "score_card":           "verdict",
+    "reality_check":        "verdict",
+    "monthly_forecast":     "verdict",
+    "seasonal_shift":       "verdict",
+    "this_month_only":      "verdict",
+    "weekend_escape":       "verdict",
+    # VERIFICATION — "Verified, here's the source"
+    "infrastructure_truth": "verification",
+    "eateries_pick":        "verification",
+    "stays_pick":           "verification",
+    "emergency_intel":      "verification",
+    "confidence_intel":     "verification",
+    # ANTI-TRAP — "Don't fall for X"
+    "tourist_trap":         "anti_trap",
+    # DISCOVERY — "What you didn't know about X"
+    "collection_spotlight": "discovery",
+    "collection_series":    "discovery",
+    "kids_intel":           "discovery",
+    "underdog_spotlight":   "discovery",
+    "adventure_pick":       "discovery",
+    "trek_intel":           "discovery",
+    "viral_eats_pick":      "discovery",
+    "camping_intel":        "discovery",
+    # MOMENT — "Right now, this matters"
+    "festival_alert":       "moment",
+    "data_carousel":        "moment",
+    "blog_promo":           "moment",
+    "elevation_face_off":   "moment",
+    "state_showdown":       "moment",
+    "difficulty_spectrum":  "moment",
+}
+
+# Target weekly share per pillar. Playbook spec; the rotation biases toward
+# pillars whose actual 7-day share is BELOW these targets. Total = 1.0.
+# Anti-trap structurally has only 1 format in the pool today, so its target
+# is the share the rotation should TRY to hit, not a hard ceiling.
+PILLAR_WEEKLY_SHARE = {
+    "verdict":      0.35,
+    "verification": 0.20,
+    "anti_trap":    0.15,
+    "discovery":    0.20,
+    "moment":       0.10,
+}
+
+# ─────────────────────────────────────────────────────────────────────────────
+# SEASONAL OVERRIDES — date-window pillar weight adjustments
+# Adds to PILLAR_WEEKLY_SHARE during the matching window. Caller clamps the
+# combined target so no single override moves a pillar by >+0.15 absolute.
+# month-day tuples; year-agnostic. Multiple windows can stack additively.
+# ─────────────────────────────────────────────────────────────────────────────
+
+SEASONAL_OVERRIDES = [
+    # SW monsoon: verdict surges (Kerala/Goa reversals, NE flips).
+    {
+        "name":   "sw_monsoon",
+        "start":  (6, 1),
+        "end":    (9, 30),
+        "deltas": {"verdict": +0.15, "discovery": -0.05, "moment": -0.05},
+    },
+    # Char Dham permit edges: emergency_intel + verdict surge for UK dests.
+    {
+        "name":   "char_dham_open",
+        "start":  (4, 28),
+        "end":    (5, 12),
+        "deltas": {"verification": +0.10, "verdict": +0.05},
+    },
+    {
+        "name":   "char_dham_close",
+        "start":  (10, 24),
+        "end":    (11, 7),
+        "deltas": {"verification": +0.10, "verdict": +0.05},
+    },
+    # Festival weeks — Indian festivals cluster around specific dates;
+    # moment pillar doubles share in those windows. Diwali, Holi, Onam,
+    # Durga Puja, Chithirai (Madurai Apr), Karthigai Deepam (Tamil Nadu Dec).
+    {"name": "diwali_window",      "start": (10, 25), "end": (11, 10),
+     "deltas": {"moment": +0.15, "discovery": -0.05}},
+    {"name": "holi_window",        "start": (3, 5),   "end": (3, 18),
+     "deltas": {"moment": +0.15, "discovery": -0.05}},
+    {"name": "onam_window",        "start": (8, 25),  "end": (9, 10),
+     "deltas": {"moment": +0.10}},
+    {"name": "durga_puja",         "start": (9, 25),  "end": (10, 15),
+     "deltas": {"moment": +0.10}},
+    {"name": "chithirai_madurai",  "start": (4, 1),   "end": (4, 30),
+     "deltas": {"moment": +0.10}},
+    {"name": "karthigai_deepam",   "start": (12, 1),  "end": (12, 15),
+     "deltas": {"moment": +0.10}},
+    # Wedding season — off-season-drivers content surfaces (Rajasthan/Kerala).
+    {
+        "name":   "wedding_season",
+        "start":  (11, 1),
+        "end":    (2, 28),
+        "deltas": {"verification": +0.05, "discovery": +0.05, "moment": -0.05},
+    },
+    # Summer peak — hill stations win, mainland warnings rise.
+    {
+        "name":   "summer_peak",
+        "start":  (4, 1),
+        "end":    (6, 15),
+        "deltas": {"anti_trap": +0.05, "verdict": +0.05},
+    },
+    # Diaspora homecoming — NRI parents-visit, ASI / UNESCO spotlights.
+    {
+        "name":   "diaspora_nov_dec",
+        "start":  (11, 15),
+        "end":    (12, 31),
+        "deltas": {"verification": +0.10},
+    },
+    {
+        "name":   "diaspora_mar_apr",
+        "start":  (3, 15),
+        "end":    (4, 30),
+        "deltas": {"verification": +0.10},
+    },
+]
+
 # Legacy weekday-based schedule (kept for fallback only — round-robin is primary)
 _LEGACY_FORMAT_SCHEDULE = {
     0: "score_card", 1: "reality_check", 2: "data_carousel",
@@ -482,6 +607,52 @@ BANNED_PHRASES = [
     "stunning paradise",
 ]
 BANNED_HASHTAGS = {"HiddenIndia", "OffbeatIndia"}
+
+# ─────────────────────────────────────────────────────────────────────────────
+# PER-PLATFORM VOICE MATRIX — see docs/social-playbook.md
+# Applied after the per-format copy_* function emits its caption. Keeps the
+# data identical across platforms but enforces caption length, emoji count,
+# hashtag count, and CTA pattern per the playbook. Conservative defaults so
+# this layer never destroys signal — it only trims.
+# ─────────────────────────────────────────────────────────────────────────────
+
+PLATFORM_VOICE = {
+    "instagram": {
+        "max_words":       120,
+        "max_emoji":       2,
+        "max_hashtags":    18,
+        "cta_pattern":     "→ nakshiq.com/destination/{slug}",
+    },
+    "facebook": {
+        "max_words":       100,
+        "max_emoji":       3,
+        "max_hashtags":    6,
+        "cta_pattern":     "→ nakshiq.com/destination/{slug}",
+    },
+    "yt_shorts": {
+        # YT description-side caption; description is short, hooky.
+        "max_words":       90,
+        "max_emoji":       1,
+        "max_hashtags":    5,
+        "cta_pattern":     "→ nakshiq.com",   # YT punishes off-platform links
+    },
+    "reels": {
+        "max_words":       70,
+        "max_emoji":       0,
+        "max_hashtags":    8,
+        "cta_pattern":     "→ link in bio",
+    },
+}
+
+# Platform synonyms used elsewhere in the codebase. Normalised before lookup
+# so call-sites can pass "ig", "fb", "yt", "yts", "yt_short", "reel", etc.
+_PLATFORM_ALIASES = {
+    "ig": "instagram", "instagram": "instagram",
+    "fb": "facebook", "facebook": "facebook",
+    "yt": "yt_shorts", "yts": "yt_shorts", "yt_short": "yt_shorts",
+    "yt_shorts": "yt_shorts", "youtube_shorts": "yt_shorts", "youtube": "yt_shorts",
+    "reel": "reels", "reels": "reels",
+}
 
 CONTRARIAN_PAIRS = [
     ("Mussoorie",   "Dhanaulti"),
@@ -1320,12 +1491,33 @@ def pick_morning_format(state: dict, content: dict) -> str:
         if not eligible:
             eligible = ["score_card"]
 
-        ordered = pick_oldest_unused(state, "morning_formats", eligible, key=None)
+        # Pillar-bias layer (playbook discipline). Bias eligible toward
+        # whichever pillar is most below its 7-day target — including any
+        # seasonal-window overrides for today. Falls back transparently when
+        # the deficit pillar has no eligible formats.
+        biased_pool = eligible
+        deficit_pillars = under_share_pillars(state)
+        chosen_pillar = None
+        for pillar in deficit_pillars:
+            candidates = [f for f in eligible if FORMAT_PILLARS.get(f) == pillar]
+            if candidates:
+                biased_pool = candidates
+                chosen_pillar = pillar
+                break
+
+        ordered = pick_oldest_unused(state, "morning_formats", biased_pool, key=None)
         chosen = ordered[0]
 
         status = dimension_cycle_status(state, "morning_formats", len(MORNING_FORMATS))
-        log.info(f"Morning format (round-robin): {chosen} "
-                 f"({status['unused']}/{status['total']} never featured)")
+        if chosen_pillar:
+            actual = compute_weekly_pillar_share(state).get(chosen_pillar, 0.0)
+            target = target_pillar_share().get(chosen_pillar, 0.0)
+            log.info(f"Morning format (pillar-biased→{chosen_pillar}): {chosen} "
+                     f"[{actual:.0%} vs target {target:.0%}] "
+                     f"({status['unused']}/{status['total']} never featured)")
+        else:
+            log.info(f"Morning format (balanced): {chosen} "
+                     f"({status['unused']}/{status['total']} never featured)")
         return chosen
     except Exception as e:
         log.warning(f"pick_morning_format error: {e} — fallback to score_card")
@@ -1360,6 +1552,157 @@ def sanitize(text: str) -> str:
     text = re.sub(r" +\n", "\n", text)
     text = re.sub(r"\n{3,}", "\n\n", text)
     return text.strip()
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Pillar share + seasonal overrides + per-platform voice
+# ─────────────────────────────────────────────────────────────────────────────
+
+def _normalise_platform(platform: str | None) -> str | None:
+    if not platform:
+        return None
+    return _PLATFORM_ALIASES.get(str(platform).lower().strip())
+
+
+def _today_in_window(start: tuple, end: tuple, today=None) -> bool:
+    """True if today falls within [start..end] inclusive. Handles year-wrap
+    (Nov → Feb wedding season) by detecting start > end and OR-ing the two
+    halves of the year."""
+    t = today or date.today()
+    s = date(t.year, *start)
+    e = date(t.year, *end)
+    if s <= e:
+        return s <= t <= e
+    # Year-wrap window — e.g. start=(11,1) end=(2,28)
+    return t >= s or t <= e
+
+
+def current_seasonal_overrides(today=None) -> dict:
+    """Return the additive pillar-weight deltas from any SEASONAL_OVERRIDES
+    windows that match today. Empty dict if no window matches."""
+    deltas = {p: 0.0 for p in PILLAR_WEEKLY_SHARE}
+    for window in SEASONAL_OVERRIDES:
+        if _today_in_window(window["start"], window["end"], today=today):
+            for pillar, d in window.get("deltas", {}).items():
+                if pillar in deltas:
+                    deltas[pillar] += d
+    # Clamp single-day movement so no pillar exceeds ±0.15 from baseline.
+    for p in deltas:
+        if deltas[p] > 0.15:
+            deltas[p] = 0.15
+        if deltas[p] < -0.15:
+            deltas[p] = -0.15
+    return deltas
+
+
+def target_pillar_share(today=None) -> dict:
+    """Baseline PILLAR_WEEKLY_SHARE plus today's seasonal overrides. Re-clamped
+    so no pillar drops below 0.02. Does not re-normalise to sum 1.0 — the
+    rotation only uses the relative ordering (most-under-share first)."""
+    deltas = current_seasonal_overrides(today=today)
+    out = {}
+    for p, base in PILLAR_WEEKLY_SHARE.items():
+        out[p] = max(0.02, base + deltas.get(p, 0.0))
+    return out
+
+
+def compute_weekly_pillar_share(state: dict) -> dict:
+    """Actual 7-day pillar share computed from state['post_log']. Returns a
+    dict pillar → fraction of posts in last 7 days that landed in that pillar.
+    Sums to ≤ 1.0 (formats with no pillar mapping are ignored)."""
+    cutoff = (date.today() - timedelta(days=7)).isoformat()
+    log = state.get("post_log") or []
+    counts = {p: 0 for p in PILLAR_WEEKLY_SHARE}
+    total = 0
+    for entry in log:
+        if (entry.get("date") or "") < cutoff:
+            continue
+        fmt = entry.get("format") or ""
+        pillar = FORMAT_PILLARS.get(fmt)
+        if pillar in counts:
+            counts[pillar] += 1
+            total += 1
+    if total == 0:
+        return {p: 0.0 for p in PILLAR_WEEKLY_SHARE}
+    return {p: c / total for p, c in counts.items()}
+
+
+def under_share_pillars(state: dict, today=None) -> list:
+    """Return pillars whose actual 7-day share is below target, ordered by
+    largest deficit first. Empty list means we're balanced or no log yet."""
+    target = target_pillar_share(today=today)
+    actual = compute_weekly_pillar_share(state)
+    deficits = []
+    for p, want in target.items():
+        gap = want - actual.get(p, 0.0)
+        if gap > 0:
+            deficits.append((p, gap))
+    deficits.sort(key=lambda x: -x[1])
+    return [p for p, _ in deficits]
+
+
+def apply_platform_voice(caption: str, platform: str | None,
+                         kind: str | None = None) -> str:
+    """Trim a caption to per-platform discipline (word count, emoji cap,
+    hashtag cap). Conservative: only removes; never rewrites. Safe to call
+    on any caption — returns input unchanged if platform is unknown.
+
+    Why post-process instead of per-format: the 26 copy_<format> functions
+    each generate one caption that's shared across platforms; this is the
+    single point where IG/FB/YT-Shorts/Reels variance is enforced.
+    """
+    if not caption:
+        return caption
+    plat = _normalise_platform(platform)
+    if not plat or plat not in PLATFORM_VOICE:
+        return caption
+    rule = PLATFORM_VOICE[plat]
+
+    # Split caption into [body, hashtag_block]. Hashtag block is the trailing
+    # paragraph that is all-hashtag tokens. Body is everything before it.
+    parts = caption.rstrip().split("\n\n")
+    tail_idx = len(parts) - 1
+    body, hash_block = caption, ""
+    if tail_idx >= 0:
+        tail = parts[tail_idx].strip()
+        tokens = tail.split()
+        if tokens and all(t.startswith("#") for t in tokens):
+            body = "\n\n".join(parts[:tail_idx]).rstrip()
+            hash_block = tail
+
+    # Trim hashtags to cap.
+    if hash_block:
+        tags = hash_block.split()
+        cap = rule["max_hashtags"]
+        if len(tags) > cap:
+            hash_block = " ".join(tags[:cap])
+
+    # Trim body to max_words. Preserves newlines by splitting on whitespace
+    # and rejoining with a single space (last-resort safety; expected to only
+    # trip on tier-2/3 over-long captions).
+    words = body.split()
+    if len(words) > rule["max_words"]:
+        body = " ".join(words[:rule["max_words"]]).rstrip(",;:.") + "…"
+
+    # Cap emoji count by stripping anything past max_emoji. Regex catches the
+    # base codepoint + an optional VS16/VS15 variation selector so ☀️ trims
+    # as one grapheme. Not a full Unicode emoji parser; fine for the rare
+    # 3rd-emoji-in-caption case.
+    cap = rule["max_emoji"]
+    if cap >= 0:
+        seen = [0]
+        def _maybe_strip(m):
+            seen[0] += 1
+            return m.group(0) if seen[0] <= cap else ""
+        body = re.sub(r"[\U0001F300-\U0001FAFF☀-➿][︎️]?",
+                      _maybe_strip, body)
+        # Collapse any whitespace left by emoji removal.
+        body = re.sub(r" {2,}", " ", body).strip()
+
+    out = body
+    if hash_block:
+        out = f"{body}\n\n{hash_block}"
+    return out.strip()
 
 def utm(url: str, source: str, medium: str, campaign: str,
         content: str | None = None) -> str:
@@ -4671,7 +5014,8 @@ def _run_inner(force: bool, sync_only: bool, dry_run: bool,
             log.warning(f"[{label}] No content generated — skipping.")
             continue
 
-        # Brand-voice sanitation — strip banned phrases/hashtags before publish
+        # Per-platform voice + brand-voice sanitation before publish
+        caption = apply_platform_voice(caption, platform)
         caption = sanitize(caption)
 
         dest_id = dest_obj["id"]
@@ -4851,6 +5195,7 @@ def _run_inner(force: bool, sync_only: bool, dry_run: bool,
             if not story_caption or not story_dest:
                 log.warning(f"[{label}] Story content unavailable for {story_fmt} — skipping Story.")
                 continue
+            story_caption = apply_platform_voice(story_caption, "instagram")
             story_caption = sanitize(story_caption)
 
             story_image_url = story_dest.get("image")
@@ -5072,6 +5417,7 @@ def _run_tourist_map(force: bool = False, dry_run: bool = False):
             state_name, chosen_state["tagline"],
             chosen_state["landmarks"], platform
         )
+        caption = apply_platform_voice(caption, platform)
         caption = sanitize(caption)
 
         log.info(f"[{label}] Publishing tourist map for {state_name}...")
@@ -5417,6 +5763,7 @@ def _run_canva_visual(force: bool = False, dry_run: bool = False):
             continue
 
         caption = _canva_caption(chosen_img, platform)
+        caption = apply_platform_voice(caption, platform)
         caption = sanitize(caption)
 
         log.info(f"[{label}] Publishing canva visual: {chosen_img['subject']}...")
@@ -5988,6 +6335,7 @@ def _run_pomelli_visual(force: bool = False, dry_run: bool = False):
             continue
 
         caption = _pomelli_caption(chosen_img, platform)
+        caption = apply_platform_voice(caption, platform)
         caption = sanitize(caption)
 
         log.info(f"[{label}] Publishing pomelli visual: {chosen_img.get('subject', '')}...")
@@ -6455,6 +6803,7 @@ def _run_flow_story(force: bool = False, dry_run: bool = False):
             continue
 
         caption = _flow_story_caption(chosen, platform, dest_id_lookup=dest_id_lookup)
+        caption = apply_platform_voice(caption, platform)
         caption = sanitize(caption)
 
         log.info(f"[{label}] Publishing flow story: "
@@ -6906,6 +7255,7 @@ def _run_reel(force: bool = False, dry_run: bool = False):
             continue
 
         caption = _reel_caption(chosen_format, reel_data, platform)
+        caption = apply_platform_voice(caption, "reels")
         caption = sanitize(caption)
 
         log.info(f"[{label}] Publishing reel ({chosen_format})...")
@@ -7202,6 +7552,7 @@ def _run_reel_map(force: bool = False, dry_run: bool = False):
             continue
 
         caption = _reel_map_caption(chosen_format, reel_data, platform)
+        caption = apply_platform_voice(caption, "reels")
         caption = sanitize(caption)
 
         log.info(f"[{label}] Publishing reel ({campaign_name})...")
@@ -7382,6 +7733,7 @@ def _run_ugc(force: bool = False, dry_run: bool = False):
         else:
             caption = result.get("caption_ig", "")
 
+        caption = apply_platform_voice(caption, platform)
         caption = sanitize(caption)
 
         log.info(f"[{label}] Publishing UGC ({avatar_name} on {dest})...")
@@ -7536,7 +7888,7 @@ def _run_infographic(force: bool = False, dry_run: bool = False):
             log.info(f"[{label}] Already posted infographic today — skipping.")
             continue
 
-        post_caption = sanitize(caption)
+        post_caption = sanitize(apply_platform_voice(caption, platform))
 
         log.info(f"[{label}] Publishing infographic carousel: {topic}/{theme}...")
 
@@ -7691,9 +8043,9 @@ def _run_yt_short(force: bool = False, dry_run: bool = False):
 
         # Platform-specific caption: YouTube vs Instagram
         if platform == "instagram":
-            post_caption = sanitize(ig_caption)
+            post_caption = sanitize(apply_platform_voice(ig_caption, "instagram"))
         else:
-            post_caption = sanitize(yt_caption)
+            post_caption = sanitize(apply_platform_voice(yt_caption, "yt_shorts"))
         log.info(f"[{label}] Publishing YT Short ({fmt})...")
 
         if dry_run:
