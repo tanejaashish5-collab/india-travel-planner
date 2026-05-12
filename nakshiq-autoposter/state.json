@@ -1,17 +1,9 @@
 {
   "yt_short_formats_used": [],
   "yt_short_music_used": [],
-  "posted_today": {
-    "m8EAd": "2026-05-12",
-    "m8EAd_evening": "2026-05-12"
-  },
-  "last_sync": "2026-05-12T13:33:00.165182+00:00",
-  "posted_destinations": [
-    {
-      "destination_id": "jibhi",
-      "date": "2026-05-12"
-    }
-  ],
+  "posted_today": {},
+  "last_sync": "2026-04-30T04:05:30.154914+00:00",
+  "posted_destinations": [],
   "posted_formats": {
     "m8EAd": [
       "monthly_forecast",
@@ -26,8 +18,7 @@
       "score_card",
       "collection_spotlight",
       "festival_alert",
-      "kids_intel",
-      "reality_check"
+      "kids_intel"
     ],
     "PdMu0": [
       "monthly_forecast",
@@ -357,7 +348,7 @@
       "format": "reality_check",
       "outstand_post_id": "LEE0V",
       "platform_post_id": "18067665245654147",
-      "collection": "After Dark — Night Experiences Worth Staying Up For",
+      "collection": "After Dark \u2014 Night Experiences Worth Staying Up For",
       "note": "recovered_via_manual_state_patch_after_3x_duplicate_publish_during_evening_run"
     },
     {
@@ -440,44 +431,9 @@
       "destination": "ranthambore",
       "format": "kids_intel",
       "has_media": true
-    },
-    {
-      "timestamp": "2026-05-12T13:34:03.040122+00:00",
-      "date": "2026-05-12",
-      "platform": "instagram",
-      "account_id": "m8EAd",
-      "post_id": "isAJB",
-      "destination": "jibhi",
-      "format": "reality_check",
-      "has_media": true,
-      "media_id": "jibhi.mp4"
     }
   ],
-  "theme_usage": {
-    "destinations": {
-      "tirthan-valley": [
-        "2026-05-12"
-      ],
-      "jibhi": [
-        "2026-05-12"
-      ]
-    },
-    "collections": {
-      "best-honeymoon": [
-        "2026-05-12"
-      ]
-    },
-    "collection_carousel_dests:best-honeymoon": {
-      "tirthan-valley": [
-        "2026-05-12"
-      ]
-    },
-    "reels": {
-      "jibhi": [
-        "2026-05-12"
-      ]
-    }
-  },
+  "theme_usage": {},
   "infographic": {
     "last_topic_idx": 0,
     "last_theme_idx": 0,
@@ -489,8 +445,5 @@
     ]
   },
   "ugc_music_history": [],
-  "last_picked": {
-    "collection": "best-honeymoon",
-    "shared_best": "tirthan-valley"
-  }
+  "last_picked": {}
 }
