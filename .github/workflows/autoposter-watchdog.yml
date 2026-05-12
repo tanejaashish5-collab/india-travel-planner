@@ -1,0 +1,61 @@
+name: Autoposter Watchdog
+
+# Detects missed posting slots on the main autoposter workflow and force-triggers
+# them via workflow_dispatch. Backstops GHA's documented unreliability of
+# scheduled crons during low-traffic UTC hours (00:00-06:00 UTC = Asia morning).
+#
+# Why a separate workflow: it must run on its own concurrency group so the main
+# autoposter's `cancel-in-progress` doesn't kill the watchdog mid-check. It also
+# uses its own (cheaper, faster) job — no ffmpeg, no Python deps beyond requests.
+#
+# Required secret: AUTOPOSTER_PAT — a GitHub Personal Access Token with
+# `repo` + `workflow` scopes. GITHUB_TOKEN cannot dispatch other workflows by
+# design (anti-infinite-loop guard).
+
+on:
+  schedule:
+    # Run hourly during the posting day. Times chosen on :30 minute marks
+    # (which empirically fire more reliably than :00/:15/:45 — see
+    # autoposter.yml schedule-rationale comment).
+    #
+    # Coverage:
+    #   07:30 UTC = 13:00 IST — after morning/yt-short-1/reel should have fired
+    #   08:30 UTC = 14:00 IST — catch the visual slot if 07:47 missed
+    #   10:30 UTC = 16:00 IST — mid-day catch-up
+    #   12:30 UTC = 18:00 IST — late catch-up (covers yt-short-2)
+    #   14:30 UTC = 20:00 IST — final catch-up before evening cron at 13:17 UTC
+    - cron: "30 7 * * *"
+    - cron: "30 8 * * *"
+    - cron: "30 10 * * *"
+    - cron: "30 12 * * *"
+    - cron: "30 14 * * *"
+  workflow_dispatch: {}
+
+concurrency:
+  group: autoposter-watchdog
+  cancel-in-progress: true
+
+jobs:
+  watchdog:
+    name: Check + force missed slots
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      actions: write
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install requests
+        run: pip install --quiet requests
+
+      - name: Run watchdog
+        env:
+          GH_PAT: ${{ secrets.AUTOPOSTER_PAT }}
+          REPO: ${{ github.repository }}
+        run: python nakshiq-autoposter/watchdog.py

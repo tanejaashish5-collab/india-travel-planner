@@ -86,7 +86,12 @@ on:
 
 concurrency:
   group: autoposter
-  cancel-in-progress: true
+  # 2026-05-12: was `true` — but that meant a delayed-scheduled fire (GHA can be
+  # 1-3h late on UTC-night crons) got cancelled the moment ANY manual dispatch
+  # or watchdog-trigger queued. Now `false` so runs serialize through the
+  # concurrency group; the script-level `.autoposter.lock` already prevents
+  # genuine simultaneous-publish issues.
+  cancel-in-progress: false
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
