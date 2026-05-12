@@ -109,6 +109,7 @@ export function Footer({ stats }: { stats?: { destinations: number; places: numb
                 { href: `/${locale}/about`, label: tn("about") },
                 { href: `/${locale}/about/team`, label: "Masthead" },
                 { href: `/${locale}/methodology`, label: tf("howWeScore") },
+                { href: `/${locale}/transparency`, label: "Fabrication audit" },
                 { href: `/${locale}/cost-index`, label: "Cost Index" },
                 { href: `/${locale}/nakshiq-100`, label: "NakshIQ 100" },
                 { href: `/${locale}/press`, label: "Press & research" },
