@@ -6,6 +6,7 @@ import { Footer } from "@/components/footer";
 import { createClient } from "@supabase/supabase-js";
 import { REGION_GROUPS, STATE_MAP } from "@/lib/seo-maps";
 import { videoSrc } from "@/lib/video-url";
+import { macroRegionHeroSrc, hasMacroRegionHero } from "@/lib/landing-heroes";
 import { videoObjectJsonLd } from "@/lib/video-schema";
 import { destinationImage } from "@/lib/image-url";
 import { currentMonthIST } from "@itp/shared";
@@ -122,7 +123,7 @@ export default async function RegionPage({
   // /india/islands), so the schema mirrors that contentUrl. Without this,
   // GSC's "Video isn't on a watch page" alert flagged these regional URLs.
   const videoLd = videoObjectJsonLd({
-    id: heroDestId,
+    id: hasMacroRegionHero(regionSlug) ? `region-${regionSlug}` : heroDestId,
     name: `${region.name} — NakshIQ regional travel reel`,
     description: `Travel footage from ${region.name} (${region.states.length} states). NakshIQ's regional coverage of India's ${regionSlug} cluster.`,
     thumbnailUrl: destinationImage(heroDestId),
@@ -166,7 +167,7 @@ export default async function RegionPage({
             poster={`/images/destinations/${heroDestId}.jpg`}
             className="absolute inset-0 w-full h-full object-cover"
           >
-            <source src={videoSrc(heroDestId)} type="video/mp4" />
+            <source src={macroRegionHeroSrc(regionSlug, heroDestId)} type="video/mp4" />
           </video>
           <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
           <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 lg:p-12">
