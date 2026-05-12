@@ -1,9 +1,23 @@
 {
-  "yt_short_formats_used": [],
-  "yt_short_music_used": [],
-  "posted_today": {},
-  "last_sync": "2026-05-12T10:18:19.279461+00:00",
-  "posted_destinations": [],
+  "yt_short_formats_used": [
+    "this_vs_that"
+  ],
+  "yt_short_music_used": [
+    "px_kornevmusic-cyberpunk-technology-trailer-517573"
+  ],
+  "posted_today": {
+    "GAh5p_yt_short": "2026-05-12",
+    "GAh5p_yt_short_count": 1,
+    "m8EAd_yt_short": "2026-05-12",
+    "m8EAd_yt_short_count": 1
+  },
+  "last_sync": "2026-04-30T04:05:30.154914+00:00",
+  "posted_destinations": [
+    {
+      "destination_id": "vagamon",
+      "date": "2026-05-12"
+    }
+  ],
   "posted_formats": {
     "m8EAd": [
       "monthly_forecast",
@@ -431,6 +445,24 @@
       "destination": "ranthambore",
       "format": "kids_intel",
       "has_media": true
+    },
+    {
+      "timestamp": "2026-05-12T11:38:01.555956+00:00",
+      "date": "2026-05-12",
+      "platform": "youtube",
+      "post_id": "RFr8H",
+      "destination": "vagamon",
+      "format": "yt_short.this_vs_that",
+      "media_id": "yt_short_this_vs_that_yt_short_this_vs_that_2026-05-12.mp4"
+    },
+    {
+      "timestamp": "2026-05-12T11:38:37.585766+00:00",
+      "date": "2026-05-12",
+      "platform": "instagram",
+      "post_id": "EIYUA",
+      "destination": "vagamon",
+      "format": "yt_short.this_vs_that",
+      "media_id": "yt_short_this_vs_that_yt_short_this_vs_that_2026-05-12.mp4"
     }
   ],
   "theme_usage": {},
