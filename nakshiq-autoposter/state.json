@@ -1,20 +1,14 @@
 {
-  "yt_short_formats_used": [
-    "this_vs_that"
-  ],
-  "yt_short_music_used": [
-    "px_kornevmusic-cyberpunk-technology-trailer-517573"
-  ],
+  "yt_short_formats_used": [],
+  "yt_short_music_used": [],
   "posted_today": {
-    "GAh5p_yt_short": "2026-05-12",
-    "GAh5p_yt_short_count": 1,
-    "m8EAd_yt_short": "2026-05-12",
-    "m8EAd_yt_short_count": 1
+    "m8EAd": "2026-05-12",
+    "m8EAd_evening": "2026-05-12"
   },
-  "last_sync": "2026-04-30T04:05:30.154914+00:00",
+  "last_sync": "2026-05-12T13:33:00.165182+00:00",
   "posted_destinations": [
     {
-      "destination_id": "vagamon",
+      "destination_id": "jibhi",
       "date": "2026-05-12"
     }
   ],
@@ -32,7 +26,8 @@
       "score_card",
       "collection_spotlight",
       "festival_alert",
-      "kids_intel"
+      "kids_intel",
+      "reality_check"
     ],
     "PdMu0": [
       "monthly_forecast",
@@ -447,25 +442,42 @@
       "has_media": true
     },
     {
-      "timestamp": "2026-05-12T11:38:01.555956+00:00",
-      "date": "2026-05-12",
-      "platform": "youtube",
-      "post_id": "RFr8H",
-      "destination": "vagamon",
-      "format": "yt_short.this_vs_that",
-      "media_id": "yt_short_this_vs_that_yt_short_this_vs_that_2026-05-12.mp4"
-    },
-    {
-      "timestamp": "2026-05-12T11:38:37.585766+00:00",
+      "timestamp": "2026-05-12T13:34:03.040122+00:00",
       "date": "2026-05-12",
       "platform": "instagram",
-      "post_id": "EIYUA",
-      "destination": "vagamon",
-      "format": "yt_short.this_vs_that",
-      "media_id": "yt_short_this_vs_that_yt_short_this_vs_that_2026-05-12.mp4"
+      "account_id": "m8EAd",
+      "post_id": "isAJB",
+      "destination": "jibhi",
+      "format": "reality_check",
+      "has_media": true,
+      "media_id": "jibhi.mp4"
     }
   ],
-  "theme_usage": {},
+  "theme_usage": {
+    "destinations": {
+      "tirthan-valley": [
+        "2026-05-12"
+      ],
+      "jibhi": [
+        "2026-05-12"
+      ]
+    },
+    "collections": {
+      "best-honeymoon": [
+        "2026-05-12"
+      ]
+    },
+    "collection_carousel_dests:best-honeymoon": {
+      "tirthan-valley": [
+        "2026-05-12"
+      ]
+    },
+    "reels": {
+      "jibhi": [
+        "2026-05-12"
+      ]
+    }
+  },
   "infographic": {
     "last_topic_idx": 0,
     "last_theme_idx": 0,
@@ -477,5 +489,8 @@
     ]
   },
   "ugc_music_history": [],
-  "last_picked": {}
+  "last_picked": {
+    "collection": "best-honeymoon",
+    "shared_best": "tirthan-valley"
+  }
 }

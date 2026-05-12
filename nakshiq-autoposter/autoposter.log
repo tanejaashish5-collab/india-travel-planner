@@ -1,20 +1,48 @@
-2026-05-12 11:36:48  INFO      ════════════════════════════════════════════════════════════
-2026-05-12 11:36:48  INFO      Nakshiq Autoposter · YT SHORT · 2026-05-12
-2026-05-12 11:36:48  INFO      ════════════════════════════════════════════════════════════
-2026-05-12 11:37:42  INFO      Short rendered: yt_short_this_vs_that_2026-05-12.mp4 (10391 KB, 24.0s, fmt=this_vs_that, music=px_kornevmusic-cyberpunk-technology-trailer-517573)
-2026-05-12 11:37:42  INFO          Requesting upload URL for yt_short_this_vs_that_yt_short_this_vs_that_2026-05-12.mp4 (10,640,417 bytes, video/mp4)
-2026-05-12 11:37:43  INFO          Uploading to R2 (timeout=300s)...
-2026-05-12 11:37:44  INFO          R2 PUT OK. Confirming...
-2026-05-12 11:37:45  INFO          Media ready: 82fKI (10,640,417 bytes · yt_short_this_vs_that_yt_short_this_vs_that_2026-05-12.mp4)
-2026-05-12 11:37:45  INFO      Video uploaded: yt_short_this_vs_that_yt_short_this_vs_that_2026-05-12.mp4
-2026-05-12 11:37:45  INFO      [youtube/@naksh-iq] Publishing YT Short (this_vs_that)...
-2026-05-12 11:37:49  INFO      [youtube/@naksh-iq] Outstand accepted (post_id=RFr8H), waiting for platform confirmation...
-2026-05-12 11:38:01  INFO      [youtube/@naksh-iq] ✅ YT Short published · Outstand=RFr8H · Platform=EC7O_nDGOoY
-2026-05-12 11:38:01  INFO      [instagram/nakshiq] Publishing YT Short (this_vs_that)...
-2026-05-12 11:38:03  INFO      [instagram/nakshiq] Outstand accepted (post_id=EIYUA), waiting for platform confirmation...
-2026-05-12 11:38:37  INFO      [instagram/nakshiq] ✅ YT Short published · Outstand=EIYUA · Platform=17881698885569870
-2026-05-12 11:38:37  WARNING   Could not write post_outcomes entry: 'utf-8' codec can't encode characters in position 111-112: surrogates not allowed
-2026-05-12 11:38:37  INFO      [facebook/Nakshiq] Skipping (YT Shorts post to YouTube + Instagram only).
-2026-05-12 11:38:37  INFO      YT Short posted: format=this_vs_that, music=px_kornevmusic-cyberpunk-technology-trailer-517573
-2026-05-12 11:38:37  INFO      State saved. YT Short run complete.
-2026-05-12 11:38:37  INFO      ════════════════════════════════════════════════════════════
+2026-05-12 13:32:41  INFO      ════════════════════════════════════════════════════════════
+2026-05-12 13:32:41  INFO      Nakshiq Autoposter · EVENING · 2026-05-12 · weekday=1
+2026-05-12 13:32:41  INFO      ════════════════════════════════════════════════════════════
+2026-05-12 13:32:41  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-05-12 13:33:00  INFO      Synced → 20 destinations · 0 traps · 0 articles · 23 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 50 camping · 50 gems · total catalog=505
+2026-05-12 13:33:01  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-05-12 13:33:01  INFO      Formats — IG: reality_check  ·  FB: reality_check  ·  Story: collection_spotlight
+2026-05-12 13:33:01  INFO      Used destinations (14d): 0
+2026-05-12 13:33:01  INFO      Fingerprint dedup snapshot — 0 dests in 7d · 27 (dest,fmt) pairs in 30d · 0 media in 60d
+2026-05-12 13:33:01  INFO      Reality Check pair locked: Kasol ↔ Jibhi
+2026-05-12 13:33:01  INFO      Collection locked: Best Honeymoon Destinations (19/20 never featured)
+2026-05-12 13:33:06  INFO      Shared best destination locked: Tirthan Valley
+2026-05-12 13:33:06  INFO      Carousel locked (collection_spotlight): tirthan-valley
+2026-05-12 13:33:06  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-05-12 13:33:06  INFO      [instagram/nakshiq] Generating reality_check post...
+2026-05-12 13:33:06  INFO      [instagram/nakshiq] Caption ready (681 chars, dest=jibhi)
+2026-05-12 13:33:06  INFO      [instagram/nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-05-12 13:33:06  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/jibhi.mp4?v=20260512
+2026-05-12 13:33:07  INFO          Requesting upload URL for jibhi.mp4 (15,357,687 bytes, video/mp4)
+2026-05-12 13:33:08  INFO          Uploading to R2 (timeout=300s)...
+2026-05-12 13:33:10  INFO          R2 PUT OK. Confirming...
+2026-05-12 13:33:11  INFO          Media ready: bPDhT (15,357,687 bytes · jibhi.mp4)
+2026-05-12 13:33:11  INFO      [instagram/nakshiq] Publishing Reel...
+2026-05-12 13:34:03  INFO      [instagram/nakshiq] ✅ Published · Outstand=isAJB · Platform=18017285261683464
+2026-05-12 13:34:03  INFO      [facebook/Nakshiq] Generating reality_check post...
+2026-05-12 13:34:03  INFO      [facebook/Nakshiq] Caption ready (760 chars, dest=jibhi)
+2026-05-12 13:34:03  INFO      [facebook/Nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-05-12 13:34:03  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/jibhi.mp4?v=20260512
+2026-05-12 13:34:03  INFO          Requesting upload URL for jibhi.mp4 (15,357,687 bytes, video/mp4)
+2026-05-12 13:34:03  WARNING       outstand_post_req /v1/media/upload returned non-JSON: status=500 body=
+2026-05-12 13:34:03  WARNING       Upload URL failed: {'success': False, 'error': 'HTTP 500: '}
+2026-05-12 13:34:04  WARNING   [facebook/Nakshiq] Video upload failed — falling back to image.
+2026-05-12 13:34:04  INFO      [facebook/Nakshiq] Uploading image...
+2026-05-12 13:34:04  INFO          Using branded image: jibhi_feed_info-card_watermark.jpg (338,933 bytes)
+2026-05-12 13:34:04  INFO          Requesting upload URL for jibhi.jpg (338,933 bytes, image/jpeg)
+2026-05-12 13:34:05  INFO          Uploading to R2 (timeout=120s)...
+2026-05-12 13:34:06  INFO          R2 PUT OK. Confirming...
+2026-05-12 13:34:08  INFO          Media ready: mlWMd (338,933 bytes · jibhi.jpg)
+2026-05-12 13:34:08  INFO      [facebook/Nakshiq] Publishing feed post...
+2026-05-12 13:34:08  WARNING       outstand_post_req /v1/posts/ returned non-JSON: status=500 body=<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en-US"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en-US"> <!
+2026-05-12 13:34:08  ERROR         Feed post failed: {'success': False, 'error': 'HTTP 500: <!DOCTYPE html>\n<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en-US"> <![endif]-->\n<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en-US"> <![endif]-->\n<!--[if IE 8]>    <html class="no-'}
+2026-05-12 13:34:08  ERROR     [facebook/Nakshiq] ❌ Publish failed.
+2026-05-12 13:34:08  INFO      State saved. Run complete.
+2026-05-12 13:34:08  INFO      ════════════════════════════════════════════════════════════
