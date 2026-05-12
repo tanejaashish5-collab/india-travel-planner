@@ -1,17 +1,8 @@
 {
-  "yt_short_formats_used": [
-    "dont_go_here"
-  ],
-  "yt_short_music_used": [
-    "04_afro_heat"
-  ],
-  "posted_today": {
-    "GAh5p_yt_short": "2026-05-12",
-    "GAh5p_yt_short_count": 1,
-    "m8EAd_yt_short": "2026-05-12",
-    "m8EAd_yt_short_count": 1
-  },
-  "last_sync": "2026-04-30T04:05:30.154914+00:00",
+  "yt_short_formats_used": [],
+  "yt_short_music_used": [],
+  "posted_today": {},
+  "last_sync": "2026-05-12T06:53:01.061066+00:00",
   "posted_destinations": [],
   "posted_formats": {
     "m8EAd": [
@@ -440,24 +431,6 @@
       "destination": "ranthambore",
       "format": "kids_intel",
       "has_media": true
-    },
-    {
-      "timestamp": "2026-05-12T06:35:58.077643+00:00",
-      "date": "2026-05-12",
-      "platform": "youtube",
-      "post_id": "DEXfo",
-      "destination": null,
-      "format": "yt_short.dont_go_here",
-      "media_id": "yt_short_dont_go_here_yt_short_dont_go_here_2026-05-12.mp4"
-    },
-    {
-      "timestamp": "2026-05-12T06:36:43.727503+00:00",
-      "date": "2026-05-12",
-      "platform": "instagram",
-      "post_id": "xSNR8",
-      "destination": null,
-      "format": "yt_short.dont_go_here",
-      "media_id": "yt_short_dont_go_here_yt_short_dont_go_here_2026-05-12.mp4"
     }
   ],
   "theme_usage": {},
