@@ -6062,7 +6062,7 @@ CANVA_CAMPAIGN_PATHS = {
     "infrastructure": "/en/methodology",
     "kids":           "/en/explore-by-persona",
     "budget":         "/en/cost-index",
-    "trust":          "/en/methodology",
+    "trust":          "/en/transparency",
 }
 CANVA_GENERAL_PATH = "/en/nakshiq-100"
 

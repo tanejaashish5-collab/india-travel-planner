@@ -331,7 +331,12 @@ export default async function MethodologyPage() {
             <p className="mt-4 text-muted-foreground leading-relaxed">
               The pattern is the point. A travel listicle never tells you it
               was wrong. We publish what we caught, because the catching is
-              the moat.
+              the moat. The{" "}
+              <Link href="/transparency" className="text-foreground underline underline-offset-2">
+                full fabrication audit
+              </Link>
+              {" "}lists every state we've closed, the catch rate, and the
+              named properties that didn't make it in.
             </p>
           </section>
 
