@@ -1,17 +1,18 @@
 {
-  "yt_short_formats_used": [],
-  "yt_short_music_used": [],
-  "posted_today": {
-    "m8EAd": "2026-05-12",
-    "PdMu0": "2026-05-12"
-  },
-  "last_sync": "2026-05-12T06:28:28.452194+00:00",
-  "posted_destinations": [
-    {
-      "destination_id": "uttarkashi",
-      "date": "2026-05-12"
-    }
+  "yt_short_formats_used": [
+    "dont_go_here"
   ],
+  "yt_short_music_used": [
+    "04_afro_heat"
+  ],
+  "posted_today": {
+    "GAh5p_yt_short": "2026-05-12",
+    "GAh5p_yt_short_count": 1,
+    "m8EAd_yt_short": "2026-05-12",
+    "m8EAd_yt_short_count": 1
+  },
+  "last_sync": "2026-04-30T04:05:30.154914+00:00",
+  "posted_destinations": [],
   "posted_formats": {
     "m8EAd": [
       "monthly_forecast",
@@ -26,8 +27,7 @@
       "score_card",
       "collection_spotlight",
       "festival_alert",
-      "kids_intel",
-      "weekend_escape"
+      "kids_intel"
     ],
     "PdMu0": [
       "monthly_forecast",
@@ -47,8 +47,7 @@
       "reality_check",
       "collection_spotlight",
       "festival_alert",
-      "kids_intel",
-      "weekend_escape"
+      "kids_intel"
     ]
   },
   "post_log": [
@@ -443,40 +442,25 @@
       "has_media": true
     },
     {
-      "timestamp": "2026-05-12T06:29:15.684819+00:00",
+      "timestamp": "2026-05-12T06:35:58.077643+00:00",
       "date": "2026-05-12",
-      "platform": "instagram",
-      "account_id": "m8EAd",
-      "post_id": "bqlgT",
-      "destination": "uttarkashi",
-      "format": "weekend_escape",
-      "has_media": true,
-      "media_id": "uttarkashi.mp4"
+      "platform": "youtube",
+      "post_id": "DEXfo",
+      "destination": null,
+      "format": "yt_short.dont_go_here",
+      "media_id": "yt_short_dont_go_here_yt_short_dont_go_here_2026-05-12.mp4"
     },
     {
-      "timestamp": "2026-05-12T06:29:40.703485+00:00",
+      "timestamp": "2026-05-12T06:36:43.727503+00:00",
       "date": "2026-05-12",
-      "platform": "facebook",
-      "account_id": "PdMu0",
-      "post_id": "m9Dkd",
-      "destination": "uttarkashi",
-      "format": "weekend_escape",
-      "has_media": true,
-      "media_id": "uttarkashi.mp4"
+      "platform": "instagram",
+      "post_id": "xSNR8",
+      "destination": null,
+      "format": "yt_short.dont_go_here",
+      "media_id": "yt_short_dont_go_here_yt_short_dont_go_here_2026-05-12.mp4"
     }
   ],
-  "theme_usage": {
-    "morning_formats": {
-      "weekend_escape": [
-        "2026-05-12"
-      ]
-    },
-    "destinations": {
-      "uttarkashi": [
-        "2026-05-12"
-      ]
-    }
-  },
+  "theme_usage": {},
   "infographic": {
     "last_topic_idx": 0,
     "last_theme_idx": 0,
@@ -488,7 +472,5 @@
     ]
   },
   "ugc_music_history": [],
-  "last_picked": {
-    "shared_best": "tirthan-valley"
-  }
+  "last_picked": {}
 }
