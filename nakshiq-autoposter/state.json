@@ -8,10 +8,10 @@
     "PdMu0": "2026-05-13",
     "PdMu0_evening": "2026-05-13"
   },
-  "last_sync": "2026-05-13T12:40:25.219177+00:00",
+  "last_sync": "2026-05-13T15:35:15.056503+00:00",
   "posted_destinations": [
     {
-      "destination_id": "kovalam",
+      "destination_id": "pushkar",
       "date": "2026-05-13"
     }
   ],
@@ -446,56 +446,56 @@
       "has_media": true
     },
     {
-      "timestamp": "2026-05-13T12:41:01.572657+00:00",
+      "timestamp": "2026-05-13T15:35:54.125385+00:00",
       "date": "2026-05-13",
       "platform": "instagram",
       "account_id": "m8EAd",
-      "post_id": "vjAeg",
-      "destination": "kovalam",
+      "post_id": "jcez2",
+      "destination": "pushkar",
       "format": "collection_spotlight",
       "has_media": true,
-      "media_id": "kovalam.jpg"
+      "media_id": "pushkar.jpg"
     },
     {
-      "timestamp": "2026-05-13T12:41:22.620795+00:00",
+      "timestamp": "2026-05-13T15:36:21.947719+00:00",
       "date": "2026-05-13",
       "platform": "instagram_story",
       "account_id": "m8EAd",
-      "post_id": "c7k1L",
+      "post_id": "8JPTI",
       "destination": "pahalgam",
       "format": "blog_promo",
       "has_media": true,
       "mode": "evening"
     },
     {
-      "timestamp": "2026-05-13T12:41:43.061315+00:00",
+      "timestamp": "2026-05-13T15:36:31.510840+00:00",
       "date": "2026-05-13",
       "platform": "facebook",
       "account_id": "PdMu0",
-      "post_id": "QD8hy",
-      "destination": "kovalam",
+      "post_id": "ehtMr",
+      "destination": "pushkar",
       "format": "collection_spotlight",
       "has_media": true,
-      "media_id": "kovalam.jpg"
+      "media_id": "pushkar.jpg"
     }
   ],
   "theme_usage": {
     "collections": {
-      "best-beaches-india": [
+      "budget-under-2000": [
         "2026-05-13"
       ]
     },
     "destinations": {
-      "kovalam": [
+      "pushkar": [
         "2026-05-13"
       ],
       "pahalgam": [
         "2026-05-13"
       ]
     },
-    "collection_carousel_dests:best-beaches-india": {},
+    "collection_carousel_dests:budget-under-2000": {},
     "reels": {
-      "kovalam": [
+      "pushkar": [
         "2026-05-13"
       ]
     }
@@ -512,7 +512,7 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "collection": "best-beaches-india",
+    "collection": "budget-under-2000",
     "shared_best": "pahalgam"
   }
 }
