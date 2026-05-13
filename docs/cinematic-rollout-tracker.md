@@ -4,11 +4,11 @@
 > Update tier counts and tick items off as state-sessions land.
 > Authoritative source: `node scripts/cinematic-readiness.mjs` → `qa/cinematic-readiness.md`.
 
-## Snapshot — 2026-05-13 (post-MH prose closeout)
+## Snapshot — 2026-05-13 (post-Gujarat backfill)
 
-**505 dests · A=259 · B=217 · C=29**
+**505 dests · A=288 · B=217 · C=0**
 
-Last delta: MH prose closeout flipped 33 dests C → A and 2 dests C → B. C-tier now Gujarat-only.
+Last delta: Gujarat full backfill (eateries + stays + gems + prose) — 29 dests all C → A. **Corpus C-tier eliminated.** Remaining work is B → A widget topup only.
 
 Gate ([apps/web/src/lib/cinematic-destinations.ts](../apps/web/src/lib/cinematic-destinations.ts), `cinematic-rollout-2026-05-05` branch) currently allowlists **manali only**. Big bang = expand Set to all 505 (or all A + honest-scarcity B).
 
@@ -76,10 +76,10 @@ Astavinayak Circuit (eats:4/5 + stays:2/3) · Morgaon (eats:4/5) · Siddhatek (s
 
 Entire state untouched: prose 0/12, gems 0-1/3, eats 0/5, stays partial.
 
-- [ ] **Eateries** state-cluster session (1-2 agents covering all 29 dests in parallel state-buckets)
-- [ ] **Stays** audit + backfill (`destination_stay_picks` to ≥3 per dest)
-- [ ] **Hidden gems** sweep (≥3 per dest, honest scarcity allowed)
-- [ ] **Prose** 12 months × 29 dests = 348 paragraphs across 2-3 sessions
+- [x] **Eateries** — 147 new across 29 dests (S30 bucket A 52, B 50, C 45)
+- [x] **Stays** — 63 new + 24 upserted via ON CONFLICT (some pre-existing slots replaced)
+- [x] **Hidden gems** — 87 new across 29 dests (3 per dest)
+- [x] **Prose** — 348 month UPDATEs (29 × 12), all 12/12 with prose_lead
 
 Dests: Ahmedabad · Ambaji · Bhavnagar · Champaner-Pavagadh · Dakor · Dholavira · Dwarka · Gandhinagar · Gir National Park · Mount Girnar · Junagadh · Kutch (Bhuj) · Lothal · Mandvi · Marine National Park · Modhera · Nalsarovar · Palitana · Porbandar · Rajkot · Rani ki Vav · Rann of Kutch · Saputara · Sasan Gir · Somnath · Statue of Unity · Surat · Vadodara · Velavadar.
 

@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-05-13T03:20:22.005Z",
+  "generated_at": "2026-05-13T04:35:12.625Z",
   "totals": {
-    "A": 259,
+    "A": 288,
     "B": 217,
-    "C": 29,
+    "C": 0,
     "total": 505
   },
   "thresholds": {
@@ -84,9 +84,9 @@
     },
     {
       "state": "gujarat",
-      "A": 0,
+      "A": 29,
       "B": 0,
-      "C": 29,
+      "C": 0,
       "total": 29
     },
     {
@@ -268,664 +268,18 @@
   "gap_counts": [
     {
       "field": "eats",
-      "count": 229
+      "count": 200
     },
     {
       "field": "gems",
-      "count": 183
+      "count": 154
     },
     {
       "field": "stays",
-      "count": 69
-    },
-    {
-      "field": "months_prose",
-      "count": 29
+      "count": 65
     }
   ],
   "destinations": [
-    {
-      "id": "ahmedabad",
-      "name": "Ahmedabad",
-      "state": "gujarat",
-      "tier": "C",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 0,
-        "gems": 2,
-        "eats": 0,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "months_prose:0/12",
-        "gems:2/3",
-        "eats:0/5"
-      ]
-    },
-    {
-      "id": "ambaji",
-      "name": "Ambaji",
-      "state": "gujarat",
-      "tier": "C",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 0,
-        "gems": 0,
-        "eats": 0,
-        "stays": 3
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "months_prose:0/12",
-        "gems:0/3",
-        "eats:0/5"
-      ]
-    },
-    {
-      "id": "bhavnagar",
-      "name": "Bhavnagar",
-      "state": "gujarat",
-      "tier": "C",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 0,
-        "gems": 1,
-        "eats": 0,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "months_prose:0/12",
-        "gems:1/3",
-        "eats:0/5"
-      ]
-    },
-    {
-      "id": "champaner-pavagadh",
-      "name": "Champaner-Pavagadh",
-      "state": "gujarat",
-      "tier": "C",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 0,
-        "gems": 0,
-        "eats": 0,
-        "stays": 3
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "months_prose:0/12",
-        "gems:0/3",
-        "eats:0/5"
-      ]
-    },
-    {
-      "id": "dakor",
-      "name": "Dakor",
-      "state": "gujarat",
-      "tier": "C",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 0,
-        "gems": 0,
-        "eats": 0,
-        "stays": 2
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "months_prose:0/12",
-        "gems:0/3",
-        "eats:0/5",
-        "stays:2/3"
-      ]
-    },
-    {
-      "id": "dholavira",
-      "name": "Dholavira",
-      "state": "gujarat",
-      "tier": "C",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 0,
-        "gems": 0,
-        "eats": 0,
-        "stays": 3
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "months_prose:0/12",
-        "gems:0/3",
-        "eats:0/5"
-      ]
-    },
-    {
-      "id": "dwarka",
-      "name": "Dwarka",
-      "state": "gujarat",
-      "tier": "C",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 0,
-        "gems": 1,
-        "eats": 0,
-        "stays": 3
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "months_prose:0/12",
-        "gems:1/3",
-        "eats:0/5"
-      ]
-    },
-    {
-      "id": "gandhinagar",
-      "name": "Gandhinagar",
-      "state": "gujarat",
-      "tier": "C",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 0,
-        "gems": 0,
-        "eats": 0,
-        "stays": 3
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "months_prose:0/12",
-        "gems:0/3",
-        "eats:0/5"
-      ]
-    },
-    {
-      "id": "gir-national-park",
-      "name": "Gir National Park",
-      "state": "gujarat",
-      "tier": "C",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 0,
-        "gems": 0,
-        "eats": 0,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "months_prose:0/12",
-        "gems:0/3",
-        "eats:0/5"
-      ]
-    },
-    {
-      "id": "girnar",
-      "name": "Mount Girnar",
-      "state": "gujarat",
-      "tier": "C",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 0,
-        "gems": 0,
-        "eats": 0,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "months_prose:0/12",
-        "gems:0/3",
-        "eats:0/5"
-      ]
-    },
-    {
-      "id": "junagadh",
-      "name": "Junagadh",
-      "state": "gujarat",
-      "tier": "C",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 0,
-        "gems": 0,
-        "eats": 0,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "months_prose:0/12",
-        "gems:0/3",
-        "eats:0/5"
-      ]
-    },
-    {
-      "id": "kutch",
-      "name": "Kutch (Bhuj)",
-      "state": "gujarat",
-      "tier": "C",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 0,
-        "gems": 1,
-        "eats": 0,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "months_prose:0/12",
-        "gems:1/3",
-        "eats:0/5"
-      ]
-    },
-    {
-      "id": "lothal",
-      "name": "Lothal",
-      "state": "gujarat",
-      "tier": "C",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 0,
-        "gems": 0,
-        "eats": 0,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "months_prose:0/12",
-        "gems:0/3",
-        "eats:0/5"
-      ]
-    },
-    {
-      "id": "mandvi",
-      "name": "Mandvi",
-      "state": "gujarat",
-      "tier": "C",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 0,
-        "gems": 0,
-        "eats": 0,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "months_prose:0/12",
-        "gems:0/3",
-        "eats:0/5"
-      ]
-    },
-    {
-      "id": "marine-national-park",
-      "name": "Marine National Park",
-      "state": "gujarat",
-      "tier": "C",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 0,
-        "gems": 0,
-        "eats": 0,
-        "stays": 3
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "months_prose:0/12",
-        "gems:0/3",
-        "eats:0/5"
-      ]
-    },
-    {
-      "id": "modhera",
-      "name": "Modhera Sun Temple",
-      "state": "gujarat",
-      "tier": "C",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 0,
-        "gems": 0,
-        "eats": 0,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "months_prose:0/12",
-        "gems:0/3",
-        "eats:0/5"
-      ]
-    },
-    {
-      "id": "nalsarovar",
-      "name": "Nalsarovar Bird Sanctuary",
-      "state": "gujarat",
-      "tier": "C",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 0,
-        "gems": 0,
-        "eats": 0,
-        "stays": 2
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "months_prose:0/12",
-        "gems:0/3",
-        "eats:0/5",
-        "stays:2/3"
-      ]
-    },
-    {
-      "id": "palitana",
-      "name": "Palitana",
-      "state": "gujarat",
-      "tier": "C",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 0,
-        "gems": 0,
-        "eats": 0,
-        "stays": 3
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "months_prose:0/12",
-        "gems:0/3",
-        "eats:0/5"
-      ]
-    },
-    {
-      "id": "porbandar",
-      "name": "Porbandar",
-      "state": "gujarat",
-      "tier": "C",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 0,
-        "gems": 0,
-        "eats": 0,
-        "stays": 2
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "months_prose:0/12",
-        "gems:0/3",
-        "eats:0/5",
-        "stays:2/3"
-      ]
-    },
-    {
-      "id": "rajkot",
-      "name": "Rajkot",
-      "state": "gujarat",
-      "tier": "C",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 0,
-        "gems": 0,
-        "eats": 0,
-        "stays": 3
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "months_prose:0/12",
-        "gems:0/3",
-        "eats:0/5"
-      ]
-    },
-    {
-      "id": "rani-ki-vav",
-      "name": "Rani ki Vav (Patan)",
-      "state": "gujarat",
-      "tier": "C",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 0,
-        "gems": 0,
-        "eats": 0,
-        "stays": 3
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "months_prose:0/12",
-        "gems:0/3",
-        "eats:0/5"
-      ]
-    },
-    {
-      "id": "rann-of-kutch",
-      "name": "Rann of Kutch",
-      "state": "gujarat",
-      "tier": "C",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 0,
-        "gems": 0,
-        "eats": 0,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "months_prose:0/12",
-        "gems:0/3",
-        "eats:0/5"
-      ]
-    },
-    {
-      "id": "saputara",
-      "name": "Saputara",
-      "state": "gujarat",
-      "tier": "C",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 0,
-        "gems": 0,
-        "eats": 0,
-        "stays": 3
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "months_prose:0/12",
-        "gems:0/3",
-        "eats:0/5"
-      ]
-    },
-    {
-      "id": "sasangir",
-      "name": "Sasan Gir",
-      "state": "gujarat",
-      "tier": "C",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 0,
-        "gems": 0,
-        "eats": 0,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "months_prose:0/12",
-        "gems:0/3",
-        "eats:0/5"
-      ]
-    },
-    {
-      "id": "somnath",
-      "name": "Somnath",
-      "state": "gujarat",
-      "tier": "C",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 0,
-        "gems": 0,
-        "eats": 0,
-        "stays": 3
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "months_prose:0/12",
-        "gems:0/3",
-        "eats:0/5"
-      ]
-    },
-    {
-      "id": "statue-of-unity",
-      "name": "Statue of Unity",
-      "state": "gujarat",
-      "tier": "C",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 0,
-        "gems": 0,
-        "eats": 0,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "months_prose:0/12",
-        "gems:0/3",
-        "eats:0/5"
-      ]
-    },
-    {
-      "id": "surat",
-      "name": "Surat",
-      "state": "gujarat",
-      "tier": "C",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 0,
-        "gems": 0,
-        "eats": 0,
-        "stays": 3
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "months_prose:0/12",
-        "gems:0/3",
-        "eats:0/5"
-      ]
-    },
-    {
-      "id": "vadodara",
-      "name": "Vadodara",
-      "state": "gujarat",
-      "tier": "C",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 0,
-        "gems": 1,
-        "eats": 0,
-        "stays": 1
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "months_prose:0/12",
-        "gems:1/3",
-        "eats:0/5",
-        "stays:1/3"
-      ]
-    },
-    {
-      "id": "velavadar",
-      "name": "Velavadar",
-      "state": "gujarat",
-      "tier": "C",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 0,
-        "gems": 0,
-        "eats": 0,
-        "stays": 3
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "months_prose:0/12",
-        "gems:0/3",
-        "eats:0/5"
-      ]
-    },
     {
       "id": "achabal",
       "name": "Achabal",
@@ -5559,6 +4913,24 @@
       "missing": []
     },
     {
+      "id": "ahmedabad",
+      "name": "Ahmedabad",
+      "state": "gujarat",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 5,
+        "eats": 5,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
       "id": "aizawl",
       "name": "Aizawl",
       "state": "mizoram",
@@ -5641,6 +5013,24 @@
         "gems": 3,
         "eats": 9,
         "stays": 3
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "ambaji",
+      "name": "Ambaji",
+      "state": "gujarat",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 4
       },
       "has": {
         "tagline": true,
@@ -6027,6 +5417,24 @@
       "missing": []
     },
     {
+      "id": "bhavnagar",
+      "name": "Bhavnagar",
+      "state": "gujarat",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 4,
+        "eats": 5,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
       "id": "bhimashankar",
       "name": "Bhimashankar",
       "state": "maharashtra",
@@ -6253,6 +5661,24 @@
         "gems": 3,
         "eats": 8,
         "stays": 3
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "champaner-pavagadh",
+      "name": "Champaner-Pavagadh",
+      "state": "gujarat",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 4
       },
       "has": {
         "tagline": true,
@@ -6585,6 +6011,24 @@
       "missing": []
     },
     {
+      "id": "dakor",
+      "name": "Dakor",
+      "state": "gujarat",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
       "id": "dalhousie",
       "name": "Dalhousie",
       "state": "himachal-pradesh",
@@ -6783,6 +6227,24 @@
       "missing": []
     },
     {
+      "id": "dholavira",
+      "name": "Dholavira",
+      "state": "gujarat",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
       "id": "diu",
       "name": "Diu",
       "state": "daman-diu",
@@ -6793,6 +6255,24 @@
         "gems": 3,
         "eats": 5,
         "stays": 3
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "dwarka",
+      "name": "Dwarka",
+      "state": "gujarat",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 4,
+        "eats": 6,
+        "stays": 4
       },
       "has": {
         "tagline": true,
@@ -6837,6 +6317,24 @@
       "missing": []
     },
     {
+      "id": "gandhinagar",
+      "name": "Gandhinagar",
+      "state": "gujarat",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
       "id": "gangtok",
       "name": "Gangtok",
       "state": "sikkim",
@@ -6865,6 +6363,42 @@
         "gems": 3,
         "eats": 5,
         "stays": 3
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "gir-national-park",
+      "name": "Gir National Park",
+      "state": "gujarat",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "girnar",
+      "name": "Mount Girnar",
+      "state": "gujarat",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 4
       },
       "has": {
         "tagline": true,
@@ -7206,6 +6740,24 @@
         "months_prose": 12,
         "gems": 3,
         "eats": 8,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "junagadh",
+      "name": "Junagadh",
+      "state": "gujarat",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
         "stays": 4
       },
       "has": {
@@ -7827,6 +7379,24 @@
       "missing": []
     },
     {
+      "id": "kutch",
+      "name": "Kutch (Bhuj)",
+      "state": "gujarat",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 4,
+        "eats": 5,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
       "id": "kuttanad",
       "name": "Kuttanad",
       "state": "kerala",
@@ -7999,6 +7569,24 @@
         "gems": 3,
         "eats": 5,
         "stays": 3
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "lothal",
+      "name": "Lothal",
+      "state": "gujarat",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 4
       },
       "has": {
         "tagline": true,
@@ -8205,6 +7793,24 @@
       "missing": []
     },
     {
+      "id": "mandvi",
+      "name": "Mandvi",
+      "state": "gujarat",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
       "id": "mangalore",
       "name": "Mangalore",
       "state": "karnataka",
@@ -8226,6 +7832,24 @@
       "id": "margao",
       "name": "Margao",
       "state": "goa",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "marine-national-park",
+      "name": "Marine National Park",
+      "state": "gujarat",
       "tier": "A",
       "counts": {
         "months_scored": 12,
@@ -8268,6 +7892,24 @@
         "months_prose": 12,
         "gems": 3,
         "eats": 15,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "modhera",
+      "name": "Modhera Sun Temple",
+      "state": "gujarat",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
         "stays": 4
       },
       "has": {
@@ -8583,6 +8225,24 @@
       "missing": []
     },
     {
+      "id": "nalsarovar",
+      "name": "Nalsarovar Bird Sanctuary",
+      "state": "gujarat",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
       "id": "namchi",
       "name": "Namchi",
       "state": "sikkim",
@@ -8755,6 +8415,24 @@
         "gems": 3,
         "eats": 5,
         "stays": 3
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "palitana",
+      "name": "Palitana",
+      "state": "gujarat",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 4
       },
       "has": {
         "tagline": true,
@@ -9015,6 +8693,24 @@
       "missing": []
     },
     {
+      "id": "porbandar",
+      "name": "Porbandar",
+      "state": "gujarat",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 3
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
       "id": "prayagraj",
       "name": "Prayagraj",
       "state": "uttar-pradesh",
@@ -9105,6 +8801,24 @@
       "missing": []
     },
     {
+      "id": "rajkot",
+      "name": "Rajkot",
+      "state": "gujarat",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
       "id": "rameswaram",
       "name": "Rameswaram",
       "state": "tamil-nadu",
@@ -9141,6 +8855,24 @@
       "missing": []
     },
     {
+      "id": "rani-ki-vav",
+      "name": "Rani ki Vav (Patan)",
+      "state": "gujarat",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
       "id": "ranikhet",
       "name": "Ranikhet",
       "state": "uttarakhand",
@@ -9162,6 +8894,24 @@
       "id": "ranjangaon",
       "name": "Ranjangaon",
       "state": "maharashtra",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "rann-of-kutch",
+      "name": "Rann of Kutch",
+      "state": "gujarat",
       "tier": "A",
       "counts": {
         "months_scored": 12,
@@ -9277,6 +9027,42 @@
         "gems": 3,
         "eats": 5,
         "stays": 3
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "saputara",
+      "name": "Saputara",
+      "state": "gujarat",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "sasangir",
+      "name": "Sasan Gir",
+      "state": "gujarat",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 4
       },
       "has": {
         "tagline": true,
@@ -9519,6 +9305,24 @@
       "missing": []
     },
     {
+      "id": "somnath",
+      "name": "Somnath",
+      "state": "gujarat",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 6,
+        "stays": 3
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
       "id": "spiti-valley",
       "name": "Spiti Valley",
       "state": "himachal-pradesh",
@@ -9609,9 +9413,45 @@
       "missing": []
     },
     {
+      "id": "statue-of-unity",
+      "name": "Statue of Unity",
+      "state": "gujarat",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
       "id": "sundarbans",
       "name": "Sundarbans",
       "state": "west-bengal",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "surat",
+      "name": "Surat",
+      "state": "gujarat",
       "tier": "A",
       "counts": {
         "months_scored": 12,
@@ -9969,6 +9809,24 @@
       "missing": []
     },
     {
+      "id": "vadodara",
+      "name": "Vadodara",
+      "state": "gujarat",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 4,
+        "eats": 5,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
       "id": "vagator",
       "name": "Vagator",
       "state": "goa",
@@ -10008,6 +9866,24 @@
       "id": "varkala",
       "name": "Varkala",
       "state": "kerala",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "velavadar",
+      "name": "Velavadar",
+      "state": "gujarat",
       "tier": "A",
       "counts": {
         "months_scored": 12,

@@ -1,6 +1,6 @@
 # Cinematic readiness — 2026-05-13
 
-Total: **505** dests · A=**259** · B=**217** · C=**29**
+Total: **505** dests · A=**288** · B=**217** · C=**0**
 
 Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 
@@ -8,10 +8,9 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 
 | Field | Dests blocked |
 |---|---:|
-| eats | 229 |
-| gems | 183 |
-| stays | 69 |
-| months_prose | 29 |
+| eats | 200 |
+| gems | 154 |
+| stays | 65 |
 
 ## By state
 
@@ -27,7 +26,7 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | daman-diu | 3 | 0 | 0 | 3 |
 | delhi | 1 | 0 | 0 | 1 |
 | goa | 18 | 3 | 0 | 21 |
-| gujarat | 0 | 0 | 29 | 29 |
+| gujarat | 29 | 0 | 0 | 29 |
 | haryana | 2 | 1 | 0 | 3 |
 | himachal-pradesh | 23 | 11 | 0 | 34 |
 | jammu-kashmir | 4 | 14 | 0 | 18 |
@@ -58,35 +57,6 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 
 | Dest | State | Missing |
 |---|---|---|
-| Ahmedabad (ahmedabad) | gujarat | months_prose:0/12 · gems:2/3 · eats:0/5 |
-| Ambaji (ambaji) | gujarat | months_prose:0/12 · gems:0/3 · eats:0/5 |
-| Bhavnagar (bhavnagar) | gujarat | months_prose:0/12 · gems:1/3 · eats:0/5 |
-| Champaner-Pavagadh (champaner-pavagadh) | gujarat | months_prose:0/12 · gems:0/3 · eats:0/5 |
-| Dakor (dakor) | gujarat | months_prose:0/12 · gems:0/3 · eats:0/5 · stays:2/3 |
-| Dholavira (dholavira) | gujarat | months_prose:0/12 · gems:0/3 · eats:0/5 |
-| Dwarka (dwarka) | gujarat | months_prose:0/12 · gems:1/3 · eats:0/5 |
-| Gandhinagar (gandhinagar) | gujarat | months_prose:0/12 · gems:0/3 · eats:0/5 |
-| Gir National Park (gir-national-park) | gujarat | months_prose:0/12 · gems:0/3 · eats:0/5 |
-| Mount Girnar (girnar) | gujarat | months_prose:0/12 · gems:0/3 · eats:0/5 |
-| Junagadh (junagadh) | gujarat | months_prose:0/12 · gems:0/3 · eats:0/5 |
-| Kutch (Bhuj) (kutch) | gujarat | months_prose:0/12 · gems:1/3 · eats:0/5 |
-| Lothal (lothal) | gujarat | months_prose:0/12 · gems:0/3 · eats:0/5 |
-| Mandvi (mandvi) | gujarat | months_prose:0/12 · gems:0/3 · eats:0/5 |
-| Marine National Park (marine-national-park) | gujarat | months_prose:0/12 · gems:0/3 · eats:0/5 |
-| Modhera Sun Temple (modhera) | gujarat | months_prose:0/12 · gems:0/3 · eats:0/5 |
-| Nalsarovar Bird Sanctuary (nalsarovar) | gujarat | months_prose:0/12 · gems:0/3 · eats:0/5 · stays:2/3 |
-| Palitana (palitana) | gujarat | months_prose:0/12 · gems:0/3 · eats:0/5 |
-| Porbandar (porbandar) | gujarat | months_prose:0/12 · gems:0/3 · eats:0/5 · stays:2/3 |
-| Rajkot (rajkot) | gujarat | months_prose:0/12 · gems:0/3 · eats:0/5 |
-| Rani ki Vav (Patan) (rani-ki-vav) | gujarat | months_prose:0/12 · gems:0/3 · eats:0/5 |
-| Rann of Kutch (rann-of-kutch) | gujarat | months_prose:0/12 · gems:0/3 · eats:0/5 |
-| Saputara (saputara) | gujarat | months_prose:0/12 · gems:0/3 · eats:0/5 |
-| Sasan Gir (sasangir) | gujarat | months_prose:0/12 · gems:0/3 · eats:0/5 |
-| Somnath (somnath) | gujarat | months_prose:0/12 · gems:0/3 · eats:0/5 |
-| Statue of Unity (statue-of-unity) | gujarat | months_prose:0/12 · gems:0/3 · eats:0/5 |
-| Surat (surat) | gujarat | months_prose:0/12 · gems:0/3 · eats:0/5 |
-| Vadodara (vadodara) | gujarat | months_prose:0/12 · gems:1/3 · eats:0/5 · stays:1/3 |
-| Velavadar (velavadar) | gujarat | months_prose:0/12 · gems:0/3 · eats:0/5 |
 
 ## Tier B destinations (widget topup)
 
@@ -319,11 +289,13 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Agatti Island (agatti) | lakshadweep |
 | Agonda (agonda) | goa |
 | Agra (agra) | uttar-pradesh |
+| Ahmedabad (ahmedabad) | gujarat |
 | Aizawl (aizawl) | mizoram |
 | Ajanta Caves (ajanta-caves) | maharashtra |
 | Alibaug (alibaug) | maharashtra |
 | Alleppey (Alappuzha) (alleppey) | kerala |
 | Almora (almora) | uttarakhand |
+| Ambaji (ambaji) | gujarat |
 | Amboli (amboli) | maharashtra |
 | Amritsar (amritsar) | punjab |
 | Anandpur Sahib (anandpur-sahib) | punjab |
@@ -345,6 +317,7 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Bengaluru (bengaluru) | karnataka |
 | Beypore (beypore) | kerala |
 | Bhandardara (bhandardara) | maharashtra |
+| Bhavnagar (bhavnagar) | gujarat |
 | Bhimashankar (bhimashankar) | maharashtra |
 | Bhimtal (bhimtal) | uttarakhand |
 | Bidar (bidar) | karnataka |
@@ -358,6 +331,7 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Chail (chail) | himachal-pradesh |
 | Chakrata (chakrata) | uttarakhand |
 | Chamba (chamba) | himachal-pradesh |
+| Champaner-Pavagadh (champaner-pavagadh) | gujarat |
 | Champawat (champawat) | uttarakhand |
 | Champhai (champhai) | mizoram |
 | Chandigarh (chandigarh) | chandigarh |
@@ -376,6 +350,7 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Coorg (Kodagu) (coorg) | karnataka |
 | Jim Corbett National Park (corbett-national-park) | uttarakhand |
 | Courtallam (Kutralam) (courtallam) | tamil-nadu |
+| Dakor (dakor) | gujarat |
 | Dalhousie (dalhousie) | himachal-pradesh |
 | Daman (daman) | daman-diu |
 | Dandeli (dandeli) | karnataka |
@@ -387,11 +362,16 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Dhanushkodi (dhanushkodi) | tamil-nadu |
 | Dharamshala (dharamshala) | himachal-pradesh |
 | Dharmasthala (dharmasthala) | karnataka |
+| Dholavira (dholavira) | gujarat |
 | Diu (diu) | daman-diu |
+| Dwarka (dwarka) | gujarat |
 | Ellora Caves (ellora-caves) | maharashtra |
 | Fort Aguada & Candolim (fort-aguada) | goa |
+| Gandhinagar (gandhinagar) | gujarat |
 | Gangtok (gangtok) | sikkim |
 | Ganpatipule (ganpatipule) | maharashtra |
+| Gir National Park (gir-national-park) | gujarat |
+| Mount Girnar (girnar) | gujarat |
 | Gokarna (gokarna) | karnataka |
 | Gopeshwar (gopeshwar) | uttarakhand |
 | Gulbarga (Kalaburagi) (gulbarga) | karnataka |
@@ -411,6 +391,7 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Jodhpur (jodhpur) | rajasthan |
 | Jog Falls (jog-falls) | karnataka |
 | Joshimath (joshimath) | uttarakhand |
+| Junagadh (junagadh) | gujarat |
 | Kabini (kabini) | karnataka |
 | Kalimpong (kalimpong) | west-bengal |
 | Kanatal (kanatal) | uttarakhand |
@@ -445,6 +426,7 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Kumarakom (kumarakom) | kerala |
 | Kumbakonam (kumbakonam) | tamil-nadu |
 | Kurukshetra (kurukshetra) | haryana |
+| Kutch (Bhuj) (kutch) | gujarat |
 | Kuttanad (kuttanad) | kerala |
 | Lachen (lachen) | sikkim |
 | Lachung (lachung) | sikkim |
@@ -455,6 +437,7 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Loktak Lake (loktak-lake) | manipur |
 | Lonar Crater (lonar-crater) | maharashtra |
 | Lonavala (lonavala) | maharashtra |
+| Lothal (lothal) | gujarat |
 | Lucknow (lucknow) | uttar-pradesh |
 | Lunglei (lunglei) | mizoram |
 | Machilipatnam (machilipatnam) | andhra-pradesh |
@@ -466,10 +449,13 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Manali (manali) | himachal-pradesh |
 | Mandi (mandi) | himachal-pradesh |
 | Mandrem (mandrem) | goa |
+| Mandvi (mandvi) | gujarat |
 | Mangalore (mangalore) | karnataka |
 | Margao (margao) | goa |
+| Marine National Park (marine-national-park) | gujarat |
 | Matheran (matheran) | maharashtra |
 | McLeod Ganj (mcleodganj) | himachal-pradesh |
+| Modhera Sun Temple (modhera) | gujarat |
 | Mokokchung (mokokchung) | nagaland |
 | Morjim (morjim) | goa |
 | Mount Abu (mount-abu) | rajasthan |
@@ -487,6 +473,7 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Nagpur (nagpur) | maharashtra |
 | Nainital (nainital) | uttarakhand |
 | Nalanda (nalanda) | bihar |
+| Nalsarovar Bird Sanctuary (nalsarovar) | gujarat |
 | Namchi (namchi) | sikkim |
 | Nandi Hills (nandi-hills) | karnataka |
 | Nashik (nashik) | maharashtra |
@@ -497,6 +484,7 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Pahalgam (pahalgam) | jammu-kashmir |
 | Palampur (palampur) | himachal-pradesh |
 | Pali (Raigad) (pali-raigad) | maharashtra |
+| Palitana (palitana) | gujarat |
 | Palolem (palolem) | goa |
 | Panaji (panaji) | goa |
 | Panchgani (panchgani) | maharashtra |
@@ -511,21 +499,27 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Pithoragarh (pithoragarh) | uttarakhand |
 | Spice Plantations (Ponda) (ponda-spice) | goa |
 | Pondicherry (Puducherry) (pondicherry) | tamil-nadu |
+| Porbandar (porbandar) | gujarat |
 | Prayagraj (prayagraj) | uttar-pradesh |
 | Puducherry (Pondicherry) (puducherry) | puducherry |
 | Pune (pune) | maharashtra |
 | Raigad Fort (raigad-fort) | maharashtra |
 | Rajahmundry (rajahmundry) | andhra-pradesh |
+| Rajkot (rajkot) | gujarat |
 | Rameswaram (rameswaram) | tamil-nadu |
 | Ranchi (ranchi) | jharkhand |
+| Rani ki Vav (Patan) (rani-ki-vav) | gujarat |
 | Ranikhet (ranikhet) | uttarakhand |
 | Ranjangaon (ranjangaon) | maharashtra |
+| Rann of Kutch (rann-of-kutch) | gujarat |
 | Ranthambore (ranthambore) | rajasthan |
 | Ratnagiri (ratnagiri) | maharashtra |
 | Ravangla (ravangla) | sikkim |
 | Reis Magos Fort (reis-magos) | goa |
 | Rishikesh (rishikesh) | uttarakhand |
 | Sakleshpur (sakleshpur) | karnataka |
+| Saputara (saputara) | gujarat |
+| Sasan Gir (sasangir) | gujarat |
 | Satara (satara) | maharashtra |
 | Shantiniketan (shantiniketan) | west-bengal |
 | Shikharji (Parasnath Hill) (shikharji) | jharkhand |
@@ -539,12 +533,15 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Sirpur (sirpur) | chhattisgarh |
 | Sissu (sissu) | himachal-pradesh |
 | Solan (solan) | himachal-pradesh |
+| Somnath (somnath) | gujarat |
 | Spiti Valley (spiti-valley) | himachal-pradesh |
 | Srinagar (srinagar) | jammu-kashmir |
 | Srirangam (srirangam) | tamil-nadu |
 | Srirangapatna (srirangapatna) | karnataka |
 | Srisailam (srisailam) | andhra-pradesh |
+| Statue of Unity (statue-of-unity) | gujarat |
 | Sundarbans (sundarbans) | west-bengal |
+| Surat (surat) | gujarat |
 | Tadoba-Andhari Tiger Reserve (tadoba) | maharashtra |
 | Tarkarli (tarkarli) | maharashtra |
 | Tawang (tawang) | arunachal-pradesh |
@@ -564,9 +561,11 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Udupi (udupi) | karnataka |
 | Ukhrul (ukhrul) | manipur |
 | Uttarkashi (uttarkashi) | uttarakhand |
+| Vadodara (vadodara) | gujarat |
 | Vagator (vagator) | goa |
 | Varanasi (varanasi) | uttar-pradesh |
 | Varkala (varkala) | kerala |
+| Velavadar (velavadar) | gujarat |
 | Vijayawada (vijayawada) | andhra-pradesh |
 | Visakhapatnam (visakhapatnam) | andhra-pradesh |
 | Vrindavan (vrindavan) | uttar-pradesh |
