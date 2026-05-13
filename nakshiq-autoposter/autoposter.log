@@ -1,36 +1,20 @@
-2026-05-13 05:34:30  INFO      ════════════════════════════════════════════════════════════
-2026-05-13 05:34:30  INFO      Nakshiq Autoposter · MORNING · 2026-05-13 · weekday=2
-2026-05-13 05:34:30  INFO      ════════════════════════════════════════════════════════════
-2026-05-13 05:34:30  INFO      ── Syncing Nakshiq content ──────────────────────────────
-2026-05-13 05:34:47  INFO      Synced → 20 destinations · 0 traps · 0 articles · 23 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 50 camping · 50 gems · total catalog=505
-2026-05-13 05:34:48  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
-2026-05-13 05:34:48  INFO      Morning format (pillar-biased→verdict): score_card [0% vs target 40%] (26/26 never featured)
-2026-05-13 05:34:48  INFO      Formats — IG: score_card  ·  FB: score_card  ·  Story: collection_spotlight
-2026-05-13 05:34:48  INFO      Used destinations (14d): 0
-2026-05-13 05:34:48  INFO      Fingerprint dedup snapshot — 0 dests in 7d · 27 (dest,fmt) pairs in 30d · 0 media in 60d
-2026-05-13 05:34:48  INFO      Collection locked: Best Stargazing Spots (Dark Sky Locations) (19/20 never featured)
-2026-05-13 05:34:51  INFO      Shared best destination locked: Pahalgam
-2026-05-13 05:34:51  INFO      Carousel locked (collection_spotlight): chopta
-2026-05-13 05:34:51  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
-2026-05-13 05:34:51  INFO      [instagram/nakshiq] Generating score_card post...
-2026-05-13 05:34:51  INFO      [instagram/nakshiq] Caption ready (512 chars, dest=pahalgam)
-2026-05-13 05:34:52  INFO      [instagram/nakshiq] Video available — uploading for Reel...
-2026-05-13 05:34:52  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/pahalgam.mp4?v=20260512
-2026-05-13 05:34:52  INFO          Requesting upload URL for pahalgam.mp4 (11,691,764 bytes, video/mp4)
-2026-05-13 05:34:53  INFO          Uploading to R2 (timeout=300s)...
-2026-05-13 05:34:54  INFO          R2 PUT OK. Confirming...
-2026-05-13 05:34:55  INFO          Media ready: 4hrni (11,691,764 bytes · pahalgam.mp4)
-2026-05-13 05:34:55  INFO      [instagram/nakshiq] Publishing Reel...
-2026-05-13 05:35:32  INFO      [instagram/nakshiq] ✅ Published · Outstand=HZ9H5 · Platform=18055903541504927
-2026-05-13 05:35:32  INFO      [facebook/Nakshiq] Generating score_card post...
-2026-05-13 05:35:32  INFO      [facebook/Nakshiq] Caption ready (493 chars, dest=pahalgam)
-2026-05-13 05:35:33  INFO      [facebook/Nakshiq] Video available — uploading for Reel...
-2026-05-13 05:35:33  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/pahalgam.mp4?v=20260512
-2026-05-13 05:35:33  INFO          Requesting upload URL for pahalgam.mp4 (11,691,764 bytes, video/mp4)
-2026-05-13 05:35:34  INFO          Uploading to R2 (timeout=300s)...
-2026-05-13 05:35:35  INFO          R2 PUT OK. Confirming...
-2026-05-13 05:35:36  INFO          Media ready: LAcbV (11,691,764 bytes · pahalgam.mp4)
-2026-05-13 05:35:36  INFO      [facebook/Nakshiq] Publishing Reel...
-2026-05-13 05:35:55  INFO      [facebook/Nakshiq] ✅ Published · Outstand=I37eX · Platform=3023160954546508
-2026-05-13 05:35:55  INFO      State saved. Run complete.
-2026-05-13 05:35:55  INFO      ════════════════════════════════════════════════════════════
+2026-05-13 05:39:53  INFO      ════════════════════════════════════════════════════════════
+2026-05-13 05:39:53  INFO      Nakshiq Autoposter · YT SHORT · 2026-05-13
+2026-05-13 05:39:53  INFO      ════════════════════════════════════════════════════════════
+2026-05-13 05:41:14  INFO      Short rendered: yt_short_listicle_2026-05-13.mp4 (19272 KB, 35.0s, fmt=listicle, music=07_synthwave_run)
+2026-05-13 05:41:14  INFO          Requesting upload URL for yt_short_listicle_yt_short_listicle_2026-05-13.mp4 (19,734,928 bytes, video/mp4)
+2026-05-13 05:41:15  INFO          Uploading to R2 (timeout=300s)...
+2026-05-13 05:41:17  INFO          R2 PUT OK. Confirming...
+2026-05-13 05:41:18  INFO          Media ready: 3VJsk (19,734,928 bytes · yt_short_listicle_yt_short_listicle_2026-05-13.mp4)
+2026-05-13 05:41:18  INFO      Video uploaded: yt_short_listicle_yt_short_listicle_2026-05-13.mp4
+2026-05-13 05:41:19  INFO      [youtube/@naksh-iq] Publishing YT Short (listicle)...
+2026-05-13 05:41:25  INFO      [youtube/@naksh-iq] Outstand accepted (post_id=vjZ8g), waiting for platform confirmation...
+2026-05-13 05:41:37  INFO      [youtube/@naksh-iq] ✅ YT Short published · Outstand=vjZ8g · Platform=h6kVBUOOwV4
+2026-05-13 05:41:37  INFO      [instagram/nakshiq] Publishing YT Short (listicle)...
+2026-05-13 05:41:39  INFO      [instagram/nakshiq] Outstand accepted (post_id=c7SaL), waiting for platform confirmation...
+2026-05-13 05:42:25  INFO      [instagram/nakshiq] ✅ YT Short published · Outstand=c7SaL · Platform=18098645644869121
+2026-05-13 05:42:25  WARNING   Could not write post_outcomes entry: 'utf-8' codec can't encode characters in position 147-148: surrogates not allowed
+2026-05-13 05:42:25  INFO      [facebook/Nakshiq] Skipping (YT Shorts post to YouTube + Instagram only).
+2026-05-13 05:42:25  INFO      YT Short posted: format=listicle, music=07_synthwave_run
+2026-05-13 05:42:25  INFO      State saved. YT Short run complete.
+2026-05-13 05:42:25  INFO      ════════════════════════════════════════════════════════════

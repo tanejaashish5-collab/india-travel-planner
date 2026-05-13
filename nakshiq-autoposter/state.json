@@ -1,14 +1,20 @@
 {
-  "yt_short_formats_used": [],
-  "yt_short_music_used": [],
+  "yt_short_formats_used": [
+    "listicle"
+  ],
+  "yt_short_music_used": [
+    "07_synthwave_run"
+  ],
   "posted_today": {
-    "m8EAd": "2026-05-13",
-    "PdMu0": "2026-05-13"
+    "GAh5p_yt_short": "2026-05-13",
+    "GAh5p_yt_short_count": 1,
+    "m8EAd_yt_short": "2026-05-13",
+    "m8EAd_yt_short_count": 1
   },
-  "last_sync": "2026-05-13T05:34:47.522770+00:00",
+  "last_sync": "2026-04-30T04:05:30.154914+00:00",
   "posted_destinations": [
     {
-      "destination_id": "pahalgam",
+      "destination_id": "bhaderwah",
       "date": "2026-05-13"
     }
   ],
@@ -26,8 +32,7 @@
       "score_card",
       "collection_spotlight",
       "festival_alert",
-      "kids_intel",
-      "score_card"
+      "kids_intel"
     ],
     "PdMu0": [
       "monthly_forecast",
@@ -47,8 +52,7 @@
       "reality_check",
       "collection_spotlight",
       "festival_alert",
-      "kids_intel",
-      "score_card"
+      "kids_intel"
     ]
   },
   "post_log": [
@@ -443,53 +447,25 @@
       "has_media": true
     },
     {
-      "timestamp": "2026-05-13T05:35:32.742386+00:00",
+      "timestamp": "2026-05-13T05:41:37.108224+00:00",
       "date": "2026-05-13",
-      "platform": "instagram",
-      "account_id": "m8EAd",
-      "post_id": "HZ9H5",
-      "destination": "pahalgam",
-      "format": "score_card",
-      "has_media": true,
-      "media_id": "pahalgam.mp4"
+      "platform": "youtube",
+      "post_id": "vjZ8g",
+      "destination": "bhaderwah",
+      "format": "yt_short.listicle",
+      "media_id": "yt_short_listicle_yt_short_listicle_2026-05-13.mp4"
     },
     {
-      "timestamp": "2026-05-13T05:35:55.807409+00:00",
+      "timestamp": "2026-05-13T05:42:25.833385+00:00",
       "date": "2026-05-13",
-      "platform": "facebook",
-      "account_id": "PdMu0",
-      "post_id": "I37eX",
-      "destination": "pahalgam",
-      "format": "score_card",
-      "has_media": true,
-      "media_id": "pahalgam.mp4"
+      "platform": "instagram",
+      "post_id": "c7SaL",
+      "destination": "bhaderwah",
+      "format": "yt_short.listicle",
+      "media_id": "yt_short_listicle_yt_short_listicle_2026-05-13.mp4"
     }
   ],
-  "theme_usage": {
-    "morning_formats": {
-      "score_card": [
-        "2026-05-13"
-      ]
-    },
-    "collections": {
-      "best-stargazing-spots": [
-        "2026-05-13"
-      ]
-    },
-    "destinations": {
-      "chopta": [
-        "2026-05-13"
-      ],
-      "pahalgam": [
-        "2026-05-13"
-      ]
-    },
-    "collection_carousel_dests:best-stargazing-spots": {
-      "chopta": [
-        "2026-05-13"
-      ]
-    }
-  },
+  "theme_usage": {},
   "infographic": {
     "last_topic_idx": 0,
     "last_theme_idx": 0,
@@ -501,8 +477,5 @@
     ]
   },
   "ugc_music_history": [],
-  "last_picked": {
-    "collection": "best-stargazing-spots",
-    "shared_best": "pahalgam"
-  }
+  "last_picked": {}
 }
