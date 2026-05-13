@@ -1,10 +1,7 @@
 {
   "yt_short_formats_used": [],
   "yt_short_music_used": [],
-  "posted_today": {
-    "m8EAd_canva": "2026-05-13",
-    "PdMu0_canva": "2026-05-13"
-  },
+  "posted_today": {},
   "last_sync": "2026-04-30T04:05:30.154914+00:00",
   "posted_destinations": [],
   "posted_formats": {
@@ -434,38 +431,9 @@
       "destination": "ranthambore",
       "format": "kids_intel",
       "has_media": true
-    },
-    {
-      "timestamp": "2026-05-13T07:31:33.575911+00:00",
-      "date": "2026-05-13",
-      "platform": "instagram",
-      "post_id": "ehzTr",
-      "destination": null,
-      "format": "canva_visual",
-      "media_id": "collections/monsoon_magic_01.jpg"
-    },
-    {
-      "timestamp": "2026-05-13T07:31:37.312948+00:00",
-      "date": "2026-05-13",
-      "platform": "facebook",
-      "post_id": "isqMB",
-      "destination": null,
-      "format": "canva_visual",
-      "media_id": "collections/monsoon_magic_01.jpg"
     }
   ],
-  "theme_usage": {
-    "canva_categories": {
-      "collections": [
-        "2026-05-13"
-      ]
-    },
-    "canva_images": {
-      "collections/monsoon_magic_01.jpg": [
-        "2026-05-13"
-      ]
-    }
-  },
+  "theme_usage": {},
   "infographic": {
     "last_topic_idx": 0,
     "last_theme_idx": 0,
