@@ -1,20 +1,17 @@
 {
-  "yt_short_formats_used": [
-    "listicle"
-  ],
-  "yt_short_music_used": [
-    "04_afro_heat"
-  ],
+  "yt_short_formats_used": [],
+  "yt_short_music_used": [],
   "posted_today": {
-    "GAh5p_yt_short": "2026-05-13",
-    "GAh5p_yt_short_count": 1,
-    "m8EAd_yt_short": "2026-05-13",
-    "m8EAd_yt_short_count": 1
+    "m8EAd": "2026-05-13",
+    "m8EAd_evening": "2026-05-13",
+    "m8EAd_evening_story": "2026-05-13",
+    "PdMu0": "2026-05-13",
+    "PdMu0_evening": "2026-05-13"
   },
-  "last_sync": "2026-04-30T04:05:30.154914+00:00",
+  "last_sync": "2026-05-13T12:40:25.219177+00:00",
   "posted_destinations": [
     {
-      "destination_id": "bhaderwah",
+      "destination_id": "kovalam",
       "date": "2026-05-13"
     }
   ],
@@ -32,7 +29,8 @@
       "score_card",
       "collection_spotlight",
       "festival_alert",
-      "kids_intel"
+      "kids_intel",
+      "collection_spotlight"
     ],
     "PdMu0": [
       "monthly_forecast",
@@ -52,7 +50,8 @@
       "reality_check",
       "collection_spotlight",
       "festival_alert",
-      "kids_intel"
+      "kids_intel",
+      "collection_spotlight"
     ]
   },
   "post_log": [
@@ -447,25 +446,60 @@
       "has_media": true
     },
     {
-      "timestamp": "2026-05-13T11:57:23.897357+00:00",
-      "date": "2026-05-13",
-      "platform": "youtube",
-      "post_id": "GmR6p",
-      "destination": "bhaderwah",
-      "format": "yt_short.listicle",
-      "media_id": "yt_short_listicle_yt_short_listicle_2026-05-13.mp4"
-    },
-    {
-      "timestamp": "2026-05-13T11:58:05.352970+00:00",
+      "timestamp": "2026-05-13T12:41:01.572657+00:00",
       "date": "2026-05-13",
       "platform": "instagram",
-      "post_id": "rUqq4",
-      "destination": "bhaderwah",
-      "format": "yt_short.listicle",
-      "media_id": "yt_short_listicle_yt_short_listicle_2026-05-13.mp4"
+      "account_id": "m8EAd",
+      "post_id": "vjAeg",
+      "destination": "kovalam",
+      "format": "collection_spotlight",
+      "has_media": true,
+      "media_id": "kovalam.jpg"
+    },
+    {
+      "timestamp": "2026-05-13T12:41:22.620795+00:00",
+      "date": "2026-05-13",
+      "platform": "instagram_story",
+      "account_id": "m8EAd",
+      "post_id": "c7k1L",
+      "destination": "pahalgam",
+      "format": "blog_promo",
+      "has_media": true,
+      "mode": "evening"
+    },
+    {
+      "timestamp": "2026-05-13T12:41:43.061315+00:00",
+      "date": "2026-05-13",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "QD8hy",
+      "destination": "kovalam",
+      "format": "collection_spotlight",
+      "has_media": true,
+      "media_id": "kovalam.jpg"
     }
   ],
-  "theme_usage": {},
+  "theme_usage": {
+    "collections": {
+      "best-beaches-india": [
+        "2026-05-13"
+      ]
+    },
+    "destinations": {
+      "kovalam": [
+        "2026-05-13"
+      ],
+      "pahalgam": [
+        "2026-05-13"
+      ]
+    },
+    "collection_carousel_dests:best-beaches-india": {},
+    "reels": {
+      "kovalam": [
+        "2026-05-13"
+      ]
+    }
+  },
   "infographic": {
     "last_topic_idx": 0,
     "last_theme_idx": 0,
@@ -477,5 +511,8 @@
     ]
   },
   "ugc_music_history": [],
-  "last_picked": {}
+  "last_picked": {
+    "collection": "best-beaches-india",
+    "shared_best": "pahalgam"
+  }
 }

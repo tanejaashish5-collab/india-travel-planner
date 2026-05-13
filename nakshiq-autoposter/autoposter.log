@@ -1,20 +1,48 @@
-2026-05-13 11:55:22  INFO      ════════════════════════════════════════════════════════════
-2026-05-13 11:55:22  INFO      Nakshiq Autoposter · YT SHORT · 2026-05-13
-2026-05-13 11:55:22  INFO      ════════════════════════════════════════════════════════════
-2026-05-13 11:56:51  INFO      Short rendered: yt_short_listicle_2026-05-13.mp4 (19537 KB, 35.0s, fmt=listicle, music=04_afro_heat)
-2026-05-13 11:56:51  INFO          Requesting upload URL for yt_short_listicle_yt_short_listicle_2026-05-13.mp4 (20,006,333 bytes, video/mp4)
-2026-05-13 11:56:52  INFO          Uploading to R2 (timeout=300s)...
-2026-05-13 11:56:54  INFO          R2 PUT OK. Confirming...
-2026-05-13 11:56:55  INFO          Media ready: Q5jay (20,006,333 bytes · yt_short_listicle_yt_short_listicle_2026-05-13.mp4)
-2026-05-13 11:56:55  INFO      Video uploaded: yt_short_listicle_yt_short_listicle_2026-05-13.mp4
-2026-05-13 11:56:57  INFO      [youtube/@naksh-iq] Publishing YT Short (listicle)...
-2026-05-13 11:57:03  INFO      [youtube/@naksh-iq] Outstand accepted (post_id=GmR6p), waiting for platform confirmation...
-2026-05-13 11:57:23  INFO      [youtube/@naksh-iq] ✅ YT Short published · Outstand=GmR6p · Platform=XoE7Y58llrc
-2026-05-13 11:57:23  INFO      [instagram/nakshiq] Publishing YT Short (listicle)...
-2026-05-13 11:57:27  INFO      [instagram/nakshiq] Outstand accepted (post_id=rUqq4), waiting for platform confirmation...
-2026-05-13 11:58:05  INFO      [instagram/nakshiq] ✅ YT Short published · Outstand=rUqq4 · Platform=18112125475871382
-2026-05-13 11:58:05  WARNING   Could not write post_outcomes entry: 'utf-8' codec can't encode characters in position 147-148: surrogates not allowed
-2026-05-13 11:58:05  INFO      [facebook/Nakshiq] Skipping (YT Shorts post to YouTube + Instagram only).
-2026-05-13 11:58:05  INFO      YT Short posted: format=listicle, music=04_afro_heat
-2026-05-13 11:58:05  INFO      State saved. YT Short run complete.
-2026-05-13 11:58:05  INFO      ════════════════════════════════════════════════════════════
+2026-05-13 12:40:08  INFO      ════════════════════════════════════════════════════════════
+2026-05-13 12:40:08  INFO      Nakshiq Autoposter · EVENING · 2026-05-13 · weekday=2
+2026-05-13 12:40:08  INFO      ════════════════════════════════════════════════════════════
+2026-05-13 12:40:08  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-05-13 12:40:25  INFO      Synced → 20 destinations · 0 traps · 0 articles · 23 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 50 camping · 50 gems · total catalog=505
+2026-05-13 12:40:25  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-05-13 12:40:25  INFO      Formats — IG: collection_spotlight  ·  FB: collection_spotlight  ·  Story: blog_promo
+2026-05-13 12:40:25  INFO      Used destinations (14d): 0
+2026-05-13 12:40:25  INFO      Fingerprint dedup snapshot — 0 dests in 7d · 27 (dest,fmt) pairs in 30d · 0 media in 60d
+2026-05-13 12:40:25  INFO      Collection locked: Best Beaches in India — Beyond Goa (19/20 never featured)
+2026-05-13 12:40:27  INFO      Shared best destination locked: Pahalgam
+2026-05-13 12:40:27  INFO      Carousel locked (collection_spotlight): no valid images found
+2026-05-13 12:40:27  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-05-13 12:40:27  INFO      [instagram/nakshiq] Generating collection_spotlight post...
+2026-05-13 12:40:27  INFO      [instagram/nakshiq] Caption ready (444 chars, dest=kovalam)
+2026-05-13 12:40:27  WARNING   [instagram/nakshiq] No carousel destinations resolved — falling back to single image.
+2026-05-13 12:40:27  INFO      [instagram/nakshiq] Uploading image...
+2026-05-13 12:40:27  INFO          Downloading: https://www.nakshiq.com/images/destinations/kovalam.jpg
+2026-05-13 12:40:27  INFO          Requesting upload URL for kovalam.jpg (284,329 bytes, image/jpeg)
+2026-05-13 12:40:28  INFO          Uploading to R2 (timeout=120s)...
+2026-05-13 12:40:28  INFO          R2 PUT OK. Confirming...
+2026-05-13 12:40:29  INFO          Media ready: X3rpe (284,329 bytes · kovalam.jpg)
+2026-05-13 12:40:29  INFO      [instagram/nakshiq] Publishing feed post...
+2026-05-13 12:40:29  INFO          Caption sanitizer: stripped 1 banned tags: ['#beach']
+2026-05-13 12:41:01  INFO      [instagram/nakshiq] ✅ Published · Outstand=vjAeg · Platform=18410186065181894
+2026-05-13 12:41:01  INFO      [instagram/nakshiq] Uploading Story image (pahalgam.jpg)...
+2026-05-13 12:41:01  INFO          Using branded image: pahalgam_story_bold-cinematic_watermark.jpg (355,772 bytes)
+2026-05-13 12:41:01  INFO          Requesting upload URL for pahalgam.jpg (355,772 bytes, image/jpeg)
+2026-05-13 12:41:02  INFO          Uploading to R2 (timeout=120s)...
+2026-05-13 12:41:02  INFO          R2 PUT OK. Confirming...
+2026-05-13 12:41:03  INFO          Media ready: X3rMe (355,772 bytes · pahalgam.jpg)
+2026-05-13 12:41:03  INFO      [instagram/nakshiq] Publishing Story · format=blog_promo · dest=pahalgam
+2026-05-13 12:41:22  INFO      [instagram/nakshiq] ✅ Story live · ID=17911612008202167
+2026-05-13 12:41:22  INFO      [facebook/Nakshiq] Generating collection_spotlight post...
+2026-05-13 12:41:22  INFO      [facebook/Nakshiq] Caption ready (501 chars, dest=kovalam)
+2026-05-13 12:41:22  WARNING   [facebook/Nakshiq] No carousel destinations resolved — falling back to single image.
+2026-05-13 12:41:22  INFO      [facebook/Nakshiq] Uploading image...
+2026-05-13 12:41:22  INFO          Downloading: https://www.nakshiq.com/images/destinations/kovalam.jpg
+2026-05-13 12:41:22  INFO          Requesting upload URL for kovalam.jpg (284,329 bytes, image/jpeg)
+2026-05-13 12:41:23  INFO          Uploading to R2 (timeout=120s)...
+2026-05-13 12:41:23  INFO          R2 PUT OK. Confirming...
+2026-05-13 12:41:24  INFO          Media ready: 2cJfS (284,329 bytes · kovalam.jpg)
+2026-05-13 12:41:24  INFO      [facebook/Nakshiq] Publishing feed post...
+2026-05-13 12:41:24  INFO          Caption sanitizer: stripped 1 banned tags: ['#beach']
+2026-05-13 12:41:43  WARNING       Platform error: Error publishing post to Facebook: Failed to upload Facebook photo: 500 - Please reduce the amount of data you're asking for, then retry your request
+2026-05-13 12:41:43  WARNING   [facebook/Nakshiq] ⚠️  Queued (ID=QD8hy)
+2026-05-13 12:41:43  INFO      State saved. Run complete.
+2026-05-13 12:41:43  INFO      ════════════════════════════════════════════════════════════
