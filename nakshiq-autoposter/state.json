@@ -1,9 +1,23 @@
 {
-  "yt_short_formats_used": [],
-  "yt_short_music_used": [],
-  "posted_today": {},
-  "last_sync": "2026-05-13T10:11:56.033795+00:00",
-  "posted_destinations": [],
+  "yt_short_formats_used": [
+    "listicle"
+  ],
+  "yt_short_music_used": [
+    "04_afro_heat"
+  ],
+  "posted_today": {
+    "GAh5p_yt_short": "2026-05-13",
+    "GAh5p_yt_short_count": 1,
+    "m8EAd_yt_short": "2026-05-13",
+    "m8EAd_yt_short_count": 1
+  },
+  "last_sync": "2026-04-30T04:05:30.154914+00:00",
+  "posted_destinations": [
+    {
+      "destination_id": "bhaderwah",
+      "date": "2026-05-13"
+    }
+  ],
   "posted_formats": {
     "m8EAd": [
       "monthly_forecast",
@@ -431,6 +445,24 @@
       "destination": "ranthambore",
       "format": "kids_intel",
       "has_media": true
+    },
+    {
+      "timestamp": "2026-05-13T11:57:23.897357+00:00",
+      "date": "2026-05-13",
+      "platform": "youtube",
+      "post_id": "GmR6p",
+      "destination": "bhaderwah",
+      "format": "yt_short.listicle",
+      "media_id": "yt_short_listicle_yt_short_listicle_2026-05-13.mp4"
+    },
+    {
+      "timestamp": "2026-05-13T11:58:05.352970+00:00",
+      "date": "2026-05-13",
+      "platform": "instagram",
+      "post_id": "rUqq4",
+      "destination": "bhaderwah",
+      "format": "yt_short.listicle",
+      "media_id": "yt_short_listicle_yt_short_listicle_2026-05-13.mp4"
     }
   ],
   "theme_usage": {},
