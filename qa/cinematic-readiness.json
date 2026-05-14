@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-05-14T02:20:17.064Z",
+  "generated_at": "2026-05-14T03:43:12.618Z",
   "totals": {
-    "A": 307,
-    "B": 198,
+    "A": 318,
+    "B": 187,
     "C": 0,
     "total": 505
   },
@@ -210,8 +210,8 @@
     },
     {
       "state": "rajasthan",
-      "A": 5,
-      "B": 18,
+      "A": 16,
+      "B": 7,
       "C": 0,
       "total": 23
     },
@@ -268,15 +268,15 @@
   "gap_counts": [
     {
       "field": "eats",
-      "count": 181
+      "count": 173
     },
     {
       "field": "gems",
-      "count": 132
+      "count": 114
     },
     {
       "field": "stays",
-      "count": 53
+      "count": 48
     }
   ],
   "destinations": [
@@ -364,28 +364,6 @@
       ]
     },
     {
-      "id": "ajmer",
-      "name": "Ajmer",
-      "state": "rajasthan",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 0,
-        "eats": 3,
-        "stays": 1
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:0/3",
-        "eats:3/5",
-        "stays:1/3"
-      ]
-    },
-    {
       "id": "alampur",
       "name": "Alampur",
       "state": "telangana",
@@ -426,27 +404,6 @@
       "missing": [
         "gems:0/3",
         "eats:4/5"
-      ]
-    },
-    {
-      "id": "alwar",
-      "name": "Alwar",
-      "state": "rajasthan",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 0,
-        "eats": 2,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:0/3",
-        "eats:2/5"
       ]
     },
     {
@@ -643,8 +600,8 @@
       "counts": {
         "months_scored": 12,
         "months_prose": 12,
-        "gems": 0,
-        "eats": 2,
+        "gems": 3,
+        "eats": 4,
         "stays": 3
       },
       "has": {
@@ -652,8 +609,7 @@
         "why_special": true
       },
       "missing": [
-        "gems:0/3",
-        "eats:2/5"
+        "eats:4/5"
       ]
     },
     {
@@ -803,27 +759,6 @@
       ]
     },
     {
-      "id": "bharatpur",
-      "name": "Bharatpur",
-      "state": "rajasthan",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 1,
-        "eats": 4,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:1/3",
-        "eats:4/5"
-      ]
-    },
-    {
       "id": "bhimbetka",
       "name": "Bhimbetka Rock Shelters",
       "state": "madhya-pradesh",
@@ -888,26 +823,6 @@
       ]
     },
     {
-      "id": "bikaner",
-      "name": "Bikaner",
-      "state": "rajasthan",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 0,
-        "eats": 5,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:0/3"
-      ]
-    },
-    {
       "id": "bomdila",
       "name": "Bomdila",
       "state": "arunachal-pradesh",
@@ -925,27 +840,6 @@
       },
       "missing": [
         "gems:0/3",
-        "eats:3/5"
-      ]
-    },
-    {
-      "id": "bundi",
-      "name": "Bundi",
-      "state": "rajasthan",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 1,
-        "eats": 3,
-        "stays": 3
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:1/3",
         "eats:3/5"
       ]
     },
@@ -1081,8 +975,8 @@
       "counts": {
         "months_scored": 12,
         "months_prose": 12,
-        "gems": 1,
-        "eats": 3,
+        "gems": 3,
+        "eats": 4,
         "stays": 4
       },
       "has": {
@@ -1090,8 +984,7 @@
         "why_special": true
       },
       "missing": [
-        "gems:1/3",
-        "eats:3/5"
+        "eats:4/5"
       ]
     },
     {
@@ -1184,8 +1077,8 @@
       "counts": {
         "months_scored": 12,
         "months_prose": 12,
-        "gems": 0,
-        "eats": 0,
+        "gems": 3,
+        "eats": 3,
         "stays": 4
       },
       "has": {
@@ -1193,8 +1086,7 @@
         "why_special": true
       },
       "missing": [
-        "gems:0/3",
-        "eats:0/5"
+        "eats:3/5"
       ]
     },
     {
@@ -1372,18 +1264,16 @@
       "counts": {
         "months_scored": 12,
         "months_prose": 12,
-        "gems": 0,
-        "eats": 1,
-        "stays": 1
+        "gems": 3,
+        "eats": 4,
+        "stays": 3
       },
       "has": {
         "tagline": true,
         "why_special": true
       },
       "missing": [
-        "gems:0/3",
-        "eats:1/5",
-        "stays:1/3"
+        "eats:4/5"
       ]
     },
     {
@@ -1477,18 +1367,16 @@
       "counts": {
         "months_scored": 12,
         "months_prose": 12,
-        "gems": 0,
-        "eats": 0,
-        "stays": 2
+        "gems": 3,
+        "eats": 3,
+        "stays": 3
       },
       "has": {
         "tagline": true,
         "why_special": true
       },
       "missing": [
-        "gems:0/3",
-        "eats:0/5",
-        "stays:2/3"
+        "eats:3/5"
       ]
     },
     {
@@ -2226,8 +2114,8 @@
       "counts": {
         "months_scored": 12,
         "months_prose": 12,
-        "gems": 0,
-        "eats": 3,
+        "gems": 3,
+        "eats": 4,
         "stays": 3
       },
       "has": {
@@ -2235,8 +2123,7 @@
         "why_special": true
       },
       "missing": [
-        "gems:0/3",
-        "eats:3/5"
+        "eats:4/5"
       ]
     },
     {
@@ -2906,28 +2793,6 @@
       ]
     },
     {
-      "id": "neemrana",
-      "name": "Neemrana",
-      "state": "rajasthan",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 0,
-        "eats": 2,
-        "stays": 1
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:0/3",
-        "eats:2/5",
-        "stays:1/3"
-      ]
-    },
-    {
       "id": "neermahal",
       "name": "Neermahal",
       "state": "tripura",
@@ -3114,28 +2979,6 @@
       "missing": [
         "gems:0/3",
         "eats:0/5"
-      ]
-    },
-    {
-      "id": "osian",
-      "name": "Osian",
-      "state": "rajasthan",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 0,
-        "eats": 2,
-        "stays": 2
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:0/3",
-        "eats:2/5",
-        "stays:2/3"
       ]
     },
     {
@@ -3427,26 +3270,6 @@
       ]
     },
     {
-      "id": "pushkar",
-      "name": "Pushkar",
-      "state": "rajasthan",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 0,
-        "eats": 6,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:0/3"
-      ]
-    },
-    {
       "id": "rajgir",
       "name": "Rajgir",
       "state": "bihar",
@@ -3496,8 +3319,8 @@
       "counts": {
         "months_scored": 12,
         "months_prose": 12,
-        "gems": 0,
-        "eats": 2,
+        "gems": 3,
+        "eats": 4,
         "stays": 4
       },
       "has": {
@@ -3505,8 +3328,7 @@
         "why_special": true
       },
       "missing": [
-        "gems:0/3",
-        "eats:2/5"
+        "eats:4/5"
       ]
     },
     {
@@ -3679,27 +3501,6 @@
       ]
     },
     {
-      "id": "sariska",
-      "name": "Sariska Tiger Reserve",
-      "state": "rajasthan",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 0,
-        "eats": 3,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:0/3",
-        "eats:3/5"
-      ]
-    },
-    {
       "id": "sarnath",
       "name": "Sarnath",
       "state": "uttar-pradesh",
@@ -3717,27 +3518,6 @@
       },
       "missing": [
         "gems:0/3",
-        "eats:4/5"
-      ]
-    },
-    {
-      "id": "shekhawati",
-      "name": "Shekhawati",
-      "state": "rajasthan",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 1,
-        "eats": 4,
-        "stays": 3
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:1/3",
         "eats:4/5"
       ]
     },
@@ -4054,26 +3834,6 @@
       "missing": [
         "gems:0/3",
         "eats:2/5"
-      ]
-    },
-    {
-      "id": "udaipur",
-      "name": "Udaipur",
-      "state": "rajasthan",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 0,
-        "eats": 11,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:0/3"
       ]
     },
     {
@@ -4553,6 +4313,24 @@
       "missing": []
     },
     {
+      "id": "ajmer",
+      "name": "Ajmer",
+      "state": "rajasthan",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 3
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
       "id": "alibaug",
       "name": "Alibaug",
       "state": "maharashtra",
@@ -4599,6 +4377,24 @@
         "gems": 3,
         "eats": 9,
         "stays": 3
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "alwar",
+      "name": "Alwar",
+      "state": "rajasthan",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 4
       },
       "has": {
         "tagline": true,
@@ -5021,6 +4817,24 @@
       "missing": []
     },
     {
+      "id": "bharatpur",
+      "name": "Bharatpur",
+      "state": "rajasthan",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
       "id": "bhavnagar",
       "name": "Bhavnagar",
       "state": "gujarat",
@@ -5147,6 +4961,24 @@
       "missing": []
     },
     {
+      "id": "bikaner",
+      "name": "Bikaner",
+      "state": "rajasthan",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
       "id": "binsar",
       "name": "Binsar",
       "state": "uttarakhand",
@@ -5211,6 +5043,24 @@
         "gems": 3,
         "eats": 5,
         "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "bundi",
+      "name": "Bundi",
+      "state": "rajasthan",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 3
       },
       "has": {
         "tagline": true,
@@ -8117,6 +7967,24 @@
       "missing": []
     },
     {
+      "id": "neemrana",
+      "name": "Neemrana",
+      "state": "rajasthan",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 3
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
       "id": "netarhat",
       "name": "Netarhat",
       "state": "jharkhand",
@@ -8163,6 +8031,24 @@
         "gems": 3,
         "eats": 5,
         "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "osian",
+      "name": "Osian",
+      "state": "rajasthan",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 3
       },
       "has": {
         "tagline": true,
@@ -8603,6 +8489,24 @@
       "missing": []
     },
     {
+      "id": "pushkar",
+      "name": "Pushkar",
+      "state": "rajasthan",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 6,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
       "id": "raghurajpur",
       "name": "Raghurajpur",
       "state": "odisha",
@@ -8927,6 +8831,24 @@
       "missing": []
     },
     {
+      "id": "sariska",
+      "name": "Sariska Tiger Reserve",
+      "state": "rajasthan",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
       "id": "sasangir",
       "name": "Sasan Gir",
       "state": "gujarat",
@@ -8984,6 +8906,24 @@
       "id": "shantiniketan",
       "name": "Shantiniketan",
       "state": "west-bengal",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 3
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "shekhawati",
+      "name": "Shekhawati",
+      "state": "rajasthan",
       "tier": "A",
       "counts": {
         "months_scored": 12,
@@ -9674,6 +9614,24 @@
         "months_prose": 12,
         "gems": 3,
         "eats": 5,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "udaipur",
+      "name": "Udaipur",
+      "state": "rajasthan",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 11,
         "stays": 4
       },
       "has": {

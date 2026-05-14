@@ -4,13 +4,13 @@
 > Update tier counts and tick items off as state-sessions land.
 > Authoritative source: `node scripts/cinematic-readiness.mjs` → `qa/cinematic-readiness.md`.
 
-## Snapshot — 2026-05-14 (post-Odisha widget topup)
+## Snapshot — 2026-05-14 (post-Rajasthan widget topup)
 
-**505 dests · A=307 · B=198 · C=0**
+**505 dests · A=318 · B=187 · C=0**
 
-Last delta: Odisha widget topup — 19 of 22 dests flipped B → A. 3 honest-scarcity B-holds (deomali eats:2/5, nrusinghanath-harishankar eats:4/5, simlipal eats:3/5 — all due to remote/reserve-zone dining scarcity).
+Last delta: Rajasthan widget topup (S33) — 11 of 18 dests flipped B → A. 7 B-holds remaining: 3 genuine honest-scarcity (deeg eats:3/5, gagron-fort eats:3/5, dungarpur eats:4/5) + 4 dupe-collision HS where Agent's eats picks were already in DB from 2026-04-29 sweep (barmer/chittorgarh/kumbhalgarh/ranakpur all eats:4/5).
 
-Prior: Gujarat full backfill (29 dests all C → A). **Corpus C-tier eliminated** as of 2026-05-13. Remaining work is B → A widget topup on 198 dests.
+Prior: Odisha widget topup (S32) 19 of 22 B → A (3 HS B-holds). Gujarat full backfill (S31) 29 dests C → A. **Corpus C-tier eliminated** as of 2026-05-13. Remaining work is B → A widget topup on 187 dests.
 
 Gate ([apps/web/src/lib/cinematic-destinations.ts](../apps/web/src/lib/cinematic-destinations.ts), `cinematic-rollout-2026-05-05` branch) currently allowlists **manali only**. Big bang = expand Set to all 505 (or all A + honest-scarcity B).
 
@@ -92,6 +92,7 @@ Dests: Ahmedabad · Ambaji · Bhavnagar · Champaner-Pavagadh · Dakor · Dholav
 In rough load order — biggest gaps first. Tick state when 0 C + all reachable B → A.
 
 - [x] Odisha (S32: 19 B → A; 3 HS B-holds — deomali, nrusinghanath-harishankar, simlipal — all reserve/remote-zone dining scarcity)
+- [x] Rajasthan (S33: 11 of 18 B → A; 7 B-holds — 3 genuine HS deeg/gagron-fort/dungarpur, 4 dupe-collision HS barmer/chittorgarh/kumbhalgarh/ranakpur)
 - [ ] Telangana (15 B, eats blocker)
 - [ ] Madhya Pradesh (13 B, gems + eats)
 - [ ] Andaman & Nicobar (12 B, eats blocker — many uninhabited islands, will hit HS caps)
@@ -122,6 +123,8 @@ Confirm each remaining B has a `/transparency` justification. Currently identifi
 
 - [ ] Maharashtra: Elephanta Caves · Kashid · Astavinayak Circuit · Morgaon · Siddhatek
 - [ ] Odisha: Deomali (1672m peak no plated dining) · Nrusinghanath-Harishankar (remote pilgrim trust meals only) · Simlipal (tiger reserve closed Jun-Oct, no core dining)
+- [ ] Rajasthan: Deeg (small palace town, no commerce near ASI palace) · Gagron Fort (remote island fort, no on-site dining) · Dungarpur (small Mewar town, only 3 verifiable eateries)
+- [ ] Rajasthan dupe-collision HS (could re-flip with +1 verified eat each): Barmer · Chittorgarh · Kumbhalgarh · Ranakpur
 - [ ] Track new additions as B-tier topup sessions surface them
 
 ---
