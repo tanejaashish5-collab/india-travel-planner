@@ -4,13 +4,15 @@
 > Update tier counts and tick items off as state-sessions land.
 > Authoritative source: `node scripts/cinematic-readiness.mjs` → `qa/cinematic-readiness.md`.
 
-## Snapshot — 2026-05-14 (post-Ladakh widget topup)
+## Snapshot — 2026-05-14 (post-Uttarakhand widget topup)
 
-**505 dests · A=351 · B=154 · C=0**
+**505 dests · A=361 · B=144 · C=0**
 
-Last delta: Ladakh widget topup (S37) — 8 of 10 dests flipped B → A. Only 2 HS B-locks: hanle (4500m village 1000pop, eats 4/5) · umlingla (5798m world's-highest motorable pass, eats 0/5 — hard-lock). Data debt flagged: umlingla DB has 4 pre-existing stays despite the pass having no village — needs separate cleanup audit.
+Last delta: **Uttarakhand widget topup (S38) — 10 of 10 dests flipped B → A — FIRST 100% CONVERSION** in region-sweep. Zero HS B-locks. All expected-HS-risk dests flipped (roopkund Skeleton Lake banned-trek, valley-of-flowers UNESCO NP, tungnath 3680m highest Shiva temple, har-ki-doon Govind NP trek-only) via **base-village-anchor strategy** — use closest verifiable trail-head village as eatery cluster instead of fabricating in-park eateries.
 
-Prior: HP S36 (9 of 11 B→A; 2 HS B-locks chandratal/prashar-lake). J&K S35 (8 of 14 B→A; 6 HS B-locks). MP S34 (8 of 13 B→A; 5 HS B-locks).
+Prior: Ladakh S37 (8 of 10 B→A; 2 HS B-locks hanle/umlingla). HP S36 (9 of 11 B→A; 2 HS B-locks chandratal/prashar-lake). J&K S35 (8 of 14 B→A; 6 HS B-locks). MP S34 (8 of 13 B→A; 5 HS B-locks).
+
+**Region-sweep cumulative: 43/58 dests flipped (74%), 15 HS B-locks.**
 
 Prior: MP widget topup (S34) — 8 of 13 dests flipped B → A. 5 genuine HS B-locks: bandhavgarh/kanha (NP lodge-cluster dining 4/5 eats) · pachmarhi (small hill town 4/5) · bhimbetka (UNESCO no-commerce 2/5) · sanchi (UNESCO village 6k pop 3/5).
 
@@ -103,8 +105,8 @@ In rough load order — biggest gaps first. Tick state when 0 C + all reachable 
 - [x] Jammu & Kashmir (S35: 8 of 14 B → A; 6 genuine HS B-locks — bangus/doodhpathri/gurez/lolab alpine meadows · sinthan-top 3748m pass · tosamaidan 52yr firing range)
 - [x] Himachal Pradesh (S36: 9 of 11 B → A; 2 HS B-locks — chandratal 4250m alpine lake eats 4/5, prashar-lake 2730m temple-lake eats 3/5)
 - [x] Ladakh (S37: 8 of 10 B → A; 2 HS B-locks — hanle 4500m village eats 4/5, umlingla 5798m world's-highest pass eats 0/5 hard-lock)
-- [ ] Uttarakhand (10 B) — NEXT (region-sweep)
-- [ ] Arunachal Pradesh (9 B)
+- [x] Uttarakhand (S38: 10 of 10 B → A — **FIRST 100% CONVERSION**; zero HS B-locks; base-village-anchor strategy flipped all expected-HS-risk dests including roopkund/valley-of-flowers/tungnath/har-ki-doon)
+- [ ] Arunachal Pradesh (9 B) — NEXT (region-sweep)
 - [ ] Assam (8 B, never started widget sweep)
 - [ ] Meghalaya (7 B)
 - [ ] Uttar Pradesh (7 B)
