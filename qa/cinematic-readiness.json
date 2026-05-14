@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-05-14T04:56:35.166Z",
+  "generated_at": "2026-05-14T05:20:22.249Z",
   "totals": {
-    "A": 334,
-    "B": 171,
+    "A": 343,
+    "B": 162,
     "C": 0,
     "total": 505
   },
@@ -98,8 +98,8 @@
     },
     {
       "state": "himachal-pradesh",
-      "A": 23,
-      "B": 11,
+      "A": 32,
+      "B": 2,
       "C": 0,
       "total": 34
     },
@@ -268,11 +268,11 @@
   "gap_counts": [
     {
       "field": "eats",
-      "count": 160
+      "count": 151
     },
     {
       "field": "gems",
-      "count": 87
+      "count": 77
     },
     {
       "field": "stays",
@@ -589,27 +589,6 @@
       ]
     },
     {
-      "id": "barot-valley",
-      "name": "Barot Valley",
-      "state": "himachal-pradesh",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 1,
-        "eats": 4,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:1/3",
-        "eats:4/5"
-      ]
-    },
-    {
       "id": "barren-island",
       "name": "Barren Island",
       "state": "andaman-nicobar",
@@ -786,7 +765,7 @@
         "months_scored": 12,
         "months_prose": 12,
         "gems": 3,
-        "eats": 2,
+        "eats": 4,
         "stays": 4
       },
       "has": {
@@ -794,7 +773,7 @@
         "why_special": true
       },
       "missing": [
-        "eats:2/5"
+        "eats:4/5"
       ]
     },
     {
@@ -1353,27 +1332,6 @@
       ]
     },
     {
-      "id": "great-himalayan-np",
-      "name": "Great Himalayan National Park",
-      "state": "himachal-pradesh",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 0,
-        "eats": 0,
-        "stays": 3
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:0/3",
-        "eats:0/5"
-      ]
-    },
-    {
       "id": "gurez-valley",
       "name": "Gurez Valley",
       "state": "jammu-kashmir",
@@ -1641,27 +1599,6 @@
       ]
     },
     {
-      "id": "kalpa",
-      "name": "Kalpa",
-      "state": "himachal-pradesh",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 1,
-        "eats": 4,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:1/3",
-        "eats:4/5"
-      ]
-    },
-    {
       "id": "kanha",
       "name": "Kanha National Park",
       "state": "madhya-pradesh",
@@ -1806,27 +1743,6 @@
       ]
     },
     {
-      "id": "kinnaur",
-      "name": "Kinnaur",
-      "state": "himachal-pradesh",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 0,
-        "eats": 4,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:0/3",
-        "eats:4/5"
-      ]
-    },
-    {
       "id": "kolanupaka",
       "name": "Kolanupaka",
       "state": "telangana",
@@ -1865,27 +1781,6 @@
       },
       "missing": [
         "eats:4/5"
-      ]
-    },
-    {
-      "id": "kufri",
-      "name": "Kufri",
-      "state": "himachal-pradesh",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 0,
-        "eats": 3,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:0/3",
-        "eats:3/5"
       ]
     },
     {
@@ -2177,27 +2072,6 @@
       "missing": [
         "gems:0/3",
         "eats:0/5"
-      ]
-    },
-    {
-      "id": "manikaran",
-      "name": "Manikaran",
-      "state": "himachal-pradesh",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 0,
-        "eats": 4,
-        "stays": 3
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:0/3",
-        "eats:4/5"
       ]
     },
     {
@@ -2527,27 +2401,6 @@
       "missing": [
         "gems:0/3",
         "eats:0/5"
-      ]
-    },
-    {
-      "id": "nako",
-      "name": "Nako",
-      "state": "himachal-pradesh",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 0,
-        "eats": 3,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:0/3",
-        "eats:3/5"
       ]
     },
     {
@@ -2972,8 +2825,8 @@
       "counts": {
         "months_scored": 12,
         "months_prose": 12,
-        "gems": 0,
-        "eats": 2,
+        "gems": 3,
+        "eats": 3,
         "stays": 3
       },
       "has": {
@@ -2981,8 +2834,7 @@
         "why_special": true
       },
       "missing": [
-        "gems:0/3",
-        "eats:2/5"
+        "eats:3/5"
       ]
     },
     {
@@ -3190,48 +3042,6 @@
       },
       "missing": [
         "eats:3/5"
-      ]
-    },
-    {
-      "id": "sangla",
-      "name": "Sangla Valley",
-      "state": "himachal-pradesh",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 0,
-        "eats": 4,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:0/3",
-        "eats:4/5"
-      ]
-    },
-    {
-      "id": "sarahan",
-      "name": "Sarahan",
-      "state": "himachal-pradesh",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 0,
-        "eats": 4,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:0/3",
-        "eats:4/5"
       ]
     },
     {
@@ -4383,6 +4193,24 @@
         "gems": 3,
         "eats": 5,
         "stays": 3
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "barot-valley",
+      "name": "Barot Valley",
+      "state": "himachal-pradesh",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 4
       },
       "has": {
         "tagline": true,
@@ -5777,6 +5605,24 @@
       "missing": []
     },
     {
+      "id": "great-himalayan-np",
+      "name": "Great Himalayan National Park",
+      "state": "himachal-pradesh",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 3
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
       "id": "gulbarga",
       "name": "Gulbarga (Kalaburagi)",
       "state": "karnataka",
@@ -6191,6 +6037,24 @@
       "missing": []
     },
     {
+      "id": "kalpa",
+      "name": "Kalpa",
+      "state": "himachal-pradesh",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
       "id": "kanatal",
       "name": "Kanatal",
       "state": "uttarakhand",
@@ -6515,6 +6379,24 @@
       "missing": []
     },
     {
+      "id": "kinnaur",
+      "name": "Kinnaur",
+      "state": "himachal-pradesh",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
       "id": "kishtwar",
       "name": "Kishtwar",
       "state": "jammu-kashmir",
@@ -6752,6 +6634,24 @@
       "id": "kozhikode",
       "name": "Kozhikode (Calicut)",
       "state": "kerala",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "kufri",
+      "name": "Kufri",
+      "state": "himachal-pradesh",
       "tier": "A",
       "counts": {
         "months_scored": 12,
@@ -7325,6 +7225,24 @@
       "missing": []
     },
     {
+      "id": "manikaran",
+      "name": "Manikaran",
+      "state": "himachal-pradesh",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 3
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
       "id": "margao",
       "name": "Margao",
       "state": "goa",
@@ -7695,6 +7613,24 @@
         "gems": 5,
         "eats": 26,
         "stays": 3
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "nako",
+      "name": "Nako",
+      "state": "himachal-pradesh",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 4
       },
       "has": {
         "tagline": true,
@@ -8675,9 +8611,45 @@
       "missing": []
     },
     {
+      "id": "sangla",
+      "name": "Sangla Valley",
+      "state": "himachal-pradesh",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
       "id": "saputara",
       "name": "Saputara",
       "state": "gujarat",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "sarahan",
+      "name": "Sarahan",
+      "state": "himachal-pradesh",
       "tier": "A",
       "counts": {
         "months_scored": 12,

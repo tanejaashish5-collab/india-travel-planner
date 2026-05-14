@@ -4,11 +4,13 @@
 > Update tier counts and tick items off as state-sessions land.
 > Authoritative source: `node scripts/cinematic-readiness.mjs` → `qa/cinematic-readiness.md`.
 
-## Snapshot — 2026-05-14 (post-J&K widget topup)
+## Snapshot — 2026-05-14 (post-HP widget topup)
 
-**505 dests · A=334 · B=171 · C=0**
+**505 dests · A=343 · B=162 · C=0**
 
-Last delta: J&K widget topup (S35) — 8 of 14 dests flipped B → A. 6 genuine HS B-locks: bangus-valley/doodhpathri/gurez-valley/lolab-valley alpine meadows · sinthan-top 3748m pass (hard-lock) · tosamaidan 52-year Indian Army firing range (hard-lock).
+Last delta: HP widget topup (S36) — 9 of 11 dests flipped B → A. Only 2 HS B-locks: chandratal (4250m alpine lake, eats 4/5) · prashar-lake (2730m temple-lake, eats 3/5). Hardened brief with concrete example INSERTs + denial list (per S35 feedback) eliminated the schema-fabrication bug — 0 retries needed.
+
+Prior: J&K S35 (8 of 14 B→A; 6 HS B-locks). MP S34 (8 of 13 B→A; 5 HS B-locks).
 
 Prior: MP widget topup (S34) — 8 of 13 dests flipped B → A. 5 genuine HS B-locks: bandhavgarh/kanha (NP lodge-cluster dining 4/5 eats) · pachmarhi (small hill town 4/5) · bhimbetka (UNESCO no-commerce 2/5) · sanchi (UNESCO village 6k pop 3/5).
 
@@ -99,8 +101,8 @@ In rough load order — biggest gaps first. Tick state when 0 C + all reachable 
 - [x] Rajasthan (S33: 11 of 18 B → A; 7 B-holds — 3 genuine HS deeg/gagron-fort/dungarpur, 4 dupe-collision HS barmer/chittorgarh/kumbhalgarh/ranakpur)
 - [x] Madhya Pradesh (S34: 8 of 13 B → A; 5 genuine HS B-locks — bandhavgarh/kanha lodge-cluster NPs · pachmarhi small hill town · bhimbetka UNESCO no-commerce · sanchi UNESCO village 6k pop)
 - [x] Jammu & Kashmir (S35: 8 of 14 B → A; 6 genuine HS B-locks — bangus/doodhpathri/gurez/lolab alpine meadows · sinthan-top 3748m pass · tosamaidan 52yr firing range)
-- [ ] Himachal Pradesh (11 B) — NEXT (region-sweep)
-- [ ] Ladakh (10 B)
+- [x] Himachal Pradesh (S36: 9 of 11 B → A; 2 HS B-locks — chandratal 4250m alpine lake eats 4/5, prashar-lake 2730m temple-lake eats 3/5)
+- [ ] Ladakh (10 B) — NEXT (region-sweep)
 - [ ] Uttarakhand (10 B)
 - [ ] Arunachal Pradesh (9 B)
 - [ ] Assam (8 B, never started widget sweep)
@@ -143,6 +145,7 @@ Confirm each remaining B has a `/transparency` justification. Currently identifi
 - [ ] Rajasthan dupe-collision HS (could re-flip with +1 verified eat each): Barmer · Chittorgarh · Kumbhalgarh · Ranakpur
 - [ ] Madhya Pradesh: Bandhavgarh + Kanha (tiger NPs — lodge-cluster dining, no standalone village eateries) · Pachmarhi (small Satpura hill town) · Bhimbetka (UNESCO rock-shelter site, zero on-site commerce — eats 2/5) · Sanchi (UNESCO Buddhist village ~6,000 pop — only 3 verifiable eateries)
 - [ ] Jammu & Kashmir: Bangus Valley + Doodhpathri + Gurez Valley + Lolab Valley (alpine meadows / LOC border — thin commerce) · Sinthan Top (3748m pass, no village/accommodation — hard-lock) · Tosamaidan (Indian Army artillery firing range 1962-2014, no village despite 2014 civilian reopening — hard-lock)
+- [ ] Himachal Pradesh: Chandratal (4250m alpine lake Spiti, no village; Batal+Losar corridor only 3-4 dhabas — eats 4/5) · Prashar Lake (2730m temple-lake Mandi, thin commerce — eats 3/5)
 - [ ] Track new additions as B-tier topup sessions surface them
 
 ---
