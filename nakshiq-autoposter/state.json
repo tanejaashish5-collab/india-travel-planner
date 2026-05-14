@@ -1,9 +1,17 @@
 {
   "yt_short_formats_used": [],
   "yt_short_music_used": [],
-  "posted_today": {},
-  "last_sync": "2026-05-14T15:35:00.944451+00:00",
-  "posted_destinations": [],
+  "posted_today": {
+    "m8EAd": "2026-05-14",
+    "PdMu0": "2026-05-14"
+  },
+  "last_sync": "2026-05-14T16:34:31.276968+00:00",
+  "posted_destinations": [
+    {
+      "destination_id": "tehri",
+      "date": "2026-05-14"
+    }
+  ],
   "posted_formats": {
     "m8EAd": [
       "monthly_forecast",
@@ -18,7 +26,8 @@
       "score_card",
       "collection_spotlight",
       "festival_alert",
-      "kids_intel"
+      "kids_intel",
+      "weekend_escape"
     ],
     "PdMu0": [
       "monthly_forecast",
@@ -38,7 +47,8 @@
       "reality_check",
       "collection_spotlight",
       "festival_alert",
-      "kids_intel"
+      "kids_intel",
+      "weekend_escape"
     ]
   },
   "post_log": [
@@ -431,9 +441,42 @@
       "destination": "ranthambore",
       "format": "kids_intel",
       "has_media": true
+    },
+    {
+      "timestamp": "2026-05-14T16:35:16.620869+00:00",
+      "date": "2026-05-14",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "3a3wk",
+      "destination": "tehri",
+      "format": "weekend_escape",
+      "has_media": true,
+      "media_id": "tehri.mp4"
+    },
+    {
+      "timestamp": "2026-05-14T16:35:38.389207+00:00",
+      "date": "2026-05-14",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "kbkYh",
+      "destination": "tehri",
+      "format": "weekend_escape",
+      "has_media": true,
+      "media_id": "tehri.mp4"
     }
   ],
-  "theme_usage": {},
+  "theme_usage": {
+    "morning_formats": {
+      "weekend_escape": [
+        "2026-05-14"
+      ]
+    },
+    "destinations": {
+      "tehri": [
+        "2026-05-14"
+      ]
+    }
+  },
   "infographic": {
     "last_topic_idx": 0,
     "last_theme_idx": 0,
@@ -445,5 +488,7 @@
     ]
   },
   "ugc_music_history": [],
-  "last_picked": {}
+  "last_picked": {
+    "shared_best": "pahalgam"
+  }
 }
