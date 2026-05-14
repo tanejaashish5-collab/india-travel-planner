@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-05-13T04:35:12.625Z",
+  "generated_at": "2026-05-14T02:20:17.064Z",
   "totals": {
-    "A": 288,
-    "B": 217,
+    "A": 307,
+    "B": 198,
     "C": 0,
     "total": 505
   },
@@ -189,8 +189,8 @@
     },
     {
       "state": "odisha",
-      "A": 0,
-      "B": 22,
+      "A": 19,
+      "B": 3,
       "C": 0,
       "total": 22
     },
@@ -268,15 +268,15 @@
   "gap_counts": [
     {
       "field": "eats",
-      "count": 200
+      "count": 181
     },
     {
       "field": "gems",
-      "count": 154
+      "count": 132
     },
     {
       "field": "stays",
-      "count": 65
+      "count": 53
     }
   ],
   "destinations": [
@@ -541,15 +541,14 @@
         "months_prose": 12,
         "gems": 3,
         "eats": 4,
-        "stays": 2
+        "stays": 4
       },
       "has": {
         "tagline": true,
         "why_special": true
       },
       "missing": [
-        "eats:4/5",
-        "stays:2/3"
+        "eats:4/5"
       ]
     },
     {
@@ -619,27 +618,6 @@
       "id": "baratang-island",
       "name": "Baratang Island",
       "state": "andaman-nicobar",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 0,
-        "eats": 0,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:0/3",
-        "eats:0/5"
-      ]
-    },
-    {
-      "id": "baripada",
-      "name": "Baripada",
-      "state": "odisha",
       "tier": "B",
       "counts": {
         "months_scored": 12,
@@ -867,28 +845,6 @@
       ]
     },
     {
-      "id": "bhitarkanika",
-      "name": "Bhitarkanika",
-      "state": "odisha",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 1,
-        "eats": 0,
-        "stays": 2
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:1/3",
-        "eats:0/5",
-        "stays:2/3"
-      ]
-    },
-    {
       "id": "bhongir",
       "name": "Bhongir",
       "state": "telangana",
@@ -928,27 +884,6 @@
       },
       "missing": [
         "gems:1/3",
-        "eats:0/5"
-      ]
-    },
-    {
-      "id": "bhubaneswar",
-      "name": "Bhubaneswar",
-      "state": "odisha",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 2,
-        "eats": 0,
-        "stays": 3
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:2/3",
         "eats:0/5"
       ]
     },
@@ -1012,28 +947,6 @@
       "missing": [
         "gems:1/3",
         "eats:3/5"
-      ]
-    },
-    {
-      "id": "chandipur",
-      "name": "Chandipur",
-      "state": "odisha",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 1,
-        "eats": 0,
-        "stays": 0
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:1/3",
-        "eats:0/5",
-        "stays:0/3"
       ]
     },
     {
@@ -1120,28 +1033,6 @@
       ]
     },
     {
-      "id": "chilika-lake",
-      "name": "Chilika Lake",
-      "state": "odisha",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 0,
-        "eats": 0,
-        "stays": 2
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:0/3",
-        "eats:0/5",
-        "stays:2/3"
-      ]
-    },
-    {
       "id": "chinnar",
       "name": "Chinnar Wildlife Sanctuary",
       "state": "kerala",
@@ -1224,27 +1115,6 @@
       ]
     },
     {
-      "id": "cuttack",
-      "name": "Cuttack",
-      "state": "odisha",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 0,
-        "eats": 0,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:0/3",
-        "eats:0/5"
-      ]
-    },
-    {
       "id": "dambuk",
       "name": "Dambuk",
       "state": "arunachal-pradesh",
@@ -1281,27 +1151,6 @@
         "why_special": true
       },
       "missing": [
-        "eats:0/5"
-      ]
-    },
-    {
-      "id": "daringbadi",
-      "name": "Daringbadi",
-      "state": "odisha",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 0,
-        "eats": 0,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:0/3",
         "eats:0/5"
       ]
     },
@@ -1356,8 +1205,8 @@
       "counts": {
         "months_scored": 12,
         "months_prose": 12,
-        "gems": 1,
-        "eats": 0,
+        "gems": 3,
+        "eats": 2,
         "stays": 4
       },
       "has": {
@@ -1365,8 +1214,7 @@
         "why_special": true
       },
       "missing": [
-        "gems:1/3",
-        "eats:0/5"
+        "eats:2/5"
       ]
     },
     {
@@ -1388,49 +1236,6 @@
       "missing": [
         "gems:0/3",
         "eats:4/5"
-      ]
-    },
-    {
-      "id": "dhauli",
-      "name": "Dhauli",
-      "state": "odisha",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 0,
-        "eats": 0,
-        "stays": 0
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:0/3",
-        "eats:0/5",
-        "stays:0/3"
-      ]
-    },
-    {
-      "id": "diamond-triangle",
-      "name": "Buddhist Diamond Triangle",
-      "state": "odisha",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 0,
-        "eats": 0,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:0/3",
-        "eats:0/5"
       ]
     },
     {
@@ -1687,27 +1492,6 @@
       ]
     },
     {
-      "id": "gahirmatha",
-      "name": "Gahirmatha",
-      "state": "odisha",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 0,
-        "eats": 0,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:0/3",
-        "eats:0/5"
-      ]
-    },
-    {
       "id": "gandikota",
       "name": "Gandikota",
       "state": "andhra-pradesh",
@@ -1746,28 +1530,6 @@
       "missing": [
         "gems:0/3",
         "stays:2/3"
-      ]
-    },
-    {
-      "id": "gopalpur-on-sea",
-      "name": "Gopalpur-on-Sea",
-      "state": "odisha",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 2,
-        "eats": 0,
-        "stays": 1
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:2/3",
-        "eats:0/5",
-        "stays:1/3"
       ]
     },
     {
@@ -2396,28 +2158,6 @@
       ]
     },
     {
-      "id": "konark",
-      "name": "Konark",
-      "state": "odisha",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 0,
-        "eats": 0,
-        "stays": 0
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:0/3",
-        "eats:0/5",
-        "stays:0/3"
-      ]
-    },
-    {
       "id": "konaseema",
       "name": "Konaseema",
       "state": "andhra-pradesh",
@@ -2435,28 +2175,6 @@
       },
       "missing": [
         "eats:4/5"
-      ]
-    },
-    {
-      "id": "koraput",
-      "name": "Koraput",
-      "state": "odisha",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 0,
-        "eats": 0,
-        "stays": 0
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:0/3",
-        "eats:0/5",
-        "stays:0/3"
       ]
     },
     {
@@ -3324,8 +3042,8 @@
       "counts": {
         "months_scored": 12,
         "months_prose": 12,
-        "gems": 0,
-        "eats": 0,
+        "gems": 3,
+        "eats": 4,
         "stays": 4
       },
       "has": {
@@ -3333,8 +3051,7 @@
         "why_special": true
       },
       "missing": [
-        "gems:0/3",
-        "eats:0/5"
+        "eats:4/5"
       ]
     },
     {
@@ -3710,27 +3427,6 @@
       ]
     },
     {
-      "id": "puri",
-      "name": "Puri",
-      "state": "odisha",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 2,
-        "eats": 0,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:2/3",
-        "eats:0/5"
-      ]
-    },
-    {
       "id": "pushkar",
       "name": "Pushkar",
       "state": "rajasthan",
@@ -3748,28 +3444,6 @@
       },
       "missing": [
         "gems:0/3"
-      ]
-    },
-    {
-      "id": "raghurajpur",
-      "name": "Raghurajpur",
-      "state": "odisha",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 0,
-        "eats": 0,
-        "stays": 0
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:0/3",
-        "eats:0/5",
-        "stays:0/3"
       ]
     },
     {
@@ -3941,28 +3615,6 @@
       ]
     },
     {
-      "id": "sambalpur",
-      "name": "Sambalpur",
-      "state": "odisha",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 1,
-        "eats": 0,
-        "stays": 0
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:1/3",
-        "eats:0/5",
-        "stays:0/3"
-      ]
-    },
-    {
       "id": "sanchi",
       "name": "Sanchi",
       "state": "madhya-pradesh",
@@ -4069,27 +3721,6 @@
       ]
     },
     {
-      "id": "satkosia",
-      "name": "Satkosia",
-      "state": "odisha",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 0,
-        "eats": 0,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:0/3",
-        "eats:0/5"
-      ]
-    },
-    {
       "id": "shekhawati",
       "name": "Shekhawati",
       "state": "rajasthan",
@@ -4180,18 +3811,16 @@
       "counts": {
         "months_scored": 12,
         "months_prose": 12,
-        "gems": 0,
-        "eats": 0,
-        "stays": 1
+        "gems": 3,
+        "eats": 3,
+        "stays": 3
       },
       "has": {
         "tagline": true,
         "why_special": true
       },
       "missing": [
-        "gems:0/3",
-        "eats:0/5",
-        "stays:1/3"
+        "eats:3/5"
       ]
     },
     {
@@ -4302,28 +3931,6 @@
       ]
     },
     {
-      "id": "talasari",
-      "name": "Talasari",
-      "state": "odisha",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 0,
-        "eats": 0,
-        "stays": 0
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:0/3",
-        "eats:0/5",
-        "stays:0/3"
-      ]
-    },
-    {
       "id": "tamenglong",
       "name": "Tamenglong",
       "state": "manipur",
@@ -4342,27 +3949,6 @@
       "missing": [
         "eats:0/5",
         "stays:1/3"
-      ]
-    },
-    {
-      "id": "taptapani",
-      "name": "Taptapani",
-      "state": "odisha",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 0,
-        "eats": 0,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:0/3",
-        "eats:0/5"
       ]
     },
     {
@@ -5309,6 +4895,24 @@
       "missing": []
     },
     {
+      "id": "baripada",
+      "name": "Baripada",
+      "state": "odisha",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
       "id": "barnawapara",
       "name": "Barnawapara",
       "state": "chhattisgarh",
@@ -5462,6 +5066,42 @@
         "months_prose": 12,
         "gems": 3,
         "eats": 9,
+        "stays": 3
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "bhitarkanika",
+      "name": "Bhitarkanika",
+      "state": "odisha",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 3
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "bhubaneswar",
+      "name": "Bhubaneswar",
+      "state": "odisha",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
         "stays": 3
       },
       "has": {
@@ -5741,6 +5381,24 @@
       "missing": []
     },
     {
+      "id": "chandipur",
+      "name": "Chandipur",
+      "state": "odisha",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 3
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
       "id": "chaukori",
       "name": "Chaukori",
       "state": "uttarakhand",
@@ -5834,6 +5492,24 @@
       "id": "chikmagalur",
       "name": "Chikmagalur",
       "state": "karnataka",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 3
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "chilika-lake",
+      "name": "Chilika Lake",
+      "state": "odisha",
       "tier": "A",
       "counts": {
         "months_scored": 12,
@@ -6011,6 +5687,24 @@
       "missing": []
     },
     {
+      "id": "cuttack",
+      "name": "Cuttack",
+      "state": "odisha",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
       "id": "dakor",
       "name": "Dakor",
       "state": "gujarat",
@@ -6068,6 +5762,24 @@
       "id": "dandeli",
       "name": "Dandeli",
       "state": "karnataka",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "daringbadi",
+      "name": "Daringbadi",
+      "state": "odisha",
       "tier": "A",
       "counts": {
         "months_scored": 12,
@@ -6227,9 +5939,45 @@
       "missing": []
     },
     {
+      "id": "dhauli",
+      "name": "Dhauli",
+      "state": "odisha",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 3
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
       "id": "dholavira",
       "name": "Dholavira",
       "state": "gujarat",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "diamond-triangle",
+      "name": "Buddhist Diamond Triangle",
+      "state": "odisha",
       "tier": "A",
       "counts": {
         "months_scored": 12,
@@ -6309,6 +6057,24 @@
         "gems": 3,
         "eats": 5,
         "stays": 3
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "gahirmatha",
+      "name": "Gahirmatha",
+      "state": "odisha",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 4
       },
       "has": {
         "tagline": true,
@@ -6417,6 +6183,24 @@
         "gems": 3,
         "eats": 5,
         "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "gopalpur-on-sea",
+      "name": "Gopalpur-on-Sea",
+      "state": "odisha",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 3
       },
       "has": {
         "tagline": true,
@@ -6848,7 +6632,7 @@
         "months_prose": 12,
         "gems": 3,
         "eats": 5,
-        "stays": 3
+        "stays": 4
       },
       "has": {
         "tagline": true,
@@ -6938,7 +6722,7 @@
         "months_prose": 12,
         "gems": 3,
         "eats": 5,
-        "stays": 3
+        "stays": 4
       },
       "has": {
         "tagline": true,
@@ -7227,6 +7011,42 @@
         "gems": 3,
         "eats": 5,
         "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "konark",
+      "name": "Konark",
+      "state": "odisha",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 3
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "koraput",
+      "name": "Koraput",
+      "state": "odisha",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 3
       },
       "has": {
         "tagline": true,
@@ -8414,7 +8234,7 @@
         "months_prose": 12,
         "gems": 3,
         "eats": 5,
-        "stays": 3
+        "stays": 4
       },
       "has": {
         "tagline": true,
@@ -8765,6 +8585,42 @@
       "missing": []
     },
     {
+      "id": "puri",
+      "name": "Puri",
+      "state": "odisha",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "raghurajpur",
+      "name": "Raghurajpur",
+      "state": "odisha",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 3
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
       "id": "raigad-fort",
       "name": "Raigad Fort",
       "state": "maharashtra",
@@ -9035,6 +8891,24 @@
       "missing": []
     },
     {
+      "id": "sambalpur",
+      "name": "Sambalpur",
+      "state": "odisha",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 3
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
       "id": "saputara",
       "name": "Saputara",
       "state": "gujarat",
@@ -9074,6 +8948,24 @@
       "id": "satara",
       "name": "Satara",
       "state": "maharashtra",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "satkosia",
+      "name": "Satkosia",
+      "state": "odisha",
       "tier": "A",
       "counts": {
         "months_scored": 12,
@@ -9477,6 +9369,42 @@
         "gems": 3,
         "eats": 5,
         "stays": 3
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "talasari",
+      "name": "Talasari",
+      "state": "odisha",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 3
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "taptapani",
+      "name": "Taptapani",
+      "state": "odisha",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 4
       },
       "has": {
         "tagline": true,

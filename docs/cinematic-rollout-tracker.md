@@ -4,11 +4,13 @@
 > Update tier counts and tick items off as state-sessions land.
 > Authoritative source: `node scripts/cinematic-readiness.mjs` → `qa/cinematic-readiness.md`.
 
-## Snapshot — 2026-05-13 (post-Gujarat backfill)
+## Snapshot — 2026-05-14 (post-Odisha widget topup)
 
-**505 dests · A=288 · B=217 · C=0**
+**505 dests · A=307 · B=198 · C=0**
 
-Last delta: Gujarat full backfill (eateries + stays + gems + prose) — 29 dests all C → A. **Corpus C-tier eliminated.** Remaining work is B → A widget topup only.
+Last delta: Odisha widget topup — 19 of 22 dests flipped B → A. 3 honest-scarcity B-holds (deomali eats:2/5, nrusinghanath-harishankar eats:4/5, simlipal eats:3/5 — all due to remote/reserve-zone dining scarcity).
+
+Prior: Gujarat full backfill (29 dests all C → A). **Corpus C-tier eliminated** as of 2026-05-13. Remaining work is B → A widget topup on 198 dests.
 
 Gate ([apps/web/src/lib/cinematic-destinations.ts](../apps/web/src/lib/cinematic-destinations.ts), `cinematic-rollout-2026-05-05` branch) currently allowlists **manali only**. Big bang = expand Set to all 505 (or all A + honest-scarcity B).
 
@@ -89,7 +91,7 @@ Dests: Ahmedabad · Ambaji · Bhavnagar · Champaner-Pavagadh · Dakor · Dholav
 
 In rough load order — biggest gaps first. Tick state when 0 C + all reachable B → A.
 
-- [ ] Odisha (22 B, eats blocker on most)
+- [x] Odisha (S32: 19 B → A; 3 HS B-holds — deomali, nrusinghanath-harishankar, simlipal — all reserve/remote-zone dining scarcity)
 - [ ] Telangana (15 B, eats blocker)
 - [ ] Madhya Pradesh (13 B, gems + eats)
 - [ ] Andaman & Nicobar (12 B, eats blocker — many uninhabited islands, will hit HS caps)
@@ -119,6 +121,7 @@ In rough load order — biggest gaps first. Tick state when 0 C + all reachable 
 Confirm each remaining B has a `/transparency` justification. Currently identified:
 
 - [ ] Maharashtra: Elephanta Caves · Kashid · Astavinayak Circuit · Morgaon · Siddhatek
+- [ ] Odisha: Deomali (1672m peak no plated dining) · Nrusinghanath-Harishankar (remote pilgrim trust meals only) · Simlipal (tiger reserve closed Jun-Oct, no core dining)
 - [ ] Track new additions as B-tier topup sessions surface them
 
 ---
