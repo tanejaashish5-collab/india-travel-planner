@@ -3,14 +3,12 @@
   "yt_short_music_used": [],
   "posted_today": {
     "m8EAd": "2026-05-14",
-    "m8EAd_evening": "2026-05-14",
-    "PdMu0": "2026-05-14",
-    "PdMu0_evening": "2026-05-14"
+    "PdMu0": "2026-05-14"
   },
-  "last_sync": "2026-05-14T13:22:30.055561+00:00",
+  "last_sync": "2026-05-14T15:14:58.292780+00:00",
   "posted_destinations": [
     {
-      "destination_id": "puri",
+      "destination_id": "achabal",
       "date": "2026-05-14"
     }
   ],
@@ -29,7 +27,7 @@
       "collection_spotlight",
       "festival_alert",
       "kids_intel",
-      "festival_alert"
+      "reality_check"
     ],
     "PdMu0": [
       "monthly_forecast",
@@ -50,7 +48,7 @@
       "collection_spotlight",
       "festival_alert",
       "kids_intel",
-      "festival_alert"
+      "reality_check"
     ]
   },
   "post_log": [
@@ -445,47 +443,36 @@
       "has_media": true
     },
     {
-      "timestamp": "2026-05-14T13:23:13.824910+00:00",
+      "timestamp": "2026-05-14T15:15:44.835779+00:00",
       "date": "2026-05-14",
       "platform": "instagram",
       "account_id": "m8EAd",
-      "post_id": "CvpIF",
-      "destination": "puri",
-      "format": "festival_alert",
+      "post_id": "CvMXF",
+      "destination": "achabal",
+      "format": "reality_check",
       "has_media": true,
-      "media_id": "puri.mp4"
+      "media_id": "achabal.mp4"
     },
     {
-      "timestamp": "2026-05-14T13:23:31.203057+00:00",
+      "timestamp": "2026-05-14T15:16:04.028837+00:00",
       "date": "2026-05-14",
       "platform": "facebook",
       "account_id": "PdMu0",
-      "post_id": "VzcfN",
-      "destination": "puri",
-      "format": "festival_alert",
+      "post_id": "VzLmN",
+      "destination": "achabal",
+      "format": "reality_check",
       "has_media": true,
-      "media_id": "puri.mp4"
+      "media_id": "achabal.mp4"
     }
   ],
   "theme_usage": {
-    "collections": {
-      "dwadasa-jyotirlinga": [
-        "2026-05-14"
-      ]
-    },
-    "festivals": {
-      "243d2208-c7b0-4474-a5d0-ca7d0385aaa4": [
+    "morning_formats": {
+      "reality_check": [
         "2026-05-14"
       ]
     },
     "destinations": {
-      "puri": [
-        "2026-05-14"
-      ]
-    },
-    "collection_carousel_dests:dwadasa-jyotirlinga": {},
-    "reels": {
-      "puri": [
+      "achabal": [
         "2026-05-14"
       ]
     }
@@ -502,7 +489,6 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "collection": "dwadasa-jyotirlinga",
     "shared_best": "pahalgam"
   }
 }

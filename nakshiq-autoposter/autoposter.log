@@ -1,36 +1,35 @@
-2026-05-14 13:22:07  INFO      ════════════════════════════════════════════════════════════
-2026-05-14 13:22:07  INFO      Nakshiq Autoposter · EVENING · 2026-05-14 · weekday=3
-2026-05-14 13:22:07  INFO      ════════════════════════════════════════════════════════════
-2026-05-14 13:22:07  INFO      ── Syncing Nakshiq content ──────────────────────────────
-2026-05-14 13:22:30  INFO      Synced → 20 destinations · 0 traps · 0 articles · 23 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 50 camping · 50 gems · total catalog=505
-2026-05-14 13:22:31  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
-2026-05-14 13:22:31  INFO      Formats — IG: festival_alert  ·  FB: festival_alert  ·  Story: collection_spotlight
-2026-05-14 13:22:31  INFO      Used destinations (14d): 0
-2026-05-14 13:22:31  INFO      Fingerprint dedup snapshot — 0 dests in 7d · 27 (dest,fmt) pairs in 30d · 0 media in 60d
-2026-05-14 13:22:31  INFO      Collection locked: 12 Jyotirlingas — The Complete Shiva Pilgrimage (19/20 never featured)
-2026-05-14 13:22:31  INFO      Festival locked: Snana Yatra (37/37 active festivals never featured)
-2026-05-14 13:22:32  INFO      Shared best destination locked: Pahalgam
-2026-05-14 13:22:32  INFO      Carousel locked (collection_spotlight): no valid images found
-2026-05-14 13:22:32  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
-2026-05-14 13:22:32  INFO      [instagram/nakshiq] Generating festival_alert post...
-2026-05-14 13:22:32  INFO      [instagram/nakshiq] Caption ready (362 chars, dest=puri)
-2026-05-14 13:22:32  INFO      [instagram/nakshiq] Video available — uploading for Reel  (evening mode)...
-2026-05-14 13:22:32  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/puri.mp4?v=20260512
-2026-05-14 13:22:33  INFO          Requesting upload URL for puri.mp4 (12,360,500 bytes, video/mp4)
-2026-05-14 13:22:34  INFO          Uploading to R2 (timeout=300s)...
-2026-05-14 13:22:35  INFO          R2 PUT OK. Confirming...
-2026-05-14 13:22:36  INFO          Media ready: GfPPp (12,360,500 bytes · puri.mp4)
-2026-05-14 13:22:36  INFO      [instagram/nakshiq] Publishing Reel...
-2026-05-14 13:23:13  INFO      [instagram/nakshiq] ✅ Published · Outstand=CvpIF · Platform=18119171215708573
-2026-05-14 13:23:13  INFO      [facebook/Nakshiq] Generating festival_alert post...
-2026-05-14 13:23:13  INFO      [facebook/Nakshiq] Caption ready (362 chars, dest=puri)
-2026-05-14 13:23:14  INFO      [facebook/Nakshiq] Video available — uploading for Reel  (evening mode)...
-2026-05-14 13:23:14  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/puri.mp4?v=20260512
-2026-05-14 13:23:14  INFO          Requesting upload URL for puri.mp4 (12,360,500 bytes, video/mp4)
-2026-05-14 13:23:15  INFO          Uploading to R2 (timeout=300s)...
-2026-05-14 13:23:16  INFO          R2 PUT OK. Confirming...
-2026-05-14 13:23:17  INFO          Media ready: rhSJ4 (12,360,500 bytes · puri.mp4)
-2026-05-14 13:23:17  INFO      [facebook/Nakshiq] Publishing Reel...
-2026-05-14 13:23:31  INFO      [facebook/Nakshiq] ✅ Published · Outstand=VzcfN · Platform=1318068757186946
-2026-05-14 13:23:31  INFO      State saved. Run complete.
-2026-05-14 13:23:31  INFO      ════════════════════════════════════════════════════════════
+2026-05-14 15:14:37  INFO      ════════════════════════════════════════════════════════════
+2026-05-14 15:14:37  INFO      Nakshiq Autoposter · MORNING · 2026-05-14 · weekday=3
+2026-05-14 15:14:37  INFO      ════════════════════════════════════════════════════════════
+2026-05-14 15:14:37  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-05-14 15:14:58  INFO      Synced → 20 destinations · 0 traps · 0 articles · 23 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 50 camping · 50 gems · total catalog=505
+2026-05-14 15:14:59  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-05-14 15:14:59  INFO      Morning format (pillar-biased→verdict): reality_check [0% vs target 40%] (26/26 never featured)
+2026-05-14 15:14:59  INFO      Formats — IG: reality_check  ·  FB: reality_check  ·  Story: score_card
+2026-05-14 15:14:59  INFO      Used destinations (14d): 0
+2026-05-14 15:14:59  INFO      Fingerprint dedup snapshot — 0 dests in 7d · 27 (dest,fmt) pairs in 30d · 0 media in 60d
+2026-05-14 15:14:59  INFO      Reality Check pair locked: Pahalgam ↔ Achabal
+2026-05-14 15:15:00  INFO      Shared best destination locked: Pahalgam
+2026-05-14 15:15:00  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-05-14 15:15:00  INFO      [instagram/nakshiq] Generating reality_check post...
+2026-05-14 15:15:00  INFO      [instagram/nakshiq] Caption ready (668 chars, dest=achabal)
+2026-05-14 15:15:00  INFO      [instagram/nakshiq] Video available — uploading for Reel...
+2026-05-14 15:15:00  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/achabal.mp4?v=20260512
+2026-05-14 15:15:01  INFO          Requesting upload URL for achabal.mp4 (10,887,547 bytes, video/mp4)
+2026-05-14 15:15:02  INFO          Uploading to R2 (timeout=300s)...
+2026-05-14 15:15:03  INFO          R2 PUT OK. Confirming...
+2026-05-14 15:15:04  INFO          Media ready: 1tPOG (10,887,547 bytes · achabal.mp4)
+2026-05-14 15:15:04  INFO      [instagram/nakshiq] Publishing Reel...
+2026-05-14 15:15:44  INFO      [instagram/nakshiq] ✅ Published · Outstand=CvMXF · Platform=18081776726390880
+2026-05-14 15:15:44  INFO      [facebook/Nakshiq] Generating reality_check post...
+2026-05-14 15:15:44  INFO      [facebook/Nakshiq] Caption ready (742 chars, dest=achabal)
+2026-05-14 15:15:45  INFO      [facebook/Nakshiq] Video available — uploading for Reel...
+2026-05-14 15:15:45  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/achabal.mp4?v=20260512
+2026-05-14 15:15:45  INFO          Requesting upload URL for achabal.mp4 (10,887,547 bytes, video/mp4)
+2026-05-14 15:15:46  INFO          Uploading to R2 (timeout=300s)...
+2026-05-14 15:15:47  INFO          R2 PUT OK. Confirming...
+2026-05-14 15:15:49  INFO          Media ready: oEFPc (10,887,547 bytes · achabal.mp4)
+2026-05-14 15:15:49  INFO      [facebook/Nakshiq] Publishing Reel...
+2026-05-14 15:16:04  INFO      [facebook/Nakshiq] ✅ Published · Outstand=VzLmN · Platform=811278668468080
+2026-05-14 15:16:04  INFO      State saved. Run complete.
+2026-05-14 15:16:04  INFO      ════════════════════════════════════════════════════════════
