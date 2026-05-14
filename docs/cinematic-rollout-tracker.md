@@ -4,13 +4,15 @@
 > Update tier counts and tick items off as state-sessions land.
 > Authoritative source: `node scripts/cinematic-readiness.mjs` → `qa/cinematic-readiness.md`.
 
-## Snapshot — 2026-05-14 (post-Rajasthan widget topup)
+## Snapshot — 2026-05-14 (post-MP widget topup)
 
-**505 dests · A=318 · B=187 · C=0**
+**505 dests · A=326 · B=179 · C=0**
 
-Last delta: Rajasthan widget topup (S33) — 11 of 18 dests flipped B → A. 7 B-holds remaining: 3 genuine honest-scarcity (deeg eats:3/5, gagron-fort eats:3/5, dungarpur eats:4/5) + 4 dupe-collision HS where Agent's eats picks were already in DB from 2026-04-29 sweep (barmer/chittorgarh/kumbhalgarh/ranakpur all eats:4/5).
+Last delta: MP widget topup (S34) — 8 of 13 dests flipped B → A. **First session of region-sweep N+NE+Central pivot** (user-chose this path over biggest-first-mixes-regions). 5 genuine HS B-locks: bandhavgarh/kanha (NP lodge-cluster dining 4/5 eats) · pachmarhi (small hill town 4/5) · bhimbetka (UNESCO no-commerce 2/5) · sanchi (UNESCO village 6k pop 3/5).
 
-Prior: Odisha widget topup (S32) 19 of 22 B → A (3 HS B-holds). Gujarat full backfill (S31) 29 dests C → A. **Corpus C-tier eliminated** as of 2026-05-13. Remaining work is B → A widget topup on 187 dests.
+Prior: Rajasthan S33 (11 of 18 B→A; 7 B-holds — 3 HS + 4 dupe-collision). Odisha S32 (19 of 22). Gujarat S31 full backfill (29 C→A). **Corpus C-tier eliminated** as of 2026-05-13. Remaining work is B → A widget topup on 179 dests.
+
+**Region-sweep sequence locked (N+NE+Central before south):** MP ✓ → J&K (14 B) → HP (11 B) → Ladakh (10 B) → UK (10 B) → Arunachal (9 B) → Assam (8 B) → Meghalaya (7 B) → UP (7 B) → Sikkim 4 · Nagaland 4 · Manipur 2 · Tripura 2 · Mizoram 1 · Bihar 3 · Haryana 1 · Punjab 1 (mop-up). ~104 B-tier dests remaining across ~10 sessions. Expected end-state: ~77 A flipped + ~27 honest-scarcity B-locks.
 
 Gate ([apps/web/src/lib/cinematic-destinations.ts](../apps/web/src/lib/cinematic-destinations.ts), `cinematic-rollout-2026-05-05` branch) currently allowlists **manali only**. Big bang = expand Set to all 505 (or all A + honest-scarcity B).
 
@@ -93,8 +95,20 @@ In rough load order — biggest gaps first. Tick state when 0 C + all reachable 
 
 - [x] Odisha (S32: 19 B → A; 3 HS B-holds — deomali, nrusinghanath-harishankar, simlipal — all reserve/remote-zone dining scarcity)
 - [x] Rajasthan (S33: 11 of 18 B → A; 7 B-holds — 3 genuine HS deeg/gagron-fort/dungarpur, 4 dupe-collision HS barmer/chittorgarh/kumbhalgarh/ranakpur)
-- [ ] Telangana (15 B, eats blocker)
-- [ ] Madhya Pradesh (13 B, gems + eats)
+- [x] Madhya Pradesh (S34: 8 of 13 B → A; 5 genuine HS B-locks — bandhavgarh/kanha lodge-cluster NPs · pachmarhi small hill town · bhimbetka UNESCO no-commerce · sanchi UNESCO village 6k pop)
+- [ ] Jammu & Kashmir (14 B) — NEXT (region-sweep)
+- [ ] Himachal Pradesh (11 B)
+- [ ] Ladakh (10 B)
+- [ ] Uttarakhand (10 B)
+- [ ] Arunachal Pradesh (9 B)
+- [ ] Assam (8 B, never started widget sweep)
+- [ ] Meghalaya (7 B)
+- [ ] Uttar Pradesh (7 B)
+- [ ] Telangana (15 B, eats blocker) — DEFERRED (south)
+- [ ] Andaman & Nicobar (12 B, eats blocker — many uninhabited islands, will hit HS caps) — DEFERRED (south/islands)
+- [ ] Kerala (12 B) — DEFERRED (south)
+- [ ] Andhra Pradesh (12 B) — DEFERRED (south)
+- [ ] Tamil Nadu (5 B residual) — DEFERRED
 - [ ] Andaman & Nicobar (12 B, eats blocker — many uninhabited islands, will hit HS caps)
 - [ ] Kerala (12 B, eats top-up)
 - [ ] Andhra Pradesh (12 B, eats top-up after S22)
@@ -125,6 +139,7 @@ Confirm each remaining B has a `/transparency` justification. Currently identifi
 - [ ] Odisha: Deomali (1672m peak no plated dining) · Nrusinghanath-Harishankar (remote pilgrim trust meals only) · Simlipal (tiger reserve closed Jun-Oct, no core dining)
 - [ ] Rajasthan: Deeg (small palace town, no commerce near ASI palace) · Gagron Fort (remote island fort, no on-site dining) · Dungarpur (small Mewar town, only 3 verifiable eateries)
 - [ ] Rajasthan dupe-collision HS (could re-flip with +1 verified eat each): Barmer · Chittorgarh · Kumbhalgarh · Ranakpur
+- [ ] Madhya Pradesh: Bandhavgarh + Kanha (tiger NPs — lodge-cluster dining, no standalone village eateries) · Pachmarhi (small Satpura hill town) · Bhimbetka (UNESCO rock-shelter site, zero on-site commerce — eats 2/5) · Sanchi (UNESCO Buddhist village ~6,000 pop — only 3 verifiable eateries)
 - [ ] Track new additions as B-tier topup sessions surface them
 
 ---

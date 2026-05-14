@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-05-14T03:43:12.618Z",
+  "generated_at": "2026-05-14T04:30:32.031Z",
   "totals": {
-    "A": 318,
-    "B": 187,
+    "A": 326,
+    "B": 179,
     "C": 0,
     "total": 505
   },
@@ -147,8 +147,8 @@
     },
     {
       "state": "madhya-pradesh",
-      "A": 0,
-      "B": 13,
+      "A": 8,
+      "B": 5,
       "C": 0,
       "total": 13
     },
@@ -268,15 +268,15 @@
   "gap_counts": [
     {
       "field": "eats",
-      "count": 173
+      "count": 165
     },
     {
       "field": "gems",
-      "count": 114
+      "count": 101
     },
     {
       "field": "stays",
-      "count": 48
+      "count": 47
     }
   ],
   "destinations": [
@@ -516,8 +516,8 @@
       "counts": {
         "months_scored": 12,
         "months_prose": 12,
-        "gems": 0,
-        "eats": 0,
+        "gems": 3,
+        "eats": 4,
         "stays": 4
       },
       "has": {
@@ -525,8 +525,7 @@
         "why_special": true
       },
       "missing": [
-        "gems:0/3",
-        "eats:0/5"
+        "eats:4/5"
       ]
     },
     {
@@ -766,8 +765,8 @@
       "counts": {
         "months_scored": 12,
         "months_prose": 12,
-        "gems": 0,
-        "eats": 0,
+        "gems": 3,
+        "eats": 2,
         "stays": 4
       },
       "has": {
@@ -775,8 +774,7 @@
         "why_special": true
       },
       "missing": [
-        "gems:0/3",
-        "eats:0/5"
+        "eats:2/5"
       ]
     },
     {
@@ -799,27 +797,6 @@
         "gems:0/3",
         "eats:0/5",
         "stays:0/3"
-      ]
-    },
-    {
-      "id": "bhopal",
-      "name": "Bhopal",
-      "state": "madhya-pradesh",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 1,
-        "eats": 0,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:1/3",
-        "eats:0/5"
       ]
     },
     {
@@ -1525,27 +1502,6 @@
       ]
     },
     {
-      "id": "gwalior",
-      "name": "Gwalior",
-      "state": "madhya-pradesh",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 1,
-        "eats": 0,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:1/3",
-        "eats:0/5"
-      ]
-    },
-    {
       "id": "haflong",
       "name": "Haflong",
       "state": "assam",
@@ -1710,27 +1666,6 @@
       ]
     },
     {
-      "id": "jabalpur",
-      "name": "Jabalpur",
-      "state": "madhya-pradesh",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 0,
-        "eats": 0,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:0/3",
-        "eats:0/5"
-      ]
-    },
-    {
       "id": "jorhat",
       "name": "Jorhat",
       "state": "assam",
@@ -1801,8 +1736,8 @@
       "counts": {
         "months_scored": 12,
         "months_prose": 12,
-        "gems": 0,
-        "eats": 0,
+        "gems": 3,
+        "eats": 4,
         "stays": 4
       },
       "has": {
@@ -1810,8 +1745,7 @@
         "why_special": true
       },
       "missing": [
-        "gems:0/3",
-        "eats:0/5"
+        "eats:4/5"
       ]
     },
     {
@@ -1875,27 +1809,6 @@
         "gems:2/3",
         "eats:3/5",
         "stays:2/3"
-      ]
-    },
-    {
-      "id": "khajuraho",
-      "name": "Khajuraho",
-      "state": "madhya-pradesh",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 1,
-        "eats": 0,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:1/3",
-        "eats:0/5"
       ]
     },
     {
@@ -2362,27 +2275,6 @@
       "id": "manas-national-park",
       "name": "Manas National Park",
       "state": "assam",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 0,
-        "eats": 0,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:0/3",
-        "eats:0/5"
-      ]
-    },
-    {
-      "id": "mandu",
-      "name": "Mandu",
-      "state": "madhya-pradesh",
       "tier": "B",
       "counts": {
         "months_scored": 12,
@@ -2940,48 +2832,6 @@
       ]
     },
     {
-      "id": "omkareshwar",
-      "name": "Omkareshwar",
-      "state": "madhya-pradesh",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 0,
-        "eats": 0,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:0/3",
-        "eats:0/5"
-      ]
-    },
-    {
-      "id": "orchha",
-      "name": "Orchha",
-      "state": "madhya-pradesh",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 0,
-        "eats": 0,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:0/3",
-        "eats:0/5"
-      ]
-    },
-    {
       "id": "pachmarhi",
       "name": "Pachmarhi",
       "state": "madhya-pradesh",
@@ -2989,8 +2839,8 @@
       "counts": {
         "months_scored": 12,
         "months_prose": 12,
-        "gems": 0,
-        "eats": 0,
+        "gems": 3,
+        "eats": 4,
         "stays": 4
       },
       "has": {
@@ -2998,8 +2848,7 @@
         "why_special": true
       },
       "missing": [
-        "gems:0/3",
-        "eats:0/5"
+        "eats:4/5"
       ]
     },
     {
@@ -3444,18 +3293,16 @@
       "counts": {
         "months_scored": 12,
         "months_prose": 12,
-        "gems": 0,
-        "eats": 0,
-        "stays": 0
+        "gems": 3,
+        "eats": 3,
+        "stays": 3
       },
       "has": {
         "tagline": true,
         "why_special": true
       },
       "missing": [
-        "gems:0/3",
-        "eats:0/5",
-        "stays:0/3"
+        "eats:3/5"
       ]
     },
     {
@@ -3834,27 +3681,6 @@
       "missing": [
         "gems:0/3",
         "eats:2/5"
-      ]
-    },
-    {
-      "id": "ujjain",
-      "name": "Ujjain",
-      "state": "madhya-pradesh",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 0,
-        "eats": 0,
-        "stays": 3
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:0/3",
-        "eats:0/5"
       ]
     },
     {
@@ -4899,6 +4725,24 @@
         "gems": 3,
         "eats": 5,
         "stays": 3
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "bhopal",
+      "name": "Bhopal",
+      "state": "madhya-pradesh",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 4
       },
       "has": {
         "tagline": true,
@@ -6131,6 +5975,24 @@
       "missing": []
     },
     {
+      "id": "gwalior",
+      "name": "Gwalior",
+      "state": "madhya-pradesh",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
       "id": "hampi",
       "name": "Hampi",
       "state": "karnataka",
@@ -6248,6 +6110,24 @@
         "months_prose": 12,
         "gems": 3,
         "eats": 8,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "jabalpur",
+      "name": "Jabalpur",
+      "state": "madhya-pradesh",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
         "stays": 4
       },
       "has": {
@@ -6716,6 +6596,24 @@
         "months_prose": 12,
         "gems": 3,
         "eats": 6,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "khajuraho",
+      "name": "Khajuraho",
+      "state": "madhya-pradesh",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
         "stays": 4
       },
       "has": {
@@ -7463,6 +7361,24 @@
       "missing": []
     },
     {
+      "id": "mandu",
+      "name": "Mandu",
+      "state": "madhya-pradesh",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
       "id": "mandvi",
       "name": "Mandvi",
       "state": "gujarat",
@@ -8021,9 +7937,45 @@
       "missing": []
     },
     {
+      "id": "omkareshwar",
+      "name": "Omkareshwar",
+      "state": "madhya-pradesh",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
       "id": "ooty",
       "name": "Ooty (Udagamandalam)",
       "state": "tamil-nadu",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "orchha",
+      "name": "Orchha",
+      "state": "madhya-pradesh",
       "tier": "A",
       "counts": {
         "months_scored": 12,
@@ -9651,6 +9603,24 @@
         "gems": 3,
         "eats": 5,
         "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "ujjain",
+      "name": "Ujjain",
+      "state": "madhya-pradesh",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 3
       },
       "has": {
         "tagline": true,
