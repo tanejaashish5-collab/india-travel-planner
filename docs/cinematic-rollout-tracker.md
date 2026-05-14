@@ -4,21 +4,21 @@
 > Update tier counts and tick items off as state-sessions land.
 > Authoritative source: `node scripts/cinematic-readiness.mjs` → `qa/cinematic-readiness.md`.
 
-## Snapshot — 2026-05-14 (post-Uttarakhand widget topup)
+## Snapshot — 2026-05-14 (post-Arunachal widget topup)
 
-**505 dests · A=361 · B=144 · C=0**
+**505 dests · A=365 · B=140 · C=0**
 
-Last delta: **Uttarakhand widget topup (S38) — 10 of 10 dests flipped B → A — FIRST 100% CONVERSION** in region-sweep. Zero HS B-locks. All expected-HS-risk dests flipped (roopkund Skeleton Lake banned-trek, valley-of-flowers UNESCO NP, tungnath 3680m highest Shiva temple, har-ki-doon Govind NP trek-only) via **base-village-anchor strategy** — use closest verifiable trail-head village as eatery cluster instead of fabricating in-park eateries.
+Last delta: **Arunachal Pradesh widget topup (S39) — 4 of 8 dests flipped B → A**. 4 HS B-locks all pre-flagged remote isolation: anini (Dibang Valley HQ 5k pop, eats 1/5) · bhalukpong (border-village 3k pop, eats 2/5) · mechuka (Indo-China LAC 2.5k pop, eats 2/5) · namdapha (UNESCO tiger reserve no in-park commerce, eats 1/5). **2 new schema gotchas surfaced** — `hidden_gems.coords` is `geography` not `point` + `hidden_gems.id` is text NOT NULL with no default — both now baked into feedback memory for next brief.
 
-Prior: Ladakh S37 (8 of 10 B→A; 2 HS B-locks hanle/umlingla). HP S36 (9 of 11 B→A; 2 HS B-locks chandratal/prashar-lake). J&K S35 (8 of 14 B→A; 6 HS B-locks). MP S34 (8 of 13 B→A; 5 HS B-locks).
+Prior: Uttarakhand S38 (10 of 10 — FIRST 100% conversion; base-village-anchor strategy validated). Ladakh S37 (8 of 10; 2 HS hanle/umlingla). HP S36 (9 of 11; 2 HS chandratal/prashar-lake). J&K S35 (8 of 14; 6 HS). MP S34 (8 of 13; 5 HS).
 
-**Region-sweep cumulative: 43/58 dests flipped (74%), 15 HS B-locks.**
+**Region-sweep cumulative: 47/66 dests flipped (71%), 19 HS B-locks.**
 
 Prior: MP widget topup (S34) — 8 of 13 dests flipped B → A. 5 genuine HS B-locks: bandhavgarh/kanha (NP lodge-cluster dining 4/5 eats) · pachmarhi (small hill town 4/5) · bhimbetka (UNESCO no-commerce 2/5) · sanchi (UNESCO village 6k pop 3/5).
 
 Prior: Rajasthan S33 (11 of 18 B→A; 7 B-holds — 3 HS + 4 dupe-collision). Odisha S32 (19 of 22). Gujarat S31 full backfill (29 C→A). **Corpus C-tier eliminated** as of 2026-05-13. Remaining work is B → A widget topup on 179 dests.
 
-**Region-sweep sequence locked (N+NE+Central before south):** MP ✓ → J&K (14 B) → HP (11 B) → Ladakh (10 B) → UK (10 B) → Arunachal (9 B) → Assam (8 B) → Meghalaya (7 B) → UP (7 B) → Sikkim 4 · Nagaland 4 · Manipur 2 · Tripura 2 · Mizoram 1 · Bihar 3 · Haryana 1 · Punjab 1 (mop-up). ~104 B-tier dests remaining across ~10 sessions. Expected end-state: ~77 A flipped + ~27 honest-scarcity B-locks.
+**Region-sweep sequence locked (N+NE+Central before south):** MP ✓ → J&K ✓ → HP ✓ → Ladakh ✓ → UK ✓ → Arunachal ✓ → Assam (8 B) → Meghalaya (7 B) → UP (7 B) → Sikkim 4 · Nagaland 4 · Manipur 2 · Tripura 2 · Mizoram 1 · Bihar 3 · Haryana 1 · Punjab 1 (mop-up). ~38 B-tier dests remaining across ~7 sessions.
 
 Gate ([apps/web/src/lib/cinematic-destinations.ts](../apps/web/src/lib/cinematic-destinations.ts), `cinematic-rollout-2026-05-05` branch) currently allowlists **manali only**. Big bang = expand Set to all 505 (or all A + honest-scarcity B).
 
@@ -106,8 +106,8 @@ In rough load order — biggest gaps first. Tick state when 0 C + all reachable 
 - [x] Himachal Pradesh (S36: 9 of 11 B → A; 2 HS B-locks — chandratal 4250m alpine lake eats 4/5, prashar-lake 2730m temple-lake eats 3/5)
 - [x] Ladakh (S37: 8 of 10 B → A; 2 HS B-locks — hanle 4500m village eats 4/5, umlingla 5798m world's-highest pass eats 0/5 hard-lock)
 - [x] Uttarakhand (S38: 10 of 10 B → A — **FIRST 100% CONVERSION**; zero HS B-locks; base-village-anchor strategy flipped all expected-HS-risk dests including roopkund/valley-of-flowers/tungnath/har-ki-doon)
-- [ ] Arunachal Pradesh (9 B) — NEXT (region-sweep)
-- [ ] Assam (8 B, never started widget sweep)
+- [x] Arunachal Pradesh (S39: 4 of 8 B → A; 4 genuine HS B-locks — anini Dibang Valley HQ 5k pop eats 1/5 · bhalukpong border-village 3k pop eats 2/5 · mechuka Indo-China LAC 2.5k pop eats 2/5 · namdapha UNESCO tiger reserve no in-park commerce eats 1/5)
+- [ ] Assam (8 B, never started widget sweep) — NEXT (region-sweep)
 - [ ] Meghalaya (7 B)
 - [ ] Uttar Pradesh (7 B)
 - [ ] Telangana (15 B, eats blocker) — DEFERRED (south)

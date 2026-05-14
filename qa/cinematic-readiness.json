@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-05-14T06:41:07.595Z",
+  "generated_at": "2026-05-14T08:35:46.667Z",
   "totals": {
-    "A": 361,
-    "B": 144,
+    "A": 365,
+    "B": 140,
     "C": 0,
     "total": 505
   },
@@ -28,8 +28,8 @@
     },
     {
       "state": "arunachal-pradesh",
-      "A": 2,
-      "B": 9,
+      "A": 6,
+      "B": 5,
       "C": 0,
       "total": 11
     },
@@ -268,11 +268,11 @@
   "gap_counts": [
     {
       "field": "eats",
-      "count": 139
+      "count": 135
     },
     {
       "field": "gems",
-      "count": 59
+      "count": 51
     },
     {
       "field": "stays",
@@ -432,7 +432,7 @@
       "counts": {
         "months_scored": 12,
         "months_prose": 12,
-        "gems": 0,
+        "gems": 3,
         "eats": 1,
         "stays": 4
       },
@@ -441,7 +441,6 @@
         "why_special": true
       },
       "missing": [
-        "gems:0/3",
         "eats:1/5"
       ]
     },
@@ -659,8 +658,8 @@
       "counts": {
         "months_scored": 12,
         "months_prose": 12,
-        "gems": 0,
-        "eats": 0,
+        "gems": 3,
+        "eats": 2,
         "stays": 4
       },
       "has": {
@@ -668,8 +667,7 @@
         "why_special": true
       },
       "missing": [
-        "gems:0/3",
-        "eats:0/5"
+        "eats:2/5"
       ]
     },
     {
@@ -712,27 +710,6 @@
         "gems:0/3",
         "eats:0/5",
         "stays:0/3"
-      ]
-    },
-    {
-      "id": "bomdila",
-      "name": "Bomdila",
-      "state": "arunachal-pradesh",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 0,
-        "eats": 3,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:0/3",
-        "eats:3/5"
       ]
     },
     {
@@ -1021,27 +998,6 @@
         "gems:1/3",
         "eats:0/5",
         "stays:2/3"
-      ]
-    },
-    {
-      "id": "dirang",
-      "name": "Dirang",
-      "state": "arunachal-pradesh",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 0,
-        "eats": 3,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:0/3",
-        "eats:3/5"
       ]
     },
     {
@@ -1997,8 +1953,8 @@
       "counts": {
         "months_scored": 12,
         "months_prose": 12,
-        "gems": 0,
-        "eats": 1,
+        "gems": 3,
+        "eats": 2,
         "stays": 4
       },
       "has": {
@@ -2006,8 +1962,7 @@
         "why_special": true
       },
       "missing": [
-        "gems:0/3",
-        "eats:1/5"
+        "eats:2/5"
       ]
     },
     {
@@ -2201,7 +2156,7 @@
       "counts": {
         "months_scored": 12,
         "months_prose": 12,
-        "gems": 0,
+        "gems": 3,
         "eats": 1,
         "stays": 4
       },
@@ -2210,7 +2165,6 @@
         "why_special": true
       },
       "missing": [
-        "gems:0/3",
         "eats:1/5"
       ]
     },
@@ -2358,27 +2312,6 @@
         "why_special": true
       },
       "missing": [
-        "eats:4/5"
-      ]
-    },
-    {
-      "id": "pasighat",
-      "name": "Pasighat",
-      "state": "arunachal-pradesh",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 0,
-        "eats": 4,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:0/3",
         "eats:4/5"
       ]
     },
@@ -3204,27 +3137,6 @@
       "missing": [
         "gems:1/3",
         "eats:0/5"
-      ]
-    },
-    {
-      "id": "ziro-valley",
-      "name": "Ziro Valley",
-      "state": "arunachal-pradesh",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 1,
-        "eats": 3,
-        "stays": 3
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:1/3",
-        "eats:3/5"
       ]
     },
     {
@@ -4202,6 +4114,24 @@
       "missing": []
     },
     {
+      "id": "bomdila",
+      "name": "Bomdila",
+      "state": "arunachal-pradesh",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
       "id": "borra-caves",
       "name": "Borra Caves",
       "state": "andhra-pradesh",
@@ -5015,6 +4945,24 @@
       "id": "diamond-triangle",
       "name": "Buddhist Diamond Triangle",
       "state": "odisha",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "dirang",
+      "name": "Dirang",
+      "state": "arunachal-pradesh",
       "tier": "A",
       "counts": {
         "months_scored": 12,
@@ -7856,6 +7804,24 @@
       "missing": []
     },
     {
+      "id": "pasighat",
+      "name": "Pasighat",
+      "state": "arunachal-pradesh",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
       "id": "patiala",
       "name": "Patiala",
       "state": "punjab",
@@ -9738,6 +9704,24 @@
         "gems": 3,
         "eats": 6,
         "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "ziro-valley",
+      "name": "Ziro Valley",
+      "state": "arunachal-pradesh",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 3
       },
       "has": {
         "tagline": true,
