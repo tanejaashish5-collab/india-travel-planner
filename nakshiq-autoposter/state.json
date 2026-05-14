@@ -1,18 +1,9 @@
 {
   "yt_short_formats_used": [],
   "yt_short_music_used": [],
-  "posted_today": {
-    "GAh5p_reel": "2026-05-14",
-    "m8EAd_reel": "2026-05-14",
-    "PdMu0_reel": "2026-05-14"
-  },
-  "last_sync": "2026-04-30T04:05:30.154914+00:00",
-  "posted_destinations": [
-    {
-      "destination_id": "kabini",
-      "date": "2026-05-14"
-    }
-  ],
+  "posted_today": {},
+  "last_sync": "2026-05-14T07:26:24.354357+00:00",
+  "posted_destinations": [],
   "posted_formats": {
     "m8EAd": [
       "monthly_forecast",
@@ -440,47 +431,9 @@
       "destination": "ranthambore",
       "format": "kids_intel",
       "has_media": true
-    },
-    {
-      "timestamp": "2026-05-14T02:12:46.671134+00:00",
-      "date": "2026-05-14",
-      "platform": "youtube",
-      "post_id": "a05mb",
-      "destination": "kabini",
-      "format": "reel.seasonal_shift",
-      "media_id": "reel_seasonal_shift_reel_seasonal_shift_kabini.mp4"
-    },
-    {
-      "timestamp": "2026-05-14T02:13:23.444640+00:00",
-      "date": "2026-05-14",
-      "platform": "instagram",
-      "post_id": "vj0kg",
-      "destination": "kabini",
-      "format": "reel.seasonal_shift",
-      "media_id": "reel_seasonal_shift_reel_seasonal_shift_kabini.mp4"
-    },
-    {
-      "timestamp": "2026-05-14T02:13:36.460739+00:00",
-      "date": "2026-05-14",
-      "platform": "facebook",
-      "post_id": "MONXC",
-      "destination": "kabini",
-      "format": "reel.seasonal_shift",
-      "media_id": "reel_seasonal_shift_reel_seasonal_shift_kabini.mp4"
     }
   ],
-  "theme_usage": {
-    "reel_formats": {
-      "seasonal_shift": [
-        "2026-05-14"
-      ]
-    },
-    "reel_seasonal_dests": {
-      "kabini": [
-        "2026-05-14"
-      ]
-    }
-  },
+  "theme_usage": {},
   "infographic": {
     "last_topic_idx": 0,
     "last_theme_idx": 0,
