@@ -1,17 +1,9 @@
 {
   "yt_short_formats_used": [],
   "yt_short_music_used": [],
-  "posted_today": {
-    "m8EAd": "2026-05-14",
-    "PdMu0": "2026-05-14"
-  },
-  "last_sync": "2026-05-14T15:14:58.292780+00:00",
-  "posted_destinations": [
-    {
-      "destination_id": "achabal",
-      "date": "2026-05-14"
-    }
-  ],
+  "posted_today": {},
+  "last_sync": "2026-05-14T15:35:00.944451+00:00",
+  "posted_destinations": [],
   "posted_formats": {
     "m8EAd": [
       "monthly_forecast",
@@ -26,8 +18,7 @@
       "score_card",
       "collection_spotlight",
       "festival_alert",
-      "kids_intel",
-      "reality_check"
+      "kids_intel"
     ],
     "PdMu0": [
       "monthly_forecast",
@@ -47,8 +38,7 @@
       "reality_check",
       "collection_spotlight",
       "festival_alert",
-      "kids_intel",
-      "reality_check"
+      "kids_intel"
     ]
   },
   "post_log": [
@@ -441,42 +431,9 @@
       "destination": "ranthambore",
       "format": "kids_intel",
       "has_media": true
-    },
-    {
-      "timestamp": "2026-05-14T15:15:44.835779+00:00",
-      "date": "2026-05-14",
-      "platform": "instagram",
-      "account_id": "m8EAd",
-      "post_id": "CvMXF",
-      "destination": "achabal",
-      "format": "reality_check",
-      "has_media": true,
-      "media_id": "achabal.mp4"
-    },
-    {
-      "timestamp": "2026-05-14T15:16:04.028837+00:00",
-      "date": "2026-05-14",
-      "platform": "facebook",
-      "account_id": "PdMu0",
-      "post_id": "VzLmN",
-      "destination": "achabal",
-      "format": "reality_check",
-      "has_media": true,
-      "media_id": "achabal.mp4"
     }
   ],
-  "theme_usage": {
-    "morning_formats": {
-      "reality_check": [
-        "2026-05-14"
-      ]
-    },
-    "destinations": {
-      "achabal": [
-        "2026-05-14"
-      ]
-    }
-  },
+  "theme_usage": {},
   "infographic": {
     "last_topic_idx": 0,
     "last_theme_idx": 0,
@@ -488,7 +445,5 @@
     ]
   },
   "ugc_music_history": [],
-  "last_picked": {
-    "shared_best": "pahalgam"
-  }
+  "last_picked": {}
 }

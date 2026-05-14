@@ -1,35 +1,6 @@
-2026-05-14 15:14:37  INFO      ════════════════════════════════════════════════════════════
-2026-05-14 15:14:37  INFO      Nakshiq Autoposter · MORNING · 2026-05-14 · weekday=3
-2026-05-14 15:14:37  INFO      ════════════════════════════════════════════════════════════
-2026-05-14 15:14:37  INFO      ── Syncing Nakshiq content ──────────────────────────────
-2026-05-14 15:14:58  INFO      Synced → 20 destinations · 0 traps · 0 articles · 23 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 50 camping · 50 gems · total catalog=505
-2026-05-14 15:14:59  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
-2026-05-14 15:14:59  INFO      Morning format (pillar-biased→verdict): reality_check [0% vs target 40%] (26/26 never featured)
-2026-05-14 15:14:59  INFO      Formats — IG: reality_check  ·  FB: reality_check  ·  Story: score_card
-2026-05-14 15:14:59  INFO      Used destinations (14d): 0
-2026-05-14 15:14:59  INFO      Fingerprint dedup snapshot — 0 dests in 7d · 27 (dest,fmt) pairs in 30d · 0 media in 60d
-2026-05-14 15:14:59  INFO      Reality Check pair locked: Pahalgam ↔ Achabal
-2026-05-14 15:15:00  INFO      Shared best destination locked: Pahalgam
-2026-05-14 15:15:00  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
-2026-05-14 15:15:00  INFO      [instagram/nakshiq] Generating reality_check post...
-2026-05-14 15:15:00  INFO      [instagram/nakshiq] Caption ready (668 chars, dest=achabal)
-2026-05-14 15:15:00  INFO      [instagram/nakshiq] Video available — uploading for Reel...
-2026-05-14 15:15:00  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/achabal.mp4?v=20260512
-2026-05-14 15:15:01  INFO          Requesting upload URL for achabal.mp4 (10,887,547 bytes, video/mp4)
-2026-05-14 15:15:02  INFO          Uploading to R2 (timeout=300s)...
-2026-05-14 15:15:03  INFO          R2 PUT OK. Confirming...
-2026-05-14 15:15:04  INFO          Media ready: 1tPOG (10,887,547 bytes · achabal.mp4)
-2026-05-14 15:15:04  INFO      [instagram/nakshiq] Publishing Reel...
-2026-05-14 15:15:44  INFO      [instagram/nakshiq] ✅ Published · Outstand=CvMXF · Platform=18081776726390880
-2026-05-14 15:15:44  INFO      [facebook/Nakshiq] Generating reality_check post...
-2026-05-14 15:15:44  INFO      [facebook/Nakshiq] Caption ready (742 chars, dest=achabal)
-2026-05-14 15:15:45  INFO      [facebook/Nakshiq] Video available — uploading for Reel...
-2026-05-14 15:15:45  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/achabal.mp4?v=20260512
-2026-05-14 15:15:45  INFO          Requesting upload URL for achabal.mp4 (10,887,547 bytes, video/mp4)
-2026-05-14 15:15:46  INFO          Uploading to R2 (timeout=300s)...
-2026-05-14 15:15:47  INFO          R2 PUT OK. Confirming...
-2026-05-14 15:15:49  INFO          Media ready: oEFPc (10,887,547 bytes · achabal.mp4)
-2026-05-14 15:15:49  INFO      [facebook/Nakshiq] Publishing Reel...
-2026-05-14 15:16:04  INFO      [facebook/Nakshiq] ✅ Published · Outstand=VzLmN · Platform=811278668468080
-2026-05-14 15:16:04  INFO      State saved. Run complete.
-2026-05-14 15:16:04  INFO      ════════════════════════════════════════════════════════════
+2026-05-14 15:34:42  INFO      ════════════════════════════════════════════════════════════
+2026-05-14 15:34:42  INFO      Nakshiq Autoposter · MORNING · 2026-05-14 · weekday=3
+2026-05-14 15:34:42  INFO      ════════════════════════════════════════════════════════════
+2026-05-14 15:34:42  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-05-14 15:35:00  INFO      Synced → 20 destinations · 0 traps · 0 articles · 23 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 50 camping · 50 gems · total catalog=505
+2026-05-14 15:35:00  INFO      Sync-only mode. Done.
