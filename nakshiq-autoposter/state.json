@@ -1,20 +1,14 @@
 {
-  "yt_short_formats_used": [
-    "mini_guide"
-  ],
-  "yt_short_music_used": [
-    "32_cinematic_pulse"
-  ],
+  "yt_short_formats_used": [],
+  "yt_short_music_used": [],
   "posted_today": {
-    "GAh5p_yt_short": "2026-05-14",
-    "GAh5p_yt_short_count": 1,
-    "m8EAd_yt_short": "2026-05-14",
-    "m8EAd_yt_short_count": 1
+    "m8EAd": "2026-05-14",
+    "PdMu0": "2026-05-14"
   },
-  "last_sync": "2026-04-30T04:05:30.154914+00:00",
+  "last_sync": "2026-05-14T12:17:18.794521+00:00",
   "posted_destinations": [
     {
-      "destination_id": "rudraprayag",
+      "destination_id": "achabal",
       "date": "2026-05-14"
     }
   ],
@@ -32,7 +26,8 @@
       "score_card",
       "collection_spotlight",
       "festival_alert",
-      "kids_intel"
+      "kids_intel",
+      "reality_check"
     ],
     "PdMu0": [
       "monthly_forecast",
@@ -52,7 +47,8 @@
       "reality_check",
       "collection_spotlight",
       "festival_alert",
-      "kids_intel"
+      "kids_intel",
+      "reality_check"
     ]
   },
   "post_log": [
@@ -447,25 +443,40 @@
       "has_media": true
     },
     {
-      "timestamp": "2026-05-14T11:33:14.515652+00:00",
-      "date": "2026-05-14",
-      "platform": "youtube",
-      "post_id": "iseaB",
-      "destination": "rudraprayag",
-      "format": "yt_short.mini_guide",
-      "media_id": "yt_short_mini_guide_yt_short_mini_guide_2026-05-14.mp4"
-    },
-    {
-      "timestamp": "2026-05-14T11:33:50.743842+00:00",
+      "timestamp": "2026-05-14T12:18:19.787019+00:00",
       "date": "2026-05-14",
       "platform": "instagram",
-      "post_id": "z4A3P",
-      "destination": "rudraprayag",
-      "format": "yt_short.mini_guide",
-      "media_id": "yt_short_mini_guide_yt_short_mini_guide_2026-05-14.mp4"
+      "account_id": "m8EAd",
+      "post_id": "EIFpA",
+      "destination": "achabal",
+      "format": "reality_check",
+      "has_media": true,
+      "media_id": "achabal.mp4"
+    },
+    {
+      "timestamp": "2026-05-14T12:18:45.154409+00:00",
+      "date": "2026-05-14",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "WrEZz",
+      "destination": "achabal",
+      "format": "reality_check",
+      "has_media": true,
+      "media_id": "achabal.mp4"
     }
   ],
-  "theme_usage": {},
+  "theme_usage": {
+    "morning_formats": {
+      "reality_check": [
+        "2026-05-14"
+      ]
+    },
+    "destinations": {
+      "achabal": [
+        "2026-05-14"
+      ]
+    }
+  },
   "infographic": {
     "last_topic_idx": 0,
     "last_theme_idx": 0,
@@ -477,5 +488,7 @@
     ]
   },
   "ugc_music_history": [],
-  "last_picked": {}
+  "last_picked": {
+    "shared_best": "pahalgam"
+  }
 }

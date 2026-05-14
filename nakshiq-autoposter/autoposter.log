@@ -1,20 +1,35 @@
-2026-05-14 11:31:50  INFO      ════════════════════════════════════════════════════════════
-2026-05-14 11:31:50  INFO      Nakshiq Autoposter · YT SHORT · 2026-05-14
-2026-05-14 11:31:50  INFO      ════════════════════════════════════════════════════════════
-2026-05-14 11:32:52  INFO      Short rendered: yt_short_mini_guide_2026-05-14.mp4 (13467 KB, 28.0s, fmt=mini_guide, music=32_cinematic_pulse)
-2026-05-14 11:32:52  INFO          Requesting upload URL for yt_short_mini_guide_yt_short_mini_guide_2026-05-14.mp4 (13,790,952 bytes, video/mp4)
-2026-05-14 11:32:52  INFO          Uploading to R2 (timeout=300s)...
-2026-05-14 11:32:53  INFO          R2 PUT OK. Confirming...
-2026-05-14 11:32:54  INFO          Media ready: oEMWc (13,790,952 bytes · yt_short_mini_guide_yt_short_mini_guide_2026-05-14.mp4)
-2026-05-14 11:32:54  INFO      Video uploaded: yt_short_mini_guide_yt_short_mini_guide_2026-05-14.mp4
-2026-05-14 11:32:55  INFO      [youtube/@naksh-iq] Publishing YT Short (mini_guide)...
-2026-05-14 11:32:57  INFO      [youtube/@naksh-iq] Outstand accepted (post_id=iseaB), waiting for platform confirmation...
-2026-05-14 11:33:14  INFO      [youtube/@naksh-iq] ✅ YT Short published · Outstand=iseaB · Platform=vi7YGlrSiH4
-2026-05-14 11:33:14  INFO      [instagram/nakshiq] Publishing YT Short (mini_guide)...
-2026-05-14 11:33:16  INFO      [instagram/nakshiq] Outstand accepted (post_id=z4A3P), waiting for platform confirmation...
-2026-05-14 11:33:50  INFO      [instagram/nakshiq] ✅ YT Short published · Outstand=z4A3P · Platform=17964058110079629
-2026-05-14 11:33:50  WARNING   Could not write post_outcomes entry: 'utf-8' codec can't encode characters in position 131-132: surrogates not allowed
-2026-05-14 11:33:50  INFO      [facebook/Nakshiq] Skipping (YT Shorts post to YouTube + Instagram only).
-2026-05-14 11:33:50  INFO      YT Short posted: format=mini_guide, music=32_cinematic_pulse
-2026-05-14 11:33:50  INFO      State saved. YT Short run complete.
-2026-05-14 11:33:50  INFO      ════════════════════════════════════════════════════════════
+2026-05-14 12:17:00  INFO      ════════════════════════════════════════════════════════════
+2026-05-14 12:17:00  INFO      Nakshiq Autoposter · MORNING · 2026-05-14 · weekday=3
+2026-05-14 12:17:00  INFO      ════════════════════════════════════════════════════════════
+2026-05-14 12:17:00  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-05-14 12:17:18  INFO      Synced → 20 destinations · 0 traps · 0 articles · 23 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 50 camping · 50 gems · total catalog=505
+2026-05-14 12:17:19  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-05-14 12:17:19  INFO      Morning format (pillar-biased→verdict): reality_check [0% vs target 40%] (26/26 never featured)
+2026-05-14 12:17:19  INFO      Formats — IG: reality_check  ·  FB: reality_check  ·  Story: score_card
+2026-05-14 12:17:19  INFO      Used destinations (14d): 0
+2026-05-14 12:17:19  INFO      Fingerprint dedup snapshot — 0 dests in 7d · 27 (dest,fmt) pairs in 30d · 0 media in 60d
+2026-05-14 12:17:19  INFO      Reality Check pair locked: Pahalgam ↔ Achabal
+2026-05-14 12:17:20  INFO      Shared best destination locked: Pahalgam
+2026-05-14 12:17:20  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-05-14 12:17:20  INFO      [instagram/nakshiq] Generating reality_check post...
+2026-05-14 12:17:20  INFO      [instagram/nakshiq] Caption ready (668 chars, dest=achabal)
+2026-05-14 12:17:20  INFO      [instagram/nakshiq] Video available — uploading for Reel...
+2026-05-14 12:17:20  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/achabal.mp4?v=20260512
+2026-05-14 12:17:21  INFO          Requesting upload URL for achabal.mp4 (10,887,547 bytes, video/mp4)
+2026-05-14 12:17:22  INFO          Uploading to R2 (timeout=300s)...
+2026-05-14 12:17:25  INFO          R2 PUT OK. Confirming...
+2026-05-14 12:17:26  INFO          Media ready: vyn1g (10,887,547 bytes · achabal.mp4)
+2026-05-14 12:17:26  INFO      [instagram/nakshiq] Publishing Reel...
+2026-05-14 12:18:19  WARNING   [instagram/nakshiq] ⚠️  Queued (ID=EIFpA)
+2026-05-14 12:18:19  INFO      [facebook/Nakshiq] Generating reality_check post...
+2026-05-14 12:18:19  INFO      [facebook/Nakshiq] Caption ready (742 chars, dest=achabal)
+2026-05-14 12:18:20  INFO      [facebook/Nakshiq] Video available — uploading for Reel...
+2026-05-14 12:18:20  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/achabal.mp4?v=20260512
+2026-05-14 12:18:20  INFO          Requesting upload URL for achabal.mp4 (10,887,547 bytes, video/mp4)
+2026-05-14 12:18:21  INFO          Uploading to R2 (timeout=300s)...
+2026-05-14 12:18:23  INFO          R2 PUT OK. Confirming...
+2026-05-14 12:18:24  INFO          Media ready: Md0UC (10,887,547 bytes · achabal.mp4)
+2026-05-14 12:18:24  INFO      [facebook/Nakshiq] Publishing Reel...
+2026-05-14 12:18:45  INFO      [facebook/Nakshiq] ✅ Published · Outstand=WrEZz · Platform=2002972126958831
+2026-05-14 12:18:45  INFO      State saved. Run complete.
+2026-05-14 12:18:45  INFO      ════════════════════════════════════════════════════════════
