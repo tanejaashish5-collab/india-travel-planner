@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-05-14T05:20:22.249Z",
+  "generated_at": "2026-05-14T05:58:15.887Z",
   "totals": {
-    "A": 343,
-    "B": 162,
+    "A": 351,
+    "B": 154,
     "C": 0,
     "total": 505
   },
@@ -133,8 +133,8 @@
     },
     {
       "state": "ladakh",
-      "A": 4,
-      "B": 10,
+      "A": 12,
+      "B": 2,
       "C": 0,
       "total": 14
     },
@@ -268,15 +268,15 @@
   "gap_counts": [
     {
       "field": "eats",
-      "count": 151
+      "count": 146
     },
     {
       "field": "gems",
-      "count": 77
+      "count": 68
     },
     {
       "field": "stays",
-      "count": 38
+      "count": 37
     }
   ],
   "destinations": [
@@ -361,27 +361,6 @@
         "gems:0/3",
         "eats:0/5",
         "stays:0/3"
-      ]
-    },
-    {
-      "id": "alchi",
-      "name": "Alchi",
-      "state": "ladakh",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 0,
-        "eats": 4,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:0/3",
-        "eats:4/5"
       ]
     },
     {
@@ -1107,26 +1086,6 @@
       ]
     },
     {
-      "id": "drass",
-      "name": "Drass",
-      "state": "ladakh",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 0,
-        "eats": 6,
-        "stays": 3
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:0/3"
-      ]
-    },
-    {
       "id": "dudhsagar-falls",
       "name": "Dudhsagar Falls",
       "state": "goa",
@@ -1441,18 +1400,16 @@
       "counts": {
         "months_scored": 12,
         "months_prose": 12,
-        "gems": 1,
+        "gems": 3,
         "eats": 4,
-        "stays": 1
+        "stays": 3
       },
       "has": {
         "tagline": true,
         "why_special": true
       },
       "missing": [
-        "gems:1/3",
-        "eats:4/5",
-        "stays:1/3"
+        "eats:4/5"
       ]
     },
     {
@@ -1703,26 +1660,6 @@
       ]
     },
     {
-      "id": "khardung-la",
-      "name": "Khardung La",
-      "state": "ladakh",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 3,
-        "eats": 1,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "eats:1/5"
-      ]
-    },
-    {
       "id": "khonoma",
       "name": "Khonoma",
       "state": "nagaland",
@@ -1865,27 +1802,6 @@
       ]
     },
     {
-      "id": "lamayuru",
-      "name": "Lamayuru",
-      "state": "ladakh",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 0,
-        "eats": 4,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:0/3",
-        "eats:4/5"
-      ]
-    },
-    {
       "id": "lambasingi",
       "name": "Lambasingi",
       "state": "andhra-pradesh",
@@ -1943,27 +1859,6 @@
         "why_special": true
       },
       "missing": [
-        "eats:2/5"
-      ]
-    },
-    {
-      "id": "likir",
-      "name": "Likir",
-      "state": "ladakh",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 0,
-        "eats": 2,
-        "stays": 3
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:0/3",
         "eats:2/5"
       ]
     },
@@ -2549,26 +2444,6 @@
       },
       "missing": [
         "eats:4/5"
-      ]
-    },
-    {
-      "id": "nubra-valley",
-      "name": "Nubra Valley",
-      "state": "ladakh",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 0,
-        "eats": 8,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:0/3"
       ]
     },
     {
@@ -3274,27 +3149,6 @@
       ]
     },
     {
-      "id": "tso-moriri",
-      "name": "Tso Moriri",
-      "state": "ladakh",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 1,
-        "eats": 4,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:1/3",
-        "eats:4/5"
-      ]
-    },
-    {
       "id": "tsomgo-lake",
       "name": "Tsomgo Lake",
       "state": "sikkim",
@@ -3365,7 +3219,7 @@
       "counts": {
         "months_scored": 12,
         "months_prose": 12,
-        "gems": 0,
+        "gems": 3,
         "eats": 0,
         "stays": 4
       },
@@ -3374,7 +3228,6 @@
         "why_special": true
       },
       "missing": [
-        "gems:0/3",
         "eats:0/5"
       ]
     },
@@ -3561,26 +3414,6 @@
       "missing": [
         "gems:0/3",
         "eats:4/5"
-      ]
-    },
-    {
-      "id": "zanskar",
-      "name": "Zanskar Valley",
-      "state": "ladakh",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 0,
-        "eats": 6,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "gems:0/3"
       ]
     },
     {
@@ -3797,6 +3630,24 @@
         "gems": 3,
         "eats": 5,
         "stays": 3
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "alchi",
+      "name": "Alchi",
+      "state": "ladakh",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 4
       },
       "has": {
         "tagline": true,
@@ -5389,6 +5240,24 @@
       "missing": []
     },
     {
+      "id": "drass",
+      "name": "Drass",
+      "state": "ladakh",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 6,
+        "stays": 3
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
       "id": "dwarka",
       "name": "Dwarka",
       "state": "gujarat",
@@ -6379,6 +6248,24 @@
       "missing": []
     },
     {
+      "id": "khardung-la",
+      "name": "Khardung La",
+      "state": "ladakh",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
       "id": "kinnaur",
       "name": "Kinnaur",
       "state": "himachal-pradesh",
@@ -6847,6 +6734,24 @@
       "missing": []
     },
     {
+      "id": "lamayuru",
+      "name": "Lamayuru",
+      "state": "ladakh",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
       "id": "landour",
       "name": "Landour",
       "state": "uttarakhand",
@@ -6893,6 +6798,24 @@
         "gems": 3,
         "eats": 5,
         "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "likir",
+      "name": "Likir",
+      "state": "ladakh",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 3
       },
       "has": {
         "tagline": true,
@@ -7757,6 +7680,24 @@
         "gems": 3,
         "eats": 5,
         "stays": 3
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "nubra-valley",
+      "name": "Nubra Valley",
+      "state": "ladakh",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 8,
+        "stays": 4
       },
       "has": {
         "tagline": true,
@@ -9457,6 +9398,24 @@
       "missing": []
     },
     {
+      "id": "tso-moriri",
+      "name": "Tso Moriri",
+      "state": "ladakh",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
       "id": "turtuk",
       "name": "Turtuk",
       "state": "ladakh",
@@ -9791,6 +9750,24 @@
         "gems": 3,
         "eats": 5,
         "stays": 3
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "zanskar",
+      "name": "Zanskar Valley",
+      "state": "ladakh",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 6,
+        "stays": 4
       },
       "has": {
         "tagline": true,
