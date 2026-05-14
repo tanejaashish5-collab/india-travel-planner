@@ -3,12 +3,14 @@
   "yt_short_music_used": [],
   "posted_today": {
     "m8EAd": "2026-05-14",
-    "PdMu0": "2026-05-14"
+    "m8EAd_evening": "2026-05-14",
+    "PdMu0": "2026-05-14",
+    "PdMu0_evening": "2026-05-14"
   },
-  "last_sync": "2026-05-14T12:17:18.794521+00:00",
+  "last_sync": "2026-05-14T12:23:09.000963+00:00",
   "posted_destinations": [
     {
-      "destination_id": "achabal",
+      "destination_id": "sissu",
       "date": "2026-05-14"
     }
   ],
@@ -27,7 +29,7 @@
       "collection_spotlight",
       "festival_alert",
       "kids_intel",
-      "reality_check"
+      "festival_alert"
     ],
     "PdMu0": [
       "monthly_forecast",
@@ -48,7 +50,7 @@
       "collection_spotlight",
       "festival_alert",
       "kids_intel",
-      "reality_check"
+      "festival_alert"
     ]
   },
   "post_log": [
@@ -443,36 +445,60 @@
       "has_media": true
     },
     {
-      "timestamp": "2026-05-14T12:18:19.787019+00:00",
+      "timestamp": "2026-05-14T12:24:07.349398+00:00",
       "date": "2026-05-14",
       "platform": "instagram",
       "account_id": "m8EAd",
-      "post_id": "EIFpA",
-      "destination": "achabal",
-      "format": "reality_check",
+      "post_id": "rUII4",
+      "destination": "sissu",
+      "format": "festival_alert",
       "has_media": true,
-      "media_id": "achabal.mp4"
+      "media_id": "sissu.mp4"
     },
     {
-      "timestamp": "2026-05-14T12:18:45.154409+00:00",
+      "timestamp": "2026-05-14T12:24:29.309221+00:00",
       "date": "2026-05-14",
       "platform": "facebook",
       "account_id": "PdMu0",
-      "post_id": "WrEZz",
-      "destination": "achabal",
-      "format": "reality_check",
+      "post_id": "u8CFE",
+      "destination": "sissu",
+      "format": "festival_alert",
       "has_media": true,
-      "media_id": "achabal.mp4"
+      "media_id": "sissu.mp4"
     }
   ],
   "theme_usage": {
-    "morning_formats": {
-      "reality_check": [
+    "collections": {
+      "budget-under-1000": [
+        "2026-05-14"
+      ]
+    },
+    "festivals": {
+      "0f01501a-f637-4999-9537-bca5db2d6947": [
         "2026-05-14"
       ]
     },
     "destinations": {
-      "achabal": [
+      "bir-billing": [
+        "2026-05-14"
+      ],
+      "chopta": [
+        "2026-05-14"
+      ],
+      "sissu": [
+        "2026-05-14"
+      ]
+    },
+    "collection_carousel_dests:budget-under-1000": {
+      "bir-billing": [
+        "2026-05-14"
+      ],
+      "chopta": [
+        "2026-05-14"
+      ]
+    },
+    "reels": {
+      "sissu": [
         "2026-05-14"
       ]
     }
@@ -489,6 +515,7 @@
   },
   "ugc_music_history": [],
   "last_picked": {
+    "collection": "budget-under-1000",
     "shared_best": "pahalgam"
   }
 }
