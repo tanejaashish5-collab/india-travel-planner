@@ -1,31 +1,20 @@
 {
-  "yt_short_formats_used": [],
-  "yt_short_music_used": [],
+  "yt_short_formats_used": [
+    "mini_guide"
+  ],
+  "yt_short_music_used": [
+    "32_cinematic_pulse"
+  ],
   "posted_today": {
-    "m8EAd": "2026-05-14",
-    "m8EAd_story": "2026-05-14",
-    "PdMu0": "2026-05-14"
+    "GAh5p_yt_short": "2026-05-14",
+    "GAh5p_yt_short_count": 1,
+    "m8EAd_yt_short": "2026-05-14",
+    "m8EAd_yt_short_count": 1
   },
-  "last_sync": "2026-05-14T09:49:54.118063+00:00",
+  "last_sync": "2026-04-30T04:05:30.154914+00:00",
   "posted_destinations": [
     {
-      "destination_id": "kabini",
-      "date": "2026-05-14"
-    },
-    {
-      "destination_id": "pahalgam",
-      "date": "2026-05-14"
-    },
-    {
-      "destination_id": "mudumalai",
-      "date": "2026-05-14"
-    },
-    {
-      "destination_id": "tehri",
-      "date": "2026-05-14"
-    },
-    {
-      "destination_id": "har-ki-doon",
+      "destination_id": "rudraprayag",
       "date": "2026-05-14"
     }
   ],
@@ -43,8 +32,7 @@
       "score_card",
       "collection_spotlight",
       "festival_alert",
-      "kids_intel",
-      "monthly_forecast"
+      "kids_intel"
     ],
     "PdMu0": [
       "monthly_forecast",
@@ -64,8 +52,7 @@
       "reality_check",
       "collection_spotlight",
       "festival_alert",
-      "kids_intel",
-      "monthly_forecast"
+      "kids_intel"
     ]
   },
   "post_log": [
@@ -460,63 +447,25 @@
       "has_media": true
     },
     {
-      "timestamp": "2026-05-14T09:51:17.028637+00:00",
+      "timestamp": "2026-05-14T11:33:14.515652+00:00",
+      "date": "2026-05-14",
+      "platform": "youtube",
+      "post_id": "iseaB",
+      "destination": "rudraprayag",
+      "format": "yt_short.mini_guide",
+      "media_id": "yt_short_mini_guide_yt_short_mini_guide_2026-05-14.mp4"
+    },
+    {
+      "timestamp": "2026-05-14T11:33:50.743842+00:00",
       "date": "2026-05-14",
       "platform": "instagram",
-      "account_id": "m8EAd",
-      "post_id": "FgGSZ",
-      "destination": "kabini",
-      "format": "monthly_forecast",
-      "has_media": true,
-      "media_id": "monthly_forecast_01_title.jpg"
-    },
-    {
-      "timestamp": "2026-05-14T09:51:44.659876+00:00",
-      "date": "2026-05-14",
-      "platform": "instagram_story",
-      "account_id": "m8EAd",
-      "post_id": "OytVv",
-      "destination": "pahalgam",
-      "format": "score_card",
-      "has_media": true,
-      "mode": "morning"
-    },
-    {
-      "timestamp": "2026-05-14T09:52:26.536816+00:00",
-      "date": "2026-05-14",
-      "platform": "facebook",
-      "account_id": "PdMu0",
-      "post_id": "yolPj",
-      "destination": "kabini",
-      "format": "monthly_forecast",
-      "has_media": true,
-      "media_id": "monthly_forecast_01_title.jpg"
+      "post_id": "z4A3P",
+      "destination": "rudraprayag",
+      "format": "yt_short.mini_guide",
+      "media_id": "yt_short_mini_guide_yt_short_mini_guide_2026-05-14.mp4"
     }
   ],
-  "theme_usage": {
-    "morning_formats": {
-      "monthly_forecast": [
-        "2026-05-14"
-      ]
-    },
-    "destinations": {
-      "kabini": [
-        "2026-05-14"
-      ],
-      "pahalgam": [
-        "2026-05-14"
-      ],
-      "mudumalai": [
-        "2026-05-14"
-      ],
-      "tehri": [
-        "2026-05-14"
-      ],
-      "har-ki-doon": [
-        "2026-05-14"
-      ]
-    }
-  },
+  "theme_usage": {},
   "infographic": {
     "last_topic_idx": 0,
     "last_theme_idx": 0,
@@ -528,7 +477,5 @@
     ]
   },
   "ugc_music_history": [],
-  "last_picked": {
-    "shared_best": "pahalgam"
-  }
+  "last_picked": {}
 }
