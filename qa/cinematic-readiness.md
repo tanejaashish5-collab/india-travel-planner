@@ -1,6 +1,6 @@
 # Cinematic readiness — 2026-05-15
 
-Total: **505** dests · A=**375** · B=**130** · C=**0**
+Total: **505** dests · A=**386** · B=**119** · C=**0**
 
 Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 
@@ -8,15 +8,15 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 
 | Field | Dests blocked |
 |---|---:|
-| eats | 128 |
-| stays | 19 |
-| gems | 14 |
+| eats | 116 |
+| stays | 13 |
+| gems | 2 |
 
 ## By state
 
 | State | A | B | C | Total |
 |---|---:|---:|---:|---:|
-| andaman-nicobar | 0 | 12 | 0 | 12 |
+| andaman-nicobar | 11 | 1 | 0 | 12 |
 | andhra-pradesh | 9 | 12 | 0 | 21 |
 | arunachal-pradesh | 6 | 5 | 0 | 11 |
 | assam | 1 | 7 | 0 | 8 |
@@ -73,9 +73,8 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Bandhavgarh National Park (bandhavgarh) | madhya-pradesh | eats:4/5 |
 | Bangaram Island (bangaram) | lakshadweep | eats:2/5 |
 | Bangus Valley (bangus-valley) | jammu-kashmir | eats:1/5 · stays:1/3 |
-| Baratang Island (baratang-island) | andaman-nicobar | gems:0/3 · eats:0/5 |
 | Barmer (barmer) | rajasthan | eats:4/5 |
-| Barren Island (barren-island) | andaman-nicobar | gems:0/3 · eats:0/5 · stays:0/3 |
+| Barren Island (barren-island) | andaman-nicobar | stays:0/3 |
 | Basara (basara) | telangana | eats:3/5 |
 | Belum Caves (belum-caves) | andhra-pradesh | eats:3/5 |
 | Bhalukpong (bhalukpong) | arunachal-pradesh | eats:2/5 |
@@ -83,7 +82,6 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Chandratal (chandratal) | himachal-pradesh | eats:4/5 |
 | Charaideo Moidams (charaideo) | assam | eats:0/5 · stays:0/3 |
 | Cherai Beach (cherai) | kerala | eats:3/5 |
-| Chidiya Tapu (chidiya-tapu) | andaman-nicobar | gems:1/3 · eats:0/5 |
 | Chinnar Wildlife Sanctuary (chinnar) | kerala | eats:2/5 |
 | Chitrakoot (chitrakoot) | uttar-pradesh | eats:4/5 |
 | Chittorgarh (chittorgarh) | rajasthan | eats:4/5 |
@@ -93,7 +91,6 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Dawki (dawki) | meghalaya | eats:3/5 |
 | Deeg (deeg) | rajasthan | eats:3/5 |
 | Deomali (deomali) | odisha | eats:2/5 |
-| Diglipur (diglipur) | andaman-nicobar | gems:1/3 · eats:0/5 · stays:2/3 |
 | Doodhpathri (doodhpathri) | jammu-kashmir | eats:4/5 |
 | Dudhsagar Falls (dudhsagar-falls) | goa | eats:3/5 |
 | Dudhwa National Park (dudhwa-national-park) | uttar-pradesh | eats:4/5 |
@@ -109,7 +106,6 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Haflong (haflong) | assam | eats:2/5 |
 | Halebidu (halebidu) | karnataka | eats:4/5 |
 | Hanle (hanle) | ladakh | eats:4/5 |
-| Havelock Island (Swaraj Dweep) (havelock-island) | andaman-nicobar | gems:0/3 · eats:0/5 |
 | Horsley Hills (horsley-hills) | andhra-pradesh | eats:3/5 |
 | Idukki (idukki) | kerala | eats:3/5 |
 | Jorhat (jorhat) | assam | eats:3/5 |
@@ -126,9 +122,7 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Laknavaram (laknavaram) | telangana | eats:3/5 |
 | Lambasingi (lambasingi) | andhra-pradesh | eats:2/5 |
 | Lepakshi (lepakshi) | andhra-pradesh | eats:3/5 |
-| Little Andaman (little-andaman) | andaman-nicobar | gems:1/3 · eats:0/5 · stays:0/3 |
 | Lolab Valley (lolab-valley) | jammu-kashmir | eats:3/5 |
-| Long Island (long-island-andaman) | andaman-nicobar | gems:1/3 · eats:0/5 · stays:1/3 |
 | Majuli (majuli) | assam | eats:3/5 |
 | Manas National Park (manas-national-park) | assam | eats:0/5 |
 | Marari Beach (marari) | kerala | eats:3/5 |
@@ -146,10 +140,8 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Morni Hills (morni-hills) | haryana | eats:3/5 |
 | Namdapha (namdapha) | arunachal-pradesh | eats:1/5 |
 | Neermahal (neermahal) | tripura | gems:2/3 · eats:2/5 |
-| Neil Island (Shaheed Dweep) (neil-island) | andaman-nicobar | gems:0/3 · eats:0/5 · stays:1/3 |
 | Nelliyampathy (nelliyampathy) | kerala | eats:3/5 |
 | Nongriat (nongriat) | meghalaya | eats:0/5 · stays:2/3 |
-| North Bay Island (north-bay-island) | andaman-nicobar | gems:0/3 · eats:0/5 |
 | Nrusinghanath & Harishankar (nrusinghanath-harishankar) | odisha | eats:4/5 |
 | Pachmarhi (pachmarhi) | madhya-pradesh | eats:4/5 |
 | Pattadakal (pattadakal) | karnataka | eats:3/5 |
@@ -161,14 +153,11 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Point Calimere Wildlife Sanctuary (point-calimere) | tamil-nadu | eats:3/5 |
 | Ponmudi (ponmudi) | kerala | eats:3/5 |
 | Poovar (poovar) | kerala | eats:3/5 |
-| Port Blair (Sri Vijaya Puram) (port-blair) | andaman-nicobar | gems:0/3 · eats:0/5 · stays:2/3 |
 | Prashar Lake (prashar-lake) | himachal-pradesh | eats:3/5 |
 | Pulicat Lake (pulicat-lake) | andhra-pradesh | eats:3/5 |
 | Rajgir (rajgir) | bihar | eats:4/5 |
 | Ramappa Temple (ramappa-temple) | telangana | eats:3/5 |
 | Ranakpur Jain Temple (ranakpur) | rajasthan | eats:4/5 |
-| Rangat (rangat) | andaman-nicobar | gems:1/3 · eats:0/5 · stays:0/3 |
-| Ross Island (Netaji Subhas Chandra Bose Dweep) (ross-island) | andaman-nicobar | gems:0/3 · eats:0/5 |
 | Sabarimala (sabarimala) | kerala | eats:4/5 |
 | Sanchi (sanchi) | madhya-pradesh | eats:3/5 |
 | Sarnath (sarnath) | uttar-pradesh | eats:4/5 |
@@ -229,6 +218,7 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Badami (badami) | karnataka |
 | Badrinath (badrinath) | uttarakhand |
 | Bandipur National Park (bandipur) | karnataka |
+| Baratang Island (baratang-island) | andaman-nicobar |
 | Baripada (baripada) | odisha |
 | Barnawapara (barnawapara) | chhattisgarh |
 | Barot Valley (barot-valley) | himachal-pradesh |
@@ -271,6 +261,7 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Cherrapunji (Sohra) (cherrapunji) | meghalaya |
 | Chettinad (chettinad) | tamil-nadu |
 | Chidambaram (chidambaram) | tamil-nadu |
+| Chidiya Tapu (chidiya-tapu) | andaman-nicobar |
 | Chikmagalur (chikmagalur) | karnataka |
 | Chilika Lake (chilika-lake) | odisha |
 | Chitkul (chitkul) | himachal-pradesh |
@@ -300,6 +291,7 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Dhauli (dhauli) | odisha |
 | Dholavira (dholavira) | gujarat |
 | Buddhist Diamond Triangle (diamond-triangle) | odisha |
+| Diglipur (diglipur) | andaman-nicobar |
 | Dirang (dirang) | arunachal-pradesh |
 | Diu (diu) | daman-diu |
 | Drass (drass) | ladakh |
@@ -327,6 +319,7 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Har Ki Doon (har-ki-doon) | uttarakhand |
 | Haridwar (haridwar) | uttarakhand |
 | Harihareshwar (harihareshwar) | maharashtra |
+| Havelock Island (Swaraj Dweep) (havelock-island) | andaman-nicobar |
 | Hemkund Sahib (hemkund-sahib) | uttarakhand |
 | Hogenakkal Falls (hogenakkal) | tamil-nadu |
 | Hyderabad (hyderabad) | telangana |
@@ -397,9 +390,11 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Leh (leh) | ladakh |
 | Lenyadri (lenyadri) | maharashtra |
 | Likir (likir) | ladakh |
+| Little Andaman (little-andaman) | andaman-nicobar |
 | Loktak Lake (loktak-lake) | manipur |
 | Lonar Crater (lonar-crater) | maharashtra |
 | Lonavala (lonavala) | maharashtra |
+| Long Island (long-island-andaman) | andaman-nicobar |
 | Lothal (lothal) | gujarat |
 | Lucknow (lucknow) | uttar-pradesh |
 | Lunglei (lunglei) | mizoram |
@@ -447,7 +442,9 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Nandi Hills (nandi-hills) | karnataka |
 | Nashik (nashik) | maharashtra |
 | Neemrana (neemrana) | rajasthan |
+| Neil Island (Shaheed Dweep) (neil-island) | andaman-nicobar |
 | Netarhat (netarhat) | jharkhand |
+| North Bay Island (north-bay-island) | andaman-nicobar |
 | Nubra Valley (nubra-valley) | ladakh |
 | Old Goa (old-goa) | goa |
 | Omkareshwar (omkareshwar) | madhya-pradesh |
@@ -475,6 +472,7 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Spice Plantations (Ponda) (ponda-spice) | goa |
 | Pondicherry (Puducherry) (pondicherry) | tamil-nadu |
 | Porbandar (porbandar) | gujarat |
+| Port Blair (Sri Vijaya Puram) (port-blair) | andaman-nicobar |
 | Prayagraj (prayagraj) | uttar-pradesh |
 | Puducherry (Pondicherry) (puducherry) | puducherry |
 | Pune (pune) | maharashtra |
@@ -486,6 +484,7 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Rajkot (rajkot) | gujarat |
 | Rameswaram (rameswaram) | tamil-nadu |
 | Ranchi (ranchi) | jharkhand |
+| Rangat (rangat) | andaman-nicobar |
 | Rani ki Vav (Patan) (rani-ki-vav) | gujarat |
 | Ranikhet (ranikhet) | uttarakhand |
 | Ranjangaon (ranjangaon) | maharashtra |
@@ -496,6 +495,7 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Reis Magos Fort (reis-magos) | goa |
 | Rishikesh (rishikesh) | uttarakhand |
 | Roopkund (roopkund) | uttarakhand |
+| Ross Island (Netaji Subhas Chandra Bose Dweep) (ross-island) | andaman-nicobar |
 | Rudraprayag (rudraprayag) | uttarakhand |
 | Sakleshpur (sakleshpur) | karnataka |
 | Sambalpur (sambalpur) | odisha |
