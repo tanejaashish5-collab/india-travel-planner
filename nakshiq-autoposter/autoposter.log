@@ -1,22 +1,35 @@
-2026-05-15 06:47:57  INFO      ════════════════════════════════════════════════════════════
-2026-05-15 06:47:57  INFO      Nakshiq Autoposter · POMELLI VISUAL · 2026-05-15 · weekday=4
-2026-05-15 06:47:57  INFO      ════════════════════════════════════════════════════════════
-2026-05-15 06:47:57  WARNING   Image not found, skipping: pomelli_may_gokarna_s_4_hidden_riptides_2.png
-2026-05-15 06:47:57  WARNING   Image not found, skipping: pomelli_may_meghalaya_s_monsoon_verified_4.png
-2026-05-15 06:47:57  WARNING   Image not found, skipping: pomelli_may_oxygen_gaps_at_17_582_feet_1.png
-2026-05-15 06:47:57  WARNING   Image not found, skipping: pomelli_may_spiti_s_400km_of_dead_spots_2.png
-2026-05-15 06:47:57  INFO      Library: 753 images across 317 campaigns
-2026-05-15 06:47:57  INFO      Selected: [may_6_people_per_square_meter] May 6 People Per Square Meter → pomelli_may_6_people_per_square_meter_1.png
-2026-05-15 06:47:57  INFO          Requesting upload URL for pomelli_may_6_people_per_square_meter_pomelli_may_6_people_per_square_meter_1.png (1,889,652 bytes, image/png)
-2026-05-15 06:47:58  INFO          Uploading to R2 (timeout=120s)...
-2026-05-15 06:48:00  INFO          R2 PUT OK. Confirming...
-2026-05-15 06:48:01  INFO          Media ready: OQyfv (1,889,652 bytes · pomelli_may_6_people_per_square_meter_pomelli_may_6_people_per_square_meter_1.png)
-2026-05-15 06:48:01  INFO      Image uploaded: pomelli_may_6_people_per_square_meter_pomelli_may_6_people_per_square_meter_1.png (1845 KB)
-2026-05-15 06:48:02  INFO      [youtube/@naksh-iq] Skipping pomelli visual (YouTube only accepts video).
-2026-05-15 06:48:02  INFO      [instagram/nakshiq] Publishing pomelli visual: May 6 People Per Square Meter...
-2026-05-15 06:48:05  INFO      [instagram/nakshiq] Pomelli visual posted successfully!
-2026-05-15 06:48:05  INFO      [facebook/Nakshiq] Publishing pomelli visual: May 6 People Per Square Meter...
-2026-05-15 06:48:08  INFO      [facebook/Nakshiq] Pomelli visual posted successfully!
-2026-05-15 06:48:08  INFO      Theme tracker updated: campaign=may_6_people_per_square_meter / img=pomelli_may_6_people_per_square_meter_1.png
-2026-05-15 06:48:08  INFO      State saved. Pomelli Visual run complete.
-2026-05-15 06:48:08  INFO      ════════════════════════════════════════════════════════════
+2026-05-15 07:00:27  INFO      ════════════════════════════════════════════════════════════
+2026-05-15 07:00:27  INFO      Nakshiq Autoposter · MORNING · 2026-05-15 · weekday=4
+2026-05-15 07:00:27  INFO      ════════════════════════════════════════════════════════════
+2026-05-15 07:00:27  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-05-15 07:00:45  INFO      Synced → 20 destinations · 0 traps · 0 articles · 23 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 50 camping · 50 gems · total catalog=505
+2026-05-15 07:00:46  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-05-15 07:00:46  INFO      Festivals filtered (past/post-window): Kedarnath Opening, Summer Festival, Badri-Kedar Festival, Chaukori Tea Festival, Chail Cricket Festival, Guptkashi Vishwanath Temple Festival, Tosamaidan Wildflower Season, Badrinath Temple Opening (Kapaat Kholna) (+9 more)
+2026-05-15 07:00:46  INFO      Morning format (pillar-biased→verdict): score_card [0% vs target 40%] (26/26 never featured)
+2026-05-15 07:00:46  INFO      Formats — IG: score_card  ·  FB: score_card  ·  Story: infrastructure_truth
+2026-05-15 07:00:46  INFO      Used destinations (14d): 0
+2026-05-15 07:00:46  INFO      Fingerprint dedup snapshot — 0 dests in 7d · 27 (dest,fmt) pairs in 30d · 0 media in 60d
+2026-05-15 07:00:50  INFO      Shared best destination locked: Pahalgam
+2026-05-15 07:00:50  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-05-15 07:00:50  INFO      [instagram/nakshiq] Generating score_card post...
+2026-05-15 07:00:50  INFO      [instagram/nakshiq] Caption ready (512 chars, dest=pahalgam)
+2026-05-15 07:00:51  INFO      [instagram/nakshiq] Video available — uploading for Reel...
+2026-05-15 07:00:51  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/pahalgam.mp4?v=20260512
+2026-05-15 07:00:52  INFO          Requesting upload URL for pahalgam.mp4 (11,691,764 bytes, video/mp4)
+2026-05-15 07:00:52  INFO          Uploading to R2 (timeout=300s)...
+2026-05-15 07:00:54  INFO          R2 PUT OK. Confirming...
+2026-05-15 07:00:55  INFO          Media ready: Bs6Kn (11,691,764 bytes · pahalgam.mp4)
+2026-05-15 07:00:55  INFO      [instagram/nakshiq] Publishing Reel...
+2026-05-15 07:01:33  INFO      [instagram/nakshiq] ✅ Published · Outstand=xJev8 · Platform=17994107282959361
+2026-05-15 07:01:33  INFO      [facebook/Nakshiq] Generating score_card post...
+2026-05-15 07:01:33  INFO      [facebook/Nakshiq] Caption ready (493 chars, dest=pahalgam)
+2026-05-15 07:01:33  INFO      [facebook/Nakshiq] Video available — uploading for Reel...
+2026-05-15 07:01:33  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/pahalgam.mp4?v=20260512
+2026-05-15 07:01:33  INFO          Requesting upload URL for pahalgam.mp4 (11,691,764 bytes, video/mp4)
+2026-05-15 07:01:34  INFO          Uploading to R2 (timeout=300s)...
+2026-05-15 07:01:35  INFO          R2 PUT OK. Confirming...
+2026-05-15 07:01:36  INFO          Media ready: ekUlr (11,691,764 bytes · pahalgam.mp4)
+2026-05-15 07:01:36  INFO      [facebook/Nakshiq] Publishing Reel...
+2026-05-15 07:01:55  INFO      [facebook/Nakshiq] ✅ Published · Outstand=W4tPz · Platform=2017746112463531
+2026-05-15 07:01:55  INFO      State saved. Run complete.
+2026-05-15 07:01:55  INFO      ════════════════════════════════════════════════════════════
