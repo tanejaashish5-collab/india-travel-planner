@@ -1,34 +1,34 @@
-2026-05-15 12:30:08  INFO      ════════════════════════════════════════════════════════════
-2026-05-15 12:30:08  INFO      Nakshiq Autoposter · EVENING · 2026-05-15 · weekday=4
-2026-05-15 12:30:08  INFO      ════════════════════════════════════════════════════════════
-2026-05-15 12:30:08  INFO      ── Syncing Nakshiq content ──────────────────────────────
-2026-05-15 12:30:25  INFO      Synced → 20 destinations · 0 traps · 0 articles · 23 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 50 camping · 50 gems · total catalog=505
-2026-05-15 12:30:26  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
-2026-05-15 12:30:26  INFO      Formats — IG: score_card  ·  FB: score_card  ·  Story: reality_check  ·  Audience: adventurers
-2026-05-15 12:30:26  INFO      Used destinations (14d): 0
-2026-05-15 12:30:26  INFO      Audience filter 'adventurers' → 12 destinations match.
-2026-05-15 12:30:26  INFO      Fingerprint dedup snapshot — 0 dests in 7d · 27 (dest,fmt) pairs in 30d · 0 media in 60d
-2026-05-15 12:30:27  INFO      Shared best destination locked: Parvati Valley
-2026-05-15 12:30:27  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
-2026-05-15 12:30:27  INFO      [instagram/nakshiq] Generating score_card post...
-2026-05-15 12:30:27  INFO      [instagram/nakshiq] Caption ready (570 chars, dest=parvati-valley)
-2026-05-15 12:30:28  INFO      [instagram/nakshiq] Video available — uploading for Reel  (evening mode)...
-2026-05-15 12:30:28  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/parvati-valley.mp4?v=20260512
-2026-05-15 12:30:29  INFO          Requesting upload URL for parvati-valley.mp4 (12,589,747 bytes, video/mp4)
-2026-05-15 12:30:29  INFO          Uploading to R2 (timeout=300s)...
-2026-05-15 12:30:30  INFO          R2 PUT OK. Confirming...
-2026-05-15 12:30:31  INFO          Media ready: d9JuO (12,589,747 bytes · parvati-valley.mp4)
-2026-05-15 12:30:31  INFO      [instagram/nakshiq] Publishing Reel...
-2026-05-15 12:31:12  INFO      [instagram/nakshiq] ✅ Published · Outstand=dy4cO · Platform=18073730435416756
-2026-05-15 12:31:12  INFO      [facebook/Nakshiq] Generating score_card post...
-2026-05-15 12:31:12  INFO      [facebook/Nakshiq] Caption ready (551 chars, dest=parvati-valley)
-2026-05-15 12:31:12  INFO      [facebook/Nakshiq] Video available — uploading for Reel  (evening mode)...
-2026-05-15 12:31:12  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/parvati-valley.mp4?v=20260512
-2026-05-15 12:31:13  INFO          Requesting upload URL for parvati-valley.mp4 (12,589,747 bytes, video/mp4)
-2026-05-15 12:31:13  INFO          Uploading to R2 (timeout=300s)...
-2026-05-15 12:31:14  INFO          R2 PUT OK. Confirming...
-2026-05-15 12:31:15  INFO          Media ready: aPdYb (12,589,747 bytes · parvati-valley.mp4)
-2026-05-15 12:31:15  INFO      [facebook/Nakshiq] Publishing Reel...
-2026-05-15 12:31:40  INFO      [facebook/Nakshiq] ✅ Published · Outstand=aquKb · Platform=1273974084891686
-2026-05-15 12:31:40  INFO      State saved. Run complete.
-2026-05-15 12:31:40  INFO      ════════════════════════════════════════════════════════════
+2026-05-15 13:21:13  INFO      ════════════════════════════════════════════════════════════
+2026-05-15 13:21:13  INFO      Nakshiq Autoposter · EVENING · 2026-05-15 · weekday=4
+2026-05-15 13:21:13  INFO      ════════════════════════════════════════════════════════════
+2026-05-15 13:21:13  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-05-15 13:21:32  INFO      Synced → 20 destinations · 0 traps · 0 articles · 23 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 50 camping · 50 gems · total catalog=505
+2026-05-15 13:21:33  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-05-15 13:21:33  INFO      Formats — IG: score_card  ·  FB: score_card  ·  Story: reality_check  ·  Audience: adventurers
+2026-05-15 13:21:33  INFO      Used destinations (14d): 0
+2026-05-15 13:21:33  INFO      Audience filter 'adventurers' → 12 destinations match.
+2026-05-15 13:21:33  INFO      Fingerprint dedup snapshot — 0 dests in 7d · 27 (dest,fmt) pairs in 30d · 0 media in 60d
+2026-05-15 13:21:34  INFO      Shared best destination locked: Tehri Lake
+2026-05-15 13:21:34  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-05-15 13:21:34  INFO      [instagram/nakshiq] Generating score_card post...
+2026-05-15 13:21:34  INFO      [instagram/nakshiq] Caption ready (505 chars, dest=tehri)
+2026-05-15 13:21:34  INFO      [instagram/nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-05-15 13:21:34  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/tehri.mp4?v=20260512
+2026-05-15 13:21:34  INFO          Requesting upload URL for tehri.mp4 (7,047,116 bytes, video/mp4)
+2026-05-15 13:21:35  INFO          Uploading to R2 (timeout=300s)...
+2026-05-15 13:21:36  INFO          R2 PUT OK. Confirming...
+2026-05-15 13:21:37  INFO          Media ready: SLGsJ (7,047,116 bytes · tehri.mp4)
+2026-05-15 13:21:37  INFO      [instagram/nakshiq] Publishing Reel...
+2026-05-15 13:22:16  INFO      [instagram/nakshiq] ✅ Published · Outstand=btENT · Platform=17988060809800977
+2026-05-15 13:22:16  INFO      [facebook/Nakshiq] Generating score_card post...
+2026-05-15 13:22:16  INFO      [facebook/Nakshiq] Caption ready (486 chars, dest=tehri)
+2026-05-15 13:22:17  INFO      [facebook/Nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-05-15 13:22:17  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/tehri.mp4?v=20260512
+2026-05-15 13:22:17  INFO          Requesting upload URL for tehri.mp4 (7,047,116 bytes, video/mp4)
+2026-05-15 13:22:18  INFO          Uploading to R2 (timeout=300s)...
+2026-05-15 13:22:18  INFO          R2 PUT OK. Confirming...
+2026-05-15 13:22:19  INFO          Media ready: Bso2n (7,047,116 bytes · tehri.mp4)
+2026-05-15 13:22:19  INFO      [facebook/Nakshiq] Publishing Reel...
+2026-05-15 13:22:38  INFO      [facebook/Nakshiq] ✅ Published · Outstand=mQrfd · Platform=1291692256500936
+2026-05-15 13:22:38  INFO      State saved. Run complete.
+2026-05-15 13:22:38  INFO      ════════════════════════════════════════════════════════════
