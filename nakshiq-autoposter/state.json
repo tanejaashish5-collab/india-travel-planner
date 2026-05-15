@@ -1,23 +1,12 @@
 {
-  "yt_short_formats_used": [
-    "listicle"
-  ],
-  "yt_short_music_used": [
-    "24_festival_anthem"
-  ],
+  "yt_short_formats_used": [],
+  "yt_short_music_used": [],
   "posted_today": {
-    "GAh5p_yt_short": "2026-05-15",
-    "GAh5p_yt_short_count": 1,
-    "m8EAd_yt_short": "2026-05-15",
-    "m8EAd_yt_short_count": 1
+    "m8EAd_pomelli": "2026-05-15",
+    "PdMu0_pomelli": "2026-05-15"
   },
   "last_sync": "2026-04-30T04:05:30.154914+00:00",
-  "posted_destinations": [
-    {
-      "destination_id": "uttarkashi",
-      "date": "2026-05-15"
-    }
-  ],
+  "posted_destinations": [],
   "posted_formats": {
     "m8EAd": [
       "monthly_forecast",
@@ -447,25 +436,36 @@
       "has_media": true
     },
     {
-      "timestamp": "2026-05-15T07:07:00.779831+00:00",
-      "date": "2026-05-15",
-      "platform": "youtube",
-      "post_id": "4sK9i",
-      "destination": "uttarkashi",
-      "format": "yt_short.listicle",
-      "media_id": "yt_short_listicle_yt_short_listicle_2026-05-15.mp4"
-    },
-    {
-      "timestamp": "2026-05-15T07:07:42.639302+00:00",
+      "timestamp": "2026-05-15T07:36:24.667337+00:00",
       "date": "2026-05-15",
       "platform": "instagram",
-      "post_id": "LzTGV",
-      "destination": "uttarkashi",
-      "format": "yt_short.listicle",
-      "media_id": "yt_short_listicle_yt_short_listicle_2026-05-15.mp4"
+      "post_id": "EX07A",
+      "destination": null,
+      "format": "pomelli_visual",
+      "media_id": "pomelli_may_the_4g_dead_zone_map_1.png"
+    },
+    {
+      "timestamp": "2026-05-15T07:36:26.747141+00:00",
+      "date": "2026-05-15",
+      "platform": "facebook",
+      "post_id": "GduFp",
+      "destination": null,
+      "format": "pomelli_visual",
+      "media_id": "pomelli_may_the_4g_dead_zone_map_1.png"
     }
   ],
-  "theme_usage": {},
+  "theme_usage": {
+    "pomelli_campaigns": {
+      "may_4g_dead_zone_map": [
+        "2026-05-15"
+      ]
+    },
+    "pomelli_images": {
+      "pomelli_may_the_4g_dead_zone_map_1.png": [
+        "2026-05-15"
+      ]
+    }
+  },
   "infographic": {
     "last_topic_idx": 0,
     "last_theme_idx": 0,

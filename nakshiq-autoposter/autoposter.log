@@ -1,20 +1,22 @@
-2026-05-15 07:05:34  INFO      ════════════════════════════════════════════════════════════
-2026-05-15 07:05:34  INFO      Nakshiq Autoposter · YT SHORT · 2026-05-15
-2026-05-15 07:05:34  INFO      ════════════════════════════════════════════════════════════
-2026-05-15 07:06:39  INFO      Short rendered: yt_short_listicle_2026-05-15.mp4 (14644 KB, 35.0s, fmt=listicle, music=24_festival_anthem)
-2026-05-15 07:06:39  INFO          Requesting upload URL for yt_short_listicle_yt_short_listicle_2026-05-15.mp4 (14,995,768 bytes, video/mp4)
-2026-05-15 07:06:40  INFO          Uploading to R2 (timeout=300s)...
-2026-05-15 07:06:42  INFO          R2 PUT OK. Confirming...
-2026-05-15 07:06:43  INFO          Media ready: b0tZT (14,995,768 bytes · yt_short_listicle_yt_short_listicle_2026-05-15.mp4)
-2026-05-15 07:06:43  INFO      Video uploaded: yt_short_listicle_yt_short_listicle_2026-05-15.mp4
-2026-05-15 07:06:44  INFO      [youtube/@naksh-iq] Publishing YT Short (listicle)...
-2026-05-15 07:06:48  INFO      [youtube/@naksh-iq] Outstand accepted (post_id=4sK9i), waiting for platform confirmation...
-2026-05-15 07:07:00  INFO      [youtube/@naksh-iq] ✅ YT Short published · Outstand=4sK9i · Platform=qy7ztA4DKLI
-2026-05-15 07:07:00  INFO      [instagram/nakshiq] Publishing YT Short (listicle)...
-2026-05-15 07:07:02  INFO      [instagram/nakshiq] Outstand accepted (post_id=LzTGV), waiting for platform confirmation...
-2026-05-15 07:07:42  INFO      [instagram/nakshiq] ✅ YT Short published · Outstand=LzTGV · Platform=18043011197572631
-2026-05-15 07:07:42  WARNING   Could not write post_outcomes entry: 'utf-8' codec can't encode characters in position 147-148: surrogates not allowed
-2026-05-15 07:07:42  INFO      [facebook/Nakshiq] Skipping (YT Shorts post to YouTube + Instagram only).
-2026-05-15 07:07:42  INFO      YT Short posted: format=listicle, music=24_festival_anthem
-2026-05-15 07:07:42  INFO      State saved. YT Short run complete.
-2026-05-15 07:07:42  INFO      ════════════════════════════════════════════════════════════
+2026-05-15 07:36:19  INFO      ════════════════════════════════════════════════════════════
+2026-05-15 07:36:19  INFO      Nakshiq Autoposter · POMELLI VISUAL · 2026-05-15 · weekday=4
+2026-05-15 07:36:19  INFO      ════════════════════════════════════════════════════════════
+2026-05-15 07:36:19  WARNING   Image not found, skipping: pomelli_may_gokarna_s_4_hidden_riptides_2.png
+2026-05-15 07:36:19  WARNING   Image not found, skipping: pomelli_may_meghalaya_s_monsoon_verified_4.png
+2026-05-15 07:36:19  WARNING   Image not found, skipping: pomelli_may_oxygen_gaps_at_17_582_feet_1.png
+2026-05-15 07:36:19  WARNING   Image not found, skipping: pomelli_may_spiti_s_400km_of_dead_spots_2.png
+2026-05-15 07:36:19  INFO      Library: 753 images across 317 campaigns
+2026-05-15 07:36:19  INFO      Selected: [may_4g_dead_zone_map] May The 4G Dead Zone Map → pomelli_may_the_4g_dead_zone_map_1.png
+2026-05-15 07:36:19  INFO          Requesting upload URL for pomelli_may_4g_dead_zone_map_pomelli_may_the_4g_dead_zone_map_1.png (1,397,459 bytes, image/png)
+2026-05-15 07:36:20  INFO          Uploading to R2 (timeout=120s)...
+2026-05-15 07:36:21  INFO          R2 PUT OK. Confirming...
+2026-05-15 07:36:22  INFO          Media ready: TqmG1 (1,397,459 bytes · pomelli_may_4g_dead_zone_map_pomelli_may_the_4g_dead_zone_map_1.png)
+2026-05-15 07:36:22  INFO      Image uploaded: pomelli_may_4g_dead_zone_map_pomelli_may_the_4g_dead_zone_map_1.png (1364 KB)
+2026-05-15 07:36:22  INFO      [youtube/@naksh-iq] Skipping pomelli visual (YouTube only accepts video).
+2026-05-15 07:36:22  INFO      [instagram/nakshiq] Publishing pomelli visual: May The 4G Dead Zone Map...
+2026-05-15 07:36:24  INFO      [instagram/nakshiq] Pomelli visual posted successfully!
+2026-05-15 07:36:24  INFO      [facebook/Nakshiq] Publishing pomelli visual: May The 4G Dead Zone Map...
+2026-05-15 07:36:26  INFO      [facebook/Nakshiq] Pomelli visual posted successfully!
+2026-05-15 07:36:26  INFO      Theme tracker updated: campaign=may_4g_dead_zone_map / img=pomelli_may_the_4g_dead_zone_map_1.png
+2026-05-15 07:36:26  INFO      State saved. Pomelli Visual run complete.
+2026-05-15 07:36:26  INFO      ════════════════════════════════════════════════════════════
