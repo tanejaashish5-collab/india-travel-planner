@@ -1,19 +1,9 @@
 {
   "yt_short_formats_used": [],
   "yt_short_music_used": [],
-  "posted_today": {
-    "m8EAd": "2026-05-15",
-    "m8EAd_evening": "2026-05-15",
-    "PdMu0": "2026-05-15",
-    "PdMu0_evening": "2026-05-15"
-  },
-  "last_sync": "2026-05-15T13:21:32.518798+00:00",
-  "posted_destinations": [
-    {
-      "destination_id": "tehri",
-      "date": "2026-05-15"
-    }
-  ],
+  "posted_today": {},
+  "last_sync": "2026-05-15T16:21:13.357826+00:00",
+  "posted_destinations": [],
   "posted_formats": {
     "m8EAd": [
       "monthly_forecast",
@@ -28,8 +18,7 @@
       "score_card",
       "collection_spotlight",
       "festival_alert",
-      "kids_intel",
-      "score_card"
+      "kids_intel"
     ],
     "PdMu0": [
       "monthly_forecast",
@@ -49,8 +38,7 @@
       "reality_check",
       "collection_spotlight",
       "festival_alert",
-      "kids_intel",
-      "score_card"
+      "kids_intel"
     ]
   },
   "post_log": [
@@ -443,47 +431,9 @@
       "destination": "ranthambore",
       "format": "kids_intel",
       "has_media": true
-    },
-    {
-      "timestamp": "2026-05-15T13:22:16.860993+00:00",
-      "date": "2026-05-15",
-      "platform": "instagram",
-      "account_id": "m8EAd",
-      "post_id": "btENT",
-      "destination": "tehri",
-      "format": "score_card",
-      "has_media": true,
-      "media_id": "tehri.mp4"
-    },
-    {
-      "timestamp": "2026-05-15T13:22:38.867142+00:00",
-      "date": "2026-05-15",
-      "platform": "facebook",
-      "account_id": "PdMu0",
-      "post_id": "mQrfd",
-      "destination": "tehri",
-      "format": "score_card",
-      "has_media": true,
-      "media_id": "tehri.mp4"
     }
   ],
-  "theme_usage": {
-    "destinations": {
-      "tehri": [
-        "2026-05-15"
-      ]
-    },
-    "reels": {
-      "tehri": [
-        "2026-05-15"
-      ]
-    },
-    "audience_tags": {
-      "adventurers": [
-        "2026-05-15"
-      ]
-    }
-  },
+  "theme_usage": {},
   "infographic": {
     "last_topic_idx": 0,
     "last_theme_idx": 0,
@@ -495,7 +445,5 @@
     ]
   },
   "ugc_music_history": [],
-  "last_picked": {
-    "shared_best": "tehri"
-  }
+  "last_picked": {}
 }
