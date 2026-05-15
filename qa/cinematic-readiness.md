@@ -1,6 +1,6 @@
 # Cinematic readiness — 2026-05-15
 
-Total: **505** dests · A=**386** · B=**119** · C=**0**
+Total: **505** dests · A=**389** · B=**116** · C=**0**
 
 Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 
@@ -8,7 +8,7 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 
 | Field | Dests blocked |
 |---|---:|
-| eats | 116 |
+| eats | 113 |
 | stays | 13 |
 | gems | 2 |
 
@@ -25,7 +25,7 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | chhattisgarh | 3 | 0 | 0 | 3 |
 | daman-diu | 3 | 0 | 0 | 3 |
 | delhi | 1 | 0 | 0 | 1 |
-| goa | 18 | 3 | 0 | 21 |
+| goa | 21 | 0 | 0 | 21 |
 | gujarat | 29 | 0 | 0 | 29 |
 | haryana | 2 | 1 | 0 | 3 |
 | himachal-pradesh | 32 | 2 | 0 | 34 |
@@ -85,14 +85,12 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Chinnar Wildlife Sanctuary (chinnar) | kerala | eats:2/5 |
 | Chitrakoot (chitrakoot) | uttar-pradesh | eats:4/5 |
 | Chittorgarh (chittorgarh) | rajasthan | eats:4/5 |
-| Chorao & Divar Islands (chorao-divar) | goa | eats:4/5 |
 | Dambuk (dambuk) | arunachal-pradesh | eats:1/5 |
 | Takht Sri Damdama Sahib (damdama-sahib) | punjab | eats:3/5 |
 | Dawki (dawki) | meghalaya | eats:3/5 |
 | Deeg (deeg) | rajasthan | eats:3/5 |
 | Deomali (deomali) | odisha | eats:2/5 |
 | Doodhpathri (doodhpathri) | jammu-kashmir | eats:4/5 |
-| Dudhsagar Falls (dudhsagar-falls) | goa | eats:3/5 |
 | Dudhwa National Park (dudhwa-national-park) | uttar-pradesh | eats:4/5 |
 | Dungarpur (dungarpur) | rajasthan | eats:4/5 |
 | Dzukou Valley (dzukou-valley) | nagaland | eats:0/5 |
@@ -133,7 +131,6 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Mechuka (mechuka) | arunachal-pradesh | eats:2/5 |
 | Meghamalai (High Wavy Mountains) (meghamalai) | tamil-nadu | eats:2/5 |
 | Minicoy Island (minicoy) | lakshadweep | eats:3/5 |
-| Mollem (Bhagwan Mahavir Sanctuary) (mollem) | goa | eats:3/5 |
 | Mon (mon) | nagaland | eats:4/5 |
 | Moreh (moreh) | manipur | stays:1/3 |
 | Morgaon (morgaon) | maharashtra | eats:4/5 |
@@ -267,6 +264,7 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Chitkul (chitkul) | himachal-pradesh |
 | Chitradurga (chitradurga) | karnataka |
 | Chopta (chopta) | uttarakhand |
+| Chorao & Divar Islands (chorao-divar) | goa |
 | Coimbatore (coimbatore) | tamil-nadu |
 | Colva & Benaulim (colva-benaulim) | goa |
 | Coonoor (coonoor) | tamil-nadu |
@@ -295,6 +293,7 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Dirang (dirang) | arunachal-pradesh |
 | Diu (diu) | daman-diu |
 | Drass (drass) | ladakh |
+| Dudhsagar Falls (dudhsagar-falls) | goa |
 | Dwarka (dwarka) | gujarat |
 | Ellora Caves (ellora-caves) | maharashtra |
 | Fort Aguada & Candolim (fort-aguada) | goa |
@@ -419,6 +418,7 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Medak (medak) | telangana |
 | Modhera Sun Temple (modhera) | gujarat |
 | Mokokchung (mokokchung) | nagaland |
+| Mollem (Bhagwan Mahavir Sanctuary) (mollem) | goa |
 | Morjim (morjim) | goa |
 | Mount Abu (mount-abu) | rajasthan |
 | Mudumalai National Park (mudumalai) | tamil-nadu |
