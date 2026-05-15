@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-05-15T11:31:42.605Z",
+  "generated_at": "2026-05-15T12:04:50.451Z",
   "totals": {
-    "A": 392,
-    "B": 113,
+    "A": 415,
+    "B": 90,
     "C": 0,
     "total": 505
   },
@@ -126,8 +126,8 @@
     },
     {
       "state": "kerala",
-      "A": 18,
-      "B": 12,
+      "A": 28,
+      "B": 2,
       "C": 0,
       "total": 30
     },
@@ -147,8 +147,8 @@
     },
     {
       "state": "madhya-pradesh",
-      "A": 8,
-      "B": 5,
+      "A": 13,
+      "B": 0,
       "C": 0,
       "total": 13
     },
@@ -189,8 +189,8 @@
     },
     {
       "state": "odisha",
-      "A": 19,
-      "B": 3,
+      "A": 22,
+      "B": 0,
       "C": 0,
       "total": 22
     },
@@ -224,8 +224,8 @@
     },
     {
       "state": "tamil-nadu",
-      "A": 25,
-      "B": 5,
+      "A": 30,
+      "B": 0,
       "C": 0,
       "total": 30
     },
@@ -268,7 +268,7 @@
   "gap_counts": [
     {
       "field": "eats",
-      "count": 110
+      "count": 87
     },
     {
       "field": "stays",
@@ -361,26 +361,6 @@
       ]
     },
     {
-      "id": "anamalai",
-      "name": "Anamalai Tiger Reserve (Topslip)",
-      "state": "tamil-nadu",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 3,
-        "eats": 2,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "eats:2/5"
-      ]
-    },
-    {
       "id": "anini",
       "name": "Anini",
       "state": "arunachal-pradesh",
@@ -404,26 +384,6 @@
       "id": "astavinayak-circuit",
       "name": "Astavinayak Circuit",
       "state": "maharashtra",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 3,
-        "eats": 4,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "eats:4/5"
-      ]
-    },
-    {
-      "id": "bandhavgarh",
-      "name": "Bandhavgarh National Park",
-      "state": "madhya-pradesh",
       "tier": "B",
       "counts": {
         "months_scored": 12,
@@ -582,26 +542,6 @@
       ]
     },
     {
-      "id": "bhimbetka",
-      "name": "Bhimbetka Rock Shelters",
-      "state": "madhya-pradesh",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 3,
-        "eats": 2,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "eats:2/5"
-      ]
-    },
-    {
       "id": "chandratal",
       "name": "Chandratal",
       "state": "himachal-pradesh",
@@ -640,26 +580,6 @@
       "missing": [
         "eats:0/5",
         "stays:0/3"
-      ]
-    },
-    {
-      "id": "cherai",
-      "name": "Cherai Beach",
-      "state": "kerala",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 3,
-        "eats": 3,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "eats:3/5"
       ]
     },
     {
@@ -803,26 +723,6 @@
       ]
     },
     {
-      "id": "deomali",
-      "name": "Deomali",
-      "state": "odisha",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 3,
-        "eats": 2,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "eats:2/5"
-      ]
-    },
-    {
       "id": "doodhpathri",
       "name": "Doodhpathri",
       "state": "jammu-kashmir",
@@ -921,26 +821,6 @@
       "missing": [
         "eats:0/5",
         "stays:0/3"
-      ]
-    },
-    {
-      "id": "eravikulam",
-      "name": "Eravikulam National Park",
-      "state": "kerala",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 3,
-        "eats": 2,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "eats:2/5"
       ]
     },
     {
@@ -1105,26 +985,6 @@
       ]
     },
     {
-      "id": "idukki",
-      "name": "Idukki",
-      "state": "kerala",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 3,
-        "eats": 3,
-        "stays": 3
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "eats:3/5"
-      ]
-    },
-    {
       "id": "jorhat",
       "name": "Jorhat",
       "state": "assam",
@@ -1163,26 +1023,6 @@
       "missing": [
         "eats:3/5",
         "stays:2/3"
-      ]
-    },
-    {
-      "id": "kanha",
-      "name": "Kanha National Park",
-      "state": "madhya-pradesh",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 3,
-        "eats": 4,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "eats:4/5"
       ]
     },
     {
@@ -1314,7 +1154,7 @@
         "months_scored": 12,
         "months_prose": 12,
         "gems": 3,
-        "eats": 2,
+        "eats": 3,
         "stays": 3
       },
       "has": {
@@ -1322,7 +1162,7 @@
         "why_special": true
       },
       "missing": [
-        "eats:2/5"
+        "eats:3/5"
       ]
     },
     {
@@ -1466,26 +1306,6 @@
       ]
     },
     {
-      "id": "marari",
-      "name": "Marari Beach",
-      "state": "kerala",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 3,
-        "eats": 3,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "eats:3/5"
-      ]
-    },
-    {
       "id": "maredumilli",
       "name": "Maredumilli",
       "state": "andhra-pradesh",
@@ -1569,26 +1389,6 @@
       "id": "mechuka",
       "name": "Mechuka",
       "state": "arunachal-pradesh",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 3,
-        "eats": 2,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "eats:2/5"
-      ]
-    },
-    {
-      "id": "meghamalai",
-      "name": "Meghamalai (High Wavy Mountains)",
-      "state": "tamil-nadu",
       "tier": "B",
       "counts": {
         "months_scored": 12,
@@ -1747,26 +1547,6 @@
       ]
     },
     {
-      "id": "nelliyampathy",
-      "name": "Nelliyampathy",
-      "state": "kerala",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 3,
-        "eats": 3,
-        "stays": 3
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "eats:3/5"
-      ]
-    },
-    {
       "id": "nongriat",
       "name": "Nongriat",
       "state": "meghalaya",
@@ -1785,46 +1565,6 @@
       "missing": [
         "eats:0/5",
         "stays:2/3"
-      ]
-    },
-    {
-      "id": "nrusinghanath-harishankar",
-      "name": "Nrusinghanath & Harishankar",
-      "state": "odisha",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 3,
-        "eats": 4,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "eats:4/5"
-      ]
-    },
-    {
-      "id": "pachmarhi",
-      "name": "Pachmarhi",
-      "state": "madhya-pradesh",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 3,
-        "eats": 4,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "eats:4/5"
       ]
     },
     {
@@ -1912,66 +1652,6 @@
       "id": "pochampally",
       "name": "Pochampally",
       "state": "telangana",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 3,
-        "eats": 3,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "eats:3/5"
-      ]
-    },
-    {
-      "id": "point-calimere",
-      "name": "Point Calimere Wildlife Sanctuary",
-      "state": "tamil-nadu",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 3,
-        "eats": 3,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "eats:3/5"
-      ]
-    },
-    {
-      "id": "ponmudi",
-      "name": "Ponmudi",
-      "state": "kerala",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 3,
-        "eats": 3,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "eats:3/5"
-      ]
-    },
-    {
-      "id": "poovar",
-      "name": "Poovar",
-      "state": "kerala",
       "tier": "B",
       "counts": {
         "months_scored": 12,
@@ -2089,46 +1769,6 @@
       ]
     },
     {
-      "id": "sabarimala",
-      "name": "Sabarimala",
-      "state": "kerala",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 3,
-        "eats": 4,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "eats:4/5"
-      ]
-    },
-    {
-      "id": "sanchi",
-      "name": "Sanchi",
-      "state": "madhya-pradesh",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 3,
-        "eats": 3,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "eats:3/5"
-      ]
-    },
-    {
       "id": "sarnath",
       "name": "Sarnath",
       "state": "uttar-pradesh",
@@ -2186,46 +1826,6 @@
       },
       "missing": [
         "stays:2/3"
-      ]
-    },
-    {
-      "id": "silent-valley",
-      "name": "Silent Valley National Park",
-      "state": "kerala",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 3,
-        "eats": 3,
-        "stays": 3
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "eats:3/5"
-      ]
-    },
-    {
-      "id": "simlipal",
-      "name": "Simlipal",
-      "state": "odisha",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 3,
-        "eats": 3,
-        "stays": 3
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "eats:3/5"
       ]
     },
     {
@@ -2453,26 +2053,6 @@
       ]
     },
     {
-      "id": "vagamon",
-      "name": "Vagamon",
-      "state": "kerala",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 3,
-        "eats": 3,
-        "stays": 3
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "eats:3/5"
-      ]
-    },
-    {
       "id": "vaishali",
       "name": "Vaishali",
       "state": "bihar",
@@ -2490,46 +2070,6 @@
       },
       "missing": [
         "eats:4/5"
-      ]
-    },
-    {
-      "id": "valparai",
-      "name": "Valparai",
-      "state": "tamil-nadu",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 3,
-        "eats": 3,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "eats:3/5"
-      ]
-    },
-    {
-      "id": "vedanthangal",
-      "name": "Vedanthangal Bird Sanctuary",
-      "state": "tamil-nadu",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 3,
-        "eats": 3,
-        "stays": 3
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "eats:3/5"
       ]
     },
     {
@@ -2895,6 +2435,24 @@
       "missing": []
     },
     {
+      "id": "anamalai",
+      "name": "Anamalai Tiger Reserve (Topslip)",
+      "state": "tamil-nadu",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
       "id": "anandpur-sahib",
       "name": "Anandpur Sahib",
       "state": "punjab",
@@ -3121,6 +2679,24 @@
         "gems": 3,
         "eats": 7,
         "stays": 3
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "bandhavgarh",
+      "name": "Bandhavgarh National Park",
+      "state": "madhya-pradesh",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 4
       },
       "has": {
         "tagline": true,
@@ -3391,6 +2967,24 @@
         "gems": 3,
         "eats": 5,
         "stays": 3
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "bhimbetka",
+      "name": "Bhimbetka Rock Shelters",
+      "state": "madhya-pradesh",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 4
       },
       "has": {
         "tagline": true,
@@ -3852,6 +3446,24 @@
       "id": "chennai",
       "name": "Chennai",
       "state": "tamil-nadu",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "cherai",
+      "name": "Cherai Beach",
+      "state": "kerala",
       "tier": "A",
       "counts": {
         "months_scored": 12,
@@ -4335,6 +3947,24 @@
       "missing": []
     },
     {
+      "id": "deomali",
+      "name": "Deomali",
+      "state": "odisha",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
       "id": "devprayag",
       "name": "Devprayag",
       "state": "uttarakhand",
@@ -4597,6 +4227,24 @@
         "gems": 3,
         "eats": 5,
         "stays": 3
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "eravikulam",
+      "name": "Eravikulam National Park",
+      "state": "kerala",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 4
       },
       "has": {
         "tagline": true,
@@ -5091,6 +4739,24 @@
       "missing": []
     },
     {
+      "id": "idukki",
+      "name": "Idukki",
+      "state": "kerala",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 3
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
       "id": "igatpuri",
       "name": "Igatpuri",
       "state": "maharashtra",
@@ -5364,6 +5030,24 @@
       "id": "kanchipuram",
       "name": "Kanchipuram",
       "state": "tamil-nadu",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "kanha",
+      "name": "Kanha National Park",
+      "state": "madhya-pradesh",
       "tier": "A",
       "counts": {
         "months_scored": 12,
@@ -6675,6 +6359,24 @@
       "missing": []
     },
     {
+      "id": "marari",
+      "name": "Marari Beach",
+      "state": "kerala",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
       "id": "margao",
       "name": "Margao",
       "state": "goa",
@@ -6775,6 +6477,24 @@
         "gems": 3,
         "eats": 5,
         "stays": 3
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "meghamalai",
+      "name": "Meghamalai (High Wavy Mountains)",
+      "state": "tamil-nadu",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 4
       },
       "has": {
         "tagline": true,
@@ -7269,6 +6989,24 @@
       "missing": []
     },
     {
+      "id": "nelliyampathy",
+      "name": "Nelliyampathy",
+      "state": "kerala",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 3
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
       "id": "netarhat",
       "name": "Netarhat",
       "state": "jharkhand",
@@ -7297,6 +7035,24 @@
         "gems": 3,
         "eats": 5,
         "stays": 3
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "nrusinghanath-harishankar",
+      "name": "Nrusinghanath & Harishankar",
+      "state": "odisha",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 4
       },
       "has": {
         "tagline": true,
@@ -7416,6 +7172,24 @@
       "id": "ozar",
       "name": "Ozar",
       "state": "maharashtra",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "pachmarhi",
+      "name": "Pachmarhi",
+      "state": "madhya-pradesh",
       "tier": "A",
       "counts": {
         "months_scored": 12,
@@ -7755,6 +7529,24 @@
       "missing": []
     },
     {
+      "id": "point-calimere",
+      "name": "Point Calimere Wildlife Sanctuary",
+      "state": "tamil-nadu",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
       "id": "ponda-spice",
       "name": "Spice Plantations (Ponda)",
       "state": "goa",
@@ -7776,6 +7568,42 @@
       "id": "pondicherry",
       "name": "Pondicherry (Puducherry)",
       "state": "tamil-nadu",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "ponmudi",
+      "name": "Ponmudi",
+      "state": "kerala",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "poovar",
+      "name": "Poovar",
+      "state": "kerala",
       "tier": "A",
       "counts": {
         "months_scored": 12,
@@ -8259,6 +8087,24 @@
       "missing": []
     },
     {
+      "id": "sabarimala",
+      "name": "Sabarimala",
+      "state": "kerala",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
       "id": "sakleshpur",
       "name": "Sakleshpur",
       "state": "karnataka",
@@ -8287,6 +8133,24 @@
         "gems": 3,
         "eats": 5,
         "stays": 3
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "sanchi",
+      "name": "Sanchi",
+      "state": "madhya-pradesh",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 4
       },
       "has": {
         "tagline": true,
@@ -8547,6 +8411,24 @@
       "missing": []
     },
     {
+      "id": "silent-valley",
+      "name": "Silent Valley National Park",
+      "state": "kerala",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 3
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
       "id": "siliguri",
       "name": "Siliguri",
       "state": "west-bengal",
@@ -8573,6 +8455,24 @@
         "months_scored": 12,
         "months_prose": 12,
         "gems": 4,
+        "eats": 5,
+        "stays": 3
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "simlipal",
+      "name": "Simlipal",
+      "state": "odisha",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
         "eats": 5,
         "stays": 3
       },
@@ -9303,6 +9203,24 @@
       "missing": []
     },
     {
+      "id": "vagamon",
+      "name": "Vagamon",
+      "state": "kerala",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 3
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
       "id": "vagator",
       "name": "Vagator",
       "state": "goa",
@@ -9324,6 +9242,24 @@
       "id": "valley-of-flowers",
       "name": "Valley of Flowers",
       "state": "uttarakhand",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "valparai",
+      "name": "Valparai",
+      "state": "tamil-nadu",
       "tier": "A",
       "counts": {
         "months_scored": 12,
@@ -9367,6 +9303,24 @@
         "gems": 3,
         "eats": 5,
         "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "vedanthangal",
+      "name": "Vedanthangal Bird Sanctuary",
+      "state": "tamil-nadu",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 3
       },
       "has": {
         "tagline": true,
