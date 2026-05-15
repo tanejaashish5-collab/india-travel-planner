@@ -118,6 +118,30 @@ def _branding_bar() -> list[str]:
     ]
 
 
+def _iter_dest_videos():
+    """Yield destination-footage videos from videos/.
+
+    Real destination footage is named `<slug>.mp4` (e.g. rudraprayag.mp4)
+    or `state-<slug>.mp4` (e.g. state-uttarakhand.mp4). Legacy stock clips
+    use the `VIDEO_*.mp4` prefix. The old glob `VIDEO_*.mp4` silently hid
+    682 of 727 mp4s (94% of the library) — caught 2026-05-15 when a
+    Rudraprayag Short rendered with mismatched footage.
+
+    Excluded:
+      - ARTICLE_*.mp4  (article promos, not background footage)
+      - "<name> 2.mp4" (Finder dedup artifacts)
+    """
+    if not VIDEOS_DIR.exists():
+        return
+    for p in VIDEOS_DIR.glob("*.mp4"):
+        stem = p.stem
+        if " 2" in stem:
+            continue
+        if stem.startswith("ARTICLE_"):
+            continue
+        yield p
+
+
 def _find_video(dest_slug: str) -> Optional[Path]:
     """Find the best matching video for a destination slug."""
     if not VIDEOS_DIR.exists():
@@ -126,12 +150,8 @@ def _find_video(dest_slug: str) -> Optional[Path]:
     slug_parts = set(slug.split("-"))
 
     candidates = []
-    all_vids = []
-    for p in VIDEOS_DIR.glob("VIDEO_*.mp4"):
-        if " 2" in p.stem:
-            continue
-        all_vids.append(p)
-        name = p.stem.lower().replace("video_", "")
+    for p in _iter_dest_videos():
+        name = p.stem.lower().replace("video_", "").replace("state-", "")
 
         if name == slug:
             return p
@@ -151,21 +171,33 @@ def _find_video(dest_slug: str) -> Optional[Path]:
 
 
 def _find_similar_video(dest: dict) -> Optional[Path]:
-    """Find a video with similar aesthetic — same state or similar geography."""
+    """Find a video with similar aesthetic — same state or similar geography.
+
+    Returns None when no dest-specific or state-matching video exists. We used
+    to fall back to a random video from the whole library, which produced
+    cross-region mismatches (Goa beach footage behind a Rudraprayag title).
+    The caller should degrade to a Pomelli image or a state-themed clip
+    instead — see _pick_background.
+    """
     vid = _find_video(dest.get("id", dest.get("name", "")))
     if vid:
         return vid
 
-    # Try state-based fallback
+    # Try state-based fallback — matches `state-<slug>.mp4` or any video whose
+    # stem contains the state slug.
     state = dest.get("state", "").lower().replace(" ", "-")
     if state:
-        for p in VIDEOS_DIR.glob("VIDEO_*.mp4"):
+        # Prefer the canonical state-<slug>.mp4 if present
+        canonical = VIDEOS_DIR / f"state-{state}.mp4"
+        if canonical.exists():
+            return canonical
+        for p in _iter_dest_videos():
             if state in p.stem.lower():
                 return p
 
-    # Random scenic fallback
-    all_vids = [v for v in VIDEOS_DIR.glob("VIDEO_*.mp4") if " 2" not in v.stem]
-    return random.choice(all_vids) if all_vids else None
+    # No random fallback — return None so the caller picks a Pomelli image or
+    # a state-themed clip rather than risking cross-region leakage.
+    return None
 
 
 # ── Pomelli image selection ──────────────────────────────────────────
@@ -406,12 +438,16 @@ def _save_state(st: dict):
     STATE_FILE.write_text(json.dumps(st, indent=2, default=str))
 
 
-def _fetch_destinations(month: int = None, max_score: int = None) -> list[dict]:
+def _fetch_destinations(month: int = None, max_score: int = None,
+                        include_intel: bool = False) -> list[dict]:
     """Fetch destinations from Nakshiq API.
 
     Args:
         month: Calendar month (1-12). Defaults to current month.
         max_score: If set, adds &max_score=N to fetch low-scoring destinations.
+        include_intel: When True, asks the API to JOIN confidence_cards +
+            emergency_sos + a legendary eatery. Used by mini_guide so its tips
+            can be destination-specific instead of cookie-cutter ("pack light").
     """
     import requests
     if month is None:
@@ -420,7 +456,9 @@ def _fetch_destinations(month: int = None, max_score: int = None) -> list[dict]:
         url = f"{NAKSHIQ_API}?type=destinations&month={month}&min_score=0&limit=300"
         if max_score is not None:
             url += f"&max_score={max_score}"
-        resp = requests.get(url, timeout=15)
+        if include_intel:
+            url += "&include_intel=1"
+        resp = requests.get(url, timeout=20)
         data = resp.json().get("data", [])
         return [d for d in data if isinstance(d.get("score"), (int, float))]
     except Exception as e:
@@ -726,6 +764,134 @@ def _build_before_after(destinations: list[dict], month_now: int,
 # FORMAT: MINI GUIDE — "48 Hours in [Dest]"
 # ═══════════════════════════════════════════════════════════════════════
 
+def _build_dest_specific_tips(dest: dict) -> list[str]:
+    """Build 4 destination-specific tips from confidence_cards + emergency + eatery.
+
+    Falls back to generic-but-still-useful tips when intel is missing, but
+    always tries to surface ONE real data point per tip so the playbook reads
+    like a NakshIQ post, not a Lonely Planet template.
+    """
+    # Strings that look populated but mean "no data" — filter pre-render so
+    # we don't ship "Stay: ₹N/A/night" or "Hospital: TBD" to viewers.
+    _SENTINEL = {"", "n/a", "na", "tbd", "tba", "unknown", "none", "null"}
+
+    def _val(s) -> str:
+        """Treat sentinel-only strings as empty."""
+        if s is None:
+            return ""
+        t = str(s).strip()
+        return "" if t.lower() in _SENTINEL else t
+
+    def _short(s: str, maxlen: int = 50) -> str:
+        """Trim to a single sentence under maxlen chars without breaking
+        mid-word, mid-paren, or mid-number (e.g. "3.5hrs"). Drops trailing
+        dots/whitespace too."""
+        s = _val(s)
+        if not s:
+            return ""
+        s = s.rstrip(".").rstrip()
+        # Sentence-split on ". " (period+space) NOT on bare "." — bare "."
+        # appears inside decimals ("3.5hrs") and abbreviations.
+        if ". " in s and len(s) > maxlen:
+            first = s.split(". ")[0].strip()
+            if first and len(first) <= maxlen:
+                return first.rstrip(".").rstrip()
+        # Still too long: cut at maxlen but back off to last space to avoid
+        # mid-word truncation. Drop trailing punctuation noise + dangling
+        # open-parens.
+        if len(s) > maxlen:
+            cut = s[: maxlen - 1].rstrip()
+            if " " in cut:
+                cut = cut.rsplit(" ", 1)[0]
+            # Drop trailing dangling open-paren or close-paren-without-open
+            cut = cut.rstrip(",;:-(")
+            # If we ended inside a parenthesis (open without close), strip the
+            # whole parenthetical clause back to the previous space.
+            if cut.count("(") > cut.count(")") and "(" in cut:
+                cut = cut.rsplit("(", 1)[0].rstrip()
+            return cut + "…"
+        return s
+
+    intel = dest.get("intel") or {}
+    reach = intel.get("reach") or {}
+    sleep = intel.get("sleep") or {}
+    fuel = intel.get("fuel") or {}
+    network = intel.get("network") or {}
+    emergency = intel.get("emergency") or {}
+    sos = intel.get("sos") or {}
+    eatery = intel.get("legendary_eatery") or {}
+    elevation = dest.get("elevation_m") or 0
+    name = dest.get("name", "")
+    tagline = (dest.get("tagline") or dest.get("note") or "").strip()
+
+    tips: list[str] = []
+
+    # TIP 1 — How to reach. Tip cards are 5-second video overlays; keep each
+    # line under ~50 chars so it fits the safe-area without auto-wrap.
+    near_city = _short(reach.get("from_nearest_city"))
+    road = _short(reach.get("road_condition"))
+    if near_city:
+        tips.append(f"From {near_city}.")
+    elif road:
+        tips.append(f"Roads: {road}.")
+    elif elevation and elevation > 3000:
+        tips.append(f"{elevation}m — acclimatize 1 night below.")
+
+    # TIP 2 — Where to sleep (real options count + price band)
+    opts = sleep.get("options_count")
+    price = _val(sleep.get("price_range_inr"))
+    if opts and price:
+        tips.append(f"Sleep: {opts} options, ₹{price}/night.")
+    elif opts:
+        tips.append(f"Sleep: {opts} verified options.")
+    elif price:
+        tips.append(f"Stay: ₹{price}/night.")
+
+    # TIP 3 — Fuel + network (driver intel)
+    fuel_pump = _short(fuel.get("nearest_petrol_pump"), maxlen=28)
+    carry_extra = bool(fuel.get("carry_extra"))
+    nets = [k for k in ("jio", "airtel", "bsnl", "vi") if network.get(k)]
+    fuel_line = ""
+    if carry_extra:
+        fuel_line = "Carry extra fuel."
+    elif fuel_pump:
+        fuel_line = f"Fuel: {fuel_pump}."
+    net_line = ""
+    if nets:
+        net_line = f"Cell: {', '.join(n.title() for n in nets[:2])}."
+    elif _val(network.get("note")):
+        net_line = f"Cell: {_short(network['note'], maxlen=30)}."
+    combined = " ".join(filter(None, [fuel_line, net_line]))
+    if combined:
+        tips.append(combined)
+
+    # TIP 4 — Legendary eatery (preferred) or emergency contact
+    eatery_name = _short(eatery.get("name"), maxlen=24)
+    sig = _short(eatery.get("signature_dish"), maxlen=22)
+    hospital = _short(emergency.get("nearest_hospital") or sos.get("nearest_hospital"), maxlen=28)
+    hospital_km = sos.get("nearest_hospital_km") or emergency.get("nearest_hospital_km")
+    if eatery_name and sig:
+        tips.append(f"Eat: {eatery_name} — {sig}.")
+    elif eatery_name:
+        tips.append(f"Eat: {eatery_name}.")
+    elif hospital and hospital_km:
+        tips.append(f"Hospital: {hospital} ({hospital_km}km).")
+    elif hospital:
+        tips.append(f"Hospital: {hospital}.")
+    elif sos.get("mountain_rescue"):
+        tips.append(f"Rescue: {_short(sos['mountain_rescue'], maxlen=40)}.")
+
+    # If we still have <2 tips, fall back to tagline (last-resort filler)
+    if len(tips) < 2 and tagline:
+        tips.append(tagline[:60])
+
+    # Final fallback so the playbook is never empty
+    if not tips:
+        tips.append(f"Plan {name} on nakshiq.com.")
+
+    return tips[:4]
+
+
 def _build_mini_guide(destinations: list[dict], out_dir: Path) -> tuple[list[Path], float]:
     """Build a mini travel guide Short for a single destination."""
     # Pick a high-scoring destination
@@ -742,22 +908,9 @@ def _build_mini_guide(destinations: list[dict], out_dir: Path) -> tuple[list[Pat
     difficulty = dest.get("difficulty", "easy")
     elevation = dest.get("elevation_m", 0)
 
-    # Build "tips" based on destination data
-    tips = []
-    if difficulty == "hard" or (elevation and elevation > 2500):
-        tips.append("Pack layers. Altitude hits hard.")
-    elif difficulty == "moderate":
-        tips.append("Comfortable shoes essential.")
-    else:
-        tips.append("Light packing works here.")
-
-    if elevation and elevation > 3000:
-        tips.append(f"Elevation: {elevation}m. Acclimatize.")
-    
-    tips.append("Book stays 2 weeks ahead.")
-    tips.append("Best explored over 2-3 days.")
-    if len(tagline) > 5:
-        tips.append(tagline[:50])
+    # Real-data tips (confidence_cards + emergency + eatery anchor). Falls back
+    # gracefully when `intel` is missing — see _build_dest_specific_tips.
+    tips = _build_dest_specific_tips(dest)
 
     HOOK_DUR = 5.0
     TIP_DUR = 5.0
@@ -1447,8 +1600,10 @@ def build_yt_short(
 
     print(f"Format: {fmt}")
 
-    # Fetch destinations
-    destinations = _fetch_destinations(month_now)
+    # Fetch destinations. include_intel=True so mini_guide's "48 hours in X"
+    # tips can be destination-specific (confidence_cards + emergency + legendary
+    # eatery), not cookie-cutter — caught 2026-05-15.
+    destinations = _fetch_destinations(month_now, include_intel=True)
     if not destinations:
         print("ERROR: No destinations from API.")
         return None

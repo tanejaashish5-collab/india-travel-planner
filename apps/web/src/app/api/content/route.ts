@@ -73,12 +73,22 @@ export async function GET(req: NextRequest) {
     }
 
     if (type === "destinations") {
-      // Get destinations with their current-month score
+      // ?include_intel=1 expands each row with confidence_cards + emergency + one
+      // legendary eatery so callers (yt_shorts_gen.py 48-hour playbook) can
+      // build location-specific tips instead of cookie-cutter ones.
+      const includeIntel = params.get("include_intel") === "1";
+
+      // Use a LEFT-join (no !inner) so destinations without local_eateries /
+      // emergency_sos / confidence_cards still come back — those tables aren't
+      // 100% populated, and we don't want the playbook query to silently drop
+      // 30% of the catalog.
+      const selectCols = includeIntel
+        ? "month, score, note, destination_id, destinations(id, name, tagline, difficulty, elevation_m, state:states(name), confidence_cards(reach, sleep, fuel, network, emergency, weather_night), emergency_sos(nearest_hospital, nearest_hospital_km, mountain_rescue, local_helpers), local_eateries(name, signature_dish, is_legendary, area))"
+        : "month, score, note, destination_id, destinations(id, name, tagline, difficulty, elevation_m, state:states(name))";
+
       let query = supabase
         .from("destination_months")
-        .select(
-          "month, score, note, destination_id, destinations(id, name, tagline, difficulty, elevation_m, state:states(name))"
-        )
+        .select(selectCols)
         .eq("month", month)
         .order("score", { ascending: false })
         .limit(limit);
@@ -94,7 +104,7 @@ export async function GET(req: NextRequest) {
 
       const items = (data ?? []).map((dm: any) => {
         const d = dm.destinations;
-        return {
+        const base: any = {
           id: d.id,
           name: d.name,
           tagline: d.tagline,
@@ -108,6 +118,40 @@ export async function GET(req: NextRequest) {
           image: `${baseUrl}/images/destinations/${d.id}.jpg`,
           video: videoSrc(d.id),
         };
+        if (includeIntel) {
+          const cc = Array.isArray(d.confidence_cards) ? d.confidence_cards[0] : d.confidence_cards;
+          const sos = Array.isArray(d.emergency_sos) ? d.emergency_sos[0] : d.emergency_sos;
+          // local_eateries comes back as an array (one row per matching record).
+          // Prefer a legendary eatery; fall back to the first available.
+          const eateries = Array.isArray(d.local_eateries) ? d.local_eateries : [];
+          const legendary = eateries.find((e: any) => e?.is_legendary) || eateries[0] || null;
+          base.intel = {
+            reach: cc?.reach || null,
+            sleep: cc?.sleep || null,
+            fuel: cc?.fuel || null,
+            network: cc?.network || null,
+            emergency: cc?.emergency || null,
+            weather_night: cc?.weather_night || null,
+            sos: sos
+              ? {
+                  nearest_hospital: sos.nearest_hospital,
+                  nearest_hospital_km: sos.nearest_hospital_km,
+                  mountain_rescue: sos.mountain_rescue,
+                  local_helper: Array.isArray(sos.local_helpers) && sos.local_helpers.length > 0
+                    ? sos.local_helpers[0]
+                    : null,
+                }
+              : null,
+            legendary_eatery: legendary
+              ? {
+                  name: legendary.name,
+                  signature_dish: legendary.signature_dish,
+                  area: legendary.area,
+                }
+              : null,
+          };
+        }
+        return base;
       });
 
       return NextResponse.json({ type: "destinations", month, count: items.length, data: items });
