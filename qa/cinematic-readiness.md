@@ -1,6 +1,6 @@
 # Cinematic readiness — 2026-05-15
 
-Total: **505** dests · A=**389** · B=**116** · C=**0**
+Total: **505** dests · A=**392** · B=**113** · C=**0**
 
 Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 
@@ -8,7 +8,7 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 
 | Field | Dests blocked |
 |---|---:|
-| eats | 113 |
+| eats | 110 |
 | stays | 13 |
 | gems | 2 |
 
@@ -31,7 +31,7 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | himachal-pradesh | 32 | 2 | 0 | 34 |
 | jammu-kashmir | 12 | 6 | 0 | 18 |
 | jharkhand | 4 | 0 | 0 | 4 |
-| karnataka | 27 | 3 | 0 | 30 |
+| karnataka | 30 | 0 | 0 | 30 |
 | kerala | 18 | 12 | 0 | 30 |
 | ladakh | 12 | 2 | 0 | 14 |
 | lakshadweep | 2 | 3 | 0 | 5 |
@@ -64,7 +64,6 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 |---|---|---|
 | Adilabad (adilabad) | telangana | eats:3/5 |
 | Ahobilam (ahobilam) | andhra-pradesh | eats:2/5 |
-| Aihole (aihole) | karnataka | eats:3/5 |
 | Alampur (alampur) | telangana | eats:3/5 |
 | Amaravati (amaravati) | andhra-pradesh | eats:3/5 |
 | Anamalai Tiger Reserve (Topslip) (anamalai) | tamil-nadu | eats:2/5 |
@@ -102,7 +101,6 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Gurez Valley (gurez-valley) | jammu-kashmir | eats:3/5 |
 | Gurudongmar Lake (gurudongmar-lake) | sikkim | eats:0/5 · stays:0/3 |
 | Haflong (haflong) | assam | eats:2/5 |
-| Halebidu (halebidu) | karnataka | eats:4/5 |
 | Hanle (hanle) | ladakh | eats:4/5 |
 | Horsley Hills (horsley-hills) | andhra-pradesh | eats:3/5 |
 | Idukki (idukki) | kerala | eats:3/5 |
@@ -141,7 +139,6 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Nongriat (nongriat) | meghalaya | eats:0/5 · stays:2/3 |
 | Nrusinghanath & Harishankar (nrusinghanath-harishankar) | odisha | eats:4/5 |
 | Pachmarhi (pachmarhi) | madhya-pradesh | eats:4/5 |
-| Pattadakal (pattadakal) | karnataka | eats:3/5 |
 | Pawapuri (pawapuri) | bihar | gems:2/3 · eats:2/5 |
 | Pfutsero (pfutsero) | nagaland | eats:2/5 |
 | Phawngpui Peak (phawngpui-peak) | mizoram | eats:0/5 |
@@ -190,6 +187,7 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Agonda (agonda) | goa |
 | Agra (agra) | uttar-pradesh |
 | Ahmedabad (ahmedabad) | gujarat |
+| Aihole (aihole) | karnataka |
 | Aizawl (aizawl) | mizoram |
 | Ajanta Caves (ajanta-caves) | maharashtra |
 | Ajmer (ajmer) | rajasthan |
@@ -314,6 +312,7 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Guruvayur (guruvayur) | kerala |
 | Guwahati (guwahati) | assam |
 | Gwalior (gwalior) | madhya-pradesh |
+| Halebidu (halebidu) | karnataka |
 | Hampi (hampi) | karnataka |
 | Har Ki Doon (har-ki-doon) | uttarakhand |
 | Haridwar (haridwar) | uttarakhand |
@@ -465,6 +464,7 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Patiala (patiala) | punjab |
 | Patna (patna) | bihar |
 | Patnitop (patnitop) | jammu-kashmir |
+| Pattadakal (pattadakal) | karnataka |
 | Pelling (pelling) | sikkim |
 | Pench National Park (pench-maharashtra) | maharashtra |
 | Pinjore Gardens (pinjore-gardens) | haryana |

@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-05-15T11:14:49.468Z",
+  "generated_at": "2026-05-15T11:31:42.605Z",
   "totals": {
-    "A": 389,
-    "B": 116,
+    "A": 392,
+    "B": 113,
     "C": 0,
     "total": 505
   },
@@ -119,8 +119,8 @@
     },
     {
       "state": "karnataka",
-      "A": 27,
-      "B": 3,
+      "A": 30,
+      "B": 0,
       "C": 0,
       "total": 30
     },
@@ -268,7 +268,7 @@
   "gap_counts": [
     {
       "field": "eats",
-      "count": 113
+      "count": 110
     },
     {
       "field": "stays",
@@ -318,26 +318,6 @@
       },
       "missing": [
         "eats:2/5"
-      ]
-    },
-    {
-      "id": "aihole",
-      "name": "Aihole",
-      "state": "karnataka",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 3,
-        "eats": 3,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "eats:3/5"
       ]
     },
     {
@@ -1082,26 +1062,6 @@
       },
       "missing": [
         "eats:2/5"
-      ]
-    },
-    {
-      "id": "halebidu",
-      "name": "Halebidu",
-      "state": "karnataka",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 3,
-        "eats": 4,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "eats:4/5"
       ]
     },
     {
@@ -1865,26 +1825,6 @@
       },
       "missing": [
         "eats:4/5"
-      ]
-    },
-    {
-      "id": "pattadakal",
-      "name": "Pattadakal",
-      "state": "karnataka",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 3,
-        "eats": 3,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "eats:3/5"
       ]
     },
     {
@@ -2729,6 +2669,24 @@
         "months_scored": 12,
         "months_prose": 12,
         "gems": 5,
+        "eats": 5,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "aihole",
+      "name": "Aihole",
+      "state": "karnataka",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
         "eats": 5,
         "stays": 4
       },
@@ -4956,6 +4914,24 @@
       "id": "gwalior",
       "name": "Gwalior",
       "state": "madhya-pradesh",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "halebidu",
+      "name": "Halebidu",
+      "state": "karnataka",
       "tier": "A",
       "counts": {
         "months_scored": 12,
@@ -7680,6 +7656,24 @@
         "months_prose": 12,
         "gems": 3,
         "eats": 9,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "pattadakal",
+      "name": "Pattadakal",
+      "state": "karnataka",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
         "stays": 4
       },
       "has": {
