@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-05-15T12:04:50.451Z",
+  "generated_at": "2026-05-15T12:22:59.174Z",
   "totals": {
-    "A": 415,
-    "B": 90,
+    "A": 420,
+    "B": 85,
     "C": 0,
     "total": 505
   },
@@ -154,8 +154,8 @@
     },
     {
       "state": "maharashtra",
-      "A": 41,
-      "B": 5,
+      "A": 46,
+      "B": 0,
       "C": 0,
       "total": 46
     },
@@ -268,11 +268,11 @@
   "gap_counts": [
     {
       "field": "eats",
-      "count": 87
+      "count": 83
     },
     {
       "field": "stays",
-      "count": 13
+      "count": 11
     },
     {
       "field": "gems",
@@ -378,26 +378,6 @@
       },
       "missing": [
         "eats:1/5"
-      ]
-    },
-    {
-      "id": "astavinayak-circuit",
-      "name": "Astavinayak Circuit",
-      "state": "maharashtra",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 3,
-        "eats": 4,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "eats:4/5"
       ]
     },
     {
@@ -803,27 +783,6 @@
       ]
     },
     {
-      "id": "elephanta-caves",
-      "name": "Elephanta Caves",
-      "state": "maharashtra",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 3,
-        "eats": 0,
-        "stays": 0
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "eats:0/5",
-        "stays:0/3"
-      ]
-    },
-    {
       "id": "fatehpur-sikri",
       "name": "Fatehpur Sikri",
       "state": "uttar-pradesh",
@@ -1023,26 +982,6 @@
       "missing": [
         "eats:3/5",
         "stays:2/3"
-      ]
-    },
-    {
-      "id": "kashid",
-      "name": "Kashid",
-      "state": "maharashtra",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 3,
-        "eats": 4,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "eats:4/5"
       ]
     },
     {
@@ -1466,26 +1405,6 @@
       ]
     },
     {
-      "id": "morgaon",
-      "name": "Morgaon",
-      "state": "maharashtra",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 3,
-        "eats": 4,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "eats:4/5"
-      ]
-    },
-    {
       "id": "morni-hills",
       "name": "Morni Hills",
       "state": "haryana",
@@ -1806,26 +1725,6 @@
       },
       "missing": [
         "eats:3/5"
-      ]
-    },
-    {
-      "id": "siddhatek",
-      "name": "Siddhatek",
-      "state": "maharashtra",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 3,
-        "eats": 5,
-        "stays": 2
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "missing": [
-        "stays:2/3"
       ]
     },
     {
@@ -2546,6 +2445,24 @@
       "id": "assagao",
       "name": "Assagao",
       "state": "goa",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "astavinayak-circuit",
+      "name": "Astavinayak Circuit",
+      "state": "maharashtra",
       "tier": "A",
       "counts": {
         "months_scored": 12,
@@ -4217,6 +4134,24 @@
       "missing": []
     },
     {
+      "id": "elephanta-caves",
+      "name": "Elephanta Caves",
+      "state": "maharashtra",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 3
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
       "id": "ellora-caves",
       "name": "Ellora Caves",
       "state": "maharashtra",
@@ -5199,6 +5134,24 @@
         "gems": 3,
         "eats": 11,
         "stays": 3
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "kashid",
+      "name": "Kashid",
+      "state": "maharashtra",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 4
       },
       "has": {
         "tagline": true,
@@ -6542,6 +6495,24 @@
       "id": "mollem",
       "name": "Mollem (Bhagwan Mahavir Sanctuary)",
       "state": "goa",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "morgaon",
+      "name": "Morgaon",
+      "state": "maharashtra",
       "tier": "A",
       "counts": {
         "months_scored": 12,
@@ -8396,6 +8367,24 @@
       "id": "shravanabelagola",
       "name": "Shravanabelagola",
       "state": "karnataka",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 3
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "missing": []
+    },
+    {
+      "id": "siddhatek",
+      "name": "Siddhatek",
+      "state": "maharashtra",
       "tier": "A",
       "counts": {
         "months_scored": 12,

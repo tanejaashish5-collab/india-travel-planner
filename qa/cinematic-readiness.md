@@ -1,6 +1,6 @@
 # Cinematic readiness — 2026-05-15
 
-Total: **505** dests · A=**415** · B=**90** · C=**0**
+Total: **505** dests · A=**420** · B=**85** · C=**0**
 
 Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 
@@ -8,8 +8,8 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 
 | Field | Dests blocked |
 |---|---:|
-| eats | 87 |
-| stays | 13 |
+| eats | 83 |
+| stays | 11 |
 | gems | 2 |
 
 ## By state
@@ -36,7 +36,7 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | ladakh | 12 | 2 | 0 | 14 |
 | lakshadweep | 2 | 3 | 0 | 5 |
 | madhya-pradesh | 13 | 0 | 0 | 13 |
-| maharashtra | 41 | 5 | 0 | 46 |
+| maharashtra | 46 | 0 | 0 | 46 |
 | manipur | 3 | 2 | 0 | 5 |
 | meghalaya | 2 | 7 | 0 | 9 |
 | mizoram | 3 | 1 | 0 | 4 |
@@ -67,7 +67,6 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Alampur (alampur) | telangana | eats:3/5 |
 | Amaravati (amaravati) | andhra-pradesh | eats:3/5 |
 | Anini (anini) | arunachal-pradesh | eats:1/5 |
-| Astavinayak Circuit (astavinayak-circuit) | maharashtra | eats:4/5 |
 | Bangaram Island (bangaram) | lakshadweep | eats:2/5 |
 | Bangus Valley (bangus-valley) | jammu-kashmir | eats:1/5 · stays:1/3 |
 | Barmer (barmer) | rajasthan | eats:4/5 |
@@ -88,7 +87,6 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Dudhwa National Park (dudhwa-national-park) | uttar-pradesh | eats:4/5 |
 | Dungarpur (dungarpur) | rajasthan | eats:4/5 |
 | Dzukou Valley (dzukou-valley) | nagaland | eats:0/5 |
-| Elephanta Caves (elephanta-caves) | maharashtra | eats:0/5 · stays:0/3 |
 | Fatehpur Sikri (fatehpur-sikri) | uttar-pradesh | eats:3/5 |
 | Gagron Fort (gagron-fort) | rajasthan | eats:3/5 |
 | Gandikota (gandikota) | andhra-pradesh | eats:3/5 |
@@ -99,7 +97,6 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Horsley Hills (horsley-hills) | andhra-pradesh | eats:3/5 |
 | Jorhat (jorhat) | assam | eats:3/5 |
 | Kadmat Island (kadmat) | lakshadweep | eats:3/5 · stays:2/3 |
-| Kashid (kashid) | maharashtra | eats:4/5 |
 | Kaziranga (kaziranga) | assam | eats:3/5 |
 | Khangchendzonga National Park (khangchendzonga-np) | sikkim | eats:1/5 |
 | Khonoma (khonoma) | nagaland | eats:3/5 |
@@ -121,7 +118,6 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Minicoy Island (minicoy) | lakshadweep | eats:3/5 |
 | Mon (mon) | nagaland | eats:4/5 |
 | Moreh (moreh) | manipur | stays:1/3 |
-| Morgaon (morgaon) | maharashtra | eats:4/5 |
 | Morni Hills (morni-hills) | haryana | eats:3/5 |
 | Namdapha (namdapha) | arunachal-pradesh | eats:1/5 |
 | Neermahal (neermahal) | tripura | gems:2/3 · eats:2/5 |
@@ -138,7 +134,6 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Ranakpur Jain Temple (ranakpur) | rajasthan | eats:4/5 |
 | Sarnath (sarnath) | uttar-pradesh | eats:4/5 |
 | Shnongpdeng (shnongpdeng) | meghalaya | eats:3/5 |
-| Siddhatek (siddhatek) | maharashtra | stays:2/3 |
 | Sinthan Top (sinthan-top) | jammu-kashmir | eats:0/5 · stays:0/3 |
 | Sivasagar (sivasagar) | assam | eats:3/5 |
 | Sravasti (sravasti) | uttar-pradesh | eats:3/5 |
@@ -183,6 +178,7 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Araku Valley (araku-valley) | andhra-pradesh |
 | Arambol (arambol) | goa |
 | Assagao (assagao) | goa |
+| Astavinayak Circuit (astavinayak-circuit) | maharashtra |
 | Athirapally Falls (athirapally) | kerala |
 | Auli (auli) | uttarakhand |
 | Aurangabad (aurangabad) | maharashtra |
@@ -275,6 +271,7 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Drass (drass) | ladakh |
 | Dudhsagar Falls (dudhsagar-falls) | goa |
 | Dwarka (dwarka) | gujarat |
+| Elephanta Caves (elephanta-caves) | maharashtra |
 | Ellora Caves (ellora-caves) | maharashtra |
 | Eravikulam National Park (eravikulam) | kerala |
 | Fort Aguada & Candolim (fort-aguada) | goa |
@@ -330,6 +327,7 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Karla & Bhaja Caves (karla-bhaja-caves) | maharashtra |
 | Karwar (karwar) | karnataka |
 | Kasauli (kasauli) | himachal-pradesh |
+| Kashid (kashid) | maharashtra |
 | Kasol (kasol) | himachal-pradesh |
 | Katra (katra) | jammu-kashmir |
 | Kausani (kausani) | uttarakhand |
@@ -405,6 +403,7 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Modhera Sun Temple (modhera) | gujarat |
 | Mokokchung (mokokchung) | nagaland |
 | Mollem (Bhagwan Mahavir Sanctuary) (mollem) | goa |
+| Morgaon (morgaon) | maharashtra |
 | Morjim (morjim) | goa |
 | Mount Abu (mount-abu) | rajasthan |
 | Mudumalai National Park (mudumalai) | tamil-nadu |
@@ -508,6 +507,7 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Shimla (shimla) | himachal-pradesh |
 | Shirdi (shirdi) | maharashtra |
 | Shravanabelagola (shravanabelagola) | karnataka |
+| Siddhatek (siddhatek) | maharashtra |
 | Silent Valley National Park (silent-valley) | kerala |
 | Siliguri (siliguri) | west-bengal |
 | Silvassa (silvassa) | daman-diu |
