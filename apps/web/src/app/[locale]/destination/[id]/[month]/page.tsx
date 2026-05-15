@@ -281,7 +281,34 @@ export async function generateMetadata({
   const noteSource = note
     || (verdict === "skip" ? (whyNot || whyGo) : (whyGo || whyNot))
     || "";
-  const noteStripped = noteSource.replace(stripPrefix, "").trim();
+  let noteStripped = noteSource.replace(stripPrefix, "").trim();
+
+  // 2026-05-15 SERP dedupe: descLead already leads with `rangeStr` (e.g.,
+  // "Kasol in May: 14–26°C."). The editorial note typically also leads with
+  // the same temp ("Peak season, 14-26°C. Kheerganga…"), so the SERP snippet
+  // displayed the temperature twice — wasting ~15-20 chars on every
+  // /destination/<slug>/<month> page (505 dests × 12 months). When we extracted
+  // the range from the note itself (noteRangeMatch hit), strip that literal
+  // substring from the note body and clean up the punctuation glitches it
+  // leaves behind. Kasol/May + Munnar/June were the two highest-impression
+  // sub-1% CTR pages flagged in gsc-audit-2026-05-15.md priority #2.
+  if (noteRangeMatch) {
+    const tempLiteral = noteRangeMatch[0];
+    noteStripped = noteStripped
+      .split(tempLiteral).join("")
+      // ". , " → ". " when the strip leaves a leading separator after a period.
+      .replace(/\.\s*[,;:\-–—]+\s*/g, ". ")
+      // "Peak season,. Kheerganga" → "Peak season. Kheerganga"
+      .replace(/[,;:\-–—]+(\s*[.!?])/g, "$1")
+      // "Best month ." → "Best month."
+      .replace(/\s+([.!?,;:])/g, "$1")
+      .replace(/\s{2,}/g, " ")
+      .replace(/^[\s,;:\-–—.]+/, "")
+      // Re-capitalise after a period when our strip left a lowercase letter
+      // ("Peak heat. humidity 80 percent." → "Peak heat. Humidity 80 percent.").
+      .replace(/(\.\s+)([a-z])/g, (_m: string, p: string, c: string) => p + c.toUpperCase())
+      .trim();
+  }
 
   const noteBudget = Math.max(40, 155 - descLead.length - descClose.length - 2);
   const descBody = noteStripped ? trimToBoundary(noteStripped, noteBudget) : "";
