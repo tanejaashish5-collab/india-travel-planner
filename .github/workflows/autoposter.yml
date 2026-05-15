@@ -35,8 +35,10 @@ on:
     - cron: "47 10 * * *"
     # YT Short slot 2: 17:17 IST (11:47 UTC) — daily YT only
     - cron: "47 11 * * *"
-    # Evening post: 18:47 IST (13:17 UTC) — daily IG+FB
-    - cron: "17 13 * * *"
+    # Evening post: 19:47 IST (14:17 UTC) — daily IG+FB
+    # Was 18:47 IST; pushed +1h on 2026-05-15 to land inside India IG peak
+    # window (19:00-21:00) rather than 1h before it.
+    - cron: "17 14 * * *"
     # Reel slot 2: REMOVED 2026-05-10 (Tier 3 cadence cut: 6→4 IG posts/day to
     # respect IG's algorithmic penalty for sub-10K-follower accounts posting >3/day).
     # Analytics sync: 23:47 IST (18:17 UTC) — internal
@@ -297,23 +299,25 @@ jobs:
               echo "Flow-story skipped (Tier 3: Sun only) · DOW=${DOW}"
             fi
 
-          # 17:17 IST = UTC 11:47 → YT Short slot 2 (cron=707, window: 660-734)
-          elif [ "$TOTAL_MINS" -ge 660 ] && [ "$TOTAL_MINS" -lt 735 ]; then
+          # 17:17 IST = UTC 11:47 → YT Short slot 2 (cron=707, window: 660-739)
+          elif [ "$TOTAL_MINS" -ge 660 ] && [ "$TOTAL_MINS" -lt 740 ]; then
             echo "args=--yt-short" >> $GITHUB_OUTPUT
             echo "Scheduled YT SHORT slot 2 · 17:17 IST (UTC ${HOUR}:${MINUTE})"
 
-          # 18:47 IST = UTC 13:17 → Evening post (cron=797, window: 735-839)
-          # Catches the -14 min drift seen 2026-05-05 (12:46 UTC = 766).
-          elif [ "$TOTAL_MINS" -ge 735 ] && [ "$TOTAL_MINS" -lt 840 ]; then
+          # 19:47 IST = UTC 14:17 → Evening post (cron=857, window: 740-959)
+          # Shifted +1h on 2026-05-15 to land inside India's IG peak engagement
+          # window (19:00-21:00 IST) rather than 1h before it. Wide window
+          # tolerates ±117/102 min of GHA scheduler drift.
+          elif [ "$TOTAL_MINS" -ge 740 ] && [ "$TOTAL_MINS" -lt 960 ]; then
             echo "args=--evening" >> $GITHUB_OUTPUT
-            echo "Scheduled EVENING · 18:47 IST (UTC ${HOUR}:${MINUTE})"
+            echo "Scheduled EVENING · 19:47 IST (UTC ${HOUR}:${MINUTE})"
 
-          # 20:47 IST = UTC 15:17 → Reel slot 2 — REMOVED 2026-05-10 (Tier 3).
-          # Window 840-989 retained as a sync-only fallback for any drift from
-          # the evening cron (which has window 735-839 ending at 13:59 UTC).
-          elif [ "$TOTAL_MINS" -ge 840 ] && [ "$TOTAL_MINS" -lt 990 ]; then
+          # Reel slot 2 removed 2026-05-10 (Tier 3). Window 960-989 retained as
+          # a sync-only fallback for post-evening drift (evening window ends
+          # at 15:59 UTC = 960 mins after the 2026-05-15 +1h push).
+          elif [ "$TOTAL_MINS" -ge 960 ] && [ "$TOTAL_MINS" -lt 990 ]; then
             echo "args=--sync-only" >> $GITHUB_OUTPUT
-            echo "Reel slot 2 removed (Tier 3 cadence cut) · sync-only"
+            echo "Post-evening drift fallback · sync-only"
 
           # 23:47 IST = UTC 18:17 → Analytics sync (cron=1097, window: 990-1199)
           elif [ "$TOTAL_MINS" -ge 990 ] && [ "$TOTAL_MINS" -lt 1200 ]; then

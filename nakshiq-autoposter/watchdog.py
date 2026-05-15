@@ -46,7 +46,7 @@ DAILY_SLOTS = [
     ("yt-short-1",  4, 17, "yt-short-force",  None),  # 09:47 IST · YT
     ("reel",        5, 47, "reel-force",      None),  # 11:17 IST · IG+FB
     ("yt-short-2", 11, 47, "yt-short-force",  None),  # 17:17 IST · YT
-    ("evening",    13, 17, "evening-force",   None),  # 18:47 IST · IG+FB
+    ("evening",    14, 17, "evening-force",   None),  # 19:47 IST · IG+FB (shifted +1h on 2026-05-15)
 ]
 
 # 13:17 IST = 07:47 UTC — visual rotation by weekday (see autoposter.yml mode-detection)
