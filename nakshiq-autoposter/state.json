@@ -1,14 +1,20 @@
 {
-  "yt_short_formats_used": [],
-  "yt_short_music_used": [],
+  "yt_short_formats_used": [
+    "listicle"
+  ],
+  "yt_short_music_used": [
+    "24_festival_anthem"
+  ],
   "posted_today": {
-    "m8EAd": "2026-05-15",
-    "PdMu0": "2026-05-15"
+    "GAh5p_yt_short": "2026-05-15",
+    "GAh5p_yt_short_count": 1,
+    "m8EAd_yt_short": "2026-05-15",
+    "m8EAd_yt_short_count": 1
   },
-  "last_sync": "2026-05-15T07:00:45.357161+00:00",
+  "last_sync": "2026-04-30T04:05:30.154914+00:00",
   "posted_destinations": [
     {
-      "destination_id": "pahalgam",
+      "destination_id": "uttarkashi",
       "date": "2026-05-15"
     }
   ],
@@ -26,8 +32,7 @@
       "score_card",
       "collection_spotlight",
       "festival_alert",
-      "kids_intel",
-      "score_card"
+      "kids_intel"
     ],
     "PdMu0": [
       "monthly_forecast",
@@ -47,8 +52,7 @@
       "reality_check",
       "collection_spotlight",
       "festival_alert",
-      "kids_intel",
-      "score_card"
+      "kids_intel"
     ]
   },
   "post_log": [
@@ -443,40 +447,25 @@
       "has_media": true
     },
     {
-      "timestamp": "2026-05-15T07:01:33.100569+00:00",
+      "timestamp": "2026-05-15T07:07:00.779831+00:00",
       "date": "2026-05-15",
-      "platform": "instagram",
-      "account_id": "m8EAd",
-      "post_id": "xJev8",
-      "destination": "pahalgam",
-      "format": "score_card",
-      "has_media": true,
-      "media_id": "pahalgam.mp4"
+      "platform": "youtube",
+      "post_id": "4sK9i",
+      "destination": "uttarkashi",
+      "format": "yt_short.listicle",
+      "media_id": "yt_short_listicle_yt_short_listicle_2026-05-15.mp4"
     },
     {
-      "timestamp": "2026-05-15T07:01:55.952112+00:00",
+      "timestamp": "2026-05-15T07:07:42.639302+00:00",
       "date": "2026-05-15",
-      "platform": "facebook",
-      "account_id": "PdMu0",
-      "post_id": "W4tPz",
-      "destination": "pahalgam",
-      "format": "score_card",
-      "has_media": true,
-      "media_id": "pahalgam.mp4"
+      "platform": "instagram",
+      "post_id": "LzTGV",
+      "destination": "uttarkashi",
+      "format": "yt_short.listicle",
+      "media_id": "yt_short_listicle_yt_short_listicle_2026-05-15.mp4"
     }
   ],
-  "theme_usage": {
-    "morning_formats": {
-      "score_card": [
-        "2026-05-15"
-      ]
-    },
-    "destinations": {
-      "pahalgam": [
-        "2026-05-15"
-      ]
-    }
-  },
+  "theme_usage": {},
   "infographic": {
     "last_topic_idx": 0,
     "last_theme_idx": 0,
@@ -488,7 +477,5 @@
     ]
   },
   "ugc_music_history": [],
-  "last_picked": {
-    "shared_best": "pahalgam"
-  }
+  "last_picked": {}
 }

@@ -1,35 +1,20 @@
-2026-05-15 07:00:27  INFO      ════════════════════════════════════════════════════════════
-2026-05-15 07:00:27  INFO      Nakshiq Autoposter · MORNING · 2026-05-15 · weekday=4
-2026-05-15 07:00:27  INFO      ════════════════════════════════════════════════════════════
-2026-05-15 07:00:27  INFO      ── Syncing Nakshiq content ──────────────────────────────
-2026-05-15 07:00:45  INFO      Synced → 20 destinations · 0 traps · 0 articles · 23 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 50 camping · 50 gems · total catalog=505
-2026-05-15 07:00:46  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
-2026-05-15 07:00:46  INFO      Festivals filtered (past/post-window): Kedarnath Opening, Summer Festival, Badri-Kedar Festival, Chaukori Tea Festival, Chail Cricket Festival, Guptkashi Vishwanath Temple Festival, Tosamaidan Wildflower Season, Badrinath Temple Opening (Kapaat Kholna) (+9 more)
-2026-05-15 07:00:46  INFO      Morning format (pillar-biased→verdict): score_card [0% vs target 40%] (26/26 never featured)
-2026-05-15 07:00:46  INFO      Formats — IG: score_card  ·  FB: score_card  ·  Story: infrastructure_truth
-2026-05-15 07:00:46  INFO      Used destinations (14d): 0
-2026-05-15 07:00:46  INFO      Fingerprint dedup snapshot — 0 dests in 7d · 27 (dest,fmt) pairs in 30d · 0 media in 60d
-2026-05-15 07:00:50  INFO      Shared best destination locked: Pahalgam
-2026-05-15 07:00:50  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
-2026-05-15 07:00:50  INFO      [instagram/nakshiq] Generating score_card post...
-2026-05-15 07:00:50  INFO      [instagram/nakshiq] Caption ready (512 chars, dest=pahalgam)
-2026-05-15 07:00:51  INFO      [instagram/nakshiq] Video available — uploading for Reel...
-2026-05-15 07:00:51  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/pahalgam.mp4?v=20260512
-2026-05-15 07:00:52  INFO          Requesting upload URL for pahalgam.mp4 (11,691,764 bytes, video/mp4)
-2026-05-15 07:00:52  INFO          Uploading to R2 (timeout=300s)...
-2026-05-15 07:00:54  INFO          R2 PUT OK. Confirming...
-2026-05-15 07:00:55  INFO          Media ready: Bs6Kn (11,691,764 bytes · pahalgam.mp4)
-2026-05-15 07:00:55  INFO      [instagram/nakshiq] Publishing Reel...
-2026-05-15 07:01:33  INFO      [instagram/nakshiq] ✅ Published · Outstand=xJev8 · Platform=17994107282959361
-2026-05-15 07:01:33  INFO      [facebook/Nakshiq] Generating score_card post...
-2026-05-15 07:01:33  INFO      [facebook/Nakshiq] Caption ready (493 chars, dest=pahalgam)
-2026-05-15 07:01:33  INFO      [facebook/Nakshiq] Video available — uploading for Reel...
-2026-05-15 07:01:33  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/pahalgam.mp4?v=20260512
-2026-05-15 07:01:33  INFO          Requesting upload URL for pahalgam.mp4 (11,691,764 bytes, video/mp4)
-2026-05-15 07:01:34  INFO          Uploading to R2 (timeout=300s)...
-2026-05-15 07:01:35  INFO          R2 PUT OK. Confirming...
-2026-05-15 07:01:36  INFO          Media ready: ekUlr (11,691,764 bytes · pahalgam.mp4)
-2026-05-15 07:01:36  INFO      [facebook/Nakshiq] Publishing Reel...
-2026-05-15 07:01:55  INFO      [facebook/Nakshiq] ✅ Published · Outstand=W4tPz · Platform=2017746112463531
-2026-05-15 07:01:55  INFO      State saved. Run complete.
-2026-05-15 07:01:55  INFO      ════════════════════════════════════════════════════════════
+2026-05-15 07:05:34  INFO      ════════════════════════════════════════════════════════════
+2026-05-15 07:05:34  INFO      Nakshiq Autoposter · YT SHORT · 2026-05-15
+2026-05-15 07:05:34  INFO      ════════════════════════════════════════════════════════════
+2026-05-15 07:06:39  INFO      Short rendered: yt_short_listicle_2026-05-15.mp4 (14644 KB, 35.0s, fmt=listicle, music=24_festival_anthem)
+2026-05-15 07:06:39  INFO          Requesting upload URL for yt_short_listicle_yt_short_listicle_2026-05-15.mp4 (14,995,768 bytes, video/mp4)
+2026-05-15 07:06:40  INFO          Uploading to R2 (timeout=300s)...
+2026-05-15 07:06:42  INFO          R2 PUT OK. Confirming...
+2026-05-15 07:06:43  INFO          Media ready: b0tZT (14,995,768 bytes · yt_short_listicle_yt_short_listicle_2026-05-15.mp4)
+2026-05-15 07:06:43  INFO      Video uploaded: yt_short_listicle_yt_short_listicle_2026-05-15.mp4
+2026-05-15 07:06:44  INFO      [youtube/@naksh-iq] Publishing YT Short (listicle)...
+2026-05-15 07:06:48  INFO      [youtube/@naksh-iq] Outstand accepted (post_id=4sK9i), waiting for platform confirmation...
+2026-05-15 07:07:00  INFO      [youtube/@naksh-iq] ✅ YT Short published · Outstand=4sK9i · Platform=qy7ztA4DKLI
+2026-05-15 07:07:00  INFO      [instagram/nakshiq] Publishing YT Short (listicle)...
+2026-05-15 07:07:02  INFO      [instagram/nakshiq] Outstand accepted (post_id=LzTGV), waiting for platform confirmation...
+2026-05-15 07:07:42  INFO      [instagram/nakshiq] ✅ YT Short published · Outstand=LzTGV · Platform=18043011197572631
+2026-05-15 07:07:42  WARNING   Could not write post_outcomes entry: 'utf-8' codec can't encode characters in position 147-148: surrogates not allowed
+2026-05-15 07:07:42  INFO      [facebook/Nakshiq] Skipping (YT Shorts post to YouTube + Instagram only).
+2026-05-15 07:07:42  INFO      YT Short posted: format=listicle, music=24_festival_anthem
+2026-05-15 07:07:42  INFO      State saved. YT Short run complete.
+2026-05-15 07:07:42  INFO      ════════════════════════════════════════════════════════════
