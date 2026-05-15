@@ -1,9 +1,21 @@
 {
-  "yt_short_formats_used": [],
-  "yt_short_music_used": [],
-  "posted_today": {},
-  "last_sync": "2026-05-15T10:14:29.755496+00:00",
-  "posted_destinations": [],
+  "yt_short_formats_used": [
+    "before_after"
+  ],
+  "yt_short_music_used": [
+    "34_dark_phonk"
+  ],
+  "posted_today": {
+    "GAh5p_yt_short": "2026-05-15",
+    "GAh5p_yt_short_count": 1
+  },
+  "last_sync": "2026-04-30T04:05:30.154914+00:00",
+  "posted_destinations": [
+    {
+      "destination_id": "kabini",
+      "date": "2026-05-15"
+    }
+  ],
   "posted_formats": {
     "m8EAd": [
       "monthly_forecast",
@@ -431,6 +443,15 @@
       "destination": "ranthambore",
       "format": "kids_intel",
       "has_media": true
+    },
+    {
+      "timestamp": "2026-05-15T11:40:01.136333+00:00",
+      "date": "2026-05-15",
+      "platform": "youtube",
+      "post_id": "xJle8",
+      "destination": "kabini",
+      "format": "yt_short.before_after",
+      "media_id": "yt_short_before_after_yt_short_before_after_2026-05-15.mp4"
     }
   ],
   "theme_usage": {},
