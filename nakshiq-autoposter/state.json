@@ -1,18 +1,16 @@
 {
-  "yt_short_formats_used": [
-    "before_after"
-  ],
-  "yt_short_music_used": [
-    "34_dark_phonk"
-  ],
+  "yt_short_formats_used": [],
+  "yt_short_music_used": [],
   "posted_today": {
-    "GAh5p_yt_short": "2026-05-15",
-    "GAh5p_yt_short_count": 1
+    "m8EAd": "2026-05-15",
+    "m8EAd_evening": "2026-05-15",
+    "PdMu0": "2026-05-15",
+    "PdMu0_evening": "2026-05-15"
   },
-  "last_sync": "2026-04-30T04:05:30.154914+00:00",
+  "last_sync": "2026-05-15T12:30:25.351933+00:00",
   "posted_destinations": [
     {
-      "destination_id": "kabini",
+      "destination_id": "parvati-valley",
       "date": "2026-05-15"
     }
   ],
@@ -30,7 +28,8 @@
       "score_card",
       "collection_spotlight",
       "festival_alert",
-      "kids_intel"
+      "kids_intel",
+      "score_card"
     ],
     "PdMu0": [
       "monthly_forecast",
@@ -50,7 +49,8 @@
       "reality_check",
       "collection_spotlight",
       "festival_alert",
-      "kids_intel"
+      "kids_intel",
+      "score_card"
     ]
   },
   "post_log": [
@@ -445,16 +445,45 @@
       "has_media": true
     },
     {
-      "timestamp": "2026-05-15T11:40:01.136333+00:00",
+      "timestamp": "2026-05-15T12:31:12.080838+00:00",
       "date": "2026-05-15",
-      "platform": "youtube",
-      "post_id": "xJle8",
-      "destination": "kabini",
-      "format": "yt_short.before_after",
-      "media_id": "yt_short_before_after_yt_short_before_after_2026-05-15.mp4"
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "dy4cO",
+      "destination": "parvati-valley",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "parvati-valley.mp4"
+    },
+    {
+      "timestamp": "2026-05-15T12:31:40.752454+00:00",
+      "date": "2026-05-15",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "aquKb",
+      "destination": "parvati-valley",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "parvati-valley.mp4"
     }
   ],
-  "theme_usage": {},
+  "theme_usage": {
+    "destinations": {
+      "parvati-valley": [
+        "2026-05-15"
+      ]
+    },
+    "reels": {
+      "parvati-valley": [
+        "2026-05-15"
+      ]
+    },
+    "audience_tags": {
+      "adventurers": [
+        "2026-05-15"
+      ]
+    }
+  },
   "infographic": {
     "last_topic_idx": 0,
     "last_theme_idx": 0,
@@ -466,5 +495,7 @@
     ]
   },
   "ugc_music_history": [],
-  "last_picked": {}
+  "last_picked": {
+    "shared_best": "parvati-valley"
+  }
 }
