@@ -14,25 +14,30 @@ on:
     # boundary. All times stay inside their mode-detection windows
     # below so the bash routing logic doesn't need to change.
     #
+    # 2026-05-16 CADENCE CUT — pivoting from 6 IG+FB posts/day to 2.
+    # User diagnosis: 215 IG posts → 2 organic followers. Algorithm penalty
+    # for sub-1k accounts at >2-3 posts/day. Quality > volume until first
+    # 1k followers crossed. Reel slot, visual slot, reel-map, flow-story
+    # all paused. Morning + Evening only. YT keeps 2/day (different ceiling).
+    #
     # Morning post: 08:47 IST (03:17 UTC) — daily IG+FB
     - cron: "17 3 * * *"
     # YT Short slot 1: 09:47 IST (04:17 UTC) — daily YT only
     - cron: "17 4 * * *"
-    # Reel slot 1: 11:17 IST (05:47 UTC) — daily IG+FB
-    - cron: "47 5 * * *"
-    # Visual slot: 13:17 IST (07:47 UTC) — daily IG+FB
-    #   Mon/Wed → moat, Tue/Thu → tourist map, Fri → infographic,
-    #   Sat → canva, Sun → pomelli (rotation in mode detection)
-    - cron: "47 7 * * *"
+    # Reel slot 1: PAUSED 2026-05-16 — was 11:17 IST. Resume after 1k followers.
+    # - cron: "47 5 * * *"
+    # Visual slot: PAUSED 2026-05-16 — was 13:17 IST (moat/tourist-map/canva/
+    # pomelli rotation). Brand-manifesto content earned zero engagement; only
+    # rich-data verdict/verification posts (Morning + Evening) remain.
+    # - cron: "47 7 * * *"
     # UGC avatar video: 14:30 IST (09:00 UTC) — Wed+Sat only, IG+FB+YT
     # DISABLED: HeyGen balance too low ($0.32). Uncomment after topping up.
     # - cron: "0 9 * * 3,6"
-    # Reel-map: 15:17 IST (09:47 UTC) — Tue/Thu/Sat only, IG+FB+YT (pomelli pipeline)
-    # Cron fires daily; mode-detection DOW-gates to T/Th/Sa (Tier 3, 2026-05-10).
-    - cron: "47 9 * * *"
-    # Flow story: 16:17 IST (10:47 UTC) — Sun only, IG+FB
-    # Cron fires daily; mode-detection DOW-gates to Sun (Tier 3, 2026-05-10).
-    - cron: "47 10 * * *"
+    # Reel-map: PAUSED 2026-05-16 — was 15:17 IST Tue/Thu/Sat. Pomelli pipeline
+    # not converting; pause until visual content earns first 50-engagement post.
+    # - cron: "47 9 * * *"
+    # Flow story: PAUSED 2026-05-16 — was 16:17 IST Sun only.
+    # - cron: "47 10 * * *"
     # YT Short slot 2: 17:17 IST (11:47 UTC) — daily YT only
     - cron: "47 11 * * *"
     # Evening post: 19:47 IST (14:17 UTC) — daily IG+FB
