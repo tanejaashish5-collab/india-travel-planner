@@ -348,7 +348,7 @@
       "format": "reality_check",
       "outstand_post_id": "LEE0V",
       "platform_post_id": "18067665245654147",
-      "collection": "After Dark — Night Experiences Worth Staying Up For",
+      "collection": "After Dark \u2014 Night Experiences Worth Staying Up For",
       "note": "recovered_via_manual_state_patch_after_3x_duplicate_publish_during_evening_run"
     },
     {
@@ -431,6 +431,36 @@
       "destination": "ranthambore",
       "format": "kids_intel",
       "has_media": true
+    },
+    {
+      "timestamp": "2026-05-16T09:30:00+00:00",
+      "date": "2026-05-16",
+      "platform": "manual-skip",
+      "post_id": "manual-skip-tehri",
+      "destination": "tehri",
+      "format": "manual_skip_marker",
+      "has_media": false,
+      "media_id": null
+    },
+    {
+      "timestamp": "2026-05-16T09:30:00+00:00",
+      "date": "2026-05-16",
+      "platform": "manual-skip",
+      "post_id": "manual-skip-tehri-lake",
+      "destination": "tehri-lake",
+      "format": "manual_skip_marker",
+      "has_media": false,
+      "media_id": null
+    },
+    {
+      "timestamp": "2026-05-16T09:30:00+00:00",
+      "date": "2026-05-16",
+      "platform": "manual-skip",
+      "post_id": "manual-skip-pahalgam",
+      "destination": "pahalgam",
+      "format": "manual_skip_marker",
+      "has_media": false,
+      "media_id": null
     }
   ],
   "theme_usage": {},
@@ -445,5 +475,10 @@
     ]
   },
   "ugc_music_history": [],
-  "last_picked": {}
+  "last_picked": {},
+  "manual_skip_dests": {
+    "tehri": "2026-06-01",
+    "tehri-lake": "2026-06-01",
+    "pahalgam": "2026-06-01"
+  }
 }
