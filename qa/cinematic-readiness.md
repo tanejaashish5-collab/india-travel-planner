@@ -1,8 +1,8 @@
 # Cinematic readiness — 2026-05-16
 
-Total: **505** dests · A=**446** · HS-B=**17** · B=**42** · C=**0**
+Total: **505** dests · A=**446** · HS-B=**24** · B=**35** · C=**0**
 
-Cinematic-eligible (A + HS-B): **463**
+Cinematic-eligible (A + HS-B): **470**
 
 Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 
@@ -19,7 +19,7 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | State | A | HS-B | B | C | Total |
 |---|---:|---:|---:|---:|---:|
 | andaman-nicobar | 11 | 1 | 0 | 0 | 12 |
-| andhra-pradesh | 9 | 0 | 12 | 0 | 21 |
+| andhra-pradesh | 9 | 2 | 10 | 0 | 21 |
 | arunachal-pradesh | 7 | 4 | 0 | 0 | 11 |
 | assam | 1 | 2 | 5 | 0 | 8 |
 | bihar | 3 | 0 | 3 | 0 | 6 |
@@ -31,12 +31,12 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | gujarat | 29 | 0 | 0 | 0 | 29 |
 | haryana | 2 | 0 | 1 | 0 | 3 |
 | himachal-pradesh | 34 | 0 | 0 | 0 | 34 |
-| jammu-kashmir | 15 | 2 | 1 | 0 | 18 |
+| jammu-kashmir | 15 | 3 | 0 | 0 | 18 |
 | jharkhand | 4 | 0 | 0 | 0 | 4 |
 | karnataka | 30 | 0 | 0 | 0 | 30 |
-| kerala | 28 | 0 | 2 | 0 | 30 |
+| kerala | 28 | 2 | 0 | 0 | 30 |
 | ladakh | 13 | 1 | 0 | 0 | 14 |
-| lakshadweep | 3 | 1 | 1 | 0 | 5 |
+| lakshadweep | 3 | 2 | 0 | 0 | 5 |
 | madhya-pradesh | 13 | 0 | 0 | 0 | 13 |
 | maharashtra | 45 | 0 | 1 | 0 | 46 |
 | manipur | 4 | 1 | 0 | 0 | 5 |
@@ -51,7 +51,7 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | tamil-nadu | 30 | 0 | 0 | 0 | 30 |
 | telangana | 7 | 0 | 8 | 0 | 15 |
 | tripura | 3 | 0 | 0 | 0 | 3 |
-| uttar-pradesh | 8 | 0 | 5 | 0 | 13 |
+| uttar-pradesh | 8 | 1 | 4 | 0 | 13 |
 | uttarakhand | 38 | 0 | 0 | 0 | 38 |
 | west-bengal | 6 | 0 | 0 | 0 | 6 |
 
@@ -65,31 +65,24 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Dest | State | Thin |
 |---|---|---|
 | Adilabad (adilabad) | telangana | eats:3/5 |
-| Ahobilam (ahobilam) | andhra-pradesh | eats:2/5 |
 | Alampur (alampur) | telangana | eats:3/5 |
 | Amaravati (amaravati) | andhra-pradesh | eats:3/5 |
 | Astavinayak Circuit (astavinayak-circuit) | maharashtra | eats:2/5 |
-| Bangus Valley (bangus-valley) | jammu-kashmir | eats:3/5 |
 | Basara (basara) | telangana | eats:3/5 |
 | Belum Caves (belum-caves) | andhra-pradesh | eats:3/5 |
-| Chinnar Wildlife Sanctuary (chinnar) | kerala | eats:2/5 |
 | Chitrakoot (chitrakoot) | uttar-pradesh | eats:4/5 |
 | Takht Sri Damdama Sahib (damdama-sahib) | punjab | eats:3/5 |
 | Deeg (deeg) | rajasthan | eats:4/5 |
-| Dudhwa National Park (dudhwa-national-park) | uttar-pradesh | eats:4/5 |
 | Dungarpur (dungarpur) | rajasthan | eats:4/5 |
 | Fatehpur Sikri (fatehpur-sikri) | uttar-pradesh | eats:3/5 |
 | Gandikota (gandikota) | andhra-pradesh | eats:3/5 |
 | Haflong (haflong) | assam | eats:2/5 |
 | Horsley Hills (horsley-hills) | andhra-pradesh | eats:3/5 |
 | Jorhat (jorhat) | assam | eats:3/5 |
-| Kadmat Island (kadmat) | lakshadweep | eats:3/5 |
 | Kaziranga (kaziranga) | assam | eats:3/5 |
 | Kolanupaka (kolanupaka) | telangana | eats:3/5 |
 | Konaseema (konaseema) | andhra-pradesh | eats:4/5 |
-| Kumbalangi (kumbalangi) | kerala | eats:3/5 |
 | Laknavaram (laknavaram) | telangana | eats:3/5 |
-| Lambasingi (lambasingi) | andhra-pradesh | eats:2/5 |
 | Lepakshi (lepakshi) | andhra-pradesh | eats:3/5 |
 | Majuli (majuli) | assam | eats:3/5 |
 | Maredumilli (maredumilli) | andhra-pradesh | eats:3/5 |
@@ -111,13 +104,20 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 
 | Dest | State | HS-confirmed slots |
 |---|---|---|
+| Ahobilam (ahobilam) | andhra-pradesh | eats |
 | Anini (anini) | arunachal-pradesh | eats |
 | Bangaram Island (bangaram) | lakshadweep | eats |
+| Bangus Valley (bangus-valley) | jammu-kashmir | eats |
 | Barren Island (barren-island) | andaman-nicobar | stays |
 | Charaideo Moidams (charaideo) | assam | eats · stays |
+| Chinnar Wildlife Sanctuary (chinnar) | kerala | eats |
 | Dambuk (dambuk) | arunachal-pradesh | eats |
+| Dudhwa National Park (dudhwa-national-park) | uttar-pradesh | eats |
 | Dzukou Valley (dzukou-valley) | nagaland | eats |
 | Gurudongmar Lake (gurudongmar-lake) | sikkim | eats · stays |
+| Kadmat Island (kadmat) | lakshadweep | eats |
+| Kumbalangi (kumbalangi) | kerala | eats |
+| Lambasingi (lambasingi) | andhra-pradesh | eats |
 | Manas National Park (manas-national-park) | assam | eats |
 | Mechuka (mechuka) | arunachal-pradesh | eats |
 | Namdapha (namdapha) | arunachal-pradesh | eats |

@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-05-16T03:41:41.849Z",
+  "generated_at": "2026-05-16T03:49:40.521Z",
   "totals": {
     "A": 446,
-    "HS-B": 17,
-    "B": 42,
+    "HS-B": 24,
+    "B": 35,
     "C": 0,
     "total": 505
   },
@@ -24,8 +24,8 @@
     {
       "state": "andhra-pradesh",
       "A": 9,
-      "HS-B": 0,
-      "B": 12,
+      "HS-B": 2,
+      "B": 10,
       "C": 0,
       "total": 21
     },
@@ -120,8 +120,8 @@
     {
       "state": "jammu-kashmir",
       "A": 15,
-      "HS-B": 2,
-      "B": 1,
+      "HS-B": 3,
+      "B": 0,
       "C": 0,
       "total": 18
     },
@@ -144,8 +144,8 @@
     {
       "state": "kerala",
       "A": 28,
-      "HS-B": 0,
-      "B": 2,
+      "HS-B": 2,
+      "B": 0,
       "C": 0,
       "total": 30
     },
@@ -160,8 +160,8 @@
     {
       "state": "lakshadweep",
       "A": 3,
-      "HS-B": 1,
-      "B": 1,
+      "HS-B": 2,
+      "B": 0,
       "C": 0,
       "total": 5
     },
@@ -280,8 +280,8 @@
     {
       "state": "uttar-pradesh",
       "A": 8,
-      "HS-B": 0,
-      "B": 5,
+      "HS-B": 1,
+      "B": 4,
       "C": 0,
       "total": 13
     },
@@ -336,27 +336,6 @@
       "hs_confirmed": [],
       "missing": [
         "eats:3/5"
-      ]
-    },
-    {
-      "id": "ahobilam",
-      "name": "Ahobilam",
-      "state": "andhra-pradesh",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 4,
-        "eats": 2,
-        "stays": 3
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "hs_confirmed": [],
-      "missing": [
-        "eats:2/5"
       ]
     },
     {
@@ -423,27 +402,6 @@
       ]
     },
     {
-      "id": "bangus-valley",
-      "name": "Bangus Valley",
-      "state": "jammu-kashmir",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 3,
-        "eats": 3,
-        "stays": 3
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "hs_confirmed": [],
-      "missing": [
-        "eats:3/5"
-      ]
-    },
-    {
       "id": "basara",
       "name": "Basara",
       "state": "telangana",
@@ -483,27 +441,6 @@
       "hs_confirmed": [],
       "missing": [
         "eats:3/5"
-      ]
-    },
-    {
-      "id": "chinnar",
-      "name": "Chinnar Wildlife Sanctuary",
-      "state": "kerala",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 3,
-        "eats": 2,
-        "stays": 3
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "hs_confirmed": [],
-      "missing": [
-        "eats:2/5"
       ]
     },
     {
@@ -552,27 +489,6 @@
       "id": "deeg",
       "name": "Deeg",
       "state": "rajasthan",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 3,
-        "eats": 4,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "hs_confirmed": [],
-      "missing": [
-        "eats:4/5"
-      ]
-    },
-    {
-      "id": "dudhwa-national-park",
-      "name": "Dudhwa National Park",
-      "state": "uttar-pradesh",
       "tier": "B",
       "counts": {
         "months_scored": 12,
@@ -717,27 +633,6 @@
       ]
     },
     {
-      "id": "kadmat",
-      "name": "Kadmat Island",
-      "state": "lakshadweep",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 3,
-        "eats": 3,
-        "stays": 3
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "hs_confirmed": [],
-      "missing": [
-        "eats:3/5"
-      ]
-    },
-    {
       "id": "kaziranga",
       "name": "Kaziranga",
       "state": "assam",
@@ -801,27 +696,6 @@
       ]
     },
     {
-      "id": "kumbalangi",
-      "name": "Kumbalangi",
-      "state": "kerala",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 3,
-        "eats": 3,
-        "stays": 3
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "hs_confirmed": [],
-      "missing": [
-        "eats:3/5"
-      ]
-    },
-    {
       "id": "laknavaram",
       "name": "Laknavaram",
       "state": "telangana",
@@ -840,27 +714,6 @@
       "hs_confirmed": [],
       "missing": [
         "eats:3/5"
-      ]
-    },
-    {
-      "id": "lambasingi",
-      "name": "Lambasingi",
-      "state": "andhra-pradesh",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 4,
-        "eats": 2,
-        "stays": 3
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "hs_confirmed": [],
-      "missing": [
-        "eats:2/5"
       ]
     },
     {
@@ -1201,6 +1054,29 @@
       ]
     },
     {
+      "id": "ahobilam",
+      "name": "Ahobilam",
+      "state": "andhra-pradesh",
+      "tier": "HS-B",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 4,
+        "eats": 2,
+        "stays": 3
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "hs_confirmed": [
+        "eats"
+      ],
+      "missing": [
+        "eats:2/5"
+      ]
+    },
+    {
       "id": "anini",
       "name": "Anini",
       "state": "arunachal-pradesh",
@@ -1244,6 +1120,29 @@
       ],
       "missing": [
         "eats:2/5"
+      ]
+    },
+    {
+      "id": "bangus-valley",
+      "name": "Bangus Valley",
+      "state": "jammu-kashmir",
+      "tier": "HS-B",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 3,
+        "stays": 3
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "hs_confirmed": [
+        "eats"
+      ],
+      "missing": [
+        "eats:3/5"
       ]
     },
     {
@@ -1295,6 +1194,29 @@
       ]
     },
     {
+      "id": "chinnar",
+      "name": "Chinnar Wildlife Sanctuary",
+      "state": "kerala",
+      "tier": "HS-B",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 2,
+        "stays": 3
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "hs_confirmed": [
+        "eats"
+      ],
+      "missing": [
+        "eats:2/5"
+      ]
+    },
+    {
       "id": "dambuk",
       "name": "Dambuk",
       "state": "arunachal-pradesh",
@@ -1315,6 +1237,29 @@
       ],
       "missing": [
         "eats:1/5"
+      ]
+    },
+    {
+      "id": "dudhwa-national-park",
+      "name": "Dudhwa National Park",
+      "state": "uttar-pradesh",
+      "tier": "HS-B",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 4,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "hs_confirmed": [
+        "eats"
+      ],
+      "missing": [
+        "eats:4/5"
       ]
     },
     {
@@ -1363,6 +1308,75 @@
       "missing": [
         "eats:0/5",
         "stays:0/3"
+      ]
+    },
+    {
+      "id": "kadmat",
+      "name": "Kadmat Island",
+      "state": "lakshadweep",
+      "tier": "HS-B",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 3,
+        "stays": 3
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "hs_confirmed": [
+        "eats"
+      ],
+      "missing": [
+        "eats:3/5"
+      ]
+    },
+    {
+      "id": "kumbalangi",
+      "name": "Kumbalangi",
+      "state": "kerala",
+      "tier": "HS-B",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 3,
+        "stays": 3
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "hs_confirmed": [
+        "eats"
+      ],
+      "missing": [
+        "eats:3/5"
+      ]
+    },
+    {
+      "id": "lambasingi",
+      "name": "Lambasingi",
+      "state": "andhra-pradesh",
+      "tier": "HS-B",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 4,
+        "eats": 2,
+        "stays": 3
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "hs_confirmed": [
+        "eats"
+      ],
+      "missing": [
+        "eats:2/5"
       ]
     },
     {

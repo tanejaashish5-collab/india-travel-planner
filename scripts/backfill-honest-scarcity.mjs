@@ -61,6 +61,12 @@ const ROWS = [
   { id: "unakoti", slot: "stays", category: "np_core",
     specifics: { base_town: "Kailashahar", base_distance_km: 10,
       note: "ASI rest-house aside, Kailashahar holds the inventory." } },
+  { id: "chinnar", slot: "eateries", category: "np_core",
+    specifics: { base_town: "Marayoor", base_distance_km: 18,
+      note: "Wildlife sanctuary core — no commercial dining inside the buffer; eat in Marayoor or Munnar." } },
+  { id: "dudhwa-national-park", slot: "eateries", category: "np_core",
+    specifics: { base_town: "Palia Kalan", base_distance_km: 10,
+      note: "Tiger Reserve core — forest-lodge canteens only; commercial dining sits in Palia Kalan." } },
 
   // ── military_or_restricted ───────────────────────────────────────────
   { id: "tosamaidan", slot: "eateries", category: "military_or_restricted",
@@ -84,6 +90,9 @@ const ROWS = [
   { id: "moreh", slot: "stays", category: "military_or_restricted",
     specifics: { base_town: "Imphal", base_distance_km: 110,
       note: "India–Myanmar border town; ILP regime and limited sanctioned inventory." } },
+  { id: "bangus-valley", slot: "eateries", category: "military_or_restricted",
+    specifics: { base_town: "Kupwara", base_distance_km: 30,
+      note: "LoC-proximate meadow — no permanent commerce permitted; eat in Kupwara on the way up or rely on the JKTDC camp kitchen." } },
 
   // ── sub_5k_tribal ────────────────────────────────────────────────────
   { id: "anini", slot: "eateries", category: "sub_5k_tribal",
@@ -125,6 +134,18 @@ const ROWS = [
   { id: "dawki", slot: "stays", category: "sub_5k_tribal",
     specifics: { base_town: "Shillong", base_distance_km: 82,
       note: "Border village on the Umngot; the documented stays sit across the river in Shnongpdeng." } },
+  { id: "kumbalangi", slot: "eateries", category: "sub_5k_tribal",
+    specifics: { base_town: "Kochi", base_distance_km: 14,
+      note: "India's first model tourism village (declared 2003) — community homestays carry the dining, no standalone restaurants on the backwater." } },
+  { id: "lambasingi", slot: "eateries", category: "sub_5k_tribal",
+    specifics: { base_town: "Chintapalli", base_distance_km: 28,
+      note: "3,000-pop hill village — December-only tourism, no year-round standalone commerce." } },
+  { id: "ahobilam", slot: "eateries", category: "sub_5k_tribal",
+    specifics: { base_town: "Allagadda", base_distance_km: 20,
+      note: "Pilgrim village under 5,000 — annadanam (temple meals) is the dining; no standalone restaurants beyond the Nava-Narasimha shrine cluster." } },
+  { id: "kadmat", slot: "eateries", category: "sub_5k_tribal",
+    specifics: { base_town: "Agatti", base_distance_km: 50,
+      note: "Permit-restricted Lakshadweep atoll — SPORTS resort canteen and a handful of local homestays carry the dining; no standalone restaurants." } },
 
   // ── uninhabited_island ───────────────────────────────────────────────
   { id: "bangaram", slot: "eateries", category: "uninhabited_island",
