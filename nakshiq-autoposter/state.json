@@ -1,19 +1,9 @@
 {
   "yt_short_formats_used": [],
   "yt_short_music_used": [],
-  "posted_today": {
-    "m8EAd": "2026-05-16",
-    "m8EAd_evening": "2026-05-16",
-    "PdMu0": "2026-05-16",
-    "PdMu0_evening": "2026-05-16"
-  },
-  "last_sync": "2026-05-16T15:20:13.706087+00:00",
-  "posted_destinations": [
-    {
-      "destination_id": "pahalgam",
-      "date": "2026-05-16"
-    }
-  ],
+  "posted_today": {},
+  "last_sync": "2026-04-30T04:05:30.154914+00:00",
+  "posted_destinations": [],
   "posted_formats": {
     "m8EAd": [
       "monthly_forecast",
@@ -28,8 +18,7 @@
       "score_card",
       "collection_spotlight",
       "festival_alert",
-      "kids_intel",
-      "score_card"
+      "kids_intel"
     ],
     "PdMu0": [
       "monthly_forecast",
@@ -49,8 +38,7 @@
       "reality_check",
       "collection_spotlight",
       "festival_alert",
-      "kids_intel",
-      "score_card"
+      "kids_intel"
     ]
   },
   "post_log": [
@@ -360,7 +348,7 @@
       "format": "reality_check",
       "outstand_post_id": "LEE0V",
       "platform_post_id": "18067665245654147",
-      "collection": "After Dark — Night Experiences Worth Staying Up For",
+      "collection": "After Dark \u2014 Night Experiences Worth Staying Up For",
       "note": "recovered_via_manual_state_patch_after_3x_duplicate_publish_during_evening_run"
     },
     {
@@ -443,48 +431,9 @@
       "destination": "ranthambore",
       "format": "kids_intel",
       "has_media": true
-    },
-    {
-      "timestamp": "2026-05-16T15:21:01.698343+00:00",
-      "date": "2026-05-16",
-      "platform": "instagram",
-      "account_id": "m8EAd",
-      "post_id": "Z84Ju",
-      "destination": "pahalgam",
-      "format": "score_card",
-      "has_media": true,
-      "media_id": "pahalgam.mp4"
-    },
-    {
-      "timestamp": "2026-05-16T15:21:19.240016+00:00",
-      "date": "2026-05-16",
-      "platform": "facebook",
-      "account_id": "PdMu0",
-      "post_id": "N0dna",
-      "destination": "pahalgam",
-      "format": "score_card",
-      "has_media": true,
-      "media_id": "pahalgam.mp4"
     }
   ],
-  "theme_usage": {
-    "routes": {},
-    "destinations": {
-      "pahalgam": [
-        "2026-05-16"
-      ]
-    },
-    "reels": {
-      "pahalgam": [
-        "2026-05-16"
-      ]
-    },
-    "audience_tags": {
-      "families": [
-        "2026-05-16"
-      ]
-    }
-  },
+  "theme_usage": {},
   "infographic": {
     "last_topic_idx": 0,
     "last_theme_idx": 0,
@@ -496,7 +445,5 @@
     ]
   },
   "ugc_music_history": [],
-  "last_picked": {
-    "shared_best": "pahalgam"
-  }
+  "last_picked": {}
 }
