@@ -548,17 +548,16 @@ html:has(.nakshiq-cinema) { scroll-behavior: smooth; }
   /* act-6 film strip — horizontal scroll on mobile so the 6 thumbnails
      remain visible as a swipeable rail instead of stacking into a tall
      column (which stretches the IntersectionObserver wrapper past its
-     reachable threshold). Match the entries grid by its exact gap (8px)
-     since it's the only `display: grid` in this section that ships a
-     custom gap. */
-  .nakshiq-cinema section[id="dailies"] div[style*="gap: 8px"][style*="repeat("] {
+     reachable threshold). Targeted via className because React inlines
+     `gap:8px` without the space my earlier attribute selector required. */
+  .nakshiq-cinema .nq-dailies-strip {
     display: flex !important;
     overflow-x: auto !important;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
     padding-bottom: 4px;
   }
-  .nakshiq-cinema section[id="dailies"] div[style*="gap: 8px"][style*="repeat("] > * {
+  .nakshiq-cinema .nq-dailies-strip > * {
     flex: 0 0 65vw !important;
     scroll-snap-align: start;
   }

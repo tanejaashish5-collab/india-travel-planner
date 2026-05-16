@@ -112,6 +112,7 @@ export function Act6Dailies({
 
         {/* Film strip — 6 thumbnails */}
         <div
+          className="nq-dailies-strip"
           style={{
             display: "grid",
             gridTemplateColumns: `repeat(${entries.length}, 1fr)`,
