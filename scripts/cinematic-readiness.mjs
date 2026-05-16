@@ -2,12 +2,16 @@
 /**
  * cinematic-readiness.mjs — score every destination A/B/C for cinematic-shell readiness.
  *
- * Tiers (from ~/.claude/plans/cinematic-rollout-2026-05-05-new-ui-that-synthetic-wall.md):
- *   A — magazine-ready: tagline + why_special + 12 months scored + 12 months prose_lead
- *       + ≥3 hidden_gems + ≥5 local_eateries + ≥3 destination_stay_picks
- *   B — structurally renderable: tagline + why_special + 12 months scored + 12 months prose_lead,
- *       but at least one widget thin (gems/eats/stays under threshold)
- *   C — gaps: missing prose months OR missing required text fields (tagline / why_special)
+ * Tiers (from ~/.claude/plans/cinematic-rollout-2026-05-05-new-ui-that-synthetic-wall.md
+ * + ~/.claude/plans/does-the-cinematic-experience-immutable-candle.md):
+ *   A    — magazine-ready: tagline + why_special + 12 months scored + 12 months prose_lead
+ *          + ≥3 hidden_gems + ≥5 local_eateries + ≥3 destination_stay_picks
+ *   HS-B — structurally renderable AND every thin widget slot is HS-confirmed
+ *          in destinations.honest_scarcity. Renders cinematic with proud scarcity
+ *          panels in place of the missing widgets — eligible for the flip.
+ *   B    — structurally renderable but at least one thin widget is NOT HS-confirmed
+ *          (still needs research or backfill before flip).
+ *   C    — gaps: missing prose months OR missing required text fields (tagline / why_special)
  *
  * Output:
  *   qa/cinematic-readiness.json — per-dest tier + missing fields
@@ -62,9 +66,17 @@ console.log("cinematic-readiness · scoring all destinations\n");
 const destQuery = (q) => (STATE_FILTER ? q.eq("state_id", STATE_FILTER) : q);
 const dests = await selectAll(
   "destinations",
-  "id, name, state_id, tagline, why_special",
+  "id, name, state_id, tagline, why_special, honest_scarcity",
   destQuery
 );
+
+// Map from the scorer's thin-widget key (in `missing`) to the slot name used
+// in destinations.honest_scarcity (eats → eateries; the others match).
+const SLOT_FROM_GAP = { gems: "gems", eats: "eateries", stays: "stays" };
+function isSlotHsConfirmed(hs, gapKey) {
+  const slot = SLOT_FROM_GAP[gapKey];
+  return !!(hs && hs[slot] && hs[slot].confirmed === true);
+}
 console.log(`destinations: ${dests.length}`);
 
 const months = await selectAll(
@@ -128,13 +140,26 @@ for (const d of dests) {
   if (sc < STAYS_MIN) missing.push(`stays:${sc}/${STAYS_MIN}`);
 
   let tier;
+  const thinSlots = [];
+  if (gc < GEMS_MIN) thinSlots.push("gems");
+  if (ec < EATS_MIN) thinSlots.push("eats");
+  if (sc < STAYS_MIN) thinSlots.push("stays");
+
   if (!hasTagline || !hasWhySpecial || !hasAllScored || !hasAllProse) {
     tier = "C";
-  } else if (gc < GEMS_MIN || ec < EATS_MIN || sc < STAYS_MIN) {
-    tier = "B";
-  } else {
+  } else if (thinSlots.length === 0) {
     tier = "A";
+  } else if (thinSlots.every((slot) => isSlotHsConfirmed(d.honest_scarcity, slot))) {
+    tier = "HS-B";
+  } else {
+    tier = "B";
   }
+
+  // Tag the HS-confirmed thin slots so the markdown report can show them as
+  // "honest scarcity" rather than "still needs research."
+  const hsConfirmed = thinSlots.filter((slot) =>
+    isSlotHsConfirmed(d.honest_scarcity, slot)
+  );
 
   scored.push({
     id: d.id,
@@ -143,18 +168,19 @@ for (const d of dests) {
     tier,
     counts: { months_scored: mc.scored, months_prose: mc.prose, gems: gc, eats: ec, stays: sc },
     has: { tagline: hasTagline, why_special: hasWhySpecial },
+    hs_confirmed: hsConfirmed,
     missing,
   });
 }
 
 // Tally
-const tally = { A: 0, B: 0, C: 0 };
+const tally = { A: 0, "HS-B": 0, B: 0, C: 0 };
 for (const r of scored) tally[r.tier] += 1;
 
 // State totals
 const byState = new Map();
 for (const r of scored) {
-  const v = byState.get(r.state) || { A: 0, B: 0, C: 0, total: 0 };
+  const v = byState.get(r.state) || { A: 0, "HS-B": 0, B: 0, C: 0, total: 0 };
   v[r.tier] += 1;
   v.total += 1;
   byState.set(r.state, v);
@@ -185,7 +211,7 @@ const json = {
   by_state: stateRows,
   gap_counts: gapRows.map(([field, count]) => ({ field, count })),
   destinations: scored.sort((a, b) => {
-    const order = { C: 0, B: 1, A: 2 };
+    const order = { C: 0, B: 1, "HS-B": 2, A: 3 };
     if (order[a.tier] !== order[b.tier]) return order[a.tier] - order[b.tier];
     return a.id.localeCompare(b.id);
   }),
@@ -196,7 +222,9 @@ writeFileSync(jsonPath, JSON.stringify(json, null, 2));
 const lines = [];
 lines.push(`# Cinematic readiness — ${stamp}`);
 lines.push("");
-lines.push(`Total: **${scored.length}** dests · A=**${tally.A}** · B=**${tally.B}** · C=**${tally.C}**`);
+lines.push(`Total: **${scored.length}** dests · A=**${tally.A}** · HS-B=**${tally["HS-B"]}** · B=**${tally.B}** · C=**${tally.C}**`);
+lines.push("");
+lines.push(`Cinematic-eligible (A + HS-B): **${tally.A + tally["HS-B"]}**`);
 lines.push("");
 lines.push(`Thresholds: gems ≥ ${GEMS_MIN} · eateries ≥ ${EATS_MIN} · stay picks ≥ ${STAYS_MIN}`);
 lines.push("");
@@ -208,9 +236,9 @@ for (const [field, count] of gapRows) lines.push(`| ${field} | ${count} |`);
 lines.push("");
 lines.push("## By state");
 lines.push("");
-lines.push("| State | A | B | C | Total |");
-lines.push("|---|---:|---:|---:|---:|");
-for (const r of stateRows) lines.push(`| ${r.state} | ${r.A} | ${r.B} | ${r.C} | ${r.total} |`);
+lines.push("| State | A | HS-B | B | C | Total |");
+lines.push("|---|---:|---:|---:|---:|---:|");
+for (const r of stateRows) lines.push(`| ${r.state} | ${r.A} | ${r["HS-B"]} | ${r.B} | ${r.C} | ${r.total} |`);
 lines.push("");
 lines.push("## Tier C destinations (must backfill)");
 lines.push("");
@@ -228,6 +256,14 @@ for (const r of scored.filter((x) => x.tier === "B")) {
   lines.push(`| ${r.name} (${r.id}) | ${r.state} | ${r.missing.join(" · ")} |`);
 }
 lines.push("");
+lines.push("## Tier HS-B destinations (cinematic-eligible with scarcity panels)");
+lines.push("");
+lines.push("| Dest | State | HS-confirmed slots |");
+lines.push("|---|---|---|");
+for (const r of scored.filter((x) => x.tier === "HS-B")) {
+  lines.push(`| ${r.name} (${r.id}) | ${r.state} | ${r.hs_confirmed.join(" · ")} |`);
+}
+lines.push("");
 lines.push("## Tier A destinations (magazine-ready)");
 lines.push("");
 lines.push("| Dest | State |");
@@ -238,6 +274,7 @@ for (const r of scored.filter((x) => x.tier === "A")) {
 const mdPath = `${outDir}/cinematic-readiness.md`;
 writeFileSync(mdPath, lines.join("\n") + "\n");
 
-console.log(`tier counts: A=${tally.A}  B=${tally.B}  C=${tally.C}  (total ${scored.length})`);
+console.log(`tier counts: A=${tally.A}  HS-B=${tally["HS-B"]}  B=${tally.B}  C=${tally.C}  (total ${scored.length})`);
+console.log(`cinematic-eligible (A + HS-B): ${tally.A + tally["HS-B"]}`);
 console.log(`wrote: ${jsonPath}`);
 console.log(`wrote: ${mdPath}`);

@@ -30,6 +30,8 @@ import { ReviewForm } from "./review-form";
 import { QuestionsList } from "./questions-list";
 import { QuestionForm } from "./question-form";
 import { DestinationEateries } from "./destination-eateries";
+import { HonestScarcityPanel } from "./honest-scarcity-panel";
+import { isHonestScarcityConfirmed } from "@/lib/honest-scarcity";
 import { BookingHandoff } from "./booking-handoff";
 import { VerifiedByStrip } from "./verified-by-strip";
 import VerdictCard from "./verdict-card";
@@ -803,7 +805,7 @@ export function DestinationDetail({ dest }: { dest: any }) {
                 )}
 
                 {/* Editor's Picks — top layer: 4 curated stay slots with sources + upgrade_reasoning */}
-                {dest.editor_stay_picks?.length > 0 && (
+                {dest.editor_stay_picks?.length > 0 ? (
                   <section id="section-stays">
                     <EditorsPicks
                       destinationName={dest.name}
@@ -812,11 +814,19 @@ export function DestinationDetail({ dest }: { dest: any }) {
                       intelligence={dest.stay_intelligence}
                     />
                   </section>
-                )}
+                ) : isHonestScarcityConfirmed(dest.honest_scarcity, "stays") ? (
+                  <section id="section-stays">
+                    <HonestScarcityPanel
+                      slot="stays"
+                      destinationName={dest.name}
+                      honestScarcity={dest.honest_scarcity}
+                    />
+                  </section>
+                ) : null}
 
                 {/* Neighborhood Guide — where to stay by vibe (existing stay_zones data) */}
                 {dest.stay_zones && Object.keys(dest.stay_zones).length > 0 && (
-                  <section {...(dest.editor_stay_picks?.length ? {} : { id: "section-stays" })}>
+                  <section {...(dest.editor_stay_picks?.length || isHonestScarcityConfirmed(dest.honest_scarcity, "stays") ? {} : { id: "section-stays" })}>
                     <h2 className="text-xl font-semibold mb-3">Neighborhood guide</h2>
                     <p className="text-sm text-muted-foreground mb-3">Where to base yourself, by vibe.</p>
                     <div className="grid gap-3 sm:grid-cols-2">
@@ -1488,11 +1498,19 @@ export function DestinationDetail({ dest }: { dest: any }) {
               category filter, signature dish, must-try, address,
               insider tips. Replaces fuzzy area-level guidance the
               chatbot used to give for food questions. */}
-          {hasEateries && (
+          {hasEateries ? (
             <section id="section-eateries" className="scroll-mt-40 space-y-4">
               <DestinationEateries eateries={eateries} destinationName={displayName} />
             </section>
-          )}
+          ) : isHonestScarcityConfirmed(dest.honest_scarcity, "eateries") ? (
+            <section id="section-eateries" className="scroll-mt-40 space-y-4">
+              <HonestScarcityPanel
+                slot="eateries"
+                destinationName={displayName}
+                honestScarcity={dest.honest_scarcity}
+              />
+            </section>
+          ) : null}
 
           {/* Sprint 21 — Q&A board. Always rendered so visitors can submit
               even before the first answered question. Renders top 5 most-

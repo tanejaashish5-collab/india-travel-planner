@@ -1,6 +1,8 @@
-# Cinematic readiness — 2026-05-15
+# Cinematic readiness — 2026-05-16
 
-Total: **505** dests · A=**449** · B=**56** · C=**0**
+Total: **505** dests · A=**446** · HS-B=**14** · B=**45** · C=**0**
+
+Cinematic-eligible (A + HS-B): **460**
 
 Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 
@@ -8,50 +10,50 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 
 | Field | Dests blocked |
 |---|---:|
-| eats | 55 |
-| stays | 7 |
+| eats | 58 |
+| stays | 6 |
 | gems | 1 |
 
 ## By state
 
-| State | A | B | C | Total |
-|---|---:|---:|---:|---:|
-| andaman-nicobar | 11 | 1 | 0 | 12 |
-| andhra-pradesh | 9 | 12 | 0 | 21 |
-| arunachal-pradesh | 7 | 4 | 0 | 11 |
-| assam | 1 | 7 | 0 | 8 |
-| bihar | 3 | 3 | 0 | 6 |
-| chandigarh | 1 | 0 | 0 | 1 |
-| chhattisgarh | 3 | 0 | 0 | 3 |
-| daman-diu | 3 | 0 | 0 | 3 |
-| delhi | 1 | 0 | 0 | 1 |
-| goa | 21 | 0 | 0 | 21 |
-| gujarat | 29 | 0 | 0 | 29 |
-| haryana | 2 | 1 | 0 | 3 |
-| himachal-pradesh | 34 | 0 | 0 | 34 |
-| jammu-kashmir | 15 | 3 | 0 | 18 |
-| jharkhand | 4 | 0 | 0 | 4 |
-| karnataka | 30 | 0 | 0 | 30 |
-| kerala | 28 | 2 | 0 | 30 |
-| ladakh | 13 | 1 | 0 | 14 |
-| lakshadweep | 3 | 2 | 0 | 5 |
-| madhya-pradesh | 13 | 0 | 0 | 13 |
-| maharashtra | 46 | 0 | 0 | 46 |
-| manipur | 4 | 1 | 0 | 5 |
-| meghalaya | 8 | 1 | 0 | 9 |
-| mizoram | 3 | 1 | 0 | 4 |
-| nagaland | 5 | 1 | 0 | 6 |
-| odisha | 22 | 0 | 0 | 22 |
-| puducherry | 3 | 0 | 0 | 3 |
-| punjab | 3 | 1 | 0 | 4 |
-| rajasthan | 23 | 0 | 0 | 23 |
-| sikkim | 9 | 2 | 0 | 11 |
-| tamil-nadu | 30 | 0 | 0 | 30 |
-| telangana | 7 | 8 | 0 | 15 |
-| tripura | 3 | 0 | 0 | 3 |
-| uttar-pradesh | 8 | 5 | 0 | 13 |
-| uttarakhand | 38 | 0 | 0 | 38 |
-| west-bengal | 6 | 0 | 0 | 6 |
+| State | A | HS-B | B | C | Total |
+|---|---:|---:|---:|---:|---:|
+| andaman-nicobar | 11 | 1 | 0 | 0 | 12 |
+| andhra-pradesh | 9 | 0 | 12 | 0 | 21 |
+| arunachal-pradesh | 7 | 3 | 1 | 0 | 11 |
+| assam | 1 | 2 | 5 | 0 | 8 |
+| bihar | 3 | 0 | 3 | 0 | 6 |
+| chandigarh | 1 | 0 | 0 | 0 | 1 |
+| chhattisgarh | 3 | 0 | 0 | 0 | 3 |
+| daman-diu | 3 | 0 | 0 | 0 | 3 |
+| delhi | 1 | 0 | 0 | 0 | 1 |
+| goa | 21 | 0 | 0 | 0 | 21 |
+| gujarat | 29 | 0 | 0 | 0 | 29 |
+| haryana | 2 | 0 | 1 | 0 | 3 |
+| himachal-pradesh | 34 | 0 | 0 | 0 | 34 |
+| jammu-kashmir | 15 | 1 | 2 | 0 | 18 |
+| jharkhand | 4 | 0 | 0 | 0 | 4 |
+| karnataka | 30 | 0 | 0 | 0 | 30 |
+| kerala | 28 | 0 | 2 | 0 | 30 |
+| ladakh | 13 | 1 | 0 | 0 | 14 |
+| lakshadweep | 3 | 1 | 1 | 0 | 5 |
+| madhya-pradesh | 13 | 0 | 0 | 0 | 13 |
+| maharashtra | 45 | 0 | 1 | 0 | 46 |
+| manipur | 4 | 1 | 0 | 0 | 5 |
+| meghalaya | 8 | 1 | 0 | 0 | 9 |
+| mizoram | 3 | 1 | 0 | 0 | 4 |
+| nagaland | 5 | 1 | 0 | 0 | 6 |
+| odisha | 22 | 0 | 0 | 0 | 22 |
+| puducherry | 3 | 0 | 0 | 0 | 3 |
+| punjab | 3 | 0 | 1 | 0 | 4 |
+| rajasthan | 21 | 0 | 2 | 0 | 23 |
+| sikkim | 9 | 1 | 1 | 0 | 11 |
+| tamil-nadu | 30 | 0 | 0 | 0 | 30 |
+| telangana | 7 | 0 | 8 | 0 | 15 |
+| tripura | 3 | 0 | 0 | 0 | 3 |
+| uttar-pradesh | 8 | 0 | 5 | 0 | 13 |
+| uttarakhand | 38 | 0 | 0 | 0 | 38 |
+| west-bengal | 6 | 0 | 0 | 0 | 6 |
 
 ## Tier C destinations (must backfill)
 
@@ -66,22 +68,18 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Ahobilam (ahobilam) | andhra-pradesh | eats:2/5 |
 | Alampur (alampur) | telangana | eats:3/5 |
 | Amaravati (amaravati) | andhra-pradesh | eats:3/5 |
-| Anini (anini) | arunachal-pradesh | eats:1/5 |
-| Bangaram Island (bangaram) | lakshadweep | eats:2/5 |
+| Astavinayak Circuit (astavinayak-circuit) | maharashtra | eats:2/5 |
 | Bangus Valley (bangus-valley) | jammu-kashmir | eats:3/5 |
-| Barren Island (barren-island) | andaman-nicobar | stays:0/3 |
 | Basara (basara) | telangana | eats:3/5 |
 | Belum Caves (belum-caves) | andhra-pradesh | eats:3/5 |
-| Charaideo Moidams (charaideo) | assam | eats:0/5 · stays:0/3 |
 | Chinnar Wildlife Sanctuary (chinnar) | kerala | eats:2/5 |
 | Chitrakoot (chitrakoot) | uttar-pradesh | eats:4/5 |
-| Dambuk (dambuk) | arunachal-pradesh | eats:1/5 |
 | Takht Sri Damdama Sahib (damdama-sahib) | punjab | eats:3/5 |
+| Deeg (deeg) | rajasthan | eats:4/5 |
 | Dudhwa National Park (dudhwa-national-park) | uttar-pradesh | eats:4/5 |
-| Dzukou Valley (dzukou-valley) | nagaland | eats:0/5 |
+| Dungarpur (dungarpur) | rajasthan | eats:4/5 |
 | Fatehpur Sikri (fatehpur-sikri) | uttar-pradesh | eats:3/5 |
 | Gandikota (gandikota) | andhra-pradesh | eats:3/5 |
-| Gurudongmar Lake (gurudongmar-lake) | sikkim | eats:0/5 · stays:0/3 |
 | Haflong (haflong) | assam | eats:2/5 |
 | Horsley Hills (horsley-hills) | andhra-pradesh | eats:3/5 |
 | Jorhat (jorhat) | assam | eats:3/5 |
@@ -94,30 +92,42 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Lambasingi (lambasingi) | andhra-pradesh | eats:2/5 |
 | Lepakshi (lepakshi) | andhra-pradesh | eats:3/5 |
 | Majuli (majuli) | assam | eats:3/5 |
-| Manas National Park (manas-national-park) | assam | eats:0/5 |
 | Maredumilli (maredumilli) | andhra-pradesh | eats:3/5 |
-| Mechuka (mechuka) | arunachal-pradesh | eats:2/5 |
 | Morni Hills (morni-hills) | haryana | eats:3/5 |
 | Namdapha (namdapha) | arunachal-pradesh | eats:4/5 |
-| Nongriat (nongriat) | meghalaya | eats:3/5 |
 | Pawapuri (pawapuri) | bihar | gems:2/3 · eats:2/5 |
-| Phawngpui Peak (phawngpui-peak) | mizoram | eats:0/5 |
 | Pillalamarri (pillalamarri) | telangana | eats:3/5 |
 | Pochampally (pochampally) | telangana | eats:3/5 |
 | Pulicat Lake (pulicat-lake) | andhra-pradesh | eats:3/5 |
 | Rajgir (rajgir) | bihar | eats:4/5 |
 | Ramappa Temple (ramappa-temple) | telangana | eats:3/5 |
 | Sarnath (sarnath) | uttar-pradesh | eats:4/5 |
-| Sinthan Top (sinthan-top) | jammu-kashmir | eats:0/5 · stays:0/3 |
 | Sivasagar (sivasagar) | assam | eats:3/5 |
 | Sravasti (sravasti) | uttar-pradesh | eats:3/5 |
 | Srikalahasti (srikalahasti) | andhra-pradesh | eats:4/5 |
-| Tamenglong (tamenglong) | manipur | eats:4/5 |
-| Tosamaidan (tosamaidan) | jammu-kashmir | eats:0/5 · stays:2/3 |
+| Tosamaidan (tosamaidan) | jammu-kashmir | eats:0/5 |
 | Tsomgo Lake (tsomgo-lake) | sikkim | eats:3/5 · stays:0/3 |
-| Umlingla (umlingla) | ladakh | eats:0/5 · stays:0/3 |
 | Undavalli Caves (undavalli-caves) | andhra-pradesh | eats:3/5 |
 | Vaishali (vaishali) | bihar | eats:4/5 |
+
+## Tier HS-B destinations (cinematic-eligible with scarcity panels)
+
+| Dest | State | HS-confirmed slots |
+|---|---|---|
+| Anini (anini) | arunachal-pradesh | eats |
+| Bangaram Island (bangaram) | lakshadweep | eats |
+| Barren Island (barren-island) | andaman-nicobar | stays |
+| Charaideo Moidams (charaideo) | assam | eats · stays |
+| Dambuk (dambuk) | arunachal-pradesh | eats |
+| Dzukou Valley (dzukou-valley) | nagaland | eats |
+| Gurudongmar Lake (gurudongmar-lake) | sikkim | eats · stays |
+| Manas National Park (manas-national-park) | assam | eats |
+| Mechuka (mechuka) | arunachal-pradesh | eats |
+| Nongriat (nongriat) | meghalaya | eats |
+| Phawngpui Peak (phawngpui-peak) | mizoram | eats · stays |
+| Sinthan Top (sinthan-top) | jammu-kashmir | eats · stays |
+| Tamenglong (tamenglong) | manipur | eats |
+| Umlingla (umlingla) | ladakh | eats |
 
 ## Tier A destinations (magazine-ready)
 
@@ -149,7 +159,6 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Araku Valley (araku-valley) | andhra-pradesh |
 | Arambol (arambol) | goa |
 | Assagao (assagao) | goa |
-| Astavinayak Circuit (astavinayak-circuit) | maharashtra |
 | Athirapally Falls (athirapally) | kerala |
 | Auli (auli) | uttarakhand |
 | Aurangabad (aurangabad) | maharashtra |
@@ -230,7 +239,6 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Darjeeling (darjeeling) | west-bengal |
 | Daulatabad Fort (daulatabad) | maharashtra |
 | Dawki (dawki) | meghalaya |
-| Deeg (deeg) | rajasthan |
 | Delhi (delhi) | delhi |
 | Deoghar (deoghar) | jharkhand |
 | Deomali (deomali) | odisha |
@@ -248,7 +256,6 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Doodhpathri (doodhpathri) | jammu-kashmir |
 | Drass (drass) | ladakh |
 | Dudhsagar Falls (dudhsagar-falls) | goa |
-| Dungarpur (dungarpur) | rajasthan |
 | Dwarka (dwarka) | gujarat |
 | Elephanta Caves (elephanta-caves) | maharashtra |
 | Ellora Caves (ellora-caves) | maharashtra |
