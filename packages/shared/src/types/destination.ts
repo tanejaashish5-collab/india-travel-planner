@@ -101,6 +101,12 @@ export interface Destination {
   created_at: string;
   updated_at: string;
 
+  // S52: honest-scarcity per-slot confirmations. NP cores, military zones,
+  // sub-5k tribal villages, uninhabited islands, high-altitude passes —
+  // dests where the 4th-5th eatery/stay slot will never honestly fill.
+  // Shape mirrors apps/web/src/lib/honest-scarcity.ts.
+  honest_scarcity?: HonestScarcity | null;
+
   // Joined relations (populated by queries)
   monthly_suitability?: MonthlySuitability[];
   kids_friendly?: KidsFriendly;
@@ -112,6 +118,36 @@ export interface Destination {
   permits?: Permit[];
   festivals?: Festival[];
 }
+
+// --- Honest Scarcity (S52) ---
+
+export const HONEST_SCARCITY_SLOTS = ['eateries', 'stays', 'gems'] as const;
+export type HonestScarcitySlot = (typeof HONEST_SCARCITY_SLOTS)[number];
+
+export const HONEST_SCARCITY_CATEGORIES = [
+  'np_core',
+  'military_or_restricted',
+  'sub_5k_tribal',
+  'uninhabited_island',
+  'high_altitude_pass',
+] as const;
+export type HonestScarcityCategory = (typeof HONEST_SCARCITY_CATEGORIES)[number];
+
+export interface HonestScarcitySpecifics {
+  base_town?: string;
+  base_distance_km?: number;
+  note?: string;
+  // Free-form additions (e.g. village_population on sub_5k cases) — JSONB-permissive.
+  [key: string]: unknown;
+}
+
+export interface HonestScarcitySlotEntry {
+  confirmed: true;
+  category: HonestScarcityCategory;
+  specifics: HonestScarcitySpecifics;
+}
+
+export type HonestScarcity = Partial<Record<HonestScarcitySlot, HonestScarcitySlotEntry>>;
 
 // --- Deep Dive (JSONB — editorial prose, not queried) ---
 

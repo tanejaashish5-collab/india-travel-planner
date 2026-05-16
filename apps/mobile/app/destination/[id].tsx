@@ -26,6 +26,7 @@ import { useVisited } from "../../hooks/useVisited";
 import { useReviews } from "../../hooks/useReviews";
 import EditorsPicks from "../../components/EditorsPicks";
 import HonestScarcityPanel, { isHonestScarcityConfirmed } from "../../components/HonestScarcityPanel";
+import LocalEateries from "../../components/LocalEateries";
 import ReviewForm from "../../components/ReviewForm";
 
 const supabaseMobile = createClient(
@@ -415,6 +416,21 @@ export default function DestinationScreen() {
           ) : isHonestScarcityConfirmed(dest.honest_scarcity, "stays") ? (
             <HonestScarcityPanel
               slot="stays"
+              destinationName={dest.name}
+              honestScarcity={dest.honest_scarcity}
+            />
+          ) : null}
+
+          {/* Local Eateries — verified picks (legendary anchors get vermillion tag)
+              with honest-scarcity fallback for HS-confirmed dests where no commercial dining exists. */}
+          {dest.eateries?.length > 0 ? (
+            <LocalEateries
+              destinationName={dest.name}
+              eateries={dest.eateries}
+            />
+          ) : isHonestScarcityConfirmed(dest.honest_scarcity, "eateries") ? (
+            <HonestScarcityPanel
+              slot="eateries"
               destinationName={dest.name}
               honestScarcity={dest.honest_scarcity}
             />
