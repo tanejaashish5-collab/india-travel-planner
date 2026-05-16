@@ -935,23 +935,64 @@ def post_fingerprints(state: dict, *, dest_days: int = 7,
     used_dests:    set = set()
     used_dest_fmt: set = set()  # tuples of (dest_id, fmt)
     used_media:    set = set()
+    # 2026-05-16: once-per-calendar-month rule — see current_month_posted_destinations()
+    month_prefix = today.strftime("%Y-%m")
 
     for e in log_entries:
         d = e.get("date") or ""
         did   = e.get("destination") or e.get("dest_id")
         fmt   = e.get("format")
         media = e.get("media_id") or e.get("media")
-        if did and d >= dest_cut:
+        if did and (d >= dest_cut or d.startswith(month_prefix)):
             used_dests.add(did)
         if did and fmt and d >= fmt_cut:
             used_dest_fmt.add((did, fmt))
         if media and d >= media_cut:
             used_media.add(media)
+    # Honour manual operator-curated blocks (state["manual_skip_dests"])
+    for did, expiry in (state.get("manual_skip_dests") or {}).items():
+        if not expiry or expiry >= today.isoformat():
+            used_dests.add(did)
     return {"dests": used_dests, "dest_fmt": used_dest_fmt, "media": used_media}
 
 
+def current_month_posted_destinations(state: dict) -> set:
+    """Destinations posted at least once in the current calendar month.
+
+    Enforces the **once-per-month rule** (user directive 2026-05-16):
+        "If we have 50 locations in May, we should only post one location
+         once, not repeat it. We are posting it multiple times."
+
+    Sources `post_log` (capped at 500 entries ≈ 2-3 months retention) rather
+    than `posted_destinations` (14-day GC) so May-1 posts are still gated on
+    May-30. Includes BOTH `destination` (main loop) and `dest_id` (record_publish)
+    field names — they exist in different writer paths.
+    """
+    month_prefix = date.today().strftime("%Y-%m")
+    used: set = set()
+    for e in state.get("post_log", []) or []:
+        d = e.get("date") or ""
+        if not d.startswith(month_prefix):
+            continue
+        did = e.get("destination") or e.get("dest_id")
+        if did:
+            used.add(did)
+    # Also include manual blocks (operator-curated skip-list with ISO expiry)
+    for did, expiry in (state.get("manual_skip_dests") or {}).items():
+        if not expiry or expiry >= date.today().isoformat():
+            used.add(did)
+    return used
+
+
 def recently_used_destinations(state: dict, cutoff_days: int = 14) -> set:
-    """Destinations posted in the LAST `cutoff_days` (default 14).
+    """Destinations posted in the LAST `cutoff_days` (default 14) UNIONED with
+    every dest already posted in the current calendar month.
+
+    The 14-day rolling cutoff alone was insufficient — by mid-month, a
+    destination posted on day 1 falls out of the 14-day window and re-enters
+    the candidate pool, which is exactly how Pahalgam ended up posted 5 times
+    in May (Apr 19/27/30 + May repeats). The monthly union enforces
+    once-per-month even when the rolling window has expired.
 
     Without a cutoff, posted_destinations grows unboundedly and within a few
     weeks every catalog dest ends up in the set, which empties the picker's
@@ -959,9 +1000,10 @@ def recently_used_destinations(state: dict, cutoff_days: int = 14) -> set:
     the same top-scored dest every day, e.g. Pahalgam Apr 19/27/30).
     """
     cutoff = (date.today() - timedelta(days=cutoff_days)).isoformat()
-    return {d["destination_id"]
-            for d in state.get("posted_destinations", [])
-            if (d.get("date") or "") >= cutoff}
+    rolling = {d["destination_id"]
+               for d in state.get("posted_destinations", [])
+               if (d.get("date") or "") >= cutoff}
+    return rolling | current_month_posted_destinations(state)
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -4498,7 +4540,7 @@ def _run_inner(force: bool, sync_only: bool, dry_run: bool,
 
     log.info(f"Formats — IG: {ig_fmt}  ·  FB: {fb_fmt}  ·  Story: {story_fmt}"
              + (f"  ·  Audience: {audience_tag}" if audience_tag else ""))
-    log.info(f"Used destinations (14d): {len(used)}")
+    log.info(f"Used destinations (14d rolling ∪ current-month ∪ manual-skip): {len(used)}")
 
     # If an evening audience filter is set, pre-filter the pool for all
     # destination-driven picks (score_card, reality_check, infrastructure_truth,
