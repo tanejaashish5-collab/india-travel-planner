@@ -34,8 +34,17 @@ export function Nav() {
     `/${locale}/terms`,
     `/${locale}/cookies`,
     `/${locale}/contact`,
+    `/${locale}/tourist-traps`,
+    `/${locale}/collections`,
   ];
-  const isCinematicPage = CINEMATIC_PAGE_PATHS.includes(pathname);
+  // Dynamic segments — body is cinematic on any matching descendant route.
+  const CINEMATIC_PAGE_PREFIXES = [
+    `/${locale}/collections/`,
+    `/${locale}/skip-list/`,
+  ];
+  const isCinematicPage =
+    CINEMATIC_PAGE_PATHS.includes(pathname) ||
+    CINEMATIC_PAGE_PREFIXES.some((p) => pathname.startsWith(p));
   // Destinations that have opted into the cinematic body template ALSO get
   // the magazine-style full-bleed nav, so the chrome matches the body.
   // Without this, the destination page rendered the production mega-menu
