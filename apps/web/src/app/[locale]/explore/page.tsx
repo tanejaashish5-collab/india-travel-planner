@@ -8,8 +8,8 @@ import { ExploreWithMap } from "@/components/explore-with-map";
 import { TrendingMonthPages } from "@/components/trending-month-pages";
 import { createClient } from "@supabase/supabase-js";
 import { localeAlternates } from "@/lib/seo-utils";
-import { CategoryHero } from "@/components/category-hero";
-import { categoryHeroSrc } from "@/lib/landing-heroes";
+import { CinemaStyles } from "@/components/landing-cinema/cinema-styles";
+import { getIssueNumber } from "@/components/landing-cinema/issue-number";
 
 export const revalidate = 3600;
 
@@ -21,7 +21,9 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     description: t("metaDescription"),
     ...localeAlternates(locale, "/explore"),
   };
-}async function getData() {
+}
+
+async function getData() {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
   if (!url || !key) return { destinations: [], states: [], coords: [] };
@@ -40,7 +42,6 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       `)
       .order("name"),
     supabase.from("states").select("id, name, region").order("display_order"),
-    // Fetch coords from the view that extracts lat/lng
     supabase.from("destinations_with_coords").select("id, lat, lng"),
   ]);
 
@@ -53,58 +54,189 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
 export default async function ExplorePage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: "explore" });
+  await getTranslations({ locale, namespace: "explore" });
   const { destinations, states, coords } = await getData();
+  const issueNum = getIssueNumber();
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const coordsMap = Object.fromEntries(
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     coords.map((c: any) => [c.id, { lat: c.lat, lng: c.lng }])
   );
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const destinationsWithCoords = destinations.map((d: any) => ({
     ...d,
     coords: coordsMap[d.id] ?? null,
   }));
 
   return (
-    <div className="min-h-screen">
+    <div className="nakshiq-cinema" style={{ minHeight: "100vh" }}>
+      <CinemaStyles />
       <Nav />
-      <CategoryHero
-        videoSrc={categoryHeroSrc("explore")}
-        posterSrc="/images/destinations/spiti-valley.jpg"
-        posterAlt="Explore India"
-        kicker="The Confidence Engine"
-        title={t("pageTitle")}
-        subtitle={t("pageSubtitle", { count: destinations.length })}
-      />
-      <main id="main-content" className="mx-auto max-w-7xl px-4 py-8">
-        <div className="mb-6 rounded-xl border border-border/40 bg-card/40 backdrop-blur-sm px-4 py-3 flex flex-wrap items-center gap-x-3 gap-y-2">
-          <span className="font-mono text-[10px] tracking-[0.3em] uppercase text-muted-foreground">
-            Start from
+      <main
+        id="main-content"
+        className="nq-grain nq-glow-bookend"
+        style={{ padding: "140px 24px 96px", position: "relative" }}
+      >
+        {/* Masthead */}
+        <header style={{ maxWidth: 1100, margin: "0 auto 64px", textAlign: "left" }}>
+          <p
+            className="nq-kicker"
+            style={{
+              color: "var(--vermillion)",
+              marginBottom: 24,
+              letterSpacing: "0.22em",
+            }}
+          >
+            DESTINATIONS · ISSUE Nº {issueNum}
+          </p>
+          <h1
+            className="nq-display nq-balance"
+            style={{
+              fontFamily: "var(--cinema-display)",
+              fontStyle: "italic",
+              fontWeight: 400,
+              fontSize: "clamp(48px, 8vw, 116px)",
+              lineHeight: 0.96,
+              letterSpacing: "-0.028em",
+              margin: 0,
+            }}
+          >
+            {destinations.length} places,<br />
+            scored honestly.
+          </h1>
+          <p
+            className="nq-meta"
+            style={{
+              color: "var(--bone-dim)",
+              marginTop: 32,
+              maxWidth: 720,
+              fontSize: 15,
+              lineHeight: 1.6,
+              letterSpacing: "0.04em",
+              fontFamily: "var(--cinema-ui)",
+            }}
+          >
+            Every destination rated month-by-month for go/wait/skip, with
+            kids-suitability, solo-female safety, altitude risk and infrastructure
+            data. No tourism boards. No paid placements.
+          </p>
+        </header>
+
+        {/* Start-from cities — editorial rail */}
+        <div
+          style={{
+            maxWidth: 1280,
+            margin: "0 auto 48px",
+            borderTop: "1px solid var(--hair)",
+            borderBottom: "1px solid var(--hair)",
+            padding: "20px 0",
+            display: "flex",
+            flexWrap: "wrap",
+            alignItems: "center",
+            gap: "16px 24px",
+          }}
+        >
+          <span
+            className="nq-kicker"
+            style={{
+              color: "var(--bone-faint)",
+              letterSpacing: "0.22em",
+            }}
+          >
+            START FROM
           </span>
-          {["delhi","mumbai","bangalore","chennai","kolkata","hyderabad"].map((c) => (
+          {["delhi", "mumbai", "bangalore", "chennai", "kolkata", "hyderabad"].map((c) => (
             <a
               key={c}
               href={`/${locale}/weekend-from-${c}`}
-              className="font-mono text-[11px] tracking-[0.15em] uppercase text-foreground/80 hover:text-[#E55642] transition-colors"
+              className="nq-mono"
+              style={{
+                fontSize: 11,
+                letterSpacing: "0.18em",
+                textTransform: "uppercase",
+                color: "var(--bone-dim)",
+                textDecoration: "none",
+                transition: "color 220ms ease",
+              }}
             >
-              {c.charAt(0).toUpperCase() + c.slice(1)}
+              {c}
             </a>
           ))}
-          <span className="ml-auto font-mono text-[10px] tracking-[0.22em] uppercase text-[#E55642]">
-            weekend trips →
-          </span>
+          <a
+            href={`/${locale}/weekend-from-delhi`}
+            className="nq-mono"
+            style={{
+              marginLeft: "auto",
+              fontSize: 11,
+              letterSpacing: "0.22em",
+              textTransform: "uppercase",
+              color: "var(--vermillion)",
+              textDecoration: "none",
+            }}
+          >
+            WEEKEND TRIPS →
+          </a>
         </div>
-        <Suspense fallback={<div className="min-h-[400px] animate-pulse rounded bg-foreground/5" />}>
-          <ExploreWithMap destinations={destinationsWithCoords} states={states} />
-        </Suspense>
-        <TrendingMonthPages locale={locale} />
-        <div className="mt-16 max-w-2xl mx-auto">
+
+        {/* The map/grid widget — inherits cinematic palette via .nakshiq-cinema
+            shadcn neutralisation in cinema.css */}
+        <div style={{ maxWidth: 1280, margin: "0 auto" }}>
+          <Suspense
+            fallback={
+              <div
+                style={{
+                  minHeight: 400,
+                  border: "1px solid var(--hair)",
+                  background: "var(--film-2)",
+                }}
+              />
+            }
+          >
+            <ExploreWithMap destinations={destinationsWithCoords} states={states} />
+          </Suspense>
+        </div>
+
+        <div style={{ maxWidth: 1280, margin: "64px auto 0" }}>
+          <TrendingMonthPages locale={locale} />
+        </div>
+
+        {/* Subscribe outro — vermillion-bordered editorial block */}
+        <section
+          style={{
+            maxWidth: 720,
+            margin: "96px auto 0",
+            padding: "48px 32px",
+            background: "var(--film-2)",
+            border: "1px solid var(--vermillion)",
+            borderLeftWidth: 4,
+          }}
+        >
+          <p
+            className="nq-kicker"
+            style={{ color: "var(--vermillion)", marginBottom: 18 }}
+          >
+            THE WINDOW · WEEKLY DISPATCH
+          </p>
+          <p
+            style={{
+              fontFamily: "var(--cinema-display)",
+              fontStyle: "italic",
+              fontSize: 22,
+              lineHeight: 1.45,
+              color: "var(--bone)",
+              marginBottom: 20,
+            }}
+          >
+            Stop scrolling. Get the one that&apos;s worth it this week.
+          </p>
           <NewsletterSignup
             source="explore-end"
-            headline="Stop scrolling. Get the one that's worth it."
+            headline=""
             subhead="Every Sunday: the single best India destination this week, the honest skip, and what changed on the road. Free. No spam."
             buttonLabel="Get Sunday's pick"
           />
-        </div>
+        </section>
       </main>
       <Footer />
     </div>
