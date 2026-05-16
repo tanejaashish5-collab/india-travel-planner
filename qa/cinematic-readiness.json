@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-05-16T04:04:19.362Z",
+  "generated_at": "2026-05-16T05:41:24.607Z",
   "totals": {
-    "A": 446,
+    "A": 472,
     "HS-B": 29,
-    "B": 30,
+    "B": 4,
     "C": 0,
     "total": 505
   },
@@ -23,9 +23,9 @@
     },
     {
       "state": "andhra-pradesh",
-      "A": 9,
+      "A": 15,
       "HS-B": 6,
-      "B": 6,
+      "B": 0,
       "C": 0,
       "total": 21
     },
@@ -39,17 +39,17 @@
     },
     {
       "state": "assam",
-      "A": 1,
+      "A": 6,
       "HS-B": 2,
-      "B": 5,
+      "B": 0,
       "C": 0,
       "total": 8
     },
     {
       "state": "bihar",
-      "A": 3,
+      "A": 5,
       "HS-B": 1,
-      "B": 2,
+      "B": 0,
       "C": 0,
       "total": 6
     },
@@ -239,9 +239,9 @@
     },
     {
       "state": "rajasthan",
-      "A": 21,
+      "A": 22,
       "HS-B": 0,
-      "B": 2,
+      "B": 1,
       "C": 0,
       "total": 23
     },
@@ -263,9 +263,9 @@
     },
     {
       "state": "telangana",
-      "A": 7,
+      "A": 15,
       "HS-B": 0,
-      "B": 8,
+      "B": 0,
       "C": 0,
       "total": 15
     },
@@ -279,9 +279,9 @@
     },
     {
       "state": "uttar-pradesh",
-      "A": 8,
+      "A": 12,
       "HS-B": 1,
-      "B": 4,
+      "B": 0,
       "C": 0,
       "total": 13
     },
@@ -305,7 +305,7 @@
   "gap_counts": [
     {
       "field": "eats",
-      "count": 58
+      "count": 32
     },
     {
       "field": "stays",
@@ -318,69 +318,6 @@
   ],
   "destinations": [
     {
-      "id": "adilabad",
-      "name": "Adilabad",
-      "state": "telangana",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 3,
-        "eats": 3,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "hs_confirmed": [],
-      "missing": [
-        "eats:3/5"
-      ]
-    },
-    {
-      "id": "alampur",
-      "name": "Alampur",
-      "state": "telangana",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 3,
-        "eats": 3,
-        "stays": 3
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "hs_confirmed": [],
-      "missing": [
-        "eats:3/5"
-      ]
-    },
-    {
-      "id": "amaravati",
-      "name": "Amaravati",
-      "state": "andhra-pradesh",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 4,
-        "eats": 3,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "hs_confirmed": [],
-      "missing": [
-        "eats:3/5"
-      ]
-    },
-    {
       "id": "astavinayak-circuit",
       "name": "Astavinayak Circuit",
       "state": "maharashtra",
@@ -389,50 +326,8 @@
         "months_scored": 12,
         "months_prose": 12,
         "gems": 3,
-        "eats": 2,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "hs_confirmed": [],
-      "missing": [
-        "eats:2/5"
-      ]
-    },
-    {
-      "id": "basara",
-      "name": "Basara",
-      "state": "telangana",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 3,
-        "eats": 3,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "hs_confirmed": [],
-      "missing": [
-        "eats:3/5"
-      ]
-    },
-    {
-      "id": "chitrakoot",
-      "name": "Chitrakoot",
-      "state": "uttar-pradesh",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 3,
         "eats": 4,
-        "stays": 3
+        "stays": 4
       },
       "has": {
         "tagline": true,
@@ -486,237 +381,6 @@
       ]
     },
     {
-      "id": "dungarpur",
-      "name": "Dungarpur",
-      "state": "rajasthan",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 3,
-        "eats": 4,
-        "stays": 3
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "hs_confirmed": [],
-      "missing": [
-        "eats:4/5"
-      ]
-    },
-    {
-      "id": "fatehpur-sikri",
-      "name": "Fatehpur Sikri",
-      "state": "uttar-pradesh",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 3,
-        "eats": 3,
-        "stays": 3
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "hs_confirmed": [],
-      "missing": [
-        "eats:3/5"
-      ]
-    },
-    {
-      "id": "haflong",
-      "name": "Haflong",
-      "state": "assam",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 3,
-        "eats": 2,
-        "stays": 3
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "hs_confirmed": [],
-      "missing": [
-        "eats:2/5"
-      ]
-    },
-    {
-      "id": "horsley-hills",
-      "name": "Horsley Hills",
-      "state": "andhra-pradesh",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 4,
-        "eats": 3,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "hs_confirmed": [],
-      "missing": [
-        "eats:3/5"
-      ]
-    },
-    {
-      "id": "jorhat",
-      "name": "Jorhat",
-      "state": "assam",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 3,
-        "eats": 3,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "hs_confirmed": [],
-      "missing": [
-        "eats:3/5"
-      ]
-    },
-    {
-      "id": "kaziranga",
-      "name": "Kaziranga",
-      "state": "assam",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 3,
-        "eats": 3,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "hs_confirmed": [],
-      "missing": [
-        "eats:3/5"
-      ]
-    },
-    {
-      "id": "kolanupaka",
-      "name": "Kolanupaka",
-      "state": "telangana",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 3,
-        "eats": 3,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "hs_confirmed": [],
-      "missing": [
-        "eats:3/5"
-      ]
-    },
-    {
-      "id": "konaseema",
-      "name": "Konaseema",
-      "state": "andhra-pradesh",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 4,
-        "eats": 4,
-        "stays": 3
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "hs_confirmed": [],
-      "missing": [
-        "eats:4/5"
-      ]
-    },
-    {
-      "id": "laknavaram",
-      "name": "Laknavaram",
-      "state": "telangana",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 3,
-        "eats": 3,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "hs_confirmed": [],
-      "missing": [
-        "eats:3/5"
-      ]
-    },
-    {
-      "id": "lepakshi",
-      "name": "Lepakshi",
-      "state": "andhra-pradesh",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 4,
-        "eats": 3,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "hs_confirmed": [],
-      "missing": [
-        "eats:3/5"
-      ]
-    },
-    {
-      "id": "majuli",
-      "name": "Majuli",
-      "state": "assam",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 3,
-        "eats": 3,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "hs_confirmed": [],
-      "missing": [
-        "eats:3/5"
-      ]
-    },
-    {
       "id": "morni-hills",
       "name": "Morni Hills",
       "state": "haryana",
@@ -735,216 +399,6 @@
       "hs_confirmed": [],
       "missing": [
         "eats:3/5"
-      ]
-    },
-    {
-      "id": "pillalamarri",
-      "name": "Pillalamarri",
-      "state": "telangana",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 3,
-        "eats": 3,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "hs_confirmed": [],
-      "missing": [
-        "eats:3/5"
-      ]
-    },
-    {
-      "id": "pochampally",
-      "name": "Pochampally",
-      "state": "telangana",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 3,
-        "eats": 3,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "hs_confirmed": [],
-      "missing": [
-        "eats:3/5"
-      ]
-    },
-    {
-      "id": "rajgir",
-      "name": "Rajgir",
-      "state": "bihar",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 3,
-        "eats": 4,
-        "stays": 3
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "hs_confirmed": [],
-      "missing": [
-        "eats:4/5"
-      ]
-    },
-    {
-      "id": "ramappa-temple",
-      "name": "Ramappa Temple",
-      "state": "telangana",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 3,
-        "eats": 3,
-        "stays": 3
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "hs_confirmed": [],
-      "missing": [
-        "eats:3/5"
-      ]
-    },
-    {
-      "id": "sarnath",
-      "name": "Sarnath",
-      "state": "uttar-pradesh",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 3,
-        "eats": 4,
-        "stays": 3
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "hs_confirmed": [],
-      "missing": [
-        "eats:4/5"
-      ]
-    },
-    {
-      "id": "sivasagar",
-      "name": "Sivasagar",
-      "state": "assam",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 3,
-        "eats": 3,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "hs_confirmed": [],
-      "missing": [
-        "eats:3/5"
-      ]
-    },
-    {
-      "id": "sravasti",
-      "name": "Sravasti",
-      "state": "uttar-pradesh",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 3,
-        "eats": 3,
-        "stays": 3
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "hs_confirmed": [],
-      "missing": [
-        "eats:3/5"
-      ]
-    },
-    {
-      "id": "srikalahasti",
-      "name": "Srikalahasti",
-      "state": "andhra-pradesh",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 4,
-        "eats": 4,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "hs_confirmed": [],
-      "missing": [
-        "eats:4/5"
-      ]
-    },
-    {
-      "id": "undavalli-caves",
-      "name": "Undavalli Caves",
-      "state": "andhra-pradesh",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 4,
-        "eats": 3,
-        "stays": 3
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "hs_confirmed": [],
-      "missing": [
-        "eats:3/5"
-      ]
-    },
-    {
-      "id": "vaishali",
-      "name": "Vaishali",
-      "state": "bihar",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 3,
-        "eats": 4,
-        "stays": 3
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "hs_confirmed": [],
-      "missing": [
-        "eats:4/5"
       ]
     },
     {
@@ -1665,6 +1119,25 @@
       "missing": []
     },
     {
+      "id": "adilabad",
+      "name": "Adilabad",
+      "state": "telangana",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "hs_confirmed": [],
+      "missing": []
+    },
+    {
       "id": "agartala",
       "name": "Agartala",
       "state": "tripura",
@@ -1836,6 +1309,25 @@
       "missing": []
     },
     {
+      "id": "alampur",
+      "name": "Alampur",
+      "state": "telangana",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 3
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "hs_confirmed": [],
+      "missing": []
+    },
+    {
       "id": "alchi",
       "name": "Alchi",
       "state": "ladakh",
@@ -1920,6 +1412,25 @@
         "months_scored": 12,
         "months_prose": 12,
         "gems": 3,
+        "eats": 5,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "hs_confirmed": [],
+      "missing": []
+    },
+    {
+      "id": "amaravati",
+      "name": "Amaravati",
+      "state": "andhra-pradesh",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 4,
         "eats": 5,
         "stays": 4
       },
@@ -2371,6 +1882,25 @@
       "id": "barot-valley",
       "name": "Barot Valley",
       "state": "himachal-pradesh",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "hs_confirmed": [],
+      "missing": []
+    },
+    {
+      "id": "basara",
+      "name": "Basara",
+      "state": "telangana",
       "tier": "A",
       "counts": {
         "months_scored": 12,
@@ -3299,6 +2829,25 @@
       "missing": []
     },
     {
+      "id": "chitrakoot",
+      "name": "Chitrakoot",
+      "state": "uttar-pradesh",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 3
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "hs_confirmed": [],
+      "missing": []
+    },
+    {
       "id": "chittorgarh",
       "name": "Chittorgarh",
       "state": "rajasthan",
@@ -3964,6 +3513,25 @@
       "missing": []
     },
     {
+      "id": "dungarpur",
+      "name": "Dungarpur",
+      "state": "rajasthan",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 3
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "hs_confirmed": [],
+      "missing": []
+    },
+    {
       "id": "dwarka",
       "name": "Dwarka",
       "state": "gujarat",
@@ -4031,6 +3599,25 @@
         "gems": 3,
         "eats": 5,
         "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "hs_confirmed": [],
+      "missing": []
+    },
+    {
+      "id": "fatehpur-sikri",
+      "name": "Fatehpur Sikri",
+      "state": "uttar-pradesh",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 3
       },
       "has": {
         "tagline": true,
@@ -4420,6 +4007,25 @@
       "missing": []
     },
     {
+      "id": "haflong",
+      "name": "Haflong",
+      "state": "assam",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 3
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "hs_confirmed": [],
+      "missing": []
+    },
+    {
       "id": "halebidu",
       "name": "Halebidu",
       "state": "karnataka",
@@ -4580,6 +4186,25 @@
         "months_scored": 12,
         "months_prose": 12,
         "gems": 3,
+        "eats": 5,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "hs_confirmed": [],
+      "missing": []
+    },
+    {
+      "id": "horsley-hills",
+      "name": "Horsley Hills",
+      "state": "andhra-pradesh",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 4,
         "eats": 5,
         "stays": 4
       },
@@ -4784,6 +4409,25 @@
       "id": "jog-falls",
       "name": "Jog Falls",
       "state": "karnataka",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "hs_confirmed": [],
+      "missing": []
+    },
+    {
+      "id": "jorhat",
+      "name": "Jorhat",
+      "state": "assam",
       "tier": "A",
       "counts": {
         "months_scored": 12,
@@ -5218,6 +4862,25 @@
       "missing": []
     },
     {
+      "id": "kaziranga",
+      "name": "Kaziranga",
+      "state": "assam",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "hs_confirmed": [],
+      "missing": []
+    },
+    {
       "id": "kedarnath",
       "name": "Kedarnath",
       "state": "uttarakhand",
@@ -5484,6 +5147,25 @@
       "missing": []
     },
     {
+      "id": "kolanupaka",
+      "name": "Kolanupaka",
+      "state": "telangana",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "hs_confirmed": [],
+      "missing": []
+    },
+    {
       "id": "kolhapur",
       "name": "Kolhapur",
       "state": "maharashtra",
@@ -5549,6 +5231,25 @@
         "months_scored": 12,
         "months_prose": 12,
         "gems": 3,
+        "eats": 5,
+        "stays": 3
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "hs_confirmed": [],
+      "missing": []
+    },
+    {
+      "id": "konaseema",
+      "name": "Konaseema",
+      "state": "andhra-pradesh",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 4,
         "eats": 5,
         "stays": 3
       },
@@ -5883,6 +5584,25 @@
       "missing": []
     },
     {
+      "id": "laknavaram",
+      "name": "Laknavaram",
+      "state": "telangana",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "hs_confirmed": [],
+      "missing": []
+    },
+    {
       "id": "lamayuru",
       "name": "Lamayuru",
       "state": "ladakh",
@@ -5967,6 +5687,25 @@
         "months_scored": 12,
         "months_prose": 12,
         "gems": 3,
+        "eats": 5,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "hs_confirmed": [],
+      "missing": []
+    },
+    {
+      "id": "lepakshi",
+      "name": "Lepakshi",
+      "state": "andhra-pradesh",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 4,
         "eats": 5,
         "stays": 4
       },
@@ -6254,6 +5993,25 @@
         "gems": 3,
         "eats": 5,
         "stays": 3
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "hs_confirmed": [],
+      "missing": []
+    },
+    {
+      "id": "majuli",
+      "name": "Majuli",
+      "state": "assam",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 4
       },
       "has": {
         "tagline": true,
@@ -7783,6 +7541,25 @@
       "missing": []
     },
     {
+      "id": "pillalamarri",
+      "name": "Pillalamarri",
+      "state": "telangana",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "hs_confirmed": [],
+      "missing": []
+    },
+    {
       "id": "pinjore-gardens",
       "name": "Pinjore Gardens",
       "state": "haryana",
@@ -7812,6 +7589,25 @@
         "gems": 3,
         "eats": 8,
         "stays": 3
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "hs_confirmed": [],
+      "missing": []
+    },
+    {
+      "id": "pochampally",
+      "name": "Pochampally",
+      "state": "telangana",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 4
       },
       "has": {
         "tagline": true,
@@ -8125,6 +7921,25 @@
       "missing": []
     },
     {
+      "id": "rajgir",
+      "name": "Rajgir",
+      "state": "bihar",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 3
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "hs_confirmed": [],
+      "missing": []
+    },
+    {
       "id": "rajkot",
       "name": "Rajkot",
       "state": "gujarat",
@@ -8135,6 +7950,25 @@
         "gems": 3,
         "eats": 5,
         "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "hs_confirmed": [],
+      "missing": []
+    },
+    {
+      "id": "ramappa-temple",
+      "name": "Ramappa Temple",
+      "state": "telangana",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 3
       },
       "has": {
         "tagline": true,
@@ -8600,6 +8434,25 @@
       "missing": []
     },
     {
+      "id": "sarnath",
+      "name": "Sarnath",
+      "state": "uttar-pradesh",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 3
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "hs_confirmed": [],
+      "missing": []
+    },
+    {
       "id": "sasangir",
       "name": "Sasan Gir",
       "state": "gujarat",
@@ -8961,6 +8814,25 @@
       "missing": []
     },
     {
+      "id": "sivasagar",
+      "name": "Sivasagar",
+      "state": "assam",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "hs_confirmed": [],
+      "missing": []
+    },
+    {
       "id": "solan",
       "name": "Solan",
       "state": "himachal-pradesh",
@@ -9027,6 +8899,44 @@
         "months_prose": 12,
         "gems": 7,
         "eats": 9,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "hs_confirmed": [],
+      "missing": []
+    },
+    {
+      "id": "sravasti",
+      "name": "Sravasti",
+      "state": "uttar-pradesh",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 3
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "hs_confirmed": [],
+      "missing": []
+    },
+    {
+      "id": "srikalahasti",
+      "name": "Srikalahasti",
+      "state": "andhra-pradesh",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 4,
+        "eats": 5,
         "stays": 4
       },
       "has": {
@@ -9664,6 +9574,25 @@
       "missing": []
     },
     {
+      "id": "undavalli-caves",
+      "name": "Undavalli Caves",
+      "state": "andhra-pradesh",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 4,
+        "eats": 5,
+        "stays": 3
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "hs_confirmed": [],
+      "missing": []
+    },
+    {
       "id": "uttarkashi",
       "name": "Uttarkashi",
       "state": "uttarakhand",
@@ -9724,6 +9653,25 @@
       "id": "vagator",
       "name": "Vagator",
       "state": "goa",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 3
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "hs_confirmed": [],
+      "missing": []
+    },
+    {
+      "id": "vaishali",
+      "name": "Vaishali",
+      "state": "bihar",
       "tier": "A",
       "counts": {
         "months_scored": 12,
