@@ -1,8 +1,8 @@
 # Cinematic readiness — 2026-05-16
 
-Total: **505** dests · A=**446** · HS-B=**24** · B=**35** · C=**0**
+Total: **505** dests · A=**446** · HS-B=**29** · B=**30** · C=**0**
 
-Cinematic-eligible (A + HS-B): **470**
+Cinematic-eligible (A + HS-B): **475**
 
 Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 
@@ -19,10 +19,10 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | State | A | HS-B | B | C | Total |
 |---|---:|---:|---:|---:|---:|
 | andaman-nicobar | 11 | 1 | 0 | 0 | 12 |
-| andhra-pradesh | 9 | 2 | 10 | 0 | 21 |
+| andhra-pradesh | 9 | 6 | 6 | 0 | 21 |
 | arunachal-pradesh | 7 | 4 | 0 | 0 | 11 |
 | assam | 1 | 2 | 5 | 0 | 8 |
-| bihar | 3 | 0 | 3 | 0 | 6 |
+| bihar | 3 | 1 | 2 | 0 | 6 |
 | chandigarh | 1 | 0 | 0 | 0 | 1 |
 | chhattisgarh | 3 | 0 | 0 | 0 | 3 |
 | daman-diu | 3 | 0 | 0 | 0 | 3 |
@@ -69,13 +69,11 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Amaravati (amaravati) | andhra-pradesh | eats:3/5 |
 | Astavinayak Circuit (astavinayak-circuit) | maharashtra | eats:2/5 |
 | Basara (basara) | telangana | eats:3/5 |
-| Belum Caves (belum-caves) | andhra-pradesh | eats:3/5 |
 | Chitrakoot (chitrakoot) | uttar-pradesh | eats:4/5 |
 | Takht Sri Damdama Sahib (damdama-sahib) | punjab | eats:3/5 |
 | Deeg (deeg) | rajasthan | eats:4/5 |
 | Dungarpur (dungarpur) | rajasthan | eats:4/5 |
 | Fatehpur Sikri (fatehpur-sikri) | uttar-pradesh | eats:3/5 |
-| Gandikota (gandikota) | andhra-pradesh | eats:3/5 |
 | Haflong (haflong) | assam | eats:2/5 |
 | Horsley Hills (horsley-hills) | andhra-pradesh | eats:3/5 |
 | Jorhat (jorhat) | assam | eats:3/5 |
@@ -85,12 +83,9 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Laknavaram (laknavaram) | telangana | eats:3/5 |
 | Lepakshi (lepakshi) | andhra-pradesh | eats:3/5 |
 | Majuli (majuli) | assam | eats:3/5 |
-| Maredumilli (maredumilli) | andhra-pradesh | eats:3/5 |
 | Morni Hills (morni-hills) | haryana | eats:3/5 |
-| Pawapuri (pawapuri) | bihar | gems:2/3 · eats:2/5 |
 | Pillalamarri (pillalamarri) | telangana | eats:3/5 |
 | Pochampally (pochampally) | telangana | eats:3/5 |
-| Pulicat Lake (pulicat-lake) | andhra-pradesh | eats:3/5 |
 | Rajgir (rajgir) | bihar | eats:4/5 |
 | Ramappa Temple (ramappa-temple) | telangana | eats:3/5 |
 | Sarnath (sarnath) | uttar-pradesh | eats:4/5 |
@@ -109,20 +104,25 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Bangaram Island (bangaram) | lakshadweep | eats |
 | Bangus Valley (bangus-valley) | jammu-kashmir | eats |
 | Barren Island (barren-island) | andaman-nicobar | stays |
+| Belum Caves (belum-caves) | andhra-pradesh | eats |
 | Charaideo Moidams (charaideo) | assam | eats · stays |
 | Chinnar Wildlife Sanctuary (chinnar) | kerala | eats |
 | Dambuk (dambuk) | arunachal-pradesh | eats |
 | Dudhwa National Park (dudhwa-national-park) | uttar-pradesh | eats |
 | Dzukou Valley (dzukou-valley) | nagaland | eats |
+| Gandikota (gandikota) | andhra-pradesh | eats |
 | Gurudongmar Lake (gurudongmar-lake) | sikkim | eats · stays |
 | Kadmat Island (kadmat) | lakshadweep | eats |
 | Kumbalangi (kumbalangi) | kerala | eats |
 | Lambasingi (lambasingi) | andhra-pradesh | eats |
 | Manas National Park (manas-national-park) | assam | eats |
+| Maredumilli (maredumilli) | andhra-pradesh | eats |
 | Mechuka (mechuka) | arunachal-pradesh | eats |
 | Namdapha (namdapha) | arunachal-pradesh | eats |
 | Nongriat (nongriat) | meghalaya | eats |
+| Pawapuri (pawapuri) | bihar | gems · eats |
 | Phawngpui Peak (phawngpui-peak) | mizoram | eats · stays |
+| Pulicat Lake (pulicat-lake) | andhra-pradesh | eats |
 | Sinthan Top (sinthan-top) | jammu-kashmir | eats · stays |
 | Tamenglong (tamenglong) | manipur | eats |
 | Tosamaidan (tosamaidan) | jammu-kashmir | eats |

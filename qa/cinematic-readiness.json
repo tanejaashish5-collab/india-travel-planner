@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-05-16T03:49:40.521Z",
+  "generated_at": "2026-05-16T04:04:19.362Z",
   "totals": {
     "A": 446,
-    "HS-B": 24,
-    "B": 35,
+    "HS-B": 29,
+    "B": 30,
     "C": 0,
     "total": 505
   },
@@ -24,8 +24,8 @@
     {
       "state": "andhra-pradesh",
       "A": 9,
-      "HS-B": 2,
-      "B": 10,
+      "HS-B": 6,
+      "B": 6,
       "C": 0,
       "total": 21
     },
@@ -48,8 +48,8 @@
     {
       "state": "bihar",
       "A": 3,
-      "HS-B": 0,
-      "B": 3,
+      "HS-B": 1,
+      "B": 2,
       "C": 0,
       "total": 6
     },
@@ -423,27 +423,6 @@
       ]
     },
     {
-      "id": "belum-caves",
-      "name": "Belum Caves",
-      "state": "andhra-pradesh",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 4,
-        "eats": 3,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "hs_confirmed": [],
-      "missing": [
-        "eats:3/5"
-      ]
-    },
-    {
       "id": "chitrakoot",
       "name": "Chitrakoot",
       "state": "uttar-pradesh",
@@ -538,27 +517,6 @@
         "gems": 3,
         "eats": 3,
         "stays": 3
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "hs_confirmed": [],
-      "missing": [
-        "eats:3/5"
-      ]
-    },
-    {
-      "id": "gandikota",
-      "name": "Gandikota",
-      "state": "andhra-pradesh",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 4,
-        "eats": 3,
-        "stays": 4
       },
       "has": {
         "tagline": true,
@@ -759,27 +717,6 @@
       ]
     },
     {
-      "id": "maredumilli",
-      "name": "Maredumilli",
-      "state": "andhra-pradesh",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 4,
-        "eats": 3,
-        "stays": 3
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "hs_confirmed": [],
-      "missing": [
-        "eats:3/5"
-      ]
-    },
-    {
       "id": "morni-hills",
       "name": "Morni Hills",
       "state": "haryana",
@@ -798,28 +735,6 @@
       "hs_confirmed": [],
       "missing": [
         "eats:3/5"
-      ]
-    },
-    {
-      "id": "pawapuri",
-      "name": "Pawapuri",
-      "state": "bihar",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 2,
-        "eats": 2,
-        "stays": 3
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "hs_confirmed": [],
-      "missing": [
-        "gems:2/3",
-        "eats:2/5"
       ]
     },
     {
@@ -852,27 +767,6 @@
         "months_scored": 12,
         "months_prose": 12,
         "gems": 3,
-        "eats": 3,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "hs_confirmed": [],
-      "missing": [
-        "eats:3/5"
-      ]
-    },
-    {
-      "id": "pulicat-lake",
-      "name": "Pulicat Lake",
-      "state": "andhra-pradesh",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 4,
         "eats": 3,
         "stays": 4
       },
@@ -1169,6 +1063,29 @@
       ]
     },
     {
+      "id": "belum-caves",
+      "name": "Belum Caves",
+      "state": "andhra-pradesh",
+      "tier": "HS-B",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 4,
+        "eats": 3,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "hs_confirmed": [
+        "eats"
+      ],
+      "missing": [
+        "eats:3/5"
+      ]
+    },
+    {
       "id": "charaideo",
       "name": "Charaideo Moidams",
       "state": "assam",
@@ -1283,6 +1200,29 @@
       ],
       "missing": [
         "eats:0/5"
+      ]
+    },
+    {
+      "id": "gandikota",
+      "name": "Gandikota",
+      "state": "andhra-pradesh",
+      "tier": "HS-B",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 4,
+        "eats": 3,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "hs_confirmed": [
+        "eats"
+      ],
+      "missing": [
+        "eats:3/5"
       ]
     },
     {
@@ -1403,6 +1343,29 @@
       ]
     },
     {
+      "id": "maredumilli",
+      "name": "Maredumilli",
+      "state": "andhra-pradesh",
+      "tier": "HS-B",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 4,
+        "eats": 3,
+        "stays": 3
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "hs_confirmed": [
+        "eats"
+      ],
+      "missing": [
+        "eats:3/5"
+      ]
+    },
+    {
       "id": "mechuka",
       "name": "Mechuka",
       "state": "arunachal-pradesh",
@@ -1472,6 +1435,31 @@
       ]
     },
     {
+      "id": "pawapuri",
+      "name": "Pawapuri",
+      "state": "bihar",
+      "tier": "HS-B",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 2,
+        "eats": 2,
+        "stays": 3
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "hs_confirmed": [
+        "gems",
+        "eats"
+      ],
+      "missing": [
+        "gems:2/3",
+        "eats:2/5"
+      ]
+    },
+    {
       "id": "phawngpui-peak",
       "name": "Phawngpui Peak",
       "state": "mizoram",
@@ -1494,6 +1482,29 @@
       "missing": [
         "eats:0/5",
         "stays:2/3"
+      ]
+    },
+    {
+      "id": "pulicat-lake",
+      "name": "Pulicat Lake",
+      "state": "andhra-pradesh",
+      "tier": "HS-B",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 4,
+        "eats": 3,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "hs_confirmed": [
+        "eats"
+      ],
+      "missing": [
+        "eats:3/5"
       ]
     },
     {
