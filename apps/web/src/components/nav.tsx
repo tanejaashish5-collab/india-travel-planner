@@ -35,11 +35,9 @@ export function Nav() {
     `/${locale}/cookies`,
     `/${locale}/contact`,
     `/${locale}/tourist-traps`,
-    `/${locale}/collections`,
   ];
   // Dynamic segments — body is cinematic on any matching descendant route.
   const CINEMATIC_PAGE_PREFIXES = [
-    `/${locale}/collections/`,
     `/${locale}/skip-list/`,
   ];
   const isCinematicPage =
