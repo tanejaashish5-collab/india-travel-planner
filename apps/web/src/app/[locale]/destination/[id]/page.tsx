@@ -47,7 +47,7 @@ const PRE_RENDER_IDS = [
   // Himalayas — Ladakh / J&K
   "leh", "pangong-lake", "nubra-valley", "srinagar", "gulmarg", "pahalgam",
   // Himalayas — Himachal
-  "manali", "shimla", "dharamshala", "mcleod-ganj", "spiti-valley",
+  "manali", "shimla", "dharamshala", "mcleodganj", "spiti-valley",
   // Himalayas — Uttarakhand
   "rishikesh", "mussoorie", "nainital", "valley-of-flowers", "auli",
   // Northeast
