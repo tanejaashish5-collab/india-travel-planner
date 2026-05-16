@@ -62,6 +62,7 @@ export function Act9Coda({
   return (
     <section
       ref={ref}
+      id="coda"
       style={{
         position: "relative",
         minHeight: "100vh",

@@ -510,6 +510,45 @@ html:has(.nakshiq-cinema) { scroll-behavior: smooth; }
 */
 @media (max-width: 767px) {
   .nakshiq-cinema .nq-act-indicator { display: none; }
+
+  /* Landing-cinema acts ship with desktop-first inline padding/grids
+     (`padding: 160px 48px` + `grid-template-columns: 1.4fr 1fr`). Inline
+     styles win specificity wars so we use !important here — narrow scope,
+     mobile only. Each rule maps to a specific act via its <section> id
+     ("#skip" for act-2 is overridden inline already; this batch handles
+     act-5, act-6, act-7, act-9). */
+  .nakshiq-cinema section[id="directors-cut"],
+  .nakshiq-cinema section[id="dailies"],
+  .nakshiq-cinema section[id="how-we-score"] {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    padding-top: 96px !important;
+    padding-bottom: 80px !important;
+  }
+  .nakshiq-cinema section[id="directors-cut"] > div > div[style*="grid"],
+  .nakshiq-cinema section[id="dailies"] > div > div[style*="grid"] {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+  /* act-7 5-col score-band legend → 2 col on mobile */
+  .nakshiq-cinema section[id="how-we-score"] div[style*="repeat(5"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px !important;
+  }
+  /* act-6 inner repeat(N) grids — break to 2 col */
+  .nakshiq-cinema section[id="dailies"] div[style*="repeat(4,"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  /* act-9 coda — stack the 1fr 1fr final grid */
+  .nakshiq-cinema section[id="coda"] {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+  .nakshiq-cinema section[id="coda"] div[style*="minmax(0,1fr) minmax(0,1fr)"],
+  .nakshiq-cinema section[id="coda"] div[style*="minmax(0, 1fr) minmax(0, 1fr)"] {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
 }
 
 /* ── Animated chapter divider — coral dot + line that draws in left→right

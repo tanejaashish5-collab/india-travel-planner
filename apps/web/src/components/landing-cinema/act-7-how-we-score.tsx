@@ -33,6 +33,7 @@ export function Act7HowWeScore() {
 
   return (
     <section
+      id="how-we-score"
       style={{
         position: "relative",
         padding: "120px 48px",

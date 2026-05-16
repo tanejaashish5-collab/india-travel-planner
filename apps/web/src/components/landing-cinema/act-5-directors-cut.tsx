@@ -59,6 +59,7 @@ export function Act5DirectorsCut({ verdictMap }: { verdictMap: VerdictMap }) {
   return (
     <section
       ref={ref}
+      id="directors-cut"
       style={{
         position: "relative",
         padding: "160px 48px 140px",

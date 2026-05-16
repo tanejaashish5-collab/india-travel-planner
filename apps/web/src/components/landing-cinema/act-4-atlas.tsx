@@ -73,13 +73,62 @@ export function Act4Atlas({ pins }: { pins: AtlasPin[] }) {
   return (
     <section
       ref={ref}
+      className="nq-act-atlas"
       style={{
         position: "relative",
-        padding: "160px 48px 120px",
         background: "var(--film-2)",
         borderBottom: "1px solid var(--hair)",
       }}
     >
+      <style jsx>{`
+        :global(.nq-act-atlas) {
+          padding: 96px 20px 80px;
+        }
+        :global(.nq-atlas-grid) {
+          grid-template-columns: 1fr;
+          gap: 56px;
+        }
+        :global(.nq-act-atlas .nq-fieldlog-row) {
+          grid-template-columns: 48px minmax(0, 1fr) auto 14px;
+          gap: 12px;
+          padding: 12px 0;
+        }
+        :global(.nq-act-atlas .nq-fieldlog-thumb) {
+          width: 48px;
+          height: 48px;
+        }
+        :global(.nq-act-atlas .nq-fieldlog-row .nq-display) {
+          font-size: 16px !important;
+        }
+        :global(.nq-act-atlas .nq-fieldlog-row .nq-mono) {
+          font-size: 18px !important;
+        }
+        @media (min-width: 768px) {
+          :global(.nq-act-atlas) {
+            padding: 160px 48px 120px;
+          }
+          :global(.nq-atlas-grid) {
+            grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+            gap: 72px;
+          }
+          :global(.nq-act-atlas .nq-fieldlog-row) {
+            grid-template-columns: 56px minmax(0, 1fr) auto 18px;
+            gap: 14px;
+            padding: 14px 0;
+          }
+          :global(.nq-act-atlas .nq-fieldlog-thumb) {
+            width: 56px;
+            height: 56px;
+          }
+          :global(.nq-act-atlas .nq-fieldlog-row .nq-display) {
+            font-size: 20px !important;
+          }
+          :global(.nq-act-atlas .nq-fieldlog-row .nq-mono) {
+            font-size: 26px !important;
+          }
+        }
+      `}</style>
+
       <div style={{ position: "relative", maxWidth: 1500, margin: "0 auto" }}>
         <SectionLabel
           num="IV"
@@ -111,10 +160,9 @@ export function Act4Atlas({ pins }: { pins: AtlasPin[] }) {
         </div>
 
         <div
+          className="nq-atlas-grid"
           style={{
             display: "grid",
-            gridTemplateColumns: "minmax(0,1.4fr) minmax(0,1fr)",
-            gap: 72,
             alignItems: "start",
           }}
         >

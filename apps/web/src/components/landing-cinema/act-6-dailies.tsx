@@ -50,6 +50,7 @@ export function Act6Dailies({
 
   return (
     <section
+      id="dailies"
       style={{
         position: "relative",
         padding: "160px 48px",
