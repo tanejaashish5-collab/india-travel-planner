@@ -525,8 +525,14 @@ html:has(.nakshiq-cinema) { scroll-behavior: smooth; }
     padding-top: 96px !important;
     padding-bottom: 80px !important;
   }
-  .nakshiq-cinema section[id="directors-cut"] > div > div[style*="grid"],
-  .nakshiq-cinema section[id="dailies"] > div > div[style*="grid"] {
+  /* Title/intro grid only (1.4fr 1fr pattern) — collapse to stack.
+     Selector targets the inline-style fragment so we don't also catch the
+     film strip (`repeat(N, 1fr)`) or stats bar (`repeat(4, 1fr)`) in the
+     same section — last round's broad selector did, and the film strip
+     went invisible because `.nq-fadeup` opacity-0 children stretched the
+     wrapper past the IntersectionObserver's reachable threshold. */
+  .nakshiq-cinema section[id="directors-cut"] div[style*="1.4fr"],
+  .nakshiq-cinema section[id="dailies"] div[style*="1.4fr"] {
     grid-template-columns: 1fr !important;
     gap: 32px !important;
   }
@@ -535,9 +541,26 @@ html:has(.nakshiq-cinema) { scroll-behavior: smooth; }
     grid-template-columns: repeat(2, 1fr) !important;
     gap: 12px !important;
   }
-  /* act-6 inner repeat(N) grids — break to 2 col */
+  /* act-6 stats bar — 4 col → 2 col on mobile */
   .nakshiq-cinema section[id="dailies"] div[style*="repeat(4,"] {
     grid-template-columns: repeat(2, 1fr) !important;
+  }
+  /* act-6 film strip — horizontal scroll on mobile so the 6 thumbnails
+     remain visible as a swipeable rail instead of stacking into a tall
+     column (which stretches the IntersectionObserver wrapper past its
+     reachable threshold). Match the entries grid by its exact gap (8px)
+     since it's the only `display: grid` in this section that ships a
+     custom gap. */
+  .nakshiq-cinema section[id="dailies"] div[style*="gap: 8px"][style*="repeat("] {
+    display: flex !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 4px;
+  }
+  .nakshiq-cinema section[id="dailies"] div[style*="gap: 8px"][style*="repeat("] > * {
+    flex: 0 0 65vw !important;
+    scroll-snap-align: start;
   }
   /* act-9 coda — stack the 1fr 1fr final grid */
   .nakshiq-cinema section[id="coda"] {
