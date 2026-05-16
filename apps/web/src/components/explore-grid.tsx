@@ -10,6 +10,7 @@ import { CompareButton } from "./compare-tray";
 import { StaggerContainer, StaggerItem, HoverCard } from "./animated-hero";
 import { SCORE_COLORS, DIFFICULTY_COLORS } from "@/lib/design-tokens";
 import { currentMonthIST, formatScore, formatScoreInline } from "@itp/shared";
+import { renderDisplayName } from "@/lib/display-name";
 import { KEY_EVENTS, track } from "@/lib/analytics";
 
 const SOLO_FEMALE_COLOR: Record<number, string> = {
@@ -392,7 +393,7 @@ function DestinationCard({
         {featured && (
           <div className="absolute bottom-3 left-4 right-4 z-10">
             <h3 className="text-xl font-bold text-foreground drop-shadow-md group-hover:text-primary transition-colors leading-snug">
-              {displayName}
+              {renderDisplayName(displayName)}
             </h3>
             <p className="mt-1 text-sm text-muted-foreground line-clamp-2 leading-relaxed">
               {displayTagline}

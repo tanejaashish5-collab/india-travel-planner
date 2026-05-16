@@ -6,6 +6,7 @@ import { destinationImage } from "@/lib/image-url";
 import { useInView } from "./use-in-view";
 import { SectionLabel } from "./helpers";
 import { currentMonthLongIST, MONTH_LONG_NAMES, VERDICT_COLOR, verdictTier } from "@itp/shared";
+import { renderDisplayName } from "@/lib/display-name";
 
 /* ============================================================
    ACT V — Director's Cut (Mad-libs intake)
@@ -184,18 +185,18 @@ export function Act5DirectorsCut({ verdictMap }: { verdictMap: VerdictMap }) {
                   gap: 24,
                 }}
               >
-                <div>
+                <div style={{ flex: "1 1 0", minWidth: 0 }}>
                   <div
                     className="nq-display"
                     style={{
-                      fontSize: "clamp(36px, 4.4vw, 72px)",
+                      fontSize: "clamp(28px, 4.4vw, 72px)",
                       lineHeight: 0.95,
                       letterSpacing: "-0.022em",
                       color: "var(--bone)",
                       marginBottom: 10,
                     }}
                   >
-                    {verdict.name}
+                    {renderDisplayName(verdict.name)}
                   </div>
                   {verdict.tagline && (
                     <div className="nq-meta" style={{ color: "var(--bone-dim)" }}>
@@ -203,7 +204,7 @@ export function Act5DirectorsCut({ verdictMap }: { verdictMap: VerdictMap }) {
                     </div>
                   )}
                 </div>
-                <div style={{ textAlign: "right" }}>
+                <div style={{ textAlign: "right", flex: "0 0 auto", whiteSpace: "nowrap" }}>
                   <div
                     className="nq-mono"
                     style={{

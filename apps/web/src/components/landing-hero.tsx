@@ -10,6 +10,7 @@ import { getBrowserSupabase } from "@/lib/supabase-browser";
 import { videoSrc } from "@/lib/video-url";
 import { videoObjectJsonLd } from "@/lib/video-schema";
 import { formatScoreInline } from "@itp/shared";
+import { renderDisplayName } from "@/lib/display-name";
 // LanguageToggle now in main Nav component
 import {
   FadeIn,
@@ -319,7 +320,7 @@ export function LandingHero({
                           </div>
                           {/* Content over image */}
                           <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-6">
-                            <h3 className={`${isHero ? "text-2xl sm:text-3xl" : "text-xl"} font-bold text-white drop-shadow-lg`}>{dest.name}</h3>
+                            <h3 className={`${isHero ? "text-2xl sm:text-3xl" : "text-xl"} font-bold text-white drop-shadow-lg`}>{renderDisplayName(dest.name)}</h3>
                             <p className={`mt-1 ${isHero ? "text-base line-clamp-2" : "text-sm line-clamp-1"} text-white/80 drop-shadow`}>
                               {dest.tagline}
                             </p>

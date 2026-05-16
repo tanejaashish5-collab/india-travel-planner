@@ -5,6 +5,7 @@ import { destinationImage } from "@/lib/image-url";
 import { useInView } from "./use-in-view";
 import { ScoreNum } from "./helpers";
 import { currentMonthLongIST, verdictFor } from "@itp/shared";
+import { renderDisplayName } from "@/lib/display-name";
 
 /* ============================================================
    ACT III — The Scenes (scrollytelling reel)
@@ -185,7 +186,7 @@ function Scene({
               color: "var(--bone)",
             }}
           >
-            {scene.name}
+            {renderDisplayName(scene.name)}
             <span className="dot">.</span>
           </h3>
           {scene.tagline && (

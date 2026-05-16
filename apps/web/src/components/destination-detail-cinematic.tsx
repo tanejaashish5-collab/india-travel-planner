@@ -32,6 +32,7 @@ import {
 
 // Cinematic chrome
 import { CinemaStyles } from "@/components/landing-cinema/cinema-styles";
+import { renderDisplayName } from "@/lib/display-name";
 import { SectionLabel } from "@/components/landing-cinema/helpers";
 import { getIssueNumber } from "@/components/landing-cinema/issue-number";
 import { DestinationGuideToc } from "@/components/landing-cinema/destination-guide-toc";
@@ -455,7 +456,7 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
                 textWrap: "balance",
               }}
             >
-              {`${dest.name}.`}
+              {renderDisplayName(dest.name)}.
             </Title>
             {dest.tagline && (
               <p
@@ -3133,7 +3134,7 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
                 margin: 0,
               }}
             >
-              {`${dest.name}.`}
+              {renderDisplayName(dest.name)}.
             </Title>
             <p
               className="nq-mono"

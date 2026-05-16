@@ -19,21 +19,44 @@ import type { CSSProperties, ReactNode, HTMLAttributes } from "react";
    ============================================================ */
 type TitleProps = {
   as?: "h1" | "h2" | "h3" | "h4";
-  children: string;
+  children: ReactNode;
 } & Omit<HTMLAttributes<HTMLElement>, "children">;
 
+// When children is a plain string, split off the trailing mark and
+// vermillion-tint it. When children includes JSX (e.g. a smaller
+// parenthetical from renderDisplayName) we still try to vermillion
+// a literal trailing "." string node — that covers the standard
+// `<Title>{renderDisplayName(name)}.</Title>` shape used on the
+// destination hero.
 export function Title({ as: Tag = "h1", children, ...rest }: TitleProps) {
-  const m = children.match(/^([\s\S]*?)([.?!]+)$/);
-  if (!m) {
-    return <Tag {...rest}>{children}</Tag>;
+  if (typeof children === "string") {
+    const m = children.match(/^([\s\S]*?)([.?!]+)$/);
+    if (!m) return <Tag {...rest}>{children}</Tag>;
+    const [, body, mark] = m;
+    return (
+      <Tag {...rest}>
+        {body}
+        <span style={{ color: "var(--vermillion)" }}>{mark}</span>
+      </Tag>
+    );
   }
-  const [, body, mark] = m;
-  return (
-    <Tag {...rest}>
-      {body}
-      <span style={{ color: "var(--vermillion)" }}>{mark}</span>
-    </Tag>
-  );
+  if (Array.isArray(children)) {
+    const last = children[children.length - 1];
+    if (typeof last === "string" && /[.?!]+$/.test(last)) {
+      const m = last.match(/^([\s\S]*?)([.?!]+)$/);
+      if (m) {
+        const [, body, mark] = m;
+        return (
+          <Tag {...rest}>
+            {children.slice(0, -1)}
+            {body}
+            <span style={{ color: "var(--vermillion)" }}>{mark}</span>
+          </Tag>
+        );
+      }
+    }
+  }
+  return <Tag {...rest}>{children}</Tag>;
 }
 
 export const sectionStyle: CSSProperties = {
