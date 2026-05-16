@@ -89,7 +89,7 @@ export function Act1Dispatch({ heroes }: { heroes: DispatchHero[] }) {
 
   return (
     <section
-      className="nq-grain"
+      className="nq-grain nq-act-dispatch"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
       style={{
@@ -101,6 +101,67 @@ export function Act1Dispatch({ heroes }: { heroes: DispatchHero[] }) {
         background: "var(--paper)",
       }}
     >
+      <style jsx>{`
+        :global(.nq-act-dispatch .nq-dispatch-frame) {
+          top: 80px;
+          left: 16px;
+          right: 16px;
+          bottom: 48px;
+        }
+        :global(.nq-act-dispatch .nq-dispatch-meta-tl) {
+          top: 96px;
+          left: 24px;
+          right: auto;
+        }
+        :global(.nq-act-dispatch .nq-dispatch-score-tr) {
+          top: 96px;
+          right: 24px;
+        }
+        :global(.nq-act-dispatch .nq-dispatch-score-num) {
+          font-size: 44px !important;
+        }
+        :global(.nq-act-dispatch .nq-dispatch-title) {
+          left: 24px;
+          right: 24px;
+          bottom: 96px;
+        }
+        :global(.nq-act-dispatch .nq-dispatch-strip) {
+          left: 24px;
+          right: 24px;
+          bottom: 36px;
+        }
+        @media (min-width: 768px) {
+          :global(.nq-act-dispatch .nq-dispatch-frame) {
+            top: 80px;
+            left: 40px;
+            right: 40px;
+            bottom: 60px;
+          }
+          :global(.nq-act-dispatch .nq-dispatch-meta-tl),
+          :global(.nq-act-dispatch .nq-dispatch-score-tr) {
+            top: 108px;
+          }
+          :global(.nq-act-dispatch .nq-dispatch-meta-tl) {
+            left: 64px;
+          }
+          :global(.nq-act-dispatch .nq-dispatch-score-tr) {
+            right: 64px;
+          }
+          :global(.nq-act-dispatch .nq-dispatch-score-num) {
+            font-size: 64px !important;
+          }
+          :global(.nq-act-dispatch .nq-dispatch-title) {
+            left: 64px;
+            right: 64px;
+            bottom: 120px;
+          }
+          :global(.nq-act-dispatch .nq-dispatch-strip) {
+            left: 64px;
+            right: 64px;
+            bottom: 64px;
+          }
+        }
+      `}</style>
       {/* ── Crossfading image stack ────────────────────────────── */}
       {heroes.map((d, i) => (
         <div
@@ -147,12 +208,9 @@ export function Act1Dispatch({ heroes }: { heroes: DispatchHero[] }) {
       {/* ── Hairline frame ─────────────────────────────────────── */}
       <div
         aria-hidden
+        className="nq-dispatch-frame"
         style={{
           position: "absolute",
-          top: 80,
-          left: 40,
-          right: 40,
-          bottom: 60,
           border: "1px solid rgba(245,241,232,.16)",
           pointerEvents: "none",
           zIndex: 2,
@@ -166,14 +224,13 @@ export function Act1Dispatch({ heroes }: { heroes: DispatchHero[] }) {
 
       {/* ── Top-left dispatch metadata ─────────────────────────── */}
       <div
-        className="nq-fadeup-auto"
+        className="nq-fadeup-auto nq-dispatch-meta-tl"
         style={{
           position: "absolute",
-          top: 108,
-          left: 64,
           display: "flex",
           flexDirection: "column",
           gap: 8,
+          maxWidth: "45%",
           zIndex: 5,
         }}
       >
@@ -205,11 +262,9 @@ export function Act1Dispatch({ heroes }: { heroes: DispatchHero[] }) {
 
       {/* ── Top-right NakshIQ Score ────────────────────────────── */}
       <div
-        className="nq-fadeup-auto"
+        className="nq-fadeup-auto nq-dispatch-score-tr"
         style={{
           position: "absolute",
-          top: 108,
-          right: 64,
           textAlign: "right",
           transitionDelay: "0.18s",
           zIndex: 5,
@@ -219,9 +274,8 @@ export function Act1Dispatch({ heroes }: { heroes: DispatchHero[] }) {
           {t("nakshiqScore")}
         </div>
         <div
-          className="nq-score"
+          className="nq-score nq-dispatch-score-num"
           style={{
-            fontSize: 64,
             lineHeight: 0.85,
           }}
         >
@@ -237,12 +291,9 @@ export function Act1Dispatch({ heroes }: { heroes: DispatchHero[] }) {
 
       {/* ── Bottom-left main title ─────────────────────────────── */}
       <div
-        className="nq-fadeup-auto"
+        className="nq-fadeup-auto nq-dispatch-title"
         style={{
           position: "absolute",
-          left: 64,
-          right: 64,
-          bottom: 120,
           maxWidth: 980,
           transitionDelay: "0.36s",
           zIndex: 5,
@@ -295,11 +346,9 @@ export function Act1Dispatch({ heroes }: { heroes: DispatchHero[] }) {
 
       {/* ── Bottom strip: progress + prev/next ─────────────────── */}
       <div
+        className="nq-dispatch-strip"
         style={{
           position: "absolute",
-          left: 64,
-          right: 64,
-          bottom: 64,
           display: "flex",
           alignItems: "center",
           gap: 20,

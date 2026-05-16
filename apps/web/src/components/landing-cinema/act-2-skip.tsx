@@ -47,9 +47,9 @@ export function Act2Skip({ entries }: { entries: SkipEntry[] }) {
   return (
     <section
       id="skip"
+      className="nq-act-skip"
       style={{
         position: "relative",
-        padding: "160px 48px",
         background: "var(--film)",
         borderBottom: "1px solid var(--hair)",
       }}
@@ -74,11 +74,9 @@ export function Act2Skip({ entries }: { entries: SkipEntry[] }) {
         />
 
         <div
-          className={`nq-fadeup ${seen ? "in" : ""}`}
+          className={`nq-fadeup nq-skip-heading ${seen ? "in" : ""}`}
           style={{
             display: "grid",
-            gridTemplateColumns: "minmax(0,1.4fr) minmax(0,1fr)",
-            gap: 80,
             alignItems: "end",
             marginBottom: 80,
           }}
@@ -116,6 +114,47 @@ export function Act2Skip({ entries }: { entries: SkipEntry[] }) {
           </p>
         </div>
 
+        <style jsx>{`
+          :global(.nq-act-skip) {
+            padding: 96px 20px;
+          }
+          :global(.nq-skip-heading) {
+            grid-template-columns: 1fr;
+            gap: 24px;
+          }
+          :global(.nq-skip-row) {
+            grid-template-columns: 32px 1fr auto;
+            grid-template-areas:
+              "num title score"
+              ".   body  stamp";
+            gap: 12px 14px;
+          }
+          :global(.nq-skip-row > :nth-child(1)) { grid-area: num; }
+          :global(.nq-skip-row > :nth-child(2)) { grid-area: title; }
+          :global(.nq-skip-row > :nth-child(3)) { grid-area: body; }
+          :global(.nq-skip-row > :nth-child(4)) { grid-area: score; }
+          :global(.nq-skip-row > :nth-child(5)) {
+            grid-area: stamp;
+            justify-self: end;
+            align-self: center;
+          }
+          @media (min-width: 768px) {
+            :global(.nq-act-skip) {
+              padding: 160px 48px;
+            }
+            :global(.nq-skip-heading) {
+              grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+              gap: 80px;
+            }
+            :global(.nq-skip-row) {
+              grid-template-columns: 96px minmax(0, 1.4fr) minmax(0, 1.2fr) 100px 110px;
+              grid-template-areas: none;
+              gap: 32px;
+            }
+            :global(.nq-skip-row > :nth-child(n)) { grid-area: auto; }
+          }
+        `}</style>
+
         <div style={{ borderTop: "2px solid var(--bone)" }}>
           {entries.map((entry, i) => {
             const displayScore = Math.min(10, entry.score * 2);
@@ -124,12 +163,10 @@ export function Act2Skip({ entries }: { entries: SkipEntry[] }) {
             return (
               <div
                 key={entry.id}
-                className={`nq-fadeup ${seen ? "in" : ""}`}
+                className={`nq-fadeup nq-skip-row ${seen ? "in" : ""}`}
                 style={{
                   transitionDelay: `${i * 120}ms`,
                   display: "grid",
-                  gridTemplateColumns: "96px minmax(0,1.4fr) minmax(0,1.2fr) 100px 110px",
-                  gap: 32,
                   padding: "36px 0",
                   borderBottom: "1px solid var(--hair)",
                   alignItems: "baseline",

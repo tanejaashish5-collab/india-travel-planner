@@ -18,6 +18,7 @@ export function Nav() {
   const pathname = usePathname();
   const [searchOpen, setSearchOpen] = useState(false);
   const [activePanel, setActivePanel] = useState<PanelType>(null);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const closeTimer = useRef<NodeJS.Timeout | null>(null);
 
   // Cinematic-redesigned routes use the magazine-style nav (vs. the legacy
@@ -94,7 +95,19 @@ export function Nav() {
   // Close panel on route change
   useEffect(() => {
     setActivePanel(null);
+    setMobileMenuOpen(false);
   }, [pathname]);
+
+  // Lock body scroll while the cinematic mobile menu is open
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      const prev = document.body.style.overflow;
+      document.body.style.overflow = "hidden";
+      return () => {
+        document.body.style.overflow = prev;
+      };
+    }
+  }, [mobileMenuOpen]);
 
   // Close panel on scroll
   useEffect(() => {
@@ -202,17 +215,17 @@ export function Nav() {
               : "fixed top-0 left-0 right-0 z-50 bg-[#0a0a08]/85 backdrop-blur-xl border-b border-white/10 transition-[background-color,backdrop-filter] duration-500"
           }
         >
-          <div className="mx-auto flex max-w-[1500px] items-center justify-between gap-6 px-8 py-5">
+          <div className="mx-auto flex max-w-[1500px] items-center justify-between gap-4 px-5 md:px-8 py-4 md:py-5">
             {/* Logo — Fraunces italic, vermillion period, no "N." chip */}
             <Link
               href={`/${locale}`}
-              className="font-[var(--font-fraunces)] italic font-medium text-[24px] tracking-[-0.015em] text-[#F5F1E8] leading-none"
+              className="font-[var(--font-fraunces)] italic font-medium text-[22px] md:text-[24px] tracking-[-0.015em] text-[#F5F1E8] leading-none"
               style={{ fontStyle: "italic" }}
             >
               Naksh<span className="text-[#E55642]">.</span>iq
             </Link>
 
-            {/* Center — 6 all-caps magazine links */}
+            {/* Center — 6 all-caps magazine links (desktop only) */}
             <nav className="hidden md:flex items-center gap-8">
               {cinemaItems.map((item) => (
                 <Link
@@ -225,14 +238,69 @@ export function Nav() {
               ))}
             </nav>
 
-            {/* Right — ISSUE badge in mono. Locale toggle dropped on landing
-                per design — Hindi readers can switch via the standard nav on
-                any internal page. */}
-            <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#F5F1E8]/60 whitespace-nowrap">
+            {/* Right — ISSUE badge (desktop) / hamburger (mobile) */}
+            <span className="hidden md:inline font-mono text-[11px] uppercase tracking-[0.18em] text-[#F5F1E8]/60 whitespace-nowrap">
               ISSUE Nº {issueNum} · {monthLabel}
             </span>
+            <button
+              type="button"
+              onClick={() => setMobileMenuOpen(true)}
+              aria-label="Open menu"
+              aria-expanded={mobileMenuOpen}
+              className="md:hidden flex flex-col items-end gap-[5px] p-2 -mr-2"
+            >
+              <span className="block h-[2px] w-6 bg-[#F5F1E8]" />
+              <span className="block h-[2px] w-4 bg-[#F5F1E8]" />
+            </button>
           </div>
         </header>
+
+        {/* Mobile menu — full-screen overlay */}
+        {mobileMenuOpen && (
+          <div
+            className="md:hidden fixed inset-0 z-[60] flex flex-col bg-[#0a0a08] text-[#F5F1E8]"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Site menu"
+          >
+            <div className="flex items-center justify-between gap-4 px-5 py-4 border-b border-white/10">
+              <Link
+                href={`/${locale}`}
+                onClick={() => setMobileMenuOpen(false)}
+                className="font-[var(--font-fraunces)] italic font-medium text-[22px] tracking-[-0.015em] text-[#F5F1E8] leading-none"
+                style={{ fontStyle: "italic" }}
+              >
+                Naksh<span className="text-[#E55642]">.</span>iq
+              </Link>
+              <button
+                type="button"
+                onClick={() => setMobileMenuOpen(false)}
+                aria-label="Close menu"
+                className="p-2 -mr-2 text-[22px] leading-none"
+              >
+                ×
+              </button>
+            </div>
+            <nav className="flex flex-col flex-1 px-5 pt-8 pb-12 overflow-y-auto">
+              {cinemaItems.map((item) => (
+                <Link
+                  key={item.label}
+                  href={item.href}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="font-[var(--font-fraunces)] italic text-[34px] leading-[1.1] tracking-[-0.012em] text-[#F5F1E8] py-4 border-b border-white/10"
+                >
+                  {item.label}
+                </Link>
+              ))}
+              <div className="mt-8 flex items-center justify-between">
+                <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-[#F5F1E8]/60">
+                  ISSUE Nº {issueNum} · {monthLabel}
+                </span>
+                <LanguageToggle />
+              </div>
+            </nav>
+          </div>
+        )}
 
         <SearchCommand open={searchOpen} onClose={() => setSearchOpen(false)} />
       </>

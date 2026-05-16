@@ -106,13 +106,7 @@ export function CollectionsCinema({
           No collections in this region yet.
         </div>
       ) : (
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fill, minmax(320px, 1fr))",
-            gap: 32,
-          }}
-        >
+        <div className="nq-collections-grid">
           {filtered.map((c, i) => {
             const cover = resolveCover({ id: c.id, cover_image_url: c.cover_image_url });
             const num = String(i + 1).padStart(2, "0");
@@ -132,9 +126,9 @@ export function CollectionsCinema({
                 }}
               >
                 <div
+                  className="nq-collection-card__image"
                   style={{
                     position: "relative",
-                    aspectRatio: "4 / 3",
                     background: "var(--paper-2)",
                     overflow: "hidden",
                   }}
@@ -175,13 +169,13 @@ export function CollectionsCinema({
                     Nº {num}
                   </span>
                 </div>
-                <div style={{ padding: "24px 24px 28px" }}>
+                <div className="nq-collection-card__body">
                   <h3
+                    className="nq-collection-card__title"
                     style={{
                       fontFamily: "var(--cinema-display)",
                       fontStyle: "italic",
                       fontWeight: 500,
-                      fontSize: 26,
                       lineHeight: 1.15,
                       color: "var(--bone)",
                       margin: "0 0 12px",
@@ -227,6 +221,32 @@ export function CollectionsCinema({
       )}
 
       <style jsx>{`
+        :global(.nq-collections-grid) {
+          display: grid;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 16px;
+        }
+        :global(.nq-collection-card__image) {
+          aspect-ratio: 4 / 3;
+        }
+        :global(.nq-collection-card__body) {
+          padding: 14px 14px 18px;
+        }
+        :global(.nq-collection-card__title) {
+          font-size: 18px;
+        }
+        @media (min-width: 640px) {
+          :global(.nq-collections-grid) {
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 32px;
+          }
+          :global(.nq-collection-card__body) {
+            padding: 24px 24px 28px;
+          }
+          :global(.nq-collection-card__title) {
+            font-size: 26px;
+          }
+        }
         :global(.nq-collection-card:hover) {
           border-color: var(--vermillion) !important;
         }
