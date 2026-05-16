@@ -1,17 +1,35 @@
-2026-05-16 09:18:58  INFO      ════════════════════════════════════════════════════════════
-2026-05-16 09:18:58  INFO      Nakshiq Autoposter · UGC · 2026-05-16
-2026-05-16 09:18:58  INFO      ════════════════════════════════════════════════════════════
-2026-05-16 09:19:00  ERROR     UGC generation failed: 401 Client Error: UNAUTHORIZED for url: https://api.heygen.com/v3/users/me
-2026-05-16 09:19:00  ERROR     Traceback (most recent call last):
-  File "/home/runner/work/india-travel-planner/india-travel-planner/nakshiq-autoposter/autoposter.py", line 7706, in _run_ugc
-    result = generate_ugc(dry_run=dry_run)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/india-travel-planner/india-travel-planner/nakshiq-autoposter/ugc_gen.py", line 1551, in generate_ugc
-    balance = check_balance()
-              ^^^^^^^^^^^^^^^
-  File "/home/runner/work/india-travel-planner/india-travel-planner/nakshiq-autoposter/ugc_gen.py", line 1077, in check_balance
-    resp.raise_for_status()
-  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/requests/models.py", line 1167, in raise_for_status
-    raise HTTPError(http_error_msg, response=self)
-requests.exceptions.HTTPError: 401 Client Error: UNAUTHORIZED for url: https://api.heygen.com/v3/users/me
-
+2026-05-16 12:47:14  INFO      ════════════════════════════════════════════════════════════
+2026-05-16 12:47:14  INFO      Nakshiq Autoposter · EVENING · 2026-05-16 · weekday=5
+2026-05-16 12:47:14  INFO      ════════════════════════════════════════════════════════════
+2026-05-16 12:47:14  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-05-16 12:47:35  INFO      Synced → 20 destinations · 0 traps · 0 articles · 23 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 50 camping · 50 gems · total catalog=505
+2026-05-16 12:47:36  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-05-16 12:47:36  INFO      Formats — IG: score_card  ·  FB: score_card  ·  Story: route_spotlight  ·  Audience: families
+2026-05-16 12:47:36  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 0
+2026-05-16 12:47:36  INFO      Audience filter 'families' → 11 destinations match.
+2026-05-16 12:47:36  INFO      Fingerprint dedup snapshot — 0 dests in 7d · 27 (dest,fmt) pairs in 30d · 0 media in 60d
+2026-05-16 12:47:36  INFO      Route locked: Aurangabad Heritage Circuit
+2026-05-16 12:47:39  INFO      Shared best destination locked: Pahalgam
+2026-05-16 12:47:39  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-05-16 12:47:39  INFO      [instagram/nakshiq] Generating score_card post...
+2026-05-16 12:47:39  INFO      [instagram/nakshiq] Caption ready (322 chars, dest=pahalgam)
+2026-05-16 12:47:40  INFO      [instagram/nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-05-16 12:47:40  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/pahalgam.mp4?v=20260512
+2026-05-16 12:47:40  INFO          Requesting upload URL for pahalgam.mp4 (11,691,764 bytes, video/mp4)
+2026-05-16 12:47:41  INFO          Uploading to R2 (timeout=300s)...
+2026-05-16 12:47:43  INFO          R2 PUT OK. Confirming...
+2026-05-16 12:47:44  INFO          Media ready: 1tn2G (11,691,764 bytes · pahalgam.mp4)
+2026-05-16 12:47:44  INFO      [instagram/nakshiq] Publishing Reel...
+2026-05-16 12:48:35  WARNING   [instagram/nakshiq] ⚠️  Queued (ID=PB9e0)
+2026-05-16 12:48:35  INFO      [facebook/Nakshiq] Generating score_card post...
+2026-05-16 12:48:35  INFO      [facebook/Nakshiq] Caption ready (468 chars, dest=pahalgam)
+2026-05-16 12:48:36  INFO      [facebook/Nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-05-16 12:48:36  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/pahalgam.mp4?v=20260512
+2026-05-16 12:48:36  INFO          Requesting upload URL for pahalgam.mp4 (11,691,764 bytes, video/mp4)
+2026-05-16 12:48:37  INFO          Uploading to R2 (timeout=300s)...
+2026-05-16 12:48:38  INFO          R2 PUT OK. Confirming...
+2026-05-16 12:48:40  INFO          Media ready: oE8nc (11,691,764 bytes · pahalgam.mp4)
+2026-05-16 12:48:40  INFO      [facebook/Nakshiq] Publishing Reel...
+2026-05-16 12:49:01  INFO      [facebook/Nakshiq] ✅ Published · Outstand=AeB87 · Platform=2096302927602193
+2026-05-16 12:49:01  INFO      State saved. Run complete.
+2026-05-16 12:49:01  INFO      ════════════════════════════════════════════════════════════

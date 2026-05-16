@@ -1,9 +1,19 @@
 {
   "yt_short_formats_used": [],
   "yt_short_music_used": [],
-  "posted_today": {},
-  "last_sync": "2026-04-30T04:05:30.154914+00:00",
-  "posted_destinations": [],
+  "posted_today": {
+    "m8EAd": "2026-05-16",
+    "m8EAd_evening": "2026-05-16",
+    "PdMu0": "2026-05-16",
+    "PdMu0_evening": "2026-05-16"
+  },
+  "last_sync": "2026-05-16T12:47:35.362698+00:00",
+  "posted_destinations": [
+    {
+      "destination_id": "pahalgam",
+      "date": "2026-05-16"
+    }
+  ],
   "posted_formats": {
     "m8EAd": [
       "monthly_forecast",
@@ -18,7 +28,8 @@
       "score_card",
       "collection_spotlight",
       "festival_alert",
-      "kids_intel"
+      "kids_intel",
+      "score_card"
     ],
     "PdMu0": [
       "monthly_forecast",
@@ -38,7 +49,8 @@
       "reality_check",
       "collection_spotlight",
       "festival_alert",
-      "kids_intel"
+      "kids_intel",
+      "score_card"
     ]
   },
   "post_log": [
@@ -348,7 +360,7 @@
       "format": "reality_check",
       "outstand_post_id": "LEE0V",
       "platform_post_id": "18067665245654147",
-      "collection": "After Dark \u2014 Night Experiences Worth Staying Up For",
+      "collection": "After Dark — Night Experiences Worth Staying Up For",
       "note": "recovered_via_manual_state_patch_after_3x_duplicate_publish_during_evening_run"
     },
     {
@@ -433,37 +445,46 @@
       "has_media": true
     },
     {
-      "timestamp": "2026-05-16T09:30:00+00:00",
+      "timestamp": "2026-05-16T12:48:35.881002+00:00",
       "date": "2026-05-16",
-      "platform": "manual-skip",
-      "post_id": "manual-skip-tehri",
-      "destination": "tehri",
-      "format": "manual_skip_marker",
-      "has_media": false,
-      "media_id": null
-    },
-    {
-      "timestamp": "2026-05-16T09:30:00+00:00",
-      "date": "2026-05-16",
-      "platform": "manual-skip",
-      "post_id": "manual-skip-tehri-lake",
-      "destination": "tehri-lake",
-      "format": "manual_skip_marker",
-      "has_media": false,
-      "media_id": null
-    },
-    {
-      "timestamp": "2026-05-16T09:30:00+00:00",
-      "date": "2026-05-16",
-      "platform": "manual-skip",
-      "post_id": "manual-skip-pahalgam",
+      "platform": "instagram",
+      "account_id": "m8EAd",
+      "post_id": "PB9e0",
       "destination": "pahalgam",
-      "format": "manual_skip_marker",
-      "has_media": false,
-      "media_id": null
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "pahalgam.mp4"
+    },
+    {
+      "timestamp": "2026-05-16T12:49:01.292267+00:00",
+      "date": "2026-05-16",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "AeB87",
+      "destination": "pahalgam",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "pahalgam.mp4"
     }
   ],
-  "theme_usage": {},
+  "theme_usage": {
+    "routes": {},
+    "destinations": {
+      "pahalgam": [
+        "2026-05-16"
+      ]
+    },
+    "reels": {
+      "pahalgam": [
+        "2026-05-16"
+      ]
+    },
+    "audience_tags": {
+      "families": [
+        "2026-05-16"
+      ]
+    }
+  },
   "infographic": {
     "last_topic_idx": 0,
     "last_theme_idx": 0,
@@ -475,10 +496,7 @@
     ]
   },
   "ugc_music_history": [],
-  "last_picked": {},
-  "manual_skip_dests": {
-    "tehri": "2026-06-01",
-    "tehri-lake": "2026-06-01",
-    "pahalgam": "2026-06-01"
+  "last_picked": {
+    "shared_best": "pahalgam"
   }
 }
