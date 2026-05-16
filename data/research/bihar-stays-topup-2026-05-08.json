@@ -1,0 +1,46 @@
+[
+  {
+    "destination_id": "nalanda",
+    "slot": "value",
+    "name": "Goroomgo Nalanda Guest House",
+    "property_type": "budget hotel chain",
+    "price_band": "₹1,500–2,500 per night",
+    "why_nakshiq": "40 rooms on the Bihar Sharif–Rajgir Road in Nalanda 803111, listed by Tripadvisor at 2.2 km from the ASI ruins and 5 km from the Hiuen Tsang Memorial. Goroomgo runs the property as a budget chain — clean, predictable, AC, free Wi-Fi, on-site restaurant. The honest budget pick if you want to overnight in Nalanda proper instead of pulling back to Rajgir.",
+    "source": "web_search",
+    "source_ref": "https://www.tripadvisor.in/Hotel_Review-g3929053-d27532944-Reviews-Goroomgo_Nalanda_City_Rajgir-Nalanda_Nalanda_District_Bihar.html",
+    "confidence": 0.85
+  },
+  {
+    "destination_id": "pawapuri",
+    "slot": "location",
+    "name": "Hotel Abhilasha",
+    "property_type": "3-star hotel",
+    "price_band": "₹2,000–3,500 per night",
+    "why_nakshiq": "200 metres from the Jal Mandir gate, on AH-20 (Patna–Ranchi Road) at Pawapuri More. The closest commercial bookable inventory to the lotus-tank temple — AC rooms, in-house restaurant doing tandoori chicken and South Indian breakfast, 24-hour front desk. The dharamshalas are closer; this is the closest hotel a non-Jain pilgrim can comfortably book.",
+    "source": "web_search",
+    "source_ref": "https://www.makemytrip.com/hotels/hotel_abhilasha-details-pavapuri.html",
+    "confidence": 0.95
+  },
+  {
+    "destination_id": "vaishali",
+    "slot": "location",
+    "name": "The Vaishali Residency",
+    "property_type": "3-star hotel",
+    "price_band": "₹3,500–5,500 per night",
+    "why_nakshiq": "80 rooms on Vishwa Shanti Stupa Road in Basarh — 300 metres from the Buddha Samyak Darshan Museum + Relic Stupa and a 6-minute drive from the Ashokan Pillar at Kolhua. Department of Tourism Bihar–recognised, three floors, AC, hot water (when the power holds), and a multi-cuisine restaurant. The closest mid-tier hotel to Vaishali's two anchor monuments.",
+    "source": "web_search",
+    "source_ref": "https://www.tripadvisor.com/Hotel_Review-g776434-d5000223-Reviews-The_Vaishali_Residency-Vaishali_Vaishali_District_Bihar.html",
+    "confidence": 0.9
+  },
+  {
+    "destination_id": "vaishali",
+    "slot": "value",
+    "name": "Hotel Amrapali Vihar",
+    "property_type": "private guesthouse",
+    "price_band": "₹1,500–3,000 per night",
+    "why_nakshiq": "Private guesthouse on the Main Road in Chakramdas, near the Vaishali Museum and the Vishwa Shanti Stupa — running for over a decade with 3.8/5 across 63 Justdial reviews. AC and non-AC rooms, Indian-Chinese kitchen, transport on order. The straightforward budget alternative if BSTDC's Ambapali Vihar is full or its tariff feels stiff.",
+    "source": "web_search",
+    "source_ref": "https://www.justdial.com/Vaishali/Hotel-Amrapali-Vihar-Near-Vaishali-Museum-Chakramdas/9999P6225-6225-190831105135-D1R5_BZDET",
+    "confidence": 0.7
+  }
+]

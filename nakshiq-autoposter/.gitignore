@@ -7,3 +7,12 @@ social_image_library/
 ugc_output/
 heygen_test.py
 test_mode_b.py
+
+# Autoposter state — committed to autoposter-state branch by GHA, never main.
+# See `Sync latest autoposter state` step in .github/workflows/autoposter.yml.
+state.json
+analytics.json
+autoposter.log
+data/post_outcomes.jsonl
+data/post_engagement.json
+data/bad-url-queue.jsonl

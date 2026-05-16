@@ -169,6 +169,17 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
                 </span>
               </li>
             </ul>
+            <p className="text-muted-foreground leading-relaxed mt-4">
+              When a primary source can't confirm a field, we leave it blank
+              rather than fill it with a plausible-looking number. See{" "}
+              <Link
+                href="/why-we-say-no-data"
+                className="text-primary hover:underline"
+              >
+                why we say no data
+              </Link>
+              {" "}for what a dash on this site actually means.
+            </p>
           </section>
 
           <section>

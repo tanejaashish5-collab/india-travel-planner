@@ -13,9 +13,14 @@ type Props = {
    * destination template (border + uppercase mono caps).
    */
   variant?: "link" | "inline" | "cinematic";
+  /** Mode — defaults to a generic suggest-edit. "fabrication" surfaces a stronger
+   *  CTA and prefixes the saved message with `[FABRICATION-REPORT]` so editorial
+   *  can triage these ahead of typo/wording suggestions. */
+  mode?: "edit" | "fabrication";
 };
 
-export function SuggestEditButton({ targetTable, targetId, context, variant = "link" }: Props) {
+export function SuggestEditButton({ targetTable, targetId, context, variant = "link", mode = "edit" }: Props) {
+  const isFabrication = mode === "fabrication";
   const [open, setOpen] = useState(false);
   const [message, setMessage] = useState("");
   const [suggested, setSuggested] = useState("");
@@ -34,13 +39,17 @@ export function SuggestEditButton({ targetTable, targetId, context, variant = "l
     setLoading(true);
     setError(null);
     try {
+      const messageFinal = message.trim() || null;
+      const taggedMessage = isFabrication && messageFinal
+        ? `[FABRICATION-REPORT] ${messageFinal}`
+        : messageFinal;
       const res = await fetch("/api/suggestions", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           target_table: targetTable,
           target_id: targetId ?? null,
-          message: message.trim() || null,
+          message: taggedMessage,
           suggested_value: suggested.trim() || null,
           submitter_email: email.trim() || null,
           hp,
@@ -96,7 +105,9 @@ export function SuggestEditButton({ targetTable, targetId, context, variant = "l
         className={triggerClass}
         style={variant === "cinematic" ? cinematicStyle : undefined}
       >
-        {variant === "cinematic" ? "Suggest an edit →" : "Suggest an edit"}
+        {variant === "cinematic"
+          ? (isFabrication ? "Report a fabrication →" : "Suggest an edit →")
+          : (isFabrication ? "Report a fabrication" : "Suggest an edit")}
       </button>
 
       {open && (
@@ -132,36 +143,54 @@ export function SuggestEditButton({ targetTable, targetId, context, variant = "l
             ) : (
               <form onSubmit={submit} className="space-y-4">
                 <div>
-                  <h3 className="font-fraunces text-xl">Suggest an edit</h3>
+                  <h3 className="font-fraunces text-xl">
+                    {isFabrication ? "Report a fabrication" : "Suggest an edit"}
+                  </h3>
                   {context && (
-                    <p className="text-xs text-muted-foreground mt-1">Editing: {context}</p>
+                    <p className="text-xs text-muted-foreground mt-1">
+                      {isFabrication ? "Flagging:" : "Editing:"} {context}
+                    </p>
+                  )}
+                  {isFabrication && (
+                    <p className="text-xs text-muted-foreground/80 mt-2 leading-relaxed">
+                      We&apos;d rather pull a page than leave a fabrication. Tell us what looks wrong; we verify
+                      and remove or correct.
+                    </p>
                   )}
                 </div>
 
                 <div>
                   <label className="block text-xs font-medium text-muted-foreground mb-1">
-                    What&apos;s wrong or out of date?
+                    {isFabrication ? "What looks fabricated?" : "What's wrong or out of date?"}
                   </label>
                   <textarea
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
                     rows={3}
                     maxLength={2000}
-                    placeholder="e.g. The prepaid taxi fare to city centre is now ₹650, not ₹450."
+                    placeholder={
+                      isFabrication
+                        ? "e.g. The 'Dzukou Valley Resort' on this page doesn't exist — I drove through there last month."
+                        : "e.g. The prepaid taxi fare to city centre is now ₹650, not ₹450."
+                    }
                     className="w-full rounded-lg border border-border bg-background px-3 py-2 text-sm focus:border-primary focus:outline-none"
                   />
                 </div>
 
                 <div>
                   <label className="block text-xs font-medium text-muted-foreground mb-1">
-                    Correct version (optional)
+                    {isFabrication ? "Source (a link or screenshot reference helps)" : "Correct version (optional)"}
                   </label>
                   <textarea
                     value={suggested}
                     onChange={(e) => setSuggested(e.target.value)}
                     rows={2}
                     maxLength={2000}
-                    placeholder="What it should say."
+                    placeholder={
+                      isFabrication
+                        ? "e.g. Nagaland tourism portal lists 4 stays in Dzukou, this isn't one — https://tourism.nagaland.gov.in/…"
+                        : "What it should say."
+                    }
                     className="w-full rounded-lg border border-border bg-background px-3 py-2 text-sm focus:border-primary focus:outline-none"
                   />
                 </div>

@@ -24,9 +24,16 @@ type DestLite = {
   destination_months: { month: number; score: number }[] | null;
   difficulty: string | null;
   elevation_m: number | null;
+  family_stress?: string | null;
+  daily_cost?: Record<string, unknown> | null;
 };
 
-type FilterId = "all" | "go-month" | "kids" | "permit-free";
+type FilterId = "all" | "go-month" | "kids" | "permit-free" | "multi-gen" | "budget-cheap" | "budget-mid" | "budget-splurge";
+
+function midrangeDailyTotal(d: DestLite): number | null {
+  const dc = d.daily_cost as { midrange?: { total?: number } } | null | undefined;
+  return typeof dc?.midrange?.total === "number" ? dc.midrange.total : null;
+}
 
 function scoreFor(d: DestLite, monthOneIndexed: number): number {
   const row = (d.destination_months ?? []).find((m) => m.month === monthOneIndexed);
@@ -141,6 +148,27 @@ export function LibraryPanel({
     // approximate as "easy + low altitude" since permit data isn't on DestLite.
     if (filter === "permit-free")
       list = list.filter((d) => d.difficulty === "easy" && (d.elevation_m ?? 0) < 2500);
+    // multi-gen — safe for grandparents AND small kids in one trip. No
+    // dedicated column; derived from low altitude (AMS risk at both age
+    // extremes), easy difficulty, and family_stress that's not flagged hard.
+    if (filter === "multi-gen")
+      list = list.filter((d) => {
+        const safeElev = (d.elevation_m ?? 0) < 2000;
+        const easyEnough = !d.difficulty || d.difficulty === "easy";
+        const fs = (d.family_stress ?? "").toLowerCase();
+        const familyOk = !fs.includes("not recommended") && !fs.includes("high");
+        return safeElev && easyEnough && familyOk;
+      });
+    // Salary-cycle budget filters — uses daily_cost.midrange.total (₹/day,
+    // 1 person / mid-range tier from the JSONB blob). Three brackets match
+    // the rupee-anchor wedge: ~₹2.5K, ₹2.5–5K, ₹5K+. Rows with no
+    // daily_cost data drop out — honest scarcity over fabricated tier.
+    if (filter === "budget-cheap")
+      list = list.filter((d) => { const t = midrangeDailyTotal(d); return t !== null && t < 2500; });
+    if (filter === "budget-mid")
+      list = list.filter((d) => { const t = midrangeDailyTotal(d); return t !== null && t >= 2500 && t < 5000; });
+    if (filter === "budget-splurge")
+      list = list.filter((d) => { const t = midrangeDailyTotal(d); return t !== null && t >= 5000; });
     return list
       .slice()
       .sort((a, b) => {
@@ -173,7 +201,11 @@ export function LibraryPanel({
     { id: "all", label: "All" },
     { id: "go-month", label: `${MONTH_LABELS[state.month - 1]} GO` },
     { id: "kids", label: "👶 Kids 4+" },
+    { id: "multi-gen", label: "👨‍👩‍👧 Multi-gen" },
     { id: "permit-free", label: "Permit-free" },
+    { id: "budget-cheap", label: "₹ Cheap day" },
+    { id: "budget-mid", label: "₹₹ Mid" },
+    { id: "budget-splurge", label: "₹₹₹ Splurge" },
   ];
 
   return (

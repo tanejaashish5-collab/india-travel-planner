@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { CampingContent } from "@/components/camping-content";
 import { createClient } from "@supabase/supabase-js";
 import { localeAlternates } from "@/lib/seo-utils";
+import { categoryHeroSrc } from "@/lib/landing-heroes";
 
 export const revalidate = 3600;
 
@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const supabase = createClient(url, key);
   const { data } = await supabase
     .from("camping_spots")
-    .select("*, destinations(name)")
+    .select("*, destinations(name, state_id)")
     .order("name");
 
   return data ?? [];
@@ -37,8 +37,18 @@ export default async function CampingPage() {
     <div className="min-h-screen">
       <Nav />
       {/* Visual page hero */}
-      <section className="relative h-48 sm:h-64 overflow-hidden">
-        <Image src="/images/destinations/chopta-tungnath.jpg" alt="Camping Spots" fill sizes="100vw" priority className="object-cover" />
+      <section className="relative h-56 sm:h-72 overflow-hidden">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          poster="/images/destinations/chopta-tungnath.jpg"
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src={categoryHeroSrc("camping")} type="video/mp4" />
+        </video>
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
         <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 max-w-7xl mx-auto">
           <p className="text-sm font-medium text-primary uppercase tracking-[0.08em] mb-2">Wild & Free</p>

@@ -3,9 +3,13 @@ import { Suspense } from "react";
 import { getTranslations } from "next-intl/server";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
+import { NewsletterSignup } from "@/components/newsletter-signup";
 import { ExploreWithMap } from "@/components/explore-with-map";
+import { TrendingMonthPages } from "@/components/trending-month-pages";
 import { createClient } from "@supabase/supabase-js";
 import { localeAlternates } from "@/lib/seo-utils";
+import { CategoryHero } from "@/components/category-hero";
+import { categoryHeroSrc } from "@/lib/landing-heroes";
 
 export const revalidate = 3600;
 
@@ -63,13 +67,15 @@ export default async function ExplorePage({ params }: { params: Promise<{ locale
   return (
     <div className="min-h-screen">
       <Nav />
+      <CategoryHero
+        videoSrc={categoryHeroSrc("explore")}
+        posterSrc="/images/destinations/spiti-valley.jpg"
+        posterAlt="Explore India"
+        kicker="The Confidence Engine"
+        title={t("pageTitle")}
+        subtitle={t("pageSubtitle", { count: destinations.length })}
+      />
       <main id="main-content" className="mx-auto max-w-7xl px-4 py-8">
-        <div className="mb-6">
-          <h1 className="text-3xl font-semibold">{t("pageTitle")}</h1>
-          <p className="mt-1 text-muted-foreground">
-            {t("pageSubtitle", { count: destinations.length })}
-          </p>
-        </div>
         <div className="mb-6 rounded-xl border border-border/40 bg-card/40 backdrop-blur-sm px-4 py-3 flex flex-wrap items-center gap-x-3 gap-y-2">
           <span className="font-mono text-[10px] tracking-[0.3em] uppercase text-muted-foreground">
             Start from
@@ -90,6 +96,15 @@ export default async function ExplorePage({ params }: { params: Promise<{ locale
         <Suspense fallback={<div className="min-h-[400px] animate-pulse rounded bg-foreground/5" />}>
           <ExploreWithMap destinations={destinationsWithCoords} states={states} />
         </Suspense>
+        <TrendingMonthPages locale={locale} />
+        <div className="mt-16 max-w-2xl mx-auto">
+          <NewsletterSignup
+            source="explore-end"
+            headline="Stop scrolling. Get the one that's worth it."
+            subhead="Every Sunday: the single best India destination this week, the honest skip, and what changed on the road. Free. No spam."
+            buttonLabel="Get Sunday's pick"
+          />
+        </div>
       </main>
       <Footer />
     </div>

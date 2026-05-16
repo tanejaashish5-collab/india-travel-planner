@@ -1,0 +1,12 @@
+-- Maharashtra closeout S49 (2026-05-15)
+-- 12 new rows (8 eats + 4 stays) across 5 B-tier dests
+-- Result: MH 41A·5B → 46A·0B (100% CLOSED)
+--
+-- Special handling: elephanta-caves (UNESCO island, day-trip only, no on-island stays)
+-- — used Mumbai Gateway ferry-base convention for both eats AND stays, clearly labelled
+
+-- See execute_sql apply for the full INSERT bundle (12 rows).
+-- Anchors landed: Taj Mahal Palace 1903, Bademiya 1946, Leopold 1871, Cafe Mondegar 1932,
+-- Sahakari Bhandar Canteen (pure-veg ferry-base), MTDC Chalukya (only on-island sit-down),
+-- Vrundavan Pure Veg Theur (5th-shrine base), Kasar Khanaval Kashid (real Malvani anchor),
+-- Mahaganpati Trust Annapurna Bhojanalaya Ranjangaon (8th-shrine satvik), Hotel Yograj Daund base.

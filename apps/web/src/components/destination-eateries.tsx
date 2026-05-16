@@ -11,6 +11,21 @@ type Eatery = {
   cuisine: string[] | null;
   category: string;
   signature_dish: string | null;
+  parking_type?:
+    | "on-site"
+    | "paid-nearby"
+    | "valet"
+    | "street"
+    | "walk-200m"
+    | "walk-500m+"
+    | "no-vehicle-access"
+    | null;
+  hygiene_confidence?: {
+    fssai?: boolean | null;
+    water?: "clean" | "bottled-only" | "unsure" | null;
+    reviews_count?: number | null;
+    established_year_min_5?: boolean | null;
+  } | null;
   must_try: string[] | null;
   price_range: string | null;
   price_per_head_inr: string | null;
@@ -38,6 +53,54 @@ const CATEGORY_LABEL: Record<string, string> = {
 };
 
 const CATEGORY_ORDER = ["fine_dining", "mid_range", "casual", "street_food", "cafe", "bar", "sweet_shop"];
+
+const PARKING_LABEL: Record<string, string> = {
+  "on-site": "On-site parking",
+  "paid-nearby": "Paid lot nearby",
+  valet: "Valet",
+  street: "Street parking",
+  "walk-200m": "Park 200m away",
+  "walk-500m+": "Park 500m+ walk",
+  "no-vehicle-access": "No vehicle access",
+};
+
+// Hygiene tier — three buckets based on how many signals an eatery clears.
+// Returns null when no useful signal exists (UI hides the badge).
+function computeHygieneTier(h: {
+  fssai?: boolean | null;
+  water?: "clean" | "bottled-only" | "unsure" | null;
+  reviews_count?: number | null;
+  established_year_min_5?: boolean | null;
+}): { label: string; cls: string; tooltip: string } | null {
+  const fssai = h.fssai === true;
+  const waterOk = h.water === "clean" || h.water === "bottled-only";
+  const reviewsOk = (h.reviews_count ?? 0) >= 50;
+  const seasoned = h.established_year_min_5 === true;
+  const score = (fssai ? 1 : 0) + (waterOk ? 1 : 0) + (reviewsOk ? 1 : 0) + (seasoned ? 1 : 0);
+
+  // Only surface when there's at least one positive signal AND no red flag.
+  // h.water === "unsure" is a neutral, not a red flag.
+  if (score === 0) return null;
+  const tooltipBits: string[] = [];
+  if (fssai) tooltipBits.push("FSSAI registered");
+  if (waterOk) tooltipBits.push(h.water === "clean" ? "clean water source" : "bottled water only");
+  if (reviewsOk) tooltipBits.push(`${h.reviews_count} reviews`);
+  if (seasoned) tooltipBits.push("operating 5+ years");
+  const tooltip = `Hygiene signals — ${tooltipBits.join(" · ")}`;
+
+  if (score >= 3) {
+    return {
+      label: "Hygiene ✓",
+      cls: "border-teal-500/40 bg-teal-500/10 text-teal-600 dark:text-teal-300",
+      tooltip,
+    };
+  }
+  return {
+    label: "Hygiene ~",
+    cls: "border-zinc-500/30 bg-zinc-500/5 text-zinc-500 dark:text-zinc-400",
+    tooltip,
+  };
+}
 
 function mapsUrl(e: Eatery): string {
   if (e.google_maps_url) return e.google_maps_url;
@@ -167,11 +230,52 @@ export function DestinationEateries({ eateries, destinationName }: { eateries: E
                       Legendary
                     </span>
                   )}
+                  {(() => {
+                    if (!e.established_year) return null;
+                    const yearsOpen = new Date().getUTCFullYear() - e.established_year;
+                    if (yearsOpen >= 50) {
+                      // 1970s and older — heritage tier
+                      return (
+                        <span
+                          title={`Operating since ${e.established_year} — ${yearsOpen} years`}
+                          className="inline-flex items-center rounded-full border border-sky-500/30 bg-sky-500/10 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wide text-sky-600 dark:text-sky-400"
+                        >
+                          {yearsOpen >= 100 ? "Centenary+" : `${Math.floor(yearsOpen / 10) * 10}+ years`}
+                        </span>
+                      );
+                    }
+                    if (yearsOpen >= 5) {
+                      // Survived the 2-year cliff — 70% of Indian F&B closes inside 2 years.
+                      return (
+                        <span
+                          title={`Operating since ${e.established_year} — past the 2-year cliff`}
+                          className="inline-flex items-center rounded-full border border-emerald-500/30 bg-emerald-500/5 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wide text-emerald-600 dark:text-emerald-400"
+                        >
+                          Established
+                        </span>
+                      );
+                    }
+                    return null;
+                  })()}
                   {e.vegetarian === "pure-veg" && (
                     <span title="Pure vegetarian" className="inline-flex h-4 w-4 items-center justify-center rounded-sm border border-green-600/40">
                       <span className="h-1.5 w-1.5 rounded-full bg-green-600" />
                     </span>
                   )}
+                  {(() => {
+                    const h = e.hygiene_confidence;
+                    if (!h) return null;
+                    const tier = computeHygieneTier(h);
+                    if (!tier) return null;
+                    return (
+                      <span
+                        title={tier.tooltip}
+                        className={`inline-flex items-center rounded-full border px-2 py-0.5 text-[10px] font-medium uppercase tracking-wide ${tier.cls}`}
+                      >
+                        {tier.label}
+                      </span>
+                    );
+                  })()}
                 </div>
                 <div className="mt-0.5 text-[11px] text-muted-foreground">
                   {e.area && <span>{e.area}</span>}
@@ -215,6 +319,15 @@ export function DestinationEateries({ eateries, destinationName }: { eateries: E
             <div className="mt-3 flex flex-wrap items-center gap-3 text-[11px]">
               {e.signature_address && (
                 <span className="text-muted-foreground/80">{e.signature_address}</span>
+              )}
+              {e.parking_type && (
+                <span
+                  className="inline-flex items-center gap-1 text-muted-foreground/80"
+                  title="Parking situation as audited"
+                >
+                  <span aria-hidden="true">🅿︎</span>
+                  {PARKING_LABEL[e.parking_type] ?? e.parking_type}
+                </span>
               )}
             </div>
 

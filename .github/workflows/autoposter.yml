@@ -2,32 +2,56 @@ name: Nakshiq Autoposter
 
 on:
   schedule:
-    # ── Optimized schedule (all times IST, 2hr+ gaps) ──────────────
-    # Morning post: 09:00 IST (03:30 UTC) — daily IG+FB
-    - cron: "30 3 * * *"
-    # YT Short slot 1: 10:00 IST (04:30 UTC) — daily YT only
-    - cron: "30 4 * * *"
-    # Reel slot 1: 11:00 IST (05:30 UTC) — daily IG+FB
-    - cron: "30 5 * * *"
-    # Visual slot: 13:00 IST (07:30 UTC) — daily IG+FB
+    # ── Schedule rationale (2026-05-10 rewrite) ──────────────────────
+    # GHA silently SKIPS scheduled workflows on heavy minute marks
+    # (:00, :15, :30, :45) during high-load periods. Evidence from
+    # autoposter.log 2026-05-04 → 2026-05-09:
+    #   - "0 10 * * *" (reel-map, top-of-hour) skipped 2 days running
+    #     → pomelli content went dark for 3 days
+    #   - "30 3 * * *" (morning post) skipped or delayed 3+ hours
+    #     on 9 of 11 days
+    # Fix: every cron now lands on :17 or :47 — far from any heavy
+    # boundary. All times stay inside their mode-detection windows
+    # below so the bash routing logic doesn't need to change.
+    #
+    # Morning post: 08:47 IST (03:17 UTC) — daily IG+FB
+    - cron: "17 3 * * *"
+    # YT Short slot 1: 09:47 IST (04:17 UTC) — daily YT only
+    - cron: "17 4 * * *"
+    # Reel slot 1: 11:17 IST (05:47 UTC) — daily IG+FB
+    - cron: "47 5 * * *"
+    # Visual slot: 13:17 IST (07:47 UTC) — daily IG+FB
     #   Mon/Wed → moat, Tue/Thu → tourist map, Fri → infographic,
     #   Sat → canva, Sun → pomelli (rotation in mode detection)
-    - cron: "30 7 * * *"
+    - cron: "47 7 * * *"
     # UGC avatar video: 14:30 IST (09:00 UTC) — Wed+Sat only, IG+FB+YT
     # DISABLED: HeyGen balance too low ($0.32). Uncomment after topping up.
     # - cron: "0 9 * * 3,6"
-    # Reel-map: 15:30 IST (10:00 UTC) — daily IG+FB+YT
-    - cron: "0 10 * * *"
-    # Flow story: 16:00 IST (10:30 UTC) — daily IG+FB
-    - cron: "30 10 * * *"
-    # YT Short slot 2: 17:00 IST (11:30 UTC) — daily YT only
-    - cron: "30 11 * * *"
-    # Evening post: 18:30 IST (13:00 UTC) — daily IG+FB
-    - cron: "0 13 * * *"
-    # Reel slot 2: 20:30 IST (15:00 UTC) — daily IG+FB
-    - cron: "0 15 * * *"
-    # Analytics sync: 23:30 IST (18:00 UTC) — internal
-    - cron: "0 18 * * *"
+    # Reel-map: 15:17 IST (09:47 UTC) — Tue/Thu/Sat only, IG+FB+YT (pomelli pipeline)
+    # Cron fires daily; mode-detection DOW-gates to T/Th/Sa (Tier 3, 2026-05-10).
+    - cron: "47 9 * * *"
+    # Flow story: 16:17 IST (10:47 UTC) — Sun only, IG+FB
+    # Cron fires daily; mode-detection DOW-gates to Sun (Tier 3, 2026-05-10).
+    - cron: "47 10 * * *"
+    # YT Short slot 2: 17:17 IST (11:47 UTC) — daily YT only
+    - cron: "47 11 * * *"
+    # Evening post: 19:47 IST (14:17 UTC) — daily IG+FB
+    # Was 18:47 IST; pushed +1h on 2026-05-15 to land inside India IG peak
+    # window (19:00-21:00) rather than 1h before it.
+    - cron: "17 14 * * *"
+    # Reel slot 2: REMOVED 2026-05-10 (Tier 3 cadence cut: 6→4 IG posts/day to
+    # respect IG's algorithmic penalty for sub-10K-follower accounts posting >3/day).
+    # Analytics sync: 23:47 IST (18:17 UTC) — internal
+    - cron: "17 18 * * *"
+    # Engagement pull: 02:47 IST next day (21:17 UTC) — daily, internal
+    # Pulls likes/comments/saves/shares/reach/views from Outstand /analytics
+    # for posts in the last 7 days (Tier 2, 2026-05-10).  Runs after evening
+    # publish so latest posts have ~6h to accumulate engagement before pull.
+    - cron: "17 21 * * *"
+    # Weekly engagement digest: Sun 03:47 IST Mon (Sun 22:17 UTC) — internal
+    # Aggregates the week's engagement into data/research/social-engagement-week-*.md.
+    # Runs after Sunday's engagement pull (21:17 UTC) so the digest is fresh.
+    - cron: "17 22 * * 0"
   workflow_dispatch:
     inputs:
       mode:
@@ -64,7 +88,12 @@ on:
 
 concurrency:
   group: autoposter
-  cancel-in-progress: true
+  # 2026-05-12: was `true` — but that meant a delayed-scheduled fire (GHA can be
+  # 1-3h late on UTC-night crons) got cancelled the moment ANY manual dispatch
+  # or watchdog-trigger queued. Now `false` so runs serialize through the
+  # concurrency group; the script-level `.autoposter.lock` already prevents
+  # genuine simultaneous-publish issues.
+  cancel-in-progress: false
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
@@ -91,10 +120,18 @@ jobs:
 
       - name: Install ffmpeg (system package with drawtext/freetype)
         run: |
-          sudo apt-get install -y -qq ffmpeg 2>/dev/null || {
-            echo "Direct install failed, running apt-get update with 60s timeout..."
+          # Wrap apt-get in `timeout` so a hung Ubuntu 24.04 apt mirror can't
+          # burn the entire 15-min job budget. Today (2026-05-07 06:24-06:37 UTC)
+          # the FIRST install hung silently for 13 min before the job-level
+          # timeout killed the run with no posts. Bounded retries make the
+          # failure mode "fail fast in <5 min" instead of "hang for 15 min".
+          timeout 90 sudo apt-get install -y -qq ffmpeg 2>/dev/null || {
+            echo "Initial ffmpeg install timed out or failed — retrying after update..."
             timeout 60 sudo apt-get update -qq || true
-            sudo apt-get install -y -qq ffmpeg
+            timeout 120 sudo apt-get install -y -qq ffmpeg || {
+              echo "::error::ffmpeg install failed twice — aborting job."
+              exit 1
+            }
           }
           ffmpeg -filters 2>/dev/null | grep -c draw
           which ffmpeg
@@ -103,17 +140,20 @@ jobs:
         run: pip install -r nakshiq-autoposter/requirements.txt
 
       - name: Sync latest autoposter state from autoposter-state branch
-        # State files (state.json / autoposter.log / analytics.json) live on the
-        # `autoposter-state` side branch so they don't trigger Vercel rebuilds on
-        # main. Pull the latest state into the main worktree before the autoposter
-        # runs so it sees yesterday's already-posted content.
+        # State files (state.json / autoposter.log / analytics.json /
+        # post_engagement.json / post_outcomes.jsonl) live on the
+        # `autoposter-state` side branch so they don't trigger Vercel rebuilds
+        # on main. Pull the latest state into the main worktree before the
+        # autoposter runs so it sees yesterday's already-posted content.
         run: |
           if git ls-remote --exit-code --heads origin autoposter-state >/dev/null 2>&1; then
             git fetch origin autoposter-state --depth=1
             git checkout origin/autoposter-state -- \
               nakshiq-autoposter/state.json \
               nakshiq-autoposter/autoposter.log \
-              nakshiq-autoposter/analytics.json 2>/dev/null || true
+              nakshiq-autoposter/analytics.json \
+              nakshiq-autoposter/data/post_engagement.json \
+              nakshiq-autoposter/data/post_outcomes.jsonl 2>/dev/null || true
             echo "Synced state from autoposter-state branch"
           else
             echo "autoposter-state branch not on origin yet — using state from main checkout (first run)"
@@ -185,80 +225,124 @@ jobs:
               echo "Manual mode: normal (post)"
             fi
           # ── Optimized schedule: 9 daily slots, 2hr+ gaps, all IST ──
-          # 09:00 IST = UTC 03:30 → morning post (window: 200-280)
-          elif [ "$TOTAL_MINS" -ge 200 ] && [ "$TOTAL_MINS" -lt 280 ]; then
+          # Windows are now CONTIGUOUS midpoint-bounded ranges (each cron is
+          # the centre of its window) so GHA scheduling drift in either
+          # direction can't drop a slot into --sync-only. Yesterday (2026-05-05)
+          # the evening cron drifted -14 min to 12:46 UTC = 766, which fell
+          # below the old window start of 770 → silent --sync-only. The new
+          # evening window 735-839 captures it.
+          #
+          # 08:47 IST = UTC 03:17 → morning post (cron=197, window: 180-239)
+          elif [ "$TOTAL_MINS" -ge 180 ] && [ "$TOTAL_MINS" -lt 240 ]; then
             echo "args=" >> $GITHUB_OUTPUT
             echo "Scheduled POST mode · 09:00 IST (UTC ${HOUR}:${MINUTE})"
 
-          # 10:00 IST = UTC 04:30 → YT Short slot 1 (window: 260-340)
-          elif [ "$TOTAL_MINS" -ge 260 ] && [ "$TOTAL_MINS" -lt 340 ]; then
+          # 09:47 IST = UTC 04:17 → YT Short slot 1 (cron=257, window: 240-299)
+          elif [ "$TOTAL_MINS" -ge 240 ] && [ "$TOTAL_MINS" -lt 300 ]; then
             echo "args=--yt-short" >> $GITHUB_OUTPUT
             echo "Scheduled YT SHORT slot 1 · 10:00 IST (UTC ${HOUR}:${MINUTE})"
 
-          # 11:00 IST = UTC 05:30 → Reel slot 1 (window: 320-400)
-          elif [ "$TOTAL_MINS" -ge 320 ] && [ "$TOTAL_MINS" -lt 400 ]; then
+          # 11:17 IST = UTC 05:47 → Reel slot 1 (cron=347, window: 300-389)
+          elif [ "$TOTAL_MINS" -ge 300 ] && [ "$TOTAL_MINS" -lt 390 ]; then
             echo "args=--reel" >> $GITHUB_OUTPUT
             echo "Scheduled REEL slot 1 · 11:00 IST (UTC ${HOUR}:${MINUTE})"
 
-          # 13:00 IST = UTC 07:30 → Visual slot (window: 440-520)
-          #   Mon/Wed=moat, Tue/Thu=tourist-map, Fri=infographic, Sat=canva, Sun=pomelli
-          elif [ "$TOTAL_MINS" -ge 440 ] && [ "$TOTAL_MINS" -lt 520 ]; then
-            if echo "1 3" | grep -qw "$DOW"; then
+          # 13:17 IST = UTC 07:47 → Visual slot (cron=467, window: 390-494)
+          # TIER 3 cadence cut (2026-05-10): fires Mon/Wed/Fri only — keeps format
+          # diversity (moat / canva / pomelli) at 3×/wk while honouring IG's
+          # sub-10K-follower posting-cadence guardrail.
+          #   Mon → moat, Wed → canva-visual, Fri → pomelli-visual.
+          #   Tue/Thu/Sat/Sun → sync-only (gives reel-map / flow-story / weekend
+          #   pacing room without competing for the same daily slot).
+          elif [ "$TOTAL_MINS" -ge 390 ] && [ "$TOTAL_MINS" -lt 495 ]; then
+            if [ "$DOW" = "1" ]; then
               echo "args=--moat" >> $GITHUB_OUTPUT
-              echo "Scheduled MOAT · 13:00 IST Mon/Wed (UTC ${HOUR}:${MINUTE})"
-            elif echo "2 4" | grep -qw "$DOW"; then
-              echo "args=--tourist-map" >> $GITHUB_OUTPUT
-              echo "Scheduled TOURIST MAP · 13:00 IST Tue/Thu (UTC ${HOUR}:${MINUTE})"
-            elif [ "$DOW" = "5" ]; then
-              echo "args=--infographic" >> $GITHUB_OUTPUT
-              echo "Scheduled INFOGRAPHIC · 13:00 IST Fri (UTC ${HOUR}:${MINUTE})"
-            elif [ "$DOW" = "6" ]; then
+              echo "Scheduled MOAT · 13:17 IST Mon (UTC ${HOUR}:${MINUTE})"
+            elif [ "$DOW" = "3" ]; then
               echo "args=--canva-visual" >> $GITHUB_OUTPUT
-              echo "Scheduled CANVA VISUAL · 13:00 IST Sat (UTC ${HOUR}:${MINUTE})"
-            else
+              echo "Scheduled CANVA VISUAL · 13:17 IST Wed (UTC ${HOUR}:${MINUTE})"
+            elif [ "$DOW" = "5" ]; then
               echo "args=--pomelli-visual" >> $GITHUB_OUTPUT
-              echo "Scheduled POMELLI VISUAL · 13:00 IST Sun (UTC ${HOUR}:${MINUTE})"
+              echo "Scheduled POMELLI VISUAL · 13:17 IST Fri (UTC ${HOUR}:${MINUTE})"
+            else
+              echo "args=--sync-only" >> $GITHUB_OUTPUT
+              echo "Visual slot skipped (Tier 3: Mon/Wed/Fri only) · DOW=${DOW}"
             fi
 
-          # 14:30 IST = UTC 09:00 → UGC avatar video (window: 530-590) — Wed+Sat only
+          # 14:30 IST = UTC 09:00 → UGC avatar video (cron=540, window: 495-569) — Wed+Sat only
           # NOTE: cron trigger is currently commented out (HeyGen balance too low)
-          elif [ "$TOTAL_MINS" -ge 530 ] && [ "$TOTAL_MINS" -lt 590 ]; then
+          elif [ "$TOTAL_MINS" -ge 495 ] && [ "$TOTAL_MINS" -lt 570 ]; then
             echo "args=--ugc" >> $GITHUB_OUTPUT
             echo "Scheduled UGC · 14:30 IST (UTC ${HOUR}:${MINUTE})"
 
-          # 15:30 IST = UTC 10:00 → Reel-map (window: 590-640) — IG+FB+YT
-          elif [ "$TOTAL_MINS" -ge 590 ] && [ "$TOTAL_MINS" -lt 640 ]; then
-            echo "args=--reel-map" >> $GITHUB_OUTPUT
-            echo "Scheduled REEL-MAP · 15:30 IST (UTC ${HOUR}:${MINUTE})"
+          # 15:17 IST = UTC 09:47 → Reel-map (cron=587, window: 570-614) — IG+FB+YT
+          # TIER 3 (2026-05-10): DOW-gated to Tue/Thu/Sat only.  Pomelli pipeline
+          # stays alive at 3×/wk; alternates with the M/W/F visual slot.
+          elif [ "$TOTAL_MINS" -ge 570 ] && [ "$TOTAL_MINS" -lt 615 ]; then
+            if echo "2 4 6" | grep -qw "$DOW"; then
+              echo "args=--reel-map" >> $GITHUB_OUTPUT
+              echo "Scheduled REEL-MAP · 15:17 IST Tue/Thu/Sat (UTC ${HOUR}:${MINUTE})"
+            else
+              echo "args=--sync-only" >> $GITHUB_OUTPUT
+              echo "Reel-map skipped (Tier 3: Tue/Thu/Sat only) · DOW=${DOW}"
+            fi
 
-          # 16:00 IST = UTC 10:30 → Flow story (window: 640-680) — daily IG+FB
-          elif [ "$TOTAL_MINS" -ge 640 ] && [ "$TOTAL_MINS" -lt 680 ]; then
-            echo "args=--flow-story" >> $GITHUB_OUTPUT
-            echo "Scheduled FLOW STORY · 16:00 IST (UTC ${HOUR}:${MINUTE})"
+          # 16:17 IST = UTC 10:47 → Flow story (cron=647, window: 615-659) — IG+FB
+          # TIER 3 (2026-05-10): DOW-gated to Sun only — replaces the Sat→canva
+          # / Sun→pomelli rotation that the visual slot used to handle weekly.
+          elif [ "$TOTAL_MINS" -ge 615 ] && [ "$TOTAL_MINS" -lt 660 ]; then
+            if [ "$DOW" = "7" ]; then
+              echo "args=--flow-story" >> $GITHUB_OUTPUT
+              echo "Scheduled FLOW STORY · 16:17 IST Sun (UTC ${HOUR}:${MINUTE})"
+            else
+              echo "args=--sync-only" >> $GITHUB_OUTPUT
+              echo "Flow-story skipped (Tier 3: Sun only) · DOW=${DOW}"
+            fi
 
-          # 17:00 IST = UTC 11:30 → YT Short slot 2 (window: 680-760)
-          elif [ "$TOTAL_MINS" -ge 680 ] && [ "$TOTAL_MINS" -lt 760 ]; then
+          # 17:17 IST = UTC 11:47 → YT Short slot 2 (cron=707, window: 660-739)
+          elif [ "$TOTAL_MINS" -ge 660 ] && [ "$TOTAL_MINS" -lt 740 ]; then
             echo "args=--yt-short" >> $GITHUB_OUTPUT
-            echo "Scheduled YT SHORT slot 2 · 17:00 IST (UTC ${HOUR}:${MINUTE})"
+            echo "Scheduled YT SHORT slot 2 · 17:17 IST (UTC ${HOUR}:${MINUTE})"
 
-          # 18:30 IST = UTC 13:00 → Evening post (window: 770-860)
-          elif [ "$TOTAL_MINS" -ge 770 ] && [ "$TOTAL_MINS" -lt 860 ]; then
+          # 19:47 IST = UTC 14:17 → Evening post (cron=857, window: 740-959)
+          # Shifted +1h on 2026-05-15 to land inside India's IG peak engagement
+          # window (19:00-21:00 IST) rather than 1h before it. Wide window
+          # tolerates ±117/102 min of GHA scheduler drift.
+          elif [ "$TOTAL_MINS" -ge 740 ] && [ "$TOTAL_MINS" -lt 960 ]; then
             echo "args=--evening" >> $GITHUB_OUTPUT
-            echo "Scheduled EVENING · 18:30 IST (UTC ${HOUR}:${MINUTE})"
+            echo "Scheduled EVENING · 19:47 IST (UTC ${HOUR}:${MINUTE})"
 
-          # 20:30 IST = UTC 15:00 → Reel slot 2 (window: 890-970)
-          elif [ "$TOTAL_MINS" -ge 890 ] && [ "$TOTAL_MINS" -lt 970 ]; then
-            echo "args=--reel" >> $GITHUB_OUTPUT
-            echo "Scheduled REEL slot 2 · 20:30 IST (UTC ${HOUR}:${MINUTE})"
+          # Reel slot 2 removed 2026-05-10 (Tier 3). Window 960-989 retained as
+          # a sync-only fallback for post-evening drift (evening window ends
+          # at 15:59 UTC = 960 mins after the 2026-05-15 +1h push).
+          elif [ "$TOTAL_MINS" -ge 960 ] && [ "$TOTAL_MINS" -lt 990 ]; then
+            echo "args=--sync-only" >> $GITHUB_OUTPUT
+            echo "Post-evening drift fallback · sync-only"
 
-          # 23:30 IST = UTC 18:00 → Analytics sync (window: 1070-1200)
-          elif [ "$TOTAL_MINS" -ge 1070 ] && [ "$TOTAL_MINS" -lt 1200 ]; then
+          # 23:47 IST = UTC 18:17 → Analytics sync (cron=1097, window: 990-1199)
+          elif [ "$TOTAL_MINS" -ge 990 ] && [ "$TOTAL_MINS" -lt 1200 ]; then
             echo "args=--analytics" >> $GITHUB_OUTPUT
-            echo "Scheduled ANALYTICS · 23:30 IST (UTC ${HOUR}:${MINUTE})"
+            echo "Scheduled ANALYTICS · 23:47 IST (UTC ${HOUR}:${MINUTE})"
+
+          # 02:47 IST next day = UTC 21:17 → Engagement pull (cron=1277, window: 1200-1379)
+          # Tier 2 (2026-05-10): pulls likes/comments/saves/shares/reach/views
+          # from Outstand /v1/posts/{id}/analytics for last 7 days of posts.
+          # On Sundays (DOW=7) the 22:17 UTC window also fires the weekly digest.
+          elif [ "$TOTAL_MINS" -ge 1200 ] && [ "$TOTAL_MINS" -lt 1380 ]; then
+            # 22:17 UTC = 1337 mins → digest_weekly (Sunday only — DOW=7)
+            if [ "$TOTAL_MINS" -ge 1320 ] && [ "$DOW" = "7" ]; then
+              echo "args=--digest-weekly" >> $GITHUB_OUTPUT
+              echo "Scheduled WEEKLY DIGEST · 03:47 IST Mon (UTC ${HOUR}:${MINUTE})"
+            else
+              echo "args=--engagement-pull" >> $GITHUB_OUTPUT
+              echo "Scheduled ENGAGEMENT PULL · 02:47 IST (UTC ${HOUR}:${MINUTE})"
+            fi
 
           else
+            # Reachable only for off-schedule manual fires before 03:00 UTC
+            # or after 20:00 UTC. Loud log so future drift > 60 min surfaces.
             echo "args=--sync-only" >> $GITHUB_OUTPUT
-            echo "Off-schedule trigger, sync only (UTC ${HOUR}:${MINUTE})"
+            echo "::warning::Off-schedule trigger fell through all windows — sync-only fallback (UTC ${HOUR}:${MINUTE} = ${TOTAL_MINS} mins). If this fires from a scheduled cron, the windows in autoposter.yml drifted more than 60 min and need re-tuning."
           fi
 
       - name: Run autoposter
@@ -279,9 +363,11 @@ jobs:
 
           # 1. Snapshot autoposter's freshly-written state files
           mkdir -p /tmp/autoposter-snap
-          [ -f nakshiq-autoposter/state.json ]     && cp nakshiq-autoposter/state.json     /tmp/autoposter-snap/state.json     || true
-          [ -f nakshiq-autoposter/autoposter.log ] && cp nakshiq-autoposter/autoposter.log /tmp/autoposter-snap/autoposter.log || true
-          [ -f nakshiq-autoposter/analytics.json ] && cp nakshiq-autoposter/analytics.json /tmp/autoposter-snap/analytics.json || true
+          [ -f nakshiq-autoposter/state.json ]                  && cp nakshiq-autoposter/state.json                  /tmp/autoposter-snap/state.json                  || true
+          [ -f nakshiq-autoposter/autoposter.log ]              && cp nakshiq-autoposter/autoposter.log              /tmp/autoposter-snap/autoposter.log              || true
+          [ -f nakshiq-autoposter/analytics.json ]              && cp nakshiq-autoposter/analytics.json              /tmp/autoposter-snap/analytics.json              || true
+          [ -f nakshiq-autoposter/data/post_engagement.json ]   && cp nakshiq-autoposter/data/post_engagement.json   /tmp/autoposter-snap/post_engagement.json        || true
+          [ -f nakshiq-autoposter/data/post_outcomes.jsonl ]    && cp nakshiq-autoposter/data/post_outcomes.jsonl    /tmp/autoposter-snap/post_outcomes.jsonl         || true
 
           # 2. Ensure autoposter-state branch exists on origin (bootstrap on first run)
           if ! git ls-remote --exit-code --heads origin autoposter-state >/dev/null 2>&1; then
@@ -295,14 +381,27 @@ jobs:
           git worktree add /tmp/autoposter-state-worktree autoposter-state
 
           # 4. Drop the snapshot into the worktree
-          mkdir -p /tmp/autoposter-state-worktree/nakshiq-autoposter
-          cp /tmp/autoposter-snap/state.json     /tmp/autoposter-state-worktree/nakshiq-autoposter/state.json     2>/dev/null || true
-          cp /tmp/autoposter-snap/autoposter.log /tmp/autoposter-state-worktree/nakshiq-autoposter/autoposter.log 2>/dev/null || true
-          cp /tmp/autoposter-snap/analytics.json /tmp/autoposter-state-worktree/nakshiq-autoposter/analytics.json 2>/dev/null || true
+          mkdir -p /tmp/autoposter-state-worktree/nakshiq-autoposter/data
+          cp /tmp/autoposter-snap/state.json            /tmp/autoposter-state-worktree/nakshiq-autoposter/state.json                 2>/dev/null || true
+          cp /tmp/autoposter-snap/autoposter.log        /tmp/autoposter-state-worktree/nakshiq-autoposter/autoposter.log             2>/dev/null || true
+          cp /tmp/autoposter-snap/analytics.json        /tmp/autoposter-state-worktree/nakshiq-autoposter/analytics.json             2>/dev/null || true
+          cp /tmp/autoposter-snap/post_engagement.json  /tmp/autoposter-state-worktree/nakshiq-autoposter/data/post_engagement.json  2>/dev/null || true
+          cp /tmp/autoposter-snap/post_outcomes.jsonl   /tmp/autoposter-state-worktree/nakshiq-autoposter/data/post_outcomes.jsonl   2>/dev/null || true
 
           # 5. Commit + push from the worktree
+          # Iterate so a missing file (e.g. post_engagement.json before the
+          # engagement-pull cron has ever fired) doesn't fail the whole step
+          # with "fatal: pathspec did not match any files". This caused 10
+          # consecutive failures on 2026-05-10 and GHA silently stopped
+          # scheduling new runs.
           pushd /tmp/autoposter-state-worktree
-          git add nakshiq-autoposter/state.json nakshiq-autoposter/autoposter.log nakshiq-autoposter/analytics.json
+          for f in nakshiq-autoposter/state.json \
+                   nakshiq-autoposter/autoposter.log \
+                   nakshiq-autoposter/analytics.json \
+                   nakshiq-autoposter/data/post_engagement.json \
+                   nakshiq-autoposter/data/post_outcomes.jsonl; do
+            [ -f "$f" ] && git add "$f"
+          done
           if git diff --staged --quiet; then
             echo "No state changes to commit"
           else

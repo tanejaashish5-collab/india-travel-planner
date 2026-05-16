@@ -20,7 +20,8 @@ export type PersonaSlug =
   | "honeymooners"
   | "pilgrims"
   | "wellness"
-  | "culinary";
+  | "culinary"
+  | "nri-parents-visit";
 
 export type PersonaConfig = {
   slug: PersonaSlug;
@@ -242,11 +243,35 @@ export const PERSONAS: Record<PersonaSlug, PersonaConfig> = {
       { q: "Which Indian city has the best vegetarian food?", a: "Ahmedabad and Jaipur lead vegetarian depth — Gujarati and Marwari cuisines. South Indian vegetarian (Tamil, Kerala Brahmin, Karnataka Udupi) is globally underrated — try Chennai's messes (Ratna Cafe, Saravana Bhavan), Bengaluru's MTR, Udupi's Mitra Samaj." },
     ],
   },
+
+  "nri-parents-visit": {
+    slug: "nri-parents-visit",
+    label: "NRI bringing parents to India",
+    labelHindi: "एनआरआई — माता-पिता के साथ भारत यात्रा",
+    title: "India for NRIs travelling with elderly parents — verified routes, easy access",
+    titleHindi: "एनआरआई के लिए भारत यात्रा — माता-पिता के साथ सत्यापित मार्ग",
+    tagline: "Low altitude, hospital within range, no surprises. The trip you can actually plan from Sydney.",
+    taglineHindi: "कम ऊँचाई, अस्पताल पास, कोई आश्चर्य नहीं। सिडनी से तय किया जा सकने वाला यात्रा।",
+    description: "For diaspora Indians planning the trip parents have been asking about for ten years. Filtered for elderly-suitable destinations (under 2,000 m, easy walking) with verified medical access, English-spoken stays, and clean overnight transport options. We surface what works for a three-generation table — and we say no when a destination doesn't.",
+    icon: "family",
+    // Same baseFilter heuristic as elderly — when persona_blocks doesn't carry
+    // this slug yet (newer than the schema), fall back to the elderly criteria
+    // so the page renders something useful from day one.
+    baseFilter: (d) => (d.difficulty === "easy") && (d.elevation_m == null || d.elevation_m < 2000),
+    segmentKeywords: ["elderly", "senior", "family with parents", "multi-generational"],
+    faq: [
+      { q: "Which India airports are kindest to elderly arrivals from overseas?", a: "Bengaluru (BLR) and Hyderabad (HYD) lead for wheelchair assistance, clear signage and short walk distances. Delhi (DEL) T3 is huge — book wheelchair assistance at booking, not on arrival. Mumbai (BOM) T2 works but the immigration queue can be a 90-minute wait at peak. Cochin (COK) is the calmest for Kerala-bound trips." },
+      { q: "How do we plan around monsoon when parents are visiting?", a: "October through March is the safe window across most of India for older travellers. Specifically avoid June-August in Kerala (slip risk on temple stones, hospital flooding), July-September in Mumbai-Goa-Konkan coast, and any monsoon month in Himalayan foothills (landslide closure). Rajasthan, Karnataka heritage circuit, and Tamil Nadu coast all work November to February." },
+      { q: "What should I tell my parents to pack for India trip safety?", a: "A small medical kit with their prescription names in generic form (Indian pharmacies sell by generic), a copy of any prior cardiac/ortho reports in PDF on phone, sun hats not caps (caps shield poorly), water shoes if temples are on the itinerary, and a SIM that works (Airtel/Jio prepaid via the airport counter at arrival — passports needed)." },
+      { q: "Is travel insurance worth it for a trip with parents in India?", a: "Yes, every time, no exceptions. Buy a policy that includes medical evacuation. Bajaj Allianz, Tata AIG and ICICI Lombard all cover NRI-with-resident-parent trips. For trips into hill stations (Uttarakhand, HP, NE) confirm the policy covers air ambulance from district headquarters — that's where the bills land." },
+    ],
+  },
 };
 
 export const PERSONA_ORDER: PersonaSlug[] = [
   "families", "bikers", "nomads", "elderly", "photographers",
   "solo-female", "honeymooners", "pilgrims", "wellness", "culinary",
+  "nri-parents-visit",
 ];
 
 function verdictIsGo(value: string | undefined | null): boolean {

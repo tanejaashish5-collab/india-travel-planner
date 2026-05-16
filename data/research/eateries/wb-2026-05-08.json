@@ -1,0 +1,74 @@
+[
+  {
+    "destination_id": "shantiniketan",
+    "name": "Kasahara - The Cafe",
+    "category": "cafe",
+    "cuisine": "Continental, Japanese-inspired",
+    "specialty_dish": "Filter coffee and cinnamon toast on the open verandah",
+    "price_range": "₹₹",
+    "vegetarian": "veg-friendly",
+    "reservation": "walk-in",
+    "area": "Visva-Bharati campus, near Kala Bhavana",
+    "notes": "Order the filter coffee and a slice of cake and sit on the open verandah — named for the Japanese artisan Kimtaro Kasahara, the menu is deliberately simple. Best as a between-museums break, not a full meal."
+  },
+  {
+    "destination_id": "shantiniketan",
+    "name": "Ghore Baire Restaurant",
+    "category": "casual",
+    "cuisine": "Bengali",
+    "specialty_dish": "Bhetki paturi and Sunday Bengali thali",
+    "price_range": "₹₹",
+    "vegetarian": "veg-friendly",
+    "reservation": "recommended",
+    "area": "Bhubandanga, near Bolpur main road",
+    "notes": "Order the bhetki paturi or the Sunday thali; named after Tagore's novel. Honest home-style Bengali in a simple AC room — not a destination restaurant, but the most reliable sit-down meal in town."
+  },
+  {
+    "destination_id": "siliguri",
+    "name": "Bhojohori Manna",
+    "category": "casual",
+    "cuisine": "Bengali",
+    "specialty_dish": "Daab chingri and shorshe ilish",
+    "price_range": "₹₹",
+    "vegetarian": "veg-friendly",
+    "reservation": "recommended",
+    "area": "Hill Cart Road, 2nd floor Hotel Golden Moments",
+    "notes": "Go for daab chingri or shorshe ilish — the Kolkata chain's transit-town outpost is the most reliable Bengali fish curry on the route. Plain dining room, busy at lunch with NJP-bound travellers."
+  },
+  {
+    "destination_id": "sundarbans",
+    "name": "Tora Eco Resort Kitchen",
+    "category": "casual",
+    "cuisine": "Bengali, Sundarbans freshwater",
+    "specialty_dish": "Bhetki paturi and crab masala",
+    "price_range": "₹₹",
+    "vegetarian": "veg-friendly",
+    "reservation": "required",
+    "area": "Bali Island, Gosaba block",
+    "notes": "Order the crab masala and bhetki paturi — the kitchen sources from local Bali Island fishermen and the menu shifts with the catch. Resort-only kitchen so you must be staying or pre-arrange a meal stop."
+  },
+  {
+    "destination_id": "sundarbans",
+    "name": "Sundarban Tiger Camp Restaurant",
+    "category": "casual",
+    "cuisine": "Bengali",
+    "specialty_dish": "Hilsa in mustard gravy (seasonal)",
+    "price_range": "₹₹₹",
+    "vegetarian": "veg-friendly",
+    "reservation": "required",
+    "area": "Dayapur Island, opposite Sajnekhali",
+    "notes": "Hilsa in mustard gravy when in season (Jul-Sep), otherwise stick to the chingri malai curry. Resort dining room serves a fixed lunch buffet to package guests; standalone meals possible on prior request."
+  },
+  {
+    "destination_id": "sundarbans",
+    "name": "Sundarini Naturals (honey + co-op produce)",
+    "category": "sweet_shop",
+    "cuisine": "Sundarbans wild honey, jaggery, masalas",
+    "specialty_dish": "Wild forest honey from Mouli collectors",
+    "price_range": "₹₹",
+    "vegetarian": "pure-veg",
+    "reservation": "walk-in",
+    "area": "Pakhiralay village, Gosaba",
+    "notes": "Buy the wild forest honey direct from the Mouli collectors' co-op — the only honest provenance for Sundarbans honey, every other label downstream is questionable. Not a restaurant but the one packaged-goods stop worth making."
+  }
+]

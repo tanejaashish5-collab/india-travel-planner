@@ -54,9 +54,8 @@ export default async function CampingByStatePage({ params }: { params: Promise<{
               <p className="text-sm text-muted-foreground mt-1">{spot.destination?.name}</p>
               {spot.description && <p className="text-xs text-muted-foreground mt-2 line-clamp-3">{spot.description}</p>}
               <div className="flex gap-2 mt-3 flex-wrap">
-                {spot.water_available && <span className="text-[10px] rounded-full bg-blue-500/10 text-blue-400 px-2 py-0.5">Water</span>}
+                {spot.water_source && <span className="text-[10px] rounded-full bg-blue-500/10 text-blue-400 px-2 py-0.5">Water</span>}
                 {spot.permit_required && <span className="text-[10px] rounded-full bg-yellow-500/10 text-yellow-400 px-2 py-0.5">Permit</span>}
-                {spot.fire_allowed && <span className="text-[10px] rounded-full bg-orange-500/10 text-orange-400 px-2 py-0.5">Campfire OK</span>}
               </div>
             </div>
           ))}

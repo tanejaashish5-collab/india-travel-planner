@@ -17,9 +17,14 @@ export function BookingHandoff({ destinationName, stateName }: { destinationName
       color: "text-blue-400 border-blue-500/30 hover:bg-blue-500/10",
     },
     {
+      name: "TripAdvisor",
+      url: `https://www.tripadvisor.in/Search?q=${searchQuery}`,
+      color: "text-emerald-400 border-emerald-500/30 hover:bg-emerald-500/10",
+    },
+    {
       name: "Google Hotels",
       url: `https://www.google.com/travel/hotels/${searchQuery}`,
-      color: "text-emerald-400 border-emerald-500/30 hover:bg-emerald-500/10",
+      color: "text-slate-300 border-slate-400/30 hover:bg-slate-400/10",
     },
   ];
 
@@ -28,7 +33,9 @@ export function BookingHandoff({ destinationName, stateName }: { destinationName
       <div className="flex items-start justify-between mb-3">
         <div>
           <h3 className="text-sm font-semibold">Ready to book?</h3>
-          <p className="text-xs text-muted-foreground mt-0.5">We don't sell bookings. Check these trusted platforms.</p>
+          <p className="text-xs text-muted-foreground mt-0.5">
+            We sit before the booking layer, not beside it. Compare prices on the platforms below once you&apos;ve decided where to go.
+          </p>
         </div>
         <span className="text-xs text-muted-foreground/50 border border-border/30 rounded-full px-2 py-0.5">Not sponsored</span>
       </div>

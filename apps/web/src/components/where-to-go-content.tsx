@@ -15,6 +15,7 @@ import { SCORE_COLORS, SCORE_SOLID, DIFFICULTY_COLORS } from "@/lib/design-token
 import { destinationImage } from "@/lib/image-url";
 import { formatScoreInline } from "@itp/shared";
 import { videoSrc } from "@/lib/video-url";
+import { hasMonthHero, monthHeroSrc } from "@/lib/landing-heroes";
 
 // ─── Constants ──────────────────────────────────────────────
 const MONTH_NAMES = [
@@ -351,6 +352,34 @@ export function WhereToGoContent({
                 src={videoSrc(heroDestId)}
                 type="video/mp4"
               />
+            </video>
+            <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/30 to-transparent pointer-events-none" />
+          </div>
+        </FadeIn>
+      )}
+
+      {/* ───── Month-only: full-bleed hero video of the month itself (Jan-Dec).
+           Plays the seasonal month-<slug>.mp4 from R2 (uploaded 2026-05-12).
+           Skipped when isRegional because that branch already renders a
+           destination-level hero above. ───── */}
+      {!isRegional && hasMonthHero(monthSlug) && (
+        <FadeIn>
+          <div
+            className="relative h-56 sm:h-72 lg:h-[32rem] rounded-2xl lg:rounded-none overflow-hidden film-grain lg:relative lg:left-1/2 lg:right-1/2 lg:-ml-[50vw] lg:-mr-[50vw] lg:w-screen"
+            style={{
+              background:
+                "linear-gradient(135deg, oklch(0.25 0.02 260), oklch(0.18 0.01 280))",
+            }}
+          >
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
+              className="w-full h-full object-cover"
+            >
+              <source src={monthHeroSrc(monthSlug)} type="video/mp4" />
             </video>
             <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/30 to-transparent pointer-events-none" />
           </div>

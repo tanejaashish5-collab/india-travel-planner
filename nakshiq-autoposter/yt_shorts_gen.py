@@ -28,6 +28,20 @@ from datetime import datetime, date
 from pathlib import Path
 from typing import Optional
 
+
+def _format_score(raw) -> str:
+    """Convert raw 1-5 API score into the website-aligned '8/10' display string.
+    Mirrors format_score() in autoposter.py and formatScore() in
+    apps/web/src/components/destination-detail-cinematic.tsx (Tier 1, 2026-05-10).
+    """
+    try:
+        if raw is None or raw == "":
+            return "—/10"
+        return f"{int(raw) * 2}/10"
+    except (TypeError, ValueError):
+        return "—/10"
+
+
 # ── Brand constants ──────────────────────────────────────────────────
 try:
     from slide_gen import (INK_DEEP, BONE, VERMILLION_BRIGHT, VERMILLION_DEEP,
@@ -104,6 +118,30 @@ def _branding_bar() -> list[str]:
     ]
 
 
+def _iter_dest_videos():
+    """Yield destination-footage videos from videos/.
+
+    Real destination footage is named `<slug>.mp4` (e.g. rudraprayag.mp4)
+    or `state-<slug>.mp4` (e.g. state-uttarakhand.mp4). Legacy stock clips
+    use the `VIDEO_*.mp4` prefix. The old glob `VIDEO_*.mp4` silently hid
+    682 of 727 mp4s (94% of the library) — caught 2026-05-15 when a
+    Rudraprayag Short rendered with mismatched footage.
+
+    Excluded:
+      - ARTICLE_*.mp4  (article promos, not background footage)
+      - "<name> 2.mp4" (Finder dedup artifacts)
+    """
+    if not VIDEOS_DIR.exists():
+        return
+    for p in VIDEOS_DIR.glob("*.mp4"):
+        stem = p.stem
+        if " 2" in stem:
+            continue
+        if stem.startswith("ARTICLE_"):
+            continue
+        yield p
+
+
 def _find_video(dest_slug: str) -> Optional[Path]:
     """Find the best matching video for a destination slug."""
     if not VIDEOS_DIR.exists():
@@ -112,12 +150,8 @@ def _find_video(dest_slug: str) -> Optional[Path]:
     slug_parts = set(slug.split("-"))
 
     candidates = []
-    all_vids = []
-    for p in VIDEOS_DIR.glob("VIDEO_*.mp4"):
-        if " 2" in p.stem:
-            continue
-        all_vids.append(p)
-        name = p.stem.lower().replace("video_", "")
+    for p in _iter_dest_videos():
+        name = p.stem.lower().replace("video_", "").replace("state-", "")
 
         if name == slug:
             return p
@@ -137,21 +171,33 @@ def _find_video(dest_slug: str) -> Optional[Path]:
 
 
 def _find_similar_video(dest: dict) -> Optional[Path]:
-    """Find a video with similar aesthetic — same state or similar geography."""
+    """Find a video with similar aesthetic — same state or similar geography.
+
+    Returns None when no dest-specific or state-matching video exists. We used
+    to fall back to a random video from the whole library, which produced
+    cross-region mismatches (Goa beach footage behind a Rudraprayag title).
+    The caller should degrade to a Pomelli image or a state-themed clip
+    instead — see _pick_background.
+    """
     vid = _find_video(dest.get("id", dest.get("name", "")))
     if vid:
         return vid
 
-    # Try state-based fallback
+    # Try state-based fallback — matches `state-<slug>.mp4` or any video whose
+    # stem contains the state slug.
     state = dest.get("state", "").lower().replace(" ", "-")
     if state:
-        for p in VIDEOS_DIR.glob("VIDEO_*.mp4"):
+        # Prefer the canonical state-<slug>.mp4 if present
+        canonical = VIDEOS_DIR / f"state-{state}.mp4"
+        if canonical.exists():
+            return canonical
+        for p in _iter_dest_videos():
             if state in p.stem.lower():
                 return p
 
-    # Random scenic fallback
-    all_vids = [v for v in VIDEOS_DIR.glob("VIDEO_*.mp4") if " 2" not in v.stem]
-    return random.choice(all_vids) if all_vids else None
+    # No random fallback — return None so the caller picks a Pomelli image or
+    # a state-themed clip rather than risking cross-region leakage.
+    return None
 
 
 # ── Pomelli image selection ──────────────────────────────────────────
@@ -174,10 +220,15 @@ def _load_pomelli_manifest() -> list:
 
 
 def _find_pomelli_images(keywords: list[str], count: int = 1,
-                         campaign_type: str = None) -> list[Path]:
+                         campaign_type: str = None,
+                         strict: bool = False) -> list[Path]:
     """Find Pomelli images matching keywords (campaign name, subject, tags).
 
     Returns up to `count` image paths, shuffled for variety.
+
+    When strict=True, returns [] if no keyword match scores positive — i.e.
+    skips the random library fallback. Use this in callers that need to avoid
+    cross-destination leakage (Pomelli backgrounds for Shorts, etc.).
     """
     manifest = _load_pomelli_manifest()
     if not manifest:
@@ -224,6 +275,8 @@ def _find_pomelli_images(keywords: list[str], count: int = 1,
             scored.append((score, random.random(), path))
 
     if not scored:
+        if strict:
+            return []
         # Random fallback from full library
         all_imgs = []
         for e in manifest:
@@ -298,38 +351,54 @@ def _render_segment_image(image_file: Path, duration: float,
 
 def _pick_background(dest: dict, keywords: list[str] = None,
                      campaign_type: str = None) -> tuple:
-    """Pick a background for a segment — Pomelli image preferred, video fallback.
+    """Pick a background for a segment.
+
+    Priority (changed 2026-05-06 to fix double-title bug):
+      1. Destination video from R2 library — clean, no baked text.
+      2. Pomelli image — only when a strict name-keyword match exists, since
+         Pomelli images carry baked-in titles + CTA buttons that collide with
+         the Short's own text overlays. State alone is NEVER enough (caused
+         Khangchendzonga→Nathula cross-leakage on 2026-05-05).
+      3. None.
 
     Returns (path, is_image: bool).
     """
-    kw = keywords or []
-    # Add destination name + state as keywords
-    name = dest.get("name", "")
-    state = dest.get("state", "")
-    if name:
-        kw.append(name)
-    if state:
-        kw.append(state)
-
-    imgs = _find_pomelli_images(kw, count=1, campaign_type=campaign_type)
-    if imgs:
-        return imgs[0], True
-
-    # Video fallback
-    bg, is_img = _pick_background(dest)
+    # 1. Prefer destination video (no baked text → no title collision).
+    vid = _find_similar_video(dest)
     if vid:
         return vid, False
+
+    # 2. Pomelli fallback — strict name-match only.
+    name = dest.get("name", "")
+    if name:
+        kw = list(keywords or []) + [name]
+        imgs = _find_pomelli_images(kw, count=1, campaign_type=campaign_type, strict=True)
+        if imgs:
+            return imgs[0], True
+
     return None, False
 
 
 def _render_segment_auto(bg_path: Path, is_image: bool, duration: float,
                          text_filters: list[str], out_path: Path,
                          zoom_dir: str = "in") -> Optional[Path]:
-    """Render a segment using either Pomelli image or video background."""
+    """Render a segment using either Pomelli image or destination video.
+
+    When the background is a Pomelli image we drop the text_filters — Pomelli
+    creatives already have baked title + tagline + CTA, and stacking our own
+    overlays on top produced the double-text bug seen on 2026-05-05.
+    """
+    if bg_path is None:
+        return None
     if is_image:
-        return _render_segment_image(bg_path, duration, text_filters, out_path, zoom_dir)
-    else:
-        return _render_segment_auto(bg_path, is_img, duration, text_filters, out_path)
+        is_pomelli = False
+        try:
+            is_pomelli = POMELLI_DIR.resolve() in bg_path.resolve().parents
+        except Exception:
+            is_pomelli = str(bg_path).startswith(str(POMELLI_DIR))
+        safe_filters = [] if is_pomelli else text_filters
+        return _render_segment_image(bg_path, duration, safe_filters, out_path, zoom_dir)
+    return _render_segment(bg_path, duration, text_filters, out_path)
 
 
 def _pick_music(state: dict) -> Optional[Path]:
@@ -340,12 +409,18 @@ def _pick_music(state: dict) -> Optional[Path]:
     if not tracks:
         return None
 
-    # Use state-based rotation
-    used = state.get("yt_short_music_used", [])
+    # Cap the rotation array at the library size — without this, every pick
+    # appends and the array grows unbounded (35+ entries seen in prod 2026-05-05
+    # against a ~37-track library). The reset-when-empty branch never fires
+    # because stale-but-still-listed names match against current files.
+    track_stems = {t.stem for t in tracks}
+    used = [s for s in state.get("yt_short_music_used", []) if s in track_stems]
+    if len(used) >= len(tracks):
+        used = []
+    state["yt_short_music_used"] = used
+
     unused = [t for t in tracks if t.stem not in used]
     if not unused:
-        # All used — reset rotation
-        state["yt_short_music_used"] = []
         unused = tracks
 
     pick = random.choice(unused)
@@ -363,12 +438,16 @@ def _save_state(st: dict):
     STATE_FILE.write_text(json.dumps(st, indent=2, default=str))
 
 
-def _fetch_destinations(month: int = None, max_score: int = None) -> list[dict]:
+def _fetch_destinations(month: int = None, max_score: int = None,
+                        include_intel: bool = False) -> list[dict]:
     """Fetch destinations from Nakshiq API.
 
     Args:
         month: Calendar month (1-12). Defaults to current month.
         max_score: If set, adds &max_score=N to fetch low-scoring destinations.
+        include_intel: When True, asks the API to JOIN confidence_cards +
+            emergency_sos + a legendary eatery. Used by mini_guide so its tips
+            can be destination-specific instead of cookie-cutter ("pack light").
     """
     import requests
     if month is None:
@@ -377,7 +456,9 @@ def _fetch_destinations(month: int = None, max_score: int = None) -> list[dict]:
         url = f"{NAKSHIQ_API}?type=destinations&month={month}&min_score=0&limit=300"
         if max_score is not None:
             url += f"&max_score={max_score}"
-        resp = requests.get(url, timeout=15)
+        if include_intel:
+            url += "&include_intel=1"
+        resp = requests.get(url, timeout=20)
         data = resp.json().get("data", [])
         return [d for d in data if isinstance(d.get("score"), (int, float))]
     except Exception as e:
@@ -541,7 +622,7 @@ def _build_listicle(destinations: list[dict], month_name: str,
             _dt(f"#{rank}", FONT_JETBRAINS, rs, rc, "(w-text_w)/2", "h*0.18", bw=5),
             _dt(name.upper(), FONT_INSTRUMENT, ns, B, "(w-text_w)/2", "h*0.33", "gte(t,0.5)", 4),
             _dt(state, FONT_CRIMSON, 32, SG, "(w-text_w)/2", "h*0.42", "gte(t,0.8)"),
-            _dt(f"{score}/5", FONT_JETBRAINS, 72, sc, "(w-text_w)/2", "h*0.50", "gte(t,1.2)", 4),
+            _dt(_format_score(score), FONT_JETBRAINS, 72, sc, "(w-text_w)/2", "h*0.50", "gte(t,1.2)", 4),
             _dt(tagline, FONT_CRIMSON, 34, B, "(w-text_w)/2", "h*0.60", "gte(t,1.8)"),
         ]
         zoom = "in" if i % 2 == 0 else "out"
@@ -656,11 +737,11 @@ def _build_before_after(destinations: list[dict], month_now: int,
             _dt(name.upper(), FONT_INSTRUMENT, 64, B, "(w-text_w)/2", "h*0.22", bw=4),
             # "Now" month + score: visible from 0.3–3.4s, then disappear
             _dt(f"{month_name_now.upper()}", FONT_INSTRUMENT, 40, B, "(w-text_w)/2", "h*0.32", "between(t,0.3,3.4)"),
-            _dt(f"{ns}/5", FONT_JETBRAINS, 100, nc, "(w-text_w)/2", "h*0.38", "between(t,0.6,3.4)", 5),
+            _dt(_format_score(ns), FONT_JETBRAINS, 100, nc, "(w-text_w)/2", "h*0.38", "between(t,0.6,3.4)", 5),
             # "Future" month + score: appear at 3.5s onward (no overlap)
             _dt(f"In {month_name_fut}?", FONT_INSTRUMENT, 44, B, "(w-text_w)/2", "h*0.32", "gte(t,3.5)"),
-            _dt(f"{fs}/5", FONT_JETBRAINS, 120, fc, "(w-text_w)/2", "h*0.40", "gte(t,4)", 5),
-            _dt(f"Score {direction} {fs}/5", FONT_CRIMSON, 34, B, "(w-text_w)/2", "h*0.58", "gte(t,5)"),
+            _dt(_format_score(fs), FONT_JETBRAINS, 120, fc, "(w-text_w)/2", "h*0.40", "gte(t,4)", 5),
+            _dt(f"Score {direction} {_format_score(fs)}", FONT_CRIMSON, 34, B, "(w-text_w)/2", "h*0.58", "gte(t,5)"),
         ]
         p = _render_segment_auto(bg, is_img, CONTRAST_DUR, texts, out_dir / f"seg_{i+1:02d}_contrast.mp4")
         if p: segments.append(p)
@@ -683,6 +764,134 @@ def _build_before_after(destinations: list[dict], month_now: int,
 # FORMAT: MINI GUIDE — "48 Hours in [Dest]"
 # ═══════════════════════════════════════════════════════════════════════
 
+def _build_dest_specific_tips(dest: dict) -> list[str]:
+    """Build 4 destination-specific tips from confidence_cards + emergency + eatery.
+
+    Falls back to generic-but-still-useful tips when intel is missing, but
+    always tries to surface ONE real data point per tip so the playbook reads
+    like a NakshIQ post, not a Lonely Planet template.
+    """
+    # Strings that look populated but mean "no data" — filter pre-render so
+    # we don't ship "Stay: ₹N/A/night" or "Hospital: TBD" to viewers.
+    _SENTINEL = {"", "n/a", "na", "tbd", "tba", "unknown", "none", "null"}
+
+    def _val(s) -> str:
+        """Treat sentinel-only strings as empty."""
+        if s is None:
+            return ""
+        t = str(s).strip()
+        return "" if t.lower() in _SENTINEL else t
+
+    def _short(s: str, maxlen: int = 50) -> str:
+        """Trim to a single sentence under maxlen chars without breaking
+        mid-word, mid-paren, or mid-number (e.g. "3.5hrs"). Drops trailing
+        dots/whitespace too."""
+        s = _val(s)
+        if not s:
+            return ""
+        s = s.rstrip(".").rstrip()
+        # Sentence-split on ". " (period+space) NOT on bare "." — bare "."
+        # appears inside decimals ("3.5hrs") and abbreviations.
+        if ". " in s and len(s) > maxlen:
+            first = s.split(". ")[0].strip()
+            if first and len(first) <= maxlen:
+                return first.rstrip(".").rstrip()
+        # Still too long: cut at maxlen but back off to last space to avoid
+        # mid-word truncation. Drop trailing punctuation noise + dangling
+        # open-parens.
+        if len(s) > maxlen:
+            cut = s[: maxlen - 1].rstrip()
+            if " " in cut:
+                cut = cut.rsplit(" ", 1)[0]
+            # Drop trailing dangling open-paren or close-paren-without-open
+            cut = cut.rstrip(",;:-(")
+            # If we ended inside a parenthesis (open without close), strip the
+            # whole parenthetical clause back to the previous space.
+            if cut.count("(") > cut.count(")") and "(" in cut:
+                cut = cut.rsplit("(", 1)[0].rstrip()
+            return cut + "…"
+        return s
+
+    intel = dest.get("intel") or {}
+    reach = intel.get("reach") or {}
+    sleep = intel.get("sleep") or {}
+    fuel = intel.get("fuel") or {}
+    network = intel.get("network") or {}
+    emergency = intel.get("emergency") or {}
+    sos = intel.get("sos") or {}
+    eatery = intel.get("legendary_eatery") or {}
+    elevation = dest.get("elevation_m") or 0
+    name = dest.get("name", "")
+    tagline = (dest.get("tagline") or dest.get("note") or "").strip()
+
+    tips: list[str] = []
+
+    # TIP 1 — How to reach. Tip cards are 5-second video overlays; keep each
+    # line under ~50 chars so it fits the safe-area without auto-wrap.
+    near_city = _short(reach.get("from_nearest_city"))
+    road = _short(reach.get("road_condition"))
+    if near_city:
+        tips.append(f"From {near_city}.")
+    elif road:
+        tips.append(f"Roads: {road}.")
+    elif elevation and elevation > 3000:
+        tips.append(f"{elevation}m — acclimatize 1 night below.")
+
+    # TIP 2 — Where to sleep (real options count + price band)
+    opts = sleep.get("options_count")
+    price = _val(sleep.get("price_range_inr"))
+    if opts and price:
+        tips.append(f"Sleep: {opts} options, ₹{price}/night.")
+    elif opts:
+        tips.append(f"Sleep: {opts} verified options.")
+    elif price:
+        tips.append(f"Stay: ₹{price}/night.")
+
+    # TIP 3 — Fuel + network (driver intel)
+    fuel_pump = _short(fuel.get("nearest_petrol_pump"), maxlen=28)
+    carry_extra = bool(fuel.get("carry_extra"))
+    nets = [k for k in ("jio", "airtel", "bsnl", "vi") if network.get(k)]
+    fuel_line = ""
+    if carry_extra:
+        fuel_line = "Carry extra fuel."
+    elif fuel_pump:
+        fuel_line = f"Fuel: {fuel_pump}."
+    net_line = ""
+    if nets:
+        net_line = f"Cell: {', '.join(n.title() for n in nets[:2])}."
+    elif _val(network.get("note")):
+        net_line = f"Cell: {_short(network['note'], maxlen=30)}."
+    combined = " ".join(filter(None, [fuel_line, net_line]))
+    if combined:
+        tips.append(combined)
+
+    # TIP 4 — Legendary eatery (preferred) or emergency contact
+    eatery_name = _short(eatery.get("name"), maxlen=24)
+    sig = _short(eatery.get("signature_dish"), maxlen=22)
+    hospital = _short(emergency.get("nearest_hospital") or sos.get("nearest_hospital"), maxlen=28)
+    hospital_km = sos.get("nearest_hospital_km") or emergency.get("nearest_hospital_km")
+    if eatery_name and sig:
+        tips.append(f"Eat: {eatery_name} — {sig}.")
+    elif eatery_name:
+        tips.append(f"Eat: {eatery_name}.")
+    elif hospital and hospital_km:
+        tips.append(f"Hospital: {hospital} ({hospital_km}km).")
+    elif hospital:
+        tips.append(f"Hospital: {hospital}.")
+    elif sos.get("mountain_rescue"):
+        tips.append(f"Rescue: {_short(sos['mountain_rescue'], maxlen=40)}.")
+
+    # If we still have <2 tips, fall back to tagline (last-resort filler)
+    if len(tips) < 2 and tagline:
+        tips.append(tagline[:60])
+
+    # Final fallback so the playbook is never empty
+    if not tips:
+        tips.append(f"Plan {name} on nakshiq.com.")
+
+    return tips[:4]
+
+
 def _build_mini_guide(destinations: list[dict], out_dir: Path) -> tuple[list[Path], float]:
     """Build a mini travel guide Short for a single destination."""
     # Pick a high-scoring destination
@@ -699,22 +908,9 @@ def _build_mini_guide(destinations: list[dict], out_dir: Path) -> tuple[list[Pat
     difficulty = dest.get("difficulty", "easy")
     elevation = dest.get("elevation_m", 0)
 
-    # Build "tips" based on destination data
-    tips = []
-    if difficulty == "hard" or (elevation and elevation > 2500):
-        tips.append("Pack layers. Altitude hits hard.")
-    elif difficulty == "moderate":
-        tips.append("Comfortable shoes essential.")
-    else:
-        tips.append("Light packing works here.")
-
-    if elevation and elevation > 3000:
-        tips.append(f"Elevation: {elevation}m. Acclimatize.")
-    
-    tips.append("Book stays 2 weeks ahead.")
-    tips.append("Best explored over 2-3 days.")
-    if len(tagline) > 5:
-        tips.append(tagline[:50])
+    # Real-data tips (confidence_cards + emergency + eatery anchor). Falls back
+    # gracefully when `intel` is missing — see _build_dest_specific_tips.
+    tips = _build_dest_specific_tips(dest)
 
     HOOK_DUR = 5.0
     TIP_DUR = 5.0
@@ -733,7 +929,7 @@ def _build_mini_guide(destinations: list[dict], out_dir: Path) -> tuple[list[Pat
         _dt("48 HOURS IN", FONT_INSTRUMENT, 44, S, "(w-text_w)/2", "h*0.25"),
         _dt(name.upper(), FONT_INSTRUMENT, 76, B, "(w-text_w)/2", "h*0.33", "gte(t,0.3)", 5),
         _dt(state, FONT_CRIMSON, 32, SG, "(w-text_w)/2", "h*0.43", "gte(t,0.6)"),
-        _dt(f"NakshIQ Score: {score}/5", FONT_JETBRAINS, 48, sc, "(w-text_w)/2", "h*0.52", "gte(t,1.2)", 4),
+        _dt(f"NakshIQ Score: {_format_score(score)}", FONT_JETBRAINS, 48, sc, "(w-text_w)/2", "h*0.52", "gte(t,1.2)", 4),
     ]
     p = _render_segment_auto(bg, is_img, HOOK_DUR, hook_texts, out_dir / "seg_00_hook.mp4")
     if p: segments.append(p)
@@ -839,7 +1035,7 @@ def _build_did_you_know(destinations: list[dict], out_dir: Path) -> tuple[list[P
     # Stats card
     stat_texts = [
         _dt(name.upper(), FONT_INSTRUMENT, 56, B, "(w-text_w)/2", "h*0.25", bw=4),
-        _dt(f"Score: {score}/5", FONT_JETBRAINS, 64, sc, "(w-text_w)/2", "h*0.35", "gte(t,0.4)", 4),
+        _dt(f"Score: {_format_score(score)}", FONT_JETBRAINS, 64, sc, "(w-text_w)/2", "h*0.35", "gte(t,0.4)", 4),
         _dt(f"Difficulty: {dest.get('difficulty', 'easy').title()}", FONT_INSTRUMENT, 36, S,
             "(w-text_w)/2", "h*0.46", "gte(t,0.8)"),
     ]
@@ -926,7 +1122,7 @@ def _build_this_vs_that(destinations: list[dict], out_dir: Path) -> tuple[list[P
     card_a_texts = [
         _dt(name_a.upper(), FONT_INSTRUMENT, 68, B, "(w-text_w)/2", "h*0.22", bw=4),
         _dt(dest_a.get("state", ""), FONT_CRIMSON, 30, SG, "(w-text_w)/2", "h*0.32", "gte(t,0.3)"),
-        _dt(f"{score_a}/5", FONT_JETBRAINS, 100, sc_a, "(w-text_w)/2", "h*0.40", "gte(t,0.6)", 5),
+        _dt(_format_score(score_a), FONT_JETBRAINS, 100, sc_a, "(w-text_w)/2", "h*0.40", "gte(t,0.6)", 5),
         _dt(f"Difficulty: {dest_a.get('difficulty', 'easy').title()}", FONT_INSTRUMENT, 32, S,
             "(w-text_w)/2", "h*0.52", "gte(t,1.2)"),
         _dt(tagline_a, FONT_CRIMSON, 30, B, "(w-text_w)/2", "h*0.60", "gte(t,2.0)"),
@@ -943,7 +1139,7 @@ def _build_this_vs_that(destinations: list[dict], out_dir: Path) -> tuple[list[P
     card_b_texts = [
         _dt(name_b.upper(), FONT_INSTRUMENT, 68, B, "(w-text_w)/2", "h*0.22", bw=4),
         _dt(dest_b.get("state", ""), FONT_CRIMSON, 30, SG, "(w-text_w)/2", "h*0.32", "gte(t,0.3)"),
-        _dt(f"{score_b}/5", FONT_JETBRAINS, 100, sc_b, "(w-text_w)/2", "h*0.40", "gte(t,0.6)", 5),
+        _dt(_format_score(score_b), FONT_JETBRAINS, 100, sc_b, "(w-text_w)/2", "h*0.40", "gte(t,0.6)", 5),
         _dt(f"Difficulty: {dest_b.get('difficulty', 'easy').title()}", FONT_INSTRUMENT, 32, S,
             "(w-text_w)/2", "h*0.52", "gte(t,1.2)"),
         _dt(tagline_b, FONT_CRIMSON, 30, B, "(w-text_w)/2", "h*0.60", "gte(t,2.0)"),
@@ -964,7 +1160,7 @@ def _build_this_vs_that(destinations: list[dict], out_dir: Path) -> tuple[list[P
     verdict_texts = [
         _dt("THE VERDICT", FONT_INSTRUMENT, 48, B, "(w-text_w)/2", "h*0.25"),
         _dt(winner.upper(), FONT_INSTRUMENT, 72, wc, "(w-text_w)/2", "h*0.35", "gte(t,0.8)", 5),
-        _dt(f"NakshIQ Score: {w_score}/5", FONT_JETBRAINS, 48, B, "(w-text_w)/2", "h*0.46", "gte(t,1.5)", 4),
+        _dt(f"NakshIQ Score: {_format_score(w_score)}", FONT_JETBRAINS, 48, B, "(w-text_w)/2", "h*0.46", "gte(t,1.5)", 4),
         _dt("This month's pick", FONT_CRIMSON, 34, S, "(w-text_w)/2", "h*0.56", "gte(t,2.2)"),
     ]
     p = _render_segment_auto(verdict_bg, verdict_is_img, VERDICT_DUR, verdict_texts, out_dir / "seg_03_verdict.mp4")
@@ -1046,7 +1242,7 @@ def _build_dont_go_here(destinations: list[dict], month_name: str,
             _dt(label, FONT_JETBRAINS, 52, RED, "(w-text_w)/2", "h*0.18", bw=4),
             _dt(name.upper(), FONT_INSTRUMENT, 64, B, "(w-text_w)/2", "h*0.28", "gte(t,0.3)", 4),
             _dt(state, FONT_CRIMSON, 28, SG, "(w-text_w)/2", "h*0.38", "gte(t,0.6)"),
-            _dt(f"{score}/5", FONT_JETBRAINS, 100, sc, "(w-text_w)/2", "h*0.45", "gte(t,1.0)", 5),
+            _dt(_format_score(score), FONT_JETBRAINS, 100, sc, "(w-text_w)/2", "h*0.45", "gte(t,1.0)", 5),
             _dt(reason, FONT_CRIMSON, 30, B, "(w-text_w)/2", "h*0.58", "gte(t,2.0)"),
         ]
         p = _render_segment_auto(bg, is_img, WARN_DUR, texts, out_dir / f"seg_{i+1:02d}_warn.mp4")
@@ -1061,7 +1257,7 @@ def _build_dont_go_here(destinations: list[dict], month_name: str,
     alt_texts = [
         _dt("GO HERE INSTEAD", FONT_INSTRUMENT, 44, B, "(w-text_w)/2", "h*0.25"),
         _dt(alt_name.upper(), FONT_INSTRUMENT, 68, "0x4CAF50", "(w-text_w)/2", "h*0.35", "gte(t,0.5)", 5),
-        _dt(f"Score: {alt_score}/5 this month", FONT_JETBRAINS, 44, B, "(w-text_w)/2", "h*0.46", "gte(t,1.2)", 4),
+        _dt(f"Score: {_format_score(alt_score)} this month", FONT_JETBRAINS, 44, B, "(w-text_w)/2", "h*0.46", "gte(t,1.2)", 4),
         _dt(alt.get("state", ""), FONT_CRIMSON, 30, SG, "(w-text_w)/2", "h*0.55", "gte(t,1.8)"),
     ]
     p = _render_segment_auto(alt_bg, alt_is_img, ALT_DUR, alt_texts, out_dir / f"seg_{num_warns+1:02d}_alt.mp4")
@@ -1142,37 +1338,37 @@ def _concat_with_music(segments: list[Path], total_dur: float,
 
 YT_CAPTION_TEMPLATES = {
     "listicle": (
-        "5 places scoring 5/5 in {month} — ranked by road access, crowd density, weather, hospitals & cell signal.\n\n"
+        "5 places scoring 10/10 in {month} — ranked by road access, crowd density, weather, hospitals & cell signal.\n\n"
         "Which one surprised you?\n\n"
         "→ {link}\n\n"
         "#{month}Travel #WeeklyPicks #{state_tag} #ScoreData #NakshIQ"
     ),
     "before_after": (
-        "{dest} drops from {score_before}/5 to {score_after}/5 next month.\n\n"
+        "{dest} drops from {score_before_display} to {score_after_display} next month.\n\n"
         "Roads close. Crowds vanish. The data shifts overnight.\n\n"
         "→ {link}\n\n"
         "#{dest_tag} #{state_tag} #ScoreShift #{month}Travel #NakshIQ"
     ),
     "mini_guide": (
-        "48 hours in {dest} — score {score}/5 this month.\n\n"
+        "48 hours in {dest} — score {score_display} this month.\n\n"
         "Road condition, nearest hospital, cell signal, crowd level — all checked.\n\n"
         "→ {link}\n\n"
         "#{dest_tag} #{state_tag} #{month}Travel #MiniGuide #NakshIQ"
     ),
     "did_you_know": (
-        "{dest} scores {score}/5 in {month}.\n\n"
+        "{dest} scores {score_display} in {month}.\n\n"
         "Most people visit in the wrong month. The data says go now.\n\n"
         "→ {link}\n\n"
         "#{dest_tag} #{state_tag} #{month}Travel #HiddenGem #NakshIQ"
     ),
     "this_vs_that": (
-        "{dest_a} ({score_a}/5) vs {dest_b} ({score_b}/5) in {month}.\n\n"
+        "{dest_a} ({score_a_display}) vs {dest_b} ({score_b_display}) in {month}.\n\n"
         "Same region, different scores. One has better roads, less crowd.\n\n"
         "→ {link}\n\n"
         "#{dest_a_tag}vs{dest_b_tag} #{state_tag} #{month}Travel #HeadToHead #NakshIQ"
     ),
     "dont_go_here": (
-        "These places score 1/5 in {month}. Roads shut, 40°C+ heat, zero cell signal.\n\n"
+        "These places score 2/10 in {month}. Roads shut, 40°C+ heat, zero cell signal.\n\n"
         "Don't waste your leave. Check the score first.\n\n"
         "→ {link}\n\n"
         "#{month}AvoidList #{state_tag} #ScoreData #SkipThis #NakshIQ"
@@ -1197,10 +1393,15 @@ def _yt_caption(fmt: str, data: dict) -> str:
             month=data.get("month", ""),
             dest=dest_name,
             score=data.get("score", ""),
+            score_display=_format_score(data.get("score")),
             score_before=data.get("score_before", ""),
+            score_before_display=_format_score(data.get("score_before")),
             score_after=data.get("score_after", ""),
+            score_after_display=_format_score(data.get("score_after")),
             score_a=data.get("score_a", ""),
+            score_a_display=_format_score(data.get("score_a")),
             score_b=data.get("score_b", ""),
+            score_b_display=_format_score(data.get("score_b")),
             dest_tag=dest_tag,
             state_tag=state_tag,
             link=data.get("link", fallback_link),
@@ -1217,67 +1418,143 @@ def _yt_caption(fmt: str, data: dict) -> str:
 
 IG_CAPTION_TEMPLATES = {
     "listicle": (
-        "5 destinations scoring 5/5 right now \u2014 weather, roads, crowds, hospitals, cell signal all checked.\n\n"
+        "5 destinations scoring 10/10 right now \u2014 weather, roads, crowds, hospitals, cell signal all checked.\n\n"
         "{month} picks based on real data, not opinions.\n\n"
-        "#{month}Travel #WeeklyPicks #{state_tag} #ScoreData #NakshIQ"
+        "\ud83d\udcbe Save this \u2014 refer back when you're booking.\n\n"
+        "{hashtags}"
     ),
     "before_after": (
-        "{dest} \u2014 {score_before}/5 now, drops to {score_after}/5 next month.\n\n"
+        "{dest} \u2014 {score_before_display} now, drops to {score_after_display} next month.\n\n"
         "Roads, weather, everything shifts. Timing matters.\n\n"
-        "#{dest_tag} #{state_tag} #ScoreShift #{month}Travel #NakshIQ"
+        "\ud83d\udcbe Save this \u2014 the timing window closes faster than you think.\n\n"
+        "{hashtags}"
     ),
     "mini_guide": (
-        "48 hours in {dest} \u2014 score {score}/5 this month.\n\n"
+        "48 hours in {dest} \u2014 score {score_display} this month.\n\n"
         "Road access, hospital distance, crowd level, cell coverage \u2014 all in one place.\n\n"
-        "#{dest_tag} #{state_tag} #{month}Travel #MiniGuide #NakshIQ"
+        "\ud83d\udcbe Save this for your weekend planning.\n\n"
+        "{hashtags}"
     ),
     "did_you_know": (
-        "{dest} scores {score}/5 in {month}.\n\n"
+        "{dest} scores {score_display} in {month}.\n\n"
         "Most people don't know this place exists. The data says go now.\n\n"
-        "#{dest_tag} #{state_tag} #{month}Travel #HiddenGem #NakshIQ"
+        "\ud83d\udcac Comment 'PLAN' and we'll DM you the {month} window.\n\n"
+        "{hashtags}"
     ),
     "this_vs_that": (
-        "{dest_a} ({score_a}/5) vs {dest_b} ({score_b}/5) \u2014 {month} head-to-head.\n\n"
+        "{dest_a} ({score_a_display}) vs {dest_b} ({score_b_display}) \u2014 {month} head-to-head.\n\n"
         "Same region, different scores. The data picks a winner.\n\n"
-        "#{dest_a_tag}vs{dest_b_tag} #{state_tag} #{month}Travel #HeadToHead #NakshIQ"
+        "\ud83d\udcac Which one would you pick? Drop your vote below.\n\n"
+        "{hashtags}"
     ),
     "dont_go_here": (
-        "Scoring 1/5 in {month} \u2014 roads shut, extreme heat, no signal.\n\n"
+        "Scoring 2/10 in {month} \u2014 roads shut, extreme heat, no signal.\n\n"
         "Don't waste your leave on these right now.\n\n"
-        "#{month}AvoidList #{state_tag} #ScoreData #SkipThis #NakshIQ"
+        "\ud83d\udcbe Save this \u2014 check the score before you book.\n\n"
+        "{hashtags}"
     ),
 }
 
 
+# Niche/branded hashtag pool for IG (kept local so this module avoids circular
+# imports from autoposter.py).  All tags below are NOT in autoposter._BANNED_HASHTAGS.
+_IG_NICHE_POOL = [
+    "IndianHillStations", "IndianRoadtrip", "IndianAdventures",
+    "DesiTravel", "DesiTraveller", "TravelBharat", "BharatTravel",
+    "DiscoverIndia", "ExploreBharat", "IndianTravelDiaries",
+    "HimalayanIndia", "IndianMonuments", "IndianForts",
+    "IndianTemples", "IndianTrails",
+]
+_IG_BRAND_POOL = [
+    "NakshIQ", "TravelWithIQ", "DataDrivenTravel",
+    "PlanWithData", "ScoredDestinations", "VerifiedTravel",
+]
+
+
+def _ig_hashtag_block(dest_name: str | None,
+                      state_name: str | None,
+                      month: str | None,
+                      max_tags: int = 18) -> str:
+    """Build a 15-20 tag IG-only hashtag block.  Mirrors _build_ig_hashtags()
+    in autoposter.py.  Pool order: dest → state → month/format → niche → branded.
+    """
+    tags: list[str] = []
+    seen: set[str] = set()
+
+    def _push(t: str) -> None:
+        if not t or t in seen or len(tags) >= max_tags:
+            return
+        tags.append(t)
+        seen.add(t)
+
+    if dest_name and dest_name not in ("India", ""):
+        clean = dest_name.replace(" ", "").replace("-", "").replace("&", "")
+        if clean:
+            _push(clean)
+            _push(f"{clean}Travel")
+            _push(f"Visit{clean}")
+    if state_name and state_name not in ("India", ""):
+        clean_state = state_name.replace(" ", "").replace("&", "And").replace("-", "")
+        if clean_state:
+            _push(clean_state)
+            _push(f"{clean_state}Travel")
+            _push(f"{clean_state}Tourism")
+    if month:
+        clean_month = month.replace(" ", "")
+        if clean_month:
+            _push(f"{clean_month}Travel")
+    for t in ("TravelReels", "TravelShorts", "IndianTravelReels"):
+        _push(t)
+    for t in _IG_NICHE_POOL:
+        if len(tags) >= max_tags - 4:
+            break
+        _push(t)
+    for t in _IG_BRAND_POOL:
+        _push(t)
+
+    return " ".join(f"#{t}" for t in tags[:max_tags])
+
+
 def _ig_caption(fmt: str, data: dict) -> str:
-    """Generate Instagram Reel caption with niche, destination-specific hashtags."""
+    """Generate Instagram Reel caption with expanded hashtags + saves-bait CTA.
+    Tier 1 (2026-05-10): no caption URL (IG renders it as plain text), 18-tag
+    hashtag block, save/comment CTA inline in template.
+    """
     template = IG_CAPTION_TEMPLATES.get(fmt, IG_CAPTION_TEMPLATES["listicle"])
     dest_name = data.get("dest_name", "")
-    dest_tag = dest_name.replace(" ", "").replace("-", "") if dest_name else ""
     state_name = data.get("state", "")
+    month = data.get("month", "")
+    dest_tag = dest_name.replace(" ", "").replace("-", "") if dest_name else ""
     state_tag = state_name.replace(" ", "").replace("&", "").replace("-", "") if state_name else ""
     dest_a_name = data.get("dest_a", "")
     dest_b_name = data.get("dest_b", "")
     dest_a_tag = dest_a_name.replace(" ", "").replace("-", "") if dest_a_name else ""
     dest_b_tag = dest_b_name.replace(" ", "").replace("-", "") if dest_b_name else ""
+    hashtags = _ig_hashtag_block(dest_name or dest_a_name, state_name, month)
     try:
         return template.format(
-            month=data.get("month", ""),
+            month=month,
             dest=dest_name,
             score=data.get("score", ""),
+            score_display=_format_score(data.get("score")),
             score_before=data.get("score_before", ""),
+            score_before_display=_format_score(data.get("score_before")),
             score_after=data.get("score_after", ""),
+            score_after_display=_format_score(data.get("score_after")),
             score_a=data.get("score_a", ""),
+            score_a_display=_format_score(data.get("score_a")),
             score_b=data.get("score_b", ""),
+            score_b_display=_format_score(data.get("score_b")),
             dest_tag=dest_tag,
             state_tag=state_tag,
             dest_a=dest_a_name,
             dest_b=dest_b_name,
             dest_a_tag=dest_a_tag,
             dest_b_tag=dest_b_tag,
+            hashtags=hashtags,
         )
     except (KeyError, IndexError):
-        return f"{dest_name or 'India'} — scored by NakshIQ.\n\n#{dest_tag or 'NakshIQ'} #{state_tag or 'ScoreData'} #NakshIQ"
+        return f"{dest_name or 'India'} — scored by NakshIQ.\n\n💾 Save this for your next trip.\n\n{hashtags}"
 
 
 
@@ -1323,8 +1600,10 @@ def build_yt_short(
 
     print(f"Format: {fmt}")
 
-    # Fetch destinations
-    destinations = _fetch_destinations(month_now)
+    # Fetch destinations. include_intel=True so mini_guide's "48 hours in X"
+    # tips can be destination-specific (confidence_cards + emergency + legendary
+    # eatery), not cookie-cutter — caught 2026-05-15.
+    destinations = _fetch_destinations(month_now, include_intel=True)
     if not destinations:
         print("ERROR: No destinations from API.")
         return None
@@ -1344,6 +1623,10 @@ def build_yt_short(
 
         month_slug = month_name.lower()   # e.g. "april"
 
+        primary_dest_id = None  # Tier-3 telemetry: the single dest a Short
+                                # most-prominently features, used by record_publish
+                                # + _log_post_outcome for cross-flow dedup.
+
         if fmt == "listicle":
             # Weekly Picks alignment contract (PRD §8.1): if the new endpoint
             # is live, use its 5 picks for the Short so what the viewer sees
@@ -1356,6 +1639,7 @@ def build_yt_short(
             segments, total_dur, _meta = _build_listicle(listicle_dests, month_name, out_dir)
             # Use state from top-scoring dest for hashtag
             top_dest = listicle_dests[0] if listicle_dests else {}
+            primary_dest_id = top_dest.get("id") or None
             caption_data = {
                 "month": month_name,
                 "week": wk_num,
@@ -1366,6 +1650,7 @@ def build_yt_short(
             segments, total_dur, _meta = _build_before_after(destinations, month_now, out_dir)
             ba_dest = _meta.get("dest", {})
             ba_id = ba_dest.get("id", "")
+            primary_dest_id = ba_id or None
             caption_data = {
                 "month": month_name,
                 "dest_name": ba_dest.get("name", ""),
@@ -1382,6 +1667,7 @@ def build_yt_short(
             segments, total_dur, _meta = _build_mini_guide(destinations, out_dir)
             dest = _meta.get("dest", destinations[0])
             dest_id = dest.get("id", "")
+            primary_dest_id = dest_id or None
             caption_data = {
                 "month": month_name,
                 "dest_name": dest.get("name", ""),
@@ -1397,6 +1683,7 @@ def build_yt_short(
             segments, total_dur, _meta = _build_did_you_know(destinations, out_dir)
             dyk_dest = _meta.get("dest", destinations[0])
             dyk_id = dyk_dest.get("id", "")
+            primary_dest_id = dyk_id or None
             caption_data = {
                 "month": month_name,
                 "dest_name": dyk_dest.get("name", ""),
@@ -1412,6 +1699,7 @@ def build_yt_short(
             segments, total_dur, _meta = _build_this_vs_that(destinations, out_dir)
             tvt_a = _meta.get("dest_a", destinations[0])
             tvt_b = _meta.get("dest_b", destinations[1] if len(destinations) > 1 else destinations[0])
+            primary_dest_id = tvt_a.get("id") or None
             caption_data = {
                 "month": month_name,
                 "dest_a": tvt_a.get("name", "A"),
@@ -1425,6 +1713,8 @@ def build_yt_short(
             segments, total_dur, _meta = _build_dont_go_here(destinations, month_name, out_dir)
             dgh_dests = _meta.get("dests", [])
             dgh_state = dgh_dests[0].get("state", "") if dgh_dests else ""
+            # Multi-dest format — leave primary_dest_id None so cross-flow dedup
+            # doesn't mistakenly block any single dest from the main loop.
             caption_data = {
                 "month": month_name,
                 "state": dgh_state,
@@ -1441,6 +1731,7 @@ def build_yt_short(
                 fmt = "listicle"
                 segments, total_dur, _meta = _build_listicle(destinations, month_name, out_dir)
                 top_dest = destinations[0] if destinations else {}
+                primary_dest_id = top_dest.get("id") or None
                 caption_data = {
                     "month": month_name,
                     "state": top_dest.get("state", ""),
@@ -1488,6 +1779,7 @@ def build_yt_short(
             "format": fmt,
             "duration": total_dur,
             "music": music.stem,
+            "primary_dest_id": primary_dest_id,
         }
 
 

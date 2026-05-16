@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { FadeIn } from "./animated-hero";
 import { KEY_EVENTS, track } from "@/lib/analytics";
 
@@ -20,12 +20,25 @@ export function NewsletterSignup({
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState("");
+  // Impression tracking — fires once per mount so we can measure
+  // funnel stages: view → attempt → success/error. Without this,
+  // a 0% conversion rate is indistinguishable from "form invisible"
+  // vs "form visible but ignored". Caught 2026-05-06 (data audit
+  // showed 0 organic signups despite ~280 engaged sessions / 28d).
+  const viewTrackedRef = useRef(false);
+  useEffect(() => {
+    if (viewTrackedRef.current) return;
+    viewTrackedRef.current = true;
+    track("newsletter_view", { source });
+  }, [source]);
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
+    track("newsletter_attempt", { source });
     if (!email || !email.includes("@")) {
       setErrorMsg("Please enter a valid email address.");
       setStatus("error");
+      track("newsletter_error", { source, reason: "client_validation" });
       return;
     }
 
@@ -43,6 +56,7 @@ export function NewsletterSignup({
         const data = await res.json().catch(() => ({}));
         setErrorMsg(data?.error || "Something went wrong. Please try again.");
         setStatus("error");
+        track("newsletter_error", { source, reason: data?.error || `http_${res.status}` });
         return;
       }
 
@@ -51,6 +65,7 @@ export function NewsletterSignup({
     } catch {
       setErrorMsg("Something went wrong. Please try again.");
       setStatus("error");
+      track("newsletter_error", { source, reason: "network" });
     }
   }
 
@@ -72,9 +87,9 @@ export function NewsletterSignup({
     <FadeIn>
       <div className="rounded-2xl border border-primary/30 bg-gradient-to-br from-primary/5 via-card to-primary/5 p-8">
         <div className="text-center max-w-md mx-auto">
-          <h3 className="text-xl font-bold">{headline ?? "The Window — every Sunday"}</h3>
+          <h3 className="text-xl font-bold">{headline ?? "The Window — your Sunday travel briefing"}</h3>
           <p className="mt-2 text-sm text-muted-foreground">
-            {subhead ?? "Best score this week, the honest skip, road intel, and what changed. Free. No spam."}
+            {subhead ?? "India's best destination this week, the honest skip, road conditions, and what changed. One short email, every Sunday. Free."}
           </p>
 
           <form onSubmit={handleSubmit} className="mt-6 flex gap-2">
@@ -95,7 +110,7 @@ export function NewsletterSignup({
               disabled={status === "loading"}
               className="shrink-0 rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-all hover:bg-primary/90 disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              {status === "loading" ? "..." : (buttonLabel ?? "Subscribe")}
+              {status === "loading" ? "..." : (buttonLabel ?? "Get Sunday's email")}
             </button>
           </form>
 
@@ -104,7 +119,7 @@ export function NewsletterSignup({
           )}
 
           <p className="mt-4 text-xs text-muted-foreground/60">
-            {footnote ?? "One email per Sunday. Unsubscribe anytime."}
+            {footnote ?? "One email per Sunday. Unsubscribe in one click."}
           </p>
         </div>
       </div>

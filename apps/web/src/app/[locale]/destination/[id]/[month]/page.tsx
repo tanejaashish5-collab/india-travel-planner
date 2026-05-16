@@ -175,32 +175,46 @@ export async function generateMetadata({
   // Title with progressive shortening. Layout appends " | NakshIQ" via title.template
   // (10 chars), so the page-specific portion needs to fit ≤50 chars to stay
   // under Google's ~60-char SERP truncation total.
-  // Long: "{name} in {month} {year}: {hook} ({temp})"
-  // Med:  "{name} in {month}: {hook} ({temp})"
-  // Min:  "{name} in {month} {year}"
+  //
+  // 2026-05-10 weather-lead rewrite: when we have a numeric temp range, lead
+  // with it (was buried in trailing parens). Reasoning: GSC top queries are
+  // "{dest} weather in {month}" / "{dest} temperature in {month}" — users
+  // want a NUMBER. Putting it after the dest name + month answers the query
+  // in the SERP snippet itself. Measured: tungnath/may 0.31% CTR, nainital/may
+  // 0.37% CTR despite ranks 8-10 — fix tested = move temp to lead position.
+  // Long:    "{name} in {month} {year}, {temp} — {hook}"
+  // Med:     "{name} in {month}, {temp} — {hook}"
+  // Min-w:   "{name} in {month}: {temp}"        (when temp exists, no hook)
+  // Min:     "{name} in {month} {year}"          (no temp)
   const TITLE_BUDGET = 50;
   // Hindi connectives ("में" = "in", year stays in Devanagari numerals via locale rendering).
   const inWord = isHi ? "में" : "in";
   const titleLong = isHi
     ? (rangeStr
-        ? `${monthDisplay} ${year} में ${titleName}: ${titleHook} (${rangeStr})`
+        ? `${monthDisplay} ${year} में ${titleName}, ${rangeStr} — ${titleHook}`
         : `${monthDisplay} ${year} में ${titleName}: ${titleHook}`)
     : (rangeStr
-        ? `${titleName} ${inWord} ${monthDisplay} ${year}: ${titleHook} (${rangeStr})`
+        ? `${titleName} ${inWord} ${monthDisplay} ${year}, ${rangeStr} — ${titleHook}`
         : `${titleName} ${inWord} ${monthDisplay} ${year}: ${titleHook}`);
   const titleMed = isHi
     ? (rangeStr
-        ? `${monthDisplay} में ${titleName}: ${titleHook} (${rangeStr})`
+        ? `${monthDisplay} में ${titleName}, ${rangeStr} — ${titleHook}`
         : `${monthDisplay} में ${titleName}: ${titleHook}`)
     : (rangeStr
-        ? `${titleName} ${inWord} ${monthDisplay}: ${titleHook} (${rangeStr})`
+        ? `${titleName} ${inWord} ${monthDisplay}, ${rangeStr} — ${titleHook}`
         : `${titleName} ${inWord} ${monthDisplay}: ${titleHook}`);
+  // Minimum weather-lead — drops the hook entirely so even ultra-long names
+  // (e.g., "Andaman & Nicobar Islands") still surface the temp in the title.
+  const titleMinWeather = isHi
+    ? (rangeStr ? `${monthDisplay} में ${titleName}: ${rangeStr}` : "")
+    : (rangeStr ? `${titleName} ${inWord} ${monthDisplay}: ${rangeStr}` : "");
   const titleMin = isHi
     ? `${monthDisplay} ${year} में ${titleName}`
     : `${titleName} ${inWord} ${monthDisplay} ${year}`;
   const title =
     titleLong.length <= TITLE_BUDGET ? titleLong
     : titleMed.length <= TITLE_BUDGET ? titleMed
+    : (titleMinWeather && titleMinWeather.length <= TITLE_BUDGET) ? titleMinWeather
     : titleMin;
 
   const ogTitle = isHi
@@ -234,13 +248,26 @@ export async function generateMetadata({
       : verdict === "go" ? "Visit"
       : verdict === "wait" ? "Wait on"
       : "");
+  // 2026-05-10 weather-lead description rewrite: when we have a numeric temp
+  // range, lead with it (was buried inside the editorial note body, often
+  // truncated out). GSC top queries are temperature/weather queries — the
+  // SERP snippet needs to answer "what's the temperature" in the first
+  // 30 chars where Google bolds matched text. Verdict verb moves to position 2.
   const descLead = isHi
-    ? (descVerb
-        ? `${monthDisplay} ${year} में ${name} ${descVerb}:`
-        : `${monthDisplay} ${year} में ${name}:`)
-    : (descVerb
-        ? `${descVerb} ${name} in ${monthName} ${year}:`
-        : `${name} in ${monthName} ${year}:`);
+    ? (rangeStr
+        ? (descVerb
+            ? `${monthDisplay} में ${name}: ${rangeStr}। ${descVerb}:`
+            : `${monthDisplay} में ${name}: ${rangeStr}।`)
+        : (descVerb
+            ? `${monthDisplay} ${year} में ${name} ${descVerb}:`
+            : `${monthDisplay} ${year} में ${name}:`))
+    : (rangeStr
+        ? (descVerb
+            ? `${name} in ${monthName}: ${rangeStr}. ${descVerb}:`
+            : `${name} in ${monthName}: ${rangeStr}.`)
+        : (descVerb
+            ? `${descVerb} ${name} in ${monthName} ${year}:`
+            : `${name} in ${monthName} ${year}:`));
   const scoreLabel = formatScoreInline(score);
   const descClose = isHi
     ? (stateName
@@ -256,7 +283,34 @@ export async function generateMetadata({
   const noteSource = note
     || (verdict === "skip" ? (whyNot || whyGo) : (whyGo || whyNot))
     || "";
-  const noteStripped = noteSource.replace(stripPrefix, "").trim();
+  let noteStripped = noteSource.replace(stripPrefix, "").trim();
+
+  // 2026-05-15 SERP dedupe: descLead already leads with `rangeStr` (e.g.,
+  // "Kasol in May: 14–26°C."). The editorial note typically also leads with
+  // the same temp ("Peak season, 14-26°C. Kheerganga…"), so the SERP snippet
+  // displayed the temperature twice — wasting ~15-20 chars on every
+  // /destination/<slug>/<month> page (505 dests × 12 months). When we extracted
+  // the range from the note itself (noteRangeMatch hit), strip that literal
+  // substring from the note body and clean up the punctuation glitches it
+  // leaves behind. Kasol/May + Munnar/June were the two highest-impression
+  // sub-1% CTR pages flagged in gsc-audit-2026-05-15.md priority #2.
+  if (noteRangeMatch) {
+    const tempLiteral = noteRangeMatch[0];
+    noteStripped = noteStripped
+      .split(tempLiteral).join("")
+      // ". , " → ". " when the strip leaves a leading separator after a period.
+      .replace(/\.\s*[,;:\-–—]+\s*/g, ". ")
+      // "Peak season,. Kheerganga" → "Peak season. Kheerganga"
+      .replace(/[,;:\-–—]+(\s*[.!?])/g, "$1")
+      // "Best month ." → "Best month."
+      .replace(/\s+([.!?,;:])/g, "$1")
+      .replace(/\s{2,}/g, " ")
+      .replace(/^[\s,;:\-–—.]+/, "")
+      // Re-capitalise after a period when our strip left a lowercase letter
+      // ("Peak heat. humidity 80 percent." → "Peak heat. Humidity 80 percent.").
+      .replace(/(\.\s+)([a-z])/g, (_m: string, p: string, c: string) => p + c.toUpperCase())
+      .trim();
+  }
 
   const noteBudget = Math.max(40, 155 - descLead.length - descClose.length - 2);
   const descBody = noteStripped ? trimToBoundary(noteStripped, noteBudget) : "";

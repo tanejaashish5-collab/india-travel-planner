@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
+import { TrendingMonthPages } from "@/components/trending-month-pages";
 import { createClient } from "@supabase/supabase-js";
 import { currentMonthIST, currentMonthLongIST } from "@itp/shared";
 
@@ -165,6 +166,9 @@ export default async function WhereToGoIndex({
             );
           })}
         </div>
+
+        {/* Trending dest×month — internal-link rail to high-impression page-2 set */}
+        <TrendingMonthPages locale={locale} />
 
         {/* Methodology footnote */}
         <div className="mt-12 rounded-xl border border-border bg-muted/20 p-5 text-sm text-muted-foreground leading-relaxed">

@@ -508,6 +508,40 @@
     "cta": "Add to Home Screen",
     "dismiss": "Dismiss"
   },
+  "social": {
+    "metaTitle": "NakshIQ on social — every link we share",
+    "metaDescription": "The pages we link to from Instagram, Facebook, and YouTube. Travel-confidence data for India, scored monthly.",
+    "overline": "Linked from social",
+    "heading": "What we share, in one place",
+    "intro": "If you came from a NakshIQ post, this is where the rest of the data lives. Curated for {month}.",
+    "foot": "Updated for {month}. We change these as the season changes.",
+    "cards": {
+      "this_month": {
+        "title": "This month, in detail",
+        "subtitle": "Dhanaulti for {month} — weather, roads, what to skip."
+      },
+      "score": {
+        "title": "Top 100 destinations, ranked",
+        "subtitle": "The list we update every month — scored on five real dimensions."
+      },
+      "honest_avoid": {
+        "title": "Tourist traps we'd skip",
+        "subtitle": "Honest anti-recommendations. Where the photos lie."
+      },
+      "festivals": {
+        "title": "Festivals worth timing a trip around",
+        "subtitle": "Dates, locations, what's open — for {month} and beyond."
+      },
+      "methodology": {
+        "title": "How we score",
+        "subtitle": "What every number means. No black box."
+      },
+      "plan": {
+        "title": "Plan a trip with us",
+        "subtitle": "AI planner, route builder, and the tools we'd use ourselves."
+      }
+    }
+  },
   "scarcity": {
     "heading": {
       "eateries": "Where to eat in {destination}",

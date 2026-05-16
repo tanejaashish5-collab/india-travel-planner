@@ -79,7 +79,7 @@ export function useDestination(id: string) {
 
         if (!data) return null;
 
-        const [gems, traps, festivals, stays, notes, coords, emergencySos, editorPicks] = await Promise.all([
+        const [gems, traps, festivals, stays, notes, coords, emergencySos, editorPicks, eateries] = await Promise.all([
           supabase.from("hidden_gems").select("*").eq("near_destination_id", id),
           supabase.from("tourist_trap_alternatives").select("*, destination:destinations!tourist_trap_alternatives_alternative_destination_id_fkey(name, tagline, difficulty, elevation_m)").eq("trap_destination_id", id).order("rank"),
           supabase.from("festivals").select("*").eq("destination_id", id).order("month"),
@@ -92,6 +92,13 @@ export function useDestination(id: string) {
             .select("slot, name, property_type, price_band, why_nakshiq, signature_experience, sources, contact_only, contact_info, published, confidence")
             .eq("destination_id", id)
             .eq("published", true),
+          supabase
+            .from("local_eateries")
+            .select("id, name, area, cuisine, category, signature_dish, must_try, price_range, vegetarian, kid_friendly, reservation, established_year, why_it_matters, insider_tip, signature_address, google_maps_url, is_legendary")
+            .eq("destination_id", id)
+            .eq("is_active", true)
+            .order("is_legendary", { ascending: false })
+            .order("name", { ascending: true }),
         ]);
 
         return {
@@ -104,6 +111,7 @@ export function useDestination(id: string) {
           coords: coords.data ? { lat: coords.data.lat, lng: coords.data.lng } : null,
           emergencySos: emergencySos.data ?? null,
           editor_stay_picks: editorPicks.data ?? [],
+          eateries: eateries.data ?? [],
         };
       },
       TTL.medium,

@@ -1,0 +1,52 @@
+
+-- For basara/xfactor — DELETE the template-ghost; honest scarcity confirmed (no further unique stay
+-- character beyond Lords Hrim / Devasthanam / Indraprastha; 4th slot would be fabrication)
+DELETE FROM destination_stay_picks WHERE destination_id = 'basara' AND slot = 'xfactor';
+
+----------------------------------------------------------------------
+-- SUMMARY
+----------------------------------------------------------------------
+-- warangal:       +2 gems (Khush Mahal, Padmakshi) +5 eats (Hotel Ratna, Green Bawarchi, Hungry Birds,
+--                 Kalinga Dhaba, Sri Geetha Bhavan) +2 stays REPLACED (xfactor: Kaziranga ghost → Pakhal
+--                 Haritha; experience: Warangal Fort Resort ghost → Haritha Kakatiya). g 3+, e 5+, s 4 → A
+-- ramappa-temple: +3 gems (Ghanapur Group, Ramappa Lake, Pandavula Gutta) +3 eats (Haritha Lake View,
+--                 Feriado Tadvai, Gattamma Haritha Medaram) +3 stays NEW (location: Haritha Lake View,
+--                 experience: Feriado Tadvai, value: Haritha Kakatiya). 2 eats HS-skipped — Palampet
+--                 village ~2k pop, only Haritha onsite. g 3, e 3, s 3 → A
+-- laknavaram:     +3 gems (Bogatha Falls, Medaram Tribal Museum, Eturnagaram WLS) +3 eats (Haritha
+--                 Laknavaram, Feriado Tadvai, Gattamma Haritha Medaram) +1 stay REPLACED (location:
+--                 duplicate Laknavaram Lake Resort → Feriado Tadvai). 2 eats HS-skipped — lake is
+--                 mid-forest. g 3, e 3, s 4 → A
+-- pillalamarri:   +3 gems (Koilkonda Fort, Gadwal Fort, Khilla Ghanpur) +3 eats (Ghar Dhaba, Avanthi
+--                 Hotel, Geetha Hotel) +3 stays REPLACED via upsert (experience: ghost → The Grand
+--                 Sindhu, value: TTDC ghost (TTDC = Tamil Nadu, not Telangana) → Geetha Hotel,
+--                 location: ghost → Avanthi Hotel). xfactor slot left in place pending wider audit.
+--                 2 eats HS-skipped — only 3 Mahbubnagar-town anchors verifiable on Tripadvisor 2024-26.
+--                 g 3, e 3, s 4 → A
+-- basara:         +3 gems (Pochera Falls, Kuntala Falls, Nirmal Toy Workshops) +3 eats (Devasthanam
+--                 Annaprasadam, Lords Hrim Manorath, Indraprastha Basara) +3 stays REPLACED + 1 DELETED
+--                 (experience: Sri Veerabhadra ghost → Lords Hrim Akshara, value: ghost → Devasthanam
+--                 Choultry, location: ghost → Indraprastha; xfactor DELETED — no verifiable 4th unique
+--                 character beyond Lords/Devasthanam/Indraprastha). 2 eats HS-skipped — temple-village
+--                 with in-house lodge meals only. g 3, e 3, s 3 → A
+--
+-- CONFIRMED FABRICATIONS REPLACED/DELETED (8):
+--   warangal/xfactor   "Kaziranga Jungle Homestay" → Pakhal Haritha (Kaziranga is in Assam, 1500 km)
+--   warangal/experience "The Warangal Fort Resort" → Haritha Kakatiya (no Booking footprint)
+--   laknavaram/location "Laknavaram Lake Resort" (dup of experience) → Feriado Tadvai
+--   pillalamarri/experience template ghost → The Grand Sindhu
+--   pillalamarri/value     "TTDC Guest House" (TTDC = Tamil Nadu, not Telangana) → Geetha Hotel
+--   pillalamarri/location  template ghost → Avanthi Hotel
+--   basara/experience "Sri Veerabhadra Temple Heritage Stay" → Lords Hrim Akshara
+--   basara/value      "Godavari Ghat Homestay" → Devasthanam Choultry
+--   basara/location   "Basara River View Lodge" → Indraprastha Basara Resort
+--   basara/xfactor    "Basara Nature Camp (seasonal riverside glamping)" → DELETED (honest scarcity)
+--
+-- HONEST-SCARCITY EATS (10 total skipped across 5 dests, all per dest brief justification):
+--   ramappa 2/5 — Palampet ~2k pop
+--   laknavaram 2/5 — mid-forest lake
+--   pillalamarri 2/5 — small banyan-tree site, Mahbubnagar town thin on verified mid-tier
+--   basara 2/5 — temple-village, in-house lodge meals dominate
+--
+-- TOTALS: +14 gems, +17 eats, +8 stay replacements/inserts (10 upserts + 3 new inserts - 1 delete),
+--         5 of 5 B→A flips.

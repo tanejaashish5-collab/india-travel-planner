@@ -317,8 +317,20 @@ def gen_by_the_numbers(dest, fonts, pal):
     
     budget = dest.get("budget_tier", "")
     if budget:
-        tier_emoji = {"budget": "₹", "mid-range": "₹₹", "splurge": "₹₹₹", "mixed": "₹~₹₹₹"}
-        data_points.append((tier_emoji.get(budget, budget), "BUDGET TIER", budget.title()))
+        # Canonical destinations.budget_tier enum — must match
+        # gen_flow_stories.fmt_budget(). Default is empty so unknown values
+        # don't render a misleading icon.
+        tier_emoji = {
+            "budget":         "₹",
+            "mid-range":      "₹₹",
+            "splurge":        "₹₹₹",
+            "mixed":          "₹–₹₹₹",
+            "budget-to-mid":  "₹–₹₹",
+            "mid-to-luxury":  "₹₹–₹₹₹",
+        }
+        emoji = tier_emoji.get(budget)
+        if emoji:
+            data_points.append((emoji, "BUDGET TIER", budget.title()))
     
     diff = dest.get("difficulty", "")
     if diff:

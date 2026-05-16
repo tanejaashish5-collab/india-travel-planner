@@ -1,0 +1,11 @@
+endpoint,method,body,http_status,resp_first_120,ttfb_ms
+/api/chat malformed JSON,POST,"{"broken",400,"{"error":"Malformed JSON body"} ",83
+/api/chat empty body,POST,"",400,"{"error":"Malformed JSON body"} ",89
+/api/chat valid-shape question,POST,"{"message":"hi"}",400,"{"error":"Invalid question"} ",83
+/api/itinerary malformed JSON,POST,"{"broken",400,"{"error":"Malformed JSON body"} ",77
+/api/itinerary empty body,POST,"",400,"{"error":"Malformed JSON body"} ",72
+/api/weather id=alwar,GET,"",200,"{"temp":28 "feels_like":27 "humidity":34 "description":"clear sky" "icon":"01d" "wind_speed":8 "visibility":10 "clouds":",1720
+/api/weather lat/lon (wrong shape),GET,"",400,"{"error":"Missing destination id"} ",191
+/api/destinations (no impl expected),GET,"",404,"<!DOCTYPE html><html data-dpl-id="dpl_A1k23oxmeFH9d31jL8ZBWxJhtY3H"><head><meta charSet="utf-8"/><meta name="viewport" c",605
+/api/health (no impl expected),GET,"",404,"<!DOCTYPE html><html data-dpl-id="dpl_A1k23oxmeFH9d31jL8ZBWxJhtY3H"><head><meta charSet="utf-8"/><meta name="viewport" c",110
+/api/weather id=pushkar,GET,"",200,"{"temp":30 "feels_like":29 "humidity":31 "description":"clear sky" "icon":"01d" "wind_speed":10 "visibility":10 "clouds"",492

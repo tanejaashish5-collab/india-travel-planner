@@ -1,0 +1,83 @@
+name: Autoposter Watchdog
+
+# Detects missed posting slots on the main autoposter workflow and force-triggers
+# them via workflow_dispatch. Backstops GHA's documented unreliability of
+# scheduled crons during low-traffic UTC hours (00:00-06:00 UTC = Asia morning).
+#
+# Why a separate workflow: it must run on its own concurrency group so the main
+# autoposter's `cancel-in-progress` doesn't kill the watchdog mid-check. It also
+# uses its own (cheaper, faster) job — no ffmpeg, no Python deps beyond requests.
+#
+# Required secret: AUTOPOSTER_PAT — a GitHub Personal Access Token with
+# `repo` + `workflow` scopes. GITHUB_TOKEN cannot dispatch other workflows by
+# design (anti-infinite-loop guard).
+
+on:
+  schedule:
+    # 10 watchdog fires/day. Heavy redundancy: the WATCHDOG itself silently
+    # dropped on 2026-05-15 (07:30 + 08:30 UTC both missed; today's first
+    # successful fire was after 09:00 IST = ~3:30 UTC the prior day, which is
+    # why morning posts dropped + autoposter's first run wasn't until 12:18 IST).
+    # GHA's documented unreliability for low-traffic UTC crons hits the
+    # watchdog as much as the autoposter — so we now schedule 10 fires/day
+    # with each scheduled-slot covered by ≥2 catch-up windows.
+    #
+    # Times on :30 / :50 marks (empirically fire more reliably than :00/:15/:45).
+    # GRACE_MINUTES = 90 in watchdog.py prevents double-posting if a scheduled
+    # autoposter cron fires shortly after the watchdog dispatches a catch-up.
+    #
+    # Coverage map (UTC → IST → which slot it backstops):
+    #   04:50 = 10:20 IST — morning post (03:17) ⏰ critical (most-dropped slot)
+    #   06:30 = 12:00 IST — backup for morning + YT #1 + reel #1
+    #   07:30 = 13:00 IST — primary catch-up for morning/YT#1/reel#1
+    #   08:30 = 14:00 IST — visual slot (07:47) backup
+    #   09:30 = 15:00 IST — visual + reel-map (T/Th/Sa) + flow-story (Sun)
+    #   10:30 = 16:00 IST — mid-day catch-up
+    #   12:30 = 18:00 IST — YT short #2 (11:47) backup
+    #   14:30 = 20:00 IST — final pre-evening backup
+    #   15:50 = 21:20 IST — evening post (14:17) ⏰ critical for new 19:47 slot
+    #   16:30 = 22:00 IST — late evening backup
+    - cron: "50 4 * * *"
+    - cron: "30 6 * * *"
+    - cron: "30 7 * * *"
+    - cron: "30 8 * * *"
+    - cron: "30 9 * * *"
+    - cron: "30 10 * * *"
+    - cron: "30 12 * * *"
+    - cron: "30 14 * * *"
+    - cron: "50 15 * * *"
+    - cron: "30 16 * * *"
+  workflow_dispatch: {}
+
+concurrency:
+  group: autoposter-watchdog
+  # 2026-05-15: was `true` — but that meant a watchdog firing a few min late
+  # got killed by the next scheduled watchdog fire, defeating the redundancy.
+  # `false` lets them serialize through the group; watchdog.py is idempotent
+  # (slot_covered() check + GRACE_MINUTES guard prevent double-posts).
+  cancel-in-progress: false
+
+jobs:
+  watchdog:
+    name: Check + force missed slots
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      actions: write
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install requests
+        run: pip install --quiet requests
+
+      - name: Run watchdog
+        env:
+          GH_PAT: ${{ secrets.AUTOPOSTER_PAT }}
+          REPO: ${{ github.repository }}
+        run: python nakshiq-autoposter/watchdog.py

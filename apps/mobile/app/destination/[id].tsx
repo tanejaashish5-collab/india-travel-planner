@@ -25,6 +25,8 @@ import { useArticlesForDestination } from "../../hooks/useArticles";
 import { useVisited } from "../../hooks/useVisited";
 import { useReviews } from "../../hooks/useReviews";
 import EditorsPicks from "../../components/EditorsPicks";
+import HonestScarcityPanel, { isHonestScarcityConfirmed } from "../../components/HonestScarcityPanel";
+import LocalEateries from "../../components/LocalEateries";
 import ReviewForm from "../../components/ReviewForm";
 
 const supabaseMobile = createClient(
@@ -403,14 +405,36 @@ export default function DestinationScreen() {
             </View>
           )}
 
-          {/* Editor's Picks — curated stay decisions (upgrade_reasoning + 4 slots + sources) */}
-          {dest.editor_stay_picks?.length > 0 && (
+          {/* Editor's Picks — curated stay decisions (upgrade_reasoning + 4 slots + sources)
+              with honest-scarcity fallback for HS-confirmed dests where no commercial stays exist. */}
+          {dest.editor_stay_picks?.length > 0 ? (
             <EditorsPicks
               destinationName={dest.name}
               picks={dest.editor_stay_picks}
               intelligence={dest.stay_intelligence ?? null}
             />
-          )}
+          ) : isHonestScarcityConfirmed(dest.honest_scarcity, "stays") ? (
+            <HonestScarcityPanel
+              slot="stays"
+              destinationName={dest.name}
+              honestScarcity={dest.honest_scarcity}
+            />
+          ) : null}
+
+          {/* Local Eateries — verified picks (legendary anchors get vermillion tag)
+              with honest-scarcity fallback for HS-confirmed dests where no commercial dining exists. */}
+          {dest.eateries?.length > 0 ? (
+            <LocalEateries
+              destinationName={dest.name}
+              eateries={dest.eateries}
+            />
+          ) : isHonestScarcityConfirmed(dest.honest_scarcity, "eateries") ? (
+            <HonestScarcityPanel
+              slot="eateries"
+              destinationName={dest.name}
+              honestScarcity={dest.honest_scarcity}
+            />
+          ) : null}
 
           {/* Verified Stays Directory — community-verified local_stays (below Editor's Picks) */}
           {dest.local_stays?.length > 0 && (

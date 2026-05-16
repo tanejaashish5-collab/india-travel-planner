@@ -9,6 +9,7 @@ import { DestinationSectionNav } from "@/components/destination-section-nav";
 import { createClient } from "@supabase/supabase-js";
 import { STATE_MAP, getRegionNameForState, getRegionForState } from "@/lib/seo-maps";
 import { videoSrc } from "@/lib/video-url";
+import { stateHeroSrc, hasStateHero } from "@/lib/landing-heroes";
 import { videoObjectJsonLd } from "@/lib/video-schema";
 import { destinationImage } from "@/lib/image-url";
 import { localeAlternates } from "@/lib/seo-utils";
@@ -121,7 +122,7 @@ export default async function StateHubPage({
   const subregions: any[] = region?.subregions ?? [];
 
   const stateVideoLd = videoObjectJsonLd({
-    id: heroDestId,
+    id: hasStateHero(stateSlug) ? `state-${stateSlug}` : heroDestId,
     name: `${stateName} — NakshIQ travel reel`,
     description: `Hero footage from NakshIQ's ${stateName} coverage. ${totalDests} scored destinations across ${stateName}.`,
     thumbnailUrl: destinationImage(heroDestId),
@@ -205,7 +206,7 @@ export default async function StateHubPage({
             poster={`/images/destinations/${heroDestId}.jpg`}
             className="absolute inset-0 w-full h-full object-cover"
           >
-            <source src={videoSrc(heroDestId)} type="video/mp4" />
+            <source src={stateHeroSrc(stateSlug, heroDestId)} type="video/mp4" />
           </video>
           <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
           <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 lg:p-12">

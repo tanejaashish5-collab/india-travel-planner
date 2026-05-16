@@ -329,7 +329,7 @@ async function getDestination(id: string) {
       .limit(5),
     supabase
       .from("local_eateries")
-      .select("id, name, area, area_slug, cuisine, category, signature_dish, must_try, price_range, price_per_head_inr, vegetarian, kid_friendly, reservation, dress_code, established_year, why_it_matters, insider_tip, signature_address, google_maps_url, zomato_url, is_legendary")
+      .select("id, name, area, area_slug, cuisine, category, signature_dish, must_try, price_range, price_per_head_inr, vegetarian, kid_friendly, reservation, dress_code, established_year, why_it_matters, insider_tip, signature_address, google_maps_url, zomato_url, is_legendary, parking_type, hygiene_confidence")
       .eq("destination_id", id)
       .eq("is_active", true)
       .order("is_legendary", { ascending: false })

@@ -75,6 +75,138 @@ MORNING_FORMATS = [
     # ── Tier 2.5 (added 2026-05-05) — fresh content sources beyond destinations ──
     "eateries_pick",        # legendary local eatery + insider tip
     "trek_intel",           # trek with altitude + permit + best months
+    # ── Tier 6 (added 2026-05-10) — close the data-vertical coverage gap ──
+    "stays_pick",           # editor-curated stay pick (signature_experience)
+    "emergency_intel",      # per-dest SOS contacts + local helper
+    "viral_eats_pick",      # viral-on-X eatery + honest review
+    "camping_intel",        # camping spot with permit/water/facilities
+    "confidence_intel",     # unified reach+sleep+fuel+network report card
+    "collection_series",    # themed multi-post (root bridges / sacred lakes / etc)
+]
+
+# ─────────────────────────────────────────────────────────────────────────────
+# CONTENT PILLARS — see docs/social-playbook.md
+# Every format maps to exactly one pillar. The rotation selector biases toward
+# the most-under-share pillar (over rolling 7 days) before falling back to
+# pick_oldest_unused, so brand recall stays consistent without losing variety.
+# ─────────────────────────────────────────────────────────────────────────────
+
+FORMAT_PILLARS = {
+    # VERDICT — "Should I go to X in Y month?" (NakshIQ's core utility)
+    "score_card":           "verdict",
+    "reality_check":        "verdict",
+    "monthly_forecast":     "verdict",
+    "seasonal_shift":       "verdict",
+    "this_month_only":      "verdict",
+    "weekend_escape":       "verdict",
+    # VERIFICATION — "Verified, here's the source"
+    "infrastructure_truth": "verification",
+    "eateries_pick":        "verification",
+    "stays_pick":           "verification",
+    "emergency_intel":      "verification",
+    "confidence_intel":     "verification",
+    # ANTI-TRAP — "Don't fall for X"
+    "tourist_trap":         "anti_trap",
+    # DISCOVERY — "What you didn't know about X"
+    "collection_spotlight": "discovery",
+    "collection_series":    "discovery",
+    "kids_intel":           "discovery",
+    "underdog_spotlight":   "discovery",
+    "adventure_pick":       "discovery",
+    "trek_intel":           "discovery",
+    "viral_eats_pick":      "discovery",
+    "camping_intel":        "discovery",
+    # MOMENT — "Right now, this matters"
+    "festival_alert":       "moment",
+    "data_carousel":        "moment",
+    "blog_promo":           "moment",
+    "elevation_face_off":   "moment",
+    "state_showdown":       "moment",
+    "difficulty_spectrum":  "moment",
+}
+
+# Target weekly share per pillar. Playbook spec; the rotation biases toward
+# pillars whose actual 7-day share is BELOW these targets. Total = 1.0.
+# Anti-trap structurally has only 1 format in the pool today, so its target
+# is the share the rotation should TRY to hit, not a hard ceiling.
+PILLAR_WEEKLY_SHARE = {
+    "verdict":      0.35,
+    "verification": 0.20,
+    "anti_trap":    0.15,
+    "discovery":    0.20,
+    "moment":       0.10,
+}
+
+# ─────────────────────────────────────────────────────────────────────────────
+# SEASONAL OVERRIDES — date-window pillar weight adjustments
+# Adds to PILLAR_WEEKLY_SHARE during the matching window. Caller clamps the
+# combined target so no single override moves a pillar by >+0.15 absolute.
+# month-day tuples; year-agnostic. Multiple windows can stack additively.
+# ─────────────────────────────────────────────────────────────────────────────
+
+SEASONAL_OVERRIDES = [
+    # SW monsoon: verdict surges (Kerala/Goa reversals, NE flips).
+    {
+        "name":   "sw_monsoon",
+        "start":  (6, 1),
+        "end":    (9, 30),
+        "deltas": {"verdict": +0.15, "discovery": -0.05, "moment": -0.05},
+    },
+    # Char Dham permit edges: emergency_intel + verdict surge for UK dests.
+    {
+        "name":   "char_dham_open",
+        "start":  (4, 28),
+        "end":    (5, 12),
+        "deltas": {"verification": +0.10, "verdict": +0.05},
+    },
+    {
+        "name":   "char_dham_close",
+        "start":  (10, 24),
+        "end":    (11, 7),
+        "deltas": {"verification": +0.10, "verdict": +0.05},
+    },
+    # Festival weeks — Indian festivals cluster around specific dates;
+    # moment pillar doubles share in those windows. Diwali, Holi, Onam,
+    # Durga Puja, Chithirai (Madurai Apr), Karthigai Deepam (Tamil Nadu Dec).
+    {"name": "diwali_window",      "start": (10, 25), "end": (11, 10),
+     "deltas": {"moment": +0.15, "discovery": -0.05}},
+    {"name": "holi_window",        "start": (3, 5),   "end": (3, 18),
+     "deltas": {"moment": +0.15, "discovery": -0.05}},
+    {"name": "onam_window",        "start": (8, 25),  "end": (9, 10),
+     "deltas": {"moment": +0.10}},
+    {"name": "durga_puja",         "start": (9, 25),  "end": (10, 15),
+     "deltas": {"moment": +0.10}},
+    {"name": "chithirai_madurai",  "start": (4, 1),   "end": (4, 30),
+     "deltas": {"moment": +0.10}},
+    {"name": "karthigai_deepam",   "start": (12, 1),  "end": (12, 15),
+     "deltas": {"moment": +0.10}},
+    # Wedding season — off-season-drivers content surfaces (Rajasthan/Kerala).
+    {
+        "name":   "wedding_season",
+        "start":  (11, 1),
+        "end":    (2, 28),
+        "deltas": {"verification": +0.05, "discovery": +0.05, "moment": -0.05},
+    },
+    # Summer peak — hill stations win, mainland warnings rise.
+    {
+        "name":   "summer_peak",
+        "start":  (4, 1),
+        "end":    (6, 15),
+        "deltas": {"anti_trap": +0.05, "verdict": +0.05},
+    },
+    # Diaspora homecoming — NRI parents-visit, ASI / UNESCO spotlights.
+    {
+        "name":   "diaspora_nov_dec",
+        "start":  (11, 15),
+        "end":    (12, 31),
+        "deltas": {"verification": +0.10},
+    },
+    {
+        "name":   "diaspora_mar_apr",
+        "start":  (3, 15),
+        "end":    (4, 30),
+        "deltas": {"verification": +0.10},
+    },
 ]
 
 # Legacy weekday-based schedule (kept for fallback only — round-robin is primary)
@@ -284,31 +416,182 @@ KNOWN_FESTIVAL_END_DAYS: dict[str, int] = {
 # and let the rotation prefer next-month festivals instead.
 FESTIVAL_PLANNING_CUTOFF_DAY = 14
 
-# Total destinations Nakshiq scores — populated from /stats on each sync.
-# Fallback is the current real catalog size as of 2026-05-05 so captions are
-# never wildly off if the stats call fails. Keep this in sync with
-# apps/web/src/lib/stats.ts:FALLBACK.destinations.
+# Total destinations Nakshiq scores — populated from /stats on each sync (see
+# sync_all_content, autoposter.py:845-848).  Fallback only matters when the
+# stats call fails; bumping to current catalog size (2026-05-10) so a sync
+# failure doesn't stamp every caption with a stale number.
 TOTAL_DESTINATIONS = 505
 
-# ── Score display ─────────────────────────────────────────────────
-# DB stores raw 0–5 integer scores. We display ×2 with one decimal so the
-# 0–10 critic-style scale ("8.0", "10.0") is consistent with apps/web,
-# emails, and the cinematic landing. Mirror of @itp/shared formatScore.
-SCORE_MAX = 10
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Caption helpers (Tier 1 overhaul, 2026-05-10)
+# Centralises score scaling, IG-only URL stripping, and hashtag expansion so
+# every caption builder shares one source of truth.  The website moved to a
+# 0-10 scale during the 2026-05-05 sweep; raw API values remain on /5 so we
+# scale at display time only.
+# ─────────────────────────────────────────────────────────────────────────────
 
 def format_score(raw) -> str:
-    """0-5 raw → 'X.X' on the displayed 0-10 scale. None → '—'."""
-    if raw is None:
-        return "—"
+    """Convert raw 1-5 score from the API into the website-aligned '8/10' form.
+    Mirrors the formatScore() helper in apps/web/src/components/destination-detail-cinematic.tsx.
+    """
     try:
-        v = float(raw)
+        if raw is None or raw == "":
+            return "—/10"
+        return f"{int(raw) * 2}/10"
     except (TypeError, ValueError):
-        return "—"
-    return f"{min(SCORE_MAX, max(0, v * 2)):.1f}"
+        return "—/10"
 
-def format_score_inline(raw) -> str:
-    """0-5 raw → 'X.X/10' for inline use in caption sentences."""
-    return f"{format_score(raw)}/{SCORE_MAX}"
+
+# Niche/branded hashtag pool used by _build_ig_hashtags.  Every entry has been
+# checked against _BANNED_HASHTAGS — none get stripped by _sanitize_caption.
+# Broad tags (#travel, #india, #wanderlust, #travelgram …) are intentionally
+# excluded; the existing brand rules sanitise those out anyway.
+_IG_NICHE_POOL = [
+    "IndianHillStations", "IndianRoadtrip", "IndianAdventures",
+    "DesiTravel", "DesiTraveller", "TravelBharat", "BharatTravel",
+    "DiscoverIndia", "ExploreBharat", "IndianTravelDiaries",
+    "HimalayanIndia", "IndianMonuments", "IndianForts",
+    "IndianTemples", "IndianTrails",
+]
+
+_IG_BRAND_POOL = [
+    "NakshIQ", "TravelWithIQ", "DataDrivenTravel",
+    "PlanWithData", "ScoredDestinations", "VerifiedTravel",
+]
+
+_IG_CATEGORY_POOL = {
+    "food":         ["IndianFood", "IndianStreetFood", "IndianCuisine"],
+    "festivals":    ["IndianFestivals", "FestivalsOfIndia", "DesiFestivals"],
+    "activities":   ["IndianAdventures", "AdventureIndia", "IndianTrails"],
+    "seasons":      ["SeasonalTravel", "MonsoonTravel", "IndianClimate"],
+    "mood_shots":   ["IndianTravelDiaries", "DesiTravel", "TravelBharat"],
+    "collections":  ["TravelCollection", "IndianRoadtrip", "DiscoverIndia"],
+    "score_card":   ["VerifiedTravel", "ScoredDestinations", "TravelData"],
+    "reel":         ["TravelReels", "ReelsOfIndia", "IndianTravelReels"],
+    "yt_short":     ["TravelShorts", "IndianTravelShorts", "Shorts"],
+    "tourist_trap": ["TouristTrapAlert", "IndianTravelTips", "TravelSmart"],
+    "budget":       ["BudgetTravelIndia", "AffordableTravel", "TravelOnBudget"],
+    "kids":         ["FamilyTravelIndia", "KidsTravelIndia", "FamilyAdventure"],
+    "festival":     ["IndianFestivals", "FestivalsOfIndia", "DesiFestivals"],
+    "pomelli":      ["VerifiedTravel", "DataDrivenTravel", "TravelIntel"],
+    "canva":        ["IndianTravelDiaries", "DesiTravel", "TravelCollection"],
+    "flow_story":   ["IndianLandscapes", "TravelMoments", "DesiTravel"],
+}
+
+
+def _build_ig_hashtags(dest_name: str | None = None,
+                       state_name: str | None = None,
+                       category: str | None = None,
+                       max_tags: int = 18) -> str:
+    """Build a 15-20 tag hashtag block for Instagram captions.
+
+    Tier 1 (2026-05-10): expands from 5 → ~18 niche/branded tags to improve IG
+    discoverability.  Pool order: dest-specific → state-specific → category
+    niche → safe broad-Indian-travel → branded.  Broad tags like #travel are
+    intentionally absent (sanitiser strips them; brand rule).
+    """
+    tags: list[str] = []
+
+    def _push(t: str) -> None:
+        if not t:
+            return
+        if t not in tags and len(tags) < max_tags:
+            tags.append(t)
+
+    # 1. Destination-specific (up to 3)
+    if dest_name and dest_name not in ("India", "STATE_SHOWCASE", "EDITORIAL", "GENERIC"):
+        clean = dest_name.replace(" ", "").replace("-", "").replace("&", "").replace(",", "")
+        if clean:
+            _push(clean)
+            _push(f"{clean}Travel")
+            _push(f"Visit{clean}")
+
+    # 2. State-specific (up to 3)
+    if state_name and state_name not in ("India", "STATE_SHOWCASE", "EDITORIAL", "GENERIC"):
+        clean_state = state_name.replace(" ", "").replace("&", "And").replace("-", "")
+        if clean_state:
+            _push(clean_state)
+            _push(f"{clean_state}Travel")
+            _push(f"{clean_state}Tourism")
+
+    # 3. Category niche (up to 3)
+    cat_key = (category or "").lower()
+    cat_tags = _IG_CATEGORY_POOL.get(cat_key, [])
+    for t in cat_tags[:3]:
+        _push(t)
+
+    # 4. Safe niche-Indian-travel pool (top up to ~14)
+    for t in _IG_NICHE_POOL:
+        if len(tags) >= max_tags - 4:
+            break
+        _push(t)
+
+    # 5. Branded (last 4 slots)
+    for t in _IG_BRAND_POOL:
+        _push(t)
+
+    return " ".join(f"#{t}" for t in tags[:max_tags])
+
+
+def _strip_url_for_ig(caption: str, platform: str,
+                      replacement: str = "📲 Full data → link in bio") -> str:
+    """Replace the '→ http(s)://nakshiq.com…' line with link-in-bio CTA when
+    posting to Instagram.  IG renders caption URLs as plain text (unclickable)
+    so they add clutter; FB and YT keep the URL intact.
+    """
+    if platform != "instagram" or not caption:
+        return caption
+    import re as _re
+    pattern = _re.compile(
+        r'^(?:→\s*)?(?:https?://)?(?:www\.)?nakshiq\.com[^\n]*\n?',
+        _re.MULTILINE,
+    )
+    if not pattern.search(caption):
+        return caption
+    # Replace first match with the link-in-bio CTA, drop subsequent URL lines.
+    first_replaced = [False]
+    def _sub(m):  # noqa: ANN001
+        if first_replaced[0]:
+            return ""
+        first_replaced[0] = True
+        return f"{replacement}\n"
+    out = pattern.sub(_sub, caption)
+    # Collapse any tripled blank lines created by the strip.
+    out = _re.sub(r'\n{3,}', '\n\n', out)
+    return out
+
+
+_IG_ENGAGEMENT_CTAS = {
+    "reel":         "💾 Save this — the timing window closes faster than you think.",
+    "reel_map":     "💾 Save this map for your next trip planning session.",
+    "canva":        "💬 Comment which one fits your trip — we'll DM you the data.",
+    "pomelli":      "📌 Save for trip planning. Tag a travel buddy below.",
+    "flow_story":   "💾 Save this — pull it up when you're booking.",
+    "yt_short":     "💾 Save for later. Comment your next destination.",
+    "feed_post":    "💾 Save this — refer back when you plan your trip.",
+}
+
+
+def _add_ig_engagement_cta(caption: str, platform: str, kind: str) -> str:
+    """Inject a saves/comments-bait line above the hashtag block when posting
+    to Instagram.  Saves and comments are IG's #1 ranking signals as of 2025/26.
+    No-op for FB / YT (their feed mechanics differ; CTAs would feel forced).
+    """
+    if platform != "instagram" or not caption:
+        return caption
+    cta = _IG_ENGAGEMENT_CTAS.get(kind)
+    if not cta:
+        return caption
+    if cta in caption:
+        return caption
+    # Insert above trailing hashtag block ("…\n\n#tag1 #tag2 …")
+    import re as _re
+    m = _re.search(r'\n\n#[A-Za-z0-9_ ]+(?:\s|$)', caption)
+    if m:
+        return caption[:m.start()] + f"\n\n{cta}" + caption[m.start():]
+    return caption.rstrip() + f"\n\n{cta}"
+
 
 # Brand-voice guardrails. Captions are passed through sanitize() before publishing
 # so these phrases/hashtags never reach the platforms.
@@ -324,6 +607,52 @@ BANNED_PHRASES = [
     "stunning paradise",
 ]
 BANNED_HASHTAGS = {"HiddenIndia", "OffbeatIndia"}
+
+# ─────────────────────────────────────────────────────────────────────────────
+# PER-PLATFORM VOICE MATRIX — see docs/social-playbook.md
+# Applied after the per-format copy_* function emits its caption. Keeps the
+# data identical across platforms but enforces caption length, emoji count,
+# hashtag count, and CTA pattern per the playbook. Conservative defaults so
+# this layer never destroys signal — it only trims.
+# ─────────────────────────────────────────────────────────────────────────────
+
+PLATFORM_VOICE = {
+    "instagram": {
+        "max_words":       120,
+        "max_emoji":       2,
+        "max_hashtags":    18,
+        "cta_pattern":     "→ nakshiq.com/destination/{slug}",
+    },
+    "facebook": {
+        "max_words":       100,
+        "max_emoji":       3,
+        "max_hashtags":    6,
+        "cta_pattern":     "→ nakshiq.com/destination/{slug}",
+    },
+    "yt_shorts": {
+        # YT description-side caption; description is short, hooky.
+        "max_words":       90,
+        "max_emoji":       1,
+        "max_hashtags":    5,
+        "cta_pattern":     "→ nakshiq.com",   # YT punishes off-platform links
+    },
+    "reels": {
+        "max_words":       70,
+        "max_emoji":       0,
+        "max_hashtags":    8,
+        "cta_pattern":     "→ link in bio",
+    },
+}
+
+# Platform synonyms used elsewhere in the codebase. Normalised before lookup
+# so call-sites can pass "ig", "fb", "yt", "yts", "yt_short", "reel", etc.
+_PLATFORM_ALIASES = {
+    "ig": "instagram", "instagram": "instagram",
+    "fb": "facebook", "facebook": "facebook",
+    "yt": "yt_shorts", "yts": "yt_shorts", "yt_short": "yt_shorts",
+    "yt_shorts": "yt_shorts", "youtube_shorts": "yt_shorts", "youtube": "yt_shorts",
+    "reel": "reels", "reels": "reels",
+}
 
 CONTRARIAN_PAIRS = [
     ("Mussoorie",   "Dhanaulti"),
@@ -477,6 +806,22 @@ def load_state() -> dict:
         # Backfill any missing keys so callers never hit KeyError
         for k, v in defaults.items():
             state.setdefault(k, v)
+        # Drop posted_today entries whose date is more than 1 day stale.
+        # Pre-existing keys like "jUmP2_yt_short: 2026-04-20" lingered for
+        # 16 days because rotation only resets when the same key fires again
+        # — that left the daily 2/2 cap permanently active for accounts
+        # whose Shorts cron silently dropped. Numeric counters (e.g.
+        # "_count") aren't dates and stay untouched.
+        today_iso = date.today().isoformat()
+        yesterday_iso = (date.today() - timedelta(days=1)).isoformat()
+        pruned = {}
+        for k, v in state["posted_today"].items():
+            if isinstance(v, str) and len(v) == 10 and v[4] == "-":
+                if v >= yesterday_iso:
+                    pruned[k] = v
+            else:
+                pruned[k] = v  # not a date — keep (counters etc.)
+        state["posted_today"] = pruned
         return state
     return defaults
 
@@ -846,24 +1191,20 @@ def sync_all_content() -> dict:
         "routes":       nakshiq_fetch("routes",       {"month": month, "limit": 50}),
         "treks":        nakshiq_fetch("treks",        {"month": month, "limit": 50}),
         "eateries":     nakshiq_fetch("eateries",     {"limit": 100}),
+        # Tier 6 (2026-05-10) — close coverage gap on stays / emergency / viral
+        # eats / camping / hidden gems verticals. Each backed by /api/content
+        # types added in the same commit.
+        "stays":        nakshiq_fetch("stays",        {"limit": 100}),
+        "emergency":    nakshiq_fetch("emergency",    {"limit": 100}),
+        "viral_eats":   nakshiq_fetch("viral_eats",   {"limit": 100}),
+        "camping":      nakshiq_fetch("camping",      {"month": month, "limit": 50}),
+        "hidden_gems":  nakshiq_fetch("hidden_gems",  {"limit": 50}),
     }
-    # Keep TOTAL_DESTINATIONS in sync with the real catalog size. WARN loudly
-    # when the /stats endpoint returns nothing or a degenerate value, since
-    # captions interpolate this number directly ("NakshIQ scores N
-    # destinations monthly"). Silent fallback to a stale constant is what
-    # caused the "260" / "300–350" drift.
+    # Keep TOTAL_DESTINATIONS in sync with the real catalog size.
     global TOTAL_DESTINATIONS
     stats_total = (content.get("stats") or {}).get("data", {}).get("destinations")
     if isinstance(stats_total, int) and stats_total > 0:
-        if stats_total != TOTAL_DESTINATIONS:
-            log.info(f"TOTAL_DESTINATIONS updated: {TOTAL_DESTINATIONS} → {stats_total}")
         TOTAL_DESTINATIONS = stats_total
-    else:
-        log.warning(
-            f"⚠️  /stats sync returned {stats_total!r}; "
-            f"falling back to hardcoded TOTAL_DESTINATIONS={TOTAL_DESTINATIONS}. "
-            f"Captions will use this fallback — verify it matches the real catalog."
-        )
     log.info(
         f"Synced → {len(content['destinations'].get('data',[]))} destinations · "
         f"{len(content['traps'].get('data',[]))} traps · "
@@ -871,6 +1212,11 @@ def sync_all_content() -> dict:
         f"{len(content['routes'].get('data',[]))} routes · "
         f"{len(content['treks'].get('data',[]))} treks · "
         f"{len(content['eateries'].get('data',[]))} eateries · "
+        f"{len(content['stays'].get('data',[]))} stays · "
+        f"{len(content['emergency'].get('data',[]))} sos · "
+        f"{len(content['viral_eats'].get('data',[]))} viral · "
+        f"{len(content['camping'].get('data',[]))} camping · "
+        f"{len(content['hidden_gems'].get('data',[]))} gems · "
         f"total catalog={TOTAL_DESTINATIONS}"
     )
     return content
@@ -1104,17 +1450,74 @@ def pick_morning_format(state: dict, content: dict) -> str:
                 treks = content.get("treks", {}).get("data", []) or []
                 if not treks:
                     continue
+            # Tier 6 — close the coverage gap on stays / emergency / viral eats /
+            # camping / confidence cards / collections. Each guarded by the
+            # corresponding /api/content type populating in sync_all_content.
+            if fmt == "stays_pick":
+                stays = content.get("stays", {}).get("data", []) or []
+                if not stays:
+                    continue
+            if fmt == "emergency_intel":
+                sos = content.get("emergency", {}).get("data", []) or []
+                # Floor at 5 — guarantees the round-robin doesn't lock onto the
+                # same destination if the API returns a thin slice for a day.
+                if len(sos) < 5:
+                    continue
+            if fmt == "viral_eats_pick":
+                viral = content.get("viral_eats", {}).get("data", []) or []
+                if not viral:
+                    continue
+            if fmt == "camping_intel":
+                camps = content.get("camping", {}).get("data", []) or []
+                if not camps:
+                    continue
+            if fmt == "confidence_intel":
+                # Needs at least one high-scoring dest with a populated reach OR
+                # network confidence card so the report-card has 2+ filled rows.
+                # Fallback to score_card otherwise (no point posting an empty
+                # infrastructure report).
+                rich = [d for d in dests if (d.get("score") or 0) >= 4]
+                if not rich:
+                    continue
+            if fmt == "collection_series":
+                colls = content.get("collections", {}).get("data", []) or []
+                # Need at least one collection with 5+ items so the mini-series
+                # has enough rotation. Single-item collections become trivia.
+                eligible_colls = [c for c in colls if (c.get("itemCount") or 0) >= 5]
+                if not eligible_colls:
+                    continue
             eligible.append(fmt)
 
         if not eligible:
             eligible = ["score_card"]
 
-        ordered = pick_oldest_unused(state, "morning_formats", eligible, key=None)
+        # Pillar-bias layer (playbook discipline). Bias eligible toward
+        # whichever pillar is most below its 7-day target — including any
+        # seasonal-window overrides for today. Falls back transparently when
+        # the deficit pillar has no eligible formats.
+        biased_pool = eligible
+        deficit_pillars = under_share_pillars(state)
+        chosen_pillar = None
+        for pillar in deficit_pillars:
+            candidates = [f for f in eligible if FORMAT_PILLARS.get(f) == pillar]
+            if candidates:
+                biased_pool = candidates
+                chosen_pillar = pillar
+                break
+
+        ordered = pick_oldest_unused(state, "morning_formats", biased_pool, key=None)
         chosen = ordered[0]
 
         status = dimension_cycle_status(state, "morning_formats", len(MORNING_FORMATS))
-        log.info(f"Morning format (round-robin): {chosen} "
-                 f"({status['unused']}/{status['total']} never featured)")
+        if chosen_pillar:
+            actual = compute_weekly_pillar_share(state).get(chosen_pillar, 0.0)
+            target = target_pillar_share().get(chosen_pillar, 0.0)
+            log.info(f"Morning format (pillar-biased→{chosen_pillar}): {chosen} "
+                     f"[{actual:.0%} vs target {target:.0%}] "
+                     f"({status['unused']}/{status['total']} never featured)")
+        else:
+            log.info(f"Morning format (balanced): {chosen} "
+                     f"({status['unused']}/{status['total']} never featured)")
         return chosen
     except Exception as e:
         log.warning(f"pick_morning_format error: {e} — fallback to score_card")
@@ -1149,6 +1552,157 @@ def sanitize(text: str) -> str:
     text = re.sub(r" +\n", "\n", text)
     text = re.sub(r"\n{3,}", "\n\n", text)
     return text.strip()
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Pillar share + seasonal overrides + per-platform voice
+# ─────────────────────────────────────────────────────────────────────────────
+
+def _normalise_platform(platform: str | None) -> str | None:
+    if not platform:
+        return None
+    return _PLATFORM_ALIASES.get(str(platform).lower().strip())
+
+
+def _today_in_window(start: tuple, end: tuple, today=None) -> bool:
+    """True if today falls within [start..end] inclusive. Handles year-wrap
+    (Nov → Feb wedding season) by detecting start > end and OR-ing the two
+    halves of the year."""
+    t = today or date.today()
+    s = date(t.year, *start)
+    e = date(t.year, *end)
+    if s <= e:
+        return s <= t <= e
+    # Year-wrap window — e.g. start=(11,1) end=(2,28)
+    return t >= s or t <= e
+
+
+def current_seasonal_overrides(today=None) -> dict:
+    """Return the additive pillar-weight deltas from any SEASONAL_OVERRIDES
+    windows that match today. Empty dict if no window matches."""
+    deltas = {p: 0.0 for p in PILLAR_WEEKLY_SHARE}
+    for window in SEASONAL_OVERRIDES:
+        if _today_in_window(window["start"], window["end"], today=today):
+            for pillar, d in window.get("deltas", {}).items():
+                if pillar in deltas:
+                    deltas[pillar] += d
+    # Clamp single-day movement so no pillar exceeds ±0.15 from baseline.
+    for p in deltas:
+        if deltas[p] > 0.15:
+            deltas[p] = 0.15
+        if deltas[p] < -0.15:
+            deltas[p] = -0.15
+    return deltas
+
+
+def target_pillar_share(today=None) -> dict:
+    """Baseline PILLAR_WEEKLY_SHARE plus today's seasonal overrides. Re-clamped
+    so no pillar drops below 0.02. Does not re-normalise to sum 1.0 — the
+    rotation only uses the relative ordering (most-under-share first)."""
+    deltas = current_seasonal_overrides(today=today)
+    out = {}
+    for p, base in PILLAR_WEEKLY_SHARE.items():
+        out[p] = max(0.02, base + deltas.get(p, 0.0))
+    return out
+
+
+def compute_weekly_pillar_share(state: dict) -> dict:
+    """Actual 7-day pillar share computed from state['post_log']. Returns a
+    dict pillar → fraction of posts in last 7 days that landed in that pillar.
+    Sums to ≤ 1.0 (formats with no pillar mapping are ignored)."""
+    cutoff = (date.today() - timedelta(days=7)).isoformat()
+    log = state.get("post_log") or []
+    counts = {p: 0 for p in PILLAR_WEEKLY_SHARE}
+    total = 0
+    for entry in log:
+        if (entry.get("date") or "") < cutoff:
+            continue
+        fmt = entry.get("format") or ""
+        pillar = FORMAT_PILLARS.get(fmt)
+        if pillar in counts:
+            counts[pillar] += 1
+            total += 1
+    if total == 0:
+        return {p: 0.0 for p in PILLAR_WEEKLY_SHARE}
+    return {p: c / total for p, c in counts.items()}
+
+
+def under_share_pillars(state: dict, today=None) -> list:
+    """Return pillars whose actual 7-day share is below target, ordered by
+    largest deficit first. Empty list means we're balanced or no log yet."""
+    target = target_pillar_share(today=today)
+    actual = compute_weekly_pillar_share(state)
+    deficits = []
+    for p, want in target.items():
+        gap = want - actual.get(p, 0.0)
+        if gap > 0:
+            deficits.append((p, gap))
+    deficits.sort(key=lambda x: -x[1])
+    return [p for p, _ in deficits]
+
+
+def apply_platform_voice(caption: str, platform: str | None,
+                         kind: str | None = None) -> str:
+    """Trim a caption to per-platform discipline (word count, emoji cap,
+    hashtag cap). Conservative: only removes; never rewrites. Safe to call
+    on any caption — returns input unchanged if platform is unknown.
+
+    Why post-process instead of per-format: the 26 copy_<format> functions
+    each generate one caption that's shared across platforms; this is the
+    single point where IG/FB/YT-Shorts/Reels variance is enforced.
+    """
+    if not caption:
+        return caption
+    plat = _normalise_platform(platform)
+    if not plat or plat not in PLATFORM_VOICE:
+        return caption
+    rule = PLATFORM_VOICE[plat]
+
+    # Split caption into [body, hashtag_block]. Hashtag block is the trailing
+    # paragraph that is all-hashtag tokens. Body is everything before it.
+    parts = caption.rstrip().split("\n\n")
+    tail_idx = len(parts) - 1
+    body, hash_block = caption, ""
+    if tail_idx >= 0:
+        tail = parts[tail_idx].strip()
+        tokens = tail.split()
+        if tokens and all(t.startswith("#") for t in tokens):
+            body = "\n\n".join(parts[:tail_idx]).rstrip()
+            hash_block = tail
+
+    # Trim hashtags to cap.
+    if hash_block:
+        tags = hash_block.split()
+        cap = rule["max_hashtags"]
+        if len(tags) > cap:
+            hash_block = " ".join(tags[:cap])
+
+    # Trim body to max_words. Preserves newlines by splitting on whitespace
+    # and rejoining with a single space (last-resort safety; expected to only
+    # trip on tier-2/3 over-long captions).
+    words = body.split()
+    if len(words) > rule["max_words"]:
+        body = " ".join(words[:rule["max_words"]]).rstrip(",;:.") + "…"
+
+    # Cap emoji count by stripping anything past max_emoji. Regex catches the
+    # base codepoint + an optional VS16/VS15 variation selector so ☀️ trims
+    # as one grapheme. Not a full Unicode emoji parser; fine for the rare
+    # 3rd-emoji-in-caption case.
+    cap = rule["max_emoji"]
+    if cap >= 0:
+        seen = [0]
+        def _maybe_strip(m):
+            seen[0] += 1
+            return m.group(0) if seen[0] <= cap else ""
+        body = re.sub(r"[\U0001F300-\U0001FAFF☀-➿][︎️]?",
+                      _maybe_strip, body)
+        # Collapse any whitespace left by emoji removal.
+        body = re.sub(r" {2,}", " ", body).strip()
+
+    out = body
+    if hash_block:
+        out = f"{body}\n\n{hash_block}"
+    return out.strip()
 
 def utm(url: str, source: str, medium: str, campaign: str,
         content: str | None = None) -> str:
@@ -1249,7 +1803,7 @@ def copy_reality_check(destinations: list, platform: str,
     if platform == "facebook":
         body = (
             f"REALITY CHECK — {month_name().upper()} {date.today().year}\n\n"
-            f"Both score {format_score_inline(a['score'])} this month. Same region. Very different experience.\n\n"
+            f"Both score {format_score(a['score'])} this month. Same region. Very different experience.\n\n"
             f"❌ {a['name'].upper()} (↑{a['elevation_m']:,}m)\n{a['tagline']}\n\n"
             f"✅ {b['name'].upper()} (↑{b['elevation_m']:,}m)\n{b['tagline']}\n"
             + (f"{note}\n\n" if note else "\n")
@@ -1259,7 +1813,7 @@ def copy_reality_check(destinations: list, platform: str,
     else:
         body = (
             f"SAME SCORE. DIFFERENT SATURDAY.\n\n"
-            f"{a['name']} and {b['name']} both score {format_score_inline(a['score'])} this {month_name()}.\n\n"
+            f"{a['name']} and {b['name']} both score {format_score(a['score'])} this {month_name()}.\n\n"
             f"{a['name']}: {a['tagline']}\n\n{b['name']}: {b['tagline']}\n"
             + (f"{note}\n\n" if note else "\n")
             + f"NakshIQ scores {TOTAL_DESTINATIONS} destinations monthly.\n\n"
@@ -1441,9 +1995,9 @@ def copy_seasonal_shift(dest: dict, next_month: str, next_score: int,
         if platform == "facebook":
             return (
                 f"⏳ {name.upper()} — TIMING IS EVERYTHING\n\n"
-                f"Right now: {format_score_inline(score)} {stars_now}\n"
-                f"In {next_month}: {format_score_inline(next_score)} {stars_next}\n\n"
-                f"That's a {(score - next_score) * 2}-point drop. Weather shifts, roads close, "
+                f"Right now: {format_score(score)} {stars_now}\n"
+                f"In {next_month}: {format_score(next_score)} {stars_next}\n\n"
+                f"That's a {score - next_score}-point drop. Weather shifts, roads close, "
                 f"crowds change.\n\n"
                 f"Would you rather visit a 10/10 or a 4/10? The data says go now.\n\n"
                 f"Full {name} breakdown → {url}\n\n{tags}"
@@ -1451,8 +2005,8 @@ def copy_seasonal_shift(dest: dict, next_month: str, next_score: int,
         else:
             return (
                 f"⏳ {name.upper()} · {month_name().upper()} → {next_month.upper()}\n"
-                f"{stars_now} {format_score_inline(score)} now → {stars_next} {format_score_inline(next_score)}\n\n"
-                f"That's a {(score - next_score) * 2}-point drop in 30 days.\n\n"
+                f"{stars_now} {format_score(score)} now → {stars_next} {format_score(next_score)}\n\n"
+                f"That's a {score - next_score}-point drop in 30 days.\n\n"
                 f"Roads, weather, crowds — something shifts. "
                 f"NakshIQ tracks it so you don't have to guess.\n\n"
                 f"Save this. {name} detail → {url}\n\n{tags}"
@@ -1475,8 +2029,8 @@ def copy_elevation_face_off(low_dest: dict, high_dest: dict,
         if platform == "facebook":
             return (
                 f"SEA LEVEL vs SKY LEVEL — both score high this {month_name()}\n\n"
-                f"🏖️ {lo_name} · {lo_elev:,}m · {format_score_inline(lo_score)}\n"
-                f"🏔️ {hi_name} · {hi_elev:,}m · {format_score_inline(hi_score)}\n\n"
+                f"🏖️ {lo_name} · {lo_elev:,}m · {format_score(lo_score)}\n"
+                f"🏔️ {hi_name} · {hi_elev:,}m · {format_score(hi_score)}\n\n"
                 f"Same month, same score, completely different experience.\n"
                 f"One's a beach escape. One needs a down jacket.\n\n"
                 f"Which elevation suits you? Both are data-backed this month.\n\n"
@@ -1485,8 +2039,8 @@ def copy_elevation_face_off(low_dest: dict, high_dest: dict,
         else:
             return (
                 f"🏖️ vs 🏔️ · {month_name().upper()}\n\n"
-                f"{lo_name} · {lo_elev:,}m · {format_score_inline(lo_score)}\n"
-                f"{hi_name} · {hi_elev:,}m · {format_score_inline(hi_score)}\n\n"
+                f"{lo_name} · {lo_elev:,}m · {format_score(lo_score)}\n"
+                f"{hi_name} · {hi_elev:,}m · {format_score(hi_score)}\n\n"
                 f"Same month. Same score. ↑{hi_elev - lo_elev:,}m apart.\n\n"
                 f"NakshIQ doesn't tell you where to go. "
                 f"It tells you what the data says — for {TOTAL_DESTINATIONS} destinations.\n\n"
@@ -1509,8 +2063,8 @@ def copy_state_showdown(dest_a: dict, dest_b: dict, platform: str) -> str:
         if platform == "facebook":
             return (
                 f"{a_state.upper()} vs {b_state.upper()} — {month_name()} data\n\n"
-                f"📍 {a_name} ({a_state}) · {format_score_inline(a_score)}\n"
-                f"📍 {b_name} ({b_state}) · {format_score_inline(b_score)}\n\n"
+                f"📍 {a_name} ({a_state}) · {format_score(a_score)}\n"
+                f"📍 {b_name} ({b_state}) · {format_score(b_score)}\n\n"
                 f"Same month, different states, different experience.\n"
                 f"Which state wins YOUR travel style this {month_name()}?\n\n"
                 f"{a_name} → {url_a}\n{b_name} → {url_b}\n\n{tags}"
@@ -1518,8 +2072,8 @@ def copy_state_showdown(dest_a: dict, dest_b: dict, platform: str) -> str:
         else:
             return (
                 f"{a_state.upper()} vs {b_state.upper()} · {month_name().upper()}\n\n"
-                f"📍 {a_name} · {format_score_inline(a_score)}\n"
-                f"📍 {b_name} · {format_score_inline(b_score)}\n\n"
+                f"📍 {a_name} · {format_score(a_score)}\n"
+                f"📍 {b_name} · {format_score(b_score)}\n\n"
                 f"Not opinions. Not listicles. Monthly scores from "
                 f"{TOTAL_DESTINATIONS} destinations.\n\n"
                 f"Compare → {url_a}\n\n{tags}"
@@ -1542,8 +2096,8 @@ def copy_difficulty_spectrum(easy_dest: dict, hard_dest: dict,
         if platform == "facebook":
             return (
                 f"EASY vs HARD — both score high this {month_name()}\n\n"
-                f"🟢 {e_name} · {e_diff} · {format_score_inline(e_score)}\n"
-                f"🔴 {h_name} · {h_diff} · {format_score_inline(h_score)}\n\n"
+                f"🟢 {e_name} · {e_diff} · {format_score(e_score)}\n"
+                f"🔴 {h_name} · {h_diff} · {format_score(h_score)}\n\n"
                 f"One's a relaxed getaway. One's a proper challenge.\n"
                 f"The data says both are excellent right now.\n\n"
                 f"Pick your speed → {url_e}\n\n{tags}"
@@ -1551,8 +2105,8 @@ def copy_difficulty_spectrum(easy_dest: dict, hard_dest: dict,
         else:
             return (
                 f"🟢 EASY vs 🔴 HARD · {month_name().upper()}\n\n"
-                f"{e_name} · {e_diff} · {format_score_inline(e_score)}\n"
-                f"{h_name} · {h_diff} · {format_score_inline(h_score)}\n\n"
+                f"{e_name} · {e_diff} · {format_score(e_score)}\n"
+                f"{h_name} · {h_diff} · {format_score(h_score)}\n\n"
                 f"Same month. Same score. Totally different trip.\n\n"
                 f"NakshIQ scores difficulty alongside everything else — "
                 f"roads, weather, crowds, safety.\n\n"
@@ -1578,7 +2132,7 @@ def copy_underdog_spotlight(dest: dict, platform: str) -> str:
         if platform == "facebook":
             return (
                 f"UNDERDOG ALERT: {name.upper()}\n\n"
-                f"{stars} {format_score_inline(score)} · {elev:,}m · {state}\n\n"
+                f"{stars} {format_score(score)} · {elev:,}m · {state}\n\n"
                 f"{tag}\n\n"
                 f"No one's talking about {name}. The data says they should be.\n"
                 f"Easy access. Low elevation. High score. "
@@ -1588,7 +2142,7 @@ def copy_underdog_spotlight(dest: dict, platform: str) -> str:
         else:
             return (
                 f"💎 UNDERDOG · {month_name().upper()}\n"
-                f"{name.upper()} · {stars} {format_score_inline(score)}\n"
+                f"{name.upper()} · {stars} {format_score(score)}\n"
                 f"↑{elev:,}m · {state}\n\n"
                 f"{tag}\n\n"
                 f"Easy access. No hype. The data speaks.\n"
@@ -1613,11 +2167,11 @@ def copy_this_month_only(dest: dict, prev_score: int, next_score: int,
         if platform == "facebook":
             return (
                 f"🎯 {name.upper()} — THIS MONTH ONLY\n\n"
-                f"Last month: {format_score_inline(prev_score)}\n"
-                f"Right now: {format_score_inline(score)} ★★★★★\n"
-                f"Next month: {format_score_inline(next_score)}\n\n"
+                f"Last month: {format_score(prev_score)}\n"
+                f"Right now: {format_score(score)} ★★★★★\n"
+                f"Next month: {format_score(next_score)}\n\n"
                 f"{name} has a narrow window. The conditions that make it "
-                f"{format_score_inline(score)} won't last.\n\n"
+                f"{format_score(score)} won't last.\n\n"
                 f"This isn't FOMO. It's data. {TOTAL_DESTINATIONS} destinations, "
                 f"scored monthly.\n\n"
                 f"Plan fast → {url}\n\n{tags}"
@@ -1626,9 +2180,9 @@ def copy_this_month_only(dest: dict, prev_score: int, next_score: int,
             return (
                 f"🎯 NARROW WINDOW · {month_name().upper()}\n"
                 f"{name.upper()} · {state}\n\n"
-                f"Last month: {format_score_inline(prev_score)}\n"
-                f"NOW: {format_score_inline(score)} ★★★★★\n"
-                f"Next month: {format_score_inline(next_score)}\n\n"
+                f"Last month: {format_score(prev_score)}\n"
+                f"NOW: {format_score(score)} ★★★★★\n"
+                f"Next month: {format_score(next_score)}\n\n"
                 f"The data says go now or wait a year.\n\n"
                 f"Save → {url}\n\n{tags}"
             ).strip()
@@ -1653,7 +2207,7 @@ def copy_adventure_pick(dest: dict, platform: str) -> str:
         if platform == "facebook":
             return (
                 f"🧗 ADVENTURE PICK: {name.upper()}\n\n"
-                f"{stars} {format_score_inline(score)} · {elev:,}m · {diff} · {state}\n\n"
+                f"{stars} {format_score(score)} · {elev:,}m · {diff} · {state}\n\n"
                 f"{tag}\n\n"
                 f"Not every destination is a weekend escape. {name} asks "
                 f"something of you — and the data says {month_name()} is the month to answer.\n\n"
@@ -1662,7 +2216,7 @@ def copy_adventure_pick(dest: dict, platform: str) -> str:
         else:
             return (
                 f"🧗 ADVENTURE · {month_name().upper()}\n"
-                f"{name.upper()} · {stars} {format_score_inline(score)}\n"
+                f"{name.upper()} · {stars} {format_score(score)}\n"
                 f"↑{elev:,}m · {diff} · {state}\n\n"
                 f"{tag}\n\n"
                 f"For those who don't do easy.\n"
@@ -1701,26 +2255,26 @@ def copy_weekend_escape(dest: dict, platform: str) -> str:
         import hashlib
         hook_seed = int(hashlib.md5(name.encode()).hexdigest(), 16) % 6
         hooks_fb = [
-            f"{name} scores {format_score_inline(score)} this {month_name()}. You don't need a week off — just 48 hours and a plan.",
-            f"Two days. {name}. {format_score_inline(score)} confidence score. The data says go — this {month_name()}.",
-            f"Skip the long-leave request. {name} is a {format_score_inline(score)} this {month_name()} and 48 hours is all you need.",
-            f"Your next 48 hours could look like {name} — {format_score_inline(score)}, {diff.lower()} access, {state}.",
-            f"{name} this {month_name()}? {format_score_inline(score)}. {diff} access. Two days is enough to do it right.",
-            f"Friday evening to Sunday night. {name}. {format_score_inline(score)} this {month_name()}. Data-backed, not guesswork.",
+            f"{name} scores {format_score(score)} this {month_name()}. You don't need a week off — just 48 hours and a plan.",
+            f"Two days. {name}. {format_score(score)} confidence score. The data says go — this {month_name()}.",
+            f"Skip the long-leave request. {name} is a {format_score(score)} this {month_name()} and 48 hours is all you need.",
+            f"Your next 48 hours could look like {name} — {format_score(score)}, {diff.lower()} access, {state}.",
+            f"{name} this {month_name()}? {format_score(score)}. {diff} access. Two days is enough to do it right.",
+            f"Friday evening to Sunday night. {name}. {format_score(score)} this {month_name()}. Data-backed, not guesswork.",
         ]
         hooks_ig = [
-            f"48 hours. {name}. {format_score_inline(score)} this {month_name()}.",
-            f"Two days. {diff} access. {format_score_inline(score)} confidence.",
+            f"48 hours. {name}. {format_score(score)} this {month_name()}.",
+            f"Two days. {diff} access. {format_score(score)} confidence.",
             f"Skip the week off. {name} works in 48 hours.",
-            f"Friday to Sunday. {name}. {format_score_inline(score)}.",
-            f"{name} — {format_score_inline(score)}. {diff}. Two days.",
-            f"48 hrs is enough. {name}. {format_score_inline(score)}.",
+            f"Friday to Sunday. {name}. {format_score(score)}.",
+            f"{name} — {format_score(score)}. {diff}. Two days.",
+            f"48 hrs is enough. {name}. {format_score(score)}.",
         ]
 
         if platform == "facebook":
             parts = [
                 f"🌿 WEEKEND ESCAPE: {name.upper()}\n",
-                f"{stars} {format_score_inline(score)} · {elev:,}m · {diff} access · {state}\n",
+                f"{stars} {format_score(score)} · {elev:,}m · {diff} access · {state}\n",
             ]
             if detail:
                 parts.append(f"\n{detail}\n")
@@ -1730,7 +2284,7 @@ def copy_weekend_escape(dest: dict, platform: str) -> str:
         else:
             parts = [
                 f"🌿 WEEKEND ESCAPE · {month_name().upper()}\n",
-                f"{name.upper()} · {stars} {format_score_inline(score)}\n",
+                f"{name.upper()} · {stars} {format_score(score)}\n",
                 f"↑{elev:,}m · {diff} · {state}\n",
             ]
             if detail:
@@ -1941,6 +2495,521 @@ def copy_trek_intel(trek: dict, dest_map: dict, platform: str) -> str:
 
 
 # ─────────────────────────────────────────────────────────────────────────────
+# TIER 6 — closes the data-vertical coverage gap (added 2026-05-10)
+# -----------------------------------------------------------------------------
+# Five missing verticals + one fragmented angle become first-class formats:
+#   stays_pick       — editor-curated stay (signature_experience, why_nakshiq)
+#   emergency_intel  — per-dest SOS (police, hospital, local_helpers contact)
+#   viral_eats_pick  — viral-on-Reels eatery + honest review
+#   camping_intel    — camping spot (permit, water, facilities)
+#   confidence_intel — unified reach + sleep + fuel + network report card
+#   collection_series — themed multi-post (root bridges / sacred lakes / etc)
+# Voice: same as Tier 2.5 (data-first, decision-ready, no hype).
+# ─────────────────────────────────────────────────────────────────────────────
+
+
+def copy_stays_pick(stay: dict, dest_map: dict, platform: str) -> str:
+    """Editor-curated stay pick — signature experience drives the hook.
+
+    Inputs (per /api/content?type=stays):
+      destination_id, destination_name, state, slot, name, property_type,
+      price_band, why_nakshiq, signature_experience, contact_only.
+
+    Voice anchor: "Where to actually sleep — picked, not advertised."
+    """
+    try:
+        name      = (stay.get("name") or "").strip()
+        dest_id   = stay.get("destination_id")
+        dest_name = stay.get("destination_name") or (dest_map.get(dest_id, {}).get("name") if dest_id else None)
+        prop_type = (stay.get("property_type") or "").strip()
+        price     = (stay.get("price_band") or "").strip()
+        why       = (stay.get("why_nakshiq") or "").strip()
+        sig       = (stay.get("signature_experience") or "").strip()
+        contact_only = bool(stay.get("contact_only"))
+        dest_state = (stay.get("state") or "").strip()
+
+        if not name or not dest_id:
+            return copy_score_card(dest_map.get(dest_id) or {}, platform)
+
+        if dest_id in dest_map:
+            url = dest_url(dest_map[dest_id], "social", "post", "stays-pick",
+                           content=build_utm_content(dest_id, "stays_pick"))
+        else:
+            url = utm("https://nakshiq.com/en", "social", "post", "stays-pick",
+                      content=build_utm_content(dest_id, "stays_pick"))
+
+        meta_parts: list[str] = []
+        if prop_type:
+            meta_parts.append(prop_type.title())
+        if price:
+            meta_parts.append(price)
+        if contact_only:
+            meta_parts.append("contact-only booking")
+        meta_line = " · ".join(meta_parts)
+
+        hashtag_inputs = [name.replace(" ", "")[:24] or "Stay"]
+        if dest_state:
+            hashtag_inputs.append(dest_state.replace(" ", ""))
+        hashtag_inputs.extend(["StayIndia", "NakshIQ"])
+        tags = hashtag(*hashtag_inputs[:5])
+
+        if platform == "facebook":
+            return (
+                f"🛏️ STAY PICK — {name.upper()}\n"
+                + (f"📍 {dest_name}\n" if dest_name else "")
+                + (f"\n{meta_line}\n" if meta_line else "")
+                + (f"\n{why}\n" if why else "")
+                + (f"\n💡 Signature: {sig}\n" if sig else "")
+                + f"\nWhere to actually sleep in {dest_name or 'India'} — picked, not advertised. → {url}\n\n{tags}"
+            ).strip()
+        else:
+            return (
+                f"🛏️ {name.upper()}\n"
+                + (f"📍 {dest_name}\n\n" if dest_name else "\n")
+                + (f"{meta_line}\n" if meta_line else "")
+                + (f"\n{why}\n" if why else "")
+                + (f"\n💡 {sig}\n" if sig else "")
+                + f"\nNo sponsored picks — ever.\n↓ Full stay guide → {url}\n\n{tags}"
+            ).strip()
+    except Exception as e:
+        log.warning(f"copy_stays_pick error: {e}")
+        if stay.get("destination_id") and stay["destination_id"] in dest_map:
+            return copy_score_card(dest_map[stay["destination_id"]], platform)
+        return ""
+
+
+def copy_emergency_intel(sos: dict, dest_map: dict, platform: str) -> str:
+    """Per-dest emergency intel — phones + nearest hospital + one local helper.
+
+    Inputs (per /api/content?type=emergency):
+      destination_id, destination_name, state, police, ambulance,
+      nearest_hospital, nearest_hospital_km, women_helpline, mountain_rescue,
+      rescue_contact, local_helpers (array of {name, role, contact, note}).
+
+    Voice anchor: "If something goes wrong here, this is who to call."
+    NakshIQ moat: no other India travel account posts real per-dest contacts.
+    """
+    try:
+        dest_id   = sos.get("destination_id")
+        dest_name = sos.get("destination_name") or (dest_map.get(dest_id, {}).get("name") if dest_id else None)
+        dest_state = (sos.get("state") or "").strip()
+        if not dest_id or not dest_name:
+            return ""
+
+        helpers = sos.get("local_helpers") or []
+        helper = helpers[0] if isinstance(helpers, list) and helpers else None
+
+        # Phone lines — only show fields that are present and non-trivial
+        phone_lines: list[str] = []
+        if sos.get("police"):
+            phone_lines.append(f"🚓 Police: {sos['police']}")
+        if sos.get("ambulance"):
+            phone_lines.append(f"🚑 Ambulance: {sos['ambulance']}")
+        if sos.get("nearest_hospital"):
+            km = sos.get("nearest_hospital_km")
+            km_str = f" ({km}km away)" if km else ""
+            phone_lines.append(f"🏥 {sos['nearest_hospital']}{km_str}")
+        if sos.get("mountain_rescue"):
+            phone_lines.append(f"⛰️ Mountain rescue: {sos['mountain_rescue']}")
+        elif sos.get("rescue_contact"):
+            phone_lines.append(f"🆘 Rescue: {sos['rescue_contact']}")
+        if sos.get("women_helpline"):
+            phone_lines.append(f"👩 Women helpline: {sos['women_helpline']}")
+
+        phone_block = "\n".join(phone_lines[:4])  # cap at 4 lines for visual
+
+        # Helper card
+        helper_block = ""
+        if helper and helper.get("name") and helper.get("contact"):
+            helper_role = (helper.get("role") or "").strip()
+            helper_contact = (helper.get("contact") or "").strip()
+            helper_block = (
+                f"\n🤝 Local helper: {helper['name']}"
+                + (f" ({helper_role})" if helper_role else "")
+                + f"\n📞 {helper_contact}"
+            )
+
+        if dest_id in dest_map:
+            url = dest_url(dest_map[dest_id], "social", "post", "emergency-intel",
+                           content=build_utm_content(dest_id, "emergency_intel"))
+        else:
+            url = utm(f"https://nakshiq.com/en/destination/{dest_id}", "social", "post",
+                      "emergency-intel", content=build_utm_content(dest_id, "emergency_intel"))
+
+        hashtag_inputs = [dest_name.replace(" ", "")[:24] or "TravelSafety"]
+        if dest_state:
+            hashtag_inputs.append(dest_state.replace(" ", ""))
+        hashtag_inputs.extend(["TravelSafetyIndia", "EmergencyIntel", "NakshIQ"])
+        tags = hashtag(*hashtag_inputs[:5])
+
+        if platform == "facebook":
+            return (
+                f"🚨 IF SOMETHING GOES WRONG IN {dest_name.upper()}\n\n"
+                f"This is who to call. Verified, not crowdsourced.\n\n"
+                + (f"{phone_block}\n" if phone_block else "")
+                + (helper_block + "\n" if helper_block else "")
+                + f"\nNakshIQ verifies every contact through district sources. No tourist board theatre.\n"
+                f"Full safety brief for {dest_name} → {url}\n\n{tags}"
+            ).strip()
+        else:
+            return (
+                f"🚨 EMERGENCY INTEL — {dest_name.upper()}\n"
+                + (f"📍 {dest_state}\n" if dest_state else "")
+                + f"\nIf something goes wrong here, this is who to call.\n\n"
+                + (f"{phone_block}\n" if phone_block else "")
+                + (helper_block + "\n" if helper_block else "")
+                + f"\n💾 Save this — pull it up before you arrive.\n↓ Full safety brief → {url}\n\n{tags}"
+            ).strip()
+    except Exception as e:
+        log.warning(f"copy_emergency_intel error: {e}")
+        if sos.get("destination_id") and sos["destination_id"] in dest_map:
+            return copy_score_card(dest_map[sos["destination_id"]], platform)
+        return ""
+
+
+def copy_viral_eats_pick(viral: dict, dest_map: dict, platform: str) -> str:
+    """Viral-on-X eatery — different angle from local_eateries (insider) — this
+    one is "the place that went viral, here's the honest take".
+
+    Inputs (per /api/content?type=viral_eats):
+      name, location, type, famous_for, viral_on, price_range, honest_review,
+      destination_id, destination_name, state.
+
+    Voice anchor: "Viral on Reels. Here's whether it's actually worth it."
+    """
+    try:
+        name      = (viral.get("name") or "").strip()
+        location  = (viral.get("location") or "").strip()
+        kind      = (viral.get("type") or "").strip()
+        famous    = (viral.get("famous_for") or "").strip()
+        viral_on  = (viral.get("viral_on") or "").strip()
+        price     = (viral.get("price_range") or "").strip()
+        review    = (viral.get("honest_review") or "").strip()
+        dest_id   = viral.get("destination_id")
+        dest_name = viral.get("destination_name") or (dest_map.get(dest_id, {}).get("name") if dest_id else None)
+        dest_state = (viral.get("state") or "").strip()
+
+        if not name:
+            return copy_score_card(dest_map.get(dest_id) or {}, platform)
+
+        if dest_id and dest_id in dest_map:
+            url = dest_url(dest_map[dest_id], "social", "post", "viral-eats",
+                           content=build_utm_content(dest_id, "viral_eats_pick"))
+        else:
+            url = utm("https://nakshiq.com/en", "social", "post", "viral-eats",
+                      content=build_utm_content(dest_id, "viral_eats_pick"))
+
+        meta_parts: list[str] = []
+        if kind:
+            meta_parts.append(kind.replace("_", " ").title())
+        if price:
+            meta_parts.append(price)
+        if viral_on:
+            meta_parts.append(f"Viral on {viral_on}")
+        meta_line = " · ".join(meta_parts)
+
+        hashtag_inputs = [name.replace(" ", "")[:24] or "FoodIndia"]
+        if dest_state:
+            hashtag_inputs.append(dest_state.replace(" ", ""))
+        hashtag_inputs.extend(["ViralEats", "FoodieIndia", "NakshIQ"])
+        tags = hashtag(*hashtag_inputs[:5])
+
+        if platform == "facebook":
+            return (
+                f"🍴 VIRAL — {name.upper()}\n"
+                + (f"📍 {location or dest_name}\n" if (location or dest_name) else "")
+                + (f"\n{meta_line}\n" if meta_line else "")
+                + (f"\nFamous for: {famous}\n" if famous else "")
+                + (f"\nHonest take: {review}\n" if review else "")
+                + f"\nWe rate places, not promote them. No sponsorships.\n"
+                f"Full {dest_name or name} food guide → {url}\n\n{tags}"
+            ).strip()
+        else:
+            return (
+                f"🍴 {name.upper()}\n"
+                + (f"📍 {location or dest_name}\n\n" if (location or dest_name) else "\n")
+                + (f"{meta_line}\n" if meta_line else "")
+                + (f"\nFamous for: {famous}\n" if famous else "")
+                + (f"\nHonest take: {review}\n" if review else "")
+                + f"\nWe rate, never promote.\n💬 Worth the queue? Comment below.\n↓ Full guide → {url}\n\n{tags}"
+            ).strip()
+    except Exception as e:
+        log.warning(f"copy_viral_eats_pick error: {e}")
+        if viral.get("destination_id") and viral["destination_id"] in dest_map:
+            return copy_score_card(dest_map[viral["destination_id"]], platform)
+        return ""
+
+
+def copy_camping_intel(camp: dict, dest_map: dict, platform: str) -> str:
+    """Camping spot brief — permit + water + facilities + month-window.
+
+    Inputs (per /api/content?type=camping):
+      name, destination_id, destination_name, state, elevation_m, open_months,
+      permit_required, water_source, facilities, description.
+
+    Voice anchor: "Camp here this month — here's what to know before you pitch."
+    """
+    try:
+        name      = (camp.get("name") or "").strip()
+        dest_id   = camp.get("destination_id")
+        dest_name = camp.get("destination_name") or (dest_map.get(dest_id, {}).get("name") if dest_id else None)
+        dest_state = (camp.get("state") or "").strip()
+        elev      = camp.get("elevation_m")
+        permit    = bool(camp.get("permit_required"))
+        water_raw = camp.get("water_source")
+        # water_source is a bool in this table — True = available on-site, False = carry your own.
+        # Future schema migration may make it a string description; handle both shapes defensively.
+        if isinstance(water_raw, bool):
+            water = "Available on-site" if water_raw else "Carry your own"
+        else:
+            water = (str(water_raw) if water_raw else "").strip()
+        facilities_raw = camp.get("facilities")
+        # facilities is a free-text string in this table, but the API serializer
+        # may pass an array shape later — handle both.
+        if isinstance(facilities_raw, list):
+            facilities_str = ", ".join(facilities_raw[:3])
+        else:
+            facilities_str = (str(facilities_raw) if facilities_raw else "").strip()
+        desc      = (camp.get("description") or "").strip()
+
+        if not name:
+            return copy_score_card(dest_map.get(dest_id) or {}, platform)
+
+        if dest_id and dest_id in dest_map:
+            url = dest_url(dest_map[dest_id], "social", "post", "camping-intel",
+                           content=build_utm_content(dest_id, "camping_intel"))
+        else:
+            url = utm("https://nakshiq.com/en/camping", "social", "post", "camping-intel",
+                      content=build_utm_content(dest_id, "camping_intel"))
+
+        stat_parts: list[str] = []
+        if elev:
+            stat_parts.append(f"↑ {int(elev):,}m")
+        stat_parts.append(month_name())
+        if permit:
+            stat_parts.append("Permit required")
+        else:
+            stat_parts.append("No permit")
+        stat_line = " · ".join(stat_parts)
+
+        info_parts: list[str] = []
+        if water:
+            info_parts.append(f"💧 Water: {water}")
+        if facilities_str:
+            info_parts.append(f"🛠 {facilities_str}")
+        info_block = "\n".join(info_parts)
+
+        hashtag_inputs = [name.replace(" ", "")[:24] or "Camping"]
+        if dest_state:
+            hashtag_inputs.append(dest_state.replace(" ", ""))
+        hashtag_inputs.extend(["CampingIndia", "Camping", "NakshIQ"])
+        tags = hashtag(*hashtag_inputs[:5])
+
+        if platform == "facebook":
+            return (
+                f"⛺ CAMPING INTEL — {name.upper()}\n"
+                + (f"📍 {dest_name}\n" if dest_name else "")
+                + (f"\n{stat_line}\n" if stat_line else "")
+                + (f"\n{info_block}\n" if info_block else "")
+                + (f"\n{desc}\n" if desc else "")
+                + f"\nFull intel — when, what to pack, what nobody tells you → {url}\n\n{tags}"
+            ).strip()
+        else:
+            return (
+                f"⛺ {name.upper()}\n"
+                + (f"📍 {dest_name}\n\n" if dest_name else "\n")
+                + (f"{stat_line}\n" if stat_line else "")
+                + (f"\n{info_block}\n" if info_block else "")
+                + (f"\n{desc}\n" if desc else "")
+                + f"\n💾 Save before you pitch.\n↓ Full camping intel → {url}\n\n{tags}"
+            ).strip()
+    except Exception as e:
+        log.warning(f"copy_camping_intel error: {e}")
+        if camp.get("destination_id") and camp["destination_id"] in dest_map:
+            return copy_score_card(dest_map[camp["destination_id"]], platform)
+        return ""
+
+
+def copy_confidence_intel(dest: dict, platform: str) -> str:
+    """Unified infrastructure report card — all 4 confidence cards in one post.
+
+    Voice anchor: "Everything you need before you drive in."
+    Pulls from dest's confidence_cards JSONB (already on every dest record):
+      reach (road_condition, public_transport)
+      sleep (options_count, price_range_inr)
+      fuel (nearest_petrol_pump, carry_extra)
+      network (jio, airtel, bsnl, vi)
+    """
+    try:
+        name = (dest.get("name") or "").strip()
+        dest_id = dest.get("id") or dest.get("destination_id")
+        dest_state = (dest.get("state") or "").strip()
+        cc_raw = dest.get("confidence_cards") or {}
+        if isinstance(cc_raw, list):
+            cc_raw = cc_raw[0] if cc_raw else {}
+        if not isinstance(cc_raw, dict):
+            cc_raw = {}
+
+        reach   = cc_raw.get("reach") or {}
+        sleep   = cc_raw.get("sleep") or {}
+        fuel    = cc_raw.get("fuel") or {}
+        network = cc_raw.get("network") or {}
+
+        rows: list[str] = []
+        if reach.get("road_condition"):
+            rows.append(f"🚗 Reach: {reach['road_condition']}")
+        elif reach.get("from_nearest_city"):
+            rows.append(f"🚗 Reach: {reach['from_nearest_city']}")
+        if sleep.get("options_count"):
+            price = sleep.get("price_range_inr")
+            price_str = f", ₹{price}/night" if price else ""
+            rows.append(f"🛏️ Sleep: {sleep['options_count']} options{price_str}")
+        elif sleep.get("note"):
+            rows.append(f"🛏️ Sleep: {sleep['note']}")
+        if fuel.get("nearest_petrol_pump"):
+            warn = " ⚠ carry extra" if fuel.get("carry_extra") else ""
+            rows.append(f"⛽ Fuel: {fuel['nearest_petrol_pump']}{warn}")
+        elif fuel.get("note"):
+            rows.append(f"⛽ Fuel: {fuel['note']}")
+        nets = []
+        if network.get("jio"):    nets.append("Jio")
+        if network.get("airtel"): nets.append("Airtel")
+        if network.get("bsnl"):   nets.append("BSNL")
+        if network.get("vi"):     nets.append("Vi")
+        if nets:
+            rows.append(f"📶 Network: {', '.join(nets)}")
+        elif network.get("note"):
+            rows.append(f"📶 Network: {network['note']}")
+
+        if len(rows) < 2:
+            # Not enough card data — degrade rather than post a thin caption.
+            return copy_score_card(dest, platform)
+
+        url = dest_url(dest, "social", "post", "confidence-intel",
+                       content=build_utm_content(dest_id, "confidence_intel"))
+
+        rows_block = "\n".join(rows)
+        month = month_name()
+
+        hashtag_inputs = [name.replace(" ", "")[:24] or "TravelIndia"]
+        if dest_state:
+            hashtag_inputs.append(dest_state.replace(" ", ""))
+        hashtag_inputs.extend(["TravelIntel", "RoadTripIndia", "NakshIQ"])
+        tags = hashtag(*hashtag_inputs[:5])
+
+        if platform == "facebook":
+            return (
+                f"📋 {name.upper()} — {month.upper()} INFRASTRUCTURE REPORT\n\n"
+                f"Everything you need to know before you drive in:\n\n"
+                f"{rows_block}\n\n"
+                f"Verified, not crowdsourced. NakshIQ scores every road, hospital, fuel pump.\n"
+                f"Full report card → {url}\n\n{tags}"
+            ).strip()
+        else:
+            return (
+                f"📋 {name.upper()} INFRA — {month}\n"
+                + (f"📍 {dest_state}\n\n" if dest_state else "\n")
+                + f"Before you drive in, check this:\n\n"
+                + f"{rows_block}\n\n"
+                + f"💾 Save this — don't lose phone signal mid-route without knowing.\n↓ Full report → {url}\n\n{tags}"
+            ).strip()
+    except Exception as e:
+        log.warning(f"copy_confidence_intel error: {e}")
+        return copy_score_card(dest, platform)
+
+
+def copy_collection_series(collection: dict, dest_map: dict, dest_map_full: dict, series_index: int, platform: str) -> str:
+    """One post in a themed collection mini-series (e.g. "Root Bridge #3/6").
+
+    Inputs (per /api/content?type=collections):
+      id, name, description, items (array of dest ids), itemCount, image.
+
+    Voice anchor: "All N {theme}, ranked. This is #{i}."
+    Differs from collection_spotlight (which posts the whole collection at once).
+    """
+    try:
+        coll_id   = collection.get("id") or ""
+        coll_name = (collection.get("name") or "").strip()
+        items     = collection.get("items") or []
+        total     = collection.get("itemCount") or len(items) if isinstance(items, list) else 0
+
+        if not items or not isinstance(items, list) or total < 2:
+            return copy_score_card(_first_qualifying_dest(dest_map_full), platform)
+
+        # Pick item by series_index (mod total) — caller may iterate the series.
+        idx = max(0, min(series_index, total - 1))
+        raw_item = items[idx]
+        # Items are stored as either bare dest-id strings (legacy) or
+        # {note, rank, destination_id} objects (current). Handle both.
+        if isinstance(raw_item, str):
+            item_id = raw_item
+            item_note = ""
+        elif isinstance(raw_item, dict):
+            item_id = raw_item.get("destination_id") or raw_item.get("id")
+            item_note = (raw_item.get("note") or "").strip()
+        else:
+            item_id = None
+            item_note = ""
+        if not item_id:
+            return copy_score_card(_first_qualifying_dest(dest_map_full), platform)
+
+        item_dest = dest_map_full.get(item_id) or dest_map.get(item_id) or {}
+        if not item_dest:
+            return copy_score_card(_first_qualifying_dest(dest_map_full), platform)
+
+        item_name = (item_dest.get("name") or "").strip()
+        item_score = item_dest.get("score") or 0
+        score_str = format_score(item_score) if item_score else ""
+        item_state = (item_dest.get("state") or "").strip()
+
+        url = dest_url(item_dest, "social", "post", "collection-series",
+                       content=build_utm_content(item_id, f"collection_series_{coll_id}"))
+
+        # Use collection name as the prefix — strip "best of" / "top" prefixes
+        clean_coll = coll_name.replace("Best of ", "").replace("Top ", "").strip()
+
+        hashtag_inputs = [item_name.replace(" ", "")[:24] or clean_coll.replace(" ", "")[:24]]
+        if item_state:
+            hashtag_inputs.append(item_state.replace(" ", ""))
+        hashtag_inputs.extend([clean_coll.replace(" ", "")[:18], "TravelIndia", "NakshIQ"])
+        tags = hashtag(*hashtag_inputs[:5])
+
+        position = f"#{idx + 1}/{total}"
+
+        if platform == "facebook":
+            return (
+                f"{clean_coll.upper()} — {position}\n"
+                f"📍 {item_name}{f' ({item_state})' if item_state else ''}"
+                + (f"\nNakshIQ score: {score_str}" if score_str else "")
+                + (f"\n\n{item_note}" if item_note else "")
+                + f"\n\nThis is #{idx + 1} of {total} in our {clean_coll.lower()} series. "
+                f"Each scored monthly — no sponsorships, no vibes.\n\n"
+                f"Full series → https://www.nakshiq.com/en/collections/{coll_id}\n"
+                f"This destination → {url}\n\n{tags}"
+            ).strip()
+        else:
+            return (
+                f"{clean_coll.upper()} {position}\n"
+                f"📍 {item_name}\n"
+                + (f"⭐ {score_str}\n" if score_str else "")
+                + (f"\n{item_note}\n" if item_note else "")
+                + f"\nThis is #{idx + 1} of {total}. All scored, none sponsored.\n\n"
+                f"💾 Save the series.\n↓ {item_name} guide → {url}\n\n{tags}"
+            ).strip()
+    except Exception as e:
+        log.warning(f"copy_collection_series error: {e}")
+        return ""
+
+
+def _first_qualifying_dest(dest_map_full: dict) -> dict:
+    """Helper for collection_series fallback — return any dest with score >=4."""
+    for d in dest_map_full.values():
+        if (d.get("score") or 0) >= 4:
+            return d
+    return next(iter(dest_map_full.values()), {})
+
+
+# ─────────────────────────────────────────────────────────────────────────────
 # MOAT COPY FUNCTIONS
 # -----------------------------------------------------------------------------
 # These are the brand/identity/methodology posts that build the acquisition
@@ -1993,13 +3062,13 @@ def copy_skip_list(dest: dict, platform: str,
         # Forward-looking Skip List: "5/5 now but dropping to 2/5 in July"
         current_score = dest.get("score", 0)
         header = (f"🚩 UPCOMING SKIP LIST — {forward_month.upper()}\n\n"
-                  f"{name.upper()} ({state}): {format_score_inline(current_score)} this {this_mo.title()}.\n"
-                  f"{format_score_inline(forward_score)} in {forward_month}.")
+                  f"{name.upper()} ({state}): {format_score(current_score)} this {this_mo.title()}.\n"
+                  f"{format_score(forward_score)} in {forward_month}.")
     else:
         # Standard Skip List: destination scoring low THIS month
         score  = dest.get("score", 0)
         header = (f"🚩 SKIP LIST — {this_mo} {date.today().year}\n\n"
-                  f"{name.upper()} ({state}): {format_score_inline(score)} this month.")
+                  f"{name.upper()} ({state}): {format_score(score)} this month.")
 
     if platform == "facebook":
         return (
@@ -2112,7 +3181,7 @@ def copy_data_provenance(dest: dict, platform: str) -> str:
     url   = dest_url(dest, "social", "post", "score-card")
     if platform == "facebook":
         return (
-            f"WHY {name.upper()} SCORES {format_score_inline(score)} IN {mon.upper()}\n\n"
+            f"WHY {name.upper()} SCORES {format_score(score)} IN {mon.upper()}\n\n"
             f"This isn't a vibe check. Here's what went into the score:\n\n"
             f"• Elevation: ↑ {elev:,}m (altitude tolerance factor)\n"
             f"• State: {state}\n"
@@ -2126,7 +3195,7 @@ def copy_data_provenance(dest: dict, platform: str) -> str:
                       name.replace(" ", ""), state.replace(" ", ""), "NakshIQ")
         ).strip()
     return (
-        f"WHY {name.upper()}: {format_score_inline(score)}\n"
+        f"WHY {name.upper()}: {format_score(score)}\n"
         f"· {mon.upper()} ·\n\n"
         f"↑ {elev:,}m · {state}\n"
         f"Difficulty: {diff}\n\n"
@@ -2147,7 +3216,7 @@ def copy_same_place_12_months(dest: dict, monthly_scores: dict, platform: str) -
     months_abbr = ["JAN","FEB","MAR","APR","MAY","JUN",
                    "JUL","AUG","SEP","OCT","NOV","DEC"]
     lines = "\n".join(
-        f"  {months_abbr[i]}: {format_score(monthly_scores.get(i+1)) if monthly_scores.get(i+1) is not None else '?'}/{SCORE_MAX}"
+        f"  {months_abbr[i]}: {format_score(monthly_scores.get(i+1))}"
         for i in range(12)
     )
     if platform == "facebook":
@@ -2262,20 +3331,45 @@ def _pick_kid_friendly(pool: list) -> dict:
     return sorted(pool, key=rank)[0]
 
 
-def _collection_image_dest(collection: dict, dest_map: dict) -> dict | None:
-    """Return a destination object whose image we can borrow for a collection post."""
-    for item in collection.get("items", []):
+def _collection_image_dest(collection: dict, dest_map: dict,
+                           dest_map_full: dict | None = None) -> dict | None:
+    """Return a destination object whose image we can borrow for a collection post.
+
+    Two-pass lookup: prefer this month's scored pool (better hero image), fall
+    back to the full catalog. Off-season collections (e.g. monsoon beaches in
+    May) MUST still resolve to a member of the collection — never to the day's
+    shared `best` dest, which would land us with mismatches like the
+    'Best Beaches' Story carrying a Tirthan Valley image (incident 2026-05-06).
+    """
+    items = collection.get("items", [])
+    for item in items:
         did = item.get("destination_id")
         if did in dest_map:
             return dest_map[did]
+    if dest_map_full:
+        for item in items:
+            did = item.get("destination_id")
+            if did in dest_map_full:
+                return dest_map_full[did]
     return None
 
 
-def _article_image_dest(article: dict, dest_map: dict) -> dict | None:
-    """Return a destination object whose image we can borrow for a blog post."""
-    for did in (article.get("destinations") or []):
+def _article_image_dest(article: dict, dest_map: dict,
+                        dest_map_full: dict | None = None) -> dict | None:
+    """Return a destination object whose image we can borrow for a blog post.
+
+    Same two-pass pattern as _collection_image_dest. Articles that span
+    off-season destinations (e.g. a beach roundup in May) need full-catalog
+    lookup so the image stays on-topic.
+    """
+    dests = article.get("destinations") or []
+    for did in dests:
         if did in dest_map:
             return dest_map[did]
+    if dest_map_full:
+        for did in dests:
+            if did in dest_map_full:
+                return dest_map_full[did]
     return None
 
 
@@ -2347,10 +3441,18 @@ def generate_post(fmt: str, content: dict, platform: str,
     elif fmt == "collection_spotlight" and collections:
         # Pre-picked at run start so FB + IG show the same collection
         coll = content.get("__run_collection__") or collections[0]
-        # Prefer shared best (pair-consistency with score_card on split-format
-        # days like Thu). Fall back to collection's own image dest only if
-        # no shared best is available.
-        img  = best or _collection_image_dest(coll, dest_map)
+        # Image MUST come from the collection's own destinations, never from
+        # the day's shared `best`. Otherwise a "Best Beaches" collection ships
+        # with a Himalayan image (incident: 2026-05-06 IG Story for
+        # 'Best Beaches in India — Beyond Goa' carried a Tirthan Valley image).
+        img = _collection_image_dest(coll, dest_map, dest_map_full)
+        if not img:
+            log.warning(
+                f"collection_spotlight: no member of '{coll.get('name')}' "
+                f"resolves in catalog — falling back to score_card to avoid "
+                f"caption/image mismatch."
+            )
+            return copy_score_card(best, platform), best
         return copy_collection_spotlight(coll, dest_map, platform), img
 
     elif fmt == "festival_alert" and festivals:
@@ -2377,7 +3479,17 @@ def generate_post(fmt: str, content: dict, platform: str,
 
     elif fmt == "blog_promo" and articles:
         article = content.get("__run_article__") or articles[0]
-        img     = _article_image_dest(article, dest_map) or best
+        # Search the article's destinations against this month's pool first,
+        # then the full catalog. Falling through to `best` produced the
+        # Tirthan-on-a-beach-article Story on 2026-05-06.
+        img = _article_image_dest(article, dest_map, dest_map_full)
+        if not img:
+            log.warning(
+                f"blog_promo: article '{article.get('title')}' has no "
+                f"linked destinations in catalog — falling back to score_card "
+                f"to avoid caption/image mismatch."
+            )
+            return copy_score_card(best, platform), best
         return copy_blog_promo(article, platform), img
 
     elif fmt == "route_spotlight":
@@ -2386,13 +3498,32 @@ def generate_post(fmt: str, content: dict, platform: str,
             # Data not yet available — fall back silently to score_card
             return copy_score_card(best, platform), best
         route = content.get("__run_route__") or routes[0]
-        # Pick an image from the route's first stop, or best destination
-        img = best
-        if route.get("stops"):
-            first = route["stops"][0]
-            first_id = first.get("destination_id") if isinstance(first, dict) else first
-            if first_id in dest_map:
-                img = dest_map[first_id]
+        # Image MUST come from a stop on the route. Iterate every stop against
+        # this month's pool first, then the full catalog. The previous code
+        # only checked the FIRST stop and only against dest_map, so an
+        # off-season route (e.g. Ladakh circuit in May) would silently
+        # ship with `best` as its hero — same class of bug as collection_spotlight.
+        stops = route.get("stops", []) or []
+        def _stop_id(s):
+            return s.get("destination_id") if isinstance(s, dict) else s
+        img = None
+        for s in stops:
+            sid = _stop_id(s)
+            if sid in dest_map:
+                img = dest_map[sid]
+                break
+        if not img:
+            for s in stops:
+                sid = _stop_id(s)
+                if sid in dest_map_full:
+                    img = dest_map_full[sid]
+                    break
+        if not img:
+            log.warning(
+                f"route_spotlight: no stops of route '{route.get('name')}' "
+                f"resolve in catalog — falling back to score_card."
+            )
+            return copy_score_card(best, platform), best
         return copy_route_spotlight(route, dest_map, platform), img
 
     # ───────────────────────────────────────────────────────────────────────
@@ -2505,6 +3636,61 @@ def generate_post(fmt: str, content: dict, platform: str,
         pick = content.get("__run_trek__") or treks[0]
         img = dest_map_full.get(pick.get("destination_id")) or dest_map.get(pick.get("destination_id")) or best
         return copy_trek_intel(pick, dest_map, platform), img
+
+    # ───────────────────────────────────────────────────────────────────────
+    # Tier 6 — coverage-gap formats (added 2026-05-10)
+    # ───────────────────────────────────────────────────────────────────────
+    elif fmt == "stays_pick":
+        stays = content.get("stays", {}).get("data", []) or []
+        if not stays:
+            log.info("stays_pick: no stays available — falling back to score_card")
+            return copy_score_card(best, platform), best
+        pick = content.get("__run_stay__") or stays[0]
+        img = dest_map_full.get(pick.get("destination_id")) or dest_map.get(pick.get("destination_id")) or best
+        return copy_stays_pick(pick, dest_map_full or dest_map, platform), img
+
+    elif fmt == "emergency_intel":
+        sos_list = content.get("emergency", {}).get("data", []) or []
+        if len(sos_list) < 5:
+            log.info(f"emergency_intel: only {len(sos_list)} SOS records — falling back")
+            return copy_score_card(best, platform), best
+        pick = content.get("__run_sos__") or sos_list[0]
+        img = dest_map_full.get(pick.get("destination_id")) or dest_map.get(pick.get("destination_id")) or best
+        return copy_emergency_intel(pick, dest_map_full or dest_map, platform), img
+
+    elif fmt == "viral_eats_pick":
+        viral = content.get("viral_eats", {}).get("data", []) or []
+        if not viral:
+            log.info("viral_eats_pick: no viral eats available — falling back to score_card")
+            return copy_score_card(best, platform), best
+        pick = content.get("__run_viral__") or viral[0]
+        img = dest_map_full.get(pick.get("destination_id")) or dest_map.get(pick.get("destination_id")) or best
+        return copy_viral_eats_pick(pick, dest_map_full or dest_map, platform), img
+
+    elif fmt == "camping_intel":
+        camps = content.get("camping", {}).get("data", []) or []
+        if not camps:
+            log.info("camping_intel: no camping spots available — falling back to score_card")
+            return copy_score_card(best, platform), best
+        pick = content.get("__run_camp__") or camps[0]
+        img = dest_map_full.get(pick.get("destination_id")) or dest_map.get(pick.get("destination_id")) or best
+        return copy_camping_intel(pick, dest_map_full or dest_map, platform), img
+
+    elif fmt == "confidence_intel":
+        # Use `best` (already a high-scoring dest with confidence_cards loaded)
+        return copy_confidence_intel(best, platform), best
+
+    elif fmt == "collection_series":
+        colls = content.get("collections", {}).get("data", []) or []
+        eligible_colls = [c for c in colls if (c.get("itemCount") or 0) >= 5]
+        if not eligible_colls:
+            log.info("collection_series: no eligible collections — falling back to score_card")
+            return copy_score_card(best, platform), best
+        pick_coll = content.get("__run_coll_series__") or eligible_colls[0]
+        # Series index: rotates through items via state.theme_usage["coll_series"][coll_id]
+        # For now, use a deterministic-by-day picker so each day surfaces the next item.
+        series_idx = (date.today().toordinal() % max(1, pick_coll.get("itemCount") or 1))
+        return copy_collection_series(pick_coll, dest_map, dest_map_full, series_idx, platform), best
 
     else:
         return copy_score_card(best, platform), best
@@ -2758,10 +3944,16 @@ _POST_OUTCOMES_PATH = Path(__file__).parent / "data" / "post_outcomes.jsonl"
 def _log_post_outcome(*, post_id: str | None, dest_id: str | None,
                       fmt: str | None, media_id: str | None,
                       account: dict, caption: str, cta_url: str | None,
-                      utm_content: str | None):
+                      utm_content: str | None,
+                      status: str = "published"):
     """Append a structured outcome row to data/post_outcomes.jsonl after every
-    successful publish. Foundation for the weekly engagement digest (Tier 3) —
+    publish attempt. Foundation for the weekly engagement digest (Tier 3) —
     join `utm_content` against GA4 to compute per-post CTR.
+
+    `status` defaults to "published" (post confirmed by the platform). Pass
+    "queued_unconfirmed" when Outstand accepted the post but `wait_for_publish`
+    never saw a platform confirmation — surfaces ghost posts (e.g. IG Short
+    post_id=iwJiB on 2026-05-05) in the watchdog instead of dropping silently.
 
     Best-effort: never raises. Logging failure should not block the run.
     """
@@ -2769,6 +3961,7 @@ def _log_post_outcome(*, post_id: str | None, dest_id: str | None,
         _POST_OUTCOMES_PATH.parent.mkdir(parents=True, exist_ok=True)
         record = {
             "ts":            datetime.now(timezone.utc).isoformat(),
+            "status":        status,
             "post_id":       post_id,
             "dest_id":       dest_id,
             "format":        fmt,
@@ -3012,6 +4205,20 @@ def publish_reel(caption: str, account: dict, video_media: dict,
     platform = account["network"]
     # Sanitize caption BEFORE any platform call (banned tags + length cap)
     caption = _sanitize_caption(caption, platform=platform)
+
+    # Pre-publish healthcheck — same gate as publish_feed_post. Reels and YT
+    # Shorts both flow through here, so a single check covers both. Skipped on
+    # dry_run; transient network errors are tolerated (status=0).
+    cta_url = _extract_caption_url(caption)
+    if cta_url and not dry_run:
+        ok, status = _healthcheck_url(cta_url)
+        if not ok and 400 <= status < 600:
+            log.error(
+                f"[{platform}/{username}] Reel CTA URL healthcheck FAILED "
+                f"(status={status}, url={cta_url}) — aborting post."
+            )
+            _log_bad_url(cta_url, status, caption, account)
+            return None
 
     if dry_run:
         log.info(f"    [DRY RUN] Reel → {video_media['filename']}")
@@ -3465,6 +4672,64 @@ def _run_inner(force: bool, sync_only: bool, dry_run: bool,
         else:
             log.info("trek_intel requested but /treks API returned no data — will fall back to score_card.")
 
+    # 6c) Tier 6 (2026-05-10) — coverage-gap formats. Each pre-picks an oldest-never-used
+    # record from its own theme_usage dimension so the catalog is exhausted before repeating.
+    if "stays_pick" in (ig_fmt, fb_fmt, story_fmt):
+        stays = content.get("stays", {}).get("data", []) or []
+        if stays:
+            ordered = pick_oldest_unused(state, "stays", stays, key="destination_id")
+            content["__run_stay__"] = ordered[0]
+            status = dimension_cycle_status(state, "stays", len(stays))
+            log.info(f"Stay locked: {ordered[0].get('name','?')} "
+                     f"({status['unused']}/{status['total']} never featured)")
+        else:
+            log.info("stays_pick requested but /stays API returned no data — will fall back to score_card.")
+
+    if "emergency_intel" in (ig_fmt, fb_fmt, story_fmt):
+        sos = content.get("emergency", {}).get("data", []) or []
+        if len(sos) >= 5:
+            ordered = pick_oldest_unused(state, "emergency", sos, key="destination_id")
+            content["__run_sos__"] = ordered[0]
+            status = dimension_cycle_status(state, "emergency", len(sos))
+            log.info(f"SOS locked: {ordered[0].get('destination_name','?')} "
+                     f"({status['unused']}/{status['total']} never featured)")
+        else:
+            log.info(f"emergency_intel requested but only {len(sos)} SOS records — will fall back.")
+
+    if "viral_eats_pick" in (ig_fmt, fb_fmt, story_fmt):
+        viral = content.get("viral_eats", {}).get("data", []) or []
+        if viral:
+            ordered = pick_oldest_unused(state, "viral_eats", viral, key="id")
+            content["__run_viral__"] = ordered[0]
+            status = dimension_cycle_status(state, "viral_eats", len(viral))
+            log.info(f"Viral eatery locked: {ordered[0].get('name','?')} "
+                     f"({status['unused']}/{status['total']} never featured)")
+        else:
+            log.info("viral_eats_pick requested but /viral_eats API returned no data — will fall back to score_card.")
+
+    if "camping_intel" in (ig_fmt, fb_fmt, story_fmt):
+        camps = content.get("camping", {}).get("data", []) or []
+        if camps:
+            ordered = pick_oldest_unused(state, "camping", camps, key="id")
+            content["__run_camp__"] = ordered[0]
+            status = dimension_cycle_status(state, "camping", len(camps))
+            log.info(f"Camp locked: {ordered[0].get('name','?')} "
+                     f"({status['unused']}/{status['total']} never featured)")
+        else:
+            log.info("camping_intel requested but /camping API returned no data — will fall back to score_card.")
+
+    if "collection_series" in (ig_fmt, fb_fmt, story_fmt):
+        colls = content.get("collections", {}).get("data", []) or []
+        eligible_colls = [c for c in colls if (c.get("itemCount") or 0) >= 5]
+        if eligible_colls:
+            ordered = pick_oldest_unused(state, "collection_series", eligible_colls, key="id")
+            content["__run_coll_series__"] = ordered[0]
+            status = dimension_cycle_status(state, "collection_series", len(eligible_colls))
+            log.info(f"Collection series locked: {ordered[0].get('name','?')} "
+                     f"({status['unused']}/{status['total']} never featured)")
+        else:
+            log.info("collection_series requested but no eligible collections — will fall back to score_card.")
+
     # 7a) Skip List — pick the oldest-never-used LOW-scored destination.
     # Strategy:
     #   1. Look at CURRENT month's pool for destinations scoring 1-3/5. Feature
@@ -3480,7 +4745,7 @@ def _run_inner(force: bool, sync_only: bool, dry_run: bool,
             ordered = pick_oldest_unused(state, "destinations", current_low, key="id")
             content["__run_skip_dest__"] = ordered[0]
             log.info(f"Skip List target: {ordered[0]['name']} "
-                     f"({format_score(ordered[0].get('score'))} this month)")
+                     f"({ordered[0].get('score','?')}/5 this month)")
         else:
             # Forward-looking fallback: look up to 3 months ahead
             import calendar
@@ -3505,8 +4770,8 @@ def _run_inner(force: bool, sync_only: bool, dry_run: bool,
                     content["__run_skip_forward__"] = (fwd_month_name, target.get("score"))
                     forward = fwd_month_name
                     log.info(f"Skip List (forward {fwd_month_name}): "
-                             f"{target['name']} drops from {format_score(current_version.get('score'))} "
-                             f"to {format_score(target.get('score'))} in {fwd_month_name}")
+                             f"{target['name']} drops from {current_version.get('score','?')}/5 "
+                             f"to {target.get('score','?')}/5 in {fwd_month_name}")
                     break
             if not forward:
                 log.info("Skip List: no low-score destinations found in next 3 months — moat picker will rotate.")
@@ -3561,7 +4826,7 @@ def _run_inner(force: bool, sync_only: bool, dry_run: bool,
                 content["__run_seasonal_month__"] = nxt_name
                 content["__run_seasonal_score__"] = target.get("score", 2)
                 log.info(f"Seasonal Shift: {cur_ver['name']} "
-                         f"{format_score(cur_ver.get('score'))} → {format_score(target.get('score'))} in {nxt_name}")
+                         f"{cur_ver.get('score','?')}/5 → {target.get('score','?')}/5 in {nxt_name}")
                 break
 
     # 8b) Elevation Face-Off — pair a low-altitude with a high-altitude destination
@@ -3749,7 +5014,8 @@ def _run_inner(force: bool, sync_only: bool, dry_run: bool,
             log.warning(f"[{label}] No content generated — skipping.")
             continue
 
-        # Brand-voice sanitation — strip banned phrases/hashtags before publish
+        # Per-platform voice + brand-voice sanitation before publish
+        caption = apply_platform_voice(caption, platform)
         caption = sanitize(caption)
 
         dest_id = dest_obj["id"]
@@ -3877,6 +5143,21 @@ def _run_inner(force: bool, sync_only: bool, dry_run: bool,
                 mark_theme_used(state, "articles", content["__run_article__"].get("slug","?"))
             if fmt == "route_spotlight" and content.get("__run_route__"):
                 mark_theme_used(state, "routes", content["__run_route__"].get("id","?"))
+            if fmt == "eateries_pick" and content.get("__run_eatery__"):
+                mark_theme_used(state, "eateries", content["__run_eatery__"].get("id","?"))
+            if fmt == "trek_intel" and content.get("__run_trek__"):
+                mark_theme_used(state, "treks", content["__run_trek__"].get("id","?"))
+            # Tier 6 trackers — each new format advances its own catalog dimension.
+            if fmt == "stays_pick" and content.get("__run_stay__"):
+                mark_theme_used(state, "stays", content["__run_stay__"].get("destination_id","?"))
+            if fmt == "emergency_intel" and content.get("__run_sos__"):
+                mark_theme_used(state, "emergency", content["__run_sos__"].get("destination_id","?"))
+            if fmt == "viral_eats_pick" and content.get("__run_viral__"):
+                mark_theme_used(state, "viral_eats", content["__run_viral__"].get("id","?"))
+            if fmt == "camping_intel" and content.get("__run_camp__"):
+                mark_theme_used(state, "camping", content["__run_camp__"].get("id","?"))
+            if fmt == "collection_series" and content.get("__run_coll_series__"):
+                mark_theme_used(state, "collection_series", content["__run_coll_series__"].get("id","?"))
             if audience_tag:
                 mark_theme_used(state, "audience_tags", audience_tag)
             # Moat tracker: the angle itself, so it rotates through all of MOAT_ANGLES
@@ -3914,6 +5195,7 @@ def _run_inner(force: bool, sync_only: bool, dry_run: bool,
             if not story_caption or not story_dest:
                 log.warning(f"[{label}] Story content unavailable for {story_fmt} — skipping Story.")
                 continue
+            story_caption = apply_platform_voice(story_caption, "instagram")
             story_caption = sanitize(story_caption)
 
             story_image_url = story_dest.get("image")
@@ -4135,6 +5417,7 @@ def _run_tourist_map(force: bool = False, dry_run: bool = False):
             state_name, chosen_state["tagline"],
             chosen_state["landmarks"], platform
         )
+        caption = apply_platform_voice(caption, platform)
         caption = sanitize(caption)
 
         log.info(f"[{label}] Publishing tourist map for {state_name}...")
@@ -4224,7 +5507,7 @@ CANVA_CATEGORY_ORDER = [
 CANVA_CAPTION_TEMPLATES = {
     "mood_destination": (
         "📍 {subject}\n\n"
-        "This destination is scored 1-5 every month based on weather, "
+        "This destination is scored 1-10 every month based on weather, "
         "road access, crowd density, infrastructure, and safety.\n"
         "Right now? Check the score before you book.\n\n"
         "→ nakshiq.com?utm_source=ig&utm_medium=post&utm_campaign=canva-visual\n\n"
@@ -4261,7 +5544,7 @@ CANVA_CAPTION_TEMPLATES = {
     "season": (
         "🌦️ {subject}\n\n"
         "Wrong month = washed-out roads, 45°C heat, or surprise closures. "
-        "NakshIQ scores 491 destinations monthly so you don't learn this the hard way.\n\n"
+        "NakshIQ scores {total} destinations monthly so you don't learn this the hard way.\n\n"
         "→ nakshiq.com?utm_source=ig&utm_medium=post&utm_campaign=canva-visual\n\n"
         "{hashtags}"
     ),
@@ -4283,14 +5566,24 @@ CANVA_CAPTION_TEMPLATES = {
 
 
 def _canva_hashtags(entry: dict, platform: str) -> str:
-    """Build platform-appropriate hashtags from image metadata (max 5).
-    Prioritises destination/topic-specific tags over generic ones."""
-    tags = entry.get("tags", [])
+    """Build platform-appropriate hashtags from image metadata.
+
+    Tier 1 (2026-05-10): IG gets ~18 niche/branded tags from the shared pool;
+    FB/YT keep the legacy 5-tag block where the algorithm doesn't reward depth.
+    """
     state = entry.get("state")
     dest = entry.get("destination")
     category = entry.get("category", "")
 
-    # Start with the most specific tags — destination + state + topic
+    if platform == "instagram":
+        return _build_ig_hashtags(
+            dest_name=dest,
+            state_name=state,
+            category=category or "canva",
+        )
+
+    # Legacy 5-tag block for FB/other.
+    tags = entry.get("tags", [])
     base: list[str] = []
     if dest:
         base.append(dest.replace("_", "").replace(" ", ""))
@@ -4300,7 +5593,6 @@ def _canva_hashtags(entry: dict, platform: str) -> str:
         clean = t.replace("_", "").replace(" ", "")
         if clean and clean not in base:
             base.append(clean)
-    # Category-specific niche tag
     CAT_TAGS = {
         "food": "IndiaFood", "festivals": "IndiaFestivals",
         "activities": "IndiaAdventure", "seasons": "SeasonalTravel",
@@ -4309,7 +5601,6 @@ def _canva_hashtags(entry: dict, platform: str) -> str:
     cat_tag = CAT_TAGS.get(category)
     if cat_tag and len(base) < 5 and cat_tag not in base:
         base.append(cat_tag)
-    # NakshIQ branding only if room
     if len(base) < 5 and "NakshIQ" not in base:
         base.append("NakshIQ")
 
@@ -4340,6 +5631,7 @@ def _canva_caption(entry: dict, platform: str) -> str:
         subject=entry.get("subject", "India"),
         comparison_a=entry.get("comparison", ["A", "B"])[0] if "comparison" in entry else "This",
         comparison_b=entry.get("comparison", ["A", "B"])[1] if "comparison" in entry else "That",
+        total=TOTAL_DESTINATIONS,
         hashtags=hashtags,
     )
 
@@ -4355,6 +5647,9 @@ def _canva_caption(entry: dict, platform: str) -> str:
                                   "canva_visual"),
     )
     caption = _swap_homepage_cta(caption, deep_url, "canva-visual")
+    # Tier 1.3 + 1.5: strip IG URL → link-in-bio + add comments-bait CTA.
+    caption = _strip_url_for_ig(caption, platform)
+    caption = _add_ig_engagement_cta(caption, platform, "canva")
     return caption
 
 
@@ -4468,6 +5763,7 @@ def _run_canva_visual(force: bool = False, dry_run: bool = False):
             continue
 
         caption = _canva_caption(chosen_img, platform)
+        caption = apply_platform_voice(caption, platform)
         caption = sanitize(caption)
 
         log.info(f"[{label}] Publishing canva visual: {chosen_img['subject']}...")
@@ -4588,7 +5884,7 @@ POMELLI_CAMPAIGN_ORDER = [
 POMELLI_FEATURE_CAPTIONS = {
     "monthly_scores": {
         "ig": "📊 {subject}\n\nEvery destination. Every month. One honest score.\nWeather × Crowds × Roads × Infrastructure × Safety = one number.\n\nStop guessing. Start planning with data.\n→ nakshiq.com?utm_source=ig&utm_medium=post&utm_campaign=pomelli-visual\n\n—\nData, not opinions.\n\n{hashtags}",
-        "fb": "What if you could see exactly when to visit any Indian destination — scored 1 to 5 for every month?\n\nThat's what NakshIQ does. {subject}\n\n→ nakshiq.com?utm_source=fb&utm_medium=post&utm_campaign=pomelli-visual",
+        "fb": "What if you could see exactly when to visit any Indian destination — scored 1 to 10 for every month?\n\nThat's what NakshIQ does. {subject}\n\n→ nakshiq.com?utm_source=fb&utm_medium=post&utm_campaign=pomelli-visual",
     },
     "tourist_traps": {
         "ig": "🚫 {subject}\n\n109 tourist traps exposed. The overcrowded, overpriced, overhyped spots travel blogs won't warn you about.\n\nNakshIQ doesn't just recommend — we anti-recommend.\n→ nakshiq.com?utm_source=ig&utm_medium=post&utm_campaign=pomelli-visual\n\n—\nTravel with IQ.\n\n{hashtags}",
@@ -4675,33 +5971,51 @@ POMELLI_REGION_CAPTION = {
 }
 
 POMELLI_GENERAL_CAPTION = {
-    "ig": "📊 {subject}\n\n491 destinations. Scored 1-5 every month.\nWeather. Roads. Crowds. Hospitals. Cell signal.\nThe stuff travel blogs skip.\n\n→ nakshiq.com?utm_source=ig&utm_medium=post&utm_campaign=pomelli-visual\n\n{hashtags}",
-    "fb": "{subject}\n\n491 destinations scored monthly on 5 real dimensions — not vibes, not reviews, not sponsored lists.\n\nCheck the data → nakshiq.com?utm_source=fb&utm_medium=post&utm_campaign=pomelli-visual",
+    "ig": "📊 {subject}\n\n{total} destinations. Scored 1-10 every month.\nWeather. Roads. Crowds. Hospitals. Cell signal.\nThe stuff travel blogs skip.\n\n→ nakshiq.com?utm_source=ig&utm_medium=post&utm_campaign=pomelli-visual\n\n{hashtags}",
+    "fb": "{subject}\n\n{total} destinations scored monthly on 5 real dimensions — not vibes, not reviews, not sponsored lists.\n\nCheck the data → nakshiq.com?utm_source=fb&utm_medium=post&utm_campaign=pomelli-visual",
 }
 
 
 def _pomelli_hashtags(entry: dict, platform: str) -> str:
-    """Build platform-appropriate hashtags for a Pomelli post (max 5).
-    Prioritises niche, campaign-specific tags over generic travel tags."""
-    tags = entry.get("tags", [])
+    """Build platform-appropriate hashtags for a Pomelli post.
+
+    Tier 1 (2026-05-10): IG path now returns ~18 niche/branded tags via the
+    shared pool, blending in any campaign-specific tags from `entry["tags"]`.
+    FB/YT keep the legacy 5-tag block (algorithm doesn't reward depth).
+    """
     state = entry.get("state")
 
-    # Start with campaign-specific tags (the most discoverable)
+    if platform == "instagram":
+        block = _build_ig_hashtags(
+            dest_name=entry.get("destination") or None,
+            state_name=state,
+            category="pomelli",
+        )
+        # Prepend up to 2 campaign-specific tags so feature campaigns stay
+        # discoverable inside their own hashtag pool (e.g. #SoloFemaleSafety).
+        camp_tags = []
+        for t in entry.get("tags", [])[:2]:
+            clean = t.replace(" ", "").replace("_", "")
+            if clean and f"#{clean}" not in block:
+                camp_tags.append(f"#{clean}")
+        if camp_tags:
+            block = " ".join(camp_tags) + " " + block
+        return block
+
+    # Legacy 5-tag block for FB / other.
+    tags = entry.get("tags", [])
     base: list[str] = []
     for t in tags:
         clean = t.replace(" ", "").replace("_", "")
         if clean and clean not in base:
             base.append(clean)
-    # Add state if present and we have room
     if state and len(base) < 5:
         st = state.replace(" ", "")
         if st not in base:
             base.append(st)
-    # Only add NakshIQ branding tag if we still have room
     if len(base) < 5 and "NakshIQ" not in base:
         base.append("NakshIQ")
 
-    # Max 5 hashtags on all platforms
     return " ".join(f"#{h}" for h in base[:5])
 
 
@@ -4748,7 +6062,7 @@ CANVA_CAMPAIGN_PATHS = {
     "infrastructure": "/en/methodology",
     "kids":           "/en/explore-by-persona",
     "budget":         "/en/cost-index",
-    "trust":          "/en/methodology",
+    "trust":          "/en/transparency",
 }
 CANVA_GENERAL_PATH = "/en/nakshiq-100"
 
@@ -4798,6 +6112,7 @@ def _pomelli_caption(entry: dict, platform: str) -> str:
     caption = template.format(
         subject=subject,
         state=state,
+        total=TOTAL_DESTINATIONS,
         hashtags=hashtags,
     )
 
@@ -4818,6 +6133,9 @@ def _pomelli_caption(entry: dict, platform: str) -> str:
                                   "pomelli_visual"),
     )
     caption = _swap_homepage_cta(caption, deep_url, "pomelli-visual")
+    # Tier 1.3 + 1.5: strip IG URL → link-in-bio + add saves-bait CTA.
+    caption = _strip_url_for_ig(caption, platform)
+    caption = _add_ig_engagement_cta(caption, platform, "pomelli")
     return caption
 
 
@@ -5017,6 +6335,7 @@ def _run_pomelli_visual(force: bool = False, dry_run: bool = False):
             continue
 
         caption = _pomelli_caption(chosen_img, platform)
+        caption = apply_platform_voice(caption, platform)
         caption = sanitize(caption)
 
         log.info(f"[{label}] Publishing pomelli visual: {chosen_img.get('subject', '')}...")
@@ -5091,16 +6410,16 @@ FLOW_STORY_LOCK_FILE = Path(__file__).parent / ".autoposter-flow-story.lock"
 # Caption templates — destination-specific, no generic fluff
 FLOW_STORY_CAPTIONS_IG_SCORED = [
     (
-        "{dest}, {state} — {format_score_inline(score)} this month\n\n"
+        "{dest}, {state} — {score_display} this month\n\n"
         "{score_note}\n\n"
-        "NakshIQ scores 303 Indian destinations monthly.\n"
+        "NakshIQ scores {total} Indian destinations monthly.\n"
         "→ {dest_url}\n\n"
         "{hashtags}"
     ),
     (
-        "{dest} · NakshIQ Score: {format_score_inline(score)}\n\n"
+        "{dest} · NakshIQ Score: {score_display}\n\n"
         "{score_note}\n\n"
-        "303 destinations. 5 dimensions. Updated monthly.\n"
+        "{total} destinations. 5 dimensions. Updated monthly.\n"
         "→ {dest_url}\n\n"
         "{hashtags}"
     ),
@@ -5109,7 +6428,7 @@ FLOW_STORY_CAPTIONS_IG_SCORED = [
 FLOW_STORY_CAPTIONS_IG_UNSCORED = [
     (
         "{dest}, {state}\n\n"
-        "NakshIQ rates 303 Indian destinations monthly.\n"
+        "NakshIQ rates {total} Indian destinations monthly.\n"
         "When to go, what to skip, what nobody tells you.\n\n"
         "→ {dest_url}\n\n"
         "{hashtags}"
@@ -5125,9 +6444,9 @@ FLOW_STORY_CAPTIONS_IG_UNSCORED = [
 
 FLOW_STORY_CAPTIONS_FB_SCORED = [
     (
-        "{dest}, {state} — {format_score_inline(score)} this month\n\n"
+        "{dest}, {state} — {score_display} this month\n\n"
         "{score_note}\n\n"
-        "We score 303 destinations monthly so you don't have to guess.\n"
+        "We score {total} destinations monthly so you don't have to guess.\n"
         "→ {dest_url}"
     ),
 ]
@@ -5136,17 +6455,18 @@ FLOW_STORY_CAPTIONS_FB_UNSCORED = [
     (
         "{dest}, {state}\n\n"
         "Have you been? When did you go — and would you time it differently?\n\n"
-        "We score 303 destinations monthly so you don't have to guess.\n"
+        "We score {total} destinations monthly so you don't have to guess.\n"
         "→ {dest_url}"
     ),
     (
         "{dest}\n\n"
         "Most travel advice is recycled. Ours is scored.\n"
-        "303 destinations, updated monthly, zero sponsorships.\n\n"
+        "{total} destinations, updated monthly, zero sponsorships.\n\n"
         "→ {dest_url}"
     ),
 ]
 
+# Score-context notes for the 1-5 raw scale (kept here; mapping is internal).
 FLOW_STORY_SCORE_NOTES = {
     5: "Peak season — ideal weather, festivals, and accessibility.",
     4: "Great time to visit. Slightly off-peak but that's often better.",
@@ -5155,27 +6475,39 @@ FLOW_STORY_SCORE_NOTES = {
     1: "Avoid unless you have a specific reason.",
 }
 
-# Fallback for generic images (no dest)
+# Fallback for generic images (no dest).  IG hashtag block intentionally avoids
+# generic broad tags that _sanitize_caption strips (#travel/#india/#wanderlust).
 FLOW_STORY_GENERIC_IG = (
-    "India has 303 destinations worth scoring.\n\n"
+    "India has {total} destinations worth scoring.\n\n"
     "Weather. Crowds. Safety. Infrastructure. Cultural access.\n"
     "We rate them all — every month.\n\n"
     "→ nakshiq.com?utm_source=ig&utm_medium=post&utm_campaign=flow-story\n\n"
-    "#NakshIQ #IndiaTravel #TravelIndia #IncredibleIndia #TravelData"
+    "{hashtags}"
 )
 
 FLOW_STORY_GENERIC_FB = (
-    "303 Indian destinations. 5 scoring dimensions. Updated monthly.\n\n"
+    "{total} Indian destinations. 5 scoring dimensions. Updated monthly.\n\n"
     "Which one are you checking first?\n"
     "→ nakshiq.com"
 )
 
 
-def _flow_story_hashtags(dest: str, state: str) -> str:
-    """Generate 5 niche hashtags for a Flow story post."""
+def _flow_story_hashtags(dest: str, state: str, platform: str = "instagram") -> str:
+    """Generate hashtags for a Flow story post.
+
+    Tier 1 (2026-05-10): IG → ~18 niche/branded tags via shared pool; FB keeps
+    the legacy 5-tag block.
+    """
+    if platform == "instagram":
+        # Strip parenthetical clarifiers from dest before hashtag-ifying.
+        bare_dest = dest.split("(")[0].strip() if dest else None
+        return _build_ig_hashtags(
+            dest_name=bare_dest,
+            state_name=state,
+            category="flow_story",
+        )
     tags = ["#NakshIQ"]
     if dest:
-        # Clean dest for hashtag: remove parenthetical, spaces, special chars
         clean = dest.split("(")[0].strip().replace(" ", "").replace("-", "").replace("&", "And")
         tags.append(f"#{clean}")
         tags.append(f"#{clean}Travel")
@@ -5236,8 +6568,13 @@ def _flow_story_caption(entry: dict, platform: str, dest_id_lookup: dict | None 
     if not dest or dest == state or is_themed or uncertain:
         # Generic / state-level / unverified image
         if platform == "facebook":
-            return FLOW_STORY_GENERIC_FB
-        return FLOW_STORY_GENERIC_IG
+            return FLOW_STORY_GENERIC_FB.format(total=TOTAL_DESTINATIONS)
+        # IG path — pull a 18-tag hashtag block (no dest/state to specialise).
+        ig_hashtags = _build_ig_hashtags(category="flow_story")
+        caption = FLOW_STORY_GENERIC_IG.format(total=TOTAL_DESTINATIONS, hashtags=ig_hashtags)
+        caption = _strip_url_for_ig(caption, platform)
+        caption = _add_ig_engagement_cta(caption, platform, "flow_story")
+        return caption
 
     # Resolve real DB id (was: lossy `dest.lower().split("-")[0]` which 404'd on
     # any multi-word destination — e.g. "Valley of Flowers" → "valley" → 404).
@@ -5255,7 +6592,7 @@ def _flow_story_caption(entry: dict, platform: str, dest_id_lookup: dict | None 
         log.warning(f"[flow-story] No dest_id match for '{dest}' — linking to homepage")
         dest_url_str = utm("https://nakshiq.com/en", utm_source, "post", "flow-story")
 
-    hashtags = _flow_story_hashtags(dest, state)
+    hashtags = _flow_story_hashtags(dest, state, platform)
 
     if score and score > 0:
         score_note = FLOW_STORY_SCORE_NOTES.get(score, "")
@@ -5263,12 +6600,14 @@ def _flow_story_caption(entry: dict, platform: str, dest_id_lookup: dict | None 
             template = _random.choice(FLOW_STORY_CAPTIONS_FB_SCORED)
         else:
             template = _random.choice(FLOW_STORY_CAPTIONS_IG_SCORED)
-        return template.format(
+        caption = template.format(
             dest=dest,
             state=state or "India",
             dest_url=dest_url_str,
             score=score,
+            score_display=format_score(score),
             score_note=score_note,
+            total=TOTAL_DESTINATIONS,
             hashtags=hashtags,
         )
     else:
@@ -5276,12 +6615,17 @@ def _flow_story_caption(entry: dict, platform: str, dest_id_lookup: dict | None 
             template = _random.choice(FLOW_STORY_CAPTIONS_FB_UNSCORED)
         else:
             template = _random.choice(FLOW_STORY_CAPTIONS_IG_UNSCORED)
-        return template.format(
+        caption = template.format(
             dest=dest,
             state=state or "India",
             dest_url=dest_url_str,
+            total=TOTAL_DESTINATIONS,
             hashtags=hashtags,
         )
+    # Tier 1.3 + 1.5: IG → strip URL + saves-bait CTA.
+    caption = _strip_url_for_ig(caption, platform)
+    caption = _add_ig_engagement_cta(caption, platform, "flow_story")
+    return caption
 
 
 def _run_flow_story(force: bool = False, dry_run: bool = False):
@@ -5414,7 +6758,7 @@ def _run_flow_story(force: bool = False, dry_run: bool = False):
     chosen_score = _seasonal_score(chosen)
     if chosen_score > 0:
         chosen["_score"] = chosen_score
-        log.info(f"Seasonal score: {format_score_inline(chosen_score)} for {chosen.get('dest')}")
+        log.info(f"Seasonal score: raw={chosen_score} → {format_score(chosen_score)} for {chosen.get('dest')}")
 
     log.info(f"Selected: {chosen['file']} → {chosen.get('dest', 'generic')} "
              f"({chosen.get('state', '?')})")
@@ -5459,6 +6803,7 @@ def _run_flow_story(force: bool = False, dry_run: bool = False):
             continue
 
         caption = _flow_story_caption(chosen, platform, dest_id_lookup=dest_id_lookup)
+        caption = apply_platform_voice(caption, platform)
         caption = sanitize(caption)
 
         log.info(f"[{label}] Publishing flow story: "
@@ -5531,7 +6876,7 @@ def run_flow_story(force: bool = False, dry_run: bool = False):
 
 REEL_LOCK_FILE = Path(__file__).parent / ".autoposter-reel.lock"
 
-REEL_FORMATS = ["score_reveal", "contrarian", "seasonal_shift", "trap_alert", "destination_reveal"]
+REEL_FORMATS = ["score_reveal", "contrarian", "seasonal_shift", "trap_alert", "destination_reveal", "hidden_gem_callout"]
 
 # Captions per reel format
 REEL_CAPTION_TEMPLATES = {
@@ -5539,7 +6884,7 @@ REEL_CAPTION_TEMPLATES = {
         "🎯 Do NOT go to {dest} in {month}.\n\n"
         "NakshIQ Score: {score_display}\n"
         "{reason}\n\n"
-        "{total_destinations} destinations. Real-time travel scores.\n"
+        "{total} destinations. Real-time travel scores.\n"
         "→ https://nakshiq.com?utm_source=social&utm_medium=reel&utm_campaign=reel\n\n"
         "—\n"
         "Data, not opinions.\n\n"
@@ -5559,7 +6904,7 @@ REEL_CAPTION_TEMPLATES = {
         "⏰ {dest} is a {now_score_display} right now.\n"
         "In {future_month}? {future_score_display}.\n\n"
         "Timing is everything.\n"
-        "{total_destinations} destinations scored for every month.\n"
+        "{total} destinations scored for every month.\n"
         "→ https://nakshiq.com?utm_source=social&utm_medium=reel&utm_campaign=reel\n\n"
         "—\n"
         "Data, not opinions.\n\n"
@@ -5579,18 +6924,43 @@ REEL_CAPTION_TEMPLATES = {
         "📍 Discover {dest}, {state}\n\n"
         "NakshIQ Score: {score_display}\n"
         "{tagline}\n\n"
-        "{total_destinations} destinations. Real scores. Zero fluff.\n"
+        "{total} destinations. Real scores. Zero fluff.\n"
         "→ https://nakshiq.com?utm_source=social&utm_medium=reel&utm_campaign=reel\n\n"
         "—\n"
         "Travel with IQ.\n\n"
         "{hashtags}"
     ),
+    # Tier 6 (2026-05-10): hidden gem narrative — flips the algorithmic
+    # underdog_spotlight angle into a "you've never heard of this" hook.
+    # Pulls from /api/content?type=hidden_gems (confidence_score>=0.7).
+    "hidden_gem_callout": (
+        "🤫 Nobody talks about {dest}.\n\n"
+        "{near_dest_label}{distance_label}\n"
+        "{why_unknown}\n\n"
+        "Why go: {why_go}\n\n"
+        "{total} destinations scored. This one shouldn't be a secret.\n"
+        "→ https://nakshiq.com?utm_source=social&utm_medium=reel&utm_campaign=hidden-gem\n\n"
+        "—\n"
+        "Real data. Honest scoring.\n\n"
+        "{hashtags}"
+    ),
 }
 
 
-def _reel_hashtags(dest_name: str, platform: str) -> str:
-    """Build reel-specific hashtags (max 5).
-    Destination-first, then niche travel tags."""
+def _reel_hashtags(dest_name: str, platform: str, state_name: str | None = None) -> str:
+    """Build reel-specific hashtags.
+
+    Tier 1 (2026-05-10): platform-aware sizing.  IG = ~18 niche/branded tags
+    via _build_ig_hashtags (raises discoverability ~3x).  YT/FB still cap at 5
+    since beyond that there's no measurable ranking benefit on those platforms.
+    """
+    if platform == "instagram":
+        return _build_ig_hashtags(
+            dest_name=dest_name,
+            state_name=state_name,
+            category="reel",
+        )
+    # YT / FB: keep the legacy 5-tag block.
     base: list[str] = []
     if dest_name:
         clean = dest_name.replace(" ", "").replace("-", "")
@@ -5607,38 +6977,47 @@ def _reel_caption(reel_format: str, data: dict, platform: str) -> str:
     """Generate caption for a reel post."""
     template = REEL_CAPTION_TEMPLATES.get(reel_format, REEL_CAPTION_TEMPLATES["score_reveal"])
     dest_name = data.get("dest_name") or data.get("famous") or data.get("trap_name") or "India"
-    hashtags = _reel_hashtags(dest_name, platform)
+    state_name = data.get("state_name") or data.get("state") or None
+    hashtags = _reel_hashtags(dest_name, platform, state_name)
 
     try:
-        # Pre-format every score on the displayed 0–10 scale and pass the
-        # current catalog total in too — keeps reel captions in lockstep with
-        # web/email/post copy, no hardcoded "303 destinations".
-        return template.format(
+        caption = template.format(
             dest=data.get("dest_name", ""),
             month=data.get("month", ""),
             score=data.get("score", ""),
-            score_display=format_score_inline(data.get("score")) if data.get("score") not in (None, "") else "",
+            score_display=format_score(data.get("score")),
             reason=data.get("reason", ""),
             famous=data.get("famous", ""),
             hidden=data.get("hidden", ""),
             famous_score=data.get("famous_score", ""),
+            famous_score_display=format_score(data.get("famous_score")),
             hidden_score=data.get("hidden_score", ""),
-            famous_score_display=format_score_inline(data.get("famous_score")) if data.get("famous_score") not in (None, "") else "",
-            hidden_score_display=format_score_inline(data.get("hidden_score")) if data.get("hidden_score") not in (None, "") else "",
+            hidden_score_display=format_score(data.get("hidden_score")),
             now_score=data.get("now_score", ""),
+            now_score_display=format_score(data.get("now_score")),
             future_month=data.get("future_month", ""),
             future_score=data.get("future_score", ""),
-            now_score_display=format_score_inline(data.get("now_score")) if data.get("now_score") not in (None, "") else "",
-            future_score_display=format_score_inline(data.get("future_score")) if data.get("future_score") not in (None, "") else "",
+            future_score_display=format_score(data.get("future_score")),
             trap=data.get("trap_name", ""),
             alternative=data.get("alternative", ""),
             state=data.get("state_name", "India"),
             tagline=data.get("tagline", ""),
-            total_destinations=TOTAL_DESTINATIONS,
+            # hidden_gem_callout fields (Tier 6)
+            near_dest_label=(f"📍 Near {data.get('near_dest_name', '')}" if data.get("near_dest_name") else ""),
+            distance_label=(f" · {data.get('distance_km', '')}km away\n" if data.get("distance_km") else "\n"),
+            why_unknown=data.get("why_unknown", ""),
+            why_go=data.get("why_go", ""),
+            total=TOTAL_DESTINATIONS,
             hashtags=hashtags,
         )
     except KeyError:
-        return f"🎯 Travel smarter. {dest_name} on NakshIQ.\n\n→ https://nakshiq.com?utm_source=social&utm_medium=reel&utm_campaign=reel\n\n{hashtags}"
+        caption = (f"🎯 Travel smarter. {dest_name} on NakshIQ.\n\n"
+                   f"→ https://nakshiq.com?utm_source=social&utm_medium=reel&utm_campaign=reel\n\n"
+                   f"{hashtags}")
+    # Tier 1.3 + 1.5: strip IG URL → link in bio + add saves-bait CTA.
+    caption = _strip_url_for_ig(caption, platform)
+    caption = _add_ig_engagement_cta(caption, platform, "reel")
+    return caption
 
 
 def _pick_reel_data(state: dict, content: dict, reel_format: str) -> dict | None:
@@ -5762,6 +7141,28 @@ def _pick_reel_data(state: dict, content: dict, reel_format: str) -> dict | None
             "tagline": d.get("tagline") or d.get("note") or "",
         }
 
+    elif reel_format == "hidden_gem_callout":
+        # Tier 6 (2026-05-10) — pulls from /api/content?type=hidden_gems.
+        # Differs from underdog_spotlight (algorithmic high-score + low-elev): this
+        # uses verified hidden_gems table records with confidence_score>=0.7 +
+        # has why_unknown / why_go prose for the narrative hook.
+        gems = content.get("hidden_gems", {}).get("data", []) or []
+        if not gems:
+            return None
+        ordered = pick_oldest_unused(state, "reel_hidden_gems",
+                                     [{"id": g.get("id", g.get("name", "")), **g}
+                                      for g in gems], key="id")
+        g = ordered[0]
+        return {
+            "dest_name": g.get("name", "Unknown"),
+            "dest_slug": g.get("near_destination_id", "india"),
+            "state_name": g.get("state", ""),
+            "near_dest_name": g.get("near_destination_name", ""),
+            "distance_km": g.get("distance_km", ""),
+            "why_unknown": g.get("why_unknown", ""),
+            "why_go": g.get("why_go", ""),
+        }
+
     return None
 
 
@@ -5854,6 +7255,7 @@ def _run_reel(force: bool = False, dry_run: bool = False):
             continue
 
         caption = _reel_caption(chosen_format, reel_data, platform)
+        caption = apply_platform_voice(caption, "reels")
         caption = sanitize(caption)
 
         log.info(f"[{label}] Publishing reel ({chosen_format})...")
@@ -5872,13 +7274,44 @@ def _run_reel(force: bool = False, dry_run: bool = False):
         log.info(f"[{label}] Outstand accepted (post_id={post_id}), confirming...")
 
         confirmed = wait_for_publish(post_id) if post_id != "unknown" else None
+        reel_dest_id = (
+            reel_data.get("dest_id")
+            or reel_data.get("dest_slug")
+            or reel_data.get("hidden")
+            or reel_data.get("trap_name")
+            or None
+        )
+        cta_url = _extract_caption_url(caption)
+        utm_content = build_utm_content(reel_dest_id, f"reel.{chosen_format}")
         if confirmed:
             platform_id = confirmed.get("platformPostId", "—")
             log.info(f"[{label}] ✅ Reel published · Outstand={post_id} · Platform={platform_id}")
             st.setdefault("posted_today", {})[acc_scoped_key] = today
             posted_any = True
+            record_publish(
+                st,
+                dest_id=reel_dest_id,
+                fmt=f"reel.{chosen_format}",
+                post_id=post_id,
+                platform=platform,
+                media_id=media_filename,
+            )
+            _log_post_outcome(
+                post_id=post_id, dest_id=reel_dest_id,
+                fmt=f"reel.{chosen_format}", media_id=media_filename,
+                account=account, caption=caption,
+                cta_url=cta_url, utm_content=utm_content,
+                status="published",
+            )
         else:
             log.warning(f"[{label}] ⚠️  Reel queued but NOT confirmed (post_id={post_id}).")
+            _log_post_outcome(
+                post_id=post_id, dest_id=reel_dest_id,
+                fmt=f"reel.{chosen_format}", media_id=media_filename,
+                account=account, caption=caption,
+                cta_url=cta_url, utm_content=utm_content,
+                status="queued_unconfirmed",
+            )
 
     # Mark format + data as used
     if posted_any:
@@ -5896,6 +7329,10 @@ def _run_reel(force: bool = False, dry_run: bool = False):
             mark_theme_used(st, "reel_trap_alerts", reel_data.get("trap_name", ""))
         elif chosen_format == "destination_reveal":
             mark_theme_used(st, "reel_reveal_dests", dest_id)
+        elif chosen_format == "hidden_gem_callout":
+            # Track by gem id (UUID) so the catalog of 625 gems exhausts before repeats
+            gem_id = reel_data.get("dest_slug") or reel_data.get("dest_name", "")
+            mark_theme_used(st, "reel_hidden_gems", gem_id)
 
         log.info(f"Theme tracker updated: format={chosen_format}")
 
@@ -5997,26 +7434,37 @@ def _reel_map_caption(reel_format: str, data: dict, platform: str) -> str:
     """
     import calendar
     from datetime import datetime as _dt
-    month_name = calendar.month_name[_dt.now().month]
+    _month_name = calendar.month_name[_dt.now().month]
 
     title = data.get("campaign_readable", "India Travel Intelligence")
-    campaign = data.get("campaign_name", "")
+    campaign = data.get("campaign_name", "")  # noqa: F841 — kept for future use
 
     if platform == "instagram":
-        return (
+        # Tier 1 (2026-05-10): expanded hashtag block, link-in-bio CTA, saves-bait.
+        ig_hashtags = _build_ig_hashtags(category="reel")
+        caption = (
             f"{title} — data you won't find on travel blogs.\n\n"
             f"Road access, hospital distance, crowd level, cell coverage — "
             f"all scored for this month.\n\n"
-            f"Full breakdown → nakshiq.com\n\n"
-            f"#NakshIQ #{month_name}Travel #TravelIndia "
-            f"#DataDrivenTravel #IndiaTravel"
+            f"📲 Full breakdown → link in bio\n\n"
+            f"{ig_hashtags}"
+        )
+        caption = _add_ig_engagement_cta(caption, platform, "reel_map")
+        return caption
+    elif platform == "youtube":
+        return (
+            f"{title}\n\n"
+            f"Every destination scored 1-10, every month. "
+            f"No opinions — just data.\n\n"
+            f"→ https://nakshiq.com?utm_source=youtube&utm_medium=short&utm_campaign=reel-map\n\n"
+            f"#NakshIQ #{_month_name}Travel #DataDrivenTravel #Shorts"
         )
     else:
         return (
             f"{title}\n\n"
-            f"Every destination scored 1-5, every month. "
+            f"Every destination scored 1-10, every month. "
             f"No opinions — just data.\n\n"
-            f"nakshiq.com"
+            f"→ nakshiq.com"
         )
 
 
@@ -6104,6 +7552,7 @@ def _run_reel_map(force: bool = False, dry_run: bool = False):
             continue
 
         caption = _reel_map_caption(chosen_format, reel_data, platform)
+        caption = apply_platform_voice(caption, "reels")
         caption = sanitize(caption)
 
         log.info(f"[{label}] Publishing reel ({campaign_name})...")
@@ -6122,13 +7571,38 @@ def _run_reel_map(force: bool = False, dry_run: bool = False):
         log.info(f"[{label}] Outstand accepted (post_id={post_id}), confirming...")
 
         confirmed = wait_for_publish(post_id) if post_id != "unknown" else None
+        cta_url = _extract_caption_url(caption)
+        utm_content = build_utm_content(campaign_name, f"reel_map.{chosen_format}")
         if confirmed:
             platform_id = confirmed.get("platformPostId", "—")
             log.info(f"[{label}] ✅ Reel published · Outstand={post_id} · Platform={platform_id}")
             st.setdefault("posted_today", {})[acc_scoped_key] = today
             posted_any = True
+            # Reel-map is campaign-driven, not destination-driven, so dest_id stays None.
+            record_publish(
+                st,
+                dest_id=None,
+                fmt=f"reel_map.{chosen_format}",
+                post_id=post_id,
+                platform=platform,
+                media_id=media_filename,
+            )
+            _log_post_outcome(
+                post_id=post_id, dest_id=None,
+                fmt=f"reel_map.{chosen_format}", media_id=media_filename,
+                account=account, caption=caption,
+                cta_url=cta_url, utm_content=utm_content,
+                status="published",
+            )
         else:
             log.warning(f"[{label}] ⚠️  Reel queued but NOT confirmed (post_id={post_id}).")
+            _log_post_outcome(
+                post_id=post_id, dest_id=None,
+                fmt=f"reel_map.{chosen_format}", media_id=media_filename,
+                account=account, caption=caption,
+                cta_url=cta_url, utm_content=utm_content,
+                status="queued_unconfirmed",
+            )
 
     # Mark campaign + format as used
     if posted_any:
@@ -6259,6 +7733,7 @@ def _run_ugc(force: bool = False, dry_run: bool = False):
         else:
             caption = result.get("caption_ig", "")
 
+        caption = apply_platform_voice(caption, platform)
         caption = sanitize(caption)
 
         log.info(f"[{label}] Publishing UGC ({avatar_name} on {dest})...")
@@ -6413,7 +7888,7 @@ def _run_infographic(force: bool = False, dry_run: bool = False):
             log.info(f"[{label}] Already posted infographic today — skipping.")
             continue
 
-        post_caption = sanitize(caption)
+        post_caption = sanitize(apply_platform_voice(caption, platform))
 
         log.info(f"[{label}] Publishing infographic carousel: {topic}/{theme}...")
 
@@ -6520,6 +7995,7 @@ def _run_yt_short(force: bool = False, dry_run: bool = False):
     fmt         = result["format"]
     duration    = result.get("duration", 0)
     music       = result.get("music", "unknown")
+    primary_dest_id = result.get("primary_dest_id")  # may be None for multi-dest formats
 
     video_size_kb = len(video_bytes) // 1024
     log.info(f"Short rendered: {video_fname} ({video_size_kb} KB, {duration:.1f}s, fmt={fmt}, music={music})")
@@ -6567,9 +8043,9 @@ def _run_yt_short(force: bool = False, dry_run: bool = False):
 
         # Platform-specific caption: YouTube vs Instagram
         if platform == "instagram":
-            post_caption = sanitize(ig_caption)
+            post_caption = sanitize(apply_platform_voice(ig_caption, "instagram"))
         else:
-            post_caption = sanitize(yt_caption)
+            post_caption = sanitize(apply_platform_voice(yt_caption, "yt_shorts"))
         log.info(f"[{label}] Publishing YT Short ({fmt})...")
 
         if dry_run:
@@ -6586,6 +8062,8 @@ def _run_yt_short(force: bool = False, dry_run: bool = False):
         log.info(f"[{label}] Outstand accepted (post_id={post_id}), waiting for platform confirmation...")
 
         confirmed = wait_for_publish(post_id) if post_id != "unknown" else None
+        cta_url = _extract_caption_url(post_caption)
+        utm_content = build_utm_content(primary_dest_id, "yt_short")
         if confirmed:
             platform_id = confirmed.get("platformPostId", "—")
             log.info(f"[{label}] ✅ YT Short published · Outstand={post_id} · Platform={platform_id}")
@@ -6595,8 +8073,33 @@ def _run_yt_short(force: bool = False, dry_run: bool = False):
             posted_today[acc_scoped_key] = today
             posted_today[daily_count_key] = prev_count + 1
             posted_any = True
+            # Cross-flow dedup: register this Short with the main loop so the
+            # same dest doesn't get re-used in carousel within 14 days.
+            record_publish(
+                st,
+                dest_id=primary_dest_id,
+                fmt=f"yt_short.{fmt}",
+                post_id=post_id,
+                platform=platform,
+                media_id=media_filename,
+            )
+            _log_post_outcome(
+                post_id=post_id, dest_id=primary_dest_id,
+                fmt=f"yt_short.{fmt}", media_id=media_filename,
+                account=account, caption=post_caption,
+                cta_url=cta_url, utm_content=utm_content,
+                status="published",
+            )
         else:
             log.warning(f"[{label}] ⚠️  YT Short queued but NOT confirmed (post_id={post_id}). May have silently failed.")
+            # Surface ghost posts in the watchdog instead of dropping silently.
+            _log_post_outcome(
+                post_id=post_id, dest_id=primary_dest_id,
+                fmt=f"yt_short.{fmt}", media_id=media_filename,
+                account=account, caption=post_caption,
+                cta_url=cta_url, utm_content=utm_content,
+                status="queued_unconfirmed",
+            )
 
     if posted_any:
         log.info(f"YT Short posted: format={fmt}, music={music}")
@@ -6945,6 +8448,19 @@ if __name__ == "__main__":
     parser.add_argument("--analytics", action="store_true",
                         help="Sync post history from Outstand and generate "
                              "performance analytics report. No posting.")
+    parser.add_argument("--engagement-pull", action="store_true",
+                        help="Pull per-post engagement (likes/comments/saves/"
+                             "shares/reach/views) from Outstand /v1/posts/"
+                             "{id}/analytics into data/post_engagement.json. "
+                             "Tier 2 (2026-05-10).  No posting.")
+    parser.add_argument("--engagement-days", type=int, default=7,
+                        help="Days back to pull engagement for "
+                             "(default 7).")
+    parser.add_argument("--digest-weekly", action="store_true",
+                        help="Generate the weekly engagement digest from "
+                             "data/post_engagement.json and write it to "
+                             "data/research/social-engagement-week-{date}.md. "
+                             "Tier 2.5 (2026-05-10).  No posting.")
     parser.add_argument("--allow-local", action="store_true",
                         help="Permit running outside GitHub Actions. Without this "
                              "flag, the autoposter aborts immediately when "
@@ -6965,9 +8481,9 @@ if __name__ == "__main__":
             "runs, pass --allow-local explicitly.\n"
         )
         sys.exit(0)
-    exclusive = sum([args.evening, args.moat, args.tourist_map, args.canva_visual, args.pomelli_visual, args.flow_story, args.reel, args.reel_map, args.ugc, args.infographic, args.yt_short, args.analytics])
+    exclusive = sum([args.evening, args.moat, args.tourist_map, args.canva_visual, args.pomelli_visual, args.flow_story, args.reel, args.reel_map, args.ugc, args.infographic, args.yt_short, args.analytics, args.engagement_pull, args.digest_weekly])
     if exclusive > 1:
-        parser.error("--evening, --moat, --tourist-map, --canva-visual, --pomelli-visual, --flow-story, --reel, --reel-map, --ugc, --infographic, --yt-short, and --analytics are mutually exclusive.")
+        parser.error("--evening, --moat, --tourist-map, --canva-visual, --pomelli-visual, --flow-story, --reel, --reel-map, --ugc, --infographic, --yt-short, --analytics, --engagement-pull, and --digest-weekly are mutually exclusive.")
     if args.tourist_map:
         run_tourist_map(force=args.force, dry_run=args.dry_run)
     elif args.canva_visual:
@@ -6988,6 +8504,14 @@ if __name__ == "__main__":
         run_yt_short(force=args.force, dry_run=args.dry_run)
     elif args.analytics:
         run_analytics()
+    elif args.engagement_pull:
+        # Tier 2 (2026-05-10): pull per-post engagement from Outstand /analytics.
+        from engagement_pull import run as run_engagement_pull
+        run_engagement_pull(days=args.engagement_days)
+    elif args.digest_weekly:
+        # Tier 2.5 (2026-05-10): write weekly markdown digest from engagement data.
+        from digest_weekly import run as run_digest_weekly
+        run_digest_weekly(days=7)
     else:
         run(force=args.force, sync_only=args.sync_only,
             dry_run=args.dry_run, evening=args.evening, moat=args.moat)

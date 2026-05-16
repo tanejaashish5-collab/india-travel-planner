@@ -45,6 +45,7 @@ const before = {
 
 run(["node", "scripts/upload-images.mjs"], "Upload new images to R2");
 run(["node", "scripts/upload-videos.mjs"], "Upload new videos to R2");
+run(["node", "scripts/link-collection-covers.mjs"], "Link new collection covers to DB");
 run(["node", "scripts/audit-prompts.mjs", "--apply"], "Trim shipped rows from prompt CSVs");
 
 const after = {

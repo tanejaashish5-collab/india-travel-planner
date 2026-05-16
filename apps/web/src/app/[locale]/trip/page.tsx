@@ -76,6 +76,7 @@ type TripBoardDest = {
   name: string;
   difficulty: string | null;
   elevation_m: number | null;
+  family_stress: string | null;
   state: { name: string } | null;
   destination_months: { month: number; score: number }[] | null;
   festivals: { name: string; month: number | null }[] | null;
