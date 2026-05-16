@@ -1724,6 +1724,28 @@ def niche_tags(state: str | None, theme: str, dest_name: str | None = None,
     return " ".join(f"#{t}" for t in tags[:max_tags])
 
 
+def _filter_dest_used(items: list, used: set, key: str = "destination_id") -> list:
+    """Filter pre-pick items so dests already posted this calendar month
+    are EXCLUDED. Returns items in original order, minus any whose
+    `destination_id` (or supplied key) appears in `used`.
+
+    Empty result = every candidate's dest has been posted this month;
+    caller should SKIP the format rather than silently degrade to
+    score_card (the silent-fallback pattern was killed 2026-05-16).
+    """
+    if not items:
+        return []
+    out: list = []
+    for it in items:
+        if not isinstance(it, dict):
+            continue
+        did = it.get(key) or it.get("destination_id") or it.get("id")
+        if did and did in used:
+            continue
+        out.append(it)
+    return out
+
+
 def comment_cta(theme: str, dest_name: str = "this") -> str:
     """Return a hook-style comment-trigger CTA matching the post theme.
 
@@ -4885,14 +4907,18 @@ def _run_inner(force: bool, sync_only: bool, dry_run: bool,
                 seen.add(fid)
             combined.append(f)
         fests = filter_active_festivals(combined, date.today())
-        if fests:
-            ordered = pick_oldest_unused(state, "festivals", fests, key="id")
+        # 2026-05-16: once-per-month — drop festivals whose home dest already posted.
+        fests_fresh = _filter_dest_used(fests, used, key="destination_id")
+        if fests_fresh:
+            ordered = pick_oldest_unused(state, "festivals", fests_fresh, key="id")
             content["__run_festival__"] = ordered[0]
-            status = dimension_cycle_status(state, "festivals", len(fests))
+            status = dimension_cycle_status(state, "festivals", len(fests_fresh))
             log.info(f"Festival locked: {ordered[0].get('name','?')} "
                      f"({status['unused']}/{status['total']} active festivals never featured)")
+        elif fests:
+            log.info(f"festival_alert: all {len(fests)} festivals' home dests already posted this month — SKIPPING")
         else:
-            log.warning("No active festivals available — festival_alert will fall back to score_card.")
+            log.info("festival_alert: no active festivals — SKIPPING")
 
     # 4) Article — oldest-unused article (not "most recent") so the blog rotation
     #    covers every article before repeating.
@@ -4929,73 +4955,95 @@ def _run_inner(force: bool, sync_only: bool, dry_run: bool,
     # 6b) Tier 2.5 — Eatery + Trek pre-picks (oldest-never-used so the rotation
     # exhausts the catalog before repeating). Each is theme-tracked under its
     # own dimension so picks don't collide with destinations / collections.
+    # 2026-05-16: every secondary-entity pre-pick now filters items whose
+    # home destination was already posted this calendar month (once-per-month
+    # rule). Empty pool after filtering = SKIP the format (no silent
+    # degradation to score_card).
     if "eateries_pick" in (ig_fmt, fb_fmt, story_fmt):
         eats = content.get("eateries", {}).get("data", []) or []
-        if eats:
-            ordered = pick_oldest_unused(state, "eateries", eats, key="id")
+        eats_fresh = _filter_dest_used(eats, used, key="destination_id")
+        if eats_fresh:
+            ordered = pick_oldest_unused(state, "eateries", eats_fresh, key="id")
             content["__run_eatery__"] = ordered[0]
-            status = dimension_cycle_status(state, "eateries", len(eats))
+            status = dimension_cycle_status(state, "eateries", len(eats_fresh))
             log.info(f"Eatery locked: {ordered[0].get('name','?')} "
                      f"({status['unused']}/{status['total']} never featured)")
+        elif eats:
+            log.info(f"eateries_pick: all {len(eats)} eateries' dests already posted this month — SKIPPING")
         else:
-            log.info("eateries_pick requested but /eateries API returned no data — will fall back to score_card.")
+            log.info("eateries_pick: /eateries API returned no data — SKIPPING")
 
     if "trek_intel" in (ig_fmt, fb_fmt, story_fmt):
         treks = content.get("treks", {}).get("data", []) or []
-        if treks:
-            ordered = pick_oldest_unused(state, "treks", treks, key="id")
+        treks_fresh = _filter_dest_used(treks, used, key="destination_id")
+        if treks_fresh:
+            ordered = pick_oldest_unused(state, "treks", treks_fresh, key="id")
             content["__run_trek__"] = ordered[0]
-            status = dimension_cycle_status(state, "treks", len(treks))
+            status = dimension_cycle_status(state, "treks", len(treks_fresh))
             log.info(f"Trek locked: {ordered[0].get('name','?')} "
                      f"({status['unused']}/{status['total']} never featured)")
+        elif treks:
+            log.info(f"trek_intel: all {len(treks)} treks' dests already posted this month — SKIPPING")
         else:
-            log.info("trek_intel requested but /treks API returned no data — will fall back to score_card.")
+            log.info("trek_intel: /treks API returned no data — SKIPPING")
 
     # 6c) Tier 6 (2026-05-10) — coverage-gap formats. Each pre-picks an oldest-never-used
     # record from its own theme_usage dimension so the catalog is exhausted before repeating.
     if "stays_pick" in (ig_fmt, fb_fmt, story_fmt):
         stays = content.get("stays", {}).get("data", []) or []
-        if stays:
-            ordered = pick_oldest_unused(state, "stays", stays, key="destination_id")
+        stays_fresh = _filter_dest_used(stays, used, key="destination_id")
+        if stays_fresh:
+            ordered = pick_oldest_unused(state, "stays", stays_fresh, key="destination_id")
             content["__run_stay__"] = ordered[0]
-            status = dimension_cycle_status(state, "stays", len(stays))
+            status = dimension_cycle_status(state, "stays", len(stays_fresh))
             log.info(f"Stay locked: {ordered[0].get('name','?')} "
                      f"({status['unused']}/{status['total']} never featured)")
+        elif stays:
+            log.info(f"stays_pick: all {len(stays)} stays' dests already posted this month — SKIPPING")
         else:
-            log.info("stays_pick requested but /stays API returned no data — will fall back to score_card.")
+            log.info("stays_pick: /stays API returned no data — SKIPPING")
 
     if "emergency_intel" in (ig_fmt, fb_fmt, story_fmt):
         sos = content.get("emergency", {}).get("data", []) or []
-        if len(sos) >= 5:
-            ordered = pick_oldest_unused(state, "emergency", sos, key="destination_id")
+        sos_fresh = _filter_dest_used(sos, used, key="destination_id")
+        if len(sos_fresh) >= 1:  # was 5 — single fresh record is fine
+            ordered = pick_oldest_unused(state, "emergency", sos_fresh, key="destination_id")
             content["__run_sos__"] = ordered[0]
-            status = dimension_cycle_status(state, "emergency", len(sos))
+            status = dimension_cycle_status(state, "emergency", len(sos_fresh))
             log.info(f"SOS locked: {ordered[0].get('destination_name','?')} "
                      f"({status['unused']}/{status['total']} never featured)")
+        elif sos:
+            log.info(f"emergency_intel: all {len(sos)} SOS records' dests already posted this month — SKIPPING")
         else:
-            log.info(f"emergency_intel requested but only {len(sos)} SOS records — will fall back.")
+            log.info("emergency_intel: /emergency API returned no data — SKIPPING")
 
     if "viral_eats_pick" in (ig_fmt, fb_fmt, story_fmt):
         viral = content.get("viral_eats", {}).get("data", []) or []
-        if viral:
-            ordered = pick_oldest_unused(state, "viral_eats", viral, key="id")
+        viral_fresh = _filter_dest_used(viral, used, key="destination_id")
+        if viral_fresh:
+            ordered = pick_oldest_unused(state, "viral_eats", viral_fresh, key="id")
             content["__run_viral__"] = ordered[0]
-            status = dimension_cycle_status(state, "viral_eats", len(viral))
+            status = dimension_cycle_status(state, "viral_eats", len(viral_fresh))
             log.info(f"Viral eatery locked: {ordered[0].get('name','?')} "
                      f"({status['unused']}/{status['total']} never featured)")
+        elif viral:
+            log.info(f"viral_eats_pick: all {len(viral)} viral eateries' dests already posted this month — SKIPPING")
         else:
-            log.info("viral_eats_pick requested but /viral_eats API returned no data — will fall back to score_card.")
+            log.info("viral_eats_pick: /viral_eats API returned no data — SKIPPING")
 
     if "camping_intel" in (ig_fmt, fb_fmt, story_fmt):
         camps = content.get("camping", {}).get("data", []) or []
-        if camps:
-            ordered = pick_oldest_unused(state, "camping", camps, key="id")
+        camps_fresh = _filter_dest_used(camps, used, key="destination_id")
+        if camps_fresh:
+            ordered = pick_oldest_unused(state, "camping", camps_fresh, key="id")
             content["__run_camp__"] = ordered[0]
-            status = dimension_cycle_status(state, "camping", len(camps))
+            status = dimension_cycle_status(state, "camping", len(camps_fresh))
             log.info(f"Camp locked: {ordered[0].get('name','?')} "
                      f"({status['unused']}/{status['total']} never featured)")
+        elif camps:
+            log.info(f"camping_intel: all {len(camps)} camping spots' dests already posted this month — SKIPPING")
         else:
-            log.info("camping_intel requested but /camping API returned no data — will fall back to score_card.")
+            log.info("camping_intel: /camping API returned no data — SKIPPING")
 
     if "collection_series" in (ig_fmt, fb_fmt, story_fmt):
         colls = content.get("collections", {}).get("data", []) or []
@@ -5018,8 +5066,10 @@ def _run_inner(force: bool, sync_only: bool, dry_run: bool,
     #      now but will drop to ≤3/5 soon. Post as "Upcoming Skip List — July".
     #      This makes the format valuable year-round.
     if "skip_list" in (ig_fmt, fb_fmt):
+        # 2026-05-16: skip_list dests also gated by once-per-calendar-month rule.
         current_low = [d for d in (content.get("destinations_low", {}).get("data") or [])
-                       if 1 <= (d.get("score") or 0) <= 3]
+                       if 1 <= (d.get("score") or 0) <= 3
+                       and d.get("id") not in used]
         if current_low:
             ordered = pick_oldest_unused(state, "destinations", current_low, key="id")
             content["__run_skip_dest__"] = ordered[0]
@@ -5038,7 +5088,8 @@ def _run_inner(force: bool, sync_only: bool, dry_run: bool,
                                   {"month": fwd_month_num, "min_score": 0, "limit": 100})
                 dropping = [d for d in (r.get("data") or [])
                             if d["id"] in current_hi_ids
-                            and 1 <= (d.get("score") or 0) <= 3]
+                            and 1 <= (d.get("score") or 0) <= 3
+                            and d["id"] not in used]
                 if dropping:
                     ordered = pick_oldest_unused(state, "destinations", dropping, key="id")
                     target  = ordered[0]
@@ -5194,15 +5245,19 @@ def _run_inner(force: bool, sync_only: bool, dry_run: bool,
             log.info(f"Adventure Pick: {pick['name']}")
 
     # 8h) Weekend Escape — easy + accessible + high-scoring
+    # 2026-05-16: also gated by once-per-calendar-month rule.
     if ig_fmt == "weekend_escape" or fb_fmt == "weekend_escape":
         escapes = [d for d in dests
                    if (d.get("score") or 0) >= 4
                    and (d.get("elevation_m") or 0) < 2500
-                   and (d.get("difficulty") or "").lower() in ("easy", "moderate")]
+                   and (d.get("difficulty") or "").lower() in ("easy", "moderate")
+                   and d.get("id") not in used]
         if escapes:
             pick = pick_oldest_unused(state, "destinations", escapes, key="id")[0]
             content["__run_weekend__"] = pick
             log.info(f"Weekend Escape: {pick['name']}")
+        else:
+            log.info("weekend_escape: no fresh escape candidates this month — fallback to shared_best")
 
     # 7d) Shared best destination — when IG and FB run DIFFERENT formats on the
     #     same day (e.g. Thu: IG=score_card, FB=collection_spotlight), pre-pick
@@ -7300,11 +7355,21 @@ def _reel_caption(reel_format: str, data: dict, platform: str) -> str:
 
 
 def _pick_reel_data(state: dict, content: dict, reel_format: str) -> dict | None:
-    """Pick destination data for a reel format from synced content."""
+    """Pick destination data for a reel format from synced content.
+
+    2026-05-16: once-per-calendar-month rule applies to ALL 6 reel formats.
+    Computes `used` set once at top, every sub-format's candidate pool is
+    filtered to exclude dests already posted this month BEFORE
+    pick_oldest_unused. Returns None if filtering empties the pool —
+    caller MUST skip (no silent fallback).
+    """
     import calendar
     from datetime import datetime as _dt
     month_now  = _dt.now().month
     month_name = calendar.month_name[month_now]
+
+    # Once-per-month dedupe — apply to every reel format below.
+    used = recently_used_destinations(state)
 
     destinations = content.get("destinations", {}).get("data", [])
     destinations_low = content.get("destinations_low", {}).get("data", [])
@@ -7314,7 +7379,8 @@ def _pick_reel_data(state: dict, content: dict, reel_format: str) -> dict | None
         # Pick a LOW-scored destination (≤3) — the "don't go" hook only works
         # when the score genuinely warrants a warning. Skip if nothing qualifies.
         low_scored = [d for d in destinations_low
-                      if isinstance(d.get("score"), (int, float)) and d["score"] <= 3]
+                      if isinstance(d.get("score"), (int, float)) and d["score"] <= 3
+                      and d.get("id") not in used]
         if not low_scored:
             return None
         ordered = pick_oldest_unused(state, "reel_score_dests",
@@ -7331,8 +7397,13 @@ def _pick_reel_data(state: dict, content: dict, reel_format: str) -> dict | None
 
     elif reel_format == "contrarian":
         # Pair a famous (popular but low-ish score) with a hidden gem (high score)
-        high = [d for d in destinations if isinstance(d.get("score"), (int, float)) and d["score"] >= 4]
-        low  = [d for d in destinations_low if isinstance(d.get("score"), (int, float)) and d["score"] <= 3]
+        # Both dests filtered against once-per-month set.
+        high = [d for d in destinations
+                if isinstance(d.get("score"), (int, float)) and d["score"] >= 4
+                and d.get("id") not in used]
+        low  = [d for d in destinations_low
+                if isinstance(d.get("score"), (int, float)) and d["score"] <= 3
+                and d.get("id") not in used]
         if not high or not low:
             return None
         h_ordered = pick_oldest_unused(state, "reel_contrarian_hidden",
@@ -7356,7 +7427,8 @@ def _pick_reel_data(state: dict, content: dict, reel_format: str) -> dict | None
 
         # Use top-scored destinations and assume score drops in off-season
         great_now = [d for d in destinations
-                     if isinstance(d.get("score"), (int, float)) and d["score"] >= 4]
+                     if isinstance(d.get("score"), (int, float)) and d["score"] >= 4
+                     and d.get("id") not in used]
         if not great_now:
             return None
         ordered = pick_oldest_unused(state, "reel_seasonal_dests",
@@ -7379,11 +7451,13 @@ def _pick_reel_data(state: dict, content: dict, reel_format: str) -> dict | None
         }
 
     elif reel_format == "trap_alert":
-        if not traps:
+        # Trap home dest filtered against once-per-month set.
+        traps_fresh = [t for t in traps if t.get("destination_id") not in used]
+        if not traps_fresh:
             return None
         ordered = pick_oldest_unused(state, "reel_trap_alerts",
                                      [{"id": t.get("id", t.get("name", "")), **t}
-                                      for t in traps], key="id")
+                                      for t in traps_fresh], key="id")
         t = ordered[0]
         return {
             "trap_name": t.get("name") or t.get("title", "Common Tourist Trap"),
@@ -7401,11 +7475,14 @@ def _pick_reel_data(state: dict, content: dict, reel_format: str) -> dict | None
         high_scored = [d for d in destinations
                        if isinstance(d.get("score"), (int, float))
                        and d["score"] >= 4
-                       and has_social_image(d.get("name", ""))]
+                       and has_social_image(d.get("name", ""))
+                       and d.get("id") not in used]
         if not high_scored:
-            # Fallback: any destination with a branded image
+            # Fallback: any destination with a branded image, still filtered
+            # against once-per-month set.
             high_scored = [d for d in destinations
-                          if has_social_image(d.get("name", ""))]
+                          if has_social_image(d.get("name", ""))
+                          and d.get("id") not in used]
         if not high_scored:
             return None
         ordered = pick_oldest_unused(state, "reel_reveal_dests",
@@ -7426,11 +7503,14 @@ def _pick_reel_data(state: dict, content: dict, reel_format: str) -> dict | None
         # uses verified hidden_gems table records with confidence_score>=0.7 +
         # has why_unknown / why_go prose for the narrative hook.
         gems = content.get("hidden_gems", {}).get("data", []) or []
-        if not gems:
+        # Hidden gems link to near_destination_id (their parent dest); filter
+        # against the once-per-month set on that key.
+        gems_fresh = [g for g in gems if g.get("near_destination_id") not in used]
+        if not gems_fresh:
             return None
         ordered = pick_oldest_unused(state, "reel_hidden_gems",
                                      [{"id": g.get("id", g.get("name", "")), **g}
-                                      for g in gems], key="id")
+                                      for g in gems_fresh], key="id")
         g = ordered[0]
         return {
             "dest_name": g.get("name", "Unknown"),

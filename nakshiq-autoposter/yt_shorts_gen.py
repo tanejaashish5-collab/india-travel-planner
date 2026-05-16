@@ -1610,6 +1610,25 @@ def build_yt_short(
 
     print(f"Fetched {len(destinations)} destinations for {month_name}")
 
+    # 2026-05-16 — once-per-calendar-month rule. Filter the candidate pool so
+    # no YT Short surfaces a destination that's already been posted this month
+    # across any flow (main loop, evening, reels, pomelli/canva/flow_story).
+    # Returns None (SKIP) when the filter empties the pool — no silent
+    # degradation. Import is local because yt_shorts_gen runs both as a
+    # standalone module and as an autoposter import.
+    try:
+        from autoposter import recently_used_destinations
+        used = recently_used_destinations(st)
+        if used:
+            fresh = [d for d in destinations if d.get("id") not in used]
+            if not fresh:
+                print(f"YT Short: all {len(destinations)} dests already posted this month — SKIPPING")
+                return None
+            print(f"After once-per-month dedup: {len(fresh)}/{len(destinations)} fresh dests")
+            destinations = fresh
+    except Exception as e:
+        print(f"WARN: once-per-month dedup unavailable ({e}) — continuing without filter")
+
     # Pick music
     music = _pick_music(st)
     if not music:
