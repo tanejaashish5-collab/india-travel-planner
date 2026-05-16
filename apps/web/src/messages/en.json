@@ -411,12 +411,12 @@
     "hitRoadblock": "Hit a roadblock"
   },
   "score": {
-    "5": "Peak — go now",
-    "4": "Excellent",
-    "3": "Doable",
-    "2": "Marginal",
+    "0": "Closed / inaccessible",
     "1": "Avoid unless specific reason",
-    "0": "Closed / inaccessible"
+    "2": "Marginal",
+    "3": "Doable",
+    "4": "Excellent",
+    "5": "Peak — go now"
   },
   "hero": {
     "confidenceEngine": "The Confidence Engine for Exploring India",
@@ -507,5 +507,33 @@
     "androidBody": "Add NakshIQ to your home screen — works without internet in remote areas",
     "cta": "Add to Home Screen",
     "dismiss": "Dismiss"
+  },
+  "scarcity": {
+    "heading": {
+      "eateries": "Where to eat in {destination}",
+      "stays": "Where to stay in {destination}",
+      "gems": "Things to see in {destination}"
+    },
+    "eateries": {
+      "np_core": "{destination} is a protected core zone — no commercial dining is permitted here. Pack a meal from {base_town}, {base_distance_km}km out, or rely on your homestay's kitchen.",
+      "military_or_restricted": "{destination} is restricted ground with no permanent commercial infrastructure. Eat in {base_town}, {base_distance_km}km out, before you head up.",
+      "sub_5k_tribal": "{destination} is a tribal community of fewer than 5,000 — every meal here comes from a homestay kitchen. There are no standalone restaurants, and that's correct.",
+      "uninhabited_island": "{destination} has no permanent residents. Day-trip charters carry packed lunches from {base_town}. No restaurants exist, and none should.",
+      "high_altitude_pass": "{destination} is a pass, not a settlement. Eat in {base_town}, {base_distance_km}km out, and carry water and a hot flask for the climb."
+    },
+    "stays": {
+      "np_core": "The core zone permits no commercial overnight stays. Base in {base_town}, {base_distance_km}km out, and enter on a day permit.",
+      "military_or_restricted": "Overnight stays inside {destination} aren't sanctioned. Use {base_town}, {base_distance_km}km out, as your base.",
+      "sub_5k_tribal": "Every overnight option in {destination} is a community-run homestay. The listings here are the village's complete inventory.",
+      "uninhabited_island": "{destination} permits no overnight stays. Day-trip from {base_town} and return by sunset.",
+      "high_altitude_pass": "Nobody sleeps at {destination}. Acclimatise in {base_town}, {base_distance_km}km out — overnight at this altitude is medically unwise."
+    },
+    "gems": {
+      "np_core": "{destination} is the protected core itself. The sanctioned viewing points and trails are all there is, and all you came for.",
+      "military_or_restricted": "Access points and timing are the experience here. The single sanctioned route is the answer.",
+      "sub_5k_tribal": "{destination} itself is the visit — the community welcome, the rhythm of the village. There's no second checklist.",
+      "uninhabited_island": "The lagoon, the reef, and the solitude are the visit. There's no second thing to do, and that's the point.",
+      "high_altitude_pass": "The pass is the experience. No other listings exist — the view from the top is what you came for."
+    }
   }
 }

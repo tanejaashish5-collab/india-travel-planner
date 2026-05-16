@@ -97,6 +97,8 @@ import { CinematicHeroParallax } from "./cinematic-hero-parallax";
 import { CinematicMobileActionBar } from "./cinematic-mobile-action-bar";
 import { CinematicNewsletter } from "./cinematic-newsletter";
 import { CinematicHiddenGems } from "./cinematic-hidden-gems";
+import { HonestScarcityPanel } from "./honest-scarcity-panel";
+import { isHonestScarcityConfirmed } from "@/lib/honest-scarcity";
 
 export function DestinationDetailCinematic({ dest }: { dest: any }) {
   const locale = useLocale();
@@ -187,7 +189,7 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
     { id: "dest-act-5", label: "Risks", show: !!cc || dest.solo_female_score != null || !!kf },
     { id: "dest-act-6", label: "Atlas", show: pois.length > 0 || subs.length > 0 || gems.length > 0 },
     { id: "dest-act-7", label: "Cost & ground", show: !!dest.daily_cost || !!dest.local_logistics },
-    { id: "dest-act-8", label: "Stay & eat", show: eateries.length > 0 || (dest.editor_stay_picks?.length ?? 0) > 0 },
+    { id: "dest-act-8", label: "Stay & eat", show: eateries.length > 0 || (dest.editor_stay_picks?.length ?? 0) > 0 || isHonestScarcityConfirmed(dest.honest_scarcity, "eateries") || isHonestScarcityConfirmed(dest.honest_scarcity, "stays") },
     { id: "dest-act-9", label: "Field notes", show: (dest.trip_reports?.length ?? 0) > 0 || (dest.traveler_notes?.length ?? 0) > 0 },
     { id: "dest-act-10", label: "Itinerary", show: !!dest.micro_itineraries },
     { id: "dest-act-11", label: "Coda", show: true },
@@ -2022,6 +2024,16 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
               </div>
             )}
 
+            {eateries.length === 0 && isHonestScarcityConfirmed(dest.honest_scarcity, "eateries") && (
+              <div style={{ maxWidth: 1100, margin: "32px auto 0" }}>
+                <HonestScarcityPanel
+                  slot="eateries"
+                  destinationName={displayName}
+                  honestScarcity={dest.honest_scarcity}
+                />
+              </div>
+            )}
+
             {/* Editor stay picks — inline cinematic. Each pick is its own
                 editorial card with the slot label as kicker. */}
             {dest.editor_stay_picks?.length > 0 && (
@@ -2124,6 +2136,16 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
                     </div>
                   ))}
                 </div>
+              </div>
+            )}
+
+            {(dest.editor_stay_picks?.length ?? 0) === 0 && isHonestScarcityConfirmed(dest.honest_scarcity, "stays") && (
+              <div style={{ maxWidth: 1100, margin: "60px auto 0" }}>
+                <HonestScarcityPanel
+                  slot="stays"
+                  destinationName={displayName}
+                  honestScarcity={dest.honest_scarcity}
+                />
               </div>
             )}
 
