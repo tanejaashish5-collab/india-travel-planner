@@ -52,36 +52,38 @@ LOG_FILE         = Path(__file__).parent / "autoposter.log"
 # have been cycled through). Tracked via theme_usage["morning_formats"].
 # ─────────────────────────────────────────────────────────────────────────────
 MORNING_FORMATS = [
-    # ── Tier 1: existing formats ──
-    "score_card",
-    "reality_check",
-    "data_carousel",
-    "infrastructure_truth",
-    "collection_spotlight",
-    "festival_alert",
-    "kids_intel",
-    "monthly_forecast",
-    "tourist_trap",
-    "blog_promo",
-    # ── Tier 2: NEW data-driven formats ──
-    "seasonal_shift",       # "5/5 now → 2/5 next month — GO NOW"
-    "elevation_face_off",   # sea-level vs sky-level, both 5/5
-    "state_showdown",       # Two states, same month, different data
-    "difficulty_spectrum",   # easy vs hard, both high-scoring
-    "underdog_spotlight",   # easy, low-elevation, high-score hidden gem
-    "this_month_only",      # 5/5 now, bad before & after — narrow window
-    "adventure_pick",       # hard / high-altitude featured pick
-    "weekend_escape",       # easy + accessible + high-scoring
-    # ── Tier 2.5 (added 2026-05-05) — fresh content sources beyond destinations ──
+    # ── 2026-05-16 STRATEGIC PIVOT — 26 formats → 7 ──
+    #
+    # Diagnosis: 215 IG posts → 2 organic followers (0.93% conversion). Audit
+    # confirmed >20 of 26 formats either posted shallow boilerplate or fell
+    # back silently to score_card when their rich data was missing. Comparison
+    # formats (elevation_face_off, state_showdown, difficulty_spectrum) posted
+    # identical IG/FB content with template voice. Manifesto formats
+    # (chinese_wall, four_questions, methodology) had no destination hook —
+    # pure brand statements that earn zero engagement on a sub-1k account.
+    #
+    # New principle: every post MUST surface rich, dest-specific DB data
+    # (eatery anchor, stay pick, emergency contact, festival timing, etc).
+    # If the data isn't available, SKIP the post — do not degrade to
+    # score_card. Quality over volume.
+    #
+    # Kept (proven rich-data formats):
+    "score_card",           # core verdict — keep but voice-rewritten
+    "stays_pick",           # editor-curated stay (signature_experience)
+    "emergency_intel",      # per-dest SOS contacts + local helper (MOAT)
     "eateries_pick",        # legendary local eatery + insider tip
-    "trek_intel",           # trek with altitude + permit + best months
-    # ── Tier 6 (added 2026-05-10) — close the data-vertical coverage gap ──
-    "stays_pick",           # editor-curated stay pick (signature_experience)
-    "emergency_intel",      # per-dest SOS contacts + local helper
-    "viral_eats_pick",      # viral-on-X eatery + honest review
-    "camping_intel",        # camping spot with permit/water/facilities
+    "festival_alert",       # this-month festival with timing
+    "weekend_escape",       # 48hr plan with destination-specific detail
     "confidence_intel",     # unified reach+sleep+fuel+network report card
-    "collection_series",    # themed multi-post (root bridges / sacred lakes / etc)
+    #
+    # Killed 2026-05-16 (manifesto / shallow / silent-fallback formats):
+    #   reality_check, data_carousel, infrastructure_truth, monthly_forecast,
+    #   tourist_trap (kept as anti-trap only on rotation), blog_promo,
+    #   seasonal_shift, elevation_face_off, state_showdown, difficulty_spectrum,
+    #   underdog_spotlight, this_month_only, adventure_pick, trek_intel,
+    #   viral_eats_pick, camping_intel, collection_spotlight,
+    #   collection_series, kids_intel
+    # Restore individually only after voice rewrite + first-100-engagement audit.
 ]
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -293,15 +295,17 @@ EVENING_STORY_SCHEDULE = {
 # When a new angle is added, it gets featured first automatically (never-used
 # sorts ahead of everything). When all 9 have cycled, rotation resets.
 MOAT_ANGLES = [
-    "methodology_roads",
-    "methodology_family",
-    "methodology_altitude",
-    "methodology_crowds",
+    # 2026-05-16 PIVOT — kept ONE genuine moat angle (skip_list — honest
+    # 'don't go' content is unique to NakshIQ and trust-building). Killed
+    # all methodology + manifesto angles: chinese_wall, four_questions,
+    # data_provenance, same_place_12_months, methodology_roads/family/
+    # altitude/crowds — these posted brand statements with no destination
+    # hook and earned zero engagement on the 12-follower account.
+    # When MOAT_ANGLES has only 1 entry, the pick_oldest_unused tracker
+    # returns it every Mon/Wed/Fri but the moat cron is M/W/F only, so
+    # skip_list fires ~3x/week which is reasonable cadence for honest
+    # 'don't go' content.
     "skip_list",
-    "chinese_wall",
-    "four_questions",
-    "data_provenance",
-    "same_place_12_months",
 ]
 
 # Methodology content per dimension — hardcoded because it IS the moat.
@@ -1578,6 +1582,176 @@ def hashtag(*tags: str) -> str:
     return " ".join(f"#{t.replace(' ', '')}" for t in clean)
 
 
+# ─────────────────────────────────────────────────────────────────────────────
+# NICHE HASHTAG LIBRARY (added 2026-05-16, voice pivot)
+# -----------------------------------------------------------------------------
+# Brand-stuffed tags like #NakshIQ + auto-generated #5outOf5 + #May2026Travel
+# earn near-zero reach on the sub-1k follower account. IG's algorithm gates
+# distribution by hashtag-community engagement — branded tags have only us
+# posting, so the algo concludes "low-engagement hashtag, low-engagement post".
+#
+# This library maps state + theme to 5 NICHE tags with active communities
+# (~100k-2M posts each, verified manually 2026-05-16). These are the tags
+# successful India-travel accounts (incredibleindia, travelxp, indiagrams,
+# bohemiantravel, etc.) actually use.
+#
+# Use `niche_tags(state, theme, dest_name=None)` to assemble a 5-tag block.
+# It auto-mixes 2 geographic + 2 theme + 1 dest-specific (when destination
+# is iconic enough to have its own active tag, e.g. #manalidiaries).
+# ─────────────────────────────────────────────────────────────────────────────
+
+STATE_NICHE_TAGS = {
+    "Andhra Pradesh":   ["andhratourism", "andhrapradeshtourism", "exploreandhra"],
+    "Arunachal Pradesh":["arunachalpradesh", "northeastindiatravel", "ariverflowseast"],
+    "Assam":            ["assamtourism", "incredibleassam", "northeastdiaries"],
+    "Bihar":            ["bihartourism", "explorebihar", "indianheritage"],
+    "Chhattisgarh":     ["chhattisgarhtourism", "explorechhattisgarh", "tribalindia"],
+    "Goa":              ["goadiaries", "goagram", "southgoavibes"],
+    "Gujarat":          ["gujarattourism", "khushbugujaratki", "rannutsav"],
+    "Haryana":          ["haryanatourism", "delhinearby", "northindiadiaries"],
+    "Himachal Pradesh": ["himachaldiaries", "himachalpradesh", "himalayanwanderer"],
+    "Jammu & Kashmir":  ["kashmirdiaries", "kashmirgram", "kashmirtourism"],
+    "Jharkhand":        ["jharkhandtourism", "explorejharkhand", "tribaltravels"],
+    "Karnataka":        ["karnatakatourism", "exploredsouthindia", "karnatakadiaries"],
+    "Kerala":           ["godsowncountry", "keralatourism", "keralagram"],
+    "Ladakh":           ["ladakhdiaries", "leh_ladakh", "ladakhtourism"],
+    "Lakshadweep":      ["lakshadweepdiaries", "indianislands", "beachesofindia"],
+    "Madhya Pradesh":   ["heartofindia", "mptourism", "incrediblemp"],
+    "Maharashtra":      ["maharashtra_tourism", "maharashtradiaries", "konkandiaries"],
+    "Manipur":          ["manipurtourism", "northeastindia", "exploremanipur"],
+    "Meghalaya":        ["meghalayatourism", "scotlandoftheeast", "shillongdiaries"],
+    "Mizoram":          ["mizoramtourism", "incrediblemizoram", "northeastvibes"],
+    "Nagaland":         ["nagalandtourism", "hornbillfestival", "northeastdiaries"],
+    "Odisha":           ["odishatourism", "incredibleodisha", "tribalheritage"],
+    "Puducherry":       ["pondicherrydiaries", "frenchindia", "southindiatravel"],
+    "Punjab":           ["punjabtourism", "punjabidiaries", "amritsardiaries"],
+    "Rajasthan":        ["rajasthandiaries", "padharomarodesh", "incrediblerajasthan"],
+    "Sikkim":           ["sikkimtourism", "explore_sikkim", "northeastdiaries"],
+    "Tamil Nadu":       ["tamilnadutourism", "templesoftamilnadu", "exploretn"],
+    "Telangana":        ["telanganatourism", "exploretelangana", "hyderabaddiaries"],
+    "Tripura":          ["tripuratourism", "northeastexplorer", "exploretripura"],
+    "Uttar Pradesh":    ["uptourism", "incredibleup", "varanasidiaries"],
+    "Uttarakhand":      ["uttarakhandtourism", "devbhumi", "himalayandiaries"],
+    "West Bengal":      ["westbengaltourism", "explorewestbengal", "bengaldiaries"],
+    "Andaman & Nicobar":["andamandiaries", "indianbeaches", "scubadivingindia"],
+    "Chandigarh":       ["chandigarhdiaries", "northindiatravel", "rockgardens"],
+    "Delhi":            ["delhigram", "olddelhi", "delhidiaries"],
+    "Dadra & Nagar Haveli":["unionterritoryindia", "westindiatravel", "exploreindia"],
+    "Daman & Diu":      ["damanddiu", "westcoastindia", "indianbeaches"],
+}
+
+THEME_NICHE_TAGS = {
+    "stays":     ["boutiquestaysindia", "homestaysindia", "indiastays",
+                  "budgetstayindia", "luxurystayindia"],
+    "eateries":  ["foodofindia", "indianstreetfood", "indianfoodblog",
+                  "foodtravelindia", "instafoodieindia"],
+    "viral_eats":["foodieindia", "indianstreetfood", "viralfoodindia",
+                  "foodofinstagram", "explorefoodindia"],
+    "emergency": ["solotravelindia", "safetravelindia", "responsibletravel",
+                  "travelplanner", "travelhacksindia"],
+    "weekend":   ["weekendgetaway", "weekendgetawayfromdelhi", "weekendgetawayfrommumbai",
+                  "weekendgetawayfrombangalore", "shortbreaksindia"],
+    "trek":      ["trekkingindia", "indianhimalayas", "trekkersofindia",
+                  "mountainsofindia", "trekdiariesindia"],
+    "festival":  ["festivalsofindia", "indianfestival", "incredibleindiafestivals",
+                  "culturalindia", "spiritualindia"],
+    "score":     ["india_travel", "incredibleindiaofficial", "indiagram",
+                  "exploreindiaofficial", "travelindia"],
+    "anti_trap": ["honesttravel", "skipthis", "touristtrapsindia",
+                  "travelreality", "smarttravel"],
+    "kids":      ["familytravelindia", "kidsfriendlytravel", "indiawithkids",
+                  "indianfamilytravel", "vacationswithkids"],
+    "skip":      ["honesttravel", "skipthis", "travelreality",
+                  "donotvisit", "smarttravel"],
+    "camping":   ["campingindia", "campinglife", "campingindiandiaries",
+                  "wildernessindia", "outdoorindia"],
+    "infra":     ["roadtripindia", "indianroads", "drivingindia",
+                  "travelhacksindia", "northindiadrives"],
+}
+
+
+def niche_tags(state: str | None, theme: str, dest_name: str | None = None,
+               max_tags: int = 5) -> str:
+    """Assemble a niche hashtag block for an IG/FB caption.
+
+    Mixes:
+      - 2 from STATE_NICHE_TAGS[state]      (geographic community)
+      - 2 from THEME_NICHE_TAGS[theme]      (theme community)
+      - 1 dest-specific (e.g. #manalidiaries) when dest_name resolves
+
+    Returns space-joined `#tag1 #tag2 ...` string. Never includes #NakshIQ —
+    branded tags are explicitly killed by the 2026-05-16 voice pivot because
+    they earn zero reach on a sub-1k account.
+    """
+    tags: list[str] = []
+    state_pool = STATE_NICHE_TAGS.get(state or "") or []
+    theme_pool = THEME_NICHE_TAGS.get(theme or "") or []
+
+    # Dest-specific tag — only for destinations with active tag communities.
+    dest_iconic = {
+        "manali": "manalidiaries", "shimla": "shimladiaries",
+        "spiti": "spitivalley", "ladakh": "ladakhdiaries",
+        "varanasi": "varanasidiaries", "rishikesh": "rishikeshdiaries",
+        "goa": "goadiaries", "kochi": "kochidiaries",
+        "darjeeling": "darjeelingdiaries", "udaipur": "udaipurdiaries",
+        "jaipur": "jaipurdiaries", "jaisalmer": "jaisalmerdiaries",
+        "mumbai": "mumbaikar", "bangalore": "bangalorediaries",
+        "kashmir": "kashmirdiaries", "kerala": "keralagram",
+        "munnar": "munnardiaries", "ooty": "ootydiaries",
+        "coorg": "coorgdiaries", "kasol": "kasolvibes",
+        "mcleodganj": "mcleodganjdiaries", "auli": "aulidiaries",
+        "kedarnath": "kedarnathyatra", "badrinath": "badrinathdham",
+        "amritsar": "amritsardiaries", "pondicherry": "pondicherrydiaries",
+        "andaman": "andamandiaries", "havelock": "havelockisland",
+    }
+    if dest_name:
+        key = dest_name.lower().split()[0]
+        if key in dest_iconic:
+            tags.append(dest_iconic[key])
+
+    # Geographic
+    for t in state_pool[:2]:
+        if t not in tags:
+            tags.append(t)
+    # Theme
+    for t in theme_pool[:3]:
+        if t not in tags and len(tags) < max_tags:
+            tags.append(t)
+    # Backfill with theme if state pool was empty
+    for t in theme_pool[3:]:
+        if t not in tags and len(tags) < max_tags:
+            tags.append(t)
+    return " ".join(f"#{t}" for t in tags[:max_tags])
+
+
+def comment_cta(theme: str, dest_name: str = "this") -> str:
+    """Return a hook-style comment-trigger CTA matching the post theme.
+
+    Comment-CTAs outperform link-CTAs on IG because (a) links are stripped
+    from captions anyway, (b) comments are a strong algo signal that boosts
+    organic reach, (c) DM follow-up is where actual conversion happens.
+    """
+    # First-name the destination — strip state suffix, lowercase first word
+    short = (dest_name or "this").split(",")[0].strip()
+    short_lower = short.lower().split()[0]
+    triggers = {
+        "score":     f"Comment '{short_lower}' — I'll DM the 48-hour plan I'd actually do.",
+        "stays":     f"Comment '{short_lower}' — I'll send the 3 stays I'd actually book + price ranges.",
+        "eateries":  f"Comment '{short_lower}' — I'll send 5 places no listicle has.",
+        "emergency": f"Save this. Comment 'safety' — I'll DM the printable contact card.",
+        "festival":  f"Comment '{short_lower}' — I'll send the lesser-known timing + crowd map.",
+        "weekend":   f"Comment '{short_lower}' — I'll DM the Fri-Sun plan with real costs.",
+        "infra":     f"Comment '{short_lower}' — I'll send the offline map + fuel stops.",
+        "trek":      f"Comment '{short_lower}' — I'll DM the offline route + permit form.",
+        "anti_trap": f"Comment 'where' — I'll send the alternative that's actually worth it.",
+        "skip":      f"Comment 'where' — I'll DM the alternative I'd send my own family to.",
+        "viral_eats":f"Comment '{short_lower}' — I'll tell you honestly whether it's worth the queue.",
+        "camping":   f"Comment '{short_lower}' — I'll DM permit details + nearest water/fuel.",
+        "kids":      f"Comment '{short_lower}' — I'll send what to pack for kids + age guide.",
+    }
+    return triggers.get(theme, triggers["score"])
+
+
 def sanitize(text: str) -> str:
     """
     Strip banned phrases and banned hashtags from a caption before publishing.
@@ -1792,36 +1966,54 @@ def dest_url(dest: dict, source: str = "", medium: str = "", campaign: str = "",
 
 
 def copy_score_card(dest: dict, platform: str) -> str:
+    """2026-05-16 VOICE PIVOT — hook-first, curiosity-led, comment-CTA, no IG URL.
+
+    Old voice ("MANALI · MAY · NakshIQ scores 505 destinations monthly")
+    earned 0.93% post-to-follower rate. New voice opens with a curiosity
+    hook from the destination's `note` (the verified mid-month update) and
+    ends with a comment trigger that drives DM signal — IG's strongest
+    algo input on small accounts.
+    """
     name  = dest["name"]
-    score = dest["score"]
-    elev  = dest["elevation_m"]
     state = dest["state"]
-    tag   = dest["tagline"]
+    tag   = (dest.get("tagline") or "").strip()
     note  = (dest.get("note") or "").strip()
-    url   = dest_url(dest, "social", "post", "score-card")
-    stars = "★" * score + "☆" * (5 - score)
-    mon   = month_name().upper()
-    tags  = hashtag(name, state, f"{month_name()}Travel",
-                    f"{score}outOf5", "NakshIQ")
-    # Caption strips name/score/elev/state metadata — those are already
-    # rendered as text on the carousel slide (see slide_gen render_destination_slide).
-    # Lead with the tagline hook + note + CTA so caption + slide aren't a redundant pair.
+    score = dest.get("score") or 0
+    mon   = month_name()
+    tags  = niche_tags(state, "score", dest_name=name)
+    cta   = comment_cta("score", name)
+
+    # Hook line — prefer the full note (verified, time-sensitive). Only split
+    # on first sentence if note is too long for IG's truncate-at-125-char rule
+    # AND the first sentence stands alone as a hook (>30 chars).
+    full_text = note if note else tag
+    hook = full_text
+    if len(full_text) > 140:
+        first = full_text.split(". ")[0].strip()
+        if len(first) > 35:
+            hook = first.rstrip(".") + "."
+    # If hook is too-short like "Mid-May." just use the whole note.
+    if hook and len(hook) < 35 and note:
+        hook = note
+
     if platform == "facebook":
-        return (
-            f"{name.upper()} — {mon}\n\n"
-            f"{tag}\n\n"
-            + (f"{note}\n\n" if note else "")
-            + f"NakshIQ scores {TOTAL_DESTINATIONS} destinations monthly. Not a blog post — live data.\n\n"
-            f"Full {name} data → {url}\n\n{tags}"
-        ).strip()
-    else:
-        return (
-            f"{name.upper()} · {mon}\n\n"
-            f"{tag}\n\n"
-            + (f"{note}\n\n" if note else "")
-            + f"NakshIQ scores {TOTAL_DESTINATIONS} destinations monthly — actual data, not aspirational content.\n\n"
-            f"Save this. {name} detail → {url}\n\n{tags}"
-        ).strip()
+        # FB tolerates longer copy + clickable links — keep URL there.
+        url = dest_url(dest, "social", "post", "score-card",
+                       content=build_utm_content(dest.get("id"), "score_card"))
+        body = [hook] if hook else []
+        body.append(f"Verified for {mon}. Score: {score}/5. {state}.")
+        body.append(cta)
+        body.append(f"Full {name} guide → {url}")
+        body.append(tags)
+        return "\n\n".join(b for b in body if b).strip()
+
+    # IG — no URL (stripped from captions). Link-in-bio model + comment-CTA.
+    body = [hook] if hook else []
+    body.append(f"{mon} · NakshIQ {score}/5 · {state}")
+    body.append(cta)
+    body.append("🔗 link in bio for the full guide.")
+    body.append(tags)
+    return "\n\n".join(b for b in body if b).strip()
 
 def copy_reality_check(destinations: list, platform: str,
                        pair: tuple | None = None) -> tuple[str, str]:
@@ -1971,22 +2163,63 @@ def copy_collection_spotlight(collection: dict, dest_map: dict, platform: str) -
 
 
 def copy_festival_alert(festival: dict, dest_map: dict, platform: str) -> str:
-    name      = festival.get("name", "Festival")
+    """2026-05-16 VOICE PIVOT — festival hook + comment-CTA, no IG URL."""
+    name      = (festival.get("name") or "").strip()
     desc      = (festival.get("description") or "").strip()
     dest_name = festival.get("destination_name") or "India"
-    did       = festival.get("destination_id")
-    deep_url  = utm((dest_map[did]["url"] if did in dest_map else
-                 (festival.get("url") or "https://nakshiq.com/en/festivals")).strip(),
-                 "social", "post", "festival")
-    tags = hashtag(name.replace(" ", ""), dest_name.replace(" ", ""),
-                   "FestivalAlert", f"{month_name()}Festival", "NakshIQ")
-    emoji = "🎪" if platform == "facebook" else "🪔"
-    return (
-        f"{emoji} {name.upper()} — {month_name().upper()}\n\n"
-        f"📍 {dest_name}\n\n"
-        f"{desc}\n\n"
-        f"Plan your trip around it → {deep_url}\n\n{tags}"
-    ).strip()
+    dest_state = ""
+    did = festival.get("destination_id")
+    if did and did in dest_map:
+        dest_state = (dest_map[did].get("state") or "").strip()
+
+    if not name:
+        log.info("festival_alert: no name — SKIPPING")
+        return ""
+
+    tags = niche_tags(dest_state, "festival", dest_name=dest_name)
+    cta  = comment_cta("festival", name)
+    mon  = month_name()
+
+    # Hook = the festival's specific moment, not a generic alert
+    hook = f"{name} is happening in {dest_name} this {mon}."
+    if desc:
+        # Pull first sentence of desc as the curiosity line
+        first_sentence = desc.split(".")[0].strip()
+        if len(first_sentence) > 30:
+            hook = f"{first_sentence}."
+
+    if platform == "facebook":
+        # Resolve URL safely — dest record may not carry a `url` key, fall
+        # back to constructed deep-link, then festival.url, then hub.
+        base_url = ""
+        if did and did in dest_map:
+            base_url = (dest_map[did].get("url") or f"https://nakshiq.com/en/destination/{did}")
+        if not base_url:
+            base_url = (festival.get("url") or "https://nakshiq.com/en/festivals")
+        url = utm(base_url.strip(), "social", "post", "festival",
+                  content=build_utm_content(did, "festival_alert"))
+        body = [
+            hook,
+            f"📍 {dest_name}{f', {dest_state}' if dest_state else ''} · {mon}",
+        ]
+        if desc and desc.split(".")[0] != hook.rstrip("."):
+            body.append(desc)
+        body.append(cta)
+        body.append(f"Festival timing + nearby stays → {url}")
+        body.append(tags)
+        return "\n\n".join(b for b in body if b).strip()
+
+    # IG — no URL
+    body = [
+        hook,
+        f"📍 {dest_name} · {mon}",
+    ]
+    if desc and desc.split(".")[0] != hook.rstrip("."):
+        body.append(desc)
+    body.append(cta)
+    body.append("🔗 link in bio for the full festival brief.")
+    body.append(tags)
+    return "\n\n".join(b for b in body if b).strip()
 
 
 def copy_kids_intel(dest: dict, platform: str) -> str:
@@ -2271,72 +2504,63 @@ def copy_adventure_pick(dest: dict, platform: str) -> str:
 
 
 def copy_weekend_escape(dest: dict, platform: str) -> str:
-    """Easy + accessible + high score — 48-hour trip with destination-specific detail."""
+    """2026-05-16 VOICE PIVOT — Fri-Sun specific, hook + comment-CTA, no IG URL.
+
+    Was 6 rotating hooks all saying "data-backed not guesswork" — same
+    voice anchor in different words. New version frames the 48hr window
+    as a real plan with specific timing, and ends with comment-CTA to
+    deliver the actual plan via DM.
+    """
     try:
         name  = dest["name"]
-        score = dest["score"]
-        elev  = dest["elevation_m"]
         state = dest["state"]
-        tag   = dest.get("tagline", "")
         note  = (dest.get("note") or "").strip()
+        tag   = (dest.get("tagline") or "").strip()
         diff  = (dest.get("difficulty") or "easy").capitalize()
-        url   = dest_url(dest, "social", "post", "weekend-escape")
-        stars = "★" * score + "☆" * (5 - score)
-        tags  = hashtag(name, state, "WeekendEscape",
-                        f"{month_name()}Getaway", "48Hours")
 
-        # Build a destination-specific detail line from note/tagline
-        detail = ""
-        if note and len(note) > 20:
-            # Use the note as the unique detail
-            detail = note if len(note) <= 140 else note[:137] + "..."
-        elif tag and len(tag) > 15:
-            detail = tag
+        if not name:
+            return ""
 
-        # Rotating hooks so posts don't repeat the same opener
-        import hashlib
-        hook_seed = int(hashlib.md5(name.encode()).hexdigest(), 16) % 6
-        hooks_fb = [
-            f"{name} scores {format_score(score)} this {month_name()}. You don't need a week off — just 48 hours and a plan.",
-            f"Two days. {name}. {format_score(score)} confidence score. The data says go — this {month_name()}.",
-            f"Skip the long-leave request. {name} is a {format_score(score)} this {month_name()} and 48 hours is all you need.",
-            f"Your next 48 hours could look like {name} — {format_score(score)}, {diff.lower()} access, {state}.",
-            f"{name} this {month_name()}? {format_score(score)}. {diff} access. Two days is enough to do it right.",
-            f"Friday evening to Sunday night. {name}. {format_score(score)} this {month_name()}. Data-backed, not guesswork.",
-        ]
-        hooks_ig = [
-            f"48 hours. {name}. {format_score(score)} this {month_name()}.",
-            f"Two days. {diff} access. {format_score(score)} confidence.",
-            f"Skip the week off. {name} works in 48 hours.",
-            f"Friday to Sunday. {name}. {format_score(score)}.",
-            f"{name} — {format_score(score)}. {diff}. Two days.",
-            f"48 hrs is enough. {name}. {format_score(score)}.",
-        ]
+        # Hook = the verified note (time-sensitive) or tagline.
+        full_text = note if note else tag
+        hook = full_text
+        if len(full_text) > 140:
+            first = full_text.split(". ")[0].strip()
+            if len(first) > 35:
+                hook = first.rstrip(".") + "."
+        if hook and len(hook) < 35 and note:
+            hook = note
+
+        meta_line = f"Friday evening to Sunday night · {diff.lower()} access · {state}"
+        tags = niche_tags(state, "weekend", dest_name=name)
+        cta  = comment_cta("weekend", name)
 
         if platform == "facebook":
-            parts = [
-                f"🌿 WEEKEND ESCAPE: {name.upper()}\n",
-                f"{stars} {format_score(score)} · {elev:,}m · {diff} access · {state}\n",
+            url = dest_url(dest, "social", "post", "weekend-escape",
+                           content=build_utm_content(dest.get("id"), "weekend_escape"))
+            body = [
+                f"You don't need a week off for {name}.",
+                hook,
+                meta_line,
+                cta,
+                f"Plan it → {url}",
+                tags,
             ]
-            if detail:
-                parts.append(f"\n{detail}\n")
-            parts.append(f"\n{hooks_fb[hook_seed]}\n")
-            parts.append(f"\nPlan it → {url}\n\n{tags}")
-            return "".join(parts).strip()
-        else:
-            parts = [
-                f"🌿 WEEKEND ESCAPE · {month_name().upper()}\n",
-                f"{name.upper()} · {stars} {format_score(score)}\n",
-                f"↑{elev:,}m · {diff} · {state}\n",
-            ]
-            if detail:
-                parts.append(f"\n{detail}\n")
-            parts.append(f"\n{hooks_ig[hook_seed]}\n")
-            parts.append(f"\nSave → {url}\n\n{tags}")
-            return "".join(parts).strip()
+            return "\n\n".join(b for b in body if b).strip()
+
+        # IG
+        body = [
+            f"You don't need a week off for {name}.",
+            hook,
+            meta_line,
+            cta,
+            "🔗 link in bio for the full 48hr plan.",
+            tags,
+        ]
+        return "\n\n".join(b for b in body if b).strip()
     except Exception as e:
-        log.warning(f"copy_weekend_escape error: {e}")
-        return copy_score_card(dest, platform)
+        log.warning(f"copy_weekend_escape error: {e} — SKIPPING")
+        return ""
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -2344,15 +2568,16 @@ def copy_weekend_escape(dest: dict, platform: str) -> str:
 # ─────────────────────────────────────────────────────────────────────────────
 
 def copy_eateries_pick(eatery: dict, dest_map: dict, platform: str) -> str:
-    """Hyper-local food pick — surfaces a verified eatery (legendary first).
+    """2026-05-16 VOICE PIVOT — open with the dish, close with comment-CTA.
 
-    Inputs (per /api/content?type=eateries):
-      name, area, cuisine[], category, signature_dish, must_try[], price_range,
-      established_year, why_it_matters, insider_tip, is_legendary, destination_id
+    Was: "🍴 LOCAL ICON — XYZ · NakshIQ verifies every eatery"  (cold)
+    Now: opens with the why_it_matters line (the cultural / culinary reason
+    the place earns a post) or the insider_tip, ends with comment-bait so
+    the food-discovery community engages.
 
-    Voice anchor: "Eat here, here's why" — local-insider tone, not blog.
-    Always links to the destination page (so the click lands on real depth,
-    not the homepage 0%-engagement leak from the May-4 data baseline).
+    Returns "" when name+dest is missing — NO score_card fallback (voice
+    pivot 2026-05-16). A food post about a missing eatery is worse than
+    no post.
     """
     try:
         name      = (eatery.get("name") or "").strip()
@@ -2366,74 +2591,79 @@ def copy_eateries_pick(eatery: dict, dest_map: dict, platform: str) -> str:
         tip       = (eatery.get("insider_tip") or "").strip()
         legendary = bool(eatery.get("is_legendary"))
         dest_id   = eatery.get("destination_id")
+        dest_name = (dest_map.get(dest_id, {}).get("name") if dest_id else "") or area or "India"
+        dest_state = (dest_map.get(dest_id, {}).get("state") or "") if dest_id else ""
 
-        if not name:
-            return copy_score_card(dest_map.get(dest_id) or {}, platform)
+        if not name or not dest_id:
+            log.info(f"eateries_pick: missing name/dest_id — SKIPPING")
+            return ""
 
-        # CTA URL: destination page (depth + verified data) not /en/eateries hub.
-        # utm_content matches build_utm_content(<dest_id>, 'eateries_pick') so the
-        # weekly digest can attribute clicks to this format.
-        if dest_id and dest_id in dest_map:
-            url = dest_url(dest_map[dest_id], "social", "post", "eateries-pick",
-                           content=build_utm_content(dest_id, "eateries_pick"))
-        else:
-            url = utm("https://nakshiq.com/en", "social", "post", "eateries-pick",
-                      content=build_utm_content(dest_id, "eateries_pick"))
-
-        prefix = "🍴 LOCAL ICON" if legendary else "🍴 LOCAL PICK"
-        year_str = f" · since {year}" if year else ""
-        first_cuisine = (cuisine[0] if cuisine else "").replace("_", " ").title()
-
-        # State for hashtags — pull from dest_map if available
-        dest_state = ""
-        if dest_id and dest_id in dest_map:
-            dest_state = (dest_map[dest_id].get("state") or "").strip()
-
-        hashtag_inputs = [name.replace(" ", "")[:24] or "FoodIndia"]
-        if dest_state:
-            hashtag_inputs.append(dest_state.replace(" ", ""))
-        if first_cuisine:
-            hashtag_inputs.append(first_cuisine.replace(" ", ""))
-        hashtag_inputs.extend(["EatLocal", "NakshIQ"])
-        tags = hashtag(*hashtag_inputs[:5])
-
-        # Body — assembled lazily so missing fields don't leave dangling lines.
-        lines: list[str] = []
-        if signature:
-            lines.append(f"Order: {signature}")
+        # Hook = why_it_matters (the cultural story) or signature dish framing
+        if why and len(why) > 30:
+            hook = why
+        elif signature:
+            hook = f"{name} in {dest_name} is famous for one dish: {signature}."
         elif must_try:
-            lines.append(f"Order: {', '.join(must_try[:3])}")
+            hook = f"What people drive to {name} in {dest_name} for: {must_try[0]}."
+        else:
+            hook = f"{name} is the eatery {dest_name} regulars actually return to."
+
+        # Order line
+        order_line = ""
+        if signature:
+            order_line = f"Order: {signature}"
+        elif must_try:
+            order_line = f"Order: {', '.join(must_try[:3])}"
+
+        meta_parts: list[str] = []
+        if year:
+            meta_parts.append(f"since {year}")
         if price:
-            lines.append(f"Price range: {price}")
-        if first_cuisine:
-            lines.append(f"Cuisine: {first_cuisine}")
-        meta_block = "\n".join(lines)
+            meta_parts.append(price)
+        if cuisine:
+            meta_parts.append((cuisine[0] if isinstance(cuisine, list) else str(cuisine)).replace("_", " ").title())
+        meta_line = " · ".join(meta_parts)
+
+        # Hashtags
+        food_theme = "viral_eats" if not legendary else "eateries"
+        tags = niche_tags(dest_state, food_theme, dest_name=dest_name)
+        cta  = comment_cta("eateries", dest_name)
 
         if platform == "facebook":
-            return (
-                f"{prefix} — {name.upper()}{year_str}\n\n"
-                f"📍 {area}\n\n"
-                + (f"{why}\n\n" if why else "")
-                + (f"{meta_block}\n\n" if meta_block else "")
-                + (f"Insider tip: {tip}\n\n" if tip else "")
-                + f"NakshIQ verifies every eatery — no sponsored picks.\n"
-                f"Full {area or name} guide → {url}\n\n{tags}"
-            ).strip()
-        else:
-            return (
-                f"{prefix} · {name.upper()}{year_str}\n"
-                f"📍 {area}\n\n"
-                + (f"{why}\n\n" if why else "")
-                + (f"{meta_block}\n\n" if meta_block else "")
-                + (f"💡 {tip}\n\n" if tip else "")
-                + f"Verified, never sponsored.\n↓ Full guide → {url}\n\n{tags}"
-            ).strip()
+            url = dest_url(dest_map.get(dest_id) or {"id": dest_id}, "social", "post",
+                           "eateries-pick", content=build_utm_content(dest_id, "eateries_pick"))
+            body = [
+                hook,
+                f"📍 {name} · {area or dest_name}{f', {dest_state}' if dest_state else ''}",
+            ]
+            if meta_line:
+                body.append(meta_line)
+            if order_line:
+                body.append(order_line)
+            if tip:
+                body.append(f"Insider tip: {tip}")
+            body.append(cta)
+            body.append(f"Full {dest_name} food guide → {url}")
+            body.append(tags)
+            return "\n\n".join(b for b in body if b).strip()
+
+        # IG — no URL
+        body = [
+            hook,
+            f"📍 {name} · {area or dest_name}",
+        ]
+        if meta_line:
+            body.append(meta_line)
+        if order_line:
+            body.append(order_line)
+        if tip:
+            body.append(f"💡 {tip}")
+        body.append(cta)
+        body.append("🔗 link in bio for the full food guide.")
+        body.append(tags)
+        return "\n\n".join(b for b in body if b).strip()
     except Exception as e:
-        log.warning(f"copy_eateries_pick error: {e}")
-        # Defensive fallback — don't leave a slot empty if the eatery record
-        # is malformed; degrade to score_card on the home destination.
-        if eatery.get("destination_id") and eatery["destination_id"] in dest_map:
-            return copy_score_card(dest_map[eatery["destination_id"]], platform)
+        log.warning(f"copy_eateries_pick error: {e} — SKIPPING")
         return ""
 
 
@@ -2551,13 +2781,18 @@ def copy_trek_intel(trek: dict, dest_map: dict, platform: str) -> str:
 
 
 def copy_stays_pick(stay: dict, dest_map: dict, platform: str) -> str:
-    """Editor-curated stay pick — signature experience drives the hook.
+    """2026-05-16 VOICE PIVOT — hook-first, comment-CTA, no IG URL.
 
-    Inputs (per /api/content?type=stays):
-      destination_id, destination_name, state, slot, name, property_type,
-      price_band, why_nakshiq, signature_experience, contact_only.
+    Was: "🛏️ STAY PICK — APPLE COUNTRY RESORT MANALI · No sponsored picks
+    — ever. ↓ Full stay guide → https://..."  (analytical / cold)
 
-    Voice anchor: "Where to actually sleep — picked, not advertised."
+    Now: opens with the signature_experience as a curiosity hook, surfaces
+    only the price band + property type as decision-data, ends with
+    'Comment {dest}' so engagement compounds into the algorithm.
+
+    Returns "" (caller must SKIP the post) when name+dest_id are missing.
+    NO silent fallback to score_card — that's what made every post feel
+    like the same generic content.
     """
     try:
         name      = (stay.get("name") or "").strip()
@@ -2567,69 +2802,68 @@ def copy_stays_pick(stay: dict, dest_map: dict, platform: str) -> str:
         price     = (stay.get("price_band") or "").strip()
         why       = (stay.get("why_nakshiq") or "").strip()
         sig       = (stay.get("signature_experience") or "").strip()
-        contact_only = bool(stay.get("contact_only"))
         dest_state = (stay.get("state") or "").strip()
 
-        if not name or not dest_id:
-            return copy_score_card(dest_map.get(dest_id) or {}, platform)
+        # Hard skip — no silent score_card fallback (voice pivot 2026-05-16)
+        if not name or not dest_id or not dest_name:
+            log.info(f"stays_pick: missing name/dest_id/dest_name — SKIPPING (no fallback)")
+            return ""
 
-        if dest_id in dest_map:
-            url = dest_url(dest_map[dest_id], "social", "post", "stays-pick",
-                           content=build_utm_content(dest_id, "stays_pick"))
-        else:
-            url = utm("https://nakshiq.com/en", "social", "post", "stays-pick",
-                      content=build_utm_content(dest_id, "stays_pick"))
+        # Hook = signature_experience (the unique reason to book here) or
+        # the why_nakshiq line. NEVER lead with the property name — that
+        # reads like a listing, not a story.
+        hook = sig if (sig and len(sig) > 20) else why
 
         meta_parts: list[str] = []
         if prop_type:
             meta_parts.append(prop_type.title())
         if price:
             meta_parts.append(price)
-        if contact_only:
-            meta_parts.append("contact-only booking")
         meta_line = " · ".join(meta_parts)
 
-        hashtag_inputs = [name.replace(" ", "")[:24] or "Stay"]
-        if dest_state:
-            hashtag_inputs.append(dest_state.replace(" ", ""))
-        hashtag_inputs.extend(["StayIndia", "NakshIQ"])
-        tags = hashtag(*hashtag_inputs[:5])
+        tags = niche_tags(dest_state, "stays", dest_name=dest_name)
+        cta  = comment_cta("stays", dest_name)
 
         if platform == "facebook":
-            return (
-                f"🛏️ STAY PICK — {name.upper()}\n"
-                + (f"📍 {dest_name}\n" if dest_name else "")
-                + (f"\n{meta_line}\n" if meta_line else "")
-                + (f"\n{why}\n" if why else "")
-                + (f"\n💡 Signature: {sig}\n" if sig else "")
-                + f"\nWhere to actually sleep in {dest_name or 'India'} — picked, not advertised. → {url}\n\n{tags}"
-            ).strip()
-        else:
-            return (
-                f"🛏️ {name.upper()}\n"
-                + (f"📍 {dest_name}\n\n" if dest_name else "\n")
-                + (f"{meta_line}\n" if meta_line else "")
-                + (f"\n{why}\n" if why else "")
-                + (f"\n💡 {sig}\n" if sig else "")
-                + f"\nNo sponsored picks — ever.\n↓ Full stay guide → {url}\n\n{tags}"
-            ).strip()
+            url = dest_url(dest_map.get(dest_id) or {"id": dest_id}, "social", "post",
+                           "stays-pick", content=build_utm_content(dest_id, "stays_pick"))
+            body = [hook] if hook else []
+            body.append(f"📍 {name} · {dest_name}, {dest_state}")
+            if meta_line:
+                body.append(meta_line)
+            if why and why != hook:
+                body.append(why)
+            body.append(cta)
+            body.append(f"Full {dest_name} stays guide → {url}")
+            body.append(tags)
+            return "\n\n".join(b for b in body if b).strip()
+
+        # IG — no URL, comment-CTA only.
+        body = [hook] if hook else []
+        body.append(f"📍 {name} · {dest_name}")
+        if meta_line:
+            body.append(meta_line)
+        if why and why != hook:
+            body.append(why)
+        body.append(cta)
+        body.append("🔗 link in bio for full stays guide.")
+        body.append(tags)
+        return "\n\n".join(b for b in body if b).strip()
     except Exception as e:
-        log.warning(f"copy_stays_pick error: {e}")
-        if stay.get("destination_id") and stay["destination_id"] in dest_map:
-            return copy_score_card(dest_map[stay["destination_id"]], platform)
+        log.warning(f"copy_stays_pick error: {e} — SKIPPING")
         return ""
 
 
 def copy_emergency_intel(sos: dict, dest_map: dict, platform: str) -> str:
-    """Per-dest emergency intel — phones + nearest hospital + one local helper.
+    """2026-05-16 VOICE PIVOT — open with the moment, end with save+comment.
 
-    Inputs (per /api/content?type=emergency):
-      destination_id, destination_name, state, police, ambulance,
-      nearest_hospital, nearest_hospital_km, women_helpline, mountain_rescue,
-      rescue_contact, local_helpers (array of {name, role, contact, note}).
+    No other India travel account posts real per-dest emergency contacts.
+    That IS the moat. New voice surfaces it as a 'before something goes
+    wrong' save-bait, not a methodology brag.
 
-    Voice anchor: "If something goes wrong here, this is who to call."
-    NakshIQ moat: no other India travel account posts real per-dest contacts.
+    Returns "" (caller SKIPS) when phone_block is empty — no silent
+    fallback to score_card. A safety post without contacts is worse than
+    no post.
     """
     try:
         dest_id   = sos.get("destination_id")
@@ -2649,63 +2883,65 @@ def copy_emergency_intel(sos: dict, dest_map: dict, platform: str) -> str:
             phone_lines.append(f"🚑 Ambulance: {sos['ambulance']}")
         if sos.get("nearest_hospital"):
             km = sos.get("nearest_hospital_km")
-            km_str = f" ({km}km away)" if km else ""
+            km_str = f" · {km}km" if km else ""
             phone_lines.append(f"🏥 {sos['nearest_hospital']}{km_str}")
         if sos.get("mountain_rescue"):
-            phone_lines.append(f"⛰️ Mountain rescue: {sos['mountain_rescue']}")
+            phone_lines.append(f"⛰️ Rescue: {sos['mountain_rescue']}")
         elif sos.get("rescue_contact"):
             phone_lines.append(f"🆘 Rescue: {sos['rescue_contact']}")
         if sos.get("women_helpline"):
             phone_lines.append(f"👩 Women helpline: {sos['women_helpline']}")
 
-        phone_block = "\n".join(phone_lines[:4])  # cap at 4 lines for visual
+        phone_block = "\n".join(phone_lines[:4])
+        if not phone_block:
+            log.info(f"emergency_intel for {dest_name}: no phone data — SKIPPING")
+            return ""
 
-        # Helper card
         helper_block = ""
         if helper and helper.get("name") and helper.get("contact"):
             helper_role = (helper.get("role") or "").strip()
             helper_contact = (helper.get("contact") or "").strip()
             helper_block = (
-                f"\n🤝 Local helper: {helper['name']}"
+                f"🤝 {helper['name']}"
                 + (f" ({helper_role})" if helper_role else "")
-                + f"\n📞 {helper_contact}"
+                + f" · 📞 {helper_contact}"
             )
 
-        if dest_id in dest_map:
-            url = dest_url(dest_map[dest_id], "social", "post", "emergency-intel",
-                           content=build_utm_content(dest_id, "emergency_intel"))
-        else:
-            url = utm(f"https://nakshiq.com/en/destination/{dest_id}", "social", "post",
-                      "emergency-intel", content=build_utm_content(dest_id, "emergency_intel"))
+        tags = niche_tags(dest_state, "emergency", dest_name=dest_name)
+        cta  = comment_cta("emergency", dest_name)
 
-        hashtag_inputs = [dest_name.replace(" ", "")[:24] or "TravelSafety"]
-        if dest_state:
-            hashtag_inputs.append(dest_state.replace(" ", ""))
-        hashtag_inputs.extend(["TravelSafetyIndia", "EmergencyIntel", "NakshIQ"])
-        tags = hashtag(*hashtag_inputs[:5])
+        # Hook = "Save this BEFORE you go to X" — frames save-bait as forward-looking
+        hook = f"Save this before you go to {dest_name}."
 
         if platform == "facebook":
-            return (
-                f"🚨 IF SOMETHING GOES WRONG IN {dest_name.upper()}\n\n"
-                f"This is who to call. Verified, not crowdsourced.\n\n"
-                + (f"{phone_block}\n" if phone_block else "")
-                + (helper_block + "\n" if helper_block else "")
-                + f"\nNakshIQ verifies every contact through district sources. No tourist board theatre.\n"
-                f"Full safety brief for {dest_name} → {url}\n\n{tags}"
-            ).strip()
-        else:
-            return (
-                f"🚨 EMERGENCY INTEL — {dest_name.upper()}\n"
-                + (f"📍 {dest_state}\n" if dest_state else "")
-                + f"\nIf something goes wrong here, this is who to call.\n\n"
-                + (f"{phone_block}\n" if phone_block else "")
-                + (helper_block + "\n" if helper_block else "")
-                + f"\n💾 Save this — pull it up before you arrive.\n↓ Full safety brief → {url}\n\n{tags}"
-            ).strip()
+            url = dest_url(dest_map.get(dest_id) or {"id": dest_id}, "social", "post",
+                           "emergency-intel", content=build_utm_content(dest_id, "emergency_intel"))
+            body = [
+                hook,
+                f"Real contacts for {dest_name}, {dest_state}. Verified through district sources — not Google's first result.",
+                phone_block,
+            ]
+            if helper_block:
+                body.append(helper_block)
+            body.append(cta)
+            body.append(f"Full safety brief → {url}")
+            body.append(tags)
+            return "\n\n".join(b for b in body if b).strip()
+
+        # IG — no URL
+        body = [
+            hook,
+            f"{dest_name}, {dest_state} — real contacts, district-verified.",
+            phone_block,
+        ]
+        if helper_block:
+            body.append(helper_block)
+        body.append(cta)
+        body.append("🔗 link in bio for the full printable card.")
+        body.append(tags)
+        return "\n\n".join(b for b in body if b).strip()
     except Exception as e:
-        log.warning(f"copy_emergency_intel error: {e}")
-        if sos.get("destination_id") and sos["destination_id"] in dest_map:
-            return copy_score_card(dest_map[sos["destination_id"]], platform)
+        log.warning(f"copy_emergency_intel error: {e} — SKIPPING")
         return ""
 
 
@@ -2923,41 +3159,42 @@ def copy_confidence_intel(dest: dict, platform: str) -> str:
         elif network.get("note"):
             rows.append(f"📶 Network: {network['note']}")
 
+        # 2026-05-16 PIVOT — no silent fallback to score_card.
         if len(rows) < 2:
-            # Not enough card data — degrade rather than post a thin caption.
-            return copy_score_card(dest, platform)
-
-        url = dest_url(dest, "social", "post", "confidence-intel",
-                       content=build_utm_content(dest_id, "confidence_intel"))
+            log.info(f"confidence_intel for {name}: only {len(rows)} card rows — SKIPPING")
+            return ""
 
         rows_block = "\n".join(rows)
         month = month_name()
-
-        hashtag_inputs = [name.replace(" ", "")[:24] or "TravelIndia"]
-        if dest_state:
-            hashtag_inputs.append(dest_state.replace(" ", ""))
-        hashtag_inputs.extend(["TravelIntel", "RoadTripIndia", "NakshIQ"])
-        tags = hashtag(*hashtag_inputs[:5])
+        tags = niche_tags(dest_state, "infra", dest_name=name)
+        cta  = comment_cta("infra", name)
 
         if platform == "facebook":
-            return (
-                f"📋 {name.upper()} — {month.upper()} INFRASTRUCTURE REPORT\n\n"
-                f"Everything you need to know before you drive in:\n\n"
-                f"{rows_block}\n\n"
-                f"Verified, not crowdsourced. NakshIQ scores every road, hospital, fuel pump.\n"
-                f"Full report card → {url}\n\n{tags}"
-            ).strip()
-        else:
-            return (
-                f"📋 {name.upper()} INFRA — {month}\n"
-                + (f"📍 {dest_state}\n\n" if dest_state else "\n")
-                + f"Before you drive in, check this:\n\n"
-                + f"{rows_block}\n\n"
-                + f"💾 Save this — don't lose phone signal mid-route without knowing.\n↓ Full report → {url}\n\n{tags}"
-            ).strip()
+            url = dest_url(dest, "social", "post", "confidence-intel",
+                           content=build_utm_content(dest_id, "confidence_intel"))
+            body = [
+                f"Before you drive into {name}, check this.",
+                f"📍 {name}, {dest_state} · {month}",
+                rows_block,
+                cta,
+                f"Full {name} infra report → {url}",
+                tags,
+            ]
+            return "\n\n".join(b for b in body if b).strip()
+
+        # IG
+        body = [
+            f"Before you drive into {name}, check this.",
+            f"📍 {name} · {month}",
+            rows_block,
+            cta,
+            "🔗 link in bio for the full infra brief.",
+            tags,
+        ]
+        return "\n\n".join(b for b in body if b).strip()
     except Exception as e:
-        log.warning(f"copy_confidence_intel error: {e}")
-        return copy_score_card(dest, platform)
+        log.warning(f"copy_confidence_intel error: {e} — SKIPPING")
+        return ""
 
 
 def copy_collection_series(collection: dict, dest_map: dict, dest_map_full: dict, series_index: int, platform: str) -> str:
