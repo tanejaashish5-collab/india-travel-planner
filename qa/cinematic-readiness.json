@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-05-16T05:41:24.607Z",
+  "generated_at": "2026-05-16T06:29:45.532Z",
   "totals": {
-    "A": 472,
-    "HS-B": 29,
-    "B": 4,
+    "A": 475,
+    "HS-B": 30,
+    "B": 0,
     "C": 0,
     "total": 505
   },
@@ -104,8 +104,8 @@
     {
       "state": "haryana",
       "A": 2,
-      "HS-B": 0,
-      "B": 1,
+      "HS-B": 1,
+      "B": 0,
       "C": 0,
       "total": 3
     },
@@ -175,9 +175,9 @@
     },
     {
       "state": "maharashtra",
-      "A": 45,
+      "A": 46,
       "HS-B": 0,
-      "B": 1,
+      "B": 0,
       "C": 0,
       "total": 46
     },
@@ -231,17 +231,17 @@
     },
     {
       "state": "punjab",
-      "A": 3,
+      "A": 4,
       "HS-B": 0,
-      "B": 1,
+      "B": 0,
       "C": 0,
       "total": 4
     },
     {
       "state": "rajasthan",
-      "A": 22,
+      "A": 23,
       "HS-B": 0,
-      "B": 1,
+      "B": 0,
       "C": 0,
       "total": 23
     },
@@ -305,7 +305,7 @@
   "gap_counts": [
     {
       "field": "eats",
-      "count": 32
+      "count": 29
     },
     {
       "field": "stays",
@@ -317,90 +317,6 @@
     }
   ],
   "destinations": [
-    {
-      "id": "astavinayak-circuit",
-      "name": "Astavinayak Circuit",
-      "state": "maharashtra",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 3,
-        "eats": 4,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "hs_confirmed": [],
-      "missing": [
-        "eats:4/5"
-      ]
-    },
-    {
-      "id": "damdama-sahib",
-      "name": "Takht Sri Damdama Sahib",
-      "state": "punjab",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 3,
-        "eats": 3,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "hs_confirmed": [],
-      "missing": [
-        "eats:3/5"
-      ]
-    },
-    {
-      "id": "deeg",
-      "name": "Deeg",
-      "state": "rajasthan",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 3,
-        "eats": 4,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "hs_confirmed": [],
-      "missing": [
-        "eats:4/5"
-      ]
-    },
-    {
-      "id": "morni-hills",
-      "name": "Morni Hills",
-      "state": "haryana",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 3,
-        "eats": 3,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "hs_confirmed": [],
-      "missing": [
-        "eats:3/5"
-      ]
-    },
     {
       "id": "ahobilam",
       "name": "Ahobilam",
@@ -843,6 +759,29 @@
       ]
     },
     {
+      "id": "morni-hills",
+      "name": "Morni Hills",
+      "state": "haryana",
+      "tier": "HS-B",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 4,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "hs_confirmed": [
+        "eats"
+      ],
+      "missing": [
+        "eats:4/5"
+      ]
+    },
+    {
       "id": "namdapha",
       "name": "Namdapha",
       "state": "arunachal-pradesh",
@@ -1241,7 +1180,7 @@
         "months_scored": 12,
         "months_prose": 12,
         "gems": 3,
-        "eats": 5,
+        "eats": 7,
         "stays": 4
       },
       "has": {
@@ -1317,7 +1256,7 @@
         "months_scored": 12,
         "months_prose": 12,
         "gems": 3,
-        "eats": 5,
+        "eats": 6,
         "stays": 3
       },
       "has": {
@@ -1616,6 +1555,25 @@
       "id": "assagao",
       "name": "Assagao",
       "state": "goa",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "hs_confirmed": [],
+      "missing": []
+    },
+    {
+      "id": "astavinayak-circuit",
+      "name": "Astavinayak Circuit",
+      "state": "maharashtra",
       "tier": "A",
       "counts": {
         "months_scored": 12,
@@ -3095,6 +3053,25 @@
       "missing": []
     },
     {
+      "id": "damdama-sahib",
+      "name": "Takht Sri Damdama Sahib",
+      "state": "punjab",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "hs_confirmed": [],
+      "missing": []
+    },
+    {
       "id": "dandeli",
       "name": "Dandeli",
       "state": "karnataka",
@@ -3181,6 +3158,25 @@
         "gems": 4,
         "eats": 5,
         "stays": 3
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "hs_confirmed": [],
+      "missing": []
+    },
+    {
+      "id": "deeg",
+      "name": "Deeg",
+      "state": "rajasthan",
+      "tier": "A",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 5,
+        "stays": 4
       },
       "has": {
         "tagline": true,
@@ -5155,7 +5151,7 @@
         "months_scored": 12,
         "months_prose": 12,
         "gems": 3,
-        "eats": 5,
+        "eats": 6,
         "stays": 4
       },
       "has": {
@@ -5592,7 +5588,7 @@
         "months_scored": 12,
         "months_prose": 12,
         "gems": 3,
-        "eats": 5,
+        "eats": 6,
         "stays": 4
       },
       "has": {
@@ -7473,7 +7469,7 @@
         "months_scored": 12,
         "months_prose": 12,
         "gems": 3,
-        "eats": 5,
+        "eats": 6,
         "stays": 4
       },
       "has": {
@@ -7606,7 +7602,7 @@
         "months_scored": 12,
         "months_prose": 12,
         "gems": 3,
-        "eats": 5,
+        "eats": 7,
         "stays": 4
       },
       "has": {
@@ -7967,7 +7963,7 @@
         "months_scored": 12,
         "months_prose": 12,
         "gems": 3,
-        "eats": 5,
+        "eats": 6,
         "stays": 3
       },
       "has": {
@@ -8917,7 +8913,7 @@
         "months_scored": 12,
         "months_prose": 12,
         "gems": 3,
-        "eats": 5,
+        "eats": 6,
         "stays": 3
       },
       "has": {

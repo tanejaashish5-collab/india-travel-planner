@@ -1,8 +1,8 @@
 # Cinematic readiness — 2026-05-16
 
-Total: **505** dests · A=**472** · HS-B=**29** · B=**4** · C=**0**
+Total: **505** dests · A=**475** · HS-B=**30** · B=**0** · C=**0**
 
-Cinematic-eligible (A + HS-B): **501**
+Cinematic-eligible (A + HS-B): **505**
 
 Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 
@@ -10,7 +10,7 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 
 | Field | Dests blocked |
 |---|---:|
-| eats | 32 |
+| eats | 29 |
 | stays | 6 |
 | gems | 1 |
 
@@ -29,7 +29,7 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | delhi | 1 | 0 | 0 | 0 | 1 |
 | goa | 21 | 0 | 0 | 0 | 21 |
 | gujarat | 29 | 0 | 0 | 0 | 29 |
-| haryana | 2 | 0 | 1 | 0 | 3 |
+| haryana | 2 | 1 | 0 | 0 | 3 |
 | himachal-pradesh | 34 | 0 | 0 | 0 | 34 |
 | jammu-kashmir | 15 | 3 | 0 | 0 | 18 |
 | jharkhand | 4 | 0 | 0 | 0 | 4 |
@@ -38,15 +38,15 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | ladakh | 13 | 1 | 0 | 0 | 14 |
 | lakshadweep | 3 | 2 | 0 | 0 | 5 |
 | madhya-pradesh | 13 | 0 | 0 | 0 | 13 |
-| maharashtra | 45 | 0 | 1 | 0 | 46 |
+| maharashtra | 46 | 0 | 0 | 0 | 46 |
 | manipur | 4 | 1 | 0 | 0 | 5 |
 | meghalaya | 8 | 1 | 0 | 0 | 9 |
 | mizoram | 3 | 1 | 0 | 0 | 4 |
 | nagaland | 5 | 1 | 0 | 0 | 6 |
 | odisha | 22 | 0 | 0 | 0 | 22 |
 | puducherry | 3 | 0 | 0 | 0 | 3 |
-| punjab | 3 | 0 | 1 | 0 | 4 |
-| rajasthan | 22 | 0 | 1 | 0 | 23 |
+| punjab | 4 | 0 | 0 | 0 | 4 |
+| rajasthan | 23 | 0 | 0 | 0 | 23 |
 | sikkim | 9 | 2 | 0 | 0 | 11 |
 | tamil-nadu | 30 | 0 | 0 | 0 | 30 |
 | telangana | 15 | 0 | 0 | 0 | 15 |
@@ -64,10 +64,6 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 
 | Dest | State | Thin |
 |---|---|---|
-| Astavinayak Circuit (astavinayak-circuit) | maharashtra | eats:4/5 |
-| Takht Sri Damdama Sahib (damdama-sahib) | punjab | eats:3/5 |
-| Deeg (deeg) | rajasthan | eats:4/5 |
-| Morni Hills (morni-hills) | haryana | eats:3/5 |
 
 ## Tier HS-B destinations (cinematic-eligible with scarcity panels)
 
@@ -92,6 +88,7 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Manas National Park (manas-national-park) | assam | eats |
 | Maredumilli (maredumilli) | andhra-pradesh | eats |
 | Mechuka (mechuka) | arunachal-pradesh | eats |
+| Morni Hills (morni-hills) | haryana | eats |
 | Namdapha (namdapha) | arunachal-pradesh | eats |
 | Nongriat (nongriat) | meghalaya | eats |
 | Pawapuri (pawapuri) | bihar | gems · eats |
@@ -136,6 +133,7 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Araku Valley (araku-valley) | andhra-pradesh |
 | Arambol (arambol) | goa |
 | Assagao (assagao) | goa |
+| Astavinayak Circuit (astavinayak-circuit) | maharashtra |
 | Athirapally Falls (athirapally) | kerala |
 | Auli (auli) | uttarakhand |
 | Aurangabad (aurangabad) | maharashtra |
@@ -213,11 +211,13 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Dakor (dakor) | gujarat |
 | Dalhousie (dalhousie) | himachal-pradesh |
 | Daman (daman) | daman-diu |
+| Takht Sri Damdama Sahib (damdama-sahib) | punjab |
 | Dandeli (dandeli) | karnataka |
 | Daringbadi (daringbadi) | odisha |
 | Darjeeling (darjeeling) | west-bengal |
 | Daulatabad Fort (daulatabad) | maharashtra |
 | Dawki (dawki) | meghalaya |
+| Deeg (deeg) | rajasthan |
 | Delhi (delhi) | delhi |
 | Deoghar (deoghar) | jharkhand |
 | Deomali (deomali) | odisha |
