@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useLocale, useTranslations } from "next-intl";
-import { currentMonthIST } from "@itp/shared";
+import { currentMonthIST, formatScore, formatScoreInline } from "@itp/shared";
 
 interface DestinationCardProps {
   id: string;
@@ -102,22 +102,22 @@ export function DestinationCard({
             className={`inline-flex items-center rounded-full border px-2.5 py-1 text-xs font-medium ${SCORE_COLORS[scoreToShow] ?? SCORE_COLORS[0]}`}
           >
             <span className="font-mono text-[10px] tracking-[0.18em] uppercase opacity-80 mr-1.5">{monthShort}</span>
-            {scoreToShow}/5 — {ts(String(scoreToShow))}
+            {formatScore(scoreToShow)} — {ts(String(scoreToShow))}
           </span>
           <span className="flex items-center gap-2">
             {typeof solo_female_score === "number" && (
               <span
                 className={`inline-flex items-center gap-1 rounded-full border px-2 py-0.5 text-xs ${SOLO_FEMALE_COLOR[solo_female_score] ?? SOLO_FEMALE_COLOR[0]}`}
                 title="Solo-female safety — see Safety tab"
-                aria-label={`Solo-female score ${solo_female_score} of 5`}
+                aria-label={`Solo-female score ${formatScoreInline(solo_female_score)}`}
               >
                 <span className="font-serif italic" style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}>♀</span>
-                <span className="font-medium">{solo_female_score}/5</span>
+                <span className="font-medium">{formatScoreInline(solo_female_score)}</span>
               </span>
             )}
             {kids_suitable !== null && (
               <span className="text-xs text-muted-foreground">
-                {kids_suitable ? `👶 ${kids_rating}/5` : "Adults only"}
+                {kids_suitable ? `👶 ${formatScoreInline(kids_rating)}` : "Adults only"}
               </span>
             )}
           </span>

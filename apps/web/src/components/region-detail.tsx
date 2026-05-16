@@ -6,7 +6,7 @@ import { useLocale } from "next-intl";
 import { m as motion } from "framer-motion";
 import { FadeIn, SlideIn, StaggerContainer, StaggerItem, HoverCard } from "./animated-hero";
 import { SCORE_COLORS, DIFFICULTY_COLORS } from "@/lib/design-tokens";
-import { currentMonthIST } from "@itp/shared";
+import { currentMonthIST, formatScoreInline } from "@itp/shared";
 
 interface RegionDetailProps {
   region: {
@@ -209,8 +209,8 @@ export function RegionDetail({ region }: RegionDetailProps) {
                     <div className="flex items-center justify-between mb-2">
                       <div className="flex gap-1.5">
                         {monthScore !== undefined && (
-                          <span className={`rounded-full border px-2 py-1 text-xs font-medium ${SCORE_COLORS[monthScore] ?? SCORE_COLORS[0]}`}>
-                            {monthScore}/5
+                          <span className={`rounded-full border px-2 py-1 text-xs font-medium tabular-nums ${SCORE_COLORS[monthScore] ?? SCORE_COLORS[0]}`}>
+                            {formatScoreInline(monthScore)}
                           </span>
                         )}
                         {dest.place_type && dest.place_type !== "destination" && dest.place_type !== "anchor" && (
@@ -224,7 +224,7 @@ export function RegionDetail({ region }: RegionDetailProps) {
                           <span className="text-xs bg-primary/20 text-primary rounded-full px-2 py-0.5">Off-Radar</span>
                         )}
                         {kf?.suitable && (
-                          <span className="text-xs">👶 {kf.rating}/5</span>
+                          <span className="text-xs">👶 {formatScoreInline(kf.rating)}</span>
                         )}
                       </div>
                     </div>

@@ -337,9 +337,11 @@ function shortSegment(seg, maxLen = 85) {
 
 function kidsLine(kf) {
   if (!kf || kf.rating == null) return "";
-  if (kf.rating >= 4 && kf.suitable) return `Family-appropriate: ${kf.rating}/5.`;
-  if (kf.rating === 3 && kf.suitable) return `Manageable with older kids: 3/5.`;
-  if (!kf.suitable || kf.rating <= 2) return `Not a kids destination: ${kf.rating}/5.`;
+  // Display scale is 0-10 (raw rating × 2). See packages/shared/src/utils/score.ts.
+  const display = (kf.rating * 2).toFixed(1);
+  if (kf.rating >= 4 && kf.suitable) return `Family-appropriate: ${display}/10.`;
+  if (kf.rating === 3 && kf.suitable) return `Manageable with older kids: ${display}/10.`;
+  if (!kf.suitable || kf.rating <= 2) return `Not a kids destination: ${display}/10.`;
   return "";
 }
 

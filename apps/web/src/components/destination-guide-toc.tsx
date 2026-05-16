@@ -1,6 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
+import { formatScoreInline } from "@itp/shared";
 
 type HasMap = {
   monthly: boolean;
@@ -69,7 +70,7 @@ export function DestinationGuideToC({
       id: "kids",
       icon: "👨‍👩‍👧",
       label: t("kids"),
-      count: `${kf.rating}/5`,
+      count: formatScoreInline(kf.rating),
       teaser: kf.suitable ? t("toc.kidsWelcome") : t("toc.kidsNotSuitable"),
       accent: kf.suitable
         ? "text-emerald-400 border-emerald-500/30 hover:bg-emerald-500/10"
@@ -79,7 +80,7 @@ export function DestinationGuideToC({
       id: "safety",
       icon: "🛡",
       label: t("safety"),
-      count: cc?.safety_rating ? `${cc.safety_rating}/5` : t("toc.safetyRead"),
+      count: cc?.safety_rating ? formatScoreInline(cc.safety_rating) : t("toc.safetyRead"),
       teaser: dest.solo_female_score != null
         ? t("toc.safetySolo", { score: dest.solo_female_score })
         : t("toc.safetyInfra"),

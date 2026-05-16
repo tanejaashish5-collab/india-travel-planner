@@ -16,6 +16,8 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { formatScore } from "@itp/shared";
+import { renderDisplayName } from "@/lib/display-name";
 import { useLocale } from "next-intl";
 import { FadeIn, StaggerContainer, StaggerItem } from "./animated-hero";
 
@@ -209,8 +211,8 @@ export function TopFiveHero({
                         boxShadow: scoreDotGlow(row.score),
                       }}
                     />
-                    <span className="text-[11px] font-semibold uppercase tracking-[0.08em] text-white">
-                      {row.score}/5 · {chipLabel(row.score)}
+                    <span className="text-[11px] font-semibold uppercase tracking-[0.08em] text-white tabular-nums">
+                      {formatScore(row.score)} · {chipLabel(row.score)}
                     </span>
                   </div>
                 </div>
@@ -239,7 +241,7 @@ export function TopFiveHero({
                         : "text-[22px] md:text-[28px]"
                     }`}
                   >
-                    {row.name}
+                    {renderDisplayName(row.name)}
                   </h3>
                   {isFirst && row.tagline && (
                     <p className="mt-3 max-w-xl text-[13px] md:text-[15px] leading-snug text-white/75">

@@ -4,6 +4,8 @@
 // ScoreChip, MonthStrip, GlyphRail. Used by StopCard, Library, etc.
 // Mirrors nakshiq-design-system/project/trip-board/TripBoard.jsx atoms.
 
+import { formatScoreInline, displayScore } from "@itp/shared";
+
 export const MONTH_LABELS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 export const MONTH_DAYS = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 export const MONTH_STARTS = [1, 32, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335, 366];
@@ -29,7 +31,7 @@ export function ScoreChip({ s, label }: { s: number; label?: string }) {
   const clamped = Math.max(0, Math.min(5, s | 0));
   return (
     <span className={`nq-score nq-score-${clamped}`}>
-      {clamped}/5
+      {formatScoreInline(clamped)}
       {label ? <span style={{ opacity: 0.7, marginLeft: 3 }}>{label}</span> : null}
     </span>
   );
@@ -53,7 +55,7 @@ export function MonthStrip({
             outlineOffset: -1,
           }}
         >
-          {MONTH_LABELS[i][0]}{s}
+          {MONTH_LABELS[i][0]}{displayScore(s) ?? 0}
         </span>
       ))}
     </div>
@@ -73,7 +75,7 @@ export function GlyphRail({ d }: { d: GlyphRailFields }) {
     ["📶", "Network", d.network ?? "—"],
     ["🏥", "Medical", d.hospital ?? "—"],
     ["🚗", "Access", d.access ?? "—"],
-    ["🛡", "Solo / Kids", `${d.soloF ?? "—"}/5 · K ${d.kids ?? "—"}/5`],
+    ["🛡", "Solo / Kids", `${d.soloF != null ? formatScoreInline(d.soloF) : "—"} · K ${d.kids != null ? formatScoreInline(d.kids) : "—"}`],
   ];
   return (
     <div className="nq-glyph-rail">

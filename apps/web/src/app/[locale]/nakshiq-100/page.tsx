@@ -4,6 +4,7 @@ import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { createClient } from "@supabase/supabase-js";
 import { localeAlternates } from "@/lib/seo-utils";
+import { formatScoreInline } from "@itp/shared";
 
 export const revalidate = 3600;
 
@@ -16,7 +17,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       : "NakshIQ 100 — India's 100 best destination-months, 2026",
     description: isHindi
       ? "भारत के 5,856 स्थल × महीना संयोजनों में से शीर्ष 100 — मौसम, पहुँच, भीड़ और सुरक्षा पर आधारित। प्रत्येक वर्ष अद्यतन।"
-      : "The 100 highest-scored destination × month combinations for India, ranked across weather, access, crowd, and safety. Drawn from 5,856 scored rows across 491 destinations. An annual index.",
+      : "The 100 highest-scored destination × month combinations for India, ranked across weather, access, crowd, and safety. Drawn from 5,856 scored rows across 505 destinations. An annual index.",
     ...localeAlternates(locale, "/nakshiq-100"),
   };
 }
@@ -123,7 +124,7 @@ export default async function NakshIQ100Page({ params }: { params: Promise<{ loc
     "@id": `${pageUrl}#article`,
     headline: "NakshIQ 100 — India's 100 best destination-months, 2026",
     description:
-      "An annual ranked index of India's 100 highest-scored destination × month combinations, drawn from 5,856 scored rows across 491 destinations.",
+      "An annual ranked index of India's 100 highest-scored destination × month combinations, drawn from 5,856 scored rows across 505 destinations.",
     author: { "@id": `${BASE_URL}#organization` },
     publisher: { "@id": `${BASE_URL}#organization` },
     isPartOf: { "@id": `${BASE_URL}#website` },
@@ -191,7 +192,7 @@ export default async function NakshIQ100Page({ params }: { params: Promise<{ loc
                           {r.destinations?.name} in {MONTH_NAMES[r.month]}
                         </h3>
                         <span className="font-mono text-xs tracking-[0.08em] uppercase text-muted-foreground">
-                          {stateName} · {r.score}/10
+                          {stateName} · {formatScoreInline(r.score)}
                         </span>
                       </div>
                       {r.why_go && (
@@ -238,7 +239,7 @@ export default async function NakshIQ100Page({ params }: { params: Promise<{ loc
                       </td>
                       <td className="px-4 py-2.5 text-muted-foreground hidden sm:table-cell">{stateName ?? "—"}</td>
                       <td className="px-4 py-2.5 text-sm">{MONTH_NAMES[r.month]}</td>
-                      <td className="px-4 py-2.5 text-right font-mono tabular-nums text-sm">{r.score}/10</td>
+                      <td className="px-4 py-2.5 text-right font-mono tabular-nums text-sm">{formatScoreInline(r.score)}</td>
                     </tr>
                   );
                 })}
@@ -254,7 +255,7 @@ export default async function NakshIQ100Page({ params }: { params: Promise<{ loc
             Every destination × month pair in the NakshIQ database carries a 0–10 suitability
             score combining weather (IMD data), access (road/pass/flight status), crowd math,
             local festival calendars, and risk flags. The NakshIQ 100 takes the single best
-            month for each destination, ranks across all 491 destinations, and publishes the
+            month for each destination, ranks across all 505 destinations, and publishes the
             top 100. One destination never appears twice; the ranking is the destination at
             its best, not a month-by-month scan.
           </p>

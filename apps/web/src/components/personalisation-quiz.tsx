@@ -61,12 +61,43 @@ export function PersonalisationQuiz() {
   const [results, setResults] = useState<string[]>([]);
 
   useEffect(() => {
-    // Show quiz only on first visit
+    // Show quiz only on first visit, and never on initial render — let the
+    // hero sell itself first. Triggers (whichever fires first):
+    //   1. Scroll past 40% of document height
+    //   2. 30s dwell
+    //   3. Intent-to-leave (mouseleave from top edge — desktop only)
+    // 3s blanket timer was reading as "page hijack" on the cinematic hero.
     const seen = localStorage.getItem("quizSeen");
-    if (!seen) {
-      const timer = setTimeout(() => setShow(true), 3000); // 3s delay
-      return () => clearTimeout(timer);
+    if (seen) return;
+
+    let fired = false;
+    function trigger() {
+      if (fired) return;
+      fired = true;
+      setShow(true);
     }
+
+    function onScroll() {
+      const max =
+        document.documentElement.scrollHeight - window.innerHeight;
+      if (max <= 0) return;
+      const ratio = window.scrollY / max;
+      if (ratio > 0.4) trigger();
+    }
+
+    function onMouseLeave(e: MouseEvent) {
+      if (e.clientY < 4) trigger();
+    }
+
+    const dwellTimer = setTimeout(trigger, 30_000);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    document.addEventListener("mouseleave", onMouseLeave);
+
+    return () => {
+      clearTimeout(dwellTimer);
+      window.removeEventListener("scroll", onScroll);
+      document.removeEventListener("mouseleave", onMouseLeave);
+    };
   }, []);
 
   function selectOption(key: string, value: string) {

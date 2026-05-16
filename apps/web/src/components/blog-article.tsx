@@ -7,7 +7,7 @@ import { ArticleCallout } from "./article-callout";
 import HowToDoIt from "./how-to-do-it";
 import { BlogArticleToC } from "./blog-article-toc";
 import { DestinationThumb } from "./destination-thumb";
-import { currentMonthIST } from "@itp/shared";
+import { currentMonthIST, formatScore, formatScoreInline } from "@itp/shared";
 
 const CATEGORY_LABELS: Record<string, string> = {
   "best-time": "Best Time to Visit",
@@ -323,8 +323,8 @@ export function BlogArticle({
                   >
                     <DestinationThumb id={d.id} name={d.name} />
                     {monthScore !== undefined && (
-                      <span className={`font-mono font-bold text-xs px-1.5 py-0.5 rounded ${SCORE_COLORS[monthScore] ?? ""}`}>
-                        {monthScore}/5
+                      <span className={`font-mono font-bold text-xs px-1.5 py-0.5 rounded tabular-nums ${SCORE_COLORS[monthScore] ?? ""}`}>
+                        {formatScoreInline(monthScore)}
                       </span>
                     )}
                     <span className="font-medium group-hover:text-primary transition-colors">{d.name}</span>
@@ -655,8 +655,8 @@ export function BlogArticle({
                     {Array.from({ length: 12 }, (_, i) => i + 1).map((m) => {
                       const score = d.destination_months?.find((dm) => dm.month === m)?.score ?? 0;
                       return (
-                        <td key={m} className={`px-1.5 py-2 text-center font-mono text-xs font-bold ${SCORE_COLORS[score] ?? "text-muted-foreground/30"}`}>
-                          {score || "\u2014"}
+                        <td key={m} className={`px-1.5 py-2 text-center font-mono text-xs font-bold tabular-nums ${SCORE_COLORS[score] ?? "text-muted-foreground/30"}`}>
+                          {score ? formatScore(score) : "\u2014"}
                         </td>
                       );
                     })}
@@ -684,11 +684,11 @@ export function BlogArticle({
               </thead>
               <tbody>
                 {[
-                  { label: `Score (${MONTH_SHORT[currentMonth]})`, fn: (d: Destination) => { const s = d.destination_months?.find((m) => m.month === currentMonth)?.score; return s !== undefined ? `${s}/5` : "N/A"; } },
+                  { label: `Score (${MONTH_SHORT[currentMonth]})`, fn: (d: Destination) => { const s = d.destination_months?.find((m) => m.month === currentMonth)?.score; return s !== undefined ? formatScoreInline(s) : "N/A"; } },
                   { label: "Difficulty", fn: (d: Destination) => d.difficulty },
                   { label: "Elevation", fn: (d: Destination) => d.elevation_m ? `${d.elevation_m.toLocaleString()}m` : "N/A" },
                   { label: "Budget", fn: (d: Destination) => d.budget_tier || "N/A" },
-                  { label: "Kids Friendly", fn: (d: Destination) => { const kf = Array.isArray(d.kids_friendly) ? d.kids_friendly[0] : d.kids_friendly; return kf ? (kf.suitable ? `Yes (${kf.rating}/5)` : "No") : "N/A"; } },
+                  { label: "Kids Friendly", fn: (d: Destination) => { const kf = Array.isArray(d.kids_friendly) ? d.kids_friendly[0] : d.kids_friendly; return kf ? (kf.suitable ? `Yes (${formatScoreInline(kf.rating)})` : "No") : "N/A"; } },
                 ].map((row) => (
                   <tr key={row.label} className="border-b border-border/50">
                     <td className="py-2 pr-4 text-muted-foreground">{row.label}</td>

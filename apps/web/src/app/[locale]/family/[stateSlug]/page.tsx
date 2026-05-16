@@ -6,6 +6,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { STATE_MAP, getSupabase } from "@/lib/seo-maps";
 import { localeAlternates } from "@/lib/seo-utils";
+import { formatScoreInline } from "@itp/shared";
 
 export const revalidate = 86400;
 export const dynamicParams = true;
@@ -85,8 +86,8 @@ export default async function FamilyByStatePage({ params }: { params: Promise<{ 
                     onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }}
                   />
                   <div className="absolute top-3 right-3">
-                    <span className={`rounded-full px-2.5 py-1 text-xs font-bold ${RATING_COLORS[rating] ?? "text-muted-foreground bg-muted"}`}>
-                      Kids {rating}/5
+                    <span className={`rounded-full px-2.5 py-1 text-xs font-bold tabular-nums ${RATING_COLORS[rating] ?? "text-muted-foreground bg-muted"}`}>
+                      Kids {formatScoreInline(rating)}
                     </span>
                   </div>
                 </div>

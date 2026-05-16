@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { m as motion } from "framer-motion";
+import { renderDisplayName } from "@/lib/display-name";
 import { DestinationSectionNav } from "./destination-section-nav";
 import { DestinationGuideToC } from "./destination-guide-toc";
 import { MonthlyChart } from "./monthly-chart";
@@ -13,6 +14,7 @@ import { ShareButton } from "./share-button";
 import { KEY_EVENTS, track } from "@/lib/analytics";
 import { WhatsAppShare } from "./whatsapp-share";
 import { CompareButton } from "./compare-tray";
+import { formatScoreInline } from "@itp/shared";
 import { DistanceBadge } from "./distance-badge";
 import { lazy, Suspense } from "react";
 import { ConfidenceCardComponent } from "./confidence-card";
@@ -301,7 +303,7 @@ export function DestinationDetail({ dest }: { dest: any }) {
         <SlideIn delay={0.1}>
           <div className="mb-6 rounded-2xl border border-border/50 bg-card p-6 sm:p-8 -mt-24 relative z-10 shadow-2xl shadow-black/20">
             {/* H1 + location + meta chips */}
-            <h1 className="text-3xl font-semibold sm:text-4xl lg:text-6xl lg:tracking-tight">{displayName}</h1>
+            <h1 className="text-3xl font-semibold sm:text-4xl lg:text-6xl lg:tracking-tight">{renderDisplayName(displayName)}</h1>
             <p className="mt-2 text-sm text-muted-foreground">
               {stateName}{dest.region ? ` · ${dest.region}` : ""}
               {dest.elevation_m && <span className="font-mono"> · {dest.elevation_m.toLocaleString()}m</span>}
@@ -400,7 +402,7 @@ export function DestinationDetail({ dest }: { dest: any }) {
                       href={`/${locale}/destination/${dest.id}/${slug}`}
                       className={`rounded-full border px-2.5 py-1 text-[10px] font-bold transition-all hover:scale-105 ${scoreColor} ${isCurrent ? "ring-1 ring-primary" : ""}`}
                     >
-                      {m} {score}/5
+                      {m} {formatScoreInline(score)}
                     </a>
                   );
                 })}
@@ -570,7 +572,7 @@ export function DestinationDetail({ dest }: { dest: any }) {
                   <span className="text-lg">🛡️</span>
                   <div className="min-w-0">
                     <div className="text-xs text-muted-foreground">Safety</div>
-                    <div className="text-sm font-medium">{cc.safety_rating}/5</div>
+                    <div className="text-sm font-medium tabular-nums">{formatScoreInline(cc.safety_rating)}</div>
                   </div>
                 </div>
               )}
@@ -1143,7 +1145,7 @@ export function DestinationDetail({ dest }: { dest: any }) {
                           {dest.workability.coworking && dest.workability.coworking !== "none" && ` · Coworking: ${dest.workability.coworking}`}
                         </p>
                       </div>
-                      <span className="ml-auto text-lg font-mono font-bold text-blue-400">{dest.workability.remote_work_rating}/5</span>
+                      <span className="ml-auto text-lg font-mono font-bold text-blue-400 tabular-nums">{formatScoreInline(dest.workability.remote_work_rating)}</span>
                     </div>
                   </section>
                 )}

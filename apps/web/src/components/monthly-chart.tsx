@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { m as motion, AnimatePresence } from "framer-motion";
-import { currentMonthIST } from "@itp/shared";
+import { currentMonthIST, formatScore, formatScoreInline } from "@itp/shared";
 
 interface MonthlyScore {
   m: number;
@@ -77,17 +77,17 @@ export function MonthlyChart({
             key={ms.m}
             onClick={() => setSelectedMonth(ms.m)}
             className="flex flex-1 flex-col items-center gap-1 group cursor-pointer"
-            aria-label={`${tm(String(ms.m))}: ${ms.score}/5`}
+            aria-label={`${tm(String(ms.m))}: ${formatScoreInline(ms.score)}`}
           >
             {/* Score number */}
             <span
-              className={`text-xs font-mono font-bold transition-colors ${
+              className={`text-[10px] font-mono font-bold tabular-nums transition-colors ${
                 ms.m === selectedMonth
                   ? "text-foreground"
                   : "text-muted-foreground group-hover:text-foreground"
               }`}
             >
-              {ms.score}
+              {formatScore(ms.score)}
             </span>
             {/* Bar */}
             <motion.div
@@ -133,9 +133,9 @@ export function MonthlyChart({
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <span
-                  className={`inline-flex h-8 w-8 items-center justify-center rounded-full text-sm font-bold ${SCORE_COLORS[selected.score]}`}
+                  className={`inline-flex h-10 w-10 items-center justify-center rounded-full text-xs font-bold tabular-nums ${SCORE_COLORS[selected.score]}`}
                 >
-                  {selected.score}
+                  {formatScore(selected.score)}
                 </span>
                 <div>
                   <span className="font-semibold">

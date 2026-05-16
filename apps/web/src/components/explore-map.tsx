@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { useLocale } from "next-intl";
+import { formatScoreInline } from "@itp/shared";
 
 interface MapDestination {
   id: string;
@@ -120,9 +121,9 @@ export function ExploreMap({ destinations }: { destinations: MapDestination[] })
             fillOpacity: 0.9,
           }).addTo(map);
 
-          const scoreText = dest.monthScore !== null ? `${dest.monthScore}/5` : "No score";
+          const scoreText = dest.monthScore !== null ? formatScoreInline(dest.monthScore) : "No score";
           const kidsText = dest.kidsSuitable
-            ? `👶 ${dest.kidsRating}/5`
+            ? `👶 ${formatScoreInline(dest.kidsRating)}`
             : dest.kidsSuitable === false ? "Adults only" : "";
 
           marker.bindPopup(`
@@ -210,7 +211,7 @@ export function ExploreMap({ destinations }: { destinations: MapDestination[] })
               className="inline-block h-3 w-3 rounded-full"
               style={{ backgroundColor: SCORE_MARKER_COLORS[s] }}
             />
-            {s}/5
+            {formatScoreInline(s)}
           </span>
         ))}
         <span className="flex items-center gap-1">

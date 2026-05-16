@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { formatScoreInline } from "@itp/shared";
 
 type Group = "solo" | "couple" | "family-kids" | "friends" | "parents";
 type Duration = "weekend" | "week" | "two-weeks" | "long";
@@ -129,7 +130,7 @@ export function RiskQuiz({ locale }: { locale: string }) {
           <div className="rounded-2xl border border-border bg-card/40 p-6 mb-6">
             <p className="text-sm text-muted-foreground">
               No destinations matched this combination cleanly. Try broadening your month or priority —
-              or <Link href={`/${locale}/explore`} className="underline hover:text-primary">browse all 491 destinations</Link>.
+              or <Link href={`/${locale}/explore`} className="underline hover:text-primary">browse all 505 destinations</Link>.
             </p>
           </div>
         ) : (
@@ -148,7 +149,7 @@ export function RiskQuiz({ locale }: { locale: string }) {
                     <div className="flex items-baseline justify-between gap-2 flex-wrap">
                       <h3 className="text-lg font-semibold">{r.name}</h3>
                       <span className="text-xs font-mono tracking-[0.08em] uppercase text-muted-foreground">
-                        {r.state_name} · {r.score}/10
+                        {r.state_name} · {formatScoreInline(r.score)}
                       </span>
                     </div>
                     {r.why_go && (

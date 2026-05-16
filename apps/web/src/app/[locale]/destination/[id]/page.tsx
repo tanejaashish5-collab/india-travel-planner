@@ -1,6 +1,14 @@
 import type { Metadata } from "next";
 import { Nav } from "@/components/nav";
 import { DestinationDetail } from "@/components/destination-detail";
+import { DestinationDetailCinematic } from "@/components/destination-detail-cinematic";
+
+// Cinematic-template allowlist now lives in lib/cinematic-destinations
+// so the OG image route can share it.
+import {
+  CINEMATIC_DESTINATIONS,
+  isCinematicDestination,
+} from "@/lib/cinematic-destinations";
 import { ScrollDepthTracker } from "@/components/scroll-depth-tracker";
 import { PrevNextNav } from "@/components/prev-next-nav";
 import Link from "next/link";
@@ -13,6 +21,7 @@ import { destinationImage } from "@/lib/image-url";
 import { AuthorByline } from "@/components/author-byline";
 import { getPrimaryEditor } from "@/lib/editor";
 import { videoObjectJsonLd } from "@/lib/video-schema";
+import { formatScoreInline } from "@itp/shared";
 import { AskNakshIQInlineCTA } from "@/components/ask-nakshiq-inline-cta";
 
 export const revalidate = 86400; // 24h — UGC moderation lag is already 24-48h, so hourly revalidation just burned function invocations
@@ -38,7 +47,7 @@ const PRE_RENDER_IDS = [
   // Himalayas — Ladakh / J&K
   "leh", "pangong-lake", "nubra-valley", "srinagar", "gulmarg", "pahalgam",
   // Himalayas — Himachal
-  "manali", "shimla", "dharamshala", "mcleod-ganj", "spiti-valley",
+  "manali", "shimla", "dharamshala", "mcleodganj", "spiti-valley",
   // Himalayas — Uttarakhand
   "rishikesh", "mussoorie", "nainital", "valley-of-flowers", "auli",
   // Northeast
@@ -102,7 +111,12 @@ export async function generateMetadata({
     ? `${name}${stateName ? `, ${stateName}` : ""} की यात्रा की योजना बनाएं। ${tagline ?? ""} मासिक मौसम स्कोर, बच्चों की सुरक्षा रेटिंग, सड़क की स्थिति, और वास्तविक बुनियादी ढाँचे का डेटा — विज्ञापन नहीं।`.slice(0, 160)
     : `Plan your trip to ${name}${stateName ? `, ${stateName}` : ""}. ${tagline} Monthly weather scores, kids safety ratings, road conditions, and real infrastructure data — not sponsored content.`.slice(0, 160);
   const canonicalUrl = `https://www.nakshiq.com/${locale}/destination/${id}`;
-  const imageUrl = destinationImage(id);
+  // Cinematic destinations use the dedicated OG composition (hero photo +
+  // giant italic name + score badge + Issue Nº). Production destinations
+  // keep the raw R2 photo as the OG image.
+  const imageUrl = isCinematicDestination(id)
+    ? `https://www.nakshiq.com/api/og/destination/${id}?locale=${locale}`
+    : destinationImage(id);
 
   return {
     title,
@@ -464,14 +478,14 @@ export default async function DestinationPage({
     faqQuestions.push({
       name: `Is ${dest.name} safe for families with kids?`,
       text: kf.suitable
-        ? `Yes, ${dest.name} is rated ${kf.rating}/5 for families with kids. ${(kf.reasons || []).slice(0, 2).join(". ")}.`
-        : `${dest.name} is rated ${kf.rating}/5 for families and is not recommended for young children. ${(kf.reasons || []).slice(0, 2).join(". ")}.`,
+        ? `Yes, ${dest.name} is rated ${formatScoreInline(kf.rating)} for families with kids. ${(kf.reasons || []).slice(0, 2).join(". ")}.`
+        : `${dest.name} is rated ${formatScoreInline(kf.rating)} for families and is not recommended for young children. ${(kf.reasons || []).slice(0, 2).join(". ")}.`,
     });
   }
   if (soloPct != null) {
     faqQuestions.push({
       name: `Is ${dest.name} safe for solo female travelers?`,
-      text: `${dest.name} scores ${soloPct}/5 for solo-female travel safety on NakshIQ's annual index. ${solofScore?.note ? String(solofScore.note) : "See the Safety & Logistics section for month-by-month overrides and local advisory notes."}`,
+      text: `${dest.name} scores ${formatScoreInline(soloPct)} for solo-female travel safety on NakshIQ's annual index. ${solofScore?.note ? String(solofScore.note) : "See the Safety & Logistics section for month-by-month overrides and local advisory notes."}`,
     });
   }
   if (cc?.reach) {
@@ -571,6 +585,51 @@ export default async function DestinationPage({
     },
     publisher: { "@id": "https://www.nakshiq.com#organization" },
   }));
+
+  const isCinematic = CINEMATIC_DESTINATIONS.has(id);
+
+  // ── Cinematic template (currently allowlisted to one slug for live test).
+  // SEO/JSON-LD blocks are duplicated above the new component so structured
+  // data parity stays intact — Google sees the same Schema.org payload as
+  // the production design.
+  if (isCinematic) {
+    return (
+      <div className="min-h-screen">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
+        />
+        {videoLd && (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(videoLd) }}
+          />
+        )}
+        {reviewLdBlocks.map((rb) => (
+          <script
+            key={rb["@id"]}
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(rb) }}
+          />
+        ))}
+        <DestinationDetailCinematic dest={dest} />
+        <ScrollDepthTracker page="destination" destinationId={id} />
+        {/* PrevNextNav intentionally NOT rendered here. Cinematic Coda
+            already provides BACK TO ATLAS + the new full-bleed outro shot
+            closes the page on a cinematic visual; layering the shadcn
+            PrevNextNav on top breaks the palette. Production destinations
+            (the other 504, branch below) still get it. */}
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen">

@@ -16,7 +16,7 @@
 import { useMemo, useState } from "react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
-import { currentMonthIST } from "@itp/shared";
+import { currentMonthIST, formatScoreInline } from "@itp/shared";
 
 const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 const MONTH_DAYS = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
@@ -305,7 +305,7 @@ export function ColdStart({ destinations, onSeed }: { destinations: DestLite[]; 
                       score >= 4 ? "bg-emerald-700 text-white" : score >= 3 ? "bg-amber-600 text-white" : score >= 1 ? "bg-rose-600 text-white" : "bg-muted text-muted-foreground"
                     }`}
                   >
-                    {score}/5
+                    {formatScoreInline(score)}
                   </span>
                   <div className="min-w-0 flex-1">
                     <div className="font-serif text-lg">{d.name}</div>

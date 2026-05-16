@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { FadeIn, ScrollReveal, StaggerContainer, StaggerItem } from "./animated-hero";
 import { SCORE_COLORS, DIFFICULTY_COLORS } from "@/lib/design-tokens";
-import { currentMonthIST } from "@itp/shared";
+import { currentMonthIST, formatScoreInline } from "@itp/shared";
 
 const MONTH_SHORT = ["", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
@@ -55,7 +55,7 @@ function winner(val1: number | null, val2: number | null): "left" | "right" | "t
 
 function formatSafety(v: number | string | null | undefined): string {
   if (v == null) return "N/A";
-  if (typeof v === "number") return `${v}/5`;
+  if (typeof v === "number") return formatScoreInline(v);
   return String(v);
 }
 
@@ -82,8 +82,8 @@ export function VsComparison({ dest1, dest2, locale }: Props) {
   const rows = [
     {
       label: `${MONTH_SHORT[currentMonth]} Score`,
-      v1: score1 !== null ? `${score1}/5` : "N/A",
-      v2: score2 !== null ? `${score2}/5` : "N/A",
+      v1: score1 !== null ? formatScoreInline(score1) : "N/A",
+      v2: score2 !== null ? formatScoreInline(score2) : "N/A",
       c1: scoreColor(score1),
       c2: scoreColor(score2),
       win: winner(score1, score2),
@@ -114,8 +114,8 @@ export function VsComparison({ dest1, dest2, locale }: Props) {
     },
     {
       label: "Kids Rating",
-      v1: dest1.kids?.rating != null ? `${dest1.kids.rating}/5` : "N/A",
-      v2: dest2.kids?.rating != null ? `${dest2.kids.rating}/5` : "N/A",
+      v1: dest1.kids?.rating != null ? formatScoreInline(dest1.kids.rating) : "N/A",
+      v2: dest2.kids?.rating != null ? formatScoreInline(dest2.kids.rating) : "N/A",
       c1: scoreColor(dest1.kids?.rating ?? null),
       c2: scoreColor(dest2.kids?.rating ?? null),
       win: winner(dest1.kids?.rating ?? null, dest2.kids?.rating ?? null),
@@ -225,10 +225,10 @@ export function VsComparison({ dest1, dest2, locale }: Props) {
             <h2 className="text-lg font-semibold text-foreground mb-2">Quick Verdict</h2>
             <p className="text-muted-foreground leading-relaxed">
               {currentWin === "left"
-                ? `${dest1.name} edges ahead this month with a score of ${score1}/5 vs ${score2 ?? "N/A"}/5.`
+                ? `${dest1.name} edges ahead this month with a score of ${formatScoreInline(score1)} vs ${score2 != null ? formatScoreInline(score2) : "N/A"}.`
                 : currentWin === "right"
-                ? `${dest2.name} edges ahead this month with a score of ${score2}/5 vs ${score1 ?? "N/A"}/5.`
-                : `Both destinations score equally right now (${score1 ?? "N/A"}/5).`}
+                ? `${dest2.name} edges ahead this month with a score of ${formatScoreInline(score2)} vs ${score1 != null ? formatScoreInline(score1) : "N/A"}.`
+                : `Both destinations score equally right now (${score1 != null ? formatScoreInline(score1) : "N/A"}).`}
               {" "}
               {totalScore1 > totalScore2
                 ? `Overall, ${dest1.name} has more favorable months across the year.`
@@ -325,14 +325,14 @@ export function VsComparison({ dest1, dest2, locale }: Props) {
                         mWin === "left" ? "bg-emerald-500/5" : ""
                       }`}
                     >
-                      {s1 !== null ? `${s1}/5` : "—"}
+                      {s1 !== null ? formatScoreInline(s1) : "—"}
                     </div>
                     <div
                       className={`p-2.5 text-center text-sm font-semibold border-l border-border ${scoreColor(s2)} ${
                         mWin === "right" ? "bg-emerald-500/5" : ""
                       }`}
                     >
-                      {s2 !== null ? `${s2}/5` : "—"}
+                      {s2 !== null ? formatScoreInline(s2) : "—"}
                     </div>
                   </div>
                 );

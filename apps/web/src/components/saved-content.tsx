@@ -7,7 +7,7 @@ import { useLocale, useTranslations } from "next-intl";
 import { useSearchParams } from "next/navigation";
 import { m as motion, AnimatePresence } from "framer-motion";
 import { SCORE_COLORS, DIFFICULTY_COLORS } from "@/lib/design-tokens";
-import { currentMonthIST } from "@itp/shared";
+import { currentMonthIST, formatScore, formatScoreInline } from "@itp/shared";
 
 const SOLO_FEMALE_COLOR: Record<number, string> = {
   5: "border-emerald-400/50 bg-emerald-500/15 text-emerald-200",
@@ -143,20 +143,20 @@ export function SavedContent({ destinations }: { destinations: any[] }) {
                   <div className="flex items-center justify-between mb-2">
                     {monthScore !== undefined && (
                       <span className={`rounded-full border px-2.5 py-1 text-xs font-medium ${SCORE_COLORS[monthScore] ?? SCORE_COLORS[0]}`}>
-                        {monthScore}/5 {MONTH_NAMES[currentMonth]}
+                        {formatScoreInline(monthScore)} {MONTH_NAMES[currentMonth]}
                       </span>
                     )}
                     <span className="flex items-center gap-2">
                       {typeof dest.solo_female_score === "number" && (
                         <span
                           className={`inline-flex items-center gap-0.5 rounded-full border px-1.5 py-0.5 text-[10px] ${SOLO_FEMALE_COLOR[dest.solo_female_score] ?? ""}`}
-                          title={`Solo-female safety: ${dest.solo_female_score}/5`}
+                          title={`Solo-female safety: ${formatScoreInline(dest.solo_female_score)}`}
                         >
                           <span className="font-serif italic" style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}>♀</span>
-                          {dest.solo_female_score}/5
+                          {formatScoreInline(dest.solo_female_score)}
                         </span>
                       )}
-                      {kf && <span className="text-xs">{kf.suitable ? `👶 ${kf.rating}/5` : "Adults"}</span>}
+                      {kf && <span className="text-xs">{kf.suitable ? `👶 ${formatScoreInline(kf.rating)}` : "Adults"}</span>}
                     </span>
                   </div>
 
@@ -239,7 +239,7 @@ export function SavedContent({ destinations }: { destinations: any[] }) {
 
                         switch (row.key) {
                           case "score":
-                            value = monthScore !== undefined ? `${monthScore}/5` : "N/A";
+                            value = monthScore !== undefined ? formatScoreInline(monthScore) : "N/A";
                             className = monthScore >= 4 ? "text-emerald-400 font-bold" : monthScore >= 3 ? "text-yellow-400" : "text-red-400";
                             break;
                           case "difficulty":
@@ -254,12 +254,12 @@ export function SavedContent({ destinations }: { destinations: any[] }) {
                             className = "capitalize";
                             break;
                           case "kids":
-                            value = kf ? (kf.suitable ? `${kf.rating}/5 ✓` : "Not suitable") : "N/A";
+                            value = kf ? (kf.suitable ? `${formatScoreInline(kf.rating)} ✓` : "Not suitable") : "N/A";
                             className = kf?.suitable ? "text-emerald-400" : kf ? "text-red-400" : "";
                             break;
                           case "safety": {
                             const cc = Array.isArray(d.confidence_cards) ? d.confidence_cards?.[0] : d.confidence_cards;
-                            value = cc?.safety_rating ? `${cc.safety_rating}/5` : "N/A";
+                            value = cc?.safety_rating ? formatScoreInline(cc.safety_rating) : "N/A";
                             className = cc?.safety_rating >= 4 ? "text-emerald-400 font-bold" : cc?.safety_rating >= 3 ? "text-yellow-400" : cc?.safety_rating ? "text-red-400" : "";
                             break;
                           }

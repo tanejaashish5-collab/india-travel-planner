@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
 import OpenAI from "openai";
+import { formatScoreInline } from "@itp/shared";
 
 export const dynamic = "force-dynamic";
 
@@ -72,12 +73,12 @@ export async function POST(req: Request) {
     const months = (monthsByDest[d.id] ?? []).sort((a: any, b: any) => a.month - b.month);
     const monthNames = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
     const scoreText = months
-      .map((m: any) => `${monthNames[m.month - 1]}: ${m.score}/5${m.note ? ` (${m.note})` : ""}`)
+      .map((m: any) => `${monthNames[m.month - 1]}: ${formatScoreInline(m.score)}${m.note ? ` (${m.note})` : ""}`)
       .join(", ");
 
     const kf = kidsByDest[d.id];
     const kidsText = kf
-      ? `Kids: ${kf.suitable ? "suitable" : "not suitable"}${kf.rating ? `, rating ${kf.rating}/5` : ""}${kf.min_age ? `, ages ${kf.min_age}-${kf.max_age}` : ""}${kf.notes ? `. ${kf.notes}` : ""}`
+      ? `Kids: ${kf.suitable ? "suitable" : "not suitable"}${kf.rating ? `, rating ${formatScoreInline(kf.rating)}` : ""}${kf.min_age ? `, ages ${kf.min_age}-${kf.max_age}` : ""}${kf.notes ? `. ${kf.notes}` : ""}`
       : "";
 
     chunks.push({

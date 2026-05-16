@@ -1,6 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
+import { formatScore } from "@itp/shared";
 
 interface ConfidenceCardProps {
   safety_rating: number | null;
@@ -104,9 +105,9 @@ export function ConfidenceCardComponent(props: ConfidenceCardProps) {
       {props.safety_rating != null && (
         <div className="flex items-center gap-3 rounded-lg border border-border bg-card p-4">
           <div
-            className={`text-3xl font-mono font-bold ${SAFETY_COLORS[props.safety_rating] ?? "text-zinc-400"}`}
+            className={`text-3xl font-mono font-bold tabular-nums ${SAFETY_COLORS[props.safety_rating] ?? "text-zinc-400"}`}
           >
-            {props.safety_rating}/5
+            {formatScore(props.safety_rating)}
           </div>
           <div>
             <div className="text-sm font-medium">Safety Rating</div>

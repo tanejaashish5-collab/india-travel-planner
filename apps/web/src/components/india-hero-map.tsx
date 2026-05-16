@@ -5,6 +5,7 @@ import { m as motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import indiaMapData from "@svg-maps/india";
 import { ALL_STATE_SLUGS } from "@/lib/seo-maps";
+import { formatScoreInline } from "@itp/shared";
 
 const mapData = (indiaMapData as any).default || indiaMapData;
 
@@ -221,7 +222,7 @@ export function IndiaHeroMap({ pins, locale }: IndiaHeroMapProps) {
                 color: scoreColor(hoveredPin.score),
               }}
             >
-              {hoveredPin.score !== null ? `${hoveredPin.score}/5` : "No score"}
+              {hoveredPin.score !== null ? formatScoreInline(hoveredPin.score) : "No score"}
             </span>
             <span className="text-muted-foreground/50">this month</span>
           </div>
@@ -233,11 +234,11 @@ export function IndiaHeroMap({ pins, locale }: IndiaHeroMapProps) {
       <div className="mt-4 flex flex-wrap items-center justify-center gap-3 text-xs text-muted-foreground">
         <span className="font-medium">This month:</span>
         {[
-          { score: 5, label: "5/5" },
-          { score: 4, label: "4/5" },
-          { score: 3, label: "3/5" },
-          { score: 2, label: "2/5" },
-          { score: 1, label: "1/5" },
+          { score: 5, label: formatScoreInline(5) },
+          { score: 4, label: formatScoreInline(4) },
+          { score: 3, label: formatScoreInline(3) },
+          { score: 2, label: formatScoreInline(2) },
+          { score: 1, label: formatScoreInline(1) },
         ].map((s) => (
           <span key={s.score} className="flex items-center gap-1">
             <span

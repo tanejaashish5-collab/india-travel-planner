@@ -1,195 +1,103 @@
 import Link from "next/link";
 import { useLocale, useTranslations } from "next-intl";
-import { FALLBACK } from "@/lib/stats";
-import { SuggestEditButton } from "./suggest-edit-button";
-import { TourReplayLink } from "./tour-replay-link";
-import { getSocialHandles } from "@/lib/social";
 
-export function Footer({ stats }: { stats?: { destinations: number; places: number; festivals: number; traps: number; collections: number } }) {
+/* ============================================================
+   Footer — slim single-row strip used on every non-landing page.
+   Landing renders nothing here — ACT IX Coda absorbs the footer line
+   (locked plan, ~/.claude/plans/considering-changing-the-landing-replicated-origami.md).
+
+   Replaces the previous 197-line footer with: logo + 3 main links
+   (Editorial / About / Contact) + © · Issue Nº · privacy · terms +
+   italic "Go with confidence." sign-off. Drops the Discover/Plan/
+   Community grid (mega-menus already cover that), stats block (Hero
+   already covers that), social row (move to /about), and the 7%-opacity
+   Pangong Lake background (visual noise).
+
+   Stats prop is preserved as optional — older callers may still pass it
+   while their pages get refactored, but we don't render it any more.
+   ============================================================ */
+
+// Same launch-date derivation as helpers.ts and nav.tsx.
+function getIssueNumber(now: Date = new Date()): number {
+  const launch = new Date("2022-07-01T00:00:00Z");
+  const months =
+    (now.getUTCFullYear() - launch.getUTCFullYear()) * 12 +
+    (now.getUTCMonth() - launch.getUTCMonth());
+  return Math.max(1, months + 1);
+}
+
+export function Footer({
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  stats: _stats,
+}: {
+  stats?: {
+    destinations: number;
+    places: number;
+    festivals: number;
+    traps: number;
+    collections: number;
+  };
+} = {}) {
   const locale = useLocale();
   const tf = useTranslations("footer");
-  const tn = useTranslations("nav");
-  const social = getSocialHandles();
+  const issueNum = getIssueNumber();
+  const year = new Date().getFullYear();
 
   return (
-    <footer className="relative mt-24 overflow-hidden">
-      {/* Background image with heavy overlay — decorative, never above the
-          fold; lazy + async-decode keeps the footer image off the main thread
-          on first paint. */}
-      <div className="absolute inset-0">
-        <img
-          src="/images/destinations/pangong-lake.jpg"
-          alt=""
-          role="presentation"
-          aria-hidden="true"
-          loading="lazy"
-          decoding="async"
-          className="w-full h-full object-cover opacity-[0.07]"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/95 to-background/80" />
-      </div>
-
-      <div className="relative mx-auto max-w-7xl px-6 pt-12 pb-8">
-
-        {/* Links grid — compact, 3 columns */}
-        <div className="grid grid-cols-1 gap-x-4 sm:gap-x-12 gap-y-8 sm:grid-cols-3 mb-12">
-          <div>
-            <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground/50 mb-4">
-              {tf("discover")}
-            </h4>
-            <div className="space-y-2">
-              {[
-                { href: `/${locale}/explore`, label: tn("destinations") },
-                { href: `/${locale}/collections`, label: tn("collections") },
-                { href: `/${locale}/routes`, label: tf("roadTrips") },
-                { href: `/${locale}/treks`, label: tf("treks") },
-                { href: `/${locale}/superlatives`, label: tn("records") },
-                { href: `/${locale}/india-travel`, label: tn("forVisitors") },
-                { href: `/${locale}/camping`, label: tn("camping") },
-              ].map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="block text-sm text-muted-foreground/70 hover:text-foreground hover:translate-x-1 transition-all duration-200"
-                >
-                  {link.label}
-                </Link>
-              ))}
-            </div>
+    <footer className="relative mt-16 border-t border-border/40 bg-background/60">
+      <div className="mx-auto max-w-7xl px-6 py-8">
+        <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+          {/* Left — logo + 3 links */}
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
+            <Link href={`/${locale}`} className="font-fraunces italic text-xl text-foreground">
+              Naksh<span className="text-[#E55642]">.</span>iq
+            </Link>
+            <Link
+              href={`/${locale}/methodology`}
+              className="text-sm uppercase tracking-[0.18em] text-muted-foreground hover:text-foreground transition-colors"
+            >
+              Editorial
+            </Link>
+            <Link
+              href={`/${locale}/about`}
+              className="text-sm uppercase tracking-[0.18em] text-muted-foreground hover:text-foreground transition-colors"
+            >
+              About
+            </Link>
+            <Link
+              href={`/${locale}/contact`}
+              className="text-sm uppercase tracking-[0.18em] text-muted-foreground hover:text-foreground transition-colors"
+            >
+              Contact
+            </Link>
           </div>
 
-          <div>
-            <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground/50 mb-4">
-              {tf("planBuild")}
-            </h4>
-            <div className="space-y-2">
-              {[
-                { href: `/${locale}/plan`, label: tf("aiTripPlanner") },
-                { href: `/${locale}/build-route`, label: tf("routeBuilder") },
-                { href: `/${locale}/explore-by-persona`, label: "By persona" },
-                { href: `/${locale}/permits`, label: tn("permits") },
-                { href: `/${locale}/road-conditions`, label: tf("roadStatus") },
-                { href: `/${locale}/saved`, label: tf("saved") },
-              ].map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="block text-sm text-muted-foreground/70 hover:text-foreground hover:translate-x-1 transition-all duration-200"
-                >
-                  {link.label}
-                </Link>
-              ))}
-            </div>
-          </div>
-
-          <div>
-            <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground/50 mb-4">
-              {tf("regions")}
-            </h4>
-            <div className="space-y-2">
-              {[
-                { href: `/${locale}/states`, label: "Browse All States" },
-                { href: `/${locale}/state/himachal-pradesh`, label: "Himachal Pradesh" },
-                { href: `/${locale}/state/uttarakhand`, label: "Uttarakhand" },
-                { href: `/${locale}/state/rajasthan`, label: "Rajasthan" },
-                { href: `/${locale}/state/jammu-kashmir`, label: "Jammu & Kashmir" },
-                { href: `/${locale}/state/ladakh`, label: "Ladakh" },
-              ].map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="block text-sm text-muted-foreground/70 hover:text-foreground hover:translate-x-1 transition-all duration-200"
-                >
-                  {link.label}
-                </Link>
-              ))}
-              <div className="h-3" />
-              {[
-                { href: `/${locale}/the-window`, label: "The Window" },
-                { href: `/${locale}/about`, label: tn("about") },
-                { href: `/${locale}/about/team`, label: "Masthead" },
-                { href: `/${locale}/methodology`, label: tf("howWeScore") },
-                { href: `/${locale}/transparency`, label: "Fabrication audit" },
-                { href: `/${locale}/cost-index`, label: "Cost Index" },
-                { href: `/${locale}/nakshiq-100`, label: "NakshIQ 100" },
-                { href: `/${locale}/press`, label: "Press & research" },
-                { href: `/${locale}/corrections`, label: "Corrections" },
-                { href: `/${locale}/editorial-policy`, label: tf("editorialPolicy") },
-                { href: `/${locale}/why-we-say-no-data`, label: "Why we say no data" },
-                { href: `/${locale}/contact`, label: "Contact" },
-              ].map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="block text-sm text-muted-foreground/70 hover:text-foreground hover:translate-x-1 transition-all duration-200"
-                >
-                  {link.label}
-                </Link>
-              ))}
-              <SuggestEditButton targetTable="general" context="site feedback" />
-            </div>
-          </div>
-        </div>
-
-        {/* Stats strip */}
-        <div className="flex flex-wrap justify-center gap-8 mb-12">
-          {[
-            { num: String(stats?.destinations ?? FALLBACK.destinations), label: "Destinations" },
-            { num: `${stats?.places ?? FALLBACK.places}+`, label: "Places" },
-            { num: String(stats?.festivals ?? FALLBACK.festivals), label: "Festivals" },
-            { num: String(stats?.traps ?? FALLBACK.traps), label: "Tourist Traps Exposed" },
-            { num: String(stats?.collections ?? FALLBACK.collections), label: "Collections" },
-          ].map((stat) => (
-            <div key={stat.label} className="text-center">
-              <div className="text-lg font-mono font-bold text-muted-foreground/30">{stat.num}</div>
-              <div className="text-xs uppercase tracking-[0.08em] text-muted-foreground/30">{stat.label}</div>
-            </div>
-          ))}
-        </div>
-
-        {/* Social handles — render only when env-configured. Each link
-            uses rel="me" so identity proofs (Mastodon, Bridgy) can verify. */}
-        {social.length > 0 && (
-          <div className="flex justify-center gap-5 mb-8">
-            {social.map((s) => (
-              <a
-                key={s.platform}
-                href={s.url}
-                target="_blank"
-                rel="noopener noreferrer me"
-                aria-label={`NakshIQ on ${s.label}`}
-                className="text-xs uppercase tracking-[0.18em] text-muted-foreground/50 hover:text-foreground transition-colors"
-              >
-                {s.label}
-              </a>
-            ))}
-          </div>
-        )}
-
-        {/* Data freshness disclaimer — sets honest expectations for any
-            price, contact, or road-status claim across the site. */}
-        <div className="h-px bg-gradient-to-r from-transparent via-border/20 to-transparent mb-4" />
-        <p className="text-[11px] leading-relaxed text-muted-foreground/50 text-center mb-4 max-w-2xl mx-auto">
-          Prices, phone numbers, and road conditions are reviewed on the dates shown beside
-          each section. They DO change — always confirm at booking and test-call any
-          emergency number when you arrive. For life-threatening emergencies anywhere
-          in India, dial <span className="font-semibold text-red-400/70">112</span>.
-          Spotted an error?{" "}
-          <Link href={`/${locale}/contact`} className="underline hover:text-foreground">
-            Tell us
-          </Link>
-          .
-        </p>
-
-        {/* Bottom bar */}
-        <div className="h-px bg-gradient-to-r from-transparent via-border/20 to-transparent mb-6" />
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-muted-foreground/60">
-          <p>&copy; 2026 NakshIQ</p>
-          <div className="flex gap-4">
-            <TourReplayLink locale={locale} label="Take the tour" />
-            <Link href={`/${locale}/terms`} className="hover:text-foreground transition-colors">{tf("terms")}</Link>
-            <Link href={`/${locale}/privacy`} className="hover:text-foreground transition-colors">{tf("privacy")}</Link>
-            <Link href={`/${locale}/cookies`} className="hover:text-foreground transition-colors">{tf("cookies")}</Link>
+          {/* Right — © · Issue Nº · italic sign-off */}
+          <div className="flex flex-wrap items-center gap-x-5 gap-y-2 font-mono text-[11px] text-muted-foreground/70 tracking-[0.06em]">
+            <span>
+              © {year} NakshIQ · Issue Nº {issueNum}
+            </span>
+            <Link
+              href={`/${locale}/privacy`}
+              className="hover:text-foreground transition-colors"
+            >
+              {tf("privacy")}
+            </Link>
+            <Link
+              href={`/${locale}/terms`}
+              className="hover:text-foreground transition-colors"
+            >
+              {tf("terms")}
+            </Link>
+            <Link
+              href={`/${locale}/cookies`}
+              className="hover:text-foreground transition-colors"
+            >
+              Cookies
+            </Link>
+            <span className="font-fraunces italic text-base text-foreground">
+              Go with confidence.
+            </span>
           </div>
         </div>
       </div>

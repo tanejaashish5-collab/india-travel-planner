@@ -13,6 +13,7 @@ import {
 } from "./animated-hero";
 import { SCORE_COLORS, SCORE_SOLID, DIFFICULTY_COLORS } from "@/lib/design-tokens";
 import { destinationImage } from "@/lib/image-url";
+import { formatScoreInline } from "@itp/shared";
 import { videoSrc } from "@/lib/video-url";
 import { hasMonthHero, monthHeroSrc } from "@/lib/landing-heroes";
 
@@ -130,20 +131,20 @@ function DestinationCard({
 
             {/* Score badge */}
             <span
-              className={`absolute top-2 right-2 rounded-full px-2 py-0.5 text-xs font-bold ${SCORE_SOLID[d.score] ?? SCORE_SOLID[0]}`}
+              className={`absolute top-2 right-2 rounded-full px-2 py-0.5 text-xs font-bold tabular-nums ${SCORE_SOLID[d.score] ?? SCORE_SOLID[0]}`}
             >
-              {d.score}/5
+              {formatScoreInline(d.score)}
             </span>
 
             {/* Solo-female safety badge */}
             {soloFemaleEff != null && (
               <span
                 className={`absolute top-2 left-2 inline-flex items-center gap-1 rounded-full border px-2 py-0.5 text-[11px] font-medium backdrop-blur-sm ${SOLO_FEMALE_COLOR[soloFemaleEff] ?? ""}`}
-                title={`Solo-female safety: ${soloFemaleEff}/5${d.solo_female_override != null ? " (month-specific)" : ""}`}
-                aria-label={`Solo-female score ${soloFemaleEff} of 5`}
+                title={`Solo-female safety: ${formatScoreInline(soloFemaleEff)}${d.solo_female_override != null ? " (month-specific)" : ""}`}
+                aria-label={`Solo-female score ${formatScoreInline(soloFemaleEff)}`}
               >
                 <span className="font-serif italic" style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}>♀</span>
-                <span>{soloFemaleEff}/5</span>
+                <span>{formatScoreInline(soloFemaleEff)}</span>
               </span>
             )}
 
@@ -191,8 +192,8 @@ function DestinationCard({
 function AvoidCard({ d }: { d: DestMonthRow }) {
   return (
     <div className="flex items-start gap-3 rounded-lg border border-red-500/10 bg-red-500/[0.03] px-4 py-3">
-      <span className="mt-0.5 shrink-0 rounded-full bg-red-500/20 px-2 py-0.5 text-xs font-bold text-red-400">
-        {d.score}/5
+      <span className="mt-0.5 shrink-0 rounded-full bg-red-500/20 px-2 py-0.5 text-xs font-bold text-red-400 tabular-nums">
+        {formatScoreInline(d.score)}
       </span>
       <div className="min-w-0">
         <span className="font-medium text-zinc-200">{d.name}</span>
@@ -389,7 +390,7 @@ export function WhereToGoContent({
       <FadeIn>
         <div className="rounded-xl border border-border/40 bg-card/40 backdrop-blur-sm px-4 py-3 sm:px-5 sm:py-3.5">
           <div className="text-[11px] font-medium uppercase tracking-[0.08em] text-muted-foreground/80">
-            {destinationCount ?? 491} destinations <span className="text-muted-foreground/40 mx-2" aria-hidden>·</span> 12 months <span className="text-muted-foreground/40 mx-2" aria-hidden>·</span> monthly scores are cycle-based{monthReviewedAt ? (
+            {destinationCount ?? 505} destinations <span className="text-muted-foreground/40 mx-2" aria-hidden>·</span> 12 months <span className="text-muted-foreground/40 mx-2" aria-hidden>·</span> monthly scores are cycle-based{monthReviewedAt ? (
               <><span className="text-muted-foreground/40 mx-2" aria-hidden>·</span>prose reviewed {new Date(monthReviewedAt).toLocaleDateString("en-IN", { month: "short", year: "numeric" })}</>
             ) : null}
           </div>

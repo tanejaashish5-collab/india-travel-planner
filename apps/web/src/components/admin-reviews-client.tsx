@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState, useCallback } from "react";
+import { formatScoreInline } from "@itp/shared";
 
 type Review = {
   id: string;
@@ -144,8 +145,8 @@ export function AdminReviewsClient() {
             <article key={r.id} className="rounded-2xl border border-border bg-card/40 p-5">
               <div className="flex items-baseline justify-between gap-3 flex-wrap mb-2">
                 <div className="flex items-baseline gap-2 flex-wrap">
-                  <span className="rounded-full border border-border bg-background/40 px-2 py-0.5 font-mono text-[10px] tracking-[0.08em] uppercase">
-                    {r.rating}/5
+                  <span className="rounded-full border border-border bg-background/40 px-2 py-0.5 font-mono text-[10px] tracking-[0.08em] uppercase tabular-nums">
+                    {formatScoreInline(r.rating)}
                   </span>
                   <h2 className="font-semibold">{dest?.name ?? r.destination_id}</h2>
                   <span className="text-xs text-muted-foreground">{stateName}</span>

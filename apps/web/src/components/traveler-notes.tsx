@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { formatScoreInline } from "@itp/shared";
 
 const TYPE_LABELS: Record<string, { label: string; icon: string; color: string }> = {
   parent: { label: "Parents say", icon: "👨‍👩‍👧", color: "text-emerald-400 border-emerald-500/30 bg-emerald-500/10" },
@@ -71,7 +72,7 @@ export function TravelerNotes({ notes }: { notes: any[] }) {
                     <span>{MONTH_SHORT[note.visit_month]} {note.visit_year}</span>
                   )}
                   {note.rating && (
-                    <span className="font-mono font-bold text-primary">{note.rating}/5</span>
+                    <span className="font-mono font-bold text-primary tabular-nums">{formatScoreInline(note.rating)}</span>
                   )}
                 </div>
               </div>

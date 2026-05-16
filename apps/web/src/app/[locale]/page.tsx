@@ -1,12 +1,20 @@
 import type { Metadata } from "next";
 import { Nav } from "@/components/nav";
-import { Footer } from "@/components/footer";
-import { LandingHero } from "@/components/landing-hero";
-import { GuidedTour } from "@/components/guided-tour";
-import { getTourStats } from "@/lib/tour-stats";
+import { LandingCinema } from "@/components/landing-cinema";
+import type { DispatchHero } from "@/components/landing-cinema/act-1-dispatch";
+import type { SkipEntry } from "@/components/landing-cinema/act-2-skip";
+import type { SceneEntry } from "@/components/landing-cinema/act-3-scenes";
+import type { AtlasPin } from "@/components/landing-cinema/act-4-atlas";
+import type { VerdictMap, VerdictCard, VibeKey } from "@/components/landing-cinema/act-5-directors-cut";
+import type { FieldNote } from "@/components/landing-cinema/act-5h-field-note";
+import type { DailyEntry, DailiesStats } from "@/components/landing-cinema/act-6-dailies";
+// GuidedTour temporarily removed from landing per Ashish 2026-05-05; the
+// 6-step onboarding spotlight conflicts visually with the cinematic ACT I
+// hero and may be redesigned or retired entirely. The component still
+// exists for other pages — just not mounted here.
 import { createClient } from "@supabase/supabase-js";
 import { getAppStats } from "@/lib/stats";
-import { currentMonthIST } from "@itp/shared";
+import { currentMonthIST, verdictFor } from "@itp/shared";
 
 export const revalidate = 3600;
 
@@ -31,15 +39,20 @@ export async function generateMetadata({
 async function getFeaturedData() {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-  if (!url || !key) return { destinations: [], collections: [], routes: [], festivals: [], mapPins: [] as any[], stats: { places: 0, destinations: 0, states: 0, routes: 0, festivals: 0, collections: 0, treks: 0, traps: 0, permits: 0, campingSpots: 0 } };
+  if (!url || !key) return { destinations: [], collections: [], routes: [], festivals: [], mapPins: [] as any[], dispatchHeroes: [] as DispatchHero[], skipList: [] as SkipEntry[], scenes: [] as SceneEntry[], atlasPins: [] as AtlasPin[], verdictMap: {} as VerdictMap, fieldNote: null as FieldNote | null, dailies: [] as DailyEntry[], dailiesStats: { totalVerified: 0, totalSkipListed: 0, freshDestinationsThisMonth: 0 } as DailiesStats, stats: { places: 0, destinations: 0, states: 0, routes: 0, festivals: 0, collections: 0, treks: 0, traps: 0, permits: 0, campingSpots: 0 } };
 
   const supabase = createClient(url, key);
   const currentMonth = currentMonthIST();
 
-  const [destResult, collResult, routeResult, destCount, subCount, gemCount, stateCount, routeCount, festResult, coordsResult, allMonthScores, allDestsResult] = await Promise.all([
+  const [destResult, collResult, routeResult, destCount, subCount, gemCount, stateCount, routeCount, festResult, coordsResult, allMonthScores, allDestsResult, skipResult] = await Promise.all([
+    // Now also pulls content_reviewed_at + why_go so the cinematic ACT I
+    // Dispatch hero can render real "VERIFIED MAY 04" labels and editorial
+    // why_go copy without a second query. Column is `content_reviewed_at`
+    // on destinations (not `verified_at` — that doesn't exist; nor
+    // `last_verified` which is all-NULL today).
     supabase
       .from("destination_months")
-      .select("destination_id, score, destinations(id, name, tagline, difficulty, elevation_m, state:states(name))")
+      .select("destination_id, score, why_go, destinations(id, name, tagline, difficulty, elevation_m, content_reviewed_at, state:states(name))")
       .eq("month", currentMonth)
       .gte("score", 4)
       .order("score", { ascending: false })
@@ -65,7 +78,23 @@ async function getFeaturedData() {
       .from("destination_months")
       .select("destination_id, score")
       .eq("month", currentMonth),
-    supabase.from("destinations").select("id, name").order("name"),
+    // Now also pulls state name so the ACT IV Atlas field-log sidebar can
+    // show "BHADERWAH · J&K" without a second join.
+    supabase.from("destinations").select("id, name, state:states(name)").order("name"),
+    // Skip list — current-month AVOID destinations (DB score 0-1 = 0.0-2.0
+    // on the displayed 0-10 scale). Uses `why_not` (editorial reason this
+    // month is wrong) and falls back to `skip_reason` for the punchier
+    // subhead. Ordered by score ASC then name so the strongest "AVOID"
+    // candidates surface first. Limit 5 to keep ACT II tight.
+    supabase
+      .from("destination_months")
+      .select("destination_id, score, why_not, skip_reason, destinations(id, name, compare_against, state:states(name))")
+      .eq("month", currentMonth)
+      .lte("score", 1)
+      .not("why_not", "is", null)
+      .order("score", { ascending: true })
+      .order("destination_id", { ascending: true })
+      .limit(5),
   ]);
 
   const totalPlaces = (destCount.count ?? 0) + (subCount.count ?? 0) + (gemCount.count ?? 0);
@@ -79,13 +108,243 @@ async function getFeaturedData() {
   );
   const mapPins = (allDestsResult.data ?? [])
     .filter((d: any) => coordsMap[d.id])
-    .map((d: any) => ({
-      id: d.id,
-      name: d.name,
-      lat: coordsMap[d.id].lat,
-      lng: coordsMap[d.id].lng,
-      score: scoresMap[d.id] ?? null,
+    .map((d: any) => {
+      const stateName = Array.isArray(d?.state) ? d.state[0]?.name : d?.state?.name;
+      return {
+        id: d.id,
+        name: d.name,
+        state: stateName ?? "",
+        lat: coordsMap[d.id].lat,
+        lng: coordsMap[d.id].lng,
+        score: scoresMap[d.id] ?? null,
+      };
+    });
+
+  // Top 3 PEAK destinations shaped for the ACT I Dispatch slideshow.
+  // Reuses destResult so we don't fire a second round-trip — the existing
+  // query already pulls top-6 score>=4 sorted desc; we slice the head.
+  const dispatchHeroes: DispatchHero[] = (destResult.data ?? [])
+    .slice(0, 3)
+    .map((row: any) => {
+      const d = row.destinations;
+      const stateName = Array.isArray(d?.state) ? d.state[0]?.name : d?.state?.name;
+      return {
+        id: d?.id ?? "",
+        name: d?.name ?? "",
+        state: stateName ?? "",
+        score: row.score ?? 0,
+        tagline: d?.tagline ?? null,
+        why_go: row.why_go ?? null,
+        verified_at: d?.content_reviewed_at ?? null,
+        elevation_m: d?.elevation_m ?? null,
+      };
+    })
+    .filter((h) => h.id);
+
+  // ACT III Scenes — same destResult, shaped as SceneEntry[]. We take 5
+  // scenes (the v8 design uses 5 sticky scenes, scenes 02-06 since the
+  // hero is "scene 01"). Reuses why_go for the editorial dossier in the
+  // lower-left of each scene.
+  const scenes: SceneEntry[] = (destResult.data ?? [])
+    .slice(0, 5)
+    .map((row: any) => {
+      const d = row.destinations;
+      const stateName = Array.isArray(d?.state) ? d.state[0]?.name : d?.state?.name;
+      return {
+        id: d?.id ?? "",
+        name: d?.name ?? "",
+        state: stateName ?? "",
+        score: row.score ?? 0,
+        tagline: d?.tagline ?? null,
+        why: row.why_go ?? null,
+        elevation_m: d?.elevation_m ?? null,
+        difficulty: d?.difficulty ?? null,
+        verified_at: d?.content_reviewed_at ?? null,
+      };
+    })
+    .filter((s) => s.id);
+
+  // Skip list — shape rows for ACT II. Pull the "try instead" hint from
+  // the why_not text (most rows include "should plan for {months}" — we
+  // surface that as a suggested-window line) plus first compare_against
+  // entry where it exists.
+  const skipList: SkipEntry[] = (skipResult.data ?? [])
+    .map((row: any) => {
+      const d = row.destinations;
+      const stateName = Array.isArray(d?.state) ? d.state[0]?.name : d?.state?.name;
+      return {
+        id: d?.id ?? "",
+        name: d?.name ?? "",
+        state: stateName ?? "",
+        score: row.score ?? 0,
+        why_not: row.why_not ?? null,
+        skip_reason: row.skip_reason ?? null,
+        compare_against: Array.isArray(d?.compare_against) ? d.compare_against : null,
+      };
+    })
+    .filter((s) => s.id && s.why_not);
+
+  // ACT IV Atlas pins — pick 4 PEAK + 1 AVOID for visual contrast.
+  // Top pins from mapPins where score >= 4, plus the lowest-scoring entry.
+  // Filters to those with valid coords + non-null score so pins always
+  // project to a real lat/lng spot on the India outline.
+  const peakPins: AtlasPin[] = (mapPins as any[])
+    .filter((p) => p.lat != null && p.lng != null && (p.score ?? 0) >= 4)
+    .sort((a, b) => (b.score ?? 0) - (a.score ?? 0))
+    .slice(0, 4)
+    .map((p) => ({
+      id: p.id,
+      name: p.name,
+      state: p.state ?? "",
+      lat: Number(p.lat),
+      lng: Number(p.lng),
+      score: Math.min(10, (p.score ?? 0) * 2),
+      avoid: false,
     }));
+  const avoidPin: AtlasPin | null = (() => {
+    const candidate = (mapPins as any[])
+      .filter((p) => p.lat != null && p.lng != null && (p.score ?? 5) <= 1)
+      .sort((a, b) => (a.score ?? 0) - (b.score ?? 0))[0];
+    if (!candidate) return null;
+    return {
+      id: candidate.id,
+      name: candidate.name,
+      state: candidate.state ?? "",
+      lat: Number(candidate.lat),
+      lng: Number(candidate.lng),
+      score: Math.min(10, (candidate.score ?? 0) * 2),
+      avoid: true,
+    };
+  })();
+  const atlasPins: AtlasPin[] = avoidPin ? [...peakPins, avoidPin] : peakPins;
+
+  // ACT V Director's Cut — 5 vibe lookups for the current month. For each
+  // vibe, find the top-scored destination whose `type[]` array contains the
+  // mapped tag. Done in parallel; skipped if env-less.
+  const VIBE_TO_TYPE: Record<VibeKey, string> = {
+    mountains: "hill-station",
+    beaches: "beach",
+    cities: "city",
+    wildlife: "wildlife",
+    heritage: "heritage",
+  };
+  const verdictBuckets = await Promise.all(
+    (Object.keys(VIBE_TO_TYPE) as VibeKey[]).map(async (vibe) => {
+      const tag = VIBE_TO_TYPE[vibe];
+      const r = await supabase
+        .from("destination_months")
+        .select(
+          "score, why_go, destinations!inner(id, name, tagline, type, state:states(name))",
+        )
+        .eq("month", currentMonth)
+        .gte("score", 3)
+        .contains("destinations.type", [tag])
+        .order("score", { ascending: false })
+        .limit(1);
+      return [vibe, r.data?.[0] as any] as const;
+    }),
+  );
+  const verdictMap: VerdictMap = {};
+  for (const [vibe, row] of verdictBuckets) {
+    if (!row?.destinations) continue;
+    const d = row.destinations;
+    const stateName = Array.isArray(d?.state) ? d.state[0]?.name : d?.state?.name;
+    const displayScore = Math.min(10, (row.score ?? 0) * 2);
+    const verdictLabel = verdictFor(displayScore);
+    verdictMap[vibe] = {
+      id: d.id ?? "",
+      name: d.name ?? "",
+      state: stateName ?? "",
+      score: displayScore,
+      tagline: d.tagline ?? null,
+      why: row.why_go ?? null,
+      verdictLabel,
+    };
+  }
+
+  // ACT VI Dailies — six most-recently-verified destinations + their score
+  // for the current month. Mixes PEAK (action=VERIFIED) with the lowest
+  // scorers (action=SKIP-LISTED) for editorial balance. Uses real
+  // destinations.content_reviewed_at for the timestamp on each card.
+  const [dailiesVerifiedR, dailiesSkippedR, dailiesStatsR] = await Promise.all([
+    supabase
+      .from("destination_months")
+      .select("score, destinations!inner(id, name, content_reviewed_at, state:states(name))")
+      .eq("month", currentMonth)
+      .gte("score", 4)
+      .order("destinations(content_reviewed_at)", { ascending: false })
+      .limit(4),
+    supabase
+      .from("destination_months")
+      .select("score, destinations!inner(id, name, content_reviewed_at, state:states(name))")
+      .eq("month", currentMonth)
+      .lte("score", 1)
+      .order("destinations(content_reviewed_at)", { ascending: false })
+      .limit(2),
+    supabase
+      .from("destination_months")
+      .select("score, destinations!inner(content_reviewed_at)", { count: "exact", head: false })
+      .eq("month", currentMonth),
+  ]);
+  const shapeDaily = (rows: unknown[], action: DailyEntry["action"]): DailyEntry[] =>
+    (rows as Array<{
+      score: number;
+      destinations: {
+        id: string;
+        name: string;
+        content_reviewed_at: string | null;
+        state?: { name: string } | { name: string }[];
+      };
+    }>).map((row) => {
+      const d = row.destinations;
+      const stateName = Array.isArray(d?.state) ? d.state[0]?.name : d?.state?.name;
+      return {
+        id: d?.id ?? "",
+        name: d?.name ?? "",
+        state: stateName ?? "",
+        score: Math.min(10, (row.score ?? 0) * 2),
+        verifiedAt: d?.content_reviewed_at ?? null,
+        action,
+      };
+    });
+  const dailies: DailyEntry[] = [
+    ...shapeDaily(dailiesVerifiedR.data ?? [], "VERIFIED"),
+    ...shapeDaily(dailiesSkippedR.data ?? [], "SKIP-LISTED"),
+  ].slice(0, 6);
+
+  // Trust-bar stats. Fresh = verified within the last 60 days.
+  const allMonthRowsForStats = (dailiesStatsR.data ?? []) as unknown as Array<{
+    score: number;
+    destinations: { content_reviewed_at: string | null };
+  }>;
+  const freshCutoff = Date.now() - 60 * 24 * 60 * 60 * 1000;
+  const freshDestinationsThisMonth = allMonthRowsForStats.filter((r) => {
+    const dRef = Array.isArray(r.destinations) ? r.destinations[0] : r.destinations;
+    const ts = dRef?.content_reviewed_at;
+    if (!ts) return false;
+    return new Date(ts).getTime() >= freshCutoff;
+  }).length;
+  const totalSkipListed = allMonthRowsForStats.filter((r) => (r.score ?? 5) <= 1).length;
+  const dailiesStats: DailiesStats = {
+    totalVerified: allMonthRowsForStats.length,
+    totalSkipListed,
+    freshDestinationsThisMonth,
+  };
+
+  // ACT V½ Field Note — derives a transcribed quote from the top dispatch
+  // hero's tagline (already editorial, already real). When a curated
+  // field-notes/{YYYY-MM}.json data file lands, swap this in for a daily
+  // rotation. No fabricated authors per locked plan.
+  const topHero = dispatchHeroes[0];
+  const fieldNote: FieldNote | null = topHero
+    ? {
+        destinationId: topHero.id,
+        destinationName: topHero.name,
+        state: topHero.state,
+        quote: topHero.tagline ?? topHero.why_go ?? "",
+        verifiedAt: topHero.verified_at,
+      }
+    : null;
 
   return {
     destinations: destResult.data ?? [],
@@ -93,15 +352,21 @@ async function getFeaturedData() {
     routes: routeResult.data ?? [],
     festivals: festResult.data ?? [],
     mapPins,
+    dispatchHeroes,
+    skipList,
+    scenes,
+    atlasPins,
+    verdictMap,
+    fieldNote,
+    dailies,
+    dailiesStats,
     stats: await getAppStats(),
   };
 }
 
 export default async function Home() {
-  const [{ destinations, collections, routes, stats, festivals, mapPins }, tourStats] = await Promise.all([
-    getFeaturedData(),
-    getTourStats(),
-  ]);
+  const { collections, dispatchHeroes, skipList, scenes, atlasPins, verdictMap, fieldNote, dailies, dailiesStats } =
+    await getFeaturedData();
 
   return (
     <>
@@ -113,17 +378,19 @@ export default async function Home() {
           so the existing <a href="#main-content"> always has somewhere
           valid to land on both locales. */}
       <main id="main-content-home">
-        <LandingHero
-          featuredDestinations={destinations}
+        <LandingCinema
+          dispatchHeroes={dispatchHeroes}
+          skipList={skipList}
+          scenes={scenes}
+          atlasPins={atlasPins}
+          verdictMap={verdictMap}
+          fieldNote={fieldNote}
+          dailies={dailies}
+          dailiesStats={dailiesStats}
           collections={collections}
-          routes={routes}
-          stats={stats}
-          festivals={festivals}
-          mapPins={mapPins}
         />
       </main>
-      <Footer stats={stats} />
-      <GuidedTour stats={tourStats} />
+      {/* Footer omitted on landing — ACT IX Coda absorbs the footer line. */}
     </>
   );
 }

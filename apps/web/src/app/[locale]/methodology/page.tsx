@@ -4,6 +4,10 @@ import { Footer } from "@/components/footer";
 import Link from "next/link";
 import { createClient } from "@supabase/supabase-js";
 import { localeAlternates } from "@/lib/seo-utils";
+import { SectionLabel } from "@/components/landing-cinema/helpers";
+import { getIssueNumber } from "@/components/landing-cinema/issue-number";
+import { CinemaStyles } from "@/components/landing-cinema/cinema-styles";
+import { SCORE_BANDS, VERDICT_COLOR, verdictTier, type VerdictTier } from "@itp/shared";
 
 // Live-computed freshness: ISR-cached daily, but the numbers come from DB
 // state, not hardcoded dates.
@@ -12,9 +16,9 @@ export const revalidate = 86400;
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   return {
-  title: "How We Score — Methodology",
-  description: "Our scoring methodology explained: how we rate destinations 1-5 each month, calculate kids suitability, assess safety, and evaluate infrastructure. Every number is explainable.",
-
+    title: "How We Score — Methodology",
+    description:
+      "Our scoring methodology explained: how we rate destinations on a 0–10 monthly scale, calculate kids suitability, assess safety, and evaluate infrastructure. Every number is explainable.",
     ...localeAlternates(locale, "/methodology"),
   };
 }
@@ -48,306 +52,693 @@ async function getFreshnessStats() {
   return { pct, latest };
 }
 
-async function getVerificationCounts() {
+// Bucket every destination by its annual average score. Average across all
+// 12 months (×2 for the 0–10 display scale) decides which band a place lands
+// in. Each destination counts exactly once, so totals sum to the destination
+// count. Average — not peak — because almost every place has at least one
+// strong month, which would over-pack the PEAK bucket and tell readers nothing.
+async function getScoreBandCounts(): Promise<Record<string, number> | null> {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
   if (!url || !key) return null;
 
   const supabase = createClient(url, key);
-  const [destinations, eateries, stays] = await Promise.all([
-    supabase.from("destinations").select("id", { count: "exact", head: true }),
-    supabase.from("local_eateries").select("id", { count: "exact", head: true }),
-    supabase.from("destination_stay_picks").select("destination_id", { count: "exact", head: true }),
-  ]);
-
-  return {
-    destinations: destinations.count ?? null,
-    eateries: eateries.count ?? null,
-    stays: stays.count ?? null,
+  const counts: Record<string, number> = {
+    peak: 0,
+    excellent: 0,
+    doable: 0,
+    marginal: 0,
+    avoid: 0,
   };
+
+  // 5,856 rows max — paginate around the Supabase 1000-row cap.
+  const PAGE = 1000;
+  const sums = new Map<string, { sum: number; n: number }>();
+  for (let from = 0; from < 8000; from += PAGE) {
+    const { data, error } = await supabase
+      .from("destination_months")
+      .select("destination_id, score")
+      .range(from, from + PAGE - 1);
+    if (error || !data || data.length === 0) break;
+    for (const row of data as { destination_id: string; score: number | null }[]) {
+      if (row.score == null) continue;
+      const cur = sums.get(row.destination_id) ?? { sum: 0, n: 0 };
+      cur.sum += row.score;
+      cur.n += 1;
+      sums.set(row.destination_id, cur);
+    }
+    if (data.length < PAGE) break;
+  }
+
+  for (const { sum, n } of sums.values()) {
+    if (n === 0) continue;
+    const display = (sum / n) * 2;
+    counts[verdictTier(display)]++;
+  }
+  return counts;
 }
 
-export default async function MethodologyPage() {
-  const [freshness, counts] = await Promise.all([
+const SCORE_FACTORS = [
+  "Weather (temperature, rain, snow, visibility)",
+  "Road access (passes open/closed, landslide risk)",
+  "Crowd levels (peak season, festivals, holidays)",
+  "Activity availability (treks, rafting, skiing, temple openings)",
+  "Safety conditions (monsoon flooding, extreme cold, AMS risk)",
+  "Infrastructure status (seasonal closures, services)",
+];
+
+const KIDS_CHECKS = [
+  "Medical access — how far is the nearest hospital?",
+  "ATM availability — can you get cash?",
+  "Phone signal — can you call for help?",
+  "Altitude — is AMS a risk for children?",
+  "Road safety — cliff edges, barriers, road quality",
+  "Stroller accessibility — can you use a pram?",
+  "Food options — will picky eaters survive?",
+  "Activities — is there anything for kids to DO?",
+];
+
+const INFRA_FIELDS: { label: string; desc: string }[] = [
+  { label: "Network", desc: "Which carriers work? Jio/Airtel/BSNL/Vi — honestly, per area." },
+  { label: "ATM", desc: "Available or not? If not, how far to nearest? Carry how much cash?" },
+  { label: "Medical", desc: "Nearest hospital name + distance. PHC vs real hospital distinction." },
+  { label: "Fuel", desc: "Nearest petrol pump. Next after that. EV charging. Jerry can recommendation." },
+  { label: "Permits", desc: "Required or not? Which type? How to get it? Government link." },
+  { label: "Night weather", desc: "Summer low and winter low temperatures. What to carry." },
+];
+
+export default async function MethodologyPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  const issueNum = getIssueNumber();
+  const [freshness, bandCounts] = await Promise.all([
     getFreshnessStats(),
-    getVerificationCounts(),
+    getScoreBandCounts(),
   ]);
   const now = new Date();
-  const monthYear = now.toLocaleDateString("en-IN", { month: "long", year: "numeric" });
+  const monthYear = now.toLocaleDateString("en-IN", {
+    month: "long",
+    year: "numeric",
+  });
+
   return (
-    <div className="min-h-screen">
+    <div
+      className="nakshiq-cinema"
+      style={{
+        minHeight: "100vh",
+      }}
+    >
+      <CinemaStyles />
       <Nav />
-      <main className="mx-auto max-w-3xl px-4 py-12">
-        <h1 className="text-4xl font-semibold mb-2">How We Score</h1>
-        <p className="text-muted-foreground mb-8">
-          Our methodology for monthly suitability scores, kids ratings, and infrastructure assessments.
-        </p>
+      <main
+        id="main-content"
+        className="nq-grain nq-glow-bookend"
+        style={{
+          padding: "140px 24px 96px",
+          position: "relative",
+        }}
+      >
+        {/* Masthead */}
+        <header
+          style={{
+            maxWidth: 1100,
+            margin: "0 auto 80px",
+            textAlign: "left",
+          }}
+        >
+          <p
+            className="nq-kicker"
+            style={{
+              color: "var(--vermillion)",
+              marginBottom: 24,
+              letterSpacing: "0.22em",
+            }}
+          >
+            METHODOLOGY · ISSUE Nº {issueNum}
+          </p>
+          <h1
+            className="nq-display"
+            style={{
+              fontFamily: "var(--cinema-display)",
+              fontStyle: "italic",
+              fontWeight: 400,
+              fontSize: "clamp(48px, 8vw, 116px)",
+              lineHeight: 0.96,
+              letterSpacing: "-0.028em",
+              margin: 0,
+              textWrap: "balance",
+            }}
+          >
+            How we score,
+            <br />
+            in plain English.
+          </h1>
+          <p
+            className="nq-meta"
+            style={{
+              color: "var(--bone-dim)",
+              marginTop: 32,
+              maxWidth: 720,
+              fontSize: 15,
+              lineHeight: 1.6,
+              letterSpacing: "0.04em",
+            }}
+          >
+            Monthly suitability scores, kids ratings, and infrastructure
+            assessments — every number on NakshIQ is explainable, every
+            assessment auditable.
+          </p>
+        </header>
 
-        <div className="space-y-10">
-          {/* Monthly Scores */}
-          <section>
-            <h2 className="text-2xl font-semibold mb-4">Monthly Suitability (0-5)</h2>
-            <p className="text-muted-foreground mb-4">
-              Every destination is scored for every month of the year. The score reflects how suitable
-              that specific month is for visiting that specific place.
+        {/* I — Monthly Suitability */}
+        <section style={sectionStyle}>
+          <SectionLabel num="I" name="MONTHLY SUITABILITY (0–10)" />
+          <Prose>
+            <p>
+              Every destination is scored for every month of the year. The score
+              reflects how suitable that specific month is for visiting that
+              specific place — not a static &ldquo;best time to visit&rdquo;
+              window, but a genuine month-by-month read.
             </p>
-            <div className="space-y-2">
-              {[
-                { score: 5, color: "bg-emerald-500/20 text-emerald-400 border-emerald-500/30", label: "Peak — go now", desc: "This is what the place is famous for. Weather perfect, everything open, activities at their best." },
-                { score: 4, color: "bg-blue-500/20 text-blue-400 border-blue-500/30", label: "Excellent", desc: "Minor tradeoffs — shoulder crowds, slight weather risk, but still a great time to visit." },
-                { score: 3, color: "bg-yellow-500/20 text-yellow-400 border-yellow-500/30", label: "Doable", desc: "Open and worth it, but not the headline experience. Shoulder season." },
-                { score: 2, color: "bg-orange-500/20 text-orange-400 border-orange-500/30", label: "Marginal", desc: "Significant downsides — rain, cold, partial closures, low payoff for the effort." },
-                { score: 1, color: "bg-red-500/20 text-red-400 border-red-500/30", label: "Avoid unless specific reason", desc: "Most things shut, conditions poor, or genuinely risky." },
-                { score: 0, color: "bg-zinc-500/20 text-zinc-400 border-zinc-500/30", label: "Closed / inaccessible", desc: "Place is physically inaccessible — snow, floods, official closure." },
-              ].map((s) => (
-                <div key={s.score} className={`flex items-start gap-3 rounded-xl border p-3 ${s.color}`}>
-                  <span className="font-mono font-bold text-lg shrink-0 w-6 text-center">{s.score}</span>
-                  <div>
-                    <div className="font-semibold text-sm">{s.label}</div>
-                    <div className="text-xs opacity-80 mt-0.5">{s.desc}</div>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <h3 className="text-lg font-semibold mt-6 mb-3">What factors into the score?</h3>
-            <div className="grid gap-2 sm:grid-cols-2">
-              {["Weather (temperature, rain, snow, visibility)",
-                "Road access (passes open/closed, landslide risk)",
-                "Crowd levels (peak season, festivals, holidays)",
-                "Activity availability (treks, rafting, skiing, temple openings)",
-                "Safety conditions (monsoon flooding, extreme cold, AMS risk)",
-                "Infrastructure status (seasonal closures, services)"].map((f) => (
-                <div key={f} className="flex items-start gap-2 text-sm text-muted-foreground">
-                  <span className="text-primary mt-0.5">•</span>
-                  <span>{f}</span>
-                </div>
-              ))}
-            </div>
-          </section>
-
-          {/* Kids Ratings */}
-          <section>
-            <h2 className="text-2xl font-semibold mb-4">Kids & Family Rating (1-5)</h2>
-            <p className="text-muted-foreground mb-4">
-              Not just "is it pretty for families?" — our kids rating is an infrastructure-aware
-              assessment that cross-references the destination's appeal with its practical reality.
+          </Prose>
+          <div
+            style={{
+              maxWidth: 720,
+              margin: "32px auto 0",
+              display: "flex",
+              flexDirection: "column",
+              gap: 0,
+            }}
+          >
+            {SCORE_BANDS.map((s) => (
+              <ScoreBand
+                key={s.tier}
+                tier={s.tier}
+                range={s.range}
+                label={s.label}
+                tagline={s.tagline}
+                count={bandCounts ? bandCounts[s.tier] ?? null : null}
+              />
+            ))}
+            <p
+              className="nq-meta"
+              style={{
+                marginTop: 24,
+                color: "var(--bone-faint)",
+                fontSize: 12,
+                letterSpacing: "0.16em",
+                textAlign: "right",
+              }}
+            >
+              COUNTS LIVE FROM SUPABASE · BUCKETED BY ANNUAL-AVERAGE SCORE · REFRESHED DAILY
             </p>
+          </div>
 
-            <h3 className="text-lg font-semibold mt-4 mb-3">What we check:</h3>
-            <div className="grid gap-2 sm:grid-cols-2">
-              {[
-                "🏥 Medical access — how far is the nearest hospital?",
-                "🏧 ATM availability — can you get cash?",
-                "📶 Phone signal — can you call for help?",
-                "🏔️ Altitude — is AMS a risk for children?",
-                "🛣️ Road safety — cliff edges, barriers, road quality",
-                "🧳 Stroller accessibility — can you use a pram?",
-                "🍽️ Food options — will picky eaters survive?",
-                "🎯 Activities — is there anything for kids to DO?",
-              ].map((f) => (
-                <div key={f} className="flex items-start gap-2 text-sm text-muted-foreground">
-                  <span>{f}</span>
-                </div>
+          <div style={{ maxWidth: 720, margin: "60px auto 0" }}>
+            <h3
+              style={{
+                fontFamily: "var(--cinema-display)",
+                fontStyle: "italic",
+                fontWeight: 500,
+                fontSize: 28,
+                lineHeight: 1.2,
+                color: "var(--bone)",
+                margin: "0 0 24px",
+                letterSpacing: "-0.012em",
+              }}
+            >
+              What factors into the score?
+            </h3>
+            <ul
+              style={{
+                listStyle: "none",
+                margin: 0,
+                padding: 0,
+                display: "flex",
+                flexDirection: "column",
+                gap: 0,
+              }}
+            >
+              {SCORE_FACTORS.map((f, i) => (
+                <li
+                  key={f}
+                  style={{
+                    padding: "18px 0",
+                    borderTop: "1px solid var(--hair)",
+                    borderBottom:
+                      i === SCORE_FACTORS.length - 1
+                        ? "1px solid var(--hair)"
+                        : "none",
+                    fontFamily: "var(--cinema-ui)",
+                    fontSize: 16,
+                    lineHeight: 1.6,
+                    color: "var(--bone-dim)",
+                  }}
+                >
+                  {f}
+                </li>
               ))}
-            </div>
+            </ul>
+          </div>
+        </section>
 
-            <div className="mt-4 rounded-xl border border-yellow-500/20 bg-yellow-500/5 p-4">
-              <p className="text-sm text-yellow-300/80">
-                <strong className="text-yellow-400">Important:</strong> A destination with stunning views but no hospital
-                within 4 hours, no ATM, and no phone signal will NEVER score 5/5 for kids — regardless of
-                how beautiful it is. We believe honest safety assessment matters more than Instagram-worthy scenery.
-              </p>
-            </div>
-          </section>
-
-          {/* Infrastructure */}
-          <section>
-            <h2 className="text-2xl font-semibold mb-4">Infrastructure Assessment</h2>
-            <p className="text-muted-foreground mb-4">
-              Every destination has structured infrastructure data — not vague descriptions,
-              but specific answers to the questions travelers actually need answered.
+        {/* II — Kids & Family Rating */}
+        <section style={sectionStyle}>
+          <SectionLabel num="II" name="KIDS & FAMILY RATING (0–10)" />
+          <Prose>
+            <p>
+              Not just &ldquo;is it pretty for families?&rdquo; — our kids
+              rating is an infrastructure-aware assessment that
+              cross-references the destination&apos;s appeal with its practical
+              reality on the ground.
             </p>
-            <div className="grid gap-3 sm:grid-cols-2">
-              {[
-                { icon: "📶", label: "Network", desc: "Which carriers work? Jio/Airtel/BSNL/Vi — honestly, per area" },
-                { icon: "🏧", label: "ATM", desc: "Available or not? If not, how far to nearest? Carry how much cash?" },
-                { icon: "🏥", label: "Medical", desc: "Nearest hospital name + distance. PHC vs real hospital distinction." },
-                { icon: "⛽", label: "Fuel", desc: "Nearest petrol pump. Next after that. EV charging. Jerry can recommendation." },
-                { icon: "📋", label: "Permits", desc: "Required or not? Which type? How to get it? Government link." },
-                { icon: "🌙", label: "Night weather", desc: "Summer low and winter low temperatures. What to carry." },
-              ].map((f) => (
-                <div key={f.label} className="rounded-xl border border-border p-3">
-                  <div className="flex items-center gap-2">
-                    <span>{f.icon}</span>
-                    <span className="font-semibold text-sm">{f.label}</span>
-                  </div>
-                  <p className="text-xs text-muted-foreground mt-1">{f.desc}</p>
-                </div>
-              ))}
-            </div>
-          </section>
+          </Prose>
 
-          {/* Data Freshness */}
-          <section>
-            <h2 className="text-2xl font-semibold mb-4">Data freshness</h2>
-            <p className="text-muted-foreground">
-              Weather, season, and permit-regime content is structurally cycle-based — June in Leh
-              reads the same every year. Infrastructure, stays, and contacts are on a rolling
-              90-day review cadence.
+          <div style={{ maxWidth: 720, margin: "32px auto 0" }}>
+            <h3
+              style={{
+                fontFamily: "var(--cinema-display)",
+                fontStyle: "italic",
+                fontWeight: 500,
+                fontSize: 24,
+                lineHeight: 1.25,
+                color: "var(--bone)",
+                margin: "0 0 20px",
+                letterSpacing: "-0.012em",
+              }}
+            >
+              What we check
+            </h3>
+            <ul
+              style={{
+                listStyle: "none",
+                margin: 0,
+                padding: 0,
+                display: "flex",
+                flexDirection: "column",
+                gap: 0,
+              }}
+            >
+              {KIDS_CHECKS.map((f, i) => (
+                <li
+                  key={f}
+                  style={{
+                    padding: "18px 0",
+                    borderTop: "1px solid var(--hair)",
+                    borderBottom:
+                      i === KIDS_CHECKS.length - 1
+                        ? "1px solid var(--hair)"
+                        : "none",
+                    fontFamily: "var(--cinema-ui)",
+                    fontSize: 16,
+                    lineHeight: 1.6,
+                    color: "var(--bone-dim)",
+                  }}
+                >
+                  {f}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <PullQuote>
+            A destination with stunning views but no hospital within four hours,
+            no ATM, and no phone signal will never score 10/10 for kids —
+            regardless of how beautiful it is.
+          </PullQuote>
+
+          <Prose>
+            <p>
+              Honest safety assessment matters more than Instagram-worthy
+              scenery. If we wouldn&apos;t take our own daughters there, the
+              score reflects it.
+            </p>
+          </Prose>
+        </section>
+
+        {/* III — Infrastructure Assessment */}
+        <section style={sectionStyle}>
+          <SectionLabel num="III" name="INFRASTRUCTURE ASSESSMENT" />
+          <Prose>
+            <p>
+              Every destination has structured infrastructure data — not vague
+              descriptions, but specific answers to the questions travelers
+              actually need answered before they go.
+            </p>
+          </Prose>
+          <div
+            style={{
+              maxWidth: 720,
+              margin: "32px auto 0",
+              display: "flex",
+              flexDirection: "column",
+              gap: 0,
+            }}
+          >
+            {INFRA_FIELDS.map((f) => (
+              <EditorialEntry
+                key={f.label}
+                title={f.label}
+                body={f.desc}
+              />
+            ))}
+          </div>
+        </section>
+
+        {/* IV — Data Freshness */}
+        <section style={sectionStyle}>
+          <SectionLabel num="IV" name="DATA FRESHNESS" />
+          <Prose>
+            <p>
+              Weather, season, and permit-regime content is structurally
+              cycle-based — June in Leh reads the same every year.
+              Infrastructure, stays, and contacts sit on a rolling 90-day review
+              cadence.
             </p>
             {freshness && (
-              <p className="mt-3 text-muted-foreground tabular-nums">
+              <p style={{ fontFamily: "var(--cinema-mono)", fontSize: 14 }}>
                 Current as of {monthYear}
                 {freshness.pct > 0 && (
-                  <> · <span className="font-semibold text-foreground">{freshness.pct}%</span> of destinations reviewed in the last 90 days</>
+                  <>
+                    {" "}·{" "}
+                    <span style={{ color: "var(--bone)", fontWeight: 600 }}>
+                      {freshness.pct}%
+                    </span>{" "}
+                    of destinations reviewed in the last 90 days
+                  </>
                 )}
                 {freshness.latest && (
-                  <> · latest review {new Date(freshness.latest).toLocaleDateString("en-IN", { month: "short", year: "numeric" })}</>
+                  <>
+                    {" "}· latest review{" "}
+                    {new Date(freshness.latest).toLocaleDateString("en-IN", {
+                      month: "short",
+                      year: "numeric",
+                    })}
+                  </>
                 )}
-                . <Link href="/methodology/freshness" className="text-foreground underline underline-offset-2">See the live dashboard →</Link>
+                .{" "}
+                <Link
+                  href={`/${locale}/methodology/freshness`}
+                  style={{
+                    color: "var(--bone)",
+                    borderBottom: "1px solid var(--vermillion)",
+                    textDecoration: "none",
+                  }}
+                >
+                  See the live dashboard →
+                </Link>
               </p>
             )}
-            <p className="mt-3 text-muted-foreground">
-              Road conditions, infrastructure, and seasonal patterns can shift — always verify
-              locally before traveling, especially for remote destinations. If you find
-              inaccurate data, we want to know.
+            <p>
+              Road conditions, infrastructure, and seasonal patterns can shift —
+              always verify locally before traveling, especially for remote
+              destinations. If you find inaccurate data, we want to know.
             </p>
-            <p className="mt-3 text-muted-foreground">
-              When a primary source doesn't surface a number, we leave it blank
-              rather than guess. Read{" "}
-              <Link href="/why-we-say-no-data" className="text-foreground underline underline-offset-2">
-                why we say no data
-              </Link>
-              {" "}for what a dash on this site actually means.
-            </p>
-            <div className="mt-4 rounded-xl border border-border p-4 text-sm text-muted-foreground">
-              <strong>Disclaimer:</strong> This data is for planning purposes. Always verify conditions
-              locally before traveling. Mountain roads, weather, and infrastructure can change rapidly.
-              We are not responsible for decisions made based on this data.
-            </div>
-          </section>
+          </Prose>
+        </section>
 
-          {/* How we keep data honest */}
-          <section>
-            <h2 className="text-2xl font-semibold mb-4">How we keep data honest</h2>
-            <p className="text-muted-foreground leading-relaxed">
-              Scoring is one half of methodology. The other half is making
-              sure the numbers we score are real in the first place. Roughly
-              one in three numbers we research turns out to be wrong, dead,
-              or moved. The work of catching that — and refusing to ship it
-              — is the harder half of the job.
+        {/* V — Disclaimer (callout) */}
+        <section style={{ ...sectionStyle, maxWidth: 1100, margin: "0 auto 100px" }}>
+          <div
+            style={{
+              maxWidth: 720,
+              margin: "0 auto",
+              padding: "48px 40px",
+              background: "var(--film-2)",
+              border: "1px solid var(--vermillion)",
+              borderLeftWidth: 4,
+            }}
+          >
+            <p
+              className="nq-kicker"
+              style={{ color: "var(--vermillion)", marginBottom: 18 }}
+            >
+              V · DISCLAIMER
             </p>
-
-            {counts && (
-              <p className="mt-4 text-muted-foreground tabular-nums">
-                Current corpus:{" "}
-                {counts.destinations != null && (
-                  <><span className="font-semibold text-foreground">{counts.destinations.toLocaleString("en-IN")}</span> destinations · </>
-                )}
-                {counts.eateries != null && (
-                  <><span className="font-semibold text-foreground">{counts.eateries.toLocaleString("en-IN")}</span> verified eateries · </>
-                )}
-                {counts.stays != null && (
-                  <><span className="font-semibold text-foreground">{counts.stays.toLocaleString("en-IN")}</span> verified stay picks</>
-                )}
-                .
-              </p>
-            )}
-
-            <h3 className="text-lg font-semibold mt-6 mb-3">Guardrails built into the data layer</h3>
-            <p className="text-muted-foreground leading-relaxed mb-3">
-              Some forms of bad data are caught in the editor's head. Some
-              are caught by the database itself. We've codified the patterns
-              we keep encountering into schema-level checks, so a row that
-              would fabricate an emergency contact can't be saved at all.
+            <p
+              style={{
+                fontFamily: "var(--cinema-display)",
+                fontStyle: "italic",
+                fontSize: 22,
+                lineHeight: 1.55,
+                color: "var(--bone)",
+                marginBottom: 16,
+              }}
+            >
+              This data is for planning purposes. Always verify conditions
+              locally before traveling.
             </p>
-            <ul className="space-y-3 text-muted-foreground">
-              <li className="flex items-start gap-2">
-                <span className="text-primary mt-0.5">—</span>
-                <span>
-                  <strong className="text-foreground">Placeholder phone numbers are blocked at write time.</strong>{" "}
-                  Numbers containing <code className="text-xs">XXXXX</code>, runs of six or more zeros or nines, or strings like <code className="text-xs">TBD</code>/<code className="text-xs">TODO</code>/<code className="text-xs">PLACEHOLDER</code> are rejected by a database trigger. The dash you see is the only honest response when a source doesn't surface one.
-                </span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-primary mt-0.5">—</span>
-                <span>
-                  <strong className="text-foreground">Editorial prose has a minimum substance floor.</strong>{" "}
-                  Destinations marked "go" must justify it in at least 150 characters of why-to-go prose — or the field stays null. Stub copy can't sneak past as a verdict.
-                </span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-primary mt-0.5">—</span>
-                <span>
-                  <strong className="text-foreground">Price tiers are an enum, not a free-text guess.</strong>{" "}
-                  Eateries are tagged on a four-step rupee scale, not "₹150-350 per head" style fabricated precision. The scale is consistent across every destination.
-                </span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-primary mt-0.5">—</span>
-                <span>
-                  <strong className="text-foreground">Stays must declare their sourcing.</strong>{" "}
-                  Every stay pick records whether it came from the verified eateries-and-stays index, an open web search, or a manual editor entry — so the audit trail survives review.
-                </span>
-              </li>
-            </ul>
-
-            <h3 className="text-lg font-semibold mt-6 mb-3">What we've caught while auditing</h3>
-            <p className="text-muted-foreground leading-relaxed mb-3">
-              The single most useful audit habit is reading the proposed
-              data with a sceptic's eye and asking "where did this actually
-              come from?" Cross-destination contamination — where a
-              listicle's "best stays in Pfutsero" was secretly a Kohima list
-              — is the most common failure mode. We've caught it in every
-              state we've audited.
+            <p
+              style={{
+                fontFamily: "var(--cinema-ui)",
+                fontSize: 15,
+                lineHeight: 1.7,
+                color: "var(--bone-dim)",
+                margin: 0,
+              }}
+            >
+              Mountain roads, weather, and infrastructure can change rapidly.
+              We are not responsible for decisions made based on this data —
+              the responsibility for the trip remains with the traveler. Treat
+              every score as an honest opinion, not a guarantee.
             </p>
-            <ul className="space-y-2 text-sm text-muted-foreground">
-              <li className="flex items-start gap-2">
-                <span className="text-primary mt-0.5">—</span>
-                <span>
-                  In Tripura, eight of the first nine web-search stay candidates turned out to be hallucinated or attached to a museum, not a hotel. We replaced them with the two that survived the audit and left the rest blank.
-                </span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-primary mt-0.5">—</span>
-                <span>
-                  In Meghalaya, multiple "Mawphlang" homestay candidates were actually in Cherrapunji — a 30-kilometre cross-destination contamination that travel listicles repeat without checking.
-                </span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-primary mt-0.5">—</span>
-                <span>
-                  In Nagaland, more than three quarters of the web-search stay candidates for the Dzukou and Mon districts couldn't be confirmed against any government accommodation list. Those slots are blank.
-                </span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-primary mt-0.5">—</span>
-                <span>
-                  In Assam, a candidate called "Bonhomie Farm Guwahati" turned out to be a real place — in Davao, the Philippines. It nearly made it into the corpus.
-                </span>
-              </li>
-            </ul>
-            <p className="mt-4 text-muted-foreground leading-relaxed">
-              The pattern is the point. A travel listicle never tells you it
-              was wrong. We publish what we caught, because the catching is
-              the moat. The{" "}
-              <Link href="/transparency" className="text-foreground underline underline-offset-2">
-                full fabrication audit
-              </Link>
-              {" "}lists every state we've closed, the catch rate, and the
-              named properties that didn't make it in.
-            </p>
-          </section>
-
-          <div className="text-center pt-4">
-            <Link href="/explore" className="rounded-full bg-primary px-6 py-2.5 text-sm font-medium text-primary-foreground hover:bg-primary/90">
-              Start exploring with confidence →
-            </Link>
           </div>
+        </section>
+
+        {/* CTAs */}
+        <div
+          style={{
+            maxWidth: 720,
+            margin: "0 auto",
+            display: "flex",
+            flexWrap: "wrap",
+            justifyContent: "center",
+            gap: 14,
+          }}
+        >
+          <Link href={`/${locale}/explore`} style={ctaPrimary}>
+            START EXPLORING →
+          </Link>
+          <Link href={`/${locale}/about`} style={ctaSecondary}>
+            ABOUT NAKSHIQ
+          </Link>
+          <Link href={`/${locale}/methodology/freshness`} style={ctaSecondary}>
+            FRESHNESS DASHBOARD
+          </Link>
         </div>
       </main>
       <Footer />
     </div>
   );
 }
+
+/* ─── Editorial style helpers ───────────────────────────── */
+
+const sectionStyle: React.CSSProperties = {
+  maxWidth: 1100,
+  margin: "0 auto 100px",
+};
+
+function Prose({ children }: { children: React.ReactNode }) {
+  return (
+    <div
+      style={{
+        maxWidth: 720,
+        margin: "0 auto",
+        fontFamily: "var(--cinema-ui)",
+        fontSize: 17,
+        lineHeight: 1.75,
+        color: "var(--bone-dim)",
+        display: "flex",
+        flexDirection: "column",
+        gap: 18,
+      }}
+    >
+      {children}
+    </div>
+  );
+}
+
+function PullQuote({ children }: { children: React.ReactNode }) {
+  return (
+    <blockquote
+      style={{
+        maxWidth: 820,
+        margin: "48px auto",
+        padding: "0 24px",
+        borderLeft: "4px solid var(--vermillion)",
+        fontFamily: "var(--cinema-display)",
+        fontStyle: "italic",
+        fontWeight: 400,
+        fontSize: "clamp(28px, 4vw, 44px)",
+        lineHeight: 1.25,
+        letterSpacing: "-0.02em",
+        color: "var(--bone)",
+        textWrap: "balance",
+      }}
+    >
+      &ldquo;{children}&rdquo;
+    </blockquote>
+  );
+}
+
+function EditorialEntry({
+  title,
+  body,
+}: {
+  title: string;
+  body: string;
+}) {
+  return (
+    <div
+      style={{
+        padding: "28px 0",
+        borderTop: "1px solid var(--hair)",
+      }}
+    >
+      <h3
+        style={{
+          fontFamily: "var(--cinema-display)",
+          fontStyle: "italic",
+          fontWeight: 500,
+          fontSize: 24,
+          lineHeight: 1.25,
+          letterSpacing: "-0.012em",
+          color: "var(--bone)",
+          margin: "0 0 10px",
+        }}
+      >
+        {title}
+      </h3>
+      <p
+        style={{
+          fontFamily: "var(--cinema-ui)",
+          fontSize: 16,
+          lineHeight: 1.7,
+          color: "var(--bone-dim)",
+          margin: 0,
+        }}
+      >
+        {body}
+      </p>
+    </div>
+  );
+}
+
+function ScoreBand({
+  tier,
+  range,
+  label,
+  tagline,
+  count,
+}: {
+  tier: VerdictTier;
+  range: string;
+  label: string;
+  tagline: string;
+  count: number | null;
+}) {
+  const tint = VERDICT_COLOR[tier];
+  return (
+    <div
+      style={{
+        display: "grid",
+        gridTemplateColumns: "minmax(120px, 140px) minmax(110px, 140px) 1fr auto",
+        columnGap: 32,
+        rowGap: 8,
+        padding: "32px 0",
+        borderTop: "1px solid var(--hair)",
+        alignItems: "center",
+      }}
+    >
+      <span
+        className="nq-mono"
+        style={{
+          fontFamily: "var(--cinema-mono)",
+          fontSize: 22,
+          color: tint,
+          fontWeight: 500,
+          fontVariantNumeric: "tabular-nums",
+          letterSpacing: "0",
+          whiteSpace: "nowrap",
+        }}
+      >
+        {range}
+      </span>
+      <span
+        className="nq-mono"
+        style={{
+          fontSize: 12,
+          color: tint,
+          letterSpacing: "0.22em",
+          fontWeight: 600,
+        }}
+      >
+        {label}
+      </span>
+      <span
+        style={{
+          fontFamily: "var(--cinema-display)",
+          fontStyle: "italic",
+          fontWeight: 400,
+          fontSize: 18,
+          lineHeight: 1.45,
+          color: "var(--bone-dim)",
+          letterSpacing: "-0.005em",
+        }}
+      >
+        {tagline}
+      </span>
+      <span
+        className="nq-mono"
+        style={{
+          fontFamily: "var(--cinema-mono)",
+          fontSize: 28,
+          fontWeight: 500,
+          color: count == null ? "var(--bone-faint)" : "var(--bone)",
+          fontVariantNumeric: "tabular-nums",
+          textAlign: "right",
+          minWidth: 56,
+        }}
+      >
+        {count == null ? "—" : count}
+      </span>
+    </div>
+  );
+}
+
+const ctaPrimary: React.CSSProperties = {
+  display: "inline-flex",
+  alignItems: "center",
+  gap: 14,
+  padding: "18px 28px",
+  background: "var(--bone)",
+  color: "var(--paper)",
+  fontFamily: "var(--cinema-ui)",
+  fontWeight: 700,
+  fontSize: 11,
+  lineHeight: 1,
+  textTransform: "uppercase",
+  letterSpacing: "0.18em",
+  textDecoration: "none",
+};
+
+const ctaSecondary: React.CSSProperties = {
+  display: "inline-flex",
+  alignItems: "center",
+  gap: 14,
+  padding: "18px 28px",
+  background: "transparent",
+  color: "var(--bone)",
+  border: "1px solid var(--hair)",
+  fontFamily: "var(--cinema-ui)",
+  fontWeight: 700,
+  fontSize: 11,
+  lineHeight: 1,
+  textTransform: "uppercase",
+  letterSpacing: "0.18em",
+  textDecoration: "none",
+};

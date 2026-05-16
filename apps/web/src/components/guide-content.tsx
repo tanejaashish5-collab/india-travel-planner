@@ -8,6 +8,7 @@ import {
   HoverCard,
   ScrollReveal,
 } from "./animated-hero";
+import { formatScoreInline } from "@itp/shared";
 
 interface KidsFriendly {
   suitable: boolean | null;
@@ -123,8 +124,8 @@ export function GuideContent({
         title: `${d.name} in ${currentMonthName}`,
         href: `/en/destination/${d.id}/${currentMonthSlug}`,
         desc: entry?.note
-          ? `${entry.score}/5 for ${currentMonthName} — ${entry.note}`
-          : `${entry?.score ?? "—"}/5 for ${currentMonthName} — weather, crowds, costs${d.elevation_m ? ` (${d.elevation_m}m)` : ""}`,
+          ? `${formatScoreInline(entry.score)} for ${currentMonthName} — ${entry.note}`
+          : `${entry?.score != null ? formatScoreInline(entry.score) : "—"} for ${currentMonthName} — weather, crowds, costs${d.elevation_m ? ` (${d.elevation_m}m)` : ""}`,
         months: [currentMonthName],
       };
     });

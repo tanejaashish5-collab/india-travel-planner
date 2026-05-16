@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
-import { currentMonthIST } from "@itp/shared";
+import { currentMonthIST, formatScoreInline } from "@itp/shared";
 
 export const dynamic = "force-dynamic";
 
@@ -52,7 +52,7 @@ export async function GET(req: NextRequest) {
         alerts.push({
           type: "warning",
           title: `Low season for ${(dest as any).name}`,
-          message: `This destination scores ${monthData.score}/5 in the current month. Consider visiting during a better-rated month.`,
+          message: `This destination scores ${formatScoreInline(monthData.score)} in the current month. Consider visiting during a better-rated month.`,
           source: "seasonal",
         });
       }

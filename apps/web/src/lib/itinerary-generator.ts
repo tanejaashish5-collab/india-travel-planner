@@ -1,3 +1,5 @@
+import { formatScoreInline } from "@itp/shared";
+
 // Itinerary scaffold generator — Phase 4.
 //
 // Deterministic, side-effect-free skeleton built from the user's stops +
@@ -68,7 +70,7 @@ function pickKidsLine(row: LogisticsRow | undefined, ages: number[] | undefined)
     return `Kids floor for ${row?.name ?? "this stop"} is age ${minRec}+. Youngest in your group is ${minAge}.`;
   }
   if (row?.kids_rating != null) {
-    return `Kids rating ${row.kids_rating}/5 — pace this day around the youngest.`;
+    return `Kids rating ${formatScoreInline(row.kids_rating)} — pace this day around the youngest.`;
   }
   return null;
 }
@@ -77,9 +79,9 @@ function pickSoloFemaleLine(row: LogisticsRow | undefined, opts: ScaffoldOpts): 
   if (!opts.hasFemaleAdult || (opts.pax ?? 0) > 1) return null;
   const sf = row?.monthly_solo_female_score ?? row?.annual_solo_female_score;
   if (sf == null) return null;
-  if (sf <= 2) return `Solo-female score ${sf}/5 — local guide or paired travel recommended after dark.`;
-  if (sf >= 4) return `Solo-female score ${sf}/5 — comfortable solo, last bus times still apply.`;
-  return `Solo-female score ${sf}/5 — fine in daylight, plan returns before sunset.`;
+  if (sf <= 2) return `Solo-female score ${formatScoreInline(sf)} — local guide or paired travel recommended after dark.`;
+  if (sf >= 4) return `Solo-female score ${formatScoreInline(sf)} — comfortable solo, last bus times still apply.`;
+  return `Solo-female score ${formatScoreInline(sf)} — fine in daylight, plan returns before sunset.`;
 }
 
 export function buildScaffold(
@@ -136,7 +138,7 @@ export function buildScaffold(
       const evening = eveningParts.join(" ");
 
       const ratParts: string[] = [];
-      if (row?.monthly_score) ratParts.push(`scores ${row.monthly_score}/5 this month`);
+      if (row?.monthly_score) ratParts.push(`scores ${formatScoreInline(row.monthly_score)} this month`);
       const kidsLine = pickKidsLine(row, opts.ages);
       if (kidsLine) ratParts.push(kidsLine);
       const sfLine = pickSoloFemaleLine(row, opts);

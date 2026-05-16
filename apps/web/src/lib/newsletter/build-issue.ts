@@ -3,6 +3,7 @@ import type { WindowIssueProps } from "@/emails/the-window";
 import { pickOpening, pickClosing } from "./voice-pool";
 import { computeWeeklyPicks } from "@/lib/weekly-picks/compute";
 import { weekOfMonth } from "@/lib/weekly-picks/weight";
+import { formatScoreInline } from "@itp/shared";
 
 const MONTH_NAMES = [
   "", "January", "February", "March", "April", "May", "June",
@@ -178,7 +179,7 @@ export async function buildWindowIssue(overrides?: IssueOverrides): Promise<Issu
   const opening = overrides?.opening ?? pickOpening(issueNumber);
   const closing = overrides?.closing ?? pickClosing(issueNumber);
 
-  const subject = overrides?.subject ?? `${bestScore.name} scores ${bestScore.score}/5 this week`;
+  const subject = overrides?.subject ?? `${bestScore.name} scores ${formatScoreInline(bestScore.score)} this week`;
   const previewText = overrides?.previewText ?? `${bestScore.name}, ${bestScore.state} — and the place you should skip instead.`;
 
   return {

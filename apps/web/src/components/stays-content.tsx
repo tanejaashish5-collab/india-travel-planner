@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useLocale } from "next-intl";
 import { StaggerContainer, StaggerItem, HoverCard } from "./animated-hero";
 import { RegionFilterBar, RegionKey, getStateId, stateInRegion } from "./region-filter";
+import { formatScoreInline } from "@itp/shared";
 
 export function StaysContent({ destinations }: { destinations: any[] }) {
   const locale = useLocale();
@@ -148,7 +149,7 @@ export function StaysContent({ destinations }: { destinations: any[] }) {
                   )}
                   {dest.workability?.remote_work_rating >= 3 && (
                     <span className="rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/20 px-2 py-1 text-xs font-medium">
-                      💻 WFH {dest.workability.remote_work_rating}/5
+                      💻 WFH {formatScoreInline(dest.workability.remote_work_rating)}
                     </span>
                   )}
                 </div>

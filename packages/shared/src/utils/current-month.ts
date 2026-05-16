@@ -14,6 +14,11 @@ export const MONTH_SLUGS = [
   "july", "august", "september", "october", "november", "december",
 ] as const;
 
+export const MONTH_LONG_NAMES = [
+  "January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December",
+] as const;
+
 export type MonthSlug = (typeof MONTH_SLUGS)[number];
 
 /** 1-12 month number for the current IST date. */

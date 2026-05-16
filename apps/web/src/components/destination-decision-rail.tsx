@@ -5,6 +5,7 @@ import { useLocale } from "next-intl";
 import { cn } from "@/lib/utils";
 import { SectionLabel } from "./ui/section-label";
 import { SCORE_LABELS } from "@/lib/design-tokens";
+import { formatScore, SCORE_MAX } from "@itp/shared";
 
 type Verdict = "go" | "wait" | "skip";
 
@@ -215,8 +216,8 @@ export function DestinationDecisionRail({
               )}
               {score != null && (
                 <div className="flex items-baseline gap-1">
-                  <span className={cn("font-mono text-2xl font-semibold tabular-nums", scoreTone(score))}>{score}</span>
-                  <span className="text-[11px] font-medium tracking-[0.08em] text-white/50">/5</span>
+                  <span className={cn("font-mono text-2xl font-semibold tabular-nums", scoreTone(score))}>{formatScore(score)}</span>
+                  <span className="text-[11px] font-medium tracking-[0.08em] text-white/50">/{SCORE_MAX}</span>
                 </div>
               )}
             </div>

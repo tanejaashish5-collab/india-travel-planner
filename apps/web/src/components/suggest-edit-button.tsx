@@ -6,8 +6,13 @@ type Props = {
   targetTable: string;
   targetId?: string | null;
   context?: string | null;
-  /** Visual variant. `link` matches footer-link aesthetic; `inline` is a small chip. */
-  variant?: "link" | "inline";
+  /** Visual variant.
+   * `link` — footer-link (muted text, hover translateX).
+   * `inline` — small dotted-underline chip.
+   * `cinematic` — ghost button matching ctaSecondary on the cinematic
+   * destination template (border + uppercase mono caps).
+   */
+  variant?: "link" | "inline" | "cinematic";
   /** Mode — defaults to a generic suggest-edit. "fabrication" surfaces a stronger
    *  CTA and prefixes the saved message with `[FABRICATION-REPORT]` so editorial
    *  can triage these ahead of typo/wording suggestions. */
@@ -68,12 +73,41 @@ export function SuggestEditButton({ targetTable, targetId, context, variant = "l
   const triggerClass =
     variant === "inline"
       ? "text-xs text-muted-foreground/60 hover:text-[#E55642] underline underline-offset-2 decoration-dotted transition-colors"
-      : "text-sm text-muted-foreground/70 hover:text-foreground hover:translate-x-1 transition-all duration-200 block";
+      : variant === "cinematic"
+        ? ""
+        : "text-sm text-muted-foreground/70 hover:text-foreground hover:translate-x-1 transition-all duration-200 block";
+
+  const cinematicStyle: React.CSSProperties =
+    variant === "cinematic"
+      ? {
+          display: "inline-flex",
+          alignItems: "center",
+          gap: 14,
+          padding: "16px 26px",
+          background: "transparent",
+          color: "var(--bone)",
+          border: "1px solid var(--hair)",
+          fontFamily: "var(--cinema-ui)",
+          fontWeight: 700,
+          fontSize: 11,
+          lineHeight: 1,
+          textTransform: "uppercase",
+          letterSpacing: "0.18em",
+          cursor: "pointer",
+        }
+      : {};
 
   return (
     <>
-      <button type="button" onClick={() => setOpen(true)} className={triggerClass}>
-        {isFabrication ? "Report a fabrication" : "Suggest an edit"}
+      <button
+        type="button"
+        onClick={() => setOpen(true)}
+        className={triggerClass}
+        style={variant === "cinematic" ? cinematicStyle : undefined}
+      >
+        {variant === "cinematic"
+          ? (isFabrication ? "Report a fabrication →" : "Suggest an edit →")
+          : (isFabrication ? "Report a fabrication" : "Suggest an edit")}
       </button>
 
       {open && (

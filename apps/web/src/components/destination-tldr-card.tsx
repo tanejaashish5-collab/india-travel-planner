@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import { formatScore, formatScoreInline, SCORE_MAX } from "@itp/shared";
 
 type Verdict = "go" | "wait" | "skip";
 
@@ -104,9 +105,9 @@ export default function DestinationTldrCard({
 
   const kidsValue =
     kidsRating != null
-      ? `${kidsRating}/5${kidsSuitable === false ? " · skip" : ""}`
+      ? `${formatScoreInline(kidsRating)}${kidsSuitable === false ? " · skip" : ""}`
       : "n/a";
-  const soloValue = soloFemaleScore != null ? `${soloFemaleScore}/5` : "n/a";
+  const soloValue = soloFemaleScore != null ? formatScoreInline(soloFemaleScore) : "n/a";
   const crowdValue = crowdTone?.label ?? "—";
   const costValue = costTier ? costTier.charAt(0).toUpperCase() + costTier.slice(1) : "—";
   const diffValue = difficulty ? difficulty.charAt(0).toUpperCase() + difficulty.slice(1) : "—";
@@ -136,9 +137,9 @@ export default function DestinationTldrCard({
         {score != null && (
           <div className="flex items-baseline gap-2">
             <span className="font-mono text-3xl sm:text-4xl font-bold tabular-nums" style={{ color: tone.accent }}>
-              {score}
+              {formatScore(score)}
             </span>
-            <span className="font-mono text-xs tracking-[0.2em] uppercase opacity-60">/5</span>
+            <span className="font-mono text-xs tracking-[0.2em] uppercase opacity-60">/{SCORE_MAX}</span>
           </div>
         )}
       </div>

@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
 import { SectionLabel } from "./ui/section-label";
-import { currentMonthIST } from "@itp/shared";
+import { currentMonthIST, formatScoreInline } from "@itp/shared";
 
 type Score = 1 | 2 | 3 | 4 | 5;
 
@@ -64,8 +64,8 @@ export default function SoloFemaleSafetySection({ score, note, monthRows, hubHre
             </SectionLabel>
             {typeof score === "number" && topTone ? (
               <div className="mt-0.5">
-                <span className={cn("font-serif italic text-2xl sm:text-3xl font-medium tracking-tight", topTone.text)} style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}>
-                  {score}/5
+                <span className={cn("font-serif italic text-2xl sm:text-3xl font-medium tracking-tight tabular-nums", topTone.text)} style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}>
+                  {formatScoreInline(score)}
                 </span>
                 <span className="ml-2 text-sm text-rose-200/70">— {topTone.label}</span>
               </div>

@@ -9,7 +9,7 @@ import { videoSrc } from "@/lib/video-url";
 import { macroRegionHeroSrc, hasMacroRegionHero } from "@/lib/landing-heroes";
 import { videoObjectJsonLd } from "@/lib/video-schema";
 import { destinationImage } from "@/lib/image-url";
-import { currentMonthIST } from "@itp/shared";
+import { currentMonthIST, formatScoreInline } from "@itp/shared";
 
 export const revalidate = 86400;
 export const dynamicParams = true;
@@ -212,7 +212,7 @@ export default async function RegionPage({
                   <div className="flex items-center justify-between mb-1">
                     <h3 className="font-semibold text-foreground group-hover:text-primary transition-colors">{state.name}</h3>
                     {state.avgScore && (
-                      <span className="text-xs font-mono text-muted-foreground">{state.avgScore}/5</span>
+                      <span className="text-xs font-mono text-muted-foreground tabular-nums">{formatScoreInline(state.avgScore)}</span>
                     )}
                   </div>
                   <div className="flex items-center gap-2 text-xs text-muted-foreground">

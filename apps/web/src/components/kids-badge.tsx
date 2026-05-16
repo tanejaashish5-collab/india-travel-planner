@@ -1,6 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
+import { formatScoreInline } from "@itp/shared";
 
 interface KidsBadgeProps {
   suitable: boolean;
@@ -34,7 +35,7 @@ export function KidsBadge({
   // "infant-friendly" when it's 0 — more often it's unset.
   function buildMetaLine(): string | null {
     const parts: string[] = [];
-    if (rating != null) parts.push(`Rating: ${rating}/5`);
+    if (rating != null) parts.push(`Rating: ${formatScoreInline(rating)}`);
     if (min_recommended_age) parts.push(`${t("minAge")}: ${min_recommended_age}+`);
     if (best_age_group?.trim()) parts.push(`Best for: ${best_age_group}`);
     return parts.length > 0 ? parts.join(" · ") : null;
@@ -94,8 +95,8 @@ export function KidsBadge({
             )}
           </div>
         </div>
-        <div className="text-2xl font-mono font-bold text-emerald-400">
-          {rating}/5
+        <div className="text-2xl font-mono font-bold text-emerald-400 tabular-nums">
+          {formatScoreInline(rating)}
         </div>
       </div>
 
