@@ -1,8 +1,8 @@
 # Cinematic readiness — 2026-05-16
 
-Total: **505** dests · A=**446** · HS-B=**14** · B=**45** · C=**0**
+Total: **505** dests · A=**446** · HS-B=**17** · B=**42** · C=**0**
 
-Cinematic-eligible (A + HS-B): **460**
+Cinematic-eligible (A + HS-B): **463**
 
 Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 
@@ -20,7 +20,7 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 |---|---:|---:|---:|---:|---:|
 | andaman-nicobar | 11 | 1 | 0 | 0 | 12 |
 | andhra-pradesh | 9 | 0 | 12 | 0 | 21 |
-| arunachal-pradesh | 7 | 3 | 1 | 0 | 11 |
+| arunachal-pradesh | 7 | 4 | 0 | 0 | 11 |
 | assam | 1 | 2 | 5 | 0 | 8 |
 | bihar | 3 | 0 | 3 | 0 | 6 |
 | chandigarh | 1 | 0 | 0 | 0 | 1 |
@@ -31,7 +31,7 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | gujarat | 29 | 0 | 0 | 0 | 29 |
 | haryana | 2 | 0 | 1 | 0 | 3 |
 | himachal-pradesh | 34 | 0 | 0 | 0 | 34 |
-| jammu-kashmir | 15 | 1 | 2 | 0 | 18 |
+| jammu-kashmir | 15 | 2 | 1 | 0 | 18 |
 | jharkhand | 4 | 0 | 0 | 0 | 4 |
 | karnataka | 30 | 0 | 0 | 0 | 30 |
 | kerala | 28 | 0 | 2 | 0 | 30 |
@@ -47,7 +47,7 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | puducherry | 3 | 0 | 0 | 0 | 3 |
 | punjab | 3 | 0 | 1 | 0 | 4 |
 | rajasthan | 21 | 0 | 2 | 0 | 23 |
-| sikkim | 9 | 1 | 1 | 0 | 11 |
+| sikkim | 9 | 2 | 0 | 0 | 11 |
 | tamil-nadu | 30 | 0 | 0 | 0 | 30 |
 | telangana | 7 | 0 | 8 | 0 | 15 |
 | tripura | 3 | 0 | 0 | 0 | 3 |
@@ -94,7 +94,6 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Majuli (majuli) | assam | eats:3/5 |
 | Maredumilli (maredumilli) | andhra-pradesh | eats:3/5 |
 | Morni Hills (morni-hills) | haryana | eats:3/5 |
-| Namdapha (namdapha) | arunachal-pradesh | eats:4/5 |
 | Pawapuri (pawapuri) | bihar | gems:2/3 · eats:2/5 |
 | Pillalamarri (pillalamarri) | telangana | eats:3/5 |
 | Pochampally (pochampally) | telangana | eats:3/5 |
@@ -105,8 +104,6 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Sivasagar (sivasagar) | assam | eats:3/5 |
 | Sravasti (sravasti) | uttar-pradesh | eats:3/5 |
 | Srikalahasti (srikalahasti) | andhra-pradesh | eats:4/5 |
-| Tosamaidan (tosamaidan) | jammu-kashmir | eats:0/5 |
-| Tsomgo Lake (tsomgo-lake) | sikkim | eats:3/5 · stays:0/3 |
 | Undavalli Caves (undavalli-caves) | andhra-pradesh | eats:3/5 |
 | Vaishali (vaishali) | bihar | eats:4/5 |
 
@@ -123,10 +120,13 @@ Thresholds: gems ≥ 3 · eateries ≥ 5 · stay picks ≥ 3
 | Gurudongmar Lake (gurudongmar-lake) | sikkim | eats · stays |
 | Manas National Park (manas-national-park) | assam | eats |
 | Mechuka (mechuka) | arunachal-pradesh | eats |
+| Namdapha (namdapha) | arunachal-pradesh | eats |
 | Nongriat (nongriat) | meghalaya | eats |
 | Phawngpui Peak (phawngpui-peak) | mizoram | eats · stays |
 | Sinthan Top (sinthan-top) | jammu-kashmir | eats · stays |
 | Tamenglong (tamenglong) | manipur | eats |
+| Tosamaidan (tosamaidan) | jammu-kashmir | eats |
+| Tsomgo Lake (tsomgo-lake) | sikkim | eats · stays |
 | Umlingla (umlingla) | ladakh | eats |
 
 ## Tier A destinations (magazine-ready)

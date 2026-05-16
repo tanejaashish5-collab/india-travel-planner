@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-05-16T02:05:08.210Z",
+  "generated_at": "2026-05-16T03:41:41.849Z",
   "totals": {
     "A": 446,
-    "HS-B": 14,
-    "B": 45,
+    "HS-B": 17,
+    "B": 42,
     "C": 0,
     "total": 505
   },
@@ -32,8 +32,8 @@
     {
       "state": "arunachal-pradesh",
       "A": 7,
-      "HS-B": 3,
-      "B": 1,
+      "HS-B": 4,
+      "B": 0,
       "C": 0,
       "total": 11
     },
@@ -120,8 +120,8 @@
     {
       "state": "jammu-kashmir",
       "A": 15,
-      "HS-B": 1,
-      "B": 2,
+      "HS-B": 2,
+      "B": 1,
       "C": 0,
       "total": 18
     },
@@ -248,8 +248,8 @@
     {
       "state": "sikkim",
       "A": 9,
-      "HS-B": 1,
-      "B": 1,
+      "HS-B": 2,
+      "B": 0,
       "C": 0,
       "total": 11
     },
@@ -948,27 +948,6 @@
       ]
     },
     {
-      "id": "namdapha",
-      "name": "Namdapha",
-      "state": "arunachal-pradesh",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 3,
-        "eats": 4,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "hs_confirmed": [],
-      "missing": [
-        "eats:4/5"
-      ]
-    },
-    {
       "id": "pawapuri",
       "name": "Pawapuri",
       "state": "bihar",
@@ -1177,51 +1156,6 @@
       "hs_confirmed": [],
       "missing": [
         "eats:4/5"
-      ]
-    },
-    {
-      "id": "tosamaidan",
-      "name": "Tosamaidan",
-      "state": "jammu-kashmir",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 3,
-        "eats": 0,
-        "stays": 4
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "hs_confirmed": [],
-      "missing": [
-        "eats:0/5"
-      ]
-    },
-    {
-      "id": "tsomgo-lake",
-      "name": "Tsomgo Lake",
-      "state": "sikkim",
-      "tier": "B",
-      "counts": {
-        "months_scored": 12,
-        "months_prose": 12,
-        "gems": 3,
-        "eats": 3,
-        "stays": 0
-      },
-      "has": {
-        "tagline": true,
-        "why_special": true
-      },
-      "hs_confirmed": [
-        "stays"
-      ],
-      "missing": [
-        "eats:3/5",
-        "stays:0/3"
       ]
     },
     {
@@ -1478,6 +1412,29 @@
       ]
     },
     {
+      "id": "namdapha",
+      "name": "Namdapha",
+      "state": "arunachal-pradesh",
+      "tier": "HS-B",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 4,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "hs_confirmed": [
+        "eats"
+      ],
+      "missing": [
+        "eats:4/5"
+      ]
+    },
+    {
       "id": "nongriat",
       "name": "Nongriat",
       "state": "meghalaya",
@@ -1571,6 +1528,54 @@
       ],
       "missing": [
         "eats:4/5"
+      ]
+    },
+    {
+      "id": "tosamaidan",
+      "name": "Tosamaidan",
+      "state": "jammu-kashmir",
+      "tier": "HS-B",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 0,
+        "stays": 4
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "hs_confirmed": [
+        "eats"
+      ],
+      "missing": [
+        "eats:0/5"
+      ]
+    },
+    {
+      "id": "tsomgo-lake",
+      "name": "Tsomgo Lake",
+      "state": "sikkim",
+      "tier": "HS-B",
+      "counts": {
+        "months_scored": 12,
+        "months_prose": 12,
+        "gems": 3,
+        "eats": 3,
+        "stays": 0
+      },
+      "has": {
+        "tagline": true,
+        "why_special": true
+      },
+      "hs_confirmed": [
+        "eats",
+        "stays"
+      ],
+      "missing": [
+        "eats:3/5",
+        "stays:0/3"
       ]
     },
     {
