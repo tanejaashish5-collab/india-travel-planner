@@ -1,17 +1,9 @@
 {
   "yt_short_formats_used": [],
   "yt_short_music_used": [],
-  "posted_today": {
-    "GAh5p_reel": "2026-05-16",
-    "PdMu0_reel": "2026-05-16"
-  },
-  "last_sync": "2026-04-30T04:05:30.154914+00:00",
-  "posted_destinations": [
-    {
-      "destination_id": "kokernag",
-      "date": "2026-05-16"
-    }
-  ],
+  "posted_today": {},
+  "last_sync": "2026-05-16T06:38:33.372141+00:00",
+  "posted_destinations": [],
   "posted_formats": {
     "m8EAd": [
       "monthly_forecast",
@@ -439,38 +431,9 @@
       "destination": "ranthambore",
       "format": "kids_intel",
       "has_media": true
-    },
-    {
-      "timestamp": "2026-05-16T06:13:01.507429+00:00",
-      "date": "2026-05-16",
-      "platform": "youtube",
-      "post_id": "Tfta1",
-      "destination": "kokernag",
-      "format": "reel.destination_reveal",
-      "media_id": "reel_destination_reveal_reel_destination_reveal_kokernag.mp4"
-    },
-    {
-      "timestamp": "2026-05-16T06:14:20.249155+00:00",
-      "date": "2026-05-16",
-      "platform": "facebook",
-      "post_id": "B6YBn",
-      "destination": "kokernag",
-      "format": "reel.destination_reveal",
-      "media_id": "reel_destination_reveal_reel_destination_reveal_kokernag.mp4"
     }
   ],
-  "theme_usage": {
-    "reel_formats": {
-      "destination_reveal": [
-        "2026-05-16"
-      ]
-    },
-    "reel_reveal_dests": {
-      "kokernag": [
-        "2026-05-16"
-      ]
-    }
-  },
+  "theme_usage": {},
   "infographic": {
     "last_topic_idx": 0,
     "last_theme_idx": 0,
