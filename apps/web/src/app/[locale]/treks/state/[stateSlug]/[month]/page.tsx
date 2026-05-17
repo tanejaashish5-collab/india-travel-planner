@@ -6,6 +6,9 @@ import { createClient } from "@supabase/supabase-js";
 import { notFound } from "next/navigation";
 import { STATE_MAP, MONTH_MAP } from "@/lib/seo-maps";
 import { localeAlternates } from "@/lib/seo-utils";
+import { CinemaStyles } from "@/components/landing-cinema/cinema-styles";
+import { Title } from "@/components/landing-cinema/editorial";
+import { CinematicRelatedRail } from "@/components/cinematic-related-rail";
 
 export const revalidate = 86400;
 export const dynamicParams = true;
@@ -29,8 +32,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   };
 }
 
-export default async function TreksStateMonthPage({ params }: { params: Promise<{ stateSlug: string; month: string }> }) {
-  const { stateSlug, month } = await params;
+export default async function TreksStateMonthPage({ params }: { params: Promise<{ locale: string; stateSlug: string; month: string }> }) {
+  const { locale, stateSlug, month } = await params;
   const stateName = STATE_MAP[stateSlug];
   const m = MONTH_MAP[month];
   if (!stateName || !m) notFound();
@@ -43,7 +46,7 @@ export default async function TreksStateMonthPage({ params }: { params: Promise<
     .select("*, destinations(name, state:states(name))")
     .order("name");
 
-  const filtered = (treks ?? []).filter((t: any) => {
+  const filtered = (treks ?? []).filter((t: { destinations?: { state?: { name?: string } }; best_months?: number[] }) => {
     const trekState = t.destinations?.state?.name;
     if (trekState !== stateName) return false;
     if (t.best_months && Array.isArray(t.best_months)) {
@@ -52,17 +55,81 @@ export default async function TreksStateMonthPage({ params }: { params: Promise<
     return true;
   });
 
+  const breadcrumbLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: `https://www.nakshiq.com/${locale}` },
+      { "@type": "ListItem", position: 2, name: "Treks", item: `https://www.nakshiq.com/${locale}/treks` },
+      { "@type": "ListItem", position: 3, name: `${stateName}`, item: `https://www.nakshiq.com/${locale}/treks/state/${stateSlug}` },
+      { "@type": "ListItem", position: 4, name: m.name, item: `https://www.nakshiq.com/${locale}/treks/state/${stateSlug}/${month}` },
+    ],
+  };
+
   return (
-    <div className="min-h-screen">
+    <div className="nakshiq-cinema" style={{ minHeight: "100vh" }}>
+      <CinemaStyles />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+      />
       <Nav />
-      <main className="mx-auto max-w-7xl px-4 py-8">
-        <div className="mb-8">
-          <p className="text-sm font-medium text-primary uppercase tracking-[0.08em] mb-2">{stateName} · {m.name}</p>
-          <h1 className="text-3xl font-semibold">Treks in {stateName} in {m.name}</h1>
-          <p className="mt-2 text-muted-foreground">{filtered.length} treks open or recommended in {m.name}</p>
+
+      <main
+        id="main-content"
+        className="nq-grain"
+        style={{ position: "relative", padding: "140px 24px 64px" }}
+      >
+        <header style={{ maxWidth: 1100, margin: "0 auto 48px" }}>
+          <p
+            className="nq-kicker"
+            style={{
+              color: "var(--vermillion)",
+              marginBottom: 20,
+              letterSpacing: "0.22em",
+            }}
+          >
+            TREKS · {stateName.toUpperCase()} · {m.name.toUpperCase()}
+          </p>
+          <Title
+            as="h1"
+            className="nq-display"
+            style={{
+              fontFamily: "var(--cinema-display)",
+              fontStyle: "italic",
+              fontWeight: 400,
+              fontSize: "clamp(36px, 6vw, 76px)",
+              lineHeight: 1.0,
+              letterSpacing: "-0.022em",
+              margin: 0,
+              textWrap: "balance",
+            }}
+          >
+            {stateName} treks in {m.name}.
+          </Title>
+          <p
+            style={{
+              fontFamily: "var(--cinema-display)",
+              fontStyle: "italic",
+              fontWeight: 400,
+              fontSize: "clamp(18px, 2vw, 24px)",
+              lineHeight: 1.4,
+              color: "var(--bone-dim)",
+              marginTop: 24,
+              maxWidth: 720,
+            }}
+          >
+            {filtered.length} treks open or recommended in {m.name}. Trail
+            conditions and difficulty for the month.
+          </p>
+        </header>
+
+        <div style={{ maxWidth: 1100, margin: "0 auto" }}>
+          <TreksContent treks={filtered} trekDests={[]} gearChecklists={[]} />
         </div>
-        <TreksContent treks={filtered} trekDests={[]} gearChecklists={[]} />
       </main>
+
+      <CinematicRelatedRail />
       <Footer />
     </div>
   );

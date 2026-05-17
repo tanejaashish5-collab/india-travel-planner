@@ -6,6 +6,9 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { localeAlternates } from "@/lib/seo-utils";
 import { festivalsItemListJsonLd } from "@/lib/festival-schema";
+import { CinemaStyles } from "@/components/landing-cinema/cinema-styles";
+import { Title } from "@/components/landing-cinema/editorial";
+import { CinematicRelatedRail } from "@/components/cinematic-related-rail";
 
 export const revalidate = 86400;
 export const dynamicParams = true;
@@ -29,14 +32,21 @@ function getSupabase() {
 export async function generateMetadata({ params }: { params: Promise<{ locale: string; monthSlug: string}> }): Promise<Metadata> {
   const { locale, monthSlug } = await params;
   const m = MONTH_MAP[monthSlug];
-  if (!m) return {
-  };
+  if (!m) return {};
   return {
     title: `Festivals in India in ${m.name} — Complete Calendar | NakshIQ`,
     description: `Every festival happening across India in ${m.name} with dates, locations, and what to expect. Time your trip around India's celebrations.`,
     ...localeAlternates(locale, `/festivals/month/${monthSlug}`),
   };
 }
+
+type FestivalRow = {
+  id: string;
+  name: string;
+  description?: string | null;
+  dates?: string | null;
+  destinations?: { name?: string; state?: { name?: string } | null } | null;
+};
 
 export default async function FestivalsByMonthPage({ params }: { params: Promise<{ locale: string; monthSlug: string }> }) {
   const { locale, monthSlug } = await params;
@@ -54,64 +64,225 @@ export default async function FestivalsByMonthPage({ params }: { params: Promise
 
   const MONTH_SLUGS = Object.keys(MONTH_MAP);
   const pageUrl = `https://www.nakshiq.com/${locale}/festivals/month/${monthSlug}`;
-  const eventListLd = festivalsItemListJsonLd((festivals ?? []) as any, m.num, pageUrl);
+  const eventListLd = festivalsItemListJsonLd((festivals ?? []) as Parameters<typeof festivalsItemListJsonLd>[0], m.num, pageUrl);
+
+  const breadcrumbLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: `https://www.nakshiq.com/${locale}` },
+      { "@type": "ListItem", position: 2, name: "Festivals", item: `https://www.nakshiq.com/${locale}/festivals` },
+      { "@type": "ListItem", position: 3, name: m.name, item: pageUrl },
+    ],
+  };
 
   return (
-    <div className="min-h-screen">
+    <div className="nakshiq-cinema" style={{ minHeight: "100vh" }}>
+      <CinemaStyles />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(eventListLd) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+      />
       <Nav />
-      <main className="mx-auto max-w-7xl px-4 py-8">
-        <div className="mb-6">
-          <p className="text-sm font-medium text-primary uppercase tracking-[0.08em] mb-2">Festival Calendar</p>
-          <h1 className="text-3xl font-semibold">Festivals in {m.name}</h1>
-          <p className="mt-2 text-muted-foreground">
-            {(festivals ?? []).length} festivals happening across India in {m.name}
+
+      <main
+        id="main-content"
+        className="nq-grain"
+        style={{ position: "relative", padding: "140px 24px 64px" }}
+      >
+        <header style={{ maxWidth: 1100, margin: "0 auto 48px" }}>
+          <p
+            className="nq-kicker"
+            style={{
+              color: "var(--vermillion)",
+              marginBottom: 20,
+              letterSpacing: "0.22em",
+            }}
+          >
+            FESTIVAL CALENDAR · {m.name.toUpperCase()}
           </p>
-        </div>
+          <Title
+            as="h1"
+            className="nq-display"
+            style={{
+              fontFamily: "var(--cinema-display)",
+              fontStyle: "italic",
+              fontWeight: 400,
+              fontSize: "clamp(36px, 6vw, 76px)",
+              lineHeight: 1.0,
+              letterSpacing: "-0.022em",
+              margin: 0,
+              textWrap: "balance",
+            }}
+          >
+            Festivals in {m.name}.
+          </Title>
+          <p
+            style={{
+              fontFamily: "var(--cinema-display)",
+              fontStyle: "italic",
+              fontWeight: 400,
+              fontSize: "clamp(18px, 2vw, 24px)",
+              lineHeight: 1.4,
+              color: "var(--bone-dim)",
+              marginTop: 24,
+              maxWidth: 720,
+            }}
+          >
+            {(festivals ?? []).length} festivals happening across India in {m.name}.
+            Dates, locations, and host destinations.
+          </p>
+        </header>
 
-        {/* Month picker */}
-        <div className="flex gap-2 overflow-x-auto pb-4 mb-6 scrollbar-none">
-          {MONTH_SLUGS.map((ms) => (
-            <Link
-              key={ms}
-              href={`/${locale}/festivals/month/${ms}`}
-              className={`shrink-0 rounded-full px-4 py-1.5 text-sm font-medium transition-colors ${
-                ms === monthSlug
-                  ? "bg-primary text-primary-foreground"
-                  : "bg-muted text-muted-foreground hover:text-foreground"
-              }`}
-            >
-              {MONTH_MAP[ms].name.slice(0, 3)}
-            </Link>
-          ))}
-        </div>
-
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {(festivals ?? []).map((f: any) => (
-            <div key={f.id} className="rounded-2xl border border-border/50 bg-card p-5 hover:border-primary/30 transition-colors">
-              <h3 className="font-semibold text-foreground">{f.name}</h3>
-              <div className="flex items-center gap-2 mt-1">
-                <span className="text-xs text-muted-foreground">{f.destinations?.name}</span>
-                {f.destinations?.state?.name && (
-                  <span className="text-[10px] rounded-full bg-muted px-2 py-0.5 text-muted-foreground">{f.destinations.state.name}</span>
-                )}
-              </div>
-              {f.description && <p className="text-xs text-muted-foreground mt-2 line-clamp-3">{f.description}</p>}
-              {f.dates && <p className="text-xs font-medium text-primary mt-2">{f.dates}</p>}
-            </div>
-          ))}
-        </div>
-
-        {(festivals ?? []).length === 0 && (
-          <div className="py-20 text-center text-muted-foreground">
-            <p>No festivals listed for {m.name} yet.</p>
-            <Link href={`/${locale}/festivals`} className="text-primary hover:underline mt-2 inline-block">View all festivals →</Link>
+        <div style={{ maxWidth: 1100, margin: "0 auto" }}>
+          {/* Month picker */}
+          <div
+            style={{
+              display: "flex",
+              gap: 8,
+              overflowX: "auto",
+              paddingBottom: 16,
+              marginBottom: 32,
+              borderBottom: "1px solid var(--hair)",
+            }}
+          >
+            {MONTH_SLUGS.map((ms) => {
+              const isActive = ms === monthSlug;
+              return (
+                <Link
+                  key={ms}
+                  href={`/${locale}/festivals/month/${ms}`}
+                  style={{
+                    flexShrink: 0,
+                    padding: "8px 16px",
+                    fontFamily: "var(--cinema-mono)",
+                    fontSize: 11,
+                    letterSpacing: "0.18em",
+                    textTransform: "uppercase",
+                    color: isActive ? "var(--paper)" : "var(--bone-dim)",
+                    background: isActive ? "var(--vermillion)" : "transparent",
+                    border: `1px solid ${isActive ? "var(--vermillion)" : "var(--hair)"}`,
+                    textDecoration: "none",
+                    transition: "color 200ms ease, border-color 200ms ease",
+                  }}
+                >
+                  {MONTH_MAP[ms].name.slice(0, 3)}
+                </Link>
+              );
+            })}
           </div>
-        )}
+
+          {(festivals ?? []).length > 0 ? (
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))",
+                gap: 1,
+                background: "var(--hair)",
+                border: "1px solid var(--hair)",
+              }}
+            >
+              {(festivals ?? []).map((f: FestivalRow) => (
+                <div
+                  key={f.id}
+                  style={{
+                    padding: 20,
+                    background: "var(--paper)",
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: 8,
+                  }}
+                >
+                  <h3
+                    style={{
+                      fontFamily: "var(--cinema-display)",
+                      fontStyle: "italic",
+                      fontWeight: 500,
+                      fontSize: 22,
+                      lineHeight: 1.2,
+                      color: "var(--bone)",
+                      margin: 0,
+                    }}
+                  >
+                    {f.name}
+                  </h3>
+                  <div
+                    style={{
+                      fontFamily: "var(--cinema-mono)",
+                      fontSize: 10,
+                      letterSpacing: "0.18em",
+                      textTransform: "uppercase",
+                      color: "var(--bone-faint)",
+                    }}
+                  >
+                    {f.destinations?.name}
+                    {f.destinations?.state?.name && ` · ${f.destinations.state.name}`}
+                  </div>
+                  {f.description && (
+                    <p
+                      style={{
+                        fontFamily: "var(--cinema-ui)",
+                        fontSize: 14,
+                        lineHeight: 1.55,
+                        color: "var(--bone-dim)",
+                        margin: 0,
+                        display: "-webkit-box",
+                        WebkitLineClamp: 3,
+                        WebkitBoxOrient: "vertical",
+                        overflow: "hidden",
+                      }}
+                    >
+                      {f.description}
+                    </p>
+                  )}
+                  {f.dates && (
+                    <p
+                      style={{
+                        fontFamily: "var(--cinema-mono)",
+                        fontSize: 11,
+                        letterSpacing: "0.06em",
+                        color: "var(--vermillion)",
+                        margin: 0,
+                      }}
+                    >
+                      {f.dates}
+                    </p>
+                  )}
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div
+              style={{
+                padding: "80px 0",
+                textAlign: "center",
+                fontFamily: "var(--cinema-ui)",
+                color: "var(--bone-dim)",
+              }}
+            >
+              <p>No festivals listed for {m.name} yet.</p>
+              <Link
+                href={`/${locale}/festivals`}
+                style={{
+                  display: "inline-block",
+                  marginTop: 12,
+                  color: "var(--vermillion)",
+                  textDecoration: "underline",
+                  textUnderlineOffset: "3px",
+                }}
+              >
+                View all festivals →
+              </Link>
+            </div>
+          )}
+        </div>
       </main>
+
+      <CinematicRelatedRail />
       <Footer />
     </div>
   );

@@ -70,6 +70,11 @@ export function Nav() {
     `/${locale}/blog/`,
     `/${locale}/guide/scenarios/`,
     `/${locale}/routes/`,
+    // Tier 2 children (S54) — filter pages now cinematic
+    `/${locale}/treks/`,
+    `/${locale}/festivals/`,
+    `/${locale}/stays/`,
+    `/${locale}/camping/`,
   ];
   const isCinematicPage =
     CINEMATIC_PAGE_PATHS.includes(pathname) ||

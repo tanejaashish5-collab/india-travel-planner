@@ -6,6 +6,9 @@ import { notFound } from "next/navigation";
 import { STATE_MAP } from "@/lib/seo-maps";
 import { localeAlternates } from "@/lib/seo-utils";
 import { festivalsItemListJsonLd } from "@/lib/festival-schema";
+import { CinemaStyles } from "@/components/landing-cinema/cinema-styles";
+import { Title } from "@/components/landing-cinema/editorial";
+import { CinematicRelatedRail } from "@/components/cinematic-related-rail";
 
 export const revalidate = 86400;
 export const dynamicParams = true;
@@ -22,14 +25,21 @@ const MONTH_NAMES = ["","January","February","March","April","May","June","July"
 export async function generateMetadata({ params }: { params: Promise<{ locale: string; stateSlug: string}> }): Promise<Metadata> {
   const { locale, stateSlug } = await params;
   const stateName = STATE_MAP[stateSlug];
-  if (!stateName) return {
-  };
+  if (!stateName) return {};
   return {
     title: `Festivals in ${stateName} — Complete Calendar | NakshIQ`,
     description: `Every festival in ${stateName} by month — dates, locations, and what to expect. Time your trip around ${stateName}'s celebrations.`,
     ...localeAlternates(locale, `/festivals/state/${stateSlug}`),
   };
 }
+
+type FestivalRow = {
+  id: string;
+  name: string;
+  month?: number | null;
+  description?: string | null;
+  destinations?: { name?: string } | null;
+};
 
 export default async function FestivalsByStatePage({ params }: { params: Promise<{ locale: string; stateSlug: string }> }) {
   const { locale, stateSlug } = await params;
@@ -45,7 +55,7 @@ export default async function FestivalsByStatePage({ params }: { params: Promise
     .eq("destinations.state_id", stateSlug)
     .order("month");
 
-  const grouped = (festivals ?? []).reduce((acc: Record<number, any[]>, f: any) => {
+  const grouped = (festivals ?? []).reduce((acc: Record<number, FestivalRow[]>, f: FestivalRow) => {
     const m = f.month || 0;
     if (!acc[m]) acc[m] = [];
     acc[m].push(f);
@@ -54,45 +64,182 @@ export default async function FestivalsByStatePage({ params }: { params: Promise
 
   const pageUrl = `https://www.nakshiq.com/${locale}/festivals/state/${stateSlug}`;
   const eventListLd = festivalsItemListJsonLd(
-    (festivals ?? []) as any,
+    (festivals ?? []) as Parameters<typeof festivalsItemListJsonLd>[0],
     null,
     pageUrl,
     stateName,
   );
 
+  const breadcrumbLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: `https://www.nakshiq.com/${locale}` },
+      { "@type": "ListItem", position: 2, name: "Festivals", item: `https://www.nakshiq.com/${locale}/festivals` },
+      { "@type": "ListItem", position: 3, name: stateName, item: pageUrl },
+    ],
+  };
+
   return (
-    <div className="min-h-screen">
+    <div className="nakshiq-cinema" style={{ minHeight: "100vh" }}>
+      <CinemaStyles />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(eventListLd) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+      />
       <Nav />
-      <main className="mx-auto max-w-7xl px-4 py-8">
-        <div className="mb-8">
-          <p className="text-sm font-medium text-primary uppercase tracking-[0.08em] mb-2">Festival Calendar</p>
-          <h1 className="text-3xl font-semibold">Festivals in {stateName}</h1>
-          <p className="mt-2 text-muted-foreground">
-            {(festivals ?? []).length} festivals across {stateName} — organized by month
+
+      <main
+        id="main-content"
+        className="nq-grain"
+        style={{ position: "relative", padding: "140px 24px 64px" }}
+      >
+        <header style={{ maxWidth: 1100, margin: "0 auto 48px" }}>
+          <p
+            className="nq-kicker"
+            style={{
+              color: "var(--vermillion)",
+              marginBottom: 20,
+              letterSpacing: "0.22em",
+            }}
+          >
+            FESTIVAL CALENDAR · {stateName.toUpperCase()} · {String((festivals ?? []).length).padStart(3, "0")}
           </p>
+          <Title
+            as="h1"
+            className="nq-display"
+            style={{
+              fontFamily: "var(--cinema-display)",
+              fontStyle: "italic",
+              fontWeight: 400,
+              fontSize: "clamp(36px, 6vw, 76px)",
+              lineHeight: 1.0,
+              letterSpacing: "-0.022em",
+              margin: 0,
+              textWrap: "balance",
+            }}
+          >
+            Festivals in {stateName}.
+          </Title>
+          <p
+            style={{
+              fontFamily: "var(--cinema-display)",
+              fontStyle: "italic",
+              fontWeight: 400,
+              fontSize: "clamp(18px, 2vw, 24px)",
+              lineHeight: 1.4,
+              color: "var(--bone-dim)",
+              marginTop: 24,
+              maxWidth: 720,
+            }}
+          >
+            {(festivals ?? []).length} festivals across {stateName} —
+            organised by month.
+          </p>
+        </header>
+
+        <div style={{ maxWidth: 1100, margin: "0 auto" }}>
+          {Object.entries(grouped).sort(([a], [b]) => Number(a) - Number(b)).map(([month, fests]) => (
+            <section key={month} style={{ marginBottom: 48 }}>
+              <h2
+                style={{
+                  fontFamily: "var(--cinema-display)",
+                  fontStyle: "italic",
+                  fontWeight: 500,
+                  fontSize: 32,
+                  lineHeight: 1.1,
+                  color: "var(--bone)",
+                  margin: "0 0 20px",
+                  paddingBottom: 12,
+                  borderBottom: "1px solid var(--hair)",
+                }}
+              >
+                {MONTH_NAMES[Number(month)] || "Unknown"}
+              </h2>
+              <div
+                style={{
+                  display: "grid",
+                  gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))",
+                  gap: 1,
+                  background: "var(--hair)",
+                  border: "1px solid var(--hair)",
+                }}
+              >
+                {(fests as FestivalRow[]).map((f) => (
+                  <div
+                    key={f.id}
+                    style={{
+                      padding: 18,
+                      background: "var(--paper)",
+                    }}
+                  >
+                    <h3
+                      style={{
+                        fontFamily: "var(--cinema-display)",
+                        fontStyle: "italic",
+                        fontWeight: 500,
+                        fontSize: 19,
+                        lineHeight: 1.25,
+                        color: "var(--bone)",
+                        margin: "0 0 4px",
+                      }}
+                    >
+                      {f.name}
+                    </h3>
+                    <p
+                      style={{
+                        fontFamily: "var(--cinema-mono)",
+                        fontSize: 10,
+                        letterSpacing: "0.18em",
+                        textTransform: "uppercase",
+                        color: "var(--bone-faint)",
+                        margin: "0 0 8px",
+                      }}
+                    >
+                      {f.destinations?.name}
+                    </p>
+                    {f.description && (
+                      <p
+                        style={{
+                          fontFamily: "var(--cinema-ui)",
+                          fontSize: 13,
+                          lineHeight: 1.5,
+                          color: "var(--bone-dim)",
+                          margin: 0,
+                          display: "-webkit-box",
+                          WebkitLineClamp: 2,
+                          WebkitBoxOrient: "vertical",
+                          overflow: "hidden",
+                        }}
+                      >
+                        {f.description}
+                      </p>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </section>
+          ))}
+          {(festivals ?? []).length === 0 && (
+            <p
+              style={{
+                padding: "80px 0",
+                textAlign: "center",
+                fontFamily: "var(--cinema-ui)",
+                color: "var(--bone-dim)",
+              }}
+            >
+              No festivals listed for {stateName} yet.
+            </p>
+          )}
         </div>
-        {Object.entries(grouped).sort(([a], [b]) => Number(a) - Number(b)).map(([month, fests]) => (
-          <div key={month} className="mb-8">
-            <h2 className="text-lg font-semibold text-foreground mb-3">{MONTH_NAMES[Number(month)] || "Unknown"}</h2>
-            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-              {(fests as any[]).map((f: any) => (
-                <div key={f.id} className="rounded-xl border border-border/50 bg-card p-4">
-                  <h3 className="font-medium text-foreground text-sm">{f.name}</h3>
-                  <p className="text-xs text-muted-foreground mt-0.5">{f.destinations?.name}</p>
-                  {f.description && <p className="text-xs text-muted-foreground mt-1.5 line-clamp-2">{f.description}</p>}
-                </div>
-              ))}
-            </div>
-          </div>
-        ))}
-        {(festivals ?? []).length === 0 && (
-          <p className="py-20 text-center text-muted-foreground">No festivals listed for {stateName} yet.</p>
-        )}
       </main>
+
+      <CinematicRelatedRail />
       <Footer />
     </div>
   );
