@@ -1,10 +1,14 @@
 import type { Metadata } from "next";
 import { Nav } from "@/components/nav";
+import { Footer } from "@/components/footer";
 import { RouteDetail } from "@/components/route-detail";
 import { PrevNextNav } from "@/components/prev-next-nav";
 import { createClient } from "@supabase/supabase-js";
 import { notFound } from "next/navigation";
 import { localeAlternates } from "@/lib/seo-utils";
+import { CinemaStyles } from "@/components/landing-cinema/cinema-styles";
+import { Title } from "@/components/landing-cinema/editorial";
+import { CinematicRelatedRail } from "@/components/cinematic-related-rail";
 
 export const revalidate = 86400;
 export const dynamicParams = true;
@@ -53,10 +57,10 @@ async function getRoute(id: string) {
     ]);
     const coordsMap = new Map<string, { lat: number; lng: number }>(
       (coordsRes.data ?? [])
-        .filter((c: any) => typeof c.lat === "number" && typeof c.lng === "number")
-        .map((c: any) => [c.id, { lat: c.lat, lng: c.lng }]),
+        .filter((c: { lat: unknown; lng: unknown }) => typeof c.lat === "number" && typeof c.lng === "number")
+        .map((c: { id: string; lat: number; lng: number }) => [c.id, { lat: c.lat, lng: c.lng }]),
     );
-    stopDests = (destsRes.data ?? []).map((d: any) => ({
+    stopDests = (destsRes.data ?? []).map((d: { id: string; name: string }) => ({
       id: d.id,
       name: d.name,
       coords: coordsMap.get(d.id) ?? null,
@@ -81,9 +85,6 @@ export default async function RouteDetailPage({
     route.stopDests ?? [];
   const stopByIdMap = new Map(stopDests.map((d) => [d.id, d]));
 
-  // Schema.org — TouristTrip envelope + ItemList of TouristDestination stops.
-  // Each stop carries its own @type + GeoCoordinates so answer engines can
-  // render the trip as a visual itinerary or pull individual legs.
   const touristTripLd = {
     "@context": "https://schema.org",
     "@type": "TouristTrip",
@@ -142,8 +143,19 @@ export default async function RouteDetailPage({
     ],
   };
 
+  const difficultyLabel = route.difficulty ? String(route.difficulty).toUpperCase() : null;
+  const kicker = [
+    "ROUTES",
+    route.days ? `${route.days}-DAY` : null,
+    difficultyLabel,
+    route.bike_route ? "BIKE-FRIENDLY" : null,
+  ]
+    .filter(Boolean)
+    .join(" · ");
+
   return (
-    <div className="min-h-screen">
+    <div className="nakshiq-cinema" style={{ minHeight: "100vh" }}>
+      <CinemaStyles />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(touristTripLd) }}
@@ -153,16 +165,71 @@ export default async function RouteDetailPage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
       />
       <Nav />
-      <main className="mx-auto max-w-4xl px-4 py-8">
-        <RouteDetail route={route} />
-        <PrevNextNav
-          items={route.allRoutes}
-          currentId={id}
-          basePath="routes"
-          backLabel="All Routes"
-          backHref="routes"
-        />
+
+      <main
+        id="main-content"
+        className="nq-grain"
+        style={{ position: "relative", padding: "140px 24px 64px" }}
+      >
+        <header style={{ maxWidth: 900, margin: "0 auto 48px" }}>
+          <p
+            className="nq-kicker"
+            style={{
+              color: "var(--vermillion)",
+              marginBottom: 20,
+              letterSpacing: "0.22em",
+            }}
+          >
+            {kicker}
+          </p>
+          <Title
+            as="h1"
+            className="nq-display"
+            style={{
+              fontFamily: "var(--cinema-display)",
+              fontStyle: "italic",
+              fontWeight: 400,
+              fontSize: "clamp(36px, 6vw, 76px)",
+              lineHeight: 1.0,
+              letterSpacing: "-0.022em",
+              margin: 0,
+              textWrap: "balance",
+            }}
+          >
+            {route.name}.
+          </Title>
+          {route.description && (
+            <p
+              style={{
+                fontFamily: "var(--cinema-display)",
+                fontStyle: "italic",
+                fontWeight: 400,
+                fontSize: "clamp(18px, 2vw, 24px)",
+                lineHeight: 1.4,
+                color: "var(--bone-dim)",
+                marginTop: 24,
+                maxWidth: 720,
+              }}
+            >
+              {String(route.description).slice(0, 200)}
+            </p>
+          )}
+        </header>
+
+        <div style={{ maxWidth: 900, margin: "0 auto" }}>
+          <RouteDetail route={route} />
+          <PrevNextNav
+            items={route.allRoutes}
+            currentId={id}
+            basePath="routes"
+            backLabel="All Routes"
+            backHref="routes"
+          />
+        </div>
       </main>
+
+      <CinematicRelatedRail />
+      <Footer />
     </div>
   );
 }

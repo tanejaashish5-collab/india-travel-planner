@@ -85,11 +85,18 @@ export function Footer({
     `/${locale}/guide/currency`,
     `/${locale}/guide/book-indian-trains`,
     `/${locale}/guide/first-trip-india`,
+    // Phase 3 Tier 2 (S54) — discovery hubs
+    `/${locale}/routes`,
+    `/${locale}/treks`,
+    `/${locale}/camping`,
+    `/${locale}/festivals`,
+    `/${locale}/stays`,
   ];
   const CINEMATIC_PAGE_PREFIXES = [
     `/${locale}/skip-list/`,
     `/${locale}/blog/`,
     `/${locale}/guide/scenarios/`,
+    `/${locale}/routes/`,
   ];
   const isCinematicPage =
     CINEMATIC_PAGE_PATHS.includes(pathname) ||

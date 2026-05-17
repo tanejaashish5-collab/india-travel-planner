@@ -4,19 +4,22 @@ import { Footer } from "@/components/footer";
 import { StaysContent } from "@/components/stays-content";
 import { createClient } from "@supabase/supabase-js";
 import { localeAlternates } from "@/lib/seo-utils";
-import { categoryHeroSrc } from "@/lib/landing-heroes";
+import { CinemaStyles } from "@/components/landing-cinema/cinema-styles";
+import { Title } from "@/components/landing-cinema/editorial";
+import { CinematicRelatedRail } from "@/components/cinematic-related-rail";
 
 export const revalidate = 3600;
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   return {
-  title: "Stay Intelligence — Where to Stay, Not Where to Book",
-  description: "Decision-grade accommodation guidance for every destination. Best zones by traveler type, budget bands, stay types, and honest avoid-this warnings. Not a booking site.",
-
+    title: "Stay Intelligence — Where to Stay, Not Where to Book",
+    description: "Decision-grade accommodation guidance for every destination. Best zones by traveler type, budget bands, stay types, and honest avoid-this warnings. Not a booking site.",
     ...localeAlternates(locale, "/stays"),
   };
-}async function getStayData() {
+}
+
+async function getStayData() {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
   if (!url || !key) return [];
@@ -35,32 +38,93 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 export default async function StaysPage() {
   const destinations = await getStayData();
 
+  const breadcrumbLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.nakshiq.com" },
+      { "@type": "ListItem", position: 2, name: "Stays", item: "https://www.nakshiq.com/en/stays" },
+    ],
+  };
+
   return (
-    <div className="min-h-screen">
+    <div className="nakshiq-cinema" style={{ minHeight: "100vh" }}>
+      <CinemaStyles />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+      />
       <Nav />
-      {/* Visual page hero */}
-      <section className="relative h-56 sm:h-72 overflow-hidden">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="metadata"
-          poster="/images/destinations/tirthan-valley.jpg"
-          className="absolute inset-0 w-full h-full object-cover"
-        >
-          <source src={categoryHeroSrc("stays")} type="video/mp4" />
-        </video>
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
-        <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 max-w-7xl mx-auto">
-          <p className="text-sm font-medium text-primary uppercase tracking-[0.08em] mb-2">Where to Stay</p>
-          <h1 className="text-3xl font-semibold sm:text-4xl text-white drop-shadow-lg">Local Stays</h1>
-          <p className="mt-2 text-white/80 max-w-xl">Decision-grade accommodation intelligence. Best zones, budget reality, and honest warnings — not hotel listings.</p>
+
+      <main
+        id="main-content"
+        className="nq-grain"
+        style={{ position: "relative", padding: "140px 24px 64px" }}
+      >
+        <header style={{ maxWidth: 1100, margin: "0 auto 56px" }}>
+          <p
+            className="nq-kicker"
+            style={{
+              color: "var(--vermillion)",
+              marginBottom: 24,
+              letterSpacing: "0.22em",
+            }}
+          >
+            WHERE TO STAY · {String(destinations.length).padStart(3, "0")} DESTINATIONS
+          </p>
+          <Title
+            as="h1"
+            className="nq-display"
+            style={{
+              fontFamily: "var(--cinema-display)",
+              fontStyle: "italic",
+              fontWeight: 400,
+              fontSize: "clamp(40px, 7vw, 88px)",
+              lineHeight: 0.98,
+              letterSpacing: "-0.025em",
+              margin: 0,
+              textWrap: "balance",
+            }}
+          >
+            Local stays.
+          </Title>
+          <p
+            style={{
+              fontFamily: "var(--cinema-display)",
+              fontStyle: "italic",
+              fontWeight: 400,
+              fontSize: "clamp(18px, 2vw, 24px)",
+              lineHeight: 1.4,
+              color: "var(--bone-dim)",
+              marginTop: 24,
+              maxWidth: 720,
+            }}
+          >
+            Decision-grade accommodation intelligence. Best zones by traveler
+            type, budget bands, stay types, and honest avoid-this warnings.
+            This is not a booking site.
+          </p>
+          <p
+            className="nq-mono"
+            style={{
+              fontFamily: "var(--cinema-mono)",
+              fontSize: 11,
+              letterSpacing: "0.22em",
+              textTransform: "uppercase",
+              color: "var(--bone-faint)",
+              marginTop: 28,
+            }}
+          >
+            Filter by state, traveler type, budget, vehicle fit
+          </p>
+        </header>
+
+        <div style={{ maxWidth: 1100, margin: "0 auto" }}>
+          <StaysContent destinations={destinations} />
         </div>
-      </section>
-      <main className="mx-auto max-w-6xl px-4 py-8">
-        <StaysContent destinations={destinations} />
       </main>
+
+      <CinematicRelatedRail />
       <Footer />
     </div>
   );
