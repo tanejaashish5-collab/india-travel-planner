@@ -158,7 +158,9 @@ jobs:
               nakshiq-autoposter/autoposter.log \
               nakshiq-autoposter/analytics.json \
               nakshiq-autoposter/data/post_engagement.json \
-              nakshiq-autoposter/data/post_outcomes.jsonl 2>/dev/null || true
+              nakshiq-autoposter/data/post_outcomes.jsonl \
+              nakshiq-autoposter/data/post_log.jsonl \
+              nakshiq-autoposter/data/theme_usage.jsonl 2>/dev/null || true
             echo "Synced state from autoposter-state branch"
           else
             echo "autoposter-state branch not on origin yet — using state from main checkout (first run)"
@@ -363,6 +365,11 @@ jobs:
           [ -f nakshiq-autoposter/analytics.json ]              && cp nakshiq-autoposter/analytics.json              /tmp/autoposter-snap/analytics.json              || true
           [ -f nakshiq-autoposter/data/post_engagement.json ]   && cp nakshiq-autoposter/data/post_engagement.json   /tmp/autoposter-snap/post_engagement.json        || true
           [ -f nakshiq-autoposter/data/post_outcomes.jsonl ]    && cp nakshiq-autoposter/data/post_outcomes.jsonl    /tmp/autoposter-snap/post_outcomes.jsonl         || true
+          # 2026-05-18: append-only JSONL files for post_log + theme_usage.
+          # Snapshot them too so the worktree can MERGE (not overwrite) with
+          # any newer remote entries that landed from a concurrent cron run.
+          [ -f nakshiq-autoposter/data/post_log.jsonl ]         && cp nakshiq-autoposter/data/post_log.jsonl         /tmp/autoposter-snap/post_log.jsonl              || true
+          [ -f nakshiq-autoposter/data/theme_usage.jsonl ]      && cp nakshiq-autoposter/data/theme_usage.jsonl      /tmp/autoposter-snap/theme_usage.jsonl           || true
 
           # 2. Ensure autoposter-state branch exists on origin (bootstrap on first run)
           if ! git ls-remote --exit-code --heads origin autoposter-state >/dev/null 2>&1; then
@@ -383,6 +390,17 @@ jobs:
           cp /tmp/autoposter-snap/post_engagement.json  /tmp/autoposter-state-worktree/nakshiq-autoposter/data/post_engagement.json  2>/dev/null || true
           cp /tmp/autoposter-snap/post_outcomes.jsonl   /tmp/autoposter-state-worktree/nakshiq-autoposter/data/post_outcomes.jsonl   2>/dev/null || true
 
+          # 4b. MERGE JSONL files (don't overwrite — preserve concurrent-run
+          #     entries already on the remote). Worktree contents come from
+          #     latest autoposter-state HEAD; snap contents are from this run.
+          #     Dedupe by (post_id, platform, timestamp) for post_log and
+          #     (dimension, item_id, ts[:10]) for theme_usage. Result is
+          #     written back to the worktree path so the commit picks up the
+          #     union of both. See nakshiq-autoposter/scripts/merge_jsonl.py.
+          python3 nakshiq-autoposter/scripts/merge_jsonl.py \
+                  /tmp/autoposter-state-worktree/nakshiq-autoposter/data \
+                  /tmp/autoposter-snap
+
           # 5. Commit + push from the worktree
           # Iterate so a missing file (e.g. post_engagement.json before the
           # engagement-pull cron has ever fired) doesn't fail the whole step
@@ -394,7 +412,9 @@ jobs:
                    nakshiq-autoposter/autoposter.log \
                    nakshiq-autoposter/analytics.json \
                    nakshiq-autoposter/data/post_engagement.json \
-                   nakshiq-autoposter/data/post_outcomes.jsonl; do
+                   nakshiq-autoposter/data/post_outcomes.jsonl \
+                   nakshiq-autoposter/data/post_log.jsonl \
+                   nakshiq-autoposter/data/theme_usage.jsonl; do
             [ -f "$f" ] && git add "$f"
           done
           if git diff --staged --quiet; then
@@ -406,8 +426,39 @@ jobs:
                 echo "Push succeeded (attempt $attempt)"
                 break
               fi
-              echo "Push failed (attempt $attempt), pulling with rebase and retrying..."
-              git pull --rebase origin autoposter-state || true
+              echo "Push failed (attempt $attempt). Hard-resetting to remote + re-merging JSONLs..."
+              # Don't try `git pull --rebase` — it almost always conflicts on
+              # JSONL append-at-EOF. Instead: discard our commit, hard-reset
+              # to remote (so worktree has remote's latest JSONLs), re-merge
+              # our snapshot on top, then re-commit. Idempotent — every retry
+              # converges on the same union of remote + snapshot entries.
+              git fetch origin autoposter-state
+              git reset --hard origin/autoposter-state
+              # Re-copy the non-JSONL snap files (last-write-wins is fine for
+              # state.json since the racing fields now live in JSONL).
+              cp /tmp/autoposter-snap/state.json            nakshiq-autoposter/state.json                 2>/dev/null || true
+              cp /tmp/autoposter-snap/autoposter.log        nakshiq-autoposter/autoposter.log             2>/dev/null || true
+              cp /tmp/autoposter-snap/analytics.json        nakshiq-autoposter/analytics.json             2>/dev/null || true
+              cp /tmp/autoposter-snap/post_engagement.json  nakshiq-autoposter/data/post_engagement.json  2>/dev/null || true
+              cp /tmp/autoposter-snap/post_outcomes.jsonl   nakshiq-autoposter/data/post_outcomes.jsonl   2>/dev/null || true
+              # Merge JSONLs: remote (post-reset) + our snapshot → union.
+              popd > /dev/null
+              python3 nakshiq-autoposter/scripts/merge_jsonl.py \
+                      /tmp/autoposter-state-worktree/nakshiq-autoposter/data \
+                      /tmp/autoposter-snap
+              pushd /tmp/autoposter-state-worktree > /dev/null
+              for f in nakshiq-autoposter/state.json \
+                       nakshiq-autoposter/autoposter.log \
+                       nakshiq-autoposter/analytics.json \
+                       nakshiq-autoposter/data/post_engagement.json \
+                       nakshiq-autoposter/data/post_outcomes.jsonl \
+                       nakshiq-autoposter/data/post_log.jsonl \
+                       nakshiq-autoposter/data/theme_usage.jsonl; do
+                [ -f "$f" ] && git add "$f"
+              done
+              if ! git diff --staged --quiet; then
+                git commit -m "chore: autoposter state $(date -u +'%Y-%m-%d %H:%M UTC') (re-merge attempt $attempt)"
+              fi
               sleep $((attempt * 2))
             done
           fi

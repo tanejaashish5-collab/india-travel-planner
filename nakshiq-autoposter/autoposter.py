@@ -46,6 +46,21 @@ OUTSTAND_BASE    = "https://api.outstand.so"
 NAKSHIQ_BASE     = "https://nakshiq.com/api/content"
 STATE_FILE       = Path(__file__).parent / "state.json"
 LOG_FILE         = Path(__file__).parent / "autoposter.log"
+# 2026-05-18: post_log + theme_usage moved out of state.json into append-only
+# JSONL files. Root cause: state-branch race condition. Every cron run did
+# `cp state.json /tmp/autoposter-state-worktree/state.json` which wholesale-
+# overwrote the file with the snapshot taken at run-start. Concurrent runs
+# dropped each other's appends — observed 2026-05-17 when post_log went
+# 40 → 41 → 38 entries across 4 cron commits on the same day (every published
+# post got wiped within hours).
+#
+# JSONL append-mode is POSIX-atomic for writes ≤ PIPE_BUF (~4KB on Linux),
+# well above our ~250B row size. Concurrent appends from separate processes
+# interleave safely. The workflow now MERGES (instead of overwriting) these
+# files in the worktree so cross-run pushes preserve each other's entries.
+DATA_DIR          = Path(__file__).parent / "data"
+POST_LOG_JSONL    = DATA_DIR / "post_log.jsonl"
+THEME_USAGE_JSONL = DATA_DIR / "theme_usage.jsonl"
 
 # ─────────────────────────────────────────────────────────────────────────────
 # MORNING FEED — strict round-robin rotation (no format repeats until ALL
@@ -831,6 +846,149 @@ logging.basicConfig(
 log = logging.getLogger("nakshiq")
 
 # ─────────────────────────────────────────────────────────────────────────────
+# JSONL APPEND-ONLY STORES — post_log + theme_usage (2026-05-18)
+# -----------------------------------------------------------------------------
+# These two collections are append-mostly and were the only fields in
+# state.json that grew over time. They were also the only fields the state-
+# branch race actually mangled (wholesale-overwrite dropped per-run appends).
+# Splitting them into append-only JSONL files lets:
+#   (a) concurrent runs append without coordination (POSIX O_APPEND atomic)
+#   (b) the workflow merge cross-run files in the worktree before pushing
+#   (c) read-time dedupe + GC stay in pure Python without destructive writes
+# ─────────────────────────────────────────────────────────────────────────────
+
+def _append_jsonl(path: Path, entry: dict) -> None:
+    """Atomic append of one JSON entry as a single line. POSIX guarantees
+    O_APPEND writes ≤ PIPE_BUF (~4KB) are atomic — our rows are ~250B so
+    concurrent appends from separate processes interleave safely.
+    """
+    path.parent.mkdir(parents=True, exist_ok=True)
+    try:
+        with open(path, "a", encoding="utf-8") as f:
+            f.write(json.dumps(entry, ensure_ascii=False, default=str) + "\n")
+    except OSError as e:
+        log.warning(f"[jsonl] append to {path.name} failed: {e}")
+
+
+def load_post_log_jsonl() -> list[dict]:
+    """Read post_log.jsonl, dedupe by (post_id, platform, timestamp), sort by ts."""
+    if not POST_LOG_JSONL.exists():
+        return []
+    out: list[dict] = []
+    seen: set = set()
+    try:
+        with open(POST_LOG_JSONL, encoding="utf-8") as f:
+            for line in f:
+                line = line.strip()
+                if not line:
+                    continue
+                try:
+                    e = json.loads(line)
+                except json.JSONDecodeError:
+                    continue
+                key = (e.get("post_id"), e.get("platform"), e.get("timestamp"))
+                if key in seen:
+                    continue
+                seen.add(key)
+                out.append(e)
+    except OSError as e:
+        log.warning(f"[jsonl] read post_log.jsonl failed: {e}")
+        return []
+    out.sort(key=lambda e: e.get("timestamp") or "")
+    return out
+
+
+def load_theme_usage_jsonl() -> dict:
+    """Reconstruct {dimension: {item_id: [iso_dates]}} from JSONL events.
+    Applies 90-day GC at read-time (drops items whose latest stamp is >90d old)
+    so destinations featured long ago re-enter the candidate pool naturally.
+    """
+    if not THEME_USAGE_JSONL.exists():
+        return {}
+    raw: dict[str, dict[str, set]] = {}
+    try:
+        with open(THEME_USAGE_JSONL, encoding="utf-8") as f:
+            for line in f:
+                line = line.strip()
+                if not line:
+                    continue
+                try:
+                    e = json.loads(line)
+                except json.JSONDecodeError:
+                    continue
+                dim = e.get("dimension")
+                iid = e.get("item_id")
+                ts = e.get("ts") or ""
+                if not (dim and iid and ts):
+                    continue
+                raw.setdefault(dim, {}).setdefault(iid, set()).add(ts[:10])
+    except OSError as e:
+        log.warning(f"[jsonl] read theme_usage.jsonl failed: {e}")
+        return {}
+    gc_cutoff = (date.today() - timedelta(days=90)).isoformat()
+    out: dict[str, dict[str, list[str]]] = {}
+    for dim, items in raw.items():
+        items_out: dict[str, list[str]] = {}
+        for iid, stamps in items.items():
+            uniq = sorted(stamps)
+            if uniq and uniq[-1] >= gc_cutoff:
+                items_out[iid] = uniq
+        if items_out:
+            out[dim] = items_out
+    return out
+
+
+def append_post_log_entry(entry: dict) -> None:
+    """Mirror of mark_posted's post_log.append(), but to durable JSONL."""
+    _append_jsonl(POST_LOG_JSONL, entry)
+
+
+def append_theme_usage_entry(dimension: str, item_id: str, ts: str | None = None) -> None:
+    """Append one mark_theme_used event. ts defaults to now in UTC."""
+    _append_jsonl(THEME_USAGE_JSONL, {
+        "dimension": dimension,
+        "item_id":   item_id,
+        "ts":        ts or datetime.now(timezone.utc).isoformat(),
+    })
+
+
+def _bootstrap_jsonl_from_state(state: dict) -> None:
+    """One-time migration: if JSONL files are empty/missing but state.json
+    has post_log/theme_usage entries (autoposter-state branch has 38+ rows),
+    seed the JSONL files so the migration retains all history.
+    """
+    if not POST_LOG_JSONL.exists() or POST_LOG_JSONL.stat().st_size == 0:
+        legacy = state.get("post_log") or []
+        if legacy:
+            DATA_DIR.mkdir(parents=True, exist_ok=True)
+            try:
+                with open(POST_LOG_JSONL, "w", encoding="utf-8") as f:
+                    for e in legacy:
+                        f.write(json.dumps(e, ensure_ascii=False, default=str) + "\n")
+                log.info(f"[migration] bootstrapped post_log.jsonl with {len(legacy)} entries from state.json")
+            except OSError as e:
+                log.warning(f"[migration] post_log.jsonl bootstrap failed: {e}")
+    if not THEME_USAGE_JSONL.exists() or THEME_USAGE_JSONL.stat().st_size == 0:
+        themes = state.get("theme_usage") or {}
+        count = sum(len(stamps) for dim in themes.values() for stamps in dim.values())
+        if count:
+            DATA_DIR.mkdir(parents=True, exist_ok=True)
+            try:
+                with open(THEME_USAGE_JSONL, "w", encoding="utf-8") as f:
+                    for dim, items in themes.items():
+                        for iid, stamps in items.items():
+                            for s in stamps:
+                                # 'ts' written as ISO date (YYYY-MM-DD) — load
+                                # truncates to [:10] anyway so this is lossless.
+                                f.write(json.dumps({
+                                    "dimension": dim, "item_id": iid, "ts": s,
+                                }, ensure_ascii=False) + "\n")
+                log.info(f"[migration] bootstrapped theme_usage.jsonl with {count} entries from state.json")
+            except OSError as e:
+                log.warning(f"[migration] theme_usage.jsonl bootstrap failed: {e}")
+
+
+# ─────────────────────────────────────────────────────────────────────────────
 # STATE MANAGER
 # ─────────────────────────────────────────────────────────────────────────────
 
@@ -880,7 +1038,22 @@ def load_state() -> dict:
             else:
                 pruned[k] = v  # not a date — keep (counters etc.)
         state["posted_today"] = pruned
+        # 2026-05-18: post_log + theme_usage now live in append-only JSONL
+        # files. Bootstrap them from state.json on first run after this
+        # migration, then read JSONL as source of truth on every load.
+        # state.json's copy stays as an in-run mirror so existing readers
+        # (post_fingerprints, current_month_posted_destinations, theme_bucket)
+        # don't have to be rewritten — they read from the same dict shape.
+        _bootstrap_jsonl_from_state(state)
+        jsonl_log = load_post_log_jsonl()
+        if jsonl_log:
+            state["post_log"] = jsonl_log
+        jsonl_themes = load_theme_usage_jsonl()
+        if jsonl_themes:
+            state["theme_usage"] = jsonl_themes
         return state
+    # First-ever run: still produce the JSONL files so subsequent loads see them.
+    _bootstrap_jsonl_from_state(defaults)
     return defaults
 
 def save_state(state: dict):
@@ -921,7 +1094,7 @@ def mark_posted(state: dict, account_id: str, destination_id: str,
     )
     # post_log carries media_id since 2026-05-05 so post_fingerprints() can
     # dedup `(dest, fmt, media)` triples on a rolling 7/30/60-day window.
-    state["post_log"].append({
+    entry = {
         "timestamp":  datetime.now(timezone.utc).isoformat(),
         "date":       today,
         "platform":   platform,
@@ -931,7 +1104,11 @@ def mark_posted(state: dict, account_id: str, destination_id: str,
         "format":     fmt,
         "has_media":  has_media,
         "media_id":   media_id,
-    })
+    }
+    state["post_log"].append(entry)
+    # 2026-05-18: durable append to JSONL — state.json mirror still kept for
+    # in-run reads but the JSONL is the source of truth across runs.
+    append_post_log_entry(entry)
     # 2026-05-17 Tier 7 Phase 4: cap raised 500 → 2000. At ~6-10 posts/day
     # across all flows, 500 rows = ~70 days. We want a full calendar quarter
     # so current_month_posted_destinations sees deeper history and weekly
@@ -964,7 +1141,7 @@ def record_publish(state: dict, *, dest_id: str | None, fmt: str,
         for d in state["posted_destinations"]
     ):
         state["posted_destinations"].append({"destination_id": dest_id, "date": today})
-    state["post_log"].append({
+    entry = {
         "timestamp":   datetime.now(timezone.utc).isoformat(),
         "date":        today,
         "platform":    platform,
@@ -972,7 +1149,10 @@ def record_publish(state: dict, *, dest_id: str | None, fmt: str,
         "destination": dest_id,
         "format":      fmt,
         "media_id":    media_id,
-    })
+    }
+    state["post_log"].append(entry)
+    # 2026-05-18: durable JSONL append (race-safe, see POST_LOG_JSONL block).
+    append_post_log_entry(entry)
     # Cap raised 500 → 2000 to retain ~90 days of cross-flow history (Phase 4).
     state["post_log"] = state["post_log"][-2000:]
 
@@ -1207,10 +1387,18 @@ def mark_theme_used(state: dict, dimension: str, item_id: str):
     today = date.today().isoformat()
     bucket = theme_bucket(state, dimension)
     hist = bucket.setdefault(item_id, [])
-    if not hist or hist[-1] != today:
+    new_stamp = not hist or hist[-1] != today
+    if new_stamp:
         hist.append(today)
     # Keep history bounded (365 days per item is plenty)
     bucket[item_id] = hist[-365:]
+
+    # 2026-05-18: durable JSONL append. Only on first stamp of the day per
+    # (dim, item) — keeps the file from blowing up if mark_theme_used is
+    # called repeatedly in the same process. Read-side dedupes by ts[:10]
+    # anyway so duplicates would be harmless, but cheaper to skip.
+    if new_stamp:
+        append_theme_usage_entry(dimension, item_id, ts=today)
 
     # GC: drop ANY item whose latest stamp is older than 90 days. Run on
     # every write but only iterates the dimension being written, so cost
