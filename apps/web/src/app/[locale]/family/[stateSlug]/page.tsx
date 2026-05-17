@@ -7,6 +7,9 @@ import Image from "next/image";
 import { STATE_MAP, getSupabase } from "@/lib/seo-maps";
 import { localeAlternates } from "@/lib/seo-utils";
 import { formatScoreInline } from "@itp/shared";
+import { CinemaStyles } from "@/components/landing-cinema/cinema-styles";
+import { Title } from "@/components/landing-cinema/editorial";
+import { CinematicRelatedRail } from "@/components/cinematic-related-rail";
 
 export const revalidate = 86400;
 export const dynamicParams = true;
@@ -14,14 +17,29 @@ export const dynamicParams = true;
 export async function generateMetadata({ params }: { params: Promise<{ locale: string; stateSlug: string}> }): Promise<Metadata> {
   const { locale, stateSlug } = await params;
   const stateName = STATE_MAP[stateSlug];
-  if (!stateName) return {
-  };
+  if (!stateName) return {};
   return {
     title: `Family-Friendly Destinations in ${stateName} — Kids Ratings | NakshIQ`,
     description: `Every family-friendly destination in ${stateName} with kids ratings, age suitability, medical access, altitude warnings, and honest assessments. Written by parents.`,
     ...localeAlternates(locale, `/family/${stateSlug}`),
   };
 }
+
+type KidsInfo = {
+  suitable?: boolean | null;
+  rating?: number | null;
+  min_age?: number | null;
+  reasons?: string[] | null;
+};
+
+type DestRow = {
+  id: string;
+  name: string;
+  tagline?: string | null;
+  difficulty?: string | null;
+  elevation_m?: number | null;
+  kids_friendly?: KidsInfo[] | KidsInfo | null;
+};
 
 export default async function FamilyByStatePage({ params }: { params: Promise<{ locale: string; stateSlug: string }> }) {
   const { locale, stateSlug } = await params;
@@ -37,82 +55,232 @@ export default async function FamilyByStatePage({ params }: { params: Promise<{ 
     .eq("state_id", stateSlug)
     .order("name");
 
-  // Filter to family-suitable and sort by kids rating
-  const familyDests = (destinations ?? [])
-    .filter((d: any) => d.kids_friendly?.some((k: any) => k.suitable))
-    .sort((a: any, b: any) => {
-      const aRating = a.kids_friendly?.[0]?.rating ?? 0;
-      const bRating = b.kids_friendly?.[0]?.rating ?? 0;
+  const familyDests: DestRow[] = (destinations ?? [])
+    .filter((d: DestRow) => {
+      const arr = Array.isArray(d.kids_friendly) ? d.kids_friendly : (d.kids_friendly ? [d.kids_friendly] : []);
+      return arr.some((k) => k.suitable);
+    })
+    .sort((a: DestRow, b: DestRow) => {
+      const aArr = Array.isArray(a.kids_friendly) ? a.kids_friendly : (a.kids_friendly ? [a.kids_friendly] : []);
+      const bArr = Array.isArray(b.kids_friendly) ? b.kids_friendly : (b.kids_friendly ? [b.kids_friendly] : []);
+      const aRating = aArr[0]?.rating ?? 0;
+      const bRating = bArr[0]?.rating ?? 0;
       return bRating - aRating;
     });
 
-  const RATING_COLORS: Record<number, string> = {
-    5: "text-green-400 bg-green-400/10",
-    4: "text-green-400 bg-green-400/10",
-    3: "text-yellow-400 bg-yellow-400/10",
-    2: "text-orange-400 bg-orange-400/10",
-    1: "text-red-400 bg-red-400/10",
+  const breadcrumbLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: `https://www.nakshiq.com/${locale}` },
+      { "@type": "ListItem", position: 2, name: stateName, item: `https://www.nakshiq.com/${locale}/state/${stateSlug}` },
+      { "@type": "ListItem", position: 3, name: "Family", item: `https://www.nakshiq.com/${locale}/family/${stateSlug}` },
+    ],
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="nakshiq-cinema" style={{ minHeight: "100vh" }}>
+      <CinemaStyles />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+      />
       <Nav />
-      <main className="mx-auto max-w-7xl px-4 py-8">
-        <div className="mb-8">
-          <p className="text-sm font-medium text-primary uppercase tracking-[0.08em] mb-2">Family Travel</p>
-          <h1 className="text-3xl font-semibold">Family Destinations in {stateName}</h1>
-          <p className="mt-2 text-muted-foreground">
-            {familyDests.length} kid-friendly destinations — rated for age suitability, medical access, and safety
+
+      <main
+        id="main-content"
+        className="nq-grain"
+        style={{ position: "relative", padding: "140px 24px 64px" }}
+      >
+        <header style={{ maxWidth: 1100, margin: "0 auto 48px" }}>
+          <p
+            className="nq-kicker"
+            style={{
+              color: "var(--vermillion)",
+              marginBottom: 20,
+              letterSpacing: "0.22em",
+            }}
+          >
+            FAMILY TRAVEL · {stateName.toUpperCase()} · {String(familyDests.length).padStart(3, "0")}
           </p>
-        </div>
+          <Title
+            as="h1"
+            className="nq-display"
+            style={{
+              fontFamily: "var(--cinema-display)",
+              fontStyle: "italic",
+              fontWeight: 400,
+              fontSize: "clamp(36px, 6vw, 76px)",
+              lineHeight: 1.0,
+              letterSpacing: "-0.022em",
+              margin: 0,
+              textWrap: "balance",
+            }}
+          >
+            {stateName} with kids.
+          </Title>
+          <p
+            style={{
+              fontFamily: "var(--cinema-display)",
+              fontStyle: "italic",
+              fontWeight: 400,
+              fontSize: "clamp(18px, 2vw, 24px)",
+              lineHeight: 1.4,
+              color: "var(--bone-dim)",
+              marginTop: 24,
+              maxWidth: 720,
+            }}
+          >
+            {familyDests.length} kid-friendly destinations — rated for age
+            suitability, medical access, and safety. Written by parents.
+          </p>
+        </header>
 
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {familyDests.map((d: any) => {
-            const kids = d.kids_friendly?.[0];
-            const rating = kids?.rating ?? 0;
-            return (
+        <div style={{ maxWidth: 1100, margin: "0 auto" }}>
+          {familyDests.length > 0 ? (
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))",
+                gap: 1,
+                background: "var(--hair)",
+                border: "1px solid var(--hair)",
+              }}
+            >
+              {familyDests.map((d: DestRow) => {
+                const arr = Array.isArray(d.kids_friendly) ? d.kids_friendly : (d.kids_friendly ? [d.kids_friendly] : []);
+                const kids = arr[0];
+                const rating = kids?.rating ?? 0;
+                return (
+                  <Link
+                    key={d.id}
+                    href={`/${locale}/with-kids/${d.id}`}
+                    style={{
+                      display: "block",
+                      background: "var(--paper)",
+                      textDecoration: "none",
+                      color: "var(--bone)",
+                    }}
+                  >
+                    <div style={{ position: "relative", height: 160, background: "var(--paper-2)" }}>
+                      <Image
+                        src={`/images/destinations/${d.id}.jpg`}
+                        alt={d.name}
+                        fill
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                        style={{ objectFit: "cover" }}
+                      />
+                      <div
+                        style={{
+                          position: "absolute",
+                          top: 12,
+                          right: 12,
+                          background: "rgba(10, 10, 8, 0.7)",
+                          backdropFilter: "blur(8px)",
+                          border: "1px solid var(--vermillion)",
+                          color: "var(--vermillion)",
+                          padding: "4px 10px",
+                          fontFamily: "var(--cinema-mono)",
+                          fontSize: 10,
+                          letterSpacing: "0.14em",
+                          textTransform: "uppercase",
+                          fontWeight: 600,
+                        }}
+                      >
+                        Kids {formatScoreInline(rating)}
+                      </div>
+                    </div>
+                    <div style={{ padding: 16, display: "flex", flexDirection: "column", gap: 6 }}>
+                      <h3
+                        style={{
+                          fontFamily: "var(--cinema-display)",
+                          fontStyle: "italic",
+                          fontWeight: 500,
+                          fontSize: 22,
+                          lineHeight: 1.2,
+                          color: "var(--bone)",
+                          margin: 0,
+                        }}
+                      >
+                        {d.name}
+                      </h3>
+                      {d.tagline && (
+                        <p
+                          style={{
+                            fontFamily: "var(--cinema-ui)",
+                            fontSize: 13,
+                            lineHeight: 1.5,
+                            color: "var(--bone-dim)",
+                            margin: 0,
+                          }}
+                        >
+                          {d.tagline}
+                        </p>
+                      )}
+                      {kids?.min_age && (
+                        <p
+                          style={{
+                            fontFamily: "var(--cinema-mono)",
+                            fontSize: 10,
+                            letterSpacing: "0.18em",
+                            textTransform: "uppercase",
+                            color: "var(--bone-faint)",
+                            margin: "4px 0 0",
+                          }}
+                        >
+                          Suitable for ages {kids.min_age}+
+                        </p>
+                      )}
+                      {kids?.reasons?.[0] && (
+                        <p
+                          style={{
+                            fontFamily: "var(--cinema-ui)",
+                            fontSize: 12,
+                            lineHeight: 1.45,
+                            color: "var(--bone-dim)",
+                            margin: 0,
+                            display: "-webkit-box",
+                            WebkitLineClamp: 2,
+                            WebkitBoxOrient: "vertical",
+                            overflow: "hidden",
+                          }}
+                        >
+                          {kids.reasons[0]}
+                        </p>
+                      )}
+                    </div>
+                  </Link>
+                );
+              })}
+            </div>
+          ) : (
+            <div
+              style={{
+                padding: "80px 0",
+                textAlign: "center",
+                fontFamily: "var(--cinema-ui)",
+                color: "var(--bone-dim)",
+              }}
+            >
+              <p>No family-rated destinations in {stateName} yet.</p>
               <Link
-                key={d.id}
-                href={`/${locale}/with-kids/${d.id}`}
-                className="group rounded-2xl border border-border/50 bg-card overflow-hidden hover:border-primary/30 transition-colors"
+                href={`/${locale}/explore/state/${stateSlug}`}
+                style={{
+                  display: "inline-block",
+                  marginTop: 12,
+                  color: "var(--vermillion)",
+                  textDecoration: "underline",
+                  textUnderlineOffset: "3px",
+                }}
               >
-                <div className="relative h-36 bg-muted/30">
-                  <Image
-                    src={`/images/destinations/${d.id}.jpg`}
-                    alt={d.name}
-                    fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
-                    onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }}
-                  />
-                  <div className="absolute top-3 right-3">
-                    <span className={`rounded-full px-2.5 py-1 text-xs font-bold tabular-nums ${RATING_COLORS[rating] ?? "text-muted-foreground bg-muted"}`}>
-                      Kids {formatScoreInline(rating)}
-                    </span>
-                  </div>
-                </div>
-                <div className="p-4">
-                  <h3 className="font-semibold text-foreground">{d.name}</h3>
-                  <p className="text-xs text-muted-foreground mt-0.5">{d.tagline}</p>
-                  {kids?.min_age && (
-                    <p className="text-[10px] text-muted-foreground mt-2">Suitable for ages {kids.min_age}+</p>
-                  )}
-                  {kids?.reasons?.[0] && (
-                    <p className="text-[10px] text-muted-foreground mt-1 line-clamp-2">{kids.reasons[0]}</p>
-                  )}
-                </div>
+                View all {stateName} destinations →
               </Link>
-            );
-          })}
+            </div>
+          )}
         </div>
-
-        {familyDests.length === 0 && (
-          <div className="py-20 text-center text-muted-foreground">
-            <p>No family-rated destinations in {stateName} yet.</p>
-            <Link href={`/${locale}/explore/state/${stateSlug}`} className="text-primary hover:underline mt-2 inline-block">View all {stateName} destinations →</Link>
-          </div>
-        )}
       </main>
+
+      <CinematicRelatedRail />
       <Footer />
     </div>
   );

@@ -91,6 +91,9 @@ export function Footer({
     `/${locale}/camping`,
     `/${locale}/festivals`,
     `/${locale}/stays`,
+    // Phase 3 Tier 3 (S54) — geography
+    `/${locale}/states`,
+    `/${locale}/superlatives`,
   ];
   const CINEMATIC_PAGE_PREFIXES = [
     `/${locale}/skip-list/`,
@@ -102,6 +105,12 @@ export function Footer({
     `/${locale}/festivals/`,
     `/${locale}/stays/`,
     `/${locale}/camping/`,
+    // Tier 3 children (S54) — geography
+    `/${locale}/state/`,
+    `/${locale}/region/`,
+    `/${locale}/india/`,
+    `/${locale}/family/`,
+    `/${locale}/with-kids/`,
   ];
   const isCinematicPage =
     CINEMATIC_PAGE_PATHS.includes(pathname) ||

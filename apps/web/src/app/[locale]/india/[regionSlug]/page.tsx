@@ -5,11 +5,13 @@ import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { createClient } from "@supabase/supabase-js";
 import { REGION_GROUPS, STATE_MAP } from "@/lib/seo-maps";
-import { videoSrc } from "@/lib/video-url";
 import { macroRegionHeroSrc, hasMacroRegionHero } from "@/lib/landing-heroes";
 import { videoObjectJsonLd } from "@/lib/video-schema";
 import { destinationImage } from "@/lib/image-url";
 import { currentMonthIST, formatScoreInline } from "@itp/shared";
+import { CinemaStyles } from "@/components/landing-cinema/cinema-styles";
+import { Title } from "@/components/landing-cinema/editorial";
+import { CinematicRelatedRail } from "@/components/cinematic-related-rail";
 
 export const revalidate = 86400;
 export const dynamicParams = true;
@@ -46,6 +48,19 @@ export async function generateMetadata({
   };
 }
 
+type DestSummary = {
+  id: string;
+  state_id: string;
+  destination_months?: { month: number; score: number | null }[] | null;
+};
+
+type StateSummary = {
+  id: string;
+  name: string;
+  capital?: string | null;
+  display_order?: number | null;
+};
+
 async function getRegionData(regionSlug: string) {
   const region = REGION_GROUPS[regionSlug];
   if (!region) return null;
@@ -69,10 +84,10 @@ async function getRegionData(regionSlug: string) {
   const allDestsByState: Record<string, string[]> = {};
   const scoreSum: Record<string, { total: number; count: number }> = {};
 
-  (destResult.data ?? []).forEach((d: any) => {
+  (destResult.data ?? []).forEach((d: DestSummary) => {
     countMap[d.state_id] = (countMap[d.state_id] || 0) + 1;
     (allDestsByState[d.state_id] ??= []).push(d.id);
-    const monthData = d.destination_months?.find((m: any) => m.month === currentMonth);
+    const monthData = d.destination_months?.find((m) => m.month === currentMonth);
     if (monthData?.score) {
       if (!scoreSum[d.state_id]) scoreSum[d.state_id] = { total: 0, count: 0 };
       scoreSum[d.state_id].total += monthData.score;
@@ -80,9 +95,6 @@ async function getRegionData(regionSlug: string) {
     }
   });
 
-  // Hero pick: prefer a destination whose id matches a token in the state id
-  // (e.g. daman-diu → daman), falling back to alphabetical-first. Deterministic
-  // across renders and gives the most recognisable image for compound UTs.
   const firstDestMap: Record<string, string> = {};
   for (const [stateId, dests] of Object.entries(allDestsByState)) {
     const sorted = [...dests].sort();
@@ -90,20 +102,20 @@ async function getRegionData(regionSlug: string) {
     firstDestMap[stateId] = sorted.find((d) => tokens.includes(d)) ?? sorted[0];
   }
 
-  const states = (statesResult.data ?? []).map((s: any) => ({
+  const states = (statesResult.data ?? []).map((s: StateSummary) => ({
     ...s,
     destCount: countMap[s.id] ?? 0,
     heroDestId: firstDestMap[s.id] ?? s.id,
     avgScore: scoreSum[s.id] ? Math.round((scoreSum[s.id].total / scoreSum[s.id].count) * 10) / 10 : null,
   }));
 
-  const totalDests = states.reduce((sum: number, s: any) => sum + s.destCount, 0);
-  const heroDestId = states.find((s: any) => s.heroDestId)?.heroDestId ?? "manali";
+  const totalDests = states.reduce((sum: number, s) => sum + s.destCount, 0);
+  const heroDestId = states.find((s) => s.heroDestId)?.heroDestId ?? "manali";
 
   return { region, states, totalDests, heroDestId };
 }
 
-export default async function RegionPage({
+export default async function IndiaRegionPage({
   params,
 }: {
   params: Promise<{ regionSlug: string; locale: string }>;
@@ -118,10 +130,6 @@ export default async function RegionPage({
   const { states, totalDests, heroDestId } = data;
   const description = REGION_DESCRIPTIONS[regionSlug] ?? "";
 
-  // VideoObject JSON-LD — same library as the destination + state pages.
-  // Hero <video> on this page plays heroDestId.mp4 (e.g. neil-island.mp4 for
-  // /india/islands), so the schema mirrors that contentUrl. Without this,
-  // GSC's "Video isn't on a watch page" alert flagged these regional URLs.
   const videoLd = videoObjectJsonLd({
     id: hasMacroRegionHero(regionSlug) ? `region-${regionSlug}` : heroDestId,
     name: `${region.name} — NakshIQ regional travel reel`,
@@ -140,7 +148,8 @@ export default async function RegionPage({
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="nakshiq-cinema" style={{ minHeight: "100vh" }}>
+      <CinemaStyles />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
@@ -152,11 +161,17 @@ export default async function RegionPage({
         />
       )}
       <Nav />
+
       <main id="main-content">
-        {/* Hero */}
+        {/* Cinematic hero with full-bleed video */}
         <div
-          className="relative h-64 sm:h-80 lg:h-96 overflow-hidden"
-          style={{ background: `linear-gradient(135deg, oklch(0.22 0.03 260), oklch(0.16 0.02 280))` }}
+          style={{
+            position: "relative",
+            width: "100%",
+            height: "min(56vh, 540px)",
+            overflow: "hidden",
+            background: "var(--paper-2)",
+          }}
         >
           <video
             autoPlay
@@ -165,75 +180,205 @@ export default async function RegionPage({
             playsInline
             preload="metadata"
             poster={`/images/destinations/${heroDestId}.jpg`}
-            className="absolute inset-0 w-full h-full object-cover"
+            style={{
+              position: "absolute",
+              inset: 0,
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+            }}
           >
             <source src={macroRegionHeroSrc(regionSlug, heroDestId)} type="video/mp4" />
           </video>
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
-          <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 lg:p-12">
-            <div className="mx-auto max-w-7xl">
-              <div className="text-sm text-muted-foreground/70 mb-2">
-                <Link href={`/${locale}/states`} className="hover:text-foreground transition-colors">India</Link>
-                {" → "}
-                <span className="text-foreground">{region.name}</span>
-              </div>
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold">{region.name}</h1>
-              {/* Prose-y summary, not a dashboard stat-row. */}
-              <p className="mt-4 text-sm sm:text-base text-foreground/85 tabular-nums">
-                <span className="font-semibold">{states.length}</span> states ·{" "}
-                <span className="font-semibold">{totalDests}</span> destinations
+          <div
+            style={{
+              position: "absolute",
+              inset: 0,
+              background:
+                "linear-gradient(180deg, rgba(10,10,8,0.35) 0%, rgba(10,10,8,0.75) 100%)",
+            }}
+          />
+          <div
+            style={{
+              position: "absolute",
+              bottom: 0,
+              left: 0,
+              right: 0,
+              padding: "32px 24px",
+            }}
+          >
+            <div style={{ maxWidth: 1200, margin: "0 auto" }}>
+              <p
+                className="nq-kicker"
+                style={{
+                  color: "var(--vermillion)",
+                  marginBottom: 16,
+                  letterSpacing: "0.22em",
+                }}
+              >
+                INDIA · {region.name.toUpperCase()} · {region.states.length} STATES · {String(totalDests).padStart(3, "0")} DESTINATIONS
               </p>
+              <Title
+                as="h1"
+                className="nq-display"
+                style={{
+                  fontFamily: "var(--cinema-display)",
+                  fontStyle: "italic",
+                  fontWeight: 400,
+                  fontSize: "clamp(40px, 7vw, 88px)",
+                  lineHeight: 0.98,
+                  letterSpacing: "-0.025em",
+                  margin: 0,
+                  textWrap: "balance",
+                  color: "var(--bone)",
+                }}
+              >
+                {region.name}.
+              </Title>
             </div>
           </div>
         </div>
 
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8">
-          {/* Description */}
+        <div style={{ maxWidth: 1200, margin: "0 auto", padding: "48px 24px 64px" }}>
           {description && (
-            <div className="mb-10 max-w-3xl">
-              <p className="text-[15px] text-muted-foreground leading-relaxed">{description}</p>
+            <div style={{ marginBottom: 48, maxWidth: 760 }}>
+              <p
+                style={{
+                  fontFamily: "var(--cinema-ui)",
+                  fontSize: 16,
+                  lineHeight: 1.7,
+                  color: "var(--bone-dim)",
+                  margin: 0,
+                }}
+              >
+                {description}
+              </p>
             </div>
           )}
 
-          {/* State grid */}
-          <h2 className="text-xl font-semibold mb-6">States in {region.name}</h2>
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 mb-12">
-            {states.map((state: any) => (
+          {/* States grid */}
+          <p
+            className="nq-kicker"
+            style={{
+              color: "var(--vermillion)",
+              marginBottom: 24,
+              letterSpacing: "0.18em",
+            }}
+          >
+            STATES IN {region.name.toUpperCase()}
+          </p>
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))",
+              gap: 1,
+              background: "var(--hair)",
+              border: "1px solid var(--hair)",
+              marginBottom: 56,
+            }}
+          >
+            {states.map((state) => (
               <Link
                 key={state.id}
                 href={`/${locale}/state/${state.id}`}
-                className="group rounded-xl overflow-hidden border border-border/50 bg-card hover:border-primary/40 hover:shadow-lg transition-all"
+                style={{
+                  display: "block",
+                  background: "var(--paper)",
+                  textDecoration: "none",
+                }}
               >
                 <div
-                  className="h-40 bg-cover bg-center"
-                  style={{ backgroundImage: `url(/images/destinations/${state.heroDestId}.jpg)` }}
+                  style={{
+                    height: 180,
+                    backgroundImage: `url(/images/destinations/${state.heroDestId}.jpg)`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                    filter: "brightness(0.85)",
+                  }}
                 />
-                <div className="p-4">
-                  <div className="flex items-center justify-between mb-1">
-                    <h3 className="font-semibold text-foreground group-hover:text-primary transition-colors">{state.name}</h3>
+                <div style={{ padding: 18 }}>
+                  <div style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", marginBottom: 6 }}>
+                    <h3
+                      style={{
+                        fontFamily: "var(--cinema-display)",
+                        fontStyle: "italic",
+                        fontWeight: 500,
+                        fontSize: 22,
+                        color: "var(--bone)",
+                        margin: 0,
+                      }}
+                    >
+                      {state.name}
+                    </h3>
                     {state.avgScore && (
-                      <span className="text-xs font-mono text-muted-foreground tabular-nums">{formatScoreInline(state.avgScore)}</span>
+                      <span
+                        style={{
+                          fontFamily: "var(--cinema-mono)",
+                          fontSize: 11,
+                          color: "var(--vermillion)",
+                        }}
+                      >
+                        {formatScoreInline(state.avgScore)}
+                      </span>
                     )}
                   </div>
-                  <div className="flex items-center gap-2 text-xs text-muted-foreground">
-                    {state.capital && <span>{state.capital}</span>}
-                    {state.capital && <span>·</span>}
-                    <span>{state.destCount} destinations</span>
-                  </div>
+                  <p
+                    style={{
+                      fontFamily: "var(--cinema-mono)",
+                      fontSize: 10,
+                      letterSpacing: "0.18em",
+                      textTransform: "uppercase",
+                      color: "var(--bone-faint)",
+                      margin: 0,
+                    }}
+                  >
+                    {state.capital && `${state.capital} · `}
+                    {state.destCount} destinations
+                  </p>
                 </div>
               </Link>
             ))}
           </div>
 
-          {/* CTA */}
-          <div className="border-t border-border/50 pt-8 flex flex-wrap items-center justify-between gap-4">
+          {/* CTA strip */}
+          <div
+            style={{
+              paddingTop: 32,
+              borderTop: "1px solid var(--hair)",
+              display: "flex",
+              flexWrap: "wrap",
+              alignItems: "center",
+              justifyContent: "space-between",
+              gap: 16,
+            }}
+          >
             <div>
-              <p className="text-sm text-muted-foreground">Want the full map of India?</p>
-              <Link href={`/${locale}/states`} className="text-sm font-semibold text-primary hover:underline">
+              <p
+                style={{
+                  fontFamily: "var(--cinema-ui)",
+                  fontSize: 14,
+                  color: "var(--bone-dim)",
+                  margin: "0 0 4px",
+                }}
+              >
+                Want the full map of India?
+              </p>
+              <Link
+                href={`/${locale}/states`}
+                style={{
+                  fontFamily: "var(--cinema-display)",
+                  fontStyle: "italic",
+                  fontWeight: 500,
+                  fontSize: 18,
+                  color: "var(--vermillion)",
+                  textDecoration: "underline",
+                  textUnderlineOffset: "3px",
+                }}
+              >
                 Browse all {Object.keys(STATE_MAP).length} states →
               </Link>
             </div>
-            <div className="flex gap-3">
+            <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
               {Object.entries(REGION_GROUPS)
                 .filter(([k]) => k !== regionSlug)
                 .slice(0, 3)
@@ -242,7 +387,16 @@ export default async function RegionPage({
                     key={k}
                     href={`/${locale}/india/${k}`}
                     prefetch={false}
-                    className="rounded-full border border-border px-3 py-1.5 text-xs text-muted-foreground hover:text-foreground hover:border-primary/40 transition-all"
+                    style={{
+                      fontFamily: "var(--cinema-mono)",
+                      fontSize: 11,
+                      letterSpacing: "0.14em",
+                      textTransform: "uppercase",
+                      padding: "8px 14px",
+                      border: "1px solid var(--hair)",
+                      color: "var(--bone-dim)",
+                      textDecoration: "none",
+                    }}
                   >
                     {r.name}
                   </Link>
@@ -251,6 +405,8 @@ export default async function RegionPage({
           </div>
         </div>
       </main>
+
+      <CinematicRelatedRail />
       <Footer />
     </div>
   );

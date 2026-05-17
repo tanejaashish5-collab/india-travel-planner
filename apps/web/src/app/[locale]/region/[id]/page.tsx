@@ -4,6 +4,9 @@ import { Footer } from "@/components/footer";
 import { RegionDetail } from "@/components/region-detail";
 import { createClient } from "@supabase/supabase-js";
 import { notFound } from "next/navigation";
+import { CinemaStyles } from "@/components/landing-cinema/cinema-styles";
+import { Title } from "@/components/landing-cinema/editorial";
+import { CinematicRelatedRail } from "@/components/cinematic-related-rail";
 
 export const revalidate = 86400;
 export const dynamicParams = true;
@@ -30,6 +33,36 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   };
 }
 
+type DestRow = {
+  id: string;
+  name: string;
+  tagline?: string | null;
+  difficulty?: string | null;
+  elevation_m?: number | null;
+  subregion?: string | null;
+  place_type?: string | null;
+  crowd_level?: string | null;
+  hiddenness?: number | null;
+  remoteness?: number | null;
+  infrastructure_score?: number | null;
+  tags?: string[] | null;
+  best_months?: number[] | null;
+  biker_suitable?: boolean | null;
+  compare_against?: string[] | null;
+  kids_friendly?: { suitable?: boolean; rating?: number } | { suitable?: boolean; rating?: number }[] | null;
+  destination_months?: { month: number; score: number }[] | null;
+};
+
+type RouteRow = {
+  id: string;
+  name: string;
+  days?: number;
+  difficulty?: string;
+  kids_suitable?: boolean;
+  bike_route?: boolean;
+  stops?: string[];
+};
+
 async function getRegion(id: string) {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
@@ -37,7 +70,6 @@ async function getRegion(id: string) {
 
   const supabase = createClient(url, key);
 
-  // Get region data
   const { data: region } = await supabase
     .from("regions")
     .select("*")
@@ -46,7 +78,6 @@ async function getRegion(id: string) {
 
   if (!region) return null;
 
-  // Get all destinations in this state with new fields
   const { data: destinations } = await supabase
     .from("destinations")
     .select(`
@@ -59,21 +90,18 @@ async function getRegion(id: string) {
     .eq("state_id", region.state_id)
     .order("name");
 
-  // Get hidden gems in this region
-  const destIds = (destinations ?? []).map((d: any) => d.id);
+  const destIds = (destinations ?? []).map((d: DestRow) => d.id);
   const { data: gems } = await supabase
     .from("hidden_gems")
     .select("id, name, near_destination_id, distance_km, why_go, difficulty, confidence_score, tags")
     .in("near_destination_id", destIds);
 
-  // Get routes that pass through this region
   const { data: routes } = await supabase
     .from("routes")
     .select("id, name, days, difficulty, kids_suitable, bike_route, stops")
     .order("days");
 
-  // Filter routes to ones that include destinations in this state
-  const regionRoutes = (routes ?? []).filter((r: any) =>
+  const regionRoutes = (routes ?? []).filter((r: RouteRow) =>
     r.stops?.some((s: string) => destIds.includes(s))
   );
 
@@ -88,18 +116,87 @@ async function getRegion(id: string) {
 export default async function RegionPage({
   params,
 }: {
-  params: Promise<{ id: string }>;
+  params: Promise<{ id: string; locale: string }>;
 }) {
-  const { id } = await params;
+  const { id, locale } = await params;
   const region = await getRegion(id);
   if (!region) notFound();
 
+  const breadcrumbLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: `https://www.nakshiq.com/${locale}` },
+      { "@type": "ListItem", position: 2, name: "States", item: `https://www.nakshiq.com/${locale}/states` },
+      { "@type": "ListItem", position: 3, name: region.name, item: `https://www.nakshiq.com/${locale}/region/${id}` },
+    ],
+  };
+
   return (
-    <div className="min-h-screen">
+    <div className="nakshiq-cinema" style={{ minHeight: "100vh" }}>
+      <CinemaStyles />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+      />
       <Nav />
-      <main className="mx-auto max-w-7xl px-4 py-8">
-        <RegionDetail region={region} />
+
+      <main
+        id="main-content"
+        className="nq-grain"
+        style={{ position: "relative", padding: "140px 24px 64px" }}
+      >
+        <header style={{ maxWidth: 1100, margin: "0 auto 48px" }}>
+          <p
+            className="nq-kicker"
+            style={{
+              color: "var(--vermillion)",
+              marginBottom: 20,
+              letterSpacing: "0.22em",
+            }}
+          >
+            REGION · {region.name?.toUpperCase()}
+          </p>
+          <Title
+            as="h1"
+            className="nq-display"
+            style={{
+              fontFamily: "var(--cinema-display)",
+              fontStyle: "italic",
+              fontWeight: 400,
+              fontSize: "clamp(36px, 6vw, 76px)",
+              lineHeight: 1.0,
+              letterSpacing: "-0.022em",
+              margin: 0,
+              textWrap: "balance",
+            }}
+          >
+            {region.name}.
+          </Title>
+          {region.hero_tagline && (
+            <p
+              style={{
+                fontFamily: "var(--cinema-display)",
+                fontStyle: "italic",
+                fontWeight: 400,
+                fontSize: "clamp(18px, 2vw, 24px)",
+                lineHeight: 1.4,
+                color: "var(--bone-dim)",
+                marginTop: 24,
+                maxWidth: 720,
+              }}
+            >
+              {region.hero_tagline}
+            </p>
+          )}
+        </header>
+
+        <div style={{ maxWidth: 1100, margin: "0 auto" }}>
+          <RegionDetail region={region} />
+        </div>
       </main>
+
+      <CinematicRelatedRail />
       <Footer />
     </div>
   );

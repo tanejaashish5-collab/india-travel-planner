@@ -6,6 +6,9 @@ import { createClient } from "@supabase/supabase-js";
 import { notFound } from "next/navigation";
 import { destinationImage } from "@/lib/image-url";
 import { formatScoreInline } from "@itp/shared";
+import { CinemaStyles } from "@/components/landing-cinema/cinema-styles";
+import { Title } from "@/components/landing-cinema/editorial";
+import { CinematicRelatedRail } from "@/components/cinematic-related-rail";
 
 export const revalidate = 21600;
 export const dynamicParams = true;
@@ -52,7 +55,7 @@ export async function generateMetadata({
   if (!dest) return {};
 
   const name = dest.name;
-  const stateData = dest.state as any;
+  const stateData = dest.state as { name?: string } | { name?: string }[] | null;
   const stateName = Array.isArray(stateData)
     ? stateData[0]?.name
     : stateData?.name;
@@ -126,6 +129,8 @@ async function getDestinationForKids(id: string) {
   return dest;
 }
 
+type MonthScore = { month: number; score: number };
+
 export default async function WithKidsPage({
   params,
 }: {
@@ -141,15 +146,14 @@ export default async function WithKidsPage({
   const cc = Array.isArray(dest.confidence_cards)
     ? dest.confidence_cards[0]
     : dest.confidence_cards;
-  const stateData = dest.state as any;
+  const stateData = dest.state as { name?: string } | { name?: string }[] | null;
   const stateName = Array.isArray(stateData)
     ? stateData[0]?.name
     : stateData?.name;
-  const months = ((dest.destination_months as any[]) ?? []).sort(
-    (a: any, b: any) => a.month - b.month
+  const months = ((dest.destination_months as MonthScore[]) ?? []).sort(
+    (a: MonthScore, b: MonthScore) => a.month - b.month
   );
 
-  // FAQPage schema with family-specific questions
   const faqItems = [
     {
       "@type": "Question" as const,
@@ -168,8 +172,8 @@ export default async function WithKidsPage({
         "@type": "Answer" as const,
         text: (() => {
           const bestKidsMonths = months
-            .filter((m: any) => m.score >= 4)
-            .map((m: any) => MONTH_NAMES[m.month]);
+            .filter((m: MonthScore) => m.score >= 4)
+            .map((m: MonthScore) => MONTH_NAMES[m.month]);
           return bestKidsMonths.length > 0
             ? `The best months to visit ${dest.name} with kids are ${bestKidsMonths.join(", ")}. These months have the highest travel suitability scores.`
             : `Check NakshIQ for month-by-month family suitability scores for ${dest.name}.`;
@@ -239,8 +243,18 @@ export default async function WithKidsPage({
     ],
   };
 
+  const kicker = [
+    "FAMILY GUIDE",
+    stateName?.toUpperCase(),
+    kf?.rating ? `KIDS ${formatScoreInline(kf.rating)}` : null,
+    kf?.min_age ? `AGES ${kf.min_age}+` : null,
+  ]
+    .filter(Boolean)
+    .join(" · ");
+
   return (
-    <div className="min-h-screen">
+    <div className="nakshiq-cinema" style={{ minHeight: "100vh" }}>
+      <CinemaStyles />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
@@ -250,16 +264,70 @@ export default async function WithKidsPage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
       />
       <Nav />
-      <main className="mx-auto max-w-4xl px-4 py-8">
-        <WithKidsContent
-          dest={dest}
-          locale={locale}
-          kidsData={kf}
-          confidenceData={cc}
-          months={months}
-          stateName={stateName}
-        />
+
+      <main
+        id="main-content"
+        className="nq-grain"
+        style={{ position: "relative", padding: "140px 24px 64px" }}
+      >
+        <header style={{ maxWidth: 900, margin: "0 auto 48px" }}>
+          <p
+            className="nq-kicker"
+            style={{
+              color: "var(--vermillion)",
+              marginBottom: 20,
+              letterSpacing: "0.22em",
+            }}
+          >
+            {kicker}
+          </p>
+          <Title
+            as="h1"
+            className="nq-display"
+            style={{
+              fontFamily: "var(--cinema-display)",
+              fontStyle: "italic",
+              fontWeight: 400,
+              fontSize: "clamp(36px, 6vw, 76px)",
+              lineHeight: 1.0,
+              letterSpacing: "-0.022em",
+              margin: 0,
+              textWrap: "balance",
+            }}
+          >
+            {dest.name} with kids.
+          </Title>
+          {dest.tagline && (
+            <p
+              style={{
+                fontFamily: "var(--cinema-display)",
+                fontStyle: "italic",
+                fontWeight: 400,
+                fontSize: "clamp(18px, 2vw, 24px)",
+                lineHeight: 1.4,
+                color: "var(--bone-dim)",
+                marginTop: 24,
+                maxWidth: 720,
+              }}
+            >
+              {dest.tagline}
+            </p>
+          )}
+        </header>
+
+        <div style={{ maxWidth: 900, margin: "0 auto" }}>
+          <WithKidsContent
+            dest={dest}
+            locale={locale}
+            kidsData={kf}
+            confidenceData={cc}
+            months={months}
+            stateName={stateName ?? ""}
+          />
+        </div>
       </main>
+
+      <CinematicRelatedRail />
       <Footer />
     </div>
   );

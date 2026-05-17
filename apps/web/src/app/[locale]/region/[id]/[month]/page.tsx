@@ -4,6 +4,9 @@ import { Footer } from "@/components/footer";
 import { RegionDetail } from "@/components/region-detail";
 import { createClient } from "@supabase/supabase-js";
 import { notFound } from "next/navigation";
+import { CinemaStyles } from "@/components/landing-cinema/cinema-styles";
+import { Title } from "@/components/landing-cinema/editorial";
+import { CinematicRelatedRail } from "@/components/cinematic-related-rail";
 
 export const revalidate = 86400;
 export const dynamicParams = true;
@@ -28,7 +31,7 @@ const MONTH_NUMBER: Record<string, number> = {
 export async function generateMetadata({ params }: { params: Promise<{ locale: string; id: string; month: string }> }): Promise<Metadata> {
   const { locale, id, month } = await params;
 
-  if (!VALID_MONTHS.includes(month as any)) return {};
+  if (!VALID_MONTHS.includes(month as typeof VALID_MONTHS[number])) return {};
 
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
@@ -41,10 +44,6 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const monthName = MONTH_NAMES[month];
   const monthNum = MONTH_NUMBER[month];
 
-  // Count score-5 destinations for THIS region + month. Pre-2026-04-29 the
-  // query was unscoped, so the desc said "52 destinations in Arunachal Pradesh"
-  // when the actual figure was India-wide. Scope to region.state_id via inner
-  // join — same field the page handler uses to fetch destinations below.
   const { count: score5Count } = await supabase
     .from("destination_months")
     .select("destination_id, destination:destinations!inner(state_id)", { count: "exact", head: true })
@@ -52,9 +51,6 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     .eq("score", 5)
     .eq("destination.state_id", region.state_id);
 
-  // 2026-04-29 CTR rewrite: drop "Best Destinations Ranked" boilerplate,
-  // lead with count + 5/5 picks. Layout appends " | NakshIQ" (10 chars) so
-  // page-specific title budget is ~50.
   const year = new Date().getFullYear();
   const count = score5Count ?? 0;
   const destWord = count === 1 ? "destination" : "destinations";
@@ -86,6 +82,15 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   };
 }
 
+type DestRow = {
+  id: string;
+  destination_months?: { month: number; score: number }[] | null;
+};
+
+type RouteRow = {
+  stops?: string[];
+};
+
 async function getRegionForMonth(id: string, monthNum: number) {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
@@ -113,7 +118,7 @@ async function getRegionForMonth(id: string, monthNum: number) {
     .eq("state_id", region.state_id)
     .order("name");
 
-  const destIds = (destinations ?? []).map((d: any) => d.id);
+  const destIds = (destinations ?? []).map((d: DestRow) => d.id);
   const { data: gems } = await supabase
     .from("hidden_gems")
     .select("id, name, near_destination_id, distance_km, why_go, difficulty, confidence_score, tags")
@@ -124,14 +129,13 @@ async function getRegionForMonth(id: string, monthNum: number) {
     .select("id, name, days, difficulty, kids_suitable, bike_route, stops")
     .order("days");
 
-  const regionRoutes = (routes ?? []).filter((r: any) =>
+  const regionRoutes = (routes ?? []).filter((r: RouteRow) =>
     r.stops?.some((s: string) => destIds.includes(s))
   );
 
-  // Sort destinations by the target month's score (descending)
-  const sortedDestinations = (destinations ?? []).sort((a: any, b: any) => {
-    const aScore = a.destination_months?.find((dm: any) => dm.month === monthNum)?.score ?? 0;
-    const bScore = b.destination_months?.find((dm: any) => dm.month === monthNum)?.score ?? 0;
+  const sortedDestinations = (destinations ?? []).sort((a: DestRow, b: DestRow) => {
+    const aScore = a.destination_months?.find((dm) => dm.month === monthNum)?.score ?? 0;
+    const bScore = b.destination_months?.find((dm) => dm.month === monthNum)?.score ?? 0;
     return bScore - aScore;
   });
 
@@ -146,22 +150,92 @@ async function getRegionForMonth(id: string, monthNum: number) {
 export default async function RegionMonthPage({
   params,
 }: {
-  params: Promise<{ id: string; month: string }>;
+  params: Promise<{ locale: string; id: string; month: string }>;
 }) {
-  const { id, month } = await params;
+  const { locale, id, month } = await params;
 
-  if (!VALID_MONTHS.includes(month as any)) notFound();
+  if (!VALID_MONTHS.includes(month as typeof VALID_MONTHS[number])) notFound();
 
   const monthNum = MONTH_NUMBER[month];
+  const monthName = MONTH_NAMES[month];
   const region = await getRegionForMonth(id, monthNum);
   if (!region) notFound();
 
+  const breadcrumbLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: `https://www.nakshiq.com/${locale}` },
+      { "@type": "ListItem", position: 2, name: "States", item: `https://www.nakshiq.com/${locale}/states` },
+      { "@type": "ListItem", position: 3, name: region.name, item: `https://www.nakshiq.com/${locale}/region/${id}` },
+      { "@type": "ListItem", position: 4, name: monthName, item: `https://www.nakshiq.com/${locale}/region/${id}/${month}` },
+    ],
+  };
+
   return (
-    <div className="min-h-screen">
+    <div className="nakshiq-cinema" style={{ minHeight: "100vh" }}>
+      <CinemaStyles />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+      />
       <Nav />
-      <main className="mx-auto max-w-7xl px-4 py-8">
-        <RegionDetail region={region} />
+
+      <main
+        id="main-content"
+        className="nq-grain"
+        style={{ position: "relative", padding: "140px 24px 64px" }}
+      >
+        <header style={{ maxWidth: 1100, margin: "0 auto 48px" }}>
+          <p
+            className="nq-kicker"
+            style={{
+              color: "var(--vermillion)",
+              marginBottom: 20,
+              letterSpacing: "0.22em",
+            }}
+          >
+            REGION · {region.name?.toUpperCase()} · {monthName.toUpperCase()}
+          </p>
+          <Title
+            as="h1"
+            className="nq-display"
+            style={{
+              fontFamily: "var(--cinema-display)",
+              fontStyle: "italic",
+              fontWeight: 400,
+              fontSize: "clamp(36px, 6vw, 76px)",
+              lineHeight: 1.0,
+              letterSpacing: "-0.022em",
+              margin: 0,
+              textWrap: "balance",
+            }}
+          >
+            {region.name} in {monthName}.
+          </Title>
+          <p
+            style={{
+              fontFamily: "var(--cinema-display)",
+              fontStyle: "italic",
+              fontWeight: 400,
+              fontSize: "clamp(18px, 2vw, 24px)",
+              lineHeight: 1.4,
+              color: "var(--bone-dim)",
+              marginTop: 24,
+              maxWidth: 720,
+            }}
+          >
+            Destinations sorted by {monthName} score — weather, crowds, road
+            conditions for the month.
+          </p>
+        </header>
+
+        <div style={{ maxWidth: 1100, margin: "0 auto" }}>
+          <RegionDetail region={region} />
+        </div>
       </main>
+
+      <CinematicRelatedRail />
       <Footer />
     </div>
   );
