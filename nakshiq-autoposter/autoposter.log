@@ -1,91 +1,49 @@
-2026-05-17 15:21:37  INFO      ════════════════════════════════════════════════════════════
-2026-05-17 15:21:37  INFO      Nakshiq Autoposter · EVENING · 2026-05-17 · weekday=6
-2026-05-17 15:21:37  INFO      ════════════════════════════════════════════════════════════
-2026-05-17 15:21:37  INFO      ── Syncing Nakshiq content ──────────────────────────────
-2026-05-17 15:22:01  INFO      Synced → 20 destinations · 0 traps · 0 articles · 23 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 50 camping · 50 gems · total catalog=505
-2026-05-17 15:22:03  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
-2026-05-17 15:22:03  INFO      Formats — IG: monthly_forecast  ·  FB: monthly_forecast  ·  Story: kids_intel
-2026-05-17 15:22:03  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 8
-2026-05-17 15:22:03  INFO      Fingerprint dedup snapshot — 8 dests in 7d · 27 (dest,fmt) pairs in 30d · 0 media in 60d
-2026-05-17 15:22:03  INFO      Kids destination locked: Kabini
-2026-05-17 15:22:09  INFO      Shared best destination locked: Sissu
-2026-05-17 15:22:09  INFO      Carousel locked (monthly_forecast): kabini, sissu, uttarkashi, mudumalai, tungnath
-2026-05-17 15:22:09  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
-2026-05-17 15:22:09  INFO      [instagram/nakshiq] Generating monthly_forecast post...
-2026-05-17 15:22:09  INFO      [instagram/nakshiq] Caption ready (612 chars, dest=kabini)
-2026-05-17 15:22:09  INFO      [instagram/nakshiq] Rendering branded carousel (monthly_forecast, 5 dests)...
-2026-05-17 15:22:10  INFO      [instagram/nakshiq] Rendered 7 branded slides · uploading to Outstand...
-2026-05-17 15:22:10  INFO          Requesting upload URL for monthly_forecast_01_title.jpg (49,589 bytes, image/jpeg)
-2026-05-17 15:22:11  INFO          Uploading to R2 (timeout=120s)...
-2026-05-17 15:22:12  INFO          R2 PUT OK. Confirming...
-2026-05-17 15:22:13  INFO          Media ready: 5ZKWD (49,589 bytes · monthly_forecast_01_title.jpg)
-2026-05-17 15:22:13  INFO          Requesting upload URL for monthly_forecast_02_kabini.jpg (183,518 bytes, image/jpeg)
-2026-05-17 15:22:14  INFO          Uploading to R2 (timeout=120s)...
-2026-05-17 15:22:15  INFO          R2 PUT OK. Confirming...
-2026-05-17 15:22:16  INFO          Media ready: Fv6eZ (183,518 bytes · monthly_forecast_02_kabini.jpg)
-2026-05-17 15:22:16  INFO          Requesting upload URL for monthly_forecast_03_sissu.jpg (339,863 bytes, image/jpeg)
-2026-05-17 15:22:17  INFO          Uploading to R2 (timeout=120s)...
-2026-05-17 15:22:18  INFO          R2 PUT OK. Confirming...
-2026-05-17 15:22:20  INFO          Media ready: gjCUx (339,863 bytes · monthly_forecast_03_sissu.jpg)
-2026-05-17 15:22:20  INFO          Requesting upload URL for monthly_forecast_04_uttarkashi.jpg (351,777 bytes, image/jpeg)
-2026-05-17 15:22:20  INFO          Uploading to R2 (timeout=120s)...
-2026-05-17 15:22:21  INFO          R2 PUT OK. Confirming...
-2026-05-17 15:22:23  INFO          Media ready: OQphv (351,777 bytes · monthly_forecast_04_uttarkashi.jpg)
-2026-05-17 15:22:23  INFO          Requesting upload URL for monthly_forecast_05_mudumalai.jpg (366,127 bytes, image/jpeg)
-2026-05-17 15:22:23  INFO          Uploading to R2 (timeout=120s)...
-2026-05-17 15:22:24  INFO          R2 PUT OK. Confirming...
-2026-05-17 15:22:27  INFO          Media ready: yDd1j (366,127 bytes · monthly_forecast_05_mudumalai.jpg)
-2026-05-17 15:22:27  INFO          Requesting upload URL for monthly_forecast_06_tungnath.jpg (314,805 bytes, image/jpeg)
-2026-05-17 15:22:32  INFO          Uploading to R2 (timeout=120s)...
-2026-05-17 15:22:34  INFO          R2 PUT OK. Confirming...
-2026-05-17 15:22:35  INFO          Media ready: gjCYx (314,805 bytes · monthly_forecast_06_tungnath.jpg)
-2026-05-17 15:22:35  INFO          Requesting upload URL for monthly_forecast_07_cta.jpg (34,561 bytes, image/jpeg)
-2026-05-17 15:22:36  INFO          Uploading to R2 (timeout=120s)...
-2026-05-17 15:22:36  INFO          R2 PUT OK. Confirming...
-2026-05-17 15:22:38  INFO          Media ready: TqkX1 (34,561 bytes · monthly_forecast_07_cta.jpg)
-2026-05-17 15:22:38  INFO      [instagram/nakshiq] Publishing 7-slide carousel...
-2026-05-17 15:23:42  WARNING   [instagram/nakshiq] ⚠️  Queued (ID=B6C6n)
-2026-05-17 15:23:42  INFO      [instagram/nakshiq] Uploading Story image (kabini.jpg)...
-2026-05-17 15:23:42  INFO          Using branded image: kabini_story_minimal-elegant_footer-bar.jpg (247,051 bytes)
-2026-05-17 15:23:42  INFO          Requesting upload URL for kabini.jpg (247,051 bytes, image/jpeg)
-2026-05-17 15:23:43  INFO          Uploading to R2 (timeout=120s)...
-2026-05-17 15:23:44  INFO          R2 PUT OK. Confirming...
-2026-05-17 15:23:45  INFO          Media ready: BsPbn (247,051 bytes · kabini.jpg)
-2026-05-17 15:23:45  INFO      [instagram/nakshiq] Publishing Story · format=kids_intel · dest=kabini
-2026-05-17 15:24:26  INFO      [instagram/nakshiq] ✅ Story live · ID=18098028917042600
-2026-05-17 15:24:26  INFO      [facebook/Nakshiq] Generating monthly_forecast post...
-2026-05-17 15:24:26  INFO      [facebook/Nakshiq] Caption ready (613 chars, dest=kabini)
-2026-05-17 15:24:26  INFO      [facebook/Nakshiq] Rendering branded carousel (monthly_forecast, 5 dests)...
-2026-05-17 15:24:27  INFO      [facebook/Nakshiq] Rendered 7 branded slides · uploading to Outstand...
-2026-05-17 15:24:27  INFO          Requesting upload URL for monthly_forecast_01_title.jpg (49,589 bytes, image/jpeg)
-2026-05-17 15:24:28  INFO          Uploading to R2 (timeout=120s)...
-2026-05-17 15:24:28  INFO          R2 PUT OK. Confirming...
-2026-05-17 15:24:30  INFO          Media ready: joOZ2 (49,589 bytes · monthly_forecast_01_title.jpg)
-2026-05-17 15:24:30  INFO          Requesting upload URL for monthly_forecast_02_kabini.jpg (183,518 bytes, image/jpeg)
-2026-05-17 15:24:30  INFO          Uploading to R2 (timeout=120s)...
-2026-05-17 15:24:31  INFO          R2 PUT OK. Confirming...
-2026-05-17 15:24:36  INFO          Media ready: 8SZcI (183,518 bytes · monthly_forecast_02_kabini.jpg)
-2026-05-17 15:24:36  INFO          Requesting upload URL for monthly_forecast_03_sissu.jpg (339,863 bytes, image/jpeg)
-2026-05-17 15:24:37  INFO          Uploading to R2 (timeout=120s)...
-2026-05-17 15:24:38  INFO          R2 PUT OK. Confirming...
-2026-05-17 15:24:39  INFO          Media ready: ekAar (339,863 bytes · monthly_forecast_03_sissu.jpg)
-2026-05-17 15:24:39  INFO          Requesting upload URL for monthly_forecast_04_uttarkashi.jpg (351,777 bytes, image/jpeg)
-2026-05-17 15:24:41  INFO          Uploading to R2 (timeout=120s)...
-2026-05-17 15:24:42  INFO          R2 PUT OK. Confirming...
-2026-05-17 15:24:45  INFO          Media ready: iwzGB (351,777 bytes · monthly_forecast_04_uttarkashi.jpg)
-2026-05-17 15:24:45  INFO          Requesting upload URL for monthly_forecast_05_mudumalai.jpg (366,127 bytes, image/jpeg)
-2026-05-17 15:24:47  INFO          Uploading to R2 (timeout=120s)...
-2026-05-17 15:24:48  INFO          R2 PUT OK. Confirming...
-2026-05-17 15:24:50  INFO          Media ready: b03nT (366,127 bytes · monthly_forecast_05_mudumalai.jpg)
-2026-05-17 15:24:50  INFO          Requesting upload URL for monthly_forecast_06_tungnath.jpg (314,805 bytes, image/jpeg)
-2026-05-17 15:24:51  INFO          Uploading to R2 (timeout=120s)...
-2026-05-17 15:24:52  INFO          R2 PUT OK. Confirming...
-2026-05-17 15:24:53  INFO          Media ready: mK1Dd (314,805 bytes · monthly_forecast_06_tungnath.jpg)
-2026-05-17 15:24:53  INFO          Requesting upload URL for monthly_forecast_07_cta.jpg (34,561 bytes, image/jpeg)
-2026-05-17 15:24:54  INFO          Uploading to R2 (timeout=120s)...
-2026-05-17 15:24:55  INFO          R2 PUT OK. Confirming...
-2026-05-17 15:24:56  INFO          Media ready: Du9eo (34,561 bytes · monthly_forecast_07_cta.jpg)
-2026-05-17 15:24:56  INFO      [facebook/Nakshiq] Publishing 7-slide carousel...
-2026-05-17 15:25:37  INFO      [facebook/Nakshiq] ✅ Published · Outstand=eU1Yr · Platform=1040562729145369_122108279450700092
-2026-05-17 15:25:37  INFO      State saved. Run complete.
-2026-05-17 15:25:37  INFO      ════════════════════════════════════════════════════════════
+2026-05-17 19:39:40  INFO      ════════════════════════════════════════════════════════════
+2026-05-17 19:39:40  INFO      Nakshiq Autoposter · ANALYTICS SYNC · 2026-05-17
+2026-05-17 19:39:40  INFO      ════════════════════════════════════════════════════════════
+2026-05-17 19:39:47  INFO      Synced 50 new posts (total: 280)
+2026-05-17 19:39:47  INFO      ── Analytics Summary ──
+2026-05-17 19:39:47  INFO      Total posts tracked: 280
+2026-05-17 19:39:47  INFO      Successfully published: 225 | Failed: 46
+2026-05-17 19:39:47  INFO      
+2026-05-17 19:39:47  INFO      By content type:
+2026-05-17 19:39:47  INFO        feed_post: 102
+2026-05-17 19:39:47  INFO        reel: 70
+2026-05-17 19:39:47  INFO        yt_short: 68
+2026-05-17 19:39:47  INFO        canva_visual: 12
+2026-05-17 19:39:47  INFO        tourist_map: 10
+2026-05-17 19:39:47  INFO        pomelli_visual: 10
+2026-05-17 19:39:47  INFO        infographic: 8
+2026-05-17 19:39:47  INFO      
+2026-05-17 19:39:47  INFO      By format:
+2026-05-17 19:39:47  INFO        feed_post:unknown: 102
+2026-05-17 19:39:47  INFO        reel:seasonal: 25
+2026-05-17 19:39:47  INFO        reel:destination: 24
+2026-05-17 19:39:47  INFO        yt_short:listicle: 15
+2026-05-17 19:39:47  INFO        reel:map: 15
+2026-05-17 19:39:47  INFO        yt_short:did: 14
+2026-05-17 19:39:47  INFO        yt_short:before: 13
+2026-05-17 19:39:47  INFO        yt_short:mini: 13
+2026-05-17 19:39:47  INFO        canva_visual:unknown: 12
+2026-05-17 19:39:47  INFO        tourist_map:unknown: 10
+2026-05-17 19:39:47  INFO        pomelli_visual:unknown: 10
+2026-05-17 19:39:47  INFO        infographic:unknown: 8
+2026-05-17 19:39:47  INFO        yt_short:this: 8
+2026-05-17 19:39:47  INFO        reel:score: 6
+2026-05-17 19:39:47  INFO        yt_short:dont: 5
+2026-05-17 19:39:47  INFO      
+2026-05-17 19:39:47  INFO      By platform:
+2026-05-17 19:39:47  INFO        instagram: 132
+2026-05-17 19:39:47  INFO        facebook: 80
+2026-05-17 19:39:47  INFO        youtube: 59
+2026-05-17 19:39:47  INFO      
+2026-05-17 19:39:47  INFO      YT Short format distribution:
+2026-05-17 19:39:47  INFO        listicle: 15 (22%)
+2026-05-17 19:39:47  INFO        did: 14 (21%)
+2026-05-17 19:39:47  INFO        before: 13 (19%)
+2026-05-17 19:39:47  INFO        mini: 13 (19%)
+2026-05-17 19:39:47  INFO        this: 8 (12%)
+2026-05-17 19:39:47  INFO        dont: 5 (7%)
+2026-05-17 19:39:47  INFO      
+Date range: 2026-04-15 → 2026-05-17
+2026-05-17 19:39:47  INFO      ════════════════════════════════════════════════════════════

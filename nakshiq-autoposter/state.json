@@ -1,36 +1,9 @@
 {
   "yt_short_formats_used": [],
   "yt_short_music_used": [],
-  "posted_today": {
-    "m8EAd": "2026-05-17",
-    "m8EAd_evening": "2026-05-17",
-    "m8EAd_evening_story": "2026-05-17",
-    "PdMu0": "2026-05-17",
-    "PdMu0_evening": "2026-05-17"
-  },
-  "last_sync": "2026-05-17T15:22:01.863041+00:00",
-  "posted_destinations": [
-    {
-      "destination_id": "kabini",
-      "date": "2026-05-17"
-    },
-    {
-      "destination_id": "sissu",
-      "date": "2026-05-17"
-    },
-    {
-      "destination_id": "uttarkashi",
-      "date": "2026-05-17"
-    },
-    {
-      "destination_id": "mudumalai",
-      "date": "2026-05-17"
-    },
-    {
-      "destination_id": "tungnath",
-      "date": "2026-05-17"
-    }
-  ],
+  "posted_today": {},
+  "last_sync": "2026-04-30T04:05:30.154914+00:00",
+  "posted_destinations": [],
   "posted_formats": {
     "m8EAd": [
       "monthly_forecast",
@@ -45,8 +18,7 @@
       "score_card",
       "collection_spotlight",
       "festival_alert",
-      "kids_intel",
-      "monthly_forecast"
+      "kids_intel"
     ],
     "PdMu0": [
       "monthly_forecast",
@@ -66,8 +38,7 @@
       "reality_check",
       "collection_spotlight",
       "festival_alert",
-      "kids_intel",
-      "monthly_forecast"
+      "kids_intel"
     ]
   },
   "post_log": [
@@ -377,7 +348,7 @@
       "format": "reality_check",
       "outstand_post_id": "LEE0V",
       "platform_post_id": "18067665245654147",
-      "collection": "After Dark — Night Experiences Worth Staying Up For",
+      "collection": "After Dark \u2014 Night Experiences Worth Staying Up For",
       "note": "recovered_via_manual_state_patch_after_3x_duplicate_publish_during_evening_run"
     },
     {
@@ -460,65 +431,9 @@
       "destination": "ranthambore",
       "format": "kids_intel",
       "has_media": true
-    },
-    {
-      "timestamp": "2026-05-17T15:23:42.446187+00:00",
-      "date": "2026-05-17",
-      "platform": "instagram",
-      "account_id": "m8EAd",
-      "post_id": "B6C6n",
-      "destination": "kabini",
-      "format": "monthly_forecast",
-      "has_media": true,
-      "media_id": "monthly_forecast_01_title.jpg"
-    },
-    {
-      "timestamp": "2026-05-17T15:24:26.523278+00:00",
-      "date": "2026-05-17",
-      "platform": "instagram_story",
-      "account_id": "m8EAd",
-      "post_id": "83ahI",
-      "destination": "kabini",
-      "format": "kids_intel",
-      "has_media": true,
-      "mode": "evening"
-    },
-    {
-      "timestamp": "2026-05-17T15:25:37.361451+00:00",
-      "date": "2026-05-17",
-      "platform": "facebook",
-      "account_id": "PdMu0",
-      "post_id": "eU1Yr",
-      "destination": "kabini",
-      "format": "monthly_forecast",
-      "has_media": true,
-      "media_id": "monthly_forecast_01_title.jpg"
     }
   ],
-  "theme_usage": {
-    "destinations": {
-      "kabini": [
-        "2026-05-17"
-      ],
-      "sissu": [
-        "2026-05-17"
-      ],
-      "uttarkashi": [
-        "2026-05-17"
-      ],
-      "mudumalai": [
-        "2026-05-17"
-      ],
-      "tungnath": [
-        "2026-05-17"
-      ]
-    },
-    "reels": {
-      "kabini": [
-        "2026-05-17"
-      ]
-    }
-  },
+  "theme_usage": {},
   "infographic": {
     "last_topic_idx": 0,
     "last_theme_idx": 0,
@@ -530,8 +445,5 @@
     ]
   },
   "ugc_music_history": [],
-  "last_picked": {
-    "shared_best": "sissu"
-  },
-  "manual_skip_dests": {}
+  "last_picked": {}
 }
