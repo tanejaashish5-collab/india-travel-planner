@@ -957,7 +957,48 @@ def post_fingerprints(state: dict, *, dest_days: int = 7,
     for did, expiry in (state.get("manual_skip_dests") or {}).items():
         if not expiry or expiry >= today.isoformat():
             used_dests.add(did)
+    # 2026-05-17: hardcoded code-level blocks (durable, can't be wiped).
+    used_dests |= hardcoded_block_dests()
     return {"dests": used_dests, "dest_fmt": used_dest_fmt, "media": used_media}
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# HARDCODED DESTINATION BLOCK LIST (added 2026-05-17, durable block)
+# -----------------------------------------------------------------------------
+# Why this is hardcoded in the module instead of state.json:
+# 2026-05-16 attempt at state-based blocks (manual_skip_dests) was silently
+# WIPED by the next autoposter save_state cycle — Pahalgam re-posted the same
+# evening despite explicit block. Root cause: state-branch race + save_state
+# overwrites everything. A code constant survives every state rewrite because
+# it's loaded fresh from the Python module on every run.
+#
+# Format: {dest_id: ISO_expiry_date}. Edit + git push to add/remove. The
+# autoposter loads this on every run, so the block takes effect at the next
+# cron fire.
+#
+# User complaints addressed:
+#   - 2026-05-16: tehri, pahalgam (re-posted 5+ times in May)
+#   - 2026-05-17: parvati-valley + tehri-lake video repeats on YT/IG
+# Add a dest here when the user flags repetition. Remove when the expiry
+# date passes naturally (or delete the entry to unblock manually).
+# ─────────────────────────────────────────────────────────────────────────────
+HARDCODED_DEST_BLOCKS: dict[str, str] = {
+    "tehri":          "2026-06-01",  # user flag 2026-05-16
+    "tehri-lake":     "2026-06-01",  # slug variant
+    "pahalgam":       "2026-06-01",  # user flag 2026-05-16 (re-posted same day)
+    "parvati-valley": "2026-06-01",  # user flag 2026-05-17 (YT short repeats)
+    "kasol":          "2026-06-01",  # user flag 2026-05-17 (Parvati Valley nearby)
+    "kasol-parvati":  "2026-06-01",  # slug variant
+}
+
+
+def hardcoded_block_dests() -> set:
+    """Return dest_ids currently under a code-level block (HARDCODED_DEST_BLOCKS).
+    Expired entries auto-release on their ISO expiry date — no manual cleanup
+    needed."""
+    today = date.today().isoformat()
+    return {did for did, expiry in HARDCODED_DEST_BLOCKS.items()
+            if not expiry or expiry > today}
 
 
 def current_month_posted_destinations(state: dict) -> set:
@@ -985,6 +1026,9 @@ def current_month_posted_destinations(state: dict) -> set:
     for did, expiry in (state.get("manual_skip_dests") or {}).items():
         if not expiry or expiry >= date.today().isoformat():
             used.add(did)
+    # 2026-05-17: also union with hardcoded module-level blocks (durable —
+    # can't be wiped by save_state). See HARDCODED_DEST_BLOCKS comment above.
+    used |= hardcoded_block_dests()
     return used
 
 

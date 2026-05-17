@@ -253,26 +253,16 @@ jobs:
             echo "Scheduled REEL slot 1 · 11:00 IST (UTC ${HOUR}:${MINUTE})"
 
           # 13:17 IST = UTC 07:47 → Visual slot (cron=467, window: 390-494)
-          # TIER 3 cadence cut (2026-05-10): fires Mon/Wed/Fri only — keeps format
-          # diversity (moat / canva / pomelli) at 3×/wk while honouring IG's
-          # sub-10K-follower posting-cadence guardrail.
-          #   Mon → moat, Wed → canva-visual, Fri → pomelli-visual.
-          #   Tue/Thu/Sat/Sun → sync-only (gives reel-map / flow-story / weekend
-          #   pacing room without competing for the same daily slot).
+          # 2026-05-16 PIVOT: visual slot PAUSED (cadence cut). The cron is
+          # commented out so this branch should never fire from a fresh
+          # cron — BUT a drifted morning cron (03:17 UTC scheduled, fires
+          # late) lands in this window. So this branch now routes
+          # drifted-late fires to morning-post mode instead of sync-only.
+          # 2026-05-17 fix: previously dropped Sunday-morning drift to
+          # --sync-only (Visual slot skipped), so today 0 posts fired.
           elif [ "$TOTAL_MINS" -ge 390 ] && [ "$TOTAL_MINS" -lt 495 ]; then
-            if [ "$DOW" = "1" ]; then
-              echo "args=--moat" >> $GITHUB_OUTPUT
-              echo "Scheduled MOAT · 13:17 IST Mon (UTC ${HOUR}:${MINUTE})"
-            elif [ "$DOW" = "3" ]; then
-              echo "args=--canva-visual" >> $GITHUB_OUTPUT
-              echo "Scheduled CANVA VISUAL · 13:17 IST Wed (UTC ${HOUR}:${MINUTE})"
-            elif [ "$DOW" = "5" ]; then
-              echo "args=--pomelli-visual" >> $GITHUB_OUTPUT
-              echo "Scheduled POMELLI VISUAL · 13:17 IST Fri (UTC ${HOUR}:${MINUTE})"
-            else
-              echo "args=--sync-only" >> $GITHUB_OUTPUT
-              echo "Visual slot skipped (Tier 3: Mon/Wed/Fri only) · DOW=${DOW}"
-            fi
+            echo "args=" >> $GITHUB_OUTPUT
+            echo "Drifted MORNING post (cron drift, fired in old visual window) · DOW=${DOW}"
 
           # 14:30 IST = UTC 09:00 → UGC avatar video (cron=540, window: 495-569) — Wed+Sat only
           # NOTE: cron trigger is currently commented out (HeyGen balance too low)
