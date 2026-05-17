@@ -82,35 +82,78 @@ def _headers(api_key: str) -> dict[str, str]:
 def load_outcomes(days: int) -> list[dict[str, Any]]:
     """Read post_outcomes.jsonl and return records from the last N days that
     have a non-null post_id and status='published'.
+
+    2026-05-17 Tier 7 Phase 4: if post_outcomes.jsonl is missing or empty,
+    fall back to state.json[post_log] entries (which always exist when
+    posts have been published). This bootstraps engagement tracking even
+    on the first run after a clean checkout.
     """
-    if not POST_OUTCOMES_PATH.exists():
-        _log(f"post_outcomes.jsonl not found at {POST_OUTCOMES_PATH}")
-        return []
     cutoff = datetime.now(timezone.utc) - timedelta(days=days)
     out: list[dict[str, Any]] = []
-    with open(POST_OUTCOMES_PATH, encoding="utf-8") as f:
-        for line in f:
-            line = line.strip()
-            if not line:
-                continue
-            try:
-                rec = json.loads(line)
-            except json.JSONDecodeError:
-                continue
-            if rec.get("status") != "published":
-                continue
-            pid = rec.get("post_id")
-            if not pid:
-                continue
-            ts = rec.get("ts")
-            if ts:
+
+    if POST_OUTCOMES_PATH.exists():
+        with open(POST_OUTCOMES_PATH, encoding="utf-8") as f:
+            for line in f:
+                line = line.strip()
+                if not line:
+                    continue
                 try:
-                    when = datetime.fromisoformat(ts.replace("Z", "+00:00"))
-                    if when < cutoff:
-                        continue
-                except ValueError:
-                    pass
-            out.append(rec)
+                    rec = json.loads(line)
+                except json.JSONDecodeError:
+                    continue
+                if rec.get("status") != "published":
+                    continue
+                pid = rec.get("post_id")
+                if not pid:
+                    continue
+                ts = rec.get("ts")
+                if ts:
+                    try:
+                        when = datetime.fromisoformat(ts.replace("Z", "+00:00"))
+                        if when < cutoff:
+                            continue
+                    except ValueError:
+                        pass
+                out.append(rec)
+    else:
+        _log(f"post_outcomes.jsonl not found at {POST_OUTCOMES_PATH} — falling back to state.json[post_log]")
+
+    if out:
+        return out
+
+    # Fallback: read post_log from state.json. Each entry has timestamp+post_id+
+    # destination+format. Synthesize minimal outcome records so the pull can
+    # at least retrieve engagement for past posts.
+    state_path = POST_OUTCOMES_PATH.parent.parent / "state.json"
+    if not state_path.exists():
+        return []
+    try:
+        with open(state_path, encoding="utf-8") as f:
+            state = json.load(f)
+    except (json.JSONDecodeError, OSError):
+        return []
+    for entry in state.get("post_log", []) or []:
+        pid = entry.get("post_id")
+        ts = entry.get("timestamp")
+        if not pid or not ts:
+            continue
+        try:
+            when = datetime.fromisoformat(ts.replace("Z", "+00:00"))
+            if when < cutoff:
+                continue
+        except (ValueError, AttributeError):
+            continue
+        out.append({
+            "ts": ts,
+            "status": "published",
+            "post_id": pid,
+            "dest_id": entry.get("destination"),
+            "format": entry.get("format"),
+            "media_id": entry.get("media_id"),
+            "platform": entry.get("platform"),
+        })
+    if out:
+        _log(f"Loaded {len(out)} entries from post_log fallback")
     return out
 
 

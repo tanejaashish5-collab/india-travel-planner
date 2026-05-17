@@ -932,7 +932,11 @@ def mark_posted(state: dict, account_id: str, destination_id: str,
         "has_media":  has_media,
         "media_id":   media_id,
     })
-    state["post_log"] = state["post_log"][-500:]
+    # 2026-05-17 Tier 7 Phase 4: cap raised 500 → 2000. At ~6-10 posts/day
+    # across all flows, 500 rows = ~70 days. We want a full calendar quarter
+    # so current_month_posted_destinations sees deeper history and weekly
+    # digest leaderboards have 90 days of format-vs-engagement data.
+    state["post_log"] = state["post_log"][-2000:]
 
 def record_publish(state: dict, *, dest_id: str | None, fmt: str,
                    post_id: str | None, platform: str,
@@ -969,7 +973,8 @@ def record_publish(state: dict, *, dest_id: str | None, fmt: str,
         "format":      fmt,
         "media_id":    media_id,
     })
-    state["post_log"] = state["post_log"][-500:]
+    # Cap raised 500 → 2000 to retain ~90 days of cross-flow history (Phase 4).
+    state["post_log"] = state["post_log"][-2000:]
 
 
 def post_fingerprints(state: dict, *, dest_days: int = 7,
@@ -8885,13 +8890,49 @@ def _run_ugc(force: bool = False, dry_run: bool = False):
         log.info(f"[{label}] Outstand accepted (post_id={post_id}), confirming...")
 
         confirmed = wait_for_publish(post_id) if post_id != "unknown" else None
+        # 2026-05-17 Tier 7 Phase 4: UGC was the only flow not writing to
+        # post_log + post_outcomes.jsonl. Add both calls here so cross-flow
+        # dedupe sees UGC posts AND the weekly digest can attribute clicks.
+        ugc_dest_id = result.get("dest_id") or (dest or "").lower().replace(" ", "-") or None
+        cta_url = _extract_caption_url(caption)
+        utm_content = build_utm_content(ugc_dest_id, f"ugc.{result.get('avatar', 'unknown')}")
         if confirmed:
             platform_id = confirmed.get("platformPostId", "—")
             log.info(f"[{label}] ✅ UGC published · Outstand={post_id} · Platform={platform_id}")
             st.setdefault("posted_today", {})[acc_scoped_key] = today
             posted_any = True
+            record_publish(
+                st,
+                dest_id=ugc_dest_id,
+                fmt=f"ugc.{result.get('avatar', 'unknown')}",
+                post_id=post_id,
+                platform=platform,
+                media_id=media_filename,
+            )
+            _log_post_outcome(
+                post_id=post_id, dest_id=ugc_dest_id,
+                fmt=f"ugc.{result.get('avatar', 'unknown')}", media_id=media_filename,
+                account=account, caption=caption,
+                cta_url=cta_url, utm_content=utm_content,
+                status="published",
+            )
         else:
             log.warning(f"[{label}] ⚠️  UGC queued but NOT confirmed (post_id={post_id}).")
+            record_publish(
+                st,
+                dest_id=ugc_dest_id,
+                fmt=f"ugc.{result.get('avatar', 'unknown')}",
+                post_id=post_id,
+                platform=platform,
+                media_id=media_filename,
+            )
+            _log_post_outcome(
+                post_id=post_id, dest_id=ugc_dest_id,
+                fmt=f"ugc.{result.get('avatar', 'unknown')}", media_id=media_filename,
+                account=account, caption=caption,
+                cta_url=cta_url, utm_content=utm_content,
+                status="queued_unconfirmed",
+            )
 
     if posted_any:
         mark_theme_used(st, "ugc_avatars", result["avatar"])
