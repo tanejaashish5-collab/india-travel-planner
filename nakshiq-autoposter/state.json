@@ -3,12 +3,31 @@
   "yt_short_music_used": [],
   "posted_today": {
     "m8EAd": "2026-05-17",
-    "PdMu0": "2026-05-17"
+    "m8EAd_evening": "2026-05-17",
+    "m8EAd_evening_story": "2026-05-17",
+    "PdMu0": "2026-05-17",
+    "PdMu0_evening": "2026-05-17"
   },
-  "last_sync": "2026-05-17T07:35:43.031402+00:00",
+  "last_sync": "2026-05-17T12:43:08.585097+00:00",
   "posted_destinations": [
     {
+      "destination_id": "gopeshwar",
+      "date": "2026-05-17"
+    },
+    {
       "destination_id": "pithoragarh",
+      "date": "2026-05-17"
+    },
+    {
+      "destination_id": "lolab-valley",
+      "date": "2026-05-17"
+    },
+    {
+      "destination_id": "manikaran",
+      "date": "2026-05-17"
+    },
+    {
+      "destination_id": "mudumalai",
       "date": "2026-05-17"
     }
   ],
@@ -27,7 +46,7 @@
       "collection_spotlight",
       "festival_alert",
       "kids_intel",
-      "score_card"
+      "monthly_forecast"
     ],
     "PdMu0": [
       "monthly_forecast",
@@ -48,7 +67,7 @@
       "collection_spotlight",
       "festival_alert",
       "kids_intel",
-      "score_card"
+      "monthly_forecast"
     ]
   },
   "post_log": [
@@ -443,36 +462,62 @@
       "has_media": true
     },
     {
-      "timestamp": "2026-05-17T07:36:20.740445+00:00",
+      "timestamp": "2026-05-17T12:44:13.814730+00:00",
       "date": "2026-05-17",
       "platform": "instagram",
       "account_id": "m8EAd",
-      "post_id": "Z8QYu",
-      "destination": "pithoragarh",
-      "format": "score_card",
+      "post_id": "Z82Hu",
+      "destination": "gopeshwar",
+      "format": "monthly_forecast",
       "has_media": true,
-      "media_id": "pithoragarh.mp4"
+      "media_id": "monthly_forecast_01_title.jpg"
     },
     {
-      "timestamp": "2026-05-17T07:36:39.207683+00:00",
+      "timestamp": "2026-05-17T12:44:28.805651+00:00",
+      "date": "2026-05-17",
+      "platform": "instagram_story",
+      "account_id": "m8EAd",
+      "post_id": "N043a",
+      "destination": "kabini",
+      "format": "kids_intel",
+      "has_media": true,
+      "mode": "evening"
+    },
+    {
+      "timestamp": "2026-05-17T12:45:17.318943+00:00",
       "date": "2026-05-17",
       "platform": "facebook",
       "account_id": "PdMu0",
-      "post_id": "N0X2a",
-      "destination": "pithoragarh",
-      "format": "score_card",
+      "post_id": "Hugy5",
+      "destination": "gopeshwar",
+      "format": "monthly_forecast",
       "has_media": true,
-      "media_id": "pithoragarh.mp4"
+      "media_id": "monthly_forecast_01_title.jpg"
     }
   ],
   "theme_usage": {
-    "morning_formats": {
-      "score_card": [
+    "destinations": {
+      "gopeshwar": [
+        "2026-05-17"
+      ],
+      "pithoragarh": [
+        "2026-05-17"
+      ],
+      "lolab-valley": [
+        "2026-05-17"
+      ],
+      "manikaran": [
+        "2026-05-17"
+      ],
+      "mudumalai": [
+        "2026-05-17"
+      ],
+      "kabini": [
         "2026-05-17"
       ]
     },
-    "destinations": {
-      "pithoragarh": [
+    "reels": {
+      "gopeshwar": [
         "2026-05-17"
       ]
     }
@@ -489,6 +534,7 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "pithoragarh"
-  }
+    "shared_best": "manikaran"
+  },
+  "manual_skip_dests": {}
 }
