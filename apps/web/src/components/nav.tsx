@@ -309,7 +309,10 @@ export function Nav() {
               Naksh<span className="text-[#E55642]">.</span>iq
             </Link>
 
-            {/* Center — 6 all-caps magazine links (desktop only) */}
+            {/* Center — 6 all-caps magazine links + MORE (desktop only).
+                MORE sits inside the main nav row (right after ABOUT) rather
+                than in the utility cluster so it reads as a peer navigation
+                item, not as an icon-control. */}
             <nav className="hidden md:flex items-center gap-8">
               {cinemaItems.map((item) => (
                 <Link
@@ -320,6 +323,14 @@ export function Nav() {
                   {item.label}
                 </Link>
               ))}
+              <button
+                type="button"
+                onClick={() => setMoreOpen(true)}
+                aria-label="More"
+                className="font-[var(--font-geist-sans)] font-medium text-[12px] uppercase tracking-[0.18em] text-[#F5F1E8]/85 hover:text-[#F5F1E8] transition-colors whitespace-nowrap bg-transparent border-0 p-0 cursor-pointer"
+              >
+                {t("more")}
+              </button>
             </nav>
 
             {/* Right cluster (desktop) — utility controls + MORE + ISSUE badge.
@@ -366,14 +377,6 @@ export function Nav() {
                 className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#F5F1E8]/75 hover:text-[#F5F1E8] transition-colors px-2 py-2"
               >
                 {locale === "en" ? "हि" : "EN"}
-              </button>
-              <button
-                type="button"
-                onClick={() => setMoreOpen(true)}
-                aria-label="More"
-                className="font-[var(--font-geist-sans)] font-medium text-[12px] uppercase tracking-[0.18em] text-[#F5F1E8]/85 hover:text-[#F5F1E8] transition-colors whitespace-nowrap px-3 py-2"
-              >
-                {t("more")}
               </button>
               <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#F5F1E8]/60 whitespace-nowrap ml-2">
                 ISSUE Nº {issueNum} · {monthLabel}
