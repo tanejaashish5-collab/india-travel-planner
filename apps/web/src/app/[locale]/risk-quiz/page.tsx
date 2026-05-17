@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { localeAlternates } from "@/lib/seo-utils";
 import { RiskQuiz } from "@/components/risk-quiz";
+import { CinemaStyles } from "@/components/landing-cinema/cinema-styles";
+import { Title } from "@/components/landing-cinema/editorial";
+import { CinematicRelatedRail } from "@/components/cinematic-related-rail";
 
 export const revalidate = 86400;
 
@@ -49,35 +51,106 @@ export default async function RiskQuizPage({ params }: { params: Promise<{ local
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="nakshiq-cinema" style={{ minHeight: "100vh" }}>
+      <CinemaStyles />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppLd) }} />
       <Nav />
-      <main className="mx-auto max-w-3xl px-4 py-12">
-        <div className="mb-6 text-sm text-muted-foreground">
-          <Link href={`/${locale}`} className="hover:text-foreground">NakshIQ</Link>
-          {" → "}
-          <span className="text-foreground">Find your trip</span>
-        </div>
 
-        <h1 className="text-4xl font-semibold mb-3">Find your trip — in five questions</h1>
-        <p className="text-lg text-muted-foreground mb-10 leading-relaxed max-w-2xl">
-          Five questions, sixty seconds. We'll map your answers to the NakshIQ
-          destination-month scoring and hand back the five best matches. No email, no account.
-        </p>
-
-        <RiskQuiz locale={locale} />
-
-        <section className="mt-12 rounded-2xl border border-border bg-card/40 p-6">
-          <h2 className="text-lg font-semibold mb-2">How it maps</h2>
-          <p className="text-sm text-muted-foreground leading-relaxed">
-            Your answers are mapped to a persona (family / solo / couple / adventure / wellness),
-            then queried against the 5,856-row destination-month score table filtered by the month
-            and comfort tier you selected. The top 5 highest-scored matches land here. No remote
-            API call — the matcher runs on the live NakshIQ scoring database.
+      <main
+        id="main-content"
+        className="nq-grain"
+        style={{ position: "relative", padding: "140px 24px 64px" }}
+      >
+        <header style={{ maxWidth: 760, margin: "0 auto 48px" }}>
+          <p
+            className="nq-kicker"
+            style={{
+              color: "var(--vermillion)",
+              marginBottom: 20,
+              letterSpacing: "0.22em",
+            }}
+          >
+            PLANNING TOOLS · FIND YOUR TRIP
           </p>
-        </section>
+          <Title
+            as="h1"
+            className="nq-display"
+            style={{
+              fontFamily: "var(--cinema-display)",
+              fontStyle: "italic",
+              fontWeight: 400,
+              fontSize: "clamp(36px, 6vw, 76px)",
+              lineHeight: 1.0,
+              letterSpacing: "-0.022em",
+              margin: 0,
+              textWrap: "balance",
+            }}
+          >
+            Find your trip — in five questions.
+          </Title>
+          <p
+            style={{
+              fontFamily: "var(--cinema-display)",
+              fontStyle: "italic",
+              fontWeight: 400,
+              fontSize: "clamp(18px, 2vw, 24px)",
+              lineHeight: 1.4,
+              color: "var(--bone-dim)",
+              marginTop: 24,
+              maxWidth: 720,
+            }}
+          >
+            Five questions, sixty seconds. We&apos;ll map your answers to the
+            NakshIQ destination-month scoring and hand back the five best
+            matches. No email, no account.
+          </p>
+        </header>
+
+        <div style={{ maxWidth: 760, margin: "0 auto" }}>
+          <RiskQuiz locale={locale} />
+
+          <section
+            style={{
+              marginTop: 48,
+              padding: 24,
+              border: "1px solid var(--hair)",
+              background: "rgba(245, 241, 232, 0.02)",
+            }}
+          >
+            <h2
+              style={{
+                fontFamily: "var(--cinema-display)",
+                fontStyle: "italic",
+                fontWeight: 500,
+                fontSize: 22,
+                lineHeight: 1.2,
+                color: "var(--bone)",
+                margin: "0 0 12px",
+              }}
+            >
+              How it maps
+            </h2>
+            <p
+              style={{
+                fontFamily: "var(--cinema-ui)",
+                fontSize: 14,
+                lineHeight: 1.7,
+                color: "var(--bone-dim)",
+                margin: 0,
+              }}
+            >
+              Your answers map to a persona (family / solo / couple / adventure /
+              wellness), then query the 5,856-row destination-month score table
+              filtered by the month and comfort tier you selected. Top 5
+              highest-scored matches land here. No remote API call — the matcher
+              runs on the live NakshIQ scoring database.
+            </p>
+          </section>
+        </div>
       </main>
+
+      <CinematicRelatedRail />
       <Footer />
     </div>
   );

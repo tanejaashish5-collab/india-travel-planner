@@ -5,6 +5,8 @@ import { createClient } from "@supabase/supabase-js";
 import { notFound } from "next/navigation";
 import { GapYearPublicView } from "@/components/gap-year-public-view";
 import type { GapYearPlan } from "@/lib/gap-year/types";
+import { CinemaStyles } from "@/components/landing-cinema/cinema-styles";
+import { CinematicRelatedRail } from "@/components/cinematic-related-rail";
 
 export const revalidate = 0;
 export const dynamicParams = true;
@@ -76,11 +78,19 @@ export default async function GapYearShareViewPage({
   if (!found) notFound();
 
   return (
-    <div className="min-h-screen">
+    <div className="nakshiq-cinema" style={{ minHeight: "100vh" }}>
+      <CinemaStyles />
       <Nav />
-      <main>
-        <GapYearPublicView plan={found.plan} locale={locale} />
+      <main
+        id="main-content"
+        className="nq-grain"
+        style={{ position: "relative", padding: "120px 16px 64px" }}
+      >
+        <div style={{ maxWidth: 1100, margin: "0 auto" }}>
+          <GapYearPublicView plan={found.plan} locale={locale} />
+        </div>
       </main>
+      <CinematicRelatedRail />
       <Footer />
     </div>
   );

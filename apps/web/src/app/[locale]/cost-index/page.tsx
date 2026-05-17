@@ -1,10 +1,13 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { createClient } from "@supabase/supabase-js";
 import { localeAlternates } from "@/lib/seo-utils";
 import { CostIndexExplorer } from "@/components/cost-index-explorer";
+import { CinemaStyles } from "@/components/landing-cinema/cinema-styles";
+import { Title } from "@/components/landing-cinema/editorial";
+import { CinematicRelatedRail } from "@/components/cinematic-related-rail";
+import Link from "next/link";
 
 export const revalidate = 3600;
 
@@ -24,11 +27,6 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
 const BASE_URL = "https://www.nakshiq.com";
 
-// All 9 cost-index categories now seeded across 505 destinations × 3 seasons.
-// hostel-dorm + transport-intercity were closed in Sprint 20 via
-// scripts/_seed-cost-index-{hostels,intercity}.mjs. hotel-splurge was
-// closed in Sprint 11 (seed-cost-index-splurge.mjs). Original Sprint-9 seed
-// covers homestay / hotel-mid / food / taxi / permits / activity.
 const CATEGORY_LABELS: Record<string, string> = {
   homestay: "Homestay",
   "hostel-dorm": "Hostel (dorm bed)",
@@ -58,11 +56,6 @@ async function getData() {
 
   const supabase = createClient(url, key);
 
-  // Paginate through the full cost dataset — it's ~7,500 rows, past the
-  // 1000-row default. Trim payload fields to only what the client explorer
-  // renders: months / notes / source_ref are unused in the UI and bloated
-  // the page payload to 3.6MB. Citation tags still live in the DB row for
-  // anyone querying the dataset directly.
   const all: CostRow[] = [];
   const page = 1000;
   let from = 0;
@@ -77,7 +70,6 @@ async function getData() {
     from += page;
   }
 
-  // Pull destination names for display
   const { data: dests } = await supabase
     .from("destinations")
     .select("id, name, state:states(name)")
@@ -97,8 +89,6 @@ export default async function CostIndexPage({ params }: { params: Promise<{ loca
 
   const pageUrl = `${BASE_URL}/${locale}/cost-index`;
 
-  // Dataset JSON-LD — machine-readable so Perplexity/ChatGPT/AIO can cite
-  // specific cost figures as a named dataset rather than a generic blog.
   const datasetLd = {
     "@context": "https://schema.org",
     "@type": "Dataset",
@@ -154,7 +144,6 @@ export default async function CostIndexPage({ params }: { params: Promise<{ loca
     ],
   };
 
-  // Precompute destination name + state lookup
   const destLookup = Object.fromEntries(
     (dests as { id: string; name: string; state: { name?: string }[] | { name?: string } }[]).map((d) => {
       const stateName = Array.isArray(d.state) ? d.state[0]?.name : d.state?.name;
@@ -162,76 +151,200 @@ export default async function CostIndexPage({ params }: { params: Promise<{ loca
     })
   );
 
+  const stats = [
+    { label: "Destinations", value: destCount.toString() },
+    { label: "Cost observations", value: totalRows.toLocaleString() },
+    { label: "Categories", value: Object.keys(CATEGORY_LABELS).length.toString() },
+    { label: "Seasons tracked", value: "3" },
+  ];
+
   return (
-    <div className="min-h-screen">
+    <div className="nakshiq-cinema" style={{ minHeight: "100vh" }}>
+      <CinemaStyles />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(datasetLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
       <Nav />
-      <main className="mx-auto max-w-6xl px-4 py-12">
-        {/* Header */}
-        <div className="mb-6 text-sm text-muted-foreground">
-          <Link href={`/${locale}`} className="hover:text-foreground">NakshIQ</Link>
-          {" → "}
-          <span className="text-foreground">Cost Index</span>
-        </div>
 
-        <h1 className="text-4xl sm:text-5xl font-semibold mb-3">NakshIQ India Travel Cost Index 2026</h1>
-        <p className="text-lg text-muted-foreground mb-8 max-w-3xl leading-relaxed">
-          Season-tagged, source-cited cost data for {destCount} Indian destinations. Homestay,
-          hotel, food, taxi, permits, activities — the numbers travel blogs dodge, tied to the
-          actual season you'd travel in.
-        </p>
-
-        {/* Top-line stats */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8">
-          <div className="rounded-2xl border border-border bg-card/40 p-4">
-            <div className="text-[11px] font-medium uppercase tracking-[0.08em] text-muted-foreground/70">Destinations</div>
-            <div className="text-2xl font-semibold tabular-nums mt-1">{destCount}</div>
-          </div>
-          <div className="rounded-2xl border border-border bg-card/40 p-4">
-            <div className="text-[11px] font-medium uppercase tracking-[0.08em] text-muted-foreground/70">Cost observations</div>
-            <div className="text-2xl font-semibold tabular-nums mt-1">{totalRows.toLocaleString()}</div>
-          </div>
-          <div className="rounded-2xl border border-border bg-card/40 p-4">
-            <div className="text-[11px] font-medium uppercase tracking-[0.08em] text-muted-foreground/70">Categories</div>
-            <div className="text-2xl font-semibold tabular-nums mt-1">{Object.keys(CATEGORY_LABELS).length}</div>
-          </div>
-          <div className="rounded-2xl border border-border bg-card/40 p-4">
-            <div className="text-[11px] font-medium uppercase tracking-[0.08em] text-muted-foreground/70">Seasons tracked</div>
-            <div className="text-2xl font-semibold tabular-nums mt-1">3</div>
-          </div>
-        </div>
-
-        {/* Interactive explorer */}
-        <CostIndexExplorer rows={rows} destLookup={destLookup} categoryLabels={CATEGORY_LABELS} />
-
-        {/* Methodology link */}
-        <section className="mt-10 rounded-2xl border border-border bg-card/40 p-6">
-          <h2 className="text-lg font-semibold mb-2">Methodology</h2>
-          <p className="text-sm text-muted-foreground leading-relaxed mb-3">
-            Every number is composed from a defensible base rate (observed 2026 market prices) and
-            region/altitude/season multipliers (state tourism department tariffs, NHAI taxi rate
-            circulars, IHM hospitality averages). Destinations with permit or park-entry fees carry
-            destination-specific overrides. Each row is tagged with <code className="font-mono text-xs">source_ref</code>.
-          </p>
-          <Link
-            href={`/${locale}/cost-index/methodology`}
-            className="inline-block text-sm font-medium text-primary underline underline-offset-4 hover:text-primary/80"
+      <main
+        id="main-content"
+        className="nq-grain"
+        style={{ position: "relative", padding: "140px 24px 64px" }}
+      >
+        <header style={{ maxWidth: 1100, margin: "0 auto 48px" }}>
+          <p
+            className="nq-kicker"
+            style={{
+              color: "var(--vermillion)",
+              marginBottom: 20,
+              letterSpacing: "0.22em",
+            }}
           >
-            Read full methodology →
-          </Link>
-        </section>
-
-        {/* Data license */}
-        <section className="mt-4 text-xs text-muted-foreground/70 leading-relaxed">
-          <p>
-            <strong className="text-foreground/80">Citations welcomed.</strong> When referencing these
-            figures, please cite as: <em>NakshIQ India Travel Cost Index 2026,
-            nakshiq.com/en/cost-index</em>. Rows carry <code className="font-mono">source_ref</code> tags
-            for provenance.
+            DATASET · 2026 EDITION
           </p>
-        </section>
+          <Title
+            as="h1"
+            className="nq-display"
+            style={{
+              fontFamily: "var(--cinema-display)",
+              fontStyle: "italic",
+              fontWeight: 400,
+              fontSize: "clamp(36px, 6vw, 76px)",
+              lineHeight: 1.0,
+              letterSpacing: "-0.022em",
+              margin: 0,
+              textWrap: "balance",
+            }}
+          >
+            India Travel Cost Index.
+          </Title>
+          <p
+            style={{
+              fontFamily: "var(--cinema-display)",
+              fontStyle: "italic",
+              fontWeight: 400,
+              fontSize: "clamp(18px, 2vw, 24px)",
+              lineHeight: 1.4,
+              color: "var(--bone-dim)",
+              marginTop: 24,
+              maxWidth: 720,
+            }}
+          >
+            Season-tagged, source-cited cost data for {destCount} Indian
+            destinations. Homestay, hotel, food, taxi, permits, activities —
+            the numbers travel blogs dodge, tied to the actual season you&apos;d
+            travel in.
+          </p>
+        </header>
+
+        <div style={{ maxWidth: 1100, margin: "0 auto" }}>
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))",
+              gap: 1,
+              background: "var(--hair)",
+              border: "1px solid var(--hair)",
+              marginBottom: 40,
+            }}
+          >
+            {stats.map((s) => (
+              <div key={s.label} style={{ padding: 18, background: "var(--paper)" }}>
+                <p
+                  style={{
+                    fontFamily: "var(--cinema-mono)",
+                    fontSize: 10,
+                    letterSpacing: "0.22em",
+                    textTransform: "uppercase",
+                    color: "var(--bone-faint)",
+                    margin: 0,
+                  }}
+                >
+                  {s.label}
+                </p>
+                <p
+                  style={{
+                    fontFamily: "var(--cinema-display)",
+                    fontStyle: "italic",
+                    fontWeight: 500,
+                    fontSize: 30,
+                    color: "var(--bone)",
+                    margin: "4px 0 0",
+                    fontVariantNumeric: "tabular-nums",
+                  }}
+                >
+                  {s.value}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <CostIndexExplorer rows={rows} destLookup={destLookup} categoryLabels={CATEGORY_LABELS} />
+
+          <section
+            style={{
+              marginTop: 48,
+              padding: 24,
+              border: "1px solid var(--hair)",
+              background: "rgba(245, 241, 232, 0.02)",
+            }}
+          >
+            <h2
+              style={{
+                fontFamily: "var(--cinema-display)",
+                fontStyle: "italic",
+                fontWeight: 500,
+                fontSize: 22,
+                lineHeight: 1.2,
+                color: "var(--bone)",
+                margin: "0 0 12px",
+              }}
+            >
+              Methodology
+            </h2>
+            <p
+              style={{
+                fontFamily: "var(--cinema-ui)",
+                fontSize: 14,
+                lineHeight: 1.7,
+                color: "var(--bone-dim)",
+                margin: "0 0 12px",
+              }}
+            >
+              Every number is composed from a defensible base rate (observed 2026
+              market prices) and region/altitude/season multipliers (state
+              tourism department tariffs, NHAI taxi rate circulars, IHM
+              hospitality averages). Destinations with permit or park-entry fees
+              carry destination-specific overrides. Each row is tagged with{" "}
+              <code
+                style={{
+                  fontFamily: "var(--cinema-mono)",
+                  fontSize: 12,
+                  color: "var(--bone)",
+                  background: "rgba(245, 241, 232, 0.05)",
+                  padding: "1px 6px",
+                }}
+              >
+                source_ref
+              </code>
+              .
+            </p>
+            <Link
+              href={`/${locale}/cost-index/methodology`}
+              style={{
+                fontFamily: "var(--cinema-mono)",
+                fontSize: 11,
+                letterSpacing: "0.22em",
+                textTransform: "uppercase",
+                color: "var(--vermillion)",
+                textDecoration: "underline",
+                textUnderlineOffset: "3px",
+              }}
+            >
+              Read full methodology →
+            </Link>
+          </section>
+
+          <section
+            style={{
+              marginTop: 16,
+              fontFamily: "var(--cinema-ui)",
+              fontSize: 12,
+              lineHeight: 1.6,
+              color: "var(--bone-faint)",
+            }}
+          >
+            <p style={{ margin: 0 }}>
+              <strong style={{ color: "var(--bone-dim)" }}>Citations welcomed.</strong> When
+              referencing these figures, please cite as: <em>NakshIQ India
+              Travel Cost Index 2026, nakshiq.com/en/cost-index</em>. Rows carry{" "}
+              <code style={{ fontFamily: "var(--cinema-mono)" }}>source_ref</code>{" "}
+              tags for provenance.
+            </p>
+          </section>
+        </div>
       </main>
+
+      <CinematicRelatedRail />
       <Footer />
     </div>
   );

@@ -12,6 +12,9 @@ import {
   type PersonaSlug,
   type DestRecord,
 } from "@/lib/personas";
+import { CinemaStyles } from "@/components/landing-cinema/cinema-styles";
+import { Title } from "@/components/landing-cinema/editorial";
+import { CinematicRelatedRail } from "@/components/cinematic-related-rail";
 
 export const revalidate = 3600;
 
@@ -55,7 +58,6 @@ async function fetchDestinations(): Promise<DestRecord[]> {
 
   const supabase = createClient(url, key);
 
-  // Paginate past 1000-row default
   const all: DestRecord[] = [];
   const page = 1000;
   let from = 0;
@@ -142,14 +144,10 @@ export default async function PersonaHubPage({
   const all = await fetchDestinations();
   const matched = matchDestinationsForPersona(config, all);
 
-  // Stat-led hero context — one inline numeric line per persona, computed
-  // live from the matched set so it can't drift from reality. No fabricated
-  // .gov.in citations; the data is NakshIQ's own corpus.
   const heroStat = computeHeroStat(persona as PersonaSlug, all, matched);
 
   const pageUrl = `${BASE_URL}/${locale}/for/${persona}`;
 
-  // Schema.org — Article + FAQPage + ItemList (top 20 destinations)
   const articleLd = {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -205,7 +203,6 @@ export default async function PersonaHubPage({
     ],
   };
 
-  // Group matched destinations by state for visual rendering
   const byState = new Map<string, DestRecord[]>();
   for (const d of matched) {
     const s = d.state_id ?? "unknown";
@@ -215,117 +212,365 @@ export default async function PersonaHubPage({
   const states = Array.from(byState.entries()).sort((a, b) => b[1].length - a[1].length);
 
   return (
-    <div className="min-h-screen">
+    <div className="nakshiq-cinema" style={{ minHeight: "100vh" }}>
+      <CinemaStyles />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
       <Nav />
-      <main className="mx-auto max-w-4xl px-4 py-12">
-        <div className="mb-6 text-sm text-muted-foreground">
-          <Link href={`/${locale}`} className="hover:text-foreground">NakshIQ</Link>
-          {" → "}
-          <Link href={`/${locale}/explore-by-persona`} className="hover:text-foreground">For</Link>
-          {" → "}
-          <span className="text-foreground">{isHindi ? config.labelHindi : config.label}</span>
-        </div>
 
-        {/* Hero */}
-        <h1 className="text-4xl sm:text-5xl font-semibold mb-3">{isHindi ? config.titleHindi : config.title}</h1>
-        <p className="text-lg text-muted-foreground mb-4 leading-relaxed">
-          {isHindi ? config.taglineHindi : config.tagline}
-        </p>
-        <p className="text-sm text-muted-foreground/90 mb-6 leading-relaxed max-w-3xl">
-          {config.description}
-        </p>
-
-        {heroStat && (
-          <p className="text-sm tabular-nums text-foreground/80 mb-10 leading-relaxed max-w-3xl border-l-2 border-primary/40 pl-4">
-            {heroStat}
+      <main
+        id="main-content"
+        className="nq-grain"
+        style={{ position: "relative", padding: "140px 24px 64px" }}
+      >
+        <header style={{ maxWidth: 900, margin: "0 auto 48px" }}>
+          <p
+            className="nq-kicker"
+            style={{
+              color: "var(--vermillion)",
+              marginBottom: 20,
+              letterSpacing: "0.22em",
+            }}
+          >
+            FOR · {config.label.toUpperCase()} · {String(matched.length).padStart(3, "0")} DESTINATIONS
           </p>
-        )}
+          <Title
+            as="h1"
+            className="nq-display"
+            style={{
+              fontFamily: "var(--cinema-display)",
+              fontStyle: "italic",
+              fontWeight: 400,
+              fontSize: "clamp(36px, 6vw, 76px)",
+              lineHeight: 1.0,
+              letterSpacing: "-0.022em",
+              margin: 0,
+              textWrap: "balance",
+            }}
+          >
+            {isHindi ? config.titleHindi : config.title}.
+          </Title>
+          <p
+            style={{
+              fontFamily: "var(--cinema-display)",
+              fontStyle: "italic",
+              fontWeight: 400,
+              fontSize: "clamp(18px, 2vw, 24px)",
+              lineHeight: 1.4,
+              color: "var(--bone-dim)",
+              marginTop: 24,
+              maxWidth: 720,
+            }}
+          >
+            {isHindi ? config.taglineHindi : config.tagline}
+          </p>
+          <p
+            style={{
+              fontFamily: "var(--cinema-ui)",
+              fontSize: 14,
+              lineHeight: 1.7,
+              color: "var(--bone-dim)",
+              marginTop: 16,
+              maxWidth: 720,
+            }}
+          >
+            {config.description}
+          </p>
 
-        {/* Top-line stats */}
-        <div className="grid grid-cols-2 gap-3 mb-10">
-          <div className="rounded-2xl border border-border bg-card/40 p-4">
-            <div className="text-[11px] font-medium uppercase tracking-[0.08em] text-muted-foreground/70">Destinations matched</div>
-            <div className="text-3xl font-semibold tabular-nums mt-1">{matched.length}</div>
+          {heroStat && (
+            <p
+              style={{
+                fontFamily: "var(--cinema-ui)",
+                fontSize: 14,
+                lineHeight: 1.7,
+                color: "var(--bone)",
+                marginTop: 24,
+                paddingLeft: 16,
+                borderLeft: "2px solid var(--vermillion)",
+                maxWidth: 720,
+                fontVariantNumeric: "tabular-nums",
+              }}
+            >
+              {heroStat}
+            </p>
+          )}
+        </header>
+
+        <div style={{ maxWidth: 900, margin: "0 auto" }}>
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
+              gap: 1,
+              background: "var(--hair)",
+              border: "1px solid var(--hair)",
+              marginBottom: 56,
+            }}
+          >
+            <div style={{ padding: 20, background: "var(--paper)" }}>
+              <p
+                style={{
+                  fontFamily: "var(--cinema-mono)",
+                  fontSize: 10,
+                  letterSpacing: "0.22em",
+                  textTransform: "uppercase",
+                  color: "var(--bone-faint)",
+                  margin: 0,
+                }}
+              >
+                Destinations matched
+              </p>
+              <p
+                style={{
+                  fontFamily: "var(--cinema-display)",
+                  fontStyle: "italic",
+                  fontWeight: 500,
+                  fontSize: 36,
+                  color: "var(--bone)",
+                  margin: "4px 0 0",
+                  fontVariantNumeric: "tabular-nums",
+                }}
+              >
+                {matched.length}
+              </p>
+            </div>
+            <div style={{ padding: 20, background: "var(--paper)" }}>
+              <p
+                style={{
+                  fontFamily: "var(--cinema-mono)",
+                  fontSize: 10,
+                  letterSpacing: "0.22em",
+                  textTransform: "uppercase",
+                  color: "var(--bone-faint)",
+                  margin: 0,
+                }}
+              >
+                States covered
+              </p>
+              <p
+                style={{
+                  fontFamily: "var(--cinema-display)",
+                  fontStyle: "italic",
+                  fontWeight: 500,
+                  fontSize: 36,
+                  color: "var(--bone)",
+                  margin: "4px 0 0",
+                  fontVariantNumeric: "tabular-nums",
+                }}
+              >
+                {states.length}
+              </p>
+            </div>
           </div>
-          <div className="rounded-2xl border border-border bg-card/40 p-4">
-            <div className="text-[11px] font-medium uppercase tracking-[0.08em] text-muted-foreground/70">States covered</div>
-            <div className="text-3xl font-semibold tabular-nums mt-1">{states.length}</div>
-          </div>
-        </div>
 
-        {/* Destinations grouped by state */}
-        <section className="mb-12">
-          <h2 className="text-2xl font-semibold mb-6">
-            {matched.length > 0
-              ? (isHindi ? `${matched.length} मिलान स्थल` : `${matched.length} matching destinations`)
-              : (isHindi ? "कोई स्थल मेल नहीं खाता" : "No destinations currently match this persona")}
-          </h2>
+          <section style={{ marginBottom: 56 }}>
+            <h2
+              style={{
+                fontFamily: "var(--cinema-display)",
+                fontStyle: "italic",
+                fontWeight: 500,
+                fontSize: 32,
+                lineHeight: 1.1,
+                color: "var(--bone)",
+                margin: "0 0 24px",
+              }}
+            >
+              {matched.length > 0
+                ? (isHindi ? `${matched.length} मिलान स्थल` : `${matched.length} matching destinations`)
+                : (isHindi ? "कोई स्थल मेल नहीं खाता" : "No destinations currently match this persona")}
+            </h2>
 
-          {states.length > 0 ? (
-            <div className="space-y-8">
-              {states.map(([stateId, destsInState]) => (
-                <div key={stateId}>
-                  <h3 className="text-sm font-semibold uppercase tracking-[0.08em] text-muted-foreground/70 mb-3 capitalize">
-                    {stateId.replace(/-/g, " ")} · {destsInState.length}
-                  </h3>
-                  <div className="grid gap-2 sm:grid-cols-2">
-                    {destsInState.map((d) => (
-                      <Link
-                        key={d.id}
-                        href={`/${locale}/destination/${d.id}`}
-                        className="rounded-xl border border-border bg-card/40 p-4 hover:border-primary/40 transition-colors"
-                      >
-                        <div className="font-semibold">{d.name}</div>
-                        {d.tagline && (
-                          <p className="mt-1 text-xs text-muted-foreground line-clamp-2">{d.tagline}</p>
-                        )}
-                      </Link>
-                    ))}
+            {states.length > 0 ? (
+              <div style={{ display: "flex", flexDirection: "column", gap: 32 }}>
+                {states.map(([stateId, destsInState]) => (
+                  <div key={stateId}>
+                    <p
+                      className="nq-kicker"
+                      style={{
+                        color: "var(--vermillion)",
+                        marginBottom: 12,
+                        letterSpacing: "0.18em",
+                        textTransform: "uppercase",
+                      }}
+                    >
+                      {stateId.replace(/-/g, " ")} · {destsInState.length}
+                    </p>
+                    <div
+                      style={{
+                        display: "grid",
+                        gridTemplateColumns: "repeat(auto-fill, minmax(240px, 1fr))",
+                        gap: 1,
+                        background: "var(--hair)",
+                        border: "1px solid var(--hair)",
+                      }}
+                    >
+                      {destsInState.map((d) => (
+                        <Link
+                          key={d.id}
+                          href={`/${locale}/destination/${d.id}`}
+                          style={{
+                            display: "block",
+                            padding: 16,
+                            background: "var(--paper)",
+                            textDecoration: "none",
+                          }}
+                        >
+                          <p
+                            style={{
+                              fontFamily: "var(--cinema-display)",
+                              fontStyle: "italic",
+                              fontWeight: 500,
+                              fontSize: 18,
+                              color: "var(--bone)",
+                              margin: "0 0 4px",
+                            }}
+                          >
+                            {d.name}
+                          </p>
+                          {d.tagline && (
+                            <p
+                              style={{
+                                fontFamily: "var(--cinema-ui)",
+                                fontSize: 12,
+                                lineHeight: 1.5,
+                                color: "var(--bone-dim)",
+                                margin: 0,
+                                display: "-webkit-box",
+                                WebkitLineClamp: 2,
+                                WebkitBoxOrient: "vertical",
+                                overflow: "hidden",
+                              }}
+                            >
+                              {d.tagline}
+                            </p>
+                          )}
+                        </Link>
+                      ))}
+                    </div>
                   </div>
+                ))}
+              </div>
+            ) : (
+              <p
+                style={{
+                  fontFamily: "var(--cinema-ui)",
+                  fontSize: 14,
+                  color: "var(--bone-dim)",
+                  margin: 0,
+                }}
+              >
+                Editorial is actively expanding this persona. Check back as coverage grows, or
+                browse{" "}
+                <Link
+                  href={`/${locale}/explore`}
+                  style={{ color: "var(--vermillion)", textDecoration: "underline", textUnderlineOffset: "3px" }}
+                >
+                  all 505 destinations
+                </Link>
+                .
+              </p>
+            )}
+          </section>
+
+          <section style={{ marginBottom: 48 }}>
+            <h2
+              style={{
+                fontFamily: "var(--cinema-display)",
+                fontStyle: "italic",
+                fontWeight: 500,
+                fontSize: 32,
+                lineHeight: 1.1,
+                color: "var(--bone)",
+                margin: "0 0 24px",
+              }}
+            >
+              Frequently asked
+            </h2>
+            <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
+              {config.faq.map((f, i) => (
+                <div
+                  key={i}
+                  style={{
+                    paddingTop: i === 0 ? 0 : 16,
+                    borderTop: i === 0 ? "none" : "1px solid var(--hair)",
+                  }}
+                >
+                  <h3
+                    style={{
+                      fontFamily: "var(--cinema-display)",
+                      fontStyle: "italic",
+                      fontWeight: 500,
+                      fontSize: 19,
+                      lineHeight: 1.3,
+                      color: "var(--bone)",
+                      margin: "0 0 8px",
+                    }}
+                  >
+                    {f.q}
+                  </h3>
+                  <p
+                    style={{
+                      fontFamily: "var(--cinema-ui)",
+                      fontSize: 14,
+                      lineHeight: 1.7,
+                      color: "var(--bone-dim)",
+                      margin: 0,
+                    }}
+                  >
+                    {f.a}
+                  </p>
                 </div>
               ))}
             </div>
-          ) : (
-            <p className="text-sm text-muted-foreground">
-              Editorial is actively expanding this persona. Check back as the coverage grows, or
-              browse <Link href={`/${locale}/explore`} className="underline hover:text-primary">all 505 destinations</Link>.
-            </p>
-          )}
-        </section>
+          </section>
 
-        {/* FAQ */}
-        <section className="mb-12">
-          <h2 className="text-2xl font-semibold mb-6">Frequently asked</h2>
-          <div className="space-y-6">
-            {config.faq.map((f, i) => (
-              <div key={i} className="border-b border-border/50 pb-6 last:border-0">
-                <h3 className="text-lg font-semibold mb-2">{f.q}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{f.a}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* Cross-links to other personas */}
-        <section className="rounded-2xl border border-border bg-card/40 p-6">
-          <h2 className="text-lg font-semibold mb-4">Browse other personas</h2>
-          <div className="flex flex-wrap gap-2">
-            {PERSONA_ORDER.filter((p) => p !== persona).map((p) => (
-              <Link
-                key={p}
-                href={`/${locale}/for/${p}`}
-                className="rounded-full border border-border bg-background/40 px-3 py-1.5 text-xs font-medium hover:border-primary/40 hover:text-primary transition-colors"
-              >
-                {PERSONAS[p].label}
-              </Link>
-            ))}
-          </div>
-        </section>
+          <section
+            style={{
+              padding: 24,
+              border: "1px solid var(--hair)",
+              background: "rgba(245, 241, 232, 0.02)",
+            }}
+          >
+            <h2
+              style={{
+                fontFamily: "var(--cinema-display)",
+                fontStyle: "italic",
+                fontWeight: 500,
+                fontSize: 22,
+                lineHeight: 1.2,
+                color: "var(--bone)",
+                margin: "0 0 16px",
+              }}
+            >
+              Browse other personas
+            </h2>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
+              {PERSONA_ORDER.filter((p) => p !== persona).map((p) => (
+                <Link
+                  key={p}
+                  href={`/${locale}/for/${p}`}
+                  style={{
+                    fontFamily: "var(--cinema-mono)",
+                    fontSize: 11,
+                    letterSpacing: "0.14em",
+                    textTransform: "uppercase",
+                    padding: "6px 12px",
+                    border: "1px solid var(--hair)",
+                    color: "var(--bone-dim)",
+                    textDecoration: "none",
+                  }}
+                >
+                  {PERSONAS[p].label}
+                </Link>
+              ))}
+            </div>
+          </section>
+        </div>
       </main>
+
+      <CinematicRelatedRail />
       <Footer />
     </div>
   );

@@ -5,6 +5,9 @@ import { Footer } from "@/components/footer";
 import { TrendingMonthPages } from "@/components/trending-month-pages";
 import { createClient } from "@supabase/supabase-js";
 import { currentMonthIST, currentMonthLongIST } from "@itp/shared";
+import { CinemaStyles } from "@/components/landing-cinema/cinema-styles";
+import { Title } from "@/components/landing-cinema/editorial";
+import { CinematicRelatedRail } from "@/components/cinematic-related-rail";
 
 export const revalidate = 86400;
 
@@ -31,8 +34,6 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  // Layout's title.template appends " | NakshIQ" — don't hardcode the suffix
-  // here or it duplicates ("… | NakshIQ | NakshIQ"). Phase 2 deep-QA finding.
   const title = "Where to Go in India — by Month";
   const description = "Pick a month and see India's 5/5 destinations for that window. Honest verdicts, weather windows, and skip-list flags. 460+ destinations scored.";
   const canonical = `${SITE}/${locale}/where-to-go`;
@@ -57,16 +58,6 @@ async function getMonthCounts(): Promise<Record<number, { go: number; skip: numb
   if (!url || !key) return {};
   const supabase = createClient(url, key);
 
-  // destination_months has ~5,892 rows (491 dests × 12 months). Supabase
-  // server-enforces a 1000-row cap on any .select() — even .range(0, 9999)
-  // does NOT bypass it. So a naive .gte("score", 4) returns only the first
-  // 1000 matches, which all sit in Jan–Mar (alphabetic dest_id order),
-  // zeroing every month from April onward.
-  //
-  // Fix: 24 parallel head:true count queries — Postgres returns count(*)
-  // per (month, bucket) as a single number with no row-cap exposure.
-  // Note: select('*', ...) — select('id', ...) returns count=null due to
-  // a PostgREST quirk we hit while debugging.
   const countFor = async (m: number, bucket: "go" | "skip") => {
     const q = supabase
       .from("destination_months")
@@ -99,90 +90,285 @@ export default async function WhereToGoIndex({
   const currentMonth = currentMonthIST();
   const currentLong = currentMonthLongIST();
 
+  const breadcrumbLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/${locale}` },
+      { "@type": "ListItem", position: 2, name: "Where to go", item: `${SITE}/${locale}/where-to-go` },
+    ],
+  };
+
   return (
-    <div className="min-h-screen bg-background">
+    <div className="nakshiq-cinema" style={{ minHeight: "100vh" }}>
+      <CinemaStyles />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+      />
       <Nav />
-      <main className="mx-auto max-w-5xl px-4 py-12 sm:py-16">
-        {/* Header */}
-        <div className="mb-10">
-          <p className="text-xs font-semibold uppercase tracking-[0.12em] text-primary">Travel calendar</p>
-          <h1 className="mt-2 text-3xl sm:text-4xl font-semibold tracking-tight text-foreground">
-            Where to Go in India — by Month
-          </h1>
-          <p className="mt-3 max-w-2xl text-muted-foreground leading-relaxed">
-            Pick a month. See the destinations that score 4+ out of 5 for that window — and the ones to skip.
-            Verdicts come from weather, crowds, road conditions, and on-the-ground notes; not from sponsored picks.
+
+      <main
+        id="main-content"
+        className="nq-grain"
+        style={{ position: "relative", padding: "140px 24px 64px" }}
+      >
+        <header style={{ maxWidth: 1100, margin: "0 auto 48px" }}>
+          <p
+            className="nq-kicker"
+            style={{
+              color: "var(--vermillion)",
+              marginBottom: 20,
+              letterSpacing: "0.22em",
+            }}
+          >
+            TRAVEL CALENDAR · 12 MONTHS
           </p>
-        </div>
+          <Title
+            as="h1"
+            className="nq-display"
+            style={{
+              fontFamily: "var(--cinema-display)",
+              fontStyle: "italic",
+              fontWeight: 400,
+              fontSize: "clamp(36px, 6vw, 76px)",
+              lineHeight: 1.0,
+              letterSpacing: "-0.022em",
+              margin: 0,
+              textWrap: "balance",
+            }}
+          >
+            Where to go in India.
+          </Title>
+          <p
+            style={{
+              fontFamily: "var(--cinema-display)",
+              fontStyle: "italic",
+              fontWeight: 400,
+              fontSize: "clamp(18px, 2vw, 24px)",
+              lineHeight: 1.4,
+              color: "var(--bone-dim)",
+              marginTop: 24,
+              maxWidth: 720,
+            }}
+          >
+            Pick a month. See the destinations that score 4+ out of 5 for that
+            window — and the ones to skip. Verdicts come from weather, crowds,
+            road conditions, and on-the-ground notes; not from sponsored picks.
+          </p>
+        </header>
 
-        {/* Current month CTA */}
-        <Link
-          href={`/${locale}/where-to-go/${MONTHS[currentMonth - 1].slug}`}
-          className="mb-8 flex items-center justify-between rounded-2xl border border-primary/30 bg-primary/5 p-5 hover:border-primary/50 transition-colors"
-        >
-          <div>
-            <div className="text-xs font-semibold uppercase tracking-[0.12em] text-primary">Travelling now?</div>
-            <div className="mt-1 text-lg font-semibold text-foreground">
-              See the {counts[currentMonth]?.go ?? 0} 5/5 destinations for {currentLong}
-            </div>
-          </div>
-          <span className="text-primary text-xl" aria-hidden>→</span>
-        </Link>
-
-        {/* 12-month grid */}
-        <div className="grid gap-3 sm:gap-4 grid-cols-2 sm:grid-cols-3 md:grid-cols-4">
-          {MONTHS.map((m) => {
-            const c = counts[m.num] ?? { go: 0, skip: 0 };
-            const isCurrent = m.num === currentMonth;
-            return (
-              <Link
-                key={m.slug}
-                href={`/${locale}/where-to-go/${m.slug}`}
-                className={`group rounded-2xl border p-4 sm:p-5 transition-all ${
-                  isCurrent
-                    ? "border-primary/50 bg-primary/5 shadow-sm"
-                    : "border-border bg-card hover:border-primary/40 hover:bg-primary/5"
-                }`}
+        <div style={{ maxWidth: 1100, margin: "0 auto" }}>
+          {/* Current month CTA */}
+          <Link
+            href={`/${locale}/where-to-go/${MONTHS[currentMonth - 1].slug}`}
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+              gap: 16,
+              padding: 24,
+              marginBottom: 32,
+              border: "1px solid var(--vermillion)",
+              background: "rgba(229, 86, 66, 0.08)",
+              textDecoration: "none",
+            }}
+          >
+            <div>
+              <p
+                className="nq-kicker"
+                style={{
+                  color: "var(--vermillion)",
+                  marginBottom: 8,
+                  letterSpacing: "0.22em",
+                }}
               >
-                <div className="flex items-baseline justify-between mb-3">
-                  <h2 className="text-lg font-semibold text-foreground">{m.long}</h2>
-                  {isCurrent && (
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-primary">Now</span>
-                  )}
-                </div>
-                <div className="space-y-1">
-                  <div className="flex items-baseline gap-1.5">
-                    <span className="text-2xl font-mono font-bold text-emerald-400">{c.go}</span>
-                    <span className="text-xs text-muted-foreground">5/5 picks</span>
+                TRAVELLING NOW
+              </p>
+              <p
+                style={{
+                  fontFamily: "var(--cinema-display)",
+                  fontStyle: "italic",
+                  fontWeight: 500,
+                  fontSize: 22,
+                  color: "var(--bone)",
+                  margin: 0,
+                }}
+              >
+                See the {counts[currentMonth]?.go ?? 0} 5/5 destinations for {currentLong}
+              </p>
+            </div>
+            <span style={{ fontSize: 22, color: "var(--vermillion)" }} aria-hidden>→</span>
+          </Link>
+
+          {/* 12-month grid */}
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))",
+              gap: 1,
+              background: "var(--hair)",
+              border: "1px solid var(--hair)",
+              marginBottom: 48,
+            }}
+          >
+            {MONTHS.map((m) => {
+              const c = counts[m.num] ?? { go: 0, skip: 0 };
+              const isCurrent = m.num === currentMonth;
+              return (
+                <Link
+                  key={m.slug}
+                  href={`/${locale}/where-to-go/${m.slug}`}
+                  style={{
+                    display: "block",
+                    padding: 20,
+                    background: isCurrent ? "rgba(229, 86, 66, 0.06)" : "var(--paper)",
+                    textDecoration: "none",
+                  }}
+                >
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "baseline",
+                      justifyContent: "space-between",
+                      marginBottom: 12,
+                    }}
+                  >
+                    <h2
+                      style={{
+                        fontFamily: "var(--cinema-display)",
+                        fontStyle: "italic",
+                        fontWeight: 500,
+                        fontSize: 22,
+                        color: "var(--bone)",
+                        margin: 0,
+                      }}
+                    >
+                      {m.long}
+                    </h2>
+                    {isCurrent && (
+                      <span
+                        style={{
+                          fontFamily: "var(--cinema-mono)",
+                          fontSize: 9,
+                          letterSpacing: "0.22em",
+                          textTransform: "uppercase",
+                          color: "var(--vermillion)",
+                          fontWeight: 700,
+                        }}
+                      >
+                        Now
+                      </span>
+                    )}
                   </div>
-                  {c.skip > 0 && (
-                    <div className="flex items-baseline gap-1.5">
-                      <span className="text-sm font-mono text-red-400">{c.skip}</span>
-                      <span className="text-xs text-muted-foreground">to skip</span>
+                  <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
+                    <div style={{ display: "flex", alignItems: "baseline", gap: 8 }}>
+                      <span
+                        style={{
+                          fontFamily: "var(--cinema-display)",
+                          fontStyle: "italic",
+                          fontWeight: 500,
+                          fontSize: 26,
+                          color: "var(--bone)",
+                          fontVariantNumeric: "tabular-nums",
+                        }}
+                      >
+                        {c.go}
+                      </span>
+                      <span
+                        style={{
+                          fontFamily: "var(--cinema-mono)",
+                          fontSize: 10,
+                          letterSpacing: "0.18em",
+                          textTransform: "uppercase",
+                          color: "var(--bone-faint)",
+                        }}
+                      >
+                        5/5 picks
+                      </span>
                     </div>
-                  )}
-                </div>
+                    {c.skip > 0 && (
+                      <div style={{ display: "flex", alignItems: "baseline", gap: 8 }}>
+                        <span
+                          style={{
+                            fontFamily: "var(--cinema-mono)",
+                            fontSize: 14,
+                            color: "var(--vermillion)",
+                            fontVariantNumeric: "tabular-nums",
+                          }}
+                        >
+                          {c.skip}
+                        </span>
+                        <span
+                          style={{
+                            fontFamily: "var(--cinema-mono)",
+                            fontSize: 10,
+                            letterSpacing: "0.18em",
+                            textTransform: "uppercase",
+                            color: "var(--bone-faint)",
+                          }}
+                        >
+                          to skip
+                        </span>
+                      </div>
+                    )}
+                  </div>
+                </Link>
+              );
+            })}
+          </div>
+
+          <TrendingMonthPages locale={locale} />
+
+          <div
+            style={{
+              marginTop: 48,
+              padding: 24,
+              border: "1px solid var(--hair)",
+              background: "rgba(245, 241, 232, 0.02)",
+            }}
+          >
+            <p
+              className="nq-kicker"
+              style={{
+                color: "var(--vermillion)",
+                marginBottom: 8,
+                letterSpacing: "0.22em",
+              }}
+            >
+              HOW SCORES WORK
+            </p>
+            <p
+              style={{
+                fontFamily: "var(--cinema-ui)",
+                fontSize: 14,
+                lineHeight: 1.7,
+                color: "var(--bone-dim)",
+                margin: 0,
+              }}
+            >
+              Each destination is scored 0–5 for every month based on weather
+              (precipitation, temperature, daylight), road accessibility,
+              festival/permit windows, and altitude considerations. 4–5 means
+              &ldquo;go now&rdquo;. 0–1 surfaces as a skip with a specific
+              reason. Methodology and source data at{" "}
+              <Link
+                href={`/${locale}/methodology`}
+                style={{
+                  color: "var(--vermillion)",
+                  textDecoration: "underline",
+                  textUnderlineOffset: "3px",
+                }}
+              >
+                /methodology
               </Link>
-            );
-          })}
-        </div>
-
-        {/* Trending dest×month — internal-link rail to high-impression page-2 set */}
-        <TrendingMonthPages locale={locale} />
-
-        {/* Methodology footnote */}
-        <div className="mt-12 rounded-xl border border-border bg-muted/20 p-5 text-sm text-muted-foreground leading-relaxed">
-          <p className="font-medium text-foreground mb-1">How scores work</p>
-          <p>
-            Each destination is scored 0–5 for every month based on weather (precipitation, temperature, daylight),
-            road accessibility, festival/permit windows, and altitude considerations. 4–5 means &ldquo;go now&rdquo;.
-            0–1 surfaces as a skip with a specific reason. Methodology and source data are at{" "}
-            <Link href={`/${locale}/methodology`} className="text-primary underline-offset-2 hover:underline">
-              /methodology
-            </Link>.
-          </p>
+              .
+            </p>
+          </div>
         </div>
       </main>
+
+      <CinematicRelatedRail />
       <Footer />
     </div>
   );

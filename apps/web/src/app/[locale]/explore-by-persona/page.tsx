@@ -10,6 +10,9 @@ import {
   matchDestinationsForPersona,
   type DestRecord,
 } from "@/lib/personas";
+import { CinemaStyles } from "@/components/landing-cinema/cinema-styles";
+import { Title } from "@/components/landing-cinema/editorial";
+import { CinematicRelatedRail } from "@/components/cinematic-related-rail";
 
 export const revalidate = 3600;
 
@@ -66,7 +69,6 @@ export default async function ExploreByPersonaPage({ params }: { params: Promise
 
   const all = await fetchDestinations();
 
-  // Compute counts + sample dests per persona
   const personaStats = PERSONA_ORDER.map((slug) => {
     const config = PERSONAS[slug];
     const matched = matchDestinationsForPersona(config, all);
@@ -108,83 +110,222 @@ export default async function ExploreByPersonaPage({ params }: { params: Promise
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="nakshiq-cinema" style={{ minHeight: "100vh" }}>
+      <CinemaStyles />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
       <Nav />
-      <main className="mx-auto max-w-5xl px-4 py-12">
-        <div className="mb-6 text-sm text-muted-foreground">
-          <Link href={`/${locale}`} className="hover:text-foreground">NakshIQ</Link>
-          {" → "}
-          <span className="text-foreground">{isHindi ? "व्यक्तित्व के अनुसार खोजें" : "Explore by persona"}</span>
-        </div>
 
-        <h1 className="text-4xl sm:text-5xl font-semibold mb-3">
-          {isHindi ? "व्यक्तित्व के अनुसार भारत खोजें" : "Explore India by persona"}
-        </h1>
-        <p className="text-lg text-muted-foreground mb-4 leading-relaxed max-w-3xl">
-          {isHindi
-            ? "एक ही सूची में सबके लिए यात्रा नहीं होती। परिवार, बाइकर, एकल महिला यात्री — हर एक को अलग चाहिए।"
-            : "Travel isn't one-size-fits-all. Families want medical access in range. Bikers want the passes. Solo female travelers want month-by-month safety. Ten personas, each with a dedicated hub and real database matching."}
-        </p>
-        <p className="text-sm text-muted-foreground/80 mb-10 max-w-3xl">
-          {isHindi
-            ? "हर पिक वास्तविक डेटाबेस मिलान है — persona_blocks, best_for_segments, या kids_friendly फ़ील्ड से। कोई हाथ-क्यूरेटेड सूची नहीं, कोई संपादकीय पक्षपात नहीं।"
-            : "Every match is sourced from real destination data — persona_blocks JSONB verdicts, best_for_segments keyword matching, or base attributes. No hand-curated listicles. See methodology for how we filter."}
-        </p>
-
-        <div className="grid gap-4 sm:grid-cols-2">
-          {personaStats.map((p) => (
-            <Link
-              key={p.slug}
-              href={`/${locale}/for/${p.slug}`}
-              className="block rounded-2xl border border-border bg-card/40 p-6 hover:border-primary/50 transition-colors"
-            >
-              <div className="flex items-baseline justify-between gap-2 mb-2">
-                <h2 className="text-xl font-semibold">{isHindi ? p.config.labelHindi : p.config.label}</h2>
-                <span className="shrink-0 text-xs font-mono tracking-[0.08em] uppercase text-muted-foreground">
-                  {p.count} {p.count === 1 ? "dest" : "dests"}
-                </span>
-              </div>
-              <p className="text-sm text-muted-foreground mb-4 leading-relaxed line-clamp-2">
-                {isHindi ? p.config.taglineHindi : p.config.tagline}
-              </p>
-              {p.samples.length > 0 && (
-                <div className="flex flex-wrap gap-1.5">
-                  {p.samples.map((s) => (
-                    <span
-                      key={s.id}
-                      className="rounded-full border border-border/60 bg-background/40 px-2 py-0.5 text-[11px] text-muted-foreground"
-                    >
-                      {s.name}
-                    </span>
-                  ))}
-                  {p.count > 3 && (
-                    <span className="text-[11px] text-muted-foreground/70 self-center">+{p.count - 3} more</span>
-                  )}
-                </div>
-              )}
-            </Link>
-          ))}
-        </div>
-
-        <section className="mt-12 rounded-2xl border border-border bg-card/40 p-6">
-          <h2 className="text-lg font-semibold mb-2">
-            {isHindi ? "मेल कैसे होता है" : "How the matching works"}
-          </h2>
-          <p className="text-sm text-muted-foreground leading-relaxed mb-3">
-            {isHindi
-              ? "प्रत्येक स्थल के पास पहले से ही 6 व्यक्तित्व ब्लॉक (biker/nomad/family/elderly/solo_female/photographer) हैं जिनमें हर एक के लिए स्पष्ट GO/NO-GO निर्णय है। हम उन ब्लॉकों को पहले पढ़ते हैं, फिर best_for_segments में कीवर्ड मिलान, फिर बेस विशेषताएँ (बच्चे-अनुकूलता, कठिनाई, ऊँचाई)।"
-              : "Every destination already carries 6 persona blocks (biker / nomad / family / elderly / solo_female / photographer) with explicit GO or NO-GO verdicts written by the editorial team. We read those first, then keyword-match best_for_segments, then fall back to base attributes (kids rating, difficulty, elevation) for edge cases. No hand-curated lists, no editorial favorites — just deterministic filtering from verified data."}
-          </p>
-          <Link
-            href={`/${locale}/methodology`}
-            className="text-sm font-medium text-primary underline underline-offset-4 hover:text-primary/80"
+      <main
+        id="main-content"
+        className="nq-grain"
+        style={{ position: "relative", padding: "140px 24px 64px" }}
+      >
+        <header style={{ maxWidth: 1100, margin: "0 auto 48px" }}>
+          <p
+            className="nq-kicker"
+            style={{
+              color: "var(--vermillion)",
+              marginBottom: 20,
+              letterSpacing: "0.22em",
+            }}
           >
-            {isHindi ? "पूरी कार्यप्रणाली पढ़ें →" : "Read the full methodology →"}
-          </Link>
-        </section>
+            EXPLORE · {String(PERSONA_ORDER.length).padStart(2, "0")} PERSONAS
+          </p>
+          <Title
+            as="h1"
+            className="nq-display"
+            style={{
+              fontFamily: "var(--cinema-display)",
+              fontStyle: "italic",
+              fontWeight: 400,
+              fontSize: "clamp(36px, 6vw, 76px)",
+              lineHeight: 1.0,
+              letterSpacing: "-0.022em",
+              margin: 0,
+              textWrap: "balance",
+            }}
+          >
+            {isHindi ? "व्यक्तित्व के अनुसार भारत खोजें" : "Explore India by persona."}
+          </Title>
+          <p
+            style={{
+              fontFamily: "var(--cinema-display)",
+              fontStyle: "italic",
+              fontWeight: 400,
+              fontSize: "clamp(18px, 2vw, 24px)",
+              lineHeight: 1.4,
+              color: "var(--bone-dim)",
+              marginTop: 24,
+              maxWidth: 720,
+            }}
+          >
+            {isHindi
+              ? "एक ही सूची में सबके लिए यात्रा नहीं होती। परिवार, बाइकर, एकल महिला यात्री — हर एक को अलग चाहिए।"
+              : "Travel isn't one-size-fits-all. Families want medical access in range. Bikers want the passes. Solo female travelers want month-by-month safety. Ten personas, each with a dedicated hub and real database matching."}
+          </p>
+        </header>
+
+        <div style={{ maxWidth: 1100, margin: "0 auto" }}>
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fill, minmax(320px, 1fr))",
+              gap: 1,
+              background: "var(--hair)",
+              border: "1px solid var(--hair)",
+              marginBottom: 40,
+            }}
+          >
+            {personaStats.map((p) => (
+              <Link
+                key={p.slug}
+                href={`/${locale}/for/${p.slug}`}
+                style={{
+                  display: "block",
+                  padding: 24,
+                  background: "var(--paper)",
+                  textDecoration: "none",
+                }}
+              >
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "baseline",
+                    justifyContent: "space-between",
+                    gap: 8,
+                    marginBottom: 10,
+                  }}
+                >
+                  <h2
+                    style={{
+                      fontFamily: "var(--cinema-display)",
+                      fontStyle: "italic",
+                      fontWeight: 500,
+                      fontSize: 24,
+                      lineHeight: 1.15,
+                      color: "var(--bone)",
+                      margin: 0,
+                    }}
+                  >
+                    {isHindi ? p.config.labelHindi : p.config.label}
+                  </h2>
+                  <span
+                    style={{
+                      flexShrink: 0,
+                      fontFamily: "var(--cinema-mono)",
+                      fontSize: 10,
+                      letterSpacing: "0.18em",
+                      textTransform: "uppercase",
+                      color: "var(--vermillion)",
+                      fontVariantNumeric: "tabular-nums",
+                    }}
+                  >
+                    {p.count} {p.count === 1 ? "dest" : "dests"}
+                  </span>
+                </div>
+                <p
+                  style={{
+                    fontFamily: "var(--cinema-ui)",
+                    fontSize: 13,
+                    lineHeight: 1.5,
+                    color: "var(--bone-dim)",
+                    margin: "0 0 16px",
+                    display: "-webkit-box",
+                    WebkitLineClamp: 2,
+                    WebkitBoxOrient: "vertical",
+                    overflow: "hidden",
+                  }}
+                >
+                  {isHindi ? p.config.taglineHindi : p.config.tagline}
+                </p>
+                {p.samples.length > 0 && (
+                  <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
+                    {p.samples.map((s) => (
+                      <span
+                        key={s.id}
+                        style={{
+                          fontFamily: "var(--cinema-mono)",
+                          fontSize: 10,
+                          padding: "2px 8px",
+                          border: "1px solid var(--hair)",
+                          color: "var(--bone-faint)",
+                        }}
+                      >
+                        {s.name}
+                      </span>
+                    ))}
+                    {p.count > 3 && (
+                      <span
+                        style={{
+                          fontFamily: "var(--cinema-mono)",
+                          fontSize: 10,
+                          color: "var(--bone-faint)",
+                          alignSelf: "center",
+                          marginLeft: 4,
+                        }}
+                      >
+                        +{p.count - 3} more
+                      </span>
+                    )}
+                  </div>
+                )}
+              </Link>
+            ))}
+          </div>
+
+          <section
+            style={{
+              padding: 24,
+              border: "1px solid var(--hair)",
+              background: "rgba(245, 241, 232, 0.02)",
+            }}
+          >
+            <h2
+              style={{
+                fontFamily: "var(--cinema-display)",
+                fontStyle: "italic",
+                fontWeight: 500,
+                fontSize: 22,
+                lineHeight: 1.2,
+                color: "var(--bone)",
+                margin: "0 0 12px",
+              }}
+            >
+              {isHindi ? "मेल कैसे होता है" : "How the matching works"}
+            </h2>
+            <p
+              style={{
+                fontFamily: "var(--cinema-ui)",
+                fontSize: 14,
+                lineHeight: 1.7,
+                color: "var(--bone-dim)",
+                margin: "0 0 12px",
+              }}
+            >
+              {isHindi
+                ? "प्रत्येक स्थल के पास पहले से ही 6 व्यक्तित्व ब्लॉक (biker/nomad/family/elderly/solo_female/photographer) हैं जिनमें हर एक के लिए स्पष्ट GO/NO-GO निर्णय है।"
+                : "Every destination already carries 6 persona blocks (biker / nomad / family / elderly / solo_female / photographer) with explicit GO or NO-GO verdicts written by the editorial team. We read those first, then keyword-match best_for_segments, then fall back to base attributes for edge cases. No hand-curated lists, no editorial favorites — deterministic filtering from verified data."}
+            </p>
+            <Link
+              href={`/${locale}/methodology`}
+              style={{
+                fontFamily: "var(--cinema-mono)",
+                fontSize: 11,
+                letterSpacing: "0.22em",
+                textTransform: "uppercase",
+                color: "var(--vermillion)",
+                textDecoration: "underline",
+                textUnderlineOffset: "3px",
+              }}
+            >
+              {isHindi ? "पूरी कार्यप्रणाली पढ़ें →" : "Read the full methodology →"}
+            </Link>
+          </section>
+        </div>
       </main>
+
+      <CinematicRelatedRail />
       <Footer />
     </div>
   );

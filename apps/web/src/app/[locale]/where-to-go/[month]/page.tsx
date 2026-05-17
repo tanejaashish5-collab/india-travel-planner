@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Nav } from "@/components/nav";
+import { Footer } from "@/components/footer";
 import { WhereToGoContent } from "@/components/where-to-go-content";
 import { TopFiveHero } from "@/components/top-five-hero";
 import { createClient } from "@supabase/supabase-js";
@@ -10,6 +11,8 @@ import type { WeeklyPicksResponse } from "@/lib/weekly-picks/types";
 import { getAppStats } from "@/lib/stats";
 import { videoObjectJsonLd } from "@/lib/video-schema";
 import { destinationImage } from "@/lib/image-url";
+import { CinemaStyles } from "@/components/landing-cinema/cinema-styles";
+import { CinematicRelatedRail } from "@/components/cinematic-related-rail";
 
 export const revalidate = 86400;
 export const dynamicParams = true;
@@ -417,7 +420,8 @@ export default async function WhereToGoPage({
   }
 
   return (
-    <div className="min-h-screen">
+    <div className="nakshiq-cinema" style={{ minHeight: "100vh" }}>
+      <CinemaStyles />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
@@ -435,7 +439,11 @@ export default async function WhereToGoPage({
         />
       )}
       <Nav />
-      <main className="mx-auto max-w-6xl px-4 py-8">
+      <main
+        id="main-content"
+        className="nq-grain"
+        style={{ position: "relative", padding: "120px 16px 64px", margin: "0 auto", maxWidth: 1200 }}
+      >
         {weeklyPicks && weeklyPicks.destinations.length > 0 && (
           <TopFiveHero
             topFive={weeklyPicks.destinations.map((d) => ({
@@ -488,6 +496,8 @@ export default async function WhereToGoPage({
           monthReviewedAt={monthReviewedAt}
         />
       </main>
+      <CinematicRelatedRail />
+      <Footer />
     </div>
   );
 }
