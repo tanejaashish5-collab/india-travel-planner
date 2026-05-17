@@ -14,7 +14,7 @@ import type { DailyEntry, DailiesStats } from "@/components/landing-cinema/act-6
 // exists for other pages — just not mounted here.
 import { createClient } from "@supabase/supabase-js";
 import { getAppStats } from "@/lib/stats";
-import { currentMonthIST, verdictFor } from "@itp/shared";
+import { currentMonthIST, verdictFor, dailyRotation } from "@itp/shared";
 
 export const revalidate = 3600;
 
@@ -50,13 +50,19 @@ async function getFeaturedData() {
     // why_go copy without a second query. Column is `content_reviewed_at`
     // on destinations (not `verified_at` — that doesn't exist; nor
     // `last_verified` which is all-NULL today).
+    // Pool of top-20 (was top-6). Combined with dailyRotation() below, the
+    // dispatch + scenes sets shift each IST day instead of showing the
+    // same 5 destinations for the whole month. See 2026-05-17 user note.
+    // Secondary sort on destination_id keeps ties deterministic so the
+    // rotation seed produces stable picks across renders.
     supabase
       .from("destination_months")
       .select("destination_id, score, why_go, destinations(id, name, tagline, difficulty, elevation_m, content_reviewed_at, state:states(name))")
       .eq("month", currentMonth)
       .gte("score", 4)
       .order("score", { ascending: false })
-      .limit(6),
+      .order("destination_id", { ascending: true })
+      .limit(20),
     supabase.from("collections").select("id, name, description, tags").limit(6),
     supabase.from("routes").select("id, name, days, difficulty, kids_suitable, highlights").order("days").limit(6),
     // Real counts
@@ -120,10 +126,19 @@ async function getFeaturedData() {
       };
     });
 
+  // Daily rotation: pool stays at top-20 by score, but we pick a different
+  // window each IST day so the landing doesn't feel static for 31 days.
+  // pin=true means the #1-scored dest is always in the result ("today's
+  // must-go" stays put), the rest slide. Same pool/rotation feeds both
+  // dispatch heroes (top 3 of rotation) and Act III scenes (top 5) so they
+  // stay coherent — same rotation seed = same daily picks for both.
+  // See packages/shared/src/utils/daily-rotation.ts for the algorithm.
+  const rotatedDests = dailyRotation(destResult.data ?? [], 8, { pinTop: true });
+
   // Top 3 PEAK destinations shaped for the ACT I Dispatch slideshow.
-  // Reuses destResult so we don't fire a second round-trip — the existing
-  // query already pulls top-6 score>=4 sorted desc; we slice the head.
-  const dispatchHeroes: DispatchHero[] = (destResult.data ?? [])
+  // Reuses rotatedDests so we don't fire a second round-trip — the slice
+  // pulls today's rotated top-3 from the larger pool.
+  const dispatchHeroes: DispatchHero[] = rotatedDests
     .slice(0, 3)
     .map((row: any) => {
       const d = row.destinations;
@@ -141,11 +156,13 @@ async function getFeaturedData() {
     })
     .filter((h) => h.id);
 
-  // ACT III Scenes — same destResult, shaped as SceneEntry[]. We take 5
-  // scenes (the v8 design uses 5 sticky scenes, scenes 02-06 since the
-  // hero is "scene 01"). Reuses why_go for the editorial dossier in the
-  // lower-left of each scene.
-  const scenes: SceneEntry[] = (destResult.data ?? [])
+  // ACT III Scenes — same rotated pool, top-5. The v8 design uses 5 sticky
+  // scenes (02-06 since the hero is "scene 01"). Reuses why_go for the
+  // editorial dossier in the lower-left of each scene.
+  // Same rotatedDests as dispatchHeroes → scenes will overlap with the
+  // top-3 dispatch (intentional — dispatch is "today's headliners",
+  // scenes are "scroll-deep on the same dispatch").
+  const scenes: SceneEntry[] = rotatedDests
     .slice(0, 5)
     .map((row: any) => {
       const d = row.destinations;
