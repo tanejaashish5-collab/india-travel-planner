@@ -70,6 +70,11 @@ export function Footer({
     `/${locale}/collections`,
     `/${locale}/plan`,
     `/${locale}/the-window`,
+    // Phase 3 Tier 1 partial (S54)
+    `/${locale}/blog`,
+    `/${locale}/india-travel`,
+    `/${locale}/nakshiq-100`,
+    `/${locale}/guide/visa`,
   ];
   const CINEMATIC_PAGE_PREFIXES = [`/${locale}/skip-list/`];
   const isCinematicPage =

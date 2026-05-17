@@ -5,6 +5,9 @@ import { Footer } from "@/components/footer";
 import { createClient } from "@supabase/supabase-js";
 import { localeAlternates } from "@/lib/seo-utils";
 import { formatScoreInline } from "@itp/shared";
+import { CinemaStyles } from "@/components/landing-cinema/cinema-styles";
+import { Title } from "@/components/landing-cinema/editorial";
+import { getIssueNumber } from "@/components/landing-cinema/issue-number";
 
 export const revalidate = 3600;
 
@@ -53,8 +56,6 @@ async function getTop100() {
 
   const supabase = createClient(url, key);
 
-  // Top 100 destination-month rows by score, where verdict = 'go' and prose
-  // exists. Paginates past 1000 if needed.
   const all: ScoredRow[] = [];
   const page = 1000;
   let from = 0;
@@ -74,7 +75,6 @@ async function getTop100() {
     from += page;
   }
 
-  // De-duplicate by destination — keep only the highest-scored month for each
   const byDest = new Map<string, ScoredRow>();
   for (const r of all) {
     const existing = byDest.get(r.destination_id);
@@ -87,13 +87,19 @@ async function getTop100() {
   return { rows: deduped, totalRows: all.length };
 }
 
+function getStateName(state: ScoredRow["destinations"] extends infer T ? T extends { state: infer S } ? S : never : never) {
+  if (!state) return null;
+  if (Array.isArray(state)) return state[0]?.name ?? null;
+  return state.name ?? null;
+}
+
 export default async function NakshIQ100Page({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const { rows } = await getTop100();
+  const issueNum = getIssueNumber();
 
   const pageUrl = `${BASE_URL}/${locale}/nakshiq-100`;
 
-  // ItemList schema — the canonical ranked 100
   const itemListLd = {
     "@context": "https://schema.org",
     "@type": "ItemList",
@@ -144,176 +150,391 @@ export default async function NakshIQ100Page({ params }: { params: Promise<{ loc
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="nakshiq-cinema" style={{ minHeight: "100vh" }}>
+      <CinemaStyles />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
       <Nav />
-      <main className="mx-auto max-w-4xl px-4 py-12">
-        <div className="mb-6 text-sm text-muted-foreground">
-          <Link href={`/${locale}`} className="hover:text-foreground">NakshIQ</Link>
-          {" → "}
-          <span className="text-foreground">NakshIQ 100</span>
-        </div>
 
-        <h1 className="text-4xl sm:text-5xl font-semibold mb-3">
-          NakshIQ 100 — India's 100 best destination-months, 2026
-        </h1>
-        <p className="text-lg text-muted-foreground mb-4 leading-relaxed max-w-3xl">
-          The 100 highest-scored destination × month combinations across all of India, ranked
-          across weather, access, crowd, and safety. Drawn from 5,856 scored rows across 491
-          destinations — one ranked pick per destination, top 100 by score.
-        </p>
-        <p className="text-sm text-muted-foreground/80 mb-10 max-w-3xl leading-relaxed">
-          An annual index. This edition reflects 2026 editorial review as of{" "}
-          {new Date().toLocaleDateString("en-IN", { day: "numeric", month: "long", year: "numeric" })}.
-        </p>
+      <main
+        id="main-content"
+        className="nq-grain"
+        style={{ position: "relative", padding: "140px 24px 96px" }}
+      >
+        {/* Masthead */}
+        <header style={{ maxWidth: 1100, margin: "0 auto 72px" }}>
+          <p
+            className="nq-kicker"
+            style={{ color: "var(--vermillion)", marginBottom: 24, letterSpacing: "0.22em" }}
+          >
+            THE ANNUAL INDEX · ISSUE Nº {issueNum}
+          </p>
+          <Title
+            as="h1"
+            className="nq-display"
+            style={{
+              fontFamily: "var(--cinema-display)",
+              fontStyle: "italic",
+              fontWeight: 400,
+              fontSize: "clamp(40px, 7vw, 88px)",
+              lineHeight: 0.98,
+              letterSpacing: "-0.025em",
+              margin: 0,
+              textWrap: "balance",
+            }}
+          >
+            NakshIQ 100.
+          </Title>
+          <p
+            style={{
+              fontFamily: "var(--cinema-display)",
+              fontStyle: "italic",
+              fontWeight: 400,
+              fontSize: "clamp(18px, 2vw, 24px)",
+              lineHeight: 1.4,
+              color: "var(--bone-dim)",
+              marginTop: 24,
+              maxWidth: 720,
+            }}
+          >
+            India&apos;s 100 best destination-months, ranked across weather, access,
+            crowd, and safety. Drawn from 5,856 scored rows across 505 destinations.
+          </p>
+          <p
+            className="nq-mono"
+            style={{
+              fontFamily: "var(--cinema-mono)",
+              fontSize: 11,
+              letterSpacing: "0.22em",
+              textTransform: "uppercase",
+              color: "var(--bone-faint)",
+              marginTop: 28,
+            }}
+          >
+            An annual index · Edition{" "}
+            {new Date().toLocaleDateString("en-IN", { month: "long", year: "numeric" })}
+          </p>
+        </header>
 
-        {/* Top 10 hero rail */}
-        <section className="mb-12">
-          <h2 className="text-xl font-semibold mb-4">Top 10</h2>
-          <div className="space-y-3">
+        {/* Top 10 — hero rail with numbered cards */}
+        <section style={{ maxWidth: 1100, margin: "0 auto 96px" }}>
+          <p
+            className="nq-kicker"
+            style={{ color: "var(--vermillion)", marginBottom: 28, letterSpacing: "0.22em" }}
+          >
+            TOP 10
+          </p>
+          <div
+            style={{ borderTop: "1px solid var(--hair)" }}
+          >
             {rows.slice(0, 10).map((r, i) => {
-              const stateData = r.destinations?.state;
-              const stateName = Array.isArray(stateData) ? stateData[0]?.name : stateData?.name;
+              const stateName = getStateName(r.destinations?.state ?? null);
               return (
                 <Link
                   key={`${r.destination_id}-${r.month}`}
                   href={`/${locale}/destination/${r.destination_id}/${MONTH_SLUGS[r.month]}`}
-                  className="block rounded-2xl border border-border bg-card/40 p-5 hover:border-primary/50 transition-colors"
+                  className="nq-entry-link"
+                  style={{
+                    display: "grid",
+                    gridTemplateColumns: "64px 1fr auto",
+                    gap: 24,
+                    alignItems: "baseline",
+                    padding: "28px 0",
+                    borderBottom: "1px solid var(--hair)",
+                    textDecoration: "none",
+                    color: "inherit",
+                    transition: "background 220ms ease",
+                  }}
                 >
-                  <div className="flex items-start gap-4">
-                    <div className="shrink-0 font-mono text-3xl font-bold tabular-nums text-primary/80 w-12">
-                      {String(i + 1).padStart(2, "0")}
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <div className="flex items-baseline justify-between gap-2 flex-wrap">
-                        <h3 className="text-lg font-semibold">
-                          {r.destinations?.name} in {MONTH_NAMES[r.month]}
-                        </h3>
-                        <span className="font-mono text-xs tracking-[0.08em] uppercase text-muted-foreground">
-                          {stateName} · {formatScoreInline(r.score)}
-                        </span>
-                      </div>
-                      {r.why_go && (
-                        <p className="text-sm text-muted-foreground mt-2 leading-relaxed line-clamp-3">
-                          {r.why_go}
-                        </p>
-                      )}
-                    </div>
+                  <span
+                    className="nq-mono"
+                    style={{
+                      fontFamily: "var(--cinema-mono)",
+                      fontSize: 28,
+                      fontWeight: 700,
+                      letterSpacing: "-0.02em",
+                      color: "var(--vermillion)",
+                      fontVariantNumeric: "tabular-nums",
+                    }}
+                  >
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <div style={{ minWidth: 0 }}>
+                    <h3
+                      style={{
+                        fontFamily: "var(--cinema-display)",
+                        fontStyle: "italic",
+                        fontWeight: 500,
+                        fontSize: 26,
+                        lineHeight: 1.15,
+                        letterSpacing: "-0.014em",
+                        color: "var(--bone)",
+                        margin: 0,
+                      }}
+                    >
+                      {r.destinations?.name} in {MONTH_NAMES[r.month]}.
+                    </h3>
+                    {r.why_go && (
+                      <p
+                        style={{
+                          fontFamily: "var(--cinema-ui)",
+                          fontSize: 14,
+                          lineHeight: 1.6,
+                          color: "var(--bone-dim)",
+                          margin: "10px 0 0",
+                          maxWidth: 720,
+                          display: "-webkit-box",
+                          WebkitLineClamp: 2,
+                          WebkitBoxOrient: "vertical",
+                          overflow: "hidden",
+                        }}
+                      >
+                        {r.why_go}
+                      </p>
+                    )}
                   </div>
+                  <span
+                    className="nq-mono"
+                    style={{
+                      fontFamily: "var(--cinema-mono)",
+                      fontSize: 11,
+                      letterSpacing: "0.16em",
+                      textTransform: "uppercase",
+                      color: "var(--bone-faint)",
+                      whiteSpace: "nowrap",
+                    }}
+                  >
+                    {stateName ? `${stateName} · ` : ""}{formatScoreInline(r.score)}
+                  </span>
                 </Link>
               );
             })}
           </div>
         </section>
 
-        {/* The rest — compact numbered table */}
-        <section className="mb-12">
-          <h2 className="text-xl font-semibold mb-4">11–100</h2>
-          <div className="rounded-2xl border border-border overflow-hidden">
-            <table className="w-full text-sm">
-              <thead className="border-b border-border bg-card/40">
-                <tr>
-                  <th className="px-4 py-3 text-left w-14 text-[11px] font-medium uppercase tracking-[0.08em] text-muted-foreground/70">#</th>
-                  <th className="px-4 py-3 text-left text-[11px] font-medium uppercase tracking-[0.08em] text-muted-foreground/70">Destination</th>
-                  <th className="px-4 py-3 text-left text-[11px] font-medium uppercase tracking-[0.08em] text-muted-foreground/70 hidden sm:table-cell">State</th>
-                  <th className="px-4 py-3 text-left text-[11px] font-medium uppercase tracking-[0.08em] text-muted-foreground/70">Best month</th>
-                  <th className="px-4 py-3 text-right text-[11px] font-medium uppercase tracking-[0.08em] text-muted-foreground/70">Score</th>
-                </tr>
-              </thead>
-              <tbody>
-                {rows.slice(10).map((r, i) => {
-                  const stateData = r.destinations?.state;
-                  const stateName = Array.isArray(stateData) ? stateData[0]?.name : stateData?.name;
-                  return (
-                    <tr key={`${r.destination_id}-${r.month}`} className="border-b border-border/50 last:border-0 hover:bg-card/30 transition-colors">
-                      <td className="px-4 py-2.5 font-mono text-sm text-muted-foreground tabular-nums">{i + 11}</td>
-                      <td className="px-4 py-2.5">
-                        <Link
-                          href={`/${locale}/destination/${r.destination_id}/${MONTH_SLUGS[r.month]}`}
-                          className="font-medium hover:text-primary transition-colors"
-                        >
-                          {r.destinations?.name}
-                        </Link>
-                      </td>
-                      <td className="px-4 py-2.5 text-muted-foreground hidden sm:table-cell">{stateName ?? "—"}</td>
-                      <td className="px-4 py-2.5 text-sm">{MONTH_NAMES[r.month]}</td>
-                      <td className="px-4 py-2.5 text-right font-mono tabular-nums text-sm">{formatScoreInline(r.score)}</td>
-                    </tr>
-                  );
-                })}
-              </tbody>
-            </table>
+        {/* 11–100 compact ledger */}
+        <section style={{ maxWidth: 1100, margin: "0 auto 96px" }}>
+          <p
+            className="nq-kicker"
+            style={{ color: "var(--vermillion)", marginBottom: 28, letterSpacing: "0.22em" }}
+          >
+            11 — 100
+          </p>
+          <div style={{ borderTop: "1px solid var(--hair)" }}>
+            {rows.slice(10).map((r, i) => {
+              const stateName = getStateName(r.destinations?.state ?? null);
+              return (
+                <Link
+                  key={`${r.destination_id}-${r.month}`}
+                  href={`/${locale}/destination/${r.destination_id}/${MONTH_SLUGS[r.month]}`}
+                  className="nq-entry-link"
+                  style={{
+                    display: "grid",
+                    gridTemplateColumns: "48px minmax(0, 2fr) minmax(0, 1fr) auto",
+                    gap: 16,
+                    alignItems: "baseline",
+                    padding: "16px 0",
+                    borderBottom: "1px solid var(--hair)",
+                    textDecoration: "none",
+                    color: "inherit",
+                    transition: "background 220ms ease",
+                  }}
+                >
+                  <span
+                    className="nq-mono"
+                    style={{
+                      fontFamily: "var(--cinema-mono)",
+                      fontSize: 13,
+                      letterSpacing: "0.12em",
+                      color: "var(--bone-faint)",
+                      fontVariantNumeric: "tabular-nums",
+                    }}
+                  >
+                    {String(i + 11).padStart(3, " ")}
+                  </span>
+                  <span
+                    style={{
+                      fontFamily: "var(--cinema-display)",
+                      fontStyle: "italic",
+                      fontSize: 18,
+                      color: "var(--bone)",
+                    }}
+                  >
+                    {r.destinations?.name}
+                    <span style={{ color: "var(--bone-dim)", fontStyle: "normal", fontFamily: "var(--cinema-ui)", fontSize: 13, marginLeft: 10 }}>
+                      · {MONTH_NAMES[r.month]}
+                    </span>
+                  </span>
+                  <span
+                    style={{
+                      fontFamily: "var(--cinema-ui)",
+                      fontSize: 13,
+                      color: "var(--bone-faint)",
+                    }}
+                  >
+                    {stateName ?? "—"}
+                  </span>
+                  <span
+                    className="nq-mono"
+                    style={{
+                      fontFamily: "var(--cinema-mono)",
+                      fontSize: 13,
+                      letterSpacing: "0.06em",
+                      color: "var(--vermillion)",
+                      fontVariantNumeric: "tabular-nums",
+                      textAlign: "right",
+                      whiteSpace: "nowrap",
+                    }}
+                  >
+                    {formatScoreInline(r.score)}
+                  </span>
+                </Link>
+              );
+            })}
           </div>
         </section>
 
-        {/* Context */}
-        <section className="rounded-2xl border border-border bg-card/40 p-6 mb-6">
-          <h2 className="text-xl font-semibold mb-3">How the 100 is chosen</h2>
-          <p className="text-sm text-muted-foreground leading-relaxed mb-3">
-            Every destination × month pair in the NakshIQ database carries a 0–10 suitability
-            score combining weather (IMD data), access (road/pass/flight status), crowd math,
-            local festival calendars, and risk flags. The NakshIQ 100 takes the single best
-            month for each destination, ranks across all 505 destinations, and publishes the
-            top 100. One destination never appears twice; the ranking is the destination at
-            its best, not a month-by-month scan.
-          </p>
-          <p className="text-sm text-muted-foreground leading-relaxed">
-            See <Link href={`/${locale}/methodology`} className="underline hover:text-primary">how we score</Link> for the
-            full rubric. An updated edition is published annually.
-          </p>
-        </section>
-
-        {/* Embed badge — for tourism boards + destination operators whose
-            marquee month is on the list. The image link is the canonical
-            artefact; the rel="noopener" + the entire <a> wrapping makes the
-            attribution requirement explicit at the markup level. */}
-        <section className="rounded-2xl border border-border bg-card/40 p-6 mb-6">
-          <h2 className="text-xl font-semibold mb-3">Embed the badge</h2>
-          <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-            For tourism boards, destination operators, and editors whose region appears on
-            this list — embed the NakshIQ 100 badge on your site. Free to use, attribution
-            required (the snippet handles it).
-          </p>
-          <div className="flex flex-wrap items-center gap-4 mb-4">
-            <img
-              src="/badges/nakshiq-100.svg"
-              alt="Featured in NakshIQ 100 — 2026 Annual Index"
-              width={240}
-              height={80}
-              className="rounded-md border border-border/50"
-            />
-            <a
-              href="/badges/nakshiq-100.svg"
-              download
-              className="text-xs uppercase tracking-[0.16em] text-primary hover:underline"
+        {/* Methodology + embed + citation in a stacked editorial block */}
+        <section style={{ maxWidth: 820, margin: "0 auto" }}>
+          <div style={{ marginBottom: 64 }}>
+            <p
+              className="nq-kicker"
+              style={{ color: "var(--vermillion)", marginBottom: 16, letterSpacing: "0.22em" }}
             >
-              Download SVG ↓
-            </a>
+              HOW THE 100 IS CHOSEN
+            </p>
+            <p
+              style={{
+                fontFamily: "var(--cinema-ui)",
+                fontSize: 16,
+                lineHeight: 1.75,
+                color: "var(--bone-dim)",
+                margin: "0 0 16px",
+              }}
+            >
+              Every destination × month pair in the NakshIQ database carries a 0–10
+              suitability score combining weather (IMD data), access (road/pass/flight
+              status), crowd math, local festival calendars, and risk flags. The NakshIQ
+              100 takes the single best month for each destination, ranks across all 505
+              destinations, and publishes the top 100. One destination never appears
+              twice; the ranking is the destination at its best, not a month-by-month scan.
+            </p>
+            <p
+              style={{
+                fontFamily: "var(--cinema-ui)",
+                fontSize: 14,
+                lineHeight: 1.7,
+                color: "var(--bone-faint)",
+                margin: 0,
+              }}
+            >
+              See{" "}
+              <Link
+                href={`/${locale}/methodology`}
+                style={{ color: "var(--vermillion)", textDecoration: "underline", textUnderlineOffset: "3px" }}
+              >
+                how we score
+              </Link>{" "}
+              for the full rubric. An updated edition is published annually.
+            </p>
           </div>
-          <pre className="bg-background/50 border border-border/50 rounded-lg p-3 text-[11px] font-mono overflow-x-auto leading-relaxed">{`<a href="https://www.nakshiq.com/${locale}/nakshiq-100" rel="noopener" target="_blank">
+
+          <div style={{ marginBottom: 64, paddingTop: 32, borderTop: "1px solid var(--hair)" }}>
+            <p
+              className="nq-kicker"
+              style={{ color: "var(--vermillion)", marginBottom: 16, letterSpacing: "0.22em" }}
+            >
+              EMBED THE BADGE
+            </p>
+            <p
+              style={{
+                fontFamily: "var(--cinema-ui)",
+                fontSize: 16,
+                lineHeight: 1.7,
+                color: "var(--bone-dim)",
+                margin: "0 0 20px",
+              }}
+            >
+              For tourism boards, destination operators, and editors whose region appears
+              on this list — embed the NakshIQ 100 badge on your site. Free to use,
+              attribution required (the snippet handles it).
+            </p>
+            <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: 16, marginBottom: 18 }}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/badges/nakshiq-100.svg"
+                alt="Featured in NakshIQ 100 — 2026 Annual Index"
+                width={240}
+                height={80}
+                style={{ borderRadius: 4, border: "1px solid var(--hair)" }}
+              />
+              <a
+                href="/badges/nakshiq-100.svg"
+                download
+                className="nq-mono"
+                style={{
+                  fontFamily: "var(--cinema-mono)",
+                  fontSize: 11,
+                  letterSpacing: "0.18em",
+                  textTransform: "uppercase",
+                  color: "var(--vermillion)",
+                  textDecoration: "none",
+                  borderBottom: "1px solid var(--vermillion)",
+                  paddingBottom: 2,
+                }}
+              >
+                Download SVG ↓
+              </a>
+            </div>
+            <pre
+              style={{
+                background: "rgba(10, 10, 8, 0.4)",
+                border: "1px solid var(--hair)",
+                padding: 16,
+                fontFamily: "var(--cinema-mono)",
+                fontSize: 11,
+                lineHeight: 1.6,
+                color: "var(--bone-dim)",
+                overflowX: "auto",
+              }}
+            >{`<a href="https://www.nakshiq.com/${locale}/nakshiq-100" rel="noopener" target="_blank">
   <img src="https://www.nakshiq.com/badges/nakshiq-100.svg"
        alt="Featured in NakshIQ 100 — 2026 Annual Index"
        width="240" height="80" />
 </a>`}</pre>
-          <p className="text-xs text-muted-foreground/70 mt-3 leading-relaxed">
-            The badge links back to this page. We re-issue annually; the file URL stays
-            stable. Editorial badges are unconditional — no fee, no agreement required.
-          </p>
-        </section>
+          </div>
 
-        {/* Citation + press */}
-        <section className="text-xs text-muted-foreground/70 leading-relaxed">
-          <p className="mb-1">
-            <strong className="text-foreground/80">Citations welcomed.</strong> Cite as:{" "}
-            <em>NakshIQ 100 — India's best destination-months, 2026. nakshiq.com/en/nakshiq-100</em>.
-          </p>
-          <p>
-            Press &amp; research queries: <Link href={`/${locale}/contact`} className="underline hover:text-foreground">editor@nakshiq.com</Link>.
-          </p>
+          <div
+            className="nq-mono"
+            style={{
+              fontFamily: "var(--cinema-mono)",
+              fontSize: 11,
+              lineHeight: 1.7,
+              color: "var(--bone-faint)",
+              letterSpacing: "0.04em",
+              paddingTop: 32,
+              borderTop: "1px solid var(--hair)",
+            }}
+          >
+            <p style={{ margin: "0 0 6px" }}>
+              <strong style={{ color: "var(--bone-dim)" }}>Citations welcomed.</strong>{" "}
+              Cite as: <em>NakshIQ 100 — India&apos;s best destination-months, 2026. nakshiq.com/{locale}/nakshiq-100</em>.
+            </p>
+            <p style={{ margin: 0 }}>
+              Press &amp; research queries:{" "}
+              <Link
+                href={`/${locale}/contact`}
+                style={{ color: "var(--vermillion)", textDecoration: "underline", textUnderlineOffset: "3px" }}
+              >
+                editor@nakshiq.com
+              </Link>
+              .
+            </p>
+          </div>
         </section>
       </main>
+
       <Footer />
     </div>
   );

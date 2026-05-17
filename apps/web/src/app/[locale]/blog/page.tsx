@@ -1,22 +1,40 @@
 import type { Metadata } from "next";
-import { Nav } from "@/components/nav";
-import { Footer } from "@/components/footer";
-import { BlogGrid } from "@/components/blog-grid";
-import { NewsletterSignup } from "@/components/newsletter-signup";
 import { createClient } from "@supabase/supabase-js";
+import { CinematicListPage } from "@/components/cinematic-list-page";
+import { getIssueNumber } from "@/components/landing-cinema/issue-number";
 import { localeAlternates } from "@/lib/seo-utils";
 
 export const revalidate = 21600;
 
-export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
   const { locale } = await params;
   return {
-  title: "Blog — Travel Intelligence Articles",
-  description: "Data-driven travel guides, destination comparisons, and seasonal intelligence for India. Every article backed by real scores, infrastructure data, and honest analysis.",
-
+    title: "Field notes — long-form travel writing for India",
+    description:
+      "Data-driven essays on India travel — seasonal intelligence, destination comparisons, and the offbeat circuit. Backed by real scores, not influencer talk.",
     ...localeAlternates(locale, "/blog"),
   };
-}async function getArticles() {
+}
+
+type Article = {
+  id: string;
+  slug: string;
+  title: string;
+  subtitle: string | null;
+  category: string;
+  excerpt: string | null;
+  published_at: string;
+  reading_time: number | null;
+  cover_image_url: string | null;
+  tags: string[] | null;
+  featured: boolean | null;
+};
+
+async function getArticles(): Promise<Article[]> {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
   if (!url || !key) return [];
@@ -24,33 +42,65 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const supabase = createClient(url, key);
   const { data } = await supabase
     .from("articles")
-    .select("id, slug, title, subtitle, category, excerpt, published_at, reading_time, cover_image_url, tags, featured, depth")
+    .select(
+      "id, slug, title, subtitle, category, excerpt, published_at, reading_time, cover_image_url, tags, featured",
+    )
     .order("published_at", { ascending: false });
-  return data ?? [];
+  return (data as Article[]) ?? [];
 }
 
-export default async function BlogPage() {
+function articleImageSrc(a: Article): string | null {
+  if (a.cover_image_url && a.cover_image_url.startsWith("/images/")) {
+    return a.cover_image_url;
+  }
+  if (a.tags && a.tags.length > 0) {
+    const slug = a.tags[0].toLowerCase().replace(/\s+/g, "-");
+    return `/images/destinations/${slug}.jpg`;
+  }
+  return null;
+}
+
+function formatDateMeta(iso: string) {
+  return new Date(iso).toLocaleDateString("en-IN", {
+    month: "short",
+    year: "numeric",
+  });
+}
+
+export default async function BlogPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
   const articles = await getArticles();
+  const issueNum = getIssueNumber();
+
+  const cards = articles.map((a) => {
+    const img = articleImageSrc(a);
+    const meta = [
+      formatDateMeta(a.published_at),
+      a.reading_time ? `${a.reading_time} min read` : null,
+    ]
+      .filter(Boolean)
+      .join(" · ");
+    return {
+      href: `/${locale}/blog/${a.slug}`,
+      kicker: a.featured ? "Featured" : undefined,
+      title: a.title,
+      dek: a.subtitle ?? a.excerpt ?? undefined,
+      meta,
+      ...(img ? { image: { src: img, alt: a.title } } : {}),
+    };
+  });
 
   return (
-    <div className="min-h-screen">
-      <Nav />
-      {/* Visual page hero — brand gradient, no destination photo */}
-      <section className="relative h-48 sm:h-64 overflow-hidden bg-gradient-to-br from-[#161614] via-[#1e1e1c] to-[#2F4F3F]/30">
-        <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23F5F1E8' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")" }} />
-        <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 max-w-7xl mx-auto">
-          <p className="text-sm font-medium text-[#E55642] uppercase tracking-[0.08em] mb-2">NakshIQ Intelligence</p>
-          <h1 className="text-3xl font-semibold sm:text-4xl text-[#F5F1E8]">Travel Intelligence</h1>
-          <p className="mt-2 text-[#F5F1E8]/70 max-w-xl">Data-driven guides backed by real scores, infrastructure data, and honest analysis. Not brochure talk.</p>
-        </div>
-      </section>
-      <main className="mx-auto max-w-7xl px-4 py-8">
-        <BlogGrid articles={articles} />
-        <div className="mt-12">
-          <NewsletterSignup />
-        </div>
-      </main>
-      <Footer />
-    </div>
+    <CinematicListPage
+      kicker={`FIELD NOTES · ISSUE Nº ${issueNum}`}
+      title="The honest answers your guidebook won't give you."
+      dek={`${articles.length} long-form essays on India travel — seasonal intelligence, destination comparisons, and the offbeat circuit. Every article backed by real scores, not influencer talk.`}
+      cards={cards}
+      empty="No essays published yet. The first one is on its way."
+    />
   );
 }

@@ -42,6 +42,11 @@ export function Nav() {
     `/${locale}/collections`,
     `/${locale}/plan`,
     `/${locale}/the-window`,
+    // Phase 3 Tier 1 partial (S54)
+    `/${locale}/blog`,
+    `/${locale}/india-travel`,
+    `/${locale}/nakshiq-100`,
+    `/${locale}/guide/visa`,
   ];
   // Dynamic segments — body is cinematic on any matching descendant route.
   const CINEMATIC_PAGE_PREFIXES = [
