@@ -159,10 +159,36 @@ export function ExploreGrid({
   const sorted = useMemo(() => {
     let result = [...filtered];
 
-    // Apply explicit sort
-    if (filters.sort) {
-      const getMonthScore = (d: DestinationData) =>
-        d.destination_months?.find((m) => m.month === (filters.month || currentMonth))?.score ?? -1;
+    const getMonthScore = (d: DestinationData) =>
+      d.destination_months?.find((m) => m.month === (filters.month || currentMonth))?.score ?? -1;
+
+    // When a search query is active, sort by relevance first so name matches
+    // beat tagline/tag matches — without this, "chandigar" surfaces Kasauli
+    // (May 8/10, mentions "Chandigarh" in tagline) before Chandigarh itself
+    // (May 4/10, name match). Tiers below; ties break on month score.
+    if (filters.search) {
+      const q = filters.search.toLowerCase().trim();
+      const relevance = (d: DestinationData) => {
+        const name = d.name.toLowerCase();
+        if (name === q) return 0;
+        if (name.startsWith(q)) return 1;
+        const tokens = name.split(/[\s-]+/);
+        if (tokens.some((t) => t.startsWith(q))) return 2;
+        if (name.includes(q)) return 3;
+        const stateName = getStateName(d)?.toLowerCase() ?? "";
+        if (stateName.startsWith(q)) return 4;
+        if (stateName.includes(q)) return 5;
+        if (d.tags?.some((t) => t.toLowerCase().includes(q))) return 6;
+        return 7; // tagline-only match
+      };
+      result.sort((a, b) => {
+        const ra = relevance(a);
+        const rb = relevance(b);
+        if (ra !== rb) return ra - rb;
+        return getMonthScore(b) - getMonthScore(a);
+      });
+    } else if (filters.sort) {
+      // Explicit user sort overrides default
       const getKidsRating = (d: DestinationData) => {
         const kf = Array.isArray(d.kids_friendly) ? d.kids_friendly[0] : d.kids_friendly;
         return kf?.rating ?? -1;
@@ -178,15 +204,11 @@ export function ExploreGrid({
       }
     } else if (filters.month > 0) {
       // Default: sort by month score when month is selected
-      result.sort((a, b) => {
-        const aScore = a.destination_months?.find((m) => m.month === filters.month)?.score ?? -1;
-        const bScore = b.destination_months?.find((m) => m.month === filters.month)?.score ?? -1;
-        return bScore - aScore;
-      });
+      result.sort((a, b) => getMonthScore(b) - getMonthScore(a));
     }
 
     return result;
-  }, [filtered, filters.month, filters.sort, currentMonth]);
+  }, [filtered, filters.month, filters.sort, filters.search, currentMonth]);
 
   // Show featured hero only when no filters/search active
   const isDefaultView = !filters.stateId && !filters.search && !filters.difficulty && !filters.kidsOnly && !filters.sort;
