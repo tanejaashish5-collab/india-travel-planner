@@ -12,7 +12,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return {
     title: "About NakshIQ — Built by an Indian Family, for Every Traveler",
     description:
-      "No investors. No sponsored content. No tourism boards. NakshIQ is built by an NRI family for their daughters — and for every traveler who deserves honest answers before they go.",
+      "No investors. No sponsored content. No tourism boards. NakshIQ is built by one family for the next people in it — and for every traveller who deserves honest answers before they go.",
     ...localeAlternates(locale, "/about"),
   };
 }
@@ -27,7 +27,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
       path: "/about",
       headline: "About NakshIQ — Built by an Indian Family, for Every Traveler",
       description:
-        "No investors. No sponsored content. No tourism boards. NakshIQ is built by an NRI family for their daughters — and for every traveler who deserves honest answers before they go.",
+        "No investors. No sponsored content. No tourism boards. NakshIQ is built by one family for the next people in it — and for every traveller who deserves honest answers before they go.",
     }),
     breadcrumbSchema(locale, [{ name: "About", path: "/about" }]),
   ];
@@ -103,9 +103,8 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
               letterSpacing: "0.04em",
             }}
           >
-            NakshIQ is built by one family in Canberra for their daughters in India.
-            What follows is the entire reason it exists, and the rules that decide
-            what ships.
+            NakshIQ is built by one family — for the next people in it. What follows
+            is the reason it exists, and the rules that decide what ships.
           </p>
         </header>
 
@@ -114,7 +113,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
           <SectionLabel num="I" name="WHY THIS EXISTS" />
           <Prose>
             <p>
-              I&apos;m an Indian father raising two daughters abroad. They speak limited Hindi.
+              I&apos;m a father raising two daughters far from where I grew up. They speak limited Hindi.
               They&apos;ve spent more time at beaches than Indian hill stations. And one day,
               probably sooner than I think, they&apos;re going to want to see India for themselves.
             </p>
