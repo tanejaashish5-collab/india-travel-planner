@@ -154,29 +154,51 @@ async function getDestination(id: string) {
 
   const supabase = createClient(url, key);
 
-  const { data, error } = await supabase
-    .from("destinations")
-    .select(`
-      *,
-      state:states(name),
-      kids_friendly(*),
-      confidence_cards(*),
-      destination_months(*),
-      sub_destinations(*),
-      local_legends(*),
-      viral_eats(*)
-    `)
-    .eq("id", id)
-    .single();
-
   // PGRST116 = "Results contain 0 rows" — the destination genuinely doesn't exist.
   // Any other error (rate-limit, timeout, network blip) is transient — throw so
   // Next.js shows a 500 + retries on next ISR pass instead of soft-404'ing real
   // destinations and caching that 404 for 24h. NEW-001 (2026-05-04 QA): Shimla
   // EN was rendering /404 fallback while metadata + APIs served real data —
   // exactly the signature of a transient Supabase error.
+  //
+  // 2026-05-17: added retry-with-backoff because Vercel build workers in IAD
+  // were hitting Postgres 57014 (statement_timeout) on this multi-join query
+  // at ~159/636 prerender point on two consecutive deploys (3c2603b5 +
+  // 4f7488da both failed on different destinations — gurez-valley, bomdila).
+  // Retrying once or twice with backoff resolves the transient timeout
+  // without bumping the DB-level statement_timeout config.
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  let data: any = null;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  let error: any = null;
+  for (let attempt = 0; attempt < 3; attempt++) {
+    const res = await supabase
+      .from("destinations")
+      .select(`
+        *,
+        state:states(name),
+        kids_friendly(*),
+        confidence_cards(*),
+        destination_months(*),
+        sub_destinations(*),
+        local_legends(*),
+        viral_eats(*)
+      `)
+      .eq("id", id)
+      .single();
+    data = res.data;
+    error = res.error;
+    // No error or a real "not found" → no point retrying.
+    if (!error || error.code === "PGRST116") break;
+    // Statement timeout (57014) or connection error → wait + retry.
+    // 250ms, then 500ms.
+    if (attempt < 2) {
+      await new Promise((r) => setTimeout(r, 250 * (attempt + 1)));
+    }
+  }
+
   if (error && error.code !== "PGRST116") {
-    throw new Error(`Supabase getDestination(${id}) failed: ${error.code} ${error.message}`);
+    throw new Error(`Supabase getDestination(${id}) failed after 3 attempts: ${error.code} ${error.message}`);
   }
   if (!data) return null;
 

@@ -10,6 +10,7 @@ import { formatScoreInline } from "@itp/shared";
 import { CinemaStyles } from "@/components/landing-cinema/cinema-styles";
 import { Title } from "@/components/landing-cinema/editorial";
 import { CinematicRelatedRail } from "@/components/cinematic-related-rail";
+import { MagazineCardOrGrid } from "@/components/magazine-card-grid";
 
 export const revalidate = 86400;
 export const dynamicParams = true;
@@ -138,28 +139,23 @@ export default async function FamilyByStatePage({ params }: { params: Promise<{ 
 
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
           {familyDests.length > 0 ? (
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-                gap: 1,
-                background: "var(--hair)",
-                border: "1px solid var(--hair)",
-              }}
-            >
-              {familyDests.map((d: DestRow) => {
+            <MagazineCardOrGrid
+              items={familyDests}
+              minCardWidth={280}
+              gap={1}
+              renderCard={(d: DestRow) => {
                 const arr = Array.isArray(d.kids_friendly) ? d.kids_friendly : (d.kids_friendly ? [d.kids_friendly] : []);
                 const kids = arr[0];
                 const rating = kids?.rating ?? 0;
                 return (
                   <Link
-                    key={d.id}
                     href={`/${locale}/with-kids/${d.id}`}
                     style={{
                       display: "block",
                       background: "var(--paper)",
                       textDecoration: "none",
                       color: "var(--bone)",
+                      height: "100%",
                     }}
                   >
                     <div style={{ position: "relative", height: 160, background: "var(--paper-2)" }}>
@@ -251,8 +247,68 @@ export default async function FamilyByStatePage({ params }: { params: Promise<{ 
                     </div>
                   </Link>
                 );
-              })}
-            </div>
+              }}
+              renderGutter={(d: DestRow) => {
+                const arr = Array.isArray(d.kids_friendly) ? d.kids_friendly : (d.kids_friendly ? [d.kids_friendly] : []);
+                const kids = arr[0];
+                return (
+                  <>
+                    <p
+                      className="nq-mono"
+                      style={{
+                        fontSize: 10,
+                        letterSpacing: "0.22em",
+                        textTransform: "uppercase",
+                        color: "var(--vermillion)",
+                        margin: "0 0 12px",
+                      }}
+                    >
+                      {stateName.toUpperCase()} · FAMILY · ONE PICK
+                    </p>
+                    <p
+                      style={{
+                        fontFamily: "var(--cinema-display)",
+                        fontStyle: "italic",
+                        fontWeight: 400,
+                        fontSize: 22,
+                        lineHeight: 1.25,
+                        color: "var(--bone)",
+                        margin: "0 0 16px",
+                        textWrap: "balance",
+                      }}
+                    >
+                      Only one kid-friendly stop here — but it earns it.
+                    </p>
+                    {kids?.reasons?.[0] && (
+                      <p
+                        style={{
+                          fontFamily: "var(--cinema-ui)",
+                          fontSize: 13,
+                          lineHeight: 1.55,
+                          color: "var(--bone-dim)",
+                          margin: "0 0 16px",
+                        }}
+                      >
+                        {kids.reasons[0]}
+                      </p>
+                    )}
+                    <Link
+                      href={`/${locale}/with-kids/${d.id}`}
+                      className="nq-mono"
+                      style={{
+                        fontSize: 11,
+                        letterSpacing: "0.18em",
+                        textTransform: "uppercase",
+                        color: "var(--vermillion)",
+                        textDecoration: "none",
+                      }}
+                    >
+                      Open {d.name} →
+                    </Link>
+                  </>
+                );
+              }}
+            />
           ) : (
             <div
               style={{

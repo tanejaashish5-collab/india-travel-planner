@@ -8,6 +8,7 @@ import { currentMonthIST } from "@itp/shared";
 import { CinemaStyles } from "@/components/landing-cinema/cinema-styles";
 import { Title } from "@/components/landing-cinema/editorial";
 import { CinematicRelatedRail } from "@/components/cinematic-related-rail";
+import { MagazineCardOrGrid } from "@/components/magazine-card-grid";
 
 type Band = { label: string; sublabel: string; min: number; max: number };
 const BANDS: Band[] = [
@@ -227,18 +228,15 @@ export async function WeekendFromView({ locale, city }: { locale: string; city: 
                     {band.sublabel} · {items.length} {items.length === 1 ? "place" : "places"}
                   </span>
                 </div>
-                <div
-                  style={{
-                    display: "grid",
-                    gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-                    gap: 16,
-                  }}
-                >
-                  {items.map((d) => {
+                <MagazineCardOrGrid
+                  items={items}
+                  minCardWidth={280}
+                  gap={16}
+                  renderCard={(d) => {
                     const stateName = Array.isArray(d.state) ? d.state[0]?.name : d.state?.name;
                     const hours = Math.max(1, Math.round(d.distance_km / 60));
                     return (
-                      <div key={d.id} style={{ position: "relative" }}>
+                      <div style={{ position: "relative", height: "100%" }}>
                         <DestinationCard
                           id={d.id}
                           name={d.name}
@@ -277,8 +275,53 @@ export async function WeekendFromView({ locale, city }: { locale: string; city: 
                         </div>
                       </div>
                     );
-                  })}
-                </div>
+                  }}
+                  renderGutter={(d) => {
+                    const hours = Math.max(1, Math.round(d.distance_km / 60));
+                    return (
+                      <>
+                        <p
+                          className="nq-mono"
+                          style={{
+                            fontSize: 10,
+                            letterSpacing: "0.22em",
+                            textTransform: "uppercase",
+                            color: "var(--vermillion)",
+                            margin: "0 0 12px",
+                          }}
+                        >
+                          {band.label.toUpperCase()} · {d.distance_km} KM · ~{hours} H
+                        </p>
+                        <p
+                          style={{
+                            fontFamily: "var(--cinema-display)",
+                            fontStyle: "italic",
+                            fontWeight: 400,
+                            fontSize: 22,
+                            lineHeight: 1.25,
+                            color: "var(--bone)",
+                            margin: "0 0 16px",
+                            textWrap: "balance",
+                          }}
+                        >
+                          Only one option in this window — but it&apos;s a real one.
+                        </p>
+                        <p
+                          className="nq-mono"
+                          style={{
+                            fontSize: 10,
+                            letterSpacing: "0.22em",
+                            textTransform: "uppercase",
+                            color: "var(--bone-faint)",
+                            margin: 0,
+                          }}
+                        >
+                          {band.sublabel}
+                        </p>
+                      </>
+                    );
+                  }}
+                />
               </section>
             );
           })}

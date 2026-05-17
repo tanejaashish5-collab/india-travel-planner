@@ -16,6 +16,7 @@ import { currentMonthIST } from "@itp/shared";
 import { CinemaStyles } from "@/components/landing-cinema/cinema-styles";
 import { Title } from "@/components/landing-cinema/editorial";
 import { CinematicRelatedRail } from "@/components/cinematic-related-rail";
+import { MagazineCardOrGrid } from "@/components/magazine-card-grid";
 
 export const revalidate = 86400;
 export const dynamicParams = true;
@@ -426,24 +427,19 @@ export default async function StateHubPage({
                   >
                     {t("dontMiss")}
                   </p>
-                  <div
-                    style={{
-                      display: "grid",
-                      gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
-                      gap: 1,
-                      background: "var(--hair)",
-                      border: "1px solid var(--hair)",
-                    }}
-                  >
-                    {(region.must_visit as MustVisitRow[]).map((mv) => (
+                  <MagazineCardOrGrid
+                    items={region.must_visit as MustVisitRow[]}
+                    minCardWidth={240}
+                    gap={1}
+                    renderCard={(mv) => (
                       <Link
-                        key={mv.id}
                         href={`/${locale}/destination/${mv.id}`}
                         style={{
                           display: "block",
                           padding: 16,
                           background: "var(--paper)",
                           textDecoration: "none",
+                          height: "100%",
                         }}
                       >
                         <h3
@@ -470,8 +466,51 @@ export default async function StateHubPage({
                           {mv.why}
                         </p>
                       </Link>
-                    ))}
-                  </div>
+                    )}
+                    renderGutter={(mv) => (
+                      <>
+                        <p
+                          className="nq-mono"
+                          style={{
+                            fontSize: 10,
+                            letterSpacing: "0.22em",
+                            textTransform: "uppercase",
+                            color: "var(--vermillion)",
+                            margin: "0 0 12px",
+                          }}
+                        >
+                          {stateName.toUpperCase()} · ONE PICK · UNMISSABLE
+                        </p>
+                        <p
+                          style={{
+                            fontFamily: "var(--cinema-display)",
+                            fontStyle: "italic",
+                            fontWeight: 400,
+                            fontSize: 22,
+                            lineHeight: 1.25,
+                            color: "var(--bone)",
+                            margin: "0 0 16px",
+                            textWrap: "balance",
+                          }}
+                        >
+                          Just one stop you can&apos;t skip.
+                        </p>
+                        <Link
+                          href={`/${locale}/destination/${mv.id}`}
+                          className="nq-mono"
+                          style={{
+                            fontSize: 11,
+                            letterSpacing: "0.18em",
+                            textTransform: "uppercase",
+                            color: "var(--vermillion)",
+                            textDecoration: "none",
+                          }}
+                        >
+                          Open {mv.name} →
+                        </Link>
+                      </>
+                    )}
+                  />
                 </section>
               )}
 
