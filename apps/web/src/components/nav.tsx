@@ -79,6 +79,9 @@ export function Nav() {
     `/${locale}/road-conditions`,
     `/${locale}/where-to-go`,
     `/${locale}/arrival`,
+    // Phase 3 Tier 6 (S54) — comparison hubs
+    `/${locale}/vs`,
+    `/${locale}/india-vs`,
   ];
   // Dynamic segments — body is cinematic on any matching descendant route.
   const CINEMATIC_PAGE_PREFIXES = [
@@ -105,6 +108,9 @@ export function Nav() {
     `/${locale}/arrival/`,
     `/${locale}/where-to-go/`,
     `/${locale}/for/`,
+    // Tier 6 (S54) — comparison detail pages
+    `/${locale}/vs/`,
+    `/${locale}/india-vs/`,
   ];
   const isCinematicPage =
     CINEMATIC_PAGE_PATHS.includes(pathname) ||

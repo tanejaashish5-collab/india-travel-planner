@@ -5,6 +5,9 @@ import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { COUNTRY_PROFILES, COUNTRY_LIST } from "@/lib/india-vs-countries";
 import { localeAlternates } from "@/lib/seo-utils";
+import { CinemaStyles } from "@/components/landing-cinema/cinema-styles";
+import { Title } from "@/components/landing-cinema/editorial";
+import { CinematicRelatedRail } from "@/components/cinematic-related-rail";
 
 export const revalidate = 86400;
 
@@ -43,9 +46,7 @@ export default async function IndiaVsCountryPage({
 
   const otherCountries = COUNTRY_LIST.filter((c) => c.slug !== country);
 
-  // ComparativeArticle JSON-LD — schema.org doesn't have a native country-comparison
-  // type, so use Article with about referencing both countries.
-  const ld = {
+  const articleLd = {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: `India vs ${profile.name}: Honest Travel Comparison`,
@@ -59,181 +60,609 @@ export default async function IndiaVsCountryPage({
     publisher: { "@type": "Organization", name: "NakshIQ" },
   };
 
+  const breadcrumbLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/${locale}` },
+      { "@type": "ListItem", position: 2, name: "India vs the world", item: `${SITE}/${locale}/india-vs` },
+      { "@type": "ListItem", position: 3, name: profile.name, item: `${SITE}/${locale}/india-vs/${profile.slug}` },
+    ],
+  };
+
+  const facts: { label: string; value: string }[] = [
+    { label: "Best months", value: profile.facts.best_months },
+    { label: "Visa for Indians", value: profile.facts.visa_for_indians },
+    { label: "Daily cost", value: profile.facts.daily_cost_usd },
+    { label: "Language", value: profile.facts.language_overlap },
+    { label: "Safety read", value: profile.facts.safety_read },
+    { label: "Cuisine", value: profile.facts.cuisine_signature },
+  ];
+
   return (
-    <div className="min-h-screen">
-      <Nav />
+    <div className="nakshiq-cinema" style={{ minHeight: "100vh" }}>
+      <CinemaStyles />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(ld) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleLd) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+      />
+      <Nav />
 
-      <main className="mx-auto max-w-3xl px-4 sm:px-6 py-8 sm:py-12">
-        <div className="flex items-center gap-2 text-xs sm:text-sm text-muted-foreground mb-4">
-          <Link href={`/${locale}`} className="hover:text-foreground">Home</Link>
-          <span aria-hidden>/</span>
-          <Link href={`/${locale}/india-vs`} className="hover:text-foreground">India vs</Link>
-          <span aria-hidden>/</span>
-          <span className="text-foreground">{profile.name}</span>
-        </div>
-
-        <header className="mb-10">
-          <p className="text-xs font-medium text-primary uppercase tracking-[0.08em] mb-3">{profile.overline}</p>
-          <h1 className="text-3xl sm:text-5xl font-semibold leading-tight">
-            India vs {profile.name} <span className="text-muted-foreground/40">{profile.flag}</span>
-          </h1>
-          <p className="mt-5 text-base sm:text-lg text-muted-foreground leading-relaxed">{profile.lede}</p>
+      <main
+        id="main-content"
+        className="nq-grain"
+        style={{ position: "relative", padding: "140px 24px 64px" }}
+      >
+        <header style={{ maxWidth: 900, margin: "0 auto 56px" }}>
+          <p
+            className="nq-kicker"
+            style={{
+              color: "var(--vermillion)",
+              marginBottom: 20,
+              letterSpacing: "0.22em",
+            }}
+          >
+            COUNTRY COMPARISON · {profile.overline.toUpperCase()}
+          </p>
+          <Title
+            as="h1"
+            className="nq-display"
+            style={{
+              fontFamily: "var(--cinema-display)",
+              fontStyle: "italic",
+              fontWeight: 400,
+              fontSize: "clamp(36px, 6vw, 76px)",
+              lineHeight: 1.0,
+              letterSpacing: "-0.022em",
+              margin: 0,
+              textWrap: "balance",
+            }}
+          >
+            India{" "}
+            <span
+              style={{
+                fontFamily: "var(--cinema-mono)",
+                fontStyle: "normal",
+                fontWeight: 400,
+                fontSize: "0.42em",
+                letterSpacing: "0.22em",
+                textTransform: "uppercase",
+                color: "var(--bone-faint)",
+                verticalAlign: "middle",
+                margin: "0 0.3em",
+              }}
+            >
+              vs
+            </span>{" "}
+            {profile.name}{" "}
+            <span style={{ fontStyle: "normal", color: "var(--bone-faint)" }}>{profile.flag}</span>
+          </Title>
+          <p
+            style={{
+              fontFamily: "var(--cinema-display)",
+              fontStyle: "italic",
+              fontWeight: 400,
+              fontSize: "clamp(18px, 2vw, 24px)",
+              lineHeight: 1.4,
+              color: "var(--bone-dim)",
+              marginTop: 24,
+              maxWidth: 720,
+            }}
+          >
+            {profile.lede}
+          </p>
         </header>
 
-        {/* At a glance — facts grid */}
-        <section className="mb-10 rounded-2xl border border-border/50 bg-card/50 p-6 sm:p-8">
-          <h2 className="text-sm font-semibold uppercase tracking-[0.08em] text-muted-foreground/70 mb-5">
-            At a glance
-          </h2>
-          <div className="grid gap-5 sm:grid-cols-2">
-            {[
-              { label: "Best months", value: profile.facts.best_months },
-              { label: "Visa for Indians", value: profile.facts.visa_for_indians },
-              { label: "Daily cost", value: profile.facts.daily_cost_usd },
-              { label: "Language", value: profile.facts.language_overlap },
-              { label: "Safety read", value: profile.facts.safety_read },
-              { label: "Cuisine", value: profile.facts.cuisine_signature },
-            ].map((row) => (
-              <div key={row.label}>
-                <div className="text-[11px] font-mono uppercase tracking-[0.12em] text-muted-foreground/60 mb-1.5">
-                  {row.label}
-                </div>
-                <p className="text-sm text-foreground/85 leading-relaxed">{row.value}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* What India offers more */}
-        <section className="mb-10">
-          <h2 className="text-2xl font-semibold mb-5">What India offers more</h2>
-          <div className="space-y-5">
-            {profile.india_more.map((item) => (
-              <div key={item.topic} className="border-l-2 border-primary/40 pl-4">
-                <div className="text-sm font-semibold mb-1">{item.topic}</div>
-                <p className="text-sm text-muted-foreground leading-relaxed">{item.detail}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* What the country offers more */}
-        <section className="mb-10">
-          <h2 className="text-2xl font-semibold mb-5">What {profile.name} offers more</h2>
-          <div className="space-y-5">
-            {profile.country_more.map((item) => (
-              <div key={item.topic} className="border-l-2 border-amber-500/40 pl-4">
-                <div className="text-sm font-semibold mb-1">{item.topic}</div>
-                <p className="text-sm text-muted-foreground leading-relaxed">{item.detail}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* Swap list — concrete equivalents */}
-        <section className="mb-10">
-          <h2 className="text-2xl font-semibold mb-2">If you loved it there, try this here</h2>
-          <p className="text-sm text-muted-foreground mb-6">
-            Concrete swap pairs — what scratches the same itch in India.
-          </p>
-          <div className="space-y-6">
-            {profile.swaps.map((s, i) => (
-              <div key={i} className="rounded-xl border border-border/50 bg-card/30 p-5">
-                <div className="grid sm:grid-cols-[1fr_auto_1fr] sm:gap-4 items-baseline mb-3">
-                  <div>
-                    <div className="text-[11px] font-mono uppercase tracking-[0.12em] text-amber-400/70 mb-1">
-                      {profile.name}
-                    </div>
-                    <div className="text-base font-semibold">{s.their}</div>
-                  </div>
-                  <div className="hidden sm:block text-muted-foreground/40 text-xl">→</div>
-                  <div>
-                    <div className="text-[11px] font-mono uppercase tracking-[0.12em] text-primary/70 mb-1">
-                      India
-                    </div>
-                    <div className="text-base font-semibold">{s.our}</div>
-                  </div>
-                </div>
-                <p className="text-sm text-muted-foreground leading-relaxed">{s.reason}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* What to expect — for travelers who did the other country first */}
-        <section className="mb-10">
-          <h2 className="text-2xl font-semibold mb-5">
-            If {profile.name} was your reference point, expect this
-          </h2>
-          <ul className="space-y-3">
-            {profile.expectations.map((line, i) => (
-              <li key={i} className="flex items-start gap-3 text-sm text-muted-foreground leading-relaxed">
-                <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-primary shrink-0" />
-                <span>{line}</span>
-              </li>
-            ))}
-          </ul>
-        </section>
-
-        {/* Verdict */}
-        <section className="mb-10 rounded-2xl border border-primary/30 bg-primary/5 p-6 sm:p-8">
-          <div className="font-mono text-[10px] tracking-[0.2em] uppercase text-muted-foreground/70 mb-3">
-            NakshIQ verdict
-          </div>
-          <p className="text-base sm:text-lg leading-relaxed text-foreground/90 italic">
-            {profile.verdict}
-          </p>
-        </section>
-
-        {/* Next steps */}
-        <section className="mb-12">
-          <h2 className="text-lg font-semibold mb-4">Next</h2>
-          <div className="grid gap-3 sm:grid-cols-2">
-            <Link
-              href={`/${locale}/guide/first-trip-india`}
-              className="rounded-xl border border-border p-4 hover:border-primary/40 transition-all"
+        <div style={{ maxWidth: 900, margin: "0 auto" }}>
+          {/* At a glance */}
+          <section style={{ marginBottom: 56 }}>
+            <p
+              className="nq-kicker"
+              style={{
+                color: "var(--vermillion)",
+                marginBottom: 16,
+                letterSpacing: "0.18em",
+                textTransform: "uppercase",
+              }}
             >
-              <div className="text-sm font-semibold">First trip to India</div>
-              <div className="text-xs text-muted-foreground mt-1">
-                The decision-grade primer for travelers planning their first India trip.
-              </div>
-            </Link>
-            <Link
-              href={`/${locale}/plan`}
-              className="rounded-xl border border-border p-4 hover:border-primary/40 transition-all"
+              At a glance
+            </p>
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
+                gap: 1,
+                background: "var(--hair)",
+                border: "1px solid var(--hair)",
+              }}
             >
-              <div className="text-sm font-semibold">Plan your trip</div>
-              <div className="text-xs text-muted-foreground mt-1">
-                The AI itinerary planner — tell it your dates and constraints.
-              </div>
-            </Link>
-          </div>
-        </section>
+              {facts.map((row) => (
+                <div key={row.label} style={{ padding: 20, background: "var(--paper)" }}>
+                  <p
+                    style={{
+                      fontFamily: "var(--cinema-mono)",
+                      fontSize: 10,
+                      letterSpacing: "0.22em",
+                      textTransform: "uppercase",
+                      color: "var(--bone-faint)",
+                      margin: 0,
+                    }}
+                  >
+                    {row.label}
+                  </p>
+                  <p
+                    style={{
+                      fontFamily: "var(--cinema-ui)",
+                      fontSize: 14,
+                      lineHeight: 1.6,
+                      color: "var(--bone)",
+                      margin: "8px 0 0",
+                      fontVariantNumeric: "tabular-nums",
+                    }}
+                  >
+                    {row.value}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </section>
 
-        {/* Other comparisons */}
-        <section className="border-t border-border/50 pt-8">
-          <h2 className="text-sm font-semibold uppercase tracking-[0.08em] text-muted-foreground/70 mb-4">
-            Other India comparisons
-          </h2>
-          <div className="flex flex-wrap gap-2">
-            {otherCountries.map((c) => (
+          {/* What India offers more */}
+          <section style={{ marginBottom: 56 }}>
+            <h2
+              style={{
+                fontFamily: "var(--cinema-display)",
+                fontStyle: "italic",
+                fontWeight: 500,
+                fontSize: 32,
+                lineHeight: 1.1,
+                color: "var(--bone)",
+                margin: "0 0 24px",
+              }}
+            >
+              What India offers more.
+            </h2>
+            <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
+              {profile.india_more.map((item) => (
+                <div
+                  key={item.topic}
+                  style={{
+                    paddingLeft: 16,
+                    borderLeft: "2px solid var(--vermillion)",
+                  }}
+                >
+                  <p
+                    style={{
+                      fontFamily: "var(--cinema-display)",
+                      fontStyle: "italic",
+                      fontWeight: 500,
+                      fontSize: 19,
+                      lineHeight: 1.3,
+                      color: "var(--bone)",
+                      margin: "0 0 6px",
+                    }}
+                  >
+                    {item.topic}
+                  </p>
+                  <p
+                    style={{
+                      fontFamily: "var(--cinema-ui)",
+                      fontSize: 14,
+                      lineHeight: 1.7,
+                      color: "var(--bone-dim)",
+                      margin: 0,
+                    }}
+                  >
+                    {item.detail}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* What the country offers more */}
+          <section style={{ marginBottom: 56 }}>
+            <h2
+              style={{
+                fontFamily: "var(--cinema-display)",
+                fontStyle: "italic",
+                fontWeight: 500,
+                fontSize: 32,
+                lineHeight: 1.1,
+                color: "var(--bone)",
+                margin: "0 0 24px",
+              }}
+            >
+              What {profile.name} offers more.
+            </h2>
+            <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
+              {profile.country_more.map((item) => (
+                <div
+                  key={item.topic}
+                  style={{
+                    paddingLeft: 16,
+                    borderLeft: "2px solid var(--bone-faint)",
+                  }}
+                >
+                  <p
+                    style={{
+                      fontFamily: "var(--cinema-display)",
+                      fontStyle: "italic",
+                      fontWeight: 500,
+                      fontSize: 19,
+                      lineHeight: 1.3,
+                      color: "var(--bone)",
+                      margin: "0 0 6px",
+                    }}
+                  >
+                    {item.topic}
+                  </p>
+                  <p
+                    style={{
+                      fontFamily: "var(--cinema-ui)",
+                      fontSize: 14,
+                      lineHeight: 1.7,
+                      color: "var(--bone-dim)",
+                      margin: 0,
+                    }}
+                  >
+                    {item.detail}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* Swap list */}
+          <section style={{ marginBottom: 56 }}>
+            <h2
+              style={{
+                fontFamily: "var(--cinema-display)",
+                fontStyle: "italic",
+                fontWeight: 500,
+                fontSize: 32,
+                lineHeight: 1.1,
+                color: "var(--bone)",
+                margin: "0 0 8px",
+              }}
+            >
+              If you loved it there, try this here.
+            </h2>
+            <p
+              style={{
+                fontFamily: "var(--cinema-ui)",
+                fontSize: 13,
+                lineHeight: 1.7,
+                color: "var(--bone-dim)",
+                margin: "0 0 24px",
+              }}
+            >
+              Concrete swap pairs — what scratches the same itch in India.
+            </p>
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "1fr",
+                gap: 1,
+                background: "var(--hair)",
+                border: "1px solid var(--hair)",
+              }}
+            >
+              {profile.swaps.map((s, i) => (
+                <div key={i} style={{ padding: 20, background: "var(--paper)" }}>
+                  <div
+                    style={{
+                      display: "grid",
+                      gridTemplateColumns: "1fr auto 1fr",
+                      gap: 16,
+                      alignItems: "baseline",
+                      marginBottom: 12,
+                    }}
+                  >
+                    <div>
+                      <p
+                        style={{
+                          fontFamily: "var(--cinema-mono)",
+                          fontSize: 10,
+                          letterSpacing: "0.22em",
+                          textTransform: "uppercase",
+                          color: "var(--bone-faint)",
+                          margin: "0 0 4px",
+                        }}
+                      >
+                        {profile.name}
+                      </p>
+                      <p
+                        style={{
+                          fontFamily: "var(--cinema-display)",
+                          fontStyle: "italic",
+                          fontWeight: 500,
+                          fontSize: 18,
+                          lineHeight: 1.2,
+                          color: "var(--bone)",
+                          margin: 0,
+                        }}
+                      >
+                        {s.their}
+                      </p>
+                    </div>
+                    <span
+                      style={{
+                        fontFamily: "var(--cinema-mono)",
+                        fontSize: 14,
+                        color: "var(--vermillion)",
+                      }}
+                    >
+                      →
+                    </span>
+                    <div>
+                      <p
+                        style={{
+                          fontFamily: "var(--cinema-mono)",
+                          fontSize: 10,
+                          letterSpacing: "0.22em",
+                          textTransform: "uppercase",
+                          color: "var(--vermillion)",
+                          margin: "0 0 4px",
+                        }}
+                      >
+                        India
+                      </p>
+                      <p
+                        style={{
+                          fontFamily: "var(--cinema-display)",
+                          fontStyle: "italic",
+                          fontWeight: 500,
+                          fontSize: 18,
+                          lineHeight: 1.2,
+                          color: "var(--bone)",
+                          margin: 0,
+                        }}
+                      >
+                        {s.our}
+                      </p>
+                    </div>
+                  </div>
+                  <p
+                    style={{
+                      fontFamily: "var(--cinema-ui)",
+                      fontSize: 13,
+                      lineHeight: 1.7,
+                      color: "var(--bone-dim)",
+                      margin: 0,
+                    }}
+                  >
+                    {s.reason}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* Expectations */}
+          <section style={{ marginBottom: 56 }}>
+            <h2
+              style={{
+                fontFamily: "var(--cinema-display)",
+                fontStyle: "italic",
+                fontWeight: 500,
+                fontSize: 32,
+                lineHeight: 1.1,
+                color: "var(--bone)",
+                margin: "0 0 24px",
+              }}
+            >
+              If {profile.name} was your reference point, expect this.
+            </h2>
+            <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: 14 }}>
+              {profile.expectations.map((line, i) => (
+                <li
+                  key={i}
+                  style={{
+                    display: "flex",
+                    gap: 12,
+                    alignItems: "baseline",
+                    fontFamily: "var(--cinema-ui)",
+                    fontSize: 14,
+                    lineHeight: 1.7,
+                    color: "var(--bone-dim)",
+                  }}
+                >
+                  <span
+                    style={{
+                      flexShrink: 0,
+                      fontFamily: "var(--cinema-mono)",
+                      fontSize: 10,
+                      color: "var(--vermillion)",
+                      fontVariantNumeric: "tabular-nums",
+                    }}
+                  >
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <span>{line}</span>
+                </li>
+              ))}
+            </ul>
+          </section>
+
+          {/* Verdict */}
+          <section
+            style={{
+              marginBottom: 56,
+              padding: 28,
+              border: "1px solid var(--vermillion)",
+              background: "rgba(229, 86, 66, 0.04)",
+            }}
+          >
+            <p
+              style={{
+                fontFamily: "var(--cinema-mono)",
+                fontSize: 10,
+                letterSpacing: "0.22em",
+                textTransform: "uppercase",
+                color: "var(--vermillion)",
+                margin: "0 0 14px",
+              }}
+            >
+              NakshIQ verdict
+            </p>
+            <p
+              style={{
+                fontFamily: "var(--cinema-display)",
+                fontStyle: "italic",
+                fontWeight: 400,
+                fontSize: "clamp(18px, 2vw, 22px)",
+                lineHeight: 1.4,
+                color: "var(--bone)",
+                margin: 0,
+              }}
+            >
+              {profile.verdict}
+            </p>
+          </section>
+
+          {/* Next steps */}
+          <section style={{ marginBottom: 56 }}>
+            <p
+              className="nq-kicker"
+              style={{
+                color: "var(--vermillion)",
+                marginBottom: 16,
+                letterSpacing: "0.18em",
+                textTransform: "uppercase",
+              }}
+            >
+              Next
+            </p>
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+                gap: 1,
+                background: "var(--hair)",
+                border: "1px solid var(--hair)",
+              }}
+            >
               <Link
-                key={c.slug}
-                href={`/${locale}/india-vs/${c.slug}`}
-                className="rounded-full border border-border px-3 py-1.5 text-xs hover:border-primary/40 transition-all"
+                href={`/${locale}/guide/first-trip-india`}
+                style={{
+                  display: "block",
+                  padding: 20,
+                  background: "var(--paper)",
+                  textDecoration: "none",
+                }}
               >
-                <span className="mr-1.5">{c.flag}</span>
-                India vs {c.name}
+                <p
+                  style={{
+                    fontFamily: "var(--cinema-display)",
+                    fontStyle: "italic",
+                    fontWeight: 500,
+                    fontSize: 18,
+                    color: "var(--bone)",
+                    margin: "0 0 6px",
+                  }}
+                >
+                  First trip to India
+                </p>
+                <p
+                  style={{
+                    fontFamily: "var(--cinema-ui)",
+                    fontSize: 13,
+                    lineHeight: 1.6,
+                    color: "var(--bone-dim)",
+                    margin: 0,
+                  }}
+                >
+                  The decision-grade primer for travellers planning their first India trip.
+                </p>
               </Link>
-            ))}
-          </div>
-        </section>
+              <Link
+                href={`/${locale}/plan`}
+                style={{
+                  display: "block",
+                  padding: 20,
+                  background: "var(--paper)",
+                  textDecoration: "none",
+                }}
+              >
+                <p
+                  style={{
+                    fontFamily: "var(--cinema-display)",
+                    fontStyle: "italic",
+                    fontWeight: 500,
+                    fontSize: 18,
+                    color: "var(--bone)",
+                    margin: "0 0 6px",
+                  }}
+                >
+                  Plan your trip
+                </p>
+                <p
+                  style={{
+                    fontFamily: "var(--cinema-ui)",
+                    fontSize: 13,
+                    lineHeight: 1.6,
+                    color: "var(--bone-dim)",
+                    margin: 0,
+                  }}
+                >
+                  The AI itinerary planner — tell it your dates and constraints.
+                </p>
+              </Link>
+            </div>
+          </section>
+
+          {/* Other comparisons */}
+          <section
+            style={{
+              padding: 24,
+              borderTop: "1px solid var(--hair)",
+            }}
+          >
+            <p
+              className="nq-kicker"
+              style={{
+                color: "var(--bone-faint)",
+                marginBottom: 16,
+                letterSpacing: "0.18em",
+                textTransform: "uppercase",
+              }}
+            >
+              Other India comparisons
+            </p>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
+              {otherCountries.map((c) => (
+                <Link
+                  key={c.slug}
+                  href={`/${locale}/india-vs/${c.slug}`}
+                  style={{
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: 6,
+                    fontFamily: "var(--cinema-mono)",
+                    fontSize: 11,
+                    letterSpacing: "0.14em",
+                    textTransform: "uppercase",
+                    padding: "6px 12px",
+                    border: "1px solid var(--hair)",
+                    color: "var(--bone-dim)",
+                    textDecoration: "none",
+                  }}
+                >
+                  <span>{c.flag}</span>
+                  <span>India vs {c.name}</span>
+                </Link>
+              ))}
+            </div>
+          </section>
+        </div>
       </main>
 
+      <CinematicRelatedRail />
       <Footer />
     </div>
   );

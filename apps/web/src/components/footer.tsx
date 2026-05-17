@@ -107,6 +107,9 @@ export function Footer({
     `/${locale}/road-conditions`,
     `/${locale}/where-to-go`,
     `/${locale}/arrival`,
+    // Phase 3 Tier 6 (S54) — comparison hubs
+    `/${locale}/vs`,
+    `/${locale}/india-vs`,
   ];
   const CINEMATIC_PAGE_PREFIXES = [
     `/${locale}/skip-list/`,
@@ -132,6 +135,9 @@ export function Footer({
     `/${locale}/arrival/`,
     `/${locale}/where-to-go/`,
     `/${locale}/for/`,
+    // Tier 6 (S54) — comparison detail pages
+    `/${locale}/vs/`,
+    `/${locale}/india-vs/`,
   ];
   const isCinematicPage =
     CINEMATIC_PAGE_PATHS.includes(pathname) ||

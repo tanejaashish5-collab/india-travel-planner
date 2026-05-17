@@ -5,6 +5,9 @@ import { VsComparison } from "@/components/vs-comparison";
 import { createClient } from "@supabase/supabase-js";
 import { notFound } from "next/navigation";
 import { VS_PAIRS } from "@/lib/vs-pairs";
+import { CinemaStyles } from "@/components/landing-cinema/cinema-styles";
+import { Title } from "@/components/landing-cinema/editorial";
+import { CinematicRelatedRail } from "@/components/cinematic-related-rail";
 
 export const revalidate = 86400;
 export const dynamicParams = true;
@@ -18,10 +21,10 @@ export async function generateStaticParams() {
   );
 }
 
-function resolveState(state: any): string | null {
+function resolveState(state: unknown): string | null {
   if (!state) return null;
-  if (Array.isArray(state)) return state[0]?.name ?? null;
-  return state.name;
+  if (Array.isArray(state)) return (state[0] as { name?: string })?.name ?? null;
+  return (state as { name?: string }).name ?? null;
 }
 
 async function getVsData(id1: string, id2: string) {
@@ -124,45 +127,117 @@ export default async function VsPairPage({
 
   const { dest1, dest2 } = data;
 
-  const jsonLd = {
+  const state1 = resolveState(dest1.state);
+  const state2 = resolveState(dest2.state);
+
+  const breadcrumbLd = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/${locale}` },
-      { "@type": "ListItem", position: 2, name: dest1.name, item: `${SITE}/${locale}/destination/${dest1.id}` },
+      { "@type": "ListItem", position: 2, name: "Compare", item: `${SITE}/${locale}/vs` },
       { "@type": "ListItem", position: 3, name: `${dest1.name} vs ${dest2.name}`, item: `${SITE}/${locale}/vs/${pair}` },
     ],
   };
 
-  // Prepare serializable data
-  const serialize = (d: any) => ({
-    id: d.id,
-    name: d.name,
-    tagline: d.tagline,
-    difficulty: d.difficulty,
-    elevation_m: d.elevation_m,
-    budget_tier: d.budget_tier,
-    best_months: d.best_months,
+  const serialize = (d: Record<string, unknown>) => ({
+    id: d.id as string,
+    name: d.name as string,
+    tagline: d.tagline as string,
+    difficulty: d.difficulty as string,
+    elevation_m: d.elevation_m as number | null,
+    budget_tier: d.budget_tier as string | null,
+    best_months: d.best_months as string | null,
     daily_cost: d.daily_cost,
-    family_stress: d.family_stress,
+    family_stress: d.family_stress as string | null,
     state: resolveState(d.state),
-    months: (d.destination_months ?? []).sort((a: any, b: any) => a.month - b.month),
-    kids: Array.isArray(d.kids_friendly) ? d.kids_friendly[0] : d.kids_friendly,
-    confidence: Array.isArray(d.confidence_cards) ? d.confidence_cards[0] : d.confidence_cards,
+    months: ((d.destination_months as { month: number; score: number }[] | null) ?? []).slice().sort(
+      (a, b) => a.month - b.month,
+    ),
+    kids: Array.isArray(d.kids_friendly) ? d.kids_friendly[0] : (d.kids_friendly as { suitable: boolean; rating: number } | null),
+    confidence: Array.isArray(d.confidence_cards) ? d.confidence_cards[0] : (d.confidence_cards as { safety_rating: number | string | null; network: unknown } | null),
   });
 
   return (
-    <div className="min-h-screen bg-background">
-      <Nav />
+    <div className="nakshiq-cinema" style={{ minHeight: "100vh" }}>
+      <CinemaStyles />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
       />
+      <Nav />
+
+      <main
+        id="main-content"
+        className="nq-grain"
+        style={{ position: "relative", padding: "140px 24px 0" }}
+      >
+        <header style={{ maxWidth: 900, margin: "0 auto 32px" }}>
+          <p
+            className="nq-kicker"
+            style={{
+              color: "var(--vermillion)",
+              marginBottom: 20,
+              letterSpacing: "0.22em",
+            }}
+          >
+            COMPARISONS · {state1 ? state1.toUpperCase() : "INDIA"} {state2 && state2 !== state1 ? `× ${state2.toUpperCase()}` : ""}
+          </p>
+          <Title
+            as="h1"
+            className="nq-display"
+            style={{
+              fontFamily: "var(--cinema-display)",
+              fontStyle: "italic",
+              fontWeight: 400,
+              fontSize: "clamp(36px, 6vw, 76px)",
+              lineHeight: 1.0,
+              letterSpacing: "-0.022em",
+              margin: 0,
+              textWrap: "balance",
+            }}
+          >
+            {dest1.name}{" "}
+            <span
+              style={{
+                fontFamily: "var(--cinema-mono)",
+                fontStyle: "normal",
+                fontWeight: 400,
+                fontSize: "0.42em",
+                letterSpacing: "0.22em",
+                textTransform: "uppercase",
+                color: "var(--bone-faint)",
+                verticalAlign: "middle",
+                margin: "0 0.3em",
+              }}
+            >
+              vs
+            </span>{" "}
+            {dest2.name}.
+          </Title>
+          <p
+            style={{
+              fontFamily: "var(--cinema-ui)",
+              fontSize: 14,
+              lineHeight: 1.7,
+              color: "var(--bone-dim)",
+              marginTop: 20,
+              maxWidth: 720,
+            }}
+          >
+            Side-by-side data — monthly weather, daily cost, difficulty, kids-friendliness, network.
+            Pick the one that fits your trip.
+          </p>
+        </header>
+      </main>
+
       <VsComparison
-        dest1={serialize(dest1)}
-        dest2={serialize(dest2)}
+        dest1={serialize(dest1 as unknown as Record<string, unknown>)}
+        dest2={serialize(dest2 as unknown as Record<string, unknown>)}
         locale={locale}
       />
+
+      <CinematicRelatedRail />
       <Footer />
     </div>
   );
