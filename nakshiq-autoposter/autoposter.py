@@ -52,38 +52,38 @@ LOG_FILE         = Path(__file__).parent / "autoposter.log"
 # have been cycled through). Tracked via theme_usage["morning_formats"].
 # ─────────────────────────────────────────────────────────────────────────────
 MORNING_FORMATS = [
-    # ── 2026-05-16 STRATEGIC PIVOT — 26 formats → 7 ──
+    # ── 2026-05-17 TIER 7 PHASE 2: VARIETY RESTORATION (14 formats) ──
     #
-    # Diagnosis: 215 IG posts → 2 organic followers (0.93% conversion). Audit
-    # confirmed >20 of 26 formats either posted shallow boilerplate or fell
-    # back silently to score_card when their rich data was missing. Comparison
-    # formats (elevation_face_off, state_showdown, difficulty_spectrum) posted
-    # identical IG/FB content with template voice. Manifesto formats
-    # (chinese_wall, four_questions, methodology) had no destination hook —
-    # pure brand statements that earn zero engagement on a sub-1k account.
+    # After the 2026-05-16 pivot cut 26→7, audit confirmed pillar imbalance
+    # (verification 57%, discovery 0%, anti_trap 0%) — same 7-day mix
+    # repeating every week. Phase 2 restores 4 culled formats (revoiced) +
+    # adds 3 brand-new data-driven formats to bring total to 14, distributed
+    # across all 5 pillars.
     #
-    # New principle: every post MUST surface rich, dest-specific DB data
-    # (eatery anchor, stay pick, emergency contact, festival timing, etc).
-    # If the data isn't available, SKIP the post — do not degrade to
-    # score_card. Quality over volume.
+    # Quality contract (unchanged from 2026-05-16):
+    #   - hook in line 1 (curiosity / specific value)
+    #   - real DB data only (SKIP if data missing — no silent fallback)
+    #   - comment-CTA + niche tags + no IG URL (link in bio)
     #
-    # Kept (proven rich-data formats):
-    "score_card",           # core verdict — keep but voice-rewritten
-    "stays_pick",           # editor-curated stay (signature_experience)
-    "emergency_intel",      # per-dest SOS contacts + local helper (MOAT)
-    "eateries_pick",        # legendary local eatery + insider tip
-    "festival_alert",       # this-month festival with timing
-    "weekend_escape",       # 48hr plan with destination-specific detail
-    "confidence_intel",     # unified reach+sleep+fuel+network report card
-    #
-    # Killed 2026-05-16 (manifesto / shallow / silent-fallback formats):
-    #   reality_check, data_carousel, infrastructure_truth, monthly_forecast,
-    #   tourist_trap (kept as anti-trap only on rotation), blog_promo,
-    #   seasonal_shift, elevation_face_off, state_showdown, difficulty_spectrum,
-    #   underdog_spotlight, this_month_only, adventure_pick, trek_intel,
-    #   viral_eats_pick, camping_intel, collection_spotlight,
-    #   collection_series, kids_intel
-    # Restore individually only after voice rewrite + first-100-engagement audit.
+    # ─── Verdict (3) ──────────────────────────────────────────────────────
+    "score_card",                # core verdict
+    "weekend_escape",            # 48hr plan with dest-specific detail
+    "festival_alert",            # this-month festival with timing (moment too)
+    # ─── Verification (4) ────────────────────────────────────────────────
+    "stays_pick",                # editor-curated stay
+    "emergency_intel",           # per-dest SOS contacts + local helper
+    "eateries_pick",             # legendary local eatery + insider tip
+    "confidence_intel",          # reach + sleep + fuel + network report
+    # ─── Discovery (4) — restored + new ─────────────────────────────────
+    "hidden_gem_reveal",         # NEW: "nobody talks about X" from hidden_gems
+    "collection_series",         # RESTORED + revoiced: themed multi-post
+    "route_spotlight_short",     # NEW: featured stop on a multi-day route
+    "women_solo_brief",          # NEW: solo-female-safe curated dest
+    # ─── Anti-trap (1) — restored ───────────────────────────────────────
+    "tourist_trap",              # RESTORED + revoiced: skip X go Y
+    # ─── Moment (2) — practical / decisional ────────────────────────────
+    "arrival_intel",             # NEW: airport prepaid taxi + scam warning
+    "cost_index_card",           # NEW: ₹/day breakdown
 ]
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -94,24 +94,35 @@ MORNING_FORMATS = [
 # ─────────────────────────────────────────────────────────────────────────────
 
 FORMAT_PILLARS = {
-    # VERDICT — "Should I go to X in Y month?" (NakshIQ's core utility)
+    # 2026-05-17 Tier 7 Phase 2 — pillar map for the active 14 formats.
+    # (Inactive entries from earlier tiers retained as dict keys so analytics
+    # backfills still resolve old format names to pillars; their absence from
+    # MORNING_FORMATS means they never get picked.)
+    # VERDICT — "Should I go to X in Y month?"
     "score_card":           "verdict",
+    "weekend_escape":       "verdict",
+    "festival_alert":       "verdict",   # also moment-flavoured
+    # legacy verdict (inactive)
     "reality_check":        "verdict",
     "monthly_forecast":     "verdict",
     "seasonal_shift":       "verdict",
     "this_month_only":      "verdict",
-    "weekend_escape":       "verdict",
     # VERIFICATION — "Verified, here's the source"
-    "infrastructure_truth": "verification",
-    "eateries_pick":        "verification",
     "stays_pick":           "verification",
     "emergency_intel":      "verification",
+    "eateries_pick":        "verification",
     "confidence_intel":     "verification",
+    # legacy verification (inactive)
+    "infrastructure_truth": "verification",
     # ANTI-TRAP — "Don't fall for X"
     "tourist_trap":         "anti_trap",
     # DISCOVERY — "What you didn't know about X"
-    "collection_spotlight": "discovery",
+    "hidden_gem_reveal":    "discovery",
     "collection_series":    "discovery",
+    "route_spotlight_short":"discovery",
+    "women_solo_brief":     "discovery",   # solo-curation is discovery-flavoured
+    # legacy discovery (inactive)
+    "collection_spotlight": "discovery",
     "kids_intel":           "discovery",
     "underdog_spotlight":   "discovery",
     "adventure_pick":       "discovery",
@@ -119,7 +130,9 @@ FORMAT_PILLARS = {
     "viral_eats_pick":      "discovery",
     "camping_intel":        "discovery",
     # MOMENT — "Right now, this matters"
-    "festival_alert":       "moment",
+    "arrival_intel":        "moment",
+    "cost_index_card":      "moment",
+    # legacy moment (inactive)
     "data_carousel":        "moment",
     "blog_promo":           "moment",
     "elevation_face_off":   "moment",
@@ -1313,6 +1326,10 @@ def sync_all_content() -> dict:
         "viral_eats":   nakshiq_fetch("viral_eats",   {"limit": 100}),
         "camping":      nakshiq_fetch("camping",      {"month": month, "limit": 50}),
         "hidden_gems":  nakshiq_fetch("hidden_gems",  {"limit": 50}),
+        # Tier 7 Phase 2 (2026-05-17) — restored variety + 3 new verticals.
+        "arrival":      nakshiq_fetch("arrival",      {"limit": 20}),
+        "cost_index":   nakshiq_fetch("cost_index",   {"month": month, "limit": 100}),
+        "women_solo":   nakshiq_fetch("women_solo",   {"month": month, "limit": 100}),
     }
     # Keep TOTAL_DESTINATIONS in sync with the real catalog size.
     global TOTAL_DESTINATIONS
@@ -2173,16 +2190,62 @@ def copy_data_carousel(destinations: list, platform: str) -> str:
         ).strip()
 
 def copy_tourist_trap(trap: dict, platform: str) -> str:
-    name = trap.get("name", "This destination")
-    desc = trap.get("description", "")
-    tags = hashtag("TouristTrap", name.replace(" ", ""),
-                   f"{month_name()}Avoid", "SkipThis", "NakshIQ")
-    return (
-        f"{'TOURIST TRAP' if platform == 'facebook' else '🚩 TOURIST TRAP'} — {name.upper()}\n\n"
-        f"{desc}\n\n"
-        f"NakshIQ scores {TOTAL_DESTINATIONS} destinations monthly. Some score low for a reason.\n\n"
-        f"Better alternatives → {utm('https://nakshiq.com/en/tourist-traps', 'social', 'post', 'tourist-trap')}\n\n{tags}"
-    ).strip()
+    """Tourist trap → alternative pairing. 2026-05-17 Phase 2 revoiced.
+
+    Old voice was generic boilerplate. New version pulls the trap+alt pair from
+    the actual /api/content?type=traps endpoint (trap_dest_name +
+    alternative_dest_name + reason + alternative_reason) and frames as
+    "skip X, go Y because Z".
+    """
+    # The API returns {trap: {id,name}, reason, alternative: {id,name,reason}, ...}
+    trap_meta = trap.get("trap") or {}
+    alt_meta = trap.get("alternative") or {}
+    trap_name = (trap_meta.get("name") or trap.get("name") or "").strip()
+    alt_name = (alt_meta.get("name") or "").strip()
+    trap_reason = (trap.get("reason") or trap.get("description") or "").strip()
+    alt_reason = (alt_meta.get("reason") or "").strip()
+    alt_id = alt_meta.get("id")
+
+    if not trap_name:
+        return ""
+
+    state = ""  # not in the trap payload; would need a join
+
+    hook = trap_reason or f"{trap_name} is overhyped this {month_name()}."
+    if hook and "." in hook[:200]:
+        hook = hook.split(".")[0].rstrip(".") + "."
+
+    tags = niche_tags(state, "anti_trap", dest_name=trap_name)
+    cta = comment_cta("anti_trap")
+
+    if platform == "facebook":
+        if alt_id:
+            url = utm(f"https://nakshiq.com/en/destination/{alt_id}",
+                      "social", "post", "tourist-trap",
+                      content=build_utm_content(alt_id, "tourist_trap"))
+        else:
+            url = utm("https://nakshiq.com/en/tourist-traps", "social", "post", "tourist-trap")
+        body = [
+            f"Skip {trap_name}.",
+            hook,
+        ]
+        if alt_name:
+            body.append(f"Go to {alt_name} instead.{(' ' + alt_reason) if alt_reason else ''}")
+        body.append(cta)
+        body.append(f"Full trap-vs-alternative list → {url}")
+        body.append(tags)
+        return "\n\n".join(b for b in body if b).strip()
+
+    body = [
+        f"Skip {trap_name}.",
+        hook,
+    ]
+    if alt_name:
+        body.append(f"Go to {alt_name} instead.{(' ' + alt_reason) if alt_reason else ''}")
+    body.append(cta)
+    body.append("🔗 link in bio for the full skip-list with alternatives.")
+    body.append(tags)
+    return "\n\n".join(b for b in body if b).strip()
 
 def copy_infrastructure_truth(dest: dict, platform: str) -> str:
     note = (dest.get("note") or dest.get("tagline") or "").strip()
@@ -3302,8 +3365,10 @@ def copy_collection_series(collection: dict, dest_map: dict, dest_map_full: dict
         items     = collection.get("items") or []
         total     = collection.get("itemCount") or len(items) if isinstance(items, list) else 0
 
+        # 2026-05-17 Phase 2: no silent fallback to score_card — SKIP instead.
         if not items or not isinstance(items, list) or total < 2:
-            return copy_score_card(_first_qualifying_dest(dest_map_full), platform)
+            log.info(f"collection_series: collection has <2 items — SKIPPING")
+            return ""
 
         # Pick item by series_index (mod total) — caller may iterate the series.
         idx = max(0, min(series_index, total - 1))
@@ -3320,53 +3385,381 @@ def copy_collection_series(collection: dict, dest_map: dict, dest_map_full: dict
             item_id = None
             item_note = ""
         if not item_id:
-            return copy_score_card(_first_qualifying_dest(dest_map_full), platform)
+            log.info(f"collection_series: item at idx {idx} has no destination_id — SKIPPING")
+            return ""
 
         item_dest = dest_map_full.get(item_id) or dest_map.get(item_id) or {}
         if not item_dest:
-            return copy_score_card(_first_qualifying_dest(dest_map_full), platform)
+            log.info(f"collection_series: dest '{item_id}' not in dest_map — SKIPPING")
+            return ""
 
         item_name = (item_dest.get("name") or "").strip()
         item_score = item_dest.get("score") or 0
-        score_str = format_score(item_score) if item_score else ""
         item_state = (item_dest.get("state") or "").strip()
-
-        url = dest_url(item_dest, "social", "post", "collection-series",
-                       content=build_utm_content(item_id, f"collection_series_{coll_id}"))
 
         # Use collection name as the prefix — strip "best of" / "top" prefixes
         clean_coll = coll_name.replace("Best of ", "").replace("Top ", "").strip()
+        position = f"#{idx + 1} of {total}"
 
-        hashtag_inputs = [item_name.replace(" ", "")[:24] or clean_coll.replace(" ", "")[:24]]
-        if item_state:
-            hashtag_inputs.append(item_state.replace(" ", ""))
-        hashtag_inputs.extend([clean_coll.replace(" ", "")[:18], "TravelIndia", "NakshIQ"])
-        tags = hashtag(*hashtag_inputs[:5])
+        # Hook = the item-specific note from the collection (curator's reason)
+        # OR a series-position framing
+        hook = item_note if (item_note and len(item_note) > 30) else (
+            f"{position} in our {clean_coll.lower()} series: {item_name}."
+        )
 
-        position = f"#{idx + 1}/{total}"
+        tags = niche_tags(item_state, "score", dest_name=item_name)
+        cta = f"Comment '{item_name.split()[0].lower()}' — I'll DM why this one earned slot #{idx + 1}."
 
         if platform == "facebook":
-            return (
-                f"{clean_coll.upper()} — {position}\n"
-                f"📍 {item_name}{f' ({item_state})' if item_state else ''}"
-                + (f"\nNakshIQ score: {score_str}" if score_str else "")
-                + (f"\n\n{item_note}" if item_note else "")
-                + f"\n\nThis is #{idx + 1} of {total} in our {clean_coll.lower()} series. "
-                f"Each scored monthly — no sponsorships, no vibes.\n\n"
-                f"Full series → https://www.nakshiq.com/en/collections/{coll_id}\n"
-                f"This destination → {url}\n\n{tags}"
-            ).strip()
-        else:
-            return (
-                f"{clean_coll.upper()} {position}\n"
-                f"📍 {item_name}\n"
-                + (f"⭐ {score_str}\n" if score_str else "")
-                + (f"\n{item_note}\n" if item_note else "")
-                + f"\nThis is #{idx + 1} of {total}. All scored, none sponsored.\n\n"
-                f"💾 Save the series.\n↓ {item_name} guide → {url}\n\n{tags}"
-            ).strip()
+            url = dest_url(item_dest, "social", "post", "collection-series",
+                           content=build_utm_content(item_id, f"collection_series_{coll_id}"))
+            body = [hook, f"📍 {item_name}, {item_state} · {clean_coll}"]
+            if item_score:
+                body.append(f"NakshIQ score this month: {item_score}/5")
+            body.append(cta)
+            body.append(f"Full series → https://nakshiq.com/en/collections/{coll_id}")
+            body.append(f"This destination → {url}")
+            body.append(tags)
+            return "\n\n".join(b for b in body if b).strip()
+
+        # IG
+        body = [hook, f"📍 {item_name} · {position}"]
+        if item_score:
+            body.append(f"⭐ {item_score}/5 this {month_name()}")
+        body.append(cta)
+        body.append("🔗 link in bio for the full series.")
+        body.append(tags)
+        return "\n\n".join(b for b in body if b).strip()
     except Exception as e:
-        log.warning(f"copy_collection_series error: {e}")
+        log.warning(f"copy_collection_series error: {e} — SKIPPING")
+        return ""
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# TIER 7 PHASE 2 (2026-05-17) — new caption builders for restored variety
+# -----------------------------------------------------------------------------
+# Adds 7 formats: 4 restored (hidden_gem_reveal, route_spotlight_short,
+# tourist_trap-revoiced, collection_series-revoiced) + 3 NEW data-driven
+# (arrival_intel, women_solo_brief, cost_index_card). Each follows the
+# 2026-05-16 voice rules:
+#   - hook in line 1 (curiosity / specific value)
+#   - meta-data only when useful
+#   - comment-CTA at close (drives DM signal, IG's strongest small-account algo)
+#   - niche tags only (no #NakshIQ branding bludgeon)
+#   - URL only in FB (IG drops URLs — link-in-bio model)
+#   - SKIP via "" return on missing data (no silent fallback to score_card)
+# ─────────────────────────────────────────────────────────────────────────────
+
+def copy_hidden_gem_reveal(gem: dict, dest_map: dict, platform: str) -> str:
+    """Hidden-gem reveal — "Nobody talks about X (Nkm from Y)" hook."""
+    try:
+        name = (gem.get("name") or "").strip()
+        near_dest_name = (gem.get("near_destination_name") or "").strip()
+        near_dest_id = gem.get("near_destination_id")
+        state = (gem.get("state") or "").strip()
+        distance_km = gem.get("distance_km")
+        why_unknown = (gem.get("why_unknown") or "").strip()
+        why_go = (gem.get("why_go") or "").strip()
+        social_proof = (gem.get("social_proof") or "").strip()
+
+        if not name or not near_dest_name:
+            return ""
+
+        # Hook = why_unknown (the scarcity story) or why_go (the value story)
+        hook = why_unknown if (why_unknown and len(why_unknown) > 30) else why_go
+        if not hook:
+            hook = f"Nobody talks about {name} — and {near_dest_name} is the closest city most travellers actually know."
+
+        distance_line = f"{distance_km}km from {near_dest_name}" if distance_km else f"Near {near_dest_name}"
+        tags = niche_tags(state, "score", dest_name=near_dest_name)
+        cta = f"Comment '{near_dest_name.split()[0].lower()}' — I'll DM the access notes + best month to go."
+
+        if platform == "facebook":
+            url = utm(f"https://nakshiq.com/en/destination/{near_dest_id}",
+                      "social", "post", "hidden-gem-reveal",
+                      content=build_utm_content(near_dest_id, "hidden_gem_reveal"))
+            body = [
+                f"Nobody talks about {name}.",
+                hook,
+                f"📍 {distance_line} · {state}",
+            ]
+            if why_go and why_go != hook:
+                body.append(why_go)
+            if social_proof:
+                body.append(f"Why it stays under the radar: {social_proof}")
+            body.append(cta)
+            body.append(f"Full {near_dest_name} guide → {url}")
+            body.append(tags)
+            return "\n\n".join(b for b in body if b).strip()
+
+        # IG
+        body = [
+            f"Nobody talks about {name}.",
+            hook,
+            f"📍 {distance_line}",
+        ]
+        if social_proof:
+            body.append(social_proof)
+        body.append(cta)
+        body.append("🔗 link in bio for the full guide.")
+        body.append(tags)
+        return "\n\n".join(b for b in body if b).strip()
+    except Exception as e:
+        log.warning(f"copy_hidden_gem_reveal error: {e} — SKIPPING")
+        return ""
+
+
+def copy_route_spotlight_short(route: dict, dest_map: dict, platform: str) -> str:
+    """Lightweight route teaser — one stop highlighted, not full itinerary."""
+    try:
+        name = (route.get("name") or route.get("title") or "").strip()
+        days = route.get("days") or route.get("duration_days")
+        stops = route.get("stops") or []
+        highlights = route.get("highlights") or []
+        route_id = route.get("id")
+
+        if not name or not stops:
+            return ""
+
+        # Pick the most "interesting" stop = first non-start, non-end stop
+        # with a description.
+        stop_picks = stops[1:-1] if len(stops) >= 3 else stops
+        featured = None
+        for s in stop_picks:
+            if isinstance(s, dict) and s.get("name"):
+                featured = s
+                break
+        if not featured and stops:
+            featured = stops[0] if isinstance(stops[0], dict) else {"name": str(stops[0])}
+        if not featured:
+            return ""
+
+        featured_name = featured.get("name", "this stop")
+        featured_state = featured.get("state", "")
+        featured_note = (featured.get("note") or featured.get("description") or "").strip()
+
+        # Hook = the one stop most people skip on this route
+        hook = (f"Most people drive past {featured_name} on the {name} route. "
+                f"Here's why I'd stop.")
+        # If we have a note, use ONLY the first sentence as hook so the full
+        # note can sit in the body without repetition.
+        body_extra = ""
+        if featured_note:
+            first = featured_note.split(". ")[0].rstrip(".")
+            rest = featured_note[len(first) + 2:].strip() if len(featured_note) > len(first) + 2 else ""
+            hook = f"On the {name} route, {featured_name} is the stop most people skip. {first}."
+            body_extra = rest  # only the REST of the note, not the first sentence
+
+        stop_count = len(stops)
+        days_str = f"{days}-day" if days else "multi-day"
+        meta_line = f"{name} · {days_str} · {stop_count} stops"
+
+        tags = niche_tags(featured_state, "trek", dest_name=featured_name)
+        cta = f"Comment '{name.split()[0].lower()}' — I'll DM the full route + timing breakdown."
+
+        if platform == "facebook":
+            url = utm(f"https://nakshiq.com/en/routes/{route_id}",
+                      "social", "post", "route-spotlight-short",
+                      content=build_utm_content(route_id, "route_spotlight_short"))
+            body = [hook, meta_line]
+            if body_extra:
+                body.append(body_extra)
+            if highlights:
+                body.append("Other stops: " + ", ".join(h if isinstance(h, str) else h.get("name", "") for h in highlights[:3]))
+            body.append(cta)
+            body.append(f"Full route → {url}")
+            body.append(tags)
+            return "\n\n".join(b for b in body if b).strip()
+
+        # IG
+        body = [hook, meta_line]
+        if body_extra:
+            body.append(body_extra)
+        body.append(cta)
+        body.append("🔗 link in bio for the full route map.")
+        body.append(tags)
+        return "\n\n".join(b for b in body if b).strip()
+    except Exception as e:
+        log.warning(f"copy_route_spotlight_short error: {e} — SKIPPING")
+        return ""
+
+
+def copy_arrival_intel(arrival: dict, platform: str) -> str:
+    """Airport arrival brief — prepaid taxi + scam warning + SIM tip."""
+    try:
+        iata = (arrival.get("iata") or "").strip()
+        city = (arrival.get("city") or "").strip()
+        state = (arrival.get("state") or "").strip()
+        scam = (arrival.get("scam_warning") or "").strip()
+        prepaid = (arrival.get("prepaid_taxi") or "").strip()
+        sim = (arrival.get("sim_counters") or "").strip()
+        dest_id = arrival.get("destination_id") or city.lower()
+
+        if not city or not iata:
+            return ""
+
+        # Hook = the scam warning (everyone reads cautionary content)
+        hook = f"The oldest scam at {iata} ({city}) airport — and how to avoid it."
+        if scam:
+            # First sentence as hook
+            hook_alt = scam.split(".")[0].rstrip(".") + "."
+            if 40 < len(hook_alt) < 200:
+                hook = hook_alt
+
+        scam_line = scam if scam else ""
+        prepaid_short = ""
+        if prepaid:
+            # First sentence of prepaid info
+            prepaid_short = prepaid.split(".")[0].rstrip(".") + "."
+
+        sim_short = ""
+        if sim:
+            sim_short = sim.split(".")[0].rstrip(".") + "."
+
+        tags = niche_tags(state, "emergency", dest_name=city)
+        cta = f"Comment '{iata.lower()}' — I'll DM the full first-4-hours checklist."
+
+        if platform == "facebook":
+            url = utm(arrival.get("url") or f"https://nakshiq.com/en/arrival/{(arrival.get('slug') or iata.lower())}",
+                      "social", "post", "arrival-intel",
+                      content=build_utm_content(dest_id, "arrival_intel"))
+            body = [hook, f"📍 {iata} · {city}, {state}"]
+            if scam_line and scam_line != hook:
+                body.append(scam_line)
+            if prepaid_short:
+                body.append(f"Prepaid taxi: {prepaid_short}")
+            if sim_short:
+                body.append(f"SIM: {sim_short}")
+            body.append(cta)
+            body.append(f"Full {iata} playbook → {url}")
+            body.append(tags)
+            return "\n\n".join(b for b in body if b).strip()
+
+        # IG
+        body = [hook, f"📍 {iata} · {city}"]
+        if prepaid_short:
+            body.append(prepaid_short)
+        if scam_line and scam_line != hook:
+            body.append("⚠️ " + scam_line)
+        body.append(cta)
+        body.append("🔗 link in bio for the full first-4-hours guide.")
+        body.append(tags)
+        return "\n\n".join(b for b in body if b).strip()
+    except Exception as e:
+        log.warning(f"copy_arrival_intel error: {e} — SKIPPING")
+        return ""
+
+
+def copy_women_solo_brief(dest: dict, platform: str) -> str:
+    """Curated solo-female-safe dest for current month."""
+    try:
+        name = (dest.get("destination_name") or dest.get("name") or "").strip()
+        dest_id = dest.get("destination_id") or dest.get("id")
+        state = (dest.get("state") or "").strip()
+        score = dest.get("score")
+        solo_score = dest.get("solo_female_score")
+        solo_note = (dest.get("solo_female_note") or "").strip()
+        tagline = (dest.get("tagline") or "").strip()
+        difficulty = (dest.get("difficulty") or "").strip()
+
+        if not name or not dest_id:
+            return ""
+
+        # Hook = the dest-specific note or a safety-focused framing
+        hook = solo_note if (solo_note and len(solo_note) > 30) else (
+            f"{name} is one of the few destinations where I'd send a solo traveller "
+            f"to in {month_name()} without a second thought."
+        )
+
+        score_line_parts = []
+        if score:
+            score_line_parts.append(f"NakshIQ {score}/5 this {month_name()}")
+        if solo_score:
+            score_line_parts.append(f"Solo-female safety: {solo_score}/5")
+        if difficulty:
+            score_line_parts.append(difficulty.title())
+        score_line = " · ".join(score_line_parts)
+
+        tags = niche_tags(state, "emergency", dest_name=name)  # safety theme
+        cta = f"Comment '{name.split()[0].lower()}' — I'll DM the safety-specific stays + transport notes."
+
+        if platform == "facebook":
+            url = utm(f"https://nakshiq.com/en/destination/{dest_id}",
+                      "social", "post", "women-solo-brief",
+                      content=build_utm_content(dest_id, "women_solo_brief"))
+            body = [hook, f"📍 {name}, {state}"]
+            if score_line:
+                body.append(score_line)
+            if tagline and tagline not in hook:
+                body.append(tagline)
+            body.append(cta)
+            body.append(f"Full {name} guide → {url}")
+            body.append(tags)
+            return "\n\n".join(b for b in body if b).strip()
+
+        # IG
+        body = [hook, f"📍 {name}"]
+        if score_line:
+            body.append(score_line)
+        body.append(cta)
+        body.append("🔗 link in bio for safety-specific stays + transport.")
+        body.append(tags)
+        return "\n\n".join(b for b in body if b).strip()
+    except Exception as e:
+        log.warning(f"copy_women_solo_brief error: {e} — SKIPPING")
+        return ""
+
+
+def copy_cost_index_card(dest: dict, platform: str) -> str:
+    """₹/day breakdown for a destination — budget reality card."""
+    try:
+        name = (dest.get("destination_name") or dest.get("name") or "").strip()
+        dest_id = dest.get("destination_id") or dest.get("id")
+        state = (dest.get("state") or "").strip()
+        sleep_range = (dest.get("sleep_price_range_inr") or "").strip()
+        sleep_options = dest.get("sleep_options_count")
+        reach_summary = (dest.get("reach_summary") or "").strip()
+        fuel_warning = (dest.get("fuel_warning") or "").strip()
+
+        if not name or not dest_id:
+            return ""
+        if not sleep_range and not reach_summary:
+            log.info(f"cost_index_card for {name}: no price/reach data — SKIPPING")
+            return ""
+
+        # Hook = budget-honesty framing
+        hook = (f"{name} costs less than you think. Or more — depending on which "
+                f"part of {month_name()} you go.")
+        if sleep_range:
+            hook = f"What 24 hours in {name} actually costs."
+
+        rows = []
+        if sleep_range:
+            count = f" ({sleep_options} options)" if sleep_options else ""
+            rows.append(f"🛏️ Sleep: ₹{sleep_range}/night{count}")
+        if reach_summary:
+            rows.append(f"🚗 Reach: {reach_summary}")
+        if fuel_warning:
+            rows.append(f"⛽ Fuel: {fuel_warning}")
+        rows_block = "\n".join(rows)
+
+        tags = niche_tags(state, "stays", dest_name=name)
+        cta = f"Comment '{name.split()[0].lower()}' — I'll DM the full ₹/day breakdown by traveller type."
+
+        if platform == "facebook":
+            url = utm(f"https://nakshiq.com/en/destination/{dest_id}",
+                      "social", "post", "cost-index-card",
+                      content=build_utm_content(dest_id, "cost_index_card"))
+            body = [hook, f"📍 {name}, {state} · {month_name()}", rows_block, cta,
+                    f"Full {name} cost breakdown → {url}", tags]
+            return "\n\n".join(b for b in body if b).strip()
+
+        # IG
+        body = [hook, f"📍 {name} · {month_name()}", rows_block, cta,
+                "🔗 link in bio for the full ₹/day breakdown.", tags]
+        return "\n\n".join(b for b in body if b).strip()
+    except Exception as e:
+        log.warning(f"copy_cost_index_card error: {e} — SKIPPING")
         return ""
 
 
@@ -4053,13 +4446,88 @@ def generate_post(fmt: str, content: dict, platform: str,
         colls = content.get("collections", {}).get("data", []) or []
         eligible_colls = [c for c in colls if (c.get("itemCount") or 0) >= 5]
         if not eligible_colls:
-            log.info("collection_series: no eligible collections — falling back to score_card")
-            return copy_score_card(best, platform), best
+            log.info("collection_series: no eligible collections — SKIPPING")
+            return "", None
         pick_coll = content.get("__run_coll_series__") or eligible_colls[0]
         # Series index: rotates through items via state.theme_usage["coll_series"][coll_id]
         # For now, use a deterministic-by-day picker so each day surfaces the next item.
         series_idx = (date.today().toordinal() % max(1, pick_coll.get("itemCount") or 1))
-        return copy_collection_series(pick_coll, dest_map, dest_map_full, series_idx, platform), best
+        caption = copy_collection_series(pick_coll, dest_map, dest_map_full, series_idx, platform)
+        if not caption:
+            return "", None
+        # Find the dest object (for image / dedupe) — items can be strings or dicts
+        items = pick_coll.get("items") or []
+        idx = max(0, min(series_idx, len(items) - 1))
+        item = items[idx]
+        item_id = item if isinstance(item, str) else (item.get("destination_id") or item.get("id"))
+        item_dest = dest_map_full.get(item_id) or dest_map.get(item_id) or best
+        return caption, item_dest
+
+    # ─── Tier 7 Phase 2 (2026-05-17) — 7 restored/new format dispatches ──
+    elif fmt == "hidden_gem_reveal":
+        gems = content.get("hidden_gems", {}).get("data", []) or []
+        if not gems:
+            log.info("hidden_gem_reveal: no gems available — SKIPPING")
+            return "", None
+        gem = content.get("__run_hidden_gem__") or gems[0]
+        # Anchor image on the near-destination (parent dest)
+        near_id = gem.get("near_destination_id")
+        gem_dest = dest_map_full.get(near_id) or dest_map.get(near_id) or best
+        return copy_hidden_gem_reveal(gem, dest_map_full or dest_map, platform), gem_dest
+
+    elif fmt == "route_spotlight_short":
+        routes = content.get("routes", {}).get("data", []) or []
+        if not routes:
+            log.info("route_spotlight_short: no routes available — SKIPPING")
+            return "", None
+        route = content.get("__run_route_short__") or routes[0]
+        # Featured stop's destination if resolvable
+        stops = route.get("stops") or []
+        featured_id = None
+        for s in stops:
+            if isinstance(s, dict) and s.get("destination_id"):
+                featured_id = s["destination_id"]
+                break
+        route_dest = (dest_map_full.get(featured_id) if featured_id else None) or best
+        return copy_route_spotlight_short(route, dest_map_full or dest_map, platform), route_dest
+
+    elif fmt == "tourist_trap":
+        traps = content.get("traps", {}).get("data", []) or []
+        if not traps:
+            log.info("tourist_trap: no traps available — SKIPPING")
+            return "", None
+        trap = content.get("__run_trap__") or traps[0]
+        # Anchor image on the ALTERNATIVE dest (not the trap)
+        alt_id = (trap.get("alternative") or {}).get("id")
+        trap_dest = dest_map_full.get(alt_id) or dest_map.get(alt_id) or best
+        return copy_tourist_trap(trap, platform), trap_dest
+
+    elif fmt == "arrival_intel":
+        airports = content.get("arrival", {}).get("data", []) or []
+        if not airports:
+            log.info("arrival_intel: no airport data — SKIPPING")
+            return "", None
+        airport = content.get("__run_arrival__") or airports[0]
+        airport_dest = dest_map_full.get(airport.get("destination_id")) or best
+        return copy_arrival_intel(airport, platform), airport_dest
+
+    elif fmt == "women_solo_brief":
+        ws_dests = content.get("women_solo", {}).get("data", []) or []
+        if not ws_dests:
+            log.info("women_solo_brief: no curated dests — SKIPPING")
+            return "", None
+        ws_pick = content.get("__run_women_solo__") or ws_dests[0]
+        ws_dest = dest_map_full.get(ws_pick.get("destination_id")) or dest_map.get(ws_pick.get("destination_id")) or best
+        return copy_women_solo_brief(ws_pick, platform), ws_dest
+
+    elif fmt == "cost_index_card":
+        ci_dests = content.get("cost_index", {}).get("data", []) or []
+        if not ci_dests:
+            log.info("cost_index_card: no cost-index data — SKIPPING")
+            return "", None
+        ci_pick = content.get("__run_cost_index__") or ci_dests[0]
+        ci_dest = dest_map_full.get(ci_pick.get("destination_id")) or dest_map.get(ci_pick.get("destination_id")) or best
+        return copy_cost_index_card(ci_pick, platform), ci_dest
 
     else:
         return copy_score_card(best, platform), best
@@ -5123,7 +5591,101 @@ def _run_inner(force: bool, sync_only: bool, dry_run: bool,
             log.info(f"Collection series locked: {ordered[0].get('name','?')} "
                      f"({status['unused']}/{status['total']} never featured)")
         else:
-            log.info("collection_series requested but no eligible collections — will fall back to score_card.")
+            log.info("collection_series: no eligible collections — SKIPPING")
+
+    # ─── Tier 7 Phase 2 (2026-05-17) — pre-picks for new/restored formats ──
+    if "hidden_gem_reveal" in (ig_fmt, fb_fmt, story_fmt):
+        gems = content.get("hidden_gems", {}).get("data", []) or []
+        # Hidden gems link to a PARENT destination via near_destination_id.
+        # Filter against the once-per-month rule on that key.
+        gems_fresh = [g for g in gems if (g.get("near_destination_id") or "") not in used]
+        if gems_fresh:
+            ordered = pick_oldest_unused(state, "hidden_gem_reveal", gems_fresh, key="id")
+            content["__run_hidden_gem__"] = ordered[0]
+            status = dimension_cycle_status(state, "hidden_gem_reveal", len(gems_fresh))
+            log.info(f"Hidden gem locked: {ordered[0].get('name','?')} "
+                     f"(near {ordered[0].get('near_destination_name','?')}) "
+                     f"({status['unused']}/{status['total']} never featured)")
+        elif gems:
+            log.info(f"hidden_gem_reveal: all {len(gems)} gems' parent dests already posted this month — SKIPPING")
+        else:
+            log.info("hidden_gem_reveal: no gems available — SKIPPING")
+
+    if "route_spotlight_short" in (ig_fmt, fb_fmt, story_fmt):
+        routes = content.get("routes", {}).get("data", []) or []
+        if routes:
+            ordered = pick_oldest_unused(state, "route_spotlight_short", routes, key="id")
+            content["__run_route_short__"] = ordered[0]
+            status = dimension_cycle_status(state, "route_spotlight_short", len(routes))
+            log.info(f"Route short locked: {ordered[0].get('name','?')} "
+                     f"({status['unused']}/{status['total']} never featured)")
+        else:
+            log.info("route_spotlight_short: no routes — SKIPPING")
+
+    if "tourist_trap" in (ig_fmt, fb_fmt, story_fmt):
+        traps_data = content.get("traps", {}).get("data", []) or []
+        # Trap entries are {trap:{id,name}, alternative:{id,name}, reason, ...}
+        # Flatten so pick_oldest_unused (which only accepts a string key) can
+        # work — promote trap.id to a top-level `trap_id` field.
+        traps_flat = []
+        for t in traps_data:
+            trap_id = (t.get("trap") or {}).get("id") or ""
+            alt_id = (t.get("alternative") or {}).get("id") or ""
+            if trap_id not in used and alt_id not in used:
+                traps_flat.append({**t, "trap_id": trap_id})
+        if traps_flat:
+            ordered = pick_oldest_unused(state, "tourist_trap_alts", traps_flat, key="trap_id")
+            content["__run_trap__"] = ordered[0]
+            status = dimension_cycle_status(state, "tourist_trap_alts", len(traps_flat))
+            log.info(f"Tourist trap locked: skip {(ordered[0].get('trap') or {}).get('name','?')} → go "
+                     f"{(ordered[0].get('alternative') or {}).get('name','?')} "
+                     f"({status['unused']}/{status['total']} never featured)")
+        elif traps_data:
+            log.info(f"tourist_trap: all {len(traps_data)} trap+alt pairs already covered this month — SKIPPING")
+        else:
+            log.info("tourist_trap: /traps API returned no data — SKIPPING")
+
+    if "arrival_intel" in (ig_fmt, fb_fmt, story_fmt):
+        airports = content.get("arrival", {}).get("data", []) or []
+        airports_fresh = [a for a in airports if (a.get("destination_id") or "") not in used]
+        if airports_fresh:
+            ordered = pick_oldest_unused(state, "arrival_intel", airports_fresh, key="iata")
+            content["__run_arrival__"] = ordered[0]
+            status = dimension_cycle_status(state, "arrival_intel", len(airports_fresh))
+            log.info(f"Arrival locked: {ordered[0].get('iata','?')} ({ordered[0].get('city','?')}) "
+                     f"({status['unused']}/{status['total']} never featured)")
+        elif airports:
+            log.info(f"arrival_intel: all {len(airports)} airports' dests already posted this month — SKIPPING")
+        else:
+            log.info("arrival_intel: no airport data — SKIPPING")
+
+    if "women_solo_brief" in (ig_fmt, fb_fmt, story_fmt):
+        ws = content.get("women_solo", {}).get("data", []) or []
+        ws_fresh = _filter_dest_used(ws, used, key="destination_id")
+        if ws_fresh:
+            ordered = pick_oldest_unused(state, "women_solo_brief", ws_fresh, key="destination_id")
+            content["__run_women_solo__"] = ordered[0]
+            status = dimension_cycle_status(state, "women_solo_brief", len(ws_fresh))
+            log.info(f"Women-solo dest locked: {ordered[0].get('destination_name','?')} "
+                     f"({status['unused']}/{status['total']} never featured)")
+        elif ws:
+            log.info(f"women_solo_brief: all {len(ws)} curated dests already posted this month — SKIPPING")
+        else:
+            log.info("women_solo_brief: no curated dests — SKIPPING")
+
+    if "cost_index_card" in (ig_fmt, fb_fmt, story_fmt):
+        ci = content.get("cost_index", {}).get("data", []) or []
+        ci_fresh = _filter_dest_used(ci, used, key="destination_id")
+        if ci_fresh:
+            ordered = pick_oldest_unused(state, "cost_index_card", ci_fresh, key="destination_id")
+            content["__run_cost_index__"] = ordered[0]
+            status = dimension_cycle_status(state, "cost_index_card", len(ci_fresh))
+            log.info(f"Cost index dest locked: {ordered[0].get('destination_name','?')} "
+                     f"({status['unused']}/{status['total']} never featured)")
+        elif ci:
+            log.info(f"cost_index_card: all {len(ci)} cost-index dests already posted this month — SKIPPING")
+        else:
+            log.info("cost_index_card: no cost-index data — SKIPPING")
 
     # 7a) Skip List — pick the oldest-never-used LOW-scored destination.
     # Strategy:

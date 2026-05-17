@@ -3,6 +3,7 @@ import { createClient } from "@supabase/supabase-js";
 import { resolveCover } from "@/lib/collection-covers";
 import { videoSrc } from "@/lib/video-url";
 import { currentMonthIST } from "@itp/shared";
+import { ARRIVAL } from "@/lib/arrival-data";
 
 export const runtime = "edge";
 
@@ -489,7 +490,131 @@ export async function GET(req: NextRequest) {
       return NextResponse.json({ type: "hidden_gems", count: items.length, data: items });
     }
 
-    return NextResponse.json({ error: `Unknown type: ${type}. Valid: destinations, articles, stats, traps, collections, festivals, routes, treks, eateries, stays, emergency, viral_eats, camping, hidden_gems` }, { status: 400 });
+    if (type === "arrival") {
+      // Tier 7 Phase 2.1 (2026-05-17): expose ARRIVAL playbook (9 airports)
+      // as a content type so the social autoposter can build "first 4 hours
+      // at <airport>" posts. Each record is keyed by IATA + destination_id
+      // so cross-flow dedupe can lock the post against the dest the airport
+      // serves (e.g. DEL → delhi, BOM → mumbai, GOI → goa-north).
+      //
+      // The IATA → destination_id map is conservative: only airports whose
+      // city is a NakshIQ destination. Airports serving multiple destinations
+      // (BLR, MAA) map to the city itself (bangalore, chennai).
+      // 9 airports currently in ARRIVAL playbook (DEL/BOM/BLR/MAA/CCU/HYD/COK/GOI/AMD).
+      const iataToDestId: Record<string, string> = {
+        del: "delhi", bom: "mumbai", blr: "bangalore", maa: "chennai",
+        ccu: "kolkata", hyd: "hyderabad", cok: "kochi", goi: "goa-north",
+        amd: "ahmedabad",
+      };
+      const items = Object.values(ARRIVAL).map((a: any) => ({
+        iata: a.iata,
+        name: a.name,
+        city: a.city,
+        state: a.state,
+        slug: a.slug,
+        destination_id: iataToDestId[a.slug] || null,
+        official_url: a.officialUrl,
+        prepaid_taxi: a.prepaidTaxi,
+        app_cab: a.appCab,
+        public_transport: a.publicTransport,
+        sim_counters: a.simCounters,
+        atm_notes: a.atmNotes,
+        scam_warning: a.scamWarning,
+        after_midnight: a.afterMidnight,
+        url: `${baseUrl}/en/arrival/${a.slug}`,
+        image: `${baseUrl}/images/destinations/${iataToDestId[a.slug] || "delhi"}.jpg`,
+      }));
+      return NextResponse.json({ type: "arrival", count: items.length, data: items });
+    }
+
+    if (type === "cost_index") {
+      // Tier 7 Phase 2.1 (2026-05-17): destination cost-index for the
+      // social "₹/day breakdown" format. Pulls destinations scoring this
+      // month + their confidence_cards.sleep.price_range_inr field.
+      // Filtered to only return dests with at least a price band populated
+      // (most have it; some thin-tourism dests will be filtered out).
+      const { data } = await supabase
+        .from("destination_months")
+        .select(
+          "month, score, note, destination_id, " +
+            "destinations(id, name, tagline, elevation_m, state:states(name), confidence_cards(reach, sleep, fuel))"
+        )
+        .eq("month", month)
+        .gte("score", 3)
+        .order("score", { ascending: false })
+        .limit(limit);
+      const items = (data ?? [])
+        .map((dm: any) => {
+          const d = dm.destinations;
+          const cc = Array.isArray(d.confidence_cards) ? d.confidence_cards[0] : d.confidence_cards;
+          const sleep = cc?.sleep || {};
+          const reach = cc?.reach || {};
+          if (!sleep.price_range_inr && !reach.from_nearest_city) return null;
+          return {
+            destination_id: d.id,
+            destination_name: d.name,
+            state: d.state?.name,
+            month,
+            score: dm.score,
+            sleep_price_range_inr: sleep.price_range_inr || null,
+            sleep_options_count: sleep.options_count || null,
+            reach_summary: reach.from_nearest_city || reach.road_condition || null,
+            fuel_warning: cc?.fuel?.carry_extra ? "carry extra fuel" : null,
+            url: `${baseUrl}/en/destination/${d.id}`,
+            image: `${baseUrl}/images/destinations/${d.id}.jpg`,
+          };
+        })
+        .filter(Boolean);
+      return NextResponse.json({ type: "cost_index", count: items.length, data: items });
+    }
+
+    if (type === "women_solo") {
+      // Tier 7 Phase 2.1 (2026-05-17): destinations curated for solo-female
+      // travellers. Combines:
+      //   - solo_female_score ≥ 4 (per-dest safety rating, already on schema)
+      //   - destination_months.score ≥ 4 for the current month
+      //   - solo_female_override (per-month safety override, e.g. a dest
+      //     unsafe this month even though baseline is fine)
+      // Returns destinations meeting ALL three criteria.
+      const { data } = await supabase
+        .from("destination_months")
+        .select(
+          "month, score, note, destination_id, solo_female_override, solo_female_override_note, " +
+            "destinations(id, name, tagline, difficulty, elevation_m, solo_female_score, state:states(name))"
+        )
+        .eq("month", month)
+        .gte("score", 4)
+        .order("score", { ascending: false })
+        .limit(limit);
+      const items = (data ?? [])
+        .filter((dm: any) => {
+          const d = dm.destinations;
+          if (!d) return false;
+          // Drop if monthly override flags unsafe
+          if (dm.solo_female_override === false) return false;
+          const baseline = d.solo_female_score ?? 0;
+          return baseline >= 4;
+        })
+        .map((dm: any) => {
+          const d = dm.destinations;
+          return {
+            destination_id: d.id,
+            destination_name: d.name,
+            state: d.state?.name,
+            month,
+            score: dm.score,
+            solo_female_score: d.solo_female_score,
+            solo_female_note: dm.solo_female_override_note || null,
+            tagline: d.tagline,
+            difficulty: d.difficulty,
+            url: `${baseUrl}/en/destination/${d.id}`,
+            image: `${baseUrl}/images/destinations/${d.id}.jpg`,
+          };
+        });
+      return NextResponse.json({ type: "women_solo", count: items.length, data: items });
+    }
+
+    return NextResponse.json({ error: `Unknown type: ${type}. Valid: destinations, articles, stats, traps, collections, festivals, routes, treks, eateries, stays, emergency, viral_eats, camping, hidden_gems, arrival, cost_index, women_solo` }, { status: 400 });
   } catch (e: any) {
     return NextResponse.json({ error: e.message }, { status: 500 });
   }
