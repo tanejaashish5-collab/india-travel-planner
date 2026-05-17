@@ -119,6 +119,11 @@ export function Footer({
     `/${locale}/sos`,
     `/${locale}/social`,
     `/${locale}/more`,
+    // Phase 3 Tier 8 (S54) — account surfaces (app shell)
+    `/${locale}/ask`,
+    `/${locale}/saved`,
+    `/${locale}/trip`,
+    `/${locale}/membership`,
   ];
   const CINEMATIC_PAGE_PREFIXES = [
     `/${locale}/skip-list/`,
@@ -147,6 +152,8 @@ export function Footer({
     // Tier 6 (S54) — comparison detail pages
     `/${locale}/vs/`,
     `/${locale}/india-vs/`,
+    // Tier 8 (S54) — shared trip board
+    `/${locale}/trip/`,
   ];
   const isCinematicPage =
     CINEMATIC_PAGE_PATHS.includes(pathname) ||

@@ -91,6 +91,11 @@ export function Nav() {
     `/${locale}/sos`,
     `/${locale}/social`,
     `/${locale}/more`,
+    // Phase 3 Tier 8 (S54) — account surfaces (app shell)
+    `/${locale}/ask`,
+    `/${locale}/saved`,
+    `/${locale}/trip`,
+    `/${locale}/membership`,
   ];
   // Dynamic segments — body is cinematic on any matching descendant route.
   const CINEMATIC_PAGE_PREFIXES = [
@@ -120,6 +125,8 @@ export function Nav() {
     // Tier 6 (S54) — comparison detail pages
     `/${locale}/vs/`,
     `/${locale}/india-vs/`,
+    // Tier 8 (S54) — shared trip board
+    `/${locale}/trip/`,
   ];
   const isCinematicPage =
     CINEMATIC_PAGE_PATHS.includes(pathname) ||

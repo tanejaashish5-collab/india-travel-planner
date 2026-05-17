@@ -18,6 +18,7 @@ import { Footer } from "@/components/footer";
 import { createClient } from "@supabase/supabase-js";
 import { TripBoardReadOnly, type ReadOnlyDest } from "@/components/trip-board/read-only";
 import { localeAlternates } from "@/lib/seo-utils";
+import { CinemaStyles } from "@/components/landing-cinema/cinema-styles";
 
 export async function generateMetadata({
   params,
@@ -122,7 +123,8 @@ export default async function TripSharePage({
   const destinations = await fetchDestsForStops(stopIds);
 
   return (
-    <div className="min-h-screen">
+    <div className="nakshiq-cinema" style={{ minHeight: "100vh" }}>
+      <CinemaStyles />
       <Nav />
       <main>
         <TripBoardReadOnly

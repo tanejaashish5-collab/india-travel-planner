@@ -5,6 +5,7 @@ import { Footer } from "@/components/footer";
 import { TripBoard } from "@/components/trip-board";
 import { createClient } from "@supabase/supabase-js";
 import { localeAlternates } from "@/lib/seo-utils";
+import { CinemaStyles } from "@/components/landing-cinema/cinema-styles";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -55,7 +56,8 @@ export default async function TripPage() {
   const destinations = await getAllDestinations();
 
   return (
-    <div className="min-h-screen">
+    <div className="nakshiq-cinema" style={{ minHeight: "100vh" }}>
+      <CinemaStyles />
       <Nav />
       <main>
         {/* Suspense required because TripBoard's index.tsx calls useSearchParams() —

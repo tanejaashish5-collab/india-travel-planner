@@ -4,8 +4,13 @@ import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { localeAlternates } from "@/lib/seo-utils";
 import { MembershipForm } from "@/components/membership-form";
+import { CinemaStyles } from "@/components/landing-cinema/cinema-styles";
+import { Title } from "@/components/landing-cinema/editorial";
+import { CinematicRelatedRail } from "@/components/cinematic-related-rail";
 
 export const revalidate = 86400;
+
+const BASE_URL = "https://www.nakshiq.com";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -21,7 +26,39 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   };
 }
 
-const BASE_URL = "https://www.nakshiq.com";
+const BENEFITS: { title: string; body: string }[] = [
+  {
+    title: "The Window — early + archive",
+    body: "Weekly editorial essay in your inbox the Saturday before non-members see it on the site. Full archive always accessible, searchable.",
+  },
+  {
+    title: "Offline trip PDFs",
+    body: "Download your saved trips as a polished PDF with maps, emergency numbers, and week-by-week itinerary. Critical on Ladakh / Spiti where network drops.",
+  },
+  {
+    title: "Cost Index deep-dives",
+    body: "Members-only quarterly deep-dives — the story behind the numbers. Where prices are moving, which operators changed hands, what's still worth it.",
+  },
+  {
+    title: "Editor Q&A",
+    body: "Direct email access to the editorial team for specific trip questions. Reply within 2–5 working days.",
+  },
+  {
+    title: "Member concierge rates",
+    body: "When Sprint 16 launches the concierge tier, Members get discounted rates on human-reviewed itinerary-checking + DMC-vetted specialist introductions.",
+  },
+  {
+    title: "No ads, ever",
+    body: "NakshIQ doesn't run ads for non-members either. Membership is how we keep it that way — you're paying for editorial independence to stay editorial.",
+  },
+];
+
+const WONT_DO = [
+  "We will never run ads on NakshIQ, for Members or non-Members.",
+  "We will never accept payment to score a destination higher.",
+  "We will never share your email with partners, DMCs, or affiliates.",
+  "You can unsubscribe in one click — the link is at the bottom of every email.",
+];
 
 export default async function MembershipPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -50,105 +87,309 @@ export default async function MembershipPage({ params }: { params: Promise<{ loc
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="nakshiq-cinema" style={{ minHeight: "100vh" }}>
+      <CinemaStyles />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(offerLd) }} />
       <Nav />
-      <main className="mx-auto max-w-3xl px-4 py-12">
-        <div className="mb-6 text-sm text-muted-foreground">
-          <Link href={`/${locale}`} className="hover:text-foreground">NakshIQ</Link>
-          {" → "}
-          <span className="text-foreground">Membership</span>
-        </div>
 
-        <h1 className="text-4xl sm:text-5xl font-semibold mb-4">NakshIQ Membership</h1>
-        <p className="text-lg text-muted-foreground mb-2 leading-relaxed">
-          Ad-free, sponsor-free. Built by the editors who write the destinations,
-          for the people who actually travel.
-        </p>
-        <p className="text-sm font-semibold text-foreground/90 mb-10">
-          Launch pricing: ₹999 / year. Join the waitlist — no card, no commitment.
-        </p>
+      <main
+        id="main-content"
+        className="nq-grain"
+        style={{ position: "relative", padding: "140px 24px 64px" }}
+      >
+        <header style={{ maxWidth: 900, margin: "0 auto 48px" }}>
+          <p
+            className="nq-kicker"
+            style={{
+              color: "var(--vermillion)",
+              marginBottom: 20,
+              letterSpacing: "0.22em",
+            }}
+          >
+            MEMBERSHIP · WAITLIST · LAUNCH 2026
+          </p>
+          <Title
+            as="h1"
+            className="nq-display"
+            style={{
+              fontFamily: "var(--cinema-display)",
+              fontStyle: "italic",
+              fontWeight: 400,
+              fontSize: "clamp(36px, 6vw, 76px)",
+              lineHeight: 1.0,
+              letterSpacing: "-0.022em",
+              margin: 0,
+              textWrap: "balance",
+            }}
+          >
+            NakshIQ Membership.
+          </Title>
+          <p
+            style={{
+              fontFamily: "var(--cinema-display)",
+              fontStyle: "italic",
+              fontWeight: 400,
+              fontSize: "clamp(18px, 2vw, 24px)",
+              lineHeight: 1.4,
+              color: "var(--bone-dim)",
+              marginTop: 24,
+              maxWidth: 720,
+            }}
+          >
+            Ad-free, sponsor-free. Built by the editors who write the destinations, for the people who
+            actually travel.
+          </p>
 
-        {/* What's included */}
-        <section className="mb-10">
-          <h2 className="text-2xl font-semibold mb-5">What Members get</h2>
-          <div className="grid gap-4 sm:grid-cols-2">
-            <div className="rounded-2xl border border-border p-5">
-              <h3 className="font-semibold mb-1.5">The Window — early + archive</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                Weekly editorial essay in your inbox the Saturday before non-members see it on the site.
-                Full archive always accessible, searchable.
-              </p>
-            </div>
-            <div className="rounded-2xl border border-border p-5">
-              <h3 className="font-semibold mb-1.5">Offline trip PDFs</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                Download your saved trips as a polished PDF with maps, emergency numbers,
-                and week-by-week itinerary. Critical on Ladakh / Spiti where network drops.
-              </p>
-            </div>
-            <div className="rounded-2xl border border-border p-5">
-              <h3 className="font-semibold mb-1.5">Cost Index deep-dives</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                Members-only quarterly deep-dives — the story behind the numbers.
-                Where prices are moving, which operators changed hands, what's still worth it.
-              </p>
-            </div>
-            <div className="rounded-2xl border border-border p-5">
-              <h3 className="font-semibold mb-1.5">Editor Q&A</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                Direct email access to the editorial team for specific trip questions.
-                Reply within 2–5 working days.
-              </p>
-            </div>
-            <div className="rounded-2xl border border-border p-5">
-              <h3 className="font-semibold mb-1.5">Member concierge rates</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                When Sprint 16 launches the concierge tier, Members get discounted rates on
-                human-reviewed itinerary-checking + DMC-vetted specialist introductions.
-              </p>
-            </div>
-            <div className="rounded-2xl border border-border p-5">
-              <h3 className="font-semibold mb-1.5">No ads, ever</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                NakshIQ doesn't run ads for non-members either. Membership is how we keep
-                it that way — you're paying for the editorial independence to stay editorial.
-              </p>
-            </div>
+          {/* Price callout */}
+          <div
+            style={{
+              display: "inline-flex",
+              alignItems: "baseline",
+              gap: 14,
+              marginTop: 24,
+              padding: "12px 20px",
+              border: "1px solid var(--vermillion)",
+              background: "rgba(229, 86, 66, 0.06)",
+            }}
+          >
+            <p
+              style={{
+                fontFamily: "var(--cinema-mono)",
+                fontSize: 10,
+                letterSpacing: "0.22em",
+                textTransform: "uppercase",
+                color: "var(--vermillion)",
+                margin: 0,
+              }}
+            >
+              Launch
+            </p>
+            <p
+              style={{
+                fontFamily: "var(--cinema-display)",
+                fontStyle: "italic",
+                fontWeight: 500,
+                fontSize: 28,
+                lineHeight: 1,
+                color: "var(--bone)",
+                margin: 0,
+                fontVariantNumeric: "tabular-nums",
+              }}
+            >
+              ₹999<span style={{ fontFamily: "var(--cinema-mono)", fontSize: 12, color: "var(--bone-faint)", letterSpacing: "0.14em", textTransform: "uppercase", marginLeft: 6 }}>/year</span>
+            </p>
+            <p
+              style={{
+                fontFamily: "var(--cinema-ui)",
+                fontSize: 13,
+                color: "var(--bone-dim)",
+                margin: 0,
+              }}
+            >
+              · no card, no commitment
+            </p>
           </div>
-        </section>
+        </header>
 
-        {/* Form */}
-        <section className="mb-10" id="join">
-          <h2 className="text-2xl font-semibold mb-4">Join the waitlist</h2>
-          <MembershipForm locale={locale} />
-        </section>
+        <div style={{ maxWidth: 900, margin: "0 auto" }}>
+          {/* What Members get */}
+          <section style={{ marginBottom: 56 }}>
+            <h2
+              style={{
+                fontFamily: "var(--cinema-display)",
+                fontStyle: "italic",
+                fontWeight: 500,
+                fontSize: 32,
+                lineHeight: 1.1,
+                color: "var(--bone)",
+                margin: "0 0 24px",
+              }}
+            >
+              What Members get.
+            </h2>
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
+                gap: 1,
+                background: "var(--hair)",
+                border: "1px solid var(--hair)",
+              }}
+            >
+              {BENEFITS.map((b, i) => (
+                <div key={i} style={{ padding: 20, background: "var(--paper)" }}>
+                  <p
+                    style={{
+                      fontFamily: "var(--cinema-mono)",
+                      fontSize: 10,
+                      letterSpacing: "0.22em",
+                      textTransform: "uppercase",
+                      color: "var(--vermillion)",
+                      margin: "0 0 8px",
+                      fontVariantNumeric: "tabular-nums",
+                    }}
+                  >
+                    {String(i + 1).padStart(2, "0")}
+                  </p>
+                  <p
+                    style={{
+                      fontFamily: "var(--cinema-display)",
+                      fontStyle: "italic",
+                      fontWeight: 500,
+                      fontSize: 18,
+                      lineHeight: 1.25,
+                      color: "var(--bone)",
+                      margin: "0 0 8px",
+                    }}
+                  >
+                    {b.title}
+                  </p>
+                  <p
+                    style={{
+                      fontFamily: "var(--cinema-ui)",
+                      fontSize: 13,
+                      lineHeight: 1.6,
+                      color: "var(--bone-dim)",
+                      margin: 0,
+                    }}
+                  >
+                    {b.body}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </section>
 
-        {/* Trust signals */}
-        <section className="rounded-2xl border border-border bg-card/40 p-6 mb-6">
-          <h2 className="text-lg font-semibold mb-3">What we won't do</h2>
-          <ul className="text-sm text-muted-foreground leading-relaxed space-y-2 pl-5 list-disc">
-            <li>We will never run ads on NakshIQ, for Members or non-Members.</li>
-            <li>We will never accept payment to score a destination higher.</li>
-            <li>We will never share your email with partners, DMCs, or affiliates.</li>
-            <li>You can unsubscribe in one click — the link is at the bottom of every email.</li>
-          </ul>
-          <p className="text-xs text-muted-foreground/80 mt-4">
-            Read the full <Link href={`/${locale}/editorial-policy`} className="underline hover:text-primary">editorial policy</Link>{" "}
-            — including how we handle corrections and why there are no sponsored posts.
-          </p>
-        </section>
+          {/* Join the waitlist */}
+          <section
+            id="join"
+            style={{
+              marginBottom: 48,
+              padding: 32,
+              border: "1px solid var(--vermillion)",
+              background: "rgba(229, 86, 66, 0.04)",
+            }}
+          >
+            <p
+              style={{
+                fontFamily: "var(--cinema-mono)",
+                fontSize: 10,
+                letterSpacing: "0.22em",
+                textTransform: "uppercase",
+                color: "var(--vermillion)",
+                margin: "0 0 12px",
+              }}
+            >
+              Join the waitlist
+            </p>
+            <p
+              style={{
+                fontFamily: "var(--cinema-display)",
+                fontStyle: "italic",
+                fontWeight: 500,
+                fontSize: "clamp(22px, 3vw, 28px)",
+                lineHeight: 1.2,
+                color: "var(--bone)",
+                margin: "0 0 20px",
+              }}
+            >
+              Be first in line when Membership opens.
+            </p>
+            <MembershipForm locale={locale} />
+          </section>
 
-        {/* When launching */}
-        <section className="text-sm text-muted-foreground leading-relaxed">
-          <p>
-            <strong className="text-foreground">When does Membership launch?</strong>{" "}
-            In 2026, once the Cost Index, NakshIQ 100, and the first newsletter cadence are running
-            at scale. Waitlist signups get first access + locked-in launch pricing.
-          </p>
-        </section>
+          {/* What we won't do */}
+          <section
+            style={{
+              marginBottom: 48,
+              padding: 24,
+              border: "1px solid var(--hair)",
+              background: "var(--paper)",
+            }}
+          >
+            <p
+              style={{
+                fontFamily: "var(--cinema-display)",
+                fontStyle: "italic",
+                fontWeight: 500,
+                fontSize: 22,
+                lineHeight: 1.2,
+                color: "var(--bone)",
+                margin: "0 0 16px",
+              }}
+            >
+              What we won&apos;t do.
+            </p>
+            <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: 12 }}>
+              {WONT_DO.map((line, i) => (
+                <li
+                  key={i}
+                  style={{
+                    display: "flex",
+                    gap: 12,
+                    alignItems: "baseline",
+                    fontFamily: "var(--cinema-ui)",
+                    fontSize: 14,
+                    lineHeight: 1.7,
+                    color: "var(--bone-dim)",
+                  }}
+                >
+                  <span style={{ flexShrink: 0, color: "var(--vermillion)" }}>—</span>
+                  <span>{line}</span>
+                </li>
+              ))}
+            </ul>
+            <p
+              style={{
+                fontFamily: "var(--cinema-ui)",
+                fontSize: 12,
+                lineHeight: 1.7,
+                color: "var(--bone-faint)",
+                margin: "16px 0 0",
+              }}
+            >
+              Read the full{" "}
+              <Link
+                href={`/${locale}/editorial-policy`}
+                style={{ color: "var(--vermillion)", textDecoration: "underline", textUnderlineOffset: "3px" }}
+              >
+                editorial policy
+              </Link>{" "}
+              — including how we handle corrections and why there are no sponsored posts.
+            </p>
+          </section>
+
+          {/* When launching */}
+          <section>
+            <p
+              className="nq-kicker"
+              style={{
+                color: "var(--vermillion)",
+                marginBottom: 12,
+                letterSpacing: "0.18em",
+                textTransform: "uppercase",
+              }}
+            >
+              When does Membership launch?
+            </p>
+            <p
+              style={{
+                fontFamily: "var(--cinema-ui)",
+                fontSize: 14,
+                lineHeight: 1.7,
+                color: "var(--bone-dim)",
+                margin: 0,
+              }}
+            >
+              In 2026, once the Cost Index, NakshIQ 100, and the first newsletter cadence are running at
+              scale. Waitlist signups get first access + locked-in launch pricing.
+            </p>
+          </section>
+        </div>
       </main>
+
+      <CinematicRelatedRail />
       <Footer />
     </div>
   );
