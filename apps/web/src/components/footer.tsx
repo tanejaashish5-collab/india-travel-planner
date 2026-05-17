@@ -94,6 +94,8 @@ export function Footer({
     // Phase 3 Tier 3 (S54) — geography
     `/${locale}/states`,
     `/${locale}/superlatives`,
+    // Phase 3 Tier 4 (S54) — weekend-from cluster
+    `/${locale}/weekend-from`,
   ];
   const CINEMATIC_PAGE_PREFIXES = [
     `/${locale}/skip-list/`,
@@ -111,6 +113,8 @@ export function Footer({
     `/${locale}/india/`,
     `/${locale}/family/`,
     `/${locale}/with-kids/`,
+    // Tier 4 (S54) — weekend-from-<city> (19 metros)
+    `/${locale}/weekend-from-`,
   ];
   const isCinematicPage =
     CINEMATIC_PAGE_PATHS.includes(pathname) ||

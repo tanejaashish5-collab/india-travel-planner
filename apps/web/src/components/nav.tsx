@@ -66,6 +66,8 @@ export function Nav() {
     // Phase 3 Tier 3 (S54) — geography
     `/${locale}/states`,
     `/${locale}/superlatives`,
+    // Phase 3 Tier 4 (S54) — weekend-from cluster
+    `/${locale}/weekend-from`,
   ];
   // Dynamic segments — body is cinematic on any matching descendant route.
   const CINEMATIC_PAGE_PREFIXES = [
@@ -84,6 +86,8 @@ export function Nav() {
     `/${locale}/india/`,
     `/${locale}/family/`,
     `/${locale}/with-kids/`,
+    // Tier 4 (S54) — weekend-from-<city> (19 metros)
+    `/${locale}/weekend-from-`,
   ];
   const isCinematicPage =
     CINEMATIC_PAGE_PATHS.includes(pathname) ||

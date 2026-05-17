@@ -3,6 +3,9 @@ import Link from "next/link";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { METRO_ANCHORS, METRO_SLUGS } from "@/lib/metro-anchors";
+import { CinemaStyles } from "@/components/landing-cinema/cinema-styles";
+import { Title } from "@/components/landing-cinema/editorial";
+import { CinematicRelatedRail } from "@/components/cinematic-related-rail";
 
 export const revalidate = 86400;
 
@@ -33,56 +36,154 @@ export default async function WeekendFromIndexPage({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
+
+  const breadcrumbLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: `https://www.nakshiq.com/${locale}` },
+      { "@type": "ListItem", position: 2, name: "Weekend from", item: `https://www.nakshiq.com/${locale}/weekend-from` },
+    ],
+  };
+
   return (
-    <div className="min-h-screen">
+    <div className="nakshiq-cinema" style={{ minHeight: "100vh" }}>
+      <CinemaStyles />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+      />
       <Nav />
-      <main className="mx-auto max-w-5xl px-4 py-8 sm:py-12">
-        <header className="mb-10 max-w-3xl">
-          <p className="mb-2 text-sm font-medium uppercase tracking-[0.08em] text-primary/70">
-            Weekend escape
-          </p>
-          <h1
-            className="font-serif italic font-medium text-3xl sm:text-4xl md:text-5xl leading-tight text-foreground"
-            style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
+
+      <main
+        id="main-content"
+        className="nq-grain"
+        style={{ position: "relative", padding: "140px 24px 64px" }}
+      >
+        <header style={{ maxWidth: 1100, margin: "0 auto 48px" }}>
+          <p
+            className="nq-kicker"
+            style={{
+              color: "var(--vermillion)",
+              marginBottom: 24,
+              letterSpacing: "0.22em",
+            }}
           >
-            Weekend from anywhere
-          </h1>
-          <p className="mt-4 text-base sm:text-lg text-muted-foreground leading-relaxed">
-            Pick your city. Every destination within 500 km is scored for the current month — no hill station that has already closed for winter, no beach that&apos;s under monsoon water. Six metros covered.
+            WEEKEND ESCAPE · {String(METRO_SLUGS.length).padStart(2, "0")} METROS
+          </p>
+          <Title
+            as="h1"
+            className="nq-display"
+            style={{
+              fontFamily: "var(--cinema-display)",
+              fontStyle: "italic",
+              fontWeight: 400,
+              fontSize: "clamp(40px, 7vw, 88px)",
+              lineHeight: 0.98,
+              letterSpacing: "-0.025em",
+              margin: 0,
+              textWrap: "balance",
+            }}
+          >
+            Weekend from anywhere.
+          </Title>
+          <p
+            style={{
+              fontFamily: "var(--cinema-display)",
+              fontStyle: "italic",
+              fontWeight: 400,
+              fontSize: "clamp(18px, 2vw, 24px)",
+              lineHeight: 1.4,
+              color: "var(--bone-dim)",
+              marginTop: 24,
+              maxWidth: 720,
+            }}
+          >
+            Pick your city. Every destination within 500 km is scored for the
+            current month — no hill station already closed for winter, no
+            beach under monsoon water.
           </p>
         </header>
 
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {METRO_SLUGS.map((slug) => {
-            const metro = METRO_ANCHORS[slug];
-            return (
-              <Link
-                key={slug}
-                href={`/${locale}/weekend-from-${slug}`}
-                className="group block rounded-xl border border-border bg-card p-6 transition-all hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5"
-              >
-                <p className="mb-2 font-mono text-[10px] tracking-[0.22em] uppercase text-muted-foreground">
-                  {metro.state}
-                </p>
-                <h2
-                  className="font-serif italic font-medium text-2xl sm:text-3xl leading-tight text-foreground group-hover:text-primary transition-colors"
-                  style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
+        <div style={{ maxWidth: 1100, margin: "0 auto" }}>
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))",
+              gap: 1,
+              background: "var(--hair)",
+              border: "1px solid var(--hair)",
+            }}
+          >
+            {METRO_SLUGS.map((slug) => {
+              const metro = METRO_ANCHORS[slug];
+              return (
+                <Link
+                  key={slug}
+                  href={`/${locale}/weekend-from-${slug}`}
+                  style={{
+                    display: "block",
+                    padding: 24,
+                    background: "var(--paper)",
+                    textDecoration: "none",
+                  }}
                 >
-                  Weekend from {metro.name}
-                </h2>
-                <p className="mt-3 text-sm text-muted-foreground">
-                  500 km radius · 3 drive bands · current-month scores
-                </p>
-                <p className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-primary/80 group-hover:text-primary">
-                  <span className="transition-transform group-hover:translate-x-0.5" aria-hidden>
-                    →
-                  </span>
-                </p>
-              </Link>
-            );
-          })}
+                  <p
+                    style={{
+                      fontFamily: "var(--cinema-mono)",
+                      fontSize: 10,
+                      letterSpacing: "0.22em",
+                      textTransform: "uppercase",
+                      color: "var(--bone-faint)",
+                      margin: "0 0 10px",
+                    }}
+                  >
+                    {metro.state}
+                  </p>
+                  <h2
+                    style={{
+                      fontFamily: "var(--cinema-display)",
+                      fontStyle: "italic",
+                      fontWeight: 500,
+                      fontSize: 28,
+                      lineHeight: 1.1,
+                      color: "var(--bone)",
+                      margin: 0,
+                    }}
+                  >
+                    Weekend from {metro.name}.
+                  </h2>
+                  <p
+                    style={{
+                      fontFamily: "var(--cinema-ui)",
+                      fontSize: 13,
+                      lineHeight: 1.55,
+                      color: "var(--bone-dim)",
+                      margin: "12px 0 0",
+                    }}
+                  >
+                    500 km radius · 3 drive bands · current-month scores
+                  </p>
+                  <p
+                    style={{
+                      fontFamily: "var(--cinema-mono)",
+                      fontSize: 11,
+                      letterSpacing: "0.18em",
+                      textTransform: "uppercase",
+                      color: "var(--vermillion)",
+                      margin: "16px 0 0",
+                    }}
+                  >
+                    Explore →
+                  </p>
+                </Link>
+              );
+            })}
+          </div>
         </div>
       </main>
+
+      <CinematicRelatedRail />
       <Footer />
     </div>
   );

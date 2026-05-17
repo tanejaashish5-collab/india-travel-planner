@@ -5,6 +5,9 @@ import { createClient } from "@supabase/supabase-js";
 import { notFound } from "next/navigation";
 import { METRO_ANCHORS, METRO_SLUGS, type MetroAnchor } from "@/lib/metro-anchors";
 import { currentMonthIST } from "@itp/shared";
+import { CinemaStyles } from "@/components/landing-cinema/cinema-styles";
+import { Title } from "@/components/landing-cinema/editorial";
+import { CinematicRelatedRail } from "@/components/cinematic-related-rail";
 
 type Band = { label: string; sublabel: string; min: number; max: number };
 const BANDS: Band[] = [
@@ -12,6 +15,30 @@ const BANDS: Band[] = [
   { label: "Half-day drive", sublabel: "150–300 km", min: 150, max: 300 },
   { label: "Long weekend", sublabel: "300–500 km", min: 300, max: 500 },
 ];
+
+type NearbyRow = { destination_id: string; distance_km: number };
+
+type DestRow = {
+  id: string;
+  name: string;
+  tagline?: string | null;
+  difficulty?: string | null;
+  elevation_m?: number | null;
+  tags?: string[] | null;
+  best_months?: number[] | null;
+  translations?: Record<string, unknown> | null;
+  state_id?: string;
+  budget_tier?: string | null;
+  solo_female_score?: number | null;
+  state?: { name?: string }[] | { name?: string } | null;
+  kids_friendly?: { suitable?: boolean | null; rating?: number | null }[] | null;
+  destination_months?: { month: number; score: number | null }[] | null;
+};
+
+type HydratedDest = DestRow & {
+  distance_km: number;
+  current_month_score: number | null;
+};
 
 function getSupabase() {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
@@ -34,8 +61,8 @@ export async function WeekendFromView({ locale, city }: { locale: string; city: 
   });
   if (error) notFound();
 
-  const nearby = Array.isArray(rpcData) ? rpcData : [];
-  const ids = nearby.map((n: any) => n.destination_id);
+  const nearby: NearbyRow[] = Array.isArray(rpcData) ? rpcData : [];
+  const ids = nearby.map((n) => n.destination_id);
 
   const { data: full } = await supabase
     .from("destinations")
@@ -43,110 +70,238 @@ export async function WeekendFromView({ locale, city }: { locale: string; city: 
     .in("id", ids);
 
   const currentMonth = currentMonthIST();
-  const distMap = new Map<string, number>(nearby.map((n: any) => [n.destination_id, n.distance_km]));
-  const hydrated = (full ?? [])
-    .map((d: any) => ({
+  const distMap = new Map<string, number>(nearby.map((n) => [n.destination_id, n.distance_km]));
+  const hydrated: HydratedDest[] = (full ?? [])
+    .map((d: DestRow) => ({
       ...d,
       distance_km: Math.round(distMap.get(d.id) ?? 0),
-      current_month_score: d.destination_months?.find((m: any) => m.month === currentMonth)?.score ?? null,
+      current_month_score: d.destination_months?.find((m) => m.month === currentMonth)?.score ?? null,
     }))
-    .sort((a: any, b: any) => a.distance_km - b.distance_km);
+    .sort((a, b) => a.distance_km - b.distance_km);
 
-  const banded: { band: Band; items: any[] }[] = BANDS.map((band) => ({
+  const banded: { band: Band; items: HydratedDest[] }[] = BANDS.map((band) => ({
     band,
-    items: hydrated.filter((d: any) => d.distance_km >= band.min && d.distance_km < band.max),
+    items: hydrated.filter((d) => d.distance_km >= band.min && d.distance_km < band.max),
   }));
   const totalCount = hydrated.length;
 
+  const pageUrl = `https://www.nakshiq.com/${locale}/weekend-from-${city}`;
+  const breadcrumbLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: `https://www.nakshiq.com/${locale}` },
+      { "@type": "ListItem", position: 2, name: "Weekend from", item: `https://www.nakshiq.com/${locale}/weekend-from` },
+      { "@type": "ListItem", position: 3, name: anchor.name, item: pageUrl },
+    ],
+  };
+
   return (
-    <div className="min-h-screen">
+    <div className="nakshiq-cinema" style={{ minHeight: "100vh" }}>
+      <CinemaStyles />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+      />
       <Nav />
-      <main className="mx-auto max-w-7xl px-4 py-8 sm:py-12">
-        <header className="mb-10 max-w-3xl">
-          <p className="mb-2 text-sm font-medium uppercase tracking-[0.08em] text-primary/70">
-            Weekend escape
-          </p>
-          <h1
-            className="font-serif italic font-medium text-3xl sm:text-4xl md:text-5xl leading-tight text-foreground"
-            style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
+
+      <main
+        id="main-content"
+        className="nq-grain"
+        style={{ position: "relative", padding: "140px 24px 64px" }}
+      >
+        <header style={{ maxWidth: 1100, margin: "0 auto 48px" }}>
+          <p
+            className="nq-kicker"
+            style={{
+              color: "var(--vermillion)",
+              marginBottom: 20,
+              letterSpacing: "0.22em",
+            }}
           >
-            Weekend from {anchor.name}
-          </h1>
-          <p className="mt-4 text-base sm:text-lg text-muted-foreground leading-relaxed">
-            {totalCount} destinations within 500 km of {anchor.name}, grouped by drive time. Every one is scored for the current month — no hill station that has already closed for winter, no beach that's under monsoon water.
+            WEEKEND ESCAPE · {anchor.state.toUpperCase()} · {String(totalCount).padStart(3, "0")} DESTINATIONS
+          </p>
+          <Title
+            as="h1"
+            className="nq-display"
+            style={{
+              fontFamily: "var(--cinema-display)",
+              fontStyle: "italic",
+              fontWeight: 400,
+              fontSize: "clamp(36px, 6vw, 76px)",
+              lineHeight: 1.0,
+              letterSpacing: "-0.022em",
+              margin: 0,
+              textWrap: "balance",
+            }}
+          >
+            Weekend from {anchor.name}.
+          </Title>
+          <p
+            style={{
+              fontFamily: "var(--cinema-display)",
+              fontStyle: "italic",
+              fontWeight: 400,
+              fontSize: "clamp(18px, 2vw, 24px)",
+              lineHeight: 1.4,
+              color: "var(--bone-dim)",
+              marginTop: 24,
+              maxWidth: 720,
+            }}
+          >
+            {totalCount} destinations within 500 km of {anchor.name}, grouped by
+            drive time. Every one is scored for the current month — no hill
+            station already closed for winter, no beach under monsoon water.
           </p>
         </header>
 
-        <div className="mb-8 flex flex-wrap gap-2">
-          {METRO_SLUGS.filter((s) => s !== city).map((s) => (
-            <a
-              key={s}
-              href={`/${locale}/weekend-from-${s}`}
-              className="rounded-full border border-border/60 bg-card/40 px-3 py-1 font-mono text-[10px] tracking-[0.22em] uppercase text-muted-foreground hover:border-primary/40 hover:text-foreground transition-colors"
-            >
-              {METRO_ANCHORS[s].name}
-            </a>
-          ))}
-        </div>
-
-        {banded.map(({ band, items }) => {
-          if (items.length === 0) return null;
-          return (
-            <section key={band.label} className="mb-12">
-              <div className="mb-4 flex items-baseline gap-3 border-b border-border pb-2">
-                <h2
-                  className="font-serif italic font-medium text-xl sm:text-2xl"
-                  style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
-                >
-                  {band.label}
-                </h2>
-                <span className="font-mono text-[10px] tracking-[0.22em] uppercase text-muted-foreground">
-                  {band.sublabel} · {items.length} {items.length === 1 ? "place" : "places"}
-                </span>
-              </div>
-              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                {items.map((d: any) => {
-                  const stateName = Array.isArray(d.state) ? d.state[0]?.name : d.state?.name;
-                  const hours = Math.max(1, Math.round(d.distance_km / 60));
-                  return (
-                    <div key={d.id} className="relative">
-                      <DestinationCard
-                        id={d.id}
-                        name={d.name}
-                        tagline={d.tagline}
-                        state={stateName ?? ""}
-                        difficulty={d.difficulty}
-                        elevation_m={d.elevation_m}
-                        tags={d.tags ?? []}
-                        best_months={d.best_months ?? []}
-                        kids_rating={d.kids_friendly?.[0]?.rating ?? null}
-                        kids_suitable={d.kids_friendly?.[0]?.suitable ?? null}
-                        current_month_score={d.current_month_score}
-                        budget_tier={d.budget_tier}
-                        translations={d.translations}
-                        solo_female_score={d.solo_female_score ?? null}
-                      />
-                      {/* Distance pill — bottom-right corner so it doesn't collide
-                          with the score / kids / solo-female chips at the top of
-                          the card. pointer-events-none lets the whole card remain
-                          one click target. */}
-                      <div className="pointer-events-none absolute bottom-3 right-3 z-10 rounded-full border border-border/60 bg-background/85 px-2.5 py-1 font-mono text-[10px] tracking-[0.12em] uppercase text-muted-foreground backdrop-blur-sm">
-                        {d.distance_km} km · ~{hours} h
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-            </section>
-          );
-        })}
-
-        {totalCount === 0 && (
-          <div className="mt-8 rounded-xl border border-border/50 bg-card/40 px-5 py-6 text-sm text-muted-foreground">
-            No scored destinations within 500 km of {anchor.name} yet. Check back as our coverage grows.
+        <div style={{ maxWidth: 1100, margin: "0 auto" }}>
+          {/* Sibling metros pills */}
+          <div
+            style={{
+              marginBottom: 40,
+              display: "flex",
+              flexWrap: "wrap",
+              gap: 8,
+              paddingBottom: 24,
+              borderBottom: "1px solid var(--hair)",
+            }}
+          >
+            {METRO_SLUGS.filter((s) => s !== city).map((s) => (
+              <a
+                key={s}
+                href={`/${locale}/weekend-from-${s}`}
+                style={{
+                  fontFamily: "var(--cinema-mono)",
+                  fontSize: 10,
+                  letterSpacing: "0.22em",
+                  textTransform: "uppercase",
+                  padding: "6px 12px",
+                  border: "1px solid var(--hair)",
+                  color: "var(--bone-dim)",
+                  textDecoration: "none",
+                }}
+              >
+                {METRO_ANCHORS[s].name}
+              </a>
+            ))}
           </div>
-        )}
+
+          {banded.map(({ band, items }) => {
+            if (items.length === 0) return null;
+            return (
+              <section key={band.label} style={{ marginBottom: 56 }}>
+                <div
+                  style={{
+                    marginBottom: 20,
+                    paddingBottom: 12,
+                    borderBottom: "1px solid var(--hair)",
+                    display: "flex",
+                    alignItems: "baseline",
+                    gap: 16,
+                    flexWrap: "wrap",
+                  }}
+                >
+                  <h2
+                    style={{
+                      fontFamily: "var(--cinema-display)",
+                      fontStyle: "italic",
+                      fontWeight: 500,
+                      fontSize: 28,
+                      lineHeight: 1.1,
+                      color: "var(--bone)",
+                      margin: 0,
+                    }}
+                  >
+                    {band.label}
+                  </h2>
+                  <span
+                    style={{
+                      fontFamily: "var(--cinema-mono)",
+                      fontSize: 10,
+                      letterSpacing: "0.22em",
+                      textTransform: "uppercase",
+                      color: "var(--bone-faint)",
+                    }}
+                  >
+                    {band.sublabel} · {items.length} {items.length === 1 ? "place" : "places"}
+                  </span>
+                </div>
+                <div
+                  style={{
+                    display: "grid",
+                    gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))",
+                    gap: 16,
+                  }}
+                >
+                  {items.map((d) => {
+                    const stateName = Array.isArray(d.state) ? d.state[0]?.name : d.state?.name;
+                    const hours = Math.max(1, Math.round(d.distance_km / 60));
+                    return (
+                      <div key={d.id} style={{ position: "relative" }}>
+                        <DestinationCard
+                          id={d.id}
+                          name={d.name}
+                          tagline={d.tagline ?? ""}
+                          state={stateName ?? ""}
+                          difficulty={d.difficulty ?? ""}
+                          elevation_m={d.elevation_m ?? null}
+                          tags={d.tags ?? []}
+                          best_months={d.best_months ?? []}
+                          kids_rating={d.kids_friendly?.[0]?.rating ?? null}
+                          kids_suitable={d.kids_friendly?.[0]?.suitable ?? null}
+                          current_month_score={d.current_month_score}
+                          budget_tier={d.budget_tier ?? null}
+                          translations={d.translations as Record<string, Record<string, string>> | undefined}
+                          solo_female_score={d.solo_female_score ?? null}
+                        />
+                        <div
+                          style={{
+                            pointerEvents: "none",
+                            position: "absolute",
+                            bottom: 12,
+                            right: 12,
+                            zIndex: 10,
+                            padding: "4px 10px",
+                            background: "rgba(10, 10, 8, 0.85)",
+                            backdropFilter: "blur(8px)",
+                            border: "1px solid var(--hair)",
+                            fontFamily: "var(--cinema-mono)",
+                            fontSize: 10,
+                            letterSpacing: "0.12em",
+                            textTransform: "uppercase",
+                            color: "var(--bone-dim)",
+                          }}
+                        >
+                          {d.distance_km} km · ~{hours} h
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </section>
+            );
+          })}
+
+          {totalCount === 0 && (
+            <div
+              style={{
+                marginTop: 32,
+                padding: "32px 24px",
+                border: "1px solid var(--hair)",
+                fontFamily: "var(--cinema-ui)",
+                fontSize: 14,
+                color: "var(--bone-dim)",
+              }}
+            >
+              No scored destinations within 500 km of {anchor.name} yet. Check
+              back as our coverage grows.
+            </div>
+          )}
+        </div>
       </main>
+
+      <CinematicRelatedRail />
       <Footer />
     </div>
   );
