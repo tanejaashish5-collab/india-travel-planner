@@ -32,7 +32,9 @@ export function Nav() {
   const isLandingRoot = pathname === `/${locale}` || pathname === `/${locale}/`;
   const CINEMATIC_PAGE_PATHS = [
     `/${locale}/about`,
+    `/${locale}/about/team`,
     `/${locale}/methodology`,
+    `/${locale}/methodology/freshness`,
     `/${locale}/privacy`,
     `/${locale}/terms`,
     `/${locale}/cookies`,
@@ -107,6 +109,13 @@ export function Nav() {
     // with full-bleed video hero. Without this prefix, the nav reverted to
     // legacy mega-menu on detail pages even though the hub was cinematic.
     `/${locale}/collections/`,
+    // Post-S54 cinematic-gap migration (2026-05-17) — closes 4 hub/detail
+    // mismatches where the parent hub was cinematic but children were legacy
+    // (the-window newsletter detail + 4 explore filter variants).
+    `/${locale}/the-window/`,
+    `/${locale}/explore/state/`,
+    `/${locale}/explore/difficulty/`,
+    `/${locale}/explore/tag/`,
     // Tier 2 children (S54) — filter pages now cinematic
     `/${locale}/treks/`,
     `/${locale}/festivals/`,

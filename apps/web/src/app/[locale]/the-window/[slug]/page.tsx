@@ -6,6 +6,8 @@ import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { NewsletterForm } from "../../newsletter/newsletter-form";
 import { localeAlternates } from "@/lib/seo-utils";
+import { CinemaStyles } from "@/components/landing-cinema/cinema-styles";
+import { CinematicRelatedRail } from "@/components/cinematic-related-rail";
 
 export const revalidate = 86400;
 export const dynamicParams = true;
@@ -53,54 +55,153 @@ export default async function IssuePage({
   const issue = await getIssue(slug);
   if (!issue) notFound();
 
-  return (
-    <div className="min-h-screen">
-      <Nav />
-      <main className="mx-auto max-w-3xl px-4 py-12">
-        <Link href={`/${locale}/the-window`} className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors mb-6">
-          ← All issues
-        </Link>
+  const sentDate = new Date(issue.sent_at as string).toLocaleDateString("en-IN", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+  const issueNumLabel = issue.issue_number
+    ? `THE WINDOW · #${String(issue.issue_number).padStart(3, "0")} · ${sentDate.toUpperCase()}`
+    : `THE WINDOW · ${sentDate.toUpperCase()}`;
 
-        <header className="mb-8">
-          <div className="flex items-baseline gap-3 mb-2">
-            {issue.issue_number && (
-              <span className="text-xs font-mono text-muted-foreground">
-                THE WINDOW · #{String(issue.issue_number).padStart(3, "0")}
-              </span>
-            )}
-            <span className="text-xs text-muted-foreground">
-              {new Date(issue.sent_at as string).toLocaleDateString("en-IN", {
-                year: "numeric",
-                month: "long",
-                day: "numeric",
-              })}
-            </span>
-          </div>
-          <h1 className="text-3xl font-semibold sm:text-4xl">{issue.subject}</h1>
+  return (
+    <div className="nakshiq-cinema" style={{ minHeight: "100vh" }}>
+      <CinemaStyles />
+      <Nav />
+      <main
+        id="main-content"
+        className="nq-grain"
+        style={{ position: "relative", padding: "140px 24px 64px" }}
+      >
+        <header style={{ maxWidth: 820, margin: "0 auto 48px" }}>
+          <p
+            className="nq-kicker"
+            style={{
+              color: "var(--vermillion)",
+              marginBottom: 20,
+              letterSpacing: "0.22em",
+            }}
+          >
+            {issueNumLabel}
+          </p>
+          <h1
+            className="nq-display"
+            style={{
+              fontFamily: "var(--cinema-display)",
+              fontStyle: "italic",
+              fontWeight: 400,
+              fontSize: "clamp(36px, 6vw, 72px)",
+              lineHeight: 1.02,
+              letterSpacing: "-0.025em",
+              margin: 0,
+              color: "var(--bone)",
+              textWrap: "balance",
+            }}
+          >
+            {issue.subject}
+          </h1>
           {issue.preview_text && (
-            <p className="mt-3 text-lg text-muted-foreground">{issue.preview_text}</p>
+            <p
+              style={{
+                fontFamily: "var(--cinema-display)",
+                fontStyle: "italic",
+                fontWeight: 400,
+                fontSize: "clamp(17px, 1.8vw, 22px)",
+                lineHeight: 1.4,
+                color: "var(--bone-dim)",
+                margin: "24px 0 0",
+                maxWidth: 640,
+              }}
+            >
+              {issue.preview_text}
+            </p>
           )}
+          <div style={{ marginTop: 20 }}>
+            <Link
+              href={`/${locale}/the-window`}
+              className="nq-mono"
+              style={{
+                fontSize: 11,
+                letterSpacing: "0.18em",
+                textTransform: "uppercase",
+                color: "var(--vermillion)",
+                textDecoration: "none",
+              }}
+            >
+              ← All issues
+            </Link>
+          </div>
         </header>
 
-        {/* Render the stored email HTML inside an iframe for style isolation */}
-        <div className="rounded-2xl overflow-hidden border border-border">
-          <iframe
-            srcDoc={issue.html as string}
-            title={issue.subject as string}
-            sandbox="allow-popups allow-popups-to-escape-sandbox"
-            className="w-full block"
-            style={{ height: "900px", border: "0", background: "#161614" }}
-          />
-        </div>
+        <div style={{ maxWidth: 820, margin: "0 auto" }}>
+          {/* Render the stored email HTML inside an iframe for style isolation —
+              the issue HTML carries its own typography from the email template
+              so we don't try to restyle it inside cinema scope. */}
+          <div
+            style={{
+              border: "1px solid var(--hair)",
+              overflow: "hidden",
+            }}
+          >
+            <iframe
+              srcDoc={issue.html as string}
+              title={issue.subject as string}
+              sandbox="allow-popups allow-popups-to-escape-sandbox"
+              className="w-full block"
+              style={{ height: "900px", border: "0", background: "#161614" }}
+            />
+          </div>
 
-        <div className="mt-12 rounded-2xl border border-primary/20 bg-primary/5 p-6">
-          <h2 className="text-lg font-semibold text-center mb-2">Get this every Sunday</h2>
-          <p className="text-sm text-muted-foreground text-center mb-5">
-            No spam. Unsubscribe anytime. We don&apos;t sell your email.
-          </p>
-          <NewsletterForm source={`archive-${slug}`} />
+          <section
+            style={{
+              marginTop: 48,
+              padding: 32,
+              border: "1px solid var(--vermillion)",
+              background: "rgba(229, 86, 66, 0.04)",
+              textAlign: "center",
+            }}
+          >
+            <p
+              className="nq-kicker"
+              style={{
+                color: "var(--vermillion)",
+                marginBottom: 12,
+                letterSpacing: "0.22em",
+                fontSize: 10,
+              }}
+            >
+              SUBSCRIBE
+            </p>
+            <p
+              style={{
+                fontFamily: "var(--cinema-display)",
+                fontStyle: "italic",
+                fontWeight: 400,
+                fontSize: 24,
+                lineHeight: 1.25,
+                color: "var(--bone)",
+                margin: "0 0 8px",
+              }}
+            >
+              Get this every Sunday.
+            </p>
+            <p
+              className="nq-mono"
+              style={{
+                fontSize: 10,
+                letterSpacing: "0.22em",
+                textTransform: "uppercase",
+                color: "var(--bone-faint)",
+                margin: "0 0 20px",
+              }}
+            >
+              No spam · unsubscribe anytime · we don&apos;t sell your email
+            </p>
+            <NewsletterForm source={`archive-${slug}`} />
+          </section>
         </div>
       </main>
+      <CinematicRelatedRail />
       <Footer />
     </div>
   );

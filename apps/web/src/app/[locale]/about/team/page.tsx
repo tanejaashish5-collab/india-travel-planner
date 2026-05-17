@@ -5,6 +5,8 @@ import { Footer } from "@/components/footer";
 import { createClient } from "@supabase/supabase-js";
 import { localeAlternates } from "@/lib/seo-utils";
 import { AuthorByline, personJsonLd, type AuthorRecord } from "@/components/author-byline";
+import { CinemaStyles } from "@/components/landing-cinema/cinema-styles";
+import { CinematicRelatedRail } from "@/components/cinematic-related-rail";
 
 export const revalidate = 86400;
 
@@ -76,74 +78,204 @@ export default async function TeamPage({ params }: { params: Promise<{ locale: s
     ],
   };
 
+  const sectionKickerStyle: React.CSSProperties = {
+    color: "var(--vermillion)",
+    marginBottom: 20,
+    letterSpacing: "0.22em",
+  };
+  const sectionStyle: React.CSSProperties = { marginBottom: 56 };
+
   return (
-    <div className="min-h-screen">
+    <div className="nakshiq-cinema" style={{ minHeight: "100vh" }}>
+      <CinemaStyles />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutPageLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
       <Nav />
-      <main className="mx-auto max-w-3xl px-4 py-12">
-        <div className="mb-6 text-sm text-muted-foreground">
-          <Link href={`/${locale}/about`} className="hover:text-foreground">About</Link>
-          {" → "}
-          <span className="text-foreground">Team</span>
-        </div>
-
-        <h1 className="text-4xl font-semibold mb-3">Team</h1>
-        <p className="text-lg text-muted-foreground mb-10 leading-relaxed">
-          Named editors and contributors behind every page on NakshIQ. Each byline is the person
-          who stands behind the recommendation — not a shared account, not an AI pseudonym.
-        </p>
-
-        {founders.length > 0 && (
-          <section className="mb-10">
-            <div className="space-y-4">
-              {founders.map((a) => (
-                <div key={a.slug} id={a.slug}>
-                  <AuthorByline author={a} locale={locale} variant="full" />
-                </div>
-              ))}
-            </div>
-          </section>
-        )}
-
-        {contributors.length > 0 && (
-          <section className="mb-10">
-            <h2 className="text-xl font-semibold mb-4">Contributors</h2>
-            <div className="space-y-4">
-              {contributors.map((a) => (
-                <div key={a.slug} id={a.slug}>
-                  <AuthorByline author={a} locale={locale} variant="full" />
-                </div>
-              ))}
-            </div>
-          </section>
-        )}
-
-        {experts.length > 0 && (
-          <section className="mb-10">
-            <h2 className="text-xl font-semibold mb-4">Expert contributors</h2>
-            <div className="space-y-4">
-              {experts.map((a) => (
-                <div key={a.slug} id={a.slug}>
-                  <AuthorByline author={a} locale={locale} variant="full" />
-                </div>
-              ))}
-            </div>
-          </section>
-        )}
-
-        <section className="rounded-2xl border border-border bg-card/40 p-6 mt-8">
-          <h2 className="text-lg font-semibold mb-2">The byline rule</h2>
-          <p className="text-sm text-muted-foreground leading-relaxed">
-            NakshIQ doesn't publish anonymous scoring. Every destination page, every skip verdict, every
-            "don't travel with kids under 10 to this altitude" claim traces back to a named editor who
-            put their name behind it. If you disagree with a call we've made, the{" "}
-            <Link href={`/${locale}/contact`} className="underline hover:text-primary">editor's email</Link>{" "}
-            is public. Corrections run in the open — read our{" "}
-            <Link href={`/${locale}/editorial-policy`} className="underline hover:text-primary">editorial policy</Link>.
+      <main
+        id="main-content"
+        className="nq-grain"
+        style={{ position: "relative", padding: "140px 24px 64px" }}
+      >
+        <header style={{ maxWidth: 820, margin: "0 auto 56px" }}>
+          <p
+            className="nq-kicker"
+            style={{
+              color: "var(--vermillion)",
+              marginBottom: 20,
+              letterSpacing: "0.22em",
+            }}
+          >
+            ABOUT · NAMED BYLINES · {String(team.length).padStart(2, "0")}
           </p>
-        </section>
+          <h1
+            className="nq-display"
+            style={{
+              fontFamily: "var(--cinema-display)",
+              fontStyle: "italic",
+              fontWeight: 400,
+              fontSize: "clamp(40px, 7vw, 88px)",
+              lineHeight: 0.98,
+              letterSpacing: "-0.025em",
+              margin: 0,
+              color: "var(--bone)",
+            }}
+          >
+            Team.
+          </h1>
+          <p
+            style={{
+              fontFamily: "var(--cinema-display)",
+              fontStyle: "italic",
+              fontWeight: 400,
+              fontSize: "clamp(18px, 2vw, 24px)",
+              lineHeight: 1.4,
+              color: "var(--bone-dim)",
+              margin: "24px 0 0",
+              maxWidth: 720,
+            }}
+          >
+            Named editors and contributors behind every page on NakshIQ. Each byline is the
+            person who stands behind the recommendation — not a shared account, not an AI
+            pseudonym.
+          </p>
+          <div style={{ marginTop: 20 }}>
+            <Link
+              href={`/${locale}/about`}
+              className="nq-mono"
+              style={{
+                fontSize: 11,
+                letterSpacing: "0.18em",
+                textTransform: "uppercase",
+                color: "var(--vermillion)",
+                textDecoration: "none",
+              }}
+            >
+              ← About
+            </Link>
+          </div>
+        </header>
+
+        <div style={{ maxWidth: 820, margin: "0 auto" }}>
+          {founders.length > 0 && (
+            <section style={sectionStyle}>
+              <p className="nq-kicker" style={sectionKickerStyle}>
+                FOUNDERS
+              </p>
+              <div style={{ display: "grid", gap: 32 }}>
+                {founders.map((a) => (
+                  <div
+                    key={a.slug}
+                    id={a.slug}
+                    style={{
+                      padding: 24,
+                      border: "1px solid var(--hair)",
+                      background: "rgba(245, 241, 232, 0.02)",
+                    }}
+                  >
+                    <AuthorByline author={a} locale={locale} variant="full" />
+                  </div>
+                ))}
+              </div>
+            </section>
+          )}
+
+          {contributors.length > 0 && (
+            <section style={sectionStyle}>
+              <p className="nq-kicker" style={sectionKickerStyle}>
+                CONTRIBUTORS
+              </p>
+              <div style={{ display: "grid", gap: 32 }}>
+                {contributors.map((a) => (
+                  <div
+                    key={a.slug}
+                    id={a.slug}
+                    style={{
+                      padding: 24,
+                      border: "1px solid var(--hair)",
+                      background: "rgba(245, 241, 232, 0.02)",
+                    }}
+                  >
+                    <AuthorByline author={a} locale={locale} variant="full" />
+                  </div>
+                ))}
+              </div>
+            </section>
+          )}
+
+          {experts.length > 0 && (
+            <section style={sectionStyle}>
+              <p className="nq-kicker" style={sectionKickerStyle}>
+                EXPERT CONTRIBUTORS
+              </p>
+              <div style={{ display: "grid", gap: 32 }}>
+                {experts.map((a) => (
+                  <div
+                    key={a.slug}
+                    id={a.slug}
+                    style={{
+                      padding: 24,
+                      border: "1px solid var(--hair)",
+                      background: "rgba(245, 241, 232, 0.02)",
+                    }}
+                  >
+                    <AuthorByline author={a} locale={locale} variant="full" />
+                  </div>
+                ))}
+              </div>
+            </section>
+          )}
+
+          <section
+            style={{
+              marginTop: 64,
+              padding: 32,
+              borderLeft: "3px solid var(--vermillion)",
+              background: "rgba(229, 86, 66, 0.04)",
+            }}
+          >
+            <p
+              className="nq-kicker"
+              style={{
+                color: "var(--vermillion)",
+                marginBottom: 12,
+                letterSpacing: "0.22em",
+                fontSize: 10,
+              }}
+            >
+              THE BYLINE RULE
+            </p>
+            <p
+              style={{
+                fontFamily: "var(--cinema-ui)",
+                fontSize: 15,
+                lineHeight: 1.65,
+                color: "var(--bone-dim)",
+                margin: 0,
+              }}
+            >
+              NakshIQ doesn&apos;t publish anonymous scoring. Every destination page, every skip
+              verdict, every &ldquo;don&apos;t travel with kids under 10 to this altitude&rdquo;
+              claim traces back to a named editor who put their name behind it. If you disagree
+              with a call we&apos;ve made, the{" "}
+              <Link
+                href={`/${locale}/contact`}
+                style={{ color: "var(--vermillion)", textDecoration: "underline" }}
+              >
+                editor&apos;s email
+              </Link>{" "}
+              is public. Corrections run in the open — read our{" "}
+              <Link
+                href={`/${locale}/editorial-policy`}
+                style={{ color: "var(--vermillion)", textDecoration: "underline" }}
+              >
+                editorial policy
+              </Link>
+              .
+            </p>
+          </section>
+        </div>
       </main>
+      <CinematicRelatedRail />
       <Footer />
     </div>
   );

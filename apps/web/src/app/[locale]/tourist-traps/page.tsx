@@ -4,6 +4,8 @@ import { Footer } from "@/components/footer";
 import { TouristTrapsEditorial, type TrapEntry } from "@/components/tourist-traps-editorial";
 import { createClient } from "@supabase/supabase-js";
 import { currentMonthLongIST } from "@itp/shared";
+import { CinemaStyles } from "@/components/landing-cinema/cinema-styles";
+import { CinematicRelatedRail } from "@/components/cinematic-related-rail";
 
 export const revalidate = 3600;
 
@@ -169,7 +171,8 @@ export default async function TouristTrapsPage({
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="nakshiq-cinema" style={{ minHeight: "100vh" }}>
+      <CinemaStyles />
       <Nav />
       <script
         type="application/ld+json"
@@ -183,10 +186,22 @@ export default async function TouristTrapsPage({
           editedDateLabel={editedDateLabel}
         />
       ) : (
-        <div className="mx-auto max-w-3xl px-6 py-24 text-center text-muted-foreground">
+        <div
+          style={{
+            maxWidth: 720,
+            margin: "0 auto",
+            padding: "140px 24px 64px",
+            textAlign: "center",
+            fontFamily: "var(--cinema-display)",
+            fontStyle: "italic",
+            fontSize: 22,
+            color: "var(--bone-dim)",
+          }}
+        >
           The next issue is being written. Check back soon.
         </div>
       )}
+      <CinematicRelatedRail />
       <Footer />
     </div>
   );

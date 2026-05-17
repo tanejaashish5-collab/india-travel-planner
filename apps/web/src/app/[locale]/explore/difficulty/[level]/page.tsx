@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
+import Link from "next/link";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { ExploreGrid } from "@/components/explore-grid";
@@ -8,6 +9,8 @@ import { notFound } from "next/navigation";
 import { DIFFICULTY_MAP } from "@/lib/seo-maps";
 import { localeAlternates } from "@/lib/seo-utils";
 import { currentMonthIST } from "@itp/shared";
+import { CinemaStyles } from "@/components/landing-cinema/cinema-styles";
+import { CinematicRelatedRail } from "@/components/cinematic-related-rail";
 
 export const revalidate = 86400;
 export const dynamicParams = true;
@@ -38,8 +41,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   };
 }
 
-export default async function ExploreByDifficultyPage({ params }: { params: Promise<{ level: string }> }) {
-  const { level } = await params;
+export default async function ExploreByDifficultyPage({ params }: { params: Promise<{ locale: string; level: string }> }) {
+  const { locale, level } = await params;
   const name = DIFFICULTY_MAP[level];
   if (!name) notFound();
 
@@ -66,18 +69,77 @@ export default async function ExploreByDifficultyPage({ params }: { params: Prom
   }).filter(Boolean))].map(s => JSON.parse(s!));
 
   return (
-    <div className="min-h-screen">
+    <div className="nakshiq-cinema" style={{ minHeight: "100vh" }}>
+      <CinemaStyles />
       <Nav />
-      <main className="mx-auto max-w-7xl px-4 py-8">
-        <div className="mb-8">
-          <p className="text-sm font-medium text-primary uppercase tracking-[0.08em] mb-2">Difficulty: {name}</p>
-          <h1 className="text-3xl font-semibold">{name} Destinations</h1>
-          <p className="mt-2 text-muted-foreground">{sorted.length} destinations — {DIFF_DESC[level]}</p>
+      <main
+        id="main-content"
+        className="nq-grain"
+        style={{ position: "relative", padding: "140px 24px 64px" }}
+      >
+        <header style={{ maxWidth: 1100, margin: "0 auto 48px" }}>
+          <p
+            className="nq-kicker"
+            style={{
+              color: "var(--vermillion)",
+              marginBottom: 20,
+              letterSpacing: "0.22em",
+            }}
+          >
+            EXPLORE · DIFFICULTY · {name.toUpperCase()} · {String(sorted.length).padStart(3, "0")}
+          </p>
+          <h1
+            className="nq-display"
+            style={{
+              fontFamily: "var(--cinema-display)",
+              fontStyle: "italic",
+              fontWeight: 400,
+              fontSize: "clamp(40px, 7vw, 88px)",
+              lineHeight: 0.98,
+              letterSpacing: "-0.025em",
+              margin: 0,
+              color: "var(--bone)",
+            }}
+          >
+            {name} destinations.
+          </h1>
+          <p
+            style={{
+              fontFamily: "var(--cinema-display)",
+              fontStyle: "italic",
+              fontWeight: 400,
+              fontSize: "clamp(18px, 2vw, 24px)",
+              lineHeight: 1.4,
+              color: "var(--bone-dim)",
+              margin: "24px 0 0",
+              maxWidth: 720,
+            }}
+          >
+            {sorted.length} destinations — {DIFF_DESC[level]}
+          </p>
+          <div style={{ marginTop: 20 }}>
+            <Link
+              href={`/${locale}/explore`}
+              className="nq-mono"
+              style={{
+                fontSize: 11,
+                letterSpacing: "0.18em",
+                textTransform: "uppercase",
+                color: "var(--vermillion)",
+                textDecoration: "none",
+              }}
+            >
+              ← All destinations
+            </Link>
+          </div>
+        </header>
+        <div style={{ maxWidth: 1100, margin: "0 auto" }}>
+          <Suspense fallback={<div style={{ minHeight: 400, background: "rgba(245, 241, 232, 0.03)" }} />}>
+            <ExploreGrid destinations={sorted} states={states} />
+          </Suspense>
         </div>
-        <Suspense fallback={<div className="min-h-[400px] animate-pulse rounded bg-foreground/5" />}>
-          <ExploreGrid destinations={sorted} states={states} />
-        </Suspense>
       </main>
+      <CinematicRelatedRail />
       <Footer />
     </div>
   );

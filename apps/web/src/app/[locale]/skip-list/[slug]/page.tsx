@@ -4,6 +4,8 @@ import { Footer } from "@/components/footer";
 import { SkipListDetail } from "@/components/skip-list-detail";
 import { createClient } from "@supabase/supabase-js";
 import { notFound } from "next/navigation";
+import { CinemaStyles } from "@/components/landing-cinema/cinema-styles";
+import { CinematicRelatedRail } from "@/components/cinematic-related-rail";
 
 export const revalidate = 86400;
 export const dynamicParams = true;
@@ -194,7 +196,8 @@ export default async function SkipListSlugPage({
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="nakshiq-cinema" style={{ minHeight: "100vh" }}>
+      <CinemaStyles />
       <Nav />
       <script
         type="application/ld+json"
@@ -231,6 +234,7 @@ export default async function SkipListSlugPage({
         allMonths={months}
         locale={locale}
       />
+      <CinematicRelatedRail />
       <Footer />
     </div>
   );

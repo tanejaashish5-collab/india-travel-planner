@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
+import Link from "next/link";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { ExploreGrid } from "@/components/explore-grid";
@@ -7,6 +8,8 @@ import { createClient } from "@supabase/supabase-js";
 import { notFound } from "next/navigation";
 import { STATE_MAP, MONTH_MAP } from "@/lib/seo-maps";
 import { localeAlternates } from "@/lib/seo-utils";
+import { CinemaStyles } from "@/components/landing-cinema/cinema-styles";
+import { CinematicRelatedRail } from "@/components/cinematic-related-rail";
 
 export const revalidate = 86400;
 export const dynamicParams = true;
@@ -31,8 +34,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   };
 }
 
-export default async function ExploreStateMonthPage({ params }: { params: Promise<{ stateSlug: string; month: string }> }) {
-  const { stateSlug, month } = await params;
+export default async function ExploreStateMonthPage({ params }: { params: Promise<{ locale: string; stateSlug: string; month: string }> }) {
+  const { locale, stateSlug, month } = await params;
   const stateName = STATE_MAP[stateSlug];
   const m = MONTH_MAP[month];
   if (!stateName || !m) notFound();
@@ -55,20 +58,79 @@ export default async function ExploreStateMonthPage({ params }: { params: Promis
   const score5 = sorted.filter((d: any) => d.destination_months?.find((dm: any) => dm.month === m.num)?.score === 5).length;
 
   return (
-    <div className="min-h-screen">
+    <div className="nakshiq-cinema" style={{ minHeight: "100vh" }}>
+      <CinemaStyles />
       <Nav />
-      <main className="mx-auto max-w-7xl px-4 py-8">
-        <div className="mb-8">
-          <p className="text-sm font-medium text-primary uppercase tracking-[0.08em] mb-2">{stateName} in {m.name}</p>
-          <h1 className="text-3xl font-semibold">Places to Visit in {stateName} in {m.name}</h1>
-          <p className="mt-2 text-muted-foreground">
-            {sorted.length} destinations — {score5} score 5/5 this month. Sorted by {m.name} suitability.
+      <main
+        id="main-content"
+        className="nq-grain"
+        style={{ position: "relative", padding: "140px 24px 64px" }}
+      >
+        <header style={{ maxWidth: 1100, margin: "0 auto 48px" }}>
+          <p
+            className="nq-kicker"
+            style={{
+              color: "var(--vermillion)",
+              marginBottom: 20,
+              letterSpacing: "0.22em",
+            }}
+          >
+            EXPLORE · {stateName.toUpperCase()} · {m.name.toUpperCase()} · {String(sorted.length).padStart(3, "0")} · {score5} PEAK
           </p>
+          <h1
+            className="nq-display"
+            style={{
+              fontFamily: "var(--cinema-display)",
+              fontStyle: "italic",
+              fontWeight: 400,
+              fontSize: "clamp(36px, 6vw, 80px)",
+              lineHeight: 0.98,
+              letterSpacing: "-0.025em",
+              margin: 0,
+              color: "var(--bone)",
+              textWrap: "balance",
+            }}
+          >
+            Places to visit in {stateName} in {m.name}.
+          </h1>
+          <p
+            style={{
+              fontFamily: "var(--cinema-display)",
+              fontStyle: "italic",
+              fontWeight: 400,
+              fontSize: "clamp(17px, 1.8vw, 22px)",
+              lineHeight: 1.4,
+              color: "var(--bone-dim)",
+              margin: "24px 0 0",
+              maxWidth: 720,
+            }}
+          >
+            {sorted.length} destinations — {score5} score 5/5 this month. Sorted by {m.name}{" "}
+            suitability.
+          </p>
+          <div style={{ marginTop: 20 }}>
+            <Link
+              href={`/${locale}/explore/state/${stateSlug}`}
+              className="nq-mono"
+              style={{
+                fontSize: 11,
+                letterSpacing: "0.18em",
+                textTransform: "uppercase",
+                color: "var(--vermillion)",
+                textDecoration: "none",
+              }}
+            >
+              ← {stateName} (all months)
+            </Link>
+          </div>
+        </header>
+        <div style={{ maxWidth: 1100, margin: "0 auto" }}>
+          <Suspense fallback={<div style={{ minHeight: 400, background: "rgba(245, 241, 232, 0.03)" }} />}>
+            <ExploreGrid destinations={sorted} states={[{ id: stateSlug, name: stateName }]} />
+          </Suspense>
         </div>
-        <Suspense fallback={<div className="min-h-[400px] animate-pulse rounded bg-foreground/5" />}>
-          <ExploreGrid destinations={sorted} states={[{ id: stateSlug, name: stateName }]} />
-        </Suspense>
       </main>
+      <CinematicRelatedRail />
       <Footer />
     </div>
   );

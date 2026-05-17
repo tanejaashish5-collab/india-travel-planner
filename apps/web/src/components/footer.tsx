@@ -60,7 +60,9 @@ export function Footer({
      together. */
   const CINEMATIC_PAGE_PATHS = [
     `/${locale}/about`,
+    `/${locale}/about/team`,
     `/${locale}/methodology`,
+    `/${locale}/methodology/freshness`,
     `/${locale}/privacy`,
     `/${locale}/terms`,
     `/${locale}/cookies`,
@@ -156,6 +158,11 @@ export function Footer({
     `/${locale}/trip/`,
     // Post-S54 (2026-05-17) — /collections/[id] migrated to cinematic shell.
     `/${locale}/collections/`,
+    // Post-S54 cinematic-gap migration (2026-05-17)
+    `/${locale}/the-window/`,
+    `/${locale}/explore/state/`,
+    `/${locale}/explore/difficulty/`,
+    `/${locale}/explore/tag/`,
   ];
   const isCinematicPage =
     CINEMATIC_PAGE_PATHS.includes(pathname) ||

@@ -4,6 +4,8 @@ import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { createClient } from "@supabase/supabase-js";
 import { localeAlternates } from "@/lib/seo-utils";
+import { CinemaStyles } from "@/components/landing-cinema/cinema-styles";
+import { CinematicRelatedRail } from "@/components/cinematic-related-rail";
 
 export const revalidate = 3600;
 
@@ -121,7 +123,12 @@ function relativeAge(iso: string | null | undefined): string {
   return `${years} year${years > 1 ? "s" : ""} ago`;
 }
 
-export default async function FreshnessDashboardPage() {
+export default async function FreshnessDashboardPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
   const m = await getMetrics();
   const now = new Date();
   const asOf = now.toLocaleDateString("en-IN", { day: "numeric", month: "long", year: "numeric" });
@@ -209,7 +216,8 @@ export default async function FreshnessDashboardPage() {
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="nakshiq-cinema" style={{ minHeight: "100vh" }}>
+      <CinemaStyles />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(datasetLd) }}
@@ -219,15 +227,68 @@ export default async function FreshnessDashboardPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(methodologyLd) }}
       />
       <Nav />
-      <main className="mx-auto max-w-3xl px-4 py-12">
-        <nav className="mb-6 text-xs text-muted-foreground">
-          <Link href="/methodology" className="hover:text-foreground">← Back to methodology</Link>
-        </nav>
+      <main
+        id="main-content"
+        className="nq-grain"
+        style={{ position: "relative", padding: "140px 24px 64px" }}
+      >
+        <header style={{ maxWidth: 820, margin: "0 auto 48px" }}>
+          <p
+            className="nq-kicker"
+            style={{
+              color: "var(--vermillion)",
+              marginBottom: 20,
+              letterSpacing: "0.22em",
+            }}
+          >
+            METHODOLOGY · DATA FRESHNESS · LIVE
+          </p>
+          <h1
+            className="nq-display"
+            style={{
+              fontFamily: "var(--cinema-display)",
+              fontStyle: "italic",
+              fontWeight: 400,
+              fontSize: "clamp(40px, 7vw, 88px)",
+              lineHeight: 0.98,
+              letterSpacing: "-0.025em",
+              margin: 0,
+              color: "var(--bone)",
+            }}
+          >
+            Data freshness.
+          </h1>
+          <p
+            className="nq-mono"
+            style={{
+              fontSize: 11,
+              letterSpacing: "0.18em",
+              textTransform: "uppercase",
+              color: "var(--bone-faint)",
+              margin: "20px 0 0",
+              fontVariantNumeric: "tabular-nums",
+            }}
+          >
+            Live as of {asOf} · reads directly from the database, nothing hardcoded
+          </p>
+          <div style={{ marginTop: 20 }}>
+            <Link
+              href={`/${locale}/methodology`}
+              className="nq-mono"
+              style={{
+                fontSize: 11,
+                letterSpacing: "0.18em",
+                textTransform: "uppercase",
+                color: "var(--vermillion)",
+                textDecoration: "none",
+              }}
+            >
+              ← Methodology
+            </Link>
+          </div>
+        </header>
 
-        <h1 className="text-4xl font-semibold mb-2">Data freshness</h1>
-        <p className="text-sm text-muted-foreground mb-10 tabular-nums">
-          Live as of {asOf}. This page reads directly from the database — nothing is hardcoded.
-        </p>
+        <div style={{ maxWidth: 820, margin: "0 auto" }}>
 
         {/* Split principle */}
         <section className="mb-10 rounded-2xl border border-border bg-card/40 p-6">
@@ -354,16 +415,18 @@ export default async function FreshnessDashboardPage() {
         {/* Principle footer */}
         <section className="rounded-2xl border border-border bg-card/40 p-6 text-sm leading-relaxed text-muted-foreground">
           <p>
-            <span className="text-foreground font-medium">Why show this?</span> Any site can claim "we
-            keep data current." We'd rather prove it. If a number looks wrong, hit{" "}
-            <Link href="/methodology" className="text-foreground underline underline-offset-2">
+            <span className="text-foreground font-medium">Why show this?</span> Any site can claim &ldquo;we
+            keep data current.&rdquo; We&apos;d rather prove it. If a number looks wrong, hit{" "}
+            <Link href={`/${locale}/methodology`} className="text-foreground underline underline-offset-2">
               how we score
             </Link>{" "}
-            for the methodology, or tell us directly — every destination page has a "Suggest an edit"
+            for the methodology, or tell us directly — every destination page has a &ldquo;Suggest an edit&rdquo;
             CTA that files into our triage queue.
           </p>
         </section>
+        </div>
       </main>
+      <CinematicRelatedRail />
       <Footer />
     </div>
   );
