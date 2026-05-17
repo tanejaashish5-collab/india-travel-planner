@@ -165,6 +165,10 @@ export default async function LocaleLayout({
     >
       <head>
         <meta name="theme-color" content="#161614" />
+        {/* Both `mobile-web-app-capable` (modern spec) and `apple-mobile-web-app-capable`
+            (iOS legacy) needed — Chrome 108+ deprecated the apple-prefixed form for
+            non-iOS browsers but iOS Safari still requires it for standalone-mode add-to-home. */}
+        <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         {process.env.NEXT_PUBLIC_IMAGE_BASE_URL ? (

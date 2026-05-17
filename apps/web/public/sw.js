@@ -17,8 +17,16 @@
 //      /tourist-traps = trust editorial often deep-linked from social, painful to
 //      cold-load on bad signal; /ask = primary chat entry, shell-only cache (the
 //      stream itself stays network-bound).
+// v33: 2026-05-17 S54 cinematic + Tier 1-8 + Phase 4 SEO hardening shipped on
+//      web (commits 9f15e042 → a34969bb). Precached HTML in v32 still held the
+//      pre-cinematic SaaS layout for the routes below, so returning PWA users
+//      saw the old design when network dropped or for cached navigations.
+//      Bumping cache version triggers activate handler to purge nakshiq-v32-*
+//      caches and re-fetch fresh cinematic HTML on install. Adds /en/vs,
+//      /en/india-vs, /en/membership, /en/transparency to precache (Tier 6+7+8
+//      surfaces shipped this session).
 
-const CACHE_VERSION = "nakshiq-v32";
+const CACHE_VERSION = "nakshiq-v33";
 const STATIC_CACHE = `${CACHE_VERSION}-static`;
 const IMAGE_CACHE = `${CACHE_VERSION}-images`;
 const DATA_CACHE = `${CACHE_VERSION}-data`;
@@ -56,6 +64,9 @@ const PRECACHE_ROUTES = [
   "/en/trip",
   "/en/tourist-traps",
   "/en/ask",
+  "/en/vs",
+  "/en/membership",
+  "/en/transparency",
   "/hi",
   "/hi/sos",
   "/hi/saved",
