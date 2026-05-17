@@ -2,7 +2,12 @@ import type { Metadata } from "next";
 import { createClient } from "@supabase/supabase-js";
 import { CinematicListPage } from "@/components/cinematic-list-page";
 import { getIssueNumber } from "@/components/landing-cinema/issue-number";
-import { localeAlternates } from "@/lib/seo-utils";
+import {
+  breadcrumbSchema,
+  collectionPageSchema,
+  itemListSchema,
+  localeAlternates,
+} from "@/lib/seo-utils";
 
 export const revalidate = 21600;
 
@@ -94,6 +99,24 @@ export default async function BlogPage({
     };
   });
 
+  const schemas = [
+    collectionPageSchema({
+      locale,
+      path: "/blog",
+      name: "Field notes — long-form travel writing for India",
+      description:
+        "Data-driven essays on India travel — seasonal intelligence, destination comparisons, and the offbeat circuit.",
+    }),
+    itemListSchema(
+      locale,
+      "/blog",
+      "Field notes",
+      articles.map((a) => ({ name: a.title, path: `/blog/${a.slug}` })),
+      "descending",
+    ),
+    breadcrumbSchema(locale, [{ name: "Field notes", path: "/blog" }]),
+  ];
+
   return (
     <CinematicListPage
       kicker={`FIELD NOTES · ISSUE Nº ${issueNum}`}
@@ -101,6 +124,7 @@ export default async function BlogPage({
       dek={`${articles.length} long-form essays on India travel — seasonal intelligence, destination comparisons, and the offbeat circuit. Every article backed by real scores, not influencer talk.`}
       cards={cards}
       empty="No essays published yet. The first one is on its way."
+      schemas={schemas}
     />
   );
 }

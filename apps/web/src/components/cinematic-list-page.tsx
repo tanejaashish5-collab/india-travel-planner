@@ -54,6 +54,10 @@ export type CinematicListPageProps = {
   pagination?: { current: number; total: number; basePath: string };
   /** Optional empty-state node when `cards` is []. */
   empty?: ReactNode;
+  /** Optional JSON-LD schemas emitted server-side at the top of the document.
+   *  Use helpers from `@/lib/seo-utils` (collectionPageSchema, itemListSchema,
+   *  breadcrumbSchema, etc.) to construct. */
+  schemas?: Record<string, unknown>[];
 };
 
 export function CinematicListPage({
@@ -64,10 +68,18 @@ export function CinematicListPage({
   filters,
   pagination,
   empty,
+  schemas,
 }: CinematicListPageProps) {
   return (
     <div className="nakshiq-cinema" style={{ minHeight: "100vh" }}>
       <CinemaStyles />
+      {schemas?.map((s, i) => (
+        <script
+          key={i}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(s) }}
+        />
+      ))}
       <Nav />
 
       <main

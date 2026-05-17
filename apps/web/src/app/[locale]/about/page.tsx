@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import Link from "next/link";
-import { localeAlternates } from "@/lib/seo-utils";
+import { breadcrumbSchema, articleSchema, localeAlternates } from "@/lib/seo-utils";
 import { SectionLabel } from "@/components/landing-cinema/helpers";
 import { getIssueNumber } from "@/components/landing-cinema/issue-number";
 import { CinemaStyles } from "@/components/landing-cinema/cinema-styles";
@@ -21,6 +21,17 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
   const { locale } = await params;
   const issueNum = getIssueNumber();
 
+  const schemas = [
+    articleSchema({
+      locale,
+      path: "/about",
+      headline: "About NakshIQ — Built by an Indian Family, for Every Traveler",
+      description:
+        "No investors. No sponsored content. No tourism boards. NakshIQ is built by an NRI family for their daughters — and for every traveler who deserves honest answers before they go.",
+    }),
+    breadcrumbSchema(locale, [{ name: "About", path: "/about" }]),
+  ];
+
   return (
     <div
       className="nakshiq-cinema"
@@ -29,6 +40,13 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
       }}
     >
       <CinemaStyles />
+      {schemas.map((s, i) => (
+        <script
+          key={i}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(s) }}
+        />
+      ))}
       <Nav />
       <main
         id="main-content"

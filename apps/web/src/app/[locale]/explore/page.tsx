@@ -7,7 +7,12 @@ import { NewsletterSignup } from "@/components/newsletter-signup";
 import { ExploreWithMap } from "@/components/explore-with-map";
 import { TrendingMonthPages } from "@/components/trending-month-pages";
 import { createClient } from "@supabase/supabase-js";
-import { localeAlternates } from "@/lib/seo-utils";
+import {
+  breadcrumbSchema,
+  collectionPageSchema,
+  itemListSchema,
+  localeAlternates,
+} from "@/lib/seo-utils";
 import { CinemaStyles } from "@/components/landing-cinema/cinema-styles";
 import { getIssueNumber } from "@/components/landing-cinema/issue-number";
 
@@ -54,11 +59,29 @@ async function getData() {
 
 export default async function ExplorePage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
-  await getTranslations({ locale, namespace: "explore" });
+  const t = await getTranslations({ locale, namespace: "explore" });
   const { destinations, states, coords } = await getData();
   const issueNum = getIssueNumber();
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const schemas = [
+    collectionPageSchema({
+      locale,
+      path: "/explore",
+      name: t("metaTitle"),
+      description: t("metaDescription"),
+    }),
+    itemListSchema(
+      locale,
+      "/explore",
+      "Destinations",
+      (destinations as { id: string; name: string }[]).slice(0, 50).map((d) => ({
+        name: d.name,
+        path: `/destination/${d.id}`,
+      })),
+    ),
+    breadcrumbSchema(locale, [{ name: "Explore", path: "/explore" }]),
+  ];
+
   const coordsMap = Object.fromEntries(
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     coords.map((c: any) => [c.id, { lat: c.lat, lng: c.lng }])
@@ -72,6 +95,13 @@ export default async function ExplorePage({ params }: { params: Promise<{ locale
   return (
     <div className="nakshiq-cinema" style={{ minHeight: "100vh" }}>
       <CinemaStyles />
+      {schemas.map((s, i) => (
+        <script
+          key={i}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(s) }}
+        />
+      ))}
       <Nav />
       <main
         id="main-content"

@@ -3,7 +3,12 @@ import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { CollectionsCinema } from "@/components/collections-cinema";
 import { createClient } from "@supabase/supabase-js";
-import { localeAlternates } from "@/lib/seo-utils";
+import {
+  breadcrumbSchema,
+  collectionPageSchema,
+  itemListSchema,
+  localeAlternates,
+} from "@/lib/seo-utils";
 import { CinemaStyles } from "@/components/landing-cinema/cinema-styles";
 import { getIssueNumber } from "@/components/landing-cinema/issue-number";
 
@@ -34,9 +39,36 @@ export default async function CollectionsPage({ params }: { params: Promise<{ lo
   const collections = await getCollections();
   const issueNum = getIssueNumber();
 
+  const schemas = [
+    collectionPageSchema({
+      locale,
+      path: "/collections",
+      name: "Collections — Themed Destination Lists",
+      description:
+        "Themed reading lists for India travel, hand-picked from 700+ places. Pilgrim circuits, dangerous roads, frozen wonders, zero-signal zones, ancient monasteries.",
+    }),
+    itemListSchema(
+      locale,
+      "/collections",
+      "Collections",
+      (collections as { id: string; name: string }[]).map((c) => ({
+        name: c.name,
+        path: `/collections/${c.id}`,
+      })),
+    ),
+    breadcrumbSchema(locale, [{ name: "Collections", path: "/collections" }]),
+  ];
+
   return (
     <div className="nakshiq-cinema" style={{ minHeight: "100vh" }}>
       <CinemaStyles />
+      {schemas.map((s, i) => (
+        <script
+          key={i}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(s) }}
+        />
+      ))}
       <Nav />
       <main
         id="main-content"
