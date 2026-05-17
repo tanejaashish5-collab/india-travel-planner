@@ -4,6 +4,9 @@ import { createClient } from "@supabase/supabase-js";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { localeAlternates } from "@/lib/seo-utils";
+import { CinemaStyles } from "@/components/landing-cinema/cinema-styles";
+import { Title } from "@/components/landing-cinema/editorial";
+import { CinematicRelatedRail } from "@/components/cinematic-related-rail";
 
 export const revalidate = 3600;
 
@@ -26,9 +29,6 @@ async function getCounts() {
     return { rows: 7449, destinations: 491, goCount: 2720, skipCount: 1893, waitCount: 1058, totalDm: 5856, traps: 109 };
   }
   const supabase = createClient(url, key);
-  // PostgREST quirk: select("id", { count: "exact", head: true }) silently
-  // returns count=null. Use select("*", ...) for head-counts. (Caught while
-  // fixing the where-to-go zero bug on 2026-05-03.)
   const [costs, dests, goCnt, skipCnt, waitCnt, totalDm, traps] = await Promise.all([
     supabase.from("destination_costs").select("*", { count: "exact", head: true }),
     supabase.from("destinations").select("*", { count: "exact", head: true }),
@@ -80,14 +80,7 @@ export default async function PressPage({ params }: { params: Promise<{ locale: 
     license: "https://creativecommons.org/licenses/by/4.0/",
     isAccessibleForFree: true,
     inLanguage: locale === "hi" ? "hi-IN" : "en-IN",
-    variableMeasured: [
-      "typical_inr",
-      "range_low_inr",
-      "range_high_inr",
-      "budget_tier",
-      "season",
-      "category",
-    ],
+    variableMeasured: ["typical_inr", "range_low_inr", "range_high_inr", "budget_tier", "season", "category"],
     spatialCoverage: { "@type": "Place", name: "India" },
     temporalCoverage: "2026-01/..",
   };
@@ -136,215 +129,517 @@ export default async function PressPage({ params }: { params: Promise<{ locale: 
   const citeMla = `NakshIQ. "NakshIQ Cost Index 2026." NakshIQ, 2026, ${BASE_URL}/${locale}/cost-index. Dataset.`;
   const citeInline = `Source: NakshIQ Cost Index 2026 (${BASE_URL}/${locale}/cost-index)`;
 
+  const stats: { value: string; label: string }[] = [
+    { value: counts.destinations.toLocaleString(), label: "Destinations scored" },
+    { value: counts.totalDm.toLocaleString(), label: "Destination-months rated" },
+    { value: counts.rows.toLocaleString(), label: "Cost Index rows" },
+    { value: counts.traps.toLocaleString(), label: "Tourist traps + alternatives" },
+  ];
+
   return (
-    <div className="min-h-screen">
+    <div className="nakshiq-cinema" style={{ minHeight: "100vh" }}>
+      <CinemaStyles />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionPageLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(costIndexDatasetLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(scoringDatasetLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(trapsDatasetLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
-
       <Nav />
-      <main className="mx-auto max-w-4xl px-4 py-12">
-        <div className="mb-6 text-sm text-muted-foreground">
-          <Link href={`/${locale}`} className="hover:text-foreground">Home</Link>
-          {" → "}
-          <span className="text-foreground">Press & research</span>
+
+      <main
+        id="main-content"
+        className="nq-grain"
+        style={{ position: "relative", padding: "140px 24px 64px" }}
+      >
+        <header style={{ maxWidth: 900, margin: "0 auto 48px" }}>
+          <p
+            className="nq-kicker"
+            style={{
+              color: "var(--vermillion)",
+              marginBottom: 20,
+              letterSpacing: "0.22em",
+            }}
+          >
+            PRESS & RESEARCH · CC BY 4.0
+          </p>
+          <Title
+            as="h1"
+            className="nq-display"
+            style={{
+              fontFamily: "var(--cinema-display)",
+              fontStyle: "italic",
+              fontWeight: 400,
+              fontSize: "clamp(36px, 6vw, 76px)",
+              lineHeight: 1.0,
+              letterSpacing: "-0.022em",
+              margin: 0,
+              textWrap: "balance",
+            }}
+          >
+            Press &amp; research.
+          </Title>
+          <p
+            style={{
+              fontFamily: "var(--cinema-ui)",
+              fontSize: 15,
+              lineHeight: 1.7,
+              color: "var(--bone-dim)",
+              marginTop: 20,
+              maxWidth: 720,
+            }}
+          >
+            NakshIQ scores, costs, and verdicts on India travel are built to be cited. Journalists,
+            researchers, and travel operators use this data every week. Here&apos;s what&apos;s available, how
+            to cite it, and where to reach us.
+          </p>
+        </header>
+
+        <div style={{ maxWidth: 900, margin: "0 auto" }}>
+          {/* Stats strip */}
+          <section style={{ marginBottom: 48 }}>
+            <p
+              className="nq-kicker"
+              style={{
+                color: "var(--vermillion)",
+                marginBottom: 16,
+                letterSpacing: "0.18em",
+                textTransform: "uppercase",
+              }}
+            >
+              The NakshIQ dataset · at a glance
+            </p>
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))",
+                gap: 1,
+                background: "var(--hair)",
+                border: "1px solid var(--hair)",
+              }}
+            >
+              {stats.map((s) => (
+                <div key={s.label} style={{ padding: 20, background: "var(--paper)" }}>
+                  <p
+                    style={{
+                      fontFamily: "var(--cinema-mono)",
+                      fontSize: 10,
+                      letterSpacing: "0.22em",
+                      textTransform: "uppercase",
+                      color: "var(--bone-faint)",
+                      margin: 0,
+                    }}
+                  >
+                    {s.label}
+                  </p>
+                  <p
+                    style={{
+                      fontFamily: "var(--cinema-display)",
+                      fontStyle: "italic",
+                      fontWeight: 500,
+                      fontSize: 36,
+                      lineHeight: 1.05,
+                      color: "var(--bone)",
+                      margin: "6px 0 0",
+                      fontVariantNumeric: "tabular-nums",
+                    }}
+                  >
+                    {s.value}
+                  </p>
+                </div>
+              ))}
+            </div>
+            <div
+              style={{
+                display: "flex",
+                flexWrap: "wrap",
+                gap: 16,
+                marginTop: 16,
+                fontFamily: "var(--cinema-mono)",
+                fontSize: 11,
+                letterSpacing: "0.12em",
+                color: "var(--bone-dim)",
+                fontVariantNumeric: "tabular-nums",
+              }}
+            >
+              <span>
+                <span style={{ color: "var(--bone)" }}>{counts.goCount.toLocaleString()}</span> GO
+              </span>
+              <span>
+                <span style={{ color: "var(--bone)" }}>{counts.waitCount.toLocaleString()}</span> WAIT
+              </span>
+              <span>
+                <span style={{ color: "var(--vermillion)" }}>{counts.skipCount.toLocaleString()}</span> SKIP
+              </span>
+            </div>
+          </section>
+
+          {/* Datasets */}
+          <section style={{ marginBottom: 48 }}>
+            <h2
+              style={{
+                fontFamily: "var(--cinema-display)",
+                fontStyle: "italic",
+                fontWeight: 500,
+                fontSize: 32,
+                lineHeight: 1.1,
+                color: "var(--bone)",
+                margin: "0 0 24px",
+              }}
+            >
+              Datasets.
+            </h2>
+            <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+              {/* Cost Index */}
+              <article style={{ padding: 24, border: "1px solid var(--hair)", background: "var(--paper)" }}>
+                <header style={{ display: "flex", justifyContent: "space-between", gap: 16, flexWrap: "wrap", marginBottom: 14 }}>
+                  <div style={{ flex: 1, minWidth: 240 }}>
+                    <p
+                      style={{
+                        fontFamily: "var(--cinema-display)",
+                        fontStyle: "italic",
+                        fontWeight: 500,
+                        fontSize: 22,
+                        lineHeight: 1.2,
+                        color: "var(--bone)",
+                        margin: "0 0 8px",
+                      }}
+                    >
+                      NakshIQ Cost Index 2026
+                    </p>
+                    <p style={{ fontFamily: "var(--cinema-ui)", fontSize: 13, lineHeight: 1.6, color: "var(--bone-dim)", margin: 0 }}>
+                      {counts.rows.toLocaleString()} verified cost data points — homestay, hotel, food, transport,
+                      permit, and activity rates across {counts.destinations} destinations and three seasonal bands.
+                    </p>
+                  </div>
+                  <Link
+                    href={`/${locale}/cost-index`}
+                    style={{
+                      flexShrink: 0,
+                      fontFamily: "var(--cinema-mono)",
+                      fontSize: 11,
+                      letterSpacing: "0.18em",
+                      textTransform: "uppercase",
+                      padding: "8px 14px",
+                      border: "1px solid var(--vermillion)",
+                      color: "var(--vermillion)",
+                      textDecoration: "none",
+                    }}
+                  >
+                    Explore →
+                  </Link>
+                </header>
+                <dl
+                  style={{
+                    display: "grid",
+                    gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))",
+                    gap: 12,
+                    paddingTop: 14,
+                    borderTop: "1px solid var(--hair)",
+                    margin: 0,
+                  }}
+                >
+                  <div>
+                    <dt style={{ fontFamily: "var(--cinema-mono)", fontSize: 10, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--bone-faint)", marginBottom: 4 }}>
+                      Coverage
+                    </dt>
+                    <dd style={{ margin: 0, fontFamily: "var(--cinema-ui)", fontSize: 12, color: "var(--bone)" }}>All India, 6 categories</dd>
+                  </div>
+                  <div>
+                    <dt style={{ fontFamily: "var(--cinema-mono)", fontSize: 10, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--bone-faint)", marginBottom: 4 }}>
+                      Update cadence
+                    </dt>
+                    <dd style={{ margin: 0, fontFamily: "var(--cinema-ui)", fontSize: 12, color: "var(--bone)" }}>Quarterly (next: July 2026)</dd>
+                  </div>
+                  <div>
+                    <dt style={{ fontFamily: "var(--cinema-mono)", fontSize: 10, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--bone-faint)", marginBottom: 4 }}>
+                      License
+                    </dt>
+                    <dd style={{ margin: 0, fontFamily: "var(--cinema-ui)", fontSize: 12, color: "var(--bone)" }}>CC BY 4.0</dd>
+                  </div>
+                </dl>
+                <div style={{ marginTop: 14 }}>
+                  <Link
+                    href={`/${locale}/cost-index/methodology`}
+                    style={{ fontFamily: "var(--cinema-ui)", fontSize: 12, color: "var(--vermillion)", textDecoration: "underline", textUnderlineOffset: "3px" }}
+                  >
+                    Methodology &amp; derivation →
+                  </Link>
+                </div>
+              </article>
+
+              {/* Scoring */}
+              <article style={{ padding: 24, border: "1px solid var(--hair)", background: "var(--paper)" }}>
+                <header style={{ display: "flex", justifyContent: "space-between", gap: 16, flexWrap: "wrap", marginBottom: 14 }}>
+                  <div style={{ flex: 1, minWidth: 240 }}>
+                    <p
+                      style={{
+                        fontFamily: "var(--cinema-display)",
+                        fontStyle: "italic",
+                        fontWeight: 500,
+                        fontSize: 22,
+                        lineHeight: 1.2,
+                        color: "var(--bone)",
+                        margin: "0 0 8px",
+                      }}
+                    >
+                      Monthly Scoring Matrix
+                    </p>
+                    <p style={{ fontFamily: "var(--cinema-ui)", fontSize: 13, lineHeight: 1.6, color: "var(--bone-dim)", margin: 0 }}>
+                      {counts.totalDm.toLocaleString()} destination-month scores — weather, crowds,
+                      infrastructure, safety — with a verdict band (GO / WAIT / SKIP) for every combination of
+                      destination and calendar month.
+                    </p>
+                  </div>
+                  <Link
+                    href={`/${locale}/methodology`}
+                    style={{
+                      flexShrink: 0,
+                      fontFamily: "var(--cinema-mono)",
+                      fontSize: 11,
+                      letterSpacing: "0.18em",
+                      textTransform: "uppercase",
+                      padding: "8px 14px",
+                      border: "1px solid var(--vermillion)",
+                      color: "var(--vermillion)",
+                      textDecoration: "none",
+                    }}
+                  >
+                    Methodology →
+                  </Link>
+                </header>
+                <dl
+                  style={{
+                    display: "grid",
+                    gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))",
+                    gap: 12,
+                    paddingTop: 14,
+                    borderTop: "1px solid var(--hair)",
+                    margin: 0,
+                  }}
+                >
+                  <div>
+                    <dt style={{ fontFamily: "var(--cinema-mono)", fontSize: 10, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--bone-faint)", marginBottom: 4 }}>
+                      Verdicts
+                    </dt>
+                    <dd style={{ margin: 0, fontFamily: "var(--cinema-ui)", fontSize: 12, color: "var(--bone)", fontVariantNumeric: "tabular-nums" }}>
+                      {counts.goCount.toLocaleString()} GO / {counts.waitCount.toLocaleString()} WAIT /{" "}
+                      {counts.skipCount.toLocaleString()} SKIP
+                    </dd>
+                  </div>
+                  <div>
+                    <dt style={{ fontFamily: "var(--cinema-mono)", fontSize: 10, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--bone-faint)", marginBottom: 4 }}>
+                      Granularity
+                    </dt>
+                    <dd style={{ margin: 0, fontFamily: "var(--cinema-ui)", fontSize: 12, color: "var(--bone)" }}>
+                      Destination × month
+                    </dd>
+                  </div>
+                  <div>
+                    <dt style={{ fontFamily: "var(--cinema-mono)", fontSize: 10, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--bone-faint)", marginBottom: 4 }}>
+                      Refresh
+                    </dt>
+                    <dd style={{ margin: 0, fontFamily: "var(--cinema-ui)", fontSize: 12, color: "var(--bone)" }}>
+                      Monthly on the 1st (IST)
+                    </dd>
+                  </div>
+                </dl>
+              </article>
+
+              {/* Tourist traps */}
+              <article style={{ padding: 24, border: "1px solid var(--hair)", background: "var(--paper)" }}>
+                <header style={{ display: "flex", justifyContent: "space-between", gap: 16, flexWrap: "wrap" }}>
+                  <div style={{ flex: 1, minWidth: 240 }}>
+                    <p
+                      style={{
+                        fontFamily: "var(--cinema-display)",
+                        fontStyle: "italic",
+                        fontWeight: 500,
+                        fontSize: 22,
+                        lineHeight: 1.2,
+                        color: "var(--bone)",
+                        margin: "0 0 8px",
+                      }}
+                    >
+                      Tourist Trap Atlas
+                    </p>
+                    <p style={{ fontFamily: "var(--cinema-ui)", fontSize: 13, lineHeight: 1.6, color: "var(--bone-dim)", margin: 0 }}>
+                      {counts.traps} popular Indian destinations NakshIQ scores as overrated, each paired with a
+                      verified alternative within driving distance and a sourced explanation of why.
+                    </p>
+                  </div>
+                  <Link
+                    href={`/${locale}/tourist-traps`}
+                    style={{
+                      flexShrink: 0,
+                      fontFamily: "var(--cinema-mono)",
+                      fontSize: 11,
+                      letterSpacing: "0.18em",
+                      textTransform: "uppercase",
+                      padding: "8px 14px",
+                      border: "1px solid var(--vermillion)",
+                      color: "var(--vermillion)",
+                      textDecoration: "none",
+                    }}
+                  >
+                    Atlas →
+                  </Link>
+                </header>
+              </article>
+            </div>
+          </section>
+
+          {/* Citation */}
+          <section style={{ marginBottom: 48 }}>
+            <h2
+              style={{
+                fontFamily: "var(--cinema-display)",
+                fontStyle: "italic",
+                fontWeight: 500,
+                fontSize: 32,
+                lineHeight: 1.1,
+                color: "var(--bone)",
+                margin: "0 0 12px",
+              }}
+            >
+              How to cite NakshIQ.
+            </h2>
+            <p
+              style={{
+                fontFamily: "var(--cinema-ui)",
+                fontSize: 14,
+                lineHeight: 1.7,
+                color: "var(--bone-dim)",
+                margin: "0 0 20px",
+              }}
+            >
+              NakshIQ data is CC BY 4.0 — free to use, remix, and republish with attribution. Please link back
+              to the source page so readers can verify the current version.
+            </p>
+            <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+              <CiteBlock label="Inline / caption" text={citeInline} />
+              <CiteBlock label="APA 7" text={citeApa} />
+              <CiteBlock label="MLA 9" text={citeMla} />
+            </div>
+          </section>
+
+          {/* Press contact */}
+          <section
+            style={{
+              padding: 28,
+              border: "1px solid var(--vermillion)",
+              background: "rgba(229, 86, 66, 0.04)",
+              marginBottom: 24,
+            }}
+          >
+            <p
+              style={{
+                fontFamily: "var(--cinema-mono)",
+                fontSize: 10,
+                letterSpacing: "0.22em",
+                textTransform: "uppercase",
+                color: "var(--vermillion)",
+                margin: "0 0 14px",
+              }}
+            >
+              Press contact
+            </p>
+            <p
+              style={{
+                fontFamily: "var(--cinema-display)",
+                fontStyle: "italic",
+                fontWeight: 500,
+                fontSize: 22,
+                lineHeight: 1.25,
+                color: "var(--bone)",
+                margin: "0 0 12px",
+              }}
+            >
+              One business day for editorial queries.
+            </p>
+            <p style={{ fontFamily: "var(--cinema-ui)", fontSize: 14, lineHeight: 1.7, color: "var(--bone-dim)", margin: "0 0 18px" }}>
+              For interviews, commissioned research, or custom data pulls for a feature, reach out directly.
+            </p>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: 10 }}>
+              <Link
+                href={`/${locale}/contact`}
+                style={{
+                  fontFamily: "var(--cinema-mono)",
+                  fontSize: 11,
+                  letterSpacing: "0.18em",
+                  textTransform: "uppercase",
+                  padding: "8px 14px",
+                  background: "var(--vermillion)",
+                  color: "var(--paper)",
+                  textDecoration: "none",
+                }}
+              >
+                Contact newsroom →
+              </Link>
+              <Link
+                href={`/${locale}/about/team`}
+                style={{
+                  fontFamily: "var(--cinema-mono)",
+                  fontSize: 11,
+                  letterSpacing: "0.18em",
+                  textTransform: "uppercase",
+                  padding: "8px 14px",
+                  border: "1px solid var(--hair)",
+                  color: "var(--bone-dim)",
+                  textDecoration: "none",
+                }}
+              >
+                Masthead →
+              </Link>
+              <Link
+                href={`/${locale}/corrections`}
+                style={{
+                  fontFamily: "var(--cinema-mono)",
+                  fontSize: 11,
+                  letterSpacing: "0.18em",
+                  textTransform: "uppercase",
+                  padding: "8px 14px",
+                  border: "1px solid var(--hair)",
+                  color: "var(--bone-dim)",
+                  textDecoration: "none",
+                }}
+              >
+                Corrections log →
+              </Link>
+            </div>
+          </section>
+
+          {/* Editorial independence */}
+          <section style={{ padding: 24, border: "1px solid var(--hair)", background: "var(--paper)" }}>
+            <p
+              style={{
+                fontFamily: "var(--cinema-display)",
+                fontStyle: "italic",
+                fontWeight: 500,
+                fontSize: 19,
+                lineHeight: 1.3,
+                color: "var(--bone)",
+                margin: "0 0 10px",
+              }}
+            >
+              Editorial independence.
+            </p>
+            <p style={{ fontFamily: "var(--cinema-ui)", fontSize: 14, lineHeight: 1.7, color: "var(--bone-dim)", margin: 0 }}>
+              NakshIQ accepts no paid placements, no sponsored content, and no tourism board promotion packages.
+              Scoring and cost data are built independently of any commercial relationship with a destination,
+              operator, or partner. See our{" "}
+              <Link
+                href={`/${locale}/editorial-policy`}
+                style={{ color: "var(--vermillion)", textDecoration: "underline", textUnderlineOffset: "3px" }}
+              >
+                editorial policy
+              </Link>
+              .
+            </p>
+          </section>
         </div>
-
-        <h1 className="text-4xl font-semibold mb-3">Press & research</h1>
-        <p className="text-lg text-muted-foreground mb-10 leading-relaxed">
-          NakshIQ scores, costs, and verdicts on India travel are built to be cited. Journalists, researchers,
-          and travel operators use this data every week. Here's what's available, how to cite it, and where to
-          reach us.
-        </p>
-
-        {/* Stats strip */}
-        <section className="rounded-2xl border border-primary/30 bg-primary/5 p-6 mb-10">
-          <h2 className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-4">
-            The NakshIQ dataset — at a glance
-          </h2>
-          <div className="grid grid-cols-2 gap-5 sm:grid-cols-4">
-            <div>
-              <div className="text-3xl font-mono font-bold text-primary">{counts.destinations}</div>
-              <div className="text-xs text-muted-foreground mt-1">destinations scored</div>
-            </div>
-            <div>
-              <div className="text-3xl font-mono font-bold text-primary">{counts.totalDm.toLocaleString()}</div>
-              <div className="text-xs text-muted-foreground mt-1">destination-months rated</div>
-            </div>
-            <div>
-              <div className="text-3xl font-mono font-bold text-primary">{counts.rows.toLocaleString()}</div>
-              <div className="text-xs text-muted-foreground mt-1">Cost Index rows</div>
-            </div>
-            <div>
-              <div className="text-3xl font-mono font-bold text-primary">{counts.traps}</div>
-              <div className="text-xs text-muted-foreground mt-1">tourist traps with alternatives</div>
-            </div>
-          </div>
-          <div className="mt-5 flex flex-wrap gap-4 text-xs text-muted-foreground">
-            <span className="flex items-center gap-1.5">
-              <span className="h-2 w-2 rounded-full bg-emerald-400" /> {counts.goCount.toLocaleString()} GO verdicts
-            </span>
-            <span className="flex items-center gap-1.5">
-              <span className="h-2 w-2 rounded-full bg-amber-400" /> {counts.waitCount.toLocaleString()} WAIT verdicts
-            </span>
-            <span className="flex items-center gap-1.5">
-              <span className="h-2 w-2 rounded-full bg-rose-400" /> {counts.skipCount.toLocaleString()} SKIP verdicts
-            </span>
-          </div>
-        </section>
-
-        {/* Key datasets */}
-        <section className="mb-10">
-          <h2 className="text-2xl font-semibold mb-5">Datasets</h2>
-          <div className="space-y-5">
-            {/* Cost Index */}
-            <article className="rounded-2xl border border-border bg-card/40 p-6">
-              <header className="flex items-start justify-between gap-4 flex-wrap mb-3">
-                <div>
-                  <h3 className="text-xl font-semibold">NakshIQ Cost Index 2026</h3>
-                  <p className="text-sm text-muted-foreground mt-1">
-                    {counts.rows.toLocaleString()} verified cost data points — homestay, hotel, food, transport,
-                    permit, and activity rates across {counts.destinations} destinations and three seasonal bands.
-                  </p>
-                </div>
-                <Link
-                  href={`/${locale}/cost-index`}
-                  className="shrink-0 rounded-full border border-primary bg-primary/10 px-4 py-1.5 text-xs font-medium text-primary hover:bg-primary/20 transition-colors"
-                >
-                  Explore →
-                </Link>
-              </header>
-              <dl className="grid gap-3 text-xs text-muted-foreground sm:grid-cols-3 border-t border-border/50 pt-3">
-                <div>
-                  <dt className="font-medium uppercase tracking-[0.08em]">Coverage</dt>
-                  <dd>All India, 6 categories</dd>
-                </div>
-                <div>
-                  <dt className="font-medium uppercase tracking-[0.08em]">Update cadence</dt>
-                  <dd>Quarterly (next: July 2026)</dd>
-                </div>
-                <div>
-                  <dt className="font-medium uppercase tracking-[0.08em]">License</dt>
-                  <dd>CC BY 4.0</dd>
-                </div>
-              </dl>
-              <div className="mt-3 text-xs">
-                <Link href={`/${locale}/cost-index/methodology`} className="text-primary hover:underline">
-                  Methodology & derivation →
-                </Link>
-              </div>
-            </article>
-
-            {/* Scoring */}
-            <article className="rounded-2xl border border-border bg-card/40 p-6">
-              <header className="flex items-start justify-between gap-4 flex-wrap mb-3">
-                <div>
-                  <h3 className="text-xl font-semibold">Monthly Scoring Matrix</h3>
-                  <p className="text-sm text-muted-foreground mt-1">
-                    {counts.totalDm.toLocaleString()} destination-month scores — weather, crowds, infrastructure,
-                    safety — with a verdict band (GO / WAIT / SKIP) for every combination of destination and calendar month.
-                  </p>
-                </div>
-                <Link
-                  href={`/${locale}/methodology`}
-                  className="shrink-0 rounded-full border border-primary bg-primary/10 px-4 py-1.5 text-xs font-medium text-primary hover:bg-primary/20 transition-colors"
-                >
-                  Methodology →
-                </Link>
-              </header>
-              <dl className="grid gap-3 text-xs text-muted-foreground sm:grid-cols-3 border-t border-border/50 pt-3">
-                <div>
-                  <dt className="font-medium uppercase tracking-[0.08em]">Verdicts</dt>
-                  <dd>{counts.goCount.toLocaleString()} GO / {counts.waitCount.toLocaleString()} WAIT / {counts.skipCount.toLocaleString()} SKIP</dd>
-                </div>
-                <div>
-                  <dt className="font-medium uppercase tracking-[0.08em]">Granularity</dt>
-                  <dd>Destination × month</dd>
-                </div>
-                <div>
-                  <dt className="font-medium uppercase tracking-[0.08em]">Refresh</dt>
-                  <dd>Monthly on the 1st (IST)</dd>
-                </div>
-              </dl>
-            </article>
-
-            {/* Tourist traps */}
-            <article className="rounded-2xl border border-border bg-card/40 p-6">
-              <header className="flex items-start justify-between gap-4 flex-wrap mb-3">
-                <div>
-                  <h3 className="text-xl font-semibold">Tourist Trap Atlas</h3>
-                  <p className="text-sm text-muted-foreground mt-1">
-                    {counts.traps} popular Indian destinations NakshIQ scores as overrated, each paired with a
-                    verified alternative within driving distance and a sourced explanation of why.
-                  </p>
-                </div>
-                <Link
-                  href={`/${locale}/tourist-traps`}
-                  className="shrink-0 rounded-full border border-primary bg-primary/10 px-4 py-1.5 text-xs font-medium text-primary hover:bg-primary/20 transition-colors"
-                >
-                  Atlas →
-                </Link>
-              </header>
-            </article>
-          </div>
-        </section>
-
-        {/* Citation */}
-        <section className="mb-10">
-          <h2 className="text-2xl font-semibold mb-5">How to cite NakshIQ</h2>
-          <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
-            NakshIQ data is CC BY 4.0 — free to use, remix, and republish with attribution. Please link back to
-            the source page so readers can verify the current version.
-          </p>
-          <div className="space-y-3">
-            <CiteBlock label="Inline / caption" text={citeInline} />
-            <CiteBlock label="APA 7" text={citeApa} />
-            <CiteBlock label="MLA 9" text={citeMla} />
-          </div>
-        </section>
-
-        {/* Press contact */}
-        <section className="rounded-2xl border border-primary/20 bg-primary/5 p-6 mb-6">
-          <h2 className="text-lg font-semibold mb-2">Press contact</h2>
-          <p className="text-sm text-muted-foreground leading-relaxed mb-3">
-            For interviews, commissioned research, or custom data pulls for a feature, reach out directly.
-            We respond to editorial queries within one business day.
-          </p>
-          <div className="flex flex-wrap gap-3 text-sm">
-            <Link
-              href={`/${locale}/contact`}
-              className="rounded-full bg-primary px-5 py-2 text-primary-foreground font-medium hover:bg-primary/90 transition-colors"
-            >
-              Contact newsroom
-            </Link>
-            <Link
-              href={`/${locale}/about/team`}
-              className="rounded-full border border-border px-5 py-2 hover:border-primary/50 transition-colors"
-            >
-              Masthead →
-            </Link>
-            <Link
-              href={`/${locale}/corrections`}
-              className="rounded-full border border-border px-5 py-2 hover:border-primary/50 transition-colors"
-            >
-              Corrections log →
-            </Link>
-          </div>
-        </section>
-
-        {/* Editorial independence */}
-        <section className="rounded-2xl border border-border bg-card/40 p-6">
-          <h2 className="text-lg font-semibold mb-2">Editorial independence</h2>
-          <p className="text-sm text-muted-foreground leading-relaxed">
-            NakshIQ accepts no paid placements, no sponsored content, and no tourism board promotion packages.
-            Scoring and cost data are built independently of any commercial relationship with a destination,
-            operator, or partner. See our{" "}
-            <Link href={`/${locale}/editorial-policy`} className="underline hover:text-primary">editorial policy</Link>.
-          </p>
-        </section>
       </main>
+
+      <CinematicRelatedRail />
       <Footer />
     </div>
   );
@@ -352,11 +647,30 @@ export default async function PressPage({ params }: { params: Promise<{ locale: 
 
 function CiteBlock({ label, text }: { label: string; text: string }) {
   return (
-    <div className="rounded-xl border border-border bg-card/40 p-4">
-      <div className="text-[11px] font-medium uppercase tracking-[0.08em] text-muted-foreground mb-1.5">
+    <div style={{ padding: 16, border: "1px solid var(--hair)", background: "var(--paper)" }}>
+      <p
+        style={{
+          fontFamily: "var(--cinema-mono)",
+          fontSize: 10,
+          letterSpacing: "0.22em",
+          textTransform: "uppercase",
+          color: "var(--bone-faint)",
+          margin: "0 0 8px",
+        }}
+      >
         {label}
-      </div>
-      <pre className="text-xs text-foreground whitespace-pre-wrap break-words font-mono leading-relaxed">
+      </p>
+      <pre
+        style={{
+          fontFamily: "var(--cinema-mono)",
+          fontSize: 12,
+          lineHeight: 1.6,
+          color: "var(--bone)",
+          margin: 0,
+          whiteSpace: "pre-wrap",
+          wordBreak: "break-word",
+        }}
+      >
         {text}
       </pre>
     </div>

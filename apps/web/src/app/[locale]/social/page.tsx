@@ -5,10 +5,15 @@ import { Footer } from "@/components/footer";
 import { localeAlternates } from "@/lib/seo-utils";
 import { currentMonthSlugIST, currentMonthLongIST } from "@itp/shared";
 import { getTranslations } from "next-intl/server";
+import { CinemaStyles } from "@/components/landing-cinema/cinema-styles";
+import { Title } from "@/components/landing-cinema/editorial";
+import { CinematicRelatedRail } from "@/components/cinematic-related-rail";
 
 // ISR-cached daily — the destination cards are static-ish but the
 // month-keyed Dhanaulti card needs to roll over with currentMonthSlugIST.
 export const revalidate = 86400;
+
+const SITE = "https://www.nakshiq.com";
 
 type CardKey =
   | "score"
@@ -25,11 +30,6 @@ type Card = {
 };
 
 function cards(monthSlug: string): Card[] {
-  // Targets chosen from the 2026-05-04 GA4 baseline:
-  //   /en/explore        — 169s avg time (highest engagement on site)
-  //   /en/methodology    — 6/6 engaged sessions / users
-  //   /en/destination/dhanaulti/{month} — 120s avg time, recurring high
-  //   /en/nakshiq-100, /en/tourist-traps, /en/festivals — direct campaign matches
   return [
     { key: "this_month", href: `/destination/dhanaulti/${monthSlug}`, utm_campaign: "social-this-month" },
     { key: "score",      href: "/nakshiq-100",                          utm_campaign: "social-top-100" },
@@ -77,47 +77,165 @@ export default async function SocialPage({
   const monthLong = currentMonthLongIST();
   const list = cards(monthSlug);
 
+  const breadcrumbLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/${locale}` },
+      { "@type": "ListItem", position: 2, name: "Social", item: `${SITE}/${locale}/social` },
+    ],
+  };
+
   return (
-    <div className="min-h-screen">
+    <div className="nakshiq-cinema" style={{ minHeight: "100vh" }}>
+      <CinemaStyles />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+      />
       <Nav />
-      <main className="mx-auto max-w-xl px-4 py-10">
-        <header className="mb-8">
-          <p className="text-xs uppercase tracking-[0.08em] text-muted-foreground mb-2">
-            {t("overline")}
+
+      <main
+        id="main-content"
+        className="nq-grain"
+        style={{ position: "relative", padding: "140px 24px 64px" }}
+      >
+        <header style={{ maxWidth: 720, margin: "0 auto 40px" }}>
+          <p
+            className="nq-kicker"
+            style={{
+              color: "var(--vermillion)",
+              marginBottom: 20,
+              letterSpacing: "0.22em",
+            }}
+          >
+            {t("overline").toUpperCase()} · {monthLong.toUpperCase()}
           </p>
-          <h1 className="text-3xl font-semibold mb-3">{t("heading")}</h1>
-          <p className="text-base text-muted-foreground">{t("intro", { month: monthLong })}</p>
+          <Title
+            as="h1"
+            className="nq-display"
+            style={{
+              fontFamily: "var(--cinema-display)",
+              fontStyle: "italic",
+              fontWeight: 400,
+              fontSize: "clamp(32px, 5vw, 56px)",
+              lineHeight: 1.05,
+              letterSpacing: "-0.022em",
+              margin: 0,
+              textWrap: "balance",
+            }}
+          >
+            {t("heading")}
+          </Title>
+          <p
+            style={{
+              fontFamily: "var(--cinema-ui)",
+              fontSize: 15,
+              lineHeight: 1.7,
+              color: "var(--bone-dim)",
+              marginTop: 20,
+            }}
+          >
+            {t("intro", { month: monthLong })}
+          </p>
         </header>
 
-        <ul className="space-y-3">
-          {list.map((card) => (
-            <li key={card.key}>
+        <div style={{ maxWidth: 720, margin: "0 auto" }}>
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "1fr",
+              gap: 1,
+              background: "var(--hair)",
+              border: "1px solid var(--hair)",
+            }}
+          >
+            {list.map((card, i) => (
               <Link
+                key={card.key}
                 href={withUtm(card.href, card.utm_campaign, locale)}
-                className="block rounded-lg border border-border bg-card px-5 py-4 hover:border-foreground/30 transition-colors"
+                style={{
+                  display: "flex",
+                  alignItems: "baseline",
+                  gap: 14,
+                  padding: "18px 20px",
+                  background: "var(--paper)",
+                  textDecoration: "none",
+                }}
               >
-                <div className="flex items-baseline justify-between gap-3">
-                  <div className="flex-1 min-w-0">
-                    <p className="text-base font-medium">
-                      {t(`cards.${card.key}.title`)}
-                    </p>
-                    <p className="text-sm text-muted-foreground mt-0.5 line-clamp-2">
-                      {t(`cards.${card.key}.subtitle`, { month: monthLong })}
-                    </p>
-                  </div>
-                  <span className="text-muted-foreground/60 shrink-0">→</span>
+                <span
+                  style={{
+                    fontFamily: "var(--cinema-mono)",
+                    fontSize: 11,
+                    letterSpacing: "0.18em",
+                    color: "var(--vermillion)",
+                    flexShrink: 0,
+                    fontVariantNumeric: "tabular-nums",
+                  }}
+                >
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <div style={{ flex: 1, minWidth: 0 }}>
+                  <p
+                    style={{
+                      fontFamily: "var(--cinema-display)",
+                      fontStyle: "italic",
+                      fontWeight: 500,
+                      fontSize: 18,
+                      lineHeight: 1.25,
+                      color: "var(--bone)",
+                      margin: 0,
+                    }}
+                  >
+                    {t(`cards.${card.key}.title`)}
+                  </p>
+                  <p
+                    style={{
+                      fontFamily: "var(--cinema-ui)",
+                      fontSize: 13,
+                      lineHeight: 1.6,
+                      color: "var(--bone-dim)",
+                      margin: "4px 0 0",
+                      display: "-webkit-box",
+                      WebkitLineClamp: 2,
+                      WebkitBoxOrient: "vertical",
+                      overflow: "hidden",
+                    }}
+                  >
+                    {t(`cards.${card.key}.subtitle`, { month: monthLong })}
+                  </p>
                 </div>
+                <span
+                  style={{
+                    fontFamily: "var(--cinema-mono)",
+                    fontSize: 12,
+                    color: "var(--vermillion)",
+                    flexShrink: 0,
+                  }}
+                >
+                  →
+                </span>
               </Link>
-            </li>
-          ))}
-        </ul>
+            ))}
+          </div>
 
-        <footer className="mt-10 pt-6 border-t border-border">
-          <p className="text-xs text-muted-foreground">
+          <p
+            style={{
+              fontFamily: "var(--cinema-ui)",
+              fontSize: 12,
+              lineHeight: 1.7,
+              color: "var(--bone-faint)",
+              margin: "32px 0 0",
+              paddingTop: 24,
+              borderTop: "1px solid var(--hair)",
+            }}
+          >
             {t("foot", { month: monthLong })}
           </p>
-        </footer>
+        </div>
       </main>
+
+      <CinematicRelatedRail />
       <Footer />
     </div>
   );

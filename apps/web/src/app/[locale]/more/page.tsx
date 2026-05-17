@@ -4,6 +4,8 @@ import { getTranslations } from "next-intl/server";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { localeAlternates } from "@/lib/seo-utils";
+import { CinemaStyles } from "@/components/landing-cinema/cinema-styles";
+import { Title } from "@/components/landing-cinema/editorial";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -77,35 +79,140 @@ export default async function MorePage({ params }: { params: Promise<{ locale: s
     },
   ];
 
-  return (
-    <div className="min-h-screen">
-      <Nav />
-      <main className="mx-auto max-w-3xl px-4 py-12">
-        <h1 className="text-4xl font-semibold mb-2">More</h1>
-        <p className="text-sm text-muted-foreground mb-10">
-          Every NakshIQ tool, guide, and policy in one place.
-        </p>
+  const totalLinks = groups.reduce((sum, g) => sum + g.rows.length, 0);
 
-        <div className="space-y-12">
+  return (
+    <div className="nakshiq-cinema" style={{ minHeight: "100vh" }}>
+      <CinemaStyles />
+      <Nav />
+
+      <main
+        id="main-content"
+        className="nq-grain"
+        style={{ position: "relative", padding: "140px 24px 64px" }}
+      >
+        <header style={{ maxWidth: 900, margin: "0 auto 48px" }}>
+          <p
+            className="nq-kicker"
+            style={{
+              color: "var(--vermillion)",
+              marginBottom: 20,
+              letterSpacing: "0.22em",
+            }}
+          >
+            SITEMAP · {String(totalLinks).padStart(2, "0")} SURFACES · {groups.length} SECTIONS
+          </p>
+          <Title
+            as="h1"
+            className="nq-display"
+            style={{
+              fontFamily: "var(--cinema-display)",
+              fontStyle: "italic",
+              fontWeight: 400,
+              fontSize: "clamp(36px, 6vw, 76px)",
+              lineHeight: 1.0,
+              letterSpacing: "-0.022em",
+              margin: 0,
+              textWrap: "balance",
+            }}
+          >
+            More.
+          </Title>
+          <p
+            style={{
+              fontFamily: "var(--cinema-ui)",
+              fontSize: 15,
+              lineHeight: 1.7,
+              color: "var(--bone-dim)",
+              marginTop: 20,
+              maxWidth: 720,
+            }}
+          >
+            Every NakshIQ tool, guide, and policy in one place.
+          </p>
+        </header>
+
+        <div
+          style={{
+            maxWidth: 900,
+            margin: "0 auto",
+            display: "flex",
+            flexDirection: "column",
+            gap: 48,
+          }}
+        >
           {groups.map((group) => (
             <section key={group.title}>
-              <h2 className="text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground/60 mb-4">
-                {group.title}
-              </h2>
-              <div className="divide-y divide-border/40">
-                {group.rows.map((row) => (
+              <p
+                className="nq-kicker"
+                style={{
+                  color: "var(--vermillion)",
+                  marginBottom: 16,
+                  letterSpacing: "0.18em",
+                  textTransform: "uppercase",
+                }}
+              >
+                {group.title} · {String(group.rows.length).padStart(2, "0")}
+              </p>
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  border: "1px solid var(--hair)",
+                }}
+              >
+                {group.rows.map((row, i) => (
                   <Link
                     key={row.href}
                     href={row.href}
-                    className="group flex items-baseline gap-4 py-3 hover:bg-muted/30 -mx-2 px-2 rounded-md transition-colors"
+                    style={{
+                      display: "flex",
+                      alignItems: "baseline",
+                      gap: 16,
+                      padding: "14px 20px",
+                      background: "var(--paper)",
+                      textDecoration: "none",
+                      borderTop: i === 0 ? "none" : "1px solid var(--hair)",
+                    }}
                   >
-                    <span className="text-base font-medium text-foreground group-hover:text-primary transition-colors">
+                    <span
+                      style={{
+                        fontFamily: "var(--cinema-display)",
+                        fontStyle: "italic",
+                        fontWeight: 500,
+                        fontSize: 17,
+                        lineHeight: 1.3,
+                        color: "var(--bone)",
+                        flexShrink: 0,
+                      }}
+                    >
                       {row.label}
                     </span>
-                    <span className="flex-1 text-sm text-muted-foreground/80 truncate">
+                    <span
+                      style={{
+                        flex: 1,
+                        minWidth: 0,
+                        fontFamily: "var(--cinema-ui)",
+                        fontSize: 13,
+                        lineHeight: 1.5,
+                        color: "var(--bone-dim)",
+                        textOverflow: "ellipsis",
+                        overflow: "hidden",
+                        whiteSpace: "nowrap",
+                      }}
+                    >
                       {row.desc}
                     </span>
-                    <span className="text-muted-foreground/40 group-hover:text-primary transition-colors">→</span>
+                    <span
+                      style={{
+                        fontFamily: "var(--cinema-mono)",
+                        fontSize: 11,
+                        color: "var(--vermillion)",
+                        flexShrink: 0,
+                      }}
+                    >
+                      →
+                    </span>
                   </Link>
                 ))}
               </div>
@@ -113,6 +220,7 @@ export default async function MorePage({ params }: { params: Promise<{ locale: s
           ))}
         </div>
       </main>
+
       <Footer />
     </div>
   );

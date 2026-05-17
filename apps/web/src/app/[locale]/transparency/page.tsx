@@ -10,10 +10,15 @@ import {
   CODE_GUARDRAILS,
   getAuditTotals,
 } from "@/lib/fabrication-audit";
+import { CinemaStyles } from "@/components/landing-cinema/cinema-styles";
+import { Title } from "@/components/landing-cinema/editorial";
+import { CinematicRelatedRail } from "@/components/cinematic-related-rail";
 
 // 24h ISR — same cadence as /methodology. Audit log is hardcoded, but the
 // corpus counters strip below it is live-fetched.
 export const revalidate = 86400;
+
+const SITE = "https://www.nakshiq.com";
 
 export async function generateMetadata({
   params,
@@ -60,7 +65,32 @@ function formatPct(p: number | null): string {
   return `${Math.round(p)}%`;
 }
 
-export default async function TransparencyPage() {
+const h2Style = {
+  fontFamily: "var(--cinema-display)",
+  fontStyle: "italic" as const,
+  fontWeight: 500,
+  fontSize: 28,
+  lineHeight: 1.15,
+  color: "var(--bone)",
+  margin: "0 0 16px",
+};
+
+const proseStyle = {
+  fontFamily: "var(--cinema-ui)",
+  fontSize: 14,
+  lineHeight: 1.75,
+  color: "var(--bone-dim)",
+  margin: 0,
+};
+
+const inlineLinkStyle = {
+  color: "var(--vermillion)",
+  textDecoration: "underline",
+  textUnderlineOffset: "3px",
+};
+
+export default async function TransparencyPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
   const counts = await getCorpusCounts();
   const totals = getAuditTotals();
 
@@ -72,170 +102,292 @@ export default async function TransparencyPage() {
     return b.completionDate.localeCompare(a.completionDate);
   });
 
-  return (
-    <div className="min-h-screen">
-      <Nav />
-      <main className="mx-auto max-w-3xl px-4 py-12">
-        <p className="text-xs uppercase tracking-[0.08em] text-muted-foreground/60 mb-2">
-          Issue 01 · Updated {new Date().toLocaleDateString("en-IN", { day: "numeric", month: "long", year: "numeric" })}
-        </p>
-        <h1 className="text-4xl font-semibold mb-2">Fabrication audit</h1>
-        <p className="text-sm text-muted-foreground mb-8">
-          What we caught, state by state.
-        </p>
+  const breadcrumbLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/${locale}` },
+      { "@type": "ListItem", position: 2, name: "Fabrication audit", item: `${SITE}/${locale}/transparency` },
+    ],
+  };
 
-        <div className="prose prose-invert max-w-none space-y-10">
+  const stats = [
+    { value: String(totals.statesCovered), label: "States closed" },
+    { value: totals.staysAudited.toLocaleString("en-IN"), label: "Stay candidates audited" },
+    { value: String(totals.fabricationsCaught), label: "Named fabrications caught" },
+    { value: String(totals.honestScarcityNulls), label: "Honest-scarcity blanks" },
+  ];
+
+  const today = new Date().toLocaleDateString("en-IN", { day: "numeric", month: "long", year: "numeric" });
+
+  return (
+    <div className="nakshiq-cinema" style={{ minHeight: "100vh" }}>
+      <CinemaStyles />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+      />
+      <Nav />
+
+      <main
+        id="main-content"
+        className="nq-grain"
+        style={{ position: "relative", padding: "140px 24px 64px" }}
+      >
+        <header style={{ maxWidth: 820, margin: "0 auto 48px" }}>
+          <p
+            className="nq-kicker"
+            style={{
+              color: "var(--vermillion)",
+              marginBottom: 20,
+              letterSpacing: "0.22em",
+            }}
+          >
+            ISSUE 01 · UPDATED {today.toUpperCase()}
+          </p>
+          <Title
+            as="h1"
+            className="nq-display"
+            style={{
+              fontFamily: "var(--cinema-display)",
+              fontStyle: "italic",
+              fontWeight: 400,
+              fontSize: "clamp(36px, 6vw, 76px)",
+              lineHeight: 1.0,
+              letterSpacing: "-0.022em",
+              margin: 0,
+              textWrap: "balance",
+            }}
+          >
+            Fabrication audit.
+          </Title>
+          <p
+            style={{
+              fontFamily: "var(--cinema-display)",
+              fontStyle: "italic",
+              fontWeight: 400,
+              fontSize: "clamp(18px, 2vw, 24px)",
+              lineHeight: 1.4,
+              color: "var(--bone-dim)",
+              marginTop: 20,
+              maxWidth: 720,
+            }}
+          >
+            What we caught, state by state.
+          </p>
+        </header>
+
+        <div style={{ maxWidth: 820, margin: "0 auto", display: "flex", flexDirection: "column", gap: 56 }}>
           {/* Manifesto */}
           <section>
-            <h2 className="text-2xl font-semibold mb-3">Why we publish this</h2>
-            <p className="text-muted-foreground leading-relaxed">
-              Most travel sites don't publish their audit log. The reason is
-              obvious: an audit log lists the things you almost got wrong. We
-              publish ours because the catching is the actual moat. Anyone can
-              write a destination page. The harder skill is recognising the
-              listicle that confidently lists a hotel in the wrong town, the
-              homestay that's been closed since 2022, the resort that turns out
-              to share a name with a real property in the Philippines.
+            <h2 style={h2Style}>Why we publish this.</h2>
+            <p style={proseStyle}>
+              Most travel sites don&apos;t publish their audit log. The reason is obvious: an audit log lists
+              the things you almost got wrong. We publish ours because the catching is the actual moat. Anyone
+              can write a destination page. The harder skill is recognising the listicle that confidently lists
+              a hotel in the wrong town, the homestay that&apos;s been closed since 2022, the resort that turns
+              out to share a name with a real property in the Philippines.
             </p>
-            <p className="text-muted-foreground leading-relaxed mt-3">
-              Roughly one in three numbers we research turns out to be wrong,
-              dead, or moved. The work of catching that — and refusing to ship
-              it — is the part of the job a generic AI travel planner can't do.
-              The notes below are the receipts.
+            <p style={{ ...proseStyle, marginTop: 16 }}>
+              Roughly one in three numbers we research turns out to be wrong, dead, or moved. The work of
+              catching that — and refusing to ship it — is the part of the job a generic AI travel planner
+              can&apos;t do. The notes below are the receipts.
             </p>
-            <p className="text-muted-foreground leading-relaxed mt-3">
-              These are catches we know about. Every destination card carries a
-              "Report a fabrication" link for the unknown unknowns — the ones
-              we missed and you find first.
+            <p style={{ ...proseStyle, marginTop: 16 }}>
+              These are catches we know about. Every destination card carries a &quot;Report a fabrication&quot;
+              link for the unknown unknowns — the ones we missed and you find first.
             </p>
           </section>
 
-          {/* Live corpus counters strip */}
+          {/* Stats strip */}
           <section>
-            <h2 className="text-2xl font-semibold mb-4">The audit so far</h2>
-            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-              <div className="rounded-xl border border-border p-4 tabular-nums">
-                <div className="text-2xl font-mono font-semibold text-foreground">
-                  {totals.statesCovered}
+            <h2 style={h2Style}>The audit so far.</h2>
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))",
+                gap: 1,
+                background: "var(--hair)",
+                border: "1px solid var(--hair)",
+              }}
+            >
+              {stats.map((s) => (
+                <div key={s.label} style={{ padding: 20, background: "var(--paper)" }}>
+                  <p
+                    style={{
+                      fontFamily: "var(--cinema-mono)",
+                      fontSize: 10,
+                      letterSpacing: "0.22em",
+                      textTransform: "uppercase",
+                      color: "var(--bone-faint)",
+                      margin: 0,
+                    }}
+                  >
+                    {s.label}
+                  </p>
+                  <p
+                    style={{
+                      fontFamily: "var(--cinema-display)",
+                      fontStyle: "italic",
+                      fontWeight: 500,
+                      fontSize: 32,
+                      lineHeight: 1.05,
+                      color: "var(--bone)",
+                      margin: "6px 0 0",
+                      fontVariantNumeric: "tabular-nums",
+                    }}
+                  >
+                    {s.value}
+                  </p>
                 </div>
-                <div className="text-xs text-muted-foreground mt-1">
-                  States closed
-                </div>
-              </div>
-              <div className="rounded-xl border border-border p-4 tabular-nums">
-                <div className="text-2xl font-mono font-semibold text-foreground">
-                  {totals.staysAudited.toLocaleString("en-IN")}
-                </div>
-                <div className="text-xs text-muted-foreground mt-1">
-                  Stay candidates audited
-                </div>
-              </div>
-              <div className="rounded-xl border border-border p-4 tabular-nums">
-                <div className="text-2xl font-mono font-semibold text-foreground">
-                  {totals.fabricationsCaught}
-                </div>
-                <div className="text-xs text-muted-foreground mt-1">
-                  Named fabrications caught
-                </div>
-              </div>
-              <div className="rounded-xl border border-border p-4 tabular-nums">
-                <div className="text-2xl font-mono font-semibold text-foreground">
-                  {totals.honestScarcityNulls}
-                </div>
-                <div className="text-xs text-muted-foreground mt-1">
-                  Honest-scarcity blanks
-                </div>
-              </div>
+              ))}
             </div>
             {counts && (
-              <p className="mt-4 text-sm text-muted-foreground tabular-nums">
+              <p
+                style={{
+                  fontFamily: "var(--cinema-ui)",
+                  fontSize: 13,
+                  lineHeight: 1.7,
+                  color: "var(--bone-dim)",
+                  margin: "16px 0 0",
+                  fontVariantNumeric: "tabular-nums",
+                }}
+              >
                 Current published corpus:{" "}
                 {counts.destinations != null && (
                   <>
-                    <span className="font-semibold text-foreground">
+                    <strong style={{ color: "var(--bone)", fontWeight: 600 }}>
                       {counts.destinations.toLocaleString("en-IN")}
-                    </span>{" "}
+                    </strong>{" "}
                     destinations ·{" "}
                   </>
                 )}
                 {counts.eateries != null && (
                   <>
-                    <span className="font-semibold text-foreground">
+                    <strong style={{ color: "var(--bone)", fontWeight: 600 }}>
                       {counts.eateries.toLocaleString("en-IN")}
-                    </span>{" "}
+                    </strong>{" "}
                     verified eateries ·{" "}
                   </>
                 )}
                 {counts.stays != null && (
                   <>
-                    <span className="font-semibold text-foreground">
+                    <strong style={{ color: "var(--bone)", fontWeight: 600 }}>
                       {counts.stays.toLocaleString("en-IN")}
-                    </span>{" "}
+                    </strong>{" "}
                     verified stay picks
                   </>
                 )}
-                . What follows is what we caught before any of this got
-                published.
+                . What follows is what we caught before any of this got published.
               </p>
             )}
           </section>
 
-          {/* Per-state catches table */}
+          {/* By-state details/summary table */}
           <section>
-            <h2 className="text-2xl font-semibold mb-2">By state</h2>
-            <p className="text-sm text-muted-foreground mb-5 leading-relaxed">
-              Sorted by fabrication-rate caught, highest first. A high rate
-              isn't a state's failing — it's the listicle ecosystem's. It also
-              means our audit on that state worked.
+            <h2 style={h2Style}>By state.</h2>
+            <p style={{ ...proseStyle, marginBottom: 20 }}>
+              Sorted by fabrication-rate caught, highest first. A high rate isn&apos;t a state&apos;s failing
+              — it&apos;s the listicle ecosystem&apos;s. It also means our audit on that state worked.
             </p>
-            <div className="space-y-4">
-              {rows.map((row) => (
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                border: "1px solid var(--hair)",
+              }}
+            >
+              {rows.map((row, idx) => (
                 <details
                   key={row.state}
-                  className="rounded-xl border border-border bg-card/30"
+                  style={{
+                    background: "var(--paper)",
+                    borderTop: idx === 0 ? "none" : "1px solid var(--hair)",
+                  }}
                 >
-                  <summary className="cursor-pointer list-none px-4 py-3 hover:bg-card/60 transition-colors">
-                    <div className="flex items-baseline justify-between gap-3">
-                      <div className="flex items-baseline gap-3">
-                        <span className="font-semibold text-foreground">
-                          {row.state}
-                        </span>
-                        <span className="text-xs text-muted-foreground tabular-nums">
-                          {row.destinations} dests · {row.staysAudited} stay
-                          candidates
-                        </span>
-                      </div>
-                      <div className="flex items-center gap-3 tabular-nums">
-                        {row.fabricationsCaught > 0 ? (
-                          <span className="text-sm font-mono text-foreground">
-                            {row.fabricationsCaught} caught ·{" "}
-                            <span className="text-primary">
-                              {formatPct(row.fabricationRate)}
-                            </span>
-                          </span>
-                        ) : (
-                          <span className="text-sm text-muted-foreground">
-                            no fabrications
-                          </span>
-                        )}
-                      </div>
-                    </div>
+                  <summary
+                    style={{
+                      cursor: "pointer",
+                      listStyle: "none",
+                      padding: "16px 20px",
+                      display: "flex",
+                      alignItems: "baseline",
+                      justifyContent: "space-between",
+                      gap: 12,
+                      flexWrap: "wrap",
+                    }}
+                  >
+                    <span style={{ display: "flex", alignItems: "baseline", gap: 12, flexWrap: "wrap" }}>
+                      <span
+                        style={{
+                          fontFamily: "var(--cinema-display)",
+                          fontStyle: "italic",
+                          fontWeight: 500,
+                          fontSize: 17,
+                          color: "var(--bone)",
+                        }}
+                      >
+                        {row.state}
+                      </span>
+                      <span
+                        style={{
+                          fontFamily: "var(--cinema-mono)",
+                          fontSize: 11,
+                          color: "var(--bone-faint)",
+                          fontVariantNumeric: "tabular-nums",
+                        }}
+                      >
+                        {row.destinations} dests · {row.staysAudited} candidates
+                      </span>
+                    </span>
+                    <span
+                      style={{
+                        fontFamily: "var(--cinema-mono)",
+                        fontSize: 12,
+                        color: row.fabricationsCaught > 0 ? "var(--vermillion)" : "var(--bone-faint)",
+                        fontVariantNumeric: "tabular-nums",
+                      }}
+                    >
+                      {row.fabricationsCaught > 0
+                        ? `${row.fabricationsCaught} caught · ${formatPct(row.fabricationRate)}`
+                        : "no fabrications"}
+                    </span>
                   </summary>
-                  <div className="px-4 pb-4 pt-2 border-t border-border/60">
-                    <p className="text-xs text-muted-foreground mb-3 tabular-nums">
-                      Audit closed{" "}
+                  <div style={{ padding: "0 20px 18px", borderTop: "1px solid var(--hair)", marginTop: 4 }}>
+                    <p
+                      style={{
+                        fontFamily: "var(--cinema-mono)",
+                        fontSize: 10,
+                        letterSpacing: "0.18em",
+                        textTransform: "uppercase",
+                        color: "var(--bone-faint)",
+                        margin: "12px 0 12px",
+                        fontVariantNumeric: "tabular-nums",
+                      }}
+                    >
+                      Closed{" "}
                       {new Date(row.completionDate).toLocaleDateString("en-IN", {
                         day: "numeric",
                         month: "short",
                         year: "numeric",
                       })}{" "}
-                      · {row.eateriesAudited} eateries audited ·{" "}
-                      {row.honestScarcityNulls} fields left blank
+                      · {row.eateriesAudited} eateries audited · {row.honestScarcityNulls} fields left blank
                     </p>
-                    <ul className="space-y-2 text-sm text-muted-foreground leading-relaxed">
+                    <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: 10 }}>
                       {row.examples.map((ex, i) => (
-                        <li key={i} className="flex items-start gap-2">
-                          <span className="text-primary mt-0.5">—</span>
+                        <li
+                          key={i}
+                          style={{
+                            display: "flex",
+                            gap: 12,
+                            alignItems: "baseline",
+                            fontFamily: "var(--cinema-ui)",
+                            fontSize: 13,
+                            lineHeight: 1.65,
+                            color: "var(--bone-dim)",
+                          }}
+                        >
+                          <span style={{ flexShrink: 0, color: "var(--vermillion)" }}>—</span>
                           <span>{ex}</span>
                         </li>
                       ))}
@@ -248,30 +400,56 @@ export default async function TransparencyPage() {
 
           {/* Cross-state catches */}
           <section>
-            <h2 className="text-2xl font-semibold mb-3">
-              Cross-state catches
-            </h2>
-            <p className="text-sm text-muted-foreground mb-5 leading-relaxed">
-              The most readable proof of why we audit. A listicle confidently
-              lists a property under one location; the property is somewhere
-              else entirely, or somewhere else's tourism brand has been pasted
-              over.
+            <h2 style={h2Style}>Cross-state catches.</h2>
+            <p style={{ ...proseStyle, marginBottom: 20 }}>
+              The most readable proof of why we audit. A listicle confidently lists a property under one
+              location; the property is somewhere else entirely, or somewhere else&apos;s tourism brand has
+              been pasted over.
             </p>
-            <ul className="space-y-3">
+            <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: 12 }}>
               {CROSS_STATE_CATCHES.map((catch_, i) => (
                 <li
                   key={i}
-                  className="rounded-xl border border-border bg-card/30 p-4"
+                  style={{
+                    padding: 18,
+                    border: "1px solid var(--hair)",
+                    background: "var(--paper)",
+                  }}
                 >
-                  <div className="text-sm font-semibold text-foreground">
+                  <p
+                    style={{
+                      fontFamily: "var(--cinema-display)",
+                      fontStyle: "italic",
+                      fontWeight: 500,
+                      fontSize: 16,
+                      lineHeight: 1.3,
+                      color: "var(--bone)",
+                      margin: "0 0 6px",
+                    }}
+                  >
                     {catch_.claimed}
-                  </div>
-                  <div className="text-sm text-muted-foreground mt-1">
+                  </p>
+                  <p
+                    style={{
+                      fontFamily: "var(--cinema-ui)",
+                      fontSize: 13,
+                      lineHeight: 1.6,
+                      color: "var(--bone-dim)",
+                      margin: "0 0 6px",
+                    }}
+                  >
                     {catch_.reality}
-                  </div>
-                  <div className="text-xs text-muted-foreground/60 mt-1">
+                  </p>
+                  <p
+                    style={{
+                      fontFamily: "var(--cinema-mono)",
+                      fontSize: 11,
+                      color: "var(--bone-faint)",
+                      margin: 0,
+                    }}
+                  >
                     Caught during {catch_.state}.
-                  </div>
+                  </p>
                 </li>
               ))}
             </ul>
@@ -279,95 +457,109 @@ export default async function TransparencyPage() {
 
           {/* Code-side guardrails */}
           <section>
-            <h2 className="text-2xl font-semibold mb-3">
-              What we changed in the data layer
-            </h2>
-            <p className="text-sm text-muted-foreground mb-5 leading-relaxed">
-              Some failure modes get caught by an editor's eye. Others recur
-              often enough that we've codified them into the database itself.
-              These are the patterns that can no longer enter the corpus.
+            <h2 style={h2Style}>What we changed in the data layer.</h2>
+            <p style={{ ...proseStyle, marginBottom: 20 }}>
+              Some failure modes get caught by an editor&apos;s eye. Others recur often enough that we&apos;ve
+              codified them into the database itself. These are the patterns that can no longer enter the
+              corpus.
             </p>
-            <ul className="space-y-4">
+            <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: 18 }}>
               {CODE_GUARDRAILS.map((g, i) => (
-                <li key={i} className="flex items-start gap-3">
-                  <span className="text-primary mt-1">—</span>
+                <li
+                  key={i}
+                  style={{
+                    display: "flex",
+                    gap: 14,
+                    alignItems: "baseline",
+                  }}
+                >
+                  <span
+                    style={{
+                      flexShrink: 0,
+                      fontFamily: "var(--cinema-mono)",
+                      fontSize: 11,
+                      color: "var(--vermillion)",
+                      fontVariantNumeric: "tabular-nums",
+                    }}
+                  >
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
                   <div>
-                    <div className="text-sm font-semibold text-foreground">
+                    <p
+                      style={{
+                        fontFamily: "var(--cinema-display)",
+                        fontStyle: "italic",
+                        fontWeight: 500,
+                        fontSize: 16,
+                        lineHeight: 1.3,
+                        color: "var(--bone)",
+                        margin: "0 0 4px",
+                      }}
+                    >
                       {g.name}
-                      <span className="ml-2 text-xs text-muted-foreground/70 font-normal">
+                      <span
+                        style={{
+                          fontFamily: "var(--cinema-mono)",
+                          fontStyle: "normal",
+                          fontSize: 10,
+                          letterSpacing: "0.12em",
+                          color: "var(--bone-faint)",
+                          marginLeft: 10,
+                        }}
+                      >
                         {g.reference}
                       </span>
-                    </div>
-                    <div className="text-sm text-muted-foreground mt-1 leading-relaxed">
-                      {g.summary}
-                    </div>
+                    </p>
+                    <p style={{ ...proseStyle, fontSize: 13, lineHeight: 1.65 }}>{g.summary}</p>
                   </div>
                 </li>
               ))}
             </ul>
           </section>
 
-          {/* Footer links */}
+          {/* Read alongside */}
           <section>
-            <h2 className="text-2xl font-semibold mb-3">Read alongside</h2>
-            <p className="text-muted-foreground leading-relaxed">
+            <h2 style={h2Style}>Read alongside.</h2>
+            <p style={proseStyle}>
               This is the <em>what</em>. For the <em>how</em>, see our{" "}
-              <Link
-                href="/methodology"
-                className="text-primary hover:underline"
-              >
-                methodology page
-              </Link>
-              . For the <em>why</em> — and what a blank field on a destination
-              card actually means — see{" "}
-              <Link
-                href="/why-we-say-no-data"
-                className="text-primary hover:underline"
-              >
-                why we say no data
-              </Link>
-              .
+              <Link href={`/${locale}/methodology`} style={inlineLinkStyle}>methodology page</Link>. For the{" "}
+              <em>why</em> — and what a blank field on a destination card actually means — see{" "}
+              <Link href={`/${locale}/why-we-say-no-data`} style={inlineLinkStyle}>why we say no data</Link>.
             </p>
-            <p className="text-muted-foreground leading-relaxed mt-3">
-              Spotted a fabrication we missed? Send the destination + the
-              property name to{" "}
-              <a
-                href="mailto:hello@nakshiq.com"
-                className="text-primary hover:underline"
-              >
-                hello@nakshiq.com
-              </a>
-              {" "}or use the "Report a fabrication" link on any destination
-              page. We re-verify against a primary source before publishing
-              any correction.
+            <p style={{ ...proseStyle, marginTop: 16 }}>
+              Spotted a fabrication we missed? Send the destination + the property name to{" "}
+              <a href="mailto:hello@nakshiq.com" style={inlineLinkStyle}>hello@nakshiq.com</a> or use the
+              &quot;Report a fabrication&quot; link on any destination page. We re-verify against a primary
+              source before publishing any correction.
+            </p>
+            <p
+              style={{
+                fontFamily: "var(--cinema-mono)",
+                fontSize: 11,
+                letterSpacing: "0.14em",
+                textTransform: "uppercase",
+                color: "var(--bone-faint)",
+                marginTop: 24,
+              }}
+            >
+              See also:{" "}
+              <Link href={`/${locale}/editorial-policy`} style={{ color: "var(--bone-dim)", textDecoration: "underline", textUnderlineOffset: "3px" }}>
+                Editorial policy
+              </Link>
+              {" · "}
+              <Link href={`/${locale}/tourist-traps`} style={{ color: "var(--bone-dim)", textDecoration: "underline", textUnderlineOffset: "3px" }}>
+                Tourist traps
+              </Link>
+              {" · "}
+              <Link href={`/${locale}/corrections`} style={{ color: "var(--bone-dim)", textDecoration: "underline", textUnderlineOffset: "3px" }}>
+                Corrections
+              </Link>
             </p>
           </section>
-
-          <div className="pt-4 text-sm text-muted-foreground">
-            See also:{" "}
-            <Link
-              href="/editorial-policy"
-              className="underline underline-offset-2 hover:text-foreground"
-            >
-              Editorial policy
-            </Link>
-            {" · "}
-            <Link
-              href="/tourist-traps"
-              className="underline underline-offset-2 hover:text-foreground"
-            >
-              Tourist traps
-            </Link>
-            {" · "}
-            <Link
-              href="/corrections"
-              className="underline underline-offset-2 hover:text-foreground"
-            >
-              Corrections
-            </Link>
-          </div>
         </div>
       </main>
+
+      <CinematicRelatedRail />
       <Footer />
     </div>
   );

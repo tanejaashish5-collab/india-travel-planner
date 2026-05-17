@@ -110,6 +110,15 @@ export function Footer({
     // Phase 3 Tier 6 (S54) — comparison hubs
     `/${locale}/vs`,
     `/${locale}/india-vs`,
+    // Phase 3 Tier 7 (S54) — editorial + brand surfaces
+    `/${locale}/newsletter`,
+    `/${locale}/press`,
+    `/${locale}/editorial-policy`,
+    `/${locale}/corrections`,
+    `/${locale}/transparency`,
+    `/${locale}/sos`,
+    `/${locale}/social`,
+    `/${locale}/more`,
   ];
   const CINEMATIC_PAGE_PREFIXES = [
     `/${locale}/skip-list/`,
