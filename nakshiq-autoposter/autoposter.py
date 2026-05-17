@@ -1048,6 +1048,8 @@ HARDCODED_DEST_BLOCKS: dict[str, str] = {
     "parvati-valley": "2026-06-01",  # user flag 2026-05-17 (YT short repeats)
     "kasol":          "2026-06-01",  # user flag 2026-05-17 (Parvati Valley nearby)
     "kasol-parvati":  "2026-06-01",  # slug variant
+    "tirthan-valley": "2026-06-01",  # user flag 2026-05-17 (posted "so many times")
+    "tirthan":        "2026-06-01",  # slug variant
 }
 
 
