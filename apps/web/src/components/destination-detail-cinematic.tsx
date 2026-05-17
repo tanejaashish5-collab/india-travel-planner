@@ -2347,8 +2347,15 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
         </section>
 
         {/* ───────────────────────────────────────────────
-           ACT IX — The Field (Reviews + Q&A + Notes)
+           ACT IX — The Field (Trip reports + Traveler notes)
            ─────────────────────────────────────────────── */}
+        {/* Gate the entire section on the same predicate the ToC uses
+            (see "dest-act-9" entry in actNav above). Without this, 464 of
+            505 destinations (92%) render the heading + empty wrapper —
+            users see "IX · THE FIELD · TRAVELER NOTES" with nothing below.
+            Caught on Bandipur National Park on 2026-05-17 via user screenshot. */}
+        {((dest.trip_reports?.length ?? 0) > 0 ||
+          (dest.traveler_notes?.length ?? 0) > 0) && (
         <section
           id="dest-act-9"
           className="nq-act-warm"
@@ -2552,6 +2559,7 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
             )}
           </div>
         </section>
+        )}
 
         {/* ───────────────────────────────────────────────
            ACT X — The Itinerary
