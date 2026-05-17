@@ -7,6 +7,8 @@ import { localeAlternates } from "@/lib/seo-utils";
 import { faqPageJsonLd } from "@/lib/faq-schema";
 import { getPrimaryEditor } from "@/lib/editor";
 import Link from "next/link";
+import { CinemaStyles } from "@/components/landing-cinema/cinema-styles";
+import { CinematicRelatedRail } from "@/components/cinematic-related-rail";
 
 export const revalidate = 86400;
 export const dynamicParams = true;
@@ -153,91 +155,212 @@ export default async function QuestionPage({
   );
 
   return (
-    <div className="min-h-screen">
+    <div className="nakshiq-cinema" style={{ minHeight: "100vh" }}>
+      <CinemaStyles />
       {faqLd && (
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
       )}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
       <Nav />
-      <main className="mx-auto max-w-3xl px-4 py-10 sm:py-14">
-        <div className="mb-6 text-sm text-muted-foreground">
-          <Link href={`/${locale}`} className="hover:text-foreground">NakshIQ</Link>
-          {" → "}
-          <Link href={`/${locale}/destination/${id}`} className="hover:text-foreground">{destName}</Link>
-          {" → "}
-          <span className="text-foreground">Q&amp;A</span>
-        </div>
-
-        <div className="mb-4 flex flex-wrap items-center gap-2 font-mono text-[10px] tracking-[0.2em] uppercase text-muted-foreground">
-          <span className="rounded-full border border-primary/30 bg-primary/10 px-2 py-0.5 text-primary">
-            {categoryLabel}
-          </span>
-          {q.traveler_type && (
-            <span className="rounded-full border border-border bg-background/40 px-2 py-0.5">
-              {q.traveler_type}
-            </span>
-          )}
-          {stateName && <span>{stateName}</span>}
-        </div>
-
-        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight mb-6 leading-tight">
-          {q.question}
-        </h1>
-
-        <article className="prose prose-invert max-w-none mb-10">
-          <div className="whitespace-pre-wrap text-base leading-relaxed text-foreground/90">
-            {q.answer}
-          </div>
-        </article>
-
-        <div className="rounded-xl border border-border/60 bg-background/40 p-4 text-xs text-muted-foreground mb-10">
-          {editor && (
-            <p>
-              Answered by{" "}
-              <Link href={`/${locale}/about/team`} className="underline hover:text-foreground">
-                {editor.name}
-              </Link>
-              {" — "}
-              {answeredOn}
-            </p>
-          )}
-          {!editor && <p>Answered {answeredOn}</p>}
-        </div>
-
-        {related.length > 0 && (
-          <section className="border-t border-border pt-8">
-            <h2 className="text-lg font-semibold mb-4">More questions about {destName}</h2>
-            <ul className="space-y-2">
-              {related.map((r) => (
-                <li key={r.id}>
-                  <Link
-                    href={`/${locale}/destination/${id}/q/${r.slug}`}
-                    className="block rounded-xl border border-border bg-background/40 px-4 py-3 text-sm hover:border-primary/40 transition-colors"
-                  >
-                    <span className="font-mono text-[10px] tracking-[0.2em] uppercase text-muted-foreground mr-2">
-                      {CATEGORY_LABEL[r.category] ?? r.category}
-                    </span>
-                    <span>{r.question}</span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </section>
-        )}
-
-        <div className="mt-12 rounded-2xl border border-border bg-background/30 p-6 text-center">
-          <p className="text-sm text-muted-foreground mb-3">
-            Got a different question about {destName}?
-          </p>
-          <Link
-            href={`/${locale}/destination/${id}#section-questions`}
-            className="inline-block rounded-full bg-primary px-5 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
+      <main
+        id="main-content"
+        className="nq-grain"
+        style={{ position: "relative", padding: "140px 24px 64px" }}
+      >
+        <header style={{ maxWidth: 820, margin: "0 auto 40px" }}>
+          <p
+            className="nq-kicker"
+            style={{
+              color: "var(--vermillion)",
+              marginBottom: 20,
+              letterSpacing: "0.22em",
+            }}
           >
-            Ask a question
-          </Link>
+            {stateName ? `${stateName.toUpperCase()} · ` : ""}{destName.toUpperCase()} · Q&amp;A · {categoryLabel.toUpperCase()}
+            {q.traveler_type ? ` · ${q.traveler_type.toUpperCase()}` : ""}
+          </p>
+          <h1
+            className="nq-display"
+            style={{
+              fontFamily: "var(--cinema-display)",
+              fontStyle: "italic",
+              fontWeight: 400,
+              fontSize: "clamp(32px, 5.5vw, 64px)",
+              lineHeight: 1.04,
+              letterSpacing: "-0.02em",
+              margin: 0,
+              textWrap: "balance",
+            }}
+          >
+            {q.question}
+          </h1>
+          <div style={{ marginTop: 20 }}>
+            <Link
+              href={`/${locale}/destination/${id}`}
+              className="nq-mono"
+              style={{
+                fontSize: 11,
+                letterSpacing: "0.18em",
+                textTransform: "uppercase",
+                color: "var(--vermillion)",
+                textDecoration: "none",
+              }}
+            >
+              ← Back to {destName}
+            </Link>
+          </div>
+        </header>
+
+        <div style={{ maxWidth: 820, margin: "0 auto" }}>
+          <article
+            style={{
+              padding: "32px 0",
+              borderTop: "1px solid var(--hair)",
+              borderBottom: "1px solid var(--hair)",
+            }}
+          >
+            <div
+              style={{
+                fontFamily: "var(--cinema-ui)",
+                fontSize: 16,
+                lineHeight: 1.75,
+                color: "var(--bone)",
+                whiteSpace: "pre-wrap",
+              }}
+            >
+              {q.answer}
+            </div>
+          </article>
+
+          <div
+            style={{
+              marginTop: 20,
+              padding: "14px 16px",
+              border: "1px solid var(--hair)",
+              background: "rgba(245, 241, 232, 0.03)",
+              fontFamily: "var(--cinema-mono)",
+              fontSize: 11,
+              letterSpacing: "0.14em",
+              textTransform: "uppercase",
+              color: "var(--bone-faint)",
+            }}
+          >
+            {editor ? (
+              <p style={{ margin: 0 }}>
+                Answered by{" "}
+                <Link
+                  href={`/${locale}/about/team`}
+                  style={{ color: "var(--bone-dim)", textDecoration: "underline" }}
+                >
+                  {editor.name}
+                </Link>
+                {" · "}
+                {answeredOn}
+              </p>
+            ) : (
+              <p style={{ margin: 0 }}>Answered {answeredOn}</p>
+            )}
+          </div>
+
+          {related.length > 0 && (
+            <section style={{ marginTop: 56 }}>
+              <p
+                className="nq-kicker"
+                style={{
+                  color: "var(--vermillion)",
+                  marginBottom: 20,
+                  letterSpacing: "0.22em",
+                }}
+              >
+                MORE QUESTIONS · {destName.toUpperCase()}
+              </p>
+              <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "grid", gap: 12 }}>
+                {related.map((r) => (
+                  <li key={r.id}>
+                    <Link
+                      href={`/${locale}/destination/${id}/q/${r.slug}`}
+                      style={{
+                        display: "block",
+                        padding: "16px 18px",
+                        border: "1px solid var(--hair)",
+                        background: "rgba(245, 241, 232, 0.02)",
+                        textDecoration: "none",
+                        color: "var(--bone)",
+                      }}
+                    >
+                      <span
+                        className="nq-mono"
+                        style={{
+                          fontSize: 10,
+                          letterSpacing: "0.22em",
+                          textTransform: "uppercase",
+                          color: "var(--vermillion)",
+                          marginRight: 10,
+                        }}
+                      >
+                        {CATEGORY_LABEL[r.category] ?? r.category}
+                      </span>
+                      <span
+                        style={{
+                          fontFamily: "var(--cinema-display)",
+                          fontStyle: "italic",
+                          fontWeight: 400,
+                          fontSize: 17,
+                          color: "var(--bone)",
+                        }}
+                      >
+                        {r.question}
+                      </span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )}
+
+          <section
+            style={{
+              marginTop: 56,
+              padding: 32,
+              border: "1px solid var(--vermillion)",
+              background: "rgba(229, 86, 66, 0.04)",
+              textAlign: "center",
+            }}
+          >
+            <p
+              style={{
+                fontFamily: "var(--cinema-display)",
+                fontStyle: "italic",
+                fontWeight: 400,
+                fontSize: 22,
+                lineHeight: 1.3,
+                color: "var(--bone)",
+                margin: "0 0 16px",
+              }}
+            >
+              Got a different question about {destName}?
+            </p>
+            <Link
+              href={`/${locale}/destination/${id}#section-questions`}
+              className="nq-mono"
+              style={{
+                display: "inline-block",
+                fontSize: 11,
+                letterSpacing: "0.22em",
+                textTransform: "uppercase",
+                padding: "12px 22px",
+                background: "var(--vermillion)",
+                color: "var(--paper)",
+                textDecoration: "none",
+              }}
+            >
+              Ask a question →
+            </Link>
+          </section>
         </div>
       </main>
+      <CinematicRelatedRail />
       <Footer />
     </div>
   );

@@ -6,6 +6,8 @@ import { createClient } from "@supabase/supabase-js";
 import { notFound } from "next/navigation";
 import { localeAlternates } from "@/lib/seo-utils";
 import { TripReportForm } from "@/components/trip-report-form";
+import { CinemaStyles } from "@/components/landing-cinema/cinema-styles";
+import { CinematicRelatedRail } from "@/components/cinematic-related-rail";
 
 export const revalidate = 3600;
 
@@ -56,41 +58,135 @@ export default async function ShareTripReportPage({ params }: { params: Promise<
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="nakshiq-cinema" style={{ minHeight: "100vh" }}>
+      <CinemaStyles />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
       <Nav />
-      <main className="mx-auto max-w-3xl px-4 py-12">
-        <div className="mb-6 text-sm text-muted-foreground">
-          <Link href={`/${locale}/destination/${id}`} className="hover:text-foreground">← Back to {dest.name}</Link>
-        </div>
-
-        <h1 className="text-4xl font-semibold mb-3">Share your {dest.name} trip</h1>
-        <p className="text-lg text-muted-foreground mb-2 leading-relaxed">
-          Your on-the-ground notes — what actually worked, what didn't, when you went — help every
-          future traveler make a better call.
-        </p>
-        <p className="text-sm text-muted-foreground mb-8">
-          Reports are moderated. We'll publish with your first name (or anonymously if you prefer).
-          Your email is never shown; we'll only use it if we have a follow-up question.
-        </p>
-
-        <TripReportForm
-          destination_id={id}
-          destination_name={dest.name}
-          state_name={stateName ?? null}
-          locale={locale}
-        />
-
-        <section className="mt-10 rounded-2xl border border-border bg-card/40 p-6 text-sm text-muted-foreground leading-relaxed">
-          <h2 className="text-base font-semibold text-foreground mb-2">How this becomes part of the destination page</h2>
-          <p>
-            Once approved, your summary, month, rating, and body text land on the {dest.name} page
-            under "Travelers report". For now, send any photos to{" "}
-            <Link href={`/${locale}/contact`} className="underline hover:text-primary">editor@nakshiq.com</Link>
-            {" "}— direct photo upload is coming soon.
+      <main
+        id="main-content"
+        className="nq-grain"
+        style={{ position: "relative", padding: "140px 24px 64px" }}
+      >
+        <header style={{ maxWidth: 820, margin: "0 auto 48px" }}>
+          <p
+            className="nq-kicker"
+            style={{
+              color: "var(--vermillion)",
+              marginBottom: 20,
+              letterSpacing: "0.22em",
+            }}
+          >
+            {stateName ? `${stateName.toUpperCase()} · ` : ""}TRAVELER NOTES · REPORT BACK
           </p>
-        </section>
+          <h1
+            className="nq-display"
+            style={{
+              fontFamily: "var(--cinema-display)",
+              fontStyle: "italic",
+              fontWeight: 400,
+              fontSize: "clamp(40px, 7vw, 76px)",
+              lineHeight: 0.98,
+              letterSpacing: "-0.025em",
+              margin: 0,
+              textWrap: "balance",
+            }}
+          >
+            Share your {dest.name} trip.
+          </h1>
+          <p
+            style={{
+              fontFamily: "var(--cinema-display)",
+              fontStyle: "italic",
+              fontWeight: 400,
+              fontSize: "clamp(18px, 2vw, 22px)",
+              lineHeight: 1.4,
+              color: "var(--bone-dim)",
+              marginTop: 24,
+              maxWidth: 640,
+            }}
+          >
+            Your on-the-ground notes — what actually worked, what didn&apos;t, when you went — help
+            every future traveler make a better call.
+          </p>
+          <p
+            className="nq-mono"
+            style={{
+              fontSize: 11,
+              letterSpacing: "0.18em",
+              textTransform: "uppercase",
+              color: "var(--bone-faint)",
+              marginTop: 16,
+            }}
+          >
+            Moderated · published with first name (or anonymous) · email never shown
+          </p>
+          <div style={{ marginTop: 24 }}>
+            <Link
+              href={`/${locale}/destination/${id}`}
+              className="nq-mono"
+              style={{
+                fontSize: 11,
+                letterSpacing: "0.18em",
+                textTransform: "uppercase",
+                color: "var(--vermillion)",
+                textDecoration: "none",
+              }}
+            >
+              ← Back to {dest.name}
+            </Link>
+          </div>
+        </header>
+
+        <div style={{ maxWidth: 820, margin: "0 auto" }}>
+          <TripReportForm
+            destination_id={id}
+            destination_name={dest.name}
+            state_name={stateName ?? null}
+            locale={locale}
+          />
+
+          <section
+            style={{
+              marginTop: 40,
+              padding: 24,
+              border: "1px solid var(--hair)",
+              background: "rgba(245, 241, 232, 0.03)",
+            }}
+          >
+            <p
+              className="nq-kicker"
+              style={{
+                color: "var(--vermillion)",
+                marginBottom: 12,
+                letterSpacing: "0.22em",
+                fontSize: 10,
+              }}
+            >
+              WHAT HAPPENS NEXT
+            </p>
+            <p
+              style={{
+                fontFamily: "var(--cinema-ui)",
+                fontSize: 14,
+                lineHeight: 1.65,
+                color: "var(--bone-dim)",
+                margin: 0,
+              }}
+            >
+              Once approved, your summary, month, rating, and body text land on the {dest.name} page
+              under &ldquo;Travelers report&rdquo;. For now, send any photos to{" "}
+              <Link
+                href={`/${locale}/contact`}
+                style={{ color: "var(--vermillion)", textDecoration: "underline" }}
+              >
+                editor@nakshiq.com
+              </Link>{" "}
+              — direct photo upload is coming soon.
+            </p>
+          </section>
+        </div>
       </main>
+      <CinematicRelatedRail />
       <Footer />
     </div>
   );

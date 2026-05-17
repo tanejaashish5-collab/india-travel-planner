@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { setRequestLocale } from "next-intl/server";
 import { Nav } from "@/components/nav";
+import { Footer } from "@/components/footer";
 import { DestinationMonth } from "@/components/destination-month";
 import { ScrollDepthTracker } from "@/components/scroll-depth-tracker";
 import { createClient } from "@supabase/supabase-js";
@@ -10,6 +11,8 @@ import { AuthorByline } from "@/components/author-byline";
 import { getPrimaryEditor } from "@/lib/editor";
 import { videoObjectJsonLd } from "@/lib/video-schema";
 import { formatScoreInline } from "@itp/shared";
+import { CinemaStyles } from "@/components/landing-cinema/cinema-styles";
+import { CinematicRelatedRail } from "@/components/cinematic-related-rail";
 
 export const revalidate = 86400; // 24h — 5,856 month pages × bots = function-invocation tax. Monthly content doesn't need 6h freshness.
 export const dynamicParams = true;
@@ -651,8 +654,19 @@ export default async function DestinationMonthPage({
     thumbnailUrl: destinationImage(id),
   });
 
+  const verdictLabel =
+    verdict === "go" ? "VISIT" :
+    verdict === "skip" ? "SKIP" :
+    verdict === "wait" ? "WAIT" :
+    score >= 5 ? "PEAK" :
+    score >= 4 ? "GOOD" :
+    score >= 3 ? "MIXED" :
+    score >= 1 ? "CAUTION" : "GUIDE";
+  const masthHead = `${destination.name} in ${monthName}.`;
+
   return (
-    <div className="min-h-screen">
+    <div className="nakshiq-cinema" style={{ minHeight: "100vh" }}>
+      <CinemaStyles />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
@@ -679,29 +693,80 @@ export default async function DestinationMonthPage({
       )}
       <Nav />
       <ScrollDepthTracker page="destination_month" destinationId={id} month={month} />
-      <main className="mx-auto max-w-4xl lg:max-w-6xl px-4 py-8">
-        {editor && (
-          <div className="mb-6">
-            <AuthorByline
-              author={editor}
-              locale={locale}
-              variant="compact"
-              reviewedAt={reviewedAt}
-            />
-          </div>
-        )}
-        <DestinationMonth
-          destination={destination}
-          currentMonth={currentMonth}
-          allMonths={allMonths}
-          monthNum={monthNum}
-          monthSlug={month}
-          monthName={monthName}
-          permits={permits}
-          nearby={nearby}
-          locale={locale}
-        />
+      <main
+        id="main-content"
+        className="nq-grain"
+        style={{ position: "relative", padding: "140px 24px 64px" }}
+      >
+        <header style={{ maxWidth: 1100, margin: "0 auto 48px" }}>
+          <p
+            className="nq-kicker"
+            style={{
+              color: "var(--vermillion)",
+              marginBottom: 20,
+              letterSpacing: "0.22em",
+            }}
+          >
+            {stateName ? `${stateName.toUpperCase()} · ` : ""}{monthName.toUpperCase()} {new Date().getFullYear()} · {verdictLabel} · {formatScoreInline(score).toUpperCase()}
+          </p>
+          <h1
+            className="nq-display"
+            style={{
+              fontFamily: "var(--cinema-display)",
+              fontStyle: "italic",
+              fontWeight: 400,
+              fontSize: "clamp(40px, 7vw, 88px)",
+              lineHeight: 0.98,
+              letterSpacing: "-0.025em",
+              margin: 0,
+              textWrap: "balance",
+            }}
+          >
+            {masthHead}
+          </h1>
+          {(destination as any).tagline && (
+            <p
+              style={{
+                fontFamily: "var(--cinema-display)",
+                fontStyle: "italic",
+                fontWeight: 400,
+                fontSize: "clamp(18px, 2vw, 24px)",
+                lineHeight: 1.4,
+                color: "var(--bone-dim)",
+                marginTop: 24,
+                maxWidth: 720,
+              }}
+            >
+              {(destination as any).tagline}
+            </p>
+          )}
+          {editor && (
+            <div style={{ marginTop: 28 }}>
+              <AuthorByline
+                author={editor}
+                locale={locale}
+                variant="compact"
+                reviewedAt={reviewedAt}
+              />
+            </div>
+          )}
+        </header>
+        <div style={{ maxWidth: 1100, margin: "0 auto" }}>
+          <DestinationMonth
+            destination={destination}
+            currentMonth={currentMonth}
+            allMonths={allMonths}
+            monthNum={monthNum}
+            monthSlug={month}
+            monthName={monthName}
+            permits={permits}
+            nearby={nearby}
+            locale={locale}
+          />
+        </div>
       </main>
+      <CinematicRelatedRail />
+      <Footer />
     </div>
   );
 }
