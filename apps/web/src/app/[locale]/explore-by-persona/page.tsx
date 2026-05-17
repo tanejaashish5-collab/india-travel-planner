@@ -170,7 +170,7 @@ export default async function ExploreByPersonaPage({ params }: { params: Promise
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fill, minmax(320px, 1fr))",
+              gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
               gap: 1,
               background: "var(--hair)",
               border: "1px solid var(--hair)",

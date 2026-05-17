@@ -237,7 +237,7 @@ export function CollectionsCinema({
         }
         @media (min-width: 640px) {
           :global(.nq-collections-grid) {
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 32px;
           }
           :global(.nq-collection-card__body) {

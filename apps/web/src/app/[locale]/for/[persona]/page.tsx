@@ -400,7 +400,7 @@ export default async function PersonaHubPage({
                     <div
                       style={{
                         display: "grid",
-                        gridTemplateColumns: "repeat(auto-fill, minmax(240px, 1fr))",
+                        gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
                         gap: 1,
                         background: "var(--hair)",
                         border: "1px solid var(--hair)",

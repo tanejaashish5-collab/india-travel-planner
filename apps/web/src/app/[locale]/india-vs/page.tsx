@@ -117,7 +117,7 @@ export default async function IndiaVsIndexPage({
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fill, minmax(320px, 1fr))",
+              gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
               gap: 1,
               background: "var(--hair)",
               border: "1px solid var(--hair)",

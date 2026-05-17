@@ -390,7 +390,7 @@ export default async function StateHubPage({
                   <div
                     style={{
                       display: "grid",
-                      gridTemplateColumns: "repeat(auto-fill, minmax(240px, 1fr))",
+                      gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
                       gap: 12,
                     }}
                   >
@@ -429,7 +429,7 @@ export default async function StateHubPage({
                   <div
                     style={{
                       display: "grid",
-                      gridTemplateColumns: "repeat(auto-fill, minmax(240px, 1fr))",
+                      gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
                       gap: 1,
                       background: "var(--hair)",
                       border: "1px solid var(--hair)",
@@ -565,7 +565,7 @@ export default async function StateHubPage({
                   marginBottom: 56,
                   scrollMarginTop: 128,
                   display: "grid",
-                  gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))",
+                  gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
                   gap: 1,
                   background: "var(--hair)",
                   border: "1px solid var(--hair)",

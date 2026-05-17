@@ -163,7 +163,7 @@ export default async function FestivalsByStatePage({ params }: { params: Promise
               <div
                 style={{
                   display: "grid",
-                  gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))",
+                  gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
                   gap: 1,
                   background: "var(--hair)",
                   border: "1px solid var(--hair)",

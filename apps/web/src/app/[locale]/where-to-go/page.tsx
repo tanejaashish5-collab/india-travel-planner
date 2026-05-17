@@ -205,7 +205,7 @@ export default async function WhereToGoIndex({
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))",
+              gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
               gap: 1,
               background: "var(--hair)",
               border: "1px solid var(--hair)",
