@@ -8,6 +8,7 @@ import { UserButton } from "./user-button";
 import { SearchCommand } from "./search-command";
 import { NavMegaMenu, type PanelType } from "./nav-mega-menu";
 import { InternationalBanner } from "./international-banner";
+import { CinematicMoreOverlay } from "./cinematic-more-overlay";
 import { m as motion } from "framer-motion";
 import { useState, useEffect, useRef, useCallback } from "react";
 import { CINEMATIC_DESTINATIONS } from "@/lib/cinematic-destinations";
@@ -19,6 +20,7 @@ export function Nav() {
   const [searchOpen, setSearchOpen] = useState(false);
   const [activePanel, setActivePanel] = useState<PanelType>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [moreOpen, setMoreOpen] = useState(false);
   const closeTimer = useRef<NodeJS.Timeout | null>(null);
 
   // Cinematic-redesigned routes use the magazine-style nav (vs. the legacy
@@ -96,6 +98,7 @@ export function Nav() {
   useEffect(() => {
     setActivePanel(null);
     setMobileMenuOpen(false);
+    setMoreOpen(false);
   }, [pathname]);
 
   // Lock body scroll while the cinematic mobile menu is open
@@ -238,10 +241,63 @@ export function Nav() {
               ))}
             </nav>
 
-            {/* Right — ISSUE badge (desktop) / hamburger (mobile) */}
-            <span className="hidden md:inline font-mono text-[11px] uppercase tracking-[0.18em] text-[#F5F1E8]/60 whitespace-nowrap">
-              ISSUE Nº {issueNum} · {monthLabel}
-            </span>
+            {/* Right cluster (desktop) — utility controls + MORE + ISSUE badge.
+                Restored after the cinematic flip stripped these. Cream-on-dark
+                so the editorial chrome stays visually quiet. */}
+            <div className="hidden md:flex items-center gap-1">
+              <button
+                type="button"
+                onClick={() => setSearchOpen(true)}
+                aria-label="Search (⌘K)"
+                title="Search (⌘K)"
+                className="p-2 text-[#F5F1E8]/75 hover:text-[#F5F1E8] transition-colors"
+              >
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="11" cy="11" r="8" />
+                  <path d="m21 21-4.3-4.3" />
+                </svg>
+              </button>
+              <button
+                type="button"
+                onClick={() => window.dispatchEvent(new Event("asknakshiq:open"))}
+                aria-label="Ask NakshIQ"
+                title="Ask NakshIQ"
+                className="p-2 text-[#F5F1E8]/75 hover:text-[#F5F1E8] transition-colors"
+              >
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                  <path d="M9.5 9h.01" />
+                  <path d="M14.5 9h.01" />
+                  <path d="M9 13a3 3 0 0 0 6 0" />
+                </svg>
+              </button>
+              {/* Language toggle — minimal cream-on-dark variant. Mobile menu
+                  still uses the default LanguageToggle component. */}
+              <button
+                type="button"
+                onClick={() => {
+                  const next = locale === "en" ? "hi" : "en";
+                  const segments = pathname.split("/");
+                  segments[1] = next;
+                  window.location.href = segments.join("/");
+                }}
+                aria-label={`Switch to ${locale === "en" ? "Hindi" : "English"}`}
+                className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#F5F1E8]/75 hover:text-[#F5F1E8] transition-colors px-2 py-2"
+              >
+                {locale === "en" ? "हि" : "EN"}
+              </button>
+              <button
+                type="button"
+                onClick={() => setMoreOpen(true)}
+                aria-label="More"
+                className="font-[var(--font-geist-sans)] font-medium text-[12px] uppercase tracking-[0.18em] text-[#F5F1E8]/85 hover:text-[#F5F1E8] transition-colors whitespace-nowrap px-3 py-2"
+              >
+                {t("more")}
+              </button>
+              <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#F5F1E8]/60 whitespace-nowrap ml-2">
+                ISSUE Nº {issueNum} · {monthLabel}
+              </span>
+            </div>
             <button
               type="button"
               onClick={() => setMobileMenuOpen(true)}
@@ -292,6 +348,40 @@ export function Nav() {
                   {item.label}
                 </Link>
               ))}
+              {/* Utility row — mobile users can also tap to open Search,
+                  AskNakshIQ, and the MORE sitemap from this overlay. */}
+              <div className="mt-6 flex items-center gap-2 flex-wrap">
+                <button
+                  type="button"
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    setSearchOpen(true);
+                  }}
+                  className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#F5F1E8]/85 hover:text-[#F5F1E8] border border-white/15 rounded-full px-4 py-2 transition-colors"
+                >
+                  Search
+                </button>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    window.dispatchEvent(new Event("asknakshiq:open"));
+                  }}
+                  className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#F5F1E8]/85 hover:text-[#F5F1E8] border border-white/15 rounded-full px-4 py-2 transition-colors"
+                >
+                  Ask
+                </button>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    setMoreOpen(true);
+                  }}
+                  className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#F5F1E8]/85 hover:text-[#F5F1E8] border border-white/15 rounded-full px-4 py-2 transition-colors"
+                >
+                  More
+                </button>
+              </div>
               <div className="mt-8 flex items-center justify-between">
                 <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-[#F5F1E8]/60">
                   ISSUE Nº {issueNum} · {monthLabel}
@@ -303,6 +393,7 @@ export function Nav() {
         )}
 
         <SearchCommand open={searchOpen} onClose={() => setSearchOpen(false)} />
+        <CinematicMoreOverlay open={moreOpen} onClose={() => setMoreOpen(false)} />
       </>
     );
   }

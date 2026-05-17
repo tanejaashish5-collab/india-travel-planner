@@ -98,6 +98,7 @@ import { CinematicHeroParallax } from "./cinematic-hero-parallax";
 import { CinematicMobileActionBar } from "./cinematic-mobile-action-bar";
 import { CinematicNewsletter } from "./cinematic-newsletter";
 import { CinematicHiddenGems } from "./cinematic-hidden-gems";
+import { CinematicRelatedRail } from "./cinematic-related-rail";
 import { HonestScarcityPanel } from "./honest-scarcity-panel";
 import { isHonestScarcityConfirmed } from "@/lib/honest-scarcity";
 
@@ -2587,6 +2588,15 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
 
           </div>
         </section>
+
+        {/* ───────────────────────────────────────────────
+           Cross-category rail — bridges destination → blog/guide/
+           routes/etc. so every destination gains 8 outbound links
+           to legacy content hubs. Phase 1 stabilize (S54).
+           Static curated cards for now; upgrade to per-destination
+           dynamic queries in Phase 4 SEO hardening.
+           ─────────────────────────────────────────────── */}
+        <CinematicRelatedRail />
 
         {/* ───────────────────────────────────────────────
            ACT XI — The Coda (Collections, Routes, Ask, Share)
