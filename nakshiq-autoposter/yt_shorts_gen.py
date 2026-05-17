@@ -143,30 +143,57 @@ def _iter_dest_videos():
 
 
 def _find_video(dest_slug: str) -> Optional[Path]:
-    """Find the best matching video for a destination slug."""
+    """Find the best matching video for a destination slug.
+
+    2026-05-17 (Tier 7 Phase 1.6): tightened matching to prevent cross-dest
+    contamination. The old `slug in name or name in slug` substring match
+    let "parvati" match "kasol-parvati" (different destination). Now:
+      1. exact match wins (rank 3)
+      2. multi-token overlap (≥2 non-stopword tokens) qualifies (rank 2)
+      3. substring match only if the substring is the FULL stem (no
+         half-word like "tehri" matching "tehri-garhwal" unless tehri is
+         a genuine prefix-with-hyphen — that's rank 1)
+    Returns the highest-rank candidate; ties broken by lexicographic order
+    for determinism.
+    """
     if not VIDEOS_DIR.exists():
         return None
     slug = dest_slug.lower().replace(" ", "-").replace("_", "-")
     slug_parts = set(slug.split("-"))
+    stop = {"national", "park", "lake", "valley", "falls", "fort", "temple",
+            "village", "town", "city", "of", "the"}
+    slug_nonstop = slug_parts - stop
 
     candidates = []
     for p in _iter_dest_videos():
         name = p.stem.lower().replace("video_", "").replace("state-", "")
+        name_parts = set(name.split("-"))
+        name_nonstop = name_parts - stop
 
         if name == slug:
-            return p
-        if slug in name or name in slug:
-            candidates.append((2, p))
+            return p  # exact match, return immediately
+
+        # Hyphen-delimited prefix match: slug = "tehri" matches
+        # "tehri-garhwal" because "tehri-" is a complete token, NOT
+        # "tehri-foo" matching unrelated "foo-tehri"
+        if name.startswith(slug + "-") or slug.startswith(name + "-"):
+            candidates.append((2, p.stem, p))
             continue
-        name_parts = set(name.split("-"))
-        stop = {"national", "park", "lake", "valley", "falls", "fort", "temple"}
-        overlap = (slug_parts - stop) & (name_parts - stop)
-        if overlap:
-            candidates.append((1, p))
+
+        # Multi-token overlap (≥2 non-stopwords)
+        overlap = slug_nonstop & name_nonstop
+        if len(overlap) >= 2:
+            candidates.append((2, p.stem, p))
+            continue
+
+        # Single non-stopword overlap — weak signal, accept only if both
+        # slugs are single-word (then it's effectively equality)
+        if len(overlap) == 1 and len(slug_nonstop) == 1 and len(name_nonstop) == 1:
+            candidates.append((1, p.stem, p))
 
     if candidates:
-        candidates.sort(key=lambda x: -x[0])
-        return candidates[0][1]
+        candidates.sort(key=lambda x: (-x[0], x[1]))
+        return candidates[0][2]
     return None
 
 

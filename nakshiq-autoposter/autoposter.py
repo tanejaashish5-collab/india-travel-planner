@@ -803,6 +803,15 @@ def load_state() -> dict:
         #   destinations, collections, festivals, articles, audience_tags,
         #   routes, traps, reels (destinations used specifically in Reels).
         "theme_usage":         {},
+        # 2026-05-17 (Tier 7 Phase 1.1): operator-curated runtime block list
+        # with ISO expiry per entry. Without an explicit default, save_state
+        # writes the state without this key, then the next load can't tell
+        # whether the field was wiped or never set — so a manual edit could
+        # silently vanish (caught 2026-05-16: my manual block of pahalgam
+        # got overwritten and pahalgam re-posted same evening).
+        # The DURABLE block list is HARDCODED_DEST_BLOCKS (module constant);
+        # this state-based map is for runtime/operator additions on top.
+        "manual_skip_dests":   {},
     }
     if STATE_FILE.exists():
         with open(STATE_FILE, encoding="utf-8") as f:
@@ -1135,7 +1144,14 @@ def pick_oldest_unused(state: dict, dimension: str, items: list,
 
 
 def mark_theme_used(state: dict, dimension: str, item_id: str):
-    """Stamp today's date on this item in the given dimension."""
+    """Stamp today's date on this item in the given dimension.
+
+    2026-05-17 (Tier 7 Phase 1.5): also GC the dimension's bucket on each
+    write. Entries whose LATEST timestamp is >90 days old are dropped so a
+    destination featured 12+ months ago becomes eligible again. Without GC,
+    `pick_oldest_unused` saw old entries as "used forever", locking out
+    destinations that should be back in the pool.
+    """
     today = date.today().isoformat()
     bucket = theme_bucket(state, dimension)
     hist = bucket.setdefault(item_id, [])
@@ -1143,6 +1159,14 @@ def mark_theme_used(state: dict, dimension: str, item_id: str):
         hist.append(today)
     # Keep history bounded (365 days per item is plenty)
     bucket[item_id] = hist[-365:]
+
+    # GC: drop ANY item whose latest stamp is older than 90 days. Run on
+    # every write but only iterates the dimension being written, so cost
+    # is bounded to ~few hundred items per dimension.
+    gc_cutoff = (date.today() - timedelta(days=90)).isoformat()
+    stale = [iid for iid, h in bucket.items() if h and h[-1] < gc_cutoff]
+    for iid in stale:
+        del bucket[iid]
 
 
 def mark_themes_batch(state: dict, dimension: str, items: list, key: str = "id"):
@@ -6095,6 +6119,19 @@ def _run_canva_visual(force: bool = False, dry_run: bool = False):
         cat_images = available
         chosen_cat = cat_images[0]["category"]
 
+    # 2026-05-17 (Tier 7 Phase 1.4): filter out images whose destination has
+    # already been posted this calendar month (or is hardcoded-blocked).
+    # Without this, Canva visual can re-post Pahalgam mid-month even though
+    # the main loop already covered it.
+    used = recently_used_destinations(st)
+    cat_images_fresh = [i for i in cat_images
+                       if (i.get("destination") or i.get("dest_id") or "") not in used]
+    if cat_images_fresh:
+        cat_images = cat_images_fresh
+    else:
+        log.info(f"canva_visual: all {len(cat_images)} images in '{chosen_cat}' "
+                 f"already covered this month — falling back to original pool")
+
     img_items = [{"id": img["file"], **img} for img in cat_images]
     img_ordered = pick_oldest_unused(st, "canva_images", img_items, key="id")
     chosen_img = img_ordered[0]
@@ -6663,6 +6700,22 @@ def _run_pomelli_visual(force: bool = False, dry_run: bool = False):
         camp_images = available
         chosen_camp = camp_images[0]["campaign"]
 
+    # 2026-05-17 (Tier 7 Phase 1.4): respect once-per-calendar-month rule —
+    # drop images whose `destination` field is in the dedupe set. Pomelli
+    # images carry a `destination` slug; falling back to filename parsing
+    # if absent. If filtering empties the campaign pool, keep original
+    # (better a same-campaign repeat than no post at all).
+    used = recently_used_destinations(st)
+    camp_images_fresh = [i for i in camp_images
+                        if (i.get("destination")
+                            or Path(i["file"]).stem.rsplit("_", 1)[0].replace("pomelli_", "")
+                            or "") not in used]
+    if camp_images_fresh:
+        camp_images = camp_images_fresh
+    else:
+        log.info(f"pomelli_visual: all {len(camp_images)} images in '{chosen_camp}' "
+                 f"cover already-posted dests — falling back to original pool")
+
     img_items = [{"id": img["file"], **img} for img in camp_images]
     img_ordered = pick_oldest_unused(st, "pomelli_images", img_items, key="id")
     chosen_img = img_ordered[0]
@@ -7092,6 +7145,22 @@ def _run_flow_story(force: bool = False, dry_run: bool = False):
         # Try exact match, then lowercase
         s = score_lookup.get(dest) or score_lookup.get(dest.lower()) or 0
         return s
+
+    # 2026-05-17 (Tier 7 Phase 1.4): drop entries whose dest is already posted
+    # this month BEFORE tiering. Without this, flow_story could pick a dest
+    # the main loop already covered.
+    used = recently_used_destinations(st)
+    pre_dedupe = len(with_dest)
+    with_dest = [e for e in with_dest if (e.get("dest")
+                                          or dest_id_lookup.get(e.get("dest_name", ""))
+                                          or "") not in used
+                                       and (dest_id_lookup.get(e.get("dest", ""))
+                                            or "") not in used]
+    if pre_dedupe != len(with_dest):
+        log.info(f"flow_story: filtered {pre_dedupe} → {len(with_dest)} after once-per-month dedupe")
+    if not with_dest:
+        log.info("flow_story: all dest-matched images already covered this month — SKIPPING")
+        return
 
     # Sort dest-matched pool: high-scoring destinations first, then by name for stability
     # Within each score tier, pick_oldest_unused still handles anti-repetition
@@ -7708,6 +7777,19 @@ def _run_reel(force: bool = False, dry_run: bool = False):
             )
         else:
             log.warning(f"[{label}] ⚠️  Reel queued but NOT confirmed (post_id={post_id}).")
+            # 2026-05-17 (Tier 7 Phase 1.2): also write to post_log on
+            # queued_unconfirmed so an in-flight reel BLOCKS subsequent flows
+            # from picking the same dest while Outstand processes async.
+            # Without this, a parallel main-loop run could pick Pahalgam
+            # while the reel is mid-flight and we'd get same-day duplicates.
+            record_publish(
+                st,
+                dest_id=reel_dest_id,
+                fmt=f"reel.{chosen_format}",
+                post_id=post_id,
+                platform=platform,
+                media_id=media_filename,
+            )
             _log_post_outcome(
                 post_id=post_id, dest_id=reel_dest_id,
                 fmt=f"reel.{chosen_format}", media_id=media_filename,
@@ -7999,6 +8081,17 @@ def _run_reel_map(force: bool = False, dry_run: bool = False):
             )
         else:
             log.warning(f"[{label}] ⚠️  Reel queued but NOT confirmed (post_id={post_id}).")
+            # 2026-05-17 (Tier 7 Phase 1.2): mirror Phase 1.2 of _run_reel —
+            # write to post_log on queued_unconfirmed so cross-flow dedupe
+            # sees the in-flight post. dest_id=None for reel_map (campaign-driven).
+            record_publish(
+                st,
+                dest_id=None,
+                fmt=f"reel_map.{chosen_format}",
+                post_id=post_id,
+                platform=platform,
+                media_id=media_filename,
+            )
             _log_post_outcome(
                 post_id=post_id, dest_id=None,
                 fmt=f"reel_map.{chosen_format}", media_id=media_filename,
@@ -8081,6 +8174,19 @@ def _run_ugc(force: bool = False, dry_run: bool = False):
     category = result.get("category", "unknown")
 
     log.info(f"Avatar: {avatar_name} | Dest: {dest} | Category: {category}")
+
+    # 2026-05-17 (Tier 7 Phase 1.4): once-per-calendar-month dedupe for UGC.
+    # The dest is determined inside generate_ugc() so we check post-hoc.
+    # This wastes one HeyGen credit when blocked, but UGC fires manually only
+    # (cron paused) and the alternative is letting Pahalgam appear again.
+    used = recently_used_destinations(st)
+    dest_id_candidate = (result.get("dest_id")
+                          or dest.lower().replace(" ", "-")
+                          or "")
+    if dest_id_candidate in used:
+        log.info(f"UGC for dest '{dest_id_candidate}' is BLOCKED by once-per-month / hardcoded — SKIPPING publish")
+        save_state(st)
+        return
 
     if dry_run:
         log.info(f"DRY RUN — script generated, skipping upload.")
@@ -8495,7 +8601,18 @@ def _run_yt_short(force: bool = False, dry_run: bool = False):
             )
         else:
             log.warning(f"[{label}] ⚠️  YT Short queued but NOT confirmed (post_id={post_id}). May have silently failed.")
-            # Surface ghost posts in the watchdog instead of dropping silently.
+            # 2026-05-17 (Tier 7 Phase 1.3): also write to post_log on
+            # queued_unconfirmed so cross-flow dedupe sees the in-flight
+            # YT Short. Without this, a parallel reel/main run could pick
+            # the same dest while Outstand processes async.
+            record_publish(
+                st,
+                dest_id=primary_dest_id,
+                fmt=f"yt_short.{fmt}",
+                post_id=post_id,
+                platform=platform,
+                media_id=media_filename,
+            )
             _log_post_outcome(
                 post_id=post_id, dest_id=primary_dest_id,
                 fmt=f"yt_short.{fmt}", media_id=media_filename,
