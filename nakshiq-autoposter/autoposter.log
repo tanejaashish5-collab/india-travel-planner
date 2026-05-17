@@ -1,6 +1,35 @@
-2026-05-17 07:17:13  INFO      ════════════════════════════════════════════════════════════
-2026-05-17 07:17:13  INFO      Nakshiq Autoposter · MORNING · 2026-05-17 · weekday=6
-2026-05-17 07:17:13  INFO      ════════════════════════════════════════════════════════════
-2026-05-17 07:17:13  INFO      ── Syncing Nakshiq content ──────────────────────────────
-2026-05-17 07:17:33  INFO      Synced → 20 destinations · 0 traps · 0 articles · 23 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 50 camping · 50 gems · total catalog=505
-2026-05-17 07:17:33  INFO      Sync-only mode. Done.
+2026-05-17 07:35:22  INFO      ════════════════════════════════════════════════════════════
+2026-05-17 07:35:22  INFO      Nakshiq Autoposter · MORNING · 2026-05-17 · weekday=6
+2026-05-17 07:35:22  INFO      ════════════════════════════════════════════════════════════
+2026-05-17 07:35:22  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-05-17 07:35:43  INFO      Synced → 20 destinations · 0 traps · 0 articles · 23 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 50 camping · 50 gems · total catalog=505
+2026-05-17 07:35:43  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-05-17 07:35:43  INFO      Festivals filtered (past/post-window): Kedarnath Opening, Summer Festival, Badri-Kedar Festival, Chaukori Tea Festival, Chail Cricket Festival, Guptkashi Vishwanath Temple Festival, Tosamaidan Wildflower Season, Badrinath Temple Opening (Kapaat Kholna) (+9 more)
+2026-05-17 07:35:43  INFO      Morning format (pillar-biased→verdict): score_card [0% vs target 40%] (7/7 never featured)
+2026-05-17 07:35:43  INFO      Formats — IG: score_card  ·  FB: score_card  ·  Story: score_card
+2026-05-17 07:35:43  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 6
+2026-05-17 07:35:43  INFO      Fingerprint dedup snapshot — 6 dests in 7d · 27 (dest,fmt) pairs in 30d · 0 media in 60d
+2026-05-17 07:35:46  INFO      Shared best destination locked: Pithoragarh
+2026-05-17 07:35:46  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-05-17 07:35:46  INFO      [instagram/nakshiq] Generating score_card post...
+2026-05-17 07:35:46  INFO      [instagram/nakshiq] Caption ready (329 chars, dest=pithoragarh)
+2026-05-17 07:35:46  INFO      [instagram/nakshiq] Video available — uploading for Reel...
+2026-05-17 07:35:46  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/pithoragarh.mp4?v=20260512
+2026-05-17 07:35:47  INFO          Requesting upload URL for pithoragarh.mp4 (7,974,692 bytes, video/mp4)
+2026-05-17 07:35:48  INFO          Uploading to R2 (timeout=300s)...
+2026-05-17 07:35:49  INFO          R2 PUT OK. Confirming...
+2026-05-17 07:35:50  INFO          Media ready: MdkzC (7,974,692 bytes · pithoragarh.mp4)
+2026-05-17 07:35:50  INFO      [instagram/nakshiq] Publishing Reel...
+2026-05-17 07:36:20  INFO      [instagram/nakshiq] ✅ Published · Outstand=Z8QYu · Platform=18068002472691070
+2026-05-17 07:36:20  INFO      [facebook/Nakshiq] Generating score_card post...
+2026-05-17 07:36:20  INFO      [facebook/Nakshiq] Caption ready (484 chars, dest=pithoragarh)
+2026-05-17 07:36:21  INFO      [facebook/Nakshiq] Video available — uploading for Reel...
+2026-05-17 07:36:21  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/pithoragarh.mp4?v=20260512
+2026-05-17 07:36:21  INFO          Requesting upload URL for pithoragarh.mp4 (7,974,692 bytes, video/mp4)
+2026-05-17 07:36:22  INFO          Uploading to R2 (timeout=300s)...
+2026-05-17 07:36:23  INFO          R2 PUT OK. Confirming...
+2026-05-17 07:36:24  INFO          Media ready: iwEJB (7,974,692 bytes · pithoragarh.mp4)
+2026-05-17 07:36:24  INFO      [facebook/Nakshiq] Publishing Reel...
+2026-05-17 07:36:39  INFO      [facebook/Nakshiq] ✅ Published · Outstand=N0X2a · Platform=1987810401834798
+2026-05-17 07:36:39  INFO      State saved. Run complete.
+2026-05-17 07:36:39  INFO      ════════════════════════════════════════════════════════════
