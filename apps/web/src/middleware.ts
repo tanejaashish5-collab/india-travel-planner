@@ -131,8 +131,10 @@ export default function middleware(request: NextRequest) {
   // STATE_AND_DESTINATION: slugs that are BOTH a state and a real destination
   // row (city-states / UTs where the city == the state). For these, the
   // destination page wins — skip the redirect or the destination page never
-  // renders. Caught after the Delhi eateries section silently disappeared.
-  const STATE_AND_DESTINATION = new Set(["delhi"]);
+  // renders. Caught after the Delhi eateries section silently disappeared,
+  // re-caught 2026-05-17 when /en/state/chandigarh's destination cards
+  // silently bounced back to the same state page (same pattern for puducherry).
+  const STATE_AND_DESTINATION = new Set(["delhi", "chandigarh", "puducherry"]);
 
   // Non-locale-prefixed state redirect: /destination/{stateId} → /en/state/{stateId}
   // Without this, the chain is /destination/X → /en/destination/X → /en/state/X (2 hops).
