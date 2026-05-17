@@ -61,6 +61,8 @@ export function Nav() {
   // Dynamic segments — body is cinematic on any matching descendant route.
   const CINEMATIC_PAGE_PREFIXES = [
     `/${locale}/skip-list/`,
+    `/${locale}/blog/`,
+    `/${locale}/guide/scenarios/`,
   ];
   const isCinematicPage =
     CINEMATIC_PAGE_PATHS.includes(pathname) ||

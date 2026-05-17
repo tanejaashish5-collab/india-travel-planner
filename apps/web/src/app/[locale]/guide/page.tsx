@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { createClient } from "@supabase/supabase-js";
 import { GuideContent } from "@/components/guide-content";
+import { CinemaStyles } from "@/components/landing-cinema/cinema-styles";
+import { Title } from "@/components/landing-cinema/editorial";
+import { CinematicRelatedRail } from "@/components/cinematic-related-rail";
 import { localeAlternates } from "@/lib/seo-utils";
-import { currentMonthIST } from "@itp/shared";
+import { currentMonthIST, currentMonthLongIST } from "@itp/shared";
 
 // 1-hour ISR window so the month rollover flips within ~1h after IST
 // midnight instead of up to ~24h. Combined with IST-aware currentMonth
@@ -15,9 +17,8 @@ export const revalidate = 3600;
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   return {
-  title: "Travel Guides — Data-Driven Destination Intelligence",
-  description: "In-depth travel guides for 340+ India destinations. Best time to visit, costs, family suitability, infrastructure reality, and honest opinions.",
-
+    title: "Travel Guides — Data-Driven Destination Intelligence",
+    description: "In-depth travel guides for 340+ India destinations. Best time to visit, costs, family suitability, infrastructure reality, and honest opinions.",
     ...localeAlternates(locale, "/guide"),
   };
 }
@@ -35,14 +36,10 @@ async function getGuideData() {
       .from("destinations")
       .select("id, name, difficulty, elevation_m, best_months, state:states(name), kids_friendly(suitable, rating, min_recommended_age, reasons)")
       .order("name"),
-    // Popular comparison pairs from tourist_trap_alternatives
     supabase
       .from("tourist_trap_alternatives")
       .select("trap_destination_id, alternative_destination_id, destinations!tourist_trap_alternatives_trap_destination_id_fkey(name), destination:destinations!tourist_trap_alternatives_alternative_destination_id_fkey(name)")
       .limit(20),
-    // Current-month scores for the "Best Time to Visit" section. One row
-    // per destination for this month — used to surface destinations where
-    // NOW is genuinely 4-5/5 instead of the old alphabetical slice.
     supabase
       .from("destination_months")
       .select("destination_id, score, note")
@@ -59,39 +56,100 @@ async function getGuideData() {
 
 export default async function GuidesPage() {
   const { destinations, comparisons, monthScores, currentMonth } = await getGuideData();
+  const monthLabel = currentMonthLongIST();
+
+  const breadcrumbLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.nakshiq.com" },
+      { "@type": "ListItem", position: 2, name: "Guides", item: "https://www.nakshiq.com/en/guide" },
+    ],
+  };
 
   return (
-    <div className="min-h-screen">
+    <div className="nakshiq-cinema" style={{ minHeight: "100vh" }}>
+      <CinemaStyles />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+      />
       <Nav />
 
-      {/* Hero Banner */}
-      <section className="relative h-48 sm:h-64 overflow-hidden mb-8">
-        <Image
-          src="/images/destinations/spiti-valley.jpg"
-          alt="Travel guides hero"
-          fill
-          sizes="100vw"
-          priority
-          className="object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
-        <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 max-w-5xl mx-auto">
-          <p className="text-sm font-medium text-primary uppercase tracking-[0.08em] mb-2">
-            Field guides
+      <main
+        id="main-content"
+        className="nq-grain"
+        style={{ position: "relative", padding: "140px 24px 64px" }}
+      >
+        <header style={{ maxWidth: 1100, margin: "0 auto 56px" }}>
+          <p
+            className="nq-kicker"
+            style={{
+              color: "var(--vermillion)",
+              marginBottom: 24,
+              letterSpacing: "0.22em",
+            }}
+          >
+            FIELD GUIDES · {String(destinations.length).padStart(3, "0")} DESTINATIONS
           </p>
-          <h1 className="text-3xl font-semibold sm:text-4xl text-white drop-shadow-lg">
-            Travel guides
-          </h1>
-          <p className="mt-2 text-white/80">
-            Data-driven guides for {destinations.length} destinations.
+          <Title
+            as="h1"
+            className="nq-display"
+            style={{
+              fontFamily: "var(--cinema-display)",
+              fontStyle: "italic",
+              fontWeight: 400,
+              fontSize: "clamp(40px, 7vw, 88px)",
+              lineHeight: 0.98,
+              letterSpacing: "-0.025em",
+              margin: 0,
+              textWrap: "balance",
+            }}
+          >
+            Travel guides.
+          </Title>
+          <p
+            style={{
+              fontFamily: "var(--cinema-display)",
+              fontStyle: "italic",
+              fontWeight: 400,
+              fontSize: "clamp(18px, 2vw, 24px)",
+              lineHeight: 1.4,
+              color: "var(--bone-dim)",
+              marginTop: 24,
+              maxWidth: 720,
+            }}
+          >
+            Data-driven guides for {destinations.length} India destinations.
+            Best time to visit, costs, family suitability, infrastructure
+            reality, and honest opinions.
           </p>
-        </div>
-      </section>
+          <p
+            className="nq-mono"
+            style={{
+              fontFamily: "var(--cinema-mono)",
+              fontSize: 11,
+              letterSpacing: "0.22em",
+              textTransform: "uppercase",
+              color: "var(--bone-faint)",
+              marginTop: 28,
+            }}
+          >
+            Filter by month, region, difficulty · Current month {monthLabel}
+          </p>
+        </header>
 
-      <main>
-        <GuideContent destinations={destinations} comparisons={comparisons} monthScores={monthScores} currentMonth={currentMonth} />
+        <div style={{ maxWidth: 1100, margin: "0 auto" }}>
+          <GuideContent
+            destinations={destinations}
+            comparisons={comparisons}
+            monthScores={monthScores}
+            currentMonth={currentMonth}
+          />
+        </div>
       </main>
 
+      <CinematicRelatedRail />
       <Footer />
     </div>
   );

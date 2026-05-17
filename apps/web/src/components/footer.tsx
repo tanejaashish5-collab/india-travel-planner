@@ -86,7 +86,11 @@ export function Footer({
     `/${locale}/guide/book-indian-trains`,
     `/${locale}/guide/first-trip-india`,
   ];
-  const CINEMATIC_PAGE_PREFIXES = [`/${locale}/skip-list/`];
+  const CINEMATIC_PAGE_PREFIXES = [
+    `/${locale}/skip-list/`,
+    `/${locale}/blog/`,
+    `/${locale}/guide/scenarios/`,
+  ];
   const isCinematicPage =
     CINEMATIC_PAGE_PATHS.includes(pathname) ||
     CINEMATIC_PAGE_PREFIXES.some((p) => pathname.startsWith(p));

@@ -4,6 +4,8 @@ import { notFound } from "next/navigation";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { BlogArticle } from "@/components/blog-article";
+import { CinemaStyles } from "@/components/landing-cinema/cinema-styles";
+import { CinematicRelatedRail } from "@/components/cinematic-related-rail";
 import { createClient } from "@supabase/supabase-js";
 
 export const revalidate = 86400;
@@ -163,7 +165,8 @@ export default async function BlogArticlePage({ params }: { params: Promise<{ sl
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="nakshiq-cinema" style={{ minHeight: "100vh" }}>
+      <CinemaStyles />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
@@ -173,9 +176,30 @@ export default async function BlogArticlePage({ params }: { params: Promise<{ sl
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
       />
       <Nav />
-      <main className="mx-auto max-w-4xl lg:max-w-6xl px-4 py-8">
-        <BlogArticle article={article} destinations={destinations} relatedArticles={related} adjacentArticles={adjacent} locale={locale} />
+      <main
+        id="main-content"
+        className="nq-grain"
+        style={{
+          position: "relative",
+          padding: "120px 16px 64px",
+        }}
+      >
+        <div
+          style={{
+            maxWidth: 1100,
+            margin: "0 auto",
+          }}
+        >
+          <BlogArticle
+            article={article}
+            destinations={destinations}
+            relatedArticles={related}
+            adjacentArticles={adjacent}
+            locale={locale}
+          />
+        </div>
       </main>
+      <CinematicRelatedRail />
       <Footer />
     </div>
   );
