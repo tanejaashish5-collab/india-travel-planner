@@ -144,6 +144,38 @@ FORMAT_PILLARS = {
 # pillars whose actual 7-day share is BELOW these targets. Total = 1.0.
 # Anti-trap structurally has only 1 format in the pool today, so its target
 # is the share the rotation should TRY to hit, not a hard ceiling.
+WEEK_OF_MONTH_BIAS = {
+    # 2026-05-17 Tier 7 Phase 3 — narrative arc within a calendar month.
+    # Each week of the month biases the picker toward a pillar group so
+    # followers anticipate a rhythm (without breaking the once-per-month
+    # rule). Week numbers are 1-indexed; week 5 (days 29-31) acts as
+    # catch-up — no bias, picker uses deficit-share fallback.
+    #
+    # Reasoning:
+    #   Week 1 (1-7):   open with VERDICT — "best dests this month" rolling
+    #                   into DISCOVERY — "hidden gems" hooks attention early
+    #   Week 2 (8-14):  VERIFICATION — stays/eateries/emergency deep-dive
+    #                   (middle of month = planning peak, build trust)
+    #   Week 3 (15-21): ANTI_TRAP + MOMENT — "don't fall for X" + festivals/
+    #                   "this is happening NOW" hooks
+    #   Week 4 (22-28): DISCOVERY + VERIFICATION — routes/cost/airports
+    #                   (end-of-month booking decisions)
+    #   Week 5 (29-31): no bias, default to under-share deficit
+    1: ["verdict", "discovery"],
+    2: ["verification"],
+    3: ["anti_trap", "moment"],
+    4: ["discovery", "verification"],
+    5: [],  # catch-up
+}
+
+
+def week_of_month(today=None) -> int:
+    """Return 1-indexed week-of-month. Day 1-7 = week 1, 8-14 = 2, etc.
+    Day 29-31 = week 5."""
+    t = today or date.today()
+    return min(5, ((t.day - 1) // 7) + 1)
+
+
 PILLAR_WEEKLY_SHARE = {
     "verdict":      0.35,
     "verification": 0.20,
@@ -1617,24 +1649,59 @@ def pick_morning_format(state: dict, content: dict) -> str:
                 eligible_colls = [c for c in colls if (c.get("itemCount") or 0) >= 5]
                 if not eligible_colls:
                     continue
+            # 2026-05-17 Phase 2 — eligibility checks for new formats
+            if fmt == "hidden_gem_reveal":
+                gems = content.get("hidden_gems", {}).get("data", []) or []
+                if not gems:
+                    continue
+            if fmt == "route_spotlight_short":
+                routes = content.get("routes", {}).get("data", []) or []
+                if not routes:
+                    continue
+            if fmt == "arrival_intel":
+                airports = content.get("arrival", {}).get("data", []) or []
+                if not airports:
+                    continue
+            if fmt == "women_solo_brief":
+                ws = content.get("women_solo", {}).get("data", []) or []
+                if not ws:
+                    continue
+            if fmt == "cost_index_card":
+                ci = content.get("cost_index", {}).get("data", []) or []
+                if not ci:
+                    continue
             eligible.append(fmt)
 
         if not eligible:
             eligible = ["score_card"]
 
-        # Pillar-bias layer (playbook discipline). Bias eligible toward
-        # whichever pillar is most below its 7-day target — including any
-        # seasonal-window overrides for today. Falls back transparently when
-        # the deficit pillar has no eligible formats.
+        # 2026-05-17 Tier 7 Phase 3 — themed-week bias.
+        # PRIMARY: WEEK_OF_MONTH_BIAS preferred pillars for today's week-of-month.
+        # FALLBACK: under-share deficit (existing playbook discipline).
+        # Final FALLBACK: full eligible pool.
         biased_pool = eligible
-        deficit_pillars = under_share_pillars(state)
         chosen_pillar = None
-        for pillar in deficit_pillars:
+        bias_source = "balanced"
+        wom = week_of_month()
+        themed_pillars = WEEK_OF_MONTH_BIAS.get(wom, [])
+        for pillar in themed_pillars:
             candidates = [f for f in eligible if FORMAT_PILLARS.get(f) == pillar]
             if candidates:
                 biased_pool = candidates
                 chosen_pillar = pillar
+                bias_source = f"themed-week-{wom}"
                 break
+        # Fall back to deficit-pillar if themed week didn't match anything
+        # (week 5 catch-up, or themed pillar had no eligible formats today)
+        if not chosen_pillar:
+            deficit_pillars = under_share_pillars(state)
+            for pillar in deficit_pillars:
+                candidates = [f for f in eligible if FORMAT_PILLARS.get(f) == pillar]
+                if candidates:
+                    biased_pool = candidates
+                    chosen_pillar = pillar
+                    bias_source = "deficit"
+                    break
 
         ordered = pick_oldest_unused(state, "morning_formats", biased_pool, key=None)
         chosen = ordered[0]
@@ -1643,11 +1710,11 @@ def pick_morning_format(state: dict, content: dict) -> str:
         if chosen_pillar:
             actual = compute_weekly_pillar_share(state).get(chosen_pillar, 0.0)
             target = target_pillar_share().get(chosen_pillar, 0.0)
-            log.info(f"Morning format (pillar-biased→{chosen_pillar}): {chosen} "
+            log.info(f"Morning format ({bias_source}→{chosen_pillar}): {chosen} "
                      f"[{actual:.0%} vs target {target:.0%}] "
                      f"({status['unused']}/{status['total']} never featured)")
         else:
-            log.info(f"Morning format (balanced): {chosen} "
+            log.info(f"Morning format (balanced, week-{wom}): {chosen} "
                      f"({status['unused']}/{status['total']} never featured)")
         return chosen
     except Exception as e:
