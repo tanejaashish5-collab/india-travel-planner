@@ -103,6 +103,10 @@ export function Nav() {
     `/${locale}/blog/`,
     `/${locale}/guide/scenarios/`,
     `/${locale}/routes/`,
+    // Post-S54 (2026-05-17) — /collections/[id] migrated to cinematic shell
+    // with full-bleed video hero. Without this prefix, the nav reverted to
+    // legacy mega-menu on detail pages even though the hub was cinematic.
+    `/${locale}/collections/`,
     // Tier 2 children (S54) — filter pages now cinematic
     `/${locale}/treks/`,
     `/${locale}/festivals/`,

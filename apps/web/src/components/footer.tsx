@@ -154,6 +154,8 @@ export function Footer({
     `/${locale}/india-vs/`,
     // Tier 8 (S54) — shared trip board
     `/${locale}/trip/`,
+    // Post-S54 (2026-05-17) — /collections/[id] migrated to cinematic shell.
+    `/${locale}/collections/`,
   ];
   const isCinematicPage =
     CINEMATIC_PAGE_PATHS.includes(pathname) ||

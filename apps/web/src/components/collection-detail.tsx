@@ -19,7 +19,20 @@ function haversineKm(a: { lat: number; lng: number }, b: { lat: number; lng: num
   return 2 * R * Math.asin(Math.sqrt(h));
 }
 
-export function CollectionDetail({ collection }: { collection: any }) {
+export function CollectionDetail({
+  collection,
+  hideHero = false,
+}: {
+  collection: any;
+  /**
+   * Suppress the inline 16:7 cover_video block so the cinematic page-level
+   * wrapper can render its own full-bleed hero instead. Defaults to false
+   * for backwards compat with any other call-site that still wants the
+   * inline hero. Set true from /collections/[id]/page.tsx (the migrated
+   * cinematic route).
+   */
+  hideHero?: boolean;
+}) {
   const locale = useLocale();
   const items = collection.items ?? [];
   const contentType = collection.content_type || "destinations";
@@ -28,7 +41,7 @@ export function CollectionDetail({ collection }: { collection: any }) {
   );
 
   if (contentType === "circuit") {
-    return <CircuitLayout collection={collection} items={items} destMap={destMap} locale={locale} />;
+    return <CircuitLayout collection={collection} items={items} destMap={destMap} locale={locale} hideHero={hideHero} />;
   }
 
   // Group eats and stays by destination — only if relevant
@@ -49,7 +62,7 @@ export function CollectionDetail({ collection }: { collection: any }) {
 
   return (
     <>
-      {collection.cover_video && (
+      {!hideHero && collection.cover_video && (
         <FadeIn>
           <div className="relative -mx-4 mb-6 aspect-[16/7] overflow-hidden rounded-2xl bg-black md:mx-0">
             <video
@@ -67,29 +80,33 @@ export function CollectionDetail({ collection }: { collection: any }) {
         </FadeIn>
       )}
 
-      <FadeIn>
-        <div className="mb-4 text-sm text-muted-foreground">
-          <Link href={`/${locale}/collections`} className="hover:text-foreground transition-colors">
-            Collections
-          </Link>
-          {" → "}
-          <span className="text-foreground">{collection.name}</span>
-        </div>
-      </FadeIn>
+      {!hideHero && (
+        <FadeIn>
+          <div className="mb-4 text-sm text-muted-foreground">
+            <Link href={`/${locale}/collections`} className="hover:text-foreground transition-colors">
+              Collections
+            </Link>
+            {" → "}
+            <span className="text-foreground">{collection.name}</span>
+          </div>
+        </FadeIn>
+      )}
 
       <FadeIn delay={0.1}>
-        <div className="flex items-start justify-between gap-4">
-          <div>
-            <h1 className="text-3xl font-semibold">{collection.name}</h1>
-            <p className="mt-2 text-muted-foreground leading-relaxed">{collection.description}</p>
+        {!hideHero && (
+          <div className="flex items-start justify-between gap-4">
+            <div>
+              <h1 className="text-3xl font-semibold">{collection.name}</h1>
+              <p className="mt-2 text-muted-foreground leading-relaxed">{collection.description}</p>
+            </div>
+            <div className="shrink-0 flex items-center gap-2 mt-1">
+              <ShareButton
+                title={collection.name}
+                text={`${collection.description} — ${items.length} scored destinations`}
+              />
+            </div>
           </div>
-          <div className="shrink-0 flex items-center gap-2 mt-1">
-            <ShareButton
-              title={collection.name}
-              text={`${collection.description} — ${items.length} scored destinations`}
-            />
-          </div>
-        </div>
+        )}
         <div className="mt-3 text-sm text-muted-foreground">
           {items.length} destinations in this collection
           {collection.risk_level && (
@@ -262,11 +279,13 @@ function CircuitLayout({
   items,
   destMap,
   locale,
+  hideHero = false,
 }: {
   collection: any;
   items: any[];
   destMap: Record<string, any>;
   locale: string;
+  hideHero?: boolean;
 }) {
   const legs: (number | null)[] = items.map((item, i) => {
     if (i === items.length - 1) return null;
@@ -280,7 +299,7 @@ function CircuitLayout({
 
   return (
     <>
-      {collection.cover_video && (
+      {!hideHero && collection.cover_video && (
         <FadeIn>
           <div className="relative -mx-4 mb-6 aspect-[16/7] overflow-hidden rounded-2xl bg-black md:mx-0">
             <video
@@ -298,29 +317,33 @@ function CircuitLayout({
         </FadeIn>
       )}
 
-      <FadeIn>
-        <div className="mb-4 text-sm text-muted-foreground">
-          <Link href={`/${locale}/collections`} className="hover:text-foreground transition-colors">
-            Collections
-          </Link>
-          {" → "}
-          <span className="text-foreground">{collection.name}</span>
-        </div>
-      </FadeIn>
+      {!hideHero && (
+        <FadeIn>
+          <div className="mb-4 text-sm text-muted-foreground">
+            <Link href={`/${locale}/collections`} className="hover:text-foreground transition-colors">
+              Collections
+            </Link>
+            {" → "}
+            <span className="text-foreground">{collection.name}</span>
+          </div>
+        </FadeIn>
+      )}
 
       <FadeIn delay={0.1}>
-        <div className="flex items-start justify-between gap-4">
-          <div>
-            <h1 className="text-3xl font-semibold">{collection.name}</h1>
-            <p className="mt-2 text-muted-foreground leading-relaxed">{collection.description}</p>
+        {!hideHero && (
+          <div className="flex items-start justify-between gap-4">
+            <div>
+              <h1 className="text-3xl font-semibold">{collection.name}</h1>
+              <p className="mt-2 text-muted-foreground leading-relaxed">{collection.description}</p>
+            </div>
+            <div className="shrink-0 flex items-center gap-2 mt-1">
+              <ShareButton
+                title={collection.name}
+                text={`${collection.description} — ${items.length}-stop circuit`}
+              />
+            </div>
           </div>
-          <div className="shrink-0 flex items-center gap-2 mt-1">
-            <ShareButton
-              title={collection.name}
-              text={`${collection.description} — ${items.length}-stop circuit`}
-            />
-          </div>
-        </div>
+        )}
         <div className="mt-4 rounded-xl border border-border/50 bg-card/40 backdrop-blur-sm px-4 py-3">
           <div className="font-mono text-[10px] sm:text-[11px] tracking-[0.3em] uppercase text-muted-foreground">
             Circuit · {items.length} stops{totalKm > 0 ? ` · ${totalKm.toLocaleString()} km` : ""} · {totalDays} days suggested
