@@ -31,7 +31,9 @@ export function AskNakshIQPage({ locale }: { locale: string }) {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, []);
 
-  useEffect(() => { scrollToBottom(); }, [messages, scrollToBottom]);
+  useEffect(() => {
+    scrollToBottom();
+  }, [messages, scrollToBottom]);
 
   async function sendMessage(text?: string) {
     const question = (text || input).trim();
@@ -64,36 +66,89 @@ export function AskNakshIQPage({ locale }: { locale: string }) {
 
   function getSourceUrl(source: { type: string; id: string }) {
     switch (source.type) {
-      case "destination": return `/${locale}/destination/${source.id}`;
-      case "article": return `/${locale}/articles/${source.id}`;
-      case "state": return `/${locale}/state/${source.id}`;
-      default: return null;
+      case "destination":
+        return `/${locale}/destination/${source.id}`;
+      case "article":
+        return `/${locale}/articles/${source.id}`;
+      case "state":
+        return `/${locale}/state/${source.id}`;
+      default:
+        return null;
     }
   }
 
   return (
-    <div className="rounded-2xl border border-border bg-card/50 overflow-hidden">
+    <div style={{ border: "1px solid var(--hair)", background: "var(--paper)" }}>
       {/* Messages area */}
-      <div className="min-h-[400px] max-h-[60vh] overflow-y-auto px-4 sm:px-6 py-6 space-y-4 scrollbar-none">
+      <div
+        style={{
+          minHeight: 400,
+          maxHeight: "60vh",
+          overflowY: "auto",
+          padding: "24px 20px",
+          display: "flex",
+          flexDirection: "column",
+          gap: 16,
+        }}
+      >
         {messages.length === 0 && (
-          <div className="space-y-6 py-8">
-            <div className="text-center">
-              <div className="inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-primary/10 mb-4">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-primary">
-                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
-                </svg>
-              </div>
-              <p className="text-muted-foreground">
-                I know about 340+ destinations, 710+ places, monthly scores, kids ratings, and more.
-                <br />Ask me anything about traveling in India.
+          <div style={{ display: "flex", flexDirection: "column", gap: 24, padding: "32px 0" }}>
+            <div style={{ textAlign: "center" }}>
+              <p
+                style={{
+                  fontFamily: "var(--cinema-mono)",
+                  fontSize: 10,
+                  letterSpacing: "0.22em",
+                  textTransform: "uppercase",
+                  color: "var(--vermillion)",
+                  marginBottom: 12,
+                }}
+              >
+                Start anywhere
+              </p>
+              <p
+                style={{
+                  fontFamily: "var(--cinema-display)",
+                  fontStyle: "italic",
+                  fontWeight: 500,
+                  fontSize: "clamp(20px, 2.5vw, 26px)",
+                  lineHeight: 1.25,
+                  color: "var(--bone)",
+                  margin: "0 auto 12px",
+                  maxWidth: 520,
+                  textWrap: "balance",
+                }}
+              >
+                505 destinations, monthly scores, kids ratings, safety data.
+              </p>
+              <p
+                style={{
+                  fontFamily: "var(--cinema-ui)",
+                  fontSize: 13,
+                  lineHeight: 1.65,
+                  color: "var(--bone-dim)",
+                  margin: 0,
+                  maxWidth: 460,
+                  marginInline: "auto",
+                }}
+              >
+                Ask anything about travelling in India.
               </p>
             </div>
-            <div className="flex flex-wrap gap-2 justify-center max-w-lg mx-auto">
+            <div style={{ display: "flex", flexWrap: "wrap", gap: 8, justifyContent: "center", maxWidth: 640, marginInline: "auto" }}>
               {SUGGESTED.map((q) => (
                 <button
                   key={q}
                   onClick={() => sendMessage(q)}
-                  className="rounded-full border border-border px-3.5 py-2 text-xs text-muted-foreground hover:text-foreground hover:border-primary/40 hover:bg-primary/5 transition-all"
+                  style={{
+                    fontFamily: "var(--cinema-ui)",
+                    fontSize: 12,
+                    padding: "8px 14px",
+                    background: "transparent",
+                    border: "1px solid var(--hair)",
+                    color: "var(--bone-dim)",
+                    cursor: "pointer",
+                  }}
                 >
                   {q}
                 </button>
@@ -103,35 +158,80 @@ export function AskNakshIQPage({ locale }: { locale: string }) {
         )}
 
         {messages.map((msg, i) => (
-          <div key={i} className={`flex ${msg.role === "user" ? "justify-end" : "justify-start"}`}>
+          <div
+            key={i}
+            style={{
+              display: "flex",
+              justifyContent: msg.role === "user" ? "flex-end" : "flex-start",
+            }}
+          >
             <div
-              className={`max-w-[80%] rounded-2xl px-4 py-3 text-sm leading-relaxed ${
-                msg.role === "user"
-                  ? "bg-primary text-primary-foreground rounded-br-md"
-                  : "bg-muted/40 text-foreground rounded-bl-md"
-              }`}
+              style={{
+                maxWidth: "82%",
+                padding: "12px 16px",
+                fontFamily: "var(--cinema-ui)",
+                fontSize: 14,
+                lineHeight: 1.65,
+                ...(msg.role === "user"
+                  ? {
+                      background: "var(--vermillion)",
+                      color: "var(--paper)",
+                      borderTop: "1px solid var(--vermillion)",
+                    }
+                  : {
+                      background: "rgba(245, 241, 232, 0.04)",
+                      color: "var(--bone)",
+                      border: "1px solid var(--hair)",
+                    }),
+              }}
             >
               {msg.role === "assistant" ? (
-                <div className="space-y-2">
-                  <div className="whitespace-pre-wrap">{msg.content}</div>
+                <div>
+                  <div style={{ whiteSpace: "pre-wrap" }}>{msg.content}</div>
                   {msg.sources && msg.sources.length > 0 && (
-                    <div className="flex flex-wrap gap-1.5 pt-2 border-t border-border/30">
-                      <span className="text-[10px] text-muted-foreground/60 self-center mr-1">Sources:</span>
+                    <div
+                      style={{
+                        display: "flex",
+                        flexWrap: "wrap",
+                        gap: 6,
+                        marginTop: 12,
+                        paddingTop: 10,
+                        borderTop: "1px solid var(--hair)",
+                      }}
+                    >
+                      <span
+                        style={{
+                          fontFamily: "var(--cinema-mono)",
+                          fontSize: 10,
+                          letterSpacing: "0.18em",
+                          textTransform: "uppercase",
+                          color: "var(--bone-faint)",
+                          alignSelf: "center",
+                          marginRight: 4,
+                        }}
+                      >
+                        Sources:
+                      </span>
                       {msg.sources.map((s) => {
                         const url = getSourceUrl(s);
+                        const chip = {
+                          display: "inline-flex",
+                          alignItems: "center",
+                          gap: 4,
+                          padding: "3px 10px",
+                          fontFamily: "var(--cinema-mono)",
+                          fontSize: 11,
+                          letterSpacing: "0.05em",
+                          border: `1px solid ${url ? "var(--vermillion)" : "var(--hair)"}`,
+                          color: url ? "var(--vermillion)" : "var(--bone-faint)",
+                          textDecoration: "none",
+                        };
                         return url ? (
-                          <a
-                            key={s.id}
-                            href={url}
-                            className="inline-flex items-center gap-1 rounded-full bg-primary/10 px-2.5 py-0.5 text-[11px] font-medium text-primary hover:bg-primary/20 transition-colors"
-                          >
+                          <a key={s.id} href={url} style={chip}>
                             {s.name}
                           </a>
                         ) : (
-                          <span
-                            key={s.id}
-                            className="inline-flex items-center rounded-full bg-muted px-2.5 py-0.5 text-[11px] font-medium text-muted-foreground"
-                          >
+                          <span key={s.id} style={chip}>
                             {s.name}
                           </span>
                         );
@@ -147,33 +247,85 @@ export function AskNakshIQPage({ locale }: { locale: string }) {
         ))}
 
         {loading && (
-          <div className="flex justify-start">
-            <div className="bg-muted/40 rounded-2xl rounded-bl-md px-5 py-3.5">
-              <div className="flex gap-1.5">
-                <span className="h-2 w-2 rounded-full bg-muted-foreground/40 animate-bounce" style={{ animationDelay: "0ms" }} />
-                <span className="h-2 w-2 rounded-full bg-muted-foreground/40 animate-bounce" style={{ animationDelay: "150ms" }} />
-                <span className="h-2 w-2 rounded-full bg-muted-foreground/40 animate-bounce" style={{ animationDelay: "300ms" }} />
-              </div>
+          <div style={{ display: "flex", justifyContent: "flex-start" }}>
+            <div
+              style={{
+                padding: "12px 18px",
+                background: "rgba(245, 241, 232, 0.04)",
+                border: "1px solid var(--hair)",
+                display: "flex",
+                gap: 6,
+              }}
+            >
+              {[0, 150, 300].map((delay) => (
+                <span
+                  key={delay}
+                  style={{
+                    height: 8,
+                    width: 8,
+                    borderRadius: "50%",
+                    background: "var(--vermillion)",
+                    opacity: 0.5,
+                    animation: "nq-pulse 1.2s ease-in-out infinite",
+                    animationDelay: `${delay}ms`,
+                  }}
+                />
+              ))}
+              <style>{`@keyframes nq-pulse { 0%, 80%, 100% { opacity: 0.3; transform: scale(0.8); } 40% { opacity: 1; transform: scale(1); } }`}</style>
             </div>
           </div>
         )}
 
-        {error && <div className="text-center text-xs text-red-400 py-1">{error}</div>}
+        {error && (
+          <p
+            style={{
+              fontFamily: "var(--cinema-mono)",
+              fontSize: 11,
+              letterSpacing: "0.14em",
+              textTransform: "uppercase",
+              color: "var(--vermillion)",
+              textAlign: "center",
+              margin: "4px 0",
+            }}
+          >
+            {error}
+          </p>
+        )}
         <div ref={messagesEndRef} />
       </div>
 
       {/* Input */}
-      <div className="border-t border-border px-4 sm:px-6 py-3 bg-card">
-        <form onSubmit={(e) => { e.preventDefault(); sendMessage(); }} className="flex items-end gap-2">
+      <div style={{ borderTop: "1px solid var(--hair)", padding: "14px 20px" }}>
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            sendMessage();
+          }}
+          style={{ display: "flex", alignItems: "flex-end", gap: 8 }}
+        >
           <textarea
             ref={inputRef}
             value={input}
             onChange={(e) => setInput(e.target.value)}
             onKeyDown={(e) => {
-              if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); sendMessage(); }
+              if (e.key === "Enter" && !e.shiftKey) {
+                e.preventDefault();
+                sendMessage();
+              }
             }}
-            placeholder="Ask about any destination, best time to visit, safety, kids..."
-            className="flex-1 rounded-xl border border-border bg-muted/30 px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-primary/50 transition-colors resize-none"
+            placeholder="Ask about any destination, best time, safety, kids..."
+            style={{
+              flex: 1,
+              minWidth: 0,
+              border: "1px solid var(--hair)",
+              background: "rgba(245, 241, 232, 0.02)",
+              color: "var(--bone)",
+              padding: "10px 14px",
+              fontFamily: "var(--cinema-ui)",
+              fontSize: 14,
+              resize: "none",
+              outline: "none",
+            }}
             rows={1}
             disabled={loading}
             maxLength={500}
@@ -182,17 +334,35 @@ export function AskNakshIQPage({ locale }: { locale: string }) {
             type="submit"
             disabled={loading || !input.trim()}
             aria-label="Send question"
-            className="rounded-xl bg-primary px-4 py-3 text-primary-foreground disabled:opacity-40 transition-opacity shrink-0"
+            style={{
+              fontFamily: "var(--cinema-mono)",
+              fontSize: 11,
+              letterSpacing: "0.18em",
+              textTransform: "uppercase",
+              padding: "10px 16px",
+              background: input.trim() && !loading ? "var(--vermillion)" : "transparent",
+              color: input.trim() && !loading ? "var(--paper)" : "var(--bone-faint)",
+              border: `1px solid ${input.trim() && !loading ? "var(--vermillion)" : "var(--hair)"}`,
+              cursor: input.trim() && !loading ? "pointer" : "not-allowed",
+              flexShrink: 0,
+            }}
           >
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" focusable="false">
-              <line x1="22" y1="2" x2="11" y2="13" />
-              <polygon points="22 2 15 22 11 13 2 9 22 2" />
-            </svg>
+            Send →
           </button>
         </form>
-        <div className="mt-2 text-center text-[10px] text-muted-foreground/70">
-          20 questions/day — answers powered by NakshIQ verified data
-        </div>
+        <p
+          style={{
+            fontFamily: "var(--cinema-mono)",
+            fontSize: 10,
+            letterSpacing: "0.22em",
+            textTransform: "uppercase",
+            color: "var(--bone-faint)",
+            textAlign: "center",
+            margin: "10px 0 0",
+          }}
+        >
+          20 questions/day · answers from NakshIQ verified data
+        </p>
       </div>
     </div>
   );

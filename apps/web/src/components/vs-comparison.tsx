@@ -1,7 +1,4 @@
-import Image from "next/image";
 import Link from "next/link";
-import { FadeIn, ScrollReveal, StaggerContainer, StaggerItem } from "./animated-hero";
-import { SCORE_COLORS, DIFFICULTY_COLORS } from "@/lib/design-tokens";
 import { currentMonthIST, formatScoreInline } from "@itp/shared";
 
 const MONTH_SHORT = ["", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
@@ -19,7 +16,7 @@ interface DestData {
   elevation_m: number | null;
   budget_tier: string | null;
   best_months: string | null;
-  daily_cost: any;
+  daily_cost: unknown;
   family_stress: string | null;
   state: string | null;
   months: MonthScore[];
@@ -37,13 +34,6 @@ function getMonthScore(months: MonthScore[], month: number): number | null {
   return months.find((m) => m.month === month)?.score ?? null;
 }
 
-function scoreColor(score: number | null): string {
-  if (score === null) return "text-zinc-500";
-  if (score >= 4) return "text-emerald-400";
-  if (score >= 3) return "text-yellow-400";
-  return "text-red-400";
-}
-
 function winner(val1: number | null, val2: number | null): "left" | "right" | "tie" {
   if (val1 === null && val2 === null) return "tie";
   if (val1 === null) return "right";
@@ -54,13 +44,13 @@ function winner(val1: number | null, val2: number | null): "left" | "right" | "t
 }
 
 function formatSafety(v: number | string | null | undefined): string {
-  if (v == null) return "N/A";
+  if (v == null) return "—";
   if (typeof v === "number") return formatScoreInline(v);
   return String(v);
 }
 
 function formatNetwork(net: unknown): string {
-  if (net == null) return "N/A";
+  if (net == null) return "—";
   if (typeof net === "string") return net;
   if (typeof net === "object") {
     const n = net as Record<string, unknown>;
@@ -70,70 +60,102 @@ function formatNetwork(net: unknown): string {
     }
     if (typeof n.note === "string") return n.note;
   }
-  return "N/A";
+  return "—";
 }
+
+// Scope-local cinema style helpers — these only render inside .nakshiq-cinema
+// (set by the parent page wrapper) so they pick up var(--paper)/var(--bone)/etc.
+const tableHeadCell: React.CSSProperties = {
+  padding: "12px 16px",
+  background: "var(--paper)",
+  fontFamily: "var(--cinema-mono)",
+  fontSize: 10,
+  letterSpacing: "0.22em",
+  textTransform: "uppercase",
+  color: "var(--bone-faint)",
+};
+
+const tableNameCell: React.CSSProperties = {
+  padding: "12px 16px",
+  background: "var(--paper)",
+  fontFamily: "var(--cinema-display)",
+  fontStyle: "italic",
+  fontWeight: 500,
+  fontSize: 16,
+  color: "var(--bone)",
+  textAlign: "center" as const,
+};
+
+const tableLabelCell: React.CSSProperties = {
+  padding: "12px 16px",
+  background: "var(--paper)",
+  fontFamily: "var(--cinema-ui)",
+  fontSize: 13,
+  color: "var(--bone-dim)",
+  display: "flex",
+  alignItems: "center",
+  gap: 8,
+};
+
+const tableValueCell = (isWinner: boolean): React.CSSProperties => ({
+  padding: "12px 16px",
+  background: isWinner ? "rgba(229, 86, 66, 0.06)" : "var(--paper)",
+  fontFamily: "var(--cinema-ui)",
+  fontSize: 14,
+  fontWeight: 500,
+  color: isWinner ? "var(--vermillion)" : "var(--bone)",
+  textAlign: "center" as const,
+  fontVariantNumeric: "tabular-nums",
+  borderLeft: "1px solid var(--hair)",
+});
 
 export function VsComparison({ dest1, dest2, locale }: Props) {
   const currentMonth = currentMonthIST();
   const score1 = getMonthScore(dest1.months, currentMonth);
   const score2 = getMonthScore(dest2.months, currentMonth);
 
-  // Build comparison rows
+  // Comparison rows
   const rows = [
     {
-      label: `${MONTH_SHORT[currentMonth]} Score`,
-      v1: score1 !== null ? formatScoreInline(score1) : "N/A",
-      v2: score2 !== null ? formatScoreInline(score2) : "N/A",
-      c1: scoreColor(score1),
-      c2: scoreColor(score2),
+      label: `${MONTH_SHORT[currentMonth]} score`,
+      v1: score1 !== null ? formatScoreInline(score1) : "—",
+      v2: score2 !== null ? formatScoreInline(score2) : "—",
       win: winner(score1, score2),
     },
     {
       label: "Difficulty",
-      v1: dest1.difficulty || "N/A",
-      v2: dest2.difficulty || "N/A",
-      c1: DIFFICULTY_COLORS[dest1.difficulty] || "",
-      c2: DIFFICULTY_COLORS[dest2.difficulty] || "",
+      v1: dest1.difficulty || "—",
+      v2: dest2.difficulty || "—",
       win: "tie" as const,
     },
     {
       label: "Elevation",
-      v1: dest1.elevation_m ? `${dest1.elevation_m.toLocaleString()}m` : "Plains",
-      v2: dest2.elevation_m ? `${dest2.elevation_m.toLocaleString()}m` : "Plains",
-      c1: "",
-      c2: "",
+      v1: dest1.elevation_m ? `${dest1.elevation_m.toLocaleString()} m` : "Plains",
+      v2: dest2.elevation_m ? `${dest2.elevation_m.toLocaleString()} m` : "Plains",
       win: "tie" as const,
     },
     {
-      label: "Budget Tier",
-      v1: dest1.budget_tier || "N/A",
-      v2: dest2.budget_tier || "N/A",
-      c1: "",
-      c2: "",
+      label: "Budget tier",
+      v1: dest1.budget_tier || "—",
+      v2: dest2.budget_tier || "—",
       win: "tie" as const,
     },
     {
-      label: "Kids Rating",
-      v1: dest1.kids?.rating != null ? formatScoreInline(dest1.kids.rating) : "N/A",
-      v2: dest2.kids?.rating != null ? formatScoreInline(dest2.kids.rating) : "N/A",
-      c1: scoreColor(dest1.kids?.rating ?? null),
-      c2: scoreColor(dest2.kids?.rating ?? null),
+      label: "Kids rating",
+      v1: dest1.kids?.rating != null ? formatScoreInline(dest1.kids.rating) : "—",
+      v2: dest2.kids?.rating != null ? formatScoreInline(dest2.kids.rating) : "—",
       win: winner(dest1.kids?.rating ?? null, dest2.kids?.rating ?? null),
     },
     {
       label: "Safety",
       v1: formatSafety(dest1.confidence?.safety_rating),
       v2: formatSafety(dest2.confidence?.safety_rating),
-      c1: "",
-      c2: "",
       win: "tie" as const,
     },
     {
       label: "Network",
       v1: formatNetwork(dest1.confidence?.network),
       v2: formatNetwork(dest2.confidence?.network),
-      c1: "",
-      c2: "",
       win: "tie" as const,
     },
   ];
@@ -151,8 +173,8 @@ export function VsComparison({ dest1, dest2, locale }: Props) {
   if (dest2.difficulty === "easy") choose2.push("You prefer an easier, more relaxed trip");
   if (dest1.difficulty === "hard" || dest1.difficulty === "extreme") choose1.push("You want a challenging adventure");
   if (dest2.difficulty === "hard" || dest2.difficulty === "extreme") choose2.push("You want a challenging adventure");
-  if ((dest1.kids?.rating ?? 0) > (dest2.kids?.rating ?? 0)) choose1.push("You're traveling with kids");
-  if ((dest2.kids?.rating ?? 0) > (dest1.kids?.rating ?? 0)) choose2.push("You're traveling with kids");
+  if ((dest1.kids?.rating ?? 0) > (dest2.kids?.rating ?? 0)) choose1.push("You're travelling with kids");
+  if ((dest2.kids?.rating ?? 0) > (dest1.kids?.rating ?? 0)) choose2.push("You're travelling with kids");
   if ((score1 ?? 0) > (score2 ?? 0)) choose1.push(`Better conditions right now (${MONTH_SHORT[currentMonth]})`);
   if ((score2 ?? 0) > (score1 ?? 0)) choose2.push(`Better conditions right now (${MONTH_SHORT[currentMonth]})`);
   if (dest1.elevation_m && (!dest2.elevation_m || dest1.elevation_m > dest2.elevation_m)) choose1.push("You love high-altitude destinations");
@@ -165,229 +187,243 @@ export function VsComparison({ dest1, dest2, locale }: Props) {
   if (choose2.length === 0) choose2.push(`${dest2.name} is a solid choice for its unique character`);
 
   return (
-    <>
-      {/* Hero — split image */}
-      <section className="relative h-56 sm:h-72 md:h-80 overflow-hidden">
-        <div className="absolute inset-0 flex">
-          <div className="relative w-1/2 overflow-hidden">
-            <Image
-              src={`/images/destinations/${dest1.id}.jpg`}
-              alt={dest1.name}
-              fill
-              sizes="50vw"
-              priority
-              className="object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent to-background/80" />
-          </div>
-          <div className="relative w-1/2 overflow-hidden">
-            <Image
-              src={`/images/destinations/${dest2.id}.jpg`}
-              alt={dest2.name}
-              fill
-              sizes="50vw"
-              priority
-              className="object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-l from-transparent to-background/80" />
-          </div>
-        </div>
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
-
-        {/* VS badge */}
-        <div className="absolute inset-0 flex items-center justify-center">
-          <span className="rounded-full bg-primary px-4 py-2 text-sm font-bold text-primary-foreground shadow-lg z-10">
-            VS
-          </span>
-        </div>
-
-        <FadeIn className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 max-w-5xl mx-auto">
-          <p className="text-sm font-medium text-primary uppercase tracking-[0.08em] mb-2">Head to Head</p>
-          <h1 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-white drop-shadow-lg">
-            {dest1.name} vs {dest2.name} — The Honest Comparison
-          </h1>
-        </FadeIn>
+    <div style={{ maxWidth: 900, margin: "0 auto", padding: "0 24px 64px" }}>
+      {/* Quick verdict */}
+      <section
+        style={{
+          padding: 24,
+          border: "1px solid var(--vermillion)",
+          background: "rgba(229, 86, 66, 0.04)",
+          marginBottom: 48,
+        }}
+      >
+        <p
+          style={{
+            fontFamily: "var(--cinema-mono)",
+            fontSize: 10,
+            letterSpacing: "0.22em",
+            textTransform: "uppercase",
+            color: "var(--vermillion)",
+            margin: "0 0 12px",
+          }}
+        >
+          Quick verdict
+        </p>
+        <p
+          style={{
+            fontFamily: "var(--cinema-display)",
+            fontStyle: "italic",
+            fontWeight: 400,
+            fontSize: "clamp(18px, 2vw, 22px)",
+            lineHeight: 1.4,
+            color: "var(--bone)",
+            margin: 0,
+          }}
+        >
+          {currentWin === "left"
+            ? `${dest1.name} edges ahead this month with a score of ${formatScoreInline(score1!)} vs ${score2 != null ? formatScoreInline(score2) : "—"}.`
+            : currentWin === "right"
+              ? `${dest2.name} edges ahead this month with a score of ${formatScoreInline(score2!)} vs ${score1 != null ? formatScoreInline(score1) : "—"}.`
+              : `Both destinations score equally right now (${score1 != null ? formatScoreInline(score1) : "—"}).`}{" "}
+          {totalScore1 > totalScore2
+            ? `Overall, ${dest1.name} has more favourable months across the year.`
+            : totalScore2 > totalScore1
+              ? `Overall, ${dest2.name} has more favourable months across the year.`
+              : "Year-round, they're remarkably similar in overall score."}
+        </p>
       </section>
 
-      <main className="mx-auto max-w-5xl px-4 py-10 sm:py-14 space-y-12">
-        {/* Breadcrumb */}
-        <nav className="flex items-center gap-2 text-xs text-muted-foreground flex-wrap">
-          <Link href={`/${locale}`} className="hover:text-foreground transition-colors">Home</Link>
-          <span>/</span>
-          <Link href={`/${locale}/destination/${dest1.id}`} className="hover:text-foreground transition-colors">{dest1.name}</Link>
-          <span>/</span>
-          <span className="text-foreground">{dest1.name} vs {dest2.name}</span>
-        </nav>
+      {/* Side-by-side comparison table */}
+      <section style={{ marginBottom: 48 }}>
+        <p
+          className="nq-kicker"
+          style={{
+            color: "var(--vermillion)",
+            marginBottom: 16,
+            letterSpacing: "0.18em",
+            textTransform: "uppercase",
+          }}
+        >
+          Side-by-side · {rows.length} factors
+        </p>
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "1fr 1fr 1fr",
+            gap: 1,
+            background: "var(--hair)",
+            border: "1px solid var(--hair)",
+          }}
+        >
+          {/* Header row */}
+          <div style={tableHeadCell}>&nbsp;</div>
+          <div style={{ ...tableNameCell, borderLeft: "1px solid var(--hair)" }}>{dest1.name}</div>
+          <div style={{ ...tableNameCell, borderLeft: "1px solid var(--hair)" }}>{dest2.name}</div>
 
-        {/* Quick verdict */}
-        <ScrollReveal>
-          <section className="rounded-2xl border border-primary/20 bg-primary/5 p-6 sm:p-8">
-            <h2 className="text-lg font-semibold text-foreground mb-2">Quick Verdict</h2>
-            <p className="text-muted-foreground leading-relaxed">
-              {currentWin === "left"
-                ? `${dest1.name} edges ahead this month with a score of ${formatScoreInline(score1)} vs ${score2 != null ? formatScoreInline(score2) : "N/A"}.`
-                : currentWin === "right"
-                ? `${dest2.name} edges ahead this month with a score of ${formatScoreInline(score2)} vs ${score1 != null ? formatScoreInline(score1) : "N/A"}.`
-                : `Both destinations score equally right now (${score1 != null ? formatScoreInline(score1) : "N/A"}).`}
-              {" "}
-              {totalScore1 > totalScore2
-                ? `Overall, ${dest1.name} has more favorable months across the year.`
-                : totalScore2 > totalScore1
-                ? `Overall, ${dest2.name} has more favorable months across the year.`
-                : "Year-round, they're remarkably similar in overall score."}
-            </p>
-          </section>
-        </ScrollReveal>
-
-        {/* Side-by-side comparison table */}
-        <ScrollReveal delay={0.1}>
-          <section>
-            <h2 className="text-xl font-semibold text-foreground mb-4">Side-by-Side Comparison</h2>
-            <div className="rounded-2xl border border-border bg-card overflow-hidden">
-              {/* Header */}
-              <div className="grid grid-cols-3 border-b border-border bg-muted/30">
-                <div className="p-3 text-xs font-medium text-muted-foreground uppercase tracking-[0.08em]" />
-                <div className="p-3 text-center text-sm font-bold text-foreground border-l border-border">
-                  {dest1.name}
-                </div>
-                <div className="p-3 text-center text-sm font-bold text-foreground border-l border-border">
-                  {dest2.name}
-                </div>
+          {/* Data rows */}
+          {rows.map((row) => (
+            <div key={row.label} style={{ display: "contents" }}>
+              <div style={tableLabelCell}>{row.label}</div>
+              <div style={tableValueCell(row.win === "left")}>
+                {row.v1}
+                {row.win === "left" && (
+                  <span style={{ marginLeft: 4, color: "var(--vermillion)", fontSize: 11 }}>★</span>
+                )}
               </div>
+              <div style={tableValueCell(row.win === "right")}>
+                {row.v2}
+                {row.win === "right" && (
+                  <span style={{ marginLeft: 4, color: "var(--vermillion)", fontSize: 11 }}>★</span>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
 
-              {/* Rows */}
-              {rows.map((row, i) => (
+      {/* Month-by-month */}
+      <section style={{ marginBottom: 48 }}>
+        <p
+          className="nq-kicker"
+          style={{
+            color: "var(--vermillion)",
+            marginBottom: 16,
+            letterSpacing: "0.18em",
+            textTransform: "uppercase",
+          }}
+        >
+          Month-by-month score
+        </p>
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "1fr 1fr 1fr",
+            gap: 1,
+            background: "var(--hair)",
+            border: "1px solid var(--hair)",
+          }}
+        >
+          {/* Header */}
+          <div style={tableHeadCell}>Month</div>
+          <div style={{ ...tableNameCell, borderLeft: "1px solid var(--hair)" }}>{dest1.name}</div>
+          <div style={{ ...tableNameCell, borderLeft: "1px solid var(--hair)" }}>{dest2.name}</div>
+
+          {Array.from({ length: 12 }, (_, i) => i + 1).map((month) => {
+            const s1 = getMonthScore(dest1.months, month);
+            const s2 = getMonthScore(dest2.months, month);
+            const mWin = winner(s1, s2);
+            const isCurrent = month === currentMonth;
+            return (
+              <div key={month} style={{ display: "contents" }}>
                 <div
-                  key={row.label}
-                  className={`grid grid-cols-3 ${i < rows.length - 1 ? "border-b border-border" : ""}`}
+                  style={{
+                    ...tableLabelCell,
+                    background: isCurrent ? "rgba(229, 86, 66, 0.04)" : "var(--paper)",
+                  }}
                 >
-                  <div className="p-3 text-sm text-muted-foreground font-medium flex items-center">
-                    {row.label}
-                  </div>
-                  <div
-                    className={`p-3 text-center text-sm font-semibold border-l border-border ${row.c1} ${
-                      row.win === "left" ? "bg-emerald-500/5" : ""
-                    }`}
-                  >
-                    {row.v1}
-                    {row.win === "left" && <span className="ml-1 text-emerald-400 text-xs">*</span>}
-                  </div>
-                  <div
-                    className={`p-3 text-center text-sm font-semibold border-l border-border ${row.c2} ${
-                      row.win === "right" ? "bg-emerald-500/5" : ""
-                    }`}
-                  >
-                    {row.v2}
-                    {row.win === "right" && <span className="ml-1 text-emerald-400 text-xs">*</span>}
-                  </div>
+                  <span style={{ color: isCurrent ? "var(--bone)" : "var(--bone-dim)" }}>{MONTH_SHORT[month]}</span>
+                  {isCurrent && (
+                    <span
+                      style={{
+                        fontFamily: "var(--cinema-mono)",
+                        fontSize: 9,
+                        letterSpacing: "0.18em",
+                        textTransform: "uppercase",
+                        color: "var(--vermillion)",
+                        padding: "2px 6px",
+                        border: "1px solid var(--vermillion)",
+                      }}
+                    >
+                      Now
+                    </span>
+                  )}
                 </div>
-              ))}
-            </div>
-          </section>
-        </ScrollReveal>
-
-        {/* Month-by-month comparison */}
-        <ScrollReveal delay={0.15}>
-          <section>
-            <h2 className="text-xl font-semibold text-foreground mb-4">Month-by-Month Score</h2>
-            <div className="rounded-2xl border border-border bg-card overflow-hidden">
-              {/* Header */}
-              <div className="grid grid-cols-3 border-b border-border bg-muted/30">
-                <div className="p-3 text-xs font-medium text-muted-foreground uppercase tracking-[0.08em]">Month</div>
-                <div className="p-3 text-center text-sm font-bold text-foreground border-l border-border">
-                  {dest1.name}
+                <div
+                  style={{
+                    ...tableValueCell(mWin === "left"),
+                    background: isCurrent && mWin !== "left" ? "rgba(229, 86, 66, 0.02)" : tableValueCell(mWin === "left").background,
+                  }}
+                >
+                  {s1 !== null ? formatScoreInline(s1) : "—"}
                 </div>
-                <div className="p-3 text-center text-sm font-bold text-foreground border-l border-border">
-                  {dest2.name}
+                <div
+                  style={{
+                    ...tableValueCell(mWin === "right"),
+                    background: isCurrent && mWin !== "right" ? "rgba(229, 86, 66, 0.02)" : tableValueCell(mWin === "right").background,
+                  }}
+                >
+                  {s2 !== null ? formatScoreInline(s2) : "—"}
                 </div>
               </div>
+            );
+          })}
+        </div>
+      </section>
 
-              {Array.from({ length: 12 }, (_, i) => i + 1).map((month) => {
-                const s1 = getMonthScore(dest1.months, month);
-                const s2 = getMonthScore(dest2.months, month);
-                const mWin = winner(s1, s2);
-
-                return (
-                  <div
-                    key={month}
-                    className={`grid grid-cols-3 ${month < 12 ? "border-b border-border" : ""} ${
-                      month === currentMonth ? "bg-primary/5" : ""
-                    }`}
-                  >
-                    <div className="p-2.5 text-sm text-muted-foreground flex items-center gap-2">
-                      {MONTH_SHORT[month]}
-                      {month === currentMonth && (
-                        <span className="text-[10px] rounded-full bg-primary/20 text-primary px-1.5 py-0.5">Now</span>
-                      )}
-                    </div>
-                    <div
-                      className={`p-2.5 text-center text-sm font-semibold border-l border-border ${scoreColor(s1)} ${
-                        mWin === "left" ? "bg-emerald-500/5" : ""
-                      }`}
-                    >
-                      {s1 !== null ? formatScoreInline(s1) : "—"}
-                    </div>
-                    <div
-                      className={`p-2.5 text-center text-sm font-semibold border-l border-border ${scoreColor(s2)} ${
-                        mWin === "right" ? "bg-emerald-500/5" : ""
-                      }`}
-                    >
-                      {s2 !== null ? formatScoreInline(s2) : "—"}
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </section>
-        </ScrollReveal>
-
-        {/* Choose X if... / Choose Y if... */}
-        <ScrollReveal delay={0.2}>
-          <section className="grid gap-5 sm:grid-cols-2">
-            {/* Dest 1 */}
-            <div className="rounded-2xl border border-border bg-card p-6">
-              <h3 className="text-lg font-bold text-foreground mb-3">
-                Choose {dest1.name} if&hellip;
-              </h3>
-              <ul className="space-y-2">
-                {choose1.map((reason, i) => (
-                  <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
-                    <span className="text-emerald-400 mt-0.5 shrink-0">+</span>
-                    {reason}
-                  </li>
-                ))}
-              </ul>
-              <Link
-                href={`/${locale}/destination/${dest1.id}`}
-                className="mt-4 inline-block text-sm font-medium text-primary underline-offset-2 hover:underline"
-              >
-                Explore {dest1.name} &rarr;
-              </Link>
-            </div>
-
-            {/* Dest 2 */}
-            <div className="rounded-2xl border border-border bg-card p-6">
-              <h3 className="text-lg font-bold text-foreground mb-3">
-                Choose {dest2.name} if&hellip;
-              </h3>
-              <ul className="space-y-2">
-                {choose2.map((reason, i) => (
-                  <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
-                    <span className="text-emerald-400 mt-0.5 shrink-0">+</span>
-                    {reason}
-                  </li>
-                ))}
-              </ul>
-              <Link
-                href={`/${locale}/destination/${dest2.id}`}
-                className="mt-4 inline-block text-sm font-medium text-primary underline-offset-2 hover:underline"
-              >
-                Explore {dest2.name} &rarr;
-              </Link>
-            </div>
-          </section>
-        </ScrollReveal>
-      </main>
-    </>
+      {/* Choose X if / Choose Y if */}
+      <section
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+          gap: 1,
+          background: "var(--hair)",
+          border: "1px solid var(--hair)",
+        }}
+      >
+        {[
+          { dest: dest1, reasons: choose1 },
+          { dest: dest2, reasons: choose2 },
+        ].map(({ dest, reasons }) => (
+          <div key={dest.id} style={{ padding: 24, background: "var(--paper)" }}>
+            <p
+              style={{
+                fontFamily: "var(--cinema-mono)",
+                fontSize: 10,
+                letterSpacing: "0.22em",
+                textTransform: "uppercase",
+                color: "var(--vermillion)",
+                margin: "0 0 10px",
+              }}
+            >
+              Choose {dest.name} if
+            </p>
+            <ul style={{ listStyle: "none", padding: 0, margin: "0 0 18px", display: "flex", flexDirection: "column", gap: 10 }}>
+              {reasons.map((r, i) => (
+                <li
+                  key={i}
+                  style={{
+                    display: "flex",
+                    gap: 12,
+                    alignItems: "baseline",
+                    fontFamily: "var(--cinema-ui)",
+                    fontSize: 14,
+                    lineHeight: 1.6,
+                    color: "var(--bone-dim)",
+                  }}
+                >
+                  <span style={{ flexShrink: 0, color: "var(--vermillion)" }}>—</span>
+                  <span>{r}</span>
+                </li>
+              ))}
+            </ul>
+            <Link
+              href={`/${locale}/destination/${dest.id}`}
+              style={{
+                fontFamily: "var(--cinema-mono)",
+                fontSize: 11,
+                letterSpacing: "0.18em",
+                textTransform: "uppercase",
+                color: "var(--vermillion)",
+                textDecoration: "none",
+                borderBottom: "1px solid var(--vermillion)",
+                paddingBottom: 2,
+              }}
+            >
+              Explore {dest.name} →
+            </Link>
+          </div>
+        ))}
+      </section>
+    </div>
   );
 }
