@@ -1,11 +1,15 @@
 import type { Metadata } from "next";
-import { Nav } from "@/components/nav";
-import { Footer } from "@/components/footer";
-import Link from "next/link";
 import { localeAlternates } from "@/lib/seo-utils";
 import { articleJsonLd } from "@/lib/article-schema";
 import { faqPageJsonLd } from "@/lib/faq-schema";
 import { getPrimaryEditor } from "@/lib/editor";
+import { CinematicGuide } from "@/components/cinematic-guide";
+import {
+  guideProse,
+  GuideFaqList,
+  GuideCardRow,
+  GuideBullets,
+} from "@/components/cinematic-guide-helpers";
 
 export const revalidate = 86400;
 
@@ -82,7 +86,8 @@ export default async function FoodSafetyGuidePage({
   const articleLd = articleJsonLd({
     url,
     headline: "Eating safely in India — what to eat, what to skip",
-    description: "Pragmatic food safety: water, street food, salads, spice, and regional dishes worth seeking.",
+    description:
+      "Pragmatic food safety: water, street food, salads, spice, and regional dishes worth seeking.",
     inLanguage,
     datePublished: `${REVIEWED}T00:00:00Z`,
     dateModified: `${REVIEWED}T00:00:00Z`,
@@ -106,96 +111,118 @@ export default async function FoodSafetyGuidePage({
     ],
   };
 
+  const sections = [
+    {
+      id: "three-filters",
+      title: "The three filters",
+      body: (
+        <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
+          <GuideCardRow title="Water source">
+            Tap water unsafe almost everywhere. Sealed bottled water from
+            established brands (Bisleri, Kinley, Aquafina) — check the seal.
+            Hotel RO-filtered stations — fine, refill. Ice — a question to ask
+            at modest places.
+          </GuideCardRow>
+          <GuideCardRow title="Volume">
+            The fewer customers a stall sees, the longer the food has been
+            sitting. High local turnover is the strongest single signal — it
+            means freshness.
+          </GuideCardRow>
+          <GuideCardRow title="Cooking temperature">
+            Hot, fresh, freshly fried or tawa-cooked is safe almost regardless
+            of venue. Lukewarm or cold prepared food, especially anything
+            sitting on a buffet, deserves more scrutiny than the venue&apos;s
+            star rating.
+          </GuideCardRow>
+        </ul>
+      ),
+    },
+    {
+      id: "what-to-order",
+      title: "What to actually order",
+      body: (
+        <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
+          <p style={guideProse}>
+            Day 1–2: pace yourself. Dal, rice, simple curries, paratha,
+            dosa-idli, lassi, masala chai. Skip raw cut salads at modest places.
+            By day 3 your gut is calibrating; you can branch out.
+          </p>
+          <p style={guideProse}>
+            Worth seeking by region: <strong style={{ color: "var(--bone)" }}>Punjab</strong>{" "}
+            for paratha, butter chicken; <strong style={{ color: "var(--bone)" }}>South India</strong>{" "}
+            for dosa, idli, biryani, kerala fish curry;{" "}
+            <strong style={{ color: "var(--bone)" }}>Bengal</strong> for fish,
+            sweets; <strong style={{ color: "var(--bone)" }}>Gujarat</strong>{" "}
+            for thalis; <strong style={{ color: "var(--bone)" }}>Rajasthan</strong>{" "}
+            for dal-baati-churma; <strong style={{ color: "var(--bone)" }}>Hyderabad</strong>{" "}
+            for biryani; <strong style={{ color: "var(--bone)" }}>Lucknow</strong>{" "}
+            for kebabs and tunde-style cuisine.
+          </p>
+        </div>
+      ),
+    },
+    {
+      id: "what-to-carry",
+      title: "What to carry",
+      body: (
+        <GuideBullets
+          items={[
+            "Oral rehydration sachets (ORS) — single best thing to have if anything goes wrong.",
+            "Loperamide tablets (Imodium) — for emergencies on long bus / flight days.",
+            "A 5-day course of azithromycin from your home doctor — for the rare worse case.",
+            "Hand sanitiser — handwashing isn't universally available.",
+            "Reusable water bottle with a filter (LifeStraw, GRAYL) — reduces single-use plastic dramatically.",
+          ]}
+        />
+      ),
+    },
+    {
+      id: "on-spice",
+      title: "On spice",
+      body: (
+        <p style={guideProse}>
+          Indian regional cooking varies dramatically — Kashmiri rogan josh
+          isn&apos;t Kerala kallumakkaya — and most of it isn&apos;t the
+          wall-of-heat the global stereotype suggests. Order &quot;medium&quot;
+          the first day or two and you&apos;ll be fine; ask the restaurant.
+          Yogurt-based drinks (lassi, chaas) and raita on the side neutralise
+          heat far better than water.
+        </p>
+      ),
+    },
+    {
+      id: "faqs",
+      title: "Frequently asked",
+      body: <GuideFaqList faqs={FAQS} />,
+    },
+  ];
+
   return (
-    <div className="min-h-screen">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleLd) }} />
-      {faqLd && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />}
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
-      <Nav />
-      <main className="mx-auto max-w-3xl px-4 py-10 sm:py-14">
-        <div className="mb-6 rounded-xl border border-border/40 bg-card/40 px-4 py-3 sm:px-5 sm:py-3.5">
-          <div className="font-mono text-[10px] sm:text-[11px] tracking-[0.2em] uppercase text-muted-foreground">
-            Practical · Food &amp; safety · Reviewed {REVIEWED}
-          </div>
-        </div>
-
-        <header className="mb-8">
-          <p className="mb-2 text-sm font-medium uppercase tracking-[0.08em] text-primary/70">India food</p>
-          <h1 className="font-serif italic font-medium text-3xl sm:text-4xl md:text-5xl leading-tight" style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}>
-            Eating safely in India — without missing what makes it great
-          </h1>
-          <p className="mt-4 text-base sm:text-lg text-muted-foreground leading-relaxed max-w-2xl">
-            India is one of the great food cultures on the planet, and the standard advice — &quot;don&apos;t eat anything not in a five-star hotel&quot; — costs you most of what makes the trip memorable. The actual signal is freshness, volume, and water source. Apply those filters and you can eat almost everywhere.
-          </p>
-        </header>
-
-        <article className="prose prose-invert max-w-none">
-          <h2 className="font-serif italic text-2xl mb-3 mt-10" style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}>
-            The three filters
-          </h2>
-          <ul className="space-y-3 text-sm">
-            <li className="rounded-xl border border-border bg-background/40 p-4">
-              <p className="font-semibold mb-1">Water source</p>
-              <p className="text-muted-foreground leading-relaxed">
-                Tap water unsafe almost everywhere. Sealed bottled water from established brands (Bisleri, Kinley, Aquafina) — check the seal. Hotel RO-filtered stations — fine, refill. Ice — a question to ask at modest places.
-              </p>
-            </li>
-            <li className="rounded-xl border border-border bg-background/40 p-4">
-              <p className="font-semibold mb-1">Volume</p>
-              <p className="text-muted-foreground leading-relaxed">
-                The fewer customers a stall sees, the longer the food has been sitting. High local turnover is the strongest single signal — it means freshness.
-              </p>
-            </li>
-            <li className="rounded-xl border border-border bg-background/40 p-4">
-              <p className="font-semibold mb-1">Cooking temperature</p>
-              <p className="text-muted-foreground leading-relaxed">
-                Hot, fresh, freshly fried or tawa-cooked is safe almost regardless of venue. Lukewarm or cold prepared food, especially anything sitting on a buffet, deserves more scrutiny than the venue&apos;s star rating.
-              </p>
-            </li>
-          </ul>
-
-          <h2 className="font-serif italic text-2xl mb-3 mt-10" style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}>
-            What to actually order
-          </h2>
-          <p className="text-muted-foreground leading-relaxed mb-3">
-            Day 1-2: pace yourself. Dal, rice, simple curries, paratha, dosa-idli, lassi, masala chai. Skip raw cut salads at modest places. By day 3 your gut is calibrating; you can branch out.
-          </p>
-          <p className="text-muted-foreground leading-relaxed mb-3">
-            Worth seeking by region: <strong>Punjab</strong> for paratha, butter chicken; <strong>South India</strong> for dosa, idli, biryani, kerala fish curry; <strong>Bengal</strong> for fish, sweets; <strong>Gujarat</strong> for thalis; <strong>Rajasthan</strong> for dal-baati-churma; <strong>Hyderabad</strong> for biryani; <strong>Lucknow</strong> for kebabs and tunde-style cuisine.
-          </p>
-
-          <h2 className="font-serif italic text-2xl mb-3 mt-10" style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}>
-            What to carry
-          </h2>
-          <ul className="space-y-2 text-sm text-muted-foreground leading-relaxed">
-            <li>• Oral rehydration sachets (ORS) — single best thing to have if anything goes wrong.</li>
-            <li>• Loperamide tablets (Imodium) — for emergencies on long bus / flight days.</li>
-            <li>• A 5-day course of azithromycin from your home doctor — for the rare worse case.</li>
-            <li>• Hand sanitiser — handwashing isn&apos;t universally available.</li>
-            <li>• Reusable water bottle with a filter (LifeStraw, GRAYL) — reduces single-use plastic dramatically.</li>
-          </ul>
-
-          <h2 className="font-serif italic text-2xl mb-3 mt-10" style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}>
-            On spice
-          </h2>
-          <p className="text-muted-foreground leading-relaxed">
-            Indian regional cooking varies dramatically — Kashmiri rogan josh isn&apos;t Kerala kallumakkaya — and most of it isn&apos;t the wall-of-heat the global stereotype suggests. Order &quot;medium&quot; the first day or two and you&apos;ll be fine; ask the restaurant. Yogurt-based drinks (lassi, chaas) and raita on the side neutralise heat far better than water.
-          </p>
-        </article>
-
-        <div className="mt-12 rounded-xl border border-border bg-card/50 p-5 sm:p-6">
-          <h2 className="font-serif italic font-medium text-xl sm:text-2xl mb-3" style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}>Related</h2>
-          <ul className="space-y-2 text-sm">
-            <li><Link href={`/${locale}/guide/etiquette`} className="text-[#E55642] hover:underline">Etiquette — temples, dress, photography →</Link></li>
-            <li><Link href={`/${locale}/guide/scams`} className="text-[#E55642] hover:underline">Common scams to watch →</Link></li>
-            <li><Link href={`/${locale}/guide/packing`} className="text-[#E55642] hover:underline">Packing for India by region →</Link></li>
-            <li><Link href={`/${locale}/cost-index`} className="text-[#E55642] hover:underline">Cost index — typical daily spend →</Link></li>
-          </ul>
-        </div>
-
-        <aside className="mt-8 text-xs text-muted-foreground/70">Last reviewed {REVIEWED}.</aside>
-      </main>
-      <Footer />
-    </div>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleLd) }}
+      />
+      {faqLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
+        />
+      )}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+      />
+      <CinematicGuide
+        kicker={`GUIDES · FOOD & SAFETY · REVIEWED ${REVIEWED}`}
+        title="Eating safely in India — without missing what makes it great."
+        dek="India is one of the great food cultures on the planet, and the standard advice — 'don't eat anything not in a five-star hotel' — costs you most of what makes the trip memorable. The actual signal is freshness, volume, and water source. Apply those filters and you can eat almost everywhere."
+        sections={sections}
+        nextGuide={{
+          href: `/${locale}/guide/etiquette`,
+          title: "India etiquette — temples, dress, dining, gestures.",
+        }}
+      />
+    </>
   );
 }

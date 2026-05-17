@@ -70,11 +70,21 @@ export function Footer({
     `/${locale}/collections`,
     `/${locale}/plan`,
     `/${locale}/the-window`,
-    // Phase 3 Tier 1 partial (S54)
+    // Phase 3 Tier 1 (S54) — content hub pages
     `/${locale}/blog`,
     `/${locale}/india-travel`,
     `/${locale}/nakshiq-100`,
     `/${locale}/guide/visa`,
+    `/${locale}/guide/permits`,
+    `/${locale}/guide/scams`,
+    `/${locale}/guide/etiquette`,
+    `/${locale}/guide/food-safety`,
+    `/${locale}/guide/packing`,
+    `/${locale}/guide/sim-card`,
+    `/${locale}/guide/transport-overview`,
+    `/${locale}/guide/currency`,
+    `/${locale}/guide/book-indian-trains`,
+    `/${locale}/guide/first-trip-india`,
   ];
   const CINEMATIC_PAGE_PREFIXES = [`/${locale}/skip-list/`];
   const isCinematicPage =

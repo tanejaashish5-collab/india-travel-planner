@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
-import { Nav } from "@/components/nav";
-import { Footer } from "@/components/footer";
-import Link from "next/link";
 import { localeAlternates } from "@/lib/seo-utils";
 import { howToJsonLd } from "@/lib/howto-schema";
 import { faqPageJsonLd } from "@/lib/faq-schema";
 import { getPrimaryEditor } from "@/lib/editor";
+import { CinematicGuide } from "@/components/cinematic-guide";
+import {
+  guideProse,
+  GuideSteps,
+  GuideFaqList,
+} from "@/components/cinematic-guide-helpers";
 
 export const revalidate = 86400;
 
@@ -139,71 +142,69 @@ export default async function ScamsGuidePage({
     ],
   };
 
+  const sections = [
+    {
+      id: "defences",
+      title: "Eight defences, in order",
+      body: <GuideSteps steps={STEPS} />,
+    },
+    {
+      id: "what-this-isnt",
+      title: "What this isn't",
+      body: (
+        <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
+          <p style={guideProse}>
+            India isn&apos;t one giant scam zone, and most of the country sees
+            almost none of this. The patterns above cluster in tourist-hub
+            nodes — large railway stations, the Delhi-Agra-Jaipur triangle&apos;s
+            busiest cracks, monument exits at Taj Mahal and Hawa Mahal — because
+            that&apos;s where the asymmetry of information is highest. Outside
+            these nodes, in residential cities, in smaller towns, on most
+            overland routes, you&apos;ll mostly experience ordinary kindness.
+          </p>
+          <p style={guideProse}>
+            Treat this guide like seatbelts: standard kit, you put it on without
+            thinking, and the trip goes fine.
+          </p>
+        </div>
+      ),
+    },
+    {
+      id: "faqs",
+      title: "Frequently asked",
+      body: <GuideFaqList faqs={FAQS} />,
+    },
+  ];
+
   return (
-    <div className="min-h-screen">
-      {howToLd && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToLd) }} />}
-      {faqLd && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />}
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
-      <Nav />
-      <main className="mx-auto max-w-3xl px-4 py-10 sm:py-14">
-        <div className="mb-6 rounded-xl border border-border/40 bg-card/40 px-4 py-3 sm:px-5 sm:py-3.5">
-          <div className="font-mono text-[10px] sm:text-[11px] tracking-[0.2em] uppercase text-muted-foreground">
-            Practical · Safety · Reviewed {REVIEWED}
-          </div>
-        </div>
-
-        <header className="mb-8">
-          <p className="mb-2 text-sm font-medium uppercase tracking-[0.08em] text-primary/70">India scams</p>
-          <h1 className="font-serif italic font-medium text-3xl sm:text-4xl md:text-5xl leading-tight" style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}>
-            Common India scams — and the simple defences
-          </h1>
-          <p className="mt-4 text-base sm:text-lg text-muted-foreground leading-relaxed max-w-2xl">
-            Almost every scam tourists encounter in India runs at predictable nodes — airport arrivals, big railway stations, monument exits, tourist-circuit hotels — and almost every one is solved by a small set of habits. None of this needs paranoia; it needs awareness.
-          </p>
-        </header>
-
-        <article className="prose prose-invert max-w-none">
-          <h2 className="font-serif italic text-2xl mb-3 mt-10" style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}>
-            Eight defences, in order
-          </h2>
-          <ol className="space-y-4 text-sm">
-            {STEPS.map((s, i) => (
-              <li key={i} className="rounded-xl border border-border bg-background/40 p-4 flex gap-4">
-                <span className="flex-shrink-0 w-7 h-7 rounded-full bg-foreground/10 flex items-center justify-center font-mono text-xs font-semibold">
-                  {i + 1}
-                </span>
-                <div>
-                  <p className="font-semibold mb-1">{s.name}</p>
-                  <p className="text-muted-foreground leading-relaxed">{s.text}</p>
-                </div>
-              </li>
-            ))}
-          </ol>
-
-          <h2 className="font-serif italic text-2xl mb-3 mt-10" style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}>
-            What this isn&apos;t
-          </h2>
-          <p className="text-muted-foreground leading-relaxed">
-            India isn&apos;t one giant scam zone, and most of the country sees almost none of this. The patterns above cluster in tourist-hub nodes — large railway stations, the Delhi-Agra-Jaipur triangle&apos;s busiest cracks, monument exits at Taj Mahal and Hawa Mahal — because that&apos;s where the asymmetry of information is highest. Outside these nodes, in residential cities, in smaller towns, on most overland routes, you&apos;ll mostly experience ordinary kindness.
-          </p>
-          <p className="text-muted-foreground leading-relaxed mt-3">
-            Treat this guide like seatbelts: standard kit, you put it on without thinking, and the trip goes fine.
-          </p>
-        </article>
-
-        <div className="mt-12 rounded-xl border border-border bg-card/50 p-5 sm:p-6">
-          <h2 className="font-serif italic font-medium text-xl sm:text-2xl mb-3" style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}>Related</h2>
-          <ul className="space-y-2 text-sm">
-            <li><Link href={`/${locale}/tourist-traps`} className="text-[#E55642] hover:underline">Specific tourist traps and the better alternatives →</Link></li>
-            <li><Link href={`/${locale}/guide/currency`} className="text-[#E55642] hover:underline">Money in India →</Link></li>
-            <li><Link href={`/${locale}/guide/transport-overview`} className="text-[#E55642] hover:underline">Trains, buses, flights — the right tool by route →</Link></li>
-            <li><Link href={`/${locale}/sos`} className="text-[#E55642] hover:underline">SOS numbers by destination →</Link></li>
-          </ul>
-        </div>
-
-        <aside className="mt-8 text-xs text-muted-foreground/70">Last reviewed {REVIEWED}.</aside>
-      </main>
-      <Footer />
-    </div>
+    <>
+      {howToLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(howToLd) }}
+        />
+      )}
+      {faqLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
+        />
+      )}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+      />
+      <CinematicGuide
+        kicker={`GUIDES · SAFETY · REVIEWED ${REVIEWED}`}
+        title="Common India scams — and the simple defences."
+        dek="Almost every scam tourists encounter in India runs at predictable nodes — airport arrivals, big railway stations, monument exits, tourist-circuit hotels — and almost every one is solved by a small set of habits. None of this needs paranoia; it needs awareness."
+        sections={sections}
+        nextGuide={{
+          href: `/${locale}/tourist-traps`,
+          title: "Specific tourist traps and the better alternatives.",
+        }}
+      />
+    </>
   );
 }
+

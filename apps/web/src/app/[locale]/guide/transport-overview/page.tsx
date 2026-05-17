@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
-import { Nav } from "@/components/nav";
-import { Footer } from "@/components/footer";
-import Link from "next/link";
 import { localeAlternates } from "@/lib/seo-utils";
 import { howToJsonLd } from "@/lib/howto-schema";
 import { faqPageJsonLd } from "@/lib/faq-schema";
 import { getPrimaryEditor } from "@/lib/editor";
+import { CinematicGuide } from "@/components/cinematic-guide";
+import {
+  GuideSteps,
+  GuideBullets,
+  GuideFaqList,
+} from "@/components/cinematic-guide-helpers";
 
 export const revalidate = 86400;
 
@@ -129,72 +132,62 @@ export default async function TransportGuidePage({
     ],
   };
 
+  const sections = [
+    {
+      id: "decision-logic",
+      title: "The decision logic",
+      body: <GuideSteps steps={STEPS} />,
+    },
+    {
+      id: "first-timers",
+      title: "Things that catch first-timers out",
+      body: (
+        <GuideBullets
+          items={[
+            "Train tickets sometimes show as 'waitlist' at booking. Most clear by departure; check 4 hours before. Tatkal opens exactly 24h before — set an alarm.",
+            "Domestic flight gates close 25 minutes before departure. Indian airport security has separate domestic and international zones — make sure you're at the right one.",
+            "Long-distance bus arrival times are loose. Schedule a 2-3 hour buffer to your next leg.",
+            "A car-with-driver is paid by you per day; the driver is usually paid a small daily allowance plus tip — budget ₹500-1000/day for the latter.",
+            "Train station departure boards refresh slowly — confirm the platform on the station's announcement boards or via NTES app.",
+          ]}
+        />
+      ),
+    },
+    {
+      id: "faqs",
+      title: "Frequently asked",
+      body: <GuideFaqList faqs={FAQS} />,
+    },
+  ];
+
   return (
-    <div className="min-h-screen">
-      {howToLd && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToLd) }} />}
-      {faqLd && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />}
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
-      <Nav />
-      <main className="mx-auto max-w-3xl px-4 py-10 sm:py-14">
-        <div className="mb-6 rounded-xl border border-border/40 bg-card/40 px-4 py-3 sm:px-5 sm:py-3.5">
-          <div className="font-mono text-[10px] sm:text-[11px] tracking-[0.2em] uppercase text-muted-foreground">
-            Practical · Transport · Reviewed {REVIEWED}
-          </div>
-        </div>
-
-        <header className="mb-8">
-          <p className="mb-2 text-sm font-medium uppercase tracking-[0.08em] text-primary/70">India transport</p>
-          <h1 className="font-serif italic font-medium text-3xl sm:text-4xl md:text-5xl leading-tight" style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}>
-            Trains, buses, flights, ride-share — when to use what
-          </h1>
-          <p className="mt-4 text-base sm:text-lg text-muted-foreground leading-relaxed max-w-2xl">
-            India runs one of the largest passenger railway networks on the planet, six major domestic airlines, organised state-bus systems in every state, and full Uber/Ola/Rapido coverage in 30+ cities. The decision isn&apos;t which exists — it&apos;s which is right for the leg you&apos;re planning.
-          </p>
-        </header>
-
-        <article className="prose prose-invert max-w-none">
-          <h2 className="font-serif italic text-2xl mb-3 mt-10" style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}>
-            The decision logic
-          </h2>
-          <ol className="space-y-4 text-sm">
-            {STEPS.map((s, i) => (
-              <li key={i} className="rounded-xl border border-border bg-background/40 p-4 flex gap-4">
-                <span className="flex-shrink-0 w-7 h-7 rounded-full bg-foreground/10 flex items-center justify-center font-mono text-xs font-semibold">
-                  {i + 1}
-                </span>
-                <div>
-                  <p className="font-semibold mb-1">{s.name}</p>
-                  <p className="text-muted-foreground leading-relaxed">{s.text}</p>
-                </div>
-              </li>
-            ))}
-          </ol>
-
-          <h2 className="font-serif italic text-2xl mb-3 mt-10" style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}>
-            Things that catch first-timers out
-          </h2>
-          <ul className="space-y-2 text-sm text-muted-foreground leading-relaxed">
-            <li>• Train tickets sometimes show as &quot;waitlist&quot; at booking. Most clear by departure; check 4 hours before. Tatkal opens exactly 24h before — set an alarm.</li>
-            <li>• Domestic flight gates close 25 minutes before departure. Indian airport security has separate domestic and international zones — make sure you&apos;re at the right one.</li>
-            <li>• Long-distance bus arrival times are loose. Schedule a 2-3 hour buffer to your next leg.</li>
-            <li>• A car-with-driver is paid by you per day; the driver is usually paid a small daily allowance plus tip — budget ₹500-1000/day for the latter.</li>
-            <li>• Train station departure boards refresh slowly — confirm the platform on the station&apos;s announcement boards or via NTES app.</li>
-          </ul>
-        </article>
-
-        <div className="mt-12 rounded-xl border border-border bg-card/50 p-5 sm:p-6">
-          <h2 className="font-serif italic font-medium text-xl sm:text-2xl mb-3" style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}>Related</h2>
-          <ul className="space-y-2 text-sm">
-            <li><Link href={`/${locale}/guide/book-indian-trains`} className="text-[#E55642] hover:underline">Booking Indian trains as a foreigner — full guide →</Link></li>
-            <li><Link href={`/${locale}/arrival`} className="text-[#E55642] hover:underline">Arrival playbooks for 9 airports →</Link></li>
-            <li><Link href={`/${locale}/guide/scams`} className="text-[#E55642] hover:underline">Common transport scams →</Link></li>
-            <li><Link href={`/${locale}/road-conditions`} className="text-[#E55642] hover:underline">Road conditions, real-time →</Link></li>
-          </ul>
-        </div>
-
-        <aside className="mt-8 text-xs text-muted-foreground/70">Last reviewed {REVIEWED}.</aside>
-      </main>
-      <Footer />
-    </div>
+    <>
+      {howToLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(howToLd) }}
+        />
+      )}
+      {faqLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
+        />
+      )}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+      />
+      <CinematicGuide
+        kicker={`GUIDES · TRANSPORT · REVIEWED ${REVIEWED}`}
+        title="Trains, buses, flights, ride-share — when to use what."
+        dek="India runs one of the largest passenger railway networks on the planet, six major domestic airlines, organised state-bus systems in every state, and full Uber/Ola/Rapido coverage in 30+ cities. The decision isn't which exists — it's which is right for the leg you're planning."
+        sections={sections}
+        nextGuide={{
+          href: `/${locale}/guide/book-indian-trains`,
+          title: "How to book Indian trains — IRCTC, FTQ, Tatkal.",
+        }}
+      />
+    </>
   );
 }
