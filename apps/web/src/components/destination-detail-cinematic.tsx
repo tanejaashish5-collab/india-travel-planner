@@ -61,6 +61,7 @@ import { ShareButton } from "./share-button";
 import { WhatsAppShare } from "./whatsapp-share";
 import { CompareButton } from "./compare-tray";
 import { ConfidenceCardComponent } from "./confidence-card";
+import { CinematicStateMap } from "./cinematic-state-map";
 import { KidsBadge } from "./kids-badge";
 import { TouristTrapIntervention } from "./tourist-trap-intervention";
 import { TravelerNotes } from "./traveler-notes";
@@ -1340,13 +1341,26 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
           <div style={{ maxWidth: 1100, margin: "0 auto" }}>
             <SectionLabel num="VI" name="THE ATLAS · WHERE TO POINT" />
 
-            {/* POI section first — has the map. Use it as the primary "where
-                to point" surface. Subs are rendered below ONLY when they're
-                a different content set (sub-destinations are usually
+            {/* India-outline choropleth — vermillion-highlighted parent
+                state on the cinematic India outline (no neighbouring
+                countries). Replaces the legacy Leaflet dots map per user
+                request 2026-05-17: "Indian map with no neighbouring country
+                shown… coloured states as per the score" — adapted for
+                destination scope as single-state focus. */}
+            <div style={{ maxWidth: 1100, margin: "32px auto 0" }}>
+              <CinematicStateMap
+                stateId={dest.state_id}
+                stateName={stateName}
+                destinationName={displayName}
+              />
+            </div>
+
+            {/* POI section. Subs are rendered below ONLY when they're a
+                different content set (sub-destinations are usually
                 neighbourhoods/sub-towns, POIs are specific stops; some
                 destinations only have one or the other). */}
             {pois.length > 0 && (
-              <div style={{ maxWidth: 1100, margin: "32px auto 0" }}>
+              <div style={{ maxWidth: 1100, margin: "60px auto 0" }}>
                 <POISection pois={pois} destName={displayName} />
               </div>
             )}
