@@ -138,24 +138,30 @@ export async function generateMetadata({
   // showed it, users scrolled past. Verdict-led copy front-loads the answer
   // ("Skip", "Visit", "Wait") in both title and description.
 
-  // Title hook keyed off score. Honest but click-driving:
-  // 5 → "Peak season" (best month)
-  // 4 → "Great time"
-  // 3 → "Mixed conditions" (typically wait verdict)
-  // 2 → "Tough season"
-  // 1 → "Avoid this month"
+  // Title hook keyed off score. 2026-05-17 rewrite — replaced judgmental
+  // verdict labels with action/info-led hooks. Old labels ("Avoid this
+  // month", "Mixed conditions") were telling users "no" when they'd already
+  // booked dates or had fixed reasons to go; CTR audit showed score 1-3
+  // pages at 0.21-0.36% even on temperature queries that should have been
+  // easy clicks (vrindavan/may 38-46°C, munnar/june, darjeeling/may).
+  // New hooks promise information over judgment:
+  // 5 → "Peak month"      (was Peak season — tighter, more specific)
+  // 4 → "Best window"     (was Great time — implies time-specific tip)
+  // 3 → "Worth waiting?"  (was Mixed conditions — question earns curiosity)
+  // 2 → "Plan carefully"  (was Tough season — action-led, not judgmental)
+  // 1 → "What to expect"  (was Avoid this month — info-led, no "no")
   const titleHook = isHi
-    ? (score >= 5 ? "उच्च मौसम"
-      : score >= 4 ? "बढ़िया समय"
-      : score >= 3 ? "मिश्रित स्थिति"
-      : score >= 2 ? "कठिन मौसम"
-      : score >= 1 ? "इस महीने टालें"
+    ? (score >= 5 ? "सबसे अच्छा महीना"
+      : score >= 4 ? "बेहतरीन समय"
+      : score >= 3 ? "क्या रुकें?"
+      : score >= 2 ? "सोच-समझकर जाएँ"
+      : score >= 1 ? "क्या उम्मीद करें"
       : "यात्रा गाइड")
-    : (score >= 5 ? "Peak season"
-      : score >= 4 ? "Great time"
-      : score >= 3 ? "Mixed conditions"
-      : score >= 2 ? "Tough season"
-      : score >= 1 ? "Avoid this month"
+    : (score >= 5 ? "Peak month"
+      : score >= 4 ? "Best window"
+      : score >= 3 ? "Worth waiting?"
+      : score >= 2 ? "Plan carefully"
+      : score >= 1 ? "What to expect"
       : "Travel guide");
 
   // OG title — used in social link previews. Longer + brand-anchored.
