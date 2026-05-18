@@ -1341,14 +1341,16 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
           <div style={{ maxWidth: 1100, margin: "0 auto" }}>
             <SectionLabel num="VI" name="THE ATLAS · WHERE TO POINT" />
 
-            {/* India-outline choropleth — vermillion-highlighted parent
-                state on the cinematic India outline (no neighbouring
-                countries). Sized narrower than the section container so
-                the map reads as a focused panel rather than a full-bleed
-                visualisation (matches the landing-page Atlas proportions). */}
-            <div style={{ maxWidth: 520, margin: "32px auto 0" }}>
+            {/* Cinematic destination atlas — mirrors the landing-page
+                Act IV Atlas (hand-drawn India silhouette + faint grid
+                + dropping/pulsing vermillion pin at this destination's
+                coords + corner readouts). Visual continuity with the
+                landing wins over the prior state choropleth — the
+                section header already names the state, and the pin
+                label carries it too. */}
+            <div style={{ maxWidth: 720, margin: "32px auto 0" }}>
               <CinematicStateMap
-                stateId={dest.state_id}
+                coords={dest.coords}
                 stateName={stateName}
                 destinationName={displayName}
               />
