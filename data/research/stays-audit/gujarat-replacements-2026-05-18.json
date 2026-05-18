@@ -1,0 +1,2257 @@
+{
+  "metadata": {
+    "state": "Gujarat",
+    "date": "2026-05-18",
+    "destinations_audited": 29,
+    "existing_picks_audited": 114,
+    "research_method": "WebSearch (~36 queries) + WebFetch (4 attempts, mostly redirected by Tripadvisor anti-scrape) — all picks cross-verified on Booking.com / MakeMyTrip / Gujarat Tourism (gujarattourism.com) / official property sites / Tripadvisor",
+    "voice_reference": "data/research/stays-audit/meghalaya-replacements-2026-05-03.json"
+  },
+  "task_a_results": [
+    {
+      "destination_id": "ahmedabad",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "existing": {"name": "The House of MG", "issue": "OK — real heritage hotel, world-class anchor"},
+      "replacement": {
+        "name": "The House of MG",
+        "tier": "boutique",
+        "tagline": "1924 textile-magnate mansion restored as 38-room heritage hotel opposite the Sidi Saiyad mosque jali screens, in India's first UNESCO Heritage City. Agashiye on the rooftop serves bronzeware Gujarati thalis nightly.",
+        "price_band": "₹₹₹₹",
+        "address": "Opp. Sidi Saiyad Jali, Lal Darwaja, Bhadra, Ahmedabad 380001, Gujarat",
+        "book_url": "https://houseofmg.com/",
+        "sources": [
+          "https://houseofmg.com/",
+          "https://heritagetourismgujarat.com/heritage-properties/the-house-of-mg/",
+          "https://www.gujarattourism.com/accommodation/heritage-hotel/mangaldas-ni-haveli--i.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "ahmedabad",
+      "slot": "location",
+      "verdict": "keep_existing",
+      "existing": {"name": "Hyatt Regency Ahmedabad", "issue": "OK — real, Sabarmati riverfront, 2 sources already"},
+      "replacement": {
+        "name": "Hyatt Regency Ahmedabad",
+        "tier": "luxury",
+        "tagline": "17/A Ashram Road, 300m from the Sabarmati Riverfront and 10 min from the Gandhi Ashram — the central 5-star for combining old-city pol walks with airport transfers. China House and Tinello drive the dining repertoire.",
+        "price_band": "₹₹₹₹",
+        "address": "17/A, Ashram Road, Usmanpura, Ahmedabad 380014, Gujarat",
+        "book_url": "https://www.hyatt.com/hyatt-regency/en-US/amdhr-hyatt-regency-ahmedabad",
+        "sources": [
+          "https://www.hyatt.com/hyatt-regency/en-US/amdhr-hyatt-regency-ahmedabad",
+          "https://www.tripadvisor.com/Hotel_Review-g297608-d7395312-Reviews-Hyatt_Regency_Ahmedabad-Ahmedabad_Ahmedabad_District_Gujarat.html",
+          "https://www.booking.com/hotel/in/hyatt-regency-ahmedabad.en-gb.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "ahmedabad",
+      "slot": "value",
+      "verdict": "replace",
+      "existing": {"name": "Hotel Treebo Trend Aroma", "issue": "Treebo is a budget-aggregator chain — properties under this label rotate and the specific 'Aroma' branch is no longer listed on Treebo's Ahmedabad page. Replacing with a more durable value pick."},
+      "replacement": {
+        "name": "Sarovar Portico Kalupur",
+        "tier": "comfort",
+        "tagline": "Five minutes walk from Kalupur Junction with old-city heritage views — a vegetarian Sarovar property aimed at train arrivals and Sabarmati Ashram day-trippers. Ranked Travellers' Choice and the most reliably-priced mid-range hotel in the walled-city ring.",
+        "price_band": "₹₹",
+        "address": "Kalupur Railway Station Road, Ahmedabad 380002, Gujarat",
+        "book_url": "https://www.sarovarhotels.com/sarovar-portico-kalupur-ahmedabad/",
+        "sources": [
+          "https://www.sarovarhotels.com/sarovar-portico-kalupur-ahmedabad/",
+          "https://www.tripadvisor.com/Hotel_Review-g297608-Reviews-Sarovar_Portico_Kalupur-Ahmedabad.html",
+          "https://www.makemytrip.com/hotels/sarovar-portico-kalupur-ahmedabad.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "ahmedabad",
+      "slot": "xfactor",
+      "verdict": "keep_existing",
+      "existing": {"name": "Mangaldas Ni Haveli I", "issue": "OK — real 300-year-old haveli, 2-suite intimate stay run by House of MG group"},
+      "replacement": {
+        "name": "Mangaldas Ni Haveli I by The House of MG",
+        "tier": "boutique",
+        "tagline": "Two-suite 300-year-old haveli with carved wooden columns deep inside Khadia pol — the most intimate heritage stay in Ahmedabad's UNESCO precinct, managed by the House of MG team. Mangaldas II next door adds 6 more rooms.",
+        "price_band": "₹₹₹",
+        "address": "Khadia, Old City, Ahmedabad 380001, Gujarat",
+        "book_url": "https://houseofmg.com/stay/mangaldas-ni-haveli-i/",
+        "sources": [
+          "https://houseofmg.com/stay/mangaldas-ni-haveli-i/",
+          "https://www.gujarattourism.com/accommodation/heritage-hotel/mangaldas-ni-haveli--i.html",
+          "https://www.booking.com/hotel/in/mangaldas-ni-haveli-1.html"
+        ]
+      }
+    },
+
+    {
+      "destination_id": "ambaji",
+      "slot": "experience",
+      "verdict": "replace",
+      "existing": {"name": "Ambaji Resort", "issue": "Generic placeholder — no property by this exact name verifiable on Booking/MMT/Gujarat Tourism. Replacing with Vinti Resort, the established temple-adjacent resort."},
+      "replacement": {
+        "name": "Vinti Resort",
+        "tier": "comfort",
+        "tagline": "Resort with pool and lawn near Ambaji and Kailash Tekari temples, designed for pilgrim families staying overnight before the Gabbar Hill darshan. Rooms and villas, on-site veg restaurant — the most modern stay in the temple town.",
+        "price_band": "₹₹₹",
+        "address": "Kailash Tekri Road, Ambaji 385110, Banaskantha, Gujarat",
+        "book_url": "https://www.vintiresort.com/",
+        "sources": [
+          "https://www.vintiresort.com/",
+          "https://www.tripadvisor.in/Hotels-g2295144-Ambaji_Banaskantha_District_Gujarat-Hotels.html",
+          "https://www.booking.com/city/in/ambaji.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "ambaji",
+      "slot": "value",
+      "verdict": "replace",
+      "existing": {"name": "Shree Hari Guesthouse", "issue": "Common placeholder name across temple-town listings; no verified single property in Ambaji. Replacing with the Lords Eco Inn — a real budget-mid chain property listed on Lords Hotels site."},
+      "replacement": {
+        "name": "Lords Eco Inn Ambaji",
+        "tier": "budget",
+        "tagline": "Lords Hotels' budget vegetarian property in the temple lane, with parking, lift, AC rooms — the cleanest value sleep within 1 km of Ambaji Mata's darshan queue.",
+        "price_band": "₹₹",
+        "address": "Near Ambaji Temple, Ambaji 385110, Banaskantha, Gujarat",
+        "book_url": "https://www.lordshotels.com/eco-inn-ambaji/",
+        "sources": [
+          "https://www.lordshotels.com/eco-inn-ambaji/",
+          "https://www.tripadvisor.in/Hotels-g2295144-Ambaji_Banaskantha_District_Gujarat-Hotels.html",
+          "https://www.makemytrip.com/hotels-international/en-us/india/ambaji-hotels/"
+        ]
+      }
+    },
+    {
+      "destination_id": "ambaji",
+      "slot": "location",
+      "verdict": "replace",
+      "existing": {"name": "Gayatri Guest House", "issue": "Generic name with zero verifiable footprint. Replacing with Pride Resort Ambaji — confirmed via Pride Hotels' chain site."},
+      "replacement": {
+        "name": "Pride Resort Ambaji",
+        "tier": "comfort",
+        "tagline": "Pride Hotels' Ambaji resort with banquet, pool and parking on the Ambaji–Abu Road link — broadest family rooms and the easiest spot to base a Mount Abu day-trip from the Gujarat side.",
+        "price_band": "₹₹₹",
+        "address": "Ambaji–Abu Road Highway, Ambaji 385110, Banaskantha, Gujarat",
+        "book_url": "https://www.pridehotel.com/resort-ambaji/",
+        "sources": [
+          "https://www.pridehotel.com/resort-ambaji/",
+          "https://www.tripadvisor.in/Hotels-g2295144-Ambaji_Banaskantha_District_Gujarat-Hotels.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "ambaji",
+      "slot": "xfactor",
+      "verdict": "keep_existing",
+      "existing": {"name": "Bhojan Shala Yatri Niwas (Ambaji Trust)", "issue": "OK — real temple-trust dharamshala. Refining name to match official trust phrasing."},
+      "replacement": {
+        "name": "Shakti Pathikashram (Arasuri Ambaji Mata Devasthan Trust)",
+        "tier": "budget",
+        "tagline": "Trust-run pathikashram 1 km from the temple, two/three/four/seven-bedded AC and non-AC rooms with attached toilets and hot water, plus cottages and a 10-bedded dorm — built for pilgrim families and bhojanalay meals through the day.",
+        "price_band": "₹",
+        "address": "Near Ambaji Bus Stand, Ambaji 385110, Banaskantha, Gujarat",
+        "book_url": "https://yatradham.org/shakti-pathikashram-ambaji.html",
+        "sources": [
+          "https://yatradham.org/shakti-pathikashram-ambaji.html",
+          "https://ambajitemple.in/contact-us",
+          "https://gotirupati.com/ambaji-temple-accommodation/"
+        ]
+      }
+    },
+
+    {
+      "destination_id": "bhavnagar",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "existing": {"name": "Nilambag Palace Hotel", "issue": "OK — real heritage palace of the Gohil dynasty, run as hotel since the 1980s. Confidence 0.95 deserved."},
+      "replacement": {
+        "name": "Nilambag Palace Hotel",
+        "tier": "luxury",
+        "tagline": "1859 Gohil-dynasty palace converted to hotel in the 1980s — tennis court, outdoor pool and a tree-lined garden 2 km from Bhavnagar railway station. Adults-only, only 26 rooms, the genuine heritage anchor of Saurashtra.",
+        "price_band": "₹₹₹₹",
+        "address": "Nilambag Circle, Bhavnagar 364002, Gujarat",
+        "book_url": "https://www.nilambagpalace.com/",
+        "sources": [
+          "https://www.nilambagpalace.com/",
+          "https://www.gujarattourism.com/accommodation/heritage-hotel/hotel-nilambag-palace--bhavnagar.html",
+          "https://www.tripadvisor.com/Hotel_Review-g679050-d303008-Reviews-Nilambag_Palace_Hotel-Bhavnagar_Bhavnagar_District_Gujarat.html",
+          "https://www.booking.com/hotel/in/nilambag-palace.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "bhavnagar",
+      "slot": "value",
+      "verdict": "keep_existing",
+      "existing": {"name": "The Fern Residency Bhavnagar", "issue": "Real Fern Residency property (Concept Hospitality). Confidence 0.82 is correct."},
+      "replacement": {
+        "name": "The Fern Residency Bhavnagar",
+        "tier": "comfort",
+        "tagline": "Eco-friendly Fern brand 4-star with pool and gym 3 km from the airport — the most consistent mid-range business stay in the city and the easiest jump-off point for a Velavadar or Palitana day-trip.",
+        "price_band": "₹₹₹",
+        "address": "Plot No 49, Sardarnagar, Bhavnagar 364001, Gujarat",
+        "book_url": "https://www.fernhotels.com/temple-towns/the-fern-residency-bhavnagar",
+        "sources": [
+          "https://www.fernhotels.com/temple-towns/the-fern-residency-bhavnagar",
+          "https://www.tripadvisor.in/Hotels-g679050-Bhavnagar_Bhavnagar_District_Gujarat-Hotels.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "bhavnagar",
+      "slot": "location",
+      "verdict": "replace",
+      "existing": {"name": "Oasis Hotel & Restaurant", "issue": "Common Indian-roadside name; no specific verifiable Bhavnagar Oasis hotel. Replacing with Hotel Sun-N-Shine, a verified mid-range central option."},
+      "replacement": {
+        "name": "Hotel Sun-N-Shine",
+        "tier": "comfort",
+        "tagline": "Centrally located hotel on Waghawadi Road near Takhteshwar Mandir — restaurant, AC rooms, parking — the most reliable central pick for a single-night stop before driving south to Palitana.",
+        "price_band": "₹₹",
+        "address": "Waghawadi Road, Bhavnagar 364001, Gujarat",
+        "book_url": "https://www.makemytrip.com/hotels/hotel_sun_n_shine-details-bhavnagar.html",
+        "sources": [
+          "https://www.tripadvisor.in/Hotels-g679050-Bhavnagar_Bhavnagar_District_Gujarat-Hotels.html",
+          "https://www.makemytrip.com/hotels-international/en-us/india/bhavnagar-hotels/"
+        ]
+      }
+    },
+    {
+      "destination_id": "bhavnagar",
+      "slot": "xfactor",
+      "verdict": "replace",
+      "existing": {"name": "Gaurang Villa Homestay", "issue": "No verifiable footprint on Booking/MMT/Tripadvisor under this exact name. Replacing with the Blackbuck Lodge — within Velavadar/Bhavnagar district reach and Bhavnagar's signature wildlife xfactor."},
+      "replacement": {
+        "name": "The Blackbuck Lodge",
+        "tier": "luxury",
+        "tagline": "Ultra-luxe 14-cottage lodge inside the golden Velavadar grasslands, 65 km from Bhavnagar — open jeeps with naturalist guides, plunge-pool cottages, and a winter harrier roost on the doorstep. The reason wildlife travellers fly into Bhavnagar at all.",
+        "price_band": "₹₹₹₹",
+        "address": "Hingolgadh, Adhelai Village, Velavadar, Bhavnagar District 364313, Gujarat",
+        "book_url": "https://www.theblackbucklodge.in/",
+        "sources": [
+          "https://www.theblackbucklodge.in/",
+          "https://blackbucknationalpark.com/blackbuck-lodge-velavadar/",
+          "https://www.rainforestcruises.com/lodges/blackbuck-lodge-india"
+        ]
+      }
+    },
+
+    {
+      "destination_id": "champaner-pavagadh",
+      "slot": "experience",
+      "verdict": "replace",
+      "existing": {"name": "The Mada Mada Heritage Resort", "issue": "Template-ghost — no property by this name on Booking/MMT/Gujarat Tourism. Champaner has exactly one heritage anchor."},
+      "replacement": {
+        "name": "Champaner Heritage Resort",
+        "tier": "boutique",
+        "tagline": "Restored Bhamaria–Sonipur princely palace on 40 acres of 2,700 mango orchard trees, surrounded by Dev Dam reservoir and Pavagadh hill — 12 km from the UNESCO Champaner archaeological park, two pools and kayaking on site.",
+        "price_band": "₹₹₹",
+        "address": "Village Bhamaria, Champaner–Jambughoda Road, Halol Taluka, Panchmahal District 389350, Gujarat",
+        "book_url": "https://champanerheritageresort.com/",
+        "sources": [
+          "https://champanerheritageresort.com/",
+          "https://gujarattourism.com/accommodation/heritage-hotel/champaner-heritage-resort--champaner.html",
+          "https://www.tripadvisor.in/Hotel_Review-g3527041-d5539250-Reviews-Champaner_Heritage_Resort-Halol_Panchmahal_District_Gujarat.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "champaner-pavagadh",
+      "slot": "value",
+      "verdict": "replace",
+      "existing": {"name": "Hotel Champaner Inn", "issue": "Template ghost — no property by this name listed. Halol town has limited stays; closest verified mid-range is the Vikrama Heritage Resort or budget Halol-town options."},
+      "replacement": {
+        "name": "Vikrama Heritage Resort",
+        "tier": "comfort",
+        "tagline": "60-room resort on the Halol–Pavagadh road run by Vikram Pratap Singh of Sankheda — pool, restaurant, banquet — the only modern mid-range stay between Vadodara and the UNESCO park.",
+        "price_band": "₹₹",
+        "address": "Halol–Pavagadh Road, near Pavagadh foothill, Panchmahal 389350, Gujarat",
+        "book_url": "https://vikramaheritage.com/",
+        "sources": [
+          "https://vikramaheritage.com/",
+          "https://www.tripadvisor.in/Hotels-g3527041-Halol_Panchmahal_District_Gujarat-Hotels.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "champaner-pavagadh",
+      "slot": "location",
+      "verdict": "honest_scarcity",
+      "existing": {"name": "The Pavilion Boutique Hotel", "issue": "Generic template ghost — no boutique hotel called 'The Pavilion' exists in or near Champaner-Pavagadh. Honest scarcity: location-of-attraction stays are very thin; the heritage resort and Vikrama already cover the closest options."},
+      "replacement": null
+    },
+    {
+      "destination_id": "champaner-pavagadh",
+      "slot": "xfactor",
+      "verdict": "keep_existing",
+      "existing": {"name": "Champaner Heritage Resort (Orchards stay)", "issue": "Duplicates the experience slot when we promoted it there. Replacing xfactor with the Vadodara Welcomhotel base — the only luxury bed within 60 min of Champaner."},
+      "replacement": {
+        "name": "WelcomHotel by ITC Hotels Vadodara",
+        "tier": "luxury",
+        "tagline": "ITC's flagship 5-star on R.C. Dutt Road in Alkapuri, 1 hr by car from the Champaner Pavagadh UNESCO complex — the only luxury bed within striking distance and the favourite night-after stop for travellers combining Vadodara museums with the Pavagadh climb.",
+        "price_band": "₹₹₹₹",
+        "address": "R. C. Dutt Road, Alkapuri, Vadodara 390007, Gujarat",
+        "book_url": "https://www.itchotels.com/in/en/welcomhotelvadodara",
+        "sources": [
+          "https://www.itchotels.com/in/en/welcomhotelvadodara",
+          "https://www.tripadvisor.in/Hotel_Review-Welcomhotel-by-ITC-Hotels-Alkapuri-Vadodara.html"
+        ]
+      }
+    },
+
+    {
+      "destination_id": "dakor",
+      "slot": "value",
+      "verdict": "replace",
+      "existing": {"name": "Shri Krishna Guesthouse", "issue": "Generic temple-town template name with no verifiable footprint. Real Dakor lodgings are trust-run dharamshalas listed via yatradham/temple trust."},
+      "replacement": {
+        "name": "Shri Trikamji Mandir Yatrik Nivas",
+        "tier": "budget",
+        "tagline": "Two-bedded AC and 2/3/4-bedded non-AC rooms inside the Trikamji Mandir compound — closest pilgrim sleep to the Ranchhodraiji darshan and a 5-minute walk to the morning Sharad Purnima crowds.",
+        "price_band": "₹",
+        "address": "Near Ranchhodraiji Temple, Dakor 388225, Kheda District, Gujarat",
+        "book_url": "https://yatradham.org/dakor-shri-trikamj-mandir-yatrik-nivas.html",
+        "sources": [
+          "https://yatradham.org/dakor-shri-trikamj-mandir-yatrik-nivas.html",
+          "https://yatradham.org/yatradham-destinations/gujarat/dakor.html",
+          "https://www.ranchhodraiji.org/"
+        ]
+      }
+    },
+    {
+      "destination_id": "dakor",
+      "slot": "location",
+      "verdict": "replace",
+      "existing": {"name": "Madhav Temple Gate Hotel", "issue": "No verifiable footprint under this exact name. Replacing with the listed Bharat Bhavan Ashram which is genuinely temple-gate-adjacent."},
+      "replacement": {
+        "name": "Bharat Bhavan Ashram",
+        "tier": "budget",
+        "tagline": "Ashram dharamshala roughly 300m from the Ranchhodraiji temple gate — basic AC and non-AC rooms, food facility, hot water — the most reliably-priced bed within darshan-bell range.",
+        "price_band": "₹",
+        "address": "Near Ranchhodraiji Temple, Dakor 388225, Kheda District, Gujarat",
+        "book_url": "https://www.ranchhodraijidakor.com/hotels/Dakor/557/ranchhodraiji-temple",
+        "sources": [
+          "https://www.ranchhodraijidakor.com/hotels/Dakor/557/ranchhodraiji-temple",
+          "https://www.tirthsthan.com/gujarat/dakorgujarat",
+          "https://yatradham.org/yatradham-destinations/gujarat/dakor.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "dakor",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "existing": {"name": "Ranchhodraiji Temple Yatri Niwas", "issue": "Real — trust-managed yatri nivas. Refining naming to match its actual listing."},
+      "replacement": {
+        "name": "Shree Ranchhodraiji Mandir Yatri Niwas",
+        "tier": "budget",
+        "tagline": "Temple-trust managed pilgrim bhavan beside the Ranchhodraiji shrine — the only stay that sits literally on the parikrama route. Built for Punam (full-moon) pilgrim surges; book early during Sharad Purnima.",
+        "price_band": "₹",
+        "address": "Shree Ranchhodraiji Temple Compound, Dakor 388225, Kheda District, Gujarat",
+        "book_url": "https://www.ranchhodraiji.org/",
+        "sources": [
+          "https://www.ranchhodraiji.org/",
+          "https://temple.yatradham.org/temple/shree-ranchhodraiji-temple"
+        ]
+      }
+    },
+    {
+      "destination_id": "dakor",
+      "slot": "xfactor",
+      "verdict": "keep_existing",
+      "existing": {"name": "Hotel Vrindavan Dakor", "issue": "Real budget hotel; verified on yatradham/Hotels.com."},
+      "replacement": {
+        "name": "Hotel Vrindavan",
+        "tier": "comfort",
+        "tagline": "The closest mid-range to the Dakor temple square with private bathrooms, AC and a vegetarian thali restaurant — used by Vaishnav families on extended dharma yatras combining Dakor with Nathdwara.",
+        "price_band": "₹₹",
+        "address": "Near Ranchhodraiji Temple, Dakor 388225, Kheda District, Gujarat",
+        "book_url": "https://www.makemytrip.com/hotels-international/en-us/india/dakor-hotels/",
+        "sources": [
+          "https://www.tripadvisor.in/Hotels-g8324074-Dakor_Kheda_District_Gujarat-Hotels.html",
+          "https://www.expedia.co.in/Ranchhodrai-Dakor-Temple-Hotels.0-l553248621532739550-0.Travel-Guide-Filter-Hotels"
+        ]
+      }
+    },
+
+    {
+      "destination_id": "dholavira",
+      "slot": "location",
+      "verdict": "keep_existing",
+      "existing": {"name": "Rann Resort Dholavira", "issue": "Real — on Khavda Road near excavation site"},
+      "replacement": {
+        "name": "Rann Resort Dholavira",
+        "tier": "comfort",
+        "tagline": "Mid-range bhunga-style cottage cluster on Khavda Road 3 km from the Harappan excavation gate — the most central bookable stay on Khadir Bet and the closest sunrise base for first-light walks through the ruins.",
+        "price_band": "₹₹",
+        "address": "Khavda Road, Dholavira 370165, Kutch District, Gujarat",
+        "book_url": "https://www.rannresortdholavira.com/",
+        "sources": [
+          "https://www.rannresortdholavira.com/",
+          "https://www.tripadvisor.com/Hotel_Review-g2294992-d13307788-Reviews-Rann_Resort_Dholavira-Dholavira_Kutch_District_Gujarat.html",
+          "https://www.goibibo.com/hotels/rann-resort-dholavira-hotel-in-rann-of-kutch-3683444773010691104/"
+        ]
+      }
+    },
+    {
+      "destination_id": "dholavira",
+      "slot": "xfactor",
+      "verdict": "keep_existing",
+      "existing": {"name": "Praveg Dholavira Tent City", "issue": "Real — 30 triangle A-frame cottages, glass-roof stargazing"},
+      "replacement": {
+        "name": "Praveg Resort Dholavira",
+        "tier": "boutique",
+        "tagline": "Thirty 20-foot-tall triangle 'A'-frame cottages with full-glass walls for in-bed Rann stargazing, on the Dholavira–Flamingo Lake stretch — Praveg's headline build outside the Dhordo Tent City circuit. Open mid-October to March only.",
+        "price_band": "₹₹₹",
+        "address": "Near World Heritage Site, towards Flamingo Lake, Dholavira, Bhachau Taluka, Kutch District 370165, Gujarat",
+        "book_url": "https://www.dizcoverpraveg.com/dholavira",
+        "sources": [
+          "https://www.dizcoverpraveg.com/dholavira",
+          "https://www.rannutsav.in/praveg-resort-dholavira/",
+          "https://www.pravegresortdholavira.com/index.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "dholavira",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "existing": {"name": "Evoke Dholavira", "issue": "Real — 44-cottage luxury property on Khadir Bet"},
+      "replacement": {
+        "name": "Evoke Dholavira",
+        "tier": "luxury",
+        "tagline": "44 aesthetically-appointed cottages on Khadir Bet inside Rann landscape — the highest-end built lodging at Dholavira, 125 km from Bhuj via the elevated Road Through Heaven. Open seasonally October–March.",
+        "price_band": "₹₹₹₹",
+        "address": "Khadir Bet Island, Dholavira 370165, Kutch District, Gujarat",
+        "book_url": "https://www.evokedholavira.com/",
+        "sources": [
+          "https://www.evokedholavira.com/",
+          "https://www.makemytrip.global/hotels/evoke_dholavira_kutch-details-rann_of_kutch.html",
+          "https://www.dholavira.rannutsavgujarat.in/"
+        ]
+      }
+    },
+    {
+      "destination_id": "dholavira",
+      "slot": "value",
+      "verdict": "replace",
+      "existing": {"name": "Rann Resort Dholavira", "issue": "Duplicate of the location pick. Replacing the value slot with the homestay/budget alternative on Khadir Bet."},
+      "replacement": {
+        "name": "Khadir Homestay Resort",
+        "tier": "budget",
+        "tagline": "Family-run village homestay near Dholavira excavation site — the budget bed of choice for solo and student travellers who want Kutchi hospitality rather than a tented resort. Open seasonally.",
+        "price_band": "₹",
+        "address": "Khadir Bet, Dholavira 370165, Kutch District, Gujarat",
+        "book_url": "https://www.goibibo.com/hotels/khadir-homestay-resort-dholavira-hotel-in-rann-of-kutch-8105597324997544715/",
+        "sources": [
+          "https://www.goibibo.com/hotels/khadir-homestay-resort-dholavira-hotel-in-rann-of-kutch-8105597324997544715/",
+          "https://www.tripadvisor.com/Hotels-g2294992-Dholavira_Kutch_District_Gujarat-Hotels.html"
+        ]
+      }
+    },
+
+    {
+      "destination_id": "dwarka",
+      "slot": "location",
+      "verdict": "replace",
+      "existing": {"name": "Rajhans Hotel", "issue": "Rajhans Hotel chain operates in Mumbai, Haryana, and Bhopal — NOT in Dwarka. Pure cross-state contamination / template ghost. Replacing with Hawthorn Suites by Wyndham (verified)."},
+      "replacement": {
+        "name": "Hawthorn Suites by Wyndham Dwarka",
+        "tier": "comfort",
+        "tagline": "Wyndham extended-stay suites with kitchenettes and pool a few minutes from the Dwarkadhish temple gate and Gomti Ghat — the easiest international-chain bed in a temple town otherwise dominated by budget pilgrim hotels.",
+        "price_band": "₹₹₹",
+        "address": "Devbhumi Dwarka, Dwarka 361335, Gujarat",
+        "book_url": "https://www.wyndhamhotels.com/hawthorn-extended-stay/dwarka-india/hawthorn-suites-dwarka/overview",
+        "sources": [
+          "https://www.wyndhamhotels.com/hawthorn-extended-stay/dwarka-india/hawthorn-suites-dwarka/overview",
+          "https://www.makemytrip.global/hotels/hawthorn_suites_by_wyndham_dwarka-details-dwarka.html",
+          "https://www.booking.com/hotel/in/hawthorn-suites-by-wyndham-dwarka.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "dwarka",
+      "slot": "experience",
+      "verdict": "replace",
+      "existing": {"name": "Hotel The Grand Dwarka", "issue": "'The Grand Dwarka' has no verifiable single-property footprint — 'The Grand Ladhukara' exists but is not the same brand. Replacing with Lemon Tree Premier Dwarka — the verifiable premium temple-view stay."},
+      "replacement": {
+        "name": "Lemon Tree Premier Dwarka",
+        "tier": "luxury",
+        "tagline": "109-room Lemon Tree Premier with rooftop pool and temple-view rooms 790m from the Dwarkadhish shrine — the only luxury option with a true Jagat Mandir balcony view at sunset aarti.",
+        "price_band": "₹₹₹₹",
+        "address": "Ghanshyam Nagar, Dwarka 361335, Gujarat",
+        "book_url": "https://www.lemontreehotels.com/lemon-tree-premier/dwarka/hotel-dwarka",
+        "sources": [
+          "https://www.lemontreehotels.com/lemon-tree-premier/dwarka/hotel-dwarka",
+          "https://www.goibibo.com/hotels/lemon-tree-premier-dwarka-hotel-in-dwarka-6243503610589585323/",
+          "https://www.tripadvisor.com/Hotels-g660182-Dwarka_Devbhumi_Dwarka_District_Gujarat-Hotels.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "dwarka",
+      "slot": "value",
+      "verdict": "keep_existing",
+      "existing": {"name": "Toran Tourist Bungalow (GTDC)", "issue": "Real Gujarat Tourism GTDC property near Chowpati and the temple."},
+      "replacement": {
+        "name": "GTDC Toran Tourist Bungalow Dwarka",
+        "tier": "budget",
+        "tagline": "24-room Gujarat Tourism (GTDC) bungalow on Chowpati near Circuit House, walking distance to the Dwarkadhish temple and to the beach — the most affordable bed that still books online via the state portal.",
+        "price_band": "₹",
+        "address": "Chowpati, near Circuit House, Jori Bagh Main Road, Dwarka 361335, Gujarat",
+        "book_url": "https://www.gujarattourism.com/accommodation/toran-hotel/toran-tourist-bungalow--dwarka.html",
+        "sources": [
+          "https://www.gujarattourism.com/accommodation/toran-hotel/toran-tourist-bungalow--dwarka.html",
+          "https://www.tripadvisor.in/Hotel_Review-g660182-d1172530-Reviews-Toran_Tourist_Bungalow-Dwarka_Devbhumi_Dwarka_District_Gujarat.html",
+          "https://booking.gujarattourism.com/"
+        ]
+      }
+    },
+    {
+      "destination_id": "dwarka",
+      "slot": "xfactor",
+      "verdict": "keep_existing",
+      "existing": {"name": "Hotel Shree Hari Dwarka", "issue": "Real — has own site, listed on Hotels.com"},
+      "replacement": {
+        "name": "Hotel Shree Hari Dwarka",
+        "tier": "comfort",
+        "tagline": "Vegetarian mid-range hotel close to the temple lane — ranked highly with pilgrim families for vegetarian breakfast and proximity to both Dwarkadhish darshan and the Sudama Setu pedestrian bridge.",
+        "price_band": "₹₹",
+        "address": "Near Dwarkadhish Temple, Dwarka 361335, Gujarat",
+        "book_url": "https://hotelshreeharidwk.com/",
+        "sources": [
+          "https://hotelshreeharidwk.com/",
+          "https://in.hotels.com/ho3668287520/",
+          "https://www.easemytrip.us/hotels/hotel-shree-hari-5997146/"
+        ]
+      }
+    },
+
+    {
+      "destination_id": "gandhinagar",
+      "slot": "location",
+      "verdict": "replace",
+      "existing": {"name": "Hotel Surya Palace", "issue": "Hotel Surya Palace is in Vadodara, NOT Gandhinagar — cross-dest contamination. Replacing with Fortune Inn Haveli, the central Sector-11 ITC option."},
+      "replacement": {
+        "name": "Fortune Inn Haveli Gandhinagar",
+        "tier": "comfort",
+        "tagline": "ITC Fortune business hotel right opposite the State Secretariat in Sector 11, 20 min from SVPI Airport and 3 km from Gandhinagar railway — the closest hotel for visitors heading to Akshardham temple and Mahatma Mandir.",
+        "price_band": "₹₹₹",
+        "address": "Sector 11, Opposite Secretariat, Gandhinagar 382010, Gujarat",
+        "book_url": "https://www.itchotels.com/in/en/fortuneinnhaveli-gandhinagar",
+        "sources": [
+          "https://www.itchotels.com/in/en/fortuneinnhaveli-gandhinagar",
+          "https://www.hotelscombined.com/Hotel/Fortune_Inn_Haveli_Member_ITC_Hotel_Group_Gandhinagar.htm",
+          "https://www.goibibo.com/hotels/fortune-inn-haveli-gandhinagar-member-itc-hotels-group-hotel-in-gandhinagar-5059904383941190349/"
+        ]
+      }
+    },
+    {
+      "destination_id": "gandhinagar",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "existing": {"name": "Cambay Sapphire Resort", "issue": "Real Cambay Hotels property in GIDC Sector 25 — 199 rooms"},
+      "replacement": {
+        "name": "Cambay Sapphire Gandhinagar",
+        "tier": "comfort",
+        "tagline": "199-room Cambay resort with villas, cottages, pool and banquet lawns in GIDC Sector 25 — Gujarat's go-to convention venue and the largest spread of grass within the capital ring road.",
+        "price_band": "₹₹₹",
+        "address": "Plot No 22, 23 & 24, GIDC, Sector 25, Gandhinagar 382044, Gujarat",
+        "book_url": "https://www.cambayhotels.com/cambay-sapphire-gandhinagar.htm",
+        "sources": [
+          "https://www.cambayhotels.com/cambay-sapphire-gandhinagar.htm",
+          "https://www.cambayhotels.com/cambay-sapphire-contact-gandhinagar.htm",
+          "https://www.easemytrip.com/hotels/hotel-cambay-sapphire-gandhinagar-505717/"
+        ]
+      }
+    },
+    {
+      "destination_id": "gandhinagar",
+      "slot": "value",
+      "verdict": "replace",
+      "existing": {"name": "Fortune Inn Haveli (ITC group)", "issue": "Promoted to the location slot above (because it's the best-located, not the best value). Replacing value with a more genuinely budget pick."},
+      "replacement": {
+        "name": "Lemon Tree Hotel Gandhinagar",
+        "tier": "comfort",
+        "tagline": "Lemon Tree's Gandhinagar property near Infocity and Mahatma Mandir — pool, gym, predictable 4-star service at the cheapest end of the corporate mid-range stack, ideal for solo work-trips around GIFT City.",
+        "price_band": "₹₹",
+        "address": "Infocity, Gandhinagar 382009, Gujarat",
+        "book_url": "https://www.lemontreehotels.com/lemon-tree-hotel/gandhinagar/hotel-gandhinagar",
+        "sources": [
+          "https://www.lemontreehotels.com/lemon-tree-hotel/gandhinagar/hotel-gandhinagar",
+          "https://www.tripadvisor.in/Hotels-g297606-Gandhinagar_Gandhinagar_District_Gujarat-Hotels.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "gandhinagar",
+      "slot": "xfactor",
+      "verdict": "keep_existing",
+      "existing": {"name": "Leela Gandhinagar (at GIFT City)", "issue": "Real — The Leela Gandhinagar sits literally above Gandhinagar railway station / Mahatma Mandir."},
+      "replacement": {
+        "name": "The Leela Gandhinagar",
+        "tier": "luxury",
+        "tagline": "First luxury hotel in India built directly above a railway station (Gandhinagar Capital), 1.2 mi from Mahatma Mandir — Leela's regional flagship with the rooftop pool and Spectra ballroom that anchors capital-city events.",
+        "price_band": "₹₹₹₹",
+        "address": "Gandhinagar Railway Station Complex, Sector 14, Gandhinagar 382016, Gujarat",
+        "book_url": "https://www.theleela.com/en_us/hotels-in-gandhinagar/the-leela-gandhinagar",
+        "sources": [
+          "https://www.theleela.com/en_us/hotels-in-gandhinagar/the-leela-gandhinagar",
+          "https://www.tripadvisor.in/Hotel_Review-The-Leela-Gandhinagar.html"
+        ]
+      }
+    },
+
+    {
+      "destination_id": "gir-national-park",
+      "slot": "location",
+      "verdict": "keep_existing",
+      "existing": {"name": "Sinh Sadan", "issue": "Real — Gujarat Forest Dept hunting-lodge guest house since 1911 at Sasan Gir gate."},
+      "replacement": {
+        "name": "Sinh Sadan Forest Guest House",
+        "tier": "budget",
+        "tagline": "1911 Forest Department hunting-lodge guest house literally at the Sasan Gir National Park entrance, 5 min walk from Sasan railway station — the cheapest legal stay for early-morning permit pickups and post-safari lion-roar lulls.",
+        "price_band": "₹",
+        "address": "Sasan Gir, Junagadh District 362135, Gujarat",
+        "book_url": "https://girlion.gujarat.gov.in/AboutGirNationalPark.aspx",
+        "sources": [
+          "https://girlion.gujarat.gov.in/AboutGirNationalPark.aspx",
+          "https://www.ecoindia.com/lodges/sinh-sadan-guest-house.html",
+          "https://sinhsadan.com/"
+        ]
+      }
+    },
+    {
+      "destination_id": "gir-national-park",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "existing": {"name": "Aramness Gir National Park", "issue": "Real — 18 kothi suites, boutique safari lodge"},
+      "replacement": {
+        "name": "Aramness Gir National Park",
+        "tier": "luxury",
+        "tagline": "18-kothi luxury safari lodge bordering Sasan Gir's teak forest — each kothi has a private courtyard and verandah, with the only twice-daily game-drive access to the lion sanctuary on this side of the park. Closed mid-June to mid-October.",
+        "price_band": "₹₹₹₹",
+        "address": "Haripur, Sasan Gir, Junagadh District 362135, Gujarat",
+        "book_url": "https://www.aramness.com/",
+        "sources": [
+          "https://www.aramness.com/",
+          "https://www.aramness.com/rates.html",
+          "https://www.tripadvisor.com/Hotel_Review-g17677970-d25362236-Reviews-Aramness_Gir_National_Park-Haripur_Junagadh_District_Gujarat.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "gir-national-park",
+      "slot": "value",
+      "verdict": "keep_existing",
+      "existing": {"name": "Asiatic Lion Lodge", "issue": "Real — 16 deluxe cottages between Gir hills near Haripur"},
+      "replacement": {
+        "name": "Asiatic Lion Lodge",
+        "tier": "comfort",
+        "tagline": "16-cottage eco-lodge between two forested hills of Gir adjoining a natural pond near Haripur village — Kathiawadi hospitality at half the Aramness price tag, used by serious birders and small safari groups.",
+        "price_band": "₹₹₹",
+        "address": "Haripur Village, Sasan Gir, Junagadh District 362135, Gujarat",
+        "book_url": "https://www.asiaticlionlodge.com/",
+        "sources": [
+          "https://www.asiaticlionlodge.com/",
+          "https://www.tripadvisor.com/Hotel_Review-g4468377-d6415355-Reviews-Asiatic_Lion_Lodge-Sasan_Gir_Gir_National_Park_Gir_Somnath_District_Gujarat.html",
+          "https://www.goibibo.com/hotels/asiatic-lion-lodge-hotel-in-sasan-gir-475274273887714319/"
+        ]
+      }
+    },
+    {
+      "destination_id": "gir-national-park",
+      "slot": "xfactor",
+      "verdict": "keep_existing",
+      "existing": {"name": "The Fern Gir Forest Resort", "issue": "Real Fern brand resort at Gir."},
+      "replacement": {
+        "name": "The Fern Gir Forest Resort",
+        "tier": "comfort",
+        "tagline": "Fern Hotels' eco-friendly resort 6 km from Sasan Gir gate — pool, multi-cuisine veg restaurant, easy jeep pickup — the most consistent mid-range bed for families doing two safaris over a weekend.",
+        "price_band": "₹₹₹",
+        "address": "Sasan Gir–Talala Road, Sasan Gir, Junagadh District 362150, Gujarat",
+        "book_url": "https://www.fernhotels.com/wildlife-resorts/the-fern-gir-forest-resort",
+        "sources": [
+          "https://www.fernhotels.com/wildlife-resorts/the-fern-gir-forest-resort",
+          "https://www.tripadvisor.com/Hotels-g4468377-Sasan_Gir_Gir_National_Park_Gir_Somnath_District_Gujarat-Hotels.html"
+        ]
+      }
+    },
+
+    {
+      "destination_id": "girnar",
+      "slot": "location",
+      "verdict": "replace",
+      "existing": {"name": "Hotel Krishna Palace, Junagadh", "issue": "Junagadh, not Girnar specifically — Girnar pilgrimage stays should ideally be Bhavnath taleti / temple base. Replacing with Hotel Asopalav (verified Bhavnath property)."},
+      "replacement": {
+        "name": "Hotel Asopalav Bhavnath",
+        "tier": "comfort",
+        "tagline": "Mid-range hotel at Bhavnath taleti — the literal foot of Girnar's 9,999-step climb — where pilgrims base before pre-dawn ascents to Amba Mata and Dattatreya peaks. Open year-round, pool, restaurant, free parking.",
+        "price_band": "₹₹",
+        "address": "Bhavnath Road, near Girnar Ropeway, Junagadh 362001, Gujarat",
+        "book_url": "https://www.hotelasopalav.com/",
+        "sources": [
+          "https://www.hotelasopalav.com/",
+          "https://blog.yatradham.org/hotels-near-bhavnath-temple-junagadh/",
+          "https://www.makemytrip.com/hotels-international/en-us/india/junagadh-hotels/bhavnath-hotels.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "girnar",
+      "slot": "experience",
+      "verdict": "replace",
+      "existing": {"name": "The Lotus Hotel Junagadh", "issue": "Lotus Hotel is in Junagadh city centre, ~7 km from Bhavnath — not Girnar-base. Replacing with The Fern Leo Resort, the largest 5-star with actual Girnar-hill views."},
+      "replacement": {
+        "name": "The Fern Leo Resort & Club Junagadh",
+        "tier": "luxury",
+        "tagline": "Fern Hotels' five-star with the largest pool deck pointing straight at Girnar's silhouette — the only modern resort with proper trekking-prep facilities for the 9,999-step Girnar climb. Tour-desk arranges 4 a.m. ropeway pickups.",
+        "price_band": "₹₹₹₹",
+        "address": "Lal Dhori, Junagadh 362001, Gujarat",
+        "book_url": "https://www.fernhotels.com/temple-towns/the-fern-leo-resort-club-junagadh",
+        "sources": [
+          "https://www.fernhotels.com/temple-towns/the-fern-leo-resort-club-junagadh",
+          "https://www.booking.com/hotel/in/the-fern-leo-resort-amp-club-junagadh-gujarat.html",
+          "https://www.makemytrip.global/hotels/the_fern_leo_resort_club_junagadh_gujarat-details-junagadh.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "girnar",
+      "slot": "value",
+      "verdict": "replace",
+      "existing": {"name": "The Fern Residency Junagadh", "issue": "Promoted The Fern Leo to experience slot. Replacing value with Junagadh's reliable city-base Lotus Hotel — close to the Girnar ropeway road."},
+      "replacement": {
+        "name": "The Lotus Hotel Junagadh",
+        "tier": "comfort",
+        "tagline": "Three-star city-centre hotel 220m from Junagadh railway and 1.5 km from Narsinh Mehta lake — the most reliably-rated mid-range value sleep for travellers basing in town and driving 7 km to Bhavnath for the dawn climb.",
+        "price_band": "₹₹",
+        "address": "MG Road, Near Railway Station, Junagadh 362001, Gujarat",
+        "book_url": "https://www.makemytrip.global/hotels/the_lotus_hotel-details-junagadh.html",
+        "sources": [
+          "https://www.makemytrip.global/hotels/the_lotus_hotel-details-junagadh.html",
+          "https://www.tripadvisor.in/Hotel_Review-The-Lotus-Hotel-Junagadh.html",
+          "https://www.trip.com/hotels/junagadh-hotel-detail-13684625/the-lotus-hotel/"
+        ]
+      }
+    },
+    {
+      "destination_id": "girnar",
+      "slot": "xfactor",
+      "verdict": "keep_existing",
+      "existing": {"name": "Bhavnath Ashram Stays (cluster)", "issue": "Real ashram cluster but vague. Refining to Bharati Ashram + Bhagirath Wadi which are the verified Girnar-foot dharamshala anchors."},
+      "replacement": {
+        "name": "Shri Bharati Ashram (Girnar Taleti)",
+        "tier": "budget",
+        "tagline": "Ashram dharamshala in a large gardened compound at Bhavnath, with AC three- and four-bedded rooms and shared kitchens — the most authentic spiritual sleep for the Girnar Mahashivratri mela crowd. Book months ahead for Shivratri.",
+        "price_band": "₹",
+        "address": "Bhavnath Taleti, Girnar, Junagadh 362001, Gujarat",
+        "book_url": "https://yatradham.org/bharati-ashram-junagadh.html",
+        "sources": [
+          "https://yatradham.org/bharati-ashram-junagadh.html",
+          "https://yatradham.org/bhavnath-junagadh-bhagirath-wadi.html",
+          "https://blog.yatradham.org/ashram-near-girnar-junagadh/"
+        ]
+      }
+    },
+
+    {
+      "destination_id": "junagadh",
+      "slot": "location",
+      "verdict": "replace",
+      "existing": {"name": "Hotel Samrat", "issue": "Generic hotel name with multiple branches across India — no clear single Junagadh property verifiable on Booking/MMT. Replacing with Hotel Magnum Inn, the actual top-rated central option."},
+      "replacement": {
+        "name": "Hotel Magnum Inn",
+        "tier": "comfort",
+        "tagline": "25-room boutique hotel a 2 km walk from Junagadh railway, bus station and the local market — exceptional service rating with bespoke kitchen requests, the best-located non-Fern bed for Uperkot Fort and Mahabat Maqbara walking days.",
+        "price_band": "₹₹",
+        "address": "Sardar Bagh Road, Junagadh 362001, Gujarat",
+        "book_url": "https://www.tripadvisor.com/Hotel_Review-g303879-d6450856-Reviews-Hotel_Magnum_Inn-Junagadh_Junagadh_District_Gujarat.html",
+        "sources": [
+          "https://www.tripadvisor.com/Hotel_Review-g303879-d6450856-Reviews-Hotel_Magnum_Inn-Junagadh_Junagadh_District_Gujarat.html",
+          "https://www.makemytrip.com/hotels-international/en-us/india/junagadh-hotels/",
+          "https://www.tripadvisor.com/Hotels-g303879-Junagadh_Junagadh_District_Gujarat-Hotels.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "junagadh",
+      "slot": "experience",
+      "verdict": "replace",
+      "existing": {"name": "Lemon Tree Hotel Junagadh", "issue": "Lemon Tree Junagadh does not appear in current Lemon Tree Hotels portfolio — closest is Lemon Tree Rajkot. Replacing with The Fern Leo Resort, the actual five-star anchor."},
+      "replacement": {
+        "name": "The Fern Leo Resort & Club Junagadh",
+        "tier": "luxury",
+        "tagline": "Junagadh's largest 5-star, the biggest banquet venue in the district and the only true resort-style stay — pool, gym, spa, full club facilities and Girnar views from the upper-floor rooms.",
+        "price_band": "₹₹₹₹",
+        "address": "Lal Dhori, Junagadh 362001, Gujarat",
+        "book_url": "https://www.fernhotels.com/temple-towns/the-fern-leo-resort-club-junagadh",
+        "sources": [
+          "https://www.fernhotels.com/temple-towns/the-fern-leo-resort-club-junagadh",
+          "https://www.booking.com/hotel/in/the-fern-leo-resort-amp-club-junagadh-gujarat.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "junagadh",
+      "slot": "value",
+      "verdict": "keep_existing",
+      "existing": {"name": "The Lotus Hotel Junagadh", "issue": "Real — 3-star city centre"},
+      "replacement": {
+        "name": "The Lotus Hotel Junagadh",
+        "tier": "comfort",
+        "tagline": "Three-star hotel 220m from Junagadh railway with reliable rooms — the most-used mid-range base for travellers combining Uperkot, Buddhist caves and Girnar in a 36-hour visit.",
+        "price_band": "₹₹",
+        "address": "MG Road, near Railway Station, Junagadh 362001, Gujarat",
+        "book_url": "https://www.makemytrip.global/hotels/the_lotus_hotel-details-junagadh.html",
+        "sources": [
+          "https://www.makemytrip.global/hotels/the_lotus_hotel-details-junagadh.html",
+          "https://www.trip.com/hotels/junagadh-hotel-detail-13684625/the-lotus-hotel/"
+        ]
+      }
+    },
+    {
+      "destination_id": "junagadh",
+      "slot": "xfactor",
+      "verdict": "keep_existing",
+      "existing": {"name": "Hotel Magnet", "issue": "Name typo in baseline — actual property is 'Hotel Magnum Inn' (already promoted to location). Replacing xfactor with Hotel Asopalav Bhavnath — the genuine Bhavnath-taleti xfactor."},
+      "replacement": {
+        "name": "Hotel Asopalav Bhavnath",
+        "tier": "comfort",
+        "tagline": "Mid-range hotel literally at the foot of Girnar at Bhavnath taleti — the easiest place to sleep before a pre-dawn climb when the ropeway hasn't opened yet. Pool and parking, family rooms.",
+        "price_band": "₹₹",
+        "address": "Bhavnath Road, near Girnar Ropeway, Junagadh 362001, Gujarat",
+        "book_url": "https://www.hotelasopalav.com/",
+        "sources": [
+          "https://www.hotelasopalav.com/",
+          "https://blog.yatradham.org/hotels-near-bhavnath-temple-junagadh/"
+        ]
+      }
+    },
+
+    {
+      "destination_id": "kutch",
+      "slot": "location",
+      "verdict": "keep_existing",
+      "existing": {"name": "Bhuj House Hotel", "issue": "Real — Parsi 1894 heritage homestay."},
+      "replacement": {
+        "name": "The Bhuj House",
+        "tier": "boutique",
+        "tagline": "1894 Parsi courtyard house restored 2015 by the fifth-generation Bhujwala family — four ensuite rooms (Rohee's, Jafri, Agassi terrace, Bapaiji's), Parsi-Kutchi courtyard meals, Outlook Gold for 'Best Heritage Stay' 2018.",
+        "price_band": "₹₹₹",
+        "address": "Opposite Camp Police Chowki, Camp Area, Bhuj 370001, Kutch District, Gujarat",
+        "book_url": "http://www.thebhujhouse.com/",
+        "sources": [
+          "http://www.thebhujhouse.com/",
+          "https://gujarattourism.com/accommodation/heritage-hotel/the-bhuj-house.html",
+          "https://heritagetourismgujarat.com/heritage-properties/the-bhuj-house/"
+        ]
+      }
+    },
+    {
+      "destination_id": "kutch",
+      "slot": "experience",
+      "verdict": "replace",
+      "existing": {"name": "The Bhuj House", "issue": "Duplicate of the location slot — same property. Replacing experience with Regenta Resort Bhuj — the largest experiential resort in the city."},
+      "replacement": {
+        "name": "Regenta Resort Bhuj by Royal Orchid",
+        "tier": "luxury",
+        "tagline": "23-acre Royal Orchid resort with sunset point, human-size chess, cricket pitch, live music — the largest experiential property in Bhuj, 4 min from Kutch Museum and 6 min from Aina Mahal.",
+        "price_band": "₹₹₹₹",
+        "address": "Mirzapar Highway, Bhuj 370020, Kutch District, Gujarat",
+        "book_url": "https://www.royalorchidhotels.com/regenta-resort-bhuj/overview",
+        "sources": [
+          "https://www.royalorchidhotels.com/regenta-resort-bhuj/overview",
+          "https://www.tripadvisor.com/Hotel_Review-g303878-d3783297-Reviews-Regenta_Resort_Bhuj-Bhuj_Kutch_District_Gujarat.html",
+          "https://www.booking.com/city/in/bhuj.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "kutch",
+      "slot": "value",
+      "verdict": "keep_existing",
+      "existing": {"name": "Regenta Resort Bhuj", "issue": "Promoted to experience above. Replacing value with The Fern Residency Bhuj — the cleanest mid-range veg-friendly stay in town."},
+      "replacement": {
+        "name": "The Fern Residency Bhuj",
+        "tier": "comfort",
+        "tagline": "Fern Hotels' eco-friendly mid-range hotel with pool — the cleanest pure-vegetarian business hotel in Bhuj, used by most package-tour Rann Utsav routings before the desert drive.",
+        "price_band": "₹₹",
+        "address": "Mirzapar Highway, Bhuj 370001, Kutch District, Gujarat",
+        "book_url": "https://www.fernhotels.com/heritage-cities/the-fern-residency-bhuj",
+        "sources": [
+          "https://www.fernhotels.com/heritage-cities/the-fern-residency-bhuj",
+          "https://www.tripadvisor.com/Hotels-g303878-Bhuj_Kutch_District_Gujarat-Hotels.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "kutch",
+      "slot": "xfactor",
+      "verdict": "keep_existing",
+      "existing": {"name": "Hodka Shaam-e-Sarhad Village Resort", "issue": "Real — UNDP-Government Endogenous Tourism project run by Hodka village committee."},
+      "replacement": {
+        "name": "Shaam-e-Sarhad Village Resort, Hodka",
+        "tier": "boutique",
+        "tagline": "12 bhungas (Banni-region grass-thatch mud huts) on the edge of Asia's second-largest grassland, owned and run by the Halepotra Maldhari community of Hodka village — UNDP-Government endogenous tourism since 2005. Open only October–March.",
+        "price_band": "₹₹",
+        "address": "Hodka Village, Banni Grasslands, Bhuj Taluka 370510, Kutch District, Gujarat",
+        "book_url": "https://www.hodka.in/",
+        "sources": [
+          "https://www.hodka.in/",
+          "http://www.hunnarshala.org/shaam-e-sarhad-village-resort.html",
+          "https://www.outlooktraveller.com/explore/features/shaam-e-sarhad-is-a-unique-rural-tourism-venture"
+        ]
+      }
+    },
+
+    {
+      "destination_id": "lothal",
+      "slot": "experience",
+      "verdict": "replace",
+      "existing": {"name": "The Fern Residency, Ahmedabad", "issue": "Cross-dest contamination — 80 km from Lothal. Replacing with Hazur Palace Utelia, which is 6 km from Lothal and the only true Lothal-area heritage stay."},
+      "replacement": {
+        "name": "The Palace Utelia (Hazur Palace)",
+        "tier": "boutique",
+        "tagline": "Late-19th-century Indo-Saracenic palace with domes and courtyard gardens 6 km from the Lothal Harappan port site, run by descendants of the original Utelia rulers — the only heritage stay near the Indus Valley dock excavation, with cooking-class options.",
+        "price_band": "₹₹₹",
+        "address": "Village Utelia, Dholka Taluka, Ahmedabad District 382260, Gujarat",
+        "book_url": "https://www.heritagehotelsofindia.com/gujarat/utelia-palace.html",
+        "sources": [
+          "https://www.heritagehotelsofindia.com/gujarat/utelia-palace.html",
+          "https://www.gujarattourism.com/accommodation/heritage-hotel/hazur-palace--lothal.html",
+          "https://www.tripadvisor.in/Hotel_Review-g297608-d502371-Reviews-Palace_Utelia-Ahmedabad_Ahmedabad_District_Gujarat.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "lothal",
+      "slot": "value",
+      "verdict": "replace",
+      "existing": {"name": "Hotel Celebration, Bhavnagar", "issue": "Cross-dest contamination — Bhavnagar is 100+ km. Honest: there's no true 'value' bed at Lothal beyond day-trip from Ahmedabad. Replacing with Ahmedabad's value pick as the actual base."},
+      "replacement": {
+        "name": "Sarovar Portico Kalupur Ahmedabad",
+        "tier": "comfort",
+        "tagline": "Mid-range Sarovar Portico at Kalupur Junction, 80 km north of Lothal — the most rational value bed for travellers driving south to Lothal for a half-day Harappan dock visit. Pure veg restaurant.",
+        "price_band": "₹₹",
+        "address": "Kalupur Railway Station Road, Ahmedabad 380002, Gujarat",
+        "book_url": "https://www.sarovarhotels.com/sarovar-portico-kalupur-ahmedabad/",
+        "sources": [
+          "https://www.sarovarhotels.com/sarovar-portico-kalupur-ahmedabad/",
+          "https://www.tripadvisor.in/Hotels-g297608-Ahmedabad_Ahmedabad_District_Gujarat-Hotels.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "lothal",
+      "slot": "location",
+      "verdict": "honest_scarcity",
+      "existing": {"name": "Lothal Museum Guest House", "issue": "There is no bookable 'Lothal Museum Guest House' — ASI has no overnight accommodation on site. The new National Maritime Heritage Complex (NMHC) being built is not yet operational for stays. Honest scarcity."},
+      "replacement": null
+    },
+    {
+      "destination_id": "lothal",
+      "slot": "xfactor",
+      "verdict": "replace",
+      "existing": {"name": "Nilambag Palace, Bhavnagar", "issue": "Cross-dest contamination — 110 km. Replacing with Palace Utelia which actually sits at Lothal, deduplicating the experience slot via the Ahmedabad-base value pick + Utelia palace."},
+      "replacement": {
+        "name": "House of MG Ahmedabad",
+        "tier": "boutique",
+        "tagline": "If you want luxury before/after the Lothal Harappan port visit, House of MG is 75 km north in Ahmedabad's UNESCO walled city — the most distinctive heritage hotel within striking distance of the Indus Valley dock site.",
+        "price_band": "₹₹₹₹",
+        "address": "Opp. Sidi Saiyad Jali, Lal Darwaja, Ahmedabad 380001, Gujarat",
+        "book_url": "https://houseofmg.com/",
+        "sources": [
+          "https://houseofmg.com/",
+          "https://heritagetourismgujarat.com/heritage-properties/the-house-of-mg/"
+        ]
+      }
+    },
+
+    {
+      "destination_id": "mandvi",
+      "slot": "location",
+      "verdict": "replace",
+      "existing": {"name": "Mandvi Beach Resort", "issue": "Generic — no verifiable single property of this exact name. Mandvi's signature stays are inside Vijay Vilas estate or Palace Beach Camp."},
+      "replacement": {
+        "name": "Palace Beach Camp Mandvi",
+        "tier": "comfort",
+        "tagline": "10 VIP Swiss tents on a 25-acre private beach property inside the Vijay Vilas estate area at Mahadev Beach — the most beachfront-adjacent stay in Mandvi without crossing into the palace's heritage tariff.",
+        "price_band": "₹₹₹",
+        "address": "Mahadev Beach, Vijay Vilas Road, Mandvi 370465, Kutch District, Gujarat",
+        "book_url": "https://palacebeachcamp.com/",
+        "sources": [
+          "https://palacebeachcamp.com/",
+          "https://www.agoda.com/palace-beach-camp/hotel/mandvi-in.html",
+          "https://www.makemytrip.global/hotels/palace_beach_camp_resort-details-mandvi_kutch.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "mandvi",
+      "slot": "experience",
+      "verdict": "replace",
+      "existing": {"name": "The Beach at Mandvi Palace", "issue": "Refining to actual property name — 'The Beach at Mandvi Palace' is the marketing brand for the Vijay Vilas Heritage Resort tent camp. Using the official heritage resort name."},
+      "replacement": {
+        "name": "Vijay Vilas Heritage Resort",
+        "tier": "luxury",
+        "tagline": "Heritage rooms and garden villas inside Maharao Vijayraji's 1929 Vijay Vilas Palace estate (700 acres, including India's largest private beach) — the only stay that lets you walk straight from your room to the palace courtyards used in Lagaan and Hum Dil De Chuke Sanam.",
+        "price_band": "₹₹₹₹",
+        "address": "Vijay Vilas Palace Estate, Mandvi 370465, Kutch District, Gujarat",
+        "book_url": "https://vijayvilasheritageresort.com/",
+        "sources": [
+          "https://vijayvilasheritageresort.com/",
+          "https://gujarattourism.com/accommodation/heritage-hotel/vijay-vilas-palace--mandavi--kutch.html",
+          "https://www.agoda.com/en-in/vijay-vilas-heritage-resort/hotel/mandvi-in.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "mandvi",
+      "slot": "value",
+      "verdict": "replace",
+      "existing": {"name": "Sea View Hotel Mandvi", "issue": "Generic name; multiple unrelated hotels carry it. Replacing with Rukmavati Guest House which is verifiable and Mandvi-specific."},
+      "replacement": {
+        "name": "Rukmavati Guest House",
+        "tier": "budget",
+        "tagline": "Family-run guest house near the Rukmavati Bridge on the way to the Mandvi shipbuilding yard — basic AC rooms with the easiest morning walk to the wooden dhow-building workshops, Mandvi's signature craft.",
+        "price_band": "₹",
+        "address": "Near Rukmavati Bridge, Mandvi 370465, Kutch District, Gujarat",
+        "book_url": "https://www.makemytrip.com/hotels-international/en-us/india/mandvi-hotels/",
+        "sources": [
+          "https://www.tripadvisor.in/Hotels-g297607-Mandvi_Kutch_District_Gujarat-Hotels.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "mandvi",
+      "slot": "xfactor",
+      "verdict": "replace",
+      "existing": {"name": "Rukmavati Heritage Homestay", "issue": "Mixes up names — no single 'Rukmavati Heritage Homestay' is listed (Rukmavati is a river/area name, not a heritage property). Replacing with the actual Beach Camp at Mandvi by the royal family."},
+      "replacement": {
+        "name": "The Beach at Mandvi Palace (Royal Tent Camp)",
+        "tier": "boutique",
+        "tagline": "The Mandvi royal family's own beachside tent camp inside the Vijay Vilas estate — British-colonial wooden furniture inside Swiss-canvas tents pitched on a private beach, the most romantic xfactor stay in Kutch. Open October to mid-April.",
+        "price_band": "₹₹₹₹",
+        "address": "Vijay Vilas Palace Beach, Mandvi 370465, Kutch District, Gujarat",
+        "book_url": "https://www.thebeachatmandvi.com/",
+        "sources": [
+          "https://www.tripadvisor.com/Hotel_Review-The-Beach-at-Mandvi-Palace.html",
+          "https://gujarattourism.com/accommodation/heritage-hotel/vijay-vilas-palace--mandavi--kutch.html"
+        ]
+      }
+    },
+
+    {
+      "destination_id": "marine-national-park",
+      "slot": "location",
+      "verdict": "replace",
+      "existing": {"name": "Hotel Aji Residency, Jamnagar", "issue": "Aji Residency is a Rajkot landmark (Aji Dam), not Jamnagar. Cross-dest contamination. Replacing with Hotel Aram, the verified Jamnagar heritage anchor for visitors to Marine NP."},
+      "replacement": {
+        "name": "Hotel Aram Jamnagar",
+        "tier": "boutique",
+        "tagline": "Two-storey Art Deco heritage building (50 years old, once owned by Maharaja Digvijaysinhji's jeweller Alibhai Jhaveri) with Burmese woodwork ceilings and 30 modernised rooms — the closest heritage anchor in Jamnagar for Marine NP and Khijadiya day trips.",
+        "price_band": "₹₹₹",
+        "address": "Pandit Nehru Marg, Jamnagar 361001, Gujarat",
+        "book_url": "https://hotelaram.in/",
+        "sources": [
+          "https://hotelaram.in/",
+          "https://www.gujarattourism.com/accommodation/heritage-hotel/hotel-aram--jamnagar.html",
+          "https://www.heritagehotelsofindia.com/gujarat/hotel-aram.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "marine-national-park",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "existing": {"name": "Welcomheritage Hotel Aram", "issue": "Hotel Aram is real but is on Heritage Hotels of India, not WelcomHeritage — refining brand. Promoted to location above; replacing this experience slot with The Fern Residency Jamnagar (the modern alternative)."},
+      "replacement": {
+        "name": "The Fern Residency Jamnagar, Series by Marriott",
+        "tier": "comfort",
+        "tagline": "Fern's 49-room city hotel 7 km from Khijadiya Bird Sanctuary, now a Series by Marriott property — the most modern eco-friendly base for combining Khijadiya birding with the Narara reef Marine NP visit at low tide.",
+        "price_band": "₹₹₹",
+        "address": "Plot 1, Lalpur Bypass, Morkanda, Jamnagar 361009, Gujarat",
+        "book_url": "https://www.fernhotels.com/metro-getaway-cities/the-fern-residency-jamnagar",
+        "sources": [
+          "https://www.fernhotels.com/metro-getaway-cities/the-fern-residency-jamnagar",
+          "https://www.marriott.com/en-us/hotels/jgarj-the-fern-residency-jamnagar-series/overview/",
+          "https://www.tripadvisor.com/Hotel_Review-g25105133-d23208792-Reviews-The_Fern_Residency_Jamnagar_Series_by_Marriott-Morkanda_Jamnagar_Jamnagar_District_.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "marine-national-park",
+      "slot": "value",
+      "verdict": "replace",
+      "existing": {"name": "The Fern Residency Jamnagar", "issue": "Promoted to experience above. Replacing value with Hotel Celebration Jamnagar — the verified budget pick used by Khijadiya day-trippers."},
+      "replacement": {
+        "name": "Hotel Celebration Jamnagar",
+        "tier": "budget",
+        "tagline": "Mid-range city hotel that publishes its own Khijadiya day-trip guide — the easiest budget bed for birders driving 14 km to Khijadiya at dawn or to Narara reef for the low-tide window.",
+        "price_band": "₹",
+        "address": "Bedi Gate, Jamnagar 361001, Gujarat",
+        "book_url": "https://hotelcelebrationjamnagar.com/",
+        "sources": [
+          "https://hotelcelebrationjamnagar.com/",
+          "https://hotelcelebrationjamnagar.com/khijadiya-bird-sanctuary.php",
+          "https://www.tripadvisor.in/Hotels-g297606-Jamnagar_Jamnagar_District_Gujarat-Hotels.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "marine-national-park",
+      "slot": "xfactor",
+      "verdict": "honest_scarcity",
+      "existing": {"name": "Khijadiya Bird Sanctuary Eco-Lodge", "issue": "There is no operational 'Khijadiya Eco-Lodge' inside the sanctuary — Khijadiya Wikipedia and Incredible India explicitly note there is NO accommodation inside the sanctuary and camping is not permitted. Honest scarcity for an in-sanctuary xfactor pick."},
+      "replacement": null
+    },
+
+    {
+      "destination_id": "modhera",
+      "slot": "xfactor",
+      "verdict": "replace",
+      "existing": {"name": "Rann Riders Desert Camp", "issue": "Rann Riders is in Dasada (Little Rann of Kutch), 130+ km from Modhera — cross-dest contamination. Replacing with the actual Modhera xfactor — staying for the Sun-Temple sound & light show in the bhunga huts behind the temple."},
+      "replacement": {
+        "name": "Modhera Sunrise Resort (Bhunga huts)",
+        "tier": "comfort",
+        "tagline": "Traditional Kutchi-style bhunga huts on lawns directly behind the Modhera Sun Temple — the only stay close enough to walk back from the Friday-night Heritage Sound & Light show under the temple stars.",
+        "price_band": "₹₹",
+        "address": "Behind Modhera Sun Temple, Modhera, Becharaji Taluka, Mehsana District 384212, Gujarat",
+        "book_url": "https://modherasunriseresort.com/",
+        "sources": [
+          "https://modherasunriseresort.com/",
+          "https://www.booking.com/hotel/in/modhera-sunrise-resort.html",
+          "https://www.tripadvisor.com/Hotel_Review-g2285311-d25446787-Reviews-Modhera_Sunrise_Resort-Modhera_Mehsana_District_Gujarat.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "modhera",
+      "slot": "experience",
+      "verdict": "replace",
+      "existing": {"name": "Toran Modhera Resort", "issue": "There is no GTDC 'Toran Modhera Resort' — Gujarat Tourism does not run a Toran property at Modhera (closest GTDC is at Patan and Mehsana). Template ghost. Replacing with the Modhera Sunrise Resort, the only built experience-level option."},
+      "replacement": {
+        "name": "Modhera Sunrise Resort",
+        "tier": "comfort",
+        "tagline": "Family rooms with garden and pool views in bhunga-style cottages behind the Sun Temple, soundproofed and AC — the closest experiential stay to walk into Modhera's pre-dawn solstice alignment at the chaityas.",
+        "price_band": "₹₹",
+        "address": "Vill-Modhera, Behind Sun Temple, Mehsana District 384212, Gujarat",
+        "book_url": "https://modherasunriseresort.com/",
+        "sources": [
+          "https://modherasunriseresort.com/",
+          "https://www.booking.com/hotel/in/modhera-sunrise-resort.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "modhera",
+      "slot": "value",
+      "verdict": "keep_existing",
+      "existing": {"name": "Hotel Apple Inn Mehsana", "issue": "Real Mehsana hotel (35 km from Modhera). Common Modhera base since Modhera town itself lacks scale."},
+      "replacement": {
+        "name": "Hotel Apple Inn Mehsana",
+        "tier": "comfort",
+        "tagline": "Mid-range Mehsana hotel 35 km from Modhera Sun Temple — the most reliably-priced AC sleep when Modhera Sunrise is full or out-of-season, also a sensible base for Becharaji shaktipeeth pilgrims.",
+        "price_band": "₹₹",
+        "address": "Highway, Mehsana 384002, Gujarat",
+        "book_url": "https://www.makemytrip.com/hotels-international/en-us/india/mehsana-hotels/",
+        "sources": [
+          "https://www.tripadvisor.in/Hotels-g3531085-Mehsana_Mehsana_District_Gujarat-Hotels.html",
+          "https://www.makemytrip.com/hotels-international/en-us/india/mehsana-hotels/"
+        ]
+      }
+    },
+    {
+      "destination_id": "modhera",
+      "slot": "location",
+      "verdict": "keep_existing",
+      "existing": {"name": "Hotel Madhuram Mehsana", "issue": "Real budget hotel in Mehsana. Cross-dest flag — 35 km — but it's the cheapest legitimate option."},
+      "replacement": {
+        "name": "Hotel Madhuram Mehsana",
+        "tier": "budget",
+        "tagline": "Budget hotel in Mehsana city, 35 km from Modhera — useful only if Modhera Sunrise is sold out for the heritage week or solstice weekend; otherwise sleep at Modhera itself for the dawn alignment.",
+        "price_band": "₹",
+        "address": "Mehsana 384001, Gujarat",
+        "book_url": "https://www.makemytrip.com/hotels-international/en-us/india/mehsana-hotels/",
+        "sources": [
+          "https://www.tripadvisor.in/Hotels-g3531085-Mehsana_Mehsana_District_Gujarat-Hotels.html"
+        ]
+      }
+    },
+
+    {
+      "destination_id": "nalsarovar",
+      "slot": "location",
+      "verdict": "replace",
+      "existing": {"name": "Hotel Royal Inn Sanand", "issue": "Sanand is 40 km from Nalsarovar — too far to be a 'location' pick. Replacing with the Nalsarovar-Bavla area properties listed on Booking."},
+      "replacement": {
+        "name": "Flamingo Resort Vekaria",
+        "tier": "comfort",
+        "tagline": "Resort on the Sanand–Nalsarovar Highway after Aniyari Village — the closest mid-range bed before the Nalsarovar boat-pier morning queues, run by the Vekaria family.",
+        "price_band": "₹₹",
+        "address": "Sanand–Nalsarovar Highway, after Aniyari Village, Ahmedabad District 382220, Gujarat",
+        "book_url": "https://nalsarovar.com/list-hotels-near-nalsarovar-bird-sanctuary/",
+        "sources": [
+          "https://nalsarovar.com/list-hotels-near-nalsarovar-bird-sanctuary/",
+          "https://www.expedia.co.in/Nalsarovar-Bird-Sanctuary-Hotels.0-l553248621592457132-0.Travel-Guide-Filter-Hotels"
+        ]
+      }
+    },
+    {
+      "destination_id": "nalsarovar",
+      "slot": "xfactor",
+      "verdict": "replace",
+      "existing": {"name": "Padhar Tribal Homestay (Vekaria)", "issue": "Mixes two unrelated names — Padhar is the indigenous boatmen community, Vekaria is a family/family-resort name. No single 'Padhar Tribal Homestay' verifiable on Booking/MMT. Replacing with the legitimate Visamo treehouses."},
+      "replacement": {
+        "name": "Visamo Nalsarovar Resort Ahmedabad",
+        "tier": "boutique",
+        "tagline": "Treehouses on a green canopy and A-frame villas with private plunge pools at Dahegamda — 23 km from Nalsarovar Bird Sanctuary, the most architecturally-distinctive xfactor sleep in the Ahmedabad outskirts farmstay belt.",
+        "price_band": "₹₹₹",
+        "address": "State Highway Bavla, Kerala–Nalsarovar Road, Dahegamda, Ahmedabad District 382220, Gujarat",
+        "book_url": "https://visamofarmstays.com/",
+        "sources": [
+          "https://visamofarmstays.com/",
+          "https://www.booking.com/hotel/in/visamo-nalsarovar-resort-ahmedabad.html",
+          "https://www.tripadvisor.com/Hotel_Review-g26888947-d23751706-Reviews-Visamo_Nalsarovar_Resort_Ahmedabad-Dahegamda_Ahmedabad_Ahmedabad_District_Gujarat.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "nalsarovar",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "existing": {"name": "Visamo Nalsarovar Resort", "issue": "Real — promoted to xfactor above (the treehouse aspect is the xfactor). Replacing experience slot with the legitimate Nalsarovar-side homestay cluster, since the sanctuary's edge has no built resort."},
+      "replacement": {
+        "name": "Padhar Homestay Cluster (Nalsarovar boatmen families)",
+        "tier": "budget",
+        "tagline": "Homestay rooms run by Padhar fishing-and-boatmen families at the Nalsarovar landing — basic but unbeatable for dawn boat departures and identifying flamingo, crane and pelican by the boatman's local name.",
+        "price_band": "₹",
+        "address": "Nalsarovar village, Sanand Taluka, Ahmedabad District 382170, Gujarat",
+        "book_url": "https://www.homestays.co.in/nalsarovar-india",
+        "sources": [
+          "https://www.homestays.co.in/nalsarovar-india",
+          "https://gujarattourism.com/central-zone/ahmedabad/nalsarovar-bird-sanctuary.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "nalsarovar",
+      "slot": "value",
+      "verdict": "honest_scarcity",
+      "existing": {"name": "Club Azzurro Resort Nalsarovar", "issue": "No verifiable single property called 'Club Azzurro Resort' at Nalsarovar — pure template ghost. Honest scarcity: mid-range value picks at Nalsarovar are sparse; the best real options are Visamo (xfactor) or Padhar homestays (experience). No standalone genuine value pick survives auditing."},
+      "replacement": null
+    },
+
+    {
+      "destination_id": "palitana",
+      "slot": "location",
+      "verdict": "replace",
+      "existing": {"name": "Shatrunjaya International Hotel", "issue": "Template ghost — no property of this exact name verifiable. Replacing with the actual Palitana-base pick: Hotel Sumeru (GTDC) which is officially listed."},
+      "replacement": {
+        "name": "GTDC Hotel Sumeru Palitana",
+        "tier": "budget",
+        "tagline": "20-room Gujarat Tourism (GTDC) hotel beside Palitana railway station — the closest government-rate bed for pilgrims tackling the 3,500-step Shatrunjaya hill climb before sunrise.",
+        "price_band": "₹",
+        "address": "Station Road, near Jakat Naka, Palitana, Bhavnagar District 364270, Gujarat",
+        "book_url": "https://www.gujarattourism.com/accommodation/toran-hotel/hotel-sumeru--palitana.html",
+        "sources": [
+          "https://www.gujarattourism.com/accommodation/toran-hotel/hotel-sumeru--palitana.html",
+          "https://www.tripadvisor.com/Hotel_Review-g303880-d3981273-Reviews-Hotel_Sumeru_Palitana-Palitana_Bhavnagar_District_Gujarat.html",
+          "https://booking.gujarattourism.com/"
+        ]
+      }
+    },
+    {
+      "destination_id": "palitana",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "existing": {"name": "Vijay Vilas Palace Heritage Hotel", "issue": "Real — 1906 palace built by Yuvraj Vijay Sinhji (Gohil Rajput clan)."},
+      "replacement": {
+        "name": "Vijay Vilas Palace Palitana",
+        "tier": "luxury",
+        "tagline": "1906 palace built by Yuvraj Vijay Sinhji of Palitana (Gohil Rajput cousin to the Bhavnagar Maharajas) — 6-acre estate, 7 cottages and 12 heritage rooms, sweeping views of Shatrunjaya hill, 4 km from town.",
+        "price_band": "₹₹₹₹",
+        "address": "Adpur Road, Palitana 364270, Bhavnagar District, Gujarat",
+        "book_url": "https://www.heritagehotelsofindia.com/gujarat/vijay-vilas-palace.html",
+        "sources": [
+          "https://www.heritagehotelsofindia.com/gujarat/vijay-vilas-palace.html",
+          "https://www.tripadvisor.com/Hotel_Review-g303880-d647767-Reviews-Vijay_Vilas_Palace-Palitana_Bhavnagar_District_Gujarat.html",
+          "https://www.gujarattourism.com/accommodation/heritage-hotel/the-vijay-vilas-palace-hotels---resorts--bhavnagar.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "palitana",
+      "slot": "value",
+      "verdict": "keep_existing",
+      "existing": {"name": "Oswal Yatrik Gruh Dharamshala", "issue": "Real — community-run Jain pilgrim dharamshala in Palitana. Refining."},
+      "replacement": {
+        "name": "Jain Dharamshala Cluster, Palitana",
+        "tier": "budget",
+        "tagline": "Jain community-run dharamshalas (Oswal Yatrik Gruh, Tilakraj Maharaj Bhuvan and others) clustered around the Shatrunjaya base — vegetarian thali, single-occupancy rooms, run by the Jain trusts that built and maintain the 3,500-step pilgrimage route.",
+        "price_band": "₹",
+        "address": "Shatrunjaya Base Area, Palitana 364270, Bhavnagar District, Gujarat",
+        "book_url": "https://www.tripadvisor.in/Hotels-g303880-Palitana_Bhavnagar_District_Gujarat-Hotels.html",
+        "sources": [
+          "https://www.tripadvisor.in/Hotels-g303880-Palitana_Bhavnagar_District_Gujarat-Hotels.html",
+          "https://www.theglobetrotter.co.uk/2019/12/pailtana-jain-temples.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "palitana",
+      "slot": "xfactor",
+      "verdict": "keep_existing",
+      "existing": {"name": "Hotel Sumeru", "issue": "Real — GTDC, promoted to location above. Replacing xfactor with the larger Nilambag Palace (Bhavnagar) base option that combines Palitana + Bhavnagar."},
+      "replacement": {
+        "name": "Nilambag Palace Hotel (Bhavnagar base)",
+        "tier": "luxury",
+        "tagline": "If you want a heritage palace bed rather than Palitana's dharamshalas, Bhavnagar's 1859 Nilambag Palace is 50 km north — the most luxurious base for combining the Shatrunjaya climb with a Velavadar blackbuck safari the next morning.",
+        "price_band": "₹₹₹₹",
+        "address": "Nilambag Circle, Bhavnagar 364002, Gujarat",
+        "book_url": "https://www.nilambagpalace.com/",
+        "sources": [
+          "https://www.nilambagpalace.com/",
+          "https://www.gujarattourism.com/accommodation/heritage-hotel/hotel-nilambag-palace--bhavnagar.html"
+        ]
+      }
+    },
+
+    {
+      "destination_id": "porbandar",
+      "slot": "experience",
+      "verdict": "replace",
+      "existing": {"name": "Porbandar Palace Heritage Hotel", "issue": "Template ghost — no 'Porbandar Palace Heritage Hotel' exists. Huzoor Palace is a Gandhi-era royal residence (museum/monument, not bookable). Replacing with Lords Inn Porbandar, the actual highest-rated Porbandar hotel."},
+      "replacement": {
+        "name": "Lords Inn Porbandar",
+        "tier": "comfort",
+        "tagline": "4-star Lords Inn in GEB Colony, 2.7 km from Porbandar railway and 6.9 km from the airport — pool, 24-hour room service, 10 min walk from Sartanji Choro and Huzoor Palace, the most consistent mid-luxury stay in Gandhi's birthplace.",
+        "price_band": "₹₹₹",
+        "address": "GEB Colony, Porbandar 360575, Gujarat",
+        "book_url": "https://www.lordshotels.com/inn-porbandar/",
+        "sources": [
+          "https://www.lordshotels.com/inn-porbandar/",
+          "https://www.travelocity.com/Porbandar-Hotels-Lords-Inn-Porbandar.h21294516.Hotel-Information",
+          "https://www.tripadvisor.in/Hotel_Review-Lords-Inn-Porbandar.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "porbandar",
+      "slot": "value",
+      "verdict": "keep_existing",
+      "existing": {"name": "Hotel Kuber", "issue": "Real — best budget hotel in Porbandar near Kirti Mandir."},
+      "replacement": {
+        "name": "Hotel Kuber Porbandar",
+        "tier": "budget",
+        "tagline": "Best-rated budget hotel in central Porbandar, close to Kirti Mandir (Gandhi's birthplace) — clean AC rooms with LED TVs, dry-cleaning, free parking and 24-hour room service, the cheapest reliable bed for a one-night pilgrim stop.",
+        "price_band": "₹",
+        "address": "Near Kirti Mandir, MG Road, Porbandar 360575, Gujarat",
+        "book_url": "https://www.booking.com/hotel/in/kuber.html",
+        "sources": [
+          "https://www.booking.com/hotel/in/kuber.html",
+          "https://www.tripadvisor.com/Hotel_Review-g635748-d629610-Reviews-Hotel_Kuber-Porbandar_Porbandar_District_Gujarat.html",
+          "https://www.agoda.com/en-in/hotel-kuber_2/hotel/porbandar-in.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "porbandar",
+      "slot": "location",
+      "verdict": "keep_existing",
+      "existing": {"name": "Toran Hotel Porbandar (GTDC)", "issue": "Real GTDC bungalow at Chowpati near Circuit House."},
+      "replacement": {
+        "name": "GTDC Toran Tourist Bungalow Porbandar",
+        "tier": "budget",
+        "tagline": "24-room Gujarat Tourism (GTDC) bungalow on Chowpati near Circuit House — 1 km from Porbandar Beach Point and 4 km from Darbargadh, the official Gujarat Tourism rate-book sleep with a sea view if you book the right room.",
+        "price_band": "₹",
+        "address": "Chowpati, Near Circuit House, Jori Bagh Main Road, Porbandar 360575, Gujarat",
+        "book_url": "https://www.gujarattourism.com/accommodation/toran-hotel/toran-tourist-bungalow.html",
+        "sources": [
+          "https://www.gujarattourism.com/accommodation/toran-hotel/toran-tourist-bungalow.html",
+          "https://www.yatra.com/hotels/hotels-in-porbandar/toran-tourist-bunglow-porbandar",
+          "https://booking.gujarattourism.com/"
+        ]
+      }
+    },
+
+    {
+      "destination_id": "rajkot",
+      "slot": "experience",
+      "verdict": "replace",
+      "existing": {"name": "Aji Dam Resort", "issue": "No verifiable 'Aji Dam Resort' single property — Aji is a Rajkot landmark dam. Replacing with The Imperial Palace, the established Rajkot 5-star anchor."},
+      "replacement": {
+        "name": "The Imperial Palace Rajkot",
+        "tier": "luxury",
+        "tagline": "Rajkot's standout 5-star, 19 mi from the airport — 80 rooms with sofa, flat-screen TV, full-service spa, outdoor pool and free breakfast buffet, the city's wedding/banquet flagship and the most stylish executive sleep.",
+        "price_band": "₹₹₹₹",
+        "address": "Dr Yagnik Road, Rajkot 360001, Gujarat",
+        "book_url": "https://www.imperialpalace.in/",
+        "sources": [
+          "https://www.imperialpalace.in/",
+          "https://www.tripadvisor.com/Hotel_Review-g660181-d736040-Reviews-The_Imperial_Palace-Rajkot_Rajkot_District_Gujarat.html",
+          "https://www.booking.com/hotel/in/the-omperial-palace.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "rajkot",
+      "slot": "value",
+      "verdict": "replace",
+      "existing": {"name": "Hotel Aalishan", "issue": "Generic Indian-hotel-chain name; no clear Rajkot single property of standout quality. Replacing with Lemon Tree Hotel Rajkot, the consistent mid-range chain."},
+      "replacement": {
+        "name": "Lemon Tree Hotel Rajkot",
+        "tier": "comfort",
+        "tagline": "Lemon Tree's reliable Rajkot mid-range — bright lemon-themed rooms, pool, gym, $52-ish ADR with 4.3 rating — the easiest predictable city stay for a single business night or Saurashtra-loop pit-stop.",
+        "price_band": "₹₹",
+        "address": "150 Feet Ring Road, Mavdi, Rajkot 360004, Gujarat",
+        "book_url": "https://www.lemontreehotels.com/lemon-tree-hotel/rajkot/hotel-rajkot",
+        "sources": [
+          "https://www.lemontreehotels.com/lemon-tree-hotel/rajkot/hotel-rajkot",
+          "https://www.expedia.com/Rajkot-Hotels.d2937.Travel-Guide-Hotels"
+        ]
+      }
+    },
+    {
+      "destination_id": "rajkot",
+      "slot": "location",
+      "verdict": "replace",
+      "existing": {"name": "Hotel Rajkot Residency", "issue": "Generic / template name. Replacing with Fortune Park JPS Grand — the ITC Group's central Rajkot property."},
+      "replacement": {
+        "name": "Fortune Park JPS Grand Rajkot",
+        "tier": "comfort",
+        "tagline": "ITC Fortune's 77-room city hotel on 150 Feet Ring Road near Mavdi — three restaurants including pure-veg Rainbow, 24-hour business centre, the central Rajkot bed for both diamond-trade visitors and Kathiawadi food tourists.",
+        "price_band": "₹₹₹",
+        "address": "150 Feet Ring Road, Mavdi, Rajkot 360004, Gujarat",
+        "book_url": "https://www.fortunehotels.in/rajkot-fortune-park-jps-grand.dh.24",
+        "sources": [
+          "https://www.fortunehotels.in/rajkot-fortune-park-jps-grand.dh.24",
+          "https://www.makemytrip.global/hotels/fortune_park_jps_grand_rajkot_member_itc_hotels_group-details-rajkot.html",
+          "https://www.goibibo.com/hotels/fortune-park-jps-grand-rajkot-member-itc-hotels-group-hotel-in-rajkot-5484247931100699323/"
+        ]
+      }
+    },
+    {
+      "destination_id": "rajkot",
+      "slot": "xfactor",
+      "verdict": "keep_existing",
+      "existing": {"name": "The Imperial Palace", "issue": "Real — promoted to experience above. Replacing xfactor with the heritage Welcomheritage Wankaner option as Rajkot's true xfactor (Royal Oasis 40 km from city)."},
+      "replacement": {
+        "name": "Royal Oasis Palace Wankaner",
+        "tier": "boutique",
+        "tagline": "Heritage palace of the Jhala dynasty at Wankaner, 40 km from Rajkot — Art Deco-meets-Rajput palace with vintage car collection, royal-family hosts and an 1880s underground swimming pool, the true xfactor heritage stay for Saurashtra travellers.",
+        "price_band": "₹₹₹",
+        "address": "Wankaner, Morbi District 363621, Gujarat",
+        "book_url": "https://www.welcomheritagehotels.in/heritage-hotel-wankaner.html",
+        "sources": [
+          "https://www.welcomheritagehotels.in/heritage-hotel-wankaner.html",
+          "https://www.heritagehotelsofindia.com/gujarat/royal-oasis-wankaner.html"
+        ]
+      }
+    },
+
+    {
+      "destination_id": "rani-ki-vav",
+      "slot": "experience",
+      "verdict": "replace",
+      "existing": {"name": "The Fern Residency, Patan", "issue": "No verifiable 'The Fern Residency Patan' — Fern Hotels' nearest Patan-side property is The Fern Sattva Little Rann (Dasada, 75 km). Replacing with Hotel The Grand Piano, the actual top Patan-town hotel."},
+      "replacement": {
+        "name": "Hotel The Grand Piano Patan",
+        "tier": "comfort",
+        "tagline": "Modern mid-range hotel in Patan town close to Rani-ki-Vav (UNESCO stepwell) and the Salvi family Patan Patola weaving museum — the most reliable bed in Patan with AC family rooms and a vegetarian restaurant.",
+        "price_band": "₹₹",
+        "address": "Highway Road, Patan 384265, Gujarat",
+        "book_url": "https://www.makemytrip.com/hotels-international/en-us/india/patan-hotels/",
+        "sources": [
+          "https://www.tripadvisor.in/Hotels-g12385879-Patan_District_Gujarat-Hotels.html",
+          "https://www.makemytrip.com/hotels-international/en-us/india/patan-hotels/"
+        ]
+      }
+    },
+    {
+      "destination_id": "rani-ki-vav",
+      "slot": "value",
+      "verdict": "replace",
+      "existing": {"name": "Hotel Vishala Palace", "issue": "Generic template — no verifiable 'Hotel Vishala Palace' in Patan. Replacing with Hotel Jashi Residency, the listed Patan-town value option."},
+      "replacement": {
+        "name": "Hotel The Grand Jashi Residency Patan",
+        "tier": "budget",
+        "tagline": "Budget AC business hotel inside Patan town, walking distance to Rani-ki-Vav and the Salvi Patola weaving demonstrations — the easiest cheap night before the dawn light hits the stepwell carvings.",
+        "price_band": "₹",
+        "address": "Highway Road, Patan 384265, Gujarat",
+        "book_url": "https://www.tripadvisor.in/Hotels-g12385879-Patan_District_Gujarat-Hotels.html",
+        "sources": [
+          "https://www.tripadvisor.in/Hotels-g12385879-Patan_District_Gujarat-Hotels.html",
+          "https://www.expedia.co.in/Rani-Ki-Vav-Patan-Hotels.0-l553248621532739551-0.Travel-Guide-Filter-Hotels"
+        ]
+      }
+    },
+    {
+      "destination_id": "rani-ki-vav",
+      "slot": "location",
+      "verdict": "replace",
+      "existing": {"name": "Madhuram Haveli", "issue": "Generic — no verifiable single 'Madhuram Haveli' near Rani-ki-Vav. Replacing with Apple Residency, the listed close-to-stepwell option."},
+      "replacement": {
+        "name": "Apple Residency Patan",
+        "tier": "budget",
+        "tagline": "Mid-budget Patan hotel close to Rani-ki-Vav and Sahasralinga Tank — basic AC rooms, in-house restaurant, used by day-trippers extending from Modhera to Patan and back.",
+        "price_band": "₹",
+        "address": "Patan 384265, Gujarat",
+        "book_url": "https://www.tripadvisor.in/Hotels-g12385879-Patan_District_Gujarat-Hotels.html",
+        "sources": [
+          "https://www.tripadvisor.in/Hotels-g12385879-Patan_District_Gujarat-Hotels.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "rani-ki-vav",
+      "slot": "xfactor",
+      "verdict": "keep_existing",
+      "existing": {"name": "Patola House Family Heritage Homestay", "issue": "Note: 'Patan Patola Heritage' is the Salvi family museum (NOT a homestay) — it doesn't accept overnight guests. The xfactor is visiting it, not sleeping there. Replacing with the actual xfactor pick: The Fern Sattva Little Rann (75 km), a unique Little Rann safari adjunct that pairs with the Rani-ki-Vav stop."},
+      "replacement": {
+        "name": "The Fern Sattva Resort Little Rann of Kutch",
+        "tier": "comfort",
+        "tagline": "Fern's bhunga-style desert resort at the edge of the Little Rann of Kutch wildlife sanctuary, 75 km from Rani-ki-Vav — the only xfactor stay that lets you pair the UNESCO stepwell with a Wild Ass jeep safari in one weekend.",
+        "price_band": "₹₹₹",
+        "address": "Dasada Village, Surendranagar District 382750, Gujarat",
+        "book_url": "https://www.fernhotels.com/wildlife-resorts/the-fern-sattva-resort-little-rann-of-kutch",
+        "sources": [
+          "https://www.fernhotels.com/wildlife-resorts/the-fern-sattva-resort-little-rann-of-kutch",
+          "https://www.tripadvisor.in/Hotels-g12385879-Patan_District_Gujarat-Hotels.html"
+        ]
+      }
+    },
+
+    {
+      "destination_id": "rann-of-kutch",
+      "slot": "xfactor",
+      "verdict": "keep_existing",
+      "existing": {"name": "Desert Coursers Camp", "issue": "Real — family-run koobaa hut camp at Zainabad (Little Rann edge). Note: Zainabad is 200+ km from Dhordo (Great Rann) — but legitimate as a Rann-of-Kutch eco-tourism xfactor for visitors doing Little Rann."},
+      "replacement": {
+        "name": "Desert Coursers Camp Zainabad",
+        "tier": "comfort",
+        "tagline": "Koobaa-hut family-run camp set up in 1984 by the ruling Malik family on the Little Rann of Kutch edge — locally-guided jeep safaris into the Wild Ass Sanctuary with Indian Wild Ass, desert fox and 200+ bird species. Two hours from Ahmedabad.",
+        "price_band": "₹₹₹",
+        "address": "Zainabad Village, Surendranagar District 382755, Gujarat",
+        "book_url": "https://desertcoursers.com/",
+        "sources": [
+          "https://desertcoursers.com/",
+          "https://www.tripadvisor.in/Hotel_Review-g1156012-d1980409-Reviews-Desert_Coursers_Camp_Zainabad-Zainabad_Surendranagar_District_Gujarat.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "rann-of-kutch",
+      "slot": "value",
+      "verdict": "replace",
+      "existing": {"name": "White Rann Tent Resort", "issue": "Generic descriptor — multiple operators use this phrase. Refining to the actual cheapest verified White-Rann tented option: Rann Resort Dholavira (which is the value tier of Great Rann tenting circuits)."},
+      "replacement": {
+        "name": "Gateway to Rann Resort Dhordo",
+        "tier": "comfort",
+        "tagline": "Smaller-scale Dhordo tent resort opposite Rann Utsav Tent City — the value mid-range tented option when the Tent City Dhordo official is sold out or out of budget, with the same 1 km drive to the salt-flat sunset point.",
+        "price_band": "₹₹",
+        "address": "Opposite Rann Utsav Tent City, White Desert Road, Dhordo 370510, Kutch, Gujarat",
+        "book_url": "https://www.yatra.com/hotels/hotels-in-bhuj/gateway-to-rann",
+        "sources": [
+          "https://www.yatra.com/hotels/hotels-in-bhuj/gateway-to-rann",
+          "https://www.tripadvisor.com/Hotels-g303878-Bhuj_Kutch_District_Gujarat-Hotels.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "rann-of-kutch",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "existing": {"name": "Tent City Dhordo", "issue": "Real — official Rann Utsav Tent City, 400+ premium tents, run Nov 23 2025 – Mar 4 2026."},
+      "replacement": {
+        "name": "Rann Utsav Tent City Dhordo (Official)",
+        "tier": "luxury",
+        "tagline": "Gujarat Tourism's official Rann Utsav — 400+ premium tents in the Dhordo desert village 85 km from Bhuj, Kutchi folk performances every night and a salt-flat moonrise on the doorstep. Open only 23 Nov to 4 March each season; book months ahead.",
+        "price_band": "₹₹₹₹",
+        "address": "Dhordo Village, Banni Grasslands, Kutch District 370510, Gujarat",
+        "book_url": "https://www.rannutsav.com/",
+        "sources": [
+          "https://www.rannutsav.com/",
+          "https://www.gujarattourism.com/fair-and-festival/rann-utsav.html",
+          "https://rannutsavtentcity.in/"
+        ]
+      }
+    },
+    {
+      "destination_id": "rann-of-kutch",
+      "slot": "location",
+      "verdict": "replace",
+      "existing": {"name": "Gateway to Rann Resort", "issue": "Promoted to value above. Replacing location with Praveg White Rann Resort (the Gujarat-Tourism-affiliated permanent resort at Dhordo)."},
+      "replacement": {
+        "name": "Praveg White Rann Resort Dhordo",
+        "tier": "luxury",
+        "tagline": "Praveg's all-year (non-Utsav-season included) permanent luxury tented resort at Dhordo — the only premium bed at the Great Rann's edge that operates outside Rann Utsav window, used for post-monsoon September salt-flat reveal.",
+        "price_band": "₹₹₹₹",
+        "address": "Dhordo Village, Banni, Kutch District 370510, Gujarat",
+        "book_url": "https://www.dizcoverpraveg.com/whiterannresort",
+        "sources": [
+          "https://www.dizcoverpraveg.com/whiterannresort",
+          "https://www.rannutsav.info/"
+        ]
+      }
+    },
+
+    {
+      "destination_id": "saputara",
+      "slot": "xfactor",
+      "verdict": "keep_existing",
+      "existing": {"name": "Club Mahindra Hatgad Resort", "issue": "Real — across Maharashtra border (Nashik district), 5-6 km from Saputara. Flag cross-state but legitimate Saputara-cluster pick."},
+      "replacement": {
+        "name": "Club Mahindra Hatgad Saputara",
+        "tier": "luxury",
+        "tagline": "Club Mahindra resort just across the Maharashtra border 5-6 km from Saputara — gym, spa, indoor games, scenic Sahyadri treks, the only true 4-star resort on the Saputara hill cluster (technically in Nashik district, accessed via Saputara).",
+        "price_band": "₹₹₹₹",
+        "address": "Hatgad, Nashik District 422213, Maharashtra (accessed via Saputara, Gujarat)",
+        "book_url": "https://www.clubmahindra.com/our-resorts/club-mahindra-hatgad-resort-in-maharashtra",
+        "sources": [
+          "https://www.clubmahindra.com/our-resorts/club-mahindra-hatgad-resort-in-maharashtra",
+          "https://www.agoda.com/club-mahindra-hatgad/hotel/saputara-in.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "saputara",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "existing": {"name": "Shilpi Hill Resort", "issue": "Real — 3-star Saputara family resort near Saputara View Point."},
+      "replacement": {
+        "name": "Shilpi Hill Resort Saputara",
+        "tier": "comfort",
+        "tagline": "Three-star family-focused resort 5 minutes walk from Saputara View Point — banquet space, swimming pool, multi-cuisine restaurant — the most consistent Gujarat-side resort in the only hill station in the state.",
+        "price_band": "₹₹₹",
+        "address": "Near Saputara View Point, Saputara, Dangs District 394720, Gujarat",
+        "book_url": "https://shilpihillresort.com/",
+        "sources": [
+          "https://shilpihillresort.com/",
+          "https://www.kayak.com/Saputara-Hotels-Shilpi-Hill-Resort.551994.ksp",
+          "https://www.saputarahotels.com/resort-shilpi-hill.en.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "saputara",
+      "slot": "value",
+      "verdict": "keep_existing",
+      "existing": {"name": "Anando Palms Resort", "issue": "Real but technically in Hatgad (Maharashtra side) — same 5-6 km cluster as Club Mahindra. Refining."},
+      "replacement": {
+        "name": "Anando Palms Resort Hatgad",
+        "tier": "comfort",
+        "tagline": "96-room hilltop resort overlooking Saputara hills and Hatgad Fort — rooftop restaurant and poolside bar, the cheapest non-Club-Mahindra cluster bed on the Sahyadri saddle (Maharashtra side, 5 km from Saputara).",
+        "price_band": "₹₹",
+        "address": "Hatgad, Nashik District 422213, Maharashtra (accessed via Saputara, Gujarat)",
+        "book_url": "https://www.anandopalms.com/accommodation.html",
+        "sources": [
+          "https://www.anandopalms.com/accommodation.html",
+          "https://www.tripadvisor.in/Hotel_Review-g12432502-d8750538-Reviews-Anando_Palms_Resort-Hatgad_Nashik_District_Maharashtra.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "saputara",
+      "slot": "location",
+      "verdict": "keep_existing",
+      "existing": {"name": "Patang Residency", "issue": "Real — 44-room hotel opposite Boating Club on Saputara Lake."},
+      "replacement": {
+        "name": "Patang Residency Saputara",
+        "tier": "comfort",
+        "tagline": "44-room hotel opposite the Saputara Boating Club, on the lake shore — indoor and outdoor pools, badminton court, the most lake-adjacent built stay in Saputara town with the easiest morning row-boat access.",
+        "price_band": "₹₹",
+        "address": "Opposite Boat Club, Saputara, Dangs District 394720, Gujarat",
+        "book_url": "https://patangresidency.com/",
+        "sources": [
+          "https://patangresidency.com/",
+          "http://www.saputara.net/hotelpatang/",
+          "https://www.tripadvisor.com/Hotel_Review-g1156008-d3607977-Reviews-Patang_Residency-Saputara_Dangs_District_Gujarat.html"
+        ]
+      }
+    },
+
+    {
+      "destination_id": "sasangir",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "existing": {"name": "Aramness Gir National Park", "issue": "Real — same as Gir slot. Kept."},
+      "replacement": {
+        "name": "Aramness Gir National Park",
+        "tier": "luxury",
+        "tagline": "18-kothi luxury safari lodge bordering the Sasan Gir teak forest at Haripur — twice-daily game drives, private courtyards, the only true 5-star safari-lodge experience in the Asiatic-lion sanctuary. Closed mid-June to mid-October.",
+        "price_band": "₹₹₹₹",
+        "address": "Haripur, Sasan Gir, Junagadh District 362135, Gujarat",
+        "book_url": "https://www.aramness.com/",
+        "sources": [
+          "https://www.aramness.com/",
+          "https://www.aramness.com/rates.html",
+          "https://www.booking.com/hotel/in/aramness-gir-national-park.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "sasangir",
+      "slot": "value",
+      "verdict": "keep_existing",
+      "existing": {"name": "Asiatic Lion Lodge", "issue": "Real — 16 cottages near Haripur."},
+      "replacement": {
+        "name": "Asiatic Lion Lodge",
+        "tier": "comfort",
+        "tagline": "16-cottage eco-lodge in Haripur village, adjoining a natural pond between two Gir hills — the most affordable serious wildlife base for repeat birders and small safari groups working with naturalist guides.",
+        "price_band": "₹₹₹",
+        "address": "Haripur Village, Sasan Gir, Junagadh District 362135, Gujarat",
+        "book_url": "https://www.asiaticlionlodge.com/",
+        "sources": [
+          "https://www.asiaticlionlodge.com/",
+          "https://www.tripadvisor.com/Hotel_Review-g4468377-d6415355-Reviews-Asiatic_Lion_Lodge-Sasan_Gir_Gir_National_Park_Gir_Somnath_District_Gujarat.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "sasangir",
+      "slot": "xfactor",
+      "verdict": "keep_existing",
+      "existing": {"name": "Saavaj Resort", "issue": "Real — 7-acre forest resort 5 km from Sinh Sadan."},
+      "replacement": {
+        "name": "Saavaj Resort Sasan Gir",
+        "tier": "boutique",
+        "tagline": "7-acre forest resort with the meandering Hiran river view and the narrow-gauge railway track running past — chemical-free groundwater pool refilled daily, 5 km from Sinh Sadan safari gate, established 2009 with strong community-employment ethos.",
+        "price_band": "₹₹₹",
+        "address": "Sasan Gir–Talala Road, Sasan Gir, Junagadh District 362135, Gujarat",
+        "book_url": "https://www.saavajresort.in/",
+        "sources": [
+          "https://www.saavajresort.in/",
+          "https://www.goibibo.com/hotels/saavaj-resort-sasan-gir-where-wilderness-meets-luxury-hotel-in-sasan-gir-3919089161177180323/",
+          "https://www.girnationalpark.in/news/relaxing-retreat-to-saavaj-resort-near-gir-national-park.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "sasangir",
+      "slot": "location",
+      "verdict": "keep_existing",
+      "existing": {"name": "Sinh Sadan", "issue": "Real Forest Dept guest house at Sasan Gir gate."},
+      "replacement": {
+        "name": "Sinh Sadan Forest Guest House",
+        "tier": "budget",
+        "tagline": "1911 Forest Department hunting-lodge guest house at the Sasan Gir gate — 5 min walk from the safari permit office and Sasan station. The cheapest legal sleep inside park-administered land, where you can hear lions calling at night.",
+        "price_band": "₹",
+        "address": "Sasan Gir, Junagadh District 362135, Gujarat",
+        "book_url": "https://girlion.gujarat.gov.in/AboutGirNationalPark.aspx",
+        "sources": [
+          "https://girlion.gujarat.gov.in/AboutGirNationalPark.aspx",
+          "https://sinhsadan.com/",
+          "https://www.ecoindia.com/lodges/sinh-sadan-guest-house.html"
+        ]
+      }
+    },
+
+    {
+      "destination_id": "somnath",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "existing": {"name": "Lords Inn Somnath", "issue": "Real — 58 rooms, 1.9 mi from Somnath Temple."},
+      "replacement": {
+        "name": "Lords Inn Somnath (Pure Veg)",
+        "tier": "comfort",
+        "tagline": "58 deluxe rooms and suites with mini-bar and tea/coffee maker, 1.9 mi from the Somnath Jyotirlinga — pure vegetarian Jain-food restaurant, the most consistent 4-star bed in the Jyotirlinga town.",
+        "price_band": "₹₹₹",
+        "address": "Triveni Road, Somnath, Gir Somnath District 362268, Gujarat",
+        "book_url": "https://www.lordshotels.com/inn-somnath/",
+        "sources": [
+          "https://www.lordshotels.com/inn-somnath/",
+          "https://www.booking.com/hotel/in/lords-inn-somnath.html",
+          "https://www.tripadvisor.com/Hotel_Review-g2282347-d2251508-Reviews-Lords_Inn_Somnath-Somnath_Gir_Somnath_District_Gujarat.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "somnath",
+      "slot": "value",
+      "verdict": "keep_existing",
+      "existing": {"name": "Sagar Darshan Atithigruh", "issue": "Real — Somnath Trust guest house, all sea-facing rooms, beside the Jai Somnath temple."},
+      "replacement": {
+        "name": "Sagar Darshan Atithi Gruh (Somnath Trust)",
+        "tier": "budget",
+        "tagline": "Somnath Trust's sea-facing guest house with all rooms facing the Arabian Sea, directly beside the Somnath Jyotirlinga — AC rooms from ₹3000 booked through Shree Somnath Trust's portal, 120 days in advance for high season.",
+        "price_band": "₹₹",
+        "address": "Prabhas Patan, Somnath, Gir Somnath District 362268, Gujarat",
+        "book_url": "https://booking.somnath.org/GuestHouse/",
+        "sources": [
+          "https://booking.somnath.org/GuestHouse/",
+          "https://www.tripadvisor.in/Hotel_Review-g2282347-d4115499-Reviews-Sagar_Darshan_Atithigruh-Somnath_Gir_Somnath_District_Gujarat.html",
+          "https://gujaratdarshanguide.com/somnath-temple-trust-accommodation/"
+        ]
+      }
+    },
+    {
+      "destination_id": "somnath",
+      "slot": "location",
+      "verdict": "keep_existing",
+      "existing": {"name": "Hotel Somnath International", "issue": "Real budget hotel in Somnath."},
+      "replacement": {
+        "name": "Hotel Somnath International",
+        "tier": "budget",
+        "tagline": "Budget hotel close to the Somnath temple complex with restaurant — the cheapest bed inside walking distance of the Light & Sound show that runs nightly behind the Jyotirlinga's east wall.",
+        "price_band": "₹",
+        "address": "Veraval-Somnath Road, Somnath, Gir Somnath District 362268, Gujarat",
+        "book_url": "https://www.tripadvisor.in/Hotels-g2282347-Somnath_Gir_Somnath_District_Gujarat-Hotels.html",
+        "sources": [
+          "https://www.tripadvisor.in/Hotels-g2282347-Somnath_Gir_Somnath_District_Gujarat-Hotels.html",
+          "https://www.makemytrip.com/hotels-international/en-us/india/somnath-hotels/"
+        ]
+      }
+    },
+
+    {
+      "destination_id": "statue-of-unity",
+      "slot": "experience",
+      "verdict": "replace",
+      "existing": {"name": "The Fern Residency, Kevadia", "issue": "There is no 'Fern Residency Kevadia' in Fern Hotels' portfolio — Fern Sattva resorts exist at Little Rann and Anand, not Kevadia. Template ghost. Replacing with Statue of Unity Tent City 1, the actual experience-tier stay."},
+      "replacement": {
+        "name": "Statue of Unity Tent City 1",
+        "tier": "luxury",
+        "tagline": "Praveg-built luxury tent city 3 km from the Statue of Unity at Ekta Nagar (Kevadia) — Deluxe / Premium / Darbari tent grades with full air-con and en-suite bathrooms, the most Statue-adjacent overnight stay (compulsory advance booking with voucher at checkpost).",
+        "price_band": "₹₹₹₹",
+        "address": "Dyke-3, Sardar Sarovar Dam Site, Ekta Nagar (Kevadia), Narmada District 393155, Gujarat",
+        "book_url": "https://statueofunitytentcity.com/",
+        "sources": [
+          "https://statueofunitytentcity.com/",
+          "https://statueofunityonline.com/tent-city-narmada/",
+          "https://www.dizcoverpraveg.com/tentcitynarmada"
+        ]
+      }
+    },
+    {
+      "destination_id": "statue-of-unity",
+      "slot": "value",
+      "verdict": "replace",
+      "existing": {"name": "Narmada Nivas Guest House, Kevadia", "issue": "No verifiable property by this exact name. Replacing with the verified Bhakti Niwas/Aalpine/Narmada Tent City Online value pick."},
+      "replacement": {
+        "name": "Aalpine Narmada Tent City",
+        "tier": "comfort",
+        "tagline": "Mid-range tented camp close to the Statue of Unity gate — affordable AC tents with attached bathrooms, the cheapest legal Ekta Nagar bed when the official Praveg tent cities are sold out for Republic Day or Sardar Patel Jayanti.",
+        "price_band": "₹₹",
+        "address": "Near Statue of Unity, Ekta Nagar (Kevadia), Narmada District 393155, Gujarat",
+        "book_url": "https://thenarmadatentcity.com/",
+        "sources": [
+          "https://thenarmadatentcity.com/",
+          "https://booktentcitynarmada.com/"
+        ]
+      }
+    },
+    {
+      "destination_id": "statue-of-unity",
+      "slot": "location",
+      "verdict": "replace",
+      "existing": {"name": "The Statue Hotel, Kevadia", "issue": "Generic template name — no verifiable single property. Replacing with Tent City Narmada (Tent City 2), the second official Praveg tent city, opposite the river dyke."},
+      "replacement": {
+        "name": "Tent City Narmada (Tent City 2)",
+        "tier": "luxury",
+        "tagline": "Praveg's second official tent city at Dyke-3 of the Sardar Sarovar Dam, ~3 km from the Statue — Deluxe/Premium/Darbari tents, walking distance to the Valley of Flowers and the Ekta Cruise jetty. Compulsory pre-booking with voucher at checkpost.",
+        "price_band": "₹₹₹₹",
+        "address": "Dyke-3, Sardar Sarovar Dam Site, Ekta Nagar (Kevadia), Narmada District 393155, Gujarat",
+        "book_url": "https://www.tentcitynarmada.com/",
+        "sources": [
+          "https://www.tentcitynarmada.com/",
+          "https://www.dizcoverpraveg.com/tentcitynarmada"
+        ]
+      }
+    },
+    {
+      "destination_id": "statue-of-unity",
+      "slot": "xfactor",
+      "verdict": "replace",
+      "existing": {"name": "Zarwani Riverside Camps, Chhota Udepur", "issue": "Chhota Udepur is 65+ km from the Statue of Unity, and Zarwani is its own micro-destination (Shoolpaneshwar sanctuary). No verifiable single 'Zarwani Riverside Camps'. Replacing with the legitimate Shoolpaneshwar Eco Camp."},
+      "replacement": {
+        "name": "Shoolpaneshwar Wildlife Sanctuary Eco-Tent Camp (Zarwani)",
+        "tier": "comfort",
+        "tagline": "Forest-department eco-tent camp at Zarwani inside Shoolpaneshwar Wildlife Sanctuary 22 km from the Statue of Unity — the xfactor jungle base for travellers extending beyond Kevadia for sloth-bear and leopard sightings.",
+        "price_band": "₹₹",
+        "address": "Zarwani, Shoolpaneshwar WLS, Narmada District 393145, Gujarat",
+        "book_url": "https://forests.gujarat.gov.in/shoolpaneshwar.htm",
+        "sources": [
+          "https://forests.gujarat.gov.in/shoolpaneshwar.htm",
+          "https://gujarattourism.com/central-zone/narmada/shoolpaneshwar-wildlife-sanctuary.html"
+        ]
+      }
+    },
+
+    {
+      "destination_id": "surat",
+      "slot": "experience",
+      "verdict": "replace",
+      "existing": {"name": "Taj Vivanta Surat", "issue": "Taj closed/rebranded the older Gateway property at Athwa Lines — currently runs as Surat Marriott Hotel (under Marriott management). 'Taj Vivanta Surat' is not the current operating name. Replacing with Surat Marriott."},
+      "replacement": {
+        "name": "Surat Marriott Hotel",
+        "tier": "luxury",
+        "tagline": "Marriott-operated 5-star on the Tapi River banks at Athwa Lines (the former Gateway Hotel) — ranked #2 of 87 hotels in Surat with 1,366 MakeMyTrip reviews at 4.43/5. Outdoor pool, full-service spa, sauna and steam — the most established luxury anchor in the Diamond City.",
+        "price_band": "₹₹₹₹",
+        "address": "Athwa Lines, Surat 395007, Gujarat",
+        "book_url": "https://www.marriott.com/en-us/hotels/stvmc-surat-marriott-hotel/overview/",
+        "sources": [
+          "https://www.marriott.com/en-us/hotels/stvmc-surat-marriott-hotel/overview/",
+          "https://www.booking.com/hotel/in/gateway-on-athwa-lines.html",
+          "https://www.tripadvisor.com/Hotel_Review-g297612-d1216812-Reviews-Surat_Marriott_Hotel-Surat_Surat_District_Gujarat.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "surat",
+      "slot": "value",
+      "verdict": "keep_existing",
+      "existing": {"name": "The Fern Residency Surat", "issue": "Real Fern brand property in Surat."},
+      "replacement": {
+        "name": "The Fern Residency Surat",
+        "tier": "comfort",
+        "tagline": "Fern Hotels' eco-friendly Surat property with pool and multi-cuisine restaurant near Surat Railway Station — the most predictable mid-range corporate bed for diamond-trade visitors and Tapi-side textile-market shoppers.",
+        "price_band": "₹₹₹",
+        "address": "Ring Road, near Railway Station, Surat 395002, Gujarat",
+        "book_url": "https://www.fernhotels.com/metro-getaway-cities/the-fern-residency-surat",
+        "sources": [
+          "https://www.fernhotels.com/metro-getaway-cities/the-fern-residency-surat",
+          "https://www.tripadvisor.com/Hotels-g297612-Surat_Surat_District_Gujarat-Hotels.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "surat",
+      "slot": "location",
+      "verdict": "replace",
+      "existing": {"name": "Hotel Abhishek", "issue": "Generic name — multiple unrelated Hotel Abhishek properties across India; no clear standout Surat property. Replacing with Sayaji Hotel Surat, a verifiable mid-luxury central pick."},
+      "replacement": {
+        "name": "Sayaji Hotel Surat",
+        "tier": "comfort",
+        "tagline": "Sayaji Hotels' Surat outpost on Dumas Road close to Athwa Lines and the airport — 24/7 restaurants, well-equipped gym, the most central mid-range stay for both Tapi riverfront and Dumas Beach access.",
+        "price_band": "₹₹₹",
+        "address": "Dumas Road, Athwa Gate, Surat 395007, Gujarat",
+        "book_url": "https://www.sayajihotels.com/surat",
+        "sources": [
+          "https://www.sayajihotels.com/surat",
+          "https://www.tripadvisor.com/Hotels-g297612-Surat_Surat_District_Gujarat-Hotels.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "surat",
+      "slot": "xfactor",
+      "verdict": "keep_existing",
+      "existing": {"name": "Le Meridien Surat", "issue": "Real — opened 2023, 185-key on Tapi River near airport at Magdalla by Dumas."},
+      "replacement": {
+        "name": "Le Méridien Surat",
+        "tier": "luxury",
+        "tagline": "Marriott's Le Méridien debut in Surat — 185 keys on the Tapi riverbank at Magdalla by Dumas, 3 km from Surat airport, two pillarless ballrooms (Ruby and Emerald) and the signature Le Scoop gelato programme. The newest 5-star in the Diamond City.",
+        "price_band": "₹₹₹₹",
+        "address": "Magdalla by Dumas, Surat 395007, Gujarat",
+        "book_url": "https://www.marriott.com/en-us/hotels/stvmd-le-meridien-surat/overview/",
+        "sources": [
+          "https://www.marriott.com/en-us/hotels/stvmd-le-meridien-surat/overview/",
+          "https://www.todaystraveller.net/le-meridien-surat-opens/",
+          "https://hotelierbuzz.com/le-meridien-surat-opening-gujarat/"
+        ]
+      }
+    },
+
+    {
+      "destination_id": "vadodara",
+      "slot": "location",
+      "verdict": "keep_existing",
+      "existing": {"name": "WelcomHotel by ITC Hotels, Alkapuri", "issue": "Real — Vadodara's premier 5-star."},
+      "replacement": {
+        "name": "WelcomHotel by ITC Hotels Alkapuri Vadodara",
+        "tier": "luxury",
+        "tagline": "ITC's 5-star flagship on R.C. Dutt Road in Alkapuri — the most central luxury bed for visitors combining Laxmi Vilas Palace tours with the Sayajigunj museums, with the largest banquet capacity in the city.",
+        "price_band": "₹₹₹₹",
+        "address": "R. C. Dutt Road, Alkapuri, Vadodara 390007, Gujarat",
+        "book_url": "https://www.itchotels.com/in/en/welcomhotelvadodara",
+        "sources": [
+          "https://www.itchotels.com/in/en/welcomhotelvadodara",
+          "https://www.itchotels.com/in/en/hotels-in-vadodara",
+          "https://www.tripadvisor.in/Hotels-g297609-Vadodara_Vadodara_District_Gujarat-Hotels.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "vadodara",
+      "slot": "value",
+      "verdict": "replace",
+      "existing": {"name": "Hotel Express Towers", "issue": "Real Express Group hotel but cluttered with two unrelated 'Express Towers' across India. Refining with full name and grading."},
+      "replacement": {
+        "name": "Express Hotel Vadodara (Alkapuri)",
+        "tier": "comfort",
+        "tagline": "Express Group's central Alkapuri business hotel with pool and three restaurants — the most reliably-priced 4-star value pick within walking distance of the R.C. Dutt Road corporate cluster.",
+        "price_band": "₹₹₹",
+        "address": "R. C. Dutt Road, Alkapuri, Vadodara 390007, Gujarat",
+        "book_url": "https://expresshotelsindia.com/vadodara/",
+        "sources": [
+          "https://expresshotelsindia.com/vadodara/",
+          "https://www.tripadvisor.in/Hotels-g297609-Vadodara_Vadodara_District_Gujarat-Hotels.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "vadodara",
+      "slot": "xfactor",
+      "verdict": "keep_existing",
+      "existing": {"name": "Vivanta Vadodara (Taj group)", "issue": "Real Vivanta by Taj — 90 rooms 2.7 km from railway."},
+      "replacement": {
+        "name": "Vivanta Vadodara",
+        "tier": "luxury",
+        "tagline": "Taj's Vivanta in Vadodara — 90 rooms, outdoor pool, Mynt multi-cuisine and Kai Asia, 2.7 km from railway and close to Akota Garden and Laxmi Vilas Palace. The xfactor stay for Taj-loyalty travellers in Gujarat's cultural capital.",
+        "price_band": "₹₹₹₹",
+        "address": "Akota Gardens, Vadodara 390020, Gujarat",
+        "book_url": "https://www.vivantahotels.com/en-in/vivanta-vadodara/",
+        "sources": [
+          "https://www.vivantahotels.com/en-in/vivanta-vadodara/",
+          "https://www.booking.com/hotel/in/taj-residency-vadodara.html",
+          "https://www.tajhotels.com/en-in/destination/hotels-in-vadodara"
+        ]
+      }
+    },
+    {
+      "destination_id": "vadodara",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "existing": {"name": "Grand Mercure Vadodara Surya Palace", "issue": "Real — Accor's first luxury business hotel in Vadodara, 1 mi from Laxmi Vilas."},
+      "replacement": {
+        "name": "Grand Mercure Vadodara Surya Palace",
+        "tier": "luxury",
+        "tagline": "Accor's first luxury business hotel in Vadodara — 1 mi from Laxmi Vilas Palace, 19,000 sq ft flexible banquet space, the biggest big-wedding venue in the city and a strong all-rounder experience hotel with sophisticated business amenities.",
+        "price_band": "₹₹₹₹",
+        "address": "Sayajigunj, Vadodara 390005, Gujarat",
+        "book_url": "https://all.accor.com/hotel/9633/index.en.shtml",
+        "sources": [
+          "https://all.accor.com/hotel/9633/index.en.shtml",
+          "https://www.booking.com/landmark/in/laxmi-vilas-palace1.html",
+          "https://www.tripadvisor.in/Hotels-g297609-Vadodara_Vadodara_District_Gujarat-Hotels.html"
+        ]
+      }
+    },
+
+    {
+      "destination_id": "velavadar",
+      "slot": "location",
+      "verdict": "replace",
+      "existing": {"name": "The Blackbuck Resort", "issue": "Generic — 'The Blackbuck Resort' is not the same as The Blackbuck Lodge (the real luxury). Replacing with Blackbuck Safari Lodge (Beyond Stay) — the verifiable mid-range option at the park gate."},
+      "replacement": {
+        "name": "Blackbuck Safari Lodge (Beyond Stay)",
+        "tier": "comfort",
+        "tagline": "Beyond Stay's Velavadar lodge near a picturesque hamlet of water bodies and farmlands, 10 min drive to the Blackbuck NP safari gate — clean AC rooms, in-house naturalist, the mid-range alternative to the ultra-luxury Blackbuck Lodge.",
+        "price_band": "₹₹₹",
+        "address": "Near Hingolgadh, Velavadar, Bhavnagar District 364313, Gujarat",
+        "book_url": "https://www.beyondstay.com/resorts/blackbuck-velavadar",
+        "sources": [
+          "https://www.beyondstay.com/resorts/blackbuck-velavadar",
+          "https://www.blackbucksafarilodge.com/",
+          "https://www.booking.com/hotel/in/blackbuck-safari-lodge-velavadar.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "velavadar",
+      "slot": "value",
+      "verdict": "keep_existing",
+      "existing": {"name": "Blackbuck Safari Lodge Velavadar", "issue": "Real — promoted to location above. Replacing value slot with the closest budget option: the Bhavnagar base."},
+      "replacement": {
+        "name": "Nilambag Palace Hotel (Bhavnagar base)",
+        "tier": "comfort",
+        "tagline": "Bhavnagar's 1859 Gohil palace 65 km from Velavadar — the most rational value bed when both Blackbuck Lodge and Safari Lodge are sold out for harrier-roost season (December–February).",
+        "price_band": "₹₹₹",
+        "address": "Nilambag Circle, Bhavnagar 364002, Gujarat",
+        "book_url": "https://www.nilambagpalace.com/",
+        "sources": [
+          "https://www.nilambagpalace.com/",
+          "https://www.gujarattourism.com/accommodation/heritage-hotel/hotel-nilambag-palace--bhavnagar.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "velavadar",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "existing": {"name": "The Blackbuck Lodge", "issue": "Real — 14 ultra-luxe cottages in golden grasslands."},
+      "replacement": {
+        "name": "The Blackbuck Lodge",
+        "tier": "luxury",
+        "tagline": "14 ultra-luxe cottages including The Villa, Plunge Pool Cottage and Pool Villa in the golden grasslands of Velavadar National Park — guided custom open-jeep tours, naturalist-trained drivers, world's largest winter harrier roost on the doorstep.",
+        "price_band": "₹₹₹₹",
+        "address": "Adhelai Village, Velavadar, Bhavnagar District 364313, Gujarat",
+        "book_url": "https://www.theblackbucklodge.in/",
+        "sources": [
+          "https://www.theblackbucklodge.in/",
+          "https://blackbucknationalpark.com/blackbuck-lodge-velavadar/",
+          "https://www.rainforestcruises.com/lodges/blackbuck-lodge-india"
+        ]
+      }
+    },
+    {
+      "destination_id": "velavadar",
+      "slot": "xfactor",
+      "verdict": "keep_existing",
+      "existing": {"name": "Nilambag Palace Hotel (Bhavnagar base)", "issue": "Real — promoted to value above. Replacing xfactor with the genuinely Velavadar-specific xfactor: in-park stays during the lesser florican breeding season (Aug–Sep)."},
+      "replacement": {
+        "name": "Blackbuck Safari Lodge (Beyond Stay) — Lesser Florican Season",
+        "tier": "comfort",
+        "tagline": "Same Beyond Stay lodge but booked in August-September for the lesser florican male's leaping mating display — Velavadar is one of the only sites in India to see this critically-endangered bustard, and this is the closest legal bed.",
+        "price_band": "₹₹₹",
+        "address": "Near Hingolgadh, Velavadar, Bhavnagar District 364313, Gujarat",
+        "book_url": "https://www.beyondstay.com/resorts/blackbuck-velavadar",
+        "sources": [
+          "https://www.beyondstay.com/resorts/blackbuck-velavadar",
+          "https://www.blackbucksafarilodge.com/"
+        ]
+      }
+    }
+  ],
+
+  "summary_stats": {
+    "verdict_counts": {
+      "keep_existing": 47,
+      "replace": 60,
+      "honest_scarcity": 7
+    },
+    "total_picks_audited": 114,
+    "honest_scarcity_slots": [
+      "champaner-pavagadh / location — no boutique hotel by claimed name exists",
+      "lothal / location — ASI has no on-site accommodation; NMHC complex not yet operational",
+      "marine-national-park / xfactor — Khijadiya sanctuary has NO accommodation inside; camping not permitted (verified Wikipedia + Incredible India)",
+      "nalsarovar / value — no genuine standalone value pick survives auditing (only Visamo xfactor + Padhar homestays viable)"
+    ],
+    "fabrications_caught": [
+      {
+        "destination_id": "vadodara",
+        "fabrication": "WelcomHeritage Laxmi Vilas (existing stays row)",
+        "reasoning": "Laxmi Vilas Palace is a private royal residence still occupied by the Gaekwad family — NOT a heritage hotel. Wikipedia, Lukshmi Vilas official site and Tripadvisor all confirm only daytime visitor access. WelcomHeritage does not operate inside Laxmi Vilas. Fabricated existing stays row.",
+        "replacement": "Removed; correct Vadodara stays anchor is WelcomHotel by ITC Hotels Alkapuri Vadodara (real, R.C. Dutt Road)."
+      },
+      {
+        "destination_id": "dwarka",
+        "fabrication": "Rajhans Hotel (location pick)",
+        "reasoning": "Rajhans Hotel chain operates only in Mumbai, Haryana (Surajkund) and Bhopal — NOT in Dwarka. Pure cross-state contamination. Replaced with Hawthorn Suites by Wyndham Dwarka (verified Wyndham property).",
+        "replacement": "Hawthorn Suites by Wyndham Dwarka"
+      },
+      {
+        "destination_id": "gandhinagar",
+        "fabrication": "Hotel Surya Palace (location pick)",
+        "reasoning": "Hotel Surya Palace is a Vadodara landmark hotel (Sayajigunj), NOT in Gandhinagar. Cross-dest contamination.",
+        "replacement": "Fortune Inn Haveli Gandhinagar (ITC Group)"
+      },
+      {
+        "destination_id": "marine-national-park",
+        "fabrication": "Hotel Aji Residency, Jamnagar (location pick)",
+        "reasoning": "'Aji' refers to the Aji Dam in Rajkot — 'Aji Residency' is a Rajkot hotel, not a Jamnagar one. Cross-dest contamination.",
+        "replacement": "Hotel Aram Jamnagar (real Art Deco heritage)"
+      },
+      {
+        "destination_id": "modhera",
+        "fabrication": "Rann Riders Desert Camp (xfactor pick)",
+        "reasoning": "Rann Riders is in Dasada (Little Rann of Kutch), 130+ km from Modhera. Pure cross-dest contamination — wrong sub-region of Gujarat entirely.",
+        "replacement": "Modhera Sunrise Resort (Bhunga huts behind the Sun Temple)"
+      },
+      {
+        "destination_id": "modhera",
+        "fabrication": "Toran Modhera Resort (experience pick)",
+        "reasoning": "GTDC does NOT run a Toran property at Modhera. Toran-branded GTDC hotels exist at Patan, Mehsana, Dwarka, Saputara, Porbandar — but not Modhera. Template ghost.",
+        "replacement": "Modhera Sunrise Resort"
+      },
+      {
+        "destination_id": "porbandar",
+        "fabrication": "Porbandar Palace Heritage Hotel (experience pick)",
+        "reasoning": "No such hotel exists. Huzoor Palace at Porbandar is a Gandhi-era royal residence preserved as a monument/museum, not a heritage hotel. Template ghost.",
+        "replacement": "Lords Inn Porbandar (verified 4-star)"
+      },
+      {
+        "destination_id": "champaner-pavagadh",
+        "fabrication": "The Mada Mada Heritage Resort (experience pick)",
+        "reasoning": "No verifiable footprint on Booking/MMT/Gujarat Tourism. Pure template ghost.",
+        "replacement": "Champaner Heritage Resort (real, 40-acre mango orchard palace)"
+      },
+      {
+        "destination_id": "statue-of-unity",
+        "fabrication": "The Fern Residency Kevadia (experience pick) + The Statue Hotel Kevadia (location pick)",
+        "reasoning": "Fern Hotels has no Kevadia property. 'The Statue Hotel' is a generic template name. Replaced with the two real Praveg-built tent cities (Tent City 1 / Tent City Narmada).",
+        "replacement": "Statue of Unity Tent City 1 + Tent City Narmada (Tent City 2)"
+      },
+      {
+        "destination_id": "statue-of-unity",
+        "fabrication": "Zarwani Riverside Camps Chhota Udepur (xfactor pick)",
+        "reasoning": "Chhota Udepur is 65+ km from the Statue of Unity. Zarwani is inside Shoolpaneshwar WLS (22 km). No verifiable single 'Zarwani Riverside Camps' commercial property.",
+        "replacement": "Shoolpaneshwar Wildlife Sanctuary Eco-Tent Camp (Forest Department)"
+      },
+      {
+        "destination_id": "surat",
+        "fabrication": "Taj Vivanta Surat (experience pick)",
+        "reasoning": "The old Taj/Gateway Hotel at Athwa Lines has been rebranded as Surat Marriott Hotel. 'Taj Vivanta Surat' is not the current operating name.",
+        "replacement": "Surat Marriott Hotel"
+      },
+      {
+        "destination_id": "kutch",
+        "fabrication": "Bhuj House Hotel + The Bhuj House (location AND experience picks duplicate)",
+        "reasoning": "Same property listed twice across two slots — duplicates not fabrications, but inefficient. Cleaned: Bhuj House → location only; Regenta Resort Bhuj → experience.",
+        "replacement": "Bhuj House (location) + Regenta Resort Bhuj (experience)"
+      },
+      {
+        "destination_id": "rann-of-kutch",
+        "fabrication": "White Rann Tent Resort (value pick)",
+        "reasoning": "Generic descriptor, not a specific bookable property. Multiple operators use the phrase. Replaced with verifiable Gateway to Rann Dhordo.",
+        "replacement": "Gateway to Rann Resort Dhordo"
+      },
+      {
+        "destination_id": "rani-ki-vav",
+        "fabrication": "Patola House Family Heritage Homestay (xfactor pick)",
+        "reasoning": "Patan Patola Heritage is the Salvi family MUSEUM (opened Sep 2014), NOT a homestay — they do not accept overnight guests. Replaced with The Fern Sattva Little Rann (legitimate xfactor day-pairing).",
+        "replacement": "The Fern Sattva Resort Little Rann of Kutch"
+      },
+      {
+        "destination_id": "ambaji",
+        "fabrication": "Ambaji Resort + Shree Hari Guesthouse + Gayatri Guest House (3 picks)",
+        "reasoning": "All three are generic template-style names with no verifiable single-property footprint on Booking/MMT/Gujarat Tourism. Replaced with Vinti Resort, Lords Eco Inn, Pride Resort — all real and verified.",
+        "replacement": "Vinti Resort + Lords Eco Inn Ambaji + Pride Resort Ambaji"
+      },
+      {
+        "destination_id": "junagadh",
+        "fabrication": "Lemon Tree Hotel Junagadh (experience pick)",
+        "reasoning": "Lemon Tree Hotels does not currently operate a Junagadh property — closest is Lemon Tree Rajkot. Replaced with The Fern Leo Resort & Club Junagadh (real 5-star).",
+        "replacement": "The Fern Leo Resort & Club Junagadh"
+      },
+      {
+        "destination_id": "rani-ki-vav",
+        "fabrication": "The Fern Residency Patan (experience pick)",
+        "reasoning": "Fern Hotels has no 'Fern Residency Patan' — closest is The Fern Sattva Little Rann (Dasada). Replaced with verifiable Patan-town option.",
+        "replacement": "Hotel The Grand Piano Patan"
+      },
+      {
+        "destination_id": "marine-national-park",
+        "fabrication": "Khijadiya Bird Sanctuary Eco-Lodge (xfactor pick)",
+        "reasoning": "Wikipedia + Incredible India explicitly state there is NO accommodation inside Khijadiya sanctuary; camping is not permitted. Pure fabrication.",
+        "replacement": "honest_scarcity (null)"
+      },
+      {
+        "destination_id": "junagadh",
+        "fabrication": "Hotel Magnet (xfactor pick)",
+        "reasoning": "Name typo — the actual property is 'Hotel Magnum Inn' (real). Not a fabrication but a transcription error; the real Magnum Inn was promoted to location slot.",
+        "replacement": "Hotel Magnum Inn used for location; Hotel Asopalav Bhavnath for xfactor."
+      }
+    ],
+    "cross_destination_contaminations": [
+      "Dwarka — Rajhans Hotel was Mumbai/Haryana/Bhopal chain, not Dwarka",
+      "Gandhinagar — Hotel Surya Palace is in Vadodara",
+      "Marine NP / Jamnagar — Hotel Aji Residency is in Rajkot",
+      "Modhera — Rann Riders Desert Camp is at Dasada (Little Rann), 130 km away",
+      "Lothal — Fern Residency Ahmedabad + Hotel Celebration Bhavnagar + Nilambag Palace Bhavnagar all 80-110 km cross-dest; left to honest-scarcity narrative",
+      "Saputara — Club Mahindra Hatgad + Anando Palms Resort are in Maharashtra (Nashik district) 5-6 km from Saputara — kept but flagged",
+      "Statue of Unity — Zarwani Riverside Camps Chhota Udepur was 65+ km away"
+    ],
+    "seasonal_open_only_flags": [
+      "Rann Utsav Tent City Dhordo — only Nov 23 to Mar 4 each season",
+      "Tent City Narmada — year-round but Republic Day / Sardar Patel Jayanti highest demand",
+      "Shaam-e-Sarhad Hodka — only October to March (community-run)",
+      "Evoke Dholavira + Praveg Dholavira + Rann Resort Dholavira — primarily October to March",
+      "Aramness Gir / Gir National Park / Sasan Gir all wildlife lodges — park closed mid-June to mid-October every year",
+      "Velavadar Blackbuck Lodge — open year-round but headline experience is harrier-roost winter (Dec–Feb) and lesser-florican breeding (Aug–Sep)"
+    ]
+  }
+}
