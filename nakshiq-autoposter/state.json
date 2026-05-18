@@ -1,9 +1,23 @@
 {
-  "yt_short_formats_used": [],
-  "yt_short_music_used": [],
-  "posted_today": {},
+  "yt_short_formats_used": [
+    "listicle"
+  ],
+  "yt_short_music_used": [
+    "px_bollywood_monda"
+  ],
+  "posted_today": {
+    "GAh5p_yt_short": "2026-05-18",
+    "GAh5p_yt_short_count": 1,
+    "m8EAd_yt_short": "2026-05-18",
+    "m8EAd_yt_short_count": 1
+  },
   "last_sync": "2026-04-30T04:05:30.154914+00:00",
-  "posted_destinations": [],
+  "posted_destinations": [
+    {
+      "destination_id": "uttarkashi",
+      "date": "2026-05-18"
+    }
+  ],
   "posted_formats": {
     "m8EAd": [
       "monthly_forecast",
@@ -431,6 +445,24 @@
       "destination": "ranthambore",
       "format": "kids_intel",
       "has_media": true
+    },
+    {
+      "timestamp": "2026-05-18T14:13:25.553077+00:00",
+      "date": "2026-05-18",
+      "platform": "youtube",
+      "post_id": "rwzW4",
+      "destination": "uttarkashi",
+      "format": "yt_short.listicle",
+      "media_id": "yt_short_listicle_yt_short_listicle_2026-05-18.mp4"
+    },
+    {
+      "timestamp": "2026-05-18T14:14:01.523504+00:00",
+      "date": "2026-05-18",
+      "platform": "instagram",
+      "post_id": "uIDDE",
+      "destination": "uttarkashi",
+      "format": "yt_short.listicle",
+      "media_id": "yt_short_listicle_yt_short_listicle_2026-05-18.mp4"
     }
   ],
   "theme_usage": {},
