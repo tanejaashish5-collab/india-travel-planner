@@ -1,0 +1,23 @@
+[
+  {
+    "destination_id": "elephanta-caves",
+    "slot": "experience",
+    "verdict": "honest_scarcity",
+    "existing": {"name": "The Taj Mahal Palace (Mumbai Gateway ferry base — no on-island stays)", "issue": "labelled cross-dest — Taj is in Mumbai inventory not Elephanta. Elephanta Caves are UNESCO-listed cave temples on Gharapuri island with ZERO formal accommodation. The only overnight option is the island's MTDC Forest Rest House, which is non-public. Day trip from Mumbai is the only realistic option"},
+    "replacement": null
+  },
+  {
+    "destination_id": "elephanta-caves",
+    "slot": "location",
+    "verdict": "honest_scarcity",
+    "existing": {"name": "Hotel Diplomat (Mumbai Gateway ferry base — no on-island stays)", "issue": "Hotel Diplomat is a real Mumbai property in Colaba near the Gateway, but labelling it as Elephanta stay is cross-dest. Should sit in Mumbai inventory"},
+    "replacement": null
+  },
+  {
+    "destination_id": "elephanta-caves",
+    "slot": "value",
+    "verdict": "honest_scarcity",
+    "existing": {"name": "Hotel Suncity Apollo (Mumbai Gateway ferry base — no on-island stays)", "issue": "cross-dest — Mumbai property, not Elephanta. Should sit in Mumbai inventory"},
+    "replacement": null
+  }
+]

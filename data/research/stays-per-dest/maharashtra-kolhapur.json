@@ -1,0 +1,38 @@
+[
+  {
+    "destination_id": "kolhapur",
+    "name": "Hotel Sayaji Kolhapur",
+    "type": "business-hotel",
+    "location": "Pulachi Shiroli, Pune-Bangalore Highway",
+    "why_special": "Sayaji Hotels' 5-star Kolhapur flagship 5 km from city centre — outdoor pool, multi-cuisine Kebabsta and Habibi (Lebanese). The polished 5-star anchor for Mahalaxmi Temple pilgrim families and Panhala Fort visitors, with the strongest spa in town.",
+    "price_range": "₹₹₹",
+    "contact": {"phone": "+91-231-661-1100", "website": "https://www.sayajihotels.com/kolhapur/", "email": "kolhapur@sayajihotels.com"},
+    "best_for": ["families", "business", "pilgrim"],
+    "verified": true,
+    "tags": ["Sayaji", "Pune-Bangalore-Highway", "5-star", "spa"]
+  },
+  {
+    "destination_id": "kolhapur",
+    "name": "Hotel Pearl Kolhapur",
+    "type": "business-hotel",
+    "location": "Sykes Extension, near New Mahadwar Road",
+    "why_special": "Kolhapur's senior 3-star walking-distance from Mahalaxmi Temple — 60 rooms, Maharashtrian/non-veg restaurant Mahabhog, the local pick for pilgrim families that want temple-proximity over highway 5-stars.",
+    "price_range": "₹₹",
+    "contact": {"phone": "+91-231-265-2451", "website": "https://hotelpearlkolhapur.com/", "email": "info@hotelpearlkolhapur.com"},
+    "best_for": ["pilgrim", "families", "value"],
+    "verified": true,
+    "tags": ["Mahalaxmi-Temple", "Sykes-Extension", "pilgrim", "local"]
+  },
+  {
+    "destination_id": "kolhapur",
+    "name": "Hotel Tulsi Kolhapur",
+    "type": "business-hotel",
+    "location": "Station Road",
+    "why_special": "Mid-range 3-star opposite Kolhapur railway station — 56 rooms, vegetarian restaurant, the reliable pick for overnight train arrivals continuing to Panhala or Jyotiba. Walking-distance to Mahalaxmi Temple (1.5 km).",
+    "price_range": "₹₹",
+    "contact": {"phone": "+91-231-265-1100", "website": "https://hoteltulsi.com/", "email": null},
+    "best_for": ["pilgrim", "solo", "value"],
+    "verified": true,
+    "tags": ["Station-Road", "railway-station-adjacent", "vegetarian"]
+  }
+]

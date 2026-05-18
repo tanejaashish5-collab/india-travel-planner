@@ -1,0 +1,66 @@
+[
+  {
+    "destination_id": "shirdi",
+    "slot": "experience",
+    "verdict": "replace",
+    "existing": {"name": "Sayaji Shinde Resort", "issue": "fabricated — Sayaji Shinde is a Marathi film actor; no Shirdi resort by this name exists on Booking/MakeMyTrip/MTDC. The verifiable Sayaji-brand 5-star is Hotel Sayaji Kolhapur, not Shirdi"},
+    "replacement": {
+      "name": "Sun-n-Sand Shirdi",
+      "tier": "luxury",
+      "tagline": "Sun-n-Sand Group's Shirdi 5-star 800 m from Samadhi Mandir — outdoor pool, vegetarian Spice Garden. The polished pilgrim-hotel pick for families wanting 5-star service near the temple.",
+      "price_band": "₹₹₹",
+      "address": "Pune-Shirdi Road, opposite SBI, Shirdi 423109, Maharashtra",
+      "book_url": "https://www.sunnsandshirdi.com/",
+      "sources": [
+        "https://www.sunnsandshirdi.com/",
+        "https://www.tripadvisor.in/Hotel_Review-g1024063-d1816935-Reviews-Sun_n_Sand_Hotel_Shirdi-Shirdi_Ahmednagar_District_Maharashtra.html",
+        "https://www.booking.com/hotel/in/sun-n-sand-shirdi.html"
+      ]
+    }
+  },
+  {
+    "destination_id": "shirdi",
+    "slot": "value",
+    "verdict": "replace",
+    "existing": {"name": "Hotel Shrimant", "issue": "verify — multiple Shirdi hotels named 'Shrimant' / 'Shri Sai'; not strongly verifiable on Booking/MMT as a single property"},
+    "replacement": {
+      "name": "St. Laurn Suites Shirdi",
+      "tier": "comfort",
+      "tagline": "St. Laurn Group's 100-suite property 500 m from the Samadhi Mandir — outdoor pool, vegetarian multi-cuisine restaurant, suite-format rooms for pilgrim families.",
+      "price_band": "₹₹",
+      "address": "Pimpalwadi Road, Shirdi 423109, Maharashtra",
+      "book_url": "https://www.stlaurn.com/shirdi/",
+      "sources": [
+        "https://www.stlaurn.com/shirdi/",
+        "https://www.tripadvisor.in/Hotel_Review-g1024063-d3215842-Reviews-St_Laurn_Suites-Shirdi_Ahmednagar_District_Maharashtra.html",
+        "https://www.booking.com/hotel/in/st-laurn-suites-shirdi.html"
+      ]
+    }
+  },
+  {
+    "destination_id": "shirdi",
+    "slot": "location",
+    "verdict": "replace",
+    "existing": {"name": "Hotel Om Plaza", "issue": "verify — generic Hotel Om Plaza listings exist across many pilgrim towns; Shirdi instance not strongly verifiable as a single anchor"},
+    "replacement": {
+      "name": "Saibansi Bhakta Niwas (Shirdi Sansthan)",
+      "tier": "budget",
+      "tagline": "The official Sai Baba Sansthan Trust accommodation — 3,300+ rooms adjacent to the Samadhi Mandir at sansthan rates (₹150–₹2,500). The default pilgrim bed, bookable on online.sai.org.in.",
+      "price_band": "₹",
+      "address": "Shri Saibaba Sansthan Trust complex, Shirdi 423109, Maharashtra",
+      "book_url": "https://online.sai.org.in/",
+      "sources": [
+        "https://online.sai.org.in/",
+        "https://www.sai.org.in/en/accommodation",
+        "https://www.tripadvisor.in/ShowUserReviews-g1024063-d1581180-r267-Sai_Ashram-Shirdi_Ahmednagar_District_Maharashtra.html"
+      ]
+    }
+  },
+  {
+    "destination_id": "shirdi",
+    "slot": "xfactor",
+    "verdict": "honest_scarcity",
+    "existing": {"name": "Shirdi Eco-Village Stay", "issue": "template-sounding — no verified 'Shirdi Eco-Village' brand on Booking/MakeMyTrip/MTDC. Shirdi is a pilgrim town, not a green-tourism destination; xfactor slot does not have a verified pick"},
+    "replacement": null
+  }
+]

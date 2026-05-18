@@ -1,0 +1,50 @@
+[
+  {
+    "destination_id": "tadoba",
+    "name": "Svasara Jungle Lodge",
+    "type": "wildlife-lodge",
+    "location": "Kolara Gate, Tadoba",
+    "why_special": "Mid-luxury jungle lodge with 12 villas adjacent to Kolara gate — naturalist-led safaris twice daily, full-board Maharashtrian/multi-cuisine. Tripadvisor #1 in Tadoba; the consistent pick when Taj Safaris feels excessive.",
+    "price_range": "₹₹₹₹",
+    "contact": {"phone": "+91-99-7060-7444", "website": "https://svasararesorts.com/", "email": "reservations@svasararesorts.com"},
+    "best_for": ["wildlife", "couples", "families"],
+    "verified": true,
+    "tags": ["Kolara-gate", "Svasara", "12-villas", "naturalist-led"]
+  },
+  {
+    "destination_id": "tadoba",
+    "name": "Bamboo Forest Safari Lodge",
+    "type": "wildlife-lodge",
+    "location": "Moharli Gate, Tadoba",
+    "why_special": "Across 18 acres adjacent to Moharli gate — 15 stilted cottages, naturalist-led twice-daily safaris, pool. The Moharli-gate alternative to Svasara/Irai; deepest forest setting of Tadoba's resorts.",
+    "price_range": "₹₹₹₹",
+    "contact": {"phone": "+91-95-1146-2462", "website": "https://www.bambooforest-tadoba.com/", "email": null},
+    "best_for": ["wildlife", "families", "couples"],
+    "verified": true,
+    "tags": ["Moharli-gate", "Bamboo-Forest", "stilted-cottages", "naturalist"]
+  },
+  {
+    "destination_id": "tadoba",
+    "name": "Irai Safari Retreat",
+    "type": "wildlife-lodge",
+    "location": "Kolara Gate, Tadoba",
+    "why_special": "Mid-range safari resort 800 m from Kolara gate — 30 rooms across cottages and rooms, outdoor pool, naturalist-led twice-daily safaris. The value-tier Tadoba pick at ~40% the Svasara rate.",
+    "price_range": "₹₹₹",
+    "contact": {"phone": "+91-95-9551-1099", "website": "https://www.iraisafariretreat.com/", "email": "reservations@iraisafariretreat.com"},
+    "best_for": ["wildlife", "families", "value"],
+    "verified": true,
+    "tags": ["Kolara-gate", "Irai", "value-safari", "naturalist"]
+  },
+  {
+    "destination_id": "tadoba",
+    "name": "Tigers Heaven Resort",
+    "type": "wildlife-lodge",
+    "location": "Moharli Gate, Tadoba",
+    "why_special": "12-cottage safari lodge near Moharli gate — naturalist-led safaris, multi-cuisine restaurant, pool. The cleaner mid-range pick at Moharli when Bamboo Forest is full.",
+    "price_range": "₹₹₹",
+    "contact": {"phone": "+91-95-2722-7000", "website": "https://www.tigersheavenresort.com/", "email": null},
+    "best_for": ["wildlife", "families"],
+    "verified": true,
+    "tags": ["Moharli-gate", "Tigers-Heaven", "value"]
+  }
+]

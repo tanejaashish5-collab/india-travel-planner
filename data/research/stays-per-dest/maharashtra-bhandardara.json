@@ -1,0 +1,26 @@
+[
+  {
+    "destination_id": "bhandardara",
+    "name": "MTDC Resort Bhandardara",
+    "type": "government-hotel",
+    "location": "Wilson Dam (Arthur Lake)",
+    "why_special": "Maharashtra Tourism's lakeside resort across landscaped grounds opposite the Wilson Dam — A/C cottages and Konkan tents, in-house restaurant, the only formal accommodation with direct Arthur Lake views.",
+    "price_range": "₹₹",
+    "contact": {"phone": "+91-2424-257-300", "website": "https://www.maharashtratourism.gov.in/destination-mtdc-resorts", "email": null},
+    "best_for": ["families", "lake-view", "monsoon"],
+    "verified": true,
+    "tags": ["MTDC", "Wilson-Dam", "Arthur-Lake", "Bhandardara"]
+  },
+  {
+    "destination_id": "bhandardara",
+    "name": "Anandvan Resort Bhandardara",
+    "type": "resort",
+    "location": "Shendi village, Bhandardara",
+    "why_special": "Private 28-room resort across landscaped grounds 2 km from Wilson Dam — outdoor pool, multi-cuisine restaurant, the polished mid-range alternative to MTDC. The base for Kalsubai Peak (Maharashtra's highest at 1,646 m) and Ratangad trekkers.",
+    "price_range": "₹₹₹",
+    "contact": {"phone": "+91-2424-257-241", "website": "https://www.anandvanresort.com/", "email": null},
+    "best_for": ["families", "couples", "Kalsubai-base"],
+    "verified": true,
+    "tags": ["Shendi", "Anandvan", "Kalsubai-Peak", "Ratangad"]
+  }
+]

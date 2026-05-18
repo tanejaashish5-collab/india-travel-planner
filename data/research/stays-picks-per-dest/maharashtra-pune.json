@@ -1,0 +1,78 @@
+[
+  {
+    "destination_id": "pune",
+    "slot": "experience",
+    "verdict": "keep_existing",
+    "existing": {"name": "JW Marriott Pune", "issue": "OK"},
+    "replacement": {
+      "name": "JW Marriott Hotel Pune",
+      "tier": "luxury",
+      "tagline": "414-room Marriott flagship on Senapati Bapat Road — 8 dining venues including Alto Vino, rooftop temperature-controlled pool, and the easiest cross-city positioning between Koregaon Park nightlife and Hinjawadi business.",
+      "price_band": "₹₹₹₹",
+      "address": "Senapati Bapat Road, Pune 411053, Maharashtra",
+      "book_url": "https://www.marriott.com/en-us/hotels/pnqjw-jw-marriott-hotel-pune/overview/",
+      "sources": [
+        "https://www.marriott.com/en-us/hotels/pnqjw-jw-marriott-hotel-pune/overview/",
+        "https://www.tripadvisor.in/Hotel_Review-g297654-d1462879-Reviews-JW_Marriott_Hotel_Pune-Pune_Pune_District_Maharashtra.html",
+        "https://www.booking.com/hotel/in/jw-marriott-pune.html"
+      ]
+    }
+  },
+  {
+    "destination_id": "pune",
+    "slot": "value",
+    "verdict": "keep_existing",
+    "existing": {"name": "Hyatt Regency Pune & Residences", "issue": "OK"},
+    "replacement": {
+      "name": "Hyatt Regency Pune",
+      "tier": "comfort",
+      "tagline": "Large-format Hyatt on Weikfield IT Park 25 minutes from Pune airport — reliable Hyatt service and full conference facilities at roughly 25% less than JW Marriott. The Pune last-night-before-flight bed.",
+      "price_band": "₹₹₹",
+      "address": "Weikfield IT Park, Nagar Road, Pune 411014, Maharashtra",
+      "book_url": "https://www.hyatt.com/en-US/hotel/india/hyatt-regency-pune/punrp",
+      "sources": [
+        "https://www.hyatt.com/en-US/hotel/india/hyatt-regency-pune/punrp",
+        "https://www.tripadvisor.in/Hotel_Review-g297654-d1167432-Reviews-Hyatt_Regency_Pune-Pune_Pune_District_Maharashtra.html",
+        "https://www.booking.com/hotel/in/hyatt-regency-pune.html"
+      ]
+    }
+  },
+  {
+    "destination_id": "pune",
+    "slot": "location",
+    "verdict": "keep_existing",
+    "existing": {"name": "Conrad Pune", "issue": "OK"},
+    "replacement": {
+      "name": "Conrad Pune",
+      "tier": "luxury",
+      "tagline": "Hilton's Conrad on Mangaldas Road — closer to Aga Khan Palace and Shaniwar Wada than the IT-park hotels. Coriander Kitchen breakfast spread runs the widest in town; rooftop pool faces the old-city skyline.",
+      "price_band": "₹₹₹₹",
+      "address": "7 Mangaldas Road, Pune 411001, Maharashtra",
+      "book_url": "https://www.hilton.com/en/hotels/pnqcici-conrad-pune/",
+      "sources": [
+        "https://www.hilton.com/en/hotels/pnqcici-conrad-pune/",
+        "https://www.tripadvisor.in/Hotel_Review-g297654-d2089935-Reviews-Conrad_Pune-Pune_Pune_District_Maharashtra.html",
+        "https://www.booking.com/hotel/in/conrad-pune.html"
+      ]
+    }
+  },
+  {
+    "destination_id": "pune",
+    "slot": "xfactor",
+    "verdict": "keep_existing",
+    "existing": {"name": "Marriott Suites Pune (Koregaon Park)", "issue": "OK"},
+    "replacement": {
+      "name": "Marriott Suites Pune",
+      "tier": "boutique",
+      "tagline": "All-suite Marriott in Koregaon Park — Pune's cafes-and-nightlife neighbourhood — suites larger than standard 5-star rooms, pet-friendly, 10 minutes' walk to German Bakery and Osho Garden.",
+      "price_band": "₹₹₹",
+      "address": "81 Mundhwa Road, Koregaon Park Annexe, Pune 411036, Maharashtra",
+      "book_url": "https://www.marriott.com/en-us/hotels/pnqsi-marriott-suites-pune/overview/",
+      "sources": [
+        "https://www.marriott.com/en-us/hotels/pnqsi-marriott-suites-pune/overview/",
+        "https://www.tripadvisor.in/Hotel_Review-g297654-d2228878-Reviews-Marriott_Suites_Pune-Pune_Pune_District_Maharashtra.html",
+        "https://www.booking.com/hotel/in/marriott-suites-pune.html"
+      ]
+    }
+  }
+]

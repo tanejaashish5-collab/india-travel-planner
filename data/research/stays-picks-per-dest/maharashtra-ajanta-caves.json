@@ -1,0 +1,63 @@
+[
+  {
+    "destination_id": "ajanta-caves",
+    "slot": "experience",
+    "verdict": "replace",
+    "existing": {"name": "Ajanta Ambassadors", "issue": "verify — 'Ajanta Ambassadors' not strongly verifiable on Booking/MMT as a named property"},
+    "replacement": {
+      "name": "Vivanta Aurangabad (Ajanta base)",
+      "tier": "luxury",
+      "tagline": "Aurangabad 4-star labelled as Ajanta base — 100 km / 2.5 hrs drive to the caves opens at 9 AM. Taj-IHCL service, packed breakfast for pre-dawn departure. No formal luxury exists at the Ajanta gate itself.",
+      "price_band": "₹₹₹",
+      "address": "8-N-12 CIDCO, Rauza Bagh, Aurangabad 431003, Maharashtra (100 km from Ajanta Caves)",
+      "book_url": "https://www.vivantahotels.com/en-in/vivanta-aurangabad/",
+      "sources": [
+        "https://www.vivantahotels.com/en-in/vivanta-aurangabad/",
+        "https://www.tripadvisor.in/Hotel_Review-g297652-d301690-Reviews-Vivanta_Aurangabad-Aurangabad_Aurangabad_District_Maharashtra.html"
+      ]
+    }
+  },
+  {
+    "destination_id": "ajanta-caves",
+    "slot": "value",
+    "verdict": "keep_existing",
+    "existing": {"name": "MTDC Holiday Resort Ajanta", "issue": "OK — MTDC Fardapur is verified"},
+    "replacement": {
+      "name": "MTDC Holiday Resort Ajanta (Fardapur)",
+      "tier": "comfort",
+      "tagline": "Maharashtra Tourism's resort at Fardapur 4 km from the cave entrance — A/C and non-A/C cottages, the only formal accommodation at the gate. Books out for school-tour season (Nov–Feb).",
+      "price_band": "₹₹",
+      "address": "Fardapur, Aurangabad-Jalgaon Highway, Aurangabad District 431118, Maharashtra",
+      "book_url": "https://www.maharashtratourism.gov.in/destination-mtdc-resorts",
+      "sources": [
+        "https://www.maharashtratourism.gov.in/destination-mtdc-resorts",
+        "https://www.maharashtratourism.gov.in/destinations/Ajanta-Caves"
+      ]
+    }
+  },
+  {
+    "destination_id": "ajanta-caves",
+    "slot": "location",
+    "verdict": "replace",
+    "existing": {"name": "Hotel Ajanta Sanctuary", "issue": "template-sounding — not strongly verifiable as a single property on Booking/MMT"},
+    "replacement": {
+      "name": "Hotel Ajanta Heritage Jalgaon",
+      "tier": "comfort",
+      "tagline": "Senior Jalgaon mid-range 3-star — 90-min drive to Ajanta T-Point. The Bhusaval rail-head approach base, faster than the 100-km Aurangabad route.",
+      "price_band": "₹₹",
+      "address": "Mahabal Road, Jalgaon 425001, Maharashtra",
+      "book_url": "https://hotelajantajalgaon.com/",
+      "sources": [
+        "https://hotelajantajalgaon.com/",
+        "https://www.tripadvisor.in/Hotel_Review-g660660-d1764873-Reviews-Hotel_Ajanta-Jalgaon_Jalgaon_District_Maharashtra.html"
+      ]
+    }
+  },
+  {
+    "destination_id": "ajanta-caves",
+    "slot": "xfactor",
+    "verdict": "honest_scarcity",
+    "existing": {"name": "Rajapur Farmstay (near Ajanta)", "issue": "cross-state confusion — Rajapur is a town in Ratnagiri district (Konkan coast) ~700 km from Ajanta. No 'Rajapur Farmstay' near Ajanta exists. The cave area has no farmstay infrastructure"},
+    "replacement": null
+  }
+]

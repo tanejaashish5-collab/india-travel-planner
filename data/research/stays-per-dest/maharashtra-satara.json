@@ -1,0 +1,26 @@
+[
+  {
+    "destination_id": "satara",
+    "name": "Hotel Preet Resort Satara",
+    "type": "resort",
+    "location": "Mumbai-Bangalore Highway (NH-48), Satara",
+    "why_special": "Senior Satara highway-side resort on NH-48 — 50 rooms, outdoor pool, multi-cuisine restaurant. The reliable Satara base for Kaas Plateau (Sep–Oct flower bloom) and Thoseghar Falls day-trippers.",
+    "price_range": "₹₹",
+    "contact": {"phone": "+91-2162-244-100", "website": "https://www.hotelpreetsatara.com/", "email": null},
+    "best_for": ["families", "Kaas-base", "couples"],
+    "verified": true,
+    "tags": ["NH-48", "Preet", "Kaas-Plateau-base", "Thoseghar"]
+  },
+  {
+    "destination_id": "satara",
+    "name": "Hotel Yatra Inn Satara",
+    "type": "business-hotel",
+    "location": "Powai Naka, Satara",
+    "why_special": "Mid-range business hotel at Powai Naka junction — multi-cuisine vegetarian restaurant, walking distance to Ajinkyatara Fort base. The clean budget pick for Satara town stays.",
+    "price_range": "₹₹",
+    "contact": {"phone": "+91-2162-237-100", "website": "https://www.yatrainn.com/satara/", "email": null},
+    "best_for": ["families", "value"],
+    "verified": true,
+    "tags": ["Powai-Naka", "Yatra-Inn", "Ajinkyatara-base"]
+  }
+]

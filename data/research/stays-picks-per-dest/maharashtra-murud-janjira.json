@@ -1,0 +1,57 @@
+[
+  {
+    "destination_id": "murud-janjira",
+    "slot": "experience",
+    "verdict": "keep_existing",
+    "existing": {"name": "Golden Swan Beach Resort", "issue": "OK"},
+    "replacement": {
+      "name": "Golden Swan Beach Resort",
+      "tier": "boutique",
+      "tagline": "Senior beach-front resort 100 m from Murud beach — 50 cottage rooms, outdoor pool, Konkani fish-thali. The default Janjira-fort-visitor base since the 1990s.",
+      "price_band": "₹₹₹",
+      "address": "Murud Beach Road, Murud-Janjira 402401, Maharashtra",
+      "book_url": "https://www.goldenswan.in/",
+      "sources": [
+        "https://www.goldenswan.in/",
+        "https://www.tripadvisor.in/Hotel_Review-g1163524-d633091-Reviews-Golden_Swan_Beach_Resort-Murud_Raigad_District_Maharashtra.html",
+        "https://www.booking.com/hotel/in/golden-swan.html"
+      ]
+    }
+  },
+  {
+    "destination_id": "murud-janjira",
+    "slot": "value",
+    "verdict": "replace",
+    "existing": {"name": "Hotel Elegant", "issue": "verify — 'Hotel Elegant' is a generic name with no strong Murud-specific verification"},
+    "replacement": {
+      "name": "Sea Shell Resort Murud",
+      "tier": "comfort",
+      "tagline": "Mid-range beach resort with 30 rooms — outdoor pool, multi-cuisine restaurant, the value-tier pick. Walking-distance to the Janjira fort boat jetty at low tide.",
+      "price_band": "₹₹",
+      "address": "Murud-Janjira beach, Raigad District 402401, Maharashtra",
+      "book_url": "https://www.seashellmurud.com/",
+      "sources": [
+        "https://www.seashellmurud.com/",
+        "https://www.tripadvisor.in/Hotel_Review-g1163524-d2052066-Reviews-Sea_Shell_Resort-Murud_Raigad_District_Maharashtra.html"
+      ]
+    }
+  },
+  {
+    "destination_id": "murud-janjira",
+    "slot": "location",
+    "verdict": "keep_existing",
+    "existing": {"name": "Sea Shell Resort", "issue": "OK — but reassigned to value above; location can keep Golden Swan if needed"},
+    "replacement": {
+      "name": "Sea Shell Resort Murud",
+      "tier": "comfort",
+      "tagline": "Murud beach mid-range — closest mid-tier resort to the Janjira fort boat jetty (Rajapuri jetty 1 km), the boat-departure-friendly location pick.",
+      "price_band": "₹₹",
+      "address": "Murud beach, Raigad District 402401, Maharashtra",
+      "book_url": "https://www.seashellmurud.com/",
+      "sources": [
+        "https://www.seashellmurud.com/",
+        "https://www.tripadvisor.in/Hotel_Review-g1163524-d2052066-Reviews-Sea_Shell_Resort-Murud_Raigad_District_Maharashtra.html"
+      ]
+    }
+  }
+]

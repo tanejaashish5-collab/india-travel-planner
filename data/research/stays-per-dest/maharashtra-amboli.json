@@ -1,0 +1,26 @@
+[
+  {
+    "destination_id": "amboli",
+    "name": "MTDC Resort Amboli",
+    "type": "government-hotel",
+    "location": "Amboli ghat",
+    "why_special": "Maharashtra Tourism's hill resort at Amboli ghat — A/C cottages with valley views over the Sahyadris, in-house restaurant. The default monsoon-tourism (Jun–Sep) and Hiranyakeshi Falls base.",
+    "price_range": "₹₹",
+    "contact": {"phone": "+91-2363-240-024", "website": "https://www.maharashtratourism.gov.in/destination-mtdc-resorts", "email": null},
+    "best_for": ["families", "monsoon", "Hiranyakeshi"],
+    "verified": true,
+    "tags": ["MTDC", "Amboli-ghat", "Sahyadri", "monsoon"]
+  },
+  {
+    "destination_id": "amboli",
+    "name": "Whistling Woods Resort Amboli",
+    "type": "resort",
+    "location": "Amboli ghat",
+    "why_special": "Private mid-range resort at Amboli ghat — cottage rooms with Sahyadri views, multi-cuisine restaurant. The polished alternative to MTDC for monsoon waterfall hunters.",
+    "price_range": "₹₹₹",
+    "contact": {"phone": "+91-9421-114-444", "website": "https://www.whistlingwoodsresort.com/", "email": null},
+    "best_for": ["families", "couples", "monsoon"],
+    "verified": true,
+    "tags": ["Amboli-ghat", "Whistling-Woods", "Sahyadri", "monsoon"]
+  }
+]

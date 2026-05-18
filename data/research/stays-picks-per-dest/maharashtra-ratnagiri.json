@@ -1,0 +1,58 @@
+[
+  {
+    "destination_id": "ratnagiri",
+    "slot": "experience",
+    "verdict": "replace",
+    "existing": {"name": "The Konkan Resort", "issue": "verify — 'The Konkan Resort' is a generic-sounding name without strong Booking/MMT single-property verification"},
+    "replacement": {
+      "name": "Kohinoor Samudra Beach Resort",
+      "tier": "luxury",
+      "tagline": "Kohinoor Group's beach resort 11 km south of Ratnagiri on Ganeshgule beach — 70 cottage-style rooms, outdoor pool, multi-cuisine Konkani restaurant. The polished beach-resort default for Ratnagiri.",
+      "price_band": "₹₹₹",
+      "address": "Ganeshgule, Ratnagiri 415612, Maharashtra",
+      "book_url": "https://www.kohinoorhotels.in/kohinoor-samudra-ratnagiri/",
+      "sources": [
+        "https://www.kohinoorhotels.in/kohinoor-samudra-ratnagiri/",
+        "https://www.tripadvisor.in/Hotel_Review-g660663-d1822316-Reviews-Kohinoor_Samudra_Resort-Ratnagiri_Ratnagiri_District_Maharashtra.html",
+        "https://www.booking.com/hotel/in/kohinoor-samudra-beach-resort.html"
+      ]
+    }
+  },
+  {
+    "destination_id": "ratnagiri",
+    "slot": "value",
+    "verdict": "replace",
+    "existing": {"name": "The Konkan Crown", "issue": "verify — 'The Konkan Crown' is a generic-sounding name without strong Booking/MMT single-property verification"},
+    "replacement": {
+      "name": "Hotel Landmark Ratnagiri",
+      "tier": "comfort",
+      "tagline": "Senior Ratnagiri town 3-star at Maruti Mandir junction — multi-cuisine restaurant, the reliable mid-range pick when Ratnagiri is a Konkan-route overnight rather than a beach stay.",
+      "price_band": "₹₹",
+      "address": "Maruti Mandir, Ratnagiri 415612, Maharashtra",
+      "book_url": "https://www.hotellandmarkratnagiri.com/",
+      "sources": [
+        "https://www.hotellandmarkratnagiri.com/",
+        "https://www.tripadvisor.in/Hotel_Review-g660663-d2034280-Reviews-Hotel_Landmark-Ratnagiri_Ratnagiri_District_Maharashtra.html",
+        "https://www.booking.com/hotel/in/landmark-ratnagiri.html"
+      ]
+    }
+  },
+  {
+    "destination_id": "ratnagiri",
+    "slot": "xfactor",
+    "verdict": "keep_existing",
+    "existing": {"name": "Pawas Swaroopanand Ashram Bhakta Niwas", "issue": "OK — verified on pawasswamiswaroopanand.org"},
+    "replacement": {
+      "name": "Pawas Swaroopanand Ashram Bhakta Niwas",
+      "tier": "budget",
+      "tagline": "Swami Swaroopanand Pawas ashram's pilgrim accommodation 19 km south of Ratnagiri — twin and family rooms attached to the samadhi mandir, satvic meals included. The spiritual alternative to beach resorts.",
+      "price_band": "₹",
+      "address": "Pawas village, Ratnagiri District 415616, Maharashtra",
+      "book_url": "https://pawasswamiswaroopanand.org/",
+      "sources": [
+        "https://pawasswamiswaroopanand.org/",
+        "https://www.maharashtratourism.gov.in/destinations/Pawas"
+      ]
+    }
+  }
+]

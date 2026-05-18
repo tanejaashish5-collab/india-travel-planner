@@ -1,0 +1,58 @@
+[
+  {
+    "destination_id": "tarkarli",
+    "slot": "experience",
+    "verdict": "keep_existing",
+    "existing": {"name": "MTDC Tarkarli Resort", "issue": "OK — MTDC verified"},
+    "replacement": {
+      "name": "MTDC Tarkarli Beach Resort",
+      "tier": "comfort",
+      "tagline": "Maharashtra Tourism's flagship Konkan beach resort — A/C cottages and Konkan tents on the white-sand Tarkarli beach. The only government-rate property with full beach walkout; books out peak diving season months ahead.",
+      "price_band": "₹₹",
+      "address": "Tarkarli Beach, Sindhudurg 416606, Maharashtra",
+      "book_url": "https://www.maharashtratourism.gov.in/destination-mtdc-resorts/-/asset_publisher/3vYTZxYEy3PD/content/mtdc-tarkarli-resort",
+      "sources": [
+        "https://www.maharashtratourism.gov.in/destination-mtdc-resorts/-/asset_publisher/3vYTZxYEy3PD/content/mtdc-tarkarli-resort",
+        "https://www.tripadvisor.in/Hotel_Review-g1473131-d1822312-Reviews-MTDC_Resort_Tarkarli-Tarkarli_Sindhudurg_District_Maharashtra.html",
+        "https://www.booking.com/hotel/in/mtdc-tarkarli.html"
+      ]
+    }
+  },
+  {
+    "destination_id": "tarkarli",
+    "slot": "value",
+    "verdict": "keep_existing",
+    "existing": {"name": "MTDC Tarkarli Beach Resort + Tents", "issue": "duplicate of experience slot"},
+    "replacement": {
+      "name": "Konkan Wave Beach Resort",
+      "tier": "boutique",
+      "tagline": "Private 4-star on the Tarkarli–Devbag stretch — 50 rooms, outdoor pool, multi-cuisine Malvani restaurant. The polished alternative when MTDC's A/C cottages are booked out.",
+      "price_band": "₹₹₹",
+      "address": "Tarkarli–Devbag Road, Sindhudurg 416606, Maharashtra",
+      "book_url": "https://www.konkanwavebeach.com/",
+      "sources": [
+        "https://www.konkanwavebeach.com/",
+        "https://www.tripadvisor.in/Hotel_Review-g1473131-d6580660-Reviews-Konkan_Wave_Beach_Resort-Tarkarli_Sindhudurg_District_Maharashtra.html",
+        "https://www.booking.com/hotel/in/konkan-wave.html"
+      ]
+    }
+  },
+  {
+    "destination_id": "tarkarli",
+    "slot": "xfactor",
+    "verdict": "replace",
+    "existing": {"name": "Phoolwadi Konkan Village Homestay", "issue": "verify — Phoolwadi as a Tarkarli homestay is not strongly verifiable as a single named property on Booking/MMT/MTDC. Bhogwe-cluster homestays are the verified MTDC-registered alternative"},
+    "replacement": {
+      "name": "Bhogwe Beach MTDC-registered Konkani Homestays",
+      "tier": "budget",
+      "tagline": "MTDC-registered fisher-family homestays on Bhogwe beach 12 km from Tarkarli — Malvani fish-thali, boat rides to dolphins. The Konkan alternative when resort food feels too clean.",
+      "price_band": "₹",
+      "address": "Bhogwe Village, Sindhudurg 416606, Maharashtra",
+      "book_url": "https://www.maharashtratourism.gov.in/destination-mtdc-resorts/-/asset_publisher/3vYTZxYEy3PD/content/mtdc-registered-homestays",
+      "sources": [
+        "https://www.maharashtratourism.gov.in/destination-mtdc-resorts/-/asset_publisher/3vYTZxYEy3PD/content/mtdc-registered-homestays",
+        "https://www.maharashtratourism.gov.in/destinations/Bhogwe"
+      ]
+    }
+  }
+]

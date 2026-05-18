@@ -1,0 +1,26 @@
+[
+  {
+    "destination_id": "malvan",
+    "name": "Sai Vishram Beach Resort",
+    "type": "resort",
+    "location": "Chivla Beach Road, Malvan",
+    "why_special": "Beach-front resort on Chivla beach — 30 rooms, outdoor pool, Malvani thali restaurant. The senior private-resort pick in Malvan town with the strongest beach-walkout to Sindhudurg fort viewpoint.",
+    "price_range": "₹₹",
+    "contact": {"phone": "+91-2365-252-200", "website": "https://saivishramresort.com/", "email": null},
+    "best_for": ["families", "couples", "beach"],
+    "verified": true,
+    "tags": ["Chivla-beach", "Sai-Vishram", "Malvani-thali", "Sindhudurg-fort-view"]
+  },
+  {
+    "destination_id": "malvan",
+    "name": "Malvan Beach Resort (MTDC)",
+    "type": "government-hotel",
+    "location": "Malvan beach front",
+    "why_special": "Maharashtra Tourism's smaller Malvan property — basic A/C and non-A/C rooms steps from the boat jetty to Sindhudurg fort. The official-rate pilgrim/fort-visitor pick, smaller than Tarkarli sister property.",
+    "price_range": "₹",
+    "contact": {"phone": "+91-2365-252-001", "website": "https://www.maharashtratourism.gov.in/destination-mtdc-resorts", "email": null},
+    "best_for": ["families", "value", "Sindhudurg-fort"],
+    "verified": true,
+    "tags": ["MTDC", "Sindhudurg-fort-jetty", "value"]
+  }
+]

@@ -1,0 +1,53 @@
+[
+  {
+    "destination_id": "bhandardara",
+    "slot": "experience",
+    "verdict": "keep_existing",
+    "existing": {"name": "Anandvan Resort", "issue": "OK"},
+    "replacement": {
+      "name": "Anandvan Resort Bhandardara",
+      "tier": "comfort",
+      "tagline": "Private 28-room resort 2 km from Wilson Dam — outdoor pool, multi-cuisine restaurant. The base for Kalsubai Peak (Maharashtra's highest at 1,646 m) and Ratangad trekkers.",
+      "price_band": "₹₹₹",
+      "address": "Shendi village, Bhandardara, Ahmednagar District 422604, Maharashtra",
+      "book_url": "https://www.anandvanresort.com/",
+      "sources": [
+        "https://www.anandvanresort.com/",
+        "https://www.tripadvisor.in/Hotel_Review-g14037043-d8589462-Reviews-Anandvan_Resort-Bhandardara_Ahmednagar_District_Maharashtra.html",
+        "https://www.booking.com/hotel/in/anandvan-bhandardara.html"
+      ]
+    }
+  },
+  {
+    "destination_id": "bhandardara",
+    "slot": "value",
+    "verdict": "replace",
+    "existing": {"name": "Haravi Village Resort", "issue": "verify — 'Haravi Village Resort' not strongly verifiable on Booking/MTDC. The verified value-tier pick is MTDC"},
+    "replacement": {
+      "name": "MTDC Resort Bhandardara",
+      "tier": "budget",
+      "tagline": "Maharashtra Tourism's lakeside resort opposite the Wilson Dam — A/C cottages and Konkan tents with Arthur Lake views. The only formal lakefront accommodation.",
+      "price_band": "₹₹",
+      "address": "Wilson Dam (Arthur Lake), Bhandardara, Ahmednagar District 422604, Maharashtra",
+      "book_url": "https://www.maharashtratourism.gov.in/destination-mtdc-resorts",
+      "sources": [
+        "https://www.maharashtratourism.gov.in/destination-mtdc-resorts",
+        "https://www.maharashtratourism.gov.in/destinations/Bhandardara"
+      ]
+    }
+  },
+  {
+    "destination_id": "bhandardara",
+    "slot": "location",
+    "verdict": "honest_scarcity",
+    "existing": {"name": "Bhandardara Lake Retreat", "issue": "generic-sounding name without strong single-property verification"},
+    "replacement": null
+  },
+  {
+    "destination_id": "bhandardara",
+    "slot": "xfactor",
+    "verdict": "honest_scarcity",
+    "existing": {"name": "Chavand Eco-Farmstay", "issue": "Chavand is a fort 70 km from Bhandardara near Junnar; 'Chavand Eco-Farmstay' not strongly verifiable as a single property near Bhandardara"},
+    "replacement": null
+  }
+]

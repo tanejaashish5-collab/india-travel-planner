@@ -1,0 +1,51 @@
+[
+  {
+    "destination_id": "morgaon",
+    "slot": "experience",
+    "verdict": "keep_existing",
+    "existing": {"name": "Shri Mayureshwar Bhakta Niwas (Chinchwad Devasthan Trust)", "issue": "OK — Devasthan trust accommodation is verified"},
+    "replacement": {
+      "name": "Shri Mayureshwar Bhakta Niwas (Chinchwad Devasthan Trust)",
+      "tier": "budget",
+      "tagline": "Chinchwad Devasthan Trust's pilgrim accommodation for Morgaon's Mayureshwar Ganpati (first of the Astavinayak yatra) — dormitory and family rooms at trust rates, vegetarian prasad meals.",
+      "price_band": "₹",
+      "address": "Mayureshwar Ganpati Temple, Morgaon, Pune District 412304, Maharashtra",
+      "book_url": "https://www.morgaonganpati.org/",
+      "sources": [
+        "https://www.morgaonganpati.org/",
+        "https://ashtavinayakdarshan.in/morgaon/"
+      ]
+    }
+  },
+  {
+    "destination_id": "morgaon",
+    "slot": "location",
+    "verdict": "keep_existing",
+    "existing": {"name": "Mangalmurti Bhakt Niwas", "issue": "OK as trust dharamshala — but Mayureshwar is the primary trust name. Merge as alias"},
+    "replacement": {
+      "name": "Shri Mayureshwar Bhakta Niwas",
+      "tier": "budget",
+      "tagline": "Same Mayureshwar-temple trust accommodation; the Mangalmurti name is an alias used in local signage. Single property serves both slots.",
+      "price_band": "₹",
+      "address": "Mayureshwar Ganpati Temple, Morgaon, Pune District 412304, Maharashtra",
+      "book_url": "https://www.morgaonganpati.org/",
+      "sources": [
+        "https://www.morgaonganpati.org/"
+      ]
+    }
+  },
+  {
+    "destination_id": "morgaon",
+    "slot": "value",
+    "verdict": "honest_scarcity",
+    "existing": {"name": "Hotel Omkar Morgaon", "issue": "verify — generic-sounding name not strongly anchored on Booking/MMT for Morgaon"},
+    "replacement": null
+  },
+  {
+    "destination_id": "morgaon",
+    "slot": "xfactor",
+    "verdict": "honest_scarcity",
+    "existing": {"name": "Nisarg Sangit Agro Tourism", "issue": "verify — 'Nisarg Sangit Agro Tourism' not strongly verifiable as a Morgaon-area property"},
+    "replacement": null
+  }
+]

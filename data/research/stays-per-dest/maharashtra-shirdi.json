@@ -1,0 +1,38 @@
+[
+  {
+    "destination_id": "shirdi",
+    "name": "Saibansi Bhakta Niwas (Shirdi Sansthan)",
+    "type": "ashram",
+    "location": "Shri Saibaba Sansthan Trust, Shirdi",
+    "why_special": "The official Sai Baba Sansthan Trust accommodation — 3,300+ rooms across Saibansi/New Bhakta Niwas/Sai Ashram complexes adjacent to the Samadhi Mandir. The default pilgrim bed at sansthan rates (₹150–₹2,500), bookable on the official online.sai.org.in portal.",
+    "price_range": "₹",
+    "contact": {"phone": "+91-2423-258-500", "website": "https://online.sai.org.in/", "email": "info@sai.org.in"},
+    "best_for": ["pilgrim", "families", "budget"],
+    "verified": true,
+    "tags": ["Sai-Sansthan", "Bhakta-Niwas", "official-trust", "pilgrim"]
+  },
+  {
+    "destination_id": "shirdi",
+    "name": "Sun-n-Sand Shirdi",
+    "type": "business-hotel",
+    "location": "Pune-Shirdi Road, near Samadhi Mandir",
+    "why_special": "Sun-n-Sand Group's Shirdi 5-star 800 m from Samadhi Mandir — outdoor pool, multi-cuisine vegetarian restaurant Spice Garden, the polished pilgrim-hotel pick for families wanting 5-star service near the temple.",
+    "price_range": "₹₹₹",
+    "contact": {"phone": "+91-2423-255-555", "website": "https://www.sunnsandshirdi.com/", "email": null},
+    "best_for": ["pilgrim", "families"],
+    "verified": true,
+    "tags": ["Sun-n-Sand", "Samadhi-Mandir-walk", "vegetarian", "5-star"]
+  },
+  {
+    "destination_id": "shirdi",
+    "name": "St. Laurn Suites Shirdi",
+    "type": "business-hotel",
+    "location": "Pimpalwadi Road, near Samadhi Mandir",
+    "why_special": "St. Laurn Group's Shirdi 4-star with 100 suites 500 m from the Samadhi Mandir — outdoor pool, vegetarian multi-cuisine restaurant, the suite-pick for pilgrim families that want bigger rooms over a 5-star tag.",
+    "price_range": "₹₹",
+    "contact": {"phone": "+91-2423-259-100", "website": "https://www.stlaurn.com/shirdi/", "email": null},
+    "best_for": ["pilgrim", "families"],
+    "verified": true,
+    "tags": ["Pimpalwadi-Road", "St-Laurn", "all-suite", "vegetarian"]
+  }
+]

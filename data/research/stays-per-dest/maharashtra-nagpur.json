@@ -1,0 +1,50 @@
+[
+  {
+    "destination_id": "nagpur",
+    "name": "Radisson Blu Hotel Nagpur",
+    "type": "business-hotel",
+    "location": "Wardha Road",
+    "why_special": "5-star on Wardha Road with the strongest cleanliness and service reviews in Nagpur — central for both Dr Ambedkar Airport (10 min) and city sightseeing. Outdoor pool, gym, breakfast spread widely cited. The default Nagpur pick for travellers heading on to Tadoba.",
+    "price_range": "₹₹₹",
+    "contact": {"phone": "+91-712-661-2222", "website": "https://www.radissonhotels.com/en-us/hotels/radisson-blu-nagpur", "email": null},
+    "best_for": ["business", "families", "Tadoba-base"],
+    "verified": true,
+    "tags": ["Wardha-Road", "Radisson", "airport-proximate", "Tadoba-base"]
+  },
+  {
+    "destination_id": "nagpur",
+    "name": "Le Méridien Nagpur",
+    "type": "business-hotel",
+    "location": "Wardha Road",
+    "why_special": "Marriott-Bonvoy 5-star with spacious rooms and an expansive lawn — strong for business-conference groups. 7 km from Nagpur airport. Spa, gym, La Brasserie all-day diner. The Marriott loyalty member's pick over the Radisson.",
+    "price_range": "₹₹₹",
+    "contact": {"phone": "+91-712-666-1234", "website": "https://www.marriott.com/en-us/hotels/nagmd-le-meridien-nagpur/overview/", "email": null},
+    "best_for": ["business", "families"],
+    "verified": true,
+    "tags": ["Wardha-Road", "Le-Meridien", "Marriott", "airport-proximate"]
+  },
+  {
+    "destination_id": "nagpur",
+    "name": "The Pride Hotel Nagpur",
+    "type": "business-hotel",
+    "location": "Opposite Airport, Wardha Road",
+    "why_special": "Pride Group 4-star directly opposite Nagpur airport — friendly mid-range service at 40–50% the Radisson Blu rate. The Nagpur pick when you need a clean comfortable business hotel without the 5-star markup, particularly for early Tadoba departures.",
+    "price_range": "₹₹",
+    "contact": {"phone": "+91-712-308-8888", "website": "https://www.pridehotel.com/nagpur/", "email": null},
+    "best_for": ["business", "value", "Tadoba-base"],
+    "verified": true,
+    "tags": ["Wardha-Road", "Pride-Hotel", "value", "airport-adjacent"]
+  },
+  {
+    "destination_id": "nagpur",
+    "name": "Tuli Imperial Nagpur",
+    "type": "business-hotel",
+    "location": "Central Bazaar Road, Ramdaspeth",
+    "why_special": "Local Tuli Group 4-star in Ramdaspeth — central for old Nagpur sightseeing (Deekshabhoomi, Zero Mile Marker) rather than the airport hotels. Multi-cuisine restaurant Tuli Imperial, popular with Marathi business travellers, the home-grown alternative to chain options.",
+    "price_range": "₹₹",
+    "contact": {"phone": "+91-712-666-7000", "website": "https://www.tulihotels.com/imperial.html", "email": null},
+    "best_for": ["business", "heritage"],
+    "verified": true,
+    "tags": ["Ramdaspeth", "Tuli", "local-brand", "central-city"]
+  }
+]

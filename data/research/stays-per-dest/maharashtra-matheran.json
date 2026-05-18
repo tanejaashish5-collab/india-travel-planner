@@ -1,0 +1,38 @@
+[
+  {
+    "destination_id": "matheran",
+    "name": "Verandah in the Forest (Dune Barr House)",
+    "type": "heritage-hotel",
+    "location": "Barr Road, Matheran",
+    "why_special": "1853 Captain Barr colonial bungalow restored by Neemrana — 11 rooms with original wood floors and verandahs over the Matheran forest. India's earliest hill-station bungalow turned hotel; the only true heritage stay on India's smallest hill station.",
+    "price_range": "₹₹₹",
+    "contact": {"phone": "+91-2148-230-296", "website": "https://www.neemranahotels.com/verandah-in-the-forest-matheran-mumbai/", "email": "info@neemranahotels.com"},
+    "best_for": ["heritage", "couples"],
+    "verified": true,
+    "tags": ["Neemrana", "1853", "Barr-House", "heritage"]
+  },
+  {
+    "destination_id": "matheran",
+    "name": "Lord's Central Hotel",
+    "type": "heritage-hotel",
+    "location": "MG Road, Matheran",
+    "why_special": "1933 Parsi family-run hotel on Matheran's MG Road — vegetarian, no-alcohol, classic colonial wraparound verandahs, the same Lord family running the property for four generations. The senior heritage Parsi hotel in Matheran.",
+    "price_range": "₹₹",
+    "contact": {"phone": "+91-2148-230-228", "website": "https://lordscentralhotel.com/", "email": "reservations@lordscentralhotel.com"},
+    "best_for": ["heritage", "families", "vegetarian"],
+    "verified": true,
+    "tags": ["MG-Road", "Lord's", "1933", "Parsi", "vegetarian"]
+  },
+  {
+    "destination_id": "matheran",
+    "name": "Usha Ascot Matheran",
+    "type": "hill-resort",
+    "location": "Maulana Azad Road, Matheran",
+    "why_special": "Pure-vegetarian 4-star resort with rope-style cottages across landscaped grounds — outdoor pool (rare for Matheran), multi-cuisine veg restaurant, the modern resort alternative to the Lord's/Verandah heritage axis.",
+    "price_range": "₹₹₹",
+    "contact": {"phone": "+91-2148-230-360", "website": "https://www.ushaascotmatheran.com/", "email": "info@ushaascotmatheran.com"},
+    "best_for": ["families", "vegetarian", "couples"],
+    "verified": true,
+    "tags": ["Maulana-Azad-Road", "Usha-Ascot", "pure-veg", "pool"]
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "destination_id": "khandala",
+    "name": "Dukes Retreat",
+    "type": "heritage-hotel",
+    "location": "Khandala-Lonavala bypass",
+    "why_special": "1947 hill retreat across 7.5 acres above the Khandala ghats — heritage-style colonial main building, outdoor pool, multi-cuisine Mirage and Olive Garden restaurants. Khandala's longest-running named property and the Tungarli-side ridge alternative to Lonavala resorts.",
+    "price_range": "₹₹₹",
+    "contact": {"phone": "+91-2114-272-378", "website": "https://www.dukesretreat.com/", "email": "info@dukesretreat.com"},
+    "best_for": ["families", "couples", "heritage"],
+    "verified": true,
+    "tags": ["Khandala-ghat", "Dukes-Retreat", "1947", "7.5-acres"]
+  },
+  {
+    "destination_id": "khandala",
+    "name": "Zara's Resort",
+    "type": "resort",
+    "location": "Old Mumbai-Pune Highway, Khandala",
+    "why_special": "Mid-range resort on the Old Mumbai-Pune Highway 1.5 km from Khandala station — outdoor pool, multi-cuisine restaurant, the value chain pick for Khandala-side weekend trips when Dukes is full.",
+    "price_range": "₹₹",
+    "contact": {"phone": "+91-2114-272-700", "website": "https://www.zarasresorts.com/khandala/", "email": null},
+    "best_for": ["families", "value"],
+    "verified": true,
+    "tags": ["Khandala-station", "Zara", "value"]
+  }
+]

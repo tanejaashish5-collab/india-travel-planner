@@ -1,0 +1,30 @@
+[
+  {
+    "destination_id": "daulatabad",
+    "slot": "experience",
+    "verdict": "honest_scarcity",
+    "existing": {"name": "Daulatabad Fort Heritage Resort", "issue": "fabricated — no 'Daulatabad Fort Heritage Resort' exists on Booking/MMT/MTDC. Daulatabad Fort (Devagiri) is an ASI-protected site 15 km from Aurangabad; no formal hotel infrastructure within walking distance. Use Aurangabad base."},
+    "replacement": null
+  },
+  {
+    "destination_id": "daulatabad",
+    "slot": "value",
+    "verdict": "honest_scarcity",
+    "existing": {"name": "Bibi Ka Maqbara Guest House", "issue": "fabricated — Bibi Ka Maqbara is a Mughal monument in Aurangabad city, not Daulatabad. No 'Bibi Ka Maqbara Guest House' exists as a verified property"},
+    "replacement": null
+  },
+  {
+    "destination_id": "daulatabad",
+    "slot": "location",
+    "verdict": "honest_scarcity",
+    "existing": {"name": "Aurangabad Central Hotel", "issue": "generic — should reference verified Aurangabad properties (Vivanta/WelcomHotel Rama) as base. See aurangabad dest"},
+    "replacement": null
+  },
+  {
+    "destination_id": "daulatabad",
+    "slot": "xfactor",
+    "verdict": "honest_scarcity",
+    "existing": {"name": "Chand Bibi Farmstay", "issue": "fabricated — Chand Bibi was a 16th-century queen-regent of Ahmednagar; no 'Chand Bibi Farmstay' exists as a verified property near Daulatabad"},
+    "replacement": null
+  }
+]

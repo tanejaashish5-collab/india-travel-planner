@@ -1,0 +1,50 @@
+[
+  {
+    "destination_id": "alibaug",
+    "name": "Radisson Blu Resort & Spa Alibaug",
+    "type": "resort",
+    "location": "Saral, Awas Beach Road",
+    "why_special": "Radisson's 169-room beach resort 4 km from Alibaug town on Awas beach — large free-form pool, full-service spa, kids' club. The default chain-5-star Alibaug stay for Mumbai weekend families that want pool over heritage.",
+    "price_range": "₹₹₹₹",
+    "contact": {"phone": "+91-2141-666-7000", "website": "https://www.radissonhotels.com/en-us/hotels/radisson-blu-alibaug-resort", "email": null},
+    "best_for": ["families", "couples", "weekend-from-mumbai"],
+    "verified": true,
+    "tags": ["Awas-beach", "Radisson", "spa", "weekend-from-mumbai"]
+  },
+  {
+    "destination_id": "alibaug",
+    "name": "U Tropicana Alibaug",
+    "type": "resort",
+    "location": "Awas-Sasawane Road",
+    "why_special": "U Hotels' 47-cottage resort across landscaped grounds with one of the longest pools in Alibaug — full spa, kids' club, multi-cuisine restaurant. The Mumbai weekend-resort default with the most consistent reviews on Tripadvisor.",
+    "price_range": "₹₹₹",
+    "contact": {"phone": "+91-2141-225-150", "website": "https://uhotelsandresorts.com/u-tropicana-alibaug/", "email": null},
+    "best_for": ["families", "couples", "weekend-from-mumbai"],
+    "verified": true,
+    "tags": ["Awas-Sasawane", "U-Hotels", "cottages", "spa"]
+  },
+  {
+    "destination_id": "alibaug",
+    "name": "Fariyas Resort Alibaug",
+    "type": "resort",
+    "location": "Varsoli Beach",
+    "why_special": "Fariyas Group resort on Varsoli beach — direct beach access, outdoor pool, the closest 4-star to Alibaug fort. The historical pick for the Alibaug weekend before the chain 5-stars arrived; still the strongest beach-walkout.",
+    "price_range": "₹₹₹",
+    "contact": {"phone": "+91-2141-228-000", "website": "https://fariyas.com/alibaug/", "email": "reservations.alibaug@fariyas.com"},
+    "best_for": ["families", "couples", "beach"],
+    "verified": true,
+    "tags": ["Varsoli-beach", "Fariyas", "beach-access", "Alibaug-fort"]
+  },
+  {
+    "destination_id": "alibaug",
+    "name": "Acron Waterfront Resort Alibaug",
+    "type": "resort",
+    "location": "Akshi-Nagaon Road",
+    "why_special": "Goa-based Acron Group's Alibaug resort with infinity pool overlooking the Arabian Sea — 60 rooms, multi-cuisine restaurant, the boutique mid-range pick between the Radisson 5-star and value beach homestays.",
+    "price_range": "₹₹₹",
+    "contact": {"phone": "+91-2141-205-205", "website": "https://www.acronhotels.com/waterfront-alibaug/", "email": null},
+    "best_for": ["couples", "families", "weekend-from-mumbai"],
+    "verified": true,
+    "tags": ["Akshi", "Acron", "infinity-pool", "boutique"]
+  }
+]

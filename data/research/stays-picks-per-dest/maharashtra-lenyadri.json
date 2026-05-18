@@ -1,0 +1,41 @@
+[
+  {
+    "destination_id": "lenyadri",
+    "slot": "location",
+    "verdict": "keep_existing",
+    "existing": {"name": "Shree Lenyadri Ganpati Devasthan Trust Bhakt Nivas", "issue": "OK — Devasthan trust accommodation is real"},
+    "replacement": {
+      "name": "Shree Lenyadri Ganpati Devasthan Trust Bhakta Niwas",
+      "tier": "budget",
+      "tagline": "Temple-trust accommodation directly below the Lenyadri Ganpati cave (one of the eight Astavinayak) — dormitory and family rooms at trust rates, vegetarian prasad meals. Book through the Junnar Devasthan office.",
+      "price_band": "₹",
+      "address": "Lenyadri Ganpati Temple, Junnar Taluka, Pune District 410502, Maharashtra",
+      "book_url": "https://www.maharashtratourism.gov.in/destinations/Lenyadri",
+      "sources": [
+        "https://www.maharashtratourism.gov.in/destinations/Lenyadri",
+        "https://ashtavinayakdarshan.in/lenyadri/"
+      ]
+    }
+  },
+  {
+    "destination_id": "lenyadri",
+    "slot": "experience",
+    "verdict": "honest_scarcity",
+    "existing": {"name": "Hotel Girija Junnar", "issue": "verify — 'Hotel Girija Junnar' not strongly verifiable on Booking/MMT as a single property anchor"},
+    "replacement": null
+  },
+  {
+    "destination_id": "lenyadri",
+    "slot": "value",
+    "verdict": "honest_scarcity",
+    "existing": {"name": "Hotel Tukson (Narayangaon)", "issue": "Narayangaon is 30 km from Lenyadri on the Pune-Nashik highway; 'Hotel Tukson' not strongly verifiable as a single property"},
+    "replacement": null
+  },
+  {
+    "destination_id": "lenyadri",
+    "slot": "xfactor",
+    "verdict": "honest_scarcity",
+    "existing": {"name": "Hotel Lenyadri International, Junnar", "issue": "fabricated — pre-flagged in red flags list. 'Hotel Lenyadri International' is template-sounding (international + small temple town is implausible); no Booking/MMT footprint"},
+    "replacement": null
+  }
+]

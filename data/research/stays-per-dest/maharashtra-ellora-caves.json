@@ -1,0 +1,26 @@
+[
+  {
+    "destination_id": "ellora-caves",
+    "name": "Hotel Kailas",
+    "type": "budget-hotel",
+    "location": "Ellora Caves, opposite Cave 16 (Kailasa Temple)",
+    "why_special": "Senior budget-mid hotel directly opposite the Kailasa Temple cave entrance — 30 cottage-style rooms across landscaped grounds, multi-cuisine restaurant. The only accommodation walking-distance to the caves.",
+    "price_range": "₹₹",
+    "contact": {"phone": "+91-2437-244-446", "website": "https://hotelkailas.com/", "email": "info@hotelkailas.com"},
+    "best_for": ["families", "heritage", "cave-walk"],
+    "verified": true,
+    "tags": ["Ellora-Caves-gate", "Kailasa-Temple", "walk-to-cave", "cottages"]
+  },
+  {
+    "destination_id": "ellora-caves",
+    "name": "MTDC Ellora Resort",
+    "type": "government-hotel",
+    "location": "Ellora Caves area",
+    "why_special": "Maharashtra Tourism's smaller Ellora property — basic A/C and non-A/C cottages, in-house restaurant, the value-rate alternative to Hotel Kailas at the cave gate.",
+    "price_range": "₹₹",
+    "contact": {"phone": "+91-2437-244-441", "website": "https://www.maharashtratourism.gov.in/destination-mtdc-resorts", "email": null},
+    "best_for": ["families", "value", "heritage"],
+    "verified": true,
+    "tags": ["MTDC", "Ellora-Caves-gate", "value"]
+  }
+]

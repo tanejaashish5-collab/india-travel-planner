@@ -1,0 +1,41 @@
+[
+  {
+    "destination_id": "theur",
+    "slot": "location",
+    "verdict": "keep_existing",
+    "existing": {"name": "Shri Chintamani Yatri Niwas", "issue": "OK — Chinchwad Devasthan trust property"},
+    "replacement": {
+      "name": "Shri Chintamani Ganpati Devasthan Trust Bhakta Niwas",
+      "tier": "budget",
+      "tagline": "Chinchwad Devasthan Trust's pilgrim accommodation at Theur's Chintamani Ganpati (Astavinayak) — dormitory and family rooms at trust rates, vegetarian prasad meals.",
+      "price_band": "₹",
+      "address": "Chintamani Ganpati Temple, Theur, Haveli Taluka, Pune District 412110, Maharashtra",
+      "book_url": "https://www.theurchintamani.org/",
+      "sources": [
+        "https://www.theurchintamani.org/",
+        "https://ashtavinayakdarshan.in/theur/"
+      ]
+    }
+  },
+  {
+    "destination_id": "theur",
+    "slot": "experience",
+    "verdict": "keep_existing",
+    "existing": {"name": "Shri Chintamani Bhakta Niwas (Chinchwad Devasthan Trust)", "issue": "duplicate of location"},
+    "replacement": null
+  },
+  {
+    "destination_id": "theur",
+    "slot": "value",
+    "verdict": "honest_scarcity",
+    "existing": {"name": "Hotel Balaji Bhakta Lodge", "issue": "verify — 'Balaji Bhakta Lodge' is template-sounding; Theur-specific not strongly verifiable"},
+    "replacement": null
+  },
+  {
+    "destination_id": "theur",
+    "slot": "xfactor",
+    "verdict": "replace",
+    "existing": {"name": "Hotel Majestique Pune (Kunjirwadi)", "issue": "verify — 'Majestique' is a Pune residential brand (developers), no Kunjirwadi resort by this name on Booking/MMT; cross-dest to Pune anyway"},
+    "replacement": null
+  }
+]

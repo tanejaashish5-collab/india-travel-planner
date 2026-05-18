@@ -1,0 +1,38 @@
+[
+  {
+    "destination_id": "panchgani",
+    "name": "Ravine Hotel",
+    "type": "hill-resort",
+    "location": "Tehsildar Office Road",
+    "why_special": "Senior Panchgani 4-star with 50 rooms across landscaped grounds on the ridge — heated pool, multi-cuisine restaurant, mountain views toward Table Land. The local longest-running mid-tier in Panchgani; consistent reviews on Tripadvisor.",
+    "price_range": "₹₹₹",
+    "contact": {"phone": "+91-2168-240-721", "website": "https://www.ravinehotel.com/", "email": "info@ravinehotel.com"},
+    "best_for": ["families", "couples"],
+    "verified": true,
+    "tags": ["Tehsildar-Road", "Ravine", "Panchgani-ridge"]
+  },
+  {
+    "destination_id": "panchgani",
+    "name": "Citrus Chambers Mahabaleshwar (Panchgani road)",
+    "type": "hill-resort",
+    "location": "Off Mahabaleshwar-Panchgani Road",
+    "why_special": "Citrus Hotels' 50-room resort midway between Panchgani and Mahabaleshwar — outdoor pool, mountain ridge views toward Krishna Valley. The pick when you want both hill stations in one base; closer to Panchgani's Table Land.",
+    "price_range": "₹₹₹",
+    "contact": {"phone": "+91-2168-241-300", "website": "https://www.citrushotels.com/citrus-chambers-mahabaleshwar/", "email": null},
+    "best_for": ["families", "couples"],
+    "verified": true,
+    "tags": ["Mahabaleshwar-Panchgani-Road", "Citrus", "Krishna-Valley"]
+  },
+  {
+    "destination_id": "panchgani",
+    "name": "SaffronStays Verandah by the Valley",
+    "type": "boutique",
+    "location": "Khingar village, near Panchgani",
+    "why_special": "5-bedroom SaffronStays villa on the valley edge of Khingar village — private pool, full kitchen, the Panchgani vacation-rental pick for groups of 8–12 over a resort. Books out months ahead for long weekends.",
+    "price_range": "₹₹₹₹",
+    "contact": {"phone": "+91-22-6280-5000", "website": "https://www.saffronstays.com/villa/verandah-by-the-valley", "email": null},
+    "best_for": ["families", "groups", "couples"],
+    "verified": true,
+    "tags": ["Khingar", "SaffronStays", "villa", "private-pool"]
+  }
+]

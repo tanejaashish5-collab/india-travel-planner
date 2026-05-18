@@ -1,0 +1,53 @@
+[
+  {
+    "destination_id": "malvan",
+    "slot": "experience",
+    "verdict": "replace",
+    "existing": {"name": "Tarkarli Beach Resort", "issue": "cross-dest — Tarkarli Beach Resort belongs in Tarkarli inventory; Malvan town has its own beaches (Chivla, Tondavali)"},
+    "replacement": {
+      "name": "Sai Vishram Beach Resort",
+      "tier": "comfort",
+      "tagline": "Beach-front resort on Chivla beach — 30 rooms, outdoor pool, Malvani thali. The senior private-resort pick in Malvan town with the strongest walkout to Sindhudurg fort viewpoint.",
+      "price_band": "₹₹",
+      "address": "Chivla Beach Road, Malvan 416606, Maharashtra",
+      "book_url": "https://saivishramresort.com/",
+      "sources": [
+        "https://saivishramresort.com/",
+        "https://www.tripadvisor.in/Hotel_Review-g1473130-d4116617-Reviews-Sai_Vishram_Beach_Resort-Malvan_Sindhudurg_District_Maharashtra.html",
+        "https://www.booking.com/hotel/in/sai-vishram-malvan.html"
+      ]
+    }
+  },
+  {
+    "destination_id": "malvan",
+    "slot": "value",
+    "verdict": "replace",
+    "existing": {"name": "Malvan Homestay (by local families near Chivla)", "issue": "generic category not a single property — no verified name"},
+    "replacement": {
+      "name": "MTDC Malvan Beach Resort",
+      "tier": "budget",
+      "tagline": "Maharashtra Tourism's smaller Malvan property — basic A/C and non-A/C rooms steps from the boat jetty to Sindhudurg fort. The official-rate fort-visitor pick.",
+      "price_band": "₹",
+      "address": "Malvan beach front, Sindhudurg 416606, Maharashtra",
+      "book_url": "https://www.maharashtratourism.gov.in/destination-mtdc-resorts",
+      "sources": [
+        "https://www.maharashtratourism.gov.in/destination-mtdc-resorts",
+        "https://www.maharashtratourism.gov.in/destinations/Malvan"
+      ]
+    }
+  },
+  {
+    "destination_id": "malvan",
+    "slot": "location",
+    "verdict": "honest_scarcity",
+    "existing": {"name": "Sindhudurg Fort View Guesthouse", "issue": "template-sounding — no verified single 'Sindhudurg Fort View Guesthouse' on Booking/MakeMyTrip/MTDC. Sindhudurg Fort is on an island with no overnight accommodation; only day-trip access by boat"},
+    "replacement": null
+  },
+  {
+    "destination_id": "malvan",
+    "slot": "xfactor",
+    "verdict": "honest_scarcity",
+    "existing": {"name": "Kurvandha Eco-Retreat (bamboo cottages in palm groves)", "issue": "fabricated — 'Kurvandha Eco-Retreat' has no Booking/MakeMyTrip/MTDC presence. Malvan's xfactor is the MTDC Tarkarli sister-property and the Bhogwe MTDC-registered homestays, both already used"},
+    "replacement": null
+  }
+]

@@ -1,0 +1,66 @@
+[
+  {
+    "destination_id": "alibaug",
+    "slot": "experience",
+    "verdict": "replace",
+    "existing": {"name": "Wildflower Hall Alibaug", "issue": "fabricated cross-state — Wildflower Hall is an Oberoi resort in Mashobra, Shimla, Himachal Pradesh; no Alibaug property exists"},
+    "replacement": {
+      "name": "Radisson Blu Resort & Spa Alibaug",
+      "tier": "luxury",
+      "tagline": "Radisson's 169-room beach resort 4 km from Alibaug town on Awas beach — large free-form pool, kids' club, full-service spa. The Mumbai weekend's polished default when pool beats heritage.",
+      "price_band": "₹₹₹₹",
+      "address": "Saral, Awas Beach Road, Alibaug 402208, Maharashtra",
+      "book_url": "https://www.radissonhotels.com/en-us/hotels/radisson-blu-alibaug-resort",
+      "sources": [
+        "https://www.radissonhotels.com/en-us/hotels/radisson-blu-alibaug-resort",
+        "https://www.tripadvisor.in/Hotel_Review-g1163521-d17820073-Reviews-Radisson_Blu_Resort_Spa_Alibaug-Alibaug_Raigad_District_Maharashtra.html",
+        "https://www.booking.com/hotel/in/radisson-blu-resort-spa-alibaug.html"
+      ]
+    }
+  },
+  {
+    "destination_id": "alibaug",
+    "slot": "value",
+    "verdict": "keep_existing",
+    "existing": {"name": "Acron Waterfront Resort", "issue": "OK"},
+    "replacement": {
+      "name": "Acron Waterfront Resort Alibaug",
+      "tier": "boutique",
+      "tagline": "Goa-based Acron Group's Alibaug resort with infinity pool overlooking the Arabian Sea — 60 rooms, the boutique mid-range pick between the Radisson 5-star and value beach homestays.",
+      "price_band": "₹₹₹",
+      "address": "Akshi-Nagaon Road, Alibaug 402208, Maharashtra",
+      "book_url": "https://www.acronhotels.com/waterfront-alibaug/",
+      "sources": [
+        "https://www.acronhotels.com/waterfront-alibaug/",
+        "https://www.tripadvisor.in/Hotel_Review-g1163521-d12745596-Reviews-Acron_Waterfront_Resort_Alibaug-Alibaug_Raigad_District_Maharashtra.html",
+        "https://www.booking.com/hotel/in/acron-waterfront-resort.html"
+      ]
+    }
+  },
+  {
+    "destination_id": "alibaug",
+    "slot": "location",
+    "verdict": "keep_existing",
+    "existing": {"name": "Fariyas Resort Alibaug", "issue": "OK"},
+    "replacement": {
+      "name": "Fariyas Resort Alibaug",
+      "tier": "boutique",
+      "tagline": "Direct Varsoli-beach walkout — outdoor pool, multi-cuisine restaurant, the closest 4-star to Alibaug fort. Pre-dates the chain 5-stars and still holds the strongest beach access.",
+      "price_band": "₹₹₹",
+      "address": "Varsoli Beach, Alibaug 402201, Maharashtra",
+      "book_url": "https://fariyas.com/alibaug/",
+      "sources": [
+        "https://fariyas.com/alibaug/",
+        "https://www.tripadvisor.in/Hotel_Review-g1163521-d503015-Reviews-Fariyas_Resort_Alibaug-Alibaug_Raigad_District_Maharashtra.html",
+        "https://www.booking.com/hotel/in/fariyas-resort.html"
+      ]
+    }
+  },
+  {
+    "destination_id": "alibaug",
+    "slot": "xfactor",
+    "verdict": "honest_scarcity",
+    "existing": {"name": "Varsoli Riverside Farmstay", "issue": "template-sounding — Varsoli is a beach not a river; 'Riverside Farmstay' likely a hallucinated listicle pick. The genuine xfactor in Alibaug is private SaffronStays/StayVista villas but these rotate too fast for a fixed pick"},
+    "replacement": null
+  }
+]

@@ -1,0 +1,62 @@
+[
+  {
+    "destination_id": "nashik",
+    "name": "The Source at Sula",
+    "type": "boutique",
+    "location": "Sula Vineyards, Gangapur–Savargaon Road",
+    "why_special": "Sula's own 32-room luxury wing inside the working vineyard — vine-view rooms, on-property tasting rooms and 1-2-1 wine experiences with the winemaking team. The destination property for Nashik wine tourism; rates spike sharply during SulaFest in February.",
+    "price_range": "₹₹₹₹",
+    "contact": {"phone": "+91-253-660-2929", "website": "https://www.thesourceatsula.com/", "email": "stay@thesourceatsula.com"},
+    "best_for": ["couples", "experience", "wine"],
+    "verified": true,
+    "tags": ["Sula", "Source-at-Sula", "vineyard", "winery", "SulaFest"]
+  },
+  {
+    "destination_id": "nashik",
+    "name": "Beyond by Sula",
+    "type": "boutique",
+    "location": "Sula Vineyards, Gangapur–Savargaon Road",
+    "why_special": "Sula's value-tier sister to The Source — comfort rooms with vineyard outlooks at roughly 40% less. Same Sula tasting access, same vine-walk before breakfast, smaller pool. The wine-country pick when you want vineyard access without Source pricing.",
+    "price_range": "₹₹₹",
+    "contact": {"phone": "+91-253-660-2929", "website": "https://www.thesourceatsula.com/beyond/", "email": "stay@thesourceatsula.com"},
+    "best_for": ["couples", "value", "wine"],
+    "verified": true,
+    "tags": ["Sula", "Beyond-by-Sula", "vineyard", "value"]
+  },
+  {
+    "destination_id": "nashik",
+    "name": "Regenta Resort Soma Vine Village",
+    "type": "resort",
+    "location": "Gat 96 Govardhan, Gangapur",
+    "why_special": "Royal Orchid's Regenta resort attached to Soma Vineyards — 4 outdoor pools, full-service spa, walk-the-vines on the property's own working winery. 10-min drive from Sula. The destination pool/spa resort for wine tourism that isn't trying to be Sula.",
+    "price_range": "₹₹₹",
+    "contact": {"phone": "+91-253-230-5050", "website": "https://www.regentahotels.com/regenta-resort-soma-vine-village-nashik/", "email": null},
+    "best_for": ["couples", "families", "wine"],
+    "verified": true,
+    "tags": ["Soma-Vineyards", "Regenta", "resort", "spa", "Gangapur"]
+  },
+  {
+    "destination_id": "nashik",
+    "name": "Express Inn Nashik",
+    "type": "business-hotel",
+    "location": "Pathardi Phata, Mumbai-Agra Highway",
+    "why_special": "Central Nashik 5-star on the Mumbai-Agra highway, 10 km from Sula — full business facilities, rooftop pool, multi-cuisine dining. Best for Trimbakeshwar pilgrims and visitors combining wine tourism with Panchavati ghats and Kalaram temple.",
+    "price_range": "₹₹₹",
+    "contact": {"phone": "+91-253-666-1666", "website": "https://www.expressinn.in/nashik/", "email": "reservations.nashik@expressinn.in"},
+    "best_for": ["business", "pilgrim", "families"],
+    "verified": true,
+    "tags": ["Pathardi-Phata", "5-star", "Trimbakeshwar-base", "Panchavati"]
+  },
+  {
+    "destination_id": "nashik",
+    "name": "ibis Nashik Hotel",
+    "type": "business-hotel",
+    "location": "Pathardi Phata, Mumbai-Agra Highway",
+    "why_special": "Accor-brand ibis 5 km from Sula — modern eco-certified rooms, the most reliable mid-tier brand in Nashik. Use as a base, day-trip to Sula via hotel cab (20 min). Sister property ibis Styles next door for slightly higher tier.",
+    "price_range": "₹₹",
+    "contact": {"phone": "+91-253-661-1500", "website": "https://all.accor.com/hotel/8155/index.en.shtml", "email": null},
+    "best_for": ["solo", "families", "value"],
+    "verified": true,
+    "tags": ["ibis", "Pathardi-Phata", "value", "Sula-base"]
+  }
+]

@@ -1,0 +1,59 @@
+[
+  {
+    "destination_id": "matheran",
+    "slot": "experience",
+    "verdict": "replace",
+    "existing": {"name": "Usha Ascot", "issue": "OK but better experience pick exists — Verandah is the heritage signature"},
+    "replacement": {
+      "name": "Verandah in the Forest (Dune Barr House)",
+      "tier": "luxury",
+      "tagline": "1853 Captain Barr colonial bungalow restored by Neemrana — 11 rooms with original wood floors and verandahs over the Matheran forest. India's earliest hill-station bungalow turned hotel.",
+      "price_band": "₹₹₹",
+      "address": "Barr Road, Matheran 410102, Maharashtra",
+      "book_url": "https://www.neemranahotels.com/verandah-in-the-forest-matheran-mumbai/",
+      "sources": [
+        "https://www.neemranahotels.com/verandah-in-the-forest-matheran-mumbai/",
+        "https://www.tripadvisor.in/Hotel_Review-g297666-d300939-Reviews-Verandah_in_the_Forest-Matheran_Raigad_District_Maharashtra.html",
+        "https://www.booking.com/hotel/in/verandah-in-the-forest.html"
+      ]
+    }
+  },
+  {
+    "destination_id": "matheran",
+    "slot": "value",
+    "verdict": "replace",
+    "existing": {"name": "Verandah In The Forest (Dune Barr House)", "issue": "mis-slotted — Verandah is a luxury pick not value"},
+    "replacement": {
+      "name": "Usha Ascot Matheran",
+      "tier": "comfort",
+      "tagline": "Pure-vegetarian 4-star resort — outdoor pool (rare for Matheran), multi-cuisine veg restaurant, the modern resort alternative to the Lord's/Verandah heritage axis.",
+      "price_band": "₹₹₹",
+      "address": "Maulana Azad Road, Matheran 410102, Maharashtra",
+      "book_url": "https://www.ushaascotmatheran.com/",
+      "sources": [
+        "https://www.ushaascotmatheran.com/",
+        "https://www.tripadvisor.in/Hotel_Review-g297666-d639430-Reviews-Usha_Ascot-Matheran_Raigad_District_Maharashtra.html",
+        "https://www.booking.com/hotel/in/usha-ascot-matheran.html"
+      ]
+    }
+  },
+  {
+    "destination_id": "matheran",
+    "slot": "location",
+    "verdict": "keep_existing",
+    "existing": {"name": "Lord's Central Hotel", "issue": "OK"},
+    "replacement": {
+      "name": "Lord's Central Hotel",
+      "tier": "boutique",
+      "tagline": "1933 Parsi family-run hotel on Matheran's MG Road — vegetarian, no-alcohol, four generations of Lord family ownership. The senior heritage Parsi hotel in town.",
+      "price_band": "₹₹",
+      "address": "MG Road, Matheran 410102, Maharashtra",
+      "book_url": "https://lordscentralhotel.com/",
+      "sources": [
+        "https://lordscentralhotel.com/",
+        "https://www.tripadvisor.in/Hotel_Review-g297666-d300938-Reviews-Lord_s_Central_Hotel-Matheran_Raigad_District_Maharashtra.html",
+        "https://www.booking.com/hotel/in/lord-s-central.html"
+      ]
+    }
+  }
+]

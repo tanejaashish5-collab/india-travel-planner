@@ -1,0 +1,78 @@
+[
+  {
+    "destination_id": "mumbai",
+    "slot": "experience",
+    "verdict": "keep_existing",
+    "existing": {"name": "The Taj Mahal Palace, Mumbai", "issue": "OK"},
+    "replacement": {
+      "name": "The Taj Mahal Palace, Mumbai",
+      "tier": "luxury",
+      "tagline": "1903 sea-facing heritage palace at the Gateway of India — Palace wing for heritage, Tower wing for value, Sea Lounge for the afternoon-tea ritual that is the closest thing Mumbai has to a civic institution.",
+      "price_band": "₹₹₹₹",
+      "address": "Apollo Bunder, Colaba, Mumbai 400001, Maharashtra",
+      "book_url": "https://www.tajhotels.com/en-in/taj/taj-mahal-palace-mumbai/",
+      "sources": [
+        "https://www.tajhotels.com/en-in/taj/taj-mahal-palace-mumbai/",
+        "https://www.tripadvisor.in/Hotel_Review-g304554-d301564-Reviews-The_Taj_Mahal_Palace_Mumbai-Mumbai_Maharashtra.html",
+        "https://www.booking.com/hotel/in/the-taj-mahal-palace.html"
+      ]
+    }
+  },
+  {
+    "destination_id": "mumbai",
+    "slot": "value",
+    "verdict": "keep_existing",
+    "existing": {"name": "Trident Nariman Point", "issue": "OK"},
+    "replacement": {
+      "name": "Trident Nariman Point",
+      "tier": "boutique",
+      "tagline": "Oberoi-sister tower at Nariman Point — same Arabian Sea views and Marine Drive walkout at roughly 40% the Oberoi rate. India Jones and Frangipani anchor the dining; the pool runs longer than the parent's.",
+      "price_band": "₹₹₹",
+      "address": "Nariman Point, Mumbai 400021, Maharashtra",
+      "book_url": "https://www.tridenthotels.com/hotels-in-mumbai/trident-nariman-point",
+      "sources": [
+        "https://www.tridenthotels.com/hotels-in-mumbai/trident-nariman-point",
+        "https://www.tripadvisor.in/Hotel_Review-g304554-d307147-Reviews-Trident_Nariman_Point-Mumbai_Maharashtra.html",
+        "https://www.booking.com/hotel/in/trident-nariman-point.html"
+      ]
+    }
+  },
+  {
+    "destination_id": "mumbai",
+    "slot": "location",
+    "verdict": "keep_existing",
+    "existing": {"name": "The Oberoi Mumbai", "issue": "OK"},
+    "replacement": {
+      "name": "The Oberoi Mumbai",
+      "tier": "luxury",
+      "tagline": "Nariman Point tower with the full Queen's Necklace sweep — calmer than the Taj's Gateway bustle, the Oberoi signature personal service, Ziya's one Michelin star on the lobby level. The South Mumbai sea-view luxury default.",
+      "price_band": "₹₹₹₹",
+      "address": "Nariman Point, Mumbai 400021, Maharashtra",
+      "book_url": "https://www.oberoihotels.com/hotels-in-mumbai/",
+      "sources": [
+        "https://www.oberoihotels.com/hotels-in-mumbai/",
+        "https://www.tripadvisor.in/Hotel_Review-g304554-d301565-Reviews-The_Oberoi_Mumbai-Mumbai_Maharashtra.html",
+        "https://www.booking.com/hotel/in/the-oberoi-mumbai.html"
+      ]
+    }
+  },
+  {
+    "destination_id": "mumbai",
+    "slot": "xfactor",
+    "verdict": "keep_existing",
+    "existing": {"name": "Four Seasons Hotel Mumbai", "issue": "OK"},
+    "replacement": {
+      "name": "Four Seasons Hotel Mumbai",
+      "tier": "luxury",
+      "tagline": "33-floor glass tower in Worli — Aer rooftop bar on level 34 holds the most-photographed Mumbai skyline view. Central to BKC and Lower Parel for travellers whose Mumbai is more fashion week than Gateway tourism.",
+      "price_band": "₹₹₹₹",
+      "address": "1/136 Dr E Moses Road, Worli, Mumbai 400018, Maharashtra",
+      "book_url": "https://www.fourseasons.com/mumbai/",
+      "sources": [
+        "https://www.fourseasons.com/mumbai/",
+        "https://www.tripadvisor.in/Hotel_Review-g304554-d1186040-Reviews-Four_Seasons_Hotel_Mumbai-Mumbai_Maharashtra.html",
+        "https://www.booking.com/hotel/in/four-seasons-mumbai.html"
+      ]
+    }
+  }
+]

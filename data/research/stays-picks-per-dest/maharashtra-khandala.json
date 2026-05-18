@@ -1,0 +1,65 @@
+[
+  {
+    "destination_id": "khandala",
+    "slot": "experience",
+    "verdict": "replace",
+    "existing": {"name": "Fariyas Resort Lonavala (Tungarli, Khandala-side ridge)", "issue": "cross-dest — Fariyas Resort is in Lonavala-Tungarli not Khandala; should sit in Lonavala inventory only"},
+    "replacement": {
+      "name": "Dukes Retreat",
+      "tier": "boutique",
+      "tagline": "1947 hill retreat across 7.5 acres above the Khandala ghats — colonial main building, outdoor pool, the Khandala property with the strongest heritage credentials.",
+      "price_band": "₹₹₹",
+      "address": "Khandala-Lonavala Bypass, Khandala 410301, Maharashtra",
+      "book_url": "https://www.dukesretreat.com/",
+      "sources": [
+        "https://www.dukesretreat.com/",
+        "https://www.tripadvisor.in/Hotel_Review-g297658-d633053-Reviews-Dukes_Retreat-Khandala_Pune_District_Maharashtra.html",
+        "https://www.booking.com/hotel/in/dukes-retreat.html"
+      ]
+    }
+  },
+  {
+    "destination_id": "khandala",
+    "slot": "value",
+    "verdict": "keep_existing",
+    "existing": {"name": "Zara's Resort, Khandala", "issue": "OK"},
+    "replacement": {
+      "name": "Zara's Resort Khandala",
+      "tier": "comfort",
+      "tagline": "Mid-range resort on the Old Mumbai-Pune Highway 1.5 km from Khandala station — outdoor pool, the value pick for Khandala-side weekends when Dukes is full.",
+      "price_band": "₹₹",
+      "address": "Old Mumbai-Pune Highway, Khandala 410301, Maharashtra",
+      "book_url": "https://www.zarasresorts.com/khandala/",
+      "sources": [
+        "https://www.zarasresorts.com/khandala/",
+        "https://www.tripadvisor.in/Hotel_Review-g297658-d1764866-Reviews-Zara_s_Resort-Khandala_Pune_District_Maharashtra.html",
+        "https://www.booking.com/hotel/in/zaras-resort.html"
+      ]
+    }
+  },
+  {
+    "destination_id": "khandala",
+    "slot": "location",
+    "verdict": "replace",
+    "existing": {"name": "Athiva Resort & Spa Khandala (formerly Dukes Retreat)", "issue": "stale name — Dukes Retreat was not re-branded to Athiva. Athiva is a separate property; assertion in baseline is wrong"},
+    "replacement": {
+      "name": "Dukes Retreat",
+      "tier": "boutique",
+      "tagline": "1947 hill retreat across 7.5 acres directly above the Khandala ghats — closest named heritage property to the actual Khandala viewpoints (Rajmachi, Reverse Falls in monsoon).",
+      "price_band": "₹₹₹",
+      "address": "Khandala-Lonavala Bypass, Khandala 410301, Maharashtra",
+      "book_url": "https://www.dukesretreat.com/",
+      "sources": [
+        "https://www.dukesretreat.com/",
+        "https://www.tripadvisor.in/Hotel_Review-g297658-d633053-Reviews-Dukes_Retreat-Khandala_Pune_District_Maharashtra.html"
+      ]
+    }
+  },
+  {
+    "destination_id": "khandala",
+    "slot": "xfactor",
+    "verdict": "replace",
+    "existing": {"name": "Tooth Mountain Farms, Karjat", "issue": "cross-dest — Karjat is 35 km from Khandala via mountain roads; Tooth Mountain Farms is its own Karjat destination, not a Khandala pick"},
+    "replacement": null
+  }
+]

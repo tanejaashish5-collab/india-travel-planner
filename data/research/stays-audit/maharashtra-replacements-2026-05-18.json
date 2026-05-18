@@ -1,0 +1,2758 @@
+{
+  "metadata": {
+    "state": "maharashtra",
+    "date": "2026-05-18",
+    "total_picks": 162,
+    "verdict_counts": {
+      "keep_existing": 60,
+      "replace": 45,
+      "honest_scarcity": 57
+    }
+  },
+  "task_a_results": [
+    {
+      "destination_id": "ajanta-caves",
+      "slot": "experience",
+      "verdict": "replace",
+      "existing": {
+        "name": "Ajanta Ambassadors",
+        "issue": "verify — 'Ajanta Ambassadors' not strongly verifiable on Booking/MMT as a named property"
+      },
+      "replacement": {
+        "name": "Vivanta Aurangabad (Ajanta base)",
+        "tier": "luxury",
+        "tagline": "Aurangabad 4-star labelled as Ajanta base — 100 km / 2.5 hrs drive to the caves opens at 9 AM. Taj-IHCL service, packed breakfast for pre-dawn departure. No formal luxury exists at the Ajanta gate itself.",
+        "price_band": "₹₹₹",
+        "address": "8-N-12 CIDCO, Rauza Bagh, Aurangabad 431003, Maharashtra (100 km from Ajanta Caves)",
+        "book_url": "https://www.vivantahotels.com/en-in/vivanta-aurangabad/",
+        "sources": [
+          "https://www.vivantahotels.com/en-in/vivanta-aurangabad/",
+          "https://www.tripadvisor.in/Hotel_Review-g297652-d301690-Reviews-Vivanta_Aurangabad-Aurangabad_Aurangabad_District_Maharashtra.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "ajanta-caves",
+      "slot": "value",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "MTDC Holiday Resort Ajanta",
+        "issue": "OK — MTDC Fardapur is verified"
+      },
+      "replacement": {
+        "name": "MTDC Holiday Resort Ajanta (Fardapur)",
+        "tier": "comfort",
+        "tagline": "Maharashtra Tourism's resort at Fardapur 4 km from the cave entrance — A/C and non-A/C cottages, the only formal accommodation at the gate. Books out for school-tour season (Nov–Feb).",
+        "price_band": "₹₹",
+        "address": "Fardapur, Aurangabad-Jalgaon Highway, Aurangabad District 431118, Maharashtra",
+        "book_url": "https://www.maharashtratourism.gov.in/destination-mtdc-resorts",
+        "sources": [
+          "https://www.maharashtratourism.gov.in/destination-mtdc-resorts",
+          "https://www.maharashtratourism.gov.in/destinations/Ajanta-Caves"
+        ]
+      }
+    },
+    {
+      "destination_id": "ajanta-caves",
+      "slot": "location",
+      "verdict": "replace",
+      "existing": {
+        "name": "Hotel Ajanta Sanctuary",
+        "issue": "template-sounding — not strongly verifiable as a single property on Booking/MMT"
+      },
+      "replacement": {
+        "name": "Hotel Ajanta Heritage Jalgaon",
+        "tier": "comfort",
+        "tagline": "Senior Jalgaon mid-range 3-star — 90-min drive to Ajanta T-Point. The Bhusaval rail-head approach base, faster than the 100-km Aurangabad route.",
+        "price_band": "₹₹",
+        "address": "Mahabal Road, Jalgaon 425001, Maharashtra",
+        "book_url": "https://hotelajantajalgaon.com/",
+        "sources": [
+          "https://hotelajantajalgaon.com/",
+          "https://www.tripadvisor.in/Hotel_Review-g660660-d1764873-Reviews-Hotel_Ajanta-Jalgaon_Jalgaon_District_Maharashtra.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "ajanta-caves",
+      "slot": "xfactor",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Rajapur Farmstay (near Ajanta)",
+        "issue": "cross-state confusion — Rajapur is a town in Ratnagiri district (Konkan coast) ~700 km from Ajanta. No 'Rajapur Farmstay' near Ajanta exists. The cave area has no farmstay infrastructure"
+      },
+      "replacement": null
+    },
+    {
+      "destination_id": "alibaug",
+      "slot": "experience",
+      "verdict": "replace",
+      "existing": {
+        "name": "Wildflower Hall Alibaug",
+        "issue": "fabricated cross-state — Wildflower Hall is an Oberoi resort in Mashobra, Shimla, Himachal Pradesh; no Alibaug property exists"
+      },
+      "replacement": {
+        "name": "Radisson Blu Resort & Spa Alibaug",
+        "tier": "luxury",
+        "tagline": "Radisson's 169-room beach resort 4 km from Alibaug town on Awas beach — large free-form pool, kids' club, full-service spa. The Mumbai weekend's polished default when pool beats heritage.",
+        "price_band": "₹₹₹₹",
+        "address": "Saral, Awas Beach Road, Alibaug 402208, Maharashtra",
+        "book_url": "https://www.radissonhotels.com/en-us/hotels/radisson-blu-alibaug-resort",
+        "sources": [
+          "https://www.radissonhotels.com/en-us/hotels/radisson-blu-alibaug-resort",
+          "https://www.tripadvisor.in/Hotel_Review-g1163521-d17820073-Reviews-Radisson_Blu_Resort_Spa_Alibaug-Alibaug_Raigad_District_Maharashtra.html",
+          "https://www.booking.com/hotel/in/radisson-blu-resort-spa-alibaug.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "alibaug",
+      "slot": "value",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Acron Waterfront Resort",
+        "issue": "OK"
+      },
+      "replacement": {
+        "name": "Acron Waterfront Resort Alibaug",
+        "tier": "boutique",
+        "tagline": "Goa-based Acron Group's Alibaug resort with infinity pool overlooking the Arabian Sea — 60 rooms, the boutique mid-range pick between the Radisson 5-star and value beach homestays.",
+        "price_band": "₹₹₹",
+        "address": "Akshi-Nagaon Road, Alibaug 402208, Maharashtra",
+        "book_url": "https://www.acronhotels.com/waterfront-alibaug/",
+        "sources": [
+          "https://www.acronhotels.com/waterfront-alibaug/",
+          "https://www.tripadvisor.in/Hotel_Review-g1163521-d12745596-Reviews-Acron_Waterfront_Resort_Alibaug-Alibaug_Raigad_District_Maharashtra.html",
+          "https://www.booking.com/hotel/in/acron-waterfront-resort.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "alibaug",
+      "slot": "location",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Fariyas Resort Alibaug",
+        "issue": "OK"
+      },
+      "replacement": {
+        "name": "Fariyas Resort Alibaug",
+        "tier": "boutique",
+        "tagline": "Direct Varsoli-beach walkout — outdoor pool, multi-cuisine restaurant, the closest 4-star to Alibaug fort. Pre-dates the chain 5-stars and still holds the strongest beach access.",
+        "price_band": "₹₹₹",
+        "address": "Varsoli Beach, Alibaug 402201, Maharashtra",
+        "book_url": "https://fariyas.com/alibaug/",
+        "sources": [
+          "https://fariyas.com/alibaug/",
+          "https://www.tripadvisor.in/Hotel_Review-g1163521-d503015-Reviews-Fariyas_Resort_Alibaug-Alibaug_Raigad_District_Maharashtra.html",
+          "https://www.booking.com/hotel/in/fariyas-resort.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "alibaug",
+      "slot": "xfactor",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Varsoli Riverside Farmstay",
+        "issue": "template-sounding — Varsoli is a beach not a river; 'Riverside Farmstay' likely a hallucinated listicle pick. The genuine xfactor in Alibaug is private SaffronStays/StayVista villas but these rotate too fast for a fixed pick"
+      },
+      "replacement": null
+    },
+    {
+      "destination_id": "amboli",
+      "slot": "experience",
+      "verdict": "replace",
+      "existing": {
+        "name": "Amboli Waterfront Resort",
+        "issue": "verify — 'Amboli Waterfront Resort' is generic and not strongly verifiable as a single property on Booking/MTDC"
+      },
+      "replacement": {
+        "name": "Whistling Woods Resort Amboli",
+        "tier": "comfort",
+        "tagline": "Private mid-range resort at Amboli ghat — cottage rooms with Sahyadri views, multi-cuisine restaurant. The polished alternative to MTDC for monsoon waterfall hunters.",
+        "price_band": "₹₹₹",
+        "address": "Amboli Ghat, Sindhudurg District 416510, Maharashtra",
+        "book_url": "https://www.whistlingwoodsresort.com/",
+        "sources": [
+          "https://www.whistlingwoodsresort.com/",
+          "https://www.tripadvisor.in/Hotel_Review-g2018013-d6580658-Reviews-Whistling_Woods_Resort-Amboli_Sindhudurg_District_Maharashtra.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "amboli",
+      "slot": "value",
+      "verdict": "replace",
+      "existing": {
+        "name": "MTDC Green Valley Resort Amboli",
+        "issue": "stale name — MTDC's Amboli property is listed as MTDC Resort Amboli (not 'Green Valley') on maharashtratourism.gov.in"
+      },
+      "replacement": {
+        "name": "MTDC Resort Amboli",
+        "tier": "budget",
+        "tagline": "Maharashtra Tourism's hill resort at Amboli ghat — A/C cottages with Sahyadri views. The default monsoon-tourism and Hiranyakeshi Falls base.",
+        "price_band": "₹₹",
+        "address": "Amboli Ghat, Sindhudurg District 416510, Maharashtra",
+        "book_url": "https://www.maharashtratourism.gov.in/destination-mtdc-resorts",
+        "sources": [
+          "https://www.maharashtratourism.gov.in/destination-mtdc-resorts",
+          "https://www.maharashtratourism.gov.in/destinations/Amboli"
+        ]
+      }
+    },
+    {
+      "destination_id": "amboli",
+      "slot": "location",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Stone Wood Hotel Amboli",
+        "issue": "verify — Stone Wood Hotels group operates in Goa, Mumbai, Mahabaleshwar; Amboli specific listing not found on stonewoodhotels.com"
+      },
+      "replacement": null
+    },
+    {
+      "destination_id": "amboli",
+      "slot": "xfactor",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Whistling Woods Amboli",
+        "issue": "duplicate of experience replacement"
+      },
+      "replacement": null
+    },
+    {
+      "destination_id": "astavinayak-circuit",
+      "slot": "experience",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Lonavala Resorts & Spa (or Fariyas Resort, Lonavala)",
+        "issue": "cross-dest — Lonavala is 80+ km from most Astavinayak temples (Theur, Morgaon, Siddhatek, Ranjangaon are east of Pune; only Ozar/Lenyadri sit toward Junnar/Lonavala axis). No single resort serves the 8-temple circuit"
+      },
+      "replacement": null
+    },
+    {
+      "destination_id": "astavinayak-circuit",
+      "slot": "value",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Sai Kunj Guest House, Theur",
+        "issue": "template-sounding — 'Sai Kunj' is a generic name not strongly verifiable in Theur; Theur's official pilgrim accommodation is Shri Chintamani Bhakta Niwas (covered under theur dest)"
+      },
+      "replacement": null
+    },
+    {
+      "destination_id": "astavinayak-circuit",
+      "slot": "location",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Hotel Surya (or similar MTDC lodge), Shirur",
+        "issue": "no MTDC lodge in Shirur; 'Hotel Surya' is a generic-sounding name without strong single-property verification. Astavinayak circuit-level location pick is structurally impossible — use Pune (covered) as the base"
+      },
+      "replacement": null
+    },
+    {
+      "destination_id": "astavinayak-circuit",
+      "slot": "xfactor",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Nandi Homestay & Farm, Vada (or Workation-style farmstays near Junnar)",
+        "issue": "Vada is in Palghar district 200 km from the circuit centre; Junnar farmstays serve Lenyadri/Ozar (covered separately). Circuit-level xfactor doesn't resolve to one property"
+      },
+      "replacement": null
+    },
+    {
+      "destination_id": "aurangabad",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Gateway Aurangabad - Chhatrapati Sambhaji Nagar (Taj)",
+        "issue": "OK — but Gateway re-branded to Vivanta; refresh name"
+      },
+      "replacement": {
+        "name": "Vivanta Aurangabad",
+        "tier": "luxury",
+        "tagline": "Taj-IHCL's Vivanta near Bibi Ka Maqbara — 113 rooms, outdoor pool, Mynt fine-dining and Latitude buffet. The Taj-group service base for a pre-dawn departure to Ajanta opening at 9 AM.",
+        "price_band": "₹₹₹",
+        "address": "8-N-12 CIDCO, Rauza Bagh, Aurangabad 431003, Maharashtra",
+        "book_url": "https://www.vivantahotels.com/en-in/vivanta-aurangabad/",
+        "sources": [
+          "https://www.vivantahotels.com/en-in/vivanta-aurangabad/",
+          "https://www.tripadvisor.in/Hotel_Review-g297652-d301690-Reviews-Vivanta_Aurangabad-Aurangabad_Aurangabad_District_Maharashtra.html",
+          "https://www.booking.com/hotel/in/vivanta-by-taj-aurangabad.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "aurangabad",
+      "slot": "value",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Lemon Tree Premier Aurangabad",
+        "issue": "OK"
+      },
+      "replacement": {
+        "name": "Lemon Tree Premier Aurangabad",
+        "tier": "comfort",
+        "tagline": "Citrus-design Premier-tier 4 km from Aurangabad airport — pool, multi-cuisine restaurant, consistent brand service at 30–40% less than the Taj Vivanta. The reliable Ajanta/Ellora day-trip base.",
+        "price_band": "₹₹",
+        "address": "R-3 Chikalthana, Jalna Road, Aurangabad 431210, Maharashtra",
+        "book_url": "https://www.lemontreehotels.com/lemon-tree-premier/aurangabad/lemon-tree-premier-aurangabad.aspx",
+        "sources": [
+          "https://www.lemontreehotels.com/lemon-tree-premier/aurangabad/lemon-tree-premier-aurangabad.aspx",
+          "https://www.tripadvisor.in/Hotel_Review-g297652-d6438480-Reviews-Lemon_Tree_Premier_Aurangabad-Aurangabad_Aurangabad_District_Maharashtra.html",
+          "https://www.booking.com/hotel/in/lemon-tree-premier-aurangabad.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "aurangabad",
+      "slot": "location",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "The Meadows Hotel & Resort",
+        "issue": "OK"
+      },
+      "replacement": {
+        "name": "The Meadows Hotel & Resort",
+        "tier": "boutique",
+        "tagline": "37-cottage garden resort on Mitmita Road, 5 km from Aurangabad railway and 8 km from Bibi-Ka-Maqbara — outdoor pool, in-house Maharashtrian restaurant, on-call taxi for the Ajanta-Ellora-Daulatabad triangle.",
+        "price_band": "₹₹",
+        "address": "Mitmita, Aurangabad-Daulatabad Road, Aurangabad 431005, Maharashtra",
+        "book_url": "https://meadowsresort.com/",
+        "sources": [
+          "https://meadowsresort.com/",
+          "https://www.tripadvisor.in/Hotel_Review-g297652-d633070-Reviews-The_Meadows_Hotel_Resort-Aurangabad_Aurangabad_District_Maharashtra.html",
+          "https://www.booking.com/hotel/in/the-meadows-resort.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "aurangabad",
+      "slot": "xfactor",
+      "verdict": "replace",
+      "existing": {
+        "name": null,
+        "issue": "missing — slot was empty"
+      },
+      "replacement": {
+        "name": "WelcomHotel by ITC Rama International",
+        "tier": "luxury",
+        "tagline": "ITC's WelcomHotel Rama International on Jalna Road — 134 rooms across landscaped grounds 3 km from Chikalthana airport, outdoor pool, the longest-running 5-star service brand in Aurangabad city.",
+        "price_band": "₹₹₹",
+        "address": "R-3 Chikalthana, Jalna Road, Aurangabad 431210, Maharashtra",
+        "book_url": "https://www.itchotels.com/in/en/welcomhotel-aurangabad",
+        "sources": [
+          "https://www.itchotels.com/in/en/welcomhotel-aurangabad",
+          "https://www.tripadvisor.in/Hotel_Review-g297652-d301689-Reviews-WelcomHotel_by_ITC_Hotels_Rama_International_Aurangabad-Aurangabad_Aurangabad_Distri.html",
+          "https://www.booking.com/hotel/in/welcomhotel-rama-international.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "bhandardara",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Anandvan Resort",
+        "issue": "OK"
+      },
+      "replacement": {
+        "name": "Anandvan Resort Bhandardara",
+        "tier": "comfort",
+        "tagline": "Private 28-room resort 2 km from Wilson Dam — outdoor pool, multi-cuisine restaurant. The base for Kalsubai Peak (Maharashtra's highest at 1,646 m) and Ratangad trekkers.",
+        "price_band": "₹₹₹",
+        "address": "Shendi village, Bhandardara, Ahmednagar District 422604, Maharashtra",
+        "book_url": "https://www.anandvanresort.com/",
+        "sources": [
+          "https://www.anandvanresort.com/",
+          "https://www.tripadvisor.in/Hotel_Review-g14037043-d8589462-Reviews-Anandvan_Resort-Bhandardara_Ahmednagar_District_Maharashtra.html",
+          "https://www.booking.com/hotel/in/anandvan-bhandardara.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "bhandardara",
+      "slot": "value",
+      "verdict": "replace",
+      "existing": {
+        "name": "Haravi Village Resort",
+        "issue": "verify — 'Haravi Village Resort' not strongly verifiable on Booking/MTDC. The verified value-tier pick is MTDC"
+      },
+      "replacement": {
+        "name": "MTDC Resort Bhandardara",
+        "tier": "budget",
+        "tagline": "Maharashtra Tourism's lakeside resort opposite the Wilson Dam — A/C cottages and Konkan tents with Arthur Lake views. The only formal lakefront accommodation.",
+        "price_band": "₹₹",
+        "address": "Wilson Dam (Arthur Lake), Bhandardara, Ahmednagar District 422604, Maharashtra",
+        "book_url": "https://www.maharashtratourism.gov.in/destination-mtdc-resorts",
+        "sources": [
+          "https://www.maharashtratourism.gov.in/destination-mtdc-resorts",
+          "https://www.maharashtratourism.gov.in/destinations/Bhandardara"
+        ]
+      }
+    },
+    {
+      "destination_id": "bhandardara",
+      "slot": "location",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Bhandardara Lake Retreat",
+        "issue": "generic-sounding name without strong single-property verification"
+      },
+      "replacement": null
+    },
+    {
+      "destination_id": "bhandardara",
+      "slot": "xfactor",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Chavand Eco-Farmstay",
+        "issue": "Chavand is a fort 70 km from Bhandardara near Junnar; 'Chavand Eco-Farmstay' not strongly verifiable as a single property near Bhandardara"
+      },
+      "replacement": null
+    },
+    {
+      "destination_id": "bhimashankar",
+      "slot": "location",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "MTDC Bhimashankar Resort",
+        "issue": "OK — MTDC verified"
+      },
+      "replacement": {
+        "name": "MTDC Bhimashankar Resort",
+        "tier": "budget",
+        "tagline": "Maharashtra Tourism's hill resort within the Bhimashankar Wildlife Sanctuary buffer — A/C cottages with Sahyadri ridge views. The only formal accommodation near the Jyotirlinga.",
+        "price_band": "₹₹",
+        "address": "Bhimashankar Wildlife Sanctuary, Pune District 410509, Maharashtra",
+        "book_url": "https://www.maharashtratourism.gov.in/destination-mtdc-resorts",
+        "sources": [
+          "https://www.maharashtratourism.gov.in/destination-mtdc-resorts",
+          "https://www.maharashtratourism.gov.in/destinations/Bhimashankar"
+        ]
+      }
+    },
+    {
+      "destination_id": "bhimashankar",
+      "slot": "value",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Blue Mormon Hill Resort",
+        "issue": "verify — 'Blue Mormon' is a Maharashtra-state-butterfly reference; resort by this name not strongly verifiable in Bhimashankar on Booking/MMT/MTDC"
+      },
+      "replacement": null
+    },
+    {
+      "destination_id": "bhimashankar",
+      "slot": "experience",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Yashshree Resort & Camp",
+        "issue": "verify — 'Yashshree Resort' not strongly verifiable as a single Bhimashankar property"
+      },
+      "replacement": null
+    },
+    {
+      "destination_id": "daulatabad",
+      "slot": "experience",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Daulatabad Fort Heritage Resort",
+        "issue": "fabricated — no 'Daulatabad Fort Heritage Resort' exists on Booking/MMT/MTDC. Daulatabad Fort (Devagiri) is an ASI-protected site 15 km from Aurangabad; no formal hotel infrastructure within walking distance. Use Aurangabad base."
+      },
+      "replacement": null
+    },
+    {
+      "destination_id": "daulatabad",
+      "slot": "value",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Bibi Ka Maqbara Guest House",
+        "issue": "fabricated — Bibi Ka Maqbara is a Mughal monument in Aurangabad city, not Daulatabad. No 'Bibi Ka Maqbara Guest House' exists as a verified property"
+      },
+      "replacement": null
+    },
+    {
+      "destination_id": "daulatabad",
+      "slot": "location",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Aurangabad Central Hotel",
+        "issue": "generic — should reference verified Aurangabad properties (Vivanta/WelcomHotel Rama) as base. See aurangabad dest"
+      },
+      "replacement": null
+    },
+    {
+      "destination_id": "daulatabad",
+      "slot": "xfactor",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Chand Bibi Farmstay",
+        "issue": "fabricated — Chand Bibi was a 16th-century queen-regent of Ahmednagar; no 'Chand Bibi Farmstay' exists as a verified property near Daulatabad"
+      },
+      "replacement": null
+    },
+    {
+      "destination_id": "elephanta-caves",
+      "slot": "experience",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "The Taj Mahal Palace (Mumbai Gateway ferry base — no on-island stays)",
+        "issue": "labelled cross-dest — Taj is in Mumbai inventory not Elephanta. Elephanta Caves are UNESCO-listed cave temples on Gharapuri island with ZERO formal accommodation. The only overnight option is the island's MTDC Forest Rest House, which is non-public. Day trip from Mumbai is the only realistic option"
+      },
+      "replacement": null
+    },
+    {
+      "destination_id": "elephanta-caves",
+      "slot": "location",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Hotel Diplomat (Mumbai Gateway ferry base — no on-island stays)",
+        "issue": "Hotel Diplomat is a real Mumbai property in Colaba near the Gateway, but labelling it as Elephanta stay is cross-dest. Should sit in Mumbai inventory"
+      },
+      "replacement": null
+    },
+    {
+      "destination_id": "elephanta-caves",
+      "slot": "value",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Hotel Suncity Apollo (Mumbai Gateway ferry base — no on-island stays)",
+        "issue": "cross-dest — Mumbai property, not Elephanta. Should sit in Mumbai inventory"
+      },
+      "replacement": null
+    },
+    {
+      "destination_id": "ellora-caves",
+      "slot": "experience",
+      "verdict": "replace",
+      "existing": {
+        "name": "Khuldabad Sufi Heritage Homestay",
+        "issue": "verify — 'Khuldabad Sufi Heritage Homestay' is a category not a verified single property. Khuldabad has the Aurangzeb tomb and Sufi shrines but no formal heritage homestay brand on Booking/MTDC"
+      },
+      "replacement": {
+        "name": "Vivanta Aurangabad (Ellora base)",
+        "tier": "luxury",
+        "tagline": "Aurangabad 4-star labelled as Ellora base — 30 km / 45-min drive to Cave 16 Kailasa Temple. The only Taj-IHCL service tier in the Ajanta-Ellora-Daulatabad triangle.",
+        "price_band": "₹₹₹",
+        "address": "8-N-12 CIDCO, Rauza Bagh, Aurangabad 431003, Maharashtra (30 km from Ellora Caves)",
+        "book_url": "https://www.vivantahotels.com/en-in/vivanta-aurangabad/",
+        "sources": [
+          "https://www.vivantahotels.com/en-in/vivanta-aurangabad/",
+          "https://www.tripadvisor.in/Hotel_Review-g297652-d301690-Reviews-Vivanta_Aurangabad-Aurangabad_Aurangabad_District_Maharashtra.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "ellora-caves",
+      "slot": "value",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Hotel Kailas",
+        "issue": "OK — verified opposite Cave 16"
+      },
+      "replacement": {
+        "name": "Hotel Kailas",
+        "tier": "comfort",
+        "tagline": "Senior budget-mid hotel directly opposite the Kailasa Temple cave entrance — 30 cottage-style rooms, multi-cuisine restaurant. The only accommodation walking-distance to the caves.",
+        "price_band": "₹₹",
+        "address": "Ellora Caves Road, opposite Cave 16, Aurangabad District 431102, Maharashtra",
+        "book_url": "https://hotelkailas.com/",
+        "sources": [
+          "https://hotelkailas.com/",
+          "https://www.tripadvisor.in/Hotel_Review-g668044-d633059-Reviews-Hotel_Kailas-Ellora_Caves_Aurangabad_District_Maharashtra.html",
+          "https://www.booking.com/hotel/in/kailas-ellora.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "ellora-caves",
+      "slot": "location",
+      "verdict": "replace",
+      "existing": {
+        "name": "MTDC Ellora-Aurangabad",
+        "issue": "ambiguous name — could mean MTDC Ellora gate or MTDC Aurangabad; refresh to the gate property"
+      },
+      "replacement": {
+        "name": "MTDC Ellora Resort",
+        "tier": "budget",
+        "tagline": "Maharashtra Tourism's smaller Ellora property at the cave gate — basic A/C cottages, in-house restaurant, the value-rate alternative to Hotel Kailas.",
+        "price_band": "₹₹",
+        "address": "Ellora Caves area, Aurangabad District 431102, Maharashtra",
+        "book_url": "https://www.maharashtratourism.gov.in/destination-mtdc-resorts",
+        "sources": [
+          "https://www.maharashtratourism.gov.in/destination-mtdc-resorts",
+          "https://www.maharashtratourism.gov.in/destinations/Ellora-Caves"
+        ]
+      }
+    },
+    {
+      "destination_id": "ganpatipule",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "MTDC Resort Ganpatipule",
+        "issue": "OK — MTDC verified on maharashtratourism.gov.in"
+      },
+      "replacement": {
+        "name": "MTDC Resort Ganpatipule",
+        "tier": "comfort",
+        "tagline": "Maharashtra Tourism's flagship beach resort directly opposite Swayambhu Ganpati temple — 100+ rooms in Konkani-style cottages plus Konkan tents. Books out for Ganesh Chaturthi six months ahead.",
+        "price_band": "₹₹",
+        "address": "Ganpatipule Beach, opposite Swayambhu Ganpati Temple, Ganpatipule 415615, Maharashtra",
+        "book_url": "https://www.maharashtratourism.gov.in/destination-mtdc-resorts/-/asset_publisher/3vYTZxYEy3PD/content/mtdc-resort-ganpatipule",
+        "sources": [
+          "https://www.maharashtratourism.gov.in/destination-mtdc-resorts/-/asset_publisher/3vYTZxYEy3PD/content/mtdc-resort-ganpatipule",
+          "https://www.tripadvisor.in/Hotel_Review-g1421266-d1466933-Reviews-MTDC_Resort_Ganpatipule-Ganpatipule_Ratnagiri_District_Maharashtra.html",
+          "https://www.booking.com/hotel/in/mtdc-resort-ganpatipule.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "ganpatipule",
+      "slot": "value",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Atithi Parinay Konkan Homestay",
+        "issue": "OK — verified on atithiparinay.com + MTDC registered list"
+      },
+      "replacement": {
+        "name": "Atithi Parinay Konkan Homestay",
+        "tier": "boutique",
+        "tagline": "Award-winning Konkani homestay in Nivli village — traditional Konkan farmhouse with surangya floor and laterite walls, signature alu-vadi/sol-kadhi thali. The benchmark Konkan-coast homestay.",
+        "price_band": "₹₹",
+        "address": "Nivli Village, near Ganpatipule, Ratnagiri District 415615, Maharashtra",
+        "book_url": "https://atithiparinay.com/",
+        "sources": [
+          "https://atithiparinay.com/",
+          "https://www.maharashtratourism.gov.in/destination-mtdc-resorts/-/asset_publisher/3vYTZxYEy3PD/content/mtdc-registered-homestays"
+        ]
+      }
+    },
+    {
+      "destination_id": "ganpatipule",
+      "slot": "xfactor",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Bhandarpule Village Konkani Homestay (fisher-family)",
+        "issue": "verify — Bhandarpule fisher-homestay is not strongly verifiable as a single named property on Booking/MTDC; sounds like a category not a property"
+      },
+      "replacement": null
+    },
+    {
+      "destination_id": "harihareshwar",
+      "slot": "value",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "MTDC Harihareshwar Beach Resort",
+        "issue": "OK — MTDC verified"
+      },
+      "replacement": {
+        "name": "MTDC Harihareshwar Beach Resort",
+        "tier": "comfort",
+        "tagline": "Maharashtra Tourism's beach resort opposite Kalbhairav temple — 50 cottage rooms, in-house restaurant. The only formal accommodation steps from the four-temple parikrama route.",
+        "price_band": "₹₹",
+        "address": "Harihareshwar Beach, opposite Kalbhairav-Yogeshwari Temple, Raigad District 402417, Maharashtra",
+        "book_url": "https://www.maharashtratourism.gov.in/destination-mtdc-resorts",
+        "sources": [
+          "https://www.maharashtratourism.gov.in/destination-mtdc-resorts",
+          "https://www.maharashtratourism.gov.in/destinations/Harihareshwar"
+        ]
+      }
+    },
+    {
+      "destination_id": "harihareshwar",
+      "slot": "experience",
+      "verdict": "replace",
+      "existing": {
+        "name": "MTDC Karli Resort",
+        "issue": "cross-dest — MTDC Karli is in Sindhudurg district 220 km south of Harihareshwar (on the Karli river backwaters near Tarkarli); should not be used as the Harihareshwar experience pick"
+      },
+      "replacement": null
+    },
+    {
+      "destination_id": "harihareshwar",
+      "slot": "xfactor",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Velas Village Homestay Network (SNM-coordinated)",
+        "issue": "OK — Velas turtle festival homestay network is the verified SNM/Sahyadri Nisarga Mitra programme"
+      },
+      "replacement": {
+        "name": "Velas Village Homestay Network (SNM-coordinated)",
+        "tier": "budget",
+        "tagline": "Sahyadri Nisarga Mitra-coordinated village homestays in Velas 35 km from Harihareshwar — the Olive Ridley turtle hatching festival (Feb–Mar) is the only reason this network exists. Book through SNM official channels only.",
+        "price_band": "₹",
+        "address": "Velas village, Mandangad Taluka, Ratnagiri District 415717, Maharashtra",
+        "book_url": "https://snmcpn.in/velas/",
+        "sources": [
+          "https://snmcpn.in/velas/",
+          "https://www.maharashtratourism.gov.in/destinations/Velas-Turtle-Festival"
+        ]
+      }
+    },
+    {
+      "destination_id": "igatpuri",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Manas Lifestyle Resort Igatpuri",
+        "issue": "OK"
+      },
+      "replacement": {
+        "name": "Manas Lifestyle Resort Igatpuri",
+        "tier": "luxury",
+        "tagline": "Mid-luxury wellness resort across 12 acres in the Sahyadri foothills — 76 rooms, Ayurveda spa, indoor pool. The destination wellness resort that pairs with Dhamma Giri Vipassana visitors.",
+        "price_band": "₹₹₹",
+        "address": "Khairgaon, Igatpuri 422403, Maharashtra",
+        "book_url": "https://www.manaslifestyleresort.com/",
+        "sources": [
+          "https://www.manaslifestyleresort.com/",
+          "https://www.tripadvisor.in/Hotel_Review-g1422389-d1192478-Reviews-Manas_Lifestyle_Resort-Igatpuri_Nashik_District_Maharashtra.html",
+          "https://www.booking.com/hotel/in/manas-lifestyle-resort.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "igatpuri",
+      "slot": "value",
+      "verdict": "replace",
+      "existing": {
+        "name": "Rakabi the Fern Igatpuri",
+        "issue": "stale name — 'Rakabi the Fern' has been re-branded; the property runs as The Fern Igatpuri under Fern Hotels"
+      },
+      "replacement": {
+        "name": "The Fern Igatpuri",
+        "tier": "comfort",
+        "tagline": "Fern Hotels' eco-certified Igatpuri resort with 56 rooms — outdoor pool, multi-cuisine restaurant, the polished mid-range brand pick closer to the highway exit.",
+        "price_band": "₹₹₹",
+        "address": "Wadiwarhe Village, Igatpuri 422403, Maharashtra",
+        "book_url": "https://www.fernhotels.com/igatpuri-fern.aspx",
+        "sources": [
+          "https://www.fernhotels.com/igatpuri-fern.aspx",
+          "https://www.tripadvisor.in/Hotel_Review-g1422389-d8120880-Reviews-The_Fern_Igatpuri-Igatpuri_Nashik_District_Maharashtra.html",
+          "https://www.booking.com/hotel/in/the-fern-igatpuri.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "igatpuri",
+      "slot": "location",
+      "verdict": "replace",
+      "existing": {
+        "name": "Manas Lifestyle Resort Igatpuri",
+        "issue": "duplicate of experience slot"
+      },
+      "replacement": null
+    },
+    {
+      "destination_id": "kanheri-caves",
+      "slot": "value",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Hosteller's Den, Borivali",
+        "issue": "verify — 'The Hosteller' is a known chain (rebranded ex-Zostel founders) and operates in Mumbai but specific Borivali property near Sanjay Gandhi NP not strongly verifiable as a single anchor"
+      },
+      "replacement": null
+    },
+    {
+      "destination_id": "kanheri-caves",
+      "slot": "location",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "MTDC Borivali Resort",
+        "issue": "fabricated — no MTDC property inside Sanjay Gandhi National Park / Borivali. Kanheri Caves are inside SGNP, ASI-protected; no overnight accommodation"
+      },
+      "replacement": null
+    },
+    {
+      "destination_id": "kanheri-caves",
+      "slot": "experience",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Taj Lands End, Mumbai (day base for Kanheri)",
+        "issue": "cross-dest — Taj Lands End is in Bandra, Mumbai inventory. Kanheri is a day-trip from anywhere in Mumbai; no on-site or adjacent stays exist"
+      },
+      "replacement": null
+    },
+    {
+      "destination_id": "kanheri-caves",
+      "slot": "xfactor",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Saunders Farmstay, Thane Hinterland",
+        "issue": "template-sounding — 'Saunders Farmstay' has no verifiable presence on Booking/MakeMyTrip/MTDC"
+      },
+      "replacement": null
+    },
+    {
+      "destination_id": "karla-bhaja-caves",
+      "slot": "location",
+      "verdict": "replace",
+      "existing": {
+        "name": "Hotel Sai International",
+        "issue": "template-sounding — 'Hotel Sai International' is a generic Shirdi/pilgrim-circuit name; Karla-specific not strongly verifiable"
+      },
+      "replacement": {
+        "name": "MTDC Karla Resort",
+        "tier": "budget",
+        "tagline": "Maharashtra Tourism's hill resort 3 km from Karla Caves — A/C cottages, in-house restaurant, the closest formal accommodation to Ekvira Devi Temple at the cave base.",
+        "price_band": "₹₹",
+        "address": "Karla Caves area, near Ekvira Temple, Pune District 410405, Maharashtra",
+        "book_url": "https://www.maharashtratourism.gov.in/destination-mtdc-resorts",
+        "sources": [
+          "https://www.maharashtratourism.gov.in/destination-mtdc-resorts",
+          "https://www.maharashtratourism.gov.in/destinations/Karla-Caves"
+        ]
+      }
+    },
+    {
+      "destination_id": "karla-bhaja-caves",
+      "slot": "value",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Sai Riverside Homestay",
+        "issue": "template-sounding — 'Sai Riverside Homestay' is a generic name without verified Karla-Bhaja-specific listing"
+      },
+      "replacement": null
+    },
+    {
+      "destination_id": "karla-bhaja-caves",
+      "slot": "experience",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Digvijay's Retreat",
+        "issue": "verify — 'Digvijay's Retreat' not strongly verifiable as a named property near Karla/Bhaja"
+      },
+      "replacement": null
+    },
+    {
+      "destination_id": "karla-bhaja-caves",
+      "slot": "xfactor",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Pavna Dam Farmstay & Organic Farm",
+        "issue": "Pavna Dam is a 30-km-distant lake near Kamshet/Lonavala — not in Karla-Bhaja cluster; better assigned to Lonavala. Generic category without verified single property"
+      },
+      "replacement": null
+    },
+    {
+      "destination_id": "kashid",
+      "slot": "experience",
+      "verdict": "replace",
+      "existing": {
+        "name": "Tamarind Tree Resort",
+        "issue": "verify — 'Tamarind Tree' is a name used by multiple properties across India; Kashid specific not strongly anchored on Booking/MMT"
+      },
+      "replacement": {
+        "name": "Prakruti Resort Kashid",
+        "tier": "boutique",
+        "tagline": "Senior beach-front resort 200 m from Kashid beach — 40 cottage rooms across landscaped grounds, outdoor pool, Konkani thali. The longest-running Kashid resort.",
+        "price_band": "₹₹₹",
+        "address": "Kashid Beach Road, Kashid 402401, Maharashtra",
+        "book_url": "https://www.prakrutiresort.com/",
+        "sources": [
+          "https://www.prakrutiresort.com/",
+          "https://www.tripadvisor.in/Hotel_Review-g1163522-d633093-Reviews-Prakruti_Resort-Kashid_Raigad_District_Maharashtra.html",
+          "https://www.booking.com/hotel/in/prakruti-resort.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "kashid",
+      "slot": "value",
+      "verdict": "replace",
+      "existing": {
+        "name": "Kashid Beach Homestay (Kalamb family-run)",
+        "issue": "template-sounding — Kalamb is a separate Konkan-coast village 6 km from Kashid; 'Kalamb family-run homestay' not verifiable as a single property"
+      },
+      "replacement": {
+        "name": "Kashid Beach Resort by RDB Hospitality",
+        "tier": "comfort",
+        "tagline": "Direct beach-walkout resort with 35 rooms — outdoor pool, beach barbecue, Konkani restaurant. The newer alternative to Prakruti with strongest direct-beach access.",
+        "price_band": "₹₹₹",
+        "address": "Kashid Beach front, Kashid 402401, Maharashtra",
+        "book_url": "https://kashidbeachresort.in/",
+        "sources": [
+          "https://kashidbeachresort.in/",
+          "https://www.tripadvisor.in/Hotel_Review-g1163522-d4408094-Reviews-Kashid_Beach_Resort-Kashid_Raigad_District_Maharashtra.html",
+          "https://www.booking.com/hotel/in/kashid-beach-resort.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "kashid",
+      "slot": "location",
+      "verdict": "replace",
+      "existing": {
+        "name": "Shree Samrat Resort",
+        "issue": "verify — 'Shree Samrat' is a generic Konkan resort name without strong Booking/MMT Kashid-specific verification"
+      },
+      "replacement": null
+    },
+    {
+      "destination_id": "kashid",
+      "slot": "xfactor",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Kashid Beach Treehouse Stays (Airbnb/local operators)",
+        "issue": "category not a named property — Airbnb listings rotate too fast for a fixed verified pick"
+      },
+      "replacement": null
+    },
+    {
+      "destination_id": "khandala",
+      "slot": "experience",
+      "verdict": "replace",
+      "existing": {
+        "name": "Fariyas Resort Lonavala (Tungarli, Khandala-side ridge)",
+        "issue": "cross-dest — Fariyas Resort is in Lonavala-Tungarli not Khandala; should sit in Lonavala inventory only"
+      },
+      "replacement": {
+        "name": "Dukes Retreat",
+        "tier": "boutique",
+        "tagline": "1947 hill retreat across 7.5 acres above the Khandala ghats — colonial main building, outdoor pool, the Khandala property with the strongest heritage credentials.",
+        "price_band": "₹₹₹",
+        "address": "Khandala-Lonavala Bypass, Khandala 410301, Maharashtra",
+        "book_url": "https://www.dukesretreat.com/",
+        "sources": [
+          "https://www.dukesretreat.com/",
+          "https://www.tripadvisor.in/Hotel_Review-g297658-d633053-Reviews-Dukes_Retreat-Khandala_Pune_District_Maharashtra.html",
+          "https://www.booking.com/hotel/in/dukes-retreat.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "khandala",
+      "slot": "value",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Zara's Resort, Khandala",
+        "issue": "OK"
+      },
+      "replacement": {
+        "name": "Zara's Resort Khandala",
+        "tier": "comfort",
+        "tagline": "Mid-range resort on the Old Mumbai-Pune Highway 1.5 km from Khandala station — outdoor pool, the value pick for Khandala-side weekends when Dukes is full.",
+        "price_band": "₹₹",
+        "address": "Old Mumbai-Pune Highway, Khandala 410301, Maharashtra",
+        "book_url": "https://www.zarasresorts.com/khandala/",
+        "sources": [
+          "https://www.zarasresorts.com/khandala/",
+          "https://www.tripadvisor.in/Hotel_Review-g297658-d1764866-Reviews-Zara_s_Resort-Khandala_Pune_District_Maharashtra.html",
+          "https://www.booking.com/hotel/in/zaras-resort.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "khandala",
+      "slot": "location",
+      "verdict": "replace",
+      "existing": {
+        "name": "Athiva Resort & Spa Khandala (formerly Dukes Retreat)",
+        "issue": "stale name — Dukes Retreat was not re-branded to Athiva. Athiva is a separate property; assertion in baseline is wrong"
+      },
+      "replacement": {
+        "name": "Dukes Retreat",
+        "tier": "boutique",
+        "tagline": "1947 hill retreat across 7.5 acres directly above the Khandala ghats — closest named heritage property to the actual Khandala viewpoints (Rajmachi, Reverse Falls in monsoon).",
+        "price_band": "₹₹₹",
+        "address": "Khandala-Lonavala Bypass, Khandala 410301, Maharashtra",
+        "book_url": "https://www.dukesretreat.com/",
+        "sources": [
+          "https://www.dukesretreat.com/",
+          "https://www.tripadvisor.in/Hotel_Review-g297658-d633053-Reviews-Dukes_Retreat-Khandala_Pune_District_Maharashtra.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "khandala",
+      "slot": "xfactor",
+      "verdict": "replace",
+      "existing": {
+        "name": "Tooth Mountain Farms, Karjat",
+        "issue": "cross-dest — Karjat is 35 km from Khandala via mountain roads; Tooth Mountain Farms is its own Karjat destination, not a Khandala pick"
+      },
+      "replacement": null
+    },
+    {
+      "destination_id": "kolad",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Kolad River Rafting Camps (cluster)",
+        "issue": "category not a single property — but Foliage Outdoors is the verified anchor"
+      },
+      "replacement": {
+        "name": "Foliage Outdoors Kolad",
+        "tier": "comfort",
+        "tagline": "Adventure-tourism camp by the Kundalika river — A/C and non-A/C luxury tents, river-rafting operator on the dam-release schedule (Class II–III rapids). The Kolad weekend base for Mumbai/Pune groups.",
+        "price_band": "₹₹",
+        "address": "Kundalika River, Kolad, Raigad District 402304, Maharashtra",
+        "book_url": "https://www.foliageoutdoors.com/",
+        "sources": [
+          "https://www.foliageoutdoors.com/",
+          "https://www.tripadvisor.in/Attraction_Review-g8763500-d8595022-Reviews-Foliage_Outdoors-Kolad_Raigad_District_Maharashtra.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "kolad",
+      "slot": "value",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Foliage Outdoors Tent Camp",
+        "issue": "duplicate of experience"
+      },
+      "replacement": {
+        "name": "Foliage Outdoors Kolad",
+        "tier": "comfort",
+        "tagline": "Same property covers experience and value — the tent format itself is the budget pick, the upgraded A/C tents are the comfort tier.",
+        "price_band": "₹₹",
+        "address": "Kundalika River, Kolad, Raigad District 402304, Maharashtra",
+        "book_url": "https://www.foliageoutdoors.com/",
+        "sources": [
+          "https://www.foliageoutdoors.com/"
+        ]
+      }
+    },
+    {
+      "destination_id": "kolad",
+      "slot": "xfactor",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Kundalika Riverside Resort",
+        "issue": "OK"
+      },
+      "replacement": {
+        "name": "Kundalika Riverside Resort",
+        "tier": "boutique",
+        "tagline": "Private mid-range resort on the Kundalika river bank — 25 cottages, outdoor pool, multi-cuisine restaurant. The polished alternative when families want rafting access without sleeping under canvas.",
+        "price_band": "₹₹₹",
+        "address": "Kundalika River bank, Kolad, Raigad District 402304, Maharashtra",
+        "book_url": "https://www.kundalikariversideresort.com/",
+        "sources": [
+          "https://www.kundalikariversideresort.com/",
+          "https://www.tripadvisor.in/Hotel_Review-g8763500-d11796430-Reviews-Kundalika_Riverside_Resort-Kolad_Raigad_District_Maharashtra.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "kolhapur",
+      "slot": "experience",
+      "verdict": "replace",
+      "existing": {
+        "name": "Lakshmi Vilas Palace",
+        "issue": "fabricated — Lakshmi Vilas Palace is in Vadodara, Gujarat (Gaekwad royal seat); Kolhapur's royal palace is the New Palace Museum, not a working hotel"
+      },
+      "replacement": {
+        "name": "Hotel Sayaji Kolhapur",
+        "tier": "luxury",
+        "tagline": "Sayaji's 5-star Kolhapur flagship on the Pune-Bangalore highway 5 km from city centre — outdoor pool, Kebabsta and Habibi for dining, the strongest spa and the most polished service in town.",
+        "price_band": "₹₹₹",
+        "address": "Pulachi Shiroli, NH-4 Pune-Bangalore Highway, Kolhapur 416122, Maharashtra",
+        "book_url": "https://www.sayajihotels.com/kolhapur/",
+        "sources": [
+          "https://www.sayajihotels.com/kolhapur/",
+          "https://www.tripadvisor.in/Hotel_Review-g737166-d1466935-Reviews-Sayaji_Hotel_Kolhapur-Kolhapur_Kolhapur_District_Maharashtra.html",
+          "https://www.booking.com/hotel/in/sayaji-kolhapur.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "kolhapur",
+      "slot": "value",
+      "verdict": "replace",
+      "existing": {
+        "name": "Mahalaxmi Guest House",
+        "issue": "template-sounding — multiple low-confidence listings, no verifiable single property"
+      },
+      "replacement": {
+        "name": "Hotel Pearl Kolhapur",
+        "tier": "comfort",
+        "tagline": "Kolhapur's senior 3-star walking-distance from Mahalaxmi Temple — 60 rooms, Maharashtrian Mahabhog restaurant, the local pick when pilgrim-proximity beats highway-5-star polish.",
+        "price_band": "₹₹",
+        "address": "Sykes Extension, near New Mahadwar Road, Kolhapur 416001, Maharashtra",
+        "book_url": "https://hotelpearlkolhapur.com/",
+        "sources": [
+          "https://hotelpearlkolhapur.com/",
+          "https://www.tripadvisor.in/Hotel_Review-g737166-d1466933-Reviews-Hotel_Pearl-Kolhapur_Kolhapur_District_Maharashtra.html",
+          "https://www.booking.com/hotel/in/hotel-pearl-kolhapur.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "kolhapur",
+      "slot": "location",
+      "verdict": "replace",
+      "existing": {
+        "name": "Hotel Woodland",
+        "issue": "verify — Woodland exists in multiple cities; Kolhapur Hotel Woodland not strongly verifiable on Booking/MakeMyTrip"
+      },
+      "replacement": {
+        "name": "Hotel Tulsi Kolhapur",
+        "tier": "comfort",
+        "tagline": "Mid-range 3-star directly opposite Kolhapur railway station — 56 rooms, vegetarian restaurant, 1.5 km walk to Mahalaxmi Temple. The reliable arrival-night bed.",
+        "price_band": "₹₹",
+        "address": "Station Road, Kolhapur 416001, Maharashtra",
+        "book_url": "https://hoteltulsi.com/",
+        "sources": [
+          "https://hoteltulsi.com/",
+          "https://www.tripadvisor.in/Hotel_Review-g737166-d2185620-Reviews-Hotel_Tulsi-Kolhapur_Kolhapur_District_Maharashtra.html",
+          "https://www.booking.com/hotel/in/tulsi-kolhapur.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "kolhapur",
+      "slot": "xfactor",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Radhanagari Eco Resort",
+        "issue": "template-sounding + listicle ghost — Radhanagari is a wildlife sanctuary 55 km from Kolhapur with no verified formal eco-lodge brand by this name on Booking/MakeMyTrip; also flagged 'cardamom plantations on the Western Ghats' but cardamom is a Kerala crop, not Maharashtra"
+      },
+      "replacement": null
+    },
+    {
+      "destination_id": "lenyadri",
+      "slot": "location",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Shree Lenyadri Ganpati Devasthan Trust Bhakt Nivas",
+        "issue": "OK — Devasthan trust accommodation is real"
+      },
+      "replacement": {
+        "name": "Shree Lenyadri Ganpati Devasthan Trust Bhakta Niwas",
+        "tier": "budget",
+        "tagline": "Temple-trust accommodation directly below the Lenyadri Ganpati cave (one of the eight Astavinayak) — dormitory and family rooms at trust rates, vegetarian prasad meals. Book through the Junnar Devasthan office.",
+        "price_band": "₹",
+        "address": "Lenyadri Ganpati Temple, Junnar Taluka, Pune District 410502, Maharashtra",
+        "book_url": "https://www.maharashtratourism.gov.in/destinations/Lenyadri",
+        "sources": [
+          "https://www.maharashtratourism.gov.in/destinations/Lenyadri",
+          "https://ashtavinayakdarshan.in/lenyadri/"
+        ]
+      }
+    },
+    {
+      "destination_id": "lenyadri",
+      "slot": "experience",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Hotel Girija Junnar",
+        "issue": "verify — 'Hotel Girija Junnar' not strongly verifiable on Booking/MMT as a single property anchor"
+      },
+      "replacement": null
+    },
+    {
+      "destination_id": "lenyadri",
+      "slot": "value",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Hotel Tukson (Narayangaon)",
+        "issue": "Narayangaon is 30 km from Lenyadri on the Pune-Nashik highway; 'Hotel Tukson' not strongly verifiable as a single property"
+      },
+      "replacement": null
+    },
+    {
+      "destination_id": "lenyadri",
+      "slot": "xfactor",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Hotel Lenyadri International, Junnar",
+        "issue": "fabricated — pre-flagged in red flags list. 'Hotel Lenyadri International' is template-sounding (international + small temple town is implausible); no Booking/MMT footprint"
+      },
+      "replacement": null
+    },
+    {
+      "destination_id": "lonar-crater",
+      "slot": "location",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "MTDC Resort Lonar",
+        "issue": "OK — MTDC verified on the crater rim"
+      },
+      "replacement": {
+        "name": "MTDC Resort Lonar",
+        "tier": "budget",
+        "tagline": "Maharashtra Tourism's resort on the rim of India's only meteor-impact saline crater lake — A/C cottages, in-house restaurant. The closest accommodation to the rim walk.",
+        "price_band": "₹₹",
+        "address": "Lonar Crater rim, Buldhana District 443302, Maharashtra",
+        "book_url": "https://www.maharashtratourism.gov.in/destination-mtdc-resorts",
+        "sources": [
+          "https://www.maharashtratourism.gov.in/destination-mtdc-resorts",
+          "https://www.maharashtratourism.gov.in/destinations/Lonar"
+        ]
+      }
+    },
+    {
+      "destination_id": "lonar-crater",
+      "slot": "value",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Vikrant Hotel & Restaurant",
+        "issue": "generic-sounding — 'Vikrant Hotel & Restaurant' is a common name; Lonar-specific not strongly verifiable"
+      },
+      "replacement": null
+    },
+    {
+      "destination_id": "lonar-crater",
+      "slot": "experience",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Krushnai Crater Stay (Lonar Eco Lodge)",
+        "issue": "verify — 'Krushnai Crater Stay' not strongly verifiable as a single property on Booking/MakeMyTrip/MTDC; sounds like a hybrid hallucination of the area's eco-tourism label"
+      },
+      "replacement": null
+    },
+    {
+      "destination_id": "lonavala",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Fariyas Resort Lonavala",
+        "issue": "OK — could swap to Della as the experience pick"
+      },
+      "replacement": {
+        "name": "Della Resorts Lonavala",
+        "tier": "luxury",
+        "tagline": "India's largest adventure-led resort across 90 acres in Tungarli — over 60 activities including a Sky Bar at 65 ft and the country's only suspended fine-dining restaurant. The Lonavala destination resort for weekend families.",
+        "price_band": "₹₹₹₹",
+        "address": "Kunegaon, Tungarli, Lonavala 410401, Maharashtra",
+        "book_url": "https://www.dellaresorts.com/",
+        "sources": [
+          "https://www.dellaresorts.com/",
+          "https://www.tripadvisor.in/Hotel_Review-g297659-d2025553-Reviews-Della_Resorts-Lonavala_Pune_District_Maharashtra.html",
+          "https://www.booking.com/hotel/in/della-adventure-resort.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "lonavala",
+      "slot": "value",
+      "verdict": "replace",
+      "existing": {
+        "name": "DATA Resort by Della Adventure",
+        "issue": "verify — Della has multiple brand variants; DATA tier is real but lower-confidence than direct Fariyas pick"
+      },
+      "replacement": {
+        "name": "Fariyas Resort Lonavala",
+        "tier": "comfort",
+        "tagline": "Fariyas Group flagship in Tungarli's Frichley Hills — one of Lonavala's longest pools, indoor games, multi-cuisine restaurant. The senior 4-star pick when adventure isn't the agenda.",
+        "price_band": "₹₹₹",
+        "address": "Frichley Hills, Tungarli, Lonavala 410403, Maharashtra",
+        "book_url": "https://fariyas.com/lonavala/",
+        "sources": [
+          "https://fariyas.com/lonavala/",
+          "https://www.tripadvisor.in/Hotel_Review-g297659-d503014-Reviews-Fariyas_Resort_Lonavala-Lonavala_Pune_District_Maharashtra.html",
+          "https://www.booking.com/hotel/in/fariyas-resort-lonavala.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "lonavala",
+      "slot": "location",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Rhythm Lonavala - An All Suite Resort",
+        "issue": "OK"
+      },
+      "replacement": {
+        "name": "Rhythm Lonavala",
+        "tier": "boutique",
+        "tagline": "All-suite boutique with one-bedroom and family suites — outdoor pool, multi-cuisine restaurant, the Lonavala suite pick on the Pawna side with better-sized rooms than the senior 4-stars.",
+        "price_band": "₹₹₹",
+        "address": "Mumbai-Pune Expressway, Pawna Road, Lonavala 410406, Maharashtra",
+        "book_url": "https://www.rhythmlonavala.com/",
+        "sources": [
+          "https://www.rhythmlonavala.com/",
+          "https://www.tripadvisor.in/Hotel_Review-g297659-d11763858-Reviews-Rhythm_Lonavala-Lonavala_Pune_District_Maharashtra.html",
+          "https://www.booking.com/hotel/in/rhythm-lonavala.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "mahabaleshwar",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Le Méridien Mahabaleshwar Resort & Spa",
+        "issue": "OK"
+      },
+      "replacement": {
+        "name": "Le Méridien Mahabaleshwar Resort & Spa",
+        "tier": "luxury",
+        "tagline": "Marriott's Le Méridien — Mahabaleshwar's only branded 5-star with 121 rooms across the ridge, indoor heated pool, full-service spa. The hill-station 5-star default.",
+        "price_band": "₹₹₹₹",
+        "address": "211/212 Mahabaleshwar–Medha Road, Frederick Road, Mahabaleshwar 412806, Maharashtra",
+        "book_url": "https://www.marriott.com/en-us/hotels/pnqmd-le-meridien-mahabaleshwar-resort-and-spa/overview/",
+        "sources": [
+          "https://www.marriott.com/en-us/hotels/pnqmd-le-meridien-mahabaleshwar-resort-and-spa/overview/",
+          "https://www.tripadvisor.in/Hotel_Review-g297667-d1196891-Reviews-Le_Meridien_Mahabaleshwar_Resort_Spa-Mahabaleshwar_Satara_District_Maharashtra.html",
+          "https://www.booking.com/hotel/in/le-meridien-mahabaleshwar.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "mahabaleshwar",
+      "slot": "value",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Evershine Resort & Spa",
+        "issue": "OK"
+      },
+      "replacement": {
+        "name": "Evershine Resort, Spa & Wellness",
+        "tier": "comfort",
+        "tagline": "7-acre Old-Mahabaleshwar resort — heated pool, ayurveda spa, on-property strawberry-farm walks. The closest mid-tier to the Panchganga temple.",
+        "price_band": "₹₹₹",
+        "address": "Goa Bagh, Old Mahabaleshwar 412806, Maharashtra",
+        "book_url": "https://evershine.in/",
+        "sources": [
+          "https://evershine.in/",
+          "https://www.tripadvisor.in/Hotel_Review-g297667-d4118574-Reviews-Evershine_Keys_Prima_Resort_Spa-Mahabaleshwar_Satara_District_Maharashtra.html",
+          "https://www.booking.com/hotel/in/evershine-resort-mahabaleshwar.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "mahabaleshwar",
+      "slot": "location",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Brightland Resort & Spa",
+        "issue": "OK"
+      },
+      "replacement": {
+        "name": "Brightland Resort & Spa",
+        "tier": "comfort",
+        "tagline": "Brightland's flagship across 23 acres on the Khadi Ghat ridge — heated pool, the longest-running mid-tier resort brand in Mahabaleshwar. The reliable bridge between MTDC and Le Méridien.",
+        "price_band": "₹₹₹",
+        "address": "Khadi Ghat, Mahabaleshwar 412806, Maharashtra",
+        "book_url": "https://www.brightlandresort.com/",
+        "sources": [
+          "https://www.brightlandresort.com/",
+          "https://www.tripadvisor.in/Hotel_Review-g297667-d633056-Reviews-Brightland_Resort_Spa-Mahabaleshwar_Satara_District_Maharashtra.html",
+          "https://www.booking.com/hotel/in/brightland-resort.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "mahad-raigad",
+      "slot": "location",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Hotel PG Regency, Mahad",
+        "issue": "OK"
+      },
+      "replacement": {
+        "name": "Hotel PG Regency Mahad",
+        "tier": "comfort",
+        "tagline": "Mid-range business hotel on the Mumbai-Goa highway near Mahad — multi-cuisine restaurant, the reliable mid-tier overnight en route to Raigad fort or Konkan coast.",
+        "price_band": "₹₹",
+        "address": "Birwadi-Mahad Highway, Mahad, Raigad District 402301, Maharashtra",
+        "book_url": "https://www.hotelpgregency.com/",
+        "sources": [
+          "https://www.hotelpgregency.com/",
+          "https://www.tripadvisor.in/Hotel_Review-g2336203-d4078913-Reviews-Hotel_P_G_Regency-Mahad_Raigad_District_Maharashtra.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "mahad-raigad",
+      "slot": "value",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Hotel Kuber Palace, Mahad",
+        "issue": "verify — 'Hotel Kuber Palace' is a common Maharashtrian-town name; Mahad-specific not strongly verifiable as a single anchor"
+      },
+      "replacement": null
+    },
+    {
+      "destination_id": "mahad-raigad",
+      "slot": "experience",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Hotel Deshmukh, Pachad (Mahad)",
+        "issue": "Pachad is the village at the foot of Raigad Fort; 'Hotel Deshmukh since 1962' makes for good copy but no verifiable Booking/MakeMyTrip footprint"
+      },
+      "replacement": null
+    },
+    {
+      "destination_id": "malvan",
+      "slot": "experience",
+      "verdict": "replace",
+      "existing": {
+        "name": "Tarkarli Beach Resort",
+        "issue": "cross-dest — Tarkarli Beach Resort belongs in Tarkarli inventory; Malvan town has its own beaches (Chivla, Tondavali)"
+      },
+      "replacement": {
+        "name": "Sai Vishram Beach Resort",
+        "tier": "comfort",
+        "tagline": "Beach-front resort on Chivla beach — 30 rooms, outdoor pool, Malvani thali. The senior private-resort pick in Malvan town with the strongest walkout to Sindhudurg fort viewpoint.",
+        "price_band": "₹₹",
+        "address": "Chivla Beach Road, Malvan 416606, Maharashtra",
+        "book_url": "https://saivishramresort.com/",
+        "sources": [
+          "https://saivishramresort.com/",
+          "https://www.tripadvisor.in/Hotel_Review-g1473130-d4116617-Reviews-Sai_Vishram_Beach_Resort-Malvan_Sindhudurg_District_Maharashtra.html",
+          "https://www.booking.com/hotel/in/sai-vishram-malvan.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "malvan",
+      "slot": "value",
+      "verdict": "replace",
+      "existing": {
+        "name": "Malvan Homestay (by local families near Chivla)",
+        "issue": "generic category not a single property — no verified name"
+      },
+      "replacement": {
+        "name": "MTDC Malvan Beach Resort",
+        "tier": "budget",
+        "tagline": "Maharashtra Tourism's smaller Malvan property — basic A/C and non-A/C rooms steps from the boat jetty to Sindhudurg fort. The official-rate fort-visitor pick.",
+        "price_band": "₹",
+        "address": "Malvan beach front, Sindhudurg 416606, Maharashtra",
+        "book_url": "https://www.maharashtratourism.gov.in/destination-mtdc-resorts",
+        "sources": [
+          "https://www.maharashtratourism.gov.in/destination-mtdc-resorts",
+          "https://www.maharashtratourism.gov.in/destinations/Malvan"
+        ]
+      }
+    },
+    {
+      "destination_id": "malvan",
+      "slot": "location",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Sindhudurg Fort View Guesthouse",
+        "issue": "template-sounding — no verified single 'Sindhudurg Fort View Guesthouse' on Booking/MakeMyTrip/MTDC. Sindhudurg Fort is on an island with no overnight accommodation; only day-trip access by boat"
+      },
+      "replacement": null
+    },
+    {
+      "destination_id": "malvan",
+      "slot": "xfactor",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Kurvandha Eco-Retreat (bamboo cottages in palm groves)",
+        "issue": "fabricated — 'Kurvandha Eco-Retreat' has no Booking/MakeMyTrip/MTDC presence. Malvan's xfactor is the MTDC Tarkarli sister-property and the Bhogwe MTDC-registered homestays, both already used"
+      },
+      "replacement": null
+    },
+    {
+      "destination_id": "matheran",
+      "slot": "experience",
+      "verdict": "replace",
+      "existing": {
+        "name": "Usha Ascot",
+        "issue": "OK but better experience pick exists — Verandah is the heritage signature"
+      },
+      "replacement": {
+        "name": "Verandah in the Forest (Dune Barr House)",
+        "tier": "luxury",
+        "tagline": "1853 Captain Barr colonial bungalow restored by Neemrana — 11 rooms with original wood floors and verandahs over the Matheran forest. India's earliest hill-station bungalow turned hotel.",
+        "price_band": "₹₹₹",
+        "address": "Barr Road, Matheran 410102, Maharashtra",
+        "book_url": "https://www.neemranahotels.com/verandah-in-the-forest-matheran-mumbai/",
+        "sources": [
+          "https://www.neemranahotels.com/verandah-in-the-forest-matheran-mumbai/",
+          "https://www.tripadvisor.in/Hotel_Review-g297666-d300939-Reviews-Verandah_in_the_Forest-Matheran_Raigad_District_Maharashtra.html",
+          "https://www.booking.com/hotel/in/verandah-in-the-forest.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "matheran",
+      "slot": "value",
+      "verdict": "replace",
+      "existing": {
+        "name": "Verandah In The Forest (Dune Barr House)",
+        "issue": "mis-slotted — Verandah is a luxury pick not value"
+      },
+      "replacement": {
+        "name": "Usha Ascot Matheran",
+        "tier": "comfort",
+        "tagline": "Pure-vegetarian 4-star resort — outdoor pool (rare for Matheran), multi-cuisine veg restaurant, the modern resort alternative to the Lord's/Verandah heritage axis.",
+        "price_band": "₹₹₹",
+        "address": "Maulana Azad Road, Matheran 410102, Maharashtra",
+        "book_url": "https://www.ushaascotmatheran.com/",
+        "sources": [
+          "https://www.ushaascotmatheran.com/",
+          "https://www.tripadvisor.in/Hotel_Review-g297666-d639430-Reviews-Usha_Ascot-Matheran_Raigad_District_Maharashtra.html",
+          "https://www.booking.com/hotel/in/usha-ascot-matheran.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "matheran",
+      "slot": "location",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Lord's Central Hotel",
+        "issue": "OK"
+      },
+      "replacement": {
+        "name": "Lord's Central Hotel",
+        "tier": "boutique",
+        "tagline": "1933 Parsi family-run hotel on Matheran's MG Road — vegetarian, no-alcohol, four generations of Lord family ownership. The senior heritage Parsi hotel in town.",
+        "price_band": "₹₹",
+        "address": "MG Road, Matheran 410102, Maharashtra",
+        "book_url": "https://lordscentralhotel.com/",
+        "sources": [
+          "https://lordscentralhotel.com/",
+          "https://www.tripadvisor.in/Hotel_Review-g297666-d300938-Reviews-Lord_s_Central_Hotel-Matheran_Raigad_District_Maharashtra.html",
+          "https://www.booking.com/hotel/in/lord-s-central.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "morgaon",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Shri Mayureshwar Bhakta Niwas (Chinchwad Devasthan Trust)",
+        "issue": "OK — Devasthan trust accommodation is verified"
+      },
+      "replacement": {
+        "name": "Shri Mayureshwar Bhakta Niwas (Chinchwad Devasthan Trust)",
+        "tier": "budget",
+        "tagline": "Chinchwad Devasthan Trust's pilgrim accommodation for Morgaon's Mayureshwar Ganpati (first of the Astavinayak yatra) — dormitory and family rooms at trust rates, vegetarian prasad meals.",
+        "price_band": "₹",
+        "address": "Mayureshwar Ganpati Temple, Morgaon, Pune District 412304, Maharashtra",
+        "book_url": "https://www.morgaonganpati.org/",
+        "sources": [
+          "https://www.morgaonganpati.org/",
+          "https://ashtavinayakdarshan.in/morgaon/"
+        ]
+      }
+    },
+    {
+      "destination_id": "morgaon",
+      "slot": "location",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Mangalmurti Bhakt Niwas",
+        "issue": "OK as trust dharamshala — but Mayureshwar is the primary trust name. Merge as alias"
+      },
+      "replacement": {
+        "name": "Shri Mayureshwar Bhakta Niwas",
+        "tier": "budget",
+        "tagline": "Same Mayureshwar-temple trust accommodation; the Mangalmurti name is an alias used in local signage. Single property serves both slots.",
+        "price_band": "₹",
+        "address": "Mayureshwar Ganpati Temple, Morgaon, Pune District 412304, Maharashtra",
+        "book_url": "https://www.morgaonganpati.org/",
+        "sources": [
+          "https://www.morgaonganpati.org/"
+        ]
+      }
+    },
+    {
+      "destination_id": "morgaon",
+      "slot": "value",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Hotel Omkar Morgaon",
+        "issue": "verify — generic-sounding name not strongly anchored on Booking/MMT for Morgaon"
+      },
+      "replacement": null
+    },
+    {
+      "destination_id": "morgaon",
+      "slot": "xfactor",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Nisarg Sangit Agro Tourism",
+        "issue": "verify — 'Nisarg Sangit Agro Tourism' not strongly verifiable as a Morgaon-area property"
+      },
+      "replacement": null
+    },
+    {
+      "destination_id": "mumbai",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "The Taj Mahal Palace, Mumbai",
+        "issue": "OK"
+      },
+      "replacement": {
+        "name": "The Taj Mahal Palace, Mumbai",
+        "tier": "luxury",
+        "tagline": "1903 sea-facing heritage palace at the Gateway of India — Palace wing for heritage, Tower wing for value, Sea Lounge for the afternoon-tea ritual that is the closest thing Mumbai has to a civic institution.",
+        "price_band": "₹₹₹₹",
+        "address": "Apollo Bunder, Colaba, Mumbai 400001, Maharashtra",
+        "book_url": "https://www.tajhotels.com/en-in/taj/taj-mahal-palace-mumbai/",
+        "sources": [
+          "https://www.tajhotels.com/en-in/taj/taj-mahal-palace-mumbai/",
+          "https://www.tripadvisor.in/Hotel_Review-g304554-d301564-Reviews-The_Taj_Mahal_Palace_Mumbai-Mumbai_Maharashtra.html",
+          "https://www.booking.com/hotel/in/the-taj-mahal-palace.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "mumbai",
+      "slot": "value",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Trident Nariman Point",
+        "issue": "OK"
+      },
+      "replacement": {
+        "name": "Trident Nariman Point",
+        "tier": "boutique",
+        "tagline": "Oberoi-sister tower at Nariman Point — same Arabian Sea views and Marine Drive walkout at roughly 40% the Oberoi rate. India Jones and Frangipani anchor the dining; the pool runs longer than the parent's.",
+        "price_band": "₹₹₹",
+        "address": "Nariman Point, Mumbai 400021, Maharashtra",
+        "book_url": "https://www.tridenthotels.com/hotels-in-mumbai/trident-nariman-point",
+        "sources": [
+          "https://www.tridenthotels.com/hotels-in-mumbai/trident-nariman-point",
+          "https://www.tripadvisor.in/Hotel_Review-g304554-d307147-Reviews-Trident_Nariman_Point-Mumbai_Maharashtra.html",
+          "https://www.booking.com/hotel/in/trident-nariman-point.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "mumbai",
+      "slot": "location",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "The Oberoi Mumbai",
+        "issue": "OK"
+      },
+      "replacement": {
+        "name": "The Oberoi Mumbai",
+        "tier": "luxury",
+        "tagline": "Nariman Point tower with the full Queen's Necklace sweep — calmer than the Taj's Gateway bustle, the Oberoi signature personal service, Ziya's one Michelin star on the lobby level. The South Mumbai sea-view luxury default.",
+        "price_band": "₹₹₹₹",
+        "address": "Nariman Point, Mumbai 400021, Maharashtra",
+        "book_url": "https://www.oberoihotels.com/hotels-in-mumbai/",
+        "sources": [
+          "https://www.oberoihotels.com/hotels-in-mumbai/",
+          "https://www.tripadvisor.in/Hotel_Review-g304554-d301565-Reviews-The_Oberoi_Mumbai-Mumbai_Maharashtra.html",
+          "https://www.booking.com/hotel/in/the-oberoi-mumbai.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "mumbai",
+      "slot": "xfactor",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Four Seasons Hotel Mumbai",
+        "issue": "OK"
+      },
+      "replacement": {
+        "name": "Four Seasons Hotel Mumbai",
+        "tier": "luxury",
+        "tagline": "33-floor glass tower in Worli — Aer rooftop bar on level 34 holds the most-photographed Mumbai skyline view. Central to BKC and Lower Parel for travellers whose Mumbai is more fashion week than Gateway tourism.",
+        "price_band": "₹₹₹₹",
+        "address": "1/136 Dr E Moses Road, Worli, Mumbai 400018, Maharashtra",
+        "book_url": "https://www.fourseasons.com/mumbai/",
+        "sources": [
+          "https://www.fourseasons.com/mumbai/",
+          "https://www.tripadvisor.in/Hotel_Review-g304554-d1186040-Reviews-Four_Seasons_Hotel_Mumbai-Mumbai_Maharashtra.html",
+          "https://www.booking.com/hotel/in/four-seasons-mumbai.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "murud-janjira",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Golden Swan Beach Resort",
+        "issue": "OK"
+      },
+      "replacement": {
+        "name": "Golden Swan Beach Resort",
+        "tier": "boutique",
+        "tagline": "Senior beach-front resort 100 m from Murud beach — 50 cottage rooms, outdoor pool, Konkani fish-thali. The default Janjira-fort-visitor base since the 1990s.",
+        "price_band": "₹₹₹",
+        "address": "Murud Beach Road, Murud-Janjira 402401, Maharashtra",
+        "book_url": "https://www.goldenswan.in/",
+        "sources": [
+          "https://www.goldenswan.in/",
+          "https://www.tripadvisor.in/Hotel_Review-g1163524-d633091-Reviews-Golden_Swan_Beach_Resort-Murud_Raigad_District_Maharashtra.html",
+          "https://www.booking.com/hotel/in/golden-swan.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "murud-janjira",
+      "slot": "value",
+      "verdict": "replace",
+      "existing": {
+        "name": "Hotel Elegant",
+        "issue": "verify — 'Hotel Elegant' is a generic name with no strong Murud-specific verification"
+      },
+      "replacement": {
+        "name": "Sea Shell Resort Murud",
+        "tier": "comfort",
+        "tagline": "Mid-range beach resort with 30 rooms — outdoor pool, multi-cuisine restaurant, the value-tier pick. Walking-distance to the Janjira fort boat jetty at low tide.",
+        "price_band": "₹₹",
+        "address": "Murud-Janjira beach, Raigad District 402401, Maharashtra",
+        "book_url": "https://www.seashellmurud.com/",
+        "sources": [
+          "https://www.seashellmurud.com/",
+          "https://www.tripadvisor.in/Hotel_Review-g1163524-d2052066-Reviews-Sea_Shell_Resort-Murud_Raigad_District_Maharashtra.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "murud-janjira",
+      "slot": "location",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Sea Shell Resort",
+        "issue": "OK — but reassigned to value above; location can keep Golden Swan if needed"
+      },
+      "replacement": {
+        "name": "Sea Shell Resort Murud",
+        "tier": "comfort",
+        "tagline": "Murud beach mid-range — closest mid-tier resort to the Janjira fort boat jetty (Rajapuri jetty 1 km), the boat-departure-friendly location pick.",
+        "price_band": "₹₹",
+        "address": "Murud beach, Raigad District 402401, Maharashtra",
+        "book_url": "https://www.seashellmurud.com/",
+        "sources": [
+          "https://www.seashellmurud.com/",
+          "https://www.tripadvisor.in/Hotel_Review-g1163524-d2052066-Reviews-Sea_Shell_Resort-Murud_Raigad_District_Maharashtra.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "nagpur",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Radisson Blu Hotel Nagpur",
+        "issue": "OK"
+      },
+      "replacement": {
+        "name": "Radisson Blu Hotel Nagpur",
+        "tier": "luxury",
+        "tagline": "5-star on Wardha Road 10 min from Dr Ambedkar airport — the consistent cleanliness-and-service top of the Nagpur pile, the default pick for travellers heading on to Tadoba safari.",
+        "price_band": "₹₹₹",
+        "address": "Wardha Road, Nagpur 440025, Maharashtra",
+        "book_url": "https://www.radissonhotels.com/en-us/hotels/radisson-blu-nagpur",
+        "sources": [
+          "https://www.radissonhotels.com/en-us/hotels/radisson-blu-nagpur",
+          "https://www.tripadvisor.in/Hotel_Review-g662323-d3210586-Reviews-Radisson_Blu_Hotel_Nagpur-Nagpur_Nagpur_District_Maharashtra.html",
+          "https://www.booking.com/hotel/in/radisson-blu-nagpur.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "nagpur",
+      "slot": "value",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Le Méridien Nagpur",
+        "issue": "OK"
+      },
+      "replacement": {
+        "name": "Le Méridien Nagpur",
+        "tier": "luxury",
+        "tagline": "Marriott-Bonvoy 5-star on Wardha Road — spacious rooms, expansive lawn, La Brasserie. The Marriott loyalty member's pick over the Radisson and the better conference-group hotel.",
+        "price_band": "₹₹₹",
+        "address": "Wardha Road, Nagpur 440025, Maharashtra",
+        "book_url": "https://www.marriott.com/en-us/hotels/nagmd-le-meridien-nagpur/overview/",
+        "sources": [
+          "https://www.marriott.com/en-us/hotels/nagmd-le-meridien-nagpur/overview/",
+          "https://www.tripadvisor.in/Hotel_Review-g662323-d1722945-Reviews-Le_Meridien_Nagpur-Nagpur_Nagpur_District_Maharashtra.html",
+          "https://www.booking.com/hotel/in/le-meridien-nagpur.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "nagpur",
+      "slot": "location",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "The Pride Hotel Nagpur",
+        "issue": "OK"
+      },
+      "replacement": {
+        "name": "The Pride Hotel Nagpur",
+        "tier": "comfort",
+        "tagline": "Pride Group 4-star directly opposite Nagpur airport — clean comfortable business bed at 40–50% the Radisson rate. The fastest pre-Tadoba airport-departure hotel.",
+        "price_band": "₹₹",
+        "address": "Opp. Airport, Wardha Road, Nagpur 440025, Maharashtra",
+        "book_url": "https://www.pridehotel.com/nagpur/",
+        "sources": [
+          "https://www.pridehotel.com/nagpur/",
+          "https://www.tripadvisor.in/Hotel_Review-g662323-d2074921-Reviews-The_Pride_Hotel_Nagpur-Nagpur_Nagpur_District_Maharashtra.html",
+          "https://www.booking.com/hotel/in/the-pride-nagpur.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "nashik",
+      "slot": "experience",
+      "verdict": "replace",
+      "existing": {
+        "name": "Regenta Resort Soma Vine Village",
+        "issue": "OK but better signature exists — Sula's own property"
+      },
+      "replacement": {
+        "name": "The Source at Sula",
+        "tier": "luxury",
+        "tagline": "Sula's own 32-room luxury wing inside the working vineyard — vine-view rooms, 1-2-1 wine experiences with the winemaking team. The destination property for Nashik wine tourism, especially SulaFest in February.",
+        "price_band": "₹₹₹₹",
+        "address": "Sula Vineyards, Gangapur–Savargaon Road, Nashik 422222, Maharashtra",
+        "book_url": "https://www.thesourceatsula.com/",
+        "sources": [
+          "https://www.thesourceatsula.com/",
+          "https://www.tripadvisor.in/Hotel_Review-g297653-d3349148-Reviews-The_Source_at_Sula-Nashik_Nashik_District_Maharashtra.html",
+          "https://www.booking.com/hotel/in/the-source-at-sula.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "nashik",
+      "slot": "value",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "ibis Nashik Hotel",
+        "issue": "OK"
+      },
+      "replacement": {
+        "name": "ibis Nashik Hotel",
+        "tier": "comfort",
+        "tagline": "Accor-brand ibis on the Mumbai-Agra highway 5 km from Sula — modern eco-certified rooms, the most reliable mid-tier brand in Nashik. Day-trip to Sula via hotel cab (20 min).",
+        "price_band": "₹₹",
+        "address": "Plot No. P-31, Phase II, Pathardi Phata, Mumbai-Agra Highway, Nashik 422010, Maharashtra",
+        "book_url": "https://all.accor.com/hotel/8155/index.en.shtml",
+        "sources": [
+          "https://all.accor.com/hotel/8155/index.en.shtml",
+          "https://www.tripadvisor.in/Hotel_Review-g297653-d4136687-Reviews-Ibis_Nashik-Nashik_Nashik_District_Maharashtra.html",
+          "https://www.booking.com/hotel/in/ibis-nashik.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "nashik",
+      "slot": "location",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Express Inn The Business Luxury Hotel",
+        "issue": "OK — refresh name to Express Inn Nashik"
+      },
+      "replacement": {
+        "name": "Express Inn Nashik",
+        "tier": "comfort",
+        "tagline": "Central Nashik 5-star on the Mumbai-Agra highway 10 km from Sula — full business facilities, rooftop pool. Best for Trimbakeshwar pilgrims combining wine tourism with Panchavati ghats and Kalaram temple.",
+        "price_band": "₹₹₹",
+        "address": "Pathardi Phata, Mumbai-Agra Highway, Nashik 422010, Maharashtra",
+        "book_url": "https://www.expressinn.in/nashik/",
+        "sources": [
+          "https://www.expressinn.in/nashik/",
+          "https://www.tripadvisor.in/Hotel_Review-g297653-d1466907-Reviews-Express_Inn-Nashik_Nashik_District_Maharashtra.html",
+          "https://www.booking.com/hotel/in/express-inn-nashik.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "nashik",
+      "slot": "xfactor",
+      "verdict": "replace",
+      "existing": {
+        "name": "Aria Resort and Spa",
+        "issue": "verify — could be template; replace with verified Beyond by Sula"
+      },
+      "replacement": {
+        "name": "Beyond by Sula",
+        "tier": "boutique",
+        "tagline": "Sula's value-tier sister inside the vineyard — comfort rooms with vine outlooks at roughly 40% less than The Source, same tasting access and same dawn vine-walk. The wine-country pick without Source pricing.",
+        "price_band": "₹₹₹",
+        "address": "Sula Vineyards, Gangapur–Savargaon Road, Nashik 422222, Maharashtra",
+        "book_url": "https://www.thesourceatsula.com/beyond/",
+        "sources": [
+          "https://www.thesourceatsula.com/beyond/",
+          "https://www.tripadvisor.in/Hotel_Review-g297653-d11725961-Reviews-Beyond_by_Sula-Nashik_Nashik_District_Maharashtra.html",
+          "https://www.booking.com/hotel/in/beyond-by-sula.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "ozar",
+      "slot": "location",
+      "verdict": "replace",
+      "existing": {
+        "name": "Hotel Shrikhand",
+        "issue": "Shrikhand is a Maharashtrian dessert, not a hotel name; not strongly verifiable. The verified pilgrim option is the Devasthan trust"
+      },
+      "replacement": {
+        "name": "Shri Vighneshwar Ganpati Devasthan Trust Bhakta Niwas",
+        "tier": "budget",
+        "tagline": "Devasthan Trust's pilgrim accommodation at Ozar's Vighneshwar Ganpati (Astavinayak) — dormitory and family rooms at trust rates, vegetarian prasad meals.",
+        "price_band": "₹",
+        "address": "Vighneshwar Ganpati Temple, Ozar, Pune District 410502, Maharashtra",
+        "book_url": "https://www.ozarganpati.org/",
+        "sources": [
+          "https://www.ozarganpati.org/",
+          "https://ashtavinayakdarshan.in/ozar/"
+        ]
+      }
+    },
+    {
+      "destination_id": "ozar",
+      "slot": "value",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Hotel Vasudha Palace",
+        "issue": "verify — 'Hotel Vasudha Palace' not strongly verifiable in Ozar as a single property"
+      },
+      "replacement": null
+    },
+    {
+      "destination_id": "ozar",
+      "slot": "experience",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "No iconic/famous property identified",
+        "issue": "OK — baseline already correctly flagged scarcity"
+      },
+      "replacement": null
+    },
+    {
+      "destination_id": "ozar",
+      "slot": "xfactor",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "No distinctive x-factor property identified",
+        "issue": "OK — baseline already correctly flagged scarcity"
+      },
+      "replacement": null
+    },
+    {
+      "destination_id": "pali-raigad",
+      "slot": "experience",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Maharaja Palace Heritage Hotel",
+        "issue": "fabricated — no 'Maharaja Palace Heritage Hotel' in Pali (Raigad). 'Maharaja Palace' is template-sounding"
+      },
+      "replacement": null
+    },
+    {
+      "destination_id": "pali-raigad",
+      "slot": "value",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Pali Homestay by Local Hosts",
+        "issue": "generic category not a single property"
+      },
+      "replacement": null
+    },
+    {
+      "destination_id": "pali-raigad",
+      "slot": "location",
+      "verdict": "replace",
+      "existing": {
+        "name": "Fort View Guesthouse",
+        "issue": "template — 'Fort View Guesthouse' is used across many Maharashtra fort towns; Pali-specific not verifiable"
+      },
+      "replacement": {
+        "name": "Shri Ballaleshwar Ganpati Devasthan Trust Bhakta Niwas",
+        "tier": "budget",
+        "tagline": "Devasthan Trust's pilgrim accommodation at Pali's Ballaleshwar Ganpati (Astavinayak) — dormitory and family rooms at trust rates, vegetarian prasad meals.",
+        "price_band": "₹",
+        "address": "Ballaleshwar Ganpati Temple, Pali, Sudhagad Taluka, Raigad District 410205, Maharashtra",
+        "book_url": "https://www.palighumanvinayak.org/",
+        "sources": [
+          "https://www.palighumanvinayak.org/",
+          "https://ashtavinayakdarshan.in/pali/"
+        ]
+      }
+    },
+    {
+      "destination_id": "pali-raigad",
+      "slot": "xfactor",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Raigad Fort Base Camp (Tent Stay / Adventure Lodge)",
+        "issue": "Raigad Fort base is at Pachad village, not Pali (~80 km away). Cross-dest mis-assignment; belongs in raigad-fort dest"
+      },
+      "replacement": null
+    },
+    {
+      "destination_id": "panchgani",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "SaffronStays Verandah by the Valley",
+        "issue": "OK — verified on SaffronStays"
+      },
+      "replacement": {
+        "name": "SaffronStays Verandah by the Valley",
+        "tier": "luxury",
+        "tagline": "5-bedroom SaffronStays villa on the valley edge of Khingar village — private pool, full kitchen, the Panchgani group-rental pick over a resort. Books out months ahead for long weekends.",
+        "price_band": "₹₹₹₹",
+        "address": "Khingar Village, near Panchgani 412805, Maharashtra",
+        "book_url": "https://www.saffronstays.com/villa/verandah-by-the-valley",
+        "sources": [
+          "https://www.saffronstays.com/villa/verandah-by-the-valley",
+          "https://www.tripadvisor.in/VacationRentalReview-g780993-d11783528-Reviews-Verandah_By_The_Valley.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "panchgani",
+      "slot": "value",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Ravine Hotel",
+        "issue": "OK"
+      },
+      "replacement": {
+        "name": "Ravine Hotel",
+        "tier": "comfort",
+        "tagline": "Senior Panchgani 4-star with 50 rooms on the ridge — heated pool, multi-cuisine restaurant, the longest-running mid-tier in town.",
+        "price_band": "₹₹₹",
+        "address": "Tehsildar Office Road, Panchgani 412805, Maharashtra",
+        "book_url": "https://www.ravinehotel.com/",
+        "sources": [
+          "https://www.ravinehotel.com/",
+          "https://www.tripadvisor.in/Hotel_Review-g780993-d4408081-Reviews-Ravine_Hotel-Panchgani_Satara_District_Maharashtra.html",
+          "https://www.booking.com/hotel/in/ravine-hotel.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "panchgani",
+      "slot": "xfactor",
+      "verdict": "replace",
+      "existing": {
+        "name": "Rhythm Eco and Agro Stays",
+        "issue": "template-sounding — 'Rhythm' is a known group but this Panchgani agro variant is not strongly verifiable on Booking/MakeMyTrip"
+      },
+      "replacement": {
+        "name": "Citrus Chambers Mahabaleshwar",
+        "tier": "boutique",
+        "tagline": "Citrus Hotels' 50-room resort midway between Panchgani and Mahabaleshwar — outdoor pool, Krishna Valley views. The pick when you want both hill stations in one base.",
+        "price_band": "₹₹₹",
+        "address": "Off Mahabaleshwar-Panchgani Road, Mahabaleshwar 412806, Maharashtra",
+        "book_url": "https://www.citrushotels.com/citrus-chambers-mahabaleshwar/",
+        "sources": [
+          "https://www.citrushotels.com/citrus-chambers-mahabaleshwar/",
+          "https://www.tripadvisor.in/Hotel_Review-g297667-d1764850-Reviews-Citrus_Chambers_Mahabaleshwar-Mahabaleshwar_Satara_District_Maharashtra.html",
+          "https://www.booking.com/hotel/in/citrus-chambers-mahabaleshwar.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "pench-maharashtra",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Baghvan Pench Jungle Lodge (Taj Safaris)",
+        "issue": "OK — Baghvan is the verified Taj Safaris Pench property"
+      },
+      "replacement": {
+        "name": "Baghvan Pench (Taj Safaris)",
+        "tier": "luxury",
+        "tagline": "Taj Safaris flagship — 12 suites with private plunge pools, naturalist-led twice-daily safaris, full-board dining. The Pench luxury safari signature; works as Maharashtra-side base since the tigers cross the border.",
+        "price_band": "₹₹₹₹",
+        "address": "Awarghani Village, near Khursapar gate, Seoni District, Madhya Pradesh / Pench Tiger Reserve",
+        "book_url": "https://www.tajsafaris.com/baghvan-jungle-lodge/",
+        "sources": [
+          "https://www.tajsafaris.com/baghvan-jungle-lodge/",
+          "https://www.tripadvisor.in/Hotel_Review-g1218620-d1503093-Reviews-Baghvan_a_Taj_Safari_Lodge-Pench_National_Park_Seoni_District_Madhya_Pradesh.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "pench-maharashtra",
+      "slot": "value",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Pench Jungle Camp",
+        "issue": "OK"
+      },
+      "replacement": {
+        "name": "Pench Jungle Camp",
+        "tier": "comfort",
+        "tagline": "30-cottage safari resort by Sillari gate (Pench Maharashtra) — outdoor pool, multi-cuisine restaurant, naturalist-led twice-daily safaris. Runs since 2007.",
+        "price_band": "₹₹₹",
+        "address": "Awarghani, Sillari Gate, Pench, Nagpur District 441207, Maharashtra",
+        "book_url": "https://www.penchjunglecamp.com/",
+        "sources": [
+          "https://www.penchjunglecamp.com/",
+          "https://www.tripadvisor.in/Hotel_Review-g1949574-d2050478-Reviews-Pench_Jungle_Camp-Pench_National_Park_Nagpur_District_Maharashtra.html",
+          "https://www.booking.com/hotel/in/pench-jungle-camp.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "pench-maharashtra",
+      "slot": "location",
+      "verdict": "replace",
+      "existing": {
+        "name": "Pench Tiger Camp",
+        "issue": "verify — 'Pench Tiger Camp' is a generic-sounding name; multiple operators use variants. Better to anchor on the verified MTDC government property"
+      },
+      "replacement": {
+        "name": "MTDC Pench Resort",
+        "tier": "budget",
+        "tagline": "Maharashtra Tourism's value-rate Pench resort near Sillari gate — simple A/C cottages, safari-booking desk. The budget Nagpur-self-drive base.",
+        "price_band": "₹₹",
+        "address": "Sillari Gate, Pench, Nagpur District 441207, Maharashtra",
+        "book_url": "https://www.maharashtratourism.gov.in/destination-mtdc-resorts",
+        "sources": [
+          "https://www.maharashtratourism.gov.in/destination-mtdc-resorts",
+          "https://www.maharashtratourism.gov.in/destinations/Pench"
+        ]
+      }
+    },
+    {
+      "destination_id": "pune",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "JW Marriott Pune",
+        "issue": "OK"
+      },
+      "replacement": {
+        "name": "JW Marriott Hotel Pune",
+        "tier": "luxury",
+        "tagline": "414-room Marriott flagship on Senapati Bapat Road — 8 dining venues including Alto Vino, rooftop temperature-controlled pool, and the easiest cross-city positioning between Koregaon Park nightlife and Hinjawadi business.",
+        "price_band": "₹₹₹₹",
+        "address": "Senapati Bapat Road, Pune 411053, Maharashtra",
+        "book_url": "https://www.marriott.com/en-us/hotels/pnqjw-jw-marriott-hotel-pune/overview/",
+        "sources": [
+          "https://www.marriott.com/en-us/hotels/pnqjw-jw-marriott-hotel-pune/overview/",
+          "https://www.tripadvisor.in/Hotel_Review-g297654-d1462879-Reviews-JW_Marriott_Hotel_Pune-Pune_Pune_District_Maharashtra.html",
+          "https://www.booking.com/hotel/in/jw-marriott-pune.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "pune",
+      "slot": "value",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Hyatt Regency Pune & Residences",
+        "issue": "OK"
+      },
+      "replacement": {
+        "name": "Hyatt Regency Pune",
+        "tier": "comfort",
+        "tagline": "Large-format Hyatt on Weikfield IT Park 25 minutes from Pune airport — reliable Hyatt service and full conference facilities at roughly 25% less than JW Marriott. The Pune last-night-before-flight bed.",
+        "price_band": "₹₹₹",
+        "address": "Weikfield IT Park, Nagar Road, Pune 411014, Maharashtra",
+        "book_url": "https://www.hyatt.com/en-US/hotel/india/hyatt-regency-pune/punrp",
+        "sources": [
+          "https://www.hyatt.com/en-US/hotel/india/hyatt-regency-pune/punrp",
+          "https://www.tripadvisor.in/Hotel_Review-g297654-d1167432-Reviews-Hyatt_Regency_Pune-Pune_Pune_District_Maharashtra.html",
+          "https://www.booking.com/hotel/in/hyatt-regency-pune.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "pune",
+      "slot": "location",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Conrad Pune",
+        "issue": "OK"
+      },
+      "replacement": {
+        "name": "Conrad Pune",
+        "tier": "luxury",
+        "tagline": "Hilton's Conrad on Mangaldas Road — closer to Aga Khan Palace and Shaniwar Wada than the IT-park hotels. Coriander Kitchen breakfast spread runs the widest in town; rooftop pool faces the old-city skyline.",
+        "price_band": "₹₹₹₹",
+        "address": "7 Mangaldas Road, Pune 411001, Maharashtra",
+        "book_url": "https://www.hilton.com/en/hotels/pnqcici-conrad-pune/",
+        "sources": [
+          "https://www.hilton.com/en/hotels/pnqcici-conrad-pune/",
+          "https://www.tripadvisor.in/Hotel_Review-g297654-d2089935-Reviews-Conrad_Pune-Pune_Pune_District_Maharashtra.html",
+          "https://www.booking.com/hotel/in/conrad-pune.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "pune",
+      "slot": "xfactor",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Marriott Suites Pune (Koregaon Park)",
+        "issue": "OK"
+      },
+      "replacement": {
+        "name": "Marriott Suites Pune",
+        "tier": "boutique",
+        "tagline": "All-suite Marriott in Koregaon Park — Pune's cafes-and-nightlife neighbourhood — suites larger than standard 5-star rooms, pet-friendly, 10 minutes' walk to German Bakery and Osho Garden.",
+        "price_band": "₹₹₹",
+        "address": "81 Mundhwa Road, Koregaon Park Annexe, Pune 411036, Maharashtra",
+        "book_url": "https://www.marriott.com/en-us/hotels/pnqsi-marriott-suites-pune/overview/",
+        "sources": [
+          "https://www.marriott.com/en-us/hotels/pnqsi-marriott-suites-pune/overview/",
+          "https://www.tripadvisor.in/Hotel_Review-g297654-d2228878-Reviews-Marriott_Suites_Pune-Pune_Pune_District_Maharashtra.html",
+          "https://www.booking.com/hotel/in/marriott-suites-pune.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "raigad-fort",
+      "slot": "location",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "MTDC Raigad Resort",
+        "issue": "OK — MTDC verified at Pachad"
+      },
+      "replacement": {
+        "name": "MTDC Raigad Resort",
+        "tier": "comfort",
+        "tagline": "Maharashtra Tourism's resort at Pachad village at the foot of the Raigad Fort ropeway — A/C cottages, in-house Maharashtrian restaurant. The closest accommodation to where Shivaji crowned himself in 1674.",
+        "price_band": "₹₹",
+        "address": "Pachad Village, base of Raigad Fort, Raigad District 402305, Maharashtra",
+        "book_url": "https://www.maharashtratourism.gov.in/destination-mtdc-resorts",
+        "sources": [
+          "https://www.maharashtratourism.gov.in/destination-mtdc-resorts",
+          "https://www.maharashtratourism.gov.in/destinations/Raigad-Fort"
+        ]
+      }
+    },
+    {
+      "destination_id": "raigad-fort",
+      "slot": "value",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Hotel Madhuban Mahad",
+        "issue": "cross-dest — Hotel Madhuban Mahad belongs in mahad-raigad inventory; Raigad Fort base village is Pachad, 25 km from Mahad town"
+      },
+      "replacement": null
+    },
+    {
+      "destination_id": "raigad-fort",
+      "slot": "experience",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Sajjadji Pachad Village Homestay",
+        "issue": "verify — 'Sajjadji Pachad Village Homestay' not strongly verifiable as a single property on Booking/MakeMyTrip/MTDC"
+      },
+      "replacement": null
+    },
+    {
+      "destination_id": "ranjangaon",
+      "slot": "experience",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Sula Vineyards Resort",
+        "issue": "fabricated cross-dest — Sula Vineyards is in Nashik 200 km from Ranjangaon. No Sula property exists at Ranjangaon"
+      },
+      "replacement": null
+    },
+    {
+      "destination_id": "ranjangaon",
+      "slot": "value",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Amanora Parks Pune (Pirangut property)",
+        "issue": "fabricated cross-dest — Amanora Park Town is a residential complex in Magarpatta City, Pune. Pirangut is a separate Pune-Mulshi area 30 km from Amanora; neither is at Ranjangaon (50 km east of Pune)"
+      },
+      "replacement": null
+    },
+    {
+      "destination_id": "ranjangaon",
+      "slot": "location",
+      "verdict": "replace",
+      "existing": {
+        "name": "Hotel Maharaja (Ranjangaon town centre)",
+        "issue": "verify — 'Hotel Maharaja Ranjangaon' not strongly verifiable; refresh with the verified Devasthan trust"
+      },
+      "replacement": {
+        "name": "Shri Mahaganpati Devasthan Trust Bhakta Niwas",
+        "tier": "budget",
+        "tagline": "Devasthan Trust's pilgrim accommodation at Ranjangaon's Mahaganpati (Astavinayak) — dormitory and family rooms at trust rates, vegetarian prasad meals.",
+        "price_band": "₹",
+        "address": "Mahaganpati Temple, Ranjangaon, Shirur Taluka, Pune District 412209, Maharashtra",
+        "book_url": "https://www.maharashtratourism.gov.in/destinations/Ranjangaon",
+        "sources": [
+          "https://www.maharashtratourism.gov.in/destinations/Ranjangaon",
+          "https://ashtavinayakdarshan.in/ranjangaon/"
+        ]
+      }
+    },
+    {
+      "destination_id": "ranjangaon",
+      "slot": "xfactor",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Organic Farmstay at Pirangut (cooperative-run)",
+        "issue": "Pirangut is 60 km west of Ranjangaon; cross-dest. No verified Ranjangaon-area farmstay"
+      },
+      "replacement": null
+    },
+    {
+      "destination_id": "ratnagiri",
+      "slot": "experience",
+      "verdict": "replace",
+      "existing": {
+        "name": "The Konkan Resort",
+        "issue": "verify — 'The Konkan Resort' is a generic-sounding name without strong Booking/MMT single-property verification"
+      },
+      "replacement": {
+        "name": "Kohinoor Samudra Beach Resort",
+        "tier": "luxury",
+        "tagline": "Kohinoor Group's beach resort 11 km south of Ratnagiri on Ganeshgule beach — 70 cottage-style rooms, outdoor pool, multi-cuisine Konkani restaurant. The polished beach-resort default for Ratnagiri.",
+        "price_band": "₹₹₹",
+        "address": "Ganeshgule, Ratnagiri 415612, Maharashtra",
+        "book_url": "https://www.kohinoorhotels.in/kohinoor-samudra-ratnagiri/",
+        "sources": [
+          "https://www.kohinoorhotels.in/kohinoor-samudra-ratnagiri/",
+          "https://www.tripadvisor.in/Hotel_Review-g660663-d1822316-Reviews-Kohinoor_Samudra_Resort-Ratnagiri_Ratnagiri_District_Maharashtra.html",
+          "https://www.booking.com/hotel/in/kohinoor-samudra-beach-resort.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "ratnagiri",
+      "slot": "value",
+      "verdict": "replace",
+      "existing": {
+        "name": "The Konkan Crown",
+        "issue": "verify — 'The Konkan Crown' is a generic-sounding name without strong Booking/MMT single-property verification"
+      },
+      "replacement": {
+        "name": "Hotel Landmark Ratnagiri",
+        "tier": "comfort",
+        "tagline": "Senior Ratnagiri town 3-star at Maruti Mandir junction — multi-cuisine restaurant, the reliable mid-range pick when Ratnagiri is a Konkan-route overnight rather than a beach stay.",
+        "price_band": "₹₹",
+        "address": "Maruti Mandir, Ratnagiri 415612, Maharashtra",
+        "book_url": "https://www.hotellandmarkratnagiri.com/",
+        "sources": [
+          "https://www.hotellandmarkratnagiri.com/",
+          "https://www.tripadvisor.in/Hotel_Review-g660663-d2034280-Reviews-Hotel_Landmark-Ratnagiri_Ratnagiri_District_Maharashtra.html",
+          "https://www.booking.com/hotel/in/landmark-ratnagiri.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "ratnagiri",
+      "slot": "xfactor",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Pawas Swaroopanand Ashram Bhakta Niwas",
+        "issue": "OK — verified on pawasswamiswaroopanand.org"
+      },
+      "replacement": {
+        "name": "Pawas Swaroopanand Ashram Bhakta Niwas",
+        "tier": "budget",
+        "tagline": "Swami Swaroopanand Pawas ashram's pilgrim accommodation 19 km south of Ratnagiri — twin and family rooms attached to the samadhi mandir, satvic meals included. The spiritual alternative to beach resorts.",
+        "price_band": "₹",
+        "address": "Pawas village, Ratnagiri District 415616, Maharashtra",
+        "book_url": "https://pawasswamiswaroopanand.org/",
+        "sources": [
+          "https://pawasswamiswaroopanand.org/",
+          "https://www.maharashtratourism.gov.in/destinations/Pawas"
+        ]
+      }
+    },
+    {
+      "destination_id": "satara",
+      "slot": "experience",
+      "verdict": "replace",
+      "existing": {
+        "name": "Koyna Valley Resort",
+        "issue": "verify — 'Koyna Valley Resort' is generic-sounding; Koyna Dam area has multiple small operators but no single anchor by this name verifiable on Booking/MTDC"
+      },
+      "replacement": {
+        "name": "Hotel Preet Resort Satara",
+        "tier": "comfort",
+        "tagline": "Senior Satara highway-side resort on NH-48 — 50 rooms, outdoor pool, multi-cuisine restaurant. The reliable base for Kaas Plateau (Sep–Oct bloom) and Thoseghar Falls.",
+        "price_band": "₹₹",
+        "address": "Mumbai-Bangalore Highway (NH-48), Satara 415002, Maharashtra",
+        "book_url": "https://www.hotelpreetsatara.com/",
+        "sources": [
+          "https://www.hotelpreetsatara.com/",
+          "https://www.tripadvisor.in/Hotel_Review-g1162018-d3199906-Reviews-Hotel_Preet-Satara_Satara_District_Maharashtra.html",
+          "https://www.booking.com/hotel/in/preet-resort-satara.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "satara",
+      "slot": "value",
+      "verdict": "replace",
+      "existing": {
+        "name": "Satara Homestay by Shilimkar Family",
+        "issue": "template-sounding — 'Satara Homestay by Shilimkar Family' has no verifiable single-property listing"
+      },
+      "replacement": {
+        "name": "Hotel Yatra Inn Satara",
+        "tier": "budget",
+        "tagline": "Mid-range business hotel at Powai Naka junction — multi-cuisine vegetarian restaurant, walk to Ajinkyatara Fort base. The clean budget pick for Satara town stays.",
+        "price_band": "₹₹",
+        "address": "Powai Naka, Satara 415002, Maharashtra",
+        "book_url": "https://www.yatrainn.com/satara/",
+        "sources": [
+          "https://www.yatrainn.com/satara/",
+          "https://www.tripadvisor.in/Hotel_Review-g1162018-d4078901-Reviews-Yatra_Inn-Satara_Satara_District_Maharashtra.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "satara",
+      "slot": "location",
+      "verdict": "replace",
+      "existing": {
+        "name": "Hotel Woodland Satara",
+        "issue": "verify — generic-sounding name, not strongly verifiable as a single property in Satara"
+      },
+      "replacement": null
+    },
+    {
+      "destination_id": "satara",
+      "slot": "xfactor",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Wai Riverside Farmstay",
+        "issue": "template-sounding — Wai is 35 km from Satara on the Krishna river but no verified 'Wai Riverside Farmstay' brand on Booking/MTDC. Most Wai accommodations are basic dharamshalas tied to its temples"
+      },
+      "replacement": null
+    },
+    {
+      "destination_id": "shirdi",
+      "slot": "experience",
+      "verdict": "replace",
+      "existing": {
+        "name": "Sayaji Shinde Resort",
+        "issue": "fabricated — Sayaji Shinde is a Marathi film actor; no Shirdi resort by this name exists on Booking/MakeMyTrip/MTDC. The verifiable Sayaji-brand 5-star is Hotel Sayaji Kolhapur, not Shirdi"
+      },
+      "replacement": {
+        "name": "Sun-n-Sand Shirdi",
+        "tier": "luxury",
+        "tagline": "Sun-n-Sand Group's Shirdi 5-star 800 m from Samadhi Mandir — outdoor pool, vegetarian Spice Garden. The polished pilgrim-hotel pick for families wanting 5-star service near the temple.",
+        "price_band": "₹₹₹",
+        "address": "Pune-Shirdi Road, opposite SBI, Shirdi 423109, Maharashtra",
+        "book_url": "https://www.sunnsandshirdi.com/",
+        "sources": [
+          "https://www.sunnsandshirdi.com/",
+          "https://www.tripadvisor.in/Hotel_Review-g1024063-d1816935-Reviews-Sun_n_Sand_Hotel_Shirdi-Shirdi_Ahmednagar_District_Maharashtra.html",
+          "https://www.booking.com/hotel/in/sun-n-sand-shirdi.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "shirdi",
+      "slot": "value",
+      "verdict": "replace",
+      "existing": {
+        "name": "Hotel Shrimant",
+        "issue": "verify — multiple Shirdi hotels named 'Shrimant' / 'Shri Sai'; not strongly verifiable on Booking/MMT as a single property"
+      },
+      "replacement": {
+        "name": "St. Laurn Suites Shirdi",
+        "tier": "comfort",
+        "tagline": "St. Laurn Group's 100-suite property 500 m from the Samadhi Mandir — outdoor pool, vegetarian multi-cuisine restaurant, suite-format rooms for pilgrim families.",
+        "price_band": "₹₹",
+        "address": "Pimpalwadi Road, Shirdi 423109, Maharashtra",
+        "book_url": "https://www.stlaurn.com/shirdi/",
+        "sources": [
+          "https://www.stlaurn.com/shirdi/",
+          "https://www.tripadvisor.in/Hotel_Review-g1024063-d3215842-Reviews-St_Laurn_Suites-Shirdi_Ahmednagar_District_Maharashtra.html",
+          "https://www.booking.com/hotel/in/st-laurn-suites-shirdi.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "shirdi",
+      "slot": "location",
+      "verdict": "replace",
+      "existing": {
+        "name": "Hotel Om Plaza",
+        "issue": "verify — generic Hotel Om Plaza listings exist across many pilgrim towns; Shirdi instance not strongly verifiable as a single anchor"
+      },
+      "replacement": {
+        "name": "Saibansi Bhakta Niwas (Shirdi Sansthan)",
+        "tier": "budget",
+        "tagline": "The official Sai Baba Sansthan Trust accommodation — 3,300+ rooms adjacent to the Samadhi Mandir at sansthan rates (₹150–₹2,500). The default pilgrim bed, bookable on online.sai.org.in.",
+        "price_band": "₹",
+        "address": "Shri Saibaba Sansthan Trust complex, Shirdi 423109, Maharashtra",
+        "book_url": "https://online.sai.org.in/",
+        "sources": [
+          "https://online.sai.org.in/",
+          "https://www.sai.org.in/en/accommodation",
+          "https://www.tripadvisor.in/ShowUserReviews-g1024063-d1581180-r267-Sai_Ashram-Shirdi_Ahmednagar_District_Maharashtra.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "shirdi",
+      "slot": "xfactor",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Shirdi Eco-Village Stay",
+        "issue": "template-sounding — no verified 'Shirdi Eco-Village' brand on Booking/MakeMyTrip/MTDC. Shirdi is a pilgrim town, not a green-tourism destination; xfactor slot does not have a verified pick"
+      },
+      "replacement": null
+    },
+    {
+      "destination_id": "siddhatek",
+      "slot": "location",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Shri Ganesh Bhaktnivas Siddhatek",
+        "issue": "OK — Devasthan trust accommodation is real; refresh name to official Siddhivinayak Devasthan branding"
+      },
+      "replacement": {
+        "name": "Shri Siddhivinayak Ganpati Devasthan Trust Bhakta Niwas",
+        "tier": "budget",
+        "tagline": "Devasthan Trust's pilgrim accommodation at Siddhatek's Siddhivinayak Ganpati (Astavinayak) — the most isolated of the eight, Karha river island setting; trust dorms are effectively the only option.",
+        "price_band": "₹",
+        "address": "Siddhivinayak Ganpati Temple, Siddhatek, Daund Taluka, Ahmednagar District 413304, Maharashtra",
+        "book_url": "https://www.maharashtratourism.gov.in/destinations/Siddhatek",
+        "sources": [
+          "https://www.maharashtratourism.gov.in/destinations/Siddhatek",
+          "https://ashtavinayakdarshan.in/siddhatek/"
+        ]
+      }
+    },
+    {
+      "destination_id": "siddhatek",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Shri Siddhivinayak Bhakta Niwas, Siddhatek",
+        "issue": "duplicate of location slot"
+      },
+      "replacement": null
+    },
+    {
+      "destination_id": "siddhatek",
+      "slot": "value",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Hotel Yograj — Near Siddhatek Temple (Daund base)",
+        "issue": "Daund is 18 km from Siddhatek but 'Hotel Yograj' not strongly verifiable as a single property anchor"
+      },
+      "replacement": null
+    },
+    {
+      "destination_id": "tadoba",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Svasara Jungle Lodge",
+        "issue": "OK"
+      },
+      "replacement": {
+        "name": "Svasara Jungle Lodge",
+        "tier": "luxury",
+        "tagline": "Mid-luxury 12-villa lodge adjacent to Kolara gate — naturalist-led twice-daily safaris, full-board Maharashtrian and multi-cuisine. Tripadvisor #1 in Tadoba.",
+        "price_band": "₹₹₹₹",
+        "address": "Kolara, Chimur Taluka, Chandrapur District 442909, Maharashtra",
+        "book_url": "https://svasararesorts.com/",
+        "sources": [
+          "https://svasararesorts.com/",
+          "https://www.tripadvisor.in/Hotel_Review-g1949574-d3375604-Reviews-Svasara_Jungle_Lodge-Tadoba_National_Park_Chandrapur_District_Maharashtra.html",
+          "https://www.booking.com/hotel/in/svasara-jungle-lodge.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "tadoba",
+      "slot": "value",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Irai Safari Retreat",
+        "issue": "OK"
+      },
+      "replacement": {
+        "name": "Irai Safari Retreat",
+        "tier": "comfort",
+        "tagline": "Mid-range safari resort 800 m from Kolara gate — 30 rooms, outdoor pool, naturalist-led twice-daily safaris. The value-tier Tadoba pick at roughly 40% the Svasara rate.",
+        "price_band": "₹₹₹",
+        "address": "Kolara, Chimur Taluka, Chandrapur District 442909, Maharashtra",
+        "book_url": "https://www.iraisafariretreat.com/",
+        "sources": [
+          "https://www.iraisafariretreat.com/",
+          "https://www.tripadvisor.in/Hotel_Review-g1949574-d8451310-Reviews-Irai_Safari_Retreat-Tadoba_National_Park_Chandrapur_District_Maharashtra.html",
+          "https://www.booking.com/hotel/in/irai-safari-retreat.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "tadoba",
+      "slot": "location",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Bamboo Forest Safari Lodge",
+        "issue": "OK — verified Moharli gate"
+      },
+      "replacement": {
+        "name": "Bamboo Forest Safari Lodge",
+        "tier": "luxury",
+        "tagline": "Across 18 acres adjacent to Moharli gate — 15 stilted cottages, naturalist-led safaris, pool. The deepest-forest setting of Tadoba's resorts.",
+        "price_band": "₹₹₹₹",
+        "address": "Moharli, Chandrapur District 442401, Maharashtra",
+        "book_url": "https://www.bambooforest-tadoba.com/",
+        "sources": [
+          "https://www.bambooforest-tadoba.com/",
+          "https://www.tripadvisor.in/Hotel_Review-g1949574-d4128648-Reviews-Bamboo_Forest_Safari_Lodge-Tadoba_National_Park_Chandrapur_District_Maharashtra.html",
+          "https://www.booking.com/hotel/in/bamboo-forest-tadoba.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "tarkarli",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "MTDC Tarkarli Resort",
+        "issue": "OK — MTDC verified"
+      },
+      "replacement": {
+        "name": "MTDC Tarkarli Beach Resort",
+        "tier": "comfort",
+        "tagline": "Maharashtra Tourism's flagship Konkan beach resort — A/C cottages and Konkan tents on the white-sand Tarkarli beach. The only government-rate property with full beach walkout; books out peak diving season months ahead.",
+        "price_band": "₹₹",
+        "address": "Tarkarli Beach, Sindhudurg 416606, Maharashtra",
+        "book_url": "https://www.maharashtratourism.gov.in/destination-mtdc-resorts/-/asset_publisher/3vYTZxYEy3PD/content/mtdc-tarkarli-resort",
+        "sources": [
+          "https://www.maharashtratourism.gov.in/destination-mtdc-resorts/-/asset_publisher/3vYTZxYEy3PD/content/mtdc-tarkarli-resort",
+          "https://www.tripadvisor.in/Hotel_Review-g1473131-d1822312-Reviews-MTDC_Resort_Tarkarli-Tarkarli_Sindhudurg_District_Maharashtra.html",
+          "https://www.booking.com/hotel/in/mtdc-tarkarli.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "tarkarli",
+      "slot": "value",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "MTDC Tarkarli Beach Resort + Tents",
+        "issue": "duplicate of experience slot"
+      },
+      "replacement": {
+        "name": "Konkan Wave Beach Resort",
+        "tier": "boutique",
+        "tagline": "Private 4-star on the Tarkarli–Devbag stretch — 50 rooms, outdoor pool, multi-cuisine Malvani restaurant. The polished alternative when MTDC's A/C cottages are booked out.",
+        "price_band": "₹₹₹",
+        "address": "Tarkarli–Devbag Road, Sindhudurg 416606, Maharashtra",
+        "book_url": "https://www.konkanwavebeach.com/",
+        "sources": [
+          "https://www.konkanwavebeach.com/",
+          "https://www.tripadvisor.in/Hotel_Review-g1473131-d6580660-Reviews-Konkan_Wave_Beach_Resort-Tarkarli_Sindhudurg_District_Maharashtra.html",
+          "https://www.booking.com/hotel/in/konkan-wave.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "tarkarli",
+      "slot": "xfactor",
+      "verdict": "replace",
+      "existing": {
+        "name": "Phoolwadi Konkan Village Homestay",
+        "issue": "verify — Phoolwadi as a Tarkarli homestay is not strongly verifiable as a single named property on Booking/MMT/MTDC. Bhogwe-cluster homestays are the verified MTDC-registered alternative"
+      },
+      "replacement": {
+        "name": "Bhogwe Beach MTDC-registered Konkani Homestays",
+        "tier": "budget",
+        "tagline": "MTDC-registered fisher-family homestays on Bhogwe beach 12 km from Tarkarli — Malvani fish-thali, boat rides to dolphins. The Konkan alternative when resort food feels too clean.",
+        "price_band": "₹",
+        "address": "Bhogwe Village, Sindhudurg 416606, Maharashtra",
+        "book_url": "https://www.maharashtratourism.gov.in/destination-mtdc-resorts/-/asset_publisher/3vYTZxYEy3PD/content/mtdc-registered-homestays",
+        "sources": [
+          "https://www.maharashtratourism.gov.in/destination-mtdc-resorts/-/asset_publisher/3vYTZxYEy3PD/content/mtdc-registered-homestays",
+          "https://www.maharashtratourism.gov.in/destinations/Bhogwe"
+        ]
+      }
+    },
+    {
+      "destination_id": "theur",
+      "slot": "location",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Shri Chintamani Yatri Niwas",
+        "issue": "OK — Chinchwad Devasthan trust property"
+      },
+      "replacement": {
+        "name": "Shri Chintamani Ganpati Devasthan Trust Bhakta Niwas",
+        "tier": "budget",
+        "tagline": "Chinchwad Devasthan Trust's pilgrim accommodation at Theur's Chintamani Ganpati (Astavinayak) — dormitory and family rooms at trust rates, vegetarian prasad meals.",
+        "price_band": "₹",
+        "address": "Chintamani Ganpati Temple, Theur, Haveli Taluka, Pune District 412110, Maharashtra",
+        "book_url": "https://www.theurchintamani.org/",
+        "sources": [
+          "https://www.theurchintamani.org/",
+          "https://ashtavinayakdarshan.in/theur/"
+        ]
+      }
+    },
+    {
+      "destination_id": "theur",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Shri Chintamani Bhakta Niwas (Chinchwad Devasthan Trust)",
+        "issue": "duplicate of location"
+      },
+      "replacement": null
+    },
+    {
+      "destination_id": "theur",
+      "slot": "value",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Hotel Balaji Bhakta Lodge",
+        "issue": "verify — 'Balaji Bhakta Lodge' is template-sounding; Theur-specific not strongly verifiable"
+      },
+      "replacement": null
+    },
+    {
+      "destination_id": "theur",
+      "slot": "xfactor",
+      "verdict": "replace",
+      "existing": {
+        "name": "Hotel Majestique Pune (Kunjirwadi)",
+        "issue": "verify — 'Majestique' is a Pune residential brand (developers), no Kunjirwadi resort by this name on Booking/MMT; cross-dest to Pune anyway"
+      },
+      "replacement": null
+    },
+    {
+      "destination_id": "trimbakeshwar",
+      "slot": "location",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "MTDC Brahmagiri Resort Trimbakeshwar",
+        "issue": "OK — MTDC verified at Brahmagiri base"
+      },
+      "replacement": {
+        "name": "MTDC Resort Trimbakeshwar",
+        "tier": "comfort",
+        "tagline": "Maharashtra Tourism's resort below the Brahmagiri hill — walking-distance from the Trimbakeshwar Jyotirlinga, A/C cottages, in-house vegetarian restaurant. The default Jyotirlinga pilgrim bed.",
+        "price_band": "₹₹",
+        "address": "Brahmagiri, Trimbakeshwar, Nashik District 422212, Maharashtra",
+        "book_url": "https://www.maharashtratourism.gov.in/destination-mtdc-resorts",
+        "sources": [
+          "https://www.maharashtratourism.gov.in/destination-mtdc-resorts",
+          "https://www.maharashtratourism.gov.in/destinations/Trimbakeshwar"
+        ]
+      }
+    },
+    {
+      "destination_id": "trimbakeshwar",
+      "slot": "value",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Hotel Madhuban",
+        "issue": "verify — 'Hotel Madhuban' is a generic name used across Maharashtra; Trimbakeshwar-specific not strongly verifiable as a single anchor"
+      },
+      "replacement": null
+    },
+    {
+      "destination_id": "trimbakeshwar",
+      "slot": "experience",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Nakshatra Garden Resort",
+        "issue": "verify — 'Nakshatra Garden Resort' not strongly verifiable as a single Trimbakeshwar property on Booking/MMT/MTDC"
+      },
+      "replacement": null
+    }
+  ]
+}

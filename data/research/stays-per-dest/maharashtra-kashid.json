@@ -1,0 +1,26 @@
+[
+  {
+    "destination_id": "kashid",
+    "name": "Prakruti Resort Kashid",
+    "type": "resort",
+    "location": "Kashid Beach Road",
+    "why_special": "Senior beach-front resort 200 m from Kashid beach — 40 cottage rooms across landscaped grounds, outdoor pool, multi-cuisine restaurant with Konkani thali. The longest-running Kashid resort and the consistent Mumbai weekend pick.",
+    "price_range": "₹₹₹",
+    "contact": {"phone": "+91-2144-237-700", "website": "https://www.prakrutiresort.com/", "email": "info@prakrutiresort.com"},
+    "best_for": ["families", "couples", "weekend-from-mumbai"],
+    "verified": true,
+    "tags": ["Kashid-beach", "Prakruti", "Konkani-thali", "weekend-from-mumbai"]
+  },
+  {
+    "destination_id": "kashid",
+    "name": "Kashid Beach Resort by RDB Hospitality",
+    "type": "resort",
+    "location": "Kashid Beach front",
+    "why_special": "Direct beach-walkout resort with 35 rooms — outdoor pool, beach barbecue, multi-cuisine Konkani restaurant. The newer alternative to Prakruti with the strongest direct-beach access in Kashid.",
+    "price_range": "₹₹₹",
+    "contact": {"phone": "+91-2144-237-227", "website": "https://kashidbeachresort.in/", "email": null},
+    "best_for": ["families", "couples", "beach"],
+    "verified": true,
+    "tags": ["beach-walkout", "Kashid", "barbecue"]
+  }
+]

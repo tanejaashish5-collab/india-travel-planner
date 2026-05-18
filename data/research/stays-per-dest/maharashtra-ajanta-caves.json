@@ -1,0 +1,26 @@
+[
+  {
+    "destination_id": "ajanta-caves",
+    "name": "MTDC Holiday Resort Ajanta (Fardapur)",
+    "type": "government-hotel",
+    "location": "Fardapur, near Ajanta T-Point",
+    "why_special": "Maharashtra Tourism's resort at Fardapur 4 km from the Ajanta Caves entrance — A/C and non-A/C cottages, in-house restaurant, the only formal accommodation at the cave gate. Books out for school-tour season (Nov–Feb).",
+    "price_range": "₹₹",
+    "contact": {"phone": "+91-2438-244-230", "website": "https://www.maharashtratourism.gov.in/destination-mtdc-resorts", "email": null},
+    "best_for": ["families", "heritage", "cave-day-trip"],
+    "verified": true,
+    "tags": ["MTDC", "Fardapur", "Ajanta-gate", "cave-base"]
+  },
+  {
+    "destination_id": "ajanta-caves",
+    "name": "Hotel Ajanta Heritage Jalgaon",
+    "type": "business-hotel",
+    "location": "Mahabal Road, Jalgaon (60 km from Ajanta)",
+    "why_special": "Senior Jalgaon mid-range 3-star — multi-cuisine restaurant, 90-min drive to Ajanta T-Point. The Jalgaon-side base for travellers approaching Ajanta from the Bhusaval rail head, faster than the 100-km Aurangabad approach.",
+    "price_range": "₹₹",
+    "contact": {"phone": "+91-257-222-5701", "website": "https://hotelajantajalgaon.com/", "email": null},
+    "best_for": ["families", "heritage"],
+    "verified": true,
+    "tags": ["Jalgaon", "Bhusaval-railhead", "Ajanta-approach"]
+  }
+]

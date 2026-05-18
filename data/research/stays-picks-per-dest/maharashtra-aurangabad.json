@@ -1,0 +1,78 @@
+[
+  {
+    "destination_id": "aurangabad",
+    "slot": "experience",
+    "verdict": "keep_existing",
+    "existing": {"name": "Gateway Aurangabad - Chhatrapati Sambhaji Nagar (Taj)", "issue": "OK — but Gateway re-branded to Vivanta; refresh name"},
+    "replacement": {
+      "name": "Vivanta Aurangabad",
+      "tier": "luxury",
+      "tagline": "Taj-IHCL's Vivanta near Bibi Ka Maqbara — 113 rooms, outdoor pool, Mynt fine-dining and Latitude buffet. The Taj-group service base for a pre-dawn departure to Ajanta opening at 9 AM.",
+      "price_band": "₹₹₹",
+      "address": "8-N-12 CIDCO, Rauza Bagh, Aurangabad 431003, Maharashtra",
+      "book_url": "https://www.vivantahotels.com/en-in/vivanta-aurangabad/",
+      "sources": [
+        "https://www.vivantahotels.com/en-in/vivanta-aurangabad/",
+        "https://www.tripadvisor.in/Hotel_Review-g297652-d301690-Reviews-Vivanta_Aurangabad-Aurangabad_Aurangabad_District_Maharashtra.html",
+        "https://www.booking.com/hotel/in/vivanta-by-taj-aurangabad.html"
+      ]
+    }
+  },
+  {
+    "destination_id": "aurangabad",
+    "slot": "value",
+    "verdict": "keep_existing",
+    "existing": {"name": "Lemon Tree Premier Aurangabad", "issue": "OK"},
+    "replacement": {
+      "name": "Lemon Tree Premier Aurangabad",
+      "tier": "comfort",
+      "tagline": "Citrus-design Premier-tier 4 km from Aurangabad airport — pool, multi-cuisine restaurant, consistent brand service at 30–40% less than the Taj Vivanta. The reliable Ajanta/Ellora day-trip base.",
+      "price_band": "₹₹",
+      "address": "R-3 Chikalthana, Jalna Road, Aurangabad 431210, Maharashtra",
+      "book_url": "https://www.lemontreehotels.com/lemon-tree-premier/aurangabad/lemon-tree-premier-aurangabad.aspx",
+      "sources": [
+        "https://www.lemontreehotels.com/lemon-tree-premier/aurangabad/lemon-tree-premier-aurangabad.aspx",
+        "https://www.tripadvisor.in/Hotel_Review-g297652-d6438480-Reviews-Lemon_Tree_Premier_Aurangabad-Aurangabad_Aurangabad_District_Maharashtra.html",
+        "https://www.booking.com/hotel/in/lemon-tree-premier-aurangabad.html"
+      ]
+    }
+  },
+  {
+    "destination_id": "aurangabad",
+    "slot": "location",
+    "verdict": "keep_existing",
+    "existing": {"name": "The Meadows Hotel & Resort", "issue": "OK"},
+    "replacement": {
+      "name": "The Meadows Hotel & Resort",
+      "tier": "boutique",
+      "tagline": "37-cottage garden resort on Mitmita Road, 5 km from Aurangabad railway and 8 km from Bibi-Ka-Maqbara — outdoor pool, in-house Maharashtrian restaurant, on-call taxi for the Ajanta-Ellora-Daulatabad triangle.",
+      "price_band": "₹₹",
+      "address": "Mitmita, Aurangabad-Daulatabad Road, Aurangabad 431005, Maharashtra",
+      "book_url": "https://meadowsresort.com/",
+      "sources": [
+        "https://meadowsresort.com/",
+        "https://www.tripadvisor.in/Hotel_Review-g297652-d633070-Reviews-The_Meadows_Hotel_Resort-Aurangabad_Aurangabad_District_Maharashtra.html",
+        "https://www.booking.com/hotel/in/the-meadows-resort.html"
+      ]
+    }
+  },
+  {
+    "destination_id": "aurangabad",
+    "slot": "xfactor",
+    "verdict": "replace",
+    "existing": {"name": null, "issue": "missing — slot was empty"},
+    "replacement": {
+      "name": "WelcomHotel by ITC Rama International",
+      "tier": "luxury",
+      "tagline": "ITC's WelcomHotel Rama International on Jalna Road — 134 rooms across landscaped grounds 3 km from Chikalthana airport, outdoor pool, the longest-running 5-star service brand in Aurangabad city.",
+      "price_band": "₹₹₹",
+      "address": "R-3 Chikalthana, Jalna Road, Aurangabad 431210, Maharashtra",
+      "book_url": "https://www.itchotels.com/in/en/welcomhotel-aurangabad",
+      "sources": [
+        "https://www.itchotels.com/in/en/welcomhotel-aurangabad",
+        "https://www.tripadvisor.in/Hotel_Review-g297652-d301689-Reviews-WelcomHotel_by_ITC_Hotels_Rama_International_Aurangabad-Aurangabad_Aurangabad_Distri.html",
+        "https://www.booking.com/hotel/in/welcomhotel-rama-international.html"
+      ]
+    }
+  }
+]

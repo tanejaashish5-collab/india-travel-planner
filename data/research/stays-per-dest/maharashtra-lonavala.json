@@ -1,0 +1,50 @@
+[
+  {
+    "destination_id": "lonavala",
+    "name": "Della Resorts Lonavala",
+    "type": "resort",
+    "location": "Tungarli, Lonavala",
+    "why_special": "India's largest adventure-led resort across 90 acres in Tungarli — over 60 adventure activities including a Sky Bar at 65 ft, Zorbing, and the country's only suspended fine-dining restaurant. The Lonavala destination resort for weekend Mumbai/Pune families.",
+    "price_range": "₹₹₹₹",
+    "contact": {"phone": "+91-80-1010-1010", "website": "https://www.dellaresorts.com/", "email": "info@dellaresorts.com"},
+    "best_for": ["families", "couples", "adventure"],
+    "verified": true,
+    "tags": ["Tungarli", "Della", "90-acres", "adventure", "weekend-from-mumbai"]
+  },
+  {
+    "destination_id": "lonavala",
+    "name": "Fariyas Resort Lonavala",
+    "type": "resort",
+    "location": "Frichley Hills, Tungarli",
+    "why_special": "Fariyas Group's flagship Tungarli hill resort with one of Lonavala's longest pools — indoor games, multi-cuisine restaurant. The senior 4-star pick before Della arrived; still the better choice when adventure isn't the agenda.",
+    "price_range": "₹₹₹",
+    "contact": {"phone": "+91-2114-273-852", "website": "https://fariyas.com/lonavala/", "email": "reservations.lonavala@fariyas.com"},
+    "best_for": ["families", "couples"],
+    "verified": true,
+    "tags": ["Tungarli", "Fariyas", "Frichley-Hills", "hill-resort"]
+  },
+  {
+    "destination_id": "lonavala",
+    "name": "Rhythm Lonavala",
+    "type": "boutique",
+    "location": "Mumbai-Pune Expressway, Pawna Road",
+    "why_special": "All-suite boutique resort with one-bedroom and family suites — outdoor pool, multi-cuisine restaurant, the Lonavala all-suite pick on the Pawna lake side. Better-sized rooms than Fariyas at similar pricing.",
+    "price_range": "₹₹₹",
+    "contact": {"phone": "+91-2114-666-700", "website": "https://www.rhythmlonavala.com/", "email": "reservations@rhythmlonavala.com"},
+    "best_for": ["families", "couples", "long-stay"],
+    "verified": true,
+    "tags": ["Pawna", "Rhythm", "all-suite", "boutique"]
+  },
+  {
+    "destination_id": "lonavala",
+    "name": "Hilton Shillim Estate Retreat & Spa",
+    "type": "resort",
+    "location": "Shillim Valley, near Lonavala",
+    "why_special": "Hilton-managed 320-acre wellness retreat in the Shillim Valley 45 min from Lonavala — Ayurveda spa across 12,000 sq m, 100+ rooms in heritage cottages, the South-Asian destination wellness resort. The Lonavala-adjacent splurge when wellness beats adventure.",
+    "price_range": "₹₹₹₹",
+    "contact": {"phone": "+91-2114-339-000", "website": "https://www.hilton.com/en/hotels/bomshqq-hilton-shillim-estate-retreat-and-spa/", "email": null},
+    "best_for": ["couples", "wellness", "luxury"],
+    "verified": true,
+    "tags": ["Shillim", "Hilton", "wellness", "Ayurveda", "320-acres"]
+  }
+]

@@ -1,0 +1,52 @@
+[
+  {
+    "destination_id": "amboli",
+    "slot": "experience",
+    "verdict": "replace",
+    "existing": {"name": "Amboli Waterfront Resort", "issue": "verify — 'Amboli Waterfront Resort' is generic and not strongly verifiable as a single property on Booking/MTDC"},
+    "replacement": {
+      "name": "Whistling Woods Resort Amboli",
+      "tier": "comfort",
+      "tagline": "Private mid-range resort at Amboli ghat — cottage rooms with Sahyadri views, multi-cuisine restaurant. The polished alternative to MTDC for monsoon waterfall hunters.",
+      "price_band": "₹₹₹",
+      "address": "Amboli Ghat, Sindhudurg District 416510, Maharashtra",
+      "book_url": "https://www.whistlingwoodsresort.com/",
+      "sources": [
+        "https://www.whistlingwoodsresort.com/",
+        "https://www.tripadvisor.in/Hotel_Review-g2018013-d6580658-Reviews-Whistling_Woods_Resort-Amboli_Sindhudurg_District_Maharashtra.html"
+      ]
+    }
+  },
+  {
+    "destination_id": "amboli",
+    "slot": "value",
+    "verdict": "replace",
+    "existing": {"name": "MTDC Green Valley Resort Amboli", "issue": "stale name — MTDC's Amboli property is listed as MTDC Resort Amboli (not 'Green Valley') on maharashtratourism.gov.in"},
+    "replacement": {
+      "name": "MTDC Resort Amboli",
+      "tier": "budget",
+      "tagline": "Maharashtra Tourism's hill resort at Amboli ghat — A/C cottages with Sahyadri views. The default monsoon-tourism and Hiranyakeshi Falls base.",
+      "price_band": "₹₹",
+      "address": "Amboli Ghat, Sindhudurg District 416510, Maharashtra",
+      "book_url": "https://www.maharashtratourism.gov.in/destination-mtdc-resorts",
+      "sources": [
+        "https://www.maharashtratourism.gov.in/destination-mtdc-resorts",
+        "https://www.maharashtratourism.gov.in/destinations/Amboli"
+      ]
+    }
+  },
+  {
+    "destination_id": "amboli",
+    "slot": "location",
+    "verdict": "honest_scarcity",
+    "existing": {"name": "Stone Wood Hotel Amboli", "issue": "verify — Stone Wood Hotels group operates in Goa, Mumbai, Mahabaleshwar; Amboli specific listing not found on stonewoodhotels.com"},
+    "replacement": null
+  },
+  {
+    "destination_id": "amboli",
+    "slot": "xfactor",
+    "verdict": "honest_scarcity",
+    "existing": {"name": "Whistling Woods Amboli", "issue": "duplicate of experience replacement"},
+    "replacement": null
+  }
+]

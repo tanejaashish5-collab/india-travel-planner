@@ -1,0 +1,41 @@
+[
+  {
+    "destination_id": "ozar",
+    "slot": "location",
+    "verdict": "replace",
+    "existing": {"name": "Hotel Shrikhand", "issue": "Shrikhand is a Maharashtrian dessert, not a hotel name; not strongly verifiable. The verified pilgrim option is the Devasthan trust"},
+    "replacement": {
+      "name": "Shri Vighneshwar Ganpati Devasthan Trust Bhakta Niwas",
+      "tier": "budget",
+      "tagline": "Devasthan Trust's pilgrim accommodation at Ozar's Vighneshwar Ganpati (Astavinayak) — dormitory and family rooms at trust rates, vegetarian prasad meals.",
+      "price_band": "₹",
+      "address": "Vighneshwar Ganpati Temple, Ozar, Pune District 410502, Maharashtra",
+      "book_url": "https://www.ozarganpati.org/",
+      "sources": [
+        "https://www.ozarganpati.org/",
+        "https://ashtavinayakdarshan.in/ozar/"
+      ]
+    }
+  },
+  {
+    "destination_id": "ozar",
+    "slot": "value",
+    "verdict": "honest_scarcity",
+    "existing": {"name": "Hotel Vasudha Palace", "issue": "verify — 'Hotel Vasudha Palace' not strongly verifiable in Ozar as a single property"},
+    "replacement": null
+  },
+  {
+    "destination_id": "ozar",
+    "slot": "experience",
+    "verdict": "honest_scarcity",
+    "existing": {"name": "No iconic/famous property identified", "issue": "OK — baseline already correctly flagged scarcity"},
+    "replacement": null
+  },
+  {
+    "destination_id": "ozar",
+    "slot": "xfactor",
+    "verdict": "honest_scarcity",
+    "existing": {"name": "No distinctive x-factor property identified", "issue": "OK — baseline already correctly flagged scarcity"},
+    "replacement": null
+  }
+]

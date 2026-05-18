@@ -1,0 +1,66 @@
+[
+  {
+    "destination_id": "kolhapur",
+    "slot": "experience",
+    "verdict": "replace",
+    "existing": {"name": "Lakshmi Vilas Palace", "issue": "fabricated — Lakshmi Vilas Palace is in Vadodara, Gujarat (Gaekwad royal seat); Kolhapur's royal palace is the New Palace Museum, not a working hotel"},
+    "replacement": {
+      "name": "Hotel Sayaji Kolhapur",
+      "tier": "luxury",
+      "tagline": "Sayaji's 5-star Kolhapur flagship on the Pune-Bangalore highway 5 km from city centre — outdoor pool, Kebabsta and Habibi for dining, the strongest spa and the most polished service in town.",
+      "price_band": "₹₹₹",
+      "address": "Pulachi Shiroli, NH-4 Pune-Bangalore Highway, Kolhapur 416122, Maharashtra",
+      "book_url": "https://www.sayajihotels.com/kolhapur/",
+      "sources": [
+        "https://www.sayajihotels.com/kolhapur/",
+        "https://www.tripadvisor.in/Hotel_Review-g737166-d1466935-Reviews-Sayaji_Hotel_Kolhapur-Kolhapur_Kolhapur_District_Maharashtra.html",
+        "https://www.booking.com/hotel/in/sayaji-kolhapur.html"
+      ]
+    }
+  },
+  {
+    "destination_id": "kolhapur",
+    "slot": "value",
+    "verdict": "replace",
+    "existing": {"name": "Mahalaxmi Guest House", "issue": "template-sounding — multiple low-confidence listings, no verifiable single property"},
+    "replacement": {
+      "name": "Hotel Pearl Kolhapur",
+      "tier": "comfort",
+      "tagline": "Kolhapur's senior 3-star walking-distance from Mahalaxmi Temple — 60 rooms, Maharashtrian Mahabhog restaurant, the local pick when pilgrim-proximity beats highway-5-star polish.",
+      "price_band": "₹₹",
+      "address": "Sykes Extension, near New Mahadwar Road, Kolhapur 416001, Maharashtra",
+      "book_url": "https://hotelpearlkolhapur.com/",
+      "sources": [
+        "https://hotelpearlkolhapur.com/",
+        "https://www.tripadvisor.in/Hotel_Review-g737166-d1466933-Reviews-Hotel_Pearl-Kolhapur_Kolhapur_District_Maharashtra.html",
+        "https://www.booking.com/hotel/in/hotel-pearl-kolhapur.html"
+      ]
+    }
+  },
+  {
+    "destination_id": "kolhapur",
+    "slot": "location",
+    "verdict": "replace",
+    "existing": {"name": "Hotel Woodland", "issue": "verify — Woodland exists in multiple cities; Kolhapur Hotel Woodland not strongly verifiable on Booking/MakeMyTrip"},
+    "replacement": {
+      "name": "Hotel Tulsi Kolhapur",
+      "tier": "comfort",
+      "tagline": "Mid-range 3-star directly opposite Kolhapur railway station — 56 rooms, vegetarian restaurant, 1.5 km walk to Mahalaxmi Temple. The reliable arrival-night bed.",
+      "price_band": "₹₹",
+      "address": "Station Road, Kolhapur 416001, Maharashtra",
+      "book_url": "https://hoteltulsi.com/",
+      "sources": [
+        "https://hoteltulsi.com/",
+        "https://www.tripadvisor.in/Hotel_Review-g737166-d2185620-Reviews-Hotel_Tulsi-Kolhapur_Kolhapur_District_Maharashtra.html",
+        "https://www.booking.com/hotel/in/tulsi-kolhapur.html"
+      ]
+    }
+  },
+  {
+    "destination_id": "kolhapur",
+    "slot": "xfactor",
+    "verdict": "honest_scarcity",
+    "existing": {"name": "Radhanagari Eco Resort", "issue": "template-sounding + listicle ghost — Radhanagari is a wildlife sanctuary 55 km from Kolhapur with no verified formal eco-lodge brand by this name on Booking/MakeMyTrip; also flagged 'cardamom plantations on the Western Ghats' but cardamom is a Kerala crop, not Maharashtra"},
+    "replacement": null
+  }
+]

@@ -1,0 +1,59 @@
+[
+  {
+    "destination_id": "nagpur",
+    "slot": "experience",
+    "verdict": "keep_existing",
+    "existing": {"name": "Radisson Blu Hotel Nagpur", "issue": "OK"},
+    "replacement": {
+      "name": "Radisson Blu Hotel Nagpur",
+      "tier": "luxury",
+      "tagline": "5-star on Wardha Road 10 min from Dr Ambedkar airport — the consistent cleanliness-and-service top of the Nagpur pile, the default pick for travellers heading on to Tadoba safari.",
+      "price_band": "₹₹₹",
+      "address": "Wardha Road, Nagpur 440025, Maharashtra",
+      "book_url": "https://www.radissonhotels.com/en-us/hotels/radisson-blu-nagpur",
+      "sources": [
+        "https://www.radissonhotels.com/en-us/hotels/radisson-blu-nagpur",
+        "https://www.tripadvisor.in/Hotel_Review-g662323-d3210586-Reviews-Radisson_Blu_Hotel_Nagpur-Nagpur_Nagpur_District_Maharashtra.html",
+        "https://www.booking.com/hotel/in/radisson-blu-nagpur.html"
+      ]
+    }
+  },
+  {
+    "destination_id": "nagpur",
+    "slot": "value",
+    "verdict": "keep_existing",
+    "existing": {"name": "Le Méridien Nagpur", "issue": "OK"},
+    "replacement": {
+      "name": "Le Méridien Nagpur",
+      "tier": "luxury",
+      "tagline": "Marriott-Bonvoy 5-star on Wardha Road — spacious rooms, expansive lawn, La Brasserie. The Marriott loyalty member's pick over the Radisson and the better conference-group hotel.",
+      "price_band": "₹₹₹",
+      "address": "Wardha Road, Nagpur 440025, Maharashtra",
+      "book_url": "https://www.marriott.com/en-us/hotels/nagmd-le-meridien-nagpur/overview/",
+      "sources": [
+        "https://www.marriott.com/en-us/hotels/nagmd-le-meridien-nagpur/overview/",
+        "https://www.tripadvisor.in/Hotel_Review-g662323-d1722945-Reviews-Le_Meridien_Nagpur-Nagpur_Nagpur_District_Maharashtra.html",
+        "https://www.booking.com/hotel/in/le-meridien-nagpur.html"
+      ]
+    }
+  },
+  {
+    "destination_id": "nagpur",
+    "slot": "location",
+    "verdict": "keep_existing",
+    "existing": {"name": "The Pride Hotel Nagpur", "issue": "OK"},
+    "replacement": {
+      "name": "The Pride Hotel Nagpur",
+      "tier": "comfort",
+      "tagline": "Pride Group 4-star directly opposite Nagpur airport — clean comfortable business bed at 40–50% the Radisson rate. The fastest pre-Tadoba airport-departure hotel.",
+      "price_band": "₹₹",
+      "address": "Opp. Airport, Wardha Road, Nagpur 440025, Maharashtra",
+      "book_url": "https://www.pridehotel.com/nagpur/",
+      "sources": [
+        "https://www.pridehotel.com/nagpur/",
+        "https://www.tripadvisor.in/Hotel_Review-g662323-d2074921-Reviews-The_Pride_Hotel_Nagpur-Nagpur_Nagpur_District_Maharashtra.html",
+        "https://www.booking.com/hotel/in/the-pride-nagpur.html"
+      ]
+    }
+  }
+]

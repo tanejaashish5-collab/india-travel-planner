@@ -1,0 +1,78 @@
+[
+  {
+    "destination_id": "nashik",
+    "slot": "experience",
+    "verdict": "replace",
+    "existing": {"name": "Regenta Resort Soma Vine Village", "issue": "OK but better signature exists — Sula's own property"},
+    "replacement": {
+      "name": "The Source at Sula",
+      "tier": "luxury",
+      "tagline": "Sula's own 32-room luxury wing inside the working vineyard — vine-view rooms, 1-2-1 wine experiences with the winemaking team. The destination property for Nashik wine tourism, especially SulaFest in February.",
+      "price_band": "₹₹₹₹",
+      "address": "Sula Vineyards, Gangapur–Savargaon Road, Nashik 422222, Maharashtra",
+      "book_url": "https://www.thesourceatsula.com/",
+      "sources": [
+        "https://www.thesourceatsula.com/",
+        "https://www.tripadvisor.in/Hotel_Review-g297653-d3349148-Reviews-The_Source_at_Sula-Nashik_Nashik_District_Maharashtra.html",
+        "https://www.booking.com/hotel/in/the-source-at-sula.html"
+      ]
+    }
+  },
+  {
+    "destination_id": "nashik",
+    "slot": "value",
+    "verdict": "keep_existing",
+    "existing": {"name": "ibis Nashik Hotel", "issue": "OK"},
+    "replacement": {
+      "name": "ibis Nashik Hotel",
+      "tier": "comfort",
+      "tagline": "Accor-brand ibis on the Mumbai-Agra highway 5 km from Sula — modern eco-certified rooms, the most reliable mid-tier brand in Nashik. Day-trip to Sula via hotel cab (20 min).",
+      "price_band": "₹₹",
+      "address": "Plot No. P-31, Phase II, Pathardi Phata, Mumbai-Agra Highway, Nashik 422010, Maharashtra",
+      "book_url": "https://all.accor.com/hotel/8155/index.en.shtml",
+      "sources": [
+        "https://all.accor.com/hotel/8155/index.en.shtml",
+        "https://www.tripadvisor.in/Hotel_Review-g297653-d4136687-Reviews-Ibis_Nashik-Nashik_Nashik_District_Maharashtra.html",
+        "https://www.booking.com/hotel/in/ibis-nashik.html"
+      ]
+    }
+  },
+  {
+    "destination_id": "nashik",
+    "slot": "location",
+    "verdict": "keep_existing",
+    "existing": {"name": "Express Inn The Business Luxury Hotel", "issue": "OK — refresh name to Express Inn Nashik"},
+    "replacement": {
+      "name": "Express Inn Nashik",
+      "tier": "comfort",
+      "tagline": "Central Nashik 5-star on the Mumbai-Agra highway 10 km from Sula — full business facilities, rooftop pool. Best for Trimbakeshwar pilgrims combining wine tourism with Panchavati ghats and Kalaram temple.",
+      "price_band": "₹₹₹",
+      "address": "Pathardi Phata, Mumbai-Agra Highway, Nashik 422010, Maharashtra",
+      "book_url": "https://www.expressinn.in/nashik/",
+      "sources": [
+        "https://www.expressinn.in/nashik/",
+        "https://www.tripadvisor.in/Hotel_Review-g297653-d1466907-Reviews-Express_Inn-Nashik_Nashik_District_Maharashtra.html",
+        "https://www.booking.com/hotel/in/express-inn-nashik.html"
+      ]
+    }
+  },
+  {
+    "destination_id": "nashik",
+    "slot": "xfactor",
+    "verdict": "replace",
+    "existing": {"name": "Aria Resort and Spa", "issue": "verify — could be template; replace with verified Beyond by Sula"},
+    "replacement": {
+      "name": "Beyond by Sula",
+      "tier": "boutique",
+      "tagline": "Sula's value-tier sister inside the vineyard — comfort rooms with vine outlooks at roughly 40% less than The Source, same tasting access and same dawn vine-walk. The wine-country pick without Source pricing.",
+      "price_band": "₹₹₹",
+      "address": "Sula Vineyards, Gangapur–Savargaon Road, Nashik 422222, Maharashtra",
+      "book_url": "https://www.thesourceatsula.com/beyond/",
+      "sources": [
+        "https://www.thesourceatsula.com/beyond/",
+        "https://www.tripadvisor.in/Hotel_Review-g297653-d11725961-Reviews-Beyond_by_Sula-Nashik_Nashik_District_Maharashtra.html",
+        "https://www.booking.com/hotel/in/beyond-by-sula.html"
+      ]
+    }
+  }
+]

@@ -1,0 +1,74 @@
+[
+  {
+    "destination_id": "pune",
+    "name": "JW Marriott Hotel Pune",
+    "type": "business-hotel",
+    "location": "Senapati Bapat Road",
+    "why_special": "414 rooms on Senapati Bapat Road equidistant from Koregaon Park and Hinjawadi — 8 dining venues including Spice Kitchen (Indian) and Alto Vino (Italian). The Pune business 5-star with rooftop temperature-controlled pool and easiest cross-city positioning.",
+    "price_range": "₹₹₹₹",
+    "contact": {"phone": "+91-20-6683-3333", "website": "https://www.marriott.com/en-us/hotels/pnqjw-jw-marriott-hotel-pune/overview/", "email": null},
+    "best_for": ["business", "families", "couples"],
+    "verified": true,
+    "tags": ["Senapati-Bapat-Road", "JW-Marriott", "rooftop-pool", "business"]
+  },
+  {
+    "destination_id": "pune",
+    "name": "Conrad Pune",
+    "type": "business-hotel",
+    "location": "Mangaldas Road, Camp",
+    "why_special": "Hilton's Conrad on Mangaldas Road — closer to Aga Khan Palace / Shaniwar Wada heritage core than the IT-park hotels. Rooftop pool, Coriander Kitchen all-day buffet praised for breakfast spread variety. The default pick when your Pune trip mixes old-city sightseeing with business.",
+    "price_range": "₹₹₹₹",
+    "contact": {"phone": "+91-20-6645-6789", "website": "https://www.hilton.com/en/hotels/pnqcici-conrad-pune/", "email": null},
+    "best_for": ["business", "couples", "heritage"],
+    "verified": true,
+    "tags": ["Mangaldas-Road", "Conrad", "Hilton", "central"]
+  },
+  {
+    "destination_id": "pune",
+    "name": "Hyatt Regency Pune",
+    "type": "business-hotel",
+    "location": "Weikfield IT Park, Nagar Road",
+    "why_special": "Large-format Hyatt on Weikfield IT Park 25 min from Pune airport (PNQ) — the airport-run hotel with strong conference facilities and reliable Hyatt service at roughly 25% less than JW Marriott. Best last-night-before-flight bed in Pune.",
+    "price_range": "₹₹₹",
+    "contact": {"phone": "+91-20-6645-1234", "website": "https://www.hyatt.com/en-US/hotel/india/hyatt-regency-pune/punrp", "email": null},
+    "best_for": ["business", "families"],
+    "verified": true,
+    "tags": ["Nagar-Road", "Weikfield", "airport-proximate", "Hyatt"]
+  },
+  {
+    "destination_id": "pune",
+    "name": "Marriott Suites Pune",
+    "type": "boutique",
+    "location": "Koregaon Park",
+    "why_special": "All-suite Marriott in Koregaon Park — Pune's best neighbourhood for cafes, boutiques, and nightlife. Suites are notably larger than standard 5-star rooms, pet-friendly, 10-min walk to German Bakery and Osho Garden. The Pune pick for longer stays or families.",
+    "price_range": "₹₹₹",
+    "contact": {"phone": "+91-20-6724-1000", "website": "https://www.marriott.com/en-us/hotels/pnqsi-marriott-suites-pune/overview/", "email": null},
+    "best_for": ["couples", "families", "long-stay"],
+    "verified": true,
+    "tags": ["Koregaon-Park", "all-suite", "Marriott", "pet-friendly"]
+  },
+  {
+    "destination_id": "pune",
+    "name": "The O Hotel Pune",
+    "type": "boutique",
+    "location": "Koregaon Park",
+    "why_special": "Boutique design hotel on North Main Road, Koregaon Park — rooftop pool with city view, Addis Ababa for African cuisine. The walk-out neighbourhood for cafes and nightlife minus the 5-star pricing.",
+    "price_range": "₹₹₹",
+    "contact": {"phone": "+91-20-4001-1000", "website": "https://www.theohotelpune.com/", "email": "info@theohotelpune.com"},
+    "best_for": ["couples", "solo", "boutique"],
+    "verified": true,
+    "tags": ["Koregaon-Park", "boutique", "rooftop-pool"]
+  },
+  {
+    "destination_id": "pune",
+    "name": "Hotel Sunderban",
+    "type": "heritage-hotel",
+    "location": "Koregaon Park",
+    "why_special": "1932 Art Deco bungalow in Koregaon Park — 32 rooms across the original house and newer block, vegetarian Maharashtrian/Gujarati thali at Mango Tree restaurant, gardens used for Pune weddings. The closest thing to a heritage stay in Koregaon Park.",
+    "price_range": "₹₹",
+    "contact": {"phone": "+91-20-2613-3535", "website": "https://hotelsunderban.com/", "email": "reservations@hotelsunderban.com"},
+    "best_for": ["heritage", "couples", "families"],
+    "verified": true,
+    "tags": ["Koregaon-Park", "1932-Art-Deco", "vegetarian-thali", "heritage"]
+  }
+]

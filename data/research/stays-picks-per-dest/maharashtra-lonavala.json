@@ -1,0 +1,59 @@
+[
+  {
+    "destination_id": "lonavala",
+    "slot": "experience",
+    "verdict": "keep_existing",
+    "existing": {"name": "Fariyas Resort Lonavala", "issue": "OK — could swap to Della as the experience pick"},
+    "replacement": {
+      "name": "Della Resorts Lonavala",
+      "tier": "luxury",
+      "tagline": "India's largest adventure-led resort across 90 acres in Tungarli — over 60 activities including a Sky Bar at 65 ft and the country's only suspended fine-dining restaurant. The Lonavala destination resort for weekend families.",
+      "price_band": "₹₹₹₹",
+      "address": "Kunegaon, Tungarli, Lonavala 410401, Maharashtra",
+      "book_url": "https://www.dellaresorts.com/",
+      "sources": [
+        "https://www.dellaresorts.com/",
+        "https://www.tripadvisor.in/Hotel_Review-g297659-d2025553-Reviews-Della_Resorts-Lonavala_Pune_District_Maharashtra.html",
+        "https://www.booking.com/hotel/in/della-adventure-resort.html"
+      ]
+    }
+  },
+  {
+    "destination_id": "lonavala",
+    "slot": "value",
+    "verdict": "replace",
+    "existing": {"name": "DATA Resort by Della Adventure", "issue": "verify — Della has multiple brand variants; DATA tier is real but lower-confidence than direct Fariyas pick"},
+    "replacement": {
+      "name": "Fariyas Resort Lonavala",
+      "tier": "comfort",
+      "tagline": "Fariyas Group flagship in Tungarli's Frichley Hills — one of Lonavala's longest pools, indoor games, multi-cuisine restaurant. The senior 4-star pick when adventure isn't the agenda.",
+      "price_band": "₹₹₹",
+      "address": "Frichley Hills, Tungarli, Lonavala 410403, Maharashtra",
+      "book_url": "https://fariyas.com/lonavala/",
+      "sources": [
+        "https://fariyas.com/lonavala/",
+        "https://www.tripadvisor.in/Hotel_Review-g297659-d503014-Reviews-Fariyas_Resort_Lonavala-Lonavala_Pune_District_Maharashtra.html",
+        "https://www.booking.com/hotel/in/fariyas-resort-lonavala.html"
+      ]
+    }
+  },
+  {
+    "destination_id": "lonavala",
+    "slot": "location",
+    "verdict": "keep_existing",
+    "existing": {"name": "Rhythm Lonavala - An All Suite Resort", "issue": "OK"},
+    "replacement": {
+      "name": "Rhythm Lonavala",
+      "tier": "boutique",
+      "tagline": "All-suite boutique with one-bedroom and family suites — outdoor pool, multi-cuisine restaurant, the Lonavala suite pick on the Pawna side with better-sized rooms than the senior 4-stars.",
+      "price_band": "₹₹₹",
+      "address": "Mumbai-Pune Expressway, Pawna Road, Lonavala 410406, Maharashtra",
+      "book_url": "https://www.rhythmlonavala.com/",
+      "sources": [
+        "https://www.rhythmlonavala.com/",
+        "https://www.tripadvisor.in/Hotel_Review-g297659-d11763858-Reviews-Rhythm_Lonavala-Lonavala_Pune_District_Maharashtra.html",
+        "https://www.booking.com/hotel/in/rhythm-lonavala.html"
+      ]
+    }
+  }
+]

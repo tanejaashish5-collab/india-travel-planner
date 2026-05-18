@@ -1,0 +1,30 @@
+[
+  {
+    "destination_id": "kanheri-caves",
+    "slot": "value",
+    "verdict": "honest_scarcity",
+    "existing": {"name": "Hosteller's Den, Borivali", "issue": "verify — 'The Hosteller' is a known chain (rebranded ex-Zostel founders) and operates in Mumbai but specific Borivali property near Sanjay Gandhi NP not strongly verifiable as a single anchor"},
+    "replacement": null
+  },
+  {
+    "destination_id": "kanheri-caves",
+    "slot": "location",
+    "verdict": "honest_scarcity",
+    "existing": {"name": "MTDC Borivali Resort", "issue": "fabricated — no MTDC property inside Sanjay Gandhi National Park / Borivali. Kanheri Caves are inside SGNP, ASI-protected; no overnight accommodation"},
+    "replacement": null
+  },
+  {
+    "destination_id": "kanheri-caves",
+    "slot": "experience",
+    "verdict": "honest_scarcity",
+    "existing": {"name": "Taj Lands End, Mumbai (day base for Kanheri)", "issue": "cross-dest — Taj Lands End is in Bandra, Mumbai inventory. Kanheri is a day-trip from anywhere in Mumbai; no on-site or adjacent stays exist"},
+    "replacement": null
+  },
+  {
+    "destination_id": "kanheri-caves",
+    "slot": "xfactor",
+    "verdict": "honest_scarcity",
+    "existing": {"name": "Saunders Farmstay, Thane Hinterland", "issue": "template-sounding — 'Saunders Farmstay' has no verifiable presence on Booking/MakeMyTrip/MTDC"},
+    "replacement": null
+  }
+]

@@ -1,0 +1,41 @@
+[
+  {
+    "destination_id": "ranjangaon",
+    "slot": "experience",
+    "verdict": "honest_scarcity",
+    "existing": {"name": "Sula Vineyards Resort", "issue": "fabricated cross-dest — Sula Vineyards is in Nashik 200 km from Ranjangaon. No Sula property exists at Ranjangaon"},
+    "replacement": null
+  },
+  {
+    "destination_id": "ranjangaon",
+    "slot": "value",
+    "verdict": "honest_scarcity",
+    "existing": {"name": "Amanora Parks Pune (Pirangut property)", "issue": "fabricated cross-dest — Amanora Park Town is a residential complex in Magarpatta City, Pune. Pirangut is a separate Pune-Mulshi area 30 km from Amanora; neither is at Ranjangaon (50 km east of Pune)"},
+    "replacement": null
+  },
+  {
+    "destination_id": "ranjangaon",
+    "slot": "location",
+    "verdict": "replace",
+    "existing": {"name": "Hotel Maharaja (Ranjangaon town centre)", "issue": "verify — 'Hotel Maharaja Ranjangaon' not strongly verifiable; refresh with the verified Devasthan trust"},
+    "replacement": {
+      "name": "Shri Mahaganpati Devasthan Trust Bhakta Niwas",
+      "tier": "budget",
+      "tagline": "Devasthan Trust's pilgrim accommodation at Ranjangaon's Mahaganpati (Astavinayak) — dormitory and family rooms at trust rates, vegetarian prasad meals.",
+      "price_band": "₹",
+      "address": "Mahaganpati Temple, Ranjangaon, Shirur Taluka, Pune District 412209, Maharashtra",
+      "book_url": "https://www.maharashtratourism.gov.in/destinations/Ranjangaon",
+      "sources": [
+        "https://www.maharashtratourism.gov.in/destinations/Ranjangaon",
+        "https://ashtavinayakdarshan.in/ranjangaon/"
+      ]
+    }
+  },
+  {
+    "destination_id": "ranjangaon",
+    "slot": "xfactor",
+    "verdict": "honest_scarcity",
+    "existing": {"name": "Organic Farmstay at Pirangut (cooperative-run)", "issue": "Pirangut is 60 km west of Ranjangaon; cross-dest. No verified Ranjangaon-area farmstay"},
+    "replacement": null
+  }
+]

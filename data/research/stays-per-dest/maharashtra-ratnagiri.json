@@ -1,0 +1,38 @@
+[
+  {
+    "destination_id": "ratnagiri",
+    "name": "Kohinoor Samudra Beach Resort",
+    "type": "resort",
+    "location": "Ganeshgule, Ratnagiri",
+    "why_special": "Kohinoor Group's beach resort 11 km south of Ratnagiri town on Ganeshgule beach — 70 cottage-style rooms across landscaped grounds, outdoor pool, multi-cuisine Konkani restaurant. The polished beach-resort default for Ratnagiri.",
+    "price_range": "₹₹₹",
+    "contact": {"phone": "+91-2352-203-300", "website": "https://www.kohinoorhotels.in/kohinoor-samudra-ratnagiri/", "email": null},
+    "best_for": ["families", "couples", "beach"],
+    "verified": true,
+    "tags": ["Ganeshgule", "Kohinoor", "beach-resort", "Konkan"]
+  },
+  {
+    "destination_id": "ratnagiri",
+    "name": "Hotel Landmark Ratnagiri",
+    "type": "business-hotel",
+    "location": "Maruti Mandir, Ratnagiri town",
+    "why_special": "Senior Ratnagiri town 3-star at Maruti Mandir junction — multi-cuisine restaurant, the reliable mid-range pick for travellers using Ratnagiri as a Konkan-route overnight rather than a beach stay.",
+    "price_range": "₹₹",
+    "contact": {"phone": "+91-2352-228-228", "website": "https://www.hotellandmarkratnagiri.com/", "email": null},
+    "best_for": ["business", "families"],
+    "verified": true,
+    "tags": ["town-centre", "Landmark", "mid-range"]
+  },
+  {
+    "destination_id": "ratnagiri",
+    "name": "Pawas Swaroopanand Ashram Bhakta Niwas",
+    "type": "ashram",
+    "location": "Pawas village, 19 km from Ratnagiri",
+    "why_special": "The Swami Swaroopanand Pawas ashram's pilgrim accommodation 19 km south of Ratnagiri — simple twin and family rooms attached to the samadhi mandir, satvic meals included. Booking through ashram directly; the spiritual alternative to beach resorts.",
+    "price_range": "₹",
+    "contact": {"phone": "+91-2352-285-100", "website": "https://pawasswamiswaroopanand.org/", "email": null},
+    "best_for": ["pilgrim", "solo", "budget"],
+    "verified": true,
+    "tags": ["Pawas", "Swaroopanand", "ashram", "satvic"]
+  }
+]

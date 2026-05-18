@@ -1,0 +1,74 @@
+[
+  {
+    "destination_id": "mumbai",
+    "name": "The Taj Mahal Palace, Mumbai",
+    "type": "heritage-hotel",
+    "location": "Apollo Bunder, Colaba",
+    "why_special": "1903 sea-facing heritage palace facing the Gateway of India — twin-wing property (Palace 1903 + Tower 1973), 285 rooms across 11 acres, the most-photographed hotel in India. Sea Lounge afternoon-tea ritual and Harbour Bar (Mumbai's oldest licensed bar, 1933) anchor the experience.",
+    "price_range": "₹₹₹₹",
+    "contact": {"phone": "+91-22-6665-3366", "website": "https://www.tajhotels.com/en-in/taj/taj-mahal-palace-mumbai/", "email": "tmhbc.bom@tajhotels.com"},
+    "best_for": ["heritage", "couples", "families"],
+    "verified": true,
+    "tags": ["1903-heritage", "Gateway-of-India", "Sea-Lounge", "IHCL", "iconic"]
+  },
+  {
+    "destination_id": "mumbai",
+    "name": "The Oberoi Mumbai",
+    "type": "business-hotel",
+    "location": "Nariman Point, Marine Drive",
+    "why_special": "Nariman Point tower with Arabian Sea views from every sea-facing room and the Queen's Necklace Marine Drive sweep below. 287 rooms, Ziya (Vineet Bhatia's Michelin-starred Indian) on the lobby level, calmer counterpoint to the Taj's Gateway bustle.",
+    "price_range": "₹₹₹₹",
+    "contact": {"phone": "+91-22-6632-5757", "website": "https://www.oberoihotels.com/hotels-in-mumbai/", "email": "reservations.tom@oberoihotels.com"},
+    "best_for": ["business", "couples", "luxury"],
+    "verified": true,
+    "tags": ["Marine-Drive", "Nariman-Point", "Ziya", "sea-facing", "Oberoi"]
+  },
+  {
+    "destination_id": "mumbai",
+    "name": "Trident Nariman Point",
+    "type": "business-hotel",
+    "location": "Nariman Point",
+    "why_special": "Sister-property to The Oberoi in the same Nariman Point seafront complex — same Arabian Sea views at roughly 40% less than the Oberoi tower. India Jones (pan-Asian) and Frangipani run the dining. Best value sea-view 5-star in South Mumbai.",
+    "price_range": "₹₹₹",
+    "contact": {"phone": "+91-22-6632-4343", "website": "https://www.tridenthotels.com/hotels-in-mumbai/trident-nariman-point", "email": null},
+    "best_for": ["business", "couples", "families"],
+    "verified": true,
+    "tags": ["Nariman-Point", "sea-facing", "Oberoi-sister", "value-luxury"]
+  },
+  {
+    "destination_id": "mumbai",
+    "name": "Four Seasons Hotel Mumbai",
+    "type": "business-hotel",
+    "location": "Worli",
+    "why_special": "33-floor glass tower in Worli with Aer rooftop bar on level 34 — Mumbai's most-photographed skyline view. 202 rooms central to the new luxury axis of BKC/Lower Parel. Pick this if your Mumbai trip leans nightlife, fashion week, or business over Gateway tourism.",
+    "price_range": "₹₹₹₹",
+    "contact": {"phone": "+91-22-2481-8000", "website": "https://www.fourseasons.com/mumbai/", "email": null},
+    "best_for": ["business", "couples", "luxury"],
+    "verified": true,
+    "tags": ["Worli", "Aer-rooftop", "skyline", "luxury", "Four-Seasons"]
+  },
+  {
+    "destination_id": "mumbai",
+    "name": "Abode Bombay",
+    "type": "boutique",
+    "location": "Lansdowne House, Colaba Causeway",
+    "why_special": "20-room boutique inside a restored 1910 colonial house above Colaba Causeway — design-led, art-deco-furniture, walk to Gateway/Taj/Leopold Cafe. Mumbai's first true boutique hotel and still the most distinctive small property in South Mumbai.",
+    "price_range": "₹₹₹",
+    "contact": {"phone": "+91-81-0844-8884", "website": "https://abodeboutiquehotels.com/", "email": "info@abodeboutiquehotels.com"},
+    "best_for": ["couples", "solo", "boutique"],
+    "verified": true,
+    "tags": ["Colaba", "1910-mansion", "boutique", "art-deco"]
+  },
+  {
+    "destination_id": "mumbai",
+    "name": "Zostel Mumbai",
+    "type": "hostel",
+    "location": "Andheri West",
+    "why_special": "India's flagship backpacker chain in Andheri West — dorms ₹600–1,200, private rooms ₹1,800+. 15 min to BOM airport, walking-distance to Andheri station for South-Mumbai trips by Metro Line 1. The most reliable budget social bed in the city.",
+    "price_range": "₹",
+    "contact": {"phone": "+91-90-1500-0500", "website": "https://www.zostel.com/zostel/mumbai/", "email": "hello@zostel.com"},
+    "best_for": ["solo", "backpacker", "budget"],
+    "verified": true,
+    "tags": ["Andheri-West", "Zostel", "hostel", "budget"]
+  }
+]

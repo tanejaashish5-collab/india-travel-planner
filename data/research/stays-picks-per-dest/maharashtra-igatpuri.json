@@ -1,0 +1,47 @@
+[
+  {
+    "destination_id": "igatpuri",
+    "slot": "experience",
+    "verdict": "keep_existing",
+    "existing": {"name": "Manas Lifestyle Resort Igatpuri", "issue": "OK"},
+    "replacement": {
+      "name": "Manas Lifestyle Resort Igatpuri",
+      "tier": "luxury",
+      "tagline": "Mid-luxury wellness resort across 12 acres in the Sahyadri foothills — 76 rooms, Ayurveda spa, indoor pool. The destination wellness resort that pairs with Dhamma Giri Vipassana visitors.",
+      "price_band": "₹₹₹",
+      "address": "Khairgaon, Igatpuri 422403, Maharashtra",
+      "book_url": "https://www.manaslifestyleresort.com/",
+      "sources": [
+        "https://www.manaslifestyleresort.com/",
+        "https://www.tripadvisor.in/Hotel_Review-g1422389-d1192478-Reviews-Manas_Lifestyle_Resort-Igatpuri_Nashik_District_Maharashtra.html",
+        "https://www.booking.com/hotel/in/manas-lifestyle-resort.html"
+      ]
+    }
+  },
+  {
+    "destination_id": "igatpuri",
+    "slot": "value",
+    "verdict": "replace",
+    "existing": {"name": "Rakabi the Fern Igatpuri", "issue": "stale name — 'Rakabi the Fern' has been re-branded; the property runs as The Fern Igatpuri under Fern Hotels"},
+    "replacement": {
+      "name": "The Fern Igatpuri",
+      "tier": "comfort",
+      "tagline": "Fern Hotels' eco-certified Igatpuri resort with 56 rooms — outdoor pool, multi-cuisine restaurant, the polished mid-range brand pick closer to the highway exit.",
+      "price_band": "₹₹₹",
+      "address": "Wadiwarhe Village, Igatpuri 422403, Maharashtra",
+      "book_url": "https://www.fernhotels.com/igatpuri-fern.aspx",
+      "sources": [
+        "https://www.fernhotels.com/igatpuri-fern.aspx",
+        "https://www.tripadvisor.in/Hotel_Review-g1422389-d8120880-Reviews-The_Fern_Igatpuri-Igatpuri_Nashik_District_Maharashtra.html",
+        "https://www.booking.com/hotel/in/the-fern-igatpuri.html"
+      ]
+    }
+  },
+  {
+    "destination_id": "igatpuri",
+    "slot": "location",
+    "verdict": "replace",
+    "existing": {"name": "Manas Lifestyle Resort Igatpuri", "issue": "duplicate of experience slot"},
+    "replacement": null
+  }
+]

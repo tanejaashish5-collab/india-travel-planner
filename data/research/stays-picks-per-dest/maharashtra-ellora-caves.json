@@ -1,0 +1,57 @@
+[
+  {
+    "destination_id": "ellora-caves",
+    "slot": "experience",
+    "verdict": "replace",
+    "existing": {"name": "Khuldabad Sufi Heritage Homestay", "issue": "verify — 'Khuldabad Sufi Heritage Homestay' is a category not a verified single property. Khuldabad has the Aurangzeb tomb and Sufi shrines but no formal heritage homestay brand on Booking/MTDC"},
+    "replacement": {
+      "name": "Vivanta Aurangabad (Ellora base)",
+      "tier": "luxury",
+      "tagline": "Aurangabad 4-star labelled as Ellora base — 30 km / 45-min drive to Cave 16 Kailasa Temple. The only Taj-IHCL service tier in the Ajanta-Ellora-Daulatabad triangle.",
+      "price_band": "₹₹₹",
+      "address": "8-N-12 CIDCO, Rauza Bagh, Aurangabad 431003, Maharashtra (30 km from Ellora Caves)",
+      "book_url": "https://www.vivantahotels.com/en-in/vivanta-aurangabad/",
+      "sources": [
+        "https://www.vivantahotels.com/en-in/vivanta-aurangabad/",
+        "https://www.tripadvisor.in/Hotel_Review-g297652-d301690-Reviews-Vivanta_Aurangabad-Aurangabad_Aurangabad_District_Maharashtra.html"
+      ]
+    }
+  },
+  {
+    "destination_id": "ellora-caves",
+    "slot": "value",
+    "verdict": "keep_existing",
+    "existing": {"name": "Hotel Kailas", "issue": "OK — verified opposite Cave 16"},
+    "replacement": {
+      "name": "Hotel Kailas",
+      "tier": "comfort",
+      "tagline": "Senior budget-mid hotel directly opposite the Kailasa Temple cave entrance — 30 cottage-style rooms, multi-cuisine restaurant. The only accommodation walking-distance to the caves.",
+      "price_band": "₹₹",
+      "address": "Ellora Caves Road, opposite Cave 16, Aurangabad District 431102, Maharashtra",
+      "book_url": "https://hotelkailas.com/",
+      "sources": [
+        "https://hotelkailas.com/",
+        "https://www.tripadvisor.in/Hotel_Review-g668044-d633059-Reviews-Hotel_Kailas-Ellora_Caves_Aurangabad_District_Maharashtra.html",
+        "https://www.booking.com/hotel/in/kailas-ellora.html"
+      ]
+    }
+  },
+  {
+    "destination_id": "ellora-caves",
+    "slot": "location",
+    "verdict": "replace",
+    "existing": {"name": "MTDC Ellora-Aurangabad", "issue": "ambiguous name — could mean MTDC Ellora gate or MTDC Aurangabad; refresh to the gate property"},
+    "replacement": {
+      "name": "MTDC Ellora Resort",
+      "tier": "budget",
+      "tagline": "Maharashtra Tourism's smaller Ellora property at the cave gate — basic A/C cottages, in-house restaurant, the value-rate alternative to Hotel Kailas.",
+      "price_band": "₹₹",
+      "address": "Ellora Caves area, Aurangabad District 431102, Maharashtra",
+      "book_url": "https://www.maharashtratourism.gov.in/destination-mtdc-resorts",
+      "sources": [
+        "https://www.maharashtratourism.gov.in/destination-mtdc-resorts",
+        "https://www.maharashtratourism.gov.in/destinations/Ellora-Caves"
+      ]
+    }
+  }
+]

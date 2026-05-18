@@ -1,0 +1,38 @@
+[
+  {
+    "destination_id": "tarkarli",
+    "name": "MTDC Tarkarli Beach Resort",
+    "type": "government-hotel",
+    "location": "Tarkarli Beach, Sindhudurg",
+    "why_special": "Maharashtra Tourism's flagship Konkan beach resort — A/C cottages and Konkan tents on the white-sand Tarkarli beach, the only government-rate property with full beach walkout. Books out December–February (peak diving season) and Ganesh Chaturthi months in advance.",
+    "price_range": "₹₹",
+    "contact": {"phone": "+91-2362-241-700", "website": "https://www.maharashtratourism.gov.in/destination-mtdc-resorts/-/asset_publisher/3vYTZxYEy3PD/content/mtdc-tarkarli-resort", "email": null},
+    "best_for": ["beach", "families", "value"],
+    "verified": true,
+    "tags": ["MTDC", "Tarkarli-beach", "Konkan-tents", "scuba-diving"]
+  },
+  {
+    "destination_id": "tarkarli",
+    "name": "Konkan Wave Beach Resort",
+    "type": "resort",
+    "location": "Tarkarli–Devbag road",
+    "why_special": "Private 4-star beach resort on the Tarkarli–Devbag stretch — 50 rooms, outdoor pool, multi-cuisine Malvani restaurant. The polished-resort alternative to MTDC when its A/C cottages are booked out.",
+    "price_range": "₹₹₹",
+    "contact": {"phone": "+91-2362-251-616", "website": "https://www.konkanwavebeach.com/", "email": null},
+    "best_for": ["families", "couples", "beach"],
+    "verified": true,
+    "tags": ["Tarkarli-Devbag", "Konkan-Wave", "Malvani", "private-resort"]
+  },
+  {
+    "destination_id": "tarkarli",
+    "name": "Bhogwe Beach Homestays (Tarkarli/Devbag fisher-family circuit)",
+    "type": "homestay",
+    "location": "Bhogwe village, near Tarkarli",
+    "why_special": "Cluster of MTDC-registered Konkani fisher-family homestays on Bhogwe beach 12 km from Tarkarli — Malvani fish-thali (surmai, prawns), boat rides to dolphins from family-owned boats. The authentic alternative when MTDC is full and resort food feels too clean.",
+    "price_range": "₹",
+    "contact": {"phone": "+91-9422-650-450", "website": "https://www.maharashtratourism.gov.in/destination-mtdc-resorts/-/asset_publisher/3vYTZxYEy3PD/content/mtdc-registered-homestays", "email": null},
+    "best_for": ["homestay", "families", "Konkan-culture"],
+    "verified": true,
+    "tags": ["Bhogwe", "MTDC-registered", "Konkani-fisher", "Malvani-thali"]
+  }
+]

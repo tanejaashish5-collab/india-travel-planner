@@ -1,0 +1,59 @@
+[
+  {
+    "destination_id": "mahabaleshwar",
+    "slot": "experience",
+    "verdict": "keep_existing",
+    "existing": {"name": "Le Méridien Mahabaleshwar Resort & Spa", "issue": "OK"},
+    "replacement": {
+      "name": "Le Méridien Mahabaleshwar Resort & Spa",
+      "tier": "luxury",
+      "tagline": "Marriott's Le Méridien — Mahabaleshwar's only branded 5-star with 121 rooms across the ridge, indoor heated pool, full-service spa. The hill-station 5-star default.",
+      "price_band": "₹₹₹₹",
+      "address": "211/212 Mahabaleshwar–Medha Road, Frederick Road, Mahabaleshwar 412806, Maharashtra",
+      "book_url": "https://www.marriott.com/en-us/hotels/pnqmd-le-meridien-mahabaleshwar-resort-and-spa/overview/",
+      "sources": [
+        "https://www.marriott.com/en-us/hotels/pnqmd-le-meridien-mahabaleshwar-resort-and-spa/overview/",
+        "https://www.tripadvisor.in/Hotel_Review-g297667-d1196891-Reviews-Le_Meridien_Mahabaleshwar_Resort_Spa-Mahabaleshwar_Satara_District_Maharashtra.html",
+        "https://www.booking.com/hotel/in/le-meridien-mahabaleshwar.html"
+      ]
+    }
+  },
+  {
+    "destination_id": "mahabaleshwar",
+    "slot": "value",
+    "verdict": "keep_existing",
+    "existing": {"name": "Evershine Resort & Spa", "issue": "OK"},
+    "replacement": {
+      "name": "Evershine Resort, Spa & Wellness",
+      "tier": "comfort",
+      "tagline": "7-acre Old-Mahabaleshwar resort — heated pool, ayurveda spa, on-property strawberry-farm walks. The closest mid-tier to the Panchganga temple.",
+      "price_band": "₹₹₹",
+      "address": "Goa Bagh, Old Mahabaleshwar 412806, Maharashtra",
+      "book_url": "https://evershine.in/",
+      "sources": [
+        "https://evershine.in/",
+        "https://www.tripadvisor.in/Hotel_Review-g297667-d4118574-Reviews-Evershine_Keys_Prima_Resort_Spa-Mahabaleshwar_Satara_District_Maharashtra.html",
+        "https://www.booking.com/hotel/in/evershine-resort-mahabaleshwar.html"
+      ]
+    }
+  },
+  {
+    "destination_id": "mahabaleshwar",
+    "slot": "location",
+    "verdict": "keep_existing",
+    "existing": {"name": "Brightland Resort & Spa", "issue": "OK"},
+    "replacement": {
+      "name": "Brightland Resort & Spa",
+      "tier": "comfort",
+      "tagline": "Brightland's flagship across 23 acres on the Khadi Ghat ridge — heated pool, the longest-running mid-tier resort brand in Mahabaleshwar. The reliable bridge between MTDC and Le Méridien.",
+      "price_band": "₹₹₹",
+      "address": "Khadi Ghat, Mahabaleshwar 412806, Maharashtra",
+      "book_url": "https://www.brightlandresort.com/",
+      "sources": [
+        "https://www.brightlandresort.com/",
+        "https://www.tripadvisor.in/Hotel_Review-g297667-d633056-Reviews-Brightland_Resort_Spa-Mahabaleshwar_Satara_District_Maharashtra.html",
+        "https://www.booking.com/hotel/in/brightland-resort.html"
+      ]
+    }
+  }
+]

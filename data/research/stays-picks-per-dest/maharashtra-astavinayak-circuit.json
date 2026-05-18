@@ -1,0 +1,30 @@
+[
+  {
+    "destination_id": "astavinayak-circuit",
+    "slot": "experience",
+    "verdict": "honest_scarcity",
+    "existing": {"name": "Lonavala Resorts & Spa (or Fariyas Resort, Lonavala)", "issue": "cross-dest — Lonavala is 80+ km from most Astavinayak temples (Theur, Morgaon, Siddhatek, Ranjangaon are east of Pune; only Ozar/Lenyadri sit toward Junnar/Lonavala axis). No single resort serves the 8-temple circuit"},
+    "replacement": null
+  },
+  {
+    "destination_id": "astavinayak-circuit",
+    "slot": "value",
+    "verdict": "honest_scarcity",
+    "existing": {"name": "Sai Kunj Guest House, Theur", "issue": "template-sounding — 'Sai Kunj' is a generic name not strongly verifiable in Theur; Theur's official pilgrim accommodation is Shri Chintamani Bhakta Niwas (covered under theur dest)"},
+    "replacement": null
+  },
+  {
+    "destination_id": "astavinayak-circuit",
+    "slot": "location",
+    "verdict": "honest_scarcity",
+    "existing": {"name": "Hotel Surya (or similar MTDC lodge), Shirur", "issue": "no MTDC lodge in Shirur; 'Hotel Surya' is a generic-sounding name without strong single-property verification. Astavinayak circuit-level location pick is structurally impossible — use Pune (covered) as the base"},
+    "replacement": null
+  },
+  {
+    "destination_id": "astavinayak-circuit",
+    "slot": "xfactor",
+    "verdict": "honest_scarcity",
+    "existing": {"name": "Nandi Homestay & Farm, Vada (or Workation-style farmstays near Junnar)", "issue": "Vada is in Palghar district 200 km from the circuit centre; Junnar farmstays serve Lenyadri/Ozar (covered separately). Circuit-level xfactor doesn't resolve to one property"},
+    "replacement": null
+  }
+]

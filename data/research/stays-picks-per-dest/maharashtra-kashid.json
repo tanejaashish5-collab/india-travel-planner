@@ -1,0 +1,54 @@
+[
+  {
+    "destination_id": "kashid",
+    "slot": "experience",
+    "verdict": "replace",
+    "existing": {"name": "Tamarind Tree Resort", "issue": "verify — 'Tamarind Tree' is a name used by multiple properties across India; Kashid specific not strongly anchored on Booking/MMT"},
+    "replacement": {
+      "name": "Prakruti Resort Kashid",
+      "tier": "boutique",
+      "tagline": "Senior beach-front resort 200 m from Kashid beach — 40 cottage rooms across landscaped grounds, outdoor pool, Konkani thali. The longest-running Kashid resort.",
+      "price_band": "₹₹₹",
+      "address": "Kashid Beach Road, Kashid 402401, Maharashtra",
+      "book_url": "https://www.prakrutiresort.com/",
+      "sources": [
+        "https://www.prakrutiresort.com/",
+        "https://www.tripadvisor.in/Hotel_Review-g1163522-d633093-Reviews-Prakruti_Resort-Kashid_Raigad_District_Maharashtra.html",
+        "https://www.booking.com/hotel/in/prakruti-resort.html"
+      ]
+    }
+  },
+  {
+    "destination_id": "kashid",
+    "slot": "value",
+    "verdict": "replace",
+    "existing": {"name": "Kashid Beach Homestay (Kalamb family-run)", "issue": "template-sounding — Kalamb is a separate Konkan-coast village 6 km from Kashid; 'Kalamb family-run homestay' not verifiable as a single property"},
+    "replacement": {
+      "name": "Kashid Beach Resort by RDB Hospitality",
+      "tier": "comfort",
+      "tagline": "Direct beach-walkout resort with 35 rooms — outdoor pool, beach barbecue, Konkani restaurant. The newer alternative to Prakruti with strongest direct-beach access.",
+      "price_band": "₹₹₹",
+      "address": "Kashid Beach front, Kashid 402401, Maharashtra",
+      "book_url": "https://kashidbeachresort.in/",
+      "sources": [
+        "https://kashidbeachresort.in/",
+        "https://www.tripadvisor.in/Hotel_Review-g1163522-d4408094-Reviews-Kashid_Beach_Resort-Kashid_Raigad_District_Maharashtra.html",
+        "https://www.booking.com/hotel/in/kashid-beach-resort.html"
+      ]
+    }
+  },
+  {
+    "destination_id": "kashid",
+    "slot": "location",
+    "verdict": "replace",
+    "existing": {"name": "Shree Samrat Resort", "issue": "verify — 'Shree Samrat' is a generic Konkan resort name without strong Booking/MMT Kashid-specific verification"},
+    "replacement": null
+  },
+  {
+    "destination_id": "kashid",
+    "slot": "xfactor",
+    "verdict": "honest_scarcity",
+    "existing": {"name": "Kashid Beach Treehouse Stays (Airbnb/local operators)", "issue": "category not a named property — Airbnb listings rotate too fast for a fixed verified pick"},
+    "replacement": null
+  }
+]

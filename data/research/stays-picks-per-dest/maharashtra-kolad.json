@@ -1,0 +1,55 @@
+[
+  {
+    "destination_id": "kolad",
+    "slot": "experience",
+    "verdict": "keep_existing",
+    "existing": {"name": "Kolad River Rafting Camps (cluster)", "issue": "category not a single property — but Foliage Outdoors is the verified anchor"},
+    "replacement": {
+      "name": "Foliage Outdoors Kolad",
+      "tier": "comfort",
+      "tagline": "Adventure-tourism camp by the Kundalika river — A/C and non-A/C luxury tents, river-rafting operator on the dam-release schedule (Class II–III rapids). The Kolad weekend base for Mumbai/Pune groups.",
+      "price_band": "₹₹",
+      "address": "Kundalika River, Kolad, Raigad District 402304, Maharashtra",
+      "book_url": "https://www.foliageoutdoors.com/",
+      "sources": [
+        "https://www.foliageoutdoors.com/",
+        "https://www.tripadvisor.in/Attraction_Review-g8763500-d8595022-Reviews-Foliage_Outdoors-Kolad_Raigad_District_Maharashtra.html"
+      ]
+    }
+  },
+  {
+    "destination_id": "kolad",
+    "slot": "value",
+    "verdict": "keep_existing",
+    "existing": {"name": "Foliage Outdoors Tent Camp", "issue": "duplicate of experience"},
+    "replacement": {
+      "name": "Foliage Outdoors Kolad",
+      "tier": "comfort",
+      "tagline": "Same property covers experience and value — the tent format itself is the budget pick, the upgraded A/C tents are the comfort tier.",
+      "price_band": "₹₹",
+      "address": "Kundalika River, Kolad, Raigad District 402304, Maharashtra",
+      "book_url": "https://www.foliageoutdoors.com/",
+      "sources": [
+        "https://www.foliageoutdoors.com/"
+      ]
+    }
+  },
+  {
+    "destination_id": "kolad",
+    "slot": "xfactor",
+    "verdict": "keep_existing",
+    "existing": {"name": "Kundalika Riverside Resort", "issue": "OK"},
+    "replacement": {
+      "name": "Kundalika Riverside Resort",
+      "tier": "boutique",
+      "tagline": "Private mid-range resort on the Kundalika river bank — 25 cottages, outdoor pool, multi-cuisine restaurant. The polished alternative when families want rafting access without sleeping under canvas.",
+      "price_band": "₹₹₹",
+      "address": "Kundalika River bank, Kolad, Raigad District 402304, Maharashtra",
+      "book_url": "https://www.kundalikariversideresort.com/",
+      "sources": [
+        "https://www.kundalikariversideresort.com/",
+        "https://www.tripadvisor.in/Hotel_Review-g8763500-d11796430-Reviews-Kundalika_Riverside_Resort-Kolad_Raigad_District_Maharashtra.html"
+      ]
+    }
+  }
+]

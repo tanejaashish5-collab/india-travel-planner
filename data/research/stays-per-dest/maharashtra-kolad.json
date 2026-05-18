@@ -1,0 +1,26 @@
+[
+  {
+    "destination_id": "kolad",
+    "name": "Foliage Outdoors Kolad",
+    "type": "luxury-tent",
+    "location": "Kundalika river, Kolad",
+    "why_special": "Adventure-tourism camp by the Kundalika river — A/C and non-A/C luxury tents, river-rafting operator with rapids Class II–III on the dam-release schedule. The Kolad-rafting weekend base for Mumbai/Pune groups.",
+    "price_range": "₹₹",
+    "contact": {"phone": "+91-87-9337-1701", "website": "https://www.foliageoutdoors.com/", "email": "info@foliageoutdoors.com"},
+    "best_for": ["adventure", "groups", "weekend-from-mumbai"],
+    "verified": true,
+    "tags": ["Foliage", "Kundalika", "rafting", "tents"]
+  },
+  {
+    "destination_id": "kolad",
+    "name": "Kundalika Riverside Resort",
+    "type": "resort",
+    "location": "Kundalika river bank, Kolad",
+    "why_special": "Private mid-range resort on the Kundalika river bank — 25 cottages, outdoor pool, multi-cuisine restaurant. The polished alternative to tent camps for families that want rafting access without sleeping under canvas.",
+    "price_range": "₹₹₹",
+    "contact": {"phone": "+91-2141-243-122", "website": "https://www.kundalikariversideresort.com/", "email": null},
+    "best_for": ["families", "adventure", "weekend-from-mumbai"],
+    "verified": true,
+    "tags": ["Kundalika", "Kolad", "riverside", "rafting-base"]
+  }
+]

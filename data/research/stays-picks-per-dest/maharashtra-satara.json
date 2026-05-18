@@ -1,0 +1,53 @@
+[
+  {
+    "destination_id": "satara",
+    "slot": "experience",
+    "verdict": "replace",
+    "existing": {"name": "Koyna Valley Resort", "issue": "verify — 'Koyna Valley Resort' is generic-sounding; Koyna Dam area has multiple small operators but no single anchor by this name verifiable on Booking/MTDC"},
+    "replacement": {
+      "name": "Hotel Preet Resort Satara",
+      "tier": "comfort",
+      "tagline": "Senior Satara highway-side resort on NH-48 — 50 rooms, outdoor pool, multi-cuisine restaurant. The reliable base for Kaas Plateau (Sep–Oct bloom) and Thoseghar Falls.",
+      "price_band": "₹₹",
+      "address": "Mumbai-Bangalore Highway (NH-48), Satara 415002, Maharashtra",
+      "book_url": "https://www.hotelpreetsatara.com/",
+      "sources": [
+        "https://www.hotelpreetsatara.com/",
+        "https://www.tripadvisor.in/Hotel_Review-g1162018-d3199906-Reviews-Hotel_Preet-Satara_Satara_District_Maharashtra.html",
+        "https://www.booking.com/hotel/in/preet-resort-satara.html"
+      ]
+    }
+  },
+  {
+    "destination_id": "satara",
+    "slot": "value",
+    "verdict": "replace",
+    "existing": {"name": "Satara Homestay by Shilimkar Family", "issue": "template-sounding — 'Satara Homestay by Shilimkar Family' has no verifiable single-property listing"},
+    "replacement": {
+      "name": "Hotel Yatra Inn Satara",
+      "tier": "budget",
+      "tagline": "Mid-range business hotel at Powai Naka junction — multi-cuisine vegetarian restaurant, walk to Ajinkyatara Fort base. The clean budget pick for Satara town stays.",
+      "price_band": "₹₹",
+      "address": "Powai Naka, Satara 415002, Maharashtra",
+      "book_url": "https://www.yatrainn.com/satara/",
+      "sources": [
+        "https://www.yatrainn.com/satara/",
+        "https://www.tripadvisor.in/Hotel_Review-g1162018-d4078901-Reviews-Yatra_Inn-Satara_Satara_District_Maharashtra.html"
+      ]
+    }
+  },
+  {
+    "destination_id": "satara",
+    "slot": "location",
+    "verdict": "replace",
+    "existing": {"name": "Hotel Woodland Satara", "issue": "verify — generic-sounding name, not strongly verifiable as a single property in Satara"},
+    "replacement": null
+  },
+  {
+    "destination_id": "satara",
+    "slot": "xfactor",
+    "verdict": "honest_scarcity",
+    "existing": {"name": "Wai Riverside Farmstay", "issue": "template-sounding — Wai is 35 km from Satara on the Krishna river but no verified 'Wai Riverside Farmstay' brand on Booking/MTDC. Most Wai accommodations are basic dharamshalas tied to its temples"},
+    "replacement": null
+  }
+]

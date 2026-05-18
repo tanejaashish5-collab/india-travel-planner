@@ -1,0 +1,38 @@
+[
+  {
+    "destination_id": "mahabaleshwar",
+    "name": "Le Méridien Mahabaleshwar Resort & Spa",
+    "type": "hill-resort",
+    "location": "Frederick Road, Old Mahabaleshwar",
+    "why_special": "Marriott's Le Méridien — Mahabaleshwar's only branded 5-star with 121 rooms across the ridge, indoor heated pool, full-service spa, the Latitude all-day diner. The hill-station 5-star default with the strongest reviews on Tripadvisor.",
+    "price_range": "₹₹₹₹",
+    "contact": {"phone": "+91-2168-661-100", "website": "https://www.marriott.com/en-us/hotels/pnqmd-le-meridien-mahabaleshwar-resort-and-spa/overview/", "email": null},
+    "best_for": ["couples", "families", "luxury"],
+    "verified": true,
+    "tags": ["Frederick-Road", "Le-Meridien", "Marriott", "5-star", "spa"]
+  },
+  {
+    "destination_id": "mahabaleshwar",
+    "name": "Brightland Resort & Spa",
+    "type": "hill-resort",
+    "location": "Khadi Ghat, near Mahabaleshwar bus stand",
+    "why_special": "Brightland Group's flagship resort across 23 acres on the Khadi Ghat ridge — heated pool, multi-cuisine restaurant, Mahabaleshwar's longest-running mid-tier resort brand. The reliable 4-star bridge between MTDC and the Le Méridien.",
+    "price_range": "₹₹₹",
+    "contact": {"phone": "+91-2168-260-700", "website": "https://www.brightlandresort.com/", "email": "info@brightlandresort.com"},
+    "best_for": ["families", "couples"],
+    "verified": true,
+    "tags": ["Khadi-Ghat", "Brightland", "23-acres", "ridge-views"]
+  },
+  {
+    "destination_id": "mahabaleshwar",
+    "name": "Evershine Resort, Spa & Wellness",
+    "type": "hill-resort",
+    "location": "Goa Bagh, Old Mahabaleshwar",
+    "why_special": "Evershine's 7-acre Old-Mahabaleshwar resort with heated pool and full-service ayurveda spa — strawberry-farm walks on-property (Mahabaleshwar's signature crop) and the closest mid-tier resort to the Panchganga temple.",
+    "price_range": "₹₹₹",
+    "contact": {"phone": "+91-2168-262-100", "website": "https://evershine.in/", "email": "reservations@evershine.in"},
+    "best_for": ["families", "couples", "wellness"],
+    "verified": true,
+    "tags": ["Goa-Bagh", "Evershine", "strawberry-farm", "spa"]
+  }
+]

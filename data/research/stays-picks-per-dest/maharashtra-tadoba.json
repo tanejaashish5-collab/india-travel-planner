@@ -1,0 +1,59 @@
+[
+  {
+    "destination_id": "tadoba",
+    "slot": "experience",
+    "verdict": "keep_existing",
+    "existing": {"name": "Svasara Jungle Lodge", "issue": "OK"},
+    "replacement": {
+      "name": "Svasara Jungle Lodge",
+      "tier": "luxury",
+      "tagline": "Mid-luxury 12-villa lodge adjacent to Kolara gate — naturalist-led twice-daily safaris, full-board Maharashtrian and multi-cuisine. Tripadvisor #1 in Tadoba.",
+      "price_band": "₹₹₹₹",
+      "address": "Kolara, Chimur Taluka, Chandrapur District 442909, Maharashtra",
+      "book_url": "https://svasararesorts.com/",
+      "sources": [
+        "https://svasararesorts.com/",
+        "https://www.tripadvisor.in/Hotel_Review-g1949574-d3375604-Reviews-Svasara_Jungle_Lodge-Tadoba_National_Park_Chandrapur_District_Maharashtra.html",
+        "https://www.booking.com/hotel/in/svasara-jungle-lodge.html"
+      ]
+    }
+  },
+  {
+    "destination_id": "tadoba",
+    "slot": "value",
+    "verdict": "keep_existing",
+    "existing": {"name": "Irai Safari Retreat", "issue": "OK"},
+    "replacement": {
+      "name": "Irai Safari Retreat",
+      "tier": "comfort",
+      "tagline": "Mid-range safari resort 800 m from Kolara gate — 30 rooms, outdoor pool, naturalist-led twice-daily safaris. The value-tier Tadoba pick at roughly 40% the Svasara rate.",
+      "price_band": "₹₹₹",
+      "address": "Kolara, Chimur Taluka, Chandrapur District 442909, Maharashtra",
+      "book_url": "https://www.iraisafariretreat.com/",
+      "sources": [
+        "https://www.iraisafariretreat.com/",
+        "https://www.tripadvisor.in/Hotel_Review-g1949574-d8451310-Reviews-Irai_Safari_Retreat-Tadoba_National_Park_Chandrapur_District_Maharashtra.html",
+        "https://www.booking.com/hotel/in/irai-safari-retreat.html"
+      ]
+    }
+  },
+  {
+    "destination_id": "tadoba",
+    "slot": "location",
+    "verdict": "keep_existing",
+    "existing": {"name": "Bamboo Forest Safari Lodge", "issue": "OK — verified Moharli gate"},
+    "replacement": {
+      "name": "Bamboo Forest Safari Lodge",
+      "tier": "luxury",
+      "tagline": "Across 18 acres adjacent to Moharli gate — 15 stilted cottages, naturalist-led safaris, pool. The deepest-forest setting of Tadoba's resorts.",
+      "price_band": "₹₹₹₹",
+      "address": "Moharli, Chandrapur District 442401, Maharashtra",
+      "book_url": "https://www.bambooforest-tadoba.com/",
+      "sources": [
+        "https://www.bambooforest-tadoba.com/",
+        "https://www.tripadvisor.in/Hotel_Review-g1949574-d4128648-Reviews-Bamboo_Forest_Safari_Lodge-Tadoba_National_Park_Chandrapur_District_Maharashtra.html",
+        "https://www.booking.com/hotel/in/bamboo-forest-tadoba.html"
+      ]
+    }
+  }
+]

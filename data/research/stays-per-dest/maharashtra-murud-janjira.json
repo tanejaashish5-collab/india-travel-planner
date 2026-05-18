@@ -1,0 +1,26 @@
+[
+  {
+    "destination_id": "murud-janjira",
+    "name": "Golden Swan Beach Resort",
+    "type": "resort",
+    "location": "Murud Beach Road",
+    "why_special": "Senior beach-front resort 100 m from Murud beach — 50 cottage rooms across landscaped grounds, outdoor pool, multi-cuisine restaurant with Konkani fish-thali. The default Murud-Janjira fort-visitor base since 1990s.",
+    "price_range": "₹₹₹",
+    "contact": {"phone": "+91-2144-274-080", "website": "https://www.goldenswan.in/", "email": "info@goldenswan.in"},
+    "best_for": ["families", "couples", "beach"],
+    "verified": true,
+    "tags": ["Murud-beach", "Golden-Swan", "Janjira-fort-base", "Konkani-thali"]
+  },
+  {
+    "destination_id": "murud-janjira",
+    "name": "Sea Shell Resort Murud",
+    "type": "resort",
+    "location": "Murud-Janjira beach",
+    "why_special": "Mid-range beach resort with 30 rooms — outdoor pool, multi-cuisine restaurant, the value-tier pick at Murud. Walking-distance to Janjira fort boat jetty at low tide.",
+    "price_range": "₹₹",
+    "contact": {"phone": "+91-2144-274-707", "website": "https://www.seashellmurud.com/", "email": null},
+    "best_for": ["families", "value", "Janjira-fort"],
+    "verified": true,
+    "tags": ["Murud", "Sea-Shell", "Janjira-fort-base", "value"]
+  }
+]

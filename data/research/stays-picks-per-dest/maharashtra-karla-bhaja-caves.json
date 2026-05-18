@@ -1,0 +1,41 @@
+[
+  {
+    "destination_id": "karla-bhaja-caves",
+    "slot": "location",
+    "verdict": "replace",
+    "existing": {"name": "Hotel Sai International", "issue": "template-sounding — 'Hotel Sai International' is a generic Shirdi/pilgrim-circuit name; Karla-specific not strongly verifiable"},
+    "replacement": {
+      "name": "MTDC Karla Resort",
+      "tier": "budget",
+      "tagline": "Maharashtra Tourism's hill resort 3 km from Karla Caves — A/C cottages, in-house restaurant, the closest formal accommodation to Ekvira Devi Temple at the cave base.",
+      "price_band": "₹₹",
+      "address": "Karla Caves area, near Ekvira Temple, Pune District 410405, Maharashtra",
+      "book_url": "https://www.maharashtratourism.gov.in/destination-mtdc-resorts",
+      "sources": [
+        "https://www.maharashtratourism.gov.in/destination-mtdc-resorts",
+        "https://www.maharashtratourism.gov.in/destinations/Karla-Caves"
+      ]
+    }
+  },
+  {
+    "destination_id": "karla-bhaja-caves",
+    "slot": "value",
+    "verdict": "honest_scarcity",
+    "existing": {"name": "Sai Riverside Homestay", "issue": "template-sounding — 'Sai Riverside Homestay' is a generic name without verified Karla-Bhaja-specific listing"},
+    "replacement": null
+  },
+  {
+    "destination_id": "karla-bhaja-caves",
+    "slot": "experience",
+    "verdict": "honest_scarcity",
+    "existing": {"name": "Digvijay's Retreat", "issue": "verify — 'Digvijay's Retreat' not strongly verifiable as a named property near Karla/Bhaja"},
+    "replacement": null
+  },
+  {
+    "destination_id": "karla-bhaja-caves",
+    "slot": "xfactor",
+    "verdict": "honest_scarcity",
+    "existing": {"name": "Pavna Dam Farmstay & Organic Farm", "issue": "Pavna Dam is a 30-km-distant lake near Kamshet/Lonavala — not in Karla-Bhaja cluster; better assigned to Lonavala. Generic category without verified single property"},
+    "replacement": null
+  }
+]

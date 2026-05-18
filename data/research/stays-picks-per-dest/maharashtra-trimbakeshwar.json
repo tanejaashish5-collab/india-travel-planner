@@ -1,0 +1,34 @@
+[
+  {
+    "destination_id": "trimbakeshwar",
+    "slot": "location",
+    "verdict": "keep_existing",
+    "existing": {"name": "MTDC Brahmagiri Resort Trimbakeshwar", "issue": "OK — MTDC verified at Brahmagiri base"},
+    "replacement": {
+      "name": "MTDC Resort Trimbakeshwar",
+      "tier": "comfort",
+      "tagline": "Maharashtra Tourism's resort below the Brahmagiri hill — walking-distance from the Trimbakeshwar Jyotirlinga, A/C cottages, in-house vegetarian restaurant. The default Jyotirlinga pilgrim bed.",
+      "price_band": "₹₹",
+      "address": "Brahmagiri, Trimbakeshwar, Nashik District 422212, Maharashtra",
+      "book_url": "https://www.maharashtratourism.gov.in/destination-mtdc-resorts",
+      "sources": [
+        "https://www.maharashtratourism.gov.in/destination-mtdc-resorts",
+        "https://www.maharashtratourism.gov.in/destinations/Trimbakeshwar"
+      ]
+    }
+  },
+  {
+    "destination_id": "trimbakeshwar",
+    "slot": "value",
+    "verdict": "honest_scarcity",
+    "existing": {"name": "Hotel Madhuban", "issue": "verify — 'Hotel Madhuban' is a generic name used across Maharashtra; Trimbakeshwar-specific not strongly verifiable as a single anchor"},
+    "replacement": null
+  },
+  {
+    "destination_id": "trimbakeshwar",
+    "slot": "experience",
+    "verdict": "honest_scarcity",
+    "existing": {"name": "Nakshatra Garden Resort", "issue": "verify — 'Nakshatra Garden Resort' not strongly verifiable as a single Trimbakeshwar property on Booking/MMT/MTDC"},
+    "replacement": null
+  }
+]

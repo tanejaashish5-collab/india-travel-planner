@@ -1,0 +1,58 @@
+[
+  {
+    "destination_id": "panchgani",
+    "slot": "experience",
+    "verdict": "keep_existing",
+    "existing": {"name": "SaffronStays Verandah by the Valley", "issue": "OK — verified on SaffronStays"},
+    "replacement": {
+      "name": "SaffronStays Verandah by the Valley",
+      "tier": "luxury",
+      "tagline": "5-bedroom SaffronStays villa on the valley edge of Khingar village — private pool, full kitchen, the Panchgani group-rental pick over a resort. Books out months ahead for long weekends.",
+      "price_band": "₹₹₹₹",
+      "address": "Khingar Village, near Panchgani 412805, Maharashtra",
+      "book_url": "https://www.saffronstays.com/villa/verandah-by-the-valley",
+      "sources": [
+        "https://www.saffronstays.com/villa/verandah-by-the-valley",
+        "https://www.tripadvisor.in/VacationRentalReview-g780993-d11783528-Reviews-Verandah_By_The_Valley.html"
+      ]
+    }
+  },
+  {
+    "destination_id": "panchgani",
+    "slot": "value",
+    "verdict": "keep_existing",
+    "existing": {"name": "Ravine Hotel", "issue": "OK"},
+    "replacement": {
+      "name": "Ravine Hotel",
+      "tier": "comfort",
+      "tagline": "Senior Panchgani 4-star with 50 rooms on the ridge — heated pool, multi-cuisine restaurant, the longest-running mid-tier in town.",
+      "price_band": "₹₹₹",
+      "address": "Tehsildar Office Road, Panchgani 412805, Maharashtra",
+      "book_url": "https://www.ravinehotel.com/",
+      "sources": [
+        "https://www.ravinehotel.com/",
+        "https://www.tripadvisor.in/Hotel_Review-g780993-d4408081-Reviews-Ravine_Hotel-Panchgani_Satara_District_Maharashtra.html",
+        "https://www.booking.com/hotel/in/ravine-hotel.html"
+      ]
+    }
+  },
+  {
+    "destination_id": "panchgani",
+    "slot": "xfactor",
+    "verdict": "replace",
+    "existing": {"name": "Rhythm Eco and Agro Stays", "issue": "template-sounding — 'Rhythm' is a known group but this Panchgani agro variant is not strongly verifiable on Booking/MakeMyTrip"},
+    "replacement": {
+      "name": "Citrus Chambers Mahabaleshwar",
+      "tier": "boutique",
+      "tagline": "Citrus Hotels' 50-room resort midway between Panchgani and Mahabaleshwar — outdoor pool, Krishna Valley views. The pick when you want both hill stations in one base.",
+      "price_band": "₹₹₹",
+      "address": "Off Mahabaleshwar-Panchgani Road, Mahabaleshwar 412806, Maharashtra",
+      "book_url": "https://www.citrushotels.com/citrus-chambers-mahabaleshwar/",
+      "sources": [
+        "https://www.citrushotels.com/citrus-chambers-mahabaleshwar/",
+        "https://www.tripadvisor.in/Hotel_Review-g297667-d1764850-Reviews-Citrus_Chambers_Mahabaleshwar-Mahabaleshwar_Satara_District_Maharashtra.html",
+        "https://www.booking.com/hotel/in/citrus-chambers-mahabaleshwar.html"
+      ]
+    }
+  }
+]

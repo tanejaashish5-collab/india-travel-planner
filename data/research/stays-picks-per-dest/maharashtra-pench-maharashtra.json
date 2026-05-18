@@ -1,0 +1,57 @@
+[
+  {
+    "destination_id": "pench-maharashtra",
+    "slot": "experience",
+    "verdict": "keep_existing",
+    "existing": {"name": "Baghvan Pench Jungle Lodge (Taj Safaris)", "issue": "OK — Baghvan is the verified Taj Safaris Pench property"},
+    "replacement": {
+      "name": "Baghvan Pench (Taj Safaris)",
+      "tier": "luxury",
+      "tagline": "Taj Safaris flagship — 12 suites with private plunge pools, naturalist-led twice-daily safaris, full-board dining. The Pench luxury safari signature; works as Maharashtra-side base since the tigers cross the border.",
+      "price_band": "₹₹₹₹",
+      "address": "Awarghani Village, near Khursapar gate, Seoni District, Madhya Pradesh / Pench Tiger Reserve",
+      "book_url": "https://www.tajsafaris.com/baghvan-jungle-lodge/",
+      "sources": [
+        "https://www.tajsafaris.com/baghvan-jungle-lodge/",
+        "https://www.tripadvisor.in/Hotel_Review-g1218620-d1503093-Reviews-Baghvan_a_Taj_Safari_Lodge-Pench_National_Park_Seoni_District_Madhya_Pradesh.html"
+      ]
+    }
+  },
+  {
+    "destination_id": "pench-maharashtra",
+    "slot": "value",
+    "verdict": "keep_existing",
+    "existing": {"name": "Pench Jungle Camp", "issue": "OK"},
+    "replacement": {
+      "name": "Pench Jungle Camp",
+      "tier": "comfort",
+      "tagline": "30-cottage safari resort by Sillari gate (Pench Maharashtra) — outdoor pool, multi-cuisine restaurant, naturalist-led twice-daily safaris. Runs since 2007.",
+      "price_band": "₹₹₹",
+      "address": "Awarghani, Sillari Gate, Pench, Nagpur District 441207, Maharashtra",
+      "book_url": "https://www.penchjunglecamp.com/",
+      "sources": [
+        "https://www.penchjunglecamp.com/",
+        "https://www.tripadvisor.in/Hotel_Review-g1949574-d2050478-Reviews-Pench_Jungle_Camp-Pench_National_Park_Nagpur_District_Maharashtra.html",
+        "https://www.booking.com/hotel/in/pench-jungle-camp.html"
+      ]
+    }
+  },
+  {
+    "destination_id": "pench-maharashtra",
+    "slot": "location",
+    "verdict": "replace",
+    "existing": {"name": "Pench Tiger Camp", "issue": "verify — 'Pench Tiger Camp' is a generic-sounding name; multiple operators use variants. Better to anchor on the verified MTDC government property"},
+    "replacement": {
+      "name": "MTDC Pench Resort",
+      "tier": "budget",
+      "tagline": "Maharashtra Tourism's value-rate Pench resort near Sillari gate — simple A/C cottages, safari-booking desk. The budget Nagpur-self-drive base.",
+      "price_band": "₹₹",
+      "address": "Sillari Gate, Pench, Nagpur District 441207, Maharashtra",
+      "book_url": "https://www.maharashtratourism.gov.in/destination-mtdc-resorts",
+      "sources": [
+        "https://www.maharashtratourism.gov.in/destination-mtdc-resorts",
+        "https://www.maharashtratourism.gov.in/destinations/Pench"
+      ]
+    }
+  }
+]

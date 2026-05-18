@@ -1,0 +1,45 @@
+[
+  {
+    "destination_id": "harihareshwar",
+    "slot": "value",
+    "verdict": "keep_existing",
+    "existing": {"name": "MTDC Harihareshwar Beach Resort", "issue": "OK — MTDC verified"},
+    "replacement": {
+      "name": "MTDC Harihareshwar Beach Resort",
+      "tier": "comfort",
+      "tagline": "Maharashtra Tourism's beach resort opposite Kalbhairav temple — 50 cottage rooms, in-house restaurant. The only formal accommodation steps from the four-temple parikrama route.",
+      "price_band": "₹₹",
+      "address": "Harihareshwar Beach, opposite Kalbhairav-Yogeshwari Temple, Raigad District 402417, Maharashtra",
+      "book_url": "https://www.maharashtratourism.gov.in/destination-mtdc-resorts",
+      "sources": [
+        "https://www.maharashtratourism.gov.in/destination-mtdc-resorts",
+        "https://www.maharashtratourism.gov.in/destinations/Harihareshwar"
+      ]
+    }
+  },
+  {
+    "destination_id": "harihareshwar",
+    "slot": "experience",
+    "verdict": "replace",
+    "existing": {"name": "MTDC Karli Resort", "issue": "cross-dest — MTDC Karli is in Sindhudurg district 220 km south of Harihareshwar (on the Karli river backwaters near Tarkarli); should not be used as the Harihareshwar experience pick"},
+    "replacement": null
+  },
+  {
+    "destination_id": "harihareshwar",
+    "slot": "xfactor",
+    "verdict": "keep_existing",
+    "existing": {"name": "Velas Village Homestay Network (SNM-coordinated)", "issue": "OK — Velas turtle festival homestay network is the verified SNM/Sahyadri Nisarga Mitra programme"},
+    "replacement": {
+      "name": "Velas Village Homestay Network (SNM-coordinated)",
+      "tier": "budget",
+      "tagline": "Sahyadri Nisarga Mitra-coordinated village homestays in Velas 35 km from Harihareshwar — the Olive Ridley turtle hatching festival (Feb–Mar) is the only reason this network exists. Book through SNM official channels only.",
+      "price_band": "₹",
+      "address": "Velas village, Mandangad Taluka, Ratnagiri District 415717, Maharashtra",
+      "book_url": "https://snmcpn.in/velas/",
+      "sources": [
+        "https://snmcpn.in/velas/",
+        "https://www.maharashtratourism.gov.in/destinations/Velas-Turtle-Festival"
+      ]
+    }
+  }
+]

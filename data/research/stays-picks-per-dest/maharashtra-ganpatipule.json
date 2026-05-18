@@ -1,0 +1,46 @@
+[
+  {
+    "destination_id": "ganpatipule",
+    "slot": "experience",
+    "verdict": "keep_existing",
+    "existing": {"name": "MTDC Resort Ganpatipule", "issue": "OK — MTDC verified on maharashtratourism.gov.in"},
+    "replacement": {
+      "name": "MTDC Resort Ganpatipule",
+      "tier": "comfort",
+      "tagline": "Maharashtra Tourism's flagship beach resort directly opposite Swayambhu Ganpati temple — 100+ rooms in Konkani-style cottages plus Konkan tents. Books out for Ganesh Chaturthi six months ahead.",
+      "price_band": "₹₹",
+      "address": "Ganpatipule Beach, opposite Swayambhu Ganpati Temple, Ganpatipule 415615, Maharashtra",
+      "book_url": "https://www.maharashtratourism.gov.in/destination-mtdc-resorts/-/asset_publisher/3vYTZxYEy3PD/content/mtdc-resort-ganpatipule",
+      "sources": [
+        "https://www.maharashtratourism.gov.in/destination-mtdc-resorts/-/asset_publisher/3vYTZxYEy3PD/content/mtdc-resort-ganpatipule",
+        "https://www.tripadvisor.in/Hotel_Review-g1421266-d1466933-Reviews-MTDC_Resort_Ganpatipule-Ganpatipule_Ratnagiri_District_Maharashtra.html",
+        "https://www.booking.com/hotel/in/mtdc-resort-ganpatipule.html"
+      ]
+    }
+  },
+  {
+    "destination_id": "ganpatipule",
+    "slot": "value",
+    "verdict": "keep_existing",
+    "existing": {"name": "Atithi Parinay Konkan Homestay", "issue": "OK — verified on atithiparinay.com + MTDC registered list"},
+    "replacement": {
+      "name": "Atithi Parinay Konkan Homestay",
+      "tier": "boutique",
+      "tagline": "Award-winning Konkani homestay in Nivli village — traditional Konkan farmhouse with surangya floor and laterite walls, signature alu-vadi/sol-kadhi thali. The benchmark Konkan-coast homestay.",
+      "price_band": "₹₹",
+      "address": "Nivli Village, near Ganpatipule, Ratnagiri District 415615, Maharashtra",
+      "book_url": "https://atithiparinay.com/",
+      "sources": [
+        "https://atithiparinay.com/",
+        "https://www.maharashtratourism.gov.in/destination-mtdc-resorts/-/asset_publisher/3vYTZxYEy3PD/content/mtdc-registered-homestays"
+      ]
+    }
+  },
+  {
+    "destination_id": "ganpatipule",
+    "slot": "xfactor",
+    "verdict": "honest_scarcity",
+    "existing": {"name": "Bhandarpule Village Konkani Homestay (fisher-family)", "issue": "verify — Bhandarpule fisher-homestay is not strongly verifiable as a single named property on Booking/MTDC; sounds like a category not a property"},
+    "replacement": null
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "destination_id": "igatpuri",
+    "name": "Manas Lifestyle Resort Igatpuri",
+    "type": "resort",
+    "location": "Khairgaon village, Igatpuri",
+    "why_special": "Mid-luxury wellness resort across 12 acres in the Sahyadri foothills — 76 rooms, full-service Ayurveda spa, indoor pool, multi-cuisine restaurant. The Igatpuri destination wellness resort that pairs naturally with Dhamma Giri Vipassana meditation visitors.",
+    "price_range": "₹₹₹",
+    "contact": {"phone": "+91-2553-244-242", "website": "https://www.manaslifestyleresort.com/", "email": null},
+    "best_for": ["wellness", "couples", "families"],
+    "verified": true,
+    "tags": ["Khairgaon", "Manas", "Sahyadri", "Ayurveda", "Vipassana-base"]
+  },
+  {
+    "destination_id": "igatpuri",
+    "name": "The Fern Igatpuri",
+    "type": "resort",
+    "location": "Wadiwarhe village, Igatpuri",
+    "why_special": "Fern Hotels' eco-certified Igatpuri resort with 56 rooms — outdoor pool, multi-cuisine restaurant, the polished mid-range brand pick. Closer to the Mumbai-Agra highway exit than Manas.",
+    "price_range": "₹₹₹",
+    "contact": {"phone": "+91-2553-298-555", "website": "https://www.fernhotels.com/igatpuri-fern.aspx", "email": null},
+    "best_for": ["families", "couples"],
+    "verified": true,
+    "tags": ["Wadiwarhe", "Fern", "eco-certified", "highway-exit"]
+  }
+]

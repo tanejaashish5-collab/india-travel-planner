@@ -1,0 +1,34 @@
+[
+  {
+    "destination_id": "lonar-crater",
+    "slot": "location",
+    "verdict": "keep_existing",
+    "existing": {"name": "MTDC Resort Lonar", "issue": "OK — MTDC verified on the crater rim"},
+    "replacement": {
+      "name": "MTDC Resort Lonar",
+      "tier": "budget",
+      "tagline": "Maharashtra Tourism's resort on the rim of India's only meteor-impact saline crater lake — A/C cottages, in-house restaurant. The closest accommodation to the rim walk.",
+      "price_band": "₹₹",
+      "address": "Lonar Crater rim, Buldhana District 443302, Maharashtra",
+      "book_url": "https://www.maharashtratourism.gov.in/destination-mtdc-resorts",
+      "sources": [
+        "https://www.maharashtratourism.gov.in/destination-mtdc-resorts",
+        "https://www.maharashtratourism.gov.in/destinations/Lonar"
+      ]
+    }
+  },
+  {
+    "destination_id": "lonar-crater",
+    "slot": "value",
+    "verdict": "honest_scarcity",
+    "existing": {"name": "Vikrant Hotel & Restaurant", "issue": "generic-sounding — 'Vikrant Hotel & Restaurant' is a common name; Lonar-specific not strongly verifiable"},
+    "replacement": null
+  },
+  {
+    "destination_id": "lonar-crater",
+    "slot": "experience",
+    "verdict": "honest_scarcity",
+    "existing": {"name": "Krushnai Crater Stay (Lonar Eco Lodge)", "issue": "verify — 'Krushnai Crater Stay' not strongly verifiable as a single property on Booking/MakeMyTrip/MTDC; sounds like a hybrid hallucination of the area's eco-tourism label"},
+    "replacement": null
+  }
+]

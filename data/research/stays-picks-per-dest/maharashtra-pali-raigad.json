@@ -1,0 +1,41 @@
+[
+  {
+    "destination_id": "pali-raigad",
+    "slot": "experience",
+    "verdict": "honest_scarcity",
+    "existing": {"name": "Maharaja Palace Heritage Hotel", "issue": "fabricated — no 'Maharaja Palace Heritage Hotel' in Pali (Raigad). 'Maharaja Palace' is template-sounding"},
+    "replacement": null
+  },
+  {
+    "destination_id": "pali-raigad",
+    "slot": "value",
+    "verdict": "honest_scarcity",
+    "existing": {"name": "Pali Homestay by Local Hosts", "issue": "generic category not a single property"},
+    "replacement": null
+  },
+  {
+    "destination_id": "pali-raigad",
+    "slot": "location",
+    "verdict": "replace",
+    "existing": {"name": "Fort View Guesthouse", "issue": "template — 'Fort View Guesthouse' is used across many Maharashtra fort towns; Pali-specific not verifiable"},
+    "replacement": {
+      "name": "Shri Ballaleshwar Ganpati Devasthan Trust Bhakta Niwas",
+      "tier": "budget",
+      "tagline": "Devasthan Trust's pilgrim accommodation at Pali's Ballaleshwar Ganpati (Astavinayak) — dormitory and family rooms at trust rates, vegetarian prasad meals.",
+      "price_band": "₹",
+      "address": "Ballaleshwar Ganpati Temple, Pali, Sudhagad Taluka, Raigad District 410205, Maharashtra",
+      "book_url": "https://www.palighumanvinayak.org/",
+      "sources": [
+        "https://www.palighumanvinayak.org/",
+        "https://ashtavinayakdarshan.in/pali/"
+      ]
+    }
+  },
+  {
+    "destination_id": "pali-raigad",
+    "slot": "xfactor",
+    "verdict": "honest_scarcity",
+    "existing": {"name": "Raigad Fort Base Camp (Tent Stay / Adventure Lodge)", "issue": "Raigad Fort base is at Pachad village, not Pali (~80 km away). Cross-dest mis-assignment; belongs in raigad-fort dest"},
+    "replacement": null
+  }
+]

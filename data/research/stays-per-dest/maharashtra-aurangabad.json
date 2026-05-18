@@ -1,0 +1,50 @@
+[
+  {
+    "destination_id": "aurangabad",
+    "name": "Vivanta Aurangabad",
+    "type": "business-hotel",
+    "location": "8-N-12 CIDCO, Rauza Bagh",
+    "why_special": "Taj-IHCL's 4-star Vivanta near Bibi Ka Maqbara — 113 rooms, outdoor pool, Latitude all-day diner and Mynt for fine dining. The Aurangabad city hotel with the strongest Taj-group service and the easiest morning departure for the Ajanta/Ellora circuit.",
+    "price_range": "₹₹₹",
+    "contact": {"phone": "+91-240-661-3737", "website": "https://www.vivantahotels.com/en-in/vivanta-aurangabad/", "email": null},
+    "best_for": ["heritage", "families", "couples"],
+    "verified": true,
+    "tags": ["IHCL", "Bibi-Ka-Maqbara", "Ajanta-Ellora-base", "Taj-Vivanta"]
+  },
+  {
+    "destination_id": "aurangabad",
+    "name": "WelcomHotel by ITC Rama International",
+    "type": "business-hotel",
+    "location": "R-3 Chikalthana, Jalna Road",
+    "why_special": "ITC's WelcomHotel Rama International on Jalna Road — 134 rooms across landscaped grounds 3 km from Chikalthana airport, outdoor pool, the Pavilion all-day buffet, and the longest-running 5-star service brand in Aurangabad city.",
+    "price_range": "₹₹₹",
+    "contact": {"phone": "+91-240-663-4400", "website": "https://www.itchotels.com/in/en/welcomhotel-aurangabad", "email": null},
+    "best_for": ["business", "heritage", "families"],
+    "verified": true,
+    "tags": ["ITC", "Jalna-Road", "airport-proximate", "Ajanta-Ellora-base"]
+  },
+  {
+    "destination_id": "aurangabad",
+    "name": "Lemon Tree Premier Aurangabad",
+    "type": "business-hotel",
+    "location": "R-3 Chikalthana, Jalna Road",
+    "why_special": "Lemon Tree Premier-tier with citrus-design rooms 4 km from Aurangabad airport — pool, multi-cuisine restaurant, the most consistent mid-range brand service at 30–40% less than ITC Rama. The cleanest Ajanta/Ellora day-trip base on a budget.",
+    "price_range": "₹₹",
+    "contact": {"phone": "+91-240-661-2000", "website": "https://www.lemontreehotels.com/lemon-tree-premier/aurangabad/lemon-tree-premier-aurangabad.aspx", "email": null},
+    "best_for": ["families", "business", "value"],
+    "verified": true,
+    "tags": ["Lemon-Tree-Premier", "Chikalthana", "airport-proximate", "value"]
+  },
+  {
+    "destination_id": "aurangabad",
+    "name": "The Meadows Hotel & Resort",
+    "type": "resort",
+    "location": "Mitmita Road",
+    "why_special": "37-cottage resort across landscaped grounds on Mitmita Road, 5 km from Aurangabad railway and 8 km from Bibi-Ka-Maqbara — outdoor pool, on-site Maharashtrian restaurant, on-call taxi for the Ajanta-Ellora-Daulatabad triangle. The cottage-format pick when you want garden-grounds over a city block.",
+    "price_range": "₹₹",
+    "contact": {"phone": "+91-240-267-7412", "website": "https://meadowsresort.com/", "email": "info@meadowsresort.com"},
+    "best_for": ["families", "couples"],
+    "verified": true,
+    "tags": ["Mitmita-Road", "cottages", "resort", "Ajanta-Ellora-base"]
+  }
+]
