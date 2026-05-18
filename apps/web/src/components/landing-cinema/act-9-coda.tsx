@@ -179,7 +179,7 @@ export function Act9Coda({
             />
           </div>
           <div
-            className={`nq-fadeup ${seen ? "in" : ""}`}
+            className={`nq-fadeup nq-coda-credits ${seen ? "in" : ""}`}
             style={{
               transitionDelay: "1.6s",
               borderLeft: "1px solid var(--hair)",
@@ -216,7 +216,7 @@ export function Act9Coda({
                 </li>
               ))}
             </ul>
-            <div style={{ display: "flex", gap: 12, marginTop: 28 }}>
+            <div className="nq-coda-ctas" style={{ display: "flex", gap: 12, marginTop: 28 }}>
               <Link
                 href={`/${locale}/explore`}
                 style={{

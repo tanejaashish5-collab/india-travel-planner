@@ -602,7 +602,7 @@ html:has(.nakshiq-cinema) { scroll-behavior: smooth; }
      padding-left + border-left wastes width and pushes content (the
      two CTA buttons) past the right edge. On phones, drop both so the
      column uses the full available width. */
-  .nakshiq-cinema section[id="coda"] div[style*="border-left"][style*="padding-left: 36px"] {
+  .nakshiq-cinema .nq-coda-credits {
     padding-left: 0 !important;
     border-left: none !important;
   }
@@ -611,12 +611,12 @@ html:has(.nakshiq-cinema) { scroll-behavior: smooth; }
      second button bleeds off-screen, so stack them vertically and let
      each fill the column width — matches the mobile rhythm of a single
      primary action per row used everywhere else in the cinema shell. */
-  .nakshiq-cinema section[id="coda"] div[style*="display: flex"][style*="margin-top: 28px"] {
+  .nakshiq-cinema .nq-coda-ctas {
     flex-direction: column !important;
     align-items: stretch !important;
     gap: 12px !important;
   }
-  .nakshiq-cinema section[id="coda"] div[style*="display: flex"][style*="margin-top: 28px"] > a {
+  .nakshiq-cinema .nq-coda-ctas > a {
     justify-content: center;
   }
 }
