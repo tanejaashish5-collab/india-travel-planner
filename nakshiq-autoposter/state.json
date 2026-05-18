@@ -1,17 +1,9 @@
 {
   "yt_short_formats_used": [],
   "yt_short_music_used": [],
-  "posted_today": {
-    "m8EAd": "2026-05-18",
-    "PdMu0": "2026-05-18"
-  },
-  "last_sync": "2026-05-18T07:11:23.122270+00:00",
-  "posted_destinations": [
-    {
-      "destination_id": "hyderabad",
-      "date": "2026-05-18"
-    }
-  ],
+  "posted_today": {},
+  "last_sync": "2026-04-30T04:05:30.154914+00:00",
+  "posted_destinations": [],
   "posted_formats": {
     "m8EAd": [
       "monthly_forecast",
@@ -26,8 +18,7 @@
       "score_card",
       "collection_spotlight",
       "festival_alert",
-      "kids_intel",
-      "arrival_intel"
+      "kids_intel"
     ],
     "PdMu0": [
       "monthly_forecast",
@@ -47,8 +38,7 @@
       "reality_check",
       "collection_spotlight",
       "festival_alert",
-      "kids_intel",
-      "arrival_intel"
+      "kids_intel"
     ]
   },
   "post_log": [
@@ -441,44 +431,9 @@
       "destination": "ranthambore",
       "format": "kids_intel",
       "has_media": true
-    },
-    {
-      "timestamp": "2026-05-18T07:12:13.475827+00:00",
-      "date": "2026-05-18",
-      "platform": "instagram",
-      "account_id": "m8EAd",
-      "post_id": "7rHTW",
-      "destination": "hyderabad",
-      "format": "arrival_intel",
-      "has_media": true,
-      "media_id": "hyderabad.mp4"
-    },
-    {
-      "timestamp": "2026-05-18T07:12:32.578613+00:00",
-      "date": "2026-05-18",
-      "platform": "facebook",
-      "account_id": "PdMu0",
-      "post_id": "IkCqX",
-      "destination": "hyderabad",
-      "format": "arrival_intel",
-      "has_media": true,
-      "media_id": "hyderabad.mp4"
     }
   ],
-  "theme_usage": {
-    "morning_formats": {
-      "arrival_intel": [
-        "2026-05-18"
-      ]
-    },
-    "festivals": {},
-    "arrival_intel": {},
-    "destinations": {
-      "hyderabad": [
-        "2026-05-18"
-      ]
-    }
-  },
+  "theme_usage": {},
   "infographic": {
     "last_topic_idx": 0,
     "last_theme_idx": 0,
@@ -490,8 +445,6 @@
     ]
   },
   "ugc_music_history": [],
-  "last_picked": {
-    "shared_best": "gurudongmar-lake"
-  },
+  "last_picked": {},
   "manual_skip_dests": {}
 }
