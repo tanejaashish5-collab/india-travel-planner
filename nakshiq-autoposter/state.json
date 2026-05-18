@@ -1,20 +1,16 @@
 {
-  "yt_short_formats_used": [
-    "listicle"
-  ],
-  "yt_short_music_used": [
-    "px_bollywood_monda"
-  ],
+  "yt_short_formats_used": [],
+  "yt_short_music_used": [],
   "posted_today": {
-    "GAh5p_yt_short": "2026-05-18",
-    "GAh5p_yt_short_count": 1,
-    "m8EAd_yt_short": "2026-05-18",
-    "m8EAd_yt_short_count": 1
+    "m8EAd": "2026-05-18",
+    "m8EAd_evening": "2026-05-18",
+    "PdMu0": "2026-05-18",
+    "PdMu0_evening": "2026-05-18"
   },
-  "last_sync": "2026-04-30T04:05:30.154914+00:00",
+  "last_sync": "2026-05-18T14:48:29.417404+00:00",
   "posted_destinations": [
     {
-      "destination_id": "uttarkashi",
+      "destination_id": "bir-billing",
       "date": "2026-05-18"
     }
   ],
@@ -32,7 +28,8 @@
       "score_card",
       "collection_spotlight",
       "festival_alert",
-      "kids_intel"
+      "kids_intel",
+      "score_card"
     ],
     "PdMu0": [
       "monthly_forecast",
@@ -52,7 +49,8 @@
       "reality_check",
       "collection_spotlight",
       "festival_alert",
-      "kids_intel"
+      "kids_intel",
+      "score_card"
     ]
   },
   "post_log": [
@@ -447,25 +445,46 @@
       "has_media": true
     },
     {
-      "timestamp": "2026-05-18T14:13:25.553077+00:00",
-      "date": "2026-05-18",
-      "platform": "youtube",
-      "post_id": "rwzW4",
-      "destination": "uttarkashi",
-      "format": "yt_short.listicle",
-      "media_id": "yt_short_listicle_yt_short_listicle_2026-05-18.mp4"
-    },
-    {
-      "timestamp": "2026-05-18T14:14:01.523504+00:00",
+      "timestamp": "2026-05-18T14:49:27.959304+00:00",
       "date": "2026-05-18",
       "platform": "instagram",
-      "post_id": "uIDDE",
-      "destination": "uttarkashi",
-      "format": "yt_short.listicle",
-      "media_id": "yt_short_listicle_yt_short_listicle_2026-05-18.mp4"
+      "account_id": "m8EAd",
+      "post_id": "QovSy",
+      "destination": "bir-billing",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "bir-billing.mp4"
+    },
+    {
+      "timestamp": "2026-05-18T14:49:53.023966+00:00",
+      "date": "2026-05-18",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "lHmjK",
+      "destination": "bir-billing",
+      "format": "score_card",
+      "has_media": true,
+      "media_id": "bir-billing.mp4"
     }
   ],
-  "theme_usage": {},
+  "theme_usage": {
+    "festivals": {},
+    "destinations": {
+      "bir-billing": [
+        "2026-05-18"
+      ]
+    },
+    "reels": {
+      "bir-billing": [
+        "2026-05-18"
+      ]
+    },
+    "audience_tags": {
+      "backpackers": [
+        "2026-05-18"
+      ]
+    }
+  },
   "infographic": {
     "last_topic_idx": 0,
     "last_theme_idx": 0,
@@ -477,6 +496,8 @@
     ]
   },
   "ugc_music_history": [],
-  "last_picked": {},
+  "last_picked": {
+    "shared_best": "bir-billing"
+  },
   "manual_skip_dests": {}
 }
