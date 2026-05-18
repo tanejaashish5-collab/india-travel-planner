@@ -1,0 +1,110 @@
+[
+  {
+    "destination_id": "anjuna",
+    "slot": "location",
+    "verdict": "added",
+    "replacement": {
+      "name": "Zulu Land Cottages",
+      "tier": "comfort",
+      "tagline": "100 m from Anjuna Beach and a few steps from Curlies Beach Shack and Shiva Valley — the closest hotel to Anjuna's Wednesday flea-market beach and the South Anjuna cliff. 3-star cottage cluster useful for partygoers who don't want to scooter back at 3am.",
+      "price_band": "₹₹",
+      "address": "Near Curlies Beach Shack & Shiva Valley, Anjuna Beach, Bardez, Goa 403509",
+      "book_url": "https://www.booking.com/hotel/in/oyo-14197-curlies-zulu-land-cottages-goa12.html",
+      "sources": [
+        "https://www.booking.com/hotel/in/oyo-14197-curlies-zulu-land-cottages-goa12.html",
+        "https://www.trip.com/hotels/anjuna-hotel-detail-19836414/zulu-land-cottages-near-curlies-beach-shack-and-shiva-valley-anjuna-beach/",
+        "https://www.makemytrip.global/hotels/curlies_shiva_valley_cottages_by_bellostay-details-goa.html"
+      ]
+    }
+  },
+  {
+    "destination_id": "fort-aguada",
+    "slot": "xfactor",
+    "verdict": "added",
+    "replacement": {
+      "name": "Vivanta Goa, Panaji (Aguada-region cruise base)",
+      "tier": "luxury",
+      "tagline": "5-star Vivanta hotel on the Mandovi river in Panaji — sister Taj property that's the Mandovi sunset-cruise base. 169 rooms with river-front views over the Aguada-headland silhouette at sunset; 20-min drive to Fort Aguada and the lighthouse. The 'arrive by river, then drive to the fort' alternative to Taj Holiday Village's beach-side cluster.",
+      "price_band": "₹₹₹",
+      "address": "St Inez, Panaji, Goa 403001",
+      "book_url": "https://www.tajhotels.com/en-in/hotels/vivanta-goa-panaji",
+      "sources": [
+        "https://www.tajhotels.com/en-in/hotels/vivanta-goa-panaji",
+        "https://www.tripadvisor.in/Hotel_Review-g303877-d505218-Reviews-Vivanta_Goa_Panaji-Panjim_North_Goa_District_Goa.html",
+        "https://www.booking.com/hotel/in/vivanta-by-taj-panaji.html"
+      ]
+    }
+  },
+  {
+    "destination_id": "mandrem",
+    "slot": "xfactor",
+    "verdict": "added",
+    "replacement": {
+      "name": "Villa Rivercat",
+      "tier": "boutique",
+      "tagline": "Quirky riverside guesthouse on Junas Waddo, with the Mandrem river to the rear and the long Mandrem beach via the bamboo footbridge to the front. Each room is decorated with traditional Indian furniture and artefacts repurposed contemporary-style; breakfast on the riverside-garden terrace. The textbook Mandrem 'private home' xfactor stay — distinct from beach-resort format.",
+      "price_band": "₹₹",
+      "address": "Junas Waddo, Mandrem, Pernem, Goa 403527",
+      "book_url": "https://villarivercat.com/",
+      "sources": [
+        "https://villarivercat.com/",
+        "https://www.tripadvisor.com/Hotel_Review-g1010240-d606573-Reviews-Villa_Rivercat-Mandrem_North_Goa_District_Goa.html",
+        "https://www.booking.com/hotel/in/villa-rivercat.html"
+      ]
+    }
+  },
+  {
+    "destination_id": "morjim",
+    "slot": "xfactor",
+    "verdict": "added",
+    "replacement": {
+      "name": "Praya Villas",
+      "tier": "luxury",
+      "tagline": "14 private four-bedroom villas in Indo-Portuguese architecture footsteps from Morjim's Olive Ridley turtle-nesting site. Each villa has its own pool, private garden and Russian-friendly service (Morjim is 'Little Russia' Goa's seasonal Russian capital). The xfactor pick for families and groups wanting a turtle-beach villa rather than hotel rooms.",
+      "price_band": "₹₹₹₹",
+      "address": "Vithaldas Wado, Morjim Beach, Pernem, Goa 403512",
+      "book_url": "https://www.prayavillas.com/",
+      "sources": [
+        "https://www.prayavillas.com/",
+        "https://www.tripadvisor.in/Hotel_Review-g1936425-d8688521-Reviews-Praya_Villas-Morjim_North_Goa_District_Goa.html",
+        "https://www.booking.com/hotel/in/praya-villas.html"
+      ]
+    }
+  },
+  {
+    "destination_id": "ponda-spice",
+    "slot": "xfactor",
+    "verdict": "added",
+    "replacement": {
+      "name": "Shivsangit Homestay",
+      "tier": "budget",
+      "tagline": "Family-run 3-star homestay 1.5 km from the 18th-century Shri Shantadurga (Bhagvati) Temple — Ponda's temple-circuit anchor. Vegetarian breakfast made fresh daily, garden-view AC rooms. Useful for pilgrims doing the Ponda 6-temple route (Shantadurga, Mangueshi, Mahalsa, Nageshi, Ramnath, Mahalaxmi) and not wanting to commute from Panjim.",
+      "price_band": "₹",
+      "address": "Kavlem, Ponda, North Goa 403401",
+      "book_url": "https://shivsangit.hotelsgoaonline.com/en/",
+      "sources": [
+        "https://shivsangit.hotelsgoaonline.com/en/",
+        "https://www.booking.com/hotel/in/shivsangit-homestay.html",
+        "https://www.tripadvisor.in/Hotel_Review-g776073-d23889458-Reviews-Shivsangit_Homestay-Ponda_North_Goa_District_Goa.html"
+      ]
+    }
+  },
+  {
+    "destination_id": "vagator",
+    "slot": "location",
+    "verdict": "added",
+    "replacement": {
+      "name": "Stone Wood Beach Resort & Club",
+      "tier": "comfort",
+      "tagline": "Direct beachfront resort on Ozran (Little Vagator) cliff with private beach access — walk down to the sand in 2 minutes. Outdoor pool overlooking Arabian Sea, near the 9 Bar / Sunburn Vagator party cluster. Mid-tier value for travellers who want JW Marriott's location without JW Marriott's price.",
+      "price_band": "₹₹₹",
+      "address": "Plot No. 67, Ozran Beach Road, Little Vagator, Bardez, Goa 403509",
+      "book_url": "https://www.stonewoodresorts.com/beach-resort-vagator/",
+      "sources": [
+        "https://www.stonewoodresorts.com/beach-resort-vagator/",
+        "https://www.tripadvisor.com/Hotel_Review-g1204883-d23218244-Reviews-Stone_Wood_Beach_Hotel_Resort-Vagator_North_Goa_District_Goa.html",
+        "https://www.booking.com/hotel/in/stone-wood-beach-resort-amp-spa-vagator-goa-velha.html"
+      ]
+    }
+  }
+]
