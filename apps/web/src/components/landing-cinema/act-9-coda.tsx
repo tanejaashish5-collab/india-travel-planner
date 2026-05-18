@@ -109,6 +109,7 @@ export function Act9Coda({
       />
 
       <div
+        className="nq-coda-inner"
         style={{
           position: "relative",
           minHeight: "100vh",
