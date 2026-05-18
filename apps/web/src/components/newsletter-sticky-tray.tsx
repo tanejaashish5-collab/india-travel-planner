@@ -7,25 +7,37 @@ import Link from "next/link";
 const DISMISS_KEY = "window-tray-dismissed";
 const DISMISS_DAYS = 14;
 
+// SSR-safe initial-dismissed compute. Returns true (= hidden) when:
+//   - localStorage DISMISS_KEY timestamp is still within DISMISS_DAYS
+//   - sessionStorage nq_alert_submitted set (peak-alert hook succeeded this session)
+//   - nakshiq_savelist_subscribed cookie set (save-list prompt already converted)
+function computeInitialDismissed(): boolean {
+  if (typeof window === "undefined") return true;
+  try {
+    const raw = localStorage.getItem(DISMISS_KEY);
+    if (raw) {
+      const ts = parseInt(raw, 10);
+      if (Date.now() - ts < DISMISS_DAYS * 24 * 60 * 60 * 1000) return true;
+    }
+  } catch { /* localStorage unavailable */ }
+  try {
+    if (window.sessionStorage?.getItem("nq_alert_submitted")) return true;
+  } catch { /* ignore */ }
+  try {
+    if (typeof document !== "undefined" && /(?:^|; )nakshiq_savelist_subscribed=1(?:;|$)/.test(document.cookie)) return true;
+  } catch { /* ignore */ }
+  return false;
+}
+
 export function NewsletterStickyTray() {
   const [visible, setVisible] = useState(false);
-  const [dismissed, setDismissed] = useState(true); // default true, revealed on mount
+  // Lazy init — reads localStorage/cookie ONCE on first render. SSR-safe.
+  // Default is computed (not `true`) so we don't trigger setState-in-effect.
+  const [dismissed, setDismissed] = useState<boolean>(() => computeInitialDismissed());
   const locale = useLocale();
 
   useEffect(() => {
-    // Honor dismissal from localStorage (14-day window)
-    try {
-      const raw = localStorage.getItem(DISMISS_KEY);
-      if (raw) {
-        const ts = parseInt(raw, 10);
-        if (Date.now() - ts < DISMISS_DAYS * 24 * 60 * 60 * 1000) {
-          return; // still dismissed
-        }
-      }
-    } catch {
-      // localStorage unavailable → show anyway
-    }
-    setDismissed(false);
+    if (dismissed) return;
 
     let ticking = false;
     function onScroll() {
@@ -43,7 +55,7 @@ export function NewsletterStickyTray() {
     window.addEventListener("scroll", onScroll, { passive: true });
     onScroll();
     return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  }, [dismissed]);
 
   function dismiss() {
     try {

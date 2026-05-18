@@ -23,6 +23,7 @@ import { getPrimaryEditor } from "@/lib/editor";
 import { videoObjectJsonLd } from "@/lib/video-schema";
 import { formatScoreInline } from "@itp/shared";
 import { AskNakshIQInlineCTA } from "@/components/ask-nakshiq-inline-cta";
+import { PeakAlertHook } from "@/components/peak-alert-hook";
 
 export const revalidate = 86400; // 24h — UGC moderation lag is already 24-48h, so hourly revalidation just burned function invocations
 // dynamicParams=true → pages not pre-rendered at build time ISR-generate on
@@ -610,6 +611,25 @@ export default async function DestinationPage({
 
   const isCinematic = CINEMATIC_DESTINATIONS.has(id);
 
+  // Peak month for the alert hook — derived from destination_months on dest.
+  // Mirror getPeakMonth() logic: MAX(score), ties broken by lowest month_num,
+  // null when max < 4. Avoids extra DB roundtrip (already joined above).
+  const PEAK_MIN_SCORE = 4;
+  const MONTH_NAME_BY_NUM = ["", "January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December"];
+  const destMonths = (dest as { destination_months?: Array<{ month: number; score: number }> })
+    .destination_months ?? [];
+  const peakRow = destMonths
+    .filter((m) => typeof m?.score === "number" && m.score >= PEAK_MIN_SCORE)
+    .sort((a, b) => b.score - a.score || a.month - b.month)[0];
+  const peakMonth = peakRow
+    ? {
+        monthNum: peakRow.month,
+        monthName: MONTH_NAME_BY_NUM[peakRow.month] ?? "",
+        score: peakRow.score,
+      }
+    : null;
+
   // ── Cinematic template (currently allowlisted to one slug for live test).
   // SEO/JSON-LD blocks are duplicated above the new component so structured
   // data parity stays intact — Google sees the same Schema.org payload as
@@ -643,6 +663,18 @@ export default async function DestinationPage({
           />
         ))}
         <DestinationDetailCinematic dest={dest} />
+        {peakMonth && (
+          <div style={{ maxWidth: 1100, margin: "0 auto", padding: "0 20px" }}>
+            <PeakAlertHook
+              destinationId={id}
+              destinationName={dest.name}
+              peakMonthName={peakMonth.monthName}
+              peakMonthNum={peakMonth.monthNum}
+              locale={locale === "hi" ? "hi" : "en"}
+              source={`dest-${id}`}
+            />
+          </div>
+        )}
         <ScrollDepthTracker page="destination" destinationId={id} />
         {/* PrevNextNav intentionally NOT rendered here. Cinematic Coda
             already provides BACK TO ATLAS + the new full-bleed outro shot
@@ -694,6 +726,16 @@ export default async function DestinationPage({
           </div>
         )}
         <DestinationDetail dest={dest} />
+        {peakMonth && (
+          <PeakAlertHook
+            destinationId={id}
+            destinationName={dest.name}
+            peakMonthName={peakMonth.monthName}
+            peakMonthNum={peakMonth.monthNum}
+            locale={locale === "hi" ? "hi" : "en"}
+            source={`dest-${id}`}
+          />
+        )}
         <ScrollDepthTracker page="destination" destinationId={id} />
 
         <AskNakshIQInlineCTA subject={dest.name} />

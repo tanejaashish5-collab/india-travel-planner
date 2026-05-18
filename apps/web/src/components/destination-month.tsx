@@ -3,6 +3,7 @@ import { FadeIn, ScrollReveal, StaggerContainer, StaggerItem, HoverCard } from "
 import { SCORE_COLORS, DIFFICULTY_COLORS } from "@/lib/design-tokens";
 import { NewsletterSignup } from "./newsletter-signup";
 import { WhatsAppShare } from "./whatsapp-share";
+import { PeakAlertHook } from "./peak-alert-hook";
 import { destinationImage } from "@/lib/image-url";
 import { videoSrc } from "@/lib/video-url";
 import { DestinationSectionNav } from "./destination-section-nav";
@@ -51,6 +52,12 @@ interface DestinationMonthProps {
   permits: any[];
   nearby: any[];
   locale: string;
+  /**
+   * Pre-resolved peak month for this destination (server-side via getPeakMonth).
+   * When present, renders the PeakAlertHook mid-page between Why-This-Score
+   * and Things-To-Do. Hidden when null (destination has no month scoring ≥ 4).
+   */
+  peakMonth?: { monthNum: number; monthName: string; score: number } | null;
 }
 
 // ── Component ──────────────────────────────────────────────────
@@ -65,6 +72,7 @@ export function DestinationMonth({
   permits,
   nearby,
   locale,
+  peakMonth,
 }: DestinationMonthProps) {
   const score = currentMonth?.score ?? 0;
   const scoreInfo = SCORE_LABELS[score] ?? SCORE_LABELS[0];
@@ -720,6 +728,7 @@ export function DestinationMonth({
   const monthSections = [
     hasLead && { id: "lead", label: `${monthName} overview` },
     hasWhy && { id: "why", label: `Why ${formatScoreInline(score)}` },
+    peakMonth && { id: "alert", label: `Peak alert · ${peakMonth.monthName}` },
     hasThings && { id: "things", label: "What to do" },
     { id: "who", label: "Who should go" },
     { id: "months", label: "All 12 months" },
@@ -784,6 +793,18 @@ export function DestinationMonth({
           <section id="section-why" className="scroll-mt-28">
             <WhyThisScore />
           </section>
+          {peakMonth && (
+            <section id="section-alert" className="scroll-mt-28">
+              <PeakAlertHook
+                destinationId={destination.id}
+                destinationName={destination.name}
+                peakMonthName={peakMonth.monthName}
+                peakMonthNum={peakMonth.monthNum}
+                locale={locale === "hi" ? "hi" : "en"}
+                source={`dest-month-${destination.id}-${monthSlug}`}
+              />
+            </section>
+          )}
           <section id="section-things" className="scroll-mt-28">
             <ThingsToDo />
           </section>
@@ -809,10 +830,12 @@ export function DestinationMonth({
         </aside>
       </div>
 
-      {/* Newsletter — destination-aware copy. B1 (2026-05-04, data-baseline):
-          return rate is 3.5%; this is the highest-trafficked CTA surface
-          on the site (~5,800 dest×month URLs). Source carries dest+month
-          for later attribution per signup channel. */}
+      {/* Newsletter — dual-offer copy (2026-05-17 conversion suite): the
+          weekly Window briefing PLUS a 3-week heads-up before each saved
+          destination peaks. Updated from the single-offer Sunday-only copy
+          after audit showed 0 real subscribers on a generic "weekly email"
+          ask — context-specific value-extension converts better at the
+          end-of-article moment. */}
       <NewsletterSignup
         source={`dest-month-${destination.id}-${monthSlug}`}
         headline={
@@ -822,8 +845,8 @@ export function DestinationMonth({
         }
         subhead={
           locale === "hi"
-            ? `हम रविवार को एक ईमेल भेजते हैं — कौन सी जगह अगले हफ़्ते जाने लायक है, बेईमानी से। मुफ़्त, बिना स्पैम।`
-            : `One Sunday email — what's actually worth going to next week, honestly scored. Free, no spam.`
+            ? `रविवार को एक ईमेल — कौन सी जगह अगले हफ़्ते जाने लायक है। साथ ही जो जगहें आप सहेजें, उनके पीक से तीन हफ़्ते पहले हेड्स-अप। बिना स्पैम।`
+            : `One Sunday briefing on where to actually go in India, plus a 3-week heads-up before each destination you save hits its peak month. No spam.`
         }
         buttonLabel={locale === "hi" ? "साइन अप करें" : "Get the email"}
       />

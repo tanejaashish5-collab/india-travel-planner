@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useLocale, useTranslations } from "next-intl";
 import { useSearchParams } from "next/navigation";
 import { currentMonthIST, formatScoreInline } from "@itp/shared";
+import { getSavedIds, removeSaved as removeSavedId } from "@/lib/saved-destinations";
 
 const MONTH_NAMES = ["", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
@@ -70,8 +71,9 @@ export function SavedContent({ destinations }: { destinations: DestRow[] }) {
   const currentMonth = currentMonthIST();
 
   useEffect(() => {
-    const saved: string[] = JSON.parse(localStorage.getItem("savedDestinations") || "[]");
-    setSavedIds(saved);
+    // Unified util — reads both keys + merges legacy nakshiq_saved into
+    // canonical savedDestinations on first call.
+    setSavedIds(getSavedIds());
     if (urlCompare.length >= 2) {
       setTimeout(() => {
         document.getElementById("compare-table")?.scrollIntoView({ behavior: "smooth" });
@@ -86,8 +88,7 @@ export function SavedContent({ destinations }: { destinations: DestRow[] }) {
   );
 
   function removeSaved(id: string) {
-    const updated = savedIds.filter((s) => s !== id);
-    localStorage.setItem("savedDestinations", JSON.stringify(updated));
+    const updated = removeSavedId(id);
     setSavedIds(updated);
   }
 

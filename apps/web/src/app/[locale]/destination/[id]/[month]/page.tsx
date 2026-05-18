@@ -471,6 +471,23 @@ export default async function DestinationMonthPage({
   const monthName = MONTH_NAMES[month];
   const score = currentMonth?.score ?? 0;
 
+  // Peak month for the alert hook — derive client-side from allMonths to
+  // avoid an extra DB call (6,060 pages × 1 query). Mirror getPeakMonth():
+  // MAX(score), ties broken by lowest month_num, null when max < 4.
+  const MONTH_NAME_BY_NUM = ["", "January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December"];
+  const PEAK_MIN_SCORE = 4;
+  const peakRow = (allMonths as Array<{ month: number; score: number }>)
+    .filter((m) => typeof m?.score === "number" && m.score >= PEAK_MIN_SCORE)
+    .sort((a, b) => b.score - a.score || a.month - b.month)[0];
+  const peakMonth = peakRow
+    ? {
+        monthNum: peakRow.month,
+        monthName: MONTH_NAME_BY_NUM[peakRow.month] ?? "",
+        score: peakRow.score,
+      }
+    : null;
+
   const stateInfo = destination.state as any;
   const stateName = Array.isArray(stateInfo) ? stateInfo[0]?.name : stateInfo?.name;
 
@@ -768,6 +785,7 @@ export default async function DestinationMonthPage({
             permits={permits}
             nearby={nearby}
             locale={locale}
+            peakMonth={peakMonth}
           />
         </div>
       </main>

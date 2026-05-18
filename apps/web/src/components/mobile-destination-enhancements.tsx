@@ -5,6 +5,7 @@ import { useLocale } from "next-intl";
 import Link from "next/link";
 import { m as motion, AnimatePresence } from "framer-motion";
 import { KEY_EVENTS, track } from "@/lib/analytics";
+import { getSavedIds, isSaved, toggleSaved } from "@/lib/saved-destinations";
 
 /* ── Sticky Section Tabs ──
    Floats above content on mobile, tracks scroll position to highlight active section.
@@ -124,9 +125,8 @@ export function BottomCTABar({ destId, destName }: { destId: string; destName: s
   const [saved, setSaved] = useState(false);
 
   useEffect(() => {
-    // Check if saved
-    const savedItems = JSON.parse(localStorage.getItem("nakshiq_saved") || "[]");
-    setSaved(savedItems.includes(destId));
+    // Check if saved via unified util (handles both legacy + canonical keys)
+    setSaved(isSaved(destId));
 
     function onScroll() {
       setVisible(window.scrollY > 200);
@@ -136,20 +136,17 @@ export function BottomCTABar({ destId, destName }: { destId: string; destName: s
   }, [destId]);
 
   function toggleSave() {
-    const savedItems: string[] = JSON.parse(localStorage.getItem("nakshiq_saved") || "[]");
-    let updated: string[];
-    if (savedItems.includes(destId)) {
-      updated = savedItems.filter((id) => id !== destId);
-      setSaved(false);
-      track(KEY_EVENTS.SAVE_DESTINATION, { destination: destId, action: "remove", surface: "mobile-cta" });
-    } else {
-      updated = [...savedItems, destId];
-      setSaved(true);
+    const result = toggleSaved(destId);
+    setSaved(result.isSaved);
+    if (result.isSaved) {
       track(KEY_EVENTS.SAVE_DESTINATION, { destination: destId, action: "add", surface: "mobile-cta" });
-      // Haptic feedback
       if (navigator.vibrate) navigator.vibrate(10);
+    } else {
+      track(KEY_EVENTS.SAVE_DESTINATION, { destination: destId, action: "remove", surface: "mobile-cta" });
     }
-    localStorage.setItem("nakshiq_saved", JSON.stringify(updated));
+    // Touch getSavedIds to ensure migration sentinel is set even when only
+    // adding (sub-prompt logic depends on the unified count being correct).
+    void getSavedIds();
   }
 
   async function handleShare() {

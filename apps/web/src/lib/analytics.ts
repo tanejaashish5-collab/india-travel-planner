@@ -11,6 +11,12 @@ export const KEY_EVENTS = {
   SHARE_CLICK: "share_click",
   OUTBOUND_BOOKING_CLICK: "outbound_booking_click",
   SCROLL_75_DESTINATION: "scroll_75_destination",
+  DESTINATION_ALERT_VIEW: "destination_alert_view",
+  DESTINATION_ALERT_ATTEMPT: "destination_alert_attempt",
+  DESTINATION_ALERT_SUCCESS: "destination_alert_success",
+  SAVE_PROMPT_VIEW: "save_prompt_view",
+  SAVE_PROMPT_ATTEMPT: "save_prompt_attempt",
+  SAVE_PROMPT_SUCCESS: "save_prompt_success",
 } as const;
 
 export type KeyEventName = (typeof KEY_EVENTS)[keyof typeof KEY_EVENTS];
