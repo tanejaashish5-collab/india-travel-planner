@@ -1343,11 +1343,10 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
 
             {/* India-outline choropleth — vermillion-highlighted parent
                 state on the cinematic India outline (no neighbouring
-                countries). Replaces the legacy Leaflet dots map per user
-                request 2026-05-17: "Indian map with no neighbouring country
-                shown… coloured states as per the score" — adapted for
-                destination scope as single-state focus. */}
-            <div style={{ maxWidth: 1100, margin: "32px auto 0" }}>
+                countries). Sized narrower than the section container so
+                the map reads as a focused panel rather than a full-bleed
+                visualisation (matches the landing-page Atlas proportions). */}
+            <div style={{ maxWidth: 520, margin: "32px auto 0" }}>
               <CinematicStateMap
                 stateId={dest.state_id}
                 stateName={stateName}

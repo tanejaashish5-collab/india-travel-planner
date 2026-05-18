@@ -90,10 +90,10 @@ export function CinematicStateMap({
       <div
         style={{
           position: "absolute",
-          top: 16,
-          left: 18,
+          top: 14,
+          left: 16,
           zIndex: 2,
-          maxWidth: "60%",
+          maxWidth: "70%",
         }}
       >
         <p
@@ -102,7 +102,7 @@ export function CinematicStateMap({
             color: "var(--vermillion)",
             margin: 0,
             letterSpacing: "0.22em",
-            fontSize: 10,
+            fontSize: 9,
           }}
         >
           WHERE EXACTLY · {(stateName ?? "INDIA").toUpperCase()}
@@ -112,10 +112,10 @@ export function CinematicStateMap({
             fontFamily: "var(--cinema-display)",
             fontStyle: "italic",
             fontWeight: 500,
-            fontSize: "clamp(18px, 2vw, 22px)",
+            fontSize: "clamp(16px, 1.8vw, 20px)",
             lineHeight: 1.15,
             color: "var(--bone)",
-            margin: "6px 0 0",
+            margin: "4px 0 0",
             letterSpacing: "-0.01em",
           }}
         >
@@ -123,7 +123,10 @@ export function CinematicStateMap({
         </p>
       </div>
 
-      {/* India outline — choropleth-style with current state highlighted */}
+      {/* India outline — choropleth-style with current state highlighted.
+          Mirrors the landing-page Atlas aesthetic (faint outline + a single
+          breathing accent) so destination pages feel like a focused panel
+          of the same map, not a separate visualisation. */}
       <svg
         viewBox={mapData.viewBox}
         preserveAspectRatio="xMidYMid meet"
@@ -132,7 +135,7 @@ export function CinematicStateMap({
           inset: 0,
           width: "100%",
           height: "100%",
-          padding: 24,
+          padding: 20,
         }}
         role="img"
         aria-label={`Map of India highlighting ${stateName ?? "this destination"}`}
@@ -143,35 +146,27 @@ export function CinematicStateMap({
             <path
               key={loc.id}
               d={loc.path}
-              fill={isCurrent ? "var(--vermillion)" : "rgba(245, 241, 232, 0.06)"}
+              fill={isCurrent ? "var(--vermillion)" : "rgba(245, 241, 232, 0.04)"}
               stroke={isCurrent ? "var(--vermillion)" : "var(--hair)"}
-              strokeWidth={isCurrent ? 1 : 0.6}
+              strokeWidth={isCurrent ? 1.2 : 0.5}
+              strokeLinejoin="round"
               style={{
-                opacity: isCurrent ? 1 : 0.55,
+                opacity: isCurrent ? 1 : 0.42,
               }}
             >
+              {isCurrent && (
+                <animate
+                  attributeName="fill-opacity"
+                  values="1;0.55;1"
+                  dur="2.4s"
+                  repeatCount="indefinite"
+                />
+              )}
               <title>{loc.name}</title>
             </path>
           );
         })}
       </svg>
-
-      {/* Mono caption — bottom-left */}
-      <p
-        className="nq-mono"
-        style={{
-          position: "absolute",
-          bottom: 16,
-          left: 18,
-          zIndex: 2,
-          fontSize: 10,
-          letterSpacing: "0.22em",
-          color: "var(--bone-faint)",
-          margin: 0,
-        }}
-      >
-        INDIA OUTLINE · ONE STATE PER PATH · NO NEIGHBOURS
-      </p>
     </div>
   );
 }
