@@ -54,6 +54,28 @@ export function CinematicStateMap({
 
   const projected = coords ? projectLatLng(coords.lat, coords.lng) : null;
 
+  // Edge-aware label placement — sits in the negative space adjacent to
+  // the pin (east of the pin for western pins, west of it for eastern
+  // pins) with a thin leader line connecting them. Vertical: aligned to
+  // the pin, clamped away from the top/bottom corner readouts.
+  let labelLeftPct = 50;
+  let labelTopPct = 50;
+  let labelLeaderEndPct = 50;
+  let labelAnchor: "left" | "right" = "left";
+  if (projected) {
+    const pinXPct = (projected.x / VIEWBOX_W) * 100;
+    const pinYPct = (projected.y / VIEWBOX_H) * 100;
+    const offset = 11;
+    const labelWidthEst = 28;
+    let placeRight = pinXPct < 50;
+    if (placeRight && pinXPct + offset + labelWidthEst > 98) placeRight = false;
+    if (!placeRight && pinXPct - offset - labelWidthEst < 2) placeRight = true;
+    labelLeftPct = placeRight ? pinXPct + offset : pinXPct - offset;
+    labelLeaderEndPct = labelLeftPct;
+    labelAnchor = placeRight ? "left" : "right";
+    labelTopPct = Math.max(12, Math.min(88, pinYPct));
+  }
+
   return (
     <div ref={ref}>
       <div
@@ -127,6 +149,17 @@ export function CinematicStateMap({
             </filter>
           </defs>
           <g style={{ opacity: dropped ? 1 : 0, transition: "opacity .5s" }}>
+            {/* Leader line — pin to label, dashed editorial cartography. */}
+            <line
+              x1={projected.x}
+              y1={projected.y}
+              x2={(labelLeaderEndPct / 100) * VIEWBOX_W}
+              y2={(labelTopPct / 100) * VIEWBOX_H}
+              stroke="var(--vermillion)"
+              strokeWidth="1"
+              strokeDasharray="3 2"
+              opacity="0.65"
+            />
             <line
               x1={projected.x}
               y1={projected.y - 50}
@@ -169,6 +202,63 @@ export function CinematicStateMap({
             <circle cx={projected.x} cy={projected.y} r="5.5" fill="var(--bone)" />
           </g>
         </svg>
+      )}
+
+      {/* In-map label — sits adjacent to the pin in negative space, with
+          a leader line connecting them. Edge-aware so it never falls
+          off the viewbox or collides with the corner readouts. */}
+      {projected && (
+        <div
+          style={{
+            position: "absolute",
+            left: `${labelLeftPct}%`,
+            top: `${labelTopPct}%`,
+            transform:
+              labelAnchor === "right"
+                ? "translate(-100%, -50%)"
+                : "translate(0, -50%)",
+            opacity: dropped ? 1 : 0,
+            transition: "opacity .5s ease",
+            transitionDelay: dropped ? "0.22s" : "0s",
+            pointerEvents: "none",
+            maxWidth: "30%",
+          }}
+        >
+          <div
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: 8,
+              padding: "5px 9px",
+              background: "rgba(8,8,10,.92)",
+              border: "1px solid rgba(245,241,232,.18)",
+              fontFamily: "var(--cinema-mono)",
+              fontWeight: 700,
+              fontSize: 9,
+              lineHeight: 1.15,
+              color: "var(--bone)",
+              letterSpacing: "0.16em",
+              flexWrap: "wrap",
+            }}
+          >
+            <span
+              aria-hidden
+              style={{
+                width: 6,
+                height: 6,
+                borderRadius: "50%",
+                background: "var(--vermillion)",
+                flexShrink: 0,
+              }}
+            />
+            <span>{destinationName.toUpperCase()}</span>
+            {stateName && (
+              <span style={{ color: "var(--vermillion)" }}>
+                · {stateName.toUpperCase()}
+              </span>
+            )}
+          </div>
+        </div>
       )}
 
       <div
@@ -227,45 +317,6 @@ export function CinematicStateMap({
       >
         ● ROLLING
       </div>
-      </div>
-
-      {/* Caption below the map — keeps the destination name + state out
-          of the pin's path so the dropping/pulsing dot stays visible.
-          Landing-page Atlas keeps labels on the map because it has
-          multiple pins; here we only have one, so an external placard
-          reads cleaner and matches a museum/atlas caption style. */}
-      <div
-        style={{
-          marginTop: 14,
-          display: "flex",
-          alignItems: "center",
-          gap: 10,
-          fontFamily: "var(--cinema-mono)",
-          fontWeight: 700,
-          fontSize: 10,
-          lineHeight: 1,
-          color: "var(--bone)",
-          letterSpacing: "0.18em",
-          opacity: dropped ? 1 : 0,
-          transform: dropped ? "translateY(0)" : "translateY(4px)",
-          transition: "opacity .5s ease, transform .5s ease",
-          transitionDelay: dropped ? "0.18s" : "0s",
-        }}
-      >
-        <span
-          aria-hidden
-          style={{
-            width: 8,
-            height: 8,
-            borderRadius: "50%",
-            background: "var(--vermillion)",
-            flexShrink: 0,
-          }}
-        />
-        <span>{destinationName.toUpperCase()}</span>
-        {stateName && (
-          <span style={{ color: "var(--vermillion)" }}>· {stateName.toUpperCase()}</span>
-        )}
       </div>
     </div>
   );
