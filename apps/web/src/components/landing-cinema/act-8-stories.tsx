@@ -32,6 +32,7 @@ export function Act8Stories({ collections }: { collections: StoryCollection[] })
 
   return (
     <section
+      id="stories"
       style={{
         position: "relative",
         padding: "120px 48px",
@@ -58,6 +59,7 @@ export function Act8Stories({ collections }: { collections: StoryCollection[] })
         </h2>
 
         <div
+          className="nq-stories-grid"
           style={{
             paddingTop: 36,
             display: "grid",

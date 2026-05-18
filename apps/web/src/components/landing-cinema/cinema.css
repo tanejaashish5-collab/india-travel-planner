@@ -519,7 +519,8 @@ html:has(.nakshiq-cinema) { scroll-behavior: smooth; }
      act-5, act-6, act-7, act-9). */
   .nakshiq-cinema section[id="directors-cut"],
   .nakshiq-cinema section[id="dailies"],
-  .nakshiq-cinema section[id="how-we-score"] {
+  .nakshiq-cinema section[id="how-we-score"],
+  .nakshiq-cinema section[id="stories"] {
     padding-left: 20px !important;
     padding-right: 20px !important;
     padding-top: 96px !important;
@@ -559,6 +560,27 @@ html:has(.nakshiq-cinema) { scroll-behavior: smooth; }
   }
   .nakshiq-cinema .nq-dailies-strip > * {
     flex: 0 0 65vw !important;
+    scroll-snap-align: start;
+  }
+  /* act-8 stories — same fix as dailies-strip. The desktop grid is
+     `repeat(4, 1fr)` which on mobile compresses each column to min-content;
+     unbreakable long words ("Destinations", "Experiences") then push each
+     card past its 1fr floor and the 4-col row overflows the viewport with
+     no scroll affordance. Flip to a swipeable horizontal rail on phones. */
+  .nakshiq-cinema .nq-stories-grid {
+    display: flex !important;
+    grid-template-columns: none !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: -20px;
+    margin-right: -20px;
+    gap: 16px !important;
+  }
+  .nakshiq-cinema .nq-stories-grid > * {
+    flex: 0 0 72vw !important;
     scroll-snap-align: start;
   }
   /* act-9 coda — stack the 1fr 1fr final grid */
