@@ -53,37 +53,18 @@ export function CinematicStateMap({
   }, [seen]);
 
   const projected = coords ? projectLatLng(coords.lat, coords.lng) : null;
-  const xPct = projected ? (projected.x / VIEWBOX_W) * 100 : 50;
-  const yPct = projected ? (projected.y / VIEWBOX_H) * 100 : 50;
-  const nearBottom = yPct > 78;
-  const nearTop = yPct < 8;
-  const nearLeft = xPct < 18;
-  const nearRight = xPct > 82;
-  const labelLeft =
-    xPct > 40
-      ? nearRight
-        ? `${Math.max(2, xPct - 30)}%`
-        : `${xPct + 3}%`
-      : nearLeft
-      ? `${xPct + 3}%`
-      : `${Math.max(2, xPct - 26)}%`;
-  const labelTop = nearBottom
-    ? `${Math.max(0, yPct - 8)}%`
-    : nearTop
-    ? `${yPct + 3}%`
-    : `${Math.max(0, yPct - 1.5)}%`;
 
   return (
-    <div
-      ref={ref}
-      style={{
-        position: "relative",
-        aspectRatio: "10/11",
-        border: "1px solid var(--hair)",
-        overflow: "hidden",
-        background: "radial-gradient(ellipse at 50% 30%, #08080a 0%, #000 80%)",
-      }}
-    >
+    <div ref={ref}>
+      <div
+        style={{
+          position: "relative",
+          aspectRatio: "10/11",
+          border: "1px solid var(--hair)",
+          overflow: "hidden",
+          background: "radial-gradient(ellipse at 50% 30%, #08080a 0%, #000 80%)",
+        }}
+      >
       <svg
         viewBox={`0 0 ${VIEWBOX_W} ${VIEWBOX_H}`}
         preserveAspectRatio="none"
@@ -190,44 +171,6 @@ export function CinematicStateMap({
         </svg>
       )}
 
-      {projected && (
-        <div
-          style={{
-            position: "absolute",
-            left: labelLeft,
-            top: labelTop,
-            opacity: dropped ? 1 : 0,
-            transform: dropped ? "translateY(0)" : "translateY(6px)",
-            transition: "opacity .5s ease, transform .5s ease",
-            transitionDelay: dropped ? "0.18s" : "0s",
-            pointerEvents: "none",
-          }}
-        >
-          <div
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: 8,
-              padding: "4px 8px",
-              background: "rgba(8,8,10,.88)",
-              border: "1px solid rgba(245,241,232,.18)",
-              fontFamily: "var(--cinema-mono)",
-              fontWeight: 700,
-              fontSize: 9,
-              lineHeight: 1,
-              color: "var(--bone)",
-              letterSpacing: "0.14em",
-              whiteSpace: "nowrap",
-            }}
-          >
-            <span>{destinationName.toUpperCase()}</span>
-            {stateName && (
-              <span style={{ color: "var(--vermillion)" }}>· {stateName.toUpperCase()}</span>
-            )}
-          </div>
-        </div>
-      )}
-
       <div
         style={{
           position: "absolute",
@@ -283,6 +226,46 @@ export function CinematicStateMap({
         }}
       >
         ● ROLLING
+      </div>
+      </div>
+
+      {/* Caption below the map — keeps the destination name + state out
+          of the pin's path so the dropping/pulsing dot stays visible.
+          Landing-page Atlas keeps labels on the map because it has
+          multiple pins; here we only have one, so an external placard
+          reads cleaner and matches a museum/atlas caption style. */}
+      <div
+        style={{
+          marginTop: 14,
+          display: "flex",
+          alignItems: "center",
+          gap: 10,
+          fontFamily: "var(--cinema-mono)",
+          fontWeight: 700,
+          fontSize: 10,
+          lineHeight: 1,
+          color: "var(--bone)",
+          letterSpacing: "0.18em",
+          opacity: dropped ? 1 : 0,
+          transform: dropped ? "translateY(0)" : "translateY(4px)",
+          transition: "opacity .5s ease, transform .5s ease",
+          transitionDelay: dropped ? "0.18s" : "0s",
+        }}
+      >
+        <span
+          aria-hidden
+          style={{
+            width: 8,
+            height: 8,
+            borderRadius: "50%",
+            background: "var(--vermillion)",
+            flexShrink: 0,
+          }}
+        />
+        <span>{destinationName.toUpperCase()}</span>
+        {stateName && (
+          <span style={{ color: "var(--vermillion)" }}>· {stateName.toUpperCase()}</span>
+        )}
       </div>
     </div>
   );
