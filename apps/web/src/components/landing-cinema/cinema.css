@@ -583,15 +583,41 @@ html:has(.nakshiq-cinema) { scroll-behavior: smooth; }
     flex: 0 0 72vw !important;
     scroll-snap-align: start;
   }
-  /* act-9 coda — stack the 1fr 1fr final grid */
+  /* act-9 coda — stack the 1fr 1fr final grid. The desktop section
+     uses `padding: calc(8vh + 80px) 48px calc(4vh + 24px)` and a 60px
+     gap above/below the giant sign-off — both feel oversized on phones,
+     so tighten the vertical rhythm in addition to the side gutters. */
   .nakshiq-cinema section[id="coda"] {
-    padding-left: 20px !important;
-    padding-right: 20px !important;
+    padding: calc(6vh + 32px) 20px calc(3vh + 16px) !important;
+  }
+  .nakshiq-cinema section[id="coda"] h2.nq-display {
+    margin: 32px 0 !important;
   }
   .nakshiq-cinema section[id="coda"] div[style*="minmax(0,1fr) minmax(0,1fr)"],
   .nakshiq-cinema section[id="coda"] div[style*="minmax(0, 1fr) minmax(0, 1fr)"] {
     grid-template-columns: 1fr !important;
     gap: 32px !important;
+  }
+  /* Once the credits column stacks under the newsletter, the 36px
+     padding-left + border-left wastes width and pushes content (the
+     two CTA buttons) past the right edge. On phones, drop both so the
+     column uses the full available width. */
+  .nakshiq-cinema section[id="coda"] div[style*="border-left"][style*="padding-left: 36px"] {
+    padding-left: 0 !important;
+    border-left: none !important;
+  }
+  /* The two CTAs ("OPEN THE MAY ATLAS" / "TELL US YOUR TRIP") sit in a
+     non-wrapping flex row. Desktop intent is side-by-side; on phones the
+     second button bleeds off-screen, so stack them vertically and let
+     each fill the column width — matches the mobile rhythm of a single
+     primary action per row used everywhere else in the cinema shell. */
+  .nakshiq-cinema section[id="coda"] div[style*="display: flex"][style*="margin-top: 28px"] {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 12px !important;
+  }
+  .nakshiq-cinema section[id="coda"] div[style*="display: flex"][style*="margin-top: 28px"] > a {
+    justify-content: center;
   }
 }
 
