@@ -4,6 +4,8 @@
 **Shipped:** 2026-05-19
 **Plan reference:** `/Users/ashishtaneja/.claude/plans/do-tier-1-serene-wigderson.md`
 
+**See also:** `content_strategy_v3_tl.csv` + `content_strategy_v3_tl_README.md` — 7 Travel + Leisure-decoded format rows shipped same day, same schema. Phase 2 loader will read both files as one rotation pool.
+
 ## Why this exists
 
 The autoposter's existing 14 morning formats skew toward **data cards** (score / cost / arrival). Useful, but cold. 215 IG posts, 2 net new organic followers. India's top travel creators (Tanya Khanijow 1.3M, Visa2explore 2M YT, Mountain Trekker, Tripoto Community 1M, Varun Aditya wildlife) win on **emotion + region + storytelling** — not data tables.
