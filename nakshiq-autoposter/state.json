@@ -1,18 +1,16 @@
 {
-  "yt_short_formats_used": [
-    "listicle"
-  ],
-  "yt_short_music_used": [
-    "02_trap_cinema"
-  ],
+  "yt_short_formats_used": [],
+  "yt_short_music_used": [],
   "posted_today": {
-    "m8EAd_yt_short": "2026-05-19",
-    "m8EAd_yt_short_count": 1
+    "m8EAd": "2026-05-19",
+    "m8EAd_evening": "2026-05-19",
+    "PdMu0": "2026-05-19",
+    "PdMu0_evening": "2026-05-19"
   },
-  "last_sync": "2026-04-30T04:05:30.154914+00:00",
+  "last_sync": "2026-05-19T14:22:40.256880+00:00",
   "posted_destinations": [
     {
-      "destination_id": "parvati-valley",
+      "destination_id": "achabal",
       "date": "2026-05-19"
     }
   ],
@@ -30,7 +28,8 @@
       "score_card",
       "collection_spotlight",
       "festival_alert",
-      "kids_intel"
+      "kids_intel",
+      "reality_check"
     ],
     "PdMu0": [
       "monthly_forecast",
@@ -50,7 +49,8 @@
       "reality_check",
       "collection_spotlight",
       "festival_alert",
-      "kids_intel"
+      "kids_intel",
+      "reality_check"
     ]
   },
   "post_log": [
@@ -445,25 +445,53 @@
       "has_media": true
     },
     {
-      "timestamp": "2026-05-19T13:49:49.403424+00:00",
-      "date": "2026-05-19",
-      "platform": "youtube",
-      "post_id": "Qol5y",
-      "destination": "parvati-valley",
-      "format": "yt_short.listicle",
-      "media_id": "yt_short_listicle_yt_short_listicle_2026-05-19.mp4"
-    },
-    {
-      "timestamp": "2026-05-19T13:50:25.520760+00:00",
+      "timestamp": "2026-05-19T14:23:24.206325+00:00",
       "date": "2026-05-19",
       "platform": "instagram",
-      "post_id": "lHiRK",
-      "destination": "parvati-valley",
-      "format": "yt_short.listicle",
-      "media_id": "yt_short_listicle_yt_short_listicle_2026-05-19.mp4"
+      "account_id": "m8EAd",
+      "post_id": "5E68D",
+      "destination": "achabal",
+      "format": "reality_check",
+      "has_media": true,
+      "media_id": "achabal.mp4"
+    },
+    {
+      "timestamp": "2026-05-19T14:23:46.360337+00:00",
+      "date": "2026-05-19",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "gSdNx",
+      "destination": "achabal",
+      "format": "reality_check",
+      "has_media": true,
+      "media_id": "achabal.mp4"
     }
   ],
-  "theme_usage": {},
+  "theme_usage": {
+    "destinations": {
+      "chopta": [
+        "2026-05-19"
+      ],
+      "achabal": [
+        "2026-05-19"
+      ]
+    },
+    "collections": {
+      "birding-hotspots": [
+        "2026-05-19"
+      ]
+    },
+    "collection_carousel_dests:birding-hotspots": {
+      "chopta": [
+        "2026-05-19"
+      ]
+    },
+    "reels": {
+      "achabal": [
+        "2026-05-19"
+      ]
+    }
+  },
   "infographic": {
     "last_topic_idx": 0,
     "last_theme_idx": 0,
@@ -475,6 +503,9 @@
     ]
   },
   "ugc_music_history": [],
-  "last_picked": {},
+  "last_picked": {
+    "collection": "birding-hotspots",
+    "shared_best": "tungnath"
+  },
   "manual_skip_dests": {}
 }
