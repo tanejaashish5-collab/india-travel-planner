@@ -1,0 +1,37 @@
+2026-05-19 07:01:58  INFO      [migration] bootstrapped post_log.jsonl with 38 entries from state.json
+2026-05-19 07:01:58  INFO      ════════════════════════════════════════════════════════════
+2026-05-19 07:01:58  INFO      Nakshiq Autoposter · MORNING · 2026-05-19 · weekday=1
+2026-05-19 07:01:58  INFO      ════════════════════════════════════════════════════════════
+2026-05-19 07:01:58  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-05-19 07:02:16  INFO      Synced → 20 destinations · 0 traps · 0 articles · 23 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 50 camping · 50 gems · total catalog=505
+2026-05-19 07:02:18  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-05-19 07:02:19  INFO      Festivals filtered (past/post-window): Kedarnath Opening, Summer Festival, Badri-Kedar Festival, Chaukori Tea Festival, Chail Cricket Festival, Guptkashi Vishwanath Temple Festival, Tosamaidan Wildflower Season, Badrinath Temple Opening (Kapaat Kholna) (+9 more)
+2026-05-19 07:02:19  INFO      Morning format (themed-week-3→moment): cost_index_card [0% vs target 10%] (14/14 never featured)
+2026-05-19 07:02:19  INFO      Formats — IG: cost_index_card  ·  FB: cost_index_card  ·  Story: blog_promo
+2026-05-19 07:02:19  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 8
+2026-05-19 07:02:19  INFO      Fingerprint dedup snapshot — 8 dests in 7d · 27 (dest,fmt) pairs in 30d · 0 media in 60d
+2026-05-19 07:02:19  INFO      Cost index dest locked: Hemkund Sahib (89/89 never featured)
+2026-05-19 07:02:23  INFO      Shared best destination locked: Tungnath
+2026-05-19 07:02:23  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-05-19 07:02:23  INFO      [instagram/nakshiq] Generating cost_index_card post...
+2026-05-19 07:02:23  INFO      [instagram/nakshiq] Caption ready (445 chars, dest=hemkund-sahib)
+2026-05-19 07:02:24  INFO      [instagram/nakshiq] Video available — uploading for Reel...
+2026-05-19 07:02:24  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/hemkund-sahib.mp4?v=20260512
+2026-05-19 07:02:34  INFO          Requesting upload URL for hemkund-sahib.mp4 (7,313,558 bytes, video/mp4)
+2026-05-19 07:02:35  INFO          Uploading to R2 (timeout=300s)...
+2026-05-19 07:02:36  INFO          R2 PUT OK. Confirming...
+2026-05-19 07:02:37  INFO          Media ready: nY4Tl (7,313,558 bytes · hemkund-sahib.mp4)
+2026-05-19 07:02:37  INFO      [instagram/nakshiq] Publishing Reel...
+2026-05-19 07:03:25  INFO      [instagram/nakshiq] ✅ Published · Outstand=4sgBi · Platform=18097765562165603
+2026-05-19 07:03:25  INFO      [facebook/Nakshiq] Generating cost_index_card post...
+2026-05-19 07:03:25  INFO      [facebook/Nakshiq] Caption ready (615 chars, dest=hemkund-sahib)
+2026-05-19 07:03:26  INFO      [facebook/Nakshiq] Video available — uploading for Reel...
+2026-05-19 07:03:26  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/hemkund-sahib.mp4?v=20260512
+2026-05-19 07:03:26  INFO          Requesting upload URL for hemkund-sahib.mp4 (7,313,558 bytes, video/mp4)
+2026-05-19 07:03:27  INFO          Uploading to R2 (timeout=300s)...
+2026-05-19 07:03:28  INFO          R2 PUT OK. Confirming...
+2026-05-19 07:03:29  INFO          Media ready: iwebB (7,313,558 bytes · hemkund-sahib.mp4)
+2026-05-19 07:03:29  INFO      [facebook/Nakshiq] Publishing Reel...
+2026-05-19 07:03:44  INFO      [facebook/Nakshiq] ✅ Published · Outstand=Ikm4X · Platform=977376594994934
+2026-05-19 07:03:44  INFO      State saved. Run complete.
+2026-05-19 07:03:44  INFO      ════════════════════════════════════════════════════════════
