@@ -1,0 +1,201 @@
+"format_id","post_type","platform","pillar","inspired_by","hook_template","caption_template","cta_template","data_inputs","pomelli_prompt","image_prompt","video_prompt","asset_aspect","max_freq_per_month","notes"
+"v2_pov_slow_morning","reel","ig+fb","moment","Tanya Khanijow","This is what 5:47am looks like in {dest_name}.","No alarms. No itinerary. Just {state}'s slowest hour.
+
+The air is colder than your coffee. The pines haven't moved in an hour. {nearest_landmark} catches its first light at {sunrise_time}.
+
+Go early. Stay still.","Comment SUNRISE if you'd wake up here.","dest_name|state|nearest_landmark|sunrise_time|altitude_m","1:1 square slide 1 of 3 carousel. Centred Fraunces italic title '{dest_name}' 96pt vermillion #C73A2C on warm ivory #F4ECE2 background. State name above in Crimson Pro 32pt charcoal #1A1A1A. Score chip bottom-right 56pt JetBrains Mono on saffron #F4A02C pill. 60% top whitespace, text in lower third. 12pt grain texture overlay. No images, no destination photos — text card only.","Photorealistic 9:16 still of mist rising off a Himalayan lake at 5:47am near {dest_name}, {state}. Soft pink-orange dawn light from camera-left, deep teal water, dark pine silhouettes at edges. Shot on 35mm film stock, slight grain, muted desaturated palette — peach + navy + bone. NO text, NO people, NO logos. Composition: foreground rocks lower-third, lake mid-frame, mountains background. Style: cinematic, contemplative, Tanya Khanijow aesthetic.","8-second cinematic 9:16 vertical clip: slow drone pull-back from a single dewdrop on a pine needle in foreground revealing a Himalayan valley at first light near {dest_name}, {state}. Dawn pink-blue palette. Subtle mist drift across the valley floor. No music, only ambient wind. 24fps cinematic shutter, slight handheld float. End frame: wide valley with {dest_name} burned-in lower-third in Fraunces italic 64pt bone-white.","9:16","3","Hindi variant available: caption Hindi-first, English subtitle line 2. Skip if sunrise_time field null or dest has no high-altitude POI (no Goa, no plains)."
+"v2_thali_close_up","carousel","ig+fb","moment","Visa2explore","{thali_name}. ₹{price_inr}. {eatery_name}, {dest_name}.","{eatery_name} has served {thali_name} for {years_open} years. Same family. Same brass plate. Same {hero_dish} cooked in {fuel_type}.
+
+Comes with: {accompaniments}.
+
+Walk-in only. {meal_hours}.
+
+Address: {address}.","Comment THALI for the next 4 family-run kitchens we verified in {state}.","thali_name|price_inr|eatery_name|dest_name|state|years_open|hero_dish|fuel_type|accompaniments|meal_hours|address","4:5 carousel slide 1 of 4. Big serif title 'Eaten here' Fraunces italic 88pt vermillion #C73A2C. Below: '{eatery_name} · since {years_open}' Crimson Pro 36pt charcoal. ₹{price_inr} as a chunky saffron #F4A02C pill bottom-right, JetBrains Mono 56pt. Warm ivory #F4ECE2 background. Slight paper-noise texture. No photos.","Overhead 4:5 photorealistic shot of a {thali_name} on a brass plate, shot top-down on a worn wooden family-kitchen table in {dest_name}, {state}. Steam visible rising from {hero_dish}. Small steel bowls of {accompaniments} arranged around the centre. Window light from upper-left, warm tungsten fill. Slight blur on edges, sharp on the main dish. Style: documentary food photography, 35mm, film grain. NO text, NO logos, NO menu cards in frame.","6-second 4:5 clip: hands in foreground tearing roti and dipping into {hero_dish} on a brass plate. Macro lens, shallow depth of field. Family-kitchen ambient sound — pressure cooker hiss, distant Hindi conversation, no music. Warm tungsten + window light mix. Final second: hand pulls back revealing full thali. No on-screen text.","4:5","4","Hindi variant available — Devanagari title 'यहाँ खाया' on slide 1. Skip if eatery has no price_inr OR address is generic (must be a real walk-in spot, not a chain). Pair with eateries_pick data."
+"v2_route_animated_map","reel","ig+fb+yt_short","discovery","Tanya Khanijow","{route_name}. {total_days} days. {total_km} km. {stop_count} stops.","Day 1: {stop_1_name} — {stop_1_note}
+Day 2: {stop_2_name} — {stop_2_note}
+Day 3: {stop_3_name} — {stop_3_note}
+Day 4: {stop_4_name} — {stop_4_note}
+Day 5: {stop_5_name} — {stop_5_note}
+
+Best window: {best_months}. Avoid: {avoid_months}.
+Permits: {permit_note}.
+Bike-friendly: {bike_friendly}.","Comment the stop you'd skip — we'll DM you the next one.","route_name|total_days|total_km|stop_count|stop_1_name|stop_1_note|stop_2_name|stop_2_note|stop_3_name|stop_3_note|stop_4_name|stop_4_note|stop_5_name|stop_5_note|best_months|avoid_months|permit_note|bike_friendly","9:16 vertical map card. Hand-drawn India outline in vermillion #C73A2C ink-line style on ivory #F4ECE2 paper-texture background. 5 numbered route dots in saffron #F4A02C, connected by dashed line. Each dot has a small label: '01 {stop_1_name}', '02 {stop_2_name}', etc. Title top: '{route_name}' Fraunces italic 72pt charcoal. Subtitle: '{total_days} days · {total_km} km'. Bottom: 'nakshiq.com' small in Instrument Sans 24pt charcoal.","","15-second 9:16 animated map reveal. Start with blank ivory paper, India outline draws itself in vermillion ink. Then 5 route stops appear one by one in saffron — each labelled '{stop_n_name}'. Dashed connecting line draws between stops. Slow zoom-in on each stop revealing a 1-sec photo card overlay of that destination. End frame: full route visible, title '{route_name}' bottom-third in Fraunces italic. Acoustic guitar music, no voiceover. 24fps.","9:16","2","Hindi variant available — labels in Devanagari + Hindi voiceover describing the route. Skip if route has <4 verified stops or permits field is unclear. Pulls from /api/content?type=routes."
+"v2_hindi_score_card","single","ig+fb","verdict","Mountain Trekker","{dest_name}, {month_hindi} में: {score}/5","इस महीने {dest_name} जाना है?
+
+मौसम: {weather_hindi}
+भीड़: {crowd_hindi}
+खर्च: ₹{daily_cost_inr}/दिन
+क्यों जाएं: {why_go_hindi}
+
+{english_one_liner}","{dest_name} गए हो? कमेंट में बताओ कब.","dest_name|month_hindi|score|weather_hindi|crowd_hindi|daily_cost_inr|why_go_hindi|english_one_liner","1:1 square. Big Devanagari title '{dest_name}' Mukta serif 96pt vermillion #C73A2C. Subtitle '{month_hindi} में' Crimson Pro 40pt charcoal. Massive score chip centre-right: '{score}/5' JetBrains Mono 144pt on saffron #F4A02C pill. Below in Devanagari: 4 small stat lines with mausam/bheed/kharcha/kyon. Ivory #F4ECE2 background. Bottom-right corner: small 'nakshiq.com' in Instrument Sans 22pt.","","","1:1","4","Hindi-led format — primary audience tier-2/3 Indian cities. English one-liner kept short as code-switch hook. Skip if any Devanagari field missing. Translation must use natural Hindi, not Google-MT."
+"v2_ugc_spotlight","single","ig_only","discovery","Tripoto Community","Featured: @{creator_handle} in {dest_name}.","Spotted by @{creator_handle} — {capture_date}.
+
+Their note: ""{creator_quote}""
+
+Where: {dest_name}, {state}. Score this month: {score}/5.
+Best window: {best_months}.
+
+Photo with permission. Tag #nakshiqfound to be featured.","Comment 📍 if you've been. Tagged friend = +1 entry to next feature.","creator_handle|dest_name|state|capture_date|creator_quote|score|best_months","4:5 vertical. The submitted UGC photo fills 80% of frame. Bottom 20% is an ivory #F4ECE2 strip with: '@{creator_handle} · {dest_name}' in Instrument Sans 32pt charcoal, score chip '{score}/5' in vermillion JetBrains Mono 40pt right-aligned. Thin saffron #F4A02C 1px divider line between photo and strip. No other text.","","","4:5","6","Sourced from real community submissions via #nakshiqfound or DM. REQUIRES creator permission + handle credit. Skip if creator_quote is generic or photo is stock. Cheapest format per post — community flywheel."
+"v2_wildlife_moment","reel","ig+fb","moment","Varun Aditya","{species_name}. {dest_name}. {observation_time}.","{species_name_scientific}. {endemic_status}.
+
+Where: {dest_name}, {state}. Best months to spot: {best_months}.
+Best time of day: {best_hours}. Distance to maintain: {safe_distance_m}m.
+
+What we did wrong on our first trip: {first_trip_mistake}.
+What worked this time: {what_worked}.","Comment the species — we'll share the local guide who took us.","species_name|species_name_scientific|endemic_status|dest_name|state|observation_time|best_months|best_hours|safe_distance_m|first_trip_mistake|what_worked","","Photorealistic 9:16 vertical close-up of {species_name} in its natural habitat at {dest_name}, {state}. Sharp focus on the animal's eye, soft bokeh background. Golden hour light from camera-left. Animal is calm, not threatened. Documentary wildlife style — Frans Lanting / Varun Aditya aesthetic. Muted earth-tone palette. NO text, NO logos, NO people, NO captive-setting clues (no fences, no cages).","10-second 9:16 clip: slow lateral pan revealing {species_name} in frame at {dest_name}. Animal moves naturally — turns head, blinks. Natural ambient sound — distant bird calls, wind. No music. End frame: animal looks toward camera then turns away. Burned-in lower-third caption '{species_name} · {dest_name}' Fraunces italic 48pt ivory. 24fps cinematic. Telephoto lens look.","9:16","3","Skip unless we have verified wildlife sighting data + ethical observation distances. NEVER use captive footage. Pair with sanctuary destinations only. NO drone close-passes — disturbs animals."
+"v2_texture_macro","single","ig+fb","moment","original","{texture_subject}. {dest_name}.","{texture_subject} — outside {nearest_landmark}.
+
+Notice the {detail_1}. The {detail_2}.
+
+We walked past this twice before stopping.","Comment what your eye went to first.","texture_subject|dest_name|state|nearest_landmark|detail_1|detail_2","","Photorealistic 1:1 square macro shot of {texture_subject} in {dest_name}, {state}. Extreme close-up, every grain/thread visible. Natural daylight, slightly desaturated film palette. Background completely out of focus. Composition: rule of thirds, texture fills frame. NO text, NO logos, NO people. Style: Wim Wenders / Steve McCurry documentary detail shot.","5-second 1:1 clip: extreme slow zoom-in on {texture_subject}, {dest_name}. Ambient sound only — wind, distant temple bell, no music. Final 2 seconds hold on tightest crop. No on-screen text in clip. 24fps cinematic.","1:1","3","Aesthetic-first, low data requirement. Good filler for slow days. Skip if texture_subject is generic ('a wall' won't work — needs 'a 200-year-old rosewood door knocker in Athangudi')."
+"v2_budget_receipt","single","ig+fb","verification","Mountain Trekker","Day {day_number} in {dest_name}: ₹{day_total_inr}.","What ₹{day_total_inr} actually buys you in {dest_name}, {state}.
+
+Stay: ₹{stay_inr} ({stay_type})
+Food: ₹{food_inr} (3 meals)
+Transport: ₹{transport_inr} ({transport_type})
+Entry / permits: ₹{entry_inr}
+Misc: ₹{misc_inr}
+
+Verified {verification_date}. Not sponsored.","Comment your dest — we'll do a real ₹/day breakdown next.","day_number|dest_name|state|day_total_inr|stay_inr|stay_type|food_inr|transport_inr|transport_type|entry_inr|misc_inr|verification_date","1:1 square styled as a receipt on white #F8F6F1 paper texture. Header in monospace JetBrains Mono 28pt: 'NAKSHIQ FIELD LEDGER'. Below: '{dest_name} · Day {day_number} · {verification_date}'. Five line items aligned with dotted leaders to ₹ amounts on the right (stay/food/transport/entry/misc). Bottom thick double-line then 'TOTAL ₹{day_total_inr}' in JetBrains Mono Bold 56pt vermillion #C73A2C. Subtle coffee-stain texture in one corner. Slightly rotated 2° for hand-printed feel.","Photorealistic 1:1 of an actual handwritten travel-budget notebook page on a wooden cafe table in {dest_name}. Black ink, neat columns of expenses with ₹ amounts. Coffee cup blurred top-right. Window light from left. Style: travel-journal documentary photography, muted palette. NO text legible enough to fabricate amounts — keep values blurred so the Pomelli card carries the actual breakdown.","","1:1","4","Hindi variant: receipt header 'नक्षिक़ बजट हिसाब' Devanagari. Skip if any ₹ field is null — fabricated budgets kill trust. verification_date must be within 6 months."
+"v2_cost_vs_feeling","carousel","ig+fb","verification","original","₹{cost_inr} bought us {feeling_phrase} in {dest_name}.","Slide 1: the receipt.
+Slide 2: the moment.
+
+₹{cost_inr} = {experience_summary}.
+
+{dest_name}, {state}. {verification_date}.
+Score this month: {score}/5.","Comment ₹ for the next 3 dests where this still works.","cost_inr|feeling_phrase|dest_name|state|experience_summary|verification_date|score","4:5 carousel slide 1. Split vertically: left half ivory #F4ECE2 with '₹{cost_inr}' in JetBrains Mono Bold 144pt vermillion #C73A2C. Right half saffron #F4A02C with '{feeling_phrase}' in Fraunces italic 64pt ivory, wrapped to 3 lines max. Thin 1px charcoal vertical divider between halves. Bottom-strip: '{dest_name} · {state}' Instrument Sans 28pt charcoal.","Photorealistic 4:5 image for slide 2 of carousel. The unstaged real moment at {dest_name} that the cost bought — could be a quiet cafe table, a foot in a stream, a thali, a sunset bench. Documentary photography, no humans posing, no logos visible. Natural light. Slight film grain. NO text overlay.","","4:5","3","feeling_phrase must be specific not generic ('30 silent minutes at Khajjiar', not 'peace'). Skip if cost_inr is null OR feeling_phrase is influencer-cliche. Pair with cost_index data."
+"v2_myth_bust_oneline","reel","ig+fb","anti_trap","Tanya Khanijow","""{myth_question}""","Asked {asked_count}+ times this week.
+
+Short answer: {short_answer}.
+
+Full version:
+{full_explanation}
+
+Source: {source_note}.","What's your {dest_name} myth? Comment it — we'll bust 3 next week.","myth_question|asked_count|short_answer|full_explanation|source_note|dest_name|state","9:16 vertical. Top half: '{myth_question}' in Fraunces italic 80pt ivory on deep charcoal #1A1A1A background with subtle grain. Bottom half: '{short_answer}' in Instrument Sans Bold 96pt vermillion #C73A2C on ivory #F4ECE2. A thin 2px saffron divider between halves. Bottom-right corner small 'nakshiq.com · verified {verification_date}' in Instrument Sans 20pt charcoal.","","6-second 9:16. Open on a black frame with '{myth_question}' typing in white serif Fraunces italic 80pt over 2s. Cut to white frame with '{short_answer}' large in vermillion Instrument Sans Bold 96pt punching in for 2s. Final 2s: a static text card with the source ('Source: {source_note}'). No voiceover. Crisp ambient page-turn / typewriter SFX.","9:16","4","Hindi variant available: question + answer in Hindi. Skip if myth_question is generic ('Is Goa safe?') — needs specific user submission. Source must be checkable (link / govt page / operator name)."
+"v2_series_episode","reel","ig+fb","discovery","Visa2explore","{series_name} · Day {episode_n} of {total_episodes}: {episode_title}","Day {episode_n}: {episode_title}
+
+Morning: {morning_block}
+Afternoon: {afternoon_block}
+Evening: {evening_block}
+
+Stayed: {stay_name} · ₹{stay_inr}
+Ate: {eatery_name} · ₹{food_inr}
+
+Next episode: Day {next_episode_n} · {next_episode_title}.","Follow for Day {next_episode_n} — drops {next_drop_date}.","series_name|episode_n|total_episodes|episode_title|morning_block|afternoon_block|evening_block|stay_name|stay_inr|eatery_name|food_inr|next_episode_n|next_episode_title|next_drop_date|dest_name|state","9:16 episode card. Top-left small label 'EP {episode_n} / {total_episodes}' Instrument Sans 28pt saffron. Centre title '{episode_title}' Fraunces italic 80pt vermillion on ivory. Below: '{series_name}' Crimson Pro 36pt charcoal. Bottom: 3 tiny stat chips morning/afternoon/evening with one-word labels each. Hand-numbered episode badge top-right corner styled like a TV series number plaque.","","12-second 9:16 reel. Episode card holds 2s. Then 3 quick scene cuts: morning shot (1 sec), afternoon shot (1 sec), evening shot (1 sec) — each from the real day at {dest_name}. Cut to stay exterior (2s). Cut to eatery dish close-up (2s). End frame: 'Next: Day {next_episode_n}' card with date. Acoustic guitar music. 24fps. Burned-in episode counter top-right throughout.","9:16","5","Builds return-viewer hook. Schedule ALL episodes of a series before publishing episode 1. Skip if next_episode_title is null (no point starting a series without commitment to finish)."
+"v2_local_knows","single","ig+fb","anti_trap","Mountain Trekker","Locals in {dest_name} don't go to {trap_landmark} in {month_name}.","Locals never go to {trap_landmark} in {month_name} because {reason_short}.
+
+What they do instead: {local_alternative}.
+
+How to ask: ""{local_phrase}"" (in {local_language}).
+
+{trap_landmark} reopens for locals: {reopen_window}.","Comment your local's name — we'll send them a feature request.","dest_name|state|trap_landmark|month_name|reason_short|local_alternative|local_phrase|local_language|reopen_window","1:1 square. Top: 'LOCAL KNOWLEDGE' Instrument Sans 24pt saffron tracking-wide. Title: '{trap_landmark}' in Fraunces italic 88pt vermillion #C73A2C with a horizontal strikethrough line through it. Below: 'in {month_name}' Crimson Pro 32pt charcoal. Bottom block on ivory: 'Locals go here instead → {local_alternative}' in Instrument Sans Bold 36pt charcoal. Tiny saffron arrow icon. Background subtle hand-drawn texture.","","","1:1","4","Hindi variant available — both phrases in Devanagari + local language (Pahari / Marathi / Tamil etc.) where applicable. Skip if local_phrase is generic English. Pair with tourist_trap data."
+"v2_score_card_pov","reel","ig+fb","verdict","original","{dest_name} in {month_name}: {score}/5. Here's why.","Same dest, two opinions.
+
+What's true this month: {true_now}.
+What changed since last month: {change_note}.
+What we still don't recommend: {still_skip}.
+
+Verdict: {score}/5. Crowd: {crowd_level}. Cost: ₹{daily_cost_inr}/day.","Comment YES if {score}/5 feels right. NO if you'd score it differently.","dest_name|state|month_name|score|true_now|change_note|still_skip|crowd_level|daily_cost_inr","9:16 closing slate (used as end-frame on reel). '{dest_name}' Fraunces italic 96pt vermillion. Score chip centre: '{score}/5' JetBrains Mono Bold 144pt charcoal on saffron pill. Below: 3 small stat chips (crowd / cost / month) in horizontal row.","","10-second 9:16 reel. Opening 2s: handheld POV walking into {dest_name}'s main viewpoint — no narration, just ambient. 3s: POV holds on the iconic view. 3s: 3 quick on-screen text overlays — 'TRUE NOW: {true_now}', 'CHANGED: {change_note}', 'STILL SKIP: {still_skip}' (1s each). Final 2s: locked-frame score card '{score}/5' punching in. Ambient sound only, no music.","9:16","6","Refresh of existing score_card format. Use when destination has fresh field observation (verification_date < 30 days). Skip if no change_note — needs the 'what changed' tension."
+"v2_arrival_intel_video","reel","ig+fb","verification","original","First 4 hours at {iata}. {city}.","{iata} arrivals · what actually happens.
+
+1. {scam_warning}
+2. Pre-paid taxi counter: {prepaid_taxi}
+3. SIM counter: {sim_counters}
+4. ATM location: {atm_location}
+5. Where to nap first night: {first_night_stay}
+
+Verified {verification_date}.","Comment '{iata}' — we'll DM the airport map.","iata|city|state|scam_warning|prepaid_taxi|sim_counters|atm_location|first_night_stay|verification_date","9:16 end-card. Top: '{iata}' JetBrains Mono Bold 144pt vermillion on ivory. Below: '{city} · first 4 hours' Crimson Pro 40pt charcoal. 5 numbered checkboxes in saffron with one-word labels (scam / taxi / sim / atm / sleep). Bottom: 'verified {verification_date}' Instrument Sans 22pt charcoal.","","12-second 9:16 reel: handheld POV walking from {city} airport arrivals gate. Sequential cuts: airport sign with IATA (2s) → scam-warning location (2s) → pre-paid taxi counter (2s) → SIM counter (2s) → ATM (2s) → first-night hotel front (2s). Each cut has a burned-in numbered text label in upper-third saffron Instrument Sans Bold 48pt. Ambient airport sound only, no music. 24fps. Subtle handheld float.","9:16","2","Refresh of arrival_intel feed format. Hindi variant available for IATAs like DEL/BOM/HYD. Skip if any of the 5 numbered fields is null. verification_date must be < 90 days."
+"v2_hidden_gem_reveal_atmo","reel","ig+fb","discovery","Tanya Khanijow","{distance_km} km from {near_destination_name}.","{gem_name}.
+
+{why_unknown}
+
+What you'd see: {why_go}.
+How to reach: {access_note}.
+Don't go in: {avoid_months}.
+
+Pop. ~{population}. Verified {verification_date}.","Comment 📍 if you'd detour. Tag the friend who'd drive.","gem_name|near_destination_name|state|distance_km|why_unknown|why_go|access_note|avoid_months|population|verification_date","9:16 reveal slide (mid-reel). '{distance_km} km from' Crimson Pro 32pt charcoal top, then '{near_destination_name}' Fraunces italic 56pt charcoal, large arrow ↓, then '{gem_name}' Fraunces italic 96pt vermillion #C73A2C centred. Ivory background, subtle grain.","","12-second 9:16 reel. Opens with 4s of pure atmosphere: ambient sound + slow drone or handheld over the unknown destination at golden hour. NO text first 4 seconds — purely visual hook. At 4s a single text line drops in: '{distance_km} km from {near_destination_name}.' At 7s the name reveals: '{gem_name}'. Hold final 3s on a wide establishing shot. No music or very soft acoustic guitar. 24fps cinematic.","9:16","4","Refresh of hidden_gem_reveal. The 4-sec text-free atmospheric opener is the critical difference vs current feed format — data has shown text-first hooks underperform on Reels. Skip if no atmospheric video footage available for the gem."
+"v2_cost_index_handwritten","single","ig+fb","verification","original","Real cost · {dest_name} · {month_name}","What ₹{daily_cost_inr}/day buys you in {dest_name} this month.
+
+Budget tier: {budget_tier} (₹{tier_low_inr} – ₹{tier_high_inr})
+Hostel bed: ₹{hostel_inr}
+Mid stay: ₹{midstay_inr}
+Thali: ₹{thali_inr}
+Cafe coffee: ₹{coffee_inr}
+Local bus: ₹{bus_inr}
+
+Verified {verification_date}. Hand-checked, not scraped.","Comment your dest — we'll do the next ₹/day audit.","dest_name|state|month_name|daily_cost_inr|budget_tier|tier_low_inr|tier_high_inr|hostel_inr|midstay_inr|thali_inr|coffee_inr|bus_inr|verification_date","1:1 styled as a torn-edge notebook page. Cream #F8F2E6 paper, subtle grid lines. Hand-lettered title '{dest_name} · {month_name}' in a brush-script font (Caveat / Reenie Beanie) 64pt charcoal. 5 line items below in mock-handwriting, each with item name + dotted leader + ₹ amount. Big circled total ₹{daily_cost_inr} bottom-right with hand-drawn red marker circle. Coffee ring stain top-left. Ink-blot on one corner.","Photorealistic 1:1 of an actual travel-budget notebook page in {dest_name}. Cream paper, handwritten ₹ amounts (illegible — Pomelli card carries real values), coffee stain. Window light warm. NO logos. Style: travel-journal documentary, faint film grain.","","1:1","3","Refresh of cost_index_card with handwritten notebook aesthetic. Hindi variant: section labels in Devanagari. Skip if any ₹ field is null — fabricated budgets destroy the only thing that separates us from listicles. verification_date < 60 days."
+"v2_weekend_escape_map","reel","ig+fb","verdict","Tanya Khanijow","{drive_hours}h from {anchor_city}: {dest_name}.","{dest_name}. {drive_hours} hours from {anchor_city}.
+
+Best Friday→Sunday window: {best_window}.
+Drive: {drive_route_note}.
+Where to stay: {stay_pick_name}.
+What to do: {weekend_itinerary}.
+
+Score this month: {score}/5. Crowd: {crowd_level}.","Comment {anchor_city} for the next 3 weekend picks within {drive_hours}h.","dest_name|state|drive_hours|anchor_city|best_window|drive_route_note|stay_pick_name|weekend_itinerary|score|crowd_level","9:16 map closing slide. Top: '{anchor_city} → {dest_name}' Fraunces italic 64pt charcoal. Centre: hand-drawn arc-line from {anchor_city} point to {dest_name} point in vermillion ink-line style on cream paper. Drive-time pill '{drive_hours}h' floating above arc. Bottom: 'Friday 18:00 → Sunday 20:00' Instrument Sans 28pt charcoal. Subtle topo-map contour lines.","","10-second 9:16 reel. Cold open: Friday-evening road from {anchor_city} city limits (2s) → highway drive shot (1s) → arrival at {dest_name} (2s) → first morning view at the dest (2s) → final 3s static map card with route arc. Soft acoustic guitar. Burned-in time-stamps 'Fri 19:00 / Sat 06:30' upper-third. Comment-CTA fades in last 2s. 24fps.","9:16","4","Refresh of weekend_escape with map storytelling. Pair with weekend-from API. Skip if drive_hours > 8 (not a real weekend escape) or anchor_city is not a tier-1 metro."
+"v2_festival_alert_sensory","single","ig+fb","moment","Varun Aditya","{festival_name}. {dest_name}. {start_date}.","{festival_name} · {start_date} – {end_date}
+
+What you'll see: {visual_signature}.
+What you'll hear: {sound_signature}.
+What to wear: {dress_note}.
+What to bring: {bring_list}.
+
+Where: {venue}, {dest_name}, {state}.
+Crowd: {crowd_expectation}. Photography: {photo_note}.","Comment {festival_name} for the field guide we made.","festival_name|dest_name|state|start_date|end_date|visual_signature|sound_signature|dress_note|bring_list|venue|crowd_expectation|photo_note","4:5 single. Top 40%: ivory #F4ECE2 with 'Festival · {start_date}' Instrument Sans 24pt saffron tracking-wide, then '{festival_name}' Fraunces italic 96pt vermillion. Bottom 60%: empty space reserved for the sensory close-up image insertion. Tiny 'venue: {venue}' caption bottom-right Instrument Sans 22pt.","Photorealistic 4:5 sensory close-up tied to {festival_name} — a single object/texture (marigolds in offering tray, oil lamps in row, prayer flag against sky, brass bell). Macro lens, shallow depth of field, natural light. NO crowd shot, NO logos, NO people facing camera. Style: National Geographic detail, documentary. Muted festival-relevant palette (marigold orange + ivory + deep indigo, or whatever fits the festival).","","4:5","4","Refresh of festival_alert with sensory single-subject vs the old crowd-shot. Skip if visual_signature is generic ('lots of people'). visual + sound signatures MUST be specific. Festivals with no offering/prop don't fit this format."
+"v2_tourist_trap_split","reel","ig+fb","anti_trap","original","What {trap_name} looks like in the brochure vs at 4pm.","Brochure version: {brochure_promise}.
+Real version: {real_state}.
+
+Crowd at 4pm: {crowd_count_estimate} people / hour.
+Photo possible without strangers: {photo_window}.
+Better nearby alternative: {alternative_name} ({alt_distance_km}km away).
+
+Verified {verification_date}.","Comment SKIP to get the alternative list for {state} this month.","trap_name|dest_name|state|brochure_promise|real_state|crowd_count_estimate|photo_window|alternative_name|alt_distance_km|verification_date","9:16 closing card. Split horizontally: top half 'BROCHURE' label + '{brochure_promise}' Crimson Pro 42pt charcoal on ivory. Bottom half 'REAL' label + '{real_state}' Crimson Pro 42pt vermillion on deep charcoal. Thin saffron 2px divider. Both halves equal weight visually. No images — text contrast carries the story.","","10-second 9:16 split-screen reel. Left half: cinematic 'brochure' footage of {trap_name} at sunrise empty (clearly the postcard version). Right half: same {trap_name} at 4pm crowded. Both run simultaneously. At 5s, right half slides up to fill frame — the reality wins. At 7s, text drops in: 'Skip → {alternative_name} ({alt_distance_km}km).' Final 3s static. No voiceover, ambient crowd noise rising in volume.","9:16","3","Refresh of tourist_trap format. The split-screen visual is the anti-trap pillar's clearest storytelling shape. Skip if alternative_name is null — never criticise without a better option. brochure_promise + real_state must be observably true."
+"v2_women_solo_brief_video","reel","ig+fb","discovery","Tanya Khanijow","Solo, female, {dest_name} for {duration}.","{dest_name} solo, this month.
+
+Stay (felt safe): {safe_stay_name} · {safe_stay_note}
+Stay (avoid): {avoid_stay_note}
+Walk routes (day): {day_routes}
+Walk routes (after dark): {night_advice}
+Helpline that worked: {helpline_local}
+
+Solo-friendly score: {solo_score}/5. Crowd: {crowd_level}.","Comment your dest — we'll do the next women-solo audit.","dest_name|state|duration|safe_stay_name|safe_stay_note|avoid_stay_note|day_routes|night_advice|helpline_local|solo_score|crowd_level","9:16 reel intro. Top: 'SOLO · FEMALE · {duration}' Instrument Sans 28pt saffron tracking-wide. Centre title '{dest_name}' Fraunces italic 96pt vermillion. Solo-friendly score chip '{solo_score}/5' bottom-right on saffron pill. Layout: minimal, lots of whitespace.","","15-second 9:16 reel. POV walking through {dest_name} alone — morning street, afternoon cafe, evening market, night stay entrance. Burned-in time-stamps for each scene (07:30 / 14:00 / 18:45 / 21:20). On-screen text overlays for each: 'felt safe' / 'crowded but OK' / 'lit & busy' / 'walked back · 8 min'. No voiceover, ambient only. Sage/saffron text colour, ivory shadow. End frame: helpline card.","9:16","3","Refresh of women_solo_brief feed format. Sensitive — must reflect real verified solo travel by a woman, not synthesised. Skip if helpline_local or safe_stay_name is null. NEVER fabricate solo experience — direct loss of trust."
+"v2_yt_food_capital","yt_short","yt_short_only","anti_trap","Visa2explore","Forget {famous_food_city}. {real_food_city} eats it for breakfast.","Everyone says {famous_food_city} for food. We disagree.
+
+{real_food_city}, {state} has:
+- {dish_1} at {eatery_1} · ₹{price_1}
+- {dish_2} at {eatery_2} · ₹{price_2}
+- {dish_3} at {eatery_3} · ₹{price_3}
+- {dish_4} at {eatery_4} · ₹{price_4}
+
+All ₹{total_inr} for a full day's eating. Verified {verification_date}.","Comment your underrated food city — we'll audit it next month.","famous_food_city|real_food_city|state|dish_1|eatery_1|price_1|dish_2|eatery_2|price_2|dish_3|eatery_3|price_3|dish_4|eatery_4|price_4|total_inr|verification_date","","","35-second 9:16 YT short. Opens 2s with text-only 'Forget {famous_food_city}.' large vermillion on ivory. 1s pause. Then '{real_food_city} eats it for breakfast.' Cuts to 4 sequential macro food shots (each 5s): {dish_1} → {dish_2} → {dish_3} → {dish_4}. Each has burned-in label '{eatery_n_name} · ₹{price_n}' saffron. Ambient eating sound + light tabla beat. Closes with 10-sec tabulated breakdown + comment CTA. 24fps cinematic. Hindi voiceover variant available.","9:16","2","Hindi variant available — narration in Hindi, English subtitles. Slots into existing yt_short listicle builder (yt_shorts_gen.py _build_listicle). Skip if all 4 dishes aren't verified at named eateries with prices."
+"v2_yt_hindi_3things","yt_short","yt_short_only","verification","Mountain Trekker","{dest_name} के बारे में 3 बातें — जो कोई नहीं बताता.","{dest_name}, {state}.
+
+1️⃣ {fact_1_hindi}
+2️⃣ {fact_2_hindi}
+3️⃣ {fact_3_hindi}
+
+Verified by NakshIQ · {verification_date}.","तीसरी बात पता थी? हाँ या नहीं — कमेंट में बताओ.","dest_name|state|fact_1_hindi|fact_2_hindi|fact_3_hindi|verification_date","9:16 closing slate for the YT short. Header in Devanagari '3 बातें — {dest_name}' Mukta Bold 80pt vermillion. Three numbered lines below: 'एक: {fact_1_hindi}', 'दो: {fact_2_hindi}', 'तीन: {fact_3_hindi}' Mukta 36pt charcoal. Ivory background. Bottom: 'nakshiq.com / verified {verification_date}' Instrument Sans 22pt.","","30-second 9:16 YT short. Hindi voiceover throughout. Open with {dest_name} establishing shot (3s). Fact 1: 9s footage + voice + Devanagari on-screen. Fact 2: 9s same pattern. Fact 3: 9s. End frame: comment CTA in Hindi. 24fps. Background music: subtle Indian percussion (tabla / sitar drone). Slot into existing _build_did_you_know if extended to 3 facts.","9:16","3","Hindi-led — Mountain Trekker audience play. Slots into did_you_know format with 3-fact variant. Skip if any fact isn't verified or has English-only data."
+"v2_yt_local_etiquette","yt_short","yt_short_only","anti_trap","Mountain Trekker","Don't do this in {dest_name}.","5 things tourists keep doing wrong in {dest_name}.
+
+❌ {wrong_1} → ✅ {right_1}
+❌ {wrong_2} → ✅ {right_2}
+❌ {wrong_3} → ✅ {right_3}
+❌ {wrong_4} → ✅ {right_4}
+❌ {wrong_5} → ✅ {right_5}
+
+Verified with {local_contributor_role} on {verification_date}.","Comment the one you didn't know.","dest_name|state|wrong_1|right_1|wrong_2|right_2|wrong_3|right_3|wrong_4|right_4|wrong_5|right_5|local_contributor_role|verification_date","9:16 list slate. Top: 'DON'T DO THIS IN' Instrument Sans Bold 32pt saffron, then '{dest_name}' Fraunces italic 96pt vermillion. 5 numbered lines below in 2-column format: left red ❌ wrong, right green ✅ right. Each line one short clause. Ivory bg, subtle grain.","","40-second 9:16 YT short. Open with vermillion 'DON'T DO THIS IN {dest_name}' text (3s). 5 numbered scenes (6s each): each shows the wrong thing (real or staged) crossed out, then the right thing checkmarked. Hindi + English on-screen text overlays. Ambient sound + light tabla. Final 7s: comment CTA card. Slot into _build_dont_go_here yt_short builder. 24fps.","9:16","3","Hindi variant available. Real verified local contributor — skip if local_contributor_role is null. NEVER fabricate etiquette rules (caste / religious / political minefield). Slots into dont_go_here yt_short rotation."
+"v2_yt_route_5_stops","yt_short","yt_short_only","discovery","Tanya Khanijow","{route_name}. 5 stops. {total_days} days.","{route_name} · {total_km} km · {total_days} days
+
+01 {stop_1_name} — {stop_1_one_word}
+02 {stop_2_name} — {stop_2_one_word}
+03 {stop_3_name} — {stop_3_one_word}
+04 {stop_4_name} — {stop_4_one_word}
+05 {stop_5_name} — {stop_5_one_word}
+
+Best window: {best_months}.
+Permits: {permit_note}.","Which stop would you skip? Comment 01–05.","route_name|total_km|total_days|stop_1_name|stop_1_one_word|stop_2_name|stop_2_one_word|stop_3_name|stop_3_one_word|stop_4_name|stop_4_one_word|stop_5_name|stop_5_one_word|best_months|permit_note","9:16 closing slate. Hand-drawn India map outline in vermillion. 5 saffron dots + dashed connector line drawn between them. Title '{route_name}' Fraunces italic 64pt charcoal top. '{total_km} km · {total_days} days' Instrument Sans 32pt charcoal subtitle. Bottom-right small 'nakshiq.com' 22pt.","","45-second 9:16 YT short. 8-sec animated map intro (India outline draws + 5 dots appear). 5 stop reveals × 6s each: each has a 4s establishing clip of the stop + 2s text overlay with stop name + one-word descriptor. Final 7s: full route map + comment CTA. Acoustic guitar music throughout. Slots into _build_listicle yt_short builder with route variant. 24fps cinematic.","9:16","2","Hindi variant available — stop names in Devanagari + voiceover. Pulls from routes API. Skip if route has <5 verified stops or no permit info. Pair with v2_route_animated_map feed reel for cross-platform amplification."
+"v2_yt_silent_pov","yt_short","yt_short_only","moment","Varun Aditya","{dest_name}. {observation_window}. No voiceover.","{dest_name}, {state}. Recorded {observation_window} on {verification_date}.
+
+What you're hearing: {ambient_sound_list}.
+What you're seeing: {visual_description}.
+
+Altitude: {altitude_m}m. Air temp: {air_temp_c}°C.","Comment your favourite silent place.","dest_name|state|observation_window|verification_date|ambient_sound_list|visual_description|altitude_m|air_temp_c","9:16 closing slate. '{dest_name}' Fraunces italic 96pt vermillion on ivory. Below: 'altitude {altitude_m}m · {air_temp_c}°C' JetBrains Mono 32pt charcoal. Small saffron icon for sound waves + '{ambient_sound_list}' Crimson Pro 28pt charcoal italic.","","20-second 9:16 YT short. Pure ambient — NO voiceover, NO music. Just real captured sound from {dest_name} (wind, river, prayer flags flapping, distant bird, footsteps on snow — whatever fits). Single locked-frame or very slow drift shot. On-screen burned-in text appears at 3s: '{dest_name}'. At 12s: 'altitude {altitude_m}m'. At 16s: 'recorded {verification_date}'. Hold final 4s in silence with comment CTA. 24fps cinematic. Slot into _build_did_you_know as silent variant.","9:16","3","Pattern interrupt — Reels feed is loud + fast; silent ambient captures attention. Skip if no real captured ambient audio available (do NOT use stock sound). altitude_m + air_temp_c must be field-measured."
