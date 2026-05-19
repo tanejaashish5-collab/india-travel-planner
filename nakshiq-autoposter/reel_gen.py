@@ -84,8 +84,27 @@ def _pick_music(reel_format: str) -> Optional[Path]:
 
 
 def _find_video(dest_slug: str) -> Optional[Path]:
-    """Find the best matching video for a destination slug."""
+    """Find the best matching video for a destination slug.
+
+    2026-05-18: tries R2 fetch on local miss (videos/ is gitignored, so on
+    GHA the local glob found nothing and the random-VIDEO_*.mp4 fallback
+    crashed). Now an R2 round-trip caches the dest video to VIDEOS_DIR so
+    the rest of this function sees it as if it had always been local.
+    """
     slug = dest_slug.lower().replace(" ", "-").replace("_", "-")
+    # 1. Fast path — exact <slug>.mp4 already cached.
+    direct = VIDEOS_DIR / f"{slug}.mp4"
+    if direct.exists() and direct.stat().st_size > 0:
+        return direct
+    # 2. R2 fetch (caches into VIDEOS_DIR on success).
+    try:
+        from r2_videos import fetch as _r2_fetch
+        r2_hit = _r2_fetch(slug, VIDEOS_DIR)
+        if r2_hit:
+            return r2_hit
+    except ImportError:
+        pass
+    # 3. Fuzzy-match anything left in VIDEOS_DIR.
     slug_parts = set(slug.split("-"))  # e.g. {"gir", "national", "park"}
 
     all_vids = []

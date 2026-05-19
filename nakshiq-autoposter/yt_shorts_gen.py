@@ -142,6 +142,17 @@ def _iter_dest_videos():
         yield p
 
 
+# R2 video sync (2026-05-18) — see nakshiq-autoposter/r2_videos.py for full
+# context. videos/ is gitignored, so on GHA _find_video() used to miss every
+# slug and segments fell to Pomelli ad templates. Now misses fall through to
+# R2 fetch first.
+from r2_videos import fetch as _r2_fetch_raw
+
+def _r2_fetch_video(slug: str) -> Optional[Path]:
+    """Wrapper that pins videos_dir to this module's VIDEOS_DIR."""
+    return _r2_fetch_raw(slug, VIDEOS_DIR)
+
+
 def _find_video(dest_slug: str) -> Optional[Path]:
     """Find the best matching video for a destination slug.
 
@@ -156,9 +167,22 @@ def _find_video(dest_slug: str) -> Optional[Path]:
     Returns the highest-rank candidate; ties broken by lexicographic order
     for determinism.
     """
+    slug = dest_slug.lower().replace(" ", "-").replace("_", "-")
+    if not slug:
+        return None
+    # 2026-05-18: R2 sync. Local file is the cache; on a miss we try R2 once
+    # before falling through to the broader name-match logic. This is the
+    # single most important fix — without it, GHA crons can never find a
+    # destination video (videos/ is gitignored) and listicles render as
+    # static Pomelli ads.
+    direct = VIDEOS_DIR / f"{slug}.mp4"
+    if direct.exists() and direct.stat().st_size > 0:
+        return direct
+    r2_hit = _r2_fetch_video(slug)
+    if r2_hit:
+        return r2_hit
     if not VIDEOS_DIR.exists():
         return None
-    slug = dest_slug.lower().replace(" ", "-").replace("_", "-")
     slug_parts = set(slug.split("-"))
     stop = {"national", "park", "lake", "valley", "falls", "fort", "temple",
             "village", "town", "city", "of", "the"}
@@ -214,16 +238,22 @@ def _find_similar_video(dest: dict) -> Optional[Path]:
     # stem contains the state slug.
     state = dest.get("state", "").lower().replace(" ", "-")
     if state:
-        # Prefer the canonical state-<slug>.mp4 if present
+        # Prefer the canonical state-<slug>.mp4 if present (local then R2).
         canonical = VIDEOS_DIR / f"state-{state}.mp4"
         if canonical.exists():
             return canonical
-        for p in _iter_dest_videos():
-            if state in p.stem.lower():
-                return p
+        r2_state = _r2_fetch_video(f"state-{state}")
+        if r2_state:
+            return r2_state
+        if VIDEOS_DIR.exists():
+            for p in _iter_dest_videos():
+                if state in p.stem.lower():
+                    return p
 
-    # No random fallback — return None so the caller picks a Pomelli image or
-    # a state-themed clip rather than risking cross-region leakage.
+    # No random fallback — return None so the caller renders a brand-neutral
+    # solid background (see _make_solid_segment). Never falls to Pomelli —
+    # Pomelli images carry baked text + CTAs that suppress our own overlays,
+    # which is exactly the bug user flagged 2026-05-18.
     return None
 
 
@@ -380,51 +410,89 @@ def _pick_background(dest: dict, keywords: list[str] = None,
                      campaign_type: str = None) -> tuple:
     """Pick a background for a segment.
 
-    Priority (changed 2026-05-06 to fix double-title bug):
-      1. Destination video from R2 library — clean, no baked text.
-      2. Pomelli image — only when a strict name-keyword match exists, since
-         Pomelli images carry baked-in titles + CTA buttons that collide with
-         the Short's own text overlays. State alone is NEVER enough (caused
-         Khangchendzonga→Nathula cross-leakage on 2026-05-05).
-      3. None.
+    Priority (revised 2026-05-18 — Pomelli fallback removed):
+      1. Destination video from R2 library (local cache + R2 fetch).
+      2. None — caller renders solid brand-colour with text overlays.
+
+    Pomelli fallback was killed because: (a) Pomelli images carry baked
+    titles + CTAs that suppress our listicle/reveal text overlays; (b) the
+    videos/ folder is gitignored, so on GitHub Actions _find_video always
+    missed and EVERY segment fell to Pomelli — listicles posted as static
+    Pomelli ads with Ken Burns zoom (user flag 2026-05-18). Without an R2
+    download for the dest video, a clean solid backdrop is strictly better
+    than a wrong-dest Pomelli card.
+
+    The `keywords` and `campaign_type` args are kept for ABI compatibility
+    with existing callers (before_after / mini_guide / etc.) but are unused.
 
     Returns (path, is_image: bool).
     """
-    # 1. Prefer destination video (no baked text → no title collision).
     vid = _find_similar_video(dest)
     if vid:
         return vid, False
-
-    # 2. Pomelli fallback — strict name-match only.
-    name = dest.get("name", "")
-    if name:
-        kw = list(keywords or []) + [name]
-        imgs = _find_pomelli_images(kw, count=1, campaign_type=campaign_type, strict=True)
-        if imgs:
-            return imgs[0], True
-
     return None, False
 
 
-def _render_segment_auto(bg_path: Path, is_image: bool, duration: float,
-                         text_filters: list[str], out_path: Path,
-                         zoom_dir: str = "in") -> Optional[Path]:
-    """Render a segment using either Pomelli image or destination video.
+def _render_segment_solid(color: str, duration: float,
+                          text_filters: list[str], out_path: Path) -> Optional[Path]:
+    """Render a segment over a solid brand colour + text overlays.
 
-    When the background is a Pomelli image we drop the text_filters — Pomelli
-    creatives already have baked title + tagline + CTA, and stacking our own
-    overlays on top produced the double-text bug seen on 2026-05-05.
+    2026-05-18: replaces the old Pomelli-image fallback for segments that
+    don't have a real destination video. Pomelli cards carry baked titles +
+    CTAs that suppress our own listicle/reveal text — the user saw a static
+    ad template instead of a 'Top 5 in May' hook. Solid background lets the
+    real overlays render cleanly.
+
+    `color` is an ffmpeg colour token (e.g. "0xC73A2C" or "0x1A1A1A").
     """
-    if bg_path is None:
+    all_filters = list(text_filters) + _branding_bar()
+    vf = ",".join(all_filters) if all_filters else "null"
+    ffmpeg = shutil.which("ffmpeg") or "/usr/bin/ffmpeg"
+    cmd = [
+        ffmpeg, "-y",
+        "-f", "lavfi",
+        "-i", f"color=c={color}:s={REEL_W}x{REEL_H}:d={duration}:r={REEL_FPS}",
+        "-vf", vf,
+        "-c:v", "libx264", "-preset", "fast", "-crf", "22",
+        "-pix_fmt", "yuv420p", "-r", str(REEL_FPS),
+        "-t", str(duration), "-an",
+        str(out_path),
+    ]
+    try:
+        r = subprocess.run(cmd, capture_output=True, text=True, timeout=60)
+        if r.returncode != 0:
+            print(f"  Solid segment render failed: {r.stderr[-500:]}")
+            return None
+        return out_path
+    except Exception as e:
+        print(f"  Solid segment render error: {e}")
         return None
+
+
+def _render_segment_auto(bg_path: Optional[Path], is_image: bool, duration: float,
+                         text_filters: list[str], out_path: Path,
+                         zoom_dir: str = "in",
+                         solid_color: str = None) -> Optional[Path]:
+    """Render a segment. Priority:
+      1. Destination video → use it (clean, no baked text).
+      2. No video → solid brand-coloured backdrop with our own text overlays.
+      3. Pomelli image → DEFENSIVE: should never hit here since _pick_background
+         no longer returns Pomelli paths, but if it does, treat as no-video and
+         render solid. Pomelli's baked text + CTAs suppress our overlays — that
+         was the 2026-05-18 'Top 5 in May posted as a Pomelli ad' bug.
+    """
+    default_solid = solid_color or _hex(INK_DEEP)
+    if bg_path is None:
+        return _render_segment_solid(default_solid, duration, text_filters, out_path)
     if is_image:
-        is_pomelli = False
         try:
             is_pomelli = POMELLI_DIR.resolve() in bg_path.resolve().parents
         except Exception:
             is_pomelli = str(bg_path).startswith(str(POMELLI_DIR))
-        safe_filters = [] if is_pomelli else text_filters
-        return _render_segment_image(bg_path, duration, safe_filters, out_path, zoom_dir)
+        if is_pomelli:
+            # Defensive seatbelt — render solid colour, never a Pomelli ad.
+            return _render_segment_solid(default_solid, duration, text_filters, out_path)
+        return _render_segment_image(bg_path, duration, text_filters, out_path, zoom_dir)
     return _render_segment(bg_path, duration, text_filters, out_path)
 
 
@@ -619,7 +687,10 @@ def _build_listicle(destinations: list[dict], month_name: str,
     G = "0x4CAF50"
     SG = _hex(SAGE)
 
-    # Hook
+    # Hook — top-pick (picks[-1] = highest score) video underneath if available;
+    # otherwise solid INK_DEEP backdrop with vermillion + bone overlays. NEVER
+    # falls to Pomelli (suppresses our text). solid_color is INK_DEEP to give
+    # the white/saffron text high contrast.
     hook_bg, hook_is_img = _pick_background(picks[-1], ["top5", "listicle", month_name.lower()])
     hook_texts = [
         _dt("TOP 5", FONT_JETBRAINS, 120, V, "(w-text_w)/2", "h*0.25", bw=5),
@@ -627,7 +698,9 @@ def _build_listicle(destinations: list[dict], month_name: str,
         _dt(f"IN {month_name.upper()}", FONT_INSTRUMENT, 48, S, "(w-text_w)/2", "h*0.46", "gte(t,0.4)"),
         _dt("Based on NakshIQ scores", FONT_CRIMSON, 32, B, "(w-text_w)/2", "h*0.55", "gte(t,1.0)"),
     ]
-    p = _render_segment_auto(hook_bg, hook_is_img, HOOK_DUR, hook_texts, out_dir / "seg_00_hook.mp4")
+    p = _render_segment_auto(hook_bg, hook_is_img, HOOK_DUR, hook_texts,
+                             out_dir / "seg_00_hook.mp4",
+                             solid_color=_hex(INK_DEEP))
     if p: segments.append(p)
 
     # Destination reveals
@@ -653,17 +726,29 @@ def _build_listicle(destinations: list[dict], month_name: str,
             _dt(tagline, FONT_CRIMSON, 34, B, "(w-text_w)/2", "h*0.60", "gte(t,1.8)"),
         ]
         zoom = "in" if i % 2 == 0 else "out"
-        p = _render_segment_auto(bg, is_img, REVEAL_DUR, texts, out_dir / f"seg_{i+1:02d}_rank{rank}.mp4", zoom_dir=zoom)
+        # Reveal segments: alternate INK_DEEP for #5/#3/#1, SAGE-tinted dark
+        # for #4/#2 so back-to-back fallbacks (when several picks miss R2)
+        # don't look identical. Vermillion rank chip + bone name + saffron
+        # score still pop on either backdrop.
+        reveal_solid = _hex(INK_DEEP) if i % 2 == 0 else "0x2A3528"  # near-black sage
+        p = _render_segment_auto(bg, is_img, REVEAL_DUR, texts,
+                                 out_dir / f"seg_{i+1:02d}_rank{rank}.mp4",
+                                 zoom_dir=zoom, solid_color=reveal_solid)
         if p: segments.append(p)
 
-    # CTA
-    cta_bg, cta_is_img = _pick_background(picks[0], ["nakshiq", "follow"])
+    # CTA — also use top-pick video if available, else solid vermillion
+    # (it's the "FOLLOW @NAKSHIQ" close, brand colour is on-message). Pull
+    # from picks[-1] (the #1 reveal that just played) so the visual continues
+    # rather than cutting to a random low-ranked dest's footage.
+    cta_bg, cta_is_img = _pick_background(picks[-1], ["nakshiq", "follow"])
     cta_texts = [
         _dt("FOLLOW", FONT_INSTRUMENT, 48, B, "(w-text_w)/2", "h*0.30"),
         _dt("@NAKSHIQ", FONT_INSTRUMENT, 72, V, "(w-text_w)/2", "h*0.38", "gte(t,0.3)", 4),
         _dt("Data-driven travel for India", FONT_CRIMSON, 34, S, "(w-text_w)/2", "h*0.48", "gte(t,0.6)"),
     ]
-    p = _render_segment_auto(cta_bg, cta_is_img, CTA_DUR, cta_texts, out_dir / "seg_06_cta.mp4", zoom_dir="out")
+    p = _render_segment_auto(cta_bg, cta_is_img, CTA_DUR, cta_texts,
+                             out_dir / "seg_06_cta.mp4", zoom_dir="out",
+                             solid_color=_hex(VERMILLION_BRIGHT))
     if p: segments.append(p)
 
     return segments, total, {}
