@@ -2,10 +2,10 @@
   "yt_short_formats_used": [],
   "yt_short_music_used": [],
   "posted_today": {
-    "m8EAd": "2026-05-19",
-    "PdMu0": "2026-05-19"
+    "PdMu0": "2026-05-19",
+    "m8EAd": "2026-05-19"
   },
-  "last_sync": "2026-05-19T07:02:16.333864+00:00",
+  "last_sync": "2026-05-19T08:01:14.139400+00:00",
   "posted_destinations": [
     {
       "destination_id": "hemkund-sahib",
@@ -26,8 +26,7 @@
       "score_card",
       "collection_spotlight",
       "festival_alert",
-      "kids_intel",
-      "cost_index_card"
+      "kids_intel"
     ],
     "PdMu0": [
       "monthly_forecast",
@@ -47,8 +46,7 @@
       "reality_check",
       "collection_spotlight",
       "festival_alert",
-      "kids_intel",
-      "cost_index_card"
+      "kids_intel"
     ]
   },
   "post_log": [
@@ -441,42 +439,12 @@
       "destination": "ranthambore",
       "format": "kids_intel",
       "has_media": true
-    },
-    {
-      "timestamp": "2026-05-19T07:03:25.799022+00:00",
-      "date": "2026-05-19",
-      "platform": "instagram",
-      "account_id": "m8EAd",
-      "post_id": "4sgBi",
-      "destination": "hemkund-sahib",
-      "format": "cost_index_card",
-      "has_media": true,
-      "media_id": "hemkund-sahib.mp4"
-    },
-    {
-      "timestamp": "2026-05-19T07:03:44.928252+00:00",
-      "date": "2026-05-19",
-      "platform": "facebook",
-      "account_id": "PdMu0",
-      "post_id": "Ikm4X",
-      "destination": "hemkund-sahib",
-      "format": "cost_index_card",
-      "has_media": true,
-      "media_id": "hemkund-sahib.mp4"
     }
   ],
   "theme_usage": {
-    "morning_formats": {
-      "cost_index_card": [
-        "2026-05-19"
-      ]
-    },
-    "cost_index_card": {},
-    "destinations": {
-      "hemkund-sahib": [
-        "2026-05-19"
-      ]
-    }
+    "morning_formats": {},
+    "arrival_intel": {},
+    "destinations": {}
   },
   "infographic": {
     "last_topic_idx": 0,
@@ -490,7 +458,7 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "tungnath"
+    "shared_best": "kabini"
   },
   "manual_skip_dests": {}
 }
