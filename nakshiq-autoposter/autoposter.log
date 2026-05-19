@@ -1,20 +1,21 @@
-2026-05-19 08:00:53  INFO      [migration] bootstrapped post_log.jsonl with 38 entries from state.json
-2026-05-19 08:00:53  INFO      ════════════════════════════════════════════════════════════
-2026-05-19 08:00:53  INFO      Nakshiq Autoposter · MORNING · 2026-05-19 · weekday=1
-2026-05-19 08:00:53  INFO      ════════════════════════════════════════════════════════════
-2026-05-19 08:00:53  INFO      ── Syncing Nakshiq content ──────────────────────────────
-2026-05-19 08:01:14  INFO      Synced → 20 destinations · 0 traps · 0 articles · 23 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 50 camping · 50 gems · total catalog=505
-2026-05-19 08:01:15  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
-2026-05-19 08:01:16  INFO      Outstand dedup guard: merged 2 remote posts into state.
-2026-05-19 08:01:16  INFO      Festivals filtered (past/post-window): Kedarnath Opening, Summer Festival, Badri-Kedar Festival, Chaukori Tea Festival, Chail Cricket Festival, Guptkashi Vishwanath Temple Festival, Tosamaidan Wildflower Season, Badrinath Temple Opening (Kapaat Kholna) (+9 more)
-2026-05-19 08:01:16  INFO      Morning format (themed-week-3→moment): arrival_intel [0% vs target 10%] (14/14 never featured)
-2026-05-19 08:01:16  INFO      Formats — IG: arrival_intel  ·  FB: arrival_intel  ·  Story: blog_promo
-2026-05-19 08:01:16  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 9
-2026-05-19 08:01:16  INFO      Fingerprint dedup snapshot — 8 dests in 7d · 27 (dest,fmt) pairs in 30d · 0 media in 60d
-2026-05-19 08:01:16  INFO      Arrival locked: COK (Kochi) (9/9 never featured)
-2026-05-19 08:01:22  INFO      Shared best destination locked: Kabini
-2026-05-19 08:01:22  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
-2026-05-19 08:01:22  INFO      [instagram/nakshiq] Already posted today (morning) — skipping.
-2026-05-19 08:01:22  INFO      [facebook/Nakshiq] Already posted today (morning) — skipping.
-2026-05-19 08:01:22  INFO      State saved. Run complete.
-2026-05-19 08:01:22  INFO      ════════════════════════════════════════════════════════════
+2026-05-19 13:47:27  INFO      [migration] bootstrapped post_log.jsonl with 38 entries from state.json
+2026-05-19 13:47:27  INFO      ════════════════════════════════════════════════════════════
+2026-05-19 13:47:27  INFO      Nakshiq Autoposter · YT SHORT · 2026-05-19
+2026-05-19 13:47:27  INFO      ════════════════════════════════════════════════════════════
+2026-05-19 13:48:54  INFO      Short rendered: yt_short_listicle_2026-05-19.mp4 (18921 KB, 35.0s, fmt=listicle, music=02_trap_cinema)
+2026-05-19 13:48:54  INFO          Requesting upload URL for yt_short_listicle_yt_short_listicle_2026-05-19.mp4 (19,375,928 bytes, video/mp4)
+2026-05-19 13:48:55  INFO          Uploading to R2 (timeout=300s)...
+2026-05-19 13:48:56  INFO          R2 PUT OK. Confirming...
+2026-05-19 13:48:57  INFO          Media ready: joj82 (19,375,928 bytes · yt_short_listicle_yt_short_listicle_2026-05-19.mp4)
+2026-05-19 13:48:57  INFO      Video uploaded: yt_short_listicle_yt_short_listicle_2026-05-19.mp4
+2026-05-19 13:48:58  INFO      [youtube/@naksh-iq] Publishing YT Short (listicle)...
+2026-05-19 13:49:03  INFO      [youtube/@naksh-iq] Outstand accepted (post_id=Qol5y), waiting for platform confirmation...
+2026-05-19 13:49:49  WARNING   [youtube/@naksh-iq] ⚠️  YT Short queued but NOT confirmed (post_id=Qol5y). May have silently failed.
+2026-05-19 13:49:49  INFO      [instagram/nakshiq] Publishing YT Short (listicle)...
+2026-05-19 13:49:51  INFO      [instagram/nakshiq] Outstand accepted (post_id=lHiRK), waiting for platform confirmation...
+2026-05-19 13:50:25  INFO      [instagram/nakshiq] ✅ YT Short published · Outstand=lHiRK · Platform=18111867235853260
+2026-05-19 13:50:25  WARNING   Could not write post_outcomes entry: 'utf-8' codec can't encode characters in position 147-148: surrogates not allowed
+2026-05-19 13:50:25  INFO      [facebook/Nakshiq] Skipping (YT Shorts post to YouTube + Instagram only).
+2026-05-19 13:50:25  INFO      YT Short posted: format=listicle, music=02_trap_cinema
+2026-05-19 13:50:25  INFO      State saved. YT Short run complete.
+2026-05-19 13:50:25  INFO      ════════════════════════════════════════════════════════════

@@ -1,14 +1,18 @@
 {
-  "yt_short_formats_used": [],
-  "yt_short_music_used": [],
+  "yt_short_formats_used": [
+    "listicle"
+  ],
+  "yt_short_music_used": [
+    "02_trap_cinema"
+  ],
   "posted_today": {
-    "PdMu0": "2026-05-19",
-    "m8EAd": "2026-05-19"
+    "m8EAd_yt_short": "2026-05-19",
+    "m8EAd_yt_short_count": 1
   },
-  "last_sync": "2026-05-19T08:01:14.139400+00:00",
+  "last_sync": "2026-04-30T04:05:30.154914+00:00",
   "posted_destinations": [
     {
-      "destination_id": "hemkund-sahib",
+      "destination_id": "parvati-valley",
       "date": "2026-05-19"
     }
   ],
@@ -439,13 +443,27 @@
       "destination": "ranthambore",
       "format": "kids_intel",
       "has_media": true
+    },
+    {
+      "timestamp": "2026-05-19T13:49:49.403424+00:00",
+      "date": "2026-05-19",
+      "platform": "youtube",
+      "post_id": "Qol5y",
+      "destination": "parvati-valley",
+      "format": "yt_short.listicle",
+      "media_id": "yt_short_listicle_yt_short_listicle_2026-05-19.mp4"
+    },
+    {
+      "timestamp": "2026-05-19T13:50:25.520760+00:00",
+      "date": "2026-05-19",
+      "platform": "instagram",
+      "post_id": "lHiRK",
+      "destination": "parvati-valley",
+      "format": "yt_short.listicle",
+      "media_id": "yt_short_listicle_yt_short_listicle_2026-05-19.mp4"
     }
   ],
-  "theme_usage": {
-    "morning_formats": {},
-    "arrival_intel": {},
-    "destinations": {}
-  },
+  "theme_usage": {},
   "infographic": {
     "last_topic_idx": 0,
     "last_theme_idx": 0,
@@ -457,8 +475,6 @@
     ]
   },
   "ugc_music_history": [],
-  "last_picked": {
-    "shared_best": "kabini"
-  },
+  "last_picked": {},
   "manual_skip_dests": {}
 }
