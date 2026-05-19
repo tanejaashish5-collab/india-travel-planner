@@ -26,6 +26,28 @@ import requests
 from datetime import datetime, timezone, date, timedelta
 from pathlib import Path
 
+# 2026-05-20: v2/v3/v4 CSV-driven formats. Lazily loaded on first call to
+# get_csv_specs() so logging.basicConfig (further below) is already wired and
+# load-time INFO messages route to the autoposter.log file. Asset-presence in
+# social_image_library/ is the natural opt-in switch — no env var. See
+# csv_format_loader.py.
+import csv_format_loader as _csv_fmt
+_CSV_SPECS_CACHE: "dict | None" = None
+
+
+def get_csv_specs() -> dict:
+    global _CSV_SPECS_CACHE
+    if _CSV_SPECS_CACHE is None:
+        try:
+            _CSV_SPECS_CACHE = _csv_fmt.load_all_formats()
+        except Exception as e:                               # pragma: no cover
+            print(f"[csv_formats] failed to load: {e}", flush=True)
+            _CSV_SPECS_CACHE = {}
+    return _CSV_SPECS_CACHE
+
+
+SOCIAL_IMAGE_LIBRARY_DIR = Path(__file__).parent / "social_image_library"
+
 # ─────────────────────────────────────────────────────────────────────────────
 # ENV — load .env.local if present (for local/Cowork runs; GH Actions uses secrets)
 # ─────────────────────────────────────────────────────────────────────────────
@@ -154,6 +176,11 @@ FORMAT_PILLARS = {
     "state_showdown":       "moment",
     "difficulty_spectrum":  "moment",
 }
+
+# 2026-05-20 — fold in CSV-loaded v2/v3/v4 pillars so pick_morning_format's
+# pillar-bias logic (themed-week / deficit-share / dimension_cycle_status)
+# treats them as first-class. Runs once at import via get_csv_specs() cache.
+FORMAT_PILLARS.update(_csv_fmt.pillar_map(get_csv_specs()))
 
 # Target weekly share per pillar. Playbook spec; the rotation biases toward
 # pillars whose actual 7-day share is BELOW these targets. Total = 1.0.
@@ -1866,6 +1893,40 @@ def pick_morning_format(state: dict, content: dict) -> str:
                 if not ci:
                     continue
             eligible.append(fmt)
+
+        # 2026-05-20 — CSV-loaded v2/v3/v4 formats. Iterate every feed-eligible
+        # spec; include only if at least one current-month-scored dest passes
+        # both is_eligible checks (data fields resolve + matching asset present
+        # in social_image_library/). Asset-presence is the opt-in switch, so
+        # rows whose Co-work assets haven't been generated yet stay dormant
+        # automatically — no env var, no manual gate.
+        csv_specs = get_csv_specs()
+        if csv_specs:
+            csv_eligible_count = 0
+            for fid, spec in csv_specs.items():
+                if not spec.is_feed_format:
+                    continue
+                # Find any dest in the current scored pool that passes
+                # eligibility. Cheap to short-circuit on first match.
+                ok = False
+                for d in dests:
+                    if (d.get("score") or 0) < 4:
+                        continue
+                    eligible_now, _reason = _csv_fmt.is_eligible(
+                        spec, d, SOCIAL_IMAGE_LIBRARY_DIR
+                    )
+                    if eligible_now:
+                        ok = True
+                        break
+                if ok:
+                    eligible.append(fid)
+                    csv_eligible_count += 1
+            if csv_eligible_count:
+                log.info(
+                    f"[csv_formats] {csv_eligible_count}/{len(csv_specs)} "
+                    f"CSV formats eligible this run "
+                    f"(asset present + data resolves)"
+                )
 
         if not eligible:
             eligible = ["score_card"]
@@ -4790,6 +4851,40 @@ def generate_post(fmt: str, content: dict, platform: str,
         ci_pick = content.get("__run_cost_index__") or ci_dests[0]
         ci_dest = dest_map_full.get(ci_pick.get("destination_id")) or dest_map.get(ci_pick.get("destination_id")) or best
         return copy_cost_index_card(ci_pick, platform), ci_dest
+
+    # 2026-05-20 — CSV-loaded v2/v3/v4 formats. Generic dispatcher: find a
+    # dest from the current scored pool that passes _csv_fmt.is_eligible
+    # (data fields resolve + asset present), then render caption via the
+    # CSV template. SKIPs to score_card fallback if no eligible dest found.
+    csv_specs = get_csv_specs()
+    if fmt in csv_specs:
+        spec = csv_specs[fmt]
+        # Try every high-scored dest until one is eligible. Cheap; pool is
+        # already filtered to current month + score>=4 by the picker.
+        for cand in pool:
+            ok, _reason = _csv_fmt.is_eligible(
+                spec, cand, SOCIAL_IMAGE_LIBRARY_DIR
+            )
+            if not ok:
+                continue
+            # Render-time extra context: month + verification stamp + state
+            # list for templates that need them. Add more keys as templates
+            # demand (alias-expansion in csv_format_loader handles dest_*).
+            from datetime import date as _date
+            extras = {
+                "month_name":        _date.today().strftime("%B"),
+                "verification_date": _date.today().isoformat(),
+                "state_list":        cand.get("state", ""),
+                "state_list_first":  cand.get("state", ""),
+            }
+            caption = _csv_fmt.render_caption(spec, cand, extra_context=extras)
+            if caption:
+                return caption, cand
+        # No dest passed eligibility — skip this format silently so picker
+        # falls through to v1 next time. (Picker shouldn't have surfaced
+        # this fmt if no dest was eligible, but defensive fallback.)
+        log.info(f"{fmt}: no eligible dest at render time — SKIPPING")
+        return "", None
 
     else:
         return copy_score_card(best, platform), best
@@ -9841,6 +9936,22 @@ if __name__ == "__main__":
                              "data/post_engagement.json and write it to "
                              "data/research/social-engagement-week-{date}.md. "
                              "Tier 2.5 (2026-05-10).  No posting.")
+    parser.add_argument("--strategy", action="store_true",
+                        help="Strategic content engine (2026-05-19). Reads "
+                             "data/content_strategy.csv (25 hand-crafted "
+                             "formats × 5 pillars), picks the best format ↔ "
+                             "destination pair for today using fill-pct + "
+                             "pillar balance + anti-repeat, writes a daily "
+                             "brief with hook + caption + Pomelli/image/video "
+                             "prompts to data/strategy_briefs/. No publishing — "
+                             "outputs the brief for asset creation.")
+    parser.add_argument("--strategy-format", default="",
+                        help="Force a specific strategy format_id "
+                             "(e.g. --strategy-format=v2_pov_slow_morning).")
+    parser.add_argument("--strategy-dest", default="",
+                        help="Force a specific destination id for strategy mode.")
+    parser.add_argument("--strategy-explain", action="store_true",
+                        help="Include picker reasoning in the strategy brief.")
     parser.add_argument("--allow-local", action="store_true",
                         help="Permit running outside GitHub Actions. Without this "
                              "flag, the autoposter aborts immediately when "
@@ -9861,9 +9972,9 @@ if __name__ == "__main__":
             "runs, pass --allow-local explicitly.\n"
         )
         sys.exit(0)
-    exclusive = sum([args.evening, args.moat, args.tourist_map, args.canva_visual, args.pomelli_visual, args.flow_story, args.reel, args.reel_map, args.ugc, args.infographic, args.yt_short, args.analytics, args.engagement_pull, args.digest_weekly])
+    exclusive = sum([args.evening, args.moat, args.tourist_map, args.canva_visual, args.pomelli_visual, args.flow_story, args.reel, args.reel_map, args.ugc, args.infographic, args.yt_short, args.analytics, args.engagement_pull, args.digest_weekly, args.strategy])
     if exclusive > 1:
-        parser.error("--evening, --moat, --tourist-map, --canva-visual, --pomelli-visual, --flow-story, --reel, --reel-map, --ugc, --infographic, --yt-short, --analytics, --engagement-pull, and --digest-weekly are mutually exclusive.")
+        parser.error("--evening, --moat, --tourist-map, --canva-visual, --pomelli-visual, --flow-story, --reel, --reel-map, --ugc, --infographic, --yt-short, --analytics, --engagement-pull, --digest-weekly, and --strategy are mutually exclusive.")
     if args.tourist_map:
         run_tourist_map(force=args.force, dry_run=args.dry_run)
     elif args.canva_visual:
@@ -9892,6 +10003,40 @@ if __name__ == "__main__":
         # Tier 2.5 (2026-05-10): write weekly markdown digest from engagement data.
         from digest_weekly import run as run_digest_weekly
         run_digest_weekly(days=7)
+    elif args.strategy:
+        # 2026-05-19: strategic content engine — pick from 25 hand-crafted
+        # formats based on fill-data + pillar balance + anti-repeat, write a
+        # daily brief with hook + caption + Pomelli/image/video prompts.
+        from strategy_engine import (
+            pick_format_and_destination, render_brief, record_pick, BRIEF_DIR,
+        )
+        today = date.today()
+        pick = pick_format_and_destination(
+            today=today,
+            force_format=args.strategy_format or None,
+            force_dest_id=args.strategy_dest or None,
+            explain=args.strategy_explain,
+        )
+        brief = render_brief(pick, today)
+        out_path = BRIEF_DIR / f"{today.isoformat()}.md"
+        out_path.write_text(brief)
+        log.info("═" * 60)
+        log.info(f"Nakshiq Autoposter · STRATEGY · {today.isoformat()}")
+        log.info("═" * 60)
+        if pick.get("error"):
+            log.error(f"Strategy pick failed: {pick['error']}")
+            sys.exit(1)
+        log.info(f"Strategy pick: {pick['format_id']} × {pick['destination']['name']} "
+                 f"({pick['destination']['state']}) — pillar={pick['pillar']}, "
+                 f"score={pick['scoring']['total']:.3f}")
+        if pick["missing_fields"]:
+            log.warning(f"Brief has {len(pick['missing_fields'])} missing fields: "
+                        f"{', '.join(pick['missing_fields'][:5])}"
+                        f"{'…' if len(pick['missing_fields']) > 5 else ''}")
+        log.info(f"Brief written to: {out_path}")
+        if not args.dry_run:
+            record_pick(pick, today)
+            log.info("Strategy pick recorded to state.json.")
     else:
         run(force=args.force, sync_only=args.sync_only,
             dry_run=args.dry_run, evening=args.evening, moat=args.moat)
