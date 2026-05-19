@@ -3,7 +3,9 @@
 **File:** `content_strategy_v3_tl.csv` (7 rows × 15 cols, same schema as v2)
 **Shipped:** 2026-05-19
 **Plan reference:** `/Users/ashishtaneja/.claude/plans/do-tier-1-serene-wigderson.md`
-**See also:** `content_strategy.csv` (v2, 25 Indian-creator-inspired rows) + `content_strategy_README.md`
+**See also:**
+- `content_strategy.csv` (v2 — 25 Indian-creator-inspired rows) + `content_strategy_README.md`
+- `content_strategy_v4_dw.csv` (v4 — 6 Delhi-Walks-decoded heritage/research rows) + `content_strategy_v4_dw_README.md`
 
 ## Why this exists
 

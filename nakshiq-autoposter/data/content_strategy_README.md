@@ -4,7 +4,11 @@
 **Shipped:** 2026-05-19
 **Plan reference:** `/Users/ashishtaneja/.claude/plans/do-tier-1-serene-wigderson.md`
 
-**See also:** `content_strategy_v3_tl.csv` + `content_strategy_v3_tl_README.md` — 7 Travel + Leisure-decoded format rows shipped same day, same schema. Phase 2 loader will read both files as one rotation pool.
+**See also:**
+- `content_strategy_v3_tl.csv` + `content_strategy_v3_tl_README.md` — 7 Travel + Leisure-decoded format rows (editorial / glossy / awards-franchise patterns).
+- `content_strategy_v4_dw.csv` + `content_strategy_v4_dw_README.md` — 6 Delhi Walks-decoded format rows (research-depth heritage / custodian-spotlight / archival patterns).
+
+All three CSVs share the 15-col schema. Phase 2 loader will read all three as one rotation pool.
 
 ## Why this exists
 
