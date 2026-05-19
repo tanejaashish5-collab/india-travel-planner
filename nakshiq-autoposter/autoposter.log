@@ -1,37 +1,49 @@
-2026-05-19 14:22:23  INFO      [migration] bootstrapped post_log.jsonl with 38 entries from state.json
-2026-05-19 14:22:23  INFO      ════════════════════════════════════════════════════════════
-2026-05-19 14:22:23  INFO      Nakshiq Autoposter · EVENING · 2026-05-19 · weekday=1
-2026-05-19 14:22:23  INFO      ════════════════════════════════════════════════════════════
-2026-05-19 14:22:23  INFO      ── Syncing Nakshiq content ──────────────────────────────
-2026-05-19 14:22:40  INFO      Synced → 20 destinations · 0 traps · 0 articles · 23 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 50 camping · 50 gems · total catalog=505
-2026-05-19 14:22:41  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
-2026-05-19 14:22:41  INFO      Formats — IG: reality_check  ·  FB: reality_check  ·  Story: collection_spotlight
-2026-05-19 14:22:41  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 8
-2026-05-19 14:22:41  INFO      Fingerprint dedup snapshot — 8 dests in 7d · 27 (dest,fmt) pairs in 30d · 0 media in 60d
-2026-05-19 14:22:41  INFO      Reality Check pair (fallback): Har Ki Doon ↔ Achabal
-2026-05-19 14:22:41  INFO      Collection locked: Birding Hotspots of India (19/20 never featured)
-2026-05-19 14:22:42  INFO      Shared best destination locked: Tungnath
-2026-05-19 14:22:42  INFO      Carousel locked (collection_spotlight): chopta
-2026-05-19 14:22:42  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
-2026-05-19 14:22:42  INFO      [instagram/nakshiq] Generating reality_check post...
-2026-05-19 14:22:42  INFO      [instagram/nakshiq] Caption ready (636 chars, dest=achabal)
-2026-05-19 14:22:42  INFO      [instagram/nakshiq] Video available — uploading for Reel  (evening mode)...
-2026-05-19 14:22:42  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/achabal.mp4?v=20260512
-2026-05-19 14:22:43  INFO          Requesting upload URL for achabal.mp4 (10,887,547 bytes, video/mp4)
-2026-05-19 14:22:44  INFO          Uploading to R2 (timeout=300s)...
-2026-05-19 14:22:45  INFO          R2 PUT OK. Confirming...
-2026-05-19 14:22:46  INFO          Media ready: E8EZA (10,887,547 bytes · achabal.mp4)
-2026-05-19 14:22:46  INFO      [instagram/nakshiq] Publishing Reel...
-2026-05-19 14:23:24  INFO      [instagram/nakshiq] ✅ Published · Outstand=5E68D · Platform=17977205321865056
-2026-05-19 14:23:24  INFO      [facebook/Nakshiq] Generating reality_check post...
-2026-05-19 14:23:24  INFO      [facebook/Nakshiq] Caption ready (707 chars, dest=achabal)
-2026-05-19 14:23:24  INFO      [facebook/Nakshiq] Video available — uploading for Reel  (evening mode)...
-2026-05-19 14:23:24  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/achabal.mp4?v=20260512
-2026-05-19 14:23:25  INFO          Requesting upload URL for achabal.mp4 (10,887,547 bytes, video/mp4)
-2026-05-19 14:23:25  INFO          Uploading to R2 (timeout=300s)...
-2026-05-19 14:23:26  INFO          R2 PUT OK. Confirming...
-2026-05-19 14:23:27  INFO          Media ready: GfGGp (10,887,547 bytes · achabal.mp4)
-2026-05-19 14:23:27  INFO      [facebook/Nakshiq] Publishing Reel...
-2026-05-19 14:23:46  INFO      [facebook/Nakshiq] ✅ Published · Outstand=gSdNx · Platform=2217299195703191
-2026-05-19 14:23:46  INFO      State saved. Run complete.
-2026-05-19 14:23:46  INFO      ════════════════════════════════════════════════════════════
+2026-05-19 17:17:21  INFO      ════════════════════════════════════════════════════════════
+2026-05-19 17:17:21  INFO      Nakshiq Autoposter · ANALYTICS SYNC · 2026-05-19
+2026-05-19 17:17:21  INFO      ════════════════════════════════════════════════════════════
+2026-05-19 17:17:28  INFO      Synced 50 new posts (total: 280)
+2026-05-19 17:17:28  INFO      ── Analytics Summary ──
+2026-05-19 17:17:28  INFO      Total posts tracked: 280
+2026-05-19 17:17:28  INFO      Successfully published: 225 | Failed: 46
+2026-05-19 17:17:28  INFO      
+2026-05-19 17:17:28  INFO      By content type:
+2026-05-19 17:17:28  INFO        feed_post: 103
+2026-05-19 17:17:28  INFO        yt_short: 70
+2026-05-19 17:17:28  INFO        reel: 67
+2026-05-19 17:17:28  INFO        canva_visual: 12
+2026-05-19 17:17:28  INFO        tourist_map: 10
+2026-05-19 17:17:28  INFO        pomelli_visual: 10
+2026-05-19 17:17:28  INFO        infographic: 8
+2026-05-19 17:17:28  INFO      
+2026-05-19 17:17:28  INFO      By format:
+2026-05-19 17:17:28  INFO        feed_post:unknown: 103
+2026-05-19 17:17:28  INFO        reel:destination: 24
+2026-05-19 17:17:28  INFO        reel:seasonal: 22
+2026-05-19 17:17:28  INFO        yt_short:listicle: 19
+2026-05-19 17:17:28  INFO        reel:map: 15
+2026-05-19 17:17:28  INFO        yt_short:did: 14
+2026-05-19 17:17:28  INFO        yt_short:before: 13
+2026-05-19 17:17:28  INFO        canva_visual:unknown: 12
+2026-05-19 17:17:28  INFO        yt_short:mini: 11
+2026-05-19 17:17:28  INFO        tourist_map:unknown: 10
+2026-05-19 17:17:28  INFO        pomelli_visual:unknown: 10
+2026-05-19 17:17:28  INFO        infographic:unknown: 8
+2026-05-19 17:17:28  INFO        yt_short:this: 8
+2026-05-19 17:17:28  INFO        reel:score: 6
+2026-05-19 17:17:28  INFO        yt_short:dont: 5
+2026-05-19 17:17:28  INFO      
+2026-05-19 17:17:28  INFO      By platform:
+2026-05-19 17:17:28  INFO        instagram: 131
+2026-05-19 17:17:28  INFO        facebook: 81
+2026-05-19 17:17:28  INFO        youtube: 59
+2026-05-19 17:17:28  INFO      
+2026-05-19 17:17:28  INFO      YT Short format distribution:
+2026-05-19 17:17:28  INFO        listicle: 19 (27%)
+2026-05-19 17:17:28  INFO        did: 14 (20%)
+2026-05-19 17:17:28  INFO        before: 13 (19%)
+2026-05-19 17:17:28  INFO        mini: 11 (16%)
+2026-05-19 17:17:28  INFO        this: 8 (11%)
+2026-05-19 17:17:28  INFO        dont: 5 (7%)
+2026-05-19 17:17:28  INFO      
+Date range: 2026-04-15 → 2026-05-19
+2026-05-19 17:17:28  INFO      ════════════════════════════════════════════════════════════
