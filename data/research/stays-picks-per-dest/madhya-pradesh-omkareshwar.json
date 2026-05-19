@@ -1,0 +1,62 @@
+[
+  {
+    "destination_id": "omkareshwar",
+    "slot": "experience",
+    "verdict": "replace",
+    "existing": {"name": "Ahilya Fort", "issue": "fabricated cross-dest — Ahilya Fort is in MAHESHWAR (Holkar dynasty seat on the Narmada, ~75 km from Omkareshwar), NOT Omkareshwar. The 18th-c Maratha fort palace converted to a heritage hotel sits in Maheshwar town, on Maheshwar's ghats. Replace with the actual flagship Omkareshwar pilgrim-luxury property — MPT Temple View, which overlooks the Omkareshwar temple and the Narmada from Mandhata Hill."},
+    "replacement": {
+      "name": "MPT Temple View (Narmada Resort)",
+      "tier": "comfort",
+      "tagline": "MP Tourism's flagship Omkareshwar property on Mandhata Hill — directly overlooking the Omkareshwar Jyotirlinga temple and the Narmada. Tripadvisor 4.0/5, Travelers' Choice. AC + air-cooled rooms with temple-view and river-facing configurations.",
+      "price_band": "₹₹",
+      "address": "Overhead Water Tank, Mortakka-Omkareshwar Road, Omkareshwar 450554, Madhya Pradesh",
+      "book_url": "https://mpstdc.com/accommodation/Omkareshwar/MPT-Temple-View-Omkareshwar",
+      "sources": [
+        "https://mpstdc.com/accommodation/Omkareshwar/MPT-Temple-View-Omkareshwar",
+        "https://narmada-resort-omkareshwar-mptdc.hotelsgds.com/",
+        "https://www.tripadvisor.com/ShowUserReviews-g1508514-d1585563-MPT_Temple_View_Omkareshwar.html"
+      ]
+    }
+  },
+  {
+    "destination_id": "omkareshwar",
+    "slot": "value",
+    "verdict": "replace",
+    "existing": {"name": "Narmada Nivas", "issue": "verify — 'Narmada Nivas' as a family-run riverside guesthouse is not verifiable as a single named property on Tripadvisor's Omkareshwar top-15 or MMT/Booking. Likely template ghost (every Narmada-side pilgrim town has a 'Narmada Nivas' or similar generic name). Replace with Hotel Panchavati Palace, a verified mid-range with 5.0/5 reviews."},
+    "replacement": {
+      "name": "Hotel Panchavati Palace",
+      "tier": "comfort",
+      "tagline": "Tripadvisor 5.0/5 — small boutique pilgrim-friendly mid-range with reliable AC rooms and the easiest walk to the Mandhata-island bridge. Veg-friendly in-house dining.",
+      "price_band": "₹₹",
+      "address": "Omkareshwar Town, Khandwa District 450554, Madhya Pradesh",
+      "book_url": "https://www.tripadvisor.in/Hotels-g1508514-Omkareshwar_Khandwa_District_Madhya_Pradesh-Hotels.html",
+      "sources": [
+        "https://www.tripadvisor.in/Hotels-g1508514-Omkareshwar_Khandwa_District_Madhya_Pradesh-Hotels.html"
+      ]
+    }
+  },
+  {
+    "destination_id": "omkareshwar",
+    "slot": "location",
+    "verdict": "replace",
+    "existing": {"name": "Omkareshwar Resort", "issue": "verify — 'Omkareshwar Resort' (claimed to be on Mandhata island itself with 8-min walk to temple, 5 min to ghats) is not verifiable on Tripadvisor / Booking. There are NO mid-tier formal hotels ON Mandhata island itself — accommodation is on mainland with foot-bridge access. Replace with Narmada Hills Resort, the mainland Tripadvisor #1 best-value property."},
+    "replacement": {
+      "name": "Narmada Hills Resort",
+      "tier": "comfort",
+      "tagline": "Tripadvisor #1 best-value Omkareshwar hotel (4.3/5). Mainland resort with garden grounds and a pool — the most polished family-friendly stay in the otherwise pilgrim-heavy hotel scene.",
+      "price_band": "₹₹₹",
+      "address": "Khandwa-Indore Road side, Omkareshwar 450554, Madhya Pradesh",
+      "book_url": "https://www.tripadvisor.in/Hotels-g1508514-Omkareshwar_Khandwa_District_Madhya_Pradesh-Hotels.html",
+      "sources": [
+        "https://www.tripadvisor.in/Hotels-g1508514-Omkareshwar_Khandwa_District_Madhya_Pradesh-Hotels.html"
+      ]
+    }
+  },
+  {
+    "destination_id": "omkareshwar",
+    "slot": "xfactor",
+    "verdict": "honest_scarcity",
+    "existing": {"name": "Narmada Retreat Houseboats", "issue": "fabricated — 'Narmada Retreat Houseboats' as a houseboat-stay property in Omkareshwar is not verifiable. The Narmada at Omkareshwar has small ferry boats and parikrama boats but no commercial houseboat accommodation operation. Cross-region confusion with Kerala backwater houseboats or Srinagar shikara houseboats. Honest scarcity for Omkareshwar xfactor — no unique-tent / houseboat / heritage-luxury alternative exists in town."},
+    "replacement": null
+  }
+]

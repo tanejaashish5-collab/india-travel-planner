@@ -1,0 +1,1057 @@
+{
+  "metadata": {
+    "state": "madhya-pradesh",
+    "date": "2026-05-19",
+    "total_picks": 52,
+    "verdict_counts": {
+      "keep_existing": 8,
+      "replace": 39,
+      "honest_scarcity": 5
+    }
+  },
+  "task_a_results": [
+    {
+      "destination_id": "bandhavgarh",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Taj Safaris Bandhavgarh",
+        "issue": "OK — refers to Mahua Kothi, Taj Safari's flagship Bandhavgarh property. Tighten name."
+      },
+      "replacement": {
+        "name": "Mahua Kothi (Taj Safari)",
+        "tier": "luxury",
+        "tagline": "Taj Safari's 12-kutiya flagship on a 45-acre private forest at Tala gate — Baiga-tribal-styled mud cottages, interactive kitchen, butler service. The country's most decorated tiger-safari address.",
+        "price_band": "₹₹₹₹",
+        "address": "Village Tala, Tehsil Manpur, Bandhavgarh National Park, Umaria 484661, Madhya Pradesh",
+        "book_url": "https://www.tajhotels.com/en-in/hotels/mahua-kothi-bandhavgarh-national-park",
+        "sources": [
+          "https://www.tajhotels.com/en-in/hotels/mahua-kothi-bandhavgarh-national-park",
+          "https://www.tripadvisor.com/Hotel_Review-g2424471-d734722-Reviews-Mahua_Kothi_A_Taj_Safari_Bandhavgarh_National_Park.html",
+          "https://www.andbeyond.com/places-to-stay/asia/india/central-india/bandhavgarh-national-park/mahua-kothi-jungle-lodge/"
+        ]
+      }
+    },
+    {
+      "destination_id": "bandhavgarh",
+      "slot": "value",
+      "verdict": "replace",
+      "existing": {
+        "name": "Bandhavgarh Jungle Lodge",
+        "issue": "OK as a property name but the existing source URLs point to Samode Safari Lodge (luxury, not value tier) — name + source mismatch. Re-anchor the value slot to MPT White Tiger Forest Lodge."
+      },
+      "replacement": {
+        "name": "MPT White Tiger Forest Lodge (Tala)",
+        "tier": "comfort",
+        "tagline": "MP Tourism's flagship Tala property — Tripadvisor 4.6/5 across 424 reviews, ranked #1 best value at Bandhavgarh. Cottages and AC rooms in landscaped grounds, walking distance to the gate. Books out 60-90 days ahead Nov-Mar.",
+        "price_band": "₹₹",
+        "address": "MPT White Tiger Forest Lodge, Tala, Bandhavgarh National Park, Umaria 484661",
+        "book_url": "https://www.mptourism.com/",
+        "sources": [
+          "https://www.mptourism.com/",
+          "https://www.tripadvisor.com/Hotels-g679039-c3-zff17-Bandhavgarh_National_Park_Umaria_District_Madhya_Pradesh-Hotels.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "bandhavgarh",
+      "slot": "location",
+      "verdict": "replace",
+      "existing": {
+        "name": "The Baagh",
+        "issue": "verify — 'The Baagh' is listed in some Bandhavgarh hotel directories but not strongly verifiable as a single, currently-operating property on Tripadvisor/Booking. Replace with Syna Tiger Resort — the closest mid-tier lodge to Tala Gate (900m)."
+      },
+      "replacement": {
+        "name": "Syna Tiger Resort",
+        "tier": "comfort",
+        "tagline": "900m from Tala Gate — the closest mid-tier lodge to the entrance. Tripadvisor 4.8/5 across 546 reviews, ranked #2 best value. Cottages and a pool for cooling off after morning drives.",
+        "price_band": "₹₹₹",
+        "address": "Tala Village, Bandhavgarh National Park, Umaria 484661, Madhya Pradesh",
+        "book_url": "https://www.synatigerresort.com/",
+        "sources": [
+          "https://www.synatigerresort.com/",
+          "https://www.tripadvisor.com/Hotels-g679039-c3-zff17-Bandhavgarh_National_Park_Umaria_District_Madhya_Pradesh-Hotels.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "bandhavgarh",
+      "slot": "xfactor",
+      "verdict": "replace",
+      "existing": {
+        "name": "Chakradhara Wellness Retreat",
+        "issue": "fabricated — 'Chakradhara Wellness Retreat' (wellness farmstay with safari) is not verifiable on Booking, MMT, Tripadvisor or any Bandhavgarh hotel directory. Listicle ghost. Replace with Treehouse Hideaway — the actual unique-stay xfactor at Bandhavgarh."
+      },
+      "replacement": {
+        "name": "Treehouse Hideaway",
+        "tier": "luxury",
+        "tagline": "Six handcrafted treehouses on a 21-acre forest pocket, 10 min from Tala Gate — ranked among the world's top 5 treehouses by Observer UK. Dining hall wraps a century-old Mahua tree. Pugdundee Safaris.",
+        "price_band": "₹₹₹₹",
+        "address": "Village Bijhariya, near Tala Gate, Bandhavgarh National Park, Umaria 484661",
+        "book_url": "https://www.treehousehideaway.com/",
+        "sources": [
+          "https://www.treehousehideaway.com/",
+          "https://www.tripadvisor.com/Hotels-g679039-c3-zff17-Bandhavgarh_National_Park_Umaria_District_Madhya_Pradesh-Hotels.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "bhimbetka",
+      "slot": "experience",
+      "verdict": "replace",
+      "existing": {
+        "name": "Anutara Resort & Spa",
+        "issue": "fabricated — 'Anutara Resort & Spa' described as a tribal-art-aesthetic boutique resort with direct access to Bhimbetka guides is not verifiable on Tripadvisor/Booking/MMT for Bhimbetka, Obaidullaganj, or Raisen. Listicle ghost. Bhimbetka has NO on-site luxury accommodation — the rock-shelter site is inside Ratapani Wildlife Sanctuary buffer with one MPT property at the gate. Replace with MPT Highway Treat Bhimbetka, the only verified property at the gate, OR use Bhopal base (45 km) for luxury — explicitly labelled."
+      },
+      "replacement": {
+        "name": "MPT Highway Treat Bhimbetka (Bhopal base for luxury)",
+        "tier": "comfort",
+        "tagline": "MP Tourism's restaurant-with-rooms property procured from Indian Railways — the only formal accommodation walking range of the Bhimbetka UNESCO site (500m from the rock-shelter gate). For luxury, base from Bhopal 45 km away (Jehan Numa Palace / Taj Lakefront) and day-trip via NH-46.",
+        "price_band": "₹₹",
+        "address": "Bhiyanpura, Bhopal-Hoshangabad Highway (NH-46), Raisen District 464993, Madhya Pradesh",
+        "book_url": "https://www.mptourism.com/",
+        "sources": [
+          "https://www.mptourism.com/destination-bhimbetka.php",
+          "https://en.wikipedia.org/wiki/Bhimbetka_rock_shelters"
+        ]
+      }
+    },
+    {
+      "destination_id": "bhimbetka",
+      "slot": "value",
+      "verdict": "replace",
+      "existing": {
+        "name": "Hotel Narmada Valley",
+        "issue": "fabricated/cross-region — 'Hotel Narmada Valley' in Raisen town '12 km from Bhimbetka' is not verifiable. Bhimbetka is in Raisen District but ~45 km from Raisen city via different roads. Closest town with formal hotels is Obaidullaganj (9 km). Replace with MPT Highway Treat Bhimbetka — the actual value-tier option at the gate."
+      },
+      "replacement": {
+        "name": "MPT Highway Treat Bhimbetka",
+        "tier": "comfort",
+        "tagline": "MP Tourism's property at the Bhimbetka rock-shelter gate — Indian-Railways-procured building in highway-side gardens. Multi-cuisine restaurant, AC + non-AC rooms. Operated as the official MPT-Bhimbetka value stay.",
+        "price_band": "₹₹",
+        "address": "Bhiyanpura, NH-46, near Bhimbetka Rock Shelters, Raisen District 464993",
+        "book_url": "https://www.mptourism.com/",
+        "sources": [
+          "https://www.mptourism.com/destination-bhimbetka.php",
+          "https://www.mptourism.com/"
+        ]
+      }
+    },
+    {
+      "destination_id": "bhimbetka",
+      "slot": "location",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Bhimbetka Village Homestay",
+        "issue": "fabricated — 'Bhimbetka Village Homestay' with 10-min walk to the main rock shelter entrance + family-run breakfast is not verifiable. The rock shelters sit inside Ratapani Wildlife Sanctuary buffer with no village commercial accommodation at the gate (only the MPT Highway Treat at 500m). The nearest residential village is Bhiyanpura, with no formal homestay operation. Honest scarcity for Bhimbetka location slot."
+      },
+      "replacement": null
+    },
+    {
+      "destination_id": "bhimbetka",
+      "slot": "xfactor",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Sarai Farms Retreat",
+        "issue": "fabricated — 'Sarai Farms Retreat' as a millet-and-cotton working farm 8 km from Bhimbetka with mud-structure accommodation is not verifiable on Tripadvisor / Booking / MMT. Listicle ghost. The Bhimbetka rock-shelter site is inside Ratapani Wildlife Sanctuary buffer with no farm-stay infrastructure. Honest scarcity for Bhimbetka xfactor — the UNESCO site is a half-day visit from Bhopal base; no unique-stay alternative exists at the gate."
+      },
+      "replacement": null
+    },
+    {
+      "destination_id": "bhopal",
+      "slot": "experience",
+      "verdict": "replace",
+      "existing": {
+        "name": "Jehan-e-Khusrau Palace",
+        "issue": "fabricated — 'Jehan-e-Khusrau Palace' does not exist as a Bhopal hotel. The sources cited all point to Jehan Numa Palace Hotel (the real property). 'Jehan-e-Khusrau' is an unrelated annual Sufi music festival in Delhi/Hyderabad. Likely a name-mangling of the real property."
+      },
+      "replacement": {
+        "name": "Jehan Numa Palace Hotel",
+        "tier": "luxury",
+        "tagline": "1890s Scindia-era palace on Shamla Hills — Tripadvisor #6 of 161 Bhopal hotels. Heritage Hotels of India member with British-colonial + Italian-Renaissance architecture, four restaurants including the iconic Under-the-Mango-Tree.",
+        "price_band": "₹₹₹₹",
+        "address": "157 Shamla Hills, Bhopal 462013, Madhya Pradesh",
+        "book_url": "https://www.jehannuma.com/palace-bhopal/",
+        "sources": [
+          "https://www.jehannuma.com/palace-bhopal/",
+          "https://www.tripadvisor.com/Hotel_Review-g319726-d386918-Reviews-Jehan_Numa_Palace_Hotel-Bhopal_Bhopal_District_Madhya_Pradesh.html",
+          "https://www.expedia.com/Bhopal-Hotels-Jehan-Numa-Palace-Hotel.h15114363.Hotel-Information"
+        ]
+      }
+    },
+    {
+      "destination_id": "bhopal",
+      "slot": "value",
+      "verdict": "replace",
+      "existing": {
+        "name": "Noor-us-Sabah Palace Homestay",
+        "issue": "name-confusion — 'Noor-us-Sabah Palace' is the real WelcomHeritage/ITC-managed 57-room heritage hotel (₹6,500+/night), not a 'family-run homestay' at ₹2,500-4,500. Description fabricated. Replace with Courtyard by Marriott for an honest value mid-range, OR retag Noor-Us-Sabah Palace at the correct price tier."
+      },
+      "replacement": {
+        "name": "Courtyard by Marriott Bhopal",
+        "tier": "comfort",
+        "tagline": "Marriott's central Bhopal property next to DB City Mall — the airport-friendly 5-star with a polished pool deck, all-day-dining MoMo Café, and the most predictable 4-5 star service in the city. The default business pick.",
+        "price_band": "₹₹₹",
+        "address": "1 DB City, Maharana Pratap Nagar, Zone 1, Bhopal 462011, Madhya Pradesh",
+        "book_url": "https://www.marriott.com/en-us/hotels/bhocy-courtyard-bhopal/overview/",
+        "sources": [
+          "https://www.marriott.com/en-us/hotels/bhocy-courtyard-bhopal/overview/",
+          "https://www.tripadvisor.com/Hotels-g319726-Bhopal_Bhopal_District_Madhya_Pradesh-Hotels.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "bhopal",
+      "slot": "location",
+      "verdict": "replace",
+      "existing": {
+        "name": "Hotel Amaltas",
+        "issue": "verify — claims walking distance to Raj Bhawan, Birla Museum and Van Vihar entrance. Hotel Amaltas Inn is real on MP Nagar but is NOT walkable to those sites (~5-8km from Van Vihar). Correct the location claim. The Bhopal 'location' slot is better served by Noor-Us-Sabah Palace which is genuinely on Upper Lake with VIP Road / Koh-e-Fiza access — close to Bhopal's lake circuit + airport."
+      },
+      "replacement": {
+        "name": "WelcomHeritage Noor-Us-Sabah Palace",
+        "tier": "luxury",
+        "tagline": "13-acre 20th-century palace on Koh-e-Fiza hill above Upper Lake — ITC-WelcomHeritage managed, 57 rooms, lake-view breakfast lawn. The most scenic Bhopal base for the lake-and-mosque circuit (Taj-ul-Masajid is 4 km).",
+        "price_band": "₹₹₹",
+        "address": "V.I.P. Road, Koh-e-Fiza, Bhopal 462001, Madhya Pradesh",
+        "book_url": "https://www.noorussabahpalace.com/",
+        "sources": [
+          "https://www.noorussabahpalace.com/",
+          "https://welcomheritagenoor-bhopal.h-rez.com/",
+          "https://www.tripadvisor.com/Hotels-g319726-Bhopal_Bhopal_District_Madhya_Pradesh-Hotels.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "bhopal",
+      "slot": "xfactor",
+      "verdict": "replace",
+      "existing": {
+        "name": "Lakeshore Cottage (Upper Lake)",
+        "issue": "fabricated — 'Lakeshore Cottage' as a Bhopal cottage operation with shoreline boat launch is not verifiable on Booking, MMT, or Tripadvisor. Listicle ghost. Bhopal's actual lake-adjacent retreat is Jehan Numa Retreat at the edge of Van Vihar National Park (the lake's southern protected fringe)."
+      },
+      "replacement": {
+        "name": "Jehan Numa Retreat",
+        "tier": "boutique",
+        "tagline": "Jehan Numa Group's second Bhopal property at the edge of Van Vihar National Park — cottages around landscaped gardens, more nature than the palace. The choice for couples who want the Jehan Numa pedigree without the city-centre traffic.",
+        "price_band": "₹₹₹",
+        "address": "Van Vihar National Park Road, near Shahpura Lake, Bhopal 462066",
+        "book_url": "https://www.jehannuma.com/jehannuma-retreat-bhopal/",
+        "sources": [
+          "https://www.jehannuma.com/",
+          "https://www.jehannuma.com/jehannuma-retreat-bhopal/"
+        ]
+      }
+    },
+    {
+      "destination_id": "gwalior",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Taj Usha Kiran Palace, Gwalior",
+        "issue": "OK — fully verified, 1902 Scindia palace, Tripadvisor 4.7/5 (1,862 reviews)"
+      },
+      "replacement": {
+        "name": "Taj Usha Kiran Palace, Gwalior",
+        "tier": "luxury",
+        "tagline": "1902 Scindia-dynasty palace converted to a Taj heritage hotel — Tripadvisor 4.7/5 across 1,862 reviews. Two outdoor pools, royal-era chandeliers, Jiva Spa. Walking distance to Jai Vilas Palace.",
+        "price_band": "₹₹₹₹",
+        "address": "Jayendraganj, Lashkar, Gwalior 474009, Madhya Pradesh",
+        "book_url": "https://www.tajhotels.com/en-in/hotels/taj-usha-kiran-palace-gwalior",
+        "sources": [
+          "https://www.tajhotels.com/en-in/hotels/taj-usha-kiran-palace-gwalior",
+          "https://www.tripadvisor.com/Hotel_Review-g667810-d542600-Reviews-Taj_Usha_Kiran_Palace_Gwalior-Gwalior_Gwalior_District_Madhya_Pradesh.html",
+          "https://www.expedia.com/Gwalior-Hotels-Taj-Usha-Kiran-Palace-Hotel.h45526.Hotel-Information"
+        ]
+      }
+    },
+    {
+      "destination_id": "gwalior",
+      "slot": "value",
+      "verdict": "replace",
+      "existing": {
+        "name": "Hotel Tansen",
+        "issue": "name-confusion — the real property is 'MPT Tansen Residency' (MP Tourism, 4.6/5 on Tripadvisor with 509 reviews), not 'Hotel Tansen'. Standardize the name."
+      },
+      "replacement": {
+        "name": "MPT Tansen Residency",
+        "tier": "comfort",
+        "tagline": "MP Tourism's flagship Gwalior property — Tripadvisor 4.6/5 across 509 reviews, Travelers' Choice. Cottages and AC rooms in landscaped gardens, multi-cuisine restaurant, fort-side approach.",
+        "price_band": "₹₹",
+        "address": "6A Gandhi Road, Gwalior 474002, Madhya Pradesh",
+        "book_url": "https://www.mptourism.com/",
+        "sources": [
+          "https://www.mptourism.com/",
+          "https://www.tripadvisor.com/Hotels-g667810-Gwalior_Gwalior_District_Madhya_Pradesh-Hotels.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "gwalior",
+      "slot": "location",
+      "verdict": "replace",
+      "existing": {
+        "name": "MPTDC Gwalior (Tansen House)",
+        "issue": "name-confusion — same as the value pick. 'MPTDC Tansen House' is the same property as 'Hotel Tansen' / MPT Tansen Residency, duplicated across two slots. The actual 'within-walking-of-the-fort' Gwalior pick should be a different property — Neemrana's Deo Bagh sits closest to Jai Vilas + Tansen Tomb."
+      },
+      "replacement": {
+        "name": "Neemrana's Deo Bagh",
+        "tier": "luxury",
+        "tagline": "17th-century Maratha noble's garden estate near the Tomb of Tansen and Mohammed Ghaus — 5 min to Jai Vilas Palace. Tripadvisor 4.6/5 across 832 reviews, Travelers' Choice. Cenotaphs, gardens, summer-pavilion dining hall.",
+        "price_band": "₹₹₹",
+        "address": "Old Cantt, Murar, Gwalior 474006, Madhya Pradesh",
+        "book_url": "https://www.neemranahotels.com/",
+        "sources": [
+          "https://www.neemranahotels.com/",
+          "https://www.tripadvisor.com/Hotels-g667810-Gwalior_Gwalior_District_Madhya_Pradesh-Hotels.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "gwalior",
+      "slot": "xfactor",
+      "verdict": "replace",
+      "existing": {
+        "name": "Gravity Hotel & Spa",
+        "issue": "fabricated — 'Gravity Hotel & Spa' described as a 'converted haveli with rooftop views of the floodlit fort and a wellness spa' is not verifiable on Tripadvisor, Booking, or MMT for Gwalior. Listicle ghost. The actual Gwalior xfactor is Park Inn by Radisson — #1 of 161 Gwalior hotels (4.8/5, 1,078 reviews)."
+      },
+      "replacement": {
+        "name": "Park Inn by Radisson Gwalior",
+        "tier": "comfort",
+        "tagline": "Tripadvisor #1 of all Gwalior hotels — 4.8/5 across 1,078 reviews. Radisson Group's polished mid-luxury 4-star at City Centre with pool, all-day dining and the city's most consistent service reviews.",
+        "price_band": "₹₹₹",
+        "address": "City Centre, Gwalior 474011, Madhya Pradesh",
+        "book_url": "https://www.radissonhotels.com/en-us/hotels/park-inn-gwalior",
+        "sources": [
+          "https://www.radissonhotels.com/en-us/hotels/park-inn-gwalior",
+          "https://www.tripadvisor.com/Hotels-g667810-Gwalior_Gwalior_District_Madhya_Pradesh-Hotels.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "jabalpur",
+      "slot": "experience",
+      "verdict": "replace",
+      "existing": {
+        "name": "Narmada Riverside Resort",
+        "issue": "verify — 'Narmada Riverside Resort' as a single property in Jabalpur is not verifiable on Tripadvisor, MMT, Booking. The real flagship Bhedaghat-area luxury option is Welcomhotel by ITC Jabalpur (near Bargi Dam, walking range of marble-rocks). The riverside slot is better served by this property OR MPT Marble Rocks Bhedaghat."
+      },
+      "replacement": {
+        "name": "Welcomhotel by ITC Hotels Jabalpur",
+        "tier": "luxury",
+        "tagline": "ITC's Jabalpur 5-star near Bargi Dam — Tripadvisor 4.9/5 across 214 reviews. Full-service spa, outdoor pool, all-day dining. Positioned closer to Bhedaghat than the city centre — the better luxury base for marble-rocks day-trips.",
+        "price_band": "₹₹₹₹",
+        "address": "Bargi Dam Road, near Bhedaghat, Jabalpur 482003, Madhya Pradesh",
+        "book_url": "https://www.itchotels.com/in/en/welcomhoteljabalpur",
+        "sources": [
+          "https://www.itchotels.com/in/en/welcomhoteljabalpur",
+          "https://www.tripadvisor.in/Hotels-g503699-Jabalpur_Jabalpur_District_Madhya_Pradesh-Hotels.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "jabalpur",
+      "slot": "value",
+      "verdict": "replace",
+      "existing": {
+        "name": "Hotel Ishan International",
+        "issue": "fabricated cross-state — 'Hotel Ishan International' is in Katra, Jammu & Kashmir (near Vaishno Devi), NOT Jabalpur. Pure cross-state ghost. Replace with MPT Kalchuri Residency, the verified MP Tourism value property in Jabalpur."
+      },
+      "replacement": {
+        "name": "MPT Kalchuri Residency",
+        "tier": "comfort",
+        "tagline": "MP Tourism's flagship Jabalpur property — Tripadvisor 4.3/5 across 198 reviews. Cottages and AC rooms in landscaped grounds, multi-cuisine restaurant, airport pickup. Standard MPT mid-range value.",
+        "price_band": "₹₹",
+        "address": "Karamchand Chowk, Jabalpur 482002, Madhya Pradesh",
+        "book_url": "https://www.mptourism.com/",
+        "sources": [
+          "https://www.mptourism.com/",
+          "https://www.tripadvisor.in/Hotels-g503699-Jabalpur_Jabalpur_District_Madhya_Pradesh-Hotels.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "jabalpur",
+      "slot": "location",
+      "verdict": "replace",
+      "existing": {
+        "name": "Hotel Regency Inn",
+        "issue": "verify — generic 'Hotel Regency Inn' near Jabalpur railway station not verifiable as a single property on Tripadvisor top-10. Replace with Grand Heritage Narmada Jacksons, the real verified property less than 1 km from Jabalpur Junction."
+      },
+      "replacement": {
+        "name": "Grand Heritage Narmada Jacksons",
+        "tier": "comfort",
+        "tagline": "Long-running 4-star heritage-styled hotel less than 1 km from Jabalpur Junction — the city-centre mid-luxury default for rail arrivals. Pool, multi-cuisine restaurant, banquet space.",
+        "price_band": "₹₹₹",
+        "address": "Civil Lines, near Jabalpur Junction Railway Station, Jabalpur 482001",
+        "book_url": "https://www.grandheritagehotels.com/jabalpur",
+        "sources": [
+          "https://www.grandheritagehotels.com/jabalpur",
+          "https://www.hrs.com/en/hotel/narmada-jacksons/a-107203/"
+        ]
+      }
+    },
+    {
+      "destination_id": "jabalpur",
+      "slot": "xfactor",
+      "verdict": "replace",
+      "existing": {
+        "name": "Tiratgarh Waterfall Eco-Tent Camp",
+        "issue": "fabricated cross-state — Tiratgarh Falls is in Kanger Valley National Park, Chhattisgarh (near Jagdalpur), ~400 km from Jabalpur. No such property exists. The Jabalpur xfactor is MPT Marble Rocks Bhedaghat — the only formal accommodation walking-range of the Narmada gorge."
+      },
+      "replacement": {
+        "name": "MPT Marble Rocks Bhedaghat",
+        "tier": "comfort",
+        "tagline": "MP Tourism's Bhedaghat property near 64 Yogini Temple — the only formal accommodation walking-range of the Narmada Marble Rocks gorge and Dhuandhar Falls. 23 km from Jabalpur Junction; book direct via mpstdc.com.",
+        "price_band": "₹₹",
+        "address": "Near 64 Yogini Temple, Bhedaghat, Jabalpur 483053, Madhya Pradesh",
+        "book_url": "https://mpstdc.com/accommodation/Bhedaghat/MPT-Marble-Rocks-Bhedaghat",
+        "sources": [
+          "https://mpstdc.com/accommodation/Bhedaghat/MPT-Marble-Rocks-Bhedaghat",
+          "https://www.makemytrip.com/hotels/mpt_marble_rocks_bhedaghat-details-jabalpur.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "kanha",
+      "slot": "experience",
+      "verdict": "replace",
+      "existing": {
+        "name": "Kipling Camp",
+        "issue": "name is real (1982-founded), but the source URLs all point to Banjaar Tola (Taj Safari) — name/source mismatch. Use Banjaar Tola for the luxury slot; Kipling Camp is appropriate as a separate stay-row but at ₹45-65k it is mispriced (Kipling is ₹15-30k mid-luxury, not Banjaar-Tola tier)."
+      },
+      "replacement": {
+        "name": "Banjaar Tola (A Taj Safari Lodge)",
+        "tier": "luxury",
+        "tagline": "Taj Safari's Kanha flagship — 18 luxury tented suites in two camps along the Banjar river. Open verandahs face the water; naturalist-led drives into Mukki zone. Closed monsoon (Jun 30 - Oct 1).",
+        "price_band": "₹₹₹₹",
+        "address": "Mukki, Kanha National Park, Balaghat District 481111, Madhya Pradesh",
+        "book_url": "https://www.tajhotels.com/en-in/hotels/banjaar-tola-kanha-national-park",
+        "sources": [
+          "https://www.tajhotels.com/en-in/hotels/banjaar-tola-kanha-national-park",
+          "https://www.tripadvisor.com/Hotel_Review-g1117557-d1438702-Reviews-Banjaar_Tola_A_Taj_Safari_Kanha_National_Park.html",
+          "https://www.kanha-national-park.com/banjaar-tola-resort-kanha.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "kanha",
+      "slot": "value",
+      "verdict": "replace",
+      "existing": {
+        "name": "Kanh Jungle Resort",
+        "issue": "fabricated — 'Kanh Jungle Resort' (note spelling: Kanh, not Kanha) is not verifiable on Booking, MMT, or Tripadvisor as a single property. Listicle ghost. Replace with MPT Baghira Jungle Resort Mocha, the real Khatia-side state-tourism property."
+      },
+      "replacement": {
+        "name": "MPT Baghira Jungle Resort Mocha",
+        "tier": "comfort",
+        "tagline": "MP Tourism's flagship Khatia-side property (opened 2014 to replace the original Baghira Log Huts inside the core zone, closed by Supreme Court order 2016). Cottages and AC rooms, multi-cuisine restaurant. Book direct via mptourism.com.",
+        "price_band": "₹₹",
+        "address": "Mocha Village, near Khatia/Kisli Gate, Kanha National Park, Mandla District 481768",
+        "book_url": "https://mpstdc.com/accommodation/Kanha/MPT-Baghira-Jungle-Resort-Mocha-Kanha",
+        "sources": [
+          "https://mpstdc.com/accommodation/Kanha/MPT-Baghira-Jungle-Resort-Mocha-Kanha",
+          "https://www.tripadvisor.in/Hotel_Review-g1117557-d1401185-Reviews-Baghira_Log_Huts-Kanha_National_Park_Madhya_Pradesh.html",
+          "https://www.makemytrip.com/hotels-kanha-mptdc-baghira_log_huts-kisli.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "kanha",
+      "slot": "location",
+      "verdict": "replace",
+      "existing": {
+        "name": "Kanha Safari Lodge",
+        "issue": "verify — generic name; the real MPT property near Mukki is 'MPT Safari Lodge Mukki' (not 'Kanha Safari Lodge'). Replace to match the verified mpstdc.com listing. The 'Kanha Safari Lodge' as priced (₹18-28k) is overpriced — actual MPT Mukki is ₹2-4k value tier."
+      },
+      "replacement": {
+        "name": "MPT Safari Lodge Mukki",
+        "tier": "comfort",
+        "tagline": "MP Tourism's Mukki-side property — beside the Banjar river surrounded by dense forest. Rooms with forest views, bird-watching from the property, the closest formal accommodation to Mukki Gate. Less crowded than the Khatia-side MPT.",
+        "price_band": "₹₹",
+        "address": "Mukki Gate, Kanha National Park, Balaghat District 481111, Madhya Pradesh",
+        "book_url": "https://mpstdc.com/accommodation/Kanha/MPT-Safari-Lodge-Mukki-Kanha",
+        "sources": [
+          "https://mpstdc.com/accommodation/Kanha/MPT-Safari-Lodge-Mukki-Kanha",
+          "https://www.mptourism.com/accomodation.php?destination=Kanha+National+Park"
+        ]
+      }
+    },
+    {
+      "destination_id": "kanha",
+      "slot": "xfactor",
+      "verdict": "replace",
+      "existing": {
+        "name": "Bamni Dadar Jungle Camp",
+        "issue": "fabricated — 'Bamni Dadar' is a sunset viewpoint inside Kanha's core zone; no lodge by this name exists. Listicle ghost confusing the viewpoint with a property. Replace with Shergarh Tented Camp, Kanha's actual owner-operated 6-tent boutique camp."
+      },
+      "replacement": {
+        "name": "Shergarh Tented Camp",
+        "tier": "luxury",
+        "tagline": "Owner-operated 6-tent boutique camp on a 9-acre forest plot near Khatia gate — one of Kanha's most awarded eco-lodges. Knowledgeable naturalists, family-run kitchen, no children under 12. Closed Jun 16 - Oct 16.",
+        "price_band": "₹₹₹₹",
+        "address": "Village Baherakhar, near Khatia Gate, Kanha National Park, Mandla 481768",
+        "book_url": "https://shergarh.com/",
+        "sources": [
+          "https://shergarh.com/",
+          "https://www.tripadvisor.com/Hotels-g1117557-Kanha_National_Park_Madhya_Pradesh-Hotels.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "khajuraho",
+      "slot": "experience",
+      "verdict": "replace",
+      "existing": {
+        "name": "Hotel Chandela, Khajuraho (A Taj Leisure Hotel)",
+        "issue": "OK but mis-tiered — Hotel Chandela is real Taj Leisure 11-acre property, but the city's #1 luxury experience is The Lalit Temple View (Tripadvisor #1 of 30+, 4.7/5 across 1,952 reviews, directly opposite the Western Group). Replace to anchor on Lalit; Chandela stays in the stay-row as a strong alternative."
+      },
+      "replacement": {
+        "name": "The Lalit Temple View Khajuraho",
+        "tier": "luxury",
+        "tagline": "Tripadvisor #1 of all Khajuraho hotels — 4.7/5 across 1,952 reviews. Lalit Group's flagship 5-star directly opposite the Western Group temple complex. Multiple temple-view rooms, outdoor pool, full-service spa.",
+        "price_band": "₹₹₹₹",
+        "address": "Opposite Western Group of Temples, Khajuraho 471606, Madhya Pradesh",
+        "book_url": "https://www.thelalit.com/the-lalit-temple-view-khajuraho/",
+        "sources": [
+          "https://www.thelalit.com/the-lalit-temple-view-khajuraho/",
+          "https://www.tripadvisor.com/Hotels-g297647-Khajuraho_Chhatarpur_District_Madhya_Pradesh-Hotels.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "khajuraho",
+      "slot": "value",
+      "verdict": "replace",
+      "existing": {
+        "name": "Radisson Jass Khajuraho",
+        "issue": "duplicate — Radisson Jass appears in both 'location' AND 'value' slots in the existing data. Resolve by keeping Radisson Jass at the 'location' slot and replacing 'value' with MPT Jhankar Khajuraho, the verified state-tourism mid-range property."
+      },
+      "replacement": {
+        "name": "MPT Jhankar Khajuraho",
+        "tier": "comfort",
+        "tagline": "MP Tourism's Khajuraho property — Tripadvisor 4.2/5 across 67 reviews. Cottages and AC rooms with multi-cuisine restaurant, walking distance to the Western Group complex. Honest state-tourism mid-range.",
+        "price_band": "₹₹",
+        "address": "Jhankar Road, near Western Group of Temples, Khajuraho 471606",
+        "book_url": "https://www.mptourism.com/",
+        "sources": [
+          "https://www.mptourism.com/",
+          "https://www.tripadvisor.com/Hotels-g297647-Khajuraho_Chhatarpur_District_Madhya_Pradesh-Hotels.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "khajuraho",
+      "slot": "location",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Radisson Jass Khajuraho",
+        "issue": "OK — 4-star modern property on Bypass Road with walking proximity to temples"
+      },
+      "replacement": {
+        "name": "Radisson Hotel Jass Khajuraho",
+        "tier": "comfort",
+        "tagline": "Tripadvisor 4.1/5 across 1,561 reviews — Radisson's modern 4-star with pool, multi-cuisine restaurant, and walking proximity to the Western Group. 15% cheaper than Lalit/Chandela for contemporary-over-heritage travellers.",
+        "price_band": "₹₹₹",
+        "address": "Bypass Road, near temples, Khajuraho 471606, Madhya Pradesh",
+        "book_url": "https://www.radissonhotels.com/en-us/hotels/radisson-khajuraho",
+        "sources": [
+          "https://www.radissonhotels.com/en-us/hotels/radisson-khajuraho",
+          "https://www.tripadvisor.com/Hotels-g297647-Khajuraho_Chhatarpur_District_Madhya_Pradesh-Hotels.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "khajuraho",
+      "slot": "xfactor",
+      "verdict": "replace",
+      "existing": {
+        "name": "Bamboo Retreat, Khajuraho",
+        "issue": "fabricated — 'Bamboo Retreat' described as 'handmade cottages 8km north of town with organic farm + pottery workshops' is not verifiable on Tripadvisor, Booking, MMT. Listicle ghost. Replace with Syna Heritage Hotel — the real Khajuraho boutique-heritage near the Jain (Eastern) Group of Temples."
+      },
+      "replacement": {
+        "name": "Syna Heritage Hotel",
+        "tier": "boutique",
+        "tagline": "Heritage-styled boutique near the Eastern (Jain) Group of Temples — Tripadvisor 4.3/5 across 243 reviews. Smaller and quieter than the Western-Group cluster, with a courtyard pool. The boutique alternative for couples avoiding the bus crowds.",
+        "price_band": "₹₹₹",
+        "address": "Jain Temples Road, Khajuraho 471606, Madhya Pradesh",
+        "book_url": "https://www.synahotels.com/",
+        "sources": [
+          "https://www.synahotels.com/",
+          "https://www.tripadvisor.com/Hotels-g297647-Khajuraho_Chhatarpur_District_Madhya_Pradesh-Hotels.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "mandu",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "MPT Malwa Resort Mandu",
+        "issue": "OK — verified MPT flagship Mandu property"
+      },
+      "replacement": {
+        "name": "MPT Malwa Resort",
+        "tier": "comfort",
+        "tagline": "MP Tourism's flagship Mandu property — Tripadvisor 3.8/5. Lakeside cottages on the plateau within easy reach of Hindola Mahal, Jahaz Mahal (3 km) and Hoshang Shah's Tomb (2 km). Room rates ₹3,290-4,290 — basic but central. Book direct via mptourism.com.",
+        "price_band": "₹₹",
+        "address": "Near Jami Masjid, Mandu, Dhar District 454010, Madhya Pradesh",
+        "book_url": "https://mpstdc.com/accommodation/Mandu/MPT-Malwa-Resort-Mandu",
+        "sources": [
+          "https://mpstdc.com/accommodation/Mandu/MPT-Malwa-Resort-Mandu",
+          "https://www.tripadvisor.com/Hotels-g319727-Mandu_Dhar_District_Madhya_Pradesh-Hotels.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "mandu",
+      "slot": "value",
+      "verdict": "replace",
+      "existing": {
+        "name": "The Mandu Resort",
+        "issue": "verify — 'The Mandu Resort' as a separate mid-tier resort is not verifiable on Tripadvisor's Mandu top-10. Likely a generic-named ghost or a re-naming of MPT Malwa Resort. Replace with Mandu Sarai — the verified Tripadvisor 4.4/5 family-run boutique, the highest-rated Mandu stay."
+      },
+      "replacement": {
+        "name": "Mandu Sarai",
+        "tier": "comfort",
+        "tagline": "Tripadvisor 4.4/5 — family-run boutique near the main road, walking distance to the central monument cluster. The highest-rated stay in Mandu and the most personal hospitality on the plateau.",
+        "price_band": "₹₹",
+        "address": "Main Road, Mandu, Dhar District 454010, Madhya Pradesh",
+        "book_url": "https://www.tripadvisor.com/Hotels-g319727-Mandu_Dhar_District_Madhya_Pradesh-Hotels.html",
+        "sources": [
+          "https://www.tripadvisor.com/Hotels-g319727-Mandu_Dhar_District_Madhya_Pradesh-Hotels.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "mandu",
+      "slot": "location",
+      "verdict": "replace",
+      "existing": {
+        "name": "Café Shahi Baag Guest House",
+        "issue": "fabricated — 'Café Shahi Baag Guest House' (claimed walking distance to Jahaz Mahal + Hindola Mahal with ground-floor café for monument maps) is not verifiable on Tripadvisor, Booking, MMT for Mandu. Listicle ghost. Replace with Hotel Rupmati, the real southern-Mandu approach property."
+      },
+      "replacement": {
+        "name": "Hotel Rupmati",
+        "tier": "budget",
+        "tagline": "Long-running mid-range near the southern Rupmati-Pavilion approach — the closer property to the Roopmati-Baz-Bahadur monument cluster. Tripadvisor 3.3/5; currently mid-renovation, verify status before booking.",
+        "price_band": "₹₹",
+        "address": "Near Rani Roopmati Pavilion, Mandu, Dhar District 454010",
+        "book_url": "https://www.tripadvisor.com/Hotels-g319727-Mandu_Dhar_District_Madhya_Pradesh-Hotels.html",
+        "sources": [
+          "https://www.tripadvisor.com/Hotels-g319727-Mandu_Dhar_District_Madhya_Pradesh-Hotels.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "mandu",
+      "slot": "xfactor",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Narmada Riverside Camp",
+        "issue": "fabricated — 'Narmada Riverside Camp' on the Narmada floodplain with bonfire dinners is not in Mandu. The Narmada is 30+ km away through the Maan valley below the Mandu plateau (Mandu itself sits at 634m on a plateau with no river). Cross-dest confusion with Maheshwar (75 km) or Omkareshwar (where Narmada Resort sits). Honest scarcity for Mandu xfactor — no plateau-tent / boutique-luxury / camp infrastructure exists. The plateau is dense with monuments but thin on hotel innovation."
+      },
+      "replacement": null
+    },
+    {
+      "destination_id": "omkareshwar",
+      "slot": "experience",
+      "verdict": "replace",
+      "existing": {
+        "name": "Ahilya Fort",
+        "issue": "fabricated cross-dest — Ahilya Fort is in MAHESHWAR (Holkar dynasty seat on the Narmada, ~75 km from Omkareshwar), NOT Omkareshwar. The 18th-c Maratha fort palace converted to a heritage hotel sits in Maheshwar town, on Maheshwar's ghats. Replace with the actual flagship Omkareshwar pilgrim-luxury property — MPT Temple View, which overlooks the Omkareshwar temple and the Narmada from Mandhata Hill."
+      },
+      "replacement": {
+        "name": "MPT Temple View (Narmada Resort)",
+        "tier": "comfort",
+        "tagline": "MP Tourism's flagship Omkareshwar property on Mandhata Hill — directly overlooking the Omkareshwar Jyotirlinga temple and the Narmada. Tripadvisor 4.0/5, Travelers' Choice. AC + air-cooled rooms with temple-view and river-facing configurations.",
+        "price_band": "₹₹",
+        "address": "Overhead Water Tank, Mortakka-Omkareshwar Road, Omkareshwar 450554, Madhya Pradesh",
+        "book_url": "https://mpstdc.com/accommodation/Omkareshwar/MPT-Temple-View-Omkareshwar",
+        "sources": [
+          "https://mpstdc.com/accommodation/Omkareshwar/MPT-Temple-View-Omkareshwar",
+          "https://narmada-resort-omkareshwar-mptdc.hotelsgds.com/",
+          "https://www.tripadvisor.com/ShowUserReviews-g1508514-d1585563-MPT_Temple_View_Omkareshwar.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "omkareshwar",
+      "slot": "value",
+      "verdict": "replace",
+      "existing": {
+        "name": "Narmada Nivas",
+        "issue": "verify — 'Narmada Nivas' as a family-run riverside guesthouse is not verifiable as a single named property on Tripadvisor's Omkareshwar top-15 or MMT/Booking. Likely template ghost (every Narmada-side pilgrim town has a 'Narmada Nivas' or similar generic name). Replace with Hotel Panchavati Palace, a verified mid-range with 5.0/5 reviews."
+      },
+      "replacement": {
+        "name": "Hotel Panchavati Palace",
+        "tier": "comfort",
+        "tagline": "Tripadvisor 5.0/5 — small boutique pilgrim-friendly mid-range with reliable AC rooms and the easiest walk to the Mandhata-island bridge. Veg-friendly in-house dining.",
+        "price_band": "₹₹",
+        "address": "Omkareshwar Town, Khandwa District 450554, Madhya Pradesh",
+        "book_url": "https://www.tripadvisor.in/Hotels-g1508514-Omkareshwar_Khandwa_District_Madhya_Pradesh-Hotels.html",
+        "sources": [
+          "https://www.tripadvisor.in/Hotels-g1508514-Omkareshwar_Khandwa_District_Madhya_Pradesh-Hotels.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "omkareshwar",
+      "slot": "location",
+      "verdict": "replace",
+      "existing": {
+        "name": "Omkareshwar Resort",
+        "issue": "verify — 'Omkareshwar Resort' (claimed to be on Mandhata island itself with 8-min walk to temple, 5 min to ghats) is not verifiable on Tripadvisor / Booking. There are NO mid-tier formal hotels ON Mandhata island itself — accommodation is on mainland with foot-bridge access. Replace with Narmada Hills Resort, the mainland Tripadvisor #1 best-value property."
+      },
+      "replacement": {
+        "name": "Narmada Hills Resort",
+        "tier": "comfort",
+        "tagline": "Tripadvisor #1 best-value Omkareshwar hotel (4.3/5). Mainland resort with garden grounds and a pool — the most polished family-friendly stay in the otherwise pilgrim-heavy hotel scene.",
+        "price_band": "₹₹₹",
+        "address": "Khandwa-Indore Road side, Omkareshwar 450554, Madhya Pradesh",
+        "book_url": "https://www.tripadvisor.in/Hotels-g1508514-Omkareshwar_Khandwa_District_Madhya_Pradesh-Hotels.html",
+        "sources": [
+          "https://www.tripadvisor.in/Hotels-g1508514-Omkareshwar_Khandwa_District_Madhya_Pradesh-Hotels.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "omkareshwar",
+      "slot": "xfactor",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Narmada Retreat Houseboats",
+        "issue": "fabricated — 'Narmada Retreat Houseboats' as a houseboat-stay property in Omkareshwar is not verifiable. The Narmada at Omkareshwar has small ferry boats and parikrama boats but no commercial houseboat accommodation operation. Cross-region confusion with Kerala backwater houseboats or Srinagar shikara houseboats. Honest scarcity for Omkareshwar xfactor — no unique-tent / houseboat / heritage-luxury alternative exists in town."
+      },
+      "replacement": null
+    },
+    {
+      "destination_id": "orchha",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Amar Mahal Orchha",
+        "issue": "OK — real heritage hotel overlooking Betwa + cenotaphs"
+      },
+      "replacement": {
+        "name": "Amar Mahal",
+        "tier": "luxury",
+        "tagline": "Palace-style heritage hotel overlooking the Betwa river and the 14 Bundela cenotaphs — the terrace at sunset with the Chaturbhuj shikhara silhouetted against orange sky is Orchha's defining image. Tripadvisor 977 reviews.",
+        "price_band": "₹₹₹",
+        "address": "Behind Cenotaphs, Betwa Riverside, Orchha 472246, Madhya Pradesh",
+        "book_url": "https://www.amarmahal.com/",
+        "sources": [
+          "https://www.amarmahal.com/",
+          "https://www.tripadvisor.com/Hotels-g319728-Orchha_Tikamgarh_District_Madhya_Pradesh-Hotels.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "orchha",
+      "slot": "value",
+      "verdict": "replace",
+      "existing": {
+        "name": "MP Tourism Sheesh Mahal (inside Orchha Fort)",
+        "issue": "OK as a property (real, atmospheric, inside-fort), but mispriced as 'value' at ₹5-15k — Sheesh Mahal sits at ₹3-7k typically and the actual MPT value pick at Orchha is MPT Betwa Retreat (₹2-4k, Tripadvisor 4.6/5 across 730 reviews, higher-rated than Sheesh Mahal)."
+      },
+      "replacement": {
+        "name": "MPT Betwa Retreat",
+        "tier": "comfort",
+        "tagline": "MP Tourism's Betwa-side property — Tripadvisor 4.6/5 across 730 reviews (higher than Sheesh Mahal). Cottages and AC tents on a riverside garden, multi-cuisine restaurant. Quieter than the inside-fort property; the MPT value pick.",
+        "price_band": "₹₹",
+        "address": "Betwa River bank, Orchha 472246, Madhya Pradesh",
+        "book_url": "https://mpstdc.com/",
+        "sources": [
+          "https://mpstdc.com/",
+          "https://www.tripadvisor.com/Hotels-g319728-Orchha_Tikamgarh_District_Madhya_Pradesh-Hotels.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "orchha",
+      "slot": "location",
+      "verdict": "replace",
+      "existing": {
+        "name": "Bundela Context",
+        "issue": "fabricated — 'Bundela Context' as a boutique guesthouse near Raja Mahal/Jahangir Mahal is not verifiable on Tripadvisor, Booking, MMT. Listicle ghost. Replace with MPT Sheesh Mahal — the only hotel actually INSIDE the fort complex, walking distance to Raja Mahal, Jahangir Mahal and the cenotaphs."
+      },
+      "replacement": {
+        "name": "MPT Sheesh Mahal (inside Orchha Fort)",
+        "tier": "luxury",
+        "tagline": "MP Tourism's property INSIDE the Bundela fort complex — Tripadvisor 4.2/5 across 379 reviews. Basic rooms but you sleep within the same fortress walls where the Bundela kings did, with Jahangir Mahal a short walk. The most atmospheric hotel location in MP.",
+        "price_band": "₹₹₹",
+        "address": "Inside Orchha Fort, Orchha 472246, Madhya Pradesh",
+        "book_url": "https://mpstdc.com/accommodation/Orchha/MPT-Sheesh-Mahal-Orchha",
+        "sources": [
+          "https://mpstdc.com/accommodation/Orchha/MPT-Sheesh-Mahal-Orchha",
+          "https://www.tripadvisor.com/Hotels-g319728-Orchha_Tikamgarh_District_Madhya_Pradesh-Hotels.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "orchha",
+      "slot": "xfactor",
+      "verdict": "replace",
+      "existing": {
+        "name": "Betwa Riverside Camps",
+        "issue": "fabricated — 'Betwa Riverside Camps' as tent accommodation with bonfire dinners is not verifiable as a single property on Tripadvisor, MMT, or Booking. The closest real Orchha tent operation is MPT Betwa Retreat (cottages + AC tents) which is already in the value slot. Replace xfactor with Bundelkhand Riverside — the largest mid-luxury riverside property with the pool."
+      },
+      "replacement": {
+        "name": "Bundelkhand Riverside",
+        "tier": "comfort",
+        "tagline": "Riverside heritage-style 4-star with 38 rooms, landscaped gardens, outdoor pool, and a terrace facing the Betwa. Tripadvisor 558 reviews — the mid-luxury banquet-friendly Orchha property; book the river-facing rooms.",
+        "price_band": "₹₹₹",
+        "address": "Betwa River, near old palace, Orchha 472246, Madhya Pradesh",
+        "book_url": "https://www.bundelkhandriverside.com/",
+        "sources": [
+          "https://www.bundelkhandriverside.com/",
+          "https://www.tripadvisor.com/Hotels-g319728-Orchha_Tikamgarh_District_Madhya_Pradesh-Hotels.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "pachmarhi",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "MPT Satpura Retreat",
+        "issue": "OK — verified MPT British-era heritage bungalow"
+      },
+      "replacement": {
+        "name": "MPT Satpura Retreat",
+        "tier": "luxury",
+        "tagline": "Erstwhile British-era bungalow converted to an MP Tourism heritage hotel — sprawling gardens, spacious verandahs, slanting roofs. Tripadvisor 4.6/5. The atmospheric pick for British-cantonment Pachmarhi.",
+        "price_band": "₹₹₹",
+        "address": "Pachmarhi Cantonment, Hoshangabad District 461881, Madhya Pradesh",
+        "book_url": "https://mpstdc.com/accommodation/Pachmarhi/MPT-Satpura-Retreat-Pachmarhi",
+        "sources": [
+          "https://mpstdc.com/accommodation/Pachmarhi/MPT-Satpura-Retreat-Pachmarhi",
+          "https://www.tripadvisor.in/Hotel_Review-g503700-d501128-Reviews-MPT_Satpura_Retreat_Pachmarhi-Pachmarhi.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "pachmarhi",
+      "slot": "value",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Champak Bungalow (MP Tourism Heritage)",
+        "issue": "OK — verified MPT cottage cluster near Pachmarhi Lake"
+      },
+      "replacement": {
+        "name": "MPT Champak Bungalow",
+        "tier": "comfort",
+        "tagline": "MP Tourism's cottage-cluster heritage property near Pachmarhi Lake — pure-veg dining-hall menu by clientele profile (state-government tour groups + pilgrim families on the Chauragarh-Mahadeo Shiva circuit). The family-friendly mid-range.",
+        "price_band": "₹₹",
+        "address": "Lakeside, 3 km from Pachmarhi Market, Hoshangabad District 461881",
+        "book_url": "https://mpstdc.com/",
+        "sources": [
+          "https://mpstdc.com/",
+          "https://www.mptourism.com/accomodation.php?destination=Pachmarhi"
+        ]
+      }
+    },
+    {
+      "destination_id": "pachmarhi",
+      "slot": "location",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Rock End Manor",
+        "issue": "OK — verified MPT 6-room colonial bungalow on hillock 2 km from market. Tighten to 'MPT Rock End Manor'."
+      },
+      "replacement": {
+        "name": "MPT Rock End Manor",
+        "tier": "luxury",
+        "tagline": "MP Tourism's most awarded Pachmarhi property — 6-room colonial bungalow on a small hillock 2 km from the market. Spacious garden, slow-tourism aesthetic. Books out 60+ days ahead in peak Dec-Jan + May.",
+        "price_band": "₹₹₹",
+        "address": "2 km from Pachmarhi Market, Hoshangabad District 461881",
+        "book_url": "https://mpstdc.com/",
+        "sources": [
+          "https://mpstdc.com/",
+          "https://www.tripadvisor.com/ShowUserReviews-g503700-d501127-MPT_Rock_End_Manor_Pachmarhi.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "pachmarhi",
+      "slot": "xfactor",
+      "verdict": "replace",
+      "existing": {
+        "name": "Camps of Pachmarhi (seasonal glamping)",
+        "issue": "generic name — 'Camps of Pachmarhi' is descriptive, not a single property. The real glamping operation is Satpura Adventure Resort & Camping (12 Swiss tents, lakeside, AC + breakfast + adventure-activities). Replace to anchor on the verified property."
+      },
+      "replacement": {
+        "name": "Satpura Adventure Resort & Camping",
+        "tier": "comfort",
+        "tagline": "12 Swiss tents near Pachmarhi Lake with AC, attached hot-water bath, breakfast and on-site adventure activities (cycling, zip-lining, kayaking, paragliding). The plateau's family-friendly glamping pick.",
+        "price_band": "₹₹",
+        "address": "Near Pachmarhi Lake, Hoshangabad District 461881, Madhya Pradesh",
+        "book_url": "https://www.tripadvisor.in/Hotel_Review-g503700-d16649324-Reviews-Satpura_Adventure_Resort_Camping-Pachmarhi.html",
+        "sources": [
+          "https://www.tripadvisor.in/Hotel_Review-g503700-d16649324-Reviews-Satpura_Adventure_Resort_Camping-Pachmarhi.html",
+          "https://www.goibibo.com/hotels/satpura-adventure-resort-camping-hotel-in-pachmarhi-4057744042571313782/"
+        ]
+      }
+    },
+    {
+      "destination_id": "sanchi",
+      "slot": "experience",
+      "verdict": "replace",
+      "existing": {
+        "name": "Sanchi Central Hotel",
+        "issue": "fabricated — 'Sanchi Central Hotel' described as Sanchi's most-established upscale heritage property with period rooms + MP cuisine is not verifiable on Tripadvisor, Booking, MMT for Sanchi village. Listicle ghost. Sanchi has no upscale heritage hotel — the village population is under 8,000 and the only formal mid-range accommodation is MPT Gateway Retreat."
+      },
+      "replacement": {
+        "name": "MPT Gateway Retreat Sanchi",
+        "tier": "comfort",
+        "tagline": "MP Tourism's flagship Sanchi property — 500m from the Sanchi Stupa, the only proper sit-down accommodation in Sanchi village. AC rooms, multi-cuisine restaurant, pool, conference hall. Books out in advance for the November Sanchi Mahotsav.",
+        "price_band": "₹₹",
+        "address": "Vidisha-Bhopal Road, Sanchi, Raisen District 464661, Madhya Pradesh",
+        "book_url": "https://mpstdc.com/accommodation/Sanchi/MPT-Gateway-Retreat-Sanchi",
+        "sources": [
+          "https://mpstdc.com/accommodation/Sanchi/MPT-Gateway-Retreat-Sanchi",
+          "https://vidisha.nic.in/en/accommodation/mpt-gateway-retreat-sanchi/",
+          "https://www.tripadvisor.in/Hotel_Review-g776953-d1412185-Reviews-MPT_Gateway_Retreat-Sanchi.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "sanchi",
+      "slot": "value",
+      "verdict": "replace",
+      "existing": {
+        "name": "Ratnagiri Resort",
+        "issue": "verify — 'Ratnagiri Resort' as a Sanchi budget-resort with veg restaurant + wifi is not verifiable on Tripadvisor/MMT/Booking. Likely confusion with Ratnagiri Hill (the actual Sanchi Stupa hill is at 5km from the village). Replace with The Utopia Resort, a verified Sanchi village mid-range."
+      },
+      "replacement": {
+        "name": "The Utopia Resort Sanchi",
+        "tier": "comfort",
+        "tagline": "Newer mid-range resort in Sanchi village — among the top private hotels per MMT rankings. The polished alternative to MPT Gateway Retreat for families wanting more contemporary rooms.",
+        "price_band": "₹₹",
+        "address": "Sanchi Village, Raisen District 464661, Madhya Pradesh",
+        "book_url": "https://theutopiaresort.com/",
+        "sources": [
+          "https://theutopiaresort.com/",
+          "https://www.kayak.com/Sanchi-Hotels.64560.hotel.ksp"
+        ]
+      }
+    },
+    {
+      "destination_id": "sanchi",
+      "slot": "location",
+      "verdict": "replace",
+      "existing": {
+        "name": "Vijay Palace Hotel",
+        "issue": "fabricated — 'Vijay Palace Hotel' on the main bazaar approach to Sanchi Stupa with under-5-min walk to ASI gate is not verifiable on Tripadvisor / Booking / MMT for Sanchi. Listicle ghost. The actual closer-to-ASI-gate property is Hotel Sanchi Queen on Stupa Road, 5 min walk from the Great Stupa entrance."
+      },
+      "replacement": {
+        "name": "Hotel Sanchi Queen",
+        "tier": "budget",
+        "tagline": "9-room hotel-and-restaurant on Stupa Road, 5 minutes walk from the Great Stupa entrance — closer to the monument than any MPT property except Gateway Retreat. All-day kitchen, walk-in fallback when MPT is full.",
+        "price_band": "₹₹",
+        "address": "Stupa Road, opposite Sanchi Post Office, Sanchi 464661, Madhya Pradesh",
+        "book_url": "https://www.tripadvisor.com/Hotel_Review-g776953-d24086471-Reviews-Hotel_Sanchi_Queen-Sanchi_Raisen_District_Madhya_Pradesh.html",
+        "sources": [
+          "https://www.tripadvisor.com/Hotel_Review-g776953-d24086471-Reviews-Hotel_Sanchi_Queen-Sanchi_Raisen_District_Madhya_Pradesh.html",
+          "https://www.hotels.com/ho3342713248/hotel-sanchi-queen-restaurant-sanchi-sanchi-india/"
+        ]
+      }
+    },
+    {
+      "destination_id": "sanchi",
+      "slot": "xfactor",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Lakshminarayan Temple Guesthouse (Sanchi Homestay Network)",
+        "issue": "fabricated — 'Lakshminarayan Temple Guesthouse' as a Sanchi pilgrim-trust accommodation network is not verifiable. The Maha Bodhi Society of India has a vihara at Sanchi (Chethiyagiri Vihara) which holds the relics for public display, but it does NOT operate paid guest-accommodation. Honest scarcity for Sanchi xfactor — the village has thin tourism infrastructure with no unique-stay alternative beyond MPT + 1-2 private hotels + the Bhopal base option (45 km)."
+      },
+      "replacement": null
+    },
+    {
+      "destination_id": "ujjain",
+      "slot": "experience",
+      "verdict": "replace",
+      "existing": {
+        "name": "Radisson Blu Ujjain",
+        "issue": "fabricated/premature — 'Radisson Blu Ujjain' does not exist. Radisson Hotel Group signed a 150-room 'Radisson Hotel Ujjain' (not Blu) in 2023, expected to open Q1 2026. Likely cross-dest confusion with Radisson Blu Indore (real). Replace with Anjushree — the verified Tripadvisor #1 of Ujjain hotels."
+      },
+      "replacement": {
+        "name": "Anjushree Hotel",
+        "tier": "luxury",
+        "tagline": "Tripadvisor #1 Ujjain hotel — 4.7/5 across 1,163 reviews. The city's most reliable 4-star with pool, spa, gym and three restaurants. 5 km from Mahakaleshwar Jyotirlinga + Ujjain railway station. The default non-pilgrim stay.",
+        "price_band": "₹₹₹",
+        "address": "72 Indore Road, Goyala Khurd, Ujjain 456010, Madhya Pradesh",
+        "book_url": "https://anjushree.com/",
+        "sources": [
+          "https://anjushree.com/",
+          "https://www.tripadvisor.com/Hotel_Review-g679024-d7807133-Reviews-Anjushree-Ujjain.html",
+          "https://www.tripadvisor.in/Hotels-g679024-Ujjain_Ujjain_District_Madhya_Pradesh-Hotels.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "ujjain",
+      "slot": "value",
+      "verdict": "replace",
+      "existing": {
+        "name": "Hotel Shiva Vilas",
+        "issue": "verify — 'Hotel Shiva Vilas' as a property within walking distance of Kshipra ghats + temple zone is not verifiable as a single named property on Tripadvisor's Ujjain top-30. Likely template ghost. Replace with Hotel Imperial Grand — verified at 5 min from Mahakaleshwar."
+      },
+      "replacement": {
+        "name": "Hotel Imperial Grand",
+        "tier": "comfort",
+        "tagline": "Tripadvisor 4.3/5 across 180 reviews — central Ujjain mid-range, 5 min drive to Mahakaleshwar. In-house restaurant, free parking, business meeting room. The honest mid-range when Anjushree is full.",
+        "price_band": "₹₹",
+        "address": "Central business district, Ujjain 456010, Madhya Pradesh",
+        "book_url": "https://hotelimperialujjain.com/",
+        "sources": [
+          "https://hotelimperialujjain.com/",
+          "https://www.expedia.com/Ujjain-Hotels-Hotel-Imperial.h36364344.Hotel-Information",
+          "https://www.tripadvisor.in/Hotels-g679024-Ujjain_Ujjain_District_Madhya_Pradesh-Hotels.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "ujjain",
+      "slot": "location",
+      "verdict": "replace",
+      "existing": {
+        "name": "Hotel Ashoka",
+        "issue": "verify — generic 'Hotel Ashoka' across from Mahakaleshwar is not verifiable as a single named property on Tripadvisor. The actual closest-to-temple budget pilgrim stay is Shri Mahakaleshwar Bhakta Niwas (the temple trust's official accommodation). For paid mid-range, Hotel Kalpana Palace + Hotel Abika Elite are the walking-distance verified options."
+      },
+      "replacement": {
+        "name": "Shri Mahakaleshwar Bhakta Niwas",
+        "tier": "budget",
+        "tagline": "Mahakaleshwar Temple Management Committee's official pilgrim housing — built by the trust on land donated to Madhav Seva Trust. 2/3/4/7/10-bed rooms + deluxe doubles, on-site veg canteen, RO water. The temple-trust-priced lowest-friction stay; book direct.",
+        "price_band": "₹",
+        "address": "Adjacent to Shri Mahakaleshwar Temple, Ujjain 456006, Madhya Pradesh",
+        "book_url": "https://shrimahakaleshwarbhaktaniwas.in/",
+        "sources": [
+          "https://shrimahakaleshwarbhaktaniwas.in/",
+          "https://www.tripadvisor.com/Hotel_Review-g679024-d13131627-Reviews-Shri_Mahakaleshwar_Bhakta_Niwas-Ujjain.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "ujjain",
+      "slot": "xfactor",
+      "verdict": "replace",
+      "existing": {
+        "name": null,
+        "issue": "missing — Ujjain baseline only has 3 picks (experience/value/location), no xfactor. Add Rudraksh Club & Resort, the Shipra river-side resort with pool and the only river-view property in town."
+      },
+      "replacement": {
+        "name": "Rudraksh Club & Resort",
+        "tier": "boutique",
+        "tagline": "Shipra river-side resort with pool and club facilities — Tripadvisor 4.7/5 across 537 reviews. The rare river-view configuration in Ujjain; the leisure-and-pilgrimage hybrid pick.",
+        "price_band": "₹₹₹",
+        "address": "Shipra Riverside, Ujjain 456010, Madhya Pradesh",
+        "book_url": "https://www.rudrakshclubresort.com/",
+        "sources": [
+          "https://www.rudrakshclubresort.com/",
+          "https://www.tripadvisor.in/Hotels-g679024-Ujjain_Ujjain_District_Madhya_Pradesh-Hotels.html"
+        ]
+      }
+    }
+  ]
+}

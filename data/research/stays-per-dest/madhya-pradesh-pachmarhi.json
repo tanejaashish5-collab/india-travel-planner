@@ -1,0 +1,74 @@
+[
+  {
+    "destination_id": "pachmarhi",
+    "name": "MPT Satpura Retreat",
+    "type": "heritage-hotel",
+    "location": "Cantonment, near Reservoir, Pachmarhi",
+    "why_special": "Erstwhile British-era bungalow converted to an MP Tourism heritage hotel — sprawling gardens, spacious verandahs, slanting roofs. Tripadvisor 4.6/5. The atmospheric pick for British-cantonment Pachmarhi — basic by 5-star standards but the heritage architecture is the entire point.",
+    "price_range": "₹₹₹",
+    "contact": {"phone": "+91-7578-252-097", "website": "https://mpstdc.com/accommodation/Pachmarhi/MPT-Satpura-Retreat-Pachmarhi", "email": null},
+    "best_for": ["heritage", "couples", "families"],
+    "verified": true,
+    "tags": ["MPT", "British-era-bungalow", "Cantonment", "heritage", "veranda"]
+  },
+  {
+    "destination_id": "pachmarhi",
+    "name": "MPT Rock End Manor",
+    "type": "heritage-hotel",
+    "location": "Small hillock, 2 km from Pachmarhi Market",
+    "why_special": "MP Tourism's most awarded Pachmarhi property — a 6-room colonial bungalow on a small hillock 2 km from the market. Spacious garden, slow-tourism aesthetic. Tripadvisor reviewers consistently call it the best Pachmarhi stay; books out 60+ days ahead in peak Dec-Jan + May.",
+    "price_range": "₹₹₹",
+    "contact": {"phone": "+91-7578-252-079", "website": "https://mpstdc.com/", "email": null},
+    "best_for": ["heritage", "couples", "boutique"],
+    "verified": true,
+    "tags": ["MPT", "6-room-bungalow", "hillock-perch", "colonial", "small-luxury"]
+  },
+  {
+    "destination_id": "pachmarhi",
+    "name": "MPT Champak Bungalow",
+    "type": "heritage-hotel",
+    "location": "Lakeside, 3 km from Pachmarhi Market",
+    "why_special": "MP Tourism's cottage-cluster heritage property near Pachmarhi Lake — pure-veg dining-hall menu by clientele profile (state-government tour groups + pilgrim families on the Chauragarh-Mahadeo Shiva circuit). The family-friendly mid-range with British-cantonment atmosphere.",
+    "price_range": "₹₹",
+    "contact": {"phone": "+91-7578-252-079", "website": "https://mpstdc.com/", "email": null},
+    "best_for": ["families", "pilgrim", "value"],
+    "verified": true,
+    "tags": ["MPT", "lakeside", "cottage-cluster", "pure-veg-dining", "family-friendly"]
+  },
+  {
+    "destination_id": "pachmarhi",
+    "name": "MPT Glen View",
+    "type": "heritage-hotel",
+    "location": "Ridge overlooking the Reservoir, Pachmarhi",
+    "why_special": "MP Tourism's ridge-top heritage property overlooking the Pachmarhi Reservoir — converted British-era bungalow. In-house multi-cuisine menu with the MP signatures (bafla-bati, Indori poha, bhutte-ka-kees seasonal). The non-veg-friendly counterpoint to Champak Bungalow.",
+    "price_range": "₹₹",
+    "contact": {"phone": "+91-7578-252-035", "website": "https://mpstdc.com/", "email": null},
+    "best_for": ["families", "couples", "heritage"],
+    "verified": true,
+    "tags": ["MPT", "Reservoir-view", "ridge-top", "multi-cuisine", "non-veg-friendly"]
+  },
+  {
+    "destination_id": "pachmarhi",
+    "name": "Hotel Highlands",
+    "type": "business-hotel",
+    "location": "Patel Marg, central Pachmarhi",
+    "why_special": "Long-running family-owned 40-room private hotel on Patel Marg — value-for-money with conference hall, multi-cuisine restaurant + bar, ample parking. Where mid-range groups land when the MPT heritage cluster is full.",
+    "price_range": "₹₹",
+    "contact": {"phone": "+91-7578-252-099", "website": null, "email": null},
+    "best_for": ["business", "groups", "families"],
+    "verified": true,
+    "tags": ["Patel-Marg", "40-rooms", "conference", "bar", "central"]
+  },
+  {
+    "destination_id": "pachmarhi",
+    "name": "Satpura Adventure Resort & Camping",
+    "type": "luxury-tent",
+    "location": "Near Pachmarhi Lake, Pachmarhi",
+    "why_special": "12 Swiss tents near Pachmarhi Lake with AC, attached hot-water bath, breakfast, Wi-Fi. On-site activities include cycling, valley crossing, zip lining, kayaking, paragliding. The plateau's mid-range glamping option, family-friendly.",
+    "price_range": "₹₹",
+    "contact": {"phone": "+91-9407-049-099", "website": null, "email": null},
+    "best_for": ["families", "adventure", "couples"],
+    "verified": true,
+    "tags": ["12-Swiss-tents", "lakeside", "adventure-activities", "AC-tents", "glamping"]
+  }
+]

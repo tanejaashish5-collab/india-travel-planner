@@ -1,0 +1,86 @@
+[
+  {
+    "destination_id": "ujjain",
+    "name": "Anjushree Hotel",
+    "type": "business-hotel",
+    "location": "72 Indore Road, Goyala Khurd, Ujjain (5 km from Mahakaleshwar)",
+    "why_special": "Tripadvisor #1 Ujjain hotel (4.7/5 across 1,163 reviews) — the city's most reliable 4-star with pool, spa, gym, and three restaurants (Aroma Indian, Café 24-hour, H2O multi-cuisine). 5 km from both Mahakal temple and Ujjain railway station. The default non-pilgrim stay.",
+    "price_range": "₹₹₹",
+    "contact": {"phone": "+91-734-263-0303", "website": "https://anjushree.com/", "email": null},
+    "best_for": ["business", "families", "couples"],
+    "verified": true,
+    "tags": ["Indore-Road", "pool", "spa", "4-star", "Mahakal-5km", "top-rated"]
+  },
+  {
+    "destination_id": "ujjain",
+    "name": "Hotel Imperial Grand",
+    "type": "business-hotel",
+    "location": "Central business district, Ujjain (5 min to Mahakaleshwar)",
+    "why_special": "Tripadvisor 4.3/5 across 180 reviews — central Ujjain mid-range, 5 minutes drive to Mahakaleshwar temple. In-house restaurant, free parking, business meeting room. The closer-to-temple alternative to Anjushree.",
+    "price_range": "₹₹",
+    "contact": {"phone": "+91-734-251-5151", "website": "https://hotelimperialujjain.com/", "email": null},
+    "best_for": ["pilgrim", "business", "value"],
+    "verified": true,
+    "tags": ["central", "Mahakal-5min", "mid-range", "business"]
+  },
+  {
+    "destination_id": "ujjain",
+    "name": "Rudraksh Club & Resort",
+    "type": "resort",
+    "location": "Shipra River, Ujjain",
+    "why_special": "Tripadvisor 4.7/5 across 537 reviews — Shipra river-side resort with pool, club facilities, and the rare river-view configuration in town. The leisure-and-pilgrimage hybrid pick.",
+    "price_range": "₹₹₹",
+    "contact": {"phone": "+91-734-405-0505", "website": "https://www.rudrakshclubresort.com/", "email": null},
+    "best_for": ["families", "couples", "Shipra-view"],
+    "verified": true,
+    "tags": ["Shipra-river", "pool", "club-resort", "4.7-rated"]
+  },
+  {
+    "destination_id": "ujjain",
+    "name": "Hotel Kalpana Palace",
+    "type": "boutique",
+    "location": "Near Mahakaleshwar Temple, Ujjain",
+    "why_special": "Tripadvisor 4.3/5 across 161 reviews — mid-range hotel near the Mahakaleshwar temple complex with reliable rooms and AC dining hall. The walking-distance pilgrim-friendly mid-range.",
+    "price_range": "₹₹",
+    "contact": {"phone": "+91-734-251-0090", "website": null, "email": null},
+    "best_for": ["pilgrim", "families", "value"],
+    "verified": true,
+    "tags": ["Mahakal-walking", "mid-range", "pilgrim-friendly"]
+  },
+  {
+    "destination_id": "ujjain",
+    "name": "Hotel Abika Elite",
+    "type": "business-hotel",
+    "location": "Centrally located, near Mahakal temple, Ujjain",
+    "why_special": "Tripadvisor 4.7/5 across 489 reviews — centrally located new-build near Mahakal temple. Multi-cuisine restaurant, modern rooms, lifts. The polished mid-range pilgrim-friendly default with non-pilgrim amenities.",
+    "price_range": "₹₹",
+    "contact": {"phone": "+91-734-294-0040", "website": "https://www.abikahotels.com/", "email": null},
+    "best_for": ["pilgrim", "families", "business"],
+    "verified": true,
+    "tags": ["central", "Mahakal-adjacent", "4.7-rated", "modern"]
+  },
+  {
+    "destination_id": "ujjain",
+    "name": "Shri Mahakaleshwar Bhakta Niwas",
+    "type": "ashram",
+    "location": "Adjacent to Mahakaleshwar Temple, Ujjain",
+    "why_special": "Mahakaleshwar Temple Management Committee's official pilgrim accommodation on land donated to Madhav Seva Trust. Budget-priced 2/3/4/7/10-bed rooms and deluxe doubles. On-site veg canteen, room service, RO water. Books direct via the trust portal — the lowest-friction pilgrim stay.",
+    "price_range": "₹",
+    "contact": {"phone": "+91-734-255-2299", "website": "https://shrimahakaleshwarbhaktaniwas.in/", "email": null},
+    "best_for": ["pilgrim", "value", "solo"],
+    "verified": true,
+    "tags": ["temple-trust", "official-pilgrim-housing", "veg-canteen", "Mahakal-adjacent", "budget"]
+  },
+  {
+    "destination_id": "ujjain",
+    "name": "MPT Shipra Residency",
+    "type": "government-hotel",
+    "location": "University Road, Ujjain",
+    "why_special": "MP Tourism's Ujjain property — Tripadvisor 3.5/5 across 142 reviews. Older state-tourism property on University Road, modest rooms with a multi-cuisine restaurant. The MPT mid-range fallback.",
+    "price_range": "₹₹",
+    "contact": {"phone": "+91-734-255-1496", "website": "https://www.mptourism.com/", "email": null},
+    "best_for": ["pilgrim", "families", "value"],
+    "verified": true,
+    "tags": ["MPT", "University-Road", "state-tourism", "value"]
+  }
+]

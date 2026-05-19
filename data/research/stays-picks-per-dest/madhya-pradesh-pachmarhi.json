@@ -1,0 +1,74 @@
+[
+  {
+    "destination_id": "pachmarhi",
+    "slot": "experience",
+    "verdict": "keep_existing",
+    "existing": {"name": "MPT Satpura Retreat", "issue": "OK — verified MPT British-era heritage bungalow"},
+    "replacement": {
+      "name": "MPT Satpura Retreat",
+      "tier": "luxury",
+      "tagline": "Erstwhile British-era bungalow converted to an MP Tourism heritage hotel — sprawling gardens, spacious verandahs, slanting roofs. Tripadvisor 4.6/5. The atmospheric pick for British-cantonment Pachmarhi.",
+      "price_band": "₹₹₹",
+      "address": "Pachmarhi Cantonment, Hoshangabad District 461881, Madhya Pradesh",
+      "book_url": "https://mpstdc.com/accommodation/Pachmarhi/MPT-Satpura-Retreat-Pachmarhi",
+      "sources": [
+        "https://mpstdc.com/accommodation/Pachmarhi/MPT-Satpura-Retreat-Pachmarhi",
+        "https://www.tripadvisor.in/Hotel_Review-g503700-d501128-Reviews-MPT_Satpura_Retreat_Pachmarhi-Pachmarhi.html"
+      ]
+    }
+  },
+  {
+    "destination_id": "pachmarhi",
+    "slot": "value",
+    "verdict": "keep_existing",
+    "existing": {"name": "Champak Bungalow (MP Tourism Heritage)", "issue": "OK — verified MPT cottage cluster near Pachmarhi Lake"},
+    "replacement": {
+      "name": "MPT Champak Bungalow",
+      "tier": "comfort",
+      "tagline": "MP Tourism's cottage-cluster heritage property near Pachmarhi Lake — pure-veg dining-hall menu by clientele profile (state-government tour groups + pilgrim families on the Chauragarh-Mahadeo Shiva circuit). The family-friendly mid-range.",
+      "price_band": "₹₹",
+      "address": "Lakeside, 3 km from Pachmarhi Market, Hoshangabad District 461881",
+      "book_url": "https://mpstdc.com/",
+      "sources": [
+        "https://mpstdc.com/",
+        "https://www.mptourism.com/accomodation.php?destination=Pachmarhi"
+      ]
+    }
+  },
+  {
+    "destination_id": "pachmarhi",
+    "slot": "location",
+    "verdict": "keep_existing",
+    "existing": {"name": "Rock End Manor", "issue": "OK — verified MPT 6-room colonial bungalow on hillock 2 km from market. Tighten to 'MPT Rock End Manor'."},
+    "replacement": {
+      "name": "MPT Rock End Manor",
+      "tier": "luxury",
+      "tagline": "MP Tourism's most awarded Pachmarhi property — 6-room colonial bungalow on a small hillock 2 km from the market. Spacious garden, slow-tourism aesthetic. Books out 60+ days ahead in peak Dec-Jan + May.",
+      "price_band": "₹₹₹",
+      "address": "2 km from Pachmarhi Market, Hoshangabad District 461881",
+      "book_url": "https://mpstdc.com/",
+      "sources": [
+        "https://mpstdc.com/",
+        "https://www.tripadvisor.com/ShowUserReviews-g503700-d501127-MPT_Rock_End_Manor_Pachmarhi.html"
+      ]
+    }
+  },
+  {
+    "destination_id": "pachmarhi",
+    "slot": "xfactor",
+    "verdict": "replace",
+    "existing": {"name": "Camps of Pachmarhi (seasonal glamping)", "issue": "generic name — 'Camps of Pachmarhi' is descriptive, not a single property. The real glamping operation is Satpura Adventure Resort & Camping (12 Swiss tents, lakeside, AC + breakfast + adventure-activities). Replace to anchor on the verified property."},
+    "replacement": {
+      "name": "Satpura Adventure Resort & Camping",
+      "tier": "comfort",
+      "tagline": "12 Swiss tents near Pachmarhi Lake with AC, attached hot-water bath, breakfast and on-site adventure activities (cycling, zip-lining, kayaking, paragliding). The plateau's family-friendly glamping pick.",
+      "price_band": "₹₹",
+      "address": "Near Pachmarhi Lake, Hoshangabad District 461881, Madhya Pradesh",
+      "book_url": "https://www.tripadvisor.in/Hotel_Review-g503700-d16649324-Reviews-Satpura_Adventure_Resort_Camping-Pachmarhi.html",
+      "sources": [
+        "https://www.tripadvisor.in/Hotel_Review-g503700-d16649324-Reviews-Satpura_Adventure_Resort_Camping-Pachmarhi.html",
+        "https://www.goibibo.com/hotels/satpura-adventure-resort-camping-hotel-in-pachmarhi-4057744042571313782/"
+      ]
+    }
+  }
+]

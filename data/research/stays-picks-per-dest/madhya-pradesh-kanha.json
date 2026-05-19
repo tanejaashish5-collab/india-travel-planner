@@ -1,0 +1,76 @@
+[
+  {
+    "destination_id": "kanha",
+    "slot": "experience",
+    "verdict": "replace",
+    "existing": {"name": "Kipling Camp", "issue": "name is real (1982-founded), but the source URLs all point to Banjaar Tola (Taj Safari) — name/source mismatch. Use Banjaar Tola for the luxury slot; Kipling Camp is appropriate as a separate stay-row but at ₹45-65k it is mispriced (Kipling is ₹15-30k mid-luxury, not Banjaar-Tola tier)."},
+    "replacement": {
+      "name": "Banjaar Tola (A Taj Safari Lodge)",
+      "tier": "luxury",
+      "tagline": "Taj Safari's Kanha flagship — 18 luxury tented suites in two camps along the Banjar river. Open verandahs face the water; naturalist-led drives into Mukki zone. Closed monsoon (Jun 30 - Oct 1).",
+      "price_band": "₹₹₹₹",
+      "address": "Mukki, Kanha National Park, Balaghat District 481111, Madhya Pradesh",
+      "book_url": "https://www.tajhotels.com/en-in/hotels/banjaar-tola-kanha-national-park",
+      "sources": [
+        "https://www.tajhotels.com/en-in/hotels/banjaar-tola-kanha-national-park",
+        "https://www.tripadvisor.com/Hotel_Review-g1117557-d1438702-Reviews-Banjaar_Tola_A_Taj_Safari_Kanha_National_Park.html",
+        "https://www.kanha-national-park.com/banjaar-tola-resort-kanha.html"
+      ]
+    }
+  },
+  {
+    "destination_id": "kanha",
+    "slot": "value",
+    "verdict": "replace",
+    "existing": {"name": "Kanh Jungle Resort", "issue": "fabricated — 'Kanh Jungle Resort' (note spelling: Kanh, not Kanha) is not verifiable on Booking, MMT, or Tripadvisor as a single property. Listicle ghost. Replace with MPT Baghira Jungle Resort Mocha, the real Khatia-side state-tourism property."},
+    "replacement": {
+      "name": "MPT Baghira Jungle Resort Mocha",
+      "tier": "comfort",
+      "tagline": "MP Tourism's flagship Khatia-side property (opened 2014 to replace the original Baghira Log Huts inside the core zone, closed by Supreme Court order 2016). Cottages and AC rooms, multi-cuisine restaurant. Book direct via mptourism.com.",
+      "price_band": "₹₹",
+      "address": "Mocha Village, near Khatia/Kisli Gate, Kanha National Park, Mandla District 481768",
+      "book_url": "https://mpstdc.com/accommodation/Kanha/MPT-Baghira-Jungle-Resort-Mocha-Kanha",
+      "sources": [
+        "https://mpstdc.com/accommodation/Kanha/MPT-Baghira-Jungle-Resort-Mocha-Kanha",
+        "https://www.tripadvisor.in/Hotel_Review-g1117557-d1401185-Reviews-Baghira_Log_Huts-Kanha_National_Park_Madhya_Pradesh.html",
+        "https://www.makemytrip.com/hotels-kanha-mptdc-baghira_log_huts-kisli.html"
+      ]
+    }
+  },
+  {
+    "destination_id": "kanha",
+    "slot": "location",
+    "verdict": "replace",
+    "existing": {"name": "Kanha Safari Lodge", "issue": "verify — generic name; the real MPT property near Mukki is 'MPT Safari Lodge Mukki' (not 'Kanha Safari Lodge'). Replace to match the verified mpstdc.com listing. The 'Kanha Safari Lodge' as priced (₹18-28k) is overpriced — actual MPT Mukki is ₹2-4k value tier."},
+    "replacement": {
+      "name": "MPT Safari Lodge Mukki",
+      "tier": "comfort",
+      "tagline": "MP Tourism's Mukki-side property — beside the Banjar river surrounded by dense forest. Rooms with forest views, bird-watching from the property, the closest formal accommodation to Mukki Gate. Less crowded than the Khatia-side MPT.",
+      "price_band": "₹₹",
+      "address": "Mukki Gate, Kanha National Park, Balaghat District 481111, Madhya Pradesh",
+      "book_url": "https://mpstdc.com/accommodation/Kanha/MPT-Safari-Lodge-Mukki-Kanha",
+      "sources": [
+        "https://mpstdc.com/accommodation/Kanha/MPT-Safari-Lodge-Mukki-Kanha",
+        "https://www.mptourism.com/accomodation.php?destination=Kanha+National+Park"
+      ]
+    }
+  },
+  {
+    "destination_id": "kanha",
+    "slot": "xfactor",
+    "verdict": "replace",
+    "existing": {"name": "Bamni Dadar Jungle Camp", "issue": "fabricated — 'Bamni Dadar' is a sunset viewpoint inside Kanha's core zone; no lodge by this name exists. Listicle ghost confusing the viewpoint with a property. Replace with Shergarh Tented Camp, Kanha's actual owner-operated 6-tent boutique camp."},
+    "replacement": {
+      "name": "Shergarh Tented Camp",
+      "tier": "luxury",
+      "tagline": "Owner-operated 6-tent boutique camp on a 9-acre forest plot near Khatia gate — one of Kanha's most awarded eco-lodges. Knowledgeable naturalists, family-run kitchen, no children under 12. Closed Jun 16 - Oct 16.",
+      "price_band": "₹₹₹₹",
+      "address": "Village Baherakhar, near Khatia Gate, Kanha National Park, Mandla 481768",
+      "book_url": "https://shergarh.com/",
+      "sources": [
+        "https://shergarh.com/",
+        "https://www.tripadvisor.com/Hotels-g1117557-Kanha_National_Park_Madhya_Pradesh-Hotels.html"
+      ]
+    }
+  }
+]

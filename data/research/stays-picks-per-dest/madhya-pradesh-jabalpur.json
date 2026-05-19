@@ -1,0 +1,74 @@
+[
+  {
+    "destination_id": "jabalpur",
+    "slot": "experience",
+    "verdict": "replace",
+    "existing": {"name": "Narmada Riverside Resort", "issue": "verify — 'Narmada Riverside Resort' as a single property in Jabalpur is not verifiable on Tripadvisor, MMT, Booking. The real flagship Bhedaghat-area luxury option is Welcomhotel by ITC Jabalpur (near Bargi Dam, walking range of marble-rocks). The riverside slot is better served by this property OR MPT Marble Rocks Bhedaghat."},
+    "replacement": {
+      "name": "Welcomhotel by ITC Hotels Jabalpur",
+      "tier": "luxury",
+      "tagline": "ITC's Jabalpur 5-star near Bargi Dam — Tripadvisor 4.9/5 across 214 reviews. Full-service spa, outdoor pool, all-day dining. Positioned closer to Bhedaghat than the city centre — the better luxury base for marble-rocks day-trips.",
+      "price_band": "₹₹₹₹",
+      "address": "Bargi Dam Road, near Bhedaghat, Jabalpur 482003, Madhya Pradesh",
+      "book_url": "https://www.itchotels.com/in/en/welcomhoteljabalpur",
+      "sources": [
+        "https://www.itchotels.com/in/en/welcomhoteljabalpur",
+        "https://www.tripadvisor.in/Hotels-g503699-Jabalpur_Jabalpur_District_Madhya_Pradesh-Hotels.html"
+      ]
+    }
+  },
+  {
+    "destination_id": "jabalpur",
+    "slot": "value",
+    "verdict": "replace",
+    "existing": {"name": "Hotel Ishan International", "issue": "fabricated cross-state — 'Hotel Ishan International' is in Katra, Jammu & Kashmir (near Vaishno Devi), NOT Jabalpur. Pure cross-state ghost. Replace with MPT Kalchuri Residency, the verified MP Tourism value property in Jabalpur."},
+    "replacement": {
+      "name": "MPT Kalchuri Residency",
+      "tier": "comfort",
+      "tagline": "MP Tourism's flagship Jabalpur property — Tripadvisor 4.3/5 across 198 reviews. Cottages and AC rooms in landscaped grounds, multi-cuisine restaurant, airport pickup. Standard MPT mid-range value.",
+      "price_band": "₹₹",
+      "address": "Karamchand Chowk, Jabalpur 482002, Madhya Pradesh",
+      "book_url": "https://www.mptourism.com/",
+      "sources": [
+        "https://www.mptourism.com/",
+        "https://www.tripadvisor.in/Hotels-g503699-Jabalpur_Jabalpur_District_Madhya_Pradesh-Hotels.html"
+      ]
+    }
+  },
+  {
+    "destination_id": "jabalpur",
+    "slot": "location",
+    "verdict": "replace",
+    "existing": {"name": "Hotel Regency Inn", "issue": "verify — generic 'Hotel Regency Inn' near Jabalpur railway station not verifiable as a single property on Tripadvisor top-10. Replace with Grand Heritage Narmada Jacksons, the real verified property less than 1 km from Jabalpur Junction."},
+    "replacement": {
+      "name": "Grand Heritage Narmada Jacksons",
+      "tier": "comfort",
+      "tagline": "Long-running 4-star heritage-styled hotel less than 1 km from Jabalpur Junction — the city-centre mid-luxury default for rail arrivals. Pool, multi-cuisine restaurant, banquet space.",
+      "price_band": "₹₹₹",
+      "address": "Civil Lines, near Jabalpur Junction Railway Station, Jabalpur 482001",
+      "book_url": "https://www.grandheritagehotels.com/jabalpur",
+      "sources": [
+        "https://www.grandheritagehotels.com/jabalpur",
+        "https://www.hrs.com/en/hotel/narmada-jacksons/a-107203/"
+      ]
+    }
+  },
+  {
+    "destination_id": "jabalpur",
+    "slot": "xfactor",
+    "verdict": "replace",
+    "existing": {"name": "Tiratgarh Waterfall Eco-Tent Camp", "issue": "fabricated cross-state — Tiratgarh Falls is in Kanger Valley National Park, Chhattisgarh (near Jagdalpur), ~400 km from Jabalpur. No such property exists. The Jabalpur xfactor is MPT Marble Rocks Bhedaghat — the only formal accommodation walking-range of the Narmada gorge."},
+    "replacement": {
+      "name": "MPT Marble Rocks Bhedaghat",
+      "tier": "comfort",
+      "tagline": "MP Tourism's Bhedaghat property near 64 Yogini Temple — the only formal accommodation walking-range of the Narmada Marble Rocks gorge and Dhuandhar Falls. 23 km from Jabalpur Junction; book direct via mpstdc.com.",
+      "price_band": "₹₹",
+      "address": "Near 64 Yogini Temple, Bhedaghat, Jabalpur 483053, Madhya Pradesh",
+      "book_url": "https://mpstdc.com/accommodation/Bhedaghat/MPT-Marble-Rocks-Bhedaghat",
+      "sources": [
+        "https://mpstdc.com/accommodation/Bhedaghat/MPT-Marble-Rocks-Bhedaghat",
+        "https://www.makemytrip.com/hotels/mpt_marble_rocks_bhedaghat-details-jabalpur.html"
+      ]
+    }
+  }
+]

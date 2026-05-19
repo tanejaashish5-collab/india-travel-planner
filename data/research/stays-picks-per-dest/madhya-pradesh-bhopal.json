@@ -1,0 +1,76 @@
+[
+  {
+    "destination_id": "bhopal",
+    "slot": "experience",
+    "verdict": "replace",
+    "existing": {"name": "Jehan-e-Khusrau Palace", "issue": "fabricated — 'Jehan-e-Khusrau Palace' does not exist as a Bhopal hotel. The sources cited all point to Jehan Numa Palace Hotel (the real property). 'Jehan-e-Khusrau' is an unrelated annual Sufi music festival in Delhi/Hyderabad. Likely a name-mangling of the real property."},
+    "replacement": {
+      "name": "Jehan Numa Palace Hotel",
+      "tier": "luxury",
+      "tagline": "1890s Scindia-era palace on Shamla Hills — Tripadvisor #6 of 161 Bhopal hotels. Heritage Hotels of India member with British-colonial + Italian-Renaissance architecture, four restaurants including the iconic Under-the-Mango-Tree.",
+      "price_band": "₹₹₹₹",
+      "address": "157 Shamla Hills, Bhopal 462013, Madhya Pradesh",
+      "book_url": "https://www.jehannuma.com/palace-bhopal/",
+      "sources": [
+        "https://www.jehannuma.com/palace-bhopal/",
+        "https://www.tripadvisor.com/Hotel_Review-g319726-d386918-Reviews-Jehan_Numa_Palace_Hotel-Bhopal_Bhopal_District_Madhya_Pradesh.html",
+        "https://www.expedia.com/Bhopal-Hotels-Jehan-Numa-Palace-Hotel.h15114363.Hotel-Information"
+      ]
+    }
+  },
+  {
+    "destination_id": "bhopal",
+    "slot": "value",
+    "verdict": "replace",
+    "existing": {"name": "Noor-us-Sabah Palace Homestay", "issue": "name-confusion — 'Noor-us-Sabah Palace' is the real WelcomHeritage/ITC-managed 57-room heritage hotel (₹6,500+/night), not a 'family-run homestay' at ₹2,500-4,500. Description fabricated. Replace with Courtyard by Marriott for an honest value mid-range, OR retag Noor-Us-Sabah Palace at the correct price tier."},
+    "replacement": {
+      "name": "Courtyard by Marriott Bhopal",
+      "tier": "comfort",
+      "tagline": "Marriott's central Bhopal property next to DB City Mall — the airport-friendly 5-star with a polished pool deck, all-day-dining MoMo Café, and the most predictable 4-5 star service in the city. The default business pick.",
+      "price_band": "₹₹₹",
+      "address": "1 DB City, Maharana Pratap Nagar, Zone 1, Bhopal 462011, Madhya Pradesh",
+      "book_url": "https://www.marriott.com/en-us/hotels/bhocy-courtyard-bhopal/overview/",
+      "sources": [
+        "https://www.marriott.com/en-us/hotels/bhocy-courtyard-bhopal/overview/",
+        "https://www.tripadvisor.com/Hotels-g319726-Bhopal_Bhopal_District_Madhya_Pradesh-Hotels.html"
+      ]
+    }
+  },
+  {
+    "destination_id": "bhopal",
+    "slot": "location",
+    "verdict": "replace",
+    "existing": {"name": "Hotel Amaltas", "issue": "verify — claims walking distance to Raj Bhawan, Birla Museum and Van Vihar entrance. Hotel Amaltas Inn is real on MP Nagar but is NOT walkable to those sites (~5-8km from Van Vihar). Correct the location claim. The Bhopal 'location' slot is better served by Noor-Us-Sabah Palace which is genuinely on Upper Lake with VIP Road / Koh-e-Fiza access — close to Bhopal's lake circuit + airport."},
+    "replacement": {
+      "name": "WelcomHeritage Noor-Us-Sabah Palace",
+      "tier": "luxury",
+      "tagline": "13-acre 20th-century palace on Koh-e-Fiza hill above Upper Lake — ITC-WelcomHeritage managed, 57 rooms, lake-view breakfast lawn. The most scenic Bhopal base for the lake-and-mosque circuit (Taj-ul-Masajid is 4 km).",
+      "price_band": "₹₹₹",
+      "address": "V.I.P. Road, Koh-e-Fiza, Bhopal 462001, Madhya Pradesh",
+      "book_url": "https://www.noorussabahpalace.com/",
+      "sources": [
+        "https://www.noorussabahpalace.com/",
+        "https://welcomheritagenoor-bhopal.h-rez.com/",
+        "https://www.tripadvisor.com/Hotels-g319726-Bhopal_Bhopal_District_Madhya_Pradesh-Hotels.html"
+      ]
+    }
+  },
+  {
+    "destination_id": "bhopal",
+    "slot": "xfactor",
+    "verdict": "replace",
+    "existing": {"name": "Lakeshore Cottage (Upper Lake)", "issue": "fabricated — 'Lakeshore Cottage' as a Bhopal cottage operation with shoreline boat launch is not verifiable on Booking, MMT, or Tripadvisor. Listicle ghost. Bhopal's actual lake-adjacent retreat is Jehan Numa Retreat at the edge of Van Vihar National Park (the lake's southern protected fringe)."},
+    "replacement": {
+      "name": "Jehan Numa Retreat",
+      "tier": "boutique",
+      "tagline": "Jehan Numa Group's second Bhopal property at the edge of Van Vihar National Park — cottages around landscaped gardens, more nature than the palace. The choice for couples who want the Jehan Numa pedigree without the city-centre traffic.",
+      "price_band": "₹₹₹",
+      "address": "Van Vihar National Park Road, near Shahpura Lake, Bhopal 462066",
+      "book_url": "https://www.jehannuma.com/jehannuma-retreat-bhopal/",
+      "sources": [
+        "https://www.jehannuma.com/",
+        "https://www.jehannuma.com/jehannuma-retreat-bhopal/"
+      ]
+    }
+  }
+]

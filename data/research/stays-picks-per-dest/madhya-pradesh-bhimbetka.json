@@ -1,0 +1,52 @@
+[
+  {
+    "destination_id": "bhimbetka",
+    "slot": "experience",
+    "verdict": "replace",
+    "existing": {"name": "Anutara Resort & Spa", "issue": "fabricated — 'Anutara Resort & Spa' described as a tribal-art-aesthetic boutique resort with direct access to Bhimbetka guides is not verifiable on Tripadvisor/Booking/MMT for Bhimbetka, Obaidullaganj, or Raisen. Listicle ghost. Bhimbetka has NO on-site luxury accommodation — the rock-shelter site is inside Ratapani Wildlife Sanctuary buffer with one MPT property at the gate. Replace with MPT Highway Treat Bhimbetka, the only verified property at the gate, OR use Bhopal base (45 km) for luxury — explicitly labelled."},
+    "replacement": {
+      "name": "MPT Highway Treat Bhimbetka (Bhopal base for luxury)",
+      "tier": "comfort",
+      "tagline": "MP Tourism's restaurant-with-rooms property procured from Indian Railways — the only formal accommodation walking range of the Bhimbetka UNESCO site (500m from the rock-shelter gate). For luxury, base from Bhopal 45 km away (Jehan Numa Palace / Taj Lakefront) and day-trip via NH-46.",
+      "price_band": "₹₹",
+      "address": "Bhiyanpura, Bhopal-Hoshangabad Highway (NH-46), Raisen District 464993, Madhya Pradesh",
+      "book_url": "https://www.mptourism.com/",
+      "sources": [
+        "https://www.mptourism.com/destination-bhimbetka.php",
+        "https://en.wikipedia.org/wiki/Bhimbetka_rock_shelters"
+      ]
+    }
+  },
+  {
+    "destination_id": "bhimbetka",
+    "slot": "value",
+    "verdict": "replace",
+    "existing": {"name": "Hotel Narmada Valley", "issue": "fabricated/cross-region — 'Hotel Narmada Valley' in Raisen town '12 km from Bhimbetka' is not verifiable. Bhimbetka is in Raisen District but ~45 km from Raisen city via different roads. Closest town with formal hotels is Obaidullaganj (9 km). Replace with MPT Highway Treat Bhimbetka — the actual value-tier option at the gate."},
+    "replacement": {
+      "name": "MPT Highway Treat Bhimbetka",
+      "tier": "comfort",
+      "tagline": "MP Tourism's property at the Bhimbetka rock-shelter gate — Indian-Railways-procured building in highway-side gardens. Multi-cuisine restaurant, AC + non-AC rooms. Operated as the official MPT-Bhimbetka value stay.",
+      "price_band": "₹₹",
+      "address": "Bhiyanpura, NH-46, near Bhimbetka Rock Shelters, Raisen District 464993",
+      "book_url": "https://www.mptourism.com/",
+      "sources": [
+        "https://www.mptourism.com/destination-bhimbetka.php",
+        "https://www.mptourism.com/"
+      ]
+    }
+  },
+  {
+    "destination_id": "bhimbetka",
+    "slot": "location",
+    "verdict": "honest_scarcity",
+    "existing": {"name": "Bhimbetka Village Homestay", "issue": "fabricated — 'Bhimbetka Village Homestay' with 10-min walk to the main rock shelter entrance + family-run breakfast is not verifiable. The rock shelters sit inside Ratapani Wildlife Sanctuary buffer with no village commercial accommodation at the gate (only the MPT Highway Treat at 500m). The nearest residential village is Bhiyanpura, with no formal homestay operation. Honest scarcity for Bhimbetka location slot."},
+    "replacement": null
+  },
+  {
+    "destination_id": "bhimbetka",
+    "slot": "xfactor",
+    "verdict": "honest_scarcity",
+    "existing": {"name": "Sarai Farms Retreat", "issue": "fabricated — 'Sarai Farms Retreat' as a millet-and-cotton working farm 8 km from Bhimbetka with mud-structure accommodation is not verifiable on Tripadvisor / Booking / MMT. Listicle ghost. The Bhimbetka rock-shelter site is inside Ratapani Wildlife Sanctuary buffer with no farm-stay infrastructure. Honest scarcity for Bhimbetka xfactor — the UNESCO site is a half-day visit from Bhopal base; no unique-stay alternative exists at the gate."},
+    "replacement": null
+  }
+]

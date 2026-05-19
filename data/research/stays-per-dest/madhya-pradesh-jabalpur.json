@@ -1,0 +1,74 @@
+[
+  {
+    "destination_id": "jabalpur",
+    "name": "Welcomhotel by ITC Hotels Jabalpur",
+    "type": "business-hotel",
+    "location": "Bargi Dam Road, near Bhedaghat, Jabalpur",
+    "why_special": "ITC Welcomhotel's Jabalpur property — Tripadvisor 4.9/5 across 214 reviews, the city's polished 5-star with full-service spa, outdoor pool, all-day dining. Positioned closer to Bhedaghat than to the city centre, making it the better luxury base for marble-rocks day-trips.",
+    "price_range": "₹₹₹₹",
+    "contact": {"phone": "+91-761-666-5555", "website": "https://www.itchotels.com/in/en/welcomhoteljabalpur", "email": null},
+    "best_for": ["business", "couples", "Bhedaghat-base"],
+    "verified": true,
+    "tags": ["ITC", "Welcomhotel", "Bargi-Dam", "Bhedaghat-base", "spa", "pool"]
+  },
+  {
+    "destination_id": "jabalpur",
+    "name": "Vijan Mahal",
+    "type": "heritage-hotel",
+    "location": "Civil Lines, Jabalpur",
+    "why_special": "Tripadvisor 4.6/5 across 824 reviews, Travelers' Choice — a 3.5-star heritage-styled hotel in Civil Lines with a spa-themed design, outdoor pool, and daily spa treatments. The city's best mid-luxury character property.",
+    "price_range": "₹₹₹",
+    "contact": {"phone": "+91-761-405-0050", "website": "https://www.vijanmahal.com/", "email": null},
+    "best_for": ["couples", "business", "wellness"],
+    "verified": true,
+    "tags": ["Civil-Lines", "spa-themed", "outdoor-pool", "3.5-star", "Travellers-Choice"]
+  },
+  {
+    "destination_id": "jabalpur",
+    "name": "MPT Kalchuri Residency",
+    "type": "government-hotel",
+    "location": "Karamchand Chowk, Jabalpur",
+    "why_special": "MP Tourism's flagship Jabalpur property — Tripadvisor 4.3/5 across 198 reviews. Cottages and AC rooms in landscaped grounds with multi-cuisine restaurant. Standard MPT mid-range with reliable airport pickup.",
+    "price_range": "₹₹",
+    "contact": {"phone": "+91-761-267-8491", "website": "https://www.mptourism.com/", "email": null},
+    "best_for": ["families", "value", "business"],
+    "verified": true,
+    "tags": ["MPT", "Karamchand-Chowk", "state-tourism", "value"]
+  },
+  {
+    "destination_id": "jabalpur",
+    "name": "MPT Marble Rocks Bhedaghat",
+    "type": "government-hotel",
+    "location": "Near 64 Yogini Temple, Bhedaghat, Jabalpur",
+    "why_special": "MP Tourism's Bhedaghat property — the only formal accommodation in walking range of the Narmada Marble Rocks gorge and Dhuandhar Falls. 23 km from Jabalpur railway station, 32 km from airport. Cottages and rooms with garden settings.",
+    "price_range": "₹₹",
+    "contact": {"phone": "+91-761-274-0010", "website": "https://mpstdc.com/accommodation/Bhedaghat/MPT-Marble-Rocks-Bhedaghat", "email": null},
+    "best_for": ["families", "Bhedaghat-base", "value"],
+    "verified": true,
+    "tags": ["MPT", "Bhedaghat", "64-Yogini-adjacent", "Marble-Rocks", "state-tourism"]
+  },
+  {
+    "destination_id": "jabalpur",
+    "name": "Hilton Garden Inn Jabalpur",
+    "type": "business-hotel",
+    "location": "South Civil Lines, Jabalpur",
+    "why_special": "Tripadvisor 4.8/5 across 265 reviews — Hilton's polished new-Jabalpur property with the most consistent international-standard service in the city. The reliable business-travel default.",
+    "price_range": "₹₹₹",
+    "contact": {"phone": "+91-761-666-1234", "website": "https://www.hilton.com/en/hotels/jlrgigi-hilton-garden-inn-jabalpur/", "email": null},
+    "best_for": ["business", "couples"],
+    "verified": true,
+    "tags": ["Hilton", "South-Civil-Lines", "international-brand", "4.8-rated"]
+  },
+  {
+    "destination_id": "jabalpur",
+    "name": "Grand Heritage Narmada Jacksons",
+    "type": "business-hotel",
+    "location": "Civil Lines, near Jabalpur Junction, less than 1 km from railway station",
+    "why_special": "Long-running 4-star heritage-styled hotel less than 1 km from Jabalpur railway station — the city-centre mid-luxury default. Pool, multi-cuisine restaurant, banquet space. The railway-arrival convenience pick.",
+    "price_range": "₹₹₹",
+    "contact": {"phone": "+91-761-318-1818", "website": "https://www.grandheritagehotels.com/jabalpur", "email": null},
+    "best_for": ["business", "families", "rail-arrivals"],
+    "verified": true,
+    "tags": ["Civil-Lines", "railway-station-adjacent", "4-star", "pool"]
+  }
+]

@@ -1,0 +1,74 @@
+[
+  {
+    "destination_id": "gwalior",
+    "name": "Taj Usha Kiran Palace, Gwalior",
+    "type": "heritage-hotel",
+    "location": "Jayendraganj, Lashkar, Gwalior",
+    "why_special": "1902 Scindia-dynasty palace converted to a Taj heritage hotel — Tripadvisor 4.7/5 across 1,862 reviews. Two outdoor pools, royal-era chandeliers and furniture, Jiva Spa. Walking distance to Jai Vilas Palace (the Scindia residence with the 2.8-ton silver dining train). The defining Gwalior splurge.",
+    "price_range": "₹₹₹₹",
+    "contact": {"phone": "+91-751-244-4000", "website": "https://www.tajhotels.com/en-in/hotels/taj-usha-kiran-palace-gwalior", "email": null},
+    "best_for": ["heritage", "couples", "luxury"],
+    "verified": true,
+    "tags": ["Taj", "Scindia-dynasty", "1902-palace", "Jai-Vilas-adjacent", "Jiva-Spa"]
+  },
+  {
+    "destination_id": "gwalior",
+    "name": "Neemrana's Deo Bagh",
+    "type": "heritage-hotel",
+    "location": "Murar, near Tomb of Tansen, Gwalior",
+    "why_special": "Neemrana's Gwalior property — a 17th-century Maratha noble's garden estate near the Tomb of Tansen and Mohammed Ghaus. Tripadvisor 4.6/5 across 832 reviews. Cenotaphs, gardens, an old summer pavilion converted to dining hall. 5 min to Jai Vilas Palace.",
+    "price_range": "₹₹₹",
+    "contact": {"phone": "+91-11-4666-1666", "website": "https://www.neemranahotels.com/", "email": "sales@neemranahotels.com"},
+    "best_for": ["heritage", "couples", "families"],
+    "verified": true,
+    "tags": ["Neemrana", "17th-c-Maratha", "Tansen-tomb-adjacent", "garden-estate", "boutique"]
+  },
+  {
+    "destination_id": "gwalior",
+    "name": "Park Inn by Radisson Gwalior",
+    "type": "business-hotel",
+    "location": "City Centre, Gwalior",
+    "why_special": "Tripadvisor #1 of all Gwalior hotels (4.8/5 across 1,078 reviews) — Radisson Group's polished mid-luxury 4-star at City Centre. Multi-cuisine all-day dining, pool, conference space. The reliable airport-friendly 4-star for business + family travel.",
+    "price_range": "₹₹₹",
+    "contact": {"phone": "+91-751-666-1111", "website": "https://www.radissonhotels.com/en-us/hotels/park-inn-gwalior", "email": null},
+    "best_for": ["business", "families", "couples"],
+    "verified": true,
+    "tags": ["Radisson", "City-Centre", "4-star", "top-rated", "pool"]
+  },
+  {
+    "destination_id": "gwalior",
+    "name": "Radisson Gwalior",
+    "type": "business-hotel",
+    "location": "City Centre, Gwalior",
+    "why_special": "Radisson's flagship 5-star Gwalior property — Tripadvisor 4.7/5 across 1,367 reviews. Larger, more conference-heavy sister to Park Inn, with a bigger pool and more banquet space. Best for groups and large weddings.",
+    "price_range": "₹₹₹",
+    "contact": {"phone": "+91-751-666-1234", "website": "https://www.radissonhotels.com/en-us/hotels/radisson-gwalior", "email": null},
+    "best_for": ["business", "families", "groups"],
+    "verified": true,
+    "tags": ["Radisson", "City-Centre", "5-star", "banquet", "pool"]
+  },
+  {
+    "destination_id": "gwalior",
+    "name": "Clarks Inn Suites Gwalior",
+    "type": "business-hotel",
+    "location": "Madhav Rao Scindia Marg, Gwalior",
+    "why_special": "Tripadvisor 4.7/5 across 944 reviews — Travelers' Choice. Clarks Inn's Gwalior property with full-service spa and rooftop dining. The mid-luxury mid-range pick when Park Inn/Radisson are full.",
+    "price_range": "₹₹₹",
+    "contact": {"phone": "+91-751-405-0000", "website": "https://www.clarksinn.in/clarks-inn-suites-gwalior", "email": null},
+    "best_for": ["business", "couples"],
+    "verified": true,
+    "tags": ["Clarks-Inn", "Scindia-Marg", "spa", "rooftop-dining", "Travelers-Choice"]
+  },
+  {
+    "destination_id": "gwalior",
+    "name": "MPT Tansen Residency",
+    "type": "government-hotel",
+    "location": "6A Gandhi Road, Gwalior",
+    "why_special": "MP Tourism's flagship Gwalior property — Tripadvisor 4.6/5 across 509 reviews. Cottages and AC rooms set in landscaped gardens, multi-cuisine restaurant, easy walking range of the fort approach. The state-tourism honest mid-range with airport pickup.",
+    "price_range": "₹₹",
+    "contact": {"phone": "+91-751-234-0370", "website": "https://www.mptourism.com/", "email": null},
+    "best_for": ["heritage", "families", "value"],
+    "verified": true,
+    "tags": ["MPT", "Gandhi-Road", "state-tourism", "value", "fort-adjacent"]
+  }
+]

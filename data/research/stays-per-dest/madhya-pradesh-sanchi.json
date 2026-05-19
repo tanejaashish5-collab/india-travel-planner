@@ -1,0 +1,38 @@
+[
+  {
+    "destination_id": "sanchi",
+    "name": "MPT Gateway Retreat Sanchi",
+    "type": "government-hotel",
+    "location": "Vidisha-Bhopal Road, Sanchi 464661 — 500m from Sanchi Stupa",
+    "why_special": "MP Tourism's flagship Sanchi property — beside the Bhopal-Vidisha highway, just 500m from the Sanchi Stupa. The only proper sit-down accommodation in Sanchi village, with AC rooms, multi-cuisine restaurant (veg + non-veg), pool, conference hall, lawn. Books out in advance for the November Sanchi Mahotsav (last week — when the Sariputta-Mahamoggallana relics are publicly displayed).",
+    "price_range": "₹₹",
+    "contact": {"phone": "+91-7482-266-723", "website": "https://mpstdc.com/accommodation/Sanchi/MPT-Gateway-Retreat-Sanchi", "email": "grsanchi@mpstdc.com"},
+    "best_for": ["heritage", "families", "value"],
+    "verified": true,
+    "tags": ["MPT", "500m-from-stupa", "Sanchi-Mahotsav", "state-tourism", "pool"]
+  },
+  {
+    "destination_id": "sanchi",
+    "name": "The Utopia Resort Sanchi",
+    "type": "resort",
+    "location": "Sanchi village",
+    "why_special": "Newer mid-range resort in Sanchi — among the top private hotels per Tripadvisor and MMT rankings. The polished alternative to MPT Gateway Retreat for families wanting more contemporary rooms.",
+    "price_range": "₹₹",
+    "contact": {"phone": "+91-9111-150-150", "website": "https://theutopiaresort.com/", "email": null},
+    "best_for": ["heritage", "families", "couples"],
+    "verified": true,
+    "tags": ["Sanchi-village", "newer-resort", "mid-range", "family-friendly"]
+  },
+  {
+    "destination_id": "sanchi",
+    "name": "Hotel Sanchi Queen",
+    "type": "budget-hotel",
+    "location": "Stupa Road, opposite Sanchi Post Office",
+    "why_special": "Small 9-room hotel-and-restaurant on Stupa Road, 5 minutes walk from the Great Stupa entrance — closer to the monument than any MPT property except Gateway Retreat. All-day kitchen, dining room with street entry. The walk-in fallback when MPT is full.",
+    "price_range": "₹₹",
+    "contact": {"phone": "+91-7482-266-101", "website": null, "email": null},
+    "best_for": ["budget", "solo", "pilgrim"],
+    "verified": true,
+    "tags": ["Stupa-Road", "9-rooms", "all-day-kitchen", "walk-in"]
+  }
+]

@@ -1,0 +1,61 @@
+[
+  {
+    "destination_id": "mandu",
+    "slot": "experience",
+    "verdict": "keep_existing",
+    "existing": {"name": "MPT Malwa Resort Mandu", "issue": "OK — verified MPT flagship Mandu property"},
+    "replacement": {
+      "name": "MPT Malwa Resort",
+      "tier": "comfort",
+      "tagline": "MP Tourism's flagship Mandu property — Tripadvisor 3.8/5. Lakeside cottages on the plateau within easy reach of Hindola Mahal, Jahaz Mahal (3 km) and Hoshang Shah's Tomb (2 km). Room rates ₹3,290-4,290 — basic but central. Book direct via mptourism.com.",
+      "price_band": "₹₹",
+      "address": "Near Jami Masjid, Mandu, Dhar District 454010, Madhya Pradesh",
+      "book_url": "https://mpstdc.com/accommodation/Mandu/MPT-Malwa-Resort-Mandu",
+      "sources": [
+        "https://mpstdc.com/accommodation/Mandu/MPT-Malwa-Resort-Mandu",
+        "https://www.tripadvisor.com/Hotels-g319727-Mandu_Dhar_District_Madhya_Pradesh-Hotels.html"
+      ]
+    }
+  },
+  {
+    "destination_id": "mandu",
+    "slot": "value",
+    "verdict": "replace",
+    "existing": {"name": "The Mandu Resort", "issue": "verify — 'The Mandu Resort' as a separate mid-tier resort is not verifiable on Tripadvisor's Mandu top-10. Likely a generic-named ghost or a re-naming of MPT Malwa Resort. Replace with Mandu Sarai — the verified Tripadvisor 4.4/5 family-run boutique, the highest-rated Mandu stay."},
+    "replacement": {
+      "name": "Mandu Sarai",
+      "tier": "comfort",
+      "tagline": "Tripadvisor 4.4/5 — family-run boutique near the main road, walking distance to the central monument cluster. The highest-rated stay in Mandu and the most personal hospitality on the plateau.",
+      "price_band": "₹₹",
+      "address": "Main Road, Mandu, Dhar District 454010, Madhya Pradesh",
+      "book_url": "https://www.tripadvisor.com/Hotels-g319727-Mandu_Dhar_District_Madhya_Pradesh-Hotels.html",
+      "sources": [
+        "https://www.tripadvisor.com/Hotels-g319727-Mandu_Dhar_District_Madhya_Pradesh-Hotels.html"
+      ]
+    }
+  },
+  {
+    "destination_id": "mandu",
+    "slot": "location",
+    "verdict": "replace",
+    "existing": {"name": "Café Shahi Baag Guest House", "issue": "fabricated — 'Café Shahi Baag Guest House' (claimed walking distance to Jahaz Mahal + Hindola Mahal with ground-floor café for monument maps) is not verifiable on Tripadvisor, Booking, MMT for Mandu. Listicle ghost. Replace with Hotel Rupmati, the real southern-Mandu approach property."},
+    "replacement": {
+      "name": "Hotel Rupmati",
+      "tier": "budget",
+      "tagline": "Long-running mid-range near the southern Rupmati-Pavilion approach — the closer property to the Roopmati-Baz-Bahadur monument cluster. Tripadvisor 3.3/5; currently mid-renovation, verify status before booking.",
+      "price_band": "₹₹",
+      "address": "Near Rani Roopmati Pavilion, Mandu, Dhar District 454010",
+      "book_url": "https://www.tripadvisor.com/Hotels-g319727-Mandu_Dhar_District_Madhya_Pradesh-Hotels.html",
+      "sources": [
+        "https://www.tripadvisor.com/Hotels-g319727-Mandu_Dhar_District_Madhya_Pradesh-Hotels.html"
+      ]
+    }
+  },
+  {
+    "destination_id": "mandu",
+    "slot": "xfactor",
+    "verdict": "honest_scarcity",
+    "existing": {"name": "Narmada Riverside Camp", "issue": "fabricated — 'Narmada Riverside Camp' on the Narmada floodplain with bonfire dinners is not in Mandu. The Narmada is 30+ km away through the Maan valley below the Mandu plateau (Mandu itself sits at 634m on a plateau with no river). Cross-dest confusion with Maheshwar (75 km) or Omkareshwar (where Narmada Resort sits). Honest scarcity for Mandu xfactor — no plateau-tent / boutique-luxury / camp infrastructure exists. The plateau is dense with monuments but thin on hotel innovation."},
+    "replacement": null
+  }
+]

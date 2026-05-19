@@ -1,0 +1,74 @@
+[
+  {
+    "destination_id": "orchha",
+    "slot": "experience",
+    "verdict": "keep_existing",
+    "existing": {"name": "Amar Mahal Orchha", "issue": "OK — real heritage hotel overlooking Betwa + cenotaphs"},
+    "replacement": {
+      "name": "Amar Mahal",
+      "tier": "luxury",
+      "tagline": "Palace-style heritage hotel overlooking the Betwa river and the 14 Bundela cenotaphs — the terrace at sunset with the Chaturbhuj shikhara silhouetted against orange sky is Orchha's defining image. Tripadvisor 977 reviews.",
+      "price_band": "₹₹₹",
+      "address": "Behind Cenotaphs, Betwa Riverside, Orchha 472246, Madhya Pradesh",
+      "book_url": "https://www.amarmahal.com/",
+      "sources": [
+        "https://www.amarmahal.com/",
+        "https://www.tripadvisor.com/Hotels-g319728-Orchha_Tikamgarh_District_Madhya_Pradesh-Hotels.html"
+      ]
+    }
+  },
+  {
+    "destination_id": "orchha",
+    "slot": "value",
+    "verdict": "replace",
+    "existing": {"name": "MP Tourism Sheesh Mahal (inside Orchha Fort)", "issue": "OK as a property (real, atmospheric, inside-fort), but mispriced as 'value' at ₹5-15k — Sheesh Mahal sits at ₹3-7k typically and the actual MPT value pick at Orchha is MPT Betwa Retreat (₹2-4k, Tripadvisor 4.6/5 across 730 reviews, higher-rated than Sheesh Mahal)."},
+    "replacement": {
+      "name": "MPT Betwa Retreat",
+      "tier": "comfort",
+      "tagline": "MP Tourism's Betwa-side property — Tripadvisor 4.6/5 across 730 reviews (higher than Sheesh Mahal). Cottages and AC tents on a riverside garden, multi-cuisine restaurant. Quieter than the inside-fort property; the MPT value pick.",
+      "price_band": "₹₹",
+      "address": "Betwa River bank, Orchha 472246, Madhya Pradesh",
+      "book_url": "https://mpstdc.com/",
+      "sources": [
+        "https://mpstdc.com/",
+        "https://www.tripadvisor.com/Hotels-g319728-Orchha_Tikamgarh_District_Madhya_Pradesh-Hotels.html"
+      ]
+    }
+  },
+  {
+    "destination_id": "orchha",
+    "slot": "location",
+    "verdict": "replace",
+    "existing": {"name": "Bundela Context", "issue": "fabricated — 'Bundela Context' as a boutique guesthouse near Raja Mahal/Jahangir Mahal is not verifiable on Tripadvisor, Booking, MMT. Listicle ghost. Replace with MPT Sheesh Mahal — the only hotel actually INSIDE the fort complex, walking distance to Raja Mahal, Jahangir Mahal and the cenotaphs."},
+    "replacement": {
+      "name": "MPT Sheesh Mahal (inside Orchha Fort)",
+      "tier": "luxury",
+      "tagline": "MP Tourism's property INSIDE the Bundela fort complex — Tripadvisor 4.2/5 across 379 reviews. Basic rooms but you sleep within the same fortress walls where the Bundela kings did, with Jahangir Mahal a short walk. The most atmospheric hotel location in MP.",
+      "price_band": "₹₹₹",
+      "address": "Inside Orchha Fort, Orchha 472246, Madhya Pradesh",
+      "book_url": "https://mpstdc.com/accommodation/Orchha/MPT-Sheesh-Mahal-Orchha",
+      "sources": [
+        "https://mpstdc.com/accommodation/Orchha/MPT-Sheesh-Mahal-Orchha",
+        "https://www.tripadvisor.com/Hotels-g319728-Orchha_Tikamgarh_District_Madhya_Pradesh-Hotels.html"
+      ]
+    }
+  },
+  {
+    "destination_id": "orchha",
+    "slot": "xfactor",
+    "verdict": "replace",
+    "existing": {"name": "Betwa Riverside Camps", "issue": "fabricated — 'Betwa Riverside Camps' as tent accommodation with bonfire dinners is not verifiable as a single property on Tripadvisor, MMT, or Booking. The closest real Orchha tent operation is MPT Betwa Retreat (cottages + AC tents) which is already in the value slot. Replace xfactor with Bundelkhand Riverside — the largest mid-luxury riverside property with the pool."},
+    "replacement": {
+      "name": "Bundelkhand Riverside",
+      "tier": "comfort",
+      "tagline": "Riverside heritage-style 4-star with 38 rooms, landscaped gardens, outdoor pool, and a terrace facing the Betwa. Tripadvisor 558 reviews — the mid-luxury banquet-friendly Orchha property; book the river-facing rooms.",
+      "price_band": "₹₹₹",
+      "address": "Betwa River, near old palace, Orchha 472246, Madhya Pradesh",
+      "book_url": "https://www.bundelkhandriverside.com/",
+      "sources": [
+        "https://www.bundelkhandriverside.com/",
+        "https://www.tripadvisor.com/Hotels-g319728-Orchha_Tikamgarh_District_Madhya_Pradesh-Hotels.html"
+      ]
+    }
+  }
+]

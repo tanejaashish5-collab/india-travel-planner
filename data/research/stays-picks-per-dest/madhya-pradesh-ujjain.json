@@ -1,0 +1,76 @@
+[
+  {
+    "destination_id": "ujjain",
+    "slot": "experience",
+    "verdict": "replace",
+    "existing": {"name": "Radisson Blu Ujjain", "issue": "fabricated/premature — 'Radisson Blu Ujjain' does not exist. Radisson Hotel Group signed a 150-room 'Radisson Hotel Ujjain' (not Blu) in 2023, expected to open Q1 2026. Likely cross-dest confusion with Radisson Blu Indore (real). Replace with Anjushree — the verified Tripadvisor #1 of Ujjain hotels."},
+    "replacement": {
+      "name": "Anjushree Hotel",
+      "tier": "luxury",
+      "tagline": "Tripadvisor #1 Ujjain hotel — 4.7/5 across 1,163 reviews. The city's most reliable 4-star with pool, spa, gym and three restaurants. 5 km from Mahakaleshwar Jyotirlinga + Ujjain railway station. The default non-pilgrim stay.",
+      "price_band": "₹₹₹",
+      "address": "72 Indore Road, Goyala Khurd, Ujjain 456010, Madhya Pradesh",
+      "book_url": "https://anjushree.com/",
+      "sources": [
+        "https://anjushree.com/",
+        "https://www.tripadvisor.com/Hotel_Review-g679024-d7807133-Reviews-Anjushree-Ujjain.html",
+        "https://www.tripadvisor.in/Hotels-g679024-Ujjain_Ujjain_District_Madhya_Pradesh-Hotels.html"
+      ]
+    }
+  },
+  {
+    "destination_id": "ujjain",
+    "slot": "value",
+    "verdict": "replace",
+    "existing": {"name": "Hotel Shiva Vilas", "issue": "verify — 'Hotel Shiva Vilas' as a property within walking distance of Kshipra ghats + temple zone is not verifiable as a single named property on Tripadvisor's Ujjain top-30. Likely template ghost. Replace with Hotel Imperial Grand — verified at 5 min from Mahakaleshwar."},
+    "replacement": {
+      "name": "Hotel Imperial Grand",
+      "tier": "comfort",
+      "tagline": "Tripadvisor 4.3/5 across 180 reviews — central Ujjain mid-range, 5 min drive to Mahakaleshwar. In-house restaurant, free parking, business meeting room. The honest mid-range when Anjushree is full.",
+      "price_band": "₹₹",
+      "address": "Central business district, Ujjain 456010, Madhya Pradesh",
+      "book_url": "https://hotelimperialujjain.com/",
+      "sources": [
+        "https://hotelimperialujjain.com/",
+        "https://www.expedia.com/Ujjain-Hotels-Hotel-Imperial.h36364344.Hotel-Information",
+        "https://www.tripadvisor.in/Hotels-g679024-Ujjain_Ujjain_District_Madhya_Pradesh-Hotels.html"
+      ]
+    }
+  },
+  {
+    "destination_id": "ujjain",
+    "slot": "location",
+    "verdict": "replace",
+    "existing": {"name": "Hotel Ashoka", "issue": "verify — generic 'Hotel Ashoka' across from Mahakaleshwar is not verifiable as a single named property on Tripadvisor. The actual closest-to-temple budget pilgrim stay is Shri Mahakaleshwar Bhakta Niwas (the temple trust's official accommodation). For paid mid-range, Hotel Kalpana Palace + Hotel Abika Elite are the walking-distance verified options."},
+    "replacement": {
+      "name": "Shri Mahakaleshwar Bhakta Niwas",
+      "tier": "budget",
+      "tagline": "Mahakaleshwar Temple Management Committee's official pilgrim housing — built by the trust on land donated to Madhav Seva Trust. 2/3/4/7/10-bed rooms + deluxe doubles, on-site veg canteen, RO water. The temple-trust-priced lowest-friction stay; book direct.",
+      "price_band": "₹",
+      "address": "Adjacent to Shri Mahakaleshwar Temple, Ujjain 456006, Madhya Pradesh",
+      "book_url": "https://shrimahakaleshwarbhaktaniwas.in/",
+      "sources": [
+        "https://shrimahakaleshwarbhaktaniwas.in/",
+        "https://www.tripadvisor.com/Hotel_Review-g679024-d13131627-Reviews-Shri_Mahakaleshwar_Bhakta_Niwas-Ujjain.html"
+      ]
+    }
+  },
+  {
+    "destination_id": "ujjain",
+    "slot": "xfactor",
+    "verdict": "replace",
+    "existing": {"name": null, "issue": "missing — Ujjain baseline only has 3 picks (experience/value/location), no xfactor. Add Rudraksh Club & Resort, the Shipra river-side resort with pool and the only river-view property in town."},
+    "replacement": {
+      "name": "Rudraksh Club & Resort",
+      "tier": "boutique",
+      "tagline": "Shipra river-side resort with pool and club facilities — Tripadvisor 4.7/5 across 537 reviews. The rare river-view configuration in Ujjain; the leisure-and-pilgrimage hybrid pick.",
+      "price_band": "₹₹₹",
+      "address": "Shipra Riverside, Ujjain 456010, Madhya Pradesh",
+      "book_url": "https://www.rudrakshclubresort.com/",
+      "sources": [
+        "https://www.rudrakshclubresort.com/",
+        "https://www.tripadvisor.in/Hotels-g679024-Ujjain_Ujjain_District_Madhya_Pradesh-Hotels.html"
+      ]
+    }
+  }
+]

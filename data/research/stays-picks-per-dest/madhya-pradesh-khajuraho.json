@@ -1,0 +1,74 @@
+[
+  {
+    "destination_id": "khajuraho",
+    "slot": "experience",
+    "verdict": "replace",
+    "existing": {"name": "Hotel Chandela, Khajuraho (A Taj Leisure Hotel)", "issue": "OK but mis-tiered — Hotel Chandela is real Taj Leisure 11-acre property, but the city's #1 luxury experience is The Lalit Temple View (Tripadvisor #1 of 30+, 4.7/5 across 1,952 reviews, directly opposite the Western Group). Replace to anchor on Lalit; Chandela stays in the stay-row as a strong alternative."},
+    "replacement": {
+      "name": "The Lalit Temple View Khajuraho",
+      "tier": "luxury",
+      "tagline": "Tripadvisor #1 of all Khajuraho hotels — 4.7/5 across 1,952 reviews. Lalit Group's flagship 5-star directly opposite the Western Group temple complex. Multiple temple-view rooms, outdoor pool, full-service spa.",
+      "price_band": "₹₹₹₹",
+      "address": "Opposite Western Group of Temples, Khajuraho 471606, Madhya Pradesh",
+      "book_url": "https://www.thelalit.com/the-lalit-temple-view-khajuraho/",
+      "sources": [
+        "https://www.thelalit.com/the-lalit-temple-view-khajuraho/",
+        "https://www.tripadvisor.com/Hotels-g297647-Khajuraho_Chhatarpur_District_Madhya_Pradesh-Hotels.html"
+      ]
+    }
+  },
+  {
+    "destination_id": "khajuraho",
+    "slot": "value",
+    "verdict": "replace",
+    "existing": {"name": "Radisson Jass Khajuraho", "issue": "duplicate — Radisson Jass appears in both 'location' AND 'value' slots in the existing data. Resolve by keeping Radisson Jass at the 'location' slot and replacing 'value' with MPT Jhankar Khajuraho, the verified state-tourism mid-range property."},
+    "replacement": {
+      "name": "MPT Jhankar Khajuraho",
+      "tier": "comfort",
+      "tagline": "MP Tourism's Khajuraho property — Tripadvisor 4.2/5 across 67 reviews. Cottages and AC rooms with multi-cuisine restaurant, walking distance to the Western Group complex. Honest state-tourism mid-range.",
+      "price_band": "₹₹",
+      "address": "Jhankar Road, near Western Group of Temples, Khajuraho 471606",
+      "book_url": "https://www.mptourism.com/",
+      "sources": [
+        "https://www.mptourism.com/",
+        "https://www.tripadvisor.com/Hotels-g297647-Khajuraho_Chhatarpur_District_Madhya_Pradesh-Hotels.html"
+      ]
+    }
+  },
+  {
+    "destination_id": "khajuraho",
+    "slot": "location",
+    "verdict": "keep_existing",
+    "existing": {"name": "Radisson Jass Khajuraho", "issue": "OK — 4-star modern property on Bypass Road with walking proximity to temples"},
+    "replacement": {
+      "name": "Radisson Hotel Jass Khajuraho",
+      "tier": "comfort",
+      "tagline": "Tripadvisor 4.1/5 across 1,561 reviews — Radisson's modern 4-star with pool, multi-cuisine restaurant, and walking proximity to the Western Group. 15% cheaper than Lalit/Chandela for contemporary-over-heritage travellers.",
+      "price_band": "₹₹₹",
+      "address": "Bypass Road, near temples, Khajuraho 471606, Madhya Pradesh",
+      "book_url": "https://www.radissonhotels.com/en-us/hotels/radisson-khajuraho",
+      "sources": [
+        "https://www.radissonhotels.com/en-us/hotels/radisson-khajuraho",
+        "https://www.tripadvisor.com/Hotels-g297647-Khajuraho_Chhatarpur_District_Madhya_Pradesh-Hotels.html"
+      ]
+    }
+  },
+  {
+    "destination_id": "khajuraho",
+    "slot": "xfactor",
+    "verdict": "replace",
+    "existing": {"name": "Bamboo Retreat, Khajuraho", "issue": "fabricated — 'Bamboo Retreat' described as 'handmade cottages 8km north of town with organic farm + pottery workshops' is not verifiable on Tripadvisor, Booking, MMT. Listicle ghost. Replace with Syna Heritage Hotel — the real Khajuraho boutique-heritage near the Jain (Eastern) Group of Temples."},
+    "replacement": {
+      "name": "Syna Heritage Hotel",
+      "tier": "boutique",
+      "tagline": "Heritage-styled boutique near the Eastern (Jain) Group of Temples — Tripadvisor 4.3/5 across 243 reviews. Smaller and quieter than the Western-Group cluster, with a courtyard pool. The boutique alternative for couples avoiding the bus crowds.",
+      "price_band": "₹₹₹",
+      "address": "Jain Temples Road, Khajuraho 471606, Madhya Pradesh",
+      "book_url": "https://www.synahotels.com/",
+      "sources": [
+        "https://www.synahotels.com/",
+        "https://www.tripadvisor.com/Hotels-g297647-Khajuraho_Chhatarpur_District_Madhya_Pradesh-Hotels.html"
+      ]
+    }
+  }
+]

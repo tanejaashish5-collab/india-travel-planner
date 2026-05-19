@@ -1,0 +1,86 @@
+[
+  {
+    "destination_id": "bhopal",
+    "name": "Jehan Numa Palace Hotel",
+    "type": "heritage-hotel",
+    "location": "157 Shamla Hills, Bhopal",
+    "why_special": "1890s Scindia-era palace on Shamla Hills built by General Obaidullah Khan, restored as a heritage hotel by his descendants. Tripadvisor #6 of 161 Bhopal hotels — colonial-British, Italian-Renaissance and classical-Greek architecture in a single courtyard property. Four restaurants and two bars; the in-house Under-the-Mango-Tree and Shahnama dining are the heritage anchors.",
+    "price_range": "₹₹₹₹",
+    "contact": {"phone": "+91-755-423-5100", "website": "https://www.jehannuma.com/palace-bhopal/", "email": "reservation@jnph.in"},
+    "best_for": ["heritage", "couples", "families"],
+    "verified": true,
+    "tags": ["heritage-hotels-of-india", "Shamla-Hills", "1890s-palace", "Under-the-Mango-Tree", "Scindia-era"]
+  },
+  {
+    "destination_id": "bhopal",
+    "name": "WelcomHeritage Noor-Us-Sabah Palace",
+    "type": "heritage-hotel",
+    "location": "V.I.P. Road, Koh-e-Fiza, Bhopal",
+    "why_special": "13-acre 20th-century palace overlooking Upper Lake, managed by ITC's WelcomHeritage. 57 rooms on a hilltop with lake-view breakfast lawn — the second heritage anchor alongside Jehan Numa Palace. Built for Nawab Hamidullah Khan's daughter.",
+    "price_range": "₹₹₹",
+    "contact": {"phone": "+91-755-422-3333", "website": "https://www.noorussabahpalace.com/", "email": null},
+    "best_for": ["heritage", "couples", "business"],
+    "verified": true,
+    "tags": ["WelcomHeritage", "ITC", "Upper-Lake-view", "13-acre", "57-rooms", "Nawab-era"]
+  },
+  {
+    "destination_id": "bhopal",
+    "name": "Taj Lakefront Bhopal",
+    "type": "business-hotel",
+    "location": "Shyamla Hills, near Upper Lake, Bhopal",
+    "why_special": "Taj's 5-star eco-certified Bhopal property on Shyamla Hills with Upper Lake views — the city's polished modern luxury option. Conference space, two restaurants, pool. The reliable 5-star choice for business + family travel where heritage isn't the priority.",
+    "price_range": "₹₹₹₹",
+    "contact": {"phone": "+91-755-666-1234", "website": "https://www.tajhotels.com/en-in/hotels/taj-lakefront-bhopal", "email": null},
+    "best_for": ["business", "families", "couples"],
+    "verified": true,
+    "tags": ["Taj", "Shyamla-Hills", "Upper-Lake-view", "5-star", "eco-certified"]
+  },
+  {
+    "destination_id": "bhopal",
+    "name": "Courtyard by Marriott Bhopal",
+    "type": "business-hotel",
+    "location": "DB City Mall area, Arera Hills, Bhopal",
+    "why_special": "Marriott's central Bhopal property next to DB City Mall — the airport-friendly 5-star with a polished pool deck, all-day-dining MoMo Café, and the most predictable 4-5 star service in the city. The default business pick.",
+    "price_range": "₹₹₹",
+    "contact": {"phone": "+91-755-661-1234", "website": "https://www.marriott.com/en-us/hotels/bhocy-courtyard-bhopal/overview/", "email": null},
+    "best_for": ["business", "families", "couples"],
+    "verified": true,
+    "tags": ["Marriott", "Arera-Hills", "DB-City-Mall", "all-day-dining", "central"]
+  },
+  {
+    "destination_id": "bhopal",
+    "name": "Jehan Numa Retreat",
+    "type": "boutique",
+    "location": "Van Vihar National Park edge, Bhopal",
+    "why_special": "Jehan Numa Group's second Bhopal property — a low-density boutique retreat at the edge of Van Vihar National Park. Cottages around landscaped gardens, more nature than heritage. The choice for couples who want the Jehan Numa pedigree without the Palace's city-centre traffic.",
+    "price_range": "₹₹₹",
+    "contact": {"phone": "+91-755-423-5100", "website": "https://www.jehannuma.com/jehannuma-retreat-bhopal/", "email": "reservation@jnph.in"},
+    "best_for": ["couples", "wildlife-adjacent", "families"],
+    "verified": true,
+    "tags": ["Jehan-Numa-group", "Van-Vihar-edge", "cottage-retreat", "boutique"]
+  },
+  {
+    "destination_id": "bhopal",
+    "name": "Sayaji Hotel Bhopal",
+    "type": "business-hotel",
+    "location": "Hoshangabad Road, Bhopal",
+    "why_special": "Sayaji Group's Hoshangabad Road property — a reliable mid-luxury 4-star with pool, multi-cuisine restaurants, and central placement near the new-Bhopal corporate corridor. The mid-range business default when Courtyard and Taj are full.",
+    "price_range": "₹₹₹",
+    "contact": {"phone": "+91-755-666-3000", "website": "https://www.sayajihotels.com/sayaji-bhopal", "email": null},
+    "best_for": ["business", "families"],
+    "verified": true,
+    "tags": ["Sayaji", "Hoshangabad-Road", "pool", "4-star", "mid-luxury"]
+  },
+  {
+    "destination_id": "bhopal",
+    "name": "Hotel Amaltas Inn",
+    "type": "business-hotel",
+    "location": "Zone-I Maharana Pratap Nagar, Bhopal",
+    "why_special": "Long-standing mid-range Bhopal hotel near MP Nagar, the city's commercial spine. Reliable rooms, an in-house multi-cuisine restaurant, walking distance to the railway station. The honest 3-star that Bhopal travellers return to.",
+    "price_range": "₹₹",
+    "contact": {"phone": "+91-755-255-4501", "website": "https://www.hotelamaltasinn.com/", "email": null},
+    "best_for": ["business", "solo", "value"],
+    "verified": true,
+    "tags": ["Maharana-Pratap-Nagar", "MP-Nagar", "3-star", "central", "value"]
+  }
+]

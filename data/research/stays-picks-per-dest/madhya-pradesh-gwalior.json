@@ -1,0 +1,75 @@
+[
+  {
+    "destination_id": "gwalior",
+    "slot": "experience",
+    "verdict": "keep_existing",
+    "existing": {"name": "Taj Usha Kiran Palace, Gwalior", "issue": "OK — fully verified, 1902 Scindia palace, Tripadvisor 4.7/5 (1,862 reviews)"},
+    "replacement": {
+      "name": "Taj Usha Kiran Palace, Gwalior",
+      "tier": "luxury",
+      "tagline": "1902 Scindia-dynasty palace converted to a Taj heritage hotel — Tripadvisor 4.7/5 across 1,862 reviews. Two outdoor pools, royal-era chandeliers, Jiva Spa. Walking distance to Jai Vilas Palace.",
+      "price_band": "₹₹₹₹",
+      "address": "Jayendraganj, Lashkar, Gwalior 474009, Madhya Pradesh",
+      "book_url": "https://www.tajhotels.com/en-in/hotels/taj-usha-kiran-palace-gwalior",
+      "sources": [
+        "https://www.tajhotels.com/en-in/hotels/taj-usha-kiran-palace-gwalior",
+        "https://www.tripadvisor.com/Hotel_Review-g667810-d542600-Reviews-Taj_Usha_Kiran_Palace_Gwalior-Gwalior_Gwalior_District_Madhya_Pradesh.html",
+        "https://www.expedia.com/Gwalior-Hotels-Taj-Usha-Kiran-Palace-Hotel.h45526.Hotel-Information"
+      ]
+    }
+  },
+  {
+    "destination_id": "gwalior",
+    "slot": "value",
+    "verdict": "replace",
+    "existing": {"name": "Hotel Tansen", "issue": "name-confusion — the real property is 'MPT Tansen Residency' (MP Tourism, 4.6/5 on Tripadvisor with 509 reviews), not 'Hotel Tansen'. Standardize the name."},
+    "replacement": {
+      "name": "MPT Tansen Residency",
+      "tier": "comfort",
+      "tagline": "MP Tourism's flagship Gwalior property — Tripadvisor 4.6/5 across 509 reviews, Travelers' Choice. Cottages and AC rooms in landscaped gardens, multi-cuisine restaurant, fort-side approach.",
+      "price_band": "₹₹",
+      "address": "6A Gandhi Road, Gwalior 474002, Madhya Pradesh",
+      "book_url": "https://www.mptourism.com/",
+      "sources": [
+        "https://www.mptourism.com/",
+        "https://www.tripadvisor.com/Hotels-g667810-Gwalior_Gwalior_District_Madhya_Pradesh-Hotels.html"
+      ]
+    }
+  },
+  {
+    "destination_id": "gwalior",
+    "slot": "location",
+    "verdict": "replace",
+    "existing": {"name": "MPTDC Gwalior (Tansen House)", "issue": "name-confusion — same as the value pick. 'MPTDC Tansen House' is the same property as 'Hotel Tansen' / MPT Tansen Residency, duplicated across two slots. The actual 'within-walking-of-the-fort' Gwalior pick should be a different property — Neemrana's Deo Bagh sits closest to Jai Vilas + Tansen Tomb."},
+    "replacement": {
+      "name": "Neemrana's Deo Bagh",
+      "tier": "luxury",
+      "tagline": "17th-century Maratha noble's garden estate near the Tomb of Tansen and Mohammed Ghaus — 5 min to Jai Vilas Palace. Tripadvisor 4.6/5 across 832 reviews, Travelers' Choice. Cenotaphs, gardens, summer-pavilion dining hall.",
+      "price_band": "₹₹₹",
+      "address": "Old Cantt, Murar, Gwalior 474006, Madhya Pradesh",
+      "book_url": "https://www.neemranahotels.com/",
+      "sources": [
+        "https://www.neemranahotels.com/",
+        "https://www.tripadvisor.com/Hotels-g667810-Gwalior_Gwalior_District_Madhya_Pradesh-Hotels.html"
+      ]
+    }
+  },
+  {
+    "destination_id": "gwalior",
+    "slot": "xfactor",
+    "verdict": "replace",
+    "existing": {"name": "Gravity Hotel & Spa", "issue": "fabricated — 'Gravity Hotel & Spa' described as a 'converted haveli with rooftop views of the floodlit fort and a wellness spa' is not verifiable on Tripadvisor, Booking, or MMT for Gwalior. Listicle ghost. The actual Gwalior xfactor is Park Inn by Radisson — #1 of 161 Gwalior hotels (4.8/5, 1,078 reviews)."},
+    "replacement": {
+      "name": "Park Inn by Radisson Gwalior",
+      "tier": "comfort",
+      "tagline": "Tripadvisor #1 of all Gwalior hotels — 4.8/5 across 1,078 reviews. Radisson Group's polished mid-luxury 4-star at City Centre with pool, all-day dining and the city's most consistent service reviews.",
+      "price_band": "₹₹₹",
+      "address": "City Centre, Gwalior 474011, Madhya Pradesh",
+      "book_url": "https://www.radissonhotels.com/en-us/hotels/park-inn-gwalior",
+      "sources": [
+        "https://www.radissonhotels.com/en-us/hotels/park-inn-gwalior",
+        "https://www.tripadvisor.com/Hotels-g667810-Gwalior_Gwalior_District_Madhya_Pradesh-Hotels.html"
+      ]
+    }
+  }
+]

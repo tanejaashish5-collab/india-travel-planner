@@ -1,0 +1,75 @@
+[
+  {
+    "destination_id": "bandhavgarh",
+    "slot": "experience",
+    "verdict": "keep_existing",
+    "existing": {"name": "Taj Safaris Bandhavgarh", "issue": "OK — refers to Mahua Kothi, Taj Safari's flagship Bandhavgarh property. Tighten name."},
+    "replacement": {
+      "name": "Mahua Kothi (Taj Safari)",
+      "tier": "luxury",
+      "tagline": "Taj Safari's 12-kutiya flagship on a 45-acre private forest at Tala gate — Baiga-tribal-styled mud cottages, interactive kitchen, butler service. The country's most decorated tiger-safari address.",
+      "price_band": "₹₹₹₹",
+      "address": "Village Tala, Tehsil Manpur, Bandhavgarh National Park, Umaria 484661, Madhya Pradesh",
+      "book_url": "https://www.tajhotels.com/en-in/hotels/mahua-kothi-bandhavgarh-national-park",
+      "sources": [
+        "https://www.tajhotels.com/en-in/hotels/mahua-kothi-bandhavgarh-national-park",
+        "https://www.tripadvisor.com/Hotel_Review-g2424471-d734722-Reviews-Mahua_Kothi_A_Taj_Safari_Bandhavgarh_National_Park.html",
+        "https://www.andbeyond.com/places-to-stay/asia/india/central-india/bandhavgarh-national-park/mahua-kothi-jungle-lodge/"
+      ]
+    }
+  },
+  {
+    "destination_id": "bandhavgarh",
+    "slot": "value",
+    "verdict": "replace",
+    "existing": {"name": "Bandhavgarh Jungle Lodge", "issue": "OK as a property name but the existing source URLs point to Samode Safari Lodge (luxury, not value tier) — name + source mismatch. Re-anchor the value slot to MPT White Tiger Forest Lodge."},
+    "replacement": {
+      "name": "MPT White Tiger Forest Lodge (Tala)",
+      "tier": "comfort",
+      "tagline": "MP Tourism's flagship Tala property — Tripadvisor 4.6/5 across 424 reviews, ranked #1 best value at Bandhavgarh. Cottages and AC rooms in landscaped grounds, walking distance to the gate. Books out 60-90 days ahead Nov-Mar.",
+      "price_band": "₹₹",
+      "address": "MPT White Tiger Forest Lodge, Tala, Bandhavgarh National Park, Umaria 484661",
+      "book_url": "https://www.mptourism.com/",
+      "sources": [
+        "https://www.mptourism.com/",
+        "https://www.tripadvisor.com/Hotels-g679039-c3-zff17-Bandhavgarh_National_Park_Umaria_District_Madhya_Pradesh-Hotels.html"
+      ]
+    }
+  },
+  {
+    "destination_id": "bandhavgarh",
+    "slot": "location",
+    "verdict": "replace",
+    "existing": {"name": "The Baagh", "issue": "verify — 'The Baagh' is listed in some Bandhavgarh hotel directories but not strongly verifiable as a single, currently-operating property on Tripadvisor/Booking. Replace with Syna Tiger Resort — the closest mid-tier lodge to Tala Gate (900m)."},
+    "replacement": {
+      "name": "Syna Tiger Resort",
+      "tier": "comfort",
+      "tagline": "900m from Tala Gate — the closest mid-tier lodge to the entrance. Tripadvisor 4.8/5 across 546 reviews, ranked #2 best value. Cottages and a pool for cooling off after morning drives.",
+      "price_band": "₹₹₹",
+      "address": "Tala Village, Bandhavgarh National Park, Umaria 484661, Madhya Pradesh",
+      "book_url": "https://www.synatigerresort.com/",
+      "sources": [
+        "https://www.synatigerresort.com/",
+        "https://www.tripadvisor.com/Hotels-g679039-c3-zff17-Bandhavgarh_National_Park_Umaria_District_Madhya_Pradesh-Hotels.html"
+      ]
+    }
+  },
+  {
+    "destination_id": "bandhavgarh",
+    "slot": "xfactor",
+    "verdict": "replace",
+    "existing": {"name": "Chakradhara Wellness Retreat", "issue": "fabricated — 'Chakradhara Wellness Retreat' (wellness farmstay with safari) is not verifiable on Booking, MMT, Tripadvisor or any Bandhavgarh hotel directory. Listicle ghost. Replace with Treehouse Hideaway — the actual unique-stay xfactor at Bandhavgarh."},
+    "replacement": {
+      "name": "Treehouse Hideaway",
+      "tier": "luxury",
+      "tagline": "Six handcrafted treehouses on a 21-acre forest pocket, 10 min from Tala Gate — ranked among the world's top 5 treehouses by Observer UK. Dining hall wraps a century-old Mahua tree. Pugdundee Safaris.",
+      "price_band": "₹₹₹₹",
+      "address": "Village Bijhariya, near Tala Gate, Bandhavgarh National Park, Umaria 484661",
+      "book_url": "https://www.treehousehideaway.com/",
+      "sources": [
+        "https://www.treehousehideaway.com/",
+        "https://www.tripadvisor.com/Hotels-g679039-c3-zff17-Bandhavgarh_National_Park_Umaria_District_Madhya_Pradesh-Hotels.html"
+      ]
+    }
+  }
+]

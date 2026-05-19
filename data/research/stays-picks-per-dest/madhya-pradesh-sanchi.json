@@ -1,0 +1,64 @@
+[
+  {
+    "destination_id": "sanchi",
+    "slot": "experience",
+    "verdict": "replace",
+    "existing": {"name": "Sanchi Central Hotel", "issue": "fabricated — 'Sanchi Central Hotel' described as Sanchi's most-established upscale heritage property with period rooms + MP cuisine is not verifiable on Tripadvisor, Booking, MMT for Sanchi village. Listicle ghost. Sanchi has no upscale heritage hotel — the village population is under 8,000 and the only formal mid-range accommodation is MPT Gateway Retreat."},
+    "replacement": {
+      "name": "MPT Gateway Retreat Sanchi",
+      "tier": "comfort",
+      "tagline": "MP Tourism's flagship Sanchi property — 500m from the Sanchi Stupa, the only proper sit-down accommodation in Sanchi village. AC rooms, multi-cuisine restaurant, pool, conference hall. Books out in advance for the November Sanchi Mahotsav.",
+      "price_band": "₹₹",
+      "address": "Vidisha-Bhopal Road, Sanchi, Raisen District 464661, Madhya Pradesh",
+      "book_url": "https://mpstdc.com/accommodation/Sanchi/MPT-Gateway-Retreat-Sanchi",
+      "sources": [
+        "https://mpstdc.com/accommodation/Sanchi/MPT-Gateway-Retreat-Sanchi",
+        "https://vidisha.nic.in/en/accommodation/mpt-gateway-retreat-sanchi/",
+        "https://www.tripadvisor.in/Hotel_Review-g776953-d1412185-Reviews-MPT_Gateway_Retreat-Sanchi.html"
+      ]
+    }
+  },
+  {
+    "destination_id": "sanchi",
+    "slot": "value",
+    "verdict": "replace",
+    "existing": {"name": "Ratnagiri Resort", "issue": "verify — 'Ratnagiri Resort' as a Sanchi budget-resort with veg restaurant + wifi is not verifiable on Tripadvisor/MMT/Booking. Likely confusion with Ratnagiri Hill (the actual Sanchi Stupa hill is at 5km from the village). Replace with The Utopia Resort, a verified Sanchi village mid-range."},
+    "replacement": {
+      "name": "The Utopia Resort Sanchi",
+      "tier": "comfort",
+      "tagline": "Newer mid-range resort in Sanchi village — among the top private hotels per MMT rankings. The polished alternative to MPT Gateway Retreat for families wanting more contemporary rooms.",
+      "price_band": "₹₹",
+      "address": "Sanchi Village, Raisen District 464661, Madhya Pradesh",
+      "book_url": "https://theutopiaresort.com/",
+      "sources": [
+        "https://theutopiaresort.com/",
+        "https://www.kayak.com/Sanchi-Hotels.64560.hotel.ksp"
+      ]
+    }
+  },
+  {
+    "destination_id": "sanchi",
+    "slot": "location",
+    "verdict": "replace",
+    "existing": {"name": "Vijay Palace Hotel", "issue": "fabricated — 'Vijay Palace Hotel' on the main bazaar approach to Sanchi Stupa with under-5-min walk to ASI gate is not verifiable on Tripadvisor / Booking / MMT for Sanchi. Listicle ghost. The actual closer-to-ASI-gate property is Hotel Sanchi Queen on Stupa Road, 5 min walk from the Great Stupa entrance."},
+    "replacement": {
+      "name": "Hotel Sanchi Queen",
+      "tier": "budget",
+      "tagline": "9-room hotel-and-restaurant on Stupa Road, 5 minutes walk from the Great Stupa entrance — closer to the monument than any MPT property except Gateway Retreat. All-day kitchen, walk-in fallback when MPT is full.",
+      "price_band": "₹₹",
+      "address": "Stupa Road, opposite Sanchi Post Office, Sanchi 464661, Madhya Pradesh",
+      "book_url": "https://www.tripadvisor.com/Hotel_Review-g776953-d24086471-Reviews-Hotel_Sanchi_Queen-Sanchi_Raisen_District_Madhya_Pradesh.html",
+      "sources": [
+        "https://www.tripadvisor.com/Hotel_Review-g776953-d24086471-Reviews-Hotel_Sanchi_Queen-Sanchi_Raisen_District_Madhya_Pradesh.html",
+        "https://www.hotels.com/ho3342713248/hotel-sanchi-queen-restaurant-sanchi-sanchi-india/"
+      ]
+    }
+  },
+  {
+    "destination_id": "sanchi",
+    "slot": "xfactor",
+    "verdict": "honest_scarcity",
+    "existing": {"name": "Lakshminarayan Temple Guesthouse (Sanchi Homestay Network)", "issue": "fabricated — 'Lakshminarayan Temple Guesthouse' as a Sanchi pilgrim-trust accommodation network is not verifiable. The Maha Bodhi Society of India has a vihara at Sanchi (Chethiyagiri Vihara) which holds the relics for public display, but it does NOT operate paid guest-accommodation. Honest scarcity for Sanchi xfactor — the village has thin tourism infrastructure with no unique-stay alternative beyond MPT + 1-2 private hotels + the Bhopal base option (45 km)."},
+    "replacement": null
+  }
+]

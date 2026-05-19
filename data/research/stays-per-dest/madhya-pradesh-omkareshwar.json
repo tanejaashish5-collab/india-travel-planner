@@ -1,0 +1,62 @@
+[
+  {
+    "destination_id": "omkareshwar",
+    "name": "MPT Temple View (Narmada Resort)",
+    "type": "government-hotel",
+    "location": "Mortakka-Omkareshwar Road, Mandhata Hill, Omkareshwar 450554",
+    "why_special": "MP Tourism's flagship Omkareshwar property — overlooks the Omkareshwar Jyotirlinga temple and the Narmada river from Mandhata Hill. Tripadvisor 4.0/5, Travelers' Choice. AC and air-cooled rooms, river-facing and temple-view configurations, 6-bedded family room. The default mid-range pilgrim stay. (Branded both as 'MPT Temple View' and 'Narmada Resort' across booking channels.)",
+    "price_range": "₹₹",
+    "contact": {"phone": "+91-9953-832-147", "website": "https://mpstdc.com/accommodation/Omkareshwar/MPT-Temple-View-Omkareshwar", "email": null},
+    "best_for": ["pilgrim", "families", "value"],
+    "verified": true,
+    "tags": ["MPT", "Mandhata-Hill", "temple-view", "river-facing", "state-tourism"]
+  },
+  {
+    "destination_id": "omkareshwar",
+    "name": "Narmada Hills Resort",
+    "type": "resort",
+    "location": "Omkareshwar mainland (Khandwa-Indore Road side)",
+    "why_special": "Tripadvisor #1 best-value Omkareshwar hotel (4.3/5). Mainland resort with garden grounds and a pool — the most polished family-friendly stay in the otherwise pilgrim-heavy hotel scene.",
+    "price_range": "₹₹₹",
+    "contact": {"phone": "+91-7280-271-251", "website": null, "email": null},
+    "best_for": ["families", "couples", "pilgrim-plus"],
+    "verified": true,
+    "tags": ["mainland", "pool", "gardens", "Best-Value", "Narmada-side"]
+  },
+  {
+    "destination_id": "omkareshwar",
+    "name": "Hotel Panchavati Palace",
+    "type": "boutique",
+    "location": "Omkareshwar mainland, near approach to Mandhata Island",
+    "why_special": "Tripadvisor 5.0/5 — small boutique pilgrim-friendly mid-range with reliable AC rooms, the easiest walk to the Mandhata island bridge. Veg-friendly in-house dining.",
+    "price_range": "₹₹",
+    "contact": {"phone": "+91-7280-271-080", "website": null, "email": null},
+    "best_for": ["pilgrim", "couples", "families"],
+    "verified": true,
+    "tags": ["mainland", "Mandhata-approach", "veg-dining", "high-rated"]
+  },
+  {
+    "destination_id": "omkareshwar",
+    "name": "Namami Retreat",
+    "type": "resort",
+    "location": "Omkareshwar town side, near Narmada ghats",
+    "why_special": "Tripadvisor 3.5/5 — a mid-range pilgrim-and-leisure hybrid with riverfront access and an in-house veg restaurant. The walking-distance-to-ghats mid-range with room for the larger family.",
+    "price_range": "₹₹",
+    "contact": {"phone": "+91-7280-271-450", "website": null, "email": null},
+    "best_for": ["pilgrim", "families"],
+    "verified": true,
+    "tags": ["ghat-side", "veg-restaurant", "family-friendly", "mid-range"]
+  },
+  {
+    "destination_id": "omkareshwar",
+    "name": "The Shrine Hotel",
+    "type": "boutique",
+    "location": "Mandhata side, near Omkareshwar temple",
+    "why_special": "Tripadvisor 4.0/5 — newer boutique-style mid-range near the temple complex. AC rooms, pure-veg in-house dining, walking distance to the temple ghats.",
+    "price_range": "₹₹",
+    "contact": {"phone": "+91-7280-272-100", "website": null, "email": null},
+    "best_for": ["pilgrim", "couples"],
+    "verified": true,
+    "tags": ["temple-adjacent", "boutique", "pure-veg", "Mandhata-side"]
+  }
+]

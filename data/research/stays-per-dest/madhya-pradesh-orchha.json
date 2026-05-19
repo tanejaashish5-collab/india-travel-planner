@@ -1,0 +1,74 @@
+[
+  {
+    "destination_id": "orchha",
+    "name": "Amar Mahal",
+    "type": "heritage-hotel",
+    "location": "Near Cenotaphs, Betwa Riverside, Orchha",
+    "why_special": "Palace-style heritage hotel overlooking the Betwa river and the 14 Bundela cenotaphs — Tripadvisor 3.7/5 across 977 reviews (lots of mixed feedback on service, but the location is unbeatable). The terrace at sunset with the Chaturbhuj shikhara on the horizon is Orchha's defining image.",
+    "price_range": "₹₹₹",
+    "contact": {"phone": "+91-7680-252-102", "website": "https://www.amarmahal.com/", "email": null},
+    "best_for": ["heritage", "couples", "photographers"],
+    "verified": true,
+    "tags": ["cenotaph-view", "Betwa-river", "palace-style", "terrace-dining"]
+  },
+  {
+    "destination_id": "orchha",
+    "name": "MPT Sheesh Mahal",
+    "type": "government-hotel",
+    "location": "Inside Orchha Fort complex, Orchha",
+    "why_special": "MP Tourism's flagship Orchha property INSIDE the Bundela fort complex — Tripadvisor 4.2/5 across 379 reviews. Basic rooms but you sleep within the same fortress walls where the Bundela kings did, with Jahangir Mahal a short walk and the Betwa visible from the courtyard. The most atmospheric hotel location in MP.",
+    "price_range": "₹₹₹",
+    "contact": {"phone": "+91-7680-252-624", "website": "https://mpstdc.com/accommodation/Orchha/MPT-Sheesh-Mahal-Orchha", "email": null},
+    "best_for": ["heritage", "couples", "history-buffs"],
+    "verified": true,
+    "tags": ["MPT", "inside-fort", "Bundela-royal-quarters", "Jahangir-Mahal-adjacent", "unique"]
+  },
+  {
+    "destination_id": "orchha",
+    "name": "MPT Betwa Retreat",
+    "type": "government-hotel",
+    "location": "Betwa river bank, Orchha",
+    "why_special": "MP Tourism's Betwa-side property — Tripadvisor 4.6/5 across 730 reviews. Cottages and AC tents on a riverside garden with a multi-cuisine restaurant. Quieter than Sheesh Mahal (which is inside the fort with foot-traffic), and rated higher. The MPT value pick for Orchha.",
+    "price_range": "₹₹",
+    "contact": {"phone": "+91-7680-252-618", "website": "https://mpstdc.com/", "email": null},
+    "best_for": ["heritage", "families", "value"],
+    "verified": true,
+    "tags": ["MPT", "Betwa-river", "cottages", "tents", "high-rated"]
+  },
+  {
+    "destination_id": "orchha",
+    "name": "Bundelkhand Riverside",
+    "type": "heritage-hotel",
+    "location": "Betwa River, near old palace, Orchha",
+    "why_special": "Tripadvisor 3.8/5 across 558 reviews — riverside heritage-style 4-star with 38 rooms, large landscaped gardens, outdoor pool, and a terrace facing the Betwa. The mid-luxury banquet/wedding-friendly Orchha property.",
+    "price_range": "₹₹₹",
+    "contact": {"phone": "+91-7680-252-612", "website": "https://www.bundelkhandriverside.com/", "email": null},
+    "best_for": ["families", "groups", "heritage"],
+    "verified": true,
+    "tags": ["Betwa-river", "38-rooms", "pool", "banquet", "heritage-style"]
+  },
+  {
+    "destination_id": "orchha",
+    "name": "Orchha Palace and Convention Centre",
+    "type": "business-hotel",
+    "location": "Central Orchha",
+    "why_special": "Tripadvisor 4.3/5 across 309 reviews — a 4-star with conference space, pool, and multi-cuisine dining at the centre of Orchha town. The mid-luxury convention-friendly pick for groups.",
+    "price_range": "₹₹₹",
+    "contact": {"phone": "+91-7680-252-621", "website": "https://www.orchhapalace.com/", "email": null},
+    "best_for": ["business", "groups", "families"],
+    "verified": true,
+    "tags": ["central", "convention-centre", "pool", "groups"]
+  },
+  {
+    "destination_id": "orchha",
+    "name": "Raj Vilas The Palace",
+    "type": "boutique",
+    "location": "Near Ram Raja Temple, Orchha",
+    "why_special": "Tripadvisor 4.8/5 across 259 reviews — boutique heritage-styled hotel with landscaped gardens near the Ram Raja Temple. Among the highest-rated mid-luxury options in town, smaller and more personal than Bundelkhand Riverside.",
+    "price_range": "₹₹₹",
+    "contact": {"phone": "+91-7680-252-150", "website": "https://www.rajvilasthepalace.com/", "email": null},
+    "best_for": ["couples", "heritage", "boutique"],
+    "verified": true,
+    "tags": ["boutique", "Ram-Raja-adjacent", "gardens", "4.8-rated"]
+  }
+]

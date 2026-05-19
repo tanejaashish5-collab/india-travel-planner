@@ -1,0 +1,74 @@
+[
+  {
+    "destination_id": "khajuraho",
+    "name": "The Lalit Temple View Khajuraho",
+    "type": "luxury-hotel",
+    "location": "Opposite Western Group of Temples, Khajuraho",
+    "why_special": "Tripadvisor #1 of Khajuraho hotels (4.7/5 across 1,952 reviews) — Lalit Group's flagship 5-star directly opposite the Western Group temple complex. Multiple temple-view rooms, outdoor pool, full-service spa. Walk to the Western Group in 5 min.",
+    "price_range": "₹₹₹₹",
+    "contact": {"phone": "+91-7686-272-510", "website": "https://www.thelalit.com/the-lalit-temple-view-khajuraho/", "email": null},
+    "best_for": ["heritage", "couples", "luxury"],
+    "verified": true,
+    "tags": ["Lalit", "temple-view", "Western-Group-adjacent", "5-star", "top-rated"]
+  },
+  {
+    "destination_id": "khajuraho",
+    "name": "Hotel Chandela, Khajuraho (Taj Leisure)",
+    "type": "heritage-hotel",
+    "location": "Airport Road, Khajuraho",
+    "why_special": "Tripadvisor 4.4/5 across 1,288 reviews — Taj Leisure's 11-acre landscaped property named after the Chandela dynasty. Outdoor pool, fitness centre, walking distance to the Western Temple Group (8 min). Long-running family + heritage favourite.",
+    "price_range": "₹₹₹₹",
+    "contact": {"phone": "+91-7686-272-355", "website": "https://www.tajhotels.com/en-in/hotels/hotel-chandela-khajuraho", "email": null},
+    "best_for": ["heritage", "families", "couples"],
+    "verified": true,
+    "tags": ["Taj-Leisure", "11-acre-garden", "Western-Group-walk", "Chandela-dynasty", "pool"]
+  },
+  {
+    "destination_id": "khajuraho",
+    "name": "Radisson Hotel Jass Khajuraho",
+    "type": "business-hotel",
+    "location": "Bypass Road, near temples, Khajuraho",
+    "why_special": "Tripadvisor 4.1/5 across 1,561 reviews — Radisson's modern 4-star Khajuraho property. Pool, multi-cuisine restaurant, conference space. 15% cheaper than Lalit/Chandela with similar walking proximity to the Western Group. Best for contemporary-over-heritage travellers.",
+    "price_range": "₹₹₹",
+    "contact": {"phone": "+91-7686-272-344", "website": "https://www.radissonhotels.com/en-us/hotels/radisson-khajuraho", "email": null},
+    "best_for": ["business", "families", "couples"],
+    "verified": true,
+    "tags": ["Radisson", "Bypass-Road", "4-star", "pool", "modern"]
+  },
+  {
+    "destination_id": "khajuraho",
+    "name": "Ramada by Wyndham Khajuraho",
+    "type": "business-hotel",
+    "location": "Airport Road, Khajuraho",
+    "why_special": "Tripadvisor 4.2/5 across 1,480 reviews — Wyndham Group's Khajuraho 4-star on Airport Road. Outdoor pool, multi-cuisine, the largest banquet space in town. Strong group/wedding pick.",
+    "price_range": "₹₹₹",
+    "contact": {"phone": "+91-7686-272-302", "website": "https://www.wyndhamhotels.com/ramada/khajuraho-india/ramada-khajuraho/overview", "email": null},
+    "best_for": ["business", "families", "groups"],
+    "verified": true,
+    "tags": ["Wyndham", "Ramada", "Airport-Road", "banquet", "pool"]
+  },
+  {
+    "destination_id": "khajuraho",
+    "name": "Syna Heritage Hotel",
+    "type": "heritage-hotel",
+    "location": "Jain Temples Road, Khajuraho",
+    "why_special": "Tripadvisor 4.3/5 across 243 reviews — a heritage-styled boutique near the Eastern (Jain) Group of Temples. Smaller and quieter than the Lalit/Chandela cluster, with a courtyard pool. The boutique-heritage alternative for couples avoiding the Western-Group bus crowds.",
+    "price_range": "₹₹₹",
+    "contact": {"phone": "+91-7686-272-100", "website": "https://www.synahotels.com/", "email": null},
+    "best_for": ["heritage", "couples", "boutique"],
+    "verified": true,
+    "tags": ["Jain-Group-adjacent", "boutique", "courtyard-pool", "Eastern-Group"]
+  },
+  {
+    "destination_id": "khajuraho",
+    "name": "MPT Jhankar Khajuraho",
+    "type": "government-hotel",
+    "location": "Near Western Group, Khajuraho",
+    "why_special": "MP Tourism's Khajuraho property — Tripadvisor 4.2/5 across 67 reviews. Cottages and AC rooms with a multi-cuisine restaurant, walking distance to the Western Group temple complex. Standard MPT mid-range value pick.",
+    "price_range": "₹₹",
+    "contact": {"phone": "+91-7686-274-063", "website": "https://www.mptourism.com/", "email": null},
+    "best_for": ["heritage", "families", "value"],
+    "verified": true,
+    "tags": ["MPT", "Western-Group-walk", "state-tourism", "value"]
+  }
+]

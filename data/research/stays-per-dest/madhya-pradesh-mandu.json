@@ -1,0 +1,50 @@
+[
+  {
+    "destination_id": "mandu",
+    "name": "MPT Malwa Resort",
+    "type": "government-hotel",
+    "location": "Mandu plateau, near Hindola Mahal, Dhar District",
+    "why_special": "MP Tourism's flagship Mandu property — Tripadvisor 3.8/5. Lakeside cottages on the plateau within easy reach of Hindola Mahal, Jahaz Mahal (3 km) and Hoshang Shah's Tomb (2 km). Room rates ₹3,290-4,290. The default Mandu mid-range; rooms are basic but the location is unbeatable.",
+    "price_range": "₹₹",
+    "contact": {"phone": "+91-7292-263-235", "website": "https://mpstdc.com/accommodation/Mandu/MPT-Malwa-Resort-Mandu", "email": null},
+    "best_for": ["heritage", "families", "value"],
+    "verified": true,
+    "tags": ["MPT", "lakeside", "Hindola-Mahal-adjacent", "state-tourism", "plateau"]
+  },
+  {
+    "destination_id": "mandu",
+    "name": "Mandu Sarai",
+    "type": "boutique",
+    "location": "Main Road, Mandu",
+    "why_special": "Tripadvisor 4.4/5 — family-run boutique near the main road, walking distance to the central monument cluster. The highest-rated stay in Mandu and the most personal hospitality on the plateau.",
+    "price_range": "₹₹",
+    "contact": {"phone": "+91-7292-263-110", "website": null, "email": null},
+    "best_for": ["heritage", "couples", "boutique"],
+    "verified": true,
+    "tags": ["family-run", "central", "boutique", "high-rated"]
+  },
+  {
+    "destination_id": "mandu",
+    "name": "Hotel Rupmati",
+    "type": "heritage-hotel",
+    "location": "Near Rani Roopmati Pavilion approach, Mandu",
+    "why_special": "Tripadvisor 3.3/5 — long-running mid-range hotel near the southern Rupmati Pavilion approach. Currently mid-renovation per traveller notes; verify status before booking. The closer property to the Roopmati-Baz-Bahadur monument cluster.",
+    "price_range": "₹₹",
+    "contact": {"phone": "+91-7292-263-270", "website": null, "email": null},
+    "best_for": ["heritage", "families"],
+    "verified": true,
+    "tags": ["southern-Mandu", "Roopmati-pavilion-side", "mid-range", "under-renovation"]
+  },
+  {
+    "destination_id": "mandu",
+    "name": "Hotel Jahaj Mahal",
+    "type": "budget-hotel",
+    "location": "Mandu plateau, near central monuments",
+    "why_special": "Tripadvisor 3.0/5 — budget-tier plateau-side option with breakfast included. Named for the nearby Jahaz Mahal monument. Use as a fallback when MPT Malwa is sold out.",
+    "price_range": "₹",
+    "contact": {"phone": "+91-7292-263-265", "website": null, "email": null},
+    "best_for": ["budget", "pilgrim-adjacent"],
+    "verified": true,
+    "tags": ["budget", "Jahaz-Mahal-adjacent", "breakfast-included"]
+  }
+]
