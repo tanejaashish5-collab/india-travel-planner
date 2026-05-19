@@ -1,0 +1,224 @@
+{
+  "metadata": {
+    "state": "chhattisgarh",
+    "date": "2026-05-19",
+    "total_picks": 10,
+    "verdict_counts": {
+      "keep_existing": 3,
+      "replace": 6,
+      "honest_scarcity": 1
+    }
+  },
+  "task_a_results": [
+    {
+      "destination_id": "barnawapara",
+      "slot": "experience",
+      "verdict": "replace",
+      "existing": {
+        "name": "Barnawapara Wildlife Resort",
+        "issue": "Generic placeholder name — no property by this exact name verifiable on TripAdvisor, CGTDC, Booking or Justdial. The actual flagship sanctuary resort is Hareli Eco Resort at Mohda gate. Re-anchor."
+      },
+      "replacement": {
+        "name": "Hareli Eco Resort",
+        "tier": "comfort",
+        "tagline": "Chhattisgarh Tourism's 12-cottage eco-resort inside the 245 sq km Barnawapara sanctuary, ~9 km from the main gate — rooms overlook a lake where chital and sambar visit at dusk. TripAdvisor 4.7/5 across 20 reviews; the only sanctuary-interior stay paired with open-jeep safaris. No cellular network by design.",
+        "price_band": "₹₹₹",
+        "address": "Hareli Eco Resort, Mohda, Barnawapara Wildlife Sanctuary, Mahasamund District, Chhattisgarh 493551",
+        "book_url": "https://tourism.cgstate.gov.in/hotels/hotel-details?hotel_name=HARELI+ECO+RESORT",
+        "sources": [
+          "https://tourism.cgstate.gov.in/hotels/hotel-details?hotel_name=HARELI+ECO+RESORT",
+          "https://www.tripadvisor.in/Hotel_Review-g2282673-d3915287-Reviews-Hareli_Eco_Resort-Mahasamund_Mahasamund_District_Chhattisgarh.html",
+          "https://www.toftigers.org/accommodation/hareli-eco-resort/"
+        ]
+      }
+    },
+    {
+      "destination_id": "barnawapara",
+      "slot": "value",
+      "verdict": "replace",
+      "existing": {
+        "name": "Barahi Guest House",
+        "issue": "Fabricated — Barahi is a Nepal hospitality chain (Pokhara/Kathmandu/Chitwan/Hetauda), no property at Barnawapara on TripAdvisor, Justdial or Booking. Pure ghost. Replace with the legitimate budget alternative — the CG Forest Rest House."
+      },
+      "replacement": {
+        "name": "Barnawapara Forest Rest House",
+        "tier": "budget",
+        "tagline": "CG Forest Department rest house and eco-cottages inside the sanctuary buffer — the budget alternative to Hareli and the only stay deeper into the forest than Mohda. Online booking only via cgforest.com; food-inclusive tariff default. Used by foresters and ASI researchers who want the 05:30 jeep before tourists arrive.",
+        "price_band": "₹",
+        "address": "Forest Rest House, Barnawapara Wildlife Sanctuary, Mahasamund District 493551",
+        "book_url": "https://www.cgforest.com/barnawapara/",
+        "sources": [
+          "https://forest.cg.gov.in/barnawapara/",
+          "https://www.cgforest.com/barnawapara/",
+          "https://forest.cg.gov.in/posts/online-booking"
+        ]
+      }
+    },
+    {
+      "destination_id": "barnawapara",
+      "slot": "location",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Barnawapara Rest House (Forest Department)",
+        "issue": "Verified — same Forest Rest House replacement used for value slot. Keep but normalise name to 'Barnawapara Forest Rest House' so it matches CG Forest Dept terminology. Note: this means barnawapara value + location slot both anchor on the Forest Rest House — acceptable for a Tier-3 dest with only two real overnight options. If a separate location-slot pick is needed, mark honest_scarcity."
+      },
+      "replacement": {
+        "name": "Barnawapara Forest Rest House",
+        "tier": "budget",
+        "tagline": "On-site Forest Department rest house — closer to the morning safari muster point than any private property, walking distance to the jeep line, and the only stay where the duty staff can change your booking slot on the spot. Same booking route as value slot; pick this if a 05:00 walk-out to the gate matters more than resort amenities.",
+        "price_band": "₹",
+        "address": "Forest Rest House, Barnawapara Wildlife Sanctuary, Mahasamund District 493551",
+        "book_url": "https://www.cgforest.com/barnawapara/",
+        "sources": [
+          "https://forest.cg.gov.in/barnawapara/",
+          "https://www.cgforest.com/barnawapara/"
+        ]
+      }
+    },
+    {
+      "destination_id": "jagdalpur",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Dandami Luxury Resort Chitrakote",
+        "issue": "Verified — Chhattisgarh Tourism Board's flagship Chitrakote-side property at Tiratha (Lohandiguda), the only government luxury resort overlooking the falls. Phone +91-9223467788 / +91 91116 69800 (CGTDC central). Tighten tagline; reaffirm CGTDC booking path."
+      },
+      "replacement": {
+        "name": "Dandami Luxury Resort, Chitrakote",
+        "tier": "luxury",
+        "tagline": "CGTDC's flagship resort at Tiratha on the rim of Chitrakote Falls — 38 km from Jagdalpur on the Lohandiguda road. Luxury river-view rooms plus permanent tents, in-house restaurant, open-air amphitheatre and an interpretation centre. The only stay with falls-view rooms at India's widest waterfall (300m horseshoe at peak monsoon flow); CGTDC books direct on +91 91116 69800 when the website portal is down.",
+        "price_band": "₹₹₹₹",
+        "address": "Dandami Luxury Resort, Tiratha, Chitrakote, Tehsil Lohandiguda, Bastar District, Chhattisgarh 494223",
+        "book_url": "https://www.dandamiluxuryresort.com/",
+        "sources": [
+          "https://tourism.cgstate.gov.in/hotels/hotel-details?hotel_name=Dandami+Luxury+Resort",
+          "https://www.chhattisgarhtourism.in/dandami/",
+          "https://www.tripadvisor.com/Hotel_Review-g26998213-d3651795-Reviews-Dandami_Luxury_Resort_Chitrakot-Tiratha_Bastar_District_Chhattisgarh.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "jagdalpur",
+      "slot": "value",
+      "verdict": "replace",
+      "existing": {
+        "name": "Hotel Abaad",
+        "issue": "Fabricated — no Hotel Abaad in Jagdalpur on TripAdvisor, Booking, MakeMyTrip, Justdial, Goibibo or any other platform. Listicle ghost. Replace with Hotel Avinash International — verifiable 55-room mid-tier property near Dalpat Sagar with rooftop pool, Sky Dhaba and The Vegan Story restaurant."
+      },
+      "replacement": {
+        "name": "Hotel Avinash International",
+        "tier": "comfort",
+        "tagline": "55-room mid-tier business hotel on Chitrakote Road / Bajrang Nagar, 1-minute drive from Dalpat Sagar and 5.3 km from Tiratgarh Falls / Bastar Palace. Rooftop infinity pool with Sky Dhaba rooftop restaurant and a pure-veg The Vegan Story on the lobby — the city-base most travellers actually pick when they're not staying at Chitrakote.",
+        "price_band": "₹₹",
+        "address": "Chitrakote Rd, Housing Board Colony, Motitalab Para, Jagdalpur, Bastar District, Chhattisgarh 494001",
+        "book_url": "https://hotelavinashinternational.com/",
+        "sources": [
+          "https://hotelavinashinternational.com/",
+          "https://www.tripadvisor.com/Hotel_Review-g800435-d23657012-Reviews-Hotel_Avinash_International-Jagdalpur_Bastar_District_Chhattisgarh.html",
+          "https://www.facebook.com/avinashotels/"
+        ]
+      }
+    },
+    {
+      "destination_id": "jagdalpur",
+      "slot": "location",
+      "verdict": "replace",
+      "existing": {
+        "name": "Jagdalpur Tourist Rest House",
+        "issue": "Sourceless — no CGTDC-managed 'Tourist Rest House' in Jagdalpur on the Indravati River verifiable on CG Tourism, Bastar Government accommodation page or TripAdvisor. The actual government rest houses at Jagdalpur are the Circuit House near Central Jail and the Forest Department Rest House at Aasna. The real legacy hotel central-to-bazaar with character is Naman Bastar at Palli/Dharampura. Re-anchor."
+      },
+      "replacement": {
+        "name": "Naman Bastar Resort",
+        "tier": "comfort",
+        "tagline": "Family-run 21-year-old resort on Chitrakote Road at Palli village/Dharampura — the closest real-resort stay to Bastar Palace, with swimming pool, in-house restaurant and the most-recommended Jagdalpur pick on Justdial/Agoda. Owners run a tribal-circuit tour desk for Tirathgarh, Kutumsar Caves and Bastar Dussehra; the choice when you want central Jagdalpur access plus a pool.",
+        "price_band": "₹₹",
+        "address": "Chitrakoot Road, Village Palli, Dharampura, Jagdalpur, Bastar District, Chhattisgarh 494005",
+        "book_url": "https://www.namanbastar.com/",
+        "sources": [
+          "https://www.namanbastar.com/",
+          "https://www.facebook.com/namanbastarresort/",
+          "https://www.agoda.com/en-in/naman-bastar-resort/hotel/kumarawand-in.html",
+          "https://www.mappls.com/ec5edt"
+        ]
+      }
+    },
+    {
+      "destination_id": "jagdalpur",
+      "slot": "xfactor",
+      "verdict": "replace",
+      "existing": {
+        "name": "Bastar Village Homestay (Antagarh)",
+        "issue": "Wrong location — Antagarh is in Kanker district ~150 km north of Jagdalpur, not 40 km south. The real Gond/Dhurwa/Bhatra tribal homestay near Jagdalpur is Shakeel Rizvi's 'Bastar Tribal Homestay' at Chhote Bodal village, Post Nangur, 23 km from Jagdalpur. Verified on Homestays of India, Village Square, Expedia and Agoda."
+      },
+      "replacement": {
+        "name": "Bastar Tribal Homestay (Chhote Bodal)",
+        "tier": "boutique",
+        "tagline": "Eco-architecture homestay run by Shakeel Rizvi (since 2010) at Chhote Bodal village, 23 km from Jagdalpur — mud walls, clay floors, stone roofs, bamboo elements. ₹700/person/night plus meals cooked on wood fire by a women's self-help group, served on Sal-leaf plates. The lived experience of Dhurwa, Bhatra, Muria and Gond tribal life — handicraft workshops, traditional cooking, farm activities, guided forest walks. Tokapal Tribal Market (25km) and Kanger Valley NP (30km) on the same loop.",
+        "price_band": "₹",
+        "address": "Bastar Tribal Homestay, Village Chhote Bodal, Kawalikala, Post Nangur, Jagdalpur, Bastar District, Chhattisgarh 494005",
+        "book_url": "https://stays.unexploredbastar.com/bastar-tribal-homestay-bastar-chhattisgarh/",
+        "sources": [
+          "https://www.homestaysofindia.com/chhattisgarh-bastar-jagdalpur-mystique-village-homestay/",
+          "https://villagesquare.in/live-like-tribal-at-these-bastar-homestays/",
+          "https://stays.unexploredbastar.com/bastar-tribal-homestay-bastar-chhattisgarh/",
+          "https://www.agoda.com/en-in/bastar-tribal-homestay/hotel/jagdalpur-in.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "sirpur",
+      "slot": "location",
+      "verdict": "replace",
+      "existing": {
+        "name": "Hareli Eco Resort, Mohda",
+        "issue": "Cross-dest contamination — Hareli Eco Resort is at Mohda inside Barnawapara Wildlife Sanctuary, NOT 35 km from Sirpur. Actual road distance Sirpur to Mohda gate ≈ 65-80 km depending on route, not the 35 km claimed. The pairing argument (do Sirpur + Barnawapara from one base) is real, but Hareli should be slotted on Barnawapara, not Sirpur. Re-anchor Sirpur location slot on Aloha Nature Stay, which is the legitimate Sirpur-edge resort on the Sirpur River."
+      },
+      "replacement": {
+        "name": "Aloha Nature Stay",
+        "tier": "comfort",
+        "tagline": "20-room private resort on the Sirpur River at the Barnawapara forest fringe — 50.3 km from Raipur Airport, 18 minutes to Lakshmana Temple. Nine garden-view cottages plus Standard/Suite/Wooden Suite categories; in-house kitchen cooks tribal-flavoured pure-veg menu from a farm-grown organic plot. The legitimate Sirpur-side stay for travellers who want a single base before driving on to Barnawapara the next morning — without faking proximity.",
+        "price_band": "₹₹",
+        "address": "Aloha Nature Stay, Jalki, Sirpur, Mahasamund District, Chhattisgarh 493445",
+        "book_url": "https://www.tripadvisor.in/Hotel_Review-g3792047-d23894807-Reviews-Aloha_Nature_Stay-Sirpur_Mahasamund_District_Chhattisgarh.html",
+        "sources": [
+          "https://www.tripadvisor.in/Hotel_Review-g3792047-d23894807-Reviews-Aloha_Nature_Stay-Sirpur_Mahasamund_District_Chhattisgarh.html",
+          "https://www.tripadvisor.in/Hotels-g3792047-Sirpur_Mahasamund_District_Chhattisgarh-Hotels.html",
+          "https://mahasamund.gov.in/en/tourism/accommodation/"
+        ]
+      }
+    },
+    {
+      "destination_id": "sirpur",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Hiuen Tsiang Tourist Resort",
+        "issue": "Verified — CGTDC's purpose-built heritage-themed resort, 12 rooms + two 15-bed dorms, 800m / 18-min walk to Lakshmana Temple. TripAdvisor listing now displays as 'Soumya Resorts' (possible operator handover) but property characteristics match: 300-seater restaurant, Dalai Lama Room (Room 7), behind Paryatak Suchna Kendra. Phone +91-77142-24999 verified on IndiaPL. Keep, tighten name to flag the possible rebrand."
+      },
+      "replacement": {
+        "name": "Hiuen Tsiang Tourist Resort (now branded Soumya Resorts on TripAdvisor)",
+        "tier": "comfort",
+        "tagline": "CGTDC's heritage-themed resort named for the 7th-century Chinese Buddhist pilgrim who recorded Sirpur in his Da Tang Xiyu Ji — 12 rooms (Room 7 is the Dalai Lama Room from his Sirpur visit) plus two 15-bed dorms. 800 m / 18-min walk to Lakshmana Temple. The only sit-down lodging at the site itself and the only way to be on the monuments at sunrise without driving in from Raipur (78 km). 300-seater on-site restaurant. TripAdvisor lists it under 'Soumya Resorts' — same property, possible operator change.",
+        "price_band": "₹₹",
+        "address": "Hiuen Tsiang Tourist Resort, Behind Paryatak Suchna Kendra, Near Sirpur Chowk, Sirpur, Mahasamund District, Chhattisgarh 493551",
+        "book_url": "https://tourism.cgstate.gov.in/hotels",
+        "sources": [
+          "https://www.tripadvisor.in/Hotel_Review-g3792047-d6914982-Reviews-Hiuen_Tsiang_Tourist_Resort-Sirpur_Mahasamund_District_Chhattisgarh.html",
+          "https://tourism.cgstate.gov.in/hotels",
+          "https://www.yatra.com/hotels/hotels-in-mahasamund/hiuen-tsiang-tourist-resort",
+          "https://indiapl.com/chhattisgarh/hiuen-tsiang-tourist-resort-275716"
+        ]
+      }
+    },
+    {
+      "destination_id": "sirpur",
+      "slot": "value",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Hiuen Tsiang Tourist Resort - Dorm",
+        "issue": "Duplicates the experience slot (same property, dorm tariff). Sirpur is genuinely a single-property destination at the budget tier — the CGTDC dorm IS the cheapest legitimate stay in the village, but treating it as a separate pick from the experience slot inflates options. Mark honest_scarcity rather than re-anchor to a fabricated alternative. Day-trip from Raipur (78 km) is the realistic budget play."
+      },
+      "replacement": null
+    }
+  ]
+}
