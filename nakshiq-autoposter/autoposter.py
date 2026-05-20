@@ -83,6 +83,10 @@ LOG_FILE         = Path(__file__).parent / "autoposter.log"
 DATA_DIR          = Path(__file__).parent / "data"
 POST_LOG_JSONL    = DATA_DIR / "post_log.jsonl"
 THEME_USAGE_JSONL = DATA_DIR / "theme_usage.jsonl"
+# 2026-05-20: durable mirror of state.posted_today — JSONL is the source of
+# truth so analytics-sync race (observed 2026-05-19 17:17 UTC: state.posted_today
+# rolled back to {}) can't reset the daily dedup gate.
+POSTED_TODAY_JSONL = DATA_DIR / "posted_today.jsonl"
 
 # ─────────────────────────────────────────────────────────────────────────────
 # MORNING FEED — strict round-robin rotation (no format repeats until ALL
@@ -979,6 +983,47 @@ def append_theme_usage_entry(dimension: str, item_id: str, ts: str | None = None
     })
 
 
+def load_posted_today_keys() -> set[str]:
+    """Return today's posted account-scoped keys from the durable JSONL mirror.
+    Empty set if file missing. Read-time filtering by today UTC date — file
+    grows ~10-30 rows/day so even a year of history loads in <50ms.
+    """
+    if not POSTED_TODAY_JSONL.exists():
+        return set()
+    today_iso = date.today().isoformat()
+    out: set[str] = set()
+    try:
+        with open(POSTED_TODAY_JSONL, encoding="utf-8") as f:
+            for line in f:
+                line = line.strip()
+                if not line:
+                    continue
+                try:
+                    e = json.loads(line)
+                except json.JSONDecodeError:
+                    continue
+                if e.get("date") == today_iso and e.get("key"):
+                    out.add(e["key"])
+    except OSError as e:
+        log.warning(f"[jsonl] read posted_today.jsonl failed: {e}")
+        return set()
+    return out
+
+
+def _mark_posted_today(state: dict, key: str) -> None:
+    """Atomic mark — writes to in-memory state.posted_today AND to durable
+    JSONL mirror. Use this everywhere posted_today gets stamped so the
+    dedup gate survives a state.json rollback.
+    """
+    today_iso = date.today().isoformat()
+    state.setdefault("posted_today", {})[key] = today_iso
+    _append_jsonl(POSTED_TODAY_JSONL, {
+        "ts":   datetime.now(timezone.utc).isoformat(),
+        "date": today_iso,
+        "key":  key,
+    })
+
+
 def _bootstrap_jsonl_from_state(state: dict) -> None:
     """One-time migration: if JSONL files are empty/missing but state.json
     has post_log/theme_usage entries (autoposter-state branch has 38+ rows),
@@ -1078,6 +1123,11 @@ def load_state() -> dict:
         jsonl_themes = load_theme_usage_jsonl()
         if jsonl_themes:
             state["theme_usage"] = jsonl_themes
+        # 2026-05-20: merge durable posted_today.jsonl into state — survives
+        # state.json rollback (analytics-sync race observed 2026-05-19 17:17 UTC).
+        for k in load_posted_today_keys():
+            if state["posted_today"].get(k) != today_iso:
+                state["posted_today"][k] = today_iso
         return state
     # First-ever run: still produce the JSONL files so subsequent loads see them.
     _bootstrap_jsonl_from_state(defaults)
@@ -1096,13 +1146,20 @@ def save_state(state: dict):
     os.replace(tmp_path, STATE_FILE)
 
 def already_posted_today(state: dict, key: str) -> bool:
-    return state["posted_today"].get(key) == date.today().isoformat()
+    """Belt-and-braces dedup gate. Checks in-memory state first, then falls
+    back to the durable JSONL mirror — so a state.json rollback (cron race)
+    can't trick the gate into thinking nothing posted today.
+    """
+    today_iso = date.today().isoformat()
+    if state.get("posted_today", {}).get(key) == today_iso:
+        return True
+    return key in load_posted_today_keys()
 
 def mark_posted(state: dict, account_id: str, destination_id: str,
                 fmt: str, post_id: str, platform: str, has_media: bool,
                 media_id: str | None = None):
     today = date.today().isoformat()
-    state.setdefault("posted_today", {})[account_id] = today
+    _mark_posted_today(state, account_id)
     state.setdefault("posted_destinations", [])
     state.setdefault("posted_formats", {})
     state.setdefault("post_log", [])
@@ -5641,7 +5698,7 @@ def _run_inner(force: bool, sync_only: bool, dry_run: bool,
         for item in remote_today:
             acc_id = item["account_id"]
             if acc_id and not already_posted_today(state, acc_id):
-                state.setdefault("posted_today", {})[acc_id] = today
+                _mark_posted_today(state, acc_id)
             media_name = (item.get("media") or "")
             if media_name.endswith(('.jpg','.jpeg','.png','.mp4')):
                 dest_from_media = media_name.rsplit('.',1)[0]
@@ -6447,7 +6504,7 @@ def _run_inner(force: bool, sync_only: bool, dry_run: bool,
             mark_posted(state, acc_id, dest_id, fmt, post_id, platform, has_media,
                         media_id=media_id)
             # Mode-scoped today marker (morning vs evening won't collide)
-            state.setdefault("posted_today", {})[acc_scoped_key] = today
+            _mark_posted_today(state, acc_scoped_key)
             used.add(dest_id)
 
             # ── Anti-repetition tracker updates ──────────────────────────────
@@ -6543,7 +6600,7 @@ def _run_inner(force: bool, sync_only: bool, dry_run: bool,
                 else:
                     log.info(f"[{label}] ✅ Story submitted (id={story_post_id})")
                 if not dry_run:
-                    state["posted_today"][story_key] = today
+                    _mark_posted_today(state, story_key)
                     state["post_log"].append({
                         "timestamp":   datetime.now(timezone.utc).isoformat(),
                         "date":        today,
@@ -6755,7 +6812,7 @@ def _run_tourist_map(force: bool = False, dry_run: bool = False):
         )
         if result:
             log.info(f"[{label}] Tourist map posted successfully!")
-            state.setdefault("posted_today", {})[acc_scoped_key] = today
+            _mark_posted_today(state, acc_scoped_key)
             posted_any = True
             # Cross-flow dedup: write to post_log so morning round-robin's
             # 14-day filter sees this state-themed post on subsequent days.
@@ -7116,7 +7173,7 @@ def _run_canva_visual(force: bool = False, dry_run: bool = False):
         )
         if result:
             log.info(f"[{label}] Canva visual posted successfully!")
-            st.setdefault("posted_today", {})[acc_scoped_key] = today
+            _mark_posted_today(st, acc_scoped_key)
             posted_any = True
             record_publish(
                 st,
@@ -7704,7 +7761,7 @@ def _run_pomelli_visual(force: bool = False, dry_run: bool = False):
         )
         if result:
             log.info(f"[{label}] Pomelli visual posted successfully!")
-            st.setdefault("posted_today", {})[acc_scoped_key] = today
+            _mark_posted_today(st, acc_scoped_key)
             posted_any = True
             record_publish(
                 st,
@@ -8191,7 +8248,7 @@ def _run_flow_story(force: bool = False, dry_run: bool = False):
         )
         if result:
             log.info(f"[{label}] Flow story posted successfully!")
-            st.setdefault("posted_today", {})[acc_scoped_key] = today
+            _mark_posted_today(st, acc_scoped_key)
             posted_any = True
             record_publish(
                 st,
@@ -8677,7 +8734,7 @@ def _run_reel(force: bool = False, dry_run: bool = False):
         if confirmed:
             platform_id = confirmed.get("platformPostId", "—")
             log.info(f"[{label}] ✅ Reel published · Outstand={post_id} · Platform={platform_id}")
-            st.setdefault("posted_today", {})[acc_scoped_key] = today
+            _mark_posted_today(st, acc_scoped_key)
             posted_any = True
             record_publish(
                 st,
@@ -8980,7 +9037,7 @@ def _run_reel_map(force: bool = False, dry_run: bool = False):
         if confirmed:
             platform_id = confirmed.get("platformPostId", "—")
             log.info(f"[{label}] ✅ Reel published · Outstand={post_id} · Platform={platform_id}")
-            st.setdefault("posted_today", {})[acc_scoped_key] = today
+            _mark_posted_today(st, acc_scoped_key)
             posted_any = True
             # Reel-map is campaign-driven, not destination-driven, so dest_id stays None.
             record_publish(
@@ -9184,7 +9241,7 @@ def _run_ugc(force: bool = False, dry_run: bool = False):
         if confirmed:
             platform_id = confirmed.get("platformPostId", "—")
             log.info(f"[{label}] ✅ UGC published · Outstand={post_id} · Platform={platform_id}")
-            st.setdefault("posted_today", {})[acc_scoped_key] = today
+            _mark_posted_today(st, acc_scoped_key)
             posted_any = True
             record_publish(
                 st,
@@ -9364,7 +9421,7 @@ def _run_infographic(force: bool = False, dry_run: bool = False):
         result = publish_feed_post(post_caption, account, media_objs, dry_run=False)
         if result:
             log.info(f"[{label}] Infographic carousel posted successfully!")
-            st.setdefault("posted_today", {})[acc_scoped_key] = today
+            _mark_posted_today(st, acc_scoped_key)
             posted_any = True
         else:
             log.warning(f"[{label}] Infographic post failed.")
@@ -9534,7 +9591,7 @@ def _run_yt_short(force: bool = False, dry_run: bool = False):
             posted_today = st.setdefault("posted_today", {})
             prev_date = posted_today.get(acc_scoped_key)
             prev_count = posted_today.get(daily_count_key, 0) if prev_date == today else 0
-            posted_today[acc_scoped_key] = today
+            _mark_posted_today(st, acc_scoped_key)
             posted_today[daily_count_key] = prev_count + 1
             posted_any = True
             # Cross-flow dedup: register this Short with the main loop so the
@@ -9870,6 +9927,18 @@ def smart_format_weights(content_type: str = "yt_short") -> dict:
 # ─────────────────────────────────────────────────────────────────────────────
 
 if __name__ == "__main__":
+    # 2026-05-20 diag: capture which workflow/run/actor invoked us, so the
+    # mystery ~20:05 UTC commit (recurring log truncation, source unidentified
+    # in audit 2026-05-20) surfaces its trigger in autoposter.log on next fire.
+    print(
+        f"[diag] event={os.getenv('GITHUB_EVENT_NAME','local')} "
+        f"workflow={os.getenv('GITHUB_WORKFLOW','local')} "
+        f"job={os.getenv('GITHUB_JOB','local')} "
+        f"actor={os.getenv('GITHUB_ACTOR','local')} "
+        f"run_id={os.getenv('GITHUB_RUN_ID','local')} "
+        f"argv={sys.argv[1:]}",
+        flush=True,
+    )
     parser = argparse.ArgumentParser(description="Nakshiq Autoposter — morning (default) or evening mode.")
     parser.add_argument("--force",     action="store_true",
                         help="Post even if already posted today (bypasses dedup + lock).")
