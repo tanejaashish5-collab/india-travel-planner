@@ -23,9 +23,11 @@ v2_thali_close_up-old-delhi.png
 v3_tl_poll_reel-manali.png
 
 # === ELIGIBLE-BUT-SKIPS (7 — asset ready, format still needs a data layer) ===
-# v2_yt_silent_pov     — needs air_temp_c etc. + YT-short rotation not wired
-# v3_tl_editorial_*    — state-keyed asset doesn't fit per-dest loader (naming decision pending)
-# v3_tl_news / essay, v4_dw_archival / myth_bust — need Phase 3 tables
+# v2_local_knows       — needs tourist_trap_alternatives joined into /api/content
+# v3_tl_editorial_*    — state-keyed asset doesn't fit per-dest loader + needs 10 dests
+# v2_yt_silent_pov     — YT-short rotation not wired into yt_shorts_gen.py
+# v3_tl_news / essay, v4_dw_archival / myth_bust — need new content tables (Phase 3)
+v2_local_knows-goa.png
 v2_yt_silent_pov-tungnath.mp4
 v3_tl_editorial_listicle-rajasthan.png
 v3_tl_first_person_essay-hampi.png
