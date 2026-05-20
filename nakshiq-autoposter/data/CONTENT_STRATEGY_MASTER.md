@@ -373,10 +373,19 @@ Rather than populating ~15 net-new editorial fields per destination by hand (inf
 
 The `/api/content?type=destinations` base response now surfaces these flat: `why_special`, `name_hi`, `tagline_hi`, `why_special_hi`, `price_range_inr`. SKIP-on-null still applies — dests missing the data are skipped, never faked.
 
-**3 formats still need `phase2_fields` populated** (destination-scoped but no existing-data equivalent):
-- ⏳ `v2_pov_slow_morning` — needs `sunrise_time`, `nearest_landmark`
-- ⏳ `v2_yt_silent_pov` — needs `air_temp_c`, `ambient_sound_list`, `visual_description`, `observation_window`
-- ⏳ `v2_local_knows` — needs trap data (a future `tourist_trap_alternatives` join would cover this)
+**6 formats now revised to use existing data (2026-05-20) — fire with zero hand-populated fields:**
+- `v2_hindi_score_card` — `translations.hi` + `score` + sleep price
+- `v2_score_card_pov` — `note` + `score` + sleep price
+- `v2_pov_slow_morning` — `tagline` + `note`
+- `v2_budget_receipt` — sleep `price_range_inr` + `note`
+- `v2_thali_close_up` — legendary `local_eateries` entry (`eatery_name` + `hero_dish`) + `note`
+- `v3_tl_poll_reel` — two destinations from the live pool, scores compared, winner computed by the autoposter dispatcher
+
+**Still blocked (need a data layer that doesn't exist):**
+- ⏳ `v2_yt_silent_pov` — needs `air_temp_c`, `ambient_sound_list` etc. + YT-short rotation isn't wired
+- ⏳ `v2_local_knows` — needs a `tourist_trap_alternatives` join
+- ⏳ `v3_tl_editorial_listicle` — 10-item carousel; asset is state-keyed (`-rajasthan`) which doesn't fit the per-destination loader. Needs an asset-naming decision before it can be wired.
+- ⏳ `v3_tl_news_announcement`, `v3_tl_first_person_essay`, `v4_dw_archival_modern_carousel`, `v4_dw_counter_narrative_myth_bust` — need purpose-built tables (Phase 3).
 
 **8 of 12 seed formats still blocked — need purpose-built tables (Phase 3 work):**
 - ❌ `v3_tl_editorial_listicle` — needs `content_lists` table (10-item carousels with per-item name/score/one_line)
@@ -511,6 +520,7 @@ If you're stuck on a row:
 | 2026-05-20 | **R2 sync workflow step shipped** — `data/phase2_r2_manifest.txt` drives `curl` fetches from R2's public bucket into `social_image_library/` at every cron startup. No credentials. |
 | 2026-05-20 | **R2 URL corrected** to the real `nakshiq-images` bucket (`pub-d8970c901de34c218926ebf4be1ed09a.r2.dev`). achabal seed assets uploaded to `nakshiq-images/social_image_library/`. |
 | 2026-05-20 | **`v2_hindi_score_card` + `v2_score_card_pov` rewritten to use existing data only** — no net-new editorial fields. API base response extended with `why_special`/`name_hi`/`tagline_hi`/`why_special_hi`/`price_range_inr`. Both formats now fire on 400+ destinations. autoposter CSV dispatcher injects `month_hindi`. |
+| 2026-05-20 | **4 more formats rewritten to existing data** — `v2_pov_slow_morning` (tagline+note), `v2_budget_receipt` (sleep price+note), `v2_thali_close_up` (legendary eatery — API now surfaces `eatery_name`/`hero_dish`), `v3_tl_poll_reel` (two pool dests + computed winner, dispatcher injects `dest_a/b_*`). 6 of 14 generated seed assets now fire. |
 
 ---
 

@@ -4,34 +4,31 @@
 #   https://pub-d8970c901de34c218926ebf4be1ed09a.r2.dev/social_image_library/{name}
 #
 # That's the nakshiq-images bucket (the same one serving /destinations/{slug}.jpg
-# hero images to the web frontend). You'll need to create a `social_image_library/`
-# folder at the bucket root the first time — Cloudflare dashboard → nakshiq-images
-# → "Add folder" button → name it social_image_library → drag-drop files into it.
+# hero images to the web frontend). Phase 2 assets go in a `social_image_library/`
+# folder at the bucket root.
 #
 # The workflow fetches each entry on cron startup. Missing entries are skipped
-# silently (logged "not in R2"). The autoposter's is_eligible() gates which
-# formats actually POST — an asset being present does not guarantee a post;
-# the format's caption data must also resolve.
+# silently. The autoposter's is_eligible() gates which formats actually POST —
+# an asset being present does not guarantee a post; the caption data must resolve.
 #
 # Format: one bare filename per line. Lines starting with # are comments.
 
-# === Seed assets generated 2026-05-20 (14 hero files) ===
-# FIRES TODAY (format revised to use existing Supabase data):
+# === FIRES (7 combos — format uses existing Supabase data, revised 2026-05-20) ===
 v2_hindi_score_card-achabal.png
 v2_hindi_score_card-manali.png
 v2_score_card_pov-achabal.mp4
-
-# ELIGIBLE-BUT-SKIPS (asset ready, but format still needs a data layer —
-# see CONTENT_STRATEGY_MASTER.md §10. Synced anyway so they're ready the
-# moment the format is rewritten / its Phase 3 table ships):
-v2_budget_receipt-ladakh.png
-v2_local_knows-goa.png
 v2_pov_slow_morning-spiti.png
+v2_budget_receipt-ladakh.png
 v2_thali_close_up-old-delhi.png
+v3_tl_poll_reel-manali.png
+
+# === ELIGIBLE-BUT-SKIPS (7 — asset ready, format still needs a data layer) ===
+# v2_yt_silent_pov     — needs air_temp_c etc. + YT-short rotation not wired
+# v3_tl_editorial_*    — state-keyed asset doesn't fit per-dest loader (naming decision pending)
+# v3_tl_news / essay, v4_dw_archival / myth_bust — need Phase 3 tables
 v2_yt_silent_pov-tungnath.mp4
 v3_tl_editorial_listicle-rajasthan.png
 v3_tl_first_person_essay-hampi.png
 v3_tl_news_announcement-rohtang-pass.png
-v3_tl_poll_reel-manali.png
 v4_dw_archival_modern_carousel-mehrauli.png
 v4_dw_counter_narrative_myth_bust-mumbai.png

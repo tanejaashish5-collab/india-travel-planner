@@ -213,6 +213,11 @@ def pillar_map(specs: dict[str, FormatSpec]) -> dict[str, str]:
 _NON_DEST_DATA_FIELDS = frozenset({
     "month_name", "month_hindi", "verification_date", "state_list",
     "state_list_first", "year", "next_drop_date",
+    # Multi-dest render-time injects — computed by the autoposter CSV
+    # dispatcher from the live destination pool, never from a single row.
+    # v3_tl_poll_reel: a head-to-head between two destinations.
+    "dest_a_name", "dest_a_score", "dest_b_name", "dest_b_score",
+    "data_winner_name",
 })
 
 # Aliases mapping CSV placeholder names → standard NakshIQ destination dict

@@ -85,7 +85,7 @@ export async function GET(req: NextRequest) {
       // 30% of the catalog.
       const selectCols = includeIntel
         ? "month, score, note, destination_id, destinations(id, name, tagline, why_special, difficulty, elevation_m, phase2_fields, translations, state:states(name), confidence_cards(reach, sleep, fuel, network, emergency, weather_night), emergency_sos(nearest_hospital, nearest_hospital_km, mountain_rescue, local_helpers), local_eateries(name, signature_dish, is_legendary, area))"
-        : "month, score, note, destination_id, destinations(id, name, tagline, why_special, difficulty, elevation_m, phase2_fields, translations, state:states(name), confidence_cards(sleep))";
+        : "month, score, note, destination_id, destinations(id, name, tagline, why_special, difficulty, elevation_m, phase2_fields, translations, state:states(name), confidence_cards(sleep), local_eateries(name, signature_dish, is_legendary, area))";
 
       let query = supabase
         .from("destination_months")
@@ -125,7 +125,8 @@ export async function GET(req: NextRequest) {
           phase2_fields: d.phase2_fields || {},
           // 2026-05-20: existing-data fields surfaced flat for Phase 2 caption
           // templates (revised to use real data instead of net-new editorial
-          // fields). why_special + Hindi translations + stay price range.
+          // fields). why_special + Hindi translations + stay price range +
+          // legendary eatery (for v2_thali_close_up).
           why_special: d.why_special || null,
           name_hi: d.translations?.hi?.name || null,
           tagline_hi: d.translations?.hi?.tagline || null,
@@ -134,6 +135,14 @@ export async function GET(req: NextRequest) {
             (Array.isArray(d.confidence_cards)
               ? d.confidence_cards[0]
               : d.confidence_cards)?.sleep?.price_range_inr || null,
+          ...(() => {
+            const eats = Array.isArray(d.local_eateries) ? d.local_eateries : [];
+            const legendary = eats.find((e: any) => e?.is_legendary) || eats[0] || null;
+            return {
+              eatery_name: legendary?.name || null,
+              hero_dish: legendary?.signature_dish || null,
+            };
+          })(),
         };
         if (includeIntel) {
           const cc = Array.isArray(d.confidence_cards) ? d.confidence_cards[0] : d.confidence_cards;

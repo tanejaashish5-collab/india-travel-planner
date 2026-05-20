@@ -4940,6 +4940,27 @@ def generate_post(fmt: str, content: dict, platform: str,
                 "state_list":        cand.get("state", ""),
                 "state_list_first":  cand.get("state", ""),
             }
+            # v3_tl_poll_reel is a head-to-head — inject a second destination
+            # from the pool. cand is dest_a (its asset matched); dest_b is the
+            # next distinct pool dest. Winner = higher score (tie → dest_a).
+            if fmt == "v3_tl_poll_reel":
+                dest_b = next(
+                    (d for d in pool if d.get("id") != cand.get("id")), None
+                )
+                if not dest_b:
+                    continue  # need 2 dests; try next cand
+                a_score = cand.get("score") or 0
+                b_score = dest_b.get("score") or 0
+                extras.update({
+                    "dest_a_name":     cand.get("name", ""),
+                    "dest_a_score":    a_score,
+                    "dest_b_name":     dest_b.get("name", ""),
+                    "dest_b_score":    b_score,
+                    "data_winner_name": (
+                        dest_b.get("name", "") if b_score > a_score
+                        else cand.get("name", "")
+                    ),
+                })
             caption = _csv_fmt.render_caption(spec, cand, extra_context=extras)
             if caption:
                 return caption, cand
