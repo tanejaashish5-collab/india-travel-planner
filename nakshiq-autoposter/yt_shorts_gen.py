@@ -62,6 +62,8 @@ POMELLI_MANIFEST = POMELLI_DIR / "manifest.json"
 ASSETS_DIR = Path(__file__).parent / "assets"
 YT_MUSIC_DIR = ASSETS_DIR / "yt_music"
 STATE_FILE = Path(__file__).parent / "state.json"
+# 2026-05-20: Phase 2 CSV-defined YT formats post a pre-rendered .mp4 from here.
+SOCIAL_IMAGE_LIBRARY = Path(__file__).parent / "social_image_library"
 
 # ── Output specs ──────────────────────────────────────────────────────
 REEL_W, REEL_H = 1080, 1920
@@ -1671,6 +1673,86 @@ def _ig_caption(fmt: str, data: dict) -> str:
 
 
 # ═══════════════════════════════════════════════════════════════════════
+# CSV-DEFINED YT FORMATS (Phase 2 — pre-rendered .mp4 assets)
+# ═══════════════════════════════════════════════════════════════════════
+
+def _available_csv_yt_formats() -> list[str]:
+    """CSV-defined yt_short formats (v2_yt_*, etc.) that have at least one
+    .mp4 asset in social_image_library/. Asset presence is the opt-in — a
+    format with no rendered video stays out of the rotation automatically.
+    """
+    if not SOCIAL_IMAGE_LIBRARY.exists():
+        return []
+    try:
+        import csv_format_loader as _cfl
+        specs = _cfl.load_all_formats()
+    except Exception as e:
+        print(f"[csv_yt] loader unavailable: {e}")
+        return []
+    out = []
+    for fid, spec in specs.items():
+        if not getattr(spec, "is_yt_short", False):
+            continue
+        if list(SOCIAL_IMAGE_LIBRARY.glob(f"{fid}-*.mp4")):
+            out.append(fid)
+    return out
+
+
+def _build_csv_yt_short(fmt: str, destinations: list[dict], st: dict,
+                        dry_run: bool, preview: bool) -> Optional[dict]:
+    """Post a CSV-defined YT Short — a pre-rendered .mp4 from
+    social_image_library/ plus a caption from the CSV template. No segment
+    building, no music concat (the asset is already a finished video).
+    """
+    import csv_format_loader as _cfl
+    specs = _cfl.load_all_formats()
+    spec = specs.get(fmt)
+    if not spec:
+        print(f"[csv_yt] spec {fmt} not found — SKIPPING")
+        return None
+
+    month_name = calendar.month_name[datetime.now().month]
+    extras = {
+        "month_name":        month_name,
+        "verification_date": date.today().isoformat(),
+    }
+    for dest in destinations:
+        ok, reason = _cfl.is_eligible(spec, dest, SOCIAL_IMAGE_LIBRARY)
+        if not ok:
+            continue
+        asset = _cfl._find_matching_asset(spec, dest, SOCIAL_IMAGE_LIBRARY)
+        if not asset or asset.suffix.lower() != ".mp4":
+            continue  # a YT Short needs a finished video, not a still
+        extras["state_list"] = dest.get("state", "")
+        extras["state_list_first"] = dest.get("state", "")
+        caption = _cfl.render_caption(spec, dest, extra_context=extras)
+        if not caption:
+            continue
+        video_bytes = asset.read_bytes()
+        size_mb = len(video_bytes) / (1024 * 1024)
+        print(f"[csv_yt] {fmt} → {asset.name} ({size_mb:.1f} MB), dest={dest.get('id')}")
+        st.setdefault("yt_short_formats_used", []).append(fmt)
+        if not dry_run:
+            _save_state(st)
+        final_name = f"yt_short_{fmt}_{date.today().isoformat()}.mp4"
+        if preview:
+            (Path(__file__).parent / final_name).write_bytes(video_bytes)
+            print(f"Preview saved: {final_name}")
+        return {
+            "video_bytes":     video_bytes,
+            "video_filename":  final_name,
+            "caption":         caption,
+            "ig_caption":      caption,
+            "format":          fmt,
+            "duration":        0,                  # pre-rendered — duration unknown
+            "music":           "(pre-rendered asset)",
+            "primary_dest_id": dest.get("id"),
+        }
+    print(f"[csv_yt] {fmt}: no eligible dest with a .mp4 asset — SKIPPING")
+    return None
+
+
+# ═══════════════════════════════════════════════════════════════════════
 # MAIN BUILD FUNCTION
 # ═══════════════════════════════════════════════════════════════════════
 
@@ -1692,10 +1774,12 @@ def build_yt_short(
     # Pick format — rotation first, analytics-weighted within unused pool
     if fmt is None:
         used_fmts = st.get("yt_short_formats_used", [])
-        unused = [f for f in YT_SHORT_FORMATS if f not in used_fmts]
+        # CSV-defined YT formats with a .mp4 asset join the rotation pool.
+        rotation_pool = YT_SHORT_FORMATS + _available_csv_yt_formats()
+        unused = [f for f in rotation_pool if f not in used_fmts]
         if not unused:
             st["yt_short_formats_used"] = []
-            unused = YT_SHORT_FORMATS[:]
+            unused = rotation_pool[:]
 
         # Try analytics-weighted selection if data exists
         try:
@@ -1740,6 +1824,12 @@ def build_yt_short(
             destinations = fresh
     except Exception as e:
         print(f"WARN: once-per-month dedup unavailable ({e}) — continuing without filter")
+
+    # CSV-defined YT formats (Phase 2) post a pre-rendered .mp4 from
+    # social_image_library/ — no music, no segment building. Branch out
+    # before the native build pipeline.
+    if fmt not in YT_SHORT_FORMATS:
+        return _build_csv_yt_short(fmt, destinations, st, dry_run, preview)
 
     # Pick music
     music = _pick_music(st)

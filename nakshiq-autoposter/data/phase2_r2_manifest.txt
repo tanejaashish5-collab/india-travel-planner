@@ -13,7 +13,7 @@
 #
 # Format: one bare filename per line. Lines starting with # are comments.
 
-# === FIRES (9 combos — format uses existing Supabase data, revised 2026-05-20) ===
+# === FIRES (10 combos — format uses existing Supabase data, revised 2026-05-20) ===
 v2_hindi_score_card-achabal.png
 v2_hindi_score_card-manali.png
 v2_score_card_pov-achabal.mp4
@@ -21,13 +21,15 @@ v2_pov_slow_morning-spiti.png
 v2_budget_receipt-ladakh.png
 v2_thali_close_up-old-delhi.png
 v2_local_knows-goa.png
+v2_yt_silent_pov-tungnath.mp4
 v3_tl_poll_reel-manali.png
 v3_tl_editorial_listicle-rajasthan.png
 
-# === ELIGIBLE-BUT-SKIPS (5 — asset ready, format still needs a data layer) ===
-# v2_yt_silent_pov     — YT-short rotation wiring (Group 2)
-# v3_tl_news / essay, v4_dw_archival / myth_bust — need new content tables (Phase 3)
-v2_yt_silent_pov-tungnath.mp4
+# === ELIGIBLE-BUT-SKIPS (4 — need new content tables, Phase 3) ===
+# v3_tl_news_announcement — needs a news feed / news_announcements table
+# v3_tl_first_person_essay — needs authored essay copy (essays table)
+# v4_dw_archival_modern_carousel — needs archival photo metadata
+# v4_dw_counter_narrative_myth_bust — needs researched myth registry
 v3_tl_first_person_essay-hampi.png
 v3_tl_news_announcement-rohtang-pass.png
 v4_dw_archival_modern_carousel-mehrauli.png
