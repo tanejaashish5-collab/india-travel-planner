@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { localizeRow, type Locale, type Translations, type StayPickTranslatable } from "@itp/shared";
 
 export type EditorSlot = "experience" | "value" | "location" | "xfactor";
 
@@ -20,6 +20,7 @@ export interface EditorStayPick {
   contact_info?: string | null;
   sources?: EditorSource[];
   published?: boolean;
+  translations?: Translations<StayPickTranslatable> | null;
 }
 
 export interface StayIntelligence {
@@ -33,6 +34,7 @@ interface Props {
   stateName?: string;
   picks: EditorStayPick[];
   intelligence?: StayIntelligence | null;
+  locale: Locale;
 }
 
 const SLOT_LABEL: Record<EditorSlot, string> = {
@@ -42,11 +44,11 @@ const SLOT_LABEL: Record<EditorSlot, string> = {
   xfactor: "X-Factor",
 };
 
-const SLOT_SUB: Record<EditorSlot, string> = {
-  experience: "the signature one",
-  value: "best experience per rupee",
-  location: "the location wins",
-  xfactor: "memorable and specific",
+const SLOT_LABEL_HI: Record<EditorSlot, string> = {
+  experience: "अनुभव",
+  value: "वैल्यू",
+  location: "लोकेशन",
+  xfactor: "ख़ास बात",
 };
 
 const SLOT_COLOR: Record<EditorSlot, string> = {
@@ -111,13 +113,14 @@ function parseContactInfo(raw: string): Array<[label: string, value: string]> {
   return [["", trimmed]];
 }
 
-function PickCard({ pick }: { pick: EditorStayPick }) {
+function PickCard({ pick, locale }: { pick: EditorStayPick; locale: Locale }) {
   const sources = (pick.sources ?? []).filter((s) => s && typeof s.url === "string" && s.url.length > 0);
+  const slotLabel = locale === "hi" ? SLOT_LABEL_HI : SLOT_LABEL;
   return (
     <div className="rounded-xl border border-border/60 bg-card p-5 flex flex-col gap-3">
       <div className="flex items-center justify-between gap-2">
         <span className={`inline-block text-[10px] uppercase tracking-[0.18em] font-semibold px-2 py-1 rounded border ${SLOT_COLOR[pick.slot]}`}>
-          {SLOT_LABEL[pick.slot]}
+          {slotLabel[pick.slot]}
         </span>
         {pick.price_band && (
           <span className="text-xs text-muted-foreground font-mono">{pick.price_band}</span>
@@ -174,11 +177,12 @@ function PickCard({ pick }: { pick: EditorStayPick }) {
   );
 }
 
-function EmptySlot({ slot, destinationNote }: { slot: EditorSlot; destinationNote?: string | null }) {
+function EmptySlot({ slot, destinationNote, locale }: { slot: EditorSlot; destinationNote?: string | null; locale: Locale }) {
+  const slotLabel = locale === "hi" ? SLOT_LABEL_HI : SLOT_LABEL;
   return (
     <div className="rounded-xl border border-dashed border-border/40 bg-muted/5 p-5 flex flex-col gap-2">
       <span className={`inline-block w-fit text-[10px] uppercase tracking-[0.18em] font-semibold px-2 py-1 rounded border ${SLOT_COLOR[slot]} opacity-60`}>
-        {SLOT_LABEL[slot]}
+        {slotLabel[slot]}
       </span>
       <p className="text-sm text-muted-foreground">
         {destinationNote || `No ${SLOT_LABEL[slot].toLowerCase()} pick here that's worth the flag. See alternatives below.`}
@@ -187,8 +191,11 @@ function EmptySlot({ slot, destinationNote }: { slot: EditorSlot; destinationNot
   );
 }
 
-export function EditorsPicks({ destinationName, stateName, picks, intelligence }: Props) {
-  const published = picks.filter((p) => p.published !== false);
+export function EditorsPicks({ destinationName, stateName, picks, intelligence, locale }: Props) {
+  void stateName; // reserved for future copy; keeps the prop in the public API
+  const published = picks
+    .filter((p) => p.published !== false)
+    .map((p) => localizeRow(p, locale, ["why_nakshiq", "signature_experience"]));
   if (published.length === 0) return null;
 
   const bySlot = new Map<EditorSlot, EditorStayPick>();
@@ -228,8 +235,8 @@ export function EditorsPicks({ destinationName, stateName, picks, intelligence }
         {SLOT_ORDER.map((slot) => {
           const pick = bySlot.get(slot);
           return pick
-            ? <PickCard key={slot} pick={pick} />
-            : <EmptySlot key={slot} slot={slot} destinationNote={null} />;
+            ? <PickCard key={slot} pick={pick} locale={locale} />
+            : <EmptySlot key={slot} slot={slot} destinationNote={null} locale={locale} />;
         })}
       </div>
 

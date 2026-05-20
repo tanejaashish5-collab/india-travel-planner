@@ -332,7 +332,7 @@ async function getDestination(id: string) {
     supabase.from("emergency_sos").select("*").eq("destination_id", id).single(),
     supabase.from("points_of_interest").select("id, name, type, description, time_needed, entry_fee, kids_suitable, tags").eq("destination_id", id).order("type"),
     supabase.from("destination_stay_picks")
-      .select("slot, name, property_type, price_band, why_nakshiq, signature_experience, sources, contact_only, contact_info, published, confidence")
+      .select("slot, name, property_type, price_band, why_nakshiq, signature_experience, sources, contact_only, contact_info, published, confidence, translations")
       .eq("destination_id", id)
       .eq("published", true),
     fetchScenarios(),
@@ -352,7 +352,7 @@ async function getDestination(id: string) {
       .limit(5),
     supabase
       .from("local_eateries")
-      .select("id, name, area, area_slug, cuisine, category, signature_dish, must_try, price_range, price_per_head_inr, vegetarian, kid_friendly, reservation, dress_code, established_year, why_it_matters, insider_tip, signature_address, google_maps_url, zomato_url, is_legendary, parking_type, hygiene_confidence")
+      .select("id, name, area, area_slug, cuisine, category, signature_dish, must_try, price_range, price_per_head_inr, vegetarian, kid_friendly, reservation, dress_code, established_year, why_it_matters, insider_tip, signature_address, google_maps_url, zomato_url, is_legendary, parking_type, hygiene_confidence, translations")
       .eq("destination_id", id)
       .eq("is_active", true)
       .order("is_legendary", { ascending: false })

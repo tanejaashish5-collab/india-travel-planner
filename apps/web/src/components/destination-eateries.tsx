@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { localizeRow, type Locale, type Translations, type EateryTranslatable } from "@itp/shared";
 import { CollapsibleDetails } from "./collapsible-details";
 
 type Eatery = {
@@ -40,6 +41,7 @@ type Eatery = {
   google_maps_url: string | null;
   zomato_url: string | null;
   is_legendary: boolean;
+  translations?: Translations<EateryTranslatable> | null;
 };
 
 const CATEGORY_LABEL: Record<string, string> = {
@@ -52,6 +54,16 @@ const CATEGORY_LABEL: Record<string, string> = {
   sweet_shop: "Sweet shop",
 };
 
+const CATEGORY_LABEL_HI: Record<string, string> = {
+  fine_dining: "फ़ाइन डाइनिंग",
+  mid_range: "मिड-रेंज",
+  casual: "कैज़ुअल",
+  street_food: "स्ट्रीट फ़ूड",
+  cafe: "कैफ़े",
+  bar: "बार",
+  sweet_shop: "मिठाई की दुकान",
+};
+
 const CATEGORY_ORDER = ["fine_dining", "mid_range", "casual", "street_food", "cafe", "bar", "sweet_shop"];
 
 const PARKING_LABEL: Record<string, string> = {
@@ -62,6 +74,16 @@ const PARKING_LABEL: Record<string, string> = {
   "walk-200m": "Park 200m away",
   "walk-500m+": "Park 500m+ walk",
   "no-vehicle-access": "No vehicle access",
+};
+
+const PARKING_LABEL_HI: Record<string, string> = {
+  "on-site": "ऑन-साइट पार्किंग",
+  "paid-nearby": "पास में पेड पार्किंग",
+  valet: "वैले पार्किंग",
+  street: "स्ट्रीट पार्किंग",
+  "walk-200m": "200मी दूर पार्किंग",
+  "walk-500m+": "500मी+ पैदल",
+  "no-vehicle-access": "वाहन प्रवेश नहीं",
 };
 
 // Hygiene tier — three buckets based on how many signals an eatery clears.
@@ -108,13 +130,30 @@ function mapsUrl(e: Eatery): string {
   return `https://www.google.com/maps/search/?api=1&query=${q}`;
 }
 
-export function DestinationEateries({ eateries, destinationName }: { eateries: Eatery[]; destinationName: string }) {
+export function DestinationEateries({
+  eateries,
+  destinationName,
+  locale,
+}: {
+  eateries: Eatery[];
+  destinationName: string;
+  locale: Locale;
+}) {
   const [activeArea, setActiveArea] = useState<string | null>(null);
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
 
+  // Swap prose fields (signature_dish / why_it_matters / insider_tip) to Hindi
+  // when present; names, areas, dishes and addresses stay in Latin script.
+  const localized = useMemo(
+    () => eateries.map((e) => localizeRow(e, locale, ["signature_dish", "why_it_matters", "insider_tip"])),
+    [eateries, locale],
+  );
+  const catLabel = locale === "hi" ? CATEGORY_LABEL_HI : CATEGORY_LABEL;
+  const parkLabel = locale === "hi" ? PARKING_LABEL_HI : PARKING_LABEL;
+
   const areas = useMemo(() => {
     const map = new Map<string, { slug: string; label: string; count: number }>();
-    for (const e of eateries) {
+    for (const e of localized) {
       if (!e.area_slug) continue;
       const label = (e.area ?? "").split(",")[0].trim() || e.area_slug;
       const existing = map.get(e.area_slug);
@@ -122,20 +161,20 @@ export function DestinationEateries({ eateries, destinationName }: { eateries: E
       else map.set(e.area_slug, { slug: e.area_slug, label, count: 1 });
     }
     return Array.from(map.values()).sort((a, b) => b.count - a.count);
-  }, [eateries]);
+  }, [localized]);
 
   const categories = useMemo(() => {
-    const set = new Set(eateries.map((e) => e.category));
+    const set = new Set(localized.map((e) => e.category));
     return CATEGORY_ORDER.filter((c) => set.has(c));
-  }, [eateries]);
+  }, [localized]);
 
   const filtered = useMemo(() => {
-    return eateries.filter((e) => {
+    return localized.filter((e) => {
       if (activeArea && e.area_slug !== activeArea) return false;
       if (activeCategory && e.category !== activeCategory) return false;
       return true;
     });
-  }, [eateries, activeArea, activeCategory]);
+  }, [localized, activeArea, activeCategory]);
 
   if (eateries.length === 0) return null;
 
@@ -211,7 +250,7 @@ export function DestinationEateries({ eateries, destinationName }: { eateries: E
                 activeCategory === c ? "border-foreground text-foreground" : "border-border text-muted-foreground hover:text-foreground"
               }`}
             >
-              {CATEGORY_LABEL[c] ?? c}
+              {catLabel[c] ?? c}
             </button>
           ))}
         </div>
@@ -284,7 +323,7 @@ export function DestinationEateries({ eateries, destinationName }: { eateries: E
               </div>
               <div className="text-right text-[11px] text-muted-foreground shrink-0">
                 <div className="font-medium">{e.price_range}</div>
-                <div>{CATEGORY_LABEL[e.category] ?? e.category}</div>
+                <div>{catLabel[e.category] ?? e.category}</div>
               </div>
             </div>
 
@@ -326,7 +365,7 @@ export function DestinationEateries({ eateries, destinationName }: { eateries: E
                   title="Parking situation as audited"
                 >
                   <span aria-hidden="true">🅿︎</span>
-                  {PARKING_LABEL[e.parking_type] ?? e.parking_type}
+                  {parkLabel[e.parking_type] ?? e.parking_type}
                 </span>
               )}
             </div>

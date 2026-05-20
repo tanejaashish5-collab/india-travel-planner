@@ -28,6 +28,8 @@ import {
   verdictFor,
   verdictTier,
   VERDICT_COLOR,
+  localizeRow,
+  type Locale,
 } from "@itp/shared";
 
 // Cinematic chrome
@@ -104,7 +106,7 @@ import { HonestScarcityPanel } from "./honest-scarcity-panel";
 import { isHonestScarcityConfirmed } from "@/lib/honest-scarcity";
 
 export function DestinationDetailCinematic({ dest }: { dest: any }) {
-  const locale = useLocale();
+  const locale = useLocale() as Locale;
   const tm = useTranslations("months");
   const issueNum = getIssueNumber();
   const months = (dest.destination_months ?? []).sort(
@@ -134,7 +136,9 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
     : dest.kids_friendly;
   const trapAlts = dest.trap_alternatives ?? [];
   const pois = dest.points_of_interest ?? [];
-  const eateries = dest.eateries ?? [];
+  const eateries = (dest.eateries ?? []).map((e: any) =>
+    localizeRow(e, locale, ["signature_dish", "why_it_matters", "insider_tip"]),
+  );
   const answeredQuestions = dest.questions ?? [];
   const monthlyScores = months.map((m: any) => ({
     m: m.month,
@@ -2071,7 +2075,7 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
                     gap: 24,
                   }}
                 >
-                  {dest.editor_stay_picks.map((p: any) => (
+                  {dest.editor_stay_picks.map((raw: any) => localizeRow(raw, locale, ["why_nakshiq", "signature_experience"])).map((p: any) => (
                     <div
                       key={p.slot ?? p.name}
                       style={{

@@ -54,7 +54,7 @@ import { SuggestEditButton } from "./suggest-edit-button";
 import MethodologyStrip from "./methodology-strip";
 import KnowBeforeYouGo from "./know-before-you-go";
 import { EditorsPicks } from "./editors-picks";
-import { currentMonthIST } from "@itp/shared";
+import { currentMonthIST, localizeRow, type Locale } from "@itp/shared";
 import { InternationalInfoSection } from "./international-info";
 import { EmergencySOSSection, SOSFloatingButton } from "./emergency-sos";
 import { DestinationAlerts } from "./destination-alerts";
@@ -65,7 +65,7 @@ import { POISection } from "./poi-section";
 import { DIFFICULTY_BG } from "@/lib/design-tokens";
 
 export function DestinationDetail({ dest }: { dest: any }) {
-  const locale = useLocale();
+  const locale = useLocale() as Locale;
   const t = useTranslations("destination");
   const tm = useTranslations("months");
 
@@ -810,10 +810,11 @@ export function DestinationDetail({ dest }: { dest: any }) {
                 {dest.editor_stay_picks?.length > 0 ? (
                   <section id="section-stays">
                     <EditorsPicks
-                      destinationName={dest.name}
+                      destinationName={displayName}
                       stateName={stateName}
                       picks={dest.editor_stay_picks}
                       intelligence={dest.stay_intelligence}
+                      locale={locale}
                     />
                   </section>
                 ) : isHonestScarcityConfirmed(dest.honest_scarcity, "stays") ? (
@@ -1443,7 +1444,7 @@ export function DestinationDetail({ dest }: { dest: any }) {
                   <h2 className="text-xl font-semibold mb-2">Local Picks</h2>
                   <p className="text-sm text-muted-foreground mb-4">Vetted stays, operators, and local businesses — not a booking site, just honest recommendations.</p>
                   <div className="grid gap-3 sm:grid-cols-2">
-                    {dest.local_stays.map((stay: any) => (
+                    {dest.local_stays.map((s: any) => localizeRow(s, locale, ["why_special", "best_for"])).map((stay: any) => (
                       <div key={stay.id} id={`stay-${stay.id}`} className="rounded-xl border border-border p-4 hover:border-primary/30 transition-colors overflow-hidden">
                         <div className="flex items-start justify-between gap-3 mb-1">
                           <div className="min-w-0">
@@ -1502,7 +1503,7 @@ export function DestinationDetail({ dest }: { dest: any }) {
               chatbot used to give for food questions. */}
           {hasEateries ? (
             <section id="section-eateries" className="scroll-mt-40 space-y-4">
-              <DestinationEateries eateries={eateries} destinationName={displayName} />
+              <DestinationEateries eateries={eateries} destinationName={displayName} locale={locale} />
             </section>
           ) : isHonestScarcityConfirmed(dest.honest_scarcity, "eateries") ? (
             <section id="section-eateries" className="scroll-mt-40 space-y-4">

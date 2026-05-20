@@ -36,6 +36,25 @@ export interface HiddenGemTranslatable {
   why_go: string;
 }
 
+/** Prose fields translated on a local_eateries row — names/areas/dishes stay Latin */
+export interface EateryTranslatable {
+  signature_dish: string;
+  why_it_matters: string;
+  insider_tip: string;
+}
+
+/** Prose fields translated on a local_stays row */
+export interface LocalStayTranslatable {
+  why_special: string;
+  best_for: string;
+}
+
+/** Prose fields translated on a destination_stay_picks row */
+export interface StayPickTranslatable {
+  why_nakshiq: string;
+  signature_experience: string;
+}
+
 // --- Enums ---
 
 export type Difficulty = "easy" | "moderate" | "hard" | "extreme";
