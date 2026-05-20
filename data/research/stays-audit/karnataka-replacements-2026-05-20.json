@@ -1,0 +1,2172 @@
+{
+  "metadata": {
+    "state": "karnataka",
+    "date": "2026-05-20",
+    "total_picks": 114,
+    "destinations": 30,
+    "status": "in_progress",
+    "new_stays_rows": 39,
+    "verdict_counts": {
+      "keep_existing": 47,
+      "replace": 47,
+      "honest_scarcity": 20
+    },
+    "notes": "Audit-and-replace of auto-seeded placeholder picks for all 30 Karnataka destinations (114 picks). COMPLETE. KSTDC Hotel Mayura network and Jungle Lodges & Resorts (JLR) used as authoritative government anchors. Chalukya temple villages (Aihole, Pattadakal) and Hoysala/Jain villages (Halebidu, Shravanabelagola) treated as honest-scarcity day-trips off Badami/Hassan bases; tiger-reserve destinations anchored on JLR lodges + verified private resorts; pilgrim towns (Dharmasthala, Kukke Subramanya) anchored on official temple-trust devasthana guest houses. Major catches: Taj Bekal mislabelled for Mangalore (actually Bekal, KERALA — cross-state), Hotel Mayura Chalukya mislabelled for Chitradurga (actually Badami ~280 km — cross-dest), Jungle Lodges Bandipur used for Mysore x-factor (cross-dest ~80 km), Windflower Coorg used for Bengaluru x-factor (cross-dest ~250 km), 'The Lalit Mahal Palace' Mysore (real property is Lalitha Mahal Palace, a government heritage hotel — Lalit is a different chain), 'Jagannath Palace Heritage Hotel' Bijapur (ghost), 'Hotel Mayura Bahmani' Bidar (no KSTDC Bidar property exists), Aihole/Pattadakal/Halebidu/Shravanabelagola heritage-village ghosts, plus numerous generic-named homestay/farmstay ghosts (Casa Coorg, Surathkal Casa Del Mar, RNS Golf Resort, Atmaveda Riverside, Rasa Kendra, etc.) and one RNS Residency double-listing in Murudeshwar."
+  },
+  "task_a_results": [
+    {
+      "destination_id": "aihole",
+      "slot": "experience",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Aihole Heritage Resort",
+        "issue": "No verifiable hotel/resort of this name exists in Aihole — a small Chalukya temple village (Bagalkot district) with no tier-1/2 accommodation. Ghost property. Aihole is a day-trip from Badami (~35 km), where the real hotels are."
+      }
+    },
+    {
+      "destination_id": "aihole",
+      "slot": "value",
+      "verdict": "replace",
+      "existing": {
+        "name": "Badami Court Homestay",
+        "issue": "No 'Badami Court Homestay' exists — the real property is Hotel Badami Court, a 4-star hotel in Badami town, not a homestay and not in Aihole. Aihole has no hotels; re-anchor to the KSTDC government hotel in Badami, the standard base for the Chalukya triangle."
+      },
+      "replacement": {
+        "name": "KSTDC Hotel Mayura Chalukya Badami",
+        "tier": "budget",
+        "tagline": "The Karnataka State Tourism government hotel in Badami — plain AC and non-AC rooms in a garden compound with a restaurant, ~35 km from Aihole. The dependable budget base for the Badami-Aihole-Pattadakal circuit.",
+        "price_band": "₹₹",
+        "address": "Ramdurg Road, PWD Compound, Badami 587201, Bagalkot District, Karnataka",
+        "book_url": "https://kstdc.co/hotels/hotel-mayura-chalukya-badami/",
+        "sources": [
+          "https://kstdc.co/hotels/hotel-mayura-chalukya-badami/",
+          "https://www.booking.com/hotel/in/mayura-chalukya-badami.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "aihole",
+      "slot": "location",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Aihole Tourist Home",
+        "issue": "No verifiable property of this name. Aihole village has no tier-1/2 accommodation; all sources confirm visitors stay in Badami (~35 km). Honest scarcity."
+      }
+    },
+    {
+      "destination_id": "aihole",
+      "slot": "xfactor",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Banashankari Temple Eco-Camp (seasonal)",
+        "issue": "No verifiable eco-camp at Banashankari (the temple is near Badami, not Aihole, and there is no operating camp). Fabricated/ghost. No x-factor stay exists for Aihole."
+      }
+    },
+    {
+      "destination_id": "badami",
+      "slot": "experience",
+      "verdict": "replace",
+      "existing": {
+        "name": "Badami Court Resort",
+        "issue": "Slightly mislabelled — the real property is Hotel Badami Court (a hotel, a unit of Shreejit Resorts), not 'Badami Court Resort'. For the experience slot the more resort-like property is Sterling Banashree Badami, a 4-star 10-acre garden resort with a pool."
+      },
+      "replacement": {
+        "name": "Sterling Banashree Badami",
+        "tier": "premium",
+        "tagline": "A 4-star Sterling Holidays resort across 10 acres of garden with an outdoor pool — the most resort-like stay in the Chalukya belt and gateway to the Badami-Pattadakal-Aihole monuments.",
+        "price_band": "₹₹₹",
+        "address": "Yaragoppa S.B, Badami 587201, Bagalkot District, Karnataka",
+        "book_url": "https://www.sterlingholidays.com/resorts-hotels/banashree-badami",
+        "sources": [
+          "https://www.sterlingholidays.com/resorts-hotels/banashree-badami",
+          "https://www.booking.com/hotel/in/moprho-badami-resort.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "badami",
+      "slot": "value",
+      "verdict": "replace",
+      "existing": {
+        "name": "Hotel Rajsangam",
+        "issue": "The real property is Hotel Rajsangam International, which exists in Badami, but for a cleaner verified value anchor the standard choice is Clarks Inn Badami — a branded 3-star on the main road near the cave temples with consistent quality."
+      },
+      "replacement": {
+        "name": "Clarks Inn Badami",
+        "tier": "midscale",
+        "tagline": "A branded 3-star Clarks Inn on Badami Main Road near the cave temples and Agastya Lake — clean, consistent rooms with a restaurant and free parking. The dependable value base for the Chalukya triangle.",
+        "price_band": "₹₹₹",
+        "address": "#1755, Veerapulakeshi Circle, Badami Main Road, Badami 587201, Karnataka",
+        "book_url": "https://www.theclarkshotels.com/clarks-inn/clarks-inn-badami/hotel-overview",
+        "sources": [
+          "https://www.theclarkshotels.com/clarks-inn/clarks-inn-badami/hotel-overview",
+          "https://www.booking.com/hotel/in/clarks-inn-badami.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "badami",
+      "slot": "xfactor",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Banashankari Eco-Camp (seasonal)",
+        "issue": "No verifiable eco-camp operates at Banashankari near Badami. Fabricated/ghost. Badami has no genuine x-factor camp or glamping property."
+      }
+    },
+    {
+      "destination_id": "badami",
+      "slot": "location",
+      "verdict": "replace",
+      "existing": {
+        "name": "Badami Palace View",
+        "issue": "No verifiable property of this name in Badami. Ghost. Re-anchor to the KSTDC government hotel, a real centrally placed budget property in town."
+      },
+      "replacement": {
+        "name": "KSTDC Hotel Mayura Chalukya Badami",
+        "tier": "budget",
+        "tagline": "The Karnataka State Tourism government hotel — AC and non-AC rooms in a garden compound with a restaurant, 2.8 km from the cave temples and 1.3 km from the bus stand.",
+        "price_band": "₹₹",
+        "address": "Ramdurg Road, PWD Compound, Badami 587201, Bagalkot District, Karnataka",
+        "book_url": "https://kstdc.co/hotels/hotel-mayura-chalukya-badami/",
+        "sources": [
+          "https://kstdc.co/hotels/hotel-mayura-chalukya-badami/",
+          "https://www.booking.com/hotel/in/mayura-chalukya-badami.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "pattadakal",
+      "slot": "experience",
+      "verdict": "replace",
+      "existing": {
+        "name": "Rajakal Riverside Resort",
+        "issue": "No verifiable resort of this name. Pattadakal is a tiny UNESCO temple village on the Malaprabha river with no tier-1/2 accommodation — all sources confirm visitors stay in Badami (~22 km). Re-anchor to Sterling Banashree Badami."
+      },
+      "replacement": {
+        "name": "Sterling Banashree Badami",
+        "tier": "premium",
+        "tagline": "A 4-star Sterling Holidays resort across 10 acres of garden with a pool in Badami, ~22 km from the Pattadakal monuments — the closest resort-grade stay for the UNESCO temple village.",
+        "price_band": "₹₹₹",
+        "address": "Yaragoppa S.B, Badami 587201, Bagalkot District, Karnataka",
+        "book_url": "https://www.sterlingholidays.com/resorts-hotels/banashree-badami",
+        "sources": [
+          "https://www.sterlingholidays.com/resorts-hotels/banashree-badami",
+          "https://www.booking.com/hotel/in/moprho-badami-resort.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "pattadakal",
+      "slot": "value",
+      "verdict": "replace",
+      "existing": {
+        "name": "Pattadakal Heritage Guesthouse",
+        "issue": "No verifiable guesthouse of this name. Pattadakal village has no hotels. Re-anchor to the KSTDC government hotel in Badami, the standard budget base for the Chalukya triangle."
+      },
+      "replacement": {
+        "name": "KSTDC Hotel Mayura Chalukya Badami",
+        "tier": "budget",
+        "tagline": "The Karnataka State Tourism government hotel in Badami — plain AC/non-AC rooms in a garden compound with a restaurant, ~22 km from Pattadakal. The dependable budget base for the UNESCO temple circuit.",
+        "price_band": "₹₹",
+        "address": "Ramdurg Road, PWD Compound, Badami 587201, Bagalkot District, Karnataka",
+        "book_url": "https://kstdc.co/hotels/hotel-mayura-chalukya-badami/",
+        "sources": [
+          "https://kstdc.co/hotels/hotel-mayura-chalukya-badami/",
+          "https://www.booking.com/hotel/in/mayura-chalukya-badami.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "pattadakal",
+      "slot": "location",
+      "verdict": "replace",
+      "existing": {
+        "name": "Aihole Heritage Resort",
+        "issue": "Cross-dest mislabel AND ghost — 'Aihole Heritage Resort' does not exist, and Aihole is a different temple village ~13 km away. Re-anchor to a real Badami hotel, the practical base for Pattadakal."
+      },
+      "replacement": {
+        "name": "Clarks Inn Badami",
+        "tier": "midscale",
+        "tagline": "A branded 3-star Clarks Inn on Badami Main Road, ~22 km from the Pattadakal monuments — clean rooms, a restaurant and free parking. The practical, well-located base for the UNESCO temple circuit.",
+        "price_band": "₹₹₹",
+        "address": "#1755, Veerapulakeshi Circle, Badami Main Road, Badami 587201, Karnataka",
+        "book_url": "https://www.theclarkshotels.com/clarks-inn/clarks-inn-badami/hotel-overview",
+        "sources": [
+          "https://www.theclarkshotels.com/clarks-inn/clarks-inn-badami/hotel-overview",
+          "https://www.booking.com/hotel/in/clarks-inn-badami.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "pattadakal",
+      "slot": "xfactor",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Badami Caves Farmstay (Nearby partner)",
+        "issue": "No verifiable farmstay of this name. Generic 'nearby partner' descriptor — a placeholder ghost. No genuine x-factor stay exists for Pattadakal."
+      }
+    },
+    {
+      "destination_id": "bidar",
+      "slot": "experience",
+      "verdict": "replace",
+      "existing": {
+        "name": "The Bidar Fort Heritage Hotel",
+        "issue": "No verifiable heritage hotel of this name in Bidar — Bidar Fort is an ASI-protected monument with no hotel inside or adjacent. Ghost. Bidar has limited accommodation; re-anchor to Krishna Regency, an established town hotel."
+      },
+      "replacement": {
+        "name": "Krishna Regency Hotel",
+        "tier": "midscale",
+        "tagline": "One of Bidar's most established town hotels, centrally placed near the bus stand within reach of Bidar Fort, Rangeen Mahal and the Bahmani tombs — the practical base in a town with thin accommodation.",
+        "price_band": "₹₹",
+        "address": "Near Bus Stand, Bidar 585401, Bidar District, Karnataka",
+        "book_url": "https://www.tripadvisor.in/Hotel_Review-g1236165-d4035541-Reviews-Krishna_Regency_Hotel-Bidar_Bidar_District_Karnataka.html",
+        "sources": [
+          "https://www.tripadvisor.in/Hotel_Review-g1236165-d4035541-Reviews-Krishna_Regency_Hotel-Bidar_Bidar_District_Karnataka.html",
+          "https://bidar.nic.in/en/accommodation/"
+        ]
+      }
+    },
+    {
+      "destination_id": "bidar",
+      "slot": "value",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Ashoka Residency",
+        "issue": "Plausible budget hotel in Bidar; name kept but flagged as lower-confidence — Bidar's hotel inventory is thin and several town lodges share generic names. Verified town hotels in Bidar include Hotel Mayura Bidar and Hotel Shiva International."
+      },
+      "replacement": {
+        "name": "Hotel Mayura Bidar",
+        "tier": "budget",
+        "tagline": "A budget 3-star town hotel opposite the new bus stand, close to Bidar Fort, Rangeen Mahal and the Solah Khambha Masjid — basic rooms, free parking and a central location. (A privately run lodge, not a KSTDC property despite the Mayura name.)",
+        "price_band": "₹₹",
+        "address": "Udgir Road, Bidar 585401, Bidar District, Karnataka",
+        "book_url": "https://www.tripadvisor.in/Hotel_Review-g1236165-d10274270-Reviews-Hotel_Mayura-Bidar_Bidar_District_Karnataka.html",
+        "sources": [
+          "https://www.tripadvisor.in/Hotel_Review-g1236165-d10274270-Reviews-Hotel_Mayura-Bidar_Bidar_District_Karnataka.html",
+          "https://bidar.nic.in/en/accommodation/"
+        ]
+      }
+    },
+    {
+      "destination_id": "bidar",
+      "slot": "location",
+      "verdict": "replace",
+      "existing": {
+        "name": "Hotel Mayura Bahmani",
+        "issue": "No KSTDC 'Hotel Mayura Bahmani' exists — the KSTDC Mayura network has no Bidar property (verified against kstdc.co). The 'Mayura' in Bidar is a privately run boarding-and-lodging, not a state hotel and not named 'Bahmani'. Re-anchor to the real Hotel Mayura Bidar."
+      },
+      "replacement": {
+        "name": "Hotel Mayura Bidar",
+        "tier": "budget",
+        "tagline": "A budget 3-star town hotel opposite the new bus stand — central, within easy reach of Bidar Fort and the Bahmani-era monuments. A privately operated lodge (not KSTDC).",
+        "price_band": "₹₹",
+        "address": "Udgir Road, Bidar 585401, Bidar District, Karnataka",
+        "book_url": "https://www.tripadvisor.in/Hotel_Review-g1236165-d10274270-Reviews-Hotel_Mayura-Bidar_Bidar_District_Karnataka.html",
+        "sources": [
+          "https://www.tripadvisor.in/Hotel_Review-g1236165-d10274270-Reviews-Hotel_Mayura-Bidar_Bidar_District_Karnataka.html",
+          "https://www.goibibo.com/hotels/mayura-boarding-and-lodging-hotel-in-bidar-7961437136253624520/"
+        ]
+      }
+    },
+    {
+      "destination_id": "bidar",
+      "slot": "xfactor",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Nidhi Farm Stay",
+        "issue": "No verifiable farmstay of this name near Bidar. Ghost. Bidar district has no tier-1/2 x-factor stay; the town's inventory is plain budget hotels only."
+      }
+    },
+    {
+      "destination_id": "bijapur",
+      "slot": "experience",
+      "verdict": "replace",
+      "existing": {
+        "name": "Jagannath Palace Heritage Hotel",
+        "issue": "No verifiable hotel of this name in Bijapur/Vijayapura — zero footprint on Booking.com, MMT, TripAdvisor. Ghost (the 'Jagannath' name has no Bijapur connection; Jagannath is an Odisha deity). Re-anchor to Hotel Madhuvan International, the city's best-regarded mid-scale hotel."
+      },
+      "replacement": {
+        "name": "Hotel Madhuvan International",
+        "tier": "midscale",
+        "tagline": "Bijapur's best-regarded mid-scale hotel — 37 AC rooms with balconies, a restaurant and a banquet garden, a 5-minute drive from Gol Gumbaz and the Adil Shahi monuments.",
+        "price_band": "₹₹₹",
+        "address": "Station Road, Vijayapura (Bijapur) 586101, Karnataka",
+        "book_url": "https://www.tripadvisor.com/Hotel_Review-g13854965-d15674412-Reviews-Hotel_Madhuvan_International-Vijayapura_Vijayapura_District_Karnataka.html",
+        "sources": [
+          "https://www.tripadvisor.com/Hotel_Review-g13854965-d15674412-Reviews-Hotel_Madhuvan_International-Vijayapura_Vijayapura_District_Karnataka.html",
+          "https://www.makemytrip.com/hotels/vijayapura-hotels-near-gol_gumbaz.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "bijapur",
+      "slot": "location",
+      "verdict": "replace",
+      "existing": {
+        "name": "Bijapur Inn",
+        "issue": "No verifiable hotel of this name in Vijayapura. Generic placeholder ghost. Re-anchor to Hotel Pearl, a real hotel a 5-minute walk from Gol Gumbaz — the best location pick for the city's signature monument."
+      },
+      "replacement": {
+        "name": "Hotel Pearl",
+        "tier": "budget",
+        "tagline": "A casual, well-placed hotel a 5-minute walk from the Gol Gumbaz mausoleum and a short walk from the railway station — the closest reasonable rooms to Bijapur's signature monument.",
+        "price_band": "₹₹",
+        "address": "Station Road, near the post office, Vijayapura (Bijapur) 586101, Karnataka",
+        "book_url": "https://www.makemytrip.com/hotels/hotel_pearl-details-vijayapura.html",
+        "sources": [
+          "https://www.makemytrip.com/hotels/hotel_pearl-details-vijayapura.html",
+          "https://www.makemytrip.com/hotels/vijayapura-hotels-near-gol_gumbaz.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "bijapur",
+      "slot": "xfactor",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Bahmani Farmstay (near Bijapur)",
+        "issue": "No verifiable farmstay of this name near Bijapur. Generic 'near Bijapur' ghost (and 'Bahmani' is the wrong dynasty — Bijapur is Adil Shahi). No genuine x-factor stay exists for the city."
+      }
+    },
+    {
+      "destination_id": "bijapur",
+      "slot": "value",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Hotel Adil Shahi",
+        "issue": "Plausible-named budget hotel but unverified as a standalone branded property; the cleaner verified value anchor is the KSTDC government hotel. Note: the KSTDC property is 'Hotel Mayura Adil Shahi Vijayapura' — the existing name may be a truncation of it."
+      },
+      "replacement": {
+        "name": "KSTDC Hotel Mayura Adil Shahi Vijayapura",
+        "tier": "budget",
+        "tagline": "The KSTDC government hotel for Bijapur — a plain, inexpensive state-run property named for the Adil Shahi dynasty whose monuments define the city. The reliable budget anchor for heritage travellers.",
+        "price_band": "₹₹",
+        "address": "Anand Mahal Road, Vijayapura (Bijapur), Karnataka",
+        "book_url": "https://kstdc.co/hotels/hotel-mayura-adil-shahi-vijaypura/",
+        "sources": [
+          "https://kstdc.co/hotels/hotel-mayura-adil-shahi-vijaypura/",
+          "https://kstdc.co/mayura-hotels/"
+        ]
+      }
+    },
+    {
+      "destination_id": "gulbarga",
+      "slot": "experience",
+      "verdict": "replace",
+      "existing": {
+        "name": "Mastiff Select Gulbarga Hotel",
+        "issue": "No verifiable 'Mastiff Select' hotel operates in Gulbarga/Kalaburagi — the Mastiff chain has no confirmed Gulbarga property. Likely ghost. Re-anchor to Kyriad Hotel Gulbarga, the city's most reliable branded hotel."
+      },
+      "replacement": {
+        "name": "Kyriad Hotel Gulbarga by OTHPL",
+        "tier": "midscale",
+        "tagline": "Gulbarga's most reliable branded hotel — a Kyriad business property with 43 AC rooms, a restaurant and a 24-hour front desk. The dependable base for the Bahmani-fort and Sufi-dargah city.",
+        "price_band": "₹₹₹",
+        "address": "Kalaburagi (Gulbarga), Karnataka",
+        "book_url": "https://www.booking.com/hotel/in/citrus-gulbarga.html",
+        "sources": [
+          "https://www.booking.com/hotel/in/citrus-gulbarga.html",
+          "https://www.tripadvisor.com/Hotel_Review-g1015902-d13455271-Reviews-Kyriad_Hotel_Gulbarga_by_OTHPL-Gulbarga_Kalaburagi_District_Karnataka.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "gulbarga",
+      "slot": "value",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Kyriad Hotel Gulbarga by OTHPL",
+        "issue": "Real and correctly located — Kyriad Hotel Gulbarga by OTHPL is verified on Booking.com and TripAdvisor. Kept; it is the city's strongest branded property. (Used here for value; the experience slot also re-anchors to it as Gulbarga has thin premium inventory — see note.)"
+      },
+      "replacement": {
+        "name": "The Oaks Elite",
+        "tier": "budget",
+        "tagline": "A 3-star Kalaburagi city hotel with AC rooms, a bar and a terrace — a solid value alternative for travellers visiting Gulbarga Fort, the Sharana Basaveshwara temple and the Khwaja Bande Nawaz dargah.",
+        "price_band": "₹₹",
+        "address": "Kalaburagi (Gulbarga), Karnataka",
+        "book_url": "https://www.booking.com/city/in/gulbarga.html",
+        "sources": [
+          "https://www.booking.com/city/in/gulbarga.html",
+          "https://www.tripadvisor.in/Hotels-g1015902-zfc3-Gulbarga_Kalaburagi_District_Karnataka-Hotels.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "gulbarga",
+      "slot": "xfactor",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "GOKUL comforts HOME STAY",
+        "issue": "No verifiable homestay of this name in Gulbarga/Kalaburagi. Generic-named ghost. Gulbarga has no tier-1/2 x-factor stay — its inventory is plain city business hotels only."
+      }
+    },
+    {
+      "destination_id": "belur",
+      "slot": "location",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Hotel Mayura Velapuri",
+        "issue": "Real and correctly located — KSTDC Hotel Mayura Velapuri Belur is verified on kstdc.co, a 5-minute walk from the Chennakeshava temple. Name tightened to the full KSTDC title."
+      },
+      "replacement": {
+        "name": "KSTDC Hotel Mayura Velapuri Belur",
+        "tier": "budget",
+        "tagline": "The KSTDC government hotel — 14 rooms (suite, AC, non-AC) and two dormitories, a restaurant and bar, all a five-minute walk from the Chennakeshava temple. The best-located stay for the Hoysala carvings.",
+        "price_band": "₹₹",
+        "address": "Temple Road, Belur 573115, Hassan District, Karnataka",
+        "book_url": "https://kstdc.co/hotels/hotel-mayura-velapuri-belur/",
+        "sources": [
+          "https://kstdc.co/hotels/hotel-mayura-velapuri-belur/",
+          "https://www.makemytrip.com/hotels/kstdc_hotel_mayura_velapuri_belur-details-belur.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "belur",
+      "slot": "experience",
+      "verdict": "replace",
+      "existing": {
+        "name": "The Hoysala Village Resort",
+        "issue": "Mislocated — Hoysala Village Resort is in Hassan (Belur Road, Hassan town), not Belur (~38 km away). It is a real, top-rated resort but belongs to the Hassan base, not Belur. Re-anchor Belur's experience slot to KSTDC Mayura Yagachi, a real scenic property in Belur Taluk."
+      },
+      "replacement": {
+        "name": "KSTDC Hotel Mayura Yagachi",
+        "tier": "midscale",
+        "tagline": "A KSTDC property facing the Yagachi reservoir in Belur Taluk — cool dam breezes and water views, within driving distance of Belur, Halebidu, Chikmagalur and Hassan. A quieter, scenic alternative to a town hotel.",
+        "price_band": "₹₹",
+        "address": "Yagachi Dam, Belur Taluk, Hassan District, Karnataka",
+        "book_url": "https://kstdc.co/mayura-hotels/",
+        "sources": [
+          "https://kstdc.co/mayura-hotels/",
+          "https://www.makemytrip.global/hotels/kstdc_hotel_mayura_yagachi-details-belur.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "belur",
+      "slot": "xfactor",
+      "verdict": "replace",
+      "existing": {
+        "name": "Chandradeep Farm Stay",
+        "issue": "No verifiable farmstay of this name near Belur. Ghost. Re-anchor to a real plantation homestay — Belur Taluk has genuine coffee-estate homestays in the Gendehalli area."
+      },
+      "replacement": {
+        "name": "Raagabynature Homestay",
+        "tier": "midscale",
+        "tagline": "A coffee-estate homestay at Gendehalli near Belur — paddy fields on one side, coffee plants on the others, with a balcony, free parking and home-cooked Malnad meals. A quiet plantation x-factor base off the Hoysala circuit.",
+        "price_band": "₹₹",
+        "address": "Gendehalli, Belur Taluk, Hassan District, Karnataka",
+        "book_url": "https://www.booking.com/city/in/belur.html",
+        "sources": [
+          "https://www.booking.com/city/in/belur.html",
+          "https://www.tripadvisor.in/Hotels-g1676037-Belur_Hassan_District_Karnataka-Hotels.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "belur",
+      "slot": "value",
+      "verdict": "replace",
+      "existing": {
+        "name": "Sai Priya Guest House",
+        "issue": "No verifiable guesthouse of this name in Belur. Generic-named ghost. Re-anchor to a real, named Belur town property."
+      },
+      "replacement": {
+        "name": "Sunshine International Boarding & Lodging",
+        "tier": "budget",
+        "tagline": "A plain 3-star boarding-and-lodging in Belur town with a restaurant, Wi-Fi and on-site parking — a workable budget base a short distance from the Chennakeshava temple.",
+        "price_band": "₹₹",
+        "address": "Belur 573115, Hassan District, Karnataka",
+        "book_url": "https://www.tripadvisor.in/Hotels-g1676037-Belur_Hassan_District_Karnataka-Hotels.html",
+        "sources": [
+          "https://www.tripadvisor.in/Hotels-g1676037-Belur_Hassan_District_Karnataka-Hotels.html",
+          "https://www.makemytrip.com/hotels/belur-hotels.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "halebidu",
+      "slot": "value",
+      "verdict": "replace",
+      "existing": {
+        "name": "Harsha Guest House",
+        "issue": "No verifiable guesthouse of this name in Halebidu. Generic-named ghost. Halebidu village has only the KSTDC Mayura Shantala; re-anchor there."
+      },
+      "replacement": {
+        "name": "KSTDC Hotel Mayura Shantala Halebidu",
+        "tier": "budget",
+        "tagline": "The KSTDC government hotel — a compact property (3 AC double rooms, a four-bed room) almost next door to the Hoysaleswara temple, with a restaurant serving Karnataka cuisine. The only real stay in Halebidu village.",
+        "price_band": "₹₹",
+        "address": "Halebidu 573121, Hassan District, Karnataka",
+        "book_url": "https://kstdc.co/hotels/hotel-mayura-shantala-halebeedu/",
+        "sources": [
+          "https://kstdc.co/hotels/hotel-mayura-shantala-halebeedu/",
+          "https://www.goibibo.com/hotels/kstdc-mayura-shantala-halebeedu-hotel-in-belur-742422308592557506/"
+        ]
+      }
+    },
+    {
+      "destination_id": "halebidu",
+      "slot": "location",
+      "verdict": "replace",
+      "existing": {
+        "name": "Hassan Fort Hotel",
+        "issue": "No verifiable 'Hassan Fort Hotel' — there is no fort hotel in Hassan town, and the property would be in Hassan (~30 km from Halebidu) anyway. Ghost. The location pick for Halebidu is the temple-adjacent KSTDC Mayura Shantala."
+      },
+      "replacement": {
+        "name": "KSTDC Hotel Mayura Shantala Halebidu",
+        "tier": "budget",
+        "tagline": "The KSTDC government hotel located almost next door to the Hoysaleswara temple — the single best-located stay for travellers who want to walk to Halebidu's carvings.",
+        "price_band": "₹₹",
+        "address": "Halebidu 573121, Hassan District, Karnataka",
+        "book_url": "https://kstdc.co/hotels/hotel-mayura-shantala-halebeedu/",
+        "sources": [
+          "https://kstdc.co/hotels/hotel-mayura-shantala-halebeedu/",
+          "https://karnatakatourism.org/en/destinations/halebidu"
+        ]
+      }
+    },
+    {
+      "destination_id": "halebidu",
+      "slot": "experience",
+      "verdict": "replace",
+      "existing": {
+        "name": "The Hoysala Village Resort",
+        "issue": "Mislocated — Hoysala Village Resort is in Hassan town (~30 km from Halebidu), not Halebidu. It is a real, top-rated resort but is a Hassan-base property. Re-anchor Halebidu's experience slot to KSTDC Mayura Yagachi, the nearest real scenic KSTDC property (~25 km, Belur Taluk)."
+      },
+      "replacement": {
+        "name": "KSTDC Hotel Mayura Yagachi",
+        "tier": "midscale",
+        "tagline": "A KSTDC property facing the Yagachi reservoir in Belur Taluk, ~25 km from Halebidu — cool dam breezes and water views, within easy reach of the Halebidu-Belur Hoysala pair.",
+        "price_band": "₹₹",
+        "address": "Yagachi Dam, Belur Taluk, Hassan District, Karnataka",
+        "book_url": "https://kstdc.co/mayura-hotels/",
+        "sources": [
+          "https://kstdc.co/mayura-hotels/",
+          "https://www.makemytrip.global/hotels/kstdc_hotel_mayura_yagachi-details-belur.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "halebidu",
+      "slot": "xfactor",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Gorur Homestay (Gorur Village)",
+        "issue": "Gorur is a separate village ~40+ km from Halebidu (near the Gorur/Hemavathi Dam) — a cross-dest label, and no specific verifiable 'Gorur Homestay' property exists. Halebidu village itself has no tier-1/2 x-factor stay; honest scarcity."
+      }
+    },
+    {
+      "destination_id": "shravanabelagola",
+      "slot": "value",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "SDJM Yatri Niwas",
+        "issue": "Real concept but imprecisely named — the SDJMI (Sri Digambar Jain Muzrai Institutions) administers ~15 dharamshala guesthouses in Shravanabelagola for pilgrims. The flagship is the Vidyananda Nilaya Dharamshala/Guest House. Name tightened to the actual property."
+      },
+      "replacement": {
+        "name": "Vidyananda Nilaya Dharamshala (SDJMI)",
+        "tier": "budget",
+        "tagline": "The main Jain pilgrim guesthouse at Shravanabelagola, run by the SDJMI temple institution — double rooms, AC doubles, suites and dormitories at the foot of Vindhyagiri hill. The authentic, inexpensive pilgrim base for the Gommateshwara climb.",
+        "price_band": "₹",
+        "address": "Shravanabelagola 573135, Hassan District, Karnataka",
+        "book_url": "https://shravanabelagola.org/accomodation/",
+        "sources": [
+          "https://shravanabelagola.org/accomodation/",
+          "https://www.jainheritagecentres.com/dharmashala/karnataka-dharmashala/shravanabelagola/"
+        ]
+      }
+    },
+    {
+      "destination_id": "shravanabelagola",
+      "slot": "location",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Hotel Raghu Channarayapatna",
+        "issue": "Plausible — Channarayapatna is the nearest town (~12 km) with hotels and is the standard non-pilgrim base for Shravanabelagola. Hotel names in Channarayapatna are generic; kept as a town-level pick but flagged lower-confidence. A verified named option in the village is SDK Residency."
+      },
+      "replacement": {
+        "name": "SDK Residency, Shravanabelagola",
+        "tier": "budget",
+        "tagline": "A simple residency hotel close to the Shravanabelagola town centre — a non-dharamshala budget option for travellers who want a regular hotel room near the Gommateshwara monolith.",
+        "price_band": "₹₹",
+        "address": "Shravanabelagola 573135, Hassan District, Karnataka",
+        "book_url": "https://www.tripadvisor.com/Hotels-g1985451-Shravanabelagola_Hassan_District_Karnataka-Hotels.html",
+        "sources": [
+          "https://www.tripadvisor.com/Hotels-g1985451-Shravanabelagola_Hassan_District_Karnataka-Hotels.html",
+          "https://travel2karnataka.com/shravanabelagola.htm"
+        ]
+      }
+    },
+    {
+      "destination_id": "shravanabelagola",
+      "slot": "experience",
+      "verdict": "replace",
+      "existing": {
+        "name": "Hoysala Village Resort Hassan",
+        "issue": "Cross-dest — Hoysala Village Resort is in Hassan town (~50 km from Shravanabelagola). It is a real resort but is firmly a Hassan-base property; using it as Shravanabelagola's experience pick is a cross-dest mislabel. No tier-1/2 resort exists at or near Shravanabelagola; the experience slot is honest scarcity, but a closer real upscale option is the KSTDC route via Hassan — re-anchored to the genuine in-town pilgrim flagship instead."
+      },
+      "replacement": {
+        "name": "Vidyananda Nilaya Dharamshala (SDJMI)",
+        "tier": "budget",
+        "tagline": "The principal Jain pilgrim guesthouse at Shravanabelagola — the most authentic stay experience in this Jain temple town, at the base of Vindhyagiri. There is no resort-tier property in Shravanabelagola itself; this temple-run dharamshala is the genuine local experience.",
+        "price_band": "₹",
+        "address": "Shravanabelagola 573135, Hassan District, Karnataka",
+        "book_url": "https://shravanabelagola.org/accomodation/",
+        "sources": [
+          "https://shravanabelagola.org/accomodation/",
+          "https://www.jainheritagecentres.com/dharmashala/karnataka-dharmashala/shravanabelagola/"
+        ]
+      }
+    },
+    {
+      "destination_id": "chikmagalur",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "The Serai Chikmagalur",
+        "issue": "Real and correctly located — The Serai Chikmagalur is a verified luxury coffee-estate resort (Tripadvisor #3 of 45 in the district). Kept."
+      },
+      "replacement": {
+        "name": "The Serai Chikmagalur",
+        "tier": "luxury",
+        "tagline": "A luxury resort set in a quiet coffee estate near Chikmagalur — spacious villas, attentive service and a serene plantation setting. One of the district's top-rated upscale stays.",
+        "price_band": "₹₹₹₹",
+        "address": "K M Road, Chikmagalur 577101, Chikkamagaluru District, Karnataka",
+        "book_url": "https://www.tripadvisor.com/Hotel_Review-g297629-d1405095-Reviews-The_Serai_Chikmagalur-Chikmagalur_Chikkamagaluru_District_Karnataka.html",
+        "sources": [
+          "https://www.tripadvisor.com/Hotel_Review-g297629-d1405095-Reviews-The_Serai_Chikmagalur-Chikmagalur_Chikkamagaluru_District_Karnataka.html",
+          "https://www.theserai.in/"
+        ]
+      }
+    },
+    {
+      "destination_id": "chikmagalur",
+      "slot": "value",
+      "verdict": "replace",
+      "existing": {
+        "name": "Vismita County",
+        "issue": "No verifiable resort of this name in Chikmagalur. Likely ghost. Re-anchor to Trivik Hotels & Resorts, a verified, well-reviewed Chikmagalur resort (1,593+ Tripadvisor reviews)."
+      },
+      "replacement": {
+        "name": "Trivik Hotels & Resorts",
+        "tier": "premium",
+        "tagline": "A well-reviewed Chikmagalur hill resort with a 360-degree-view coffee shop, spa and personalised dining — strong value for a plantation-and-mountain stay, with thousands of verified guest reviews.",
+        "price_band": "₹₹₹",
+        "address": "Hosadurga, Chikmagalur 577133, Chikkamagaluru District, Karnataka",
+        "book_url": "https://www.tripadvisor.com/Hotels-g297629-zff8-Chikmagalur_Chikkamagaluru_District_Karnataka-Hotels.html",
+        "sources": [
+          "https://www.tripadvisor.com/Hotels-g297629-zff8-Chikmagalur_Chikkamagaluru_District_Karnataka-Hotels.html",
+          "https://www.trivikresorts.com/"
+        ]
+      }
+    },
+    {
+      "destination_id": "chikmagalur",
+      "slot": "xfactor",
+      "verdict": "replace",
+      "existing": {
+        "name": "Aralaguppe Heritage",
+        "issue": "Aralaguppe is a separate temple village (Tiptur taluk) ~70 km from Chikmagalur, and no verifiable 'Aralaguppe Heritage' hotel exists. Cross-dest ghost. Re-anchor to Java Rain Resorts, a verified Mullayanagiri-foothills plantation resort — the genuine x-factor stay for Chikmagalur."
+      },
+      "replacement": {
+        "name": "Java Rain Resorts",
+        "tier": "luxury",
+        "tagline": "A 25-villa luxury resort tucked into a working coffee plantation on the Mullayanagiri hills, with panoramic Baba Budan range views — the standout x-factor stay for Chikmagalur.",
+        "price_band": "₹₹₹₹",
+        "address": "Mullayanagiri foothills, Chikmagalur 577101, Chikkamagaluru District, Karnataka",
+        "book_url": "https://www.tripadvisor.com/Hotel_Review-g297629-d11982997-Reviews-Java_Rain_Resorts-Chikmagalur_Chikkamagaluru_District_Karnataka.html",
+        "sources": [
+          "https://www.tripadvisor.com/Hotel_Review-g297629-d11982997-Reviews-Java_Rain_Resorts-Chikmagalur_Chikkamagaluru_District_Karnataka.html",
+          "https://www.javarain.in/"
+        ]
+      }
+    },
+    {
+      "destination_id": "sakleshpur",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "YohStay - Wodgal Estate",
+        "issue": "Plausible — coffee-estate stays branded under YohStay/Wodgal Estate operate in the Sakleshpur belt, but the property is lower-confidence as a standalone branded listing. For a fully verified experience anchor the strongest option is Machaan Plantation Resort, Tripadvisor #1 of 9 in Sakleshpur."
+      },
+      "replacement": {
+        "name": "Machaan Plantation Resort",
+        "tier": "premium",
+        "tagline": "Sakleshpur's top-rated resort — 16 AC rooms inside a working coffee plantation surrounded by hillocks and paddy fields, with an outdoor pool, gardens and rolling-hill views.",
+        "price_band": "₹₹₹",
+        "address": "Sakleshpur 573134, Hassan District, Karnataka",
+        "book_url": "https://www.tripadvisor.in/Hotel_Review-g2371802-d12859050-Reviews-Machaan_Plantation_Resort-Sakleshpur_Hassan_District_Karnataka.html",
+        "sources": [
+          "https://www.tripadvisor.in/Hotel_Review-g2371802-d12859050-Reviews-Machaan_Plantation_Resort-Sakleshpur_Hassan_District_Karnataka.html",
+          "https://www.machaan.com/plantation-resort-sakleshpur/"
+        ]
+      }
+    },
+    {
+      "destination_id": "sakleshpur",
+      "slot": "value",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Machaan Plantation Resort",
+        "issue": "Real and correctly located — Machaan Plantation Resort is verified (Tripadvisor #1 of 9 in Sakleshpur). Kept; note it is mid-to-premium-priced rather than strictly budget value, but it is the most reliably verified property in town."
+      },
+      "replacement": {
+        "name": "Machaan Plantation Resort",
+        "tier": "premium",
+        "tagline": "A coffee-plantation resort with 16 AC rooms, an outdoor pool and rolling-hill views — Sakleshpur's most reliably verified stay and its strongest all-round pick.",
+        "price_band": "₹₹₹",
+        "address": "Sakleshpur 573134, Hassan District, Karnataka",
+        "book_url": "https://www.machaan.com/plantation-resort-sakleshpur/",
+        "sources": [
+          "https://www.machaan.com/plantation-resort-sakleshpur/",
+          "https://www.booking.com/resorts/city/in/sakleshpur.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "sakleshpur",
+      "slot": "xfactor",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Rosetta Sakleshpur",
+        "issue": "No verifiable property of this name in Sakleshpur. Likely ghost. Sakleshpur's genuine inventory is coffee-estate resorts and homestays (Machaan, plantation homestays); no distinct tier-1/2 x-factor property is verifiable beyond those, so the x-factor slot is honest scarcity."
+      }
+    },
+    {
+      "destination_id": "hampi",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Evolve Back Kamalapura Palace",
+        "issue": "Real and correctly located — Evolve Back Kamalapura Palace is a verified luxury resort 4 km from the Hampi UNESCO site, in Kamalapur. Kept. Name tightened to the full property title."
+      },
+      "replacement": {
+        "name": "Evolve Back Kamalapura Palace, Hampi",
+        "tier": "luxury",
+        "tagline": "A 46-room Vijayanagara-inspired luxury resort 4 km from the Hampi ruins — stone-paved boulevards, an adult infinity pool, a spa and heritage walks. The standout experience stay for the World Heritage site.",
+        "price_band": "₹₹₹₹",
+        "address": "Kamalapur, Hampi 583221, Vijayanagara District, Karnataka",
+        "book_url": "https://www.evolveback.com/evolve-back-hampi/",
+        "sources": [
+          "https://www.evolveback.com/evolve-back-hampi/",
+          "https://www.tripadvisor.com/Hotel_Review-g1949768-d10228448-Reviews-Evolve_Back_Hampi-Kamalapur_Bellary_District_Karnataka.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "hampi",
+      "slot": "value",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Mowgli Adventures Hostel & Guesthouse",
+        "issue": "Plausible — Mowgli Guesthouse is a long-running budget guesthouse on the Hampi side; backpacker guesthouses there change names frequently so flagged lower-confidence. For a fully verified value anchor the Kishkinda Heritage Resort is a stronger, established choice."
+      },
+      "replacement": {
+        "name": "Kishkinda Heritage Resort",
+        "tier": "midscale",
+        "tagline": "A long-running 3-star heritage-style resort within 3 km of the Virupaksha temple — a decade-plus in hospitality, a rock-garden setting and reliable mid-range rooms closer to the monuments than the Hospet hotels.",
+        "price_band": "₹₹₹",
+        "address": "Near Stone Bridge cross, Hampi 583239, Vijayanagara District, Karnataka",
+        "book_url": "https://www.kishkindaheritage.com/",
+        "sources": [
+          "https://www.kishkindaheritage.com/",
+          "https://www.makemytrip.com/hotels/kishkinda_heritage_resort-details-hampi.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "hampi",
+      "slot": "location",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Hampi's Boulders Guesthouse",
+        "issue": "Imprecisely named — the real property is Hampi's Boulders Resort, a verified boutique resort, but it is at Narayanapet ~30 km from the Hampi ruins (not a walk-to-monuments 'location' property). For the location slot the practical pick is the modern Hyatt Place Hampi near the Hospet ruins access."
+      },
+      "replacement": {
+        "name": "Hyatt Place Hampi",
+        "tier": "premium",
+        "tagline": "The only internationally branded full-service hotel serving Hampi — 134 contemporary rooms with a pool near Narihalla on the Hospet side, a reliable air-conditioned base a short drive from the ruins.",
+        "price_band": "₹₹₹₹",
+        "address": "Hospet (Vijayanagara District), Karnataka",
+        "book_url": "https://www.hyatt.com/hyatt-place/en-US/hbxzh-hyatt-place-hampi",
+        "sources": [
+          "https://www.hyatt.com/hyatt-place/en-US/hbxzh-hyatt-place-hampi",
+          "https://www.booking.com/city/in/hampi.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "hampi",
+      "slot": "xfactor",
+      "verdict": "replace",
+      "existing": {
+        "name": "Goan Tabard (Hampi outpost)",
+        "issue": "No verifiable 'Goan Tabard' property in Hampi — a ghost ('outpost' is a placeholder descriptor; Goan Tabard is not a hotel brand). Re-anchor to Hampi's Boulders Resort, a real boutique riverside resort that is the genuine x-factor stay for the area."
+      },
+      "replacement": {
+        "name": "Hampi's Boulders Resort",
+        "tier": "premium",
+        "tagline": "A 16-room boutique riverside resort at Narayanapet on the Tungabhadra, set among the giant boulders that define the Hampi landscape — a tranquil x-factor base ~30 km from the ruins.",
+        "price_band": "₹₹₹₹",
+        "address": "Narayanapet, Hampi (Koppal side), Karnataka",
+        "book_url": "https://www.hampisboulders.com/",
+        "sources": [
+          "https://www.hampisboulders.com/",
+          "https://www.booking.com/city/in/hampi.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "chitradurga",
+      "slot": "location",
+      "verdict": "replace",
+      "existing": {
+        "name": "Chitradurga Railway Station Area Hotels (Hotel Sai Celestial or similar)",
+        "issue": "Generic placeholder — 'railway station area hotels … or similar' is not a property, and 'Hotel Sai Celestial' is unverifiable. Re-anchor to the KSTDC Mayura Durg, a real hotel directly opposite Chitradurga Fort."
+      },
+      "replacement": {
+        "name": "KSTDC Hotel Mayura Durg Chitradurga",
+        "tier": "budget",
+        "tagline": "The KSTDC government hotel directly opposite Chitradurga Fort — 8 AC rooms and dormitories with a restaurant and garden, the single best-located stay for the fort and a reliable highway-town base.",
+        "price_band": "₹₹",
+        "address": "Opposite Chitradurga Fort, next to Maharani College, Chitradurga 577501, Karnataka",
+        "book_url": "https://kstdc.co/hotels/hotel-mayura-durg-chitradurga/",
+        "sources": [
+          "https://kstdc.co/hotels/hotel-mayura-durg-chitradurga/",
+          "https://www.booking.com/hotel/in/mayura-yatrinivas-chitradurga.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "chitradurga",
+      "slot": "xfactor",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Chitradurga Farmstay (local operators)",
+        "issue": "Generic placeholder — 'Chitradurga Farmstay (local operators)' names no actual property. Chitradurga is a highway fort town with no verifiable tier-1/2 x-factor stay; honest scarcity."
+      }
+    },
+    {
+      "destination_id": "chitradurga",
+      "slot": "experience",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Chitradurga Fort Resort",
+        "issue": "No verifiable resort of this name — Chitradurga Fort is an ASI-protected hill fort with no resort at or adjacent to it. Ghost. Chitradurga has no resort-tier property; the experience slot is honest scarcity (use the KSTDC Mayura Durg for a fort-facing stay)."
+      }
+    },
+    {
+      "destination_id": "chitradurga",
+      "slot": "value",
+      "verdict": "replace",
+      "existing": {
+        "name": "Hotel Mayura Chalukya",
+        "issue": "CROSS-DEST — KSTDC Hotel Mayura Chalukya is in BADAMI (~280 km away), not Chitradurga. The KSTDC property in Chitradurga is Hotel Mayura Durg. Re-anchor to the correct Chitradurga KSTDC hotel."
+      },
+      "replacement": {
+        "name": "KSTDC Hotel Mayura Durg Chitradurga",
+        "tier": "budget",
+        "tagline": "The Chitradurga KSTDC government hotel — opposite the fort, with AC rooms, dormitories and a restaurant. The correct, well-located budget value pick for the fort town.",
+        "price_band": "₹₹",
+        "address": "Opposite Chitradurga Fort, next to Maharani College, Chitradurga 577501, Karnataka",
+        "book_url": "https://kstdc.co/hotels/hotel-mayura-durg-chitradurga/",
+        "sources": [
+          "https://kstdc.co/hotels/hotel-mayura-durg-chitradurga/",
+          "https://karnatakatourism.org/en/accommodation/hotel-mayura-durg-chitradurga"
+        ]
+      }
+    },
+    {
+      "destination_id": "bandipur",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Bandipur Safari Lodge (Jungle Lodges & Resorts)",
+        "issue": "Real and correctly located — Bandipur Safari Lodge is the verified Jungle Lodges & Resorts (Karnataka government) property at Bandipur Tiger Reserve. Kept; it is the authoritative anchor."
+      },
+      "replacement": {
+        "name": "Bandipur Safari Lodge (Jungle Lodges & Resorts)",
+        "tier": "premium",
+        "tagline": "The Karnataka government's JLR wildlife lodge at Bandipur Tiger Reserve — contemporary rooms, naturalist-led safaris and forest views. The conservation-aligned authoritative base for Bandipur.",
+        "price_band": "₹₹₹",
+        "address": "Bandipur, Chamarajanagar District, Karnataka",
+        "book_url": "https://www.junglelodges.com/resort/bandipur-safari-lodge-bandipur/",
+        "sources": [
+          "https://www.junglelodges.com/resort/bandipur-safari-lodge-bandipur/",
+          "https://www.bandipursafarilodge.com/"
+        ]
+      }
+    },
+    {
+      "destination_id": "bandipur",
+      "slot": "value",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "MC Resort Bandipur",
+        "issue": "Real and correctly located — MC Resort operates a jungle-safari resort at Bandipur. Kept as the value pick (mid-range private resort)."
+      },
+      "replacement": {
+        "name": "MC Resort Bandipur",
+        "tier": "midscale",
+        "tagline": "A comfortable jungle-safari resort near Bandipur National Park with full amenities and guided safaris — a mid-range private alternative to the government JLR lodge.",
+        "price_band": "₹₹₹",
+        "address": "Bandipur, Chamarajanagar District, Karnataka",
+        "book_url": "https://www.mcresorts.in/jungle-safari/",
+        "sources": [
+          "https://www.mcresorts.in/jungle-safari/",
+          "https://www.bandipurnationalpark.in/resorts-in-bandipur.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "bandipur",
+      "slot": "xfactor",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Dhole's Den",
+        "issue": "Real and correctly located — Dhole's Den is a verified boutique eco-homestay on the Bandipur National Park fringe. Kept; it is a genuine x-factor stay."
+      },
+      "replacement": {
+        "name": "Dhole's Den",
+        "tier": "premium",
+        "tagline": "A boutique eco-homestay on the Bandipur village fringe — 5 units, an organic farm, wind/solar power and a biodiversity garden, with campfires, nature walks and tribal-village visits. The intimate, sustainable Bandipur stay.",
+        "price_band": "₹₹₹₹",
+        "address": "Village edge bordering Bandipur National Park, Chamarajanagar District, Karnataka",
+        "book_url": "https://dholesden.com/",
+        "sources": [
+          "https://dholesden.com/",
+          "https://www.authenticindiatours.com/hotels/dholes-den-bandipur-karnataka/"
+        ]
+      }
+    },
+    {
+      "destination_id": "nagarhole",
+      "slot": "value",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Jungle Lodges and Resorts (Nagarhole)",
+        "issue": "Real concept but imprecisely named — the JLR property serving Nagarhole is the Kabini River Lodge, on the southern fringe of Nagarhole National Park. Name tightened to the actual property."
+      },
+      "replacement": {
+        "name": "Kabini River Lodge (Jungle Lodges & Resorts)",
+        "tier": "premium",
+        "tagline": "The Karnataka government's JLR lodge on the southern fringe of Nagarhole National Park — a former Mysore royal hunting lodge, rated by British Tatler among the world's top wildlife resorts. The authoritative Nagarhole base.",
+        "price_band": "₹₹₹",
+        "address": "Karapura, Nagarhole National Park, Mysuru District, Karnataka",
+        "book_url": "https://www.junglelodges.com/resort/kabini-river-lodge/",
+        "sources": [
+          "https://www.junglelodges.com/resort/kabini-river-lodge/",
+          "https://www.kabiniriverlodge.com/"
+        ]
+      }
+    },
+    {
+      "destination_id": "nagarhole",
+      "slot": "xfactor",
+      "verdict": "replace",
+      "existing": {
+        "name": "Bandipur Gaur Resort",
+        "issue": "CROSS-DEST — a 'Bandipur Gaur Resort' belongs (if real at all) to Bandipur, a different reserve ~50+ km away, not Nagarhole. Also unverifiable as a named property. Re-anchor to The Bison Resort, a real Kabini-backwaters lodge overlooking the Nagarhole reserve."
+      },
+      "replacement": {
+        "name": "The Bison Resort",
+        "tier": "luxury",
+        "tagline": "The only property on the Kabini backwaters that directly overlooks the Nagarhole and Bandipur reserves — African-style luxury safari tents with an observation deck for spotting elephants across the river.",
+        "price_band": "₹₹₹₹",
+        "address": "Kabini backwaters, Nagarhole fringe, Kodagu District, Karnataka",
+        "book_url": "https://thebisonresort.com/",
+        "sources": [
+          "https://thebisonresort.com/",
+          "https://www.tripadvisor.in/Hotel_Review-g1152766-d1572974-Reviews-The_Bison-Nagarhole_National_Park_Kodagu_Coorg_Karnataka.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "nagarhole",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Kabini River Lodge",
+        "issue": "Real and correctly located — Kabini River Lodge is the JLR property on the southern fringe of Nagarhole National Park. Kept as the experience anchor. (Note: it also correctly serves the 'kabini' destination — the lodge sits on the Nagarhole/Kabini boundary.)"
+      },
+      "replacement": {
+        "name": "Kabini River Lodge (Jungle Lodges & Resorts)",
+        "tier": "premium",
+        "tagline": "A former Mysore royal hunting lodge run by Karnataka's JLR on the Nagarhole fringe — colonial-style rooms, riverside setting and naturalist-led safaris. The classic Nagarhole wildlife experience.",
+        "price_band": "₹₹₹",
+        "address": "Karapura, Nagarhole National Park, Mysuru District, Karnataka",
+        "book_url": "https://www.junglelodges.com/resort/kabini-river-lodge/",
+        "sources": [
+          "https://www.junglelodges.com/resort/kabini-river-lodge/",
+          "https://www.kabiniriverlodge.com/"
+        ]
+      }
+    },
+    {
+      "destination_id": "nagarhole",
+      "slot": "location",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "The Bison",
+        "issue": "Real and correctly located — The Bison Resort is a verified Kabini-backwaters lodge overlooking the Nagarhole reserve. Kept. Name tightened to 'The Bison Resort'."
+      },
+      "replacement": {
+        "name": "The Bison Resort",
+        "tier": "luxury",
+        "tagline": "A luxury tented lodge on the Kabini backwaters overlooking the Nagarhole reserve — an observation deck with binoculars and telescopes for riverside elephant-spotting.",
+        "price_band": "₹₹₹₹",
+        "address": "Kabini backwaters, Nagarhole fringe, Kodagu District, Karnataka",
+        "book_url": "https://thebisonresort.com/",
+        "sources": [
+          "https://thebisonresort.com/",
+          "https://www.tripadvisor.in/Hotel_Review-g1152766-d1572974-Reviews-The_Bison-Nagarhole_National_Park_Kodagu_Coorg_Karnataka.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "kabini",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Kabini River Lodge (JLR / Jungle Lodges & Resorts)",
+        "issue": "Real and correctly located — Kabini River Lodge is the verified JLR property in the Kabini/Nagarhole area. Kept as the experience anchor."
+      },
+      "replacement": {
+        "name": "Kabini River Lodge (Jungle Lodges & Resorts)",
+        "tier": "premium",
+        "tagline": "Karnataka's JLR flagship wildlife lodge in Kabini — a former Mysore royal hunting lodge on the river, rated by British Tatler among the world's top wildlife resorts. The authoritative Kabini experience.",
+        "price_band": "₹₹₹",
+        "address": "Karapura, Kabini, Mysuru District, Karnataka",
+        "book_url": "https://www.junglelodges.com/resort/kabini-river-lodge/",
+        "sources": [
+          "https://www.junglelodges.com/resort/kabini-river-lodge/",
+          "https://www.kabiniriverlodge.com/"
+        ]
+      }
+    },
+    {
+      "destination_id": "kabini",
+      "slot": "value",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "The Serai, Kabini",
+        "issue": "Real and correctly located — The Serai Kabini is a verified riverside resort on the Kabini backwaters (20 riverside residences). Kept; note it is upper-tier rather than strictly budget, but it is a reliably verified property and the value slot in a luxury-only reserve."
+      },
+      "replacement": {
+        "name": "The Serai Kabini",
+        "tier": "premium",
+        "tagline": "A riverside resort on the Kabini backwaters with 20 exclusive residences and a rustic bonfire bar (the Outpost) — a polished, well-verified alternative to the JLR lodge.",
+        "price_band": "₹₹₹₹",
+        "address": "Kabini backwaters, N. Belathur, Mysuru District, Karnataka",
+        "book_url": "https://www.theserai.in/kabini-resort/",
+        "sources": [
+          "https://www.theserai.in/kabini-resort/",
+          "https://www.booking.com/resorts/region/in/kabini-river.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "kabini",
+      "slot": "xfactor",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Kaav Safari Lodge, Kabini",
+        "issue": "Real and correctly located — Kaav Safari Lodge is a verified luxury jungle lodge on the southern fringe of Nagarhole/Kabini, with an outdoor pool. Kept as the x-factor pick."
+      },
+      "replacement": {
+        "name": "Kaav Safari Lodge, Kabini",
+        "tier": "luxury",
+        "tagline": "An artistically designed luxury jungle lodge on the southern fringe of Nagarhole at Kabini — an outdoor pool, contemporary safari-lodge design and a quiet wilderness setting. A distinctive x-factor stay.",
+        "price_band": "₹₹₹₹",
+        "address": "Nagarhole fringe, Kabini, Karnataka",
+        "book_url": "https://www.thrillophilia.com/kabini-resorts",
+        "sources": [
+          "https://www.thrillophilia.com/kabini-resorts",
+          "https://www.holidify.com/hotel-collections/jungle-lodges-in-kabini"
+        ]
+      }
+    },
+    {
+      "destination_id": "dandeli",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Whistling Woodzs Resort",
+        "issue": "Real and correctly located — Whistling Woodzs is a verified riverside resort on the Kali River in Dandeli. Kept as the experience anchor."
+      },
+      "replacement": {
+        "name": "Whistling Woodzs",
+        "tier": "premium",
+        "tagline": "Dandeli's best-known riverside resort — premium cottages on the Kali River within tropical rainforest, with white-water rafting, kayaking and jungle activities arranged on site.",
+        "price_band": "₹₹₹",
+        "address": "On the banks of the Kali River, Dandeli, Uttara Kannada District, Karnataka",
+        "book_url": "https://whistlingwoodzs.com/",
+        "sources": [
+          "https://whistlingwoodzs.com/",
+          "https://www.makemytrip.com/hotels/whistling_woodzs_resort-details-dandeli.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "dandeli",
+      "slot": "value",
+      "verdict": "replace",
+      "existing": {
+        "name": "Parampara Cottages",
+        "issue": "No verifiable resort of this name in Dandeli. Likely ghost. Re-anchor to Stone Wood Jungle Resort, a verified, well-rated Dandeli jungle resort."
+      },
+      "replacement": {
+        "name": "Stone Wood Jungle Resort",
+        "tier": "midscale",
+        "tagline": "A well-rated jungle resort in Dandeli with a swimming pool and comfortable rooms — a solid mid-range value alternative to Whistling Woodzs for a Kali River adventure break.",
+        "price_band": "₹₹₹",
+        "address": "Dandeli, Uttara Kannada District, Karnataka",
+        "book_url": "https://www.makemytrip.global/hotels/stone_wood_jungle_resort-details-dandeli.html",
+        "sources": [
+          "https://www.makemytrip.global/hotels/stone_wood_jungle_resort-details-dandeli.html",
+          "https://www.trivago.com/en-US/odr/hotels-dandeli-india"
+        ]
+      }
+    },
+    {
+      "destination_id": "dandeli",
+      "slot": "location",
+      "verdict": "replace",
+      "existing": {
+        "name": "Dandeli Crocodile Edge Home Stay",
+        "issue": "No verifiable homestay of this name in Dandeli. Likely ghost. Re-anchor to the JLR Kali Adventure Camp at Ganeshgudi — the Karnataka government wildlife camp on the Kali, a real and well-located property."
+      },
+      "replacement": {
+        "name": "Kali Adventure Camp (Jungle Lodges & Resorts)",
+        "tier": "midscale",
+        "tagline": "The Karnataka government's JLR adventure camp at Ganeshgudi on the Kali River near Dandeli — log huts and tents with rafting, coracle rides and birding. The authoritative government-run base for the Dandeli/Anshi belt.",
+        "price_band": "₹₹₹",
+        "address": "Ganeshgudi, Dandeli, Uttara Kannada District, Karnataka",
+        "book_url": "https://www.junglelodges.com/",
+        "sources": [
+          "https://www.junglelodges.com/",
+          "https://riverresortsdandeli.com/dandeli-jungle-resort.php"
+        ]
+      }
+    },
+    {
+      "destination_id": "dandeli",
+      "slot": "xfactor",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Stone Wood Premier Dandeli",
+        "issue": "Imprecisely named — the real property is Stone Wood Jungle Resort, Dandeli (no separate 'Stone Wood Premier'). It is already used for the value slot here. For the x-factor slot re-anchor to Bison River Resort, a verified Dandeli riverside resort, to avoid double-listing."
+      },
+      "replacement": {
+        "name": "Bison River Resort",
+        "tier": "premium",
+        "tagline": "A riverside resort in Dandeli with a swimming pool, set near the Kali River — a comfortable, well-reviewed x-factor stay combining water views with adventure-activity access.",
+        "price_band": "₹₹₹",
+        "address": "Dandeli, Uttara Kannada District, Karnataka",
+        "book_url": "https://riverresortsdandeli.com/dandeli-jungle-resort.php",
+        "sources": [
+          "https://riverresortsdandeli.com/dandeli-jungle-resort.php",
+          "https://www.trivago.com/en-US/odr/hotels-dandeli-india"
+        ]
+      }
+    },
+    {
+      "destination_id": "mysore",
+      "slot": "location",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Hotel Metropole",
+        "issue": "Real but imprecisely named — the property is Royal Orchid Metropole, a verified colonial-era heritage hotel near the Mysore railway station. Name tightened."
+      },
+      "replacement": {
+        "name": "Royal Orchid Metropole",
+        "tier": "premium",
+        "tagline": "A colonial-era mansion near the Mysore railway station, now a 4-star heritage hotel — built to host European guests, known for its period buffet lunch. A central, atmospheric base for the palace city.",
+        "price_band": "₹₹₹",
+        "address": "5, Jhansi Lakshmi Bai Road, Mysuru 570005, Karnataka",
+        "book_url": "https://www.royalorchidhotels.com/royal-orchid-metropole-mysuru/overview",
+        "sources": [
+          "https://www.royalorchidhotels.com/royal-orchid-metropole-mysuru/overview",
+          "https://www.makemytrip.com/hotels/royal_orchid_metropole-details-mysore.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "mysore",
+      "slot": "value",
+      "verdict": "replace",
+      "existing": {
+        "name": "Rasa Kendra",
+        "issue": "No verifiable hotel of this name in Mysore — zero footprint on Booking.com, MMT, TripAdvisor. Likely ghost. Re-anchor to KSTDC Hotel Mayura Hoysala, a real, central, well-reviewed government hotel."
+      },
+      "replacement": {
+        "name": "KSTDC Hotel Mayura Hoysala Mysore",
+        "tier": "budget",
+        "tagline": "The KSTDC government hotel in central Mysore near the railway station — AC double rooms, standard rooms and family dormitories with 500+ verified reviews. The reliable, inexpensive value base for the palace city.",
+        "price_band": "₹₹",
+        "address": "2, Jhansi Lakshmi Bai Road, Mysuru 570005, Karnataka",
+        "book_url": "https://kstdc.co/hotels/hotel-mayura-hoysala-mysuru/",
+        "sources": [
+          "https://kstdc.co/hotels/hotel-mayura-hoysala-mysuru/",
+          "https://www.booking.com/hotel/in/mayura-hoysala-mysore.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "mysore",
+      "slot": "experience",
+      "verdict": "replace",
+      "existing": {
+        "name": "The Lalit Mahal Palace",
+        "issue": "Misnamed — there is no 'Lalit'-group hotel in Mysore. The real property is the Lalitha Mahal Palace Hotel, a 1921 Maharaja-built palace run as a government heritage hotel (Lalit and Lalitha are different — Lalit is a separate hotel chain). Corrected to the real property."
+      },
+      "replacement": {
+        "name": "Lalitha Mahal Palace Hotel",
+        "tier": "luxury",
+        "tagline": "A 1921 palace built by the Maharaja of Mysore to host the Viceroy of India, now a government heritage hotel — Renaissance architecture, Italian marble, Venetian chandeliers and a grand dome. The most atmospheric heritage stay in Mysore.",
+        "price_band": "₹₹₹₹",
+        "address": "Siddhartha Nagar, Mysuru 570011, Karnataka",
+        "book_url": "https://www.lalithamahalpalace.co.in/",
+        "sources": [
+          "https://www.lalithamahalpalace.co.in/",
+          "https://karnatakatourism.org/en/attractions/lalitha-mahal-palace-hotel"
+        ]
+      }
+    },
+    {
+      "destination_id": "mysore",
+      "slot": "xfactor",
+      "verdict": "replace",
+      "existing": {
+        "name": "Jungle Lodges & Resorts, Bandipur",
+        "issue": "CROSS-DEST — Jungle Lodges Bandipur (Bandipur Safari Lodge) is a Bandipur Tiger Reserve property ~80 km from Mysore, not a Mysore stay. Re-anchor to The Green Hotel (Chittaranjan Palace), a real heritage palace hotel in Mysore run as a not-for-profit social enterprise."
+      },
+      "replacement": {
+        "name": "The Green Hotel (Chittaranjan Palace)",
+        "tier": "premium",
+        "tagline": "A former Mysore royal palace (Chittaranjan Palace) run as an award-winning not-for-profit heritage hotel — profits fund environmental and social projects. A distinctive, conscience-driven x-factor stay in the palace city.",
+        "price_band": "₹₹₹",
+        "address": "2270, Vinoba Road, Jayalakshmipuram, Mysuru 570012, Karnataka",
+        "book_url": "https://www.greenhotelindia.com/",
+        "sources": [
+          "https://www.greenhotelindia.com/",
+          "https://www.tripadvisor.com/Hotel_Review-g304553-Reviews-The_Green_Hotel-Mysuru_Mysore_Mysore_District_Karnataka.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "srirangapatna",
+      "slot": "experience",
+      "verdict": "replace",
+      "existing": {
+        "name": "Manvith's Heritage River Retreat",
+        "issue": "No verifiable resort of this name in Srirangapatna. Likely ghost. Re-anchor to Amblee Holiday Resort, a real, long-running (35-year) riverside resort on the Cauvery with a pool."
+      },
+      "replacement": {
+        "name": "Amblee Holiday Resort",
+        "tier": "midscale",
+        "tagline": "A long-running riverside resort on the Cauvery at Srirangapatna — AC rooms, a pool fed by a river canal and an on-site restaurant, close to the Dariya Daulat Bagh and Ranganathittu Bird Sanctuary.",
+        "price_band": "₹₹₹",
+        "address": "After the Kaveri river bridge, Srirangapatna 571438, Mandya District, Karnataka",
+        "book_url": "https://ambleeresort.in/",
+        "sources": [
+          "https://ambleeresort.in/",
+          "https://www.tripadvisor.in/Hotel_Review-g1776497-d1220125-Reviews-Amblee_Holiday_Resort-Srirangapatna_Mandya_District_Karnataka.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "srirangapatna",
+      "slot": "value",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "KSTDC Hotel Mayura Riverview Srirangapatna",
+        "issue": "Real and correctly located — KSTDC Hotel Mayura Riverview is a verified government hotel on the Cauvery in Srirangapatna. Kept as the value pick."
+      },
+      "replacement": {
+        "name": "KSTDC Hotel Mayura Riverview Srirangapatna",
+        "tier": "budget",
+        "tagline": "The KSTDC government hotel — 26 rooms including 6 river-facing cottages on the Cauvery, with a restaurant, bar and coracle rides. The dependable budget value base for Tipu Sultan's island capital.",
+        "price_band": "₹₹",
+        "address": "Mysore Road, Srirangapatna 571438, Mandya District, Karnataka",
+        "book_url": "https://kstdc.co/hotels/hotel-mayura-riverview-srirangapatna/",
+        "sources": [
+          "https://kstdc.co/hotels/hotel-mayura-riverview-srirangapatna/",
+          "https://www.booking.com/hotel/in/mayura-riverview-srirangapatna.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "srirangapatna",
+      "slot": "location",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "KSTDC Hotel Mayura Riverview Srirangapatna",
+        "issue": "Same property as the value slot — KSTDC Mayura Riverview is correctly the best-located stay in Srirangapatna (riverfront, near the monuments). Retained for location; note it is double-listed with the value slot because Srirangapatna's quality inventory is thin. For a distinct location pick the riverfront cottages here ARE the location pick."
+      },
+      "replacement": {
+        "name": "KSTDC Hotel Mayura Riverview Srirangapatna",
+        "tier": "budget",
+        "tagline": "On the banks of the Cauvery, 3.4 km from Ranganathittu Bird Sanctuary and minutes from Srirangapatna's fort and temple — the single best-located stay on Tipu Sultan's river island.",
+        "price_band": "₹₹",
+        "address": "Mysore Road, Srirangapatna 571438, Mandya District, Karnataka",
+        "book_url": "https://kstdc.co/hotels/hotel-mayura-riverview-srirangapatna/",
+        "sources": [
+          "https://kstdc.co/hotels/hotel-mayura-riverview-srirangapatna/",
+          "https://www.tripadvisor.com/Hotel_Review-g1776497-d1776500-Reviews-Hotel_Mayura_Riverview_Srirangapatna-Srirangapatna_Mandya_District_Karnataka.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "srirangapatna",
+      "slot": "xfactor",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Atmaveda Riverside Homestay",
+        "issue": "No verifiable homestay of this name in Srirangapatna. Likely ghost. Srirangapatna's verified inventory is the KSTDC riverview hotel and Amblee Holiday Resort; no distinct tier-1/2 x-factor property is verifiable, so the x-factor slot is honest scarcity."
+      }
+    },
+    {
+      "destination_id": "coorg",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "The Tamara Coorg",
+        "issue": "Real and correctly located — The Tamara Coorg is a verified 5-star eco-resort near Kakkabe/Madikeri (56 cottages across 180 acres). Kept as the experience anchor."
+      },
+      "replacement": {
+        "name": "The Tamara Coorg",
+        "tier": "luxury",
+        "tagline": "A 5-star eco-resort at 3,500 ft in the Western Ghats near Madikeri — 56 Canadian-spruce cottages across 180 acres of coffee plantation and rainforest. Coorg's flagship luxury experience.",
+        "price_band": "₹₹₹₹",
+        "address": "Kabbinakad, Yavakapadi Village, Napoklu, Kodagu (Coorg) 571213, Karnataka",
+        "book_url": "https://thetamara.com/coorg-resort/",
+        "sources": [
+          "https://thetamara.com/coorg-resort/",
+          "https://www.booking.com/hotel/in/the-tamara-coorg.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "coorg",
+      "slot": "value",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Coorg Marriott Resort & Spa",
+        "issue": "Real and correctly located — Coorg Marriott Resort & Spa is a verified resort in the Makkandur forest ~10 km from Madikeri. Kept; note it is upper-tier rather than budget, but it is a reliably verified property."
+      },
+      "replacement": {
+        "name": "Coorg Marriott Resort & Spa",
+        "tier": "luxury",
+        "tagline": "A Marriott resort and spa in the Makkandur forest ~10 km from Madikeri — close to Abbey Falls, Omkareshwar and the Golden Temple, with full 5-star facilities. A polished, reliable Coorg base.",
+        "price_band": "₹₹₹₹",
+        "address": "Makkandur Village, Madikeri, Kodagu (Coorg) 571201, Karnataka",
+        "book_url": "https://www.tripadvisor.com/Hotel_Review-g641714-d26345150-Reviews-Coorg_Marriott_Resort_Spa-Madikeri_Kodagu_Coorg_Karnataka.html",
+        "sources": [
+          "https://www.tripadvisor.com/Hotel_Review-g641714-d26345150-Reviews-Coorg_Marriott_Resort_Spa-Madikeri_Kodagu_Coorg_Karnataka.html",
+          "https://www.marriott.com/"
+        ]
+      }
+    },
+    {
+      "destination_id": "coorg",
+      "slot": "location",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Ayatana Coorg (WelcomHeritage)",
+        "issue": "Property is real and correctly located, but the brand tag is wrong — Ayatana Coorg is an independent luxury resort, NOT a WelcomHeritage property. Corrected: dropped the false brand attribution."
+      },
+      "replacement": {
+        "name": "Ayatana Coorg",
+        "tier": "luxury",
+        "tagline": "An independent luxury resort near Madikeri offering 53 suites with views of forest, private waterfalls and a stream running through the property — quiet luxury close to Coorg's main town.",
+        "price_band": "₹₹₹₹",
+        "address": "Madikeri, Kodagu (Coorg) 571201, Karnataka",
+        "book_url": "https://www.tripadvisor.in/HotelsList-Kodagu_Coorg-Luxury-Resort-zfp15703608.html",
+        "sources": [
+          "https://www.tripadvisor.in/HotelsList-Kodagu_Coorg-Luxury-Resort-zfp15703608.html",
+          "https://www.homestaysincoorg.com/top-resorts-in-coorg"
+        ]
+      }
+    },
+    {
+      "destination_id": "coorg",
+      "slot": "xfactor",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Casa Coorg Homestay (Virajpet)",
+        "issue": "Plausible — Virajpet is a genuine Coorg homestay belt, but 'Casa Coorg Homestay' is a generic name and lower-confidence as a specific property. For a fully verified x-factor anchor the established choice is Rainforest Retreat at Mojo Plantation (Galibeedu, Madikeri), a long-running organic-plantation eco-homestay."
+      },
+      "replacement": {
+        "name": "Rainforest Retreat, Mojo Plantation",
+        "tier": "premium",
+        "tagline": "A long-running organic-plantation eco-homestay at Mojo Plantation near Madikeri — cottages and tents in a working spice-and-coffee farm, with guided plantation and birding walks. Coorg's distinctive sustainable x-factor stay.",
+        "price_band": "₹₹₹",
+        "address": "Galibeedu, Madikeri, Kodagu (Coorg) 571201, Karnataka",
+        "book_url": "https://www.rainforestours.com/",
+        "sources": [
+          "https://www.rainforestours.com/",
+          "https://www.tripadvisor.in/Hotels-g503697-zff13-Kodagu_Coorg_Karnataka-Hotels.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "nandi-hills",
+      "slot": "experience",
+      "verdict": "replace",
+      "existing": {
+        "name": "The Windflower Resort & Spa, Nandi Hills",
+        "issue": "Imprecisely named — the Windflower property on the Bengaluru-Nandi corridor is The Windflower Prakruthi Resort & Spa (near Chikkajala). There is no Windflower property at Nandi Hills itself. Corrected to the real property name and location."
+      },
+      "replacement": {
+        "name": "The Windflower Prakruthi Resort & Spa",
+        "tier": "premium",
+        "tagline": "A 49-room resort and spa across 3 hectares on the Bengaluru-Nandi Hills corridor (~7 km from Chikkajala Fort) — independent villas, wellness treatments and gardens. The established resort base for a Nandi Hills sunrise trip.",
+        "price_band": "₹₹₹",
+        "address": "Bengaluru northern outskirts toward Nandi Hills, Karnataka",
+        "book_url": "https://www.thewindflower.com/bangalore/",
+        "sources": [
+          "https://www.thewindflower.com/bangalore/",
+          "https://www.agoda.com/en-in/the-windflower-prakruthi-bangalore-resort/hotel/bangalore-in.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "nandi-hills",
+      "slot": "value",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Nandi Hills Homestay (Karvi Farms area)",
+        "issue": "Generic placeholder — 'Nandi Hills Homestay (Karvi Farms area)' names no actual property. Nandi Hills itself (the hilltop) has no accommodation; visitors stay in resorts on the corridor or day-trip from Bengaluru. No verifiable budget homestay; honest scarcity for the value slot."
+      }
+    },
+    {
+      "destination_id": "nandi-hills",
+      "slot": "location",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Shaheen Villa",
+        "issue": "No verifiable property of this name near Nandi Hills. Likely ghost. The hilltop has no accommodation (it is a protected viewpoint/garden area); there is no genuine 'location' stay on Nandi Hills itself — honest scarcity."
+      }
+    },
+    {
+      "destination_id": "nandi-hills",
+      "slot": "xfactor",
+      "verdict": "replace",
+      "existing": {
+        "name": "Nature Camps Nandi (treehouse & tent stays)",
+        "issue": "Generic placeholder — 'Nature Camps Nandi (treehouse & tent stays)' is a descriptor, not a verifiable property. Re-anchor to Discovery Village Nandi Hills, a real adventure-and-activity resort at the Nandi foothills."
+      },
+      "replacement": {
+        "name": "Discovery Village Nandi Hills",
+        "tier": "midscale",
+        "tagline": "An adventure-and-activity resort at the Nandi Hills foothills — cottages and tents with team activities, an outdoor pool and a getaway-style setting. A distinctive x-factor base for a Nandi Hills weekend.",
+        "price_band": "₹₹₹",
+        "address": "Nandi Foothills, Chikkaballapur District, Karnataka",
+        "book_url": "https://www.thrillophilia.com/resorts-in-nandi-hills",
+        "sources": [
+          "https://www.thrillophilia.com/resorts-in-nandi-hills",
+          "https://www.weekendfeels.com/blog/nandi-hills-resorts"
+        ]
+      }
+    },
+    {
+      "destination_id": "bengaluru",
+      "slot": "location",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "ITC Windsor",
+        "issue": "Real and correctly located — ITC Windsor (a Luxury Collection hotel) is a verified luxury hotel in a diplomatic pocket near Vidhana Soudha and the Bangalore Golf Course. Kept."
+      },
+      "replacement": {
+        "name": "ITC Windsor, a Luxury Collection Hotel, Bengaluru",
+        "tier": "luxury",
+        "tagline": "An old-world luxury hotel in a secure diplomatic pocket ~3 km from the city centre, near Vidhana Soudha and opposite the Bangalore Golf Course — a central, prestigious base.",
+        "price_band": "₹₹₹₹",
+        "address": "Golf Course Road, Windsor Square, Bengaluru 560052, Karnataka",
+        "book_url": "https://www.tripadvisor.com/Hotel_Review-g297628-d301774-Reviews-Itc_Windsor_A_Luxury_Collection_Hotel_Bengaluru-Bengaluru_Bangalore_District_Karnataka.html",
+        "sources": [
+          "https://www.tripadvisor.com/Hotel_Review-g297628-d301774-Reviews-Itc_Windsor_A_Luxury_Collection_Hotel_Bengaluru-Bengaluru_Bangalore_District_Karnataka.html",
+          "https://www.fivestaralliance.com/luxury-hotels/bangalore/itc-windsor"
+        ]
+      }
+    },
+    {
+      "destination_id": "bengaluru",
+      "slot": "xfactor",
+      "verdict": "replace",
+      "existing": {
+        "name": "The Windflower Resort & Spa, Coorg (day trip friendly)",
+        "issue": "CROSS-DEST — a Windflower Coorg property is in Coorg (~250 km from Bengaluru), not a Bengaluru stay. The '(day trip friendly)' tag does not make a 250 km resort a Bengaluru pick. Re-anchor to The Tamara Trails / a real Bengaluru distinctive stay — corrected to Taj West End, a heritage garden hotel that is the genuine x-factor stay in the city."
+      },
+      "replacement": {
+        "name": "Taj West End, Bengaluru",
+        "tier": "luxury",
+        "tagline": "A 19th-century heritage hotel set in 20 acres of mature gardens in central Bengaluru — over 130 years of history, colonial-era architecture and one of the city's most atmospheric stays.",
+        "price_band": "₹₹₹₹",
+        "address": "Race Course Road, Bengaluru 560001, Karnataka",
+        "book_url": "https://www.tajhotels.com/en-in/hotels/taj-west-end-bengaluru",
+        "sources": [
+          "https://www.tajhotels.com/en-in/hotels/taj-west-end-bengaluru",
+          "https://www.fivestaralliance.com/luxury-hotels/bangalore/taj-west-end"
+        ]
+      }
+    },
+    {
+      "destination_id": "bengaluru",
+      "slot": "value",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Taj West End",
+        "issue": "Real and correctly located — Taj West End is a verified heritage luxury hotel in Bengaluru. However it is a luxury property, not a value pick. Re-cast: kept as real but the value slot is better served by a genuine mid-scale; re-anchored to a verified Bengaluru mid-scale hotel."
+      },
+      "replacement": {
+        "name": "The Raintree Hotel, St Marks Road",
+        "tier": "midscale",
+        "tagline": "A boutique business hotel on St Marks Road in central Bengaluru — walkable to MG Road, Brigade Road and Cubbon Park. A reliable, well-located mid-scale value base in the city core.",
+        "price_band": "₹₹₹",
+        "address": "St Marks Road, Bengaluru 560001, Karnataka",
+        "book_url": "https://www.booking.com/city/in/bangalore.html",
+        "sources": [
+          "https://www.booking.com/city/in/bangalore.html",
+          "https://www.tripadvisor.com/Hotels-g297628-Bengaluru_Bangalore_District_Karnataka-Hotels.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "bengaluru",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "The Leela Palace Bangalore",
+        "issue": "Real and correctly located — The Leela Palace Bengaluru is a verified luxury palace-style hotel on Old Airport Road. Kept as the experience anchor."
+      },
+      "replacement": {
+        "name": "The Leela Palace Bengaluru",
+        "tier": "luxury",
+        "tagline": "A palace-style luxury hotel on Old Airport Road, Bengaluru — opulent interiors, landscaped gardens and a pool, consistently rated among the city's top luxury experiences.",
+        "price_band": "₹₹₹₹",
+        "address": "23, HAL Old Airport Road, Bengaluru 560008, Karnataka",
+        "book_url": "https://www.theleela.com/the-leela-palace-bengaluru",
+        "sources": [
+          "https://www.theleela.com/the-leela-palace-bengaluru",
+          "https://www.tripadvisor.com/Hotel_Review-g297628-d302480-Reviews-The_Leela_Palace_Bengaluru-Bengaluru_Bangalore_District_Karnataka.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "gokarna",
+      "slot": "value",
+      "verdict": "replace",
+      "existing": {
+        "name": "Gokarna Forest Retreat",
+        "issue": "No verifiable property of this name in Gokarna — zero footprint on Booking.com, MMT, TripAdvisor. Likely ghost. Re-anchor to Kudle Beach View Resort & Spa, a verified Gokarna beach resort."
+      },
+      "replacement": {
+        "name": "Kudle Beach View Resort & Spa",
+        "tier": "midscale",
+        "tagline": "A beach resort a 7-minute walk from Kudle Beach in Gokarna — an outdoor pool, fitness centre and garden. A reliable mid-range value base for the Gokarna beach belt.",
+        "price_band": "₹₹₹",
+        "address": "Kudle Beach, Gokarna 581326, Uttara Kannada District, Karnataka",
+        "book_url": "https://www.tripadvisor.com/Hotel_Review-g651646-d5505889-Reviews-Kudle_Beach_View_Resort_And_Spa-Gokarna_Uttara_Kannada_District_Karnataka.html",
+        "sources": [
+          "https://www.tripadvisor.com/Hotel_Review-g651646-d5505889-Reviews-Kudle_Beach_View_Resort_And_Spa-Gokarna_Uttara_Kannada_District_Karnataka.html",
+          "https://www.booking.com/resorts/city/in/gokarna-in.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "gokarna",
+      "slot": "location",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Gokarna International Beach Resort",
+        "issue": "Plausible — Gokarna International Beach Resort is a long-standing town-side resort with a footprint on multiple booking platforms. Kept as the location pick, flagged moderate-confidence."
+      },
+      "replacement": {
+        "name": "Gokarna International Beach Resort",
+        "tier": "midscale",
+        "tagline": "A long-standing beach resort near Gokarna town with rooms a short distance from the main town beach and the Mahabaleshwar temple — a convenient location base combining town access with the coast.",
+        "price_band": "₹₹₹",
+        "address": "Gokarna 581326, Uttara Kannada District, Karnataka",
+        "book_url": "https://www.gokarnahotels.net/resort-gokarna-international-beach.en.html",
+        "sources": [
+          "https://www.gokarnahotels.net/resort-gokarna-international-beach.en.html",
+          "https://www.booking.com/resorts/city/in/gokarna-in.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "gokarna",
+      "slot": "xfactor",
+      "verdict": "replace",
+      "existing": {
+        "name": "The Yoga Shala Treehouse",
+        "issue": "No verifiable property of this name in Gokarna. Generic-named ghost. Re-anchor to Namaste Cafe, a genuine Gokarna institution since 1984 on Om Beach — a beachfront stay-and-restaurant that is the authentic x-factor address."
+      },
+      "replacement": {
+        "name": "Namaste Cafe, Om Beach",
+        "tier": "budget",
+        "tagline": "A Gokarna institution since 1984 on the Om Beach hilltop — beachfront rooms 50-175 m from the shore, fresh seafood and famous banana pancakes. Once the only Gokarna listing in Lonely Planet; the authentic budget x-factor stay.",
+        "price_band": "₹₹",
+        "address": "Om Beach Road, Gokarna 581326, Uttara Kannada District, Karnataka",
+        "book_url": "https://namastegokarna.com/namaste-cafe/",
+        "sources": [
+          "https://namastegokarna.com/namaste-cafe/",
+          "https://karnatakatourism.org/accommodation/namaste-cafe/"
+        ]
+      }
+    },
+    {
+      "destination_id": "gokarna",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Namastay Gokarna",
+        "issue": "Imprecisely named — the real, top-tier Gokarna experience property is SwaSwara, a CGH Earth wellness retreat on Om Beach. ('Namastay Gokarna' confusingly resembles Namaste Cafe, a separate budget property used for the x-factor slot.) Corrected to the genuine luxury experience anchor."
+      },
+      "replacement": {
+        "name": "SwaSwara — A CGH Earth Experience",
+        "tier": "luxury",
+        "tagline": "A CGH Earth wellness retreat with direct access to Om Beach in Gokarna — yoga, Ayurveda, an outdoor pool and garden-view villas. The standout experience stay on the Gokarna coast.",
+        "price_band": "₹₹₹₹",
+        "address": "Om Beach, Donibhail, Gokarna 581326, Uttara Kannada District, Karnataka",
+        "book_url": "https://www.cghearth.com/swaswara",
+        "sources": [
+          "https://www.cghearth.com/swaswara",
+          "https://en.planetofhotels.com/india/gokarna/swaswara"
+        ]
+      }
+    },
+    {
+      "destination_id": "karwar",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Jungle Lodges Devbagh Beach Resort",
+        "issue": "Real and correctly located — Devbagh Beach Resort is the verified Jungle Lodges & Resorts (Karnataka government) beach property at Karwar. Kept as the experience anchor."
+      },
+      "replacement": {
+        "name": "Devbagh Beach Resort (Jungle Lodges & Resorts)",
+        "tier": "premium",
+        "tagline": "The Karnataka government's JLR beach property on Devbagh Island — rustic log huts and stilt cottages on a mangrove peninsula with a private beach, dolphin-watching and meals included.",
+        "price_band": "₹₹₹",
+        "address": "Devbagh Island, opposite Kodibag Post Office, Karwar 581303, Uttara Kannada District, Karnataka",
+        "book_url": "https://www.junglelodges.com/resort/devbagh-beach-resort/",
+        "sources": [
+          "https://www.junglelodges.com/resort/devbagh-beach-resort/",
+          "https://www.tripadvisor.com/Hotel_Review-g664473-d1389614-Reviews-Jungle_Lodges_Devbagh_Beach_Resort-Karwar_Uttara_Kannada_District_Karnataka.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "karwar",
+      "slot": "value",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Ocean Deck Beach Homestay",
+        "issue": "No verifiable homestay of this name in Karwar. Generic-named ghost. Karwar's verified inventory is the JLR Devbagh resort and the Cintacor Island resort; no distinct verifiable budget-value property surfaced, so the value slot is honest scarcity."
+      }
+    },
+    {
+      "destination_id": "karwar",
+      "slot": "location",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Mastiff Hotel Karwar",
+        "issue": "No verifiable 'Mastiff Hotel' operates in Karwar — the Mastiff chain has no confirmed Karwar property. Likely ghost. Karwar town has only plain unverified lodges; no tier-1/2 location-slot property surfaced — honest scarcity."
+      }
+    },
+    {
+      "destination_id": "karwar",
+      "slot": "xfactor",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Cintacor Island Resort",
+        "issue": "Real and correctly located — Cintacor Island, a boutique resort on Kurumgad Island off the Karwar coast, is verified on Booking.com (9.1/10, 41 reviews) and TripAdvisor. Kept as the x-factor pick."
+      },
+      "replacement": {
+        "name": "Cintacor Island — A Boutique Resort",
+        "tier": "luxury",
+        "tagline": "A boutique resort on Kurumgad Island off the Karwar coast — a private beach and tidal pool reached by boat, with a serene, secluded island setting. A genuine x-factor stay.",
+        "price_band": "₹₹₹₹",
+        "address": "Kurumgad Island, Karwar 581301, Uttara Kannada District, Karnataka",
+        "book_url": "https://www.booking.com/hotel/in/cintacor-island-resort.html",
+        "sources": [
+          "https://www.booking.com/hotel/in/cintacor-island-resort.html",
+          "https://www.tripadvisor.com/Hotel_Review-g664473-d12283892-Reviews-Cintacor_Island_A_Boutique_Resort-Karwar_Uttara_Kannada_District_Karnataka.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "murudeshwar",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "RNS Residency",
+        "issue": "Real and correctly located — RNS Residency (Sea View) is Murudeshwar's flagship beach-side hotel, verified on Booking.com. Kept as the experience anchor. Name tightened to 'RNS Residency Sea View'."
+      },
+      "replacement": {
+        "name": "RNS Residency Sea View",
+        "tier": "premium",
+        "tagline": "Murudeshwar's flagship beach-side hotel — family rooms, a garden, terrace and outdoor pool, a 2-minute walk from the beach and minutes from the towering Shiva statue and temple.",
+        "price_band": "₹₹₹",
+        "address": "Murudeshwar 581350, Uttara Kannada District, Karnataka",
+        "book_url": "https://www.naveenhotels.com/RNS-Residency/",
+        "sources": [
+          "https://www.naveenhotels.com/RNS-Residency/",
+          "https://www.booking.com/hotel/in/rns-residency-sea-view.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "murudeshwar",
+      "slot": "value",
+      "verdict": "replace",
+      "existing": {
+        "name": "Kamath Homestay",
+        "issue": "No verifiable homestay of this name in Murudeshwar. Generic-named ghost (Kamath is a common coastal-Karnataka surname/restaurant brand, not a verifiable Murudeshwar homestay). Re-anchor to Naveen Beach Resort, a real beach-front property in town."
+      },
+      "replacement": {
+        "name": "Naveen Beach Resort",
+        "tier": "midscale",
+        "tagline": "A beach-front resort on Murudeshwar's Beach Road with direct sand access and ground-level beach views — a reliable mid-range value option in the temple-and-beach town.",
+        "price_band": "₹₹₹",
+        "address": "Beach Road, Murudeshwar 581350, Uttara Kannada District, Karnataka",
+        "book_url": "https://murudeshwar.co.in/accommodations",
+        "sources": [
+          "https://murudeshwar.co.in/accommodations",
+          "https://murudeshwar.co.in/blog/top-hotels-in-murudeshwar"
+        ]
+      }
+    },
+    {
+      "destination_id": "murudeshwar",
+      "slot": "location",
+      "verdict": "replace",
+      "existing": {
+        "name": "RNS Residency",
+        "issue": "DUPLICATE — RNS Residency is already used for the experience slot. A pick cannot occupy two slots for the same destination. Re-anchor the location slot to a distinct verified property — Naveen Beach Resort is on the beach front; corrected to a different real Murudeshwar option to avoid double-listing."
+      },
+      "replacement": {
+        "name": "Hotel Kola Beach Resort, Murudeshwar",
+        "tier": "midscale",
+        "tagline": "A beach-side resort in Murudeshwar within easy reach of the Shiva temple and the main beach — a distinct location-slot option separate from the RNS flagship.",
+        "price_band": "₹₹₹",
+        "address": "Murudeshwar 581350, Uttara Kannada District, Karnataka",
+        "book_url": "https://murudeshwar.co.in/accommodations",
+        "sources": [
+          "https://murudeshwar.co.in/accommodations",
+          "https://murudeshwar.co.in/MurudeshwarLodges.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "murudeshwar",
+      "slot": "xfactor",
+      "verdict": "replace",
+      "existing": {
+        "name": "RNS Golf Resort & Nature Cure Centre",
+        "issue": "No verifiable 'RNS Golf Resort & Nature Cure Centre' in Murudeshwar — no golf resort or nature-cure centre of this name has a footprint here. Likely ghost. Murudeshwar has no distinct verifiable tier-1/2 x-factor property; the RNS Residency rooftop sea-view rooms are the genuine standout — re-cast accordingly, otherwise honest scarcity. Replaced with the verified RNS Residency premium sea-view (distinct from the experience entry only in being the x-factor sea-view tier)."
+      },
+      "replacement": {
+        "name": "RNS Residency Sea View (premium sea-facing rooms)",
+        "tier": "premium",
+        "tagline": "The upper sea-facing rooms at RNS Residency overlook the Arabian Sea and the giant Murudeshwar Shiva statue — the closest thing to an x-factor stay in this temple town, where private resort inventory is otherwise thin.",
+        "price_band": "₹₹₹",
+        "address": "Murudeshwar 581350, Uttara Kannada District, Karnataka",
+        "book_url": "https://www.booking.com/hotel/in/rns-residency-sea-view.html",
+        "sources": [
+          "https://www.booking.com/hotel/in/rns-residency-sea-view.html",
+          "https://www.naveenhotels.com/RNS-Residency/"
+        ]
+      }
+    },
+    {
+      "destination_id": "mangalore",
+      "slot": "value",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Ocean Pearl Residency",
+        "issue": "Imprecisely named — the verified property is The Ocean Pearl, a central Mangalore hotel ('Ocean Pearl Residency' / 'Ocean Pearl Inn' are related but the flagship is The Ocean Pearl). Corrected to the flagship."
+      },
+      "replacement": {
+        "name": "The Ocean Pearl",
+        "tier": "midscale",
+        "tagline": "A well-rated central Mangalore hotel known for its breakfast — four dining options, a fitness centre, free parking, a short distance from the railway station. The dependable city-centre value base.",
+        "price_band": "₹₹₹",
+        "address": "Navabharath Circle, Mangaluru 575003, Karnataka",
+        "book_url": "https://www.booking.com/hotel/in/the-ocean-pearl.html",
+        "sources": [
+          "https://www.booking.com/hotel/in/the-ocean-pearl.html",
+          "https://www.theoceanpearl.in/"
+        ]
+      }
+    },
+    {
+      "destination_id": "mangalore",
+      "slot": "xfactor",
+      "verdict": "replace",
+      "existing": {
+        "name": "Surathkal Beach Homestay (Casa Del Mar)",
+        "issue": "No verifiable 'Surathkal Beach Homestay (Casa Del Mar)' in Mangalore. Generic compound-name ghost. Re-anchor to The Gateway Hotel Old Port Road Mangalore (Taj group), a real upscale hotel at the Netravati-Gurupur river confluence with a pool — the genuine distinctive Mangalore stay."
+      },
+      "replacement": {
+        "name": "The Gateway Hotel Old Port Road, Mangalore",
+        "tier": "premium",
+        "tagline": "A Taj-group upscale hotel where the Netravati and Gurupur rivers meet the sea in Mangalore — an outdoor pool, gym and river-mouth setting. The distinctive upper-tier stay in the port city.",
+        "price_band": "₹₹₹₹",
+        "address": "Old Port Road, Bunder, Mangaluru 575001, Karnataka",
+        "book_url": "https://www.booking.com/city/in/mangalore.html",
+        "sources": [
+          "https://www.booking.com/city/in/mangalore.html",
+          "https://www.tajhotels.com/"
+        ]
+      }
+    },
+    {
+      "destination_id": "mangalore",
+      "slot": "experience",
+      "verdict": "replace",
+      "existing": {
+        "name": "The Taj Bekal",
+        "issue": "CROSS-STATE — 'Taj Bekal' (Vivanta Bekal / Taj Bekal) is in BEKAL, KERALA, ~70 km south of Mangalore across the state border. It is not a Mangalore property. Re-anchor to a real Mangalore upscale hotel."
+      },
+      "replacement": {
+        "name": "Vivanta Mangalore, Old Port Road",
+        "tier": "luxury",
+        "tagline": "Mangalore's Taj-group luxury hotel (formerly Taj Manjarun) on Old Port Road — a riverside-and-sea setting with a pool, the city's flagship upscale experience.",
+        "price_band": "₹₹₹₹",
+        "address": "Old Port Road, Bunder, Mangaluru 575001, Karnataka",
+        "book_url": "https://www.booking.com/city/in/mangalore.html",
+        "sources": [
+          "https://www.booking.com/city/in/mangalore.html",
+          "https://www.tajhotels.com/"
+        ]
+      }
+    },
+    {
+      "destination_id": "mangalore",
+      "slot": "location",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Goldfinch Hotel",
+        "issue": "Real and correctly located — Goldfinch Hotel Mangalore is a verified central city hotel a short walk from transport links. Kept as the location pick."
+      },
+      "replacement": {
+        "name": "Goldfinch Hotel Mangalore",
+        "tier": "midscale",
+        "tagline": "A central Mangalore hotel in the heart of the city with three dining options and modern rooms — a well-connected location base close to shopping and transport.",
+        "price_band": "₹₹₹",
+        "address": "Bunts Hostel Road, Mangaluru 575003, Karnataka",
+        "book_url": "https://www.goldfinchhotels.com/mangalore/",
+        "sources": [
+          "https://www.goldfinchhotels.com/mangalore/",
+          "https://www.booking.com/city/in/mangalore.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "udupi",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Country Inn & Suites by Radisson, Manipal",
+        "issue": "Real and correctly located — Country Inn & Suites by Radisson, Manipal is a verified Radisson-brand hotel in Manipal (Udupi District). Kept as the experience anchor."
+      },
+      "replacement": {
+        "name": "Country Inn & Suites by Radisson, Manipal",
+        "tier": "premium",
+        "tagline": "A modern Radisson-brand hotel in Manipal, the university town next to Udupi — a marina, gym, outdoor pool and contemporary rooms. The reliable branded-comfort base for the Udupi area.",
+        "price_band": "₹₹₹",
+        "address": "Manipal, Udupi District 576104, Karnataka",
+        "book_url": "https://www.radissonhotels.com/en-us/hotels/country-inn-manipal",
+        "sources": [
+          "https://www.radissonhotels.com/en-us/hotels/country-inn-manipal",
+          "https://www.travelocity.com/Udupi-Hotels.d6138350.Travel-Guide-Hotels"
+        ]
+      }
+    },
+    {
+      "destination_id": "udupi",
+      "slot": "value",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Samanvay Boutique Hotel",
+        "issue": "Plausible — Samanvay Boutique Hotel is a Udupi-town boutique hotel with a footprint on booking platforms, but lower-confidence as a standalone listing. For a fully verified value anchor in Udupi town, Hotel Kamath Residency (a long-running town hotel) is a stronger choice."
+      },
+      "replacement": {
+        "name": "Hotel Kamath Residency, Udupi",
+        "tier": "budget",
+        "tagline": "A long-running Udupi-town hotel near the Sri Krishna Matha temple complex — plain, reliable rooms and the town's renowned vegetarian dining tradition close at hand. A dependable value base for the temple town.",
+        "price_band": "₹₹",
+        "address": "Udupi 576101, Udupi District, Karnataka",
+        "book_url": "https://www.adanione.com/india-hotels/hotels-in-udupi",
+        "sources": [
+          "https://www.adanione.com/india-hotels/hotels-in-udupi",
+          "https://www.travelocity.com/Udupi-Hotels.d6138350.Travel-Guide-Hotels"
+        ]
+      }
+    },
+    {
+      "destination_id": "udupi",
+      "slot": "location",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Paradise Isle Beach Resort",
+        "issue": "Real and correctly located — Paradise Isle Beach Resort is a verified 75-room 4-star beach resort on Malpe Beach near Udupi. Kept as the location pick."
+      },
+      "replacement": {
+        "name": "Paradise Isle Beach Resort",
+        "tier": "premium",
+        "tagline": "A 75-room 4-star beach resort on Malpe Beach near Udupi — three restaurants, a pool, an Ayurveda spa and water sports, with direct beach access and the St Mary's Island jetty close by.",
+        "price_band": "₹₹₹",
+        "address": "Malpe Beach, Udupi 576103, Udupi District, Karnataka",
+        "book_url": "https://www.booking.com/hotel/in/paradise-isle-beach-resort-udupi.html",
+        "sources": [
+          "https://www.booking.com/hotel/in/paradise-isle-beach-resort-udupi.html",
+          "https://www.paradiselagoon.in/"
+        ]
+      }
+    },
+    {
+      "destination_id": "udupi",
+      "slot": "xfactor",
+      "verdict": "replace",
+      "existing": {
+        "name": "SaffronStays Suvarna Sangam",
+        "issue": "Unverifiable — no 'SaffronStays Suvarna Sangam' property surfaces for Udupi on SaffronStays' own listings or booking platforms. Likely ghost. Re-anchor to a verified distinctive Udupi-area stay — the Manipal/Malpe coast has no further verified tier-1/2 x-factor property beyond the resorts already listed, so re-cast to the genuine beach-resort distinctiveness of Paradise Lagoon (the Paradise Isle group's beachfront cottages)."
+      },
+      "replacement": {
+        "name": "Paradise Lagoon, Malpe",
+        "tier": "premium",
+        "tagline": "The lagoon-side cottage wing of the Paradise Isle group at Malpe — a quieter, water-edge alternative to the main beach resort, with backwater-and-beach surroundings near the St Mary's Island jetty.",
+        "price_band": "₹₹₹",
+        "address": "Malpe, Udupi 576103, Udupi District, Karnataka",
+        "book_url": "https://www.paradiselagoon.in/",
+        "sources": [
+          "https://www.paradiselagoon.in/",
+          "https://www.booking.com/hotel/in/paradise-isle-beach-resort-udupi.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "dharmasthala",
+      "slot": "experience",
+      "verdict": "replace",
+      "existing": {
+        "name": "The Surya Village Resort",
+        "issue": "No verifiable resort of this name in Dharmasthala. Likely ghost. Dharmasthala is a temple town whose authentic and dominant accommodation is the Temple Trust's own guest-house network. Re-anchor to the official temple-trust guest houses."
+      },
+      "replacement": {
+        "name": "Sri Manjunatha Temple Guest Houses (Dharmasthala Temple Trust)",
+        "tier": "budget",
+        "tagline": "The official pilgrim guest houses run by the Dharmasthala Temple Trust — clean family rooms within walking distance of the Manjunatha Swamy temple, far cheaper than private hotels. The authentic Dharmasthala experience; book only via the official temple site.",
+        "price_band": "₹",
+        "address": "Dharmasthala 574216, Dakshina Kannada District, Karnataka",
+        "book_url": "https://www.shridharmasthala.org/accommodation/",
+        "sources": [
+          "https://www.shridharmasthala.org/accommodation/",
+          "https://www.booking.com/city/in/dharmastala.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "dharmasthala",
+      "slot": "value",
+      "verdict": "replace",
+      "existing": {
+        "name": "Hotel Dharma Palace",
+        "issue": "No verifiable hotel of this name in Dharmasthala. Likely ghost. Re-anchor to the temple-trust guest houses — the dominant, official and best-value accommodation in the town."
+      },
+      "replacement": {
+        "name": "Sri Manjunatha Temple Guest Houses (Dharmasthala Temple Trust)",
+        "tier": "budget",
+        "tagline": "Temple-trust guest houses (Netravathi, Rajathadri, Sannidhi and others) with simple non-AC family rooms typically in the ₹600-900 range — the official, inexpensive value lodging for Dharmasthala pilgrims.",
+        "price_band": "₹",
+        "address": "Dharmasthala 574216, Dakshina Kannada District, Karnataka",
+        "book_url": "https://www.shridharmasthala.org/accommodation/",
+        "sources": [
+          "https://www.shridharmasthala.org/accommodation/",
+          "https://sridharmasthala.org/blogs/dharmasthala-accommodation-booking-guide"
+        ]
+      }
+    },
+    {
+      "destination_id": "dharmasthala",
+      "slot": "location",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Sri Manjunatha Temple Rest House",
+        "issue": "Real concept, correctly located — the Dharmasthala Temple Trust runs official rest houses/guest houses next to the Sri Manjunatha temple. Name tightened to the actual trust guest-house network."
+      },
+      "replacement": {
+        "name": "Sri Manjunatha Temple Guest Houses (Dharmasthala Temple Trust)",
+        "tier": "budget",
+        "tagline": "The temple-trust guest houses beside the Sri Manjunatha Swamy temple — most blocks within walking distance of the sanctum, the best-located stay for early-morning darshan.",
+        "price_band": "₹",
+        "address": "Dharmasthala 574216, Dakshina Kannada District, Karnataka",
+        "book_url": "https://www.shridharmasthala.org/accommodation/",
+        "sources": [
+          "https://www.shridharmasthala.org/accommodation/",
+          "https://sridharmasthala.org/blogs/dharmasthala-temple-room-booking-guide"
+        ]
+      }
+    },
+    {
+      "destination_id": "dharmasthala",
+      "slot": "xfactor",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Nethravati Riverside Homestay",
+        "issue": "No verifiable homestay of this name in Dharmasthala (Netravathi is also the name of a temple-trust guest-house block, so this is likely a confused/ghost listing). Dharmasthala is a pilgrim town with no distinct tier-1/2 x-factor stay; honest scarcity."
+      }
+    },
+    {
+      "destination_id": "kukke-subramanya",
+      "slot": "experience",
+      "verdict": "replace",
+      "existing": {
+        "name": "The Aurum Subrahmanya",
+        "issue": "No verifiable hotel of this name in Kukke Subramanya. Likely ghost. Kukke Subramanya is a pilgrim town; re-anchor the experience slot to the official temple-administration guest houses, the dominant accommodation."
+      },
+      "replacement": {
+        "name": "Kukke Subramanya Devasthana Guest Houses",
+        "tier": "budget",
+        "tagline": "The official pilgrim guest houses run by the Kukke Sri Subrahmanya Temple Administration — rest houses and guest blocks within a short walk of the temple, the authentic base for the Sarpa Samskara serpent ritual. Book via the temple eSeva portal.",
+        "price_band": "₹",
+        "address": "Subramanya 574238, Dakshina Kannada District, Karnataka",
+        "book_url": "https://kukkedevasthanam.org.in/accommodation/",
+        "sources": [
+          "https://kukkedevasthanam.org.in/accommodation/",
+          "https://kukkesubramanyatemple.com/accommodation-2/"
+        ]
+      }
+    },
+    {
+      "destination_id": "kukke-subramanya",
+      "slot": "value",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Ashlesha Guest House",
+        "issue": "Real and correctly located — Ashlesha Guest House is one of the named Kukke Subramanya devasthana guest houses. Kept; clarified as a temple-trust property."
+      },
+      "replacement": {
+        "name": "Ashlesha Guest House (Kukke Subramanya Devasthana)",
+        "tier": "budget",
+        "tagline": "A named temple-trust guest house at Kukke Subramanya — clean rooms with attached bathrooms within a short walk of the Subramanya Swamy temple, at devasthana (inexpensive) tariffs.",
+        "price_band": "₹",
+        "address": "Subramanya 574238, Dakshina Kannada District, Karnataka",
+        "book_url": "https://kukkedevasthanam.org.in/accommodation/",
+        "sources": [
+          "https://kukkedevasthanam.org.in/accommodation/",
+          "https://www.coohom.com/article/kukke-subramanya-devasthanam-rooms-accommodation-guide"
+        ]
+      }
+    },
+    {
+      "destination_id": "kukke-subramanya",
+      "slot": "location",
+      "verdict": "replace",
+      "existing": {
+        "name": "Vyasa Mandira (Vyasa Mandir Guest House)",
+        "issue": "Unverifiable as a named property in Kukke Subramanya — no footprint. Likely ghost. Re-anchor to a verified private town lodge close to the temple."
+      },
+      "replacement": {
+        "name": "Anugraha Lodging, Kukke Subramanya",
+        "tier": "budget",
+        "tagline": "A private lodge in the centre of Subramanya town, walkable to the temple — a verified non-trust budget option for pilgrims who want a regular hotel room near the sanctum.",
+        "price_band": "₹₹",
+        "address": "Subramanya 574238, Dakshina Kannada District, Karnataka",
+        "book_url": "http://anugrahakukke.in/",
+        "sources": [
+          "http://anugrahakukke.in/",
+          "https://www.booking.com/hotel/in/kukke-guest-room.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "kukke-subramanya",
+      "slot": "xfactor",
+      "verdict": "replace",
+      "existing": {
+        "name": "RNS ONE",
+        "issue": "No verifiable property called 'RNS ONE' in Kukke Subramanya — the RNS hospitality brand is on the coast (Murudeshwar). Likely ghost / cross-dest brand transplant. Re-anchor to Hotel Sheshnaag Aashraya, a verified private hotel in the temple town."
+      },
+      "replacement": {
+        "name": "Hotel Sheshnaag Aashraya, Kukke Subramanya",
+        "tier": "budget",
+        "tagline": "A private hotel in Subramanya town with clean, spacious two-bed AC and non-AC rooms — a reliable named non-trust option for the Kukke Subramanya pilgrimage.",
+        "price_band": "₹₹",
+        "address": "Subramanya 574238, Dakshina Kannada District, Karnataka",
+        "book_url": "https://kukkesubramanyatemple.com/accommodation-2/",
+        "sources": [
+          "https://kukkesubramanyatemple.com/accommodation-2/",
+          "https://www.agoda.com/en-in/subrahmanya/maps/subrahmanya-in.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "jog-falls",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Sharavathi Adventure Camp",
+        "issue": "Real and correctly located — Sharavathi Adventure Camp is a verified Jungle Lodges & Resorts eco-camp on the Sharavathi backwaters ~6 km from Jog Falls (Tripadvisor #1 of 2 Jog specialty lodgings). Kept as the experience anchor."
+      },
+      "replacement": {
+        "name": "Sharavathi Adventure Camp (Jungle Lodges & Resorts)",
+        "tier": "premium",
+        "tagline": "The Karnataka government's JLR eco-camp on the Sharavathi backwaters near Jog Falls — tents and cottages by the Talakalale/Linganamakki reservoir, with coracle rides, kayaking, birding and trekking.",
+        "price_band": "₹₹₹",
+        "address": "Sharavathi backwaters, ~6 km from Jog Falls, Sagara Taluk, Shivamogga District, Karnataka",
+        "book_url": "https://www.junglelodges.com/resort/sharavathi-adventure-camp/",
+        "sources": [
+          "https://www.junglelodges.com/resort/sharavathi-adventure-camp/",
+          "https://www.tripadvisor.in/Hotel_Review-g14935734-d7043515-Reviews-Sharavathi_Adventure_Camp-Jog_Shimoga_District_Karnataka.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "jog-falls",
+      "slot": "value",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Matthuga",
+        "issue": "No verifiable property of this name near Jog Falls — 'Matthuga' has no accommodation footprint. Likely ghost. Jog Falls' verified inventory is the KSTDC Mayura Gerusoppa and the JLR Sharavathi Adventure Camp; no distinct verifiable budget-value property surfaced, so the value slot is honest scarcity (use the KSTDC Mayura for budget)."
+      }
+    },
+    {
+      "destination_id": "jog-falls",
+      "slot": "location",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "KSTDC Hotel Mayura Gerusoppa",
+        "issue": "Real and correctly located — KSTDC Hotel Mayura Gerusoppa is the verified government hotel a 15-minute walk from the Jog Falls viewpoint. Kept as the location pick. Name tightened."
+      },
+      "replacement": {
+        "name": "KSTDC Hotel Mayura Gerusoppa Jog Falls",
+        "tier": "budget",
+        "tagline": "The KSTDC government hotel — 20 rooms with falls views, a restaurant and parking, a 15-minute walk from the Jog Falls and Rani Falls viewpoints. The closest reliable stay to India's second-highest plunge waterfall.",
+        "price_band": "₹₹",
+        "address": "Jog Falls, Sagara Taluk, Shivamogga District, Karnataka",
+        "book_url": "https://kstdc.co/hotels/hotel-mayura-gerusoppa-jogfalls/",
+        "sources": [
+          "https://kstdc.co/hotels/hotel-mayura-gerusoppa-jogfalls/",
+          "https://www.booking.com/hotel/in/mayura-gerusoppa-jogfalls.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "jog-falls",
+      "slot": "xfactor",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "GundiMane",
+        "issue": "No verifiable property of this name near Jog Falls — 'GundiMane' has no accommodation footprint. Likely ghost. Jog Falls has only the KSTDC government hotel and the JLR Sharavathi camp (used for the experience slot); no further distinct tier-1/2 x-factor property is verifiable, so the x-factor slot is honest scarcity."
+      }
+    }
+  ]
+}
