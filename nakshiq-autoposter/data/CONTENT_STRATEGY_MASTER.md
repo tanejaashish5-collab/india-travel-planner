@@ -450,8 +450,8 @@ The workflow caches the library between runs using key `social-image-library-v1`
 
 The workflow now has a `Sync Phase 2 assets from R2` step ([autoposter.yml:175](../../.github/workflows/autoposter.yml#L175)) that fetches every asset listed in `data/phase2_r2_manifest.txt` from R2's public bucket. Layout:
 
-- R2 bucket public root: `https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/`
-- Phase 2 assets live at: `https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/social_image_library/{format_id}-{dest_slug}.{ext}`
+- R2 bucket public root: `https://pub-d8970c901de34c218926ebf4be1ed09a.r2.dev/`
+- Phase 2 assets live at: `https://pub-d8970c901de34c218926ebf4be1ed09a.r2.dev/social_image_library/{format_id}-{dest_slug}.{ext}`
 - Workflow fetches them into: `nakshiq-autoposter/social_image_library/{same name}`
 
 **Co-work workflow becomes:**

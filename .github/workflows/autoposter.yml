@@ -181,13 +181,15 @@ jobs:
             echo "Social image library cached ($(find nakshiq-autoposter/social_image_library -name '*.jpg' | wc -l) images)"
           fi
 
-      # 2026-05-20: Phase 2 asset sync from R2 public bucket. Driven by a
-      # manifest file (data/phase2_r2_manifest.txt — one filename per line) so
-      # the workflow only fetches assets the user has actually uploaded to R2.
-      # Layout in R2: /social_image_library/{format_id}-{dest_slug}.{ext}
+      # 2026-05-20: Phase 2 asset sync from the nakshiq-images R2 bucket.
+      # Driven by a manifest file (data/phase2_r2_manifest.txt — one filename
+      # per line) so the workflow only fetches assets the user has actually
+      # uploaded to R2.
+      # Layout in R2: nakshiq-images/social_image_library/{format_id}-{dest_slug}.{ext}
       # Layout locally: nakshiq-autoposter/social_image_library/{same name}
-      # R2 bucket is public, no credentials required (same pattern as
-      # r2_videos.py which fetches per-dest videos from the same bucket root).
+      # Bucket is public (Public Access enabled), no credentials required.
+      # Public URL prefix confirmed against qa/hero-images.json which uses
+      # the same bucket for destination hero images.
       - name: Sync Phase 2 assets from R2
         run: |
           MANIFEST="nakshiq-autoposter/data/phase2_r2_manifest.txt"
@@ -195,7 +197,7 @@ jobs:
             echo "No Phase 2 manifest — skipping R2 sync (Phase 2 not yet activated)"
             exit 0
           fi
-          R2_BASE="https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/social_image_library"
+          R2_BASE="https://pub-d8970c901de34c218926ebf4be1ed09a.r2.dev/social_image_library"
           LIB="nakshiq-autoposter/social_image_library"
           mkdir -p "$LIB"
           fetched=0

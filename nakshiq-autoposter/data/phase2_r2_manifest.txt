@@ -1,7 +1,12 @@
 # Phase 2 asset manifest — one filename per line.
 #
 # Each entry must exist in R2 at:
-#   https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/social_image_library/{name}
+#   https://pub-d8970c901de34c218926ebf4be1ed09a.r2.dev/social_image_library/{name}
+#
+# That's the nakshiq-images bucket (the same one serving /destinations/{slug}.jpg
+# hero images to the web frontend). You'll need to create a `social_image_library/`
+# folder at the bucket root the first time — Cloudflare dashboard → nakshiq-images
+# → "Add folder" button → name it social_image_library → drag-drop files into it.
 # The autoposter workflow fetches each on cron startup into
 #   nakshiq-autoposter/social_image_library/{name}
 # Phase 2 loader then picks them up via the {format_id}-{dest_slug}.{ext}
