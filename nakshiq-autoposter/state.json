@@ -2,10 +2,9 @@
   "yt_short_formats_used": [],
   "yt_short_music_used": [],
   "posted_today": {
-    "m8EAd": "2026-05-20",
-    "PdMu0": "2026-05-20"
+    "m8EAd": "2026-05-20"
   },
-  "last_sync": "2026-05-20T17:46:45.760078+00:00",
+  "last_sync": "2026-05-20T18:14:29.202943+00:00",
   "posted_destinations": [
     {
       "destination_id": "chopta",
@@ -27,7 +26,7 @@
       "collection_spotlight",
       "festival_alert",
       "kids_intel",
-      "arrival_intel"
+      "v2_pov_slow_morning"
     ],
     "PdMu0": [
       "monthly_forecast",
@@ -47,8 +46,7 @@
       "reality_check",
       "collection_spotlight",
       "festival_alert",
-      "kids_intel",
-      "arrival_intel"
+      "kids_intel"
     ]
   },
   "post_log": [
@@ -443,46 +441,34 @@
       "has_media": true
     },
     {
-      "timestamp": "2026-05-20T17:47:36.824980+00:00",
+      "timestamp": "2026-05-20T18:15:14.318147+00:00",
       "date": "2026-05-20",
       "platform": "instagram",
       "account_id": "m8EAd",
-      "post_id": "Ih9RX",
+      "post_id": "l5k1K",
       "destination": "chopta",
-      "format": "arrival_intel",
-      "has_media": true,
-      "media_id": "chopta.mp4"
-    },
-    {
-      "timestamp": "2026-05-20T17:47:55.205871+00:00",
-      "date": "2026-05-20",
-      "platform": "facebook",
-      "account_id": "PdMu0",
-      "post_id": "vSBsg",
-      "destination": "chopta",
-      "format": "arrival_intel",
+      "format": "v2_pov_slow_morning",
       "has_media": true,
       "media_id": "chopta.mp4"
     }
   ],
   "theme_usage": {
     "morning_formats": {
-      "arrival_intel": [
+      "v2_pov_slow_morning": [
         "2026-05-20"
       ]
     },
     "collections": {
-      "borders-worth-visiting": [
+      "andaman-diving-snorkeling": [
         "2026-05-20"
       ]
     },
-    "arrival_intel": {},
     "destinations": {
       "chopta": [
         "2026-05-20"
       ]
     },
-    "collection_carousel_dests:borders-worth-visiting": {}
+    "collection_carousel_dests:andaman-diving-snorkeling": {}
   },
   "infographic": {
     "last_topic_idx": 0,
@@ -496,8 +482,8 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "collection": "borders-worth-visiting",
-    "shared_best": "chopta"
+    "collection": "andaman-diving-snorkeling",
+    "shared_best": "bir-billing"
   },
   "manual_skip_dests": {}
 }
