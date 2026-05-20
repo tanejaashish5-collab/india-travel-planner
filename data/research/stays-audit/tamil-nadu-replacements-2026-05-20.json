@@ -1,0 +1,1956 @@
+{
+  "metadata": {
+    "state": "tamil-nadu",
+    "date": "2026-05-20",
+    "total_picks": 118,
+    "destinations": 30,
+    "status": "complete",
+    "new_stays_rows": 56,
+    "verdict_counts": {
+      "keep_existing": 27,
+      "replace": 46,
+      "honest_scarcity": 45
+    },
+    "notes": "Audit-and-replace of auto-seeded placeholder picks for all 30 Tamil Nadu destinations (kotagiri and vedanthangal have 3 slots each, all others 4; 118 total — matches baseline). TTDC Hotel Tamil Nadu network used as the authoritative government anchor; Tamil Nadu Forest Department eco-lodges for the tiger reserves (Topslip/Anamalai, Mudumalai, Point Calimere, Vedanthangal); CGH Earth, Neemrana and INDeco heritage hotels in the delta and Chettinad. ~77% of picks failed verification as keep_existing (46 replace + 45 honest_scarcity of 118). Notable fabrications/cross-dest catches: Crowne Plaza Chennai Adyar Park (closed 2023), Radisson Blu 'Kanchipuram' (Radisson is only at Mahabalipuram Temple Bay), Dakshin Chitra Heritage Stay (DakshinaChitra is a museum), GRT Hotels Thanjavur + GRT Nativity Chettinad (no such GRT properties), Thanjavur Palace Heritage Stay (ASI monument), The Bangala mis-slotted to Madurai (it is in Karaikudi), Somatheeram + Padmanabhapuram Palace at Kanyakumari (Somatheeram is in Kerala, Padmanabhapuram is a Kerala-govt museum), Bandipur Bamboo Retreat + Silent Valley at Mudumalai (Karnataka/Kerala cross-state), Orange County Yercaud (brand is Karnataka-only), Hotel Sakthi Park mislocated to Vedanthangal (it is in Melmaruvathur), Cauvery Delta Houseboat (no houseboats on the Cauvery). Honest-scarcity heavy at dhanushkodi (all 4 — protected ghost town, no accommodation), point-calimere/vedanthangal/anamalai (sanctuaries — forest-department lodges only), meghamalai (remote ghats — estate bungalows only), and the thin-stock temple towns (srirangam all 4 — most hotels are in Trichy proper, chidambaram, hogenakkal, courtallam)."
+  },
+  "task_a_results": [
+    {
+      "destination_id": "chennai",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "The Leela Palace Chennai",
+        "issue": "OK — real 5-star sea-facing palace hotel on the Adyar seafront. Verified."
+      },
+      "replacement": {
+        "name": "The Leela Palace Chennai",
+        "tier": "luxury",
+        "tagline": "Chennai's flagship luxury address — a 16-storey, 326-room palace hotel on 4.8 seafront acres, inspired by Chettinad grandeur, with sea-view rooms, a rooftop pool and the city's most acclaimed dining.",
+        "price_band": "₹₹₹₹",
+        "address": "Adyar Seafront, MRC Nagar, Chennai 600028, Tamil Nadu",
+        "book_url": "https://www.theleela.com/the-leela-palace-chennai",
+        "sources": [
+          "https://www.theleela.com/the-leela-palace-chennai",
+          "https://en.wikipedia.org/wiki/The_Leela_Palace_Chennai"
+        ]
+      }
+    },
+    {
+      "destination_id": "chennai",
+      "slot": "value",
+      "verdict": "replace",
+      "existing": {
+        "name": "Raj Comfort Inn",
+        "issue": "No verifiable mid-range hotel of this exact name in T. Nagar surfaces on Booking.com / MakeMyTrip / Tripadvisor — unverifiable placeholder. Re-anchor to a real central mid-range hotel."
+      },
+      "replacement": {
+        "name": "The Raintree Hotel Anna Salai",
+        "tier": "comfort",
+        "tagline": "A 230-room 5-star on Mount Road near Teynampet Metro — India's first ECOTEL-certified hotel, with a rooftop restaurant, spa and pool, walkable to museums and the shopping districts. Strong value for a central full-service hotel.",
+        "price_band": "₹₹₹",
+        "address": "636 Anna Salai, Teynampet, Chennai 600035, Tamil Nadu",
+        "book_url": "https://www.raintreehotels.com/hotel-near-anna-salai-chennai",
+        "sources": [
+          "https://www.raintreehotels.com/hotel-near-anna-salai-chennai",
+          "https://en.wikipedia.org/wiki/The_Raintree_Hotel_Anna_Salai"
+        ]
+      }
+    },
+    {
+      "destination_id": "chennai",
+      "slot": "location",
+      "verdict": "replace",
+      "existing": {
+        "name": "Crowne Plaza Chennai Adyar Park",
+        "issue": "Closed — the Crowne Plaza Chennai Adyar Park (132 TTK Road, Alwarpet) ceased operations in 2023. Dead property. Re-anchor the location slot to a real coastal option on the ECR."
+      },
+      "replacement": {
+        "name": "Taj Fisherman's Cove Resort & Spa",
+        "tier": "luxury",
+        "tagline": "A 48-acre Taj beach resort on Covelong Beach, 32 km south on the ECR, built on the ramparts of an 18th-century fort — sea-facing rooms and beach cottages with direct beach access, an easy day-trip distance to both Mahabalipuram and central Chennai.",
+        "price_band": "₹₹₹₹",
+        "address": "Covelong Beach, ECR, Kanchipuram District 603112, Tamil Nadu",
+        "book_url": "https://www.tajhotels.com/en-in/hotels/taj-fishermans-cove-chennai",
+        "sources": [
+          "https://www.tajhotels.com/en-in/hotels/taj-fishermans-cove-chennai",
+          "https://en.wikipedia.org/wiki/Taj_Fisherman's_Cove_Resort_&_Spa"
+        ]
+      }
+    },
+    {
+      "destination_id": "chennai",
+      "slot": "xfactor",
+      "verdict": "replace",
+      "existing": {
+        "name": "Dakshin Chitra Heritage Stay",
+        "issue": "Fabrication — DakshinaChitra (Muttukadu, on the ECR) is a living-heritage museum of South Indian arts and crafts; it does not operate guest accommodation. Ghost property. Re-anchor the x-factor slot to a real distinctive stay."
+      },
+      "replacement": {
+        "name": "The Raintree Hotel Anna Salai",
+        "tier": "comfort",
+        "tagline": "India's first ECOTEL-certified hotel — a working example of a sustainable city 5-star, with greywater recycling, an organic rooftop and a central Mount Road address. The distinctive eco-conscious stay in a metro that has few of them.",
+        "price_band": "₹₹₹",
+        "address": "636 Anna Salai, Teynampet, Chennai 600035, Tamil Nadu",
+        "book_url": "https://www.raintreehotels.com/hotel-near-anna-salai-chennai",
+        "sources": [
+          "https://www.raintreehotels.com/hotel-near-anna-salai-chennai",
+          "https://en.wikipedia.org/wiki/The_Raintree_Hotel_Anna_Salai"
+        ]
+      }
+    },
+    {
+      "destination_id": "kanchipuram",
+      "slot": "experience",
+      "verdict": "replace",
+      "existing": {
+        "name": "Radisson Blu Resort & Spa, Kanchipuram",
+        "issue": "Mislocated — Radisson's only property in the district is the Radisson Blu Resort Temple Bay in Mahabalipuram (64 km away), not Kanchipuram. No Radisson hotel operates in Kanchipuram itself. Cross-dest ghost."
+      },
+      "replacement": {
+        "name": "Regency Kanchipuram by GRT Hotels",
+        "tier": "comfort",
+        "tagline": "Kanchipuram's leading hotel — a 35-room GRT property on Gandhi Road, a short drive from the Kamakshi Amman and Kailasanatha temples and walkable to the silk-saree districts. The town's most consistent full-service base.",
+        "price_band": "₹₹₹",
+        "address": "Gandhi Road, Kanchipuram 631502, Tamil Nadu",
+        "book_url": "https://www.grthotels.com/regency-kanchipuram/",
+        "sources": [
+          "https://www.grthotels.com/regency-kanchipuram/",
+          "https://www.tripadvisor.com/Hotel_Review-g503705-d629461-Reviews-Regency_Kanchipuram_By_Grt_Hotels-Kanchipuram_Kanchipuram_District_Tamil_Nadu.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "kanchipuram",
+      "slot": "value",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Srimath Heritage Guesthouse",
+        "issue": "No verifiable property of this name in Kanchipuram surfaces on Booking.com / MakeMyTrip / Tripadvisor. Kanchipuram's verified stock is thin — GRT Regency (experience) and TTDC (location) cover the town; no separate tier-1/2 value property verifies."
+      }
+    },
+    {
+      "destination_id": "kanchipuram",
+      "slot": "location",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Hotel Tamil Nadu (TTDC), Kanchipuram",
+        "issue": "OK — real TTDC government hotel on Kamakshi Amman Sannathi Street, 1.5 km from the temple. Verified."
+      },
+      "replacement": {
+        "name": "Hotel Tamil Nadu (TTDC), Kanchipuram",
+        "tier": "budget",
+        "tagline": "The Tamil Nadu Tourism state-run hotel on Kamakshi Amman Sannathi Street — plain government-priced rooms with a large car park (rare in the cramped temple town), 1.5 km from the Kamakshi Amman temple.",
+        "price_band": "₹₹",
+        "address": "Kamakshi Amman Sannathi Street, Kanchipuram 631502, Tamil Nadu",
+        "book_url": "https://ttdconline.com/hotel",
+        "sources": [
+          "https://ttdconline.com/hotel",
+          "https://www.tripadvisor.in/Hotel_Review-g503705-d1178836-Reviews-Hotel_TamilNadu_Kancheepuram-Kanchipuram_Kanchipuram_District_Tamil_Nadu.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "kanchipuram",
+      "slot": "xfactor",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "The Silk Route Heritage Stay",
+        "issue": "No verifiable property of this name in Kanchipuram — generic silk-themed placeholder, no footprint on any OTA or Tripadvisor. Kanchipuram has no verified heritage / boutique x-factor property; it is a day-trip temple town."
+      }
+    },
+    {
+      "destination_id": "mahabalipuram",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Radisson Blu Resort Temple Bay Mamallapuram",
+        "issue": "OK — real 5-star, 157-room beach resort on 44 acres under 2 km from the Shore Temple. Verified."
+      },
+      "replacement": {
+        "name": "Radisson Blu Resort Temple Bay Mamallapuram",
+        "tier": "luxury",
+        "tagline": "A 157-room beach resort across 44 landscaped acres on the Bay of Bengal, with a 1,000-foot Grand Pool Complex and chalets, villas and bungalows — the UNESCO Shore Temple a short walk away.",
+        "price_band": "₹₹₹₹",
+        "address": "57 Kovalam Road, ECR, Mahabalipuram 603104, Tamil Nadu",
+        "book_url": "https://www.radissonhotels.com/en-us/hotels/radisson-blu-resort-mamallapuram-temple-bay",
+        "sources": [
+          "https://www.radissonhotels.com/en-us/hotels/radisson-blu-resort-mamallapuram-temple-bay",
+          "https://www.tripadvisor.com/Hotel_Review-g1162480-d478012-Reviews-Radisson_Blu_Resort_Temple_Bay_Mamallapuram-Mahabalipuram_Kanchipuram_District_Tamil_N.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "mahabalipuram",
+      "slot": "value",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Welcomhotel by ITC Hotels, Kences Palm Beach",
+        "issue": "OK — real ITC Welcomhotel beach resort at Mahabalipuram. It is a 5-star, so it sits high for a 'value' slot, but it is genuine and correctly located; tighten the name."
+      },
+      "replacement": {
+        "name": "Welcomhotel by ITC Hotels, Kences Palm Beach, Mamallapuram",
+        "tier": "luxury",
+        "tagline": "An ITC Welcomhotel in 36,000-plus sq m of palm-shaded grounds by the sea — 94 rooms, cottages and villas, a WelcomWellness spa and outdoor pool, close to the Shore Temple. The dependable mid-luxury alternative to the Radisson.",
+        "price_band": "₹₹₹₹",
+        "address": "Kovalam Road, Mahabalipuram 603104, Tamil Nadu",
+        "book_url": "https://www.itchotels.com/in/en/welcomhotelkencespalmbeach-mamallapuram",
+        "sources": [
+          "https://www.itchotels.com/in/en/welcomhotelkencespalmbeach-mamallapuram",
+          "https://www.tripadvisor.in/Hotel_Review-g1162480-d12081701-Reviews-WelcomHotel_Kences_Palm_Beach-Mahabalipuram_Kanchipuram_District_Tamil_Nadu.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "mahabalipuram",
+      "slot": "location",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Elis Homestay",
+        "issue": "No verifiable homestay of this name in Mahabalipuram on Booking.com / MakeMyTrip / Tripadvisor — unverifiable placeholder. Mahabalipuram's town-centre budget stock is small and unbranded; no tier-1/2 location property verifies separately."
+      }
+    },
+    {
+      "destination_id": "mahabalipuram",
+      "slot": "xfactor",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Marutham Village Resort",
+        "issue": "No verifiable resort of this exact name in Mahabalipuram surfaces on the OTAs / Tripadvisor — unverifiable placeholder. The Radisson and Welcomhotel cover the town's distinctive stays; no separate verified x-factor property."
+      }
+    },
+    {
+      "destination_id": "pondicherry",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Villa Shanti",
+        "issue": "OK — real 15-room boutique heritage hotel on Suffren Street in the French Quarter. Verified."
+      },
+      "replacement": {
+        "name": "Villa Shanti",
+        "tier": "luxury",
+        "tagline": "A 15-room boutique heritage hotel behind a discreet facade in the old French town — South Indian architecture meeting contemporary design, a renowned in-house restaurant and a wellness hut, a 3-minute walk from Promenade Beach.",
+        "price_band": "₹₹₹",
+        "address": "14 Suffren Street, White Town, Pondicherry 605001",
+        "book_url": "https://www.lavillashanti.com/en/",
+        "sources": [
+          "https://www.lavillashanti.com/en/",
+          "https://www.tripadvisor.com/Hotel_Review-g659792-d2327700-Reviews-Villa_Shanti-Pondicherry_Union_Territory_of_Pondicherry.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "pondicherry",
+      "slot": "value",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Accord Puducherry",
+        "issue": "OK — real 105-room full-service hotel near the Sri Aurobindo Ashram. Verified."
+      },
+      "replacement": {
+        "name": "Accord Puducherry",
+        "tier": "comfort",
+        "tagline": "A 105-room full-service hotel near the Sri Aurobindo Ashram — a 24-hour cafe, a vegetarian concept restaurant and a pool. The dependable air-conditioned-comfort pick over the pricier heritage hotels.",
+        "price_band": "₹₹₹",
+        "address": "SV Patel Road, Pondicherry 605001",
+        "book_url": "https://www.theaccordhotels.com/puducherry/",
+        "sources": [
+          "https://www.theaccordhotels.com/puducherry/",
+          "https://www.tripadvisor.in/Hotel_Review-g659792-d3168215-Reviews-Accord_Puducherry-Pondicherry_Union_Territory_of_Pondicherry.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "pondicherry",
+      "slot": "location",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "La Villa",
+        "issue": "OK — La Villa Pondicherry is a real 19th-century heritage host-house with six suites at 11 Surcouf Street, White Town. Verified; tighten the name."
+      },
+      "replacement": {
+        "name": "La Villa Pondicherry",
+        "tier": "luxury",
+        "tagline": "A restored 19th-century colonial host-house in White Town — just six suites, a courtyard pool and a French restaurant, deep inside the heritage French Quarter and walkable to the seafront promenade.",
+        "price_band": "₹₹₹₹",
+        "address": "11 Surcouf Street, White Town, Pondicherry 605001",
+        "book_url": "https://www.lavillapondicherry.com/",
+        "sources": [
+          "https://www.facebook.com/lavillapondichery/",
+          "https://www.tripadvisor.com/HotelsList-Pondicherry-Heritage-Hotels-zfp331458.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "pondicherry",
+      "slot": "xfactor",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Le Dupleix",
+        "issue": "OK — Le Dupleix is a real heritage hotel in a restored colonial mansion (the former mayor's residence) in White Town. Verified."
+      },
+      "replacement": {
+        "name": "Le Dupleix",
+        "tier": "luxury",
+        "tagline": "A heritage hotel in a restored colonial mansion that once served as the mayor's residence — INTACH-restored woodwork, individually designed antique-filled rooms and a courtyard pool, named for the last French governor of Pondicherry.",
+        "price_band": "₹₹₹₹",
+        "address": "5 Caserne Street, White Town, Pondicherry 605001",
+        "book_url": "https://www.ledupleix.com/",
+        "sources": [
+          "https://www.ledupleix.com/",
+          "https://www.booking.com/hotel/in/le-dupleix.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "tharangambadi",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Tranquebar Heritage Hotel",
+        "issue": "Maps to Neemrana's Bungalow on the Beach — the real heritage hotel in a 17th-century Danish governor's house. Correct property, imprecise name. Re-anchor to the proper name."
+      },
+      "replacement": {
+        "name": "Neemrana's Bungalow on the Beach",
+        "tier": "luxury",
+        "tagline": "A 17th-century Danish colonial governor's house on the beach, restored by Neemrana Hotels — 11 sea-view rooms between the Dansborg fort and an early-Pandya temple. The town's standout heritage stay.",
+        "price_band": "₹₹₹",
+        "address": "24 King Street, Tharangambadi 609313, Nagapattinam District, Tamil Nadu",
+        "book_url": "https://www.neemranahotels.com/the-bungalow-on-the-beach-tranquebar-tamil-nadu/",
+        "sources": [
+          "https://www.neemranahotels.com/the-bungalow-on-the-beach-tranquebar-tamil-nadu/",
+          "https://en.wikipedia.org/wiki/Bungalow_on_the_Beach"
+        ]
+      }
+    },
+    {
+      "destination_id": "tharangambadi",
+      "slot": "value",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Tharangambadi Guest House",
+        "issue": "Generic placeholder — no verifiable property of this name on any OTA / Tripadvisor. Tharangambadi is a tiny coastal heritage town; Tripadvisor lists only 2 hotels, both Neemrana heritage houses. No tier-1/2 value property exists."
+      }
+    },
+    {
+      "destination_id": "tharangambadi",
+      "slot": "location",
+      "verdict": "replace",
+      "existing": {
+        "name": "Fort View Inn",
+        "issue": "No verifiable property of this name in Tharangambadi — generic fort-themed placeholder, no OTA footprint. Re-anchor to a real Neemrana heritage house in the town."
+      },
+      "replacement": {
+        "name": "Neemrana's Gate House, Tranquebar",
+        "tier": "comfort",
+        "tagline": "A second restored heritage house run by Neemrana in Tranquebar, beside the town gateway — a smaller, quieter and lower-priced alternative to the Bungalow on the Beach, still inside the colonial-quarter heritage zone.",
+        "price_band": "₹₹₹",
+        "address": "Tranquebar (Tharangambadi) 609313, Nagapattinam District, Tamil Nadu",
+        "book_url": "https://www.neemranahotels.com/the-bungalow-on-the-beach-tranquebar-tamil-nadu/",
+        "sources": [
+          "https://www.neemranahotels.com/the-bungalow-on-the-beach-tranquebar-tamil-nadu/",
+          "https://en.wikipedia.org/wiki/Bungalow_on_the_Beach"
+        ]
+      }
+    },
+    {
+      "destination_id": "tharangambadi",
+      "slot": "xfactor",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Chola Beach Shack",
+        "issue": "No verifiable property of this name — generic beach-shack placeholder, no OTA footprint. Tharangambadi has no beach-shack or eco-camp operation; the Neemrana heritage houses are the town's only verified stays."
+      }
+    },
+    {
+      "destination_id": "chidambaram",
+      "slot": "experience",
+      "verdict": "replace",
+      "existing": {
+        "name": "Saradha Palace Heritage Hotel",
+        "issue": "Misnamed — the real, verified hotel is Hotel Saradharam (not 'Saradha Palace Heritage Hotel'), a standard 3-star, not a heritage palace. Re-anchor to the correct property and tier."
+      },
+      "replacement": {
+        "name": "Hotel Saradharam",
+        "tier": "comfort",
+        "tagline": "Chidambaram's most reliable hotel — air-conditioned rooms 800 m from the Thillai Nataraja temple and 400 m from the bus stand, with multiple restaurants. The dependable base for a temple-town visit.",
+        "price_band": "₹₹",
+        "address": "19 V.G.P. Street, Chidambaram 608001, Cuddalore District, Tamil Nadu",
+        "book_url": "https://www.hotelsaradharam.com/",
+        "sources": [
+          "https://www.hotelsaradharam.com/",
+          "https://www.tripadvisor.in/Hotel_Review-g790280-d498358-Reviews-Hotel_Saradharam-Chidambaram_Cuddalore_District_Tamil_Nadu.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "chidambaram",
+      "slot": "value",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Sri Devi Guesthouse",
+        "issue": "Generic placeholder — no verifiable property of this name in Chidambaram on any OTA. Chidambaram's verified stock is thin; Hotel Saradharam covers the town and there is no separate tier-1/2 value property."
+      }
+    },
+    {
+      "destination_id": "chidambaram",
+      "slot": "location",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Temple View Inn",
+        "issue": "No verifiable property of this name in Chidambaram — generic temple-themed placeholder, no OTA footprint. No tier-1/2 location property exists beyond Hotel Saradharam."
+      }
+    },
+    {
+      "destination_id": "chidambaram",
+      "slot": "xfactor",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Chidambara Farmstay",
+        "issue": "No verifiable farmstay of this name near Chidambaram — generic placeholder, no OTA footprint. No verified distinctive / heritage stay in the town."
+      }
+    },
+    {
+      "destination_id": "kumbakonam",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Mantra Koodam, CGH Earth",
+        "issue": "OK — real CGH Earth heritage resort between the Cauvery and Veera Chozha rivers near Kumbakonam. Verified."
+      },
+      "replacement": {
+        "name": "Mantra Koodam, CGH Earth",
+        "tier": "luxury",
+        "tagline": "A CGH Earth heritage resort built in the style of traditional Chettiar homes — 30 cottages and villas amid herbal gardens, a natural pool and an Ayurvedic spa. The standout base for the Great Living Chola Temples circuit.",
+        "price_band": "₹₹₹₹",
+        "address": "Marakkadai Road, Kumbakonam 612001, Thanjavur District, Tamil Nadu",
+        "book_url": "https://www.cghearth.com/mantra-koodam",
+        "sources": [
+          "https://www.cghearth.com/mantra-koodam",
+          "https://www.tripadvisor.com/Hotel_Review-g790279-d1770480-Reviews-Mantra_Koodam_CGH_Earth-Kumbakonam_Thanjavur_District_Tamil_Nadu.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "kumbakonam",
+      "slot": "value",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Lilac Hotels Kumbakonam",
+        "issue": "OK — real 45-room modern hotel in central Kumbakonam with a well-regarded vegetarian restaurant. Verified; tighten the name."
+      },
+      "replacement": {
+        "name": "Lilac Kumbakonam",
+        "tier": "comfort",
+        "tagline": "A 45-room modern hotel in central Kumbakonam — air-conditioned rooms and the well-regarded Kesar vegetarian restaurant serving the local Kumbakonam thali. Often described as a 4-star property at 3-star prices.",
+        "price_band": "₹₹₹",
+        "address": "Central Kumbakonam 612001, Thanjavur District, Tamil Nadu",
+        "book_url": "https://lilachotels.com/kumbakonam/",
+        "sources": [
+          "https://lilachotels.com/kumbakonam/",
+          "https://www.tripadvisor.com/Hotel_Review-g790279-d28050977-Reviews-Lilac_Hotels_Kumbakonam-Kumbakonam_Thanjavur_District_Tamil_Nadu.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "kumbakonam",
+      "slot": "location",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Hotel Diamond",
+        "issue": "No verifiable hotel of this exact name in central Kumbakonam on any OTA / Tripadvisor — unverifiable placeholder. Lilac (value) covers central-town accommodation; no separate tier-1/2 location property verifies."
+      }
+    },
+    {
+      "destination_id": "kumbakonam",
+      "slot": "xfactor",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Indeco Hotels Swamimalai",
+        "issue": "OK — real INDeco heritage eco-resort in Swamimalai village near Kumbakonam, with the Steve Borgia heritage museum. Verified."
+      },
+      "replacement": {
+        "name": "INDeco Hotels Swamimalai",
+        "tier": "luxury",
+        "tagline": "A heritage eco-resort in Swamimalai village — Chettinad-inspired heritage suites with Tanjore paintings and antique furnishings, the Steve Borgia Indian Heritage Museum and farm-to-table dining, ringed by UNESCO Chola temples.",
+        "price_band": "₹₹₹₹",
+        "address": "Thimmakudy, Swamimalai 612302, Thanjavur District, Tamil Nadu",
+        "book_url": "https://indecohotels.com/stay/swamimalai/",
+        "sources": [
+          "https://indecohotels.com/stay/swamimalai/",
+          "https://www.booking.com/hotel/in/indeco-hotels-swamimalai.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "thanjavur",
+      "slot": "value",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Hotel Parisutham",
+        "issue": "OK — real long-running 50-room hotel in central Thanjavur with a pool. Verified."
+      },
+      "replacement": {
+        "name": "Hotel Parisutham",
+        "tier": "comfort",
+        "tagline": "A long-running 50-room hotel in central Thanjavur with a well-kept pool — within walking distance of the Brihadeeswarar Big Temple, the Royal Palace and the railway station. The reliable value base for the temple city.",
+        "price_band": "₹₹₹",
+        "address": "55 G.A. Canal Road, Thanjavur 613001, Tamil Nadu",
+        "book_url": "https://www.hotelparisutham.com/",
+        "sources": [
+          "https://www.hotelparisutham.com/",
+          "https://www.tripadvisor.com/Hotel_Review-g424926-d479534-Reviews-Hotel_Parisutham-Thanjavur_Thanjavur_District_Tamil_Nadu.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "thanjavur",
+      "slot": "location",
+      "verdict": "replace",
+      "existing": {
+        "name": "GRT Hotels Thanjavur",
+        "issue": "Unverifiable — GRT Hotels has no property in Thanjavur (its Tamil Nadu hotels are in Chennai, Kanchipuram, Tiruchendur, etc.). Ghost property. Re-anchor to a real central Thanjavur hotel."
+      },
+      "replacement": {
+        "name": "Hotel Tamil Nadu (TTDC), Thanjavur",
+        "tier": "budget",
+        "tagline": "The Tamil Nadu Tourism state-run hotel in central Thanjavur — plain government-priced rooms near the Brihadeeswarar Big Temple and Thanjavur Palace. A reliable budget base in the heart of the heritage town.",
+        "price_band": "₹₹",
+        "address": "Gandhiji Road, Thanjavur 613001, Tamil Nadu",
+        "book_url": "https://ttdconline.com/hotel",
+        "sources": [
+          "https://ttdconline.com/hotel",
+          "https://www.tripadvisor.com/Hotel_Review-g424926-d1231164-Reviews-Hotel_TamilNadu_Thanjavur-Thanjavur_Thanjavur_District_Tamil_Nadu.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "thanjavur",
+      "slot": "experience",
+      "verdict": "replace",
+      "existing": {
+        "name": "Thanjavur Palace Heritage Stay",
+        "issue": "Fabrication — the Thanjavur Maratha Palace (Thanjavur Royal Palace) is an ASI/state-protected monument complex with museums, not a hotel. No accommodation operates inside it. Ghost property. Re-anchor to the city's real heritage hotel."
+      },
+      "replacement": {
+        "name": "Svatma — A Luxury Heritage Resort",
+        "tier": "luxury",
+        "tagline": "Thanjavur's premier heritage hotel — a restored heritage building plus a contemporary wing decorated with Tanjore paintings, with the Soukyam spa, two pools, daily Carnatic music and a vegetarian restaurant. The standout art-and-culture stay in the Chola capital.",
+        "price_band": "₹₹₹₹",
+        "address": "Blake Higher Secondary School Road, Thanjavur 613001, Tamil Nadu",
+        "book_url": "https://www.svatma.in/",
+        "sources": [
+          "https://www.svatma.in/",
+          "https://www.trivago.in/en-IN/oar/hotel-svatma-a-luxury-heritage-resort-thanjavur"
+        ]
+      }
+    },
+    {
+      "destination_id": "thanjavur",
+      "slot": "xfactor",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Chola Shekhara Farm Retreat",
+        "issue": "No verifiable farm retreat of this name near Thanjavur — generic Chola-themed placeholder, no OTA footprint. Svatma (experience) is the city's verified distinctive stay; no separate x-factor property."
+      }
+    },
+    {
+      "destination_id": "srirangam",
+      "slot": "experience",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Sri Devi Hospitality (Srirangam)",
+        "issue": "Generic placeholder — no verifiable hotel of this name. Srirangam is a temple island within Tiruchirappalli city; it has only small pilgrim lodges. The verified experience-tier hotels (Sangam, Grand Gardenia) are in Trichy proper, 7 km away."
+      }
+    },
+    {
+      "destination_id": "srirangam",
+      "slot": "value",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Srirangam Residency",
+        "issue": "Generic placeholder — no verifiable hotel of this exact name surfaces as a tier-1/2 property. Srirangam's accommodation is small unbranded pilgrim residencies near the temple; no verified value-tier property. Use Trichy as the base."
+      }
+    },
+    {
+      "destination_id": "srirangam",
+      "slot": "location",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Hotel Abhishek (Temple Road, Srirangam)",
+        "issue": "No verifiable property of this name on Booking.com / MakeMyTrip / Tripadvisor — unverifiable placeholder. Srirangam's near-temple stock is small pilgrim lodges, none tier-1/2. Use Trichy hotels as the base."
+      }
+    },
+    {
+      "destination_id": "srirangam",
+      "slot": "xfactor",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Cauvery Delta Houseboat Stay (near Srirangam)",
+        "issue": "Fabrication — there is no houseboat operation on the Cauvery at Srirangam; the river is seasonal and unnavigable for houseboats. Ghost concept. No verified distinctive stay on the temple island."
+      }
+    },
+    {
+      "destination_id": "trichy",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Sangam Hotel",
+        "issue": "OK — Sangam Hotel Trichy is a real 90-room 4-star in the Cantonment. Verified; tighten the name."
+      },
+      "replacement": {
+        "name": "Sangam Hotel Trichy",
+        "tier": "luxury",
+        "tagline": "A 90-room 4-star hotel from the Sangam group (established 1975) — a pool, fitness centre and multiple restaurants, near the Ucchi Pillayar Rockfort and 6 km from the airport. The city's most consistent full-service hotel.",
+        "price_band": "₹₹₹",
+        "address": "Collector's Office Road, Cantonment, Tiruchirappalli 620001, Tamil Nadu",
+        "book_url": "https://www.sangamhotels.com/",
+        "sources": [
+          "https://www.sangamhotels.com/",
+          "https://www.tripadvisor.com/Hotel_Review-g317098-d25421858-Reviews-Sangam_Hotel-Tiruchirappalli_Tiruchirappalli_District_Tamil_Nadu.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "trichy",
+      "slot": "value",
+      "verdict": "replace",
+      "existing": {
+        "name": "Arokya International",
+        "issue": "No verifiable hotel of this exact name in Tiruchirappalli on Booking.com / MakeMyTrip / Tripadvisor — unverifiable placeholder. Re-anchor to a real value-tier hotel."
+      },
+      "replacement": {
+        "name": "Grand Gardenia",
+        "tier": "comfort",
+        "tagline": "A 38-room 3-star business hotel near the airport and junction railway station — two restaurants, a bar and a sauna, with consistently strong guest ratings. The dependable value pick for a Trichy or Srirangam temple visit.",
+        "price_band": "₹₹₹",
+        "address": "Mannarpuram, Tiruchirappalli 620020, Tamil Nadu",
+        "book_url": "https://www.grandgardenia.com/",
+        "sources": [
+          "https://www.grandgardenia.com/",
+          "https://www.tripadvisor.com/Hotel_Review-g317098-d1846678-Reviews-Grand_Gardenia_Hotel-Tiruchirappalli_Tiruchirappalli_District_Tamil_Nadu.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "trichy",
+      "slot": "location",
+      "verdict": "replace",
+      "existing": {
+        "name": "Hotel Femina Palace",
+        "issue": "Imprecise — the real property is 'Femina Hotel' (a long-standing hotel on Williams Road, central Trichy), not 'Hotel Femina Palace'. Re-anchor to the verified TTDC government hotel for the location slot, central and budget-priced."
+      },
+      "replacement": {
+        "name": "Hotel Tamil Nadu (TTDC), Trichy",
+        "tier": "budget",
+        "tagline": "The Tamil Nadu Tourism state-run hotel opposite the Central Bus Stand on McDonald's Road — plain, government-priced air-conditioned rooms in central Trichy, an easy reach of the Rockfort and Srirangam.",
+        "price_band": "₹₹",
+        "address": "McDonald's Road, Cantonment, Tiruchirappalli 620001, Tamil Nadu",
+        "book_url": "https://ttdconline.com/hotel",
+        "sources": [
+          "https://ttdconline.com/hotel",
+          "https://www.tripadvisor.com/Hotel_Review-g317098-d7303134-Reviews-Hotel_TamilNadu_Trichy-Tiruchirappalli_Tiruchirappalli_District_Tamil_Nadu.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "trichy",
+      "slot": "xfactor",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Sri Dakshina Homestay",
+        "issue": "No verifiable homestay of this name in Tiruchirappalli on any OTA / Tripadvisor — unverifiable placeholder. Trichy is a transit city with standard hotels; no verified distinctive / heritage stay."
+      }
+    },
+    {
+      "destination_id": "chettinad",
+      "slot": "location",
+      "verdict": "replace",
+      "existing": {
+        "name": "Chettinadu Palace Hotel",
+        "issue": "Imprecise — there is no hotel named exactly 'Chettinadu Palace Hotel'. The real verified Kanadukathan heritage property is Chettinadu Mansion (a 1902 Chettiar mansion across from the Raja's Palace). Re-anchor to the correct property."
+      },
+      "replacement": {
+        "name": "Chettinadu Mansion — An Authentic Heritage Palace",
+        "tier": "comfort",
+        "tagline": "A 1902 Chettiar mansion in Kanadukathan, kept much as it was built — air-conditioned heritage rooms with period detail, a courtyard, terrace and pool, opposite the Raja's Palace in the heart of the mansion country.",
+        "price_band": "₹₹₹",
+        "address": "Kanadukathan 630103, Sivaganga District, Tamil Nadu",
+        "book_url": "https://chettinadmansion.com/",
+        "sources": [
+          "https://chettinadmansion.com/",
+          "https://www.tripadvisor.in/Hotel_Review-g1408029-d610037-Reviews-Chettinadu_Mansion-Kanadukathan_Sivaganga_District_Tamil_Nadu.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "chettinad",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Chettinadu Mansion Heritage Hotel",
+        "issue": "OK — maps to Chettinadu Mansion, a real 1902 Chettiar mansion heritage hotel in Kanadukathan. Note this duplicates the location slot above; promote The Bangala (Chettinad's first heritage hotel) for the experience slot to avoid two slots pointing at the same property."
+      },
+      "replacement": {
+        "name": "The Bangala",
+        "tier": "luxury",
+        "tagline": "The first heritage hotel in Chettinad — a family-run, 25-room colonial bungalow on a century-old family property in Karaikudi, with Athangudi flooring, antique furniture, a pool and a library, and the definitive Chettinad family kitchen.",
+        "price_band": "₹₹₹₹",
+        "address": "Devakottai Road, Senjai, Karaikudi 630001, Sivaganga District, Tamil Nadu",
+        "book_url": "https://www.thebangala.com/",
+        "sources": [
+          "https://www.thebangala.com/",
+          "https://www.tripadvisor.com/Hotel_Review-g1026932-d497854-Reviews-The_Bangala-Karaikudi_Karaikudi_Taluk_Sivaganga_District_Tamil_Nadu.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "chettinad",
+      "slot": "value",
+      "verdict": "replace",
+      "existing": {
+        "name": "GRT Hotels Nativity",
+        "issue": "Unverifiable — no GRT hotel named 'Nativity' exists in the Chettinad / Karaikudi area; GRT's nearest properties are in Madurai and Tiruchendur. Ghost property. Chettinad's accommodation is heritage-mansion stays; re-anchor the value slot to Chettinadu Mansion (the most affordable verified heritage option)."
+      },
+      "replacement": {
+        "name": "Chettinadu Mansion — An Authentic Heritage Palace",
+        "tier": "comfort",
+        "tagline": "The most affordable of Chettinad's verified heritage stays — a lived-in 1902 Chettiar mansion in Kanadukathan with period rooms, a pool and traditional plantain-leaf meals. Genuine mansion character at mid-range prices.",
+        "price_band": "₹₹₹",
+        "address": "Kanadukathan 630103, Sivaganga District, Tamil Nadu",
+        "book_url": "https://chettinadmansion.com/",
+        "sources": [
+          "https://chettinadmansion.com/",
+          "https://www.booking.com/hotel/in/chettinadu-mansion.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "chettinad",
+      "slot": "xfactor",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Visalam",
+        "issue": "OK — Visalam is a real CGH Earth heritage hotel in a 1939 Chettiar mansion in Kanadukathan. Verified; tighten the name."
+      },
+      "replacement": {
+        "name": "Visalam, CGH Earth",
+        "tier": "luxury",
+        "tagline": "A 1939 Chettiar mansion in Kanadukathan restored by CGH Earth — 15 high-ceilinged rooms with handmade Athangudi tiles, a pool, interactive cooking experiences and plantain-leaf Chettinad meals. Built as a merchant's wedding gift to his daughter.",
+        "price_band": "₹₹₹₹",
+        "address": "Kanadukathan 630103, Sivaganga District, Tamil Nadu",
+        "book_url": "https://www.cghearth.com/visalam",
+        "sources": [
+          "https://www.cghearth.com/visalam",
+          "https://www.tripadvisor.com/Hotel_Review-g1408029-d1077837-Reviews-Visalam_Cgh_Earth-Kanadukathan_Sivaganga_District_Tamil_Nadu.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "madurai",
+      "slot": "experience",
+      "verdict": "replace",
+      "existing": {
+        "name": "The Bangala",
+        "issue": "Cross-dest — The Bangala is in Karaikudi (Chettinad region), roughly 90 km from Madurai, not in Madurai. It has been re-slotted to Chettinad/experience. Re-anchor Madurai's experience slot to a real Madurai heritage hotel."
+      },
+      "replacement": {
+        "name": "Heritage Madurai",
+        "tier": "luxury",
+        "tagline": "The former British Madurai Club, designed in the 1970s by Sri Lankan architect Geoffrey Bawa — now a 72-room hotel with 35 private-pool villas across 17 acres of gardens. A rare architecturally significant stay in the temple city.",
+        "price_band": "₹₹₹₹",
+        "address": "11 Melakkal Main Road, Kochadai, Madurai 625016, Tamil Nadu",
+        "book_url": "https://heritagemadurai.com/",
+        "sources": [
+          "https://heritagemadurai.com/",
+          "https://www.heritagehotelsofindia.com/tamil-nadu/heritage-madurai.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "madurai",
+      "slot": "value",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Madurai Residency",
+        "issue": "OK — The Madurai Residency is a real, well-rated budget hotel about 500 m from the Meenakshi temple. Verified; tighten the name."
+      },
+      "replacement": {
+        "name": "The Madurai Residency",
+        "tier": "budget",
+        "tagline": "A well-rated budget hotel about 500 m from the Meenakshi temple — air-conditioned rooms, the Mandapam multi-cuisine restaurant and a rooftop restaurant with temple views. The reliable value base for a temple visit.",
+        "price_band": "₹₹",
+        "address": "West Marret Street, Madurai 625001, Tamil Nadu",
+        "book_url": "https://www.madurairesidency.com/",
+        "sources": [
+          "https://www.madurairesidency.com/",
+          "https://www.goibibo.com/hotels/madurai-residency-hotel-in-madurai-2618257984684216433/"
+        ]
+      }
+    },
+    {
+      "destination_id": "madurai",
+      "slot": "location",
+      "verdict": "replace",
+      "existing": {
+        "name": "GRT Hotels Madurai",
+        "issue": "Imprecise — GRT's Madurai property is Regency Madurai by GRT Hotels, and it sits on Madakkulam Main Road (a short drive from the temple), so it is a comfort/value hotel rather than a temple-doorstep 'location' pick. For the location slot, re-anchor to a hilltop garden hotel that genuinely owns its setting."
+      },
+      "replacement": {
+        "name": "Gateway Madurai (Taj)",
+        "tier": "luxury",
+        "tagline": "A Taj Gateway hotel on Pasumalai Hill — an 1890 heritage property, 63 colonial-character rooms across 62 acres of gardens with a 150-year-old banyan tree and a resident peacock family, looking out over the temple city.",
+        "price_band": "₹₹₹₹",
+        "address": "40 TPK Road, Pasumalai, Madurai 625004, Tamil Nadu",
+        "book_url": "https://www.gateway-hotels.com/en-in/hotels/gateway-madurai",
+        "sources": [
+          "https://www.gateway-hotels.com/en-in/hotels/gateway-madurai",
+          "https://www.tripadvisor.com/Hotel_Review-g297677-d305015-Reviews-Gateway_Madurai-Madurai_Madurai_District_Tamil_Nadu.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "madurai",
+      "slot": "xfactor",
+      "verdict": "replace",
+      "existing": {
+        "name": "Vandiyur Lake Homestay (riverside cottage)",
+        "issue": "No verifiable homestay of this name at Vandiyur (Madurai) on any OTA / Tripadvisor — generic placeholder; Vandiyur has a tank, not a riverside-cottage operation. Re-anchor the x-factor slot to a genuinely distinctive Madurai stay."
+      },
+      "replacement": {
+        "name": "Regency Madurai by GRT Hotels",
+        "tier": "comfort",
+        "tagline": "The dependable contemporary alternative to Madurai's heritage hotels — a 57-room GRT property with a pool, fitness centre and Ayurvedic spa, a short drive from the Meenakshi temple and 15 minutes from the airport.",
+        "price_band": "₹₹₹",
+        "address": "Madakkulam Main Road, Madurai 625003, Tamil Nadu",
+        "book_url": "https://www.grthotels.com/regency-madurai/",
+        "sources": [
+          "https://www.grthotels.com/regency-madurai/",
+          "https://www.tripadvisor.in/Hotel_Review-g297677-d1008768-Reviews-Regency_Madurai_by_GRT_Hotels-Madurai_Madurai_District_Tamil_Nadu.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "rameswaram",
+      "slot": "value",
+      "verdict": "replace",
+      "existing": {
+        "name": "Hotel Ramakrishna",
+        "issue": "No verifiable mid-range hotel of this exact name in Rameswaram on Booking.com / MakeMyTrip / Tripadvisor — unverifiable placeholder. Re-anchor to the verified government TTDC hotel near the temple."
+      },
+      "replacement": {
+        "name": "Hotel Tamil Nadu (TTDC), Rameswaram",
+        "tier": "budget",
+        "tagline": "The Tamil Nadu Tourism state-run hotel on the temple island — plain AC and non-AC rooms 650 m from the Ramanathaswamy temple and 400 m from Agni Theertham. The dependable government-priced pilgrim base.",
+        "price_band": "₹₹",
+        "address": "East Car Street, Rameswaram 623526, Ramanathapuram District, Tamil Nadu",
+        "book_url": "https://www.hoteltamilnadurameswaram.com/",
+        "sources": [
+          "https://www.hoteltamilnadurameswaram.com/",
+          "https://www.tripadvisor.in/Hotel_Review-g303894-d1373124-Reviews-TTDC_Tamil_Nadu_Hotel-Rameswaram_Ramanathapuram_District_Tamil_Nadu.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "rameswaram",
+      "slot": "experience",
+      "verdict": "replace",
+      "existing": {
+        "name": "The Rameswaram Grand",
+        "issue": "No verifiable hotel of this name in Rameswaram on any OTA / Tripadvisor — generic placeholder. Re-anchor to the town's real leading hotel."
+      },
+      "replacement": {
+        "name": "Daiwik Hotels Rameswaram",
+        "tier": "comfort",
+        "tagline": "Rameswaram's leading hotel — 91 rooms across Superior, Deluxe and Suite categories, a gym, spa and the Ahaan vegetarian restaurant, about 3 km from the Ramanathaswamy temple. A pilgrim-focused property with reliable comfort and food.",
+        "price_band": "₹₹₹",
+        "address": "NH-49, Rameswaram 623526, Ramanathapuram District, Tamil Nadu",
+        "book_url": "https://www.daiwikhotels.com/daiwik-hotels-rameswaram/",
+        "sources": [
+          "https://www.daiwikhotels.com/daiwik-hotels-rameswaram/",
+          "https://www.tripadvisor.com/Hotel_Review-g303894-d2650736-Reviews-Daiwik_Hotels_Rameswaram-Rameswaram_Ramanathapuram_District_Tamil_Nadu.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "rameswaram",
+      "slot": "location",
+      "verdict": "replace",
+      "existing": {
+        "name": "Rameswaram Beach Resort",
+        "issue": "No verifiable resort of this name in Rameswaram on any OTA / Tripadvisor — generic beach-resort placeholder. Re-anchor to a real internationally branded hotel near the temple."
+      },
+      "replacement": {
+        "name": "Hyatt Place Rameswaram",
+        "tier": "comfort",
+        "tagline": "An international-brand hotel in a town dominated by pilgrim lodges — Hyatt Place rooms about 5 minutes from the Ramanathaswamy temple on the Madurai-Dhanushkodi road, with consistent service standards and modern amenities.",
+        "price_band": "₹₹₹",
+        "address": "Madurai-Dhanushkodi NH Road, Rameswaram 623526, Ramanathapuram District, Tamil Nadu",
+        "book_url": "https://www.hyatt.com/hyatt-place/en-US/madhy-hyatt-place-rameswaram",
+        "sources": [
+          "https://www.hyatt.com/hyatt-place/en-US/madhy-hyatt-place-rameswaram",
+          "https://traveltriangle.com/blog/hotels-in-rameswaram/"
+        ]
+      }
+    },
+    {
+      "destination_id": "rameswaram",
+      "slot": "xfactor",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Ariyaman Villa",
+        "issue": "No verifiable property of this name in Rameswaram — Ariyaman (Kushi) Beach is a beach near Rameswaram but has no verified villa accommodation. Rameswaram's stock is pilgrim hotels; no verified distinctive / boutique x-factor property."
+      }
+    },
+    {
+      "destination_id": "dhanushkodi",
+      "slot": "experience",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Dhanushkodi Beach Resort",
+        "issue": "Fabrication — Dhanushkodi is a protected, environmentally sensitive ghost town at the island's tip; permanent hotels are not permitted. No accommodation of any kind operates in Dhanushkodi. Base in Rameswaram (~20 km)."
+      }
+    },
+    {
+      "destination_id": "dhanushkodi",
+      "slot": "value",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Sri Dhanushkodi Guest House",
+        "issue": "Fabrication — no guest house operates in Dhanushkodi; the town has no permanent habitation since the 1964 cyclone and is a protected zone. Base in Rameswaram."
+      }
+    },
+    {
+      "destination_id": "dhanushkodi",
+      "slot": "location",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Dhanushkodi Beachfront Homestay",
+        "issue": "Fabrication — no homestay or beachfront accommodation exists in Dhanushkodi; permanent construction is barred in the protected ghost town. Base in Rameswaram."
+      }
+    },
+    {
+      "destination_id": "dhanushkodi",
+      "slot": "xfactor",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Pamban Island Fishing Village Stay",
+        "issue": "No verifiable organised village-stay operation on Pamban Island / at Dhanushkodi on any OTA. No accommodation exists at Dhanushkodi itself; base in Rameswaram."
+      }
+    },
+    {
+      "destination_id": "point-calimere",
+      "slot": "value",
+      "verdict": "replace",
+      "existing": {
+        "name": "Vedaranyam Guest House",
+        "issue": "Generic placeholder — no verifiable property of this name. Vedaranyam is the nearest town (~11 km from the sanctuary); the real verified government option for visitors is the Forest Department rest house at Kodikkarai. Re-anchor accordingly."
+      },
+      "replacement": {
+        "name": "Forest Rest House Kodikkarai (Poonarai Illam)",
+        "tier": "budget",
+        "tagline": "The Tamil Nadu Forest Department rest house inside the Point Calimere sanctuary — basic government accommodation, the only stay actually within the protected coastal sanctuary, booked through the Wildlife Warden, Nagapattinam.",
+        "price_band": "₹₹",
+        "address": "Kodikkarai, Point Calimere Wildlife Sanctuary, Nagapattinam District 614810, Tamil Nadu",
+        "book_url": "http://www.pointcalimere.com/",
+        "sources": [
+          "https://en.wikipedia.org/wiki/Point_Calimere",
+          "https://tourism.webindia123.com/tourism/wildlife/bird_sanctuary/Point_Calimere_Wildlife_and_Bird_Sanctuary/accommodation.htm"
+        ]
+      }
+    },
+    {
+      "destination_id": "point-calimere",
+      "slot": "location",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Point Calimere Light House Rooms",
+        "issue": "Fabrication — the Point Calimere lighthouse is an operational Lighthouse-Department navigational structure, not accommodation; it does not rent rooms. The Forest rest house (value slot) is the only verified stay inside the sanctuary."
+      }
+    },
+    {
+      "destination_id": "point-calimere",
+      "slot": "xfactor",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Blackbuck Research Centre Eco-Tents",
+        "issue": "Fabrication — there is no public eco-tent operation at a 'Blackbuck Research Centre' in Point Calimere; the sanctuary's only verified accommodation is the Forest Department rest house. No tented / eco-camp facility verifies."
+      }
+    },
+    {
+      "destination_id": "point-calimere",
+      "slot": "experience",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Kallar Bungalow",
+        "issue": "No verifiable property of this name at Point Calimere / Kodikkarai. The sanctuary is a remote protected coastal reserve with only one verified government stay (the Forest rest house); no experience-tier property exists."
+      }
+    },
+    {
+      "destination_id": "vedanthangal",
+      "slot": "experience",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Forest Rest House Vedanthangal",
+        "issue": "The Vedanthangal Forest Rest House is real (a basic Forest Department guest house, booked via the Wildlife Warden, Chennai) but it is a budget government property, not an experience-tier stay. Vedanthangal is a day-trip bird sanctuary from Chennai / Chengalpattu with no tier-1/2 hotels; no experience property exists."
+      }
+    },
+    {
+      "destination_id": "vedanthangal",
+      "slot": "value",
+      "verdict": "replace",
+      "existing": {
+        "name": "Hotel Sakthi Park",
+        "issue": "Mislocated — Hotel Sakthi Park is in Melmaruvathur, a town roughly 30 km from Vedanthangal, not at the sanctuary. Cross-dest. Vedanthangal itself has no hotels; re-anchor the value slot to the genuine on-site government option."
+      },
+      "replacement": {
+        "name": "Forest Rest House Vedanthangal",
+        "tier": "budget",
+        "tagline": "The Tamil Nadu Forest Department rest house at the Vedanthangal bird sanctuary — basic, well-kept rooms with catering, booked in advance through the Wildlife Warden in Chennai. The only stay at the sanctuary itself; otherwise base in Chengalpattu.",
+        "price_band": "₹₹",
+        "address": "Vedanthangal Bird Sanctuary, Chengalpattu District 603314, Tamil Nadu",
+        "book_url": "https://chengalpattu.nic.in/tourist-place/vedanthangal-bird-sanctuary/",
+        "sources": [
+          "https://chengalpattu.nic.in/tourist-place/vedanthangal-bird-sanctuary/",
+          "https://www.india-tours.com/wildlife/vedanthangal-bird-sanctuary"
+        ]
+      }
+    },
+    {
+      "destination_id": "vedanthangal",
+      "slot": "location",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Forest Rest House Vedanthangal",
+        "issue": "Duplicate of the experience slot — the same Forest Rest House cannot fill two slots, and it is now used for the value slot. Vedanthangal has only the one government rest house; no separate tier-1/2 location property exists. Base in Chengalpattu for hotels."
+      }
+    },
+    {
+      "destination_id": "kanyakumari",
+      "slot": "value",
+      "verdict": "replace",
+      "existing": {
+        "name": "Hotel Samudra",
+        "issue": "No verifiable hotel of this exact name in Kanyakumari on Booking.com / MakeMyTrip / Tripadvisor — 'Samudra' is a generic sea-themed name with no footprint. Re-anchor to a real, well-rated central hotel."
+      },
+      "replacement": {
+        "name": "The Seashore Hotel",
+        "tier": "comfort",
+        "tagline": "A central 11-room hotel about 50 m from the seashore — sea-view rooms, walking distance to the Vivekananda Rock ferry, the temple and the bazaar, with a 7th-floor rooftop restaurant overlooking the ocean.",
+        "price_band": "₹₹₹",
+        "address": "East Car Street, Kanyakumari 629702, Tamil Nadu",
+        "book_url": "https://www.booking.com/hotel/in/the-seashore-kanniyakumari.html",
+        "sources": [
+          "https://www.tripadvisor.in/Hotel_Review-g608476-d3383064-Reviews-The_Seashore_Hotel-Kanyakumari_Kanyakumari_District_Tamil_Nadu.html",
+          "https://www.booking.com/hotel/in/the-seashore-kanniyakumari.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "kanyakumari",
+      "slot": "location",
+      "verdict": "replace",
+      "existing": {
+        "name": "Kanyakumari Hotel",
+        "issue": "Generic placeholder — 'Kanyakumari Hotel' is not a verifiable specific property; it is a category label. Re-anchor to a real central, sea-facing hotel."
+      },
+      "replacement": {
+        "name": "The Seashore Hotel",
+        "tier": "comfort",
+        "tagline": "The best-located stay for sunrise and sunset at India's southern tip — central, about 600 m from Kanyakumari Beach and walkable to every cape attraction, with sea-view rooms.",
+        "price_band": "₹₹₹",
+        "address": "East Car Street, Kanyakumari 629702, Tamil Nadu",
+        "book_url": "https://www.booking.com/hotel/in/the-seashore-kanniyakumari.html",
+        "sources": [
+          "https://www.tripadvisor.in/Hotel_Review-g608476-d3383064-Reviews-The_Seashore_Hotel-Kanyakumari_Kanyakumari_District_Tamil_Nadu.html",
+          "https://www.booking.com/hotel/in/the-seashore-kanniyakumari.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "kanyakumari",
+      "slot": "xfactor",
+      "verdict": "replace",
+      "existing": {
+        "name": "Padmanabhapuram Palace Homestay",
+        "issue": "Fabrication — Padmanabhapuram Palace (at Thuckalay, ~35 km from Kanyakumari) is a state-protected heritage museum complex owned by the Kerala government; no homestay operates within it. Cross-dest ghost property. Re-anchor to a real Kanyakumari resort."
+      },
+      "replacement": {
+        "name": "Sparsa Resort Kanyakumari",
+        "tier": "comfort",
+        "tagline": "Kanyakumari's leading resort — sea-view rooms, an outdoor pool and steam room, a five-minute walk from Sunset Point. The most consistent comfort base at the cape, away from the cramped bazaar hotels.",
+        "price_band": "₹₹₹",
+        "address": "Off Kovalam Road, Kanyakumari 629702, Tamil Nadu",
+        "book_url": "https://sparsaresorts.com/",
+        "sources": [
+          "https://sparsaresorts.com/",
+          "https://www.tripadvisor.com/Hotel_Review-g608476-d1453893-Reviews-Sparsa_Resort-Kanyakumari_Kanyakumari_District_Tamil_Nadu.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "kanyakumari",
+      "slot": "experience",
+      "verdict": "replace",
+      "existing": {
+        "name": "Somatheeram Ayurvedic Resort",
+        "issue": "Cross-state — Somatheeram Ayurvedic Resort is at Chowara, near Kovalam in Kerala, roughly 80 km from Kanyakumari, not in Tamil Nadu. Cross-state mislocation. Re-anchor to a real Kanyakumari property."
+      },
+      "replacement": {
+        "name": "Sparsa Resort Kanyakumari",
+        "tier": "comfort",
+        "tagline": "An ECOTEL-style resort at the cape — sea-view rooms, a pool and steam room near Sunset Point. The dependable experience-tier stay in a town otherwise dominated by basic pilgrim hotels.",
+        "price_band": "₹₹₹",
+        "address": "Off Kovalam Road, Kanyakumari 629702, Tamil Nadu",
+        "book_url": "https://sparsaresorts.com/",
+        "sources": [
+          "https://sparsaresorts.com/",
+          "https://www.tripadvisor.com/Hotel_Review-g608476-d1453893-Reviews-Sparsa_Resort-Kanyakumari_Kanyakumari_District_Tamil_Nadu.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "tiruvannamalai",
+      "slot": "experience",
+      "verdict": "replace",
+      "existing": {
+        "name": "Arunachalesvara Temple Guest House (managed by temple)",
+        "issue": "Imprecise / not an experience-tier stay — the Annamalaiyar (Arunachaleswarar) temple devasthanam runs only very basic pilgrim cottages, not a hotel, and they are reserved for pilgrims. Re-anchor the experience slot to the town's real leading resort."
+      },
+      "replacement": {
+        "name": "Sparsa Resort Thiruvannamalai",
+        "tier": "comfort",
+        "tagline": "An ECOTEL-certified resort overlooking the sacred Mount Arunachala — villas with direct hill views, a pool, a yoga and meditation centre and a strict no-smoking, no-alcohol, pure-vegetarian policy suited to the ashram town.",
+        "price_band": "₹₹₹",
+        "address": "Chengam Road, Tiruvannamalai 606603, Tamil Nadu",
+        "book_url": "https://sparsaresorts.com/thiruvannamalai/",
+        "sources": [
+          "https://sparsaresorts.com/thiruvannamalai/",
+          "https://www.booking.com/hotel/in/sparsa-resorts-thiruvanamalai.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "tiruvannamalai",
+      "slot": "value",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Ramakrishna Home",
+        "issue": "Generic placeholder — no verifiable hotel of this name in Tiruvannamalai on any OTA. The town's value stock is small unbranded lodges and ashram guest rooms; no tier-1/2 value property verifies."
+      }
+    },
+    {
+      "destination_id": "tiruvannamalai",
+      "slot": "location",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "The Abode Boutique Resort",
+        "issue": "No verifiable property of this name in Tiruvannamalai on Booking.com / MakeMyTrip / Tripadvisor — unverifiable placeholder. No tier-1/2 boutique 'location' property verifies; Sparsa (experience) is the town's main resort."
+      }
+    },
+    {
+      "destination_id": "tiruvannamalai",
+      "slot": "xfactor",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Sri Aurobindo Pathanam (Ashram Accommodation)",
+        "issue": "Sri Ramanasramam (Sri Ramana Ashram) and the other Tiruvannamalai ashrams do offer rooms, but accommodation is strictly reserved for registered devotees on spiritual retreat — not a bookable tourist stay. The 'Sri Aurobindo Pathanam' name is also imprecise (Sri Aurobindo's ashram is in Pondicherry). No bookable x-factor property verifies."
+      }
+    },
+    {
+      "destination_id": "courtallam",
+      "slot": "experience",
+      "verdict": "replace",
+      "existing": {
+        "name": "Courtallum Grand",
+        "issue": "No verifiable hotel of this exact name in Courtallam on Booking.com / MakeMyTrip / Tripadvisor — generic placeholder. Re-anchor to the town's real leading resort."
+      },
+      "replacement": {
+        "name": "Saaral Resort",
+        "tier": "comfort",
+        "tagline": "Courtallam's leading resort — an 80-room 3-star property about 1 km from the Main Falls, with an outdoor pool, spa, two restaurants and mountain-view balcony rooms. The dependable comfort base for the falls season.",
+        "price_band": "₹₹₹",
+        "address": "42 Shengottai Road, Courtallam 627802, Tirunelveli District, Tamil Nadu",
+        "book_url": "https://saaralresort.com/",
+        "sources": [
+          "https://saaralresort.com/",
+          "https://www.tripadvisor.com/Hotel_Review-g2287355-d2260864-Reviews-Saaral_Resorts-Courtallam_Tirunelveli_District_Tamil_Nadu.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "courtallam",
+      "slot": "value",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Aranya Homestay",
+        "issue": "No verifiable homestay of this name in Courtallam on any OTA — generic placeholder. Courtallam's stock is mid-range falls-season hotels; no verified tier-1/2 value homestay. Saaral Resort (experience) anchors the town."
+      }
+    },
+    {
+      "destination_id": "courtallam",
+      "slot": "location",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Falls Resort Courtallam",
+        "issue": "No verifiable resort of this exact name in Courtallam on any OTA — generic falls-themed placeholder. No separate tier-1/2 'location' property verifies beyond Saaral Resort."
+      }
+    },
+    {
+      "destination_id": "courtallam",
+      "slot": "xfactor",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Kalani Naturals Eco-Cottage",
+        "issue": "No verifiable property of this name near Courtallam on any OTA — generic eco-themed placeholder. No verified distinctive / eco-cottage stay in the town."
+      }
+    },
+    {
+      "destination_id": "meghamalai",
+      "slot": "value",
+      "verdict": "replace",
+      "existing": {
+        "name": "Meghamalai Homestay (Family-run near Thekkady border)",
+        "issue": "Generic placeholder — not a specific verifiable property. Re-anchor to a real verified Meghamalai estate stay."
+      },
+      "replacement": {
+        "name": "Sand River Cottage (Briar Tea Bungalows)",
+        "tier": "comfort",
+        "tagline": "A two-bedroom planter's cottage at Manalar in the Meghamalai tea country — a living and dining room, garden and plantation views, well suited to a single family or small group. Remote, with rough estate roads.",
+        "price_band": "₹₹₹",
+        "address": "Manalar, Meghamalai, Theni District 625540, Tamil Nadu",
+        "book_url": "https://teabungalows.com/sand-river-cottage/",
+        "sources": [
+          "https://teabungalows.com/sand-river-cottage/",
+          "https://www.tripadvisor.in/Hotel_Review-g1603630-d10067800-Reviews-Briar_Tea_Bungalows_Megamalai-Theni_Theni_District_Tamil_Nadu.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "meghamalai",
+      "slot": "location",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Cardamom House, Meghamalai",
+        "issue": "No verifiable property of this name in Meghamalai — note 'Cardamom House' is a known guesthouse at Athoor on Kamaraj Lake near Dindigul, not Meghamalai. Cross-dest / unverifiable. Meghamalai's verified stays are the Briar Tea Bungalows (used for value and x-factor); no separate location property exists."
+      }
+    },
+    {
+      "destination_id": "meghamalai",
+      "slot": "xfactor",
+      "verdict": "replace",
+      "existing": {
+        "name": "Tea Garden Treehouse Stay (operated by local planters)",
+        "issue": "Generic placeholder — no verifiable treehouse operation in Meghamalai on any OTA. Re-anchor to the range's standout verified heritage estate bungalow."
+      },
+      "replacement": {
+        "name": "Cloud Mountain Bungalow (Briar Tea Bungalows)",
+        "tier": "comfort",
+        "tagline": "A 1930 British-built planter's bungalow inside a Meghamalai tea estate — three bedrooms, a library and a sit-out, a stream in front and tea gardens all around. One of the very few verified stays in this remote Western Ghats range.",
+        "price_band": "₹₹₹",
+        "address": "Manalar, Meghamalai, Theni District 625540, Tamil Nadu",
+        "book_url": "https://teabungalows.com/meghamalai/",
+        "sources": [
+          "https://teabungalows.com/meghamalai/",
+          "https://www.theplantersbungalows.com/cloud-mountain-bungalow.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "meghamalai",
+      "slot": "experience",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "High Wavy Resorts",
+        "issue": "No verifiable resort of this name — 'High Wavy Mountains' is the colonial name for the Meghamalai range itself, not a property. Meghamalai is a remote Western Ghats range with only a handful of estate bungalows (the Briar Tea Bungalows, used for value and x-factor); no resort-tier / experience property exists."
+      }
+    },
+    {
+      "destination_id": "ooty",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Savoy, Ooty - IHCL SeleQtions",
+        "issue": "OK — Savoy Ooty is a real IHCL SeleQtions heritage hotel, established 1829. Verified."
+      },
+      "replacement": {
+        "name": "Savoy, Ooty — IHCL SeleQtions",
+        "tier": "luxury",
+        "tagline": "Ooty's grand old hotel — established in 1829, an IHCL SeleQtions heritage property across 6 acres of gardens, with cottage rooms, real fireplaces, period furniture and a 150-year-old Steinway played nightly in the lounge.",
+        "price_band": "₹₹₹₹",
+        "address": "77 Sylks Road, Monterosa Colony, Ooty 643001, Tamil Nadu",
+        "book_url": "https://www.seleqtionshotels.com/en-in/hotels/savoy-ooty",
+        "sources": [
+          "https://www.seleqtionshotels.com/en-in/hotels/savoy-ooty",
+          "https://www.booking.com/hotel/in/taj-savoy.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "ooty",
+      "slot": "value",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Glyngarth Resorts",
+        "issue": "OK — Glyngarth Villa Resort is a real 1880 colonial heritage hotel near the Ooty Golf Course. Verified; tighten the name. (It sits a touch above a strict 'value' tier but is genuine and correctly located.)"
+      },
+      "replacement": {
+        "name": "Glyngarth Villa Resort",
+        "tier": "comfort",
+        "tagline": "An 1880 colonial Scottish mansion turned heritage hotel near the Ooty Golf Course — period furniture, polished wooden floors and wooden cottages across 4 acres of gardens. A heritage stay at gentler prices than the Savoy.",
+        "price_band": "₹₹₹",
+        "address": "Near Ooty Golf Course, Ooty 643001, Tamil Nadu",
+        "book_url": "https://www.glyngarthresorts.com/",
+        "sources": [
+          "https://www.glyngarthresorts.com/",
+          "https://www.heritagehotelsofindia.com/tamil-nadu/glyngarth-villa.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "ooty",
+      "slot": "location",
+      "verdict": "replace",
+      "existing": {
+        "name": "Two Seas Residence",
+        "issue": "No verifiable hotel of this name in Ooty on Booking.com / MakeMyTrip / Tripadvisor — unverifiable placeholder. Re-anchor to a real, well-located Ooty resort."
+      },
+      "replacement": {
+        "name": "Sterling Ooty Fern Hill",
+        "tier": "comfort",
+        "tagline": "A 7-acre Sterling resort high in the Nilgiris on the historic Fern Hill estate — comfortable family rooms, a steam room and full-board options. The dependable comfort base for a hill-station family stay.",
+        "price_band": "₹₹₹",
+        "address": "Fern Hill Post, Ooty 643004, Tamil Nadu",
+        "book_url": "https://www.sterlingholidays.com/resorts-hotels/ooty-fern-hill",
+        "sources": [
+          "https://www.sterlingholidays.com/resorts-hotels/ooty-fern-hill",
+          "https://www.booking.com/hotel/in/sterling-fern-hill.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "ooty",
+      "slot": "xfactor",
+      "verdict": "replace",
+      "existing": {
+        "name": "Colonels Inn (Colonel's Homestay)",
+        "issue": "No verifiable property of this name in Ooty on any OTA / Tripadvisor — generic placeholder. Re-anchor to a real, distinctive Ooty heritage property."
+      },
+      "replacement": {
+        "name": "WelcomHeritage Fernhills Royal Palace",
+        "tier": "luxury",
+        "tagline": "A former royal summer palace turned WelcomHeritage hotel — grand period interiors, lush grounds and a lakeside setting, with horse riding and biking. The distinctive palace-stay x-factor in Ooty.",
+        "price_band": "₹₹₹₹",
+        "address": "Fernhill Post, Ooty 643004, Tamil Nadu",
+        "book_url": "https://www.welcomheritagehotels.in/hotel-details/fernhills-palace-ooty",
+        "sources": [
+          "https://www.welcomheritagehotels.in/hotel-details/fernhills-palace-ooty",
+          "https://www.expedia.com/Ooty-Hotels-WelcomHeritage-Ferrnhills-Royale-Palace.h3877404.Hotel-Information"
+        ]
+      }
+    },
+    {
+      "destination_id": "coonoor",
+      "slot": "experience",
+      "verdict": "replace",
+      "existing": {
+        "name": "Taj Hotels Conoor",
+        "issue": "Imprecise — the Taj property in Coonoor is Gateway Coonoor (Taj group), in a colonial bungalow built in 1857 as Hampton Manor. Re-anchor to the correct property name."
+      },
+      "replacement": {
+        "name": "Gateway Coonoor (Taj)",
+        "tier": "luxury",
+        "tagline": "A Taj Gateway hotel in a colonial bungalow originally built in 1857 as Hampton Manor — dark-wood interiors, wooden floors and well-kept lawns, renovated to blend colonial heritage with contemporary comfort. The town's flagship hotel.",
+        "price_band": "₹₹₹₹",
+        "address": "Church Road, Upper Coonoor 643101, The Nilgiris, Tamil Nadu",
+        "book_url": "https://www.gateway-hotels.com/en-in/hotels/gateway-coonoor",
+        "sources": [
+          "https://www.gateway-hotels.com/en-in/hotels/gateway-coonoor",
+          "https://www.booking.com/hotel/in/gateway-coonoor.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "coonoor",
+      "slot": "value",
+      "verdict": "replace",
+      "existing": {
+        "name": "Tea Garden Homestay (Coonoor)",
+        "issue": "Generic placeholder — not a specific verifiable property. Re-anchor to a real verified Coonoor tea-garden stay."
+      },
+      "replacement": {
+        "name": "Teanest Nightingale by Nature Resorts and Stays",
+        "tier": "comfort",
+        "tagline": "A small tea-garden retreat from Nature Resorts and Stays — intimate rooms set in the plantations, well-regarded home-style food and a quiet, scenic setting. A favourite for couples and families wanting a tea-country stay.",
+        "price_band": "₹₹₹",
+        "address": "Coonoor 643101, The Nilgiris, Tamil Nadu",
+        "book_url": "https://www.natureresorts.in/",
+        "sources": [
+          "https://www.natureresorts.in/",
+          "https://www.tripadvisor.com/Hotel_Review-g27512892-d12254523-Reviews-Teanest_Nightingale_by_Nature_Resorts_and_Stays-Horasolai_Kotagiri_The_Nilgiris_Dis.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "coonoor",
+      "slot": "location",
+      "verdict": "replace",
+      "existing": {
+        "name": "Coonoor Railway Station Guesthouse / Lakshmi Vilas",
+        "issue": "Unverifiable — no bookable hotel of this name; a railway-station guesthouse / 'Lakshmi Vilas' label has no OTA footprint as a tourist stay. Re-anchor to a real, well-located Coonoor property."
+      },
+      "replacement": {
+        "name": "180 McIver — A Heritage Villa",
+        "tier": "comfort",
+        "tagline": "An early-1900s colonial villa with just six named rooms — antique furniture, British-era architecture and a 180-degree panorama of Coonoor and the hills, 650 m from Sim's Park. Heritage character right in town.",
+        "price_band": "₹₹₹",
+        "address": "McIver Road, Coonoor 643101, The Nilgiris, Tamil Nadu",
+        "book_url": "https://www.agoda.com/180-mciver-a-heritage-villa-coonoor/hotel/ooty-in.html",
+        "sources": [
+          "https://www.agoda.com/180-mciver-a-heritage-villa-coonoor/hotel/ooty-in.html",
+          "https://us.trip.com/hotels/coonoor-hotel-detail-11894273/180-mciver-villa/"
+        ]
+      }
+    },
+    {
+      "destination_id": "coonoor",
+      "slot": "xfactor",
+      "verdict": "replace",
+      "existing": {
+        "name": "Sip & Stay Tea Plantation Cottage",
+        "issue": "No verifiable property of this name in Coonoor on any OTA — generic tea-themed placeholder. Re-anchor to a real, distinctive Coonoor heritage stay."
+      },
+      "replacement": {
+        "name": "Neemrana's Wallwood Garden",
+        "tier": "luxury",
+        "tagline": "A 19th-century Scottish-style mansion run by Neemrana — set in an award-winning Nilgiris garden, with authentic Tamil cuisine. The distinctive heritage-garden x-factor stay in Coonoor.",
+        "price_band": "₹₹₹₹",
+        "address": "Wallwood Garden, Coonoor 643102, The Nilgiris, Tamil Nadu",
+        "book_url": "https://www.neemranahotels.com/wallwood-garden-coonoor-tamil-nadu/",
+        "sources": [
+          "https://www.neemranahotels.com/wallwood-garden-coonoor-tamil-nadu/",
+          "https://www.makemytrip.com/tripideas/blog/coonoor-hotels"
+        ]
+      }
+    },
+    {
+      "destination_id": "kotagiri",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Teanest Nightingale by Nature Resorts and Stays",
+        "issue": "OK — Teanest Nightingale is a real 8-room tea-garden boutique stay at Horasolai near Kotagiri. Verified."
+      },
+      "replacement": {
+        "name": "Teanest Nightingale by Nature Resorts and Stays",
+        "tier": "comfort",
+        "tagline": "An 8-room tea-garden retreat at Horasolai near Kotagiri — rooms amid the plantations, well-regarded home-style cooking and a peaceful setting. The standout boutique stay in a quiet, less-touristed Nilgiris hill town.",
+        "price_band": "₹₹₹",
+        "address": "Horasolai, Kotagiri 643217, The Nilgiris, Tamil Nadu",
+        "book_url": "https://www.natureresorts.in/",
+        "sources": [
+          "https://www.natureresorts.in/",
+          "https://www.booking.com/hotel/in/teanest-nightingale.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "kotagiri",
+      "slot": "value",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Twin Tree - Mountain Resort",
+        "issue": "No verifiable resort of this name in Kotagiri on Booking.com / MakeMyTrip / Tripadvisor — unverifiable placeholder. Kotagiri is a small, quiet Nilgiris town with thin branded stock; no separate tier-1/2 value property verifies."
+      }
+    },
+    {
+      "destination_id": "kotagiri",
+      "slot": "xfactor",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Ibex Resorts",
+        "issue": "No verifiable resort of this name in Kotagiri on any OTA / Tripadvisor — unverifiable placeholder. Teanest Nightingale (experience) is the town's verified distinctive stay; no separate x-factor property."
+      }
+    },
+    {
+      "destination_id": "mudumalai",
+      "slot": "value",
+      "verdict": "replace",
+      "existing": {
+        "name": "Silent Valley Nature Resort",
+        "issue": "Cross-state risk / unverifiable — 'Silent Valley' is a national park in Palakkad, Kerala; no verified resort of this name operates at Mudumalai. Re-anchor to a real verified Mudumalai-area property."
+      },
+      "replacement": {
+        "name": "Bamboo Banks Farm & Guest House",
+        "tier": "comfort",
+        "tagline": "A long-running farm guest house at Masinagudi, about 5 minutes from the Mudumalai Tiger Reserve and 8 km from the Theppakadu Elephant Camp — cottages, an outdoor pool and a working-farm setting. A relaxed wildlife-country base.",
+        "price_band": "₹₹₹",
+        "address": "Masinagudi, Mudumalai, The Nilgiris 643223, Tamil Nadu",
+        "book_url": "https://www.bamboobanks.in/",
+        "sources": [
+          "https://www.bamboobanks.in/",
+          "https://www.holidify.com/hotel-collections/resorts-in-madumalai"
+        ]
+      }
+    },
+    {
+      "destination_id": "mudumalai",
+      "slot": "xfactor",
+      "verdict": "replace",
+      "existing": {
+        "name": "Bandipur Bamboo Retreat",
+        "issue": "Cross-state — 'Bandipur' is the Karnataka tiger reserve adjoining Mudumalai across the state border; a 'Bandipur' property is in Karnataka, not Tamil Nadu's Mudumalai. Cross-state mislocation. Re-anchor to a real verified Mudumalai property."
+      },
+      "replacement": {
+        "name": "Forest Hills Farm & Guesthouse",
+        "tier": "comfort",
+        "tagline": "A family-run rustic-theme farm guesthouse tucked into a secluded part of the Nilgiris near both the Mudumalai and Bandipur reserves — quiet forest surroundings and resident wildlife. The distinctive low-key farm-stay x-factor.",
+        "price_band": "₹₹₹",
+        "address": "Mudumalai area, The Nilgiris 643223, Tamil Nadu",
+        "book_url": "https://www.foresthills.in/",
+        "sources": [
+          "https://www.holidify.com/hotel-collections/resorts-in-madumalai",
+          "https://in.trip.com/hotels/nilgiris-mudumalai-tiger-reserve-interpretation-centre/hotels-c93783m38428099/"
+        ]
+      }
+    },
+    {
+      "destination_id": "mudumalai",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Jungle Hut",
+        "issue": "OK — Jungle Hut is a real family-run estate resort on the edge of the Mudumalai Tiger Reserve, founded 1986. Verified."
+      },
+      "replacement": {
+        "name": "Jungle Hut",
+        "tier": "comfort",
+        "tagline": "A family-run estate resort founded in 1986 by retired tea planters, on 20 acres bordering the Mudumalai Tiger Reserve — cottages, an outdoor pool, birdwatching gardens and naturalist-led safaris. One of the longest-running wildlife stays in the area.",
+        "price_band": "₹₹₹",
+        "address": "Bokkapuram, Mudumalai, The Nilgiris 643223, Tamil Nadu",
+        "book_url": "https://www.junglehut.in/",
+        "sources": [
+          "https://www.junglehut.in/",
+          "https://www.holidaymonk.com/accommodation/jungle-hut-resort/"
+        ]
+      }
+    },
+    {
+      "destination_id": "mudumalai",
+      "slot": "location",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Mudumalai Wildlife Sanctuary Rest House",
+        "issue": "The Tamil Nadu Forest Department does run rest houses inside the Mudumalai Tiger Reserve (booked via the reserve's official portal, mudumalaitigerreserve.com), but these are basic forest accommodation, not a tier-1/2 'location' hotel, and availability is limited/safari-linked. The verified comfort lodges (Jungle Hut, Bamboo Banks) cover the destination; no separate tier-1/2 location property exists."
+      }
+    },
+    {
+      "destination_id": "coimbatore",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Vivanta Coimbatore",
+        "issue": "OK — Vivanta Coimbatore is a real Taj-group 5-star in the city. Verified."
+      },
+      "replacement": {
+        "name": "Vivanta Coimbatore",
+        "tier": "luxury",
+        "tagline": "A Taj-group Vivanta 5-star in the city — an outdoor pool, 24-hour gym, spa and multiple restaurants, 0.6 mi from Coimbatore Railway Station. The flagship business-and-leisure hotel in the textile city.",
+        "price_band": "₹₹₹₹",
+        "address": "Civil Aerodrome Post, Coimbatore 641014, Tamil Nadu",
+        "book_url": "https://www.vivantahotels.com/en-in/hotels/vivanta-coimbatore",
+        "sources": [
+          "https://www.vivantahotels.com/en-in/hotels/vivanta-coimbatore",
+          "https://www.goibibo.com/hotels/vivanta-coimbatore-hotel-in-coimbatore-4873324489813930866/"
+        ]
+      }
+    },
+    {
+      "destination_id": "coimbatore",
+      "slot": "value",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "The Residency Towers Coimbatore",
+        "issue": "OK — The Residency Towers is a real central business hotel on Avinashi Road, Coimbatore. Verified; tighten the name."
+      },
+      "replacement": {
+        "name": "The Residency Towers Coimbatore",
+        "tier": "comfort",
+        "tagline": "A central business hotel on Avinashi Road — a spa, outdoor pool, fitness centre and multiple restaurants, in the heart of the commercial district. The reliable mid-luxury value pick in Coimbatore.",
+        "price_band": "₹₹₹",
+        "address": "1076 Avinashi Road, Coimbatore 641018, Tamil Nadu",
+        "book_url": "https://www.theresidency.com/coimbatore/",
+        "sources": [
+          "https://www.theresidency.com/coimbatore/",
+          "https://www.booking.com/city/in/coimbatore.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "coimbatore",
+      "slot": "location",
+      "verdict": "replace",
+      "existing": {
+        "name": "Fairfield by Marriott Coimbatore",
+        "issue": "Unverifiable — there is no Fairfield by Marriott in Coimbatore; Marriott's verified Coimbatore property is Le Meridien Coimbatore. Ghost property. Re-anchor to the correct Marriott hotel."
+      },
+      "replacement": {
+        "name": "Le Meridien Coimbatore",
+        "tier": "luxury",
+        "tagline": "A Marriott Le Meridien 5-star near the airport — five dining options, an outdoor pool and a fitness centre, about a 10-minute drive from Coimbatore International Airport. A well-located upscale base for the city and the hills.",
+        "price_band": "₹₹₹₹",
+        "address": "Neelambur, Coimbatore 641062, Tamil Nadu",
+        "book_url": "https://www.marriott.com/en-us/hotels/cjbmd-le-meridien-coimbatore/",
+        "sources": [
+          "https://www.marriott.com/en-us/hotels/cjbmd-le-meridien-coimbatore/",
+          "https://www.tripadvisor.com/Hotel_Review-g297675-d2136469-Reviews-Le_Meridien_Coimbatore-Coimbatore_Coimbatore_District_Tamil_Nadu.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "coimbatore",
+      "slot": "xfactor",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Homestay for Women",
+        "issue": "Generic placeholder — 'Homestay for Women' is a category descriptor, not a verifiable named property, with no OTA footprint. Coimbatore is a business city; its verified stays are the branded 5-stars above. No distinctive x-factor property verifies."
+      }
+    },
+    {
+      "destination_id": "anamalai",
+      "slot": "experience",
+      "verdict": "replace",
+      "existing": {
+        "name": "Indra Shanti Resort",
+        "issue": "No verifiable resort of this name at Anamalai / Topslip / Pollachi on any OTA — unverifiable placeholder. The Anamalai Tiger Reserve is a protected reserve; accommodation inside it is Forest Department only. Re-anchor to the official forest eco-lodges."
+      },
+      "replacement": {
+        "name": "Topslip Forest Eco-Lodges (Anamalai Tiger Reserve)",
+        "tier": "comfort",
+        "tagline": "The Tamil Nadu Forest Department's lodges and huts at Topslip inside the Anamalai Tiger Reserve — Wood House, Bison Lodge, Hornbill Lodge and a tree-top option, with safaris. The only accommodation inside the reserve, booked via the official ATR portal.",
+        "price_band": "₹₹",
+        "address": "Topslip, Anamalai Tiger Reserve, Pollachi 642133, Coimbatore District, Tamil Nadu",
+        "book_url": "https://atrpollachi.in/",
+        "sources": [
+          "https://atrpollachi.in/room-category/topslip/",
+          "https://www.atrpollachi.com/"
+        ]
+      }
+    },
+    {
+      "destination_id": "anamalai",
+      "slot": "xfactor",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "The Bamboo Forest Retreat",
+        "issue": "No verifiable property of this name at Anamalai on any OTA — generic placeholder. (A 'Bamboo Hut' exists at Topslip but is part of the Forest Department lodge cluster, used for the experience slot.) The reserve permits no private resort; no separate x-factor property verifies."
+      }
+    },
+    {
+      "destination_id": "anamalai",
+      "slot": "value",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Topslip Rest House",
+        "issue": "OK in spirit — the Topslip rest houses are real Forest Department accommodation. They are the same cluster used for the experience slot; for the value slot, point explicitly at the official ATR booking portal for the budget huts/dormitory."
+      },
+      "replacement": {
+        "name": "Topslip Forest Rest Houses (Anamalai Tiger Reserve)",
+        "tier": "budget",
+        "tagline": "The budget end of the Topslip forest accommodation — basic huts and a dormitory inside the Anamalai Tiger Reserve, booked online through the official ATR portal. The only inexpensive stay inside the reserve; otherwise base in Pollachi or Valparai.",
+        "price_band": "₹₹",
+        "address": "Topslip, Anamalai Tiger Reserve, Pollachi 642133, Coimbatore District, Tamil Nadu",
+        "book_url": "https://atrpollachi.in/room-search/",
+        "sources": [
+          "https://atrpollachi.in/room-category/topslip/",
+          "https://forests.tn.gov.in/pages/view/anamalai_tr"
+        ]
+      }
+    },
+    {
+      "destination_id": "anamalai",
+      "slot": "location",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Annamalai Tiger Reserve Guest House (Topslip)",
+        "issue": "Duplicate of the Topslip forest accommodation already used for the experience and value slots. The Anamalai Tiger Reserve has only the one Forest Department lodge cluster at Topslip; no separate tier-1/2 location property exists. Base in Pollachi or Valparai for hotels."
+      }
+    },
+    {
+      "destination_id": "valparai",
+      "slot": "location",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Annamalaiyar Estate Bungalow",
+        "issue": "Imprecise — generic estate-bungalow label. Valparai's verified plantation-bungalow stays are the named Briar Tea and Sinna Dorai properties. Re-anchor to a specific verified estate bungalow."
+      },
+      "replacement": {
+        "name": "Stanmore Garden Bungalow (Briar Tea Bungalows)",
+        "tier": "comfort",
+        "tagline": "A 1910s-1920s British colonial bungalow on the Stanmore tea estate near Valparai — a four-bedroom main bungalow with fireplaces plus wooden chalets, set amid a 360-degree sweep of tea plantation and grass hills.",
+        "price_band": "₹₹₹",
+        "address": "Stanmore Estate, Valparai 642127, Coimbatore District, Tamil Nadu",
+        "book_url": "https://teabungalows.com/valparai/",
+        "sources": [
+          "https://teabungalows.com/valparai/",
+          "https://www.tripadvisor.com/Hotel_Review-g3149947-d4243462-Reviews-Briar_Tea_Bungalows_Valparai-Valparai_Coimbatore_District_Tamil_Nadu.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "valparai",
+      "slot": "experience",
+      "verdict": "replace",
+      "existing": {
+        "name": "Highcliff Nature Stay",
+        "issue": "No verifiable property of this name in Valparai on any OTA — generic placeholder. Re-anchor to Valparai's standout verified plantation-bungalow stay."
+      },
+      "replacement": {
+        "name": "Sinna Dorai's Bungalow",
+        "tier": "luxury",
+        "tagline": "A restored colonial planter's bungalow in the Valparai tea estates — six rooms and cottages, plantation walks, and the quiet charm of a gracious estate home (no pool or multi-cuisine restaurant by design). The definitive Valparai estate experience.",
+        "price_band": "₹₹₹₹",
+        "address": "Upper Paralai, Valparai 642127, Coimbatore District, Tamil Nadu",
+        "book_url": "https://sinnadorai.com/valparai/",
+        "sources": [
+          "https://sinnadorai.com/valparai/",
+          "https://www.tripadvisor.in/Hotel_Review-g3149947-d3149960-Reviews-Sinna_Dorai_s_Bungalow-Valparai_Coimbatore_District_Tamil_Nadu.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "valparai",
+      "slot": "xfactor",
+      "verdict": "replace",
+      "existing": {
+        "name": "Jungle Hut Resort",
+        "issue": "Cross-dest — 'Jungle Hut' is the well-known family-run resort at Mudumalai (Bokkapuram), not Valparai. Mislocation. Re-anchor to a real, distinctive Valparai estate stay."
+      },
+      "replacement": {
+        "name": "Briar Tea Bungalows — Valparai (Monica Garden Bungalow)",
+        "tier": "comfort",
+        "tagline": "Part of the Briar Tea Bungalows group of 1910s-1920s British colonial estate houses in the Valparai tea country — Victorian furniture, fireplaces and spacious rooms, with trekking and wildlife photography on the doorstep.",
+        "price_band": "₹₹₹",
+        "address": "Woodbriar Estate, Valparai 642127, Coimbatore District, Tamil Nadu",
+        "book_url": "https://teabungalows.com/valparai/",
+        "sources": [
+          "https://teabungalows.com/valparai/",
+          "https://www.booking.com/hotel/in/briar-tea-bungalows-valparai.en-gb.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "valparai",
+      "slot": "value",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Valparai Resorts",
+        "issue": "Generic placeholder — 'Valparai Resorts' is a category label, not a verifiable named property. Valparai's verified accommodation is the cluster of named plantation bungalows (used for the other slots); there is no separate tier-1/2 budget 'value' property. Town lodges in Valparai are basic and unbranded."
+      }
+    },
+    {
+      "destination_id": "kodaikanal",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "The Carlton",
+        "issue": "OK — The Carlton is a real 5-star lakeside hotel, Kodaikanal's only 5-star. Verified."
+      },
+      "replacement": {
+        "name": "The Carlton",
+        "tier": "luxury",
+        "tagline": "Kodaikanal's only 5-star hotel — 91 rooms, suites and lakeside cottages on the banks of Kodaikanal Lake, across acres of grounds, within easy reach of the major attractions. The flagship lake-view stay in the hill station.",
+        "price_band": "₹₹₹₹",
+        "address": "Lake Road, Kodaikanal 624101, Dindigul District, Tamil Nadu",
+        "book_url": "https://www.carlton-kodaikanal.com/",
+        "sources": [
+          "https://www.carlton-kodaikanal.com/",
+          "https://www.tripadvisor.com/Hotel_Review-g303890-d478837-Reviews-The_Carlton-Kodaikanal_Dindigul_District_Tamil_Nadu.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "kodaikanal",
+      "slot": "value",
+      "verdict": "replace",
+      "existing": {
+        "name": "Kodai Resort Hotel",
+        "issue": "Imprecise — no clearly verifiable specific hotel of this exact name surfaces as a tier-1/2 property; it reads as a generic label. Re-anchor to a real verified Kodaikanal resort."
+      },
+      "replacement": {
+        "name": "Sterling Kodai Lake",
+        "tier": "comfort",
+        "tagline": "A Sterling resort on Gymkhana Road near Kodaikanal Lake — comfortable family rooms, dining and a central hill-station location. The dependable comfort-and-value pick for a Kodaikanal stay.",
+        "price_band": "₹₹₹",
+        "address": "44 Gymkhana Road, Lake View, Kodaikanal 624101, Dindigul District, Tamil Nadu",
+        "book_url": "https://www.sterlingholidays.com/resorts-hotels/kodai-lake",
+        "sources": [
+          "https://www.sterlingholidays.com/resorts-hotels/kodai-lake",
+          "https://www.lifeisoutside.com/sterling-valleyview-kodaikanal/"
+        ]
+      }
+    },
+    {
+      "destination_id": "kodaikanal",
+      "slot": "location",
+      "verdict": "replace",
+      "existing": {
+        "name": "The Carlton",
+        "issue": "Duplicate — The Carlton is already used for the experience slot; the same property cannot fill two slots. Re-anchor the location slot to a different real, well-located Kodaikanal property."
+      },
+      "replacement": {
+        "name": "Sterling Kodai Lake",
+        "tier": "comfort",
+        "tagline": "A central Sterling resort near Kodaikanal Lake on Gymkhana Road — within walking reach of the lake and the town, the most reliably located mid-range stay after The Carlton.",
+        "price_band": "₹₹₹",
+        "address": "44 Gymkhana Road, Lake View, Kodaikanal 624101, Dindigul District, Tamil Nadu",
+        "book_url": "https://www.sterlingholidays.com/resorts-hotels/kodai-lake",
+        "sources": [
+          "https://www.sterlingholidays.com/resorts-hotels/kodai-lake",
+          "https://www.lifeisoutside.com/sterling-valleyview-kodaikanal/"
+        ]
+      }
+    },
+    {
+      "destination_id": "kodaikanal",
+      "slot": "xfactor",
+      "verdict": "replace",
+      "existing": {
+        "name": "Sudhis Homestays Kodaikanal",
+        "issue": "No verifiable homestay of this name in Kodaikanal on any OTA / Tripadvisor — unverifiable placeholder. Re-anchor to a genuinely distinctive verified Kodaikanal stay."
+      },
+      "replacement": {
+        "name": "Elephant Valley Eco Farm Hotel",
+        "tier": "comfort",
+        "tagline": "A 100-acre nature reserve and IMO-certified organic farm on a centuries-old elephant migration route — 20 villas with solar lighting and wood-fired stoves, and farm-to-table dining. A genuine eco-stay away from the crowded town centre.",
+        "price_band": "₹₹₹",
+        "address": "Ganesh Puram, Palni Hills, Kodaikanal 624101, Dindigul District, Tamil Nadu",
+        "book_url": "https://www.duneecogroup.com/elephant-valley/",
+        "sources": [
+          "https://www.tripadvisor.in/Hotel_Review-g303890-d648041-Reviews-Elephant_Valley_Eco_Farm_Hotel-Kodaikanal_Dindigul_District_Tamil_Nadu.html",
+          "https://www.booking.com/hotel/in/elephant-valley-eco-farm.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "yercaud",
+      "slot": "experience",
+      "verdict": "replace",
+      "existing": {
+        "name": "Yercaud Club",
+        "issue": "Not a hotel — the Yercaud Club is a members' club, not a bookable tourist hotel. Re-anchor the experience slot to the town's real leading resort."
+      },
+      "replacement": {
+        "name": "GReaT Trails Yercaud by GRT Hotels",
+        "tier": "comfort",
+        "tagline": "A 41-room GRT nature resort overlooking the valley in the Shevaroy hills — an indoor and outdoor pool, a spa, a nature trail and activities like ziplining and box cricket, with strong family-friendly facilities. The standout stay in Yercaud.",
+        "price_band": "₹₹₹",
+        "address": "Yercaud 636601, Salem District, Tamil Nadu",
+        "book_url": "https://www.grthotels.com/great-trails-yercaud/",
+        "sources": [
+          "https://www.grthotels.com/great-trails-yercaud/",
+          "https://www.tripadvisor.com/Hotel_Review-g1009352-d1413258-Reviews-Great_Trails_Yercaud_by_GRT_Hotels-Yercaud_Salem_District_Tamil_Nadu.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "yercaud",
+      "slot": "value",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Greenwoods Guest House",
+        "issue": "No verifiable guest house of this exact name in Yercaud on Booking.com / MakeMyTrip / Tripadvisor — unverifiable placeholder. Yercaud's verified branded stock is Sterling Yercaud and GReaT Trails (used for location and experience); no separate tier-1/2 budget value property verifies."
+      }
+    },
+    {
+      "destination_id": "yercaud",
+      "slot": "location",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Sterling Yercaud",
+        "issue": "OK — Sterling Yercaud is a real Sterling resort in the Shevaroy hills. Verified."
+      },
+      "replacement": {
+        "name": "Sterling Yercaud",
+        "tier": "comfort",
+        "tagline": "A Sterling resort in the Shevaroy hills above Salem — comfortable rooms, an on-site restaurant and bar, and a quiet hill-station setting. The dependable mid-range comfort base for a Yercaud trip.",
+        "price_band": "₹₹₹",
+        "address": "Yercaud 636601, Salem District, Tamil Nadu",
+        "book_url": "https://www.sterlingholidays.com/resorts-hotels/yercaud",
+        "sources": [
+          "https://www.sterlingholidays.com/resorts-hotels/yercaud",
+          "https://www.expedia.com/Yercaud-Hotels.d6124976.Travel-Guide-Hotels"
+        ]
+      }
+    },
+    {
+      "destination_id": "yercaud",
+      "slot": "xfactor",
+      "verdict": "replace",
+      "existing": {
+        "name": "Orange County Yercaud",
+        "issue": "Fabrication / cross-state — Orange County is a luxury-resort brand (now Evolve Back) with properties in Coorg, Kabini and Hampi, all in Karnataka. There is no Orange County in Yercaud. Cross-state ghost. Re-anchor to a real verified Yercaud property."
+      },
+      "replacement": {
+        "name": "GReaT Trails Yercaud by GRT Hotels",
+        "tier": "comfort",
+        "tagline": "Yercaud's most activity-rich stay — a valley-view GRT nature resort with a nature trail, ziplining, box cricket and a spa, set in the Shevaroy hills. The distinctive experience-led pick in a small hill town.",
+        "price_band": "₹₹₹",
+        "address": "Yercaud 636601, Salem District, Tamil Nadu",
+        "book_url": "https://www.grthotels.com/great-trails-yercaud/",
+        "sources": [
+          "https://www.grthotels.com/great-trails-yercaud/",
+          "https://www.grthotels.com/great-trails-yercaud/best-nature-resort-in-yercaud.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "hogenakkal",
+      "slot": "location",
+      "verdict": "replace",
+      "existing": {
+        "name": "Hogenakkal Falls View Resort",
+        "issue": "No verifiable resort of this exact name at Hogenakkal on any OTA — generic falls-themed placeholder. Re-anchor to the verified TTDC government hotel near the falls."
+      },
+      "replacement": {
+        "name": "Hotel Tamil Nadu (TTDC), Hogenakkal",
+        "tier": "budget",
+        "tagline": "The Tamil Nadu Tourism state-run hotel about 850 m from Hogenakkal Falls — plain, value-priced rooms on a large campus with parking and a children's play area, plus an on-site restaurant. The most reliable stay at the falls.",
+        "price_band": "₹₹",
+        "address": "Via Pennagaram, Hogenakkal 636810, Dharmapuri District, Tamil Nadu",
+        "book_url": "https://ttdconline.com/hotel-tamil-nadu-Hogenakkal.html",
+        "sources": [
+          "https://ttdconline.com/hotel-tamil-nadu-Hogenakkal.html",
+          "https://www.tripadvisor.in/Hotel_Review-g1676038-d1753899-Reviews-Hotel_Tamil_Nadu-Hogenakkal_Tamil_Nadu.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "hogenakkal",
+      "slot": "xfactor",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Coracle Camps Hogenakkal",
+        "issue": "No verifiable camping / coracle-camp accommodation of this name at Hogenakkal on any OTA. Coracle rides are a famous Hogenakkal river activity, but there is no verified coracle-themed lodging. No distinctive x-factor stay exists; the TTDC hotel is the destination's only verified property."
+      }
+    },
+    {
+      "destination_id": "hogenakkal",
+      "slot": "experience",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "The Reeds Retreat Hogenakkal",
+        "issue": "No verifiable property of this name at Hogenakkal on any OTA — generic placeholder. Hogenakkal is largely a day-trip falls destination; its only verified accommodation is the TTDC government hotel (used for the location slot). No experience-tier property exists."
+      }
+    },
+    {
+      "destination_id": "hogenakkal",
+      "slot": "value",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "River Mist Guest House",
+        "issue": "No verifiable guest house of this name at Hogenakkal on any OTA — generic placeholder. No tier-1/2 value property verifies beyond the TTDC government hotel. Surrounding budget lodges are basic and unbranded."
+      }
+    }
+  ]
+}
