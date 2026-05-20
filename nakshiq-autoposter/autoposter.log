@@ -1,40 +1,49 @@
-2026-05-20 12:48:23  INFO      [migration] bootstrapped post_log.jsonl with 38 entries from state.json
-2026-05-20 12:48:23  INFO      ════════════════════════════════════════════════════════════
-2026-05-20 12:48:23  INFO      Nakshiq Autoposter · MORNING · 2026-05-20 · weekday=2
-2026-05-20 12:48:23  INFO      ════════════════════════════════════════════════════════════
-2026-05-20 12:48:23  INFO      ── Syncing Nakshiq content ──────────────────────────────
-2026-05-20 12:48:58  INFO      Synced → 20 destinations · 0 traps · 0 articles · 23 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 50 camping · 50 gems · total catalog=505
-2026-05-20 12:48:59  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
-2026-05-20 12:48:59  INFO      Festivals filtered (past/post-window): Kedarnath Opening, Summer Festival, Badri-Kedar Festival, Chaukori Tea Festival, Chail Cricket Festival, Guptkashi Vishwanath Temple Festival, Tosamaidan Wildflower Season, Badrinath Temple Opening (Kapaat Kholna) (+9 more)
-2026-05-20 12:48:59  INFO      [csv_formats] 4/38 CSV formats eligible this run (asset present + data resolves)
-2026-05-20 12:48:59  INFO      Morning format (themed-week-3→moment): cost_index_card [0% vs target 10%] (14/14 never featured)
-2026-05-20 12:48:59  INFO      Formats — IG: cost_index_card  ·  FB: cost_index_card  ·  Story: collection_spotlight
-2026-05-20 12:48:59  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 8
-2026-05-20 12:48:59  INFO      Fingerprint dedup snapshot — 8 dests in 7d · 24 (dest,fmt) pairs in 30d · 0 media in 60d
-2026-05-20 12:48:59  INFO      Collection locked: Best Honeymoon Destinations (19/20 never featured)
-2026-05-20 12:48:59  INFO      Cost index dest locked: Havelock Island (Swaraj Dweep) (89/89 never featured)
-2026-05-20 12:49:03  INFO      Shared best destination locked: Bir Billing
-2026-05-20 12:49:03  INFO      Carousel locked (collection_spotlight): pahalgam
-2026-05-20 12:49:03  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
-2026-05-20 12:49:03  INFO      [instagram/nakshiq] Generating cost_index_card post...
-2026-05-20 12:49:03  INFO      [instagram/nakshiq] Caption ready (474 chars, dest=havelock-island)
-2026-05-20 12:49:03  INFO      [instagram/nakshiq] Video available — uploading for Reel...
-2026-05-20 12:49:03  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/havelock-island.mp4?v=20260512
-2026-05-20 12:49:04  INFO          Requesting upload URL for havelock-island.mp4 (6,507,187 bytes, video/mp4)
-2026-05-20 12:49:05  INFO          Uploading to R2 (timeout=300s)...
-2026-05-20 12:49:07  INFO          R2 PUT OK. Confirming...
-2026-05-20 12:49:08  INFO          Media ready: pdWdM (6,507,187 bytes · havelock-island.mp4)
-2026-05-20 12:49:08  INFO      [instagram/nakshiq] Publishing Reel...
-2026-05-20 12:49:53  INFO      [instagram/nakshiq] ✅ Published · Outstand=IhnsX · Platform=18091747682204340
-2026-05-20 12:49:53  INFO      [facebook/Nakshiq] Generating cost_index_card post...
-2026-05-20 12:49:53  INFO      [facebook/Nakshiq] Caption ready (679 chars, dest=havelock-island)
-2026-05-20 12:49:53  INFO      [facebook/Nakshiq] Video available — uploading for Reel...
-2026-05-20 12:49:53  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/havelock-island.mp4?v=20260512
-2026-05-20 12:49:54  INFO          Requesting upload URL for havelock-island.mp4 (6,507,187 bytes, video/mp4)
-2026-05-20 12:49:54  INFO          Uploading to R2 (timeout=300s)...
-2026-05-20 12:49:56  INFO          R2 PUT OK. Confirming...
-2026-05-20 12:49:57  INFO          Media ready: JNRa3 (6,507,187 bytes · havelock-island.mp4)
-2026-05-20 12:49:57  INFO      [facebook/Nakshiq] Publishing Reel...
-2026-05-20 12:50:23  INFO      [facebook/Nakshiq] ✅ Published · Outstand=vSrhg · Platform=1299939778311804
-2026-05-20 12:50:23  INFO      State saved. Run complete.
-2026-05-20 12:50:23  INFO      ════════════════════════════════════════════════════════════
+2026-05-20 17:36:06  INFO      ════════════════════════════════════════════════════════════
+2026-05-20 17:36:06  INFO      Nakshiq Autoposter · ANALYTICS SYNC · 2026-05-20
+2026-05-20 17:36:06  INFO      ════════════════════════════════════════════════════════════
+2026-05-20 17:36:13  INFO      Synced 50 new posts (total: 280)
+2026-05-20 17:36:13  INFO      ── Analytics Summary ──
+2026-05-20 17:36:13  INFO      Total posts tracked: 280
+2026-05-20 17:36:13  INFO      Successfully published: 225 | Failed: 46
+2026-05-20 17:36:13  INFO      
+2026-05-20 17:36:13  INFO      By content type:
+2026-05-20 17:36:13  INFO        feed_post: 103
+2026-05-20 17:36:13  INFO        yt_short: 70
+2026-05-20 17:36:13  INFO        reel: 67
+2026-05-20 17:36:13  INFO        canva_visual: 12
+2026-05-20 17:36:13  INFO        tourist_map: 10
+2026-05-20 17:36:13  INFO        pomelli_visual: 10
+2026-05-20 17:36:13  INFO        infographic: 8
+2026-05-20 17:36:13  INFO      
+2026-05-20 17:36:13  INFO      By format:
+2026-05-20 17:36:13  INFO        feed_post:unknown: 103
+2026-05-20 17:36:13  INFO        reel:destination: 24
+2026-05-20 17:36:13  INFO        reel:seasonal: 22
+2026-05-20 17:36:13  INFO        yt_short:listicle: 19
+2026-05-20 17:36:13  INFO        reel:map: 15
+2026-05-20 17:36:13  INFO        yt_short:did: 14
+2026-05-20 17:36:13  INFO        yt_short:before: 13
+2026-05-20 17:36:13  INFO        canva_visual:unknown: 12
+2026-05-20 17:36:13  INFO        yt_short:mini: 11
+2026-05-20 17:36:13  INFO        tourist_map:unknown: 10
+2026-05-20 17:36:13  INFO        pomelli_visual:unknown: 10
+2026-05-20 17:36:13  INFO        infographic:unknown: 8
+2026-05-20 17:36:13  INFO        yt_short:this: 8
+2026-05-20 17:36:13  INFO        reel:score: 6
+2026-05-20 17:36:13  INFO        yt_short:dont: 5
+2026-05-20 17:36:13  INFO      
+2026-05-20 17:36:13  INFO      By platform:
+2026-05-20 17:36:13  INFO        instagram: 131
+2026-05-20 17:36:13  INFO        facebook: 81
+2026-05-20 17:36:13  INFO        youtube: 59
+2026-05-20 17:36:13  INFO      
+2026-05-20 17:36:13  INFO      YT Short format distribution:
+2026-05-20 17:36:13  INFO        listicle: 19 (27%)
+2026-05-20 17:36:13  INFO        did: 14 (20%)
+2026-05-20 17:36:13  INFO        before: 13 (19%)
+2026-05-20 17:36:13  INFO        mini: 11 (16%)
+2026-05-20 17:36:13  INFO        this: 8 (11%)
+2026-05-20 17:36:13  INFO        dont: 5 (7%)
+2026-05-20 17:36:13  INFO      
+Date range: 2026-04-15 → 2026-05-20
+2026-05-20 17:36:13  INFO      ════════════════════════════════════════════════════════════
