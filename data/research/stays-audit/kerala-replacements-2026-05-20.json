@@ -1,0 +1,2214 @@
+{
+  "metadata": {
+    "state": "kerala",
+    "date": "2026-05-20",
+    "total_picks": 112,
+    "destinations": 30,
+    "status": "complete",
+    "new_stays_rows": 68,
+    "verdict_counts": {
+      "keep_existing": 38,
+      "replace": 61,
+      "honest_scarcity": 13
+    },
+    "notes": "Audit-and-replace of auto-seeded placeholder picks for all 30 Kerala destinations. KTDC (Kerala Tourism Development Corporation), Kerala Forest Department eco-tourism lodges and temple-devaswom guesthouses used as government anchors. Houseboats, heritage homestays and Ayurveda resorts are genuine deep inventory in Kerala. ~66% of picks failed verification as keep_existing (61 replace + 13 honest_scarcity of 112). Key fabrications/ghosts caught: Taj Exotica Alleppey (no such property — Taj Exotica is Goa/Maldives), Athirapally Marriott (no Marriott at the falls), The Leela Kumarakom (no Leela in Kumarakom — Leela's backwater hotel is Leela Ashtamudi). Cross-dest contaminations: Ashtamudi Palace at Kannur (Ashtamudi is Kollam, 250km), Bekal Fort resort at Kannur (Bekal is Kasaragod), Taj Bekal at Kollam (400km), Taj Kumarakom at Kuttanad and Sabarimala, Coconut Lagoon 'near Kovalam' (Coconut Lagoon is Kumarakom), Wayanad Silverwoods at Kozhikode, Deshadan at Idukki (brand is Munnar), Sterling Anaikatti at Silent Valley (Anaikatti is the TN border near Coimbatore), Kumbalangi Nights as a Kuttanad property (it is a 2019 film). Honest-scarcity (13 slots): Eravikulam value+xfactor (no accommodation inside the national park — Munnar base); Ponmudi value+location+xfactor (KTDC Golden Peak is the only stay on the hill); Marari value+xfactor; Bekal/Beypore/Kumbalangi/Thrissur/Athirapally xfactor; Sabarimala xfactor (forest pilgrim shrine, TDB lodging only). All cases where no distinct verifiable tier-1/2 property remains beyond what fills the other slots. Silent Valley itself stayed in replace (Forest Department log house / eco-camp / gateway-village homestays are genuine). Government anchors used: KTDC across many dests, Travancore Devaswom Board for Sabarimala, Guruvayur Devaswom for Guruvayur, Kerala Forest Department for Chinnar/Silent Valley."
+  },
+  "task_a_results": [
+    {
+      "destination_id": "alleppey",
+      "slot": "experience",
+      "verdict": "replace",
+      "existing": {
+        "name": "Taj Exotica Resort & Spa, Alleppey",
+        "issue": "Ghost / mislabel. There is no 'Taj Exotica' in Alleppey — Taj Exotica is a brand used in Goa and the Maldives. Taj's backwater property in this cluster is Taj Kumarakom, not Alleppey. Re-anchor to a real Alleppey luxury address."
+      },
+      "replacement": {
+        "name": "Raheem Residency",
+        "tier": "luxury",
+        "tagline": "An 1868 colonial bungalow restored as a Government-recognised Heritage Hotel — 10 rosewood-and-teak rooms, a courtyard pool and a sea-view spa, 50m from Alleppey Beach.",
+        "price_band": "₹₹₹₹",
+        "address": "Beach Road, Alappuzha 688012, Kerala",
+        "book_url": "https://www.raheemresidency.com/",
+        "sources": [
+          "https://www.raheemresidency.com/",
+          "https://www.tripadvisor.com/Hotel_Review-g608471-d594202-Reviews-Raheem_Residency-Alappuzha_Alappuzha_District_Kerala.html",
+          "https://www.booking.com/hotel/in/raheem-residency.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "alleppey",
+      "slot": "value",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Raheem Residency",
+        "issue": "Real heritage hotel, but it is a top-tier ₹₹₹₹ address — wrong fit for the value slot, and now used for the experience slot. Move the value slot to a genuine mid-range property."
+      },
+      "replacement": {
+        "name": "Lake Palace Resort, Alleppey",
+        "tier": "comfort",
+        "tagline": "A backwater resort on Punnamada Lake — the snake-boat-race lake — with pool, spa and waterfront villas opening onto the canals. A fixed-base alternative to the houseboat.",
+        "price_band": "₹₹₹",
+        "address": "Punnamada, Alappuzha 688006, Kerala",
+        "book_url": "https://www.lakepalaceresort.com/",
+        "sources": [
+          "https://www.lakepalaceresort.com/",
+          "https://www.keralatourism.org/resorts/lake-palace-resort/2326"
+        ]
+      }
+    },
+    {
+      "destination_id": "alleppey",
+      "slot": "location",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Alleppey Prince Hotel",
+        "issue": "OK — Alleppey Prince Hotel is a real 4-star on A.S. Road in central Alappuzha, near the boat jetty. Keep; tighten copy."
+      },
+      "replacement": {
+        "name": "Alleppey Prince Hotel",
+        "tier": "comfort",
+        "tagline": "A 42-room 4-star on the highway through Alappuzha town with an indoor pool — the practical town base within easy reach of the houseboat jetty, beach and railway station.",
+        "price_band": "₹₹",
+        "address": "A.S. Road, NH-66, Alappuzha 688007, Kerala",
+        "book_url": "https://www.alleppeyprincehotel.com/",
+        "sources": [
+          "https://www.alleppeyprincehotel.com/",
+          "https://www.booking.com/hotel/in/alleppey-prince-alappuzha.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "alleppey",
+      "slot": "xfactor",
+      "verdict": "replace",
+      "existing": {
+        "name": "Spice Garden Homestay (Houseboat option)",
+        "issue": "Generic placeholder — 'Spice Garden Homestay' appears recycled across multiple Kerala dests in this baseline. The xfactor for Alleppey is unambiguously the kettuvallam houseboat. Re-anchor to a concrete, bookable houseboat product."
+      },
+      "replacement": {
+        "name": "Alleppey Kettuvallam Houseboat (KTDC & private operators, Punnamada jetty)",
+        "tier": "experience",
+        "tagline": "The original backwater experience — a converted rice barge with bedrooms, deck and a crew cooking Kerala meals onboard, cruising the canals overnight. KTDC and licensed private operators depart from Punnamada and Finishing Point jetties.",
+        "price_band": "₹₹₹",
+        "address": "Punnamada / Finishing Point boat jetty, Alappuzha 688006, Kerala",
+        "book_url": "https://www.ktdc.com/houseboats",
+        "sources": [
+          "https://www.ktdc.com/houseboats",
+          "https://www.keralatourism.org/alappuzha/houseboats"
+        ]
+      }
+    },
+    {
+      "destination_id": "athirapally",
+      "slot": "experience",
+      "verdict": "replace",
+      "existing": {
+        "name": "Athirapally Marriott Resort & Spa",
+        "issue": "Ghost. Marriott operates no property in Athirapally — no Marriott, Courtyard or any Marriott brand exists at this waterfall. Re-anchor to the real boutique address overlooking the falls."
+      },
+      "replacement": {
+        "name": "Rainforest Resort, Athirapally",
+        "tier": "luxury",
+        "tagline": "A nine-room boutique resort on terraces at the Sholayar forest edge, floor-to-ceiling windows framing the Athirapally Falls — guided treks to the foot of the falls.",
+        "price_band": "₹₹₹₹",
+        "address": "Athirappilly, Thrissur district 680724, Kerala",
+        "book_url": "https://rainforest.in/",
+        "sources": [
+          "https://rainforest.in/",
+          "https://www.booking.com/hotel/in/rainforest-resort.html",
+          "https://www.keralatourism.org/hotels/the-rainforest/2463"
+        ]
+      }
+    },
+    {
+      "destination_id": "athirapally",
+      "slot": "value",
+      "verdict": "replace",
+      "existing": {
+        "name": "Athirapally Sanctuary homestay",
+        "issue": "Generic descriptor, not a verifiable named property — no bookable 'Athirapally Sanctuary homestay' exists. Re-anchor to a real, named river-facing property."
+      },
+      "replacement": {
+        "name": "Athirapilly River Resort",
+        "tier": "budget",
+        "tagline": "A nine-room river-facing resort near Chalakudy with river bathing, campfires and nature walks — Tripadvisor's #1 inn in Athirappilly. The value pick for the falls.",
+        "price_band": "₹₹",
+        "address": "Chalakudy, Thrissur district 680721, Kerala",
+        "book_url": "https://athirapillyriverresort.com/",
+        "sources": [
+          "https://athirapillyriverresort.com/",
+          "https://www.tripadvisor.com/Hotel_Review-g2289004-d13146410-Reviews-Athirapilly_River_Resort-Athirappilly_Thrissur_District_Kerala.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "athirapally",
+      "slot": "location",
+      "verdict": "replace",
+      "existing": {
+        "name": "Athirapally River Retreat",
+        "issue": "Unverifiable name — no property called 'Athirapally River Retreat' is listed on Booking/Tripadvisor/MMT. The real river-facing property is Athirapilly River Resort (used for value). Re-anchor the location slot to the verified riverbank Sterling property."
+      },
+      "replacement": {
+        "name": "Sterling Athirappilly",
+        "tier": "comfort",
+        "tagline": "A 30-room Sterling resort on the Chalakudy riverbank with sweeping views toward the falls — outdoor pool, river-view restaurant, river fishing and bird-watching.",
+        "price_band": "₹₹₹",
+        "address": "Kallana, Vettilappara, Thrissur district 680721, Kerala",
+        "book_url": "https://www.sterlingholidays.com/resorts-hotels/athirappilly",
+        "sources": [
+          "https://www.sterlingholidays.com/resorts-hotels/athirappilly",
+          "https://www.booking.com/hotel/in/sterling-athirappilly.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "athirapally",
+      "slot": "xfactor",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Spice Garden Treehouse",
+        "issue": "Generic placeholder recycled across the baseline; no verifiable 'Spice Garden Treehouse' in Athirapally. The genuine Athirapally xfactor — the falls-view boutique resort — is already used for the experience slot; the verified river-facing properties fill value and location. No distinct tier-1/2 xfactor property remains. Honest-scarcity rather than fabricate a second waterfall property."
+      }
+    },
+    {
+      "destination_id": "bekal",
+      "slot": "experience",
+      "verdict": "replace",
+      "existing": {
+        "name": "Bekal Heritage",
+        "issue": "Vague — 'Bekal Heritage' is not a single verifiable property name. The clear experience-tier address at Bekal is Taj Bekal Resort & Spa."
+      },
+      "replacement": {
+        "name": "Taj Bekal Resort & Spa",
+        "tier": "luxury",
+        "tagline": "A 5-star on 26 acres of backwater and beach with 71 villas modelled on Kettuvallam houseboats — Chitra Pothi murals, plunge pools and the J Wellness Circle Ayurveda spa.",
+        "price_band": "₹₹₹₹",
+        "address": "Kappil Beach, Bekal, Kasaragod district 671316, Kerala",
+        "book_url": "https://www.tajhotels.com/en-in/hotels/taj-bekal-kerala",
+        "sources": [
+          "https://www.tajhotels.com/en-in/hotels/taj-bekal-kerala",
+          "https://www.booking.com/hotel/in/vivanta-by-taj-bekal.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "bekal",
+      "slot": "value",
+      "verdict": "replace",
+      "existing": {
+        "name": "The Pepper House",
+        "issue": "Mislocated. 'Pepper House' is a well-known Fort Kochi address (the Pepper House gallery/cafe and adjoining stay), not a Bekal property. Re-anchor to a real Bekal-area value stay."
+      },
+      "replacement": {
+        "name": "Bekal Fort Heritage Homestay (Chandralayam)",
+        "tier": "budget",
+        "tagline": "A 100-year-old traditional Kerala house in coconut groves near Bekal Fort — family-run, home-cooked Kerala meals. The honest heritage-homestay alternative to the resort strip.",
+        "price_band": "₹₹",
+        "address": "Bekal, Kasaragod district 671316, Kerala",
+        "book_url": "https://www.tripadvisor.in/Hotel_Review-g1222295-d1990561-Reviews-Bekal_Fort_Heritage_Homestay-Bekal_Kasaragod_District_Kerala.html",
+        "sources": [
+          "https://www.tripadvisor.in/Hotel_Review-g1222295-d1990561-Reviews-Bekal_Fort_Heritage_Homestay-Bekal_Kasaragod_District_Kerala.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "bekal",
+      "slot": "location",
+      "verdict": "replace",
+      "existing": {
+        "name": "Bekal Fort Heritage Stay",
+        "issue": "Ambiguous — collides in name with the Bekal Fort Heritage Homestay (Chandralayam) used for the value slot. No separate verifiable property of this exact name. Re-anchor to a verified named Bekal stay."
+      },
+      "replacement": {
+        "name": "Bekal Village Homestay",
+        "tier": "comfort",
+        "tagline": "A peaceful homestay near Bekal with private backwater and beachfront access set in lush greenery — listed on Booking.com and Tripadvisor, a quiet location pick near the fort.",
+        "price_band": "₹₹",
+        "address": "Bekal, Kasaragod district 671316, Kerala",
+        "book_url": "https://www.booking.com/hotel/in/bekal-village-homestay.html",
+        "sources": [
+          "https://www.booking.com/hotel/in/bekal-village-homestay.html",
+          "https://www.tripadvisor.in/VacationRentalReview-g1222295-d26347174-BEKAL_VILLAGE_HOMESTAY-Bekal_Kasaragod_District_Kerala.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "bekal",
+      "slot": "xfactor",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Ayurveda Village Retreat",
+        "issue": "Generic descriptor, not a verifiable named property. No distinct tier-1/2 Ayurveda-village property is verifiable at Bekal beyond Taj Bekal's own J Wellness spa (already counted in the experience slot). Honest-scarcity."
+      }
+    },
+    {
+      "destination_id": "beypore",
+      "slot": "experience",
+      "verdict": "replace",
+      "existing": {
+        "name": "Beypore Heritage Resort",
+        "issue": "Unverifiable name — no property called 'Beypore Heritage Resort' is listed on any platform. Beypore's accommodation realistically falls back on Kozhikode-city hotels. Re-anchor to a verified Kozhikode-area heritage/upscale property serving Beypore."
+      },
+      "replacement": {
+        "name": "The Raviz Kadavu, Kozhikode",
+        "tier": "luxury",
+        "tagline": "A riverside Malabar resort on the Chaliyar/Kallai backwaters near Kozhikode — Kalari and Ayurveda facilities, the upscale base for visiting the Beypore shipyard and beach.",
+        "price_band": "₹₹₹₹",
+        "address": "Kadavu, NH Bypass, Azhinjilam, Kozhikode 673632, Kerala",
+        "book_url": "https://www.theraviz.com/the-raviz-kadavu-kozhikode/",
+        "sources": [
+          "https://www.theraviz.com/the-raviz-kadavu-kozhikode/",
+          "https://www.tripadvisor.com/Hotels-g12436212-Beypore_Kozhikode_District_Kerala-Hotels.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "beypore",
+      "slot": "value",
+      "verdict": "replace",
+      "existing": {
+        "name": "Nila Homestay",
+        "issue": "Unverifiable — 'Nila Homestay' is a generic name (Nila is the regional name for the Bharathapuzha river) with no specific bookable listing tied to Beypore. Re-anchor to a verified heritage homestay near Beypore."
+      },
+      "replacement": {
+        "name": "Chengod Heritage Home Stay",
+        "tier": "budget",
+        "tagline": "A traditional Kerala heritage tharavad home in the Kozhikode area near the Beypore shipyard — the one verifiable heritage-character stay close to the dhow-building yard.",
+        "price_band": "₹₹",
+        "address": "Kozhikode district, Kerala (near Beypore)",
+        "book_url": "https://www.chengodheritagestay.com/",
+        "sources": [
+          "https://www.chengodheritagestay.com/"
+        ]
+      }
+    },
+    {
+      "destination_id": "beypore",
+      "slot": "location",
+      "verdict": "replace",
+      "existing": {
+        "name": "Beypore Beach Hotel",
+        "issue": "Unverifiable generic name — no property called 'Beypore Beach Hotel' is listed on Booking/Tripadvisor/MMT. Re-anchor to a verified Kozhikode beachfront hotel, the realistic location base for Beypore Beach."
+      },
+      "replacement": {
+        "name": "The Gateway Hotel Beach Road, Calicut (Taj)",
+        "tier": "comfort",
+        "tagline": "A Taj Gateway on Kozhikode's Beach Road — the most central upscale base for the Kozhikode/Beypore coast, a short drive from Beypore Beach and the shipyard.",
+        "price_band": "₹₹₹",
+        "address": "PT Usha Road, Beach Road, Kozhikode 673032, Kerala",
+        "book_url": "https://www.tajhotels.com/en-in/hotels/gateway-calicut",
+        "sources": [
+          "https://www.tajhotels.com/en-in/hotels/gateway-calicut",
+          "https://www.expedia.com/Kozhikode-Beach-Hotels.0-l6104824-0.Travel-Guide-Filter-Hotels"
+        ]
+      }
+    },
+    {
+      "destination_id": "beypore",
+      "slot": "xfactor",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Tharavad Homestay (Dhow Stay option)",
+        "issue": "Generic placeholder. There is no verifiable commercial 'dhow stay' product at Beypore — the Beypore uru (dhow) yard builds boats for export and Gulf buyers; it does not operate overnight-stay vessels. No tier-1/2 xfactor property verifiable. Honest-scarcity."
+      }
+    },
+    {
+      "destination_id": "cherai",
+      "slot": "value",
+      "verdict": "replace",
+      "existing": {
+        "name": "Pambiyara Homestay",
+        "issue": "Unverifiable — no homestay called 'Pambiyara Homestay' is listed at Cherai on any platform (Pampa/Pamba is a river in southern Kerala, not Cherai). Re-anchor to a verified Cherai value stay."
+      },
+      "replacement": {
+        "name": "Les 3 Elephants",
+        "tier": "comfort",
+        "tagline": "A French-Indian boutique eco resort on the Cherai backwaters, 150m from the beach — thatched bungalows, organic Kudumbashree produce and a daily-changing menu.",
+        "price_band": "₹₹₹",
+        "address": "Cherai Beach, Vypin Island, Kochi 683514, Kerala",
+        "book_url": "http://www.3elephants.in/",
+        "sources": [
+          "http://www.3elephants.in/",
+          "https://www.booking.com/hotel/in/les-3-elephants.html",
+          "https://www.keralatourism.org/resorts/les-3-elephants/3746"
+        ]
+      }
+    },
+    {
+      "destination_id": "cherai",
+      "slot": "location",
+      "verdict": "replace",
+      "existing": {
+        "name": "Cherai Beach Villa",
+        "issue": "Generic descriptor, not a single verifiable named property. Re-anchor to the verified namesake beachfront resort."
+      },
+      "replacement": {
+        "name": "Cherai Beach Resorts",
+        "tier": "comfort",
+        "tagline": "Cherai's namesake resort on Vypin Island where the Arabian Sea meets the backwaters — beachfront rooms, Ayurvedic spa and pool, 25km from Cochin airport.",
+        "price_band": "₹₹₹",
+        "address": "Cherai Beach, Vypin Island, Kochi 683514, Kerala",
+        "book_url": "https://www.cheraibeachresorts.com/",
+        "sources": [
+          "https://www.cheraibeachresorts.com/",
+          "https://www.booking.com/hotel/in/cherai-beach-resort.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "cherai",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Cherai Beach Resort",
+        "issue": "OK — Cherai Beach Resorts is the real namesake resort. Same property as the location slot's replacement; promote it to experience and keep location separate (see note). Tighten name to plural 'Cherai Beach Resorts'."
+      },
+      "replacement": {
+        "name": "Cherai Beach Resorts",
+        "tier": "comfort",
+        "tagline": "The established beachfront resort at Cherai — Arabian Sea on one side, backwaters on the other — with Ayurvedic spa, pool and the Muziris heritage zone nearby.",
+        "price_band": "₹₹₹",
+        "address": "Cherai Beach, Vypin Island, Kochi 683514, Kerala",
+        "book_url": "https://www.cheraibeachresorts.com/",
+        "sources": [
+          "https://www.cheraibeachresorts.com/",
+          "https://www.tripadvisor.in/Hotel_Review-g2647335-d589785-Reviews-Cherai_Beach_Resorts-Cherai_Beach_Vypin_Island_Kochi_Cochin_Ernakulam_District_Kerala.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "cherai",
+      "slot": "xfactor",
+      "verdict": "replace",
+      "existing": {
+        "name": "Kumarakom Backwater Houseboat (Cherai anchorage)",
+        "issue": "Cross-dest fabrication. Kumarakom houseboats operate on Vembanad Lake at Kumarakom, ~60km away — they do not anchor at Cherai. No houseboat product is run from Cherai. Re-anchor to a real Cherai upscale property."
+      },
+      "replacement": {
+        "name": "Club Mahindra Cherai Beach",
+        "tier": "comfort",
+        "tagline": "A full-facility family resort on Cherai Beach with pool, kids' activities and Ayurveda — the most amenity-rich beach stay at Cherai, well outside the backwater-houseboat zone.",
+        "price_band": "₹₹₹",
+        "address": "Cherai Beach, Vypin Island, Kochi 683514, Kerala",
+        "book_url": "https://www.clubmahindra.com/resorts-in-kochi/club-mahindra-cherai-beach",
+        "sources": [
+          "https://www.clubmahindra.com/resorts-in-kochi/club-mahindra-cherai-beach",
+          "https://www.tripadvisor.in/Hotels-g2647335-Cherai_Beach_Vypin_Island_Kochi_Cochin_Ernakulam_District_Kerala-Hotels.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "chinnar",
+      "slot": "value",
+      "verdict": "replace",
+      "existing": {
+        "name": "Misty Range Resorts",
+        "issue": "Generic name; 'Misty Range / Misty Valley' resorts appear recycled across Kerala hill dests in this baseline and none is verifiably located at Chinnar. Chinnar is a wildlife sanctuary with only Forest Department accommodation. Re-anchor to the verified KFD eco-tourism stay."
+      },
+      "replacement": {
+        "name": "Thoovanam Log House (Kerala Forest Department)",
+        "tier": "budget",
+        "tagline": "A solar-electrified Forest Department log house facing deep forest near Thoovanam Falls — report at the Alampetty eco-shop at 3pm; rate includes watchers, cook and guide.",
+        "price_band": "₹₹",
+        "address": "Chinnar Wildlife Sanctuary, Marayoor, Idukki district 685620, Kerala",
+        "book_url": "https://www.chinnar.in/accommodations",
+        "sources": [
+          "https://www.chinnar.in/accommodations",
+          "https://www.keralatourism.org/munnar/eco-tourism-chinnar.php"
+        ]
+      }
+    },
+    {
+      "destination_id": "chinnar",
+      "slot": "xfactor",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Thoovanam Log House",
+        "issue": "Real — the Thoovanam log house is a genuine KFD eco-tourism property. But it is now used for the value slot. Move the xfactor to the equally distinctive Forest Department treetop machans."
+      },
+      "replacement": {
+        "name": "Chinnar Treetop Machans (Kerala Forest Department)",
+        "tier": "experience",
+        "tagline": "Forest Department tree huts built on single trees at Koottar/Karakkad — furnished, solar-powered, an aerial view over the dry-deciduous forest. Booked through the Chinnar eco-shops.",
+        "price_band": "₹₹",
+        "address": "Chinnar Wildlife Sanctuary, Marayoor, Idukki district 685620, Kerala",
+        "book_url": "https://www.chinnar.in/accommodations",
+        "sources": [
+          "https://www.chinnar.in/accommodations",
+          "https://www.keralatourism.org/munnar/eco-tourism-chinnar.php"
+        ]
+      }
+    },
+    {
+      "destination_id": "chinnar",
+      "slot": "location",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Chinnar Eco-Tourism Cottages Alampetty",
+        "issue": "Broadly correct — the Alampetty eco-shop is the KFD reporting/booking point for Chinnar's eco-tourism stays. Tighten to the actual booking node rather than a vague 'cottages' name."
+      },
+      "replacement": {
+        "name": "Chinnar Eco-Tourism (Alampetty Eco-Shop, Kerala Forest Department)",
+        "tier": "budget",
+        "tagline": "The Alampetty eco-shop is the Forest Department reporting and booking point for Chinnar's log house, machans and tented eco-stays — the gateway accommodation node inside the sanctuary.",
+        "price_band": "₹₹",
+        "address": "Alampetty, Chinnar Wildlife Sanctuary, Marayoor, Idukki district 685620, Kerala",
+        "book_url": "https://www.chinnar.in/accommodations",
+        "sources": [
+          "https://www.chinnar.in/accommodations",
+          "https://www.keralatourism.org/munnar/eco-tourism-chinnar.php"
+        ]
+      }
+    },
+    {
+      "destination_id": "eravikulam",
+      "slot": "experience",
+      "verdict": "replace",
+      "existing": {
+        "name": "Amal Kumarakom Lake Resort",
+        "issue": "Cross-dest fabrication. Eravikulam is a national park in the Munnar highlands; a 'Kumarakom Lake Resort' is in Kumarakom (backwaters), ~130km away. No accommodation exists inside Eravikulam National Park. Re-anchor to a genuine upper-tier Munnar property, the realistic base."
+      },
+      "replacement": {
+        "name": "Windermere Estate, Munnar",
+        "tier": "luxury",
+        "tagline": "A heritage planter's estate above Munnar with cardamom and coffee slopes — the upscale base for the early-morning drive to the Eravikulam Rajamala gate.",
+        "price_band": "₹₹₹₹",
+        "address": "Pothamedu, Munnar, Idukki district 685612, Kerala",
+        "book_url": "https://www.windermeremunnar.com/",
+        "sources": [
+          "https://www.windermeremunnar.com/",
+          "https://www.tripadvisor.in/HotelsNear-g303881-d1755667-Rajamalai_Eravikulam_National_Park-Munnar_Idukki_District_Kerala.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "eravikulam",
+      "slot": "location",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Munnar Tea Country Resort",
+        "issue": "Loosely OK — KTDC Tea County is a real Munnar property and a sensible location base for Eravikulam, but Eravikulam itself has no accommodation. Tighten name to KTDC Tea County Munnar and treat it as the base address."
+      },
+      "replacement": {
+        "name": "KTDC Tea County Munnar",
+        "tier": "comfort",
+        "tagline": "The Kerala Tourism (KTDC) hill resort in Munnar town — gardens, restaurant and a central position for the early run to the Eravikulam Rajamala gate before the day's vehicle quota fills.",
+        "price_band": "₹₹₹",
+        "address": "Tea County, Munnar, Idukki district 685612, Kerala",
+        "book_url": "https://www.ktdc.com/tea-county-munnar",
+        "sources": [
+          "https://www.ktdc.com/tea-county-munnar",
+          "https://www.keralatourism.org/ecotourism/trekking-programs/eravikulam-eco-tourism/12"
+        ]
+      }
+    },
+    {
+      "destination_id": "eravikulam",
+      "slot": "xfactor",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Spice Garden Treehouse, Munnar",
+        "issue": "Generic recycled placeholder; and Eravikulam National Park has zero accommodation inside it (protected core, Nilgiri tahr habitat). Any genuine treehouse stay belongs to Munnar, not Eravikulam. No tier-1/2 xfactor property is locatable at Eravikulam itself. Honest-scarcity — use Munnar as base."
+      }
+    },
+    {
+      "destination_id": "eravikulam",
+      "slot": "value",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Tea Garden Homestay, Munnar",
+        "issue": "Generic recycled placeholder ('Tea Garden Homestay' is reused for Munnar's xfactor too) and not a verifiable named property. Eravikulam has no accommodation of its own; value-tier stays belong to Munnar. Honest-scarcity at the Eravikulam slot."
+      }
+    },
+    {
+      "destination_id": "guruvayur",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Renai Sreekrishna",
+        "issue": "Real — Renaissance/Renai Sreekrishna is a genuine upscale hotel in Guruvayur. Verify and tighten name to the current branding (Renai Sreekrishna Guruvayur)."
+      },
+      "replacement": {
+        "name": "Renai Sreekrishna, Guruvayur",
+        "tier": "comfort",
+        "tagline": "A full-facility hotel in Guruvayur with restaurants and modern rooms — the upper-comfort pick for pilgrims who want hotel standards within reach of the Sree Krishna Temple.",
+        "price_band": "₹₹₹",
+        "address": "East Nada, Guruvayur, Thrissur district 680101, Kerala",
+        "book_url": "https://www.renaihotels.com/",
+        "sources": [
+          "https://www.renaihotels.com/",
+          "https://www.tripadvisor.com/Hotels-g1137974-Guruvayur_Thrissur_District_Kerala-Hotels.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "guruvayur",
+      "slot": "value",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Srivar Hotels",
+        "issue": "Real — Srivar Hotels is a genuine, well-rated mid-range hotel in Guruvayur (8.2 on Booking.com from 1,155 reviews). Keep; tighten copy."
+      },
+      "replacement": {
+        "name": "Srivar Hotels, Guruvayur",
+        "tier": "comfort",
+        "tagline": "A well-rated mid-range pilgrim hotel in Guruvayur — solid value within walking reach of the temple, consistently strong guest ratings.",
+        "price_band": "₹₹",
+        "address": "East Nada, Guruvayur, Thrissur district 680101, Kerala",
+        "book_url": "https://www.srivarhotels.com/",
+        "sources": [
+          "https://www.srivarhotels.com/",
+          "https://www.booking.com/city/in/guruvayur.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "guruvayur",
+      "slot": "xfactor",
+      "verdict": "replace",
+      "existing": {
+        "name": "Sri Anandan Residency",
+        "issue": "Unverifiable — no hotel called 'Sri Anandan Residency' is listed in Guruvayur on Booking/Tripadvisor/MMT. Re-anchor the distinctive slot to the official temple-trust rest house, the authentic Guruvayur stay."
+      },
+      "replacement": {
+        "name": "Kousthubham Rest House (Guruvayur Devaswom)",
+        "tier": "budget",
+        "tagline": "An official Guruvayur Devaswom pilgrim rest house immediately beside the temple — plain, inexpensive temple-trust accommodation booked through the devaswom administrator.",
+        "price_band": "₹",
+        "address": "Adjacent to the sathram, Guruvayur, Thrissur district 680101, Kerala",
+        "book_url": "https://guruvayurdevaswom.nic.in/Home/Accommodation",
+        "sources": [
+          "https://guruvayurdevaswom.nic.in/Home/Accommodation",
+          "https://guruvayoor.in/devaswom-hotels.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "guruvayur",
+      "slot": "location",
+      "verdict": "replace",
+      "existing": {
+        "name": "Guruvayur Heritage Homestay (aka Sannidhi Homestay)",
+        "issue": "Unverifiable double-name — neither 'Guruvayur Heritage Homestay' nor 'Sannidhi Homestay' is a verifiable listed property. Re-anchor to the verified pilgrim-base hotel closest to the temple."
+      },
+      "replacement": {
+        "name": "Krishna Inn",
+        "tier": "comfort",
+        "tagline": "A 69-room hotel a 10-minute walk from the temple's east gopuram — buffet breakfast, multi-cuisine restaurant and self parking. The convenient pilgrim-base location pick.",
+        "price_band": "₹₹₹",
+        "address": "East Nada, Guruvayur, Thrissur district 680101, Kerala",
+        "book_url": "https://www.krishnainn.com/",
+        "sources": [
+          "https://www.krishnainn.com/",
+          "https://www.trip.com/hot/hotels-near-guruvayur-temple/"
+        ]
+      }
+    },
+    {
+      "destination_id": "idukki",
+      "slot": "value",
+      "verdict": "replace",
+      "existing": {
+        "name": "Idukki Eco-Lodges (Swadesh Darshan Project)",
+        "issue": "Vague programme name, not a single bookable property. The Swadesh Darshan scheme funded infrastructure broadly across Kerala; there is no verifiable bookable 'Idukki Eco-Lodges' product of this name. Re-anchor to a verified Idukki-district property."
+      },
+      "replacement": {
+        "name": "Igloo Heritage Resort, Idukki",
+        "tier": "budget",
+        "tagline": "A garden resort in Idukki district with a shared lounge and terrace, an easy drive from the Idukki arch dam and the Kulamavu reservoir — a verifiable, well-listed mid-budget base.",
+        "price_band": "₹₹",
+        "address": "Idukki district, Kerala (near Cheruthoni / Painavu)",
+        "book_url": "https://www.booking.com/city/in/distt-idukki.html",
+        "sources": [
+          "https://www.booking.com/city/in/distt-idukki.html",
+          "https://www.tripadvisor.in/Hotels-g297632-Idukki_Idukki_District_Kerala-Hotels.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "idukki",
+      "slot": "xfactor",
+      "verdict": "replace",
+      "existing": {
+        "name": "Deshadan Eco Valley Resort",
+        "issue": "Cross-dest mislocation. The Deshadan resort brand operates in the Munnar area (Deshadan Mountain Resort, Deshadan Cloud Resort), not at Idukki Painavu/Cheruthoni. No verifiable Deshadan property at Idukki town. Re-anchor to a verified Idukki dam-view property."
+      },
+      "replacement": {
+        "name": "Idukki Dam View Resort",
+        "tier": "comfort",
+        "tagline": "A villa-style stay near Painavu with garden and terrace views, about 15 minutes from the Idukki arch dam — the distinctive dam-and-reservoir-country pick.",
+        "price_band": "₹₹",
+        "address": "Painavu P.O, near Amal Jyothi School, Idukki district 685602, Kerala",
+        "book_url": "https://www.tripadvisor.in/HotelsNear-g297632-d4138500-Cheruthoni_Dam-Idukki_Idukki_District_Kerala.html",
+        "sources": [
+          "https://www.tripadvisor.in/HotelsNear-g297632-d4138500-Cheruthoni_Dam-Idukki_Idukki_District_Kerala.html",
+          "https://www.makemytrip.global/hotels/p-resorts-in-idukki.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "idukki",
+      "slot": "location",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Hotel Hilltop Painavu",
+        "issue": "Broadly OK — Painavu is the Idukki district headquarters town and the natural base; a hilltop hotel there is the right location pick. Tighten name and confirm it as a verifiable Painavu-town property."
+      },
+      "replacement": {
+        "name": "Hotel Hilltop, Painavu (Idukki)",
+        "tier": "budget",
+        "tagline": "A plain hotel in Painavu, the Idukki district headquarters town — the practical in-town location base for the arch dam, Hill View Park and the reservoir country.",
+        "price_band": "₹₹",
+        "address": "Painavu, Idukki district 685602, Kerala",
+        "book_url": "https://www.justdial.com/Idukki/Hotels-in-Idukki-Painavu/nct-10255012",
+        "sources": [
+          "https://www.justdial.com/Idukki/Hotels-in-Idukki-Painavu/nct-10255012",
+          "https://www.tripadvisor.in/Hotels-g297632-Idukki_Idukki_District_Kerala-Hotels.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "kannur",
+      "slot": "experience",
+      "verdict": "replace",
+      "existing": {
+        "name": "Ashtamudi Palace Heritage Resort",
+        "issue": "Cross-dest fabrication. Ashtamudi is the lake at Kollam, ~250km south of Kannur — an 'Ashtamudi Palace' resort cannot be a Kannur experience pick. Re-anchor to a verified Kannur-coast property."
+      },
+      "replacement": {
+        "name": "The Malabar Beach Resort & Ayurvedic Spa, Kannur",
+        "tier": "comfort",
+        "tagline": "A sea-view resort near Ezhara Beach with Ayurvedic therapies, yoga and Kalarippayattu performances — the wellness-focused experience pick on the quiet Kannur coast.",
+        "price_band": "₹₹₹",
+        "address": "Ezhara, Kannur district, Kerala",
+        "book_url": "https://malabarbeachresort.com/",
+        "sources": [
+          "https://malabarbeachresort.com/",
+          "https://www.agoda.com/the-malabar-beach-resort/hotel/kannur-in.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "kannur",
+      "slot": "value",
+      "verdict": "replace",
+      "existing": {
+        "name": "Kannur Fort View Homestay",
+        "issue": "Unverifiable generic name — no homestay called 'Kannur Fort View Homestay' is listed (St Angelo's Fort has no commercial fort-view homestay of this name). Re-anchor to a verified Kannur beach homestay."
+      },
+      "replacement": {
+        "name": "Thottada Beach House",
+        "tier": "budget",
+        "tagline": "A friendly beach homestay with private access to the long, quiet Thottada coastline — generous Malabar seafood and a relaxed, family-run feel. The value pick on the Kannur coast.",
+        "price_band": "₹₹",
+        "address": "Thottada, Kannur district, Kerala",
+        "book_url": "https://www.thottadabeachhouse.com/",
+        "sources": [
+          "https://www.thottadabeachhouse.com/",
+          "https://in.trip.com/hotels/kannur-ezhara-beach/hotels-c74883m39930005/"
+        ]
+      }
+    },
+    {
+      "destination_id": "kannur",
+      "slot": "location",
+      "verdict": "replace",
+      "existing": {
+        "name": "Bekal Fort Heritage Resort",
+        "issue": "Cross-dest fabrication. Bekal Fort is in Kasaragod district, ~65km north of Kannur — a 'Bekal Fort Heritage Resort' is not a Kannur location pick. Re-anchor to a verified Kannur-coast property."
+      },
+      "replacement": {
+        "name": "Costa Malabari",
+        "tier": "comfort",
+        "tagline": "A converted cashew warehouse near Thottada Beach — handloom-rich rooms, home-cooked Malabar seafood and direct access to a near-empty beach. The original Kannur slow-travel address.",
+        "price_band": "₹₹",
+        "address": "Thottada, Kannur district, Kerala",
+        "book_url": "https://www.costamalabari.com/",
+        "sources": [
+          "https://www.costamalabari.com/",
+          "https://www.tripadvisor.com/Hotels-g12300300-zff10-Kannur_District_Kerala-Hotels.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "kannur",
+      "slot": "xfactor",
+      "verdict": "replace",
+      "existing": {
+        "name": "Thekkumbhagam Spice Farm Stay",
+        "issue": "Unverifiable / mislocated — 'Thekkumbhagam' is a place name near Kollam/Paravur in southern Kerala, not Kannur. No verifiable spice-farm stay of this name in Kannur. Re-anchor to a verified Kannur xfactor stay."
+      },
+      "replacement": {
+        "name": "Kanbay Beach Resort, Kannur",
+        "tier": "comfort",
+        "tagline": "A sea-view beach resort about 10 minutes from Ezhara Beach with sea-view rooms — a verified, well-listed beachfront pick for the quiet Kannur coast.",
+        "price_band": "₹₹₹",
+        "address": "Ezhara, Kannur district, Kerala",
+        "book_url": "https://in.trip.com/hotels/kannur-ezhara-beach/hotels-c74883m39930005/",
+        "sources": [
+          "https://in.trip.com/hotels/kannur-ezhara-beach/hotels-c74883m39930005/",
+          "https://www.tripadvisor.com/Hotels-g12300300-zff10-Kannur_District_Kerala-Hotels.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "kochi",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Old Harbour Hotel",
+        "issue": "OK — Old Harbour Hotel is a genuine 300-year-old Dutch-Portuguese heritage boutique hotel in Fort Kochi. Keep; tighten copy."
+      },
+      "replacement": {
+        "name": "Old Harbour Hotel",
+        "tier": "luxury",
+        "tagline": "A 300-year-old Dutch-style building, the first hotel of old Cochin — boutique heritage rooms and a courtyard garden a stone's throw from the Chinese fishing nets.",
+        "price_band": "₹₹₹₹",
+        "address": "Tower Road, Fort Kochi, Ernakulam 682001, Kerala",
+        "book_url": "https://www.oldharbourhotel.com/",
+        "sources": [
+          "https://www.oldharbourhotel.com/",
+          "https://www.tripadvisor.in/Hotel_Review-g297633-d609449-Reviews-Old_Harbour_Hotel-Kochi_Cochin_Ernakulam_District_Kerala.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "kochi",
+      "slot": "value",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Fort Heritage",
+        "issue": "Broadly OK — Fort Heritage Hotel is a real heritage-building hotel in Fort Kochi. But for a clearer, better-verified value pick, re-anchor to the sea-view Old Lighthouse Bristow which sits a tier below the CGH-Earth flagship while still being a genuine heritage property."
+      },
+      "replacement": {
+        "name": "Old Lighthouse Bristow Hotel",
+        "tier": "comfort",
+        "tagline": "Fort Kochi's only sea-view heritage hotel — the restored 1927-28 Bristow House on Fort Kochi beach, with sunset views, a spa and a pool. Heritage character below flagship rates.",
+        "price_band": "₹₹₹",
+        "address": "Fort Kochi Beach, Fort Kochi, Ernakulam 682001, Kerala",
+        "book_url": "https://www.oldlighthousebristow.com/",
+        "sources": [
+          "https://www.oldlighthousebristow.com/",
+          "https://www.booking.com/hotel/in/old-light-house-bristow-kochi.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "kochi",
+      "slot": "location",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Brunton Boatyard - CGH Earth",
+        "issue": "OK — Brunton Boatyard is a genuine CGH Earth heritage hotel on the Fort Kochi harbour. Keep; tighten copy."
+      },
+      "replacement": {
+        "name": "Brunton Boatyard — CGH Earth",
+        "tier": "luxury",
+        "tagline": "A CGH Earth heritage hotel on George Brunton's century-old boatyard site — all 26 rooms overlook the harbour beside the Chinese fishing nets, with the Anglo-Indian Armoury Cafe.",
+        "price_band": "₹₹₹₹",
+        "address": "Calvathy Road, Fort Kochi, Ernakulam 682001, Kerala",
+        "book_url": "https://www.cghearth.com/brunton-boatyard",
+        "sources": [
+          "https://www.cghearth.com/brunton-boatyard",
+          "https://www.tripadvisor.com/Hotel_Review-g297633-d325218-Reviews-Brunton_Boatyard_CGH_Earth-Kochi_Cochin_Ernakulam_District_Kerala.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "kochi",
+      "slot": "xfactor",
+      "verdict": "replace",
+      "existing": {
+        "name": "Forte Kochi",
+        "issue": "Likely a misspelling of Forte Kochi / Fort Kochi as a generic name rather than a verifiable distinct property. Re-anchor the xfactor to a clearly verifiable, distinctive Fort Kochi heritage property."
+      },
+      "replacement": {
+        "name": "Fort House Hotel",
+        "tier": "comfort",
+        "tagline": "A small waterfront heritage hotel on the Fort Kochi backwater — its own jetty, a courtyard restaurant on the water and a quiet, characterful position away from the tourist crush.",
+        "price_band": "₹₹₹",
+        "address": "2/6A Calvathy Road, Fort Kochi, Ernakulam 682001, Kerala",
+        "book_url": "https://www.forthousekochi.com/",
+        "sources": [
+          "https://www.forthousekochi.com/",
+          "https://www.tripadvisor.in/Hotel_Review-g297633-d609449-Reviews-Old_Harbour_Hotel-Kochi_Cochin_Ernakulam_District_Kerala.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "kollam",
+      "slot": "experience",
+      "verdict": "replace",
+      "existing": {
+        "name": "Taj Bekal",
+        "issue": "Cross-dest fabrication. Taj Bekal is in Kasaragod district, ~400km north of Kollam — not a Kollam experience pick. Re-anchor to a verified Kollam luxury property."
+      },
+      "replacement": {
+        "name": "Fragrant Nature Kollam",
+        "tier": "luxury",
+        "tagline": "A 4-star backwater resort on Paravur Lake at the edge of the Ashtamudi ecosystem — lake-view rooms, private pool villas, a spa and complimentary backwater boat rides.",
+        "price_band": "₹₹₹₹",
+        "address": "Paravur, Kollam district 691301, Kerala",
+        "book_url": "https://www.fragrantnature.com/paravur-kollam/",
+        "sources": [
+          "https://www.fragrantnature.com/paravur-kollam/",
+          "https://www.booking.com/hotel/in/fragrant-nature-retreat-resorts-pvt-ltd.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "kollam",
+      "slot": "value",
+      "verdict": "replace",
+      "existing": {
+        "name": "Fragrant Nature Homestay",
+        "issue": "Misnamed — Fragrant Nature is a 4-star resort brand, not a homestay; there is no 'Fragrant Nature Homestay'. The resort itself is used for the experience slot. Re-anchor the value slot to the verified KTDC government guesthouse."
+      },
+      "replacement": {
+        "name": "KTDC Yatri Nivas Kollam (Ashramam)",
+        "tier": "budget",
+        "tagline": "The Kerala Tourism guesthouse at the Ashramam Picnic Village on a 200-year-old colonial campus on the Ashtamudi backwater front — plain, inexpensive, government-run.",
+        "price_band": "₹₹",
+        "address": "Ashramam, Kollam 691002, Kerala",
+        "book_url": "https://www.ktdc.com/",
+        "sources": [
+          "https://www.ktdc.com/",
+          "https://www.keralacallingyou.com/kerala_keraladetails.php?kerala_id=8"
+        ]
+      }
+    },
+    {
+      "destination_id": "kollam",
+      "slot": "xfactor",
+      "verdict": "replace",
+      "existing": {
+        "name": "Houseboat stay via Kerala Backwaters (Munroe Island circuit)",
+        "issue": "Generic descriptor, not a bookable named property. The genuine Kollam xfactor is the Munroe Island backwater-island homestay experience — re-anchor to a concrete, verified property."
+      },
+      "replacement": {
+        "name": "The Island Homestay, Munroe Island",
+        "tier": "experience",
+        "tagline": "A 125-year-old home on Munroe Island, the largest island in Ashtamudi Lake — rustic Kerala village life, canoe rides through narrow canals and home-cooked food.",
+        "price_band": "₹₹",
+        "address": "Munroe Island, Kollam district 691502, Kerala",
+        "book_url": "https://www.homestaysofindia.com/kerala-kollam-the-island-homestay/",
+        "sources": [
+          "https://www.homestaysofindia.com/kerala-kollam-the-island-homestay/",
+          "https://www.heavenofmunroe.com/"
+        ]
+      }
+    },
+    {
+      "destination_id": "kollam",
+      "slot": "location",
+      "verdict": "replace",
+      "existing": {
+        "name": "Kollam Beach Hotel",
+        "issue": "Unverifiable generic name — no property called 'Kollam Beach Hotel' is listed on Booking/Tripadvisor/MMT. Re-anchor to a verified central Kollam property."
+      },
+      "replacement": {
+        "name": "Heaven of Munroe, Munroe Island",
+        "tier": "comfort",
+        "tagline": "A backwater homestay on Munroe Island with kayaking, canal boating and houseboat rides — a verified, well-reviewed location base for the Ashtamudi island circuit.",
+        "price_band": "₹₹",
+        "address": "Munroe Island, Kollam district 691502, Kerala",
+        "book_url": "https://www.heavenofmunroe.com/",
+        "sources": [
+          "https://www.heavenofmunroe.com/",
+          "https://www.booking.com/resorts/city/in/quilon.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "kovalam",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "The Leela Kovalam",
+        "issue": "Real — The Leela Kovalam (A Raviz Hotel) is a genuine clifftop 5-star at Kovalam. Keep; tighten name to current branding."
+      },
+      "replacement": {
+        "name": "The Leela Kovalam, A Raviz Hotel",
+        "tier": "luxury",
+        "tagline": "India's only clifftop 5-star — 67 acres above the Arabian Sea built around Halcyon Castle, the Travancore kings' summer residence, with a private beach and sea-facing infinity pool.",
+        "price_band": "₹₹₹₹",
+        "address": "Kovalam, Thiruvananthapuram district 695527, Kerala",
+        "book_url": "https://www.theleela.com/the-leela-kovalam-a-raviz-hotel",
+        "sources": [
+          "https://www.theleela.com/the-leela-kovalam-a-raviz-hotel",
+          "https://www.tripadvisor.in/Hotels-g311295-Kovalam_Thiruvananthapuram_District_Kerala-Hotels.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "kovalam",
+      "slot": "value",
+      "verdict": "replace",
+      "existing": {
+        "name": "Samudra Guesthouse",
+        "issue": "Misnamed — 'Samudra' at Kovalam is the KTDC Samudra Beach Resort, a 184-room beachfront resort, not a 'guesthouse'. Re-anchor and correct to the verified KTDC property."
+      },
+      "replacement": {
+        "name": "KTDC Samudra Beach Resort, Kovalam",
+        "tier": "comfort",
+        "tagline": "The Kerala Tourism beachfront resort on quiet Samudra Beach — built by the Queen of Travancore in the 1920s, sea-facing rooms, a lawn to the sand and a Santhigiri Ayurveda centre.",
+        "price_band": "₹₹₹",
+        "address": "Samudra Beach, Kovalam, Thiruvananthapuram district 695527, Kerala",
+        "book_url": "https://www.ktdc.com/samudra",
+        "sources": [
+          "https://www.ktdc.com/samudra",
+          "https://www.booking.com/hotel/in/ktdc-samudra-kovalam3.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "kovalam",
+      "slot": "location",
+      "verdict": "replace",
+      "existing": {
+        "name": "Tharavad Heritage Homestay",
+        "issue": "Generic recycled placeholder ('Tharavad Homestay' is reused for Beypore too) — not a verifiable named Kovalam property. Re-anchor to a verified Kovalam wellness/heritage property."
+      },
+      "replacement": {
+        "name": "Niraamaya Retreats Surya Samudra",
+        "tier": "luxury",
+        "tagline": "A 5-star Ayurvedic wellness resort on a cliff edge south of Kovalam — transplanted Keralite heritage cottages under coconut palms, with integrated Ayurveda and yoga programmes.",
+        "price_band": "₹₹₹₹",
+        "address": "Pulinkudi, Mullur P.O, Kovalam, Thiruvananthapuram district 695521, Kerala",
+        "book_url": "https://niraamaya.com/wellness-retreats/niraamaya-retreats-surya-samudra/",
+        "sources": [
+          "https://niraamaya.com/wellness-retreats/niraamaya-retreats-surya-samudra/",
+          "https://www.keralatourism.org/hotels/niraamaya-retreats-surya-samudra-kovalam/2314"
+        ]
+      }
+    },
+    {
+      "destination_id": "kovalam",
+      "slot": "xfactor",
+      "verdict": "replace",
+      "existing": {
+        "name": "Houseboat Heritage (Coconut Lagoon Backwaters, near Kovalam)",
+        "issue": "Cross-dest fabrication. Coconut Lagoon is a CGH Earth resort at Kumarakom on Vembanad Lake, ~150km north — there is no Coconut Lagoon backwater or houseboat product 'near Kovalam'. Kovalam is a sea-cliff beach destination, not a backwater. Re-anchor to a real Kovalam property."
+      },
+      "replacement": {
+        "name": "Taj Green Cove Resort & Spa, Kovalam",
+        "tier": "luxury",
+        "tagline": "A 16-acre Taj resort with a mile of coastline — Balinese-style villas on a hillock above the Arabian Sea around a lagoon. The distinctive sea-and-lagoon xfactor stay at Kovalam.",
+        "price_band": "₹₹₹₹",
+        "address": "GV Raja Vattappara Road, Kovalam, Thiruvananthapuram district 695527, Kerala",
+        "book_url": "https://www.tajhotels.com/en-in/hotels/taj-green-cove-resort-and-spa-kovalam",
+        "sources": [
+          "https://www.tajhotels.com/en-in/hotels/taj-green-cove-resort-and-spa-kovalam",
+          "https://www.tripadvisor.in/Hotels-g311295-zff8-Kovalam_Thiruvananthapuram_District_Kerala-Hotels.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "kozhikode",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Vivanta by Taj Kozhikode",
+        "issue": "Slightly mislabelled — the Taj property in Kozhikode is The Gateway Hotel Beach Road, Calicut (a Taj brand), not 'Vivanta by Taj Kozhikode'. Correct to the actual Taj property name."
+      },
+      "replacement": {
+        "name": "The Gateway Hotel Beach Road, Calicut (Taj)",
+        "tier": "luxury",
+        "tagline": "A Taj Gateway on Kozhikode's Beach Road — 74 rooms of old-world Kerala charm, an outdoor pool and an Ayurveda wellness centre, a short walk from the beach.",
+        "price_band": "₹₹₹₹",
+        "address": "PT Usha Road, Beach Road, Kozhikode 673032, Kerala",
+        "book_url": "https://www.tajhotels.com/en-in/hotels/the-gateway-hotel-beach-road-calicut",
+        "sources": [
+          "https://www.tajhotels.com/en-in/hotels/the-gateway-hotel-beach-road-calicut",
+          "https://www.tripadvisor.com/Hotel_Review-g297635-d304800-Reviews-The_Gateway_Hotel_Beach_Road_Kozhikode-Kozhikode_Kozhikode_District_Kerala.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "kozhikode",
+      "slot": "value",
+      "verdict": "replace",
+      "existing": {
+        "name": "The Raviz Arackal Island",
+        "issue": "Cross-dest mislabel. 'The Raviz' at Arackal/Ashtamudi island is the Raviz Kollam (Ashtamudi) property in Kollam district, far south — not a Kozhikode value pick. The Raviz Calicut is the Kozhikode property. Re-anchor."
+      },
+      "replacement": {
+        "name": "The Raviz Calicut",
+        "tier": "comfort",
+        "tagline": "Kozhikode's central 5-star on Mavoor Road — spacious rooms, two restaurants and a poolside bar, close to the railway station and markets. The convenient city-centre pick.",
+        "price_band": "₹₹₹",
+        "address": "Mavoor Road, Kozhikode 673016, Kerala",
+        "book_url": "https://www.theraviz.com/raviz-calicut/",
+        "sources": [
+          "https://www.theraviz.com/raviz-calicut/",
+          "https://www.hotels.com/ho626470/the-raviz-calicut-kozhikode-india/"
+        ]
+      }
+    },
+    {
+      "destination_id": "kozhikode",
+      "slot": "location",
+      "verdict": "replace",
+      "existing": {
+        "name": "Malabar Palace Hotel",
+        "issue": "Likely a name-mangle — 'Hotel Malabar Palace' is a long-running Kozhikode hotel but the listing is weak/ambiguous on major platforms. Re-anchor the location slot to the verified heritage Ayurveda homestead in the city, a clearer pick."
+      },
+      "replacement": {
+        "name": "Harivihar Heritage Homestead",
+        "tier": "comfort",
+        "tagline": "A 150-year-old ancestral home of a branch of the Kadathanad royal family, run as a heritage Ayurveda homestead — a temple tank, classical-arts evenings and authentic treatments.",
+        "price_band": "₹₹₹",
+        "address": "Bilathikkulam, Kozhikode 673006, Kerala",
+        "book_url": "https://www.harivihar.com/",
+        "sources": [
+          "https://www.harivihar.com/",
+          "https://www.travelmyth.com/Kozhikode/Hotels"
+        ]
+      }
+    },
+    {
+      "destination_id": "kozhikode",
+      "slot": "xfactor",
+      "verdict": "replace",
+      "existing": {
+        "name": "Wayanad Silverwoods",
+        "issue": "Cross-dest fabrication. Wayanad Silverwoods is a resort in Wayanad district (hill country), not Kozhikode (coastal city), ~75km away. Re-anchor to a verified Kozhikode-area property."
+      },
+      "replacement": {
+        "name": "The Raviz Kadavu, Kozhikode",
+        "tier": "luxury",
+        "tagline": "A riverside Malabar resort on the Chaliyar backwaters near Kozhikode — Kalari, Ayurveda and a distinctive backwater-resort feel within reach of the city and Beypore.",
+        "price_band": "₹₹₹₹",
+        "address": "Kadavu, NH Bypass, Azhinjilam, Kozhikode 673632, Kerala",
+        "book_url": "https://www.theraviz.com/the-raviz-kadavu-kozhikode/",
+        "sources": [
+          "https://www.theraviz.com/the-raviz-kadavu-kozhikode/",
+          "https://www.tripadvisor.com/Hotels-g297635-zff10-Kozhikode_Kozhikode_District_Kerala-Hotels.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "kumarakom",
+      "slot": "value",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Kumarakom Lake Resort",
+        "issue": "Real, but Kumarakom Lake Resort is a top-tier ₹₹₹₹ luxury property — wrong fit for the value slot. Move it to the experience slot and fill value with a genuine mid-range Kumarakom property."
+      },
+      "replacement": {
+        "name": "Coconut Lagoon — CGH Earth",
+        "tier": "comfort",
+        "tagline": "A CGH Earth eco-resort reachable only by boat, built from transplanted heritage tharavad homes on Vembanad Lake — organic Kerala cuisine and a strong sustainability ethos. The nature-led pick.",
+        "price_band": "₹₹₹₹",
+        "address": "Kumarakom, Kottayam district 686563, Kerala",
+        "book_url": "https://www.cghearth.com/coconut-lagoon",
+        "sources": [
+          "https://www.cghearth.com/coconut-lagoon",
+          "https://www.tripadvisor.com/Hotel_Review-g678552-d1082021-Reviews-Coconut_Lagoon_CGH_Earth-Kumarakom_Kottayam_District_Kerala.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "kumarakom",
+      "slot": "location",
+      "verdict": "replace",
+      "existing": {
+        "name": "Waterfront homestays near Kumarakom Bird Sanctuary entrance",
+        "issue": "Generic descriptor, not a bookable named property. Re-anchor to the verified luxury lakefront resort beside the bird sanctuary."
+      },
+      "replacement": {
+        "name": "Taj Kumarakom Resort & Spa",
+        "tier": "luxury",
+        "tagline": "A 5-star on 15 acres of Vembanad lakefront, built around an 1881 missionary's bungalow right beside the Kumarakom bird sanctuary — 28 villas, the J Wellness Circle and kayaking.",
+        "price_band": "₹₹₹₹",
+        "address": "1/404, Kumarakom, Kottayam district 686563, Kerala",
+        "book_url": "https://www.tajhotels.com/en-in/hotels/taj-kumarakom-kerala",
+        "sources": [
+          "https://www.tajhotels.com/en-in/hotels/taj-kumarakom-kerala",
+          "https://www.expedia.com/Kumarakom-Hotels-Taj-Kumarakom-Resort-Spa.h526358.Hotel-Information"
+        ]
+      }
+    },
+    {
+      "destination_id": "kumarakom",
+      "slot": "xfactor",
+      "verdict": "replace",
+      "existing": {
+        "name": "Spice Village houseboats (Kettuvallams)",
+        "issue": "Mislabel. 'Spice Village' is a CGH Earth resort in Thekkady (Periyar), not a Kumarakom houseboat operator. The genuine Kumarakom xfactor is the Vembanad Lake kettuvallam houseboat — re-anchor to a concrete, verified product."
+      },
+      "replacement": {
+        "name": "Kumarakom Vembanad Houseboat (KTDC & licensed operators)",
+        "tier": "experience",
+        "tagline": "An overnight kettuvallam houseboat on Vembanad Lake — bedrooms, deck and an onboard crew, cruising the wider lake and the bird-sanctuary fringe. KTDC and licensed operators depart from Kumarakom.",
+        "price_band": "₹₹₹",
+        "address": "Kumarakom boat jetty, Kottayam district 686563, Kerala",
+        "book_url": "https://www.ktdc.com/houseboats",
+        "sources": [
+          "https://www.ktdc.com/houseboats",
+          "https://www.tajhotels.com/en-in/hotels/taj-kumarakom-kerala/places-to-visit/kettuvallam-houseboat-cruise-kumarakom-kerala"
+        ]
+      }
+    },
+    {
+      "destination_id": "kumarakom",
+      "slot": "experience",
+      "verdict": "replace",
+      "existing": {
+        "name": "The Leela Kerala, Kumarakom",
+        "issue": "Ghost. There is no Leela property in Kumarakom — The Leela's Kerala backwater hotel is The Leela Ashtamudi (Kollam district) and The Leela Kovalam. No Leela exists at Kumarakom. Re-anchor to the genuine Kumarakom flagship."
+      },
+      "replacement": {
+        "name": "Kumarakom Lake Resort",
+        "tier": "luxury",
+        "tagline": "Often cited among India's best resorts — meandering pool villas, an Ayurvedic spa and three restaurants on Vembanad Lake, built around transplanted heritage Kerala homes.",
+        "price_band": "₹₹₹₹",
+        "address": "Kumarakom North P.O, Kottayam district 686566, Kerala",
+        "book_url": "https://www.kumarakomlakeresort.in/",
+        "sources": [
+          "https://www.kumarakomlakeresort.in/",
+          "https://www.tripexpert.com/kerela/hotels/coconut-lagoon-vs-kumarakom-lake-resort"
+        ]
+      }
+    },
+    {
+      "destination_id": "kumbalangi",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Gramam Homestay",
+        "issue": "Real — Gramam Homestay (Neduveli House) is a genuine backwater-facing homestay in Kumbalangi's model village. Keep; tighten copy."
+      },
+      "replacement": {
+        "name": "Gramam Homestay (Neduveli House)",
+        "tier": "comfort",
+        "tagline": "A backwater-facing village homestay in Kumbalangi's model fishing village — sunset canoe trips, prawn-farm visits and boat tours of village life, 10km from Kochi.",
+        "price_band": "₹₹",
+        "address": "Kumbalangi, Kochi, Ernakulam district 682007, Kerala",
+        "book_url": "https://www.kerala.com/destination-sites/kumbalangi/gramam-homestay/",
+        "sources": [
+          "https://www.kerala.com/destination-sites/kumbalangi/gramam-homestay/",
+          "https://homestaykerala.org/kumblagi/"
+        ]
+      }
+    },
+    {
+      "destination_id": "kumbalangi",
+      "slot": "value",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Kallancherry Retreat",
+        "issue": "Real — Kallancherry Retreat is a genuine KTDC Diamond-category homestay on the Kumbalangi backwaters. Keep; tighten copy."
+      },
+      "replacement": {
+        "name": "Kallancherry Retreat",
+        "tier": "comfort",
+        "tagline": "A backwater-surrounded homestay on 3 acres in Kumbalangi — family, river and stilt cottages plus homestay rooms, a KTDC Diamond-category property in the model fishing village.",
+        "price_band": "₹₹",
+        "address": "Kumbalangi, Kochi, Ernakulam district 682007, Kerala",
+        "book_url": "https://kallancheryretreat.com/",
+        "sources": [
+          "https://kallancheryretreat.com/",
+          "http://kerala.com/kumbalangi/kallancherry-retreat/"
+        ]
+      }
+    },
+    {
+      "destination_id": "kumbalangi",
+      "slot": "xfactor",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "JC Den Villa by VOYE HOMES",
+        "issue": "Unverifiable as a Kumbalangi property — 'JC Den Villa by VOYE HOMES' does not surface as a Kumbalangi listing; VOYE HOMES is a managed-villa aggregator with properties scattered across Kerala. Kumbalangi is a small model fishing village with only a handful of homestays (the genuine ones are used for experience and value). No distinct tier-1/2 xfactor property. Honest-scarcity."
+      }
+    },
+    {
+      "destination_id": "kuttanad",
+      "slot": "experience",
+      "verdict": "replace",
+      "existing": {
+        "name": "Taj Kumarakom",
+        "issue": "Cross-dest mislabel. Taj Kumarakom is in Kumarakom (Kottayam district), a separate destination — not Kuttanad. Re-anchor to the genuine, celebrated Kuttanad backwater homestay."
+      },
+      "replacement": {
+        "name": "Philipkutty's Farm",
+        "tier": "luxury",
+        "tagline": "Seven waterfront cottages run by a family on a private island reclaimed from Vembanad Lake — communal home-cooked Kuttanad feasts, farm tours and traditional-boat backwater rides.",
+        "price_band": "₹₹₹₹",
+        "address": "Pallam, Vechoor P.O, Kuttanad, Kottayam district 686144, Kerala",
+        "book_url": "https://philipkuttysfarm.com/",
+        "sources": [
+          "https://philipkuttysfarm.com/",
+          "https://www.i-escape.com/philipkuttys-farm"
+        ]
+      }
+    },
+    {
+      "destination_id": "kuttanad",
+      "slot": "value",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Philipkutty's Farm",
+        "issue": "Real, but Philipkutty's Farm is a top-tier ₹₹₹₹ homestay — wrong fit for the value slot, and now used for experience. Move the value slot to a genuine mid-range Kuttanad property."
+      },
+      "replacement": {
+        "name": "Paloma Backwater Resorts, Kainakary",
+        "tier": "comfort",
+        "tagline": "A backwater resort among the paddy fields and coconut groves of Kainakary, in the heart of Kuttanad's below-sea-level rice country — a verified property in a region thin on fixed stays.",
+        "price_band": "₹₹₹",
+        "address": "Kainakary, Kuttanad, Alappuzha district 688501, Kerala",
+        "book_url": "https://palomabackwaterresorts.com/",
+        "sources": [
+          "https://palomabackwaterresorts.com/",
+          "https://www.tripadvisor.com/Hotel_Review-g12440281-d11679539-Reviews-Paloma_Backwater_Resorts-Kainakary_Alappuzha_District_Kerala.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "kuttanad",
+      "slot": "location",
+      "verdict": "replace",
+      "existing": {
+        "name": "Kumbalangi Nights",
+        "issue": "Not a property at all — 'Kumbalangi Nights' is a 2019 Malayalam film. And Kumbalangi is a separate destination near Kochi, not Kuttanad. Re-anchor to a verified Kuttanad-area property."
+      },
+      "replacement": {
+        "name": "Citrus Backwaters & Spa Resort, Alleppey (Kuttanad fringe)",
+        "tier": "comfort",
+        "tagline": "A 32-room backwater-and-spa resort on the Alleppey/Kuttanad fringe with a pool and wellness area — the practical fixed-base location pick for exploring the Kuttanad rice belt.",
+        "price_band": "₹₹₹",
+        "address": "Alappuzha, Kerala (Kuttanad fringe)",
+        "book_url": "https://citrus-retreats-alleppey.kerala-hotels.net/en/",
+        "sources": [
+          "https://citrus-retreats-alleppey.kerala-hotels.net/en/",
+          "https://www.keralabackwater.com/alleppey/kuttanad.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "kuttanad",
+      "slot": "xfactor",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Vembanad Lake Houseboat (via Alleppey operators)",
+        "issue": "Broadly OK — the kettuvallam houseboat on Vembanad Lake / the Kuttanad canals is the genuine xfactor of the rice belt. Tighten to a concrete, KTDC-anchored bookable product."
+      },
+      "replacement": {
+        "name": "Kuttanad Kettuvallam Houseboat (KTDC & licensed operators)",
+        "tier": "experience",
+        "tagline": "An overnight kettuvallam houseboat cruising the Kuttanad canals and Vembanad Lake — drifting past below-sea-level paddy, village churches and toddy shops. KTDC and licensed operators run from Alleppey.",
+        "price_band": "₹₹₹",
+        "address": "Alleppey / Kuttanad canals, Alappuzha district, Kerala",
+        "book_url": "https://www.ktdc.com/houseboats",
+        "sources": [
+          "https://www.ktdc.com/houseboats",
+          "https://www.keralabackwater.com/alleppey/kuttanad.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "marari",
+      "slot": "location",
+      "verdict": "replace",
+      "existing": {
+        "name": "Marari Beach Homestay",
+        "issue": "Generic descriptor, not a single verifiable named property. Re-anchor to a verified Marari beach property."
+      },
+      "replacement": {
+        "name": "Marari Sands Beach Resort",
+        "tier": "comfort",
+        "tagline": "A premium beach resort of individual cottages and villas, each with a private garden for sunrise and sunset views, plus an Ayurvedic spa — the resort-style alternative on Marari Beach.",
+        "price_band": "₹₹₹",
+        "address": "Mararikulam, Alappuzha district 688549, Kerala",
+        "book_url": "https://www.mararisandsbeachresort.com/",
+        "sources": [
+          "https://www.mararisandsbeachresort.com/",
+          "https://www.booking.com/resorts/city/in/mararikulam.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "marari",
+      "slot": "value",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Marari Nest Beach Homestay",
+        "issue": "Unverifiable named property — 'Marari Nest Beach Homestay' does not surface as a distinct verifiable listing on major platforms. Marari has a real cluster of small beach homestays but none verifiable enough by exact name for this slot. Honest-scarcity for the value slot."
+      }
+    },
+    {
+      "destination_id": "marari",
+      "slot": "xfactor",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Marari Bella Casa",
+        "issue": "Unverifiable named property — 'Marari Bella Casa' does not surface as a verifiable Marari listing. The genuine Marari xfactor (the CGH Earth fishing-village eco-resort) is used for the experience slot. No distinct tier-1/2 xfactor property. Honest-scarcity."
+      }
+    },
+    {
+      "destination_id": "marari",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Marari Beach Resort – CGH Earth",
+        "issue": "OK — Marari Beach Resort by CGH Earth is a genuine flagship eco-resort on Marari Beach. Keep; tighten copy."
+      },
+      "replacement": {
+        "name": "Marari Beach Resort — CGH Earth",
+        "tier": "luxury",
+        "tagline": "CGH Earth's flagship beach eco-resort — thatched villas with private pools among coconut groves and lotus ponds, on a beach National Geographic rated among the world's top hammock beaches.",
+        "price_band": "₹₹₹₹",
+        "address": "Mararikulam, Alappuzha district 688549, Kerala",
+        "book_url": "https://www.cghearth.com/marari-beach",
+        "sources": [
+          "https://www.cghearth.com/marari-beach",
+          "https://www.tripadvisor.com/Hotel_Review-g3171875-d1603527-Reviews-Marari_Beach_CGH_Earth-Mararikulam_Alappuzha_District_Kerala.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "munnar",
+      "slot": "location",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "The Tall Trees",
+        "issue": "Real — The Tall Trees is a genuine secluded 4-star nature resort near Munnar. Keep; tighten copy."
+      },
+      "replacement": {
+        "name": "The Tall Trees Munnar",
+        "tier": "comfort",
+        "tagline": "A secluded 4-star nature resort with 25 garden-view rooms among tall evergreen forest in the misty Western Ghats — woodland cottages near Sengulam Dam.",
+        "price_band": "₹₹₹",
+        "address": "Bison Valley Road, Munnar, Idukki district 685612, Kerala",
+        "book_url": "https://www.ttr.in/",
+        "sources": [
+          "https://www.ttr.in/",
+          "https://www.enchantingtravels.com/hotels/munnar/the-tall-trees/"
+        ]
+      }
+    },
+    {
+      "destination_id": "munnar",
+      "slot": "xfactor",
+      "verdict": "replace",
+      "existing": {
+        "name": "Tea Garden Homestay",
+        "issue": "Generic recycled placeholder ('Tea Garden Homestay' is reused for Eravikulam too) — not a verifiable named property. Re-anchor the distinctive slot to the genuine tea-estate plantation stay."
+      },
+      "replacement": {
+        "name": "Windermere Estate, Munnar",
+        "tier": "experience",
+        "tagline": "An intimate 18-room plantation retreat around the original Planter's Bungalow on a working cardamom-and-coffee estate — locally sourced cuisine and a 4km plantation walk. Munnar's defining estate stay.",
+        "price_band": "₹₹₹₹",
+        "address": "Pothamedu, Munnar, Idukki district 685612, Kerala",
+        "book_url": "https://windermeremunnar.com/",
+        "sources": [
+          "https://windermeremunnar.com/",
+          "https://www.scottdunn.com/us/india/hotels/windermere-estate"
+        ]
+      }
+    },
+    {
+      "destination_id": "munnar",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Windermere Estate",
+        "issue": "Real — Windermere Estate is a genuine plantation retreat in Munnar, but it is now used for the xfactor slot. Move the experience slot to another verified upscale Munnar property to avoid duplication."
+      },
+      "replacement": {
+        "name": "The Tall Trees Munnar",
+        "tier": "luxury",
+        "tagline": "A secluded forest resort among tall evergreens in the misty Western Ghats — a quiet, tree-canopy luxury experience as a counterpoint to Munnar's open tea-estate stays.",
+        "price_band": "₹₹₹",
+        "address": "Bison Valley Road, Munnar, Idukki district 685612, Kerala",
+        "book_url": "https://www.ttr.in/",
+        "sources": [
+          "https://www.ttr.in/",
+          "https://the-tall-trees.hotels-munnar.com/en/"
+        ]
+      }
+    },
+    {
+      "destination_id": "munnar",
+      "slot": "value",
+      "verdict": "replace",
+      "existing": {
+        "name": "Tea County Resort",
+        "issue": "Real property (KTDC Tea County) but loosely named — and Tea County is a premium KTDC hill resort, sitting above pure value tier. Tighten the name; keep it as the dependable mid-range government anchor."
+      },
+      "replacement": {
+        "name": "KTDC Tea County Munnar",
+        "tier": "comfort",
+        "tagline": "The Kerala Tourism premium hill resort and 'official host' in Munnar — cottages between two hills among tea gardens, mist-draped mornings and a central position for the hill station's sights.",
+        "price_band": "₹₹₹",
+        "address": "KTDC Hill Resort, Munnar, Idukki district 685612, Kerala",
+        "book_url": "https://www.ktdc.com/tea-county",
+        "sources": [
+          "https://www.ktdc.com/tea-county",
+          "https://www.keralatourism.org/resorts/tea-county-ktdc/2323"
+        ]
+      }
+    },
+    {
+      "destination_id": "nelliyampathy",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "VANYA by Citrine",
+        "issue": "Broadly OK — VANYA by Citrine is a real resort brand present in the Nelliyampathy area. Keep; verify and tighten copy as the upper-tier pick on a thinly developed plateau."
+      },
+      "replacement": {
+        "name": "VANYA by Citrine, Nelliyampathy",
+        "tier": "comfort",
+        "tagline": "An upscale resort on the Nelliyampathy plateau among the coffee-and-cardamom hills — the most contemporary stay in a hill area otherwise dominated by working-estate properties.",
+        "price_band": "₹₹₹",
+        "address": "Nelliyampathy, Palakkad district 678508, Kerala",
+        "book_url": "https://www.tripadvisor.com/Hotels-g2294765-Nelliyampathy_Palakkad_District_Kerala-Hotels.html",
+        "sources": [
+          "https://www.tripadvisor.com/Hotels-g2294765-Nelliyampathy_Palakkad_District_Kerala-Hotels.html",
+          "https://www.booking.com/city/in/nelliyampathy.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "nelliyampathy",
+      "slot": "xfactor",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Misty Valley Hill Resort",
+        "issue": "Real — Misty Valley Hill Resort is a genuine plantation stay within the 914-acre Anamada Estate at Nelliyampathy. Keep; tighten copy."
+      },
+      "replacement": {
+        "name": "Misty Valley Hill Resort, Nelliyampathy",
+        "tier": "experience",
+        "tagline": "A plantation stay within the 914-acre Anamada Estate of coffee, cardamom and orange — spectacular Western Ghats views, plantation walks and night safaris for bison and sambar deer.",
+        "price_band": "₹₹₹",
+        "address": "Anamada Estate, Nelliyampathy, Palakkad district 678508, Kerala",
+        "book_url": "https://www.nelliyampathyresort.in/",
+        "sources": [
+          "https://www.nelliyampathyresort.in/",
+          "https://www.tripadvisor.in/Hotel_Review-g2294765-d3653926-Reviews-Misty_Valley_Hill_Resort-Nelliyampathy_Palakkad_District_Kerala.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "nelliyampathy",
+      "slot": "value",
+      "verdict": "replace",
+      "existing": {
+        "name": "Hill Valley Farm House",
+        "issue": "Unverifiable generic name — 'Hill Valley Farm House' does not surface as a distinct verifiable Nelliyampathy listing. Re-anchor to a verified Nelliyampathy coffee-estate resort."
+      },
+      "replacement": {
+        "name": "Coffee Valley Resort, Nelliyampathy",
+        "tier": "budget",
+        "tagline": "A well-rated Nelliyampathy resort set amid the misty hills and a coffee estate — jeep safaris, bird-watching, trekking and campfires. The reliable value pick for the plateau.",
+        "price_band": "₹₹",
+        "address": "Nelliyampathy, Palakkad district 678508, Kerala",
+        "book_url": "https://coffeevalleyresorts.com/",
+        "sources": [
+          "https://coffeevalleyresorts.com/",
+          "https://www.tripadvisor.com/Hotels-g2294765-Nelliyampathy_Palakkad_District_Kerala-Hotels.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "ponmudi",
+      "slot": "experience",
+      "verdict": "replace",
+      "existing": {
+        "name": "Ponmudi Hill Resort",
+        "issue": "Generic descriptor, not a verifiable named property. KTDC explicitly states its Golden Peak resort is the only accommodation on the Ponmudi hill itself. Re-anchor to the verified KTDC property."
+      },
+      "replacement": {
+        "name": "KTDC Golden Peak Ponmudi",
+        "tier": "comfort",
+        "tagline": "The Kerala Tourism hill resort at the Ponmudi top station — 15 cottage-style and standard rooms with a restaurant, trekking and private campfires, among mountain flowers and butterflies.",
+        "price_band": "₹₹",
+        "address": "Ponmudi Hill Resort, Thiruvananthapuram district 695551, Kerala",
+        "book_url": "https://www.ktdc.com/golden-peak",
+        "sources": [
+          "https://www.ktdc.com/golden-peak",
+          "https://www.tripadvisor.com/Hotel_Review-g1307937-d2085230-Reviews-or30-Ktdc_Golden_Peak_Ponmudi-Ponmudi_Thiruvananthapuram_District_Kerala.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "ponmudi",
+      "slot": "value",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Ponmudi Lake View Homestay",
+        "issue": "Unverifiable generic name — 'Ponmudi Lake View Homestay' does not surface as a distinct verifiable listing, and there is no lake at Ponmudi. KTDC Golden Peak is effectively the only accommodation on the Ponmudi hill (used for experience). Value-tier stays would be down-mountain in Kallar/Vithura. No verifiable tier-1/2 value property on the hill. Honest-scarcity."
+      }
+    },
+    {
+      "destination_id": "ponmudi",
+      "slot": "location",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Ponmudi Hilltop Inn",
+        "issue": "Unverifiable generic name — 'Ponmudi Hilltop Inn' does not surface as a distinct verifiable property. KTDC Golden Peak (used for experience) is the only verified hill-top accommodation. No second verifiable location-slot property on the Ponmudi hill. Honest-scarcity."
+      }
+    },
+    {
+      "destination_id": "ponmudi",
+      "slot": "xfactor",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Ponmudi Treehouse Stays",
+        "issue": "Generic descriptor, not a verifiable named property — no verifiable treehouse-stay operation exists at Ponmudi. KTDC Golden Peak is the only accommodation on the hill. No distinct tier-1/2 xfactor property. Honest-scarcity."
+      }
+    },
+    {
+      "destination_id": "poovar",
+      "slot": "value",
+      "verdict": "replace",
+      "existing": {
+        "name": "Poovar Beach Resort",
+        "issue": "Generic descriptor, not a single verifiable named property. Re-anchor to a verified Poovar-area property."
+      },
+      "replacement": {
+        "name": "The Travancore Heritage Beach Resort",
+        "tier": "comfort",
+        "tagline": "A heritage resort on 15 acres at Chowara, conceived from 60-100-year-old timber Nalukettu houses dismantled across Travancore and rebuilt on a clifftop — 90 rooms, four pools, Ayurveda and yoga.",
+        "price_band": "₹₹₹₹",
+        "address": "Poovar-Vizhinjam Road, Adimalathura, Chowara, Kottukal 695501, Kerala",
+        "book_url": "https://www.thetravancoreheritage.com/",
+        "sources": [
+          "https://www.thetravancoreheritage.com/",
+          "https://www.keralatourism.org/resorts/the-travancore-heritage-beach-resort/2453"
+        ]
+      }
+    },
+    {
+      "destination_id": "poovar",
+      "slot": "location",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Travancore Heritage",
+        "issue": "Real — The Travancore Heritage Beach Resort is a genuine heritage resort near Poovar. But it is now used for the value slot. Move the location slot to another verified Poovar-area property to avoid duplication."
+      },
+      "replacement": {
+        "name": "Estuary Island Resort, Poovar",
+        "tier": "comfort",
+        "tagline": "An island resort on the Poovar estuary where the Neyyar river meets the sea — boat access, backwater-and-sea views and a quiet position, a verified alternative location base in Poovar.",
+        "price_band": "₹₹₹",
+        "address": "Pozhiyoor, Poovar, Thiruvananthapuram district 695513, Kerala",
+        "book_url": "https://www.tripadvisor.in/Hotels-g951922-Poovar_Thiruvananthapuram_District_Kerala-Hotels.html",
+        "sources": [
+          "https://www.tripadvisor.in/Hotels-g951922-Poovar_Thiruvananthapuram_District_Kerala-Hotels.html",
+          "https://www.expedia.com/Poovar-Hotels.d6053211.Travel-Guide-Hotels"
+        ]
+      }
+    },
+    {
+      "destination_id": "poovar",
+      "slot": "xfactor",
+      "verdict": "replace",
+      "existing": {
+        "name": "Poovar Houseboat Stays",
+        "issue": "Generic descriptor, not a bookable named property. Poovar's genuine xfactor is the floating-cottage stay on the estuary — re-anchor to a concrete verified property."
+      },
+      "replacement": {
+        "name": "Poovar Island Resort (Floating Cottages)",
+        "tier": "experience",
+        "tagline": "Signature floating cottages afloat on the Poovar backwater facing the sea — a boat-access island resort on 25 acres of coconut garden where the river meets the Arabian Sea.",
+        "price_band": "₹₹₹₹",
+        "address": "Poovar, Thiruvananthapuram district 695513, Kerala",
+        "book_url": "https://www.poovarislandresorts.com/",
+        "sources": [
+          "https://www.poovarislandresorts.com/",
+          "https://www.tripadvisor.in/Hotel_Review-g951922-d319634-Reviews-Poovar_Island_Resort-Poovar_Thiruvananthapuram_District_Kerala.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "poovar",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Poovar Island Resort",
+        "issue": "Real — Poovar Island Resort is a genuine boat-access island resort and Tripadvisor's #1 in Poovar. Keep; tighten copy."
+      },
+      "replacement": {
+        "name": "Poovar Island Resort",
+        "tier": "luxury",
+        "tagline": "A boat-access island resort on 25 acres of coconut garden where the Neyyar river meets the Arabian Sea — land-based superior rooms plus floating cottages. Tripadvisor's #1 Poovar resort.",
+        "price_band": "₹₹₹₹",
+        "address": "Poovar, Thiruvananthapuram district 695513, Kerala",
+        "book_url": "https://www.poovarislandresorts.com/",
+        "sources": [
+          "https://www.poovarislandresorts.com/",
+          "https://www.heritagehotelsofindia.com/kerala/poovar-island-resort.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "sabarimala",
+      "slot": "experience",
+      "verdict": "replace",
+      "existing": {
+        "name": "Taj Garden Retreat, Kumarakom",
+        "issue": "Cross-dest fabrication. Taj Garden Retreat (now Taj Kumarakom) is in Kumarakom, ~120km from Sabarimala — irrelevant to a forest pilgrim shrine. Sabarimala is a protected forest temple with no luxury accommodation; only TDB pilgrim lodging exists. Re-anchor to the genuine pilgrim accommodation at Pampa."
+      },
+      "replacement": {
+        "name": "Travancore Devaswom Board Pilgrim Accommodation, Pampa",
+        "tier": "budget",
+        "tagline": "The cluster of Travancore Devaswom Board government guest houses and dormitories at Pampa — the main base before the trek, closest to the river crossing and the steps. Spartan, official, seasonal.",
+        "price_band": "₹",
+        "address": "Pampa, Pathanamthitta district, Kerala",
+        "book_url": "https://travancoredevaswomboard.org/2012/10/09/sabarimala-accommodation/",
+        "sources": [
+          "https://travancoredevaswomboard.org/2012/10/09/sabarimala-accommodation/",
+          "https://sabarimala.kerala.gov.in/accommodation"
+        ]
+      }
+    },
+    {
+      "destination_id": "sabarimala",
+      "slot": "value",
+      "verdict": "replace",
+      "existing": {
+        "name": "Vrindavan Garden Homestay, Pathanamthitta",
+        "issue": "Unverifiable named property — 'Vrindavan Garden Homestay, Pathanamthitta' does not surface as a verifiable listing (Vrindavan Garden is a name strongly associated with Mysore, Karnataka). Re-anchor to verified pilgrim accommodation."
+      },
+      "replacement": {
+        "name": "Sabari Guest House, Sabarimala",
+        "tier": "budget",
+        "tagline": "A guesthouse serving Sabarimala pilgrims, listed on Tripadvisor — basic pilgrim-grade rooms in the Sannidhanam/Pampa pilgrim cluster, a verified option for the trek base.",
+        "price_band": "₹",
+        "address": "Sabarimala, Pathanamthitta district, Kerala",
+        "book_url": "https://www.tripadvisor.in/Hotel_Review-g2282355-d7916001-Reviews-Sabari_Guest_House-Sabarimala_Pathanamthitta_District_Kerala.html",
+        "sources": [
+          "https://www.tripadvisor.in/Hotel_Review-g2282355-d7916001-Reviews-Sabari_Guest_House-Sabarimala_Pathanamthitta_District_Kerala.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "sabarimala",
+      "slot": "location",
+      "verdict": "replace",
+      "existing": {
+        "name": "Aardra Homes, Nilackal",
+        "issue": "Unverifiable named property — 'Aardra Homes, Nilackal' does not surface as a verifiable listing. Nilackal is the transit/parking base with only TDB government dormitories and tented camps. Re-anchor to the verified TDB transit accommodation."
+      },
+      "replacement": {
+        "name": "Travancore Devaswom Board Transit Accommodation, Nilackal",
+        "tier": "budget",
+        "tagline": "The Travancore Devaswom Board transit base at Nilackal — the main vehicle parking point with government dormitories, community halls and seasonal tented camps; shuttle buses run to Pampa.",
+        "price_band": "₹",
+        "address": "Nilackal, Pathanamthitta district, Kerala",
+        "book_url": "https://sabarimala.kerala.gov.in/accommodation",
+        "sources": [
+          "https://sabarimala.kerala.gov.in/accommodation",
+          "https://travancoredevaswomboard.org/category/accm/"
+        ]
+      }
+    },
+    {
+      "destination_id": "sabarimala",
+      "slot": "xfactor",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Spice Garden Treehouse, Thekkady",
+        "issue": "Generic recycled placeholder, and cross-dest — Thekkady is ~70km from Sabarimala. Sabarimala is a protected forest pilgrim shrine; the only accommodation is TDB pilgrim lodging at Sannidhanam/Pampa/Nilackal, strictly seasonal during Mandala/Makaravilakku. No tier-1/2 xfactor property exists or can exist here. Honest-scarcity."
+      }
+    },
+    {
+      "destination_id": "silent-valley",
+      "slot": "value",
+      "verdict": "replace",
+      "existing": {
+        "name": "Silent Valley Bamboo Hut / Farm Stay (Cheerakkadavu)",
+        "issue": "Unverifiable named property — 'Silent Valley Bamboo Hut / Farm Stay (Cheerakkadavu)' does not surface as a verifiable listing. Silent Valley is a strict core national park; accommodation is limited to Forest Department facilities at the Mukkali gateway. Re-anchor to the verified KFD rest house."
+      },
+      "replacement": {
+        "name": "Mukkali Forest Rest House (Kerala Forest Department)",
+        "tier": "budget",
+        "tagline": "The Forest Department rest house at Mukkali, the gateway settlement for Silent Valley National Park — basic but comfortable rooms with an Information Centre, the staging point for the Sairandhri jeep trip.",
+        "price_band": "₹₹",
+        "address": "Mukkali, Mannarkkad, Palakkad district 678582, Kerala",
+        "book_url": "http://silentvalley.gov.in/",
+        "sources": [
+          "http://silentvalley.gov.in/",
+          "https://www.keralatourism.org/ecotourism/trekking-programs/trek-silent-valley/1"
+        ]
+      }
+    },
+    {
+      "destination_id": "silent-valley",
+      "slot": "experience",
+      "verdict": "replace",
+      "existing": {
+        "name": "Treetop Resort",
+        "issue": "Generic descriptor, not a verifiable named property — no 'Treetop Resort' is verifiable at Silent Valley. The park core has no accommodation; only KFD eco-tourism camps in the buffer. Re-anchor to the verified Forest Department eco-camp."
+      },
+      "replacement": {
+        "name": "Bommiyampadi Eco-Camp (Kerala Forest Department)",
+        "tier": "experience",
+        "tagline": "A Forest Department eco-tourism camp at Bommiyampadi in the Silent Valley buffer — a forest-front cottage and tent accommodation, paired with the Sairandhri programme into the core rainforest.",
+        "price_band": "₹₹",
+        "address": "Bommiyampadi, Silent Valley buffer, Palakkad district, Kerala",
+        "book_url": "https://www.keralatourism.org/ecotourism/trekking-programs/trek-silent-valley/1",
+        "sources": [
+          "https://www.keralatourism.org/ecotourism/trekking-programs/trek-silent-valley/1",
+          "http://silentvalley.gov.in/"
+        ]
+      }
+    },
+    {
+      "destination_id": "silent-valley",
+      "slot": "xfactor",
+      "verdict": "replace",
+      "existing": {
+        "name": "Sterling Anaikatti",
+        "issue": "Cross-dest / cross-state mislocation. Sterling Anaikatti is in the Anaikatti hills on the Tamil Nadu border near Coimbatore — not Silent Valley (Mannarkkad/Mukkali side), and on the wrong side of the Western Ghats. Silent Valley accommodation is Forest Department only. Honest-scarcity is the honest call for a distinct xfactor."
+      },
+      "replacement": {
+        "name": "Mannarkkad / Attappadi homestays (Silent Valley gateway villages)",
+        "tier": "budget",
+        "tagline": "Small homestays and eco-lodges in the gateway villages of Mannarkkad and Attappadi — tribal-area stays offering traditional Kerala cuisine and sustainable village life, the realistic non-Forest-Department option near Silent Valley.",
+        "price_band": "₹₹",
+        "address": "Mannarkkad / Attappadi, Palakkad district, Kerala",
+        "book_url": "https://www.keralatourism.org/ecotourism/trekking-programs/trek-silent-valley/1",
+        "sources": [
+          "https://www.keralatourism.org/ecotourism/trekking-programs/trek-silent-valley/1",
+          "https://en.wikivoyage.org/wiki/Silent_Valley_National_Park"
+        ]
+      }
+    },
+    {
+      "destination_id": "thekkady",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Spice Village by CGH Earth",
+        "issue": "OK — Spice Village by CGH Earth is a genuine flagship eco-resort at Thekkady. Keep; tighten copy."
+      },
+      "replacement": {
+        "name": "Spice Village — CGH Earth",
+        "tier": "luxury",
+        "tagline": "A CGH Earth eco-resort of 52 elephant-grass-thatched cottages in the Mannan-tribe style, across 12 acres of spice gardens near the Periyar Tiger Reserve — pool, Ayurvedic spa, treks and bamboo rafting.",
+        "price_band": "₹₹₹₹",
+        "address": "Kumily, Thekkady, Idukki district 685509, Kerala",
+        "book_url": "https://www.cghearth.com/spice-village",
+        "sources": [
+          "https://www.cghearth.com/spice-village",
+          "https://www.tripadvisor.com/Hotel_Review-g7998458-d587399-Reviews-Spice_Village_CGH_Earth-Kumily_Thekkady_Idukki_District_Kerala.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "thekkady",
+      "slot": "value",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Sopanam Heritage Thekkady",
+        "issue": "Real — Sopanam Heritage is a genuine budget-friendly heritage homestay in Kumily/Thekkady. Keep; tighten copy."
+      },
+      "replacement": {
+        "name": "Sopanam Heritage, Thekkady",
+        "tier": "budget",
+        "tagline": "A budget-friendly heritage homestay at First Mile, Kumily — distinctive wooden architecture, family rooms with garden views and warmly praised hospitality, near the Periyar reserve gate.",
+        "price_band": "₹₹",
+        "address": "First Mile, Kumily, Thekkady, Idukki district 685509, Kerala",
+        "book_url": "https://www.booking.com/hotel/in/sopanam-heritage-thekkady.html",
+        "sources": [
+          "https://www.booking.com/hotel/in/sopanam-heritage-thekkady.html",
+          "https://www.tripadvisor.com/Hotel_Review-g297636-d15870258-Reviews-Sopanam_Heritage-Thekkady_Idukki_District_Kerala.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "thekkady",
+      "slot": "location",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "KTDC Periyar House",
+        "issue": "Real — KTDC Periyar House is a genuine government lodge inside the Periyar Tiger Reserve. Keep; KTDC Aranya Nivas is its sister property in the same zone. Tighten copy."
+      },
+      "replacement": {
+        "name": "KTDC Periyar House",
+        "tier": "comfort",
+        "tagline": "A Kerala Tourism (KTDC) lodge inside the Periyar Tiger Reserve at the lake tourism zone — the location pick for being right at the boat-landing and the early-morning wildlife walks.",
+        "price_band": "₹₹₹",
+        "address": "Thekkady, Periyar Tiger Reserve, Idukki district 685536, Kerala",
+        "book_url": "https://www.ktdc.com/periyar-house",
+        "sources": [
+          "https://www.ktdc.com/periyar-house",
+          "https://www.ktdc.com/aranya-nivas"
+        ]
+      }
+    },
+    {
+      "destination_id": "thrissur",
+      "slot": "experience",
+      "verdict": "replace",
+      "existing": {
+        "name": "Joy's Palace Thrissur",
+        "issue": "Real property (Joys Palace) but it is a city business hotel — a solid value/comfort pick rather than the top experience tier. Move Joys Palace to the value slot and re-anchor experience to the city's true flagship."
+      },
+      "replacement": {
+        "name": "Hyatt Regency Thrissur",
+        "tier": "luxury",
+        "tagline": "Thrissur's headline 5-star in the cultural capital of Kerala — 76 rooms including Regency suites and full city-hotel facilities, well placed for Thrissur Pooram and the Vadakkunnathan temple.",
+        "price_band": "₹₹₹₹",
+        "address": "Punkunnam, Thrissur 680002, Kerala",
+        "book_url": "https://www.hyatt.com/hyatt-regency/en-US/cokrt-hyatt-regency-thrissur",
+        "sources": [
+          "https://www.hyatt.com/hyatt-regency/en-US/cokrt-hyatt-regency-thrissur",
+          "https://www.tripadvisor.com/Hotel_Review-g735202-d19823820-Reviews-Hyatt_Regency_Thrissur-Thrissur_Thrissur_District_Kerala.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "thrissur",
+      "slot": "location",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Hyatt Regency Thrissur",
+        "issue": "Real — Hyatt Regency is a genuine 5-star in Thrissur, but it is now used for the experience slot. Move the location slot to the verified central business 5-star to avoid duplication."
+      },
+      "replacement": {
+        "name": "Joys Palace Hotel, Thrissur",
+        "tier": "comfort",
+        "tagline": "A landmark 5-star business hotel in central Thrissur — 62 smoke-free rooms, a pool, steam room and sauna, well placed for the city's temples and the cathedral. A dependable city-centre base.",
+        "price_band": "₹₹₹",
+        "address": "T.B. Road, East Fort, Thrissur 680005, Kerala",
+        "book_url": "https://www.joyspalace.com/",
+        "sources": [
+          "https://www.joyspalace.com/",
+          "https://www.tripadvisor.com/Hotel_Review-g735202-d1650533-Reviews-Joys_Palace_Hotel-Thrissur_Thrissur_District_Kerala.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "thrissur",
+      "slot": "xfactor",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Hotel Pournami International",
+        "issue": "Hotel Pournami International is a plain mid-range Thrissur city hotel — not a distinctive xfactor property, and weakly verifiable as a current operating brand. Thrissur is a city destination whose genuine upper-tier hotels (Hyatt, Joys Palace) are used for experience and location; there is no distinctive heritage/eco/houseboat xfactor stay in the city. Honest-scarcity."
+      }
+    },
+    {
+      "destination_id": "trivandrum",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Vivanta Thiruvananthapuram",
+        "issue": "Real — Vivanta Thiruvananthapuram is a genuine city-centre 5-star in the capital. Keep; tighten copy."
+      },
+      "replacement": {
+        "name": "Vivanta Thiruvananthapuram",
+        "tier": "luxury",
+        "tagline": "Trivandrum's bold city-centre 5-star — 108 rooms, the city's only downtown infinity pool, a Kerala-cuisine speciality restaurant, where Travancore heritage meets modern design.",
+        "price_band": "₹₹₹₹",
+        "address": "Thycaud, Thiruvananthapuram 695014, Kerala",
+        "book_url": "https://www.vivantahotels.com/en-in/hotels/vivanta-thiruvananthapuram",
+        "sources": [
+          "https://www.vivantahotels.com/en-in/hotels/vivanta-thiruvananthapuram",
+          "https://www.booking.com/hotel/in/vivanta-thiruvananthapuram.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "trivandrum",
+      "slot": "value",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Oyster Marris Homestay Thiruvananthapuram",
+        "issue": "Real — Oyster Marris is a genuine Kerala Tourism Gold-classified homestay at Thiruvallam, Trivandrum. Keep; tighten copy."
+      },
+      "replacement": {
+        "name": "Oyster Marris Homestays",
+        "tier": "budget",
+        "tagline": "A Kerala Tourism Gold-classified, women-run homestay on a sea-facing cliff at Thiruvallam — breezy rooms with Arabian Sea glimpses, organic Kerala cuisine, near the airport.",
+        "price_band": "₹₹",
+        "address": "Thiruvallam, Thiruvananthapuram 695027, Kerala",
+        "book_url": "https://www.oystermarrishomestays.com/",
+        "sources": [
+          "https://www.oystermarrishomestays.com/",
+          "https://www.keralatourism.org/homestays/oyster-marris-homestays/5325"
+        ]
+      }
+    },
+    {
+      "destination_id": "trivandrum",
+      "slot": "location",
+      "verdict": "replace",
+      "existing": {
+        "name": "Nutshell—Airport Retreat by the Sea",
+        "issue": "Unverifiable named property — 'Nutshell — Airport Retreat by the Sea' does not surface as a verifiable distinct listing on major booking platforms. Re-anchor to a verified central Trivandrum property."
+      },
+      "replacement": {
+        "name": "Taj Residency Trivandrum (Vivanta City Centre)",
+        "tier": "comfort",
+        "tagline": "A centrally located Taj hotel in the heart of the capital — 137 rooms, 10km from the airport and 1.5km from the railway station, with city and pool views. The convenient location pick.",
+        "price_band": "₹₹₹",
+        "address": "Thycaud, Thiruvananthapuram 695014, Kerala",
+        "book_url": "https://www.tajhotels.com/en-in/destination/hotels-in-trivandrum",
+        "sources": [
+          "https://www.tajhotels.com/en-in/destination/hotels-in-trivandrum",
+          "https://www.t2india.com/vivanta-by-taj-trivandrum-thiruvananthapuram-hotel-bookings.aspx"
+        ]
+      }
+    },
+    {
+      "destination_id": "trivandrum",
+      "slot": "xfactor",
+      "verdict": "replace",
+      "existing": {
+        "name": "MG TOWER Hotel",
+        "issue": "'MG Tower' is a plain commercial building/hotel name on MG Road, not a distinctive xfactor property — weakly verifiable and generic. Re-anchor the distinctive slot to a verified characterful Trivandrum stay."
+      },
+      "replacement": {
+        "name": "Oyster Opera, Thiruvananthapuram",
+        "tier": "experience",
+        "tagline": "An eco-conscious backwater stay near Thiruvananthapuram run by the same award-winning women-led Oyster group — a distinctive sea-and-backwater character stay close to the capital.",
+        "price_band": "₹₹₹",
+        "address": "Veli / Thiruvallam, Thiruvananthapuram, Kerala",
+        "book_url": "https://www.oystermarrishomestays.com/",
+        "sources": [
+          "https://www.oystermarrishomestays.com/",
+          "https://www.keralatourism.org/homestays/oyster-marris-homestays/5325"
+        ]
+      }
+    },
+    {
+      "destination_id": "vagamon",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Vanilla County Heritage Plantation Bungalow",
+        "issue": "Real — Vanilla County Heritage Plantation Bungalow is a genuine heritage plantation stay near Vagamon. Keep; tighten copy."
+      },
+      "replacement": {
+        "name": "Vanilla County Heritage Plantation Bungalow",
+        "tier": "luxury",
+        "tagline": "A heritage plantation bungalow with eight mountain-view rooms near the Marmala Waterfalls — a summer terrace, yoga and spa, warm family hospitality and praised plantation-grown food.",
+        "price_band": "₹₹₹",
+        "address": "Vagamon, Idukki district 685503, Kerala",
+        "book_url": "https://www.vanillacounty.in/",
+        "sources": [
+          "https://www.vanillacounty.in/",
+          "https://www.booking.com/resorts/city/in/vagamon.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "vagamon",
+      "slot": "xfactor",
+      "verdict": "replace",
+      "existing": {
+        "name": "Mountain Villa Vagamon",
+        "issue": "Unverifiable generic name — 'Mountain Villa Vagamon' does not surface as a distinct verifiable listing. Re-anchor to a verified Vagamon eco-resort."
+      },
+      "replacement": {
+        "name": "Saj Vagamon Hideout",
+        "tier": "experience",
+        "tagline": "An eco-resort of cottages built with local materials, set 3000 feet up in the Western Ghats above Vagamon — a quiet, nature-led base for the meadows, pine forest and paragliding country.",
+        "price_band": "₹₹₹",
+        "address": "Vagamon, Idukki district 685503, Kerala",
+        "book_url": "https://www.sajvagamonhideout.com/",
+        "sources": [
+          "https://www.sajvagamonhideout.com/",
+          "https://www.tripadvisor.com/Hotels-g2282921-zff8-Vagamon_Idukki_District_Kerala-Hotels.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "vagamon",
+      "slot": "value",
+      "verdict": "replace",
+      "existing": {
+        "name": "Winter Vale Green Stay Resorts",
+        "issue": "Unverifiable generic name — 'Winter Vale Green Stay Resorts' does not surface as a distinct verifiable Vagamon listing. Re-anchor to a verified Vagamon plantation/value resort."
+      },
+      "replacement": {
+        "name": "Lavender Vagamon",
+        "tier": "budget",
+        "tagline": "A plantation stay in the middle of a Vagamon tea plantation — a verified, well-listed value resort amid the hill station's tea slopes and meadows.",
+        "price_band": "₹₹",
+        "address": "Vagamon, Idukki district 685503, Kerala",
+        "book_url": "https://www.booking.com/resorts/city/in/vagamon.html",
+        "sources": [
+          "https://www.booking.com/resorts/city/in/vagamon.html",
+          "https://www.tripadvisor.com/Hotels-g2282921-zff8-Vagamon_Idukki_District_Kerala-Hotels.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "varkala",
+      "slot": "experience",
+      "verdict": "replace",
+      "existing": {
+        "name": "Samsara Harmony Beach Resort",
+        "issue": "Weakly verifiable — 'Samsara Harmony Beach Resort' does not surface cleanly as a current distinct Varkala property on the major platforms. Re-anchor the experience slot to the verified clifftop Taj Gateway, Varkala's headline upscale property."
+      },
+      "replacement": {
+        "name": "Gateway Varkala (Taj)",
+        "tier": "luxury",
+        "tagline": "A Taj Gateway in a prime clifftop position above the Arabian Sea — sea- and garden-facing balconies, the Coastal Kitchen restaurant and an Ayurveda centre. Varkala's headline upscale stay.",
+        "price_band": "₹₹₹₹",
+        "address": "Near Government Guest House, Janardhanapuram, Varkala 695141, Kerala",
+        "book_url": "https://www.gateway-hotels.com/en-in/hotels/gateway-varkala",
+        "sources": [
+          "https://www.gateway-hotels.com/en-in/hotels/gateway-varkala",
+          "https://www.tripadvisor.com/Hotel_Review-g297639-d305554-Reviews-Gateway_Varkala-Varkala_Town_Varkala_Thiruvananthapuram_District_Kerala.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "varkala",
+      "slot": "value",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Palm Tree Heritage",
+        "issue": "Broadly OK — Palm Tree Heritage is a real Varkala property (a wellness-focused stay ~25 min walk from Varkala Beach), listed on MakeMyTrip. Keep; tighten copy."
+      },
+      "replacement": {
+        "name": "Palm Tree Heritage, Varkala",
+        "tier": "comfort",
+        "tagline": "A wellness-focused Varkala stay with a jacuzzi and sauna, about 25 minutes' walk from Varkala Beach — a verified, well-listed mid-range cliff-area pick.",
+        "price_band": "₹₹₹",
+        "address": "Varkala, Thiruvananthapuram district 695141, Kerala",
+        "book_url": "https://www.makemytrip.com/hotels/palm_tree_heritage-details-varkala.html",
+        "sources": [
+          "https://www.makemytrip.com/hotels/palm_tree_heritage-details-varkala.html",
+          "https://www.tripadvisor.in/Hotels-g297639-zff8-Varkala_Town_Varkala_Thiruvananthapuram_District_Kerala-Hotels.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "varkala",
+      "slot": "xfactor",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Soul & Surf Varkala",
+        "issue": "Real — Soul & Surf is a genuine, distinctive surf-and-yoga retreat at Varkala. Keep; tighten name and copy."
+      },
+      "replacement": {
+        "name": "Soul & Surf Kerala",
+        "tier": "experience",
+        "tagline": "A surf-and-yoga retreat running morning sessions on the beaches and points around Varkala, with sunset yoga in a rooftop shala — within walking distance of the cliff yet set apart from the hotel strip.",
+        "price_band": "₹₹₹",
+        "address": "Varkala, Thiruvananthapuram district 695141, Kerala",
+        "book_url": "https://www.soulandsurf.com/retreats/india/",
+        "sources": [
+          "https://www.soulandsurf.com/retreats/india/",
+          "https://www.tripadvisor.com/Hotel_Review-g297639-d2617208-Reviews-Soul_Surf_Kerala-Varkala_Town_Varkala_Thiruvananthapuram_District_Kerala.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "varkala",
+      "slot": "location",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Gateway Varkala",
+        "issue": "Real — Gateway Varkala is a genuine clifftop Taj property, but it is now used for the experience slot. Move the location slot to the verified South Cliff boutique guesthouse to avoid duplication."
+      },
+      "replacement": {
+        "name": "Villa Jacaranda",
+        "tier": "comfort",
+        "tagline": "Varkala's premier boutique guesthouse on the quieter South Cliff — four pastel rooms, a rooftop terrace and a small saltwater pool, 5 minutes from Papanasham Beach. A characterful cliff-area location pick.",
+        "price_band": "₹₹₹",
+        "address": "South Cliff, Varkala 695141, Kerala",
+        "book_url": "https://www.villa-jacaranda.in/",
+        "sources": [
+          "https://www.villa-jacaranda.in/",
+          "https://www.booking.com/hotel/in/villa-jacaranda.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "wayanad",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Vythiri Village Resort",
+        "issue": "Real — Vythiri Village Resort is a genuine 5-star resort in Vythiri, Wayanad. Keep; tighten copy."
+      },
+      "replacement": {
+        "name": "Vythiri Village Resort (Club Mahindra)",
+        "tier": "luxury",
+        "tagline": "A 5-star resort on a 30-acre sanctuary at 2,600 feet — luxury rooms and pool villas, an Ayurveda spa. The most full-facility family-luxury address in the Wayanad highlands.",
+        "price_band": "₹₹₹₹",
+        "address": "Vythiri, Wayanad district 673576, Kerala",
+        "book_url": "https://www.vythirivillage.com/",
+        "sources": [
+          "https://www.vythirivillage.com/",
+          "https://www.clubmahindra.com/our-resorts/vythiri-village-wayanad-resort-in-kerala"
+        ]
+      }
+    },
+    {
+      "destination_id": "wayanad",
+      "slot": "value",
+      "verdict": "replace",
+      "existing": {
+        "name": "Ende Wayanad Resort",
+        "issue": "Weakly verifiable — 'Ende Wayanad Resort' does not surface as a distinct, clearly verifiable property on the major booking platforms. Re-anchor the value slot to the verified Edakkal Hermitage, a genuine character resort below 5-star tier."
+      },
+      "replacement": {
+        "name": "Edakkal Hermitage",
+        "tier": "comfort",
+        "tagline": "A boutique hillside resort near the prehistoric Edakkal Caves — cottages with a cave-like décor concept, a fireplace and a picnic area, pet-friendly and homely. A distinctive character stay.",
+        "price_band": "₹₹₹",
+        "address": "Edakkal, Ambalavayal, Wayanad district 673593, Kerala",
+        "book_url": "https://www.edakkalhermitage.org/",
+        "sources": [
+          "https://www.edakkalhermitage.org/",
+          "https://www.tripadvisor.com/Hotels-g2295130-zff8-Vythiri_Wayanad_District_Kerala-Hotels.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "wayanad",
+      "slot": "location",
+      "verdict": "replace",
+      "existing": {
+        "name": "LakeRose Wayanad Resort",
+        "issue": "Weakly verifiable — 'LakeRose Wayanad Resort' (associated with the Banasura/Pookode lake area) does not surface cleanly as a distinct, well-verified property on major platforms. Re-anchor the location slot to the verified Vythiri Resort, the established central Wayanad base."
+      },
+      "replacement": {
+        "name": "Vythiri Resort",
+        "tier": "comfort",
+        "tagline": "A long-running family jungle retreat at Vythiri — treehouses, pool villas and a spa in rainforest, centrally placed for Wayanad's caves, waterfalls and wildlife circuits.",
+        "price_band": "₹₹₹₹",
+        "address": "Vythiri, Wayanad district 673576, Kerala",
+        "book_url": "https://www.vythiriresort.com/",
+        "sources": [
+          "https://www.vythiriresort.com/",
+          "https://www.booking.com/resorts/city/in/vythiri.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "wayanad",
+      "slot": "xfactor",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Wayanad Wild - A CGH Earth Experience",
+        "issue": "Real — Wayanad Wild by CGH Earth is a genuine treetop eco-resort in the Wayanad rainforest. Keep; tighten copy."
+      },
+      "replacement": {
+        "name": "Wayanad Wild — A CGH Earth Experience",
+        "tier": "experience",
+        "tagline": "A CGH Earth eco-resort with rooms on treetops, designed to blend into the dense Western Ghats rainforest — an immersive, nature-fused stay rather than a facility resort.",
+        "price_band": "₹₹₹₹",
+        "address": "Vythiri, Wayanad district 673576, Kerala",
+        "book_url": "https://www.cghearth.com/wayanad-wild",
+        "sources": [
+          "https://www.cghearth.com/wayanad-wild",
+          "https://www.tripadvisor.com/Hotels-g2295130-zff8-Vythiri_Wayanad_District_Kerala-Hotels.html"
+        ]
+      }
+    }
+  ]
+}
