@@ -5,10 +5,10 @@
     "m8EAd": "2026-05-20",
     "PdMu0": "2026-05-20"
   },
-  "last_sync": "2026-05-20T07:59:58.362141+00:00",
+  "last_sync": "2026-05-20T10:04:56.832246+00:00",
   "posted_destinations": [
     {
-      "destination_id": "mumbai",
+      "destination_id": "chennai",
       "date": "2026-05-20"
     }
   ],
@@ -443,26 +443,26 @@
       "has_media": true
     },
     {
-      "timestamp": "2026-05-20T08:00:47.503982+00:00",
+      "timestamp": "2026-05-20T10:05:51.394691+00:00",
       "date": "2026-05-20",
       "platform": "instagram",
       "account_id": "m8EAd",
-      "post_id": "Mgu9C",
-      "destination": "mumbai",
+      "post_id": "D7Nso",
+      "destination": "chennai",
       "format": "arrival_intel",
       "has_media": true,
-      "media_id": "mumbai.mp4"
+      "media_id": "chennai.mp4"
     },
     {
-      "timestamp": "2026-05-20T08:01:15.341424+00:00",
+      "timestamp": "2026-05-20T10:06:16.162914+00:00",
       "date": "2026-05-20",
       "platform": "facebook",
       "account_id": "PdMu0",
-      "post_id": "i6KpB",
-      "destination": "mumbai",
+      "post_id": "x3rm8",
+      "destination": "chennai",
       "format": "arrival_intel",
       "has_media": true,
-      "media_id": "mumbai.mp4"
+      "media_id": "chennai.mp4"
     }
   ],
   "theme_usage": {
@@ -472,17 +472,24 @@
       ]
     },
     "collections": {
-      "best-winter": [
+      "birding-hotspots": [
         "2026-05-20"
       ]
     },
     "arrival_intel": {},
     "destinations": {
-      "mumbai": [
+      "chopta": [
+        "2026-05-20"
+      ],
+      "chennai": [
         "2026-05-20"
       ]
     },
-    "collection_carousel_dests:best-winter": {}
+    "collection_carousel_dests:birding-hotspots": {
+      "chopta": [
+        "2026-05-20"
+      ]
+    }
   },
   "infographic": {
     "last_topic_idx": 0,
@@ -496,8 +503,8 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "collection": "best-winter",
-    "shared_best": "pithoragarh"
+    "collection": "birding-hotspots",
+    "shared_best": "kokernag"
   },
   "manual_skip_dests": {}
 }
