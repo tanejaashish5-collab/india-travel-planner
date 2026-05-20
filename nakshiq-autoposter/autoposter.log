@@ -1,0 +1,40 @@
+2026-05-20 07:59:29  INFO      [migration] bootstrapped post_log.jsonl with 38 entries from state.json
+2026-05-20 07:59:29  INFO      ════════════════════════════════════════════════════════════
+2026-05-20 07:59:29  INFO      Nakshiq Autoposter · MORNING · 2026-05-20 · weekday=2
+2026-05-20 07:59:29  INFO      ════════════════════════════════════════════════════════════
+2026-05-20 07:59:29  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-05-20 07:59:58  INFO      Synced → 20 destinations · 0 traps · 0 articles · 23 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 50 camping · 50 gems · total catalog=505
+2026-05-20 07:59:59  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-05-20 08:00:00  INFO      Festivals filtered (past/post-window): Kedarnath Opening, Summer Festival, Badri-Kedar Festival, Chaukori Tea Festival, Chail Cricket Festival, Guptkashi Vishwanath Temple Festival, Tosamaidan Wildflower Season, Badrinath Temple Opening (Kapaat Kholna) (+9 more)
+2026-05-20 08:00:00  INFO      [csv_formats] 2/38 CSV formats eligible this run (asset present + data resolves)
+2026-05-20 08:00:00  INFO      Morning format (themed-week-3→moment): arrival_intel [0% vs target 10%] (14/14 never featured)
+2026-05-20 08:00:00  INFO      Formats — IG: arrival_intel  ·  FB: arrival_intel  ·  Story: collection_spotlight
+2026-05-20 08:00:00  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 8
+2026-05-20 08:00:00  INFO      Fingerprint dedup snapshot — 8 dests in 7d · 24 (dest,fmt) pairs in 30d · 0 media in 60d
+2026-05-20 08:00:00  INFO      Collection locked: Best Winter Destinations (Dec-Feb) (19/20 never featured)
+2026-05-20 08:00:00  INFO      Arrival locked: BOM (Mumbai) (9/9 never featured)
+2026-05-20 08:00:03  INFO      Shared best destination locked: Pithoragarh
+2026-05-20 08:00:03  INFO      Carousel locked (collection_spotlight): no valid images found
+2026-05-20 08:00:03  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-05-20 08:00:03  INFO      [instagram/nakshiq] Generating arrival_intel post...
+2026-05-20 08:00:03  INFO      [instagram/nakshiq] Caption ready (736 chars, dest=mumbai)
+2026-05-20 08:00:03  INFO      [instagram/nakshiq] Video available — uploading for Reel...
+2026-05-20 08:00:03  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/mumbai.mp4?v=20260512
+2026-05-20 08:00:04  INFO          Requesting upload URL for mumbai.mp4 (3,075,226 bytes, video/mp4)
+2026-05-20 08:00:04  INFO          Uploading to R2 (timeout=300s)...
+2026-05-20 08:00:05  INFO          R2 PUT OK. Confirming...
+2026-05-20 08:00:06  INFO          Media ready: TtF61 (3,075,226 bytes · mumbai.mp4)
+2026-05-20 08:00:06  INFO      [instagram/nakshiq] Publishing Reel...
+2026-05-20 08:00:47  INFO      [instagram/nakshiq] ✅ Published · Outstand=Mgu9C · Platform=18129689377593803
+2026-05-20 08:00:47  INFO      [facebook/Nakshiq] Generating arrival_intel post...
+2026-05-20 08:00:47  INFO      [facebook/Nakshiq] Caption ready (681 chars, dest=mumbai)
+2026-05-20 08:00:47  INFO      [facebook/Nakshiq] Video available — uploading for Reel...
+2026-05-20 08:00:47  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/mumbai.mp4?v=20260512
+2026-05-20 08:00:48  INFO          Requesting upload URL for mumbai.mp4 (3,075,226 bytes, video/mp4)
+2026-05-20 08:00:48  INFO          Uploading to R2 (timeout=300s)...
+2026-05-20 08:00:49  INFO          R2 PUT OK. Confirming...
+2026-05-20 08:00:50  INFO          Media ready: BYyvn (3,075,226 bytes · mumbai.mp4)
+2026-05-20 08:00:50  INFO      [facebook/Nakshiq] Publishing Reel...
+2026-05-20 08:01:15  INFO      [facebook/Nakshiq] ✅ Published · Outstand=i6KpB · Platform=1339043711410745
+2026-05-20 08:01:15  INFO      State saved. Run complete.
+2026-05-20 08:01:15  INFO      ════════════════════════════════════════════════════════════
