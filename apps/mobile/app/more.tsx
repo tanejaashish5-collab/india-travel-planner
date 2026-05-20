@@ -27,13 +27,12 @@ type Row = {
 type Group = { title: string; rows: Row[] };
 
 // In-app browser for content-heavy pages keeps content single-sourced on web.
-// TODO: native ports for build-route, compare, explore-by-persona — tracked in MEMORY.md.
 const GROUPS: Group[] = [
   {
     title: "Plan your trip",
     rows: [
-      { label: "Build a route", desc: "Sequence multiple destinations into one trip.", kind: "web", target: "/en/build-route" },
-      { label: "Compare destinations", desc: "Side-by-side scores, costs, and difficulty.", kind: "web", target: "/en/compare" },
+      { label: "Build a route", desc: "Sequence multiple destinations into one trip.", kind: "native", target: "/build-route" },
+      { label: "Compare destinations", desc: "Side-by-side scores, costs, and difficulty.", kind: "native", target: "/compare" },
       { label: "Cost Index", desc: "Real per-destination travel costs by season.", kind: "web", target: "/en/cost-index" },
       { label: "Risk quiz", desc: "Quick self-assessment for trip readiness.", kind: "web", target: "/en/risk-quiz" },
       { label: "Weekend from your city", desc: "Quick getaways from 6 metros.", kind: "web", target: "/en/weekend-from" },
@@ -46,7 +45,7 @@ const GROUPS: Group[] = [
     title: "Discover India",
     rows: [
       { label: "NakshIQ 100", desc: "The 100 best destination-months in India.", kind: "web", target: "/en/nakshiq-100" },
-      { label: "By persona", desc: "Solo, family, biker, photographer, and more.", kind: "web", target: "/en/explore-by-persona" },
+      { label: "By persona", desc: "Solo, family, biker, photographer, and more.", kind: "native", target: "/personas" },
       { label: "India vs the world", desc: "Vietnam, Morocco, Peru, Egypt comparisons.", kind: "web", target: "/en/india-vs" },
       { label: "Skip list", desc: "Overhyped places we'd recommend skipping.", kind: "web", target: "/en/skip-list" },
       { label: "Tourist traps", desc: "Common traps with honest alternatives.", kind: "native", target: "/tourist-traps" },
