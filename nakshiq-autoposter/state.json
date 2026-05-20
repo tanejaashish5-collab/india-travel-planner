@@ -5,10 +5,10 @@
     "m8EAd": "2026-05-20",
     "PdMu0": "2026-05-20"
   },
-  "last_sync": "2026-05-20T10:04:56.832246+00:00",
+  "last_sync": "2026-05-20T12:48:58.777186+00:00",
   "posted_destinations": [
     {
-      "destination_id": "chennai",
+      "destination_id": "havelock-island",
       "date": "2026-05-20"
     }
   ],
@@ -27,7 +27,7 @@
       "collection_spotlight",
       "festival_alert",
       "kids_intel",
-      "arrival_intel"
+      "cost_index_card"
     ],
     "PdMu0": [
       "monthly_forecast",
@@ -48,7 +48,7 @@
       "collection_spotlight",
       "festival_alert",
       "kids_intel",
-      "arrival_intel"
+      "cost_index_card"
     ]
   },
   "post_log": [
@@ -443,50 +443,50 @@
       "has_media": true
     },
     {
-      "timestamp": "2026-05-20T10:05:51.394691+00:00",
+      "timestamp": "2026-05-20T12:49:53.294294+00:00",
       "date": "2026-05-20",
       "platform": "instagram",
       "account_id": "m8EAd",
-      "post_id": "D7Nso",
-      "destination": "chennai",
-      "format": "arrival_intel",
+      "post_id": "IhnsX",
+      "destination": "havelock-island",
+      "format": "cost_index_card",
       "has_media": true,
-      "media_id": "chennai.mp4"
+      "media_id": "havelock-island.mp4"
     },
     {
-      "timestamp": "2026-05-20T10:06:16.162914+00:00",
+      "timestamp": "2026-05-20T12:50:23.551672+00:00",
       "date": "2026-05-20",
       "platform": "facebook",
       "account_id": "PdMu0",
-      "post_id": "x3rm8",
-      "destination": "chennai",
-      "format": "arrival_intel",
+      "post_id": "vSrhg",
+      "destination": "havelock-island",
+      "format": "cost_index_card",
       "has_media": true,
-      "media_id": "chennai.mp4"
+      "media_id": "havelock-island.mp4"
     }
   ],
   "theme_usage": {
     "morning_formats": {
-      "arrival_intel": [
+      "cost_index_card": [
         "2026-05-20"
       ]
     },
     "collections": {
-      "birding-hotspots": [
+      "best-honeymoon": [
         "2026-05-20"
       ]
     },
-    "arrival_intel": {},
+    "cost_index_card": {},
     "destinations": {
-      "chopta": [
+      "pahalgam": [
         "2026-05-20"
       ],
-      "chennai": [
+      "havelock-island": [
         "2026-05-20"
       ]
     },
-    "collection_carousel_dests:birding-hotspots": {
-      "chopta": [
+    "collection_carousel_dests:best-honeymoon": {
+      "pahalgam": [
         "2026-05-20"
       ]
     }
@@ -503,8 +503,8 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "collection": "birding-hotspots",
-    "shared_best": "kokernag"
+    "collection": "best-honeymoon",
+    "shared_best": "bir-billing"
   },
   "manual_skip_dests": {}
 }
