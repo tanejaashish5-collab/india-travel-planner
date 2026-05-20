@@ -1,0 +1,1317 @@
+{
+  "metadata": {
+    "state": "odisha",
+    "date": "2026-05-20",
+    "total_picks": 79,
+    "destinations": 22,
+    "status": "complete",
+    "new_stays_rows": 40,
+    "verdict_counts": {
+      "keep_existing": 18,
+      "replace": 32,
+      "honest_scarcity": 29
+    },
+    "notes": "Audit-and-replace of auto-seeded placeholder picks for all 22 Odisha destinations. OTDC Panthanivas / Yatrinivas network and Odisha Eco-Tourism forest camps used as authoritative government anchors. High fabrication/mislabel rate (~63% of picks failed verification as keep_existing). Honest-scarcity heavy across remote pilgrim spots, day-trip sites and protected marine sanctuary as expected."
+  },
+  "task_a_results": [
+    {
+      "destination_id": "bhubaneswar",
+      "slot": "experience",
+      "verdict": "replace",
+      "existing": {
+        "name": "The Lalit Bhubaneswar",
+        "issue": "No Lalit-group hotel operates in Bhubaneswar — The Lalit's nearest properties are elsewhere. Ghost property. Re-anchor to Mayfair Lagoon, the city's flagship experience address."
+      },
+      "replacement": {
+        "name": "Mayfair Lagoon",
+        "tier": "luxury",
+        "tagline": "Bhubaneswar's iconic urban resort — 100 rooms, suites and villas across 10 acres of lakes, gardens and themed restaurants. Tripadvisor's #1 luxury hotel in the temple city for years running.",
+        "price_band": "₹₹₹₹",
+        "address": "8-B, Jaydev Vihar, Bhubaneswar 751013, Odisha",
+        "book_url": "https://www.mayfairhotels.com/lagoon-bhubaneswar/",
+        "sources": [
+          "https://www.mayfairhotels.com/lagoon-bhubaneswar/",
+          "https://www.tripadvisor.com/Hotel_Review-g297661-d501197-Reviews-Mayfair_Lagoon-Bhubaneswar_Khurda_District_Odisha.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "bhubaneswar",
+      "slot": "value",
+      "verdict": "replace",
+      "existing": {
+        "name": "Mayfair Heritage Bhubaneswar",
+        "issue": "Mislabelled — Mayfair Heritage is in Puri (beach resort), not Bhubaneswar. Mayfair's Bhubaneswar property is Mayfair Lagoon (used for the experience slot). Re-anchor the value slot to Panthanivas Bhubaneswar (OTDC)."
+      },
+      "replacement": {
+        "name": "Panthanivas Bhubaneswar (OTDC)",
+        "tier": "budget",
+        "tagline": "The Odisha Tourism state-tourism hotel on Lewis Road — plain, government-run and inexpensive, with a restaurant and bar, near the Lingaraj old-town temple cluster. A reliable festival-season fallback.",
+        "price_band": "₹₹",
+        "address": "Lewis Road, Bhubaneswar 751014, Odisha",
+        "book_url": "https://otdc.odisha.gov.in/accommodations/panthanivas-bhubaneswar",
+        "sources": [
+          "https://otdc.odisha.gov.in/accommodations/panthanivas-bhubaneswar",
+          "https://odishatourism.gov.in/content/tourism/en/plan/food-accommodation/otdc.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "bhubaneswar",
+      "slot": "location",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Hotel Swosti Premium",
+        "issue": "OK — Swosti Premium is a real 5-star in the Jaydev Vihar hotel cluster, Bhubaneswar. Tighten the name."
+      },
+      "replacement": {
+        "name": "Swosti Premium",
+        "tier": "comfort",
+        "tagline": "A locally owned 5-star in the central Jaydev Vihar hotel cluster — rooftop, multiple restaurants and a location that puts the State Museum, Ekamra heritage walks and the airport within easy reach.",
+        "price_band": "₹₹₹",
+        "address": "P-1, Jaydev Vihar, Bhubaneswar 751013, Odisha",
+        "book_url": "https://www.swostipremium.com/",
+        "sources": [
+          "https://www.swostipremium.com/",
+          "https://www.tripadvisor.in/ShowTopic-g297661-i9232-k14935701-Mayfair_lagoon_vs_Trident_vs_WelcomeITC-Bhubaneswar_Khurda_District_Odisha.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "bhubaneswar",
+      "slot": "xfactor",
+      "verdict": "replace",
+      "existing": {
+        "name": "Khandagiri Caves Heritage Homestay",
+        "issue": "Unverifiable — no property of this name appears on Booking.com, MakeMyTrip, Tripadvisor or any official listing. Likely a fabricated 'heritage homestay' ghost. Re-anchor to Trident Bhubaneswar, a genuine garden-resort x-factor."
+      },
+      "replacement": {
+        "name": "Trident Bhubaneswar",
+        "tier": "luxury",
+        "tagline": "An Oberoi-group Trident on 14 acres of fruit orchards and lawns — just 62 keys, so it stays quiet. Temple-city architecture and garden calm, 20 minutes from the airport.",
+        "price_band": "₹₹₹₹",
+        "address": "CB-1, Nayapalli, Bhubaneswar 751013, Odisha",
+        "book_url": "https://www.tridenthotels.com/hotels-in-bhubaneswar",
+        "sources": [
+          "https://www.tridenthotels.com/hotels-in-bhubaneswar",
+          "https://www.tripadvisor.in/ShowTopic-g297661-i9232-k14935701-Mayfair_lagoon_vs_Trident_vs_WelcomeITC-Bhubaneswar_Khurda_District_Odisha.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "cuttack",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Mayfair Convention Cuttack",
+        "issue": "OK — Mayfair operates a property in Cuttack; the listing-name in use is 'Mayfair Cuttack'. Tighten the name."
+      },
+      "replacement": {
+        "name": "Mayfair Cuttack",
+        "tier": "luxury",
+        "tagline": "Cuttack's standout luxury address — a Mayfair-group resort with landscaped grounds, a pool and multi-cuisine dining on the Mahanadi side of the silver-filigree city.",
+        "price_band": "₹₹₹₹",
+        "address": "Mahanadi Vihar, Cuttack 753004, Odisha",
+        "book_url": "https://www.mayfairhotels.com/",
+        "sources": [
+          "https://www.mayfairhotels.com/",
+          "https://www.tripadvisor.in/Hotels-g1154342-Cuttack_Cuttack_District_Odisha-Hotels.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "cuttack",
+      "slot": "value",
+      "verdict": "replace",
+      "existing": {
+        "name": "Hotel Presidency",
+        "issue": "Unverifiable as a current Cuttack property — no clear Booking.com/MakeMyTrip/Tripadvisor listing for 'Hotel Presidency, Cuttack'. Replace with Hotel Akbari Continental, a long-established verified Cuttack business hotel."
+      },
+      "replacement": {
+        "name": "Hotel Akbari Continental",
+        "tier": "comfort",
+        "tagline": "One of Cuttack's longest-running full-service hotels — a reliable 3-star with restaurants and conference space, walkable to Barabati Fort and the tarakasi silver-filigree workshops.",
+        "price_band": "₹₹",
+        "address": "Haripur Road, Dolamundai, Cuttack 753001, Odisha",
+        "book_url": "https://www.akbaricontinental.com/",
+        "sources": [
+          "https://www.akbaricontinental.com/",
+          "https://www.tripadvisor.in/Hotels-g1154342-Cuttack_Cuttack_District_Odisha-Hotels.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "cuttack",
+      "slot": "location",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Hotel Swagat",
+        "issue": "Generic budget-hotel name with no verifiable single listing for Cuttack — multiple unrelated 'Hotel Swagat' properties exist across India, none clearly confirmable in Cuttack. No reliable tier-1/2 location-slot property beyond the two already used; honest scarcity."
+      }
+    },
+    {
+      "destination_id": "cuttack",
+      "slot": "xfactor",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Panthanivas Cuttack",
+        "issue": "OK — Panthanivas Cuttack is a real OTDC government property. Tighten the name and copy."
+      },
+      "replacement": {
+        "name": "Panthanivas Cuttack (OTDC)",
+        "tier": "budget",
+        "tagline": "The Odisha Tourism state guesthouse in the silver city — plain, low-cost, with a restaurant. A budget base for the Bali Jatra fair or the tarakasi filigree workshops.",
+        "price_band": "₹₹",
+        "address": "Cuttack 753001, Odisha",
+        "book_url": "https://otdc.odisha.gov.in/accommodations/panthanivas-cuttack",
+        "sources": [
+          "https://otdc.odisha.gov.in/accommodations/panthanivas-cuttack",
+          "https://odishatourism.gov.in/content/tourism/en/plan/food-accommodation/otdc.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "puri",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "The Mayfair Heritage, Puri",
+        "issue": "OK — Mayfair Heritage is a genuine 5-star beach resort in Puri. Tighten the name."
+      },
+      "replacement": {
+        "name": "Mayfair Heritage Puri",
+        "tier": "luxury",
+        "tagline": "Puri's flagship 5-star beach resort — 34 AC rooms, a spa and a pool near the sea, a manageable drive from the Jagannath Temple. Service polish and beachfront calm in a busy pilgrim town.",
+        "price_band": "₹₹₹₹",
+        "address": "Chakratirtha Road, Puri 752002, Odisha",
+        "book_url": "https://www.mayfairhotels.com/heritage-puri/",
+        "sources": [
+          "https://www.mayfairhotels.com/heritage-puri/",
+          "https://www.tripadvisor.com/Hotel_Review-g503703-d614079-Reviews-Mayfair_Hotels_Resorts-Puri_Puri_District_Odisha.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "puri",
+      "slot": "value",
+      "verdict": "replace",
+      "existing": {
+        "name": "Akshaya Nivas Guest House",
+        "issue": "Unverifiable — no Booking.com/MakeMyTrip/Tripadvisor listing for an 'Akshaya Nivas Guest House' in Puri. Likely a fabricated budget-stay ghost. Replace with Panthanivas Puri (OTDC), a verified government-rate value option."
+      },
+      "replacement": {
+        "name": "Panthanivas Puri (OTDC)",
+        "tier": "budget",
+        "tagline": "The Odisha Tourism state hotel on Chakratirtha Road — 52 rooms, AC restaurant and bar, close to the beach. A dependable government-rate base; books out well ahead for Rath Yatra.",
+        "price_band": "₹₹",
+        "address": "Chakratirtha Road, Puri 752002, Odisha",
+        "book_url": "https://otdc.odisha.gov.in/accommodations/panthanivas-puri",
+        "sources": [
+          "https://otdc.odisha.gov.in/accommodations/panthanivas-puri",
+          "https://www.makemytrip.global/hotels/otdc_panthanivas-details-puri.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "puri",
+      "slot": "location",
+      "verdict": "replace",
+      "existing": {
+        "name": "Toshali Sands Resort",
+        "issue": "Real property but mislocated as a Puri location-slot pick — Toshali Sands sits on the Konark Marine Drive away from the town and beachfront, so it is a poor 'location' anchor. Re-anchor the location slot to Chanakya BNR Hotel, a sea-facing heritage hotel on Chakratirtha Road in Puri proper. (Toshali Sands retained as a new_stays row.)"
+      },
+      "replacement": {
+        "name": "Chanakya BNR Hotel",
+        "tier": "comfort",
+        "tagline": "The restored former Bengal Nagpur Railway hotel — old-world verandahs, high ceilings, a pool and sea-facing terraces on Chakratirtha Road, walkable to the beach. Reviewers praise the warm heritage service.",
+        "price_band": "₹₹₹",
+        "address": "Chakratirtha Road, Puri 752002, Odisha",
+        "book_url": "https://www.chanakyabnrhotelpuri.com/",
+        "sources": [
+          "https://www.chanakyabnrhotelpuri.com/",
+          "https://www.tripadvisor.com/Hotel_Review-g503703-d501015-Reviews-Chanakya_Bnr_Hotel-Puri_Puri_District_Odisha.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "puri",
+      "slot": "xfactor",
+      "verdict": "replace",
+      "existing": {
+        "name": "Chakra Spiritual Retreat",
+        "issue": "Unverifiable — no Booking.com/MakeMyTrip/Tripadvisor or official listing for a 'Chakra Spiritual Retreat' in Puri. Fabricated 'spiritual retreat' ghost. Replace with Toshali Sands Nature Resort, a genuine garden-resort x-factor on the Puri-Konark marine drive."
+      },
+      "replacement": {
+        "name": "Toshali Sands Nature Resort",
+        "tier": "comfort",
+        "tagline": "An 'ethnic village' resort in broad lawns and gardens on the marine drive between Puri and Konark — cottages, an outdoor pool and quiet grounds away from the town crush.",
+        "price_band": "₹₹₹",
+        "address": "Konark Marine Drive, Puri 752002, Odisha",
+        "book_url": "https://toshali.com/toshali-sands/",
+        "sources": [
+          "https://toshali.com/toshali-sands/",
+          "https://www.tripadvisor.com/Hotels-g12389565-zfb11772-Puri_District_Odisha-Hotels.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "konark",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Lotus Eco Beach Resort Konark",
+        "issue": "OK — Lotus Eco Resort Konark is a real, Tripadvisor #1-ranked beachside resort at Ramachandi Beach, Konark. Tighten the copy."
+      },
+      "replacement": {
+        "name": "Lotus Eco Beach Resort Konark",
+        "tier": "comfort",
+        "tagline": "Konark's #1-ranked resort — beachside cottages on Ramachandi Beach with a Panchakarma wellness spa, minutes from the Sun Temple. The comfortable choice for an overnight at Konark instead of day-tripping.",
+        "price_band": "₹₹₹",
+        "address": "Ramachandi Beach, Konark 752111, Puri District, Odisha",
+        "book_url": "https://www.lotusresorthotels.com/eco-resort-konark/",
+        "sources": [
+          "https://www.lotusresorthotels.com/eco-resort-konark/",
+          "https://www.tripadvisor.com/Hotel_Review-g424925-d1974077-Reviews-Lotus_Eco_Resort_Konark-Konark_Puri_District_Odisha.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "konark",
+      "slot": "value",
+      "verdict": "replace",
+      "existing": {
+        "name": "OTDC Yatri Niwas Konark",
+        "issue": "Mislabelled — OTDC's Konark property is Panthanivas Konark, not a separate 'Yatri Niwas'. Re-anchor to the correctly named Panthanivas Konark (OTDC)."
+      },
+      "replacement": {
+        "name": "Panthanivas Konark (OTDC)",
+        "tier": "budget",
+        "tagline": "The Odisha Tourism state guesthouse at Konark — a plain government property with a restaurant, the closest budget bed to the Sun Temple itself. Good for early-morning temple light.",
+        "price_band": "₹₹",
+        "address": "Konark 752111, Puri District, Odisha",
+        "book_url": "https://otdc.odisha.gov.in/accommodations/panthanivas-konark",
+        "sources": [
+          "https://otdc.odisha.gov.in/accommodations/panthanivas-konark",
+          "https://odishatourism.gov.in/content/tourism/en/plan/food-accommodation/otdc.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "konark",
+      "slot": "location",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Toshali Sands Puri",
+        "issue": "Cross-dest — Toshali Sands is a Puri-side resort on the Puri-Konark marine drive, not a Konark property. Mislabelling a Puri resort as Konark. Honest scarcity for a third distinct Konark tier-1/2 property: Konark is a small temple town with only ~3 hotels; the experience and value slots already cover the two genuine anchors."
+      }
+    },
+    {
+      "destination_id": "gopalpur-on-sea",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Mayfair Palm Beach Resort Gopalpur-on-Sea",
+        "issue": "OK — Mayfair Palm Beach Resort is a genuine 1914 colonial heritage 5-star at Gopalpur-on-Sea. Tighten the copy."
+      },
+      "replacement": {
+        "name": "Mayfair Palm Beach Resort Gopalpur",
+        "tier": "luxury",
+        "tagline": "A genuine heritage property — built 1914, once an Oberoi hotel, now Mayfair's flagship Gopalpur resort across 12 acres of seafront in white-and-blue colonial architecture.",
+        "price_band": "₹₹₹₹",
+        "address": "Gopalpur-on-Sea, Ganjam District 761002, Odisha",
+        "book_url": "https://www.mayfairhotels.com/palm-beach-resort-gopalpur-on-sea/",
+        "sources": [
+          "https://www.mayfairhotels.com/palm-beach-resort-gopalpur-on-sea/",
+          "https://www.tripadvisor.com/Hotel_Review-g665885-d3706569-Reviews-Mayfair_Palm_Beach_Resort-Gopalpur_On_Sea_Ganjam_District_Odisha.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "gopalpur-on-sea",
+      "slot": "value",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Swosti Palm Resort Gopalpur",
+        "issue": "OK — Swosti Palm Resort is a real 28-room resort (former Tata guest house) at Gopalpur-on-Sea. Tighten the copy."
+      },
+      "replacement": {
+        "name": "Swosti Palm Resort Gopalpur",
+        "tier": "comfort",
+        "tagline": "A former Tata guest house converted into a homely 28-room resort just 200m from the sand — the mid-range alternative to Mayfair for a relaxed Gopalpur beach stay.",
+        "price_band": "₹₹₹",
+        "address": "Gopalpur-on-Sea, Ganjam District 761002, Odisha",
+        "book_url": "https://swosti.com/swosti-palm-resort-gopalpur/",
+        "sources": [
+          "https://swosti.com/swosti-palm-resort-gopalpur/",
+          "https://www.tripadvisor.com/Hotel_Review-g665885-d658312-Reviews-Swosti_Palm_Resorts-Gopalpur_On_Sea_Ganjam_District_Odisha.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "gopalpur-on-sea",
+      "slot": "location",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Song of the Sea",
+        "issue": "Unverifiable — no Booking.com/MakeMyTrip/Tripadvisor listing for a 'Song of the Sea' hotel at Gopalpur-on-Sea. Fabricated evocatively-named ghost. Gopalpur is a small beach town; beyond Mayfair and Swosti Palm there is no further verifiable tier-1/2 property for a distinct location slot — honest scarcity."
+      }
+    },
+    {
+      "destination_id": "chandipur",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "OTDC Panthanivas Chandipur",
+        "issue": "OK — Panthanivas Chandipur is the real OTDC property and the only sea-facing accommodation at Chandipur. Tighten the copy."
+      },
+      "replacement": {
+        "name": "Panthanivas Chandipur (OTDC)",
+        "tier": "comfort",
+        "tagline": "The only genuinely sea-facing place to stay at Chandipur, where the tide recedes up to 5km — walk through the resort lawn straight onto the sand; the restaurant does fresh local prawn and crab.",
+        "price_band": "₹₹",
+        "address": "Chandipur Road, Chandan Bagicha, Mallikashpur, Balasore 756025, Odisha",
+        "book_url": "https://otdc.odisha.gov.in/accommodations/panthanivas-chandipur",
+        "sources": [
+          "https://otdc.odisha.gov.in/accommodations/panthanivas-chandipur",
+          "https://www.tripadvisor.in/Hotel_Review-g1162223-d2644428-Reviews-Panthanivas_Chandipur-Chandipur_Balasore_District_Odisha.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "chandipur",
+      "slot": "value",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Hotel Shubham",
+        "issue": "Unverifiable as a Chandipur property — 'Hotel Shubham' is a generic name with no clear Chandipur Booking.com/MakeMyTrip/Tripadvisor listing. Chandipur is a tiny beach hamlet; the OTDC Panthanivas is effectively the only verified tier-1/2 stay, others are unrated budget lodges. Honest scarcity for the value slot."
+      }
+    },
+    {
+      "destination_id": "chandipur",
+      "slot": "xfactor",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Arpita Beach Resort",
+        "issue": "Unverifiable — no Booking.com/MakeMyTrip/Tripadvisor listing confirms an 'Arpita Beach Resort' at Chandipur. Likely a fabricated beach-resort ghost. Chandipur has no second verifiable tier-1/2 property beyond the OTDC Panthanivas; honest scarcity."
+      }
+    },
+    {
+      "destination_id": "chilika-lake",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "OTDC Panthanivas Barkul",
+        "issue": "OK — Panthanivas Barkul is the real OTDC flagship Chilika property on the lakeshore. Tighten the name."
+      },
+      "replacement": {
+        "name": "Panthanivas Barkul (OTDC)",
+        "tier": "comfort",
+        "tagline": "The Odisha Tourism flagship on the Chilika lakeshore — rooms at the water's edge, boat tours from the doorstep for Kalijai Temple and Irrawaddy dolphins, and a freshly cooked, very affordable restaurant.",
+        "price_band": "₹₹",
+        "address": "Panthanivas, near OTDC Water Sports Complex, Barkul, Khordha District 752030, Odisha",
+        "book_url": "https://otdc.odisha.gov.in/accommodations/panthanivas-barkul",
+        "sources": [
+          "https://otdc.odisha.gov.in/accommodations/panthanivas-barkul",
+          "https://www.makemytrip.global/hotels/otdc_panthanivas_barkul-details-chilika_lake.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "chilika-lake",
+      "slot": "value",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "OTDC Yatrinivas Satapada",
+        "issue": "OK — OTDC's Satapada property is a real Yatrinivas at the Chilika dolphin-watching gateway. Tighten the name."
+      },
+      "replacement": {
+        "name": "Yatrinivas Satapada (OTDC)",
+        "tier": "budget",
+        "tagline": "OTDC's property at the eastern dolphin gateway of Chilika — spacious lake-view rooms, a restaurant and reasonably priced OTDC boat rides to the Irrawaddy-dolphin grounds and the sea mouth.",
+        "price_band": "₹₹",
+        "address": "Satapada, Puri District 752030, Odisha",
+        "book_url": "https://otdc.odisha.gov.in/accommodations/yatrinivas-satapada",
+        "sources": [
+          "https://otdc.odisha.gov.in/accommodations/yatrinivas-satapada",
+          "https://www.makemytrip.com/hotels/otdc_yatrinivas_satapada-details-chilika_lake.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "chilika-lake",
+      "slot": "location",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Mangalajodi Ecotourism Trust Lodge",
+        "issue": "OK — Mangalajodi Ecotourism runs a real community lodge (Godwit Eco Cottage) on the northern marshes of Chilika. Tighten the name to the property's actual name."
+      },
+      "replacement": {
+        "name": "Godwit Eco Cottage (Mangalajodi Ecotourism)",
+        "tier": "comfort",
+        "tagline": "A community-owned conservation venture run by former poachers turned protectors — bamboo-and-mud cottages on the bird-rich northern marshes of Chilika, with a guided boat safari through wetlands hosting 200+ species.",
+        "price_band": "₹₹",
+        "address": "Mangalajodi village, Tangi block, Khordha District 752013, Odisha",
+        "book_url": "http://www.mangalajodiecotourism.com/",
+        "sources": [
+          "http://www.mangalajodiecotourism.com/",
+          "http://www.odishaecotourism.com/godwit-eco-cottage.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "bhitarkanika",
+      "slot": "experience",
+      "verdict": "replace",
+      "existing": {
+        "name": "Bhitarkanika Lodge",
+        "issue": "Generic descriptor, not a verifiable single property — no clear Booking.com/MakeMyTrip/Tripadvisor listing for a property simply called 'Bhitarkanika Lodge'. Re-anchor to Sand Pebbles Bhitarkanika Jungle Resort, the most established verified resort at the Khola gate."
+      },
+      "replacement": {
+        "name": "Sand Pebbles Bhitarkanika Jungle Resort",
+        "tier": "comfort",
+        "tagline": "A 17-key Swiss-tent and room resort at the Khola gate — AC luxury tents, deluxe tents and family suites, with 'The Crocodile' restaurant doing local prawn and crab. The most established private base for park safaris.",
+        "price_band": "₹₹₹",
+        "address": "Khola, Dangmal, Rajnagar, Kendrapara District 754225, Odisha",
+        "book_url": "https://bhitarkanikanationalpark.com/",
+        "sources": [
+          "https://bhitarkanikanationalpark.com/",
+          "https://www.tripadvisor.com/Hotel_Review-g3386997-d2431337-Reviews-Sand_Pebbles_Bhitarkanika_Jungle_Resorts-Bhitarkanika_National_Park_Kendrapara_Distri.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "bhitarkanika",
+      "slot": "value",
+      "verdict": "replace",
+      "existing": {
+        "name": "Rajnagar Guest House",
+        "issue": "Generic name — Rajnagar is the road-access town to Bhitarkanika, but there is no single verifiable tier-1/2 'Rajnagar Guest House'. Re-anchor the value slot to Aranyanivas Bhitarkanika (OTDC), the verified government property in the park."
+      },
+      "replacement": {
+        "name": "Aranyanivas Bhitarkanika (OTDC)",
+        "tier": "budget",
+        "tagline": "The Odisha Tourism property inside the mangrove national park — government-run accommodation and the dependable state-tourism base for boat safaris to spot estuarine crocodiles and the heronry.",
+        "price_band": "₹₹",
+        "address": "Bhitarkanika National Park, Kendrapara District 754225, Odisha",
+        "book_url": "https://otdc.odisha.gov.in/accommodations/aranyanivas-bhitarakanika",
+        "sources": [
+          "https://otdc.odisha.gov.in/accommodations/aranyanivas-bhitarakanika",
+          "https://odishatourism.gov.in/content/tourism/en/plan/food-accommodation/otdc.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "bhitarkanika",
+      "slot": "location",
+      "verdict": "replace",
+      "existing": {
+        "name": "Astarang Resort",
+        "issue": "Cross-dest — Astarang is a coastal town in Puri district, roughly 150km south of Bhitarkanika (Kendrapara district). Mislocating a Puri-district name as Bhitarkanika. Re-anchor to Killa Aul Palace, a genuine heritage homestay near the Bhitarkanika park."
+      },
+      "replacement": {
+        "name": "Killa Aul Palace",
+        "tier": "comfort",
+        "tagline": "A 16th-century royal estate turned heritage homestay hosted by the current royal family — 40 acres on the Kharasrota River, kayaking and guided crocodile-and-bird visits to Bhitarkanika. A distinctive heritage gateway to the park.",
+        "price_band": "₹₹₹",
+        "address": "Aul, Kendrapara District 754219, Odisha",
+        "book_url": "https://explore.travellink-india.com/killa-aul-palace-16th-century-heritage-homestay-near-bhitarkanika/",
+        "sources": [
+          "https://explore.travellink-india.com/killa-aul-palace-16th-century-heritage-homestay-near-bhitarkanika/",
+          "https://www.bhitarkanika.in/accommodation.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "bhitarkanika",
+      "slot": "xfactor",
+      "verdict": "replace",
+      "existing": {
+        "name": "Mangrove Houseboats (operator: Odisha Water Holidays)",
+        "issue": "Unverifiable — no verifiable houseboat operation named 'Odisha Water Holidays' running mangrove houseboats at Bhitarkanika; the park's boating is day-safari only via forest-department and resort boats, not overnight houseboats. Fabricated houseboat concept. Re-anchor the x-factor to the Odisha Eco-Tourism Dangmal/Gupti nature camps, the genuine immersive stay."
+      },
+      "replacement": {
+        "name": "Dangmal & Gupti Nature Camps (Odisha Eco-Tourism)",
+        "tier": "comfort",
+        "tagline": "Forest-department eco-camps deep in Bhitarkanika — Gupti on the banks of the Patasala river at the sanctuary entry point, Dangmal in the park interior, with luxury rooms and all meals included. The most immersive way to stay inside the mangroves.",
+        "price_band": "₹₹",
+        "address": "Dangmal & Gupti, Bhitarkanika National Park, Kendrapara District 754225, Odisha",
+        "book_url": "https://www.ecotourodisha.com/",
+        "sources": [
+          "https://www.ecotourodisha.com/",
+          "https://odishatourism.gov.in/content/tourism/en/discover/attractions/forest-wildlife/bhitarkanika-nature-camps.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "simlipal",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Lulung Nature Camp (Odisha Forest Dept)",
+        "issue": "Partly OK — Lulung is the correct gateway location, but the standout property there is the Lulung Aranya Nivas Resort (a 14-acre forest resort), not a generic 'nature camp'. Re-anchor to the named resort."
+      },
+      "replacement": {
+        "name": "Lulung Aranya Nivas Resort",
+        "tier": "comfort",
+        "tagline": "A 14-acre forest resort on the Palpala River at the edge of Simlipal's core zone — ~20 riverside cottages, family rooms, meadow suites and a pool. Tripadvisor's #1 in the Simlipal area at 4/5 across 265 reviews.",
+        "price_band": "₹₹₹",
+        "address": "Lulung, Simlipal Tiger Reserve, Mayurbhanj District 757091, Odisha",
+        "book_url": "https://www.simlipalforestresort.com/",
+        "sources": [
+          "https://www.simlipalforestresort.com/",
+          "https://www.tripadvisor.in/Hotel_Review-g2287521-d15263237-Reviews-Lulung_Aranya_Nivas_Resort-Baripada_Mayurbhanj_District_Odisha.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "simlipal",
+      "slot": "location",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Pithabata Forest Rest House",
+        "issue": "OK — Pithabata is the principal southern entry gate of Simlipal and the forest department operates rest-house accommodation there. Reframe as part of the Odisha Eco-Tourism nature-camp network, which is the bookable channel."
+      },
+      "replacement": {
+        "name": "Similipal Nature Camps (Odisha Eco-Tourism)",
+        "tier": "budget",
+        "tagline": "The forest-department eco-camp network inside Simlipal — bamboo huts and tented lodges at interior locations including the Pithabata-gate area, the only way to stay deep in the reserve. Closed mid-June to mid-October for monsoon.",
+        "price_band": "₹₹",
+        "address": "Simlipal Tiger Reserve, Mayurbhanj District, Odisha",
+        "book_url": "https://www.ecotourodisha.com/",
+        "sources": [
+          "https://www.ecotourodisha.com/",
+          "https://odishatourism.gov.in/content/tourism/en/experience/activities/trekking/similipal-nature-camp.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "simlipal",
+      "slot": "xfactor",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Chahala Forest Rest House (interior)",
+        "issue": "OK in spirit — Chahala is a genuine interior forest rest house deep inside Simlipal, historically a royal hunting lodge. Reframe under the Odisha Eco-Tourism interior-camp network, the correct bookable channel; access is restricted and seasonal."
+      },
+      "replacement": {
+        "name": "Chahala Interior Nature Camp (Odisha Eco-Tourism)",
+        "tier": "budget",
+        "tagline": "A historic interior camp deep in the Simlipal core — the former royal hunting lodge at Chahala, a salt-lick clearing that draws elephant and gaur. The most remote, immersive Simlipal stay; access restricted and monsoon-closed.",
+        "price_band": "₹₹",
+        "address": "Chahala, interior Simlipal Tiger Reserve, Mayurbhanj District, Odisha",
+        "book_url": "https://www.ecotourodisha.com/",
+        "sources": [
+          "https://www.ecotourodisha.com/",
+          "https://odishatourism.gov.in/content/tourism/en/experience/activities/trekking/similipal-nature-camp.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "satkosia",
+      "slot": "experience",
+      "verdict": "replace",
+      "existing": {
+        "name": "Satkosia Tiger Lodge",
+        "issue": "Generic descriptor, not a verifiable single property — no clear listing for a 'Satkosia Tiger Lodge'. Re-anchor to the Tikarpada Nature Camp, the genuine forest-department eco-camp inside the Satkosia gorge."
+      },
+      "replacement": {
+        "name": "Tikarpada Nature Camp (Odisha Eco-Tourism)",
+        "tier": "comfort",
+        "tagline": "The forest-department eco-camp on the bank of the Mahanadi inside the Satkosia gorge — eco cottages and Swiss cotton tents with all meals included, run with local communities. Gorge boating to spot gharial and mugger crocodiles.",
+        "price_band": "₹₹",
+        "address": "Tikarpada, Satkosia Tiger Reserve, Angul District 759122, Odisha",
+        "book_url": "https://www.ecotourodisha.com/satkosia-nature-camps.php",
+        "sources": [
+          "https://www.ecotourodisha.com/satkosia-nature-camps.php",
+          "https://odishatourism.gov.in/content/tourism/en/discover/attractions/forest-wildlife/tikarapara.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "satkosia",
+      "slot": "value",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Kanak Mahal Resort",
+        "issue": "Unverifiable — no Booking.com/MakeMyTrip/Tripadvisor listing for a 'Kanak Mahal Resort' at Satkosia. Likely a fabricated resort ghost. Satkosia accommodation is essentially the forest-department eco-camps (Tikarpada, Purunakote, Baghmunda, Tarava); there is no separate verifiable tier-1/2 'value' hotel — honest scarcity."
+      }
+    },
+    {
+      "destination_id": "satkosia",
+      "slot": "location",
+      "verdict": "replace",
+      "existing": {
+        "name": "Balukhanda Eco Resort",
+        "issue": "Cross-dest — Balukhanda is the coastal Balukhand-Konark Wildlife Sanctuary on the Puri-Konark beach road, roughly 200km away. Mislocating a coastal-Puri name as inland Satkosia. Re-anchor to the Purunakote / Baghmunda forest-department camps at the Satkosia gates."
+      },
+      "replacement": {
+        "name": "Purunakote & Baghmunda Nature Camps (Odisha Eco-Tourism)",
+        "tier": "budget",
+        "tagline": "Forest-department eco-camps at the Satkosia gates — Purunakote on the approach to the gorge, Baghmunda in the reserve, with cottages and tents and all meals included. The gate-side bases for Satkosia safaris and trekking.",
+        "price_band": "₹₹",
+        "address": "Purunakote / Baghmunda, Satkosia Tiger Reserve, Angul District, Odisha",
+        "book_url": "https://www.ecotourodisha.com/satkosia-nature-camps.php",
+        "sources": [
+          "https://www.ecotourodisha.com/satkosia-nature-camps.php",
+          "https://www.satkosia.org/where-to-stay.php"
+        ]
+      }
+    },
+    {
+      "destination_id": "satkosia",
+      "slot": "xfactor",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Satkosia Jungle Camp",
+        "issue": "Generic descriptor with no verifiable single listing — no clear Booking.com/MakeMyTrip/Tripadvisor entry for a property called 'Satkosia Jungle Camp'. The genuine Satkosia accommodation is the forest-department nature-camp network already covered in the experience and location slots; no further distinct tier-1/2 x-factor property exists — honest scarcity."
+      }
+    },
+    {
+      "destination_id": "baripada",
+      "slot": "experience",
+      "verdict": "replace",
+      "existing": {
+        "name": "Baripada Hill Resort",
+        "issue": "Unverifiable — no Booking.com/MakeMyTrip/Tripadvisor listing for a 'Baripada Hill Resort' (Baripada is a plains town, not a hill station). Fabricated resort ghost. Re-anchor the experience slot to Lulung Aranya Nivas Resort, the standout Simlipal-edge resort within Baripada district."
+      },
+      "replacement": {
+        "name": "Lulung Aranya Nivas Resort",
+        "tier": "comfort",
+        "tagline": "A 14-acre forest resort on the Palpala River at the edge of Simlipal's core, in Baripada's Mayurbhanj district — riverside cottages, a pool and a buffet kitchen. Tripadvisor's #1 in the Baripada area at 4/5.",
+        "price_band": "₹₹₹",
+        "address": "Lulung, Simlipal Tiger Reserve, Mayurbhanj District 757091, Odisha",
+        "book_url": "https://www.simlipalforestresort.com/",
+        "sources": [
+          "https://www.simlipalforestresort.com/",
+          "https://www.tripadvisor.in/Hotel_Review-g2287521-d15263237-Reviews-Lulung_Aranya_Nivas_Resort-Baripada_Mayurbhanj_District_Odisha.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "baripada",
+      "slot": "value",
+      "verdict": "replace",
+      "existing": {
+        "name": "Hotel Samrat",
+        "issue": "Generic budget-hotel name with no verifiable single Baripada listing — multiple unrelated 'Hotel Samrat' properties exist across India. Replace with Hotel Ambika, a verified long-running Baripada town hotel."
+      },
+      "replacement": {
+        "name": "Hotel Ambika",
+        "tier": "budget",
+        "tagline": "One of Baripada's longest-running hotels — a central 3-star with AC rooms, a restaurant and bar, walkable to the bus stand, court and Maa Ambika temple. The reliable in-town base for Simlipal or the Baripada Rath Yatra.",
+        "price_band": "₹₹",
+        "address": "Ward No. 4, Roxy Road, near Biju Patnaik Square, Baripada, Mayurbhanj District 757001, Odisha",
+        "book_url": "https://www.makemytrip.com/hotels/hotel_ambika-details-baripada.html",
+        "sources": [
+          "https://www.makemytrip.com/hotels/hotel_ambika-details-baripada.html",
+          "https://www.tripadvisor.in/Hotel_Review-g2287521-d2108464-Reviews-Hotel_Ambika-Baripada_Mayurbhanj_District_Odisha.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "baripada",
+      "slot": "location",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "OTDC Hotel Baripada",
+        "issue": "Unverifiable — Baripada does not appear in OTDC's official 21-Panthanivas network, and there is no verifiable 'OTDC Hotel Baripada' on the OTDC site or booking platforms. Likely a fabricated government-property ghost. Baripada town has few rated hotels beyond Hotel Ambika; no further distinct tier-1/2 location-slot property — honest scarcity."
+      }
+    },
+    {
+      "destination_id": "baripada",
+      "slot": "xfactor",
+      "verdict": "replace",
+      "existing": {
+        "name": "Similipal Tiger Lodge (Forest Stay)",
+        "issue": "Generic descriptor, not a verifiable single property — no listing for a 'Similipal Tiger Lodge'. Re-anchor the x-factor to the Odisha Eco-Tourism Similipal nature camps, the genuine immersive forest stay reachable from Baripada."
+      },
+      "replacement": {
+        "name": "Similipal Nature Camps (Odisha Eco-Tourism)",
+        "tier": "budget",
+        "tagline": "The forest-department eco-camp network inside Simlipal Tiger Reserve, the headline draw of Baripada district — bamboo huts and tented lodges deep in the reserve. Genuine wilderness; closed mid-June to mid-October for monsoon.",
+        "price_band": "₹₹",
+        "address": "Simlipal Tiger Reserve, Mayurbhanj District, Odisha",
+        "book_url": "https://www.ecotourodisha.com/",
+        "sources": [
+          "https://www.ecotourodisha.com/",
+          "https://odishatourism.gov.in/content/tourism/en/experience/activities/trekking/similipal-nature-camp.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "sambalpur",
+      "slot": "experience",
+      "verdict": "replace",
+      "existing": {
+        "name": "Hotel Sheela Towers",
+        "issue": "Real property but mis-tiered — Hotel Sheela Towers is a solid 3-star value hotel, not Sambalpur's top experience address. Re-anchor the experience slot to Regenta Inn Sambalpur, the city's #1-rated hotel; keep Sheela Towers for the value slot."
+      },
+      "replacement": {
+        "name": "Regenta Inn Sambalpur",
+        "tier": "comfort",
+        "tagline": "Sambalpur's best-rated hotel — a Royal Orchid Regenta business hotel ranked #1 in town on Tripadvisor at 4/5 across 162 reviews, with very clean rooms and the multi-cuisine PINXX restaurant. The comfortable base for Hirakud Dam.",
+        "price_band": "₹₹₹",
+        "address": "Farm Road, Sambalpur, Sambalpur District 768001, Odisha",
+        "book_url": "https://www.royalorchidhotels.com/regenta-inn-sambalpur/overview",
+        "sources": [
+          "https://www.royalorchidhotels.com/regenta-inn-sambalpur/overview",
+          "https://www.tripadvisor.in/Hotel_Review-g1213781-d23618587-Reviews-Regenta_Inn_Sambalpur-Sambalpur_Sambalpur_District_Odisha.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "sambalpur",
+      "slot": "value",
+      "verdict": "replace",
+      "existing": {
+        "name": "Regenta Inn Sambalpur",
+        "issue": "Real property but slot mismatch — Regenta Inn is the city's top hotel (re-anchored to the experience slot). Re-anchor the value slot to Hotel Sheela Towers, a verified mid-range Sambalpur hotel."
+      },
+      "replacement": {
+        "name": "Hotel Sheela Towers",
+        "tier": "budget",
+        "tagline": "A long-running 51-room 3-star in the heart of Sambalpur — free Wi-Fi, airport transfer and 24-hour room service, walkable to the Kali Mandir. A dependable mid-range base, one of the most-booked hotels in the city.",
+        "price_band": "₹₹",
+        "address": "Sakhipara, Sambalpur, Sambalpur District 768001, Odisha",
+        "book_url": "https://www.tripadvisor.com/Hotel_Review-g1213781-d1585363-Reviews-Hotel_Sheela_Towers-Sambalpur_Sambalpur_District_Odisha.html",
+        "sources": [
+          "https://www.tripadvisor.com/Hotel_Review-g1213781-d1585363-Reviews-Hotel_Sheela_Towers-Sambalpur_Sambalpur_District_Odisha.html",
+          "https://in.trip.com/hotels/sambalpur-hotel-detail-10750541/hotel-sheela-towers/"
+        ]
+      }
+    },
+    {
+      "destination_id": "sambalpur",
+      "slot": "xfactor",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Pipul Utkal Continental",
+        "issue": "Unverifiable — no Booking.com/MakeMyTrip/Tripadvisor listing for a 'Pipul Utkal Continental' in Sambalpur. Likely a fabricated/mangled hotel ghost. Beyond Regenta Inn and Hotel Sheela Towers, Sambalpur has no further distinct tier-1/2 property for an x-factor slot — honest scarcity."
+      }
+    },
+    {
+      "destination_id": "koraput",
+      "slot": "experience",
+      "verdict": "replace",
+      "existing": {
+        "name": "OTDC Panthanivas Koraput",
+        "issue": "Mislabelled — Koraput is NOT in OTDC's official 21-Panthanivas network. OTDC's Koraput-area unit is Hotel Alishan (a Unit of Odisha Tourism), not a 'Panthanivas Koraput'. Re-anchor the experience slot to Hotel Hello Jeypore, the best-regarded full-service hotel in the Koraput area."
+      },
+      "replacement": {
+        "name": "Hotel Hello Jeypore",
+        "tier": "comfort",
+        "tagline": "The best-regarded full-service hotel in the Koraput area — recently renovated, with clean modern AC rooms, a restaurant and a fitness centre, in Jeypore, the district's main commercial town. The comfortable base for the tribal-belt circuit.",
+        "price_band": "₹₹",
+        "address": "Jeypore, Koraput District 764001, Odisha",
+        "book_url": "https://www.tripadvisor.com/Hotel_Review-g1015905-d33072376-Reviews-Hotel_Hello_Jeypore-Jeypore_Koraput_District_Odisha.html",
+        "sources": [
+          "https://www.tripadvisor.com/Hotel_Review-g1015905-d33072376-Reviews-Hotel_Hello_Jeypore-Jeypore_Koraput_District_Odisha.html",
+          "https://koraput.odisha.gov.in/en/tourism/accommodation"
+        ]
+      }
+    },
+    {
+      "destination_id": "koraput",
+      "slot": "value",
+      "verdict": "replace",
+      "existing": {
+        "name": "Hotel Hello Koraput",
+        "issue": "Mislocated name — the verified property is Hotel Hello in Jeypore (re-anchored to the experience slot), not 'Hotel Hello Koraput'. Re-anchor the value slot to Atithi Bhawan, the Jagannath-temple-trust guesthouse in Koraput town."
+      },
+      "replacement": {
+        "name": "Atithi Bhawan (Jagannath Temple Trust)",
+        "tier": "budget",
+        "tagline": "A 32-room temple-trust guesthouse run by the Koraput Jagannath Temple, in the heart of town below the hilltop Sabar Srikhetra shrine. Plain and very affordable — the practical pilgrim and budget base in Koraput town itself.",
+        "price_band": "₹",
+        "address": "Link Road, Koraput town, Koraput District 764020, Odisha",
+        "book_url": "https://www.tripadvisor.in/Hotel_Review-g3387000-d3724778-Reviews-Atithi_Bhawan_Hotel-Koraput_Koraput_District_Odisha.html",
+        "sources": [
+          "https://www.tripadvisor.in/Hotel_Review-g3387000-d3724778-Reviews-Atithi_Bhawan_Hotel-Koraput_Koraput_District_Odisha.html",
+          "https://koraput.nic.in/accommodation/"
+        ]
+      }
+    },
+    {
+      "destination_id": "koraput",
+      "slot": "location",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Hotel Saphire Koraput",
+        "issue": "Unverifiable — no Booking.com/MakeMyTrip/Tripadvisor listing for a 'Hotel Saphire' in Koraput. Likely a fabricated/misspelled ghost. Koraput town has only a handful of rated hotels; beyond Hotel Hello Jeypore and Atithi Bhawan there is no further distinct tier-1/2 location-slot property — honest scarcity."
+      }
+    },
+    {
+      "destination_id": "daringbadi",
+      "slot": "experience",
+      "verdict": "replace",
+      "existing": {
+        "name": "The Orchard Resort",
+        "issue": "Unverifiable as a Daringbadi property — no clear Booking.com/MakeMyTrip/Tripadvisor listing for a 'The Orchard Resort' at Daringbadi. Re-anchor to Utopia Resort Daringbadi, the town's Tripadvisor #1-ranked resort."
+      },
+      "replacement": {
+        "name": "Utopia Resort Daringbadi",
+        "tier": "comfort",
+        "tagline": "Daringbadi's Tripadvisor #1-ranked resort — 24 well-appointed suite and deluxe rooms with Wi-Fi and modern comforts, in the pine-and-coffee hill country of Kandhamal. The reliable comfort base for this misty hill station.",
+        "price_band": "₹₹₹",
+        "address": "Daringbadi village, Kandhamal District 762104, Odisha",
+        "book_url": "https://hotelutopia.in/",
+        "sources": [
+          "https://hotelutopia.in/",
+          "https://www.tripadvisor.com/Hotel_Review-g23164530-d20150424-Reviews-Utopia_Resort-Daringbadi_Kandhamal_District_Odisha.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "daringbadi",
+      "slot": "value",
+      "verdict": "replace",
+      "existing": {
+        "name": "Daringbadi Hill View Guest House",
+        "issue": "Generic descriptor with no verifiable single listing — no clear Booking.com/MakeMyTrip/Tripadvisor entry for a 'Daringbadi Hill View Guest House'. Re-anchor to The Hill Resorts Daringbadi, a verified mid-range hill resort."
+      },
+      "replacement": {
+        "name": "The Hill Resorts Daringbadi",
+        "tier": "budget",
+        "tagline": "An affordable Daringbadi hill resort with rooms, an on-site restaurant, a pool and free Wi-Fi, plus space for tribal-culture experiences. A good value alternative to Utopia for families exploring the Kandhamal hills.",
+        "price_band": "₹₹",
+        "address": "Daringbadi, Kandhamal District 762104, Odisha",
+        "book_url": "https://thehillresortsdaringbadi.com/",
+        "sources": [
+          "https://thehillresortsdaringbadi.com/",
+          "https://www.tripadvisor.in/Hotels-g23164530-Daringbadi_Kandhamal_District_Odisha-Hotels.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "daringbadi",
+      "slot": "location",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "High Ridge Homestay",
+        "issue": "Unverifiable — no Booking.com/MakeMyTrip/Tripadvisor listing for a 'High Ridge Homestay' at Daringbadi. Likely a fabricated homestay ghost. Daringbadi's verified tier-1/2 stays are Utopia Resort and The Hill Resorts; no further distinct location-slot property — honest scarcity."
+      }
+    },
+    {
+      "destination_id": "daringbadi",
+      "slot": "xfactor",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "0",
+        "issue": "Placeholder value '0' — not a property at all, an empty/corrupt baseline slot. No verifiable distinct tier-1/2 x-factor property beyond Utopia Resort and The Hill Resorts — honest scarcity."
+      }
+    },
+    {
+      "destination_id": "taptapani",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Taptapani Resort",
+        "issue": "Loosely named — the real property is Panthanivas Taptapani (OTDC), the dominant accommodation at the hot spring. Re-anchor to the correct OTDC name."
+      },
+      "replacement": {
+        "name": "Panthanivas Taptapani (OTDC)",
+        "tier": "comfort",
+        "tagline": "The Odisha Tourism property at the Taptapani sulphur hot spring — 17 rooms with tree-house and tent options, and hot spring water piped straight into the bathtubs. A lovely forest-set hill location; maintenance is uneven.",
+        "price_band": "₹₹",
+        "address": "Pudamari, Taptapani, Ganjam District 761014, Odisha",
+        "book_url": "https://otdc.odisha.gov.in/accommodations/panthanivas-taptapani",
+        "sources": [
+          "https://otdc.odisha.gov.in/accommodations/panthanivas-taptapani",
+          "https://www.tripadvisor.in/Hotel_Review-g2289031-d2414121-Reviews-Panthanivas_Taptapani-Taptapani_Gajapati_District_Odisha.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "taptapani",
+      "slot": "value",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Taptapani Nature Camp",
+        "issue": "Unverifiable as a distinct property — no clear bookable 'Taptapani Nature Camp' separate from the OTDC Panthanivas (which itself operates the tents and tree house). Taptapani is a tiny spa village; the Panthanivas is effectively the only accommodation — honest scarcity for a distinct value-slot property."
+      }
+    },
+    {
+      "destination_id": "taptapani",
+      "slot": "location",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Taptapani Resort",
+        "issue": "Duplicate of the experience-slot entry and not a verifiable distinct property — the only accommodation at Taptapani is the OTDC Panthanivas (used for the experience slot). No second tier-1/2 property exists at this tiny spa village — honest scarcity."
+      }
+    },
+    {
+      "destination_id": "taptapani",
+      "slot": "xfactor",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Waterlog Homestay (Nearby Ranapur area)",
+        "issue": "Cross-dest and unverifiable — Ranapur is in Nayagarh district, far from Taptapani (Ganjam district), and there is no verifiable 'Waterlog Homestay'. Mislocated, likely fabricated. No distinct tier-1/2 x-factor property at Taptapani — honest scarcity."
+      }
+    },
+    {
+      "destination_id": "talasari",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "OTDC Panthasala Chandaneswar",
+        "issue": "OK — OTDC operates a Panthashala at Chandaneswar near Talasari Beach, effectively the only government accommodation there. Tighten the name."
+      },
+      "replacement": {
+        "name": "Panthashala Chandaneswar (OTDC)",
+        "tier": "budget",
+        "tagline": "The Odisha Tourism Panthashala near Talasari Beach and the Chandaneswar Shiva temple — effectively the only government accommodation at this quiet border-coast beach. Plain rooms and an affordable restaurant.",
+        "price_band": "₹₹",
+        "address": "Chandaneswar, near Talasari Beach, Balasore District 756084, Odisha",
+        "book_url": "https://otdc.odisha.gov.in/",
+        "sources": [
+          "https://otdc.odisha.gov.in/",
+          "https://www.tripadvisor.in/ShowUserReviews-g1584841-d2454220-r213563301-Pathanivas_Chandaneswar-Balasore_Balasore_District_Odisha.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "talasari",
+      "slot": "value",
+      "verdict": "replace",
+      "existing": {
+        "name": "Talasari Beach Resort",
+        "issue": "Generic descriptor with no verifiable single listing — no clear Booking.com/MakeMyTrip/Tripadvisor entry for a property simply called 'Talasari Beach Resort'. Re-anchor to Shree Inn Talasari, a verified beachside hotel."
+      },
+      "replacement": {
+        "name": "Shree Inn Talasari",
+        "tier": "comfort",
+        "tagline": "A beachside 3-star at Talasari — clean AC rooms, some with private sea-facing balconies, plus a rooftop pool, an in-house restaurant and a garden. The most comfortable private option at this quiet stretch of coast.",
+        "price_band": "₹₹",
+        "address": "Bindhapadmapur, Talasari Beach, Balasore District 756084, Odisha",
+        "book_url": "https://www.tripadvisor.in/Hotel_Review-g1584841-d8766456-Reviews-Shree_Inn_Talasari-Balasore_Balasore_District_Odisha.html",
+        "sources": [
+          "https://www.tripadvisor.in/Hotel_Review-g1584841-d8766456-Reviews-Shree_Inn_Talasari-Balasore_Balasore_District_Odisha.html",
+          "https://www.tripadvisor.in/HotelsNear-g1584841-d2011697-Talasari_Beach-Balasore_Balasore_District_Odisha.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "talasari",
+      "slot": "xfactor",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Digha-Mohana Cross-Border Lodges",
+        "issue": "Cross-state — Digha and Digha Mohana are in West Bengal, across the state border, not in Odisha's Talasari. Mislabelling West Bengal lodges as a Talasari (Odisha) pick. Talasari itself has only the OTDC Panthashala and Shree Inn; no distinct in-Odisha tier-1/2 x-factor property — honest scarcity."
+      }
+    },
+    {
+      "destination_id": "deomali",
+      "slot": "location",
+      "verdict": "replace",
+      "existing": {
+        "name": "Rayagada Circuit House (if available) / homestays near Deomali village center",
+        "issue": "Vague and partly cross-dest — Rayagada is a separate district town well away from Deomali, and a government circuit house is not a tourist booking. Re-anchor to Deomali Desia Eco Stays, the closest verified accommodation to the peak."
+      },
+      "replacement": {
+        "name": "Deomali Desia Eco Stays",
+        "tier": "comfort",
+        "tagline": "A community-run eco-stay in the Koraput tribal valley about 6km below Odisha's highest peak — bamboo and mud cottages with attached western bathrooms and geysers, and homely tribal-style cooking. The closest verified bed to the Deomali summit.",
+        "price_band": "₹₹",
+        "address": "Taupadar village, Thuria-Kunduli-Deomali road, Koraput District 764081, Odisha",
+        "book_url": "https://www.desiadeomali.com/",
+        "sources": [
+          "https://www.desiadeomali.com/",
+          "https://www.makemytrip.global/hotels/deomali_desia_eco_stays_koraput-details-koraput.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "deomali",
+      "slot": "experience",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Deomali Eco Resort",
+        "issue": "Unverifiable — no Booking.com/MakeMyTrip/Tripadvisor listing for a distinct 'Deomali Eco Resort'. Deomali is a remote peak; the only verified accommodation is Deomali Desia Eco Stays (used for the location slot). No second distinct tier-1/2 experience property — honest scarcity."
+      }
+    },
+    {
+      "destination_id": "deomali",
+      "slot": "value",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Deomali Youth Hostel & Guesthouse",
+        "issue": "Unverifiable — no Booking.com/MakeMyTrip/Tripadvisor or government listing for a 'Deomali Youth Hostel & Guesthouse'. Likely a fabricated budget-stay ghost. Deomali is a remote peak with no town infrastructure; no distinct tier-1/2 value property — honest scarcity (base at Koraput/Jeypore)."
+      }
+    },
+    {
+      "destination_id": "deomali",
+      "slot": "xfactor",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Local homestays operated by tribal families (arranged via local guides)",
+        "issue": "Not a bookable, verifiable single property — a generic category, not a named tier-1/2 stay. Deomali's verified accommodation is Deomali Desia Eco Stays alone; no further distinct x-factor property — honest scarcity."
+      }
+    },
+    {
+      "destination_id": "raghurajpur",
+      "slot": "experience",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "The Mud House",
+        "issue": "Unverifiable — no Booking.com/MakeMyTrip/Tripadvisor listing for a 'The Mud House' at Raghurajpur. Raghurajpur is INTACH's first heritage crafts village with ~120 artist homes and effectively no hotels — multiple sources state it offers no accommodation and visitors should day-trip from Puri (14km). Honest scarcity; base in Puri."
+      }
+    },
+    {
+      "destination_id": "raghurajpur",
+      "slot": "value",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Raghurajpur Home Stay by Local Artists",
+        "issue": "Generic category, not a verifiable named property — informal artist-family stays may be arranged ad hoc but there is no bookable, verifiable tier-1/2 homestay at Raghurajpur. The craft village has near-zero formal accommodation; honest scarcity (Puri-base)."
+      }
+    },
+    {
+      "destination_id": "raghurajpur",
+      "slot": "location",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "The Artisan's Nest",
+        "issue": "Unverifiable — no Booking.com/MakeMyTrip/Tripadvisor listing for a 'The Artisan's Nest' at Raghurajpur. Fabricated evocatively-named ghost. Raghurajpur is a day-trip craft village with no verifiable tier-1/2 accommodation; honest scarcity."
+      }
+    },
+    {
+      "destination_id": "raghurajpur",
+      "slot": "xfactor",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Craft Cottage Artist Residency",
+        "issue": "Unverifiable — no Booking.com/MakeMyTrip/Tripadvisor or official listing for a 'Craft Cottage Artist Residency' at Raghurajpur. Fabricated artist-residency ghost. Raghurajpur has near-zero formal accommodation; honest scarcity (base in Puri, 14km)."
+      }
+    },
+    {
+      "destination_id": "dhauli",
+      "slot": "location",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "OTDC Panthika Dhauli",
+        "issue": "Unverifiable name — 'Panthika' is not an OTDC accommodation type. Dhauli appears in OTDC's broader list but the Ashoka rock-edict / Shanti Stupa site itself is an 8km day-trip from Bhubaneswar with no genuine tier-1/2 accommodation on site. Honest scarcity; base in Bhubaneswar."
+      }
+    },
+    {
+      "destination_id": "dhauli",
+      "slot": "experience",
+      "verdict": "replace",
+      "existing": {
+        "name": "Mayfair Lagoon Bhubaneswar",
+        "issue": "Real property, correctly Bhubaneswar-based — but Dhauli is an 8km day-trip from Bhubaneswar, so the experience pick should be an explicitly Bhubaneswar-base anchor. Keep Mayfair Lagoon but reframe with an explicit base-label so it is not read as a Dhauli property."
+      },
+      "replacement": {
+        "name": "Mayfair Lagoon (Bhubaneswar base for Dhauli)",
+        "tier": "luxury",
+        "tagline": "Dhauli's Ashoka rock edicts and Shanti Stupa are an easy 8km day-trip from Bhubaneswar — base at Mayfair Lagoon, the temple city's iconic 10-acre garden resort, about 10km from the Dhauli hills.",
+        "price_band": "₹₹₹₹",
+        "address": "8-B, Jaydev Vihar, Bhubaneswar 751013, Odisha (≈10km from Dhauli)",
+        "book_url": "https://www.mayfairhotels.com/lagoon-bhubaneswar/",
+        "sources": [
+          "https://www.mayfairhotels.com/lagoon-bhubaneswar/",
+          "https://www.mayfairhotels.com/lagoon-bhubaneswar/places-nearby.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "dhauli",
+      "slot": "value",
+      "verdict": "replace",
+      "existing": {
+        "name": "Lemon Tree Premier Bhubaneswar",
+        "issue": "Real property, correctly Bhubaneswar-based — but Dhauli is an 8km day-trip, so the value pick should be reframed with an explicit Bhubaneswar base-label rather than read as a Dhauli property."
+      },
+      "replacement": {
+        "name": "Lemon Tree Premier Bhubaneswar (base for Dhauli)",
+        "tier": "comfort",
+        "tagline": "A reliable 4-star Lemon Tree in Bhubaneswar, about 1km from Mayfair Lagoon and ~11km from the Dhauli Shanti Stupa — a comfortable mid-range base for the 8km day-trip to the Ashoka edicts.",
+        "price_band": "₹₹₹",
+        "address": "Lemon Tree Premier, Bhubaneswar 751013, Odisha (≈11km from Dhauli)",
+        "book_url": "https://www.lemontreehotels.com/lemon-tree-premier/bhubaneswar/hotel-bhubaneswar",
+        "sources": [
+          "https://www.lemontreehotels.com/",
+          "https://www.tripadvisor.in/HotelsNear-g297661-d501197-Mayfair_Lagoon-Bhubaneswar_Khurda_District_Odisha.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "diamond-triangle",
+      "slot": "location",
+      "verdict": "replace",
+      "existing": {
+        "name": "Pushpa Vihar Guest House, Puri",
+        "issue": "Wrong base and unverifiable — the Diamond Triangle Buddhist sites (Lalitgiri, Ratnagiri, Udayagiri) are in Jajpur/Cuttack districts north of the capital; Puri is the wrong base, and 'Pushpa Vihar Guest House' is not verifiable. Re-anchor to a Bhubaneswar/Cuttack base, the correct day-trip origin."
+      },
+      "replacement": {
+        "name": "Panthanivas Cuttack (OTDC) — base for the Diamond Triangle",
+        "tier": "budget",
+        "tagline": "The Diamond Triangle Buddhist sites — Lalitgiri, Ratnagiri and Udayagiri — are rural ASI excavations with no on-site accommodation; the practical day-trip base is Cuttack. Panthanivas Cuttack is the verified government-rate option.",
+        "price_band": "₹₹",
+        "address": "Cuttack 753001, Odisha (day-trip base for Lalitgiri/Ratnagiri/Udayagiri)",
+        "book_url": "https://otdc.odisha.gov.in/accommodations/panthanivas-cuttack",
+        "sources": [
+          "https://otdc.odisha.gov.in/accommodations/panthanivas-cuttack",
+          "https://odishatourism.gov.in/content/tourism/en/plan/food-accommodation/otdc.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "diamond-triangle",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "The Lalit Temple View, Bhubaneswar",
+        "issue": "Mislabelled — there is no Lalit-group hotel in Bhubaneswar. Replace the ghost with Mayfair Lagoon, the city's genuine experience-tier hotel and the correct Bhubaneswar base for the Diamond Triangle day-trip. (Verdict 'replace' in effect — Bhubaneswar is the correct base, only the property name was a ghost.)"
+      },
+      "replacement": {
+        "name": "Mayfair Lagoon (Bhubaneswar base for the Diamond Triangle)",
+        "tier": "luxury",
+        "tagline": "The Diamond Triangle Buddhist sites sit 60-100km from Bhubaneswar — base at Mayfair Lagoon, the temple city's iconic 10-acre garden resort, for a comfortable two-day Buddhist-circuit run.",
+        "price_band": "₹₹₹₹",
+        "address": "8-B, Jaydev Vihar, Bhubaneswar 751013, Odisha",
+        "book_url": "https://www.mayfairhotels.com/lagoon-bhubaneswar/",
+        "sources": [
+          "https://www.mayfairhotels.com/lagoon-bhubaneswar/",
+          "https://www.tripadvisor.com/Hotel_Review-g297661-d501197-Reviews-Mayfair_Lagoon-Bhubaneswar_Khurda_District_Odisha.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "diamond-triangle",
+      "slot": "value",
+      "verdict": "replace",
+      "existing": {
+        "name": "Mayfair Heritage, Cuttack",
+        "issue": "Mislabelled — Mayfair Heritage is in Puri, not Cuttack; Mayfair's Cuttack property is Mayfair Cuttack. Re-anchor the value slot to Hotel Akbari Continental, a verified mid-range Cuttack hotel and a sensible Diamond Triangle base."
+      },
+      "replacement": {
+        "name": "Hotel Akbari Continental, Cuttack",
+        "tier": "comfort",
+        "tagline": "A long-running Cuttack 3-star with restaurants and conference space — a reliable mid-range base for the Diamond Triangle Buddhist circuit, closer to Lalitgiri and Ratnagiri than the Bhubaneswar hotels.",
+        "price_band": "₹₹",
+        "address": "Haripur Road, Dolamundai, Cuttack 753001, Odisha",
+        "book_url": "https://www.akbaricontinental.com/",
+        "sources": [
+          "https://www.akbaricontinental.com/",
+          "https://www.tripadvisor.in/Hotels-g1154342-Cuttack_Cuttack_District_Odisha-Hotels.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "diamond-triangle",
+      "slot": "xfactor",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Baliyatra Eco-Camp, Dhamra (near Balasore)",
+        "issue": "Cross-dest and unverifiable — Dhamra (Bhadrak district, near Balasore) is roughly 100-150km from the Diamond Triangle Buddhist sites, and 'Baliyatra Eco-Camp' is not verifiable (Bali Jatra is Cuttack's festival, not a camp). Mislocated, likely fabricated. The Diamond Triangle ASI sites are rural day-trips with no on-site or distinct tier-1/2 x-factor accommodation — honest scarcity (Bhubaneswar/Cuttack base)."
+      }
+    },
+    {
+      "destination_id": "gahirmatha",
+      "slot": "experience",
+      "verdict": "replace",
+      "existing": {
+        "name": "Gahirmatha Beach Resort",
+        "issue": "Unverifiable — no Booking.com/MakeMyTrip/Tripadvisor listing for a 'Gahirmatha Beach Resort'. Gahirmatha is a strictly protected marine (turtle) wildlife sanctuary with NO accommodation inside it. Fabricated resort ghost. Re-anchor to the Habalikhati Nature Camp, the only verified accommodation near the Gahirmatha coast."
+      },
+      "replacement": {
+        "name": "Habalikhati Nature Camp (Odisha Eco-Tourism)",
+        "tier": "comfort",
+        "tagline": "The only accommodation anywhere near the Gahirmatha turtle coast — a nine-room forest-department beach camp on the white sands of Habalikhati, reached by a ~2.5-hour boat ride from Gupti. The marine sanctuary itself has no accommodation inside.",
+        "price_band": "₹₹₹",
+        "address": "Habalikhati Beach, Bhitarkanika–Gahirmatha coast, Kendrapara District 754225, Odisha",
+        "book_url": "https://www.ecotourodisha.com/",
+        "sources": [
+          "https://www.ecotourodisha.com/",
+          "https://www.odishaecoresort.org/bhitarkanika-nature-camps/"
+        ]
+      }
+    },
+    {
+      "destination_id": "gahirmatha",
+      "slot": "value",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Rushikulya Riverside Guesthouse",
+        "issue": "Cross-dest and unverifiable — the Rushikulya river mouth is a separate Olive Ridley nesting beach in Ganjam district, roughly 400km south of Gahirmatha (Kendrapara district). Mislabelling a different turtle beach as Gahirmatha, and the guesthouse itself is not verifiable. Gahirmatha is a protected marine sanctuary with no accommodation inside; honest scarcity."
+      }
+    },
+    {
+      "destination_id": "gahirmatha",
+      "slot": "location",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Chandipur Beach Cottage",
+        "issue": "Cross-dest and unverifiable — Chandipur is a beach town in Balasore district, well away from Gahirmatha (Kendrapara). Mislabelling a Chandipur stay as Gahirmatha, and 'Chandipur Beach Cottage' is not a verifiable property. Gahirmatha marine sanctuary has no accommodation; honest scarcity (nearest base is the Habalikhati forest camp only)."
+      }
+    },
+    {
+      "destination_id": "gahirmatha",
+      "slot": "xfactor",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Olive Ridley Eco-Tent Camp",
+        "issue": "Unverifiable — no Booking.com/MakeMyTrip/Tripadvisor or official listing for an 'Olive Ridley Eco-Tent Camp' at Gahirmatha. Fabricated turtle-themed camp ghost. Gahirmatha is a strictly protected marine sanctuary; the only verified accommodation near the coast is the Habalikhati Nature Camp (used for the experience slot) — honest scarcity for a distinct x-factor property."
+      }
+    },
+    {
+      "destination_id": "nrusinghanath-harishankar",
+      "slot": "experience",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Nrusinghanath Temple Rest House",
+        "issue": "Not a verifiable tier-1/2 tourist property — temple rest houses (dharamshalas) are pilgrim shelters, not bookable graded accommodation. The verified tier-2 stay at Nrusinghanath is the Odisha Eco-Tourism Nrusinghanath Nature Camp; this distinct 'temple rest house' experience slot has no verifiable tier-1/2 property — honest scarcity."
+      }
+    },
+    {
+      "destination_id": "nrusinghanath-harishankar",
+      "slot": "value",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Harishankar Tourist Lodge",
+        "issue": "Loosely named but real in concept — OTDC operates a Panthanivas at Harishankar (inaugurated and confirmed by Odisha tourism sources). Re-anchor to the correct name, Panthanivas Harishankar (OTDC)."
+      },
+      "replacement": {
+        "name": "Panthanivas Harishankar (OTDC)",
+        "tier": "budget",
+        "tagline": "The Odisha Tourism Panthanivas at the Harishankar pilgrim spot on the Gandhamardan Hills — plain, inexpensive government accommodation beside the temple and stream, the practical base for this remote twin-temple circuit (~81km from Balangir).",
+        "price_band": "₹₹",
+        "address": "Harishankar, Gandhamardan Hills, Balangir District 767025, Odisha",
+        "book_url": "https://otdc.odisha.gov.in/",
+        "sources": [
+          "https://otdc.odisha.gov.in/",
+          "https://balangir.odisha.gov.in/en/tourism/tourist-places/harishankar"
+        ]
+      }
+    },
+    {
+      "destination_id": "nrusinghanath-harishankar",
+      "slot": "location",
+      "verdict": "replace",
+      "existing": {
+        "name": "Balangir District PWD Rest House (Harishankar branch)",
+        "issue": "Not a tourist booking — a PWD government rest house is reserved for officials, not bookable tier-1/2 tourist accommodation. Re-anchor the location slot to the Nrusinghanath Nature Camp, the genuine eco-tourism stay on the Bargarh side of the Gandhamardan hill."
+      },
+      "replacement": {
+        "name": "Nrusinghanath Nature Camp (Odisha Eco-Tourism)",
+        "tier": "comfort",
+        "tagline": "The Odisha Eco-Tourism nature camp near the Nrusinghanath temple — AC Swiss-tent suites with all meals included, in the mystical Gandhamardan Hills. The only structured tier-2 stay on the Bargarh side of the twin-temple circuit.",
+        "price_band": "₹₹₹",
+        "address": "Nrusinghanath, Gandhamardan Hills, Bargarh District 768040, Odisha",
+        "book_url": "https://www.ecotourodisha.com/",
+        "sources": [
+          "https://www.ecotourodisha.com/",
+          "https://odishatour.in/nrusinghanath-nature-camp-bargarh/"
+        ]
+      }
+    },
+    {
+      "destination_id": "nrusinghanath-harishankar",
+      "slot": "xfactor",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Kushal Farm Stay (near Harishankar)",
+        "issue": "Unverifiable — no Booking.com/MakeMyTrip/Tripadvisor or official listing for a 'Kushal Farm Stay' near Harishankar. Fabricated farmstay ghost. This remote twin-pilgrim circuit has only the OTDC Panthanivas Harishankar and the Nrusinghanath Nature Camp; no further distinct tier-1/2 x-factor property — honest scarcity."
+      }
+    }
+  ]
+}
