@@ -181,6 +181,47 @@ jobs:
             echo "Social image library cached ($(find nakshiq-autoposter/social_image_library -name '*.jpg' | wc -l) images)"
           fi
 
+      # 2026-05-20: Phase 2 asset sync from R2 public bucket. Driven by a
+      # manifest file (data/phase2_r2_manifest.txt — one filename per line) so
+      # the workflow only fetches assets the user has actually uploaded to R2.
+      # Layout in R2: /social_image_library/{format_id}-{dest_slug}.{ext}
+      # Layout locally: nakshiq-autoposter/social_image_library/{same name}
+      # R2 bucket is public, no credentials required (same pattern as
+      # r2_videos.py which fetches per-dest videos from the same bucket root).
+      - name: Sync Phase 2 assets from R2
+        run: |
+          MANIFEST="nakshiq-autoposter/data/phase2_r2_manifest.txt"
+          if [ ! -f "$MANIFEST" ]; then
+            echo "No Phase 2 manifest — skipping R2 sync (Phase 2 not yet activated)"
+            exit 0
+          fi
+          R2_BASE="https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/social_image_library"
+          LIB="nakshiq-autoposter/social_image_library"
+          mkdir -p "$LIB"
+          fetched=0
+          skipped=0
+          missing=0
+          while IFS= read -r asset || [ -n "$asset" ]; do
+            # Skip blanks + comment lines
+            case "$asset" in ''|'#'*) continue ;; esac
+            asset=$(echo "$asset" | tr -d '\r' | xargs)
+            [ -z "$asset" ] && continue
+            target="$LIB/$asset"
+            if [ -f "$target" ] && [ -s "$target" ]; then
+              skipped=$((skipped + 1))
+              continue
+            fi
+            if curl -fsSL -o "$target.tmp" "$R2_BASE/$asset"; then
+              mv "$target.tmp" "$target"
+              fetched=$((fetched + 1))
+            else
+              rm -f "$target.tmp"
+              missing=$((missing + 1))
+              echo "  [phase2] not in R2: $asset"
+            fi
+          done < "$MANIFEST"
+          echo "Phase 2 R2 sync: fetched=$fetched skipped=$skipped missing=$missing"
+
       - name: Set run mode
         id: mode
         run: |

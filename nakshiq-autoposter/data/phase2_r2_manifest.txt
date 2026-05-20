@@ -1,0 +1,22 @@
+# Phase 2 asset manifest — one filename per line.
+#
+# Each entry must exist in R2 at:
+#   https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/social_image_library/{name}
+# The autoposter workflow fetches each on cron startup into
+#   nakshiq-autoposter/social_image_library/{name}
+# Phase 2 loader then picks them up via the {format_id}-{dest_slug}.{ext}
+# convention (see CONTENT_STRATEGY_MASTER.md §4).
+#
+# Workflow:
+#   1. Render asset locally in Co-work (Pomelli / Banana / Veo per the row's prompts).
+#   2. Upload to R2 via Cloudflare dashboard OR rclone — must land at
+#      bucket-root/social_image_library/{format_id}-{dest_slug}.{ext}
+#   3. Add the filename here. Commit + push.
+#   4. Next cron run fetches it and starts using it.
+#
+# Format: one bare filename per line. Lines starting with # are comments.
+# Blank lines OK.
+
+# === Seed assets (uploaded 2026-05-20 — pending R2 upload) ===
+v2_hindi_score_card-achabal.png
+v2_score_card_pov-achabal.mp4

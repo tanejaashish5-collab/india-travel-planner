@@ -346,22 +346,72 @@ These rules are enforced in the row prompts already. When you generate assets, k
 - **No top-level Phase 2 assets** matching `{format_id}-{dest_slug}.{ext}`. That's why the autoposter cron is still running on v1's 14 formats only — Phase 2 has nothing eligible to fire.
 - **Migration shipped 2026-05-20** (this session): `achabal_JA/v2_hindi_score_card_slide-1.png` → `v2_hindi_score_card-achabal.png` (top level), `achabal_JA/v2_score_card_pov_reel.mp4` → `v2_score_card_pov-achabal.mp4` (top level). Slide 2-4 files left in subdir for future multi-slide carousel work.
 
-### ⚠️ Data-field gap (separate blocker beyond assets)
+### Data-field gap (partial fix shipped 2026-05-20)
 
-Smoke test of the loader's `is_eligible()` against `achabal` (with the new assets in place) revealed that even WITH the asset, the format requires data fields that don't exist in the current Supabase destination row. Examples:
+**Migration 059** ships a `phase2_fields` JSONB column on `destinations` to hold all Phase 2 destination-scoped data inputs. The Phase 2 loader (`csv_format_loader._expand_aliases()`) now lifts JSONB keys to the top-level context so caption templates can reference them as `{sunrise_time}`, `{crowd_hindi}`, etc.
 
-- `v2_hindi_score_card` expects: `daily_cost_inr`, `crowd_hindi`, `weather_hindi`, `why_go_hindi`, `english_one_liner` — all 5 missing.
-- `v2_score_card_pov` expects: `still_skip`, `daily_cost_inr`, `true_now`, `crowd_level`, `change_note` — all 5 missing.
+**Smoke confirmed end-to-end**: with `phase2_fields` populated for achabal locally + asset present, `is_eligible(v2_hindi_score_card, achabal)` → True, `render_caption(...)` → real caption with all substitutions, e.g.:
 
-These fields were invented when the v2 CSV was designed (2026-05-19) anticipating Phase 3 data enrichment. They are NOT in the current schema. **Until they're added (or the format prompts revised to use existing fields), even asset-eligible formats will SKIP.**
+```
+Achabal in May: 4/5. Here's why.
 
-Three options to close this gap (out of scope for this README's ship — separate ticket):
+Same dest, two opinions.
 
-1. **Schema enrichment** — add the 10-15 new JSONB fields to the Supabase `destinations` table, backfill via audit pipeline (similar to how `local_eateries` was added).
-2. **Prompt revision** — rewrite the v2 CSV templates to use only existing fields (lose some bilingual richness).
-3. **Phase 2.5 fallback** — `is_eligible()` could be relaxed to "data fields are nice-to-have, not required" — but that means the caption renders with empty placeholders, which violates the SKIP-on-null rule.
+What's true this month: Garden free entry, water channels running.
+What changed since last month: reopened May after winter.
+What we still don't recommend: Anantnag temple complex (Sunday only).
 
-Recommendation: option 1, scoped per format-row in priority order matching the §6 seed list. Two seed formats (`v2_hindi_score_card` and `v2_score_card_pov`) need the achabal fields populated first to validate the end-to-end pipeline before scaling.
+Verdict: 4/5. Crowd: light. Cost: ₹2400/day.
+...
+```
+
+**4 of 12 seed formats unlocked by migration 059** (destination-scoped data only):
+- ✅ `v2_pov_slow_morning` — needs `sunrise_time`, `nearest_landmark`
+- ✅ `v2_yt_silent_pov` — needs `air_temp_c_{month}`, `ambient_sound_list`, `visual_description`, `observation_window`
+- ✅ `v2_local_knows` — needs `trap_landmark`, `local_alternative`, `reason_short`, `local_language`, `local_phrase`, `reopen_window`
+- ✅ `v2_hindi_score_card` — needs `daily_cost_inr`, `crowd_hindi`, `weather_hindi`, `why_go_hindi`, `english_one_liner`
+- ✅ `v2_score_card_pov` (a 5th, not in original §6 seed list but trivial to add) — needs `still_skip`, `daily_cost_inr`, `true_now`, `crowd_level`, `change_note`
+
+**8 of 12 seed formats still blocked — need purpose-built tables (Phase 3 work):**
+- ❌ `v3_tl_editorial_listicle` — needs `content_lists` table (10-item carousels with per-item name/score/one_line)
+- ❌ `v2_thali_close_up` — needs `local_eateries` join + extra fields (`hero_dish`, `accompaniments`, `meal_hours`, `price_inr`)
+- ❌ `v3_tl_news_announcement` — needs `news_announcements` table (transient per-post data)
+- ❌ `v3_tl_poll_reel` — needs `polls` table (paired comparison data)
+- ❌ `v4_dw_counter_narrative_myth_bust` — needs `myths` table (myth_short, true_history, primary_source_citation, who_claims_it)
+- ❌ `v3_tl_first_person_essay` — needs `essays` table (arrival/midtrip/departure moments, writer_handle, hero_photo_caption)
+- ❌ `v4_dw_archival_modern_carousel` — needs `landmark_archives` table (archival_photo_year/source, architect_or_patron, what_stayed/how_changed)
+- ❌ `v2_budget_receipt` — needs `cost_breakdowns` table (day-by-day stay/food/transport/entry/misc INR breakdown)
+
+These 8 tables are explicitly Phase 3 architectural work, not in scope this session. Sequence: ship migration 059 + R2 sync (this commit) → populate `phase2_fields` for the §6 seed dests → measure engagement on the 4 unlocked formats → revisit the 8 deferred formats once the destination-scoped path is validated.
+
+### Populating `phase2_fields` for a destination
+
+Once migration 059 lands, populate via SQL UPDATE:
+
+```sql
+UPDATE destinations
+SET phase2_fields = jsonb_build_object(
+  'sunrise_time', '05:35',
+  'nearest_landmark', 'Achabal Mughal Garden',
+  'daily_cost_inr', 2400,
+  'crowd_hindi', 'हल्की भीड़ — सप्ताहांत पर कश्मीरी परिवार',
+  'weather_hindi', 'मौसम सुहावना — दिन 18°C, शाम 10°C',
+  'why_go_hindi', 'मुगल बाग़ का छाँव और शांत झरना।',
+  'english_one_liner', 'Mughal canals, chinar shade, and almost no tourists.',
+  'still_skip', 'Anantnag temple complex (Sunday only)',
+  'true_now', 'Garden free entry, water channels running',
+  'crowd_level', 'light',
+  'change_note', 'reopened May after winter',
+  'trap_landmark', NULL,
+  'local_alternative', NULL,
+  'local_language', 'Kashmiri',
+  'local_phrase', 'Sahab, garden chaloon?',
+  'reason_short', null
+)
+WHERE id = 'achabal';
+```
+
+`null` values are OK — the loader's SKIP-on-null check just means that specific format won't fire for this dest until you fill it in.
 
 ### Roadmap to Phase 2 firing
 
@@ -396,18 +446,24 @@ Recommendation: option 1, scoped per format-row in priority order matching the �
 
 The workflow caches the library between runs using key `social-image-library-v1`. On cache miss, it runs `dest_image_gen.py` which generates the Phase 1 destination images **but knows nothing about v2/v3/v4 format assets**. So if cache busts, your Phase 2 work disappears until you upload again.
 
-**Path B — R2 / cloud upload (recommended for Phase 2 scale-up):**
+**Path B — R2 sync (shipped 2026-05-20):**
 
-Until a real R2 sync step ships in the workflow, **the practical Phase 2 deployment loop is manual**:
+The workflow now has a `Sync Phase 2 assets from R2` step ([autoposter.yml:175](../../.github/workflows/autoposter.yml#L175)) that fetches every asset listed in `data/phase2_r2_manifest.txt` from R2's public bucket. Layout:
 
-1. Generate assets locally in `social_image_library/`.
-2. Either:
-   - **(quick)** Push files to the GHA cache by triggering a one-off workflow_dispatch that includes a "warm cache" step uploading your local library. The cache will then serve your assets on subsequent cron runs until eviction (~7 days idle).
-   - **(durable)** Upload to R2 at `https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/{filename}` and add a sync step to the workflow that pulls Phase 2 assets from R2 into `social_image_library/` at the start of every run.
+- R2 bucket public root: `https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/`
+- Phase 2 assets live at: `https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/social_image_library/{format_id}-{dest_slug}.{ext}`
+- Workflow fetches them into: `nakshiq-autoposter/social_image_library/{same name}`
 
-**For now (immediate Phase 2 validation), Path A is fine** — render the §6 seed list locally, run the workflow once with a forced cache refresh, and watch the next morning's audit. **For sustained scale-up**, Path B (R2 sync) is the right shape; that's a ~1h add-on to the workflow YAML (out of scope for this README's ship, separate ticket).
+**Co-work workflow becomes:**
 
-**Key insight:** the achabal test assets that exist locally as of 2026-05-20 commit will NOT post in production until one of those two paths fires. Don't assume "asset in local library = cron will fire" — verify cache state before celebrating.
+1. Render asset locally (per §7).
+2. Upload to R2 — either via Cloudflare dashboard (drag-drop into the `social_image_library/` prefix) or via `rclone copy ./asset.png r2:bucket-name/social_image_library/`.
+3. Add the bare filename to `nakshiq-autoposter/data/phase2_r2_manifest.txt` (one per line).
+4. `git commit + git push`. Next cron run fetches the file automatically.
+
+**Idempotent:** the workflow skips files that are already cached locally with non-zero size, and silently skips manifest entries that aren't in R2 yet. So an unrendered manifest entry doesn't error — it just waits.
+
+**No credentials required:** the R2 bucket is public, same as the per-dest video bucket already in use by `r2_videos.py`. The workflow uses plain `curl`.
 
 ---
 
@@ -444,7 +500,9 @@ If you're stuck on a row:
 | 2026-05-19 | v3 T+L (7 rows) shipped (commit `d20c6801`) |
 | 2026-05-19 | v4 DW (6 rows) shipped (commit `4ebf83f2`) |
 | 2026-05-19 | Phase 2 autoposter loader shipped (commit `531a85c5`) |
-| 2026-05-20 | This master README shipped + 2 achabal seed assets migrated to top level |
+| 2026-05-20 | Master README shipped + 2 achabal seed assets migrated to top level (commit `52b6a62d`) |
+| 2026-05-20 | **Migration 059** adds `phase2_fields` JSONB column to `destinations`. Loader updated to lift JSONB keys to caption context. `/api/content?type=destinations` API exposes the new column. **4 of 12 seed formats unblocked** on the data side. |
+| 2026-05-20 | **R2 sync workflow step shipped** — `data/phase2_r2_manifest.txt` drives `curl` fetches from R2's public bucket into `social_image_library/` at every cron startup. No credentials. |
 
 ---
 

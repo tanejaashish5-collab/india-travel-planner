@@ -232,14 +232,29 @@ _DEST_FIELD_ALIASES = {
 def _expand_aliases(dest: dict) -> dict:
     """Build a context dict where alias placeholder names point to real dest
     fields. Original dest fields pass through unchanged so {name} keeps
-    working alongside {dest_name}."""
+    working alongside {dest_name}.
+
+    2026-05-20: also lifts keys from the `phase2_fields` JSONB blob (added
+    by Supabase migration 059) up to the top level so caption templates
+    can reference {sunrise_time}, {crowd_hindi} etc. without an extra dot
+    path. Top-level keys win over phase2_fields keys when both exist.
+    """
     if not dest:
         return {}
     ctx = dict(dest)
+    # Lift phase2_fields JSONB keys to the top level (lower priority than
+    # explicit dest columns — only fill blanks).
+    phase2 = dest.get("phase2_fields")
+    if isinstance(phase2, dict):
+        for k, v in phase2.items():
+            if k in ctx and ctx[k] not in (None, ""):
+                continue
+            if v not in (None, ""):
+                ctx[k] = v
     for alias, real_field in _DEST_FIELD_ALIASES.items():
         if alias in ctx and ctx[alias] not in (None, ""):
             continue  # alias already populated (e.g. extra_context override)
-        val = dest.get(real_field)
+        val = dest.get(real_field) or (phase2.get(real_field) if isinstance(phase2, dict) else None)
         if val not in (None, ""):
             ctx[alias] = val
     return ctx
