@@ -84,8 +84,8 @@ export async function GET(req: NextRequest) {
       // 100% populated, and we don't want the playbook query to silently drop
       // 30% of the catalog.
       const selectCols = includeIntel
-        ? "month, score, note, destination_id, destinations(id, name, tagline, why_special, difficulty, elevation_m, phase2_fields, translations, state:states(name), confidence_cards(reach, sleep, fuel, network, emergency, weather_night), emergency_sos(nearest_hospital, nearest_hospital_km, mountain_rescue, local_helpers), local_eateries(name, signature_dish, is_legendary, area))"
-        : "month, score, note, destination_id, destinations(id, name, tagline, why_special, difficulty, elevation_m, phase2_fields, translations, state:states(name), confidence_cards(sleep), local_eateries(name, signature_dish, is_legendary, area))";
+        ? "month, score, note, destination_id, destinations(id, name, tagline, why_special, difficulty, elevation_m, phase2_fields, translations, state:states(id, name), confidence_cards(reach, sleep, fuel, network, emergency, weather_night), emergency_sos(nearest_hospital, nearest_hospital_km, mountain_rescue, local_helpers), local_eateries(name, signature_dish, is_legendary, area))"
+        : "month, score, note, destination_id, destinations(id, name, tagline, why_special, difficulty, elevation_m, phase2_fields, translations, state:states(id, name), confidence_cards(sleep), local_eateries(name, signature_dish, is_legendary, area))";
 
       let query = supabase
         .from("destination_months")
@@ -112,6 +112,9 @@ export async function GET(req: NextRequest) {
           difficulty: d.difficulty,
           elevation_m: d.elevation_m,
           state: d.state?.name,
+          // 2026-05-20: state slug for Phase 2 state-keyed asset matching
+          // (e.g. v3_tl_editorial_listicle-rajasthan.png).
+          state_slug: d.state?.id || null,
           month,
           score: dm.score,
           note: dm.note,

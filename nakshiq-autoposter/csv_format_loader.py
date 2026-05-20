@@ -218,6 +218,9 @@ _NON_DEST_DATA_FIELDS = frozenset({
     # v3_tl_poll_reel: a head-to-head between two destinations.
     "dest_a_name", "dest_a_score", "dest_b_name", "dest_b_score",
     "data_winner_name",
+    # v3_tl_editorial_listicle: a whole-state ranked list. listicle_body is a
+    # pre-formatted multi-line string the dispatcher builds from top-N dests.
+    "listicle_body", "listicle_count",
 })
 
 # Aliases mapping CSV placeholder names → standard NakshIQ destination dict
@@ -311,7 +314,13 @@ def _find_matching_asset(spec: FormatSpec,
       1. {format_id}-{dest_slug}.{jpg,png,mp4}     ← format-specific
       2. {format_id}-{dest_slug}-feed.{jpg,png}    ← format-specific feed
       3. {format_id}-{dest_slug}-story.{jpg,png}   ← format-specific story
-      4. {dest_slug}.{jpg,png}                     ← generic dest (fallback)
+      4. {format_id}-{state_slug}.{jpg,png,mp4}    ← state-keyed (listicles)
+      5. {dest_slug}.{jpg,png}                     ← generic dest (fallback)
+
+    The state-keyed fallback lets one cover asset serve a whole-state format
+    like v3_tl_editorial_listicle ("10 best in Rajasthan") — the asset is
+    named v3_tl_editorial_listicle-rajasthan.png and matches every Rajasthan
+    destination via the dest's state_slug.
 
     Returns the Path or None.
     """
@@ -320,6 +329,7 @@ def _find_matching_asset(spec: FormatSpec,
     slug = (dest.get("id") or dest.get("slug") or dest.get("name") or "").lower().replace(" ", "-")
     if not slug:
         return None
+    state_slug = (dest.get("state_slug") or "").lower().replace(" ", "-")
     candidates = [
         f"{spec.format_id}-{slug}.jpg",
         f"{spec.format_id}-{slug}.png",
@@ -328,6 +338,14 @@ def _find_matching_asset(spec: FormatSpec,
         f"{spec.format_id}-{slug}-feed.png",
         f"{spec.format_id}-{slug}-story.jpg",
         f"{spec.format_id}-{slug}-story.png",
+    ]
+    if state_slug:
+        candidates += [
+            f"{spec.format_id}-{state_slug}.jpg",
+            f"{spec.format_id}-{state_slug}.png",
+            f"{spec.format_id}-{state_slug}.mp4",
+        ]
+    candidates += [
         f"{slug}.jpg",
         f"{slug}.png",
     ]

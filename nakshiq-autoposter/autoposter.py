@@ -4961,6 +4961,24 @@ def generate_post(fmt: str, content: dict, platform: str,
                         else cand.get("name", "")
                     ),
                 })
+            # v3_tl_editorial_listicle is a whole-state ranked list — build the
+            # listicle body from the top-scored dests in cand's state. The
+            # state-keyed asset (v3_tl_editorial_listicle-{state_slug}) matched
+            # via the loader's state-slug fallback, so cand is any dest in that
+            # state. Need >=5 scored dests to be worth a "listicle".
+            if fmt == "v3_tl_editorial_listicle":
+                state_name = cand.get("state", "")
+                in_state = sorted(
+                    [d for d in pool if d.get("state") == state_name],
+                    key=lambda d: d.get("score") or 0, reverse=True,
+                )[:10]
+                if len(in_state) < 5:
+                    continue  # too thin for a listicle; try next cand
+                extras["listicle_body"] = "\n".join(
+                    f"{i}. {d.get('name','')} · {d.get('score','?')}/5"
+                    for i, d in enumerate(in_state, 1)
+                )
+                extras["listicle_count"] = len(in_state)
             caption = _csv_fmt.render_caption(spec, cand, extra_context=extras)
             if caption:
                 return caption, cand
