@@ -1,0 +1,1356 @@
+{
+  "metadata": {
+    "state": "andhra-pradesh",
+    "date": "2026-05-20",
+    "total_picks": 78,
+    "destinations": 21,
+    "status": "complete",
+    "new_stays_rows": 30,
+    "verdict_counts": {
+      "keep_existing": 27,
+      "replace": 26,
+      "honest_scarcity": 25
+    },
+    "notes": "Audit-and-replace of auto-seeded placeholder picks for all 21 Andhra Pradesh destinations. APTDC 'Haritha' state-tourism hotel network used as the authoritative government anchor across hill stations, pilgrim towns and remote sites; temple devasthanams (TTD Tirumala, Srisaila Devasthanam) and APFDC/Forest Department eco-camps supply the rest. Notable catches: 'Nagarjunakonda Island Resort' wrongly tagged to amaravati (Nagarjunakonda is ~150 km away at Nagarjuna Sagar), 'Nandi Hills Homestay' tagged to horsley-hills (Nandi Hills is in Karnataka), 'Pulicat Lagoon Houseboat Stay' (Pulicat has no houseboat operation), 'TTDC Pulicat Lake Resort' (TTDC = Tamil Nadu; the AP-side property is APTDC Pulicat Lake View Resort at Tada/Nellore), 'Hotel Mayura River Retreat' Srisailam (Mayura is a Karnataka KSTDC brand, not AP). Honest-scarcity heavy across remote pilgrim villages (ahobilam, lepakshi), day-trip cave/heritage sites (belum-caves, undavalli-caves) and the small temple town of srikalahasti as expected."
+  },
+  "task_a_results": [
+    {
+      "destination_id": "ahobilam",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Sri Venkateswara Temple Choultries (Ahobilam Devasthanam)",
+        "issue": "Real category — the temple-trust choultries and satrams are the principal accommodation in Ahobilam. Tighten name to the actual operating bodies."
+      },
+      "replacement": {
+        "name": "Ahobilam Devasthanam / Satram Rooms (Lower Ahobilam)",
+        "tier": "budget",
+        "tagline": "Trust-run rooms and satrams in Lower (Diguva) Ahobilam — non-AC and AC rooms near the Lakshmi Narasimha temple, with the Arya Vysya, Padmashali and Brahmin satrams offering free midday Annadanam. The authentic pilgrim stay in a remote Nallamala temple village.",
+        "price_band": "₹",
+        "address": "Lower Ahobilam (Diguva Ahobilam), Allagadda mandal, Nandyal District, Andhra Pradesh 518543",
+        "book_url": "https://www.ahobilamutt.org/",
+        "sources": [
+          "https://www.ahobilamutt.org/us/information/visitingahobilam.asp",
+          "https://gotirupati.com/ahobilam-room-booking-in-devasthanam-and-satram/"
+        ]
+      }
+    },
+    {
+      "destination_id": "ahobilam",
+      "slot": "location",
+      "verdict": "replace",
+      "existing": {
+        "name": "Sri Venkateswara Temple Choultries (Ahobilam Devasthanam)",
+        "issue": "Duplicate of the experience slot — same property used twice. Replace the location slot with the verified APTDC Haritha hotel in Ahobilam."
+      },
+      "replacement": {
+        "name": "Hotel Haritha, Ahobilam (APTDC)",
+        "tier": "budget",
+        "tagline": "The Andhra Pradesh state-tourism hotel in Lower Ahobilam — basic AC and non-AC rooms with a restaurant, a step up in comfort from the satrams and the most reliable verified base for the Nava Narasimha temple circuit.",
+        "price_band": "₹₹",
+        "address": "Lower Ahobilam, Allagadda mandal, Nandyal District, Andhra Pradesh 518543",
+        "book_url": "https://tourism.ap.gov.in/",
+        "sources": [
+          "https://gotirupati.com/ahobilam-room-booking-in-devasthanam-and-satram/",
+          "https://tourism.ap.gov.in/hotellist?cityCode=77&unitCode=ALL"
+        ]
+      }
+    },
+    {
+      "destination_id": "ahobilam",
+      "slot": "xfactor",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Aravali Farmstay (Kandakonda, near Ahobilam)",
+        "issue": "No verifiable 'Aravali Farmstay' at Kandakonda — generic name with no Booking/MMT/TripAdvisor footprint, and 'Aravali' is a north-Indian range unrelated to the Nallamala. Ahobilam is a remote pilgrim village with no tier-1/2 experiential stay; honest scarcity."
+      }
+    },
+    {
+      "destination_id": "ahobilam",
+      "slot": "value",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Ahobilam Eco-Lodge",
+        "issue": "No verifiable 'Ahobilam Eco-Lodge' — generic template name with no online footprint. The satram rooms (experience slot) already cover the budget tier; no separate verifiable value property exists."
+      }
+    },
+    {
+      "destination_id": "amaravati",
+      "slot": "location",
+      "verdict": "replace",
+      "existing": {
+        "name": "Sri Venkateswara Rooms (Temple-managed)",
+        "issue": "Vague, unverifiable name — Amaravati's temple is the Amareswara (Shiva) temple, not a Venkateswara temple. Replace with the verified APTDC Haritha in the village."
+      },
+      "replacement": {
+        "name": "Haritha Hotel Amaravati (APTDC)",
+        "tier": "budget",
+        "tagline": "The APTDC Haritha hotel in the temple village of Amaravati — AC rooms with a restaurant and kitchen, the verified state-tourism base for the Amareswara temple and the Amaravati Buddhist stupa.",
+        "price_band": "₹₹",
+        "address": "Amaravati village, Guntur District, Andhra Pradesh 522020",
+        "book_url": "https://tourism.ap.gov.in/",
+        "sources": [
+          "https://www.bestbus.in/hotel-booking/details/andhra-pradesh-tourism-aptdc-haritha-hotels-and-resorts/amaravathi-haritha-hotel",
+          "https://tourism.ap.gov.in/home"
+        ]
+      }
+    },
+    {
+      "destination_id": "amaravati",
+      "slot": "xfactor",
+      "verdict": "replace",
+      "existing": {
+        "name": "Nagarjunakonda Island Resort",
+        "issue": "CROSS-DEST FABRICATION — Nagarjunakonda is the Buddhist island museum at Nagarjuna Sagar, roughly 150 km from Amaravati, and there is no 'island resort' there at all (it is a protected ASI museum island). Replace with a verified experiential stay in the Krishna-river capital cluster."
+      },
+      "replacement": {
+        "name": "Novotel Vijayawada Varun",
+        "tier": "luxury",
+        "tagline": "A 227-room Accor 5-star on the Krishna riverfront in the Vijayawada–Amaravati capital region — rooftop venue, spa and three restaurants, the standout polished base for visiting the Amaravati stupa and temple, about an hour from the village.",
+        "price_band": "₹₹₹₹",
+        "address": "Benz Circle, M.G. Road, Vijayawada 520010, Andhra Pradesh",
+        "book_url": "https://all.accor.com/hotel/A0L1/index.en.shtml",
+        "sources": [
+          "https://all.accor.com/hotel/A0L1/index.en.shtml",
+          "https://www.booking.com/hotel/in/novotel-vijayawada-varun.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "amaravati",
+      "slot": "experience",
+      "verdict": "replace",
+      "existing": {
+        "name": "The Riverside Retreat, Amaravati",
+        "issue": "No verifiable 'Riverside Retreat' in Amaravati — generic template name with no Booking/MMT/TripAdvisor footprint. Replace with the verified Krishna-cluster premium hotel."
+      },
+      "replacement": {
+        "name": "Fortune Murali Park, Vijayawada",
+        "tier": "premium",
+        "tagline": "An ITC Fortune-group hotel on the banks of the Krishna on M.G. Road, Vijayawada — 107 rooms overlooking the Indrakiladri Hills, the practical premium base for the Amaravati capital cluster.",
+        "price_band": "₹₹₹",
+        "address": "M.G. Road, Labbipet, Vijayawada 520010, Andhra Pradesh",
+        "book_url": "https://www.itchotels.com/in/en/fortunemuralipark-vijayawada",
+        "sources": [
+          "https://www.itchotels.com/in/en/fortunemuralipark-vijayawada",
+          "https://www.booking.com/hotel/in/fortune-murali-park.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "amaravati",
+      "slot": "value",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Hotel Devi International",
+        "issue": "A Hotel Devi International does exist in Vijayawada, but it is a small budget restaurant-hotel with weak/inconsistent listing data and is not in Amaravati. No verifiable tier-1/2 value property sits in Amaravati village itself; honest scarcity for the value slot (the APTDC Haritha covers the budget tier)."
+      }
+    },
+    {
+      "destination_id": "araku-valley",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Haritha Araku Valley",
+        "issue": "Real — the APTDC Haritha Valley Resort in Araku town. Tighten name and copy."
+      },
+      "replacement": {
+        "name": "Haritha Valley Resort, Araku (APTDC)",
+        "tier": "budget",
+        "tagline": "The Andhra Pradesh state-tourism resort in Araku — AC cottages, a restaurant serving simple Andhra meals and a pool, about 700 m from the town centre and tribal museum.",
+        "price_band": "₹₹",
+        "address": "Araku Valley, Visakhapatnam District 531149, Andhra Pradesh",
+        "book_url": "https://tourism.ap.gov.in/",
+        "sources": [
+          "https://aptourismhotels.in/aptdc-haritha-hotel-araku-haritha-valley-resort-online-booking/",
+          "https://www.tripadvisor.com/Hotel_Review-g1974063-d6159062-Reviews-APTDC_Haritha_Valley_Resort-Araku_Valley_Visakhapatnam_District_Andhra_Pradesh.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "araku-valley",
+      "slot": "value",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Ananthagiri Hills homestay (operated by local families near Ananthagiri village)",
+        "issue": "Generic, unnamed 'homestay' descriptor with no verifiable single property — Ananthagiri is a separate hill point ~26 km from Araku town. No verifiable tier-1/2 named value property; honest scarcity."
+      }
+    },
+    {
+      "destination_id": "araku-valley",
+      "slot": "location",
+      "verdict": "replace",
+      "existing": {
+        "name": "Hotel Indra",
+        "issue": "No verifiable hotel of this name in Araku Valley — generic name with no Booking/MMT/TripAdvisor footprint. Replace with the verified APTDC eco-camp on the Araku route."
+      },
+      "replacement": {
+        "name": "Haritha Jungle Bells, Tyda (APTDC)",
+        "tier": "budget",
+        "tagline": "An APTDC eco-camp on the Vizag–Araku ghat road — about 18 wood-and-bamboo cottages in forest at ~2,000 ft, with guided birdwatching, jungle treks and campfires.",
+        "price_band": "₹₹",
+        "address": "Tyda, Visakhapatnam–Araku Ghat Road, Visakhapatnam District, Andhra Pradesh",
+        "book_url": "https://www.harithajunglebellstyda.com/",
+        "sources": [
+          "https://aptourismhotels.in/aptdc-haritha-hotel-tyda-hotels-online-booking/",
+          "https://www.harithajunglebellstyda.com/"
+        ]
+      }
+    },
+    {
+      "destination_id": "araku-valley",
+      "slot": "xfactor",
+      "verdict": "replace",
+      "existing": {
+        "name": "Papi Hills Eco-Lodge (treehouse stay option)",
+        "issue": "Papi Hills / Papikondalu is a Godavari river-gorge region near Rajahmundry, ~250 km from Araku Valley — cross-dest. No verifiable named treehouse 'eco-lodge' there either. Replace with a verified Araku-area property."
+      },
+      "replacement": {
+        "name": "Ushodaya Resorts, Araku",
+        "tier": "midrange",
+        "tagline": "A 50-room resort near Padmapuram Gardens in Araku — well-furnished cottages, deluxe rooms and suites with a garden, terrace and restaurant, a verified private alternative to the Haritha.",
+        "price_band": "₹₹₹",
+        "address": "Near Padmapuram Gardens, Araku Valley, Visakhapatnam District, Andhra Pradesh",
+        "book_url": "https://www.ushodayaresortsaraku.com/",
+        "sources": [
+          "https://www.ushodayaresortsaraku.com/",
+          "https://www.booking.com/hotel/in/ushodaya-resorts.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "belum-caves",
+      "slot": "experience",
+      "verdict": "replace",
+      "existing": {
+        "name": "Belum Caves Resort",
+        "issue": "No verifiable 'Belum Caves Resort' — generic template name with no online footprint. Accommodation at Belum is genuinely scarce; the only verified on-site option is the APTDC Punnami dormitory."
+      },
+      "replacement": {
+        "name": "APTDC Punnami Hotel, Belum Caves",
+        "tier": "budget",
+        "tagline": "The only verified accommodation at the caves — a small APTDC Punnami property running a ~32-bed dormitory and a small restaurant near the Belum Caves entrance. Basic, but the sole on-site option; book ahead in season.",
+        "price_band": "₹",
+        "address": "Belum Caves, Kolimigundla mandal, Nandyal District, Andhra Pradesh 518135",
+        "book_url": "https://tourism.ap.gov.in/",
+        "sources": [
+          "https://en.wikivoyage.org/wiki/Belum_Caves",
+          "https://www.mapsofindia.com/my-india/india/belum-caves-indias-natural-wonder"
+        ]
+      }
+    },
+    {
+      "destination_id": "belum-caves",
+      "slot": "value",
+      "verdict": "replace",
+      "existing": {
+        "name": "Srisailam Guest House (Kolimigundla)",
+        "issue": "Misleading — there is no 'Srisailam Guest House' at Kolimigundla (Srisailam is a separate temple town ~120 km away). Belum's nearest real hotel stock is in Tadipatri. Replace with a verified Tadipatri base."
+      },
+      "replacement": {
+        "name": "Hotels at Tadipatri (base for Belum Caves)",
+        "tier": "budget",
+        "tagline": "Belum has almost no hotel stock; the practical base is Tadipatri, about 30 km away — clean budget hotels and lodges (Aarti Residency, APR Paradise and similar) on the Anantapur road with AC rooms, restaurants and parking.",
+        "price_band": "₹₹",
+        "address": "Tadipatri, Anantapur District, Andhra Pradesh 515411",
+        "book_url": "https://www.expedia.co.in/Tadpatri-Hotels.d553248635939584774.Travel-Guide-Hotels",
+        "sources": [
+          "https://traveltriangle.com/blog/hotels-near-belum-caves/",
+          "https://www.expedia.co.in/Tadpatri-Hotels.d553248635939584774.Travel-Guide-Hotels"
+        ]
+      }
+    },
+    {
+      "destination_id": "belum-caves",
+      "slot": "location",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Belum Caves Guest House (APTDC)",
+        "issue": "Broadly real in spirit — APTDC does run the only on-site lodging at Belum, the Punnami dormitory. Correct the name to the actual property."
+      },
+      "replacement": {
+        "name": "APTDC Punnami Hotel, Belum Caves",
+        "tier": "budget",
+        "tagline": "The APTDC-run lodging right at the cave site — a basic dormitory and small restaurant, the closest verified place to sleep for an early descent into India's longest cave system.",
+        "price_band": "₹",
+        "address": "Belum Caves, Kolimigundla mandal, Nandyal District, Andhra Pradesh 518135",
+        "book_url": "https://tourism.ap.gov.in/",
+        "sources": [
+          "https://en.wikivoyage.org/wiki/Belum_Caves",
+          "https://www.holidify.com/places/kurnool/belum-caves-sightseeing-2528.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "belum-caves",
+      "slot": "xfactor",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Erratic Farmstay (near Bandi Atmakur)",
+        "issue": "No verifiable 'Erratic Farmstay' near Bandi Atmakur — generic name with no online footprint. Belum is a remote day-trip cave site with no experiential tier-1/2 stay; honest scarcity."
+      }
+    },
+    {
+      "destination_id": "borra-caves",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Haritha Heritage Resort, Araku Valley",
+        "issue": "Real APTDC presence in the area but the name is slightly off and Araku town is ~30 km from Borra Caves. Re-anchor to the verified APTDC Haritha hill resort at Ananthagiri, the hill station nearest the caves."
+      },
+      "replacement": {
+        "name": "Haritha Hill Resort, Ananthagiri (APTDC)",
+        "tier": "budget",
+        "tagline": "An APTDC Haritha hill resort with independent cottages and hill views at Ananthagiri, the coffee-hill station about 8 km from Borra Caves — the state-tourism base for an overnight near the caves.",
+        "price_band": "₹₹",
+        "address": "Ananthagiri, Visakhapatnam District, Andhra Pradesh",
+        "book_url": "https://tourism.ap.gov.in/",
+        "sources": [
+          "https://aptourismhotels.in/aptdc-haritha-hotel-ananthagiri-haritha-online-hotel-booking/",
+          "https://www.tripadvisor.com/Hotel_Review-g6634969-d2064498-Reviews-Haritha_Hill_Resort-Ninnimamidi_Visakhapatnam_District_Andhra_Pradesh.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "borra-caves",
+      "slot": "value",
+      "verdict": "replace",
+      "existing": {
+        "name": "Borra Caves Tourism Complex / Forest Rest House",
+        "issue": "Vague descriptor — there is no verifiable named 'tourism complex / forest rest house' lodging at the cave mouth itself. Replace with the verified APFDC eco-camp nearest the caves."
+      },
+      "replacement": {
+        "name": "Ananthagiri Eco Nature Camp (APFDC)",
+        "tier": "budget",
+        "tagline": "The Andhra Pradesh Forest Development Corporation eco-camp at Ananthagiri, about 8 km from Borra Caves — AC cottage huts and a 5-bed non-AC dormitory in the coffee-plantation hills, the verified forest-run base for the caves.",
+        "price_band": "₹₹",
+        "address": "Ananthagiri, Visakhapatnam District, Andhra Pradesh",
+        "book_url": "https://ecotourism.apfdcl.com/ananthagiri/",
+        "sources": [
+          "https://ecotourism.apfdcl.com/ananthagiri/",
+          "https://www.go2india.in/ap/araku-by-road.php"
+        ]
+      }
+    },
+    {
+      "destination_id": "borra-caves",
+      "slot": "location",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Ananthagiri Hills Resort",
+        "issue": "Real in substance — there is genuine APTDC/APFDC resort accommodation at Ananthagiri, the point nearest Borra Caves. Tighten to the named verified APFDC property."
+      },
+      "replacement": {
+        "name": "Ananthagiri Eco Nature Camp (APFDC)",
+        "tier": "budget",
+        "tagline": "Forest-run AC cottage huts and a dormitory in the Ananthagiri coffee hills — the closest verified lodging to Borra Caves, ringed by plantations and a short drive from the cave entrance.",
+        "price_band": "₹₹",
+        "address": "Ananthagiri, Visakhapatnam District, Andhra Pradesh",
+        "book_url": "https://ecotourism.apfdcl.com/ananthagiri/",
+        "sources": [
+          "https://ecotourism.apfdcl.com/ananthagiri/",
+          "https://tourism.ap.gov.in/hotellist?cityCode=62&unitCode=ALL"
+        ]
+      }
+    },
+    {
+      "destination_id": "borra-caves",
+      "slot": "xfactor",
+      "verdict": "replace",
+      "existing": {
+        "name": "Eco-cottages at Araku Valley Tribal Museum / Tribal homestay network",
+        "issue": "Vague, unnamed descriptor combining two unrelated concepts — the Tribal Museum is a day attraction in Araku town, not a lodging, and the 'homestay network' is unverifiable. Replace with the verified APTDC eco-camp on the Vizag–Araku route."
+      },
+      "replacement": {
+        "name": "Haritha Jungle Bells, Tyda (APTDC)",
+        "tier": "budget",
+        "tagline": "An APTDC eco-camp of wood-and-bamboo cottages in forest on the Vizag–Araku ghat road — a verified experiential stay roughly halfway between the city and Borra Caves, with birdwatching and campfires.",
+        "price_band": "₹₹",
+        "address": "Tyda, Visakhapatnam–Araku Ghat Road, Visakhapatnam District, Andhra Pradesh",
+        "book_url": "https://www.harithajunglebellstyda.com/",
+        "sources": [
+          "https://www.harithajunglebellstyda.com/",
+          "https://aptourismhotels.in/aptdc-haritha-hotel-tyda-hotels-online-booking/"
+        ]
+      }
+    },
+    {
+      "destination_id": "gandikota",
+      "slot": "xfactor",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Pennar Riverside Tents",
+        "issue": "No verifiable 'Pennar Riverside Tents' operation at Gandikota — generic name with no booking footprint, and there is no permitted riverside glamping at the Pennar gorge. Honest scarcity for the xfactor slot."
+      }
+    },
+    {
+      "destination_id": "gandikota",
+      "slot": "value",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Haritha Homestay",
+        "issue": "No 'Haritha Homestay' exists — 'Haritha' is the APTDC hotel brand and the village's only APTDC property is the Gandikota Haritha Hotel (used for the experience slot). No separate verifiable value property in this tiny canyon village; honest scarcity."
+      }
+    },
+    {
+      "destination_id": "gandikota",
+      "slot": "location",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Gandikota Village Guest House",
+        "issue": "No verifiable named 'village guest house' in Gandikota — generic descriptor with no booking footprint. Gandikota is a very small village whose only verified accommodation is the APTDC Haritha; honest scarcity for the location slot."
+      }
+    },
+    {
+      "destination_id": "gandikota",
+      "slot": "experience",
+      "verdict": "replace",
+      "existing": {
+        "name": "Gandikota Fort Resort",
+        "issue": "No verifiable 'Gandikota Fort Resort' — generic template name. Replace with the verified APTDC Haritha hotel, the only real accommodation at the Grand Canyon of India."
+      },
+      "replacement": {
+        "name": "Gandikota Haritha Hotel (APTDC)",
+        "tier": "budget",
+        "tagline": "The only verified accommodation at the Grand Canyon of India — an APTDC Haritha with two-bed AC rooms and an 8-bed dormitory, about 1.2 km from Gandikota Fort and the Pennar gorge.",
+        "price_band": "₹₹",
+        "address": "Gandikota village, Jammalamadugu mandal, Kadapa District, Andhra Pradesh 516434",
+        "book_url": "https://tourism.ap.gov.in/",
+        "sources": [
+          "https://aptourismhotels.in/aptdc-haritha-hotel-gandikota-haritha-kadapa-online-hotel-booking/",
+          "https://www.tripadvisor.in/Hotel_Review-g9596249-d2471355-Reviews-Gandikota_Haritha_Hotel-Gandikota_Kadapa_District_Andhra_Pradesh.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "horsley-hills",
+      "slot": "experience",
+      "verdict": "replace",
+      "existing": {
+        "name": "The Horsley Hills Resort",
+        "issue": "No verifiable private 'Horsley Hills Resort' of this name — Horsley Hills is a small, protected hill station whose accommodation is effectively the APTDC Haritha Hill Resort. Replace with the real property."
+      },
+      "replacement": {
+        "name": "Haritha Hill Resort, Horsley Hills (APTDC)",
+        "tier": "budget",
+        "tagline": "The state-tourism resort that effectively is Horsley Hills' accommodation — cottages and the heritage Governor's Bungalow across the hilltop, with a restaurant, pool and conference hall.",
+        "price_band": "₹₹",
+        "address": "Horsley Hills, Madanapalle taluk, Chittoor District, Andhra Pradesh 517325",
+        "book_url": "https://tourism.ap.gov.in/",
+        "sources": [
+          "https://aptourismhotels.in/aptdc-haritha-hotel-horsley-hills-online-hotel-booking/",
+          "https://www.tripadvisor.in/Hotel_Review-g2266543-d2471260-Reviews-Haritha_Hill_Resort_Horsely_Hills-Chittoor_Chittoor_District_Andhra_Pradesh.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "horsley-hills",
+      "slot": "value",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Green Valley Guesthouse",
+        "issue": "No verifiable 'Green Valley Guesthouse' at Horsley Hills — generic name with no booking footprint. The hill station has only the APTDC Haritha; no separate verifiable value property. Honest scarcity."
+      }
+    },
+    {
+      "destination_id": "horsley-hills",
+      "slot": "location",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Horsley Hills Fort Resort",
+        "issue": "No verifiable 'Horsley Hills Fort Resort' — generic template name, and there is no fort at Horsley Hills. The APTDC Haritha (experience slot) is the only real property; honest scarcity for the location slot."
+      }
+    },
+    {
+      "destination_id": "horsley-hills",
+      "slot": "xfactor",
+      "verdict": "replace",
+      "existing": {
+        "name": "Nandi Hills Homestay (Horsley Hills Extension)",
+        "issue": "CROSS-STATE FABRICATION — Nandi Hills is a hill station in Karnataka, roughly 100 km away near Bengaluru, and is not an 'extension' of Horsley Hills. No verifiable homestay of this name relates to Horsley Hills. Replace with the verified Governor's Bungalow heritage block."
+      },
+      "replacement": {
+        "name": "Governor's Bungalow, Haritha Hill Resort (APTDC)",
+        "tier": "budget",
+        "tagline": "The colonial-era Governor's Bungalow within the APTDC Haritha estate at the Horsley Hills summit — heritage rooms among eucalyptus and old plantation trees, the most characterful verified stay on the hill.",
+        "price_band": "₹₹",
+        "address": "Horsley Hills, Madanapalle taluk, Chittoor District, Andhra Pradesh 517325",
+        "book_url": "https://tourism.ap.gov.in/",
+        "sources": [
+          "https://haritha-hill-resort-horsley-hills.hotelsgds.com/rooms-category/",
+          "https://aptourism.gov.in/destinations/14/horsley-hills"
+        ]
+      }
+    },
+    {
+      "destination_id": "konaseema",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Sterling Palavelli Godavari",
+        "issue": "Real and correctly placed — a 13-acre coconut-plantation resort on the Godavari backwaters at Dindi in the Konaseema delta belt. Tighten copy."
+      },
+      "replacement": {
+        "name": "Sterling Palavelli Godavari",
+        "tier": "luxury",
+        "tagline": "A 13-acre coconut-plantation resort on the Godavari backwaters at Dindi — themed Zamindari and Manduva Logili rooms, an infinity pool, island dining and private houseboat cruises through palm-fringed channels.",
+        "price_band": "₹₹₹",
+        "address": "Yalamanchili, near Dindi, Razole mandal, Konaseema/East Godavari, Andhra Pradesh 533253",
+        "book_url": "https://www.sterlingholidays.com/resorts-hotels/palavelli-godavari",
+        "sources": [
+          "https://www.sterlingholidays.com/resorts-hotels/palavelli-godavari",
+          "https://www.makemytrip.global/hotels/sterling_palavelli_godavari-details-razole.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "konaseema",
+      "slot": "value",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Haritha Coconut Country (APTDC)",
+        "issue": "Real and correctly placed — the APTDC Haritha Coconut Country Resort on the Godavari at Dindi. Tighten name and copy."
+      },
+      "replacement": {
+        "name": "Haritha Coconut Country Resort, Dindi (APTDC)",
+        "tier": "budget",
+        "tagline": "The Andhra Pradesh state-tourism resort on the Godavari at Dindi — a well-managed riverside property with a restaurant, bar, pool and houseboat hire, the dependable government-run anchor for the Konaseema backwaters.",
+        "price_band": "₹₹",
+        "address": "Dindi village, Malikipuram mandal, Konaseema/East Godavari, Andhra Pradesh 533253",
+        "book_url": "https://tourism.ap.gov.in/",
+        "sources": [
+          "https://www.tripadvisor.in/Hotel_Review-g1584832-d2471222-Reviews-Haritha_Coconut_Country_Resort_APTDC-Kakinada_East_Godavari_District_Andhra_Pradesh.html",
+          "https://aptourismhotels.in/aptdc-haritha-hotel-dindi-haritha-online-hotel-booking/"
+        ]
+      }
+    },
+    {
+      "destination_id": "konaseema",
+      "slot": "location",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "RVR Sarovar Portico",
+        "issue": "Real and correctly placed — a Sarovar-group riverside resort on the Godavari at Dindi in the Konaseema delta belt. Tighten copy."
+      },
+      "replacement": {
+        "name": "RVR Sarovar Portico, Dindi",
+        "tier": "premium",
+        "tagline": "A Sarovar-group riverside resort on the Godavari at Dindi — a Club Mahindra associate property with backwater views, pool and boating, a reliable branded option in the Konaseema delta.",
+        "price_band": "₹₹₹",
+        "address": "Dindi village, Malikipuram mandal, Konaseema/East Godavari, Andhra Pradesh 533253",
+        "book_url": "https://www.sarovarhotels.com/rvr-sarovar-portico-dindi/",
+        "sources": [
+          "https://www.sarovarhotels.com/rvr-sarovar-portico-dindi/",
+          "https://www.booking.com/hotel/in/rvr-sarovar-portico.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "lambasingi",
+      "slot": "experience",
+      "verdict": "replace",
+      "existing": {
+        "name": "Ananthagiri Hills Resort",
+        "issue": "Cross-dest — Ananthagiri Hills Resort is on the Vizag–Araku ghat road near Borra Caves, not in Lambasingi (a different hill area). Replace with a verified Lambasingi property."
+      },
+      "replacement": {
+        "name": "Haritha Lambasingi (APTDC)",
+        "tier": "budget",
+        "tagline": "The Andhra Pradesh state-tourism property in Lambasingi itself — elevated blue-and-white cottages with basic rooms and a dorm, the verified government anchor in a hamlet famous for near-freezing December dawns.",
+        "price_band": "₹₹",
+        "address": "Lambasingi, Chintapalle mandal, Alluri Sitharama Raju District, Andhra Pradesh",
+        "book_url": "https://tourism.ap.gov.in/",
+        "sources": [
+          "https://aptourismhotels.in/aptdc-haritha-hotel-lambasingi-hotel-online-booking/",
+          "https://tourism.ap.gov.in/hotellist?cityCode=135&unitCode=ALL"
+        ]
+      }
+    },
+    {
+      "destination_id": "lambasingi",
+      "slot": "value",
+      "verdict": "replace",
+      "existing": {
+        "name": "The Bungalow Lambasingi",
+        "issue": "No verifiable property named 'The Bungalow Lambasingi' — generic template name with no booking footprint. Replace with a verified Lambasingi resort."
+      },
+      "replacement": {
+        "name": "Dhimsa Resort, Lambasingi",
+        "tier": "budget",
+        "tagline": "A centrally located private resort in Lambasingi — 18 rooms across deluxe AC, non-AC and AC wooden cottages, with a multi-cuisine restaurant, picnic lawn, trekking, birdwatching and evening Dhimsa tribal dance.",
+        "price_band": "₹₹",
+        "address": "Lambasingi, Chintapalle mandal, Alluri Sitharama Raju District, Andhra Pradesh",
+        "book_url": "https://lambasingi.in/resorts-and-hotels/",
+        "sources": [
+          "https://www.thrillophilia.com/resorts-in-lambasingi",
+          "https://banbanjara.com/lambasingi-resorts"
+        ]
+      }
+    },
+    {
+      "destination_id": "lambasingi",
+      "slot": "location",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Lambasingi Village homestays (central)",
+        "issue": "Generic, unnamed 'village homestays' descriptor with no verifiable single named property. Lambasingi is a tiny hamlet; the APTDC Haritha and Dhimsa Resort (other two slots) cover the verified stock. Honest scarcity for a distinct location-slot pick."
+      }
+    },
+    {
+      "destination_id": "lepakshi",
+      "slot": "value",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Lepakshi Guest House",
+        "issue": "Broadly real — the only place to stay in Lepakshi village is the APTDC Lepakshi Haritha Hotel near the Veerabhadra temple. Correct the name to the actual property."
+      },
+      "replacement": {
+        "name": "Lepakshi Haritha Hotel (APTDC)",
+        "tier": "budget",
+        "tagline": "The only verified accommodation in Lepakshi village — an APTDC Haritha with AC and non-AC rooms close to the Veerabhadra temple and a restaurant serving simple Andhra meals. The practical base for the temple and the monolithic Nandi.",
+        "price_band": "₹₹",
+        "address": "Lepakshi, Hindupur taluk, Sri Sathya Sai District, Andhra Pradesh 515331",
+        "book_url": "https://tourism.ap.gov.in/",
+        "sources": [
+          "https://www.tripadvisor.in/Hotel_Review-g2288627-d8669330-Reviews-Lepakshi_Haritha_Hotel-Lepakshi_Anantapur_District_Andhra_Pradesh.html",
+          "https://aptourism.gov.in/destinations/21/lepakshi"
+        ]
+      }
+    },
+    {
+      "destination_id": "lepakshi",
+      "slot": "location",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Sarovaram Hermitage",
+        "issue": "No verifiable 'Sarovaram Hermitage' at or near Lepakshi — generic name with no booking footprint. Lepakshi is a small temple village; the APTDC Haritha is the only real on-site stay. Honest scarcity."
+      }
+    },
+    {
+      "destination_id": "lepakshi",
+      "slot": "xfactor",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Nataraj Farmstay",
+        "issue": "No verifiable 'Nataraj Farmstay' near Lepakshi — generic name with no booking footprint. No experiential tier-1/2 stay in this small temple village; honest scarcity."
+      }
+    },
+    {
+      "destination_id": "lepakshi",
+      "slot": "experience",
+      "verdict": "replace",
+      "existing": {
+        "name": "The Bungalow on the Hill",
+        "issue": "No verifiable 'Bungalow on the Hill' at Lepakshi — generic template name with no footprint. The real experience-tier base is Hindupur, the nearest town with verified hotels."
+      },
+      "replacement": {
+        "name": "Hotels at Hindupur (base for Lepakshi)",
+        "tier": "budget",
+        "tagline": "Lepakshi village has only the APTDC Haritha; for more choice the verified base is Hindupur, about 14 km away — clean budget-to-midrange hotels (Palla Residency, JVS Paradise and similar) near the railway station, the rail gateway to Lepakshi.",
+        "price_band": "₹₹",
+        "address": "Hindupur, Sri Sathya Sai District, Andhra Pradesh 515201",
+        "book_url": "https://www.hotels.com/tgp/lodging/3000414604/hindupur",
+        "sources": [
+          "https://www.indiatravelblog.com/resources/2909-Veerabhadra-temple-tourist-guide-how-reach-see-hotels-stay.aspx",
+          "https://www.hotels.com/tgp/lodging/3000414604/hindupur"
+        ]
+      }
+    },
+    {
+      "destination_id": "machilipatnam",
+      "slot": "value",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Machilipatnam Heritage Guesthouse",
+        "issue": "No verifiable 'Machilipatnam Heritage Guesthouse' — generic template name with no booking footprint. Machilipatnam's verified stock is plain budget town hotels with weak individual data; no distinct tier-1/2 value property. Honest scarcity."
+      }
+    },
+    {
+      "destination_id": "machilipatnam",
+      "slot": "location",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Beach Road Hotel",
+        "issue": "No verifiable hotel named 'Beach Road Hotel' at Machilipatnam/Manginapudi — generic descriptor. Manginapudi has no verified tier-1/2 beach hotel; honest scarcity for the location slot."
+      }
+    },
+    {
+      "destination_id": "machilipatnam",
+      "slot": "xfactor",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Machilipatnam Backwaters Houseboat (local operators)",
+        "issue": "FABRICATION — there is no verifiable houseboat operation at Machilipatnam (the Konaseema/Godavari delta near Dindi is the AP houseboat region, not the Machilipatnam coast). Generic 'local operators' with no named property. Honest scarcity."
+      }
+    },
+    {
+      "destination_id": "machilipatnam",
+      "slot": "experience",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "The Vijaya Beach Resort",
+        "issue": "No verifiable 'Vijaya Beach Resort' at Machilipatnam/Manginapudi — generic template name with no booking footprint. Manginapudi has only basic budget hotels and FabHotel-type properties with inconsistent listings; no verifiable experiential tier-1/2 resort. Honest scarcity."
+      }
+    },
+    {
+      "destination_id": "maredumilli",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Jungle Star Nature Camp",
+        "issue": "Real and correctly placed — Jungle Star Eco Camp is an official Andhra Pradesh Forest Department community eco-camp at Valamuru in the Maredumilli range. Tighten name and copy."
+      },
+      "replacement": {
+        "name": "Jungle Star Eco Camp, Valamuru",
+        "tier": "budget",
+        "tagline": "An AP Forest Department community eco-camp run by the local Konda Reddy tribe — tents, cottages and treehouses on a forest spur ringed on three sides by the Valamuru stream, overlooking Vali-Sugriva Konda.",
+        "price_band": "₹₹",
+        "address": "Valamuru, Maredumilli range, East Godavari District, Andhra Pradesh",
+        "book_url": "https://www.maredumilli.net/",
+        "sources": [
+          "https://maredumilli.net/welcome-to-official-website-of-jungle-star-eco-camp-tourist-information-centres.html",
+          "https://www.tripadvisor.in/Hotel_Review-g1155908-d12874416-Reviews-Jungle_Star_Nature_Camp_Site-Rajahmundry_East_Godavari_District_Andhra_Pradesh.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "maredumilli",
+      "slot": "value",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Vanavihari Eco-Tourism",
+        "issue": "Real and correctly placed — Vanavihari is the AP Forest Department CBET community eco-tourism resort at Maredumilli. Tighten name and copy."
+      },
+      "replacement": {
+        "name": "Vanavihari Eco-Tourism Resort",
+        "tier": "budget",
+        "tagline": "A community-based eco-tourism resort run by the AP Forest Department CBET programme — hilltop guest house, Bison Cottages and wooden cottages in semi-evergreen Eastern Ghats forest near Maredumilli village; income supports local tribal communities.",
+        "price_band": "₹₹",
+        "address": "Maredumilli, East Godavari District, Andhra Pradesh 533295",
+        "book_url": "https://vanavihari.com/",
+        "sources": [
+          "https://vanavihari.com/",
+          "https://www.rural.tourism.gov.in/Maredumilli-Eco-Tourism.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "maredumilli",
+      "slot": "xfactor",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "AP Forest Dept Bamboo Hut Eco-Camp",
+        "issue": "Real in substance — the AP Forest Department / CBET bamboo-hut cottages are a genuine Maredumilli eco-tourism offering. Tighten to a verified named property; the bamboo huts sit within the Vanavihari/Jungle Star CBET network."
+      },
+      "replacement": {
+        "name": "Forest Department Bamboo Cottages, Maredumilli (CBET)",
+        "tier": "budget",
+        "tagline": "Bamboo and wooden cottages within the AP Forest Department CBET network around Maredumilli — rustic forest huts beside streams and waterfalls (Jalatarangini, Amruthadhara), booked through the official eco-tourism channels and staffed by local tribal communities.",
+        "price_band": "₹₹",
+        "address": "Maredumilli range, East Godavari District, Andhra Pradesh 533295",
+        "book_url": "https://vanavihari.com/",
+        "sources": [
+          "https://vanavihari.com/",
+          "https://www.rural.tourism.gov.in/Maredumilli-Eco-Tourism.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "nagarjuna-sagar",
+      "slot": "value",
+      "verdict": "replace",
+      "existing": {
+        "name": "Hotel Vijaya Vilas",
+        "issue": "No verifiable 'Hotel Vijaya Vilas' at Nagarjuna Sagar — generic name with no booking footprint. Replace with the verified APTDC Haritha resort at the dam."
+      },
+      "replacement": {
+        "name": "Haritha Vijay Vihar, Nagarjuna Sagar (APTDC)",
+        "tier": "budget",
+        "tagline": "The Andhra Pradesh state-tourism resort at Nagarjuna Sagar — two-bed AC and non-AC rooms overlooking the dam and reservoir, close to the boating point and the launch for Nagarjunakonda island.",
+        "price_band": "₹₹",
+        "address": "Vijayapuri South, Nagarjuna Sagar, Palnadu District, Andhra Pradesh 522438",
+        "book_url": "https://tourism.ap.gov.in/",
+        "sources": [
+          "https://aptourismresorts.in/nagarjunasagar,-haritha-hotels,vijayapuri-south.html",
+          "https://tourism.ap.gov.in/hotellist?cityCode=134&unitCode=10418"
+        ]
+      }
+    },
+    {
+      "destination_id": "nagarjuna-sagar",
+      "slot": "location",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Neelam Guest House",
+        "issue": "No verifiable 'Neelam Guest House' at Nagarjuna Sagar — generic name with no booking footprint. The verified stock at Vijayapuri is essentially the APTDC Haritha; no distinct location-slot property. Honest scarcity."
+      }
+    },
+    {
+      "destination_id": "nagarjuna-sagar",
+      "slot": "xfactor",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Eturnagaram Wildlife Sanctuary Eco-Camp",
+        "issue": "CROSS-STATE — Eturnagaram Wildlife Sanctuary is in Telangana (Mulugu district), far from the AP-side Nagarjuna Sagar dam town. No verifiable eco-camp relevant to this destination; honest scarcity for the xfactor slot."
+      }
+    },
+    {
+      "destination_id": "nagarjuna-sagar",
+      "slot": "experience",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Sagar Retreat, Nagarjunakonda",
+        "issue": "FABRICATION — Nagarjunakonda is a protected ASI Buddhist museum island with no accommodation, and there is no verifiable 'Sagar Retreat'. The dam-side town has only the APTDC Haritha (value slot); no experiential tier-1/2 stay. Honest scarcity."
+      }
+    },
+    {
+      "destination_id": "pulicat-lake",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Pulicat Lake Resort",
+        "issue": "Broadly real in spirit — the AP-side lake accommodation is the APTDC Pulicat Lake View Resort at Tada. Correct the name to the actual verified property."
+      },
+      "replacement": {
+        "name": "Pulicat Lake View Resort (APTDC), Tada",
+        "tier": "budget",
+        "tagline": "The Andhra Pradesh state-tourism resort on the lake at Tada near Sri City — AC rooms with balconies and lake views, the verified AP-side base for the Pulicat lagoon and the flamingo-watching season.",
+        "price_band": "₹₹",
+        "address": "Bheemulavaripalem, Tada mandal, Tirupati District, Andhra Pradesh",
+        "book_url": "https://tourism.ap.gov.in/",
+        "sources": [
+          "https://www.tripadvisor.com/Hotel_Review-g34049683-d34049318-Reviews-Pulicat_Lake_View_Resort-Bheemulavaripalem_Nellore_District_Andhra_Pradesh.html",
+          "https://www.makemytrip.com/hotels/pulicat_lake_view_resort_aptdc-details-tada.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "pulicat-lake",
+      "slot": "value",
+      "verdict": "replace",
+      "existing": {
+        "name": "Krishnamurti Guest House",
+        "issue": "No verifiable 'Krishnamurti Guest House' at Pulicat — generic name with no booking footprint. Replace with the verified Sullurpeta-base option."
+      },
+      "replacement": {
+        "name": "Hotels at Sullurpeta (base for Pulicat Lake)",
+        "tier": "budget",
+        "tagline": "Pulicat is a day-trip lake; the practical AP-side base is Sullurpeta, about 6 km away — budget hotels (Kinnera Grand Days Inn and similar) near the road that runs down to the lagoon, with AC rooms and restaurants.",
+        "price_band": "₹₹",
+        "address": "Sullurpeta, Tirupati District, Andhra Pradesh 524121",
+        "book_url": "https://www.makemytrip.com/hotels/sullurpeta-hotels.html",
+        "sources": [
+          "https://gotirupati.com/pulicat-lake-nellore/",
+          "https://www.nelloreonline.in/guide/bird-sanctuaries-near-nellore"
+        ]
+      }
+    },
+    {
+      "destination_id": "pulicat-lake",
+      "slot": "location",
+      "verdict": "replace",
+      "existing": {
+        "name": "TTDC Pulicat Lake Resort",
+        "issue": "WRONG STATE TOURISM BODY — TTDC is the Tamil Nadu Tourism Development Corporation. Pulicat Lake straddles the AP–TN border, but for the AP destination the correct anchor is the APTDC Pulicat Lake View Resort at Tada, not a TTDC property."
+      },
+      "replacement": {
+        "name": "Pulicat Lake View Resort (APTDC), Tada",
+        "tier": "budget",
+        "tagline": "The APTDC lake-view resort at Tada — AC rooms with balconies overlooking the lagoon near Sri City, the correct Andhra Pradesh state-tourism base for the Pulicat side of the lake.",
+        "price_band": "₹₹",
+        "address": "Bheemulavaripalem, Tada mandal, Tirupati District, Andhra Pradesh",
+        "book_url": "https://tourism.ap.gov.in/",
+        "sources": [
+          "https://www.guestreservations.com/pulicat-lake-view-resort-aptdc/booking",
+          "https://www.tripadvisor.com/Hotel_Review-g34049683-d34049318-Reviews-Pulicat_Lake_View_Resort-Bheemulavaripalem_Nellore_District_Andhra_Pradesh.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "pulicat-lake",
+      "slot": "xfactor",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Pulicat Lagoon Houseboat Stay",
+        "issue": "FABRICATION — Pulicat is a shallow brackish lagoon and bird sanctuary with NO houseboat operation (houseboats in AP run on the Godavari delta at Dindi, not here). No verifiable property; honest scarcity for the xfactor slot."
+      }
+    },
+    {
+      "destination_id": "rajahmundry",
+      "slot": "value",
+      "verdict": "replace",
+      "existing": {
+        "name": "Haritha Beach Resort",
+        "issue": "Misleading — there is no 'Haritha Beach Resort' at Rajahmundry (Rajahmundry is an inland Godavari river city, not a beach destination). Replace with a verified Rajahmundry hotel."
+      },
+      "replacement": {
+        "name": "Townhouse Rajahmundry City Centre",
+        "tier": "budget",
+        "tagline": "A reliable mid-range city hotel in central Rajahmundry — clean AC rooms with restaurant and parking, a verified value base in the Godavari city, close to the riverfront ghats and railway station.",
+        "price_band": "₹₹",
+        "address": "Rajahmundry city centre, East Godavari District, Andhra Pradesh 533101",
+        "book_url": "https://www.tripadvisor.in/Hotels-g1155908-Rajahmundry_East_Godavari_District_Andhra_Pradesh-Hotels.html",
+        "sources": [
+          "https://traveltriangle.com/blog/hotels-in-rajamahendravaram/",
+          "https://www.tripadvisor.in/Hotels-g1155908-Rajahmundry_East_Godavari_District_Andhra_Pradesh-Hotels.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "rajahmundry",
+      "slot": "xfactor",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Papikondalu Riverside Camp (seasonal)",
+        "issue": "Real in substance — the Papikondalu (Papi Hills) Godavari gorge offers genuine seasonal riverside camps and bamboo-hut stays reached by boat from the Rajahmundry/Maredumilli area. Tighten name and add the seasonal caveat."
+      },
+      "replacement": {
+        "name": "Papikondalu Riverside Camps (seasonal)",
+        "tier": "budget",
+        "tagline": "Seasonal riverside bamboo-hut camps in the Papikondalu (Papi Hills) Godavari gorge, reached by boat from the Rajahmundry/Pattiseema area — basic huts on the riverbank inside a hill-forest landscape; operates roughly outside the monsoon high-water months.",
+        "price_band": "₹₹",
+        "address": "Papikondalu Godavari gorge, near Rajahmundry, East Godavari District, Andhra Pradesh",
+        "book_url": "https://www.aptourismpapikondalu.com/",
+        "sources": [
+          "https://www.aptourismpapikondalu.com/blog/best-accommodation-in-maredumilli.html",
+          "https://www.maredumilli.net/"
+        ]
+      }
+    },
+    {
+      "destination_id": "rajahmundry",
+      "slot": "experience",
+      "verdict": "replace",
+      "existing": {
+        "name": "Veda Vyasa Art Gallery & Heritage Hotel",
+        "issue": "No verifiable 'Veda Vyasa Art Gallery & Heritage Hotel' in Rajahmundry — generic template name with no booking footprint. Replace with the verified 5-star flagship."
+      },
+      "replacement": {
+        "name": "Manjeera Sarovar Premiere, Rajahmundry",
+        "tier": "luxury",
+        "tagline": "Rajahmundry's flagship 5-star — a Sarovar-group hotel on Arts College Road built on APTDC-leased land, with the Flavours multi-cuisine restaurant, the Chill Lounge Bar and the city's largest convention space.",
+        "price_band": "₹₹₹₹",
+        "address": "Arts College Road, Rajahmundry, East Godavari District, Andhra Pradesh 533105",
+        "book_url": "https://www.sarovarhotels.com/manjeera-sarovar-premiere-rajahmundry/",
+        "sources": [
+          "https://www.sarovarhotels.com/manjeera-sarovar-premiere-rajahmundry/",
+          "https://www.booking.com/hotel/in/manjeera-premiere.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "rajahmundry",
+      "slot": "location",
+      "verdict": "replace",
+      "existing": {
+        "name": "RTC Hotel",
+        "issue": "No verifiable hotel named 'RTC Hotel' in Rajahmundry — generic descriptor (RTC = bus corporation) with no booking footprint. Replace with the verified Godavari-front Radisson Blu."
+      },
+      "replacement": {
+        "name": "Radisson Blu Hotel Rajahmundry",
+        "tier": "luxury",
+        "tagline": "A riverside Radisson Blu on the Godavari at Rajahmundry — rooms and suites with balconies overlooking the river, a spa and full hotel amenities, the pick for a Godavari-front room with branded service.",
+        "price_band": "₹₹₹₹",
+        "address": "Rajahmundry–Kovvur Road, Rajahmundry, East Godavari District, Andhra Pradesh 533103",
+        "book_url": "https://www.radissonhotels.com/en-us/destination/india/rajahmundry",
+        "sources": [
+          "https://traveltriangle.com/blog/resorts-in-rajahmundry/",
+          "https://www.tripadvisor.in/Hotels-g1155908-Rajahmundry_East_Godavari_District_Andhra_Pradesh-Hotels.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "srikalahasti",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Sri Kalahasti Temple Dharamshala",
+        "issue": "Real category — the Sri Kalahastheeswara Swamy Vari Devasthanam runs official guest houses and choultries near the temple. Tighten to the named verified devasthanam guest house."
+      },
+      "replacement": {
+        "name": "Trinetra Guest House (Srikalahasti Devasthanam)",
+        "tier": "budget",
+        "tagline": "A Sri Kalahastheeswara Swamy Devasthanam guest house — 28 rooms (8 non-AC, 20 AC) with basic amenities a short walk from the temple. Booked offline at the devasthanam counters; the authentic pilgrim stay at the Vayu-linga temple.",
+        "price_band": "₹",
+        "address": "Srikalahasti, Tirupati District, Andhra Pradesh 517644",
+        "book_url": "https://tms.ap.gov.in/srikht/cnt/accommodation",
+        "sources": [
+          "https://tms.ap.gov.in/srikht/cnt/accommodation",
+          "https://srikalahastitemple.org.in/accommodation-near-sri-kalahasti-temple/"
+        ]
+      }
+    },
+    {
+      "destination_id": "srikalahasti",
+      "slot": "value",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Srikalahasti Guest House",
+        "issue": "Generic, unnamed descriptor with no verifiable single property. The devasthanam guest houses (experience slot) cover the budget tier; private Srikalahasti hotels are small lodges with weak individual listing data. No distinct verifiable tier-1/2 value property; honest scarcity."
+      }
+    },
+    {
+      "destination_id": "srikalahasti",
+      "slot": "location",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Hotel Srikaram",
+        "issue": "No verifiable 'Hotel Srikaram' at Srikalahasti — generic name with no Booking/MMT/TripAdvisor footprint. Srikalahasti's private stock is basic lodges within 1 km of the temple, none with reliable tier-1/2 verification. Honest scarcity."
+      }
+    },
+    {
+      "destination_id": "srikalahasti",
+      "slot": "xfactor",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Swarnamukhi Riverside Homestay",
+        "issue": "No verifiable 'Swarnamukhi Riverside Homestay' — generic name with no booking footprint. Srikalahasti is a small temple town with no experiential tier-1/2 stay; many visitors base in Tirupati (~37 km). Honest scarcity."
+      }
+    },
+    {
+      "destination_id": "srisailam",
+      "slot": "experience",
+      "verdict": "replace",
+      "existing": {
+        "name": "Sri Sailam Palace Resort",
+        "issue": "No verifiable 'Srisailam Palace Resort' — generic template name with no booking footprint. Replace with the verified APTDC Haritha hotel near the temple."
+      },
+      "replacement": {
+        "name": "Haritha Hotel Srisailam (APTDC)",
+        "tier": "budget",
+        "tagline": "The state-tourism hotel a four-minute walk from the Mallikarjuna jyotirlinga temple — AC and non-AC rooms with a restaurant, the most convenient verified base for pilgrims in this hill pilgrimage town.",
+        "price_band": "₹₹",
+        "address": "Srisailam, Nandyal District, Andhra Pradesh 518101",
+        "book_url": "https://tourism.ap.gov.in/",
+        "sources": [
+          "https://aptourismhotels.in/srisailam-haritha-hotel-booking/",
+          "https://tourism.ap.gov.in/hotellist?cityCode=46&unitCode=ALL"
+        ]
+      }
+    },
+    {
+      "destination_id": "srisailam",
+      "slot": "value",
+      "verdict": "replace",
+      "existing": {
+        "name": "Srisailam River View Guest House",
+        "issue": "No verifiable 'Srisailam River View Guest House' — generic name with no booking footprint. Replace with the verified Srisaila Devasthanam pilgrim accommodation."
+      },
+      "replacement": {
+        "name": "Ganga Sadan (Srisailam Devasthanam)",
+        "tier": "budget",
+        "tagline": "The Srisaila Devasthanam's main pilgrim block in central Srisailam — clean rooms in the Ganga-Gowri complex with 24-hour hot water, free trust meals and temple transport. The authentic devasthanam stay; book on the official Srisaila Devasthanam site.",
+        "price_band": "₹",
+        "address": "Central Srisailam, Nandyal District, Andhra Pradesh 518101",
+        "book_url": "https://www.srisailadevasthanam.org/",
+        "sources": [
+          "https://www.srisailadevasthanam.org/",
+          "https://hindupad.com/accommodation-at-srisailam-temple/"
+        ]
+      }
+    },
+    {
+      "destination_id": "srisailam",
+      "slot": "location",
+      "verdict": "replace",
+      "existing": {
+        "name": "Hotel Mayura River Retreat",
+        "issue": "FABRICATION / WRONG STATE — 'Mayura' is the Karnataka State Tourism (KSTDC) hotel brand, not an Andhra Pradesh one, and there is no verifiable 'Mayura River Retreat' at Srisailam. Replace with a verified private Srisailam hotel."
+      },
+      "replacement": {
+        "name": "Hotel Srisaila's Nest",
+        "tier": "budget",
+        "tagline": "A clean private 3-star at Sunnipenta on the Hyderabad highway approach to Srisailam — two-bed AC rooms, an in-house restaurant and parking, about 1.2 km from the APSRTC bus stand. The verified private alternative to the devasthanam choultries.",
+        "price_band": "₹₹",
+        "address": "Sunnipenta, Srisailam, Nandyal District, Andhra Pradesh 518102",
+        "book_url": "https://www.hotelsrisailasnest.com/",
+        "sources": [
+          "https://www.hotelsrisailasnest.com/",
+          "https://www.tripadvisor.in/Hotel_Review-g19991893-d25436907-Reviews-Hotel_Srisaila_s_Nest-Sundipenta_Kurnool_District_Andhra_Pradesh.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "srisailam",
+      "slot": "xfactor",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Nallamala Forest Eco-Camp (Srisailam Wildlife Sanctuary periphery)",
+        "issue": "The Nagarjunasagar–Srisailam Tiger Reserve is a core tiger habitat with no general-public eco-camp lodging at the Srisailam temple-town periphery, and no verifiable named property exists. Honest scarcity for the xfactor slot."
+      }
+    },
+    {
+      "destination_id": "tirupati",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Taj Tirupati",
+        "issue": "Real and correctly located — Tirupati's only 5-star, on Renigunta Road. Tighten copy."
+      },
+      "replacement": {
+        "name": "Taj Tirupati",
+        "tier": "luxury",
+        "tagline": "Tirupati's only 5-star — 106 rooms, a rooftop pool, Jiva Spa and a fitness centre on Renigunta Road near Ramanuja Circle, about 1 km from the city centre. The pick for full-service luxury at the foot of the Tirumala hills.",
+        "price_band": "₹₹₹₹",
+        "address": "19-3-45, Near Ramanuja Circle, Renigunta Road, Tirupati 517501, Andhra Pradesh",
+        "book_url": "https://www.tajhotels.com/en-in/hotels/taj-tirupati",
+        "sources": [
+          "https://www.tajhotels.com/en-in/hotels/taj-tirupati",
+          "https://www.booking.com/hotel/in/taj-tirupati.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "tirupati",
+      "slot": "value",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Lemon Tree Premier, Tirupati",
+        "issue": "Real and correctly located — a Lemon Tree Premier on Tiruchanoor Road. Tighten copy."
+      },
+      "replacement": {
+        "name": "Lemon Tree Premier, Tirupati",
+        "tier": "premium",
+        "tagline": "A 111-room Lemon Tree Premier on Tiruchanoor Road near the Padmavathi Ammavari temple — Citrus Café, a pool bar, spa and fitness centre, with easy access to the city centre and Renigunta railway station.",
+        "price_band": "₹₹₹",
+        "address": "Divya Kshetra Avenue, Tiruchanoor Renigunta High Road, Tiruchanur, Tirupati 517503, Andhra Pradesh",
+        "book_url": "https://www.lemontreehotels.com/lemon-tree-premier/tirupati/hotels-tirupati",
+        "sources": [
+          "https://www.lemontreehotels.com/lemon-tree-premier/tirupati/hotels-tirupati",
+          "https://www.hotelierindia.com/development/lemon-tree-hotels-announces-its-latest-property-in-tirupati"
+        ]
+      }
+    },
+    {
+      "destination_id": "tirupati",
+      "slot": "xfactor",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Fortune Select Grand Ridge, Tirupati",
+        "issue": "Real and correctly located — an ITC Fortune-group hotel beside Shilparamam in Tirupati. Tighten copy; better suited as a premium pick than a true xfactor, but a genuine standout in its quiet park setting."
+      },
+      "replacement": {
+        "name": "Fortune Select Grand Ridge, Tirupati",
+        "tier": "premium",
+        "tagline": "An ITC Fortune-group hotel in a quiet park-like setting beside the Shilparamam crafts village — non-smoking rooms, an outdoor pool, spa and two restaurants, about 1.2 km from the railway and bus stations.",
+        "price_band": "₹₹₹",
+        "address": "Airport Bypass Road / Tiruchanoor Road, beside Shilparamam, Tirupati 517501, Andhra Pradesh",
+        "book_url": "https://www.itchotels.com/in/en/fortuneselectgrandridge-tirupati",
+        "sources": [
+          "https://www.itchotels.com/in/en/fortuneselectgrandridge-tirupati",
+          "https://www.booking.com/hotel/in/grand-ridge.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "undavalli-caves",
+      "slot": "location",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Hotel Fortune Murali Park Vijayawada",
+        "issue": "Real and correctly placed — Undavalli Caves is a day-trip site ~8 km from Vijayawada, so Vijayawada hotels are the correct base. Tighten name and copy."
+      },
+      "replacement": {
+        "name": "Fortune Murali Park, Vijayawada",
+        "tier": "premium",
+        "tagline": "An ITC Fortune-group hotel on the banks of the Krishna on M.G. Road, Vijayawada — 107 rooms overlooking the Indrakiladri Hills, the practical base for visiting the rock-cut Undavalli Caves about 8 km away.",
+        "price_band": "₹₹₹",
+        "address": "M.G. Road, Labbipet, Vijayawada 520010, Andhra Pradesh",
+        "book_url": "https://www.itchotels.com/in/en/fortunemuralipark-vijayawada",
+        "sources": [
+          "https://www.itchotels.com/in/en/fortunemuralipark-vijayawada",
+          "https://www.booking.com/hotel/in/fortune-murali-park.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "undavalli-caves",
+      "slot": "value",
+      "verdict": "replace",
+      "existing": {
+        "name": "Treebo Trend Krishna Inn Vijayawada",
+        "issue": "No verifiable Treebo property of exactly this name in Vijayawada — Treebo's Vijayawada inventory (Alankar Inn, Dev's Inn, Empire and others) does not include a 'Krishna Inn'. Replace with a verified Vijayawada value anchor."
+      },
+      "replacement": {
+        "name": "Treebo hotels, Vijayawada (value base for Undavalli)",
+        "tier": "budget",
+        "tagline": "Undavalli Caves is a day-trip from Vijayawada; for a value stay the verified Treebo cluster in the city (Treebo Alankar Inn, Treebo Trend Dev's Inn, Treebo Empire at Benz Circle) offers clean AC rooms with free breakfast.",
+        "price_band": "₹₹",
+        "address": "Vijayawada, Krishna/NTR District, Andhra Pradesh 520010",
+        "book_url": "https://www.treebo.com/hotels-in-vijayawada/",
+        "sources": [
+          "https://www.treebo.com/hotels-in-vijayawada/",
+          "https://www.tripadvisor.com/Hotels-g303876-zfb12414-Vijayawada_Krishna_District_Andhra_Pradesh-Hotels.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "undavalli-caves",
+      "slot": "xfactor",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Vivanta Vijayawada",
+        "issue": "Real and correctly placed — Vivanta Vijayawada (the former Gateway, an IHCL/Taj property) on M.G. Road, a valid upscale base for the Undavalli day-trip. Tighten copy."
+      },
+      "replacement": {
+        "name": "Vivanta Vijayawada, MG Road",
+        "tier": "luxury",
+        "tagline": "An IHCL Vivanta (formerly The Gateway Hotel) in the heart of Vijayawada — 108 rooms with an outdoor pool, spa and the Bay Leaf restaurant, near the Krishna and Indira Gandhi Stadium. The upscale base for the Undavalli Caves day-trip.",
+        "price_band": "₹₹₹₹",
+        "address": "M.G. Road, Vijayawada 520010, Andhra Pradesh",
+        "book_url": "https://www.vivantahotels.com/en-in/hotels/vivanta-vijayawada",
+        "sources": [
+          "https://www.vivantahotels.com/en-in/hotels/vivanta-vijayawada",
+          "https://www.tajhotels.com/en-in/destination/hotels-in-vijayawada"
+        ]
+      }
+    },
+    {
+      "destination_id": "vijayawada",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Novotel Vijayawada Varun",
+        "issue": "Real and correctly located — a 227-room Accor 5-star on the Krishna riverfront in Vijayawada. Tighten copy."
+      },
+      "replacement": {
+        "name": "Novotel Vijayawada Varun",
+        "tier": "luxury",
+        "tagline": "A 227-room Accor 5-star in central Vijayawada on the banks of the Krishna — three restaurants, a spa and a rooftop venue, near Kanaka Durga Temple and Prakasam Barrage. The city's headline luxury address.",
+        "price_band": "₹₹₹₹",
+        "address": "Benz Circle, M.G. Road, Vijayawada 520010, Andhra Pradesh",
+        "book_url": "https://all.accor.com/hotel/A0L1/index.en.shtml",
+        "sources": [
+          "https://all.accor.com/hotel/A0L1/index.en.shtml",
+          "https://www.booking.com/hotel/in/novotel-vijayawada-varun.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "vijayawada",
+      "slot": "value",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Fortune Murali Park (ITC)",
+        "issue": "Real and correctly located — an ITC Fortune-group hotel on M.G. Road, Vijayawada. Tighten copy."
+      },
+      "replacement": {
+        "name": "Fortune Murali Park, Vijayawada",
+        "tier": "premium",
+        "tagline": "An ITC Fortune-group business hotel on the banks of the Krishna on M.G. Road — 107 rooms overlooking the Indrakiladri Hills, walkable to the city centre, the dependable mid-to-upper option in Vijayawada.",
+        "price_band": "₹₹₹",
+        "address": "M.G. Road, Labbipet, Vijayawada 520010, Andhra Pradesh",
+        "book_url": "https://www.itchotels.com/in/en/fortunemuralipark-vijayawada",
+        "sources": [
+          "https://www.itchotels.com/in/en/fortunemuralipark-vijayawada",
+          "https://www.booking.com/hotel/in/fortune-murali-park.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "vijayawada",
+      "slot": "xfactor",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Vivanta Vijayawada",
+        "issue": "Real and correctly located — Vivanta Vijayawada (formerly The Gateway, an IHCL/Taj property) on M.G. Road. Tighten copy."
+      },
+      "replacement": {
+        "name": "Vivanta Vijayawada, MG Road",
+        "tier": "luxury",
+        "tagline": "An IHCL Vivanta (formerly The Gateway Hotel) in the heart of Vijayawada — 108 rooms with an outdoor pool, spa and the Bay Leaf restaurant, blending modern design with regional craft near the Krishna.",
+        "price_band": "₹₹₹₹",
+        "address": "M.G. Road, Vijayawada 520010, Andhra Pradesh",
+        "book_url": "https://www.vivantahotels.com/en-in/hotels/vivanta-vijayawada",
+        "sources": [
+          "https://www.vivantahotels.com/en-in/hotels/vivanta-vijayawada",
+          "https://www.tajhotels.com/en-in/destination/hotels-in-vijayawada"
+        ]
+      }
+    },
+    {
+      "destination_id": "visakhapatnam",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Novotel Visakhapatnam Varun Beach",
+        "issue": "Real and correctly located — Vizag's headline ocean-facing 5-star on Beach Road. Tighten copy."
+      },
+      "replacement": {
+        "name": "Novotel Visakhapatnam Varun Beach",
+        "tier": "luxury",
+        "tagline": "The only ocean-facing 5-star on Beach Road — 225 sea-view rooms in a complex with a multiplex, mall and rooftop lounge, walkable to RK Beach and the Submarine Museum.",
+        "price_band": "₹₹₹₹",
+        "address": "Beach Road, Maharani Peta, Krishnanagar, Visakhapatnam 530002, Andhra Pradesh",
+        "book_url": "https://www.novotel-visakhapatnam.com/",
+        "sources": [
+          "https://www.novotel-visakhapatnam.com/",
+          "https://all.accor.com/hotel/7535/index.en.shtml"
+        ]
+      }
+    },
+    {
+      "destination_id": "visakhapatnam",
+      "slot": "value",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Welcomhotel by ITC Hotels, Devee Grand Bay",
+        "issue": "Real and correctly located — ITC Welcomhotel on Daspalla Hills above Beach Road. It is a 5-star rather than a strict 'value' property, but is the most reasonable of Vizag's ITC-group options; keep with corrected copy."
+      },
+      "replacement": {
+        "name": "Welcomhotel by ITC Hotels, Devee Grand Bay",
+        "tier": "premium",
+        "tagline": "An ITC Welcomhotel built around an atrium on a hilltop 100 m from the sea — 104 recently renovated rooms with panoramic Bay of Bengal views, walkable to RK Beach.",
+        "price_band": "₹₹₹₹",
+        "address": "Daspalla Hills, Visakhapatnam 530003, Andhra Pradesh",
+        "book_url": "https://www.itchotels.com/in/en/welcomhoteldeveegrandbay-visakhapatnam",
+        "sources": [
+          "https://www.itchotels.com/in/en/welcomhoteldeveegrandbay-visakhapatnam",
+          "https://www.tripadvisor.com/Hotel_Review-g297588-d1159591-Reviews-Welcomhotel_By_ITC_Hotels_Devee_Grand_Bay-Visakhapatnam_Visakhapatnam_District_Andhra_.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "visakhapatnam",
+      "slot": "location",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "The Park Visakhapatnam",
+        "issue": "Real and correctly located — oceanfront Park Hotels property on Beach Road with a private beach. Tighten copy."
+      },
+      "replacement": {
+        "name": "The Park Visakhapatnam",
+        "tier": "luxury",
+        "tagline": "An oceanfront boutique hotel on Beach Road — 66 individually furnished rooms, a private beach, rooftop terrace and beach bar, a long-standing Vizag landmark.",
+        "price_band": "₹₹₹₹",
+        "address": "Beach Road, Visakhapatnam 530023, Andhra Pradesh",
+        "book_url": "https://www.theparkhotels.com/visakhapatnam/",
+        "sources": [
+          "https://www.theparkhotels.com/visakhapatnam/",
+          "https://www.booking.com/hotel/in/the-park-visakhapatnam.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "visakhapatnam",
+      "slot": "xfactor",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Radisson Blu Resort Visakhapatnam",
+        "issue": "Real and correctly located — beachfront Radisson Blu resort at Rushikonda. Tighten copy."
+      },
+      "replacement": {
+        "name": "Radisson Blu Resort Visakhapatnam",
+        "tier": "luxury",
+        "tagline": "Vizag's standout beach resort — 99 rooms on the Rushikonda beachfront with an infinity pool, private beach and spa, ranked the city's #1 hotel on Tripadvisor.",
+        "price_band": "₹₹₹₹",
+        "address": "Rushikonda Beach Road, Visakhapatnam 530045, Andhra Pradesh",
+        "book_url": "https://www.radissonhotels.com/en-us/hotels/radisson-blu-resort-visakhapatnam",
+        "sources": [
+          "https://www.radissonhotels.com/en-us/hotels/radisson-blu-resort-visakhapatnam",
+          "https://www.tripadvisor.com/Hotel_Review-g297588-d23342266-Reviews-Radisson_Blu_Resort_Visakhapatnam-Visakhapatnam_Visakhapatnam_District_Andhra_Pradesh.html"
+        ]
+      }
+    }
+  ]
+}
