@@ -1,32 +1,40 @@
-2026-05-20 18:13:46  INFO      [migration] bootstrapped post_log.jsonl with 38 entries from state.json
-2026-05-20 18:13:46  INFO      ════════════════════════════════════════════════════════════
-2026-05-20 18:13:46  INFO      Nakshiq Autoposter · MORNING · 2026-05-20 · weekday=2
-2026-05-20 18:13:46  INFO      ════════════════════════════════════════════════════════════
-2026-05-20 18:13:46  INFO      ── Syncing Nakshiq content ──────────────────────────────
-2026-05-20 18:14:29  INFO      Synced → 20 destinations · 0 traps · 0 articles · 23 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 50 camping · 50 gems · total catalog=505
-2026-05-20 18:14:30  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
-2026-05-20 18:14:30  INFO      Festivals filtered (past/post-window): Kedarnath Opening, Summer Festival, Badri-Kedar Festival, Chaukori Tea Festival, Chail Cricket Festival, Guptkashi Vishwanath Temple Festival, Tosamaidan Wildflower Season, Badrinath Temple Opening (Kapaat Kholna) (+9 more)
-2026-05-20 18:14:30  INFO      [csv_formats] 4/38 CSV formats eligible this run (asset present + data resolves)
-2026-05-20 18:14:30  INFO      Morning format (themed-week-3→moment): v2_pov_slow_morning [0% vs target 10%] (14/14 never featured)
-2026-05-20 18:14:30  INFO      Formats — IG: v2_pov_slow_morning  ·  FB: v2_pov_slow_morning  ·  Story: collection_spotlight
-2026-05-20 18:14:30  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 8
-2026-05-20 18:14:30  INFO      Fingerprint dedup snapshot — 8 dests in 7d · 24 (dest,fmt) pairs in 30d · 0 media in 60d
-2026-05-20 18:14:30  INFO      Collection locked: Andaman Diving & Snorkeling (19/20 never featured)
-2026-05-20 18:14:32  INFO      Shared best destination locked: Bir Billing
-2026-05-20 18:14:32  INFO      Carousel locked (collection_spotlight): no valid images found
-2026-05-20 18:14:32  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
-2026-05-20 18:14:32  INFO      [instagram/nakshiq] Generating v2_pov_slow_morning post...
-2026-05-20 18:14:32  INFO      [instagram/nakshiq] Caption ready (345 chars, dest=chopta)
-2026-05-20 18:14:32  INFO      [instagram/nakshiq] Video available — uploading for Reel...
-2026-05-20 18:14:32  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/chopta.mp4?v=20260512
-2026-05-20 18:14:33  INFO          Requesting upload URL for chopta.mp4 (4,144,210 bytes, video/mp4)
-2026-05-20 18:14:33  INFO          Uploading to R2 (timeout=300s)...
-2026-05-20 18:14:34  INFO          R2 PUT OK. Confirming...
-2026-05-20 18:14:35  INFO          Media ready: a0EQb (4,144,210 bytes · chopta.mp4)
-2026-05-20 18:14:35  INFO      [instagram/nakshiq] Publishing Reel...
-2026-05-20 18:15:14  INFO      [instagram/nakshiq] ✅ Published · Outstand=l5k1K · Platform=18120896374647909
-2026-05-20 18:15:14  INFO      [facebook/Nakshiq] Generating v2_pov_slow_morning post...
-2026-05-20 18:15:14  INFO      v2_pov_slow_morning: no eligible dest at render time — SKIPPING
-2026-05-20 18:15:14  WARNING   [facebook/Nakshiq] No content generated — skipping.
-2026-05-20 18:15:14  INFO      State saved. Run complete.
-2026-05-20 18:15:14  INFO      ════════════════════════════════════════════════════════════
+2026-05-20 18:44:43  INFO      [migration] bootstrapped post_log.jsonl with 38 entries from state.json
+2026-05-20 18:44:43  INFO      ════════════════════════════════════════════════════════════
+2026-05-20 18:44:43  INFO      Nakshiq Autoposter · MORNING · 2026-05-20 · weekday=2
+2026-05-20 18:44:43  INFO      ════════════════════════════════════════════════════════════
+2026-05-20 18:44:43  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-05-20 18:45:19  INFO      Synced → 20 destinations · 0 traps · 0 articles · 23 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 50 camping · 50 gems · total catalog=505
+2026-05-20 18:45:20  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-05-20 18:45:20  INFO      Festivals filtered (past/post-window): Kedarnath Opening, Summer Festival, Badri-Kedar Festival, Chaukori Tea Festival, Chail Cricket Festival, Guptkashi Vishwanath Temple Festival, Tosamaidan Wildflower Season, Badrinath Temple Opening (Kapaat Kholna) (+9 more)
+2026-05-20 18:45:20  INFO      [csv_formats] 4/38 CSV formats eligible this run (asset present + data resolves)
+2026-05-20 18:45:20  INFO      Morning format (themed-week-3→moment): cost_index_card [0% vs target 10%] (14/14 never featured)
+2026-05-20 18:45:20  INFO      Formats — IG: cost_index_card  ·  FB: cost_index_card  ·  Story: collection_spotlight
+2026-05-20 18:45:20  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 8
+2026-05-20 18:45:20  INFO      Fingerprint dedup snapshot — 8 dests in 7d · 24 (dest,fmt) pairs in 30d · 0 media in 60d
+2026-05-20 18:45:20  INFO      Collection locked: Birding Hotspots of India (19/20 never featured)
+2026-05-20 18:45:20  INFO      Cost index dest locked: Bhandardara (89/89 never featured)
+2026-05-20 18:45:22  INFO      Shared best destination locked: Har Ki Doon
+2026-05-20 18:45:22  INFO      Carousel locked (collection_spotlight): chopta
+2026-05-20 18:45:22  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-05-20 18:45:22  INFO      [instagram/nakshiq] Generating cost_index_card post...
+2026-05-20 18:45:22  INFO      [instagram/nakshiq] Caption ready (421 chars, dest=bhandardara)
+2026-05-20 18:45:22  INFO      [instagram/nakshiq] Video available — uploading for Reel...
+2026-05-20 18:45:22  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/bhandardara.mp4?v=20260512
+2026-05-20 18:45:23  INFO          Requesting upload URL for bhandardara.mp4 (3,086,211 bytes, video/mp4)
+2026-05-20 18:45:24  INFO          Uploading to R2 (timeout=300s)...
+2026-05-20 18:45:25  INFO          R2 PUT OK. Confirming...
+2026-05-20 18:45:26  INFO          Media ready: 2LRIS (3,086,211 bytes · bhandardara.mp4)
+2026-05-20 18:45:26  INFO      [instagram/nakshiq] Publishing Reel...
+2026-05-20 18:46:16  WARNING   [instagram/nakshiq] ⚠️  Queued (ID=MgPJC)
+2026-05-20 18:46:16  INFO      [facebook/Nakshiq] Generating cost_index_card post...
+2026-05-20 18:46:16  INFO      [facebook/Nakshiq] Caption ready (585 chars, dest=bhandardara)
+2026-05-20 18:46:17  INFO      [facebook/Nakshiq] Video available — uploading for Reel...
+2026-05-20 18:46:17  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/bhandardara.mp4?v=20260512
+2026-05-20 18:46:17  INFO          Requesting upload URL for bhandardara.mp4 (3,086,211 bytes, video/mp4)
+2026-05-20 18:46:18  INFO          Uploading to R2 (timeout=300s)...
+2026-05-20 18:46:18  INFO          R2 PUT OK. Confirming...
+2026-05-20 18:46:19  INFO          Media ready: 5uG2D (3,086,211 bytes · bhandardara.mp4)
+2026-05-20 18:46:19  INFO      [facebook/Nakshiq] Publishing Reel...
+2026-05-20 18:46:33  INFO      [facebook/Nakshiq] ✅ Published · Outstand=nH3Al · Platform=1517763376745596
+2026-05-20 18:46:33  INFO      State saved. Run complete.
+2026-05-20 18:46:33  INFO      ════════════════════════════════════════════════════════════
