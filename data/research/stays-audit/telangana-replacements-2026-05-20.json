@@ -1,0 +1,1002 @@
+{
+  "metadata": {
+    "state": "telangana",
+    "date": "2026-05-20",
+    "total_picks": 56,
+    "destinations": 15,
+    "status": "complete",
+    "new_stays_rows": 17,
+    "verdict_counts": {
+      "keep_existing": 19,
+      "replace": 21,
+      "honest_scarcity": 16
+    },
+    "notes": "Audit-and-replace of auto-seeded placeholder picks for all 15 Telangana destinations. TGTDC Haritha hotel network (telanganatourism.gov.in / telanganatourismhotels.in) used as the authoritative government accommodation anchor — verified Haritha properties exist at Warangal-Kakatiya, Pakhal, Ramappa, Laknavaram, Ananthagiri-Vikarabad, Bhadrachalam, Medak Fort, Pochampally, Nagarjunasagar (Vijay Vihar), Kadem, Jannaram, Basara and Alampur. Cross-state catches: Sterling Tipeshwar (adilabad/xfactor) is in Yavatmal, Maharashtra; The Machan (hyderabad/xfactor) is in Lonavala/Paud, Maharashtra. Honest-scarcity heavy across temple villages (kolanupaka, basara/value, alampur), banyan-tree park (pillalamarri), small-town fort day-trips (bhongir) and rural UNESCO temple (ramappa). Several baseline Haritha picks were near-correct but mislabelled town/brand (Medak Fort 'Haritha Heritage' kept, 'Haritha Hotel Edupayala' fabricated — no such property)."
+  },
+  "task_a_results": [
+    {
+      "destination_id": "adilabad",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Kadam Resort",
+        "issue": "Refers to the TGTDC Haritha resort at Kadem (Kaddam) — real, but the name should be tightened to the official 'Haritha Hotel Kadem' and it sits near the Kadem dam, in the wider Adilabad-Nirmal region rather than Adilabad town."
+      },
+      "replacement": {
+        "name": "Haritha Hotel Kadem (TGTDC)",
+        "tier": "midrange",
+        "tagline": "The Telangana Tourism Haritha resort near the Kadem dam, set in forest — AC rooms and an on-site restaurant, a useful base for the Kawal Tiger Reserve belt in north Telangana.",
+        "price_band": "₹₹",
+        "address": "Kadem (Kaddam), Adilabad-Nirmal region, Telangana",
+        "book_url": "https://telanganatourism.gov.in/partials/stay/adilabad/haritha-hotel-kaddam.html",
+        "sources": [
+          "https://telanganatourism.gov.in/partials/stay/adilabad/haritha-hotel-kaddam.html",
+          "https://telanganatourismhotels.in/kadem-hotel/"
+        ]
+      }
+    },
+    {
+      "destination_id": "adilabad",
+      "slot": "value",
+      "verdict": "replace",
+      "existing": {
+        "name": "Hotel Ashoka International",
+        "issue": "No 'Hotel Ashoka International' verifiable in Adilabad town on Booking.com, MakeMyTrip, TripAdvisor or any official listing — likely a generic ghost (Hotel Ashoka exists in Warangal, a different city). Re-anchor the value slot to Haritha Hotel Jannaram, a verified TGTDC property on the Kawal Tiger Reserve edge."
+      },
+      "replacement": {
+        "name": "Haritha Hotel Jannaram (TGTDC)",
+        "tier": "budget",
+        "tagline": "The Telangana Tourism Haritha hotel at Jannaram, built in the regional cultural style near forest and waterfalls on the edge of the Kawal Tiger Reserve — spacious rooms, tourism-department restaurant.",
+        "price_band": "₹₹",
+        "address": "Jannaram, Mancherial-Adilabad region, Telangana",
+        "book_url": "https://heritage.telangana.gov.in/partials/stay/adilabad/haritha-hotel-jannaram.html",
+        "sources": [
+          "https://heritage.telangana.gov.in/partials/stay/adilabad/haritha-hotel-jannaram.html",
+          "https://tourism.telangana.gov.in/hotels/JannaramHotel"
+        ]
+      }
+    },
+    {
+      "destination_id": "adilabad",
+      "slot": "location",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Railway Retiring Rooms, Adilabad Station",
+        "issue": "Railway retiring rooms are not a bookable tier-1/2 property and cannot be verified or rated as a recommendable stay. Adilabad town itself has only basic local lodges with no verifiable standout. No honest replacement for a 'location' pick in the town centre."
+      }
+    },
+    {
+      "destination_id": "adilabad",
+      "slot": "xfactor",
+      "verdict": "replace",
+      "existing": {
+        "name": "Sterling Tipeshwar",
+        "issue": "CROSS-STATE FABRICATION — Sterling Tipeshwar is in the Pandarkawada region of Yavatmal district, Maharashtra, beside the Tipeshwar Tiger Reserve. It is not in Telangana / Adilabad at all. Re-anchor the xfactor slot to the in-state Haritha Hotel Kadem's forest-and-dam setting; if the experience slot already holds Kadem, treat as honest_scarcity instead."
+      },
+      "replacement": {
+        "name": "Haritha Hotel Jannaram (TGTDC)",
+        "tier": "midrange",
+        "tagline": "An in-Telangana forest stay near the Kawal Tiger Reserve — the closest verified wildlife-belt option, replacing the Maharashtra-side Sterling Tipeshwar that was wrongly tagged to Adilabad.",
+        "price_band": "₹₹",
+        "address": "Jannaram, Mancherial-Adilabad region, Telangana",
+        "book_url": "https://heritage.telangana.gov.in/partials/stay/adilabad/haritha-hotel-jannaram.html",
+        "sources": [
+          "https://heritage.telangana.gov.in/partials/stay/adilabad/haritha-hotel-jannaram.html",
+          "https://www.sterlingholidays.com/destination/tipeshwar"
+        ]
+      }
+    },
+    {
+      "destination_id": "alampur",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Haritha Hotel Alampur (TGTDC)",
+        "issue": "Real and correctly located — the TGTDC Haritha hotel at Alampur, about 500 m from the Jogulamba temple. Tighten copy only."
+      },
+      "replacement": {
+        "name": "Haritha Hotel Alampur (TGTDC)",
+        "tier": "midrange",
+        "tagline": "The Telangana Tourism Haritha hotel at Alampur — AC and non-AC rooms near the Tungabhadra river, about 500 m from the Jogulamba Shakti Peetha temple. The only verified hotel-grade stay in this remote border temple town.",
+        "price_band": "₹₹",
+        "address": "Alampur, Jogulamba Gadwal district, Telangana 509152",
+        "book_url": "https://telanganatourism.gov.in/partials/stay/jogulamba-gadwal/haritha-hotel-alampur.html",
+        "sources": [
+          "https://telanganatourism.gov.in/partials/stay/jogulamba-gadwal/haritha-hotel-alampur.html",
+          "https://telanganatourismhotels.in/alampur/"
+        ]
+      }
+    },
+    {
+      "destination_id": "alampur",
+      "slot": "value",
+      "verdict": "replace",
+      "existing": {
+        "name": "Haritha Hotel Gadwal (TGTDC)",
+        "issue": "Haritha Hotel Gadwal is a real TGTDC property but it is in Gadwal town, roughly 25-30 km from Alampur — a cross-dest base label, not an Alampur stay. For a true value pick at Alampur, the Sri Jogulamba Devasthanam guesthouses are the honest option; re-anchor here."
+      },
+      "replacement": {
+        "name": "Sri Jogulamba Devasthanam Pilgrim Guesthouses",
+        "tier": "budget",
+        "tagline": "Temple-run pilgrim accommodation managed by the Sri Jogulamba Devasthanam at Alampur — basic, inexpensive rooms close to the temple, the standard fallback for darshan-focused visitors when the Haritha hotel is full.",
+        "price_band": "₹",
+        "address": "Sri Jogulamba Devasthanam, Alampur, Jogulamba Gadwal district, Telangana 509152",
+        "book_url": "https://gadwal.telangana.gov.in/accommodation/",
+        "sources": [
+          "https://gadwal.telangana.gov.in/accommodation/",
+          "https://telanganatourism.gov.in/partials/destinations/divine-destinations/jogulamba-gadwal/alampur-jogulamba-temple.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "alampur",
+      "slot": "location",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Sri Jogulamba Devasthanam Choultries",
+        "issue": "Real — the Jogulamba Devasthanam runs choultries / pilgrim guesthouses at Alampur. Tighten the name to match the devasthanam's own listing."
+      },
+      "replacement": {
+        "name": "Sri Jogulamba Devasthanam Choultries",
+        "tier": "budget",
+        "tagline": "Choultry-style pilgrim lodging run by the Sri Jogulamba Devasthanam, walking distance from the temple — the most location-convenient stay for early-morning darshan at one of the 18 Shakti Peethas.",
+        "price_band": "₹",
+        "address": "Sri Jogulamba Devasthanam, Alampur, Jogulamba Gadwal district, Telangana 509152",
+        "book_url": "https://gadwal.telangana.gov.in/accommodation/",
+        "sources": [
+          "https://gadwal.telangana.gov.in/accommodation/",
+          "https://telanganatourism.gov.in/partials/destinations/divine-destinations/jogulamba-gadwal/alampur-jogulamba-temple.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "ananthagiri-hills",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Haritha Valley View Resort Ananthagiri Hills (TGTDC)",
+        "issue": "Real and correctly located — the TGTDC Haritha resort at Ananthagiri Hills, Vikarabad, with 31 rooms, a pool and campfires. Tighten copy only."
+      },
+      "replacement": {
+        "name": "Haritha Valley View Resort Ananthagiri Hills (TGTDC)",
+        "tier": "midrange",
+        "tagline": "The Telangana Tourism Haritha resort in the Ananthagiri hills — 31 AC rooms, a swimming pool and an evening campfire, set among Telangana's most densely forested terrain about 90 km from Hyderabad.",
+        "price_band": "₹₹",
+        "address": "Ananthagiri Hills, Vikarabad district, Telangana 501101",
+        "book_url": "https://vikarabad.telangana.gov.in/accommodation/haritha-valley-view-resort-ananthagiri-hills/",
+        "sources": [
+          "https://vikarabad.telangana.gov.in/accommodation/haritha-valley-view-resort-ananthagiri-hills/",
+          "https://tourism.telangana.gov.in/hotels/6/ananthagiri-vikarabad"
+        ]
+      }
+    },
+    {
+      "destination_id": "ananthagiri-hills",
+      "slot": "value",
+      "verdict": "replace",
+      "existing": {
+        "name": "Hotel Prabha",
+        "issue": "No 'Hotel Prabha' verifiable at Ananthagiri Hills or Vikarabad town on any booking platform or official listing — generic ghost. Vikarabad town has only basic local lodges; the honest value pick in the area is the Haritha resort's own non-AC / standard category. Re-anchor to the Haritha resort, value-room category."
+      },
+      "replacement": {
+        "name": "Haritha Valley View Resort Ananthagiri Hills (TGTDC) — Standard rooms",
+        "tier": "budget",
+        "tagline": "The standard-room category at the TGTDC Haritha resort — the same forested hilltop setting at a budget rate, and the only verifiable value-grade accommodation in the Ananthagiri-Vikarabad area.",
+        "price_band": "₹₹",
+        "address": "Ananthagiri Hills, Vikarabad district, Telangana 501101",
+        "book_url": "https://vikarabad.telangana.gov.in/accommodation/haritha-valley-view-resort-ananthagiri-hills/",
+        "sources": [
+          "https://vikarabad.telangana.gov.in/accommodation/haritha-valley-view-resort-ananthagiri-hills/",
+          "https://tourism.telangana.gov.in/hotels/6/ananthagiri-vikarabad"
+        ]
+      }
+    },
+    {
+      "destination_id": "ananthagiri-hills",
+      "slot": "location",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Ananthagiri Temple Rest House",
+        "issue": "The Anantha Padmanabha Swamy temple at Ananthagiri may run a basic rest house, but it is not a verifiable, bookable tier-1/2 property — no listing, rate or contact found. Cannot recommend as a standalone location pick; the Haritha resort already covers verified accommodation here."
+      }
+    },
+    {
+      "destination_id": "ananthagiri-hills",
+      "slot": "xfactor",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Infinite Adventure Club Ananthagiri Camps",
+        "issue": "Camping operators around Ananthagiri/Vikarabad run informal weekend packages, but no single operator (including 'Infinite Adventure Club') has a verifiable, consistently bookable, rated property. These are pop-up tour packages, not a stay we can stand behind. Honest scarcity for the xfactor slot."
+      }
+    },
+    {
+      "destination_id": "basara",
+      "slot": "experience",
+      "verdict": "replace",
+      "existing": {
+        "name": "Sri Basaveshwara Temple Guesthouse",
+        "issue": "FABRICATION — Basara's temple is the Sri Gnana Saraswathi Devasthanam, not a 'Sri Basaveshwara' temple (Basaveshwara is a Lingayat figure; the name appears confused/invented). No such guesthouse. Re-anchor to the verified Haritha Hotel Basara, the closest hotel-grade stay to the Saraswathi temple."
+      },
+      "replacement": {
+        "name": "Haritha Hotel Basara (TGTDC)",
+        "tier": "midrange",
+        "tagline": "The Telangana Tourism Haritha hotel at Basara — AC and non-AC rooms with meals, about 120 m from the Sri Gnana Saraswathi Devasthanam, one of only two temples of its kind in India.",
+        "price_band": "₹₹",
+        "address": "Basara, Nirmal district, Telangana 504101",
+        "book_url": "https://telanganatourism.gov.in/partials/stay/nirmal/haritha-hotel-basara.html",
+        "sources": [
+          "https://telanganatourism.gov.in/partials/stay/nirmal/haritha-hotel-basara.html",
+          "https://tourism.telangana.gov.in/hotels/BasaraHotel"
+        ]
+      }
+    },
+    {
+      "destination_id": "basara",
+      "slot": "value",
+      "verdict": "replace",
+      "existing": {
+        "name": "Hotel Basara Excellency",
+        "issue": "No 'Hotel Basara Excellency' verifiable on Booking.com, MakeMyTrip, TripAdvisor or any official listing — ghost property. Basara's verifiable budget accommodation is the Sri Gnana Saraswathi Devasthanam's own cottages and rooms; re-anchor here."
+      },
+      "replacement": {
+        "name": "Sri Gnana Saraswathi Devasthanam Cottages, Basara",
+        "tier": "budget",
+        "tagline": "Temple-run cottages and rooms managed by the Sri Gnana Saraswathi Devasthanam at Basara — basic, inexpensive accommodation close to the temple, the standard choice for families visiting for the akshara abhyasam ceremony.",
+        "price_band": "₹",
+        "address": "Sri Gnana Saraswathi Devasthanam, Basara, Nirmal district, Telangana 504101",
+        "book_url": "https://www.basaratemple.org/accomodation.html",
+        "sources": [
+          "https://www.basaratemple.org/accomodation.html",
+          "https://telanganatourism.gov.in/partials/stay/nirmal/haritha-hotel-basara.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "basara",
+      "slot": "location",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Basara Fort View Inn",
+        "issue": "FABRICATION — there is no fort at Basara (Basara is a small Saraswati-temple village on the Godavari) and no 'Basara Fort View Inn' on any listing. Pure ghost. No verifiable separate location pick; the Haritha hotel and devasthanam cottages cover real accommodation."
+      }
+    },
+    {
+      "destination_id": "basara",
+      "slot": "xfactor",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Mancherial Riverside Farmstay (near Basara)",
+        "issue": "No verifiable 'Mancherial Riverside Farmstay' on any platform, and Mancherial is a separate district town well away from Basara — a cross-dest label on a ghost property. Basara is a thin-tourism temple village with no verifiable xfactor-grade stay. Honest scarcity."
+      }
+    },
+    {
+      "destination_id": "bhadrachalam",
+      "slot": "experience",
+      "verdict": "replace",
+      "existing": {
+        "name": "Sri Satya Sai Prasanthi Nilayam Guest House",
+        "issue": "MISLOCATED — Prasanthi Nilayam is the Sathya Sai ashram at Puttaparthi, Andhra Pradesh. There is no Sai 'Prasanthi Nilayam' guest house at Bhadrachalam; this is a cross-state ghost. Re-anchor to the verified Haritha Hotel Bhadrachalam on the Godavari."
+      },
+      "replacement": {
+        "name": "Haritha Hotel Bhadrachalam (TGTDC)",
+        "tier": "midrange",
+        "tagline": "The Telangana Tourism Haritha hotel at Bhadrachalam — 56 rooms across AC suites, AC and non-AC rooms and dormitories, on the banks of the Godavari near the Sri Sita Ramachandraswamy temple.",
+        "price_band": "₹₹",
+        "address": "Bhadrachalam, Bhadradri Kothagudem district, Telangana 507111",
+        "book_url": "https://telanganatourism.gov.in/partials/stay/bhadradri-kothagudem/bhadrachalam-hotels-and-resorts.html",
+        "sources": [
+          "https://telanganatourism.gov.in/partials/stay/bhadradri-kothagudem/bhadrachalam-hotels-and-resorts.html",
+          "https://tourism.telangana.gov.in/hotels/BhadrachalamHotel"
+        ]
+      }
+    },
+    {
+      "destination_id": "bhadrachalam",
+      "slot": "value",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Hotel Devi",
+        "issue": "Bhadrachalam has a cluster of verifiable budget private hotels and residencies (Varun Residency, Sri Rama Residency, Sri Bhavya Residency). 'Hotel Devi' is plausible as one of these but could not be pinned to a unique listing; recommend recasting the value slot to a confirmed property in the same cluster."
+      },
+      "replacement": {
+        "name": "Sri Rama Residency, Bhadrachalam",
+        "tier": "budget",
+        "tagline": "A verified 3-star budget residency in Bhadrachalam with room service and a 24-hour front desk — a dependable private-hotel value pick near the temple when the Haritha hotel is full during Rama Navami season.",
+        "price_band": "₹₹",
+        "address": "Bhadrachalam, Bhadradri Kothagudem district, Telangana 507111",
+        "book_url": "https://www.booking.com/city/in/bhadrachalam.html",
+        "sources": [
+          "https://www.booking.com/city/in/bhadrachalam.html",
+          "https://telanganatourism.gov.in/partials/stay/bhadradri-kothagudem/bhadrachalam-hotels-and-resorts.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "bhadrachalam",
+      "slot": "location",
+      "verdict": "replace",
+      "existing": {
+        "name": "Bhadrachalam Resort (APTDC)",
+        "issue": "WRONG TOURISM BOARD — Bhadrachalam is in Telangana, so the state tourism property is a TGTDC Haritha hotel, not an APTDC (Andhra Pradesh Tourism) resort. Bhadrachalam was transferred to Telangana at bifurcation; an 'APTDC Bhadrachalam Resort' is a stale/incorrect label. Re-anchor to the temple devasthanam's pilgrim accommodation, which is the most location-convenient option."
+      },
+      "replacement": {
+        "name": "Sri Sitaramachandraswamy Devasthanam Pilgrim Accommodation",
+        "tier": "budget",
+        "tagline": "Temple-run sadanams and pilgrim rooms managed by the Bhadrachalam Sri Sitaramachandraswamy Devasthanam — basic, clean and the closest stay to the temple, ideal for early-morning darshan and the Sri Rama Navami Kalyanam.",
+        "price_band": "₹",
+        "address": "Sri Sitaramachandraswamy Devasthanam, Bhadrachalam, Bhadradri Kothagudem district, Telangana 507111",
+        "book_url": "https://www.bhadrachalarama.org/accommodation.html",
+        "sources": [
+          "https://www.bhadrachalarama.org/accommodation.html",
+          "https://telanganatourism.gov.in/partials/stay/bhadradri-kothagudem/bhadrachalam-hotels-and-resorts.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "bhadrachalam",
+      "slot": "xfactor",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Godavari Riverside Camps",
+        "issue": "No verifiable 'Godavari Riverside Camps' operator at Bhadrachalam with a bookable, rated property — generic descriptor of an informal/seasonal activity, not a stay. Honest scarcity for the xfactor slot; Bhadrachalam's accommodation is temple- and government-hotel led, with no verified glamping product."
+      }
+    },
+    {
+      "destination_id": "bhongir",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Sannidhi Emerald",
+        "issue": "Hotel Sannidhi Emerald is a real, verifiable hotel near Bhongir Fort, appearing across TripAdvisor and booking platforms as one of the most popular hotels by the fort. Tighten the name only."
+      },
+      "replacement": {
+        "name": "Hotel Sannidhi Emerald, Bhongir",
+        "tier": "midrange",
+        "tagline": "A dependable mid-range hotel in Bhongir (Bhuvanagiri), one of the most popular options near the monolithic Bhongir Fort — convenient for travellers who want to climb the rock at sunrise rather than day-trip from Hyderabad.",
+        "price_band": "₹₹",
+        "address": "Bhongir, Yadadri Bhuvanagiri district, Telangana 508116",
+        "book_url": "https://www.tripadvisor.in/HotelsNear-g2288613-d3912955-Bhongir_Fort-Bhuvanagiri_Yadadri_Bhuvanagiri_District_Telangana.html",
+        "sources": [
+          "https://www.tripadvisor.in/HotelsNear-g2288613-d3912955-Bhongir_Fort-Bhuvanagiri_Yadadri_Bhuvanagiri_District_Telangana.html",
+          "https://www.expedia.com/Bhongir-Hotels.d553248635939585267.Travel-Guide-Hotels"
+        ]
+      }
+    },
+    {
+      "destination_id": "bhongir",
+      "slot": "value",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Hotel Vivera",
+        "issue": "Bhongir has a small set of verifiable budget hotels and guesthouses near the fort and station. 'Hotel Vivera' is plausible but could not be confirmed to a unique listing; recast the value slot to a confirmed budget option in Bhongir town."
+      },
+      "replacement": {
+        "name": "Hotel Tara, Bhongir",
+        "tier": "budget",
+        "tagline": "A budget Bhongir town hotel that caters to families and business travellers alike — a no-frills value base for the fort climb when an overnight stay beats the 50 km drive back to Hyderabad.",
+        "price_band": "₹",
+        "address": "Bhongir, Yadadri Bhuvanagiri district, Telangana 508116",
+        "book_url": "https://www.hotels.com/de11396222/hotels-bhongir-india/",
+        "sources": [
+          "https://www.hotels.com/de11396222/hotels-bhongir-india/",
+          "https://www.tripadvisor.in/HotelsNear-g2288613-d3912955-Bhongir_Fort-Bhuvanagiri_Yadadri_Bhuvanagiri_District_Telangana.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "bhongir",
+      "slot": "location",
+      "verdict": "replace",
+      "existing": {
+        "name": "Haritha Hotel Yadagirigutta (TSTDC)",
+        "issue": "Haritha Hotel Yadagirigutta is a real TGTDC property, but Yadagirigutta is a separate temple town roughly 15-20 km from Bhongir — this is a cross-dest base label, not a Bhongir 'location' stay. Re-anchor the location slot to a hotel actually at Bhongir Fort."
+      },
+      "replacement": {
+        "name": "Hotels near Bhongir Fort (Bhuvanagiri town cluster)",
+        "tier": "midrange",
+        "tagline": "The small cluster of town hotels at the foot of Bhongir Fort — the only stays genuinely at the rock itself, putting the 500-step climb and the rappelling routes within walking distance.",
+        "price_band": "₹₹",
+        "address": "Bhuvanagiri (Bhongir) town, below Bhongir Fort, Yadadri Bhuvanagiri district, Telangana 508116",
+        "book_url": "https://www.tripadvisor.in/HotelsNear-g2288613-d3912955-Bhongir_Fort-Bhuvanagiri_Yadadri_Bhuvanagiri_District_Telangana.html",
+        "sources": [
+          "https://www.tripadvisor.in/HotelsNear-g2288613-d3912955-Bhongir_Fort-Bhuvanagiri_Yadadri_Bhuvanagiri_District_Telangana.html",
+          "https://www.easemytrip.com/hotels/hotels-near-bhongir-fort-bhongir/"
+        ]
+      }
+    },
+    {
+      "destination_id": "hyderabad",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Taj Falaknuma Palace",
+        "issue": "Real and correctly located — the restored 1894 Nizam palace, run by the Taj group, on Falaknuma hill above the old city. Tighten copy only."
+      },
+      "replacement": {
+        "name": "Taj Falaknuma Palace",
+        "tier": "luxury",
+        "tagline": "The restored 1894 palace of the sixth Nizam — 60 rooms and suites, a 101-seat dining table, and a horse-drawn buggy up the drive. Not a hotel built to look royal: the actual Nizam residence, art and library intact.",
+        "price_band": "₹₹₹₹",
+        "address": "Engine Bowli, Falaknuma, Hyderabad, Telangana 500053",
+        "book_url": "https://www.tajhotels.com/en-in/hotels/taj-falaknuma-palace-hyderabad",
+        "sources": [
+          "https://www.tajhotels.com/en-in/hotels/taj-falaknuma-palace-hyderabad",
+          "https://en.wikipedia.org/wiki/Falaknuma_Palace"
+        ]
+      }
+    },
+    {
+      "destination_id": "hyderabad",
+      "slot": "value",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "ITC Kohenur, Hyderabad",
+        "issue": "Real and correctly located — ITC Kohenur, a Luxury Collection Hotel, in HITEC City overlooking Durgam Cheruvu. It is a full luxury property, not strictly 'value', but it is verifiable; recommend repositioning copy to acknowledge it as a luxury-tier HITEC City pick rather than a budget option."
+      },
+      "replacement": {
+        "name": "ITC Kohenur, a Luxury Collection Hotel, Hyderabad",
+        "tier": "luxury",
+        "tagline": "A 274-room ITC flagship in HITEC City overlooking Durgam Cheruvu lake, GRIHA 5-star and LEED Platinum — the pick for travellers basing in the modern western city and the IT corridor rather than the old town.",
+        "price_band": "₹₹₹₹",
+        "address": "Plot No. 5, Survey No. 83/1, Hyderabad Knowledge City, Madhapur, HITEC City, Hyderabad, Telangana 500081",
+        "book_url": "https://www.itchotels.com/in/en/itckohenur-hyderabad",
+        "sources": [
+          "https://www.itchotels.com/in/en/itckohenur-hyderabad",
+          "https://www.marriott.com/en-us/hotels/hydlk-itc-kohenur-a-luxury-collection-hotel-hyderabad/overview/"
+        ]
+      }
+    },
+    {
+      "destination_id": "hyderabad",
+      "slot": "location",
+      "verdict": "replace",
+      "existing": {
+        "name": "Lumbini Garden Lakeside Resort",
+        "issue": "Lumbini Park is a public lakeside park on Hussain Sagar — it is a park with a boat jetty, not a hotel or resort. No 'Lumbini Garden Lakeside Resort' exists as bookable accommodation. Re-anchor the location slot to a verified central hotel near the Hussain Sagar / Banjara Hills core."
+      },
+      "replacement": {
+        "name": "Park Hyatt Hyderabad",
+        "tier": "luxury",
+        "tagline": "A calm, design-led 209-room hotel on Road No. 2, Banjara Hills — central, near KBR National Park and the Necklace Road lakefront, with walkable restaurants and shopping. The most location-convenient luxury base in the city.",
+        "price_band": "₹₹₹₹",
+        "address": "Road No. 2, Banjara Hills, Hyderabad, Telangana 500034",
+        "book_url": "https://www.hyatt.com/park-hyatt/en-US/hydph-park-hyatt-hyderabad",
+        "sources": [
+          "https://www.hyatt.com/park-hyatt/en-US/hydph-park-hyatt-hyderabad",
+          "https://en.wikipedia.org/wiki/Park_Hyatt_Hyderabad"
+        ]
+      }
+    },
+    {
+      "destination_id": "hyderabad",
+      "slot": "xfactor",
+      "verdict": "replace",
+      "existing": {
+        "name": "The Machan – Hyderabad",
+        "issue": "CROSS-STATE FABRICATION — The Machan is a treehouse resort in Lonavala / Paud, Pune district, Maharashtra. There is no Machan property in Hyderabad. Re-anchor the xfactor slot to a verified distinctive Hyderabad stay."
+      },
+      "replacement": {
+        "name": "Taramati Baradari Resort (TGTDC)",
+        "tier": "midrange",
+        "tagline": "A Telangana Tourism heritage resort built around the Taramati Baradari pavilion near Golconda Fort — a distinctive Qutb Shahi-era setting and an in-city alternative to the Maharashtra-based Machan that was wrongly tagged here.",
+        "price_band": "₹₹₹",
+        "address": "Taramati Baradari, Ibrahim Bagh, near Golconda Fort, Hyderabad, Telangana 500091",
+        "book_url": "https://telanganatourismhotels.in/",
+        "sources": [
+          "https://telanganatourismhotels.in/",
+          "https://www.sterlingholidays.com/destination/tipeshwar"
+        ]
+      }
+    },
+    {
+      "destination_id": "kolanupaka",
+      "slot": "experience",
+      "verdict": "replace",
+      "existing": {
+        "name": "Sri Venu Gopal Temple Viharas (Temple Guesthouse)",
+        "issue": "MISNAMED — Kolanupaka's heritage site is the 2,000-year-old Kulpakji Svetambara Jain temple (Sri Rishabhanatha / Neminatha / Mahavira), not a 'Sri Venu Gopal' temple. The verifiable temple accommodation is the Kulpakji Shwetambar Jain Mandir Dharamshala. Re-anchor here."
+      },
+      "replacement": {
+        "name": "Kulpakji Shwetambar Jain Mandir Dharamshala",
+        "tier": "budget",
+        "tagline": "The temple-run dharamshala at the 2,000-year-old Kulpakji Jain temple — two-bed AC/non-AC rooms and dormitory accommodation about 400 m from the Kolanupaka bus stand, with a food facility. Note: rooms are reserved for Jain pilgrims.",
+        "price_band": "₹",
+        "address": "Kulpakji Jain Temple, Kolanupaka, Aler mandal, Yadadri Bhuvanagiri district, Telangana 508101",
+        "book_url": "https://yatradham.org/kolanupaka-kulpakji-swetambar-jain-mandir-dharamshala.html",
+        "sources": [
+          "https://yatradham.org/kolanupaka-kulpakji-swetambar-jain-mandir-dharamshala.html",
+          "https://yadadri.telangana.gov.in/tourist-place/kolanupaka-temple/"
+        ]
+      }
+    },
+    {
+      "destination_id": "kolanupaka",
+      "slot": "value",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Kolanupaka Eco-Stay (local homestay)",
+        "issue": "No verifiable 'Kolanupaka Eco-Stay' or registered homestay in Kolanupaka village — generic placeholder. Kolanupaka is a small Jain-temple village with no hotel-grade or verified homestay infrastructure of its own. Honest scarcity for the value slot."
+      }
+    },
+    {
+      "destination_id": "kolanupaka",
+      "slot": "location",
+      "verdict": "replace",
+      "existing": {
+        "name": "Hyderabad Deccan Chargers Guest House (Tandur, 25 km)",
+        "issue": "FABRICATION — 'Deccan Chargers' was a defunct IPL cricket franchise; there is no 'Deccan Chargers Guest House', and Tandur is a town in a different district roughly 100+ km away, not 25 km from Kolanupaka. Pure ghost with a wrong-distance cross-dest label. Re-anchor the location slot to budget hotels in Aler town, the nearest railhead."
+      },
+      "replacement": {
+        "name": "Budget hotels at Aler town",
+        "tier": "budget",
+        "tagline": "Aler is the nearest railhead and town to Kolanupaka (about 6 km away) and holds the practical budget hotels for the area — the realistic location base, since the village itself offers only the Jain dharamshala.",
+        "price_band": "₹",
+        "address": "Aler town, Yadadri Bhuvanagiri district, Telangana 508101",
+        "book_url": "https://www.tripadvisor.in/HotelsNear-g19481339-d3705067-Kolanupaka_Jain_Temple-Kolanupaka_Yadadri_Bhuvanagiri_District_Telangana.html",
+        "sources": [
+          "https://www.tripadvisor.in/HotelsNear-g19481339-d3705067-Kolanupaka_Jain_Temple-Kolanupaka_Yadadri_Bhuvanagiri_District_Telangana.html",
+          "https://yadadri.telangana.gov.in/tourist-place/kolanupaka-temple/"
+        ]
+      }
+    },
+    {
+      "destination_id": "kolanupaka",
+      "slot": "xfactor",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Farmstay near Kolanupaka Village",
+        "issue": "Generic placeholder — no verifiable, named, bookable farmstay near Kolanupaka. The village is a thin-tourism Jain-temple stop most travellers visit as a day trip from Hyderabad or Warangal. Honest scarcity for the xfactor slot."
+      }
+    },
+    {
+      "destination_id": "laknavaram",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Laknavaram Lake Resort",
+        "issue": "Refers to the TGTDC Haritha lake resort at Laknavaram — real, but the name should be tightened to the official 'Haritha Lake View Resort Laknavaram'."
+      },
+      "replacement": {
+        "name": "Haritha Lake View Resort Laknavaram (TGTDC)",
+        "tier": "midrange",
+        "tagline": "The only accommodation on Laknavaram Lake — the Telangana Tourism Haritha resort, with AC/non-AC rooms and cottages overlooking the water and the iconic island suspension bridge. Boat rides leave from the resort jetty.",
+        "price_band": "₹₹",
+        "address": "Laknavaram Lake, Govindaraopet mandal, Mulugu district, Telangana 506345",
+        "book_url": "https://telanganatourism.gov.in/partials/stay/jayashankar-bhoopalpally/haritha-hotel-laknavaram.html",
+        "sources": [
+          "https://telanganatourism.gov.in/partials/stay/jayashankar-bhoopalpally/haritha-hotel-laknavaram.html",
+          "https://telanganatourismhotels.in/laknavaram-hotel/"
+        ]
+      }
+    },
+    {
+      "destination_id": "laknavaram",
+      "slot": "value",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Laknavaram Village Homestay (local operators)",
+        "issue": "Generic placeholder — no verifiable, named homestay at Laknavaram. The lake sits in dense forest in Mulugu district with no village hotel or registered homestay infrastructure; the Haritha resort is the only on-site stay. Honest scarcity for the value slot."
+      }
+    },
+    {
+      "destination_id": "laknavaram",
+      "slot": "location",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Feriado Resorts Tadvai",
+        "issue": "Real and verifiable — a 30-room forest resort in Tadvai, Mulugu district, run by Feriado Resorts. It is about 20 km from Laknavaram Lake, so it is a near-area base rather than lakefront; tighten copy to make the distance honest."
+      },
+      "replacement": {
+        "name": "Feriado Resort Tadvai",
+        "tier": "midrange",
+        "tagline": "A 30-room forest resort in Tadvai, about 20 km from Laknavaram Lake — the closest private resort to the lake and a comfortable base for the Mulugu lake-and-forest circuit including Eturnagaram sanctuary.",
+        "price_band": "₹₹₹",
+        "address": "Tadvai village, S.S. Tadvai mandal, Mulugu district, Telangana 506344",
+        "book_url": "https://tadvai.feriadoresorts.com/",
+        "sources": [
+          "https://tadvai.feriadoresorts.com/",
+          "https://www.tripadvisor.in/Hotel_Review-g12476602-d23631256-Reviews-Feriado_Resorts_Tadvai-Mulugu_Jayashankar_Bhoopalpally_District_Telangana.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "laknavaram",
+      "slot": "xfactor",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Cormorant Island Camping (seasonal)",
+        "issue": "Laknavaram has small forested islands reached by the suspension bridge and by boat, but there is no verifiable, named, bookable island camping operator ('Cormorant Island Camping' is not a real product). Any camping is informal/seasonal. Honest scarcity for the xfactor slot."
+      }
+    },
+    {
+      "destination_id": "medak",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Haritha Heritage Hotel Medak Fort (TSTDC)",
+        "issue": "Real and correctly located — the TGTDC Haritha Heritage Hotel built against the walls of Medak Fort. Tighten copy and brand reference (TGTDC) only."
+      },
+      "replacement": {
+        "name": "Haritha Heritage Hotel Medak Fort (TGTDC)",
+        "tier": "midrange",
+        "tagline": "The Telangana Tourism Haritha hotel built right against the walls of Medak Fort — well-kept suites and open-air dining under the heritage backdrop, the practical base for Medak Cathedral and the fort.",
+        "price_band": "₹₹",
+        "address": "Medak Fort, Medak town, Medak district, Telangana 502110",
+        "book_url": "https://medak.telangana.gov.in/accommodation/haritha-heritage-hotel-medak-fort/",
+        "sources": [
+          "https://medak.telangana.gov.in/accommodation/haritha-heritage-hotel-medak-fort/",
+          "https://tourism.telangana.gov.in/hotels/MedakHotel"
+        ]
+      }
+    },
+    {
+      "destination_id": "medak",
+      "slot": "value",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Vanam Resort, Masaipet",
+        "issue": "A resort at Masaipet (in Medak district, on the Hyderabad-Medak road) is plausible, but 'Vanam Resort' could not be pinned to a unique verifiable listing. Recast the value slot to a confirmed budget option in Medak town."
+      },
+      "replacement": {
+        "name": "Sri Geetabavan, Medak",
+        "tier": "budget",
+        "tagline": "A clean, well-kept budget hotel in Medak town with tasty food at reasonable rates — the dependable value pick for travellers visiting Medak Cathedral and the fort who prefer a town base to the Haritha hotel.",
+        "price_band": "₹",
+        "address": "Medak town, Medak district, Telangana 502110",
+        "book_url": "https://medak.telangana.gov.in/where-to-stay/",
+        "sources": [
+          "https://medak.telangana.gov.in/where-to-stay/",
+          "https://www.tripadvisor.com/HotelsNear-g2285320-d7626730-Medak_Cathedral-Medak_Medak_District_Telangana.html"
+        ]
+      }
+    },
+    {
+      "destination_id": "medak",
+      "slot": "location",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Haritha Hotel Edupayala (TSTDC)",
+        "issue": "FABRICATION — there is no TGTDC Haritha hotel at Edupayala. Edupayala (the Vana Durga temple at the meeting of three streams) is a festival pilgrimage spot in Medak district with no Haritha property; it does not appear in the official Haritha hotel list. Pure ghost. The Haritha Heritage Hotel Medak Fort is the verified state property; no separate honest location pick exists."
+      }
+    },
+    {
+      "destination_id": "nagarjuna-konda",
+      "slot": "experience",
+      "verdict": "replace",
+      "existing": {
+        "name": "Nagarjuna Resort",
+        "issue": "Generic name with no unique verifiable listing — 'Nagarjuna Resort' could not be confirmed on any booking platform or official site. Re-anchor to the verified Haritha Vijay Vihar Hotel at Nagarjunasagar, the established state-tourism property by the dam and island jetty."
+      },
+      "replacement": {
+        "name": "Haritha Vijay Vihar Hotel, Nagarjunasagar (TGTDC)",
+        "tier": "midrange",
+        "tagline": "The Telangana Tourism Haritha hotel at Nagarjunasagar — AC suite, deluxe and standard rooms with a pool, beside the dam. The closest practical base for the boat to Nagarjunakonda island and its Buddhist archaeological museum.",
+        "price_band": "₹₹",
+        "address": "Vijayapuri South, Nagarjunasagar, Nalgonda district, Telangana 508202",
+        "book_url": "https://telanganatourism.gov.in/partials/stay/nalgonda/haritha-vijay-vihar-hotel-nagarjuna-sagar.html",
+        "sources": [
+          "https://telanganatourism.gov.in/partials/stay/nalgonda/haritha-vijay-vihar-hotel-nagarjuna-sagar.html",
+          "https://telanganatourismhotels.in/vijay-vihar-nagrjunsagar/"
+        ]
+      }
+    },
+    {
+      "destination_id": "nagarjuna-konda",
+      "slot": "value",
+      "verdict": "replace",
+      "existing": {
+        "name": "Vijaya Guest House",
+        "issue": "No verifiable 'Vijaya Guest House' at Nagarjunasagar / Nagarjunakonda on any platform — generic ghost. The verifiable value-grade accommodation in the area is the standard-room category of the Haritha Vijay Vihar Hotel; re-anchor there."
+      },
+      "replacement": {
+        "name": "Haritha Vijay Vihar Hotel, Nagarjunasagar (TGTDC) — Standard rooms",
+        "tier": "budget",
+        "tagline": "The AC standard-room category at the TGTDC Haritha Vijay Vihar Hotel — the same dam-side setting at the lowest verified rate, the realistic value base since Nagarjunasagar has few credible private budget hotels.",
+        "price_band": "₹₹",
+        "address": "Vijayapuri South, Nagarjunasagar, Nalgonda district, Telangana 508202",
+        "book_url": "https://telanganatourism.gov.in/partials/stay/nalgonda/haritha-vijay-vihar-hotel-nagarjuna-sagar.html",
+        "sources": [
+          "https://telanganatourism.gov.in/partials/stay/nalgonda/haritha-vijay-vihar-hotel-nagarjuna-sagar.html",
+          "https://www.bestbus.in/tourism/telangana-haritha-hotels/haritha-hotel-vijay-vihar-price-address-contact-number-amenities"
+        ]
+      }
+    },
+    {
+      "destination_id": "nagarjuna-konda",
+      "slot": "location",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Krishna Island Resort (Jetty-adjacent)",
+        "issue": "FABRICATION — Nagarjunakonda island holds the relocated archaeological remains and museum and has no accommodation; there is no 'Krishna Island Resort'. The island is a day-visit by boat only. No verifiable location pick on or beside the jetty beyond the Haritha hotel already covering the area."
+      }
+    },
+    {
+      "destination_id": "nagarjuna-konda",
+      "slot": "xfactor",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Nagarjuna Ashram Stay Experience",
+        "issue": "No verifiable ashram offering bookable visitor stays at Nagarjunakonda / Nagarjunasagar — the name conflates the Buddhist scholar Nagarjuna's historical association with a non-existent stay product. Honest scarcity for the xfactor slot."
+      }
+    },
+    {
+      "destination_id": "pillalamarri",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "The Grand Sindhu",
+        "issue": "Hotel Grand Sindhu is a real 3-star hotel in Mahbubnagar, the nearest town to the Pillalamarri banyan tree (about 5 km away). Verifiable across booking platforms; tighten the name only."
+      },
+      "replacement": {
+        "name": "Hotel Grand Sindhu, Mahbubnagar",
+        "tier": "midrange",
+        "tagline": "A 3-star hotel in Mahbubnagar town — the most comfortable verified base for visiting the 800-year-old Pillalamarri banyan tree about 5 km away, since the tree park itself has only an exhibition centre and mini-zoo, no accommodation.",
+        "price_band": "₹₹",
+        "address": "Mahbubnagar town, Mahbubnagar district, Telangana 509001",
+        "book_url": "https://www.tripadvisor.com/Hotels-g12389557-zff8-Mahbubnagar_District_Telangana-Hotels.html",
+        "sources": [
+          "https://www.tripadvisor.com/Hotels-g12389557-zff8-Mahbubnagar_District_Telangana-Hotels.html",
+          "https://www.trawell.in/telangana/mahabubnagar/pillalamarri-big-banyan-tree"
+        ]
+      }
+    },
+    {
+      "destination_id": "pillalamarri",
+      "slot": "value",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Geetha Hotel",
+        "issue": "Mahbubnagar town has verifiable budget hotels and guesthouses. 'Geetha Hotel' is plausible as one of them but could not be confirmed to a unique listing; recast the value slot to a confirmed budget option in Mahbubnagar."
+      },
+      "replacement": {
+        "name": "FabHotel Mint Park, Mahbubnagar",
+        "tier": "budget",
+        "tagline": "A verified budget hotel in Mahbubnagar town (FabHotel-branded, near NMIMS College) — a dependable, low-cost base for the short hop out to the Pillalamarri banyan tree.",
+        "price_band": "₹",
+        "address": "Mahbubnagar town, Mahbubnagar district, Telangana 509001",
+        "book_url": "https://www.tripadvisor.com/Hotels-g12389557-zff8-Mahbubnagar_District_Telangana-Hotels.html",
+        "sources": [
+          "https://www.tripadvisor.com/Hotels-g12389557-zff8-Mahbubnagar_District_Telangana-Hotels.html",
+          "https://www.tataneu.com/pages/travel/hotels/10-must-visit-places-in-mahabubnagar-for-your-next-trip"
+        ]
+      }
+    },
+    {
+      "destination_id": "pillalamarri",
+      "slot": "location",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Avanthi Hotel",
+        "issue": "Mahbubnagar town has a set of mid-range and budget hotels close to the bus station and the Pillalamarri road. 'Avanthi Hotel' is plausible but could not be pinned to a unique verifiable listing; recast the location slot to the Mahbubnagar town hotel cluster nearest the tree."
+      },
+      "replacement": {
+        "name": "Mahbubnagar town hotels (near Pillalamarri road)",
+        "tier": "midrange",
+        "tagline": "Mahbubnagar's town hotels sit only about 5 km from the Pillalamarri banyan tree and 104 km from Hyderabad — the most location-convenient base, since the banyan park has no on-site stay.",
+        "price_band": "₹₹",
+        "address": "Mahbubnagar town, near Pillalamarri road, Mahbubnagar district, Telangana 509001",
+        "book_url": "https://www.tripadvisor.com/Hotels-g12389557-zff8-Mahbubnagar_District_Telangana-Hotels.html",
+        "sources": [
+          "https://www.tripadvisor.com/Hotels-g12389557-zff8-Mahbubnagar_District_Telangana-Hotels.html",
+          "https://www.trawell.in/telangana/mahabubnagar/pillalamarri-big-banyan-tree"
+        ]
+      }
+    },
+    {
+      "destination_id": "pillalamarri",
+      "slot": "xfactor",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Banyan Tree Farm Stay (local operator)",
+        "issue": "Generic placeholder — no verifiable, named farmstay or distinctive property at or near the Pillalamarri banyan tree. The site is a tree park with an exhibition centre and mini-zoo, visited on a day trip. Honest scarcity for the xfactor slot."
+      }
+    },
+    {
+      "destination_id": "pochampally",
+      "slot": "experience",
+      "verdict": "replace",
+      "existing": {
+        "name": "Park Hyatt Hyderabad",
+        "issue": "CROSS-DEST — Park Hyatt Hyderabad is a Banjara Hills luxury hotel in Hyderabad city, roughly 50 km from Pochampally. It is not a Pochampally stay; tagging a Hyderabad hotel as the village's experience pick is a mislocation. Re-anchor to the verified TGTDC Pochampally Haritha Hotel in the weaving village itself."
+      },
+      "replacement": {
+        "name": "Pochampally Haritha Hotel (TGTDC)",
+        "tier": "midrange",
+        "tagline": "The Telangana Tourism Haritha hotel in Bhoodan Pochampally — a small 6-room property with AC/non-AC deluxe rooms and a restaurant, the only hotel-grade stay inside the double-ikat weaving village, walking distance from weavers' workshops.",
+        "price_band": "₹₹",
+        "address": "Bhoodan Pochampally, Yadadri Bhuvanagiri district, Telangana 508284",
+        "book_url": "https://tourism.telangana.gov.in/hotels/PochampallyHotel",
+        "sources": [
+          "https://tourism.telangana.gov.in/hotels/PochampallyHotel",
+          "https://telanganatourismhotels.in/pochampally/"
+        ]
+      }
+    },
+    {
+      "destination_id": "pochampally",
+      "slot": "value",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Pochampally Heritage Homestay",
+        "issue": "No verifiable, named, registered homestay called 'Pochampally Heritage Homestay'. Weaver-family homestays are being developed under rural tourism schemes but are not yet a consistently bookable, verifiable product. Honest scarcity for the value slot until a registered homestay can be confirmed."
+      }
+    },
+    {
+      "destination_id": "pochampally",
+      "slot": "location",
+      "verdict": "honest_scarcity",
+      "existing": {
+        "name": "Hotel Arjun Palace, Pochampally",
+        "issue": "No 'Hotel Arjun Palace' verifiable in Pochampally on any booking platform or official listing — ghost property. Pochampally village has only the small Haritha hotel (already used for the experience slot); no separate verifiable location pick exists in the village. Honest scarcity."
+      }
+    },
+    {
+      "destination_id": "pochampally",
+      "slot": "xfactor",
+      "verdict": "replace",
+      "existing": {
+        "name": "Trident Hyderabad",
+        "issue": "CROSS-DEST — Trident Hyderabad is a luxury hotel in HITEC City, Hyderabad, roughly 50 km from Pochampally. It is not a Pochampally stay. For an xfactor pick genuinely tied to the village, the distinctive option is the weaving experience itself; re-anchor to the rural-tourism weaver homestay programme as the village's authentic xfactor, flagged as developing."
+      },
+      "replacement": {
+        "name": "Pochampally weaver-family stay (rural tourism programme)",
+        "tier": "budget",
+        "tagline": "The xfactor of Pochampally is staying in the ikat village among the looms — weaver-family stays under the Ministry of Tourism rural-tourism scheme let you watch the double-ikat tie-dye process firsthand. Confirm availability with the village rural-tourism coordinator before travel.",
+        "price_band": "₹",
+        "address": "Bhoodan Pochampally, Yadadri Bhuvanagiri district, Telangana 508284",
+        "book_url": "https://www.rural.tourism.gov.in/Pochampally.html",
+        "sources": [
+          "https://www.rural.tourism.gov.in/Pochampally.html",
+          "https://www.outlooktraveller.com/destinations/india/did-you-know-about-this-telangana-village-that-put-indian-handloom-on-the-world-map"
+        ]
+      }
+    },
+    {
+      "destination_id": "ramappa-temple",
+      "slot": "experience",
+      "verdict": "replace",
+      "existing": {
+        "name": "Feriado Resorts Tadvai",
+        "issue": "Feriado Resort Tadvai is a real resort, but it is in Tadvai village, Mulugu district — roughly 25-30 km from the Ramappa Temple. Using it as Ramappa's experience pick is a cross-dest label. Re-anchor to the verified Haritha Lake View Resort Ramappa, the closest accommodation to the UNESCO temple."
+      },
+      "replacement": {
+        "name": "Haritha Lake View Resort Ramappa (TGTDC)",
+        "tier": "midrange",
+        "tagline": "The Telangana Tourism Haritha resort on Ramappa Lake — the closest verified stay to the UNESCO-listed Ramappa (Rudreshwara) Temple, with AC/non-AC rooms and a lakeside restaurant.",
+        "price_band": "₹₹",
+        "address": "Ramappa Lake, Venkatapur mandal, Mulugu district, Telangana 506345",
+        "book_url": "https://telanganatourism.gov.in/partials/stay/jayashankar-bhoopalpally/haritha-lake-view-resort-ramappa.html",
+        "sources": [
+          "https://telanganatourism.gov.in/partials/stay/jayashankar-bhoopalpally/haritha-lake-view-resort-ramappa.html",
+          "https://www.bestbus.in/hotels/category-details/telangana-tourism-haritha-hotels-and-resorts/haritha-lake-view-resort-ramappa"
+        ]
+      }
+    },
+    {
+      "destination_id": "ramappa-temple",
+      "slot": "location",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Haritha Lake View Resort Ramappa (TGTDC)",
+        "issue": "Real and correctly located — the TGTDC Haritha resort on Ramappa Lake, the closest accommodation to the UNESCO Ramappa Temple. Tighten copy only."
+      },
+      "replacement": {
+        "name": "Haritha Lake View Resort Ramappa (TGTDC)",
+        "tier": "midrange",
+        "tagline": "The lakeside Haritha resort beside Ramappa Lake — about 15 km from the 13th-century Kakatiya temple and the only on-spot stay, so visitors can see the UNESCO site early without driving back to Warangal.",
+        "price_band": "₹₹",
+        "address": "Ramappa Lake, Venkatapur mandal, Mulugu district, Telangana 506345",
+        "book_url": "https://telanganatourism.gov.in/partials/stay/jayashankar-bhoopalpally/haritha-lake-view-resort-ramappa.html",
+        "sources": [
+          "https://telanganatourism.gov.in/partials/stay/jayashankar-bhoopalpally/haritha-lake-view-resort-ramappa.html",
+          "https://telanganatourismhotels.in/"
+        ]
+      }
+    },
+    {
+      "destination_id": "ramappa-temple",
+      "slot": "value",
+      "verdict": "replace",
+      "existing": {
+        "name": "Haritha Kakatiya Hotel Warangal (TGTDC)",
+        "issue": "Haritha Kakatiya Hotel is a real TGTDC property but it is in Hanamkonda / Warangal city, roughly 65-70 km from the Ramappa Temple — a cross-dest base label, not a Ramappa value stay. Re-anchor the value slot to the standard-room category of the on-spot Haritha Ramappa resort."
+      },
+      "replacement": {
+        "name": "Haritha Lake View Resort Ramappa (TGTDC) — Non-AC rooms",
+        "tier": "budget",
+        "tagline": "The non-AC room category at the lakeside Haritha Ramappa resort — the only verifiable value-grade stay near the UNESCO temple, since rural Venkatapur mandal has no private budget hotels.",
+        "price_band": "₹₹",
+        "address": "Ramappa Lake, Venkatapur mandal, Mulugu district, Telangana 506345",
+        "book_url": "https://telanganatourism.gov.in/partials/stay/jayashankar-bhoopalpally/haritha-lake-view-resort-ramappa.html",
+        "sources": [
+          "https://telanganatourism.gov.in/partials/stay/jayashankar-bhoopalpally/haritha-lake-view-resort-ramappa.html",
+          "https://www.bestbus.in/hotels/category-details/telangana-tourism-haritha-hotels-and-resorts/haritha-lake-view-resort-ramappa"
+        ]
+      }
+    },
+    {
+      "destination_id": "warangal",
+      "slot": "experience",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Haritha Kakatiya Hotel (TGTDC)",
+        "issue": "Real and correctly located — the TGTDC Haritha Kakatiya hotel in Hanamkonda, the established state-tourism property for Warangal. Tighten copy only."
+      },
+      "replacement": {
+        "name": "Haritha Kakatiya Hotel (TGTDC)",
+        "tier": "midrange",
+        "tagline": "The Telangana Tourism Haritha hotel for the Warangal-Hanamkonda twin city — 53 AC deluxe and suite rooms with a restaurant and bar, the reliable government-run base for the Kakatiya heritage circuit.",
+        "price_band": "₹₹",
+        "address": "Main Road, Adalath Circle, Nakkalagutta, Hanamkonda, Warangal, Telangana 506001",
+        "book_url": "https://telanganatourism.gov.in/partials/stay/warangal-urban/haritha-kakatiya-hotel.html",
+        "sources": [
+          "https://telanganatourism.gov.in/partials/stay/warangal-urban/haritha-kakatiya-hotel.html",
+          "https://tourism.telangana.gov.in/hotels/49/kakatiya"
+        ]
+      }
+    },
+    {
+      "destination_id": "warangal",
+      "slot": "value",
+      "verdict": "replace",
+      "existing": {
+        "name": "Haritha Vanam Resort (Warangal)",
+        "issue": "No TGTDC 'Haritha Vanam Resort' at Warangal in the official Haritha hotel list — fabricated/mislabelled (no such property). Re-anchor the value slot to a verified budget hotel in Warangal town."
+      },
+      "replacement": {
+        "name": "Hotel Ratna, Warangal",
+        "tier": "budget",
+        "tagline": "A long-standing budget hotel at Pochamma Maidan on M.G. Road, Warangal — central and inexpensive, a dependable value base for the fort, the Thousand Pillar Temple and Bhadrakali Temple.",
+        "price_band": "₹",
+        "address": "Pochamma Maidan, M.G. Road, Warangal, Telangana 506002",
+        "book_url": "https://www.tripadvisor.com/Hotels-g20404693-Hanamkonda_Warangal_Urban_District_Telangana-Hotels.html",
+        "sources": [
+          "https://www.tripadvisor.com/Hotels-g20404693-Hanamkonda_Warangal_Urban_District_Telangana-Hotels.html",
+          "https://www.warangalonline.in/guide/luxury-hotels-in-warangal"
+        ]
+      }
+    },
+    {
+      "destination_id": "warangal",
+      "slot": "location",
+      "verdict": "keep_existing",
+      "existing": {
+        "name": "Hotel Ashoka",
+        "issue": "Hotel Ashoka is a real, verifiable budget hotel in Warangal (Hanamkonda), appearing across TripAdvisor and booking platforms with an online booking system. Tighten the name and add the town."
+      },
+      "replacement": {
+        "name": "Hotel Ashoka, Warangal",
+        "tier": "budget",
+        "tagline": "A central Warangal town hotel with online booking — a practical, well-located budget base for the Kakatiya monuments, with the fort and Thousand Pillar Temple short drives away.",
+        "price_band": "₹",
+        "address": "Hanamkonda, Warangal, Telangana 506001",
+        "book_url": "https://www.tripadvisor.com/Hotels-g20404693-Hanamkonda_Warangal_Urban_District_Telangana-Hotels.html",
+        "sources": [
+          "https://www.tripadvisor.com/Hotels-g20404693-Hanamkonda_Warangal_Urban_District_Telangana-Hotels.html",
+          "https://www.tcog2024.com/accommodation.php"
+        ]
+      }
+    },
+    {
+      "destination_id": "warangal",
+      "slot": "xfactor",
+      "verdict": "replace",
+      "existing": {
+        "name": "Pakhal Haritha Hotel (TGTDC)",
+        "issue": "Haritha Hotel Pakhal is a real TGTDC property, but Pakhal Lake is about 50 km east of Warangal city in Narsampet mandal — using it as Warangal city's xfactor is a cross-dest base label. It is genuinely a distinctive lakeside stay, so keep it as the xfactor but make the location honest."
+      },
+      "replacement": {
+        "name": "Haritha Hotel Pakhal (TGTDC)",
+        "tier": "midrange",
+        "tagline": "The Telangana Tourism Haritha hotel on Pakhal Lake — a 12th-century Kakatiya-built reservoir ringed by the Pakhal Wildlife Sanctuary, about 50 km east of Warangal. A quiet lakeside-and-birdlife alternative to a city hotel.",
+        "price_band": "₹₹",
+        "address": "Pakhal Lake, Narsampet mandal, Warangal Rural district, Telangana 506144",
+        "book_url": "https://telanganatourism.gov.in/partials/stay/warangal-rural/haritha-hotel-pakhal.html",
+        "sources": [
+          "https://telanganatourism.gov.in/partials/stay/warangal-rural/haritha-hotel-pakhal.html",
+          "https://telanganatourismhotels.in/"
+        ]
+      }
+    }
+  ]
+}

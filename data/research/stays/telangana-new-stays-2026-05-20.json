@@ -1,0 +1,444 @@
+[
+  {
+    "destination_id": "hyderabad",
+    "name": "Taj Falaknuma Palace",
+    "type": "heritage-hotel",
+    "location": "Engine Bowli, Falaknuma — a former Nizam palace on a hill 5 km from the Charminar old city",
+    "why_special": "One of India's grandest heritage hotels — the 1894 palace of the sixth Nizam, restored by the Taj group over a decade. 60 rooms and suites, a 101-seat dining table, the Jade Room, and a horse-drawn buggy that carries you up the drive. The standout in Hyderabad: this is not a hotel built to look royal, it is the actual Nizam residence, with the family's library, art and silver still in place.",
+    "price_range": "₹₹₹₹",
+    "contact": {
+      "phone": "+91-40-6629-8585",
+      "website": "https://www.tajhotels.com/en-in/hotels/taj-falaknuma-palace-hyderabad",
+      "email": null
+    },
+    "best_for": [
+      "couples",
+      "luxury",
+      "history-lovers"
+    ],
+    "verified": true,
+    "tags": [
+      "Taj-group",
+      "heritage-palace",
+      "Nizam-era",
+      "buggy-arrival",
+      "fine-dining"
+    ]
+  },
+  {
+    "destination_id": "hyderabad",
+    "name": "ITC Kohenur, a Luxury Collection Hotel",
+    "type": "luxury-hotel",
+    "location": "HITEC City, near Durgam Cheruvu lake — the heart of the new business district",
+    "why_special": "A 274-room flagship in HITEC City overlooking Durgam Cheruvu, with 60% of rooms facing the freshwater lake. GRIHA 5-star and LEED Platinum certified. The pick for travellers basing themselves in the modern western city rather than the old town — Dum Pukht and a strong spread of restaurants on-site, Cyberabad offices and the IT corridor minutes away.",
+    "price_range": "₹₹₹₹",
+    "contact": {
+      "phone": "+91-40-6766-0101",
+      "website": "https://www.itchotels.com/in/en/itckohenur-hyderabad",
+      "email": null
+    },
+    "best_for": [
+      "business",
+      "couples",
+      "luxury"
+    ],
+    "verified": true,
+    "tags": [
+      "ITC-group",
+      "5-star",
+      "HITEC-City",
+      "lake-view",
+      "LEED-platinum"
+    ]
+  },
+  {
+    "destination_id": "hyderabad",
+    "name": "Park Hyatt Hyderabad",
+    "type": "luxury-hotel",
+    "location": "Road No. 2, Banjara Hills — central, near KBR National Park and the Necklace Road lakefront",
+    "why_special": "A calm, design-led 209-room Park Hyatt in Banjara Hills that opened in 2012 — quieter than the Nizam palaces and more central than the HITEC City towers. The pick for couples and travellers who want walkable Banjara Hills restaurants and shopping plus a spa and pool, without the price or distance of Falaknuma.",
+    "price_range": "₹₹₹₹",
+    "contact": {
+      "phone": "+91-40-4949-1234",
+      "website": "https://www.hyatt.com/park-hyatt/en-US/hydph-park-hyatt-hyderabad",
+      "email": null
+    },
+    "best_for": [
+      "couples",
+      "business",
+      "luxury"
+    ],
+    "verified": true,
+    "tags": [
+      "Hyatt-group",
+      "5-star",
+      "Banjara-Hills",
+      "central",
+      "spa"
+    ]
+  },
+  {
+    "destination_id": "warangal",
+    "name": "Haritha Kakatiya Hotel (TGTDC)",
+    "type": "government-hotel",
+    "location": "Main Road, Adalath Circle, Nakkalagutta, Hanamkonda — the Telangana Tourism hotel for the Warangal-Hanamkonda twin city",
+    "why_special": "The Telangana State Tourism (TGTDC) Haritha hotel for Warangal — 53 AC deluxe and suite rooms with a restaurant and bar, about 15 minutes from the city centre. The reliable, government-run base for the Kakatiya heritage circuit: Warangal Fort, the Thousand Pillar Temple and Bhadrakali Temple are all short drives away.",
+    "price_range": "₹₹",
+    "contact": {
+      "phone": "+91-870-257-1339",
+      "website": "https://telanganatourism.gov.in/partials/stay/warangal-urban/haritha-kakatiya-hotel.html",
+      "email": null
+    },
+    "best_for": [
+      "heritage-tourists",
+      "families",
+      "budget"
+    ],
+    "verified": true,
+    "tags": [
+      "TGTDC",
+      "government-hotel",
+      "Kakatiya-circuit",
+      "restaurant-bar",
+      "Hanamkonda"
+    ]
+  },
+  {
+    "destination_id": "warangal",
+    "name": "Haritha Hotel Pakhal (TGTDC)",
+    "type": "government-resort",
+    "location": "Pakhal Lake, Narsampet mandal — a Telangana Tourism lake hotel about 50 km east of Warangal city",
+    "why_special": "The Telangana Tourism Haritha hotel on the shore of Pakhal Lake — a 12th-century Kakatiya-built reservoir ringed by the Pakhal Wildlife Sanctuary. AC and non-AC rooms with a restaurant; the draw is the quiet lakefront setting and birdlife, a contrast to a city hotel for travellers who want the Kakatiya-era water tank rather than the fort.",
+    "price_range": "₹₹",
+    "contact": {
+      "phone": "+91-9701617875",
+      "website": "https://telanganatourism.gov.in/partials/stay/warangal-rural/haritha-hotel-pakhal.html",
+      "email": null
+    },
+    "best_for": [
+      "nature-lovers",
+      "couples",
+      "budget"
+    ],
+    "verified": true,
+    "tags": [
+      "TGTDC",
+      "government-resort",
+      "lake-view",
+      "Pakhal-sanctuary",
+      "Kakatiya-tank"
+    ]
+  },
+  {
+    "destination_id": "ramappa-temple",
+    "name": "Haritha Lake View Resort Ramappa (TGTDC)",
+    "type": "government-resort",
+    "location": "Ramappa Lake, Venkatapur mandal, Mulugu district — beside the lake, about 15 km from the UNESCO Ramappa Temple",
+    "why_special": "The Telangana Tourism Haritha resort on Ramappa Lake — the closest verified accommodation to the UNESCO-listed Ramappa (Rudreshwara) Temple, which has almost no hotel infrastructure of its own. AC and non-AC rooms with a lakeside restaurant; the practical base for visiting the 13th-century Kakatiya temple without driving back to Warangal each evening.",
+    "price_range": "₹₹",
+    "contact": {
+      "phone": "+91-9701617875",
+      "website": "https://telanganatourism.gov.in/partials/stay/jayashankar-bhoopalpally/haritha-lake-view-resort-ramappa.html",
+      "email": null
+    },
+    "best_for": [
+      "heritage-tourists",
+      "nature-lovers",
+      "budget"
+    ],
+    "verified": true,
+    "tags": [
+      "TGTDC",
+      "government-resort",
+      "lake-view",
+      "UNESCO-base",
+      "Ramappa"
+    ]
+  },
+  {
+    "destination_id": "laknavaram",
+    "name": "Haritha Lake View Resort Laknavaram (TGTDC)",
+    "type": "government-resort",
+    "location": "Laknavaram Lake, Govindaraopet mandal, Mulugu district — on the lakeshore beside the suspension bridge, about 70 km from Warangal",
+    "why_special": "The only verified accommodation on Laknavaram Lake — the Telangana Tourism Haritha resort, with AC and non-AC rooms and cottages overlooking the water and the iconic island suspension bridge. Boat rides leave from the resort jetty; the forest setting in Mulugu district makes this a genuine lake retreat rather than a roadside hotel.",
+    "price_range": "₹₹",
+    "contact": {
+      "phone": "+91-9701617875",
+      "website": "https://telanganatourism.gov.in/partials/stay/jayashankar-bhoopalpally/haritha-hotel-laknavaram.html",
+      "email": null
+    },
+    "best_for": [
+      "nature-lovers",
+      "couples",
+      "families"
+    ],
+    "verified": true,
+    "tags": [
+      "TGTDC",
+      "government-resort",
+      "lake-view",
+      "suspension-bridge",
+      "only-lake-stay"
+    ]
+  },
+  {
+    "destination_id": "laknavaram",
+    "name": "Feriado Resort Tadvai",
+    "type": "resort",
+    "location": "Tadvai village, S.S. Tadvai mandal, Mulugu district — a 30-room forest resort about 20 km from Laknavaram Lake",
+    "why_special": "A 30-room forest resort in Tadvai, run by Feriado Resorts (which took over several Telangana Tourism properties in 2021). Set among old trees and low hills with indoor and outdoor activities, it is the closest private resort to Laknavaram Lake and a comfortable base for the Mulugu lake-and-forest circuit including Eturnagaram sanctuary.",
+    "price_range": "₹₹₹",
+    "contact": {
+      "phone": "+91-9100969849",
+      "website": "https://tadvai.feriadoresorts.com/",
+      "email": null
+    },
+    "best_for": [
+      "nature-lovers",
+      "couples",
+      "families"
+    ],
+    "verified": true,
+    "tags": [
+      "forest-resort",
+      "Tadvai",
+      "Mulugu",
+      "Feriado-group",
+      "activities"
+    ]
+  },
+  {
+    "destination_id": "ananthagiri-hills",
+    "name": "Haritha Valley View Resort Ananthagiri Hills (TGTDC)",
+    "type": "government-resort",
+    "location": "Ananthagiri Hills, Vikarabad — a hill resort about 90 km from Hyderabad in one of Telangana's most densely forested areas",
+    "why_special": "The Telangana Tourism Haritha resort at Ananthagiri Hills — 31 AC standard, deluxe and suite rooms with a swimming pool and a campfire arranged on cool evenings. The pick for a weekend in the Vikarabad forest: the resort sits among the hills near the Anantha Padmanabha Swamy temple and the headwaters of the Musi river.",
+    "price_range": "₹₹",
+    "contact": {
+      "phone": "+91-8416-252355",
+      "website": "https://vikarabad.telangana.gov.in/accommodation/haritha-valley-view-resort-ananthagiri-hills/",
+      "email": null
+    },
+    "best_for": [
+      "nature-lovers",
+      "couples",
+      "weekend-trippers"
+    ],
+    "verified": true,
+    "tags": [
+      "TGTDC",
+      "government-resort",
+      "hill-station",
+      "swimming-pool",
+      "campfire"
+    ]
+  },
+  {
+    "destination_id": "bhadrachalam",
+    "name": "Haritha Hotel Bhadrachalam (TGTDC)",
+    "type": "government-hotel",
+    "location": "Bhadrachalam, Bhadradri Kothagudem district — the Telangana Tourism hotel on the Godavari river, near the Sri Sita Ramachandraswamy temple",
+    "why_special": "The Telangana Tourism Haritha hotel at Bhadrachalam — 56 rooms across AC suites, AC rooms, non-AC rooms and dormitories, on the banks of the Godavari. The reliable government-run base for the Sri Sita Ramachandraswamy temple and the Rama Navami festival, with dormitory options for pilgrim groups.",
+    "price_range": "₹₹",
+    "contact": {
+      "phone": "+91-8744-241555",
+      "website": "https://telanganatourism.gov.in/partials/stay/bhadradri-kothagudem/bhadrachalam-hotels-and-resorts.html",
+      "email": null
+    },
+    "best_for": [
+      "pilgrims",
+      "families",
+      "budget"
+    ],
+    "verified": true,
+    "tags": [
+      "TGTDC",
+      "government-hotel",
+      "Godavari-bank",
+      "temple-base",
+      "dormitory"
+    ]
+  },
+  {
+    "destination_id": "medak",
+    "name": "Haritha Heritage Hotel Medak Fort (TGTDC)",
+    "type": "government-hotel",
+    "location": "Medak town, beside the walls of Medak Fort — about 96 km from Hyderabad",
+    "why_special": "The Telangana Tourism Haritha hotel built right against the walls of Medak Fort, with well-kept suites and open-air dining under the heritage backdrop. The practical base for visiting Medak Cathedral — one of Asia's largest churches — and the fort, a short drive apart in the same town.",
+    "price_range": "₹₹",
+    "contact": {
+      "phone": "+91-8333-875695",
+      "website": "https://medak.telangana.gov.in/accommodation/haritha-heritage-hotel-medak-fort/",
+      "email": null
+    },
+    "best_for": [
+      "heritage-tourists",
+      "families",
+      "budget"
+    ],
+    "verified": true,
+    "tags": [
+      "TGTDC",
+      "government-hotel",
+      "fort-side",
+      "open-air-dining",
+      "Medak-cathedral"
+    ]
+  },
+  {
+    "destination_id": "pochampally",
+    "name": "Pochampally Haritha Hotel (TGTDC)",
+    "type": "government-hotel",
+    "location": "Bhoodan Pochampally, Yadadri Bhuvanagiri district — the Telangana Tourism hotel in the ikat weaving village, about 50 km from Hyderabad",
+    "why_special": "The Telangana Tourism Haritha hotel in Bhoodan Pochampally — a small 6-room property with AC and non-AC deluxe rooms, a restaurant and a conference hall, right in the double-ikat weaving village. The only verified hotel-grade stay in the village itself, walking distance from weavers' workshops and the Telangana tourism handloom park.",
+    "price_range": "₹₹",
+    "contact": {
+      "phone": "+91-9010264700",
+      "website": "https://tourism.telangana.gov.in/hotels/PochampallyHotel",
+      "email": "info@tstdc.in"
+    },
+    "best_for": [
+      "craft-lovers",
+      "culture-seekers",
+      "budget"
+    ],
+    "verified": true,
+    "tags": [
+      "TGTDC",
+      "government-hotel",
+      "ikat-village",
+      "small-property",
+      "weaving"
+    ]
+  },
+  {
+    "destination_id": "nagarjuna-konda",
+    "name": "Haritha Vijay Vihar Hotel, Nagarjunasagar (TGTDC)",
+    "type": "government-hotel",
+    "location": "Vijayapuri South, Nagarjunasagar — the Telangana Tourism hotel beside the Nagarjunasagar dam, the jetty point for Nagarjunakonda island",
+    "why_special": "The Telangana Tourism Haritha hotel at Nagarjunasagar — AC suite, deluxe and standard rooms with a pool, beside the dam. This is the closest practical base for the boat to Nagarjunakonda island and its archaeological museum of relocated Buddhist remains; Ethipothala Falls is a short drive away.",
+    "price_range": "₹₹",
+    "contact": {
+      "phone": "+91-9705441100",
+      "website": "https://telanganatourism.gov.in/partials/stay/nalgonda/haritha-vijay-vihar-hotel-nagarjuna-sagar.html",
+      "email": null
+    },
+    "best_for": [
+      "history-lovers",
+      "families",
+      "budget"
+    ],
+    "verified": true,
+    "tags": [
+      "TGTDC",
+      "government-hotel",
+      "dam-side",
+      "Buddhist-circuit",
+      "swimming-pool"
+    ]
+  },
+  {
+    "destination_id": "adilabad",
+    "name": "Haritha Hotel Kadem (TGTDC)",
+    "type": "government-resort",
+    "location": "Kadem (Kaddam), Adilabad-Nirmal region — a Telangana Tourism resort near the Kadem dam, set in forest",
+    "why_special": "The Telangana Tourism Haritha resort at Kadem, near the Kadem dam and surrounded by forest. AC accommodation with an on-site restaurant; the standout in the otherwise thin Adilabad accommodation map is the dam-and-forest setting, a useful base for the Kawal Tiger Reserve belt in north Telangana.",
+    "price_range": "₹₹",
+    "contact": {
+      "phone": "+91-9766539133",
+      "website": "https://telanganatourism.gov.in/partials/stay/adilabad/haritha-hotel-kaddam.html",
+      "email": null
+    },
+    "best_for": [
+      "nature-lovers",
+      "weekend-trippers",
+      "budget"
+    ],
+    "verified": true,
+    "tags": [
+      "TGTDC",
+      "government-resort",
+      "dam-side",
+      "forest",
+      "Kawal-belt"
+    ]
+  },
+  {
+    "destination_id": "adilabad",
+    "name": "Haritha Hotel Jannaram (TGTDC)",
+    "type": "government-hotel",
+    "location": "Jannaram, Mancherial-Adilabad region — a Telangana Tourism hotel on the edge of the Kawal Tiger Reserve",
+    "why_special": "The Telangana Tourism Haritha hotel at Jannaram, built in the cultural style of the region close to dense forest and waterfalls near the Kawal Tiger Reserve. Spacious rooms with a tourism-department restaurant; the practical government-run option for travellers heading into the Kawal forest belt.",
+    "price_range": "₹₹",
+    "contact": {
+      "phone": "+91-9766539133",
+      "website": "https://heritage.telangana.gov.in/partials/stay/adilabad/haritha-hotel-jannaram.html",
+      "email": null
+    },
+    "best_for": [
+      "nature-lovers",
+      "wildlife",
+      "budget"
+    ],
+    "verified": true,
+    "tags": [
+      "TGTDC",
+      "government-hotel",
+      "Kawal-tiger-reserve",
+      "forest-edge",
+      "regional-style"
+    ]
+  },
+  {
+    "destination_id": "basara",
+    "name": "Haritha Hotel Basara (TGTDC)",
+    "type": "government-hotel",
+    "location": "Basara, Nirmal district — the Telangana Tourism hotel about 120 m from the Sri Gnana Saraswathi temple, on the Godavari",
+    "why_special": "The Telangana Tourism Haritha hotel at Basara — two-, three- and four-bed AC and non-AC rooms, with meals and parking, just 120 m from the Sri Gnana Saraswathi Devasthanam. The closest hotel-grade stay to one of only two Saraswati temples of its kind in India, where families bring children for the akshara abhyasam first-letters ceremony.",
+    "price_range": "₹₹",
+    "contact": {
+      "phone": "+91-8330-289005",
+      "website": "https://telanganatourism.gov.in/partials/stay/nirmal/haritha-hotel-basara.html",
+      "email": null
+    },
+    "best_for": [
+      "pilgrims",
+      "families",
+      "budget"
+    ],
+    "verified": true,
+    "tags": [
+      "TGTDC",
+      "government-hotel",
+      "temple-base",
+      "Saraswati-temple",
+      "Godavari"
+    ]
+  },
+  {
+    "destination_id": "alampur",
+    "name": "Haritha Hotel Alampur (TGTDC)",
+    "type": "government-hotel",
+    "location": "Alampur, Jogulamba Gadwal district — the Telangana Tourism hotel near the Tungabhadra river, about 500 m from the Jogulamba temple",
+    "why_special": "The Telangana Tourism Haritha hotel at Alampur — AC and non-AC rooms close to the Tungabhadra river, about 500 m from the Jogulamba temple, one of the 18 Shakti Peethas. The only verified hotel-grade stay in this remote temple town near the Telangana-Andhra border, putting morning and evening darshan within easy reach.",
+    "price_range": "₹₹",
+    "contact": {
+      "phone": "+91-8504-243366",
+      "website": "https://telanganatourism.gov.in/partials/stay/jogulamba-gadwal/haritha-hotel-alampur.html",
+      "email": null
+    },
+    "best_for": [
+      "pilgrims",
+      "couples",
+      "budget"
+    ],
+    "verified": true,
+    "tags": [
+      "TGTDC",
+      "government-hotel",
+      "temple-base",
+      "Shakti-peetha",
+      "Tungabhadra"
+    ]
+  }
+]
