@@ -84,8 +84,8 @@ export async function GET(req: NextRequest) {
       // 100% populated, and we don't want the playbook query to silently drop
       // 30% of the catalog.
       const selectCols = includeIntel
-        ? "month, score, note, destination_id, destinations(id, name, tagline, difficulty, elevation_m, phase2_fields, state:states(name), confidence_cards(reach, sleep, fuel, network, emergency, weather_night), emergency_sos(nearest_hospital, nearest_hospital_km, mountain_rescue, local_helpers), local_eateries(name, signature_dish, is_legendary, area))"
-        : "month, score, note, destination_id, destinations(id, name, tagline, difficulty, elevation_m, phase2_fields, state:states(name))";
+        ? "month, score, note, destination_id, destinations(id, name, tagline, why_special, difficulty, elevation_m, phase2_fields, translations, state:states(name), confidence_cards(reach, sleep, fuel, network, emergency, weather_night), emergency_sos(nearest_hospital, nearest_hospital_km, mountain_rescue, local_helpers), local_eateries(name, signature_dish, is_legendary, area))"
+        : "month, score, note, destination_id, destinations(id, name, tagline, why_special, difficulty, elevation_m, phase2_fields, translations, state:states(name), confidence_cards(sleep))";
 
       let query = supabase
         .from("destination_months")
@@ -123,6 +123,17 @@ export async function GET(req: NextRequest) {
           // haven't been populated yet. Autoposter's csv_format_loader reads
           // these keys as caption template placeholders.
           phase2_fields: d.phase2_fields || {},
+          // 2026-05-20: existing-data fields surfaced flat for Phase 2 caption
+          // templates (revised to use real data instead of net-new editorial
+          // fields). why_special + Hindi translations + stay price range.
+          why_special: d.why_special || null,
+          name_hi: d.translations?.hi?.name || null,
+          tagline_hi: d.translations?.hi?.tagline || null,
+          why_special_hi: d.translations?.hi?.why_special || null,
+          price_range_inr:
+            (Array.isArray(d.confidence_cards)
+              ? d.confidence_cards[0]
+              : d.confidence_cards)?.sleep?.price_range_inr || null,
         };
         if (includeIntel) {
           const cc = Array.isArray(d.confidence_cards) ? d.confidence_cards[0] : d.confidence_cards;

@@ -4928,8 +4928,14 @@ def generate_post(fmt: str, content: dict, platform: str,
             # list for templates that need them. Add more keys as templates
             # demand (alias-expansion in csv_format_loader handles dest_*).
             from datetime import date as _date
+            _HINDI_MONTHS = {
+                1: "जनवरी", 2: "फ़रवरी", 3: "मार्च", 4: "अप्रैल",
+                5: "मई", 6: "जून", 7: "जुलाई", 8: "अगस्त",
+                9: "सितंबर", 10: "अक्टूबर", 11: "नवंबर", 12: "दिसंबर",
+            }
             extras = {
                 "month_name":        _date.today().strftime("%B"),
+                "month_hindi":       _HINDI_MONTHS[_date.today().month],
                 "verification_date": _date.today().isoformat(),
                 "state_list":        cand.get("state", ""),
                 "state_list_first":  cand.get("state", ""),

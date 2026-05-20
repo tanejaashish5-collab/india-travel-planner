@@ -365,12 +365,18 @@ Verdict: 4/5. Crowd: light. Cost: ₹2400/day.
 ...
 ```
 
-**4 of 12 seed formats unlocked by migration 059** (destination-scoped data only):
-- ✅ `v2_pov_slow_morning` — needs `sunrise_time`, `nearest_landmark`
-- ✅ `v2_yt_silent_pov` — needs `air_temp_c_{month}`, `ambient_sound_list`, `visual_description`, `observation_window`
-- ✅ `v2_local_knows` — needs `trap_landmark`, `local_alternative`, `reason_short`, `local_language`, `local_phrase`, `reopen_window`
-- ✅ `v2_hindi_score_card` — needs `daily_cost_inr`, `crowd_hindi`, `weather_hindi`, `why_go_hindi`, `english_one_liner`
-- ✅ `v2_score_card_pov` (a 5th, not in original §6 seed list but trivial to add) — needs `still_skip`, `daily_cost_inr`, `true_now`, `crowd_level`, `change_note`
+**2 formats REVISED 2026-05-20 to use existing data only — fire on 400+ dests with ZERO new editorial fields:**
+
+Rather than populating ~15 net-new editorial fields per destination by hand (infeasible for 505 dests), `v2_hindi_score_card` and `v2_score_card_pov` were rewritten to pull from data that already exists in Supabase:
+- `v2_score_card_pov` → uses `note` (the monthly verdict prose), `score`, `confidence_cards.sleep.price_range_inr`. Fires on every dest with a monthly note + stay price (~484/505).
+- `v2_hindi_score_card` → uses `translations.hi.name`, `translations.hi.why_special`, `score`, `confidence_cards.sleep.price_range_inr`, English `tagline`. Fires on the 414/505 dests with Hindi `why_special`.
+
+The `/api/content?type=destinations` base response now surfaces these flat: `why_special`, `name_hi`, `tagline_hi`, `why_special_hi`, `price_range_inr`. SKIP-on-null still applies — dests missing the data are skipped, never faked.
+
+**3 formats still need `phase2_fields` populated** (destination-scoped but no existing-data equivalent):
+- ⏳ `v2_pov_slow_morning` — needs `sunrise_time`, `nearest_landmark`
+- ⏳ `v2_yt_silent_pov` — needs `air_temp_c`, `ambient_sound_list`, `visual_description`, `observation_window`
+- ⏳ `v2_local_knows` — needs trap data (a future `tourist_trap_alternatives` join would cover this)
 
 **8 of 12 seed formats still blocked — need purpose-built tables (Phase 3 work):**
 - ❌ `v3_tl_editorial_listicle` — needs `content_lists` table (10-item carousels with per-item name/score/one_line)
@@ -503,6 +509,8 @@ If you're stuck on a row:
 | 2026-05-20 | Master README shipped + 2 achabal seed assets migrated to top level (commit `52b6a62d`) |
 | 2026-05-20 | **Migration 059** adds `phase2_fields` JSONB column to `destinations`. Loader updated to lift JSONB keys to caption context. `/api/content?type=destinations` API exposes the new column. **4 of 12 seed formats unblocked** on the data side. |
 | 2026-05-20 | **R2 sync workflow step shipped** — `data/phase2_r2_manifest.txt` drives `curl` fetches from R2's public bucket into `social_image_library/` at every cron startup. No credentials. |
+| 2026-05-20 | **R2 URL corrected** to the real `nakshiq-images` bucket (`pub-d8970c901de34c218926ebf4be1ed09a.r2.dev`). achabal seed assets uploaded to `nakshiq-images/social_image_library/`. |
+| 2026-05-20 | **`v2_hindi_score_card` + `v2_score_card_pov` rewritten to use existing data only** — no net-new editorial fields. API base response extended with `why_special`/`name_hi`/`tagline_hi`/`why_special_hi`/`price_range_inr`. Both formats now fire on 400+ destinations. autoposter CSV dispatcher injects `month_hindi`. |
 
 ---
 
