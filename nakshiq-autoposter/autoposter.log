@@ -1,0 +1,29 @@
+2026-05-21 07:06:37  INFO      [migration] bootstrapped post_log.jsonl with 38 entries from state.json
+2026-05-21 07:06:37  INFO      ════════════════════════════════════════════════════════════
+2026-05-21 07:06:37  INFO      Nakshiq Autoposter · MORNING · 2026-05-21 · weekday=3
+2026-05-21 07:06:37  INFO      ════════════════════════════════════════════════════════════
+2026-05-21 07:06:37  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-05-21 07:07:12  INFO      Synced → 20 destinations · 0 traps · 0 articles · 23 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 50 camping · 50 gems · total catalog=505
+2026-05-21 07:07:13  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-05-21 07:07:14  INFO      Festivals filtered (past/post-window): Kedarnath Opening, Summer Festival, Badri-Kedar Festival, Chaukori Tea Festival, Chail Cricket Festival, Guptkashi Vishwanath Temple Festival, Tosamaidan Wildflower Season, Badrinath Temple Opening (Kapaat Kholna) (+9 more)
+2026-05-21 07:07:14  INFO      [csv_formats] 4/38 CSV formats eligible this run (asset present + data resolves)
+2026-05-21 07:07:14  INFO      Morning format (themed-week-3→moment): v2_pov_slow_morning [0% vs target 10%] (14/14 never featured)
+2026-05-21 07:07:14  INFO      Formats — IG: v2_pov_slow_morning  ·  FB: v2_pov_slow_morning  ·  Story: score_card
+2026-05-21 07:07:14  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 8
+2026-05-21 07:07:14  INFO      Fingerprint dedup snapshot — 8 dests in 7d · 21 (dest,fmt) pairs in 30d · 0 media in 60d
+2026-05-21 07:07:18  INFO      Shared best destination locked: Gurudongmar Lake
+2026-05-21 07:07:18  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-05-21 07:07:18  INFO      [instagram/nakshiq] Generating v2_pov_slow_morning post...
+2026-05-21 07:07:18  INFO      [instagram/nakshiq] Caption ready (345 chars, dest=chopta)
+2026-05-21 07:07:18  INFO          Requesting upload URL for v2_pov_slow_morning-chopta.mp4 (3,637,567 bytes, video/mp4)
+2026-05-21 07:07:19  INFO          Uploading to R2 (timeout=300s)...
+2026-05-21 07:07:21  INFO          R2 PUT OK. Confirming...
+2026-05-21 07:07:22  INFO          Media ready: xSy48 (3,637,567 bytes · v2_pov_slow_morning-chopta.mp4)
+2026-05-21 07:07:22  INFO      [instagram/nakshiq] Phase-2 asset → Reel: v2_pov_slow_morning-chopta.mp4
+2026-05-21 07:07:22  INFO      [instagram/nakshiq] Publishing Reel...
+2026-05-21 07:07:52  INFO      [instagram/nakshiq] ✅ Published · Outstand=k1Lah · Platform=18461519962111552
+2026-05-21 07:07:52  INFO      [facebook/Nakshiq] Generating v2_pov_slow_morning post...
+2026-05-21 07:07:52  INFO      v2_pov_slow_morning: no eligible dest at render time — SKIPPING
+2026-05-21 07:07:52  WARNING   [facebook/Nakshiq] No content generated — skipping.
+2026-05-21 07:07:52  INFO      State saved. Run complete.
+2026-05-21 07:07:52  INFO      ════════════════════════════════════════════════════════════
