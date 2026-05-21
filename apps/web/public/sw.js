@@ -39,8 +39,11 @@
 //      it rendered below the absorbed footer and stacked a second email form
 //      under the Coda newsletter. Removes a section from destination-page
 //      markup, so the bump purges nakshiq-v35-data for returning PWA users.
+// v37: 2026-05-21 Kinetic hero title now wraps by word, not by character —
+//      the per-character inline-block spans let the browser break mid-word
+//      ("Bandipur Nationa / l Park"). Changes landing-page hero markup.
 
-const CACHE_VERSION = "nakshiq-v36";
+const CACHE_VERSION = "nakshiq-v37";
 const STATIC_CACHE = `${CACHE_VERSION}-static`;
 const IMAGE_CACHE = `${CACHE_VERSION}-images`;
 const DATA_CACHE = `${CACHE_VERSION}-data`;

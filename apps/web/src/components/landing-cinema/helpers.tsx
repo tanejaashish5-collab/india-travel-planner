@@ -1,11 +1,18 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { Fragment, useEffect, useRef, useState } from "react";
 
 /* ============================================================
    Kinetic — split-text per-character reveal.
    On `on=true`, each character translates from y:0.5em + skewY:6deg
    into resting position with a per-character stagger delay.
+
+   Characters are grouped into per-word inline-block wrappers so the
+   line can only break at spaces — never mid-word. A flat list of
+   per-character inline-block spans otherwise lets the browser break
+   between any two letters (e.g. "Bandipur Nationa / l Park").
+   `charIndex` runs across the whole string, spaces included, so the
+   stagger cadence stays continuous regardless of word boundaries.
    ============================================================ */
 export function Kinetic({
   text,
@@ -20,24 +27,43 @@ export function Kinetic({
   className?: string;
   style?: React.CSSProperties;
 }) {
+  const words = text.split(" ");
+  let charIndex = 0;
   return (
     <span style={{ display: "inline-block", ...style }} className={className}>
-      {Array.from(text).map((ch, i) => (
-        <span
-          key={i}
-          style={{
-            display: "inline-block",
-            opacity: on ? 1 : 0,
-            transform: on ? "translateY(0) skewY(0)" : "translateY(0.5em) skewY(6deg)",
-            transition:
-              "opacity .65s cubic-bezier(.2,.8,.2,1), transform .8s cubic-bezier(.2,.8,.2,1)",
-            transitionDelay: `${i * stagger}ms`,
-            whiteSpace: ch === " " ? "pre" : "normal",
-          }}
-        >
-          {ch}
-        </span>
-      ))}
+      {words.map((word, wi) => {
+        const chars = Array.from(word).map((ch) => {
+          const i = charIndex++;
+          return (
+            <span
+              key={i}
+              style={{
+                display: "inline-block",
+                opacity: on ? 1 : 0,
+                transform: on
+                  ? "translateY(0) skewY(0)"
+                  : "translateY(0.5em) skewY(6deg)",
+                transition:
+                  "opacity .65s cubic-bezier(.2,.8,.2,1), transform .8s cubic-bezier(.2,.8,.2,1)",
+                transitionDelay: `${i * stagger}ms`,
+              }}
+            >
+              {ch}
+            </span>
+          );
+        });
+        const isLast = wi === words.length - 1;
+        if (!isLast) charIndex++; // advance over the inter-word space
+        return (
+          <Fragment key={`w${wi}`}>
+            <span style={{ display: "inline-block", whiteSpace: "nowrap" }}>
+              {chars}
+            </span>
+            {/* breakable whitespace between word wrappers */}
+            {!isLast && " "}
+          </Fragment>
+        );
+      })}
     </span>
   );
 }
