@@ -663,18 +663,12 @@ export default async function DestinationPage({
           />
         ))}
         <DestinationDetailCinematic dest={dest} />
-        {peakMonth && (
-          <div style={{ maxWidth: 1100, margin: "0 auto", padding: "0 20px" }}>
-            <PeakAlertHook
-              destinationId={id}
-              destinationName={dest.name}
-              peakMonthName={peakMonth.monthName}
-              peakMonthNum={peakMonth.monthNum}
-              locale={locale === "hi" ? "hi" : "en"}
-              source={`dest-${id}`}
-            />
-          </div>
-        )}
+        {/* PeakAlertHook intentionally NOT rendered on the cinematic root.
+            It was appended below the absorbed footer — content after the
+            page footer — and stacked a second email form right under the
+            Coda's "The Window" newsletter (two back-to-back asks hurt
+            conversion). The Window is the single email moment here; the
+            Peak Alert still runs on /destination/[id]/[month] pages. */}
         <ScrollDepthTracker page="destination" destinationId={id} />
         {/* PrevNextNav intentionally NOT rendered here. Cinematic Coda
             already provides BACK TO ATLAS + the new full-bleed outro shot

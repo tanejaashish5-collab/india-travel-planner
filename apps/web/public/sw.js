@@ -35,8 +35,12 @@
 //      legible over bright full-bleed photos (was faint editorial styling
 //      invisible on sunlit frames). Changes destination-page markup, so the
 //      bump purges nakshiq-v34-data and serves the fixed Coda to PWA users.
+// v36: 2026-05-21 PeakAlertHook removed from the cinematic destination root —
+//      it rendered below the absorbed footer and stacked a second email form
+//      under the Coda newsletter. Removes a section from destination-page
+//      markup, so the bump purges nakshiq-v35-data for returning PWA users.
 
-const CACHE_VERSION = "nakshiq-v35";
+const CACHE_VERSION = "nakshiq-v36";
 const STATIC_CACHE = `${CACHE_VERSION}-static`;
 const IMAGE_CACHE = `${CACHE_VERSION}-images`;
 const DATA_CACHE = `${CACHE_VERSION}-data`;
