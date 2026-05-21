@@ -1,11 +1,17 @@
 "use client";
 
 import { KEY_EVENTS, track } from "@/lib/analytics";
+import { buildAffiliateUrl, isAffiliateActive, type TaggablePartner } from "@/lib/affiliate";
+
+type BookingLink = { name: string; url: string; color: string; affiliate?: TaggablePartner };
 
 export function BookingHandoff({ destinationName, stateName }: { destinationName: string; stateName?: string }) {
   const searchQuery = encodeURIComponent(`${destinationName} ${stateName || "India"} hotels`);
 
-  const bookingLinks = [
+  // `affiliate` routes a link through buildAffiliateUrl — a no-op until the
+  // partner's affiliate ID env var is set, then tagged on the next deploy.
+  // Only Booking.com exposes a query-param affiliate mechanism we can use here.
+  const bookingLinks: BookingLink[] = [
     {
       name: "MakeMyTrip",
       url: `https://www.makemytrip.com/hotels/hotel-listing/?city=${encodeURIComponent(destinationName)}&checkin=&checkout=`,
@@ -15,6 +21,7 @@ export function BookingHandoff({ destinationName, stateName }: { destinationName
       name: "Booking.com",
       url: `https://www.booking.com/searchresults.html?ss=${searchQuery}`,
       color: "text-blue-400 border-blue-500/30 hover:bg-blue-500/10",
+      affiliate: "booking",
     },
     {
       name: "TripAdvisor",
@@ -43,14 +50,15 @@ export function BookingHandoff({ destinationName, stateName }: { destinationName
         {bookingLinks.map((link) => (
           <a
             key={link.name}
-            href={link.url}
+            href={link.affiliate ? buildAffiliateUrl(link.affiliate, link.url) : link.url}
             target="_blank"
-            rel="noopener noreferrer"
+            rel="noopener noreferrer sponsored"
             onClick={() =>
               track(KEY_EVENTS.OUTBOUND_BOOKING_CLICK, {
                 partner: link.name,
                 destination: destinationName,
                 state: stateName ?? "",
+                affiliate_active: link.affiliate ? isAffiliateActive(link.affiliate) : false,
               })
             }
             className={`rounded-full border px-4 py-2 text-xs font-medium transition-all ${link.color}`}

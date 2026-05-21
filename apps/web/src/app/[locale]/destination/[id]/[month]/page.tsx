@@ -13,6 +13,7 @@ import { videoObjectJsonLd } from "@/lib/video-schema";
 import { formatScoreInline } from "@itp/shared";
 import { CinemaStyles } from "@/components/landing-cinema/cinema-styles";
 import { CinematicRelatedRail } from "@/components/cinematic-related-rail";
+import { NewsletterStickyTray } from "@/components/newsletter-sticky-tray";
 
 export const revalidate = 86400; // 24h — 5,856 month pages × bots = function-invocation tax. Monthly content doesn't need 6h freshness.
 export const dynamicParams = true;
@@ -77,7 +78,7 @@ export async function generateMetadata({
 
   const [{ data: dest }, { data: monthData }, { data: card }] = await Promise.all([
     supabase.from("destinations").select("name, tagline, translations, state_id, state:states(name)").eq("id", id).single(),
-    supabase.from("destination_months").select("score, note, why_go, why_not, verdict").eq("destination_id", id).eq("month", monthNum).single(),
+    supabase.from("destination_months").select("score, note, why_go, why_not, verdict, title_override, title_override_hi, meta_description_override, meta_description_override_hi").eq("destination_id", id).eq("month", monthNum).single(),
     supabase.from("confidence_cards").select("weather_night").eq("destination_id", id).single(),
   ]);
 
@@ -331,12 +332,22 @@ export async function generateMetadata({
     .trim();
   const descBodyClean = descBodyTrimmed ? (/[.!?]$/.test(descBodyTrimmed) ? descBodyTrimmed : `${descBodyTrimmed}.`) : "";
   const description = [descLead, descBodyClean, descClose].filter(Boolean).join(" ").trim();
+
+  // Per-page SERP override (migration 063). For a flagged high-impression /
+  // low-CTR page, a hand-written title / meta description wins over the
+  // templated fallback chain above. Empty or unset → template, no change.
+  // Title budget is still ≤50 chars pre " | NakshIQ" suffix; meta ≤155.
+  const titleOverride = (isHi ? monthData?.title_override_hi : monthData?.title_override) as string | null | undefined;
+  const descOverride = (isHi ? monthData?.meta_description_override_hi : monthData?.meta_description_override) as string | null | undefined;
+  const finalTitle = (titleOverride && titleOverride.trim()) || title;
+  const finalDescription = (descOverride && descOverride.trim()) || description;
+
   const canonicalUrl = `https://www.nakshiq.com/${locale}/destination/${id}/${month}`;
   const imageUrl = `https://www.nakshiq.com/api/og?dest=${encodeURIComponent(name)}&month=${monthName}&score=${score}&note=${encodeURIComponent(note?.substring(0, 80) || '')}`;
 
   return {
-    title,
-    description,
+    title: finalTitle,
+    description: finalDescription,
     alternates: {
       canonical: canonicalUrl,
       languages: {
@@ -347,7 +358,7 @@ export async function generateMetadata({
     },
     openGraph: {
       title: ogTitle,
-      description,
+      description: finalDescription,
       type: "article",
       url: canonicalUrl,
       siteName: "NakshIQ",
@@ -357,7 +368,7 @@ export async function generateMetadata({
     twitter: {
       card: "summary_large_image",
       title: ogTitle,
-      description,
+      description: finalDescription,
       images: [imageUrl],
     },
   };
@@ -790,6 +801,10 @@ export default async function DestinationMonthPage({
         </div>
       </main>
       <CinematicRelatedRail />
+      {/* Scroll-triggered email capture — parity with /destination/[id]. Month
+          pages take the bulk of SEO traffic, so the bouncer who never reaches
+          the end-of-article NewsletterSignup still gets one dismissible ask. */}
+      <NewsletterStickyTray />
       <Footer />
     </div>
   );
