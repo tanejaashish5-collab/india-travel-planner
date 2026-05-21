@@ -1,38 +1,51 @@
-2026-05-21 14:27:22  INFO      [migration] bootstrapped post_log.jsonl with 38 entries from state.json
-2026-05-21 14:27:22  INFO      ════════════════════════════════════════════════════════════
-2026-05-21 14:27:22  INFO      Nakshiq Autoposter · EVENING · 2026-05-21 · weekday=3
-2026-05-21 14:27:22  INFO      ════════════════════════════════════════════════════════════
-2026-05-21 14:27:22  INFO      ── Syncing Nakshiq content ──────────────────────────────
-2026-05-21 14:28:09  INFO      Synced → 20 destinations · 0 traps · 0 articles · 23 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 50 camping · 50 gems · total catalog=505
-2026-05-21 14:28:09  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
-2026-05-21 14:28:09  INFO      Formats — IG: festival_alert  ·  FB: festival_alert  ·  Story: collection_spotlight
-2026-05-21 14:28:09  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 8
-2026-05-21 14:28:09  INFO      Fingerprint dedup snapshot — 8 dests in 7d · 21 (dest,fmt) pairs in 30d · 0 media in 60d
-2026-05-21 14:28:09  INFO      Collection locked: Best Winter Destinations (Dec-Feb) (19/20 never featured)
-2026-05-21 14:28:09  INFO      Festivals filtered (past/post-window): Kedarnath Opening, Summer Festival, Badri-Kedar Festival, Chaukori Tea Festival, Chail Cricket Festival, Guptkashi Vishwanath Temple Festival, Tosamaidan Wildflower Season, Badrinath Temple Opening (Kapaat Kholna) (+9 more)
-2026-05-21 14:28:09  INFO      Festival locked: Ghepan Festival (20/20 active festivals never featured)
-2026-05-21 14:28:13  INFO      Shared best destination locked: Achabal
-2026-05-21 14:28:13  INFO      Carousel locked (collection_spotlight): no valid images found
-2026-05-21 14:28:13  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
-2026-05-21 14:28:13  INFO      [instagram/nakshiq] Generating festival_alert post...
-2026-05-21 14:28:13  INFO      [instagram/nakshiq] Caption ready (367 chars, dest=sissu)
-2026-05-21 14:28:13  INFO      [instagram/nakshiq] Video available — uploading for Reel  (evening mode)...
-2026-05-21 14:28:13  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/sissu.mp4?v=20260512
-2026-05-21 14:28:14  INFO          Requesting upload URL for sissu.mp4 (7,080,386 bytes, video/mp4)
-2026-05-21 14:28:14  INFO          Uploading to R2 (timeout=300s)...
-2026-05-21 14:28:15  INFO          R2 PUT OK. Confirming...
-2026-05-21 14:28:16  INFO          Media ready: AXrg7 (7,080,386 bytes · sissu.mp4)
-2026-05-21 14:28:16  INFO      [instagram/nakshiq] Publishing Reel...
-2026-05-21 14:28:53  INFO      [instagram/nakshiq] ✅ Published · Outstand=gJStx · Platform=18527263801072588
-2026-05-21 14:28:53  INFO      [facebook/Nakshiq] Generating festival_alert post...
-2026-05-21 14:28:53  INFO      [facebook/Nakshiq] Caption ready (518 chars, dest=sissu)
-2026-05-21 14:28:53  INFO      [facebook/Nakshiq] Video available — uploading for Reel  (evening mode)...
-2026-05-21 14:28:53  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/sissu.mp4?v=20260512
-2026-05-21 14:28:53  INFO          Requesting upload URL for sissu.mp4 (7,080,386 bytes, video/mp4)
-2026-05-21 14:28:54  INFO          Uploading to R2 (timeout=300s)...
-2026-05-21 14:28:54  INFO          R2 PUT OK. Confirming...
-2026-05-21 14:28:55  INFO          Media ready: xS3y8 (7,080,386 bytes · sissu.mp4)
-2026-05-21 14:28:55  INFO      [facebook/Nakshiq] Publishing Reel...
-2026-05-21 14:29:11  INFO      [facebook/Nakshiq] ✅ Published · Outstand=O2jqv · Platform=1774931933469456
-2026-05-21 14:29:11  INFO      State saved. Run complete.
-2026-05-21 14:29:11  INFO      ════════════════════════════════════════════════════════════
+2026-05-21 16:53:50  INFO      ════════════════════════════════════════════════════════════
+2026-05-21 16:53:50  INFO      Nakshiq Autoposter · ANALYTICS SYNC · 2026-05-21
+2026-05-21 16:53:50  INFO      ════════════════════════════════════════════════════════════
+2026-05-21 16:53:57  INFO      Synced 50 new posts (total: 280)
+2026-05-21 16:53:57  INFO      ── Analytics Summary ──
+2026-05-21 16:53:57  INFO      Total posts tracked: 280
+2026-05-21 16:53:57  INFO      Successfully published: 225 | Failed: 46
+2026-05-21 16:53:57  INFO      
+2026-05-21 16:53:57  INFO      By content type:
+2026-05-21 16:53:57  INFO        feed_post: 107
+2026-05-21 16:53:57  INFO        yt_short: 70
+2026-05-21 16:53:57  INFO        reel: 67
+2026-05-21 16:53:57  INFO        canva_visual: 12
+2026-05-21 16:53:57  INFO        tourist_map: 10
+2026-05-21 16:53:57  INFO        infographic: 8
+2026-05-21 16:53:57  INFO        pomelli_visual: 6
+2026-05-21 16:53:57  INFO      
+2026-05-21 16:53:57  INFO      By format:
+2026-05-21 16:53:57  INFO        feed_post:unknown: 107
+2026-05-21 16:53:57  INFO        reel:destination: 24
+2026-05-21 16:53:57  INFO        reel:seasonal: 22
+2026-05-21 16:53:57  INFO        yt_short:listicle: 17
+2026-05-21 16:53:57  INFO        reel:map: 15
+2026-05-21 16:53:57  INFO        yt_short:did: 14
+2026-05-21 16:53:57  INFO        yt_short:before: 13
+2026-05-21 16:53:57  INFO        canva_visual:unknown: 12
+2026-05-21 16:53:57  INFO        yt_short:mini: 11
+2026-05-21 16:53:57  INFO        tourist_map:unknown: 10
+2026-05-21 16:53:57  INFO        infographic:unknown: 8
+2026-05-21 16:53:57  INFO        yt_short:this: 8
+2026-05-21 16:53:57  INFO        reel:score: 6
+2026-05-21 16:53:57  INFO        pomelli_visual:unknown: 6
+2026-05-21 16:53:57  INFO        yt_short:dont: 5
+2026-05-21 16:53:57  INFO        yt_short:v2: 2
+2026-05-21 16:53:57  INFO      
+2026-05-21 16:53:57  INFO      By platform:
+2026-05-21 16:53:57  INFO        instagram: 132
+2026-05-21 16:53:57  INFO        facebook: 80
+2026-05-21 16:53:57  INFO        youtube: 59
+2026-05-21 16:53:57  INFO      
+2026-05-21 16:53:57  INFO      YT Short format distribution:
+2026-05-21 16:53:57  INFO        listicle: 17 (24%)
+2026-05-21 16:53:57  INFO        did: 14 (20%)
+2026-05-21 16:53:57  INFO        before: 13 (19%)
+2026-05-21 16:53:57  INFO        mini: 11 (16%)
+2026-05-21 16:53:57  INFO        this: 8 (11%)
+2026-05-21 16:53:57  INFO        dont: 5 (7%)
+2026-05-21 16:53:57  INFO        v2: 2 (3%)
+2026-05-21 16:53:57  INFO      
+Date range: 2026-04-15 → 2026-05-21
+2026-05-21 16:53:57  INFO      ════════════════════════════════════════════════════════════
