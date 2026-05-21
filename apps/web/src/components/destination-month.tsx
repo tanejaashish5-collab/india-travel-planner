@@ -804,6 +804,8 @@ export function DestinationMonth({
                 peakMonthNum={peakMonth.monthNum}
                 locale={locale === "hi" ? "hi" : "en"}
                 source={`dest-month-${destination.id}-${monthSlug}`}
+                currentMonthName={monthName}
+                currentScore={score}
               />
             </section>
           )}

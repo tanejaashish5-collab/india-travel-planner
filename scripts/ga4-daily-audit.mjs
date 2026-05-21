@@ -42,12 +42,20 @@ const WINDOW_DAYS = 7; // rolling 7-day window, matches the GSC daily audit
 const { BetaAnalyticsDataClient } = await import("@google-analytics/data");
 const ga = new BetaAnalyticsDataClient();
 
+// Dates are computed in IST (UTC+5:30) — the project-wide convention
+// (AGENTS.md: "current month must come from @itp/shared"). Using UTC here
+// caused the audit filename to lag the GSC audit by a day for ~10h every
+// day and silently overwrite the prior file. Shift the clock by +5:30 then
+// read the UTC calendar fields → that yields the IST calendar date.
+function istNow() {
+  return new Date(Date.now() + 5.5 * 60 * 60 * 1000);
+}
 function daysAgo(n) {
-  const d = new Date();
+  const d = istNow();
   d.setUTCDate(d.getUTCDate() - n);
   return d.toISOString().slice(0, 10);
 }
-const today = () => new Date().toISOString().slice(0, 10);
+const today = () => istNow().toISOString().slice(0, 10);
 
 async function runReport(opts) {
   const [resp] = await ga.runReport({ property: `properties/${PROP}`, ...opts });

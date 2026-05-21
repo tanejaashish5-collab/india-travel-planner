@@ -14,7 +14,10 @@ import { useSavedIds, getSavedIds } from "@/lib/saved-destinations";
 // every page where the user might cross the threshold. SSR-safe — renders
 // nothing on server, no-op until count >= THRESHOLD.
 
-const THRESHOLD = 3;
+// 2026-05-22: lowered 3 → 2 — the prompt drew 0 views at threshold 3
+// (nobody was saving 3 destinations in a session). 2 saves is still a
+// genuine intent signal and a far larger eligible pool.
+const THRESHOLD = 2;
 const COOKIE_KEY = "nakshiq_savelist_prompted";
 const COOKIE_TTL_DAYS = 7;
 const SUCCESS_KEY = "nakshiq_savelist_subscribed";   // persists forever
@@ -28,7 +31,7 @@ interface Props {
 
 const COPY = {
   en: {
-    kicker: "WISHLIST · 3 SAVED",
+    kicker: (n: number) => `WISHLIST · ${n} SAVED`,
     headline: "Email yourself the list?",
     subhead: "We'll send your saved destinations plus a heads-up before each one peaks. No spam, easy unsubscribe.",
     placeholder: "your.email@example.com",
@@ -41,7 +44,7 @@ const COPY = {
     errorNetwork: "Network error. Try again.",
   },
   hi: {
-    kicker: "विशलिस्ट · 3 सहेजे",
+    kicker: (n: number) => `विशलिस्ट · ${n} सहेजे`,
     headline: "अपनी सूची ईमेल करवाएँ?",
     subhead: "हम आपकी सहेजी जगहें भेजेंगे, साथ ही पीक से पहले हेड्स-अप। बिना स्पैम, आसान अनसब्सक्राइब।",
     placeholder: "your.email@example.com",
@@ -184,7 +187,7 @@ export function SaveListEmailPrompt({ locale }: Props) {
           fontFamily: "ui-monospace, monospace",
         }}
       >
-        {t.kicker}
+        {t.kicker(savedIds.length)}
       </p>
       <h4
         style={{

@@ -25,18 +25,20 @@ interface Props {
   peakMonthNum: number;           // 1-12
   locale: PeakAlertHookLocale;
   source?: string;                // analytics source tag, e.g. "dest-month-tungnath-may"
+  /** The month the reader is currently on (dest×month page). Omitted on the
+   *  dest top-level page. Drives the contextual month-gap headline. */
+  currentMonthName?: string;
+  /** Score of the current month (1-5). Used to detect an off-month page. */
+  currentScore?: number;
 }
 
 const COPY = {
   en: {
     kicker: (m: string) => `PEAK ALERT · ${m.toUpperCase()}`,
-    headline: (d: string) => `We'll tell you when ${d} is actually worth it.`,
-    subhead: (d: string, m: string) =>
-      `One email, three weeks before ${d} hits its peak in ${m}. No spam, easy unsubscribe.`,
     placeholder: "your.email@example.com",
-    submit: "Set alert →",
+    submit: "Remind me →",
     submitting: "Sending…",
-    success: (d: string) => `✓ You're on the list. We'll email you before ${d} peaks.`,
+    success: (d: string) => `✓ Done. We'll email you before ${d} peaks.`,
     errorInvalid: "Enter a valid email.",
     errorLimit: "You're at the 10-alert limit. Manage your alerts.",
     errorGeneric: "Something went wrong. Try again.",
@@ -44,11 +46,8 @@ const COPY = {
   },
   hi: {
     kicker: (m: string) => `पीक अलर्ट · ${m.toUpperCase()}`,
-    headline: (d: string) => `${d} वाकई कब जाने लायक है, हम बताएंगे।`,
-    subhead: (d: string, m: string) =>
-      `${m} में ${d} पीक पर पहुँचने से तीन हफ़्ते पहले एक ईमेल। बिना स्पैम, आसान अनसब्सक्राइब।`,
     placeholder: "your.email@example.com",
-    submit: "अलर्ट सेट करें →",
+    submit: "याद दिलाएँ →",
     submitting: "भेजा जा रहा है…",
     success: (d: string) => `✓ हो गया। ${d} पीक से पहले हम आपको ईमेल करेंगे।`,
     errorInvalid: "वैध ईमेल दर्ज करें।",
@@ -58,6 +57,49 @@ const COPY = {
   },
 } as const;
 
+// Contextual headline + subhead. 2026-05-22 rewrite — the prior generic
+// copy ("We'll tell you when X is actually worth it") drew 0 conversions
+// on 94 views. New logic: when the reader is on an off-month page (score
+// ≤ 3), lead with the month-gap — that's the exact moment the offer answers
+// a question the page just raised ("ok, so WHEN should I go?").
+function buildPitch(
+  locale: PeakAlertHookLocale,
+  dest: string,
+  peakMonth: string,
+  currentMonthName?: string,
+  currentScore?: number,
+): { headline: string; subhead: string } {
+  const isOffMonth =
+    currentMonthName != null &&
+    currentScore != null &&
+    currentScore > 0 &&
+    currentScore <= 3 &&
+    currentMonthName !== peakMonth;
+
+  if (locale === "hi") {
+    if (isOffMonth) {
+      return {
+        headline: `${currentMonthName} ${dest} का सही महीना नहीं है। ${peakMonth} है।`,
+        subhead: `${dest} के पीक से क़रीब तीन हफ़्ते पहले एक ईमेल — ताकि आप सही समय पर जाएँ, इस महीने नहीं।`,
+      };
+    }
+    return {
+      headline: `${dest} किस महीने जाने लायक है, हम बताएंगे।`,
+      subhead: `${peakMonth} में ${dest} के पीक से क़रीब तीन हफ़्ते पहले एक ईमेल। बिना स्पैम, आसान अनसब्सक्राइब।`,
+    };
+  }
+  if (isOffMonth) {
+    return {
+      headline: `${currentMonthName} isn't the month for ${dest}. ${peakMonth} is.`,
+      subhead: `We'll send one email about three weeks before ${dest} peaks — so you book the right window, not this one.`,
+    };
+  }
+  return {
+    headline: `We'll tell you the month ${dest} is worth the trip.`,
+    subhead: `One email, about three weeks before ${dest} peaks in ${peakMonth}. No spam, easy unsubscribe.`,
+  };
+}
+
 export function PeakAlertHook({
   destinationId,
   destinationName,
@@ -65,6 +107,8 @@ export function PeakAlertHook({
   peakMonthNum,
   locale,
   source,
+  currentMonthName,
+  currentScore,
 }: Props) {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
@@ -72,6 +116,7 @@ export function PeakAlertHook({
   const wrapRef = useRef<HTMLDivElement>(null);
   const viewedRef = useRef(false);
   const t = COPY[locale];
+  const pitch = buildPitch(locale, destinationName, peakMonthName, currentMonthName, currentScore);
   const analyticsSource = source ?? `dest-alert-${destinationId}-${peakMonthNum}`;
 
   // Fire impression once per session when scrolled into view
@@ -187,7 +232,7 @@ export function PeakAlertHook({
           margin: "0 0 8px",
         }}
       >
-        {t.headline(destinationName)}
+        {pitch.headline}
       </h3>
       <p
         style={{
@@ -197,7 +242,7 @@ export function PeakAlertHook({
           margin: "0 0 18px",
         }}
       >
-        {t.subhead(destinationName, peakMonthName)}
+        {pitch.subhead}
       </p>
 
       {status === "success" ? (
