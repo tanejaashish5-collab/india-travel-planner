@@ -5025,7 +5025,17 @@ def generate_post(fmt: str, content: dict, platform: str,
                 extras["listicle_count"] = len(in_state)
             caption = _csv_fmt.render_caption(spec, cand, extra_context=extras)
             if caption:
-                return caption, cand
+                # Surface the purpose-built asset the eligibility check matched
+                # so the posting loop attaches THAT file — not the dest's
+                # generic Ken Burns clip. Shallow-copy so the `_csv_asset` key
+                # never leaks onto the shared pool object.
+                asset = _csv_fmt._find_matching_asset(
+                    spec, cand, SOCIAL_IMAGE_LIBRARY_DIR
+                )
+                out_dest = dict(cand)
+                if asset:
+                    out_dest["_csv_asset"] = str(asset)
+                return caption, out_dest
         # No dest passed eligibility — skip this format silently so picker
         # falls through to v1 next time. (Picker shouldn't have surfaced
         # this fmt if no dest was eligible, but defensive fallback.)
@@ -5160,6 +5170,38 @@ def upload_media_bytes(data: bytes, filename: str, content_type: str = "image/jp
         import traceback
         log.warning(f"    Traceback: {traceback.format_exc()}")
         return None
+
+def _upload_csv_asset(path: str, label: str) -> tuple[dict | None, bool]:
+    """Upload a Phase-2 / CSV-format asset (a local file) to Outstand.
+
+    Returns (media_obj, is_video). media_obj is None on any failure so the
+    caller cleanly falls back to the dest's generic media. The asset's own
+    basename is kept as the upload filename so post_log's media_id reflects
+    the real asset (e.g. v2_pov_slow_morning-chopta.mp4) and the 60-day
+    media-reuse dedup window treats it as distinct from the generic clip.
+    """
+    ext = os.path.splitext(path)[1].lower()
+    try:
+        with open(path, "rb") as f:
+            data = f.read()
+    except OSError as e:
+        log.warning(f"[{label}] Phase-2 asset read failed ({e}) — falling back.")
+        return None, False
+    if not data:
+        log.warning(f"[{label}] Phase-2 asset is empty — falling back.")
+        return None, False
+    name = os.path.basename(path)
+    if ext == ".mp4":
+        m = upload_media_bytes(data, name, "video/mp4")
+        if m:
+            log.info(f"[{label}] Phase-2 asset → Reel: {name}")
+        return m, bool(m)
+    ctype = "image/png" if ext == ".png" else "image/jpeg"
+    m = upload_media_bytes(data, name, ctype)
+    if m:
+        log.info(f"[{label}] Phase-2 asset → image: {name}")
+    return m, False
+
 
 # ─────────────────────────────────────────────────────────────────────────────
 # PUBLISHERS
@@ -6492,12 +6534,32 @@ def _run_inner(force: bool, sync_only: bool, dry_run: bool,
         # Evening mode is VIDEO-FIRST — the entertainment pillar. Morning mode
         # prefers image/carousel unless format is explicitly carousel.
         is_carousel = fmt in CAROUSEL_FORMATS
-        video_url   = None if is_carousel else check_video_available(dest_obj)
-        use_video   = bool(video_url)
         media_obj   = None        # set below in whichever branch runs
         media_list  = []          # used for carousels only
+        use_video   = False
 
-        if use_video:
+        # ── Phase-2 / CSV-format asset (highest priority) ─────────────────────
+        # CSV formats (v2_*/v3_*/v4_*) ship a purpose-built asset at
+        # social_image_library/{format_id}-{slug}.{mp4,png}. When the dispatcher
+        # matched one it rides on dest_obj["_csv_asset"] — post THAT, not the
+        # dest's generic Ken Burns clip. Without this v2_pov_slow_morning
+        # silently reused {slug}.mp4 (chopta posted it twice, 2026-05-20).
+        csv_asset_path = dest_obj.get("_csv_asset")
+        if csv_asset_path and os.path.exists(csv_asset_path):
+            media_obj, use_video = _upload_csv_asset(csv_asset_path, label)
+            if media_obj:
+                is_carousel = False
+            else:
+                log.warning(f"[{label}] Phase-2 asset upload failed — "
+                            f"falling back to generic dest media.")
+
+        # ── Generic dest media — only if no Phase-2 asset was attached ────────
+        video_url = None
+        if media_obj is None and not is_carousel:
+            video_url = check_video_available(dest_obj)
+            use_video = bool(video_url)
+
+        if use_video and media_obj is None:
             log.info(f"[{label}] Video available — uploading for Reel{'  (evening mode)' if evening else ''}...")
             media_obj = upload_media(video_url, f"{dest_id}.mp4", "video/mp4")
             if not media_obj:
