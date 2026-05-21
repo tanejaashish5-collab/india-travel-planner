@@ -1,18 +1,18 @@
 {
-  "yt_short_formats_used": [],
+  "yt_short_formats_used": [
+    "v2_yt_silent_pov"
+  ],
   "yt_short_music_used": [],
   "posted_today": {
-    "m8EAd": "2026-05-21",
-    "PdMu0": "2026-05-21"
+    "GAh5p_yt_short": "2026-05-21",
+    "GAh5p_yt_short_count": 1,
+    "m8EAd_yt_short": "2026-05-21",
+    "m8EAd_yt_short_count": 1
   },
-  "last_sync": "2026-05-21T08:08:48.083641+00:00",
+  "last_sync": "2026-04-30T04:05:30.154914+00:00",
   "posted_destinations": [
     {
-      "destination_id": "v2_pov_slow_morning-chopta",
-      "date": "2026-05-21"
-    },
-    {
-      "destination_id": "chopta",
+      "destination_id": "tungnath",
       "date": "2026-05-21"
     }
   ],
@@ -50,8 +50,7 @@
       "reality_check",
       "collection_spotlight",
       "festival_alert",
-      "kids_intel",
-      "v2_pov_slow_morning"
+      "kids_intel"
     ]
   },
   "post_log": [
@@ -446,29 +445,25 @@
       "has_media": true
     },
     {
-      "timestamp": "2026-05-21T08:09:20.061429+00:00",
+      "timestamp": "2026-05-21T13:51:58.597899+00:00",
       "date": "2026-05-21",
-      "platform": "facebook",
-      "account_id": "PdMu0",
-      "post_id": "WiIvz",
-      "destination": "chopta",
-      "format": "v2_pov_slow_morning",
-      "has_media": true,
-      "media_id": "v2_pov_slow_morning-chopta.mp4"
+      "platform": "youtube",
+      "post_id": "ZI89u",
+      "destination": "tungnath",
+      "format": "yt_short.v2_yt_silent_pov",
+      "media_id": "yt_short_v2_yt_silent_pov_yt_short_v2_yt_silent_pov_2026-05-21.mp4"
+    },
+    {
+      "timestamp": "2026-05-21T13:52:39.670931+00:00",
+      "date": "2026-05-21",
+      "platform": "instagram",
+      "post_id": "8k3cI",
+      "destination": "tungnath",
+      "format": "yt_short.v2_yt_silent_pov",
+      "media_id": "yt_short_v2_yt_silent_pov_yt_short_v2_yt_silent_pov_2026-05-21.mp4"
     }
   ],
-  "theme_usage": {
-    "morning_formats": {
-      "v2_pov_slow_morning": [
-        "2026-05-21"
-      ]
-    },
-    "destinations": {
-      "chopta": [
-        "2026-05-21"
-      ]
-    }
-  },
+  "theme_usage": {},
   "infographic": {
     "last_topic_idx": 0,
     "last_theme_idx": 0,
@@ -480,8 +475,6 @@
     ]
   },
   "ugc_music_history": [],
-  "last_picked": {
-    "shared_best": "chopta"
-  },
+  "last_picked": {},
   "manual_skip_dests": {}
 }

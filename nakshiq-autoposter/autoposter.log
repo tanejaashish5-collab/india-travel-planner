@@ -1,28 +1,23 @@
-2026-05-21 08:08:11  INFO      [migration] bootstrapped post_log.jsonl with 38 entries from state.json
-2026-05-21 08:08:11  INFO      ════════════════════════════════════════════════════════════
-2026-05-21 08:08:11  INFO      Nakshiq Autoposter · MORNING · 2026-05-21 · weekday=3
-2026-05-21 08:08:11  INFO      ════════════════════════════════════════════════════════════
-2026-05-21 08:08:11  INFO      ── Syncing Nakshiq content ──────────────────────────────
-2026-05-21 08:08:48  INFO      Synced → 20 destinations · 0 traps · 0 articles · 23 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 50 camping · 50 gems · total catalog=505
-2026-05-21 08:08:49  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
-2026-05-21 08:08:50  INFO      Outstand dedup guard: merged 1 remote posts into state.
-2026-05-21 08:08:50  INFO      Festivals filtered (past/post-window): Kedarnath Opening, Summer Festival, Badri-Kedar Festival, Chaukori Tea Festival, Chail Cricket Festival, Guptkashi Vishwanath Temple Festival, Tosamaidan Wildflower Season, Badrinath Temple Opening (Kapaat Kholna) (+9 more)
-2026-05-21 08:08:50  INFO      [csv_formats] 4/38 CSV formats eligible this run (asset present + data resolves)
-2026-05-21 08:08:50  INFO      Morning format (themed-week-3→moment): v2_pov_slow_morning [0% vs target 10%] (14/14 never featured)
-2026-05-21 08:08:50  INFO      Formats — IG: v2_pov_slow_morning  ·  FB: v2_pov_slow_morning  ·  Story: score_card
-2026-05-21 08:08:50  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 9
-2026-05-21 08:08:50  INFO      Fingerprint dedup snapshot — 8 dests in 7d · 21 (dest,fmt) pairs in 30d · 0 media in 60d
-2026-05-21 08:08:56  INFO      Shared best destination locked: Chopta
-2026-05-21 08:08:56  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
-2026-05-21 08:08:56  INFO      [instagram/nakshiq] Already posted today (morning) — skipping.
-2026-05-21 08:08:56  INFO      [facebook/Nakshiq] Generating v2_pov_slow_morning post...
-2026-05-21 08:08:56  INFO      [facebook/Nakshiq] Caption ready (345 chars, dest=chopta)
-2026-05-21 08:08:56  INFO          Requesting upload URL for v2_pov_slow_morning-chopta.mp4 (3,637,567 bytes, video/mp4)
-2026-05-21 08:08:57  INFO          Uploading to R2 (timeout=300s)...
-2026-05-21 08:08:58  INFO          R2 PUT OK. Confirming...
-2026-05-21 08:08:59  INFO          Media ready: TtPV1 (3,637,567 bytes · v2_pov_slow_morning-chopta.mp4)
-2026-05-21 08:08:59  INFO      [facebook/Nakshiq] Phase-2 asset → Reel: v2_pov_slow_morning-chopta.mp4
-2026-05-21 08:08:59  INFO      [facebook/Nakshiq] Publishing Reel...
-2026-05-21 08:09:20  INFO      [facebook/Nakshiq] ✅ Published · Outstand=WiIvz · Platform=987805313625171
-2026-05-21 08:09:20  INFO      State saved. Run complete.
-2026-05-21 08:09:20  INFO      ════════════════════════════════════════════════════════════
+2026-05-21 13:51:12  INFO      [migration] bootstrapped post_log.jsonl with 38 entries from state.json
+2026-05-21 13:51:12  INFO      ════════════════════════════════════════════════════════════
+2026-05-21 13:51:12  INFO      Nakshiq Autoposter · YT SHORT · 2026-05-21
+2026-05-21 13:51:12  INFO      ════════════════════════════════════════════════════════════
+2026-05-21 13:51:12  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-05-21 13:51:12  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-05-21 13:51:19  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
+2026-05-21 13:51:19  INFO      Short rendered: yt_short_v2_yt_silent_pov_2026-05-21.mp4 (5519 KB, 0.0s, fmt=v2_yt_silent_pov, music=(pre-rendered asset))
+2026-05-21 13:51:19  INFO          Requesting upload URL for yt_short_v2_yt_silent_pov_yt_short_v2_yt_silent_pov_2026-05-21.mp4 (5,651,916 bytes, video/mp4)
+2026-05-21 13:51:19  INFO          Uploading to R2 (timeout=300s)...
+2026-05-21 13:51:21  INFO          R2 PUT OK. Confirming...
+2026-05-21 13:51:22  INFO          Media ready: g2Smx (5,651,916 bytes · yt_short_v2_yt_silent_pov_yt_short_v2_yt_silent_pov_2026-05-21.mp4)
+2026-05-21 13:51:22  INFO      Video uploaded: yt_short_v2_yt_silent_pov_yt_short_v2_yt_silent_pov_2026-05-21.mp4
+2026-05-21 13:51:22  INFO      [youtube/@naksh-iq] Publishing YT Short (v2_yt_silent_pov)...
+2026-05-21 13:51:24  INFO      [youtube/@naksh-iq] Outstand accepted (post_id=ZI89u), waiting for platform confirmation...
+2026-05-21 13:51:58  INFO      [youtube/@naksh-iq] ✅ YT Short published · Outstand=ZI89u · Platform=-1r8rDpQnjo
+2026-05-21 13:51:58  INFO      [instagram/nakshiq] Publishing YT Short (v2_yt_silent_pov)...
+2026-05-21 13:51:59  INFO      [instagram/nakshiq] Outstand accepted (post_id=8k3cI), waiting for platform confirmation...
+2026-05-21 13:52:39  INFO      [instagram/nakshiq] ✅ YT Short published · Outstand=8k3cI · Platform=18011018846900383
+2026-05-21 13:52:39  INFO      [facebook/Nakshiq] Skipping (YT Shorts post to YouTube + Instagram only).
+2026-05-21 13:52:39  INFO      YT Short posted: format=v2_yt_silent_pov, music=(pre-rendered asset)
+2026-05-21 13:52:39  INFO      State saved. YT Short run complete.
+2026-05-21 13:52:39  INFO      ════════════════════════════════════════════════════════════
