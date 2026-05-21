@@ -1,23 +1,38 @@
-2026-05-21 13:51:12  INFO      [migration] bootstrapped post_log.jsonl with 38 entries from state.json
-2026-05-21 13:51:12  INFO      ════════════════════════════════════════════════════════════
-2026-05-21 13:51:12  INFO      Nakshiq Autoposter · YT SHORT · 2026-05-21
-2026-05-21 13:51:12  INFO      ════════════════════════════════════════════════════════════
-2026-05-21 13:51:12  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
-2026-05-21 13:51:12  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
-2026-05-21 13:51:19  INFO      [csv_formats] loaded 38 format specs: content_strategy.csv=25, content_strategy_v3_tl.csv=7, content_strategy_v4_dw.csv=6
-2026-05-21 13:51:19  INFO      Short rendered: yt_short_v2_yt_silent_pov_2026-05-21.mp4 (5519 KB, 0.0s, fmt=v2_yt_silent_pov, music=(pre-rendered asset))
-2026-05-21 13:51:19  INFO          Requesting upload URL for yt_short_v2_yt_silent_pov_yt_short_v2_yt_silent_pov_2026-05-21.mp4 (5,651,916 bytes, video/mp4)
-2026-05-21 13:51:19  INFO          Uploading to R2 (timeout=300s)...
-2026-05-21 13:51:21  INFO          R2 PUT OK. Confirming...
-2026-05-21 13:51:22  INFO          Media ready: g2Smx (5,651,916 bytes · yt_short_v2_yt_silent_pov_yt_short_v2_yt_silent_pov_2026-05-21.mp4)
-2026-05-21 13:51:22  INFO      Video uploaded: yt_short_v2_yt_silent_pov_yt_short_v2_yt_silent_pov_2026-05-21.mp4
-2026-05-21 13:51:22  INFO      [youtube/@naksh-iq] Publishing YT Short (v2_yt_silent_pov)...
-2026-05-21 13:51:24  INFO      [youtube/@naksh-iq] Outstand accepted (post_id=ZI89u), waiting for platform confirmation...
-2026-05-21 13:51:58  INFO      [youtube/@naksh-iq] ✅ YT Short published · Outstand=ZI89u · Platform=-1r8rDpQnjo
-2026-05-21 13:51:58  INFO      [instagram/nakshiq] Publishing YT Short (v2_yt_silent_pov)...
-2026-05-21 13:51:59  INFO      [instagram/nakshiq] Outstand accepted (post_id=8k3cI), waiting for platform confirmation...
-2026-05-21 13:52:39  INFO      [instagram/nakshiq] ✅ YT Short published · Outstand=8k3cI · Platform=18011018846900383
-2026-05-21 13:52:39  INFO      [facebook/Nakshiq] Skipping (YT Shorts post to YouTube + Instagram only).
-2026-05-21 13:52:39  INFO      YT Short posted: format=v2_yt_silent_pov, music=(pre-rendered asset)
-2026-05-21 13:52:39  INFO      State saved. YT Short run complete.
-2026-05-21 13:52:39  INFO      ════════════════════════════════════════════════════════════
+2026-05-21 14:27:22  INFO      [migration] bootstrapped post_log.jsonl with 38 entries from state.json
+2026-05-21 14:27:22  INFO      ════════════════════════════════════════════════════════════
+2026-05-21 14:27:22  INFO      Nakshiq Autoposter · EVENING · 2026-05-21 · weekday=3
+2026-05-21 14:27:22  INFO      ════════════════════════════════════════════════════════════
+2026-05-21 14:27:22  INFO      ── Syncing Nakshiq content ──────────────────────────────
+2026-05-21 14:28:09  INFO      Synced → 20 destinations · 0 traps · 0 articles · 23 routes · 50 treks · 100 eateries · 100 stays · 100 sos · 100 viral · 50 camping · 50 gems · total catalog=505
+2026-05-21 14:28:09  INFO      Active accounts: ['youtube/@naksh-iq', 'instagram/nakshiq', 'facebook/Nakshiq']
+2026-05-21 14:28:09  INFO      Formats — IG: festival_alert  ·  FB: festival_alert  ·  Story: collection_spotlight
+2026-05-21 14:28:09  INFO      Used destinations (14d rolling ∪ current-month ∪ manual-skip): 8
+2026-05-21 14:28:09  INFO      Fingerprint dedup snapshot — 8 dests in 7d · 21 (dest,fmt) pairs in 30d · 0 media in 60d
+2026-05-21 14:28:09  INFO      Collection locked: Best Winter Destinations (Dec-Feb) (19/20 never featured)
+2026-05-21 14:28:09  INFO      Festivals filtered (past/post-window): Kedarnath Opening, Summer Festival, Badri-Kedar Festival, Chaukori Tea Festival, Chail Cricket Festival, Guptkashi Vishwanath Temple Festival, Tosamaidan Wildflower Season, Badrinath Temple Opening (Kapaat Kholna) (+9 more)
+2026-05-21 14:28:09  INFO      Festival locked: Ghepan Festival (20/20 active festivals never featured)
+2026-05-21 14:28:13  INFO      Shared best destination locked: Achabal
+2026-05-21 14:28:13  INFO      Carousel locked (collection_spotlight): no valid images found
+2026-05-21 14:28:13  INFO      [youtube/@naksh-iq] Skipping feed post (YouTube only accepts video/reels).
+2026-05-21 14:28:13  INFO      [instagram/nakshiq] Generating festival_alert post...
+2026-05-21 14:28:13  INFO      [instagram/nakshiq] Caption ready (367 chars, dest=sissu)
+2026-05-21 14:28:13  INFO      [instagram/nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-05-21 14:28:13  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/sissu.mp4?v=20260512
+2026-05-21 14:28:14  INFO          Requesting upload URL for sissu.mp4 (7,080,386 bytes, video/mp4)
+2026-05-21 14:28:14  INFO          Uploading to R2 (timeout=300s)...
+2026-05-21 14:28:15  INFO          R2 PUT OK. Confirming...
+2026-05-21 14:28:16  INFO          Media ready: AXrg7 (7,080,386 bytes · sissu.mp4)
+2026-05-21 14:28:16  INFO      [instagram/nakshiq] Publishing Reel...
+2026-05-21 14:28:53  INFO      [instagram/nakshiq] ✅ Published · Outstand=gJStx · Platform=18527263801072588
+2026-05-21 14:28:53  INFO      [facebook/Nakshiq] Generating festival_alert post...
+2026-05-21 14:28:53  INFO      [facebook/Nakshiq] Caption ready (518 chars, dest=sissu)
+2026-05-21 14:28:53  INFO      [facebook/Nakshiq] Video available — uploading for Reel  (evening mode)...
+2026-05-21 14:28:53  INFO          Downloading: https://pub-bcda9bac2f63408880ee3f23aa3548e5.r2.dev/sissu.mp4?v=20260512
+2026-05-21 14:28:53  INFO          Requesting upload URL for sissu.mp4 (7,080,386 bytes, video/mp4)
+2026-05-21 14:28:54  INFO          Uploading to R2 (timeout=300s)...
+2026-05-21 14:28:54  INFO          R2 PUT OK. Confirming...
+2026-05-21 14:28:55  INFO          Media ready: xS3y8 (7,080,386 bytes · sissu.mp4)
+2026-05-21 14:28:55  INFO      [facebook/Nakshiq] Publishing Reel...
+2026-05-21 14:29:11  INFO      [facebook/Nakshiq] ✅ Published · Outstand=O2jqv · Platform=1774931933469456
+2026-05-21 14:29:11  INFO      State saved. Run complete.
+2026-05-21 14:29:11  INFO      ════════════════════════════════════════════════════════════

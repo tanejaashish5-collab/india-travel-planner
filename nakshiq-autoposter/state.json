@@ -1,18 +1,16 @@
 {
-  "yt_short_formats_used": [
-    "v2_yt_silent_pov"
-  ],
+  "yt_short_formats_used": [],
   "yt_short_music_used": [],
   "posted_today": {
-    "GAh5p_yt_short": "2026-05-21",
-    "GAh5p_yt_short_count": 1,
-    "m8EAd_yt_short": "2026-05-21",
-    "m8EAd_yt_short_count": 1
+    "m8EAd": "2026-05-21",
+    "m8EAd_evening": "2026-05-21",
+    "PdMu0": "2026-05-21",
+    "PdMu0_evening": "2026-05-21"
   },
-  "last_sync": "2026-04-30T04:05:30.154914+00:00",
+  "last_sync": "2026-05-21T14:28:09.140319+00:00",
   "posted_destinations": [
     {
-      "destination_id": "tungnath",
+      "destination_id": "sissu",
       "date": "2026-05-21"
     }
   ],
@@ -30,7 +28,8 @@
       "score_card",
       "collection_spotlight",
       "festival_alert",
-      "kids_intel"
+      "kids_intel",
+      "festival_alert"
     ],
     "PdMu0": [
       "monthly_forecast",
@@ -50,7 +49,8 @@
       "reality_check",
       "collection_spotlight",
       "festival_alert",
-      "kids_intel"
+      "kids_intel",
+      "festival_alert"
     ]
   },
   "post_log": [
@@ -445,25 +445,51 @@
       "has_media": true
     },
     {
-      "timestamp": "2026-05-21T13:51:58.597899+00:00",
-      "date": "2026-05-21",
-      "platform": "youtube",
-      "post_id": "ZI89u",
-      "destination": "tungnath",
-      "format": "yt_short.v2_yt_silent_pov",
-      "media_id": "yt_short_v2_yt_silent_pov_yt_short_v2_yt_silent_pov_2026-05-21.mp4"
-    },
-    {
-      "timestamp": "2026-05-21T13:52:39.670931+00:00",
+      "timestamp": "2026-05-21T14:28:53.067573+00:00",
       "date": "2026-05-21",
       "platform": "instagram",
-      "post_id": "8k3cI",
-      "destination": "tungnath",
-      "format": "yt_short.v2_yt_silent_pov",
-      "media_id": "yt_short_v2_yt_silent_pov_yt_short_v2_yt_silent_pov_2026-05-21.mp4"
+      "account_id": "m8EAd",
+      "post_id": "gJStx",
+      "destination": "sissu",
+      "format": "festival_alert",
+      "has_media": true,
+      "media_id": "sissu.mp4"
+    },
+    {
+      "timestamp": "2026-05-21T14:29:11.717705+00:00",
+      "date": "2026-05-21",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "O2jqv",
+      "destination": "sissu",
+      "format": "festival_alert",
+      "has_media": true,
+      "media_id": "sissu.mp4"
     }
   ],
-  "theme_usage": {},
+  "theme_usage": {
+    "collections": {
+      "best-winter": [
+        "2026-05-21"
+      ]
+    },
+    "festivals": {
+      "0f01501a-f637-4999-9537-bca5db2d6947": [
+        "2026-05-21"
+      ]
+    },
+    "destinations": {
+      "sissu": [
+        "2026-05-21"
+      ]
+    },
+    "collection_carousel_dests:best-winter": {},
+    "reels": {
+      "sissu": [
+        "2026-05-21"
+      ]
+    }
+  },
   "infographic": {
     "last_topic_idx": 0,
     "last_theme_idx": 0,
@@ -475,6 +501,9 @@
     ]
   },
   "ugc_music_history": [],
-  "last_picked": {},
+  "last_picked": {
+    "collection": "best-winter",
+    "shared_best": "achabal"
+  },
   "manual_skip_dests": {}
 }
