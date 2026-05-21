@@ -172,6 +172,10 @@ export default async function LocaleLayout({
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        {/* Agoda Partner Center site-ownership verification — presence-only
+            tag (no content value), kept here so it renders exactly as Agoda
+            issues it. Safe to remove once the affiliate account is verified. */}
+        <meta name="agd-partner-manual-verification" />
         {process.env.NEXT_PUBLIC_IMAGE_BASE_URL ? (
           <link rel="preconnect" href={process.env.NEXT_PUBLIC_IMAGE_BASE_URL} crossOrigin="anonymous" />
         ) : null}
