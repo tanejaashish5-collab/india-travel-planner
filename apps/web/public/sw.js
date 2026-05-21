@@ -31,8 +31,12 @@
 //      nakshiq-v33-data, so returning PWA users saw the pre-booking-card
 //      version on the first navigation after the deploy. Bumping to v34 makes
 //      activate() purge the v33 caches so every user gets the fresh markup.
+// v35: 2026-05-21 Coda newsletter form given a dark backing panel so it is
+//      legible over bright full-bleed photos (was faint editorial styling
+//      invisible on sunlit frames). Changes destination-page markup, so the
+//      bump purges nakshiq-v34-data and serves the fixed Coda to PWA users.
 
-const CACHE_VERSION = "nakshiq-v34";
+const CACHE_VERSION = "nakshiq-v35";
 const STATIC_CACHE = `${CACHE_VERSION}-static`;
 const IMAGE_CACHE = `${CACHE_VERSION}-images`;
 const DATA_CACHE = `${CACHE_VERSION}-data`;

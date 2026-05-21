@@ -65,6 +65,12 @@ export function CinematicNewsletter({
           marginBottom: 32,
           maxWidth: 520,
           marginInline: "auto",
+          background: "rgba(10, 10, 8, 0.78)",
+          backdropFilter: "blur(10px)",
+          WebkitBackdropFilter: "blur(10px)",
+          border: "1px solid var(--hair)",
+          borderRadius: 4,
+          padding: "22px 30px",
         }}
       >
         ✓ You&apos;re on the list. Next issue lands in your inbox.
@@ -79,6 +85,16 @@ export function CinematicNewsletter({
         marginBottom: 32,
         maxWidth: 520,
         marginInline: "auto",
+        // Local dark scrim — the Coda is a full-bleed photo with only a
+        // light radial veil, so the faint editorial form is invisible over
+        // bright frames. This panel guarantees contrast regardless of the
+        // image behind, without reading as a chunky shadcn card.
+        background: "rgba(10, 10, 8, 0.78)",
+        backdropFilter: "blur(10px)",
+        WebkitBackdropFilter: "blur(10px)",
+        border: "1px solid var(--hair)",
+        borderRadius: 4,
+        padding: "26px 30px",
       }}
     >
       <p
@@ -88,7 +104,7 @@ export function CinematicNewsletter({
           fontSize: 10,
           letterSpacing: "0.26em",
           textTransform: "uppercase",
-          color: "var(--bone-faint)",
+          color: "var(--bone-dim)",
           marginBottom: 14,
         }}
       >
@@ -100,7 +116,7 @@ export function CinematicNewsletter({
           display: "flex",
           alignItems: "center",
           gap: 0,
-          borderBottom: "1px solid var(--hair)",
+          borderBottom: "1px solid var(--bone-faint)",
           transition: "border-color 200ms ease",
         }}
         onFocus={(e) => {
@@ -109,7 +125,7 @@ export function CinematicNewsletter({
         }}
         onBlur={(e) => {
           (e.currentTarget as HTMLFormElement).style.borderBottomColor =
-            "var(--hair)";
+            "var(--bone-faint)";
         }}
       >
         <input
