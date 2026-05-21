@@ -25,8 +25,14 @@
 //      caches and re-fetch fresh cinematic HTML on install. Adds /en/vs,
 //      /en/india-vs, /en/membership, /en/transparency to precache (Tier 6+7+8
 //      surfaces shipped this session).
+// v34: 2026-05-21 Booking-handoff revenue work shipped (commit 7a868a21) —
+//      the booking card was added to month pages and restyled on destination
+//      roots. Destination pages are served Stale-While-Revalidate from
+//      nakshiq-v33-data, so returning PWA users saw the pre-booking-card
+//      version on the first navigation after the deploy. Bumping to v34 makes
+//      activate() purge the v33 caches so every user gets the fresh markup.
 
-const CACHE_VERSION = "nakshiq-v33";
+const CACHE_VERSION = "nakshiq-v34";
 const STATIC_CACHE = `${CACHE_VERSION}-static`;
 const IMAGE_CACHE = `${CACHE_VERSION}-images`;
 const DATA_CACHE = `${CACHE_VERSION}-data`;
