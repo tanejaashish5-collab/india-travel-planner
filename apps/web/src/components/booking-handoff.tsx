@@ -7,10 +7,20 @@ type BookingLink = { name: string; url: string; color: string; affiliate?: Tagga
 
 export function BookingHandoff({ destinationName, stateName }: { destinationName: string; stateName?: string }) {
   const searchQuery = encodeURIComponent(`${destinationName} ${stateName || "India"} hotels`);
+  // Agoda has no free-text search deep-link (textToSearch dumps to the
+  // homepage) — but its per-city pages resolve reliably, including offbeat
+  // towns like Tosh: /city/<slug>-in.html. Slug = the destination name with
+  // alt-name parens dropped and non-alphanumerics hyphenated.
+  const agodaSlug = destinationName
+    .toLowerCase()
+    .replace(/\([^)]*\)/g, "")
+    .trim()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
 
   // `affiliate` routes a link through buildAffiliateUrl — a no-op until the
   // partner's affiliate ID env var is set, then tagged on the next deploy.
-  // Only Booking.com exposes a query-param affiliate mechanism we can use here.
+  // Booking.com (aid) and Agoda (cid) are the two with affiliate programs.
   const bookingLinks: BookingLink[] = [
     {
       name: "MakeMyTrip",
@@ -29,9 +39,10 @@ export function BookingHandoff({ destinationName, stateName }: { destinationName
       color: "text-emerald-400 border-emerald-500/30 hover:bg-emerald-500/10",
     },
     {
-      name: "Google Hotels",
-      url: `https://www.google.com/travel/hotels/${searchQuery}`,
-      color: "text-slate-300 border-slate-400/30 hover:bg-slate-400/10",
+      name: "Agoda",
+      url: `https://www.agoda.com/city/${agodaSlug}-in.html`,
+      color: "text-violet-300 border-violet-500/30 hover:bg-violet-500/10",
+      affiliate: "agoda",
     },
   ];
 
@@ -44,7 +55,13 @@ export function BookingHandoff({ destinationName, stateName }: { destinationName
             We sit before the booking layer, not beside it. Compare prices on the platforms below once you&apos;ve decided where to go.
           </p>
         </div>
-        <span className="text-xs text-muted-foreground/50 border border-border/30 rounded-full px-2 py-0.5">Not sponsored</span>
+        <span className="inline-flex items-center gap-1.5 shrink-0 rounded-full border border-emerald-500/40 bg-emerald-500/10 px-2.5 py-1 text-[11px] font-semibold tracking-wide text-emerald-300">
+          <span className="relative flex h-1.5 w-1.5" aria-hidden="true">
+            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75 motion-reduce:hidden" />
+            <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-400" />
+          </span>
+          Not sponsored
+        </span>
       </div>
       <div className="flex flex-wrap gap-2">
         {bookingLinks.map((link) => (
