@@ -2,10 +2,15 @@
   "yt_short_formats_used": [],
   "yt_short_music_used": [],
   "posted_today": {
-    "m8EAd": "2026-05-21"
+    "m8EAd": "2026-05-21",
+    "PdMu0": "2026-05-21"
   },
-  "last_sync": "2026-05-21T07:07:12.287060+00:00",
+  "last_sync": "2026-05-21T08:08:48.083641+00:00",
   "posted_destinations": [
+    {
+      "destination_id": "v2_pov_slow_morning-chopta",
+      "date": "2026-05-21"
+    },
     {
       "destination_id": "chopta",
       "date": "2026-05-21"
@@ -25,8 +30,7 @@
       "score_card",
       "collection_spotlight",
       "festival_alert",
-      "kids_intel",
-      "v2_pov_slow_morning"
+      "kids_intel"
     ],
     "PdMu0": [
       "monthly_forecast",
@@ -46,7 +50,8 @@
       "reality_check",
       "collection_spotlight",
       "festival_alert",
-      "kids_intel"
+      "kids_intel",
+      "v2_pov_slow_morning"
     ]
   },
   "post_log": [
@@ -441,11 +446,11 @@
       "has_media": true
     },
     {
-      "timestamp": "2026-05-21T07:07:52.564909+00:00",
+      "timestamp": "2026-05-21T08:09:20.061429+00:00",
       "date": "2026-05-21",
-      "platform": "instagram",
-      "account_id": "m8EAd",
-      "post_id": "k1Lah",
+      "platform": "facebook",
+      "account_id": "PdMu0",
+      "post_id": "WiIvz",
       "destination": "chopta",
       "format": "v2_pov_slow_morning",
       "has_media": true,
@@ -476,7 +481,7 @@
   },
   "ugc_music_history": [],
   "last_picked": {
-    "shared_best": "gurudongmar-lake"
+    "shared_best": "chopta"
   },
   "manual_skip_dests": {}
 }
