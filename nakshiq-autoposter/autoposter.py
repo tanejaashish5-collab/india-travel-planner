@@ -929,6 +929,31 @@ def load_post_log_jsonl() -> list[dict]:
     return out
 
 
+def destinations_posted_today_jsonl() -> tuple[set, set]:
+    """Fresh read of post_log.jsonl → ({dest_ids}, {media_ids}) posted *today*.
+
+    Reads the JSONL direct on every call rather than the load-time `state`
+    snapshot, so a sibling autoposter run that pushed minutes earlier is seen
+    even before its state propagates through the autoposter-state branch.
+    Closes the same-day double-post race that put chopta out twice on
+    2026-05-20 (arrival_intel + v2_pov_slow_morning, both chopta.mp4) — the
+    v2 run's state snapshot pre-dated the arrival_intel entry.
+    """
+    today = date.today().isoformat()
+    dests: set = set()
+    media: set = set()
+    for e in load_post_log_jsonl():
+        if (e.get("date") or "") != today:
+            continue
+        did = e.get("destination") or e.get("dest_id")
+        if did:
+            dests.add(did)
+        m = e.get("media_id") or e.get("media")
+        if m:
+            media.add(m)
+    return dests, media
+
+
 def load_theme_usage_jsonl() -> dict:
     """Reconstruct {dimension: {item_id: [iso_dates]}} from JSONL events.
     Applies 90-day GC at read-time (drops items whose latest stamp is >90d old)
@@ -4916,9 +4941,28 @@ def generate_post(fmt: str, content: dict, platform: str,
     csv_specs = get_csv_specs()
     if fmt in csv_specs:
         spec = csv_specs[fmt]
+        # 2026-05-21 same-day double-post guard. Re-read post_log.jsonl fresh
+        # (not the load-time state snapshot) so a sibling run that posted
+        # minutes ago is seen even before its state propagates through the
+        # autoposter-state branch. Closes the chopta ×2 race — arrival_intel
+        # then v2_pov_slow_morning, both falling back to the same {slug}.mp4.
+        _today_dests, _today_media = destinations_posted_today_jsonl()
         # Try every high-scored dest until one is eligible. Cheap; pool is
         # already filtered to current month + score>=4 by the picker.
         for cand in pool:
+            cid = cand.get("id") or cand.get("slug") or ""
+            if cid in _today_dests:
+                log.info(
+                    f"{fmt}: {cid} already posted today — SKIPPING dest "
+                    f"(same-day guard)"
+                )
+                continue
+            if cid and f"{cid}.mp4" in _today_media:
+                log.info(
+                    f"{fmt}: {cid}.mp4 already used today — SKIPPING dest "
+                    f"(same-day media guard)"
+                )
+                continue
             ok, _reason = _csv_fmt.is_eligible(
                 spec, cand, SOCIAL_IMAGE_LIBRARY_DIR
             )
