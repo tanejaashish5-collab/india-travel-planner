@@ -8,6 +8,7 @@ import { destinationImage } from "@/lib/image-url";
 import { videoSrc } from "@/lib/video-url";
 import { DestinationSectionNav } from "./destination-section-nav";
 import { SectionLabel } from "./ui/section-label";
+import { BookingHandoff } from "./booking-handoff";
 import { formatScore, formatScoreInline, SCORE_MAX } from "@itp/shared";
 
 // ── Constants ──────────────────────────────────────────────────
@@ -734,6 +735,7 @@ export function DestinationMonth({
     { id: "months", label: "All 12 months" },
     hasPack && { id: "pack", label: "What to pack" },
     hasNearby && { id: "nearby", label: "Nearby" },
+    { id: "booking", label: "Where to stay" },
     { id: "guide", label: `Full ${destination.name} guide` },
   ].filter((s): s is { id: string; label: string } => Boolean(s));
 
@@ -819,6 +821,13 @@ export function DestinationMonth({
           </section>
           <section id="section-nearby" className="scroll-mt-28">
             <NearbySection />
+          </section>
+          <section id="section-booking" className="scroll-mt-28">
+            <BookingHandoff
+              destinationName={destination.name}
+              stateName={stateName}
+              destinationId={destination.id}
+            />
           </section>
           <section id="section-guide" className="scroll-mt-28">
             <FullGuideLink />

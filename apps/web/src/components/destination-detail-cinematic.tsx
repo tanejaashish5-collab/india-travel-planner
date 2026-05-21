@@ -2185,6 +2185,7 @@ export function DestinationDetailCinematic({ dest }: { dest: any }) {
               <BookingHandoff
                 destinationName={displayName}
                 stateName={stateName}
+                destinationId={dest.id}
               />
             </div>
 

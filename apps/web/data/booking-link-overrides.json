@@ -1,0 +1,3 @@
+{
+  "_doc": "Per-destination outbound booking-link overrides, keyed by destination id. Each value is a partial map of platform -> exact verified URL, overriding the formula in src/lib/booking-links.ts. Used for hand-verified high-traffic destinations where the formula (esp. the Agoda /city/<slug> page) does not resolve. Platforms: makemytrip | booking | tripadvisor | agoda."
+}
